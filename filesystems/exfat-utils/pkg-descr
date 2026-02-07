@@ -1,0 +1,5 @@
+Utilities to manage extended file allocation table filesystem. This package
+provides tools to create, check and label the filesystem.
+It contains dumpexfat to dump properties of the filesystem, exfatfsck to report
+errors found on a exFAT filesystem, exfatlabel to label a exFAT filesystem and
+mkexfatfs to create a exFAT filesystem.

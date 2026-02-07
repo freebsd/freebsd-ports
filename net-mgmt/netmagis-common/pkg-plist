@@ -1,0 +1,14 @@
+bin/netmagis-config
+etc/netmagis.conf.sample
+lib/netmagis/libnetmagis.tcl
+lib/netmagis/msgs/C.msg
+lib/netmagis/msgs/en.msg
+lib/netmagis/msgs/fr.msg
+lib/netmagis/pkgtcl/arrgen.n
+lib/netmagis/pkgtcl/arrgen.tcl
+lib/netmagis/pkgtcl/ldap-bug-fix.192
+lib/netmagis/pkgtcl/pgsql.n
+lib/netmagis/pkgtcl/pgsql.tcl
+lib/netmagis/pkgtcl/pkgIndex.tcl
+lib/netmagis/pkgtcl/webapp.n
+lib/netmagis/pkgtcl/webapp.tcl

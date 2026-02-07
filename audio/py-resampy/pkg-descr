@@ -1,0 +1,4 @@
+resumpy performs efficient sample rate conversion in Python.
+
+This package implements the band-limited sinc interpolation method for sampling
+rate conversion.

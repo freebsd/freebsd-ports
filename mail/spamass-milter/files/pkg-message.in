@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+spamass-milter has been installed, but it must be activated manually.
+Please refer to...
+
+  %%DOCSDIR%%/activation.txt
+
+...for details.
+
+You may also want to tweak your spamd rc.subr(8) startup flags to
+specify a username to switch credentials to when delivering mail, if
+applicable.
+EOM
+}
+]

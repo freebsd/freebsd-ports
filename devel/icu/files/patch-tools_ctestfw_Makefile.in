@@ -1,0 +1,11 @@
+--- tools/ctestfw/Makefile.in.orig	2016-03-23 20:50:16 UTC
++++ tools/ctestfw/Makefile.in
+@@ -78,7 +78,7 @@ install-local: install-library
+ install-library: all-local
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
+ ifneq ($(ENABLE_STATIC),)
+-	$(INSTALL-L) $(TARGET) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(TARGET) $(DESTDIR)$(libdir)
+ endif
+ ifneq ($(ENABLE_SHARED),)
+ 	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)

@@ -1,0 +1,12 @@
+Munger is a simplified, statically-scoped, interpreted lisp specialized for
+writing text processors for 8-bit text.  With Munger the programmer may
+write line-by-line filters, if serial access to the text is sufficient, or
+the programmer may load text into buffers and have line-oriented random
+access to those lines, if that is more convenient.
+
+Munger makes it easy to write simple text editors, shells, utility filters,
+CGI scripts, and simple network client and server programs.  Mung (or
+munge) is computer jargon for, "to make repeated changes which individually
+may be reversible, yet which ultimately result in an unintentional
+irreversible destruction of large portions of the original item."  Laugh,
+it's a joke.

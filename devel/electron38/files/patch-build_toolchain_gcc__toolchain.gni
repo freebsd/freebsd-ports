@@ -1,0 +1,44 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2025-08-26 20:49:50 UTC
++++ build/toolchain/gcc_toolchain.gni
+@@ -49,6 +49,13 @@ if (enable_resource_allowlist_generation) {
+       "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
+ }
+ 
++declare_args() {
++  extra_cflags = ""
++  extra_cppflags = ""
++  extra_cxxflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -893,22 +900,12 @@ template("clang_toolchain") {
+ # actually just be doing a native compile.
+ template("clang_toolchain") {
+   gcc_toolchain(target_name) {
+-    _path = "$clang_base_path/bin"
+-    _is_path_absolute = get_path_info(_path, "abspath") == _path
+-
+-    # Preserve absolute paths for tools like distcc.
+-    if (_is_path_absolute && filter_include([ _path ], [ "//*" ]) == []) {
+-      prefix = _path
+-    } else {
+-      prefix = rebase_path(_path, root_build_dir)
+-    }
+-
+-    cc = "${prefix}/clang"
+-    cxx = "${prefix}/clang++"
++    cc = "cc"
++    cxx = "c++"
+     ld = cxx
+-    readelf = "${prefix}/llvm-readelf"
+-    ar = "${prefix}/llvm-ar"
+-    nm = "${prefix}/llvm-nm"
++    readelf = "readelf"
++    ar = "ar"
++    nm = "nm"
+ 
+     forward_variables_from(invoker, "*", [ "toolchain_args" ])
+ 

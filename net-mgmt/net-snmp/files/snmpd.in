@@ -1,0 +1,104 @@
+#!/bin/sh
+
+# PROVIDE: snmpd
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable snmpd:
+#
+# snmpd_enable="YES"
+# snmpd_flags="<set as needed>"
+# snmpd_conffile="<set as needed>"
+#
+# Add the following line to make snmpd run as root.  By default it drops
+# privileges after initialization, but some configurations may require
+# root privileges.  In particular, extension scripts may need to be run as root.
+#
+# snmpd_sugid="NO"
+#
+# To troubleshoot permission errors, it may be useful to run snmpd with the
+# following option in rc.conf:
+#
+# snmpd_prepend="ktrace -i -f /tmp/snmpd_ktrace.out"
+#
+# The resulting trace can be inspected with "kdump -f /tmp/snmpd_ktrace.out".
+#
+
+. /etc/rc.subr
+
+name=snmpd
+rcvar=snmpd_enable
+
+load_rc_config snmpd
+
+snmpd_enable=${snmpd_enable:-"NO"}
+snmpd_flush_cache=${snmpd_flush_cache-"NO"}
+snmpd_sugid=${snmpd_sugid:-"YES"}
+
+pidfile=${snmpd_pidfile:-"/var/run/net_snmpd.pid"}
+
+command=%%PREFIX%%/sbin/${name}
+
+start_precmd=net_snmpd_precmd
+
+check_conffile()
+{
+	local conffile
+
+	conffile=$1
+
+	if [ ! -f "${conffile}" ]; then
+		warn "snmpd configuration file $conffile not found"
+		return
+	fi
+	su -m snmpd -c "test -r ${conffile}"
+	if [ $? -ne 0 ]; then
+		warn "snmpd configuration file $conffile not readable by snmpd user"
+	fi
+}
+
+net_snmpd_precmd() {
+	local flag conffile snmpd_conffile_set readable
+
+	if checkyesno snmpd_flush_cache; then
+		rm -vf /var/net-snmp/.snmp-exec-cache
+	fi
+
+	for flag in ${snmpd_flags}; do
+		case "${flag}" in
+		-p*)
+			err 1 "\$snmpd_flags includes -p option." \
+				"Please use \$snmpd_pidfile instead."
+			;;
+		-c*)
+			err 1 "\$snmpd_flags includes -c option." \
+				"Please use \$snmpd_conffile instead."
+			;;
+		esac
+	done
+
+	# -c does not override the default config file.
+	# if it exists, sanity check
+	if [ -f %%PREFIX%%/share/snmp/snmpd.conf ]; then
+		check_conffile %%PREFIX%%/share/snmp/snmpd.conf
+	fi
+	for conffile in ${snmpd_conffile}; do
+		check_conffile ${conffile}
+		if [ -f "${conffile}" -a -s "${conffile}" ]; then
+			snmpd_conffile_set="${snmpd_conffile_set},${conffile}"
+		else
+			err 1 "snmpd configuration file $conffile not found."
+		fi
+	done
+
+	# snmpd syntax requires that the listening address (if defined) be the last argument
+	if [ -n "${snmpd_conffile_set}" ]; then
+		rc_flags="-c ${snmpd_conffile_set#,} ${rc_flags}"
+	fi
+	if checkyesno snmpd_sugid; then
+		rc_flags="-u snmpd -g snmpd ${rc_flags}"
+	fi
+
+	rc_flags="-p ${pidfile} ${rc_flags}"
+}
+
+run_rc_command "$1"

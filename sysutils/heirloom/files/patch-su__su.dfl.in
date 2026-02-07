@@ -1,0 +1,25 @@
+--- su/su.dfl.in.orig	Wed Oct 15 22:25:13 2003
++++ su/su.dfl.in	Thu Jun  3 16:56:40 2004
+@@ -2,17 +2,19 @@
+ 
+ # Path for root user. Default is
+ # /usr/local/sbin:/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin
+-SUPATH=/usr/node/sbin:/usr/node/bin:/usr/local/sbin:/usr/local/bin:/usr/ccs/bin:/usr/old/bin:/usr/node/bin/X11:/usr/local/bin/X11:/usr/contrib/sbin:/usr/contrib/bin:/usr/contrib/bin/X11:/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/ucb
++#SUPATH=/usr/node/sbin:/usr/node/bin:/usr/local/sbin:/usr/local/bin:/usr/ccs/bin:/usr/old/bin:/usr/node/bin/X11:/usr/local/bin/X11:/usr/contrib/sbin:/usr/contrib/bin:/usr/contrib/bin/X11:/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/ucb
++SUPATH=%%DATADIR%%/usr/ucb:%%DATADIR%%/usr/5bin/posix:%%DATADIR%%/usr/5bin/s42:%%DATADIR%%/usr/5bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
+ 
+ # Path for other users. Defaults to /usr/local/bin:/bin:/usr/bin:
+-PATH=/usr/node/bin:/usr/local/bin:/usr/ccs/bin:/usr/old/bin:/usr/sus/bin:/usr/node/bin/X11:/usr/local/bin/X11:/usr/contrib/bin:/usr/contrib/bin/X11:/bin:/usr/bin:/usr/node/games:/usr/local/games:/usr/contrib/games:/usr/games:/usr/X11R6/bin:/usr/ucb
++#PATH=/usr/node/bin:/usr/local/bin:/usr/ccs/bin:/usr/old/bin:/usr/sus/bin:/usr/node/bin/X11:/usr/local/bin/X11:/usr/contrib/bin:/usr/contrib/bin/X11:/bin:/usr/bin:/usr/node/games:/usr/local/games:/usr/contrib/games:/usr/games:/usr/X11R6/bin:/usr/ucb
++PATH=%%DATADIR%%/usr/ucb:%%DATADIR%%/usr/5bin/posix:%%DATADIR%%/usr/5bin/s42:%%DATADIR%%/usr/5bin:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+ 
+ # Whether to use the syslog facilities, for all (YES) or failing (FAIL)
+ # attempts.
+ SYSLOG=FAIL
+ 
+ # Failure delay.
+-SLEEPTIME=0
++SLEEPTIME=3
+ 
+ # Log to system console.
+ #CONSOLE=/dev/console

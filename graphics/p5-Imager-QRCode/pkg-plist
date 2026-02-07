@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Imager/QRCode.pm
+%%SITE_ARCH%%/auto/Imager/QRCode/QRCode.so
+%%PERL5_MAN3%%/Imager::QRCode.3.gz

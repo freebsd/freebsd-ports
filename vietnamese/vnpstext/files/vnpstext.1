@@ -1,0 +1,142 @@
+.\" to view this file, use: nroff -man vnpstext.1V | more
+.\"     @(#)vnpstext.1V	2.2     (TriChlor) 5/14/92 21:43:55
+.\"
+.TH vnpstext 1V 
+.SH NAME
+vnpstext \- PostScript filter for Vietnamese text printing
+.SH SYNTAX
+.B vnpstext
+[\fB-i <prologfile>\fP]
+[input_8-bit_VISCII_file(s) ...]
+.SH DESCRIPTION
+.NXR "vnpstext command"
+.PP
+The
+.PN vnpstext
+command operates much like the
+.MS pstext 1PS
+command: it reads a text file from standard input,
+and outputs the text in a format suitable for sending
+directly to a PostScript printer.  A typical invocation
+is:
+.EX
+% vnpstext 8-bit-vietnamese-file | lpr -PPostScript
+.EE
+.PN Vnpstext
+expects the Vietnamese font (by default, Courier-VN)
+to have been downloaded to the PostScript printer.
+This will be discussed further below.
+.PP
+Without any arguments,
+.PN vnpstext
+will use the font Courier-VN at 10-point size.
+You may change this by specifying an appropriate
+prolog file.  As of this date (5/92), the prolog files
+available with
+.I vnpstext
+are cour10.pro (default), cour12.pro, cour17.pro,
+cour10b.pro, cour12b.pro, cour17b.pro, which use
+Vietnamese Courier fonts at 10-, 12-, and 17-point
+sizes in normal and bold faces, respectively.
+.PP
+The location of the prolog file can either be
+the current directory, or in
+.I /usr/local/lib/ps.
+The latter setting may be overridden by
+the environment variable
+.I PSLIBDIR.
+.SH OPTIONS
+.IP "\fI-i <prologfile>\fP" 20m
+use the specified prolog file
+instead of generating the default (cour10.pro).
+.PP
+The prolog file is searched relative to the directory
+specified by PSLIBDIR, or the current working
+directory if PSLIBDIR is not set in the environment.
+If the prolog file name starts with the '/' character,
+it is assumed to be an absolute path name and
+PSLIBDIR is ignored.
+.SH USAGE NOTES
+.PN Vnpstext
+expects the font you use to have been downloaded
+to the printer.  To do this, send it the appropriate
+font installation file.  As of this date (5/92), the following
+are available with
+.PN vnpstext:
+initcour.ps and initcourb.ps, which will download
+the Vietnamese Courier and Courier-Bold fonts
+to the printer.  The font sizes are continuously
+scalable and is specified in the prolog file.
+.PP
+The downloaded font will persist
+until the next time the printer is power cycled.
+Also, note that the PS engine requires that a password
+be supplied for this kind of operation to take place;
+the password is normally "0" unless it is changed
+by the user.  This assumption is made in the
+init*.ps files.
+If the printer password is something other than "0",
+modify these files
+accordingly before sending it to the printer.
+.SH EXAMPLES
+To print out a mail message that contains 7-bit VIQR data,
+you might use:
+.EX
+% vn7to8 -m input_file | vnpstext | lpr -PPostScript
+.EE
+The
+.I -m
+option to
+.MS vn7to8 1V
+tells it to start out assuming English mode.
+.PP
+Or if the message contain Viet-Net style Vietnamese but is not
+necessarily VIQR-compliant in that it does not explicitly
+specify the Vietnamese language state with the sequence "\V":
+.EX
+% vn7to8 -v input_file | vnpstext | lpr -PPostScript
+.EE
+.PP
+Two sample shell scripts are provided
+to facilitate Vietnamese printing:
+.PN vnlpr7
+and
+.PN vnlpr8
+which performs the necessary conversions
+to print 7-bit VIQR and 8-bit VISCII
+data, respectively.  See the contents
+of those shell scripts for usage details.
+.SH RESTRICTIONS
+.IP -
+The line length is limited to 1024 characters.
+.IP -
+Lines are not wrapped.  If a line is too long to
+fit across a page width, it is truncated (by the printer).
+.SH FILES
+.IP \fI/usr/local/lib/ps:\fP 20m
+default prolog search directory
+.IP \fIinitcour.ps:\fP 20m
+Vietnamese Courier font file to download to the printer.
+.IP \fIinitcourb.ps:\fP 20m
+Vietnamese Courier-Bold font file to download to the printer.
+.IP \fIcour*.pro:\fP 20m
+Various prolog files which specify non-default values
+for font face and size.
+.SH AUTHOR
+The TriChlor Group, TriChlor@haydn.Stanford.EDU.
+.br
+Thanks also to Nam Chan Phamdo (nam@src.umd.edu)
+for pointing out the lines-per-page bug (which has been fixed!)
+.SH "SEE ALSO"
+vn7to8(1V), vnelvis(1V), pstext(1PS)
+.SH STANDARDS
+Viet-Std Standardization Specification (Viet-Std@Haydn.Stanford.EDU)
+.PP
+RFC 1456 Vietnamese Standardization Working Group,
+"Conventions for Encoding the Vietnamese Language
+.br
+VISCII: VIetnamese Standard Code for Information Interchange
+.br
+VIQR: VIetnamese Quoted-Readable Specification Revision 1.1",
+.br
+May 1993.

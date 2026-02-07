@@ -1,0 +1,5 @@
+MathPresso is a C++ library designed to parse mathematical expressions and
+compile them into machine code. It's much faster than traditional AST or
+byte-code based evaluators, because there is basically no overhead in the
+expression's execution. The JIT compiler is based on AsmJit and works on
+X86 and X64 architectures.

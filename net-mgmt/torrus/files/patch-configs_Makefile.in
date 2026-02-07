@@ -1,0 +1,12 @@
+--- configs/Makefile.in.orig	2010-10-28 18:25:20.000000000 +0000
++++ configs/Makefile.in	2010-10-28 18:26:04.000000000 +0000
+@@ -392,7 +392,8 @@
+ 	         snmptrap-siteconfig.pl torrus-siteconfig.pl; do \
+ 	  if test ! -r $(DESTDIR)$(siteconfdir)/$$f; then \
+ 	    $(INSTALL_DATA) $$f $(DESTDIR)$(siteconfdir)/$$f; \
+-	  fi \
++	  fi; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(siteconfdir)/$$f.sample; \
+ 	done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,12 @@
+Tartarus provides a nice wrapper around basic Unix tools such as tar, find and
+curl (well, that's not that basic) to provide a seamless backup solution,
+aimed at automatic gathering and backup.
+
+It has the ability to do full as well as incremental backups and is published
+by Stefan Tomanek under the rules of the GPL.
+
+Instead of relying on single usage backup scripts or complicated command lines,
+tartarus reads its configuration from easily manageable configuration files.
+It can store gathered data in regular files, or upload the backup directly (on
+the fly) to an FTP server. For more specific usage scenarios, custom methods
+can also be defined within the config file.

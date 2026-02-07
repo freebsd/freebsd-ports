@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/Gladiator.pm
+%%SITE_ARCH%%/auto/Devel/Gladiator/Gladiator.so
+%%PERL5_MAN3%%/Devel::Gladiator.3.gz

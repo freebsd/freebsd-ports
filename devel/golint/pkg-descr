@@ -1,0 +1,10 @@
+A linter for Go source code.
+
+Invoke golint with one or more filenames, directories, or packages named by its
+import path. Golint uses the same import path syntax as the go command and
+therefore also supports relative import paths like ./.... Additionally the ...
+wildcard can be used as suffix on relative and absolute file paths to recurse
+into them.
+
+The output of this tool is a list of suggestions in Vim quickfix format, which
+is accepted by lots of different editors.

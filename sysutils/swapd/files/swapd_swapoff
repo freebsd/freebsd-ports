@@ -1,0 +1,16 @@
+#!/bin/sh
+swapfile=$1
+if [ -z "$swapfile" ]; then
+  echo "usage: $0 swapfile"
+  exit 1
+fi
+if [ ! -f $swapfile ]; then
+  echo "$0: swapfile '$swapfile' not found"
+  exit 1
+fi
+mdev=`/sbin/mdconfig -l -v | grep ${swapfile} | awk '{print $1}'`
+if [ -z "$mdev" ]; then
+  echo "$0: swapfile '$swapfile' is not in use"
+  exit 1
+fi
+/sbin/swapoff /dev/${mdev} && /sbin/mdconfig -d -u /dev/${mdev}

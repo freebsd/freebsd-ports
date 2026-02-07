@@ -1,0 +1,118 @@
+--- rdup-simple.orig	2016-03-02 15:39:44 UTC
++++ rdup-simple
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # updates a hardlinked backup
+ # licensed under the GPL version 3
+@@ -38,16 +38,17 @@ copy_and_link() {
+ 	exit 2
+     fi
+ 
+-    let i=1
++    i=1
+     while [ $i -le $LOOKBACK ]; do
+-	    D=$(date $DATESTR --date "$i days ago")
++	    adjust=$(printf %dd $i)
++	    D=$(date -v-$adjust $DATESTR)
+ 	    if [ -d $TOPDIR/$D ]; then
+-		if ! cp -plr $TOPDIR/$D/* $TOPDIR/$TODAY; then
++		if ! cp -plR $TOPDIR/$D/* $TOPDIR/$TODAY; then
+ 		    exit 2
+ 		fi
+ 		exit 0
+ 	    fi
+-	    let i=i+1
++	    i=$((i+1))
+     done
+     exit 1
+ }
+@@ -122,7 +123,7 @@ while getopts "aE:k:vfgzxhVX:Y:s:Lnq" o;
+                         exit 1
+                 fi
+                 if [ ! -r "$OPTARG" ]; then
+-                        echo2 "Cannot read keyfile \`$OPTARG': failed"
++                        echo2 "Cannot read keyfile \'$OPTARG': failed"
+                         exit 1
+                 fi
+                 trans="$trans -P 'mcrypt -q -f $OPTARG'"
+@@ -165,9 +166,9 @@ while getopts "aE:k:vfgzxhVX:Y:s:Lnq" o;
+ done
+ shift $((OPTIND - 1))
+ 
+-if [ "${1:0:1}" = "+" ]; then
+-        DAYS=${1:1}
+-	if [ $DAYS -lt 1 ] || [ $DAYS -gt 99 ]; then
++if [ "${1%${1#?}}" = "+" ]; then
++        DAYS=${1#?}
++        if [ $DAYS -lt 1 ] || [ $DAYS -gt 99 ]; then
+                 echo2 "+N needs to be a number [1..99]"
+                 exit 1
+         fi
+@@ -189,7 +190,7 @@ i=1; last=$#; DIRS=
+ while [ $i -lt $last ]; do
+ 	DIRS="$DIRS $1"
+ 	shift
+-	((i=$i+1))
++	i=$((i+1))
+ done
+ # rdup [options] source destination
+ #dest="ssh://elektron.atoom.net/directory"
+@@ -199,8 +200,8 @@ done
+ #dest="ssh://miekg@elektron.atoom.net/directory"
+ 
+ dest=$1
+-if [ ${dest:0:6} = "ssh://" ]; then
+-	rest=${dest/ssh:\/\//}
++if [ "${dest%${dest#??????}}" = "ssh://" ]; then
++	rest=${dest#ssh://}
+ 	u=${rest%%@*}
+ 
+ 	if [ "$u" = "$rest" ]; then
+@@ -208,9 +209,9 @@ if [ ${dest:0:6} = "ssh://" ]; then
+             u=
+         fi
+ 
+-	rest=${rest/$u@/}
++	rest=${rest#$u@}
+ 	h=$(echo $rest | cut -s -f1 -d/)
+-	BACKUPDIR=${rest/$h/}
++	BACKUPDIR=${rest#$h}
+ 
+ 	if [ -z "$u" ]; then
+ 		ssh=" ssh -x $h"
+@@ -218,11 +219,11 @@ if [ ${dest:0:6} = "ssh://" ]; then
+ 		ssh=" ssh -x $u@$h"
+ 	fi
+ fi
+-if [ ${dest:0:7} = "file://" ]; then
+-	rest=${dest/file:\/\//}
++if [ "${dest%${dest#???????}}" = "file://" ]; then
++	rest=${dest#file://}
+ 	BACKUPDIR=$rest
+ fi
+-[ ${dest:0:1} = "/" ] && BACKUPDIR=$dest
++[ "${dest%${dest#?}}" = "/" ] && BACKUPDIR=$dest
+ 
+ # no hits above, assume relative filename
+ [ -z "$BACKUPDIR" ] && BACKUPDIR=$PWD/$dest
+@@ -230,8 +231,8 @@ fi
+ $link && copy_and_link $DAYS $BACKUPDIR
+ 
+ # change all / to _ to make a valid filename
+-STAMP=$etc/timestamp.${HOSTNAME}.${dest//\//_}
+-LIST=$etc/list.${HOSTNAME}.${dest//\//_}
++STAMP=$etc/timestamp.${HOSTNAME}.$(echo $dest | tr / _)
++LIST=$etc/list.${HOSTNAME}.$(echo $dest | tr / _)
+ 
+ [ ! -d $etc ] && mkdir $etc
+ 
+@@ -252,6 +253,7 @@ if ! $force; then
+ 	# path is set at the top
+         if [ -z "$ssh" ]; then
+ 		$PROGNAME $OPT_DRY -L +$DAYS /dev/null $BACKUPDIR
++#		rdup-ln -l $DAYS $BACKUPDIR
+                 purpose=$?
+         else
+ 		# You need to set your path so rdup-simple can be found

@@ -1,0 +1,5 @@
+A Google open source IPv4/IPv6 manipulation library in Python.
+This library is used to create/poke/manipulate IPv4 and
+IPv6 addresses and prefixes.
+Development mailing list:
+http://groups.google.com/group/ipaddr-py-dev

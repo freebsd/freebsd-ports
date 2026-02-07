@@ -1,0 +1,5 @@
+AntiMicroX is a graphical program used to map gamepad keys to keyboard, mouse,
+scripts and macros. You can use this program to control any desktop application
+with a gamepad on Linux, Windows and FreeBSD. It can be also used for generating
+SDL2 configuration (useful for mapping atypical gamepads to generic ones like
+xbox360).

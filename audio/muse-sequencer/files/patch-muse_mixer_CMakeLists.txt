@@ -1,0 +1,17 @@
+In file included from muse/mixer/rack.cpp:49:
+muse/components/plugindialog.h:4:10: fatal error: 'ui_plugindialogbase.h' file not found
+#include "ui_plugindialogbase.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+
+--- muse/mixer/CMakeLists.txt.orig	2023-08-03 19:28:45 UTC
++++ muse/mixer/CMakeLists.txt
+@@ -64,6 +64,8 @@ set (FILES_TO_TRANSLATE
+       CACHE INTERNAL ""
+       )
+ 
++add_dependencies(mixer components)
++
+ ##
+ ## Compilation flags and target name
+ ##

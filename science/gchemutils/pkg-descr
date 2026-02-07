@@ -1,0 +1,10 @@
+Gnome Chemistry Utils provide C++ classes and Gtk+-2 widgets related
+to chemistry.  It also contains these programs:
+
+* GChemPaint: a 2D chemical editor
+* a chemical calculator
+* a molecular structure viewer (GChem3D)
+* a crystal structure viewer and editor (Gnome Crystal)
+* a periodic table of the elements
+* a Mozilla plugin (which displays only XYZ files at the moment)
+* a simple spectrum viewer (GSpectrum)

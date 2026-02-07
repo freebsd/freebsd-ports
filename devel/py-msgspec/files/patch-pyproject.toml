@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2025-11-24 03:44:10 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools>=80",
++  "setuptools>=61",
+   "setuptools-scm>=8",
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -12,10 +12,7 @@ readme = "README.md"
+ ]
+ description = "A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML."
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = [
+-  "LICENSE",
+-]
++license = {text = "BSD-3-Clause"}
+ requires-python = ">=3.9"
+ maintainers = [
+   { name = "Jim Crist-Harif", email = "jcristharif@gmail.com" },

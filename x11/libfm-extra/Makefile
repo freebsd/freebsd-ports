@@ -1,0 +1,24 @@
+PORTNAME=	libfm
+PKGNAMESUFFIX=	-extra
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	LibFM-Extra library
+
+LICENSE=	GPLv2+ LGPL20+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+
+MASTERDIR=	${.CURDIR}/../${PORTNAME}
+
+DESCR=		${.CURDIR}/pkg-descr
+FILESDIR=	${.CURDIR}/files
+PATCHDIR=	${.CURDIR}/files
+PLIST=		${.CURDIR}/pkg-plist
+
+USE_LDCONFIG=	yes
+
+EXTRA_ONLY=	yes
+
+OPTIONS_EXCLUDE=	NLS
+
+.include "${MASTERDIR}/Makefile"

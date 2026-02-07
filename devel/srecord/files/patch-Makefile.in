@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-06-22 05:31:46 UTC
++++ Makefile.in
+@@ -4594,7 +4594,7 @@ install-include: $(includedir)/srecord/adler16.h \
+ # to install the *.a and *.so* files as well, which is why you don't see them
+ # explicitly mentioned here.
+ #
+-install-libdir: $(libdir)/libsrecord.la $(libdir)/pkgconfig/srecord.pc
++install-libdir: $(libdir)/libsrecord.la
+ 
+ install-man: $(mandir)/man1/srec_cat.1 $(mandir)/man1/srec_cmp.1 \
+ 		$(mandir)/man1/srec_examples.1 $(mandir)/man1/srec_info.1 \

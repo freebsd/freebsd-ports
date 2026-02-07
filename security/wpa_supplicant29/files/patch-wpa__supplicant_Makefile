@@ -1,0 +1,17 @@
+--- wpa_supplicant/Makefile.orig	2015-03-15 17:30:39 UTC
++++ wpa_supplicant/Makefile
+@@ -99,6 +99,14 @@ OBJS += ../src/utils/os_$(CONFIG_OS).o
+ OBJS_p += ../src/utils/os_$(CONFIG_OS).o
+ OBJS_c += ../src/utils/os_$(CONFIG_OS).o
+ 
++ifdef CONFIG_DRIVER_NDIS
++OBJS += ../src/utils/Packet32.o
++ifdef CONFIG_PRIVSEP
++OBJS += ../src/drivers/driver_ndis.o
++endif
++OBJS_priv += ../src/utils/Packet32.o
++endif
++
+ ifdef CONFIG_WPA_TRACE
+ CFLAGS += -DWPA_TRACE
+ OBJS += ../src/utils/trace.o

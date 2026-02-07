@@ -1,0 +1,3 @@
+bin/nopaste
+%%SITE_PERL%%/WebService/NoPaste.pm
+%%PERL5_MAN3%%/WebService::NoPaste.3.gz

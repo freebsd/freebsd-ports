@@ -1,0 +1,34 @@
+--- imwheelrc.orig	2004-06-10 01:41:49 UTC
++++ imwheelrc
+@@ -96,6 +96,10 @@ Control_L,	Down,	C
+ None,       Down,	KP_Subtract
+ None,       Up,		KP_Add
+ 
++"^fxtv"
++None,		Down,	KP_Subtract
++None,		Up,	KP_Add
++
+ "^Xman"
+ None,		Down,	F
+ Shift_L,	Down,	3
+@@ -138,14 +142,14 @@ None,   	Up,     Shift_L|Page_Up
+ None,   	Down,   Shift_L|Page_Down
+ 
+ "^rxvt"
+-Alt_L,  	Up,		Shift_L|Page_Up
+-Alt_L,  	Down,	Shift_L|Page_Down
++None,	  	Up,	Shift_L|Page_Up
++None,  		Down,	Shift_L|Page_Down
+ 
+ "^XTerm"
+-Alt_L,		Up,		Shift_R|Page_Up
+-Alt_L,		Down,	Shift_R|Page_Down
+-Alt_L,		Left,	Control_L|A
+-Alt_L,		Right,	Control_L|E
++None,		Up,	Shift_R|Page_Up
++None,		Down,	Shift_R|Page_Down
++None,		Left,	Control_L|A
++None,		Right,	Control_L|E
+ #Shift_L,	Down,	Shift_L|1
+ 
+ "^VMware"

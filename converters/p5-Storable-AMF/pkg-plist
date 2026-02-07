@@ -1,0 +1,9 @@
+%%SITE_ARCH%%/Storable/AMF.pm
+%%SITE_ARCH%%/Storable/AMF0.pm
+%%SITE_ARCH%%/Storable/AMF3.pm
+%%SITE_ARCH%%/Storable/AMF/Mapper.pm
+%%SITE_ARCH%%/auto/Storable/AMF/AMF.so
+%%PERL5_MAN3%%/Storable::AMF.3.gz
+%%PERL5_MAN3%%/Storable::AMF0.3.gz
+%%PERL5_MAN3%%/Storable::AMF3.3.gz
+%%PERL5_MAN3%%/Storable::AMF::Mapper.3.gz

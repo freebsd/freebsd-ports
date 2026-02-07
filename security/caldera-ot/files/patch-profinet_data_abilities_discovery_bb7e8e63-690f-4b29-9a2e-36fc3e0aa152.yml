@@ -1,0 +1,16 @@
+--- profinet/data/abilities/discovery/bb7e8e63-690f-4b29-9a2e-36fc3e0aa152.yml.orig	2024-02-18 23:08:41 UTC
++++ profinet/data/abilities/discovery/bb7e8e63-690f-4b29-9a2e-36fc3e0aa152.yml
+@@ -20,6 +20,13 @@
+           ./dcp_utility id_one #{dcp.target.mac}
+         payloads:
+         - dcp_utility
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          ./dcp_utility_freebsd id_one #{dcp.target.mac}
++        payloads:
++        - dcp_utility_freebsd
+     windows:
+       psh, cmd:
+         timeout: 360

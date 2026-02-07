@@ -1,0 +1,7 @@
+Libgda is a (relatively small) database access library:
+* it is a wrapper like ODBC but with more features to access several
+  database engines
+* features a meta data extractor (to know all about database objects
+  in a common way)
+* comes with an SQL console application (like mysql, psql or sqlite3 consoles)
+* relies on GLib, coded in C, its API is easy to use

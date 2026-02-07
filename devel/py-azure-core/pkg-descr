@@ -1,0 +1,2 @@
+Azure core library defines basic exceptions and shared modules those are needed
+when you use client libraries.

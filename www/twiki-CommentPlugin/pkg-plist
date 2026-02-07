@@ -1,0 +1,16 @@
+%%TWDIR%%/data/Sandbox/CommentPluginExampleComments.txt
+%%TWDIR%%/data/Sandbox/CommentPluginTemplateExample.txt
+%%TWDIR%%/data/TWiki/CommentPlugin.txt
+%%TWDIR%%/data/TWiki/CommentPluginExamples.txt
+%%TWDIR%%/data/TWiki/CommentPluginTemplate.txt
+%%TWDIR%%/data/TWiki/VarCOMMENT.txt
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/Comment.pm
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/PREINSTALL
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/build.pl
+%%TWDIR%%/pub/TWiki/CommentPlugin/wikiringlogo20x20.png
+%%TWDIR%%/templates/comments.tmpl
+%%TWDIR%%/test/unit/CommentPlugin/CommentPluginSuite.pm
+%%TWDIR%%/test/unit/CommentPlugin/CommentPluginTests.pm

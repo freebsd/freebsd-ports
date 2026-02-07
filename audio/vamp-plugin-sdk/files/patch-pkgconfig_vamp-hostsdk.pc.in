@@ -1,0 +1,9 @@
+--- pkgconfig/vamp-hostsdk.pc.in.orig	2015-06-22 08:28:58 UTC
++++ pkgconfig/vamp-hostsdk.pc.in
+@@ -6,5 +6,5 @@ includedir=${prefix}/include
+ Name: vamp-hostsdk
+ Version: 2.6
+ Description: Development library for Vamp audio analysis plugin hosts
+-Libs: -L${libdir} -lvamp-hostsdk -ldl
++Libs: -L${libdir} -lvamp-hostsdk
+ Cflags: -I${includedir} 

@@ -1,0 +1,21 @@
+gFTP is a free multithreaded FTP and SFTP client for Unix-like systems.
+It has the following features:
+
+  Distributed under the terms of the GNU Public License
+  Written in C, has a text interface and a GTK+ 2.x interface
+  Supports the FTP, FTPS (control connection only), HTTP, HTTPS, SSH, and FSP
+  Multithreaded to allow for simultaneous downloads
+  File transfer queues to allow for downloading multiple files
+  Bookmarks menu to allow you to quickly connect to remote sites
+  Supports downloading entire directories and subdirectories
+  Extensive connection manager with FTP and HTTP proxy server support
+  Supports resuming interrupted file transfers
+  Supports caching of remote directory listings
+  Supports connecting to a FTP server via command line parameters
+  Supports associating icons with particular file extensions in the list boxes
+  Sorting capabilities in the file list boxes
+  Can restrict files in the list boxes to a particular file specification
+  Supports viewing and editing of local and remote files
+  Allows for passive and non-passive file transfers
+  Supports FXP file transfers (file transfer between 2 remote servers via FTP)
+  Eliminates buffer overruns from malicious FTP sites

@@ -1,0 +1,184 @@
+Submitted to TclX developers as:
+
+https://sourceforge.net/tracker/index.php?func=detail&aid=2687373&group_id=13247&atid=313247
+
+	-mi
+
+--- generic/tclExtend.h	2002-09-25 20:23:29.000000000 -0400
++++ generic/tclExtend.h	2009-03-14 17:57:46.000000000 -0400
+@@ -123,19 +123,19 @@
+ EXTERN int	TclX_KeyedListGet _ANSI_ARGS_((Tcl_Interp *interp,
+ 			       Tcl_Obj	  *keylPtr,
+-			       char	  *key,
++			       const char *key,
+ 			       Tcl_Obj	 **valuePtrPtr));
+ 
+ EXTERN int	TclX_KeyedListSet _ANSI_ARGS_((Tcl_Interp *interp,
+ 			       Tcl_Obj	  *keylPtr,
+-			       char	  *key,
++			       const char *key,
+ 			       Tcl_Obj	  *valuePtr));
+ 
+ EXTERN int	TclX_KeyedListDelete _ANSI_ARGS_((Tcl_Interp *interp,
+ 				  Tcl_Obj    *keylPtr,
+-				  char	     *key));
++				  const char *key));
+ 
+ EXTERN int	TclX_KeyedListGetKeys _ANSI_ARGS_((Tcl_Interp *interp,
+ 				   Tcl_Obj    *keylPtr,
+-				   char	      *key,
++				   const char *key,
+ 				   Tcl_Obj   **listObjPtrPtr));
+ 
+--- generic/tclXkeylist.c	2005-11-21 13:54:13.000000000 -0500
++++ generic/tclXkeylist.c	2009-03-15 00:43:31.000000000 -0400
+@@ -121,9 +121,9 @@
+ 				  int		entryIdx));
+ 
+-static int
++static intptr_t
+ FindKeyedListEntry _ANSI_ARGS_((keylIntObj_t *keylIntPtr,
+-				char	     *key,
++				const char   *key,
+ 				int	     *keyLenPtr,
+-				char	    **nextSubKeyPtr));
++				const char  **nextSubKeyPtr));
+ 
+ static void
+@@ -342,5 +342,5 @@
+     int		  entryIdx;
+ {
+-    int idx;
++    intptr_t idx;
+ 
+ #ifndef NO_KEYLIST_HASH_TABLE
+@@ -348,5 +348,5 @@
+ 	Tcl_HashEntry *entryPtr;
+ 	Tcl_HashSearch search;
+-	int nidx;
++	intptr_t nidx;
+ 
+ 	entryPtr = Tcl_FindHashEntry(keylIntPtr->hashTbl,
+@@ -364,5 +364,5 @@
+ 	for (entryPtr = Tcl_FirstHashEntry(keylIntPtr->hashTbl, &search);
+ 	     entryPtr != NULL; entryPtr = Tcl_NextHashEntry(&search)) {
+-	    nidx = (int) Tcl_GetHashValue(entryPtr);
++	    nidx = (intptr_t) Tcl_GetHashValue(entryPtr);
+ 	    if (nidx > entryIdx) {
+ 		Tcl_SetHashValue(entryPtr, (ClientData) (nidx - 1));
+@@ -397,13 +397,14 @@
+  *-----------------------------------------------------------------------------
+  */
+-static int
++static intptr_t
+ FindKeyedListEntry (keylIntPtr, key, keyLenPtr, nextSubKeyPtr)
+     keylIntObj_t *keylIntPtr;
+-    char	 *key;
++    const char	 *key;
+     int		 *keyLenPtr;
+-    char	**nextSubKeyPtr;
++    const char	**nextSubKeyPtr;
+ {
+-    char *keySeparPtr;
+-    int keyLen, findIdx = -1;
++    const char *keySeparPtr;
++    int keyLen;
++    intptr_t findIdx = -1;
+ 
+     keySeparPtr = strchr (key, '.');
+@@ -417,18 +418,17 @@
+     if (keylIntPtr->hashTbl != NULL) {
+ 	Tcl_HashEntry *entryPtr;
+-	char tmp = key[keyLen];
++	char *tmp;
++	const char *_key;
++
+ 	if (keySeparPtr != NULL) {
+-	    /*
+-	     * A few extra guards in setting this, as if we are passed
+-	     * a const char, this can crash.
+-	     */
+-	    key[keyLen] = '\0';
+-	}
+-	entryPtr = Tcl_FindHashEntry(keylIntPtr->hashTbl, key);
++	    tmp = alloca(keyLen + 1);
++	    strncpy(tmp, key, keyLen);
++	    tmp[keyLen] = '\0';
++	    _key = tmp;
++	} else
++	    _key = key;
++	entryPtr = Tcl_FindHashEntry(keylIntPtr->hashTbl, _key);
+ 	if (entryPtr != NULL) {
+-	    findIdx = (int) Tcl_GetHashValue(entryPtr);
+-	}
+-	if (keySeparPtr != NULL) {
+-	    key[keyLen] = tmp;
++	    findIdx = (intptr_t)Tcl_GetHashValue(entryPtr);
+ 	}
+     }
+@@ -556,5 +556,6 @@
+     keylEntry_t *keyEntryPtr;
+     char *key;
+-    int keyLen, idx, objc, subObjc;
++    int keyLen, objc, subObjc;
++    intptr_t idx;
+     Tcl_Obj **objv, **subObjv;
+ #ifndef NO_KEYLIST_HASH_TABLE
+@@ -720,9 +721,9 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+     Tcl_Obj   **valuePtrPtr;
+ {
+     keylIntObj_t *keylIntPtr;
+-    char *nextSubKey;
++    const char *nextSubKey;
+     int findIdx;
+ 
+@@ -775,11 +776,12 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+     Tcl_Obj    *valuePtr;
+ {
+     keylIntObj_t *keylIntPtr;
+     keylEntry_t *keyEntryPtr;
+-    char *nextSubKey;
+-    int findIdx, keyLen, status = TCL_OK;
++    const char *nextSubKey;
++    intptr_t findIdx;
++    int keyLen, status = TCL_OK;
+     Tcl_Obj *newKeylPtr;
+ 
+@@ -901,9 +903,10 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+ {
+     keylIntObj_t *keylIntPtr, *subKeylIntPtr;
+-    char *nextSubKey;
+-    int findIdx, status;
++    const char *nextSubKey;
++    intptr_t findIdx;
++    int status;
+ 
+     if (Tcl_ConvertToType (interp, keylPtr, &keyedListType) != TCL_OK)
+@@ -975,11 +978,12 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+     Tcl_Obj   **listObjPtrPtr;
+ {
+     keylIntObj_t *keylIntPtr;
+     Tcl_Obj *listObjPtr;
+-    char *nextSubKey;
+-    int idx, findIdx;
++    const char *nextSubKey;
++    int idx;
++    intptr_t findIdx;
+ 
+     if (Tcl_ConvertToType (interp, keylPtr, &keyedListType) != TCL_OK)

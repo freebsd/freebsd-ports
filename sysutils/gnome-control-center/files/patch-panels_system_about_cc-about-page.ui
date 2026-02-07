@@ -1,0 +1,18 @@
+--- panels/system/about/cc-about-page.ui.orig	2025-05-26 08:10:04 UTC
++++ panels/system/about/cc-about-page.ui
+@@ -35,13 +35,14 @@
+             <child>
+               <object class="AdwPreferencesGroup">
+ 
+-                <!-- Device name -->
++                <!-- Device name
+                 <child>
+                   <object class="CcHostnameEntry" id="hostname_row">
+                     <property name="title" translatable="yes">_Device Name</property>
+                     <property name="use-underline">True</property>
+                   </object>
+                 </child>
++                -->
+ 
+               </object>
+             </child>

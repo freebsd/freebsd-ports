@@ -1,0 +1,7 @@
+This library is able to encode/decode files in the following formats:
+
+        uuencode
+        xxencode
+        Base64
+        BinHex
+	yEnc

@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Crypt::DH::GMP.3.gz
+%%PERL5_MAN3%%/Crypt::DH::GMP::Compat.3.gz
+%%SITE_ARCH%%/Crypt/DH/GMP.pm
+%%SITE_ARCH%%/Crypt/DH/GMP/Compat.pm
+%%SITE_ARCH%%/auto/Crypt/DH/GMP/GMP.so

@@ -1,0 +1,3 @@
+Cron Sim(ulator), a cron expression parser and evaluator. Works
+with Python 3.9+. CronSim is written for and being used in Healthchecks
+(a cron job monitoring service).

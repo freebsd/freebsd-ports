@@ -1,0 +1,15 @@
+In 1.1.5 version, the Neverball and Neverputt source trees have been merged
+into one. It includes 75 Neverball levels and 62 Neverputt levels.
+
+Neverball, tilt the floor to roll a ball through an obstacle course within the
+given time. It is part puzzle game, part action game, and entirely a test of
+skill. If the ball falls or time expires, a ball is lost. Collect coins to
+unlock the exit and earn extra balls. Red coins are worth 5. Blue coins are
+worth 10. A free ball is awarded for 100 coins.
+
+Neverputt, a hot-seat multiplayer miniature golf game using the physics and
+graphics of Neverball.
+
+Neverball and Neverputt are known to run under Linux, Win2K/XP, FreeBSD, and
+OSX. Hardware accelerated OpenGL with multitexture (OpenGL 1.2.1 or greater)
+is required. A 500MHz processor is recommended.

@@ -1,0 +1,11 @@
+--- doc/Makefile.orig	2023-05-23 12:54:52 UTC
++++ doc/Makefile
+@@ -38,7 +38,7 @@ sly.info: $(TEXI)
+ 	makeinfo $<
+ 
+ sly.html: $(TEXI)
+-	texi2html --css-include=sly.css $<
++	makeinfo -o $@ --css-include=sly.css --html --no-split $<
+ 
+ html/index.html: $(TEXI)
+ 	makeinfo -o html --css-include=sly.css --html $<

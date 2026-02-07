@@ -1,0 +1,45 @@
+# MAINTAINER: portmgr@FreeBSD.org
+#
+# @shell bin/shell
+#
+# Handle adding and remove a path to a shell binary into /etc/shells
+#
+
+actions: [file]
+post-install-lua: <<EOD
+  shell_path = pkg.prefixed_path("%@")
+  shell = assert(io.open("/etc/shells", "r+"))
+  while true do
+    line = shell:read()
+    if line == nil then break end
+    if line == shell_path then
+      -- the shell path is already in the shell file
+      shell:close()
+      return
+    end
+  end
+  assert(shell:write(shell_path .. "\n"))
+  assert(shell:close())
+EOD
+pre-deinstall-lua: <<EOD
+  shell_path = pkg.prefixed_path("%@")
+  shellsbuf = ""
+  shells_path = "/etc/shells"
+  shell = assert(io.open(shells_path, "r+"))
+  found = false
+  while true do
+    line = shell:read()
+    if line == nil then break end
+    if line == shell_path then
+      found = true
+    else
+      shellsbuf = shellsbuf .. line .. "\n"
+    end
+  end
+  assert(shell:close())
+  if found then
+    shell = assert(io.open(shells_path, "w+"))
+    assert(shell:write(shellsbuf))
+    assert(shell:close())
+  end
+EOD

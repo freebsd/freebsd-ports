@@ -1,0 +1,6 @@
+mime_pls is a perl library for MIME encode/decode, and provides
+perl functions in message header fields based RFC2047 and in
+message body based RFC2045.
+
+mimer.pl: MIME decoder library
+mimew.pl: MIME encoder library

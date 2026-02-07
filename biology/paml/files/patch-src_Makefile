@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2025-05-14 14:29:51 UTC
++++ src/Makefile
+@@ -1,6 +1,6 @@ PRGS =  baseml codeml basemlg mcmctree pamp evolver yn
+ PRGS =  baseml codeml basemlg mcmctree pamp evolver yn00 chi2
+-CC = gcc
+-CFLAGS = -O3 -Wall -Wno-unused-variable -Wno-unused-result
++#CC = gcc
++#CFLAGS = -O3 -Wall -Wno-unused-variable -Wno-unused-result
+ 
+ LIBS = -lm
+ 

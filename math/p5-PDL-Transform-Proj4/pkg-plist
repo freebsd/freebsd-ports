@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/PDL/Demos/Proj4_demo.pm
+%%SITE_ARCH%%/PDL/Transform/Proj4.pm
+%%SITE_ARCH%%/auto/PDL/Transform/Proj4/Proj4.so

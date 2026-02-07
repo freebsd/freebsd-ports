@@ -1,0 +1,10 @@
+bin/tivodecode
+bin/tdcat
+lib/libtivodecode.a
+include/tivodecode/tdconfig.h
+include/tivodecode/tivodecoder.h
+include/tivodecode/tivo-parse.h
+include/tivodecode/turing_stream.h
+include/tivodecode/Turing.h
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README

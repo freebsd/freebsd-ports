@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Math/Prime/XS.pm
+%%SITE_ARCH%%/auto/Math/Prime/XS/XS.so
+%%PERL5_MAN3%%/Math::Prime::XS.3.gz

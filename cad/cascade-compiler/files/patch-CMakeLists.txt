@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2020-01-06 00:29:10 UTC
++++ CMakeLists.txt
+@@ -35,7 +35,8 @@ set(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-cove
+ set(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
+ endif()
+ 
+-include_directories(${FLEX_INCLUDE_DIRS})
++#include_directories(${FLEX_INCLUDE_DIRS}) # cmake always finds base flex header:  https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=243068
++include_directories(${CMAKE_INSTALL_PREFIX}/include/flex)
+ include_directories(${CMAKE_BINARY_DIR}/src)
+ include_directories(.)
+ include_directories(src/cascade)
+@@ -43,5 +44,7 @@ include_directories(src/cascade)
+ add_subdirectory(include)
+ add_subdirectory(share)
+ add_subdirectory(src)
++if(${BUILD_TESTING})
+ add_subdirectory(test)
++endif()
+ add_subdirectory(tools)

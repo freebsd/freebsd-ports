@@ -1,0 +1,3 @@
+This module, Net::SNMP::Util, gives you functions of SNMP getting
+operation interfaces using Net::SNMP communicating with multiple
+hosts and multi-OIDs.

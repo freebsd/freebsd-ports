@@ -1,0 +1,3 @@
+A Python library that converts cron expressions into human
+readable strings. Ported to Python from
+https://github.com/bradyholt/cron-expression-descriptor.

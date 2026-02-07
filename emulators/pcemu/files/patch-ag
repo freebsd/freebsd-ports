@@ -1,0 +1,31 @@
+--- xstuff.c~	2014-08-09 05:59:27.430098652 +0200
++++ xstuff.c	2014-08-09 09:31:04.953397768 +0200
+@@ -20,6 +20,7 @@
+ #include <X11/Xatom.h>
+ #include <X11/keysym.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #include "icon.h"
+ #include "xstuff.h"
+--- mfs.h~	2014-08-09 05:59:27.458114679 +0200
++++ mfs.h	2014-08-09 09:28:43.352221269 +0200
+@@ -364,7 +364,7 @@
+ /* ### Split next difinition into read (..._r) and write (..._w) ### */
+ #define	cds_rootlen_r(cds)	(Read2Bytes(u_short,&cds[cds_rootlen_off]))
+ #define	cds_rootlen_w(cds,x)	(Write2Bytes(&cds[cds_rootlen_off], x))
+-#define drive_cds(dd) ((cds_t)(((int)cds_base)+(cds_record_size*(dd))))
++#define drive_cds(dd) ((cds_t)(((char *)cds_base)+(cds_record_size*(dd))))
+ 
+ #define CDS_FLAG_REMOTE		0x8000
+ #define CDS_FLAG_READY		0x4000
+--- mfs.c~	2014-08-09 05:59:27.413113444 +0200
++++ mfs.c	2014-08-09 09:30:14.864291464 +0200
+@@ -519,6 +519,7 @@
+ 
+ 
+ struct mydirect *dos_readdir(DIR *);
++int calculate_drive_pointers(int dd);
+ 
+ #if DOSEMU
+ int

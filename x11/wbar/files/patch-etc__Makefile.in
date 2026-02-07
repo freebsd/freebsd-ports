@@ -1,0 +1,11 @@
+--- ./etc/Makefile.in.orig	2013-02-04 16:47:28.000000000 +0100
++++ ./etc/Makefile.in	2013-02-04 16:47:45.000000000 +0100
+@@ -206,7 +206,7 @@
+ default_DATA = $(wbarcfg:.cfg.in=.cfg)
+ autostartdir = @DEFAULT_CONFIGDIR@
+ autostart_DATA = $(wbardesktop:.desktop.in.in=.desktop)
+-bashcompletiondir = /etc/bash_completion.d
++bashcompletiondir = ${PREFIX}/etc/bash_completion.d
+ bashcompletion_DATA = wbar
+ wbardesktop = wbar.desktop.in.in
+ wbarcfg = wbar.cfg.in

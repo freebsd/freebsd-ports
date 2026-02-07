@@ -1,0 +1,135 @@
+--- src/external/cpython/Makefile.pre.in	2025-10-20 18:41:32.000000000 -0700
++++ src/external/cpython/Makefile.pre.in	2025-10-20 19:52:41.710772000 -0700
+@@ -71,14 +71,14 @@
+ INSTALL_DATA=	@INSTALL_DATA@
+ # Shared libraries must be installed with executable mode on some systems;
+ # rather than figuring out exactly which, we always give them executable mode.
+-INSTALL_SHARED= ${INSTALL} -m 755
++INSTALL_SHARED= ${INSTALL} -s -m 755
+ 
+ MKDIR_P=	@MKDIR_P@
+ 
+ MAKESETUP=      $(srcdir)/Modules/makesetup
+ 
+ # Compiler options
+-OPT=		@OPT@
++OPT=		-DNDEBUG
+ BASECFLAGS=	@BASECFLAGS@
+ BASECPPFLAGS=	@BASECPPFLAGS@
+ CONFIGURE_CFLAGS=	@CFLAGS@
+@@ -586,7 +586,7 @@
+ # Default target
+ all:		@DEF_MAKE_ALL_RULE@
+ build_all:	check-clean-src $(BUILDPYTHON) platform oldsharedmods sharedmods \
+-		gdbhooks Programs/_testembed python-config
++		gdbhooks python-config
+ build_wasm: check-clean-src $(BUILDPYTHON) platform oldsharedmods python-config
+ 
+ # Check that the source is clean when building out of source.
+@@ -965,8 +965,8 @@
+ 	# using Tools/scripts/generate_re_casefix.py
+ 	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/scripts/generate_re_casefix.py $(srcdir)/Lib/re/_casefix.py
+ 
+-Programs/_testembed: Programs/_testembed.o $(LINK_PYTHON_DEPS)
+-	$(LINKCC) $(PY_CORE_LDFLAGS) $(LINKFORSHARED) -o $@ Programs/_testembed.o $(LINK_PYTHON_OBJS) $(LIBS) $(MODLIBS) $(SYSLIBS)
++: .o $(LINK_PYTHON_DEPS)
++	$(LINKCC) $(PY_CORE_LDFLAGS) $(LINKFORSHARED) -o $@ $(LINK_PYTHON_OBJS) $(LIBS) $(MODLIBS) $(SYSLIBS)
+ 
+ ############################################################################
+ # "Bootstrap Python" used to run deepfreeze.py
+@@ -1258,8 +1258,8 @@
+ Programs/python.o: $(srcdir)/Programs/python.c
+ 	$(MAINCC) -c $(PY_CORE_CFLAGS) -o $@ $(srcdir)/Programs/python.c
+ 
+-Programs/_testembed.o: $(srcdir)/Programs/_testembed.c Programs/test_frozenmain.h
+-	$(MAINCC) -c $(PY_CORE_CFLAGS) -o $@ $(srcdir)/Programs/_testembed.c
++.o: $(srcdir)/.c
++	$(MAINCC) -c $(PY_CORE_CFLAGS) -o $@ $(srcdir)/.c
+ 
+ Modules/_sre/sre.o: $(srcdir)/Modules/_sre/sre.c $(srcdir)/Modules/_sre/sre.h $(srcdir)/Modules/_sre/sre_constants.h $(srcdir)/Modules/_sre/sre_lib.h
+ 
+@@ -1753,7 +1753,7 @@
+ 			upgrade) ensurepip="--upgrade" ;; \
+ 			install|*) ensurepip="" ;; \
+ 		esac; \
+-		$(RUNSHARED) $(PYTHON_FOR_BUILD) -m ensurepip \
++		$(RUNSHARED) $(PYTHON_FOR_BUILD) -B -m ensurepip \
+ 			$$ensurepip --root=$(DESTDIR)/ ; \
+ 	fi
+ 
+@@ -1763,7 +1763,7 @@
+ 			upgrade) ensurepip="--altinstall --upgrade" ;; \
+ 			install|*) ensurepip="--altinstall" ;; \
+ 		esac; \
+-		$(RUNSHARED) $(PYTHON_FOR_BUILD) -m ensurepip \
++		$(RUNSHARED) $(PYTHON_FOR_BUILD) -B -m ensurepip \
+ 			$$ensurepip --root=$(DESTDIR)/ ; \
+ 	fi
+ 
+@@ -2144,37 +2144,9 @@
+ 		$(INSTALL_DATA) $(srcdir)/Modules/xxmodule.c \
+ 			$(DESTDIR)$(LIBDEST)/distutils/tests ; \
+ 	fi
+-	-PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -Wi $(DESTDIR)$(LIBDEST)/compileall.py \
+-		-j0 -d $(LIBDEST) -f \
+-		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
+-		$(DESTDIR)$(LIBDEST)
+ 	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -Wi -O $(DESTDIR)$(LIBDEST)/compileall.py \
+-		-j0 -d $(LIBDEST) -f \
+-		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
+-		$(DESTDIR)$(LIBDEST)
+-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -Wi -OO $(DESTDIR)$(LIBDEST)/compileall.py \
+-		-j0 -d $(LIBDEST) -f \
+-		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
+-		$(DESTDIR)$(LIBDEST)
+-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -Wi $(DESTDIR)$(LIBDEST)/compileall.py \
+-		-j0 -d $(LIBDEST)/site-packages -f \
+-		-x badsyntax $(DESTDIR)$(LIBDEST)/site-packages
+-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -Wi -O $(DESTDIR)$(LIBDEST)/compileall.py \
+-		-j0 -d $(LIBDEST)/site-packages -f \
+-		-x badsyntax $(DESTDIR)$(LIBDEST)/site-packages
+-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -Wi -OO $(DESTDIR)$(LIBDEST)/compileall.py \
+-		-j0 -d $(LIBDEST)/site-packages -f \
+-		-x badsyntax $(DESTDIR)$(LIBDEST)/site-packages
+-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt
+-	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
+-		$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt
++		$(PYTHON_FOR_BUILD) -B -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt
++		$(PYTHON_FOR_BUILD) -B -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt
+ 
+ # bpo-21536: Misc/python-config.sh is generated in the build directory
+ # from $(srcdir)Misc/python-config.sh.in.
+@@ -2235,7 +2207,7 @@
+ LIBPL=		@LIBPL@
+ 
+ # pkgconfig directory
+-LIBPC=		$(PREFIX)/libdata/pkgconfig
++LIBPC=		$(prefix)/libdata/pkgconfig
+ 
+ libainstall: all python-config
+ 	@for i in $(LIBDIR) $(LIBPL) $(LIBPC) $(BINDIR); \
+@@ -2292,7 +2264,7 @@
+ # Install the dynamically loadable modules
+ # This goes into $(exec_prefix)
+ sharedinstall: all
+-	$(RUNSHARED) $(PYTHON_FOR_BUILD) $(srcdir)/setup.py install \
++	$(RUNSHARED) $(PYTHON_FOR_BUILD) -B $(srcdir)/setup.py install \
+ 	   	--prefix=$(prefix) \
+ 		--install-scripts=$(BINDIR) \
+ 		--install-platlib=$(DESTSHARED) \
+@@ -2470,7 +2442,7 @@
+ 	-rm -f _bootstrap_python
+ 	-rm -f python.html python*.js python.data python*.symbols python*.map
+ 	-rm -f $(WASM_STDLIB)
+-	-rm -f Programs/_testembed Programs/_freeze_module
++	-rm -f Programs/_freeze_module
+ 	-rm -f Python/deepfreeze/*.[co]
+ 	-rm -f Python/frozen_modules/*.h
+ 	-rm -f Python/frozen_modules/MANIFEST

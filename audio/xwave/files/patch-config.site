@@ -1,0 +1,9 @@
+--- config.site.orig	1998-11-08 23:22:55 UTC
++++ config.site
+@@ -1,5 +1,5 @@
+ 
+-EXTRA_INCLUDES=-I../ -I../include
++EXTRA_INCLUDES=-I$(TOP) -I$(TOP)/include -I$(INCROOT)
+ 
+ XCOMM On sgi we need libaudio
+ XCOMM OSLIBS=-laudio

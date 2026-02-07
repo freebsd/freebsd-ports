@@ -1,0 +1,13 @@
+# Aladdin eToken PRO USB crypto token
+attach 100 {
+	device-name "ugen[0-9]+";
+	match "vendor" "0x0529";
+	match "product" "0x0514";
+	action "%%PREFIX%%/sbin/openct-control attach usb:529/514 usb /dev/$device-name";
+};
+detach 100 {
+	device-name "ugen[0-9]+";
+	match "vendor" "0x0529";
+	match "product" "0x0514";
+	action "/usr/bin/pkill -fx '%%PREFIX%%/sbin/ifdhandler -H [a-z0-9]+ usb /dev/$device-name'";
+};

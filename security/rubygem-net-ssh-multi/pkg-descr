@@ -1,0 +1,2 @@
+SSH connection multiplexing: execute commands simultaneously on multiple hosts
+via SSH.

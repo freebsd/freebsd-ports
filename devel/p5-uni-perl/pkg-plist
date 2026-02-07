@@ -1,0 +1,7 @@
+%%SITE_PERL%%/uni/perl.pm
+%%SITE_PERL%%/uni/perl/encodebase.pm
+%%SITE_PERL%%/uni/perl/dumper.pm
+%%SITE_PERL%%/uni/perl/ru.pm
+%%SITE_PERL%%/uni/perl/ua.pm
+%%SITE_PERL%%/uni/perl/utf.pm
+%%SITE_PERL%%/uni/perl/xd.pm

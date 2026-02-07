@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# PROVIDE: popa3d
+# REQUIRE: LOGIN cleanvar
+
+. /etc/rc.subr
+
+name="popa3d"
+rcvar="popa3d_enable"
+
+command="%%PREFIX%%/libexec/${name}"
+command_args="-D"
+: ${popa3d_enable="NO"}
+
+load_rc_config $name
+run_rc_command "$1"
+

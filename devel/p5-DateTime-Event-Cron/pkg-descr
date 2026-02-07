@@ -1,0 +1,2 @@
+DateTime::Event::Cron generated DateTime events or DateTime::Set objects based
+on crontab-style entries.

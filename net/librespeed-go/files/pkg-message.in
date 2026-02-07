@@ -1,0 +1,36 @@
+[
+{ type: install
+  message: <<EOM
+Copy your preferred example from %%EXAMPLESDIR%% to
+%%WWWDIR%%/index.html.
+To use the backend feature, be sure to copy a -full example.
+	cd %%EXAMPLESDIR%%
+	cp -a example-singleServer-full.html %%WWWDIR%%/index.html
+
+To automatically start librespeed-go at boot time:
+        sysrc librespeed_go_enable="YES"
+
+To start the service directly:
+        service librespeed-go start
+
+By default, librespeed-go daemon runs under user privilege so it cannot listen
+on the standard http port 80/tcp. You can expose 80/tcp to the daemon using
+packet forwarding by ipfw like below (recommended):
+	ipfw add fwd 127.0.0.1,8989 tcp from any to me 80 in
+
+Alternatively, you can configure the daemon to listen on 80/tcp if it is
+running with root privileges. 
+	sysrc librespeed_go_user=root
+
+EOM
+}
+{ type: remove
+  message: <<EOM
+If you are uninstalling librespeed-go permanently, and you do *NOT* want to
+retain the speedtest database and other your configured landing page, you
+should manually remove folliwing directories:
+    - /var/db/librespeed-go
+    - %%WWWDIR%%
+EOM
+}
+]

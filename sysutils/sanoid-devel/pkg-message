@@ -1,0 +1,16 @@
+[
+{
+  type: install
+  message: <<EOD
+
+ Sanoid requires additional configuration in the ${PREFIX}/etc/sanoid/sanoid.conf 
+ file.
+
+ A sample has been installed in ${PREFIX}/etc/sanoid/sanoid.conf.sample and
+ additional documentation can be found at the sanoid master site:
+ 
+   https://github.com/jimsalterjrs/sanoid
+
+EOD
+}
+]

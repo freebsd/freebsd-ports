@@ -1,0 +1,2 @@
+APPENDDEF(`conf_smrsh_ENVDEF', `-DCMDDIR="\"%%PREFIX%%/libexec/sm.bin\""')
+APPENDDEF(`conf_smrsh_ENVDEF', `-DPATH="\"/bin:/usr/bin\""')

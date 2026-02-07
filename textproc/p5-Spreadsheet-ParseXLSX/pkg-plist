@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Spreadsheet/ParseXLSX/Decryptor/Standard.pm
+%%SITE_PERL%%/Spreadsheet/ParseXLSX/Decryptor/Agile.pm
+%%SITE_PERL%%/Spreadsheet/ParseXLSX/Decryptor.pm
+%%SITE_PERL%%/Spreadsheet/ParseXLSX.pm
+%%PERL5_MAN3%%/Spreadsheet::ParseXLSX::Decryptor::Agile.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseXLSX::Decryptor::Standard.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseXLSX.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseXLSX::Decryptor.3.gz

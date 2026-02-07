@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+You may have to follow this steps to make it work correctly:
+
+1. Create the MySQL database:
+# mysqladmin --user=root create prosearch
+2. Create a mysql user/password for prosearch:
+   (change user and/or password if requered)
+# echo "GRANT ALL ON prosearch.* TO prosearch@localhost IDENTIFIED BY 'prosearch'; FLUSH PRIVILEGES;" | mysql
+4.# cp %%PREFIX%%/%%SEARCHDIR%%/config.pl.dist %%PREFIX%%/%%SEARCHDIR%%/config.pl
+5.# ee %%PREFIX%%/%%SEARCHDIR%%/config.pl
+6. install the default prosearch database:
+# perl crawler.pl install
+7. Add alias in apache config for the prosearch web dir:
+Alias /search "%%PREFIX%%/%%SEARCHDIR%%/web"
+or
+# cp %%PREFIX%%/%%SEARCHDIR%%/tools/search.conf %%PREFIX%%/etc/apache22/Includes/
+# ee %%PREFIX%%/etc/apache22/Includes/search.conf
+8. scan your resources
+# perl crawler.pl 10.0.0.0/24 ftp://files.net
+9. enjoy: http://your.site/search/ or cd web && perl index.cgi q=test
+EOM
+}
+]

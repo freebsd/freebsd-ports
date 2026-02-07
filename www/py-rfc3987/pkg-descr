@@ -1,0 +1,7 @@
+This module provides regular expressions according to RFC 3986 "Uniform Resource
+Identifier (URI): Generic Syntax" [1] and RFC 3987 "Internationalized Resource
+Identifiers (IRIs)" [2], and utilities for composition and relative resolution
+of references.
+
+[1] https://datatracker.ietf.org/doc/html/rfc3986
+[2] https://datatracker.ietf.org/doc/html/rfc3987

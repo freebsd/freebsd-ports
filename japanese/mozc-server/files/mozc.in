@@ -1,0 +1,71 @@
+#!/bin/sh
+: ${MOZCDIR:="${HOME}/.mozc"}
+
+# Mozc does not run by priviledged user.  Ignore silently.
+case $(id -u) in
+0)	exit 0 ;;
+esac
+
+mkdir -m 0700 -p "${MOZCDIR}"
+chmod 0700 "${MOZCDIR}"
+
+cleanup_lock()
+{
+	rm -f "${MOZCDIR}/.session.ipc" \
+	    "${MOZCDIR}/.server.lock" \
+	    "${MOZCDIR}/mozc_server.pid"
+}
+check_lock()
+{
+	if [ -r "${MOZCDIR}/.server.lock" ]; then
+		if [ -r "${MOZCDIR}/mozc_server.pid" ]; then
+			pid=$(cat "${MOZCDIR}/mozc_server.pid")
+			pid=" (PID=$pid)"
+		fi
+		printf "mozc_server is running%s.\n" "$pid" \
+		    > /dev/stderr
+		false
+	fi
+}
+start_cmd()
+{
+	daemon -c -f -p "${MOZCDIR}/mozc_server.pid" \
+	    "%%PREFIX%%/bin/mozc_server"
+}
+stop_server()
+{
+	if [ -r "${MOZCDIR}/mozc_server.pid" ]; then
+		pkill -F "${MOZCDIR}/mozc_server.pid"
+	else
+		for p in $(pgrep -U $(id -u) mozc_server); do
+			kill $p
+		done
+	fi
+}
+
+case $1 in
+start)
+	check_lock || exit 1
+	start_cmd
+;;
+forcestart|restart)
+	stop_server
+	cleanup_lock
+	start_cmd
+;;
+stop|forcestop)
+	stop_server
+	cleanup_lock
+;;
+status)
+	pid=$(pgrep -U $(id -u) mozc_server)
+	case $pid in
+	[0-9]*)	echo $pid && exit 0 ;;
+	*)	exit 1 ;;
+	esac
+;;
+*)
+	echo "$0 [start|stop|restart|forcestart|forcestop|status]"
+	exit 1
+;;
+esac

@@ -1,0 +1,11 @@
+--- configure.orig	2020-03-30 18:09:26 UTC
++++ configure
+@@ -67,7 +67,7 @@ pdfdir='${docdir}'
+ psdir='${docdir}'
+ libdir='${exec_prefix}lib/'
+ localedir='${datarootdir}locale/'
+-mandir='${datarootdir}man/'
++mandir='${prefix}man/'
+ snapdir='${srcdir}'
+ distdir='${srcdir}'
+ 

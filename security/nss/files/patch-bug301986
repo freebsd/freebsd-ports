@@ -1,0 +1,11 @@
+--- lib/util/nssilckt.h.orig	2018-08-31 12:55:53 UTC
++++ lib/util/nssilckt.h
+@@ -163,7 +163,7 @@ typedef enum {
+ ** Declare the trace record
+ */
+ struct pzTrace_s {
+-    PRUint32 threadID;       /* PR_GetThreadID() */
++    pthread_t threadID;      /* PR_GetThreadID() */
+     nssILockOp op;           /* operation being performed */
+     nssILockType ltype;      /* lock type identifier */
+     PRIntervalTime callTime; /* time spent in function */

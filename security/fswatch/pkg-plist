@@ -1,0 +1,11 @@
+bin/fswbuild
+bin/fswcmp
+bin/fswconf
+bin/fswshow
+@sample etc/fswatch.conf.sample
+share/man/man1/fswbuild.1.gz
+share/man/man1/fswcmp.1.gz
+share/man/man1/fswconf.1.gz
+share/man/man1/fswshow.1.gz
+share/man/man5/fswatch.conf.5.gz
+share/man/man7/fswatch.7.gz

@@ -1,0 +1,2 @@
+ActiveModel Validation for email.
+It validates email for application use (registering a new account for example).

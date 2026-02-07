@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Devel::RingBuffer.3.gz
+%%PERL5_MAN3%%/Devel::RingBuffer::Ring.3.gz
+%%SITE_ARCH%%/Devel/RingBuffer.pm
+%%SITE_ARCH%%/Devel/RingBuffer.pod
+%%SITE_ARCH%%/Devel/RingBuffer/Ring.pm
+%%SITE_ARCH%%/Devel/RingBuffer/Ring.pod
+%%SITE_ARCH%%/Devel/RingBuffer/ThreadFacade.pm
+%%SITE_ARCH%%/auto/Devel/RingBuffer/RingBuffer.so

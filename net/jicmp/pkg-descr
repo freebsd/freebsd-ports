@@ -1,0 +1,2 @@
+A Java native interface (JNI) to ICMP (ping), formerly a part of the base
+OpenNMS package.

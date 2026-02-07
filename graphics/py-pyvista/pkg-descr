@@ -1,0 +1,11 @@
+PyVista is a helper module for the Visualization Toolkit (VTK) that
+wraps the VTK library through NumPy and direct array access through
+a variety of methods and classes. This package provides a Pythonic,
+well-documented interface exposing VTK's powerful visualization
+backend to facilitate rapid prototyping, analysis, and visual
+integration of spatially referenced datasets.
+
+This module can be used for scientific plotting for presentations and
+research papers as well as a supporting module for other mesh 3D
+rendering dependent Python modules; see Connections for a list of
+projects that leverage PyVista.

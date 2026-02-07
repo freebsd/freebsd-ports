@@ -1,0 +1,32 @@
+--- src/smtp_in.c.orig	2017-03-08 16:31:57.587957000 +0000
++++ src/smtp_in.c	2017-03-08 16:43:44.934346000 +0000
+@@ -2246,6 +2246,9 @@
+ #ifdef USE_TCP_WRAPPERS
+ struct request_info tcpwrap_ri;
+ #endif
++#ifdef USE_TCP_WRAPPERS
++struct request_info tcpwrap_ri;
++#endif
+ 
+ smtp_connection_start = time(NULL);
+ for (smtp_ch_index = 0; smtp_ch_index < SMTP_HBUFF_SIZE; smtp_ch_index++)
+@@ -2602,11 +2605,14 @@
+     log_write(0, LOG_MAIN|LOG_PANIC_DIE, "Expansion of \"%s\" "
+       "(tcp_wrappers_name) failed: %s", string_printing(tcp_wrappers_name),
+         expand_string_message);
+-
+-  if (!hosts_ctl(tcp_wrappers_name,
+-         sender_host_name ? CS sender_host_name : STRING_UNKNOWN,
+-         sender_host_address ? CS sender_host_address : STRING_UNKNOWN,
+-         sender_ident ? CS sender_ident : STRING_UNKNOWN))
++    request_init(&tcpwrap_ri,
++         RQ_DAEMON, tcp_wrappers_name,
++         RQ_FILE, fileno(smtp_out),
++         RQ_CLIENT_NAME, (sender_host_name == NULL)? STRING_UNKNOWN : CS sender_host_name,
++         RQ_CLIENT_ADDR, (sender_host_address == NULL)? STRING_UNKNOWN : CS sender_host_address,
++         RQ_USER, (sender_ident == NULL)? STRING_UNKNOWN : CS sender_ident,
++         0);
++    if (!hosts_access(&tcpwrap_ri))
+     {
+     if (errno == 0 || errno == ENOENT)
+       {

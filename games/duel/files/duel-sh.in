@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# The executable needs to be run from its data directory, and needs to store
+# configuration in it. We therefore mirror the data directory hierarchy in
+# ~/.duel, and create symlinks to the data files, but the configuration file
+# is copied, and write permission for the user is added to it.
+
+cd %%DATADIR%% || exit 1
+
+find * -type d -exec mkdir -p ~/.duel/{} \; || exit 1
+
+for f in log.txt scores
+do
+	test -f ~/.duel/$f || cp $f ~/.duel && chmod u+w ~/.duel/$f
+done
+
+find * -type f -exec ln -s %%DATADIR%%/{} ~/.duel/{} \; 2>/dev/null || exit 1
+
+cd ~/.duel || exit 1
+
+exec %%PREFIX%%/libexec/duel "$@"

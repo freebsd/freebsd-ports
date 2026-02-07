@@ -1,0 +1,5 @@
+bmk is a build tool of the make family.
+It supports building projects made of multiple
+directories by treating included makefiles as
+modules integrated into the build, avoiding the
+recursive make pattern.

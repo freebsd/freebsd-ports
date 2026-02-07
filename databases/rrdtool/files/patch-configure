@@ -1,0 +1,31 @@
+--- configure.orig	2022-03-14 14:29:38 UTC
++++ configure
+@@ -22491,7 +22491,7 @@ fi
+ if test "${enable_ruby_site_install+set}" = set; then :
+   enableval=$enable_ruby_site_install; RUBY_MAKE_OPTIONS=
+ else
+-  RUBY_MAKE_OPTIONS="sitedir=$langpref/lib/ruby"
++  RUBY_MAKE_OPTIONS="PREFIX=$langpref INSTALL_BASE= LIB=$langpref/lib/ruby"
+ fi
+ 
+ 
+@@ -28807,19 +28807,6 @@ $as_echo_n "checking in... " >&6; }
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: and out again" >&5
+ $as_echo "and out again" >&6; }
+ 
+-echo $ECHO_N "ordering CD from https://tobi.oetiker.ch/wish $ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result:  just kidding ;-)" >&5
+-$as_echo " just kidding ;-)" >&6; }
+-echo
+ echo "----------------------------------------------------------------"
+ echo "Config is DONE!"
+ echo

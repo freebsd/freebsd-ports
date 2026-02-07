@@ -1,0 +1,63 @@
+--- configure.orig	2020-05-02 14:03:18 UTC
++++ configure
+@@ -4047,7 +4047,7 @@ case "${host}" in
+ 
+     DEFAULT_DEFAULT_wxUSE_MOTIF=1
+   ;;
+-  *-*-freebsd*)
++  *-*-dragonfly*|*-*-freebsd*)
+     USE_BSD=1
+     USE_FREEBSD=1
+     $as_echo "#define __FREEBSD__ 1" >>confdefs.h
+@@ -21657,6 +21657,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+ SEARCH_INCLUDE="\
++    $X11BASE/include          \
+     /usr/local/include        \
+     /usr/local/X11/include    \
+     /usr/local/include/X11    \
+@@ -22421,6 +22422,7 @@ else
+ 
+                     #include <png.h>
+                     #include <stdio.h>
++                    #include <stdlib.h>
+ 
+                     int main()
+                     {
+@@ -31499,9 +31501,6 @@ $as_echo "$as_me: WARNING: BeOS threads are not yet su
+                                         THREAD_OPTS="-pthreads $THREAD_OPTS"
+                 fi
+                 ;;
+-          *-*-freebsd*)
+-                                                THREAD_OPTS="-kthread lthread $THREAD_OPTS c_r"
+-                ;;
+           *-*-darwin* | *-*-cygwin* )
+                                                 THREAD_OPTS=""
+                 ;;
+@@ -32764,8 +32763,8 @@ else
+         fi
+     fi
+ fi
++OPTIMISE_CFLAGS=
+ 
+-
+ if test "x$WXWIN_COMPATIBILITY_2_6" = "xyes"; then
+     $as_echo "#define WXWIN_COMPATIBILITY_2_6 1" >>confdefs.h
+ 
+@@ -39001,6 +39000,7 @@ fi
+       ;;
+ 
+       powerpc-apple-macos* | \
++      *-*-dragonfly* | \
+       *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | *-*-gnu* | *-*-k*bsd*-gnu | \
+       *-*-mirbsd* | \
+       *-*-sunos4* | \
+@@ -39042,6 +39042,7 @@ fi
+ 
+     case "${BAKEFILE_HOST}" in
+       *-*-linux* | *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | \
++      *-*-dragonfly* | \
+       *-*-k*bsd*-gnu | *-*-mirbsd* | *-*-gnu* )
+         if test "x$SUNCXX" = "xyes"; then
+             SONAME_FLAG="-h "

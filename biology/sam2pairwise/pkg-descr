@@ -1,0 +1,2 @@
+sam2pairwise takes a SAM file and uses the CIGAR and MD tag to
+reconstruct the pairwise alignment of each read.

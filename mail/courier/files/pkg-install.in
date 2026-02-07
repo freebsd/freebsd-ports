@@ -1,0 +1,21 @@
+#!/bin/sh
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+USER=%%MAILOWN%%;	UID=%%MAILUID%%
+GROUP=%%MAILGRP%%;	GID=%%MAILGID%%
+
+if [ ":$2" = ":POST-INSTALL" ]; then
+    if [ "%%MAILCONFACT%%" = "y" ]; then
+        mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
+        echo "# created by courier's pkg-install"		>  /etc/mail/mailer.conf
+        echo -n "# Execute the Courier sendmail program"	>> /etc/mail/mailer.conf
+        echo ", named ${PKG_PREFIX}/bin/sendmail"		>> /etc/mail/mailer.conf
+        echo "#"						>> /etc/mail/mailer.conf
+        echo "sendmail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
+        echo "send-mail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
+        echo "mailq		${PKG_PREFIX}/bin/mailq"	>> /etc/mail/mailer.conf
+        echo "newaliases	${PKG_PREFIX}/sbin/makealiases"	>> /etc/mail/mailer.conf
+        echo "Done."
+    fi
+fi

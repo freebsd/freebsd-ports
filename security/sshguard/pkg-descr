@@ -1,0 +1,3 @@
+SSHGuard protects hosts from brute-force attacks against SSH and other
+services. It aggregates system logs and blocks repeat offenders using one of
+several firewall backends.

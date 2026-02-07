@@ -1,0 +1,7 @@
+include/blosc-export.h
+include/blosc.h
+%%STATIC%%lib/libblosc.a
+lib/libblosc.so
+lib/libblosc.so.%%VERSION%%
+lib/libblosc.so.%%SOVERSION%%
+libdata/pkgconfig/blosc.pc

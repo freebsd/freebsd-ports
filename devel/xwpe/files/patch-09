@@ -1,0 +1,27 @@
+--- we_fl_unix.c.orig	Wed Jun  5 11:53:50 2002
++++ we_fl_unix.c	Fri Jul 12 02:37:37 2002
+@@ -13,6 +13,10 @@
+ #include <sys/stat.h>
+ #include <errno.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ struct dirfile *e_make_win_list(FENSTER * f);
+ extern char    *e_tmp_dir;
+ 
+@@ -3532,7 +3536,12 @@
+  }
+  if ((!manpath) || (manpath[0] == '\0'))
+  {
+-  manpath = strdup("/usr/man:/usr/share/man:/usr/X11R6/man:/usr/local/man");
++  manpath = strdup(
++#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
++		"/usr/share/man:%%LOCALBASE%%/man:%%LOCALBASE%%/man");
++#else
++		"/usr/man:%%LOCALBASE%%/man:%%LOCALBASE%%/man");
++#endif
+  }
+  /* Allocate the maximum possible rather than continually realloc. */
+  sustr = malloc(strlen(manpath) + 10);

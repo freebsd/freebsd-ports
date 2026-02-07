@@ -1,0 +1,28 @@
+--- Makefile.orig	2020-01-26 03:31:12 UTC
++++ Makefile
+@@ -20,7 +20,7 @@ ifeq "$(GCCVER8)" "1"
+   BASEFLAGS += -Wno-class-memaccess
+ endif
+ 
+-LINKER  := $(if $(LINKER),$(LINKER),g++)
++LINKER  := $(if $(LINKER),$(LINKER),$(CXX))
+ 
+ LDFLAGS := $(if $(LDFLAGS),$(LDFLAGS),-g)
+ 
+@@ -151,7 +151,7 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
+ tmerge.o : rlink.h tmerge.h
+ tablemaker.o : tablemaker.h rlink.h
+ ${BAM}/libbam.a: 
+-	cd ${BAM} && make lib
++	cd ${BAM} && ${MAKE} lib
+ stringtie: ${BAM}/libbam.a $(OBJS) stringtie.o
+ 	${LINKER} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
+ 	@echo
+@@ -167,6 +167,6 @@ clean:
+ 	${RM} stringtie${EXE} stringtie.o*  $(OBJS)
+ 	${RM} core.*
+ allclean cleanAll cleanall:
+-	cd ${BAM} && make clean
++	cd ${BAM} && ${MAKE} clean
+ 	${RM} stringtie${EXE} stringtie.o* $(OBJS)
+ 	${RM} core.*

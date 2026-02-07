@@ -1,0 +1,119 @@
+;; -*- lisp -*-
+;;
+;; @(#)psgml-startup.el -- psgml startup elisp file.
+;;                                            --  by shige@FreeBSD.ORG
+
+;; setup load-path
+(if (not (fboundp 'normal-top-level-add-subdirs-to-load-path))
+    (setq load-path (append '(
+	"%%PSGML_LISPDIR%%"
+    ) load-path)))
+
+(defalias 'sgml-mode 'psgml-mode)
+(defalias 'xml-mode 'pxml-mode)
+
+(autoload 'psgml-mode "psgml" "Major mode to edit SGML files." t)
+(autoload 'pxml-mode "psgml" "Major mode to edit XML files." t)
+
+(setq auto-mode-alist
+      (append '(
+                ("\\.s?html?\\'" . sgml-mode)
+                ("\\.xml\\'"     . xml-mode)
+                ) auto-mode-alist))
+
+(setq sgml-custom-dtd
+  '(("HTML" "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML//EN\">")
+    ("HTML 2.0" "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">")
+    ("HTML 2.0 Level 1"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Level 1//EN\">")
+    ("HTML 2.0 Level 2"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Level 2//EN\">")
+    ("HTML 2.0 Strict Level 1"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Strict Level 1//EN\">")
+    ("HTML 2.0 Strict Level 2"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Strict Level 2//EN\">")
+    ("HTML 3.2" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2//EN\">")
+    ("HTML 4.0" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">")
+    ("HTML 4.0 Transitional"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">")
+    ("HTML 4.0 Frameset"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Frameset//EN\">")
+    ("HTML 4.01" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\">")
+    ("HTML 4.01 Transitional"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">")
+    ("HTML 4.01 Frameset"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\">")
+    ("XHTML 1.0 Strict"
+     "<?xml version=\"1.0\"?><!-- -*- xml -*- -->\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">")
+    ("XHTML 1.0 Transitional"
+     "<?xml version=\"1.0\"?><!-- -*- xml -*- -->\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">")
+    ("XHTML 1.0 Frameset"
+     "<?xml version=\"1.0\"?><!-- -*- xml -*- -->\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">")
+    ("DocBook V2.4.1"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V2.4.1//EN\">")
+    ("DocBook V3.0"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V3.0//EN\">")
+    ("DocBook V3.1"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASIS//DTD DocBook V3.1//EN\">")
+    ("DocBook V4.0"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASIS//DTD DocBook V4.0//EN\">")
+    ("DocBook V4.1"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASIS//DTD DocBook V4.1//EN\">")
+    ("LINUXDOC"
+     "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc//EN\">")
+    ("LINUXDOC 1.0"
+     "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc 1.0//EN\">")
+    ("LINUXDOC 1.1"
+     "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc 1.1//EN\">")
+    ("Article"
+     "<!DOCTYPE Article PUBLIC \"ISO 12083:1993//DTD Article//EN\">")
+    ("Book"
+     "<!DOCTYPE Book PUBLIC \"ISO 12083:1993//DTD Book//EN\">")
+    ("Mathematics"
+     "<!DOCTYPE Mathematics PUBLIC \"ISO 12083:1993//DTD Mathematics//EN\">")
+    ("Serial"
+     "<!DOCTYPE Serial PUBLIC \"ISO 12083:1993//DTD Serial//EN\">")
+    ))
+
+(setq-default sgml-auto-activate-dtd t)
+(setq-default sgml-set-face t)
+
+(make-face 'sgml-comment-face)
+(make-face 'sgml-doctype-face)
+(make-face 'sgml-end-tag-face)
+(make-face 'sgml-entity-face)
+(make-face 'sgml-ignored-face)
+(make-face 'sgml-ms-end-face)
+(make-face 'sgml-ms-start-face)
+(make-face 'sgml-pi-face)
+(make-face 'sgml-sgml-face)
+(make-face 'sgml-short-ref-face)
+(make-face 'sgml-start-tag-face)
+
+(set-face-foreground 'sgml-comment-face   "dark green")
+(set-face-foreground 'sgml-doctype-face   "maroon")
+(set-face-foreground 'sgml-end-tag-face   "SlateBlue")
+(set-face-foreground 'sgml-entity-face    "OrangeRed4")
+(set-face-foreground 'sgml-ignored-face   "maroon")
+(set-face-background 'sgml-ignored-face   "gray90")
+(set-face-foreground 'sgml-ms-end-face    "maroon")
+(set-face-foreground 'sgml-ms-start-face  "maroon")
+(set-face-foreground 'sgml-pi-face        "maroon")
+(set-face-foreground 'sgml-sgml-face      "maroon")
+(set-face-foreground 'sgml-short-ref-face "goldenrod")
+(set-face-foreground 'sgml-start-tag-face "SlateBlue")
+
+(setq-default sgml-markup-faces
+	      '((comment   . sgml-comment-face)
+		(doctype   . sgml-doctype-face)
+		(end-tag   . sgml-end-tag-face)
+		(entity    . sgml-entity-face)
+		(ignored   . sgml-ignored-face)
+		(ms-end    . sgml-ms-end-face)
+		(ms-start  . sgml-ms-start-face)
+		(pi        . sgml-pi-face)
+		(sgml      . sgml-sgml-face)
+		(short-ref . sgml-short-ref-face)
+		(start-tag . sgml-start-tag-face)))
+
+(provide 'psgml-startup)

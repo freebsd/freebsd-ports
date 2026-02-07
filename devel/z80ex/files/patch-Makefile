@@ -1,0 +1,48 @@
+--- ./Makefile.orig	2013-12-22 14:18:02.000000000 -0200
++++ ./Makefile	2013-12-22 14:18:22.000000000 -0200
+@@ -5,12 +5,12 @@
+ #################################################################
+ # You may tune these values to fit your setup:
+ #################################################################
+-INSTALL_PREFIX := /usr/local
++INSTALL_PREFIX := ${PREFIX}
+ TOOLS_PREFIX :=
+ 
+-CC := $(TOOLS_PREFIX)gcc 
+-LINKER := $(TOOLS_PREFIX)gcc
+-AR := $(TOOLS_PREFIX)ar
++CC := ${CC}
++LINKER := ${CC}
++AR := ${AR}
+ 
+ ALL_CFLAGS := -fPIC -fno-common -ansi -pedantic -Wall -pipe -O2 -I. -I./include 
+ 
+@@ -75,20 +75,20 @@
+ endif
+ 	
+ install:
+-	install -d ${INSTALL_PREFIX}/lib
+-	install ./lib/* ${INSTALL_PREFIX}/lib
+-	install -d ${INSTALL_PREFIX}/include/z80ex
+-	install -m 0664 ./include/* ${INSTALL_PREFIX}/include/z80ex
++	install -d ${DESTDIR}${INSTALL_PREFIX}/lib
++	install -s ./lib/* ${DESTDIR}${INSTALL_PREFIX}/lib
++	install -d ${DESTDIR}${INSTALL_PREFIX}/include/z80ex
++	install -m 0664 ./include/* ${DESTDIR}${INSTALL_PREFIX}/include/z80ex
+ ifeq (${OS},Darwin)
+ 	ln -sf ${EMU}.${VERSION_STR}.dylib ${INSTALL_PREFIX}/lib/${EMU}.${API_REVISION}.dylib
+ 	ln -sf ${EMU}.${VERSION_STR}.dylib ${INSTALL_PREFIX}/lib/${EMU}.dylib
+ 	ln -sf ${DASM}.${VERSION_STR}.dylib ${INSTALL_PREFIX}/lib/${DASM}.${API_REVISION}.dylib
+ 	ln -sf ${DASM}.${VERSION_STR}.dylib ${INSTALL_PREFIX}/lib/${DASM}.dylib	
+ else
+-	ln -sf ${EMU}.so.${VERSION_STR} ${INSTALL_PREFIX}/lib/${EMU}.so.${API_REVISION}
+-	ln -sf ${EMU}.so.${VERSION_STR} ${INSTALL_PREFIX}/lib/${EMU}.so
+-	ln -sf ${DASM}.so.${VERSION_STR} ${INSTALL_PREFIX}/lib/${DASM}.so.${API_REVISION}
+-	ln -sf ${DASM}.so.${VERSION_STR} ${INSTALL_PREFIX}/lib/${DASM}.so		
++	ln -sf ${EMU}.so.${VERSION_STR} ${DESTDIR}${INSTALL_PREFIX}/lib/${EMU}.so.${API_REVISION}
++	ln -sf ${EMU}.so.${VERSION_STR} ${DESTDIR}${INSTALL_PREFIX}/lib/${EMU}.so
++	ln -sf ${DASM}.so.${VERSION_STR} ${DESTDIR}${INSTALL_PREFIX}/lib/${DASM}.so.${API_REVISION}
++	ln -sf ${DASM}.so.${VERSION_STR} ${DESTDIR}${INSTALL_PREFIX}/lib/${DASM}.so		
+ endif	
+ 
+ dist: clean

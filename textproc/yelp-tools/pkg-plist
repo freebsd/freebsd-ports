@@ -1,0 +1,17 @@
+bin/yelp-build
+bin/yelp-check
+bin/yelp-new
+share/aclocal/yelp.m4
+share/yelp-tools/templates/task.page
+share/yelp-tools/xslt/mal-ncx.xsl
+share/yelp-tools/xslt/mal-opf.xsl
+share/yelp-tools/xslt/mal-rng.xsl
+%%DATADIR%%/templates/concept.duck
+%%DATADIR%%/templates/concept.page
+%%DATADIR%%/templates/guide.duck
+%%DATADIR%%/templates/guide.page
+%%DATADIR%%/templates/info.ducktype.include
+%%DATADIR%%/templates/info.mallard.include
+%%DATADIR%%/templates/reference.duck
+%%DATADIR%%/templates/reference.page
+%%DATADIR%%/templates/task.duck

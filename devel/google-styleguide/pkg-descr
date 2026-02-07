@@ -1,0 +1,12 @@
+This project holds the C++ Style Guide, Objective-C Style Guide, Java Style
+Guide, Python Style Guide, R Style Guide, Shell Style Guide, HTML/CSS Style
+Guide, JavaScript Style Guide, AngularJS Style Guide, Common Lisp Style Guide,
+and Vimscript Style Guide. This project also contains:
+- cpplint, a tool to assist with style guide compliance
+- google-c-style.el, an Emacs settings file for Google style
+- google_python_style.vim, a Vim settings to indent Python in the Google way
+
+If your project requires that you create a new XML document format, the XML
+Document Format Style Guide may be helpful. In addition to actual style rules,
+it also contains advice on designing your own vs. adapting an existing format,
+on XML instance document formatting, and on elements vs. attributes.

@@ -1,0 +1,6 @@
+%%TWDIR%%/data/Sandbox/LDAPPasswordChangerPlugin.txt
+%%TWDIR%%/data/TWiki/LDAPPasswordChangerPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/LDAPPasswordChangerPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/LDAPPasswordChangerPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/LDAPPasswordChangerPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/LDAPPasswordChangerPlugin/build.pl

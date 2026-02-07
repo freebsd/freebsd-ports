@@ -1,0 +1,2 @@
+The lack of open-source CLI tooling to handle digitally signing and stamping PDF
+files was bothering me, so I went ahead and rolled my own.

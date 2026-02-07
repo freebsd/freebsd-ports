@@ -1,0 +1,3 @@
+flake8-polyfill is a package that provides some compatibility helpers
+for Flake8 plugins that intend to support Flake8 2.x and 3.x
+simultaneously.

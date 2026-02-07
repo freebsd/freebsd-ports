@@ -1,0 +1,15 @@
+What is Teleport?
+=================
+Teleport is a gateway for managing access to clusters of *nix servers via
+SSH or the Kubernetes API. While it does also support connecting to
+servers running traditional OpenSSH, its own node deamon is intended to be
+used instead for additional functionality.
+
+With Teleport it is simple to adopt SSH best practices like using
+certificate-based access and enabling 2FA via TOTP (e.g. Google
+Authenticator), U2F or an SSO provider. Cluster nodes can be accessed via
+a CLI (tsh) or a Web UI which both allow for session sharing.
+
+Teleport provides centralized user management as well as full session
+recordings that can be played back for knowledge sharing or auditing
+purposes. It can also be used to protect Web applications like dashboards.

@@ -1,0 +1,32 @@
+PORTNAME=	check_hp_bladechassis
+PORTVERSION=	1.0.1
+PORTREVISION=	1
+CATEGORIES=	net-mgmt
+MASTER_SITES=	http://folk.uio.no/trondham/software/files/ \
+		ZI
+PKGNAMEPREFIX=	nagios-
+
+MAINTAINER=	zi@FreeBSD.org
+COMMENT=	Nagios Plugin to monitor your HP Blade Enclosure
+WWW=		http://folk.uio.no/trondham/software/check_hp_bladechassis.html
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
+
+USES=		perl5 shebangfix
+USE_PERL5=	run
+NO_BUILD=	yes
+
+PLIST_FILES=	libexec/nagios/check_hp_bladechassis share/man/man8/check_hp_bladechassis.8.gz
+SHEBANG_FILES=	check_hp_bladechassis
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${WRKSRC}/check_hp_bladechassis \
+		${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_MAN} ${WRKSRC}/check_hp_bladechassis.8 \
+		${STAGEDIR}${PREFIX}/share/man/man8
+
+.include <bsd.port.mk>

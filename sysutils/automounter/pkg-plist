@@ -1,0 +1,6 @@
+etc/automounter.conf.sample
+etc/devd/automounter.conf
+etc/rc.d/automounter
+sbin/automounter
+share/man/man5/automounter.conf.5.gz
+share/man/man8/automounter.8.gz

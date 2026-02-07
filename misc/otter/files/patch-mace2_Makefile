@@ -1,0 +1,22 @@
+--- mace2/Makefile.orig	2004-02-09 20:30:15 UTC
++++ mace2/Makefile
+@@ -1,8 +1,8 @@
+ DFLAGS = -DTP_NAMES -DTP_SIGNAL -DTP_RUSAGE
+ 
+-CC = gcc
++CC ?= gcc
+ 
+-CFLAGS = -O $(DFLAGS)
++CFLAGS += $(DFLAGS)
+ 
+ # CFLAGS = -g $(DFLAGS)
+ 
+@@ -23,7 +23,7 @@ anldp: anldp.o $(OBJECTS)
+ mace2.o anldp.o $(OBJECTS): Mace2.h Clock.h Avail.h Opts.h Stats.h\
+ 	Miscellany.h Dp.h Generate.h Flatten.h Part.h
+ 
+-install:
++install: mace2 anldp mace2 anldp
+ 	/bin/mv mace2 anldp ../bin
+ 
+ clean:

@@ -1,0 +1,73 @@
+--- CMakeLists.txt.orig	2020-05-26 19:25:37 UTC
++++ CMakeLists.txt
+@@ -72,8 +72,7 @@ endif(ENABLE_SDL2 MATCHES "BUNDLED")
+ 
+ if(ENABLE_SOUND MATCHES "ON")
+ 	# FIXME applies only for *nix systems
+-	find_package(PkgConfig)
+-	pkg_check_modules(SDL2_MIXER REQUIRED SDL2_mixer>=2.0.4)
++	find_package(SDL2_mixer REQUIRED)
+ 	add_definitions(-DUSE_SDL_MIXER=1)
+ endif(ENABLE_SOUND MATCHES "ON")
+ if(ENABLE_SOUND MATCHES "BUNDLED")
+@@ -86,8 +85,10 @@ endif(ENABLE_SOUND MATCHES "BUNDLED")
+ 
+ if(ENABLE_FLUIDSYNTH MATCHES "ON")
+ 	find_package(PkgConfig)
+-	pkg_check_modules(FLUIDSYNTH REQUIRED fluidsynth)
++	pkg_check_modules(PC_FLUIDSYNTH REQUIRED fluidsynth)
+ 	add_definitions("-DUSE_FLUIDSYNTH=1")
++	find_path(FLUIDSYNTH_INCLUDE_DIRS fluidsynth.h HINTS ${PC_FLUIDSYNTH_INCLUDE_DIRS} REQUIRED)
++	find_library(FLUIDSYNTH_LIBRARIES fluidsynth HINTS ${PC_FLUIDSYNTH_LIBRARY_DIRS} REQUIRED)
+ endif(ENABLE_FLUIDSYNTH MATCHES "ON")
+ if(ENABLE_FLUIDSYNTH MATCHES "BUNDLED")
+         find_library(FLUIDSYNTH_LIBRARY fluidsynth PATHS ${CMAKE_SOURCE_DIR}/build_ext/fluidsynth-lite/src)
+@@ -312,8 +313,8 @@ add_executable(movinfo
+ target_link_libraries(playmov
+ 	AFILE_LIB
+ 	FIX_LIB
+-	${SDL2_LIBRARIES}
+-	${SDL2_MIXER_LIBRARIES}
++	SDL2::SDL2
++	SDL2_mixer::SDL2_mixer
+ )
+ 
+ target_link_libraries(movinfo
+@@ -332,7 +333,7 @@ target_link_libraries(TestSimpleMain
+ 	RES_LIB
+ 	FIX_LIB
+ 	LG_LIB
+-	${SDL2_LIBRARIES}
++	SDL2::SDL2
+ )
+ 
+ add_executable(BoxTest
+@@ -346,7 +347,7 @@ target_link_libraries(BoxTest
+ 	RES_LIB
+ 	FIX_LIB
+ 	LG_LIB
+-	${SDL2_LIBRARIES}
++	SDL2::SDL2
+ )
+ 
+ add_executable(BitmapTest
+@@ -360,7 +361,7 @@ target_link_libraries(BitmapTest
+ 	RES_LIB
+ 	FIX_LIB
+ 	LG_LIB
+-	${SDL2_LIBRARIES}
++	SDL2::SDL2
+ )
+ 
+ add_executable(FixTest
+@@ -410,8 +411,8 @@ target_link_libraries(systemshock
+ 	EDMS_LIB
+ 	FIXPP_LIB
+ 	ADLMIDI_LIB
+-	${SDL2_LIBRARIES}
+-	${SDL2_MIXER_LIBRARIES}
++	SDL2::SDL2
++	SDL2_mixer::SDL2_mixer
+ 	${FLUIDSYNTH_LIBRARIES}
+ 	${OPENGL_LIBRARIES}
+ 	${ALSA_LIBRARIES}

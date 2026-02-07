@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: galene
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=galene
+rcvar=${name}_enable
+desc="Visioconference server"
+
+load_rc_config "${name}"
+
+: ${galene_enable:="NO"}
+: ${galene_user:="%%USERS%%"}
+: ${galene_group:="%%GROUPS%%"}
+: ${galene_static:="%%DATADIR%%"}
+: ${galene_http:=":8443"}
+: ${galene_data:="/var/db/galene/data"}
+: ${galene_groups:="/var/db/galene/groups"}
+: ${galene_recordings:="/var/db/galene/recordings"}
+
+pidfile=/var/run/galene.pid
+procname="%%PREFIX%%/bin/galene"
+command="/usr/sbin/daemon"
+command_args="-cf -S -p ${pidfile} ${procname} -static ${galene_static} -http ${galene_http} -data ${galene_data} -groups ${galene_groups} -recordings ${galene_recordings} ${galene_args}"
+
+galene_startprecmd()
+{
+	if [ ! -e ${pidfile} ]; then
+		install -o ${galene_user} -g ${galene_group} /dev/null ${pidfile};
+	fi
+}
+
+start_precmd=galene_startprecmd
+run_rc_command "$1"

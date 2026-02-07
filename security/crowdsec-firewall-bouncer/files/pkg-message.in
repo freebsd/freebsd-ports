@@ -1,0 +1,55 @@
+[
+{ type: install
+  message: <<EOM
+
+crowdsec-firewall-bouncer is installed.
+
+Note: If you are using OPNsense or pfSense, ignore the following instructions and use the settings page of the
+CrowdSec plugin.
+
+-----
+
+If you are running crowdsec on this machine, the bouncer will register itself with
+the Local API when it's started the first time.
+
+If the LAPI is on a different machine, you need to manually register the bouncer
+and fill api_key and api_url in %%ETCDIR%%/crowdsec-firewall-bouncer.yaml before
+starting the service.
+
+This package depends on the Packet Filter service.
+To make sure it's active:
+
+----------
+# service pf enable
+pf enabled in /etc/rc.conf
+# service pf start
+Enabling pf.
+----------
+
+Add the following in /etc/pf.conf to create the firewall tables and rules. If the start
+command complained about missing pf.conf, you'll have to run it again.
+
+----------
+table <crowdsec-blacklists> persist
+table <crowdsec6-blacklists> persist
+block drop in quick from <crowdsec-blacklists> to any
+block drop in quick from <crowdsec6-blacklists> to any
+----------
+
+If you already have any pass rule, you may want to put the block rules before them.
+
+To apply the file:
+
+# pfctl -f /etc/pf.conf
+
+Then activate the bouncer service and run it:
+
+----------
+# service crowdsec_firewall enable
+crowdsec_firewall enabled in /etc/rc.conf
+# service crowdsec_firewall start
+----------
+
+EOM
+}
+]

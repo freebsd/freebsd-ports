@@ -1,0 +1,3 @@
+Registers several mail folder types that are known as network based
+messaging protocols. Folder names for these protocols should be
+specified using a URI syntax.

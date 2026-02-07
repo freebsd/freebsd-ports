@@ -1,0 +1,9 @@
+Each of the files found in this directory are a JSON file that contains
+all of the information related to a Kibana dashboard. This usually has
+information about the following artifacts:
+
+- Original indexes where the information come from.
+- Searches on those indexes that provide a sub-set of the information.
+- Widgets either built on top of the original indexes or on top of the
+  searches.
+- Final panels that are an aggregation of several widgets.

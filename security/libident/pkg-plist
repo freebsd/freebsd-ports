@@ -1,0 +1,7 @@
+include/ident.h
+lib/libident.a
+lib/libident.so
+lib/libident.so.0
+lib/libident.so.0.0.0
+share/man/man3/ident.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,0 +1,19 @@
+(Following sentences are from a2ps.pl-1.45.)
+
+Copyright (c) 2001 Kazumasa Utashiro <utashiro@srekcah.org>
+Copyright (c) 1990-1999 Kazumasa Utashiro
+Internet Initiative Japan Inc.
+3-13 Kanda Nishiki-cho, Chiyoda-ku, Tokyo 101-0054, Japan
+
+This program is perl version of Miguel Santana's a2ps.  Postscript
+kanji enhancement was done by Naoki Kanazawa <kanazawa@sra.co.jp>.
+Converted to perl and enhanced by Kazumasa Utashiro.  B4 support
+and punchmark was contributed by Masami Ueno
+<cabbage@kki.esi.yamanashi.ac.jp>.
+
+Use and redistribution for ANY PURPOSE, with or without
+modification, is granted as long as all copyright notices are
+retained.  Although, it is strongly recommended to make it
+obviously distinguishable from the original one when distributing
+modified version.  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS
+IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES ARE DISCLAIMED.

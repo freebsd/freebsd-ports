@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2021-06-11 15:17:18 UTC
++++ Makefile.in
+@@ -43,10 +43,10 @@ clean: 
+ 
+ install:
+ 	@echo "-----"
+-	@echo "TinyOWS Schema install dir in $(PREFIX)/share/tinyows/schema"
+-	mkdir -p $(PREFIX)/share/tinyows
+-	rm -rf $(PREFIX)/share/tinyows/schema
+-	cp -rf schema $(PREFIX)/share/tinyows/
++	@echo "TinyOWS Schema install dir in $(DESTDIR)$(PREFIX)/share/tinyows/schema"
++	mkdir -p $(DESTDIR)$(PREFIX)/share/tinyows
++	rm -rf $(DESTDIR)$(PREFIX)/share/tinyows/schema
++	cp -rf schema $(DESTDIR)$(PREFIX)/share/tinyows/
+ 	@echo "-----"
+ 	@echo "Now:"
+ 	@echo " 1) copy 'tinyows' binary to cgi-bin directory"

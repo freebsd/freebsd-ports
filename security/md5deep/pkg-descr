@@ -1,0 +1,6 @@
+md5deep is a cross-platform set of programs to compute
+various types of message digests on an arbitrary
+number of files. The programs run on Windows, Linux, *BSD,
+OS X, Solaris, and should run on most other platforms.
+md5deep is similar to the md5sum program found in the
+GNU Coreutils package, but has many additional features.

@@ -1,0 +1,10 @@
+--- deps/eredis/src/eredis.app.src.orig	2018-09-12 08:21:41 UTC
++++ deps/eredis/src/eredis.app.src
+@@ -1,6 +1,6 @@
+ {application, eredis, [
+     {description, "Erlang Redis Client"},
+-    {vsn, "1.1.0"},
++    {vsn, "1.2.0"},
+     {modules, [eredis, eredis_client, eredis_parser, eredis_sub, eredis_sub_client]},
+     {registered, []},
+     {applications, [kernel, stdlib]},

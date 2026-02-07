@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-04-09 22:10:21 UTC
++++ pyproject.toml
+@@ -12,7 +12,7 @@ dependencies = [
+ requires-python = ">=3.8.1"
+ dependencies = [
+     "tomli; python_version < '3.11'",
+-    "flake8 == 7.0.0"
++    "flake8 >= 7.0.0"
+ ]
+ 
+ [project.urls]

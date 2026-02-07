@@ -1,0 +1,6 @@
+#!/bin/sh
+
+JAVA= "%%LOCALBASE%%/bin/java"
+export JAVA_VERSION="%%JAVA_VERSION%%"
+
+exec "${JAVA}" -jar %%JARFILE%% -c %%LOCALBASE%%/bin/uctags $*

@@ -1,0 +1,32 @@
+--- texk/ttf2pk2/Makefile.in.orig	2023-03-01 22:59:32 UTC
++++ texk/ttf2pk2/Makefile.in
+@@ -115,9 +115,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
+-	"$(DESTDIR)$(cfgdatadir)" "$(DESTDIR)$(encdatadir)" \
+-	"$(DESTDIR)$(mapdatadir)" "$(DESTDIR)$(sfddatadir)"
++am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ am__objects_1 = errormsg.$(OBJEXT) filesrch.$(OBJEXT) ftlib.$(OBJEXT) \
+ 	ligkern.$(OBJEXT) newobj.$(OBJEXT) parse.$(OBJEXT) \
+@@ -1350,7 +1348,7 @@ installdirs:
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(cfgdatadir)" "$(DESTDIR)$(encdatadir)" "$(DESTDIR)$(mapdatadir)" "$(DESTDIR)$(sfddatadir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -1426,8 +1424,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-dist_cfgdataDATA install-dist_encdataDATA \
+-	install-dist_mapdataDATA install-dist_sfddataDATA install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

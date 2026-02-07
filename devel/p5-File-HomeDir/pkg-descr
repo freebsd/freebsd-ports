@@ -1,0 +1,4 @@
+File::HomeDir -- get home directory for self or other users
+
+This module provides a function, home, and also ties the in-all-packages
+variable %~.

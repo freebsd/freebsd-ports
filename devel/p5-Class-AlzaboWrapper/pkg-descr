@@ -1,0 +1,2 @@
+This module is intended for use as a base class when you are writing a class
+that wraps Alzabo's table and row classes.

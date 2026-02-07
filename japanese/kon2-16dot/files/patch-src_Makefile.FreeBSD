@@ -1,0 +1,33 @@
+--- src/Makefile.FreeBSD.orig	1997-01-30 01:29:25.000000000 +0000
++++ src/Makefile.FreeBSD	2019-11-22 22:25:55.221854000 +0000
+@@ -1,12 +1,17 @@
+ # FreeBSD makefile for kon
+ # Tatsumi Hosokawa <hosokawa@jp.FreeBSD.org>
+ 
++.include <bsd.own.mk>
++
+ PROG=	kon
+-BINOWN=		root
+-BINMODE=	4555
+-SRCS=	vt.c sock.c fnld.c vc.c mouse.c term.c main.c utmp.c errors.c child.c
++SRCS=	vt.c sock.c fnld.c vc.c mouse.c term.c main.c errors.c child.c
++.if exists(${INCLUDEDIR}/utmpx.h)
++SRCS+=	utmpx.c
++.else
++SRCS+=	utmp.c
++.endif
+ LIBS+=	-L${.CURDIR}/display -L${.CURDIR}/../lib -ldisplay -lgon
+-NOMAN=	YES
++MAN=
+ CFLAGS+=	-I${.CURDIR}/../include
+ CLEANFILES=	Makefile
+ 
+@@ -27,5 +32,8 @@
+ .if exists(${.CURDIR}/../.config)
+ .include "${.CURDIR}/../.config"
+ .endif
++
++install: ${PROG}
++	/usr/bin/install -s ${PROG} ${BINDIR}
+ 
+ .include <bsd.prog.mk>

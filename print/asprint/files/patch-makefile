@@ -1,0 +1,30 @@
+--- makefile.orig	Fri Mar 14 19:34:48 1997
++++ makefile	Wed Jun 21 02:59:31 2000
+@@ -1,18 +1,17 @@
+ .KEEP_STATE:
+ 
+-CFLAGS = -O2
+-CC = gcc
+-XLIB = -L/usr/X11/lib  -lXaw3d -lXmu -lXt
+-
++CFLAGS ?= -O2
++CC ?= gcc
++XLIB = -L$(LOCALBASE)/lib  -lXaw -lXmu -lXt
++XLIB+= -Wl,-rpath,$(LOCALBASE)/lib
+ OBJS = asprint.o
+-INCS = 
+-
+-default : asprint  ./makefile
+-clean:
+-	rm -f $(OBJS) *~ asprint core
++INCS = -I$(LOCALBASE)/include
+ 
+ asprint: $(OBJS)
+ 	$(CC) -o asprint $(CFLAGS) $(OBJS) $(XLIB)
+ 
++clean:
++	rm -f $(OBJS) *~ asprint core
++
+ .c.o: 
+-	$(CC) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $(INCS) $<

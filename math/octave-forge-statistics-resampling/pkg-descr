@@ -1,0 +1,10 @@
+The octave-forge package is the result of The GNU Octave Repository project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is statistics-resampling.
+
+ Estimate bias, uncertainty (standard errors and confidence intervals) and
+test hypotheses (p-values) using resampling methods. (Note that versions of
+this package <= 5.4.3 are named the statistics-bootstrap package).

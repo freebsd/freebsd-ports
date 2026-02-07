@@ -1,0 +1,11 @@
+etc/snoopy.ini
+lib/libsnoopy.so
+lib/libsnoopy.so.0
+lib/libsnoopy.so.0.0.0
+sbin/snoopyctl
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/FILTER_exclude_spawns_of.md
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md

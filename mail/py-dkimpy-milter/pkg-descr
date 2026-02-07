@@ -1,0 +1,2 @@
+This is a DKIM signing and verification milter. It has been tested
+with both Postfix and Sendmail.

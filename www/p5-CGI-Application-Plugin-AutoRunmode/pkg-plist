@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/CGI::Application::Plugin::AutoRunmode.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AutoRunmode::FileDelegate.3.gz
+%%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode/FileDelegate.pm

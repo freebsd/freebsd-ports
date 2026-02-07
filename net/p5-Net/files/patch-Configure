@@ -1,0 +1,12 @@
+--- Configure.orig	2014-05-30 22:05:23 UTC
++++ Configure
+@@ -267,8 +267,7 @@
+ Do you want to modify/update your configuration (y|n) ?
+ EDQ
+ 
+- $opt_d = 1
+-        unless get_bool($msg,0);
++ $opt_d = 1;
+  }
+ 
+ #---------------------------------------------------------------------------

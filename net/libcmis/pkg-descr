@@ -1,0 +1,3 @@
+LibCMIS is a C++ client library for the CMIS interface. This allows C++
+applications to connect to any ECM behaving as a CMIS server like Alfresco,
+Nuxeo for the open source ones.

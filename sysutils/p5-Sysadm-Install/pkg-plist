@@ -1,0 +1,3 @@
+bin/one-liner
+%%SITE_PERL%%/Sysadm/Install.pm
+%%PERL5_MAN3%%/Sysadm::Install.3.gz

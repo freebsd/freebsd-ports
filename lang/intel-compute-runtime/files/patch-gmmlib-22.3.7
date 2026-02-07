@@ -1,0 +1,22 @@
+Chase https://github.com/intel/gmmlib/commit/861d5b2318ec
+until https://github.com/intel/compute-runtime/commit/cfe51ff2ba97
+
+--- shared/source/gen8/hw_info_bdw.cpp.orig	2022-06-08 12:04:46 UTC
++++ shared/source/gen8/hw_info_bdw.cpp
+@@ -17,11 +17,11 @@ bool isSimulationBDW(unsigned short deviceId) {
+ 
+ bool isSimulationBDW(unsigned short deviceId) {
+     switch (deviceId) {
+-    case IBDW_GT0_DESK_DEVICE_F0_ID:
+-    case IBDW_GT1_DESK_DEVICE_F0_ID:
+-    case IBDW_GT2_DESK_DEVICE_F0_ID:
+-    case IBDW_GT3_DESK_DEVICE_F0_ID:
+-    case IBDW_GT4_DESK_DEVICE_F0_ID:
++    case 0x0BD0:
++    case 0x0BD1:
++    case 0x0BD2:
++    case 0x0BD3:
++    case 0x0BD4:
+         return true;
+     }
+     return false;

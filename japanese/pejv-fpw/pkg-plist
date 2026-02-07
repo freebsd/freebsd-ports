@@ -1,0 +1,5 @@
+share/dict/pejv-fpw/pejv/data/honmon
+share/dict/pejv-fpw/catalogs
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%%%DOCSDIR%%/legumin.doc
+%%PORTDOCS%%%%DOCSDIR%%/pejvo.doc

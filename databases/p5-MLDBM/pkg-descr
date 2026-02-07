@@ -1,0 +1,9 @@
+MLDBM - store multi-level hash structure in single level tied hash
+
+This module, intended primarily for use with DBM packages, can serve as a
+transparent interface to any TIEHASH package that must be used to
+store arbitrary perl data, including nested references.
+
+It works by converting the values in the hash that are references, to their
+string representation in perl syntax.  When using a DBM database, it is this
+string that gets stored.

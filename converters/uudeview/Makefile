@@ -1,0 +1,54 @@
+PORTNAME=	uudeview
+PORTVERSION=	0.5.20
+PORTREVISION=	1
+CATEGORIES=	converters
+MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Program for uu/xx/Base64/BinHex/yEnc de-/encoding
+WWW=		http://www.fpx.de/fp/Software/UUDeview/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe
+
+LIB_DEPENDS=	libuu.so:converters/uulib
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=	--disable-tcl
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTDOCS=	HISTORY porting.notes
+PLIST_FILES=	bin/uudeview bin/uuenview share/man/man1/uudeview.1.gz \
+		share/man/man1/uuenview.1.gz
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+# Try and catch some of the different places that inn and cnews put inews
+.if exists(${PREFIX}/bin/inews)
+# cnews
+CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/bin/inews
+.else
+# inn by default
+CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/news/lib/inews
+.endif
+
+post-configure:
+	@${REINPLACE_CMD} -E '/INSTALL_/ s,(BIN|MAN)DIR,DESTDIR\)$$\(&,g' \
+		${WRKSRC}/Makefile
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uudeview
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uuenview
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/HISTORY ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/porting.notes ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.post.mk>

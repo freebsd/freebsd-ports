@@ -1,0 +1,13 @@
+TIMESTAMP = 1768894212
+SHA256 (paullouisageneau-libdatachannel-v0.24.1_GH0.tar.gz) = e6fc363497a41b5dce38602937c12d30e5e536943cf09c5ee5671c8f206eee08
+SIZE (paullouisageneau-libdatachannel-v0.24.1_GH0.tar.gz) = 52651536
+SHA256 (SergiusTheBest-plog-94899e0_GH0.tar.gz) = 6dc8e7b8c5fccf83aebeec780dbc9f81112b3b33f29b369469ee9728ea737fdf
+SIZE (SergiusTheBest-plog-94899e0_GH0.tar.gz) = 206453
+SHA256 (sctplab-usrsctp-fec583d_GH0.tar.gz) = 2ef2533809f4f1609c813c9266735520a7240a2799ba2f0ea6b7f7b99a962b24
+SIZE (sctplab-usrsctp-fec583d_GH0.tar.gz) = 773019
+SHA256 (paullouisageneau-libjuice-5948a41_GH0.tar.gz) = e5d5d2356da02c476ced5efad1e19ca0c9606acfe4a80280c328e30e102bfcd6
+SIZE (paullouisageneau-libjuice-5948a41_GH0.tar.gz) = 107282
+SHA256 (nlohmann-json-55f9368_GH0.tar.gz) = cb103964c3cfb351c39c7e7b2944a0f43eccd51d9a46bb0c12ab64af1720da52
+SIZE (nlohmann-json-55f9368_GH0.tar.gz) = 9678663
+SHA256 (cisco-libsrtp-ee1a77c_GH0.tar.gz) = 7bb29450a496f14a0c8d216345e349caa16d769bdfb163f43ff865cb43f80a89
+SIZE (cisco-libsrtp-ee1a77c_GH0.tar.gz) = 640994

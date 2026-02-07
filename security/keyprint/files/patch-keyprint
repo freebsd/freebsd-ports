@@ -1,0 +1,25 @@
+--- keyprint.orig	2017-05-09 16:34:33.966382000 -0600
++++ keyprint	2017-05-09 16:34:57.987755000 -0600
+@@ -10,18 +10,14 @@ $|=1;
+ 
+ @ENV{'PATH'}='/usr/bin';
+ 
+-$username=$ARGV[0] || `whoami`;
+-$username =~ /(\w+)/;
+-$username = $1;
+-
+-open(NAMES, "$dir/keyinfo $username|")
+-  || die "can't run keyinfo: $!, stopped";
++open(NAMES, "$dir/opieinfo|")
++  || die "can't run opieinfo: $!, stopped";
+ $key = <NAMES>;
+ $key =~ /^\d+\s+(\w+)/
+-  || die "User $username not found.  Make sure you have run keyinit, stopped";
++  || die "Keys not found.  Make sure you have run opiepasswd, stopped";
+ $key = $1;
+ close(NAMES);
+-open(KEYS, "$dir/key -n 99 99 $key|")
++open(KEYS, "$dir/opiekey -n 100 100 $key|")
+   || die "can't open $keyfile: $!, stopped";
+ open(PS, "<$psfile") || die "can't open $psfile: $!, stopped";
+ 

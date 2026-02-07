@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Pod/Man.pm
+%%SITE_PERL%%/Pod/ParseLink.pm
+%%SITE_PERL%%/Pod/Text.pm
+%%SITE_PERL%%/Pod/Text/Color.pm
+%%SITE_PERL%%/Pod/Text/Overstrike.pm
+%%SITE_PERL%%/Pod/Text/Termcap.pm
+%%PERL5_MAN3%%/Pod::Man.3.gz
+%%PERL5_MAN3%%/Pod::ParseLink.3.gz
+%%PERL5_MAN3%%/Pod::Text.3.gz
+%%PERL5_MAN3%%/Pod::Text::Color.3.gz
+%%PERL5_MAN3%%/Pod::Text::Overstrike.3.gz
+%%PERL5_MAN3%%/Pod::Text::Termcap.3.gz

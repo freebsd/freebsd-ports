@@ -1,0 +1,9 @@
+This python module provides an API with data about languages/regions/scripts for
+use in the language-support categorization of the font families in the Google
+Fonts collection.
+
+You can also directly access the raw textproto files on the Lib/gflanguages/data
+directory:
+- languages
+- regions
+- scripts

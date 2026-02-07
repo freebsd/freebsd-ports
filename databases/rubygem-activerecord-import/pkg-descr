@@ -1,0 +1,2 @@
+Extraction of the ActiveRecord::Base#import functionality from ar-extensions for
+Rails 3 and beyond.

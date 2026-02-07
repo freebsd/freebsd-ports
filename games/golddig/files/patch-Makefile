@@ -1,0 +1,71 @@
+--- Makefile.orig	2008-11-24 21:26:32 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+-# This program was written by Alexander Siegel in September of 1989   
+-# at Cornell University.  It may may copied freely for private use or 
+-# public dispersion provided that this comment is not removed.  This  
+-# program, any portion of this program, or any derivative of this     
++# This program was written by Alexander Siegel in September of 1989
++# at Cornell University.  It may may copied freely for private use or
++# public dispersion provided that this comment is not removed.  This
++# program, any portion of this program, or any derivative of this
+ # program may not be sold or traded for financial gain.
+ 
+ # Name of game executable
+@@ -15,7 +15,7 @@ MANEXT = 6
+ #LIB = levs
+ # Directory where manual pages are kept
+ MANEXT = 6
+-MAN = ${PREFIX}/man/man${MANEXT}
++MAN = ${PREFIX}/share/man/man${MANEXT}
+ # Add vms.c and vms.o to these lists if the operating system is VMS
+ SRCS = golddig.c shared.c badguy.c movement.c scores.c moveall.c
+ OBJS = golddig.o shared.o badguy.o movement.o scores.o moveall.o
+@@ -49,36 +49,29 @@ BSD_INSTALL_GAME_DIR?= \
+ #
+ #
+ BSD_INSTALL_GAME_DIR?= \
+-	${INSTALL} -d -o ${GAMEOWN} -g ${GAMEGRP} -m ${GAMEDIRMODE}
++	${INSTALL} -d
+ #
+ BSD_INSTALL_GAME?=          \
+-        ${INSTALL} ${COPY} ${_STRIPFLAG_INSTALL} -o ${GAMEOWN} \
+-	-g ${GAMEGRP} -m ${GAMEMODE}
++        ${INSTALL} ${COPY} ${_STRIPFLAG_INSTALL} \
++	-m ${GAMEMODE}
+ #
+ BSD_INSTALL_GAME_DATA?=     \
+-        ${INSTALL} ${COPY} -o ${GAMEOWN} -g ${GAMEGRP} -m ${GAMEDATAMODE}
++        ${INSTALL} ${COPY} -m ${GAMEDATAMODE}
+ #
+ BSD_INSTALL_MAN?=           \
+-        ${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE}
++        ${INSTALL} ${COPY} -m ${MANMODE}
+ #
+ 
+ 
+ all: ${GAME} ${EDITOR}
+ 
+ install: ${GAME} ${EDITOR}
+-	${BSD_INSTALL_GAME_DIR} ${LIB}
+-	${BSD_INSTALL_GAME} ${GAME} ${BIN}
+-	${BSD_INSTALL_GAME} ${EDITOR} ${BIN}
+-	${BSD_INSTALL_GAME_DIR} /var/games
+-	touch golddig.scores
+-	${BSD_INSTALL_GAME_DATA} golddig.scores /var/games/golddig.scores
+-	${BSD_INSTALL_GAME_DATA} levs/goldlev* levs/default ${LIB}
+-	${BSD_INSTALL_MAN} golddig.6 ${MAN}/golddig.${MANEXT}
+-	${BSD_INSTALL_MAN} gdedit.6 ${MAN}/gdedit.${MANEXT}
+-	chgrp ${SCORE_GROUP} ${BIN}/${GAME}
+-	chmod g+s ${BIN}/${GAME}
+-	chgrp ${SCORE_GROUP} /var/games/golddig.scores
+-	chmod 0664 /var/games/golddig.scores
++	${BSD_INSTALL_GAME_DIR} ${DESTDIR}${LIB}
++	${BSD_INSTALL_GAME} ${GAME} ${DESTDIR}${BIN}
++	${BSD_INSTALL_GAME} ${EDITOR} ${DESTDIR}${BIN}
++	${BSD_INSTALL_GAME_DATA} levs/goldlev* levs/default ${DESTDIR}${LIB}
++	${BSD_INSTALL_MAN} golddig.6 ${DESTDIR}${MAN}/golddig.${MANEXT}
++	${BSD_INSTALL_MAN} gdedit.6 ${DESTDIR}${MAN}/gdedit.${MANEXT}
+ 
+ update: ${GAME} ${EDITOR}
+ 	cp ${GAME} ${EDITOR} ${BIN}

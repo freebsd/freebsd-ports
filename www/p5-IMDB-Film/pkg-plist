@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/IMDB::BaseClass.3.gz
+%%PERL5_MAN3%%/IMDB::Film.3.gz
+%%PERL5_MAN3%%/IMDB::Persons.3.gz
+%%SITE_PERL%%/IMDB/BaseClass.pm
+%%SITE_PERL%%/IMDB/Film.pm
+%%SITE_PERL%%/IMDB/Persons.pm

@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.md
+%%MODDIR%%/ngx_http_vod_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_vod_module-debug.so

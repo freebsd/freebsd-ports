@@ -1,0 +1,24 @@
+--- Makefile.am.orig	2011-08-22 13:05:16.000000000 +0900
++++ Makefile.am	2011-08-22 13:05:23.000000000 +0900
+@@ -15,17 +15,17 @@
+ 	sed -e 's!@pkgdatadir@!$(pkgdatadir)!g' migemo.el.in > $@
+ 
+ migemo-dict: # SKK-JISYO.L
+-	ruby -I. migemo-convert.rb SKK-JISYO.L > $@
++	ruby -Ke -I. migemo-convert.rb SKK-JISYO.L > $@
+ 
+ migemo-dict.idx: migemo-dict
+-	ruby -I. migemo-index.rb migemo-dict > migemo-dict.idx
++	ruby -Ke -I. migemo-index.rb migemo-dict > migemo-dict.idx
+ 
+ migemo-dict.cache: frequent-chars migemo-dict migemo-dict.idx
+-	sort frequent-chars | ruby -I. migemo-cache.rb migemo-dict
++	sort frequent-chars | ruby -Ke -I. migemo-cache.rb migemo-dict
+ 
+ frequent-chars: genchars.sh migemo-dict
+ 	sh genchars.sh > tmp.list1
+-	cat tmp.list1 | ruby -rromkan -ne 'puts $$_.to_kunrei' > tmp.list2
++	cat tmp.list1 | ruby -Ke -rromkan -ne 'puts $$_.to_kunrei' > tmp.list2
+ 	cat tmp.list1 tmp.list2 | sort | uniq > frequent-chars
+ 
+ clean-local:

@@ -1,0 +1,3 @@
+The GNU Privacy Assistant is a graphical frontend to GnuPG and may be
+used to manage the keys and encrypt/decrypt/sign/check files. It is much
+like Seahorse.

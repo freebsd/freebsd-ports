@@ -1,0 +1,8 @@
+usr/bin/nasm
+usr/bin/ndisasm
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+usr/share/licenses/nasm/LICENSE
+usr/share/man/man1/nasm.1.gz
+usr/share/man/man1/ndisasm.1.gz

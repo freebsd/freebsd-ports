@@ -1,0 +1,45 @@
+$NetBSD: patch-aa,v 1.1.1.1 2000/03/25 20:13:24 jlam Exp $
+
+--- cowsay.orig	2016-06-25 02:45:15 UTC
++++ cowsay
+@@ -7,11 +7,18 @@
+ ##
+ 
+ use Text::Tabs qw(expand);
+-use Text::Wrap qw(wrap fill $columns);
++use Text::Wrap qw(wrap $columns);
+ use File::Basename;
+ use Getopt::Std;
+ use Cwd;
+ 
++if (${^UTF8LOCALE}) {
++    binmode STDIN, ':utf8';
++    binmode STDOUT, ':utf8';
++    require Encode;
++    eval { $_ = Encode::decode_utf8($_,1) } for @ARGV;
++}
++
+ $version = "3.03";
+ $progname = basename($0);
+ $eyes = "oo";
+@@ -185,3 +192,20 @@ Usage: $progname [-bdgpstwy] [-h] [-e ey
+           [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
+ EOF
+ }
++
++sub fill {
++    my ($ip, $xp, @raw) = @_;
++    my @para;
++    my $pp;
++
++    for $pp (split(/\n\s+/, join("\n",@raw))) {
++        $pp =~ s/\s+/ /g;
++        my $x = wrap($ip, $xp, $pp);
++        push(@para, $x);
++    }
++
++    # if paragraph_indent is the same as line_indent, 
++    # separate paragraphs with blank lines
++
++    return join ($ip eq $xp ? "\n\n" : "\n", @para);
++}

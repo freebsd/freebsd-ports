@@ -1,0 +1,2 @@
+Proc::WaitStat contains functions for interpreting and acting on wait status
+values.

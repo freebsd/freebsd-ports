@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+    SCRFILE=/var/games/moon-buggy/mbscore
+    mkdir -p /var/games/moon-buggy
+    [ -f ${SCRFILE} ] && mv ${SCRFILE} ${SCRFILE}.tmp
+    ${PKG_PREFIX}/bin/moon-buggy -c
+    cp ${SCRFILE} ${SCRFILE}.baseline 
+    [ -f ${SCRFILE}.tmp ] && mv ${SCRFILE}.tmp ${SCRFILE}
+    exit 0
+fi

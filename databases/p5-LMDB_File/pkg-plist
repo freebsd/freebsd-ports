@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/LMDB_File.pm
+%%SITE_ARCH%%/auto/LMDB_File/LMDB_File.so
+%%SITE_ARCH%%/auto/LMDB_File/autosplit.ix
+%%PERL5_MAN3%%/LMDB_File.3.gz

@@ -1,0 +1,3 @@
+Fast and user friendly implementation of nonparametric estimators
+for censored event history (survival) analysis. Kaplan-Meier and
+Aalen-Johansen method.

@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-08-01 13:02:42 UTC
++++ configure.ac
+@@ -176,7 +176,7 @@ AC_ARG_WITH([openssl],
+     [with_openssl=check])
+ 
+ AS_IF([test x"$with_openssl" != xno],
+-    [AX_PKG_CHECK_MODULES([openssl],,[libcrypto],
++    [AX_PKG_CHECK_MODULES([openssl],,[],
+         [with_openssl=found
+          AC_DEFINE([XSEC_HAVE_OPENSSL],[1],[Define if OpenSSL is in use])
+ 

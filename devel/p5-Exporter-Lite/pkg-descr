@@ -1,0 +1,3 @@
+This is an alternative to Exporter intended to provide a lightweight subset of
+the most commonly-used functionality. It supports import(), @EXPORT and
+@EXPORT_OK and not a whole lot else.

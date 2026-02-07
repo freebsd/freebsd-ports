@@ -1,0 +1,6 @@
+etc/cron.d/dma
+@(root,mail,2555) libexec/dma
+@(root,mail,4554) libexec/dma-mbox-create
+@sample(root,mail,0644) %%ETCDIR%%/dma.conf.sample
+@sample(root,mail,0640) %%ETCDIR%%/auth.conf.sample
+share/man/man8/dma.8.gz

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/IO/LockedFile.pm
+%%SITE_PERL%%/IO/LockedFile/Flock.pm
+%%PERL5_MAN3%%/IO::LockedFile.3.gz
+%%PERL5_MAN3%%/IO::LockedFile::Flock.3.gz

@@ -1,0 +1,35 @@
+--- makefile.orig	Wed Mar 24 18:39:36 1999
++++ makefile	Wed Mar 29 22:32:43 2000
+@@ -6,26 +6,26 @@
+ 
+ #the various flags and options
+ INCLUDE= -I/usr/include/ncurses/
+-CC= gcc
+-CFLAGS= -$(INCLUDE) -Wall
++CC?= gcc
++CFLAGS?= -$(INCLUDE) -Wall
+ LL= -lncurses -ltermcap
+ CLL= -lcurses -ltermcap
+ 
+ #makes the game - this is default (has colors and keyboard flushing) 
+ block  : block.c
+-	$(CC) $(INCLUDE) -DUCOL -DNEW -s -o block block.c $(LL)
++	$(CC) $(CFLAGS) -DUCOL -DNEW -DPREFIX=\"$(PREFIX)\" -s -o block block.c $(LL)
+ 
+ #make the editor
+ bed    : bed.c
+-	$(CC) $(INCLUDE) -s -o bed bed.c $(LL)
++	$(CC) $(CFLAGS) -s -o bed bed.c $(LL)
+ 
+ #makes the game, leaving out the newer ncurses options (keyboard) and colors
+ old    : block.c
+-	$(CC) $(INCLUDE) -s -o block block.c $(LL)
++	$(CC) $(CFLAGS) -s -o block block.c $(LL)
+ 
+ #makes the game, with no color  
+ nocolor: block.c
+-	$(CC) $(INCLUDE) -DNEW -s -o block block.c $(LL)
++	$(CC) $(CFLAGS) -DNEW -s -o block block.c $(LL)
+ 
+ #makes the game, using curses instead of ncurses
+ cblock : block.c

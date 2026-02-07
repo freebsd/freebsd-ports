@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Tue Nov  5 18:52:36 2002
++++ man/Makefile.in	Tue Nov  5 18:52:52 2002
+@@ -40,7 +40,7 @@
+ all: xtr.1
+ 
+ xtr.1: xtr.n
+-	sed -e "s#@XTRPATH@#$(XTRPATH)#g" $< > $@
++	sed -e "s#@XTRPATH@#$(XTRPATH)#g" xtr.n > $@
+ 
+ install:
+ #	$(top_dir)/mkinstalldirs $(mandir)

@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: inspircd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN mysql postgresql
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable inspircd:
+#
+# inspircd_enable="YES"
+#
+# Other rc.conf variables:
+# inspircd_flags="<set as needed>"
+#
+# inspircd_config="%%ETCDIR%%/inspircd.conf"
+#                          -- path to config file
+# inspircd_pidfile="%%INSPIRCD_RUNDIR%%/inspircd.pid"
+#                          -- location of pidfile: must match setting
+#                             in ${inspircd_conffile}
+# inspircd_logfile="%%INSPIRCD_LOGDIR%%/inspircd.log"
+#                          -- file inspircd writes logs to
+#
+. /etc/rc.subr
+
+name=inspircd
+rcvar=inspircd_enable
+
+load_rc_config ${name}
+
+: ${inspircd_enable:=NO}
+: ${inspircd_config="%%ETCDIR%%/inspircd.conf"}
+: ${inspircd_pidfile="%%INSPIRCD_RUNDIR%%/inspircd.pid"}
+: ${inspircd_user="%%INSPIRCD_USER%%"}
+: ${inspircd_group="%%INSPIRCD_GROUP%%"}
+: ${inspircd_data="%%INSPIRCD_DBDIR%%"}
+: ${inspircd_logfile="%%INSPIRCD_LOGDIR%%/inspircd.log"}
+: ${inspircd_chdir="%%ETCDIR%%"}
+
+command=/usr/sbin/daemon
+command_args="-S -p ${inspircd_pidfile} %%PREFIX%%/bin/inspircd --nofork --config ${inspircd_config} ${inspircd_flags}"
+procname=%%PREFIX%%/bin/inspircd
+pidfile=${inspircd_pidfile}
+required_files=${inspircd_config}
+configtest_cmd=inspircd_configtest
+extra_commands="reload status"
+
+run_rc_command "$1"

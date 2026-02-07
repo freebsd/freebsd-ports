@@ -1,0 +1,6 @@
+A Lightweight clipboard history applet using the Qt framework. It provides
+the following features:
+* Saves clipboard history entries and restores them
+* Lightweight
+* Systray docking app
+* Few requirements

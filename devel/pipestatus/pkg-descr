@@ -1,0 +1,18 @@
+pipestatus - source file for POSIX shell that allows
+to obtain an exit status of every program in a pipe.
+
+                        MOTIVATION
+
+When we program in shell we often run pipes like this
+
+    prog1 args1 | prog2 args2 | ... | progN argsN
+
+POSIX says that exit status of pipe is the exit status of LAST program
+in it, i.e.  progN in our example. That is, exit status of all other
+programs in pipe is silently ignored.  But in many situations exit
+status of all programs in pipe should be checked to make program
+robust. Some shells like BASH and ZSH have special extensions for
+doing this but POSIX shell unfortunately doesn't provide an EASY way
+for doing this.
+
+In order to solve the problem, described above pipestatus was written.

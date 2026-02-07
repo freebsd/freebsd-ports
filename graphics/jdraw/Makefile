@@ -1,0 +1,40 @@
+PORTNAME=	jdraw
+PORTVERSION=	1.1.5
+PORTREVISION=	4
+CATEGORIES=	graphics java
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
+DISTNAME=	${PORTNAME}_v${PORTVERSION}
+EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	Pixel oriented graphics editor
+WWW=		https://jdraw.sourceforge.net
+
+USES=		java
+
+NO_BUILD=	yes
+
+OPTIONS_DEFINE=		PLASTIC3D
+OPTIONS_DEFAULT=	PLASTIC3D
+PLASTIC3D_DESC=		Use Plastic3DLook&Feel
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+SUB_FILES=	${PORTNAME}
+SUB_LIST=	JDRAWJAR=${JDRAWJAR} PLASTIC3D=${PLASTIC3D}
+
+JDRAWJAR=	${DATADIR}/${DISTFILES}
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPLASTIC3D}
+PLASTIC3D=	"-Dlf=\"com.jgoodies.looks.plastic.Plastic3DLookAndFeel\""
+RUN_DEPENDS+=	${JAVALIBDIR}/looks.jar:devel/jgoodies-looks
+.endif
+
+.include <bsd.port.mk>

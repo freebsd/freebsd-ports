@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: ovs
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable OpenVISP Stats:
+#
+# ovs_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="ovs"
+rcvar=ovs_enable
+
+command=%%PREFIX%%/sbin/${name}.pl
+command_args='> /dev/null 2>&1'
+command_interpreter="%%PREFIX/bin/perl"
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+    rm -f $pidfile
+}
+
+load_rc_config $name
+
+: ${ovs_enable="NO"}
+: ${ovs_pidfile="%%DATADIR%%/ovs.pid"}
+: ${ovs_flags="--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --ignore-localhost --daemon --daemon-pid=${ovs_pidfile} --rbl-is-spam --greylist --helo --spf --domain-not-found"}
+: ${ovs_user="%%OVS_USER%%"}
+: ${ovs_chdir="%%DATADIR%%"}
+
+pidfile=${ovs_pidfile}
+
+run_rc_command "$1"

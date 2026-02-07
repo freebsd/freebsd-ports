@@ -1,0 +1,37 @@
+PORTNAME=	sdl2pp
+PORTVERSION=	0.18.1
+PORTREVISION=	2
+CATEGORIES=	devel
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	C++11 bindings/wrapper for SDL2
+WWW=		https://github.com/libSDL2pp/libSDL2pp
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	libSDL2pp
+GH_PROJECT=	libSDL2pp
+
+USES=		cmake:testing compiler:c++17-lang sdl
+USE_SDL=	sdl2 image2 mixer2 ttf2
+CMAKE_TESTING_ON=SDL2PP_WITH_TESTS
+CMAKE_OFF=	SDL2PP_ENABLE_LIVE_TESTS \
+		SDL2PP_WITH_TESTS
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=		DOCS DOXYGEN
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_ALL_TARGET=	all doxygen
+DOXYGEN_IMPLIES=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+
+post-install-DOXYGEN-on:
+	@cd ${CONFIGURE_WRKSRC} && ${COPYTREE_SHARE} doxygen ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.mk>

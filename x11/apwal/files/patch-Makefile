@@ -1,0 +1,43 @@
+--- Makefile.orig	Sun Dec 19 21:23:27 2004
++++ Makefile	Thu Dec 23 10:05:09 2004
+@@ -5,8 +5,8 @@
+ CFLAGS=-g -Wall -Werror `pkg-config --cflags gtk+-2.0 gthread-2.0` -DGTK_DISABLE_DEPRECATED -DAPWAL_DEBUG
+ LDFLAGS=`pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
+ else
+-CFLAGS=-O2 `pkg-config --cflags gtk+-2.0 gthread-2.0`
+-LDFLAGS=-O2 `pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
++CFLAGS+=`pkg-config --cflags gtk+-2.0 gthread-2.0`
++LDFLAGS+=`pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
+ endif
+ 
+ OBJS=main.o app.o launcher.o editor.o property.o \
+@@ -24,11 +24,11 @@
+ ifdef APWAL_DEBUG
+ all: checktraceformat apwal tags
+ apwal: $(OBJS)
+-	gcc -o $@ $^ $(LDFLAGS)
++	$(CC) -o $@ $^ $(LDFLAGS)
+ else
+ all: apwal
+ apwal: $(OBJS)
+-	gcc -o $@ $^ $(LDFLAGS)
++	$(CC) -o $@ $^ $(LDFLAGS)
+ 	strip $@
+ endif
+ 
+@@ -37,12 +37,12 @@
+ 	ln -sf /usr/local/bin/apwal /usr/local/bin/apwal-editor
+ 
+ .c.o: $(INCS)
+-	gcc -c $< -o $*.o $(CFLAGS)
++	$(CC) -c $< -o $*.o $(CFLAGS)
+ 
+ xmlrc.o: xmlrc.c $(INCS)
+-	gcc -c $< -o $*.o $(CFLAGS) `xml2-config --cflags`
++	$(CC) -c $< -o $*.o $(CFLAGS) `xml2-config --cflags`
+ about.o: about.c $(INCS) ../Makefile.inc
+-	gcc -c $< -o $*.o $(CFLAGS) -DAPWAL_VERSION=\"$(VERS)\"
++	$(CC) -c $< -o $*.o $(CFLAGS) -DAPWAL_VERSION=\"$(VERS)\"
+ 
+ gtkstuff.o: pixbufinline.inc
+ xmlrc.o: xmlrcinline.inc

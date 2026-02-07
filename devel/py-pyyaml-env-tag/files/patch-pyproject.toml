@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-05-13 15:23:16 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ['setuptools>=77.0']
++requires = ['setuptools>=61.0']
+ build-backend = 'setuptools.build_meta'
+ 
+ [project]
+@@ -10,8 +10,7 @@ dependencies = ['pyyaml']
+ authors = [{name = 'Waylan Limberg', email = 'waylan.limberg@icloud.com'}]
+ requires-python = '>=3.9'
+ dependencies = ['pyyaml']
+-license = 'MIT'
+-license-files = ['LICENSE']
++license = { text = 'MIT' }
+ classifiers = [
+     'Development Status :: 5 - Production/Stable',
+     'Intended Audience :: Developers',

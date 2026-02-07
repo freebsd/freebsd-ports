@@ -1,0 +1,25 @@
+# sample config file for epsonepl
+# a hash sign starts a comment and counts as whitespace
+#
+# settings must be in the form of:
+# [whitespace]<variable><whitespace_or_=><value>[whitespace]
+#
+# variable	allowed values			mandatory	default
+# -----------------------------------------------------------------------
+# model		EPL5700L EPL5800L EPL5900L	yes		-
+# papersize	see gs config			yes		-
+# dpi		300 Class600 600 Class1200	no		600
+# ritech	on off				no		on
+# density	1 2 3 4 5			no		3
+# tonersave	on off				no		off
+#
+# you can specify ps2epl to use another config file by spefifying
+# -f<config> as the _first_ parameter, e.g.:
+# ps2epl -f/path/to/my/config [other options and files]
+#
+model		EPL5700L
+papersize	a4
+dpi		Class600
+ritech		on
+density		3
+tonersave	off

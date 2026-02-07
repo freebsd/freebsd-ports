@@ -1,0 +1,8 @@
+%%SITE_ARCH%%/BerkeleyDB.pm
+%%SITE_ARCH%%/BerkeleyDB.pod
+%%SITE_ARCH%%/BerkeleyDB/Btree.pm
+%%SITE_ARCH%%/BerkeleyDB/Hash.pm
+%%SITE_ARCH%%/auto/BerkeleyDB/BerkeleyDB.so
+%%SITE_ARCH%%/mkconsts.pl
+%%SITE_ARCH%%/scan.pl
+%%PERL5_MAN3%%/BerkeleyDB.3.gz

@@ -1,0 +1,33 @@
+--- Makefile.orig	2024-02-19 01:01:50 UTC
++++ Makefile
+@@ -64,13 +64,14 @@ MANUAL_PAGES = \
+ LDLIBS=libgif.a -lm
+ 
+ MANUAL_PAGES = \
+-	doc/gif2rgb.xml \
+-	doc/gifbuild.xml \
+-	doc/gifclrmp.xml \
+-	doc/giffix.xml \
+-	doc/giflib.xml \
+-	doc/giftext.xml \
+-	doc/giftool.xml
++	doc/gif2rgb.1 \
++	doc/gifbuild.1 \
++	doc/gifclrmp.1 \
++	doc/giffix.1 \
++	doc/giftext.1 \
++	doc/giftool.1
++MAN7_PAGES= \
++	doc/giflib.7
+ 
+ SOEXTENSION	= so
+ LIBGIFSO	= libgif.$(SOEXTENSION)
+@@ -150,6 +151,8 @@ install-man:
+ install-man:
+ 	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1"
+ 	$(INSTALL) -m 644 $(MANUAL_PAGES) "$(DESTDIR)$(MANDIR)/man1"
++	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man7"
++	$(INSTALL) -m 644 $(MAN7_PAGES) "$(DESTDIR)$(MANDIR)/man7"
+ uninstall: uninstall-man uninstall-include uninstall-lib uninstall-bin
+ uninstall-bin:
+ 	cd "$(DESTDIR)$(BINDIR)" && rm -f $(INSTALLABLE)

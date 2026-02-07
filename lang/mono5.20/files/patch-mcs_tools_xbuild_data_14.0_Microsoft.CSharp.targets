@@ -1,0 +1,25 @@
+--- mcs/tools/xbuild/data/14.0/Microsoft.CSharp.targets.orig	2017-07-20 18:10:59 UTC
++++ mcs/tools/xbuild/data/14.0/Microsoft.CSharp.targets
+@@ -20,6 +20,11 @@
+ 		<NoCompilerStandardLib Condition="'$(NoCompilerStandardLib)'==''">true</NoCompilerStandardLib>
+ 	</PropertyGroup>
+ 
++	<PropertyGroup >
++		<SnToolExe>sn</SnToolExe>
++		<SnToolPath>$(CscToolPath)</SnToolPath>
++	</PropertyGroup>
++
+ 	<ItemGroup>
+ 		<DocFileItem Include="$(DocumentationFile)" Condition="'$(DocumentationFile)' != ''"/>
+ 	</ItemGroup>
+@@ -102,6 +107,10 @@
+ 			ToolExe="$(CscToolExe)"
+ 			ToolPath="$(CscToolPath)" />
+ 
++		<Exec
++			Command="$(SnToolPath)$(SnToolExe) -R @(IntermediateAssembly) $(KeyOriginatorFile)"
++			Condition="'$(DelaySign)' == '' and '$(KeyContainerName)' == '' and '$(KeyOriginatorFile)' != '' and ( $(CscToolExe.EndsWith('csc.exe')) or $(CscToolExe.EndsWith('csc')) or $(CscToolExe) == '' )" />
++
+ 	</Target>
+ 
+ 	<Target Name="CreateManifestResourceNames">

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Template/Plugin/VMethods.pm
+%%SITE_PERL%%/Template/Plugin/VMethods/VMethodContainer.pm
+%%PERL5_MAN3%%/Template::Plugin::VMethods.3.gz

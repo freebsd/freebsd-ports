@@ -1,0 +1,87 @@
+# makefile for use of:	chinese/*ttf
+# Date created:		17 Feb 2005
+# Whom:			leeym
+#
+# The variable(s) for installing TrueType fonts.
+# TTF		- Name(s) of font file(s) installed in FONTSDIR. Mandatory.
+#
+
+OPTIONS_DEFINE+=GHOSTSCRIPT X11
+
+.include <bsd.port.options.mk>
+
+FONTSDIR?=	${PREFIX}/share/fonts/TrueType
+FONTSDIR_REL=	${FONTSDIR:S,^${PREFIX}/,,}
+PLIST_SUB+=	FONTSDIR=${FONTSDIR_REL}
+
+USES+=		fonts
+XFONTSDIR?=	${LOCALBASE}/share/fonts/TrueType
+XFONTSDIR_REL=	${XFONTSDIR:S,${LOCALBASE}/,,}
+PLIST_SUB+=	XFONTSDIR=${XFONTSDIR_REL}
+
+.if ${PORT_OPTIONS:MX11}
+RUN_DEPENDS+=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig
+_TTF_MODULES=	xttfm
+.endif
+
+.if ${PORT_OPTIONS:MGHOSTSCRIPT}
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:print/adobe-cmaps
+_TTF_MODULES+=	gscjk
+.endif
+
+.if defined(_TTF_MODULES)
+RUN_DEPENDS+=	${PREFIX}/bin/ttfm.sh:chinese/ttfm
+.endif
+
+check-makefile: check-makefile-ttf
+check-makefile-ttf:
+.if !defined(_TTF_MODULES)
+	@${ECHO_CMD} "Makefile warning: You choose neither X11 nor GHOSTSCRIPT. Only font files themselves are installed"
+.else
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You may use the following options:"
+	@${ECHO_CMD} "	${OPTIONS_NAME}_SET+=GHOSTSCRIPT	- if you want Ghostscript support"
+	@${ECHO_CMD} "	${OPTIONS_NAME}_SET+=X11		- if you want X Window support"
+	@${ECHO_CMD} ""
+.endif
+.if !defined(TTF)
+	@${ECHO_CMD} "Makefile error: You need to define TTF for installing TrueType fonts"
+	@${FALSE}
+.endif
+
+post-install: do-install-ttf
+do-install-ttf:
+.if defined(_TTF_MODULES)
+	@${ECHO_MSG} "===>  Running ttfm.sh"
+.endif
+.for module in ${_TTF_MODULES}
+.	for ttf in ${TTF}
+		${PREFIX}/bin/ttfm.sh --add ${module} ${STAGEDIR}${FONTSDIR}/${ttf}
+.	endfor
+.endfor
+.if ${PORT_OPTIONS:MX11}
+	@${ECHO_MSG} "===>  Running fc-cache"
+	-@${LOCALBASE}/bin/fc-cache -f -s -v ${STAGEDIR}${XFONTSDIR}
+.endif
+
+add-plist-post: add-plist-ttf
+add-plist-ttf:
+.for module in ${_TTF_MODULES}
+.	for ttf in ${TTF}
+		@${ECHO_CMD} "@unexec %D/bin/ttfm.sh --remove ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+.	endfor
+.endfor
+.for ttf in ${TTF}
+	@${ECHO_CMD} "${FONTSDIR_REL}/${ttf}" >> ${TMPPLIST}
+.endfor
+.for module in ${_TTF_MODULES}
+.	for ttf in ${TTF}
+		@${ECHO_CMD} "@exec %D/bin/ttfm.sh --add ${module} ${FONTSDIR}/${ttf} || true" >> ${TMPPLIST}
+.	endfor
+.endfor
+.if ${PORT_OPTIONS:MX11}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/fc-cache -f -s -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/fc-cache -f -s -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec find ${XFONTSDIR} -size -3c -delete || true" >> ${TMPPLIST}
+.endif
+

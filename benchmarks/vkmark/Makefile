@@ -1,0 +1,52 @@
+PORTNAME=	vkmark
+DISTVERSION=	2025.01
+PORTREVISION=	2
+CATEGORIES=	benchmarks
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	abc5fc849569.patch:-p1 # https://github.com/vkmark/vkmark/pull/80
+PATCHFILES+=	ab3f3d709e2f.patch:-p1 # https://github.com/vkmark/vkmark/pull/80
+
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	Vulkan benchmark
+WWW=		https://github.com/vkmark/vkmark
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.1
+
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
+		glm>0:math/glm
+LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
+		libassimp.so:multimedia/assimp
+
+USES=		cmake:indirect compiler:c++14-lang localbase meson pkgconfig
+USE_GITHUB=	yes
+
+OPTIONS_DEFINE=	DRM WAYLAND X11
+OPTIONS_DEFAULT=DRM WAYLAND X11
+OPTIONS_SUB=	yes
+
+DRM_DESC=		KMS console support
+DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
+DRM_USES=		gl
+DRM_USE=		GL=gbm
+DRM_MESON_TRUE=		kms
+
+WAYLAND_CATEGORIES=	wayland
+WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+			wayland-protocols>=1.12:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_MESON_TRUE=	wayland
+
+X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
+X11_USES=		xorg
+X11_USE=		XORG=xcb
+X11_MESON_TRUE=		xcb
+
+post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
+		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
+		${WRKSRC}/meson.build
+
+.include <bsd.port.mk>

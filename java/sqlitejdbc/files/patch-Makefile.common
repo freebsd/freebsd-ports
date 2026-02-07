@@ -1,0 +1,11 @@
+--- Makefile.common.orig	2013-10-30 08:27:27.420880093 +0000
++++ Makefile.common	2013-10-30 08:27:45.873878420 +0000
+@@ -56,7 +56,7 @@
+ target     := $(os)-$(arch)
+ 
+ # os=Default is meant to be generic unix/linux
+-Default_CC        := gcc
++Default_CC        := $(CC)
+ Default_STRIP     := strip
+ Default_CFLAGS    := -I$(JAVA_HOME)/include -Os -fPIC
+ Default_LINKFLAGS := -shared

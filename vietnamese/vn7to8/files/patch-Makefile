@@ -1,0 +1,24 @@
+--- Makefile.orig	1992-09-15 06:49:45.000000000 +0800
++++ Makefile	2014-07-02 15:47:22.159471575 +0800
+@@ -4,9 +4,9 @@
+ 
+ SHELL	= /bin/sh
+ CC	= cc
+-VNLIBDIR= ../lib
+-VNINCDIR= ../include
+-BINDIR	= /local/usr/bin
++VNLIBDIR= $(PREFIX)/lib
++VNINCDIR= $(PREFIX)/include/viet
++BINDIR	= ${PREFIX}/bin
+ LIBS	= $(VNLIBDIR)/libviqr.a $(VNLIBDIR)/libvntype.a
+ 
+ INC	= -I$(VNINCDIR)
+@@ -34,7 +34,7 @@ all:	$(PROGRAMS)
+ install:	$(PROGRAMS)
+ 		@for prog in $(PROGRAMS) ; do \
+ 		    echo install -s $$prog $(BINDIR) ;\
+-		    install -s $$prog $(BINDIR) ;\
++		    install -s $$prog $(DESTDIR)$(BINDIR) ;\
+ 		done
+ 
+ $(PROG1):	$(OBJS1) $(LIBS)

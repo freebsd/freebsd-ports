@@ -1,0 +1,309 @@
+lib/lv2/rkr.lv2/90-Shifter.dly
+lib/lv2/rkr.lv2/Basic_LR_Delay.dly
+lib/lv2/rkr.lv2/Chamber.rvb
+lib/lv2/rkr.lv2/Comb.dly
+lib/lv2/rkr.lv2/Concrete_Stairwell.rvb
+lib/lv2/rkr.lv2/EchoFlange.dly
+lib/lv2/rkr.lv2/Filtered_Echo.dly
+lib/lv2/rkr.lv2/Flange_plus_Echo.dly
+lib/lv2/rkr.lv2/Guitar_Ambience.rvb
+lib/lv2/rkr.lv2/Hall.rvb
+lib/lv2/rkr.lv2/Large_Hall.rvb
+lib/lv2/rkr.lv2/Large_Room.rvb
+lib/lv2/rkr.lv2/Med_Hall.rvb
+lib/lv2/rkr.lv2/Multi-Chorus.dly
+lib/lv2/rkr.lv2/Notch-Wah.dly
+lib/lv2/rkr.lv2/PingPong.dly
+lib/lv2/rkr.lv2/Santa_Lucia.rvb
+lib/lv2/rkr.lv2/Short_Delays.dly
+lib/lv2/rkr.lv2/Studio.rvb
+lib/lv2/rkr.lv2/SwingPong.dly
+lib/lv2/rkr.lv2/Twilight.rvb
+lib/lv2/rkr.lv2/alienwah.ttl
+lib/lv2/rkr.lv2/alienwah_presets.ttl
+lib/lv2/rkr.lv2/aphas.ttl
+lib/lv2/rkr.lv2/aphas_presets.ttl
+lib/lv2/rkr.lv2/arpie.ttl
+lib/lv2/rkr.lv2/arpie_presets.ttl
+lib/lv2/rkr.lv2/cab.ttl
+lib/lv2/rkr.lv2/chorus.ttl
+lib/lv2/rkr.lv2/chorus_presets.ttl
+lib/lv2/rkr.lv2/coilcrafter.ttl
+lib/lv2/rkr.lv2/coilcrafter_presets.ttl
+lib/lv2/rkr.lv2/comp.ttl
+lib/lv2/rkr.lv2/comp_presets.ttl
+lib/lv2/rkr.lv2/compband.ttl
+lib/lv2/rkr.lv2/compband_presets.ttl
+lib/lv2/rkr.lv2/dere.ttl
+lib/lv2/rkr.lv2/dere_presets.ttl
+lib/lv2/rkr.lv2/dist.ttl
+lib/lv2/rkr.lv2/dist_presets.ttl
+lib/lv2/rkr.lv2/distband.ttl
+lib/lv2/rkr.lv2/distband_presets.ttl
+lib/lv2/rkr.lv2/dual_flange.ttl
+lib/lv2/rkr.lv2/dual_flange_presets.ttl
+lib/lv2/rkr.lv2/echo.ttl
+lib/lv2/rkr.lv2/echo_presets.ttl
+lib/lv2/rkr.lv2/echotron.ttl
+lib/lv2/rkr.lv2/echotron_presets.ttl
+lib/lv2/rkr.lv2/echoverse.ttl
+lib/lv2/rkr.lv2/echoverse_presets.ttl
+lib/lv2/rkr.lv2/eql.ttl
+lib/lv2/rkr.lv2/eqp.ttl
+lib/lv2/rkr.lv2/exciter.ttl
+lib/lv2/rkr.lv2/exciter_presets.ttl
+lib/lv2/rkr.lv2/expander.ttl
+lib/lv2/rkr.lv2/expander_presets.ttl
+lib/lv2/rkr.lv2/gate.ttl
+lib/lv2/rkr.lv2/gate_presets.ttl
+lib/lv2/rkr.lv2/harm.ttl
+lib/lv2/rkr.lv2/harm_no_midi.ttl
+lib/lv2/rkr.lv2/harm_no_midi_presets.ttl
+lib/lv2/rkr.lv2/inf.ttl
+lib/lv2/rkr.lv2/inf_presets.ttl
+lib/lv2/rkr.lv2/manifest.ttl
+lib/lv2/rkr.lv2/mdel.ttl
+lib/lv2/rkr.lv2/mdel_presets.ttl
+lib/lv2/rkr.lv2/mutromojo.ttl
+lib/lv2/rkr.lv2/mutromojo_presets.ttl
+lib/lv2/rkr.lv2/otrem.ttl
+lib/lv2/rkr.lv2/otrem_presets.ttl
+lib/lv2/rkr.lv2/pan.ttl
+lib/lv2/rkr.lv2/pan_presets.ttl
+lib/lv2/rkr.lv2/phas.ttl
+lib/lv2/rkr.lv2/phas_presets.ttl
+lib/lv2/rkr.lv2/reve.ttl
+lib/lv2/rkr.lv2/reve_presets.ttl
+lib/lv2/rkr.lv2/reverbtron.ttl
+lib/lv2/rkr.lv2/reverbtron_presets.ttl
+lib/lv2/rkr.lv2/ring.ttl
+lib/lv2/rkr.lv2/ring_presets.ttl
+lib/lv2/rkr.lv2/rkrlv2.so
+lib/lv2/rkr.lv2/sequence.ttl
+lib/lv2/rkr.lv2/sequence_presets.ttl
+lib/lv2/rkr.lv2/shelfboost.ttl
+lib/lv2/rkr.lv2/shelfboost_presets.ttl
+lib/lv2/rkr.lv2/shifter.ttl
+lib/lv2/rkr.lv2/shifter_presets.ttl
+lib/lv2/rkr.lv2/shuffle.ttl
+lib/lv2/rkr.lv2/shuffle_presets.ttl
+lib/lv2/rkr.lv2/stereoharm_no_midi.ttl
+lib/lv2/rkr.lv2/stereoharm_no_midi_presets.ttl
+lib/lv2/rkr.lv2/stomp.ttl
+lib/lv2/rkr.lv2/stomp_presets.ttl
+lib/lv2/rkr.lv2/stompfuzz.ttl
+lib/lv2/rkr.lv2/sustain.ttl
+lib/lv2/rkr.lv2/sustain_presets.ttl
+lib/lv2/rkr.lv2/synthfilter.ttl
+lib/lv2/rkr.lv2/synthfilter_presets.ttl
+lib/lv2/rkr.lv2/valve.ttl
+lib/lv2/rkr.lv2/valve_presets.ttl
+lib/lv2/rkr.lv2/varyband.ttl
+lib/lv2/rkr.lv2/varyband_presets.ttl
+lib/lv2/rkr.lv2/vibe.ttl
+lib/lv2/rkr.lv2/vibe_presets.ttl
+lib/lv2/rkr.lv2/vocoder.ttl
+lib/lv2/rkr.lv2/vocoder_presets.ttl
+lib/lv2/rkr.lv2/wha.ttl
+lib/lv2/rkr.lv2/wha_presets.ttl
+%%DATADIR%%/12 Strings Crazy.carxp
+%%DATADIR%%/12 Strings Down.carxp
+%%DATADIR%%/12 Strings.carxp
+%%DATADIR%%/90-Shifter.dly
+%%DATADIR%%/Acoustic Bright.carxp
+%%DATADIR%%/Acoustic Chorus.carxp
+%%DATADIR%%/Acoustic Sparkle.carxp
+%%DATADIR%%/Acoustic.carxp
+%%DATADIR%%/All is Lost.carxp
+%%DATADIR%%/Ambience.carxp
+%%DATADIR%%/Ambient Flange.carxp
+%%DATADIR%%/Amp.carxp
+%%DATADIR%%/Angel's Chorus.carxp
+%%DATADIR%%/Arppeg Sprinkler.carxp
+%%DATADIR%%/Aural Phaser.carxp
+%%DATADIR%%/Auto Wah 2.carxp
+%%DATADIR%%/Auto Wah.carxp
+%%DATADIR%%/AutoYa.carxp
+%%DATADIR%%/AutoYiYa.carxp
+%%DATADIR%%/Aymimadre.carxp
+%%DATADIR%%/Backward Tumble.carxp
+%%DATADIR%%/Ballada Duet Gm *.carxp
+%%DATADIR%%/Ballada Solo.carxp
+%%DATADIR%%/Basic_LR_Delay.dly
+%%DATADIR%%/Bass.carxp
+%%DATADIR%%/Big Stack.carxp
+%%DATADIR%%/BlowMoeJo.carxp
+%%DATADIR%%/Bright Size.carxp
+%%DATADIR%%/C Melody.carxp
+%%DATADIR%%/Cathedral Swell.carxp
+%%DATADIR%%/Chamber.rvb
+%%DATADIR%%/Charred Violets.carxp
+%%DATADIR%%/Chinese Lead.carxp
+%%DATADIR%%/Chorus Riff.carxp
+%%DATADIR%%/Circle Tremolo.carxp
+%%DATADIR%%/Classic Chorus.carxp
+%%DATADIR%%/Classic WF.carxp
+%%DATADIR%%/Clean Smack Back.carxp
+%%DATADIR%%/Clean Swirl.carxp
+%%DATADIR%%/Clean Tremolo.carxp
+%%DATADIR%%/Clean Twirl.carxp
+%%DATADIR%%/Clean-2.carxp
+%%DATADIR%%/Clean-A-Duet *.carxp
+%%DATADIR%%/CleanChord.carxp
+%%DATADIR%%/Comb.dly
+%%DATADIR%%/Comphaser.carxp
+%%DATADIR%%/Concrete_Stairwell.rvb
+%%DATADIR%%/CrunchPhaser.carxp
+%%DATADIR%%/D Flange.carxp
+%%DATADIR%%/Dark Alley.carxp
+%%DATADIR%%/Delayed Chorus.carxp
+%%DATADIR%%/Dig For Shift.carxp
+%%DATADIR%%/Diode Overdose.carxp
+%%DATADIR%%/Dirty Junk.carxp
+%%DATADIR%%/Dist Dead.carxp
+%%DATADIR%%/Dist-4.carxp
+%%DATADIR%%/Dist-Duet-A7 *.carxp
+%%DATADIR%%/Dist-WahWah-1.carxp
+%%DATADIR%%/Double Tremolo.carxp
+%%DATADIR%%/Dreamland.carxp
+%%DATADIR%%/EboWeboAmiYeebo.carxp
+%%DATADIR%%/EchoFlange.dly
+%%DATADIR%%/EchoPhase.carxp
+%%DATADIR%%/Edgy.carxp
+%%DATADIR%%/Envelope YaYa.carxp
+%%DATADIR%%/Extreme.carxp
+%%DATADIR%%/Falling in Fantasy.carxp
+%%DATADIR%%/Filtered_Echo.dly
+%%DATADIR%%/Flange_plus_Echo.dly
+%%DATADIR%%/Floyd Trip.carxp
+%%DATADIR%%/Funk Wah.carxp
+%%DATADIR%%/Funk-1.carxp
+%%DATADIR%%/Gary Loaded.carxp
+%%DATADIR%%/Gary Moded.carxp
+%%DATADIR%%/Gary Mooore.carxp
+%%DATADIR%%/GibSoonMur.carxp
+%%DATADIR%%/GibSoonMurDouble.carxp
+%%DATADIR%%/GibSoonMurder.carxp
+%%DATADIR%%/Go with Him.carxp
+%%DATADIR%%/Goin through a phase.carxp
+%%DATADIR%%/Goog Bye.carxp
+%%DATADIR%%/Guitar_Ambience.rvb
+%%DATADIR%%/Hall.rvb
+%%DATADIR%%/Hard Rock Amp.carxp
+%%DATADIR%%/Heaven Garden.carxp
+%%DATADIR%%/Helicopter.carxp
+%%DATADIR%%/Hendrix.carxp
+%%DATADIR%%/Ignited.carxp
+%%DATADIR%%/Igniter.carxp
+%%DATADIR%%/Insanity Mojo.carxp
+%%DATADIR%%/JZ Power.carxp
+%%DATADIR%%/Jazz Bright Chorus.carxp
+%%DATADIR%%/Jazz Hall.carxp
+%%DATADIR%%/Jazz Vibrato.carxp
+%%DATADIR%%/Jet Flanger.carxp
+%%DATADIR%%/JimiVibe.carxp
+%%DATADIR%%/JimiVibe2.carxp
+%%DATADIR%%/Joe.carxp
+%%DATADIR%%/JoeMoeJo.carxp
+%%DATADIR%%/Large_Hall.rvb
+%%DATADIR%%/Large_Room.rvb
+%%DATADIR%%/Like Pat.carxp
+%%DATADIR%%/Lil Blue.carxp
+%%DATADIR%%/Lil Dirty.carxp
+%%DATADIR%%/Live Punk Show.carxp
+%%DATADIR%%/Med_Hall.rvb
+%%DATADIR%%/Melon Collie II.carxp
+%%DATADIR%%/Melon Collie.carxp
+%%DATADIR%%/Metal Amp.carxp
+%%DATADIR%%/Metal Tone.carxp
+%%DATADIR%%/Metal.carxp
+%%DATADIR%%/MetalAmpOverloaded.carxp
+%%DATADIR%%/MetalAmpReloaded.carxp
+%%DATADIR%%/MetalAmploaded.carxp
+%%DATADIR%%/Mild Clean.carxp
+%%DATADIR%%/Mono Arpeg.carxp
+%%DATADIR%%/Multi-Chorus.dly
+%%DATADIR%%/Multichorus.carxp
+%%DATADIR%%/Music.carxp
+%%DATADIR%%/Mutation.carxp
+%%DATADIR%%/Naranja One.carxp
+%%DATADIR%%/Nasty.carxp
+%%DATADIR%%/Noise Synth.carxp
+%%DATADIR%%/Nostalgia.carxp
+%%DATADIR%%/Notch-Wah.dly
+%%DATADIR%%/OctaVibe - Dirty Echo.carxp
+%%DATADIR%%/Octaflange - Dirty.carxp
+%%DATADIR%%/Octaflange.carxp
+%%DATADIR%%/Old Pat.carxp
+%%DATADIR%%/Old Tavern.carxp
+%%DATADIR%%/Overdrive.carxp
+%%DATADIR%%/Oxygen.carxp
+%%DATADIR%%/Oxygenated.carxp
+%%DATADIR%%/Padpeg.carxp
+%%DATADIR%%/Panalog Phaser.carxp
+%%DATADIR%%/Phasetron.carxp
+%%DATADIR%%/PingPong.dly
+%%DATADIR%%/Pitch Vibrato.carxp
+%%DATADIR%%/PongChor.carxp
+%%DATADIR%%/Quasi Acoustic.carxp
+%%DATADIR%%/Rain Echo.carxp
+%%DATADIR%%/RandYa.carxp
+%%DATADIR%%/Random Eyes.carxp
+%%DATADIR%%/Reverse delay ambience.carxp
+%%DATADIR%%/Rhythm.carxp
+%%DATADIR%%/Rhythmic Vibes.carxp
+%%DATADIR%%/Rock Amp.carxp
+%%DATADIR%%/Rock Band 2.carxp
+%%DATADIR%%/Rock Band.carxp
+%%DATADIR%%/Rodent Airlines.carxp
+%%DATADIR%%/Rolling Echo.carxp
+%%DATADIR%%/Santa_Lucia.rvb
+%%DATADIR%%/Satriani 2.carxp
+%%DATADIR%%/Satriani.carxp
+%%DATADIR%%/SeqDist.carxp
+%%DATADIR%%/Shall.carxp
+%%DATADIR%%/Shall2.carxp
+%%DATADIR%%/Short_Delays.dly
+%%DATADIR%%/Slap Echo.carxp
+%%DATADIR%%/Soft Dist.carxp
+%%DATADIR%%/Soft Stereo.carxp
+%%DATADIR%%/Sounds and-a-log.carxp
+%%DATADIR%%/Sounds on Sound.carxp
+%%DATADIR%%/Space Invasion.carxp
+%%DATADIR%%/Spandex.carxp
+%%DATADIR%%/StartButton.carxp
+%%DATADIR%%/Stereo Ecstasy.carxp
+%%DATADIR%%/Stereo Tremolo.carxp
+%%DATADIR%%/Stereo Vibrato.carxp
+%%DATADIR%%/Stereo.carxp
+%%DATADIR%%/Steve Dist 2.carxp
+%%DATADIR%%/Steve Distortion.carxp
+%%DATADIR%%/Studio.rvb
+%%DATADIR%%/SubOctave.carxp
+%%DATADIR%%/Succulent Clean.carxp
+%%DATADIR%%/Suction Flange +dist.carxp
+%%DATADIR%%/Suction II.carxp
+%%DATADIR%%/Suction.carxp
+%%DATADIR%%/Summer at the Beach.carxp
+%%DATADIR%%/Summer at the Pit.carxp
+%%DATADIR%%/Summer at the Pool.carxp
+%%DATADIR%%/Surf's Up.carxp
+%%DATADIR%%/SwingPong.dly
+%%DATADIR%%/Swirly.carxp
+%%DATADIR%%/Talk to me.carxp
+%%DATADIR%%/Talk-Clean.carxp
+%%DATADIR%%/The Trooper.carxp
+%%DATADIR%%/Tight Rock.carxp
+%%DATADIR%%/Trash Chorus.carxp
+%%DATADIR%%/TriadEchoes.carxp
+%%DATADIR%%/Tricky Dick.carxp
+%%DATADIR%%/Trigger Chorus.carxp
+%%DATADIR%%/Trippy Harmo.carxp
+%%DATADIR%%/True Heavy-3.carxp
+%%DATADIR%%/Twilight.rvb
+%%DATADIR%%/Underwater I.carxp
+%%DATADIR%%/Violin Distortion.carxp
+%%DATADIR%%/Violin.carxp
+%%DATADIR%%/VocoHarm.carxp
+%%DATADIR%%/Voy Pa Alla.carxp
+%%DATADIR%%/Warm Chorus.carxp

@@ -1,0 +1,40 @@
+PORTNAME=	healthd
+PORTVERSION=	0.7.9
+PORTREVISION=	3
+CATEGORIES=	sysutils
+MASTER_SITES=	http://healthd.thehousleys.net/ \
+		LOCAL/ohauer
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Daemon to monitor vital motherboard parameters
+WWW=		http://healthd.thehousleys.net/
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+ONLY_FOR_ARCHS=	i386 amd64
+
+USE_RC_SUBR=	${PORTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
+INSTALL_TARGET=	install-all
+SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=	IPV6 FULL_CONFIG DOCS
+
+FULL_CONFIG_DESC=		Remotely reading the full config
+
+IPV6_CONFIGURE_ENABLE=		ipv6
+FULL_CONFIG_CONFIGURE_ENABLE=	full-config
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| @exec_prefix@| $$(DESTDIR)@exec_prefix@|' \
+		-e 's|man/man8|share/man/man8|' \
+		${WRKSRC}/Makefile.in
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/PROTOCOL ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

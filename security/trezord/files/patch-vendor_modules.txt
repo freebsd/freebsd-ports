@@ -1,0 +1,28 @@
+--- vendor/modules.txt.orig	2025-12-08 13:35:38 UTC
++++ vendor/modules.txt
+@@ -0,0 +1,25 @@
++# github.com/BurntSushi/toml v0.3.1
++## explicit
++# github.com/felixge/httpsnoop v1.0.1
++## explicit; go 1.13
++github.com/felixge/httpsnoop
++# github.com/gorilla/csrf v1.7.0
++## explicit; go 1.13
++github.com/gorilla/csrf
++# github.com/gorilla/handlers v1.5.1
++## explicit; go 1.14
++github.com/gorilla/handlers
++# github.com/gorilla/mux v1.8.0
++## explicit; go 1.12
++github.com/gorilla/mux
++# github.com/gorilla/securecookie v1.1.1
++## explicit
++github.com/gorilla/securecookie
++# github.com/pkg/errors v0.9.1
++## explicit
++github.com/pkg/errors
++# gopkg.in/natefinch/lumberjack.v2 v2.0.0
++## explicit
++gopkg.in/natefinch/lumberjack.v2
++# gopkg.in/yaml.v2 v2.4.0
++## explicit; go 1.15

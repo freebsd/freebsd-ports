@@ -1,0 +1,23 @@
+--- Makefile.orig	2008-09-11 20:28:12.000000000 +0500
++++ Makefile	2013-05-26 20:10:47.000000000 +0400
+@@ -1,6 +1,6 @@
+ #
+ #
+-CFLAGS ?= -O2
++CFLAGS?=$(CFLAGS)
+ #CFLAGS ?= -g
+ # 
+ # Defines:
+@@ -29,9 +29,9 @@
+ DEFS+=-DESC_C_TBL
+ 
+ DESTDIR ?= /
+-BINDIR ?= $(DESTDIR)/bin
+-MAPDIR ?= $(DESTDIR)/etc/mapchan
+-LDFLAGS ?= -s
++BINDIR?=${STAGEDIR}$(PREFIX)/bin
++MAPDIR?=${STAGEDIR}$(PREFIX)/mapchan
++LDFLAGS+=-s -lutil
+ LOADLIBES = -lutil
+ #--------------------------------------------------------------
+ CFLAGS += $(DEFS)

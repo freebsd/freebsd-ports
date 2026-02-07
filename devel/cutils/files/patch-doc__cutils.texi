@@ -1,0 +1,14 @@
+--- doc/cutils.texi.orig	Sun Jul 15 17:13:26 2001
++++ doc/cutils.texi	Fri Nov  2 17:38:59 2001
+@@ -2,6 +2,11 @@
+ @setfilename cutils.info
+ @settitle The cutils Manual
+ 
++@dircategory Programming & development tools
++@direntry
++* Cutils: (cutils).             A collection of utilities for "C" programmers.
++@end direntry
++
+ @c If "finalout" is commented out, the printed output will show
+ @c black boxes that mark lines that are too long.  Thus, it is
+ @c unwise to comment it out when running a master in case there are

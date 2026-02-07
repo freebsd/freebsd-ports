@@ -1,0 +1,2 @@
+vim_bridge is a Python-to-Vim bridge decorator that allows transparent calls to
+Python functions in native Vim scripts.

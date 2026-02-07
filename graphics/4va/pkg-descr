@@ -1,0 +1,10 @@
+Included in this package are:
+
+4va:
+ 4va is a fourth dimensional visualization program for X11.
+ It takes as input a file describing an object in up to 4 dimensions
+ and tumbles it in a window according to rotation values given on the
+ command line.
+
+Ctorus, cutctorus, 4vdmake:
+ These  three  programs are object file generators for 4va.

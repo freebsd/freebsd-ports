@@ -1,0 +1,14 @@
+NAME
+    Shell::Base - A generic class to build line-oriented command
+    interpreters.
+
+DESCRIPTION
+    Shell::Base is a base class designed for building command line programs.
+    It defines a number of useful defaults, simplifies adding commands and
+    help, and integrates well with Term::ReadLine.
+
+COPYRIGHT
+    Copyright (C) 2003 Darren Chamberlain. All Rights Reserved.
+
+    This module is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.

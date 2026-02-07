@@ -1,0 +1,11 @@
+libexec/dk-filter
+sbin/gentxt-dk
+share/man/man8/dk-filter.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/autorespond.csh
+%%PORTDOCS%%%%DOCSDIR%%/rfc4870.txt

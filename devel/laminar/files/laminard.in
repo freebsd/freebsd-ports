@@ -1,0 +1,32 @@
+#! /bin/sh
+
+# PROVIDE: %%LAMINARD%%
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable git_daemon:
+#
+#laminard_enable="YES"
+
+. /etc/rc.subr
+
+name="%%LAMINARD%%"
+rcvar="%%LAMINARD%%_enable"
+
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
+
+load_rc_config $name
+
+: ${%%PORTNAME%%d_enable:=NO}
+: ${%%PORTNAME%%d_env_file:=%%ETCDIR%%/%%LAMINARD%%.env}
+
+laminard_cmd=%%PREFIX%%/sbin/${name}
+procname=${laminard_cmd}
+#laminard_args="-v"
+command=/usr/sbin/daemon
+command_args="-f -o ${logfile} -p ${pidfile} -u %%USERS%% ${laminard_cmd} ${laminard_args}"
+
+run_rc_command "$1"
+

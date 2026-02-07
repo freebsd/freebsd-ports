@@ -1,0 +1,8 @@
+This framework provides an easy method to compute embeddings for accessing,
+using, and training state-of-the-art embedding and reranker models. It can be
+used to compute embeddings using Sentence Transformer models (quickstart), to
+calculate similarity scores using Cross-Encoder (a.k.a. reranker) models
+(quickstart) or to generate sparse embeddings using Sparse Encoder models
+(quickstart).
+This unlocks a wide range of applications, including semantic search, semantic
+textual similarity, and paraphrase mining.

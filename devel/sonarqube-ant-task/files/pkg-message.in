@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+  To integrate SonarQube with SonarQube Scanner for Ant (default
+  settings):
+  - define a new sonar Ant target in your Ant build script
+  - for the SonarQube target set classpath value to
+   %%DATADIR%%/sonarqube-ant-task.jar
+
+
+  More information:
+  https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-ant/
+EOM
+}
+]

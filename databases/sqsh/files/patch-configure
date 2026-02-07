@@ -1,0 +1,11 @@
+--- configure	2012-05-02 20:27:55.000000000 +0900
++++ configure	2012-05-04 14:34:22.000000000 +0900
+@@ -3531,7 +3531,7 @@
+ 				SYBASE_OS="-lnsl -lm";;
+ 			ncr*)
+ 				SYBASE_OS="-ldl -lm";;
+-			sunos*)
++			sunos*|*bsd*)
+ 				SYBASE_OS="-lm";;
+ 			solaris*)
+ 				SYBASE_OS="-lnsl -ldl -lm";;

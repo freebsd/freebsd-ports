@@ -1,0 +1,5 @@
+The w3mir package is an all-purpose HTTP copying and mirroring tool
+that can be used to create and maintain a browsable copy of one, or
+several, remote WWW site(s).  It can retrieve the contents of several
+related sites and make them browsable via a local web server or a
+filesystem.

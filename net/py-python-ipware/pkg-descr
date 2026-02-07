@@ -1,0 +1,3 @@
+A python package for server applications to retrieve client's IP address.
+
+Best attempt to get client's IP address while keeping it DRY.

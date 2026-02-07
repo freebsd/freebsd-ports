@@ -1,0 +1,2 @@
+Text::NonWideChar::Util provides the non-wide version of some of the routines in
+Text::WideChar::Util.

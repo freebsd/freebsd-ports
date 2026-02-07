@@ -1,0 +1,59 @@
+	  popa3d patch for POP-before-SMTP and SMTP-after-POP
+
+		    Garry Glendown / Dec. 12th 2000
+
+On the 'net there are a couple of solutions to allow for POP-before-SMTP
+authentication in order to allow for relaying of mails. Anyway, the 
+solutions I found didn't really apeal to me, so I hacked popa3d a bit,
+which we already used on one of our machines to serve mail to dialup
+customers.
+
+			     Prerequisites
+
+This patch supplies data to sendmail to allow for certain IPs to use it
+as a relaying host. In order to use with your sendmail installation, get
+the popauth-hack (http://www.sendmail.org/~ca/email/rules/popauth.m4)
+and install it by adding "HACK(`popauth')" to you .mc-file.
+
+			       Installing
+
+The patch - enabled through the POPB4SMTP-define in the Makefile -
+accesses the file "/etc/mail/popauth.db" (create with "makemap hash
+/etc/mail/popauth </dev/null") and adds the IP of the sucessfully
+authenticated POP-user to it. Once the IP appears in the .db-file,
+sendmail will allow the IP to relay mail from it.
+
+Apart from the IP, which is added as LHS in the database, the patch adds
+the timestamp of the authentication as RHS (which the sendmail-hack
+ignores). This timestamp is then used to remove old IPs which are older
+than VALIDTIME seconds (defined in the Makefile).
+
+			       Disclaimer
+
+This hack has been in production use for a week on our server and though
+there are in average 30-60 POP3 logins per minute (going up to 2-3
+requests per seconds during daytime), we have not had any problems.
+Please note that I'm no expert at the Berkeley db library - I just
+hacked up a version using the old db1 functions and it worked out.
+There may be things to do better, but it seems to work fine for me. If
+you have any suggestions, let me know ... I've tried to play it safe and
+wrapped all db-access into a semaphore-protected block, hopefully
+allowing for safe multiple execution ... also, I tried to make sure that
+the string functions all check for the available array length.
+
+If you have any suggestions, questions or feedback of any other kind
+concerning this hack, don't bug the author of popa3d, but drop me a mail
+at garry@glendown.de
+
+G.Glendown / Dec 15th 2000
+
+                                Testing
+
+You can check the state by using the following command:
+$ makemap -u hash popauth
+
+On very low volume servers you may clean up the databse by setup a cron job:
+cd /etc/mail && find popauth.db -mmin +6 -exec \
+	makemap hash popauth.db <popauth ";"
+
+Dirk Meyer / Jan 19th 2003

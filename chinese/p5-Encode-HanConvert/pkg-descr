@@ -1,0 +1,12 @@
+This module is an attempt to solve most common problems occurred in
+Traditional vs. Simplified Chinese conversion, in an efficient,
+flexible way, without resorting to external tools or modules.
+
+After installing this module, you'll have two additional encoding
+formats: big5-simp maps Big5 into Unicode's Simplified Chinese
+(and vice versa), and gbk-trad maps CP936 (better known as GBK)
+into Unicode's Traditional Chinese and back.
+
+The module exports various xxx_to_yyy functions by default, where
+xxx and yyy are one of big5, gb (i.e. GBK/CP936), simp (simplified
+Chinese unicode), or trad (traditional Chinese unicode).

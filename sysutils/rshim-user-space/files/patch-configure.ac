@@ -1,0 +1,16 @@
+--- configure.ac.orig	2022-07-05 09:38:08 UTC
++++ configure.ac
+@@ -91,10 +91,9 @@ fi
+ ])
+ 
+ if test $backend = freebsd; then
+-AC_SUBST(CPPFLAGS, "$CPPFLAGS -I${prefix}/include/libepoll-shim")
+-AC_SUBST(LDFLAGS, "$LDFLAGS -L${prefix}/lib")
+-AC_CHECK_HEADERS([sys/epoll.h],[],[AC_MSG_ERROR([Missing libepoll-shim])])
+-AC_CHECK_LIB(epoll-shim, epoll_create1)
++PKG_CHECK_MODULES([EPOLLSHIM], [epoll-shim-interpose])
++AC_SUBST(CPPFLAGS, "$CPPFLAGS $EPOLLSHIM_CFLAGS")
++AC_SUBST(LDFLAGS, "$LDFLAGS $EPOLLSHIM_LIBS")
+ AC_SUBST(CPPFLAGS, "$CPPFLAGS -DDEFAULT_RSHIM_CONFIG_FILE='\"${prefix}/etc/rshim.conf\"'")
+ else
+ AC_SUBST(CPPFLAGS, "$CPPFLAGS -DDEFAULT_RSHIM_CONFIG_FILE='\"/etc/rshim.conf\"'")

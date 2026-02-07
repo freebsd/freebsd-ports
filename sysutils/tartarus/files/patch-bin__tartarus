@@ -1,0 +1,120 @@
+--- bin/tartarus.orig	2020-07-07 16:50:59 UTC
++++ bin/tartarus
+@@ -41,6 +41,8 @@ set -u
+ set -f
+ shopt -s nocasematch
+ 
++typeset -x PATH=/usr/local/bin:/usr/local/sbin:${PATH}
++
+ CMD_INCREMENTAL="no"
+ CMD_UPDATE="no"
+ PROFILE=""
+@@ -527,7 +529,7 @@ LIMIT_DISK_IO="no"
+ #
+ # Disabling this option will stop Tartarus from checking its website for updates
+ # of itself.
+-CHECK_FOR_UPDATE="yes"
++CHECK_FOR_UPDATE="no"
+ #
+ #=item FILE_LIST_CREATION
+ #
+@@ -540,6 +542,37 @@ FILE_LIST_CREATION="no"
+ # This defines the directory lists of the processed files are placed in.
+ FILE_LIST_DIRECTORY=""
+ #
++#=item SFTP_AUTH_METHOD
++#
++# Defines SFTP authentication method: can be "password" or "pubkey"
++SFTP_AUTH_METHOD="password"
++#
++#=item SFTP_AUTH_PRIVKEY
++#
++# Defines SSH private key for authentication
++SFTP_AUTH_PRIVKEY=""
++#
++#=item SFTP_AUTH_PUBKEY
++#
++# Defines SSH public key for authentication
++SFTP_AUTH_PUBKEY=""
++#
++#=item SFTP_AUTH_PRIVKEY_TYPE
++#
++# Defines SSH private key type (PEM|DER|ENG)A
++# Defaults to PEM
++SFTP_AUTH_PRIVKEY_TYPE="PEM"
++#
++#=item SFTP_AUTH_PRIVKEY_PASS
++#
++# Defines SFTP_AUTH_PRIVKEY passphrase
++SFTP_AUTH_PRIVKEY_PASS=""
++#
++#=item SFTP_AUTH_HOSTPUBMD5
++#
++# Defines SFTP host MD5 pubkey
++SFTP_AUTH_HOSTPUBMD5=""
++#
+ #=back
+ #
+ #=cut
+@@ -616,7 +649,7 @@ fi
+ constructFilename() {
+     local INC=""
+     if isEnabled "$INCREMENTAL_BACKUP"; then
+-        local BASEDON=$(date -r "$INCREMENTAL_TIMESTAMP_FILE" '+%Y%m%d-%H%M')
++        local BASEDON=$(stat -f '%Sm' -t '%Y%m%d-%H%M' "$INCREMENTAL_TIMESTAMP_FILE")
+         INC="-inc-${BASEDON}"
+     fi
+     local CHUNK=""
+@@ -638,10 +671,10 @@ constructListFilename() {
+ case "$ASSEMBLY_METHOD" in
+     tar|"")
+         # use the traditional tar setup
+-        requireCommand tar || cleanup 1
++        requireCommand gtar || cleanup 1
+         collate() {
+             local TAROPTS="--no-unquote --no-recursion $TAR_OPTIONS"
+-            call tar cpf -  $TAROPTS --null -T -
++            call gtar cpf -  $TAROPTS --null -T -
+             local EXITCODE=$?
+             # exit code 1 means that some files have changed while backing them
+             # up, we think that is OK for now
+@@ -678,21 +711,28 @@ case "$STORAGE_METHOD" in
+         # define storage procedure
+         storage() {
+             # stay silent, but print error messages if aborting
+-            local OPTS="-u $STORAGE_FTP_USER:$STORAGE_FTP_PASSWORD -s -S"
+-            if isEnabled "$STORAGE_FTP_USE_SSL"; then
+-                OPTS="$OPTS --ftp-ssl"
+-            fi
+-            if isEnabled "$STORAGE_FTP_SSL_INSECURE"; then
+-                OPTS="$OPTS -k"
+-            fi
++	    local OPTS="-s -S -u $STORAGE_FTP_USER:"
+             local PROTO="ftp"
+-            if isEnabled "$STORAGE_FTP_USE_SFTP"; then
+-                PROTO="sftp"
+-            fi
++	    [ "$SFTP_AUTH_METHOD" != "pubkey" -a "$STORAGE_FTP_PASSWORD" != "" ] && OPTS="${OPTS}${STORAGE_FTP_PASSWORD}"
++	    if isEnabled "$STORAGE_FTP_USE_SFTP"; then
++	       PROTO="sftp"
++	       if isEnabled "$STORAGE_FTP_SSL_INSECURE"; then
++		   OPTS="$OPTS -k"
++	       fi
++	       [ "$SFTP_AUTH_PRIVKEY" != "" ] && OPTS="$OPTS --key $SFTP_AUTH_PRIVKEY"
++	       [ "$SFTP_AUTH_PUBKEY" != "" ] && OPTS="$OPTS --pubkey $SFTP_AUTH_PUBKEY"
++	       [ "$SFTP_AUTH_PRIVKEY_TYPE" != "" ] && OPTS="$OPTS --key-type $SFTP_AUTH_PRIVKEY_TYPE"
++	       [ "$SFTP_AUTH_PRIVKEY_PASS" != "" ] && OPTS="$OPTS --pass $SFTP_AUTH_PRIVKEY_PASS"
++	       [ "$SFTP_AUTH_HOSTPUBMD5" != "" ] && OPTS="$OPTS --hostpubmd5 $SFTP_AUTH_HOSTPUBMD5"
++	    else
++	       if isEnabled "$STORAGE_FTP_USE_SSL"; then
++		   OPTS="$OPTS --ftp-ssl"
++	       fi
++	    fi
+             local FILE=$(constructFilename)
+             local URL="$PROTO://$STORAGE_FTP_SERVER/$STORAGE_FTP_DIR/$FILE"
+             debug "Uploading backup to $URL..."
+-            curl $OPTS --upload-file - "$URL"
++            curl $OPTS --ftp-create-dirs --upload-file - "$URL"
+         }
+     ;;
+     FILE)

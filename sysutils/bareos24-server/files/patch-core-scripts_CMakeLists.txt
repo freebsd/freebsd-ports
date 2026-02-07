@@ -1,0 +1,76 @@
+--- core/scripts/CMakeLists.txt	2024-12-16 09:10:50.000000000 -0800
++++ core/scripts/CMakeLists.txt	2024-12-22 19:45:34.147106000 -0800
+@@ -34,14 +34,14 @@
+   mtx-changer.in
+ )
+ 
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/btraceback
+-  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
+-              WORLD_READ WORLD_EXECUTE
+-  DESTINATION "${sbindir}"
+-)
+-if(NOT client-only)
++if(client-only)
+   install(
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/btraceback
++    PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++                WORLD_READ WORLD_EXECUTE
++    DESTINATION "${sbindir}"
++  )
++  install(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos
+     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
+                 WORLD_READ WORLD_EXECUTE
+@@ -61,32 +61,34 @@
+                 WORLD_READ WORLD_EXECUTE
+     DESTINATION "${scriptdir}"
+   )
+-endif()
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config-lib.sh btraceback.gdb
+-  PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+-  DESTINATION "${scriptdir}"
+-)
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config
+-  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
+-              WORLD_READ WORLD_EXECUTE
+-  DESTINATION "${scriptdir}"
+-)
+-if(NOT client-only)
++
+   install(
+-    FILES bareos-ctl-funcs btraceback.dbx btraceback.mdb
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config-lib.sh btraceback.gdb
+     PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+     DESTINATION "${scriptdir}"
+   )
+-endif()
+-if(TARGET python3-fd)
++
+   install(
+-    FILES bareos_encode_string.py
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config
+     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
+                 WORLD_READ WORLD_EXECUTE
+     DESTINATION "${scriptdir}"
+   )
++
++  install(
++    FILES bareos-ctl-funcs btraceback.dbx btraceback.mdb
++    PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
++    DESTINATION "${scriptdir}"
++  )
++
++  if(TARGET python3-fd)
++    install(
++      FILES bareos_encode_string.py
++      PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++                  WORLD_READ WORLD_EXECUTE
++      DESTINATION "${scriptdir}"
++    )
++  endif()
+ endif()
+ 
+ if(NOT client-only)

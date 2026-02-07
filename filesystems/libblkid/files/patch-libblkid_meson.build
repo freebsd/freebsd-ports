@@ -1,0 +1,13 @@
+--- libblkid/meson.build.orig	2025-06-24 07:55:28 UTC
++++ libblkid/meson.build
+@@ -141,10 +141,8 @@ libblkid_link_args = []
+ libblkid_link_depends = []
+ libblkid_link_args = []
+ 
+-if cc.has_link_argument('-Wl,--version-script=@0@'.format(libblkid_sym_path))
+ 	libblkid_link_depends += [libblkid_sym]
+ 	libblkid_link_args += ['-Wl,--version-script=@0@'.format(libblkid_sym_path)]
+-endif
+ 
+ lib_blkid = both_libraries(
+   'blkid',

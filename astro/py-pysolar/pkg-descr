@@ -1,0 +1,9 @@
+Python libraries for simulating solar irradiation at any point on Earth.
+
+This package provides functions to calculate solar position (azimuth and
+altitude) and estimate solar radiation received at a given location and time.
+It accounts for atmospheric effects and can be used for solar energy analysis,
+astronomy, and climate research.
+
+The library supports timezone-aware datetime objects and provides accurate
+calculations based on established solar models.

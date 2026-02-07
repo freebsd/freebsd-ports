@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2018-08-27 06:57:22 UTC
++++ src/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ 
+ add_subdirectory(madness)
+ add_subdirectory(apps)
+-add_subdirectory(examples)
++#add_subdirectory(examples)
+ 
+ install(FILES madness.h
+     DESTINATION "${MADNESS_INSTALL_INCLUDEDIR}"

@@ -1,0 +1,8 @@
+prefix=%%LOCALBASE%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: NPlot
+Description: Charting library for .NET.
+Version: 0.9.11
+Libs: -r:${libdir}/mono/NPlot/NPlot.dll

@@ -1,0 +1,20 @@
+This module adds the following methods to HTTP::Response objects.
+
+$res->charset
+
+  Tells the charset exactly as appears in the Content-Type: header. Note that
+  the presence of the charset does not guarantee if the response content is
+  decodable via Encode.
+
+$res->encoder
+
+  Returns the corresponding encoder object or undef if it can't.
+
+$res->encoding
+
+  Tells the content encoding in the canonical name in Encode. Returns undef
+  if it can't.
+
+$res->decoded_content
+
+  Discontinued since HTTP::Message already has this method.

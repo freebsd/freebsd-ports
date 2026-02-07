@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Add the line below to *the end of* your .zshrc to enable highlighting.
+
+source %%DATADIR%%/zsh-syntax-highlighting.zsh
+EOM
+}
+]

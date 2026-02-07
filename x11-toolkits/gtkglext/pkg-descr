@@ -1,0 +1,3 @@
+GtkGLExt is an OpenGL extension to GTK.  It provides the GDK objects
+to support OpenGL rendering in GTK, and GtkWidget API add-ons to make
+GTK+ widgets OpenGL-capable.

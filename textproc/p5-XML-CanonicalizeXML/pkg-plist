@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/XML/CanonicalizeXML.pm
+%%SITE_ARCH%%/auto/XML/CanonicalizeXML/CanonicalizeXML.so
+%%SITE_ARCH%%/auto/XML/CanonicalizeXML/autosplit.ix
+%%PERL5_MAN3%%/XML::CanonicalizeXML.3.gz

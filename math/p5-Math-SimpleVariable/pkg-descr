@@ -1,0 +1,2 @@
+Math::SimpleVariable is a simple representation of mathematical
+variables, with an obligatory name and an optional value.

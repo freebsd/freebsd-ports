@@ -1,0 +1,11 @@
+bin/rgbpaint
+share/man/man1/rgbpaint.1.gz
+share/locale/cs/LC_MESSAGES/rgbpaint.mo
+share/locale/de_DE/LC_MESSAGES/rgbpaint.mo
+share/locale/es/LC_MESSAGES/rgbpaint.mo
+share/locale/fr/LC_MESSAGES/rgbpaint.mo
+share/locale/pl/LC_MESSAGES/rgbpaint.mo
+share/locale/pt/LC_MESSAGES/rgbpaint.mo
+share/locale/pt_BR/LC_MESSAGES/rgbpaint.mo
+share/locale/tr/LC_MESSAGES/rgbpaint.mo
+share/locale/zh_TW/LC_MESSAGES/rgbpaint.mo

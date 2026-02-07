@@ -1,0 +1,8 @@
+lib/aspell-%%VER%%/koi8-u-nl.cmap
+lib/aspell-%%VER%%/koi8-u-nl.cset
+lib/aspell-%%VER%%/uk.dat
+lib/aspell-%%VER%%/uk_affix.dat
+lib/aspell-%%VER%%/ukrainian.kbd
+share/aspell/uk.multi
+share/aspell/uk.rws
+share/aspell/ukrainian.alias

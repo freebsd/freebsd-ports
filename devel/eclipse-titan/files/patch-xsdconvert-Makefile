@@ -1,0 +1,12 @@
+--- xsdconvert/Makefile.orig	2024-11-14 11:50:43 UTC
++++ xsdconvert/Makefile
+@@ -83,6 +83,9 @@ install: $(TARGETS)
+ 	$(CXX) $(LDFLAGS) -o $@ $(OBJECTS) $(LDLIBS) $(MINGW_LIBS)
+ 
+ install: $(TARGETS)
++ifeq ($(DEBUG), no)
++	$(STRIP) $(TARGETS)
++endif
+ ifdef MINGW
+ 	mkdir -p      $(TTCN3_DIR)/programs
+ 	cp $(TARGETS) $(TTCN3_DIR)/programs

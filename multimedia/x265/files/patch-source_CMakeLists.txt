@@ -1,0 +1,51 @@
+--- source/CMakeLists.txt	2023-10-22 22:08:10.704150000 -0400
++++ source/CMakeLists.txt	2023-10-22 22:10:02.947579000 -0400
+@@ -45,5 +45,5 @@
+ endif()
+ set(X86_ALIASES x86 i386 i686 x86_64 amd64)
+-set(ARM_ALIASES armv6l armv7l)
++set(ARM_ALIASES armv6l armv7l armv7)
+ set(ARM64_ALIASES arm64 arm64e aarch64)
+ list(FIND X86_ALIASES "${SYSPROC}" X86MATCH)
+@@ -122,6 +122,7 @@
+     option(ENABLE_LIBVMAF "Enable VMAF" OFF)
+     if(ENABLE_LIBVMAF)
+         add_definitions(-DENABLE_LIBVMAF)
++        include_directories(${VMAF_INCLUDE_DIR})
+     endif()
+ endif(UNIX)
+ 
+@@ -474,7 +475,7 @@ if(POWER)
+     # IBM Power8
+     option(ENABLE_ALTIVEC "Enable ALTIVEC profiling instrumentation" ON)
+     if(ENABLE_ALTIVEC)
+-        add_definitions(-DHAVE_ALTIVEC=1 -maltivec -mabi=altivec)
++        add_definitions(-DHAVE_ALTIVEC=1 -maltivec)
+         add_definitions(-flax-vector-conversions -fpermissive)
+     else()
+         add_definitions(-DHAVE_ALTIVEC=0)
+@@ -593,12 +594,6 @@
+         ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+ endif()
+ 
+-if(SVTHEVC_FOUND)
+-    install(FILES "${SVT_HEVC_INCLUDE_DIR}/EbApi.h" DESTINATION include)
+-    install(FILES "${SVT_HEVC_INCLUDE_DIR}/EbErrorCodes.h" DESTINATION include)
+-    install(FILES "${SVT_HEVC_LIBRARY}" DESTINATION ${LIB_INSTALL_DIR})
+-endif()
+-
+ install(FILES x265.h "${PROJECT_BINARY_DIR}/x265_config.h" DESTINATION include)
+ if((WIN32 AND ENABLE_CLI) OR (WIN32 AND ENABLE_SHARED))
+     if(MSVC_IDE)
+@@ -650,7 +645,10 @@
+     if(EXTRA_LIB)
+         target_link_libraries(x265-shared ${EXTRA_LIB})
+     endif()
+-	 target_link_libraries(x265-shared ${PLATFORM_LIBS})
++    if(ENABLE_LIBVMAF)
++	target_link_libraries(x265-shared ${VMAF})
++    endif()
++	target_link_libraries(x265-shared ${PLATFORM_LIBS})
+     if(SVTHEVC_FOUND)
+         target_link_libraries(x265-shared ${SVT_HEVC_LIBRARY})
+     endif(SVTHEVC_FOUND)

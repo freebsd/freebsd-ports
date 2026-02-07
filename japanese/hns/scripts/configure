@@ -1,0 +1,4 @@
+#!/bin/sh
+/usr/bin/sed -e "s;@PREFIX@;${PREFIX};g" \
+	${FILESDIR}/hns-setup.sh > ${WRKDIR}/hns-setup
+/bin/chmod +x ${WRKDIR}/hns-setup ${WRKSRC}/hns-setup.*

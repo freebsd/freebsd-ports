@@ -1,0 +1,2 @@
+baf is a toolkit for building command line programs. It also provides cucumber
+helpers and steps for writing user acceptance tests.

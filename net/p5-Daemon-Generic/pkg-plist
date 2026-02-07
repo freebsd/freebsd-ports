@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Daemon/Generic.pm
+%%SITE_PERL%%/Daemon/Generic.pod
+%%SITE_PERL%%/Daemon/Generic/AnyEvent.pm
+%%SITE_PERL%%/Daemon/Generic/Event.pm
+%%SITE_PERL%%/Daemon/Generic/While1.pm
+%%PERL5_MAN3%%/Daemon::Generic.3.gz
+%%PERL5_MAN3%%/Daemon::Generic::AnyEvent.3.gz
+%%PERL5_MAN3%%/Daemon::Generic::Event.3.gz
+%%PERL5_MAN3%%/Daemon::Generic::While1.3.gz

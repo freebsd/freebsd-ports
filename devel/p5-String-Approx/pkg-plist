@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/String/Approx.pm
+%%SITE_ARCH%%/auto/String/Approx/Approx.so
+%%PERL5_MAN3%%/String::Approx.3.gz

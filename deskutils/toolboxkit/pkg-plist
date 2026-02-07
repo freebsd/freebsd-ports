@@ -1,0 +1,6 @@
+GNUstep/System/Library/Headers/Toolbox/BundleLoader.h
+GNUstep/System/Library/Headers/Toolbox/ToolboxBundleProtocol.h
+GNUstep/System/Library/Headers/Toolbox/Utilities.h
+GNUstep/System/Library/Libraries/libToolbox.so
+GNUstep/System/Library/Libraries/libToolbox.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libToolbox.so.%%LIBVERSION%%

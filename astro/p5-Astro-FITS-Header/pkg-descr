@@ -1,0 +1,3 @@
+Stores information about a FITS header block in an object. Takes an hash with
+an array reference as an argument. The array should contain a list of FITS
+header cards as input.

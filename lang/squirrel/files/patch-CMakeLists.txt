@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2025-02-08 15:24:36 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@ cmake_minimum_required(VERSION 3.4)
+ cmake_minimum_required(VERSION 3.4)
+-project(squirrel VERSION 3.1 LANGUAGES C CXX)
++project(squirrel VERSION 3.2 LANGUAGES C CXX)
+ 
+ option(DISABLE_STATIC "Avoid building/installing static libraries.")
+ option(LONG_OUTPUT_NAMES "Use longer names for binaries and libraries: squirrel3 (not sq).")

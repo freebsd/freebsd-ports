@@ -1,0 +1,34 @@
+--- Makefile.in.orig	2022-01-16 01:25:58 UTC
++++ Makefile.in
+@@ -22,16 +22,16 @@ objs     = arg_parser.o main.o
+          uninstall uninstall-bin uninstall-info uninstall-man \
+          doc info man check dist clean distclean
+ 
+-all : $(progname) lib$(libname).a
++all : $(progname) lib$(libname).so
+ 
+-lib$(libname).a: $(ocr_objs) $(lib_objs)
+-	$(AR) $(ARFLAGS) $@ $(ocr_objs) $(lib_objs)
++lib$(libname).so: $(ocr_objs) $(lib_objs)
++	$(CXX) -shared -fPIC -o $@ $(LDFLAGS) $(ocr_objs) $(lib_objs)
+ 
+ $(progname) : $(ocr_objs) $(objs)
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(ocr_objs) $(objs) $(LIBS)
++	$(CXX) $(CXXFLAGS) -o $@ $(ocr_objs) $(objs) $(LDFLAGS) $(LIBS)
+ 
+-ocradcheck : arg_parser.o ocradcheck.o lib$(libname).a
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ arg_parser.o ocradcheck.o lib$(libname).a $(LIBS)
++ocradcheck : arg_parser.o ocradcheck.o lib$(libname).so
++	$(CXX) $(CXXFLAGS) -o $@ arg_parser.o ocradcheck.o lib$(libname).so $(LDFLAGS) $(LIBS)
+ 
+ ocradcheck.o : ocradcheck.cc
+ 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
+@@ -101,7 +101,7 @@ install-bin : all
+ 	if [ ! -d "$(DESTDIR)$(libdir)" ] ; then $(INSTALL_DIR) "$(DESTDIR)$(libdir)" ; fi
+ 	$(INSTALL_PROGRAM) ./$(progname) "$(DESTDIR)$(bindir)/$(progname)"
+ 	$(INSTALL_DATA) $(VPATH)/$(libname)lib.h "$(DESTDIR)$(includedir)/$(libname)lib.h"
+-	$(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a"
++	$(INSTALL_DATA) ./lib$(libname).so "$(DESTDIR)$(libdir)/lib$(libname).so"
+ 
+ install-bin-strip : all
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install-bin

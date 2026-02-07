@@ -1,0 +1,8 @@
+--- Makefile.orig	2006-11-11 04:39:36 UTC
++++ Makefile
+@@ -5,3 +5,5 @@ randomio: randomio.o
+ 
+ clean:
+ 	rm -f *.o randomio
++
++all: randomio

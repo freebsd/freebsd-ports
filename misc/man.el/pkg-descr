@@ -1,0 +1,30 @@
+This code provides a function, `i18n-man', with which you can browse
+UNIX manual pages.  Formatting is done in background so that you
+can continue to use your Emacs while processing is going on.
+The mode also supports hypertext-like following of manual page SEE
+ALSO references, and other features.  See below or do `?' in a
+manual page buffer for details.
+
+For working with Japanese, English and German, put your dot.emacs file
+following:
+
+(autoload 'jman "i18n-man-ja" nil t)
+(autoload 'eman "i18n-man-en" nil t)
+(autoload 'dman "i18n-man-de" nil t)
+
+then
+
+  M-x jman
+    to get a Japanese manual page thru jman(1) and put it in a buffer.
+  M-x eman
+    to get a English manual page thru man(1) and put it in a buffer.
+  M-x dman
+    to get a German manual page thru man(1) and put it in a buffer.
+
+If you want byte-compile with your favorite "Emacs", use "byte-comile"
+script as:
+
+  # cd /usr/local/share/emacs/site-lisp
+  # /usr/local/share/doc/prom-mew/byte-compile xemacs-mule i18n-man-ja i18n-man-ja.el i18n-man.el
+
+For usage of byte_compile scripts, run byte_compile with -h option.

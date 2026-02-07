@@ -1,0 +1,9 @@
+lv is a powerful multilingual file viewer.  lv can decode and encode
+multilingual streams through many coding systems, for example, ISO
+2022 based coding systems such as iso-2022-jp, and Unicode streams
+encoded in UTF-7 or UTF-8. lv can be used not only as a file viewer
+but also as a coding-system translation filter.
+
+lv can recognize multi-bytes patterns as regular expressions, and lv
+also provides multilingual grep (1) functionality by giving it another
+name, lgrep.

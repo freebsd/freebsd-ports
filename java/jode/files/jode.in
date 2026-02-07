@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case $1 in
+  [Ss]wi*) CLAZZ=jode.swingui.Main; shift ;;
+  [Dd]ec*) CLAZZ=jode.decompiler.Main; shift ;;
+  [Oo]bf*) CLAZZ=jode.obfuscator.Main; shift ;;
+	*) CLAZZ=jode.decompiler.Main ;;
+esac
+  
+# This will only set CP if CLASSPATH is non-empty:
+CP=`echo $CLASSPATH | sed -e 's/:/,/g' -e 's/..*/--classpath &/'`
+
+exec java -cp %%JAVAJARDIR%%/jode-1.1.2-pre1.jar:%%GETOPT_JAR%% $CLAZZ $CP "$@"

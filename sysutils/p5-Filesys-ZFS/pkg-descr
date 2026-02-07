@@ -1,0 +1,2 @@
+Filesys::ZFS is a simple interface to zfs and zpool commands for
+managing ZFS file systems.

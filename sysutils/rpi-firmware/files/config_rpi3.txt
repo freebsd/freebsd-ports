@@ -1,0 +1,7 @@
+arm_64bit=1
+dtparam=audio=on,i2c_arm=on,spi=on
+dtoverlay=mmc
+dtoverlay=pwm
+dtoverlay=disable-bt
+device_tree_address=0x4000
+kernel=u-boot.bin

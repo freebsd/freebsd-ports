@@ -1,0 +1,35 @@
+--- freebsd/Makefile.orig	2025-01-10 20:44:14 UTC
++++ freebsd/Makefile
+@@ -17,12 +17,12 @@ CFLAGS+= -I. -I${LOCALBASE}/include -I${LOCALBASE}/inc
+ 
+ CFLAGS+= -std=c99 -Wmissing-prototypes -Wall -Wextra -Wshadow -Wno-uninitialized -g
+ CFLAGS+= -I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+-CFLAGS+= -DSWM_LIB=\"$(SWM_LIBDIR)/libswmhack.so.$(LVERS)\"
++CFLAGS+= -DSWM_LIB=\"$(SWM_LIBDIR)/libswmhack.so\"
+ LDADD+= -lutil -L${LOCALBASE}/lib -lX11 -lX11-xcb -lxcb \
+ 	-lxcb-icccm -lxcb-keysyms -lxcb-randr -lxcb-util -lxcb-xinput -lxcb-xtest -lfontconfig -lXft -lXcursor
+ 
+ 
+-all: spectrwm libswmhack.so.$(LVERS)
++all: spectrwm libswmhack.so
+ 
+ spectrwm.c:
+ 	ln -sf ../spectrwm.c
+@@ -38,7 +38,7 @@ swm_hack.so: swm_hack.c
+ swm_hack.so: swm_hack.c
+ 	$(CC) $(CFLAGS) -c -shared -fpic -DPIC -o ${.TARGET} ${.ALLSRC}
+ 
+-libswmhack.so.$(LVERS): swm_hack.so
++libswmhack.so: swm_hack.so
+ 	$(CC) $(LDFLAGS) -shared -fpic -o ${.TARGET} ${.ALLSRC}
+ 
+ install: all
+@@ -46,7 +46,7 @@ install: all
+ 	install -m 755 -d $(SWM_LIBDIR)
+ 	install -m 755 -d $(SWM_MANDIR)/man1
+ 	install -m 755 spectrwm $(SWM_BINDIR)
+-	install -m 755 libswmhack.so.$(LVERS) $(SWM_LIBDIR)
++	install -m 755 libswmhack.so $(SWM_LIBDIR)
+ 	install -m 644 ../spectrwm.1 $(SWM_MANDIR)/man1/spectrwm.1
+ 	ln -sf spectrwm $(SWM_BINDIR)/scrotwm
+ 

@@ -1,0 +1,17 @@
+--- cmd/loki/loki-local-config.yaml.orig	2023-04-29 22:15:59.584026000 +0000
++++ cmd/loki/loki-local-config.yaml	2023-04-29 22:16:24.126165000 +0000
+@@ -6,11 +6,11 @@
+ 
+ common:
+   instance_addr: 127.0.0.1
+-  path_prefix: /tmp/loki
++  path_prefix: /var/db/loki
+   storage:
+     filesystem:
+-      chunks_directory: /tmp/loki/chunks
+-      rules_directory: /tmp/loki/rules
++      chunks_directory: /var/db/loki/chunks
++      rules_directory: /var/db/loki/rules
+   replication_factor: 1
+   ring:
+     kvstore:

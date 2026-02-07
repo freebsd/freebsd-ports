@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2024-05-18 14:43:53 UTC
++++ CMakeLists.txt
+@@ -4,7 +4,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+ include(GNUInstallDirs)
+ 
+ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
++set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+ set(CMAKE_BINARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ 
+ set(MINGW_ADDITIONAL_LINKING_FLAGS "-static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic")
+@@ -36,7 +36,8 @@ if (BUILD_VST_PLUGIN OR BUILD_VST3_PLUGIN OR BUILD_LV2
+ 
+ if (BUILD_VST_PLUGIN OR BUILD_VST3_PLUGIN OR BUILD_LV2_PLUGIN OR BUILD_AU_PLUGIN OR BUILD_AUV3_PLUGIN)
+     if (USE_SYSTEM_JUCE)
+-        find_package(JUCE)
++	    find_package(JUCE REQUIRED)
++	    message("-- Found JUCE Version=${JUCE_VERSION}")
+     else ()
+         # For install JUCE copies all its headers, no one needs them. It also doesn't install actual libraries.
+         # On the other hand JUCE could install libraries during build process (see COPY_PLUGIN_AFTER_BUILD option).

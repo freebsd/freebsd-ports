@@ -1,0 +1,28 @@
+--- xfsettingsd/Makefile.in.orig	2024-12-15 09:30:17 UTC
++++ xfsettingsd/Makefile.in
+@@ -1406,25 +1406,6 @@ uninstall-am: uninstall-autostartDATA uninstall-binPRO
+ %.desktop: %.desktop.in
+ 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+ 
+-# Needed for XfceGtkSettingsHelper to translate GtkSettings property names into
+-# Xfconf property names
+-xsettings-properties.h: $(settings_DATA)
+-	$(AM_V_GEN) \
+-	printf '%s\n' \
+-		'#if G_GNUC_CHECK_VERSION (4, 6)' \
+-		'# pragma GCC diagnostic push' \
+-		'# pragma GCC diagnostic ignored "-Wunused-variable"' \
+-		'#endif' > $@; \
+-	for _prefix in $(shell $(XMLLINT) --xpath '//channel/property/@name' $< | $(SED) -E 's/name="(.*)"/\1/'); do \
+-		echo "static const gchar *xsettings_properties_$${_prefix}[] = {" \
+-		&& $(XMLLINT) --xpath "//channel/property[@name=\"$${_prefix}\"]/property/@name" $< | $(SED) -E 's/name=(.*)/\1,/' \
+-		&& echo '};'; \
+-	done >> $@; \
+-	printf '%s\n' \
+-		'#if G_GNUC_CHECK_VERSION (4, 6)' \
+-		'# pragma GCC diagnostic pop' \
+-		'#endif' >> $@;
+-
+ # Export on D-Bus by XfceGtkSettingsHelper of the module name xfsettingsd-gtk-settings-sync
+ # for synchronization of GtkSettings properties with the Xfconf xsettings channel on Wayland
+ gtk-settings-exported.c:

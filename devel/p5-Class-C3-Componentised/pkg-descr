@@ -1,0 +1,6 @@
+This will inject base classes to your module using the Class::C3 method
+resolution order.
+
+Please note: these are not plugins that can take precedence over methods
+declared in MyModule. If you want something like that, consider
+MooseX::Object::Pluggable.

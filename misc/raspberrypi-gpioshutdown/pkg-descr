@@ -1,0 +1,12 @@
+GPIO 'shutdown' Kernel module for the Raspberry Pi Model 1B and Model 2
+
+The purpose of this module is to shut down all GPIOs prior to powering off
+or rebooting a Raspberry Pi.
+
+The main reason for this is due to there being no real indicators that the
+shutdown process has completed. By doing a shutdown of all of the GPIOs (such
+that they act like inputs without pullup resistors), you can detect the 'high
+impedence' state either with an LED or using some kind of exernal board (such
+as an 'ATX Raspi' board). An external board could then detect the shutdown,
+and power off the Raspberry Pi safely, and you won't have to fix the file
+system due to problems caused by powering it down before it's safe to do so.

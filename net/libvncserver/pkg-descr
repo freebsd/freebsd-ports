@@ -1,0 +1,2 @@
+LibVNCServer is ripped out of Xvnc to provide an easy API to write one's own
+vnc server.

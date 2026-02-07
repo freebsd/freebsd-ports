@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DOTDIR=~/.spacejunk
+
+mkdir -p $DOTDIR
+cd $DOTDIR || exit 1
+
+if [ ! -e config.txt ]; then
+	cp %%DATADIR%%/config.txt .
+fi
+
+exec %%PREFIX%%/libexec/spacejunk "$@"

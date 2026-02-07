@@ -1,0 +1,15 @@
+--- vbz/CMakeLists.txt.orig	2025-01-14 12:42:19 UTC
++++ vbz/CMakeLists.txt
+@@ -24,12 +24,6 @@ target_include_directories(vbz
+         ${STREAMVBYTE_INSTALL_DIR}/include
+ )
+ 
+-# This explicit dependency is required to make sure the header files are installed into the right
+-# location before we try building against them.
+-add_dependencies(vbz
+-    streamvbyte
+-)
+-
+ option(VBZ_DISABLE_SSE3 "Disable SSE3 optimisations" OFF)
+ if ((WIN32 OR CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64") AND NOT VBZ_DISABLE_SSE3)
+     message(STATUS "SSE3 optimisations enabled")

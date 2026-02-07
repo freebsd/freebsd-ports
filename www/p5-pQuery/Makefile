@@ -1,0 +1,24 @@
+PORTNAME=	pQuery
+PORTVERSION=	0.24
+CATEGORIES=	www perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:INGY
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl Port of jQuery.js
+WWW=		https://metacpan.org/release/pQuery
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Tree>=0:www/p5-HTML-Tree
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

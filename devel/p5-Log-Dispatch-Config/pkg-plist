@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Log::Dispatch::Config.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Configurator.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Configurator::AppConfig.3.gz
+%%SITE_PERL%%/Log/Dispatch/Config.pm
+%%SITE_PERL%%/Log/Dispatch/Configurator.pm
+%%SITE_PERL%%/Log/Dispatch/Configurator/AppConfig.pm

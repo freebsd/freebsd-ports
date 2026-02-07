@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Note for Oracle users:
+
+    In order to connect in a simple way to an Oracle database, it is needed to
+    set ORACLE_HOME environment variable and then locate in a
+    $ORACLE_HOME/network/admin/ directory a valid tnsnames.ora services file.
+    Alternatively, you can set TNS_ADMIN to point out directly to that
+    tnsnames.ora file.
+
+    After that choose "TNS" as "Connection Type" when you are going to add a
+    new connection database.
+
+
+Note for MySQL users:
+
+    If you have enabled mysql support, it is needed to point out to SQL
+    Developer where the MySQL JDBC classes are. Go to Tools -> Preferences
+    menu, select Database -> Third Party JDBC Drivers and add the proper jar.
+    Do not install 5.1 version of mysql jdbc connector; see
+    https://docs.oracle.com/en/database/oracle/sql-developer/18.4/rptig/installing-sql-developer.html#GUID-3F68CF20-D03D-431C-A9A2-0EB971F06448
+EOM
+}
+]

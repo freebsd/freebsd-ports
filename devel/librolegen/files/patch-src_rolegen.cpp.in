@@ -1,0 +1,15 @@
+Configured/src/rolegen.cpp:54:10: error: no viable conversion from returned value of type 'std::__1::ifstream' (aka 'basic_ifstream<char>') to function return type 'bool'
+  return ifile;
+         ^~~~~
+
+--- src/rolegen.cpp.in.orig	2018-09-01 02:53:02 UTC
++++ src/rolegen.cpp.in
+@@ -51,7 +51,7 @@ static bool isPrivilegedAppId(const char *appId)
+ static bool fexists(string filename)
+ {
+   ifstream ifile(filename.c_str());
+-  return ifile;
++  return ifile.is_open();
+ }
+ 
+ static void checkDirStructure()

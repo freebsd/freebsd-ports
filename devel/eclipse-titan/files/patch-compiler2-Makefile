@@ -1,0 +1,19 @@
+--- compiler2/Makefile.orig	2024-11-14 11:50:43 UTC
++++ compiler2/Makefile
+@@ -55,12 +55,16 @@ ifeq ($(XMLDIR), default)
+ ifdef XMLDIR
+ ifeq ($(XMLDIR), default)
+   XMLDIR := /usr
++  CPPFLAGS += -DXMLDIR=\"$(XMLDIR)\"
+   # do not add -L/usr/lib to LDFLAGS, it's redundant
+ else
+   LDFLAGS  += -L$(XMLDIR)/lib
++  CPPFLAGS += -DXMLDIR=\"$(XMLDIR)\"
+ endif
+ 
+   CPPFLAGS += -I$(XMLDIR)/include/libxml2
++else
++  CPPFLAGS += -DXMLDIR=\"\$$(TTCN3_DIR)\"
+ endif
+ 
+ ifdef SRCDIR

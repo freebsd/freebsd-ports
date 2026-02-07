@@ -1,0 +1,38 @@
+See bug-reports:
+
+	https://core.tcl-lang.org/tcltls/tktview/bb7085cfdc
+	https://core.tcl-lang.org/tcltls/tktview/c6b35cf0e3
+	https://core.tcl-lang.org/tcltls/tktview/64cdb76212
+
+--- tests/tlsIO.test	2020-10-12 16:39:22.000000000 -0400
++++ tests/tlsIO.test	2023-11-19 21:03:22.658062000 -0500
+@@ -1106,4 +1106,5 @@
+     # need update to complete TLS handshake in-process
+     update
++    fconfigure $s1 -blocking 1
+     set z [gets $s1]
+     close $s
+@@ -2027,5 +2028,5 @@
+ } {{} 0 {} 0 {}}
+ 
+-test tls-bug58-1.0 {test protocol negotiation failure} {socket} {
++test tls-bug58-1.0 {test protocol negotiation failure} -constraints {socket} -body {
+     # Following code is based on what was reported in bug #58. Prior
+     # to fix the program would crash with a segfault.
+@@ -2062,5 +2063,5 @@
+     }
+     set ::done
+-} {handshake failed: wrong version number}
++} -result {handshake failed: *} -match glob
+ 
+ # cleanup
+--- tests/all.tcl	2020-10-12 16:39:22.000000000 -0400
++++ tests/all.tcl	2023-11-19 21:19:34.128221000 -0500
+@@ -55,5 +55,5 @@
+ # cleanup
+ puts stdout "\nTests ended at [eval $timeCmd]"
++set failCount [llength $::tcltest::failFiles]
+ ::tcltest::cleanupTests 1
+-return
+-
++exit [expr $failCount > 0]

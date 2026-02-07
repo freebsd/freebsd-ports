@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: igmpproxy
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+# The following variables are provided to control startup of igmpproxy
+# rc configuration file (eg /etc/rc.conf):
+# igmpproxy_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable igmpproxy.
+# igmpproxy_conf (path):	Set full path to configuration file.
+#				Default is "%%PREFIX%%/etc/igmpproxy.conf"
+
+. /etc/rc.subr
+
+name="igmpproxy"
+rcvar=igmpproxy_enable
+procname="%%PREFIX%%/sbin/${name}"
+command=/usr/sbin/daemon
+required_files="%%PREFIX%%/etc/igmpproxy.conf"
+
+load_rc_config $name
+
+igmpproxy_enable=${igmpproxy_enable-"NO"}
+igmpproxy_conf=${igmpproxy_config-"%%PREFIX%%/etc/igmpproxy.conf"}
+
+command_args=" -cf $procname $igmpproxy_conf"
+
+run_rc_command "$1"

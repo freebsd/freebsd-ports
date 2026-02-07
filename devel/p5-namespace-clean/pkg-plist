@@ -1,0 +1,3 @@
+%%SITE_PERL%%/namespace/clean.pm
+%%SITE_PERL%%/namespace/clean/_Util.pm
+%%PERL5_MAN3%%/namespace::clean.3.gz

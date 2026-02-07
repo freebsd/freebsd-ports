@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Class/Accessor/Constructor.pm
+%%SITE_PERL%%/Class/Accessor/Constructor/Base.pm
+%%PERL5_MAN3%%/Class::Accessor::Constructor.3.gz
+%%PERL5_MAN3%%/Class::Accessor::Constructor::Base.3.gz

@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Authen/Smb.pm
+%%SITE_ARCH%%/auto/Authen/Smb/autosplit.ix
+%%SITE_ARCH%%/auto/Authen/Smb/Smb.so
+%%PERL5_MAN3%%/Authen::Smb.3.gz

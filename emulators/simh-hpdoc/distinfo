@@ -1,0 +1,9 @@
+TIMESTAMP = 1582556365
+SHA256 (simh-hp/HP2100-source-release-29.zip) = e381eb51cdbea84a729fe0fa45001b7a864adcbf97438af0c788696b0c18c0bf
+SIZE (simh-hp/HP2100-source-release-29.zip) = 1890682
+SHA256 (simh-hp/HP3000-source-release-8.zip) = 2c003841b8c189299d45253520fd687694687c0a023aae9c79650234948b5a66
+SIZE (simh-hp/HP3000-source-release-8.zip) = 1412655
+SHA256 (simh-hp/running_hp_2000_tsb.pdf) = 905f8748d38b60a2f128961126086268f5f1485d625572333fee418beec85300
+SIZE (simh-hp/running_hp_2000_tsb.pdf) = 111280
+SHA256 (simh-hp/hp_1000_io_simulation.pdf) = 64a523a8237ed6143614c1b0747f5aa933b8e77e2cf5daf9fe62a3845aea8dc8
+SIZE (simh-hp/hp_1000_io_simulation.pdf) = 272289

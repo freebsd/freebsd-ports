@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+You have successfully installed codespell!
+The dictionary files have been installed to:
+%%PYTHON_SITELIBDIR%%/codespell_lib/data/
+EOM
+}
+]

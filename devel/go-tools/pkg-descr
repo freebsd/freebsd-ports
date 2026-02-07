@@ -1,0 +1,20 @@
+go-tools holds the golang.org/x/tools module, comprising various tools
+mostly for static analysis of Go programs, some of which are listed
+below.  Selected commands:
+
+goimports  formats a Go program like go fmt and additionally inserts
+	import statements for any packages required by the file after it
+	is edited.
+
+callgraph  prints the call graph of a Go program.
+
+
+digraph  is a utility for manipulating directed graphs in textual
+	notation.
+
+
+stringer  generates declarations (including a String method) for "enum"
+	types.
+
+toolstash is a utility to simplify working with multiple versions of the
+	Go toolchain.

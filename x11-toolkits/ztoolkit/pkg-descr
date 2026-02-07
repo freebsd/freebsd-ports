@@ -1,0 +1,7 @@
+ZToolkit (Ztk) is a cross-platform GUI toolkit heavily inspired by GTK.
+
+It handles events and low level drawing on behalf of the user and provides a
+high-level API for managing the UI and custom widgets.
+
+ZToolkit is written in C based on pugl and was created to be used for various
+plugins bundled with the Zrythm digital audio workstation.

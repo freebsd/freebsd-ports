@@ -1,0 +1,35 @@
+--- configure.orig	Thu Dec 20 11:22:14 2007
++++ configure	Thu Dec 20 11:24:39 2007
+@@ -16,7 +16,7 @@
+ if [ "$CC" = "" ]; then
+     CC=gcc
+ fi
+-CFLAGS="-g -Wall -W -Wno-unused-parameter -Wno-unused-function -DDD_DEBUG -Iutil"
++CFLAGS="${CFLAGS} -Iutil"
+ LIBS="util/ddutil-dbg.a"
+ 
+ if [ "`uname -m`" = x86_64 ]; then
+@@ -79,12 +79,12 @@
+ 
+ clean:
+ 	rm -f \$(OBJECTS)
+-	make -C util clean
++	gmake -C util clean
+ 
+ install: datadraw
+ 	install -d \$(PREFIX)/bin
+ 	install datadraw \$(PREFIX)/bin
+-	make -C util PREFIX=\$(PREFIX) install
++	gmake -C util PREFIX=\$(PREFIX) install
+ 
+ deb:
+ 	fakeroot debian/rules binary && sudo dpkg -i ../*.deb
+@@ -100,7 +100,7 @@
+ 	datadraw src/Database.dd
+ 
+ util/ddutil-dbg.a:
+-	make -C util
++	gmake -C util
+ 
+ " >> Makefile
+ 

@@ -1,0 +1,345 @@
+--- tremulous-1.1.0-src/Makefile.orig	2006-03-21 22:28:25 UTC
++++ tremulous-1.1.0-src/Makefile
+@@ -18,7 +18,7 @@ else
+   # Apple does some things a little differently...
+   COMPILE_ARCH=$(shell uname -p | sed -e s/i.86/x86/)
+ else
+-  COMPILE_ARCH=$(shell uname -m | sed -e s/i.86/x86/)
++  COMPILE_ARCH=$(shell uname -m | sed -e s/amd64/x86_64/ -e s/i.86/x86/ -e s/powerpc/ppc/)
+ endif
+ 
+ ifeq ($(COMPILE_PLATFORM),mingw32)
+@@ -27,11 +27,20 @@ endif
+   endif
+ endif
+ 
+-BUILD_CLIENT     =
+-BUILD_CLIENT_SMP =
+-BUILD_SERVER     =
+-BUILD_GAME_SO    =
+-BUILD_GAME_QVM   =
++BUILD_CLIENT?=0
++BUILD_CLIENT_SMP?=0
++BUILD_GAME_QVM?=0
++BUILD_GAME_SO?=0
++BUILD_MASTER_SERVER?=0
++BUILD_SERVER?=0
++HAVE_VM_COMPILED?=false
++USE_CODEC_VORBIS?=0
++USE_LOCAL_HEADERS?=0
++USE_OPENAL?=0
++USE_OPENAL_DLOPEN?=0
++USE_OPTIMIZED_CFLAGS?=0
++USE_SDL_AUDIO?=0
++USE_SDL_VIDEO?=0
+ 
+ #############################################################################
+ #
+@@ -51,10 +60,6 @@ endif
+ ifndef ARCH
+ ARCH=$(COMPILE_ARCH)
+ endif
+-
+-ifeq ($(ARCH),powerpc)
+-  ARCH=ppc
+-endif
+ export ARCH
+ 
+ ifneq ($(PLATFORM),$(COMPILE_PLATFORM))
+@@ -89,34 +94,10 @@ export USE_CCACHE
+ endif
+ export USE_CCACHE
+ 
+-ifndef USE_SDL
+-USE_SDL=1
+-endif
+-
+-ifndef USE_OPENAL
+-USE_OPENAL=1
+-endif
+-
+-ifndef USE_OPENAL_DLOPEN
+-USE_OPENAL_DLOPEN=0
+-endif
+-
+-ifndef USE_CODEC_VORBIS
+-USE_CODEC_VORBIS=0
+-endif
+-
+-ifndef USE_LOCAL_HEADERS
+-USE_LOCAL_HEADERS=1
+-endif
+-
+-ifndef BUILD_MASTER_SERVER
+-BUILD_MASTER_SERVER=0
+-endif
+-
+ #############################################################################
+ 
+ BD=$(BUILD_DIR)/debug-$(PLATFORM)-$(ARCH)
+-BR=$(BUILD_DIR)/release-$(PLATFORM)-$(ARCH)
++BR=$(BUILD_DIR)/release
+ CDIR=$(MOUNT_DIR)/client
+ SDIR=$(MOUNT_DIR)/server
+ RDIR=$(MOUNT_DIR)/renderer
+@@ -202,15 +183,13 @@ ifeq ($(PLATFORM),linux)
+ 
+   ifeq ($(ARCH),x86_64)
+     OPTIMIZE = -O3 -fomit-frame-pointer -ffast-math -funroll-loops \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -fstrength-reduce
++      -falign-functions=2 -fstrength-reduce
+     # experimental x86_64 jit compiler! you need GNU as
+     HAVE_VM_COMPILED = true
+   else
+   ifeq ($(ARCH),x86)
+     OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math \
+-      -funroll-loops -falign-loops=2 -falign-jumps=2 \
+-      -falign-functions=2 -fstrength-reduce
++      -funroll-loops -falign-functions=2 -fstrength-reduce
+     HAVE_VM_COMPILED=true
+   else
+   ifeq ($(ARCH),ppc)
+@@ -293,7 +272,7 @@ ifeq ($(PLATFORM),darwin)
+     GL_CFLAGS =
+   endif
+ 
+-  OPTIMIZE = -O3 -ffast-math -falign-loops=16
++  OPTIMIZE = -O3 -ffast-math
+ 
+   ifeq ($(ARCH),ppc)
+   BASE_CFLAGS += -faltivec
+@@ -375,8 +354,8 @@ ifeq ($(PLATFORM),mingw32)
+   GL_CFLAGS =
+   MINGW_CFLAGS = -DDONT_TYPEDEF_INT32
+ 
+-  OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math -falign-loops=2 \
+-    -funroll-loops -falign-jumps=2 -falign-functions=2 -fstrength-reduce
++  OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math \
++    -funroll-loops -falign-functions=2 -fstrength-reduce
+ 
+   DEBUG_CFLAGS=$(BASE_CFLAGS) -g -O0
+ 
+@@ -412,18 +391,12 @@ ifeq ($(PLATFORM),freebsd)
+ 
+ ifeq ($(PLATFORM),freebsd)
+ 
+-  ifneq (,$(findstring alpha,$(shell uname -m)))
+-    ARCH=axp
+-  else #default to x86
+-    ARCH=x86
+-  endif #alpha test
++  BASE_CFLAGS = -I$(LOCALBASE)/include -DARCH='\"$(ARCH)\"' -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
+ 
++  GL_CFLAGS = -I$(LOCALBASE)/include
+ 
+-  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
+-
+-  GL_CFLAGS = -I/usr/X11R6/include
+-
+   DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -pipe
+ 
+   ifeq ($(USE_OPENAL),1)
+     BASE_CFLAGS += -DUSE_OPENAL=1
+@@ -436,46 +409,61 @@ ifeq ($(PLATFORM),freebsd)
+     BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
+   endif
+ 
+-  ifeq ($(USE_SDL),1)
+-    BASE_CFLAGS += $(shell sdl11-config --cflags) -DUSE_SDL_VIDEO=1 -DUSE_SDL_SOUND=1
++  ifeq ($(USE_SDL_AUDIO),1)
++    BASE_CFLAGS += $(shell $(SDL_CONFIG) --cflags)
++  else
++    ifeq ($(USE_SDL_VIDEO),1)
++      BASE_CFLAGS += $(shell $(SDL_CONFIG) --cflags)
++    endif
+   endif
+ 
+-  ifeq ($(ARCH),axp)
+-    CC=gcc
+-    BASE_CFLAGS += -DNO_VM_COMPILED
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -ffast-math -funroll-loops \
+-      -fomit-frame-pointer -fexpensive-optimizations
+-  else
+-  ifeq ($(ARCH),x86)
+-    CC=gcc
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -mtune=pentiumpro \
+-      -march=pentium -fomit-frame-pointer -pipe -ffast-math \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -funroll-loops -fstrength-reduce
+-  else
+-    BASE_CFLAGS += -DNO_VM_COMPILED
++  ifeq ($(USE_SDL_AUDIO),1)
++    BASE_CFLAGS += -DUSE_SDL_SOUND=1
+   endif
++
++  ifeq ($(USE_SDL_VIDEO),1)
++    BASE_CFLAGS += -DUSE_SDL_VIDEO=1
+   endif
+ 
++  ifeq ($(USE_OPTIMIZED_CFLAGS),1)
++    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
++       -fexpensive-optimizations
++    ifeq ($(ARCH),x86)
++      RELEASE_CFLAGS+=-falign-functions=2 -fstrength-reduce
++    endif
++  endif
++
++  HAVE_VM_COMPILED?=false
++  ifneq ($(HAVE_VM_COMPILED),true)
++    BASE_CFLAGS += -DNO_VM_COMPILED
++  endif
++
+   SHLIBEXT=so
+   SHLIBCFLAGS=-fPIC
+   SHLIBLDFLAGS=-shared $(LDFLAGS)
+ 
+   THREAD_LDFLAGS=-lpthread
+   # don't need -ldl (FreeBSD)
+-  LDFLAGS=-lm
++  LDFLAGS+=-lm
+ 
+-  CLIENT_LDFLAGS =
++  CLIENT_LDFLAGS = -L$(LOCALBASE)/lib
+ 
+-  ifeq ($(USE_SDL),1)
+-    CLIENT_LDFLAGS += $(shell sdl11-config --libs)
++  ifeq ($(USE_SDL_AUDIO),1)
++    CLIENT_LDFLAGS += $(shell $(SDL_CONFIG) --libs)
+   else
+-    CLIENT_LDFLAGS += -L/usr/X11R6/$(LIB) -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++    ifeq ($(USE_SDL_VIDEO),1)
++      CLIENT_LDFLAGS += $(shell $(SDL_CONFIG) --libs)
++    endif
+   endif
+ 
++  ifneq ($(USE_SDL_VIDEO),1)
++    CLIENT_LDFLAGS += -L$(LOCALBASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++  endif
++
+   ifeq ($(USE_OPENAL),1)
++    CLIENT_LDFLAGS += $(THREAD_LDFLAGS)
+     ifneq ($(USE_OPENAL_DLOPEN),1)
+-      CLIENT_LDFLAGS += $(THREAD_LDFLAGS) -lopenal
++      CLIENT_LDFLAGS += -lopenal
+     endif
+   endif
+ 
+@@ -574,16 +562,15 @@ ifeq ($(PLATFORM),SunOS)
+   OPTIMIZE = -O3 -ffast-math -funroll-loops
+ 
+   ifeq ($(ARCH),sparc)
+-    OPTIMIZE = -O3 -ffast-math -falign-loops=2 \
+-      -falign-jumps=2 -falign-functions=2 -fstrength-reduce \
++    OPTIMIZE = -O3 -ffast-math \
++      -falign-functions=2 -fstrength-reduce \
+       -mtune=ultrasparc -mv8plus -mno-faster-structs \
+       -funroll-loops
+     BASE_CFLAGS += -DNO_VM_COMPILED
+   else
+   ifeq ($(ARCH),x86)
+     OPTIMIZE = -O3 -march=i586  -ffast-math \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -funroll-loops -fstrength-reduce
++      -falign-functions=2 -funroll-loops -fstrength-reduce
+   endif
+   endif
+ 
+@@ -637,21 +624,22 @@ ifneq ($(BUILD_SERVER),0)
+ TARGETS =
+ 
+ ifneq ($(BUILD_SERVER),0)
+-  TARGETS += $(B)/tremded.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/tremded$(BINEXT)
+ endif
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-  TARGETS += $(B)/tremulous.$(ARCH)$(BINEXT)
+-  ifneq ($(BUILD_CLIENT_SMP),0)
+-    TARGETS += $(B)/tremulous.$(ARCH)$(BINEXT)
+-  endif
++  TARGETS += $(B)/tremulous$(BINEXT)
+ endif
+ 
++ifneq ($(BUILD_CLIENT_SMP),0)
++  TARGETS += $(B)/tremulous-smp$(BINEXT)
++endif
++
+ ifneq ($(BUILD_GAME_SO),0)
+   TARGETS += \
+-    $(B)/base/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/base/game$(ARCH).$(SHLIBEXT) \
+-    $(B)/base/ui$(ARCH).$(SHLIBEXT)
++    $(B)/base/cgame.$(SHLIBEXT) \
++    $(B)/base/game.$(SHLIBEXT) \
++    $(B)/base/ui.$(SHLIBEXT)
+ endif
+ 
+ ifneq ($(BUILD_GAME_QVM),0)
+@@ -709,14 +697,14 @@ build_release: B=$(BR)
+ endif
+ 
+ build_release: B=$(BR)
+-build_release: makedirs tools
++build_release: makedirs
+ 	$(MAKE) targets B=$(BR) CFLAGS="$(CFLAGS) $(RELEASE_CFLAGS) $(DEPEND_CFLAGS)"
+ ifeq ($(BUILD_MASTER_SERVER),1)
+ 	$(MAKE) -C $(MASTERDIR) release
+ endif
+ 
+ #Build both debug and release builds
+-all:build_debug build_release
++all:build_release
+ 
+ targets: $(TARGETS)
+ 
+@@ -962,10 +950,10 @@ endif
+     $(B)/client/sdl_glimp_smp.o
+ endif
+ 
+-$(B)/tremulous.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
++$(B)/tremulous$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
+ 	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+ 
+-$(B)/tremulous-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
++$(B)/tremulous-smp$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
+ 	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
+ 		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+ 
+@@ -1253,7 +1241,7 @@ endif
+   endif
+ endif
+ 
+-$(B)/tremded.$(ARCH)$(BINEXT): $(Q3DOBJ)
++$(B)/tremded$(BINEXT): $(Q3DOBJ)
+ 	$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
+ 
+ $(B)/ded/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_DED_CC)
+@@ -1374,7 +1362,7 @@ CGVMOBJ = $(CGOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.as
+ CGOBJ = $(CGOBJ_) $(B)/base/cgame/cg_syscalls.o
+ CGVMOBJ = $(CGOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
+ 
+-$(B)/base/cgame$(ARCH).$(SHLIBEXT) : $(CGOBJ)
++$(B)/base/cgame.$(SHLIBEXT) : $(CGOBJ)
+ 	$(CC) $(SHLIBLDFLAGS) -o $@ $(CGOBJ)
+ 
+ $(B)/base/vm/cgame.qvm: $(CGVMOBJ) $(CGDIR)/cg_syscalls.asm
+@@ -1418,7 +1406,7 @@ GVMOBJ = $(GOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
+ GOBJ = $(GOBJ_) $(B)/base/game/g_syscalls.o
+ GVMOBJ = $(GOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
+ 
+-$(B)/base/game$(ARCH).$(SHLIBEXT) : $(GOBJ)
++$(B)/base/game.$(SHLIBEXT) : $(GOBJ)
+ 	$(CC) $(SHLIBLDFLAGS) -o $@ $(GOBJ)
+ 
+ $(B)/base/vm/game.qvm: $(GVMOBJ) $(GDIR)/g_syscalls.asm
+@@ -1444,7 +1432,7 @@ UIVMOBJ = $(UIOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.as
+ UIOBJ = $(UIOBJ_) $(B)/base/ui/ui_syscalls.o
+ UIVMOBJ = $(UIOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
+ 
+-$(B)/base/ui$(ARCH).$(SHLIBEXT) : $(UIOBJ)
++$(B)/base/ui.$(SHLIBEXT) : $(UIOBJ)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(UIOBJ)
+ 
+ $(B)/base/vm/ui.qvm: $(UIVMOBJ) $(UIDIR)/ui_syscalls.asm

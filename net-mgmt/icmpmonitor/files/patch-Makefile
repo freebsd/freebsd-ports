@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2014-06-09 11:38:16.905011836 +0800
++++ Makefile.in	2014-06-09 11:38:39.412011484 +0800
+@@ -36,7 +36,7 @@ tar:	distclean
+ 	gzip -9 icmpmonitor-$(VERSION).tar)
+ 
+ install: icmpmonitor icmpmonitor.man
+-	$(top_srcdir)/mkinstalldirs $(sbindir)
+-	$(INSTALL) icmpmonitor $(sbindir)
+-	$(top_srcdir)/mkinstalldirs $(mandir)/man1
+-	$(INSTALL) icmpmonitor.man $(mandir)/man1/icmpmonitor.1
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(sbindir)
++	$(INSTALL) icmpmonitor $(DESTDIR)$(sbindir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
++	$(INSTALL) icmpmonitor.man $(DESTDIR)$(mandir)/man1/icmpmonitor.1

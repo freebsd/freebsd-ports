@@ -1,0 +1,11 @@
+bin/minipot-init
+bin/minipot-start
+etc/consul.d/minipot-agent.json
+etc/cron.d/pot-prune
+etc/newsyslog.conf.d/consul.conf
+etc/newsyslog.conf.d/nomad.conf
+etc/newsyslog.conf.d/traefik.conf
+@sample etc/nomad/minipot-server.hcl.sample
+etc/syslog.d/consul.conf
+etc/syslog.d/nomad.conf
+@sample etc/minipot-traefik.toml.sample

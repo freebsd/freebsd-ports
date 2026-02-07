@@ -1,0 +1,6 @@
+Xcftools is a set of fast command-line tools for extracting information
+from the Gimp's native file format XCF. The tools are designed to allow
+efficient use of layered XCF files as sources in a build system that use
+'make' and similar tools to manage automatic processing of the graphics.
+These tools work independently of the Gimp engine and do not require the
+Gimp to even be installed.

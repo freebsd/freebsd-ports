@@ -1,0 +1,12 @@
+--- src/plugins/platforms/xcb/xcb_support/xcb_support.cmake.orig	2022-02-17 11:18:08 UTC
++++ src/plugins/platforms/xcb/xcb_support/xcb_support.cmake
+@@ -151,7 +151,7 @@ if(BUILD_PLATFORMS_XCB_PLUGIN)
+       TARGETS CsXcbSupport
+       EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+    )
+ endif()

@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: pdjson
+Version: %%DISTVERSION%%
+Description: Public Domain JSON parser
+URL: https://github.com/skeeto/pdjson
+Libs: -L${libdir} -lpdjson
+Cflags: -I${includedir}
+

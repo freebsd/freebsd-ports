@@ -1,0 +1,22 @@
+--- configure.ac.orig	2019-12-29 17:14:41.000000000 +0700
++++ configure.ac	2025-05-04 23:33:58.901840000 +0700
+@@ -61,8 +68,8 @@
+ dnl IDN
+ dnl Default: enable it	
+ LIBIDN=1
+-AC_ARG_WITH(libidn,
+- [  --with-libidn[=DIR]   Internationalized Domain Names support (needs GNU libidn)],dnl
++AC_ARG_WITH(libidn2,
++ [  --with-libidn2[=DIR]   Internationalized Domain Names support (needs GNU libidn2)],dnl
+  [if test "$withval" != "no"; then
+    if test "$withval" != "yes"; then
+ 	IDNROOT=$withval
+@@ -186,7 +193,7 @@
+        [AC_MSG_ERROR([echoping requires dlopen (dynamic loading of libraries) for plugins])])])
+ 
+ if test "$LIBIDN" = "1"; then
+-CF_LIB_LIBIDN
++CF_LIB_LIBIDN2
+ fi
+ if test "$OPENSSL" = "1" && test "$GNUTLS" = "1"; then
+ AC_MSG_ERROR([Choose OpenSSL or GNU TLS but not both])

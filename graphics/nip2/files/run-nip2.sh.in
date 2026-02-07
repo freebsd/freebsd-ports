@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ -z "$VIPSHOME" ]
+then
+	export VIPSHOME=%%PREFIX%%
+fi
+if [ -z "$GDK_USE_XFT" ]
+then
+	export GDK_USE_XFT=1
+fi
+exec %%PREFIX%%/bin/nip2 "$@"

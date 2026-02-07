@@ -1,0 +1,17 @@
+Submitted-By: pcg@aber.ac.uk (Piercarlo Grandi)
+Posting-Number: Volume 27, Issue 195
+Archive-Name: team/part01
+
+There exist a few filters that help tapes streams by buffering IO and
+allowing reads to overlaps with writes under Unix. Most of these filters
+rely on relatively unportable features, for example SYSV like shared
+memory.
+
+team is a filter that runs essentially unchanged on any Unix version, as
+it relies only on features present in V7. A number of team processes
+(team members) share a common input fd and a common output fd, and they
+take turns at reading from the former and writing to the latter; they
+synchronize by using a ring of pipes between them, where a "read-enable"
+and a "write-enable" token circulate.
+
+The team source is GPL'ed, and it comes with no warranty.

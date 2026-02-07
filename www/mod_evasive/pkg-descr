@@ -1,0 +1,5 @@
+mod_dosevasive is an evasive maneuvers module for Apache to provide evasive
+action in the event of an HTTP DoS or DDoS attack or brute force attack.  It is
+also designed to be a detection and network management tool, and can be easily
+configured to talk to ipchains, firewalls, routers, and etcetera.
+mod_dosevasive presently reports abuses via email and syslog facilities.

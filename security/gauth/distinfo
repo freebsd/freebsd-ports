@@ -1,0 +1,5 @@
+TIMESTAMP = 1740068826
+SHA256 (go/security_gauth/gauth-v1.5.0/v1.5.0.mod) = 001b3b1eadcb424e92c8c6a191ff587e2725c9f7c984bdf7eb2ca8a40541f05a
+SIZE (go/security_gauth/gauth-v1.5.0/v1.5.0.mod) = 359
+SHA256 (go/security_gauth/gauth-v1.5.0/v1.5.0.zip) = 1b654c08943d560464db01bd38f6d5dc7979765cf84cdc66bbbc183fd9449daf
+SIZE (go/security_gauth/gauth-v1.5.0/v1.5.0.zip) = 14393

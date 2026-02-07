@@ -1,0 +1,11 @@
+--- src/Imakefile.orig	Sun Jun 20 19:27:24 1999
++++ src/Imakefile	Sun Jun 20 19:27:46 1999
+@@ -8,7 +8,7 @@
+ 
+ XPMLIB = XPMLIBRARY
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(FreeBSDArchitecture)
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) $(XTOOLLIB) $(XAWLIB) $(XMULIB) -ldnet_stub
+ #else 
+ #ifdef HPArchitecture

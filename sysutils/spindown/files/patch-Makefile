@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-04-02 18:45:11.564269707 +0200
++++ Makefile	2014-04-02 18:45:47.607267115 +0200
+@@ -8,7 +8,7 @@
+ #
+ 
+ EXTRAOPTS =
+-CFLAGS = -O2 -Wall $(EXTRAOPTS)
++CFLAGS += $(EXTRAOPTS)
+ OBJS = spindown.o cam.o log.o
+ INSTALL = /usr/bin/install
+ INSTALLFLAGS = -g wheel -o root

@@ -1,0 +1,5 @@
+The opentelemetry-instrumentation-all gem is an all-in-one distribution of
+community maintained instrumentation. Instrumentation libraries are packaged as
+individual gems for flexibility and maintainability. Instead of having to
+require each instrumentation individually, applications can depend on this
+all-in-one gem as a convenient alternative.

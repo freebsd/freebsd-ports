@@ -1,0 +1,3 @@
+Sonnet is a plugin-based spell checking library for Qt-based applications.
+It supports several different plugins, including HSpell, Enchant, ASpell
+and HUNSPELL.

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-11-14 15:00:34 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ requires = [
+     "setuptools",
+     "cython>=3.0,<4.0",
+-    "numpy>=2.0.0,<3.0.0",
++    "numpy>=1.19.3,<3.0.0",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

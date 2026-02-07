@@ -1,0 +1,58 @@
+--- INSTALL.orig	Fri Jun 16 23:36:18 2000
++++ INSTALL	Fri Jun 16 23:46:18 2000
+@@ -5,7 +5,7 @@
+ Things you have to decide before starting:
+ 
+ * Where the clockspeed package will be installed, normally
+-/usr/local/clockspeed. To change this directory, edit conf-home now.
++%%PREFIX%%. To change this directory, edit conf-home now.
+ 
+ 
+ How to install:
+@@ -16,9 +16,9 @@
+     or with gethrtime(). The compiler must support a 64-bit type, either
+     long or long long.
+ 
+- 2. Install the programs, the man pages, and /etc/leapsecs.dat:
++ 2. Install the programs, the man pages, and %%PREFIX%%/etc/clockspeed/leapsecs.dat:
+        # make setup check
+-    Put /usr/local/clockspeed/bin into $PATH.
++    Put %%PREFIX%%/bin into $PATH.
+ 
+ 
+ How to test:
+@@ -39,20 +39,20 @@
+  5. Start clockspeed:
+        # clockspeed &
+     Give clockspeed a time measurement:
+-       # sntpclock 1.2.3.4 > /usr/local/clockspeed/adjust &
++       # sntpclock 1.2.3.4 > %%PREFIX%%/etc/clockspeed/adjust &
+ 
+  6. After a few hours, give clockspeed a second time measurement:
+-       # sntpclock 1.2.3.4 > /usr/local/clockspeed/adjust &
++       # sntpclock 1.2.3.4 > %%PREFIX%%/etc/clockspeed/adjust &
+     You can run sntpclock as a non-root user, if you change
+-    /usr/local/clockspeed/adjust to be owned by that user. I recommend
++    %%PREFIX%%/etc/clockspeed/adjust to be owned by that user. I recommend
+     this for security.
+ 
+  7. After a few days, check how well clockspeed has adjusted your clock:
+        % sntpclock 1.2.3.4 | clockview
+     Check how many attoseconds clockspeed thinks are in one tick:
+-       % clockview < /usr/local/clockspeed/etc/atto
++       % clockview < %%PREFIX%%/etc/clockspeed/atto
+     Give it another time measurement:
+-       # sntpclock 1.2.3.4 > /usr/local/clockspeed/adjust &
++       # sntpclock 1.2.3.4 > %%PREFIX%%/etc/clockspeed/adjust &
+ 
+  8. Repeat step 7 after a few weeks, then after a few months. Your clock
+     should now be synchronized to the remote clock to within a few
+@@ -70,7 +70,7 @@
+     Here 5.6.7.8 is the master's IP address. Set the client's clock:
+        # clockadd < adjustment
+     Finally, run clockspeed as in step 5, and do
+-       % taiclock 5.6.7.8 > /usr/local/clockspeed/adjust &
++       % taiclock 5.6.7.8 > %%PREFIX%%/etc/clockspeed/adjust &
+     after a few days.
+ 
+ 

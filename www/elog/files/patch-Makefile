@@ -1,0 +1,55 @@
+--- Makefile.orig	2022-05-10 11:18:40 UTC
++++ Makefile
+@@ -40,7 +40,6 @@ USE_PAM    = 0
+ # Default compilation flags unless stated otherwise.
+ CFLAGS += -O3 -funroll-loops -fomit-frame-pointer -W -Wall -Wno-deprecated-declarations -Wno-unused-result -Imxml
+ 
+-CC = c++
+ EXECS = elog elogd elconv
+ OBJS = mxml.o crypt.o
+ GIT_REVISION = src/git-revision.h
+@@ -81,7 +80,6 @@ LIBS += -L/opt/local/lib
+ endif
+ 
+ ifeq ($(OSTYPE),FreeBSD)
+-CC = gcc
+ BINOWNER = root
+ BINGROUP = wheel
+ endif
+@@ -134,28 +132,28 @@ $(GIT_REVISION): src/elogd.cxx src/elog.cxx
+ 	type git &> /dev/null; if [ $$? -eq 1 ]; then REV="unknown" ;else REV=`git log -n 1 --pretty=format:"%ad - %h"`; fi; echo \#define GIT_REVISION \"$$REV\" > $(GIT_REVISION)
+ 
+ crypt.o: src/crypt.cxx
+-	$(CC) $(CFLAGS) -w -c -o crypt.o src/crypt.cxx
++	$(CXX) $(CFLAGS) -w -c -o crypt.o src/crypt.cxx
+ 
+ auth.o: src/auth.cxx
+-	$(CC) $(CFLAGS) -w -c -o auth.o src/auth.cxx
++	$(CXX) $(CFLAGS) -w -c -o auth.o src/auth.cxx
+ 
+ mxml.o: mxml/mxml.cxx mxml/mxml.h
+-	$(CC) $(CFLAGS) -c -o mxml.o mxml/mxml.cxx
++	$(CXX) $(CFLAGS) -c -o mxml.o mxml/mxml.cxx
+ 
+ strlcpy.o: mxml/strlcpy.cxx mxml/strlcpy.h
+-	$(CC) $(CFLAGS) -c -o strlcpy.o mxml/strlcpy.cxx
++	$(CXX) $(CFLAGS) -c -o strlcpy.o mxml/strlcpy.cxx
+ 
+ elogd: src/elogd.cxx auth.o $(OBJS) $(GIT_REVISION)
+-	$(CC) $(CFLAGS) -o elogd src/elogd.cxx auth.o $(OBJS) $(LIBS)
++	$(CXX) $(CFLAGS) -o elogd src/elogd.cxx auth.o $(OBJS) $(LIBS)
+ 
+ elog: src/elog.cxx $(OBJS) $(GIT_REVISION)
+-	$(CC) $(CFLAGS) -o elog src/elog.cxx $(OBJS) $(LIBS)
++	$(CXX) $(CFLAGS) -o elog src/elog.cxx $(OBJS) $(LIBS)
+ 
+ debug: src/elogd.cxx auth.o $(OBJS)
+-	$(CC) -g $(CFLAGS) -O0 -o elogd src/elogd.cxx auth.o $(OBJS) $(LIBS)
++	$(CXX) -g $(CFLAGS) -O0 -o elogd src/elogd.cxx auth.o $(OBJS) $(LIBS)
+ 
+ %: src/%.cxx
+-	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
++	$(CXX) $(CFLAGS) -o $@ $< $(LIBS)
+ 
+ ifeq ($(OSTYPE),CYGWIN_NT-5.1)
+ loc: locext.exe

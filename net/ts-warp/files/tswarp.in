@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: tswarp
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# tswarp_enable (bool):            Set to NO by default.
+#                                  Set it to YES to enable ts-warp.
+# tswarp_configfile (string):      Set to %%PREFIX%%/etc/ts-warp.conf
+#
+# tswarp_pfconf (string):          Set to %%PREFIX%%/etc/ts-warp_pf.conf
+#
+# tswarp_flags (string):           Set to "-d -v 2" by default
+
+. /etc/rc.subr
+
+name=tswarp
+desc="ts-warp serice startup script"
+rcvar=tswarp_enable
+pidfile=/var/run/ts-warp.pid
+
+load_rc_config $name
+
+: ${tswarp_enable:=NO}
+: ${tswarp_configfile:="%%PREFIX%%/etc/ts-warp.conf"}
+: ${tswarp_pfconf:="%%PREFIX%%/etc/ts-warp_pf.conf"}
+: ${tswarp_logfile:=/var/log/ts-warp.log}
+: ${tswarp_actfile:=/var/db/ts-warp/ts-warp.act}
+: ${tswarp_flags="-d -v 2"}
+
+command="%%PREFIX%%/bin/ts-warp"
+command_args="-c ${tswarp_configfile} -l ${tswarp_logfile} \
+	-p ${pidfile} -t ${tswarp_actfile} ${tswarp_flags}"
+required_files="${pf_rules} ${tswarp_configfile} ${tswarp_pfconf}"
+start_precmd=ts_warp_prestart
+stop_postcmd="[ -e ${pf_rules} ] && /sbin/pfctl -f ${pf_rules}"
+
+ts_warp_prestart()
+{
+    [ -d /var/db/ts-warp ] || /bin/mkdir -p /var/db/ts-warp
+
+    echo "Configuring PF for TS-Warp"
+
+    awk -v pf_conf=${tswarp_pfconf} '
+            /ts-warp/       {next}
+            /ns-warp/       {next}
+            /rdr-anchor/    {rdrpos = NR}
+                            {pf[NR] = $0}
+
+        END {
+            for (i = 0; i < NR; i++)
+                if (i == rdrpos + 1) {
+                    print("rdr-anchor \"ts-warp\"")
+                    print("rdr-anchor \"ns-warp\"")
+                } else
+                    print(pf[i])
+            print("anchor \"ts-warp\"")
+            print("anchor \"ns-warp\"")
+            printf("load anchor \"ts-warp\" from \"%s\"\n", pf_conf)
+        }
+    ' ${pf_rules} | /sbin/pfctl -f -
+}
+
+run_rc_command "$1"

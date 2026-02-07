@@ -1,0 +1,2 @@
+Provides utilities for processing Rd objects and files. Extract
+argument descriptions and other parts of the help pages of functions.

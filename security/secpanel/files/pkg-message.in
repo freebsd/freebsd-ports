@@ -1,0 +1,2 @@
+If you don't have already a default.config file, you have to copy "/usr/local/share/secpanel/default.config.sample"
+to "/usr/local/share/secpanel/default.config" Change it as you need or use the config-panel to make changes.

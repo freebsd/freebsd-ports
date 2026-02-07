@@ -1,0 +1,9 @@
+PROG=	archivesmtp
+SRCS=	ArchiveSMTP.c\
+		Rule.c\
+		Condition.c\
+		Test.c\
+		Action.c
+MAN=	archivesmtp.8
+
+.include <bsd.prog.mk>

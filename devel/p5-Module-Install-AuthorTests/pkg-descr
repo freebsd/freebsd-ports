@@ -1,0 +1,2 @@
+Module::Install::AuthorTests designate tests only run by module
+authors.

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-08-06 01:28:20 UTC
++++ CMakeLists.txt
+@@ -8,7 +8,7 @@ else()
+ 	target_compile_options(${build_target} PRIVATE /bigobj /fp:fast)
+ else()
+ 	target_compile_options(${build_target} PRIVATE
+-		-O3 -Wall -Werror -fPIC -Wno-sign-compare -Wfatal-errors)
++		-O3 -Wall -fPIC -Wno-sign-compare -Wfatal-errors)
+ 	if(MARCH_NATIVE)
+ 		target_compile_options(${build_target} PRIVATE -march=native)
+ 	endif()

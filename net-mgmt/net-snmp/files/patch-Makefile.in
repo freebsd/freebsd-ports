@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2023-08-15 20:32:01 UTC
++++ Makefile.in
+@@ -21,7 +21,7 @@ INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi
+ 	darwin.h dragonfly.h dynix.h \
+ 	freebsd2.h freebsd3.h freebsd4.h freebsd5.h freebsd6.h \
+ 	freebsd7.h freebsd8.h freebsd9.h freebsd10.h freebsd11.h \
+-	freebsd12.h freebsd13.h freebsd14.h freebsd.h \
++	freebsd12.h freebsd13.h freebsd14.h freebsd15.h freebsd16.h freebsd.h \
+ 	generic.h \
+ 	hpux.h irix.h kfreebsd.h linux.h mingw32.h mingw32msvc.h mips.h \
+ 	netbsd.h nto-qnx6.h osf5.h \
+@@ -234,7 +234,7 @@ pythoninstall:
+         fi
+ 
+ pythoninstall:
+-	@(dir=`pwd`; cd python; $(PYMAKE) install --basedir=$$dir --root=$(DESTDIR) --prefix=$(prefix)) ; \
++	@(dir=`pwd`; cd python; $(PYMAKE) install --basedir=$$dir --root=$(DESTDIR) --prefix=$(prefix) ${PYDISTUTILS_INSTALLARGS}); \
+         if test $$? != 0 ; then \
+            exit 1 ; \
+         fi

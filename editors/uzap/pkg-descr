@@ -1,0 +1,21 @@
+/***************************************************************************/
+/*                                                                         */
+/*  Copyright (c) 1989, Robert Silvers - All rights reserved.              */
+/*                                                                         */
+/* This software is supplied free of charge.  This software, or any part   */
+/* of it, may  not  be  redistributed or otherwise made available to, or   */
+/* used  by, any  other  person  without the inclusion of this copyright   */
+/* notice.  This software may not be used to make a profit in any way.     */
+/*                                                                         */
+/* This  software  is provided with absolutely no warranty, to the extent  */
+/* permitted  by  applicable  state law.  In no event, unless required by  */
+/* applicable law, will the author(s) of this this software be liable for  */
+/* any damages caused by this software.                                    */
+/*                                                                         */
+/***************************************************************************/
+
+   Uzap is a visual binary file editor for Unix systems written by
+Robert Silvers at the University of Lowell.  See the included man page
+for more info.
+
+						rsilvers@hawk.ulowell.edu

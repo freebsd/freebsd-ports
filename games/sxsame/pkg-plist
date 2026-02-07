@@ -1,0 +1,34 @@
+@group games
+@(,,2755) bin/sxsame
+lib/X11/sxsame/bomb/blun.xpm
+lib/X11/sxsame/bomb/blus.xpm
+lib/X11/sxsame/bomb/cyan.xpm
+lib/X11/sxsame/bomb/cyas.xpm
+lib/X11/sxsame/bomb/frame.xpm
+lib/X11/sxsame/bomb/purn.xpm
+lib/X11/sxsame/bomb/purs.xpm
+lib/X11/sxsame/bomb/pushed.xpm
+lib/X11/sxsame/bomb/redn.xpm
+lib/X11/sxsame/bomb/reds.xpm
+lib/X11/sxsame/bomb/tile.xpm
+lib/X11/sxsame/bomb/yeln.xpm
+lib/X11/sxsame/bomb/yels.xpm
+lib/X11/sxsame/bomb.same
+lib/X11/sxsame/hiscore
+lib/X11/sxsame/mono1/back.xpm
+lib/X11/sxsame/mono1/frame.xpm
+lib/X11/sxsame/mono1/koma1.xpm
+lib/X11/sxsame/mono1/koma2.xpm
+lib/X11/sxsame/mono1/koma3.xpm
+lib/X11/sxsame/mono1/koma4.xpm
+lib/X11/sxsame/mono1/koma5.xpm
+lib/X11/sxsame/mono1.same
+lib/X11/sxsame/s_marble.bmp
+lib/X11/sxsame/samegame.dat
+lib/X11/sxsame/snake.bmp
+@group
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+@dir(,games,) lib/X11/sxsame/mono1
+@dir(,games,) lib/X11/sxsame/bomb
+@dir(,games,) lib/X11/sxsame

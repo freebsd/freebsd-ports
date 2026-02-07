@@ -1,0 +1,10 @@
+--- common/CMakeLists.txt.orig	2025-06-23 14:55:49 UTC
++++ common/CMakeLists.txt
+@@ -169,6 +169,7 @@ else()
+ 		X11::X11
+ 		X11::Xrandr
+ 		X11::Xi
++		-lsysinfo
+ 	)
+ 	if(USE_BACKTRACE)
+ 		target_compile_definitions(common PRIVATE "HAS_LIBBACKTRACE=1")

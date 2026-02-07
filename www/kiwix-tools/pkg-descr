@@ -1,0 +1,7 @@
+Kiwix is an offline reader for web content archived in ZIM format.  It is
+particularly tailored towards Wikipedia and other wikis.
+
+The Kiwix tools are a collection of Kiwix-related command line tools:
+- kiwix-manage: Manage XML based library of ZIM files.
+- kiwix-search: Full text search in ZIM files.
+- kiwix-serve: HTTP daemon serving ZIM files.

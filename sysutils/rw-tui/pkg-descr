@@ -1,0 +1,4 @@
+rw-tui is a utility that allows to change bytes of system memory in TUI.
+
+It can potentially also edit PCI device memory, kernel memory, process memory
+files, etc.

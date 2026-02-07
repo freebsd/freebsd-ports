@@ -1,0 +1,17 @@
+From the README:
+
+"oidentd is an ident (rfc1413 compliant) daemon that runs on Linux,
+FreeBSD, OpenBSD and Solaris.  oidentd can handle IP masqueraded/NAT connections
+on Linux, FreeBSD (ipf only) and OpenBSD.  oidentd has a flexible mechanism for
+specifying ident responses.  Users can be granted permission to specify their
+own ident responses.  Responses can be specified according to host and port
+pairs."
+
+FreeBSD's inetd has a built-in ident service which can also generate
+bogus responses.
+
+Please see the TODO file for more information on why only ipf is
+supported under FreeBSD.
+
+Mark Laws
+mdl@60hz.org

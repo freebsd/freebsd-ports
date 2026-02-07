@@ -1,0 +1,10 @@
+--- migemo-grep.orig	2011-08-22 02:14:28.000000000 +0900
++++ migemo-grep	2011-08-22 02:14:32.000000000 +0900
+@@ -9,7 +9,6 @@
+ # You can redistribute it and/or modify it under the terms of 
+ # the GNU General Public License version 2.
+ #
+-$KCODE = "e"
+ 
+ require 'migemo'
+ require 'getoptlong'

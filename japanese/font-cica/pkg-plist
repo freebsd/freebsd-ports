@@ -1,0 +1,8 @@
+etc/fonts/conf.avail/20-unhint-cica.conf
+etc/fonts/conf.avail/62-fonts-cica.conf
+etc/fonts/conf.d/20-unhint-cica.conf
+etc/fonts/conf.d/62-fonts-cica.conf
+%%FONTSDIR%%/Cica-Bold.ttf
+%%FONTSDIR%%/Cica-BoldItalic.ttf
+%%FONTSDIR%%/Cica-Regular.ttf
+%%FONTSDIR%%/Cica-RegularItalic.ttf

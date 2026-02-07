@@ -1,0 +1,11 @@
+bin/chemtool
+bin/cht
+share/man/man1/chemtool.1.gz
+share/man/man1/cht.1.gz
+share/locale/cs/LC_MESSAGES/chemtool.mo
+share/locale/de/LC_MESSAGES/chemtool.mo
+share/locale/fr/LC_MESSAGES/chemtool.mo
+share/locale/nl/LC_MESSAGES/chemtool.mo
+share/locale/pl/LC_MESSAGES/chemtool.mo
+share/locale/pt_BR/LC_MESSAGES/chemtool.mo
+share/locale/ru/LC_MESSAGES/chemtool.mo

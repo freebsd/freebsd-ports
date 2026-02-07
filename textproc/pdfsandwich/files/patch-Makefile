@@ -1,0 +1,24 @@
+--- Makefile.orig	2017-01-16 20:56:57 UTC
++++ Makefile
+@@ -43,16 +43,16 @@ PREF = $(DESTDIR)$(PREFIX)
+ INSTALL = 	install -s
+ CP = 		cp
+ INSTALLBINDIR =	$(PREF)/bin
+-INSTALLMANDIR = $(PREF)/share/man/man1
++INSTALLMANDIR = $(PREF)/man/man1
+ INSTALLDOCDIR = $(PREF)/share/doc/$(TARGET)
+ 
+ install: $(DOCFILES) $(ADDITIONAL)
+-	(umask 0022; mkdir -p $(INSTALLBINDIR) $(INSTALLDOCDIR) $(INSTALLMANDIR))
++	(umask 0022; mkdir -p $(INSTALLBINDIR) $(INSTALLMANDIR))
+ 	$(INSTALL) $(TARGET) $(INSTALLBINDIR)
+-	$(CP) $(DOCFILES) $(INSTALLDOCDIR)
+-	gzip -9 $(INSTALLDOCDIR)/changelog
++	#$(CP) $(DOCFILES) $(INSTALLDOCDIR)
++	#gzip -9 $(INSTALLDOCDIR)/changelog
+ 	$(CP) $(MANUAL) $(INSTALLMANDIR)
+-	chmod 644 $(INSTALLDOCDIR)/* $(INSTALLMANDIR)/*
++	#chmod 644 $(INSTALLDOCDIR)/* $(INSTALLMANDIR)/*
+ 
+ uninstall:
+ 	rm -rf $(INSTALLBINDIR)/$(TARGET) $(INSTALLDOCDIR) $(INSTALLMANDIR)/$(MANUAL)

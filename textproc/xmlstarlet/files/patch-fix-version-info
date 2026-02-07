@@ -1,0 +1,47 @@
+Description: Do not get version from git repository, get upstream version from 
+Debian environment variable.
+Author: Mònica Ramírez Arceda <monica@debian.org>
+Bug: https://bugs.debian.org/850842
+Last-Update: 2017-01-24
+
+--- Makefile.am
++++ Makefile.am
+@@ -7,18 +7,11 @@
+ AM_CFLAGS = -Wall -pedantic
+ endif
+ 
+-GIT_DESCRIBE = git describe --tags --dirty
+-
+ # TODO: figure out why log removal is needed and/or make it completely automatic
+ dist-hook:
+ 	@for log in $(srcdir)/examples/*.log ; do if [ -f "$$log" ] ; then \
+ 	  rm $(srcdir)/examples/*.log ; \
+ 	  echo 'ERROR: log files need to cleaned BEFORE making tarball, try again'; exit 1 ; fi ; done
+-	@ if [ -d .git ] ; then \
+-	    if [ $(VERSION) != `$(GIT_DESCRIBE)` ] ; then \
+-		echo 'ERROR: version mismatch, rerun autoconf -f' ; exit 1 ; fi ; \
+-	    $(SED) 's/\[m4_esyscmd_s(\[$(GIT_DESCRIBE)\])\]/[$(VERSION)]/' \
+-	      $(srcdir)/configure.ac > $(distdir)/configure.ac ; fi
+ 
+ cleantar:
+ 	@(rm -f xmlstarlet*.tar.gz)
+@@ -40,9 +33,7 @@
+ dist-win32: $(distdir)-win32.zip
+ 
+ version.h: VERSION
+-	@if [ -d .git ] ; then \
+-	    VERSION=`$(GIT_DESCRIBE)`; \
+-	else VERSION=$(VERSION) ; fi; \
++	VERSION=$(VERSION) ; \
+ 	NEW_VERSION="#define VERSION \"$$VERSION\""; \
+ 	OLD_VERSION=`cat version.h 2>/dev/null` ; \
+ 	if [ "$$NEW_VERSION" != "$$OLD_VERSION" ] ; then \
+--- configure.ac
++++ configure.ac
+@@ -1,5 +1,5 @@
+ AC_PREREQ([2.62])
+-AC_INIT([XMLStarlet], [m4_esyscmd_s([git describe --tags --dirty])],
++AC_INIT([XMLStarlet], [%%DISTVERSION%%],
+         [http://sourceforge.net/projects/xmlstar/support],
+         [],
+         [http://xmlstar.sourceforge.net/])

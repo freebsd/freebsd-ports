@@ -1,0 +1,26 @@
+* Avoid making all warnings into errors
+* Extra optimizations via COPT should be overwritable 
+
+--- mpy-cross/Makefile.orig	2021-09-01 14:07:13 UTC
++++ mpy-cross/Makefile
+@@ -17,7 +17,7 @@ INC += -I$(BUILD)
+ INC += -I$(TOP)
+ 
+ # compiler settings
+-CWARN = -Wall -Werror
++CWARN = -Wall
+ CWARN += -Wextra -Wno-unused-parameter -Wpointer-arith
+ CFLAGS = $(INC) $(CWARN) -std=gnu99 $(CFLAGS_MOD) $(COPT) $(CFLAGS_EXTRA)
+ CFLAGS += -fdata-sections -ffunction-sections -fno-asynchronous-unwind-tables
+@@ -25,9 +25,9 @@ CFLAGS += -fdata-sections -ffunction-sections -fno-asy
+ # Debugging/Optimization
+ ifdef DEBUG
+ CFLAGS += -g
+-COPT = -O0
++COPT ?= -O0
+ else
+-COPT = -Os #-DNDEBUG
++COPT ?= -Os #-DNDEBUG
+ endif
+ 
+ # On OSX, 'gcc' is a symlink to clang unless a real gcc is installed.

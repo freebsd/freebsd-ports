@@ -1,0 +1,11 @@
+trash-cli trashes files recording the original path, deletion date, and
+permissions. It uses the same trashcan used by KDE, GNOME, and XFCE, but you
+can invoke it from the command line (and scripts).
+
+It provides these commands:
+
+trash-put           trash files and directories.
+trash-empty         empty the trashcan(s).
+trash-list          list trashed files.
+trash-restore       restore a trashed file.
+trash-rm            remove individual files from the trashcan.

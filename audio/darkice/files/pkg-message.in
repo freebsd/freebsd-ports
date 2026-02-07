@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Unless this file already existed, a sample configuration file
+has been placed in %%ETCDIR%%.cfg.
+
+Please edit it according to your needs.
+
+********************************************************************
+
+In order to enable darkice Server service at startup and start it please run:
+# service darkice enable
+# service darkice start
+
+EOM
+}
+]

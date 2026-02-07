@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Additional packages recommended for new users:
+- imlib2-jxl (e.g., feh, scrot)
+- kf5-kimageformats (e.g., nomacs, flameshot, skanlite)
+- gimp-jxl-plugin
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.6.1_4"
+  message: <<EOD
+If you use GIMP to read/write .jxl files install gimp-jxl-plugin after upgrade.
+EOD
+}
+]

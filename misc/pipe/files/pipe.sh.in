@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd %%DATADIR%%
+"%%LOCALBASE%%/bin/java" -cp "%%DATADIR%%" RunGui

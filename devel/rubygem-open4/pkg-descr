@@ -1,0 +1,2 @@
+open child process with handles on pid, stdin, stdout, and stderr: manage
+child processes and their io handles easily.

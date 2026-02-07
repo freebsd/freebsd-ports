@@ -1,0 +1,1 @@
+Export php-fpm metrics in Prometheus format.

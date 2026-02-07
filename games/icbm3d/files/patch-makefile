@@ -1,0 +1,22 @@
+--- ./makefile.orig	1998-07-31 06:41:20.000000000 +0200
++++ ./makefile	2013-12-24 08:28:45.000000000 +0100
+@@ -9,14 +9,16 @@
+ 
+ # Makefile user-definable variables------------------------------------------
+ 
+-CC=gcc
++CC?=${CC}
++PREFIX?=${PREFIX}
++LOCALBASE?=${PREFIX}
+ MATHLIB=-lm
+ 
+ INSTALLROOT=$(PREFIX)
+ LANGUAGE=english
+ 
+-XLIB=-L$(PREFIX)/lib -lX11 #-lcompat
+-CFLAGS=-I$(PREFIX)/include -O2
++XLIB=-L$(LOCALBASE)/lib -lX11 #-lcompat
++CFLAGS+=-I$(LOCALBASE)/include
+ 
+ 
+ # End of makefile user-definable variables-----------------------------------

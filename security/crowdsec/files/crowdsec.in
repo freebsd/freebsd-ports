@@ -1,0 +1,134 @@
+#!/bin/sh
+
+# PROVIDE: crowdsec
+# BEFORE: crowdsec_firewall
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# crowdsec_enable (bool):	Set it to YES to enable crowdsec agent.
+#				Default is "NO".
+# crowdsec_config (str):	Set the agent config path.
+#				Default is "%%PREFIX%%/etc/crowdsec/config.yaml".
+# crowdsec_machine_name (str):	Name for the crowdsec instance when it's running its own lapi.
+#				Default is "localhost".
+
+. /etc/rc.subr
+
+name=crowdsec
+rcvar=crowdsec_enable
+
+load_rc_config "$name"
+
+: "${crowdsec_enable:=NO}"
+: "${crowdsec_config:=%%PREFIX%%/etc/crowdsec/config.yaml}"
+: "${crowdsec_machine_name:=localhost}"
+
+pidfile=/var/run/${name}_daemon.pid
+pidfile_crowdsec=/var/run/${name}.pid
+required_files="$crowdsec_config"
+command="/usr/sbin/daemon"
+command_crowdsec="%%PREFIX%%/bin/crowdsec"
+command_cscli="%%PREFIX%%/bin/cscli"
+command_args="-f -P ${pidfile} -p ${pidfile_crowdsec} -r -R 10 -t \"${name}\" -- ${command_crowdsec} -c ${crowdsec_config}"
+reload_cmd="${name}_reload"
+start_precmd="${name}_precmd"
+configtest_cmd="${name}_configtest"
+reload_precmd="${name}_configtest"
+restart_precmd="${name}_configtest"
+stop_precmd="${name}_stop_precmd"
+stop_postcmd="${name}_stop_postcmd"
+extra_commands="configtest reload"
+
+# If the crowdsec process was not started or is in a fail loop due to misconfiguration,
+# the TERM signal is not enough to terminate /usr/sbin/daemon.
+sig_stop="INT"
+
+crowdsec_stop_precmd() {
+    # take note of the pid, because sbin/daemon will remove the file
+    # without waiting for crowdsec to exit
+    if [ -r "$pidfile_crowdsec" ]; then
+        _CROWDSECPID="$(check_pidfile "$pidfile_crowdsec" "$command_crowdsec")"
+        export _CROWDSECPID
+        # notification plugins
+        _CROWDSEC_CHILDREN="$(pgrep -P "$_CROWDSECPID")"
+        export _CROWDSEC_CHILDREN
+    fi
+}
+
+crowdsec_stop_postcmd() {
+    if [ -n "$_CROWDSECPID" ]; then
+        # don't trust sbin/daemon to send the signal
+        kill -TERM "$_CROWDSECPID" 2>/dev/null
+    fi
+    if [ -n "$_CROWDSEC_CHILDREN" ]; then
+        kill -TERM $_CROWDSEC_CHILDREN 2>/dev/null
+    fi
+
+    sleep 5
+
+    if [ -n "$_CROWDSECPID" ]; then
+        # in case a datasource didn't respond
+        kill -KILL "$_CROWDSECPID" 2>/dev/null
+        # ensure the process is not running before restart, or it will find the http port in use
+        wait_for_pids "$_CROWDSECPID"
+    fi
+    if [ -n "$_CROWDSEC_CHILDREN" ]; then
+        kill -KILL $_CROWDSEC_CHILDREN 2>/dev/null
+        wait_for_pids $_CROWDSEC_CHILDREN
+    fi
+}
+
+crowdsec_precmd() {
+    cs_cli() {
+        "$command_cscli" -c "$crowdsec_config" "$@"
+    }
+
+    Config() {
+        cs_cli config show --key "Config.$1"
+    }
+
+    # Is the LAPI enabled on this node?
+    if [ "$(Config API.Server.Enable)" != "false" ]; then
+        # There are no machines, we create one for cscli & log processor
+        if [ "$(cs_cli machines list -o json --error)" = "[]" ]; then
+            echo "Registering LAPI"
+            cs_cli machines add "${crowdsec_machine_name}" --auto --force --error || :
+        fi
+
+        CONFIG_DIR=$(Config ConfigPaths.ConfigDir)
+
+        # Register to the central server to receive the community blocklist and more
+        if [ ! -s "${CONFIG_DIR}/online_api_credentials.yaml" ]; then
+            echo "Registering CAPI"
+            cs_cli capi register || :
+        fi
+    fi
+
+    # If the hub is empty, install the freebsd collection and the private ip whitelist.
+    # We don't ship the whitelist in the collection because
+    # there are legitimate use cases for banning private ip ranges.
+    if [ "$(cs_cli hub list -o raw | wc -l)" -le 1 ]; then
+        cs_cli parsers install crowdsecurity/whitelists --error || :
+        cs_cli collections install crowdsecurity/freebsd --error || :
+    fi
+}
+
+crowdsec_configtest() {
+    echo "Performing sanity check on ${name} configuration."
+    if ! "$command_crowdsec" -c "$crowdsec_config" -t -error; then
+        exit 1
+    fi
+    echo "Configuration test OK"
+}
+
+crowdsec_reload() {
+    echo "Reloading configuration"
+    if [ -r "$pidfile_crowdsec" ]; then
+        kill -HUP "$(check_pidfile "$pidfile_crowdsec" "${command_crowdsec}")"
+    fi
+}
+
+run_rc_command "$1"

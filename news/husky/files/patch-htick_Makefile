@@ -1,0 +1,15 @@
+--- htick/Makefile.orig	2020-01-16 21:50:04 UTC
++++ htick/Makefile
+@@ -45,6 +45,12 @@ CDEFS=-D$(OSTYPE) $(ADDCDEFS)
+ 
+ all: $(OBJS) htick$(EXE)
+ 
++doc:
++	-cd doc; $(MAKE) all
++
++install-doc:
++	-cd doc; $(MAKE) install
++
+ %$(_OBJ): $(SRC_DIR)%.c
+ 	$(CC) $(CFLAGS) $(CDEFS) $(SRC_DIR)$*.c
+ 

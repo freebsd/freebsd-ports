@@ -1,0 +1,22 @@
+Description: Remove links from /usr/lib to fix #722870.
+Author: Mònica Ramírez Arceda <monica@debian.org>
+Bug: https://bugs.debian.org/722870
+Last-Update: 2012-10-28
+--- configure.ac
++++ configure.ac
+@@ -56,7 +56,6 @@
+ AS_IF([test "x$STATIC_LIBS" != xno],
+       [LIBXML_LIBS="$LIBXML_LIBDIR/libxml2.a"],
+       [LIBXML_LIBS="-lxml2"])
+-[LIBXML_LDFLAGS="-L$LIBXML_LIBDIR"]
+ 
+ 
+ XSTAR_LIB_CHECK([LIBXSLT], [xslt-config])
+@@ -68,7 +67,6 @@
+        AS_IF([test "x$STATIC_LIBS" != xno],
+              [LIBXSLT_LIBS="$LIBXSLT_SRCDIR/libexslt/.libs/libexslt.a $LIBXSLT_SRCDIR/libxslt/.libs/libxslt.a"])],
+       [XSLTPROC_PATH="$PATH"
+-       LIBXSLT_LDFLAGS="-L$LIBXSLT_LIBDIR"
+       AS_IF([test "x$STATIC_LIBS" != xno],
+              [LIBXSLT_LIBS="$LIBXSLT_LIBDIR/libexslt.a $LIBXSLT_LIBDIR/libxslt.a"])])
+ 

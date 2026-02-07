@@ -1,0 +1,52 @@
+PORTNAME=	micro
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.15
+PORTREVISION=	1
+CATEGORIES=	editors
+
+MAINTAINER=	lcook@FreeBSD.org
+COMMENT=	Modern and intuitive terminal-based text editor
+WWW=		https://micro-editor.github.io/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		desktop-file-utils go:modules
+
+_BUILD_DEBUG=	OFF
+
+GO_MODULE=	github.com/zyedidia/${PORTNAME}/v2
+GO_TARGET=	./cmd/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags "\
+		-s \
+		-X ${GO_MODULE}/internal/util.Version=${DISTVERSION} \
+		-X ${GO_MODULE}/internal/util.CommitHash=${CONFIGURE_TARGET} \
+		-X ${GO_MODULE}/internal/util.CompileDate=portbld \
+		-X ${GO_MODULE}/internal/util.Debug=${_BUILD_DEBUG}"
+
+PLIST_FILES=	bin/micro \
+		share/applications/micro.desktop \
+		share/man/man1/micro.1.gz \
+		share/pixmaps/micro-logo-drop.svg \
+		share/pixmaps/micro-logo-mark.svg \
+		share/pixmaps/micro-logo.svg
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DEBUG DOCS
+
+DEBUG_DESC=	Enable debug logging
+DEBUG_VARS=	_BUILD_DEBUG=ON
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/assets/packaging/micro.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_DATA} ${WRKSRC}/assets/packaging/micro.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/assets/*.svg \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-09-11 20:12:12 UTC
++++ CMakeLists.txt
+@@ -96,7 +96,7 @@ target_link_libraries(concurrencpp PUBLIC "$<$<BOOL:${
+ include(CMakePackageConfigHelpers)
+ include(GNUInstallDirs)
+ 
+-set(concurrencpp_directory "concurrencpp-${PROJECT_VERSION}")
++set(concurrencpp_directory "")
+ set(concurrencpp_include_directory "${CMAKE_INSTALL_INCLUDEDIR}/${concurrencpp_directory}")
+ 
+ install(TARGETS concurrencpp

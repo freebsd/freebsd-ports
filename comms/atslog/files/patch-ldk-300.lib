@@ -1,0 +1,54 @@
+--- libexec/ldk-300.lib.orig	Sun Mar  4 17:48:54 2007
++++ libexec/ldk-300.lib	Tue Mar 20 19:59:52 2007
+@@ -1,7 +1,7 @@
+ # ATSlog version 2.1.1 build 664 www.atslog.com
+ #
+ # VENDOR: LG
+-# MODELS: LDK-100,LDK-300
++# MODELS: LDK-100,LDK-300,ARIASOHO
+ # AUTHOR: Alex Samorukov samm@os2.kiev.ua
+ #
+ # TESTLOG: LG LDK-300.txt
+@@ -42,7 +42,7 @@
+ 	
+ 	
+ 	$co=int($co);
+-	$forwarded=0; # please, FIXME
++	$forwarded=0;
+ 	
+ 	if ($dialed_number=~/(\d+)/)
+ 	{
+@@ -52,19 +52,22 @@
+ 		$number=0;
+ 	}
+ 	
+-	if($dialed_number =~ /I/){
++	if($dialed_number =~ /^[IG]/){
+ 		$way='1';
+-		# detection of the CID line
+-		if($dialed_number =~ /^I(\d+)/)
+-		{
+-			$nubmer=$1;
+-		}
+-		else {
+-			$number=0;
+-		}
+-	}else{
++		$forwarded=0;
++	}
++	elsif($dialed_number =~ /^O/){
++		$way='2';
++		$forwarded=0;
++	}
++	elsif($dialed_number =~ /^T/){
+ 		$way='2';
+-	};
++		$forwarded=1;
++	}
++	elsif($dialed_number =~ /^t/){
++		$way='1';
++		$forwarded=1;
++	}
+ 	
+ 	if ($date=~(/(\d{2})\/(\d{2})\/(\d{2})/)) {
+ 		$Month=$2;

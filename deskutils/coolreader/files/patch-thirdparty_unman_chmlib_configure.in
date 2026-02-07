@@ -1,0 +1,11 @@
+--- thirdparty_unman/chmlib/configure.in.orig
++++ thirdparty_unman/chmlib/configure.in
+@@ -97,7 +97,7 @@ AC_ARG_ENABLE(dmalloc,
+ 
+ dnl check for availability of the functions we need
+ if test -n "$CHM_USE_IO64"; then
+-    AC_CHECK_FUNC(lseek64,,[
++    AC_CHECK_FUNC(lseek,,[
+             AC_MSG_WARN([64-bit file offsets not available, huge files won't be supported.])
+             CHM_USE_IO64=""])
+ fi

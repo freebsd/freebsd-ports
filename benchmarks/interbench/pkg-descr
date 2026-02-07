@@ -1,0 +1,7 @@
+This benchmark application is designed to benchmark interactivity in Unix,
+originally written by Con Kolivas et al. for Linux.
+
+It is designed to measure the effect of changes in operating system kernel
+design or system configuration changes such as CPU, I/O scheduler and file
+system changes and options.  With careful benchmarking, different hardware
+can be compared.

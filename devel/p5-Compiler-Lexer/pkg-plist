@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/Compiler/Lexer.pm
+%%SITE_ARCH%%/Compiler/Lexer/Constants.pm
+%%SITE_ARCH%%/Compiler/Lexer/Token.pm
+%%SITE_ARCH%%/auto/Compiler/Lexer/Lexer.so
+%%PERL5_MAN3%%/Compiler::Lexer.3.gz
+%%PERL5_MAN3%%/Compiler::Lexer::Token.3.gz

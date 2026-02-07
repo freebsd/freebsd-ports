@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: postgresql-relay
+# REQUIRE: LOGIN
+# AFTER: postgresql
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable spamd:
+#
+#postgresqlrelay_enable="YES"
+#
+# See postgresql-relay(8) for flags
+#
+
+. /etc/rc.subr
+
+name=postgresqlrelay
+rcvar=postgresqlrelay_enable
+
+command=%%PREFIX%%/bin/postgresql-relay
+required_files=%%PREFIX%%/etc/postgresql-relay.conf
+
+load_rc_config $name
+
+postgresqlrelay_enable=${postgresqlrelay_enable:-"NO"}
+
+run_rc_command "$1"

@@ -1,0 +1,3 @@
+#! /bin/sh
+
+"%%LOCALBASE%%/bin/java" -classpath "%%JAVAJARDIR%%/antlr.jar" antlr.Tool "$@"

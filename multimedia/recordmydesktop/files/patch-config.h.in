@@ -1,0 +1,12 @@
+--- config.h.in.orig	2012-11-01 13:10:46.000000000 +0800
++++ config.h.in	2012-11-01 13:11:44.000000000 +0800
+@@ -34,6 +34,9 @@
+ /* Define to 1 if you have the `SM' library (-lSM). */
+ #undef HAVE_LIBSM
+ 
++/* Define to 1 if you have the `jack' library (-ljack). */
++#undef HAVE_LIBJACK
++
+ /* Define to 1 if you have the `theora' library (-ltheora). */
+ #undef HAVE_LIBTHEORA
+ 

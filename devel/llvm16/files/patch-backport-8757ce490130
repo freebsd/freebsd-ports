@@ -1,0 +1,243 @@
+commit 8757ce490130c2b2862017ab705a9ff24b10033b
+Author: Simon Pilgrim <llvm-dev@redking.me.uk>
+Date:   Sat Feb 25 20:06:19 2023 +0000
+
+    [PowerPC] Replace PPCISD::VABSD cases with generic ISD::ABDU(X,Y) node
+    
+    A move towards using the generic ISD::ABDU nodes on more backends
+    
+    Also support ISD::ABDS for v4i32 types using the existing signbit flip trick
+    
+    PowerPC has a select(icmp_ugt(x,y),sub(x,y),sub(y,x)) -> abdu(x,y) combine that I intend to move to DAGCombiner in a future patch.
+    
+    The ABS(SUB(X,Y)) -> PPCISD::VABSD(X,Y,1) v4i32 combine wasn't legal (https://alive2.llvm.org/ce/z/jc2hLU) - so I've removed it, having already added the legal sub nsw tests equivalent.
+    
+    Differential Revision: https://reviews.llvm.org/D142313
+
+diff --git llvm/lib/Target/PowerPC/PPCISelLowering.cpp llvm/lib/Target/PowerPC/PPCISelLowering.cpp
+index 482af0f41ce9..cf72e379a69e 100644
+--- llvm/lib/Target/PowerPC/PPCISelLowering.cpp
++++ llvm/lib/Target/PowerPC/PPCISelLowering.cpp
+@@ -1299,6 +1299,11 @@ PPCTargetLowering::PPCTargetLowering(const PPCTargetMachine &TM,
+       setOperationAction(ISD::SIGN_EXTEND_INREG, MVT::v2i16, Legal);
+       setOperationAction(ISD::SIGN_EXTEND_INREG, MVT::v2i32, Legal);
+       setOperationAction(ISD::SIGN_EXTEND_INREG, MVT::v2i64, Legal);
++
++      setOperationAction(ISD::ABDU, MVT::v16i8, Legal);
++      setOperationAction(ISD::ABDU, MVT::v8i16, Legal);
++      setOperationAction(ISD::ABDU, MVT::v4i32, Legal);
++      setOperationAction(ISD::ABDS, MVT::v4i32, Legal);
+     }
+ 
+     if (Subtarget.hasP10Vector()) {
+@@ -1386,7 +1391,7 @@ PPCTargetLowering::PPCTargetLowering(const PPCTargetMachine &TM,
+   }
+ 
+   if (Subtarget.hasP9Altivec()) {
+-    setTargetDAGCombine({ISD::ABS, ISD::VSELECT});
++    setTargetDAGCombine({ISD::VSELECT});
+   }
+ 
+   setLibcallName(RTLIB::LOG_F128, "logf128");
+@@ -1750,7 +1755,6 @@ const char *PPCTargetLowering::getTargetNodeName(unsigned Opcode) const {
+   case PPCISD::RFEBB:           return "PPCISD::RFEBB";
+   case PPCISD::XXSWAPD:         return "PPCISD::XXSWAPD";
+   case PPCISD::SWAP_NO_CHAIN:   return "PPCISD::SWAP_NO_CHAIN";
+-  case PPCISD::VABSD:           return "PPCISD::VABSD";
+   case PPCISD::BUILD_FP128:     return "PPCISD::BUILD_FP128";
+   case PPCISD::BUILD_SPE64:     return "PPCISD::BUILD_SPE64";
+   case PPCISD::EXTRACT_SPE:     return "PPCISD::EXTRACT_SPE";
+@@ -16034,8 +16038,6 @@ SDValue PPCTargetLowering::PerformDAGCombine(SDNode *N,
+   }
+   case ISD::BUILD_VECTOR:
+     return DAGCombineBuildVector(N, DCI);
+-  case ISD::ABS:
+-    return combineABS(N, DCI);
+   case ISD::VSELECT:
+     return combineVSelect(N, DCI);
+   }
+@@ -17463,24 +17465,6 @@ SDValue PPCTargetLowering::combineTRUNCATE(SDNode *N,
+   SDLoc dl(N);
+   SDValue Op0 = N->getOperand(0);
+ 
+-  // fold (truncate (abs (sub (zext a), (zext b)))) -> (vabsd a, b)
+-  if (Subtarget.hasP9Altivec() && Op0.getOpcode() == ISD::ABS) {
+-    EVT VT = N->getValueType(0);
+-    if (VT != MVT::v4i32 && VT != MVT::v8i16 && VT != MVT::v16i8)
+-      return SDValue();
+-    SDValue Sub = Op0.getOperand(0);
+-    if (Sub.getOpcode() == ISD::SUB) {
+-      SDValue SubOp0 = Sub.getOperand(0);
+-      SDValue SubOp1 = Sub.getOperand(1);
+-      if ((SubOp0.getOpcode() == ISD::ZERO_EXTEND) &&
+-          (SubOp1.getOpcode() == ISD::ZERO_EXTEND)) {
+-        return DCI.DAG.getNode(PPCISD::VABSD, dl, VT, SubOp0.getOperand(0),
+-                               SubOp1.getOperand(0),
+-                               DCI.DAG.getTargetConstant(0, dl, MVT::i32));
+-      }
+-    }
+-  }
+-
+   // Looking for a truncate of i128 to i64.
+   if (Op0.getValueType() != MVT::i128 || N->getValueType(0) != MVT::i64)
+     return SDValue();
+@@ -17681,54 +17665,12 @@ isMaskAndCmp0FoldingBeneficial(const Instruction &AndI) const {
+   return true;
+ }
+ 
+-// Transform (abs (sub (zext a), (zext b))) to (vabsd a b 0)
+-// Transform (abs (sub (zext a), (zext_invec b))) to (vabsd a b 0)
+-// Transform (abs (sub (zext_invec a), (zext_invec b))) to (vabsd a b 0)
+-// Transform (abs (sub (zext_invec a), (zext b))) to (vabsd a b 0)
+-// Transform (abs (sub a, b) to (vabsd a b 1)) if a & b of type v4i32
+-SDValue PPCTargetLowering::combineABS(SDNode *N, DAGCombinerInfo &DCI) const {
+-  assert((N->getOpcode() == ISD::ABS) && "Need ABS node here");
+-  assert(Subtarget.hasP9Altivec() &&
+-         "Only combine this when P9 altivec supported!");
+-  EVT VT = N->getValueType(0);
+-  if (VT != MVT::v4i32 && VT != MVT::v8i16 && VT != MVT::v16i8)
+-    return SDValue();
+-
+-  SelectionDAG &DAG = DCI.DAG;
+-  SDLoc dl(N);
+-  if (N->getOperand(0).getOpcode() == ISD::SUB) {
+-    // Even for signed integers, if it's known to be positive (as signed
+-    // integer) due to zero-extended inputs.
+-    unsigned SubOpcd0 = N->getOperand(0)->getOperand(0).getOpcode();
+-    unsigned SubOpcd1 = N->getOperand(0)->getOperand(1).getOpcode();
+-    if ((SubOpcd0 == ISD::ZERO_EXTEND ||
+-         SubOpcd0 == ISD::ZERO_EXTEND_VECTOR_INREG) &&
+-        (SubOpcd1 == ISD::ZERO_EXTEND ||
+-         SubOpcd1 == ISD::ZERO_EXTEND_VECTOR_INREG)) {
+-      return DAG.getNode(PPCISD::VABSD, dl, N->getOperand(0).getValueType(),
+-                         N->getOperand(0)->getOperand(0),
+-                         N->getOperand(0)->getOperand(1),
+-                         DAG.getTargetConstant(0, dl, MVT::i32));
+-    }
+-
+-    // For type v4i32, it can be optimized with xvnegsp + vabsduw
+-    if (N->getOperand(0).getValueType() == MVT::v4i32 &&
+-        N->getOperand(0).hasOneUse()) {
+-      return DAG.getNode(PPCISD::VABSD, dl, N->getOperand(0).getValueType(),
+-                         N->getOperand(0)->getOperand(0),
+-                         N->getOperand(0)->getOperand(1),
+-                         DAG.getTargetConstant(1, dl, MVT::i32));
+-    }
+-  }
+-
+-  return SDValue();
+-}
+-
+ // For type v4i32/v8ii16/v16i8, transform
+-// from (vselect (setcc a, b, setugt), (sub a, b), (sub b, a)) to (vabsd a, b)
+-// from (vselect (setcc a, b, setuge), (sub a, b), (sub b, a)) to (vabsd a, b)
+-// from (vselect (setcc a, b, setult), (sub b, a), (sub a, b)) to (vabsd a, b)
+-// from (vselect (setcc a, b, setule), (sub b, a), (sub a, b)) to (vabsd a, b)
++// from (vselect (setcc a, b, setugt), (sub a, b), (sub b, a)) to (abdu a, b)
++// from (vselect (setcc a, b, setuge), (sub a, b), (sub b, a)) to (abdu a, b)
++// from (vselect (setcc a, b, setult), (sub b, a), (sub a, b)) to (abdu a, b)
++// from (vselect (setcc a, b, setule), (sub b, a), (sub a, b)) to (abdu a, b)
++// TODO: Move this to DAGCombiner?
+ SDValue PPCTargetLowering::combineVSelect(SDNode *N,
+                                           DAGCombinerInfo &DCI) const {
+   assert((N->getOpcode() == ISD::VSELECT) && "Need VSELECT node here");
+@@ -17779,9 +17721,8 @@ SDValue PPCTargetLowering::combineVSelect(SDNode *N,
+       TrueOpnd.getOperand(1) == CmpOpnd2 &&
+       FalseOpnd.getOperand(0) == CmpOpnd2 &&
+       FalseOpnd.getOperand(1) == CmpOpnd1) {
+-    return DAG.getNode(PPCISD::VABSD, dl, N->getOperand(1).getValueType(),
+-                       CmpOpnd1, CmpOpnd2,
+-                       DAG.getTargetConstant(0, dl, MVT::i32));
++    return DAG.getNode(ISD::ABDU, dl, N->getOperand(1).getValueType(), CmpOpnd1,
++                       CmpOpnd2, DAG.getTargetConstant(0, dl, MVT::i32));
+   }
+ 
+   return SDValue();
+diff --git llvm/lib/Target/PowerPC/PPCISelLowering.h llvm/lib/Target/PowerPC/PPCISelLowering.h
+index 6ed52f540b02..302bd1b91ecc 100644
+--- llvm/lib/Target/PowerPC/PPCISelLowering.h
++++ llvm/lib/Target/PowerPC/PPCISelLowering.h
+@@ -440,21 +440,6 @@ namespace llvm {
+     /// and thereby have no chain.
+     SWAP_NO_CHAIN,
+ 
+-    /// An SDNode for Power9 vector absolute value difference.
+-    /// operand #0 vector
+-    /// operand #1 vector
+-    /// operand #2 constant i32 0 or 1, to indicate whether needs to patch
+-    /// the most significant bit for signed i32
+-    ///
+-    /// Power9 VABSD* instructions are designed to support unsigned integer
+-    /// vectors (byte/halfword/word), if we want to make use of them for signed
+-    /// integer vectors, we have to flip their sign bits first. To flip sign bit
+-    /// for byte/halfword integer vector would become inefficient, but for word
+-    /// integer vector, we can leverage XVNEGSP to make it efficiently. eg:
+-    /// abs(sub(a,b)) => VABSDUW(a+0x80000000, b+0x80000000)
+-    ///               => VABSDUW((XVNEGSP a), (XVNEGSP b))
+-    VABSD,
+-
+     /// FP_EXTEND_HALF(VECTOR, IDX) - Custom extend upper (IDX=0) half or
+     /// lower (IDX=1) half of v4f32 to v2f64.
+     FP_EXTEND_HALF,
+@@ -1430,7 +1415,6 @@ namespace llvm {
+     SDValue combineFMALike(SDNode *N, DAGCombinerInfo &DCI) const;
+     SDValue combineTRUNCATE(SDNode *N, DAGCombinerInfo &DCI) const;
+     SDValue combineSetCC(SDNode *N, DAGCombinerInfo &DCI) const;
+-    SDValue combineABS(SDNode *N, DAGCombinerInfo &DCI) const;
+     SDValue combineVSelect(SDNode *N, DAGCombinerInfo &DCI) const;
+     SDValue combineVectorShuffle(ShuffleVectorSDNode *SVN,
+                                  SelectionDAG &DAG) const;
+diff --git llvm/lib/Target/PowerPC/PPCInstrVSX.td llvm/lib/Target/PowerPC/PPCInstrVSX.td
+index 584750488ddd..ed9dbb431441 100644
+--- llvm/lib/Target/PowerPC/PPCInstrVSX.td
++++ llvm/lib/Target/PowerPC/PPCInstrVSX.td
+@@ -76,9 +76,6 @@ def SDT_PPCxxswapd : SDTypeProfile<1, 1, [
+ def SDTVecConv : SDTypeProfile<1, 2, [
+   SDTCisVec<0>, SDTCisVec<1>, SDTCisPtrTy<2>
+ ]>;
+-def SDTVabsd : SDTypeProfile<1, 3, [
+-  SDTCisVec<0>, SDTCisSameAs<0, 1>, SDTCisSameAs<0, 2>, SDTCisVT<3, i32>
+-]>;
+ def SDT_PPCld_vec_be : SDTypeProfile<1, 1, [
+   SDTCisVec<0>, SDTCisPtrTy<1>
+ ]>;
+@@ -105,7 +102,6 @@ def PPCmtvsrz : SDNode<"PPCISD::MTVSRZ", SDTUnaryOp, []>;
+ def PPCsvec2fp : SDNode<"PPCISD::SINT_VEC_TO_FP", SDTVecConv, []>;
+ def PPCuvec2fp: SDNode<"PPCISD::UINT_VEC_TO_FP", SDTVecConv, []>;
+ def PPCswapNoChain : SDNode<"PPCISD::SWAP_NO_CHAIN", SDT_PPCxxswapd>;
+-def PPCvabsd : SDNode<"PPCISD::VABSD", SDTVabsd, []>;
+ 
+ def PPCfpexth : SDNode<"PPCISD::FP_EXTEND_HALF", SDT_PPCfpexth, []>;
+ def PPCldvsxlh : SDNode<"PPCISD::LD_VSX_LH", SDT_PPCldvsxlh,
+@@ -4821,20 +4817,23 @@ def : Pat<(f128 (uint_to_fp (i32 (PPCmfvsr f64:$src)))),
+ 
+ // Any Power9 VSX subtarget that supports Power9 Altivec.
+ let Predicates = [HasVSX, HasP9Altivec] in {
+-// Put this P9Altivec related definition here since it's possible to be
+-// selected to VSX instruction xvnegsp, avoid possible undef.
+-def : Pat<(v4i32 (PPCvabsd v4i32:$A, v4i32:$B, (i32 0))),
++// Unsigned absolute-difference.
++def : Pat<(v4i32 (abdu v4i32:$A, v4i32:$B)),
+           (v4i32 (VABSDUW $A, $B))>;
+ 
+-def : Pat<(v8i16 (PPCvabsd v8i16:$A, v8i16:$B, (i32 0))),
++def : Pat<(v8i16 (abdu v8i16:$A, v8i16:$B)),
+           (v8i16 (VABSDUH $A, $B))>;
+ 
+-def : Pat<(v16i8 (PPCvabsd v16i8:$A, v16i8:$B, (i32 0))),
++def : Pat<(v16i8 (abdu v16i8:$A, v16i8:$B)),
+           (v16i8 (VABSDUB $A, $B))>;
+ 
+-// As PPCVABSD description, the last operand indicates whether do the
+-// sign bit flip.
+-def : Pat<(v4i32 (PPCvabsd v4i32:$A, v4i32:$B, (i32 1))),
++// Signed absolute-difference.
++// Power9 VABSD* instructions are designed to support unsigned integer
++// vectors (byte/halfword/word), if we want to make use of them for signed
++// integer vectors, we have to flip their sign bits first. To flip sign bit
++// for byte/halfword integer vector would become inefficient, but for word
++// integer vector, we can leverage XVNEGSP to make it efficiently.
++def : Pat<(v4i32 (abds v4i32:$A, v4i32:$B)),
+           (v4i32 (VABSDUW (XVNEGSP $A), (XVNEGSP $B)))>;
+ } // HasVSX, HasP9Altivec
+ 

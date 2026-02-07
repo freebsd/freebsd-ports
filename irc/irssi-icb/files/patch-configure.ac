@@ -1,0 +1,26 @@
+--- configure.ac.orig	2017-01-22 13:24:58 UTC
++++ configure.ac
+@@ -19,23 +19,12 @@ AC_ARG_WITH([irssi],
+             [],
+             [with_irssi=no])
+ 
+-AS_IF([test "x$with_irssi" = "xno"], [
+-      AS_IF([test -f ../irssi-config],
+-            [with_irssi=".."],
+-            AS_IF([test -f ../irssi/irssi-config],
+-                  [with_irssi="../.."],
+-                  AS_IF([test -f ../../irssi/irssi-config],
+-                        [with_irssi="../../irssi"],
+-                        AS_ERROR([Could not determine irssi directory])))) ])
+ 
+ # fix relative paths
+ IRSSI_INCLUDE=`cd $with_irssi; pwd`
+ 
+ AC_SUBST(IRSSI_INCLUDE)
+ 
+-AS_IF([test ! -f "$IRSSI_INCLUDE/irssi-config"],
+-      [AC_ERROR(Not irssi directory: $IRSSI_INCLUDE)]
+-)
+ 
+ PKG_CHECK_MODULES(GLIB, glib-2.0)
+ 

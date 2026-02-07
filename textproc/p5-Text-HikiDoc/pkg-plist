@@ -1,0 +1,13 @@
+%%PERL5_MAN3%%/Text::HikiDoc.3.gz
+%%PERL5_MAN3%%/Text::HikiDoc::Plugin.3.gz
+%%SITE_PERL%%/Text/HikiDoc.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/aa.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/br.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/e.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/ins.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/sub.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/sup.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/syntaxhighlighter.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/texthighlight.pm
+%%SITE_PERL%%/Text/HikiDoc/Plugin/vimcolor.pm

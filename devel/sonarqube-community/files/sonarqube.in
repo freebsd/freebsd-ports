@@ -1,0 +1,72 @@
+#!/bin/sh
+
+# PROVIDE: sonarqube
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable %%APP_NAME%%:
+#
+# %%APP_NAME%%_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=%%APP_NAME%%
+rcvar=%%APP_NAME%%_enable
+
+# set defaults
+
+%%APP_NAME%%_enable=${%%APP_NAME%%_enable:-"NO"}
+%%APP_NAME%%_supervised=${%%APP_NAME%%_supervised:-"YES"}
+%%APP_NAME%%_user=${%%APP_NAME%%_user:-"sonarqube"}
+%%APP_NAME%%_group=${%%APP_NAME%%_group:-"sonarqube"}
+%%APP_NAME%%_parameters=${%%APP_NAME%%_parameters:-"-Xms32m -Xmx32m -Djava.net.preferIPv4Stack=true"}
+%%APP_NAME%%_logfile=${%%APP_NAME%%_logfile:-"%%LOG_DIR%%/daemon.log"}
+%%APP_NAME%%_pidpath=${%%APP_NAME%%_pidpath:-"%%PID_DIR%%"}
+%%APP_NAME%%_svcj_options=${%%APP_NAME%%_svcj_options:-"net_basic"}
+
+sup_pidfile=${%%APP_NAME%%_pidpath}/%%APP_NAME%%_supervisor.pid
+main_pidfile=${%%APP_NAME%%_pidpath}/%%APP_NAME%%.pid
+
+if [ ! -d %%PID_DIR%% ]; then
+	mkdir -p %%PID_DIR%%
+	chown ${%%APP_NAME%%_user}:${%%APP_NAME%%_group} %%PID_DIR%%
+fi
+
+if [ ! -d %%LOG_DIR%% ]; then
+	mkdir -p %%LOG_DIR%%
+	chown ${%%APP_NAME%%_user}:${%%APP_NAME%%_group} %%LOG_DIR%%
+fi
+
+if test -n "${%%APP_NAME%%_java_version}" ; then
+    JAVA_HOME=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    javaname=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+else
+    JAVA_HOME=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    javaname=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+fi
+
+export JAVA_HOME
+
+jarname="%%PREFIX%%/%%APP_DIR%%/lib/sonar-application-%%JAR_VERSION%%.jar"
+command="/usr/sbin/daemon"
+required_files="%%PREFIX%%/%%APP_DIR%%/conf/sonar.properties"
+
+load_rc_config ${name}
+
+if checkyesno %%APP_NAME%%_supervised; then
+	# auto-restart on termination
+	pidfile=${sup_pidfile}
+	daemon_supervise_args="-r -P ${sup_pidfile}"
+	procname=daemon
+else
+	# no restart on termination
+	pidfile=${main_pidfile}
+	damon_supervise_args=""
+	procname=${javaname}
+fi
+
+command_args="${daemon_supervise_args} -o ${%%APP_NAME%%_logfile} -p ${main_pidfile} ${javaname} ${%%APP_NAME%%_parameters} -jar ${jarname}"
+
+run_rc_command "$1"

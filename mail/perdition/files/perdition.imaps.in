@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: perdition_imaps
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable perdition.imaps
+#
+# perdition_imaps_enable="YES"
+# perdition_imaps_flags="<set as needed>"
+#
+# See perdition(8) for flags
+#
+
+perdition_imaps_enable=${perdition_imaps_enable-"NO"}
+
+. /etc/rc.subr
+
+name="perdition_imaps"
+rcvar=perdition_imaps_enable
+
+command="%%PREFIX%%/sbin/perdition.imaps"
+pidfile="/var/run/perdition.imaps/perdition.imaps.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"

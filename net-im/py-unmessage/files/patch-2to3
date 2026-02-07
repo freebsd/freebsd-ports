@@ -1,0 +1,63 @@
+--- unmessage/cli.py.orig	2017-05-12 04:05:34 UTC
++++ unmessage/cli.py
+@@ -75,7 +75,7 @@ YELLOW = 5
+ def create_help():
+     help_lines = list()
+     commands = sorted(COMMANDS.keys())
+-    longest = max(map(lambda command: len(command), commands))
++    longest = max([len(command) for command in commands])
+     for c in commands:
+         padding = (longest - len(c)) * ' '
+         info = COMMANDS[c]
+@@ -87,11 +87,11 @@ def create_help():
+ 
+ 
+ def sum_args_len(args_list):
+-    return sum(map(lambda args: len(args[0]), args_list))
++    return sum([len(args[0]) for args in args_list])
+ 
+ 
+ def join_args_str(args_list):
+-    return ''.join(map(lambda args: args[0], args_list))
++    return ''.join([args[0] for args in args_list])
+ 
+ 
+ def get_auth_color(conversation):
+@@ -117,7 +117,7 @@ class Cli(PeerUi):
+ 
+     @property
+     def handlers_conv(self):
+-        return self._handlers_conv.values()
++        return list(self._handlers_conv.values())
+ 
+     @property
+     def prefix_str(self):
+@@ -211,8 +211,8 @@ class Cli(PeerUi):
+         self.remote_mode = remote_mode
+ 
+         if not name:
+-            print 'unMessage could not find a name to use'
+-            print 'Run unMessage with `-name`'
++            print('unMessage could not find a name to use')
++            print('Run unMessage with `-name`')
+         else:
+             curses.wrapper(self.start_main,
+                            name,
+@@ -364,7 +364,7 @@ class Cli(PeerUi):
+         devices = self.peer.get_audio_devices()
+         if devices:
+             output = ['Audio devices:']
+-            for name, index in devices.items():
++            for name, index in list(devices.items()):
+                 output.append('\tDevice {} has index {}'.format(name, index))
+         else:
+             output = ['There are no audio devices available']
+@@ -697,7 +697,7 @@ class CursesHelper(object):
+     @sync_curses
+     def _init_color_pairs(cls):
+         default_bg = -1
+-        for number, fg in cls.Colors.items():
++        for number, fg in list(cls.Colors.items()):
+             curses.init_pair(number, fg, default_bg)
+ 
+     @classmethod

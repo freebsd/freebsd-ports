@@ -1,0 +1,60 @@
+Obtained from:	https://github.com/httpie/http-prompt/commit/69439599cac3ac243729ebe6be20b3964bb3a4dd
+
+--- http_prompt/cli.py.orig	2021-01-05 12:12:23 UTC
++++ http_prompt/cli.py
+@@ -13,11 +13,11 @@ import click
+ 
+ from httpie.plugins import FormatterPlugin  # noqa, avoid cyclic import
+ from httpie.output.formatters.colors import Solarized256Style
+-from prompt_toolkit import prompt, AbortAction
++from prompt_toolkit import prompt
+ from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
+ from prompt_toolkit.history import FileHistory
+-from prompt_toolkit.layout.lexers import PygmentsLexer
+-from prompt_toolkit.styles.from_pygments import style_from_pygments
++from prompt_toolkit.lexers import PygmentsLexer
++from prompt_toolkit.styles.pygments import style_from_pygments_cls
+ from pygments.styles import get_style_by_name
+ from pygments.util import ClassNotFound
+ 
+@@ -140,7 +140,7 @@ def cli(spec, env, url, http_options):
+         style_class = get_style_by_name(cfg['command_style'])
+     except ClassNotFound:
+         style_class = Solarized256Style
+-    style = style_from_pygments(style_class)
++    style = style_from_pygments_cls(style_class)
+ 
+     listener = ExecutionListener(cfg)
+ 
+@@ -164,7 +164,9 @@ def cli(spec, env, url, http_options):
+             text = prompt('%s> ' % context.url, completer=completer,
+                           lexer=lexer, style=style, history=history,
+                           auto_suggest=AutoSuggestFromHistory(),
+-                          on_abort=AbortAction.RETRY, vi_mode=cfg['vi'])
++                          vi_mode=cfg['vi'])
++        except KeyboardInterrupt:
++            continue  # Control-C pressed
+         except EOFError:
+             break  # Control-D pressed
+         else:
+--- http_prompt/utils.py.orig	2021-03-05 14:07:33 UTC
++++ http_prompt/utils.py
+@@ -4,7 +4,7 @@ import math
+ import re
+ import shlex
+ 
+-from prompt_toolkit.shortcuts import create_output
++from prompt_toolkit.output.defaults import create_output
+ 
+ 
+ RE_ANSI_ESCAPE = re.compile(r'\x1b[^m]*m')
+--- requirements.txt.orig	2021-03-05 14:07:33 UTC
++++ requirements.txt
+@@ -1,6 +1,6 @@
+ click>=5.0
+ httpie>=2.4.0
+ parsimonious>=0.6.2
+-prompt-toolkit>=1.0.0,<2.0.0
++prompt-toolkit>=2.0.0,<3.0.0
+ Pygments>=2.1.0
+ PyYAML>=3.0

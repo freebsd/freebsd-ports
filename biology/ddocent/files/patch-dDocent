@@ -1,0 +1,73 @@
+--- dDocent.orig	2019-05-03 12:59:20 UTC
++++ dDocent
+@@ -1,5 +1,6 @@
+ #!/usr/local/bin/bash
+ export LC_ALL=en_US.UTF-8
++# GNU Parallel uses $SHELL and has issues with [t]csh
+ export SHELL=bash
+ 
+ ##########dDocent##########
+@@ -83,7 +84,7 @@ VCFTV=$(vcftools | grep VCF | grep -oh '[0-9]*[a-z]*)$
+         elif [ "$VCFTV" -ge "12" ]; then
+                 VCFGTFLAG="--max-missing"
+ 	fi
+-BWAV=$(bwa 2>&1 | mawk '/Versi/' | sed 's/Version: //g' | sed 's/0.7.//g' | sed 's/-.*//g' | cut -c 1-2)
++BWAV=$(bwa 2>&1 | mawk '/Versi/' | sed 's/Version: //g' | sed 's/0.7.//g' | sed 's/a*-.*//g')
+ 	if [ "$BWAV" -lt "13" ]; then
+         	echo "The version of bwa installed in your" '$PATH' "is not optimized for dDocent."
+         	echo "Please install at least version 0.7.13"
+@@ -481,7 +482,7 @@ if [ "$SNP" != "no" ]; then
+         		if ( cov < cutoff) {x="mapped."i".bed";print $1"\t"$2"\t"$3 > x}
+         		else {i=i+1; x="mapped."i".bed"; print $1"\t"$2"\t"$3 > x; cov=0}
+         	}'
+-                ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=1 --env call_genos2 --memfree $MAXMemory -j 4 --no-notice "call_genos2 {} 2> /dev/null"
++                ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=1 --env call_genos2 --memfree $MAXMemory -j 4 --no-notice "call_genos2 {} 2> /dev/null"
+                 if [ -f "freebayes.error" ]; then
+                         echo -e "\n\n\nFreeBayes has failed when trying to finish a previously failed instance.  Memory and processor settings need to be drastically reconfigured"
+                         ERROR3=1
+@@ -505,7 +506,7 @@ if [ "$SNP" != "no" ]; then
+ 	
+ 	rm freebayes.error freebayes.log &> /dev/null
+ 	
+-	ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NUMProc --no-notice "call_genos {} 2> /dev/null"
++	ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NUMProc --no-notice "call_genos {} 2> /dev/null"
+ 
+ 
+ 	if [ -f "freebayes.error" ]; then
+@@ -541,7 +542,7 @@ if [ "$SNP" != "no" ]; then
+ 			echo "Using FreeBayes to call SNPs again"
+ 			NumP=$(( $NUMProc / 4 ))
+ 			NumP=$(( $NumP * 3 ))
+-			ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null" 
++			ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null" 
+         fi
+     fi
+ 
+@@ -575,7 +576,7 @@ if [ "$SNP" != "no" ]; then
+             	NumP=$(( $NumP / 4 ))
+                 NumP=$(( $NumP * 3 ))
+ 			echo "Using FreeBayes to call SNPs again"
+-            ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=1 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null"
++            ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=1 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null"
+         fi
+ 	fi
+ 
+@@ -1132,6 +1133,8 @@ fi
+ 
+ if [[ "$OSTYPE" == "darwin"* ]]; then
+ 	NUMProc=( `sysctl hw.ncpu | cut -f2 -d " " `)
++elif [[ "$OSTYPE" == "FreeBSD" ]]; then
++	NUMProc=( `sysctl -n hw.ncpu` )
+ else
+ 	NUMProc=( `grep -c ^processor /proc/cpuinfo 2> /dev/null` ) 
+ fi
+@@ -1154,6 +1157,9 @@ fi
+ #Tries to get maximum system memory, if not asks user
+ if [[ "$OSTYPE" == "darwin"* ]]; then
+ 	MAXMemory=0
++elif [[ "$OSTYPE" == "FreeBSD" ]]; then
++	MAXMemory=`sysctl -n hw.realmem`
++	MAXMemory=$((MAXMemory / 1073741824))G
+ else
+ 	MAXMemory=$(($(grep -Po '(?<=^MemTotal:)\s*[0-9]+' /proc/meminfo | tr -d " ") / 1048576))
+ 

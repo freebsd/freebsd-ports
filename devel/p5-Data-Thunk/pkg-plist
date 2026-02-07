@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Data/Thunk.pm
+%%SITE_PERL%%/Data/Thunk/Code.pm
+%%SITE_PERL%%/Data/Thunk/Object.pm
+%%SITE_PERL%%/Data/Thunk/ScalarValue.pm
+%%PERL5_MAN3%%/Data::Thunk.3.gz
+%%PERL5_MAN3%%/Data::Thunk::Code.3.gz
+%%PERL5_MAN3%%/Data::Thunk::Object.3.gz
+%%PERL5_MAN3%%/Data::Thunk::ScalarValue.3.gz

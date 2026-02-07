@@ -1,0 +1,4 @@
+ktoblzcheck-data converts raw bank code data published by several
+financial institutions including Deutsche Bundesbank, SIX Group, and
+Betaalvereniging Nederland, into SQLite databases used by the ktoblzcheck
+library.

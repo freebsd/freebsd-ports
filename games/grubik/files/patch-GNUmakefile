@@ -1,0 +1,21 @@
+--- GNUmakefile.orig	2017-08-13 19:04:30 UTC
++++ GNUmakefile
+@@ -1,8 +1,3 @@
+-
+-GNUSTEP_INSTALLATION_DIR = $(GNUSTEP_SYSTEM_ROOT)
+-
+-GNUSTEP_MAKEFILES = $(GNUSTEP_SYSTEM_ROOT)/Makefiles
+-
+ include $(GNUSTEP_MAKEFILES)/common.make
+ 
+ # The application to be compiled
+@@ -16,9 +11,6 @@ GRubik_OBJC_FILES = main.m  \
+ 
+ SHARED_CFLAGS     += -g
+ 
+-# The Resource files to be copied into the app's resources directory
+-// GRubik_RESOURCE_FILES = Icons/*
+-
+ -include GNUmakefile.preamble
+ 
+ -include GNUmakefile.local

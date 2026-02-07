@@ -1,0 +1,9 @@
+Thank you for installing NotiMail!
+
+To finalize the installation, please configure
+
+    %%PREFIX%%/etc/notimal/config.ini
+
+according to your needs.  If this is an upgrade and you already have
+a config.ini, the new config file is installed as config.ini.sample.
+Review and merge any necessary changes.

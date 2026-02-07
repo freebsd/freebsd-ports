@@ -1,0 +1,49 @@
+# 
+# Patch to make the rcs2log script cope with old-format (5 parameter)
+# and new-format (6 parameter) log output. Bug#258140
+# 
+# Patch from Ludovic Rousseau <rousseau@debian.org>
+diff -Nur contrib/rcs2log.sh contrib/rcs2log.sh
+--- contrib/rcs2log.sh	2005-07-12 22:12:55.000000000 +0800
++++ contrib/rcs2log.sh	2006-02-26 17:43:11.000000000 +0800
+@@ -416,11 +416,24 @@
+ 	: ;;
+ esac >$llogout || exit
+ 
++# the date format in 'cvs -q log' changed
++# it was
++# date: 2003/05/06 21:23:30;  author: rousseau;  state: Exp;  lines: +29 -31
++# it is now
++# date: 2003-05-06 21:23:30 +0000;  author: rousseau;  state: Exp;  lines: +29 -31
+ output_authors='/^date: / {
+-	if ($2 ~ /^[0-9]*[-\/][0-9][0-9][-\/][0-9][0-9]$/ && $3 ~ /^[0-9][0-9]:[0-9][0-9]:[0-9][0-9][-+0-9:]*;$/ && $4 == "author:" && $5 ~ /^[^;]*;$/) {
+-		print substr($5, 1, length($5)-1)
+-	}
++       # old date format
++       if ($2 ~ /^[0-9]*[-\/][0-9][0-9][-\/][0-9][0-9]$/ && $3 ~ /^[0-9][0-9]:[0-9][0-9]:[0-9][0-9][-+0-9:]*;$/ && $4 == "author:" && $5 ~ /^[^;]*;$/) {
++               print substr($5, 1, length($5)-1)
++       }
++       else {
++               # new date format
++               if ($2 ~ /^[0-9]*[-\/][0-9][0-9][-\/][0-9][0-9]$/ && $3 ~ /^[0-9][0-9]:[0-9][0-9]:[0-9][0-9][-+0-9:]*$/ && $5 == "author:" && $6 ~ /^[^;]*;$/) {
++                       print substr($6, 1, length($6)-1)
++               }
++        }
+ }'
++
+ authors=`
+ 	$AWK "$output_authors" <"$rlogfile" | sort -u | comm -23 - $llogout
+ `
+@@ -611,7 +624,11 @@
+ 				date = newdate date
+ 			}
+ 			time = substr($3, 1, length($3) - 1)
+-			author = substr($5, 1, length($5)-1)
++            author = substr($5, 1, length($5)-1)
++            if (author ~ /author/) {
++                # new date format
++                author = substr($6, 1, length($6)-1)
++            }
+ 			printf "%s%s%s%s%s%s%s%s%s%s", filename, SOH, rev, SOH, date, SOH, time, SOH, author, SOH
+ 			rev = "?"
+ 			next

@@ -1,0 +1,18 @@
+Jgroff is based on GNU groff formating system.  It is enhanced to
+handle Japanese EUC coded documents.
+
+Following devices are added by jgroff:
+
+    nippon     For typewriter-like devices using the Japanese-EUC
+               coded character set.
+
+and following devices are enhanced to handle Japanese-EUC:
+
+    dvi        For TeX DVI format.
+    ps         For PostScript printers and previewers.
+    X75        For a 75 dpi X11 previewer.
+    X100       For a 100 dpi X11 previewer.
+    X75-12     For a 75 dpi X11 previewer optimized for 12 point texts.
+    X100-12    For a 100 dpi X11 previewer optimized for 12 point texts.
+
+Preview on X11 devices require japanese/gxditview is installed.

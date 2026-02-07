@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# PROVIDE: dahdi
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+# BEFORE: asterisk
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dahdi_enable (bool):			YES/NO (default: NO)
+# dahdi_modules (list of strings):	dahdi modules to load at boot (default: dahdi)
+#
+# Valid modules are:
+# - dahdi
+# - dahdi_transcode
+# - wcb4xxp
+# - wcfxo
+# - wct4xxp
+# - wctc4xxp
+# - wctdm
+# - wctdm24xxp
+# - wcte11xp
+# - wcte12xp
+#
+# Example:
+#
+# dahdi_enable="YES"
+# dahdi_modules="wct4xxp"
+#
+
+. /etc/rc.subr
+
+name="dahdi"
+rcvar=dahdi_enable
+
+start_cmd="dahdi_start"
+stop_cmd="dahdi_stop"
+load_rc_config $name
+: ${dahdi_enable="NO"}
+: ${dahdi_modules="dahdi"}
+
+kmod_dir=%%PREFIX%%/lib/dahdi
+# reverse list
+for m in ${dahdi_modules}; do
+	dahdi_modules_unload="$m ${dahdi_modules_unload}"
+done
+
+dahdi_start()
+{
+	echo "Starting ${name}."
+
+	# load kernel modules
+	kldconfig -mf ${kmod_dir}
+	for m in ${dahdi_modules}; do
+		kldload $m || exit 1
+	done
+
+	# configure devfs
+	devfs rule apply path 'dahdi/*' mode 0664 user root group dahdi
+
+	# run configuration utilities
+	/bin/sleep 5
+	%%PREFIX%%/sbin/dahdi_cfg
+	if [ -r %%PREFIX%%/etc/fxotune.conf ]; then
+		echo "Starting fxotune."
+		%%PREFIX%%/sbin/fxotune -s
+	fi
+}
+
+dahdi_stop()
+{
+        echo -n " ${name}"
+	for m in ${dahdi_modules_unload}; do
+		kldunload $m
+	done
+}
+
+run_rc_command "$1"

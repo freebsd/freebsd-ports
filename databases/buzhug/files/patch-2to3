@@ -1,0 +1,1032 @@
+--- buzhug/buzhug_algos.py.orig	2022-03-15 18:59:32 UTC
++++ buzhug/buzhug_algos.py
+@@ -28,11 +28,11 @@ def make_search_func(db,field,value):
+     if isinstance(value,(list,tuple)):
+         value = list(value)
+         if not len(value)==2:
+-            raise ValueError,"If argument is a list, only 2 values \
+-                should be passed (found %s)" %len(value)
++            raise ValueError("If argument is a list, only 2 values \
++                should be passed (found %s)" %len(value))
+         if not db.fields[field] in [int,float,date,datetime]:
+-            raise TypeError,"Search between values is only allowed for " \
+-                "int, float, date and datetime (found %s)" %db.fields[field]
++            raise TypeError("Search between values is only allowed for " \
++                "int, float, date and datetime (found %s)" %db.fields[field])
+         db._validate(field,value[0])
+         db._validate(field,value[1])
+         value.sort()
+@@ -110,15 +110,15 @@ def fast_select(db,names,**args):
+     used to select a subset of record rows in field files
+     """
+     # fixed and variable length fields
+-    f_args = [ (k,v) for k,v in args.iteritems() 
++    f_args = [ (k,v) for k,v in args.items() 
+         if hasattr(db._file[k],'block_len') ]
+-    v_args = [ (k,v) for (k,v) in args.iteritems() 
++    v_args = [ (k,v) for (k,v) in args.items() 
+         if not hasattr(db._file[k],'block_len') ]
+     arg_names = [ k for k,v in f_args + v_args ]
+     no_args = [ n for n in names if not n in arg_names ]
+     names = arg_names + no_args
+ 
+-    [ db._file[k].seek(0) for k in names + args.keys() ]
++    [ db._file[k].seek(0) for k in names + list(args.keys()) ]
+     max_len = max([ db._file[k[0]].block_len for k in f_args ])
+     num_blocks = db.BLOCKSIZE / max_len
+     funcs = dict([(k,make_search_func(db,k,v)) 
+@@ -148,7 +148,7 @@ def fast_select(db,names,**args):
+             res[bl_offset+c] = [ ranks[k][c] for k,v in f_args ]
+         bl_offset += num_blocks
+ 
+-    fl_ranks = res.keys()
++    fl_ranks = list(res.keys())
+     fl_ranks.sort()
+ 
+     # The field files for the other arguments are browsed ; if their
+@@ -162,7 +162,7 @@ def fast_select(db,names,**args):
+     for f in other_files:
+         f.seek(0)
+ 
+-    for i,lines in enumerate(itertools.izip(*other_files)):
++    for i,lines in enumerate(zip(*other_files)):
+         try:
+             if i == fl_ranks[0]:
+                 fl_ranks.pop(0)
+--- buzhug/buzhug_files.py.orig	2022-03-15 18:59:32 UTC
++++ buzhug/buzhug_files.py
+@@ -149,8 +149,8 @@ class StringFile(VariableLengthFile):
+         if value is None:
+             return '!\n'
+         elif not isinstance(value,str):
+-            raise ValueError,'Bad type : expected str, got %s %s' %(value,
+-                    value.__class__)
++            raise ValueError('Bad type : expected str, got %s %s' %(value,
++                    value.__class__))
+         else:
+             # escape CR & LF so that the block is on one line
+             value = value.replace('\\','\\\\')
+@@ -192,9 +192,9 @@ class UnicodeFile(StringFile):
+     def to_block(self,value):
+         if value is None:
+             return '!\n'
+-        elif not isinstance(value,unicode):
+-            raise ValueError,'Bad type : expected unicode, got %s %s' %(value,
+-                    value.__class__)
++        elif not isinstance(value,str):
++            raise ValueError('Bad type : expected unicode, got %s %s' %(value,
++                    value.__class__))
+         else:
+             return StringFile.to_block(self,value.encode('utf-8'))
+     
+@@ -220,8 +220,8 @@ class DateFile(VariableLengthFile):
+         if value is None:
+             return '!xxxxxxxx\n'
+         elif not isinstance(value,date):
+-            raise ValueError,'Bad type : expected datetime.date, got %s %s' \
+-                %(value,value.__class__)
++            raise ValueError('Bad type : expected datetime.date, got %s %s' \
++                %(value,value.__class__))
+         else:
+             if value.year>=1900:
+                 return value.strftime('-%Y%m%d')+'\n'
+@@ -243,8 +243,8 @@ class DateTimeFile(VariableLengthFile):
+         if value is None:
+             return '!xxxxxxxxxxxxxx\n'
+         elif not isinstance(value,date):
+-            raise ValueError,'Bad type : expected datetime.date, got %s %s' \
+-                %(value,value.__class__)
++            raise ValueError('Bad type : expected datetime.date, got %s %s' \
++                %(value,value.__class__))
+         else:
+             if value.year>=1900:
+                 return value.strftime('-%Y%m%d%H%M%S')+'\n'
+@@ -272,8 +272,8 @@ class TimeFile(VariableLengthFile):
+         if value is None:
+             return '!xxxxxx\n'
+         elif not isinstance(value, dtime):
+-            raise ValueError,'Bad type : expected datetime.time, got %s %s' \
+-                %(value,value.__class__)
++            raise ValueError('Bad type : expected datetime.time, got %s %s' \
++                %(value,value.__class__))
+         else:
+             return value.strftime('-%H%M%S')+'\n'
+     
+@@ -291,8 +291,8 @@ class BooleanFile(FixedLengthFile):
+         if value is None:
+             return '!'+chr(0)
+         elif not isinstance(value,bool):
+-            raise ValueError,'Bad type : expected bool, got %s %s' \
+-                %(value,value.__class__)
++            raise ValueError('Bad type : expected bool, got %s %s' \
++                %(value,value.__class__))
+         else:
+             if value:
+                 return '-1'
+@@ -317,15 +317,15 @@ class IntegerFile(FixedLengthFile):
+         if value is None:
+             return '!'+chr(0)*4
+         elif not isinstance(value,int):
+-            raise ValueError,'Bad type : expected int, got %s %s' \
+-                %(value,value.__class__)
++            raise ValueError('Bad type : expected int, got %s %s' \
++                %(value,value.__class__))
+         else:
+-            if value <= -sys.maxint/2:
+-                raise OverflowError,"Integer value must be > %s, got %s" \
+-                    %(-sys.maxint/2,value)
+-            if value > sys.maxint/2:
+-                raise OverflowError,"Integer value must be <= %s, got %s" \
+-                    %(sys.maxint/2,value)
++            if value <= -sys.maxsize/2:
++                raise OverflowError("Integer value must be > %s, got %s" \
++                    %(-sys.maxsize/2,value))
++            if value > sys.maxsize/2:
++                raise OverflowError("Integer value must be <= %s, got %s" \
++                    %(sys.maxsize/2,value))
+             return '-'+struct.pack('>i',value+self.MIDINT)
+ 
+     def from_block(self,block):
+@@ -370,8 +370,8 @@ class FloatFile(FixedLengthFile):
+         if value is None:
+             return '!'+chr(0)*9
+         elif not isinstance(value,float):
+-            raise ValueError,'Bad type : expected float, got %s %s' \
+-                %(value,value.__class__)
++            raise ValueError('Bad type : expected float, got %s %s' \
++                %(value,value.__class__))
+         elif value == 0.0:
+             return '-'+chr(128)+chr(0)*8
+         else:
+--- buzhug/buzhug_info.py.orig	2022-03-15 18:59:32 UTC
++++ buzhug/buzhug_info.py
+@@ -2,7 +2,7 @@
+ field definitions with types and default values"""
+ 
+ import os
+-import urllib
++import urllib.request, urllib.parse, urllib.error
+ 
+ def set_info(base,fields):
+     base.defaults = {}
+@@ -13,28 +13,28 @@ def validate_field(base,field_def):
+     """Validate field definition"""
+     name,typ = field_def[:2]
+     if name in ['__id__','__version__']:
+-        raise ValueError,'Field name "%s" is reserved' %name
++        raise ValueError('Field name "%s" is reserved' %name)
+     elif name.startswith('_'):
+-        raise ValueError,"Error for %s : names can't begin with _" \
+-            % name
+-    if typ not in base.types.values():
++        raise ValueError("Error for %s : names can't begin with _" \
++            % name)
++    if typ not in list(base.types.values()):
+         if isinstance(typ,base.__class__): # external link
+             base._register_base(typ)
+         else:
+-            raise TypeError,"type %s not allowed" %typ    
++            raise TypeError("type %s not allowed" %typ)    
+     if len(field_def)>2:
+         # if a default value is provided, check if it is valid
+         default = field_def[2]
+         if isinstance(typ,base.__class__):
+             if not hasattr(default.__class__,"db") or \
+                 not default.__class__.db is typ:
+-                raise ValueError,'Incorrect default value for field "%s"' \
++                raise ValueError('Incorrect default value for field "%s"' \
+                     " : expected %s, got %s (class %s)" %(name,typ,
+-                        default,default.__class__)
++                        default,default.__class__))
+         elif not isinstance(default,typ):
+-            raise ValueError,'Incorrect default value for field "%s"' \
++            raise ValueError('Incorrect default value for field "%s"' \
+                 " : expected %s, got %s (class %s)" %(name,typ,
+-                    default,default.__class__)
++                    default,default.__class__))
+         base.defaults[name] = default
+     else:
+         base.defaults[name] = None
+@@ -45,13 +45,13 @@ def save_info(base):
+     fields = []
+     for k in base.field_names:
+         if isinstance(base.fields[k],base.__class__):
+-            fields.append((k,'<base>'+urllib.quote(base.fields[k].name)))
++            fields.append((k,'<base>'+urllib.parse.quote(base.fields[k].name)))
+         else:
+             fields.append((k,base.fields[k].__name__))
+     _info.write(' '.join(['%s:%s' %(k,v) for (k,v) in fields]))
+     _info.close()
+     out = open(os.path.join(base.name,"__defaults__"),"wb")
+-    for field_name,default_value in base.defaults.iteritems():
++    for field_name,default_value in base.defaults.items():
+         if field_name in ["__id__","__version__"]:
+             continue
+         value = base._file[field_name].to_block(default_value)
+@@ -59,7 +59,7 @@ def save_info(base):
+     out.close()
+ 
+ def read_defaults(base):
+-    import buzhug_files
++    from . import buzhug_files
+     defaults = dict([(f,None) for f in base.field_names[2:]])
+     if os.path.exists(os.path.join(base.name,"__defaults__")):
+         defs = open(os.path.join(base.name,"__defaults__"),"rb").read()
+--- buzhug/buzhug_test.py.orig	2022-03-15 18:59:32 UTC
++++ buzhug/buzhug_test.py
+@@ -3,8 +3,8 @@ import random
+ import re
+ 
+ from datetime import date, datetime, time as dtime
+-from buzhug import Base, TS_Base, Record
+-import buzhug,buzhug_files
++from .buzhug import Base, TS_Base, Record
++from . import buzhug,buzhug_files
+ 
+ 
+ names = ['pierre','claire','simon','camille','jean',
+@@ -18,7 +18,7 @@ def run_test(thread_safe=False):
+     else:
+         db = TS_Base('dummy')
+ 
+-    db.create(('name',str), ('fr_name',unicode),
++    db.create(('name',str), ('fr_name',str),
+         ('age',int),
+         ('size',int,300),
+         ('birth',date,date(1994,1,14)),
+@@ -38,10 +38,10 @@ def run_test(thread_safe=False):
+             try:
+                 assert cmp(afloat,0.0) == cmp(f.to_block(afloat),f.to_block(0.0))
+             except:
+-                print afloat
+-                print "afloat > 0.0 ?",afloat>0.0
+-                print "blocks ?",f.to_block(afloat)>f.to_block(0.0)
+-                print all(f.to_block(afloat)),all(f.to_block(0.0))
++                print(afloat)
++                print("afloat > 0.0 ?",afloat>0.0)
++                print("blocks ?",f.to_block(afloat)>f.to_block(0.0))
++                print(all(f.to_block(afloat)),all(f.to_block(0.0)))
+                 raise
+ 
+     assert db.defaults["age"] == None
+@@ -52,7 +52,7 @@ def run_test(thread_safe=False):
+ 
+     for i in range(100):
+         db.insert(name=random.choice(names),
+-             fr_name = unicode(random.choice(fr_names),'latin-1'),
++             fr_name = str(random.choice(fr_names),'latin-1'),
+              age=random.randint(7,47),size=random.randint(110,175),
+              birth=date(random.randint(1858,1999),random.randint(1,12),10),
+              afloat = random.uniform(-10**random.randint(-307,307),
+@@ -60,8 +60,8 @@ def run_test(thread_safe=False):
+              birth_hour = dtime(random.randint(0, 23), random.randint(0, 59), random.randint(0, 59)))
+ 
+     assert len(db)==100
+-    assert isinstance(db[50].fr_name,unicode)
+-    print db[50].fr_name.encode('latin-1')
++    assert isinstance(db[50].fr_name,str)
++    print(db[50].fr_name.encode('latin-1'))
+ 
+     db.open()
+     # test if default values have not been modified after open()
+@@ -74,7 +74,7 @@ def run_test(thread_safe=False):
+     for i in range(5):
+         # insert a list
+         db.insert(random.choice(names),
+-             unicode(random.choice(fr_names),'latin-1'),
++             str(random.choice(fr_names),'latin-1'),
+              random.randint(7,47),random.randint(110,175),
+              date(random.randint(1958,1999),random.randint(1,12),10),
+              random.uniform(-10**random.randint(-307,307),
+@@ -87,11 +87,11 @@ def run_test(thread_safe=False):
+             try:
+                 assert getattr(db[-1],field) == db.defaults[field]
+             except:
+-                print "attribute %s not set to default value %s" %(field,db[-1])
++                print("attribute %s not set to default value %s" %(field,db[-1]))
+                 raise
+ 
+     # insert as string
+-    db.set_string_format(unicode,'latin-1')
++    db.set_string_format(str,'latin-1')
+     db.set_string_format(date,'%d-%m-%y')
+     db.set_string_format(dtime,'%H-%M-%S')
+     db.insert_as_strings(name="testname",fr_name=random.choice(fr_names),
+@@ -112,13 +112,13 @@ def run_test(thread_safe=False):
+     assert db[-1].afloat == 1.0
+ 
+     # search between 2 dates
+-    print '\nBirth between 1960 and 1970'
++    print('\nBirth between 1960 and 1970')
+     for r in db.select(None,birth=[date(1960,1,1),date(1970,12,13)]):
+-        print r.name,r.birth
++        print(r.name,r.birth)
+ 
+-    print "sorted"
++    print("sorted")
+     for r in db.select(None,birth=[date(1960,1,1),date(1970,12,13)]).sort_by('+name-birth'):
+-        print r.name,r.birth
++        print(r.name,r.birth)
+ 
+     f = buzhug_files.FloatFile().to_block
+     def all(v):
+@@ -136,28 +136,28 @@ def run_test(thread_safe=False):
+     try:
+         assert len(s1) == len(s2) == len(s3)
+     except:
+-        print "%s records by list comprehension, " %len(s1)
+-        print "%s by select by formula," %len(s2)
+-        print "%s by select by interval" %len(s3)
++        print("%s records by list comprehension, " %len(s1))
++        print("%s by select by formula," %len(s2))
++        print("%s by select by interval" %len(s3))
+ 
+     for r in s1:
+         try:
+             assert r in s2
+         except:
+-            print all(r.afloat)
++            print(all(r.afloat))
+ 
+     for r in s2:
+         try:
+             assert r in s1
+         except:
+-            print "in select but not in list comprehension",r
++            print("in select but not in list comprehension",r)
+             raise
+     r = db[0]
+     assert r.__class__.db is db
+ 
+     fr=random.choice(fr_names)
+-    s1 = [ r for r in db if r.age == 30 and r.fr_name == unicode(fr,'latin-1')]
+-    s2 = db.select(['name','fr_name'],age=30,fr_name = unicode(fr,'latin-1'))
++    s1 = [ r for r in db if r.age == 30 and r.fr_name == str(fr,'latin-1')]
++    s2 = db.select(['name','fr_name'],age=30,fr_name = str(fr,'latin-1'))
+ 
+     assert len(s1)==len(s2)
+ 
+@@ -182,7 +182,7 @@ def run_test(thread_safe=False):
+     assert recs[0] == db[20]
+ 
+     # check that has_key returns False for invalid hey
+-    assert not db.has_key(1000)
++    assert 1000 not in db
+ 
+     # drop field
+     db.drop_field('name')
+@@ -207,8 +207,8 @@ def run_test(thread_safe=False):
+     db.delete([db[10]])
+     # check if record has been deleted
+     try:
+-        print db[10]
+-        raise Exception,"Row 10 should have been deleted"
++        print(db[10])
++        raise Exception("Row 10 should have been deleted")
+     except IndexError:
+         pass
+ 
+@@ -273,19 +273,19 @@ def run_test(thread_safe=False):
+ 
+     # check that record 10 is still deleted
+     try:
+-        print db[10]
+-        raise Exception,"Row 10 should have been deleted"
++        print(db[10])
++        raise Exception("Row 10 should have been deleted")
+     except IndexError:
+         pass
+ 
+-    print db.keys()
+-    print "has key 10 ?",db.has_key(10)
++    print(list(db.keys()))
++    print("has key 10 ?",10 in db)
+     assert 10 not in db
+     #raw_input()
+ 
+     # check that deleted_lines was cleared by commit()
+     assert not db._pos.deleted_lines
+-    print db._del_rows.deleted_rows
++    print(db._del_rows.deleted_rows)
+ 
+     length = len(db) # before cleanup
+ 
+@@ -297,8 +297,8 @@ def run_test(thread_safe=False):
+ 
+     # check that record 10 is still deleted
+     try:
+-        print db[10]
+-        raise Exception,"Row 10 should have been deleted"
++        print(db[10])
++        raise Exception("Row 10 should have been deleted")
+     except IndexError:
+         pass
+ 
+@@ -365,7 +365,7 @@ def run_test(thread_safe=False):
+ 
+     addresses = ['Giono','Proust','Mauriac','Gide','Bernanos','Racine',
+         'La Fontaine']
+-    ks = db.keys()
++    ks = list(db.keys())
+     for i in range(50):
+         x = random.choice(ks)
+         address = random.choice(addresses)
+@@ -397,9 +397,9 @@ def run_test(thread_safe=False):
+             return item
+ 
+     h1.set_record_class(DictRecord)
+-    print '\nrecord_class = DictRecord, h1[0]'
+-    print h1[0]
+-    print "\nResident name: %(resident.name)s\nAddress: %(address)s" % h1[0]
++    print('\nrecord_class = DictRecord, h1[0]')
++    print(h1[0])
++    print("\nResident name: %(resident.name)s\nAddress: %(address)s" % h1[0])
+ 
+ if __name__ == "__main__":
+     run_test(thread_safe = True)
+--- buzhug/buzhug.py.orig	2022-03-15 18:59:32 UTC
++++ buzhug/buzhug.py
+@@ -88,14 +88,14 @@ Version 1.8
+ 
+ import os
+ import threading
+-import cStringIO
++import io
+ import itertools
+ import token
+ import tokenize
+ import re
+ import tempfile
+ import shutil
+-import urllib
++import urllib.request, urllib.parse, urllib.error
+ 
+ import time
+ from datetime import date,datetime, time as dtime
+@@ -106,9 +106,9 @@ try:
+ except NameError:
+     from sets import Set as set
+ 
+-from buzhug_files import *
+-import buzhug_algos
+-import buzhug_info
++from .buzhug_files import *
++from . import buzhug_algos
++from . import buzhug_info
+ 
+ version = "1.8"
+ 
+@@ -133,12 +133,12 @@ class Record(list):
+         try:
+             ix = self.fields.index(k)
+         except ValueError:
+-            raise AttributeError,'No attribute named %s' %k
++            raise AttributeError('No attribute named %s' %k)
+         try:
+             return self.db.f_decode[self.types[ix]](list.__getitem__(self,ix))
+         except:
+-            print 'error for key %s type %s value %s' %(k,self.types[ix],
+-                list.__getitem__(self,ix))
++            print('error for key %s type %s value %s' %(k,self.types[ix],
++                list.__getitem__(self,ix)))
+             raise
+ 
+     def __setattr__(self,k,v):
+@@ -151,7 +151,7 @@ class Record(list):
+     def __repr__(self):
+         elts = []
+         for k in self.fields:
+-            if not isinstance(getattr(self,k),unicode):
++            if not isinstance(getattr(self,k),str):
+                 elts.append('%s:%s' %(k,getattr(self,k)))
+             else:
+                 elts.append(('%s:%s' %(k,getattr(self,k))).encode('utf-8'))
+@@ -190,17 +190,17 @@ class ResultSet(list):
+         """pretty print"""
+         col_width = width/len(self.names)
+         fmt = '%%-%ss' %col_width
+-        print '|'.join([fmt %name for name in self.names])
+-        print '|'.join([fmt %('-'*col_width) for name in self.names])
++        print('|'.join([fmt %name for name in self.names]))
++        print('|'.join([fmt %('-'*col_width) for name in self.names]))
+         for rec in self:
+             line = []
+             for name in self.names:
+                 v = fmt %getattr(rec,name)
+-                if not isinstance(getattr(rec,name),unicode):
++                if not isinstance(getattr(rec,name),str):
+                     line.append(v)
+                 else:
+                     enc = line.append(v.encode('latin-1'))
+-            print '|'.join(line)
++            print('|'.join(line))
+ 
+     def sort_by(self,order):
+         """order is a string with field names separated by + or -
+@@ -208,7 +208,7 @@ class ResultSet(list):
+         name, ascending surname and descending age"""
+         
+         # parse the order string
+-        e = cStringIO.StringIO(order).readline
++        e = io.StringIO(order).readline
+         cond = []
+         order = '+'
+         for t in tokenize.generate_tokens(e):
+@@ -216,11 +216,11 @@ class ResultSet(list):
+             ts = t[1]
+             if tt == 'OP':
+                 if not ts in ['+','-']:
+-                    raise SyntaxError,"Bad operator in sort condition: %s" %ts
++                    raise SyntaxError("Bad operator in sort condition: %s" %ts)
+                 order = ts
+             elif tt == 'NAME':
+                 if not ts in self.names:
+-                    raise ValueError,"Unknown sort field :%s" %ts
++                    raise ValueError("Unknown sort field :%s" %ts)
+                 cond.append((self.names.index(ts),order))
+         # build the function order_func used to sort records
+         o_f = "def order_func(rec):\n"
+@@ -232,7 +232,7 @@ class ResultSet(list):
+             else:
+                 elts.append("buzhug_algos.rev(rec[%s])" %ix)
+         o_f += ",".join(elts) +"]"        
+-        exec o_f in globals()  # this creates the global function order_func
++        exec(o_f, globals())  # this creates the global function order_func
+ 
+         # apply the key
+         try:
+@@ -320,7 +320,7 @@ class Base:
+     
+ 
+     types_map = [ (int,IntegerFile),(float,FloatFile),
+-            (str,StringFile),(unicode,UnicodeFile),
++            (str,StringFile),(str,UnicodeFile),
+             (date,DateFile),(datetime,DateTimeFile), (dtime, TimeFile),
+             (bool,BooleanFile)]
+ 
+@@ -387,14 +387,14 @@ class Base:
+                 elif mode == 'open':
+                     return self.open()
+                 else:
+-                    raise IOError,"Base %s already exists" %self.name
++                    raise IOError("Base %s already exists" %self.name)
+             else:
+                 if mode != 'open':
+-                    raise IOError,"Directory %s already exists" %self.name
++                    raise IOError("Directory %s already exists" %self.name)
+                 else:
+-                    raise IOError,"Mode 'open' : " \
++                    raise IOError("Mode 'open' : " \
+                         "Directory %s already exists but no info file found" \
+-                        %self.name
++                        %self.name)
+ 
+         self.field_names = [ f[0] for f in fields ]
+         self.fields = dict([(f[0],f[1]) for f in fields])
+@@ -431,11 +431,11 @@ class Base:
+         Raise IOError if no base is found for the path entered in __init__
+         """
+         if not os.path.exists(self.name) or not os.path.isdir(self.name):
+-            raise IOError,"Base %s doesn't exist" %self.name
++            raise IOError("Base %s doesn't exist" %self.name)
+         try:
+             _info = open(self.info_name,'rb')
+         except IOError:
+-            raise IOError,"No buzhug base in directory %s" %self.name
++            raise IOError("No buzhug base in directory %s" %self.name)
+         return self._open(_info)
+         
+     def _open(self,info):
+@@ -445,7 +445,7 @@ class Base:
+         for (k,v) in fields:
+             if v.startswith('<base>'):
+                 # reference to an external base
+-                base_path = urllib.unquote(v[6:])
++                base_path = urllib.parse.unquote(v[6:])
+                 ext_db = Base(base_path).open()
+                 self._register_base(ext_db)
+                 self.fields[k] = ext_db
+@@ -474,7 +474,7 @@ class Base:
+ 
+     def close(self):
+         """Close all files"""
+-        for f in self._file.values():
++        for f in list(self._file.values()):
+             f.close()
+         self._pos.close()
+         self._id_pos.close()
+@@ -508,19 +508,19 @@ class Base:
+         Return the identifier of the newly inserted record
+         """
+         if args and kw:
+-            raise SyntaxError,"Can't use both positional and keyword arguments"
++            raise SyntaxError("Can't use both positional and keyword arguments")
+         if args:
+             # insert a list of values ordered like in the base definition
+             if not len(args) == len(self.field_names)-2:
+-                raise TypeError,"Expected %s arguments, found %s" \
+-                   %(len(self.field_names)-2,len(args))
+-            return self.insert(**dict(zip(self.field_names[2:],args)))
+-        if '__id__' in kw.keys():
+-            raise NameError,"Specifying the __id__ is not allowed"
+-        if '__version__' in kw.keys():
+-            raise NameError,"Specifying the __version__ is not allowed"
++                raise TypeError("Expected %s arguments, found %s" \
++                   %(len(self.field_names)-2,len(args)))
++            return self.insert(**dict(list(zip(self.field_names[2:],args))))
++        if '__id__' in list(kw.keys()):
++            raise NameError("Specifying the __id__ is not allowed")
++        if '__version__' in list(kw.keys()):
++            raise NameError("Specifying the __version__ is not allowed")
+         rec = dict([(f,self.defaults[f]) for f in self.field_names[2:]])
+-        for (k,v) in kw.iteritems():
++        for (k,v) in kw.items():
+             self._validate(k,v)
+             rec[k] = v
+         # initial version = 0
+@@ -544,19 +544,19 @@ class Base:
+         - unicode : the format is the encoding
+         - date, datetime : format = the format string as defined in strftime
+         """
+-        if class_ is unicode:
++        if class_ is str:
+             # test encoding ; will raise LookupError if invalid
+-            unicode('a').encode(format)
++            str('a').encode(format)
+             # create the conversion function bytestring -> unicode string
+             def _from_string(us):
+-                return unicode(us,format)
+-            self.from_string[unicode] = _from_string
++                return str(us,format)
++            self.from_string[str] = _from_string
+         elif class_ is date:
+             # test date format
+             d = date(1994,10,7)
+             t = time.strptime(d.strftime(format),format)
+             if not t[:3] == d.timetuple()[:3]:
+-                raise TimeFormatError,'%s is not a valid date format' %format
++                raise TimeFormatError('%s is not a valid date format' %format)
+             else:
+                 # create the conversion function string -> date
+                 def _from_string(ds):
+@@ -567,8 +567,8 @@ class Base:
+             dt = datetime(1994,10,7,8,30,15)
+             t = time.strptime(dt.strftime(format),format)
+             if not t[:6] == dt.timetuple()[:6]:
+-                raise TimeFormatError,'%s is not a valid datetime format' \
+-                    %format
++                raise TimeFormatError('%s is not a valid datetime format' \
++                    %format)
+             else:
+                 # create the conversion function string -> date
+                 def _from_string(dts):
+@@ -579,15 +579,15 @@ class Base:
+             dt = dtime(8,30,15)
+             t = time.strptime(dt.strftime(format),format)
+             if not t[3:6] == (dt.hour, dt.minute, dt.second):
+-                raise TimeFormatError,'%s is not a valid datetime.time format' \
+-                    %format
++                raise TimeFormatError('%s is not a valid datetime.time format' \
++                    %format)
+             else:
+                 # create the conversion function string -> dtime
+                 def _from_string(dts):
+                     return dtime(*time.strptime(dts,format)[3:6])
+                 self.from_string[dtime] = _from_string
+         else:
+-            raise ValueError,"Can't specify a format for class %s" %class_
++            raise ValueError("Can't specify a format for class %s" %class_)
+ 
+     def insert_as_strings(self,*args,**kw):
+         """Insert a record with values provided as strings. They must be
+@@ -595,32 +595,32 @@ class Base:
+         functions defined in the dictionary from_string
+         """
+         if args and kw:
+-            raise SyntaxError,"Can't use both positional and keyword arguments"
++            raise SyntaxError("Can't use both positional and keyword arguments")
+         if args:
+             # insert a list of strings ordered like in the base definition
+             if not len(args) == len(self.field_names)-2:
+-                raise TypeError,"Expected %s arguments, found %s" \
+-                   %(len(self.field_names)-2,len(args))
+-            return self.insert_as_strings(**dict(zip(self.field_names[2:],
+-                args)))
++                raise TypeError("Expected %s arguments, found %s" \
++                   %(len(self.field_names)-2,len(args)))
++            return self.insert_as_strings(**dict(list(zip(self.field_names[2:],
++                args))))
+         return self.insert(**self.apply_types(**kw))
+ 
+     def apply_types(self,**kw):
+         """Transform the strings in kw values to their type
+         Return a dictionary with the same keys and converted values"""
+         or_kw = {}
+-        for k in kw.keys():
++        for k in list(kw.keys()):
+             try:
+                 t = self.fields[k]
+             except KeyError:
+-                raise NameError,"No field named %s" %k
+-            if not self.from_string.has_key(t):
+-                raise Exception,'No string format defined for %s' %t
++                raise NameError("No field named %s" %k)
++            if t not in self.from_string:
++                raise Exception('No string format defined for %s' %t)
+             else:
+                 try:
+                     or_kw[k] = self.from_string[t](kw[k])
+                 except:
+-                    raise TypeError,"Can't convert %s into %s" %(kw[k],t)
++                    raise TypeError("Can't convert %s into %s" %(kw[k],t))
+         return or_kw
+ 
+     def commit(self):
+@@ -710,7 +710,7 @@ class Base:
+                                # only field 'name' set
+         """
+         res,names = self._select(names,request,**args)
+-        return ResultSet(names,res.values())
++        return ResultSet(names,list(res.values()))
+     
+     def select_for_update(self,names=None,request=None,**args):
+         """Same syntax as select, only checks that the field __version__
+@@ -726,7 +726,7 @@ class Base:
+         else:
+             names += [ f for f in ['__id__','__version__'] if not f in names ]
+         res,names = self._select(names,request,**args)
+-        return ResultSet(names,res.values())
++        return ResultSet(names,list(res.values()))
+ 
+     def __call__(self,**kw):
+         return self.select_for_update(**kw)
+@@ -745,7 +745,7 @@ class Base:
+             _names = self.field_names
+ 
+         _namespace = {}
+-        if args.has_key('_namespace'):
++        if '_namespace' in args:
+             _namespace = args['_namespace']
+             del args['_namespace']
+ 
+@@ -755,7 +755,7 @@ class Base:
+         # the return value of match and search applied to the string
+         # stripped from its first and last character
+         regexps = []
+-        for k,v in args.iteritems():
++        for k,v in args.items():
+             if type(v) is REGEXPTYPE:
+                 _namespace[k] = Pattern(v)
+                 regexps.append(k)
+@@ -765,14 +765,14 @@ class Base:
+             del args[k]
+ 
+         if _request is None:
+-            f_args = [ k for k in args.keys() 
++            f_args = [ k for k in list(args.keys()) 
+                 if hasattr(self._file[k],'block_len') ]
+             # if there is at least one fixed length field to search, use the
+             # fast_select algorithm
+             if f_args:
+                 res,names = buzhug_algos.fast_select(self,_names,**args)
+                 _Record = makeRecordClass(self,self.record_class,names)
+-                for k in res.keys():
++                for k in list(res.keys()):
+                     res[k] = _Record(res[k])
+                 return res,names
+             conds = []
+@@ -780,17 +780,17 @@ class Base:
+                 conds.append('%s == _c[%s]' %(k,i))
+             _request = ' and '.join(conds)
+             _c = []
+-            for (k,v) in args.iteritems():
++            for (k,v) in args.items():
+                 t = self.fields[k]  # field type
+                 if isinstance(v,(tuple,list)):
+                     _c.append([self.f_encode[t](x) for x in v])
+                 else:
+                     _c.append(self.f_encode[t](v))
+-            for n in args.keys():
++            for n in list(args.keys()):
+                 if not n in _names:
+                     _names.append(n)
+         else:
+-            for (k,v) in args.iteritems():
++            for (k,v) in args.items():
+                 if isinstance(v,Record):
+                     # comparison with a record of another base
+                     ft = self.file_types[self.types[v.db.name]]
+@@ -832,7 +832,7 @@ class Base:
+         args.update(_namespace)
+ 
+         # execute the loop
+-        exec loop in locals(),args
++        exec(loop, locals(),args)
+ 
+         # exclude deleted rows from the results
+         if self._del_rows.deleted_rows:
+@@ -854,11 +854,11 @@ class Base:
+                 self.update(rec,**kw)
+             return
+         only_fixed_length = True
+-        if '__id__' in kw.keys():
+-            raise NameError,"Can't update __id__"
+-        if '__version__' in kw.keys():
+-            raise NameError,"Can't update __version__"
+-        for (k,v) in kw.iteritems():
++        if '__id__' in list(kw.keys()):
++            raise NameError("Can't update __id__")
++        if '__version__' in list(kw.keys()):
++            raise NameError("Can't update __version__")
++        for (k,v) in kw.items():
+             self._validate(k,v)
+             setattr(record,k,v)
+             if not hasattr(self.file_types[self.fields[k]],
+@@ -867,7 +867,7 @@ class Base:
+ 
+         if not hasattr(record,'__id__') or not hasattr(record,'__version__'):
+             # refuse to update a record that was not selected for update
+-            raise UpdateError,'The record was not selected for update'
++            raise UpdateError('The record was not selected for update')
+ 
+         _id = record.__id__
+         # line number of the record in position file
+@@ -878,7 +878,7 @@ class Base:
+         # file is not the same, refuse to update
+         current_version = self[_id].__version__
+         if not record.__version__ == current_version:
+-            raise ConflictError,'The record has changed since selection'
++            raise ConflictError('The record has changed since selection')
+ 
+         # increment version
+         record.__version__ += 1
+@@ -888,7 +888,7 @@ class Base:
+         if only_fixed_length:
+             # only fixed length fields modified : just change the values
+             kw['__version__'] = record.__version__
+-            for k,v in kw.iteritems():
++            for k,v in kw.items():
+                 ix = self.field_names.index(k)
+                 self._file[k].write_value_at_pos(field_pos[ix],v)
+         else:
+@@ -926,7 +926,7 @@ class Base:
+         """Add a new field after the specified field, or in the beginning if
+         no field is specified"""
+         if field_name in self.field_names:
+-            raise NameError,"Field %s already exists" %field_name
++            raise NameError("Field %s already exists" %field_name)
+         field_def = [field_name,field_type]
+         if default is not None:
+             field_def.append(default)
+@@ -937,7 +937,7 @@ class Base:
+         if after is None:
+             indx = 2 # insert after __version__
+         elif not after in self.field_names:
+-            raise NameError,"No field named %s" %after
++            raise NameError("No field named %s" %after)
+         else:
+             indx = 1+self.field_names.index(after)
+         self.field_names.insert(indx,field_name)
+@@ -955,11 +955,11 @@ class Base:
+     def drop_field(self,field_name):
+         """Remove the specified field name"""
+         if not field_name in self.field_names:
+-            raise NameError,"No field named %s" %field_name
++            raise NameError("No field named %s" %field_name)
+         if field_name == '__id__':
+-            raise ValueError,"Field __id__ can't be removed"
++            raise ValueError("Field __id__ can't be removed")
+         if field_name == '__version__':
+-            raise ValueError,"Field __version__ can't be removed"
++            raise ValueError("Field __version__ can't be removed")
+         indx = self.field_names.index(field_name)
+         self.field_names.remove(field_name)
+         del self.defaults[field_name]
+@@ -972,8 +972,8 @@ class Base:
+ 
+     def _validate(self,k,v):
+         """Validate the couple key,value"""
+-        if not k in self.fields.keys():
+-            raise NameError,"No field named %s" %k
++        if not k in list(self.fields.keys()):
++            raise NameError("No field named %s" %k)
+         if v is None:
+             return
+         # if self.fields[k] is an instance of Base, the value must be an
+@@ -981,21 +981,21 @@ class Base:
+         # db == self.fields[k]
+         if isinstance(self.fields[k],Base):
+             if not issubclass(v.__class__,Record):
+-                raise TypeError,"Bad type for %s : expected %s, got %s %s" \
+-                      %(k,self.fields[k],v,v.__class__)
++                raise TypeError("Bad type for %s : expected %s, got %s %s" \
++                      %(k,self.fields[k],v,v.__class__))
+             if v.__class__.db.name != self.fields[k].name:
+-                raise TypeError,"Bad base for %s : expected %s, got %s" \
+-                      %(k,self.fields[k].name,v.__class__.db.name)
++                raise TypeError("Bad base for %s : expected %s, got %s" \
++                      %(k,self.fields[k].name,v.__class__.db.name))
+         else:
+             if not isinstance(v,self.fields[k]):
+-                raise TypeError,"Bad type for %s : expected %s, got %s %s" \
+-                      %(k,self.fields[k],v,v.__class__)
++                raise TypeError("Bad type for %s : expected %s, got %s %s" \
++                      %(k,self.fields[k],v,v.__class__))
+ 
+     def _iterate(self,*names):
+         """_iterate on the specified names only"""
+         Record = makeRecordClass(self,self.record_class,names)
+         files = [ self._file[f] for f in names ]
+-        for record in itertools.izip(*files):
++        for record in zip(*files):
+             yield Record(record)
+ 
+     def __getitem__(self,num):
+@@ -1005,7 +1005,7 @@ class Base:
+         # first find the line in position file
+         block_pos = self._id_pos.get_block_at_pos(5*num)
+         if block_pos[0] == '#':
+-            raise IndexError,'No item at position %s' %num
++            raise IndexError('No item at position %s' %num)
+         else:
+             _id_pos = self._id_pos.from_block(block_pos)
+         # block in position file
+@@ -1031,7 +1031,7 @@ class Base:
+         return True
+ 
+     def __contains__(self,num):
+-        return self.has_key(num)
++        return num in self
+ 
+     def keys(self):
+         return [ r.__id__ for r in self.select(['__id__']) ]
+@@ -1042,7 +1042,7 @@ class Base:
+         remove the test record[0][0] != "#"
+         """
+         files = [ self._file[f] for f in self.field_names ]
+-        for record in itertools.izip(*files):
++        for record in zip(*files):
+             if record[0][0] != "#":
+                 r = self._full_rec(record)
+                 yield r
+--- buzhug/conversion_float.py.orig	2022-03-15 18:59:32 UTC
++++ buzhug/conversion_float.py
+@@ -51,8 +51,8 @@ class FloatFile:
+         if value is None:
+             return '!'+chr(0)*9
+         elif not isinstance(value,float):
+-            raise ValueError,'Bad type : expected float, got %s %s' \
+-                %(value,value.__class__)
++            raise ValueError('Bad type : expected float, got %s %s' \
++                %(value,value.__class__))
+         else:
+             # get mantissa and exponent
+             # f = mant*2**exp, 0.5 <= abs(mant) < 1
+@@ -82,7 +82,7 @@ def conv(old):
+     # update base to new version
+     of = OldFloatFile()
+     nf = FloatFile()
+-    for (f,t) in old.fields.iteritems():
++    for (f,t) in old.fields.items():
+         if t is float:
+             old_path = db._file[f].path
+             new_path = os.path.join(db._file[f].base,"new_"+db._file[f].name)
+@@ -94,10 +94,10 @@ def conv(old):
+                 else:
+                     new_block = nf.to_block(v)
+                     if nf.from_block(new_block) != v:
+-                        raise ValueError,"conversion error : %s != %s" \
+-                            %(v,nf.from_block(new_block))
++                        raise ValueError("conversion error : %s != %s" \
++                            %(v,nf.from_block(new_block)))
+                 new_file.write(new_block)
+-            print i,"lines"
++            print(i,"lines")
+             new_file.close()
+ 
+             # double-check if values are the same between old and new file
+@@ -110,8 +110,8 @@ def conv(old):
+                     break
+                 new = new_file.read(bl)
+                 if not of.from_block(old) == nf.from_block(new):
+-                    raise ValueError, "conversion error : %s != %s" \
+-                        %(of.from_block(old),nf.from_block(new))
++                    raise ValueError("conversion error : %s != %s" \
++                        %(of.from_block(old),nf.from_block(new)))
+ 
+             new_file.close()
+             # replace old file
+@@ -122,10 +122,10 @@ def conv(old):
+             os.rename(db._file[f].path,os.path.join(db._file[f].base,backup_name))
+             os.rename(new_path,old_path)            
+ 
+-import buzhug                
+-import tkFileDialog
++from . import buzhug                
++import tkinter.filedialog
+ 
+-path = tkFileDialog.askdirectory()
++path = tkinter.filedialog.askdirectory()
+ if path :
+     db = buzhug.Base(path).open()
+     conv(db)

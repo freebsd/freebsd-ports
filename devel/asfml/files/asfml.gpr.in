@@ -1,0 +1,7 @@
+library project ASFML is
+  for Externally_Built use "true";
+  for Library_Dir      use ("../../lib/asfml");
+  for Library_Kind     use "static";
+  for Library_Name     use "asfml";
+  for Source_Dirs      use ("../../include/asfml");
+end ASFML

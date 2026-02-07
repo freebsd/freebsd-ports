@@ -1,0 +1,5 @@
+This is a script for cleaning up and archiving mails in Maildir folders based on
+the date the mail was received.
+
+The script supports thread detection and can distinguish between read and
+partially read threads.

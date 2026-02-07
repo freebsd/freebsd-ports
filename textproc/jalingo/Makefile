@@ -1,0 +1,35 @@
+PORTNAME=	jalingo
+PORTVERSION=	0.6.0
+PORTREVISION=	4
+CATEGORIES=	textproc java
+MASTER_SITES=	SF/${PORTNAME}/JaLingo/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	Free OS independent dictionary application
+WWW=		https://jalingo.sourceforge.net/
+
+LICENSE=	GPLv2
+
+DEPRECATED=	Last release in 2006. Does not compile in Java 9+.
+EXPIRATION_DATE=	2026-04-13
+
+USES=		7z java:ant,run
+JAVA_VERSION=	8
+
+ALL_TARGET=	dist
+
+SUB_FILES=	${PORTNAME}
+SUB_LIST=	JALINGOJAR=${JALINGOJAR}
+PLIST_SUB=	JALINGOJAR=${JALINGOJAR}
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+JALINGOJAR=	${PORTNAME}.jar
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dist/${JALINGOJAR} ${STAGEDIR}${DATADIR}/${JALINGOJAR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

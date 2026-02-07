@@ -1,0 +1,11 @@
+--- src/lib/dev/mos6/mos6load.c.orig	2010-02-09 16:16:28.000000000 +0000
++++ src/lib/dev/mos6/mos6load.c	2010-02-09 16:16:53.000000000 +0000
+@@ -509,7 +509,7 @@
+                 }
+ 		vdshere = vds * here->MOS6mode;
+                 von=(here->MOS6tVbi*model->MOS6type)+model->MOS6gamma*sarg
+-		    - model->MOS6gamma1 * vbsvbd;
++		    - model->MOS6gamma1 * vbsvbd
+ 		    - model->MOS6sigma  * vdshere;
+                 vgon = (here->MOS6mode==1?vgs:vgd) - von;
+ 

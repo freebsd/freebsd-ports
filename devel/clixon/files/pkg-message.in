@@ -1,0 +1,10 @@
+[
+{ type: upgrade, maximum_version: 4, message: <<EOT
+Clixon is undergoing rapid development on it's way to better
+RFC compliance,
+
+Please see https://github.com/clicon/clixon/blob/master/CHANGELOG.md
+for details.
+EOT
+}
+]

@@ -1,0 +1,32 @@
+xap_Dialog.cpp:270:17: error: cast from pointer to smaller type 'char' loses information
+        *pWindowName = (char) NULL;
+                       ^~~~~~~~~~~
+ap_UnixApp.cpp:866:29: error: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
+        if(0 == strcmp (suffix, "."G_MODULE_SUFFIX))
+                                   ^
+
+https://github.com/AbiWord/abiword/commit/a83e6f50dbd5
+https://github.com/AbiWord/abiword/commit/5623a94c756c
+
+--- src/af/xap/xp/xap_Dialog.cpp.orig	2013-04-07 13:53:03 UTC
++++ src/af/xap/xp/xap_Dialog.cpp
+@@ -267,7 +267,7 @@ XAP_Dialog_Modeless::BuildWindowName(char * pWindowNam
+ // This function constructs and returns the window name of a modeless dialog by
+ // concatenating the active frame with the dialog name
+ 
+-	*pWindowName = (char) NULL;
++	*pWindowName = '\0';
+ 	UT_UTF8String wn = UT_UTF8String(pDialogName);
+ 
+ 	XAP_Frame* pFrame = getActiveFrame();
+--- src/wp/ap/gtk/ap_UnixApp.cpp.orig	2013-04-07 13:53:03 UTC
++++ src/wp/ap/gtk/ap_UnixApp.cpp
+@@ -863,7 +863,7 @@ static bool is_so (const char *file) {
+ 	if (len < (strlen(G_MODULE_SUFFIX) + 2)) // this is ".so" and at least one char for the filename
+ 		return false;
+ 	const char *suffix = file+(len-3);
+-	if(0 == strcmp (suffix, "."G_MODULE_SUFFIX))
++	if(0 == strcmp (suffix, "." G_MODULE_SUFFIX))
+ 		return true;
+ 	return false;
+ }

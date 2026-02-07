@@ -1,0 +1,17 @@
+CVS Monitor is an CVS repository browser.  It provides visibility of
+activity in CVS to developers, management, and the general public.
+
+Features:
+
+* Look at any repository anywhere - CVS Monitor can act on any repository
+that has at least a public read-only account, even if you don't own the
+repository
+
+* Aggressive Caching - all statistics, and most pages, are generated purely
+from the cached information
+
+* ChangeSet Visibility - present changes to the repository in ChangeSets,
+a single change involves new revisions on multiple files
+
+* Tracker Integration - CVS Monitor can be easily integrated with your Bug
+tracking or Request tracking systems

@@ -1,0 +1,2 @@
+File::Attributes lets you assign attributes to files (and read them, and
+list them, and delete them).

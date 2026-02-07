@@ -1,0 +1,2 @@
+CPAN::Meta::Check verifies if requirements described in a CPAN::Meta
+object are present.

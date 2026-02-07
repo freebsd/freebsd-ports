@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Data/MessagePack/Stream.pm
+%%SITE_ARCH%%/auto/Data/MessagePack/Stream/Stream.so
+%%PERL5_MAN3%%/Data::MessagePack::Stream.3.gz

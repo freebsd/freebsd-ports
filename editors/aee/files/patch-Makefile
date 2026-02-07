@@ -1,0 +1,13 @@
+--- Makefile.orig	2001-04-22 06:46:45.000000000 +0200
++++ Makefile	2009-03-24 15:04:53.000000000 +0100
+@@ -23,8 +23,8 @@
+ 
+ xae :	localxae buildxae
+ 
+-buildaee :	
+-	make -f make.aee
++buildaee :	localaee
++	$(MAKE) -f make.aee
+ 
+ localaee:
+ 	@./create.mk.aee

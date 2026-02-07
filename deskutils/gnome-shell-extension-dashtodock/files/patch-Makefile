@@ -1,0 +1,110 @@
+--- Makefile.orig	2025-02-14 17:37:45 UTC
++++ Makefile
+@@ -44,27 +44,10 @@ MSGSRC = $(wildcard po/*.po)
+               $(NULL)
+ 
+ MSGSRC = $(wildcard po/*.po)
+-ifeq ($(strip $(DESTDIR)),)
+-	INSTALLTYPE = local
+-	INSTALLBASE = $(HOME)/.local/share/gnome-shell/extensions
+-else
+-	INSTALLTYPE = system
+-	SHARE_PREFIX = $(DESTDIR)/usr/share
+-	INSTALLBASE = $(SHARE_PREFIX)/gnome-shell/extensions
+-endif
++SHARE_PREFIX = $(DESTDIR)%%LOCALBASE%%/share
++INSTALLBASE = $(SHARE_PREFIX)/gnome-shell/extensions
+ INSTALLNAME = dash-to-dock@micxgx.gmail.com
+ 
+-# The command line passed variable VERSION is used to set the version string
+-# in the metadata and in the generated zip-file. If no VERSION is passed, the
+-# current commit SHA1 is used as version number in the metadata while the
+-# generated zip file has no string attached.
+-ifdef VERSION
+-	VSTRING = _v$(VERSION)
+-else
+-	VERSION = $(shell git rev-parse HEAD)
+-	VSTRING =
+-endif
+-
+ all: extension
+ 
+ clean:
+@@ -72,7 +55,7 @@ clean:
+ 	rm -f stylesheet.css
+ 	rm -rf _build
+ 
+-extension: ./schemas/gschemas.compiled ./stylesheet.css $(MSGSRC:.po=.mo)
++extension: ./stylesheet.css $(MSGSRC:.po=.mo)
+ 
+ ./schemas/gschemas.compiled: ./schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml
+ 	glib-compile-schemas ./schemas/
+@@ -94,31 +77,13 @@ mergepo: potfile
+ 	msgfmt -c $< -o $@
+ 
+ ./stylesheet.css: ./_stylesheet.scss
+-ifeq ($(SASS), ruby)
+-	sass --sourcemap=none --no-cache --scss _stylesheet.scss stylesheet.css
+-else ifeq ($(SASS), dart)
+-	sass --no-source-map _stylesheet.scss stylesheet.css
+-else ifeq ($(SASS), sassc)
+ 	sassc --omit-map-comment _stylesheet.scss stylesheet.css
+-else
+-	sassc --omit-map-comment _stylesheet.scss stylesheet.css
+-endif
+ 
+ install: install-local
+ 
+ install-local: _build
+-	rm -rf $(INSTALLBASE)/$(INSTALLNAME)
+ 	mkdir -p $(INSTALLBASE)/$(INSTALLNAME)
+ 	cp -r ./_build/* $(INSTALLBASE)/$(INSTALLNAME)/
+-ifeq ($(INSTALLTYPE),system)
+-	# system-wide settings and locale files
+-	rm -r $(INSTALLBASE)/$(INSTALLNAME)/schemas $(INSTALLBASE)/$(INSTALLNAME)/locale
+-	mkdir -p $(SHARE_PREFIX)/glib-2.0/schemas $(SHARE_PREFIX)/locale
+-	cp -r ./schemas/*gschema.* $(SHARE_PREFIX)/glib-2.0/schemas
+-	cp -r ./_build/locale/* $(SHARE_PREFIX)/locale
+-endif
+-	-rm -fR _build
+-	echo done
+ 
+ zip-file: _build check
+ 	cd _build ; \
+@@ -127,16 +92,13 @@ _build: all
+ 	-rm -fR _build
+ 
+ _build: all
+-	-rm -fR ./_build
+ 	mkdir -p _build
+-	cp $(BASE_MODULES) $(EXTRA_MODULES) _build
+-	cp -a dependencies _build
+-	cp stylesheet.css _build
++	cp $(BASE_MODULES) _build/
++	cp $(EXTRA_MODULES) _build/
++	cp -a dependencies _build/
++	cp stylesheet.css _build/
+ 	mkdir -p _build/media
+ 	cd media ; cp $(EXTRA_MEDIA) ../_build/media/
+-	mkdir -p _build/schemas
+-	cp schemas/*.xml _build/schemas/
+-	cp schemas/gschemas.compiled _build/schemas/
+ 	mkdir -p _build/locale
+ 	for l in $(MSGSRC:.po=.mo) ; do \
+ 		lf=_build/locale/`basename $$l .mo`; \
+@@ -144,15 +106,3 @@ _build: all
+ 		mkdir -p $$lf/LC_MESSAGES; \
+ 		cp $$l $$lf/LC_MESSAGES/dashtodock.mo; \
+ 	done;
+-	sed -i 's/"version": -1/"version": "$(VERSION)"/'  _build/metadata.json;
+-
+-ifeq ($(strip $(ESLINT)),)
+-    ESLINT = eslint
+-endif
+-
+-ifneq ($(strip $(ESLINT_TAP)),)
+-    ESLINT_ARGS = -f tap
+-endif
+-
+-check:
+-	ESLINT_USE_FLAT_CONFIG=false $(ESLINT) $(ESLINT_ARGS) .

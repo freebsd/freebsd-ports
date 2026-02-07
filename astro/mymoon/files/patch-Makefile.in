@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2003-05-23 20:09:56 UTC
++++ Makefile.in
+@@ -61,7 +61,7 @@ POST_UNINSTALL = :
+ bin_PROGRAMS = mymoon
+ 
+ mymoon_SOURCES = mymoon.c
+-mymoon_LDFLAGS = -lnova -lcurses 
++mymoon_LDFLAGS = -lnova -lncurses 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ PROGRAMS =  $(bin_PROGRAMS)

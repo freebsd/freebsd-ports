@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+	<!-- Firefly Truetype Font -->
+        <match target="font">
+                <test name="family"><string>AR PL New Sung</string></test>
+                <edit name="antialias"><bool>true</bool></edit>
+                <edit name="hinting"><bool>true</bool></edit>
+                <edit name="autohint"><bool>false</bool></edit>
+        </match>
+
+        <match target="font">
+                <test name="family"><string>AR PL New Sung</string></test>
+                <test name="size" compare="less_eq"><int>16</int></test>
+                <edit name="antialias" mode="assign"><bool>false</bool></edit>
+                <edit name="hinting" mode="assign"><bool>true</bool></edit>
+        </match>
+
+	<match target="font">
+		<test name="family"><string>AR PL New Sung</string></test>
+		<edit name="globaladvance"><bool>false</bool></edit>
+	</match>
+	<!-- end Firefly Truetype Font -->
+
+	<!-- x11-fonts/bitstream-vera -->
+        <alias>
+                <family>serif</family>
+                <prefer>
+                        <family>Bitstream Vera Serif</family>
+			<family>AR PL New Sung</family>
+                </prefer>
+        </alias>
+        <alias>
+                <family>sans-serif</family>
+                <prefer>
+                        <family>Bitstream Vera Sans</family>
+			<family>AR PL New Sung</family>
+                </prefer>
+        </alias>
+        <alias>
+                <family>monospace</family>
+                <prefer>
+                        <family>Bitstream Vera Sans Mono</family>
+			<family>AR PL New Sung</family>
+                </prefer>
+        </alias>
+</fontconfig>

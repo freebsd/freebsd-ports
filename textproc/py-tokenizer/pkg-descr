@@ -1,0 +1,5 @@
+Tokenizer: A tokenizer for Icelandic text
+
+Tokenization is a necessary first step in many natural language processing
+tasks, such as word counting, parsing, spell checking, corpus generation, and
+statistical analysis of text.

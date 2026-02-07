@@ -1,0 +1,36 @@
+--- src/lib/fte/doplot.c.orig	Sun Apr 25 23:48:45 1993
++++ src/lib/fte/doplot.c	Mon Feb 26 18:03:20 2001
+@@ -117,7 +117,7 @@
+     }
+ 
+     if (!cp_getvar("hcopydevtype", VT_STRING, buf)) {
+-        devtype = "plot5";
++        devtype = "postscript";
+     } else {
+         devtype = buf;
+     }
+@@ -147,10 +147,23 @@
+ 	      DevSwitch(NULL);
+ 	      return;
+ 	    }
++	    /*
++	     * Since the hardcopy output routines rely on currentgraph
++	     * being set, we need to set it to our tempgraph.  Note
++	     * that DevSwitch(NULL) causes the Close() function of the
++	     * hardcopy device to be called which will in turn
++	     * finalize the output, thus still needs a valid
++	     * currentgraph.  For that reason, we may only pop the
++	     * context after calling it, and likewise we should not
++	     * destroy the tempgraph until the hardcopy device has
++	     * been closed.
++	     */
++	    PushGraphContext(tempgraph);
+ 	    gr_resize(tempgraph);
+ 	    gr_redraw(tempgraph);
+-	    DestroyGraph(tempgraph->graphid);
+ 	    DevSwitch(NULL);
++	    PopGraphContext();
++	    DestroyGraph(tempgraph->graphid);
+ 	    foundit = 1;
+ 	}
+     }

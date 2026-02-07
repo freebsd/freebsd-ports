@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# PROVIDE: containerd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable containerd:
+#
+# containerd_enable="YES"
+
+. /etc/rc.subr
+
+name="containerd"
+rcvar="containerd_enable"
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -S -t ${name} -T ${name} %%LOCALBASE%%/bin/containerd"
+
+load_rc_config $name
+: ${containerd_enable:=no}
+
+# containerd needs to execute a runtime (eg. runj)
+PATH="${PATH}:%%PREFIX%%/sbin:%%PREFIX%%/bin"
+
+run_rc_command "$1"

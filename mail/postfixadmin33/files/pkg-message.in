@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+If you are upgrading, you may need to update your existing database.
+You can do so by browsing to [URL]/setup.php where [URL] is the
+postfixadmin root.
+
+To avoid checksum errors when uninstalling or upgrading postfixadmin,
+do not edit config.inc.php.  Instead, put your configuration settings
+in config.local.php in the postfixadmin webroot.  That file will be
+included automatically by config.inc.php.
+
+For detailed information, please see the complete installation steps
+in %%DOCSDIR%%/INSTALL.TXT.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+For upgrade-related details, including configuration changes, see
+%%DOCSDIR%%/CHANGELOG.TXT.
+EOM
+}
+]

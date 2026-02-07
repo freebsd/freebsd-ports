@@ -1,0 +1,5 @@
+pizauth is a simple program for requesting, showing, and refreshing OAuth2
+access tokens. pizauth is formed of two components: a persistent server which
+interacts with the user to request tokens, and refreshes them as necessary; and
+a command-line interface which can be used by programs such as fdm, neomutt, or
+msmtp to authenticate with OAuth2.

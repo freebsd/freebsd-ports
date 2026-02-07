@@ -1,0 +1,54 @@
+--- docs/conf/httpd.conf.in.orig	2015-11-03 11:58:58 UTC
++++ docs/conf/httpd.conf.in
+@@ -65,6 +65,9 @@ Listen @@Port@@
+ #
+ @@LoadModule@@
+ 
++# Third party modules
++IncludeOptional @rel_sysconfdir@/modules.d/[0-9][0-9][0-9]_*.conf
++ 
+ <IfModule unixd_module>
+ #
+ # If you wish httpd to run as a different user or group, you must run
+@@ -74,8 +77,8 @@ Listen @@Port@@
+ # It is usually good practice to create a dedicated user and group for
+ # running httpd, as with most system services.
+ #
+-User daemon
+-Group daemon
++User %%WWWOWN%%
++Group %%WWWGRP%%
+ 
+ </IfModule>
+ 
+@@ -181,7 +184,7 @@ DocumentRoot "@exp_htdocsdir@"
+ # logged here.  If you *do* define an error logfile for a <VirtualHost>
+ # container, that host's errors will be logged there and not here.
+ #
+-ErrorLog "@rel_logfiledir@/error_log"
++ErrorLog "@rel_logfiledir@/httpd-error.log"
+ 
+ #
+ # LogLevel: Control the number of messages logged to the error_log.
+@@ -210,13 +213,13 @@ LogLevel warn
+     # define per-<VirtualHost> access logfiles, transactions will be
+     # logged therein and *not* in this file.
+     #
+-    CustomLog "@rel_logfiledir@/access_log" common
++    CustomLog "@rel_logfiledir@/httpd-access.log" common
+ 
+     #
+     # If you prefer a logfile with access, agent, and referer information
+     # (Combined Logfile Format) you can use the following directive.
+     #
+-    #CustomLog "@rel_logfiledir@/access_log" combined
++    #CustomLog "@rel_logfiledir@/httpd-access.log" combined
+ </IfModule>
+ 
+ <IfModule alias_module>
+@@ -407,3 +410,5 @@ SSLRandomSeed startup builtin
+ SSLRandomSeed connect builtin
+ </IfModule>
+ 
++Include @rel_sysconfdir@/Includes/*.conf
++

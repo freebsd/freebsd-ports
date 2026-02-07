@@ -1,0 +1,4 @@
+bin/github.pl
+%%PERL5_MAN3%%/App::GitHub.3.gz
+%%SITE_PERL%%/App/GitHub.pm
+%%PERL5_MAN1%%/github.pl.1.gz

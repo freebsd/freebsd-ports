@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=IntelliJ IDEA Community Edition
+GenericName=IntelliJ IDEA Community Edition
+Comment=IntelliJ Integrated Development Environment
+Icon=%%DATADIR%%/bin/idea.png
+Exec=%%DATADIR%%/bin/idea.sh
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

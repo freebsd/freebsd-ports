@@ -1,0 +1,5 @@
+This port installs four Chinese Big5/GB TrueType fonts, includes
+Kaiti/Mingti(Big5) and Kaiti/Sungti(GB). It then can be used along
+with X Window System or typesetting software like CJK. Thanks to
+Arphic Technology, you may freely distribute these high-quality
+fonts under a GPL-based license. See ARPHIC_*.TXT for details.

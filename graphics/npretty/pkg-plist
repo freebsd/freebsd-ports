@@ -1,0 +1,6 @@
+bin/npretty.pl
+etc/npretty/npretty.conf
+etc/npretty/novideo.gif
+etc/npretty/npretty_template.tpl
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/README

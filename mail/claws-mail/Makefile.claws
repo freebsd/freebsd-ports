@@ -1,0 +1,62 @@
+CATEGORIES?=	mail
+MASTER_SITES=	http://www.claws-mail.org/download.php?file=releases/
+
+MAINTAINER=	portmaster@bsdforge.com
+
+LICENSE=	GPLv3
+
+USES+=		gmake gnome iconv libtool pkgconfig tar:xz
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
+
+.include "${.CURDIR}/../claws-mail/Makefile.ver"
+
+.if ${MASTER_OPTIONS:MNLS}
+USES+=		gettext
+CONFIGURE_ARGS+=--enable-nls
+.else
+CONFIGURE_ARGS+=--disable-nls
+.endif
+
+.if ${MASTER_OPTIONS:MGTK2}
+USE_GNOME+=	gtk20
+.endif
+.if ${MASTER_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+.endif
+
+.include "${.CURDIR}/../claws-mail/Makefile.claws.plugins"
+
+.for p in ${CLAWS_PLUGINS}
+.  if empty(CLAWS_PLUGINS_BUILD:M${p})
+CONFIGURE_ARGS+=	--disable-${p}-plugin
+.  endif
+.endfor
+
+.if defined(CLAWS_PLUGINS_BUILD)
+DISTNAME=	claws-mail-${PORTVERSION}
+PKGNAMEPREFIX=	claws-mail-
+
+BUILD_DEPENDS+=	claws-mail>=${PORTVERSION}:mail/claws-mail
+RUN_DEPENDS+=	claws-mail>=${PORTVERSION}:mail/claws-mail
+
+DISTINFO_FILE=	${.CURDIR}/../claws-mail/distinfo
+
+.  for p in ${CLAWS_PLUGINS_BUILD}
+PLIST_FILES+=	lib/claws-mail/plugins/${p:S|spam_|spam|}.so
+.  endfor
+
+do-build:
+.  for p in ${CLAWS_PLUGINS_BUILD}
+	(cd ${WRKSRC}/src/plugins/${p} && ${DO_MAKE_BUILD})
+.  endfor
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/claws-mail/plugins
+.  for p in ${CLAWS_PLUGINS_BUILD}
+	(cd ${WRKSRC}/src/plugins/${p} && \
+		${INSTALL_LIB} .libs/${p:S|spam_|spam|}.so \
+		${STAGEDIR}${PREFIX}/lib/claws-mail/plugins)
+.  endfor
+
+.endif

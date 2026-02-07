@@ -1,0 +1,2 @@
+libpnupnp is a C++ reimplementation of the venerable libupnp,
+a.k.a. Portable UPnP* library.

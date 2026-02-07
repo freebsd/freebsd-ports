@@ -1,0 +1,20 @@
+--- common-src/Makefile.in.orig	2017-12-01 13:26:54 UTC
++++ common-src/Makefile.in
+@@ -1506,7 +1506,7 @@ LIBINTL = @LIBINTL@
+ LIBMULTITHREAD = @LIBMULTITHREAD@
+ LIBOBJS = @LIBOBJS@
+ LIBPTH = @LIBPTH@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lssl
+ LIBSOCKET = @LIBSOCKET@
+ LIBTHREAD = @LIBTHREAD@
+ LIBTOOL = @LIBTOOL@
+@@ -1960,7 +1960,7 @@ do_installperms = dest=; chown=; chmod=; \
+ AM_CPPFLAGS = -I$(top_srcdir)/gnulib -I$(top_builddir)/common-src
+ AM_CFLAGS = $(AMANDA_WARNING_CFLAGS) $(AMANDA_FILE_CFLAGS)
+ AM_LDFLAGS = $(AMANDA_STATIC_LDFLAGS) $(AS_NEEDED_FLAGS)
+-amlib_LTLIBRARIES = libamanda.la
++@WANT_CLIENT_TRUE@amlib_LTLIBRARIES = libamanda.la
+ LINT = $(AMLINT)
+ LINTFLAGS = $(AMLINTFLAGS)
+ libamanda_la_SOURCES = alloc.c am_sl.c amfeatures.c amflock.c amjson.c \

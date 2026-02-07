@@ -1,0 +1,26 @@
+--- lib/freebl/Makefile.orig	2021-05-14 10:01:03 UTC
++++ lib/freebl/Makefile
+@@ -263,7 +263,7 @@ else ifeq ($(CPU_ARCH),x86)
+ endif
+ endif # Darwin
+ 
+-ifeq ($(OS_TARGET),Linux)
++ifeq (,$(filter-out Linux FreeBSD, $(OS_TARGET)))
+ ifeq ($(CPU_ARCH),x86_64)
+     # Lower case s on mpi_amd64_common due to make implicit rules.
+     ASFILES  = arcfour-amd64-gas.s mpi_amd64_common.s
+@@ -298,11 +298,12 @@ ifdef USE_64
+     PPC_ABI := $(shell $(CC) -dM -E - < /dev/null | awk '$$2 == "_CALL_ELF" {print $$3}')
+     ifeq ($(PPC_ABI),2)
+         ASFILES += sha512-p8.s
+-    ifeq ($(OS_TEST),ppc64le)
++    ifeq (,$(filter-out powerpc64le ppc64le, $(OS_TEST)))
+         DEFINES += -DPPC_GCM
+         EXTRA_SRCS += chacha20poly1305-ppc.c ppc-gcm-wrap.c
+         ASFILES += chacha20-ppc64le.s ppc-gcm.s
+-    endif # ppc64le
++        ASFLAGS += -fno-integrated-as
++    endif # powerpc64le
+     endif
+ endif # USE_64
+ endif # ppc

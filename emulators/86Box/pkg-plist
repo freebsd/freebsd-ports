@@ -1,0 +1,11 @@
+bin/86Box
+bin/86Box-install-roms.sh
+share/applications/net.86box.86Box.desktop
+share/icons/hicolor/128x128/apps/net.86box.86Box.png
+share/icons/hicolor/192x192/apps/net.86box.86Box.png
+share/icons/hicolor/256x256/apps/net.86box.86Box.png
+share/icons/hicolor/48x48/apps/net.86box.86Box.png
+share/icons/hicolor/512x512/apps/net.86box.86Box.png
+share/icons/hicolor/64x64/apps/net.86box.86Box.png
+share/icons/hicolor/72x72/apps/net.86box.86Box.png
+share/icons/hicolor/96x96/apps/net.86box.86Box.png

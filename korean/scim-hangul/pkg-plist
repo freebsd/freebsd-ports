@@ -1,0 +1,15 @@
+lib/scim-1.0/1.4.0/IMEngine/hangul.la
+lib/scim-1.0/1.4.0/IMEngine/hangul.so
+lib/scim-1.0/1.4.0/SetupUI/hangul-imengine-setup.la
+lib/scim-1.0/1.4.0/SetupUI/hangul-imengine-setup.so
+%%NLS%%share/locale/de/LC_MESSAGES/scim-hangul.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/scim-hangul.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/scim-hangul.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/scim-hangul.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/scim-hangul.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/scim-hangul.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/scim-hangul.mo
+share/scim/hangul/symbol.txt
+share/scim/icons/scim-hangul.png
+share/scim/icons/scim-hangul-off.png
+share/scim/icons/scim-hangul-on.png

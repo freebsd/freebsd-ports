@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: relayd
+# REQUIRE: NETWORKING syslogd
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable relayd:
+# relayd_enable="YES"
+# relayd_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=relayd
+rcvar=relayd_enable
+
+load_rc_config $name
+
+: ${relayd_enable="NO"}
+
+command="%%PREFIX%%/sbin/relayd"
+relayctl="%%PREFIX%%/sbin/relayctl"
+start_precmd="relayd_checkconfig"
+reload_precmd="relayd_checkconfig"
+restart_precmd="relayd_checkconfig"
+reload_cmd="relayd_reload_cmd"
+extra_commands="reload"
+
+relayd_checkconfig()
+{
+	echo "Performing sanity check on relayd configuration:"
+	eval ${command} ${relayd_flags} -n
+}
+
+relayd_reload_cmd () {
+	${relayctl} reload
+}
+
+run_rc_command "$1"

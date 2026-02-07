@@ -1,0 +1,57 @@
+bin/dbus-cleanup-sockets
+bin/dbus-daemon
+bin/dbus-launch
+bin/dbus-monitor
+bin/dbus-run-session
+bin/dbus-send
+bin/dbus-test-tool
+bin/dbus-update-activation-environment
+bin/dbus-uuidgen
+@sample etc/dbus-1/session.conf.sample
+@sample etc/dbus-1/system.conf.sample
+include/dbus-%%VERSION%%/dbus/dbus-address.h
+include/dbus-%%VERSION%%/dbus/dbus-bus.h
+include/dbus-%%VERSION%%/dbus/dbus-connection.h
+include/dbus-%%VERSION%%/dbus/dbus-errors.h
+include/dbus-%%VERSION%%/dbus/dbus-macros.h
+include/dbus-%%VERSION%%/dbus/dbus-memory.h
+include/dbus-%%VERSION%%/dbus/dbus-message.h
+include/dbus-%%VERSION%%/dbus/dbus-misc.h
+include/dbus-%%VERSION%%/dbus/dbus-pending-call.h
+include/dbus-%%VERSION%%/dbus/dbus-protocol.h
+include/dbus-%%VERSION%%/dbus/dbus-server.h
+include/dbus-%%VERSION%%/dbus/dbus-shared.h
+include/dbus-%%VERSION%%/dbus/dbus-signature.h
+include/dbus-%%VERSION%%/dbus/dbus-syntax.h
+include/dbus-%%VERSION%%/dbus/dbus-threads.h
+include/dbus-%%VERSION%%/dbus/dbus-types.h
+include/dbus-%%VERSION%%/dbus/dbus.h
+lib/cmake/DBus1/DBus1Config.cmake
+lib/cmake/DBus1/DBus1ConfigVersion.cmake
+lib/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
+lib/libdbus-1.so
+lib/libdbus-1.so.3
+lib/libdbus-1.so.%%LIBVERSION%%
+libdata/pkgconfig/dbus-1.pc
+@(,%%GROUPS%%,4750) libexec/dbus-daemon-launch-helper
+%%MANPAGES%%share/man/man1/dbus-cleanup-sockets.1.gz
+%%MANPAGES%%share/man/man1/dbus-daemon.1.gz
+%%MANPAGES%%share/man/man1/dbus-launch.1.gz
+%%MANPAGES%%share/man/man1/dbus-monitor.1.gz
+%%MANPAGES%%share/man/man1/dbus-run-session.1.gz
+%%MANPAGES%%share/man/man1/dbus-send.1.gz
+%%MANPAGES%%share/man/man1/dbus-test-tool.1.gz
+%%MANPAGES%%share/man/man1/dbus-update-activation-environment.1.gz
+%%MANPAGES%%share/man/man1/dbus-uuidgen.1.gz
+share/dbus-1/session.conf
+share/dbus-1/system.conf
+share/xml/dbus-1/busconfig.dtd
+share/xml/dbus-1/catalog.xml
+share/xml/dbus-1/introspect.dtd
+@dir share/dbus-1/services
+@dir share/dbus-1/session.d
+@dir share/dbus-1/system-services
+@dir share/dbus-1/system.d
+@dir /var/lib/dbus
+@dir /var/lib
+@dir /var/run/dbus

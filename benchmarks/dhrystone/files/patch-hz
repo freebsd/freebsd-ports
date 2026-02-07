@@ -1,0 +1,24 @@
+diff -Naur drystone-2.1/dhry.h drystone-patched/dhry.h
+--- dhry.h	2014-08-30 16:32:37.000000000 +0200
++++ dhry.h	2014-08-30 16:37:44.933675426 +0200
+@@ -385,6 +385,8 @@
+ 
+ #include <stdio.h>
+                 /* for strcpy, strcmp */
++#include <unistd.h>
++		/* for sysconf */
+ 
+ #define Null 0 
+                 /* Value of a Null pointer */
+diff -Naur drystone-2.1/dhry_1.c drystone-patched/dhry_1.c
+--- dhry_1.c	2014-08-30 16:32:37.000000000 +0200
++++ dhry_1.c	2014-08-30 16:44:20.484050144 +0200
+@@ -262,6 +262,8 @@
+                         / (float) Number_Of_Runs;
+     Dhrystones_Per_Second = (float) Number_Of_Runs / (float) User_Time;
+ #else
++
++    int	HZ = sysconf(_SC_CLK_TCK);
+     Microseconds = (float) User_Time * Mic_secs_Per_Second 
+                         / ((float) HZ * ((float) Number_Of_Runs));
+     Dhrystones_Per_Second = ((float) HZ * (float) Number_Of_Runs)

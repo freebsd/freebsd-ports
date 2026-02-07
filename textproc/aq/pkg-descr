@@ -1,0 +1,2 @@
+aq extends jq for any data format.
+Currently supports JSON, TOML, and YAML.

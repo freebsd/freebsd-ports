@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	2014-05-24 19:23:17.169958767 +0800
++++ tools/Makefile.in	2014-05-24 19:23:28.096959808 +0800
+@@ -111,7 +111,7 @@ distclean: clean
+ install: $(PROGRAMS)
+ 	list='$(PROGRAMS)'; \
+ 	for prog in $$list; do \
+-	  $(INSTALL_PROGRAM) $$prog $(bindir)/ ; \
++	  $(INSTALL_PROGRAM) $$prog $(DESTDIR)$(bindir)/ ; \
+ 	done
+ 
+ uninstall: $(PROGRAMS)

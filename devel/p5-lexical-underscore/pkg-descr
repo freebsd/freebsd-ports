@@ -1,0 +1,17 @@
+Starting with Perl 5.10, it is possible to create a lexical version of the Perl
+default variable $_. Certain Perl constructs like the given keyword
+automatically use a lexical $_ rather than the global $_.
+
+It is occasionallly useful for a sub to be able to access its caller's $_
+variable regardless of whether it was lexical or not. The (_) sub prototype is
+the official way to do so, however there are sometimes disadvantages to this; in
+particular it can only appear as the final required argument in a prototype, and
+there is no way of the sub differentiating between an explicitly passed argument
+and $_.
+
+The lexical::underscore function returns a scalar reference to either a lexical
+$_ variable somewhere up the call stack (using PadWalker magic), or to the
+global $_ if there was no lexical version.
+
+Wrapping lexical::underscore in ${ ... } dereferences the scalar reference,
+allowing you to access (and even assign to) it.

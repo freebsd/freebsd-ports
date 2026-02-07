@@ -1,0 +1,26 @@
+--- src/utils/indxbib/Makefile.sub.orig	2014-02-07 13:49:35.000000000 +0900
++++ src/utils/indxbib/Makefile.sub	2014-02-07 13:51:45.000000000 +0900
+@@ -12,18 +12,11 @@
+ NAMEPREFIX=$(g)
+ 
+ install_data: eign
+-	-test -d $(datadir) || $(mkinstalldirs) $(datadir)
+-	-test -d $(dataprogramdir) || $(mkinstalldirs) $(dataprogramdir)
+-	-test -d $(datasubdir) || $(mkinstalldirs) $(datasubdir)
+-	if test -f /usr/lib/eign; then \
+-	  rm -f $(common_words_file); \
+-	  ln -s /usr/lib/eign $(common_words_file) 2>/dev/null \
+-	  || ln /usr/lib/eign $(common_words_file) 2>/dev/null \
+-	  || cp /usr/lib/eign $(common_words_file); \
+-	else \
+-	  rm -f $(common_words_file); \
+-	  $(INSTALL_DATA) $(srcdir)/eign $(common_words_file); \
+-	fi
++	-test -d $(DESTDIR)$(datadir) || $(mkinstalldirs) $(DESTDIR)$(datadir)
++	-test -d $(DESTDIR)$(dataprogramdir) || $(mkinstalldirs) $(DESTDIR)$(dataprogramdir)
++	-test -d $(DESTDIR)$(datasubdir) || $(mkinstalldirs) $(DESTDIR)$(datasubdir)
++	rm -f $(common_words_file); \
++	$(INSTALL_DATA) $(srcdir)/eign $(DESTDIR)$(common_words_file); \
+ 
+ uninstall_sub:
+ 	-rm -f $(common_words_file)

@@ -1,0 +1,67 @@
+--- latex2html.pin.orig	2016-04-19 16:52:35 UTC
++++ latex2html.pin
+@@ -1207,7 +1207,7 @@ sub process_ext_file {
+ 	&slurp_input($file);
+ 	if ($ext =~ /bbl/) {
+ 	    # remove the \newcommand{\etalchar}{...} since not needed
+-	    s/^\\newcommand{\\etalchar}[^\n\r]*[\n\r]+//s;
++	    s/^\\newcommand\{\\etalchar}[^\n\r]*[\n\r]+//s;
+ 	}
+ 	&pre_process;
+ 	&substitute_meta_cmds if (%new_command || %new_environment);
+@@ -1465,7 +1465,7 @@ sub pre_process {
+ 	    push(@processedV,$before);
+ 	    print "'";$before = '';
+ 	}
+- 	if ($after =~ /\s*\\end{$env[*]?}/) { # Must NOT use the s///o option!!!
++ 	if ($after =~ /\s*\\end\{$env[*]?}/) { # Must NOT use the s///o option!!!
+ 	    ($contents, $after) = ($`, $');
+  	    $contents =~ s/^\n+/\n/s;
+ # 	    $contents =~ s/\n+$//s;
+@@ -1898,8 +1898,8 @@ sub mark_string {
+     # local (*_) = @_; # Modifies $_ in the caller;
+     # -> MRO: changed to $_[0] (same effect)
+     # MRO: removed deprecated $*, replaced by option /m
+-    $_[0] =~ s/(^|[^\\])\\{/$1tex2html_escaped_opening_bracket/gom;
+-    $_[0] =~ s/(^|[^\\])\\{/$1tex2html_escaped_opening_bracket/gom; # repeat this
++    $_[0] =~ s/(^|[^\\])\\\{/$1tex2html_escaped_opening_bracket/gom;
++    $_[0] =~ s/(^|[^\\])\\\{/$1tex2html_escaped_opening_bracket/gom; # repeat this
+     $_[0] =~ s/(^|[^\\])\\}/$1tex2html_escaped_closing_bracket/gom;
+     $_[0] =~ s/(^|[^\\])\\}/$1tex2html_escaped_closing_bracket/gom; # repeat this
+     my $id = $global{'max_id'};
+@@ -1907,7 +1907,7 @@ sub mark_string {
+     # mark all balanced braces
+     # MRO: This should in fact mark all of them as the hierarchy is
+     # processed inside-out.
+-    1 while($_[0] =~ s/{([^{}]*)}/join("",$O,++$id,$C,$1,$O,$id,$C)/geo);
++    1 while($_[0] =~ s/\{([^{}]*)}/join("",$O,++$id,$C,$1,$O,$id,$C)/geo);
+     # What follows seems esoteric...
+     my @processedB = ();
+     # Take one opening brace at a time
+@@ -2780,7 +2780,7 @@ sub translate_environments {
+ 	    $open_tags_R = [ @save_open_tags ];
+ 	    # check for color
+ 	    local($color_test) = join(',',@$open_tags_R);
+-	    if ($color_test =~ /(color{[^}]*})/g ) {
++	    if ($color_test =~ /(color\{[^}]*})/g ) {
+ 		$color_env = $1;
+ 	    } # else { $color_env = '' }
+ 
+@@ -2791,7 +2791,7 @@ sub translate_environments {
+ 		$open_tags_R = [ @save_open_tags ];
+ 		if ($color_env) {
+ 		    $color_test = join(',',@saved_tags);
+-		    if ($color_test =~ /(color{[^}]*})/g ) {
++		    if ($color_test =~ /(color\{[^}]*})/g ) {
+ 		        $color_env = $1;
+ 		    }
+ 		}
+@@ -6507,7 +6507,7 @@ sub parse_keyvalues {
+     print "\nATTRIBS: $saved\n" if ($VERBOSITY > 6);
+ 
+     $saved =~ s/$percent_mark/%/g;
+-    $saved =~ s/((^|[\s,=])')\\\W{(\w)}/$1$3/g
++    $saved =~ s/((^|[\s,=])')\\\W\{(\w)}/$1$3/g
+ 	if $is_german;  #unwanted accents, from active "
+     if (@tags) {
+ 	foreach $tag (@tags) {

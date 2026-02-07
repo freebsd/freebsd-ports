@@ -1,0 +1,6 @@
+MySQLTuner is a script written in Perl that will
+assist you with your MySQL configuration and make
+recommendations for increased performance and
+stability. Within seconds, it will display
+statistics about your MySQL installation and the
+areas where it can be improved.

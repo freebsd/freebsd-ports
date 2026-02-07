@@ -1,0 +1,18 @@
+bin/sj3
+bin/sj3dic
+bin/sj3mkdic
+bin/sj3stat
+etc/sj3/cvtkey.news
+etc/sj3/cvtkey.nwp511
+etc/sj3/cvtkey.nwp517
+etc/sj3/cvtkey.xterm
+etc/sj3/serverrc
+etc/sj3/sjrc
+etc/sj3/sjrk
+lib/sj3/dict/sj3main.dic
+sbin/sj3serv
+share/man/ja/man1/sj3.1.gz
+share/man/ja/man1/sj3dic.1.gz
+share/man/ja/man1/sj3mkdic.1.gz
+share/man/ja/man1/sj3serv.1.gz
+@dir(%%USERS%%,%%GROUPS%%,0775) lib/sj3/dict/user

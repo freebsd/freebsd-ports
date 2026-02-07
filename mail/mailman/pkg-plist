@@ -1,0 +1,2460 @@
+@postunexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
+@dir etc/newsyslog.conf.d
+@sample %%EXAMPLESDIR%%/mailman.newsyslog.sample etc/newsyslog.conf.d/mailman.conf
+%%IMGDIR%%/mailman-large.jpg
+%%IMGDIR%%/gnu-head-tiny.jpg
+%%IMGDIR%%/mailman.jpg
+%%IMGDIR%%/mm-icon-large.ico
+%%IMGDIR%%/mm-icon.ico
+%%IMGDIR%%/mm-icon.png
+%%IMGDIR%%/powerlogo.png
+%%IMGDIR%%/PythonPowered.png
+@group %%MM_GROUPNAME%%
+%%MMDIR%%/Mailman/Archiver/Archiver.py
+%%MMDIR%%/Mailman/Archiver/Archiver.pyc
+%%MMDIR%%/Mailman/Archiver/HyperArch.py
+%%MMDIR%%/Mailman/Archiver/HyperArch.pyc
+%%MMDIR%%/Mailman/Archiver/HyperDatabase.py
+%%MMDIR%%/Mailman/Archiver/HyperDatabase.pyc
+%%MMDIR%%/Mailman/Archiver/__init__.py
+%%MMDIR%%/Mailman/Archiver/__init__.pyc
+%%MMDIR%%/Mailman/Archiver/pipermail.py
+%%MMDIR%%/Mailman/Archiver/pipermail.pyc
+%%MMDIR%%/Mailman/Autoresponder.py
+%%MMDIR%%/Mailman/Autoresponder.pyc
+%%MMDIR%%/Mailman/Bouncer.py
+%%MMDIR%%/Mailman/Bouncer.pyc
+%%MMDIR%%/Mailman/Bouncers/AOL.pyc
+%%MMDIR%%/Mailman/Bouncers/AOL.py
+%%MMDIR%%/Mailman/Bouncers/BouncerAPI.py
+%%MMDIR%%/Mailman/Bouncers/BouncerAPI.pyc
+%%MMDIR%%/Mailman/Bouncers/Caiwireless.py
+%%MMDIR%%/Mailman/Bouncers/Caiwireless.pyc
+%%MMDIR%%/Mailman/Bouncers/Compuserve.py
+%%MMDIR%%/Mailman/Bouncers/Compuserve.pyc
+%%MMDIR%%/Mailman/Bouncers/DSN.py
+%%MMDIR%%/Mailman/Bouncers/DSN.pyc
+%%MMDIR%%/Mailman/Bouncers/Exchange.py
+%%MMDIR%%/Mailman/Bouncers/Exchange.pyc
+%%MMDIR%%/Mailman/Bouncers/Exim.py
+%%MMDIR%%/Mailman/Bouncers/Exim.pyc
+%%MMDIR%%/Mailman/Bouncers/GroupWise.py
+%%MMDIR%%/Mailman/Bouncers/GroupWise.pyc
+%%MMDIR%%/Mailman/Bouncers/LLNL.py
+%%MMDIR%%/Mailman/Bouncers/LLNL.pyc
+%%MMDIR%%/Mailman/Bouncers/Microsoft.py
+%%MMDIR%%/Mailman/Bouncers/Microsoft.pyc
+%%MMDIR%%/Mailman/Bouncers/Netscape.py
+%%MMDIR%%/Mailman/Bouncers/Netscape.pyc
+%%MMDIR%%/Mailman/Bouncers/Postfix.py
+%%MMDIR%%/Mailman/Bouncers/Postfix.pyc
+%%MMDIR%%/Mailman/Bouncers/Qmail.py
+%%MMDIR%%/Mailman/Bouncers/Qmail.pyc
+%%MMDIR%%/Mailman/Bouncers/SMTP32.py
+%%MMDIR%%/Mailman/Bouncers/SMTP32.pyc
+%%MMDIR%%/Mailman/Bouncers/SimpleMatch.py
+%%MMDIR%%/Mailman/Bouncers/SimpleMatch.pyc
+%%MMDIR%%/Mailman/Bouncers/SimpleWarning.py
+%%MMDIR%%/Mailman/Bouncers/SimpleWarning.pyc
+%%MMDIR%%/Mailman/Bouncers/Sina.py
+%%MMDIR%%/Mailman/Bouncers/Sina.pyc
+%%MMDIR%%/Mailman/Bouncers/Yahoo.py
+%%MMDIR%%/Mailman/Bouncers/Yahoo.pyc
+%%MMDIR%%/Mailman/Bouncers/Yale.py
+%%MMDIR%%/Mailman/Bouncers/Yale.pyc
+%%MMDIR%%/Mailman/Bouncers/__init__.py
+%%MMDIR%%/Mailman/Bouncers/__init__.pyc
+%%MMDIR%%/Mailman/CSRFcheck.py
+%%MMDIR%%/Mailman/CSRFcheck.pyc
+%%MMDIR%%/Mailman/Cgi/Auth.py
+%%MMDIR%%/Mailman/Cgi/Auth.pyc
+%%MMDIR%%/Mailman/Cgi/__init__.py
+%%MMDIR%%/Mailman/Cgi/__init__.pyc
+%%MMDIR%%/Mailman/Cgi/admin.py
+%%MMDIR%%/Mailman/Cgi/admin.pyc
+%%MMDIR%%/Mailman/Cgi/admindb.py
+%%MMDIR%%/Mailman/Cgi/admindb.pyc
+%%MMDIR%%/Mailman/Cgi/confirm.py
+%%MMDIR%%/Mailman/Cgi/confirm.pyc
+%%MMDIR%%/Mailman/Cgi/create.py
+%%MMDIR%%/Mailman/Cgi/create.pyc
+%%MMDIR%%/Mailman/Cgi/edithtml.py
+%%MMDIR%%/Mailman/Cgi/edithtml.pyc
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/htdig.py
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/htdig.pyc
+%%MMDIR%%/Mailman/Cgi/listinfo.py
+%%MMDIR%%/Mailman/Cgi/listinfo.pyc
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/mmsearch.py
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/mmsearch.pyc
+%%MMDIR%%/Mailman/Cgi/options.py
+%%MMDIR%%/Mailman/Cgi/options.pyc
+%%MMDIR%%/Mailman/Cgi/private.py
+%%MMDIR%%/Mailman/Cgi/private.pyc
+%%MMDIR%%/Mailman/Cgi/rmlist.py
+%%MMDIR%%/Mailman/Cgi/rmlist.pyc
+%%MMDIR%%/Mailman/Cgi/roster.py
+%%MMDIR%%/Mailman/Cgi/roster.pyc
+%%MMDIR%%/Mailman/Cgi/subscribe.py
+%%MMDIR%%/Mailman/Cgi/subscribe.pyc
+%%MMDIR%%/Mailman/Commands/__init__.py
+%%MMDIR%%/Mailman/Commands/__init__.pyc
+%%MMDIR%%/Mailman/Commands/cmd_confirm.py
+%%MMDIR%%/Mailman/Commands/cmd_confirm.pyc
+%%MMDIR%%/Mailman/Commands/cmd_echo.py
+%%MMDIR%%/Mailman/Commands/cmd_echo.pyc
+%%MMDIR%%/Mailman/Commands/cmd_end.py
+%%MMDIR%%/Mailman/Commands/cmd_end.pyc
+%%MMDIR%%/Mailman/Commands/cmd_help.py
+%%MMDIR%%/Mailman/Commands/cmd_help.pyc
+%%MMDIR%%/Mailman/Commands/cmd_info.py
+%%MMDIR%%/Mailman/Commands/cmd_info.pyc
+%%MMDIR%%/Mailman/Commands/cmd_join.py
+%%MMDIR%%/Mailman/Commands/cmd_join.pyc
+%%MMDIR%%/Mailman/Commands/cmd_leave.py
+%%MMDIR%%/Mailman/Commands/cmd_leave.pyc
+%%MMDIR%%/Mailman/Commands/cmd_lists.py
+%%MMDIR%%/Mailman/Commands/cmd_lists.pyc
+%%MMDIR%%/Mailman/Commands/cmd_password.py
+%%MMDIR%%/Mailman/Commands/cmd_password.pyc
+%%MMDIR%%/Mailman/Commands/cmd_remove.py
+%%MMDIR%%/Mailman/Commands/cmd_remove.pyc
+%%MMDIR%%/Mailman/Commands/cmd_set.py
+%%MMDIR%%/Mailman/Commands/cmd_set.pyc
+%%MMDIR%%/Mailman/Commands/cmd_stop.py
+%%MMDIR%%/Mailman/Commands/cmd_stop.pyc
+%%MMDIR%%/Mailman/Commands/cmd_subscribe.py
+%%MMDIR%%/Mailman/Commands/cmd_subscribe.pyc
+%%MMDIR%%/Mailman/Commands/cmd_unsubscribe.py
+%%MMDIR%%/Mailman/Commands/cmd_unsubscribe.pyc
+%%MMDIR%%/Mailman/Commands/cmd_who.py
+%%MMDIR%%/Mailman/Commands/cmd_who.pyc
+%%MMDIR%%/Mailman/Defaults.py
+%%MMDIR%%/Mailman/Defaults.pyc
+%%MMDIR%%/Mailman/Deliverer.py
+%%MMDIR%%/Mailman/Deliverer.pyc
+%%MMDIR%%/Mailman/Digester.py
+%%MMDIR%%/Mailman/Digester.pyc
+%%MMDIR%%/Mailman/Errors.py
+%%MMDIR%%/Mailman/Errors.pyc
+%%MMDIR%%/Mailman/GatewayManager.py
+%%MMDIR%%/Mailman/GatewayManager.pyc
+%%MMDIR%%/Mailman/Gui/Archive.py
+%%MMDIR%%/Mailman/Gui/Archive.pyc
+%%MMDIR%%/Mailman/Gui/Autoresponse.py
+%%MMDIR%%/Mailman/Gui/Autoresponse.pyc
+%%MMDIR%%/Mailman/Gui/Bounce.py
+%%MMDIR%%/Mailman/Gui/Bounce.pyc
+%%MMDIR%%/Mailman/Gui/ContentFilter.py
+%%MMDIR%%/Mailman/Gui/ContentFilter.pyc
+%%MMDIR%%/Mailman/Gui/Digest.py
+%%MMDIR%%/Mailman/Gui/Digest.pyc
+%%MMDIR%%/Mailman/Gui/GUIBase.py
+%%MMDIR%%/Mailman/Gui/GUIBase.pyc
+%%MMDIR%%/Mailman/Gui/General.py
+%%MMDIR%%/Mailman/Gui/General.pyc
+%%MMDIR%%/Mailman/Gui/Language.py
+%%MMDIR%%/Mailman/Gui/Language.pyc
+%%MMDIR%%/Mailman/Gui/Membership.py
+%%MMDIR%%/Mailman/Gui/Membership.pyc
+%%MMDIR%%/Mailman/Gui/NonDigest.py
+%%MMDIR%%/Mailman/Gui/NonDigest.pyc
+%%MMDIR%%/Mailman/Gui/Passwords.py
+%%MMDIR%%/Mailman/Gui/Passwords.pyc
+%%MMDIR%%/Mailman/Gui/Privacy.py
+%%MMDIR%%/Mailman/Gui/Privacy.pyc
+%%MMDIR%%/Mailman/Gui/Topics.py
+%%MMDIR%%/Mailman/Gui/Topics.pyc
+%%MMDIR%%/Mailman/Gui/Usenet.py
+%%MMDIR%%/Mailman/Gui/Usenet.pyc
+%%MMDIR%%/Mailman/Gui/__init__.py
+%%MMDIR%%/Mailman/Gui/__init__.pyc
+%%MMDIR%%/Mailman/HTMLFormatter.py
+%%MMDIR%%/Mailman/HTMLFormatter.pyc
+%%MMDIR%%/Mailman/Handlers/Acknowledge.py
+%%MMDIR%%/Mailman/Handlers/Acknowledge.pyc
+%%MMDIR%%/Mailman/Handlers/AfterDelivery.py
+%%MMDIR%%/Mailman/Handlers/AfterDelivery.pyc
+%%MMDIR%%/Mailman/Handlers/Approve.py
+%%MMDIR%%/Mailman/Handlers/Approve.pyc
+%%MMDIR%%/Mailman/Handlers/AvoidDuplicates.py
+%%MMDIR%%/Mailman/Handlers/AvoidDuplicates.pyc
+%%MMDIR%%/Mailman/Handlers/CalcRecips.py
+%%MMDIR%%/Mailman/Handlers/CalcRecips.pyc
+%%MMDIR%%/Mailman/Handlers/Cleanse.py
+%%MMDIR%%/Mailman/Handlers/Cleanse.pyc
+%%MMDIR%%/Mailman/Handlers/CleanseDKIM.py
+%%MMDIR%%/Mailman/Handlers/CleanseDKIM.pyc
+%%MMDIR%%/Mailman/Handlers/CookHeaders.py
+%%MMDIR%%/Mailman/Handlers/CookHeaders.pyc
+%%MMDIR%%/Mailman/Handlers/Decorate.py
+%%MMDIR%%/Mailman/Handlers/Decorate.pyc
+%%MMDIR%%/Mailman/Handlers/Emergency.py
+%%MMDIR%%/Mailman/Handlers/Emergency.pyc
+%%MMDIR%%/Mailman/Handlers/FileRecips.py
+%%MMDIR%%/Mailman/Handlers/FileRecips.pyc
+%%MMDIR%%/Mailman/Handlers/Hold.py
+%%MMDIR%%/Mailman/Handlers/Hold.pyc
+%%MMDIR%%/Mailman/Handlers/MimeDel.py
+%%MMDIR%%/Mailman/Handlers/MimeDel.pyc
+%%MMDIR%%/Mailman/Handlers/Moderate.py
+%%MMDIR%%/Mailman/Handlers/Moderate.pyc
+%%MMDIR%%/Mailman/Handlers/OwnerRecips.py
+%%MMDIR%%/Mailman/Handlers/OwnerRecips.pyc
+%%MMDIR%%/Mailman/Handlers/Replybot.py
+%%MMDIR%%/Mailman/Handlers/Replybot.pyc
+%%MMDIR%%/Mailman/Handlers/SMTPDirect.py
+%%MMDIR%%/Mailman/Handlers/SMTPDirect.pyc
+%%MMDIR%%/Mailman/Handlers/Scrubber.py
+%%MMDIR%%/Mailman/Handlers/Scrubber.pyc
+%%MMDIR%%/Mailman/Handlers/Sendmail.py
+%%MMDIR%%/Mailman/Handlers/Sendmail.pyc
+%%MMDIR%%/Mailman/Handlers/SpamDetect.py
+%%MMDIR%%/Mailman/Handlers/SpamDetect.pyc
+%%MMDIR%%/Mailman/Handlers/Tagger.py
+%%MMDIR%%/Mailman/Handlers/Tagger.pyc
+%%MMDIR%%/Mailman/Handlers/ToArchive.py
+%%MMDIR%%/Mailman/Handlers/ToArchive.pyc
+%%MMDIR%%/Mailman/Handlers/ToDigest.py
+%%MMDIR%%/Mailman/Handlers/ToDigest.pyc
+%%MMDIR%%/Mailman/Handlers/ToOutgoing.py
+%%MMDIR%%/Mailman/Handlers/ToOutgoing.pyc
+%%MMDIR%%/Mailman/Handlers/ToUsenet.py
+%%MMDIR%%/Mailman/Handlers/ToUsenet.pyc
+%%MMDIR%%/Mailman/Handlers/WrapMessage.py
+%%MMDIR%%/Mailman/Handlers/WrapMessage.pyc
+%%MMDIR%%/Mailman/Handlers/__init__.py
+%%MMDIR%%/Mailman/Handlers/__init__.pyc
+%%MMDIR%%/Mailman/ListAdmin.py
+%%MMDIR%%/Mailman/ListAdmin.pyc
+%%MMDIR%%/Mailman/LockFile.py
+%%MMDIR%%/Mailman/LockFile.pyc
+%%MMDIR%%/Mailman/Logging/Logger.py
+%%MMDIR%%/Mailman/Logging/Logger.pyc
+%%MMDIR%%/Mailman/Logging/MultiLogger.py
+%%MMDIR%%/Mailman/Logging/MultiLogger.pyc
+%%MMDIR%%/Mailman/Logging/StampedLogger.py
+%%MMDIR%%/Mailman/Logging/StampedLogger.pyc
+%%MMDIR%%/Mailman/Logging/Syslog.py
+%%MMDIR%%/Mailman/Logging/Syslog.pyc
+%%MMDIR%%/Mailman/Logging/Utils.py
+%%MMDIR%%/Mailman/Logging/Utils.pyc
+%%MMDIR%%/Mailman/Logging/__init__.py
+%%MMDIR%%/Mailman/Logging/__init__.pyc
+%%MMDIR%%/Mailman/MTA/Manual.py
+%%MMDIR%%/Mailman/MTA/Manual.pyc
+%%MMDIR%%/Mailman/MTA/Postfix.py
+%%MMDIR%%/Mailman/MTA/Postfix.pyc
+%%MMDIR%%/Mailman/MTA/Utils.py
+%%MMDIR%%/Mailman/MTA/Utils.pyc
+%%MMDIR%%/Mailman/MTA/__init__.py
+%%MMDIR%%/Mailman/MTA/__init__.pyc
+%%MMDIR%%/Mailman/MailList.py
+%%MMDIR%%/Mailman/MailList.pyc
+%%MMDIR%%/Mailman/Mailbox.py
+%%MMDIR%%/Mailman/Mailbox.pyc
+%%MMDIR%%/Mailman/MemberAdaptor.py
+%%MMDIR%%/Mailman/MemberAdaptor.pyc
+%%MMDIR%%/Mailman/Message.py
+%%MMDIR%%/Mailman/Message.pyc
+%%MMDIR%%/Mailman/OldStyleMemberships.py
+%%MMDIR%%/Mailman/OldStyleMemberships.pyc
+%%MMDIR%%/Mailman/Pending.py
+%%MMDIR%%/Mailman/Pending.pyc
+%%MMDIR%%/Mailman/Post.py
+%%MMDIR%%/Mailman/Post.pyc
+%%MMDIR%%/Mailman/Queue/ArchRunner.py
+%%MMDIR%%/Mailman/Queue/ArchRunner.pyc
+%%MMDIR%%/Mailman/Queue/BounceRunner.py
+%%MMDIR%%/Mailman/Queue/BounceRunner.pyc
+%%MMDIR%%/Mailman/Queue/CommandRunner.py
+%%MMDIR%%/Mailman/Queue/CommandRunner.pyc
+%%MMDIR%%/Mailman/Queue/IncomingRunner.py
+%%MMDIR%%/Mailman/Queue/IncomingRunner.pyc
+%%MMDIR%%/Mailman/Queue/MaildirRunner.py
+%%MMDIR%%/Mailman/Queue/MaildirRunner.pyc
+%%MMDIR%%/Mailman/Queue/NewsRunner.py
+%%MMDIR%%/Mailman/Queue/NewsRunner.pyc
+%%MMDIR%%/Mailman/Queue/OutgoingRunner.py
+%%MMDIR%%/Mailman/Queue/OutgoingRunner.pyc
+%%MMDIR%%/Mailman/Queue/RetryRunner.py
+%%MMDIR%%/Mailman/Queue/RetryRunner.pyc
+%%MMDIR%%/Mailman/Queue/Runner.py
+%%MMDIR%%/Mailman/Queue/Runner.pyc
+%%MMDIR%%/Mailman/Queue/Switchboard.py
+%%MMDIR%%/Mailman/Queue/Switchboard.pyc
+%%MMDIR%%/Mailman/Queue/VirginRunner.py
+%%MMDIR%%/Mailman/Queue/VirginRunner.pyc
+%%MMDIR%%/Mailman/Queue/__init__.py
+%%MMDIR%%/Mailman/Queue/__init__.pyc
+%%MMDIR%%/Mailman/Queue/sbcache.py
+%%MMDIR%%/Mailman/Queue/sbcache.pyc
+%%MMDIR%%/Mailman/SafeDict.py
+%%MMDIR%%/Mailman/SafeDict.pyc
+%%MMDIR%%/Mailman/SecurityManager.py
+%%MMDIR%%/Mailman/SecurityManager.pyc
+%%MMDIR%%/Mailman/Site.py
+%%MMDIR%%/Mailman/Site.pyc
+%%MMDIR%%/Mailman/TopicMgr.py
+%%MMDIR%%/Mailman/TopicMgr.pyc
+%%MMDIR%%/Mailman/UserDesc.py
+%%MMDIR%%/Mailman/UserDesc.pyc
+%%MMDIR%%/Mailman/Utils.py
+%%MMDIR%%/Mailman/Utils.pyc
+%%MMDIR%%/Mailman/Version.py
+%%MMDIR%%/Mailman/Version.pyc
+%%MMDIR%%/Mailman/__init__.py
+%%MMDIR%%/Mailman/__init__.pyc
+%%MMDIR%%/Mailman/htmlformat.py
+%%MMDIR%%/Mailman/htmlformat.pyc
+%%MMDIR%%/Mailman/i18n.py
+%%MMDIR%%/Mailman/i18n.pyc
+@sample %%MMDIR%%/Mailman/mm_cfg.py.dist %%MMDIR%%/Mailman/mm_cfg.py
+%%MMDIR%%/Mailman/versions.py
+%%MMDIR%%/Mailman/versions.pyc
+%%MMDIR%%/bin/FreeBSD-post-install
+%%MMDIR%%/bin/add_members
+%%MMDIR%%/bin/arch
+%%MMDIR%%/bin/b4b5-archfix
+%%SUB_HTDIG%%%%MMDIR%%/bin/blow_away_htdig
+%%MMDIR%%/bin/change_pw
+%%MMDIR%%/bin/check_db
+%%MMDIR%%/bin/check_perms
+%%MMDIR%%/bin/cleanarch
+%%MMDIR%%/bin/clone_member
+%%MMDIR%%/bin/config_list
+%%MMDIR%%/bin/convert.py
+%%NLS%%%%MMDIR%%/bin/convert.pyc
+%%MMDIR%%/bin/discard
+%%MMDIR%%/bin/dumpdb
+%%MMDIR%%/bin/export.py
+%%NLS%%%%MMDIR%%/bin/export.pyc
+%%MMDIR%%/bin/find_member
+%%MMDIR%%/bin/fix_url.py
+%%NLS%%%%MMDIR%%/bin/fix_url.pyc
+%%MMDIR%%/bin/genaliases
+%%MMDIR%%/bin/inject
+%%MMDIR%%/bin/list_admins
+%%MMDIR%%/bin/list_lists
+%%MMDIR%%/bin/list_members
+%%MMDIR%%/bin/list_owners
+%%MMDIR%%/bin/mailman-config
+%%MMDIR%%/bin/mailmanctl
+%%MMDIR%%/bin/mmsitepass
+%%MMDIR%%/bin/msgfmt.py
+%%NLS%%%%MMDIR%%/bin/msgfmt.pyc
+%%MMDIR%%/bin/newlist
+%%MMDIR%%/bin/paths.py
+%%MMDIR%%/bin/paths.pyc
+%%MMDIR%%/bin/qrunner
+%%MMDIR%%/bin/rb-archfix
+%%MMDIR%%/bin/remove_members
+%%MMDIR%%/bin/reset_pw.py
+%%NLS%%%%MMDIR%%/bin/reset_pw.pyc
+%%MMDIR%%/bin/rmlist
+%%MMDIR%%/bin/show_qfiles
+%%MMDIR%%/bin/sync_members
+%%MMDIR%%/bin/transcheck
+%%MMDIR%%/bin/unshunt
+%%MMDIR%%/bin/update
+%%MMDIR%%/bin/version
+%%MMDIR%%/bin/withlist
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/admin
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/admindb
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/confirm
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/create
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/edithtml
+%%SUB_HTDIG%%@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/htdig
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/listinfo
+%%SUB_HTDIG%%@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/mmsearch
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/options
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/private
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/rmlist
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/roster
+@(,%%MM_GROUPNAME%%,2755) %%MMDIR%%/cgi-bin/subscribe
+%%MMDIR%%/cron/bumpdigests
+%%MMDIR%%/cron/checkdbs
+%%MMDIR%%/cron/crontab.in
+%%MMDIR%%/cron/cull_bad_shunt
+%%MMDIR%%/cron/disabled
+%%MMDIR%%/cron/gate_news
+%%MMDIR%%/cron/mailpasswds
+%%MMDIR%%/cron/nightly_gzip
+%%SUB_HTDIG%%%%MMDIR%%/cron/nightly_htdig
+@postunexec rm -f %%MMDIR%%/cron/paths.pyc
+%%MMDIR%%/cron/paths.py
+%%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig
+%%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig.pl
+%%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig_noshare
+%%SUB_HTDIG%%%%MMDIR%%/cron/rundig
+%%MMDIR%%/cron/senddigests
+%%MMDIR%%/data/sitelist.cfg
+%%MMDIR%%/icons/PythonPowered.png
+%%MMDIR%%/icons/gnu-head-tiny.jpg
+%%MMDIR%%/icons/mailman-large.jpg
+%%MMDIR%%/icons/mailman.jpg
+%%MMDIR%%/icons/mm-icon-large.ico
+%%MMDIR%%/icons/mm-icon.ico
+%%MMDIR%%/icons/mm-icon.png
+%%MMDIR%%/icons/powerlogo.png
+@(,,2755) %%MMDIR%%/mail/mailman
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ar
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ar/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ar/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ar/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ast
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ast/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ast/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ast/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ca
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ca/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ca/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ca/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/cs
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/cs/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/cs/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/cs/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/da
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/da/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/da/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/da/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/de
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/de/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/de/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/de/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/de/README.de
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/el
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/el/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/el/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/el/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/eo
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/eo/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/eo/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/eo/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/es
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/es/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/es/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/es/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/es/README.es
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/et
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/et/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/et/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/et/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/eu
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/eu/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/eu/README.eu
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/fa
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/fa/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/fa/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/fa/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/fi
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/fi/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/fi/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/fi/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/fi/README.fi
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/fr
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/fr/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/fr/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/fr/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/fr/README.fr
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/gl
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/gl/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/gl/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/gl/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/he
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/he/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/he/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/he/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/hr
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/hr/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/hr/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/hr/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/hu
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/hu/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/hu/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/hu/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/hu/README.hu
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ia
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ia/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ia/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ia/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/it
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/it/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/it/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/it/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/it/README.it
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ja
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ja/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ja/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ja/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ko
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ko/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ko/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ko/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/ko/README.ko
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/lt
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/lt/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/lt/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/lt/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/nl
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/nl/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/nl/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/nl/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/no
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/no/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/no/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/no/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/pl
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/pl/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/pl/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/pl/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/pl/README.pl
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/pt
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/pt/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/pt/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/pt/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/pt_BR
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/pt_BR/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/pt_BR/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/pt_BR/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ro
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ro/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ro/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ro/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ru
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/ru/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/ru/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/ru/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/ru/README.ru
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sk
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sk/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/sk/README.sk
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sl
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sl/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/sl/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/sl/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sr
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sr/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/sr/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/sr/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/sr/README.sr
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sv
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/sv/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/sv/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/sv/LC_MESSAGES/mailman.po
+%%NLS%%%%MMDIR%%/messages/sv/README.sv
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/tr
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/tr/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/tr/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/tr/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/uk
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/uk/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/uk/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/uk/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/vi
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/vi/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/vi/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/vi/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/zh_CN
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/zh_CN/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/zh_CN/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/zh_CN/LC_MESSAGES/mailman.po
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/zh_TW
+%%NLS%%@dir(,,0755) %%MMDIR%%/messages/zh_TW/LC_MESSAGES
+%%NLS%%%%MMDIR%%/messages/zh_TW/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/zh_TW/LC_MESSAGES/mailman.po
+%%MMDIR%%/scripts/admin
+%%MMDIR%%/scripts/bounces
+%%MMDIR%%/scripts/confirm
+%%MMDIR%%/scripts/driver
+%%MMDIR%%/scripts/join
+%%MMDIR%%/scripts/leave
+%%MMDIR%%/scripts/mailman
+%%MMDIR%%/scripts/owner
+%%MMDIR%%/scripts/paths.py
+%%MMDIR%%/scripts/post
+%%MMDIR%%/scripts/request
+%%MMDIR%%/scripts/subscribe
+%%MMDIR%%/scripts/unsubscribe
+@dir(,,755) %%MMDIR%%/templates
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ar
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ar/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ast
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/verify.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ast/subscribeack.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ca
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ca/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/cs
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/cs/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/da
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/da/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/de
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/adminaddrchgack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/de/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/el
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/el/verify.txt
+@dir(,,0755) %%MMDIR%%/templates/en
+%%SUB_HTDIG%%@(,,644) %%MMDIR%%/templates/en/htdig.html
+%%SUB_HTDIG%%@(,,644) %%MMDIR%%/templates/en/TOC_htsearch.html
+@(,,644) %%MMDIR%%/templates/en/adminaddrchgack.txt
+@(,,644) %%MMDIR%%/templates/en/admindbdetails.html
+@(,,644) %%MMDIR%%/templates/en/admindbpreamble.html
+@(,,644) %%MMDIR%%/templates/en/admindbsummary.html
+@(,,644) %%MMDIR%%/templates/en/adminsubscribeack.txt
+@(,,644) %%MMDIR%%/templates/en/adminunsubscribeack.txt
+@(,,644) %%MMDIR%%/templates/en/admlogin.html
+@(,,644) %%MMDIR%%/templates/en/approve.txt
+@(,,644) %%MMDIR%%/templates/en/archidxentry.html
+@(,,644) %%MMDIR%%/templates/en/archidxfoot.html
+@(,,644) %%MMDIR%%/templates/en/archidxhead.html
+@(,,644) %%MMDIR%%/templates/en/archlistend.html
+@(,,644) %%MMDIR%%/templates/en/archliststart.html
+@(,,644) %%MMDIR%%/templates/en/archtoc.html
+@(,,644) %%MMDIR%%/templates/en/archtocentry.html
+@(,,644) %%MMDIR%%/templates/en/archtocnombox.html
+@(,,644) %%MMDIR%%/templates/en/article.html
+@(,,644) %%MMDIR%%/templates/en/bounce.txt
+@(,,644) %%MMDIR%%/templates/en/checkdbs.txt
+@(,,644) %%MMDIR%%/templates/en/convert.txt
+@(,,644) %%MMDIR%%/templates/en/cronpass.txt
+@(,,644) %%MMDIR%%/templates/en/disabled.txt
+@(,,644) %%MMDIR%%/templates/en/emptyarchive.html
+@(,,644) %%MMDIR%%/templates/en/headfoot.html
+@(,,644) %%MMDIR%%/templates/en/help.txt
+%%SUB_HTDIG%%@(,,644) %%MMDIR%%/templates/en/htdig_access_error.html
+%%SUB_HTDIG%%@(,,644) %%MMDIR%%/templates/en/htdig_auth_failure.html
+%%SUB_HTDIG%%@(,,644) %%MMDIR%%/templates/en/htdig_conf.txt
+@(,,644) %%MMDIR%%/templates/en/invite.txt
+@(,,644) %%MMDIR%%/templates/en/listinfo.html
+@(,,644) %%MMDIR%%/templates/en/masthead.txt
+@(,,644) %%MMDIR%%/templates/en/newlist.txt
+@(,,644) %%MMDIR%%/templates/en/nomoretoday.txt
+@(,,644) %%MMDIR%%/templates/en/options.html
+@(,,644) %%MMDIR%%/templates/en/postack.txt
+@(,,644) %%MMDIR%%/templates/en/postauth.txt
+@(,,644) %%MMDIR%%/templates/en/postheld.txt
+@(,,644) %%MMDIR%%/templates/en/private.html
+@(,,644) %%MMDIR%%/templates/en/probe.txt
+@(,,644) %%MMDIR%%/templates/en/refuse.txt
+@(,,644) %%MMDIR%%/templates/en/roster.html
+@(,,644) %%MMDIR%%/templates/en/subauth.txt
+@(,,644) %%MMDIR%%/templates/en/subscribe.html
+@(,,644) %%MMDIR%%/templates/en/subscribeack.txt
+@(,,644) %%MMDIR%%/templates/en/unsub.txt
+@(,,644) %%MMDIR%%/templates/en/unsubauth.txt
+@(,,644) %%MMDIR%%/templates/en/userpass.txt
+@(,,644) %%MMDIR%%/templates/en/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/eo
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eo/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/es
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/handle_opts.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/verify.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/es/probe.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/et
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/et/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/eu
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/eu/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/fa
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fa/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/fi
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fi/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/fr
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/handle_opts.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/fr/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/gl
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/handle_opts.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/gl/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/he
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/he/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/hr
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hr/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/hu
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/illik.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/hu/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ia
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/adminaddrchgack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/verify.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ia/probe.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/it
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/verify.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/it/probe.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ja
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/adminaddrchgack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ja/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ko
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ko/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/lt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/lt/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/nl
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/nl/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/no
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/no/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/pl
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pl/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/pt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/pt_BR
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/pt_BR/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ro
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ro/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/ru
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/adminaddrchgack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/ru/verify.txt
+@dir(,,0755) %%MMDIR%%/templates/site
+@dir(,,0755) %%MMDIR%%/templates/site/en
+@(,,0644) %%MMDIR%%/templates/site/README.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/sk
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sk/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/sl
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sl/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/sr
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/handle_opts.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sr/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/sv
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/sv/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/tr
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/tr/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/uk
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/uk/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/vi
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/vi/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/zh_CN
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/admindbdetails.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/admindbsummary.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archidxentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archidxfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archidxhead.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archlistend.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archliststart.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archtoc.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archtocentry.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/archtocnombox.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/article.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/disabled.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/emptyarchive.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/invite.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/nomoretoday.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/private.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/probe.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/unsub.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/unsubauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_CN/verify.txt
+%%NLS%%@dir(,,0755) %%MMDIR%%/templates/zh_TW
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/admindbpreamble.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/adminsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/adminunsubscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/admlogin.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/approve.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/bounce.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/checkdbs.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/convert.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/cronpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/handle_opts.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/headfoot.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/help.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/listinfo.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/masthead.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/newlist.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/options.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/postack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/postauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/postheld.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/refuse.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/roster.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/subauth.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/subscribe.html
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/subscribeack.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/userpass.txt
+%%NLS%%@(,,644) %%MMDIR%%/templates/zh_TW/verify.txt
+%%MMDIR%%/tests/EmailBase.py
+%%MMDIR%%/tests/TestBase.py
+%%MMDIR%%/tests/bounces/aol_01.txt
+%%MMDIR%%/tests/bounces/bounce_01.txt
+%%MMDIR%%/tests/bounces/bounce_02.txt
+%%MMDIR%%/tests/bounces/bounce_03.txt
+%%MMDIR%%/tests/bounces/dsn_01.txt
+%%MMDIR%%/tests/bounces/dsn_02.txt
+%%MMDIR%%/tests/bounces/dsn_03.txt
+%%MMDIR%%/tests/bounces/dsn_04.txt
+%%MMDIR%%/tests/bounces/dsn_05.txt
+%%MMDIR%%/tests/bounces/dsn_06.txt
+%%MMDIR%%/tests/bounces/dsn_07.txt
+%%MMDIR%%/tests/bounces/dsn_08.txt
+%%MMDIR%%/tests/bounces/dsn_09.txt
+%%MMDIR%%/tests/bounces/dsn_10.txt
+%%MMDIR%%/tests/bounces/dsn_11.txt
+%%MMDIR%%/tests/bounces/dsn_12.txt
+%%MMDIR%%/tests/bounces/dsn_13.txt
+%%MMDIR%%/tests/bounces/dsn_14.txt
+%%MMDIR%%/tests/bounces/dsn_15.txt
+%%MMDIR%%/tests/bounces/dsn_16.txt
+%%MMDIR%%/tests/bounces/dsn_17.txt
+%%MMDIR%%/tests/bounces/dsn_18.txt
+%%MMDIR%%/tests/bounces/dumbass_01.txt
+%%MMDIR%%/tests/bounces/exim_01.txt
+%%MMDIR%%/tests/bounces/groupwise_01.txt
+%%MMDIR%%/tests/bounces/groupwise_02.txt
+%%MMDIR%%/tests/bounces/groupwise_03.txt
+%%MMDIR%%/tests/bounces/hotpop_01.txt
+%%MMDIR%%/tests/bounces/llnl_01.txt
+%%MMDIR%%/tests/bounces/microsoft_01.txt
+%%MMDIR%%/tests/bounces/microsoft_02.txt
+%%MMDIR%%/tests/bounces/microsoft_03.txt
+%%MMDIR%%/tests/bounces/netscape_01.txt
+%%MMDIR%%/tests/bounces/newmailru_01.txt
+%%MMDIR%%/tests/bounces/postfix_01.txt
+%%MMDIR%%/tests/bounces/postfix_02.txt
+%%MMDIR%%/tests/bounces/postfix_03.txt
+%%MMDIR%%/tests/bounces/postfix_04.txt
+%%MMDIR%%/tests/bounces/postfix_05.txt
+%%MMDIR%%/tests/bounces/qmail_01.txt
+%%MMDIR%%/tests/bounces/qmail_02.txt
+%%MMDIR%%/tests/bounces/qmail_03.txt
+%%MMDIR%%/tests/bounces/qmail_04.txt
+%%MMDIR%%/tests/bounces/qmail_05.txt
+%%MMDIR%%/tests/bounces/qmail_06.txt
+%%MMDIR%%/tests/bounces/qmail_07.txt
+%%MMDIR%%/tests/bounces/qmail_08.txt
+%%MMDIR%%/tests/bounces/sendmail_01.txt
+%%MMDIR%%/tests/bounces/simple_01.txt
+%%MMDIR%%/tests/bounces/simple_02.txt
+%%MMDIR%%/tests/bounces/simple_03.txt
+%%MMDIR%%/tests/bounces/simple_04.txt
+%%MMDIR%%/tests/bounces/simple_05.txt
+%%MMDIR%%/tests/bounces/simple_06.txt
+%%MMDIR%%/tests/bounces/simple_07.txt
+%%MMDIR%%/tests/bounces/simple_08.txt
+%%MMDIR%%/tests/bounces/simple_09.txt
+%%MMDIR%%/tests/bounces/simple_10.txt
+%%MMDIR%%/tests/bounces/simple_11.txt
+%%MMDIR%%/tests/bounces/simple_12.txt
+%%MMDIR%%/tests/bounces/simple_13.txt
+%%MMDIR%%/tests/bounces/simple_14.txt
+%%MMDIR%%/tests/bounces/simple_15.txt
+%%MMDIR%%/tests/bounces/simple_16.txt
+%%MMDIR%%/tests/bounces/simple_17.txt
+%%MMDIR%%/tests/bounces/simple_18.txt
+%%MMDIR%%/tests/bounces/simple_19.txt
+%%MMDIR%%/tests/bounces/simple_20.txt
+%%MMDIR%%/tests/bounces/simple_21.txt
+%%MMDIR%%/tests/bounces/simple_22.txt
+%%MMDIR%%/tests/bounces/simple_23.txt
+%%MMDIR%%/tests/bounces/simple_24.txt
+%%MMDIR%%/tests/bounces/simple_25.txt
+%%MMDIR%%/tests/bounces/simple_26.txt
+%%MMDIR%%/tests/bounces/simple_27.txt
+%%MMDIR%%/tests/bounces/simple_28.txt
+%%MMDIR%%/tests/bounces/simple_29.txt
+%%MMDIR%%/tests/bounces/simple_30.txt
+%%MMDIR%%/tests/bounces/simple_31.txt
+%%MMDIR%%/tests/bounces/simple_32.txt
+%%MMDIR%%/tests/bounces/simple_33.txt
+%%MMDIR%%/tests/bounces/simple_34.txt
+%%MMDIR%%/tests/bounces/simple_35.txt
+%%MMDIR%%/tests/bounces/simple_36.txt
+%%MMDIR%%/tests/bounces/simple_37.txt
+%%MMDIR%%/tests/bounces/simple_38.txt
+%%MMDIR%%/tests/bounces/simple_39.txt
+%%MMDIR%%/tests/bounces/simple_40.txt
+%%MMDIR%%/tests/bounces/simple_41.txt
+%%MMDIR%%/tests/bounces/simple_44.txt
+%%MMDIR%%/tests/bounces/sina_01.txt
+%%MMDIR%%/tests/bounces/smtp32_01.txt
+%%MMDIR%%/tests/bounces/smtp32_02.txt
+%%MMDIR%%/tests/bounces/smtp32_03.txt
+%%MMDIR%%/tests/bounces/smtp32_04.txt
+%%MMDIR%%/tests/bounces/smtp32_05.txt
+%%MMDIR%%/tests/bounces/smtp32_06.txt
+%%MMDIR%%/tests/bounces/smtp32_07.txt
+%%MMDIR%%/tests/bounces/yahoo_01.txt
+%%MMDIR%%/tests/bounces/yahoo_02.txt
+%%MMDIR%%/tests/bounces/yahoo_03.txt
+%%MMDIR%%/tests/bounces/yahoo_04.txt
+%%MMDIR%%/tests/bounces/yahoo_05.txt
+%%MMDIR%%/tests/bounces/yahoo_06.txt
+%%MMDIR%%/tests/bounces/yahoo_07.txt
+%%MMDIR%%/tests/bounces/yahoo_08.txt
+%%MMDIR%%/tests/bounces/yahoo_09.txt
+%%MMDIR%%/tests/bounces/yahoo_10.txt
+%%MMDIR%%/tests/bounces/yahoo_11.txt
+%%MMDIR%%/tests/bounces/yahoo_12.txt
+%%MMDIR%%/tests/bounces/yale_01.txt
+%%MMDIR%%/tests/fblast.py
+%%MMDIR%%/tests/msgs/bad_01.txt
+%%MMDIR%%/tests/onebounce.py
+%%MMDIR%%/tests/paths.py
+%%MMDIR%%/tests/test_bounces.py
+%%MMDIR%%/tests/test_handlers.py
+%%MMDIR%%/tests/test_lockfile.py
+%%MMDIR%%/tests/test_membership.py
+%%MMDIR%%/tests/test_message.py
+%%MMDIR%%/tests/test_runners.py
+%%MMDIR%%/tests/test_safedict.py
+%%MMDIR%%/tests/test_security_mgr.py
+%%MMDIR%%/tests/test_smtp.py
+%%MMDIR%%/tests/testall.py
+@(root,wheel,644) %%PYTHON_SITELIBDIR%%/mailman-info.txt
+@dir(,,755) %%MMDIR%%/tests/msgs
+@dir(,,755) %%MMDIR%%/tests/bounces
+@dir(,,755) %%MMDIR%%/tests
+@dir(,,755) %%MMDIR%%/scripts
+@dir(,,755) %%MMDIR%%/mail
+@dir(,,755) %%MMDIR%%/icons
+@dir(,,755) %%MMDIR%%/cron
+@dir %%MMDIR%%/pythonlib
+@dir(,,755) %%MMDIR%%/cgi-bin
+@dir(,,755) %%MMDIR%%/bin
+@dir(,,755) %%MMDIR%%/Mailman/Queue
+@dir(,,755) %%MMDIR%%/Mailman/MTA
+@dir(,,755) %%MMDIR%%/Mailman/Logging
+@dir(,,755) %%MMDIR%%/Mailman/Handlers
+@dir(,,755) %%MMDIR%%/Mailman/Gui
+@dir(,,755) %%MMDIR%%/Mailman/Commands
+@dir(,,755) %%MMDIR%%/Mailman/Cgi
+@dir(,,755) %%MMDIR%%/Mailman/Bouncers
+@dir(,,755) %%MMDIR%%/Mailman/Archiver
+@dir(,,755) %%IMGDIR%%
+@dir %%MMDIR%%/spam
+@dir %%MMDIR%%/qfiles
+@dir %%MMDIR%%/logs
+@dir %%MMDIR%%/locks
+@dir %%MMDIR%%/lists
+@dir %%MMDIR%%/data
+@dir %%MMDIR%%/archives/public
+@comment XXX next line commented out because user may have set 02770 or 02771 XXX
+@comment XXX the package cannot "do the right thing" here XXX - do it symbolically
+@comment @dir(,,2771) %%MMDIR%%/archives/private
+@postexec d="%D/%%MMDIR%%/archives/private";test -d "$d"||/bin/mkdir "$d";chmod u=rwx,g=rws,o-rw "$d"
+%%SUB_HTDIG%%@dir %%MMDIR%%/archives/htdig
+@dir(,,755) %%MMDIR%%/archives
+@dir(,,755) %%MMDIR%%/Mailman
+@group
+@dir(,,755) %%MMDIR%%

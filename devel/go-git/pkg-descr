@@ -1,0 +1,8 @@
+go-git is a highly extensible git implementation library written in pure
+Go.  It can be used to manipulate git repositories at low level
+(plumbing) or high level (porcelain), through an idiomatic Go API. It
+also supports several types of storage, such as in-memory filesystems,
+or custom implementations, thanks to the Storer interface.
+
+It's being actively developed since 2015 and is being used extensively
+by Keybase, Gitea or Pulumi, and by many other libraries and tools.

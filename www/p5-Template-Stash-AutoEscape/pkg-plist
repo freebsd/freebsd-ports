@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Template/Stash/AutoEscape.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/Escaped/Base.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/Escaped/HTML.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/Escaped/YourCode.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/RawString.pm
+%%PERL5_MAN3%%/Template::Stash::AutoEscape.3.gz

@@ -1,0 +1,14 @@
+--- Makefile.am.orig	Wed Mar 14 18:18:08 2007
++++ Makefile.am	Wed Mar 14 18:18:45 2007
+@@ -24,9 +24,9 @@
+ endif
+ 
+ INCLUDES = -I/usr/local/include -I.
+-LDFLAGS = -L/usr/local/lib $(LIBDIRS)
++AM_LDFLAGS = -L/usr/local/lib $(LIBDIRS)
+ LDADD = $(SLIBS) $(MYLIBS)
+-CXXFLAGS = -DDATADIR="\"$(datadir)\"" $(SCXXFLAGS) $(CCXXFLAGS) $(DCXXFLAGS)
++AM_CXXFLAGS = -DDATADIR="\"$(datadir)\"" $(SCXXFLAGS) $(CCXXFLAGS) $(DCXXFLAGS)
+ 
+ bin_PROGRAMS = atr3d
+ atr3d_SOURCES = asteroid.cpp blit.cpp config.cpp fileutils.cpp game.cpp \

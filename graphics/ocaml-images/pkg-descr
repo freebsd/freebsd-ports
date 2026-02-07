@@ -1,0 +1,5 @@
+This is an image processing library, which provides some basic functions of
+image processing and loading/saving various image file formats. In addition
+the library can handle huge images that cannot be (or can hardly be) stored
+into the memory (the library automatically creates swap files and escapes
+them to reduce the memory usage).

@@ -1,0 +1,11 @@
+--- src/meson.build.orig	2022-07-03 15:57:51 UTC
++++ src/meson.build
+@@ -68,7 +68,7 @@ extra_cflags = cc.get_supported_arguments([
+ 	'-DBXF_STATIC_LIB=1',
+ ])
+ 
+-libboxfort = static_library('boxfort', sources,
++libboxfort = shared_library('boxfort', sources,
+ 	include_directories: [boxfort_includedir],
+ 	dependencies: deps,
+ 	install: not meson.is_subproject(),

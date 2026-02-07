@@ -1,0 +1,11 @@
+--- DevIL/src-ILU/CMakeLists.txt.orig	2017-01-01 23:37:37 UTC
++++ DevIL/src-ILU/CMakeLists.txt
+@@ -44,6 +44,8 @@ source_group("Resource Files" FILES ${ILU_RSRC} )
+ 
+ # Remove SHARED to create a static library
+ add_library(ILU SHARED ${ILU_SRCS} ${ILU_INC} ${ILU_RSRC})
++set_target_properties(ILU PROPERTIES SOVERSION 1)
++set_target_properties(ILU PROPERTIES VERSION 1.1.0)
+ 
+ 
+ ## ILU requires IL

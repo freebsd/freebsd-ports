@@ -1,0 +1,11 @@
+--- MANIFEST.orig	Tue Mar  9 18:33:01 2004
++++ MANIFEST	Sat Mar 13 13:09:43 2004
+@@ -13,8 +13,6 @@
+ lib/Pancho/Plugins/DellPowerConnect.pm
+ lib/Pancho/Plugins/Foundry.pm
+ lib/Pancho/Plugins/Passport.pm
+-lib/Pancho/Plugins/Plugin.sample
+-lib/Pancho/Plugins/README
+ lib/Pancho/Snmp.pm
+ lib/Pancho/Util.pm
+ license/COPYRIGHT

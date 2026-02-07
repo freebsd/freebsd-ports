@@ -1,0 +1,3 @@
+PyQt6-DataVisualization is a set of Python bindings for The Qt Company's
+Qt Data Visualization library. The bindings sit on top of PyQt6 and are
+implemented as a single module.

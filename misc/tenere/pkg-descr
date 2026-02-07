@@ -1,0 +1,14 @@
+Tenere is a TUI interface for LLMs written in Rust.
+
+Featues:
+- Syntax highlights
+- Chat history
+- Save chats to files
+- Vim keybinding (most common ops)
+- Copy text from/to clipboard (works only on the prompt)
+- Multiple backends
+
+Supported LLMs:
+- ChatGPT
+- llama.cpp
+- ollama

@@ -1,0 +1,3 @@
+Backend daemon for Kleene, a modern FreeBSD-native container management tool.
+Extensive documentation is available at https://kleene.dev/ and community
+via #kleene IRC channel on https://libera.chat/ .

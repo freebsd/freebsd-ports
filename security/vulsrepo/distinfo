@@ -1,0 +1,5 @@
+TIMESTAMP = 1708504074
+SHA256 (go/security_vulsrepo/ishiDACo-vulsrepo-v0.7.1_GH0/go.mod) = 9edbb81a8563d5e37ec776fb3ae0fbab4b744b3f4943bcff15098acce3b1edb6
+SIZE (go/security_vulsrepo/ishiDACo-vulsrepo-v0.7.1_GH0/go.mod) = 247
+SHA256 (go/security_vulsrepo/ishiDACo-vulsrepo-v0.7.1_GH0/ishiDACo-vulsrepo-v0.7.1_GH0.tar.gz) = dc027c95fb35ba0cc7a02abf939109deafa7c6b20d7112900f8849ccec4b53ad
+SIZE (go/security_vulsrepo/ishiDACo-vulsrepo-v0.7.1_GH0/ishiDACo-vulsrepo-v0.7.1_GH0.tar.gz) = 15285568

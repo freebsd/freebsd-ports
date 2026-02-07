@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-02-02 21:14:55 UTC
++++ configure.ac
+@@ -143,7 +143,7 @@ NOTES
+    exit 1
+ fi
+ 
+-AC_CONFIG_FILES([Makefile bin/Makefile doc/Makefile htdocs/Makefile etc/Makefile lib/Makefile thirdparty/Makefile etc/config.dist])
++AC_CONFIG_FILES([Makefile bin/Makefile doc/Makefile htdocs/Makefile etc/Makefile lib/Makefile thirdparty/Makefile etc/config.sample])
+ 
+ AC_SUBST(VERSION)
+ 

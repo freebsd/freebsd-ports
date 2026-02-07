@@ -1,0 +1,11 @@
+--- include/meson.build.orig	2022-07-12 13:27:57.000000000 +0000
++++ include/meson.build	2022-08-09 00:48:12.688887000 +0000
+@@ -377,7 +377,7 @@
+ xorg_data.set('HAVE_SYS_VT_H', cc.has_header('sys/vt.h') ? '1' : false)
+ 
+ if host_machine.system() == 'freebsd' or host_machine.system() == 'dragonfly'
+-    if host_machine.cpu_family() == 'x86' or host_machine.cpu_family() == 'x86_64'
++    if host_machine.cpu_family() == 'x86' or host_machine.cpu_family() == 'x86_64' or host_machine.cpu_family() == 'aarch64' or host_machine.cpu_family() == 'arm'
+         xorg_data.set('USE_DEV_IO', '1')
+     endif
+ elif host_machine.system() == 'netbsd'

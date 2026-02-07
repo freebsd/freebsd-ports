@@ -1,0 +1,4 @@
+This module provides access to most of the OpenGL 1.0, 1.1, and 1.2 APIs.
+Some amount of GLU is supported (I'm not quite sure what version it works
+out to), and GLUT should be completely supported up to API version 3. A
+small portion of GLX and X11 is supported, as an alternative to GLUT.

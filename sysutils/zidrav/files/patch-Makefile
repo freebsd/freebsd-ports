@@ -1,0 +1,17 @@
+--- Makefile.orig	Mon Mar 31 02:35:26 2003
++++ Makefile	Tue Jul 15 12:49:41 2003
+@@ -1,11 +1,11 @@
+ zidrav: zidrav.cpp flayer.o core.o flayer.h
+-	g++ -O2 -Wall -o zidrav zidrav.cpp flayer.o core.o
++	$(CXX) $(CFLAGS) -o zidrav zidrav.cpp flayer.o core.o
+ 	
+ flayer.o: flayer.cpp core.h
+-	g++ -O2 -Wall -c flayer.cpp
++	$(CXX) $(CFLAGS) -c flayer.cpp
+ 
+ core.o: core.cpp core.h
+-	g++ -O2 -Wall -c core.cpp
++	$(CXX) $(CFLAGS) -c core.cpp
+ 
+ .PHONY:
+ clean:

@@ -1,0 +1,10 @@
+--- man/meson.build.orig	2022-02-16 15:35:10 UTC
++++ man/meson.build
+@@ -1,6 +1,6 @@
+ xsltproc = find_program('xsltproc')
+ 
+-stylesheet_url = 'http://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl'
++stylesheet_url = '@@DOCBOOK_MANPAGE_XSL@@'
+ ret = run_command(xsltproc, '--nonet', stylesheet_url)
+ if ret.returncode() != 0
+   error('Cannot build man pages without docbook-xsl-ns')

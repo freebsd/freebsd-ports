@@ -1,0 +1,62 @@
+--- share/pnp/application/controllers/pdf.php.orig	2012-05-25 13:14:03.968357306 +0200
++++ share/pnp/application/controllers/pdf.php	2012-05-25 13:15:02.528359378 +0200
+@@ -10,6 +10,7 @@
+ 
+     public function __construct(){
+         parent::__construct();
++	exit;
+ 
+         $this->use_bg           = 0;
+         $this->bg               = $this->config->conf['background_pdf'];
+@@ -34,6 +35,7 @@
+     }
+ 
+     public function index(){
++	exit;
+ 
+         $this->tpl       = $this->input->get('tpl');
+         $this->view      = "";
+@@ -141,6 +143,7 @@
+     }
+ 
+     public function page($page){
++	exit;
+         $this->start     = $this->input->get('start');
+         $this->end       = $this->input->get('end');
+         $this->view      = "";
+@@ -203,6 +206,7 @@
+     }
+ 
+     public function basket(){
++	exit;
+         $this->start     = $this->input->get('start');
+         $this->end       = $this->input->get('end');
+         $this->view      = "";
+--- share/pnp/application/models/rrdtool.php.orig	2012-05-25 13:16:39.002532608 +0200
++++ share/pnp/application/models/rrdtool.php	2012-05-25 13:17:02.170472975 +0200
+@@ -79,6 +79,7 @@
+         $width = 0;
+         $height = 0;
+         if ($out == 'PDF'){
++	    exit;
+             if($conf['pdf_graph_opt']){
+                 $command .= $conf['pdf_graph_opt'];
+             }
+--- share/pnp/application/views/icon_box.php.orig	2012-05-25 13:15:31.817359837 +0200
++++ share/pnp/application/views/icon_box.php	2012-05-25 13:16:21.953358137 +0200
+@@ -9,15 +9,6 @@
+ if($this->config->conf['use_calendar']){
+ 	echo "<a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\"><img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a>"; 
+ }
+-if($this->config->conf['use_fpdf'] == 1 && ( $position == "graph" || $position == "special") ){
+-	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
+-}
+-if($this->config->conf['use_fpdf'] == 1 && $position == "basket"){
+-	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/basket/".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
+-}
+-if($this->config->conf['use_fpdf'] == 1 && $position == "page"){
+-	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/page/".$this->page.$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
+-}
+ if($this->config->conf['show_xml_icon'] == 1 && $position == "graph" && $xml_icon == TRUE){
+ 	$qsa  = pnp::addToUri(array(), False);
+ 	echo "<a title=\"".Kohana::lang('common.title-xml-link')."\" href=\"".url::base(TRUE)."xml".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/xml.png\"></a>\n";

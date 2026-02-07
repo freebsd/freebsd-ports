@@ -1,0 +1,5 @@
+@dir(%%USER%%,%%GROUP%%,0700) /var/db/nginx-ui
+@sample(%%USER%%,%%GROUP%%,0640) /var/db/nginx-ui/app.ini.sample
+%%DATADIR%%/nginx-ui.conf
+%%DATADIR%%/nginx.conf
+bin/nginx-ui

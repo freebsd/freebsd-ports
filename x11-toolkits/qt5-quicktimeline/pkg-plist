@@ -1,0 +1,4 @@
+%%QT_QMLDIR%%/QtQuick/Timeline/libqtquicktimelineplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Timeline/libqtquicktimelineplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/Timeline/plugins.qmltypes
+%%QT_QMLDIR%%/QtQuick/Timeline/qmldir

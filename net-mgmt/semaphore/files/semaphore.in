@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: semaphore
+# REQUIRE: mysql
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=semaphore
+rcvar=semaphore_enable
+
+load_rc_config ${name}
+
+: ${semaphore_enable:="NO"}
+: ${semaphore_config="%%PREFIX%%/etc/semaphore/semaphore_config.json"}
+
+export PATH=${PATH}:%%PREFIX%%/bin
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/semaphore"
+command="/usr/sbin/daemon"
+command_args="-f -c -p ${pidfile} /usr/bin/env ${semaphore_env} ${procname} -config \"${semaphore_config}\""
+
+run_rc_command "$1"

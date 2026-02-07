@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: valkeysentinel
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `valkeysentinel':
+#
+#valkeysentinel_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="valkeysentinel"
+rcvar="${name}_enable"
+
+command="/usr/local/bin/valkey-sentinel"
+pidfile="/var/run/valkey/valkey-sentinel.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${valkeysentinel_enable="NO"}
+: ${valkeysentinel_user="valkey"}
+: ${valkeysentinel_config="/usr/local/etc/valkey-sentinel.conf"}
+
+command_args="${valkeysentinel_config} --daemonize yes --pidfile ${pidfile}"
+required_files="${valkeysentinel_config}"
+start_precmd="valkeysentinel_checks"
+restart_precmd="valkeysentinel_checks"
+
+valkeysentinel_checks()
+{
+    if [ x`id -u ${valkeysentinel_user}` != x`stat -f %u ${valkeysentinel_config}` ]; then
+	err 1 "${valkeysentinel_config} must be owned by user ${valkeysentinel_user}"
+    fi
+}
+
+run_rc_command "$1"

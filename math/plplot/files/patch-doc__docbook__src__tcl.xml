@@ -1,0 +1,20 @@
+--- doc/docbook/src/tcl.xml.orig	2019-06-01 23:24:33 UTC
++++ doc/docbook/src/tcl.xml
+@@ -755,7 +755,7 @@ Combination of previously defined matrices, deep lists
+ 	if (pm->fdata[i] > max)
+ 	max = pm->fdata[i];
+ 
+-	sprintf( interp->result, "%f", max );
++	sprintf( Tcl_GetStringResult(interp), "%f", max );
+ 	return TCL_OK;
+ 	}
+ 
+@@ -768,7 +768,7 @@ Combination of previously defined matrices, deep lists
+ 	if (pm->fdata[i] &lt; min)
+ 	min = pm->fdata[i];
+ 
+-	sprintf( interp->result, "%f", min );
++	sprintf( Tcl_GetStringResult(interp), "%f", min );
+ 	return TCL_OK;
+ 	}
+       </programlisting>

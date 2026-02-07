@@ -1,0 +1,2 @@
+Tools for converting encoding of Czech (and Slovak) texts.
+Provides console program cstocs and Perl module Cz::Cstocs.

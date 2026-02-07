@@ -1,0 +1,15 @@
+%%SITE_ARCH%%/File/FcntlLock.pm
+%%SITE_ARCH%%/auto/File/FcntlLock/FcntlLock.so
+%%SITE_ARCH%%/File/FcntlLock.pod
+%%SITE_ARCH%%/File/FcntlLock/Core.pm
+%%SITE_ARCH%%/File/FcntlLock/Errors.pm
+%%SITE_ARCH%%/File/FcntlLock/Inline.pm
+%%SITE_ARCH%%/File/FcntlLock/Inline.pod
+%%SITE_ARCH%%/File/FcntlLock/Pure.pm
+%%SITE_ARCH%%/File/FcntlLock/Pure.pod
+%%SITE_ARCH%%/File/FcntlLock/XS.pm
+%%SITE_ARCH%%/File/FcntlLock/XS.pod
+%%PERL5_MAN3%%/File::FcntlLock.3.gz
+%%PERL5_MAN3%%/File::FcntlLock::Inline.3.gz
+%%PERL5_MAN3%%/File::FcntlLock::Pure.3.gz
+%%PERL5_MAN3%%/File::FcntlLock::XS.3.gz

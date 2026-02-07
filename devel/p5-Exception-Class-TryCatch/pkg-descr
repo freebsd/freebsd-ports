@@ -1,0 +1,2 @@
+Exception::Class::TryCatch - Syntactic try/catch sugar for use with
+Exception::Class.

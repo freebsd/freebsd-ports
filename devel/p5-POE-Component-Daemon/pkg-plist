@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/POE::Component::Daemon.3.gz
+%%SITE_PERL%%/POE/Component/Daemon.pm
+%%SITE_PERL%%/POE/Component/Daemon/Scoreboard.pm
+%%SITE_PERL%%/POE/Component/Daemon/ScoreboardSemaphore.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/forking
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/preforking

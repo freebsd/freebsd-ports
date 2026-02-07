@@ -1,0 +1,15 @@
+Unbreak build with GCC >= 8
+
+conftest.cpp:11:36: error: return-statement with a value, in function returning 'void' 
+
+--- configure.orig	2018-10-30 17:53:07 UTC
++++ configure
+@@ -17744,7 +17744,7 @@ if ac_fn_cxx_try_run "$LINENO"; then :
+ #define ARGF f
+ #endif
+ template<typename ARG>
+-  void detect_type(ARG)
++  int detect_type(ARG)
+   {
+     return reinterpret_cast<ARG*>(0);
+   }

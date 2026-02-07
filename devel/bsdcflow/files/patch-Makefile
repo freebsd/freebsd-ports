@@ -1,0 +1,22 @@
+--- Makefile.orig	2010-04-03 09:52:16 UTC
++++ Makefile
+@@ -67,11 +67,11 @@ clean:
+ 	$(RM) $(CFLOWMAN).gz $(CMAN).gz $(ASMMAN).gz
+ 
+ install: mkdirs build
+-	$(INSTALL) -d $(PREFIX)/bin
+-	$(INSTALL) -c -m 0755 $(CFLOW) $(PREFIX)/bin/$(CFLOW)
+-	$(INSTALL) -c -m 0755 $(ASMPROG) $(PREFIX)/bin/$(ASMPROG)
+-	$(INSTALL) -c -m 0755 $(CPROG) $(PREFIX)/bin/$(CPROG)
+-	$(INSTALL) -d $(MAN1DIR)
+-	$(INSTALL) -c -m 0644 $(CFLOWMAN).gz $(MAN1DIR)/$(CFLOWMAN).gz
+-	$(INSTALL) -c -m 0644 $(ASMMAN).gz $(MAN1DIR)/$(ASMMAN).gz
+-	$(INSTALL) -c -m 0644 $(CMAN).gz $(MAN1DIR)/$(CMAN).gz
++	$(MKDIR) $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_SCRIPT) $(CFLOW) $(DESTDIR)$(PREFIX)/bin/$(CFLOW)
++	$(BSD_INSTALL_PROGRAM) $(ASMPROG) $(DESTDIR)$(PREFIX)/bin/$(ASMPROG)
++	$(BSD_INSTALL_PROGRAM) $(CPROG) $(DESTDIR)$(PREFIX)/bin/$(CPROG)
++	$(MKDIR) $(DESTDIR)$(MAN1DIR)
++	$(BSD_INSTALL_MAN) $(CFLOWMAN).gz $(DESTDIR)$(MAN1DIR)/$(CFLOWMAN).gz
++	$(BSD_INSTALL_MAN) $(ASMMAN).gz $(DESTDIR)$(MAN1DIR)/$(ASMMAN).gz
++	$(BSD_INSTALL_MAN) $(CMAN).gz $(DESTDIR)$(MAN1DIR)/$(CMAN).gz

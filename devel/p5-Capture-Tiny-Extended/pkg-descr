@@ -1,0 +1,2 @@
+This module is for capturing standard output and error streams from
+Perl, XS, or external programs (with some extras).

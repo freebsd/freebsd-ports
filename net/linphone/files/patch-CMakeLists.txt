@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2025-11-12 12:55:13 UTC
++++ CMakeLists.txt
+@@ -228,13 +228,13 @@ if(NOT APPLE OR MONO_ARCH)
+ 					set(CMAKE_POLICY_DEFAULT_CMP0077 NEW) # Prevent project from overriding the options we just set here
+ 					add_subdirectory("linphone-sdk")
+ 			endfunction()
+-			add_linphone_sdk()
++			# add_linphone_sdk()
+ 
+ 			if(ENABLE_QT_KEYCHAIN)
+ 					function(add_linphone_keychain)
+ 						add_subdirectory("external/qtkeychain")
+ 					endfunction()
+-					add_linphone_keychain()
++					# add_linphone_keychain()
+ 			endif()
+ 			if(NOT APPLE AND NOT WIN32)
+ 				function(add_linphone_ispell)
+@@ -276,4 +276,3 @@ endif()
+ else()
+     include(cmake/TasksMacos.cmake)
+ endif()
+-

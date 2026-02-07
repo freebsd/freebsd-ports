@@ -1,0 +1,12 @@
+--- Makefile.orig	Wed Apr 11 00:25:08 2001
++++ Makefile	Wed Apr 11 00:26:11 2001
+@@ -1,8 +1,4 @@
+-
+-CC=gcc -g
+-LD=gcc -g
+-
+ all: filedupe
+ 
+ filedupe: md5.o filedupe.o
+-	$(LD) -o filedupe md5.o filedupe.o -lgdbm
++	$(CC) -o filedupe md5.o filedupe.o -L$(LOCALBASE)/lib -lgdbm

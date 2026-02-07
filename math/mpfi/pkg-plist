@@ -1,0 +1,6 @@
+include/mpfi.h
+include/mpfi_io.h
+lib/libmpfi.a
+lib/libmpfi.so
+lib/libmpfi.so.0
+lib/libmpfi.so.0.0.0

@@ -1,0 +1,8 @@
+bin/yukon
+@sample etc/yukon/conf.sample
+etc/yukon/system/default
+lib/yukon/libGL.so.%%LIBGL_MAJOR%%
+lib/yukon/libGL.so.native
+lib/yukon/libX11.so.%%LIBX11_MAJOR%%
+lib/yukon/libX11.so.native
+lib/yukon/yukon-core-lib

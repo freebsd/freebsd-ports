@@ -1,0 +1,11 @@
+--- hamclock.desktop.orig	2025-05-18 12:15:40 UTC
++++ hamclock.desktop
+@@ -1,7 +1,7 @@ Exec=/usr/local/bin/hamclock
+ [Desktop Entry]
+ Name=HamClock
+ Exec=/usr/local/bin/hamclock
+-Icon=/home/pi/.hamclock/hamclock.png
++Icon=hamclock.png
+ Terminal=false
+ Type=Application
+ Categories=HamRadio

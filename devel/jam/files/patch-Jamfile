@@ -1,0 +1,11 @@
+--- Jamfile.orig	2014-08-07 18:24:14 UTC
++++ Jamfile
+@@ -7,7 +7,7 @@
+ 
+ if $(VMS) 	{ LOCATE_TARGET ?= [.binvms] ; }
+ else if $(MAC) 	{ LOCATE_TARGET ?= :bin.mac ; }
+-else 		{ LOCATE_TARGET ?= bin.$(OSFULL[1]:L) ; }
++else 		{ LOCATE_TARGET ?= bin ; }
+ 
+ # Leave generated source in current directory; it would be nice to use
+ # these lines below to build the source into the platform-specific

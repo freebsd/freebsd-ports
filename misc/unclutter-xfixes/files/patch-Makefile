@@ -1,0 +1,29 @@
+--- Makefile.orig	2018-12-11 20:44:10 UTC
++++ Makefile
+@@ -5,11 +5,10 @@ IDIR = include
+ ODIR = obj
+ 
+ INSTALL = install
+-PREFIX = /usr
+ 
+-BINDIR = $(PREFIX)/bin
+-MANDIR = $(PREFIX)/share/man/man1
+-LICENSEDIR = $(PREFIX)/share/licenses/$(TARGET)
++BINDIR = /bin
++MANDIR = /share/man/man1
++LICENSEDIR = /share/licenses/$(TARGET)
+ 
+ CC = gcc
+ LD = $(CC)
+@@ -44,9 +43,8 @@ $(ODIR)/%.o: $(SDIR)/%.c $(INCS)
+ 
+ .PHONY: install
+ install: $(TARGET) mans
+-	$(INSTALL) -Dm 0755 "$(TARGET)" "$(DESTDIR)$(BINDIR)/$(TARGET)"
+-	$(INSTALL) -Dm 0644 man/unclutter-xfixes.1 "$(DESTDIR)$(MANDIR)/unclutter.1"
+-	$(INSTALL) -Dm 0644 -t "$(DESTDIR)$(LICENSEDIR)/" LICENSE
++	$(BSD_INSTALL_PROGRAM) "$(TARGET)" "$(DESTDIR)$(PREFIX)$(BINDIR)/$(TARGET)"
++	$(BSD_INSTALL_MAN) man/unclutter-xfixes.1 "$(DESTDIR)$(PREFIX)$(MANDIR)/$(TARGET).1"
+ 
+ .PHONY: uninstall
+ uninstall:

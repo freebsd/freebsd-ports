@@ -1,0 +1,11 @@
+--- stereo3d.orig	2018-10-06 19:31:53 UTC
++++ stereo3d
+@@ -37,8 +37,6 @@
+ #
+ if [ "$TMPDIR" ]; then
+     tmp=$TMPDIR/$$
+-elif [ -d /usr/tmp ]; then
+-    tmp=/usr/tmp/$$
+ else
+     tmp=/tmp/$$
+ fi

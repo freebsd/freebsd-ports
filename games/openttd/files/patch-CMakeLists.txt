@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2025-08-31 18:53:32 UTC
++++ CMakeLists.txt
+@@ -143,7 +143,9 @@ if(NOT OPTION_DEDICATED)
+         if(NOT APPLE)
+             find_package(Freetype)
+             find_package(SDL2)
++if(WITH_FLUIDSYNTH)
+             find_package(Fluidsynth)
++endif()
+             if(Freetype_FOUND)
+                 find_package(Fontconfig)
+             endif()
+@@ -317,7 +319,9 @@ if(NOT EMSCRIPTEN)
+ endif()
+ 
+ if(NOT OPTION_DEDICATED)
++  if(WITH_FLUIDSYNTH)
+     link_package(Fluidsynth)
++  endif()
+     link_package(SDL2 TARGET SDL2::SDL2)
+     link_package(Allegro)
+     link_package(FREETYPE TARGET Freetype::Freetype)

@@ -1,0 +1,11 @@
+--- po/Makefile.in.in.orig	2012-04-07 05:18:32.737703470 -0400
++++ po/Makefile.in.in	2012-04-07 05:19:06.427701003 -0400
+@@ -97,7 +97,7 @@
+ $(GETTEXT_PACKAGE).pot: $(POTFILES)
+ 	$(GENPOT)
+ 
+-install: install-data
++install:
+ install-data: install-data-@USE_NLS@
+ install-data-no: all
+ install-data-yes: all

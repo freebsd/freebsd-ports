@@ -1,0 +1,128 @@
+.\"
+.\" This manual page has been assembled after Bruce's original bcc.doc
+.\" file by Jörg Wunsch <joerg@FreeBSD.org>.
+.\" It is redistributed under the same conditions as the whole bcc
+.\" package itself.
+.\"
+.Dd March 26, 1995
+.Os
+.Dt BCC-CC1 1
+.Sh NAME
+.Nm bcc-cc1
+.Nd C compiler backend
+.Sh SYNOPSIS
+.Nm bcc-cc1
+.Op Fl 03EPcdfltw Ns Op -
+.Op Fl D Ns Ar define
+.Op Fl I Ns Ar include_dir
+.Op Fl U Ns Ar undef
+.Op Fl o Ar outfile
+.Op Ar infile
+
+.Sh DESCRIPTION
+
+.Nm Bcc-cc1
+is the backend for the
+.Xr bcc 1
+C compiler.
+
+It understands the following options:
+
+.Bl -tag -width indent -compact
+
+.It Fl 0
+.Pq the digit 0
+8086 target
+.Pq works even on 80386 host
+
+.It Fl 3
+80386 target
+.Pq works even on 8086 host
+
+.It Fl D
+define
+
+.It Fl E
+produce preprocessor output
+
+.It Fl I
+include search path
+
+.It Fl P
+produce preprocessor output with no line numbers
+
+.It Fl c
+produce code with caller saving regs before function calls
+
+.It Fl d
+print debugging information in assembly output
+
+.It Fl f
+produce code with 1st argument passed in a register
+
+.It Fl l
+produce code for 2 3 1 0 long byte order
+.Pq only works in 16-bit versions
+
+.It Fl o
+assembler output file name follows
+
+.It Fl p
+produce
+.Pq almost
+position-independent code
+
+.It Fl t
+print source code in assembly output
+
+.It Fl w
+print what cc1 thinks is the location counter in assembly output
+
+.El
+
+All the options except
+.Fl D ,
+.Fl I
+and
+.Fl o
+may be turned off by following the
+option letter by a
+.Sq - .
+Options are processed left to right so the last setting has precedence.
+
+The following is defined before option processing:
+
+.Bd -literal
+__BCC__			1
+.Ed
+
+The following may be defined after option processing:
+
+.Bd -literal
+__AS09__		1 if 6809 version
+__AS386_16__		1 if -0 option on 80*86
+__AS386_32__		1 if -3 option on 80*86
+__CALLER_SAVES__	1 if -c option
+__FIRST_ARG_IN_AX__	1 if -f option on 80*86
+__FIRST_ARG_IN_X__	1 if -f option on 6809
+__LONG_BIG_ENDIAN__	1 if -l option
+__POS_INDEPENDENT__	1 if -p option on 6809
+.Ed
+
+The following are standard builtins:
+
+.Bd
+__FILE__		stringized name of current input file
+__LINE__		current line number
+.Ed
+
+.Sh FILES
+.Pa /usr/local/lib/bcc/bcc-cc1
+
+.Sh SEE ALSO
+
+.Xr bcc 1 .
+
+.Sh AUTHORS
+
+This program has been written by Bruce Evans.

@@ -1,0 +1,26 @@
+--- Makefile.in.orig	2025-02-03 15:12:15 UTC
++++ Makefile.in
+@@ -8749,8 +8749,6 @@ install_sh = @install_sh@
+ includedir = @includedir@
+ infodir = @infodir@
+ install_sh = @install_sh@
+-jsonlib = @jsonlib@
+-jsonsrcdir = @jsonsrcdir@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ libmpi_so_version = @libmpi_so_version@
+@@ -9483,12 +9481,12 @@ errnames_txt_files = src/mpi/errhan/errnames.txt \
+ errnames_txt_files = src/mpi/errhan/errnames.txt \
+ 	src/mpid/ch3/errnames.txt $(am__append_53) $(am__append_75) \
+ 	$(am__append_80)
+-external_subdirs = @mplsrcdir@ @hwlocsrcdir@ @jsonsrcdir@ \
++external_subdirs = @mplsrcdir@ @hwlocsrcdir@ \
+ 	@yaksasrcdir@ @pmisrcdir@ $(am__append_76) $(am__append_81)
+ external_ldflags = @mpllibdir@ @yaksalibdir@
+ external_libs = @WRAPPER_LIBS@
+ mpi_convenience_libs = 
+-pmpi_convenience_libs = @mpllib@ @hwloclib@ @jsonlib@ @yaksalib@ \
++pmpi_convenience_libs = @mpllib@ @hwloclib@ @yaksalib@ \
+ 	@pmilib@ $(am__append_8) $(am__append_77) $(am__append_82)
+ 
+ # NOTE on our semi-unconventional usage of DIST_SUBDIRS:

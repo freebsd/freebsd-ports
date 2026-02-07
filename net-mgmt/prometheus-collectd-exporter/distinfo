@@ -1,0 +1,5 @@
+TIMESTAMP = 1679133361
+SHA256 (prometheus-collectd_exporter-v0.5.0_GH0.tar.gz) = 8870e34a11aa73950e43c868d30c6e669c8b5e50e657567eda81c6e2f6e3850f
+SIZE (prometheus-collectd_exporter-v0.5.0_GH0.tar.gz) = 1445326
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

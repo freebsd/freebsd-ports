@@ -1,0 +1,2 @@
+This module is a cryptography-based sanitization tool for network trace
+or log data.

@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Tk/Date.pm
+%%SITE_ARCH%%/Tk/demos/widtrib/date.pl
+%%SITE_ARCH%%/Tk/demos/widtrib/localized_date.pl
+%%PERL5_MAN3%%/Tk::Date.3.gz

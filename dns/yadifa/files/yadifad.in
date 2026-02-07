@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: yadifad
+# REQUIRE: FILESYSTEMS SERVERS cleanvar defaultroute netwait
+# BEFORE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable yadifad:
+#
+# yadifad_enable="YES"
+# # and optional
+# yadifad_config="%%PREFIX%%/etc/yadifad.conf"
+# yadifad_uid="%%USERS%%"
+# yadifad_gid="%%GROUPS%%"
+
+. /etc/rc.subr
+
+name=yadifad
+rcvar=yadifad_enable
+
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_svcj_options:=\"net_basic\"}"
+eval ": \${${name}_config:=\"%%PREFIX%%/etc/${name}.conf\"}"
+eval ": \${${name}_uid:=\"%%USERS%%\"}"
+eval ": \${${name}_gid:=\"%%GROUPS%%\"}"
+
+load_rc_config ${name}
+
+required_files=${yadifad_config}
+command=%%PREFIX%%/sbin/${name}
+command_args="-c ${yadifad_config} -d -u ${yadifad_uid} -g ${yadifad_gid}"
+
+run_rc_command "$1"

@@ -1,0 +1,161 @@
+- Support system libraries for fmt, gsl-lite, rapidjson, websocketpp, tl-expected, hunspell
+- Allow using RSTUDIO_USE_SYSTEM_* CMake flags to use installed packages
+
+--- src/cpp/ext/CMakeLists.txt.orig	2025-10-20 20:09:32 UTC
++++ src/cpp/ext/CMakeLists.txt
+@@ -233,39 +233,132 @@ endfunction()
+ endfunction()
+ 
+ 
+-fetch(
+-   fmt          FMT
+-   gsl-lite     GSL_LITE
+-   hunspell     HUNSPELL
+-   rapidjson    RAPIDJSON
+-   tl-expected  TL_EXPECTED
+-   websocketpp  WEBSOCKETPP
+-   yaml-cpp     YAML_CPP
+-   zlib         ZLIB)
++# Handle system packages before fetch
++if(RSTUDIO_USE_SYSTEM_FMT)
++   # Use GLOBAL to make targets available in other directories
++   if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.24")
++      find_package(fmt CONFIG REQUIRED GLOBAL)
++   else()
++      find_package(fmt CONFIG REQUIRED)
++      # Make targets global for older CMake
++      set_target_properties(fmt::fmt PROPERTIES IMPORTED_GLOBAL TRUE)
++   endif()
++   set(FMT_ENABLED FALSE)
++   message(STATUS "Using system fmt library")
++endif()
+ 
++if(RSTUDIO_USE_SYSTEM_GSL_LITE)
++   # Use GLOBAL to make targets available in other directories
++   if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.24")
++      find_package(gsl-lite CONFIG REQUIRED GLOBAL)
++   else()
++      find_package(gsl-lite CONFIG REQUIRED)
++      # Make targets global for older CMake
++      set_target_properties(gsl::gsl-lite PROPERTIES IMPORTED_GLOBAL TRUE)
++      set_target_properties(gsl::gsl-lite-v0 PROPERTIES IMPORTED_GLOBAL TRUE)
++      set_target_properties(gsl::gsl-lite-v1 PROPERTIES IMPORTED_GLOBAL TRUE)
++   endif()
++   set(GSL_LITE_ENABLED FALSE)
++   message(STATUS "Using system gsl-lite library")
++endif()
++
++if(RSTUDIO_USE_SYSTEM_RAPIDJSON)
++   find_package(RapidJSON REQUIRED)
++   set(RAPIDJSON_ENABLED FALSE)
++   set(RAPIDJSON_INCLUDE_DIRS "${RAPIDJSON_INCLUDE_DIRS}" CACHE INTERNAL "")
++endif()
++
++if(RSTUDIO_USE_SYSTEM_WEBSOCKETPP)
++   find_path(WEBSOCKETPP_INCLUDE_DIR websocketpp/config/asio.hpp PATH_SUFFIXES include)
++   if(NOT WEBSOCKETPP_INCLUDE_DIR)
++      message(FATAL_ERROR "websocketpp not found")
++   endif()
++   set(WEBSOCKETPP_ENABLED FALSE)
++endif()
++
++if(RSTUDIO_USE_SYSTEM_TL_EXPECTED)
++   if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.24")
++      find_package(tl-expected CONFIG REQUIRED GLOBAL)
++   else()
++      find_package(tl-expected CONFIG REQUIRED)
++      set_target_properties(tl::expected PROPERTIES IMPORTED_GLOBAL TRUE)
++   endif()
++   set(TL_EXPECTED_ENABLED FALSE)
++   message(STATUS "Using system tl-expected library")
++endif()
++
++if(RSTUDIO_USE_SYSTEM_HUNSPELL)
++   find_package(hunspell REQUIRED)
++   set(HUNSPELL_ENABLED FALSE)
++endif()
++
++# Only fetch dependencies that are not using system packages
++# System packages are handled by explicit find_package calls above
++set(_fetch_args "")
++if(NOT RSTUDIO_USE_SYSTEM_FMT)
++   list(APPEND _fetch_args fmt FMT)
++endif()
++if(NOT RSTUDIO_USE_SYSTEM_GSL_LITE)
++   list(APPEND _fetch_args gsl-lite GSL_LITE)
++endif()
++if(NOT RSTUDIO_USE_SYSTEM_HUNSPELL)
++   list(APPEND _fetch_args hunspell HUNSPELL)
++endif()
++if(NOT RSTUDIO_USE_SYSTEM_RAPIDJSON)
++   list(APPEND _fetch_args rapidjson RAPIDJSON)
++endif()
++if(NOT RSTUDIO_USE_SYSTEM_TL_EXPECTED)
++   list(APPEND _fetch_args tl-expected TL_EXPECTED)
++endif()
++if(NOT RSTUDIO_USE_SYSTEM_WEBSOCKETPP)
++   list(APPEND _fetch_args websocketpp WEBSOCKETPP)
++endif()
++# yaml-cpp is always needed for fetch if not using system
++list(APPEND _fetch_args yaml-cpp YAML_CPP)
++# zlib is only needed on Windows
++list(APPEND _fetch_args zlib ZLIB)
++
++if(_fetch_args)
++   fetch(${_fetch_args})
++endif()
++
+ # Create rapidjson target.
+ add_library(rstudio-rapidjson INTERFACE EXCLUDE_FROM_ALL)
+ target_compile_definitions(rstudio-rapidjson INTERFACE "-DRAPIDJSON_NO_SIZETYPEDEFINE")
+-target_include_directories(rstudio-rapidjson INTERFACE "${RAPIDJSON_SOURCE_DIR}/include")
++if(RSTUDIO_USE_SYSTEM_RAPIDJSON)
++   target_include_directories(rstudio-rapidjson INTERFACE "${RAPIDJSON_INCLUDE_DIRS}")
++else()
++   target_include_directories(rstudio-rapidjson INTERFACE "${RAPIDJSON_SOURCE_DIR}/include")
++endif()
+ 
+ 
+ # Create websocketpp target.
+ add_library(rstudio-websocketpp INTERFACE EXCLUDE_FROM_ALL)
+-target_include_directories(rstudio-websocketpp INTERFACE "${WEBSOCKETPP_SOURCE_DIR}")
++if(RSTUDIO_USE_SYSTEM_WEBSOCKETPP)
++   target_include_directories(rstudio-websocketpp INTERFACE "${WEBSOCKETPP_INCLUDE_DIR}/..")
++else()
++   target_include_directories(rstudio-websocketpp INTERFACE "${WEBSOCKETPP_SOURCE_DIR}")
++endif()
+ 
+ 
+ # Create hunspell target.
+-file(GLOB HUNSPELL_HEADER_FILES "${HUNSPELL_SOURCE_DIR}/src/hunspell/*.h*")
+-file(GLOB HUNSPELL_SOURCE_FILES "${HUNSPELL_SOURCE_DIR}/src/hunspell/*.c*")
+-add_library(rstudio-hunspell STATIC ${HUNSPELL_SOURCE_FILES} ${HUNSPELL_HEADER_FILES})
+-set_target_properties(rstudio-hunspell PROPERTIES LINKER_LANGUAGE CXX)
+-target_include_directories(rstudio-hunspell SYSTEM AFTER INTERFACE "${HUNSPELL_SOURCE_DIR}/src")
+-target_compile_definitions(rstudio-hunspell PUBLIC HUNSPELL_STATIC=1)
+-
+-if(WIN32)
+-   target_include_directories(rstudio-hunspell SYSTEM AFTER PRIVATE "${HUNSPELL_PREFIX_DIR}/msvc")
+-   target_compile_options(rstudio-hunspell PRIVATE /wd4244 /wd4267)
+-   target_compile_options(rstudio-hunspell INTERFACE /wd4996)
++if(RSTUDIO_USE_SYSTEM_HUNSPELL)
++   add_library(rstudio-hunspell INTERFACE)
++   target_include_directories(rstudio-hunspell INTERFACE "${HUNSPELL_INCLUDE_DIR}")
++   target_link_libraries(rstudio-hunspell INTERFACE "${HUNSPELL_LIBRARIES}")
+ else()
+-   target_compile_options(rstudio-hunspell PRIVATE -Wno-deprecated-declarations -Wno-sign-compare -Wno-unused-but-set-variable)
++   file(GLOB HUNSPELL_HEADER_FILES "${HUNSPELL_SOURCE_DIR}/src/hunspell/*.h*")
++   file(GLOB HUNSPELL_SOURCE_FILES "${HUNSPELL_SOURCE_DIR}/src/hunspell/*.c*")
++   add_library(rstudio-hunspell STATIC ${HUNSPELL_SOURCE_FILES} ${HUNSPELL_HEADER_FILES})
++   set_target_properties(rstudio-hunspell PROPERTIES LINKER_LANGUAGE CXX)
++   target_include_directories(rstudio-hunspell SYSTEM AFTER INTERFACE "${HUNSPELL_SOURCE_DIR}/src")
++   target_compile_definitions(rstudio-hunspell PUBLIC HUNSPELL_STATIC=1)
++
++   if(WIN32)
++      target_include_directories(rstudio-hunspell SYSTEM AFTER PRIVATE "${HUNSPELL_PREFIX_DIR}/msvc")
++      target_compile_options(rstudio-hunspell PRIVATE /wd4244 /wd4267)
++      target_compile_options(rstudio-hunspell INTERFACE /wd4996)
++   else()
++      target_compile_options(rstudio-hunspell PRIVATE -Wno-deprecated-declarations -Wno-sign-compare -Wno-unused-but-set-variable)
++   endif()
+ endif()

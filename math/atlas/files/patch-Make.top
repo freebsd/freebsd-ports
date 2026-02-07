@@ -1,0 +1,20 @@
+--- Make.top.orig	2016-07-28 19:42:59 UTC
++++ Make.top
+@@ -3,7 +3,6 @@ error_report:
+ error_report:
+ 	- uname -a 2>&1 >> bin/INSTALL_LOG/ERROR.LOG
+ 	- $(KC) -v 2>&1  >> bin/INSTALL_LOG/ERROR.LOG
+-	- $(KC) -V 2>&1  >> bin/INSTALL_LOG/ERROR.LOG
+ 	- $(KC) --version 2>&1  >> bin/INSTALL_LOG/ERROR.LOG
+ 	$(TAR) cf error_$(ARCH).tar Make.inc bin/INSTALL_LOG/*
+ 	$(BZIP) error_$(ARCH).tar
+@@ -15,7 +14,8 @@ time: 
+ 	cd bin/ ; $(MAKE) xatlas_build
+ 	cd bin/ ; ./xatlas_build $(INSTFLAGS)
+ time: 
+-	./xatlbench -dc $(BLDdir)/bin/INSTALL_LOG -dp $(BLDdir)/ARCHS/$(ARCH)
++	sysctl -n hw.clockrate | ./xatlbench -dc $(BLDdir)/bin/INSTALL_LOG -dp $(BLDdir)/ARCHS/$(ARCH)
++
+ C_sanity_test:
+ 	@ echo "BUILDING C TESTERS ONLY (GET F77 FOR MORE COMPLETE TESTING):"
+ 	cd bin ; $(MAKE) sanity_test

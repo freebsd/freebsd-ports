@@ -1,0 +1,39 @@
+[
+{ type: install
+  message: <<EOM
+NGINX UI is installed
+
+1) Install a variant of NGINX like www/nginx:
+
+     pkg install -y www/nginx
+
+2) Populate NGINX directory with the directories
+   required by NGINX UI:
+
+     mkdir -p %%PREFIX%%/etc/nginx/conf.d
+     mkdir -p %%PREFIX%%/etc/nginx/streams-enabled
+     mkdir -p %%PREFIX%%/etc/nginx/sites-enabled
+     mkdir -p %%PREFIX%%/etc/nginx/sites-available
+     mkdir -p %%PREFIX%%/etc/nginx/streams-available
+
+3) Configure NGINX:
+
+     cp %%DATADIR%%/nginx-ui.conf %%PREFIX%%/etc/nginx/conf.d
+     cp %%DATADIR%%/nginx.conf %%PREFIX%%/etc/nginx/nginx.conf
+
+   Of course, if you have already modified nginx.conf, backup it first.
+   Then, after copying the new nginx.conf, edit it according to your needs.
+
+4) Configure NGINX UI in /var/db/nginx-ui/app.ini
+
+5) Enable NGINX UI with
+
+     sysrc nginx_ui_enable=YES
+
+6) Start both NGINX and NGINX UI with
+
+     service nginx-ui start
+     service nginx start
+EOM
+}
+]

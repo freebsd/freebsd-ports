@@ -1,0 +1,8 @@
+%%FONTSDIR%%/BIZUDGothic-Bold.ttf
+%%FONTSDIR%%/BIZUDGothic-Regular.ttf
+%%FONTSDIR%%/BIZUDPGothic-Bold.ttf
+%%FONTSDIR%%/BIZUDPGothic-Regular.ttf
+etc/fonts/conf.avail/20-unhint-bizud-gothic.conf
+etc/fonts/conf.avail/62-fonts-bizud-gothic.conf
+etc/fonts/conf.d/20-unhint-bizud-gothic.conf
+etc/fonts/conf.d/62-fonts-bizud-gothic.conf

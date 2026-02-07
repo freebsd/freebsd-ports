@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+You'll have to add %%FONTSDIR%%
+to your X font path by either:
+
+$ xset fp+ %%FONTSDIR%%
+$ xset fp rehash
+
+or by adding it to your X-server configuration file and
+restarting the X-server.
+
+NOTE: These fonts are SHAREWARE. You must pay a fee if you
+find that you are using them a lot. Please read the
+*.shareware files in %%FONTSDIR%%
+for each font's licensing restrictions.
+EOM
+}
+]

@@ -1,0 +1,3 @@
+tivoka is a JSON-RPC client and server for PHP 5.3+. For convenience,
+you can easily switch between JSON-RPC 1.0 and JSON-RPC 2.0 without
+having to change your code.

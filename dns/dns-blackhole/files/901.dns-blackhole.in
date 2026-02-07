@@ -1,0 +1,22 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+case "$dns_blackhole_enable" in
+	[Yy][Ee][Ss])
+
+	echo
+	%%PREFIX%%/bin/dns-blackhole.sh -c /usr/local/etc/dns-blackhole/dns-blackhole.conf update
+	;;
+	*)
+	rc=0
+	;;
+esac
+
+exit $rc

@@ -1,0 +1,3 @@
+bin/tsito
+share/man/man1/tsito.1.gz
+%%DATADIR%%/book.dat

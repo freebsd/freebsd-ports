@@ -1,0 +1,2 @@
+This is Net::SSH::Perl. It contains implementations of
+both the SSH1 and SSH2 protocols.

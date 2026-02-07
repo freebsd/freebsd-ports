@@ -1,0 +1,4 @@
+@(,games,2555) bin/tt
+@mode
+@group
+@postunexec if [ -f /var/games/ttscores ]; then rm /var/games/ttscores; fi

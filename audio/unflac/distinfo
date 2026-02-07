@@ -1,0 +1,7 @@
+TIMESTAMP = 1731766879
+SHA256 (go/audio_unflac/unflac-1.3/1.3.tar.gz) = 29cf865fdffeae3f98e821eb4e747e42fb3a431b51810c1142d4225322a80fe4
+SIZE (go/audio_unflac/unflac-1.3/1.3.tar.gz) = 8213
+SHA256 (go/audio_unflac/unflac-1.3/v0.0.0-20240408174655-b5026a6dfc5a.mod) = b6d33db861b2510a99c311bd2d678259b438d55d26bdc0b0281f80b68804dc61
+SIZE (go/audio_unflac/unflac-1.3/v0.0.0-20240408174655-b5026a6dfc5a.mod) = 372
+SHA256 (go/audio_unflac/unflac-1.3/v0.0.0-20240408174655-b5026a6dfc5a.zip) = cab05aef1334e40627a7a637dd45727ac33c0eab4c845472f5c8564f82c8b18f
+SIZE (go/audio_unflac/unflac-1.3/v0.0.0-20240408174655-b5026a6dfc5a.zip) = 11308

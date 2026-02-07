@@ -1,0 +1,13 @@
+KShutDown is an advanced shutdown utility.
+
+Features:
+  o Turn Off Computer (logout and halt the system)
+  o Restart Computer (logout and reboot the system)
+  o Lock Screen (lock the screen using a screen saver)
+  o End Current Session (end the current KDE session and logout the user)
+  o Detect user inactivity/application exit
+  o Command-line support
+  o Extras (custom actions)
+  o Simple, easy-to-use User Interface
+  o Works with many Desktop Environments
+  o More than /sbin/shutdown -h ;-)

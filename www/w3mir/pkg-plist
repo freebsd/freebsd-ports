@@ -1,0 +1,12 @@
+bin/w3mfix
+bin/w3mir
+%%SITE_PERL%%/htmlop.pm
+%%SITE_PERL%%/w3http.pm
+%%SITE_PERL%%/w3pdfuri.pm
+%%PERL5_MAN1%%/w3mfix.1.gz
+%%PERL5_MAN1%%/w3mir.1.gz
+share/doc/w3mir/Artistic
+share/doc/w3mir/README
+share/doc/w3mir/example.cfg
+share/doc/w3mir/multiscope.cfg
+share/doc/w3mir/w3mir-HOWTO.html

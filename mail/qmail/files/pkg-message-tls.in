@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+	ATTENTION:
+
+Do not forget to read %%PREFIX%%/doc/TLS.readme. After all,
+this is NOT our old stock qmail.
+
+You can enable qmail as your default mailer executing:
+> %%PREFIX%%/scripts/enable-qmail
+
+==> As you need to provide a working certificate in %%PREFIX%%/control/cert.pem :
+
+# makes a self-signed certificate
+3) do "make certificate"
+
+# makes a certificate request
+4) do "make certificate-req"
+EOM
+}
+]

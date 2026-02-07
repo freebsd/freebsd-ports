@@ -1,0 +1,15 @@
+TIMESTAMP = 1735154575
+SHA256 (rocky/p/p11-kit-0.25.3-3.el9_5.aarch64.rpm) = dfa96f9e02fced2b8dff75fa156c2684594b5633e4acc7730752fd1acef92c99
+SIZE (rocky/p/p11-kit-0.25.3-3.el9_5.aarch64.rpm) = 499994
+SHA256 (rocky/p/p11-kit-0.25.3-3.el9_5.i686.rpm) = 7bae85f894aae12876ff40e97005b9bb9fa737684b7e1a3bc21786305ee31356
+SIZE (rocky/p/p11-kit-0.25.3-3.el9_5.i686.rpm) = 511819
+SHA256 (rocky/p/p11-kit-0.25.3-3.el9_5.x86_64.rpm) = f17153354278785dee1fbaab7b838ee4a97bd5a6d52f865b221d6246e00c7d17
+SIZE (rocky/p/p11-kit-0.25.3-3.el9_5.x86_64.rpm) = 522243
+SHA256 (rocky/p/p11-kit-trust-0.25.3-3.el9_5.aarch64.rpm) = 1235641afdc4e36449c9786aeec6aba307e0624eac3f8dd50ff05c41d97c96a1
+SIZE (rocky/p/p11-kit-trust-0.25.3-3.el9_5.aarch64.rpm) = 141725
+SHA256 (rocky/p/p11-kit-trust-0.25.3-3.el9_5.i686.rpm) = bce6079ed2422028f6d131c6f1a8991f8396b42b03363e4aae6283757a86becb
+SIZE (rocky/p/p11-kit-trust-0.25.3-3.el9_5.i686.rpm) = 142799
+SHA256 (rocky/p/p11-kit-trust-0.25.3-3.el9_5.x86_64.rpm) = 28548ac14bcf8f2cdc8de6832b5e8444eb390de9ce7ae5db93ccb7fcefb2a90c
+SIZE (rocky/p/p11-kit-trust-0.25.3-3.el9_5.x86_64.rpm) = 144047
+SHA256 (rocky/p/p11-kit-0.25.3-3.el9_5.src.rpm) = 23b23d12eb53e1114010c6af08b9e91358f55be2cb949a59800ada2ca84a5d37
+SIZE (rocky/p/p11-kit-0.25.3-3.el9_5.src.rpm) = 1024849

@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-10-13 16:02:04 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "Radicale"
++name = "radicale"
+ # When the version is updated, a new section in the CHANGELOG.md file must be
+ # added too.
+ readme = "README.md"

@@ -1,0 +1,31 @@
+--- hardware/arduino/samd/platform.txt.orig	2017-03-30 23:17:49 UTC
++++ hardware/arduino/samd/platform.txt
+@@ -118,8 +118,8 @@ recipe.size.regex=\.text\s+([0-9]+).*
+ # AVRDUDE
+ #
+ tools.avrdude.path={runtime.tools.avrdude.path}
+-tools.avrdude.cmd={path}/bin/avrdude
+-tools.avrdude.config.path={path}/etc/avrdude.conf
++tools.avrdude.cmd={path}/bin/arduino-avrdude
++tools.avrdude.config.path={path}/etc/arduino-avrdude.conf
+ 
+ tools.avrdude.upload.params.verbose=-v -v
+ tools.avrdude.upload.params.quiet=-q -q
+@@ -131,7 +131,7 @@ tools.avrdude_remote.upload.pattern="openocd --version
+ #
+ # BOSSA
+ #
+-tools.bossac.path={runtime.tools.bossac-1.7.0.path}
++tools.bossac.path={runtime.tools.bossac.path}/bin
+ tools.bossac.cmd=bossac
+ tools.bossac.cmd.windows=bossac.exe
+ 
+@@ -145,7 +145,7 @@ tools.bossac_remote.upload.pattern=/usr/bin/run-bossac
+ # OpenOCD sketch upload
+ #
+ 
+-tools.openocd.path={runtime.tools.openocd-0.9.0-arduino5-static.path}
++tools.openocd.path={runtime.tools.openocd.path}/bin
+ tools.openocd.cmd=bin/openocd
+ tools.openocd.cmd.windows=bin/openocd.exe
+ 

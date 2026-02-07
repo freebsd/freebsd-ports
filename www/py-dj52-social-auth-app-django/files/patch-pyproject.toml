@@ -1,0 +1,23 @@
+* Relax version requirements for py-setuptools and enable build for
+  older versions of it
+
+--- pyproject.toml.orig	2025-07-18 11:13:36 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=78.0.2"]
++requires = ["setuptools"]
+ 
+ [dependency-groups]
+ dev = [
+@@ -36,8 +36,7 @@ keywords = ["django", "oauth", "openid", "saml", "soci
+ ]
+ description = "Python Social Authentication, Django integration."
+ keywords = ["django", "oauth", "openid", "saml", "social auth"]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text="BSD-3-Clause" }
+ name = "social-auth-app-django"
+ readme = "README.md"
+ requires-python = ">=3.10"

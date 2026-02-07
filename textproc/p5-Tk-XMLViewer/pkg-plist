@@ -1,0 +1,4 @@
+bin/tkxmlview
+%%SITE_PERL%%/Tk/XMLViewer.pm
+%%PERL5_MAN3%%/Tk::XMLViewer.3.gz
+%%PERL5_MAN1%%/tkxmlview.1.gz

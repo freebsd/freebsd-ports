@@ -1,0 +1,55 @@
+--- src/lib/fte/dimens.c.orig	Sun Apr 25 18:03:19 1993
++++ src/lib/fte/dimens.c	Thu Sep 30 10:02:10 1999
+@@ -21,9 +21,21 @@
+ {
+     int i;
+-    char buf[BSIZE_SP];
++    char *buf;
++    if ( (buf = (char *) malloc(BSIZE_SP*sizeof(char))) == NULL)
++    {
++      fprintf(stderr,"lib:fte:dimns:dimstring:  malloc failed\n");
++      exit(1);
++    }
+ 
+     if (!data || length < 1)
+ 	return NULL;
+ 
++    if (length > BSIZE_SP)
++    {
++      fprintf(stderr,"WARNING, lib:fte:dimns:dimstring: length=%d > BSIZE_SP=%d\n",
++	length,BSIZE_SP);
++      length = BSIZE_SP;
++    }
++
+     buf[0] = '\0';
+     for (i=0; i < length; i++) {
+@@ -31,5 +43,5 @@
+ 	    (i < length - 1) ? "," : "");
+     }
+-    /* XXX Should I return a copy instead? */
++    
+     return(buf);
+ }
+@@ -44,8 +56,21 @@
+ {
+     int i;
+-    char buf[BSIZE_SP];
++    char *buf;          
++
++    if ( (buf = (char *) malloc(BSIZE_SP*sizeof(char))) == NULL)
++    {
++      fprintf(stderr,"lib:fte:dimns:indexstring:  malloc failed\n");
++      exit(1);
++    }
+ 
+     if (!data || length < 1)
+ 	return NULL;
++
++    if (length > BSIZE_SP)
++    {
++      fprintf(stderr,"WARNING, lib:fte:dimns:indexstring: length=%d > BSIZE_SP=%d\n",
++        length,BSIZE_SP);
++      length = BSIZE_SP;
++    }
+ 
+     buf[0] = '\0';

@@ -1,0 +1,4 @@
+The coloredlogs package enables colored terminal output for Python's logging
+module.
+
+See also: https://github.com/xolox/python-coloredlogs

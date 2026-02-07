@@ -1,0 +1,4 @@
+B::Hooks::OP::Annotation provides a way for XS code that hijacks OP op_ppaddr
+functions to delegate to (or restore) the previous functions, whether assigned
+by perl or by another module. Typically this should be used in conjunction with
+B::Hooks::OP::Check.

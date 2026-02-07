@@ -1,0 +1,7 @@
+SFWBar (S* Floating Window Bar) is a flexible taskbar application for
+wayland compositors, designed with a stacking layout in mind.
+Originally developed for Sway, SFWBar will work with any wayland compositor
+supporting layer shell protocol, the taskbar and window switcher functionality
+shall work with any compositor supportinig foreign toplevel protocol,
+but the pager, and window placement functionality require sway
+(or at least i3 IPC support).

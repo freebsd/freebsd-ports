@@ -1,0 +1,4 @@
+A Prometheus exporter for the Network UPS Tools server.
+The exporter is written in a way to permit an administrator to scrape one or
+many UPS devices visible to a NUT client as well as one or all NUT variables.
+A single instance of this exporter can scrape one or many NUT servers.

@@ -1,0 +1,12 @@
+--- Imakefile.orig	Tue Jul 26 23:10:17 1994
++++ Imakefile	Fri Oct 13 22:40:03 2000
+@@ -1,5 +1,8 @@
+ LOCAL_LIBRARIES = XawClientLibs -lm
+ DEPLIBS = XawClientDepLibs
+ 
+-SimpleProgramTarget(xoj)
++SRCS = xoj.c
++OBJS = xoj.o
++
++ComplexProgramTargetNoMan(xoj)
+ 

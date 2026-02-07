@@ -1,0 +1,16 @@
+bin/iccFromXml
+bin/iccToXml
+include/IccXML/IccIoXml.h
+include/IccXML/IccLibXMLVer.h
+include/IccXML/IccMpeXml.h
+include/IccXML/IccMpeXmlFactory.h
+include/IccXML/IccProfileXml.h
+include/IccXML/IccTagXml.h
+include/IccXML/IccTagXmlFactory.h
+include/IccXML/IccUtilXml.h
+include/IccXML/IccXmlConfig.h
+lib/libIccXML.a
+lib/libIccXML.so
+lib/libIccXML.so.2
+lib/libIccXML.so.2.0.3
+libdata/pkgconfig/iccxml.pc

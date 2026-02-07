@@ -1,0 +1,236 @@
+--- topaz/Makefile.freebsd.orig	Sun Oct 22 21:00:30 2000
++++ topaz/Makefile.freebsd	Sat Nov 25 03:49:20 2000
+@@ -2,16 +2,16 @@
+ clean: cleantopaz cleanview cleanps
+ 
+ # compiler
+-CXX=g++
++CXX?=g++
+ 
+ # Where are include files kept
+ INCLUDE=.
+ 
+ # for FreeBSD
+-CFLAGS= -I/usr/local/include -I/usr/local/include/ncurses -I/usr/X11R6/include -O2 -Wall -DTOPAZLINUX -DTOPAZ_NCURSES -DTOPAZ_EUC
+-TOPAZLIB=  -L/usr/local/lib -lm -lncurses -lgnugetopt  -lreadline -lhistory
++CXXFLAGS+= -I${LOCALBASE}/include -DTOPAZLINUX -DTOPAZ_NCURSES -DTOPAZ_EUC
++TOPAZLIB=  -L${LOCALBASE}/lib -lm -lncurses  -lreadline -lhistory
+ PSLIB=  -lm
+-VIEWLIB= -lm -L/usr/X11R6/lib -lX11
++VIEWLIB= -lm -L${LOCALBASE}/lib -lX11
+ 
+ # obj
+ OBJ=topaz.o plobj.o graph.o axis.o frame.o frame2.o valbuff.o script.o funcs.o\
+@@ -29,150 +29,150 @@
+ 	$(CXX) -o topaz $(OBJ) $(TOPAZLIB)
+ 
+ topaz.o: topaz.cc script.h frame.h menudef.h cui.h msgbuff.h filepoint.h jmenudef_euc.h topazcurses.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c topaz.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c topaz.cc
+ 
+ plobj.o: plobj.cc plobj.h convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c plobj.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c plobj.cc
+ 
+ graph.o: graph.cc graph.h frame.h data.h vect.h vectdefs.h col.h styledisp.h \
+ browse.h gdi.h filepoint.h linearfit.h system.h convtxt.h regexpress.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c graph.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c graph.cc
+ 
+ axis.o: axis.cc axis.h frame.h graph.h col.h gdi.h minmax.h pointdefs.h naninf.h \
+ filepoint.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c axis.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c axis.cc
+ 
+ frame.o: frame.cc frame.h graph.h axis.h data.h gdi.h vectdefs.h pointdefs.h \
+ filepoint.h system.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c frame.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c frame.cc
+ 
+ frame2.o: frame2.cc frame.h graph.h axis.h data.h gdi.h vectdefs.h pointdefs.h \
+ topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c frame2.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c frame2.cc
+ 
+ valbuff.o: valbuff.cc valbuff.h buffarray.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c valbuff.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c valbuff.cc
+ 
+ script.o: script.cc script.h system.h tokenbuff.h graph.h buffarray.h cui.h \
+ browse.h objectlist.h pipecall.h minmax.h gamma.h filepoint.h convtxt.h msgbuff.h \
+ topazvalues.h  regexpress.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c script.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c script.cc
+ 
+ funcs.o: funcs.cc script.h system.h tokenbuff.h graph.h buffarray.h cui.h \
+ browse.h objectlist.h pipecall.h minmax.h gamma.h filepoint.h convtxt.h \
+ msgbuff.h kanji.h topazvalues.h paths.h topazprintf.h
+ 
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c funcs.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c funcs.cc
+ 
+ conttoken.o: conttoken.cc script.h system.h tokenbuff.h graph.h buffarray.h \
+ cui.h browse.h objectlist.h pipecall.h topazvalues.h convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c conttoken.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c conttoken.cc
+ 
+ parsetoken.o: parsetoken.cc script.h system.h tokenbuff.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c parsetoken.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c parsetoken.cc
+ 
+ buffarray.o: buffarray.cc buffarray.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c buffarray.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c buffarray.cc
+ 
+ system.o: system.cc convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c system.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c system.cc
+ 
+ tokenbuff.o: tokenbuff.cc tokenbuff.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c tokenbuff.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c tokenbuff.cc
+ 
+ cui.o: cui.cc cui.h script.h buffarray.h gdi.h msgbuff.h filepoint.h kanji.h completion.h topazcurses.h frame.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c cui.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c cui.cc
+ 
+ msgbuff.o: msgbuff.cc msgbuff.h kanji.h topazcurses.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c msgbuff.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c msgbuff.cc
+ 
+ styleline.o: styleline.cc vectdefs.h pointdefs.h col.h gdi.h graph.h naninf.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c styleline.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c styleline.cc
+ 
+ gdi.o: gdi.cc vectdefs.h pointdefs.h filepoint.h graph.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c gdi.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c gdi.cc
+ 
+ data.o: data.cc data.h gdi.h vectdefs.h pointdefs.h graph.h frame.h topazvalues.h \
+ convtxt.h paths.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c data.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c data.cc
+ 
+ browse.o: browse.cc browse.h vectdefs.h cui.h convtxt.h regexpress.h topazcurses.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c browse.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c browse.cc
+ 
+ objectlist.o: objectlist.cc objectlist.h graph.h cui.h script.h vectdefs.h \
+ styledisp.h data.h parts.h gdi.h frame.h filepoint.h regexpress.h topazcurses.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c objectlist.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c objectlist.cc
+ 
+ styledisp.o: styledisp.cc styledisp.h col.h data.h frame.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c styledisp.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c styledisp.cc
+ 
+ loaddata.o: loaddata.cc data.h frame.h topazvalues.h convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c loaddata.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c loaddata.cc
+ 
+ plotdata.o: plotdata.cc data.h frame.h axis.h vectdefs.h pointdefs.h gdi.h \
+ spline.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c plotdata.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c plotdata.cc
+ 
+ calc.o: calc.cc calc.h data.h gamma.h graph.h frame.h naninf.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c calc.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c calc.cc
+ 
+ gamma.o: gamma.cc gamma.h naninf.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c gamma.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c gamma.cc
+ 
+ dinvq.o: dinvq.cc
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c dinvq.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c dinvq.cc
+ 
+ pspline.o: pspline.cc spline.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c pspline.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c pspline.cc
+ 
+ bspline.o: bspline.cc spline.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c bspline.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c bspline.cc
+ 
+ parts.o: parts.cc parts.h graph.h frame.h data.h defcharwidth.h gdi.h pointdefs.h \
+ vectdefs.h spline.h minmax.h filepoint.h kanji.h topazvalues.h convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c parts.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c parts.cc
+ 
+ filepoint.o: filepoint.cc filepoint.h pipecall.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c filepoint.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c filepoint.cc
+ 
+ pipecall.o: pipecall.cc pipecall.h convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c pipecall.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c pipecall.cc
+ 
+ naninf.o: naninf.cc naninf.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c naninf.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c naninf.cc
+ 
+ autoscale.o: autoscale.cc frame.h axis.h naninf.h topazvalues.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c autoscale.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c autoscale.cc
+ 
+ globalbuff.o: globalbuff.cc globalbuff.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c globalbuff.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c globalbuff.cc
+ 
+ genxdata.o: genxdata.cc data.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c genxdata.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c genxdata.cc
+ 
+ linearfit.o: linearfit.cc linearfit.h naninf.h calc.h graph.h frame.h data.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c linearfit.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c linearfit.cc
+ 
+ nonlinearfit.o: nonlinearfit.cc data.h buffarray.h frame.h naninf.h graph.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c nonlinearfit.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c nonlinearfit.cc
+ 
+ convtxt.o: convtxt.cc convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c convtxt.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c convtxt.cc
+ 
+ kanji.o: kanji.cc kanji.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c kanji.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c kanji.cc
+ 
+ paths.o: paths.cc paths.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c paths.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c paths.cc
+ 
+ topazprintf.o: topazprintf.cc topazprintf.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c topazprintf.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c topazprintf.cc
+ 
+ completion.o: completion.cc completion.h vectdefs.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c completion.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c completion.cc
+ 
+ regexpress.o: regexpress.cc regexpress.h valbuff.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c regexpress.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c regexpress.cc
+ 
+ cleantopaz:
+ 	-rm $(OBJ) topaz
+@@ -181,7 +181,7 @@
+ 	$(CXX) -o tpv2ps $(PSOBJ) $(PSLIB)
+ 
+ tpv2ps.o: tpv2ps.cc vectdefs.h pointdefs.h col.h kanji.h convtxt.h 
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c tpv2ps.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c tpv2ps.cc
+ 
+ cleanps:
+ 	-rm tpv2ps.o tpv2ps
+@@ -190,7 +190,7 @@
+ 	$(CXX) -o tpvview tpvview.o kanji.o convtxt.o $(VIEWLIB)
+ 
+ tpvview.o: tpvview.cc vectdefs.h pointdefs.h Xparray.h col.h kanji.h convtxt.h
+-	$(CXX) -I$(INCLUDE) $(CFLAGS) -c tpvview.cc
++	$(CXX) -I$(INCLUDE) $(CXXFLAGS) -c tpvview.cc
+ 
+ cleanview:
+ 	-rm tpvview.o tpvview

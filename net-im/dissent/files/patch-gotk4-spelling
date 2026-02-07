@@ -1,0 +1,63 @@
+I guess that new libspelling version update caused this port to fail at build.
+This patch seems to fix the issue by removing 'Dictionarier' code.
+
+# libdb.so/gotk4-spelling/pkg/spelling
+vendor/libdb.so/gotk4-spelling/pkg/spelling/spelling-provider.go:152:55: undefined: Dictionarier
+vendor/libdb.so/gotk4-spelling/pkg/spelling/spelling-provider.go:165:18: undefined: Dictionarier
+vendor/libdb.so/gotk4-spelling/pkg/spelling/spelling-provider.go:173:19: undefined: Dictionarier
+vendor/libdb.so/gotk4-spelling/pkg/spelling/spelling-provider.go:176:22: undefined: Dictionarier
+
+--- vendor/libdb.so/gotk4-spelling/pkg/spelling/spelling-provider.go.orig	2025-06-19 16:55:15 UTC
++++ vendor/libdb.so/gotk4-spelling/pkg/spelling/spelling-provider.go
+@@ -139,51 +139,6 @@ func (self *Provider) ListLanguages() *gio.ListModel {
+ 	return _listModel
+ }
+ 
+-// LoadDictionary gets a SpellingDictionary for the requested language, or NULL
+-// if the language is not supported.
+-//
+-// The function takes the following parameters:
+-//
+-//   - language to load such as en_US.
+-//
+-// The function returns the following values:
+-//
+-//   - dictionary (optional): SpellingDictionary or NULL.
+-func (self *Provider) LoadDictionary(language string) Dictionarier {
+-	var _arg0 *C.SpellingProvider   // out
+-	var _arg1 *C.char               // out
+-	var _cret *C.SpellingDictionary // in
+-
+-	_arg0 = (*C.SpellingProvider)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(language)))
+-	defer C.free(unsafe.Pointer(_arg1))
+-
+-	_cret = C.spelling_provider_load_dictionary(_arg0, _arg1)
+-	runtime.KeepAlive(self)
+-	runtime.KeepAlive(language)
+-
+-	var _dictionary Dictionarier // out
+-
+-	if _cret != nil {
+-		{
+-			objptr := unsafe.Pointer(_cret)
+-
+-			object := coreglib.AssumeOwnership(objptr)
+-			casted := object.WalkCast(func(obj coreglib.Objector) bool {
+-				_, ok := obj.(Dictionarier)
+-				return ok
+-			})
+-			rv, ok := casted.(Dictionarier)
+-			if !ok {
+-				panic("no marshaler for " + object.TypeFromInstance().String() + " matching spelling.Dictionarier")
+-			}
+-			_dictionary = rv
+-		}
+-	}
+-
+-	return _dictionary
+-}
+-
+ // SupportsLanguage checks of language is supported by the provider.
+ //
+ // The function takes the following parameters:

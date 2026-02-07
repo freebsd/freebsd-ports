@@ -1,0 +1,7 @@
+IceGenerator is a direct streaming generator for Icecast/Shoutcast. It runs
+as a daemon.Three child processes handle all the stuff. A fourth (optional)
+child cares about telnet communication. Main idea for this program is radio
+automation on a Icecast/Shoutcast server. If you have many server processes and
+CPU saving is your priority, u can use IceGenerator. Obviously mp3s/oggs will
+be already resampled to allow their streaming on your bandwidth capability.
+For more information see share/doc/icegenerator/README.

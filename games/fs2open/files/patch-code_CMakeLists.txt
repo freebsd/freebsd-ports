@@ -1,0 +1,18 @@
+--- code/CMakeLists.txt.orig	2025-11-04 12:53:34 UTC
++++ code/CMakeLists.txt
+@@ -79,7 +79,7 @@ target_link_libraries(code PUBLIC imgui)
+ 
+ target_link_libraries(code PUBLIC imgui)
+ 
+-IF(NOT APPLE)
++IF(NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+ 	target_link_libraries(code PUBLIC OpenXR::openxr_loader)
+ 	target_include_directories(code PUBLIC OpenXR::Headers)
+ ENDIF()
+@@ -139,4 +139,4 @@ set_target_properties(code PROPERTIES XCODE_ATTRIBUTE_
+ set_target_properties(code PROPERTIES XCODE_ATTRIBUTE_GCC_SYMBOLS_PRIVATE_EXTERN[variant=Debug] "NO")
+ 
+ # Prevent GCC warnings in third-party BitOp... see GitHub #4366
+-suppress_file_warnings(scripting/lua/bitop/bit.c)
+\ No newline at end of file
++suppress_file_warnings(scripting/lua/bitop/bit.c)

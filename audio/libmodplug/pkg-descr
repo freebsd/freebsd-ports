@@ -1,0 +1,4 @@
+This is a library based on the mod rendering code from ModPlug, a
+popular Windows mod player written by Olivier Lapicque, found at
+http://www.modplug.com.  It is required for ModPlug-XMMS (in the
+xmms-modplug package).

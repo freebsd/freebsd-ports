@@ -1,0 +1,6 @@
+DBIx::DisconnectAll is utility module to disconnect all connected databases.
+
+DBI has DBI->disconnect_all methods, but some DBD modules does not support it,
+so DBI->disconnect_all is undocumented yet and unusable.
+
+DBIx::DisconnectAll realizes disconnect_all from DBI's public API.

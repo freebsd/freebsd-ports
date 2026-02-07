@@ -1,0 +1,47 @@
+--- Makefile.orig	Fri Jul  7 01:12:47 2000
++++ Makefile	Thu Jul 31 16:13:56 2003
+@@ -176,7 +176,7 @@
+ 		(cd $(sharedlibdir); \
+ 		 ln -sf $$foo `echo $$foo | sed 's/\.so\..*/.so/'` ); \
+ 	done
+-	@ldconfig
++	#@ldconfig
+ 
+ ifdef INSTALLAOUTDIR
+ 
+@@ -192,7 +192,7 @@
+ 		(cd $(TOPDIR)/$(INSTALLAOUTDIR); \
+ 		 ln -sf $$foo `echo $$foo | sed 's/\.so\..*/.so/'` ); \
+ 	done
+-	@ldconfig
++	#@ldconfig
+ 
+ else
+ 
+@@ -210,7 +210,7 @@
+ 	@$(INSTALL_DATA) staticlib/libvgagl.a $(libdir)/libvgagl.a
+ 	@chmod a+r $(libdir)/libvgagl.a
+ 
+-installutils: textutils lrmi
++installutils: textutils
+ 	@if [ ! -d $(bindir) ]; then \
+ 		echo No $(bindir) directory, creating it.; \
+ 		mkdir $(bindir); \
+@@ -236,8 +236,6 @@
+ 	@cp utils/textmode $(bindir)
+ 	@echo "savetextmode:     Script that saves textmode information used by 'textmode'."
+ 	@cp utils/savetextmode $(bindir)
+-	@echo "mode3:       Restore textmode by setting VESA mode 3."
+-	@cp lrmi-0.6m/mode3 $(bindir)
+ 	@echo "Installing keymap utilities in $(bindir):"
+ 	@echo "svgakeymap:       Perl script that generates scancode conversion maps."
+ 	@cp utils/svgakeymap $(bindir)
+@@ -261,7 +259,7 @@ installman:
+ installman:
+ 	(cd doc; $(MAKE) -f $(srcdir)/doc/Makefile srcdir="$(srcdir)" install )
+ 	 
+-install: uninstall $(INSTALLAOUTLIB) installheaders $(INSTALLSHAREDLIB) installconfig \
++install: $(INSTALLAOUTLIB) installheaders $(INSTALLSHAREDLIB) installconfig \
+ 	$(INSTALLSTATICLIB) $(INSTALLUTILS) $(INSTALLMAN)
+ 	@echo
+ 	@echo

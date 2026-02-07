@@ -1,0 +1,601 @@
+diff --git gdb/Makefile.in gdb/Makefile.in
+index 84bc54b303e..e2df898d907 100644
+--- gdb/Makefile.in
++++ gdb/Makefile.in
+@@ -723,6 +723,7 @@ ALL_AMD_DBGAPI_TARGET_OBS = \
+ # All target-dependent objects files that require 64-bit CORE_ADDR
+ # (used with --enable-targets=all --enable-64-bit-bfd).
+ ALL_64_TARGET_OBS = \
++	aarch64-fbsd-kern.o \
+ 	aarch64-fbsd-tdep.o \
+ 	aarch64-linux-tdep.o \
+ 	aarch64-newlib-tdep.o \
+@@ -737,6 +738,7 @@ ALL_64_TARGET_OBS = \
+ 	amd64-darwin-tdep.o \
+ 	amd64-dicos-tdep.o \
+ 	amd64-fbsd-tdep.o \
++	amd64fbsd-kern.o \
+ 	amd64-linux-tdep.o \
+ 	amd64-netbsd-tdep.o \
+ 	amd64-obsd-tdep.o \
+@@ -756,18 +758,21 @@ ALL_64_TARGET_OBS = \
+ 	ia64-vms-tdep.o \
+ 	loongarch-linux-tdep.o \
+ 	loongarch-tdep.o \
++	mipsfbsd-kern.o \
+ 	mips-fbsd-tdep.o \
+ 	mips-linux-tdep.o \
+ 	mips-netbsd-tdep.o \
+ 	mips-sde-tdep.o \
+ 	mips-tdep.o \
+ 	mips64-obsd-tdep.o \
++	riscv-fbsd-kern.o \
+ 	riscv-fbsd-tdep.o \
+ 	riscv-linux-tdep.o \
+ 	riscv-none-tdep.o \
+ 	riscv-ravenscar-thread.o \
+ 	riscv-tdep.o \
+ 	sparc64-fbsd-tdep.o \
++	sparc64fbsd-kern.o \
+ 	sparc64-linux-tdep.o \
+ 	sparc64-netbsd-tdep.o \
+ 	sparc64-obsd-tdep.o \
+@@ -792,6 +797,7 @@ ALL_TARGET_OBS = \
+ 	arch/loongarch.o \
+ 	arch/ppc-linux-common.o \
+ 	arm-bsd-tdep.o \
++	arm-fbsd-kern.o \
+ 	arm-fbsd-tdep.o \
+ 	arm-linux-tdep.o \
+ 	arm-netbsd-tdep.o \
+@@ -809,6 +815,8 @@ ALL_TARGET_OBS = \
+ 	csky-linux-tdep.o \
+ 	csky-tdep.o \
+ 	dicos-tdep.o \
++	fbsd-kld.o \
++	fbsd-kthr.o \
+ 	fbsd-tdep.o \
+ 	frv-linux-tdep.o \
+ 	frv-tdep.o \
+@@ -823,6 +831,7 @@ ALL_TARGET_OBS = \
+ 	i386-bsd-tdep.o \
+ 	i386-darwin-tdep.o \
+ 	i386-dicos-tdep.o \
++	i386fbsd-kern.o \
+ 	i386-fbsd-tdep.o \
+ 	i386-gnu-tdep.o \
+ 	i386-go32-tdep.o \
+@@ -860,6 +869,7 @@ ALL_TARGET_OBS = \
+ 	obsd-tdep.o \
+ 	or1k-linux-tdep.o \
+ 	or1k-tdep.o \
++	ppcfbsd-kern.o \
+ 	ppc-fbsd-tdep.o \
+ 	ppc-linux-tdep.o \
+ 	ppc-netbsd-tdep.o \
+@@ -1666,6 +1676,7 @@ ALLDEPFILES = \
+ 	arch/riscv.c \
+ 	arch/tic6x.c \
+ 	aarch32-tdep.c \
++	aarch64-fbsd-kern.c \
+ 	aarch64-fbsd-nat.c \
+ 	aarch64-fbsd-tdep.c \
+ 	aarch64-linux-nat.c \
+@@ -1686,6 +1697,7 @@ ALLDEPFILES = \
+ 	amd64-bsd-nat.c \
+ 	amd64-darwin-tdep.c \
+ 	amd64-dicos-tdep.c \
++	amd64fbsd-kern.c \
+ 	amd64-fbsd-nat.c \
+ 	amd64-fbsd-tdep.c \
+ 	amd64-linux-nat.c \
+@@ -1702,6 +1714,7 @@ ALLDEPFILES = \
+ 	arc-linux-nat.c \
+ 	arc-tdep.c \
+ 	arm-bsd-tdep.c \
++	arm-fbsd-kern.c \
+ 	arm-fbsd-nat.c \
+ 	arm-fbsd-tdep.c \
+ 	arm-linux-nat.c \
+@@ -1721,6 +1734,9 @@ ALLDEPFILES = \
+ 	csky-tdep.c \
+ 	darwin-nat.c \
+ 	dicos-tdep.c \
++	fbsd-kld.c \
++	fbsd-kthr.c \
++	fbsd-kvm.c \
+ 	fbsd-nat.c \
+ 	fbsd-tdep.c \
+ 	fork-child.c \
+@@ -1741,6 +1757,7 @@ ALLDEPFILES = \
+ 	i386-darwin-nat.c \
+ 	i386-darwin-tdep.c \
+ 	i386-dicos-tdep.c \
++	i386fbsd-kern.c \
+ 	i386-fbsd-nat.c \
+ 	i386-fbsd-tdep.c \
+ 	i386-gnu-nat.c \
+@@ -1781,6 +1798,7 @@ ALLDEPFILES = \
+ 	microblaze-linux-tdep.c \
+ 	microblaze-tdep.c \
+ 	mingw-hdep.c \
++	mipsfbsd-kern.c \
+ 	mips-fbsd-nat.c \
+ 	mips-fbsd-tdep.c \
+ 	mips-linux-nat.c \
+@@ -1801,6 +1819,7 @@ ALLDEPFILES = \
+ 	obsd-tdep.c \
+ 	or1k-linux-nat.c \
+ 	posix-hdep.c \
++	ppcfbsd-kern.c \
+ 	ppc-fbsd-nat.c \
+ 	ppc-fbsd-tdep.c \
+ 	ppc-linux-nat.c \
+@@ -1815,6 +1834,7 @@ ALLDEPFILES = \
+ 	procfs.c \
+ 	ravenscar-thread.c \
+ 	remote-sim.c \
++	riscv-fbsd-kern.c \
+ 	riscv-fbsd-nat.c \
+ 	riscv-fbsd-tdep.c \
+ 	riscv-linux-nat.c \
+@@ -1852,6 +1872,7 @@ ALLDEPFILES = \
+ 	sparc-sol2-nat.c \
+ 	sparc-sol2-tdep.c \
+ 	sparc-tdep.c \
++	sparc64fbsd-kern.c \
+ 	sparc64-fbsd-nat.c \
+ 	sparc64-fbsd-tdep.c \
+ 	sparc64-linux-nat.c \
+@@ -1939,7 +1960,7 @@ generated_files = \
+ # Flags needed to compile Python code
+ PYTHON_CFLAGS = @PYTHON_CFLAGS@
+ 
+-all: gdb$(EXEEXT) $(CONFIG_ALL) gdb-gdb.py gdb-gdb.gdb gcore
++all: gdb$(EXEEXT) kgdb$(EXEEXT) $(CONFIG_ALL) gdb-gdb.py gdb-gdb.gdb gcore
+ 	@$(MAKE) $(FLAGS_TO_PASS) DO=all "DODIRS=$(SUBDIRS)" subdir_do
+ 
+ # Rule for compiling .c files in the top-level gdb directory.
+@@ -2205,6 +2226,12 @@ ifneq ($(CODESIGN_CERT),)
+ 	$(ECHO_SIGN) $(CODESIGN) -s $(CODESIGN_CERT) gdb$(EXEEXT)
+ endif
+ 
++kgdb$(EXEEXT): kgdb-main.o $(LIBGDB_OBS) $(CDEPS) $(TDEPLIBS)
++	$(SILENCE) rm -f kgdb$(EXEEXT)
++	$(ECHO_CXXLD) $(CC_LD) $(INTERNAL_LDFLAGS) $(WIN32LDAPP) \
++		-o kgdb$(EXEEXT) kgdb-main.o $(LIBGDB_OBS) \
++		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
++
+ # This is useful when debugging GDB, because some Unix's don't let you run GDB
+ # on itself without copying the executable.  So "make gdb1" will make
+ # gdb and put a copy in gdb1, and you can run it with "gdb gdb1".
+@@ -2240,6 +2267,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
+ 	rm -f init.c stamp-init version.c stamp-version
+ 	rm -f gdb$(EXEEXT) core make.log
+ 	rm -f gdb[0-9]$(EXEEXT)
++	rm -f kgdb$(EXEEXT)
+ 	rm -f xml-builtin.c stamp-xml
+ 	rm -f $(DEPDIR)/*
+ 	for i in $(CONFIG_SRC_SUBDIR); do \
+@@ -2672,7 +2700,7 @@ endif
+ 
+ # A list of all the objects we might care about in this build, for
+ # dependency tracking.
+-all_object_files = gdb.o $(LIBGDB_OBS) gdbtk-main.o
++all_object_files = kgdb-main.o gdb.o $(LIBGDB_OBS) gdbtk-main.o
+ 
+ # All the .deps files to include.
+ all_deps_files = $(foreach dep,$(patsubst %.o,%.Po,$(all_object_files)),\
+diff --git gdb/config.in gdb/config.in
+index 0c144c8918b..b18687e766f 100644
+--- gdb/config.in
++++ gdb/config.in
+@@ -244,6 +244,12 @@
+ /* Define to 1 if you have the `kinfo_getfile' function. */
+ #undef HAVE_KINFO_GETFILE
+ 
++/* Define to 1 if your system has the kvm_kerndisp function. */
++#undef HAVE_KVM_DISP
++
++/* Define to 1 if your system has the kvm_open2 function. */
++#undef HAVE_KVM_OPEN2
++
+ /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
+ #undef HAVE_LANGINFO_CODESET
+ 
+diff --git gdb/configure gdb/configure
+index 66a7ad8d256..198c3a4b43d 100755
+--- gdb/configure
++++ gdb/configure
+@@ -26398,6 +26398,126 @@ fi
+ 
+ 
+ 
++# kgdb needs kvm_open2 for cross-debugging
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing kvm_open2" >&5
++$as_echo_n "checking for library containing kvm_open2... " >&6; }
++if ${ac_cv_search_kvm_open2+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_func_search_save_LIBS=$LIBS
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char kvm_open2 ();
++int
++main ()
++{
++return kvm_open2 ();
++  ;
++  return 0;
++}
++_ACEOF
++for ac_lib in '' kvm; do
++  if test -z "$ac_lib"; then
++    ac_res="none required"
++  else
++    ac_res=-l$ac_lib
++    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++  fi
++  if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_search_kvm_open2=$ac_res
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext
++  if ${ac_cv_search_kvm_open2+:} false; then :
++  break
++fi
++done
++if ${ac_cv_search_kvm_open2+:} false; then :
++
++else
++  ac_cv_search_kvm_open2=no
++fi
++rm conftest.$ac_ext
++LIBS=$ac_func_search_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_search_kvm_open2" >&5
++$as_echo "$ac_cv_search_kvm_open2" >&6; }
++ac_res=$ac_cv_search_kvm_open2
++if test "$ac_res" != no; then :
++  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
++
++$as_echo "#define HAVE_KVM_OPEN2 1" >>confdefs.h
++
++fi
++
++
++# kgdb needs kvm_kerndisp for relocatable kernels
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing kvm_kerndisp" >&5
++$as_echo_n "checking for library containing kvm_kerndisp... " >&6; }
++if ${ac_cv_search_kvm_kerndisp+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_func_search_save_LIBS=$LIBS
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char kvm_kerndisp ();
++int
++main ()
++{
++return kvm_kerndisp ();
++  ;
++  return 0;
++}
++_ACEOF
++for ac_lib in '' kvm; do
++  if test -z "$ac_lib"; then
++    ac_res="none required"
++  else
++    ac_res=-l$ac_lib
++    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++  fi
++  if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_search_kvm_kerndisp=$ac_res
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext
++  if ${ac_cv_search_kvm_kerndisp+:} false; then :
++  break
++fi
++done
++if ${ac_cv_search_kvm_kerndisp+:} false; then :
++
++else
++  ac_cv_search_kvm_kerndisp=no
++fi
++rm conftest.$ac_ext
++LIBS=$ac_func_search_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_search_kvm_kerndisp" >&5
++$as_echo "$ac_cv_search_kvm_kerndisp" >&6; }
++ac_res=$ac_cv_search_kvm_kerndisp
++if test "$ac_res" != no; then :
++  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
++
++$as_echo "#define HAVE_KVM_DISP 1" >>confdefs.h
++
++fi
++
++
+ 
+ # Check whether --with-zstd was given.
+ if test "${with_zstd+set}" = set; then :
+diff --git gdb/configure.ac gdb/configure.ac
+index 62ff09cea20..3baeb32d3bc 100644
+--- gdb/configure.ac
++++ gdb/configure.ac
+@@ -518,6 +518,16 @@ AC_SEARCH_LIBS(gethostbyname, nsl)
+ AM_ZLIB
+ AC_ZSTD
+ 
++# kgdb needs kvm_open2 for cross-debugging
++AC_SEARCH_LIBS(kvm_open2, kvm,
++  [AC_DEFINE(HAVE_KVM_OPEN2, 1,
++            [Define to 1 if your system has the kvm_open2 function. ])])
++
++# kgdb needs kvm_kerndisp for relocatable kernels
++AC_SEARCH_LIBS(kvm_kerndisp, kvm,
++  [AC_DEFINE(HAVE_KVM_DISP, 1,
++            [Define to 1 if your system has the kvm_kerndisp function. ])])
++
+ AM_ICONV
+ 
+ # GDB may fork/exec the iconv program to get the list of supported character
+diff --git gdb/configure.nat gdb/configure.nat
+index 8b98511cef7..c222e482ce9 100644
+--- gdb/configure.nat
++++ gdb/configure.nat
+@@ -63,7 +63,8 @@ case ${gdb_host} in
+ 	LOADLIBES='-ldl $(RDYNAMIC)'
+ 	;;
+     fbsd*)
+-	NATDEPFILES='fork-child.o nat/fork-inferior.o inf-ptrace.o fbsd-nat.o'
++	NATDEPFILES='fork-child.o nat/fork-inferior.o inf-ptrace.o fbsd-nat.o \
++		fbsd-kvm.o'
+ 	HAVE_NATIVE_GCORE_HOST=1
+ 	LOADLIBES='-lkvm'
+ 	;;
+diff --git gdb/configure.tgt gdb/configure.tgt
+index 47a674201f9..4b4b6893edf 100644
+--- gdb/configure.tgt
++++ gdb/configure.tgt
+@@ -122,7 +122,7 @@ esac
+ 
+ case "${targ}" in
+ *-*-freebsd* | *-*-kfreebsd*-gnu)
+-	os_obs="fbsd-tdep.o solib-svr4.o";;
++	os_obs="fbsd-tdep.o solib-svr4.o fbsd-kld.o fbsd-kthr.o";;
+ *-*-netbsd* | *-*-knetbsd*-gnu)
+ 	os_obs="netbsd-tdep.o solib-svr4.o";;
+ *-*-openbsd*)
+@@ -139,7 +139,7 @@ aarch64*-*-elf | aarch64*-*-rtems*)
+ 
+ aarch64*-*-freebsd*)
+ 	# Target: FreeBSD/aarch64
+-	gdb_target_obs="aarch64-fbsd-tdep.o"
++	gdb_target_obs="aarch64-fbsd-tdep.o aarch64-fbsd-kern.o"
+ 	;;
+ 
+ aarch64*-*-linux*)
+@@ -202,7 +202,7 @@ arm*-*-linux*)
+ 	;;
+ arm*-*-freebsd*)
+ 	# Target: FreeBSD/arm
+-	gdb_target_obs="arm-fbsd-tdep.o"
++	gdb_target_obs="arm-fbsd-tdep.o arm-fbsd-kern.o"
+ 	;;
+ arm*-*-netbsd* | arm*-*-knetbsd*-gnu)
+ 	# Target: NetBSD/arm
+@@ -294,7 +294,11 @@ i[34567]86-*-dicos*)
+ 	;;
+ i[34567]86-*-freebsd* | i[34567]86-*-kfreebsd*-gnu)
+ 	# Target: FreeBSD/i386
+-	gdb_target_obs="i386-bsd-tdep.o i386-fbsd-tdep.o "
++	gdb_target_obs="i386-bsd-tdep.o i386-fbsd-tdep.o i386fbsd-kern.o"
++	if test "x$enable_64_bit_bfd" = "xyes"; then
++	    # Target: FreeBSD amd64
++	    gdb_target_obs="amd64fbsd-tdep.o amd64fbsd-kern.o ${gdb_target_obs}"
++	fi
+ 	;;
+ i[34567]86-*-netbsd* | i[34567]86-*-knetbsd*-gnu)
+ 	# Target: NetBSD/i386
+@@ -434,7 +438,7 @@ mips*-*-netbsd* | mips*-*-knetbsd*-gnu)
+ 	;;
+ mips*-*-freebsd*)
+ 	# Target: MIPS running FreeBSD
+-	gdb_target_obs="mips-tdep.o mips-fbsd-tdep.o"
++	gdb_target_obs="mips-tdep.o mips-fbsd-tdep.o mipsfbsd-kern.o"
+ 	;;
+ mips64*-*-openbsd*)
+ 	# Target: OpenBSD/mips64
+@@ -492,7 +496,7 @@ or1k-*-* | or1knd-*-*)
+ powerpc*-*-freebsd*)
+ 	# Target: FreeBSD/powerpc
+ 	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc64-tdep.o \
+-		        ppc-fbsd-tdep.o \
++		        ppc-fbsd-tdep.o ppcfbsd-kern.o \
+ 			ravenscar-thread.o ppc-ravenscar-thread.o"
+ 	;;
+ 
+@@ -541,7 +545,7 @@ s390*-*-linux*)
+ 
+ riscv*-*-freebsd*)
+ 	# Target: FreeBSD/riscv
+-	gdb_target_obs="riscv-fbsd-tdep.o"
++	gdb_target_obs="riscv-fbsd-tdep.o riscv-fbsd-kern.o"
+ 	;;
+ 
+ riscv*-*-linux*)
+@@ -606,6 +610,7 @@ sparc64-*-linux*)
+ sparc*-*-freebsd* | sparc*-*-kfreebsd*-gnu)
+ 	# Target: FreeBSD/sparc64
+ 	gdb_target_obs="sparc-tdep.o sparc64-tdep.o sparc64-fbsd-tdep.o \
++			sparc64fbsd-kern.o \
+ 			ravenscar-thread.o sparc-ravenscar-thread.o"
+ 	;;
+ sparc-*-netbsd* | sparc-*-knetbsd*-gnu)
+@@ -722,8 +727,8 @@ x86_64-*-linux*)
+ 	;;
+ x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu)
+ 	# Target: FreeBSD/amd64
+-	gdb_target_obs="amd64-fbsd-tdep.o ${i386_tobjs} \
+-			i386-bsd-tdep.o i386-fbsd-tdep.o"
++	gdb_target_obs="amd64-fbsd-tdep.o amd64fbsd-kern.o ${i386_tobjs} \
++			i386-bsd-tdep.o i386-fbsd-tdep.o i386fbsd-kern.o"
+ 	;;
+ x86_64-*-mingw* | x86_64-*-cygwin*)
+         # Target: MingW/amd64
+diff --git gdb/osabi.c gdb/osabi.c
+index d494d899623..f04e0cb3699 100644
+--- gdb/osabi.c
++++ gdb/osabi.c
+@@ -66,6 +66,7 @@ static const struct osabi_names gdb_osabi_names[] =
+   { "Solaris", NULL },
+   { "GNU/Linux", "linux(-gnu[^-]*)?" },
+   { "FreeBSD", NULL },
++  { "FreeBSD/kernel", NULL },
+   { "NetBSD", NULL },
+   { "OpenBSD", NULL },
+   { "WindowsCE", NULL },
+diff --git gdb/osabi.h gdb/osabi.h
+index c1a85d1b9a3..88feacab384 100644
+--- gdb/osabi.h
++++ gdb/osabi.h
+@@ -31,6 +31,7 @@ enum gdb_osabi
+   GDB_OSABI_SOLARIS,
+   GDB_OSABI_LINUX,
+   GDB_OSABI_FREEBSD,
++  GDB_OSABI_FREEBSD_KERNEL,
+   GDB_OSABI_NETBSD,
+   GDB_OSABI_OPENBSD,
+   GDB_OSABI_WINCE,
+diff --git gdb/regcache.c gdb/regcache.c
+index f04354d822f..b239064ac16 100644
+--- gdb/regcache.c
++++ gdb/regcache.c
+@@ -1187,6 +1187,18 @@ reg_buffer::raw_supply_zeroed (int regnum)
+   m_register_status[regnum] = REG_VALID;
+ }
+ 
++void
++reg_buffer::raw_supply_unsigned (int regnum, ULONGEST val)
++{
++  assert_regnum (regnum);
++
++  gdb::array_view<gdb_byte> dst = register_buffer (regnum);
++  enum bfd_endian byte_order = gdbarch_byte_order (m_descr->gdbarch);
++
++  store_unsigned_integer (dst.data (), dst.size (), byte_order, val);
++  m_register_status[regnum] = REG_VALID;
++}
++
+ /* See gdbsupport/common-regcache.h.  */
+ 
+ void
+@@ -1353,6 +1365,53 @@ regcache::collect_regset (const struct regset *regset, int regbase,
+ 		   size);
+ }
+ 
++/* See regcache.h  */
++
++int
++regcache_map_entry_size (const struct regcache_map_entry *map, gdbarch *gdbarch)
++{
++  int size = 0, count;
++
++  for (; (count = map->count) != 0; map++)
++    {
++      int regno = map->regno;
++      int slot_size = map->size;
++
++      if (slot_size == 0 && regno != REGCACHE_MAP_SKIP)
++	slot_size = register_size (gdbarch, regno);
++
++      size += count * slot_size;
++    }
++  return size;
++}
++
++/* See regcache.h  */
++
++int
++regcache_map_offset (const struct regcache_map_entry *map, int regnum,
++		     gdbarch *gdbarch)
++{
++  int offs = 0, count;
++
++  for (; (count = map->count) != 0; map++)
++    {
++      int regno = map->regno;
++      int slot_size = map->size;
++
++      if (slot_size == 0 && regno != REGCACHE_MAP_SKIP)
++	slot_size = register_size (gdbarch, regno);
++
++      if (regno != REGCACHE_MAP_SKIP && regnum >= regno
++	  && regnum < regno + count)
++	return offs + (regno - regnum) * slot_size;
++
++      offs += count * slot_size;
++    }
++  return -1;
++}
++
++/* See regcache.h  */
++
+ bool
+ regcache_map_supplies (const struct regcache_map_entry *map, int regnum,
+ 		       struct gdbarch *gdbarch, size_t size)
+diff --git gdb/regcache.h gdb/regcache.h
+index 2f4b7d94c69..7ae67a309a7 100644
+--- gdb/regcache.h
++++ gdb/regcache.h
+@@ -130,6 +130,11 @@ regcache_map_entry_size (const struct regcache_map_entry *map)
+   return size;
+ }
+ 
++/* Same as above, but accepts a gdbarch to handle entries with a
++   variable register size.  */
++extern int regcache_map_entry_size (const struct regcache_map_entry *map,
++				    gdbarch *gdbarch);
++
+ /* Transfer a set of registers (as described by REGSET) between
+    REGCACHE and BUF.  If REGNUM == -1, transfer all registers
+    belonging to the regset, otherwise just the register numbered
+@@ -148,6 +153,13 @@ extern void regcache_collect_regset (const struct regset *regset,
+ 				     int regnum, void *buf, size_t size);
+ 
+ 
++/* Return the offset of REGNUM in a block of registers described by an
++   array of regcache_map_entries.  If the register is not found,
++   returns -1.  */
++
++extern int regcache_map_offset (const struct regcache_map_entry *map,
++				int regnum, gdbarch *gdbarch);
++
+ /* Return true if a set of registers contains the value of the
+    register numbered REGNUM.  The size of the set of registers is
+    given in SIZE, and the layout of the set of registers is described
+@@ -249,6 +261,8 @@ class reg_buffer : public reg_buffer_common
+   void raw_supply_part (int regnum, int offset,
+ 			gdb::array_view<const gdb_byte> src);
+ 
++  void raw_supply_unsigned (int regnum, ULONGEST val);
++
+   void invalidate (int regnum);
+ 
+   virtual ~reg_buffer () = default;

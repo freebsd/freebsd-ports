@@ -1,0 +1,151 @@
+Revert TCPWRAPPER removal -bdrewery
+
+commit f2719b7c2b8a3b14d778d8a6d8dc729b5174b054
+Author: Damien Miller <djm@mindrot.org>
+Date:   Sun Apr 20 13:22:18 2014 +1000
+
+       - tedu@cvs.openbsd.org 2014/03/26 19:58:37
+         [sshd.8 sshd.c]
+         remove libwrap support. ok deraadt djm mfriedl
+
+diff --git sshd.8 sshd.8
+index 289e13d..e6a900b 100644
+--- sshd.8
++++ sshd.8
+@@ -851,6 +851,12 @@ the user's home directory becomes accessible.
+ This file should be writable only by the user, and need not be
+ readable by anyone else.
+ .Pp
++.It Pa /etc/hosts.allow
++.It Pa /etc/hosts.deny
++Access controls that should be enforced by tcp-wrappers are defined here.
++Further details are described in
++.Xr hosts_access 5 .
++.Pp
+ .It Pa /etc/hosts.equiv
+ This file is for host-based authentication (see
+ .Xr ssh 1 ) .
+@@ -954,6 +960,7 @@ The content of this file is not sensitive; it can be world-readable.
+ .Xr ssh-keygen 1 ,
+ .Xr ssh-keyscan 1 ,
+ .Xr chroot 2 ,
++.Xr hosts_access 5 ,
+ .Xr login.conf 5 ,
+ .Xr moduli 5 ,
+ .Xr sshd_config 5 ,
+--- sshd-session.c.orig	2024-07-01 13:26:10.677919000 -0700
++++ sshd-session.c	2024-07-01 13:26:58.873906000 -0700
+@@ -110,6 +110,13 @@
+ #include "srclimit.h"
+ #include "dh.h"
+ 
++#ifdef LIBWRAP
++#include <tcpd.h>
++#include <syslog.h>
++int allow_severity;
++int deny_severity;
++#endif /* LIBWRAP */
++
+ /* Re-exec fds */
+ #define REEXEC_DEVCRYPTO_RESERVED_FD	(STDERR_FILENO + 1)
+ #define REEXEC_STARTUP_PIPE_FD		(STDERR_FILENO + 2)
+@@ -1256,7 +1263,26 @@ main(int ac, char **av)
+ #endif
+ 
+ 	rdomain = ssh_packet_rdomain_in(ssh);
++
++#ifdef LIBWRAP
++	allow_severity = options.log_facility|LOG_INFO;
++	deny_severity = options.log_facility|LOG_WARNING;
++	/* Check whether logins are denied from this host. */
++	if (ssh_packet_connection_is_on_socket(ssh)) {
++		struct request_info req;
+ 
++		request_init(&req, RQ_DAEMON, __progname, RQ_FILE, sock_in, 0);
++		fromhost(&req);
++
++		if (!hosts_access(&req)) {
++			debug("Connection refused by tcp wrapper");
++			refuse(&req);
++			/* NOTREACHED */
++			fatal("libwrap refuse returns");
++		}
++	}
++#endif /* LIBWRAP */
++
+ 	/* Log the connection. */
+ 	laddr = get_local_ipaddr(sock_in);
+ 	verbose("Connection from %s port %d on %s port %d%s%s%s",
+--- configure.ac.orig	2022-02-23 03:31:11.000000000 -0800
++++ configure.ac	2022-03-02 12:47:49.958341000 -0800
+@@ -1599,6 +1599,62 @@ else
+ 	AC_MSG_RESULT([no])
+ fi
+ 
++# Check whether user wants TCP wrappers support
++TCPW_MSG="no"
++AC_ARG_WITH([tcp-wrappers],
++	[  --with-tcp-wrappers[[=PATH]] Enable tcpwrappers support (optionally in PATH)],
++	[
++		if test "x$withval" != "xno" ; then
++			saved_LIBS="$LIBS"
++			saved_LDFLAGS="$LDFLAGS"
++			saved_CPPFLAGS="$CPPFLAGS"
++			if test -n "${withval}" && \
++			    test "x${withval}" != "xyes"; then
++				if test -d "${withval}/lib"; then
++					if test -n "${need_dash_r}"; then
++						LDFLAGS="-L${withval}/lib -R${withval}/lib ${LDFLAGS}"
++					else
++						LDFLAGS="-L${withval}/lib ${LDFLAGS}"
++					fi
++				else
++					if test -n "${need_dash_r}"; then
++						LDFLAGS="-L${withval} -R${withval} ${LDFLAGS}"
++					else
++						LDFLAGS="-L${withval} ${LDFLAGS}"
++					fi
++				fi
++				if test -d "${withval}/include"; then
++					CPPFLAGS="-I${withval}/include ${CPPFLAGS}"
++				else
++					CPPFLAGS="-I${withval} ${CPPFLAGS}"
++				fi
++			fi
++			LIBS="-lwrap $LIBS"
++			AC_MSG_CHECKING([for libwrap])
++			AC_LINK_IFELSE([AC_LANG_PROGRAM([[
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <tcpd.h>
++int deny_severity = 0, allow_severity = 0;
++				]], [[
++	hosts_access(0);
++				]])], [
++					AC_MSG_RESULT([yes])
++					AC_DEFINE([LIBWRAP], [1],
++						[Define if you want
++						TCP Wrappers support])
++					SSHDLIBS="$SSHDLIBS -lwrap"
++					TCPW_MSG="yes"
++				], [
++					AC_MSG_ERROR([*** libwrap missing])
++				
++			])
++			LIBS="$saved_LIBS"
++		fi
++	]
++)
++
+ # Check whether user wants to use ldns
+ LDNS_MSG="no"
+ AC_ARG_WITH(ldns,
+@@ -5593,6 +5649,7 @@ echo "                       PAM support: $PAM_MSG"
+ echo "                   OSF SIA support: $SIA_MSG"
+ echo "                 KerberosV support: $KRB5_MSG"
+ echo "                   SELinux support: $SELINUX_MSG"
++echo "              TCP Wrappers support: $TCPW_MSG"
+ echo "                   libedit support: $LIBEDIT_MSG"
+ echo "                   libldns support: $LDNS_MSG"
+ echo "  Solaris process contract support: $SPC_MSG"

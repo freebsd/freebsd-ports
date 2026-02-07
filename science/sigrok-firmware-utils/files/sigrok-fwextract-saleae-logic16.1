@@ -1,0 +1,40 @@
+.TH SIGROK\-FWEXTRACT\-SALEAE\-LOGIC16 1 "Aug 08, 2013"
+.SH "NAME"
+sigrok\-fwextract\-saleae\-logic16 \- Extract Saleae Logic16 firmware
+.SH "SYNOPSIS"
+.B sigrok\-fwextract\-saleae\-logic16 [FILE]
+.SH "DESCRIPTION"
+This tool extracts FX2 firmware and FPGA bitstreams from the vendor
+software for the Saleae Logic16 USB logic analyzer. Download the Linux
+version (either 32-bit or 64-bit will do), and unpack it to find the
+main binary called "Logic".
+.PP
+In order to extract the firmware/bitstreams, run the following command:
+.PP
+.B "  $ sigrok-fwextract-saleae-logic16 Logic"
+.br
+.RB "  saved 5214 bytes to saleae-logic16-fx2.fw"
+.br
+.RB "  saved 149516 bytes to saleae-logic16-fpga-18.bitstream"
+.br
+.RB "  saved 149516 bytes to saleae-logic16-fpga-33.bitstream"
+.PP
+Copy the resulting files over to the location where libsigrok expects
+to find its firmware files. By default this is
+.BR /usr/local/share/sigrok-firmware .
+.SH OPTIONS
+None.
+.SH "EXIT STATUS"
+Exits with 0 on success, 1 on most failures.
+.SH "SEE ALSO"
+\fBsigrok\-fwextract\-hantek\-dso\fP(1)
+.SH "BUGS"
+Please report any bugs via Bugzilla
+.RB "(" http://sigrok.org/bugzilla ")"
+or on the sigrok\-devel mailing list
+.RB "(" sigrok\-devel@lists.souceforge.net ")."
+.SH "LICENSE"
+This program is covered by the GNU General Public License (GPL),
+version 3 or later.
+.SH "AUTHORS"
+Please see the individual source code files.

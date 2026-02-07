@@ -1,0 +1,2 @@
+Hiera is a pluggable (YAML, JSON, Puppet) hierarchical database for
+storing infrastructure representation data.

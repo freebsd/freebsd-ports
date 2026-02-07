@@ -1,0 +1,673 @@
+## 05_pantomime1.2.dpatch by Sergey Golovin <svgol@mail.ru>
+##
+## DP: Convert to Pantomime 1.2.
+
+@DPATCH@
+diff -urNad lusernet.app-0.4.2~/ChangeLog ChangeLog
+--- lusernet.app-0.4.2~/ChangeLog	1970-01-01 02:00:00.000000000 +0200
++++ ChangeLog	2006-09-27 00:13:21.000000000 +0300
+@@ -0,0 +1,41 @@
++2006-09-19  Sergey V. Golovin  <svgol@mail.ru>
++
++	* main.m ([AppDelegate -changeEncoding:]): post
++	DefaultEncodingChangedNotification when done
++
++	* main.m: new notification DefaultEncodingChangedNotification
++
++	* ComposeWindowController.m: "DefaultEncoding" now influences all
++	 messages that going to be posted (Yavor Doganov <yavor@doganov.org>)
++
++	* NNTPSourceGUI.m ([NNTPSourcePropertiesController
++	-initWithNNTPSource:]): the NNTPSourcePropertiesController is
++	responsible for releasing its window ([win release] removed from
++	end of -initWithNNTPSource:) 
++
++	* MessageViewController.m ([MessageViewController -getData]): 
++	- The "DefaultEncoding" should influence only such messages that
++	have no the content type header
++	- All normal messages are displayed with their charsets
++
++	* MessageViewController.m ([MessageViewController -encodingChanged:]): added
++	([MessageViewController -initWithMsgDB:textView:scrollView:]): now it
++	waits for DefaultEncodingChangedNotification to redisplay
++	immediately a message if it is needed.
++
++2006-09-04  Sergey Golovin  <svgol@mail.ru>
++
++	* Pref_MessageViewing.m ([Pref_MessageViewing -willShow]): added
++	a pop-up button for charset selection
++	([Pref_MessageViewing -changeEncoding:]): added
++
++2006-09-02  Sergey Golovin  <svgol@mail.ru>
++
++	* MessageViewController.m ([MessageViewController -getData]):
++	- added from user defaults a charset header when a raw message has
++	no one 
++	- added from user defaults a content type header when a raw
++	message has no one 
++
++	* synchronized with Pantomime 1.2
++
+diff -urNad lusernet.app-0.4.2~/ComposeWindowController.h ComposeWindowController.h
+--- lusernet.app-0.4.2~/ComposeWindowController.h	2004-03-03 01:58:37.000000000 +0200
++++ ComposeWindowController.h	2006-09-27 00:13:21.000000000 +0300
+@@ -6,7 +6,7 @@
+ #define ComposeWindowController_h
+ 
+ @class NSString,NSDictionary;
+-@class Message;
++@class CWMessage;
+ @class NSTextView,NSTextField,NSButton;
+ 
+ @interface ComposeWindowController : NSWindowController
+@@ -25,7 +25,7 @@
+ 
+ - initWithHeaders: (NSDictionary *)headers  quoteContent: (NSString *)content;
+ - initWithHeaders: (NSDictionary *)headers;
+-- initWithFollowupToMessage: (Message *)msg;
++- initWithFollowupToMessage: (CWMessage *)msg;
+ 
+ @end
+ 
+diff -urNad lusernet.app-0.4.2~/ComposeWindowController.m ComposeWindowController.m
+--- lusernet.app-0.4.2~/ComposeWindowController.m	2004-03-03 01:58:37.000000000 +0200
++++ ComposeWindowController.m	2006-09-27 00:13:21.000000000 +0300
+@@ -13,6 +13,7 @@
+ #include <AppKit/NSTextContainer.h>
+ #include <AppKit/NSTextField.h>
+ #include <AppKit/NSButton.h>
++#include <AppKit/NSGraphics.h>
+ #include <GNUstepGUI/GSVbox.h>
+ #include <GNUstepGUI/GSHbox.h>
+ 
+@@ -21,11 +21,12 @@
+ #include "main.h"
+ #include "KeyWindow.h"
+ #include "Pref_Posting.h"
++#include "Pref_MessageViewing.h"
+ 
+-#include <Pantomime/Constants.h>
+-#include <Pantomime/Message.h>
+-#include <Pantomime/MimeUtility.h>
+-#include <Pantomime/InternetAddress.h>
++#include <Pantomime/CWConstants.h>
++#include <Pantomime/CWMessage.h>
++#include <Pantomime/CWMIMEUtility.h>
++#include <Pantomime/CWInternetAddress.h>
+ 
+ 
+ @implementation ComposeWindowController
+@@ -33,7 +34,7 @@
+ 
+ -(void) post: (id)sender
+ {
+-	Message *m=[[Message alloc] init];
++	CWMessage *m=[[CWMessage alloc] init];
+ 	NSMutableDictionary *md;
+ 	NSEnumerator *e;
+ 	NSString *header,*value;
+@@ -64,7 +65,7 @@
+ 
+ 		if ([header isEqualToString: @"From"])
+ 		{
+-			InternetAddress *ia=[[InternetAddress alloc] initWithString: value];
++			CWInternetAddress *ia=[[CWInternetAddress alloc] initWithString: value];
+ 			[m setFrom: ia];
+ 			DESTROY(ia);
+ 		}
+@@ -81,7 +82,14 @@
+ 	[m setFormat: PantomimeFormatFlowed];
+ 	[m setContent: [text string]];
+ 
+-	[m setCharset: [MimeUtility charsetForString: [text string]]];
++	if(![Pref_MessageViewing defaultEncoding])
++	  {
++	    [m setCharset: @"utf-8"];
++	  }
++	else
++	  {
++	    [m setCharset: [Pref_MessageViewing defaultEncoding]];
++	  }
+ 
+ 	state=1;
+ 	d=[m dataValue];
+@@ -386,7 +394,7 @@
+ }
+ 
+ /* TODO: handle attributation, followup to sender, followup, etc. */
+-- initWithFollowupToMessage: (Message *)msg
++- initWithFollowupToMessage: (CWMessage *)msg
+ {
+ 	NSDictionary *headers;
+ 	NSString *subject,*references;
+diff -urNad lusernet.app-0.4.2~/FolderThreader.m FolderThreader.m
+--- lusernet.app-0.4.2~/FolderThreader.m	2004-03-03 01:58:37.000000000 +0200
++++ FolderThreader.m	2006-09-27 00:13:21.000000000 +0300
+@@ -9,7 +9,7 @@
+ 
+ #include "FolderThreader.h"
+ 
+-#include <Pantomime/MimeUtility.h>
++#include <Pantomime/CWMIMEUtility.h>
+ 
+ 
+ static NSDate *parse_date(const char *date_header)
+@@ -544,7 +544,7 @@
+ 		return @"";
+ 
+ 	d=[[NSData alloc] initWithBytes: c length: strlen(c)];
+-	s2=[MimeUtility decodeHeader: d  charset: nil];
++	s2=[CWMIMEUtility decodeHeader: d  charset: nil];
+ 	[d release];
+ 	return s2;
+ }
+@@ -586,7 +586,7 @@
+ 		else
+ 		{
+ 			d=[[NSData alloc] initWithBytes: c length: strlen(c)];
+-			s2=[MimeUtility decodeHeader: d  charset: nil];
++			s2=[CWMIMEUtility decodeHeader: d  charset: nil];
+ 			[d release];
+ 			h->subject=[s2 retain];
+ 		}
+@@ -595,7 +595,7 @@
+ 		if (c)
+ 		{
+ 			d=[[NSData alloc] initWithBytes: c length: strlen(c)];
+-			s2=[MimeUtility decodeHeader: d  charset: nil];
++			s2=[CWMIMEUtility decodeHeader: d  charset: nil];
+ 			[d release];
+ 			h->from=[s2 retain];
+ 		}
+diff -urNad lusernet.app-0.4.2~/FolderWindowController.m FolderWindowController.m
+--- lusernet.app-0.4.2~/FolderWindowController.m	2004-03-03 01:58:37.000000000 +0200
++++ FolderWindowController.m	2006-09-27 00:13:21.000000000 +0300
+@@ -20,7 +20,8 @@
+ #include <AppKit/NSCell.h>
+ #include <AppKit/NSFont.h>
++#include <AppKit/NSEvent.h>
+ 
+-#include <Pantomime/MimeUtility.h>
++#include <Pantomime/CWMIMEUtility.h>
+ 
+ #include "MsgDB.h"
+ 
+diff -urNad lusernet.app-0.4.2~/MessageViewController.h MessageViewController.h
+--- lusernet.app-0.4.2~/MessageViewController.h	2002-03-08 02:39:34.000000000 +0200
++++ MessageViewController.h	2006-09-27 00:13:21.000000000 +0300
+@@ -6,7 +6,7 @@
+ #define MessageViewController_h
+ 
+ @class NSTextView,NSScrollView,NSMutableDictionary;
+-@class Message;
++@class CWMessage;
+ 
+ #include "MsgDB.h"
+ 
+@@ -17,7 +17,7 @@
+ 
+ 	MsgDB *mdb;
+ 	msg_id_t mid;
+-	Message *cur_message;
++	CWMessage *cur_message;
+ 
+ 	/* actually an NSMapTable */
+ 	void *cur_options;
+@@ -48,6 +48,8 @@
+ 
+ -(void) messageSave;
+ 
++-(void) encodingChanged: (NSNotification *)n;
++
+ @end
+ 
+ #endif
+diff -urNad lusernet.app-0.4.2~/MessageViewController.m MessageViewController.m
+--- lusernet.app-0.4.2~/MessageViewController.m	2004-03-03 01:58:37.000000000 +0200
++++ MessageViewController.m	2006-09-27 00:13:21.000000000 +0300
+@@ -5,6 +5,9 @@
+ #include <Foundation/NSObject.h>
+ #include <Foundation/NSBundle.h>
+ #include <Foundation/NSFileManager.h>
++#include <AppKit/NSAttributedString.h>
++#include <AppKit/NSGraphics.h>
++#include <AppKit/NSGraphicsContext.h>
+ #include <AppKit/NSFileWrapper.h>
+ #include <AppKit/NSTextView.h>
+ #include <AppKit/NSScrollView.h>
+@@ -21,11 +21,11 @@
+ 
+ #include "GUISource.h"
+ 
+-#include <Pantomime/Message.h>
+-#include <Pantomime/MimeMultipart.h>
+-#include <Pantomime/MimeUtility.h>
+-#include <Pantomime/InternetAddress.h>
+-#include <Pantomime/UUFile.h>
++#include <Pantomime/CWMessage.h>
++#include <Pantomime/CWMIMEMultipart.h>
++#include <Pantomime/CWMIMEUtility.h>
++#include <Pantomime/CWInternetAddress.h>
++#include <Pantomime/CWUUFile.h>
+ 
+ //#define USE_MIME_STUFF
+ 
+@@ -89,7 +89,7 @@
+ 
+ 
+ @interface MessageViewController (private)
+--(void) _renderContent:(id)p  parent:(Part *)parent  to:(NSMutableAttributedString *)str;
++-(void) _renderContent:(id)p  parent:(CWPart *)parent  to:(NSMutableAttributedString *)str;
+ -(void) _renderPart:(id)p to:(NSMutableAttributedString *)str;
+ 
+ -(void) displayMessage;
+@@ -212,10 +212,10 @@
+ }
+ 
+ 
+--(void) _render_multipart: (MimeMultipart *)mp  type: (NSString *)ct
++-(void) _render_multipart: (CWMIMEMultipart *)mp  type: (NSString *)ct
+ 	to: (NSMutableAttributedString *)str
+ {
+-	Part *bp;
++	CWPart *bp;
+ 	int i;
+ 
+ 	if ([ct isEqual: @"multipart/alternative"])
+@@ -227,14 +227,14 @@
+ 		else
+ 			disp=[mp count]-1;
+ 
+-		bp=[mp bodyPartAtIndex: disp];
++		bp=[mp partAtIndex: disp];
+ 		append(str,header_bold_dict,_(@"Currently shown:"));
+ 		append(str,header_dict,@" %@\n",[bp contentType]);
+ 		append(str,header_bold_dict,_(@"Alternatives:"));
+ 		for (i=0;i<[mp count];i++)
+ 		{
+ 			appendLink(str,LINK_MULTIPART_ALTERNATIVE,mp,i+1,@" %@",
+-				[[mp bodyPartAtIndex: i] contentType]);
++				[[mp partAtIndex: i] contentType]);
+ 		}
+ 		append(str,nil,@"\n");
+ 
+@@ -249,7 +249,7 @@
+ 
+ 		for (i=0;i<[mp count];i++)
+ 		{
+-			bp=[mp bodyPartAtIndex: i];
++			bp=[mp partAtIndex: i];
+ 			append(str,header_bold_dict,_(@"\nPart:"));
+ 			append(str,header_dict,@" %i %@\n",i,[bp contentType]);
+ 			[self _renderPart:bp to:str];
+@@ -264,7 +264,7 @@
+ 	NSDictionary *fd;
+ 	NSFont *f;
+ 
+-	NSRange r;
++	//	NSRange r;
+ 
+ 	if (cur_font)
+ 		f=[Pref_MessageViewing font2];
+@@ -276,7 +276,7 @@
+ 
+ #if 0 /* TODO: need to update with new Pantomime interface */
+ 	/* TODO: this should probably be optional */
+-	r=[MimeUtility rangeOfUUEncodedStringFromString: text
++	r=[CWMIMEUtility rangeOfUUEncodedStringFromString: text
+ 		range: NSMakeRange(0,[text length])];
+ 
+ 	if (r.location==NSNotFound)
+@@ -291,7 +291,7 @@
+ 			appendPlainText(str,fd,[text substringWithRange: NSMakeRange(0,r.location)]);
+ 
+ 		/* TODO: this is inefficient */
+-		fw=[MimeUtility fileWrapperFromUUEncodedString: [text substringWithRange: r]];
++		fw=[CWMIMEUtility fileWrapperFromUUEncodedString: [text substringWithRange: r]];
+ 
+ 		append(str,header_bold_dict,_(@"UUEncoded file:"));
+ 		append(str,header_dict,@" %@    ",[fw preferredFilename]);
+@@ -312,7 +312,7 @@
+ }
+ 
+ 
+--(void) _renderContent:(id)p  parent:(Part *)parent
++-(void) _renderContent:(id)p  parent:(CWPart *)parent
+ 	to:(NSMutableAttributedString *)str
+ {
+ 	NSString *ct=[parent contentType];
+@@ -340,9 +340,9 @@
+ 
+ 
+ 	/* Some content classes/types we handle internally. */
+-	if ([p isKindOfClass: [MimeMultipart class]])
++	if ([p isKindOfClass: [CWMIMEMultipart class]])
+ 	{
+-		[self _render_multipart: (MimeMultipart *)p  type: ct  to: str];
++		[self _render_multipart: (CWMIMEMultipart *)p  type: ct  to: str];
+ 		return;
+ 	}
+ 
+@@ -352,7 +352,7 @@
+ 		return;
+ 	}
+ 
+-	if ([p isKindOfClass: [Part class]])
++	if ([p isKindOfClass: [CWPart class]])
+ 	{
+ 		[self _renderPart: p to: str];
+ 		return;
+@@ -553,13 +553,13 @@
+ 
+ -(void) _renderPart:(id)p to:(NSMutableAttributedString *)str
+ {
+-	if ([p isKindOfClass: [Message class]])
++	if ([p isKindOfClass: [CWMessage class]])
+ 	{
+-		Message *m=(Message *)p;
++		CWMessage *m=(CWMessage *)p;
+ 		append(str,header_bold_dict,_(@"Subject:"));
+ 		append(str,header_dict,@" %@\n",[m subject]);
+ 		append(str,header_bold_dict,_(@"From:"));
+-		append(str,header_dict,@" %@\n",[[m from] unicodeStringValue]);
++		append(str,header_dict,@" %@\n",[[m from] stringValue]);
+ 		append(str,header_bold_dict,_(@"Newsgroups:"));
+ 		append(str,header_dict,@" %@\n",[m headerValueForName: @"Newsgroups"]);
+ 		append(str,header_bold_dict,_(@"Date:"));
+@@ -569,9 +569,9 @@
+ 		append(str,nil,@"\n");
+ 		[self _renderContent:[m content] parent: m to:str];
+ 	}
+-	else if ([p isKindOfClass: [Part class]])
++	else if ([p isKindOfClass: [CWPart class]])
+ 	{ /* handles MimeBodyPart and any extensions */
+-		[self _renderContent:[(Part *)p content] parent: (Part *)p to:str];
++		[self _renderContent:[(CWPart *)p content] parent: (CWPart *)p to:str];
+ 	}
+ 	else
+ 	{
+@@ -655,7 +655,27 @@
+ 		NSData *d;
+ 
+ 		d=[[NSData alloc] initWithBytes: data length: length];
+-		cur_message=[(Message *)[Message alloc] initWithData: d];
++		if([mdb msg_getHeader: "ContentType" : mid])
++		  {
++		    cur_message=[(CWMessage *)[CWMessage alloc] initWithData: d];
++		  }
++		else
++		  {
++		    cur_message=[(CWMessage *)[CWMessage alloc] initWithData: d
++					      charset:[Pref_MessageViewing defaultEncoding]];
++		  }
++		if(![cur_message contentType])
++		  {
++		    [cur_message setContentType:@"text/plain"];
++		  }
++		else
++		  {
++		    ASSIGN(
++			   cur_message,
++			   [(CWMessage *)[CWMessage alloc] initWithData: d
++					 charset:[cur_message charset]]
++			   );
++		  }
+ 		[d release];
+ 		{
+ 			const char *c;
+@@ -819,17 +839,17 @@
+ 		{
+ 			NSString *s=(NSString *)l->object;
+ 			NSRange r;
+-			UUFile *fw;
+-			r=[MimeUtility rangeOfUUEncodedStringFromString: s
++			CWUUFile *fw;
++			r=[CWUUFile rangeOfUUEncodedStringFromString: s
+ 				range: NSMakeRange(0,[s length])];
+ 
+-			fw=[MimeUtility fileFromUUEncodedString: [s substringWithRange: r]];
++			fw=[CWUUFile fileFromUUEncodedString: [s substringWithRange: r]];
+ 			filename=AUTORELEASE(RETAIN([fw name]));
+ 			d=AUTORELEASE(RETAIN([fw data]));
+ 		}
+ 		else
+ 		{
+-			Part *p=(Part *)l->object;
++			CWPart *p=(CWPart *)l->object;
+ 			d=(NSData *)[p content];
+ 			filename=[p filename];
+ 		}
+@@ -926,6 +946,12 @@
+ 
+ 	mid=0;
+ 
++	[[NSNotificationCenter defaultCenter]
++	  addObserver: self
++	  selector: @selector(encodingChanged:)
++	  name: DefaultEncodingChangedNotification
++	  object: nil];
++
+ 	return self;
+ }
+ 
+@@ -1154,6 +1180,11 @@
+ 	[app_delegate composeFollowupToMessage: cur_message];
+ }
+ 
++-(void) encodingChanged: (NSNotification *)n
++{
++  [self getData];
++  [self displayMessage];
++}
+ 
+ @end
+ 
+diff -urNad lusernet.app-0.4.2~/NNTPSourceGUI.m NNTPSourceGUI.m
+--- lusernet.app-0.4.2~/NNTPSourceGUI.m	2004-03-03 01:58:37.000000000 +0200
++++ NNTPSourceGUI.m	2006-09-27 00:13:21.000000000 +0300
+@@ -347,7 +347,6 @@
+ 	[win setTitle: _(@"NNTPSource properties")];
+ 	[win setDelegate: self];
+ 	[win autoSetupKeyViewChain];
+-	[win release];
+ 
+ 	return self;
+ }
+diff -urNad lusernet.app-0.4.2~/Pref_MessageViewing.h Pref_MessageViewing.h
+--- lusernet.app-0.4.2~/Pref_MessageViewing.h	2002-03-11 02:06:46.000000000 +0200
++++ Pref_MessageViewing.h	2006-09-27 00:13:21.000000000 +0300
+@@ -27,6 +27,7 @@
+ 
+ +(NSFont *) font1;
+ +(NSFont *) font2;
+++(NSString *) defaultEncoding;
+ 
+ @end
+ 
+diff -urNad lusernet.app-0.4.2~/Pref_MessageViewing.m Pref_MessageViewing.m
+--- lusernet.app-0.4.2~/Pref_MessageViewing.m	2004-03-03 01:58:37.000000000 +0200
++++ Pref_MessageViewing.m	2006-09-27 00:13:21.000000000 +0300
+@@ -8,11 +8,15 @@
+ #include <Foundation/NSBundle.h>
+ 
+ #include <AppKit/NSButton.h>
++#include <AppKit/NSFontManager.h>
++#include <AppKit/NSPopUpButton.h>
+ #include <AppKit/NSTextField.h>
+ #include <GNUstepGUI/GSVbox.h>
+ #include <GNUstepGUI/GSHbox.h>
+ #include <AppKit/NSFont.h>
+ 
++#include <Pantomime/CWCharset.h>
++
+ #include "Pref_MessageViewing.h"
+ 
+ 
+@@ -192,6 +195,7 @@
+ 		{
+ 			NSTextField *f;
+ 			NSButton *b;
++			NSPopUpButton *pop;
+ 			GSHbox *hb;
+ 
+ 			hb=[[GSHbox alloc] init];
+@@ -289,6 +293,49 @@
+ 
+ 			[top addView: hb enablingYResizing: NO];
+ 			DESTROY(hb);
++
++			[top addSeparator];
++
++			hb=[[GSHbox alloc] init];
++			[hb setDefaultMinXMargin: 4];
++			[hb setAutoresizingMask: NSViewWidthSizable];
++
++			f=[[NSTextField alloc] init];
++			[f setStringValue: _(@"Default encoding ")];
++			[f setEditable: NO];
++			[f setDrawsBackground: NO];
++			[f setBordered: NO];
++			[f setBezeled: NO];
++			[f setSelectable: NO];
++			[f sizeToFit];
++			[f setAutoresizingMask: 0];
++			[hb addView: f  enablingXResizing: NO];
++			DESTROY(f);
++
++			pop = [[NSPopUpButton alloc] init];
++			[pop setPullsDown:NO];
++			NSDictionary *charsets = [CWCharset allCharsets];
++			NSEnumerator *en = [[charsets allValues] objectEnumerator];
++			NSString *encoding;
++			while((encoding = [en nextObject]))
++			  {
++			    [pop addItemWithTitle:encoding];
++			  }
++			[pop selectItemWithTitle:
++			       [charsets 
++				 objectForKey:
++				   [sd objectForKey:@"DefaultEncoding"]]];
++			[pop synchronizeTitleAndSelectedItem];
++			[pop setTarget: self];
++			[pop setAction: @selector(changeEncoding:)];
++			[pop sizeToFit];
++			[hb addView: pop  enablingXResizing: NO];
++			DESTROY(pop);
++
++
++			[top addView: hb enablingYResizing: NO];
++			DESTROY(hb);
++
+ 		}
+ 
+ 		[self revert];
+@@ -334,5 +381,23 @@
+ 	[f_cur setFont: f];
+ }
+ 
++-(void) changeEncoding:(id)sender
++{
++  NSDictionary *charsets = [CWCharset allCharsets];
++  sd=[NSUserDefaults standardUserDefaults];
++
++  [sender selectItemWithTitle:[sender titleOfSelectedItem]];
++  [sender synchronizeTitleAndSelectedItem];
++  
++  [sd setObject:
++	[[charsets allKeysForObject:[sender titleOfSelectedItem]] objectAtIndex:0] 
++      forKey:@"DefaultEncoding"];
++}
++
+++(NSString *) defaultEncoding
++{
++  return [sd stringForKey:@"DefaultEncoding"];
++}
++
+ @end
+ 
+diff -urNad lusernet.app-0.4.2~/main.h main.h
+--- lusernet.app-0.4.2~/main.h	2004-03-03 01:58:37.000000000 +0200
++++ main.h	2006-09-27 00:13:21.000000000 +0300
+@@ -11,6 +11,8 @@
+ @class FolderListController,LogWindowController,PreferencesWindowController;
+ @class Message;
+ 
++extern NSString *DefaultEncodingChangedNotification;
++
+ @interface AppDelegate : NSObject
+ {
+ 	NSApplication *app;
+@@ -37,7 +39,7 @@
+ @interface AppDelegate (prefs)
+ -(void) openPreferences: (id)sender;
+ @end
+-
++	     
+ 
+ extern AppDelegate *app_delegate;
+ 
+diff -urNad lusernet.app-0.4.2~/main.m main.m
+--- lusernet.app-0.4.2~/main.m	2004-03-03 01:58:37.000000000 +0200
++++ main.m	2006-09-27 00:13:21.000000000 +0300
+@@ -8,9 +8,12 @@
+ #include <Foundation/NSPathUtilities.h>
+ #include <Foundation/NSBundle.h>
+ #include <AppKit/NSApplication.h>
++#include <AppKit/NSGraphics.h>
+ #include <AppKit/NSMenu.h>
+ #include <AppKit/NSWindow.h>
+ 
++#include <Pantomime/CWCharset.h>
++
+ #include "MsgDB.h"
+ 
+ #include "LogWindowController.h"
+@@ -36,6 +38,7 @@
+ 
+ #define LocationKey @"MessageDatabaseLocation"
+ 
++NSString *DefaultEncodingChangedNotification = @"DefaultEncodingChangedNotification";
+ 
+ @interface NSMenu (im_lazy)
+ -(id <NSMenuItem>) addItemWithTitle: (NSString *)s;
+@@ -209,6 +212,21 @@
+ #endif
+ }
+ 
++-(void) changeEncoding:(id)sender
++{
++  NSDictionary *charsets = [CWCharset allCharsets];
++
++  //  [sender selectItemWithTitle:[sender title]];
++  //  [sender synchronizeTitleAndSelectedItem];
++  
++  [[NSUserDefaults standardUserDefaults] setObject:
++	[[charsets allKeysForObject:[sender title]] objectAtIndex:0] 
++      forKey:@"DefaultEncoding"];
++
++  [[NSNotificationCenter defaultCenter]
++    postNotificationName: DefaultEncodingChangedNotification
++    object: nil];
++}
+ 
+ -(void) applicationWillFinishLaunching: (NSNotification *)n
+ {
+@@ -307,6 +325,18 @@
+ 	m=[[NSMenu alloc] init];
+ /*	[m addItemWithTitle: _(@"Open")
+ 		action: @selector(openMessage:)];*/
++	m2=[[NSMenu alloc] init];
++	
++	NSDictionary *charsets = [CWCharset allCharsets];
++	NSEnumerator *en = [[charsets allValues] objectEnumerator];
++	NSString *encoding;
++	while((encoding = [en nextObject]))
++	  {
++	    [m2 addItemWithTitle: encoding
++		action: @selector(changeEncoding:)];
++	  }
++
++	[m setSubmenu: m2 forItem: [m addItemWithTitle: _(@"Change encoding...")]];
+ 	[m addItemWithTitle: _(@"Toggle read/unread")
+ 		action: @selector(messageToggleRead:)
+ 		keyEquivalent: @"m"];

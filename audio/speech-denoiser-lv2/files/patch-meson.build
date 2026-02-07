@@ -1,0 +1,33 @@
+--- meson.build.orig	2018-10-07 21:33:41 UTC
++++ meson.build
+@@ -10,7 +10,7 @@ src = 'src/sdenoise.c'
+ cc = meson.get_compiler('c')
+ 
+ #handling rnnoise static library
+-lib_rnnoise = cc.find_library('rnnoise-nu',dirs: meson.current_source_dir() + '/rnnoise/.libs/',required : true)
++lib_rnnoise = cc.find_library('rnnoise-nu',required : true)
+ inc_rnnoise = include_directories('rnnoise/include')
+ 
+ #dependencies for speech denoise
+@@ -19,13 +19,17 @@ lv2_dep = dependency('lv2', required : t
+ nr_dep = [m_dep,lv2_dep,lib_rnnoise]
+ 
+ #compiler optimization flags
+-if meson.get_compiler('c').get_id() == 'clang'
+-  add_global_arguments('-mrecip', language : 'c')
++#if meson.get_compiler('c').get_id() == 'clang'
++#  add_global_arguments('-mrecip', language : 'c')
++#endif
++if get_option('use_sse')
++  cflags = ['-msse','-msse2','-mfpmath=sse','-ffast-math','-fomit-frame-pointer','-fno-finite-math-only']
++else
++  cflags = ['-ffast-math','-fomit-frame-pointer','-fno-finite-math-only']
+ endif
+-cflags = ['-msse','-msse2','-mfpmath=sse','-ffast-math','-fomit-frame-pointer','-fno-finite-math-only']
+ 
+ #install folder
+-install_folder = 'sdenoise.lv2'
++install_folder = 'lib/lv2/sdenoise.lv2'
+ 
+ #get the build operating system and configure install path and shared object extension
+ current_os = build_machine.system()

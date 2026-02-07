@@ -1,0 +1,35 @@
+--- CMakeLists.txt.orig	2024-08-25 02:15:46 UTC
++++ CMakeLists.txt
+@@ -12,6 +12,7 @@ if(${CMAKE_MAJOR_VERSION} EQUAL 3)
+ 
+ if(${CMAKE_MAJOR_VERSION} EQUAL 3)
+     cmake_policy(SET CMP0043 OLD)
++    cmake_policy(SET CMP0046 OLD)
+ endif()
+ 
+ # figure out if we use MinGW with Ninja: call with -DCC=gcc
+@@ -72,12 +73,6 @@ project(Kst)
+ project(Kst)
+ 
+ 
+-if(kst_release)
+-    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DQT_NO_WARNING_OUTPUT")
+-else()
+-    set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
+-endif()
+ 
+ 
+ if(kst_sanitize)
+@@ -240,11 +235,6 @@ message(STATUS)
+ # React on options
+ 
+ 
+-if(kst_verbose)
+-    set(CMAKE_VERBOSE_MAKEFILE 1)
+-else()
+-    set(CMAKE_VERBOSE_MAKEFILE 0)
+-endif()
+ 
+ if(kst_install_prefix)
+     set(CMAKE_INSTALL_PREFIX ${kst_install_prefix} CACHE PATH "User's choice for install prefix" FORCE)

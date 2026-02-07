@@ -1,0 +1,31 @@
+--- traefik.sample.yml.orig	2020-10-19 18:27:54 UTC
++++ traefik.sample.yml
+@@ -23,10 +23,10 @@ global:
+ #
+ entryPoints:
+   web:
+-    address: :80
++    address: :8088
+ 
+   websecure:
+-    address: :443
++    address: :8443
+ 
+ ################################################################
+ # Traefik logs configuration
+@@ -94,13 +94,13 @@ entryPoints:
+ #
+ # Optional
+ #
+-#api:
++api:
+   # Enable the API in insecure mode
+   #
+   # Optional
+   # Default: false
+   #
+-#  insecure: true
++  insecure: true
+ 
+   # Enabled Dashboard
+   #

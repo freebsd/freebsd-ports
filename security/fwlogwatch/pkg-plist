@@ -1,0 +1,12 @@
+etc/fwlogwatch.config
+etc/rc.d/fwlogwatch.sh.sample
+share/man/man8/fwlogwatch.8.gz
+sbin/fwlogwatch
+sbin/fwlw_notify
+sbin/fwlw_respond
+share/locale/de/LC_MESSAGES/fwlogwatch.mo
+share/locale/ja/LC_MESSAGES/fwlogwatch.mo
+share/locale/pt/LC_MESSAGES/fwlogwatch.mo
+share/locale/sv/LC_MESSAGES/fwlogwatch.mo
+share/locale/zh_TW/LC_MESSAGES/fwlogwatch.mo
+share/locale/zh_CN/LC_MESSAGES/fwlogwatch.mo

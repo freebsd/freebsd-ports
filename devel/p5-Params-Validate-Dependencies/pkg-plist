@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Data/Domain/Dependencies.pm
+%%SITE_PERL%%/Params/Validate/Dependencies.pm
+%%SITE_PERL%%/Params/Validate/Dependencies/Documenter.pm
+%%SITE_PERL%%/Params/Validate/Dependencies/Extending.pod
+%%PERL5_MAN3%%/Data::Domain::Dependencies.3.gz
+%%PERL5_MAN3%%/Params::Validate::Dependencies.3.gz
+%%PERL5_MAN3%%/Params::Validate::Dependencies::Extending.3.gz

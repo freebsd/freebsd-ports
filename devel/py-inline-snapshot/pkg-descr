@@ -1,0 +1,22 @@
+Golden master/snapshot/approval testing library which puts the values right
+into your source code.
+
+Key Features:
+
+* Intuitive Semantics: snapshot(x) mirrors x for easy understanding.
+* Versatile Comparison Support: Equipped with x == snapshot(...),
+  x <= snapshot(...), x in snapshot(...), and snapshot(...)[key].
+* Enhanced Control Flags: Utilize various flags for precise control of which
+  snapshots you want to change.
+* Preserved Black Formatting: Retains formatting consistency with Black
+  formatting.
+* External File Storage: Store snapshots externally using outsource(data).
+* Seamless Pytest Integration: Integrated seamlessly with pytest for effortless
+  testing.
+* Customizable: code generation can be customized with @customize_repr
+* Nested Snapshot Support: snapshots can contain other snapshots
+* Fuzzy Matching: Incorporate dirty-equals for flexible comparisons within
+  snapshots.
+* Dynamic Snapshot Content: snapshots can contain non-constant values
+* Comprehensive Documentation: Access detailed documentation for complete
+  guidance.

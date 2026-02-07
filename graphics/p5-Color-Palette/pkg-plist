@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Color/Palette.pm
+%%SITE_PERL%%/Color/Palette/Schema.pm
+%%SITE_PERL%%/Color/Palette/Types.pm
+%%PERL5_MAN3%%/Color::Palette.3.gz
+%%PERL5_MAN3%%/Color::Palette::Schema.3.gz
+%%PERL5_MAN3%%/Color::Palette::Types.3.gz

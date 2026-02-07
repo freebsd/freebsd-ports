@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2004-12-21 10:22:10.000000000 +0000
++++ Makefile.in	2008-08-26 12:02:42.000000000 +0000
+@@ -97,3 +97,3 @@
+ ${srcdir}/configure: configure.in aclocal.m4
+-	cd ${srcdir} && autoconf
++#	cd ${srcdir} && autoconf
+ 
+@@ -103,3 +103,3 @@
+ #config.h.top config.h.bot
+-	cd ${srcdir} && autoheader
++#	cd ${srcdir} && autoheader
+ 	echo timestamp > ${srcdir}/stamp-h.in

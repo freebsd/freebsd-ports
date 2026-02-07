@@ -1,0 +1,51 @@
+[
+{ type: install
+  message: <<EOM
+/!\ The FreeBSD package REQUIRES the apps_paths configuration as    /!\
+/!\ seen in config/config.sample.php to function                    /!\
+
+Please note that everything has been installed in %%WWWDIR%%.
+
+You will probably want to add an alias to your httpd.conf file,
+something like this:
+
+    	Alias /nextcloud %%WWWDIR%%
+	AcceptPathInfo On
+	<Directory %%WWWDIR%%>
+	    AllowOverride All
+	    Require all granted
+	</Directory>
+
+And restart Apache. Nextcloud will start the bundled installer on first
+access. Once the bundled installer finishes, further configuration can
+be done via 'Settings', 'Administration'. Additional configuration
+options are available in
+
+	%%WWWDIR%%/config/config.php
+
+You can find annotated configuration options in config.documented.php
+in the same directory. Nextcloud's configuration documentation is at 
+
+	https://docs.nextcloud.com/server/stable/admin_manual/configuration_server
+
+The caching options require additional Nextcloud configuration.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+After a version migration you should upgrade your nextcloud instance
+using command line:
+
+  occ upgrade
+
+Merge any changes to %%WWWDIR%%/.htaccess.dist into .htaccess (above the
+'#### DO NOT CHANGE ANYTHING ABOVE THIS LINE ####' divider if it exists)
+and update the dynamic part of the file using the commandline:
+
+  occ maintenance:update:htaccess
+
+As of Nextcloud 31.0.0 the recommended PHP version is 8.3.
+
+EOM
+}
+]

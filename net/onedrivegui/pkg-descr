@@ -1,0 +1,17 @@
+A GUI for FreeBSD/Linux OneDrive Client with multi-account support.
+
+Feature Highlights
+- Management and configuration of multiple OneDrive accounts.
+- Asynchronous real-time monitoring of multiple OneDrive accounts.
+- Setup wizard for easy OneDrive profile creation and import.
+- Auto-sync on GUI startup.
+- Support for GUI-based login process.
+- System tray (if supported by your desktop environment).
+- Start minimized to tray/dock.
+- Input validation to prevent configuration of incompatible OneDrive client
+  options.
+- Progress monitoring of multiple simultaneous file transfers.
+- Import and management of SharePoint Shared Libraries.
+- Tooltips with brief explanations of various OneDrive Client configuration
+  options.
+- Prompt for re-sync authorization to prevent unexpected data loss.

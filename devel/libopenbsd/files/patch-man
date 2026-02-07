@@ -1,0 +1,33 @@
+--- imsg_init.3.orig	2015-11-04 23:52:19 UTC
++++ imsg_init.3
+@@ -46,6 +46,8 @@
+ .Nm msgbuf_write ,
+ .Nm msgbuf_drain
+ .Nd IPC messaging functions
++.Sh LIBRARY
++.Ox Utilities Library (libopenbsd, \-lopenbsd)
+ .Sh SYNOPSIS
+ .In sys/types.h
+ .In sys/queue.h
+--- ohash_init.3.orig	2014-07-29 19:46:13 UTC
++++ ohash_init.3
+@@ -30,6 +30,8 @@
+ .Nm ohash_next ,
+ .Nm ohash_entries
+ .Nd light-weight open hashing
++.Sh LIBRARY
++.Ox Utilities Library (libopenbsd, \-lopenbsd)
+ .Sh SYNOPSIS
+ .In stdint.h
+ .In stddef.h
+--- ohash_interval.3.orig	2014-07-29 19:46:13 UTC
++++ ohash_interval.3
+@@ -24,6 +24,8 @@
+ .Nm ohash_qlookup ,
+ .Nm ohash_qlookupi
+ .Nd helper functions for open hashing
++.Sh LIBRARY
++.Ox Utilities Library (libopenbsd, \-lopenbsd)
+ .Sh SYNOPSIS
+ .In stdint.h
+ .In stddef.h

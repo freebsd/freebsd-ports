@@ -1,0 +1,44 @@
+--- src/meson.build.orig	2025-05-21 07:00:22 UTC
++++ src/meson.build
+@@ -35,6 +35,22 @@ endif
+ ]
+ endif
+ 
++dependencies = [
++  glib,
++  gtk,
++  cairo,
++  libxmu,
++  libxfce4util,
++  libxfce4ui,
++  xfconf,
++  libx11,
++  libwnck,
++]
++
++if target_os == 'freebsd' and kvm_lib.found()
++dependencies += [ kvm_lib ]
++endif
++
+ taskmanager = executable(
+   'xfce4-taskmanager',
+   taskmanager_sources,
+@@ -42,17 +58,7 @@ taskmanager = executable(
+   include_directories: [
+     include_directories('..'),
+   ],
+-  dependencies: [
+-    glib,
+-    gtk,
+-    cairo,
+-    libxmu,
+-    libxfce4util,
+-    libxfce4ui,
+-    xfconf,
+-    libx11,
+-    libwnck,
+-  ],
++  dependencies: dependencies,
+   install: true,
+   install_dir: get_option('prefix') / get_option('bindir'),
+ )

@@ -1,0 +1,2 @@
+The Perl 5 module Devel::Events is an event generation, filtering
+and analaysis framework for instrumenting and auditing perl code.

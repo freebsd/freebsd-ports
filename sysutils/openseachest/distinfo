@@ -1,0 +1,11 @@
+TIMESTAMP = 1701684814
+SHA256 (Seagate-openSeaChest-v23.12_GH0.tar.gz) = 6130c7a3c21995536b69873bfec5c49891dbfe970bc3b3d2ff1c4ec6658bf103
+SIZE (Seagate-openSeaChest-v23.12_GH0.tar.gz) = 627262
+SHA256 (Seagate-opensea-common-fb04a1a_GH0.tar.gz) = 9e4eb513f3143363b2c2663d5eb8891dc487e640d9ad84cb5b97d276d0401d8b
+SIZE (Seagate-opensea-common-fb04a1a_GH0.tar.gz) = 137242
+SHA256 (Seagate-opensea-operations-3dffce6_GH0.tar.gz) = 888ac9a473a0a45f566ac781764fbbaf3cebf466050f113fab5df05a849d345a
+SIZE (Seagate-opensea-operations-3dffce6_GH0.tar.gz) = 525803
+SHA256 (Seagate-opensea-transport-443c719_GH0.tar.gz) = cf73d80da37ab85bde5fa72f0ca394069c592c2adb36036fc44e14930f440188
+SIZE (Seagate-opensea-transport-443c719_GH0.tar.gz) = 832535
+SHA256 (Seagate-wingetopt-c68019b_GH0.tar.gz) = b1e95f3e5d908c46cc0f504e4054d3d835ff95eb9d18dbd408416ef0b0a64db2
+SIZE (Seagate-wingetopt-c68019b_GH0.tar.gz) = 20941

@@ -1,0 +1,9 @@
+POSIX::Run::Capture runs an external command and captures its output.
+Both standard error and output are captured.  Upon exit, their contents
+can be accessed line by line or in one chunk.  Callback routines can be
+supplied that will be called for each complete line of output read,
+providing a way for synchronous processing.  Standard input can be
+supplied as either a file handle or a text.
+
+This module is for those who value performance and effectiveness over
+portability.  As its name suggests, it can be used only on POSIX systems.

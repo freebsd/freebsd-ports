@@ -1,0 +1,4 @@
+OpenTelemetry Protobuf Encoding is provided as a convenience to encode to
+Protobuf. Currently used by:
+- opentelemetry-exporter-otlp-proto-grpc
+- opentelemetry-exporter-otlp-proto-http

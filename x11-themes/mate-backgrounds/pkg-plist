@@ -1,0 +1,67 @@
+share/backgrounds/mate/abstract/Arc-Colors-Transparent-Wallpaper.png
+share/backgrounds/mate/abstract/Elephants.jpg
+share/backgrounds/mate/abstract/Elephants_3840x2160.jpg
+share/backgrounds/mate/abstract/Elephants_5640x3172.jpg
+share/backgrounds/mate/abstract/Flow.png
+share/backgrounds/mate/abstract/Gulp.png
+share/backgrounds/mate/abstract/Silk.png
+share/backgrounds/mate/abstract/Spring.png
+share/backgrounds/mate/abstract/Waves.png
+share/backgrounds/mate/desktop/Float-into-MATE.png
+share/backgrounds/mate/desktop/GreenTraditional.jpg
+share/backgrounds/mate/desktop/MATE-Stripes-Dark.png
+share/backgrounds/mate/desktop/MATE-Stripes-Light.png
+share/backgrounds/mate/desktop/Stripes.png
+share/backgrounds/mate/desktop/Ubuntu-Mate-Cold-no-logo.png
+share/backgrounds/mate/desktop/Ubuntu-Mate-Dark-no-logo.png
+share/backgrounds/mate/desktop/Ubuntu-Mate-Radioactive-no-logo.png
+share/backgrounds/mate/desktop/Ubuntu-Mate-Warm-no-logo.png
+share/backgrounds/mate/nature/Aqua.jpg
+share/backgrounds/mate/nature/Blinds.jpg
+share/backgrounds/mate/nature/Dune.jpg
+share/backgrounds/mate/nature/FreshFlower.jpg
+share/backgrounds/mate/nature/Garden.jpg
+share/backgrounds/mate/nature/GreenMeadow.jpg
+share/backgrounds/mate/nature/LadyBird.jpg
+share/backgrounds/mate/nature/RainDrops.jpg
+share/backgrounds/mate/nature/Storm.jpg
+share/backgrounds/mate/nature/TwoWings.jpg
+share/backgrounds/mate/nature/Wood.jpg
+share/backgrounds/mate/nature/YellowFlower.jpg
+share/mate-background-properties/mate-abstract.xml
+share/mate-background-properties/mate-desktop.xml
+share/mate-background-properties/mate-nature.xml
+@dir share/locale/an/LC_MESSAGES
+@dir share/locale/as/LC_MESSAGES
+@dir share/locale/ast/LC_MESSAGES
+@dir share/locale/bn_IN/LC_MESSAGES
+@dir share/locale/ca@valencia/LC_MESSAGES
+@dir share/locale/cmn/LC_MESSAGES
+@dir share/locale/crh/LC_MESSAGES
+@dir share/locale/dz/LC_MESSAGES
+@dir share/locale/es_AR/LC_MESSAGES
+@dir share/locale/es_CO/LC_MESSAGES
+@dir share/locale/fr_CA/LC_MESSAGES
+@dir share/locale/frp/LC_MESSAGES
+@dir share/locale/fur/LC_MESSAGES
+@dir share/locale/fy/LC_MESSAGES
+@dir share/locale/hy/LC_MESSAGES
+@dir share/locale/ie/LC_MESSAGES
+@dir share/locale/kk/LC_MESSAGES
+@dir share/locale/ku/LC_MESSAGES
+@dir share/locale/ku_IQ/LC_MESSAGES
+@dir share/locale/ky/LC_MESSAGES
+@dir share/locale/la/LC_MESSAGES
+@dir share/locale/mai/LC_MESSAGES
+@dir share/locale/mg/LC_MESSAGES
+@dir share/locale/mr/LC_MESSAGES
+@dir share/locale/nds/LC_MESSAGES
+@dir share/locale/oc/LC_MESSAGES
+@dir share/locale/ps/LC_MESSAGES
+@dir share/locale/rw/LC_MESSAGES
+@dir share/locale/si/LC_MESSAGES
+@dir share/locale/sr@latin/LC_MESSAGES
+@dir share/locale/te/LC_MESSAGES
+@dir share/locale/ug/LC_MESSAGES
+@dir share/locale/ur/LC_MESSAGES
+@dir share/locale/zh_HK/LC_MESSAGES

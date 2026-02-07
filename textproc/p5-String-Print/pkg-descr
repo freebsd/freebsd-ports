@@ -1,0 +1,2 @@
+String::Print inserts values into (translated) strings. It provides printf and
+sprintf alternatives via both an object oriented and a functional interface.

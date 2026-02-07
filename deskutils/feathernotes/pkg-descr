@@ -1,0 +1,4 @@
+FeatherNotes is a lightweight hierarchical notes manager written in
+Qt/C++, independent of any desktop environment, and supporting rich
+text formatting, image embedding, inserting editable tables, export
+to HTML and PDF, drag-and-drop, password protection, to name a few.

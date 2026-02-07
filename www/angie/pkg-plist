@@ -1,0 +1,35 @@
+@preexec test -e %%LOGDIR%% || install -d -m 755 -o root -g wheel %%LOGDIR%%
+@preexec test -e %%DBDIR%%/state || install -d -m 755 -o %%WWWOWN%% -g %%WWWGRP%% %%DBDIR%%/state
+
+@postunexec test -d %%DBDIR%%/state && rmdir %%DBDIR%%/state 2>/dev/null || :
+@postunexec test -d %%LOGDIR%% && rmdir %%LOGDIR%% 2>/dev/null || :
+
+@dir %%ETCDIR%%/http.d
+@dir %%ETCDIR%%/stream.d
+@dir %%CACHEDIR%%
+@dir %%DBDIR%%
+@dir %%MODDIR%%
+%%ACME%%@dir %%ETCDIR%%/acme-client
+
+%%ETCDIR%%/modules
+
+sbin/angie-nodebug
+sbin/angie
+%%DEBUG%%sbin/angie-debug
+
+share/man/man8/angie.8.gz
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/CHANGES.ru
+
+@sample %%ETCDIR%%/angie.conf.sample
+@sample %%ETCDIR%%/fastcgi.conf.sample
+@sample %%ETCDIR%%/fastcgi_params.sample
+@sample %%ETCDIR%%/mime.types.sample
+@sample %%ETCDIR%%/prometheus_all.conf.sample
+@sample %%ETCDIR%%/scgi_params.sample
+@sample %%ETCDIR%%/uwsgi_params.sample
+@sample %%ETCDIR%%/http.d/default.conf.sample
+@sample %%ETCDIR%%/stream.d/example.conf.sample
+
+%%WWWDIR%%/html/50x.html
+%%WWWDIR%%/html/index.html

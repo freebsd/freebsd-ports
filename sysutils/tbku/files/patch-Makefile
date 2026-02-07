@@ -1,0 +1,12 @@
+--- Makefile.orig	2013-04-02 16:10:16 UTC
++++ Makefile
+@@ -2,7 +2,7 @@
+ # $Id: Makefile,v 1.102 2008/03/19 23:05:08 tundra Exp $
+ 
+ install:
+-	${BSD_INSTALL_SCRIPT} tbku   ${PREFIX}/bin
+-	${BSD_INSTALL_MAN}    tbku.1.gz ${PREFIX}/man/cat1
++	${BSD_INSTALL_SCRIPT} tbku   $(DESTDIR)${PREFIX}/bin
++	${BSD_INSTALL_MAN}    tbku.1.gz $(DESTDIR)${PREFIX}/man/cat1
+ 
+ all:  # Nothing to do here

@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2022-09-02 19:36:11 UTC
++++ Makefile.in
+@@ -384,8 +384,7 @@ SUBDIRS = \
+ 	tests		\
+ 	data		\
+ 	tools		\
+-	po		\
+-	help
++	po
+ 
+ CLEANFILES = \
+ 	intltool-extract	\

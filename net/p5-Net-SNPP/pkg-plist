@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Net::SNPP.3.gz
+%%PERL5_MAN3%%/Net::SNPP::Server.3.gz
+%%SITE_PERL%%/Net/SNPP.pm
+%%SITE_PERL%%/Net/SNPP/HylaFAX.pm
+%%SITE_PERL%%/Net/SNPP/Server.pm

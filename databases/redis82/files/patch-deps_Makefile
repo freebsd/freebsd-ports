@@ -1,0 +1,21 @@
+--- deps/Makefile.orig	2025-08-04 11:05:03 UTC
++++ deps/Makefile
+@@ -110,7 +110,7 @@ else
+ ifeq ($(LUA_DEBUG),yes)
+ 	LUA_CFLAGS+= -O0 -g -DLUA_USE_APICHECK
+ else
+-	LUA_CFLAGS+= -O2 
++	LUA_CFLAGS+=
+ endif
+ ifeq ($(LUA_COVERAGE),yes)
+ 	LUA_CFLAGS += -fprofile-arcs -ftest-coverage
+@@ -138,7 +138,7 @@ jemalloc: .make-prerequisites
+ 
+ jemalloc: .make-prerequisites
+ 	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
+-	cd jemalloc && ./configure --disable-cxx --with-version=5.3.0-0-g0 --with-lg-quantum=3 --disable-cache-oblivious --with-jemalloc-prefix=je_ CFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" $(JEMALLOC_CONFIGURE_OPTS)
+-	cd jemalloc && $(MAKE) lib/libjemalloc.a
++	cd jemalloc && ./configure --disable-cxx --with-version=5.3.0-0-g0 --with-lg-quantum=3 --disable-cache-oblivious --with-jemalloc-prefix=je_ CFLAGS="$(JEMALLOC_CFLAGS)" CXXFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" $(JEMALLOC_CONFIGURE_OPTS)
++	cd jemalloc && $(MAKE) CFLAGS="$(JEMALLOC_CFLAGS)" CXXFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" lib/libjemalloc.a
+ 
+ .PHONY: jemalloc

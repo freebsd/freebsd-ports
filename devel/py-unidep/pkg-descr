@@ -1,0 +1,6 @@
+UniDep streamlines Python project dependency management by unifying Conda and
+Pip packages in a single system.
+
+Handling dependencies in Python projects can be challenging, especially when
+juggling Python and non-Python packages. This often leads to confusion and
+inefficiency, as developers juggle between multiple dependency files.

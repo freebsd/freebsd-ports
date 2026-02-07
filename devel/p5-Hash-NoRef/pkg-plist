@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Hash/NoRef.pm
+%%SITE_ARCH%%/auto/Hash/NoRef/NoRef.so
+%%PERL5_MAN3%%/Hash::NoRef.3.gz

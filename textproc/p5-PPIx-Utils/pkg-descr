@@ -1,0 +1,6 @@
+PPIx::Utils is a collection of utility functions for working with PPI documents.
+The functions are organized into submodules, and may be imported from the
+appropriate submodule or via this module.
+
+These functions were originally from Perl::Critic::Utils and related modules,
+and have been split off to this distribution for use outside of Perl::Critic.

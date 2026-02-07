@@ -1,0 +1,8 @@
+Barrnap predicts the location of ribosomal RNA genes in genomes. It supports
+bacteria (5S,23S,16S), archaea (5S,5.8S,23S,16S), metazoan mitochondria
+(12S,16S) and eukaryotes (5S,5.8S,28S,18S).
+
+It takes FASTA DNA sequence as input, and write GFF3 as output. It uses the new
+nhmmer tool that comes with HMMER 3.1 for HMM searching in RNA:DNA style.
+Multithreading is supported and one can expect roughly linear speed-ups with
+more CPUs.

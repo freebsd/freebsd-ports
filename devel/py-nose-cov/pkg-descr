@@ -1,0 +1,1 @@
+nose plugin for coverage reporting, including subprocesses and multiprocessing.

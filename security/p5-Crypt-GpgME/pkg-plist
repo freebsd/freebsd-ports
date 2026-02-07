@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Crypt/GpgME.pm
+%%SITE_ARCH%%/auto/Crypt/GpgME/GpgME.so
+%%PERL5_MAN3%%/Crypt::GpgME.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sign.pl

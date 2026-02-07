@@ -1,0 +1,10 @@
+ls-lint is an extremely fast directory and filename linter.
+
+Features:
+* Minimal setup with simple rules managed in one single .ls-lint.yml file.
+* Works for directory and file names - all extensions supported - full unicode
+  support.
+* Incredibly fast - lints thousands of files and directories in milliseconds.
+* Support for Windows, MacOS and Linux + NPM Package + GitHub Action & Docker
+  Image.
+* Almost zero third-party dependencies (only go-yaml and doublestar).

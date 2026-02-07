@@ -1,0 +1,2 @@
+ittywm is a window manager based off of TinyWM written in libxcb. It is lighter
+on resources than its predecessor.

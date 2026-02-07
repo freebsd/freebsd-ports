@@ -1,0 +1,20 @@
+--- Makefile.orig	2005-12-21 00:46:49 UTC
++++ Makefile
+@@ -33,12 +33,12 @@ ${MAN1}: ${POD}
+ 	${POD2MAN} -c "${POD_CENTER}" -r "${POD_RELEASE}" ${POD} > ${MAN1} 
+ 
+ install:
+-	${MKDIR} ${BINDIR} ${MANDIR}/man1
+-	${BSD_INSTALL_SCRIPT} ${PROG} ${BINDIR}
+-	${BSD_INSTALL_MAN} ${MAN1} ${MANDIR}/man1
++	${MKDIR} ${BINDIR} $(DESTDIR)${MANDIR}/man1
++	${BSD_INSTALL_SCRIPT} ${PROG} $(DESTDIR)${BINDIR}
++	${BSD_INSTALL_MAN} ${MAN1} $(DESTDIR)${MANDIR}/man1
+ 	if [ `id -u` = 0 ]; then \
+-		${CHOWN} ${BINOWN}:${BINGRP} ${BINDIR}/${PROG}; \
+-		${CHOWN} ${MANOWN}:${MANGRP} ${MANDIR}/man1/${MAN1}; \
++		${CHOWN} ${BINOWN}:${BINGRP} $(DESTDIR)${BINDIR}/${PROG}; \
++		${CHOWN} ${MANOWN}:${MANGRP} $(DESTDIR)${MANDIR}/man1/${MAN1}; \
+ 	fi
+ 
+ clean:

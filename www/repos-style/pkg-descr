@@ -1,0 +1,5 @@
+A free open source stylesheet for the Subversion index web page.
+The XSLT and CSS is fully customizable. There is icons for folders
+and many different filetypes. Install Repos Style as it is or use
+is as a sample XSLT to design your own. A simple log viewer is also
+included.

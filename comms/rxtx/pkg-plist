@@ -1,0 +1,5 @@
+%%JAVA_HOME%%/jre/lib/ext/RXTXcomm.jar
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/librxtxParallel.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/librxtxParallel-2.2pre1.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/librxtxSerial.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/librxtxSerial-2.2pre1.so

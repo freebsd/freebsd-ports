@@ -1,0 +1,45 @@
+--- layout.orig	2024-03-01 05:13:21 UTC
++++ layout
+@@ -1,36 +1,36 @@
+ {
+     "label" : "lock",
+-    "action" : "loginctl lock-session",
++    "action" : "swaylock",
+     "text" : "Lock",
+     "keybind" : "l"
+ }
+ {
+     "label" : "hibernate",
+-    "action" : "systemctl hibernate",
++    "action" : "acpiconf -s 4",
+     "text" : "Hibernate",
+     "keybind" : "h"
+ }
+ {
+     "label" : "logout",
+-    "action" : "loginctl terminate-user $USER",
++    "action" : "kill -9 -1",
+     "text" : "Logout",
+     "keybind" : "e"
+ }
+ {
+     "label" : "shutdown",
+-    "action" : "systemctl poweroff",
++    "action" : "shutdown -p now",
+     "text" : "Shutdown",
+     "keybind" : "s"
+ }
+ {
+     "label" : "suspend",
+-    "action" : "systemctl suspend",
++    "action" : "zzz",
+     "text" : "Suspend",
+     "keybind" : "u"
+ }
+ {
+     "label" : "reboot",
+-    "action" : "systemctl reboot",
++    "action" : "shutdown -r now",
+     "text" : "Reboot",
+     "keybind" : "r"
+ }

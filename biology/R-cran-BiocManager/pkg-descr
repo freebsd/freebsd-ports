@@ -1,0 +1,4 @@
+The BiocManager package, as the modern successor package to BiocInstaller,
+allows users to install and manage packages from the Bioconductor project.
+Bioconductor focuses on the statistical analysis and comprehension of
+high-throughput genomic data.

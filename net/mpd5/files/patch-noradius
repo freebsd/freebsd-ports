@@ -1,0 +1,588 @@
+Index: src/Makefile
+===================================================================
+--- src/Makefile	(revision 2417)
++++ src/Makefile	(working copy)
+@@ -60,6 +60,7 @@ USE_TCP_WRAP=		yes
+ #USE_AUTH_OPIE=		yes
+ USE_AUTH_PAM=		yes
+ USE_AUTH_SYSTEM=	yes
++USE_RADIUS?=		yes
+ 
+ # Build without builtin web server.
+ #NOWEB=			yes
+@@ -108,8 +109,10 @@ CFLAGS+=	-DUSE_SYSTEM
+ LDADD+=		-lnetgraph -lutil
+ DPADD+=		${LIBNETGRAPH}
+ 
++.if defined ( USE_RADIUS ) && ( ${USE_RADIUS} == yes )
+ LDADD+=		-L/usr/lib -lradius
+ DPADD+=		${LIBRADIUS}
++.endif
+ 
+ # Obtained from bsd.port.mk
+ .if !defined ( OSVERSION )
+@@ -152,8 +155,12 @@ CFLAGS+=	-DSYSLOG_FACILITY='"${SYSLOG_FACILITY}"'
+ STDSRCS=        assert.c auth.c bund.c rep.c ccp.c chap.c \
+ 		console.c command.c ecp.c event.c fsm.c iface.c input.c \
+ 		ip.c ipcp.c ipv6cp.c lcp.c link.c log.c main.c mbuf.c mp.c \
+-		msg.c ngfunc.c pap.c phys.c proto.c radius.c radsrv.c timer.c \
+-		util.c vars.c eap.c msoft.c ippool.c
++		msg.c ngfunc.c pap.c phys.c proto.c timer.c \
++		util.c vars.c msoft.c ippool.c
++
++.if defined ( USE_RADIUS ) && ( ${USE_RADIUS} == yes )
++STDSRCS+=	eap.c radius.c radsrv.c
++.endif
+ 
+ .if defined ( NOWEB )
+ CFLAGS+=	-DNOWEB
+Index: src/auth.c
+===================================================================
+--- src/auth.c	(revision 2411)
++++ src/auth.c	(working copy)
+@@ -188,10 +188,12 @@ void 
+ authparamsInit(struct authparams *ap)
+ {
+ 	memset(ap, 0, sizeof(struct authparams));
++#ifdef USE_RADIUS
+ 	ap->eapmsg = NULL;
+ 	ap->state = NULL;
+ 	ap->class = NULL;
+ 	ap->filter_id = NULL;
++#endif
+ 	ap->msdomain = NULL;
+ #ifdef SIOCSIFDESCR
+ 	ap->ifdescr = NULL;
+@@ -208,10 +210,12 @@ authparamsDestroy(struct authparams *ap)
+ 	int i;
+ #endif
+ 
++#ifdef USE_RADIUS
+ 	Freee(ap->eapmsg);
+ 	Freee(ap->state);
+ 	Freee(ap->class);
+ 	Freee(ap->filter_id);
++#endif
+ 
+ #ifdef USE_IPFW
+ 	ACLDestroy(ap->acl_rule);
+@@ -252,6 +256,7 @@ authparamsCopy(struct authparams *src, struct authpara
+ 
+ 	memcpy(dst, src, sizeof(struct authparams));
+ 
++#ifdef USE_RADIUS
+ 	if (src->eapmsg)
+ 		dst->eapmsg = Mdup(MB_AUTH, src->eapmsg, src->eapmsg_len);
+ 	if (src->state)
+@@ -260,6 +265,7 @@ authparamsCopy(struct authparams *src, struct authpara
+ 		dst->class = Mdup(MB_AUTH, src->class, src->class_len);
+ 	if (src->filter_id)
+ 		dst->filter_id = Mstrdup(MB_AUTH, src->filter_id);
++#endif
+ 
+ #ifdef USE_IPFW
+ 	ACLCopy(src->acl_rule, &dst->acl_rule);
+@@ -308,8 +314,10 @@ AuthInit(Link l)
+ 	Enable(&ac->options, AUTH_CONF_INTERNAL);
+ 	Enable(&ac->options, AUTH_CONF_ACCT_MANDATORY);
+ 
++#ifdef USE_RADIUS
+ 	EapInit(l);
+ 	RadiusInit(l);
++#endif
+ }
+ 
+ /*
+@@ -420,9 +428,11 @@ AuthStart(Link l)
+ 	case PROTO_CHAP:
+ 		ChapStart(l, AUTH_SELF_TO_PEER);
+ 		break;
++#ifdef USE_RADIUS
+ 	case PROTO_EAP:
+ 		EapStart(l, AUTH_SELF_TO_PEER);
+ 		break;
++#endif
+ 	default:
+ 		assert(0);
+ 	}
+@@ -437,9 +447,11 @@ AuthStart(Link l)
+ 	case PROTO_CHAP:
+ 		ChapStart(l, AUTH_PEER_TO_SELF);
+ 		break;
++#ifdef USE_RADIUS
+ 	case PROTO_EAP:
+ 		EapStart(l, AUTH_PEER_TO_SELF);
+ 		break;
++#endif
+ 	default:
+ 		assert(0);
+ 	}
+@@ -449,6 +461,7 @@ AuthStart(Link l)
+  * AuthInput()
+  *
+  * Deal with PAP/CHAP/EAP packet
++ * But cannot be called for EAP packet if RADIUS support is not compiled in.
+  */
+ 
+ void
+@@ -494,15 +507,16 @@ AuthInput(Link l, int proto, Mbuf bp)
+ 	len -= sizeof(fsmh);
+ 	pkt = MBDATA(bp);
+ 
++#ifdef USE_RADIUS
+ 	if (proto == PROTO_EAP && bp) {
+ 		Log(LG_AUTH, ("[%s] %s: rec'd %s #%d len: %hu, type: %s", l->name,
+ 		    ProtoName(proto), AuthCode(proto, fsmh.code, buf, sizeof(buf)), fsmh.id,
+ 		    fsmh_len, EapType(pkt[0])));
+-	} else {
++	} else
++#endif
+ 		Log(LG_AUTH, ("[%s] %s: rec'd %s #%d len: %hu", l->name,
+ 		    ProtoName(proto), AuthCode(proto, fsmh.code, buf, sizeof(buf)), fsmh.id,
+ 		    fsmh_len));
+-	}
+ 
+ 	auth = AuthDataNew(l);
+ 	auth->proto = proto;
+@@ -518,9 +532,11 @@ AuthInput(Link l, int proto, Mbuf bp)
+ 	case PROTO_CHAP:
+ 		ChapInput(l, auth, pkt, len);
+ 		break;
++#ifdef USE_RADIUS
+ 	case PROTO_EAP:
+ 		EapInput(l, auth, pkt, len);
+ 		break;
++#endif
+ 	default:
+ 		assert(0);
+ 	}
+@@ -563,13 +579,14 @@ AuthOutput(Link l, int proto, u_int code, u_int id, co
+ 	}
+ 	bp = mbcopyback(bp, MBLEN(bp), ptr, len);
+ 
++#ifdef USE_RADIUS
+ 	if (proto == PROTO_EAP) {
+ 		Log(LG_AUTH, ("[%s] %s: sending %s #%d len: %d, type: %s", l->name,
+ 		    ProtoName(proto), AuthCode(proto, code, buf, sizeof(buf)), id, plen, EapType(eap_type)));
+-	} else {
++	} else
++#endif
+ 		Log(LG_AUTH, ("[%s] %s: sending %s #%d len: %d", l->name,
+ 		    ProtoName(proto), AuthCode(proto, code, buf, sizeof(buf)), id, plen));
+-	}
+ 
+ 	/* Send it out */
+ 	NgFuncWritePppFrameLink(l, proto, bp);
+@@ -718,7 +735,9 @@ AuthStop(Link l)
+ 	TimerStop(&a->timer);
+ 	PapStop(&a->pap);
+ 	ChapStop(&a->chap);
++#ifdef USE_RADIUS
+ 	EapStop(&a->eap);
++#endif
+ 	paction_cancel(&a->thread);
+ }
+ 
+@@ -979,8 +998,10 @@ AuthAccount(void *arg)
+ 
+ 	Log(LG_AUTH2, ("[%s] ACCT: Thread started", auth->info.lnkname));
+ 
++#ifdef USE_RADIUS
+ 	if (Enabled(&auth->conf.options, AUTH_CONF_RADIUS_ACCT))
+ 		err |= RadiusAccount(auth);
++#endif
+ #ifdef USE_PAM
+ 	if (Enabled(&auth->conf.options, AUTH_CONF_PAM_ACCT))
+ 		err |= AuthPAMAcct(auth);
+@@ -1020,8 +1041,10 @@ AuthAccountFinish(void *arg, int was_canceled)
+ 		    auth->info.lnkname));
+ 	}
+ 
++#ifdef USE_RADIUS
+ 	/* Cleanup */
+ 	RadiusClose(auth);
++#endif
+ 
+ 	if (was_canceled) {
+ 		AuthDataDestroy(auth);
+@@ -1188,6 +1211,7 @@ AuthAsync(void *arg)
+ 				return;
+ 		}
+ 	}
++#ifdef USE_RADIUS
+ 	if (auth->proto == PROTO_EAP && auth->eap_radius) {
+ 		auth->params.authentic = AUTH_CONF_RADIUS_AUTH;
+ 		RadiusEapProxy(auth);
+@@ -1205,6 +1229,7 @@ AuthAsync(void *arg)
+ 				return;
+ 		}
+ 	}
++#endif
+ #ifdef USE_PAM
+ 	if (Enabled(&auth->conf.options, AUTH_CONF_PAM_AUTH)) {
+ 		auth->params.authentic = AUTH_CONF_PAM_AUTH;
+@@ -1274,8 +1299,10 @@ AuthAsyncFinish(void *arg, int was_canceled)
+ 	if (was_canceled)
+ 		Log(LG_AUTH2, ("[%s] AUTH: Thread was canceled", auth->info.lnkname));
+ 
++#ifdef USE_RADIUS
+ 	/* cleanup */
+ 	RadiusClose(auth);
++#endif
+ 
+ 	if (was_canceled) {
+ 		AuthDataDestroy(auth);
+@@ -1948,9 +1975,11 @@ static const char *
+ AuthCode(int proto, u_char code, char *buf, size_t len)
+ {
+ 	switch (proto) {
++#ifdef USE_RADIUS
+ 	case PROTO_EAP:
+ 		return EapCode(code, buf, len);
+ 
++#endif
+ 	case PROTO_CHAP:
+ 		return ChapCode(code, buf, len);
+ 
+Index: src/auth.h
+===================================================================
+--- src/auth.h	(revision 2411)
++++ src/auth.h	(working copy)
+@@ -113,6 +113,7 @@ struct authparams {
+ 	struct in_addr peer_dns[2];	/* DNS servers for peer to use */
+ 	struct in_addr peer_nbns[2];	/* NBNS servers for peer to use */
+ 
++#ifdef USE_RADIUS
+ 	char   *eapmsg;			/* EAP Msg for forwarding to RADIUS
+ 					 * server */
+ 	int	eapmsg_len;
+@@ -125,6 +126,7 @@ struct authparams {
+ 
+ 	char   *filter_id;		/* RADIUS Framed-Filter-Id attribute */
+ 
++#endif
+ 	char	action[8 + LINK_MAX_NAME];
+ 
+ #ifdef USE_IPFW
+@@ -204,7 +206,9 @@ struct authparams {
+ };
+ 
+ struct authconf {
++#ifdef	USE_RADIUS
+ 	struct radiusconf radius;	/* RADIUS configuration */
++#endif
+ 	char	authname[AUTH_MAX_AUTHNAME];	/* Configured username */
+ 	char	password[AUTH_MAX_PASSWORD];	/* Configured password */
+ 	u_int	acct_update;
+@@ -231,7 +235,9 @@ struct auth {
+ 	struct pppTimer acct_timer;	/* Timer for accounting updates */
+ 	struct papinfo pap;		/* PAP state */
+ 	struct chapinfo chap;		/* CHAP state */
++#ifdef USE_RADIUS
+ 	struct eapinfo eap;		/* EAP state */
++#endif
+ 	struct paction *thread;		/* async auth thread */
+ 	struct paction *acct_thread;	/* async accounting auth thread */
+ 	struct authconf conf;		/* Auth backends, RADIUS, etc. */
+@@ -253,7 +259,9 @@ struct authdata {
+ 	u_int	code;			/* Proto specific code */
+ 	u_char	acct_type;		/* Accounting type, Start, Stop,
+ 					 * Update */
++#ifdef USE_RADIUS
+ 	u_char	eap_radius;
++#endif
+ 	u_char	status;
+ 	u_char	why_fail;
+ 	char   *reply_message;		/* Text wich may displayed to the user */
+@@ -261,10 +269,13 @@ struct authdata {
+ 	char   *mschapv2resp;		/* Response String for MSCHAPv2 */
+ 	void    (*finish) (Link l, struct authdata *auth);	/* Finish handler */
+ 	int	drop_user;		/* RAD_MPD_DROP_USER value sent by
+-					 * RADIUS server */
++					 * RADIUS server or external acct script */
++#ifdef USE_RADIUS
+ 	struct {
+ 		struct rad_handle *handle;	/* the RADIUS handle */
+ 	}	radius;
++#endif
++
+ #ifdef USE_OPIE
+ 	struct {
+ 		struct opie data;
+Index: src/command.c
+===================================================================
+--- src/command.c	(revision 2411)
++++ src/command.c	(working copy)
+@@ -223,8 +223,10 @@
+ #endif
+     { "ecp",				"ECP status",
+ 	EcpStat, AdmitBund, 0, NULL },
++#ifdef USE_RADIUS
+     { "eap",				"EAP status",
+ 	EapStat, AdmitLink, 0, NULL },
++#endif
+     { "events",				"Current events",
+ 	ShowEvents, NULL, 0, NULL },
+     { "ipcp",				"IPCP status",
+@@ -253,8 +255,10 @@
+ 	LinkStat, AdmitLink, 0, NULL },
+     { "auth",				"Auth status",
+ 	AuthStat, AdmitLink, 0, NULL },
++#ifdef USE_RADIUS
+     { "radius",				"RADIUS status",
+ 	RadStat, AdmitLink, 0, NULL },
++#endif
+ #ifdef RAD_COA_REQUEST
+     { "radsrv",				"RADIUS server status",
+ 	RadsrvStat, NULL, 0, NULL },
+@@ -293,8 +297,10 @@
+   };
+ 
+   static const struct cmdtab UnSetCommands[] = {
++#ifdef USE_RADIUS
+    { "radius ...",			"RADIUS specific stuff",
+ 	CMD_SUBMENU, AdmitLink, 2, RadiusUnSetCmds },
++#endif
+ #ifdef NG_NAT_DESC_LENGTH
+    { "nat ...",			"NAT specific stuff",
+ 	CMD_SUBMENU, AdmitBund, 2, NatUnSetCmds },
+@@ -303,6 +309,8 @@
+   };
+   
+   static const struct cmdtab SetCommands[] = {
++    { "auth ...",			"Auth specific stuff",
++	CMD_SUBMENU, AdmitLink, 2, AuthSetCmds },
+     { "bundle ...",			"Bundle specific stuff",
+ 	CMD_SUBMENU, AdmitBund, 2, BundSetCmds },
+     { "link ...",			"Link specific stuff",
+@@ -323,15 +331,15 @@
+ #endif
+     { "ecp ...",			"ECP specific stuff",
+ 	CMD_SUBMENU, AdmitBund, 2, EcpSetCmds },
++#ifdef USE_RADIUS
+     { "eap ...",			"EAP specific stuff",
+ 	CMD_SUBMENU, AdmitLink, 2, EapSetCmds },
+-    { "auth ...",			"Auth specific stuff",
+-	CMD_SUBMENU, AdmitLink, 2, AuthSetCmds },
+     { "radius ...",			"RADIUS specific stuff",
+ 	CMD_SUBMENU, AdmitLink, 2, RadiusSetCmds },
+ #ifdef RAD_COA_REQUEST
+     { "radsrv ...",			"RADIUS server specific stuff",
+ 	CMD_SUBMENU, NULL, 2, RadsrvSetCmds },
++#endif
+ #endif
+     { "console ...",			"Console specific stuff",
+ 	CMD_SUBMENU, NULL, 0, ConsoleSetCmds },
+Index: src/configure
+===================================================================
+--- src/configure	(revision 2411)
++++ src/configure	(working copy)
+@@ -122,6 +122,13 @@ else
+     echo " not found."
+ fi
+ 
++echo -n "Looking for radius support ..."
++if [ "$USE_RADIUS" = no ]; then
++    echo " disabled."
++else if [ -e /usr/include/radlib.h ]
++then
++    echo " found."
++    echo "#define	HAVE_RADIUS	1" >> $CONFIG
+ 
+ echo -n "Looking for rad_bind_to() ..."
+ if /usr/bin/grep rad_bind_to /usr/include/radlib.h >/dev/null 2>&1
+@@ -140,6 +147,8 @@ then
+ else
+     echo " not found."
+ fi
++fi
++fi # RADIUS support
+ 
+ echo -n "Looking for ether_ntoa_r() ..."
+ if /usr/bin/grep ether_ntoa_r /usr/include/net/ethernet.h >/dev/null 2>&1
+Index: src/defs.h
+===================================================================
+--- src/defs.h	(revision 2411)
++++ src/defs.h	(working copy)
+@@ -55,6 +55,9 @@
+ #ifndef HAVE_IPFW
+   #undef USE_IPFW
+ #endif
++#ifdef HAVE_RADIUS
++  #define USE_RADIUS
++#endif
+ #ifndef HAVE_RAD_BIND
+   #undef HAVE_RAD_BIND
+ #endif
+Index: src/eap.h
+===================================================================
+--- src/eap.h	(revision 2411)
++++ src/eap.h	(working copy)
+@@ -77,6 +77,7 @@
+     EAP_TYPE_FAST		/* EAP-FAST */
+   };
+ 
++#ifdef USE_RADIUS
+   extern const	struct cmdtab EapSetCmds[];
+ 
+   /* Configuration for a link */
+@@ -109,5 +110,6 @@
+   extern const	char *EapType(u_char type);
+   extern int	EapStat(Context ctx, int ac, const char *const av[], const void *arg);
+ 
++#endif /* USE_RADIUS */
+ #endif
+ 
+Index: src/iface.c
+===================================================================
+--- src/iface.c	(revision 2416)
++++ src/iface.c	(working copy)
+@@ -1110,7 +1110,10 @@ IfaceIpIfaceUp(Bund b, int ready)
+     	    u_addrtoa(&iface->peer_addr, peerbuf, sizeof(peerbuf)), 
+     	    *b->params.authname ? b->params.authname : "-", 
+     	    ns1buf, ns2buf, *b->params.peeraddr ? b->params.peeraddr : "-",
+-    	    b->params.filter_id ? b->params.filter_id : "-");
++#ifdef USE_RADIUS
++    	    b->params.filter_id ? b->params.filter_id :
++#endif
++    	    "-");
+ 	if (res != 0) {
+ 	    FsmFailure(&b->ipcp.fsm, FAIL_NEGOT_FAILURE);
+ 	    return (-1);
+@@ -1142,7 +1145,10 @@ IfaceIpIfaceDown(Bund b)
+     	    u_addrtoa(&iface->peer_addr, peerbuf, sizeof(peerbuf)), 
+     	    *b->params.authname ? b->params.authname : "-",
+     	    *b->params.peeraddr ? b->params.peeraddr : "-",
+-    	    b->params.filter_id ? b->params.filter_id : "-");
++#ifdef USE_RADIUS
++    	    b->params.filter_id ? b->params.filter_id :
++#endif
++    	    "-");
+     }
+ 
+     /* Delete dynamic routes */
+@@ -1254,7 +1260,10 @@ IfaceIpv6IfaceUp(Bund b, int ready)
+     	    u_addrtoa(&iface->peer_ipv6_addr, peerbuf, sizeof(peerbuf)), iface->ifname, 
+     	    *b->params.authname ? b->params.authname : "-",
+     	    *b->params.peeraddr ? b->params.peeraddr : "-",
+-    	    b->params.filter_id ? b->params.filter_id : "-");
++#ifdef USE_RADIUS
++    	    b->params.filter_id ? b->params.filter_id :
++#endif
++    	    "-");
+ 	if (res != 0) {
+ 	    FsmFailure(&b->ipv6cp.fsm, FAIL_NEGOT_FAILURE);
+ 	    return (-1);
+@@ -1287,7 +1296,10 @@ IfaceIpv6IfaceDown(Bund b)
+     	    u_addrtoa(&iface->peer_ipv6_addr, peerbuf, sizeof(peerbuf)), iface->ifname, 
+     	    *b->params.authname ? b->params.authname : "-",
+     	    *b->params.peeraddr ? b->params.peeraddr : "-",
+-    	    b->params.filter_id ? b->params.filter_id : "-");
++#ifdef USE_RADIUS
++    	    b->params.filter_id ? b->params.filter_id :
++#endif
++    	    "-");
+     }
+ 
+     /* Delete dynamic routes */
+Index: src/input.c
+===================================================================
+--- src/input.c	(revision 2411)
++++ src/input.c	(working copy)
+@@ -101,9 +101,16 @@ InputDispatch(Bund b, Link l, int proto, Mbuf bp)
+             return(0);
+         case PROTO_PAP:
+         case PROTO_CHAP:
++            AuthInput(l, proto, bp);
++            return(0);
+         case PROTO_EAP:
++#ifdef USE_RADIUS
+             AuthInput(l, proto, bp);
+             return(0);
++#else
++	    reject = 1;
++	    goto done;
++#endif
+ 	case PROTO_MP:
+     	    if (!Enabled(&l->conf.options, LINK_CONF_MULTILINK))
+ 		reject = 1;
+Index: src/main.c
+===================================================================
+--- src/main.c	(revision 2411)
++++ src/main.c	(working copy)
+@@ -97,7 +97,9 @@
+ #ifndef NOWEB
+   struct web		gWeb;
+ #endif
++#ifdef USE_RADIUS
+   struct radsrv		gRadsrv;
++#endif
+   int			gBackground = FALSE;
+   int			gShutdownInProgress = FALSE;
+   int			gOverload = 0;
+Index: src/ppp.h
+===================================================================
+--- src/ppp.h	(revision 2414)
++++ src/ppp.h	(working copy)
+@@ -203,7 +203,9 @@
+   extern int		gNumBundles;		/* Total number of bundles */
+   extern struct console	gConsole;
+   extern struct web	gWeb;
++#ifdef USE_RADIUS
+   extern struct radsrv	gRadsrv;
++#endif
+   extern int		gBackground;
+   extern int		gShutdownInProgress;
+   extern int		gOverload;
+Index: src/radius.h
+===================================================================
+--- src/radius.h	(revision 2411)
++++ src/radius.h	(working copy)
+@@ -5,6 +5,13 @@
+  *
+  */
+ 
++#ifndef _RADIUS_H_
++#define _RADIUS_H_
++
++#include "defs.h"
++
++#ifdef USE_RADIUS
++
+ #ifdef CCP_MPPC
+ #include <netgraph/ng_mppc.h>
+ #endif
+@@ -15,8 +22,6 @@
+ 
+ #include "iface.h"
+ 
+-#ifndef _RADIUS_H_
+-#define _RADIUS_H_
+ 
+ /*
+  * DEFINITIONS
+@@ -189,4 +194,5 @@ extern void RadiusClose(struct authdata *auth);
+ extern void RadiusEapProxy(void *arg);
+ extern int RadStat(Context ctx, int ac, const char *const av[], const void *arg);
+ 
++#endif /* USE_RADIUS */
+ #endif
+Index: src/radsrv.h
+===================================================================
+--- src/radsrv.h	(revision 2411)
++++ src/radsrv.h	(working copy)
+@@ -9,6 +9,8 @@
+ #define	_RADSRV_H_
+ 
+ #include "defs.h"
++
++#ifdef USE_RADIUS
+ #include <radlib.h>
+ 
+ /*
+@@ -57,4 +59,5 @@ extern int RadsrvOpen(Radsrv c);
+ extern int RadsrvClose(Radsrv c);
+ extern int RadsrvStat(Context ctx, int ac, const char *const av[], const void *arg);
+ 
++#endif /* USE_RADIUS */
+ #endif

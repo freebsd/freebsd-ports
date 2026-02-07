@@ -1,0 +1,2 @@
+python-coinmarketcap is a non-official (but working) Python package to wrap the
+CoinMarketCap API. With this you can monitor and watch the crypto market.

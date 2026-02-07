@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+The recommended usage of this port is first to teach your terminal to display
+hebrew fonts, like this:
+
+vidcontrol < /dev/ttyv0 -f 8x16 iso08-8x16.fnt
+
+or set this in /etc/rc.conf:
+
+font8x16=iso08-8x16.fnt
+
+Then, it would be wise to install bidiv from %%PORTSDIR%%/textproc/bidiv
+and run Hspell:
+
+hspell file.txt | bidiv
+
+Plus, Hspell can use Ispell as a slave (option -i or executable hspell-i).
+Ispell can be found in %%PORTSDIR%%/textproc/ispell .
+EOM
+}
+]

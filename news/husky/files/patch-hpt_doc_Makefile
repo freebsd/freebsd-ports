@@ -1,0 +1,10 @@
+--- hpt/doc/Makefile.orig	2020-01-16 21:50:04 UTC
++++ hpt/doc/Makefile
+@@ -64,7 +64,6 @@ install: info html dvi
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(INFODIR)
+ 	$(INSTALL) $(IMOPT) hpt.info $(DESTDIR)$(INFODIR)
+-	-install-info --info-dir=$(INFODIR)  $(DESTDIR)$(INFODIR)$(DIRSEP)hpt.info
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(HTMLDIR)

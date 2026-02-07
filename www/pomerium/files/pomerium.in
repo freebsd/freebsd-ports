@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# PROVIDE: pomerium
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable pomerium
+# pomerium_enable="YES"
+#
+# pomerium_enable (bool): 	Set to YES to enable pomerium
+#				Default: NO
+# pomerium_conf (str):		pomerium configration file
+#				Default: %%ETCDIR%%/config.yaml
+# pomerium_user (str):		pomerium daemon user
+#				Default: %%POMERIUM_USER%%
+# pomerium_cert_file (str):	Path to pomerium certificate file, must be set
+#				unless configured as insecure server.
+#				Default: ""
+# pomerium_cert_key_file (str):	Path to pomerium certificate private key file,
+#				must be set unless configured as insecure server.
+#				Default: ""
+# pomerium_shared_secret (str):	256-bit shared secret to mutually authenticate
+#				requests between services.
+#				Default: random string
+# pomerium_cookie_secret (str):	256-bit cookie secret. Random if empty.
+#				Default: random string
+
+. /etc/rc.subr
+
+name=pomerium
+rcvar=pomerium_enable
+load_rc_config ${name}
+
+: ${pomerium_enable:="NO"}
+: ${pomerium_user:="%%POMERIUM_USER%%"}
+: ${pomerium_flags:=""}
+: ${pomerium_conf:="%%ETCDIR%%/config.yaml"}
+: ${pomerium_options:="-config=${pomerium_conf}"}
+: ${pomerium_shared_secret:="$(head -c32 /dev/urandom| uuencode -r -m -)"}
+: ${pomerium_cookie_secret:="$(head -c32 /dev/urandom| uuencode -r -m -)"}
+: ${pomerium_cert_file:=""}
+: ${pomerium_cert_key_file:=""}
+
+pidfile="%%POMERIUMPIDDIR%%${name}.pid"
+procname="%%PREFIX%%/libexec/pomerium"
+command=/usr/sbin/daemon
+command_args="-c -p ${pidfile} -T ${name} ${procname} ${pomerium_options}"
+start_precmd="pomerium_precmd"
+
+pomerium_precmd()
+{
+	install -d -o ${pomerium_user} %%POMERIUMPIDDIR%%
+	install -o ${pomerium_user} /dev/null ${pidfile}
+	export SHARED_SECRET="${pomerium_shared_secret}"
+	export COOKIE_SECRET="${pomerium_cookie_secret}"
+	[ -n "${pomerium_cert_file}" ] && export CERTIFICATE_FILE="${pomerium_cert_file}"
+	[ -n "${pomerium_cert_key_file}" ] && export CERTIFICATE_KEY_FILE="${pomerium_cert_key_file}"
+}
+
+run_rc_command "$1"

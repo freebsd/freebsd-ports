@@ -1,0 +1,29 @@
+--- src/options/opt_advanced.ui.orig	2018-11-02 00:15:39 UTC
++++ src/options/opt_advanced.ui
+@@ -72,6 +72,26 @@
+     </widget>
+    </item>
+    <item>
++    <widget class="QLabel" name="TextLabel3" >
++     <property name="text" >
++      <string>List of active spellchecker languages:</string>
++     </property>
++    </widget>
++   </item>
++   <item>
++    <widget class="QLineEdit" name="le_spellLangs" />
++   </item>
++   <item>
++    <widget class="QLabel" name="TextLabel4" >
++     <property name="text" >
++      <string>Maximum suggestions per language:</string>
++     </property>
++    </widget>
++   </item>
++   <item>
++    <widget class="QLineEdit" name="le_spellMaxSugs" />
++   </item>
++   <item>
+     <widget class="QCheckBox" name="ck_contactsMessageFormatting" >
+      <property name="text" >
+       <string>Use contacts' message formatting</string>

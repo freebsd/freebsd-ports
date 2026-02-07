@@ -1,0 +1,8 @@
+bin/ircproxyd
+bin/imkpasswd
+%%DATADIR%%/ircproxyd.conf
+%%DATADIR%%/ircproxyd-listen.conf
+%%DATADIR%%/ircproxyd-access.conf
+%%DATADIR%%/ircproxyd-user.conf
+%%DATADIR%%/ircproxyd-conn.conf
+%%DATADIR%%/ircproxyd-autoop.conf

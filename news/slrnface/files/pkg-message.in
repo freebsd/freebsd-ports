@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+Add
+
+ interpret %%DATADIR%%/slrnface.sl
+
+to your .slrnrc
+
+NOTE: slrnface.sl defines hooks.
+      Merge these hooks with yours if they already exist.
+EOM
+}
+]

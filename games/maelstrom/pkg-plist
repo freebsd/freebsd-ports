@@ -1,0 +1,45 @@
+@group games
+@mode 2755
+bin/Maelstrom
+bin/Maelstrom-netd
+@mode
+@group
+%%DATADIR%%/Images/Maelstrom_Icon#100.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#101.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#102.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#103.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#104.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#110.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#128.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#129.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#130.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#131.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#132.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#133.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#134.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#135.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#136.cicn
+%%DATADIR%%/Images/Maelstrom_Icon#137.cicn
+%%DATADIR%%/Images/Maelstrom_Titles#100.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#101.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#102.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#128.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#129.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#130.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#133.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#134.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#135.bmp
+%%DATADIR%%/Images/Maelstrom_Titles#999.bmp
+%%DATADIR%%/Images/Makefile
+%%DATADIR%%/Images/Makefile.in
+@group games
+@mode 664
+%%DATADIR%%/Maelstrom-Scores
+@mode
+@group
+%%DATADIR%%/Maelstrom_Fonts
+%%DATADIR%%/Maelstrom_Sounds
+%%DATADIR%%/Maelstrom_Sprites
+%%DATADIR%%/icon.bmp
+%%DATADIR%%/icon.xpm
+share/pixmaps/maelstrom.png

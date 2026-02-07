@@ -1,0 +1,12 @@
+include/gmp-api/gmp-entrypoints.h
+include/gmp-api/gmp-errors.h
+include/gmp-api/gmp-platform.h
+include/gmp-api/gmp-storage.h
+include/gmp-api/gmp-video-codec.h
+include/gmp-api/gmp-video-decode.h
+include/gmp-api/gmp-video-encode.h
+include/gmp-api/gmp-video-frame-encoded.h
+include/gmp-api/gmp-video-frame-i420.h
+include/gmp-api/gmp-video-frame.h
+include/gmp-api/gmp-video-host.h
+include/gmp-api/gmp-video-plane.h

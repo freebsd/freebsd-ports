@@ -1,0 +1,13 @@
+A generic Amazon E-commerce REST API with configurable default options and
+method call options. It uses Hpricot to parse the XML output. Use Response and
+Element wrapper classes for easy access to the XML elements, and it supports
+ECS 4.0.
+
+It is generic, so you can extend Amazon::Ecs to support the other not-
+implemented operations easily; and the response object just wraps around
+Hpricot element object, instead of providing one-to-one object/attributes to
+XML elements map.
+
+With that, if in the future, there is a change in REST XML output structure,
+no changes will be required on amazon-ecs, instead you just need to change
+your element path.

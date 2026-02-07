@@ -1,0 +1,252 @@
+PORTNAME=	air
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.9-26
+DISTVERSIONSUFFIX=	-g4e175b0
+PORTREVISION=	10
+CATEGORIES=	misc
+PKGNAMESUFFIX=	-ai-chat-client
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Simple ChatGPT & Llama-cpp command line with ANSI markdown display
+WWW=		https://github.com/alescdb/air
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_armv7=	compilation fails: In file included from ./llama.cpp/k_quants.c:50: /usr/local/llvm15/lib/clang/15.0.7/include/immintrin.h:14:2: error: "This header is only meant to be used on x86 and x64 architecture"
+
+USES=		cargo llvm:15 ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	alescdb
+
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		aho-corasick-1.1.2 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.11 \
+		anstyle-1.0.6 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
+		async-trait-0.1.77 \
+		autocfg-1.1.0 \
+		backtrace-0.3.69 \
+		base64-0.21.7 \
+		bindgen-0.66.1 \
+		bitflags-1.3.2 \
+		bitflags-2.4.2 \
+		bumpalo-3.14.0 \
+		bytes-1.5.0 \
+		cc-1.0.83 \
+		cexpr-0.6.0 \
+		cfg-if-1.0.0 \
+		chrono-0.4.33 \
+		clang-sys-1.7.0 \
+		colorchoice-1.0.0 \
+		coolor-0.9.0 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
+		crokey-0.6.3 \
+		crokey-proc_macros-0.6.3 \
+		crossbeam-0.8.4 \
+		crossbeam-channel-0.5.11 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-queue-0.3.11 \
+		crossbeam-utils-0.8.19 \
+		crossterm-0.27.0 \
+		crossterm_winapi-0.9.1 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
+		either-1.9.0 \
+		encoding_rs-0.8.33 \
+		env_filter-0.1.0 \
+		env_logger-0.11.1 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		fastrand-2.0.1 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-io-0.3.30 \
+		futures-macro-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-util-0.3.30 \
+		getopts-0.2.21 \
+		getrandom-0.2.12 \
+		gimli-0.28.1 \
+		glob-0.3.1 \
+		h2-0.3.24 \
+		hashbrown-0.14.3 \
+		hermit-abi-0.3.5 \
+		home-0.5.9 \
+		http-0.2.11 \
+		http-body-0.4.6 \
+		httparse-1.8.0 \
+		httpdate-1.0.3 \
+		humantime-2.1.0 \
+		hyper-0.14.28 \
+		hyper-tls-0.5.0 \
+		iana-time-zone-0.1.60 \
+		iana-time-zone-haiku-0.1.2 \
+		idna-0.5.0 \
+		indexmap-2.2.2 \
+		ipnet-2.9.0 \
+		itoa-1.0.10 \
+		js-sys-0.3.68 \
+		lazy-regex-3.1.0 \
+		lazy-regex-proc_macros-3.1.0 \
+		lazy_static-1.4.0 \
+		lazycell-1.3.0 \
+		libc-0.2.153 \
+		libloading-0.8.1 \
+		libredox-0.0.1 \
+		linux-raw-sys-0.4.13 \
+		llama_cpp_rs-0.3.0 \
+		lock_api-0.4.11 \
+		log-0.4.20 \
+		memchr-2.7.1 \
+		mime-0.3.17 \
+		minimad-0.13.0 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.7.2 \
+		mio-0.8.10 \
+		native-tls-0.2.11 \
+		nom-7.1.3 \
+		num-traits-0.2.17 \
+		num_cpus-1.16.0 \
+		object-0.32.2 \
+		once_cell-1.19.0 \
+		openssl-0.10.63 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.99 \
+		option-ext-0.2.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		peeking_take_while-0.1.2 \
+		percent-encoding-2.3.1 \
+		pin-project-lite-0.2.13 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.29 \
+		prettyplease-0.2.16 \
+		proc-macro2-1.0.78 \
+		pulldown-cmark-0.10.0 \
+		pulldown-cmark-escape-0.10.0 \
+		quote-1.0.35 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		regex-1.10.3 \
+		regex-automata-0.4.5 \
+		regex-syntax-0.8.2 \
+		reqwest-0.11.24 \
+		rustc-demangle-0.1.23 \
+		rustc-hash-1.1.0 \
+		rustix-0.38.31 \
+		rustls-pemfile-1.0.4 \
+		ryu-1.0.16 \
+		schannel-0.1.23 \
+		scopeguard-1.2.0 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		serde-1.0.196 \
+		serde_derive-1.0.196 \
+		serde_json-1.0.113 \
+		serde_urlencoded-0.7.1 \
+		shlex-1.3.0 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.1 \
+		slab-0.4.9 \
+		smallvec-1.13.1 \
+		socket2-0.5.5 \
+		strict-0.2.0 \
+		syn-1.0.109 \
+		syn-2.0.48 \
+		sync_wrapper-0.1.2 \
+		system-configuration-0.5.1 \
+		system-configuration-sys-0.5.0 \
+		tempfile-3.10.0 \
+		termcolor-1.4.1 \
+		termimad-0.29.0 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.36.0 \
+		tokio-macros-2.2.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-stream-0.1.14 \
+		tokio-util-0.7.10 \
+		tower-service-0.3.2 \
+		tracing-0.1.40 \
+		tracing-core-0.1.32 \
+		try-lock-0.2.5 \
+		unicase-2.7.0 \
+		unicode-bidi-0.3.15 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.11 \
+		url-2.5.0 \
+		utf8parse-0.2.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.91 \
+		wasm-bindgen-backend-0.2.91 \
+		wasm-bindgen-futures-0.4.41 \
+		wasm-bindgen-macro-0.2.91 \
+		wasm-bindgen-macro-support-0.2.91 \
+		wasm-bindgen-shared-0.2.91 \
+		wasm-streams-0.4.0 \
+		web-sys-0.3.68 \
+		which-4.4.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.52.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
+		winreg-0.50.0
+
+CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
+CFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+CONFLICTS_INSTALL=	air-go
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
+CFLAGS+=	-mcpu=power7
+.endif
+
+.include <bsd.port.mk>

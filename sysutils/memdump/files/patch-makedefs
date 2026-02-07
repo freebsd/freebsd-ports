@@ -1,0 +1,21 @@
+--- ./makedefs.orig	2005-08-30 23:03:40.000000000 +0000
++++ ./makedefs	2007-11-30 18:54:11.000000000 +0000
+@@ -2,17 +2,7 @@ SYSTEM=`(uname -s) 2>/dev/null`
+ RELEASE=`(uname -r) 2>/dev/null`
+ 
+ case "$SYSTEM.$RELEASE" in
+-  FreeBSD.2*)   DEFS="-DFREEBSD2"
+-                ;;
+-  FreeBSD.3*)   DEFS="-DFREEBSD3"
+-                ;;
+-  FreeBSD.4*)   DEFS="-DFREEBSD4"
+-                ;;
+-  FreeBSD.5*)   DEFS="-DFREEBSD5"
+-                ;;
+-  FreeBSD.6*)   DEFS="-DFREEBSD6"
+-                ;;
+-  FreeBSD.7*)   DEFS="-DFREEBSD7"
++  FreeBSD.*)    DEFS="-DFREEBSD"
+                 ;;
+   OpenBSD.2*)   DEFS="-DOPENBSD2"
+                 ;;

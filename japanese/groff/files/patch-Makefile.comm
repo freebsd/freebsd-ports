@@ -1,0 +1,106 @@
+--- Makefile.comm.orig	2014-02-07 13:35:27.000000000 +0900
++++ Makefile.comm	2014-02-07 13:40:33.000000000 +0900
+@@ -51,19 +51,19 @@
+ MANCLEAN=$(MANPAGES)
+ fontsubdir=$(fontdir)/dev$(DEV)
+ 
+-all install install_bin install_data TAGS depend distfiles uninstall_sub:
++all install install_bin install_data install_doc TAGS depend distfiles uninstall_sub:
+ 
+ install: prefix_must_exist install_bin install_data
+ uninstall: uninstall_sub
+ pure:
+ 
+ .PHONY: all clean distclean mostlyclean realclean extraclean depend distfiles
+-.PHONY: install install_bin install_data prefix_must_exist
++.PHONY: install install_bin install_data install_doc prefix_must_exist
+ .PHONY: uninstall uninstall_sub
+ .PHONY: pure
+ 
+ prefix_must_exist:
+-	@test -d $(prefix) \
++	@test -d $(DESTDIR)$(prefix) \
+ 	  || (echo ; \
+ 	      echo The prefix directory \`$(prefix)\' doesn\'t exist; \
+ 	      echo ; \
+@@ -169,28 +169,28 @@
+ 
+ .PHONY: install_man
+ install_man:
+-	-test -d $(manroot) || $(mkinstalldirs) $(manroot)
+-	-test -d $(man1dir) || $(mkinstalldirs) $(man1dir)
++	-test -d $(DESTDIR)$(manroot) || $(mkinstalldirs) $(DESTDIR)$(manroot)
++	-test -d $(DESTDIR)$(man1dir) || $(mkinstalldirs) $(DESTDIR)$(man1dir)
+ 	@-pages="$(MAN1)"; \
+ 	for p in $$pages; do \
+ 	 prog=`basename $$p .n`; \
+-	 target=$(man1dir)/$(NAMEPREFIX)$$prog.$(man1ext); \
++	 target=$(DESTDIR)$(man1dir)/$(NAMEPREFIX)$$prog.$(man1ext); \
+ 	 rm -f $$target; \
+ 	 echo $(INSTALL_DATA) $$p $$target; \
+ 	 $(INSTALL_DATA) $$p $$target; \
+ 	done
+-	-test -d $(man5dir) || $(mkinstalldirs) $(man5dir)
++	-test -d $(DESTDIR)$(man5dir) || $(mkinstalldirs) $(DESTDIR)$(man5dir)
+ 	@-pages="$(MAN5)"; \
+ 	for p in $$pages; do \
+-	 target=$(man5dir)/`basename $$p .n`.$(man5ext); \
++	 target=$(DESTDIR)$(man5dir)/`basename $$p .n`.$(man5ext); \
+ 	 rm -f $$target; \
+ 	 echo $(INSTALL_DATA) $$p $$target; \
+ 	 $(INSTALL_DATA) $$p $$target; \
+ 	done
+-	-test -d $(man7dir) || $(mkinstalldirs) $(man7dir)
++	-test -d $(DESTDIR)$(man7dir) || $(mkinstalldirs) $(DESTDIR)$(man7dir)
+ 	@-pages="$(MAN7)"; \
+ 	for p in $$pages; do \
+-	 target=$(man7dir)/`basename $$p .n`.$(man7ext); \
++	 target=$(DESTDIR)$(man7dir)/`basename $$p .n`.$(man7ext); \
+ 	 rm -f $$target; \
+ 	 echo $(INSTALL_DATA) $$p $$target; \
+ 	 $(INSTALL_DATA) $$p $$target; \
+@@ -219,9 +219,9 @@
+ 
+ .PHONY: install_prog
+ install_prog:
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	rm -f $(bindir)/$(NAMEPREFIX)$(PROG)
+-	$(INSTALL_PROGRAM) $(PROG) $(bindir)/$(NAMEPREFIX)$(PROG)
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	rm -f $(DESTDIR)$(bindir)/$(NAMEPREFIX)$(PROG)
++	$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(bindir)/$(NAMEPREFIX)$(PROG)
+ 
+ .PHONY: uninstall_prog
+ uninstall_prog:
+@@ -229,21 +229,21 @@
+ 
+ .PHONY: install_dev
+ install_dev:
+-	-test -d $(datadir) || $(mkinstalldirs) $(datadir)
+-	-test -d $(dataprogramdir) || $(mkinstalldirs) $(dataprogramdir)
+-	-test -d $(datasubdir) || $(mkinstalldirs) $(datasubdir)
+-	-test -d $(fontdir) || $(mkinstalldirs) $(fontdir)
+-	-test -d $(fontsubdir) || $(mkinstalldirs) $(fontsubdir)
++	-test -d $(DESTDIR)$(datadir) || $(mkinstalldirs) $(DESTDIR)$(datadir)
++	-test -d $(DESTDIR)$(dataprogramdir) || $(mkinstalldirs) $(DESTDIR)$(dataprogramdir)
++	-test -d $(DESTDIR)$(datasubdir) || $(mkinstalldirs) $(DESTDIR)$(datasubdir)
++	-test -d $(DESTDIR)$(fontdir) || $(mkinstalldirs) $(DESTDIR)$(fontdir)
++	-test -d $(DESTDIR)$(fontsubdir) || $(mkinstalldirs) $(DESTDIR)$(fontsubdir)
+ 	-if test -d $(srcdir)/generate; then \
+-	  test -d $(fontsubdir)/generate || \
+-	    $(mkinstalldirs) $(fontsubdir)/generate; \
++	  test -d $(DESTDIR)$(fontsubdir)/generate || \
++	    $(mkinstalldirs) $(DESTDIR)$(fontsubdir)/generate; \
+ 	fi
+ 	-for f in $(DEVFILES); do \
+-	  rm -f $(fontsubdir)/$$f; \
++	  rm -f $(DESTDIR)$(fontsubdir)/$$f; \
+ 	  if test -f $$f; then \
+-	    $(INSTALL_DATA) $$f $(fontsubdir)/$$f; \
++	    $(INSTALL_DATA) $$f $(DESTDIR)$(fontsubdir)/$$f; \
+ 	  else \
+-	    $(INSTALL_DATA) $(srcdir)/$$f $(fontsubdir)/$$f; \
++	    $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(fontsubdir)/$$f; \
+ 	  fi; \
+ 	done
+ 

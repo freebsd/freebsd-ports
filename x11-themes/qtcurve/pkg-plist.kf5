@@ -1,0 +1,4 @@
+%%QT_PLUGINDIR%%/kstyle_qtcurve5_config.so
+%%QT_PLUGINDIR%%/styles/qtcurve.so
+share/kstyle/themes/qtcurve.themerc
+share/kxmlgui5/QtCurve/QtCurveui.rc

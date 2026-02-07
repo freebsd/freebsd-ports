@@ -1,0 +1,9 @@
+bin/rats
+share/man/man1/rats.1.gz
+%%DATADIR%%/rats-c.xml
+%%DATADIR%%/rats-openssl.xml
+%%DATADIR%%/rats-perl.xml
+%%DATADIR%%/rats-php.xml
+%%DATADIR%%/rats-python.xml
+%%DATADIR%%/rats-ruby.xml
+%%PORTDOCS%%%%DOCSDIR%%/README

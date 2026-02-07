@@ -1,0 +1,11 @@
+--- compall.orig	2018-10-12 07:59:22 UTC
++++ compall
+@@ -98,7 +98,7 @@ if ($TARGET == linux64) then
+    set chip=(`uname -p`)
+    if (${#chip} > 1)     set chip=unknown
+    if ($chip == unknown) set chip=`uname -m`
+-   if ($chip == x86_64)  set extraflags='-DLINUX64 -m64'
++   if ($chip == amd64)  set extraflags='-DLINUX64 -m64'
+    if ($chip == ia64)    set extraflags='-DLINUX64'
+    if ($chip == ppc64)   set extraflags='-DLINUX64 -mpowerpc64'
+    if ($chip == aarch64) set extraflags='-DLINUX64 -mcpu=native'

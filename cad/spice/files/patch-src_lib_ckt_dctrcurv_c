@@ -1,0 +1,135 @@
+--- src/lib/ckt/dctrcurv.c.orig	Mon Apr  5 19:50:20 1993
++++ src/lib/ckt/dctrcurv.c	Thu Jul 17 02:52:24 2003
+@@ -15,6 +15,7 @@
+ #endif
+ #include "cktdefs.h"
+ #include "util.h"
++#include "const.h"
+ #include "sperror.h"
+ #include "suffix.h"
+ 
+@@ -38,17 +39,6 @@
+     int firstTime=1;
+     static GENERIC *plot;
+ 
+-#ifdef HAS_SENSE2
+-#ifdef SENSDEBUG
+-    if(ckt->CKTsenInfo && (ckt->CKTsenInfo->SENmode&DCSEN) ){
+-        printf("\nDC Sensitivity Results\n\n");
+-        CKTsenPrint(ckt);
+-    }
+-#endif /* SENSDEBUG */
+-#endif
+-
+-
+-
+     vcode = CKTtypelook("Vsource");
+     icode = CKTtypelook("Isource");
+     if(!restart && cv->TRCVnestState >= 0) {
+@@ -106,15 +96,37 @@
+                 }
+             }
+         }
++#ifndef TEMP_CODE
++#define TEMP_CODE 1023
++#endif
++        if(!strcmp(cv->TRCVvName[i], "temp"))
++        {
++            cv->TRCVvSave[i]=ckt->CKTtemp;
++            cv->TRCVvType[i]=TEMP_CODE;
++            ckt->CKTtemp = cv->TRCVvStart[i] + CONSTCtoK;
++            goto found;
++        }
++        
+         (*(SPfrontEnd->IFerror))(ERR_FATAL, 
+                 "DCtrCurv: source %s not in circuit", &(cv->TRCVvName[i]));
+         return(E_NODEV);
+ found:;
+     }
++    i--;
+     error = CKTnames(ckt,&numNames,&nameList);
+     if(error) return(error);
+-    (*(SPfrontEnd->IFnewUid))((GENERIC *)ckt,&varUid,(IFuid )NULL,
+-            "sweep", UID_OTHER, (GENERIC **)NULL);
++    if (cv->TRCVvType[i]==vcode)
++    	(*(SPfrontEnd->IFnewUid))((GENERIC *)ckt,&varUid,(IFuid )NULL,
++            "v-sweep", UID_OTHER, (GENERIC **)NULL);
++    else if (cv->TRCVvType[i]==icode)
++    	(*(SPfrontEnd->IFnewUid))((GENERIC *)ckt,&varUid,(IFuid )NULL,
++            "i-sweep", UID_OTHER, (GENERIC **)NULL);
++    else if (cv->TRCVvType[i]==TEMP_CODE)
++    	(*(SPfrontEnd->IFnewUid))((GENERIC *)ckt,&varUid,(IFuid )NULL,
++            "temp-sweep", UID_OTHER, (GENERIC **)NULL);
++    else
++    	(*(SPfrontEnd->IFnewUid))((GENERIC *)ckt,&varUid,(IFuid )NULL,
++            "?-sweep", UID_OTHER, (GENERIC **)NULL);
+     error = (*(SPfrontEnd->OUTpBeginPlot))((GENERIC *)ckt,
+ 	(GENERIC*)ckt->CKTcurJob, ckt->CKTcurJob->JOBname,
+ 	varUid,IF_REAL,numNames,nameList, IF_REAL,&plot);
+@@ -150,6 +162,16 @@
+                     if (i > cv->TRCVnestLevel ) break ; 
+                     goto nextstep;
+                 }
++        } else if(cv->TRCVvType[i]==TEMP_CODE) { 
++            if(ckt->CKTtemp - CONSTCtoK > cv->TRCVvStop[i])
++                { 
++                    i++ ; 
++                    firstTime=1;
++                    ckt->CKTmode = (ckt->CKTmode & MODEUIC) | 
++                            MODEDCTRANCURVE | MODEINITJCT ;
++                    if (i > cv->TRCVnestLevel ) break ; 
++                    goto nextstep;
++                }
+         } /* else  not possible */
+         while (i > 0) { 
+             /* init(i); */
+@@ -160,6 +182,9 @@
+             } else if(cv->TRCVvType[i]==icode) { /* current source */
+                 ((ISRCinstance *)(cv->TRCVvElt[i]))->ISRCdcValue =
+                         cv->TRCVvStart[i];
++            } else if(cv->TRCVvType[i]==TEMP_CODE) { 
++                ckt->CKTtemp = cv->TRCVvStart[i] + CONSTCtoK;
++                CKTtemp(ckt);
+             } /* else not possible */
+         }
+ 
+@@ -188,7 +213,11 @@
+             ckt->CKTtime = ((ISRCinstance *)(cv->TRCVvElt[i]))
+                     ->ISRCdcValue ;
+         }
+-
++        else
++        {
++           fprintf(stdout, "Shuldn't pass through here!\n");
++           exit(1);
++        }
+ #ifdef HAS_SENSE2
+ /*
+         if(!ckt->CKTsenInfo) printf("sensitivity structure does not exist\n");
+@@ -232,6 +261,12 @@
+         } else if(cv->TRCVvType[i]==icode) { /* current source */
+             ((ISRCinstance*)(cv->TRCVvElt[i]))->ISRCdcValue +=
+                     cv->TRCVvStep[i];
++        }
++/* serban */
++        else if (cv->TRCVvType[i]==TEMP_CODE)
++        {
++    	    ckt->CKTtemp += cv->TRCVvStep[i];
++            CKTtemp(ckt);
+         } /* else not possible */
+         if( (*(SPfrontEnd->IFpauseTest))() ) {
+             /* user asked us to pause, so save state */
+@@ -247,10 +282,12 @@
+             ((VSRCinstance*)(cv->TRCVvElt[i]))->VSRCdcValue = 
+                     cv->TRCVvSave[i];
+             ((VSRCinstance*)(cv->TRCVvElt[i]))->VSRCdcGiven = cv->TRCVgSave[i];
+-        } else /* if(cv->TRCVvType[i] == icode) current source */ {
++        } else if(cv->TRCVvType[i] == icode) {
+             ((ISRCinstance*)(cv->TRCVvElt[i]))->ISRCdcValue = 
+                     cv->TRCVvSave[i];
+             ((ISRCinstance*)(cv->TRCVvElt[i]))->ISRCdcGiven = cv->TRCVgSave[i];
++        } else if(cv->TRCVvType[i] == TEMP_CODE) {
++            ckt->CKTtemp = cv->TRCVvSave[i];
+         } /* else not possible */
+     }
+     (*(SPfrontEnd->OUTendPlot))(plot);

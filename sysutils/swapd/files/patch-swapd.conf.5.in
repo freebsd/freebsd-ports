@@ -1,0 +1,11 @@
+--- swapd.conf.5.in.orig	2005-02-19 04:22:44 UTC
++++ swapd.conf.5.in
+@@ -14,7 +14,7 @@ at startup.  The configuration file is i
+ 	maxfree 0
+ 	swapsize 32m
+ 	swapdir /var/tmp
+-	maxunusedswap 5
++	maxunusedswaps 5
+ 	delay 30
+ 	include_cache yes
+ .fi

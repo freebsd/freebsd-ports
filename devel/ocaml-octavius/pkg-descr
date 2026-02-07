@@ -1,0 +1,3 @@
+Octavius provides a library and a binary to parse OCaml code comments
+following the syntax used by the OCaml documentation generator,
+also known as ocamldoc.

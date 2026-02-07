@@ -1,0 +1,7 @@
+TIMESTAMP = 1636032630
+SHA256 (JabRef-5.3-portable_linux.tar.gz) = 16eb083fe5f9376501175a533750dc83b18094ca45cc0ba1920b3aee1dee9c52
+SIZE (JabRef-5.3-portable_linux.tar.gz) = 170326347
+SHA256 (jabref.desktop) = 9d235c9c64c6458a2c9246df1e50a7406a57ff3468c0bdde716e27af723386a4
+SIZE (jabref.desktop) = 412
+SHA256 (jabref.png) = bc10d7eda4fde326b30f0780c08b0805988da447f251838b01effe9b330b59ba
+SIZE (jabref.png) = 14179

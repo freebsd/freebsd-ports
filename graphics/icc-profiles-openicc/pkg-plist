@@ -1,0 +1,27 @@
+%%SYSCOLORDIR%%/icc/OpenICC/ProPhoto-RGB.icc
+%%SYSCOLORDIR%%/icc/OpenICC/compatibleWithAdobeRGB1998.icc
+%%SYSCOLORDIR%%/icc/OpenICC/sRGB.icc
+%%SYSCOLORDIR%%/icc/Oyranos/Gray-CIE_L.icc
+%%SYSCOLORDIR%%/icc/Oyranos/Gray_linear.icc
+%%SYSCOLORDIR%%/icc/Oyranos/ITULab.icc
+%%SYSCOLORDIR%%/icc/basICColor/LStar-RGB.icc
+%%SYSCOLORDIR%%/icc/lcms/LCMSLABI.ICM
+%%SYSCOLORDIR%%/icc/lcms/LCMSXYZI.ICM
+%%SYSCOLORDIR%%/icc/lcms/Lab.icc
+%%SYSCOLORDIR%%/icc/lcms/XYZ.icc
+%%SYSCOLORDIR%%/target/NPES/TR002.ti3
+%%SYSCOLORDIR%%/target/NPES/TR003.ti3
+%%SYSCOLORDIR%%/target/NPES/TR005.ti3
+%%SYSCOLORDIR%%/target/NPES/TR006.ti3
+%%SYSCOLORDIR%%/target/fogra/FOGRA28L.ti3
+%%SYSCOLORDIR%%/target/fogra/FOGRA29L.ti3
+%%SYSCOLORDIR%%/target/fogra/FOGRA30L.ti3
+%%SYSCOLORDIR%%/target/fogra/FOGRA39L.ti3
+%%SYSCOLORDIR%%/target/fogra/FOGRA40L.ti3
+@dir %%SYSCOLORDIR%%/settings
+@dir %%SYSCOLORDIR%%/icc/PhotoGamut
+share/icons/application-vnd.iccprofile.png
+share/icons/text-vnd.cgats.png
+share/mime/packages/x-color-cgats.xml
+share/mime/packages/x-color-icc.xml
+share/pixmaps/icc-profiles-openicc_logo.png

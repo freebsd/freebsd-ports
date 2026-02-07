@@ -1,0 +1,3 @@
+bin/colorize
+@sample etc/colorizerc.sample
+share/man/man1/colorize.1.gz

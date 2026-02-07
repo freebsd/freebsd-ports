@@ -1,0 +1,8 @@
+--- fanmux.orig	Thu Jan 20 17:40:25 2005
++++ fanmux	Thu Jan 20 17:41:21 2005
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!%%PERL%%
+ #Copyright 2003, William Stearns <wstearns@pobox.com>
+ #Released under the GPL
+ #V0.6.1

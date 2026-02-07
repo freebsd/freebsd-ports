@@ -1,0 +1,17 @@
+[
+{ type: upgrade
+  message: <<EOM
+WARNING:
+This port was formerly known as sysutils/swatch and was renamed to swatchdog,
+the executable was renamed from swatch to swatchdog and the startup script
+too.
+
+This means you need to update all settings in rc.conf, e.g.,
+
+swatch_enable="YES" => swatchdog_enable="YES"
+swatch_rules="1 2 3" => swatchdog_rules="123"
+
+etc.
+EOM
+}
+]

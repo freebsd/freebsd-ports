@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Net/IPTrie.pm
+%%SITE_PERL%%/Net/IPTrie/Node.pm
+%%PERL5_MAN3%%/Net::IPTrie.3.gz
+%%PERL5_MAN3%%/Net::IPTrie::Node.3.gz

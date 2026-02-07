@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Net/Trackback.pm
+%%SITE_PERL%%/Net/Trackback/Client.pm
+%%SITE_PERL%%/Net/Trackback/Data.pm
+%%SITE_PERL%%/Net/Trackback/Message.pm
+%%SITE_PERL%%/Net/Trackback/Ping.pm
+%%SITE_PERL%%/Net/Trackback/Server.pm
+%%PERL5_MAN3%%/Net::Trackback.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Client.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Data.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Message.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Ping.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Server.3.gz

@@ -1,0 +1,3 @@
+bin/get_gset
+%%SITE_PERL%%/WebService/Google/Sets.pm
+%%PERL5_MAN3%%/WebService::Google::Sets.3.gz

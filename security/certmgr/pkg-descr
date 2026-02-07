@@ -1,0 +1,9 @@
+certmgr is a tool for managing certificates using CFSSL. It does the
+following:
+
+ - Ensures certificates are present.
+ - Renews certificates before they expire.
+ - Triggering a service reload or restart on certificate updates.
+
+It operates on certificate specs, which are JSON files containing the
+information needed to generate a certificate.

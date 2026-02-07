@@ -1,0 +1,53 @@
+--- hgext/convert/__init__.py.orig	2020-08-03 17:43:51 UTC
++++ hgext/convert/__init__.py
+@@ -59,6 +59,13 @@ testedwith = b'ships-with-hg-core'
+         ),
+         (
+             b'',
++            b'authormapsuffix',
++            b'',
++            _(b'append this suffix to remapped author names'),
++            _(b'SUFFIX')
++        ),
++        (
++            b'',
+             b'filemap',
+             b'',
+             _(b'remap file names using contents of file'),
+--- hgext/convert/convcmd.py.orig	2020-08-03 17:43:51 UTC
++++ hgext/convert/convcmd.py
+@@ -74,7 +74,7 @@ def readauthormap(ui, authorfile, author
+                 continue
+ 
+             srcauthor = srcauthor.strip()
+-            dstauthor = dstauthor.strip()
++            dstauthor = dstauthor.strip() + self.authormapsuffix
+             if authors.get(srcauthor) in (None, dstauthor):
+                 msg = _(b'mapping author %s to %s\n')
+                 ui.debug(msg % (srcauthor, dstauthor))
+@@ -209,12 +209,16 @@ class converter(object):
+         self.commitcache = {}
+         self.authors = {}
+         self.authorfile = None
++        self.authormapsuffix = b''
+ 
+         # Record converted revisions persistently: maps source revision
+         # ID to target revision ID (both strings).  (This is how
+         # incremental conversions work.)
+         self.map = mapfile(ui, revmapfile)
+ 
++        if opts.get('authormapsuffix'):
++            self.authormapsuffix = opts.get('authormapsuffix')
++
+         # Read first the dst author map if any
+         authorfile = self.dest.authorfile()
+         if authorfile and os.path.exists(authorfile):
+@@ -482,7 +486,7 @@ class converter(object):
+ 
+     def cachecommit(self, rev):
+         commit = self.source.getcommit(rev)
+-        commit.author = self.authors.get(commit.author, commit.author)
++        commit.author = self.authors.get(commit.author, commit.author + self.authormapsuffix)
+         commit.branch = mapbranch(commit.branch, self.branchmap)
+         self.commitcache[rev] = commit
+         return commit

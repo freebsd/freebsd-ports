@@ -1,0 +1,100 @@
+--- CMakeLists.txt.orig	2025-01-07 04:30:42 UTC
++++ CMakeLists.txt
+@@ -145,7 +145,12 @@ attach a debugger which will then receive the console 
+ # install locations
+ #
+ 
+- 
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  set (FREEBSD TRUE)
++  link_directories("/usr/lib" "${LOCALBASE}/lib")
++  include_directories("/usr/include" "${LOCALBASE}/include")
++endif()
++
+ if (APPLE)
+   set (CMAKE_INSTALL_BINDIR ${CMAKE_PROJECT_NAME}.app/Contents/MacOS)
+   set (CMAKE_INSTALL_DATAROOTDIR ${CMAKE_PROJECT_NAME}.app/Contents/Resources)
+@@ -936,8 +941,20 @@ find_package (Boost 1.62 REQUIRED COMPONENTS log_setup
+ #
+ # OpenMP
+ #
+-find_package (OpenMP)
++#    OpenMP_C_FLAGS - flags to add to the C compiler for OpenMP support
++#    OpenMP_CXX_FLAGS - flags to add to the CXX compiler for OpenMP support
++#    OpenMP_Fortran_FLAGS - flags to add to the Fortran compiler for OpenMP support
++#    OPENMP_FOUND - true if openmp is detected
+ 
++if (FREEBSD)
++  set (OpenMP_C_FLAGS "-openmp")
++  set (OpenMP_CXX_FLAGS "-openmp")
++  set (OpenMP_Fortran_FLAGS "-openmp")
++  set (OPENMP_FOUND TRUE)
++else()
++  find_package (OpenMP)
++endif()
++
+ #
+ # fftw3 single precision library
+ #
+@@ -986,7 +1003,7 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
+ #
+ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
+ 
+-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -fexceptions -frtti")
++set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wno-vla -Wextra -fexceptions -frtti")
+ 
+ if (NOT APPLE)
+   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-pragmas")
+@@ -1247,7 +1264,7 @@ add_executable (wsprsim ${wsprsim_CSRCS})
+ target_link_libraries (hash22calc wsjt_fort wsjt_cxx)
+ 
+ add_executable (wsprsim ${wsprsim_CSRCS})
+-target_link_libraries (wsprsim ${LIBM_LIBRARIES})
++target_link_libraries (wsprsim ${LIBM_LIBRARIES} -lm)
+ 
+ add_executable (jt4code lib/jt4code.f90)
+ target_link_libraries (jt4code wsjt_fort wsjt_cxx)
+@@ -1301,6 +1318,12 @@ endif(WSJT_BUILD_UTILS)
+ 
+ endif(WSJT_BUILD_UTILS)
+ 
++if(FREEBSD)
++   set (extraLIBS "ltdl" "usb")
++ else()
++   set (extraLIBS "")
++endif()
++
+ add_executable (fmtave lib/fmtave.f90)
+ 
+ add_executable (fcal lib/fcal.f90)
+@@ -1499,6 +1522,11 @@ endif (${OPENMP_FOUND} OR APPLE)
+ else (${OPENMP_FOUND} OR APPLE)
+   target_link_libraries (jt9 wsjt_fort wsjt_cxx fort_qt)
+ endif (${OPENMP_FOUND} OR APPLE)
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  set_target_properties (jt9 PROPERTIES
++    LINK_FLAGS -Wl,-zexecstack
++    )
++endif ()
+ 
+ if (WIN32)
+   find_package (Portaudio REQUIRED)
+@@ -1690,12 +1718,12 @@ install (PROGRAMS
+   RENAME rigctld-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
+   )
+ 
+-install (PROGRAMS
+-  ${RIGCTLCOM_EXE}
+-  DESTINATION ${CMAKE_INSTALL_BINDIR}
+-  #COMPONENT runtime
+-  RENAME rigctlcom-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
+-  )
++#install (PROGRAMS
++#  ${RIGCTLCOM_EXE}
++#  DESTINATION ${CMAKE_INSTALL_BINDIR}
++#  #COMPONENT runtime
++#  RENAME rigctlcom-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
++#  )
+ 
+ install (FILES
+   README

@@ -1,0 +1,6 @@
+bin/typos
+%%PORTDOCS%%%%DOCSDIR%%/comparison.md
+%%PORTDOCS%%%%DOCSDIR%%/design.md
+%%PORTDOCS%%%%DOCSDIR%%/github-action.md
+%%PORTDOCS%%%%DOCSDIR%%/pre-commit.md
+%%PORTDOCS%%%%DOCSDIR%%/reference.md

@@ -1,0 +1,4 @@
+SEDSED is a Python script that masters SED scripts. It generates SED debug
+files in SED, which lets you debug scripts with your own version of SED.
+It's also a script beautifier, doing indentation and spaces/comments
+formatting. It can also convert SED scripts to colorful HTML files.

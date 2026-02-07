@@ -1,0 +1,10 @@
+--- src/bin/xd/cli.rs.orig	2025-08-23 07:56:06 UTC
++++ src/bin/xd/cli.rs
+@@ -100,6 +100,7 @@ impl From<TableOption> for &xd::table::Table {
+     }
+ }
+ 
++#[warn(dangerous_implicit_autorefs)]
+ #[rustfmt::skip]
+ pub fn app() -> App<'static, 'static> {
+     App::new("xd")

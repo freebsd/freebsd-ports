@@ -1,0 +1,96 @@
+--- Makefile.orig	2006-01-11 13:03:20 UTC
++++ Makefile
+@@ -17,15 +17,16 @@ ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/su
+ #OPTIONS
+ ######################################
+ 
+-BUILD_3ZB2_SUPPORT=YES 	#For play Capture the Flag with bots is required to YES, there is a bug 
+-BUILD_DATADIR=NO		# Use DATADIR to read (data, renderers, etc.) and ~/.quake2 to write.
+-BUILD_DEDICATED=NO		# build a dedicated quake2 server
+-BUILD_GAME=YES			# game$(ARCH).so
+-BUILD_GLX=YES			# X11 GLX driver. Works somewhat ok.
+-BUILD_QUAKE2MAX=YES     	# kmquake executable (uses OSS for cdrom and sound)
+-BUILD_QUAKE2MAX-SDL=YES    	# kmquake2-sdl executable (uses SDL for cdrom and sound)
+-BUILD_LIBDIR=NO			# Use LIBDIR to read data and renderers (independent from DATADIR).
+-BUILD_SDLGL=YES            	# SDL OpenGL driver. Works fine for some people.
++BUILD_3ZB2_SUPPORT?=NO	#For play Capture the Flag with bots is required to YES, there is a bug 
++BUILD_DATADIR?=YES	# Use DATADIR to read (data, renderers, etc.) and ~/.quake2 to write.
++BUILD_DEDICATED?=NO	# build a dedicated quake2 server
++BUILD_GAME?=NO		# game$(ARCH).so
++BUILD_GLX?=NO		# X11 GLX driver. Works somewhat ok.
++BUILD_QUAKE2MAX?=NO	# kmquake executable (uses OSS for cdrom and sound)
++BUILD_QUAKE2MAX-SDL?=NO	# kmquake2-sdl executable (uses SDL for cdrom and sound)
++BUILD_LIBDIR?=YES	# Use LIBDIR to read data and renderers (independent from DATADIR).
++BUILD_SDLGL?=NO		# SDL OpenGL driver. Works fine for some people.
++WITH_OPTIMIZED_CFLAGS?=NO	# Enable compilation optimizations.
+ 
+ ######################################
+ 
+@@ -36,16 +37,19 @@ MOUNT_DIR=.
+ BINDIR=quake2
+ 
+ CC?=gcc
+-BASE_CFLAGS= #-Wall -pipe 
++BASE_CFLAGS= -Wall -fcommon #-pipe
+ DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
++RELEASE_CFLAGS=$(BASE_CFLAGS)
+ 
+-ifeq ($(ARCH),i386)
+-  RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing
++ifeq ($(WITH_OPTIMIZED_CFLAGS),YES)
++  RELEASE_CFLAGS+=-ffast-math -fomit-frame-pointer
++  ifeq ($(ARCH),i386)
++    RELEASE_CFLAGS+=-falign-functions=2 -fno-strict-aliasing
++  endif
+ endif
+ 
+-BUILD_DEBUG_DIR=debug$(ARCH)
+-BUILD_RELEASE_DIR=release$(ARCH)
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
+ 
+ CLIENT_DIR=$(MOUNT_DIR)/client
+ SERVER_DIR=$(MOUNT_DIR)/server
+@@ -133,7 +137,7 @@
+ endif
+ 
+ ifeq ($(strip $(BUILD_GAME)),YES)
+-  TARGETS+=$(BINDIR)/baseq2/game$(ARCH).$(SHLIBEXT)
++  TARGETS+=$(BINDIR)/baseq2/game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_QUAKE2MAX)),YES)
+@@ -249,11 +253,11 @@
+         $(BUILDDIR)/client/cd_sdl.o \
+         $(BUILDDIR)/client/snd_sdl.o
+ 
+-ifeq ($(ARCH),axp)
+-QUAKE2_AS_OBJS =  #blank
+-else
++ifeq ($(ARCH),i386)
+ QUAKE2_AS_OBJS = \
+ 	$(BUILDDIR)/client/snd_mixa.o
++else
++QUAKE2_AS_OBJS = # empty
+ endif
+ 
+ $(BINDIR)/quake2max : $(QUAKE2_OBJS) $(QUAKE2_LNX_OBJS) $(QUAKE2_AS_OBJS)
+@@ -478,7 +482,7 @@
+ 	$(DO_DED_CC)
+ 
+ $(BUILDDIR)/ded/q_shared.o :   $(GAME_DIR)/q_shared.c
+-	$(DO_DED_DEBUG_CC)
++	$(DO_DED_CC)
+ 
+ $(BUILDDIR)/ded/pmove.o :      $(COMMON_DIR)/pmove.c
+ 	$(DO_DED_CC)
+@@ -579,7 +583,7 @@
+ 	$(BUILDDIR)/game/p_weapon.o \
+ 	$(BUILDDIR)/game/m_flash.o
+ 
+-$(BINDIR)/baseq2/game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
++$(BINDIR)/baseq2/game.$(SHLIBEXT) : $(GAME_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS)
+ 
+ $(BUILDDIR)/game/g_ai.o :        $(GAME_DIR)/g_ai.c

@@ -1,0 +1,75 @@
+%%FLOWVIEWERDIR%%/FV.cgi
+%%FLOWVIEWERDIR%%/FV_Relay.cgi
+%%FLOWVIEWERDIR%%/FlowGrapher.cgi
+%%FLOWVIEWERDIR%%/FlowGrapher_Analyze.cgi
+@sample %%FLOWVIEWERDIR%%/FlowGrapher_Colors.sample
+%%FLOWVIEWERDIR%%/FlowGrapher_Main.cgi
+@sample %%FLOWVIEWERDIR%%/FlowGrapher_Ports.sample
+%%FLOWVIEWERDIR%%/FlowGrapher_Replay.cgi
+%%FLOWVIEWERDIR%%/FlowGrapher_Sort.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Collector
+%%FLOWVIEWERDIR%%/FlowMonitor_Dashboard.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Display.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_DisplayPublic.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Dumper.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Grapher
+%%FLOWVIEWERDIR%%/FlowMonitor_Group.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Main.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Management.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Recreate
+%%FLOWVIEWERDIR%%/FlowMonitor_Replay.cgi
+%%FLOWVIEWERDIR%%/FlowMonitor_Thumbnail
+%%FLOWVIEWERDIR%%/FlowViewer.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_CleanASCache
+%%FLOWVIEWERDIR%%/FlowViewer_CleanFiles
+%%FLOWVIEWERDIR%%/FlowViewer_CleanHostCache
+%%FLOWVIEWERDIR%%/FlowViewer_CleanSiLK
+@sample %%FLOWVIEWERDIR%%/FlowViewer_Configuration.pm.sample
+%%FLOWVIEWERDIR%%/FlowViewer_Main.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_Replay.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_Save.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_SaveManage.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_Sort.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_UI.pm
+%%FLOWVIEWERDIR%%/FlowViewer_Utilities.pm
+@sample %%FLOWVIEWERDIR%%/NamedInterfaces_Devices.sample
+@sample %%FLOWVIEWERDIR%%/NamedInterfaces_Exporters.sample
+@sample %%FLOWVIEWERDIR%%/dscan.suppress.dst.sample
+@sample %%FLOWVIEWERDIR%%/dscan.suppress.src.sample
+%%FLOWVIEWERDIR%%/tools/analyze_flowmonitor_debug
+%%FLOWVIEWERDIR%%/tools/analyze_netflow_packets
+%%FLOWVIEWERDIR%%/tools/convert_pre40_filters
+%%FLOWVIEWERDIR%%/tools/create_ports_file
+%%FLOWVIEWERDIR%%/tools/date_to_epoch_gm
+%%FLOWVIEWERDIR%%/tools/date_to_epoch_local
+%%FLOWVIEWERDIR%%/tools/epoch_to_date_gm
+%%FLOWVIEWERDIR%%/tools/epoch_to_date_local
+%%FLOWVIEWERDIR%%/tools/flow-capture-table.conf
+%%FLOWVIEWERDIR%%/tools/flowcapture_restart
+%%FLOWVIEWERDIR%%/tools/flowmonitor_archive_restore
+%%FLOWVIEWERDIR%%/tools/flowmonitor_grapher_nonlazy
+%%FLOWVIEWERDIR%%/tools/flowmonitor_grapher_recent
+%%FLOWVIEWERDIR%%/tools/flowmonitor_restart
+%%FLOWVIEWERDIR%%/tools/performance_check
+%%FLOWVIEWERDIR%%/tools/resize_rrdtools
+%%FLOWVIEWERDIR%%/tools/rsync_flows
+%%FLOWVIEWERDIR%%/tools/rsync_htmls
+%%FLOWVIEWERDIR%%/tools/rsync_monitors
+%%FLOWVIEWERDIR%%/tools/rwflowpack_start
+%%FLOWVIEWERDIR%%/reports/FG_button.png
+%%FLOWVIEWERDIR%%/reports/FM_button.png
+%%FLOWVIEWERDIR%%/reports/FV_button.png
+%%FLOWVIEWERDIR%%/reports/FlowViewer.css
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/FlowViewer_Dashboard
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/filters
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/graphs
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/ipsets
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/monitor
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/names
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/reports
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/rrdtools
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/saves
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/tmp
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/tools
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%FLOWVIEWERDIR%%/working

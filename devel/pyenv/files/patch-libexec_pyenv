@@ -1,0 +1,11 @@
+--- libexec/pyenv.orig
++++ libexec/pyenv
+@@ -81,7 +81,7 @@
+ 
+ export _PYENV_INSTALL_PREFIX
+ 
+-for plugin_bin in "${_PYENV_INSTALL_PREFIX}"/plugins/*/bin; do
++for plugin_bin in "${_PYENV_INSTALL_PREFIX}"/libexec/pyenv-plugins/*/bin; do
+   PATH="${plugin_bin}:${PATH}"
+ done
+ # PYENV_ROOT can be set to anything, so it may happen to be equal to the base path above,

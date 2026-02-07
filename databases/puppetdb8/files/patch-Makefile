@@ -1,0 +1,15 @@
+--- Makefile.orig	2024-06-10 16:24:36 UTC
++++ Makefile
+@@ -1,9 +1,9 @@
+-prefix = /usr/local
++prefix = %%PREFIX%%
+ datadir = $(prefix)/share
+-confdir = /etc
++confdir = %%PREFIX%%/etc
+ rubylibdir = $(shell ruby -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']")
+ rundir = /var/run
+-bindir = /usr/bin
++bindir = %%PREFIX%%/bin
+ 
+ install-puppetdb:
+ 	install -d -m 0755 "$(DESTDIR)$(datadir)/puppetdb"

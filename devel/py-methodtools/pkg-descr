@@ -1,0 +1,2 @@
+methodtools allows to expand functools features to methods, classmethods,
+staticmethods and even for (unofficial) hybrid methods.

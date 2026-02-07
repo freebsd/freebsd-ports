@@ -1,0 +1,11 @@
+--- makefile.orig	Sun Mar  6 16:36:47 2005
++++ makefile	Thu Apr  6 02:54:20 2006
+@@ -1,5 +1,5 @@
+-LIBRARIES = `sdl-config --libs` -L/usr/X11R6/lib -lSDL_mixer -lSDL_image -lGL -lGLU -lpng -ljpeg
+-CFLAGS = -w -O3 -I/usr/include/GL `sdl-config --cflags`
++LIBRARIES = `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_mixer -lSDL_image -lGL -lGLU -lpng -ljpeg
++CXXFLAGS += `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
+ 
+ all:
+-	g++ $(CFLAGS) -o solar ./source/main.cpp $(LIBRARIES)
++	${CXX} ${CXXFLAGS} -o solar ./source/main.cpp ${LIBRARIES}

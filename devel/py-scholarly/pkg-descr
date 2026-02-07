@@ -1,0 +1,3 @@
+scholarly is a module that allows you to retrieve author and
+publication information from Google Scholar in a friendly,
+Pythonic way without having to solve CAPTCHAs.

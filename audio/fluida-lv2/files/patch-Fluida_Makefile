@@ -1,0 +1,19 @@
+--- Fluida/Makefile.orig	2021-04-08 00:00:09 UTC
++++ Fluida/Makefile
+@@ -2,11 +2,11 @@
+ 	STRIP ?= strip
+ 	# check if user is root
+ 	user = $(shell whoami)
+-	ifeq ($(user),root)
+-	INSTALL_DIR = /usr/lib/lv2
+-	else 
+-	INSTALL_DIR = ~/.lv2
+-	endif
++	#ifeq ($(user),root)
++	INSTALL_DIR = $(PREFIX)/lib/lv2
++	#else 
++	#INSTALL_DIR = ~/.lv2
++	#endif
+ 
+ 	# check CPU and supported optimization flags
+ 	ifneq ($(shell cat /dev/null | grep sse3 ) , )

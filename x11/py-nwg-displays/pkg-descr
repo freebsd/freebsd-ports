@@ -1,0 +1,8 @@
+Nwg-displays is an output management utility for sway and Hyprland
+Wayland compositor, inspired by wdisplays and wlay. The program is
+expected to:
+- provide an intuitive GUI to manage multiple displays
+- apply settings
+- save outputs configuration to a text file
+- save workspace -> output assignments to a text file
+- support sway and Hyprland only

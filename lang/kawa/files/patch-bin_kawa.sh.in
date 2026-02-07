@@ -1,0 +1,31 @@
+--- bin/kawa.sh.in.orig	2017-05-02 13:54:41 UTC
++++ bin/kawa.sh.in
+@@ -1,13 +1,7 @@
+ #!@KAWA_SHELL@
+-thisfile=`command -v $0`
+-case "$thisfile" in
+-  "") echo "installation error - can't find path to $0"; exit -1 ;;
+-  /*) ;;
+-  *) thisfile="$PWD/$thisfile"  ;;
+-esac
+-while test -L "$thisfile"; do thisfile=$(readlink -f "$thisfile"); done
+-thisdir=`dirname "$thisfile"`
+-kawadir=`echo "$thisdir" | sed -e 's|/bin\(/\.\)*$||'`
++
++kawadir=`readlink -f "$(dirname "$0")/.."`
++
+ if [ "$#" -eq 0 ]
+ then
+    command_line="$0"
+@@ -19,9 +13,9 @@ test -t 0 || no_console="--no-console"
+ # If configured with --enable-kawa-frontend then kawa.sh is
+ # only used for pre-install testing.  In that case
+ # we don't need to set KAWALIB, since kawapath.c looks for it in "..".
+-@ENABLE_KAWA_FRONTEND_TRUE@  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$thisdir
++@ENABLE_KAWA_FRONTEND_TRUE@  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$kawadir/bin
+ @ENABLE_KAWA_FRONTEND_TRUE@  export LD_LIBRARY_PATH
+-@ENABLE_KAWA_FRONTEND_TRUE@  exec $thisdir/kawa "$@"
++@ENABLE_KAWA_FRONTEND_TRUE@  exec $kawadir/bin/kawa "$@"
+ 
+ KAWALIB=${KAWALIB-"`@CYGPATH_W@ $kawadir/lib/kawa.jar`"}
+ # MSYS: KAWALIB=${KAWALIB-"`cd $kawadir/lib/; pwd -W`@CLASSPATH_SEPARATOR@kawa.jar`"}

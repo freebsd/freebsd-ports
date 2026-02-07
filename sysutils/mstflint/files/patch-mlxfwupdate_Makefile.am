@@ -1,0 +1,11 @@
+--- mlxfwupdate/Makefile.am.orig	2024-05-08 15:02:33 UTC
++++ mlxfwupdate/Makefile.am
+@@ -31,7 +31,7 @@ docdir = $(INSTALL_BASEDIR)/etc/mstflint
+ # Makefile.am -- Process this file with automake to produce Makefile.in
+ 
+ docdir = $(INSTALL_BASEDIR)/etc/mstflint
+-dist_doc_DATA = certificate/ca-bundle.crt
++#dist_doc_DATA = certificate/ca-bundle.crt
+ 
+ AM_CPPFLAGS = \
+     -I$(srcdir) \

@@ -1,0 +1,4 @@
+Claws is a terminal UI for AWS resource management with vim-style
+navigation and mouse support. It provides interactive browsing and
+management of AWS resources across 69+ services, featuring fuzzy
+search, profile and region switching, and resource comparison.

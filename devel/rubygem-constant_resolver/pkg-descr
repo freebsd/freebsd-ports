@@ -1,0 +1,7 @@
+ConstantResolver resolves partially qualified constant reference to the fully
+qualified name and the path of the file defining it. It does not load the files
+to do that, its inference engine purely works on file paths and constant names.
+
+ConstantResolver uses the same assumptions as Rails' code loader, Zeitwerk to
+infer constant locations. Please see Zeitwerk's documentation on file structure
+and inflection for more information.

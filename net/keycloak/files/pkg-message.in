@@ -1,0 +1,65 @@
+[
+{ type: install
+  message: <<EOM
+Keycloak was installed
+
+1) Configuration files are located at %%JAVASHAREDIR%%/%%PORTNAME%%/conf
+2) keycloak start in production mode by default. https is mandatory in this
+   mode. You must generate some certificate files.
+
+   # cd %%JAVASHAREDIR%%/%%PORTNAME%%/conf
+   # openssl req -newkey rsa:2048 -nodes -keyout server.key.pem -x509 \
+     -days 3650 -out server.crt.pem
+   # chmod 640 server.crt.pem server.key.pem
+   # chown %%USER%%:%%GROUP%% server.crt.pem server.key.pem
+
+   Do not forget set certificate paths into keycloak.conf
+
+3) If you want start keycloak on develpment mode (http), you can change
+   it the following way:
+
+   # sysrc keycloak_flags=start-dev
+
+4) Also you can use mysql or postgresql backend for store keycloak data. Take a
+   look at db, db-username, db-password and db-url options into keycloak.conf
+   file.
+
+5) Enable keycloak service
+
+   # service keycloak enable
+
+6) Sometimes you will need run a keycloak build when you change some settings
+   into config file or when you pass from development mode to production mode.
+   Try the following if you need it:
+
+   # service keycloak build
+
+7) Start keycloak service
+
+   # service keycloak start
+
+8) Development mode listen on 8080 port and production mode listen on 8443 port
+   by default. Depending of your own configuration, the administration console
+   can be accesing from a web browser from localhost first time:
+
+   http://localhost:8080
+
+   or if you are using production mode
+
+   https://ip_or_hostname:8443
+
+9) Also, you can create admin user by using KEYCLOAK_ADMIN and
+   KEYCLOAK_ADMIN_PASSWORD environment variables when keycloak is started first
+   time on production mode:
+
+   # cd %%PREFIX%%/etc/rc.d
+   # KEYCLOAK_ADMIN=admin_user KEYCLOAK_ADMIN_PASSWORD=pass_user sh keycloak start
+
+10) For more information about keycloak configuration, visit:
+
+   https://www.keycloak.org/documentation
+
+11) Enjoy it
+EOM
+}
+]

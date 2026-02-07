@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Module/Build/Pluggable.pm
+%%SITE_PERL%%/Module/Build/Pluggable/Base.pm
+%%SITE_PERL%%/Module/Build/Pluggable/GithubMeta.pm
+%%SITE_PERL%%/Module/Build/Pluggable/Repository.pm
+%%SITE_PERL%%/Module/Build/Pluggable/Util.pm
+%%SITE_PERL%%/Test/Module/Build/Pluggable.pm
+%%PERL5_MAN3%%/Module::Build::Pluggable.3.gz
+%%PERL5_MAN3%%/Module::Build::Pluggable::Base.3.gz
+%%PERL5_MAN3%%/Module::Build::Pluggable::GithubMeta.3.gz
+%%PERL5_MAN3%%/Module::Build::Pluggable::Repository.3.gz
+%%PERL5_MAN3%%/Test::Module::Build::Pluggable.3.gz

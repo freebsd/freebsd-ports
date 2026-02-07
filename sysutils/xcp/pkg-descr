@@ -1,0 +1,19 @@
+xcp is a (partial) clone of the Unix 'cp' command. It is not intended as a
+full replacement, but as a companion utility with some more user-friendly
+feedback and some optimisations that make sense under certain tasks (see
+below).
+
+Features:
+* Displays a progress-bar, both for directory and single file copies. This can
+  be disabled with `--no-progress`.
+* On Linux it uses `copy_file_range` call to copy files. This is the most
+  efficient method of file-copying under Linux; in particular it is
+  filesystem-aware, and can massively speed-up copies on network mounts by
+  performing the copy operations server-side. However, unlike `copy_file_range`
+  sparse files are detected and handled appropriately.
+* Non-Linux Unix-like OSs (OS X, *BSD) are supported via fall-back operation
+  (although sparse-files are not yet supported in this case).
+* Optionally understands `.gitignore` files to limit the copied directories.
+* Optimised for 'modern' systems (i.e. multiple cores, copious RAM, and
+  solid-state disks, especially ones connected into the main system bus,
+  e.g. M.2).

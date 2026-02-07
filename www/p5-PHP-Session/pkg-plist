@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/PHP::Session.3.gz
+%%PERL5_MAN3%%/PHP::Session::Serializer::PHP.3.gz
+%%SITE_PERL%%/PHP/Session.pm
+%%SITE_PERL%%/PHP/Session/Serializer/PHP.pm

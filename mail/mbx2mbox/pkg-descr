@@ -1,0 +1,5 @@
+mbx2mbox converts Microsoft Outlook Express .mbx files into
+standard mail files (mbox) that programs like Pine, Mutt, and
+Netscape can parse.
+
+Usage: mbx2mbox file1.mbx file2.mbx ...

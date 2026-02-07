@@ -1,0 +1,7 @@
+cachey implements caching based on computation time and storage space.
+
+Cachey tries to hold on to values that have the following characteristics:
+* Expensive to recompute (in seconds)
+* Cheap to store (in bytes)
+* Frequently used
+* Recenty used

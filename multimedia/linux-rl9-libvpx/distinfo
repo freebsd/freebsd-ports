@@ -1,0 +1,9 @@
+TIMESTAMP = 1750640277
+SHA256 (rocky/l/libvpx-1.9.0-9.el9_6.aarch64.rpm) = 158e05f807fd191c5cef0bd9625d9b0e2af834c42b5d0ec96704839ea334b6a6
+SIZE (rocky/l/libvpx-1.9.0-9.el9_6.aarch64.rpm) = 1044575
+SHA256 (rocky/l/libvpx-1.9.0-9.el9_6.i686.rpm) = 03018357da366c09d97dd32b0b38b5f87e1a982cf17f7ba7b5b6ecba62b11fa3
+SIZE (rocky/l/libvpx-1.9.0-9.el9_6.i686.rpm) = 1138183
+SHA256 (rocky/l/libvpx-1.9.0-9.el9_6.x86_64.rpm) = 39b33df758653f9161c702d7aa5917b3ea20ba5349639033fbeadc0d669f97f0
+SIZE (rocky/l/libvpx-1.9.0-9.el9_6.x86_64.rpm) = 1099275
+SHA256 (rocky/l/libvpx-1.9.0-9.el9_6.src.rpm) = 49d3a4d75cf86ad19f909c1940bc45561f2e3c0d01f31ecacbb0ee3740a1a94a
+SIZE (rocky/l/libvpx-1.9.0-9.el9_6.src.rpm) = 5331982

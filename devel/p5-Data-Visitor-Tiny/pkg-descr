@@ -1,0 +1,4 @@
+Data::Visitor::Tiny - Recursively walk data structures
+
+This module provides a simple framework for recursively
+iterating over a data structure of hashrefs and/or arrayrefs.

@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Math/Random/OO.pm
+%%SITE_PERL%%/Math/Random/OO/Bootstrap.pm
+%%SITE_PERL%%/Math/Random/OO/Normal.pm
+%%SITE_PERL%%/Math/Random/OO/Uniform.pm
+%%SITE_PERL%%/Math/Random/OO/UniformInt.pm
+%%PERL5_MAN3%%/Math::Random::OO.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::Bootstrap.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::Normal.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::Uniform.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::UniformInt.3.gz

@@ -1,0 +1,43 @@
+--- configure.orig	2024-01-28 15:28:41 UTC
++++ configure
+@@ -357,7 +357,7 @@ sub header_check {
+ 
+ 	log_file("test.cc");
+ 
+-	if (run_cmd($cxx,@cxxflags,"-c","test.cc","-o","xxtest.o") != 0) {
++	if (0) {
+ 	    print ": no\n";
+ 	    $y = header_def($x);
+ 	    print CONFIGH "#undef $y\n";
+@@ -511,17 +511,9 @@ header_check("strings.h");
+ #optional headers
+ header_check("strings.h");
+ 
+-$t1=macro_check("netinet/in.h","IPPROTO_TCP","HAVE_IPPROTO_TCP_ON_IN_H");
+-$t2=macro_check("netinet/in.h","TCP_NODELAY","HAVE_TCP_NODELAY_ON_IN_H");
+-$t3=macro_check("netinet/in.h","SOL_TCP","HAVE_SOL_TCP_ON_IN_H");
+-
+-$t4=macro_check("netinet/tcp.h","IPPROTO_TCP","HAVE_IPPROTO_TCP_ON_TCP_H");
+-$t5=macro_check("netinet/tcp.h","TCP_NODELAY","HAVE_TCP_NODELAY_ON_TCP_H");
+-$t6=macro_check("netinet/tcp.h","SOL_TCP","HAVE_SOL_TCP_ON_TCP_H");
+-
+ print "  net options: ";
+ 
+-if ($t2 != 0) {
++if (0) {
+     cppdef("USE_SOCK_OPTS");
+     if ($t1!=0 && $t3!=0) {
+ 	cppundef("NEED_TCP_H");
+@@ -535,10 +527,10 @@ if ($t2 != 0) {
+ 	print "netinet/tcp.h not required, SOL_TCP present.\n";
+     }
+ } else {
+-    if ($t5 != 0 && ($t1!=0 || $t4!=0) && ($t3!=0 || $t6!=0) ) {
++    if (1) {
+ 	cppdef("NEED_TCP_H");
+ 	cppdef("USE_SOCK_OPTS");
+-	if ($t1!=0 || $t4!=0) {
++	if (1) {
+ 	    cppdef("USE_IPPROTO_TCP");
+ 	    print "netinet/tcp.h required, IPPROTO_TCP present.\n";
+ 	} else {

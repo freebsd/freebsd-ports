@@ -1,0 +1,8 @@
+Gitmux shows git status in your tmux status bar.
+
+Features:
+- easy. Install and forget about it
+- minimal. Just shows what you need, when you need it
+- discrete. Get out of your way if current directory is not in a Git tree
+- shell-agnostic. Does not rely on shell-features so works with all of them
+- customizable. Colors, symbols and layout are configurable

@@ -1,0 +1,83 @@
+--- Makefile_freebsd.orig	2021-12-20 20:32:05 UTC
++++ Makefile_freebsd
+@@ -6,12 +6,12 @@ CC            =	clang
+ CC            =	clang
+ 
+ #where you want the binaries and manual page
+-BINDIR	      = /usr/local/bin
+-MANDIR	      = /usr/local/man/man1
+-LIBDIR	      = /usr/local/lib/yaze
+-DSKDIR        = $(LIBDIR)/disks
+-DOCDIR        = $(LIBDIR)/doc
+-DOCHTMLDIR    = $(LIBDIR)/doc_html
++#BINDIR	      = $(PREFIX)/bin
++#MANDIR	      = $(PREFIX)/man/man1
++#LIBDIR	      = $(PREFIX)/share/yaze-ag
++#DSKDIR        = $(LIBDIR)/disks
++#DOCDIR        = $(PREFIX)/share/doc/yaze-ag
++#DOCHTMLDIR    = $(DOCDIR)/html
+ 
+ #OPTIMIZE	= -g -m486
+ #OPTIMIZE	= -g -save-temps -m486
+@@ -59,7 +59,8 @@ DOCHTMLDIR    = $(LIBDIR)/doc_html
+ #OPTIMIZE	= -O3 -march=athlon64	# 64 Bit AMD
+ #OPTIMIZE	= -O3 -march=athlon64-sse3
+ #OPTIMIZE	= -O3 -march=barcelona
+-OPTIMIZE	= -O3 -march=x86-64
++#OPTIMIZE	= -O3 -march=x86-64
++OPTIMIZE	= -O3
+ 
+ # -DUSE_GNU_READLINE for command recall/editing and filename completion
+ # -DBGii_BUG works around a problem in Backgrounder II
+@@ -215,29 +216,29 @@ install:	all
+ 		$(CC) $(CFLAGS) cdm.o $(LIBS) -o $@
+ 
+ install:	all
+-		rm -rf $(LIBDIR)
+-		mkdir -p $(LIBDIR)
+-		mkdir -p $(MANDIR)
+-		$(INSTALL) -s -c -m 755 yaze_bin $(BINDIR)
+-		$(INSTALL) -s -c -m 755 cdm $(BINDIR)
+-		$(INSTALL) -c -m 755 yaze $(BINDIR)
+-		ln -f -s $(BINDIR)/yaze $(BINDIR)/cpm
+-		ln -f -s $(BINDIR)/yaze $(BINDIR)/z80
+-		$(INSTALL) -c -m 644 yaze-cpm3.boot $(LIBDIR)
+-		$(INSTALL) -c -m 644 yaze.boot $(LIBDIR)
+-		$(INSTALL) -c -m 644 m2.ktt $(LIBDIR)
+-		$(INSTALL) -c -m 644 sample.ktt $(LIBDIR)
+-		$(INSTALL) -c -m 644 yaze.ktt $(LIBDIR)
+-		$(INSTALL) -c -m 644 yaze.1 $(MANDIR)
+-		$(INSTALL) -c -m 644 cdm.1 $(MANDIR)
+-		$(INSTALL) -c -m 644 cpm.1 $(MANDIR)
+-		$(INSTALL) -c -m 644 z80.1 $(MANDIR)
+-		/bin/sh install_disks.sh $(DSKDIR)
+-		/bin/sh install_doc.sh $(DOCDIR)
+-		/bin/sh install_doc_html.sh $(DOCHTMLDIR)
+-		(cd $(LIBDIR); \
++		rm -rf $(DESTDIR)$(LIBDIR)
++		mkdir -p $(DESTDIR)$(LIBDIR)
++		mkdir -p $(DESTDIR)$(MANDIR)
++		$(INSTALL) -s -c -m 755 yaze_bin $(DESTDIR)$(LIBEXECDIR)
++		$(INSTALL) -s -c -m 755 cdm $(DESTDIR)$(BINDIR)
++		$(INSTALL) -c -m 755 yaze $(DESTDIR)$(BINDIR)
++		ln -f -s yaze $(DESTDIR)$(BINDIR)/cpm
++		ln -f -s yaze $(DESTDIR)$(BINDIR)/z80
++		$(INSTALL) -c -m 644 yaze-cpm3.boot $(DESTDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 yaze.boot $(DESTDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 m2.ktt $(DESTDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 sample.ktt $(DESTDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 yaze.ktt $(DESTDIR)$(LIBDIR)
++		$(INSTALL) -c -m 644 yaze.1 $(DESTDIR)$(MANDIR)
++		$(INSTALL) -c -m 644 cdm.1 $(DESTDIR)$(MANDIR)
++		$(INSTALL) -c -m 644 cpm.1 $(DESTDIR)$(MANDIR)
++		$(INSTALL) -c -m 644 z80.1 $(DESTDIR)$(MANDIR)
++		/bin/sh install_disks.sh $(DESTDIR)$(DSKDIR)
++		/bin/sh install_doc.sh $(DESTDIR)$(DOCDIR)
++		/bin/sh install_doc_html.sh $(DESTDIR)$(DOCHTMLDIR)
++		(cd $(DESTDIR)$(LIBDIR); \
+ 		rm -f md5 /tmp/md5.yaze-ag; \
+-		find . -type f -exec md5sum -b {} >>/tmp/md5.yaze-ag \; ; \
++		find * -type f -exec md5 -r {} >>/tmp/md5.yaze-ag \; ; \
+ 		mv /tmp/md5.yaze-ag md5)
+ 
+ md5:		$(DISTRIB)

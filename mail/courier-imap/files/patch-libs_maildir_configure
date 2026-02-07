@@ -1,0 +1,23 @@
+--- libs/maildir/configure.orig	2022-05-25 23:49:49 UTC
++++ libs/maildir/configure
+@@ -18965,20 +18965,6 @@ fi
+ fi
+ 
+ 
+-ac_fn_c_check_func "$LINENO" "inotify_init" "ac_cv_func_inotify_init"
+-if test "x$ac_cv_func_inotify_init" = xyes
+-then :
+-  printf "%s\n" "#define HAVE_INOTIFY_INIT 1" >>confdefs.h
+-
+-fi
+-ac_fn_c_check_func "$LINENO" "inotify_init1" "ac_cv_func_inotify_init1"
+-if test "x$ac_cv_func_inotify_init1" = xyes
+-then :
+-  printf "%s\n" "#define HAVE_INOTIFY_INIT1 1" >>confdefs.h
+-
+-fi
+-
+-
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for missing gethostname prototype" >&5
+ printf %s "checking for missing gethostname prototype... " >&6; }
+ if test ${maildir_cv_SYS_GETHOSTNAME+y}

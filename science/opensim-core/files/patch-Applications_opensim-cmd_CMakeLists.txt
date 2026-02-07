@@ -1,0 +1,11 @@
+--- Applications/opensim-cmd/CMakeLists.txt.orig	2018-11-15 17:30:25 UTC
++++ Applications/opensim-cmd/CMakeLists.txt
+@@ -20,7 +20,7 @@ OpenSimAddApplication(NAME opensim-cmd
+             parse_arguments.h
+     )
+ 
+-target_link_libraries(opensim-cmd docopt_s)
++target_link_libraries(opensim-cmd docopt)
+ 
+ if(BUILD_TESTING)
+     subdirs(test)

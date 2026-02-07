@@ -1,0 +1,16 @@
+%%CLIENT%%bin/qudos
+%%DEDICATED%%bin/qudos-ded
+%%3ZB2%%%%LIBDIR%%/3zb2/game.so
+%%LIBDIR%%/baseq2/QuDos-%%VER%%.pk3
+%%GAME%%%%LIBDIR%%/baseq2/game.so
+%%CTF%%%%LIBDIR%%/ctf/game.so
+%%JABOT%%%%LIBDIR%%/jabot/game.so
+%%GLX%%%%LIBDIR%%/ref_q2glx.so
+%%SDLGL%%%%LIBDIR%%/ref_q2sdlgl.so
+%%ROGUE%%%%LIBDIR%%/rogue/game.so
+%%OSS%%%%LIBDIR%%/snd_oss.so
+%%SDL%%%%LIBDIR%%/snd_sdl.so
+%%XATRIX%%%%LIBDIR%%/xatrix/game.so
+%%ZAERO%%%%LIBDIR%%/zaero/game.so
+%%PORTDOCS%%%%DOCSDIR%%/QuDos.txt
+%%PORTDOCS%%%%DOCSDIR%%/Ogg_readme.txt

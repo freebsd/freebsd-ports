@@ -1,0 +1,5 @@
+Easily and flexibly insert 'Font Awesome' icons into 'R Markdown'
+documents and 'Shiny' apps. These icons can be inserted into HTML
+content through inline 'SVG' tags or 'i' tags. There is also a
+utility function for exporting 'Font Awesome' icons as 'PNG' images
+for those situations where raster graphics are needed.

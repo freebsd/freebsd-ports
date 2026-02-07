@@ -1,0 +1,10 @@
+bin/crlibm_blindtest
+bin/crlibm_generate_test_vectors
+bin/crlibm_soaktest
+bin/crlibm_testperf
+bin/crlibm_testval
+include/crlibm.h
+include/crlibm_config.h
+include/scs.h
+lib/libcrlibm.a
+lib/libscs.a

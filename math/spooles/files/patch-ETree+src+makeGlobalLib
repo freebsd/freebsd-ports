@@ -1,0 +1,10 @@
+--- ETree/src/makeGlobalLib.orig	1998-09-17 19:25:01 UTC
++++ ETree/src/makeGlobalLib
+@@ -8,6 +8,7 @@ SRC = IO.c \
+       basics.c \
+       compress.c \
+       init.c \
++      initFromSubtree.c \
+       instance.c \
+       justify.c \
+       maps.c \

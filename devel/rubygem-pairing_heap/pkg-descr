@@ -1,0 +1,11 @@
+PairingHeap is a pure Ruby priority queue implementation using a pairing heap as
+the underlying data structure. While a pairing heap is asymptotically less
+efficient than the Fibonacci heap, it is usually faster in practice. This makes
+it a popular choice for Prim's MST or Dijkstra's algorithm implementations.
+
+PairingHeap is currently being used as the priority queue data structure in RGL.
+
+Also implementation without priority change support is
+provided(SimplePairingHeap), while the asymptotical complexity of the methods
+stay the same, bookkeeping of elements is not needed making, the constant
+smaller.

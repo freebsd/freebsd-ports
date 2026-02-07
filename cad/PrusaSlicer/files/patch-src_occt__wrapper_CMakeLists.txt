@@ -1,0 +1,29 @@
+--- src/occt_wrapper/CMakeLists.txt.orig	2024-12-20 11:54:34 UTC
++++ src/occt_wrapper/CMakeLists.txt
+@@ -19,14 +19,13 @@ generate_export_header(OCCTWrapper)
+ 
+ generate_export_header(OCCTWrapper)
+ 
+-find_package(OpenCASCADE 7.6.1 REQUIRED)
++list(APPEND CMAKE_PREFIX_PATH ${CMAKE_INSTALL_PREFIX}/lib/cmake)
++find_package(OpenCASCADE REQUIRED)
+ 
+ set(OCCT_LIBS
+-    TKXDESTEP
+-    TKSTEP
+-    TKSTEP209
+-    TKSTEPAttr
+-    TKSTEPBase
++	-L${CMAKE_INSTALL_PREFIX}/lib
++	TKXSDRAWSTEP
++	TKDESTEP
+     TKXCAF
+     TKXSBase
+     TKVCAF
+@@ -59,5 +58,5 @@ include(GNUInstallDirs)
+ 
+ include(GNUInstallDirs)
+ 
+-install(TARGETS OCCTWrapper DESTINATION "${CMAKE_INSTALL_BINDIR}")
++install(TARGETS OCCTWrapper DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+ 

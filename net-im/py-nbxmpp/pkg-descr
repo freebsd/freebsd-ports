@@ -1,0 +1,3 @@
+The goal of this python library is to provide a way for python applications
+to use Jabber/XMPP networks in a non-blocking way. This library is initialy a
+fork of xmpppy one, but using non-blocking sockets.

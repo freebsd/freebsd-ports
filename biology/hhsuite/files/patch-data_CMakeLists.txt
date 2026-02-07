@@ -1,0 +1,11 @@
+--- data/CMakeLists.txt.orig	2019-05-19 05:46:02 UTC
++++ data/CMakeLists.txt
+@@ -7,7 +7,7 @@ INSTALL(FILES
+         do_not_delete.pin
+         do_not_delete.psq
+         PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+-        DESTINATION data
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/hhsuite/data
+         )
+ 
+ include(ResourceCompiler)

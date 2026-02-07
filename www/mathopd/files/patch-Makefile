@@ -1,0 +1,6 @@
+--- Makefile.orig	Fri Dec  5 00:24:18 2003
++++ Makefile	Fri Dec  5 00:24:44 2003
+@@ -0,0 +1,3 @@
++SUBDIR=	src
++
++.include <bsd.subdir.mk>

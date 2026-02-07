@@ -1,0 +1,5 @@
+If you enable the PDO database framework option, you still need to install a
+database-specific PDO driver.
+
+For example, if you're using php 7.0, you could install php70-pdo_sqlite,
+from /usr/ports/databases/php70-pdo_sqlite.

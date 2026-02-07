@@ -1,0 +1,53 @@
+--- ./tcltk/Makefile.in.orig	2005-06-06 03:03:56.000000000 +0000
++++ ./tcltk/Makefile.in	2014-01-15 20:23:28.000000000 +0000
+@@ -286,17 +286,13 @@
+ install-xconq: $(PLATFORM_INSTALL_TARGETS)
+ 
+ install-libs-only:
+-	$(INSTALL_DATA) $(srcdir)/tkconq.tcl $(tcltkdir)
+-	$(INSTALL_DATA) $(srcdir)/imfapp.tcl $(tcltkdir)
+-	$(INSTALL_DATA) $(srcdir)/BWidget/*.* $(BWidgetdir)
+-	$(INSTALL_DATA) $(srcdir)/BWidget/images/*.* $(BWidgetimagesdir)
+-	$(INSTALL_DATA) $(srcdir)/BWidget/lang/*.* $(BWidgetlangdir)
+-	chown $(GAMEUID) $(tcltkdir) $(BWidgetdir) $(BWidgetimagesdir) $(BWidgetlangdir) \
+-				     $(tcltkdir)/*.* $(BWidgetdir)/*.* $(BWidgetimagesdir)/*.* $(BWidgetlangdir)/*.*
+-	chgrp $(GAMEGRP) $(tcltkdir) $(BWidgetdir) $(BWidgetimagesdir) $(BWidgetlangdir) \
+-				     $(tcltkdir)/*.* $(BWidgetdir)/*.* $(BWidgetimagesdir)/*.* $(BWidgetlangdir)/*.*
+-	chmod $(DIRPERM) $(tcltkdir) $(BWidgetdir) $(BWidgetimagesdir) $(BWidgetlangdir)
+-	chmod $(FILEPERM) $(tcltkdir)/*.* $(BWidgetdir)/*.* $(BWidgetimagesdir)/*.* $(BWidgetlangdir)/*.*
++	$(INSTALL_DATA) $(srcdir)/tkconq.tcl $(DESTDIR)$(tcltkdir)
++	$(INSTALL_DATA) $(srcdir)/imfapp.tcl $(DESTDIR)$(tcltkdir)
++	$(INSTALL_DATA) $(srcdir)/BWidget/*.* $(DESTDIR)$(BWidgetdir)
++	$(INSTALL_DATA) $(srcdir)/BWidget/images/*.* $(DESTDIR)$(BWidgetimagesdir)
++	$(INSTALL_DATA) $(srcdir)/BWidget/lang/*.* $(DESTDIR)$(BWidgetlangdir)
++	chmod $(DIRPERM) $(DESTDIR)$(tcltkdir) $(DESTDIR)$(BWidgetdir) $(DESTDIR)$(BWidgetimagesdir) $(DESTDIR)$(BWidgetlangdir)
++	chmod $(FILEPERM) $(DESTDIR)$(tcltkdir)/*.* $(DESTDIR)$(BWidgetdir)/*.* $(DESTDIR)$(BWidgetimagesdir)/*.* $(DESTDIR)$(BWidgetlangdir)/*.*
+ 
+ install-xconq-only: $(TKCONQ_EXEC_NAME)
+ 	srcroot=`cd $(srcroot); pwd`; export srcroot; \
+@@ -305,10 +301,8 @@
+ 	else \
+ 		progname="$(TKCONQ_EXEC_NAME)" ; \
+ 	fi; \
+-	$(INSTALL_PROGRAM) $${progname} $(bindir); \
+-	chown $(GAMEUID) $(bindir)/$${progname}; \
+-	chgrp $(GAMEGRP) $(bindir)/$${progname}; \
+-	chmod $(GAMEPERM) $(bindir)/$${progname}; 
++	$(INSTALL_PROGRAM) $${progname} $(DESTDIR)$(bindir); \
++	chmod $(GAMEPERM) $(DESTDIR)$(bindir)/$${progname}; 
+ 
+ install-imfapp-only: imfapp
+ 	srcroot=`cd $(srcroot); pwd`; export srcroot; \
+@@ -317,10 +311,8 @@
+ 	else \
+ 		progname="imfapp" ; \
+ 	fi; \
+-	$(INSTALL_PROGRAM) $${progname} $(bindir); \
+-	chown $(GAMEUID) $(bindir)/$${progname}; \
+-	chgrp $(GAMEGRP) $(bindir)/$${progname}; \
+-	chmod $(IAPPPERM) $(bindir)/$${progname};
++	$(INSTALL_PROGRAM) $${progname} $(DESTDIR)$(bindir); \
++	chmod $(IAPPPERM) $(DESTDIR)$(bindir)/$${progname};
+ 
+ install-ximfconvs-only: x2imf imf2x
+ 	(cd ../x11 && $(MAKE) $(FLAGS_TO_PASS) install-ximfconvs-only)

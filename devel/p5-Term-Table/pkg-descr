@@ -1,0 +1,2 @@
+Term::Table is used by some failing tests to provide diagnostics about what has
+gone wrong. This module is able to generic format rows of data into tables.

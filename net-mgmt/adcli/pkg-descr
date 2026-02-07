@@ -1,0 +1,8 @@
+adcli is a command line tool that can perform actions in an Active Directory
+domain:
+
+	. "join" a computer (not necessarily the current one) into AD-domain
+	. output information about the domain -- in human- and computer-readable
+	  form
+	. create user- and group-accounts in the domain
+	. delete and reset accounts

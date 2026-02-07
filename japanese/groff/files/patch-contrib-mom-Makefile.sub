@@ -1,0 +1,43 @@
+--- contrib/mom/Makefile.sub.orig	2002-07-29 14:22:05.000000000 +0900
++++ contrib/mom/Makefile.sub	2014-08-30 02:23:07.000000000 +0900
+@@ -90,26 +90,27 @@
+ 	test -d examples || $(mkinstalldirs) examples
+ 	test -f penguin.ps || cp $(srcdir)/examples/penguin.ps .
+ 
+-install_data: $(NORMALFILES) $(HTMLDOCFILES) \
+-              $(EXAMPLEFILES) $(PROCESSEDEXAMPLEFILES)
+-	-test -d $(tmacdir) || $(mkinstalldirs) $(tmacdir)
++install_data: $(NORMALFILES)
++	-test -d $(DESTDIR)$(tmacdir) || $(mkinstalldirs) $(DESTDIR)$(tmacdir)
+ 	for f in $(NORMALFILES); do \
+-	  rm -f $(tmacdir)/$$f; \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(tmacdir)/$$f; \
++	  rm -f $(DESTDIR)$(tmacdir)/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(tmacdir)/$$f; \
+ 	done
+-	-test -d $(htmldocdir)/momdoc || $(mkinstalldirs) $(htmldocdir)/momdoc
++
++install_doc: $(HTMLDOCFILES) $(EXAMPLEFILES) $(PROCESSEDEXAMPLEFILES)
++	-test -d $(DESTDIR)$(htmldocdir)/momdoc || $(mkinstalldirs) $(DESTDIR)$(htmldocdir)/momdoc
+ 	for f in $(HTMLDOCFILES); do \
+-	  rm -f $(htmldocdir)/$$f; \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(htmldocdir)/$$f; \
++	  rm -f $(DESTDIR)$(htmldocdir)/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(htmldocdir)/$$f; \
+ 	done
+-	-test -d $(exampledir) || $(mkinstalldirs) $(exampledir)
++	-test -d $(DESTDIR)$(exampledir) || $(mkinstalldirs) $(DESTDIR)$(exampledir)
+ 	for f in $(EXAMPLEFILES); do \
+-	  rm -f $(exampledir)/$$f; \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(docdir)/$$f; \
++	  rm -f $(DESTDIR)$(exampledir)/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(exampledir)/$$(f#examples/); \
+ 	done
+ 	for f in $(PROCESSEDEXAMPLEFILES); do \
+-	  rm -f $(exampledir)/$$f; \
+-	  $(INSTALL_DATA) $$f $(docdir)/$$f; \
++	  rm -f $(DESTDIR)$(exampledir)/$$f; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(exampledir)/$$(f#examples/); \
+ 	done
+ 
+ uninstall_sub:

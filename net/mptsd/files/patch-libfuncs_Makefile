@@ -1,0 +1,12 @@
+--- libfuncs/Makefile.orig	2023-07-11 19:14:41 UTC
++++ libfuncs/Makefile
+@@ -4,8 +4,7 @@
+ MKDEP = $(CROSS)$(CC) -M -o $*.d $<
+ 
+ LIBRARY_LINK_OPTS =  -L. -r
+-CFLAGS = -O2 -ggdb -std=c99 -D_GNU_SOURCE
+-CFLAGS += -Wall -Wextra -Wshadow -Wformat-security -Wstrict-prototypes
++CFLAGS += -std=c99 -D_GNU_SOURCE -Wall -Wextra -Wshadow -Wformat-security -Wstrict-prototypes
+ RM = /bin/rm -f
+ Q=@
+ 

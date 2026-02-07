@@ -1,0 +1,12 @@
+setoptconf is a Python library that can be used to retrieve program settings
+from a variety of common sources:
+- Command Line
+- Environment Variables
+- INI Files
+- JSON Files
+- YAML Files
+- Python Objects/Modules
+
+The goal of this project is to define your desired settings in a simple and
+consistent way, and then point setoptconf at as many of the sources as you'd
+like to use, and let it comb them all, looking for your settings.

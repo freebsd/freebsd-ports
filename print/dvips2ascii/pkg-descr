@@ -1,0 +1,16 @@
+dvips2ascii
+-----------
+
+This is a PostScript-to-ascii converter which works for PostScript
+files created by dvips. Results are usually better than using ps2ascii
+which comes with ghostscript.
+
+USAGE: dvips2ascii < psfile > asciifile
+
+dvips2ascii is a perl script, therefore it is slow. There is limited
+support for accented characters (mainly german umlauts). Let me know
+if you want support for other special characters.
+
+Comments, bug reports and fixes to
+
+	eserte@cs.tu-berlin.de (Slaven Rezic)

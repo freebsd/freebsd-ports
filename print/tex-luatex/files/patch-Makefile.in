@@ -1,0 +1,116 @@
+--- Makefile.in.orig	2025-02-02 08:06:22 UTC
++++ Makefile.in
+@@ -104,18 +104,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+ 	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
+ 	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
+ 	md5main$(EXEEXT)
+-bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_4) \
+-	ctie$(EXEEXT) cweave$(EXEEXT) ctwill$(EXEEXT) \
+-	ctwill-refsort$(EXEEXT) ctwill-twinx$(EXEEXT) tie$(EXEEXT) \
+-	$(am__EXEEXT_5) $(am__EXEEXT_6) $(am__EXEEXT_7) \
+-	$(am__EXEEXT_8) $(am__EXEEXT_9) $(am__EXEEXT_10) \
+-	$(am__EXEEXT_11) $(am__EXEEXT_12) $(am__EXEEXT_13) \
+-	$(am__EXEEXT_14) $(am__EXEEXT_15) $(am__EXEEXT_16) \
+-	$(am__EXEEXT_17) $(am__EXEEXT_18) $(am__EXEEXT_19) \
+-	$(am__EXEEXT_20) $(am__EXEEXT_21) $(am__EXEEXT_22) \
+-	$(am__EXEEXT_23) $(am__EXEEXT_24) $(am__EXEEXT_25) \
+-	$(am__EXEEXT_26) $(am__EXEEXT_27) $(am__EXEEXT_28) \
+-	$(am__EXEEXT_29) $(am__EXEEXT_30) $(am__EXEEXT_31)
++bin_PROGRAMS = luahbtex$(EXEEXT) luatex$(EXEEXT) luajittex$(EXEEXT)
+ noinst_PROGRAMS = tangleboot$(EXEEXT) ctangleboot$(EXEEXT) \
+ 	$(am__EXEEXT_32) $(am__EXEEXT_33) $(am__EXEEXT_34) \
+ 	$(am__EXEEXT_35) $(am__EXEEXT_36) $(am__EXEEXT_37) \
+@@ -2995,14 +2984,16 @@ LUA53_DEFINES = @LUA53_DEFINES@
+ LUA52_INCLUDES = @LUA52_INCLUDES@
+ LUA52_LIBS = @LUA52_LIBS@
+ LUA53_DEFINES = @LUA53_DEFINES@
+-LUA53_DEPEND = @LUA53_DEPEND@
+-LUA53_INCLUDES = @LUA53_INCLUDES@
+-LUA53_LIBS = @LUA53_LIBS@
++LUA53_DEPEND =
++LUA53_INCLUDES = -I${LOCALBASE}/include/texlua53 \
++	-I@top_srcdir@/../../libs/lua53/lua53-src/src
++LUA53_LIBS = -L${LOCALBASE}/lib -ltexlua53
+ LUAJIT_DEFINES = @LUAJIT_DEFINES@
+-LUAJIT_DEPEND = @LUAJIT_DEPEND@
+-LUAJIT_INCLUDES = @LUAJIT_INCLUDES@
++LUAJIT_DEPEND =
++LUAJIT_INCLUDES = -I${LOCALBASE}/include/texluajit \
++	-I@top_srcdir@/../../libs/luajit/LuaJIT-src/src
+ LUAJIT_LDEXTRA = @LUAJIT_LDEXTRA@
+-LUAJIT_LIBS = @LUAJIT_LIBS@
++LUAJIT_LIBS = -L${LOCALBASE}/lib -ltexluajit
+ MAINT = @MAINT@
+ MAKEINFO = @MAKEINFO@
+ MANIFEST_TOOL = @MANIFEST_TOOL@
+@@ -3042,7 +3033,8 @@ PTEXENC_DEPEND = @PTEXENC_DEPEND@
+ PPLIB_INCLUDES = @PPLIB_INCLUDES@
+ PPLIB_LIBS = @PPLIB_LIBS@
+ PTEXENC_DEPEND = @PTEXENC_DEPEND@
+-PTEXENC_INCLUDES = @PTEXENC_INCLUDES@
++PTEXENC_INCLUDES = -I@top_srcdir@/../../libs/pplib/pplib-src/src/util \
++	-I@top_srcdir@/../../libs/pplib/pplib-src/src
+ PTEXENC_LIBS = @PTEXENC_LIBS@
+ RANLIB = @RANLIB@
+ SED = @SED@
+@@ -3146,7 +3138,7 @@ version = $(WEB2CVERSION)
+ AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
+ AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
+ version = $(WEB2CVERSION)
+-SUBDIRS = doc lib man web2c . window omegafonts otps
++SUBDIRS = .
+ proglib = lib/lib.a
+ 
+ #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
+@@ -3168,7 +3160,7 @@ lib_LTLIBRARIES = $(am__append_125)
+ EXTRA_LTLIBRARIES = libsynctex.la
+ lib_LIBRARIES = $(am__append_126)
+ lib_LTLIBRARIES = $(am__append_125)
+-dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
++dist_man_MANS =
+ nodist_man_MANS = 
+ TEST_EXTENSIONS = .pl .test
+ #
+@@ -3722,12 +3714,7 @@ TRIPTRAP = $(am__append_7) $(am__append_17) $(am__appe
+ TRIPTRAP = $(am__append_7) $(am__append_17) $(am__append_26) \
+ 	$(am__append_35) $(am__append_43) $(am__append_59) \
+	$(am__append_63) $(am__append_70) $(am__append_78)
+-bin_links = $(am__append_5) $(am__append_14) $(am__append_15) \
+-	$(am__append_24) $(am__append_33) $(am__append_41) \
+-	$(am__append_49) $(am__append_54) $(am__append_68) \
+-	$(am__append_74) $(am__append_75) $(am__append_76) \
+-	$(am__append_90) $(am__append_95) $(am__append_100) \
+-	$(am__append_105)
++bin_links = $(am__append_75) $(am__append_81)
+ install_exe_links = $(am__append_12) $(am__append_22) $(am__append_31) \
+ 	$(am__append_39) $(am__append_47) $(am__append_52) \
+	$(am__append_88) $(am__append_93) $(am__append_98) \
+@@ -3901,7 +3888,7 @@ nodist_twill_SOURCES = twill.c twill.h
+ nodist_vptovf_SOURCES = vptovf.c vptovf.h
+ nodist_weave_SOURCES = weave.c weave.h
+ nodist_twill_SOURCES = twill.c twill.h
+-dist_bin_SCRIPTS = cwebdir/ctwill-proofsort cwebdir/twill-refsort
++dist_bin_SCRIPTS =
+ nodist_ctie_SOURCES = ctie.c
+ nodist_cweave_SOURCES = cweave.c cweb.c
+ nodist_ctwill_SOURCES = ctwill.c cweb.c
+@@ -4645,8 +4632,7 @@ euptex_tests = \
+ # At the moment, these are the only man pages handled in the
+ # conglomerated web2c/Makefile[.am]. (All the others are in man/.)
+ # If that changes, have to set at top level and use +=.
+-@HITEX_TRUE@man1_MANS = hitexdir/man/hishrink.man hitexdir/man/histretch.man \
+-@HITEX_TRUE@            hitexdir/man/hitex.man
++@HITEX_TRUE@man1_MANS =
+ 
+
+ # See hitex.am for comments about handling man.
+@@ -21448,9 +21434,6 @@ $(proglib): $(proglib_sources)
+ @KPATHSEA_RULE@
+ @PTEXENC_RULE@
+ @ZLIB_RULE@
+-@LUA52_RULE@
+-@LUA53_RULE@
+-@LUAJIT_RULE@
+ @LIBPNG_RULE@
+ @FREETYPE2_RULE@
+ @PIXMAN_RULE@

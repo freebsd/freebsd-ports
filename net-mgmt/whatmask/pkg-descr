@@ -1,0 +1,9 @@
+Whatmask is a small C program that will help you with network settings.
+
+It displays the following information given IP address and/or netmask:
+- The netmask in the following formats: CIDR, Netmask, Hex, Wildcard Bits
+- The Network Address
+- The Broadcast Address
+- The number of Usable IP Addresses
+- The First Usable IP Address
+- The Last Usable IP Address

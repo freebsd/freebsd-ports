@@ -1,0 +1,12 @@
+include/libfastjson/atomic.h
+include/libfastjson/json.h
+include/libfastjson/json_object.h
+include/libfastjson/json_object_iterator.h
+include/libfastjson/json_object_private.h
+include/libfastjson/json_tokener.h
+include/libfastjson/json_util.h
+lib/libfastjson.a
+lib/libfastjson.so
+lib/libfastjson.so.4
+lib/libfastjson.so.4.3.0
+libdata/pkgconfig/libfastjson.pc

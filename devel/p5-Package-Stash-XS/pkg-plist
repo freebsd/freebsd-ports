@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Package/Stash/XS.pm
+%%SITE_ARCH%%/auto/Package/Stash/XS/XS.so
+%%PERL5_MAN3%%/Package::Stash::XS.3.gz

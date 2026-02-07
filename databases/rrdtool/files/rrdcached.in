@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: rrdcached
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable rrdcached:
+#
+# rrdcached_enable (bool):	Set to "NO" by default.
+#				Set to "YES" to enable rrdcached
+# rrdcached_address (string):	Socket or IP address to listen to
+#				Default: socket /var/run/rrdcached.sock
+# rrdcached_group (string):	Group owner of the socket
+#				Default: www
+# rrdcached_pid (string):	PID file location
+#				Default: /var/run/rrdcached.pid
+# rrdcached_flags (string):	Arguments appended to command_args
+#				Default: ""
+
+. /etc/rc.subr
+
+name=rrdcached
+rcvar=rrdcached_enable
+
+load_rc_config $name
+
+# Set defaults
+: ${rrdcached_enable="NO"}
+: ${rrdcached_address="/var/run/rrdcached.sock"}
+: ${rrdcached_group="www"}
+: ${rrdcached_pid="/var/run/rrdcached.pid"}
+
+pidfile=/var/run/${name}.pid   
+command=%%PREFIX%%/bin/${name}
+command_args="-s $rrdcached_group -l $rrdcached_address -p $rrdcached_pid"
+
+run_rc_command "$1"   

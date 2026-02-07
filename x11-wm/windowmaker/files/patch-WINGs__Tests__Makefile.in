@@ -1,0 +1,41 @@
+--- WINGs/Tests/Makefile.in.orig	2020-08-13 06:26:57 UTC
++++ WINGs/Tests/Makefile.in
+@@ -118,7 +118,6 @@ am_testmywidget_OBJECTS = testmywidget.$(OBJEXT) mywid
+ testmywidget_OBJECTS = $(am_testmywidget_OBJECTS)
+ testmywidget_LDADD = $(LDADD)
+ testmywidget_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
+-	$(top_builddir)/wrlib/libwraster.la \
+ 	$(top_builddir)/WINGs/libWUtil.la
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -128,13 +127,11 @@ wmfile_SOURCES = wmfile.c
+ wmfile_OBJECTS = wmfile.$(OBJEXT)
+ wmfile_LDADD = $(LDADD)
+ wmfile_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
+-	$(top_builddir)/wrlib/libwraster.la \
+ 	$(top_builddir)/WINGs/libWUtil.la
+ wmquery_SOURCES = wmquery.c
+ wmquery_OBJECTS = wmquery.$(OBJEXT)
+ wmquery_LDADD = $(LDADD)
+ wmquery_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
+-	$(top_builddir)/wrlib/libwraster.la \
+ 	$(top_builddir)/WINGs/libWUtil.la
+ wtest_SOURCES = wtest.c
+ wtest_OBJECTS = wtest.$(OBJEXT)
+@@ -373,14 +370,14 @@ top_srcdir = @top_srcdir@
+ wprefs_bindir = @wprefs_bindir@
+ wprefs_datadir = @wprefs_datadir@
+ AUTOMAKE_OPTIONS = 
+-LDADD = $(top_builddir)/WINGs/libWINGs.la $(top_builddir)/wrlib/libwraster.la \
++LDADD = $(top_builddir)/WINGs/libWINGs.la -lwraster \
+ 	$(top_builddir)/WINGs/libWUtil.la \
+ 	@XFT_LIBS@ @INTLIBS@ @XLIBS@
+ 
+ testmywidget_SOURCES = testmywidget.c mywidget.c mywidget.h
+ wtest_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la
+ EXTRA_DIST = logo.xpm upbtn.xpm wm.html wm.png
+-AM_CPPFLAGS = -I$(top_srcdir)/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src \
++AM_CPPFLAGS = -I$(top_srcdir)/WINGs -I$(top_srcdir)/src \
+ 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @XFT_CFLAGS@ @HEADER_SEARCH_PATH@ \
+ 	@PANGO_CFLAGS@
+ 

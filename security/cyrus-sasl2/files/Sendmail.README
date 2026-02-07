@@ -1,0 +1,61 @@
+How to enable SMTP AUTH with FreeBSD default Sendmail
+
+1) Add the following to  /etc/make.conf:
+
+    # Add SMTP AUTH support to Sendmail
+    SENDMAIL_CFLAGS+=	-I/usr/local/include -DSASL=2
+    SENDMAIL_LDFLAGS+=	-L/usr/local/lib
+    SENDMAIL_LDADD+=	-lsasl2
+
+2) Rebuild FreeBSD (make buildworld, ...)
+
+3) Make sure that the pwcheck_method is correct in Sendmail.conf.
+
+   Sendmail.conf (${PREFIX}/lib/sasl2/Sendmail.conf) is created by
+   the cyrus-sasl2 ports during installation.  It may have
+   pwcheck_method set to saslauthd by default.  Change this to what is
+   appropriate for your site.
+
+4) Add the following to your sendmail.mc file:
+
+   dnl The group needs to be mail in order to read the sasldb2 file
+   define(`confRUN_AS_USER',`root:mail')dnl
+
+   TRUST_AUTH_MECH(`DIGEST-MD5 CRAM-MD5')dnl
+   define(`confAUTH_MECHANISMS',`DIGEST-MD5 CRAM-MD5')dnl
+
+   define(`confDONT_BLAME_SENDMAIL',`GroupReadableSASLDBFile')dnl
+
+5) Add the following before FEATURE(msp) in your submit.mc file:
+
+   DAEMON_OPTIONS(`Name=NoMTA, Addr=127.0.0.1, M=EA')dnl
+
+   This disables SMTP AUTH on the loopback interface. Otherwise you may get
+   the following error in the log:
+
+	error: safesasl(/usr/local/etc/sasldb2) failed: Group readable file
+
+   when sending mail locally (seen when using pine locally on same server).
+
+ ----
+
+   Additional AUTH Mechanisms are LOGIN, PLAIN, GSSAPI, and KERBEROS_V4.
+   These can be added to TRUST_AUTH_MECH and confAUTH_MECHANISMS as a space
+   seperated list.  You may want to restrict LOGIN, and PLAIN authentication
+   methods for use with STARTTLS, as the password is not encrypted when
+   passed to sendmail.
+
+   LOGIN is required for Outlook Express users.  "My server requires
+   authentication" needs to be checked in the accounts properties to 
+   use SASL Authentication.
+
+   PLAIN is required for Netscape Communicator users.  By default Netscape
+   Communicator will use SASL Authentication when sendmail is compiled with
+   SASL and will cause your users to enter their passwords each time they
+   retreive their mail (NS 4.7).
+
+   The DONT_BLAME_SENDMAIL option GroupReadableSASLDBFile is needed when you
+   are using cyrus-imapd and sendmail on the same server that requires access
+   to the sasldb2 database.
+
+   SASLv2 support of Sendmail is starting with 8.12.4.

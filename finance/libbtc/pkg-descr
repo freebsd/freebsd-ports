@@ -1,0 +1,2 @@
+Libbtc is a very portable C library for creating and manipulating
+bitcoin data structures and interacting with the p2p network.

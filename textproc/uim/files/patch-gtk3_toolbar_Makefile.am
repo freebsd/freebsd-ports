@@ -1,0 +1,35 @@
+--- gtk3/toolbar/Makefile.am.orig	2025-05-18 07:43:25 UTC
++++ gtk3/toolbar/Makefile.am
+@@ -16,9 +16,7 @@ libuim_toolbar_applet_gnome3_la_LIBADD = @GTK3_LIBS@ @
+ xmlui_DATA = uim-applet-menu.xml
+ 
+ libuim_toolbar_applet_gnome3_la_LIBADD = @GTK3_LIBS@ @GNOME3_APPLET_LIBS@ \
+-			   $(top_builddir)/uim/libuim-scm.la \
+-			   $(top_builddir)/uim/libuim.la \
+-			   $(top_builddir)/uim/libuim-custom.la
++			   -luim-scm -luim -luim-custom
+ libuim_toolbar_applet_gnome3_la_CPPFLAGS = \
+ 			   -DUIM_UIDATADIR="\"${xmluidir}\"" \
+ 			   $(helper_defs) $(AM_CPPFLAGS)
+@@ -55,9 +53,7 @@ uim_toolbar_gtk3_SOURCES  = standalone-gtk.c common-gt
+ if GTK3
+ bin_PROGRAMS = uim-toolbar-gtk3 uim-toolbar-gtk3-systray
+ uim_toolbar_gtk3_SOURCES  = standalone-gtk.c common-gtk.c
+-uim_toolbar_gtk3_LDADD    = @GTK3_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-			   $(top_builddir)/uim/libuim.la \
+-			   $(top_builddir)/uim/libuim-custom.la
++uim_toolbar_gtk3_LDADD    = @GTK3_LIBS@ -luim-scm -luim -luim-custom
+ uim_toolbar_gtk3_CPPFLAGS = $(AM_CPPFLAGS)
+ uim_toolbar_gtk3_CFLAGS   = @GTK3_CFLAGS@
+ 
+@@ -67,9 +63,7 @@ uim_toolbar_gtk3_systray_LDADD    = @GTK3_LIBS@ \
+ 				   eggtrayicon.h
+ uim_toolbar_gtk3_systray_LDADD    = @GTK3_LIBS@ \
+ 				   @X11_LIBS@ \
+-				   $(top_builddir)/uim/libuim-scm.la \
+-				   $(top_builddir)/uim/libuim.la \
+-				   $(top_builddir)/uim/libuim-custom.la
++				   -luim-scm -luim -luim-custom
+ uim_toolbar_gtk3_systray_CPPFLAGS = $(AM_CPPFLAGS)
+ uim_toolbar_gtk3_systray_CFLAGS   = @GTK3_CFLAGS@
+ endif

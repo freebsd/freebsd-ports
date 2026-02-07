@@ -1,0 +1,11 @@
+--- config/log4j2.xml.orig	2021-12-14 19:08:41.946554000 +0100
++++ config/log4j2.xml	2021-12-14 19:09:19.554143000 +0100
+@@ -9,7 +9,7 @@
+ <Configuration>
+ 
+     <Appenders>
+-        <RollingFile name="FILE" fileName="${sys:serviio.home}/log/serviio.log" filePattern="${sys:serviio.home}/log/serviio.log.%i">
++        <RollingFile name="FILE" fileName="/var/log/serviio/serviio.log" filePattern="/var/log/serviio/serviio.log.%i">
+             <PatternLayout pattern="%d{ISO8601} %-5p [%c{1}] %m%n" />
+             <Policies>
+                 <SizeBasedTriggeringPolicy size="5000KB" />

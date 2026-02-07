@@ -1,0 +1,19 @@
+VisualBoyAdvance is an emulator for Nintendo's Gameboy Advance. It also
+supports emulation of the Gameboy (classic), Gameboy Pocket, Gameboy Color
+and Gameboy Advance SP.
+Some of the main features are:
+
+- option to use BIOS file
+- zip/gzip file support
+- graphic filters Normal, TV Mode, 2xSaI, Super 2xSaI and more
+- interframe blending support
+- built-in ARM/THUMB assembly debugger
+- 10 save states accesible through keyboard
+- automatic battery file load/save
+- auto-fire support
+- 16, 24 and 32 bit desktop support
+- GDB remote debugging (see below for information)
+- AGBPrint support for development
+- RTC support
+
+NOTICE: Thx go out to Wouter Groeneveld for helping me to test the port.

@@ -1,0 +1,9 @@
+flawz is a Terminal User Interface (TUI) for browsing the security
+vulnerabilities (also known as CVEs).
+
+As default it uses the vulnerability database NVD (https://nvd.nist.gov)
+from NIST and provides search and listing functionalities in the terminal with
+different theming options.
+
+For example, to view details on the notorious 'xz vulnerability', use:
+$ flawz --feeds 2024 --query xz

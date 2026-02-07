@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Aug 16 16:31:49 1996
++++ Makefile	Fri Feb 14 17:28:49 1997
+@@ -7,3 +7,8 @@
+ 	else echo Bad platform ; fi
+ 
+ dummy:
++
++bsd44:
++	@ echo "Making fpp for `uname -a` ..."
++	@ echo "Read carefully fpp_license.ps before proceeding to use fpp."
++	mkdir bsd44; cp sparc/Makefile bsd44; cd $@; $(MAKE)

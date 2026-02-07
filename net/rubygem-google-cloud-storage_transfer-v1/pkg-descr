@@ -1,0 +1,3 @@
+Storage Transfer Service allows you to quickly import online data into Cloud Storage.
+You can also set up a repeating schedule for transferring data, as well as transfer
+data within Cloud Storage, from one bucket to another.

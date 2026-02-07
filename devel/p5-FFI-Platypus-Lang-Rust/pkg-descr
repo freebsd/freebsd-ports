@@ -1,0 +1,8 @@
+This module provides native Rust types for FFI::Platypus in order to
+reduce cognitive load and concentrate on Rust and forget about C
+types. This document also documents issues and caveats that I have
+discovered in my attempts to work with Rust and FFI.
+
+Note that in addition to using pre-compiled Rust libraries, you can
+bundle Rust code with your Perl distribution using FFI::Build and
+FFI::Build::File::Cargo.

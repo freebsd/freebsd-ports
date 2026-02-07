@@ -1,0 +1,3 @@
+certmgr has been installed.  Please copy %%ETCDIR%%/certmgr.yaml.sample
+to %%ETCDIR%%/certmgr.yaml and edit the file as appropriate for your
+setup before using the program.

@@ -1,0 +1,21 @@
+--- src/bfort/Makefile.in.orig	2014-11-30 15:59:58 UTC
++++ src/bfort/Makefile.in
+@@ -4,15 +4,15 @@ SHELL       = /bin/sh
+ include ../../Makerules
+ top_srcdir=@top_srcdir@
+ srcdir=@srcdir@
+-datarootdir     = @datarootdir@
++datadir     = @datadir@
+ @VPATH@
+ 
+ INCLUDES = -I${top_srcdir}/include
+ 
+ LIBS       =  ../../lib/libsowing.a
+ INCLUDES   = -I${top_srcdir}/include -I../../include
+-DEFS       = -DBASEDEF='"@datarootdir@/bfort-base.txt"' \
+-	     -DBASEPATH='"@datarootdir@"'
++DEFS       = -DBASEDEF='"@datadir@/bfort-base.txt"' \
++	     -DBASEPATH='"@datadir@"'
+ PROGRAMS   = bfort
+ 
+ bfort: bfort.o  doc.o

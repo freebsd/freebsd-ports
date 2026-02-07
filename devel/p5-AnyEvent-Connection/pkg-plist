@@ -1,0 +1,4 @@
+%%SITE_PERL%%/AnyEvent/Connection/Util.pm
+%%SITE_PERL%%/AnyEvent/Connection/Raw.pm
+%%SITE_PERL%%/AnyEvent/Connection.pm
+%%PERL5_MAN3%%/AnyEvent::Connection.3.gz

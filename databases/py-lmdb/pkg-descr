@@ -1,0 +1,2 @@
+This is a port of py-lmdb, which provides bindings for OpenLDAP's Lightning
+Memory-mapped Database (LMDB).

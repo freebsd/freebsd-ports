@@ -1,0 +1,2 @@
+Use git commands easily from your Perl program. Each git command
+is imported as a System::Sub DWIM sub.

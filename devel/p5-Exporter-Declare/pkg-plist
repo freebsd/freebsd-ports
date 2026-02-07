@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Exporter/Declare.pm
+%%SITE_PERL%%/Exporter/Declare/Export.pm
+%%SITE_PERL%%/Exporter/Declare/Export/Alias.pm
+%%SITE_PERL%%/Exporter/Declare/Export/Generator.pm
+%%SITE_PERL%%/Exporter/Declare/Export/Sub.pm
+%%SITE_PERL%%/Exporter/Declare/Export/Variable.pm
+%%SITE_PERL%%/Exporter/Declare/Meta.pm
+%%SITE_PERL%%/Exporter/Declare/Specs.pm
+%%PERL5_MAN3%%/Exporter::Declare.3.gz
+%%PERL5_MAN3%%/Exporter::Declare::Export.3.gz
+%%PERL5_MAN3%%/Exporter::Declare::Export::Alias.3.gz
+%%PERL5_MAN3%%/Exporter::Declare::Export::Generator.3.gz
+%%PERL5_MAN3%%/Exporter::Declare::Export::Sub.3.gz
+%%PERL5_MAN3%%/Exporter::Declare::Export::Variable.3.gz
+%%PERL5_MAN3%%/Exporter::Declare::Meta.3.gz
+%%PERL5_MAN3%%/Exporter::Declare::Specs.3.gz

@@ -1,0 +1,15 @@
+pngquant is a command-line utility to quantize and dither 32-bit RGBA
+PNGs down to 8-bit (or smaller) RGBA-palette PNGs, usually with a
+significant reduction in file size (40-70% smaller than 24-bit PNGs).
+
+This unique type of PNG supports full alpha transparency and is
+compatible with all modern web browsers, and has better fallback in IE6
+than 24-bit PNGs.
+
+Features:
+ - High-quality palette generation using modernized Median Cut
+   algorithm.
+ - Unique dithering algorithm that adds less noise to images than the
+   standard Floyd-Steinberg.
+ - Easy to integrate with shell scripts, GUIs and server-side software.
+ - Fast mode for processing large numbers of images.

@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+The spambouncer procmail rules have been installed in %%DATADIR%%/.
+An example of .procmailrc can be found as
+%%DATADIR%%/auxiliary/procmail.rc .
+EOM
+}
+]

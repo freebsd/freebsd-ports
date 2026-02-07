@@ -1,0 +1,22 @@
+--- Makefile.orig	Tue May  8 19:26:58 2001
++++ Makefile	Sun Jan 25 22:08:08 2004
+@@ -24,9 +24,9 @@
+ # Edit the options below to suit your needs
+ #
+ 
+-CC		= gcc
++CC?=		 gcc
+ 
+-CFLAGS		= -O2 -Wall -pipe
++CFLAGS?=	 -O2 -Wall -pipe
+ 
+ # Uncomment for Sparc Solaris
+ # LDFLAGS		= -lcurses -lresolv -lnsl -lsocket
+@@ -37,6 +37,7 @@
+ INSTPATH	= /usr/local
+ 
+ $(PROG): $(PROG).o
++	$(CC) $(LDFLAGS) -o $(PROG) $(PROG).o
+ 
+ $(PROG).o: $(PROG).c
+ 	$(CC) $(CFLAGS) -c $(PROG).c -o $(PROG).o

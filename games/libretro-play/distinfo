@@ -1,0 +1,13 @@
+TIMESTAMP = 1641918423
+SHA256 (jpd002-Play--0.48_GH0.tar.gz) = 503f5cd7fd2245422dbd9c336fe25c69cb364a802da5ba23122acba8629a23d8
+SIZE (jpd002-Play--0.48_GH0.tar.gz) = 1804767
+SHA256 (jpd002-Play--CodeGen-448bac159733c6799a451ac75a18ce04aff5e223_GH0.tar.gz) = b214266d00988c9ccd177c91491e66e016f3303722dbe48787db404a8fabced8
+SIZE (jpd002-Play--CodeGen-448bac159733c6799a451ac75a18ce04aff5e223_GH0.tar.gz) = 273617
+SHA256 (jpd002-libchdr-532a3f60f75eec3454ff4e52cad8862afc40e65f_GH0.tar.gz) = ee01abc5b2169051b10bc3ef3ae80b2fb7e62eea45bf985bf2ee02506028d2bd
+SIZE (jpd002-libchdr-532a3f60f75eec3454ff4e52cad8862afc40e65f_GH0.tar.gz) = 414882
+SHA256 (jpd002-Play--Framework-faa4c23a2e96ba42b6ff1438bf33f111295c55cf_GH0.tar.gz) = efa4d63ae5db0f1def123e98329a1738f46475b0be1f2f1b3c2ae24fc9591da3
+SIZE (jpd002-Play--Framework-faa4c23a2e96ba42b6ff1438bf33f111295c55cf_GH0.tar.gz) = 183359
+SHA256 (jpd002-Play-Dependencies-636810ead6f1a3c8ee8006a3b9a698a81a0efbf6_GH0.tar.gz) = 7da3442ab63ad60b4cb39f24c2c1d2fbcda836a7f7d8e107d4287f905f23a87c
+SIZE (jpd002-Play-Dependencies-636810ead6f1a3c8ee8006a3b9a698a81a0efbf6_GH0.tar.gz) = 4948480
+SHA256 (gulrak-filesystem-2a8b380f8d4e77b389c42a194ab9c70d8e3a0f1e_GH0.tar.gz) = e11db30e695764cb19daf5058a9997c933c5ebdb3e29c697898258cbded8d65f
+SIZE (gulrak-filesystem-2a8b380f8d4e77b389c42a194ab9c70d8e3a0f1e_GH0.tar.gz) = 173611

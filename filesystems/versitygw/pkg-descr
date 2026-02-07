@@ -1,0 +1,7 @@
+Versity S3 Gateway is a simple to use tool for seamless inline translation
+between AWS S3 object commands and storage systems. It supports:
+
+- Serving your local filesystem into an S3 server with a single command
+- Proxying local S3 requests to S3 storage with caching
+
+See https://github.com/versity/versitygw/wiki/Quickstart for usage.

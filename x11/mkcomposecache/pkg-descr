@@ -1,0 +1,4 @@
+mkcomposecache is used for creating global (system-wide) Compose cache files.
+
+Compose cache files help with application startup times and memory usage,
+especially in locales with large Compose tables (e.g. all UTF-8 locales).

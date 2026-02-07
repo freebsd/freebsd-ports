@@ -1,0 +1,4 @@
+String::Ediff - Produce common sub-string indices for two strings
+
+	This module uses suffix tree algorithm to determine the
+	common substrings.

@@ -1,0 +1,6 @@
+--- examples/README.orig	2023-08-05 10:01:48 UTC
++++ examples/README
+@@ -0,0 +1,3 @@
++The examples in the gtk-4/ directory require gtk4 to be installed in
++order to run, which is not required by the g-golf package itself. In
++addition, some of them require that guile-cairo be installed.

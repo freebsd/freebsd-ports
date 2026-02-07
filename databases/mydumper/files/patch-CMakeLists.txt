@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-02-21 17:06:03 UTC
++++ CMakeLists.txt
+@@ -44,7 +44,7 @@ endif()
+     set(WITH_SSL OFF)
+ endif()
+ 
+-set(CMAKE_C_FLAGS "-std=gnu99 -Wall -Wno-deprecated-declarations -Wunused -Wwrite-strings -Wno-strict-aliasing -Wextra -Wshadow -g -Werror ${MYSQL_CFLAGS}")
++set(CMAKE_C_FLAGS "-std=gnu99 -Wall -Wno-deprecated-declarations -Wunused -Wwrite-strings -Wno-strict-aliasing -Wextra -Wshadow -g ${MYSQL_CFLAGS}")
+ include_directories(${MYDUMPER_SOURCE_DIR} ${MYSQL_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR} ${PCRE2_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS} )
+ 
+ OPTION(WITH_ASAN "Build with ASAN" OFF)

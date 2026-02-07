@@ -1,0 +1,6 @@
+Fragrouter is a program for routing network traffic in such a way as
+to elude most network intrusion detection systems.
+
+The attacks implemented correspond to those listed in the Secure
+Networks ``Insertion, Evasion, and Denial of Service: Eluding Network
+Intrusion Detection'' paper of January, 1998.

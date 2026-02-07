@@ -1,0 +1,2 @@
+Zero-dependency data frame to xlsx exporter based on 'libxlsxwriter'.
+Fast and no Java or Excel required.

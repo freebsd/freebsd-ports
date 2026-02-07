@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Net::IMAP::Client.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Client::MsgAddress.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Client::MsgSummary.3.gz
+%%SITE_PERL%%/Net/IMAP/Client.pm
+%%SITE_PERL%%/Net/IMAP/Client/MsgAddress.pm
+%%SITE_PERL%%/Net/IMAP/Client/MsgSummary.pm

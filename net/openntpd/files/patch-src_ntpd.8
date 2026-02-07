@@ -1,0 +1,60 @@
+--- src/ntpd.8.orig	2017-09-07 19:12:02 UTC
++++ src/ntpd.8
+@@ -56,7 +56,7 @@ Use
+ .Ar file
+ as the configuration file,
+ instead of the default
+-.Pa /etc/ntpd.conf .
++.Pa %%PREFIX%%/etc/ntpd.conf .
+ .It Fl n
+ Configtest mode.
+ Only check the configuration file for validity.
+@@ -99,18 +99,18 @@ will be logged.
+ After the local clock is synchronized,
+ .Nm
+ adjusts the clock frequency using the
+-.Xr adjfreq 2
++.Xr ntp_adjtime 2
+ system call to compensate for systematic drift.
+ .Pp
+ .Nm
+-is started at boot time by default via
+-.Va ntpd_flags
++is usually started at boot time, and can be enabled by setting
++.Va openntpd_flags
+ in
+ .Pa /etc/rc.conf .
+ See
+ .Xr rc 8
+ and
+-.Xr rc.conf 8
++.Xr rc.conf 5
+ for more information on the boot process
+ and enabling daemons.
+ .Pp
+@@ -123,8 +123,8 @@ and its initial clock drift from
+ .Pa /var/db/ntpd.drift .
+ Clock drift is periodically written to the drift file thereafter.
+ .Sh FILES
+-.Bl -tag -width "/var/db/ntpd.driftXXX" -compact
+-.It Pa /etc/ntpd.conf
++.Bl -tag -width "%%PREFIX%%/etc/ntpd.confXXX" -compact
++.It Pa %%PREFIX%%/etc/ntpd.conf
+ Default configuration file.
+ .It Pa /var/db/ntpd.drift
+ Drift file.
+@@ -134,12 +134,12 @@ Socket file for communication with
+ .El
+ .Sh SEE ALSO
+ .Xr date 1 ,
+-.Xr adjfreq 2 ,
+ .Xr adjtime 2 ,
++.Xr ntp_adjtime 2 ,
+ .Xr ntpd.conf 5 ,
++.Xr rc.conf 5 ,
+ .Xr ntpctl 8 ,
+ .Xr rc 8 ,
+-.Xr rc.conf 8 ,
+ .Xr rdate 8
+ .Sh STANDARDS
+ .Rs

@@ -1,0 +1,27 @@
+--- urdf_parser/CMakeLists.txt.orig	2022-03-28 23:52:17 UTC
++++ urdf_parser/CMakeLists.txt
+@@ -93,13 +93,15 @@ target_include_directories(urdf_to_graphviz PUBLIC inc
+ target_link_libraries(urdf_to_graphviz urdfdom_model)
+ 
+ # urdf_mem_test is a binary for testing, not a unit test
++if (BUILD_TESTING)
+ add_executable(urdf_mem_test test/memtest.cpp)
+ target_include_directories(urdf_mem_test PUBLIC include)
+ target_link_libraries(urdf_mem_test urdfdom_model)
++endif()
+ 
+-include(CTest)
+ if(BUILD_TESTING)
+   # TODO: check Shane's comment https://github.com/ros/urdfdom/pull/157/files#r664960227
++  include(CTest)
+   add_subdirectory(test)
+ endif()
+ 
+@@ -108,7 +110,6 @@ INSTALL(
+   check_urdf
+   urdf_to_graphiz
+   urdf_to_graphviz
+-  urdf_mem_test
+   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}

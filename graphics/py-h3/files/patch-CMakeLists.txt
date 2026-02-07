@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2022-11-24 19:38:22 UTC
++++ CMakeLists.txt
+@@ -6,28 +6,6 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ # Always make a release build
+ set(CMAKE_BUILD_TYPE Release)
+ 
+-# Avoid building tooling we won't need for release
+-# See all options with `cmake -LA` in an `h3/build` directory,
+-# or at https://h3geo.org/docs/next/core-library/compilation-options/
+-macro(turn_off option_name)
+-    set(${option_name} OFF CACHE BOOL "" FORCE)
+-endmacro()
+-turn_off(BUILD_ALLOC_TESTS)
+-turn_off(BUILD_BENCHMARKS)
+-turn_off(BUILD_FILTERS)
+-turn_off(BUILD_FUZZERS)
+-turn_off(BUILD_GENERATORS)
+-turn_off(BUILD_TESTING)
+-turn_off(ENABLE_COVERAGE)
+-turn_off(ENABLE_DOCS)
+-turn_off(ENABLE_FORMAT)
+-turn_off(ENABLE_LIBFUZZER)
+-turn_off(ENABLE_LINTING)
+-
+-# Build the core library as static
+-set(BUILD_SHARED_LIBS OFF)
+-add_subdirectory(src/h3lib)
+-
+ # Build the rest (other than the core library dependency) as shared
+ set(BUILD_SHARED_LIBS ON)
+ add_subdirectory(src/h3)

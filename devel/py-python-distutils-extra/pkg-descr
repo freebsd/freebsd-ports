@@ -1,0 +1,2 @@
+Enables you to easily integrate gettext support, themed icons and scrollkeeper
+based documentation into Python's distutils.

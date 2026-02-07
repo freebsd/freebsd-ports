@@ -1,0 +1,6 @@
+This plays a competent beginner's game of Go (the development line has
+achieved a rating of 17 kyu on the No Name Go Server, nngs.cosmic.org 9696),
+and operates both in plain ASCII and using the Go Modem Protocol.
+
+For a nice graphical interface, cgoban's Go Modem feature can operate as a
+front-end for gnugo (cgoban is available as a port/package).

@@ -1,0 +1,11 @@
+--- etc/Makefile.am.orig	2018-02-02 21:14:55 UTC
++++ etc/Makefile.am
+@@ -15,7 +15,7 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+ 
+ 
+-EXTRA_DIST = basepage.html.dist config.dist smokemail.dist smokeping_secrets.dist tmail.dist 
++EXTRA_DIST = basepage.html.sample config.sample smokemail.sample smokeping_secrets.sample tmail.sample 
+ 
+ etcdir = $(sysconfdir)
+ etc_DATA = $(EXTRA_DIST)

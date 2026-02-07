@@ -1,0 +1,22 @@
+The Packet Design Embedded Library (PDEL) is a C library containing an
+assorted collection of code useful for developing embedded applications:
+
+-   C data structure run-time introspection library
+-   Threaded HTTP client/server library with SSL and XML-RPC support
+-   PPP library using netgraph(4) with PPTP and L2TP servers
+-   Application configuration framework
+-   Heap memory accounting and sanity checking
+-   Generic template processing library
+-   Routines to configure networking interfaces, ARP and routing tables
+-   Logging library
+-   Generic TCP server
+-   Generic hash table implementation
+-   Generic balanced tree implementation
+-   Miscellaneous FILE * enhancements
+-   Base-64 encoding/decoding
+-   Events and actions with automated locking
+-   Generalized per-thread variables
+-   Message ports
+-   Digital signature creation/verification
+-   Filesystem mounting/unmounting
+-   String quoting/parsing

@@ -1,0 +1,13 @@
+--- configure.orig	2021-08-07 06:08:17 UTC
++++ configure
+@@ -8610,8 +8610,8 @@ if test "$FT_CONFIG" = "" ; then
+ echo "$as_me: error: freetype not found" >&2;}
+    { (exit 1); exit 1; }; }
+ fi
+-FT_FLAGS=`freetype-config --cflags`
+-FT_LIBS=`freetype-config --libs`
++FT_FLAGS=`pkg-config freetype2 --cflags`
++FT_LIBS=`pkg-config freetype2 --libs`
+ CXXFLAGS="$FT_FLAGS $CXXFLAGS"
+ LIBS="$FT_LIBS $LIBS"
+ 

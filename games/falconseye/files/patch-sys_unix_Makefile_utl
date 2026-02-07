@@ -1,0 +1,20 @@
+--- sys/unix/Makefile.utl.orig	Sun Jun 24 18:57:24 2001
++++ sys/unix/Makefile.utl	Wed Jul  4 11:23:29 2001
+@@ -1,6 +1,7 @@
+ #	Makefile for NetHack's utility programs.
+ #	SCCS Id: @(#)Makefile.utl	3.3	97/04/19
+ 
++.include "${NETHACKCONFIG}"
+ # newer makes predefine $(MAKE) to 'make' and do smarter processing of
+ # recursive make calls if $(MAKE) is used
+ # these makes allow $(MAKE) to be overridden by the environment if someone
+@@ -89,8 +90,7 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
+-LFLAGS =
++CFLAGS += -I../include
+ 
+ LIBS =
+  

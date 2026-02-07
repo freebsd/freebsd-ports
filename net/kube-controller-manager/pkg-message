@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+**** You need set kube_controller_manager_args rcvar to make Kubernetes
+     Controller Manager work properly.
+     See https://v1-24.docs.kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/
+     for more informations
+EOM
+}
+]

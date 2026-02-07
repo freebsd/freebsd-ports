@@ -1,0 +1,77 @@
+--- Makefile.orig	2014-09-08 12:18:04 UTC
++++ Makefile
+@@ -1,14 +1,16 @@
+ # Compiler: eg. cc or gcc
+ CC = cc                      
+ 
++#PREFIX=	/local
++
+ # Directory to install tcplist executable
+-BINDIR = /local/bin
++BINDIR = $(PREFIX)/bin
+ 
+ # Directory to install tcplist man page
+-MANDIR = /local/man/man1
++MANDIR = $(PREFIX)/share/man/man1
+ 
+ # Location of NOIDENT file
+-NOIDENT = /etc/hosts.noident
++NOIDENT = $(PREFIX)/etc/hosts.noident
+ 
+ # Owner of tcplist executable
+ OWNER = root
+@@ -45,18 +47,18 @@
+ # 
+ # Solaris 2.x (using LSOF):
+ #
+-LIBRARIES = -lsocket -lnsl
+-DEFS = -DLSOF
+-MODE = 755
+-GROUP = staff
++#LIBRARIES = -lsocket -lnsl
++#DEFS = -DLSOF
++#MODE = 755
++#GROUP = staff
+ 
+ # 
+ # Generic LSOF:
+ #
+-# LIBRARIES = 
+-# DEFS = -DLSOF
+-# MODE = 755
+-# GROUP = staff
++ LIBRARIES = 
++ DEFS = -DLSOF
++ MODE = 755
++ GROUP = staff
+ #
+ 
+ # If you're using an old version of lsof, uncomment this:
+@@ -76,8 +78,8 @@
+ RM = /bin/rm -rf
+ CP = /bin/cp
+ CHMOD = /bin/chmod
+-CHOWN = /bin/chown
+-CHGRP = /bin/chgrp
++CHOWN = /usr/sbin/chown
++CHGRP = /usr/bin/chgrp
+ 
+ all:: tcplist
+ 
+@@ -94,14 +96,10 @@
+ 	makedepend -- $(CFLAGS) -- $(SRCS)
+ 
+ install: tcplist
+-	strip tcplist
+-	$(CP) tcplist $(BINDIR)
+-	$(CHGRP) $(GROUP) $(BINDIR)/tcplist
+-	$(CHMOD) $(MODE) $(BINDIR)/tcplist
++	$(BSD_INSTALL_PROGRAM) tcplist $(DESTDIR)$(BINDIR)/tcplist
+ 
+ install.man: tcplist.1
+-	$(CP) tcplist.1 $(MANDIR)/tcplist.$(MANEXT)
+-	$(CHMOD) $(MANMODE) $(MANDIR)/tcplist.$(MANEXT)
++	$(BSD_INSTALL_MAN) tcplist.1 $(DESTDIR)$(MANDIR)/tcplist.$(MANEXT)
+ 
+ shar:
+ 	shar `awk '{print $$1}' MANIFEST` >tcplist-`awk '{print $$7;exit}' patchlevel.h`.shar

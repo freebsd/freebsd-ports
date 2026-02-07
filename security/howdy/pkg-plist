@@ -1,0 +1,27 @@
+bin/howdy
+@sample %%ETCDIR%%/config.ini.sample
+libexec/howdy/cli.py
+libexec/howdy/cli/__init__.py
+libexec/howdy/cli/add.py
+libexec/howdy/cli/clear.py
+libexec/howdy/cli/config.py
+libexec/howdy/cli/disable.py
+libexec/howdy/cli/list.py
+libexec/howdy/cli/remove.py
+libexec/howdy/cli/set.py
+libexec/howdy/cli/snap.py
+libexec/howdy/cli/test.py
+libexec/howdy/compare.py
+libexec/howdy/i18n.py
+libexec/howdy/logo.png
+libexec/howdy/paths.py
+libexec/howdy/recorders/__init__.py
+libexec/howdy/recorders/ffmpeg_reader.py
+libexec/howdy/recorders/pyv4l2_reader.py
+libexec/howdy/recorders/v4l2.py
+libexec/howdy/recorders/video_capture.py
+libexec/howdy/rubberstamps/__init__.py
+libexec/howdy/rubberstamps/hotkey.py
+libexec/howdy/rubberstamps/nod.py
+libexec/howdy/snapshot.py
+share/bash-completion/completions/howdy

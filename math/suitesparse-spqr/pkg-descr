@@ -1,0 +1,4 @@
+This port installs the module SPQR of SuiteSparse.
+
+SuiteSparseQR is a multithreaded, multifrontal, rank-revealing sparse QR
+factorization method.

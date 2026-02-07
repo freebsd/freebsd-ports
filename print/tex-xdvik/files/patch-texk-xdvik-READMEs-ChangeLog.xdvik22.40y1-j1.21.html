@@ -1,0 +1,325 @@
+--- texk/xdvik/READMEs/ChangeLog.xdvik22.40y1-j1.21.html.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/ChangeLog.xdvik22.40y1-j1.21.html
+@@ -0,0 +1,322 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=EUC-JP">
++<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
++<META HTTP-EQUIV="Content-Script-type" CONTENT="text/javascript">
++<TITLE>xdvi 日本語化・機能拡張パッチ</TITLE>
++<STYLE><!--
++P { line-height:130% }
++UL { line-height:130% }
++OL { line-height:130% }
++DL { line-height:130% }
++PRE { line-height:130% }
++--></STYLE>
++</HEAD>
++<BODY BGCOLOR="#333300" TEXT="#CCCCCC" LINK="#AACCFF" ALINK="#FF0000" VLINK="#CC99FF">
++<H2 ALIGN="center">xdvi 日本語化・機能拡張パッチ</H2>
++<BR>
++<BLOCKQUOTE>
++<BLOCKQUOTE>
++<UL>
++<LI><A HREF="#xdvik-22.40y1">xdvik-22.40y1</A></LI><LI><A HREF="#xdvik-22.40y">xdvik-22.40y</A></LI><LI><A HREF="#xdvik-22.40w">xdvik-22.40w</A></LI><LI><A HREF="#xdvik-22.40v">xdvik-22.40v</A></LI><LI><A HREF="#xdvik-22.40u">xdvik-22.40u</A></LI><LI><A HREF="#xdvik-22.40s">xdvik-22.40s</A></LI><LI><A HREF="#xdvik-22.40q">xdvik-22.40q</A></LI><LI><A HREF="#xdvik-22.40o">xdvik-22.40o</A></LI><LI><A HREF="#xdvik-22.40l">xdvik-22.40l</A></LI><LI><A HREF="#xdvik-22.40k">xdvik-22.40k</A></LI><LI><A HREF="#makepatch">参考：xdvik のパッチの作り方</A></LI><LI><A HREF="#update">参考：本家のバージョンアップへの追随</A></LI>
++</UL>
++</BLOCKQUOTE>
++<HR><H4><A NAME="xdvik-22.40y1">xdvik-22.40y1</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40y1-j1.21.patch.gz</CODE><BR>
++    [2004/ 2/25] dvips/dvipdfm の map ファイルのコメント開始文字が '%' なので、
++	vfontmap でも、従来の '#' に加えて、
++	'%' もコメント開始文字と認識するようにしました。
++	副作用はないと思います。
++<BR>[2004/ 2/23] oxdvi をコンパイルするための Makefile.in を含めておきました。
++	texk/xdvik の中で <CODE>'mv Makefile.in.oxdvi Makefile.in'</CODE>
++	<CODE>'mv xdvi-sh oxdvi-sh'</CODE> とした上で
++	oxdvi-sh の最後の行の xdvi.bin を oxdvi.bin に変更して、
++	それから ./configure します。
++	ただし omega 特有の機能のことを良く知らないので、
++	動作確認はいいかげんです。m(__)m
++<BR>[2004/ 2/23] そのまま make; make install すると、
++	texmf/web2c/texmf.cnf を上書きしてしまい、
++	ptex が動かなくなるので、
++	cd texk/xdvik してから make install するよう
++	ドキュメントに注意書きをしておきました。
++<LI><CODE>xdvik-22.40y1-j1.20.patch.gz</CODE><BR>
++    [2004/ 2/ 9] ドキュメントを少し整備しました。
++<BR>[2004/ 2/ 9] -debug 2 で起動したとき、
++	vf2ft のフォント情報表示で core ダンプしていました。
++<BR>[2004/ 2/ 9] vfontmap の書式を少し拡張し、
++	サンプルの vfontmap も見直しました。
++	従来の vfontmap.sample を、
++	vfontmap.vflib と vfontmap.freetype に分割し、
++	どちらも texmf/xdvi/ にインストールするようにしました。
++	この二つのファイルは texmf/xdvi/vfontmap と異なり、
++	存在しても上書きします。
++	（texmf/xdvi/vfontmap には、
++	存在しなければ二つのうち適切なものをコピーします。）
++	サンプルは何が妥当かよくわからないので、
++	要望があれば是非お知らせ下さい。
++<LI><CODE>xdvik-22.40y1-j1.19.patch.gz</CODE><BR>
++    [2003/10/22] FreeType2 のヘッダを自動では見つけられないようです。
++	通りすがりさんの
++	<A HREF="http://www.matsusaka-u.ac.jp/~okumura/texfaq/qa/22702.html">[TeX Q &amp; A:22702]</A>
++	のアイデアをいただいて、
++	configure スクリプト内で freetype-config --cflags などの出力を
++	利用するようにしました。
++<BR>[2003/10/22] ステータスラインに VFlib/FreeType
++	を使っている目印を出力するようにしました。
++	vf2ft.c のエラー出力を少し親切にしました。
++<LI><CODE>xdvik-22.40y1-j1.18.patch.gz</CODE><BR>
++    [2003/9/29] xdvik-22.40y1 に update すると同時に、
++	竹のさんの <A HREF="http://www.matsusaka-u.ac.jp/~okumura/texfaq/qa/21268.html">[TeX Q &amp; A:21268]</A>
++	の修正をしておきました。
++	vf2ft 環境で全角スペースが正しく表示されるようになったはずです。
++	お知らせ＋テストありがとうございます。＞竹のさん
++</UL>
++<HR><H4><A NAME="xdvik-22.40y">xdvik-22.40y</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40y-j1.17.patch.gz(155Kbyte)</CODE><BR>
++    [2003/8/20] 単純に xdvik-22.40y に当たるようにしました。
++</UL>
++<HR><H4><A NAME="xdvik-22.40w">xdvik-22.40w</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40w-j1.17.patch.gz(155Kbyte)</CODE><BR>
++    [2003/4/9] 単純に xdvik-22.40w に当たるようにしました。
++</UL>
++<HR><H4><A NAME="xdvik-22.40v">xdvik-22.40v</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40v-j1.17.patch.gz(155Kbyte)</CODE><BR>
++    [2003/4/7] 内山さんの UTF/OTF 縦書きパッチ
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20030328/553.html">[xdvi-jp:553]</A>
++	を取り込みました。
++<LI><CODE>xdvik-22.40v-j1.16.patch.gz(154Kbyte)</CODE><BR>
++    [2003/3/26] 内山さんの UFT パッケージ（\CIDサポート付き）パッチ
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20030325/546.html">[xdvi-jp:546]</A>
++	を取り込みました。
++<LI><CODE>xdvik-22.40v-j1.15.patch.gz(154Kbyte)</CODE><BR>
++    [2003/3/26] 内山さんの縦書 \scalebox パッチ
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20030322/541.html">[xdvi-jp:541]</A>
++	を当てました。
++<LI><CODE>xdvik-22.40v-j1.14.patch.gz(154Kbyte)</CODE><BR>
++    [2003/3/14] dvi-init.c で、コンパイル条件によって {} の対応が崩れることがありました。
++	iNOUE さんにお教えいただきました。
++	（<A HREF="http://www.r.dendai.ac.jp/cgi-bin/BB1/treebbs.cgi?log=3567">MacOSXのLaTeXに関するBBS</A>）
++<BR>[2003/3/14] 土屋さんの指摘
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20030310/532.html">[xdvi-jp:532]</A>
++	により、vfontmap.c のコメント処理を改善しました。
++<LI><CODE>xdvik-22.40v-j1.13.patch.gz(153Kbyte)</CODE><BR>
++    [2003/2/11] 勢いで修正した部分のバグを、土屋さんに
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20030211/504.html">[xdvi-jp:504]</A>
++	で指摘していたように修正しました。
++<BR>[2003/2/11] resource.smallpanel を見ていない部分が一ヶ所ありました。
++	また、btn_top_spacing も調節するようにしました。
++<BR>[2003/2/11] バージョン番号の更新を忘れてました。(^^;)
++<BR>[2003/2/10] vfontmap を kpathsea でも探すようにしました。
++	また vfontmap の close 処理が抜けてました。
++<BR>[2003/2/10] 土屋 雅稔 さんの NTT jTeX 用パッチ
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20030209/501.html">[xdvi-jp:501]</A>
++	を取り込みました。
++<LI><CODE>xdvik-22.40v-j1.12.patch.gz(153Kbyte)</CODE><BR>
++    [2003/2/3] 単純に xdvik-22.40v 対応にしました。
++	xdvi-search.el もうまく動くようになりました。
++	<BR>
++	また teTeX-src-2.0 にも同じバージョンの xdvi が含まれてますので、
++	ほぼそのまま使えるでしょう。念のため
++	teTeX-src-2.0/reautoconf を実行しておけばよいと思います。
++</UL>
++<HR><H4><A NAME="xdvik-22.40u">xdvik-22.40u</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40u-j1.12.patch.gz(153Kbyte)</CODE><BR>
++    [2003/1/28] 試してみると、RPM からの make install で不都合があったので、
++	$(mandir) を $(man1dir) に変更しました。
++<BR>[2003/1/23] 単純に xdvik-22.40u 対応にしました。
++	手元の環境の都合で、まだ動作確認ができていません。すいません。
++	<BR>
++	teTeX-src-2.0-rc1 にも同じバージョンの xdvi が含まれてますので、
++	ほぼそのまま使えます。
++	configure だけ reject されますが、
++	生成元の configure.in のパッチは正常に当たっていますので、
++	teTeX-src-2.0-rc1/reautoconf を実行して再生成しておけばよいでしょう。（未確認）
++</UL>
++<HR><H4><A NAME="xdvik-22.40s">xdvik-22.40s</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40s-j1.12.patch.gz(153Kbyte)</CODE><BR>
++    [2002/12/2] 単純に xdvik-22.40s 対応にしました。
++	以前のパッチがそのまま当たりました。
++	( configure だけは sh reautoconf で作り直しましたが。）
++	手元では、xdvi-search.el がうまく動かないようですが...
++</UL>
++<HR><H4><A NAME="xdvik-22.40q">xdvik-22.40q</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40q-j1.12.patch.gz(153Kbyte)</CODE><BR>
++    [2002/11/22] 単純に xdvik-22.40q が動くように作業しました。
++	大きな変更点はありません。
++</UL>
++<HR><H4><A NAME="xdvik-22.40o">xdvik-22.40o</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40o-j1.12.patch.gz(153Kbyte)</CODE><BR>
++    [2002/11/22] 檜垣将和さんの freetype-2.1 用パッチ
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20021117/455.html">[xdvi-jp:455]</A>
++	を適用しました。
++<LI><CODE>xdvik-22.40o-j1.11.patch.gz(153Kbyte)</CODE><BR>
++    [2002/10/20] 単純に xdvik-22.40o が動くように作業しました。
++	主な変更点は、load_font() の返り値の真偽が逆になったのに
++	対応したことと、font-open.c での日本語処理を簡略化したことです。
++	xdvik-22.40o は古いC (K&amp;R) をサポートしなくなったようですが、
++	パッチは意図的に前のバージョンとの違いが少なくなるよう、
++	プロトタイプ宣言は変更していません。
++</UL>
++<HR><H4><A NAME="xdvik-22.40l">xdvik-22.40l</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40l-j1.11.patch.gz(152Kbyte)</CODE><BR>
++    [2002/9/26] 山田＠あいはらさんが乙藤@東北学院大学さんの
++	<A HREF="ftp://ftp.cs.tohoku-gakuin.ac.jp/pub/TeX/TG-Local-TeX/xdvi-ft2.tar.gz">xdvi-ft2.tar.gz</A>
++	の取り込みを行って下さいました。
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20020925/445.html">[xdvi-jp:445]</A>
++	の成果をそのままいただきました。
++	詳しくは texk/xdvik/READMEs/README.vf2ft を御覧下さい。
++<LI><CODE>xdvik-22.40l-j1.10.patch.gz(126Kbyte)</CODE><BR>
++    [2002/9/16] dvi-draw.c の set_char() と set_char2()
++	の共通する処理を関数にくくり出しました。
++<BR>[2002/9/16] スペース／バックスペースでも、
++	現在の表示ページ番号が TOC に常に表示されるようにしました。
++<LI><CODE>xdvik-22.40l-j1.09.patch.gz(126Kbyte)</CODE><BR>
++    [2002/9/14] ヘルプメッセージに表示されるオプション -zoombutton, -shrinkbutton
++	は使えないので、表示しないようにしました。
++<BR>[2002/9/14] events.c の Act_zoom の処理を見直して、
++	Act_shrink_to_dpi へのパッチになるように書き換えました。
++<BR>[2002/9/14] コマンドラインオプション -smallpanel（小さいパネル）、
++	+smallpanel（標準サイズのパネル）を有効にし、
++	$TEXMF/xdvi/XDvi の xdvi.smallPanel: False/True を有効にしました。
++<BR>[2002/9/14] ヘルプメッセージのオプションの単位がおかしくなっていました。
++<BR>[2002/9/14] プロトタイプ宣言を少し追加しました。
++<LI><CODE>xdvik-22.40l-j1.08.patch.gz(126Kbyte)</CODE><BR>
++    [2002/9/5] xdvik-22.40l 対応になるように修正しました。
++	余分な修正は一切してないつもりです。
++</UL>
++<HR><H4><A NAME="xdvik-22.40k">xdvik-22.40k</A></H4>
++<UL>
++<LI><CODE>xdvik-22.40k-j1.08.patch.gz(126Kbyte)</CODE><BR>
++    [2002/9/5] xdvi-config.h の調整でエンバグして PAGENUM が無効になっていました。
++<BR>[2002/8/29] geom_do_rule() に縦書き処理を加えて、
++	src-special が正常に動くようにしました。
++	ついでに、put_rule() の縦書き処理を簡略化しました。
++<BR>[2002/8/28] 歴史的役目を終えた(?) shrink_glyph_NeXT() を削除しました。
++<BR>[2002/8/27] PAGENUM には TOC が必要なので、xdvi-config.h を調整しました。
++	MARKPAGE には TOC が不要のはずなので、
++	一部の MAX_PAGE を RINGSIZE に置き換えました。
++	ステータスラインのメッセージを少し増やしました。
++<BR>[2002/8/27] ウインドウ幅の計算部分を見直しました。
++	マクロ XTRA_WID はもう使われてなくて、
++	変数 xtra_wid で動的に計算してるようです。
++	ボタンの縦の間隔が２ドット広すぎるようでした。
++<LI><CODE>xdvik-22.40k-j1.07.patch.gz(127Kbyte)</CODE><BR>
++    [2002/8/26] xdvik-22.40k-j1.06 とは、
++	プロトタイプ宣言を追加、不要変数を削除するなどして、
++	gcc -Wall の警告が少くなるように修正しただけで、
++	機能的にはまったく同じはずです。
++<LI><CODE>xdvik-22.40k-j1.06.patch.gz(126Kbyte)</CODE><BR>
++    [2002/8/26] #ifdef PAGENUM の囲い方に不適切な部分がありました。
++<BR>[2002/8/23] 下記処理でメモリリークをしていたのを修正しました。
++	（オリジナルにも、以前の日本語パッチにも、バグがありました。
++	  オリジナルの作者にも報告しておきました。
++	→20.40l で採用になりました。）
++<BR>[2002/8/20] delete_glyphs() がエンバグしてた
++	（color を使うと極端に速度が落ちる）のを修正しました。
++	また、日本語フォントに関する struct の初期化を強化して、
++	アルファベットフォントとの共通処理を増やしました。
++<BR>[2002/8/19] dvi-init.c の SATO Tatsuya さんの
++	load_font() の修正を簡略化しました。
++<BR>[2002/8/19] dvi-init.c の job_id を読み込む部分には
++	PTEX 用の処理が不要と思われるので、除去しました。
++<BR>[2002/8/19] delete_glyphs() の修正が不十分だったので、更に直しました。
++<LI><CODE>xdvik-22.40k-j1.05.patch.gz(127Kbyte)</CODE><BR>
++    [2002/8/16] #define TVERSION XDVERSION/**/JPVERSION の /**/ を "" に変更しました。
++<BR>[2002/8/9] 縦書きができなかったのを修正しました。
++<BR>[2002/8/7] 内山さんによる delete_glyphs() の修正を加えました。
++<BR>[2002/7/31] パッチ部分の共通な処理を、関数やマクロに置き直した上で、
++	<EM>src special 日本語対応を行いました</EM>。
++	縦書きでも一応動くようにしました。
++<LI><CODE>xdvik-22.40k-j1.04.patch.gz(128Kbyte)</CODE><BR>
++    [2002/7/17] xdvik の日本語パッチを update しました。
++	<A HREF="http://bi.appi.keio.ac.jp/~fml/xdvi-jp/20020121/413.html">xdvi-jp ML の 中井@yo.rim さん</A> の
++	<A HREF="http://www.yo.rim.or.jp/~tnakai/xdvik-22.40g-japanese.patch.gz">xdvik-22.40g-japanese.patch.gz</A>
++	を、単体配布の xdvik-22.40k に当て直しただけです。
++	日本語 DVI には src special がうまく動きません。
++</UL>
++<p>以前の変更履歴は READMEs/ChangeLog.xdvik22.40b-j1.05 を御覧下さい。
++</p>
++
++<HR><H4><A NAME="makepatch">参考：xdvik のパッチの作り方</A></H4>
++<P>　参考までに、私の xdvik の日本語パッチの作り方を紹介します。
++（この方法が正しいと言うわけではありません。）
++</P>
++<P>　オリジナルの xdvik-22.40o が xdvik-22.40o.orig/ 以下に、
++製作中の日本語版が xdvik-22.40o/ 以下にあるとします。
++</P>
++<UL>
++<LI>差分をとるのは xdvik-22.40o/texk/xdvik 以下のみです。
++<LI>xdvik-22.40o/texk/xdvik/configure は自動生成します。
++    xdvik-22.40o/reautoconf を実行してやればよいです。
++    （適切なバージョンの autoconf が必要と思われます。
++      警告はいくつか出ても大丈夫のようです。）
++    <BR>
++    なお、日本語パッチには gcc のコンパイルオプション -Wall を追加するため、
++    xdvik-22.40o/texk/etc/autoconf/acspecific.m4
++    の 107 行めに -Wall を書き加えてから reautoconf を実行しています。
++<LI>xdvik-22.40o/texk/xdvik/Makefile.in
++    の依存関係も自動生成すべきところでしょうが、
++    以前から手動で作業していたようなので、
++    そのまま引き継いでいます。（適切ではないかもしれません）
++<LI>xdvik-22.40o/texk/xdvik で <CODE>'make distclean'</CODE>
++    を実行すれば、差分に不要なバイナリファイル等を消去できるよう
++    Makefile.in を調整しています。
++<LI>パッチを更新したときは、以前のパッチと差分をとりましょう。
++    １つや２つの作業間違いが必ず見つかります。;-p
++<LI>patch コマンドを実行する時に -T オプションを付けておくと、
++    ファイルのタイムスタンプも再現できるようです。
++    以前のタイムスタンプを維持できると、
++    パッチの差分を取るときに差が少なくてよいです。
++</UL>
++<P>　バイナリが動くようになったとすると、具体的な手順は以下の通りです。
++</P>
++<DIV ALIGN="center"><TABLE WIDTH="80%" BORDER="3" CELLPADDING="5" CELLSPACING="5">
++<TR><TD><PRE># 不要ファイルを削除
++(cd xdvik-22.40o/texk/xdvi; rm *~; make distclean)
++
++# 差分をとる
++diff -ruN xdvik-22.40o.orig/texk/xdvik/ xdvik-22.40o/texk/xdvik/ &gt; tmp
++
++# 以前のパッチと比較する
++zdiff -bBw xdvik-22.40o-j1.11.patch.gz tmp | less
++
++# 問題なければ採用
++mv tmp xdvik-22.40o-j1.12.patch
++gzip -9 xdvik-22.40o-j1.12.patch</PRE></TD></TR></TABLE></DIV><BR>
++<HR><H4><A NAME="update">参考：本家のバージョンアップへの追随</A></H4>
++<P>　本家にバージョンアップがあった場合、
++日本語バージョンをどうやって追随するか、
++２通りのやりかたがあるでしょう。
++</P>
++<UL>
++<LI>(1)古い日本語パッチを、新しいソースに適用、
++	reject された部分を手作業であて直す。
++<LI>(2)本家の差分パッチを作り、日本語バージョンの古いものに適用、
++	reject された部分を手作業であて直す。
++</UL>
++<DIV ALIGN="center"><TABLE BORDER="2" CELLPADDING="5">
++	<TR><TH>&nbsp;<TH>本家<TD><TH>日本語バージョン</TR>
++	<TR><TH>旧<TD>xdvik-22.40o<TD><TD>xdvik-22.40o-jp</TR>
++	<TR><TH><TD><TD><TD ALIGN="center">↓(2)</TR>
++	<TR><TH>新<TD>xdvik-22.40p<TD>→(1)<TD>(xdvik-22.40p-jp)</TR>
++</TABLE></DIV>
++<P>　どちらにしろ手作業が必要ですが、どちらか楽な作業をやるのがよいでしょう。
++どちらが楽かは、ソースファイル１つごとに大きく異なる場合があるようです。
++経験的には (2) のほうが楽なように思います。
++</P>
++</BLOCKQUOTE>
++<!-- footer -->
++<HR>
++<ADDRESS><A HREF="http://www.nn.iij4u.or.jp/~tutimura/">土村 展之</A>(tutimura@nn.iij4u.or.jp)</ADDRESS>
++</BODY>
++</HTML>

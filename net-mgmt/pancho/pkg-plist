@@ -1,0 +1,18 @@
+bin/pancho
+@sample etc/pancho.conf.sample
+%%PERL5_MAN1%%/pancho.1.gz
+%%SITE_PERL%%/Pancho/Util.pm
+%%SITE_PERL%%/Pancho/Snmp.pm
+%%SITE_PERL%%/Pancho/Log.pm
+%%SITE_PERL%%/Pancho/Plugins/Foundry.pm
+%%SITE_PERL%%/Pancho/Plugins/Arrowpoint.pm
+%%SITE_PERL%%/Pancho/Plugins/Cisco.pm
+%%SITE_PERL%%/Pancho/Plugins/Avaya.pm
+%%SITE_PERL%%/Pancho/Plugins/DellPowerConnect.pm
+%%SITE_PERL%%/Pancho/Plugins/Accelar.pm
+%%SITE_PERL%%/Pancho/Plugins/Alteon.pm
+%%SITE_PERL%%/Pancho/Plugins/Baystack.pm
+%%SITE_PERL%%/Pancho/Plugins/Passport.pm
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.plugins
+%%PORTDOCS%%%%DOCSDIR%%/Plugin.sample

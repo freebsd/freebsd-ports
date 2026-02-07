@@ -1,0 +1,13 @@
+%%SITE_ARCH%%/auto/Net/RawIP/autosplit.ix
+%%SITE_ARCH%%/auto/Net/RawIP/RawIP.so
+%%SITE_ARCH%%/Net/RawIP.pm
+%%SITE_ARCH%%/Net/RawIP/libpcap.pod
+%%SITE_ARCH%%/Net/RawIP/iphdr.pm
+%%SITE_ARCH%%/Net/RawIP/udphdr.pm
+%%SITE_ARCH%%/Net/RawIP/icmphdr.pm
+%%SITE_ARCH%%/Net/RawIP/generichdr.pm
+%%SITE_ARCH%%/Net/RawIP/opt.pm
+%%SITE_ARCH%%/Net/RawIP/ethhdr.pm
+%%SITE_ARCH%%/Net/RawIP/tcphdr.pm
+%%PERL5_MAN3%%/Net::RawIP.3.gz
+%%PERL5_MAN3%%/Net::RawIP::libpcap.3.gz

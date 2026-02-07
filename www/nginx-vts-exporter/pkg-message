@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+nginx-vts-exporter was successfully installed.
+
+By default the exporter is passed no arguments and runs with its own defaults,
+this means it expects to find Nginx VTS status at http://localhost/status.
+
+You may wish to reconfigure this by setting:
+nginx_vts_exporter_args="-nginx.scrape_uri http://nginx/status/url"
+EOM
+}
+]

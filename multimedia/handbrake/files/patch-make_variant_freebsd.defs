@@ -1,0 +1,8 @@
+--- make/variant/freebsd.defs.orig	2019-11-09 20:44:32 UTC
++++ make/variant/freebsd.defs
+@@ -15,4 +15,4 @@ GCC.args.g.max  = -g3
+ 
+ GCC.MAJOR_VERSION = $(shell $(GCC.gcc) -dumpversion | cut -f 1 -d .)
+ GCC.LDFLAGS = -lc++ -Wl,-rpath=$(LOCALBASE)/lib/gcc$(GCC.MAJOR_VERSION)
+-LDFLAGS += $(if $(findstring gcc, $(GCC.gcc)), $(GCC.LDFLAGS), )
++LDFLAGS += $(if $(findstring gcc, $(GCC.gcc)), $(if $(shell /usr/bin/clang -dumpversion 2> /dev/null), $(GCC.LDFLAGS), ), )

@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-10-06 20:30:00 UTC
++++ pyproject.toml
+@@ -13,8 +13,7 @@ build-backend = "builder"
+ name = "qtile"
+ description = "A pure-Python tiling window manager."
+ dynamic = ["version", "readme", "dependencies", "optional-dependencies"]
+-license = "MIT"
+-license-files = [ "LICENSE" ]
++license = {file = "LICENSE"}
+ classifiers = [
+     "Intended Audience :: End Users/Desktop",
+     "Operating System :: POSIX :: BSD :: FreeBSD",

@@ -1,0 +1,18 @@
+--- unix/Makefile.in.orig	Thu Jun  6 12:41:08 1996
++++ unix/Makefile.in	Tue Apr  1 11:05:06 1997
+@@ -115,11 +115,11 @@
+ 	rm -f uudeview uuenview
+ 	make all
+ 
+-uudeview:	$(UUDEVIEW_OBJ) ../uulib/libuu.a
+-	$(CC) -o $@ $(UUDEVIEW_OBJ) -L../uulib -luu $(LIBS)
++uudeview:	$(UUDEVIEW_OBJ)
++	$(CC) -o $@ $(UUDEVIEW_OBJ) -luu $(LIBS)
+ 
+-uuenview:	$(UUENVIEW_OBJ) ../uulib/libuu.a
+-	$(CC) -o $@ $(UUENVIEW_OBJ) -L../uulib -luu $(LIBS)
++uuenview:	$(UUENVIEW_OBJ)
++	$(CC) -o $@ $(UUENVIEW_OBJ) -luu $(LIBS)
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) -I../uulib $(VDEF) $<

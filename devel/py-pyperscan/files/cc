@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# workaround for https://github.com/vlaci/pyperscan/issues/38
+
+/usr/bin/cc -I${FREEBSD_LOCALBASE}/include -L${FREEBSD_LOCALBASE}/lib "$@"

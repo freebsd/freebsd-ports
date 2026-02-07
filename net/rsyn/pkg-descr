@@ -1,0 +1,4 @@
+rsyn reimplements part of the rsync network protocol in pure Rust.
+
+rsyn supports protocol version 27, which is supported by rsync versions from
+2.6.0 (released in 2004) onwards, and by openrsync.

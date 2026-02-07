@@ -1,0 +1,3 @@
+The sbxkb program is modernized replacement for classic xxkb.  It is not
+as configurable, but avoids few very annoying bugs of xxkb (i.e. it just
+works).  Comes with 224 national flag icons.

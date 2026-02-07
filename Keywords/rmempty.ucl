@@ -1,0 +1,10 @@
+# MAINTAINER:	portmgr@FreeBSD.org
+
+actions: []
+post-deinstall-lua: <<EOD
+	file = pkg.prefixed_path("%@")
+	local st = pkg.stat(file)
+	if st and st.type == "reg" and st.size == 0 then
+	  os.remove(file)
+	end
+EOD

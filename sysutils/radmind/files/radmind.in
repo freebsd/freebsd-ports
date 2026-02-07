@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: radmind
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable radmind:
+#
+#radmind_enable="YES"
+#
+# You may also override the default daemon user & flags:
+#
+#radmind_user="radmind"
+#radmind_flags="-D /var/radmind -u 077 -w 0"
+#
+# See radmind(8) for flags
+#
+
+. /etc/rc.subr
+
+name=radmind
+rcvar=radmind_enable
+
+command=%%PREFIX%%/sbin/radmind
+required_files=%%RADMIND_BASE_DIR%%/config
+
+# set defaults
+
+radmind_enable=${radmind_enable:-"NO"}
+radmind_user=${radmind_user:-"radmind"}
+radmind_flags=${radmind_flags:-"-D %%RADMIND_BASE_DIR%% -m 5 -u 077 -w 0"}
+
+load_rc_config ${name}
+run_rc_command "$1"

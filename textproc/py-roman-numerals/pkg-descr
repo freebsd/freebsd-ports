@@ -1,0 +1,3 @@
+This project provides utilities manipulating well-formed Roman numerals, in
+various programming languages. Currently, there are implementations in Python
+and Rust.

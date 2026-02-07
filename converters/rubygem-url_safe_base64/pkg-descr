@@ -1,0 +1,2 @@
+Converts strings to/from a slightly modified base64 that contains only url-safe
+characters

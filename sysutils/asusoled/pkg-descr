@@ -1,0 +1,10 @@
+This port provides a utility for controlling USB OLED display found
+on some ASUS laptops such as G-series models.
+
+Originally it was written by Christian Lamparter <chunkeey@web.de>
+for Linux and the early version is still available from here:
+
+	https://launchpad.net/asusoled
+
+Now it is almost rewrite of the code with a lot of new features and
+improvements by Jung-uk Kim <jkim@FreeBSD.org>.

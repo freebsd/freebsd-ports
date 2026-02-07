@@ -1,0 +1,21 @@
+bin/nymphcast_server
+etc/nymphcast/nymphcast_audio_config.ini
+etc/nymphcast/nymphcast_config.ini
+etc/nymphcast/nymphcast_gui_config.ini
+etc/nymphcast/nymphcast_screensaver_config.ini
+etc/nymphcast/nymphcast_video_config.ini
+share/nymphcast/apps/apps.html
+share/nymphcast/apps/apps.ini
+share/nymphcast/apps/hellocast/hellocast.as
+share/nymphcast/apps/hellocast/index.html
+share/nymphcast/apps/hellocast/logo.jpg
+share/nymphcast/apps/hellocast/logo_large.jpg
+share/nymphcast/apps/soundcloud/logo.png
+share/nymphcast/apps/soundcloud/index.html
+share/nymphcast/apps/soundcloud/soundcloud.as
+share/nymphcast/apps/soundcloud/templates/footer.html
+share/nymphcast/apps/soundcloud/templates/header.html
+share/nymphcast/wallpapers/forest_brook.jpg
+share/nymphcast/wallpapers/green.jpg
+@dir etc/avahi/services
+

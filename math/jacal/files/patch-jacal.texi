@@ -1,0 +1,16 @@
+--- jacal.texi.orig	2020-03-30 18:15:54 UTC
++++ jacal.texi
+@@ -266,11 +266,11 @@ This may involve setting up that implementation's init
+ LOADing a @samp{.init} file from the @file{slib} directory.  Then type:
+ 
+ @example
+-(slib:load "/usr/local/lib/jacal/math")
++(slib:load "%%PREFIX%%/lib/jacal/math")
+ @end example
+ 
+ @noindent
+-where @file{/usr/local/lib/jacal/} is a path to the JACAL directory.
++where @file{%%PREFIX%%/lib/jacal/} is a path to the JACAL directory.
+ JACAL should then print:
+ 
+ @example

@@ -1,0 +1,200 @@
+--- src/tui.c.orig	Sun Feb 11 20:28:53 2001
++++ src/tui.c	Sun Jul  3 15:01:30 2005
+@@ -302,8 +302,8 @@
+ 
+ 
+ /* Move cursor and update screen as needed
+- * mode is one of CURSOR_UP, CURSOR_DOWN, CURSOR_PG_UP, CURSOR_PG_DOWN
+- * or CURSOR_REDRAW
++ * mode is one of CURSOR_UP, CURSOR_DOWN, CURSOR_PG_UP, CURSOR_PG_DOWN,
++ * CURSOR_TOP, CURSOR_BOTTOM or CURSOR_REDRAW
+  */
+ 
+ static void tui_move_cursor (struct TUI *tui, int mode)
+@@ -360,6 +360,24 @@
+       refresh ();
+     }
+     break;
++
++  case CURSOR_TOP:
++    if (d->cursor > 0) {
++      mvaddch (d->cursor - d->base + 2, 1, ' ');
++      tui_upd_y (d, tui, -d->cursor, 0);
++      mvaddch (d->cursor - d->base + 2, 1, '*');
++      refresh ();
++    }
++    break;
++
++  case CURSOR_BOTTOM:
++    if (d->cursor < (d->items - 1)) {
++      mvaddch (d->cursor - d->base + 2, 1, ' ');
++      tui_upd_y (d, tui, d->items - d->cursor - 1, 0);
++      mvaddch (d->cursor - d->base + 2, 1, '*');
++      refresh ();
++    }
++    break;
+     
+   case CURSOR_REDRAW:
+     if (d->items) {
+@@ -382,22 +400,24 @@
+ {
+   static char help[] = {"  (help)\n"
+ 			"\n"
+-			"I a  add tune\n"
+-			"  b  page up\n"
++			"  a  add tune\n"
++			" ^B  page up\n"
+ 			"  c  clear queue\n"
+ 			"  d  delete tune\n"
+-			"  h  help message\n"
+-			"  i  up\n"
+-			"I j  left\n"
+-			"  k  down\n"
+-			"I l  right\n"
++			" ^F  page down\n"
++			"  g  go to top\n"
++			"  G  go to bottom\n"
++			"  h  left\n"
++			"  j  down\n"
++			"  k  up\n"
++			"  l  right\n"
+ 			"  m  move to top\n"
+ 			"  p  pause\n"
+ 			"  q  quit\n"
+ 			"  r  randomize\n"
+ 			"  s  skip tune\n"
+ 			"  t  toggle display\n"
+-			"  sp page down\n"
++			"  ?  help message\n"
+ 			"\n"
+ 			"  <press any key>"};
+   
+@@ -733,72 +753,68 @@
+    
+     switch (key) {
+     case KEY_NPAGE:
++    case 0x06: /* ^F */
+     case ' ':
+       tui_move_cursor (tui, CURSOR_PG_DOWN);
+       break;
+       
+     case 'a':
+-    case 'A':
+       tui_add_to_queue (tui);
+       break;
+       
+     case KEY_PPAGE:
+-    case 'b':
+-    case 'B':
++    case 0x02: /* ^B */
+       tui_move_cursor (tui, CURSOR_PG_UP);
+       break;
+       
+     case 'c':
+-    case 'C':
+       tui_clear_queue (tui);
+       break;
+       
+     case 'd':
+-    case 'D':
+       tui_delete_from_queue (tui);
+       break;
+-      
+-    case 'h':
+-    case 'H':
+-      tui_help_screen (tui);
++
++    case KEY_HOME:
++    case 'g':
++      tui_move_cursor (tui, CURSOR_TOP);
+       break;
+-      
+-    case KEY_UP:
+-    case 'i':
+-    case 'I':
+-      tui_move_cursor (tui, CURSOR_UP);
++
++    case KEY_END:
++    case 'G':
++      tui_move_cursor (tui, CURSOR_BOTTOM);
+       break;
+       
+     case KEY_LEFT:
+-    case 'j':
+-    case 'J':
++    case 'h':
+       tui_leave_dir (tui);
+       break;
+       
+     case KEY_DOWN:
+-    case 'k':
+-    case 'K':
++    case 'j':
+       tui_move_cursor (tui, CURSOR_DOWN);
+       break;
++
++    case KEY_UP:
++    case 'k':
++      tui_move_cursor (tui, CURSOR_UP);
++      break;
++      
+       
+     case KEY_RIGHT:
+     case 'l':
+-    case 'L':
+       tui_enter_dir (tui);
+       break;
+       
+     case 'm':
+-    case 'M':
+       tui_move_item (tui);
+       break;
+       
+     case 'p':
+-    case 'P':
+       tui->player->cmd = PLAYER_PAUSE;
+       break;
+       
+     case 'q':
+-    case 'Q':
+       tui_status_message (tui, "Quit? (y/n)");
+       exit = tui_yes_no ();
+       if (!exit) {
+@@ -810,20 +826,21 @@
+       break;
+       
+     case 'r':
+-    case 'R':
+       tui_randomize_queue (tui);
+       break;
+       
+     case 's':
+-    case 'S':
+       tui->player->cmd = PLAYER_SKIP;
+       break;
+       
+     case 't':
+-    case 'T':
+       tui->dm ^= 1;
+       tui_redraw_status (tui);
+       tui_move_cursor (tui, CURSOR_REDRAW);
++      break;
++
++    case '?':
++      tui_help_screen (tui);
+     }
+   } while (!exit);
+ }
+--- src/tui.h.orig	Sun Jun 27 15:16:20 1999
++++ src/tui.h	Sun Jul  3 14:14:20 2005
+@@ -16,7 +16,9 @@
+ #define CURSOR_DOWN         3
+ #define CURSOR_PG_UP        4
+ #define CURSOR_PG_DOWN      5
+-#define CURSOR_REDRAW       6
++#define CURSOR_TOP          6
++#define CURSOR_BOTTOM       7
++#define CURSOR_REDRAW       8
+ 
+ struct TUI_DISP {
+   int items;

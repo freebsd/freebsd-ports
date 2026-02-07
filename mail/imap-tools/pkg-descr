@@ -1,0 +1,5 @@
+A collection of tools to manipulate IMAP mailboxes.
+
+These commands will help you curate your IMAP mailboxes.
+
+You can remove duplicate emails, clean old emails, or archive them.

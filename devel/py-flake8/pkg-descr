@@ -1,0 +1,8 @@
+Flake8 is a wrapper around these tools:
+
+  - PyFlakes
+  - pycodestyle
+  - Ned Batchelder's McCabe script
+
+Flake8 runs all tools by launching the single 'flake8' script. It
+displays the warnings in a per-file, merged output

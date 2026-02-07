@@ -1,0 +1,15 @@
+bin/perlinfo
+%%PERL5_MAN3%%/HTML::Perlinfo.3.gz
+%%PERL5_MAN3%%/HTML::Perlinfo::Base.3.gz
+%%PERL5_MAN3%%/HTML::Perlinfo::HTML.3.gz
+%%PERL5_MAN3%%/HTML::Perlinfo::Loaded.3.gz
+%%PERL5_MAN3%%/HTML::Perlinfo::Modules.3.gz
+%%PERL5_MAN1%%/perlinfo.1.gz
+%%SITE_PERL%%/HTML/Perlinfo.pm
+%%SITE_PERL%%/HTML/Perlinfo/Apache.pm
+%%SITE_PERL%%/HTML/Perlinfo/Base.pm
+%%SITE_PERL%%/HTML/Perlinfo/Common.pm
+%%SITE_PERL%%/HTML/Perlinfo/General.pm
+%%SITE_PERL%%/HTML/Perlinfo/HTML.pod
+%%SITE_PERL%%/HTML/Perlinfo/Loaded.pm
+%%SITE_PERL%%/HTML/Perlinfo/Modules.pm

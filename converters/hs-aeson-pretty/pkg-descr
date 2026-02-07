@@ -1,0 +1,4 @@
+A JSON pretty-printing command-line tool to improve readabilty of
+streams of JSON data.  It reads JSON from stdin and writes prettified JSON
+to stdout.  It also offers a complementary "compact"-mode, essentially
+the opposite of pretty-printing.

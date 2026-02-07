@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/Safe/Hole/Hole.so
+%%SITE_ARCH%%/Safe/Hole.pm
+%%PERL5_MAN3%%/Safe::Hole.3.gz

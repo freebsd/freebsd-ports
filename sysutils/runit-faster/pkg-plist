@@ -1,0 +1,77 @@
+bin/svclone
+bin/svmod
+%%ROOT%%@dir %%RUNITDIR%%
+%%ROOT%%@dir %%RUNITDIR%%/core-services
+%%RUNITDIR%%/1
+%%RUNITDIR%%/2
+%%RUNITDIR%%/3
+%%RUNITDIR%%/core-services/11-devmatch.sh
+%%RUNITDIR%%/core-services/11-kld.sh
+%%RUNITDIR%%/core-services/11-set-defaults.sh
+@sample %%RUNITDIR%%/core-services/12-console.sh.sample
+@sample %%RUNITDIR%%/core-services/30-geli.sh.sample
+%%RUNITDIR%%/core-services/31-fsck.sh
+%%RUNITDIR%%/core-services/31-mount.sh
+%%RUNITDIR%%/core-services/31-zfs-mount.sh
+%%RUNITDIR%%/core-services/33-init-var.sh
+%%RUNITDIR%%/core-services/33-microcode_update.sh
+%%RUNITDIR%%/core-services/33-savecore.sh
+%%RUNITDIR%%/core-services/33-set-dumpdev.sh
+%%RUNITDIR%%/core-services/33-swap.sh
+%%RUNITDIR%%/core-services/41-devfs-rules.sh
+%%RUNITDIR%%/core-services/41-entropy.sh
+%%RUNITDIR%%/core-services/41-hostid.sh
+%%RUNITDIR%%/core-services/41-hostname.sh
+%%RUNITDIR%%/core-services/41-ldconfig.sh
+%%RUNITDIR%%/core-services/41-loopback.sh
+%%RUNITDIR%%/core-services/41-mixer.sh
+%%RUNITDIR%%/core-services/41-nextboot.sh
+%%RUNITDIR%%/core-services/41-rctl.sh
+@sample %%RUNITDIR%%/core-services/44-bhyve-network.sh.sample
+@sample %%RUNITDIR%%/core-services/44-jail-network.sh.sample
+%%RUNITDIR%%/core-services/51-pf.sh
+%%RUNITDIR%%/core-services/91-cleanup.sh
+@sample %%RUNITDIR%%/core-services/92-nfs.sh.sample
+%%RUNITDIR%%/core-services/93-ctld.sh
+%%RUNITDIR%%/core-services/95-mount-late.sh
+%%RUNITDIR%%/core-services/95-swap-late.sh
+%%RUNITDIR%%/core-services/99-binmisc.sh
+%%RUNITDIR%%/core-services/99-linux.sh
+%%RUNITDIR%%/core-services/99-os-release.sh
+%%RUNITDIR%%/core-services/99-ports-env.sh
+%%RUNITDIR%%/core-services/99-start-jails.sh
+%%RUNITDIR%%/ctrlaltdel
+%%RUNITDIR%%/functions
+%%RUNITDIR%%/jail
+@sample %%RUNITDIR%%/logger.sample
+%%RUNITDIR%%/reboot
+@dir %%RUNITDIR%%/runsvdir
+@dir %%RUNITDIR%%/runsvdir/default
+%%RUNITDIR%%/stopit
+share/man/man7/runit-faster.7.gz
+share/man/man8/chpst.8.gz
+share/man/man8/runit-init.8.gz
+share/man/man8/runit.8.gz
+share/man/man8/runsv.8.gz
+share/man/man8/runsvchdir.8.gz
+share/man/man8/runsvdir.8.gz
+share/man/man8/sv.8.gz
+share/man/man8/svclone.8.gz
+share/man/man8/svmod.8.gz
+share/man/man8/svlogd.8.gz
+share/man/man8/utmpset.8.gz
+sbin/chpst
+%%ROOT%%/sbin/runit
+%%NO_ROOT%%sbin/runit
+%%ROOT%%/sbin/runit-init
+%%NO_ROOT%%sbin/runit-init
+sbin/runsv
+sbin/runsvchdir
+sbin/runsvdir
+sbin/sv
+sbin/svlogd
+sbin/utmpset
+@postexec [ ! -e %%RUNITDIR%%/runsvdir/current ] && cd %%RUNITDIR%%/runsvdir && ln -s default current
+@postexec ln -sF /var/run/runit/runsvdir/current /var/service
+@postunexec [ %%RUNITDIR%%/runsvdir/default -ef %%RUNITDIR%%/runsvdir/current ] && rm -f %%RUNITDIR%%/runsvdir/current 2>/dev/null || true
+@rmtry /var/service

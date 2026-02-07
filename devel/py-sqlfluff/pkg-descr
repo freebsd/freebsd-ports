@@ -1,0 +1,4 @@
+SQLFluff is an open source, dialect-flexible and configurable SQL
+linter.  Designed with ELT applications in mind, SQLFluff also works
+with Jinja templating and dbt.  SQLFluff will auto-fix most linting
+errors, allowing you to focus your time on what matters.

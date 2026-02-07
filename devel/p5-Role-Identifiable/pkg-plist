@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Role/Identifiable/HasIdent.pm
+%%SITE_PERL%%/Role/Identifiable/HasTags.pm
+%%PERL5_MAN3%%/Role::Identifiable::HasIdent.3.gz
+%%PERL5_MAN3%%/Role::Identifiable::HasTags.3.gz

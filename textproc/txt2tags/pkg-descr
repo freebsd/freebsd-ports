@@ -1,0 +1,11 @@
+txt2tags reads a text file with minimal markup such as **bold** and //italic//
+and converts it to many formats, such as:
+
+- AsciiDoc
+- DocBook
+- HTML
+- LaTeX
+- MoinMoin
+- UNIX man page
+- Wikipedia/MediaWiki
+- and many others.

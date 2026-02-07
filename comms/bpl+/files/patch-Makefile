@@ -1,0 +1,15 @@
+--- Makefile.orig	Fri Jun 13 14:13:23 2003
++++ Makefile	Fri Jun 13 14:13:43 2003
+@@ -4,11 +4,9 @@
+ #  USE_MKTIME	use mktime instead of timelocal
+ #
+ MAKE	= make
+-CC	= gcc
+-OPTFLAG	= -O $(OPTS)
+ OBJS	= bpl.o bplexec.o rsraw.o
+ 
+-CFLAGS	= $(OPTFLAG) $(FLAG1) $(FLAG2)
++CFLAGS	+= $(FLAG1) $(FLAG2)
+ 
+ all:
+ 	@sh config.sh

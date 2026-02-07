@@ -1,0 +1,79 @@
+--- Makefile.orig	1996-07-27 18:05:03 UTC
++++ Makefile
+@@ -10,15 +10,15 @@ VERSION=123
+ #					xtrojka version (do not change!)
+ VERSION=123
+ #					where to put the binary
+-TARGET_DIR=/usr/games
++TARGET_DIR=${PREFIX}/bin
+ #					where to put the manpage
+-MANDIR=/usr/local/man/man6
++MANDIR=${PREFIX}/share/man/man6
+ #					the location of the highscorefile
+-HSFILE=/fill_in_your_scorefile
++HSFILE=${PREFIX}/share/xtrojka/xtrojka.scores
+ #					your favourite packer
+ COMPRESS=gzip -v9
+ #					your favourite c-compiler
+-CC=gcc
++CC?=gcc
+ #					used X libraries
+ XLIBS= -lXaw -lXmu -lXt -lX11 -lXext
+ #					some more X libraries
+@@ -48,7 +48,7 @@ HSF=-DSCOREFILE='"$(HSFILE)"'
+ #	comment out your favorite system (the one you use, that is...)
+ #
+ #					search the libaries here
+-LIBPATH=-L/usr/X11/lib
++LIBPATH=-L${LOCALBASE}/lib
+ #					doesn't work too well on all systems
+ #LCK=-DLOCKING
+ #					add debug info
+@@ -75,11 +75,17 @@ XPMLIB=-lXpm
+ #
+ # Linux
+ #
+-SYS=-DLINUX
++#SYS=-DLINUX
+ 
+ #
++# FreeBSD
+ #
++XDIR=-I${LOCALBASE}/include
++LIBS=-lm
++
+ #
++#
++#
+ CFLAGS= $(XDIR) $(DBG) $(XPM) $(SYS) $(OPT) $(HSF) $(LCK) $(LIBPATH) 
+ 
+ ###########################################################################
+@@ -105,11 +111,14 @@ install:
+ 	rm -rf xtrojka$(VERSION);
+ 
+ install:
+-	@echo $(HSFILE)|sed -e 's/\//\\\//g'>/tmp/hsn; \
+-	sed -e "s/__SCOREDIR__/`cat /tmp/hsn`/g" xtrojka.man > xtrojka.6; \
+-	cp xtrojka.6 $(MANDIR); chmod go+r xtrojka.6; \
+-	cp xtrojka $(TARGET_DIR);chmod go+rx xtrojka; \
+-	touch $(HSFILE); chmod go+rwx $(HSFILE);
++	@rm -f hsn
++	echo $(HSFILE)|sed -e 's/\//\\\//g'>hsn
++	sed -e "s/__SCOREDIR__/`cat hsn`/g" xtrojka.man > xtrojka.6
++	gzip -c xtrojka.6 >$(MANDIR)/xtrojka.6.gz
++	$(BSD_INSTALL_PROGRAM) xtrojka $(TARGET_DIR)
++	touch $(HSFILE)
++	chmod 664 $(HSFILE)
++	@rm -f hsn
+ 	
+ clean:
+ 	rm -rf tags *.o core xtrojka xtrojka.6 
+@@ -119,7 +128,7 @@ clean:
+ #	DEPENDENCIES
+ #
+ 
+-_strdefs.h _resdefs.h:	XTrojka 
++_strdefs.h _resdefs.h:	XTrojka.uk
+ 	$(RESGEN)
+ 
+ actions.o: actions.c actions.h xtrojka.h debug.h

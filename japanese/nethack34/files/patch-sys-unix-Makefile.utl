@@ -1,0 +1,42 @@
+--- sys/unix/Makefile.utl.orig	2014-08-27 14:21:34.000000000 +0900
++++ sys/unix/Makefile.utl	2014-08-27 15:19:11.000000000 +0900
+@@ -15,7 +15,7 @@
+ 
+ # if you are using gcc as your compiler,
+ #	uncomment the CC definition below if it's not in your environment
+-CC = gcc
++#CC = gcc
+ #
+ #	For Bull DPX/2 systems at B.O.S. 2.0 or higher use the following:
+ #
+@@ -89,7 +89,17 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
++CFLAGS += -I../include
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS
++endif
++
+ LFLAGS =
+ 
+ LIBS =
+@@ -101,9 +111,9 @@
+ 
+ # yacc/lex programs to use to generate *_comp.h, *_lex.c, and *_yacc.c.
+ # if, instead of yacc/lex you have bison/flex, comment/uncomment the following.
+-# YACC     = yacc
++YACC     = yacc
+ # LEX      = lex
+-YACC     = bison -y
++# YACC     = bison -y
+ # YACC     = byacc
+ LEX      = flex -8
+  

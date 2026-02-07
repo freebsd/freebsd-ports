@@ -1,0 +1,7 @@
+The Error package provides two interfaces. Firstly Error provides a procedural
+interface to exception handling. Secondly Error is a base class for
+errors/exceptions that can either be thrown, for subsequent catch, or can simply
+be recorded.
+
+Errors in the class Error should not be thrown directly, but the user should
+throw errors from a sub-class of Error.

@@ -1,0 +1,5 @@
+Parity v2 Archive create/verify/recover using ParPar backend
+
+This is a simple fork of par2cmdline which replaces core computation routines
+with ParPar's processing backend, improving par2cmdline's performance on
+x86/ARM platforms.

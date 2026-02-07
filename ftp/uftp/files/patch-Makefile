@@ -1,0 +1,17 @@
+--- makefile.orig	2017-01-22 10:46:20.278794000 +0300
++++ makefile	2017-01-22 10:47:39.741756000 +0300
+@@ -43,12 +43,12 @@
+ 
+ # defaults
+ OPTIONS=-g -Wall $(ENC_OPTS)
+-LDLIBS=-lc -lm $(CRYPT_LIB)
++LDLIBS=-lm $(CRYPT_LIB)
+ MTFLAGS=
+ 
+ # FreeBSD
+ ifeq ("FreeBSD", "$(UNAME_S)")
+-OPTIONS=-g -Wall -DHAS_GETIFADDRS -DNO_DUAL -DSOCKADDR_LEN $(ENC_OPTS)
++OPTIONS=-Wall -DHAS_GETIFADDRS -DNO_DUAL -DSOCKADDR_LEN $(ENC_OPTS)
+ endif
+ 
+ # OSX, aka Darwin

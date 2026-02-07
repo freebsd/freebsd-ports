@@ -1,0 +1,35 @@
+--- src/ext/FileMagic.pm.orig	2009-07-11 00:20:05.000000000 +0100
++++ src/ext/FileMagic.pm	2022-07-03 22:22:24.750066000 +0100
+@@ -362,7 +362,7 @@
+ 		foreach (keys(%{$in})) {
+ 			my $kvp = __flatten($_, $exclude); # key
+ 			next if !defined($kvp);
+-			my $v = __flatten(%{$in}->{$_}, $exclude); # value
++			my $v = __flatten({$in->{$_}}, $exclude); # value
+ 			$kvp .= " : ".$v     if (defined($v) && ("$v" ne ""));
+ 			push @out, $kvp;
+ 		}
+@@ -418,9 +418,9 @@
+ 	my $case = "check";
+ 
+ 	if (ref($options) eq "HASH") {
+-		$joinby = %{$options}->{joinby}        if defined(%{$options}->{joinby});
+-		$wspace = lc(%{$options}->{wspace})    if defined(%{$options}->{wspace});
+-		$case   = lc(%{$options}->{case})      if defined(%{$options}->{case});
++		$joinby = $options->{joinby}        if $options->{joinby};
++		$wspace = lc($options->{wspace})    if $options->{wspace};
++		$case   = lc($options->{case})      if $options->{case};
+ 	}
+ 	my $merged = "";
+ 
+--- src/ext/XMLhelper.pm.orig	2009-07-11 00:20:05.000000000 +0100
++++ src/ext/XMLhelper.pm	2022-07-03 22:22:34.918120000 +0100
+@@ -359,7 +359,7 @@
+ 			print OUT " </smartplaylist>\n";
+ 		}
+ 		elsif(my $phr = get_plpref($current_plname)) { #plprefs found..
+-			if (defined(@{$XDAT->{playlists}->{data}->{$current_plname}})) { #the playlist is not empty
++			if (@{$XDAT->{playlists}->{data}->{$current_plname}}) { #the playlist is not empty
+ 				print OUT "\n ".mkfile({playlist=>$phr}, {return=>1,noend=>1})."\n";
+ 				foreach(@{$XDAT->{playlists}->{data}->{$current_plname}}) {
+ 					print OUT "   $_\n";

@@ -1,0 +1,3 @@
+Just some syntax sugar for your DBIx::Class applications. This was originally
+created to remove code duplication between Dancer::Plugin::DBIC and
+Dancer2::Plugin::DBIC.

@@ -1,0 +1,18 @@
+--- Makefile.orig	2022-10-09 13:52:58 UTC
++++ Makefile
+@@ -1,6 +1,4 @@
+ 
+-CC   := gcc
+-CXX  := g++
+ AR   := ar
+ LD   := $(CXX)
+ 
+@@ -53,8 +51,6 @@ ARCHFLAGS := $(ARCHFLAGS)
+ endif
+ 
+ ARCHFLAGS := $(ARCHFLAGS)
+-
+-OPTFLAGS  ?= -g -O
+ 
+ CFLAGS    += -Wall -Wno-unused-function -Wno-write-strings -Wno-sign-compare $(ARCHFLAGS)
+ ifneq ($(findstring arm,$(shell uname -m)),)

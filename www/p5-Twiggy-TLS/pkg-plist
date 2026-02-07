@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Plack/Handler/Twiggy/TLS.pm
+%%SITE_PERL%%/Twiggy/Server/TLS.pm
+%%SITE_PERL%%/Twiggy/TLS.pm
+%%SITE_PERL%%/Twiggy/TLS/Info.pm
+%%PERL5_MAN3%%/Twiggy::TLS.3.gz
+%%PERL5_MAN3%%/Twiggy::TLS::Info.3.gz

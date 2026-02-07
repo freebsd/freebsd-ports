@@ -1,0 +1,7 @@
+--- assets/chezmoi.io/mkdocs.yml.orig	2022-09-03 16:58:34 UTC
++++ assets/chezmoi.io/mkdocs.yml
+@@ -309,3 +309,4 @@ plugins:
+ 
+ extra_javascript:
+ - extra/refresh_on_toggle_dark_light.js
++- mermaid.min.js

@@ -1,0 +1,5 @@
+usr/lib/libaio.so.1
+usr/lib/libaio.so.1.0.0
+usr/lib/libaio.so.1.0.1
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/TODO

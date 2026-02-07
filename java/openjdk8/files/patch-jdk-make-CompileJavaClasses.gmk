@@ -1,0 +1,18 @@
+--- ./jdk/make/CompileJavaClasses.gmk.orig	2018-12-13 14:57:18.491487000 +0100
++++ ./jdk/make/CompileJavaClasses.gmk	2018-12-13 14:58:08.484490000 +0100
+@@ -129,12 +129,12 @@
+       sun/nio/fs/LinuxFileSystem.java \
+       sun/nio/fs/LinuxFileSystemProvider.java \
+       sun/nio/fs/LinuxNativeDispatcher.java \
+-      sun/nio/fs/LinuxUserDefinedFileAttributeView.java \
+-      sun/nio/fs/LinuxWatchService.java
++      sun/nio/fs/LinuxUserDefinedFileAttributeView.java
+ endif
+ 
+ ifeq (, $(filter $(OPENJDK_TARGET_OS), linux bsd))
+-  EXFILES += sun/nio/fs/MagicFileTypeDetector.java
++  EXFILES += sun/nio/fs/MagicFileTypeDetector.java \
++      sun/nio/fs/LinuxWatchService.java
+ endif
+ 
+ ifneq ($(OPENJDK_TARGET_OS), macosx)

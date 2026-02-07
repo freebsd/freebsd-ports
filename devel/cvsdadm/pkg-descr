@@ -1,0 +1,4 @@
+cvsdadm is a tool to assist CVSd administrators in the user admin
+of the CVSROOT/passwd, CVSROOT/readers, CVSROOT/writers files when
+pserver authentication is being used for the repository. cvsdadm
+is a fork of cvspadm.

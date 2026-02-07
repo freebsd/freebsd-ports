@@ -1,0 +1,4 @@
+bin/VisualBoyAdvance
+bin/VisualBoyAdvance.cfg-default
+%%GTK2%%bin/gvba
+%%GTK2%%share/VisualBoyAdvance/vba.glade

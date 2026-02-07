@@ -1,0 +1,1 @@
+Plack::App::Proxy is a middleware-aware proxy application for Plack.

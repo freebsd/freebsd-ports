@@ -1,0 +1,14 @@
+bin/himenobmtxp
+bin/himenobmtxp_l
+bin/himenobmtxp_m
+bin/himenobmtxp_s
+bin/himenobmtxpa
+bin/himenobmtxps_l
+bin/himenobmtxps_m
+bin/himenobmtxps_s
+bin/himenobmtxps_ss
+%%ICC%%bin/himenobmtxpa.icc
+%%ICC%%bin/himenobmtxps_l.icc
+%%ICC%%bin/himenobmtxps_m.icc
+%%ICC%%bin/himenobmtxps_s.icc
+%%ICC%%bin/himenobmtxps_ss.icc

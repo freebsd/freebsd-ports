@@ -1,0 +1,5 @@
+The Crypt::RIPEMD160 module allows you to use the RIPEMD160 Message Digest
+algorithm from within Perl programs.
+
+The module is based on the implementation from Antoon Bosselaers from
+Katholieke Universiteit Leuven.

@@ -1,0 +1,8 @@
+%%SITE_PERL%%/DateTime/Set.pm
+%%SITE_PERL%%/DateTime/Span.pm
+%%SITE_PERL%%/DateTime/SpanSet.pm
+%%SITE_PERL%%/Set/Infinite/_recurrence.pm
+%%PERL5_MAN3%%/DateTime::Set.3.gz
+%%PERL5_MAN3%%/DateTime::Span.3.gz
+%%PERL5_MAN3%%/DateTime::SpanSet.3.gz
+%%PERL5_MAN3%%/Set::Infinite::_recurrence.3.gz

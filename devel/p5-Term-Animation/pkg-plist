@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Term/Animation.pm
+%%SITE_PERL%%/Term/Animation/Entity.pm
+%%PERL5_MAN3%%/Term::Animation.3.gz
+%%PERL5_MAN3%%/Term::Animation::Entity.3.gz

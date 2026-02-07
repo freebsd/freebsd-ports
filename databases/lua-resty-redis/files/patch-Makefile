@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-11-04 20:57:34 UTC
++++ Makefile
+@@ -2,7 +2,7 @@ OPENRESTY_PREFIX=/usr/local/openresty-de
+ 
+ PREFIX ?=          /usr/local
+ LUA_INCLUDE_DIR ?= $(PREFIX)/include
+-LUA_LIB_DIR ?=     $(PREFIX)/lib/lua/$(LUA_VERSION)
++LUA_LIB_DIR ?=     $(PREFIX)/share/lua/$(LUA_VER)
+ INSTALL ?= install
+ 
+ .PHONY: all test install

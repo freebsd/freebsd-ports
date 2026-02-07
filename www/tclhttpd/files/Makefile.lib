@@ -1,0 +1,16 @@
+TCL_DVER?=	8.4
+TCL_VER=	${TCL_DVER:S/.//}
+PREFIX?=	/usr/local
+
+SRCS=crypt.c setuid.c limit.c metaPackage.c httpdate.c
+
+CFLAGS+=-I${LOCALBASE}/include/tcl${TCL_DVER} -DUSE_TCL_STUBS \
+	-DTclhttpdbin_Init=${LIBNAME}_Init -Wall -Werror
+LDADD+=-L${LOCALBASE}/lib -ltclstub${TCL_VER} -lcrypt
+
+.PATH:	${.CURDIR}/src ${FILESDIR}
+
+LIBNAME=	Tclhttpdbin
+SHLIB_NAME=	lib${LIBNAME}.so
+
+.include <bsd.lib.mk>

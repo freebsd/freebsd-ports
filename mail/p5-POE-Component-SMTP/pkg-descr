@@ -1,0 +1,4 @@
+POE::Component::Server::TCP implements the SMTP protocol for the server.
+To support any command other than HELO and QUIT, you'll have to
+implement it yourself, and define it in your InlineStates,
+PackageStates, or ObjectStates.

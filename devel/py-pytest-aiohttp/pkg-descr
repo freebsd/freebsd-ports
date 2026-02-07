@@ -1,0 +1,2 @@
+pytest-aiohttp allows to use aiohttp pytest plugin without need for implicitly
+loading it like pytest_plugins = 'aiohttp.pytest_plugin'.

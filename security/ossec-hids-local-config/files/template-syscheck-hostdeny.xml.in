@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config os="FreeBSD">
+
+  <syscheck>
+    <ignore>/etc/hosts.allow</ignore>
+  </syscheck>
+
+</template_config>
+
+<template_config os="Linux">
+
+  <syscheck>
+    <ignore>/etc/hosts.deny</ignore>
+  </syscheck>
+
+</template_config>

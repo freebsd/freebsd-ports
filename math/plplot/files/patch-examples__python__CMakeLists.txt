@@ -1,0 +1,11 @@
+--- examples/python/CMakeLists.txt.orig	2022-01-14 18:34:58 UTC
++++ examples/python/CMakeLists.txt
+@@ -222,7 +222,7 @@ if(CORE_BUILD)
+     @ONLY
+     )
+ 
+-  set(python_location1 ${PYTHON_INSTDIR})
++  set(python_location1)
+   set(python_location2)
+   set(python_location3)
+   set(python_location4)

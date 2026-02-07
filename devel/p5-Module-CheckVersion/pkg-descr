@@ -1,0 +1,2 @@
+Module::CheckVersion checks latest version of modules with CPAN (or equivalent
+repo).

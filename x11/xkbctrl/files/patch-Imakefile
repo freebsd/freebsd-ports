@@ -1,0 +1,40 @@
+--- Imakefile.orig	2017-03-09 09:12:29 UTC
++++ Imakefile
+@@ -7,35 +7,9 @@ XCOMM $XConsortium: Imakefile /main/7 19
+    DEPLIBS = $(DEPXKBFILELIB) $(DEPXONLYLIB)
+    XTLOCLIBS = $(XTOOLLIB) $(XONLYLIB)
+    XTDEPLIBS = $(DEPXTOOLLIB) $(DEPXONLYLIB)
+-   SRCS = xkbver.c xkbev.c xkbshow.c xkblock.c xkbctrl.c xkbsetmasks.c \
+-	  xkbwatch.c xkbdebug.c xkbleds.c xkbrefresh.c xkbcompat.c xkbget.c \
+-	  xkbtest.c xkbcfgtest.c xkbwrbynames.c xkbextdev.c xkblist.c \
+-	  xkbmaptest.c testmaprules.c xkbsetgeom.c
++   SRCS = xkbctrl.c
+ 
+-all: xkbver xkbev xkbshow xkblock xkbctrl xkbsetmasks xkbwatch \
+-	xkbdebug xkbleds xkbrefresh xkbcompat xkbget xkbtest \
+-	xkbcfgtest xkbwrbynames xkbextdev xkblist \
+-	xkbmaptest testmaprules xkbsetgeom
++all:: xkbctrl
+ 
+-NormalProgramTarget(xkbver,xkbver.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbev,xkbev.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbshow,xkbshow.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkblock,xkblock.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+ NormalProgramTarget(xkbctrl,xkbctrl.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbsetmasks,xkbsetmasks.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbwatch,xkbwatch.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbdebug,xkbdebug.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbleds,xkbleds.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbrefresh,xkbrefresh.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbcompat,xkbcompat.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbget,xkbget.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbtest,xkbtest.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbcfgtest,xkbcfgtest.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbwrbynames,xkbwrbynames.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbextdev,xkbextdev.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkblist,xkblist.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbmaptest,xkbmaptest.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(testmaprules,testmaprules.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-NormalProgramTarget(xkbsetgeom,xkbsetgeom.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+-
+ DependTarget()

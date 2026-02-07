@@ -1,0 +1,11 @@
+Icinga 2 is a network monitoring system and parallel development branch to
+Icinga 1.
+Written from scratch, it builds on the success of Icinga 1 and deals with
+shortcomings inherited from Nagios as a fork.
+
+Icinga 2 is:
+- Easy to install with soft link activation of functions and packages
+- Multithreaded and very fast: Capable of thousands of checks per second
+- Intuitive to configure, using new object-based, template-driven format
+- Easy to extend with native support for Livestatus and Graphite
+- Cluster-enabled for distributed monitoring out of the box

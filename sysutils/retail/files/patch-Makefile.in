@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2003-04-04 20:41:30 UTC
++++ Makefile.in
+@@ -3,6 +3,8 @@ DESTDIR =
+ default:
+ 	cd src ; make
+ 
++all: default
++
+ clean:
+ 	cd src ; make clean
+ 	rm -f *~

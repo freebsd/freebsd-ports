@@ -1,0 +1,112 @@
+#!/bin/sh
+# Created by: Sean McAfee <smcafee@collaborativefusion.com>
+
+# PROVIDE: smokeping
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Define these smokeping_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/smokeping
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# smokeping_flags="<set as needed>"
+
+
+. /etc/rc.subr
+
+name=smokeping
+rcvar=smokeping_enable
+
+extra_commands="status configtest reload"
+
+start_cmd="smokeping_start"
+status_cmd="smokeping_status"
+configtest_cmd="smokeping_configtest"
+reload_cmd="smokeping_reload"
+stop_cmd="smokeping_stop"
+
+: ${smokeping_enable:=NO}
+# piddir is configured in %%PREFIX%%/etc/smokeping/config
+# pid file name is "pid" and harcoded in Smokeping.pm, not configurable
+: ${smokeping_pidfile="%%PREFIX%%/var/smokeping/pid"}
+: ${smokeping_logfile=/var/log/smokeping.log}
+: ${smokeping_user="%%USERS%%"}
+: ${smokeping_group="%%GROUPS%%"}
+
+command="%%PREFIX%%/bin/smokeping"
+command_args="--logfile=${smokeping_logfile}"
+pidfile="${smokeping_pidfile}"
+command_interpreter="%%PREFIX%%/bin/perl"
+
+smokeping_check_pidfile()
+{
+	rc_pid=$(check_pidfile $pidfile $command)
+	if [ -z "${rc_pid}" ]; then
+		rc_pid=$(check_pidfile $pidfile $command $command_interpreter)
+	fi
+}
+
+smokeping_start()
+{
+	smokeping_check_pidfile
+	if [ -n "$rc_pid" ]; then
+		echo 1>&2 "${name} already running? (pid=$rc_pid)."
+		return 1
+	fi
+
+	if [ ! -e ${smokeping_logfile} ];
+	then
+		install -o ${smokeping_user} -g ${smokeping_group} -m 644 /dev/null ${smokeping_logfile} ||\
+			 echo "ERROR: Could not initialize logfile at ${smokeping_logfile}.";
+	fi
+
+	echo "Starting ${name}."
+	su -m ${smokeping_user} -c "sh -c '${command} ${smokeping_flags} ${command_args}'"
+}
+
+smokeping_status()
+{
+	smokeping_check_pidfile
+	if [ -z "$rc_pid" ]; then
+		echo "${name} is not running."
+		return 1
+	else
+		echo "${name} is running as pid $rc_pid"
+	fi
+}
+
+smokeping_configtest()
+{
+	${command} --check
+}
+
+smokeping_reload()
+{
+	smokeping_check_pidfile
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+		return 1
+	else
+		${command} --reload
+	fi
+}
+
+smokeping_stop()
+{
+	smokeping_check_pidfile
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+		return 1
+	else
+		echo "Stopping ${name}."
+		kill -TERM $rc_pid
+		wait_for_pids $rc_pid
+	fi
+}
+
+load_rc_config $name
+
+run_rc_command "$1"

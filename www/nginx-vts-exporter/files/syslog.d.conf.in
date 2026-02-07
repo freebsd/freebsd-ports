@@ -1,0 +1,6 @@
+# syslogd(8) configuration file for net-mgmt/nginx-vts-exporter
+#
+# See syslog.conf(5) for details.
+
+!%%NGINX_VTS_EXPORTER_LOG_TAG%%
+daemon.*    %%NGINX_VTS_EXPORTER_LOG_FILE%%

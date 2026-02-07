@@ -1,0 +1,7 @@
+bin/createtree
+bin/deletetree
+bin/trillian_log_server
+bin/trillian_log_signer
+bin/updatetree
+@sample %%ETCDIR%%/trillian_log_server.conf.sample
+@sample %%ETCDIR%%/trillian_log_signer.conf.sample

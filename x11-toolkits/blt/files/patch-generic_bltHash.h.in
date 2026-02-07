@@ -1,0 +1,11 @@
+--- generic/bltHash.h.in.orig	2013-11-18 17:11:43.000000000 +0100
++++ generic/bltHash.h.in	2013-11-18 17:11:53.000000000 +0100
+@@ -88,7 +88,7 @@
+  * Acceptable key types for hash tables:
+  */
+ #define BLT_STRING_KEYS		0
+-#define BLT_ONE_WORD_KEYS	((size_t)-1)
++#define BLT_ONE_WORD_KEYS	(-1)
+ 
+ /*
+  * Forward declaration of Blt_HashTable.  Needed by some C++ compilers

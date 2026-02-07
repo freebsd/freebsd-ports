@@ -1,0 +1,50 @@
+--- ./Makefile.orig	2014-03-03 13:17:15.751580055 +0100
++++ ./Makefile	2014-03-03 13:17:55.792585399 +0100
+@@ -83,14 +83,14 @@
+ 		$(shell rpm --eval '%_rpmdir')/*/mhddfs-*$(VERSION)-$(RELEASE)* .
+ 
+ $(TARGET): obj/obj-stamp $(OBJ)
+-	gcc $(CFLAGS) $(OBJ) -o $@ $(LDFLAGS)
++	$(CC) $(CFLAGS) $(OBJ) -o $@ $(LDFLAGS)
+ 
+ obj/obj-stamp:
+ 	mkdir -p obj
+ 	touch $@
+ 
+ obj/%.o: src/%.c
+-	gcc $(CFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ clean:
+ 	rm -fr obj $(TARGET) pwrite_test statvfs rename
+@@ -98,7 +98,7 @@
+ 	rm -fr rename-test/mnt
+ 
+ rename: tests/rename.c
+-	gcc -o $@ $<
++	$(CC) -o $@ $<
+ 	
+ release_svn_thread:
+ 	@echo current version $(VERSION)
+@@ -113,10 +113,10 @@
+ 	screen -t vim vim Makefile src/*.[ch] README* ChangeLog mhddfs.1
+ 
+ pwrite_test: src/test/pwrite.c
+-	gcc -o $@ $<
++	$(CC) -o $@ $<
+ 
+ statvfs: src/test/statvfs.c
+-	gcc -o $@ $<
++	$(CC) -o $@ $<
+ 
+ images-mount: test1.img test2.img
+ 	mount|grep -q `pwd`/test1 || sudo mount -o loop test1.img test1
+@@ -160,7 +160,7 @@
+ 	while make test; do echo ok; echo; done
+ 
+ ptest:
+-	gcc -o $@ tests/plocks.c -l pthread
++	$(CC) -o $@ tests/plocks.c -l pthread
+ 	-./$@
+ 	rm -f $@
+ 

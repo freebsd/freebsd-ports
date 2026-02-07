@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+After installing Usermin for the first time you should perform the following
+steps as root:
+
+* Configure Usermin by running %%LOCALBASE%%/lib/usermin/setup.sh
+
+* Add usermin_enable="YES" to your /etc/rc.conf
+
+* Start Usermin for the first time by running "service usermin start"
+
+The parameters requested by setup.sh may then be changed from within Usermin
+itself.
+EOM
+}
+]

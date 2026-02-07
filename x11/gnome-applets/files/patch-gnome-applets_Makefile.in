@@ -1,0 +1,29 @@
+--- gnome-applets/Makefile.in.orig	2023-09-23 06:39:16 UTC
++++ gnome-applets/Makefile.in
+@@ -191,8 +191,6 @@ org_gnome_gnome_applets_la_DEPENDENCIES = $(top_buildd
+ 	$(top_builddir)/gnome-applets/gweather/libgweather-applet.la \
+ 	$(top_builddir)/gnome-applets/inhibit/libinhibit-applet.la \
+ 	$(top_builddir)/gnome-applets/mini-commander/libmini-commander-applet.la \
+-	$(top_builddir)/gnome-applets/multiload/libmultiload-applet.la \
+-	$(top_builddir)/gnome-applets/netspeed/libnet-speed-applet.la \
+ 	$(top_builddir)/gnome-applets/sticky-notes/libsticky-notes-applet.la \
+ 	$(top_builddir)/gnome-applets/timer/libtimer-applet.la \
+ 	$(top_builddir)/gnome-applets/trash/libtrash-applet.la \
+@@ -533,8 +531,6 @@ SUBDIRS = \
+ 	gweather \
+ 	inhibit \
+ 	mini-commander \
+-	multiload \
+-	netspeed \
+ 	sticky-notes \
+ 	timer \
+ 	tracker-search-bar \
+@@ -575,8 +571,6 @@ org_gnome_gnome_applets_la_LIBADD = $(top_builddir)/gn
+ 	$(top_builddir)/gnome-applets/gweather/libgweather-applet.la \
+ 	$(top_builddir)/gnome-applets/inhibit/libinhibit-applet.la \
+ 	$(top_builddir)/gnome-applets/mini-commander/libmini-commander-applet.la \
+-	$(top_builddir)/gnome-applets/multiload/libmultiload-applet.la \
+-	$(top_builddir)/gnome-applets/netspeed/libnet-speed-applet.la \
+ 	$(top_builddir)/gnome-applets/sticky-notes/libsticky-notes-applet.la \
+ 	$(top_builddir)/gnome-applets/timer/libtimer-applet.la \
+ 	$(top_builddir)/gnome-applets/trash/libtrash-applet.la \

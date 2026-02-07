@@ -1,0 +1,13 @@
+bin/gaa
+share/doc/gaa/gaa.html
+share/doc/gaa/gaa.ps
+share/doc/gaa/img1.png
+share/doc/gaa/gaa.css
+share/gaa/gaa.skel
+%%EXAMPLESDIR%%/sample.gaa
+%%EXAMPLESDIR%%/sample2.gaa
+%%EXAMPLESDIR%%/sample3.gaa
+%%EXAMPLESDIR%%/sample4.gaa
+%%EXAMPLESDIR%%/smain.c
+%%EXAMPLESDIR%%/smain2.c
+%%EXAMPLESDIR%%/config

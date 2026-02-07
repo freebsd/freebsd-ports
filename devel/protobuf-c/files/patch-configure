@@ -1,0 +1,10 @@
+--- configure.orig	2025-02-02 04:07:13 UTC
++++ configure
+@@ -20282,6 +20283,7 @@ EOF
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
++int sym;
+ int
+ main (void)
+ {

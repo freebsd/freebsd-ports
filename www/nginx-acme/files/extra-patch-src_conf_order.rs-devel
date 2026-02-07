@@ -1,0 +1,11 @@
+--- src/conf/order.rs.orig	2026-01-06 14:12:56.622627000 +0100
++++ src/conf/order.rs	2026-01-06 14:14:51.810902000 +0100
+@@ -249,7 +249,7 @@ fn validate_host(pool: &Pool, mut host: ngx_str_t) -> 
+ 
+ fn validate_host(pool: &Pool, mut host: ngx_str_t) -> Result<ngx_str_t, Status> {
+     let mut pool = pool.clone();
+-    let rc = Status(unsafe { nginx_sys::ngx_http_validate_host(&mut host, pool.as_mut(), 1) });
++    let rc = Status(unsafe { nginx_sys::ngx_http_validate_host(&mut host, std::ptr::null_mut(), pool.as_mut(), 1) });
+     if rc != Status::NGX_OK {
+         return Err(rc);
+     }

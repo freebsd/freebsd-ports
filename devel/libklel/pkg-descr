@@ -1,0 +1,13 @@
+The KoreLogic Expression Language Library is a C library that
+provides a simple expression language that can be embedded in other
+programs. This library does not implement a full programming language,
+but rather a simpler expression language called KL-EL that is
+designed to provide arithmetic and logic operations useful in
+situations where embedding a full programming language would be
+overkill. KL-EL expressions have access to a full set of arithmetic
+and logic operations, and they can access functions and variables
+exported from the embedding program. Unlike most other languages
+of its kind, KL-EL is statically and strongly typed, which helps
+ensure that expressions are valid before they are executed. The
+embedding API is designed to be easy to use, and the library itself
+is designed to be very small.

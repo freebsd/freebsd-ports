@@ -1,0 +1,13 @@
+--- antlr3config.h.in.orig
++++ antlr3config.h.in
+@@ -4,7 +4,9 @@
+ #undef ANTLR3_NODEBUGGER
+ 
+ /* Define if 64 bit mode required */
+-#undef ANTLR3_USE_64BIT
++#ifdef _LP64
++#define ANTLR3_USE_64BIT
++#endif
+ 
+ /* Define to 1 if you have the `accept' function. */
+ #undef HAVE_ACCEPT

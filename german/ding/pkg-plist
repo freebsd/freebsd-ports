@@ -1,0 +1,6 @@
+bin/ding
+%%DATADIR%%/de-en.txt
+%%DATADIR%%/de_ch-en.txt
+%%DATADIR%%/ding.desktop
+%%DATADIR%%/ding.png
+share/man/man1/ding.1.gz

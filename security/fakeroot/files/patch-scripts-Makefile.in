@@ -1,0 +1,17 @@
+--- scripts/Makefile.in.orig	2025-04-18 13:18:48 UTC
++++ scripts/Makefile.in
+@@ -542,12 +542,8 @@ uninstall-am: uninstall-binSCRIPTS
+ 
+ .PRECIOUS: Makefile
+ 
+-@MACOSX_TRUE@define macosx_false
+-#
+-@MACOSX_TRUE@endef
+-@MACOSX_FALSE@define macosx_true
+-#
+-@MACOSX_FALSE@endef
++@MACOSX_TRUE@macosx_false = \#
++@MACOSX_FALSE@macosx_true = \#
+ 
+ fakeroot: $(srcdir)/fakeroot.in Makefile
+ 	$(do_subst) < $(srcdir)/fakeroot.in > fakeroot

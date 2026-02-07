@@ -1,0 +1,56 @@
+--- ./runtime/datetime.c.orig	2010-05-04 18:57:25.588028725 -0400
++++ ./runtime/datetime.c	2010-05-04 18:59:12.390680038 -0400
+@@ -644,18 +644,30 @@
+ 	pBuf[1] = (ts->year / 100) % 10 + '0';
+ 	pBuf[2] = (ts->year / 10) % 10 + '0';
+ 	pBuf[3] = ts->year % 10 + '0';
+-	pBuf[4] = (ts->month / 10) % 10 + '0';
+-	pBuf[5] = ts->month % 10 + '0';
+-	pBuf[6] = (ts->day / 10) % 10 + '0';
+-	pBuf[7] = ts->day % 10 + '0';
+-	pBuf[8] = (ts->hour / 10) % 10 + '0';
+-	pBuf[9] = ts->hour % 10 + '0';
+-	pBuf[10] = (ts->minute / 10) % 10 + '0';
+-	pBuf[11] = ts->minute % 10 + '0';
+-	pBuf[12] = (ts->second / 10) % 10 + '0';
+-	pBuf[13] = ts->second % 10 + '0';
+-	pBuf[14] = '\0';
+-	return 15;
++    pBuf[4] = '-';
++    pBuf[5] = (ts->month / 10) % 10 + '0';
++    pBuf[6] = ts->month % 10 + '0';
++    pBuf[7] = '-';
++    pBuf[8] = (ts->day / 10) % 10 + '0';
++    pBuf[9] = ts->day % 10 + '0';
++    pBuf[10] = ' ';
++    pBuf[11] = (ts->hour / 10) % 10 + '0';
++    pBuf[12] = ts->hour % 10 + '0';
++    pBuf[13] = ':';
++    pBuf[14] = (ts->minute / 10) % 10 + '0';
++    pBuf[15] = ts->minute % 10 + '0';
++    pBuf[16] = ':';
++    pBuf[17] = (ts->second / 10) % 10 + '0';
++    pBuf[18] = ts->second % 10 + '0';
++    pBuf[19] = '.';
++    pBuf[20] = (ts->secfrac / 100000) % 10 + '0';
++    pBuf[21] = (ts->secfrac / 10000) % 10 + '0';
++    pBuf[22] = (ts->secfrac / 1000) % 10 + '0';
++    pBuf[23] = (ts->secfrac / 100) % 10 + '0';
++    pBuf[24] = (ts->secfrac / 10) % 10 + '0';
++    pBuf[25] = ts->secfrac % 10 + '0';
++    pBuf[26] = '\0';
++	return 26;
+ 
+ }
+ 
+--- ./runtime/msg.c.orig	2010-05-04 19:00:20.241528788 -0400
++++ ./runtime/msg.c	2010-05-04 19:00:06.136349680 -0400
+@@ -1293,7 +1293,7 @@
+ 	case tplFmtMySQLDate:
+ 		MsgLock(pM);
+ 		if(pM->pszTIMESTAMP_MySQL == NULL) {
+-			if((pM->pszTIMESTAMP_MySQL = MALLOC(15)) == NULL) {
++			if((pM->pszTIMESTAMP_MySQL = MALLOC(26)) == NULL) {
+ 				MsgUnlock(pM);
+ 				return "";
+ 			}

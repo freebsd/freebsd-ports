@@ -1,0 +1,6 @@
+#!/bin/sh
+
+JAVA="%%LOCALBASE%%/bin/java"
+JARPATH="%%JAVALIBDIR%%"
+
+exec "${JAVA}" -jar "${JARPATH}/%%JARNAME%%" "$@"

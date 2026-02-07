@@ -1,0 +1,1 @@
+Term::App::Util::Size tries to determine the sane terminal height and width.

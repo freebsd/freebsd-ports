@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Jun 24 12:46:54 2004
++++ Makefile	Thu Jun 24 12:49:07 2004
+@@ -10,8 +10,8 @@
+ #CFLAGS=-O2 -Wall -s -static
+ #LFLAGS=-s -static
+ # gcc
+-CC=cc
+-CFLAGS=-O -g -Wall
++CC?=cc
++CFLAGS+=-O -g -Wall
+ LFLAGS=
+ # cc
+ #CC=cc
+@@ -41,6 +41,6 @@
+ tar: $T.tgz
+ 
+ install: plug
+-	install -C -m 0755 plug /usr/local/sbin
+-	install -C -m 0644 plug.1 /usr/local/man/man1
++	install -C -m 0755 plug ${PREFIX}/sbin
++	install -C -m 0644 plug.1 ${PREFIX}/man/man1
+ 

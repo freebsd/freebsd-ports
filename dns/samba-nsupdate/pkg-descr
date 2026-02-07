@@ -1,0 +1,7 @@
+An GSS-TSIG enabled version on nsupdate(1) utility from bind9 package
+for Dynamic DNS Update requests as defined in RFC 2136 suitable for
+Samba4 zone updates.
+
+Standard GSS-TSIG mode is switched on with the -g flag. A proprietary
+variant of GSS-TSIG used by Windows 2000 can be switched on with the -o
+flag.

@@ -1,0 +1,5 @@
+This kld adds DVB ioctl handling to the Linux compatibility layer
+so that Linux apps can talk to DVB/ATSC tuners via /dev/dvb/adapterX.
+
+Note this port does not contain actual DVB drivers, those are
+provided by e.g. the multimedia/webcamd port.

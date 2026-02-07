@@ -1,0 +1,3 @@
+lib/libsocketbind.so.1
+lib/libsocketbind.so
+%%DOCSDIR%%/README

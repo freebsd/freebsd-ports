@@ -1,0 +1,13 @@
+--- Makefile.orig	2001-12-12 11:44:40 UTC
++++ Makefile
+@@ -11,8 +11,8 @@ pkg_tree.7: pkg_tree.pod
+ 		--date="December 15, 2001" pkg_tree.pod > pkg_tree.7
+ 
+ install:
+-	install -o root -g wheel -m 755 -c pkg_tree /usr/local/bin
+-	install -o root -g wheel -m 644 -c pkg_tree.7 /usr/local/man/man7
++	${BSD_INSTALL_SCRIPT} pkg_tree ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN} pkg_tree.7 ${DESTDIR}${PREFIX}/share/man/man7
+ 
+ clean:
+ 	rm pkg_tree.7

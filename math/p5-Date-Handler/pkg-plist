@@ -1,0 +1,10 @@
+%%PERL5_MAN3%%/Date::Handler.3.gz
+%%PERL5_MAN3%%/Date::Handler::Delta.3.gz
+%%PERL5_MAN3%%/Date::Handler::Range.3.gz
+%%PERL5_MAN3%%/Date::Handler::Test.3.gz
+%%SITE_PERL%%/Date/Handler.pm
+%%SITE_PERL%%/Date/Handler.pod
+%%SITE_PERL%%/Date/Handler/Constants.pm
+%%SITE_PERL%%/Date/Handler/Delta.pm
+%%SITE_PERL%%/Date/Handler/Range.pm
+%%SITE_PERL%%/Date/Handler/Test.pm

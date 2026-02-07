@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2020-12-18 16:34:55 UTC
++++ Makefile.am
+@@ -1,6 +1,6 @@
+ AUTOMAKE_OPTIONS = gnu
+ 
+-SUBDIRS = libltdl addon base data src test
++SUBDIRS = addon base data src test
+ 
+ EXTRA_DIST = bootstrap pinball.spec clean pinball.desktop
+ 

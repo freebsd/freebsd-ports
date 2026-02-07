@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: maradns
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+: ${maradns_enable="NO"}
+: ${maradns_conf="%%ETCDIR%%/mararc"}
+: ${maradns_svcj_options:="net_basic"}
+
+name="maradns"
+rcvar="${name}_enable"
+command="%%PREFIX%%/bin/duende"
+pidfile="/var/run/${name}.pid"
+command_args="--pid=${pidfile} %%PREFIX%%/sbin/maradns -f ${maradns_conf}"
+
+load_rc_config $name
+run_rc_command "$1"

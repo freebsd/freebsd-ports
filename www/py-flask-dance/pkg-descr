@@ -1,0 +1,4 @@
+Doing the OAuth dance with style using Flask, requests,
+and oauthlib. Currently,only OAuth consumers are supported,
+but this project could easily support OAuth providers in the
+future, as well.

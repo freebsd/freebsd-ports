@@ -1,0 +1,4 @@
+include/SimpleIni.h
+lib/cmake/SimpleIni/SimpleIniConfig.cmake
+lib/cmake/SimpleIni/SimpleIniConfigVersion.cmake
+lib/cmake/SimpleIni/SimpleIniTargets.cmake

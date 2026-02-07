@@ -1,0 +1,18 @@
+--- ext/glib2/rbglib_bookmarkfile.c.orig	2023-03-16 19:09:23 UTC
++++ ext/glib2/rbglib_bookmarkfile.c
+@@ -36,6 +36,7 @@ bookmarkfile_copy(const GBookmarkFile* file)
+     return (GBookmarkFile*)file;
+ }
+ 
++#if !GLIB_CHECK_VERSION(2, 76, 0)
+ static GType
+ g_bookmark_file_get_type(void)
+ {
+@@ -49,6 +50,7 @@ g_bookmark_file_get_type(void)
+ /************************************************/
+ 
+ #define G_TYPE_BOOKMARK_FILE (g_bookmark_file_get_type())
++#endif
+ #endif
+ 
+ #define RG_TARGET_NAMESPACE cBookmarkFile

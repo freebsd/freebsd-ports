@@ -1,0 +1,11 @@
+--- Config.kmk.orig	2021-04-28 16:21:25 UTC
++++ Config.kmk
+@@ -4931,7 +4931,7 @@ define TOOL_FREEBSDKMODLD_LINK_SYSMOD_CMDS
+ 		| xargs -J% objcopy % $(out)
+ 
+ ## Strip debug info (comment out if debugging or something).
+-	objcopy --strip-debug $(out)
++#	objcopy --strip-debug $(out)
+ endef
+  else # x86
+ TOOL_FREEBSDKMODLD_LINK_SYSMOD_OUTPUT = $(outbase).kld

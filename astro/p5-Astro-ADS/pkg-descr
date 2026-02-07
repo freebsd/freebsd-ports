@@ -1,0 +1,4 @@
+Astro::ADS is the base class for accessing the ADS API.
+
+It handles methods common to all services such as setting the UserAgent and
+including your API key in all request headers.

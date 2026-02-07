@@ -1,0 +1,2 @@
+Clamp provides an object-model for command-line utilities written in Ruby.
+It handles parsing of command-line options, and generation of usage help.

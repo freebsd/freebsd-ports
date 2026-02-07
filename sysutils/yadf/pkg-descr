@@ -1,0 +1,6 @@
+Yet Another Duplicate Files Finder
+
+Features:
+  Fast compared to similar tools.
+  Supports filtering based on fize size, regex
+  Multiple ouput formats including csv, json, ldjson etc.

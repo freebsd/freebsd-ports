@@ -1,0 +1,11 @@
+--- src/cs/c/configure.orig	2021-07-22 20:42:00 UTC
++++ src/cs/c/configure
+@@ -4554,7 +4554,7 @@ if test "${enable_pthread}" = "yes" ; then
+ fi
+ 
+ case "$MACH_HOST_CPU" in
+-  x86_64)
++  x86_64|amd64)
+     MACH="${thread_prefix}a6${MACH_OS}"
+     ;;
+   x86|i*86)

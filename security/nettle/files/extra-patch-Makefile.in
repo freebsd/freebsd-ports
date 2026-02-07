@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-06-26 18:29:02 UTC
++++ Makefile.in
+@@ -19,7 +19,7 @@ FAT_TEST_LIST = @FAT_TEST_LIST@
+ 
+ FAT_TEST_LIST = @FAT_TEST_LIST@
+ 
+-SUBDIRS = tools testsuite examples
++SUBDIRS = tools testsuite # examples
+ 
+ include config.make
+ 

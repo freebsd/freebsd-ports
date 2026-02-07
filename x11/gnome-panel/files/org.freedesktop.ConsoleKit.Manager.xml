@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.freedesktop.ConsoleKit.Manager">
+    <annotation name="org.gtk.GDBus.C.Name" value="ConsoleKitManagerGen" />
+
+    <method name="Suspend">
+      <arg name="interactive" type="b" direction="in" />
+    </method>
+
+    <method name="Hibernate">
+      <arg name="interactive" type="b" direction="in" />
+    </method>
+
+    <method name="HybridSleep">
+      <arg name="interactive" type="b" direction="in" />
+    </method>
+
+    <method name="CanSuspend">
+      <arg name="result" type="s" direction="out" />
+    </method>
+
+    <method name="CanHibernate">
+      <arg name="result" type="s" direction="out" />
+    </method>
+
+    <method name="CanHybridSleep">
+      <arg name="result" type="s" direction="out" />
+    </method>
+  </interface>
+</node>

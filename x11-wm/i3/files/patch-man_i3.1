@@ -1,0 +1,20 @@
+--- man/i3.1.orig	2024-11-06 17:26:59 UTC
++++ man/i3.1
+@@ -261,7 +261,7 @@ When starting, i3 looks for configuration files in the
+ .sp -1
+ .IP "  3." 4.2
+ .\}
+-/etc/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
++%%PREFIX%%/etc/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
+ .RE
+ .sp
+ .RS 4
+@@ -272,7 +272,7 @@ When starting, i3 looks for configuration files in the
+ .sp -1
+ .IP "  4." 4.2
+ .\}
+-/etc/i3/config
++%%PREFIX%%/etc/i3/config
+ .RE
+ .sp
+ You can specify a custom path using the \-c option\&.

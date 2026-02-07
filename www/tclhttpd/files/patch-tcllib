@@ -1,0 +1,26 @@
+This is needed, because of the way tcllib's pkgIndex.tcl is laid
+out. The _children_ of the directory containing tcllib itself are
+not searched for packages the first time. So
+	``package require <some sub package>''
+will fail the first time :(. This is, probably, a bug in tcllib,
+but this is a workaround.
++++ htdocs/cgi-bin/flip.cgi	Fri May  5 11:34:19 2000
+@@ -5,4 +5,3 @@
+ if {[catch {
+-    package require ncgi
+-    package require html
++    package require tcllib
+ 
++++ htdocs/cgi-bin/redirect.cgi	Fri May  5 11:34:31 2000
+@@ -5,3 +5,3 @@
+ if {[catch {
+-    package require ncgi
++    package require tcllib
+ 
++++ htdocs/cgi-bin/test.cgi	Fri May  5 11:34:47 2000
+@@ -5,4 +5,3 @@
+ if {[catch {
+-    package require ncgi
+-    package require html
++    package require tcllib
+ 

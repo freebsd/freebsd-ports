@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2018-10-21 07:13:35 UTC
++++ CMakeLists.txt
+@@ -20,6 +20,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SO
+ set(libint_DIR ${CMAKE_CURRENT_SOURCE_DIR}/config)
+ set(Armadillo_DIR ${CMAKE_CURRENT_SOURCE_DIR}/config)
+ 
++# fix wrapper_xx problem
++add_definitions(-DARMA_DONT_USE_WRAPPER)
++
+ # System default basis set repository (need not exist)
+ option(ERKALE_SYSTEM_LIBRARY "System default basis set repository (need not exist)" OFF)
+ if(ERKALE_SYSTEM_LIBRARY)

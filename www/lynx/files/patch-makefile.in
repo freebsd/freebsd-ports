@@ -1,0 +1,48 @@
+Index: makefile.in
+@@ -433,7 +433,9 @@
+ 	else \
+ 		cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
+ 	fi'
+-	@echo Updating $(sysconfdir)/lynx.cfg to point to installed help-files
++	@echo Updating $(srcdir)/lynx.cfg.sample
++	@cp $(srcdir)/lynx.cfg $(srcdir)/lynx.tmp
++	@echo Updating $(srcdir)/lynx.cfg.sample to point to installed help-files
+ 	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
+ 		-e '/^#HELPFILE:file/s!#!!' \
+ 		$(SYSCONFDIR)/lynx.tmp | \
+@@ -441,9 +443,11 @@
+ 	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
+ 	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
+ 		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
+-		>$(SYSCONFDIR)/lynx.cfg
+-	chmod 644 $(SYSCONFDIR)/lynx.cfg
++		>$(SYSCONFDIR)/lynx.cfg.sample
++	chmod 644 $(SYSCONFDIR)/lynx.cfg.sample
+ 	-rm -f $(SYSCONFDIR)/lynx.tmp
++	-[ ! -f $(SYSCONFDIR)/lynx.cfg ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.cfg.sample $(SYSCONFDIR)/lynx.cfg
++	-[ ! -f $(SYSCONFDIR)/lynx.lss ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.lss.sample $(SYSCONFDIR)/lynx.lss
+ 
+ LYHelp.h : help_files.sed $(srcdir)/LYHelp.hin
+ 	@echo Creating $@
+@@ -465,17 +469,17 @@
+ 	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
+ 
+ install-cfg : $(SYSCONFDIR)
+-	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg
++	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL) -m 644" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.sample
+ 
+ install-lss : $(SYSCONFDIR)
+-	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss
++	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss.sample
+ 
+ uninstall ::
+ @MSG_DIR_MAKE@	cd $(PO_DIR) && $(MAKE_RECUR) uninstall
+ 	-rm -f $(BINDIR)/$(binary_PROG)
+ 	-rm -f $(MANDIR)/$(actual_PROG).1
+-	-rm -f $(SYSCONFDIR)/lynx.cfg
+-	-rm -f $(SYSCONFDIR)/lynx.lss
++	-rm -f $(SYSCONFDIR)/lynx.cfg.sample
++	-rm -f $(SYSCONFDIR)/lynx.lss.sample
+ 
+ uninstall \
+ uninstall-help ::

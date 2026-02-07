@@ -1,0 +1,2 @@
+Lingua::Stem::Fr uses the modified version of the Porter Stemming Algorithm to
+return a stemmed words.

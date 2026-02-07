@@ -1,0 +1,4 @@
+%%THIS_LISPDIR%%/sly-asdf.el
+%%THIS_LISPDIR%%/sly-asdf.elc
+%%THIS_LISPDIR%%/slynk-asdf.asd
+%%THIS_LISPDIR%%/slynk-asdf.lisp

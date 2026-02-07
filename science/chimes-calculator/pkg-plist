@@ -1,0 +1,15 @@
+bin/chimescalc
+include/chimescalc/chimesFF.h
+include/chimescalc/chimescalc_C.h
+include/chimescalc/chimescalc_serial_C.h
+include/chimescalc/modfiles/chimescalc.mod
+include/chimescalc/modfiles/chimescalc_serial.mod
+include/chimescalc/modfiles/chimescalc_serial08.mod
+include/chimescalc/serial_chimes_interface.h
+lib/cmake/chimescalc/chimescalc-config-version.cmake
+lib/cmake/chimescalc/chimescalc-config.cmake
+lib/cmake/chimescalc/chimescalc-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/chimescalc/chimescalc-targets.cmake
+lib/libchimescalc.so
+lib/libchimescalc_dl.so
+lib/libchimescalc_fortran.so

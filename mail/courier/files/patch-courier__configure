@@ -1,0 +1,54 @@
+--- courier/configure.orig	2019-11-16 22:02:20.000000000 +0100
++++ courier/configure	2020-04-20 23:15:06.000000000 +0200
+@@ -667,6 +667,7 @@
+ distdirlist
+ dirlist
+ transport
++piddir
+ LIBIDN_LIBS
+ LIBIDN_CFLAGS
+ PKG_CONFIG_LIBDIR
+@@ -818,6 +819,7 @@
+ with_sysroot
+ enable_libtool_lock
+ with_softlinkdir
++with_piddir
+ with_transport
+ with_db
+ with_courierlogger
+@@ -2927,7 +2929,7 @@
+ fi
+ 
+ fi
+-INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
++INSTALL_STRIP_PROGRAM="install  -s -o root -g wheel -m 555 -s"
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for a thread-safe mkdir -p" >&5
+ $as_echo_n "checking for a thread-safe mkdir -p... " >&6; }
+@@ -16512,6 +16514,13 @@
+   ac_configure_args="$ac_configure_args --with-softlinkdir=$prefix"
+ fi
+ 
++# Check whether --with-piddir was given.
++if test "${with_piddir+set}" = set; then
++  withval=$with_piddir; piddir="$withval"
++  else
++    piddir=$localstatedir/run
++fi
++
+ 
+ version=`cat ../version`
+ 
+@@ -18135,9 +18144,9 @@
+ 
+ # Automake stupidity
+ 
+-INSTALL_PROGRAM='${INSTALL} -m 700'
+-INSTALL_SCRIPT='${INSTALL} -m 700'
+-INSTALL_DATA='${INSTALL} -m 600'
++INSTALL_PROGRAM='${BSD_INSTALL_PROGRAM}'
++INSTALL_SCRIPT='${BSD_INSTALL_SCRIPT}'
++INSTALL_DATA='${BSD_INSTALL_DATA}'
+ 
+ ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'

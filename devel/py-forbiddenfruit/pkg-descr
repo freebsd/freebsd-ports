@@ -1,0 +1,6 @@
+Forbidden Fruit allows Python code to extend built-in types.
+
+If that's a good idea or not, you tell me. The first need this project attended
+was allowing a Python assertion library to implement a similar API to RSpec
+Expectations and should.js. But people got creative and used it to among other
+things spy on things or to integrate profiling.

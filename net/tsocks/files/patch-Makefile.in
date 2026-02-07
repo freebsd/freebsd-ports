@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2002-03-16 10:12:40 UTC
++++ Makefile.in
+@@ -67,8 +67,7 @@ installscript:
+ 
+ installlib:
+ 	${MKINSTALLDIRS} "${DESTDIR}${libdir}"
+-	${INSTALL} ${SHLIB} ${DESTDIR}${libdir}
+-	ln -sf ${SHLIB} ${DESTDIR}${libdir}/${LIB_NAME}.so.${SHLIB_MAJOR}
++	${INSTALL} ${SHLIB} ${DESTDIR}${libdir}/${LIB_NAME}.so.${SHLIB_MAJOR}
+ 	ln -sf ${LIB_NAME}.so.${SHLIB_MAJOR} ${DESTDIR}${libdir}/${LIB_NAME}.so
+ 
+ installman:

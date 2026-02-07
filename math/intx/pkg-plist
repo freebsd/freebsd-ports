@@ -1,0 +1,4 @@
+include/intx/intx.hpp
+lib/cmake/intx/intxConfig.cmake
+lib/cmake/intx/intxConfigVersion.cmake
+lib/cmake/intx/intxTargets.cmake

@@ -1,0 +1,4 @@
+The File2pcap tool allows you to make various types of packet captures
+containing the content of any file that you specify.
+
+Supported protocols: HTTP, HTTP/2, SMTP, POP3, IMAP, FTP

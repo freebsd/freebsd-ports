@@ -1,0 +1,2 @@
+Net::Telnet::Cisco provides additional functionality to Net::Telnet for
+dealing with Cisco routers.

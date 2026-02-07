@@ -1,0 +1,12 @@
+--- ./vanessa_socket_pipe/Makefile.in.orig	2012-12-11 08:19:23.000000000 -0500
++++ ./vanessa_socket_pipe/Makefile.in	2012-12-11 08:19:23.000000000 -0500
+@@ -278,8 +278,7 @@
+ INCLUDES = -I$(top_srcdir)/libvanessa_socket
+ vanessa_socket_pipe_LDADD = \
+ -L../libvanessa_socket \
+--L../libvanessa_socket/.libs/ \
+--lvanessa_socket \
++../libvanessa_socket/.libs/libvanessa_socket.so \
+ -lvanessa_logger \
+ @extra_libs@ \
+ @vanessa_logger_libs@ \

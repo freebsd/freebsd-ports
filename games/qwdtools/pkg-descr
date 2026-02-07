@@ -1,0 +1,5 @@
+QWDtools is a powerful utility to convert regular uncompressed
+QuakeWorld demo files (in QWD format) to new-era multi-view format.
+
+No QWZ format support yet, but one can always convert them to QWD
+manually with Qizmo and run them through QWDtools after that.

@@ -1,0 +1,3 @@
+Provides easy access to read/write to files along with
+some common routines to deal with paths. Also provides
+interface for handling CSV files.

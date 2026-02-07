@@ -1,0 +1,37 @@
+--- src/Knews.ad.orig	Fri Jan  9 18:16:22 1998
++++ src/Knews.ad	Sat Mar 14 16:59:53 1998
+@@ -35,6 +35,7 @@
+ !Knews.editCommand:	xterm -e $EDITOR +%i %s
+ !Knews.editCommand:	xemacs +%i %s
+ !Knews.editCommand:	xterm -e vi +%i %s
++!Knews.editCommand:	xterm -fn 10x20 -cr red -bg grey90 -e vi +%i %s
+ !
+ ! You might need a few stty settings for vi:
+ !
+@@ -45,12 +46,13 @@
+ ! measure, knews will not allow quotes, parentheses, white space
+ ! or ampersands in the url.
+ !
+-!Knews.urlCommand:	netscape -remote 'openUrl(%s)'
++Knews.urlCommand:	netscape -remote 'openUrl(%s)'
+ 
+ 
+ ! Command for printing.
+ !
+-Knews.printCommand:	/bin/false
++!Knews.printCommand:	/usr/bin/lpr
++Knews.printCommand:	newsp | /usr/bin/lpr
+ 
+ 
+ ! Whether knews should generate a Path header.
+@@ -224,8 +226,8 @@
+ ! Some people want double clicking on a subject to go directly into thread
+ ! mode. This will do it.
+ !
+-!*threadlist.translations: #override \
+-!	<Btn1Down>(2):	notify() view-thread(true)
++*threadlist.translations: #override \
++	<Btn1Down>(2):	notify() view-thread(true)
+ 
+ 
+ ! The initial directory of the filechooser. Make sure it exists

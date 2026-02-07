@@ -1,0 +1,49 @@
+PORTNAME=	phonon
+DISTVERSION=	4.12.0
+PORTREVISION=	3
+CATEGORIES=	multimedia kde
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
+DIST_SUBDIR=	KDE/phonon
+PKGNAMESUFFIX=	-${FLAVOR}
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE multimedia framework
+WWW=		https://userbase.kde.org/Phonon
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt5
+
+USES=		cmake compiler:c++11-lang kde:${FLAVOR:S/qt//} pathfix \
+		qt:${FLAVOR:S/qt//} tar:xz
+CMAKE_ON=	${_CMAKE_ON_${FLAVOR}} PHONON_NO_PLATFORMPLUGIN
+CMAKE_OFF=	${_CMAKE_OFF_${FLAVOR}} PHONON_BUILD_DESIGNER_PLUGIN
+USE_LDCONFIG=	yes
+USE_KDE=	ecm:build
+USE_QT=		${_USE_QT_${FLAVOR}}
+
+_USE_QT_qt5=	core gui linguisttools widgets buildtools:build qmake:build
+_USE_QT_qt6=	5compat base tools
+_CMAKE_ON_qt5=	PHONON_BUILD_QT5
+_CMAKE_ON_qt6=	PHONON_BUILD_QT6
+_CMAKE_OFF_qt5=	PHONON_BUILD_QT6
+_CMAKE_OFF_qt6=	PHONON_BUILD_QT5 PHONON_BUILD_SETTINGS
+
+_QT5_ONLY_qt5=	#
+_QT5_ONLY_qt6=	"@comment "
+
+PLIST=		${.CURDIR}/pkg-plist.${FLAVOR}
+PLIST_SUB=	QT5_ONLY=${_QT5_ONLY_${FLAVOR}} \
+		QT_VER=${FLAVOR:S/qt//} \
+		SHLIB_VER=${DISTVERSION}
+
+OPTIONS_DEFINE=	PULSEAUDIO
+
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_USES=		gnome
+PULSEAUDIO_USE=			GNOME=glib20
+PULSEAUDIO_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PulseAudio
+
+.include <bsd.port.mk>

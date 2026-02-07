@@ -1,0 +1,9 @@
+A tool to analyze file system usage written in Rust.
+
+Features:
+ - coloured output, according to the LS_COLORS  environment variable.
+ - display the file system tree
+ - ability to aggregate small files
+ - ability to exclude files or directories
+ - ability to compare different directories
+ - fast, written in Rust

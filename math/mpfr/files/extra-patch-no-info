@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	2020-07-10 14:59:02.000000000 +0300
++++ doc/Makefile.in	2022-10-16 13:51:10.556330000 +0300
+@@ -582,7 +582,7 @@
+ 	  dist-info
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(INFO_DEPS) $(DATA)
++all-am: Makefile $(DATA)
+ installdirs:
+ 	for dir in "$(DESTDIR)$(infodir)" "$(DESTDIR)$(docdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+@@ -637,7 +637,7 @@
+ 
+ info-am: $(INFO_DEPS)
+ 
+-install-data-am: install-dist_docDATA install-info-am
++install-data-am: install-dist_docDATA
+ 
+ install-dvi: install-dvi-am
+ 

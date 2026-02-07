@@ -1,0 +1,11 @@
+Crypt::License decodes an encrypted file and attempts to decrypt it by first,
+looking for a hash pointer in the caller program called $ptr2_License. The
+hash contains the path to the License file and an optional 'private' key list
+of modules which will decrypt only with the 'private' key. OR, a hash key of
+'next' with no particular value that indicates to look to the next caller on
+the stack for the License pointer. If the pointer is not present or the
+License file is not found successfully, then no further action is taken. If the
+License file is successfully opened, and the contents validated then the
+attached encrypted module is loaded and the seconds remaining until License
+expiration are returned or now() in the case of no expiration. Undef is
+returned for an expired license (module fails to load).

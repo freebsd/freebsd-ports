@@ -1,0 +1,11 @@
+--- client/Makefile.am.orig	2024-08-21 15:06:37 UTC
++++ client/Makefile.am
+@@ -94,8 +94,6 @@ SUBDIRS =			\
+ SUBDIRS =			\
+ 	share		        \
+ 	man			\
+-	sysconfig	        \
+-	systemd			\
+ 	$(NULL)
+ #       init                    
+ 

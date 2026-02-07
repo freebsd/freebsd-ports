@@ -1,0 +1,22 @@
+PORTNAME=	sonicradio
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.14
+PORTREVISION=	1
+CATEGORIES=	audio
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	TUI radio player making use of Radio Browser API
+WWW=		https://github.com/dancnb/sonicradio
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libasound.so:audio/alsa-lib
+
+USES=		go:modules pkgconfig
+GO_MODULE=	github.com/dancnb/sonicradio
+GO_TARGET=	./cmd/sonicradio ./cmd/sonicradio_external
+
+PLIST_FILES=	bin/sonicradio bin/sonicradio_external
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -17,7 +17,6 @@
+ VERSION_DEF=	${.CURDIR}/Versions.def
+ SYMBOL_MAPS=	${.CURDIR}/mapfile-vers
+ 
+-NOPROFILE=	yes
+-NO_PROFILE=	yes
++MK_PROFILE=	no
+ 
+ .include <bsd.lib.mk>

@@ -1,0 +1,6 @@
+ATP allows you to read and compose mail packets of the QWK format,
+commonly used on PC-based BBS systems.  With this program, you can
+download all of your new e-mail and board messages as a QWK packet,
+read them offline, compose replies to selected messages off-line,
+then upload all of your replies as one QWK reply packet the next
+time you call the BBS.

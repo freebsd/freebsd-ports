@@ -1,0 +1,32 @@
+SRCDIR =	./src
+
+PG_SOURCE=      pgarro.f pgask.f pgaxis.f pgaxlg.f pgband.f pgbbuf.f pgbeg.f \
+	pgbin.f pgbox.f pgbox1.f pgcirc.f pgcl.f pgclos.f pgcn01.f pgcnsc.f \
+	pgconb.f pgconf.f pgconl.f pgcons.f pgcont.f pgconx.f pgcp.f pgctab.f \
+	pgcurs.f pgdraw.f pgebuf.f pgend.f pgenv.f pgeras.f pgerr1.f pgerrb.f \
+	pgerrx.f pgerry.f pgetxt.f pgfunt.f pgfunx.f pgfuny.f pggray.f \
+	pghi2d.f pghis1.f pghist.f pghtch.f pgiden.f pgimag.f pginit.f pglab.f \
+	pglcur.f pgldev.f pglen.f pgline.f pgmove.f pgmtxt.f pgncur.f pgnoto.f \
+	pgnpl.f pgnumb.f pgolin.f pgopen.f pgpage.f pgpanl.f pgpap.f pgpixl.f \
+	pgpnts.f pgpoly.f pgpt.f pgpt1.f pgptxt.f pgqah.f pgqcf.f pgqch.f \
+	pgqci.f pgqcir.f pgqclp.f pgqcol.f pgqcr.f pgqcs.f pgqdt.f pgqfs.f \
+	pgqhs.f pgqid.f pgqinf.f pgqitf.f pgqls.f pgqlw.f pgqndt.f pgqpos.f \
+	pgqtbg.f pgqtxt.f pgqvp.f pgqvsz.f pgqwin.f pgrect.f pgrnd.f pgrnge.f \
+	pgsah.f pgsave.f pgscf.f pgsch.f pgsci.f pgscir.f pgsclp.f pgscr.f \
+	pgscrl.f pgscrn.f pgsfs.f pgshls.f pgshs.f pgsitf.f pgslct.f pgsls.f \
+	pgslw.f pgstbg.f pgsubp.f pgsvp.f pgswin.f pgtbox.f pgtext.f pgtick.f \
+	pgtikl.f pgupdt.f pgvect.f pgvsiz.f pgvstd.f pgvw.f pgwedg.f pgwnad.f \
+	pgadvance.f pgbegin.f pgcurse.f pglabel.f pgmtext.f pgncurse.f \
+	pgpaper.f pgpoint.f pgptext.f pgvport.f pgvsize.f pgvstand.f \
+	pgwindow.f
+
+all: pgplot.doc pgplot.html pgplot-routines.tex
+
+pgplot.doc: ${PG_SOURCE:S|^|${SRCDIR}/|}
+	./makedoc ${PG_SOURCE:S|^|${SRCDIR}/|} > pgplot.doc
+
+pgplot.html: ${PG_SOURCE:S|^|${SRCDIR}/|}
+	./makehtml ${PG_SOURCE:S|^|${SRCDIR}/|} > pgplot.html
+
+pgplot-routines.tex: ${PG_SOURCE:S|^|${SRCDIR}/|}
+	./maketex ${PG_SOURCE:S|^|${SRCDIR}/|} > pgplot-routines.tex

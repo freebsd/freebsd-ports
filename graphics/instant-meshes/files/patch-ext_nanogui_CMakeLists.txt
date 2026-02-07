@@ -1,0 +1,76 @@
+--- ext/nanogui/CMakeLists.txt.orig	2016-10-15 20:12:12 UTC
++++ ext/nanogui/CMakeLists.txt
+@@ -6,12 +6,6 @@ if (POLICY CMP0058)
+   cmake_policy(SET CMP0058 NEW)
+ endif()
+ 
+-if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw/src")
+-  message(FATAL_ERROR "The NanoGUI dependency repositories (GLFW, etc.) are missing! "
+-    "You probably did not clone the project with --recursive. It is possible to recover "
+-    "by calling \"git submodule update --init --recursive\"")
+-endif()
+-
+ if (WIN32)
+   set(NANOGUI_USE_GLAD_DEFAULT ON)
+ else()
+@@ -61,9 +55,6 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated-declarations")
+ endif()
+ 
+-# Compile GLFW
+-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw" "ext_build/glfw")
+-
+ # Python support: add NANOGUI_PYTHON flag to all targets
+ if (NANOGUI_BUILD_PYTHON)
+   list(APPEND NANOGUI_EXTRA_DEFS -DNANOGUI_PYTHON)
+@@ -174,13 +165,6 @@ if (NANOGUI_BUILD_SHARED)
+   endif()
+ endif()
+ 
+-# Always use libc++ on Clang
+-if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
+-  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
+-endif()
+-
+ if (NANOGUI_USE_GLAD)
+   # Build and include GLAD on Windows
+   list(APPEND LIBNANOGUI_EXTRA_SOURCE
+@@ -197,12 +181,12 @@ if (NANOGUI_USE_GLAD)
+ endif()
+ 
+ list(APPEND NANOGUI_EXTRA_INCS
+-  "${CMAKE_CURRENT_SOURCE_DIR}/ext/glfw/include"
++  "${CMAKE_INSTALL_PREFIX}/include/GLFW"
+   "${CMAKE_CURRENT_SOURCE_DIR}/ext/nanovg/src"
+ )
+ 
+ if (NOT NANOGUI_EIGEN_INCLUDE_DIR)
+-  set(NANOGUI_EIGEN_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ext/eigen")
++  set(NANOGUI_EIGEN_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include/eigen3")
+   list(APPEND NANOGUI_EXTRA_INCS "${NANOGUI_EIGEN_INCLUDE_DIR}")
+ endif()
+ 
+@@ -226,9 +210,12 @@ elseif(CMAKE_SYSTEM MATCHES "Linux" OR C
+   if(CMAKE_SYSTEM MATCHES "Linux")
+     list(APPEND NANOGUI_EXTRA_LIBS dl)
+   endif()
++  if(CMAKE_SYSTEM MATCHES "FreeBSD")
++    list(APPEND NANOGUI_EXTRA_LIBS glfw)
++  endif()
+ endif()
+ 
+-include_directories(${NANOGUI_EIGEN_INCLUDE_DIR} ext/glfw/include ext/nanovg/src include ${CMAKE_CURRENT_BINARY_DIR})
++include_directories(${NANOGUI_EIGEN_INCLUDE_DIR} ext/nanovg/src include ${CMAKE_CURRENT_BINARY_DIR})
+ 
+ # Run simple C converter to put font files into the data segment
+ add_executable(bin2c resources/bin2c.c)
+@@ -311,7 +298,6 @@ add_library(nanogui-obj OBJECT
+ 
+ add_library(nanogui ${NANOGUI_LIBRARY_TYPE}
+   $<TARGET_OBJECTS:nanogui-obj>
+-  $<TARGET_OBJECTS:glfw_objects>
+ )
+ 
+ if (${NANOGUI_LIBRARY_TYPE} MATCHES "SHARED")

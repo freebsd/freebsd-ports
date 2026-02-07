@@ -1,0 +1,9 @@
+File::ShareDir::Dist finds share directories for distributions. It is similar to
+File::ShareDir with a few differences:
+- Only supports distribution directories.
+- Doesn't compute filenames.
+- Doesn't compute filenames.
+- Hopefully doesn't find the wrong directory.
+- No non-core dependencies.
+- Works in your development tree.
+- Built in override.

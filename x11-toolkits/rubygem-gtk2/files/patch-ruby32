@@ -1,0 +1,42 @@
+--- ext/gtk2/rbgtkcontainer.c.orig	2024-04-05 14:08:42 UTC
++++ ext/gtk2/rbgtkcontainer.c
+@@ -172,7 +172,7 @@ rbgtkcontainer_register_child_property_setter(GType gt
+     pspec = gtk_container_class_find_child_property(oclass, name);
+ 
+     rb_hash_aset(table, rb_intern(g_param_spec_get_name(pspec)),
+-                 Data_Wrap_Struct(rb_cData, NULL, NULL, func));
++                 Data_Wrap_Struct(rb_cObject, NULL, NULL, func));
+ 
+     g_type_class_unref(oclass);
+ }
+@@ -193,7 +193,7 @@ rbgtkcontainer_register_child_property_getter(GType gt
+     pspec = gtk_container_class_find_child_property(oclass, name);
+ 
+     rb_hash_aset(table, rb_intern(g_param_spec_get_name(pspec)),
+-                 Data_Wrap_Struct(rb_cData, NULL, NULL, func));
++                 Data_Wrap_Struct(rb_cObject, NULL, NULL, func));
+ }
+ 
+ static VALUE
+--- ext/gtk2/rbgtktreeiter.c.orig	2024-04-05 14:08:42 UTC
++++ ext/gtk2/rbgtktreeiter.c
+@@ -29,7 +29,7 @@ rbgtk_register_treeiter_set_value_func(GType gtype, rb
+ rbgtk_register_treeiter_set_value_func(GType gtype, rbgtkiter_set_value_func func)
+ {
+     rb_hash_aset(treeiter_set_value_table, INT2NUM(gtype), 
+-                 Data_Wrap_Struct(rb_cData, NULL, NULL, func));
++                 Data_Wrap_Struct(rb_cObject, NULL, NULL, func));
+ }
+ 
+ static VALUE
+--- ext/gtk2/rbgtkwindow.c.orig	2024-04-05 14:08:42 UTC
++++ ext/gtk2/rbgtkwindow.c
+@@ -582,7 +582,7 @@ Init_gtk_window(VALUE mGtk)
+     {
+         static VALUE toplevels_marker;
+         toplevels_marker =
+-            rb_data_object_alloc(rb_cData, NULL, mark_toplevels, NULL);
++            rb_data_object_alloc(rb_cObject, NULL, mark_toplevels, NULL);
+         rb_global_variable(&toplevels_marker);
+     }
+ }

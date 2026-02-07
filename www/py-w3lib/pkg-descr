@@ -1,0 +1,12 @@
+This is a Python library of web-related functions, such as:
+
+  - remove comments, or tags from HTML snippets
+  - extract base url from HTML snippets
+  - translate entites on HTML strings
+  - encoding mulitpart/form-data
+  - convert raw HTTP headers to dicts and vice-versa
+  - construct HTTP auth header
+  - converting HTML pages to unicode
+  - RFC-compliant url joining
+  - sanitize urls (like browsers do)
+  - extract arguments from urls

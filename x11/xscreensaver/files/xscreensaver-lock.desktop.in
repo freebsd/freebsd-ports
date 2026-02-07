@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=XScreenSaver Lock
+Comment=Lock the screen with XScreenSaver
+Icon=%%PREFIX%%/share/xscreensaver/glade/screensaver-locking.png
+Exec=%%PREFIX%%/bin/xscreensaver-command -lock
+Categories=Settings;DesktopSettings;Security;X-XFCE;XScreenSaver;
+Terminal=false
+StartupNotify=false

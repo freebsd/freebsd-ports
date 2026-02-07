@@ -1,0 +1,11 @@
+--- wsServer/Makefile.orig	2025-09-12 01:18:14 UTC
++++ wsServer/Makefile
+@@ -13,7 +13,7 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>
+ 
+-CC        = g++
++CC       ?= g++
+ AR        = ar
+ ARFLAGS   = r
+ CXXFLAGS  += -Iinclude

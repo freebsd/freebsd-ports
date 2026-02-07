@@ -1,0 +1,73 @@
+'\" t
+.\"     Title: isutf8
+.\"    Author: Lars Wirzenius <liw@iki.fi>
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 09/19/2021
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "ISUTF8" "1" "09/19/2021" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+isutf8 \- check whether files are valid UTF\-8
+.SH "SYNOPSIS"
+.HP \w'\fBisutf8\fR\ 'u
+\fBisutf8\fR [\fB\-hqliv\fR] [\fB\-\-help\fR] [\fB\-\-quiet\fR] [\fB\-\-list\fR] [\fB\-\-invert\fR] [\fB\-\-verbose\fR] [[\fIfile\fR...]]
+.SH "DESCRIPTION"
+.PP
+\fBisutf8\fR
+checks whether files are syntactically valid UTF\-8\&. Input is either files named on the command line, or the standard input\&. Notices about files with invalid UTF\-8 are printed to standard output\&.
+.SH "OPTIONS"
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Print out a help summary\&.
+.RE
+.PP
+\fB\-q\fR, \fB\-\-quiet\fR
+.RS 4
+Don\*(Aqt print messages telling which files are invalid UTF\-8, merely indicate it with the exit status\&.
+.RE
+.PP
+\fB\-l\fR, \fB\-\-list\fR
+.RS 4
+Print only the names of files containing invalid UTF\-8\&.
+.RE
+.PP
+\fB\-i\fR, \fB\-\-invert\fR
+.RS 4
+Invert the selection: list UTF\-8 compatible files\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-verbose\fR
+.RS 4
+Also print an hexdump\-like view of the error and some context\&.
+.RE
+.SH "EXIT STATUS"
+.PP
+If the file is valid UTF\-8, the exit status is zero\&. If the file is not valid UTF\-8, or there is some error, the exit status is non\-zero\&.
+.SH "AUTHOR"
+.PP
+Lars Wirzenius, Julien Palard
+.SH "SEE ALSO"
+.PP
+\fButf8\fR(7)

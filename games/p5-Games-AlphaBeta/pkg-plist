@@ -1,0 +1,12 @@
+bin/othello-demo
+%%PERL5_MAN3%%/Games::AlphaBeta.3.gz
+%%PERL5_MAN3%%/Games::AlphaBeta::Position.3.gz
+%%PERL5_MAN3%%/Games::AlphaBeta::Reversi.3.gz
+%%PERL5_MAN3%%/Games::Sequential.3.gz
+%%PERL5_MAN3%%/Games::Sequential::Position.3.gz
+%%SITE_PERL%%/Games/AlphaBeta.pm
+%%SITE_PERL%%/Games/AlphaBeta/Position.pm
+%%SITE_PERL%%/Games/AlphaBeta/Reversi.pm
+%%SITE_PERL%%/Games/Sequential.pm
+%%SITE_PERL%%/Games/Sequential/Position.pm
+%%PERL5_MAN1%%/othello-demo.1.gz

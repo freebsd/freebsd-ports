@@ -1,0 +1,15 @@
+--- ext/bin/puppetdb.orig	2016-03-17 04:17:10 UTC
++++ ext/bin/puppetdb
+@@ -5,6 +5,12 @@ if [ -r "/etc/default/puppetdb" ] ; then
+     . /etc/default/puppetdb
+ elif [ -r "/etc/sysconfig/puppetdb" ] ; then
+     . /etc/sysconfig/puppetdb
++elif [ `uname` == "FreeBSD" ] ; then
++    CONFIG="%%PREFIX%%/etc/puppetdb/conf.d"
++    INSTALL_DIR="%%DATADIR%%"
++    JAVA_BIN="%%PREFIX%%/bin/java"
++    JAVA_ARGS="-Xmx192m"
++    USER="puppet"
+ elif [ `uname` == "OpenBSD" ] ; then
+     JAVA_BIN=$(javaPathHelper -c puppetdb)
+     JAVA_ARGS="-Xmx192m"

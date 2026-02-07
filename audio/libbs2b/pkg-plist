@@ -1,0 +1,11 @@
+lib/libbs2b.a
+lib/libbs2b.so
+lib/libbs2b.so.0
+lib/libbs2b.so.0.0.0
+bin/bs2bconvert
+bin/bs2bstream
+include/bs2b/bs2b.h
+include/bs2b/bs2bclass.h
+include/bs2b/bs2btypes.h
+include/bs2b/bs2bversion.h
+libdata/pkgconfig/libbs2b.pc

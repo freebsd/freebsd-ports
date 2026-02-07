@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java $@ -jar /usr/local/share/stendhal/stendhal-starter.jar

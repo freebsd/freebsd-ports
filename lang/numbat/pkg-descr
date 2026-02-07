@@ -1,0 +1,12 @@
+Numbat is a statically typed programming language for scientific computations
+with first class support for physical dimensions and units.
+
+Numbat has a static type system where physical dimensions like `Length` and
+`Time` act as types.
+Definitions of constants and functions can optionally contain type annotations
+that will be statically enforced.
+If the types are not specified, they will be inferred (`Speed`, `Money` and
+`Frequency` in the screenshot).
+
+Numbat is focused on computations with units. Units are therefore treated as
+first-class citizens.

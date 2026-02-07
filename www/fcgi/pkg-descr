@@ -1,0 +1,16 @@
+FastCGI Development Kit.
+
+FastCGI is a fast, open, and secure Web server interface that solves the
+performance problems inherent in CGI, without introducing the overhead and
+complexity of proprietary APIs (Application Programming Interfaces).
+
+FastCGI allows for many nice features such as persistent CGI applications
+(eliminating process creation time per request) and being able run CGI
+applications on hosts remote to the web server itself.
+
+Most web servers have optional or add-on support for FastCGI. Applications
+which are developed with FastCGI behave as standard CGIs when invoked by web
+servers without FastCGI support. In other words, if the server supports
+FastCGI, then FastCGI applications get all the perks (mainly being *really*
+fast); if the server does not support FastCGI, then FastCGI applications
+behave exactly like standard CGIs.

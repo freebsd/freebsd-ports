@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+  To make the automatic discovery work, you need to have avahi-daemon running.
+  Make sure that
+
+      avahi_daemon_enable="YES"
+
+  is in /etc/rc.conf(.local), and start the avahi-daemon service. Some other
+  program, such as Firefox, may also bind to the mDNS port (5353), so make sure
+  that avahi-daemon can bind to the port.
+
+  To quickly check if your scanner can be discovered, run
+
+      avahi-browse -r _uscan._tcp
+
+  You should see your scanner listed in the result.
+EOM
+}
+]

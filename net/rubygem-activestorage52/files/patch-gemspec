@@ -1,0 +1,10 @@
+--- activestorage.gemspec.orig	2025-10-07 17:13:47 UTC
++++ activestorage.gemspec
+@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.2.8.1".freeze])
+   s.add_runtime_dependency(%q<activerecord>.freeze, ["= 5.2.8.1".freeze])
+-  s.add_runtime_dependency(%q<marcel>.freeze, ["~> 1.0.0".freeze])
++  s.add_runtime_dependency(%q<marcel>.freeze, ["~> 1.0".freeze])
+ end
+ 

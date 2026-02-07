@@ -1,0 +1,28 @@
+[
+{ type: install
+  message: <<EOM
+Remember to set the environment variable XMODIFIERS:
+
+	csh/tcsh:	setenv XMODIFIERS @im=fcitx
+	sh/bash:	export XMODIFIERS='@im=fcitx'
+
+For GTK+ programs, you may want to set:
+
+	csh/tcsh:	setenv GTK_IM_MODULE %%GTK2_IM%%
+			setenv GTK3_IM_MODULE %%GTK3_IM%%
+	sh/bash:	export GTK_IM_MODULE=%%GTK2_IM%%
+			export GTK3_IM_MODULE=%%GTK3_IM%%
+
+For Qt4 programs, we recommend you to use
+
+	qtconfig-qt4: %%PORTSDIR%%/misc/qt4-qtconfig
+
+instead of to manually set QT4_IM_MODULE.
+
+To start fcitx with your desktop, just
+
+	cp %%PREFIX%%/share/applications/fcitx.desktop \
+	    ~/.config/autostart/
+EOM
+}
+]

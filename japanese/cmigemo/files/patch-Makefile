@@ -1,0 +1,18 @@
+--- Makefile.orig	2014-12-20 04:39:02 UTC
++++ Makefile
+@@ -69,8 +69,14 @@ gcc-rel:
+ 	$(MAKE) -f compile/Make_gcc.mak
+ gcc-dict:
+ 	$(MAKE) -f compile/Make_gcc.mak dictionary
+-gcc-install: gcc-all
++gcc-dat:
++	$(MAKE) -f compile/Make_gcc.mak dat
++gcc-install: gcc-rel gcc-dat
+ 	$(MAKE) -f compile/Make_gcc.mak install
++gcc-install-dict: gcc-dict
++	$(MAKE) -f compile/Make_gcc.mak install-dict
++gcc-install-doc:
++	$(MAKE) -f compile/Make_gcc.mak install-doc
+ gcc-uninstall:
+ 	$(MAKE) -f compile/Make_gcc.mak uninstall
+ gcc-clean:

@@ -1,0 +1,13 @@
+TIMESTAMP = 1730425303
+SHA256 (fcitx/fcitx-4.2.9.9.tar.xz) = 307bddeabbec383eb27c4ea222d9f71d8d9011d7942f4010368e5bc3ca7440a1
+SIZE (fcitx/fcitx-4.2.9.9.tar.xz) = 1708908
+SHA256 (fcitx/en_dict-20121020.tar.gz) = c44a5d7847925eea9e4d2d04748d442cd28dd9299a0b572ef7d91eac4f5a6ceb
+SIZE (fcitx/en_dict-20121020.tar.gz) = 630491
+SHA256 (fcitx/pinyin.tar.gz) = 583829b24a758c087c08de4a69480d0bf5946354fe77db360d6d7f467c2bd8e1
+SIZE (fcitx/pinyin.tar.gz) = 1608886
+SHA256 (fcitx/py_stroke-20121124.tar.gz) = 8eb128a9bfa43952e67cf2fcee1fd134c6f4cfd317bc2f6c38a615f5eb64e248
+SIZE (fcitx/py_stroke-20121124.tar.gz) = 445601
+SHA256 (fcitx/py_table-20121124.tar.gz) = 42146ac97de6c13d55f9e99ed873915f4c66739e9c11532a34556badf9792c04
+SIZE (fcitx/py_table-20121124.tar.gz) = 186822
+SHA256 (fcitx/table.tar.gz) = 6196053c724125e3ae3d8bd6b2f9172d0c83b65b0d410d3cde63b7a8d6ab87b7
+SIZE (fcitx/table.tar.gz) = 4144686

@@ -1,0 +1,13 @@
+--- configure.orig	2014-07-02 16:00:31.835416510 +0800
++++ configure	2014-07-02 16:00:52.715441718 +0800
+@@ -116,8 +116,8 @@ dist:
+ livelog: livelog.o
+ 
+ install: webresolve
+-	cp webresolve splitwr \$(BINDIR)
+-	cp webresolve.1 splitwr.1 \$(MAN1DIR)
++	cp webresolve splitwr \$(DESTDIR)\$(BINDIR)
++	cp webresolve.1 splitwr.1 \$(DESTDIR)\$(MAN1DIR)
+ 
+ uninstall:
+ 	rm -f \$(BINDIR)/webresolve \$(BINDIR)/splitwr

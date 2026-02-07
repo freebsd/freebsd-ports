@@ -1,0 +1,26 @@
+#!/bin/sh
+
+LOCALBASE=%%LOCALBASE%%
+
+# This script runs during post-install
+if [ "x${2}" != "xPOST-INSTALL" ]; then
+    exit 0
+fi
+
+# Ensure all JDKs and JREs are installed
+jdirs=$(cd "${LOCALBASE}" && find *jdk* *jre* -depth 0 -type d 2> /dev/null)
+set -o noglob
+_excl_dirs='bootstrap-openjdk.*'
+_find_expr='-depth 2 -regex .*/bin/java'
+for dir in ${_excl_dirs}; do
+    _find_expr="${_find_expr} ! -regex ${dir}/bin/java"
+done
+for jvm in `cd "${LOCALBASE}" && find $jdirs ${_find_expr} 2> /dev/null`; do
+    if [ -x "${LOCALBASE}/${jvm}" ]; then
+        "${PKG_PREFIX}"/bin/registervm "${LOCALBASE}/${jvm}" > /dev/null 2>&1
+    fi
+done
+set +o noglob
+
+# Ensure all VMs are configured correctly
+"${PKG_PREFIX}"/bin/checkvms

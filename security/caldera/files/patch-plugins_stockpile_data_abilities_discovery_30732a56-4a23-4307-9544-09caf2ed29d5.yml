@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/30732a56-4a23-4307-9544-09caf2ed29d5.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/30732a56-4a23-4307-9544-09caf2ed29d5.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           find / -type d -user #{host.user.name} \( -perm -g+w -or -perm -o+w \) 2>/dev/null -exec ls -adl {} \;
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           find / -type d -user #{host.user.name} \( -perm -g+w -or -perm -o+w \) 2>/dev/null -exec ls -adl {} \;

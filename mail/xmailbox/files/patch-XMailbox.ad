@@ -1,0 +1,11 @@
+--- XMailbox.ad.orig	Thu Jul 17 01:13:32 1997
++++ XMailbox.ad	Sat Apr  8 07:03:20 2000
+@@ -9,7 +9,7 @@
+ xmailbox*mailAnimOnce:		true
+ ! xmailbox*mailAnimUpdate:	1000
+ ! xmailbox*mailapp:		echo 'setenv LINES 25; setenv COLUMNS 80; xterm -n Elm -e elm' | /bin/csh -f -s
+-! xmailbox*mailSndFile:		/usr/public/lib/sounds/bong.au
++xmailbox*mailSndFile:		%%PREFIX%%/share/xmailbox/ugotmail.au
+ ! xmailbox*mailSndComm:		/usr/public/bin/play %s
+ ! xmailbox*nomailXpmFile:	/usr/X11/include/X11/pixmaps/mail0.xpm
+ ! xmailbox*mailXpmFile:		/usr/X11/include/X11/pixmaps/mail1.xpm

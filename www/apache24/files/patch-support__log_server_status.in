@@ -1,0 +1,20 @@
+--- support/log_server_status.in.orig	2012-04-28 23:08:09 UTC
++++ support/log_server_status.in
+@@ -29,7 +29,7 @@ use IO::Socket;
+ use strict;
+ use warnings;
+ 
+-my $wherelog = "@exp_logfiledir@/";  # Logs will be like "@exp_logfiledir@/19960312"
++my $wherelog = "@exp_logfiledir@/httpd-status-";  # Logs will be like "@exp_logfiledir@/httpd-status-19960312"
+ my $server   = "localhost";        # Name of server, could be "www.foo.com"
+ my $port     = "@PORT@";               # Port on server
+ my $request = "/server-status/?auto";    # Request to send
+@@ -46,7 +46,7 @@ my $time =
+   . sprintf( "%02d", $ltime[1] )
+   . sprintf( "%02d", $ltime[0] );
+ 
+-open(OUT,">>$wherelog$day");
++open(OUT,">>$wherelog$day.log");
+ 
+ my $socket = new IO::Socket::INET(
+     PeerAddr => $server,

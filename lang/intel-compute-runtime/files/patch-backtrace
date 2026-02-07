@@ -1,0 +1,37 @@
+Adjust for backtrace(3) on BSDs
+
+In file included from offline_compiler/utilities/linux/safety_caller_linux.cpp:10:
+offline_compiler/utilities/linux/safety_guard_linux.h:36:25: error: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int' [-Werror,-Wshorten-64-to-32]
+        backtraceSize = backtrace(addresses, callstackDepth);
+                      ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ld: error: undefined symbol: backtrace
+>>> referenced by safety_caller_linux.cpp
+>>>               CMakeFiles/ocloc.dir/utilities/linux/safety_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
+ld: error: undefined symbol: backtrace_symbols
+>>> referenced by safety_caller_linux.cpp
+>>>               CMakeFiles/ocloc.dir/utilities/linux/safety_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
+
+--- shared/offline_compiler/source/utilities/linux/safety_guard_linux.h.orig	2020-02-28 16:16:42 UTC
++++ shared/offline_compiler/source/utilities/linux/safety_guard_linux.h
+@@ -33,7 +33,7 @@ class SafetyGuardLinux {
+         char **callstack;
+         int backtraceSize = 0;
+ 
+-        backtraceSize = backtrace(addresses, callstackDepth);
++        backtraceSize = (int)backtrace(addresses, callstackDepth);
+         callstack = backtrace_symbols(addresses, backtraceSize);
+ 
+         for (int i = 0; i < backtraceSize; ++i) {
+--- shared/offline_compiler/source/CMakeLists.txt.orig	2020-05-15 20:36:40 UTC
++++ shared/offline_compiler/source/CMakeLists.txt
+@@ -140,6 +140,9 @@ endif()
+ 
+ if(UNIX)
+   target_link_libraries(${OCLOC_NAME}_lib dl pthread)
++  if(CMAKE_SYSTEM_NAME MATCHES "DragonFly|FreeBSD|NetBSD|OpenBSD")
++    target_link_libraries(${OCLOC_NAME}_lib execinfo)
++  endif()
+ endif()
+ 
+ set(CLOC_LIB_SRCS_LIB ${CLOC_LIB_SRCS_LIB} PARENT_SCOPE)

@@ -1,0 +1,3 @@
+Sgfsummary reads multiple SGF (Smart Game Format) files, specifically
+those recording Go/WeiQi/Baduk games, and summarizes their game
+information to standard output. It is a part of the Go Tools Project.

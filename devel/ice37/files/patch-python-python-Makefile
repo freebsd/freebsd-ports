@@ -1,0 +1,28 @@
+--- python/python/Makefile.orig	2023-11-06 09:24:19 UTC
++++ python/python/Makefile
+@@ -11,7 +11,7 @@ include $(lang_srcdir)/config/Make.rules
+ #
+ # Load C++ dependencies
+ #
+-$(eval $(call load-translator-dependencies,$(top_srcdir)/cpp/src/slice2py))
++#$(eval $(call load-translator-dependencies,$(top_srcdir)/cpp/src/slice2py))
+ 
+ .NOTPARALLEL:
+ 
+@@ -30,12 +30,12 @@ $(eval $(call make-python-slice,$(slicedir),$(lang_src
+ 
+ install:: | $(DESTDIR)$(install_pythondir)/Ice
+ 	$(E) "Installing generated code"
+-	$(Q)$(INSTALL) -m 644 Ice/__init__.py $(DESTDIR)$(install_pythondir)/Ice
++	$(Q)%%INSTALL_DATA%% -m 644 Ice/__init__.py $(DESTDIR)$(install_pythondir)/Ice
+ # Ice/Future requires python >= 3.5
+ ifeq ($(shell $(PYTHON) -c "import sys; print(1 if sys.version_info[:2] >= (3, 5) else 0)"),1)
+-	$(Q)$(MKDIR) -p -m 755 $(DESTDIR)$(install_pythondir)/Ice/Py3
+-	$(Q)$(INSTALL) -m 644 Ice/Py3/IceFuture.py $(DESTDIR)$(install_pythondir)/Ice/Py3/
++	$(Q)%%MKDIR%% $(DESTDIR)$(install_pythondir)/Ice/Py3
++	$(Q)%%INSTALL_DATA%% -m 644 Ice/Py3/IceFuture.py $(DESTDIR)$(install_pythondir)/Ice/Py3/
+ endif
+ 
+ install:: | $(DESTDIR)$(install_pythondir)/Glacier2
+-	$(Q)$(INSTALL) -m 644 Glacier2/__init__.py $(DESTDIR)$(install_pythondir)/Glacier2
++	$(Q)%%INSTALL_DATA%% -m 644 Glacier2/__init__.py $(DESTDIR)$(install_pythondir)/Glacier2

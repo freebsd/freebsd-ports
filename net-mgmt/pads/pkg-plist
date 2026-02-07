@@ -1,0 +1,14 @@
+bin/pads
+bin/pads-report
+etc/pads-ether-codes
+etc/pads-signature-list
+etc/pads.conf
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/CREDITS
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/INSTALL
+%%DATADIR%%/README
+share/man/man8/pads-report.8.gz
+share/man/man8/pads.8.gz
+share/man/man8/pads.conf.8.gz

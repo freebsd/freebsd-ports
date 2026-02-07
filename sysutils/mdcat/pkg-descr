@@ -1,0 +1,6 @@
+mdcat works best with a good terminal font with italic characters.
+
+Features:
+ - nicely renders all basic CommonMark syntax
+ - highlights code blocks with syntect
+ - shows links, and also images inline in supported terminals

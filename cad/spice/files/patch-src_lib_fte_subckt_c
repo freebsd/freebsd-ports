@@ -1,0 +1,22 @@
+--- src/lib/fte/subckt.c.orig	2010-02-09 15:25:54.000000000 +0000
++++ src/lib/fte/subckt.c	2010-02-09 15:57:52.000000000 +0000
+@@ -648,6 +648,9 @@
+         case 'f':
+         case 'H':
+         case 'h':
++	/* 2 lines here to fix w bug, NCF 1/31/95 */
++	case 'W':
++	case 'w':
+         return (1);
+     
+         default:
+@@ -944,7 +947,8 @@
+         case 't': return (4);
+         case 'u': return (3);
+         case 'v': return (2);
+-        case 'w': return (3);
++	/* change 3 to 2 here to fix w bug, NCF 1/31/95 */
++        case 'w': return (2);
+         case 'z': return (3);
+ 
+         default:

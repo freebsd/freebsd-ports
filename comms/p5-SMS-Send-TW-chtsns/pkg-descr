@@ -1,0 +1,2 @@
+SMS::Send::TW::chtsns is a SMS::Send driver
+which allows you to send messages through SNS service of CHT

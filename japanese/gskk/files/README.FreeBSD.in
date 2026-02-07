@@ -1,0 +1,44 @@
+かんな辞書 FreeBSD ports インストールマニュアル
+
+このマニュアルは，かんな辞書を FreeBSD ports でインストールする場合に，
+手動で行わなければならないことを，かんな辞書のマニュアルから抜粋したものです．
+
+
+1) 辞書登録ファイルの %%DICDIR%%/dics.dir に、
+   %%DICDIR%%/dics.dir.%%PORTNAME%% の内容を追加します。
+
+# cd %%DICDIR%%
+# cp dics.dir dics.dir.orig
+# cat dics.dir.%%PORTNAME%% >> dics.dir
+
+2) cannaserver を停止，起動します。
+
+(かんなサーバ停止)
+# %%PREFIX%%/etc/rc.d/canna.sh stop
+
+(cannaserverが停止していることを確認してください。停止していなければ
+ killコマンドでプロセスを停止させてください)
+
+(かんなサーバ起動)
+# %%PREFIX%%/etc/rc.d/canna.sh start
+
+3) ユーザ権限に戻って、ホームディレクトリに存在する各ユーザの .canna の
+   (use-dictionary ...) の部分に "%%PORTNAME%%" の一行を付け足して
+   ください。抜粋するとこんな感じです。
+
+(use-dictionary
+ "iroha"
+ "%%PORTNAME%%"  ← これを追加
+ "fuzokugo"
+ "hojomwd"
+ "hojoswd"
+ :bushu "bushu"
+ :user "user"
+ )
+
+4) 最後に頻度辞書を作成します。既に同名のユーザ辞書がインストールされている
+   場合、辞書を上書きするかどうか質問されます。必ず yes を選択してください。
+
+$ mkdic -fq %%PORTNAME%%
+Personal learning file of dictionary "%%PORTNAME%%" exists. Do you overwrite it ? (y/n)
+

@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2002-10-20 06:19:42.000000000 +0200
++++ Makefile.in	2013-03-16 13:24:43.000000000 +0100
+@@ -444,8 +444,8 @@
+ 	chmod 666 $(target)/Maelstrom-Scores
+ 
+ install_gamedocs:
+-	sh mkinstalldirs $(target)/
+-	cp -rv README* COPYING* Docs*	$(target)/
++	sh mkinstalldirs $(prefix)/share/doc/Maelstrom/
++	cp -rv README* COPYING* Docs/* $(prefix)/share/doc/Maelstrom/
+ 
+ # Rule to build tar-gzipped distribution package
+ $(PACKAGE)-$(VERSION).tar.gz: dist

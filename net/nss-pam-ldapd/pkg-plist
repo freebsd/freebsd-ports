@@ -1,0 +1,9 @@
+@sample etc/%%CONFIG%%.sample
+%%NSS%%lib/nss_ldap.so
+%%NSS%%lib/nss_ldap.so.%%NSS_LDAP_SHMAJOR%%
+%%PAM%%lib/pam_ldap.so
+%%PAM%%lib/pam_ldap.so.%%PAM_LDAP_SHMAJOR%%
+%%NSLCD%%sbin/nslcd
+%%NSLCD%%share/man/man5/nslcd.conf.5.gz
+%%NSLCD%%share/man/man8/nslcd.8.gz
+%%PAM%%share/man/man8/pam_ldap.8.gz

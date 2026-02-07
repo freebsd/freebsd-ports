@@ -1,0 +1,2 @@
+AnyEvent::Gearman is a module set of client/worker modules for Gearman for
+AnyEvent applications.

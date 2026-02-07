@@ -1,0 +1,17 @@
+--- jfbuild/Makefile.shared.orig	2024-02-19 08:23:00 UTC
++++ jfbuild/Makefile.shared
+@@ -3,8 +3,12 @@ EDITORLIB=libbuild.a
+ ENGINELIB=libengine.a
+ EDITORLIB=libbuild.a
+ 
+-SDL2CONFIG?=$(shell which sdl2-config || which false)
+-PKGCONFIG?=$(shell which pkg-config || which false)
++ifndef SDL2CONFIG
++SDL2CONFIG!=which sdl2-config || which false
++endif
++ifndef PKGCONFIG
++PKGCONFIG!=which pkg-config || which false
++endif
+ export SDL2CONFIG PKGCONFIG
+ 
+ BUILDCFLAGS=

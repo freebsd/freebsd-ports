@@ -1,0 +1,20 @@
+--- README.orig	2002-09-11 08:46:00 UTC
++++ README
+@@ -32,7 +32,7 @@
+           turn OFF processing code passed to the bind command.
+ 
+    -c <n>
+-          set further indent for continuations to n. default = 2
++          set further indent for continuations to n. default = 4
+ 
+    -d
+           remove braces in certain (safe) circumstances (default = OFF)
+@@ -79,7 +79,7 @@
+           turn on heuristic tests and warnings. (default = OFF)
+ 
+    -i <n>
+-          set indent for each level to n. default = 4
++          set indent for each level to n. default = 8
+ 
+    -I
+           Treat elseif and else the same way. (default = OFF)

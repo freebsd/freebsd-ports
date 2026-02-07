@@ -1,0 +1,64 @@
+--- Makefile.in.orig	Mon Dec 27 08:11:38 1999
++++ Makefile.in	Sat Feb 26 05:32:22 2000
+@@ -16,8 +16,10 @@
+ 
+ LIBS=@LIBS@
+ XLIBS=@X_LIBS@ @X_PRE_LIBS@ @X_EXTRA_LIBS@
+-DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DSELECTION
+-INSTALL=	cp
++DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DX_INC=\"@X_INC@\"
++INSTALL=	@INSTALL@
++INSTALL_PROGRAM=	@INSTALL_PROGRAM@
++INSTALL_DATA=	@INSTALL_DATA@
+ LN_S=	@LN_S@
+ 
+ # In case configure fails a description of many of the compilation options
+@@ -118,38 +120,29 @@
+ 	if test ! -d $(DESTDIR); then mkdir -p $(DESTDIR); fi
+ 	if test ! -d $(XWPELIBDIR); then mkdir -p $(XWPELIBDIR); fi
+ 	rm -f $(DESTDIR)/wpe $(DESTDIR)/xwpe $(DESTDIR)/we $(DESTDIR)/xwe
+-	$(INSTALL) xwpe $(DESTDIR)/we
+-	chmod ugo+x $(DESTDIR)/we
++	$(INSTALL_PROGRAM) xwpe $(DESTDIR)/we
+ 	(cd $(DESTDIR) && $(LN_S) we xwe)
+ 	(cd $(DESTDIR) && $(LN_S) we xwpe)
+ 	(cd $(DESTDIR) && $(LN_S) we wpe)
+ 	rm -f $(XWPELIBDIR)/help.xwpe
+ 	if test ! -f $(XWPELIBDIR)/syntax_def; then  \
+-	  $(INSTALL) syntax_def $(XWPELIBDIR)/syntax_def; \
+-	  chmod ugo=r $(XWPELIBDIR)/syntax_def; fi
++	  $(INSTALL_DATA) syntax_def $(XWPELIBDIR)/syntax_def; fi
+ 	if test ! -d $(MANDIR)/man1; then mkdir -p $(MANDIR)/man1; fi
+ 	rm -f $(MANDIR)/man1/xwpe.1 $(MANDIR)/man1/xwe.1 
+ 	rm -f $(MANDIR)/man1/wpe.1 $(MANDIR)/man1/we.1 
+-	$(INSTALL) xwe.1 wpe.1 we.1 $(MANDIR)/man1
+-	chmod ugo=r $(MANDIR)/man1/xwe.1 
+-	chmod ugo=r $(MANDIR)/man1/wpe.1 $(MANDIR)/man1/we.1 
++	$(INSTALL_DATA) xwe.1 wpe.1 we.1 $(MANDIR)/man1
+ 	if test -f libxwpe-x11.so; then \
+-	  $(INSTALL) libxwpe-x11.so $(XWPELIBDIR)/libxwpe-x11.so; fi
++	  $(INSTALL_DATA) libxwpe-x11.so $(XWPELIBDIR)/libxwpe-x11.so; fi
+ 	if test -f libxwpe-term.so; then \
+-	  $(INSTALL) libxwpe-term.so $(XWPELIBDIR)/libxwpe-term.so; fi
++	  $(INSTALL_DATA) libxwpe-term.so $(XWPELIBDIR)/libxwpe-term.so; fi
+ 
+ install:	install_fst
+-	$(INSTALL) help.xwpe_eng $(XWPELIBDIR)/help.xwpe
+-	chmod ugo=r $(XWPELIBDIR)/help.xwpe
+-	$(INSTALL) help.key_eng $(XWPELIBDIR)/help.key
+-	chmod ugo=r $(XWPELIBDIR)/help.key
+-	$(INSTALL) xwpe.1_eng $(MANDIR)/man1/xwpe.1
+-	chmod ugo=r $(MANDIR)/man1/xwpe.1
++	$(INSTALL_DATA) help.xwpe_eng $(XWPELIBDIR)/help.xwpe
++	$(INSTALL_DATA) help.key_eng $(XWPELIBDIR)/help.key
++	$(INSTALL_DATA) xwpe.1_eng $(MANDIR)/man1/xwpe.1
+ 
+ # German install uses old documention as no updated version is available
+ install_german:	install_fst
+-	$(INSTALL) old/we.help_gr $(XWPELIBDIR)/help.xwpe
+-	chmod ugo=r $(XWPELIBDIR)/help.xwpe
+-	$(INSTALL) old/xwpe.1_gr $(MANDIR)/man1/xwpe.1
+-	chmod ugo=r $(MANDIR)/man1/xwpe.1
++	$(INSTALL_DATA) old/we.help_gr $(XWPELIBDIR)/help.xwpe
++	$(INSTALL_DATA) old/xwpe.1_gr $(MANDIR)/man1/xwpe.1
+ 

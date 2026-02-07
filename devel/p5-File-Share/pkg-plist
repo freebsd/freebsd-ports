@@ -1,0 +1,3 @@
+%%SITE_PERL%%/File/Share.pm
+%%SITE_PERL%%/File/Share.pod
+%%PERL5_MAN3%%/File::Share.3.gz

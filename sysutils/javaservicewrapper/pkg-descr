@@ -1,0 +1,13 @@
+The Java Service Wrapper enables a Java application to be run as a Unix daemon.
+It also monitors the health of your application and JVM.
+
+Benefits:
+
+* There is no need for additional programming in your application to integrate
+  it with our product.
+* Automatic customizable response when something happens in your application
+  or JVM.
+* Notifications when there is a problem in need of attention.
+* Support better your customers thanks to our logging features.
+* You can schedule events in a standard way in various platforms.
+* Deploy and install your applications as a Unix daemon.

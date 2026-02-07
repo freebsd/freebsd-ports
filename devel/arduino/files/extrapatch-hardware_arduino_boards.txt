@@ -1,0 +1,43 @@
+--- hardware/arduino/boards.txt.orig	2024-01-29 02:52:44 UTC
++++ hardware/arduino/boards.txt
+@@ -565,3 +565,40 @@ robotMotor.build.pid=0x8039
+ robotMotor.build.core=robot
+ robotMotor.build.variant=robot_motor
+ 
++##############################################################
++
++atmega644.name=ATmega644
++atmega644.upload.protocol=stk500
++atmega644.upload.maximum_size=63488
++atmega644.upload.speed=38400
++atmega644.bootloader.low_fuses=0xFF
++atmega644.bootloader.high_fuses=0xDC
++atmega644.bootloader.extended_fuses=0xFD
++atmega644.bootloader.path=atmega644p
++atmega644.bootloader.file=atmega644p
++atmega644.bootloader.unlock_bits=0x3F
++atmega644.bootloader.lock_bits=0x0F
++atmega644.build.mcu=atmega644p
++atmega644.build.f_cpu=16000000L
++atmega644.build.core=atmega644
++atmega644.build.variant=atmega644p
++
++##############################################################
++
++atmega1284.name=ATmega1284
++atmega1284.upload.protocol=stk500
++atmega1284.upload.maximum_size=129024
++atmega1284.upload.speed=38400
++atmega1284.bootloader.low_fuses=0xFF
++atmega1284.bootloader.high_fuses=0xDC
++atmega1284.bootloader.extended_fuses=0xFD
++atmega1284.bootloader.path=atmega1284p
++atmega1284.bootloader.file=atmega1284p
++atmega1284.bootloader.unlock_bits=0x3F
++atmega1284.bootloader.lock_bits=0x0F
++atmega1284.build.mcu=atmega1284p
++atmega1284.build.f_cpu=16000000L
++atmega1284.build.core=atmega1284
++atmega1284.build.variant=atmega644p
++
++##############################################################

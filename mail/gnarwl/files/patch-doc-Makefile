@@ -1,0 +1,51 @@
+--- doc/Makefile.orig	2005-03-13 14:30:53 UTC
++++ doc/Makefile
+@@ -1,31 +1,29 @@
+ catch:
+ 	$(MAKE) -C .. all
+ 
+-all: clean manpage
++all: manpage
+ 
+ clean: 
+ 	rm -f *~ $(BIN).$(MAN_SEC)* $(SBIN).$(MAN_SEC)* DEADJOE
+ 
+ manpage:
+ 	@echo Generating manpage...
+-	@sed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(BIN).man | groff -man -Tascii > $(BIN).$(MAN_SEC)
+-	@sed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(SBIN).man | groff -man -Tascii > $(SBIN).$(MAN_SEC)
++	@sed "s,_CONFDIR_,$(CONFDIR),g ; s,_HOMEDIR_,$(HOMEDIR),g ; s,_MANSEC_,$(MAN_SEC),g" < $(BIN).man | groff -man -Tascii > $(BIN).$(MAN_SEC)
++	@sed "s,_CONFDIR_,$(CONFDIR),g ; s,_HOMEDIR_,$(HOMEDIR),g ; s,_MANSEC_,$(MAN_SEC),g" < $(SBIN).man | groff -man -Tascii > $(SBIN).$(MAN_SEC)
+ 
+ 
+ install:
+-	mkdir -m 755 -p $(DOCDIR) $(MANDIR)/man$(MAN_SEC)
+-	install -m 644 $(BIN).$(MAN_SEC) $(MANDIR)/man$(MAN_SEC)
+-	install -m 644 $(SBIN).$(MAN_SEC) $(MANDIR)/man$(MAN_SEC)
+-	install -m 644 FAQ $(DOCDIR)
+-	install -m 644 LICENSE $(DOCDIR)
+-	install -m 644 AUTHORS $(DOCDIR)
+-	install -m 644 INSTALL $(DOCDIR)
+-	install -m 644 ISPEnv.schema $(DOCDIR)
+-	install -m 644 ISPEnv2.schema $(DOCDIR)
+-	install -m 644 example.ldif $(DOCDIR)
+-	install -m 644 HISTORY $(DOCDIR)
+-	install -m 644 README $(DOCDIR)
+-	gzip -f -9 $(DOCDIR)/FAQ
+-	gzip -f -9 $(DOCDIR)/HISTORY
+-	gzip -f -9 $(MANDIR)/man$(MAN_SEC)/$(BIN).$(MAN_SEC)
+-	gzip -f -9 $(MANDIR)/man$(MAN_SEC)/$(SBIN).$(MAN_SEC)
++	mkdir -p $(DESTDIR)$(DOCDIR) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	$(BSD_INSTALL_MAN) $(BIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	$(BSD_INSTALL_MAN) $(SBIN).$(MAN_SEC) $(DESTDIR)$(MANDIR)/man$(MAN_SEC)
++	gzip -f -9 FAQ
++	gzip -f -9 HISTORY
++	$(BSD_INSTALL_DATA) FAQ.gz $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) HISTORY.gz $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) LICENSE $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) AUTHORS $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) INSTALL $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) ISPEnv.schema $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) ISPEnv2.schema $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) example.ldif $(DESTDIR)$(DOCDIR)
++	$(BSD_INSTALL_DATA) README $(DESTDIR)$(DOCDIR)

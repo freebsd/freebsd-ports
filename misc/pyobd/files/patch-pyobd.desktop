@@ -1,0 +1,16 @@
+--- pyobd.desktop.orig	2016-07-21 17:05:31 UTC
++++ pyobd.desktop
+@@ -1,9 +1,10 @@
+ [Desktop Entry]
+ Encoding=UTF8
+-Icon=/usr/share/pyobd/pyobd.gif
+-Name=pyOBD: OBD2 Diagnostics
++Icon=pyOBD
++Name=pyOBD
++GenericName=OBD2 Diagnostics
+ Comment=Car On-Board 2 vehicle diagnostics (ELM-32x compatible interface)
+-Exec=python /usr/bin/pyobd
++Exec=pyobd
+ Terminal=false
+ Type=Application
+ Categories=Utility;

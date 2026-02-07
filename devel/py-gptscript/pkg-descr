@@ -1,0 +1,3 @@
+The GPTScript Python module is a library that provides a simple interface to
+create and run gptscripts within Python applications, and Jupyter notebooks. It
+allows you to define tools, execute them, and process the responses.

@@ -1,0 +1,5 @@
+TIMESTAMP = 1718573397
+SHA256 (openmx/openmx3.9.tar.gz) = 27bb56bd4d1582d33ad32108fb239b546bdd1bdffd6f5b739b4423da1ab93ae2
+SIZE (openmx/openmx3.9.tar.gz) = 166014953
+SHA256 (openmx/patch3.9.9.tar.gz) = 20cccc4e3412a814a53568f400260e90f79f0bfb7e2bed84447fe071b26edd38
+SIZE (openmx/patch3.9.9.tar.gz) = 1074993

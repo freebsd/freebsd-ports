@@ -1,0 +1,24 @@
+--- power/tests.py.orig	2012-12-07 08:20:49 UTC
++++ power/tests.py
+@@ -27,10 +27,10 @@ class TestPowerManagementCommon(unittest.TestCase):
+ 
+ class TestObserver(power.PowerManagementObserver):
+     def on_power_sources_change(self, power_management):
+-        print "on_power_sources_change"
++        print("on_power_sources_change")
+ 
+     def on_time_remaining_change(self, power_management):
+-        print "on_time_remaining_change"
++        print("on_time_remaining_change")
+ 
+ 
+ if __name__ == "__main__":
+@@ -38,7 +38,7 @@ if __name__ == "__main__":
+     p = power.PowerManagement()
+     p.add_observer(o)
+     try:
+-        print "Power management observer is registered"
++        print("Power management observer is registered")
+         import time
+         while True:
+             time.sleep(1)

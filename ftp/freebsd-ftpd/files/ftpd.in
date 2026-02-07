@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: ftpd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to run freebsd-ftpd
+# as a standalone daemon:
+#
+# ftpd_enable (bool):		    Run freebsd-ftpd FTP server (or NO).
+# ftpd_flags (str):		    Use this for flags OTHER than -D
+
+. /etc/rc.subr
+
+load_rc_config $name
+
+name="ftpd"
+rcvar="ftpd_enable"
+
+: ${ftpd_enable=NO}
+
+command="/usr/local/libexec/${name}"
+command_args="-D"
+
+run_rc_command "$1"

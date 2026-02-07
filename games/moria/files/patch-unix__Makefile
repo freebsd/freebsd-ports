@@ -1,0 +1,55 @@
+--- unix/Makefile.orig	1994-07-21 15:37:08.000000000 -0700
++++ unix/Makefile	2014-06-09 19:44:28.000000000 -0700
+@@ -1,17 +1,13 @@
+ # BINDIR is the directory where the moria binary while be put
+ # LIBDIR is where the other files (score, news, hours) will be put
+ # LIBDIR must be the same directory defined in config.h
+-# OWNER is who you want the game to be chown to.
+-# GROUP is who you wnat the game to be chgrp to.
+-BINDIR = /home/zariski/grabiner/moria
+-LIBDIR = /home/zariski/grabiner/moria/files
+-OWNER = grabiner
+-GROUP = grad
++BINDIR = ${STAGEDIR}${PREFIX}/bin
++LIBDIR = ${STAGEDIR}${DATADIR}
+ 
+ # For testing and debugging the program, it is best to use this line.
+ # CFLAGS = -g
+ # For playing the game, you may want to use this line
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ # For BSD Systems
+ CURSES = -lcurses -ltermcap
+@@ -26,7 +22,7 @@
+ # Normal systems don't require anything here.
+ LFLAGS = 
+ 
+-CC = cc
++#CC = cc
+ 
+ SRCS = main.c misc1.c misc2.c misc3.c misc4.c store1.c files.c io.c \
+ 	create.c desc.c generate.c sets.c dungeon.c creature.c death.c \
+@@ -60,17 +56,11 @@
+ # you must define BINDIR and LIBDIR before installing
+ # assumes that BINDIR and LIBDIR exist
+ install:
+-	chmod 755 $(BINDIR)
+-	cp moria $(BINDIR)
+-	chmod 4711 $(BINDIR)/moria
+-	chmod 711 $(LIBDIR)
+-	(cd files; cp $(LIBFILES) $(LIBDIR))
+-	(cd $(LIBDIR); chmod 444 $(LIBFILES))
+-	(cd $(LIBDIR); touch scores; chmod 644 scores)
+-	chown $(OWNER) $(BINDIR)/moria
+-	chgrp $(GROUP) $(BINDIR)/moria
+-	(cd $(LIBDIR); chown $(OWNER) $(LIBFILES) scores)
+-	(cd $(LIBDIR); chgrp $(GROUP) $(LIBFILES) scores)
++	-${MKDIR} $(BINDIR)
++	${BSD_INSTALL_PROGRAM} moria $(BINDIR)
++	-${MKDIR} $(LIBDIR)
++	(cd files; ${BSD_INSTALL_DATA} $(LIBFILES) $(LIBDIR))
++	(cd $(LIBDIR); ${TOUCH} scores)
+ # If you are short on disk space, or aren't interested in debugging moria.
+ #	strip $(BINDIR)/moria
+ 

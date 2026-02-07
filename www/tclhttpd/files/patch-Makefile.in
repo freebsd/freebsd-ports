@@ -1,0 +1,62 @@
+--- Makefile.in.orig	2003-08-11 18:46:57.000000000 +0200
++++ Makefile.in	2014-02-21 16:44:55.000000000 +0100
+@@ -122,7 +122,7 @@
+ limitlibdir = $(libdir)/@LIMIT_PACKAGE@@LIMIT_VERSION@
+ pkgincludedir = $(includedir)/@PACKAGE@@VERSION@
+ SERVER_ROOT = @SERVER_ROOT@
+-htdocsdir = $(SERVER_ROOT)/htdocs
++htdocsdir = $(prefix)/share/@PACKAGE@@VERSION@
+ customdir = $(SERVER_ROOT)/custom
+ 
+ top_builddir = .
+@@ -197,7 +197,7 @@
+ 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ CONFIGDIR = @CONFIGDIR@
+-mkinstalldirs = $(SHELL) $(CONFIGDIR)/mkinstalldirs
++mkinstalldirs = mkdir -p
+ CONFIG_CLEAN_FILES =
+ 
+ CPPFLAGS = @CPPFLAGS@
+@@ -220,7 +220,7 @@
+ # for the BINARIES that you specified above have already been done.
+ #========================================================================
+ 
+-all: binaries libraries doc
++all: libraries doc
+ 
+ #========================================================================
+ # The binaries target builds executable programs, Windows .dll's, unix
+@@ -236,7 +236,7 @@
+ 
+ doc:
+ 
+-install: all install-binaries install-libraries install-doc
++install: all install-libraries install-doc
+ 
+ install-binaries: binaries install-lib-binaries
+ 
+@@ -328,21 +328,18 @@
+ 	$(INSTALL_DATA) $(srcdir)/INSTALL $(DESTDIR)$(htdocsdir)/links/INSTALL.txt
+ 	@echo "Copying license.terms into $(DESTDIR)$(htdocsdir)"
+ 	$(INSTALL_DATA) $(srcdir)/license.terms $(DESTDIR)$(htdocsdir)/license.terms
+-
++	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(DESTDIR)$(mandir)/man1/tclhttpd.1
+ install-custom:
+ 	@echo "Adding custom code in $(DESTDIR)$(customdir)"
+ 	$(TCLSH_PROG) `@CYGPATH@ $(srcdir)/bin/CopyDist` `@CYGPATH@ $(srcdir)/custom` `@CYGPATH@ $(DESTDIR)$(customdir)`
+ 
+ install-doc: install-htdocs
+-	@echo "Installing man page"
+-	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1
+-	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(DESTDIR)$(mandir)/man1/httpd.1
+ 	@echo "Installing README"
+ 	$(INSTALL_DATA) $(srcdir)/README $(DESTDIR)$(SERVER_ROOT)
+ 	$(INSTALL_DATA) $(srcdir)/bin/README_custom $(DESTDIR)$(SERVER_ROOT)
+ 
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(pkglibdir) $(DESTDIR)$(cryptlibdir) $(DESTDIR)$(prefix)/bin $(DESTDIR)$(htdocsdir) $(DESTDIR)$(customdir)
++	$(mkinstalldirs) $(DESTDIR)$(pkglibdir) $(DESTDIR)$(prefix)/bin $(DESTDIR)$(htdocsdir) $(DESTDIR)$(customdir)
+ 
+ clean:  
+ 	-test -z "$(BINARIES)" || rm -f $(BINARIES)

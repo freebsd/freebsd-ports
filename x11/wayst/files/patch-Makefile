@@ -1,0 +1,32 @@
+--- Makefile.orig	2025-06-01 11:32:46 UTC
++++ Makefile
+@@ -1,5 +1,5 @@ EXEC = wayst
+ EXEC = wayst
+-INSTALL_DIR = /usr/local/bin
++PREFIX ?= /usr/local/bin
+ 
+ ARGS =
+ 
+@@ -37,8 +37,7 @@ else
+ 	CFLAGS = -std=c18 -MD -fshort-enums
+ 	LDFLAGS =
+ else
+-	CFLAGS = -std=c18 -MD -O2 -mtune=generic -ffast-math -fshort-enums -flto=auto
+-	LDFLAGS = -O2 -flto=auto
++	CFLAGS += -std=c18 -MD
+ endif
+ 
+ ifeq ($(libutf8proc),off)
+@@ -102,10 +101,10 @@ install:
+ 	$(RM) -f $(EXEC) $(OBJ) $(OBJ:.o=.d)
+ 
+ install:
+-	cp $(EXEC) $(INSTALL_DIR)/
++	cp $(EXEC) $(DESTDIR)$(PREFIX)/bin/$(EXEC)
+ 
+ uninstall:
+-	$(RM) $(INSTALL_DIR)/$(EXEC)
++	$(RM) $(DESTDIR)$(PREFIX)/$(EXEC)
+ 
+ -include $(OBJ:.o=.d)
+ 

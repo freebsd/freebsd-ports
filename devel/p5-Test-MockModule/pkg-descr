@@ -1,0 +1,2 @@
+Test::MockModule lets you temporarily redefine subroutines in other
+packages for the purposes of unit testing.

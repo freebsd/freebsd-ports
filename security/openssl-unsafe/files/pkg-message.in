@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+/!\ ================================ /!\ ============================== /!\
+/!\                                                                     /!\
+/!\ This openssl version is for security testing/scanning purposes only /!\
+/!\                                                                     /!\
+/!\                   DO NOT USE FOR PRODUCTION PURPOSES                /!\
+/!\                                                                     /!\
+/!\ ================================ /!\ ============================== /!\
+EOM
+}
+]

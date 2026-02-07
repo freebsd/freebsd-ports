@@ -1,0 +1,2 @@
+Mojolicous::Plugin::Mail is a plugin for Mojolicious apps to send mail using
+MIME::Lite. Mojolicious 4.0 ready.

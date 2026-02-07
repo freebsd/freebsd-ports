@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+#  @(#)ikon2xbm 1.4 91/05/06
+#
+#  Copyright (c) Steve Kinzler - March 1991.
+#
+#  Permission is given to distribute these sources, as long as the
+#  copyright messages are not removed, and no monies are exchanged.
+#
+#  No responsibility is taken for any errors on inaccuracies inherent
+#  either to the comments or the code of this program, but if reported
+#  to me, then an attempt will be made to fix them.
+
+PATH=$PATH:/usr/bin/X11; export PATH
+
+# ikon2xbm - convert a square Blit ikon bitmap to an X11 bitmap
+# stdin/stdout filter
+# requires some bitmap filters from the pbmplus package
+# assumes 16 valid data bits per item, 1 depth bit, and width = height
+# kludge by kinzler@cs.indiana.edu
+
+tmp=/tmp/ikon2xbm$$
+trap "rm -f $tmp; exit" 0 1 2 13 15
+
+sed -e 's/\(0x....\),\(0x....\),\(0x....\),/\1\
+\2\
+\3/' > $tmp
+
+dim=`wc -l < $tmp | awk '{ print 4 * sqrt(144) }'`
+
+pr -l1 -t -8 -s, < $tmp |
+(cat << EOF
+/* Format_version=1, Width=$dim, Height=$dim, Depth=1, Valid_bits_per_item=16
+ */
+EOF
+sed -e 's/^/	/' -e 's/$/,/' -e '$s/,$//') |
+icontopbm |
+pbmtoxbm

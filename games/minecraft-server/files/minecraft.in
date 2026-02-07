@@ -1,0 +1,110 @@
+#!/bin/sh
+
+# PROVIDE: minecraft
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# rc.conf variables:
+# minecraft_enable (Default: NO)
+# minecraft_mems (Default: 1024M)
+# minecraft_memx (Default: 1024M)
+# minecraft_args (Default: "")
+. /etc/rc.subr
+
+name=minecraft
+rcvar=minecraft_enable
+desc="Dedicated server for the game Minecraft"
+
+load_rc_config $name
+
+minecraft_mems=${minecraft_mems:-"1024M"}
+minecraft_memx=${minecraft_memx:-"1024M"}
+minecraft_args=${minecraft_args:-""}
+
+extra_commands="console status kill"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+console_cmd="${name}_console"
+status_cmd="${name}_status"
+kill_cmd="${name}_kill"
+
+export JAVA_VERSION=${minecraft_java_version:-"%%JAVA_VERSION%%"}
+
+is_running()
+{
+	pgrep -qu mcserver java
+	return $?
+}
+
+minecraft_start()
+{
+	if is_running; then
+		echo "${name} is already running."
+	elif [ ${minecraft_mems%?} -gt ${minecraft_memx%?} ]; then
+		echo "ERROR: minecraft_mems is set greater than minecraft_memx."
+		echo "ERROR: Set minecraft_memx to be equal or greater than minecraft_mems in rc.conf."
+	else
+		if [ -n "${minecraft_mem}" ]; then
+			echo "WARNING: minecraft_mem is deprecated. Please change this to minecraft_memx."
+			minecraft_memx=${minecraft_mem}
+		fi
+		echo "Starting ${name}."
+		cd %%PREFIX%%/minecraft-server
+		su mcserver -c "%%LOCALBASE%%/bin/tmux new-session -s minecraft -d '%%LOCALBASE%%/bin/java -Xmx${minecraft_memx} -Xms${minecraft_mems} ${minecraft_args} -jar %%PREFIX%%/minecraft-server/server.jar nogui'"
+	fi
+}
+
+minecraft_stop()
+{
+	if is_running; then
+		echo "Stopping ${name}."
+		su mcserver -c "%%LOCALBASE%%/bin/tmux send-keys -t ${name} \"stop\" ENTER"
+
+		i=0
+		while [ $i -lt 10 ]; do
+			i=$(($i + 1))
+			if is_running; then
+				sleep 1
+			else
+				echo "${name} has been stopped."
+				return
+			fi
+		done
+		echo "WARN: ${name} could not be stopped or is taking longer than expected."
+		echo "WARN: To view the console, type 'service ${name} console'"
+		echo "WARN: To kill ${name}, type 'service ${name} kill'"
+	else
+		echo "${name} is not running."
+	fi
+}
+
+minecraft_console()
+{
+	if ! is_running; then
+		echo "${name} is not running."
+	else
+		export TERM=xterm
+		su mcserver -c "%%LOCALBASE%%/bin/tmux attach-session -t ${name}"
+	fi
+}
+
+minecraft_status()
+{
+	if is_running; then
+		echo "${name} is running."
+	else
+		echo "${name} is not running."
+	fi
+}
+
+minecraft_kill()
+{
+	if ! is_running; then
+		echo "${name} is not running."
+	else
+		pkill -KILL -u mcserver java
+		echo "${name} has been killed."
+	fi
+}
+
+run_rc_command "$1"

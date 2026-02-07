@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Plack/Middleware/ForceEnv.pm
+%%PERL5_MAN3%%/Plack::Middleware::ForceEnv.3.gz

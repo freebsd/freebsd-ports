@@ -1,0 +1,15 @@
+%%SITE_PERL%%/DBD/Excel.pm
+%%PORTEXAMPLES%%share/examples/DBD-Excel/README
+%%PORTEXAMPLES%%share/examples/DBD-Excel/dbdtest.xls
+%%PORTEXAMPLES%%share/examples/DBD-Excel/newxl.xls
+%%PORTEXAMPLES%%share/examples/DBD-Excel/res_hidden
+%%PORTEXAMPLES%%share/examples/DBD-Excel/res_testj
+%%PORTEXAMPLES%%share/examples/DBD-Excel/res_tex
+%%PORTEXAMPLES%%share/examples/DBD-Excel/res_texj
+%%PORTEXAMPLES%%share/examples/DBD-Excel/testj.pl
+%%PORTEXAMPLES%%share/examples/DBD-Excel/testj.xls
+%%PORTEXAMPLES%%share/examples/DBD-Excel/tex.pl
+%%PORTEXAMPLES%%share/examples/DBD-Excel/texj.pl
+%%PORTEXAMPLES%%share/examples/DBD-Excel/thidden.pl
+%%PORTEXAMPLES%%share/examples/DBD-Excel/thidden.xls
+%%PERL5_MAN3%%/DBD::Excel.3.gz

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: clamav_freshclam
+# REQUIRE: LOGIN clamav_clamd
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable the freshclam daemon:
+#
+# clamav_freshclam_enable="YES"
+# clamav_freshclam_flags="<set as needed>"
+#
+# See freshclam(1) for flags
+#
+
+. /etc/rc.subr
+
+name=clamav_freshclam
+rcvar=clamav_freshclam_enable
+
+: ${clamav_freshclam_svcj_options:="net_basic"}
+
+# read settings, set default values
+load_rc_config ${name}
+
+: ${clamav_freshclam_enable:=NO}
+: ${clamav_freshclam_pidfile=%%RUNDIR%%/freshclam.pid}
+
+command=%%PREFIX%%/bin/freshclam
+pidfile=${clamav_freshclam_pidfile}
+command_args="--daemon -p ${pidfile}"
+required_dirs=%%DBDIR%%
+required_files=%%PREFIX%%/etc/freshclam.conf
+
+run_rc_command "$1"

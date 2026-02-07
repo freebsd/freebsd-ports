@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Edit %%PREFIX%%/etc/ldap.conf in order to use this module.  Then
+create a %%LOCALBASE%%/etc/pam.d/ldap with a line similar to the following:
+
+login	auth	sufficient	%%PREFIX%%/lib/pam_ldap.so
+EOM
+}
+]

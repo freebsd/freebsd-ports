@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	2021-05-28 18:48:48 UTC
++++ doc/Makefile.in
+@@ -2223,7 +2223,7 @@ distdir-am: $(DISTFILES)
+ 	  dist-info
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(INFO_DEPS) $(MANS)
++all-am: Makefile $(MANS)
+ installdirs:
+ 	for dir in "$(DESTDIR)$(infodir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+@@ -2279,7 +2279,7 @@ info: info-am
+ 
+ info-am: $(INFO_DEPS)
+ 
+-install-data-am: install-info-am install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

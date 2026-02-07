@@ -1,0 +1,34 @@
+--- dlgc/Makefile.orig	2002-07-26 08:53:14 UTC
++++ dlgc/Makefile
+@@ -4,9 +4,8 @@
+ # Description: DLGC Makefile
+ # Author: Michal Safranek
+ 
+-CC = gcc
+-CPP = g++
+-CFLAGS = -g -I.. -Wall
++CFLAGS += -I..
++CXXFLAGS += -I..
+ LIBS = -lncurses ../libtn.a
+ 
+ .SUFFIXES: .c .cpp .h
+@@ -14,16 +13,16 @@ LIBS = -lncurses ../libtn.a
+ all: dlgc
+ 
+ ../libtn.a:
+-	(cd .. && make libtn.a)
++	(cd .. && ${MAKE} libtn.a)
+ 
+ dlgc: dlgc.o ../libtn.a
+-	$(CC) -o dlgc dlgc.o $(CFLAGS) $(LIBS) -lstdc++
++	$(CXX) -o dlgc dlgc.o $(CXXFLAGS) $(LIBS)
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ .cpp.o:
+-	$(CPP) $(CFLAGS) -c $<
++	$(CXX) $(CXXFLAGS) -c $<
+ 
+ clean:
+ 	rm -f core *~ *.o dlgc

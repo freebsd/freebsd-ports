@@ -1,0 +1,3 @@
+VC Intrinsics project contains a set of new intrinsics on top of core
+LLVM IR instructions that represent SIMD semantics of a program
+targeting GPU.

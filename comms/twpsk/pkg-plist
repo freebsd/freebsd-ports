@@ -1,0 +1,9 @@
+bin/twpsk
+share/man/man1/twpsk.1.gz
+share/X11/app-defaults/Twpsk
+share/applications/twpsk.desktop
+share/pixmaps/twpsk.png
+%%DATADIR%%/psk31.cod
+%%DATADIR%%/twpskDir/Brag
+%%DATADIR%%/twpskDir/LongCQ
+%%DATADIR%%/twpskDir/ShortCQ

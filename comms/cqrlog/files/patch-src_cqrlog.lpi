@@ -1,0 +1,20 @@
+--- src/cqrlog.lpi.orig	2021-01-16 14:03:35 UTC
++++ src/cqrlog.lpi
+@@ -40,7 +40,7 @@
+     <RunParams>
+       <local>
+         <CommandLineParams Value="--DEBUG=0"/>
+-        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
++        <LaunchingApplication PathPlusParams="%%LOCALBASE%%/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+       </local>
+       <environment>
+         <UserOverrides Count="2">
+@@ -53,7 +53,7 @@
+         <Mode0 Name="default">
+           <local>
+             <CommandLineParams Value="--DEBUG=0"/>
+-            <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
++            <LaunchingApplication PathPlusParams="%%LOCALBASE%%/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+           </local>
+           <environment>
+             <UserOverrides Count="2">

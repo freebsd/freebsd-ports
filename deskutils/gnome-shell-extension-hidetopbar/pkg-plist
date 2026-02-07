@@ -1,0 +1,17 @@
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/Settings.ui
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/convenience.js
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/desktopIconsIntegration.js
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/extension.js
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/intellihide.js
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/metadata.json
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/panelVisibilityManager.js
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/prefs.js
+share/locale/ca/LC_MESSAGES/hidetopbar.po
+share/locale/de/LC_MESSAGES/hidetopbar.po
+share/locale/fr/LC_MESSAGES/hidetopbar.po
+share/locale/it_IT/LC_MESSAGES/hidetopbar.po
+share/locale/nl/LC_MESSAGES/hidetopbar.po
+share/locale/pl/LC_MESSAGES/hidetopbar.po
+share/locale/pt_BR/LC_MESSAGES/hidetopbar.po
+share/locale/ru_RU/LC_MESSAGES/hidetopbar.po
+share/locale/zh_CN/LC_MESSAGES/hidetopbar.po

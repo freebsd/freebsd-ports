@@ -1,0 +1,15 @@
+include/KPim6/KMbox/KMbox/MBox
+include/KPim6/KMbox/KMbox/MBoxEntry
+include/KPim6/KMbox/kmbox/kmbox_export.h
+include/KPim6/KMbox/kmbox/mbox.h
+include/KPim6/KMbox/kmbox/mboxentry.h
+include/KPim6/KMbox/kmbox_version.h
+lib/cmake/KPim6Mbox/KPim6MboxConfig.cmake
+lib/cmake/KPim6Mbox/KPim6MboxConfigVersion.cmake
+lib/cmake/KPim6Mbox/KPim6MboxTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KPim6Mbox/KPim6MboxTargets.cmake
+lib/libKPim6Mbox.so
+lib/libKPim6Mbox.so.6
+lib/libKPim6Mbox.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+share/qlogging-categories6/kmbox.categories
+share/qlogging-categories6/kmbox.renamecategories

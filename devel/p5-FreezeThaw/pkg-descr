@@ -1,0 +1,6 @@
+Converts data to/from stringified form, appropriate for
+saving-to/reading-from permanent storage.
+
+Deals with objects, circular lists, repeated appearance of
+the same refence. Does not deal with overloaded stringify
+operator yet.

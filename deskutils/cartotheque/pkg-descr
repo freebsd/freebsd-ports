@@ -1,0 +1,4 @@
+An application for managing notes on small cards (like punch cards :).
+The application uses a directory based repository for cards with various
+contents. Currently only one contents is supported, and that is RTF
+contents (NSAttributedString) editable by a text view.

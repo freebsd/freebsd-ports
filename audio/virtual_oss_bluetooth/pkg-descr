@@ -1,0 +1,6 @@
+Bluetooth backend virtual_oss.
+
+This is an extension for the base system version of virtual_oss. It enables
+bluetooth audio support, with the option of also including AAC audio support.
+The backend gets loaded dynamically only when a virtual_oss(8) invocation uses
+a bluetooth device.

@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2024-10-23 22:32:38 UTC
++++ CMakeLists.txt
+@@ -75,7 +75,7 @@ set(CCTZ_HDRS
+   include/cctz/zone_info_source.h
+   include/cctz/civil_time.h
+   )
+-add_library(cctz
++add_library(cctz SHARED
+   src/civil_time_detail.cc
+   src/time_zone_fixed.cc
+   src/time_zone_fixed.h
+@@ -107,6 +107,11 @@ add_library(cctz::cctz ALIAS cctz)
+   target_link_libraries(cctz PUBLIC ${CoreFoundation})
+ endif()
+ add_library(cctz::cctz ALIAS cctz)
++set_target_properties(cctz PROPERTIES
++    OUTPUT_NAME "cctz"
++    VERSION ${VERSION}
++    SOVERSION ${SOVERSION}
++)
+ 
+ if (BUILD_TOOLS)
+   add_executable(time_tool src/time_tool.cc)
+@@ -155,7 +160,7 @@ if (BUILD_TESTING)
+       time_zone_format_test
+       time_zone_lookup_test
+     PROPERTY
+-      ENVIRONMENT "TZDIR=${CMAKE_CURRENT_SOURCE_DIR}/testdata/zoneinfo"
++      ENVIRONMENT "TZDIR=/usr/share/zoneinfo"
+     )
+ 
+   if (BUILD_BENCHMARK)

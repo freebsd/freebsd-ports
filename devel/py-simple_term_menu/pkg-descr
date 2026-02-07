@@ -1,0 +1,24 @@
+simple-term-menu creates simple menus for interactive command line programs. It
+can be used to offer a choice of different options to the user. Menu entries
+can be selected with the arrow, j/k, or emacs (C-n/C-p) keys. The module uses
+the terminfo database to detect terminal features automatically and disables
+styles that are not available. Currently, Linux and macOS are supported.
+
+Usage: Create a menu with the default style
+
+Create an instance of the class TerminalMenu and pass the menu entries as a
+list of strings to the constructor. Call the show method to output the menu
+and wait for keyboard input:
+
+#!/usr/bin/env python3
+
+from simple_term_menu import TerminalMenu
+
+def main():
+    options = ["entry 1", "entry 2", "entry 3"]
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    print(f"You have selected {options[menu_entry_index]}!")
+
+if __name__ == "__main__":
+    main()

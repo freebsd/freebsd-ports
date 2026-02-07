@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# PROVIDE: sabnzbd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# sabnzbd_enable (bool):        Set to NO by default.
+#                       Set it to YES to enable it.
+# sabnzbd_conf_dir:     Directory where sabnzbd configuration
+#                       data is stored.
+#                       Default: %%PREFIX%%/sabnzbd
+# sabnzbd_user:         The user account sabnzbd daemon runs as what
+#                       you want it to be. It uses '_sabnzbd' user by
+#                       default. Do not sets it as empty or it will run
+#                       as root.
+# sabnzbd_group:        The group account sabnzbd daemon runs as what
+#                       you want it to be. It uses '_sabnzbd' group by
+#                       default. Do not sets it as empty or it will run
+#                       as wheel.
+# sabnzbd_pidfile:      Set the location of the sabnzbd pidfile
+
+. /etc/rc.subr
+
+name=sabnzbd
+rcvar=sabnzbd_enable
+load_rc_config ${name}
+
+: ${sabnzbd_enable:=NO}
+: ${sabnzbd_user:=_sabnzbd}
+: ${sabnzbd_group:=_sabnzbd}
+: ${sabnzbd_conf_dir="%%PREFIX%%/sabnzbd"}
+: ${sabnzbd_pidfile:="/var/run/sabnzbd/sabnzbd.pid"}
+
+pidfile=${sabnzbd_pidfile}
+
+start_precmd="${name}_prestart"
+command_interpreter="%%PYTHON_CMD%%"
+command="%%PREFIX%%/bin/SABnzbd.py"
+command_args="--daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini --pidfile ${pidfile}"
+
+sabnzbd_prestart()
+{
+	PATH=${PATH}:%%PREFIX%%/bin:%%PREFIX%%/sbin
+	export LC_CTYPE="en_US.UTF-8"
+	for sabdir in ${sabnzbd_conf_dir} ${pidfile%/*}; do
+		if [ ! -d "${sabdir}" ]; then
+			install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${sabdir}
+		fi
+	done
+}
+
+run_rc_command "$1"

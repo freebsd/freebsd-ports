@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-10-29 11:37:45 UTC
++++ Makefile
+@@ -236,7 +236,7 @@ BIN_FILES = bin/
+ 
+ prefix   ?= /usr/local
+ version  := $(shell cat version)
+-xcrysden  = xcrysden-$(version)
++xcrysden  = xcrysden
+ 
+ install: xcrysden
+ 	@echo

@@ -1,0 +1,5 @@
+Hyper-V Data Exchange Service (KVP),
+users command line utility
+
+Provides a mechanism to exchange basic metadata between
+the virtual machine and the host.

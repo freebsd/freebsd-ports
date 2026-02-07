@@ -1,0 +1,7 @@
+bin/ilbc_test
+include/ilbc.h
+include/ilbc_export.h
+lib/libilbc.so
+lib/libilbc.so.3
+lib/libilbc.so.3.0.4
+libdata/pkgconfig/libilbc.pc

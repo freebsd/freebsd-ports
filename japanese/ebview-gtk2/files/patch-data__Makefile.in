@@ -1,0 +1,19 @@
+--- data/Makefile.in.orig
++++ data/Makefile.in
+@@ -304,13 +304,13 @@
+ 
+ install:
+ 	if test -r $(MKINSTALLDIRS); then \
+-		$(MKINSTALLDIRS) $(pkgdatadir); \
++		$(MKINSTALLDIRS) $(DESTDIR)$(pkgdatadir); \
+ 	else \
+-		$(top_srcdir)/mkinstalldirs $(pkgdatadir); \
++		$(top_srcdir)/mkinstalldirs $(DESTDIR)$(pkgdatadir); \
+ 	fi; \
+ 	data="$(data)"; \
+ 	for file in $$data; do \
+-		$(INSTALL_DATA) $(srcdir)/$$file $(pkgdatadir)/$$file; \
++		$(INSTALL_DATA) $(srcdir)/$$file $(DESTDIR)$(pkgdatadir)/$$file; \
+ 	done;
+ 
+ # Define this as empty until I found a useful application.

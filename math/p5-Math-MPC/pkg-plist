@@ -1,0 +1,14 @@
+%%SITE_ARCH%%/Math/MPC.pm
+%%SITE_ARCH%%/Math/MPC.pod
+%%SITE_ARCH%%/Math/MPC/Ball.pm
+%%SITE_ARCH%%/Math/MPC/Ball.pod
+%%SITE_ARCH%%/Math/MPC/Constant.pm
+%%SITE_ARCH%%/Math/MPC/Radius.pm
+%%SITE_ARCH%%/Math/MPC/Radius.pod
+%%SITE_ARCH%%/auto/Math/MPC/Ball/Ball.so
+%%SITE_ARCH%%/auto/Math/MPC/Constant/Constant.so
+%%SITE_ARCH%%/auto/Math/MPC/MPC.so
+%%SITE_ARCH%%/auto/Math/MPC/Radius/Radius.so
+%%PERL5_MAN3%%/Math::MPC.3.gz
+%%PERL5_MAN3%%/Math::MPC::Ball.3.gz
+%%PERL5_MAN3%%/Math::MPC::Radius.3.gz

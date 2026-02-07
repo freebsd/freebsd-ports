@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/String::LRC.3.gz
+%%SITE_ARCH%%/String/LRC.pm
+%%SITE_ARCH%%/String/LRC.pod
+%%SITE_ARCH%%/String/bench.pl
+%%SITE_ARCH%%/auto/String/LRC/LRC.so

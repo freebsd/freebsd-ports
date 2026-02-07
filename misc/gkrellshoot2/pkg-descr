@@ -1,0 +1,3 @@
+This plugin puts a lock and shoot button on your GKrellM 2, It uses
+ImageMagick for screen capture and can be configured for your screen
+saver program. Known to work with either Xlock or xscreensaver.

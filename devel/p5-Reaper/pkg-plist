@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Reaper.pm
+%%SITE_PERL%%/reaper.pm
+%%PERL5_MAN3%%/Reaper.3.gz
+%%PERL5_MAN3%%/reaper.3.gz

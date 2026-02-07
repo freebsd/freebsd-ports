@@ -1,0 +1,8 @@
+AUGUSTUS is a program that predicts genes in eukaryotic genomic sequences.
+
+AUGUSTUS usually belongs to the most accurate programs for the species it is
+trained for. Often it is the most accurate ab initio program. For example, at
+the independent gene finder assessment (EGASP) on the human ENCODE regions
+AUGUSTUS was the most accurate gene finder among the tested ab initio programs.
+At the more recent nGASP (worm), it was among the best in the ab initio and
+transcript-based categories. See accuracy statistics for further details.

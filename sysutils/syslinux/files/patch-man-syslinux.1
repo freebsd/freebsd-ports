@@ -1,0 +1,70 @@
+--- man/syslinux.1.orig	2010-10-20 21:25:38.000000000 +0200
++++ man/syslinux.1	2010-11-16 14:50:50.947688888 +0100
+@@ -7,21 +7,23 @@
+ .I device
+ .SH DESCRIPTION
+ \fBSyslinux\fP is a boot loader for the Linux operating system which
+-operates off an MS-DOS/Windows FAT filesystem. It is intended to
++operates off a FAT filesystem. It is intended to
+ simplify first-time installation of Linux, and for creation of rescue
+ and other special-purpose boot disks.
+ .PP
+-In order to create a bootable Linux floppy using \fBSyslinux\fP, prepare a
+-normal MS-DOS formatted floppy. Copy one or more Linux kernel files to
+-it, then execute the command:
++In order to create a bootable Linux disk using \fBSyslinux\fP, prepare a
++normal FAT formatted disk (or file image), and
++execute the command:
+ .IP
+ .B syslinux \-\-install /dev/fd0
+ .PP
+-This will alter the boot sector on the disk and copy a file named
+-.I ldlinux.sys
+-into its root directory.
++This will alter the boot sector on the disk, copy a file named
++.I LDLINUX.SYS
++into its root directory and patch the boot sector and LDLINUX.SYS
++(see \fBNOTES\fP).
+ .PP
+-On boot time, by default, the kernel will be loaded from the image named
++On boot time, by default, the boot loader will try to load a linux
++kernel from the image named
+ LINUX on the boot floppy.  This default can be changed, see the section
+ on the \fBsyslinux\fP configuration file.
+ .PP
+@@ -36,6 +38,21 @@
+ .PP
+ \fBSyslinux\fP supports the loading of initial ramdisks (initrd) and the
+ bzImage kernel format.
++.SH NOTES
++The boot sector and LDLINUX.SYS rely heavily on the operation of
++the \fBsyslinux\fP program to run correctly. In particular,
++\fBsyslinux\fP patches the boot sector with the exact location on
++the disk of the first sector of LDLINUX.SYS, and also it patches
++the file LDLINUX.SYS with the exact location on the disk of each
++additional sector of LDLINUX.SYS itself.
++.PP
++This means that if you want to prepare a new bootable disk, it is
++not enough to duplicate the boot sector and LDLINUX.SYS, but you
++really need to run \fBsyslinux\fP to update the sectors addresses.
++.PP
++The version of \fBsyslinux\fP used on FreeBSD makes use of the
++\fBmtools\fP port to modify the FAT filesystem.
++
+ .SH OPTIONS
+ .TP
+ \fB\-i\fP, \fB\-\-install\fP
+@@ -412,9 +429,11 @@
+ .BR lilo (8),
+ .BR keytab-lilo.pl (8),
+ .BR fdisk (8),
+-.BR mkfs (8),
++.BR newfs_msdos (8),
++.BR mtools (1),
+ .BR superformat (1).
+ .SH AUTHOR
+ This manual page is a modified version of the original \fBsyslinux\fP
+ documentation by H. Peter Anvin <hpa@zytor.com>. The conversion to a manpage
+-was made by Arthur Korn <arthur@korn.ch>.
++was made by Arthur Korn <arthur@korn.ch>. FreeBSD-specific notes
++added by Luigi Rizzo.

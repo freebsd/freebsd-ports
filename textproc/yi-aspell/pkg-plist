@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/u-hebr.cmap
+lib/aspell-%%VER%%/u-hebr.cset
+lib/aspell-%%VER%%/yi.dat
+share/aspell/yi.multi
+share/aspell/yi.rws
+share/aspell/yiddish.alias

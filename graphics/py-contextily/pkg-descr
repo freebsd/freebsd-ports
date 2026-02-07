@@ -1,0 +1,11 @@
+contextily is a small Python 3 package to retrieve tile maps from the internet.
+It can add those tiles as basemap to matplotlib figures or write tile maps to
+disk into geospatial raster files. Bounding boxes can be passed in both WGS84
+(EPSG:4326) and Spheric Mercator (EPSG:3857). See the notebook
+contextily_guide.ipynb for usage.
+
+The current tile providers that are available in contextily are the providers
+defined in the xyzservices package. This includes some popular tile maps, such
+as:
+- The standard OpenStreetMap map tiles
+- Toner, Terrain and Watercolor map tiles by Stamen Design

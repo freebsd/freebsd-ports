@@ -1,0 +1,40 @@
+[
+{ type: install
+  message: <<EOM
+CDE - The Common Desktop Environment is an X Windows desktop environment
+that was commonly used on commercial UNIX variants such as Sun Solaris,
+HP-UX, and IBM AIX. Developed between 1993 and 1999, it has now been
+released under an Open source license by The Open Group.
+
+Common Desktop Environment requires the Subprocess Control Service,
+dtcms, and the inetd super server to fully function.
+
+First, add the following line to /etc/inetd.conf:
+
+dtspc	stream	tcp	nowait	root	 %%PREFIX%%/dt/bin/dtspcd	%%PREFIX%%/dt/bin/dtspcd
+
+Second, add the following line to /etc/services:
+
+dtspc		6112/tcp # CDE Subprocess Control Service
+
+# sysrc rpcbind_enable=YES
+# sysrc dtcms_enable=YES
+# sysrc inetd_enable=YES
+# service rpcbind start && service dtcms start && service inetd start
+
+Finally, make sure to add %%PREFIX%%/dt/bin to your path.
+
+To start the Common Desktop Environment:
+% env LANG=C startx %%PREFIX%%/dt/bin/Xsession
+
+Alternatively, if you want to use the Login Manager as well, create
+%%LOCALBASE%%/etc/X11/Xwrapper.config and add this line:
+
+allowed_users=anybody
+
+To start the Common Desktop Enviroment Login Manager:
+
+% %%LOCALBASE%%/dt/bin/dtlogin -daemon
+EOM
+}
+]

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: httpry
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable httpry:
+#
+# httpry_enable (bool):		Set it to "YES" to enable httpry
+#				Default is "NO".
+# httpry_flags (flags):		Set extra flags to httpry
+#				Default is "-d -q -o /var/log/httpry.log".
+#				See httpry(1) for more information.
+#
+
+. /etc/rc.subr
+
+name=httpry
+rcvar=httpry_enable
+
+load_rc_config $name
+
+: ${httpry_enable="NO"}
+: ${httpry_flags="-d -q -o /var/log/httpry.log"}
+
+command=%%PREFIX%%/bin/httpry
+
+run_rc_command "$1"

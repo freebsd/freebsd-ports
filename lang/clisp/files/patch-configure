@@ -1,0 +1,14 @@
+--- configure.orig	2018-11-12 00:05:07 UTC
++++ configure
+@@ -429,11 +429,9 @@ do
+         passnext=makemake ;;
+ 
+       --vimdir=* | --vimdi=* | --vimd=* | --vim=* | --vi=*)
+-        subdir_configure_args="$subdir_configure_args $arg"
+         makemake_args="$makemake_args --vimdir="`getarg "$arg"` ;;
+ 
+       --vimdir | --vimdi | --vimd | --vim | --vi)
+-        subdir_configure_args="$subdir_configure_args $arg"
+         makemake_args="$makemake_args --vimdir="
+         prev=vimdir
+         passnext=both ;;

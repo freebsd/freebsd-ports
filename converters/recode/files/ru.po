@@ -1,0 +1,572 @@
+# Локализация recode.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Dmitry S. Sivachenko <dima@Chg.RU>, 2000.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: recode 3.6\n"
+"POT-Creation-Date: 2001-01-02 22:35+0100\n"
+"PO-Revision-Date: 2001-06-11 23:05+04:00\n"
+"Last-Translator: Dmitry S. Sivachenko <dima@Chg.RU>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# src/main.c:157
+#: src/main.c:142
+msgid "No error"
+msgstr "Ошибки нет"
+
+# src/main.c:160
+#: src/main.c:145
+msgid "Non canonical input"
+msgstr "Неканонический ввод"
+
+# src/main.c:163
+#: src/main.c:148
+msgid "Ambiguous output"
+msgstr "Неоднозначный вывод"
+
+# src/main.c:166
+#: src/main.c:151
+msgid "Untranslatable input"
+msgstr "Нетранслируемый ввод"
+
+# src/main.c:169
+#: src/main.c:154
+msgid "Invalid input"
+msgstr "Неверный ввод"
+
+# src/main.c:172
+#: src/main.c:157
+msgid "System detected problem"
+msgstr "Системно обнаруженная ошибка"
+
+# src/main.c:175
+#: src/main.c:160
+msgid "Misuse of recoding library"
+msgstr "Неправильное использование библиотеки перекодировки"
+
+# src/main.c:178
+#: src/main.c:163
+msgid "Internal recoding bug"
+msgstr "Внутренняя ошибка перекодировки"
+
+# src/main.c:454
+#: src/main.c:208
+msgid ""
+"This program is free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 2, or (at your option)\n"
+"any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software Foundation,\n"
+"Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
+msgstr ""
+"Это свободная программа; вы можете распространять и/или изменять ее при\n"
+"соблюдении условий Универсальной Общественной Лицензии GNU, опубликованной\n"
+"Фондом Свободного Программного Обеспечения, версии 2 или любой более поздней\n"
+"(по вашему усмотрению).\n"
+"\n"
+"Эта программа распространяется в надежде, что она будет полезной, но БЕЗ\n"
+"КАКИХ-ЛИБО ГАРАНТИЙ; даже без подразумеваемых гарантий КОММЕРЧЕСКОЙ ЦЕННОСТИ\n"
+"или ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ.  Для получения более подробной информации,\n"
+"смотрите Универсальную Общественную Лицензию GNU.\n"
+"\n"
+"Вы должны были получить копию Универсальной Общественной Лицензии GNU вместе с\n"
+"этой программой, если нет, напишите Free Software Foundation, Inc., 59 Temple\n"
+"Place - Suite 330, Boston, MA 02111-1307, USA.\n"
+
+# src/main.c:479
+#: src/main.c:233
+#, c-format
+msgid "Try `%s %s' for more information.\n"
+msgstr "Попробуйте `%s %s' для более подробной информации.\n"
+
+# src/main.c:483
+#: src/main.c:237
+msgid "Free `recode' converts files between various character sets and surfaces.\n"
+msgstr ""
+"Free `recode' преобразует файлы между различными наборами символов\n"
+"и представлениями.\n"
+
+# src/main.c:486
+#: src/main.c:241
+#, c-format
+msgid "\nUsage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
+msgstr "\nИспользование: %s [КЛЮЧ]... [ [НАБОР-СИМВОЛОВ] | ЗАПРОС [ФАЙЛ]... ]\n"
+
+# src/main.c:489
+#: src/main.c:244
+msgid ""
+"\n"
+"If a long option shows an argument as mandatory, then it is mandatory\n"
+"for the equivalent short option also.  Similarly for optional arguments.\n"
+msgstr ""
+"\n"
+"Если длинный вариант ключа требует наличия аргумента, то этот аргумент\n"
+"обязателен также для соответствующего короткого ключа.  Аналогично для\n"
+"необязательных ключей.\n"
+
+# src/main.c:494
+#: src/main.c:250
+msgid ""
+"\n"
+"Listings:\n"
+"  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
+"  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
+"  -F, --freeze-tables        write out a C module holding all tables\n"
+"  -T, --find-subsets         report all charsets being subset of others\n"
+"  -C, --copyright            display Copyright and copying conditions\n"
+"      --help                 display this help and exit\n"
+"      --version              output version information and exit\n"
+msgstr ""
+"\n"
+"Вывод:\n"
+"  -l, --list[=ФОРМАТ]        вывести один или все известные наборы символов\n"
+"                             и синонимы\n"
+"  -k, --known=ПАРЫ           ограничить наборы символов в соответствии с\n"
+"                             известными ПАРАМИ\n"
+"  -h, --header[=[ЯЗЫК/]ИМЯ]  записать таблицу ИМЯ в стандартный вывод,\n"
+"                             используя ЯЗЫК, затем выйти\n"
+"  -F, --freeze-tables        записать модуль на Си, содержащий все таблицы\n"
+"  -T, --find-subsets         вывести все наборы символов, являющиеся\n"
+"                             подмножествами остальных\n"
+"  -C, --copyright            вывести информацию об авторских правах и\n"
+"                             условиях распространения\n"
+"      --help                 вывести эту справку и выйти\n"
+"      --version              вывести информацию о версии и выйти\n"
+
+# src/main.c:506
+#: src/main.c:263
+msgid ""
+"\n"
+"Operation modes:\n"
+"  -v, --verbose           explain sequence of steps and report progress\n"
+"  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
+"  -f, --force             force recodings even when not reversible\n"
+"  -t, --touch             touch the recoded files after replacement\n"
+"  -i, --sequence=files    use intermediate files for sequencing passes\n"
+"      --sequence=memory   use memory buffers for sequencing passes\n"
+msgstr ""
+"\n"
+"Режимы работы:\n"
+"  -v, --verbose           объяснить последовательность шагов и выдавать\n"
+"                          отчет о степени завершения\n"
+"  -q, --quiet, --silent   не выводить сообщения о необратимых перекодировках\n"
+"  -f, --force             продолжать перекодировку несмотря на необратимость\n"
+"  -t, --touch             обновить время создания файла после замещения\n"
+"  -i, --sequence=files    использовать временные файлы для\n"
+"                          последовательных проходов\n"
+"      --sequence=memory   использовать оперативную память для\n"
+"                          последовательных проходов\n"
+
+# src/main.c:517
+#: src/main.c:275
+msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
+msgstr ""
+"  -p, --sequence=pipe     использовать механизм каналов для\n"
+"                          последовательных проходов\n"
+
+# src/main.c:521
+#: src/main.c:280
+msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
+msgstr "  -p, --sequence=pipe     то же, что  -i (на этой системе)\n"
+
+# src/main.c:525
+#: src/main.c:285
+msgid ""
+"\n"
+"Fine tuning:\n"
+"  -s, --strict           use strict mappings, even loose characters\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX\n"
+"  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
+"  -c, --colons           use colons instead of double quotes for diaeresis\n"
+"  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
+"  -x, --ignore=CHARSET   ignore CHARSET while choosing a recoding path\n"
+msgstr ""
+"\n"
+"Тонкая настройка:\n"
+"  -s, --strict           использовать точные отображения,\n"
+"                         даже ценой потери символов\n"
+"  -d, --diacritics       переводить только диакритические знаки\n"
+"                         для HTML/LaTeX\n"
+"  -S, --source[=ЯЗЫК]    ограничить перекодировку для ЯЗЫКА\n"
+"                         строками и коментариями\n"
+"  -c, --colons           использовать двоеточия вместо двойных кавычек\n"
+"                         при обозначении тремы\n"
+"  -g, --graphics         заменять линии IBMPC псевдографикой ASCII\n"
+"  -x, --ignore=НАБ-СИМВ  игнорировать НАБ-СИМВ при выборе\n"
+"                         способа перекодировки\n"
+
+# src/main.c:535
+#: src/main.c:296
+msgid ""
+"\n"
+"Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
+"FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
+msgstr ""
+"\n"
+"Ключ -l без ФОРМАТа и НАБОРА-СИМВОЛОВ выводит список возможных наборов и\n"
+"представлений.  ФОРМАТ может быть `decimal', `octal', `hexadecimal' или\n"
+"`full' (или одно из `dohf').\n"
+
+#: src/main.c:302
+msgid ""
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
+"dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
+msgstr ""
+"Если в среде отсутствует переменная DEFAULT_CHARSET, НАБОР-СИМВОЛОВ\n"
+"устанавливается в соответствии с локалью, что определяется переменными LC_ALL,\n"
+"LC_CTYPE, LANG.\n"
+
+# src/main.c:540
+#: src/main.c:307
+msgid ""
+"With -k, possible before charsets are listed for the given after CHARSET,\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
+"and BEFs and AFTs being codes are given as decimal numbers.\n"
+msgstr ""
+"С ключем -k выводятся возможные варианты исходного НАБОРА-СИМВОЛОВ для\n"
+"заданного конечного, если оба они являются табличными.  ПАРЫ должны иметь форму\n"
+"`ДО1:ПОСЛЕ1,ДО2:ПОСЛЕ2,...'\n"
+"причем ДОn и ПОСЛЕn являются кодами, заданными в виде десятичных чисел.\n"
+
+# src/main.c:545
+#: src/main.c:312
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr ""
+"ЯЗЫК представляет язык программирования; это может быть `c', `perl' или `po'.\n"
+"По умолчанию используется `c'.\n"
+
+# src/main.c:548
+#: src/main.c:315
+msgid ""
+"\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
+"with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
+"with an empty surface name means no surfaces at all.  See the manual.\n"
+msgstr ""
+"\n"
+"ЗАПРОС состоит из ПОДЗАПРОС[,ПОДЗАПРОС]...\n"
+"ПОДЗАПРОС состоит из КОДИРОВКА[..КОДИРОВКА]...\n"
+"КОДИРОВКА есть [НАБОР-СИМВОЛОВ][/[ПРЕДСТАВЛЕНИЕ]]...\n"
+"ЗАПРОС часто выглядит как ДО..ПОСЛЕ, где ДО и ПОСЛЕ суть наборы символов.\n"
+"Если НАБОР-СИМВОЛОВ опущен, используется набор по умолчанию;\n"
+"если опускается [/ПРЕДСТАВЛЕНИЕ]..., используется подразумеваемое представление\n"
+"для данного НАБОРА-СИМВОЛОВ; / без имени представления означает его отсутствие.\n"
+"Смотрите руководство.\n"
+
+# src/main.c:556
+#: src/main.c:323
+msgid ""
+"\n"
+"If none of -i and -p are given, presume -p if no FILE, else -i.\n"
+"Each FILE is recoded over itself, destroying the original.  If no\n"
+"FILE is specified, then act as a filter and recode stdin to stdout.\n"
+msgstr ""
+"\n"
+"Если не задано ни -i, ни -p, подразумевается -p, если нет ФАЙЛа, иначе -i.\n"
+"Каждый ФАЙЛ перекодируется в файл с тем же именем, уничтожая исходный.  Если\n"
+"ФАЙЛ не задан, то программа работает как фильтр, перекодируя стандартный вход\n"
+"на стандартный выход.\n"
+
+# src/main.c:562
+#: src/main.c:329
+msgid "\nReport bugs to <recode-bugs@iro.umontreal.ca>.\n"
+msgstr "\nО замеченных ошибках сообщайте по адресу <recode-bugs@iro.umontreal.ca>.\n"
+
+#: src/main.c:430
+#, c-format
+msgid "Sequence `%s' is ambiguous"
+msgstr "Неоднозначная последовательность `%s'"
+
+#: src/main.c:434
+#, c-format
+msgid "Sequence `%s' is unknown"
+msgstr "Неизвестная последовательность `%s'"
+
+#: src/main.c:464 src/main.c:522
+#, c-format
+msgid "Language `%s' is ambiguous"
+msgstr "Неоднозначный язык `%s'"
+
+#. -1
+#: src/main.c:468 src/main.c:526
+#, c-format
+msgid "Language `%s' is unknown"
+msgstr "Неизвестный язык `%s'"
+
+#: src/main.c:560
+#, c-format
+msgid "Format `%s' is ambiguous"
+msgstr "Неоднозначный формат `%s'"
+
+#: src/main.c:564
+#, c-format
+msgid "Format `%s' is unknown"
+msgstr "Неизвестный формат `%s'"
+
+# src/main.c:854
+#: src/main.c:621
+msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
+msgstr "Программа написана Франсуа Пинардом <pinard@iro.umontreal.ca>.\n"
+
+# src/main.c:846
+#: src/main.c:624
+msgid "\nCopyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+msgstr "\nCopyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+
+# src/main.c:850
+#: src/main.c:628
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO\n"
+"warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+msgstr ""
+"Это свободное программное обеспечение; условия распространения находятся в\n"
+"исходном тексте.  Не предоставляется НИКАКИХ гарантий, даже гарантии ПОЛЕЗНОСТИ\n"
+"или ПРИГОДНОСТИ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ.\n"
+
+#: src/main.c:669
+#, c-format
+msgid "Symbol `%s' is unknown"
+msgstr "Неизвестный символ `%s'"
+
+#: src/main.c:709 src/main.c:723
+#, c-format
+msgid "Charset `%s' is unknown or ambiguous"
+msgstr "Неизвестный или неоднозначный набор символов `%s'"
+
+#: src/main.c:754
+msgid "Required argument is missing"
+msgstr "Пропущен обязательный аргумент"
+
+# src/main.c:999
+#: src/main.c:797
+#, c-format
+msgid "Syntax is deprecated, please prefer `%s'"
+msgstr "Нерекомендованный синтаксис, используйте, пожалуйста, `%s'"
+
+#: src/main.c:803
+#, c-format
+msgid "Request `%s' is erroneous"
+msgstr "Ошибочный запрос `%s'"
+
+# src/main.c:1098
+#: src/main.c:903
+#, c-format
+msgid "Recoding %s..."
+msgstr "Перекодировка %s..."
+
+# src/main.c:1108
+#: src/main.c:913
+msgid " done\n"
+msgstr " готово\n"
+
+# src/main.c:1142
+#: src/main.c:954
+#, c-format
+msgid " failed: %s in step `%s..%s'\n"
+msgstr " ошибка: %s в `%s..%s'\n"
+
+# src/main.c:1149
+#: src/main.c:961
+#, c-format
+msgid "%s failed: %s in step `%s..%s'"
+msgstr "%s закончилось неудачей: %s в `%s..%s'"
+
+# src/main.c:1172
+#: src/main.c:984
+#, c-format
+msgid "%s in step `%s..%s'"
+msgstr "%s в `%s..%s'"
+
+# src/names.c:259
+#: src/names.c:335
+#, c-format
+msgid "Charset %s already exists and is not %s"
+msgstr "Набор символов %s уже существует и не является %s"
+
+# src/names.c:754
+#: src/names.c:831
+#, c-format
+msgid "Cannot list `%s', no names available for this charset"
+msgstr "Невозможно вывести `%s', для этой набора символов нет доступных имен"
+
+# src/names.c:854
+#. code counter
+#. expected value for code counter
+#. insert a while line before printing
+#. Print the long table according to explode data.
+#: src/names.c:984 src/names.c:1030
+#, c-format
+msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
+msgstr "Dec  Oct Hex   UCS2  Mne  %s\n"
+
+# src/names.c:847
+#: src/names.c:1049
+#, c-format
+msgid "Sorry, no names available for `%s'"
+msgstr "Извините, для `%s' нет доступного имени"
+
+#: src/outer.c:125
+#, c-format
+msgid "Resurfacer set more than once for `%s'"
+msgstr "Изменение представления для `%s' установлено более одного раза"
+
+#: src/outer.c:133
+#, c-format
+msgid "Unsurfacer set more than once for `%s'"
+msgstr ""
+
+# src/recode.c:117 src/recode.c:129
+#: src/recode.c:115 src/recode.c:127
+msgid "Virtual memory exhausted"
+msgstr "Виртуальная память исчерпана"
+
+# src/recode.c:157
+#: src/recode.c:155
+#, c-format
+msgid "Codes %3d and %3d both recode to %3d"
+msgstr "Коды %3d и %3d оба переходят в %3d"
+
+# src/recode.c:171
+#: src/recode.c:169
+#, c-format
+msgid "No character recodes to %3d"
+msgstr "Нет символа, переводящегося в %3d"
+
+# src/recode.c:172
+#: src/recode.c:170
+msgid "Cannot invert given one-to-one table"
+msgstr "Невозможно обратить данную взаимнооднозначную таблицу"
+
+# src/recode.c:226 src/recode.c:238
+#: src/recode.c:224 src/recode.c:236
+#, c-format
+msgid "Following diagnostics for `%s' to `%s'"
+msgstr "Далее следует диагностика для `%s' в `%s'"
+
+# src/recode.c:231 src/recode.c:243
+#: src/recode.c:229 src/recode.c:241
+#, c-format
+msgid "Pair no. %d: <%3d, %3d> conflicts with <%3d, %3d>"
+msgstr "Пара номер %d: <%3d, %3d> конфликтует с <%3d, %3d>"
+
+# src/recode.c:274
+#: src/recode.c:272
+msgid "Cannot complete table from set of known pairs"
+msgstr "Не удается закончить таблицу из набора известных пар"
+
+# src/recode.c:504
+#: src/recode.c:497
+msgid "Identity recoding, not worth a table"
+msgstr "Тождественная перекодировка, нет необходимости в таблице"
+
+# src/recode.c:512
+#: src/recode.c:504
+msgid "Recoding is too complex for a mere table"
+msgstr "Перекодировка слишком сложна для простой таблицы"
+
+# src/recode.c:544
+#. Print the header of the header file.
+#: src/recode.c:536
+#, c-format
+msgid "%sConversion table generated mechanically by Free `%s' %s"
+msgstr "%sТаблица перекодировки создана автоматически с помощью Free `%s' %s"
+
+# src/recode.c:546
+#: src/recode.c:538
+#, c-format
+msgid "%sfor sequence %s.%s"
+msgstr "%sдля последовательности %s.%s"
+
+# src/recode.c:736
+#: src/recode.c:744
+msgid "No table to print"
+msgstr "Нет таблицы для печати"
+
+#: src/request.c:34
+msgid "reversible"
+msgstr "обратимый"
+
+#: src/request.c:36
+#, c-format
+msgid "%s to %s"
+msgstr "%s в %s"
+
+#: src/request.c:37 src/request.c:39
+msgid "byte"
+msgstr "байт"
+
+#: src/request.c:38 src/request.c:40
+msgid "ucs2"
+msgstr "ucs2"
+
+#: src/request.c:38 src/request.c:40
+msgid "variable"
+msgstr "переменная"
+
+#: src/request.c:111
+msgid "*Unachievable*"
+msgstr "*Недоступный*"
+
+#: src/request.c:113
+msgid "*mere copy*"
+msgstr "*просто копия*"
+
+# src/recode.c:117 src/recode.c:129
+#: src/request.c:246
+msgid "Virtual memory exhausted!"
+msgstr "Виртуальная память исчерпана!"
+
+#: src/request.c:265
+msgid "Step initialisation failed"
+msgstr "Ошибка шага инициализации"
+
+#: src/request.c:272
+msgid "Step initialisation failed (unprocessed options)"
+msgstr "Ошибка шага инициализации (необработанный ключ)"
+
+#: src/request.c:568
+#, c-format
+msgid "Request: %s\n"
+msgstr "Запрос: %s\n"
+
+#: src/request.c:720
+#, c-format
+msgid "Shrunk to: %s\n"
+msgstr "Сжать до: %s\n"
+
+#: src/request.c:823 src/request.c:932
+#, c-format
+msgid "Unrecognised surface name `%s'"
+msgstr "Нераспознанное имя представления `%s'"
+
+#: src/request.c:903
+#, c-format
+msgid "No way to recode from `%s' to `%s'"
+msgstr "Нет возможности перекодировать из `%s' в `%s'"
+
+#: src/request.c:1013
+msgid "Expecting `..' in request"
+msgstr "В запросе ожидается `..'"
+
+#: src/task.c:826 src/task.c:1002
+#, c-format
+msgid "Child process wait status is 0x%0.2x"
+msgstr "Статус ожидания дочернего процесса равен 0x%0.2x"
+
+#: src/testdump.c:298
+msgid "UCS2   Mne   Description\n\n"
+msgstr "UCS2   Mne   Описание\n\n"

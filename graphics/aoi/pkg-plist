@@ -1,0 +1,45 @@
+bin/aoi
+%%DATADIR%%/ArtOfIllusion.jar
+%%DATADIR%%/Icons/32x32.png
+%%DATADIR%%/Icons/48x48.png
+%%DATADIR%%/Icons/64x64.png
+%%DATADIR%%/Plugins/Help/AOIHelp.zip
+%%DATADIR%%/Plugins/Help/helpgui-1.1b.jar
+%%DATADIR%%/Plugins/Help/jhall.jar
+%%DATADIR%%/Plugins/Help/jhelpaction.jar
+%%DATADIR%%/Plugins/Help/pircbot.jar
+%%DATADIR%%/Plugins/HelpPlugin.jar
+%%DATADIR%%/Plugins/OSSpecific.jar
+%%DATADIR%%/Plugins/PostInstall.jar
+%%DATADIR%%/Plugins/Renderers.jar
+%%DATADIR%%/Plugins/SPManager.jar
+%%DATADIR%%/Plugins/Tools.jar
+%%DATADIR%%/Plugins/Translators.jar
+%%DATADIR%%/Scripts/Objects/Fur.aoi
+%%DATADIR%%/Scripts/Objects/Fur.bsh
+%%DATADIR%%/Scripts/Objects/Particle Jet.bsh
+%%DATADIR%%/Scripts/Objects/README.txt
+%%DATADIR%%/Scripts/Startup/README.txt
+%%DATADIR%%/Scripts/Tools/Join Objects.bsh
+%%DATADIR%%/Scripts/Tools/Platonic Solid.bsh
+%%DATADIR%%/Scripts/Tools/README.txt
+%%DATADIR%%/Scripts/Tools/Sculpt.bsh
+%%DATADIR%%/Scripts/Tools/Thicken.bsh
+%%DATADIR%%/Textures and Materials/Library/Building Materials.aoi
+%%DATADIR%%/Textures and Materials/Library/Effects.aoi
+%%DATADIR%%/Textures and Materials/Library/Fire.aoi
+%%DATADIR%%/Textures and Materials/Library/Geography.aoi
+%%DATADIR%%/Textures and Materials/Library/Metal.aoi
+%%DATADIR%%/Textures and Materials/Library/Sky.aoi
+%%DATADIR%%/Textures and Materials/Library/Water.aoi
+%%DATADIR%%/Textures and Materials/Library/Wood.aoi
+%%DATADIR%%/lib/Buoy.jar
+%%DATADIR%%/lib/Buoyx.jar
+%%DATADIR%%/lib/Jama-1.0.2.jar
+%%DATADIR%%/lib/QuickTimeWriter.jar
+%%DATADIR%%/lib/bsh-2.0b4.jar
+%%DATADIR%%/lib/gluegen-rt.jar
+%%DATADIR%%/lib/groovy-all-2.1.2.jar
+%%DATADIR%%/lib/jogl.jar
+%%DATADIR%%/lib/svgSalamander.jar
+share/pixmaps/aoi.png

@@ -1,0 +1,5 @@
+SonarQube is the leading tool for continuously inspecting the Code
+Quality and Security of your codebases and guiding development teams
+during Code Reviews.
+
+Sonar-scanner-cli is a source code scanning component of SonarQube.

@@ -1,0 +1,40 @@
+bin/cancel
+bin/lp
+bin/lpq
+bin/lpr
+bin/lprm
+bin/lpstat
+libexec/filters/lpbanner
+libexec/filters/lpf
+libexec/filters/pclbanner
+libexec/filters/psbanner
+share/man/man1/cancel.1.gz
+share/man/man1/lp.1.gz
+share/man/man1/lpbanner.1.gz
+share/man/man1/lpf.1.gz
+share/man/man1/lpq.1.gz
+share/man/man1/lpr.1.gz
+share/man/man1/lprm.1.gz
+share/man/man1/lprng_certs.1.gz
+share/man/man1/lprng_index_certs.1.gz
+share/man/man1/lpstat.1.gz
+share/man/man1/pclbanner.1.gz
+share/man/man1/psbanner.1.gz
+share/man/man5/lpd.conf.5.gz
+share/man/man5/lpd.perms.5.gz
+share/man/man5/printcap.5.gz
+share/man/man8/checkpc.8.gz
+share/man/man8/lpc.8.gz
+share/man/man8/lpd.8.gz
+sbin/checkpc
+sbin/lpc
+sbin/lpd
+sbin/lprng_certs
+sbin/lprng_index_certs
+@sample etc/lpd.conf.sample
+@sample etc/lpd.perms.sample
+@sample etc/printcap.sample
+%%NLS%%share/locale/de/LC_MESSAGES/LPRng.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/LPRng.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/LPRng.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/LPRng.mo

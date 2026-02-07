@@ -1,0 +1,27 @@
+--- makefile.orig	Fri Apr 14 09:22:25 2006
++++ makefile	Fri Apr 14 09:27:49 2006
+@@ -1,7 +1,7 @@
+ # Makefile for 128-bit long double precision calculator
+ # and test programs.
+-CC= gcc
+-CFLAGS = -msoft-quad-float -fno-builtin -g -O2 -Wall
++CC= %%CC%%
++CFLAGS = -msoft-quad-float -fno-builtin %%CFLAGS%%
+ #CFLAGS = -mhard-quad-float -fno-builtin -g -O2 -Wall
+ INCS= mconf.h
+ 
+@@ -12,7 +12,13 @@
+ expx2ll.o floorll.o polevll.o constll.o mtherr.o
+ IEEOBJS= ieee.o econst.o
+ 
+-all: lcalc mtstl lparanoi monotll libml.a
++SHARED_LIB=	libml.so
++SHARED_LIB_VER=	$(SHARED_LIB).0
++
++all: libml.a $(SHARED_LIB_VER)
++
++$(SHARED_LIB_VER): $(OBJS)
++	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS)
+ 
+ lcalc: lcalc.o $(OBJS) $(IEEOBJS) $(INCS)
+ 	$(CC) -v -o lcalc lcalc.o $(OBJS) $(IEEOBJS)

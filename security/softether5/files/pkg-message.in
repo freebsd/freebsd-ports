@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+To run SoftEtherVPN client from startup, run
+sysrc softether_client_enable=yes
+
+To run SoftEtherVPN server from startup, run
+sysrc softether_server_enable=yes
+
+To run SoftEtherVPN bridge from startup, run
+sysrc softether_bridge_enable=yes
+
+To run SoftEtherVPN traffic server from startup, run
+sysrc softether_trafficserver_enable=yes
+
+Initial and further configuration of all SofEther services can be
+done either by using VPN Client/Server/Bridge Manager for Windows
+or by vpncmd from command line.
+
+Now client functionality practically works on FreeBSD!
+
+When removing SoftEther VPN without the desire to reinstall, please
+ensure to remove the following directories as well:
+- %%SE_DBDIR%%
+- %%SE_LOGDIR%%
+- %%SE_PIDDIR%%
+EOM
+}
+]

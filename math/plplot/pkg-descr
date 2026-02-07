@@ -1,0 +1,13 @@
+PLplot is a library of C functions that are useful for making scientific
+plots from a program written in C, C++, or Fortran.  The PLplot library
+can be used to create standard x-y plots, semilog plots, log-log plots,
+contour plots, 3D plots, mesh plots, bar charts and pie charts.  Multiple
+graphs (of the same or different sizes) may be placed on a single page
+with multiple lines in each graph.  Different line styles, widths and
+colors are supported.  A virtually infinite number of distinct area fill
+patterns may be used.  There are almost 1000 characters in the extended
+character set.  This includes four different fonts, the Greek alphabet and
+a host of mathematical, musical, and other symbols.  The fonts can be
+scaled to any desired size.  A variety of output devices are supported and
+new devices can be easily added by writing a small number of device
+dependent routines.

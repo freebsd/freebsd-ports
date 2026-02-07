@@ -1,0 +1,259 @@
+--- acct.c	2014-03-25 06:16:47.000000000 -0400
++++ acct.c	2021-02-18 19:25:12.351120000 -0500
+@@ -1,6 +1,8 @@
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <stdint.h>
+ #include <string.h>
+-#include <utmp.h>
++#include <time.h>
++#include <utmpx.h>
+ #if defined(__osf__)
+ #include <sys/acct.h>
+@@ -10,9 +12,10 @@
+ static void init_acct_version(void)
+ {setvar(cintern("*acct-version*"),
+-	cintern("$Id: acct.c,v 1.1 1996/10/17 18:40:18 gjc Exp $"),
++	cintern("$FreeBSD$"),
+ 	NIL);}
+ 
+ /* decode various accounting structures */
+ 
++#if defined(__osf__)
+ /* I could not find any include file for this structure, only documentation 
+    for it in the "man acct" */
+@@ -32,26 +35,77 @@
+  unsigned short ta_sc;
+  unsigned short ta_dc;};
++#endif
+ 
++static struct utmpx_types {
++	const char *name;
++	short type;
++} utmpx_types[] = {
++	/* Keep sorted by name */
++#define T(name) { #name, name }
++#ifdef ACCOUNTING
++	T(ACCOUNTING),
++#endif
++	T(BOOT_TIME),
++	T(DEAD_PROCESS),
++#ifdef EMPTY
++	T(EMPTY),
++#endif
++	T(INIT_PROCESS),
++	T(LOGIN_PROCESS),
++	T(NEW_TIME),
++	T(OLD_TIME),
++#ifdef RUN_LVL
++	T(RUN_LVL),
++#endif
++	T(USER_PROCESS)
++};
++#undef T
++
++static LISP utmpx_type_name(short type)
++{
++	unsigned u;
++
++	for (u = 0; u < sizeof(utmpx_types)/sizeof(utmpx_types[0]); u++)
++		if (utmpx_types[u].type == type)
++			return cintern(utmpx_types[u].name);
++	return flocons(type);
++}
++
++static short utmpx_type_num(LISP type)
++{
++	int64_t	_type;
++	short	result;
++	const char *name;
++	unsigned u;
++
++	switch (TYPE(type)) {
++	case tc_flonum:
++		result = _type = FLONM(type);
++		if (result < 0)
++			err("UTMPX type cannot be negative", type);
++		if (result != _type)
++			err("Number too large to be a UTMPX type", type);
++		return result;
++	/* Any special cases for other types? */
++	default:
++		name = get_c_string(type);
++	}
++	for (u = 0; u < sizeof(utmpx_types)/sizeof(utmpx_types[0]); u++) {
++		int cmp = strcmp(utmpx_types[u].name, name);
++
++		if (cmp == 0)
++			return utmpx_types[u].type;
++		if (cmp > 0)
++			break;
++	}
++	err("No such UTMPX type", type);
++	return -1;
++}
+ 
+-LISP decode_utmp(struct utmp *p)
++static LISP decode_utmpx(struct utmpx *p)
+ {return(symalist("user",strcons(SAFE_STRLEN(p->ut_user),p->ut_user),
+ 		 "id",strcons(SAFE_STRLEN(p->ut_id),p->ut_id),
+ 		 "line",strcons(SAFE_STRLEN(p->ut_line),p->ut_line),
+-		 "type",
+-#ifdef EMPTY
+-		 (p->ut_type == EMPTY) ? cintern("EMPTY") :
+-#endif
+-		 (p->ut_type == RUN_LVL) ? cintern("RUN_LVL") :
+-		 (p->ut_type == BOOT_TIME) ? cintern("BOOT_TIME") :
+-		 (p->ut_type == OLD_TIME) ? cintern("OLD_TIME") :
+-		 (p->ut_type == NEW_TIME) ? cintern("NEW_TIME") :
+-		 (p->ut_type == INIT_PROCESS) ? cintern("INIT_PROCESS") :
+-		 (p->ut_type == LOGIN_PROCESS) ? cintern("LOGIN_PROCESS") :
+-		 (p->ut_type == USER_PROCESS) ? cintern("USER_PROCESS") :
+-		 (p->ut_type == DEAD_PROCESS) ? cintern("DEAD_PROCESS") :
+-#ifdef ACCOUNTING
+-		 (p->ut_type == ACCOUNTING) ? cintern("ACCOUNTING") :
+-#endif
+-		 flocons(p->ut_type),
++		 "type", utmpx_type_name(p->ut_type),
+ 	         "pid",flocons(p->ut_pid),
+ #if defined(__osf__)
+@@ -59,34 +113,69 @@
+ 	         "exit",flocons(p->ut_exit.e_exit),
+ #endif
+-	         "ut_time",flocons(p->ut_time),
++	         "ut_time", flocons(time(&p->ut_tv.tv_sec)),
+ 		 "host",strcons(SAFE_STRLEN(p->ut_host),p->ut_host),
+ 		 NULL));}
+ 
+-LISP lgetutent(void)
+-{struct utmp *p;
++static LISP lgetutent(void)
++{struct utmpx *p;
+  long iflag;
+  iflag = no_interrupt(1);
+- p = getutent();
++ p = getutxent();
+  no_interrupt(iflag);
+- return((p) ? decode_utmp(p) : NIL);}
++ return((p) ? decode_utmpx(p) : NIL);}
+ 
+-LISP lsetutent(void)
+-{long iflag;
+- iflag = no_interrupt(1);
+- setutent();
+- no_interrupt(iflag);
+- return(NIL);}
++static LISP lgetutxid(LISP ltype, LISP lid)
++{
++	const char *id;
++	long idlen;
++
++	struct utmpx *p, utmpx = {
++		.ut_type = utmpx_type_num(ltype)
++	};
++	if (lid != NULL) {
++		id = get_c_string_dim(lid, &idlen);
++		if ((size_t)idlen > sizeof(utmpx.ut_id))
++			err("String too long to be a UTMPX ID", lid);
++		memcpy(&utmpx.ut_id, id, idlen);
++	}
++	p = getutxid(&utmpx);
++	return p == NULL ? NULL : decode_utmpx(p);
++}
++
++static LISP lgetutxline(LISP lline)
++{
++	long linelen;
++	const char *line = get_c_string_dim(lline, &linelen);
++	struct utmpx *p, utmpx = { .ut_type = 0 };
++
++	if (line == NULL || linelen == 0 ||
++	    (size_t)linelen > sizeof utmpx.ut_line) {
++	    err("Not a valid UTMPX line", lline);
++	}
++	memcpy(&utmpx.ut_line, line, linelen);
++	p = getutxline(&utmpx);
++	return p == NULL ? NULL : decode_utmpx(p);
++}
++
++static LISP lgetutxuser(LISP luser)
++{
++	const char *user = get_c_string(luser);
++	struct utmpx *p;
++
++	p = getutxuser(user);
++	return p == NULL ? NULL : decode_utmpx(p);
++}
+ 
+-LISP lendutent(void)
++static LISP lsetutent(void)
+ {long iflag;
+  iflag = no_interrupt(1);
+- endutent();
++ setutxent();
+  no_interrupt(iflag);
+  return(NIL);}
+ 
+-LISP lutmpname(LISP name)
++static LISP lendutent(void)
+ {long iflag;
+  iflag = no_interrupt(1);
+- utmpname(get_c_string(name));
++ endutxent();
+  no_interrupt(iflag);
+  return(NIL);}
+@@ -94,5 +183,5 @@
+ #if defined(__osf__)
+ 
+-LISP decode_acct(struct acct *p)
++static LISP decode_acct(struct acct *p)
+ {LISP flags = NIL;
+  if (p->ac_flag & AFORK) flags = cons(cintern("FORK"),flags);
+@@ -121,5 +210,5 @@
+ 		 NULL));}
+ 
+-LISP ldecode_acct(LISP l)
++static LISP ldecode_acct(LISP l)
+ {char *buffer;
+  long n;
+@@ -129,5 +218,5 @@
+  return(decode_acct((struct acct *) buffer));}
+ 
+-LISP decode_tacct(struct tacct *p)
++static LISP decode_tacct(struct tacct *p)
+ {return(symalist("uid",flocons(p->ta_uid),
+ 		 "name",strcons(SAFE_STRLEN(p->ta_name),p->ta_name),
+@@ -155,5 +244,5 @@
+ 		 NULL));}
+ 
+-LISP ldecode_tacct(LISP l)
++static LISP ldecode_tacct(LISP l)
+ {char *buffer;
+  long n;
+@@ -165,11 +254,17 @@
+ #endif
+ 
++void init_acct(void);	/* The function invoked by siod upon loading module */
++
+ void init_acct(void)
+-{setvar(cintern("UTMP_FILE"),strcons(strlen(UTMP_FILE),UTMP_FILE),NIL);
+- setvar(cintern("WTMP_FILE"),strcons(strlen(WTMP_FILE),WTMP_FILE),NIL);
++{
+  init_subr_0("getutent",lgetutent);
++ init_subr_0("getutxent", lgetutent);
+  init_subr_0("setutent",lsetutent);
++ init_subr_0("setutxent", lsetutent);
+  init_subr_0("endutent",lendutent);
+- init_subr_1("utmpname",lutmpname);
++ init_subr_0("endutxent", lendutent);
++ init_subr_2("getutxid", lgetutxid);
++ init_subr_1("getutxline", lgetutxline);
++ init_subr_1("getutxuser", lgetutxuser);
+ #if defined(__osf__)
+  setvar(cintern("SIZEOF_ACCT"),flocons(sizeof(struct acct)),NIL);
+@@ -179,5 +274,2 @@
+ #endif
+  init_acct_version();}
+-
+- 
+-

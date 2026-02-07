@@ -1,0 +1,4 @@
+md2roff is a Markdown to roff/html converter.  It can be used to
+generate simple man pages from Markdown-formatted project README
+files.  The program produces a man page in man(7) format and an
+HTML document as output.

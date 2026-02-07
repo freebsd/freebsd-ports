@@ -1,0 +1,4 @@
+DateTimeX::Easy makes DateTime object creation quick and easy. It uses a variety
+of DateTime::Format packages to do the bulk of the parsing, with some custom
+tweaks to smooth out the rough edges (mainly concerning timezone detection and
+selection).

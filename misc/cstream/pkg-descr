@@ -1,0 +1,7 @@
+Cstream filters data streams, much like the UNIX tool dd(1). It has a more
+traditional commandline syntax, support for precise bandwidth limiting and
+reporting and support for FIFOs. Data limits and throughput rate
+calculation will work for files > 4 GB.
+
+Cstream reads from the standard input and writes to the standard output, if
+no filenames are given. It will also 'generate' or 'sink' data if desired.

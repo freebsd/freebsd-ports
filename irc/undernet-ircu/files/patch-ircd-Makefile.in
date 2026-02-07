@@ -1,0 +1,20 @@
+--- ircd/Makefile.in.orig	2017-04-29 08:34:19 UTC
++++ ircd/Makefile.in
+@@ -291,7 +291,7 @@ install-with-symlink: build mkbindir
+ 	@${RM} /tmp/ircd.tag
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} umkpasswd ${BINDIR}
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} convert-conf ${BINDIR}
+-	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}
++	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}/ircd.conf.example
+ 
+ install-no-symlink: build mkbindir
+ 	@if [ ! -d ${DPATH} -a ! -f ${DPATH} ]; then \
+@@ -305,7 +305,7 @@ install-no-symlink: build mkbindir
+ 	${INSTALL} -m ${IRCDMODE} -o ${IRCDOWN} -g ${IRCDGRP} ircd ${BINDIR}/ircd
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} umkpasswd ${BINDIR}
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} convert-conf ${BINDIR}
+-	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}
++	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}/ircd.conf.example
+ 
+ uninstall:
+ 	@if [ "${BINDIR}" != "${DPATH}" ]; then \

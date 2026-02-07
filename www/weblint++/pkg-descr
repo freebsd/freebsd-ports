@@ -1,0 +1,3 @@
+Weblint is a syntax and minimal style checker for HTML: a perl script which
+picks fluff off html pages, much in the same way traditional lint picks fluff
+off C programs.

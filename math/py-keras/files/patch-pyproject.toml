@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-11-01 14:52:19 UTC
++++ pyproject.toml
+@@ -11,7 +11,7 @@ license = {text = "Apache License 2.0"}
+ readme = "README.md"
+ requires-python = ">=3.10"
+ license = {text = "Apache License 2.0"}
+-dynamic = ["version"]
++version = "3.12.0"
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Programming Language :: Python :: 3",
+@@ -40,8 +40,6 @@ Repository = "https://github.com/keras-team/keras"
+ Home = "https://keras.io/"
+ Repository = "https://github.com/keras-team/keras"
+ 
+-[tool.setuptools.dynamic]
+-version = {attr = "keras.src.version.__version__"}
+ 
+ [tool.setuptools.package-dir]
+ "" = "."

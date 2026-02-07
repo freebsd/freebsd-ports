@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Net::Bonjour.3.gz
+%%PERL5_MAN3%%/Net::Bonjour::Entry.3.gz
+%%PERL5_MAN3%%/Net::Rendezvous.3.gz
+%%PERL5_MAN3%%/Net::Rendezvous::Entry.3.gz
+%%SITE_PERL%%/Net/Bonjour.pm
+%%SITE_PERL%%/Net/Bonjour/Entry.pm
+%%SITE_PERL%%/Net/Rendezvous.pm
+%%SITE_PERL%%/Net/Rendezvous/Entry.pm

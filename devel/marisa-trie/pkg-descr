@@ -1,0 +1,5 @@
+Matching Algorithm with Recursively Implemented StorAge (MARISA)
+is a static and space-efficient trie data structure. And libmarisa
+is a C++ library to provide an implementation of MARISA. Also, the
+package of libmarisa contains a set of command line tools for
+building and operating a MARISA-based dictionary.

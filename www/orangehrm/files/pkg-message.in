@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+1) Add the following to your Apache configuration, and
+   restart the server:
+
+   Alias /orangehrm %%PREFIX%%/www/orangehrm/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/www/orangehrm/>
+      AllowOverride All
+      Require all granted
+   </Directory>
+
+2) Visit your OrangeHRM site with a browser (i.e.,
+   http://your.server.com/orangehrm), and you should
+   be taken to the setup script, which will lead
+   you through creating a configuration file and then
+   setting up OrangeHRM, creating an admin account, etc.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   http://www.orangehrm.com/installation-Linux.shtml
+EOM
+}
+]

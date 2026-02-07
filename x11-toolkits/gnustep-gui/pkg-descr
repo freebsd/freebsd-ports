@@ -1,0 +1,11 @@
+The GNUstep GUI library implements the AppKit portion of the OpenStep
+specification, jointly developed by NeXT and Sun.  It aims to provide
+compatibility with extensions added by Apple's implementation of this standard:
+Cocoa.  The AppKit library contains components required for writing graphical
+applications.
+
+Please contact the GNUstep maintainers at <discuss-gnustep@gnu.org> in
+case of questions and offers of help.
+
+LICENSE: LGPL2 or later (framework)
+LICENSE: GPL3 or later (tools)

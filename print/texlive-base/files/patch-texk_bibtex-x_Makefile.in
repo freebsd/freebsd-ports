@@ -1,0 +1,81 @@
+--- texk/bibtex-x/Makefile.in.orig	2024-07-12 16:22:16 UTC
++++ texk/bibtex-x/Makefile.in
+@@ -125,9 +125,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+ @BIBTEX8_TRUE@am__EXEEXT_1 = bibtex8$(EXEEXT)
+ @BIBTEXU_TRUE@am__EXEEXT_2 = bibtexu$(EXEEXT)
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
+-	"$(DESTDIR)$(btdocdir)" "$(DESTDIR)$(btudocdir)" \
+-	"$(DESTDIR)$(btuexdir)" "$(DESTDIR)$(csfdir)"
++am__installdirs = "$(DESTDIR)$(bindir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ am__objects_1 = bibtex8-bibtex-1.$(OBJEXT) bibtex8-bibtex-2.$(OBJEXT) \
+ 	bibtex8-bibtex-3.$(OBJEXT) bibtex8-bibtex-4.$(OBJEXT) \
+@@ -181,7 +179,7 @@ am__v_CC_0 = @echo "  CC      " $@;
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+@@ -189,7 +187,7 @@ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+@@ -199,14 +197,14 @@ am__v_CXX_0 = @echo "  CXX     " $@;
+ AM_V_CXX = $(am__v_CXX_@AM_V@)
+ am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+ am__v_CXX_0 = @echo "  CXX     " $@;
+-am__v_CXX_1 = 
++am__v_CXX_1 =
+ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+ 	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+-am__v_CXXLD_1 = 
++am__v_CXXLD_1 =
+ SOURCES = $(bibtex8_SOURCES) $(bibtexu_SOURCES) \
+ 	$(nodist_EXTRA_bibtexu_SOURCES)
+ DIST_SOURCES = $(bibtex8_SOURCES) $(bibtexu_SOURCES)
+@@ -838,11 +836,11 @@ clean-binPROGRAMS:
+	$(am__rm_f) $(bin_PROGRAMS)
+	test -z "$(EXEEXT)" || $(am__rm_f) $(bin_PROGRAMS:$(EXEEXT)=)
+ 
+-bibtex8$(EXEEXT): $(bibtex8_OBJECTS) $(bibtex8_DEPENDENCIES) $(EXTRA_bibtex8_DEPENDENCIES) 
++bibtex8$(EXEEXT): $(bibtex8_OBJECTS) $(bibtex8_DEPENDENCIES) $(EXTRA_bibtex8_DEPENDENCIES)
+ 	@rm -f bibtex8$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(bibtex8_OBJECTS) $(bibtex8_LDADD) $(LIBS)
+ 
+-bibtexu$(EXEEXT): $(bibtexu_OBJECTS) $(bibtexu_DEPENDENCIES) $(EXTRA_bibtexu_DEPENDENCIES) 
++bibtexu$(EXEEXT): $(bibtexu_OBJECTS) $(bibtexu_DEPENDENCIES) $(EXTRA_bibtexu_DEPENDENCIES)
+ 	@rm -f bibtexu$(EXEEXT)
+ 	$(AM_V_CXXLD)$(CXXLINK) $(bibtexu_OBJECTS) $(bibtexu_LDADD) $(LIBS)
+ 
+@@ -1652,7 +1650,7 @@ installdirs:
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(btdocdir)" "$(DESTDIR)$(btudocdir)" "$(DESTDIR)$(btuexdir)" "$(DESTDIR)$(csfdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -1724,8 +1722,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-dist_btdocDATA install-dist_btudocDATA \
+-	install-dist_btuexDATA install-dist_csfDATA install-man
++install-data-am: install-dist_csfDATA
+ 
+ install-dvi: install-dvi-am
+ 

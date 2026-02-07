@@ -1,0 +1,2 @@
+SSHKey generates private and public SSH keys (RSA and DSA supported) using pure
+Ruby.

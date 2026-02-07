@@ -1,0 +1,7 @@
+SAGA - short hand for "System for Automated Geoscientific Analyses" - is a free,
+hybrid, cross-platform GIS software.
+The heart of SAGA is its C++ and thus object oriented Application Programming
+Interface (API), providing data object definitions and computational methods for
+raster, vector and tabular data. As a normal user, you will not get into touch
+with the API. But as an interested scientist or coder you will soon discover
+its great flexibility.

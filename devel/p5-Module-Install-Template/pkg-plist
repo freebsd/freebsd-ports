@@ -1,0 +1,3 @@
+bin/tt_pm_to_blib
+%%PERL5_MAN3%%/Module::Install::Template.3.gz
+%%SITE_PERL%%/Module/Install/Template.pm

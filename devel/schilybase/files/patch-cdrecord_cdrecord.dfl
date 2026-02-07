@@ -1,0 +1,11 @@
+--- cdrecord/cdrecord.dfl.orig	2022-09-18 01:03:28 UTC
++++ cdrecord/cdrecord.dfl
+@@ -34,7 +34,7 @@
+ # Linux and Solaris have problems with bigger transfer sizes.
+ # If you are on FreeBSD, it is recommened to set CDR_TRANSFERSIZE=126k
+ #
+-#CDR_TRANSFERSIZE=32k
++CDR_TRANSFERSIZE=126k
+ 
+ #
+ # The following definitions allow abstract device names.

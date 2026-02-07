@@ -1,0 +1,15 @@
+include/vstr-arch.h
+include/vstr-conf.h
+include/vstr-const.h
+include/vstr-def.h
+include/vstr-extern.h
+include/vstr-inline.h
+include/vstr-switch.h
+include/vstr.h
+lib/libvstr-1.0.so.0
+lib/libvstr-1.0.so.0.13.2
+lib/libvstr.a
+lib/libvstr.so
+libdata/pkgconfig/vstr.pc
+share/man/man3/vstr.3.gz
+share/man/man3/vstr_const.3.gz

@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: fort
+# REQUIRE: DAEMON fort
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define fort_enable in /etc/rc.conf[.local] to enable it.
+#
+# fort_enable (bool):  Set to "NO" by default.
+#                             Set it to "YES" to enable fort.
+
+. /etc/rc.subr
+
+name="fort"
+rcvar=fort_enable
+start_precmd=check_init
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config $name
+: ${fort_enable="NO"}
+: ${wrkdir:="%%ETCDIR%%"}
+
+
+fort_config=${fort_conf:-"%%ETCDIR%%/fort-config.json"}
+required_file=${fort_config}
+command_args="--configuration-file=${fort_config} --daemon=true"
+
+check_init() {
+	if [ ! -d ${wrkdir}/tal ]; then
+		echo
+		echo -n "Need to initialize fort with tals, "
+		echo "see man fort"
+		echo
+		exit 1
+	fi
+	if [ ! -f ${fort_config} ]; then
+		echo
+		echo -n "Configuration file not found at ${fort_config} "
+		echo  "Please create one before starting Fort, "
+		echo "see man fort"
+		echo
+		exit 1
+	fi
+}
+
+run_rc_command "$1"

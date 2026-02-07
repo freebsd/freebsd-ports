@@ -1,0 +1,19 @@
+--- configure.orig	2014-12-20 04:39:02 UTC
++++ configure
+@@ -40,16 +40,6 @@ else
+   exit 1
+ fi
+ 
+-# Check encoding filter
+-if CHECK_COMMAND qkc ; then
+-  PROGRAM_ENCODEFILTER="qkc -q -u"
+-elif CHECK_COMMAND nkf ; then
+-  PROGRAM_ENCODEFILTER="nkf -x"
+-else
+-  echo "ERROR: Require qkc or nkf installed for encode filter."
+-  exit 1
+-fi
+-
+ # Check install program
+ if test -x /usr/ucb/install ; then
+   PROGRAM_INSTALL="/usr/ucb/install"

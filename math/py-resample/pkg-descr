@@ -1,0 +1,13 @@
+resample is a resampling-based inference in Python based on data resampling and
+permutation.
+
+Features:
+* Bootstrap resampling: ordinary or balanced with optional stratification
+* Extended bootstrap resampling: also varies sample size
+* Parametric resampling: Gaussian, Poisson, gamma, etc.)
+* Jackknife estimates of bias and variance of any estimator
+* Compute bootstrap confidence intervals (percentile or BCa) for any estimator
+* Permutation-based variants of traditional statistical tests (USP test of
+  independence and others)
+* Tools for working with empirical distributions (CDF, quantile, etc.)
+* Depends only on numpy and scipy

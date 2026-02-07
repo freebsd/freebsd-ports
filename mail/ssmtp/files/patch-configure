@@ -1,0 +1,12 @@
+--- configure.orig	2020-10-22 09:36:35 UTC
++++ configure
+@@ -1591,7 +1591,8 @@ if test x$enableval = xyes ; then
+ #define MD5AUTH 1
+ EOF
+ 
+-	SRCS="$SRCS md5auth/md5c.c md5auth/hmac_md5.c"
++	SRCS="$SRCS md5auth/hmac_md5.c"
++	LIBS="$LIBS -lmd"
+ fi
+ enableval=""
+ 

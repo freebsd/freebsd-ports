@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: powermand
+# REQUIRE: NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these powermand_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/powermand
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# powermand_enable="YES"
+# powermand_flags="<set as needed>"
+
+powermand_enable=${powermand_enable:-"NO"}
+
+. /etc/rc.subr
+
+name="powermand"
+rcvar=powermand_enable
+command="%%PREFIX%%/sbin/powermand"
+required_files="%%PREFIX%%/etc/powerman.conf"
+ 
+load_rc_config $name
+run_rc_command "$1"

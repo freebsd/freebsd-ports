@@ -1,0 +1,22 @@
+Keep rsync optional with meson >= 0.58 after
+https://github.com/mesonbuild/meson/commit/80c89a650b6f
+
+--- doc/meson.build.orig	2020-10-16 10:59:17 UTC
++++ doc/meson.build
+@@ -18,6 +18,8 @@ if get_option('html_manual')
+     install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
+   )
+ 
++  rsync = find_program('rsync', required: false)
++  if rsync.found()
+   custom_target(
+     'upload',
+     input: sphinx_output,
+@@ -29,6 +31,7 @@ if get_option('html_manual')
+       '--chmod=a+rX',
+     ],
+   )
++  endif
+ endif
+ 
+ if get_option('manual')

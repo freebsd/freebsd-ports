@@ -1,0 +1,26 @@
+--- alignmargins.orig	Sun Jan 30 11:24:53 2005
++++ alignmargins	Sun Jan 30 11:25:06 2005
+@@ -1,17 +1,17 @@
+-#! /usr/bin/perl
++#! /usr/bin/env perl
+ $0 =~ m!^(.*)/[^/]+$!;
+ my $programpath = $1;
+-my $printcommand = '/usr/bin/lpr -P ';
+-my $egrep = '/bin/egrep';
++my $printcommand = '/usr/local/bin/lpr -P ';
++my $egrep = '/usr/bin/egrep';
+ my $cat = '/bin/cat';
+ my $cut = '/usr/bin/cut';
+ my $head = '/usr/bin/head';
+ my $tail = '/usr/bin/tail';
+ my $wc = '/usr/bin/wc';
+ my $adjustmentpagename = 'align.ps';
+-my $adjustmentpagepath = ($programpath ? "${programpath}:" : "") . '.:~:/usr/share/alignmargins:/usr/local/share/alignmargins:/usr/share:/usr/local/share:/usr/share/printer-testpages:/usr/local/share/printer-testpages:/usr/share/ghostscript/*/lib:/usr/local/share/ghostscript/*/lib';
+-my $ppddir = '/etc/cups/ppd';
+-my $printerconffile = '/etc/cups/printers.conf';
++my $adjustmentpagepath = ($programpath ? "${programpath}:" : "") . '.:~:/usr/local/share/alignmargins:/usr/share/alignmargins:/usr/local/share/alignmargins:/usr/share:/usr/local/share:/usr/share/printer-testpages:/usr/local/share/printer-testpages:/usr/share/ghostscript/*/lib:/usr/local/share/ghostscript/*/lib';
++my $ppddir = '/usr/local/etc/cups/ppd';
++my $printerconffile = '/usr/local/etc/cups/printers.conf';
+ 
+ # Find "ælign.ps"
+ 

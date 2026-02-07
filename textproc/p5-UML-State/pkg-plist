@@ -1,0 +1,10 @@
+bin/drawstate.pl
+bin/drawstatexml.pl
+%%PERL5_MAN3%%/UML::State.3.gz
+%%PERL5_MAN3%%/UML::drawstate.3.gz
+%%PERL5_MAN3%%/UML::drawstatexml.3.gz
+%%SITE_PERL%%/UML/State.pm
+%%SITE_PERL%%/UML/drawstate.pl
+%%SITE_PERL%%/UML/drawstatexml.pl
+%%PERL5_MAN1%%/drawstate.pl.1.gz
+%%PERL5_MAN1%%/drawstatexml.pl.1.gz

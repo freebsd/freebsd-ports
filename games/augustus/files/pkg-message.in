@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To play this game, you need to cd to the directory with the game files
+and run augustus or just pass the directory as a 1st argument.
+EOM
+}
+]

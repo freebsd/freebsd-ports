@@ -1,0 +1,5 @@
+Perl interface to Argon2 key derivation functions.
+Suitable to convert any password into a cryptographic key. Can be used for
+secure storage of passwords, or to derive encryption key from a password. It
+offers variable time and memory costs as well as output size.
+To find appropriate parameters, utility argon2-calibrate is provided.

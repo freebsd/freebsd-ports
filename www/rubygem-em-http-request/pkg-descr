@@ -1,0 +1,12 @@
+Async (EventMachine) HTTP client, with support for:
+- Asynchronous HTTP API for single & parallel request execution
+- Keep-Alive and HTTP pipelining support
+- Auto-follow 3xx redirects with max depth
+- Automatic gzip & deflate decoding
+- Streaming response processing
+- Streaming file uploads
+- HTTP proxy and SOCKS5 support
+- Basic Auth & OAuth
+- Connection-level & Global middleware support
+- HTTP parser via http_parser.rb
+- Works wherever EventMachine runs: Rubinius, JRuby, MRI

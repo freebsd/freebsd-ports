@@ -1,0 +1,45 @@
+--- configure.ac.orig	2025-03-12 15:49:07 UTC
++++ configure.ac
+@@ -28,11 +28,11 @@ m4_define([gimp_app_version], [2.10])
+ # Versions used for apps, plugins, tools, pkg-config files, and data,
+ # as well as global and user prefs
+ m4_define([gimp_app_version], [2.10])
+-m4_define([gimp_plugin_version], [2.0])
++m4_define([gimp_plugin_version], [2.2])
+ m4_define([gimp_tool_version], [2.0])
+ m4_define([gimp_pkgconfig_version], [2.0])
+ m4_define([gimp_data_version], [2.0])
+-m4_define([gimp_sysconf_version], [2.0])
++m4_define([gimp_sysconf_version], [2.2])
+ m4_define([gimp_user_version], [2.10])
+ 
+ m4_define([gimp_unstable],
+@@ -1843,13 +1843,13 @@ if test "x$have_libheif" = xyes; then
+ can_import_avif=no
+ can_export_avif=no
+ if test "x$have_libheif" = xyes; then
+-  can_import_heic=`$PKG_CONFIG --variable=builtin_h265_decoder libheif`
+-  can_export_heic=`$PKG_CONFIG --variable=builtin_h265_encoder libheif`
++  can_import_heic=yes
++  can_export_heic=yes
+   if test "x$can_import_heic" = xyes; then
+     MIME_TYPES="$MIME_TYPES;image/heif;image/heic"
+   fi
+-  can_import_avif=`$PKG_CONFIG --variable=builtin_avif_decoder libheif`
+-  can_export_avif=`$PKG_CONFIG --variable=builtin_avif_encoder libheif`
++  can_import_avif=yes
++  can_export_avif=yes
+   if test "x$can_import_avif" = xyes; then
+     MIME_TYPES="$MIME_TYPES;image/avif"
+   fi
+@@ -2765,8 +2765,8 @@ esac
+     ;;
+ esac
+ 
+-gimpdatadir="$datadir/$PACKAGE/gimp_data_version"
+-gimpplugindir="$libdir/$PACKAGE/gimp_plugin_version"
++gimpdatadir="$datadir/$PACKAGE"
++gimpplugindir="$libexecdir/$PACKAGE/gimp_plugin_version"
+ gimpsysconfdir="$sysconfdir/$PACKAGE/gimp_sysconf_version"
+ 
+ AC_SUBST(gimpdir)

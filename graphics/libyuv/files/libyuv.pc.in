@@ -1,0 +1,11 @@
+prefix=%%LOCALBASE%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${exec_prefix}/include
+
+Name: libyuv
+Description: YUV conversion and scaling functionality library
+Version: %%DISTVERSION%%
+Cflags: -I${includedir}
+Libs: -L${libdir} -lyuv
+Libs.private: -ljpeg

@@ -1,0 +1,2 @@
+cgit is a fast web interface for the Git SCM, using a built-in cache to
+decrease server I/O pressure.

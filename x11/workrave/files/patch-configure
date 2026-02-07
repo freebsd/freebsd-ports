@@ -1,0 +1,59 @@
+Fix bashism and force GStreamer 1.x support
+
+--- configure.orig	2025-08-25 23:15:55 UTC
++++ configure
+@@ -22713,7 +22713,7 @@ then
+ 
+     loop=${enable_monitors},
+ 
+-    while echo $loop | grep \, &> /dev/null
++    while echo $loop | grep -q \,
+     do
+         monitor=${loop%%\,*}
+         loop=${loop#*\,}
+@@ -26195,44 +26195,10 @@ config_gstreamer=no
+ if test "x$enable_gstreamer" != "xno";
+ then
+ 
+-pkg_failed=no
++pkg_failed=yes
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for gstreamer-0.10" >&5
+ printf %s "checking for gstreamer-0.10... " >&6; }
+ 
+-if test -n "$GSTREAMER_CFLAGS"; then
+-    pkg_cv_GSTREAMER_CFLAGS="$GSTREAMER_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gstreamer-0.10\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gstreamer-0.10") 2>&5
+-  ac_status=$?
+-  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_GSTREAMER_CFLAGS=`$PKG_CONFIG --cflags "gstreamer-0.10" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$GSTREAMER_LIBS"; then
+-    pkg_cv_GSTREAMER_LIBS="$GSTREAMER_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gstreamer-0.10\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "gstreamer-0.10") 2>&5
+-  ac_status=$?
+-  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_GSTREAMER_LIBS=`$PKG_CONFIG --libs "gstreamer-0.10" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+ 
+ 
+ 

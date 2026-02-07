@@ -1,0 +1,71 @@
+# FreeBSD sites
+#
+37.8,	-122.4,	"FreeBSD.org"		# San Francisco 
+#
+# North America
+#
+35.2,	-80.9,	"ftp2.FreeBSD.org"	# Charlotte, NC 
+38.6,	-77.0,	"ftp4.FreeBSD.org"	# Arlington, VA (atinc.com)
+39.74, -105.01,	"anoncvs1/cvsup14.FreeBSD.org"	# Denver, CO (LiquidNeon.com)
+43.6,	-83.9,	"ftp5.FreeBSD.org"	# Mt. Pleasant, MI (C-Mich U)
+44.9,	-68.8,	"ftp7.FreeBSD.org"	# Orono, ME (U of Maine)
+#
+# South America
+#
+-15.8,	-47.9,	"ftp4.br.FreeBSD.org"	# Brasilia, DF, Brazil
+#
+# Europe
+#
+56.2,	10.2,	"ftp.FreeBSD.org"	# Skejby, Aarhus, Denmark (TDC Internet)
+48.2316,  16.3590, "ftp.at.FreeBSD.org"	# Vienna, Austria (WU Wien)
+48.2143,  16.3580,"ftp2.at.FreeBSD.org"	# Vienna, Austria (University of Vienna)
+54.0,	-7.0,	"ftp.ie.FreeBSD.org"	# Dublin, Ireland
+50.77741,6.04837,	"ftp8.de.FreeBSD.org"	# Aachen, DE (RWTH Aachen)
+53.5,	-0.2,	"ftp.uk.FreeBSD.org"	# UK (Imperial College)
+51.2987,1.07005,"ftp2.uk.FreeBSD.org"	# Canterbury, UK (University of Kent)
+53.5,	0.0,	"ftp3.uk.FreeBSD.org"	# UK (Demon Internet@Thus)
+56.1,	10.1,	"ftp.dk.FreeBSD.org"	# Slet, Aarhus, Denmark (TDC Tele Danmark)
+55.7,	12.6,	"ftp2.dk.FreeBSD.org"	# Oesterbro, Copenhagen, Denmark (DKUUG co TDC Internet)
+56.2,	10.2,	"ftp3.dk.FreeBSD.org"	# Skejby, Aarhus, Denmark (TDC Internet)
+59.92,	10.75,	"ftp.no.FreeBSD.org"	# Oslo, Norway (University of Oslo)
+60.19,	24.83,	"nic.funet.fi"		# Espoo, Finland
+60.22,	24.88,	"ftp.fi.FreeBSD.org"	# Helsinki, Finland
+48.9,	2.4,	"ftp.fr.FreeBSD.org"	# Paris, France
+48.9052,2.25947,"anoncvs.fr.FreeBSD.org"	# Courbevoie, France
+50.1,	14.4,	"ftp.cz.FreeBSD.org"	# Czech Republic
+55.6972,37.5319,"ftp.ru.FreeBSD.org"	# Moscow, Russia (MSU's Computer Center)
+55.7816,37.6324,"ftp2.ru.FreeBSD.org"	# Moscow, Russia (MAcomnet)
+55.7089,37.5761,"ftp3.ru.FreeBSD.org"	# Moscow, Russia (Southern Moscow Backbone)
+55.7211,37.7733,"ftp4.ru.FreeBSD.org"	# Moscow, Russia (Corbina telecom)
+55.7121,37.6279,"ftp.SpringDaemons.com"	# Moscow, Russia (Hosting Telesystems)
+#		"ftp.luth.se"		# Sweden
+#		"ftp.ua.pt"		# Portugal
+#		"ftp.kiae.su"		# Russia
+#		"ftp.nl.net"		# Netherlands
+#
+# Asia/Australia
+#
+35.7,	139.7,	"ftp.jp.FreeBSD.org"		# Tokyo, Japan
+37.4253,126.9911,"ftp.kr.FreeBSD.org"		# Gwacheon, South Korea
+37.4828,127.0200,"ftp2.kr.FreeBSD.org"		# Daejeon, South Korea
+36.3733,127.3628,"ftp3.kr.FreeBSD.org"		# Seoul, South Korea
+-27.0,	153.0,	"ftp.au.FreeBSD.org"		# Brisbane, Australia (UQ/AARNet)
+-42.88,	147.32,	"ftp2.au.FreeBSD.org"		# Hobart, Australia (Tas. Govt)
+-33.55,	151.1,	"ftp3.au.FreeBSD.org"		# Sydney, Australia (U Syd)
+-37.82,	144.97,	"ftp4.au.FreeBSD.org"		# Melbourne, Australia (RMIT)
+-35.32,	149.20,	"ftp5.au.FreeBSD.org"		# Canberra, Australia (ADFA)
+-33.88,	151.18,	"ftp6.au.FreeBSD.org"		# Sydney, Australia (FirstLink)
+-37.82,	144.97,	"ftp7.au.FreeBSD.org"		# Melbourne, Australia (ITWorks)
+14.0,	101.0,	"ftp.nectec.or.th"		# Bangkok?
+22.0,	114.0,	"ftp.hk.super.net"		# Hong Kong 
+32.1,	34.8,	"orgchem.weizmann.ac.il"	# Tel Aviv?, Israel
+24.7871,120.9974,"ftp.tw.freebsd.org"		# Hsinchu, Taiwan (NCTU)
+23.10,	120.28,	"ftp2.tw.freebsd.org"		# Kaohsiung, Taiwan (NSYSU)
+25.0209,121.5397,"ftp6.tw.freebsd.org"		# Taipei, Taiwan (NTU)
+25.0110,121.3230,"ftp11.tw.freebsd.org"		# Taipei, Taiwan (NTU)
+25.2506,121.3402,"ftp15.tw.freebsd.org"		# Taipei, Taiwan
+#
+# Africa
+#
+-24.8,	28.1,	"ftp.internat.FreeBSD.org"	# Pretoria
+#		"ftp.za.FreeBSD.org"		# South Africa

@@ -1,0 +1,22 @@
+--- src/racoon/oakley.c.orig	2012-08-29 18:35:09.000000000 +0700
++++ src/racoon/oakley.c	2019-07-01 11:03:18.864245000 +0700
+@@ -2400,7 +2400,19 @@ oakley_skeyid(iph1)
+ 	case OAKLEY_ATTR_AUTH_METHOD_XAUTH_PSKEY_R:
+ #endif
+ 		if (iph1->etype != ISAKMP_ETYPE_IDENT) {
++		  struct ipsecdoi_id_b *id_b;
++
++		  id_b = (struct ipsecdoi_id_b *)iph1->id_p->v;
++		  if (id_b->type != IPSECDOI_ID_IPV4_ADDR &&
++		      id_b->type != IPSECDOI_ID_IPV6_ADDR)
+ 			iph1->authstr = getpskbyname(iph1->id_p);
++		  else {
++		    struct sockaddr addr;
++		    u_int16_t ul_proto;
++		    u_int8_t prefix;
++		    if (!ipsecdoi_id2sockaddr(iph1->id_p, &addr, &prefix, &ul_proto))
++			iph1->authstr = getpskbyaddr(&addr);
++		  }
+ 			if (iph1->authstr == NULL) {
+ 				if (iph1->rmconf->verify_identifier) {
+ 					plog(LLV_ERROR, LOCATION, iph1->remote,

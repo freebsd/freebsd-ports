@@ -1,0 +1,121 @@
+--- ../conf/auth_tkt_cgi.conf.orig	2009-03-04 05:22:06.000000000 +0900
++++ ../conf/auth_tkt_cgi.conf	2015-01-27 12:07:43.628422498 +0900
+@@ -13,6 +13,9 @@
+ # Digest type to use - default is MD5, alternatives are SHA256 or SHA512
+ #TKTAuthDigestType MD5
+ 
++# Query separator for generated URLs. Defaults to semi-colon (';')
++#TKTAuthQuerySeparator &
++
+ # Used by sample CGI scripts to locate this config file
+ SetEnv MOD_AUTH_TKT_CONF "/etc/httpd/conf.d/auth_tkt_cgi.conf"
+ 
+--- ../src/mod_auth_tkt.c.orig	2009-07-10 16:46:51.000000000 +0900
++++ ../src/mod_auth_tkt.c	2015-01-27 12:07:43.631422016 +0900
+@@ -38,6 +38,7 @@
+ #define REMOTE_USER_TOKENS_ENV "REMOTE_USER_TOKENS"
+ #define DEFAULT_TIMEOUT_SEC 7200
+ #define DEFAULT_GUEST_USER "guest"
++#define QUERY_SEPARATOR ';'
+ 
+ #define FORCE_REFRESH 1
+ #define CHECK_REFRESH 0
+@@ -68,6 +69,7 @@
+   char *guest_user;
+   int guest_fallback;
+   int debug;
++  const char *query_separator;
+ } auth_tkt_dir_conf;
+ 
+ /* Per-server configuration */
+@@ -142,6 +144,7 @@
+   conf->guest_user = NULL;
+   conf->guest_fallback = -1;
+   conf->debug = -1;
++  conf->query_separator = (char *)QUERY_SEPARATOR;
+   return conf;  
+ }
+ 
+@@ -174,6 +177,7 @@
+   conf->guest_user = (subdir->guest_user) ? subdir->guest_user : parent->guest_user;
+   conf->guest_fallback = (subdir->guest_fallback >= 0) ?  subdir->guest_fallback : parent->guest_fallback;
+   conf->debug = (subdir->debug >= 0) ? subdir->debug : parent->debug;
++  conf->query_separator = (subdir->query_separator) ? subdir->query_separator : parent->query_separator;
+ 
+   return conf;
+ }
+@@ -338,6 +342,16 @@
+   return NULL;
+ }
+ 
++static const char *
++setup_query_separator (cmd_parms *cmd, void *cfg, const char *param)
++{
++  if (strcmp(param, ";") != 0 && strcmp(param, "&") != 0)
++    return "QuerySeparator must be either ';' or '&'.";
++  auth_tkt_dir_conf *conf = (auth_tkt_dir_conf *)cfg;
++  conf->query_separator = param;
++  return NULL;
++}
++
+ void
+ setup_digest_sz (auth_tkt_serv_conf *sconf)
+ {
+@@ -467,22 +481,25 @@
+   AP_INIT_TAKE1("TKTAuthSecretOld", setup_old_secret, 
+     NULL, RSRC_CONF, "old/alternative secret key to check in digests"),
+   AP_INIT_TAKE1("TKTAuthDigestType", setup_digest_type, 
+-    NULL, RSRC_CONF, "digest type to use [MD5|SHA256|SHA512], default MD5"),
++    NULL, RSRC_CONF, "digest type to use [MD5|SHA256|SHA512], default MD5"),
+   AP_INIT_FLAG("TKTAuthGuestLogin", ap_set_flag_slot,
+     (void *)APR_OFFSETOF(auth_tkt_dir_conf, guest_login),
+     OR_AUTHCFG, "whether to log people in as guest if no other auth available"),
+   AP_INIT_FLAG("TKTAuthGuestCookie", ap_set_flag_slot,
+     (void *)APR_OFFSETOF(auth_tkt_dir_conf, guest_cookie),
+-    OR_AUTHCFG, "whether to set a cookie when accepting guest users (default off)"),
++    OR_AUTHCFG, "whether to set a cookie when accepting guest users (default off)"),
+   AP_INIT_TAKE1("TKTAuthGuestUser", ap_set_string_slot, 
+     (void *)APR_OFFSETOF(auth_tkt_dir_conf, guest_user),
+     OR_AUTHCFG, "username to use for guest logins"),
+   AP_INIT_FLAG("TKTAuthGuestFallback", ap_set_flag_slot,
+     (void *)APR_OFFSETOF(auth_tkt_dir_conf, guest_fallback),
+-    OR_AUTHCFG, "whether to fall back to guest on an expired ticket (default off)"),
++    OR_AUTHCFG, "whether to fall back to guest on an expired ticket (default off)"),
+   AP_INIT_ITERATE("TKTAuthDebug", set_auth_tkt_debug, 
+     (void *)APR_OFFSETOF(auth_tkt_dir_conf, debug),
+     OR_AUTHCFG, "debug level (1-3, higher for more debug output)"),
++  AP_INIT_TAKE1("TKTAuthQuerySeparator", setup_query_separator,
++    (void *)APR_OFFSETOF(auth_tkt_dir_conf, query_separator),
++    OR_AUTHCFG, "Character used in query strings to separate arguments (default: ';')"),
+   {NULL},
+ };
+ 
+@@ -1186,7 +1203,8 @@
+   char *domain = get_domain(r,conf);
+   char *back_cookie_name = conf->back_cookie_name;
+   char *back_arg_name = conf->back_arg_name;
+-  char *url, *cookie, *back;
++  char *url = location;
++  char *cookie, *back;
+   const char *hostinfo = 0;
+   int port;
+ 
+@@ -1255,8 +1273,8 @@
+   }
+ 
+   /* If back_cookie_name not set, add a back url argument to url */
+-  else {
+-    char sep = ap_strchr(location, '?') ? ';' : '?';
++  else if (back_arg_name) {
++    char sep = ap_strchr(location, '?') ? conf->query_separator[0] : '?';
+     url = apr_psprintf(r->pool, "%s%c%s=%s", 
+       location, sep, back_arg_name, back);
+   }
+@@ -1398,6 +1416,7 @@
+   fprintf(stderr,"TKTAuthGuestCookie: %d\n",          conf->guest_cookie);
+   fprintf(stderr,"TKTAuthGuestUser: %s\n",            conf->guest_user);
+   fprintf(stderr,"TKTAuthGuestFallback %d\n",         conf->guest_fallback);
++  fprintf(stderr,"TKTAuthQuerySeparator: %c\n",         conf->query_separator);
+   if (conf->auth_token->nelts > 0) {
+     char ** auth_token = (char **) conf->auth_token->elts;
+     int i;

@@ -1,0 +1,34 @@
+--- Makefile.bsd.orig	Tue May 13 23:18:12 2003
++++ Makefile.bsd	Tue Jan 31 14:03:00 2006
+@@ -1,4 +1,4 @@
+-CFLAGS = -g -Wall
++CFLAGS?=-g -Wall
+ RANLIB = ranlib
+ OS != uname -s
+ 
+@@ -13,21 +13,21 @@
+ all: $(all)
+ 
+ .c.o:
+-	$(CC) -c $(CPPFLAGS) $(CFLAGS) -o ${.TARGET} ${.IMPSRC}
++	$(CC) -c $(CFLAGS) -o ${.TARGET} ${.IMPSRC}
+ 
+ .SUFFIXES: .lo
+ .c.lo:
+-	$(CC) -c $(CPPFLAGS) $(CFLAGS) -fPIC -o ${.TARGET} ${.IMPSRC}
++	$(CC) -c $(CFLAGS) -fPIC -o ${.TARGET} ${.IMPSRC}
+ 
+ liblrmi.a: $(objects)
+ 	$(AR) -r ${.TARGET} ${.ALLSRC}
+ 	$(RANLIB) ${.TARGET}
+ 
+ liblrmi.so: $(pic_objects)
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -fPIC -shared -o ${.TARGET} ${.ALLSRC} ${libs}
++	$(CC) $(CFLAGS) -fPIC -shared -o ${.TARGET} ${.ALLSRC} ${libs}
+ 
+ vbetest: vbetest.o liblrmi.a
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -o ${.TARGET} ${.ALLSRC} ${libs}
++	$(CC) $(CFLAGS) -o ${.TARGET} ${.ALLSRC} ${libs}
+ 
+ .PHONY: clean
+ clean:

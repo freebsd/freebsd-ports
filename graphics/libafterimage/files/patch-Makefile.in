@@ -1,0 +1,81 @@
+--- Makefile.in.orig	2011-01-15 05:52:22 UTC
++++ Makefile.in
+@@ -83,7 +83,7 @@ CP		= @CP@
+ MV		= @MV@
+ RM		= @RM@
+ RMF		= @RM@ -f
+-MKDIR		= @MKDIR@
++MKDIR		= @MKDIR@ -p
+ FIND		= @FIND@
+ XARGS		= @XARGS@
+ LDCONFIG	= @LDCONFIG@
+@@ -96,16 +96,16 @@ YACCFLAGS	= -d
+ LEXFLAGS	=
+ 
+ INSTALL		= @INSTALL@
+-INSTALL_PROGRAM	= @INSTALL@ -s -m 755
+-INSTALL_DATA	= @INSTALL@ -m 644
+-INSTALL_HEADER	= @INSTALL@ -m 644
+-INSTALL_LIB	= @INSTALL@ -m 755
+-INSTALL_SCRIPT	= @INSTALL@ -m 755
++INSTALL_PROGRAM	= @INSTALL_PROGRAM@
++INSTALL_DATA	= @INSTALL_DATA@
++INSTALL_HEADER	= @INSTALL_DATA@
++INSTALL_LIB	= @INSTALL_DATA@
++INSTALL_SCRIPT	= @INSTALL_SCRIPT@
+ 
+ INCS_EXTRA	= @XPM_CFLAGS@ @JPEG_CFLAGS@ @PNG_CFLAGS@ @GIF_CFLAGS@ @TIFF_CFLAGS@ @SVG_CFLAGS@ @TTF_INCLUDES@
+ INCS_X		= @X_CFLAGS@
+ INCS_PRIVATE    = 
+-INCLUDES	= $(INCS_EXTRA) $(INCS_PRIVATE) $(INCS_X)
++INCLUDES	= -I. $(INCS_EXTRA) $(INCS_PRIVATE) $(INCS_X)
+ 
+ USER_LD_FLAGS	= @user_ldflags@
+ LIBS_X		= @x_libs@
+@@ -124,7 +124,7 @@ AFTER_BIN_DIR	= $(DESTDIR)@bindir@
+ AFTER_MAN_DIR	= $(DESTDIR)@mandir@/man3
+ AFTER_APP_MAN_DIR	= $(DESTDIR)@mandir@/man1
+ AFTER_SHAREDIR	= $(DESTDIR)@datadir@/$(LIB_DIR_NAME)
+-AFTER_DOC_DIR	= $(AFTER_SHAREDIR)/doc
++AFTER_DOC_DIR	= $(DESTDIR)@datadir@//doc/libAfterImage
+ 
+ # We want to build both static and dynamic libs, as some service apps may need 
+ # static library as they gets run at compile time (ASDocGen for example)
+@@ -165,11 +165,10 @@ install.static: 	mkdir
+ install.script:
+ 
+ install.dyn:	mkdir
+-		@( echo "$(INSTALL_LIB) $(LIB_SHARED).$(LIBVER) $(LIBDIR)"; \
+-		$(INSTALL_LIB) $(LIB_SHARED).$(LIBVER) $(LIBDIR); \
++		@( echo "$(INSTALL_LIB) $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)"; \
++		$(INSTALL_LIB) $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR); \
+ 		$(INSTALL_SCRIPT) afterimage-libs afterimage-config $(AFTER_BIN_DIR); \
+-		$(RM) -f $(LIBDIR)/$(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED); \
+-		$(LN_S) -f $(LIB_SHARED).$(LIBVER) $(LIBDIR)/$(LIB_SHARED).$(LIBVERMAJOR); \
++		$(RM) -f $(LIBDIR)/$(LIB_SHARED); \
+ 		$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED); \
+ 		if test `uname` = "Linux"; then \
+ 		   if test $(LIBDIR) = "/lib" || test $(LIBDIR) = "/usr/lib"; then \
+@@ -393,11 +392,8 @@ $(LIB_SHARED_CYG): $(LIB_OBJS) $(LIB_INC
+ $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
+ 	$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
+ 
+-$(LIB_SHARED).$(LIBVERMAJOR): $(LIB_SHARED).$(LIBVER)
+-	$(LN_S) -f $(LIB_SHARED).$(LIBVER) $(LIB_SHARED).$(LIBVERMAJOR)
+-
+-$(LIB_SHARED).$(LIBVER): $(LIB_OBJS) $(LIB_INCS) config.h
+-	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVER) \
++$(LIB_SHARED).$(LIBVERMAJOR): $(LIB_OBJS) $(LIB_INCS) config.h
++	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVERMAJOR) \
+ 	 $(LIB_OBJS)
+ 
+ install.man:
+@@ -423,7 +419,7 @@ install.doc:
+ 			cd ../..; \
+ 		fi
+ 
+-install:	install.lib install.man install.doc install.apps
++install:	install.lib install.man install.apps
+ 
+ 
+ uninstall:	uninstall.lib

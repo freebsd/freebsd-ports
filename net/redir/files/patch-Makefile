@@ -1,0 +1,25 @@
+--- Makefile.orig	Mon Dec 27 07:21:55 1999
++++ Makefile	Tue Apr 10 17:56:11 2001
+@@ -1,7 +1,7 @@
+ ### user configuration section
+ 
+ # if your system lacks getopt_long(), remove the comment from this line
+-GETOPT_OBJS = # getopt/getopt.o getopt/getopt1.o
++GETOPT_OBJS = getopt/getopt.o getopt/getopt1.o
+ 
+ # if your system lacks strrchr() or strdup(), edit this line
+ STR_CFLAGS = # -DNEED_STRRCHR -DNEED_STRDUP
+@@ -27,12 +27,11 @@
+ ### end of user configuration section
+ 
+ # redir requires gcc.  if you're lucky, another compiler might work.
+-CC = gcc
+ 
+ # if your system lacks getopt_long, remove the comment from this line
+ OBJS = redir.o $(GETOPT_OBJS)
+ 
+-CFLAGS = -O2 -Wall $(STR_CFLAGS) $(WRAP_CFLAGS) $(EXTRA_CFLAGS)
++CFLAGS += -Wall -Igetopt $(STR_CFLAGS) $(WRAP_CFLAGS) $(EXTRA_CFLAGS)
+ LDFLAGS = -s
+ 
+ # solaris, and others, may also need these libraries to link

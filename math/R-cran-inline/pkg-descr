@@ -1,0 +1,3 @@
+R-cran-inline is a functionality to dynamically define R functions
+and S4 methods with in-lined C, C++ or Fortran code supporting .C
+and .Call calling conventions.

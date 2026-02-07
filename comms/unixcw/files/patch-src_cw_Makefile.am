@@ -1,0 +1,11 @@
+--- src/cw/Makefile.am.orig	2018-08-07 19:08:14 UTC
++++ src/cw/Makefile.am
+@@ -26,7 +26,7 @@ cw_SOURCES = cw.c cw.h
+ # target-specific preprocessor flags (#defs and include dirs)
+ # cw_CPPFLAGS = -I$(top_srcdir)/src/cwutils -I$(top_srcdir)/src/libcw/
+ # target-specific linker flags (objects to link)
+-cw_LDADD = -L$(top_builddir)/src/libcw/.libs -lcw $(top_builddir)/src/cwutils/lib_cw.a
++cw_LDADD = $(LTLIBINTL) -L$(top_builddir)/src/libcw/.libs -lcw $(top_builddir)/src/cwutils/lib_cw.a
+ 
+ 
+ 

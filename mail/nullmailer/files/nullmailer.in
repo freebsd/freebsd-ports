@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: nullmailer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable nullmailer:
+#
+# nullmailer_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=nullmailer
+rcvar=nullmailer_enable
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/sbin/nullmailer-send
+command_args=" -cf -u %%NULLMAIL_USER%% /bin/sh -c '$procname | /usr/bin/logger -i -p mail.info -t $name'"
+
+load_rc_config "$name"
+
+: ${nullmailer_enable="NO"}
+
+run_rc_command "$1"

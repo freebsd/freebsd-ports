@@ -1,0 +1,4 @@
+Configurable (with command line arguments and css) dock, written in
+Go, aimed exclusively at the Hyprland Wayland compositor. It features
+pinned buttons, client buttons and the launcher button. By default the
+launcher starts nwg-drawer.

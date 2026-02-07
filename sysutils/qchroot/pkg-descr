@@ -1,0 +1,8 @@
+qchroot is a csh script for simplified administration of chroots on a
+host system. This is a viable alternate to jail(8) when jail(8) is too
+restrictive. This runs on RELEASE-9.3 and all newer RELEASES.
+
+The chroot filesystem shares a single copy of the system binaries which
+is mounted nullfs "read only" to the named chroot container filesystem.
+This provides 2 levels of security protection which is better than chroot
+by its self.

@@ -1,0 +1,101 @@
+--- GNUmakefile.orig	2020-05-23 16:23:54 UTC
++++ GNUmakefile
+@@ -83,15 +83,15 @@ endif
+ 
+ 
+ # --------------------------------------------------------------------------
+-# DESTDIR directory
+-ifndef DESTDIR
+-    DESTDIR := /usr
++# MYDESTDIR directory
++ifndef MYDESTDIR
++    MYDESTDIR := /usr
+ endif
+ 
+ # --------------------------------------------------------------------------
+ # LIBDIR directory
+ ifndef LIBDIR
+-    LIBDIR := ${DESTDIR}/lib
++    LIBDIR := ${MYDESTDIR}/lib
+ endif
+ 
+ # --------------------------------------------------------------------------
+@@ -149,7 +149,7 @@ CFLAGS += -Wall -Werror -Wshadow -Wextra -Wno-format-t
+ LDFLAGS = $(CURL_LIBS) $(LIBXML2_LIBS) $(OPENSSL_LIBS) -lpthread
+ 
+ STRIP ?= strip
+-INSTALL := install --strip-program=$(STRIP)
++MYINSTALL := install --strip-program=$(STRIP)
+ 
+ 
+ # --------------------------------------------------------------------------
+@@ -171,12 +171,12 @@ exported: libs3 s3 headers
+ 
+ .PHONY: install
+ install: exported
+-	$(QUIET_ECHO) $(DESTDIR)/bin/s3: Installing executable
+-	$(VERBOSE_SHOW) $(INSTALL) -Dps -m u+rwx,go+rx $(BUILD)/bin/s3 \
+-                    $(DESTDIR)/bin/s3
++	$(QUIET_ECHO) $(MYDESTDIR)/bin/s3: Installing executable
++	$(VERBOSE_SHOW) $(MYINSTALL) -Dps -m u+rwx,go+rx $(BUILD)/bin/s3 \
++                    $(MYDESTDIR)/bin/s3
+ 	$(QUIET_ECHO) \
+         $(LIBDIR)/libs3.so.$(LIBS3_VER): Installing shared library
+-	$(VERBOSE_SHOW) $(INSTALL) -Dps -m u+rw,go+r \
++	$(VERBOSE_SHOW) $(MYINSTALL) -Dps -m u+rw,go+r \
+                $(BUILD)/lib/libs3.so.$(LIBS3_VER_MAJOR) \
+                $(LIBDIR)/libs3.so.$(LIBS3_VER)
+ 	$(QUIET_ECHO) \
+@@ -186,11 +186,11 @@ install: exported
+ 	$(QUIET_ECHO) $(LIBDIR)/libs3.so: Linking shared library
+ 	$(VERBOSE_SHOW) ln -sf libs3.so.$(LIBS3_VER_MAJOR) $(LIBDIR)/libs3.so
+ 	$(QUIET_ECHO) $(LIBDIR)/libs3.a: Installing static library
+-	$(VERBOSE_SHOW) $(INSTALL) -Dp -m u+rw,go+r $(BUILD)/lib/libs3.a \
++	$(VERBOSE_SHOW) $(MYINSTALL) -Dp -m u+rw,go+r $(BUILD)/lib/libs3.a \
+                     $(LIBDIR)/libs3.a
+-	$(QUIET_ECHO) $(DESTDIR)/include/libs3.h: Installing header
+-	$(VERBOSE_SHOW) $(INSTALL) -Dp -m u+rw,go+r $(BUILD)/include/libs3.h \
+-                    $(DESTDIR)/include/libs3.h
++	$(QUIET_ECHO) $(MYDESTDIR)/include/libs3.h: Installing header
++	$(VERBOSE_SHOW) $(MYINSTALL) -Dp -m u+rw,go+r $(BUILD)/include/libs3.h \
++                    $(MYDESTDIR)/include/libs3.h
+ 
+ 
+ # --------------------------------------------------------------------------
+@@ -200,12 +200,12 @@ install: exported
+ uninstall:
+ 	$(QUIET_ECHO) Installed files: Uninstalling
+ 	$(VERBOSE_SHOW) \
+-	    rm -f $(DESTDIR)/bin/s3 \
+-              $(DESTDIR)/include/libs3.h \
+-              $(DESTDIR)/lib/libs3.a \
+-              $(DESTDIR)/lib/libs3.so \
+-              $(DESTDIR)/lib/libs3.so.$(LIBS3_VER_MAJOR) \
+-              $(DESTDIR)/lib/libs3.so.$(LIBS3_VER)
++	    rm -f $(MYDESTDIR)/bin/s3 \
++              $(MYDESTDIR)/include/libs3.h \
++              $(MYDESTDIR)/lib/libs3.a \
++              $(MYDESTDIR)/lib/libs3.so \
++              $(MYDESTDIR)/lib/libs3.so.$(LIBS3_VER_MAJOR) \
++              $(MYDESTDIR)/lib/libs3.so.$(LIBS3_VER)
+ 
+ 
+ # --------------------------------------------------------------------------
+@@ -338,7 +338,7 @@ $(DEBPKG): exported $(BUILD)/deb/DEBIAN/control $(BUIL
+            $(BUILD)/deb/usr/share/doc/libs3/changelog.gz \
+            $(BUILD)/deb/usr/share/doc/libs3/changelog.Debian.gz \
+            $(BUILD)/deb/usr/share/doc/libs3/copyright
+-	DESTDIR=$(BUILD)/deb/usr $(MAKE) install
++	MYDESTDIR=$(BUILD)/deb/usr $(MAKE) install
+ 	rm -rf $(BUILD)/deb/usr/include
+ 	rm -f $(BUILD)/deb/usr/lib/libs3.a
+ 	@mkdir -p $(dir $@)
+@@ -351,7 +351,7 @@ $(DEBDEVPKG): exported $(BUILD)/deb-dev/DEBIAN/control
+            $(BUILD)/deb-dev/usr/share/doc/libs3-dev/changelog.gz \
+            $(BUILD)/deb-dev/usr/share/doc/libs3-dev/changelog.Debian.gz \
+            $(BUILD)/deb-dev/usr/share/doc/libs3-dev/copyright
+-	DESTDIR=$(BUILD)/deb-dev/usr $(MAKE) install
++	MYDESTDIR=$(BUILD)/deb-dev/usr $(MAKE) install
+ 	rm -rf $(BUILD)/deb-dev/usr/bin
+ 	rm -f $(BUILD)/deb-dev/usr/lib/libs3.so*
+ 	@mkdir -p $(dir $@)

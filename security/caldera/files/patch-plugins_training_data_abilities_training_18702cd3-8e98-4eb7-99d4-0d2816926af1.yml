@@ -1,0 +1,11 @@
+--- plugins/training/data/abilities/training/18702cd3-8e98-4eb7-99d4-0d2816926af1.yml.orig	2022-08-08 23:35:27 UTC
++++ plugins/training/data/abilities/training/18702cd3-8e98-4eb7-99d4-0d2816926af1.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: False
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           touch ~/.bashrc;

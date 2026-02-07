@@ -1,0 +1,5 @@
+Structured NLP with LLMs
+
+spacy-llm integrates Large Language Models (LLMs) into spaCy, featuring a
+modular system for fast prototyping and prompting, and turning unstructured
+responses into robust outputs for various NLP tasks, no training data required.

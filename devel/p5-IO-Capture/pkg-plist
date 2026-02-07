@@ -1,0 +1,10 @@
+%%SITE_PERL%%/IO/Capture.pm
+%%SITE_PERL%%/IO/Capture/Overview.pod
+%%SITE_PERL%%/IO/Capture/Stderr.pm
+%%SITE_PERL%%/IO/Capture/Stdout.pm
+%%SITE_PERL%%/IO/Capture/Tie_STDx.pm
+%%PERL5_MAN3%%/IO::Capture.3.gz
+%%PERL5_MAN3%%/IO::Capture::Overview.3.gz
+%%PERL5_MAN3%%/IO::Capture::Stderr.3.gz
+%%PERL5_MAN3%%/IO::Capture::Stdout.3.gz
+%%PERL5_MAN3%%/IO::Capture::Tie_STDx.3.gz

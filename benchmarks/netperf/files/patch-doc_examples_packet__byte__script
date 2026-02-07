@@ -1,0 +1,11 @@
+--- doc/examples/packet_byte_script.orig	2011-02-10 17:04:20 UTC
++++ doc/examples/packet_byte_script
+@@ -25,7 +25,7 @@ if [ $# -eq 0 ]; then
+ fi
+ 
+ # where is netperf
+-NETPERF_DIR=${NETPERF_DIR:=/opt/netperf2/bin}
++NETPERF_DIR=${NETPERF_DIR:=%%PREFIX%%/bin}
+ 
+ 
+ # at what port will netserver be waiting? If you decide to run

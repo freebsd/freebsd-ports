@@ -1,0 +1,7 @@
+include/mstch/mstch.hpp
+lib/cmake/mstch/mstch-config-version.cmake
+lib/cmake/mstch/mstch-config.cmake
+lib/cmake/mstch/mstch-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mstch/mstch-targets.cmake
+lib/libmstch.so
+lib/libmstch.so.1.0.1

@@ -1,0 +1,13 @@
+bin/cm2
+bin/cmh-classpol.sh
+include/cmh.h
+lib/cmh/libparsepari.a
+lib/cmh/libparsepari.so
+lib/cmh/libparsepari.so.0
+lib/cmh/libparsepari.so.0.0.0
+lib/libcmh.a
+lib/libcmh.so
+lib/libcmh.so.0
+lib/libcmh.so.0.0.0
+%%DATADIR%%/checkpol.gp
+%%DATADIR%%/shimura.gp

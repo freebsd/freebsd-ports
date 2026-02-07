@@ -1,0 +1,9 @@
+The sysctlmibinfo2 library provides an API to explore the sysctl
+MIB-Tree and to get the properties of an object, therefore it is
+useful to handle an object correctly and to build a sysctl-like
+utility.
+
+It implements wrappers around the sysctlinfo(4) interface and
+sysctlbyname_improved to provide a more easy interface, moreover
+it defines a 'struct sysctlmif_object' and provides a convenient
+API to build data structures of sysctlmif_object.

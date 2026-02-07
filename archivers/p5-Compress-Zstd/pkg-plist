@@ -1,0 +1,15 @@
+%%SITE_ARCH%%/Compress/Zstd.pm
+%%SITE_ARCH%%/Compress/Zstd/CompressionContext.pm
+%%SITE_ARCH%%/Compress/Zstd/CompressionDictionary.pm
+%%SITE_ARCH%%/Compress/Zstd/Compressor.pm
+%%SITE_ARCH%%/Compress/Zstd/DecompressionContext.pm
+%%SITE_ARCH%%/Compress/Zstd/DecompressionDictionary.pm
+%%SITE_ARCH%%/Compress/Zstd/Decompressor.pm
+%%SITE_ARCH%%/auto/Compress/Zstd/Zstd.so
+%%PERL5_MAN3%%/Compress::Zstd.3.gz
+%%PERL5_MAN3%%/Compress::Zstd::CompressionContext.3.gz
+%%PERL5_MAN3%%/Compress::Zstd::CompressionDictionary.3.gz
+%%PERL5_MAN3%%/Compress::Zstd::Compressor.3.gz
+%%PERL5_MAN3%%/Compress::Zstd::DecompressionContext.3.gz
+%%PERL5_MAN3%%/Compress::Zstd::DecompressionDictionary.3.gz
+%%PERL5_MAN3%%/Compress::Zstd::Decompressor.3.gz

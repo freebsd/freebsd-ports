@@ -1,0 +1,19 @@
+--- conf.d/Makefile.in.orig	2017-03-28 09:13:48 UTC
++++ conf.d/Makefile.in
+@@ -20,14 +20,14 @@ install:
+ 	lst="`ls -1 @srcdir@/*.conf @srcdir@/*.sample @srcdir@/*.default 2>/dev/null | sed 's/\.sample//g; s/\.default//g; s/[^ ]*\*\.[^ ]*//g' | sort | uniq`" ; \
+ 	for s in $$lst; do \
+ 	    d="$(DESTDIR)$(confdir)/`echo $$s | sed 's,.*/,,'`" ; \
+-	    if [ -f "$$d" ]; then \
++	    if [ -f "$$d".sample ]; then \
+ 		echo "Not overwriting existing $$d" ; \
+ 	    else \
+ 		if [ ! -f "$$s" ]; then \
+ 		    test -f "$$s.default" && s="$$s.default" ; \
+ 		    test -f "$$s.sample" && s="$$s.sample" ; \
+ 		fi ; \
+-		install -m 0644 "$$s" "$$d" ; \
++		install -m 0644 "$$s" "$$d".sample ; \
+ 	    fi ; \
+ 	done
+ 

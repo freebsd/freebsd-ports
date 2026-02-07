@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+Hexen II: Hammer of Thyrion has been installed.
+
+To complete the installation of this port you have to copy the original
+"data1/pak0.pak" and "data1/pak1.pak" files from your original distribution
+to "%%DATADIR%%/data1" in lower-case form.
+
+To play mission pack "Portal of Praevus" copy "portals/pak3.pak" from your
+original distribution
+to "%%DATADIR%%/portals" in lower-case form.
+
+Pak files should be from latest Raven's 1.11 distribution!
+
+If you have pak files from earlier version of the game, you have to patch them
+to the latest version. You can apply official patch or build the port with 
+H2PATCH option enabled and then run:
+	h2patch -prefix %%DATADIR%%
+EOM
+}
+]

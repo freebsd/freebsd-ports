@@ -1,0 +1,21 @@
+# Undo not flagging conflicted copies anymore, as reported by
+# Henrique de Moraes Holschuh <hmh@debian.org>
+# Closes: #368681
+# Fix as described in message to the CVS mailing list at
+# http://lists.gnu.org/archive/html/info-cvs/2006-06/msg00050.html
+--- src/client.c~	2005-10-02 16:17:20.000000000 +0100
++++ src/client.c	2006-06-09 20:12:06.000000000 +0100
+@@ -4533,10 +4533,9 @@
+ 	/* File no longer exists.  Don't do anything, missing files
+ 	   just happen.  */
+     }
+-    else if (!vers->ts_rcs || args->force
+-	     || strcmp (vers->ts_conflict
+-		        ? vers->ts_conflict : vers->ts_rcs, vers->ts_user)
+-	     || (vers->ts_conflict && !strcmp (cvs_cmd_name, "diff")))
++    else if (vers->ts_rcs == NULL
++             || args->force
++             || strcmp (vers->ts_user, vers->ts_rcs) != 0)
+     {
+ 	if (args->no_contents
+ 	    && supported_request ("Is-modified"))

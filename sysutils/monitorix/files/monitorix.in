@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# PROVIDE: monitorix
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=monitorix
+rcvar=monitorix_enable
+desc="FLOSS lightweight system monitoring tool"
+
+load_rc_config $name
+
+: ${monitorix_enable:=NO}
+
+start_cmd="${name}_start"
+start_precmd=monitorix_check_rrds
+
+pidfile="/var/run/${name}.pid"
+command_interpreter=.
+procname="%%PREFIX%%/bin/${name}"
+
+monitorix_check_rrds()
+{
+	baselib=`grep ^base_lib %%PREFIX%%/etc/monitorix.conf`
+	baselib=${baselib##*= }
+	if [ "$baselib" = "%%DATADIR%%/" ]; then
+		err 1 "Please update your monitorix.conf, replacing the base_lib value with %%DBDIR%%/ (note trailing slash)."
+	fi
+}
+
+monitorix_start()
+{
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+		echo 1>&2 "${name} already running? (pid=$rc_pid)."
+		return 1
+	fi
+	echo "Starting ${name}."
+	rc_flags="-c %%PREFIX%%/etc/${name}.conf -p ${pidfile} ${rc_flags}"
+	/usr/bin/env PATH="$PATH:%%PREFIX%%/sbin:%%PREFIX%%/bin" perl %%PREFIX%%/bin/${name} ${rc_flags} ${command_args}
+}
+
+run_rc_command "$1"

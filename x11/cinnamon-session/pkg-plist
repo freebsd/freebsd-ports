@@ -1,0 +1,17 @@
+bin/cinnamon-session
+bin/cinnamon-session-quit
+libexec/cinnamon-session-binary
+libexec/cinnamon-session-check-accelerated
+libexec/cinnamon-session-check-accelerated-helper
+share/man/man1/cinnamon-session-quit.1.gz
+share/man/man1/cinnamon-session.1.gz
+%%DATADIR%%/cinnamon-session-quit.glade
+%%DATADIR%%/cinnamon-session-quit.py
+%%DATADIR%%/config.py
+%%DATADIR%%/hardware-compatibility
+share/icons/hicolor/16x16/apps/cinnamon-session-properties.png
+share/icons/hicolor/22x22/apps/cinnamon-session-properties.png
+share/icons/hicolor/24x24/apps/cinnamon-session-properties.png
+share/icons/hicolor/32x32/apps/cinnamon-session-properties.png
+share/icons/hicolor/48x48/apps/cinnamon-session-properties.png
+share/icons/hicolor/scalable/apps/cinnamon-session-properties.svg

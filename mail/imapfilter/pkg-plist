@@ -1,0 +1,13 @@
+bin/imapfilter
+share/man/man1/imapfilter.1.gz
+share/man/man5/imapfilter_config.5.gz
+%%DATADIR%%/account.lua
+%%DATADIR%%/auxiliary.lua
+%%DATADIR%%/common.lua
+%%DATADIR%%/mailbox.lua
+%%DATADIR%%/message.lua
+%%DATADIR%%/options.lua
+%%DATADIR%%/regex.lua
+%%DATADIR%%/set.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/config.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/extend.lua

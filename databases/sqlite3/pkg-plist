@@ -1,0 +1,17 @@
+%%NO_TEA%%bin/sqlite3
+%%NO_TEA%%bin/sqldiff
+%%TCL%%bin/sqlite3_analyzer
+%%NO_TEA%%include/sqlite_cfg.h
+%%NO_TEA%%include/sqlite3.h
+%%NO_TEA%%include/sqlite3ext.h
+%%NO_TEA%%%%STATIC%%lib/libsqlite3.a
+%%NO_TEA%%lib/libsqlite3.so
+%%NO_TEA%%lib/libsqlite3.so.0
+%%NO_TEA%%lib/libsqlite3.so.%%DISTVERSION%%
+%%NO_TEA%%libdata/pkgconfig/sqlite3.pc
+%%NO_TEA%%share/man/man1/sqlite3.1.gz
+%%TCL%%share/man/mann/sqlite3.%%TCLSUF%%.n.gz
+%%TCL%%lib/%%TCLVER%%/sqlite3/libtclsqlite3.so
+%%TCL%%lib/%%TCLVER%%/sqlite3/pkgIndex.tcl
+%%TCL%%%%EXAMPLES%%share/examples/sqlite3/example.tcl
+%%TCL%%%%EXAMPLES%%share/examples/sqlite3/sqlitecon.tcl

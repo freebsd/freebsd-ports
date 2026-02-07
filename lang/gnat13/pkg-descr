@@ -1,0 +1,11 @@
+This is an Ada compiler, from GCC-13.
+
+Since Ada support must be built by an Ada-capable compiler, only platforms for
+which a bootstrap compiler is available can build it.
+
+It is based on release versions of the Free Software Foundation's GNU Compiler
+Collection.  It uses the GCC Runtime Library Exception, so the resulting
+binaries have no licensing requirements.  Binaries produced by the AUX compiler
+should be legally handled the same as binaries produced by any FSF compiler.
+
+It offers continuous improvements to the Ada 2022 standard since GCC 11.

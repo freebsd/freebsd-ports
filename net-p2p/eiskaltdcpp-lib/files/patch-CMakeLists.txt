@@ -1,0 +1,42 @@
+--- CMakeLists.txt.orig	2015-04-19 21:57:16 UTC
++++ CMakeLists.txt
+@@ -171,7 +171,7 @@ else (LOCAL_BOOST)
+ endif()
+ message (STATUS "USED LOCAL BOOST HEADERS")
+ else (LOCAL_BOOST)
+-    find_package (Boost REQUIRED)
++    find_package (Boost COMPONENTS system REQUIRED)
+     if (Boost_VERSION VERSION_LESS 104200)
+         add_definitions(-DTIMER_OLD_BOOST)
+     endif()
+@@ -284,7 +284,9 @@ endif ()
+     endif ()
+ endif ()
+ 
+-include_directories(${eiskaltdcpp_BINARY_DIR}
++include_directories(
++   ${EISKALTDCPP_INCLUDE_DIR}
++   ${eiskaltdcpp_BINARY_DIR}
+    ${eiskaltdcpp_SOURCE_DIR}
+    ${GMP_INCLUDE_DIR}
+    )
+@@ -338,13 +340,17 @@ add_subdirectory(extra)
+ endif (WIN32 OR HAIKU)
+ 
+ add_subdirectory(extra)
+-add_subdirectory(data)
++if (INSTALL_DATA)
++	add_subdirectory(data)
++endif (INSTALL_DATA)
+ 
+ if (WITH_DHT)
+   add_subdirectory (dht)
+ endif (WITH_DHT)
+ 
+-add_subdirectory (dcpp)
++if (BUILD_LIB)
++	add_subdirectory (dcpp)
++endif (BUILD_LIB)
+ 
+ if (HAIKU AND HAIKU_PKG)
+   add_subdirectory (haiku)

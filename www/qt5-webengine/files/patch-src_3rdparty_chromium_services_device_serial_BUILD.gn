@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/services/device/serial/BUILD.gn.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/services/device/serial/BUILD.gn
+@@ -11,7 +11,7 @@ set_sources_assignment_filter(deprecated_default_sourc
+ import("//build/config/deprecated_default_sources_assignment_filter.gni")
+ set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
+ 
+-if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac) {
++if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac || is_bsd) {
+   config("platform_support") {
+     visibility = [ ":serial" ]
+     if (is_win) {

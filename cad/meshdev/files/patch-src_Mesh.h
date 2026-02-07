@@ -1,0 +1,12 @@
+--- src/Mesh.h.orig	2012-02-06 16:12:01.000000000 +0100
++++ src/Mesh.h	2012-02-06 16:13:59.000000000 +0100
+@@ -33,7 +33,8 @@
+ 	UNKNOWN_FILE,
+ 	INVENTOR_FILE,
+ 	VRML_1_FILE,
+-	VRML_2_FILE
++	VRML_2_FILE,
++	STL_FILE
+ };
+ 
+ //--

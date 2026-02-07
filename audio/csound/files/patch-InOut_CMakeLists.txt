@@ -1,0 +1,13 @@
+- https://github.com/csound/csound/issues/1438
+
+--- InOut/CMakeLists.txt.orig	2021-02-18 01:47:49 UTC
++++ InOut/CMakeLists.txt
+@@ -15,7 +15,7 @@ option(USE_AUDIOUNIT "Build the CoreAudio AudioUnit I/
+ option(USE_FLTK "Use FLTK for graphs and widget opcodes" ON)
+ option(BUILD_VIRTUAL_KEYBOARD "Build Virtual MIDI keyboard" ON)
+ 
+-list(APPEND CMAKE_REQUIRED_INCLUDES "/usr/local/include")
++list(APPEND CMAKE_REQUIRED_INCLUDES "${CMAKE_INSTALL_PREFIX}/include")
+ 
+ # FIND LIBRARIES AND HEADERS
+ 

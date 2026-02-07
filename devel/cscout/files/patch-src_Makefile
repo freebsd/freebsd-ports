@@ -1,0 +1,45 @@
+--- src/Makefile.orig	2019-11-04 16:42:35 UTC
++++ src/Makefile
+@@ -153,7 +153,7 @@ build/%.o: %.cpp
+ 
+ # Dependency generation rules
+ # See https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html
+-dep/%.d: %.cpp
++dep/%.d: %.cpp parse.tab.h
+ 	@set -e; rm -f $@; \
+ 	mkdir -p dep ; \
+ 	$(CXX) -MM $(CPPFLAGS) $< > $@.$$$$; \
+@@ -167,6 +167,8 @@ dep/%.d: %.c
+ 	sed 's,\($*\)\.o[ :]*,build/\1.o $@ : ,g' < $@.$$$$ > $@; \
+ 	rm -f $@.$$$$
+ 
++dep/html.d: css.c
++
+ # Serialize execution order to ensure the dependencies are built before
+ # compiling the object files in make -j invocations
+ all:
+@@ -207,12 +209,13 @@ mkerr:
+ 
+ # This ensures that the version.cpp is regenerated iff its SHA doesn't
+ # match the current one.
+-ifneq ($(shell sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp), $(shell git log -n 1 --format='%H' || sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp))
++# Without git available, we will just generate a semi-static version.cpp
++#ifneq ($(shell sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp), $(shell git log -n 1 --format='%H' || sed -n '/Version::revision/s/.* = "\(.*\)";/\1/p' version.cpp))
+ version.cpp:
+ 	sh make-version.sh >$@
+ 
+-.PHONY: version.cpp
+-endif
++#.PHONY: version.cpp
++#endif
+ 
+ 
+ test:
+@@ -264,6 +267,7 @@ install: build/cscout
+ 	)
+ 
+ install: build/cscout
++	install -d "${INSTALL_PREFIX}/bin"
+ 	install -Ds $< "$(INSTALL_PREFIX)/bin/cscout"
+ 	./dest-install.sh "$(INSTALL_PREFIX)"
+ 

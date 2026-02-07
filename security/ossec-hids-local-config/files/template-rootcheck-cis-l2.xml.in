@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template_config os="Linux" profile="%%ROOTCHECK_CIS_L2_PROFILE%%">
+
+  <rootcheck>
+    <system_audit>/var/ossec/etc/shared/cis_debianlinux7-8_L2_rcl.txt</system_audit>
+  </rootcheck>
+
+</template_config>

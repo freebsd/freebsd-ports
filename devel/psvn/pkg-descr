@@ -1,0 +1,3 @@
+psvn.el is an interface for the revision control tool subversion.
+psvn.el provides a similar interface for subversion as pcl-cvs for
+cvs.

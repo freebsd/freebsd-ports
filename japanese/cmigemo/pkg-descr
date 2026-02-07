@@ -1,0 +1,2 @@
+C/Migemo is a C language implementation of Migemo Japanese incremental search
+tool. You can search a text for Japanese words without having to input kanji.

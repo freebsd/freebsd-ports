@@ -1,0 +1,17 @@
+--- SourceFiles/Yi7.kmn.orig	2009-09-01 17:32:24.000000000 +0200
++++ SourceFiles/Yi7.kmn	2009-09-01 17:32:20.000000000 +0200
+@@ -8,10 +8,12 @@
+ c this software is licensed under the SIL Open Font License
+ c http://scripts.sil.org/OFL
+           
+-NAME "Yi"
+-BITMAP YiPinYin
++NAME "SIL Yi 20020903"
++BITMAP YiPinYin.bmp
+ VERSION 6.0
+ HOTKEY  "^+P"
++MESSAGE "This software is licensed under the SIL Open Font License (http://scripts.sil.org/OFL)"
++store(&author) "Andy Eatough"
+ 
+ begin Unicode> use(Unicode Group)
+ 

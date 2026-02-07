@@ -1,0 +1,34 @@
+--- Makefile.orig	2008-05-31 16:03:10.000000000 +0800
++++ Makefile	2008-11-17 02:23:39.000000000 +0800
+@@ -9,29 +9,14 @@
+ ####### Compiler, tools and options
+ 
+ CC	?=	gcc
+-ifeq ($(CC),)
+-CC	:=	gcc
+-endif
+ INCPATH :=	.
+-CFLAGS	?=	-O2
+-CFLAGS	:=	$(CFLAGS) -Wall -W -DNO_DEBUG
++CFLAGS	+=	-Wall -W
+ LDLIBS	:=	
+-LDFLAGS	:=	
+-
+-# 64 bit file offsets even on 32 bit
+-# platforms (LFS, if supported by the
+-# operating system): yes or no.
+-USE_LARGEFILE:=	yes
++LDFLAGS	+=	
+ 
+ INSTALL_PATH :=	/usr/local/bin
+ 
+-ifeq ($(USE_LARGEFILE),yes)
+-# these flags work for linux / glibc.
+-# change for others, if necessary.
+ FILESIZE_DEFS:=	-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+-else
+-FILESIZE_DEFS:=	
+-endif
+ 
+ ####### Files
+ 

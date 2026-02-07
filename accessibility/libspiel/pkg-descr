@@ -1,0 +1,10 @@
+This client library is designed to provide an ergonomic interface to
+the myriad of potential speech providers that are installed in a given
+session.
+The API is inspired by the W3C Web Speech API. It serves several purposes:
+
+- Provide an updated list of installed across all speech providers voices.
+- Offer a "speaker" abstraction where utterances can be queued to speak.
+- If no voice was explicitly chosen for an utterance, negotiate global
+  user settings and language preferences to choose the most appropriate
+  voice.

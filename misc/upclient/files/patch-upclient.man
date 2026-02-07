@@ -1,0 +1,20 @@
+--- src/man/upclient.man.orig	Tue May 27 09:03:42 2003
++++ src/man/upclient.man	Wed Mar  3 00:46:01 2004
+@@ -67,7 +67,7 @@
+ 
+ .Sh GETTING STARTED     \" Section Header - required - don't modify
+  1. Create an account at:
+-.Ar http://uptimes.wonko.com/ .
++.Ar http://uptimes.hostingwired.com/ .
+  2. Add a host, this gives you an authorization key.
+  3. Paste your auth key into
+ .Pa __CONFIGFILE__ .
+@@ -75,7 +75,7 @@
+ .Op sudo
+ .Ic __SBINDIR__/__BINNAME__.
+  5. Visit your account at
+-.Ar http://uptimes.wonko.com/
++.Ar http://uptimes.hostingwired.com/
+ to view your
+     machine's status and other collected statistics.
+ .Pp

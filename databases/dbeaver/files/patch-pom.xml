@@ -1,0 +1,90 @@
+--- pom.xml.orig	2025-07-18 15:47:12 UTC
++++ pom.xml
+@@ -19,6 +19,19 @@
+     <properties>
+         <dbeaver-product>DBeaver</dbeaver-product>
+ 
++        <!-- Eclipse Platform version, to match with the 'eclipse-version' common property -->
++        <eclipse-platform-version>4.36.0</eclipse-platform-version>
++        <!-- Eclipse SWT version, to match with the 'eclipse-version' common property -->
++        <swt-version>3.130.0</swt-version>
++        <!-- temp FreeBSD p2 repo, until Eclipse's official p2 repo supports FreeBSD aarch64/x86_64 platforms -->
++        <freebsd-p2-repo.url>https://chirontt.github.io/p2/platform/repository/${eclipse-platform-version}/</freebsd-p2-repo.url>
++
++        <!-- embedded JustJ JRE settings, using the 'java.version' common property -->
++        <justj-jre-version>${java.version}</justj-jre-version>
++        <justj.jres.repository>https://download.eclipse.org/justj/jres/${justj-jre-version}/updates/release/latest</justj.jres.repository>
++        <!-- the JustJ execution environment for the target-platform-configuration -->
++        <execution.environment>org.eclipse.justj.openjdk.hotspot.jre.full.stripped-${justj-jre-version}</execution.environment>
++
+         <key.storage.path>/etc/</key.storage.path>
+         <tsa/>
+     </properties>
+@@ -31,6 +44,20 @@
+         <module>features</module>
+     </modules>
+ 
++    <repositories>
++        <repository>
++            <!-- Eclipse JustJ p2 repo -->
++            <id>justj-p2-repo</id>
++            <url>${justj.jres.repository}</url>
++            <layout>p2</layout>
++        </repository>
++        <!-- temp FreeBSD p2 repo, until Eclipse's official p2 repo supports FreeBSD aarch64/x86_64 platforms -->
++        <repository>
++            <id>freebsd-p2-repo</id>
++            <url>${freebsd-p2-repo.url}</url>
++            <layout>p2</layout>
++        </repository>
++    </repositories>
+     <build>
+         <sourceDirectory>${project.basedir}/src</sourceDirectory>
+         <testSourceDirectory>${project.basedir}/tests</testSourceDirectory>
+@@ -50,6 +77,7 @@
+                 <artifactId>target-platform-configuration</artifactId>
+                 <version>${tycho-version}</version>
+                 <configuration>
++                    <executionEnvironment>${execution.environment}</executionEnvironment>
+                     <pomDependencies>consider</pomDependencies>
+                     <environments>
+                         <environment>
+@@ -63,6 +91,11 @@
+                             <arch>x86_64</arch>
+                         </environment>
+                         <environment>
++                            <os>freebsd</os>
++                            <ws>gtk</ws>
++                            <arch>x86_64</arch>
++                        </environment>
++                        <environment>
+                             <os>macosx</os>
+                             <ws>cocoa</ws>
+                             <arch>x86_64</arch>
+@@ -85,8 +118,7 @@
+                 <version>${tycho-version}</version>
+                 <configuration>
+                     <useProjectSettings>false</useProjectSettings>
+-                    <source>${java.version}</source>
+-                    <target>${java.version}</target>
++                    <release>${java.version}</release>
+                     <compilerVersion>${java.version}</compilerVersion>
+                 </configuration>
+             </plugin>
+@@ -169,6 +201,16 @@
+                                 </environment>
+                                 <environment>
+                                     <os>linux</os>
++                                    <ws>gtk</ws>
++                                    <arch>aarch64</arch>
++                                </environment>
++                                <environment>
++                                    <os>freebsd</os>
++                                    <ws>gtk</ws>
++                                    <arch>x86_64</arch>
++                                </environment>
++                                <environment>
++                                    <os>freebsd</os>
+                                     <ws>gtk</ws>
+                                     <arch>aarch64</arch>
+                                 </environment>

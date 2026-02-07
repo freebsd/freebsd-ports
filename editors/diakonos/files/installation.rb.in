@@ -1,0 +1,11 @@
+
+module Diakonos
+  INSTALL_SETTINGS = {
+    :prefix   => "%%PREFIX%%",
+    :bin_dir  => "%%PREFIX%%/bin",
+    :doc_dir  => "%%DOCSDIR%%",
+    :help_dir => "%%DOCSDIR%%/help",
+    :conf_dir => "%%PREFIX%%/etc",
+    :lib_dir  => "%%RUBY_SITELIBDIR%%",
+  }
+end

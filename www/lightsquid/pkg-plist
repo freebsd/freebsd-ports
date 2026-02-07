@@ -1,0 +1,76 @@
+@sample %%ETCDIR%%/group.cfg.sample
+@sample %%ETCDIR%%/lightsquid.cfg.sample
+@sample %%ETCDIR%%/realname.cfg.sample
+@sample %%ETCDIR%%/skipuser.cfg.sample
+libexec/lightsquid/ip2name.abils
+libexec/lightsquid/ip2name.demo
+libexec/lightsquid/ip2name.dhcp
+libexec/lightsquid/ip2name.dns
+libexec/lightsquid/ip2name.ip
+libexec/lightsquid/ip2name.list
+libexec/lightsquid/ip2name.simple
+libexec/lightsquid/ip2name.smb
+libexec/lightsquid/ip2name.squidauth
+libexec/lightsquid/ip2name.squidlist
+libexec/lightsquid/ip2name.squidlist2
+%%DATADIR%%/lang/bg.lng
+%%DATADIR%%/lang/cz.lng
+%%DATADIR%%/lang/eng.lng
+%%DATADIR%%/lang/fr.lng
+%%DATADIR%%/lang/hu.lng
+%%DATADIR%%/lang/it.lng
+%%DATADIR%%/lang/pt_br.lng
+%%DATADIR%%/lang/ru-koi8.lng
+%%DATADIR%%/lang/ru.lng
+%%DATADIR%%/lang/sp.lng
+%%DATADIR%%/lang/ua.lng
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/bigfiles.cgi
+%%WWWDIR%%/check-setup.pl
+%%WWWDIR%%/common.pl
+%%WWWDIR%%/day_detail.cgi
+%%WWWDIR%%/get.cgi
+%%WWWDIR%%/graph.cgi
+%%WWWDIR%%/group_detail.cgi
+%%WWWDIR%%/index.cgi
+%%WWWDIR%%/lightparser.pl
+%%WWWDIR%%/month_detail.cgi
+%%WWWDIR%%/topsites.cgi
+%%WWWDIR%%/tpl/base/bigfiles.html
+%%WWWDIR%%/tpl/base/day_detail.html
+%%WWWDIR%%/tpl/base/graph.html
+%%WWWDIR%%/tpl/base/group_detail.html
+%%WWWDIR%%/tpl/base/images/datetime.png
+%%WWWDIR%%/tpl/base/images/flag_red.png
+%%WWWDIR%%/tpl/base/images/graph.png
+%%WWWDIR%%/tpl/base/images/printer.png
+%%WWWDIR%%/tpl/base/index.html
+%%WWWDIR%%/tpl/base/month_detail.html
+%%WWWDIR%%/tpl/base/topsites.html
+%%WWWDIR%%/tpl/base/user_detail.html
+%%WWWDIR%%/tpl/base/user_month.html
+%%WWWDIR%%/tpl/base/user_time.html
+%%WWWDIR%%/tpl/base/whousesite.html
+%%WWWDIR%%/tpl/text/bigfiles.html
+%%WWWDIR%%/tpl/text/day_detail.html
+%%WWWDIR%%/tpl/text/group_detail.html
+%%WWWDIR%%/tpl/text/index.html
+%%WWWDIR%%/tpl/text/month_detail.html
+%%WWWDIR%%/tpl/text/topsites.html
+%%WWWDIR%%/tpl/text/user_detail.html
+%%WWWDIR%%/tpl/text/user_month.html
+%%WWWDIR%%/tpl/text/whousesite.html
+%%WWWDIR%%/user_detail.cgi
+%%WWWDIR%%/user_month.cgi
+%%WWWDIR%%/user_time.cgi
+%%WWWDIR%%/whousesite.cgi
+@dir %%WWWDIR%%/tpl/base/images
+@dir %%WWWDIR%%/tpl/base
+@dir %%WWWDIR%%/tpl/text
+@dir %%WWWDIR%%/tpl
+@dir %%WWWDIR%%/report
+@dir %%WWWDIR%%
+@group
+@owner

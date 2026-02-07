@@ -1,0 +1,6 @@
+Vcf-split splits a multi-sample VCF into single-sample VCFs, writing thousands
+of output files simultaneously.  Parsing the TOPMed human chromosome 1 BCF
+with bcftools takes two days, so extracting the 137,977 samples one at a time
+or using thousands of parallel readers of the same file is impractical.
+Vcf-split solves this by generating thousands of single-sample outputs during
+a single sweep through the multi-sample input.

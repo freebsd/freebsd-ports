@@ -1,0 +1,84 @@
+--- Makefile.orig	2019-03-08 12:57:59 UTC
++++ Makefile
+@@ -13,7 +13,6 @@ endif
+ #############################################################################
+ #
+ C_SO_NAME = libac.$(SO_EXT)
+-LUA_SO_NAME = ahocorasick.$(SO_EXT)
+ AR_NAME = libac.a
+ 
+ #############################################################################
+@@ -22,10 +21,7 @@ AR_NAME = libac.a
+ #
+ #############################################################################
+ PREFIX ?= /usr/local
+-LUA_VERSION := 5.1
+-LUA_INCLUDE_DIR := $(PREFIX)/include/lua$(LUA_VERSION)
+-SO_TARGET_DIR := $(PREFIX)/lib/lua/$(LUA_VERSION)
+-LUA_TARGET_DIR := $(PREFIX)/share/lua/$(LUA_VERSION)
++SO_TARGET_DIR := $(PREFIX)/lib
+ 
+ # Available directives:
+ # -DDEBUG : Turn on debugging support
+@@ -57,7 +53,6 @@ AR_FLAGS = cru
+ #
+ SRC_COMMON := ac_fast.cxx ac_slow.cxx
+ LIBAC_SO_SRC := $(SRC_COMMON) ac.cxx    # source for libac.so
+-LUA_SO_SRC := $(SRC_COMMON) ac_lua.cxx  # source for ahocorasick.so
+ LIBAC_A_SRC := $(LIBAC_SO_SRC)          # source for libac.a
+ 
+ #############################################################################
+@@ -67,10 +62,9 @@ LIBAC_A_SRC := $(LIBAC_SO_SRC)          # source for l
+ #############################################################################
+ #
+ .PHONY = all clean test benchmark prepare
+-all : $(C_SO_NAME) $(LUA_SO_NAME) $(AR_NAME)
++all : $(C_SO_NAME) $(AR_NAME)
+ 
+ -include c_so_dep.txt
+--include lua_so_dep.txt
+ -include ar_dep.txt
+ 
+ BUILD_SO_DIR := build_so
+@@ -80,28 +74,19 @@ $(BUILD_SO_DIR) :; mkdir $@
+ $(BUILD_AR_DIR) :; mkdir $@
+ 
+ $(BUILD_SO_DIR)/%.o : %.cxx | $(BUILD_SO_DIR)
+-	$(CXX) $< -c $(SO_CXXFLAGS) -I$(LUA_INCLUDE_DIR) -MMD -o $@
++	$(CXX) $< -c $(SO_CXXFLAGS) -MMD -o $@
+ 
+ $(BUILD_AR_DIR)/%.o : %.cxx | $(BUILD_AR_DIR)
+-	$(CXX) $< -c $(AR_CXXFLAGS) -I$(LUA_INCLUDE_DIR) -MMD -o $@
++	$(CXX) $< -c $(AR_CXXFLAGS) -MMD -o $@
+ 
+ ifneq ($(OS), Darwin)
+ $(C_SO_NAME) : $(addprefix $(BUILD_SO_DIR)/, ${LIBAC_SO_SRC:.cxx=.o})
+ 	$(CXX) $+ -shared -Wl,-soname=$(C_SO_NAME) $(SO_LFLAGS) -o $@
+ 	cat $(addprefix $(BUILD_SO_DIR)/, ${LIBAC_SO_SRC:.cxx=.d}) > c_so_dep.txt
+-
+-$(LUA_SO_NAME) : $(addprefix $(BUILD_SO_DIR)/, ${LUA_SO_SRC:.cxx=.o})
+-	$(CXX) $+ -shared -Wl,-soname=$(LUA_SO_NAME) $(SO_LFLAGS) -o $@
+-	cat $(addprefix $(BUILD_SO_DIR)/, ${LUA_SO_SRC:.cxx=.d}) > lua_so_dep.txt
+-
+ else
+ $(C_SO_NAME) : $(addprefix $(BUILD_SO_DIR)/, ${LIBAC_SO_SRC:.cxx=.o})
+ 	$(CXX) $+ -shared $(SO_LFLAGS) -o $@
+ 	cat $(addprefix $(BUILD_SO_DIR)/, ${LIBAC_SO_SRC:.cxx=.d}) > c_so_dep.txt
+-
+-$(LUA_SO_NAME) : $(addprefix $(BUILD_SO_DIR)/, ${LUA_SO_SRC:.cxx=.o})
+-	$(CXX) $+ -shared $(SO_LFLAGS) -o $@ -Wl,-undefined,dynamic_lookup
+-	cat $(addprefix $(BUILD_SO_DIR)/, ${LUA_SO_SRC:.cxx=.d}) > lua_so_dep.txt
+ endif
+ 
+ $(AR_NAME) : $(addprefix $(BUILD_AR_DIR)/, ${LIBAC_A_SRC:.cxx=.o})
+@@ -115,9 +100,7 @@ $(AR_NAME) : $(addprefix $(BUILD_AR_DIR)/, ${LIBAC_A_S
+ #############################################################################
+ #
+ test : $(C_SO_NAME)
+-	$(MAKE) -C tests && \
+-	luajit tests/lua_test.lua && \
+-	luajit tests/load_ac_test.lua
++	$(MAKE) -C tests &&
+ 
+ benchmark: $(C_SO_NAME)
+ 	$(MAKE) benchmark -C tests

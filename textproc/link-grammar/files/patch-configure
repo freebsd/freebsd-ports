@@ -1,0 +1,31 @@
+Derived from https://github.com/opencog/link-grammar/commit/8d864c6a7b91
+
+--- configure.orig	2022-06-17 16:29:31 UTC
++++ configure
+@@ -18540,8 +18540,26 @@ fi
+   OS_NETBSD_FALSE=
+ fi
+ 
++case "$host_os" in
++  *freebsd*)
++    freebsd=yes
++    ;;
++  *)
++    freebsd=no
++    ;;
++esac
+ 
+ HOST_OS="$host_os"
++
++# ====================================================================
++# FreeBSD work-around. Apparently, the AX_PTHREAD autoconf macro
++# fails to include -lstdthreads in it's results. See bug report
++# https://github.com/opencog/link-grammar/issues/1355
++# So we hack, and explicitly set it here.
++
++if test -n "$ax_pthread_ok" -a "x$freebsd" = "xyes"; then
++	PTHREAD_LIBS="${PTHREAD_LIBS} -lstdthreads"
++fi
+ 
+ # ====================================================================
+ 

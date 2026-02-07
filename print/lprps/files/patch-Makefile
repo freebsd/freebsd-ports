@@ -1,0 +1,59 @@
+--- Makefile.orig	1993-02-22 21:45:50.000000000 +0900
++++ Makefile	2013-04-27 22:53:50.000000000 +0900
+@@ -3,21 +3,21 @@
+ # Define IIg to enable a workaround for a bug in the serial
+ # driver of the Laserwriter IIf and IIg; this requires the POSIX
+ # tcdrain() function.  (I haven't tested this personally.)
+-DEFINES=-DA4 #-DIIg
+-PREFIX=/usr/local
++DEFINES=
+ # Where to install public executables.
+ BINDIR=$(PREFIX)/bin
+ # Where to install private executables.
+-LIBDIR=$(PREFIX)/lib
++LIBDIR=$(PREFIX)/libexec
+ # Define REV_COMMAND to be empty if documents don't need to
+ # be printed in reverse order.
+-REV_COMMAND=$(BINDIR)/psrev |
++#REV_COMMAND=$(BINDIR)/psrev |
++REV_COMMAND=
+ # Where to install the filter for text files.
+ TEXT_FILTER=$(LIBDIR)/psif-text
+ # Where to install the filter for PostScript files.
+ PS_FILTER=$(LIBDIR)/psif-ps
+ # Where to install PostScript banner printing code
+-BANNER=$(LIBDIR)/banner.ps
++BANNER=$(PREFIX)/share/misc/banner.ps
+ # Filter to convert text to PostScript.  You can use your own instead.
+ # It must be able to read from standard input.
+ TEXT_TO_PS=$(BINDIR)/textps
+@@ -29,15 +29,15 @@
+ MAN8EXT=8
+ MAN8DIR=$(MANROOT)/man$(MAN8EXT)
+ 
+-CC=cc
+-CFLAGS=-O $(DEFINES)
++CC?=cc
++CFLAGS+=-I${LOCALBASE}/include $(DEFINES)
+ #CFLAGS=-g -Bstatic $(DEFINES)
+ # Command for installing programs.
+-INSTALL_PROGRAM=install
++INSTALL_PROGRAM=${BSD_INSTALL_PROGRAM}
+ # Command for installing man pages.
+-INSTALL_DATA=install -m 0444
++INSTALL_DATA=${BSD_INSTALL_DATA}
+ 
+-SHELL=/bin/sh
++SHELL=${SH}
+ # Uncomment the next line for Ultrix.
+ #SHELL=/bin/sh5
+ 
+@@ -89,7 +89,7 @@
+ 	-DPS_FILTER=\"$(PS_FILTER)\" -o $@ psif.c
+ 
+ textps: textps.c
+-	$(CC) $(CFLAGS) -o $@ textps.c
++	$(CC) $(CFLAGS) -o $@ textps.c -lpaper -L${LOCALBASE}/lib
+ 
+ psrev: psrev.c
+ 	$(CC) $(CFLAGS) -o $@ psrev.c

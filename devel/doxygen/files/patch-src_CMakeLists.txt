@@ -1,0 +1,28 @@
+--- src/CMakeLists.txt.orig	2022-12-20 18:30:03 UTC
++++ src/CMakeLists.txt
+@@ -2,7 +2,6 @@ include_directories(
+ 
+ include_directories(
+     ${PROJECT_SOURCE_DIR}/filesystem
+-    ${PROJECT_SOURCE_DIR}/libmd5
+     ${PROJECT_SOURCE_DIR}/liblodepng
+     ${PROJECT_SOURCE_DIR}/libmscgen
+     ${PROJECT_SOURCE_DIR}/libversion
+@@ -69,7 +68,7 @@ add_custom_command(
+ 
+ # ce_parse.h
+ add_custom_command(
+-    COMMAND ${BISON_EXECUTABLE} -l -d -p ce_parsexpYY ${CMAKE_CURRENT_LIST_DIR}/constexp.y -o ce_parse.c
++    COMMAND ${BISON_EXECUTABLE} -l -d ${CMAKE_CURRENT_LIST_DIR}/constexp.y -o ce_parse.c
+     DEPENDS ${CMAKE_CURRENT_LIST_DIR}/constexp.y
+     OUTPUT ${GENERATED_SRC}/ce_parse.h
+     WORKING_DIRECTORY ${GENERATED_SRC}
+@@ -387,7 +386,7 @@ target_link_libraries(doxygen PRIVATE
+ target_link_libraries(doxygen PRIVATE
+     doxymain
+     doxycfg
+-    md5
++    md
+     lodepng
+     mscgen
+     xml

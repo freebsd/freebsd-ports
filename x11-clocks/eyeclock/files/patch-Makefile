@@ -1,0 +1,62 @@
+--- Makefile.orig	1999-12-25 09:18:57 UTC
++++ Makefile
+@@ -15,8 +15,8 @@
+ ###############################################################################
+ 
+ #PREFIX  = /usr/local
+-PREFIX  = /usr/X11R6
+-X11BASE = /usr/X11R6
++#PREFIX  = /usr/X11R6
++#X11BASE = /usr/X11R6
+ BINDIR  = ${PREFIX}/bin
+ LIBDIR  = ${PREFIX}/lib/X11/EyeClock
+ RESDIR  = ${PREFIX}/lib/X11/app-defaults
+@@ -26,15 +26,15 @@ VERSION = EyeClock-2.0
+ 
+ # Choose a default face from below lines.
+ 
+-#DEFAULT_FACE = DEFAULT_FACE_IS_BSD_DAEMON
++DEFAULT_FACE = DEFAULT_FACE_IS_BSD_DAEMON
+ #DEFAULT_FACE = DEFAULT_FACE_IS_PENGUIN
+-DEFAULT_FACE = DEFAULT_FACE_IS_NORMAL
++#DEFAULT_FACE = DEFAULT_FACE_IS_NORMAL
+ 
+ # Choose a default resource file from below lines.
+ 
+-#DEFAULT_RESOURCE = EyeClock.daemon
++DEFAULT_RESOURCE = EyeClock.daemon
+ #DEFAULT_RESOURCE = EyeClock.penguin
+-DEFAULT_RESOURCE = EyeClock.normal
++#DEFAULT_RESOURCE = EyeClock.normal
+ 
+ # Choose icon pixmap from below lines.
+ 
+@@ -93,14 +93,15 @@ clean :
+ backup :
+ 		cp COPYRIGHT* *.jpn CHANGE EyeClock* Makefile *.h *.c *.man bak
+ 
+-makeclock :	eyeclock daemonclock penguinclock umeharaclock taroclock boyclock girlclock henohenoclock silicagelclock punpunclock margueriteclock octopusclock
++#makeclock :	eyeclock daemonclock penguinclock umeharaclock taroclock boyclock girlclock henohenoclock silicagelclock punpunclock margueriteclock octopusclock
++makeclock :	eyeclock daemonclock umeharaclock taroclock boyclock girlclock henohenoclock silicagelclock punpunclock margueriteclock octopusclock
+ 
+ daemonclock :
+ 		ln -s eyeclock daemonclock
+ 
+-penguinclock :
+-		ln -s eyeclock penguinclock
+-
++#penguinclock :
++#		ln -s eyeclock penguinclock
++#
+ umeharaclock :
+ 		ln -s eyeclock umeharaclock
+ 
+@@ -131,7 +132,7 @@ octopusclock :
+ clearclock :
+ 		rm -f ${BINDIR}/eyeclock
+ 		rm -f ${BINDIR}/daemonclock
+-		rm -f ${BINDIR}/penguinclock
++#		rm -f ${BINDIR}/penguinclock
+ 		rm -f ${BINDIR}/umeharaclock
+ 		rm -f ${BINDIR}/taroclock
+ 		rm -f ${BINDIR}/boyclock

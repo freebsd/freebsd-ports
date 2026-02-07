@@ -1,0 +1,1 @@
+DBIx::Class::Storage::TxnEndHook is transaction hook provider for DBIx::Class.

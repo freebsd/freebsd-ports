@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+proxysql requires fdescfs mounted.
+
+If you have not yet enabled it, please do the following:
+
+        mount -t fdescfs fdesc /dev/fd
+
+To make this change persist through reboots, you must edit /etc/fstab:
+
+        fdesc   /dev/fd         fdescfs         rw      0       0
+EOM
+}
+]

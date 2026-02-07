@@ -1,0 +1,5 @@
+Link to Bugzilla bugs using shorthand references, ex.:
+
+	%BUG{444}%
+	%BUGLIST{1.6}%
+	%MYBUGS{user@some.domain}%

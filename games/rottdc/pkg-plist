@@ -1,0 +1,5 @@
+bin/rott
+bin/rott-sw
+%%PORTDOCS%%%%DOCSDIR%%/cheats.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmdline.txt
+%%PORTDOCS%%%%DOCSDIR%%/README

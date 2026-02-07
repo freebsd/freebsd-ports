@@ -1,0 +1,5 @@
+IPC::Shareable allows you to tie a variable to shared memory making it
+easy to share the contents of that variable with other Perl processes.
+Scalars, arrays, and hashes can be tied. The variable being tied may
+contain arbitrarily complex data structures - including references to
+arrays, hashes of hashes, etc.

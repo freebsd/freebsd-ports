@@ -1,0 +1,32 @@
+--- configure.orig	2024-08-08 02:10:59.000000000 -0700
++++ configure	2025-01-01 16:50:16.531360000 -0800
+@@ -3096,6 +3096,20 @@
+     SHRLIB_EXT=so
+     ;;
+ 
++  powerpc64le-*-freebsd*)
++    MAKEFILE_PREFIX=freebsd_powerpc64el
++    PLATFORM=FREEBSD
++    INSTALL_PREFIX=freebsd
++
++$as_echo "#define FREEBSD 1" >>confdefs.h
++
++
++$as_echo "#define PPC64EL 1" >>confdefs.h
++
++    EDITLINE_FLG=Y
++    SHRLIB_EXT=so
++    ;;
++
+   *-gentoo-freebsd*)
+     MAKEFILE_PREFIX=freebsd
+     PLATFORM=GENTOOFREEBSD
+@@ -19405,7 +19419,7 @@
+ pre_save_restore_cxxflags=$CXXFLAGS
+ pre_save_restore_libs=$LIBS
+ 
+-CXXFLAGS="$CXXFLAGS -std=c++11"
++CXXFLAGS="$CXXFLAGS -std=c++17"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether the C++ compiler understands noexcept" >&5
+ $as_echo_n "checking whether the C++ compiler understands noexcept... " >&6; }
+ if ${ac_cv_cxx_noexcept+:} false; then :

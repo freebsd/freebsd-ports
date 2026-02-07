@@ -1,0 +1,20 @@
+--- Makefile.orig	2023-05-25 21:02:56 UTC
++++ Makefile
+@@ -37,7 +37,7 @@
+ 
+ DESTDIR=
+ PREFIX=$(DESTDIR)/usr/local
+-INFODIR=$(PREFIX)/info
++INFODIR=$(PREFIX)/share/info
+ MAN1DIR=$(PREFIX)/share/man/man1
+ BINDIR=$(PREFIX)/bin
+ SITELISP=$(PREFIX)/share/emacs/site-lisp/emms
+@@ -48,7 +48,7 @@
+ 
+ GINSTALLINFO = /usr/bin/ginstall-info --info-dir=$(INFODIR)
+ # For systems without ginstall-info
+-INSTALLINFO = /usr/bin/install-info --info-dir=$(INFODIR)
++INSTALLINFO = /usr/local/bin/install-info --info-dir=$(INFODIR)
+ CHANGELOG_CMD = git log --pretty=medium --no-merges
+ 
+ # The currently released version of EMMS (no longer in use)

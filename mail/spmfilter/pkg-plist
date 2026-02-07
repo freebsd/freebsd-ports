@@ -1,0 +1,32 @@
+include/spmfilter/smf/smf_core.h
+include/spmfilter/smf/smf_dict.h
+include/spmfilter/smf/smf_email_address.h
+include/spmfilter/smf/smf_envelope.h
+include/spmfilter/smf/smf_header.h
+include/spmfilter/smf/smf_list.h
+include/spmfilter/smf/smf_lookup.h
+include/spmfilter/smf/smf_message.h
+include/spmfilter/smf/smf_modules.h
+include/spmfilter/smf/smf_nexthop.h
+include/spmfilter/smf/smf_part.h
+include/spmfilter/smf/smf_session.h
+include/spmfilter/smf/smf_settings.h
+include/spmfilter/smf/smf_smtp.h
+include/spmfilter/smf/smf_trace.h
+include/spmfilter/spmfilter.h
+include/spmfilter/spmfilter_config.h
+lib/spmfilter/libpipe.so
+lib/spmfilter/libpipe.so.0.6
+lib/spmfilter/libpipe.so.%%LIB_VERSION%%
+lib/spmfilter/libsmf.so
+lib/spmfilter/libsmf.so.0.6
+lib/spmfilter/libsmf.so.%%LIB_VERSION%%
+lib/spmfilter/libsmtpd.so
+lib/spmfilter/libsmtpd.so.0.6
+lib/spmfilter/libsmtpd.so.%%LIB_VERSION%%
+libdata/pkgconfig/spmfilter.pc
+sbin/spmfilter
+share/man/man1/spmfilter.1.gz
+share/man/man5/spmfilter.conf.5.gz
+@sample etc/spmfilter.conf.sample
+@dir(%%SMFUSER%%,%%SMFGROUP%%,755) %%SMFDIR%%

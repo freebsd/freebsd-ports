@@ -1,0 +1,40 @@
+--- vpnc-script.in.orig	2008-11-19 20:55:51 UTC
++++ vpnc-script.in
+@@ -48,8 +48,8 @@ PATH=/sbin:/usr/sbin:$PATH
+ 
+ OS="`uname -s`"
+ 
+-DEFAULT_ROUTE_FILE=/var/run/vpnc/defaultroute
+-RESOLV_CONF_BACKUP=/var/run/vpnc/resolv.conf-backup
++DEFAULT_ROUTE_FILE=/var/run/vpnc.defaultroute
++RESOLV_CONF_BACKUP=/var/run/vpnc.resolv.conf-backup
+ FULL_SCRIPTNAME=@PREFIX@/sbin/vpnc
+ SCRIPTNAME=`basename $FULL_SCRIPTNAME`
+ 
+@@ -73,7 +73,9 @@ else
+ 	route_syntax_netmask="-netmask"
+ fi
+ 
+-if [ -x /sbin/resolvconf ]; then # Optional tool on Debian, Ubuntu, Gentoo
++# Optional tool on Debian, Ubuntu, Gentoo. FreeBSD 9.0-RELEASE has a different,
++# incompatible /sbin/resolvconf implementation
++if [ -x /sbin/resolvconf ] && [ "$OS" = "Linux" ]; then
+ 	MODIFYRESOLVCONF=modify_resolvconf_manager
+ 	RESTORERESOLVCONF=restore_resolvconf_manager
+ elif [ -x /sbin/modify_resolvconf ]; then # Mandatory tool on Suse earlier than 11.1
+@@ -420,11 +422,13 @@ do_pre_init() {
+ 			fi
+ 		fi
+ 	elif [ "$OS" = "FreeBSD" ]; then
+-		if [ ! -e /dev/tun ]; then
++		kldstat -q -m if_tun
++		if [ ${?} != 0 ]; then
+ 			kldload if_tun
+ 		fi
+ 	elif [ "$OS" = "GNU/kFreeBSD" ]; then
+-		if [ ! -e /dev/tun ]; then
++		kldstat -q -m if_tun
++		if [ ${?} != 0 ]; then
+ 			kldload if_tun
+ 		fi
+ 	elif [ "$OS" = "NetBSD" ]; then

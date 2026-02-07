@@ -1,0 +1,3 @@
+CrossGuid is a minimal, cross platform, C++ GUID library.
+It uses the best native GUID/UUID generator on the given platform
+and had a generic class for parsing, stringifying, and comparing IDs.

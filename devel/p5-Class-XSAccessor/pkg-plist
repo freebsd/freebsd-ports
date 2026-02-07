@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Class::XSAccessor.3.gz
+%%PERL5_MAN3%%/Class::XSAccessor::Array.3.gz
+%%PERL5_MAN3%%/Class::XSAccessor::Heavy.3.gz
+%%SITE_ARCH%%/Class/XSAccessor.pm
+%%SITE_ARCH%%/Class/XSAccessor/Array.pm
+%%SITE_ARCH%%/Class/XSAccessor/Heavy.pm
+%%SITE_ARCH%%/auto/Class/XSAccessor/XSAccessor.so

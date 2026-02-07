@@ -1,0 +1,3 @@
+Kcc is a yet another kanji code converter.  It converts input kanji
+code (you need not specify the kanji code) to designated kanji code
+such as 7-bit JIS, MS-kanji (shifted-JIS) or EUC

@@ -1,0 +1,5 @@
+bin/gengetopt
+share/man/man1/gengetopt.1.gz
+%%DATADIR%%/getopt.c
+%%DATADIR%%/getopt1.c
+%%DATADIR%%/gnugetopt.h

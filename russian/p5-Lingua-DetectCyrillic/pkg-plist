@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Lingua/DetectCyrillic.pm
+%%SITE_PERL%%/Lingua/DetectCyrillic/DictRus.pm
+%%SITE_PERL%%/Lingua/DetectCyrillic/DictUkr.pm
+%%SITE_PERL%%/Lingua/DetectCyrillic/WordHash2Rus.pm
+%%SITE_PERL%%/Lingua/DetectCyrillic/WordHash2Ukr.pm
+%%PERL5_MAN3%%/Lingua::DetectCyrillic.3.gz

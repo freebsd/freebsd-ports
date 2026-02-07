@@ -1,0 +1,10 @@
+bin/c6-shim-env
+bin/c6-shim-run-exe
+bin/nv-sglrun
+bin/with-glibc-shim
+lib/libc6-shim/libc6-debug.so
+lib/libc6-shim/libc6.so
+lib32/libc6-shim/libc6-debug.so
+lib32/libc6-shim/libc6.so
+%%DATADIR%%/icds/ocl/nv.icd
+%%DATADIR%%/icds/vk/nv.json

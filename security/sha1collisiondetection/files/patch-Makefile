@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-03-27 16:11:23 UTC
++++ Makefile
+@@ -33,7 +33,7 @@ INSTALL ?= install
+ endif
+ 
+ 
+-CFLAGS=-O2 -Wall -Werror -Wextra -pedantic -std=c90 -Ilib
++CFLAGS=-O2 -Wall -Werror -Wextra -pedantic -Ilib
+ LDFLAGS=
+ 
+ LT_CC:=$(LIBTOOL) --tag=CC --mode=compile $(CC)

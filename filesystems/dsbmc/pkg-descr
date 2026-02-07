@@ -1,0 +1,2 @@
+DSBMC is a Qt client for DSBMD. It allows you to mount, unmount, open media
+in a file manager, set the reading speed of a CD/DVD or play a CD/DVD.

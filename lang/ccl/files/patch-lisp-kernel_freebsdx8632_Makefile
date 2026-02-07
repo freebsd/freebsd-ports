@@ -1,0 +1,11 @@
+--- lisp-kernel/freebsdx8632/Makefile.orig	2020-04-19 21:32:56 UTC
++++ lisp-kernel/freebsdx8632/Makefile
+@@ -13,7 +13,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-VC_REVISION != sh -c "git describe --dirty 2>/dev/null || echo unknown"
++VC_REVISION:= %%TAG%%
+ 
+ VPATH = ..
+ RM = /bin/rm

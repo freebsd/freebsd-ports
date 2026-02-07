@@ -1,0 +1,14 @@
+A pandas-centric interface to highly performant travel network analysis
+leveraging contraction hierarchies provided by code from the Open Source Routing
+Machine (OSRM). Hence, the pandas routing machine, pandarm. This package is a
+friendly fork of the pandana library, originally written by Fletcher Foti and
+UrbanSim Inc. Despite fantastic work by the original authors, maintaining
+open-source software is a great deal of work and the pandana library is no
+longer compatible with the current pydata stack (specifically as of numpy
+version 2.0). This fork reinstates compatibility and brings along a few new
+modern touches and enhancements. Pull requests are very welcome.
+
+Main features of the package include:
+- multi-threaded calculation of shortest path routes and distances
+- network aggregations (i.e. accessibility metrics)
+- network-based isochrones

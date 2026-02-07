@@ -1,0 +1,8 @@
+sinatra-url-for constructs absolute paths and full URLs for
+handlers in a Sinatra application. Assuming that your application
+is running on example.com, and that it has been mapped to /myapp,
+you should be able call url_for from within a handler as follows:
+
+  url_for "/"            # Returns "/myapp/"
+  url_for "/foo"         # Returns "/myapp/foo"
+  url_for "/foo", :full  # Returns "http://example.com/myapp/foo"

@@ -1,0 +1,5 @@
+TIMESTAMP = 1599018160
+SHA256 (xcoral-3.47.tar.gz) = 886e02eeb96e494d32969fcf41dcd09133896b717b714eb42affed1f460af3dd
+SIZE (xcoral-3.47.tar.gz) = 2760763
+SHA256 (xcoral-alpheus-and-peneus-2020.patch.bz2) = 716fcef19bf3e815473e99812d3a8193041637984226c7e81f9129c0596da614
+SIZE (xcoral-alpheus-and-peneus-2020.patch.bz2) = 71760

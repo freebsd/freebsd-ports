@@ -1,0 +1,6 @@
+bin/xml-format
+share/man/man1/xml-format.1.gz
+%%DATADIR%%/Config/dbk/block-tags.txt
+%%DATADIR%%/Config/dbk/line-tags.txt
+%%DATADIR%%/Config/dbk/sectioning-tags.txt
+%%DATADIR%%/Config/dbk/verbatim-tags.txt

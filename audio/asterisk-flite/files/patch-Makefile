@@ -1,0 +1,59 @@
+--- Makefile.orig	2023-07-01 23:18:21 UTC
++++ Makefile
+@@ -6,31 +6,17 @@
+ # the GNU General Public License Version 2. See the COPYING file
+ # at the top of the source tree.
+ 
+-ASTLIBDIR:=$(shell awk '/moddir/{print $$3}' /etc/asterisk/asterisk.conf 2> /dev/null)
+-ifeq ($(strip $(ASTLIBDIR)),)
+-	MODULES_DIR:=$(INSTALL_PREFIX)/usr/lib/asterisk/modules
+-else
+-	MODULES_DIR:=$(INSTALL_PREFIX)$(ASTLIBDIR)
+-endif
+-ASTETCDIR:=$(INSTALL_PREFIX)/etc/asterisk
++MODULES_DIR=$(PREFIX)/lib/asterisk/modules
++ASTETCDIR=$(PREFIX)/etc/asterisk
+ SAMPLENAME:=flite.conf.sample
+-CONFNAME:=$(basename $(SAMPLENAME))
+ 
+ INSTALL:=install
+-CC:=gcc
+-OPTIMIZE:=-O2
+-DEBUG:=-g
++CC?=gcc
+ 
+-LIBS+=-lflite_cmu_us_kal -lflite_cmu_us_kal16 -lflite_cmu_us_awb -lflite_cmu_us_rms -lflite_cmu_us_slt -lflite_usenglish -lflite_cmulex -lflite
++LIBS+=$(LDFLAGS) -lflite_cmu_us_kal -lflite_cmu_us_kal16 -lflite_cmu_us_awb -lflite_cmu_us_rms -lflite_cmu_us_slt -lflite_usenglish -lflite_cmulex -lflite
+ CFLAGS+=-pipe -fPIC -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE -DAST_MODULE_SELF_SYM=__internal_app_flite_self
+ 
+ all: app_flite.so
+-	@echo " +--------- app_flite Build Complete --------+"
+-	@echo " + app_flite has successfully been built,    +"
+-	@echo " + and can be installed by running:          +"
+-	@echo " +                                           +"
+-	@echo " +               make install                +"
+-	@echo " +-------------------------------------------+"
+ 
+ app_flite.o: app_flite.c
+ 	$(CC) $(CFLAGS) $(DEBUG) $(OPTIMIZE) -c -o $@ $*.c
+@@ -44,20 +29,7 @@ install: all
+ install: all
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(MODULES_DIR)
+ 	$(INSTALL) -m 755 app_flite.so $(DESTDIR)$(MODULES_DIR)
+-	@echo " +---- app_flite Installation Complete ------+"
+-	@echo " +                                           +"
+-	@echo " + app_flite has successfully been installed.+"
+-	@echo " + If you would like to install the sample   +"
+-	@echo " + configuration file run:                   +"
+-	@echo " +                                           +"
+-	@echo " +              make samples                 +"
+-	@echo " +-------------------------------------------+"
+ 
+ samples:
+ 	@mkdir -p $(DESTDIR)$(ASTETCDIR)
+-	@if [ -f $(DESTDIR)$(ASTETCDIR)/$(CONFNAME) ]; then \
+-		echo "Backing up previous config file as $(CONFNAME).old";\
+-		mv -f $(DESTDIR)$(ASTETCDIR)/$(CONFNAME) $(DESTDIR)$(ASTETCDIR)/$(CONFNAME).old ; \
+-	fi ;
+ 	$(INSTALL) -m 644 $(SAMPLENAME) $(DESTDIR)$(ASTETCDIR)/$(CONFNAME)
+-	@echo " ------- app_flite confing Installed ---------"

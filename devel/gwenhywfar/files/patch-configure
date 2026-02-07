@@ -1,0 +1,57 @@
+Hunk 1: Avoid linking to unneeded Qt components (yet again) which were re-added
+        in 5.12.1, and re-add widgets which was removed for some reason. This
+        only needs core, gui, and widgets.
+        Use pkgconf to define QT_LIBS. The other method produces the full path
+        to the libraries which libtool seems to discard.
+
+--- configure.orig	2025-07-06 17:51:09 UTC
++++ configure
+@@ -26583,42 +26583,20 @@ win32 {
+     CONFIG -= debug_and_release
+     CONFIG += release
+ }
+-qtHaveModule(axcontainer):       QT += axcontainer
+-qtHaveModule(axserver):          QT += axserver
+-qtHaveModule(concurrent):        QT += concurrent
+ qtHaveModule(core):              QT += core
+-qtHaveModule(dbus):              QT += dbus
+-qtHaveModule(declarative):       QT += declarative
+-qtHaveModule(designer):          QT += designer
+ qtHaveModule(gui):               QT += gui
+-qtHaveModule(help):              QT += help
+-qtHaveModule(multimedia):        QT += multimedia
+-qtHaveModule(multimediawidgets): QT += multimediawidgets
+-qtHaveModule(network):           QT += network
+-qtHaveModule(opengl):            QT += opengl
+-qtHaveModule(printsupport):      QT += printsupport
+-qtHaveModule(qml):               QT += qml
+-qtHaveModule(qmltest):           QT += qmltest
+-qtHaveModule(x11extras):         QT += x11extras
+-qtHaveModule(script):            QT += script
+-qtHaveModule(scripttools):       QT += scripttools
+-qtHaveModule(sensors):           QT += sensors
+-qtHaveModule(serialport):        QT += serialport
+-qtHaveModule(sql):               QT += sql
+-qtHaveModule(svg):               QT += svg
+-qtHaveModule(testlib):           QT += testlib
+-qtHaveModule(uitools):           QT += uitools
+-qtHaveModule(webkit):            QT += webkit
+-qtHaveModule(webkitwidgets):     QT += webkitwidgets
+-qtHaveModule(xml):               QT += xml
+-qtHaveModule(xmlpatterns):       QT += xmlpatterns
++qtHaveModule(widgets):           QT += widgets
+ percent.target = %
+ percent.commands = @echo -n "\$(\$(@))\ "
+ QMAKE_EXTRA_TARGETS += percent
+ EOF
+     $QMAKE $am_have_qt_pro -o $am_have_qt_makefile
+     QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
+-    QT_LIBS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile LIBS`
++    if test "$ver" ">" "Qt version 5"; then
++      QT_LIBS=`pkgconf --libs Qt6Widgets opengl`
++    else
++      QT_LIBS=`pkgconf --libs Qt5Widgets gl`
++    fi
+     rm $am_have_qt_pro $am_have_qt_stash $am_have_qt_makefile
+     rmdir $am_have_qt_dir
+ 

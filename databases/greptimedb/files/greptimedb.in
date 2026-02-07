@@ -1,0 +1,127 @@
+#!/bin/sh
+
+# PROVIDE: greptimedb
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to run greptimedb:
+#
+# greptimedb_profiles (str):     Set to "" by default.
+#                               Define your profiles here.
+# greptimedb(_profile)?_enable (bool):	Set it to "YES" to enable greptimedb.
+#				Default is "NO".
+# greptimedb(_profile)?_args (flags):	Set extra args here. More options in greptimedb(1)
+#				Default is "--log-dir=/var/log/greptimedb --log-level=info \
+#				standalone start -c %%ETCDIR%%/standalone.toml"
+#				for the 'standalone' mode.
+# greptimedb(_profile)?_user (user):	Set user to run greptimedb.
+#				Default is "%%USER%%".
+# greptimedb(_profile)?_group (group):	Set group to run greptimedb.
+#				Default is "%%GROUP%%".
+# greptimedb(_profile)?_post_start (str):   Set extra commands that should be executed after greptimedb was successfully
+#                               started here.
+#                               Default is empty "".
+
+. /etc/rc.subr
+
+name="greptimedb"
+rcvar=greptimedb_enable
+
+_piddir="/var/run/greptimedb"
+pidfile="${_piddir}/greptimedb.pid"
+
+: ${greptimedb_enable="NO"}
+: ${greptimedb_user="%%USER%%"}
+: ${greptimedb_group="%%GROUP%%"}
+: ${greptimedb_args="--log-dir=/var/log/greptimedb --log-level=info standalone start -c %%ETCDIR%%/standalone.toml"} # standalone mode
+
+load_rc_config ${name}
+
+if [ -n "$2" ]; then # profile is provided
+	profile="$2"
+	if [ -n "${greptimedb_profiles}" ]; then
+		pidfile="${_piddir}/greptimedb.${profile}.pid"
+		eval greptimedb_enable="\${greptimedb_${profile}_enable:-${greptimedb_enable}}"
+		eval greptimedb_user="\${greptimedb_${profile}_user:-${greptimedb_user}}"
+		eval greptimedb_group="\${greptimedb_${profile}_group:-${greptimedb_group}}"
+		eval greptimedb_args="\${greptimedb_${profile}_args:-${greptimedb_args}}"
+		eval greptimedb_post_start="\${greptimedb_${profile}_post_start:-${greptimedb_post_start}}"
+	else
+		echo "%%PREFIX%%/etc/rc.d/greptimedb: extra argument ignored"
+	fi
+else # profile is not provided
+	if [ -n "${greptimedb_profiles}" -a -n "$1" ]; then
+		for profile in ${greptimedb_profiles}; do
+			eval _enable="\${greptimedb_${profile}_enable}"
+			case "${_enable:-${greptimedb_enable}}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+				;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=greptimedb_enable
+				else
+					_var=greptimedb_"${profile}"_enable
+				fi
+				warn \
+					"Bad value" \
+					"'${_enable:-${greptimedb_enable}}'" \
+					"for ${_var}. " \
+					"Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> greptimedb profile: ${profile}"
+			if %%PREFIX%%/etc/rc.d/greptimedb $1 ${profile} ; then
+				success="${profile} ${success:-}"
+			else
+				failed="${profile} (${retcode}) ${failed:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+greptimedb_poststart()
+{
+	if [ -n "$greptimedb_post_start" ]; then
+		eval $greptimedb_post_start
+	fi
+}
+
+greptimedb_poststop()
+{
+	if [ -n "${profile}" ]; then
+		[ -e "$pidfile" ] && unlink $pidfile
+	else
+		local file
+
+		for file in ${_piddir}/* ; do
+			case "$file" in
+			*\*)
+				continue ;;
+			esac
+			unlink $file
+		done
+	fi
+}
+
+_profsuffx=""
+if [ -n "${profile}" ]; then
+	_profsuffx="-${profile}"
+fi
+
+procname=%%PREFIX%%/bin/greptime
+command="/usr/sbin/daemon"
+command_args="-f -S -p ${pidfile} \
+	-t greptimedb${_profsuffx} \
+	%%PREFIX%%/bin/greptime $greptimedb_args"
+
+
+start_precmd="install -d -o $greptimedb_user -g $greptimedb_group -m 755 $_piddir"
+start_postcmd="${name}_poststart"
+stop_postcmd="${name}_poststop"
+
+run_rc_command "$1"

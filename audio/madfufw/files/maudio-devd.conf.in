@@ -1,0 +1,32 @@
+notify 100 {
+	match "system" "USB";
+	match "subsystem" "DEVICE";
+	match "type" "ATTACH";
+	match "vendor" "0x0763";
+	match "product" "0x280[34568]";
+	action "%%PREFIX%%/etc/rc.d/maudio start $cdev $product";
+};
+
+attach 100 {
+	match "device-name" "pcm[0-9]+";
+	action "%%PREFIX%%/etc/rc.d/maudio attach $device-name $bus";
+};
+
+attach 100 {
+	match "device-name" "uaudio[0-9]+";
+	match "vendor" "0x0763";
+	match "product" "0x2006";
+	action "%%PREFIX%%/etc/rc.d/maudio attach $device-name";
+};
+
+detach 100 {
+	match "device-name" "pcm[0-9]+";
+	action "%%PREFIX%%/etc/rc.d/maudio detach $device-name $bus";
+};
+
+detach 100 {
+	match "device-name" "uaudio[0-9]+";
+	match "vendor" "0x0763";
+	match "product" "0x2006";
+	action "%%PREFIX%%/etc/rc.d/maudio detach $device-name";
+};

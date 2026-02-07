@@ -1,0 +1,59 @@
+--- bin/Makefile.in.orig	2018-06-07 05:48:29 UTC
++++ bin/Makefile.in
+@@ -25,7 +25,9 @@ LDFLAGS = @LDFLAGS@
+ COFLAG = -o $@ 
+ LIBS = @LIBS@
+ 
+-INSTALL = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
++INSTALL_DATA = @INSTALL_DATA@
+ LN = ln
+ RM = rm -f
+ MKDIR = mkdir -p
+@@ -105,31 +107,31 @@ install: all
+ 	-@if [ ! -d $(DESTDIR)$(bindir) ]; then \
+ 		$(MKDIR) $(DESTDIR)$(bindir); \
+ 	fi
+-	$(INSTALL) -m 555 $(PRG1) $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} $(PRG1) $(DESTDIR)$(bindir)
+ 	for f in $(ALT); do \
+ 		$(RM) $(DESTDIR)$(bindir)/$${f}; \
+ 		$(LN) $(DESTDIR)$(bindir)/$(PRG1) $(DESTDIR)$(bindir)/$${f}; \
+ 	done
+-	$(INSTALL) -m 555 $(PRG2) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG3) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG4) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG5) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG6) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG7) $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} $(PRG2) $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} $(PRG3) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} $(PRG4) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} $(PRG5) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} $(PRG6) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} $(PRG7) $(DESTDIR)$(bindir)
+ 	-@if [ ! -d $(DESTDIR)$(mandir) ]; then \
+ 		$(MKDIR) $(DESTDIR)$(mandir); \
+ 	fi
+-	$(INSTALL) -m 444 $(MAN1) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN1) $(DESTDIR)$(mandir)
+ 	for f in $(MALT); do \
+ 		$(RM) $(DESTDIR)$(mandir)/$${f}; \
+ 		$(LN) $(DESTDIR)$(mandir)/$(MAN1) $(DESTDIR)$(mandir)/$${f}; \
+ 	done
+-	$(INSTALL) -m 444 $(MAN2) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN3) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN4) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN5) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN6) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN7) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN2) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN3) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN4) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN5) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN6) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN7) $(DESTDIR)$(mandir)
+ 
+ ##
+ ## End of Makefile

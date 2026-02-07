@@ -1,0 +1,9 @@
+html5rdf is a pure-python library for parsing HTML to DOMFragment objects for
+the use in RDFLib. html5rdf is a fork of html5lib-modern.
+
+It is designed to conform to the WHATWG HTML specification, as is implemented by
+all major web browsers.
+
+htm5lib-modern is designed as a drop-in replacement for html5lib that exposes a
+new html5lib module without Python 2 support and without the legacy dependencies
+on six, and webencodings.

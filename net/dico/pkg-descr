@@ -1,0 +1,7 @@
+GNU Dico is a flexible modular implementation of DICT server (RFC 2229).
+It handles database accesses using loadable modules, and does not depend
+on particular database format. The package includes several loadable
+modules for interfacing with various database formats, among them a
+module for dict.org databases. New modules can be written in C, Guile or
+Python. The package also includes a console client program for querying
+remote dictionary servers.

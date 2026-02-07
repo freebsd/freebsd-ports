@@ -1,0 +1,19 @@
+--- configure.ac.orig	2014-05-01 10:44:01 UTC
++++ configure.ac
+@@ -4,6 +4,7 @@ AC_PREREQ(2.61)
+ AC_INIT([lcdproc], [0.5.7], [lcdproc@lists.omnipotent.net])
+ AC_CONFIG_SRCDIR([clients/lcdproc/batt.c])
+ AM_INIT_AUTOMAKE
++PKG_PROG_PKG_CONFIG()
+ 
+ AC_CONFIG_HEADERS(config.h)
+ 
+@@ -268,7 +269,7 @@ AC_MSG_RESULT($enable_libusb)
+ 
+ if test "$enable_libusb" = "yes"; then
+ 	ifdef([PKG_CHECK_MODULES],
+-		[PKG_CHECK_MODULES(LIBUSB, libusb,
++		[PKG_CHECK_MODULES(LIBUSB, libusb-0.1,
+ 			[AC_DEFINE(HAVE_LIBUSB, [1], [Define to 1 if you have libusb])],
+ 			[ enable_libusb=no ])],
+ 		[AC_MSG_WARN([pkg-config not (fully) installed; drivers requiring libusb may not be built])])

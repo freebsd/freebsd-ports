@@ -1,0 +1,15 @@
+bin/viruskiller
+share/applications/viruskiller.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/battery.png
+%%PORTDOCS%%%%DOCSDIR%%/bomb.png
+%%PORTDOCS%%%%DOCSDIR%%/clock.png
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/title.png
+%%PORTDOCS%%%%DOCSDIR%%/virus1.gif
+%%PORTDOCS%%%%DOCSDIR%%/virus2.gif
+%%PORTDOCS%%%%DOCSDIR%%/virus3.gif
+share/icons/hicolor/16x16/apps/viruskiller.png
+share/icons/hicolor/32x32/apps/viruskiller.png
+share/icons/hicolor/64x64/apps/viruskiller.png
+%%DATADIR%%/viruskiller.pak

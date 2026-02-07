@@ -1,0 +1,2 @@
+A tool for tuning TimescaleDB for better performance by adjusting settings
+to match your system's CPU and memory resources.

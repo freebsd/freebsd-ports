@@ -1,0 +1,12 @@
+usr/lib64/libevent-2.1.so.7
+usr/lib64/libevent-2.1.so.7.0.1
+usr/lib64/libevent_core-2.1.so.7
+usr/lib64/libevent_core-2.1.so.7.0.1
+usr/lib64/libevent_extra-2.1.so.7
+usr/lib64/libevent_extra-2.1.so.7.0.1
+usr/lib64/libevent_openssl-2.1.so.7
+usr/lib64/libevent_openssl-2.1.so.7.0.1
+usr/lib64/libevent_pthreads-2.1.so.7
+usr/lib64/libevent_pthreads-2.1.so.7.0.1
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+usr/share/licenses/libevent/LICENSE

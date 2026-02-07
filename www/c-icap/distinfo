@@ -1,0 +1,5 @@
+TIMESTAMP = 1754088080
+SHA256 (c_icap-0.6.4.tar.gz) = 284cd9ebdde3ef4f46ed23c1c0427e28399ba1eb4f236a1a6cfd9e38176669bc
+SIZE (c_icap-0.6.4.tar.gz) = 812711
+SHA256 (aa28041.patch) = f6c2fe0ca011f7269b97c3773bf00fd6fb96f98aa7ebc20460306e4a00097d26
+SIZE (aa28041.patch) = 7444

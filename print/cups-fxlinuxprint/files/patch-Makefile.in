@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2014-05-09 10:00:10.000000000 +0900
++++ Makefile.in	2014-05-09 10:07:35.000000000 +0900
+@@ -166,9 +166,9 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-cupsfilterdir = /usr/lib/cups/filter
+-cupsppddir = /usr/share/cups/model/FujiXerox/en
+-cupsmimedir = /etc/cups
++cupsfilterdir = @libexecdir@/cups/filter
++cupsppddir = @datadir@/cups/model/FujiXerox/en
++cupsmimedir = @datadir@/cups/mime
+ EXTRA_DIST = fxlinuxprint.ppd mimefx.types mimefx.convs
+ cupsppd_DATA = fxlinuxprint.ppd
+ cupsmime_DATA = mimefx.types mimefx.convs

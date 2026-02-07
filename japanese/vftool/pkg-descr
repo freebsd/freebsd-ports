@@ -1,0 +1,15 @@
+This kit is for making virtual font using in dvi2ps, dvipsk or dvi2dvi.
+
+This port provides virtual fonts with tartget of following 4
+targets(n2a, a2n, a2bk, p2pn):
+
+n2a     virtual font for transform from dvi file of NTT JTeX to ASCII
+        Japanese TeX.
+a2n     virtual font for transform from dvi file of ASCII Japanese TeX to
+        NTT JTeX.
+a2bk    virtual font for transform from dvi file of ASCII Japanese TeX to
+        dvi file using printer-builtin mono space Kanji fonts.
+p2pn    virtual font for transform from dvi file of pTeX to NTT JTeX.
+
+If you make use of Japanese "Takegaki" style in pTeX or pLaTeX2e, you must be
+installed this port before installing dvi2ps.

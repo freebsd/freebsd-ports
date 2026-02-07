@@ -1,0 +1,9 @@
+%%SITE_PERL%%/WWW/Scripter/Location.pod
+%%SITE_PERL%%/WWW/Scripter/History.pod
+%%SITE_PERL%%/WWW/Scripter/WindowGroup.pm
+%%SITE_PERL%%/WWW/Scripter.pm
+%%SITE_PERL%%/WWW/Scripter.pod
+%%PERL5_MAN3%%/WWW::Scripter::Location.3.gz
+%%PERL5_MAN3%%/WWW::Scripter.3.gz
+%%PERL5_MAN3%%/WWW::Scripter::History.3.gz
+%%PERL5_MAN3%%/WWW::Scripter::WindowGroup.3.gz

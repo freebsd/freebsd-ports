@@ -1,0 +1,15 @@
+bin/rssroll
+@sample etc/rssrollrc.sample
+%%WWWDIR%%/css/common.css
+%%WWWDIR%%/css/default.css
+%%WWWDIR%%/css/flak.css
+%%WWWDIR%%/html/default/feed.html
+%%WWWDIR%%/html/default/footer.html
+%%WWWDIR%%/html/default/header.html
+%%WWWDIR%%/html/flak/feed.html
+%%WWWDIR%%/html/flak/footer.html
+%%WWWDIR%%/html/flak/header.html
+%%WWWDIR%%/html/main.html
+%%WWWDIR%%/html/summary.rss
+%%WWWDIR%%/html/summary_item.rss
+%%WWWDIR%%/index.cgi

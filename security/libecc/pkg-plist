@@ -1,0 +1,11 @@
+include/libecc/bitset.h
+include/libecc/debug.h
+include/libecc/fieldmath.h
+include/libecc/polynomial.h
+include/libecc/rng.h
+include/libecc/rds.h
+include/libecc/sha.h
+include/libecc/square.hcc
+lib/libecc.so
+lib/libecc.so.2
+lib/libecc.so.2.0.1

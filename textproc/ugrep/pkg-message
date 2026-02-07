@@ -1,0 +1,32 @@
+[
+{
+  type: install
+  message: <<EOM
+  You have successfully built and installed ugrep.
+
+  You can use the ugrep & ug commands to search files.
+
+  The ugrep command is for batch use, whereas the ug
+  command is intended for interactive searches using
+  a .ugrep configuration file with your preferences,
+  located in the working directory or home directory.
+  Run 'ug --save-config' to create a .ugrep file.
+
+  Aliases to consider:
+    alias uq     = 'ug -Q'
+    alias ux     = 'ug -UX'
+    alias uz     = 'ug -z'
+    alias grep   = 'ugrep -G'
+    alias egrep  = 'ugrep -E'
+    alias fgrep  = 'ugrep -F'
+    alias pgrep  = 'ugrep -P'
+    alias xgrep  = 'ugrep -UX'
+    alias zgrep  = 'ugrep -zG'
+    alias zegrep = 'ugrep -zE'
+    alias zfgrep = 'ugrep -zF'
+    alias zpgrep = 'ugrep -zP'
+    alias zxgrep = 'ugrep -zUX'
+    alias xdump  = 'ugrep -X ""'
+EOM
+}
+]

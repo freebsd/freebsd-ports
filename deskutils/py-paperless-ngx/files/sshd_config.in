@@ -1,0 +1,14 @@
+### Configuration for uploading documents via SFTP
+### e.g. using a scanner that supports such a feature
+
+# Only include if sshd is dedicated to paperless
+# otherwise you'll lock yourself out
+AllowUsers paperless
+
+# paperless can only do sftp and is dropped into correct directory
+Match User paperless
+	ChrootDirectory %h/consume
+	ForceCommand internal-sftp -u 0077 -d /input
+	AllowTcpForwarding no
+	X11Forwarding no
+	PasswordAuthentication no

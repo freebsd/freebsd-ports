@@ -1,0 +1,8 @@
+Lzip is a lossless data compressor with a user interface similar to the one
+of gzip or bzip2.  Lzip decompresses almost as fast as gzip and compresses
+more than bzip2, which makes it well suited for software distribution and
+data archiving.  Lzip is a clean implementation of the LZMA algorithm.
+
+The lzip file format is designed for long-term data archiving.  It is
+clean, provides very safe four factor integrity checking, and is backed
+by the recovery capabilities of lziprecover.

@@ -1,0 +1,5 @@
+This module parses HTTP headers using a C++ state machine.  The goal is
+to be fast, not necessarily to do everything you could ever want.
+
+Headers are not static, you can parse them, munge them, or even build
+them using this module.

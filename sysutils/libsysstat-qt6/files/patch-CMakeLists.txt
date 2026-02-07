@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2024-04-17 05:57:59.000000000 -0500
++++ CMakeLists.txt	2024-04-25 13:02:12.269260000 -0500
+@@ -28,6 +28,16 @@
+ include(LXQtCreatePortableHeaders)
+ include(LXQtCompilerSettings NO_POLICY_SCOPE)
+ 
++if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++include(CheckIncludeFiles)
++include(CheckLibraryExists)
++check_include_files("sys/socket.h;net/if.h;net/if_mib.h;net/if_types.h" HAVE_IF_H)
++check_library_exists(kvm kvm_getswapinfo "kvm.h" HAVE_KVM_H)
++check_library_exists(c sysctlbyname "sys/sysctl.h" HAVE_SYSCTL_H)
++configure_file(config.h.in config.h)
++add_definitions("-DHAVE_CONFIG_H=1")
++endif()
++
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ 
+@@ -80,7 +90,11 @@
+         ${SYSSTAT_QM_FILES}
+ )
+ 
+-target_link_libraries(${SYSSTAT_LIBRARY_NAME} Qt6::Core)
++if(HAVE_SYSCTL_H AND HAVE_KVM_H)
++    target_link_libraries(${SYSSTAT_LIBRARY_NAME} c kvm Qt6::Core)
++else()
++    target_link_libraries(${SYSSTAT_LIBRARY_NAME} Qt6::Core)
++endif()
+ 
+ set_target_properties(${SYSSTAT_LIBRARY_NAME} PROPERTIES
+     VERSION ${SYSSTAT_VERSION}

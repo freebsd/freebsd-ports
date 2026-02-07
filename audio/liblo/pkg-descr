@@ -1,0 +1,4 @@
+liblo is a lightweight library that provides an easy to use implementation of
+the OSC protocol. For more information about the OSC protocol, please see:
+- http://www.cnmat.berkeley.edu/OpenSoundControl/
+- http://www.opensoundcontrol.org/

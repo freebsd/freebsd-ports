@@ -1,0 +1,199 @@
+bin/vulsrepo
+@sample etc/newsyslog.conf.d/vulsrepo.conf.sample
+@sample etc/vulsrepo-config.toml.sample
+%%WWWDIR%%/dist/css/index.css
+%%WWWDIR%%/dist/img/error.svg
+%%WWWDIR%%/dist/img/loading.gif
+%%WWWDIR%%/dist/img/ok.svg
+%%WWWDIR%%/dist/img/loading_small.gif
+%%WWWDIR%%/dist/js/vulsrepo.js
+%%WWWDIR%%/dist/js/vulsrepo_common.js
+%%WWWDIR%%/dist/js/vulsrepo_param.js
+%%WWWDIR%%/gallery/delete-filter.png
+%%WWWDIR%%/gallery/filter-04.png
+%%WWWDIR%%/gallery/image005.png
+%%WWWDIR%%/gallery/clear-filter.png
+%%WWWDIR%%/gallery/filter-03.png
+%%WWWDIR%%/gallery/pivot-table-setting.png
+%%WWWDIR%%/gallery/image002.png
+%%WWWDIR%%/gallery/priority.gif
+%%WWWDIR%%/gallery/affected-processes.png
+%%WWWDIR%%/gallery/cert-alert.png
+%%WWWDIR%%/gallery/share-setting.png
+%%WWWDIR%%/gallery/open-print-preview.png
+%%WWWDIR%%/gallery/pivot-item-add-remove-move.gif
+%%WWWDIR%%/gallery/filter-off.png
+%%WWWDIR%%/gallery/filter-02.png
+%%WWWDIR%%/gallery/image003.png
+%%WWWDIR%%/gallery/item-filter.png
+%%WWWDIR%%/gallery/filter-05.png
+%%WWWDIR%%/gallery/detail-tab.png
+%%WWWDIR%%/gallery/image004.png
+%%WWWDIR%%/gallery/item-filtered.png
+%%WWWDIR%%/gallery/multiselect.png
+%%WWWDIR%%/gallery/detail-main.png
+%%WWWDIR%%/gallery/daterange-custom.png
+%%WWWDIR%%/gallery/demo.gif
+%%WWWDIR%%/gallery/select-file-2.png
+%%WWWDIR%%/gallery/mitigation.png
+%%WWWDIR%%/gallery/references.png
+%%WWWDIR%%/gallery/changelog.png
+%%WWWDIR%%/gallery/image007.png
+%%WWWDIR%%/gallery/filter-01.png
+%%WWWDIR%%/gallery/save-filter.png
+%%WWWDIR%%/gallery/detail-package.png
+%%WWWDIR%%/gallery/daterange.png
+%%WWWDIR%%/gallery/select-filter.png
+%%WWWDIR%%/gallery/pivot-table-misc.png
+%%WWWDIR%%/gallery/cweid.png
+%%WWWDIR%%/gallery/image008.png
+%%WWWDIR%%/gallery/image001.png
+%%WWWDIR%%/gallery/cvss-chart.png
+%%WWWDIR%%/gallery/image006.png
+%%WWWDIR%%/gallery/hamburger.png
+%%WWWDIR%%/gallery/exploits.png
+%%WWWDIR%%/gallery/tsv-export.png
+%%WWWDIR%%/gallery/multiselect-filter.png
+%%WWWDIR%%/index.html
+%%WWWDIR%%/plugins/jquery/jquery-3.6.0.min.js
+%%WWWDIR%%/plugins/jquery.collapser.js/jquery.collapser.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot_spec.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.de.min.js
+%%WWWDIR%%/plugins/pivot.js/gchart_renderers.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.it.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.tr.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.tr.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.de.min.js.map
+%%WWWDIR%%/plugins/pivot.js/c3_renderers.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.it.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.da.min.js
+%%WWWDIR%%/plugins/pivot.js/export_renderers.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.ru.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot_spec.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.ru.min.js
+%%WWWDIR%%/plugins/pivot.js/d3_renderers.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.pt.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.da.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.nl.min.js
+%%WWWDIR%%/plugins/pivot.js/export_renderers.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.pt.min.js.map
+%%WWWDIR%%/plugins/pivot.js/LICENSE.md
+%%WWWDIR%%/plugins/pivot.js/pivot.es.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.min.css
+%%WWWDIR%%/plugins/pivot.js/d3_renderers.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.min.js
+%%WWWDIR%%/plugins/pivot.js/c3_renderers.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.nl.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.zh.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.fr.min.js
+%%WWWDIR%%/plugins/pivot.js/pivot.zh.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.fr.min.js.map
+%%WWWDIR%%/plugins/pivot.js/pivot.min.js.map
+%%WWWDIR%%/plugins/pivot.js/gchart_renderers.min.js.map
+%%WWWDIR%%/plugins/pivot.js/tips_data.min.js
+%%WWWDIR%%/plugins/pivot.js/export_renderers.js
+%%WWWDIR%%/plugins/pivot.js/pivot.es.min.js.map
+%%WWWDIR%%/plugins/datatables/datatables.min.js
+%%WWWDIR%%/plugins/datatables/datatables.min.css
+%%WWWDIR%%/plugins/jquery.balloon/jquery.balloon.min.js
+%%WWWDIR%%/plugins/bootstrap-vertical-tabs/bootstrap.vertical-tabs.min.css
+%%WWWDIR%%/plugins/bootstrap-vertical-tabs/LICENSE
+%%WWWDIR%%/plugins/bootstrap-vertical-tabs/src/tabs.css
+%%WWWDIR%%/plugins/bootstrap-vertical-tabs/src/tabs.sideways.css
+%%WWWDIR%%/plugins/Chart.js/Chart.min.js
+%%WWWDIR%%/plugins/clipboard.js/clipboard.min.js
+%%WWWDIR%%/plugins/bootstrap-drawer/css/bootstrap-drawer.min.css
+%%WWWDIR%%/plugins/bootstrap-drawer/js/drawer.min.js
+%%WWWDIR%%/plugins/pathseg/LICENSE
+%%WWWDIR%%/plugins/pathseg/pathseg.js
+%%WWWDIR%%/plugins/bootstrapSwitch/bootstrap-switch.min.js
+%%WWWDIR%%/plugins/bootstrapSwitch/bootstrap-switch.min.css
+%%WWWDIR%%/plugins/bootstrapSwitch/LICENSE
+%%WWWDIR%%/plugins/colorbox/jquery.colorbox-min.js
+%%WWWDIR%%/plugins/colorbox/colorbox.css
+%%WWWDIR%%/plugins/colorbox/images/loading.gif
+%%WWWDIR%%/plugins/colorbox/images/loading_background.png
+%%WWWDIR%%/plugins/colorbox/images/border.png
+%%WWWDIR%%/plugins/colorbox/images/overlay.png
+%%WWWDIR%%/plugins/colorbox/images/controls.png
+%%WWWDIR%%/plugins/colorbox/LICENSE.md
+%%WWWDIR%%/plugins/dynatree.js/MIT-License.txt
+%%WWWDIR%%/plugins/dynatree.js/GPL-LICENSE.txt
+%%WWWDIR%%/plugins/dynatree.js/jquery.dynatree.min.js
+%%WWWDIR%%/plugins/dynatree.js/skin-vista/icons.gif
+%%WWWDIR%%/plugins/dynatree.js/skin-vista/loading.gif
+%%WWWDIR%%/plugins/dynatree.js/skin-vista/ui.dynatree.css
+%%WWWDIR%%/plugins/dynatree.js/skin/icons-rtl.gif
+%%WWWDIR%%/plugins/dynatree.js/skin/icons.gif
+%%WWWDIR%%/plugins/dynatree.js/skin/ui.dynatree.css
+%%WWWDIR%%/plugins/dynatree.js/skin/vline-rtl.gif
+%%WWWDIR%%/plugins/dynatree.js/skin/vline.gif
+%%WWWDIR%%/plugins/dynatree.js/skin/loading.gif
+%%WWWDIR%%/plugins/jquery-ui/jquery-ui.min.css
+%%WWWDIR%%/plugins/jquery-ui/jquery-ui.min.js
+%%WWWDIR%%/plugins/jquery.ui.touch-punch/jquery.ui.touch-punch.min.js
+%%WWWDIR%%/plugins/underscore.js/underscore-min.js
+%%WWWDIR%%/plugins/daterangepicker/moment.min.js
+%%WWWDIR%%/plugins/daterangepicker/daterangepicker.js
+%%WWWDIR%%/plugins/daterangepicker/daterangepicker.css
+%%WWWDIR%%/plugins/jquery.blockUI/jquery.blockUI.js
+%%WWWDIR%%/plugins/slim-select/slimselect.min.css
+%%WWWDIR%%/plugins/slim-select/slimselect.min.js
+%%WWWDIR%%/plugins/bootstrap/css/bootstrap.min.css
+%%WWWDIR%%/plugins/bootstrap/css/bootstrap.min.css.map
+%%WWWDIR%%/plugins/bootstrap/js/bootstrap.min.js
+%%WWWDIR%%/plugins/bootstrap/js/npm.js
+%%WWWDIR%%/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg
+%%WWWDIR%%/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot
+%%WWWDIR%%/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff
+%%WWWDIR%%/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2
+%%WWWDIR%%/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf
+%%WWWDIR%%/plugins/c3.js/LICENSE
+%%WWWDIR%%/plugins/c3.js/c3.min.js
+%%WWWDIR%%/plugins/c3.js/c3.min.css
+%%WWWDIR%%/plugins/lz-string/LICENSE.txt
+%%WWWDIR%%/plugins/lz-string/lz-string.min.js
+%%WWWDIR%%/plugins/d3.js/LICENSE
+%%WWWDIR%%/plugins/d3.js/d3.min.js
+@dir %%WWWDIR%%
+@dir %%WWWDIR%%/dist
+@dir %%WWWDIR%%/dist/css
+@dir %%WWWDIR%%/dist/img
+@dir %%WWWDIR%%/dist/js
+@dir %%WWWDIR%%/gallery
+@dir %%WWWDIR%%/plugins
+@dir %%WWWDIR%%/plugins/jquery
+@dir %%WWWDIR%%/plugins/jquery.collapser.js
+@dir %%WWWDIR%%/plugins/pivot.js
+@dir %%WWWDIR%%/plugins/datatables
+@dir %%WWWDIR%%/plugins/jquery.balloon
+@dir %%WWWDIR%%/plugins/bootstrap-vertical-tabs
+@dir %%WWWDIR%%/plugins/bootstrap-vertical-tabs/src
+@dir %%WWWDIR%%/plugins/Chart.js
+@dir %%WWWDIR%%/plugins/clipboard.js
+@dir %%WWWDIR%%/plugins/bootstrap-drawer
+@dir %%WWWDIR%%/plugins/bootstrap-drawer/css
+@dir %%WWWDIR%%/plugins/bootstrap-drawer/js
+@dir %%WWWDIR%%/plugins/pathseg
+@dir %%WWWDIR%%/plugins/bootstrapSwitch
+@dir %%WWWDIR%%/plugins/colorbox
+@dir %%WWWDIR%%/plugins/colorbox/images
+@dir %%WWWDIR%%/plugins/dynatree.js
+@dir %%WWWDIR%%/plugins/dynatree.js/skin-vista
+@dir %%WWWDIR%%/plugins/dynatree.js/skin
+@dir %%WWWDIR%%/plugins/jquery-ui
+@dir %%WWWDIR%%/plugins/jquery.ui.touch-punch
+@dir %%WWWDIR%%/plugins/underscore.js
+@dir %%WWWDIR%%/plugins/daterangepicker
+@dir %%WWWDIR%%/plugins/jquery.blockUI
+@dir %%WWWDIR%%/plugins/slim-select
+@dir %%WWWDIR%%/plugins/bootstrap
+@dir %%WWWDIR%%/plugins/bootstrap/css
+@dir %%WWWDIR%%/plugins/bootstrap/js
+@dir %%WWWDIR%%/plugins/bootstrap/fonts
+@dir %%WWWDIR%%/plugins/c3.js
+@dir %%WWWDIR%%/plugins/lz-string
+@dir %%WWWDIR%%/plugins/d3.js
+@dir(vuls,vuls,0775) /var/db/vuls/results
+@dir(vuls,vuls,0775) /var/db/vuls
+@dir(vuls,vuls,0775) /var/log/vuls

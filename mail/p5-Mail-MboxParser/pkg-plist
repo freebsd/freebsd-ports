@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Mail/MboxParser.pm
+%%SITE_PERL%%/Mail/MboxParser/Base.pm
+%%SITE_PERL%%/Mail/MboxParser/Mail.pm
+%%SITE_PERL%%/Mail/MboxParser/Mail/Convertable.pm
+%%SITE_PERL%%/Mail/MboxParser/Mail/Body.pm
+%%PERL5_MAN3%%/Mail::MboxParser.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Base.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Mail.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Mail::Body.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Mail::Convertable.3.gz

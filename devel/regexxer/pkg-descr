@@ -1,0 +1,5 @@
+regexxer is a nifty GUI search/replace tool featuring Perl-style regular
+expressions.
+
+If you need project-wide substitution and you're tired of hacking sed
+command lines together, then you should definitely give it a try.

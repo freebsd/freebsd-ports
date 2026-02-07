@@ -1,0 +1,13 @@
+The po4a (PO for anything) project goal is to ease translations (and more
+interestingly, the maintenance of translations) using gettext tools on areas
+where they were not expected like documentation.
+
+po4a currently supports the following formats:
+* manpages
+* POD
+* XML (generic, DocBook, XHTML, Dia, Guide, or WML)
+* SGML
+* TeX (generic, LaTeX, or Texinfo)
+* text (simple text files with some formatting, markdown, or AsciiDoc)
+* INI
+* KernelHelp

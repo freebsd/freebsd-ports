@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: fastnetmon
+# REQUIRE: NETWORKING SERVERS LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable 'fastnetmon':
+#
+# fastnetmon_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=fastnetmon
+desc="fastnetmon startup script"
+rcvar=fastnetmon_enable
+
+load_rc_config "$name"
+
+: ${fastnetmon_enable:=NO}
+: ${fastnetmon_conf:=%%PREFIX%%/etc/$name.conf}
+: ${fastnetmon_flags:=}
+: ${fastnetmon_user:=fastnetmon}
+
+command=%%PREFIX%%/bin/fastnetmon
+command_args="--daemonize --configuration_file ${fastnetmon_conf} --pid_logic ${fastnetmon_flags}"
+pidfile=/var/run/fastnetmon/$name.pid
+
+run_rc_command "$1"

@@ -1,0 +1,5 @@
+rbldnsd is a small and fast DNS daemon, made especially to serve DNSBL
+zones.  It was inspired by Dan J. Bernstein's rbldns program, found in
+/usr/ports/net/djbdns, but is significantly faster.
+
+rbldnsd was written by Michael Tokarev.

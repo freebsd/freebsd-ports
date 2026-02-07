@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# 
+#
+
+USER=%%SMFUSER%%
+GROUP=%%SMFGROUP%%
+DIR=%%SMFDIR%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+    if [ -e ${DIR} ]; then
+        echo "You should manually remove the \"${DIR}\" directory."
+    fi
+fi

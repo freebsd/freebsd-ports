@@ -1,0 +1,2 @@
+Like netcat, but for AMQP. A CLI tool to publish to, and consume,
+from AMQP servers. See README.md or manpage for usage.

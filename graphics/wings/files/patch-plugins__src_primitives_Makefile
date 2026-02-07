@@ -1,0 +1,11 @@
+--- plugins_src/primitives/Makefile.orig	2020-05-04 17:02:40 UTC
++++ plugins_src/primitives/Makefile
+@@ -18,7 +18,7 @@ include ../../erl.mk
+ ESRC=.
+ WINGS_INTL=../../intl_tools
+ EBIN=../../plugins/primitives
+-WINGS_TOP=../../..
++WINGS_TOP=../..
+ WINGS_E3D=../../e3d
+ 
+ ifeq ($(TYPE),debug)

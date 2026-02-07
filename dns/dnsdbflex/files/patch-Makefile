@@ -1,0 +1,15 @@
+--- Makefile.orig	2024-08-05 23:23:17 UTC
++++ Makefile
+@@ -15,9 +15,11 @@
+ #
+ 
+ # Base directory for jansson header and libraries
+-JANSBASE=/usr/local
++#JANSBASE=/usr/local
+ # For macOS on M1, use this instead of the above line:
+ #JANSBASE=/opt/homebrew
++# For FreeBSD. use this instead of the above line:
++JANSBASE=$(LOCALBASE)
+ 
+ JANSINCL = -I$(JANSBASE)/include
+ 

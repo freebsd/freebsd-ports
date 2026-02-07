@@ -1,0 +1,43 @@
+--- src/lib/inp/inpptree.c.orig	1993-05-03 09:16:54.000000000 +0000
++++ src/lib/inp/inpptree.c	2010-02-09 15:45:52.000000000 +0000
+@@ -1,6 +1,8 @@
+ /**********
+ Copyright 1990 Regents of the University of California.  All rights reserved.
+ Author: 1987 Wayne A. Christopher, U. C. Berkeley CAD Group 
++Modified: 2006 John D. Polstra - Fix differentiation of a^b where b is not
++          constant.
+ **********/
+ 
+ #include "spice.h"
+@@ -206,18 +208,10 @@
+                     mkcon(p->right->constant - 1))),
+                     arg1);
+         } else {
+-            /* This is complicated.  f(x) ^ g(x) ->
+-             * exp(y(x) * ln(f(x)) ...
+-             */
+-            arg1 = PTdifferentiate(p->left, varnum);
+-            arg2 = PTdifferentiate(p->right, varnum);
+-            newp = mkb(PT_TIMES, mkf(PTF_EXP, mkb(PT_TIMES,
+-                    p->right, mkf(PTF_LN, p->left))),
+-                    mkb(PT_PLUS, mkb(PT_TIMES, p->right,
+-                    mkb(PT_DIVIDE, arg1, p->left)),
+-                    mkb(PT_TIMES, arg2,
+-                    mkf(PTF_LN, arg1))));
+-
++            /* Rewrite a^b as exp(ln(a) * b) */
++            newp = mkf(PTF_EXP, mkb(PT_TIMES, mkf(PTF_LN, p->left), p->right));
++            /* Differentiate the rewritten form. */
++            newp = PTdifferentiate(newp, varnum);
+         }
+         break;
+ 
+@@ -977,7 +971,7 @@
+             break;
+         }
+ 
+-	td = INPevaluate(&sbuf, &err, 0);
++	td = INPevaluate(&sbuf, &err, 1);
+         if (err == OK) {
+             el.token = TOK_VALUE;
+             el.type = TYP_NUM;

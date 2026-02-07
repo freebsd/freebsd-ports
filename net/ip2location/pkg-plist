@@ -1,0 +1,9 @@
+bin/ip2location
+include/IP2Location.h
+lib/libIP2Location.a
+lib/libIP2Location.so
+lib/libIP2Location.so.3
+lib/libIP2Location.so.3.0.0
+share/ip2loc/IP-COUNTRY.BIN
+share/ip2loc/IPV6-COUNTRY.BIN
+share/man/man1/ip2location.1.gz

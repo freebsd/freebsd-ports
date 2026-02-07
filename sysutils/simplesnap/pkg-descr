@@ -1,0 +1,5 @@
+simplesnap is a powerful system for transferring ZFS snapshots across
+a network. Although it can serve many purposes, its primary goal is to
+manage backups from one ZFS filesystem to a backup filesystem also
+running ZFS, using incremental backups to minimize network traffic and
+disk usage.

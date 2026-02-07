@@ -1,0 +1,4 @@
+Algorithm::CurveFit implements a nonlinear least squares curve fitting
+algorithm. That means, it fits a curve of known form (sine-like,
+exponential, polynomial of degree n, etc.) to a given set of data
+points.

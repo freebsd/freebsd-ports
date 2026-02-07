@@ -1,0 +1,19 @@
+*** src/cdcat.in	Fri Jan 18 14:58:50 2002
+--- src/cdcat.in	Fri Jan 18 17:28:48 2002
+***************
+*** 98,104 ****
+  
+  sub mount {
+  	return if( $test);
+! 	if( system("@MOUNT@ -t iso9660 ".esc_shell($device)." $mntpt") != 0)
+  	{
+  		die "Can't mount $device: $!\n";
+  	}
+--- 98,104 ----
+  
+  sub mount {
+  	return if( $test);
+! 	if( system("@MOUNT@ -t cd9660 ".esc_shell($device)." $mntpt") != 0)
+  	{
+  		die "Can't mount $device: $!\n";
+  	}

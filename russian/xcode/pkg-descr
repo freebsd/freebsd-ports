@@ -1,0 +1,3 @@
+Xcode automatically determines input file charset and converts it
+to the necessary charset. The important feature of the program is
+biunique charset conversion which protects your file from damages.

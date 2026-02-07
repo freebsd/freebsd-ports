@@ -1,0 +1,172 @@
+# vim: syntax=make ts=8 noet
+# =====================================
+# OPTIONS HEADING
+PROXY_DESC=			Build enabled PROXY modules
+SESSION_DESC=			Build enabled SESSION modules
+DEFAULT_MPM_DESC=		The default MPM module
+SHARED_MPM_DESC=		Build all MPMs as shared Module
+EXAMPLE_DESC=			Example and devel modules (do not use in prod)
+
+# =====================================
+# MPMs
+MPM_SHARED_DESC=		all MPMs as loadable module
+MPM_PREFORK_DESC=		non-threaded, pre-forking web server
+MPM_WORKER_DESC=		hybrid multi-threaded multi-process web server
+MPM_EVENT_DESC=			MPM worker variant with the goal of consuming threads only for connections with active processing
+
+# =====================================
+# additional (no modules)
+IPV4_MAPPED_DESC=		Allow IPv6 sockets to handle IPv4 connections
+LUAJIT_DESC=			LuaJit Support
+
+# =====================================
+# modules
+# DESC from modules/*/config.m4 files
+ACCESS_COMPAT_DESC=		mod_access compatibility
+ACTIONS_DESC=			Action triggering on requests
+ALIAS_DESC=			Mapping of requests to different filesystem parts
+ALLOWMETHODS_DESC=		Restrict allowed HTTP methods
+ASIS_DESC=			Sends files that contain their own HTTP headers
+AUTHNZ_FCGI_DESC=		FastCGI authorizer-based authentication and authorization
+AUTHNZ_LDAP_DESC=		LDAP based authentication
+AUTHN_ANON_DESC=		Anonymous user authentication control
+AUTHN_CORE_DESC=		Core authentication module
+AUTHN_DBD_DESC=			SQL-based authentication control
+AUTHN_DBM_DESC=			DBM-based authentication control
+AUTHN_FILE_DESC=		File-based authentication control
+AUTHN_SOCACHE_DESC=		Cached authentication control
+AUTHZ_CORE_DESC=		Core authorization provider vector module
+AUTHZ_DBD_DESC=			SQL based authorization and Login/Session support
+AUTHZ_DBM_DESC=			DBM-based authorization control
+AUTHZ_GROUPFILE_DESC=		"require group" authorization control
+AUTHZ_HOST_DESC=		Host-based authorization control
+AUTHZ_OWNER_DESC=		"require file-owner" authorization control
+AUTHZ_USER_DESC=		"require user" authorization control
+AUTH_BASIC_DESC=		Basic authentication
+AUTH_DIGEST_DESC=		RFC2617 Digest authentication
+AUTH_FORM_DESC=			Form authentication
+AUTOINDEX_DESC=			Directory listing
+
+BROTLI_DESC=			Brotli compression support
+BUCKETEER_DESC=			(dev) buckets manipulation filter
+BUFFER_DESC=			Filter Buffering
+
+CACHE_DESC=			Dynamic file caching
+CACHE_DISK_DESC=		Disk caching module
+CACHE_SOCACHE_DESC=		Shared object cacheing module
+CASE_FILTER_DESC=		(dev) example uppercase conversion filter
+CASE_FILTER_IN_DESC=		(dev) example uppercase conversion input filter
+CERN_META_DESC=			CERN-type meta files
+CGID_DESC=			CGI scripts (threaded MPMs)
+CGI_DESC=			CGI scripts (non-threaded MPMs)
+CHARSET_LITE_DESC=		Character set translation. Enabled by default only on EBCDIC systems
+
+DATA_DESC=			RFC2397 data encoder
+DAV_DESC=			WebDAV protocol handling. --enable-dav also enables mod_dav_fs
+DAV_FS_DESC=			DAV provider for the filesystem. --enable-dav also enables mod_dav_fs
+DAV_LOCK_DESC=			DAV provider for generic locking
+DBD_DESC=			Apache DBD Framework
+DEFLATE_DESC=			Deflate transfer encoding support
+DIALUP_DESC=			Rate limits static files to dialup modem speeds
+DIR_DESC=			Directory request handling
+DUMPIO_DESC=			I/O dump filter
+
+ECHO_DESC=			(dev) example echo server
+ENV_DESC=			Clearing/setting of ENV vars
+EXAMPLE_HOOKS_DESC=		(dev) example hook callback handler module
+EXAMPLE_IPC_DESC=		(dev) example of shared memory and mutex usage
+EXPIRES_DESC=			Expires header control
+EXT_FILTER_DESC=		External filter module
+
+FILE_CACHE_DESC=		File cache
+FILTER_DESC=			Smart Filtering
+
+HEADERS_DESC=			HTTP header control
+HEARTBEAT_DESC=			Generates Heartbeats
+HEARTMONITOR_DESC=		Collects Heartbeats
+HTTP2_DESC=			HTTP/2 (RFC 7540) support
+
+IDENT_DESC=			RFC 1413 ident lookups
+IMAGEMAP_DESC=			Server-side imagemaps
+INCLUDE_DESC=			Server-side includes
+INFO_DESC=			Server information
+
+LBMETHOD_BYBUSYNESS_DESC=	Apache proxy Load balancing by busyness
+LBMETHOD_BYREQUESTS_DESC=	Apache proxy Load balancing by request counting
+LBMETHOD_BYTRAFFIC_DESC=	Apache proxy Load balancing by traffic counting
+LBMETHOD_HEARTBEAT_DESC=	Apache proxy Load balancing from Heartbeats
+LDAP_DESC=			LDAP caching and connection pooling services
+LOGIO_DESC=			Input and output logging
+LOG_CONFIG_DESC=		logging configuration
+LOG_DEBUG_DESC=			Configurable debug logging
+LOG_FORENSIC_DESC=		Forensic logging
+LUA_DESC=			Apache Lua Framework
+
+MACRO_DESC=			Define and use macros in configuration files
+MD_DESC=			Managing domains across virtual hosts, certificate provisioning via the ACME protocol
+MIME_DESC=			Mapp file-ext. to MIME (recommended)
+MIME_MAGIC_DESC=		Automagically determining MIME type
+
+NEGOTIATION_DESC=		Content negotiation
+
+OPTIONAL_FN_EXPORT_DESC=	(dev) example optional function exporter
+OPTIONAL_FN_IMPORT_DESC=	(dev) example optional function importer
+OPTIONAL_HOOK_EXPORT_DESC=	(dev) example optional hook exporter
+OPTIONAL_HOOK_IMPORT_DESC=	(dev) example optional hook importer
+
+#PRIVILEGES_DESC=		Per-virtualhost Unix UserIDs and enhanced security for Solaris
+PROXY_AJP_DESC=			AJP support module for mod_proxy
+PROXY_BALANCER_DESC=		mod_proxy extension for load balancing
+PROXY_CONNECT_DESC=		mod_proxy extension for CONNECT request handling
+PROXY_EXPRESS_DESC=		Dynamic mass reverse proxy extension for mod_proxy
+PROXY_FCGI_DESC=		FastCGI support module for mod_proxy
+PROXY_FDPASS_DESC=		fdpass external process support module for mod_proxy
+PROXY_FTP_DESC=			FTP support module for mod_proxy
+PROXY_HCHECK_DESC=		Dynamic health check of Balancer members (workers) for mod_proxy
+PROXY_HTML_DESC=		Fix HTML Links in a Reverse Proxy
+PROXY_HTTP_DESC=		HTTP support module for mod_proxy
+PROXY_HTTP2_DESC=		HTTP/2 support module for h2 and h2c
+PROXY_SCGI_DESC=		SCGI gateway module for mod_proxy
+PROXY_UWSGI_DESC=		UWSGI gateway module for mod_proxy
+PROXY_WSTUNNEL_DESC=		Websockets Tunnel module for mod_proxy
+
+RATELIMIT_DESC=			Output Bandwidth Limiting
+REFLECTOR_DESC=			Reflect request through the output filter stack
+REMOTEIP_DESC=			Translate header contents to an apparent client remote_ip
+REQTIMEOUT_DESC=		Limit time waiting for request from client
+REQUEST_DESC=			Request Body Filtering
+REWRITE_DESC=			Rule based URL manipulation
+
+SED_DESC=			Filter request and/or response bodies through sed
+SESSION_COOKIE_DESC=		Session cookie module
+SESSION_CRYPTO_DESC=		Session crypto module
+SESSION_DBD_DESC=		Session dbd module
+SETENVIF_DESC=			Modify ENV vars based on characteristics of the request
+SLOTMEM_PLAIN_DESC=		Slotmem provider that uses plain memory
+SLOTMEM_SHM_DESC=		Slotmem provider that uses shared memory
+SOCACHE_DBM_DESC=		dbm small object cache provider
+SOCACHE_DC_DESC=		distcache small object cache provider
+SOCACHE_MEMCACHE_DESC=		memcache small object cache provider
+SOCACHE_REDIS_DESC=		Redis based shared object cache provider
+SOCACHE_SHMCB_DESC=		shmcb small object cache provider
+SPELING_DESC=			Correct common URL misspellings
+SSL_DESC=			SSL/TLS support (mod_ssl)
+STATUS_DESC=			Process/thread monitoring
+SUBSTITUTE_DESC=		Response content rewrite-like filtering
+SUEXEC_DESC=			Set uid and gid for spawned processes
+SUEXEC_SYSLOG_DESC=		Enable syslog for suexec
+
+TLS_DESC=			TLS support via memory-safe rustls library (Experimental)
+
+UNIQUE_ID_DESC=			Per-request unique ids
+UNIXD_DESC=			(required) security for Unix-family platforms
+USERDIR_DESC=			Mapping of requests to user-specific directories
+USERTRACK_DESC=			User-session tracking
+
+VERSION_DESC=			Determining httpd version in config files
+VHOST_ALIAS_DESC=		Mass virtual hosting
+
+WATCHDOG_DESC=			Watchdog module
+
+XML2ENC_DESC=			i18n support for markup filters
+

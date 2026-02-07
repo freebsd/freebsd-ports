@@ -1,0 +1,39 @@
+--- Makefile.orig	Fri Aug 31 17:21:43 2001
++++ Makefile	Tue Sep  4 19:14:16 2001
+@@ -1,29 +1,8 @@
+-all: finish clean
++CXXFLAGS += `${SDL_CONFIG} --cflags` -D_REENTRANT
++LIBS = `${SDL_CONFIG} --libs` -lSDL_image
+ 
+-pengpong:
+-	g++ -I/usr/include/SDL -D_REENTRANT -c -o pengpong.o pengpong.cpp
+-
+-SFont: 
+-	g++ -I/usr/include/SDL -D_REENTRANT -c -o SFont.o SFont.c 
+-
+-link2: 
+-	g++ -I/usr/include/SDL -D_REENTRANT -c -o link2.o link2.cpp
+-
+-finish: SFont link2 pengpong   
+-	g++ -o pengpong link2.o SFont.o pengpong.o -D_REENTRANT -I/usr/include/SDL -lSDL_image
+-
+-uninstall:
+-	rm /usr/local/bin/pengpong
+-	rm /usr/local/share/games/pengpong -rf
+-
+-install: 
+-	cp pengpong /usr/local/bin
+-	mkdir -p /usr/local/share/games/pengpong
+-	mkdir ~/.pengpong
+-	cp *.png /usr/local/share/games/pengpong
+-	cp *.tga /usr/local/share/games/pengpong
+-	cp *.jpg /usr/local/share/games/pengpong
+-clean: 
+-	rm *.o
+-	
+-	
++all:
++	${CXX} -c -o SFont.o SFont.c ${CXXFLAGS}
++	${CXX} -c -o link2.o link2.cpp ${CXXFLAGS}
++	${CXX} -c -o pengpong.o pengpong.cpp ${CXXFLAGS}
++	${CXX} -o pengpong pengpong.o link2.o SFont.o ${CXXFLAGS} ${LIBS}

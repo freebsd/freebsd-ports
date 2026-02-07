@@ -1,0 +1,7 @@
+bin/fyi
+share/bash-completion/completions/fyi
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/fish/vendor_completions.d/fyi.fish
+share/man/man1/fyi.1.gz

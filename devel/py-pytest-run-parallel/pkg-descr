@@ -1,0 +1,10 @@
+pytest-run-parallel is a simple pytest plugin to run tests concurrently.
+
+This pytest plugin takes a set of tests that would be normally be run serially
+and execute them in parallel.
+
+The main goal of pytest-run-parallel is to discover thread-safety issues that
+could exist when using C libraries, this is of vital importance after PEP703,
+which provides a path for a CPython implementation without depending on the
+Global Interpreter Lock (GIL), thus allowing for proper parallelism in programs
+that make use of the CPython interpreter.

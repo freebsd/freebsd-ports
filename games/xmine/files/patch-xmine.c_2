@@ -1,0 +1,142 @@
+--- xmine.c.orig	Sat Feb 19 21:01:16 2000
++++ xmine.c	Sat Feb 19 21:43:15 2000
+@@ -126,6 +126,7 @@
+ Display *disp;
+ Window win;
+ int colordisp;
++Atom delw;
+ 
+ #define COL_BLUE 0
+ #define COL_LIMEGREEN 1
+@@ -246,6 +247,7 @@
+ int	cant_write_score_file P ((void));
+ void	fix_size P ((void));
+ void	relax_size P ((void));
++void	GlobalProtoHandler P ((Widget w, XEvent *xev, String *params, Cardinal *n));
+ 
+ Pixmap fillface;
+ XtAppContext app;
+@@ -278,7 +280,7 @@
+ 	XColor unused;
+ 	int i;
+ 
+-	XtActionsRec actions[3];
++	XtActionsRec actions[4];
+ 	String translations =
+ 		"<Btn1Down>:   search(down)\n\
+ 		 <Btn1Up>:     search(up)\n\
+@@ -291,6 +293,8 @@
+ 	toplevel = XtVaAppInitialize(&app, "Xmine", NULL, 0,
+ 				     &argc, argv, fallbacks, NULL);
+ 
++	delw = XInternAtom(XtDisplay(toplevel), "WM_DELETE_WINDOW", False);
++
+ 	main_w = XtVaCreateManagedWidget("main_w", boxWidgetClass, toplevel,
+ 					 XtNorientation, XtorientVertical,
+ 					 NULL);
+@@ -390,7 +394,13 @@
+ 	actions[1].proc = search_action;
+ 	actions[2].string = "mark";
+ 	actions[2].proc = mark_action;
+-	XtAppAddActions(app, actions, 3);
++	actions[3].string = "GlobalProtoHandler";
++	actions[3].proc = GlobalProtoHandler;
++
++	XtAppAddActions(app, actions, 4);
++	XtOverrideTranslations(toplevel, XtParseTranslationTable(
++		"<Message>WM_PROTOCOLS : GlobalProtoHandler()")
++	);
+ 
+ 	drawing_a = XtVaCreateManagedWidget
+ 		("drawing_a",
+@@ -411,6 +421,7 @@
+ 	XtAddEventHandler(toplevel,
+ 			  StructureNotifyMask, False, resize_handler, 0);
+ 	XtRealizeWidget(toplevel);
++	XSetWMProtocols(XtDisplay(toplevel), XtWindow(toplevel), &delw, 1);
+ 	fillface = XCreateBitmapFromData(XtDisplay(main_w),
+ 					 XtWindow(main_w), fillface_bits,
+ 					 fillface_width, fillface_height);
+@@ -635,11 +646,12 @@
+ 	set_face(armit ? FACE_OHNO : FACE_HAPPY);
+ 	for (dx = -1; dx <= 1; dx++)
+ 		for (dy = -1; dy <= 1; dy++)
+-			if (is_state(x+dx, y+dy, COVERED))
++			if (is_state(x+dx, y+dy, COVERED)) {
+ 				if (armit)
+ 					draw_blank_square(x+dx, y+dy, True);
+ 				else
+ 					draw_button(x+dx, y+dy);
++			}
+ }
+ 
+ #if NeedFunctionPrototypes
+@@ -1362,6 +1374,10 @@
+ 	XtAddCallback(w, XtNcallback, dialog_ok, NULL);
+ 	XtManageChild(pane);
+ 	XtPopup(custom, XtGrabExclusive);
++	XtOverrideTranslations(custom, XtParseTranslationTable(
++		"<Message>WM_PROTOCOLS : GlobalProtoHandler()")
++	);
++	XSetWMProtocols(XtDisplay(custom), XtWindow(custom), &delw, 1);
+ 	dialog_up = True;
+ 	while (dialog_up) {
+ 		XtAppProcessEvent(app, XtIMAll);
+@@ -1525,6 +1541,10 @@
+ 	if (cant_write_score_file()) XtSetSensitive(w, False);
+ 	XtManageChild(pane);
+ 	XtPopup(best, XtGrabExclusive);
++	XtOverrideTranslations(best, XtParseTranslationTable(
++		"<Message>WM_PROTOCOLS : GlobalProtoHandler()")
++	);
++	XSetWMProtocols(XtDisplay(best), XtWindow(best), &delw, 1);
+ 	dialog_up = True;
+ 	while (dialog_up) {
+ 		XtAppProcessEvent(app, XtIMAll);
+@@ -1569,6 +1589,10 @@
+ 	XtAddCallback(w, XtNcallback, dialog_ok, NULL);
+ 	XtManageChild(pane);
+ 	XtPopup(about, XtGrabExclusive);
++	XtOverrideTranslations(about, XtParseTranslationTable(
++		"<Message>WM_PROTOCOLS : GlobalProtoHandler()")
++	);
++	XSetWMProtocols(XtDisplay(about), XtWindow(about), &delw, 1);
+ 	dialog_up = True;
+ 	while (dialog_up) {
+ 		XtAppProcessEvent(app, XtIMAll);
+@@ -1674,6 +1698,10 @@
+ 	
+ 	XtManageChild(pane);
+ 	XtPopup(custom, XtGrabExclusive);
++	XtOverrideTranslations(custom, XtParseTranslationTable(
++		"<Message>WM_PROTOCOLS : GlobalProtoHandler()")
++	);
++	XSetWMProtocols(XtDisplay(custom), XtWindow(custom), &delw, 1);
+ 
+ 	dialog_up = True;
+ 	while (dialog_up) {
+@@ -1828,3 +1856,24 @@
+ {
+ 	exit(0);
+ }
++
++#if NeedFunctionPrototypes
++void
++GlobalProtoHandler(Widget w, XEvent *xev, String *params, Cardinal *n)
++#else
++void
++GlobalProtoHandler(w, xev, params, n)
++	Widget w;
++	XEvent *xev;
++	String *params;
++	Cardinal *n;
++#endif
++{
++	if(xev->xclient.data.l[0] == delw) {
++		if(w == toplevel)
++			exit(0);
++		else
++			XtPopdown(w);
++	}
++}
++

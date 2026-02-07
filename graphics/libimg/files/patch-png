@@ -1,0 +1,20 @@
+--- png/png.c	2013-11-21 17:03:12.000000000 -0500
++++ png/png.c	2014-06-09 13:57:22.000000000 -0400
+@@ -36,7 +36,8 @@
+  */
+ 
+-#include "pngtcl.h"
++#include <png.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include <tcl.h>
+ 
+ static int SetupPngLibrary(Tcl_Interp *interp);
+@@ -171,7 +172,4 @@
+     Tcl_Interp *interp;
+ {
+-    if (Pngtcl_InitStubs(interp, PNGTCL_VERSION, 0) == NULL) {
+-        return TCL_ERROR;
+-    }
+     return TCL_OK;
+ }

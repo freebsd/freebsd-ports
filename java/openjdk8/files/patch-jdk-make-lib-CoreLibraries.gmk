@@ -1,0 +1,20 @@
+--- jdk/make/lib/CoreLibraries.gmk.orig	2015-07-18 14:40:01.000000000 -0700
++++ jdk/make/lib/CoreLibraries.gmk	2015-07-18 14:40:47.000000000 -0700
+@@ -510,7 +510,7 @@
+ ifeq ($(OPENJDK_TARGET_OS), bsd)
+   BSD_ICONV_CFLAGS:= -I$(PACKAGE_PATH)/include
+   ifneq ($(OPENJDK_TARGET_OS_VENDOR), openbsd)
+-    BSD_ICONV_CFLAGS += -DLIBICONV_PLUG
++    BSD_ICONV_CFLAGS += %%ICONV_CPPFLAGS%%
+   endif
+ endif
+ 
+@@ -527,7 +527,7 @@
+     MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libnpt/mapfile-vers, \
+     LDFLAGS := $(LDFLAGS_JDKLIB) \
+         $(call SET_SHARED_LIBRARY_ORIGIN), \
+-    LDFLAGS_bsd := -L$(PACKAGE_PATH)/lib -liconv, \
++    LDFLAGS_bsd := %%ICONV_LDFLAGS%%, \
+     LDFLAGS_macosx := -liconv, \
+     LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \
+     LDFLAGS_SUFFIX_solaris := -lc, \

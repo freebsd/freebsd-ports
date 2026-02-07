@@ -1,0 +1,19 @@
+PORTNAME=	v6
+PORTVERSION=	0.047
+CATEGORIES=	lang perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:FGLOCK
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Experimental compiler for Perl 6
+WWW=		https://metacpan.org/release/v6-alpha
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

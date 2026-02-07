@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+  To execute the examples copy
+
+     %%EXAMPLESDIR%%/*
+
+  in a directory writable by you, then run
+
+    $ env PYTHONPATH=`pwd` twistd -noy examples.tac
+
+  and navigate http://localhost:8080/
+EOM
+}
+]

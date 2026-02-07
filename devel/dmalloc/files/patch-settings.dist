@@ -1,0 +1,11 @@
+--- settings.dist.orig	2020-12-28 20:55:00 UTC
++++ settings.dist
+@@ -76,7 +76,7 @@
+  * generate an exception when it sees a free(0L).
+  */
+ #define ALLOW_FREE_NULL 1
+-#define ALLOW_FREE_NULL_MESSAGE 1
++#define ALLOW_FREE_NULL_MESSAGE 0
+ 
+ /*
+  * Should we use the ra-address macros in return.h.  These are system

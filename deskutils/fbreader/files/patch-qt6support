@@ -1,0 +1,351 @@
+--- zlibrary/ui/src/qt4/application/LineEditParameter.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/application/LineEditParameter.cpp
+@@ -17,9 +17,10 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QBoxLayout>
+-#include <QtGui/QLineEdit>
+-#include <QtGui/QToolBar>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QBoxLayout>
++#include <QtWidgets/QLineEdit>
++#include <QtWidgets/QToolBar>
+ #include <QtGui/QKeyEvent>
+ 
+ #include "ZLQtApplicationWindow.h"
+--- zlibrary/ui/src/qt4/application/ZLQtApplicationWindow.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/application/ZLQtApplicationWindow.cpp
+@@ -17,17 +17,18 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QApplication>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QToolBar>
++#include <QtWidgets/QMenuBar>
++#include <QtWidgets/QMenu>
++#include <QtWidgets/QToolButton>
++#include <QtWidgets/QLayout>
++#include <QtWidgets/QDockWidget>
+ #include <QtGui/QPixmap>
+ #include <QtGui/QImage>
+ #include <QtGui/QIcon>
+-#include <QtGui/QToolBar>
+-#include <QtGui/QMenuBar>
+-#include <QtGui/QMenu>
+-#include <QtGui/QToolButton>
+-#include <QtGui/QLayout>
+ #include <QtGui/QWheelEvent>
+-#include <QtGui/QDockWidget>
+ #include <QtCore/QObjectList>
+ 
+ #include <ZLibrary.h>
+@@ -177,12 +178,11 @@ void ZLQtApplicationWindow::wheelEvent(QWheelEvent *ev
+ }
+ 
+ void ZLQtApplicationWindow::wheelEvent(QWheelEvent *event) {
+-	if (event->orientation() == Qt::Vertical) {
+-		if (event->delta() > 0) {
+-			application().doActionByKey(ZLApplication::MouseScrollUpKey);
+-		} else {
+-			application().doActionByKey(ZLApplication::MouseScrollDownKey);
+-		}
++	int y = event->angleDelta().y();
++	if (y > 0) {
++		application().doActionByKey(ZLApplication::MouseScrollUpKey);
++	} else if (y < 0) {
++		application().doActionByKey(ZLApplication::MouseScrollDownKey);
+ 	}
+ }
+ 
+--- zlibrary/ui/src/qt4/application/ZLQtApplicationWindow.h.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/application/ZLQtApplicationWindow.h
+@@ -22,8 +22,8 @@
+ 
+ #include <map>
+ 
+-#include <QtGui/QMainWindow>
+-#include <QtGui/QAction>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QMainWindow>
+ #include <QtGui/QCursor>
+ 
+ class QDockWidget;
+--- zlibrary/ui/src/qt4/dialogs/ZLQtDialog.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtDialog.cpp
+@@ -17,8 +17,9 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QApplication>
+-#include <QtGui/QPushButton>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QPushButton>
+ 
+ #include <ZLDialogManager.h>
+ 
+--- zlibrary/ui/src/qt4/dialogs/ZLQtDialog.h.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtDialog.h
+@@ -20,8 +20,9 @@
+ #ifndef __ZLQTDIALOG_H__
+ #define __ZLQTDIALOG_H__
+ 
+-#include <QtGui/QDialog>
+-#include <QtGui/QLayout>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QDialog>
++#include <QtWidgets/QLayout>
+ 
+ #include <ZLDialog.h>
+ 
+--- zlibrary/ui/src/qt4/dialogs/ZLQtDialogContent.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtDialogContent.cpp
+@@ -17,10 +17,10 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QApplication>
+-#include <QtGui/QDesktopWidget>
+-#include <QtGui/QWidget>
+-#include <QtGui/QLayout>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QWidget>
++#include <QtWidgets/QLayout>
+ 
+ #include "ZLQtDialogContent.h"
+ #include "ZLQtOptionView.h"
+--- zlibrary/ui/src/qt4/dialogs/ZLQtDialogManager.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtDialogManager.cpp
+@@ -17,11 +17,11 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QApplication>
+-#include <QtGui/QMessageBox>
+-#include <QtGui/QFileDialog>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QMessageBox>
++#include <QtWidgets/QFileDialog>
+ #include <QtGui/QClipboard>
+-#include <QtGui/QDesktopWidget>
+ 
+ #include "ZLQtDialogManager.h"
+ #include "ZLQtDialog.h"
+--- zlibrary/ui/src/qt4/dialogs/ZLQtOpenFileDialog.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtOpenFileDialog.cpp
+@@ -17,7 +17,8 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QFileDialog>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QFileDialog>
+ 
+ #include "ZLQtOpenFileDialog.h"
+ 
+--- zlibrary/ui/src/qt4/dialogs/ZLQtOptionView.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtOptionView.cpp
+@@ -19,16 +19,17 @@
+ 
+ #include <cctype>
+ 
+-#include <QtGui/QCheckBox>
+-#include <QtGui/QComboBox>
+-#include <QtGui/QLabel>
+-#include <QtGui/QGroupBox>
+-#include <QtGui/QRadioButton>
+-#include <QtGui/QPushButton>
+-#include <QtGui/QSpinBox>
+-#include <QtGui/QLineEdit>
+-#include <QtGui/QSlider>
+-#include <QtGui/QLayout>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QCheckBox>
++#include <QtWidgets/QComboBox>
++#include <QtWidgets/QLabel>
++#include <QtWidgets/QGroupBox>
++#include <QtWidgets/QRadioButton>
++#include <QtWidgets/QPushButton>
++#include <QtWidgets/QSpinBox>
++#include <QtWidgets/QLineEdit>
++#include <QtWidgets/QSlider>
++#include <QtWidgets/QLayout>
+ 
+ #include <ZLStringUtil.h>
+ #include <ZLDialogManager.h>
+--- zlibrary/ui/src/qt4/dialogs/ZLQtOptionsDialog.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtOptionsDialog.cpp
+@@ -17,11 +17,11 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QApplication>
+-#include <QtGui/QDesktopWidget>
+-#include <QtGui/QLayout>
+-#include <QtGui/QPushButton>
+-#include <QtGui/QButtonGroup>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QLayout>
++#include <QtWidgets/QPushButton>
++#include <QtWidgets/QButtonGroup>
+ #include <QtGui/QResizeEvent>
+ 
+ #include <ZLDialogManager.h>
+@@ -61,7 +61,7 @@ ZLQtOptionsDialog::ZLQtOptionsDialog(const ZLResource 
+ 	}
+ 
+ 	if (parent() == 0) {
+-		QDesktopWidget *desktop = qApp->desktop();
++		QWidget *desktop = qApp->activeWindow();
+ 		if (desktop != 0) {
+ 			move((desktop->width() - width()) / 2, (desktop->height() - height()) / 2);
+ 		}
+--- zlibrary/ui/src/qt4/dialogs/ZLQtOptionsDialog.h.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtOptionsDialog.h
+@@ -20,9 +20,10 @@
+ #ifndef __ZLQTOPTIONSDIALOG_H__
+ #define __ZLQTOPTIONSDIALOG_H__
+ 
+-#include <QtGui/QWidget>
+-#include <QtGui/QTabWidget>
+-#include <QtGui/QDialog>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QWidget>
++#include <QtWidgets/QTabWidget>
++#include <QtWidgets/QDialog>
+ 
+ #include "../../../../core/src/desktop/dialogs/ZLDesktopOptionsDialog.h"
+ 
+--- zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.cpp
+@@ -19,12 +19,12 @@
+ 
+ #include <unistd.h>
+ 
+-#include <QtGui/QApplication>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QWidget>
++#include <QtWidgets/QLabel>
++#include <QtWidgets/QLayout>
+ #include <QtGui/QCursor>
+-#include <QtGui/QDesktopWidget>
+-#include <QtGui/QWidget>
+-#include <QtGui/QLabel>
+-#include <QtGui/QLayout>
+ 
+ #include "ZLQtProgressDialog.h"
+ #include "ZLQtUtil.h"
+@@ -69,7 +69,7 @@ ZLQtWaitMessage::ZLQtWaitMessage(const std::string &me
+ 	myLayout->addWidget(myLabel);
+ 
+ 	if (main == 0) {
+-		main = QApplication::desktop();
++		main = qApp->activeWindow();
+ 	}
+ 	move(
+ 		main->x() + main->width() / 2 - myLabel->width() / 2 - 10,
+--- zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.h.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/dialogs/ZLQtProgressDialog.h
+@@ -22,7 +22,8 @@
+ 
+ #include <string>
+ 
+-#include <QtGui/QWidget>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QWidget>
+ #include <QtGui/QCursor>
+ 
+ #include <ZLProgressDialog.h>
+--- zlibrary/ui/src/qt4/library/ZLibrary.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/library/ZLibrary.cpp
+@@ -17,7 +17,8 @@
+  * 02110-1301, USA.
+  */
+ 
+-#include <QtGui/QApplication>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QApplication>
+ 
+ #include <ZLApplication.h>
+ #include <ZLibrary.h>
+--- zlibrary/ui/src/qt4/view/ZLQtViewWidget.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/view/ZLQtViewWidget.cpp
+@@ -19,8 +19,9 @@
+ 
+ #include <algorithm>
+ 
+-#include <QtGui/QLayout>
+-#include <QtGui/QScrollBar>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QLayout>
++#include <QtWidgets/QScrollBar>
+ #include <QtGui/QPainter>
+ #include <QtGui/QPixmap>
+ #include <QtGui/QMouseEvent>
+@@ -75,7 +76,6 @@ ZLQtViewWidget::ZLQtViewWidget(QWidget *parent, ZLAppl
+ ZLQtViewWidget::ZLQtViewWidget(QWidget *parent, ZLApplication *application) : ZLViewWidget((ZLView::Angle)application->AngleStateOption.value()), myApplication(application) {
+ 	myFrame = new QWidget(parent);
+ 	QGridLayout *layout = new QGridLayout();
+-	layout->setMargin(0);
+ 	layout->setSpacing(0);
+ 	myFrame->setLayout(layout);
+ 	myQWidget = new Widget(myFrame, *this);
+@@ -184,11 +184,35 @@ void ZLQtViewWidget::setScrollbarEnabled(ZLView::Direc
+ 
+ void ZLQtViewWidget::setScrollbarEnabled(ZLView::Direction direction, bool enabled) {
+ 	if (direction == ZLView::VERTICAL) {
+-		myRightScrollBar->setShown(enabled && myShowScrollBarAtRight);
+-		myLeftScrollBar->setShown(enabled && !myShowScrollBarAtRight);
++		myRightScrollBar->
++#if QT_VERSION >= 0x050000
++			setVisible
++#else
++			setShown
++#endif
++			(enabled && myShowScrollBarAtRight);
++		myLeftScrollBar->
++#if QT_VERSION >= 0x050000
++			setVisible
++#else
++			setShown
++#endif
++			(enabled && !myShowScrollBarAtRight);
+ 	} else {
+-		myBottomScrollBar->setShown(enabled && myShowScrollBarAtBottom);
+-		myTopScrollBar->setShown(enabled && !myShowScrollBarAtBottom);
++		myBottomScrollBar->
++#if QT_VERSION >= 0x050000
++			setVisible
++#else
++			setShown
++#endif
++			(enabled && myShowScrollBarAtBottom);
++		myTopScrollBar->
++#if QT_VERSION >= 0x050000
++			setVisible
++#else
++			setShown
++#endif
++			(enabled && !myShowScrollBarAtBottom);
+ 	}
+ }
+ 
+--- zlibrary/ui/src/qt4/view/ZLQtViewWidget.h.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/ui/src/qt4/view/ZLQtViewWidget.h
+@@ -20,7 +20,8 @@
+ #ifndef __ZLQTVIEWWIDGET_H__
+ #define __ZLQTVIEWWIDGET_H__
+ 
+-#include <QtGui/QWidget>
++#include <QtCore/QtGlobal>
++#include <QtWidgets/QWidget>
+ 
+ #include "../../../../core/src/view/ZLViewWidget.h"
+ #include <ZLApplication.h>

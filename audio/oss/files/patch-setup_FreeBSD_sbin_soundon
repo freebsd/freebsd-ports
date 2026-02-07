@@ -1,0 +1,84 @@
+--- setup/FreeBSD/sbin/soundon.orig	2014-02-14 22:59:55.000000000 +0000
++++ setup/FreeBSD/sbin/soundon	2019-09-21 19:07:29.295818000 +0100
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+-if test -f /etc/oss.conf
++if test -f %%PREFIX%%/etc/oss.conf
+ then
+-  . /etc/oss.conf
++  . %%PREFIX%%/etc/oss.conf
+ else
+-  OSSLIBDIR=/usr/lib/oss
++  OSSLIBDIR=%%PREFIX%%/lib/oss
+ fi
+ 
+ LOG=/var/log/soundon.log
+@@ -29,7 +29,7 @@
+ 
+ if test -f $OSSLIBDIR/etc/license.asc
+ then
+-   /usr/sbin/ossdetect -l >> $LOG
++   %%PREFIX%%/sbin/ossdetect -l >> $LOG
+ fi
+ 
+ OPTIONS=
+@@ -42,6 +42,17 @@
+ 	fi
+ fi
+ 
++if kldstat -v |grep -q sound; then
++	if kldstat |grep -q sound\\\.ko; then
++		echo Please remove the FreeBSD sound modules and try again
++		echo 'You can do this with # kldunload sound'
++	else
++		echo You must recompile your kernel without the built in sound
++		echo drivers\; please refer to the FreeBSD Handbook
++	fi
++	exit 4
++fi
++
+ if ! /sbin/kldload $OSSLIBDIR/modules/osscore.ko
+ then
+ 	echo Loading the osscore module failed
+@@ -70,7 +81,7 @@
+ done
+ 
+ echo "+++ ossinfo -v3 +++" >> $LOG
+-/usr/bin/ossinfo -v3 >> $LOG 2>&1
++%%PREFIX%%/bin/ossinfo -v3 >> $LOG 2>&1
+ echo "+++ /dev/sndstat +++" >> $LOG
+ cat /dev/sndstat >> $LOG 2>&1
+ echo "+++ dmesg +++" >> $LOG
+@@ -85,11 +96,11 @@
+ 	sh $OSSLIBDIR/etc/legacy_devices >> $LOG 2>&1
+ fi
+ 
+-/usr/sbin/ossdevlinks -v >> $LOG 2>&1
++%%PREFIX%%/sbin/ossdevlinks -v >> $LOG 2>&1
+ 
+ ls -l /dev/dsp* /dev/sndstat /dev/mixer* /dev/oss/*/* >> $LOG 2>&1
+ 
+-/usr/sbin/savemixer -L -v >> $LOG 2>&1
++%%PREFIX%%/sbin/savemixer -L -v >> $LOG 2>&1
+ 
+ if test -x $OSSLIBDIR/soundon.user
+ then
+@@ -97,7 +108,7 @@
+   $OSSLIBDIR/soundon.user >> $LOG 2>&1
+ fi
+ 
+-if test "`ossinfo -g|grep TRIAL` " != " "
++if test "`%%PREFIX%%/bin/ossinfo -g|grep TRIAL` " != " "
+ then
+ 	echo
+ 	echo "************************************************************"
+@@ -108,7 +119,7 @@
+ 	sleep 1
+ fi
+ 
+-if test "`ossinfo -g|grep EXPIRED` " != " "
++if test "`%%PREFIX%%/bin/ossinfo -g|grep EXPIRED` " != " "
+ then
+ 	echo
+ 	echo "****************************************************************"

@@ -1,0 +1,8 @@
+--- data/post_install.orig	2019-09-25 21:46:01.000000000 +0200
++++ data/post_install	2019-10-29 22:26:05.340304000 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#! %%PYTHON_CMD%%
+ # coding=utf-8
+ # --------------------------------------------------------------------
+ # Copyright (C) 1991 - 2019 - EDF R&D - www.code-aster.org

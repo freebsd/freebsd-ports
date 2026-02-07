@@ -1,0 +1,6 @@
+Disassemble a binary and print out which instruction set extensions it uses.
+
+Despite the utterly misleading name, this tool supports ELF and MachO
+binaries, and perhaps other formats as well, and has preliminary
+support for ARM64 as well as X86/64.
+

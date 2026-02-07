@@ -1,0 +1,10 @@
+--- cython/plist.pyx.orig	2024-05-13 17:37:06 UTC
++++ cython/plist.pyx
+@@ -1,6 +1,7 @@ from libc.stdint cimport *
+ cimport cpython
+ cimport libc.stdlib
+ from libc.stdint cimport *
++from ctypes import c_long as long
+ 
+ cdef extern from *:
+     ctypedef enum plist_type:

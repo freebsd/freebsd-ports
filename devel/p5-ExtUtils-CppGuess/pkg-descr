@@ -1,0 +1,5 @@
+ExtUtils::CppGuess attempts to guess the system's C++ compiler that is
+compatible with the C compiler that your perl was built with.
+
+It can generate the necessary options to the Module::Build constructor or to
+ExtUtils::MakeMaker's WriteMakefile function.

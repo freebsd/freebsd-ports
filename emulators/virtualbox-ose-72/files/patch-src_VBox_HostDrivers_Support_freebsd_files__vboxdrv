@@ -1,0 +1,34 @@
+--- src/VBox/HostDrivers/Support/freebsd/files_vboxdrv.orig	2025-08-13 19:51:09 UTC
++++ src/VBox/HostDrivers/Support/freebsd/files_vboxdrv
+@@ -71,6 +71,7 @@ FILES_VBOXDRV_NOBIN=" \
+     ${PATH_ROOT}/include/iprt/stdarg.h=>include/iprt/stdarg.h \
+     ${PATH_ROOT}/include/iprt/stdint.h=>include/iprt/stdint.h \
+     ${PATH_ROOT}/include/iprt/string.h=>include/iprt/string.h \
++    ${PATH_ROOT}/include/iprt/system.h=>include/iprt/system.h \
+     ${PATH_ROOT}/include/iprt/thread.h=>include/iprt/thread.h \
+     ${PATH_ROOT}/include/iprt/time.h=>include/iprt/time.h \
+     ${PATH_ROOT}/include/iprt/timer.h=>include/iprt/timer.h \
+@@ -133,6 +134,7 @@ FILES_VBOXDRV_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletable.cpp=>common/misc/handletable.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletable.h=>common/misc/handletable.h \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletablectx.cpp=>common/misc/handletablectx.c \
++    ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletablesimple.cpp=>common/misc/handletablesimple.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/once.cpp=>common/misc/once.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/term.cpp=>common/misc/term.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/thread.cpp=>common/misc/thread.c \
+@@ -154,6 +156,7 @@ FILES_VBOXDRV_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/common/string/strprintf2-ellipsis.cpp=>common/string/strprintf2-ellipsis.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/string/strtonum.cpp=>common/string/strtonum.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/string/memchr.cpp=>common/string/memchr.c \
++    ${PATH_ROOT}/src/VBox/Runtime/common/string/utf-8.cpp=>common/string/utf-8.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/string/stringalloc.cpp=>common/string/stringalloc.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/rand/rand.cpp=>common/rand/rand.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/rand/randadv.cpp=>common/rand/randadv.c \
+@@ -200,6 +203,7 @@ FILES_VBOXDRV_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/RTMpOnPair-generic.cpp=>generic/RTMpOnPair-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/errvars-generic.cpp=>generic/errvars-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/mppresent-generic.cpp=>generic/mppresent-generic.c \
++    ${PATH_ROOT}/src/VBox/Runtime/generic/system-page-size-generic.cpp=>generic/system-page-size-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/timer-generic.cpp=>generic/timer-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/uuid-generic.cpp=>generic/uuid-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/alloc-r0drv.cpp=>r0drv/alloc-r0drv.c \

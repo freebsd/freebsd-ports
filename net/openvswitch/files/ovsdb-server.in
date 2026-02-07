@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: ovsdb_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="ovsdb_server"
+rcvar=ovsdb_server_enable
+
+command="/usr/local/sbin/ovsdb-server"
+pidfile="/var/run/ovsdb-server.pid"
+start_precmd="ovsdb_server_precmd"
+
+load_rc_config $name
+
+: ${ovsdb_server_enable="NO"}
+: ${ovsdb_server_sock="/var/run/openvswitch/db.sock"}
+: ${ovsdb_server_database="/var/db/openvswitch/conf.db"}
+
+ovsdb_server_precmd() {
+	[ -e "`dirname $ovsdb_server_database`" ] || \
+		mkdir -p "`dirname $ovsdb_server_database`"
+	[ -e "$ovsdb_server_database" ] || \
+		/usr/local/bin/ovsdb-tool create "$ovsdb_server_database" \
+		/usr/local/share/openvswitch/vswitch.ovsschema
+}
+
+command_args="--detach --pidfile=$pidfile \
+	--remote=punix:$ovsdb_server_sock \
+ 	--remote=db:Open_vSwitch,Open_vSwitch,manager_options \
+	--private-key=db:Open_vSwitch,SSL,private_key \
+	--certificate=db:Open_vSwitch,SSL,certificate \
+	--bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert"
+
+run_rc_command "$1"

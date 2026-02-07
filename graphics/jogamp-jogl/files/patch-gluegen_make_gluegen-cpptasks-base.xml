@@ -1,0 +1,86 @@
+--- gluegen/make/gluegen-cpptasks-base.xml.orig	2015-10-09 04:18:28 UTC
++++ gluegen/make/gluegen-cpptasks-base.xml
+@@ -317,6 +317,18 @@
+         <istrue value="${isAMD64}" />
+       </and>
+     </condition>
++    <condition property="isFreeBSDPpc64">
++      <and>
++        <istrue value="${isFreeBSD}" />
++        <os arch="ppc64" />
++      </and>
++    </condition>
++    <condition property="isFreeBSDPpc64le">
++      <and>
++        <istrue value="${isFreeBSD}" />
++        <os arch="ppc64le" />
++      </and>
++    </condition>
+     <condition property="isHPUX">
+       <os name="HP-UX" />
+     </condition>
+@@ -581,6 +593,8 @@
+     <echo message="FreeBSD=${isFreeBSD}" />
+     <echo message="FreeBSDX86=${isFreeBSDX86}" />
+     <echo message="FreeBSDAMD64=${isFreeBSDAMD64}" />
++    <echo message="FreeBSDPpc64=${isFreeBSDPpc64}" />
++    <echo message="FreeBSDPpc64le=${isFreeBSDPpc64le}" />
+     <echo message="HPUX=${isHPUX}" />
+     <echo message="IA64=${isIA64}" />
+     <echo message="Android=${isAndroid}" />
+@@ -633,8 +647,16 @@
+     <property name="os.and.arch" value="freebsd-amd64" />
+   </target>
+ 
+-  <target name="gluegen.cpptasks.detect.os.freebsd" depends="gluegen.cpptasks.detect.os.freebsd.amd64,gluegen.cpptasks.detect.os.freebsd.x86" unless="gluegen.cpptasks.detected.os.2" />
++  <target name="gluegen.cpptasks.detect.os.freebsd.ppc64" unless="gluegen.cpptasks.detected.os.2" if="isFreeBSDPpc64">
++    <property name="os.and.arch" value="freebsd-ppc64" />
++  </target>
+ 
++  <target name="gluegen.cpptasks.detect.os.freebsd.ppc64le" unless="gluegen.cpptasks.detected.os.2" if="isFreeBSDPpc64le">
++    <property name="os.and.arch" value="freebsd-ppc64le" />
++  </target>
++
++  <target name="gluegen.cpptasks.detect.os.freebsd" depends="gluegen.cpptasks.detect.os.freebsd.amd64,gluegen.cpptasks.detect.os.freebsd.x86,gluegen.cpptasks.detect.os.freebsd.ppc64,gluegen.cpptasks.detect.os.freebsd.ppc64le" unless="gluegen.cpptasks.detected.os.2" />
++
+   <target name="gluegen.cpptasks.detect.os.hpux" unless="gluegen.cpptasks.detected.os.2" if="isHPUX">
+     <property name="os.and.arch" value="hpux-hppa" />
+   </target>
+@@ -1292,6 +1314,14 @@
+       <linkerarg value="-m64"/>
+     </linker>
+ 
++    <linker id="linker.cfg.freebsd.ppc64" name="${gcc.compat.compiler}">
++      <linkerarg value="-m64"/>
++    </linker>
++
++    <linker id="linker.cfg.freebsd.ppc64le" name="${gcc.compat.compiler}">
++      <linkerarg value="-m64"/>
++    </linker>
++
+     <!-- SOLARIS linker configuration --> 
+ 
+     <linker id="linker.cfg.solaris" name="${gcc.compat.compiler}"> 
+@@ -1580,7 +1610,21 @@
+       <property name="java.lib.dir.platform"         value="${java.home.dir}/jre/lib/amd64" />
+     </target>
+ 
+-    <target name="gluegen.cpptasks.declare.compiler.freebsd" depends="gluegen.cpptasks.declare.compiler.freebsd.x86,gluegen.cpptasks.declare.compiler.freebsd.amd64" if="isFreeBSD">
++    <target name="gluegen.cpptasks.declare.compiler.freebsd.ppc64" if="isFreeBSDPpc64">
++      <echo message="FreeBSD" />
++      <property name="compiler.cfg.id.base"          value="compiler.cfg.freebsd" />
++      <property name="linker.cfg.id.base"            value="linker.cfg.freebsd.ppc64" />
++      <property name="java.lib.dir.platform"         value="${java.home.dir}/jre/lib/ppc64" />
++    </target>
++
++    <target name="gluegen.cpptasks.declare.compiler.freebsd.ppc64le" if="isFreeBSDPpc64le">
++      <echo message="FreeBSD" />
++      <property name="compiler.cfg.id.base"          value="compiler.cfg.freebsd" />
++      <property name="linker.cfg.id.base"            value="linker.cfg.freebsd.ppc64le" />
++      <property name="java.lib.dir.platform"         value="${java.home.dir}/jre/lib/ppc64le" />
++    </target>
++
++    <target name="gluegen.cpptasks.declare.compiler.freebsd" depends="gluegen.cpptasks.declare.compiler.freebsd.x86,gluegen.cpptasks.declare.compiler.freebsd.amd64,gluegen.cpptasks.declare.compiler.freebsd.ppc64,gluegen.cpptasks.declare.compiler.freebsd.ppc64le" if="isFreeBSD">
+       <property name="java.includes.dir.platform"    value="${java.includes.dir}/x11" />
+     </target>
+ 

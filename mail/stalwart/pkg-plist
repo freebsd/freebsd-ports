@@ -1,0 +1,6 @@
+bin/stalwart
+bin/stalwart-cli
+@dir(stalwart,stalwart,755) etc/stalwart
+@sample(stalwart,stalwart,640) etc/stalwart/config.toml.sample
+@dir(stalwart,stalwart,755) /var/db/stalwart
+@dir(stalwart,stalwart,755) /var/db/stalwart/data

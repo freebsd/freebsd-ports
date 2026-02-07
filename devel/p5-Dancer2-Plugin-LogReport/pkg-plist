@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Dancer/Logger/LogReport.pm
+%%SITE_PERL%%/Dancer/Logger/LogReport.pod
+%%SITE_PERL%%/Dancer2/Logger/LogReport.pm
+%%SITE_PERL%%/Dancer2/Logger/LogReport.pod
+%%SITE_PERL%%/Dancer2/Plugin/LogReport.pm
+%%SITE_PERL%%/Dancer2/Plugin/LogReport.pod
+%%SITE_PERL%%/Dancer2/Plugin/LogReport/Message.pm
+%%SITE_PERL%%/Dancer2/Plugin/LogReport/Message.pod
+%%SITE_PERL%%/Dancer2/Template/TTLogReport.pm
+%%SITE_PERL%%/Dancer2/Template/TTLogReport.pod
+%%PERL5_MAN3%%/Dancer2::Logger::LogReport.3.gz
+%%PERL5_MAN3%%/Dancer2::Plugin::LogReport.3.gz
+%%PERL5_MAN3%%/Dancer2::Plugin::LogReport::Message.3.gz
+%%PERL5_MAN3%%/Dancer2::Template::TTLogReport.3.gz
+%%PERL5_MAN3%%/Dancer::Logger::LogReport.3.gz

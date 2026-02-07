@@ -1,0 +1,5 @@
+NSUPDATE_SERVER="mydns.example.org"
+NSUPDATE_KEY="/var/db/acme/Kmydns.example.org.+165+59977.key"
+DEFAULT_DNS_SLEEP="10"
+CERT_HOME="/var/db/acme/certs"
+LOG_FILE='/var/log/acme.sh.log'

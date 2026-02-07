@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Time/Warp.pm
+%%SITE_ARCH%%/auto/Time/Warp/Warp.so
+%%PERL5_MAN3%%/Time::Warp.3.gz

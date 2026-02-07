@@ -1,0 +1,2 @@
+This Horde class provides abstract class for use in creating PHP network
+socket clients.

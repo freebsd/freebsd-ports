@@ -1,0 +1,9 @@
+bin/protoc-c
+bin/protoc-gen-c
+include/google/protobuf-c/protobuf-c.h
+include/protobuf-c/protobuf-c.h
+include/protobuf-c/protobuf-c.proto
+lib/libprotobuf-c.so
+lib/libprotobuf-c.so.1
+lib/libprotobuf-c.so.1.0.0
+libdata/pkgconfig/libprotobuf-c.pc

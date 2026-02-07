@@ -1,0 +1,65 @@
+--- src/Makefile.in.orig	2003-05-22 13:39:52.000000000 +0200
++++ src/Makefile.in	2011-01-31 20:51:27.000000000 +0100
+@@ -126,18 +126,18 @@
+ 
+ WARNS = -W -Wall -Wshadow -Wpointer-arith 
+ IFLAGS = 
+-FLAGS = -g -O3 -funroll-loops -D_THREAD_SAFE -D_GNU_SOURCE
++FLAGS = -g -funroll-loops -D_THREAD_SAFE -D_GNU_SOURCE
+ VERBOSE = -DVERBOSE
+ AM_CFLAGS = $(IFLAGS) $(VERBOSE) $(WARNS) $(FLAGS)
+ AM_LDFLAGS = -g
+ 
+ noinst_HEADERS = \
+-	common.h constants.h fingerprint.h textcat.h wg_mempool.h
++	common.h constants.h fingerprint.h textcat.h wg_mempool.h utf8misc.h
+ 
+ 
+ lib_LTLIBRARIES = libtextcat.la
+ libtextcat_la_SOURCES = \
+-	common.c fingerprint.c textcat.c wg_mempool.c
++	common.c fingerprint.c textcat.c wg_mempool.c utf8misc.c
+ 
+ 
+ bin_PROGRAMS = createfp
+@@ -156,7 +156,7 @@
+ libtextcat_la_LDFLAGS =
+ libtextcat_la_LIBADD =
+ am_libtextcat_la_OBJECTS = common.lo fingerprint.lo textcat.lo \
+-	wg_mempool.lo
++	wg_mempool.lo utf8misc.lo
+ libtextcat_la_OBJECTS = $(am_libtextcat_la_OBJECTS)
+ bin_PROGRAMS = createfp$(EXEEXT)
+ noinst_PROGRAMS = testtextcat$(EXEEXT)
+@@ -187,7 +187,9 @@
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES = $(libtextcat_la_SOURCES) $(createfp_SOURCES) \
+ 	$(testtextcat_SOURCES)
+-HEADERS = $(noinst_HEADERS)
++
++# Needed for LibreOffice
++HEADERS = $(noinst_HEADERS) $(CONFIG_HEADER)
+ 
+ DIST_COMMON = $(noinst_HEADERS) Makefile.am Makefile.in config.h.in
+ SOURCES = $(libtextcat_la_SOURCES) $(createfp_SOURCES) $(testtextcat_SOURCES)
+@@ -264,6 +266,11 @@
+ 	  else :; fi; \
+ 	done
+ 
++install-HEADERS:
++	@$(NORMAL_INSTALL)
++	$(mkinstalldirs) $(DESTDIR)$(pkgincludedir)
++	$(INSTALL_HEADER) $(HEADERS) $(DESTDIR)$(pkgincludedir)
++
+ uninstall-binPROGRAMS:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+@@ -490,7 +497,7 @@
+ 
+ install-data-am:
+ 
+-install-exec-am: install-binPROGRAMS install-libLTLIBRARIES
++install-exec-am: install-binPROGRAMS install-libLTLIBRARIES install-HEADERS
+ 
+ install-info: install-info-am
+ 

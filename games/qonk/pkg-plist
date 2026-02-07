@@ -1,0 +1,4 @@
+bin/qonk
+%%DATADIR%%/font.ttf
+%%DATADIR%%/highlight.png
+%%DATADIR%%/normal.png

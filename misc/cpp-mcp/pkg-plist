@@ -1,0 +1,10 @@
+include/mcp/mcp_client.h
+include/mcp/mcp_logger.h
+include/mcp/mcp_message.h
+include/mcp/mcp_resource.h
+include/mcp/mcp_server.h
+include/mcp/mcp_sse_client.h
+include/mcp/mcp_stdio_client.h
+include/mcp/mcp_thread_pool.h
+include/mcp/mcp_tool.h
+lib/libmcp.so

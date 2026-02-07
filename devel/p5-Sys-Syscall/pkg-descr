@@ -1,0 +1,2 @@
+Use epoll, sendfile, from Perl. Mostly Linux-only support now, but
+more syscalls/OSes planned for future.

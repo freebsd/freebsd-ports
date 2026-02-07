@@ -1,0 +1,3 @@
+bin/wasm-bindgen
+bin/wasm-bindgen-test-runner
+bin/wasm2es6js

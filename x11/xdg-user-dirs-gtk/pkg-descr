@@ -1,0 +1,8 @@
+xdg-user-dirs-gtk is a companion to xdg-user-dirs that integrates
+it into the GNOME desktop and Gtk applications.
+
+It gets run during login and does two things:
+* Tracks changes of locale and prompts the user so the directories
+can be changed.
+* Creates a default gtk bookmarks file if there is none, based
+on a set of xdg user dirs.

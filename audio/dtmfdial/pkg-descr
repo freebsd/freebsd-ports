@@ -1,0 +1,2 @@
+dtmfdial generates DTMF (touch tone) signals and sends them to the sound card
+or stores them as a raw sound file.

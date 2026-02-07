@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+You might want to consider increasing the kern.maxfiles tunable if you plan
+to use this library for applications that need to monitor activity of a lot
+of files.
+EOM
+}
+]

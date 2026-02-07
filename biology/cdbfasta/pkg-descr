@@ -1,0 +1,2 @@
+Cdbfasta creates an index file for a multi-FASTA file to facilitate
+fast retrieval of any sequence using cdbyank.

@@ -1,0 +1,4 @@
+bin/dediff
+bin/endiff
+include/diffcode.h
+lib/libdiffcode.so

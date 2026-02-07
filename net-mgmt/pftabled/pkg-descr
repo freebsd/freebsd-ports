@@ -1,0 +1,5 @@
+The pftabled daemon is a small helper to make your pf
+tables reachable from other hosts. You can add/delete/flush
+IP addresses to/from a remote table with a single UDP
+datagram. A simple client program is included to do this
+from the command line.

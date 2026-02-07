@@ -1,0 +1,44 @@
+--- src/Makefile.in.orig	1995-06-16 06:19:24 UTC
++++ src/Makefile.in
+@@ -125,8 +125,8 @@ RCSTEST = \
+ # Install RCS and (if applicable) GNU diff before running these tests.
+ # To test RCS before installing it, see the file INSTALL.RCS.
+ RCSTEST = \
+-	ALL_CFLAGS='$(ALL_CFLAGS)' CC='$(CC)' DIFF='$(DIFF)' \
+-	LDFLAGS='$(LDFLAGS)' LIBS='$(LIBS)' \
++	ALL_CFLAGS="$(ALL_CFLAGS)" CC="$(CC)" DIFF="$(DIFF)" \
++	LDFLAGS="$(LDFLAGS)" LIBS="$(LIBS)" \
+ 	PATH=$(bindir):$$PATH \
+ 	sh $(srcdir)/rcstest
+ installcheck ::
+@@ -153,18 +153,18 @@ conf.h : conf.sh Makefile
+ #(Unix
+ conf.h : conf.sh Makefile
+ 	$(REMOVE) a.*
+-	ALL_CFLAGS='$(ALL_CFLAGS)' \
+-	CC='$(CC)' \
+-	COMPAT2='$(COMPAT2)' \
+-	DIFF3='$(DIFF3)' DIFF3_BIN='$(DIFF3_BIN)' \
+-	DIFF='$(DIFF)' DIFFFLAGS='$(DIFFFLAGS)' DIFF_L='$(DIFF_L)' \
+-	DIFF_SUCCESS='$(DIFF_SUCCESS)' \
+-	DIFF_FAILURE='$(DIFF_FAILURE)' \
+-	DIFF_TROUBLE='$(DIFF_TROUBLE)' \
+-	ED='$(ED)' \
+-	LDFLAGS='$(LDFLAGS)' LIBS='$(LIBS)' \
+-	RCSPREFIX='$(RCSPREFIX)' \
+-	SENDMAIL='$(SENDMAIL)' \
++	ALL_CFLAGS="$(ALL_CFLAGS)" \
++	CC="$(CC)" \
++	COMPAT2="$(COMPAT2)" \
++	DIFF3="$(DIFF3)" DIFF3_BIN="$(DIFF3_BIN)" \
++	DIFF="$(DIFF)" DIFFFLAGS="$(DIFFFLAGS)" DIFF_L="$(DIFF_L)" \
++	DIFF_SUCCESS="$(DIFF_SUCCESS)" \
++	DIFF_FAILURE="$(DIFF_FAILURE)" \
++	DIFF_TROUBLE="$(DIFF_TROUBLE)" \
++	ED="$(ED)" \
++	LDFLAGS="$(LDFLAGS)" LIBS="$(LIBS)" \
++	RCSPREFIX="$(RCSPREFIX)" \
++	SENDMAIL="$(SENDMAIL)" \
+ 	$(SHELL) -x $(srcdir)/conf.sh 3>&1 >a.h 2>conf.err
+ 	mv a.h $@
+ 	$(REMOVE) a.* core core.* *.core

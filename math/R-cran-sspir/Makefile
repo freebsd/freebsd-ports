@@ -1,0 +1,17 @@
+PORTNAME=	sspir
+PORTVERSION=	0.2.10
+PORTREVISION=	9
+CATEGORIES=	math
+MASTER_SITES=	http://cran.r-project.org/src/contrib/Archive/sspir/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=	skreuzer@FreeBSD.org
+COMMENT=	glm-like formula to define dynamic generalized linear models
+WWW=		https://cran.r-project.org/web/packages/sspir/
+
+RUN_DEPENDS=	R-cran-mvtnorm>=0.9.96_11:math/R-cran-mvtnorm \
+		R-cran-KFAS>=0.9.11_3:math/R-cran-KFAS
+
+USES=		cran:auto-plist
+
+.include <bsd.port.mk>

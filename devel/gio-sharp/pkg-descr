@@ -1,0 +1,1 @@
+gio-sharp binds the GIO API, which isn't available in Gtk#.

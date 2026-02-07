@@ -1,0 +1,15 @@
+--- contrib/pic2graph/Makefile.sub.orig	2014-02-07 14:14:41.000000000 +0900
++++ contrib/pic2graph/Makefile.sub	2014-02-07 14:15:01.000000000 +0900
+@@ -11,9 +11,9 @@
+ 	chmod +x $@
+ 
+ install_data: pic2graph
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	-rm -f $(bindir)/pic2graph
+-	$(INSTALL_SCRIPT) pic2graph $(bindir)/pic2graph
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	-rm -f $(DESTDIR)$(bindir)/pic2graph
++	$(INSTALL_SCRIPT) pic2graph $(DESTDIR)$(bindir)/pic2graph
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/pic2graph

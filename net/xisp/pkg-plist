@@ -1,0 +1,16 @@
+@group dialer
+bin/xisp
+bin/xispid
+bin/xisprccv
+etc/ppp/ip-down.xisp
+etc/ppp/ip-up.xisp
+etc/ppp/peers/xisp_cuaa0
+etc/ppp/peers/xisp_cuaa1
+etc/ppp/peers/xisp_cuaa2
+etc/ppp/peers/xisp_cuaa3
+etc/ppp/peers/xisp_dialer
+etc/ppp/peers/xisp_umodem
+libexec/xispdial
+libexec/xispterm
+@group
+share/man/man1/xisp.1.gz

@@ -1,0 +1,8 @@
+--- gdk-2.0.pc.in.ORG	2012-05-17 13:07:34.000000000 +0900
++++ gdk-2.0.pc.in	2012-05-17 13:08:59.000000000 +0900
+@@ -9,4 +9,4 @@
+ Version: @VERSION@
+ Requires: @GDK_PACKAGES@
+ Libs: -L${libdir} -lgdk-${target}-@GTK_API_VERSION@ @GDK_EXTRA_LIBS@
+-Cflags: -I${includedir}/gtk-2.0 -I${libdir}/gtk-2.0/include @GDK_EXTRA_CFLAGS@
++Cflags: -I${includedir}/gtk-2.0 @GDK_EXTRA_CFLAGS@

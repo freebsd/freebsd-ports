@@ -1,0 +1,7 @@
+GDL is a free/libre/open source incremental compiler compatible with IDL
+(Interactive Data Language) and to some extent with PV-WAVE. Together with its
+library routines it serves as a tool for data analysis and visualization in such
+disciplines as astronomy, geosciences and medical imaging.
+
+IDL is a registered trademark of Harris Geospatial Solutions. PV-WAVE is a
+product of Rogue Wave Software.

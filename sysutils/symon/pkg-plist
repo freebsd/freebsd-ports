@@ -1,0 +1,11 @@
+%%SYMON%%bin/symon
+%%SYMON%%share/man/man8/symon.8.gz
+%%SYMUX%%bin/symux
+%%SYMUX%%share/man/man8/symux.8.gz
+%%SYMON%%%%EXAMPLESDIR%%/symon.conf
+%%SYMUX%%%%EXAMPLESDIR%%/symux.conf
+%%SYMON%%%%DATADIR%%/c_config.sh
+%%SYMUX%%%%DATADIR%%/c_smrrds.sh
+%%DATADIR%%/client/SymuxClient.0
+%%DATADIR%%/client/SymuxClient.pm
+%%DATADIR%%/client/getsymonitem.pl

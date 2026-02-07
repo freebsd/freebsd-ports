@@ -1,0 +1,11 @@
+--- greyfix.c.orig        2014-04-06 16:23:26.000000000 +0100
++++ greyfix.c      2014-04-06 16:23:37.000000000 +0100
+@@ -26,6 +26,8 @@
+ #include <syslog.h>
+ #include <sys/stat.h>
+ #include <arpa/inet.h>
++#include <netinet/in.h>
++#include <sys/socket.h>
+ 
+ #include <db.h>
+

@@ -1,0 +1,19 @@
+@sample(,kmem,) etc/upclient.conf.sample
+share/man/man8/upclient.8.gz
+sbin/clientchk
+sbin/upchk
+@(,kmem,2555) sbin/upclient
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY-BETA
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UptimesProtocol5
+share/locale/de/LC_MESSAGES/upclient.mo
+share/locale/es/LC_MESSAGES/upclient.mo
+share/locale/fr/LC_MESSAGES/upclient.mo
+share/locale/it/LC_MESSAGES/upclient.mo
+share/locale/nl/LC_MESSAGES/upclient.mo

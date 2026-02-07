@@ -1,0 +1,17 @@
+'tbku' is a utility script for producing "tarball" backups of some- or
+all of your files. It is useful both for producing incremental backups
+or for systemwide images or "snapshots". The script can be run either
+from the command line or, more typically, as a cron job to automate
+system backup tasks.
+
+The central benefit of using 'tbku' over hand written tar commands is
+that 'tbku' is "table driven". You specify the set of files to back up
+in a table (a separate file). You can have as many of these "filesets"
+as you wish, corresponding to different kinds of backups you want
+done. 'tbku' will do backups automatically or manually, based on the
+name of the "fileset". This considerably simplifies automating
+backups, keeping backup logs, and generally maintaining an orderly
+backup environment.
+
+'tbku' can also be used to capture system images which can then
+later be used to (re)provision other machines.

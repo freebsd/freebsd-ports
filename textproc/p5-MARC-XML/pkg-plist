@@ -1,0 +1,6 @@
+bin/marc2xml
+bin/xml2marc
+%%PERL5_MAN3%%/MARC::File::XML.3.gz
+%%SITE_PERL%%/MARC/File/XML.pm
+%%PERL5_MAN1%%/marc2xml.1.gz
+%%PERL5_MAN1%%/xml2marc.1.gz

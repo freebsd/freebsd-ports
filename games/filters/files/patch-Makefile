@@ -1,0 +1,20 @@
+--- Makefile.orig	2015-09-03 20:26:09 UTC
++++ Makefile
+@@ -27,7 +27,7 @@ install:	$(BUILD) $(OTHER)
+ 
+ clean:
+ 	$(RM) -f core *.o *~ $(BUILD)
+-	cd ky00te.dir && make clean
++	cd ky00te.dir && $(MAKE_ENV) $(MAKE) clean
+ 
+ .SUFFIXES: .l
+ 
+@@ -40,7 +40,7 @@ clean:
+ .SUFFIXES: .dir
+ 
+ .dir:
+-	cd $<; make
++	cd $<; $(MAKE_ENV) $(MAKE)
+ 
+ nethackify: nethackify.c
+ scramble: scramble.c

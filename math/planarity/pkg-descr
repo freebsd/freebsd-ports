@@ -1,0 +1,8 @@
+This code project provides a library for implementing graph algorithms as well
+as implementations of several planarity-related graph algorithms. The origin of
+this project is the reference implementation for the Edge Addition Planarity
+Algorithm, which is now the fastest and simplest linear-time method for
+planar graph embedding and planarity obstruction isolation (i.e. Kuratowski
+subgraph isolation).
+
+See also: https://github.com/graph-algorithms/edge-addition-planarity-suite/

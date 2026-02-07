@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-10-22 00:04:45 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ keywords = ["mysql", "mariadb", "asyncio", "aiomysql"]
+ readme = "README.rst"
+ requires-python = ">=3.9"
+ keywords = ["mysql", "mariadb", "asyncio", "aiomysql"]
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Intended Audience :: Developers",
+     "Programming Language :: Python :: 3",
+@@ -45,7 +45,7 @@ requires = [
+ [build-system]
+ requires = [
+     # Essentials
+-    "setuptools >= 80",
++    "setuptools >= 61",
+ 
+     # Plugins
+     # >= 9.2 is needed for consistent generation of hashes for non-release artifacts

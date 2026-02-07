@@ -1,0 +1,7 @@
+Little CMS intends to be a small-footprint color management library, with
+special focus on accuracy and performance.  It uses the International Color
+Consortium standard (ICC), and offers fast transformation routines between
+ICC profiles.
+
+Color management refers to techniques that ensure consistent colors while
+images are transferred from scanners or cameras to monitors and printers.

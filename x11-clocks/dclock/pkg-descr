@@ -1,0 +1,5 @@
+Dclock is a classic, simple, 7-segment X11 clock with some optional
+features such as military time and alarm. The original version is
+written by Dan Heller. Tim Edwards heavily modified it and released as
+version 2.0. This port uses Debian porting as upstream, which is based
+on Tim's version and also includes some additional features and fixes.

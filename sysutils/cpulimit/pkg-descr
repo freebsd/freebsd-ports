@@ -1,0 +1,3 @@
+The cpulimit program throttles back a process's CPU usage. This allows the
+user to slow down jobs that would otherwise choke the processor. It is also
+helpful on laptops where we want to avoid generating a lot of heat.

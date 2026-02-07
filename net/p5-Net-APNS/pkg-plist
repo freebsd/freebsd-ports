@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Net/APNS.pm
+%%SITE_PERL%%/Net/APNS/Notification.pm
+%%PERL5_MAN3%%/Net::APNS.3.gz
+%%PERL5_MAN3%%/Net::APNS::Notification.3.gz

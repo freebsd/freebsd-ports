@@ -1,0 +1,3 @@
+Feluda is a Rust-based command-line tool that analyzes the dependencies
+of a project, notes down their licenses, and flags any permissions that
+restrict personal or commercial usage.

@@ -1,0 +1,12 @@
+--- configure.in.orig	2009-07-29 21:00:32 UTC
++++ configure.in
+@@ -30,7 +30,8 @@ AC_ARG_ENABLE([mpcchap], [AS_HELP_STRING
+ AM_CONDITIONAL([MPC_CHAP], [test "x$enable_mpcchap" = xyes])
+ 
+ 
+-CHECK_VISIBILITY
++gl_VISIBILITY
++AM_CONDITIONAL([HAVE_VISIBILITY], [test "x$HAVE_VISIBILITY" = x1])
+ 
+ AC_CONFIG_FILES([
+ Makefile

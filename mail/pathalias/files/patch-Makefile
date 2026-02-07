@@ -1,0 +1,24 @@
+--- Makefile.orig	Wed Mar  3 22:16:31 1993
++++ Makefile	Mon Aug 13 21:56:35 2001
+@@ -5,7 +5,7 @@
+ ###
+ # if you can't or don't intend to use dbm files,
+ # don't bother with DBM or makedb
+-DBM = -ldbm
++# DBM = -ldbm
+ # or if you roll your own ...
+ # DBM = dbm.o
+ ###
+@@ -18,9 +18,9 @@
+ ### end of configuration section 
+ 
+ 
+-CC = cc
+-CFLAGS = -O
+-LDFLAGS = -s $(GETOPT) $(DBM) $(RESOLVER)
++CC?= cc
++CFLAGS+= -O
++LDFLAGS+= -s $(GETOPT) $(DBM) $(RESOLVER)
+ YFLAGS = -d
+ 
+ OBJ = addlink.o addnode.o domain.o local.o main.o mapit.o mapaux.o mem.o parse.o printit.o

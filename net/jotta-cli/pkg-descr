@@ -1,0 +1,21 @@
+From the Jottacloud website:
+
+The Jottacloud Command-line Tool or Command-line Client is a
+Command-line tool for Jottacloud users.
+
+The command-line client (CLI) is capable of running on most devices
+with Windows, OS X and linux systems such as desktops, servers, NAS
+devices, and even Raspberry Pi.
+
+Note: The command-line client a special software designed for running
+on servers or headless systems. It is not meant to control the
+Jottacloud Desktop Client.
+
+Features
+
+* Automatic folder backup
+* Archive files
+* Custom scan interval
+* Ignore files and folders with simple gitignore style pattern
+* Simple webhooks
+* Manage remote hosts

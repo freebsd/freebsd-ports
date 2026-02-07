@@ -1,0 +1,13 @@
+--- initmake.orig	Sat Jan 29 09:52:13 2000
++++ initmake	Sun Aug 27 13:06:14 2000
+@@ -433,8 +433,8 @@
+ test -z "$MAKE" && echo "MAKE	= make"			>>_Makefile
+ test a"$cc" != a"$CC" && echo "CC	= $cc"		>>_Makefile
+ 
+-echo "CFLAGS	= \$(CFLAGS1)$CFLAGS"			>>_Makefile
+-echo "LDFLAGS	= $LDFLAGS"				>>_Makefile
++echo "CFLAGS    += \$(CFLAGS1)$CFLAGS"                   >>_Makefile
++echo "LDFLAGS   += $LDFLAGS"                             >>_Makefile
+ echo							>>_Makefile
+ 
+ MANSS=""

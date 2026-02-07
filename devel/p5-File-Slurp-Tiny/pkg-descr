@@ -1,0 +1,2 @@
+File::Slurp::Tiny provides functions for fast and correct slurping and spewing.
+All functions are optionally exported.

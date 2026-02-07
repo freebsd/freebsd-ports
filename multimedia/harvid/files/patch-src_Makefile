@@ -1,0 +1,15 @@
+--- src/Makefile.orig	2023-03-15 09:34:19 UTC
++++ src/Makefile
+@@ -16,9 +16,9 @@ ifeq ($(shell PKG_CONFIG_PATH=$(PKG_CONFIG_PATH) pkg-c
+   $(error "libpng is required - install libpng-dev")
+ endif
+ 
+-ifeq ($(shell $(CC) ../misc/jpeg-test.c -o $(CONFIGTEMP) $(ARCHINCLUDES) $(LDFLAGS) -ljpeg 2>/dev/null || echo no; $(RM) -f $(CONFIGTEMP)), no)
+-  $(error "libjpeg is required - install libjpeg-dev, libjpeg8-dev or libjpeg62-dev")
+-endif
++#ifeq ($(shell $(CC) ../misc/jpeg-test.c -o $(CONFIGTEMP) $(ARCHINCLUDES) $(LDFLAGS) -ljpeg 2>/dev/null || echo no; $(RM) -f $(CONFIGTEMP)), no)
++#  $(error "libjpeg is required - install libjpeg-dev, libjpeg8-dev or libjpeg62-dev")
++#endif
+ 
+ FLAGS=-I../libharvid/
+ FLAGS+=$(ARCHINCLUDES) $(ARCHFLAGS)

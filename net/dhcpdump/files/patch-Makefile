@@ -1,0 +1,8 @@
+--- Makefile.orig	2008-06-24 03:26:52 UTC
++++ Makefile
+@@ -1,5 +1,3 @@
+-CFLAGS=	 -Wall -g
+-LDFLAGS= -g
+ LIBS=	-lpcap
+ 
+ all: dhcpdump dhcpdump.8

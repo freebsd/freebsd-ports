@@ -1,0 +1,3 @@
+Pixd visualizes binary data by mapping each octet to a colour
+according to a palette, displaying the octet at a given number of
+columns per line.

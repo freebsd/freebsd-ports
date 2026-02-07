@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-09-24 15:13:16 UTC
++++ Makefile
+@@ -55,7 +55,7 @@ findlib.conf: findlib.conf.in
+ 	export USE_CYGPATH; \
+ 	cat findlib.conf.in | \
+ 	    $(SH) tools/patch '@SITELIB@' '$(OCAML_SITELIB)' | \
+-			$(SH) tools/patch '@FINDLIB_PATH@' '$(FINDLIB_PATH)' -p >findlib.conf
++			$(SH) tools/patch '@FINDLIB_PATH@' '$(FINDLIB_PATH):$(OCAML_LIBDIR)' -p >findlib.conf
+ 	if ./tools/cmd_from_same_dir ocamlc; then \
+ 		echo 'ocamlc="ocamlc.opt"' >>findlib.conf; \
+ 	fi

@@ -1,0 +1,5 @@
+TIMESTAMP = 1759679156
+SHA256 (podman-desktop/podman-desktop-1.21.0.tar.gz) = 0aa08900b743d0e7cafa492a83ede544fe1e6cec5602476a636730cf1216caa5
+SIZE (podman-desktop/podman-desktop-1.21.0.tar.gz) = 143591236
+SHA256 (podman-desktop/icon.svg) = 81b78c485c38dd79b50a8008e148509a95fcc56477592315ab7354b64566315a
+SIZE (podman-desktop/icon.svg) = 7799

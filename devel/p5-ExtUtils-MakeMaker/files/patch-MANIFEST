@@ -1,0 +1,31 @@
+--- MANIFEST.orig	2020-10-04 10:56:09 UTC
++++ MANIFEST
+@@ -1,28 +1,4 @@
+ bin/instmodsh
+-bundled/CPAN-Meta-Requirements/CPAN/Meta/Requirements.pm
+-bundled/CPAN-Meta-YAML/CPAN/Meta/YAML.pm
+-bundled/CPAN-Meta/CPAN/Meta.pm
+-bundled/CPAN-Meta/CPAN/Meta/Converter.pm
+-bundled/CPAN-Meta/CPAN/Meta/Feature.pm
+-bundled/CPAN-Meta/CPAN/Meta/History.pm
+-bundled/CPAN-Meta/CPAN/Meta/Merge.pm
+-bundled/CPAN-Meta/CPAN/Meta/Prereqs.pm
+-bundled/CPAN-Meta/CPAN/Meta/Spec.pm
+-bundled/CPAN-Meta/CPAN/Meta/Validator.pm
+-bundled/ExtUtils-Install/ExtUtils/Install.pm
+-bundled/ExtUtils-Install/ExtUtils/Installed.pm
+-bundled/ExtUtils-Install/ExtUtils/Packlist.pm
+-bundled/ExtUtils-Manifest/ExtUtils/Manifest.pm
+-bundled/ExtUtils-Manifest/ExtUtils/MANIFEST.SKIP
+-bundled/File-Temp/File/Temp.pm
+-bundled/JSON-PP/JSON/PP.pm
+-bundled/JSON-PP/JSON/PP/Boolean.pm
+-bundled/Parse-CPAN-Meta/Parse/CPAN/Meta.pm
+-bundled/README
+-bundled/Scalar-List-Utils/List/Util.pm
+-bundled/Scalar-List-Utils/List/Util/PP.pm
+-bundled/Scalar-List-Utils/Scalar/Util.pm
+-bundled/Scalar-List-Utils/Scalar/Util/PP.pm
+ Changes
+ CONTRIBUTING
+ INSTALL

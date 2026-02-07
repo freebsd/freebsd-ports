@@ -1,0 +1,2 @@
+QuaZIP is a simple C++ wrapper over Gilles Vollant's ZIP/UNZIP package that
+can be used to access ZIP archives. It uses Trolltech's Qt toolkit.

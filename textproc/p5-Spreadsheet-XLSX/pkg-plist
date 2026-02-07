@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Spreadsheet::XLSX.3.gz
+%%PERL5_MAN3%%/Spreadsheet::XLSX::Fmt2007.3.gz
+%%PERL5_MAN3%%/Spreadsheet::XLSX::Utility2007.3.gz
+%%SITE_PERL%%/Spreadsheet/XLSX/Utility2007.pm
+%%SITE_PERL%%/Spreadsheet/XLSX/Fmt2007.pm
+%%SITE_PERL%%/Spreadsheet/XLSX.pm

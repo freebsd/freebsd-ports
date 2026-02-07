@@ -1,0 +1,6 @@
+bin/podviewer
+%%PERL5_MAN3%%/Gtk2::Ex::PodViewer.3.gz
+%%PERL5_MAN3%%/Gtk2::Ex::PodViewer::Parser.3.gz
+%%SITE_PERL%%/Gtk2/Ex/PodViewer.pm
+%%SITE_PERL%%/Gtk2/Ex/PodViewer/Parser.pm
+%%PERL5_MAN1%%/podviewer.1.gz

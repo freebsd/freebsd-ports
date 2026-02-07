@@ -1,0 +1,60 @@
+--- Makefile.orig	2017-12-31 02:15:18 UTC
++++ Makefile
+@@ -1,9 +1,9 @@
+ WXCONFIG ?= wx-config
+ HOST=
+-WXCXXFLAGS= `$(WXCONFIG) --cxxflags` -Iudis86 -Imhash/include -MMD -fopenmp -Wall -O2
++WXCXXFLAGS= `$(WXCONFIG) --cxxflags` -MMD -Wall -I$(LOCALBASE)/include
+ WXLDFLAGS = `$(WXCONFIG) --libs` `$(WXCONFIG) --libs aui` `$(WXCONFIG) --libs core`
+-WXCXXFLAGS += -fopenmp
+-LDFLAGS += -lgomp
++#WXCXXFLAGS += -fopenmp
++#LDFLAGS += -lgomp
+ #add this ldflags for WinConsole  "-Wl,--subsystem,console -mconsole" for win-debug
+ #LDFLAGS += -Wl,--subsystem,console -mconsole
+ RC = `$(WXCONFIG) --rescomp`
+@@ -22,7 +22,7 @@ SOURCES= src/HexEditorGui.cpp \
+ 			src/HexEditorCtrl/wxHexCtrl/Tag.cpp\
+ 			src/HexEditorCtrl/HexEditorCtrlGui.cpp\
+ 			src/HexEditorFrame.cpp
+-LIBS = udis86/libudis86/.libs/libudis86.a mhash/lib/.libs/libmhash.a
++LIBS = -ludis86 -lmhash
+ OBJECTS=$(SOURCES:.cpp=.o)
+ DEPENDS=$(OBJECTS:.o=.d)
+ LANGUAGEDIRS=`ls -l ./locale | grep ^d | sed s/.*\ //g;`
+@@ -33,7 +33,7 @@ EXECUTABLE=wxHexEditor
+ EXECUTABLE_WIN=$(EXECUTABLE).exe
+ EXECUTABLE_DIR_MAC=$(EXECUTABLE).app
+ 
+-PREFIX      = /usr
++PREFIX     ?= /usr
+ BINDIR      = $(PREFIX)/bin
+ DATADIR     = $(PREFIX)/share
+ LOCALEDIR   = $(DATADIR)/locale
+@@ -47,7 +47,7 @@ clang: all
+ 
+ all:$(EXECUTABLE) langs
+ 
+-$(OBJECTS): $(LIBS) $(SOURCES)
++$(OBJECTS): $(SOURCES)
+ 
+ MOBJECTS=$(LANGUAGES:.po=.mo)
+ 
+@@ -169,12 +169,12 @@ prepmacdir: langs
+ 		cp locale/$$i/wxHexEditor.mo $(EXECUTABLE_DIR_MAC)/Contents/Resources/locale/$$i/; done
+ 
+ install:
+-	install -D -m 755 $(EXECUTABLE) $(DESTDIR)/$(BINDIR)/$(EXECUTABLE)
+-	install -D -m 644 resources/wxHexEditor.png $(DESTDIR)/$(DATADIR)/pixmaps/wxHexEditor.png
+-	install -D -m 644 resources/wxHexEditor.desktop $(DESTDIR)/$(DATADIR)/applications/wxHexEditor.desktop
++	install -m 755 $(EXECUTABLE) $(DESTDIR)$(BINDIR)/$(EXECUTABLE)
++	install -m 644 resources/wxHexEditor.png $(DESTDIR)$(DATADIR)/pixmaps/wxHexEditor.png
++	install -m 644 resources/wxHexEditor.desktop $(DESTDIR)$(DATADIR)/applications/wxHexEditor.desktop
+ 	@for i in $(LANGUAGEDIRS); do \
+-	   echo "install -D -m 644 locale/$$i/wxHexEditor.mo $(DESTDIR)/$(LOCALEDIR)/$$i/LC_MESSAGES/wxHexEditor.mo"; \
+-	   install -D -m 644 locale/$$i/wxHexEditor.mo $(DESTDIR)/$(LOCALEDIR)/$$i/LC_MESSAGES/wxHexEditor.mo; done
++	   echo "install -m 644 locale/$$i/wxHexEditor.mo $(DESTDIR)$(LOCALEDIR)/$$i/LC_MESSAGES/wxHexEditor.mo"; \
++	   install -m 644 locale/$$i/wxHexEditor.mo $(DESTDIR)$(LOCALEDIR)/$$i/LC_MESSAGES/wxHexEditor.mo; done
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)/$(BINDIR)/$(EXECUTABLE)

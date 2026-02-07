@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+YaBB is now installed in %%DIR%%
+
+Make it available through your web server and
+visit http://<path-to-yabb>/Setup.pl to
+configure it. You must remove Setup.pl when
+you're done for security reasons.
+
+For additional documentation please visit the
+official site at: http://www.yabbforum.com/
+EOM
+}
+]

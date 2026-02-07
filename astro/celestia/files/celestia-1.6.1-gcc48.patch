@@ -1,0 +1,36 @@
+diff -Naur celestia-1.6.1.orig/src/celengine/image.cpp celestia-1.6.1/src/celengine/image.cpp
+--- celestia-1.6.1.orig/src/celengine/image.cpp	2011-06-05 18:11:09.000000000 +0200
++++ celestia-1.6.1/src/celengine/image.cpp	2013-08-22 06:34:16.238358718 +0200
+@@ -33,6 +33,8 @@
+ 
+ #ifdef JPEG_SUPPORT
+ 
++#include <cstring> /* for memcpy */
++
+ #ifndef PNG_SUPPORT
+ #include "setjmp.h"
+ #endif // PNG_SUPPORT
+diff -Naur celestia-1.6.1.orig/src/celengine/texture.cpp celestia-1.6.1/src/celengine/texture.cpp
+--- celestia-1.6.1.orig/src/celengine/texture.cpp	2011-06-05 18:11:09.000000000 +0200
++++ celestia-1.6.1/src/celengine/texture.cpp	2013-08-22 06:34:16.239358735 +0200
+@@ -27,6 +27,7 @@
+ #include <fstream>
+ #include <cstdlib>
+ #include <cstdio>
++#include <cstring>
+ #include <cassert>
+ 
+ #ifndef _WIN32
+diff -Naur celestia-1.6.1.orig/src/celutil/basictypes.h celestia-1.6.1/src/celutil/basictypes.h
+--- celestia-1.6.1.orig/src/celutil/basictypes.h	2011-06-05 18:11:15.000000000 +0200
++++ celestia-1.6.1/src/celutil/basictypes.h	2013-08-22 06:34:16.239358735 +0200
+@@ -31,7 +31,9 @@
+ #include <limits>
+ typedef          int64_t int64;
+ typedef         uint64_t uint64;
++#ifndef INT64_MAX
+ #define INT64_MAX 9223372036854775807LL
++#endif
+ #ifndef UINT64_MAX
+ #define UINT64_MAX 0xffffffffffffffffULL
+ #endif

@@ -1,0 +1,6 @@
+SHA256 (daemontools-0.76.tar.gz) = a55535012b2be7a52dcd9eccabb9a198b13be50d0384143bd3b32b8710df4c1f
+SIZE (daemontools-0.76.tar.gz) = 36975
+SHA256 (daemontools-0.76-man-20010714.tar.gz) = d99a12be71a7bff2fc46546dce02bf102eba401dbadddc29f0fe4bb6d8826c1b
+SIZE (daemontools-0.76-man-20010714.tar.gz) = 7992
+SHA256 (daemontools-0.76.sigq12.patch) = 149569b2c1a81435d4b9be5905564b2743cdcb8e5ebd1c626d5cb401761e06ae
+SIZE (daemontools-0.76.sigq12.patch) = 1975

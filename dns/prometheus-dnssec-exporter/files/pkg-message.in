@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+A default configuration file has been installed in
+%%PREFIX%%/etc/prometheus-dnssec-checks.sample
+
+You can use the included rc script to start the exporter
+as a daemon:
+
+# sysrc dnssec_exporter_enable=YES # or edit /etc/rc.conf manually
+# service dnssec_exporter start
+
+The default configuration will bind the exporter to localhost
+on port 9204.
+EOM
+}
+]

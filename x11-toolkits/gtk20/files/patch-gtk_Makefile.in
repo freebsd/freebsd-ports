@@ -1,0 +1,12 @@
+--- gtk/Makefile.in.orig	2014-11-22 19:37:00.502352813 +0100
++++ gtk/Makefile.in	2014-11-22 19:37:54.646349246 +0100
+@@ -116,8 +116,7 @@
+ @HAVE_INTROSPECTION_TRUE@@USE_X11_TRUE@am__append_15 = --add-include-path=$(top_builddir)/gdk/x11
+ @HAVE_INTROSPECTION_TRUE@am__append_16 = Gtk-2.0.gir
+ @HAVE_INTROSPECTION_TRUE@am__append_17 = $(gir_DATA) $(typelibs_DATA)
+-bin_PROGRAMS = gtk-query-immodules-2.0$(EXEEXT) \
+-	gtk-update-icon-cache$(EXEEXT)
++bin_PROGRAMS = gtk-query-immodules-2.0$(EXEEXT)
+ subdir = gtk
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \

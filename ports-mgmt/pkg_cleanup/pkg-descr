@@ -1,0 +1,7 @@
+pkg_cleanup finds packages that are not requested by any other installed
+package and lets you decide for each one if you want to keep it or delete it.
+It also allows viewing the package comment and description.
+
+This program is essentially a clone of pkg_rmleaves except that it shows
+the comment and description of packages and does not support GUI dialog(1)
+implementations.

@@ -1,0 +1,1595 @@
+--- grizzled/collections/dict.py.orig	2010-05-10 02:09:09 UTC
++++ grizzled/collections/dict.py
+@@ -64,7 +64,7 @@ class OrderedDict(dict):
+     def __str__(self):
+         s = '{'
+         sep = ''
+-        for k, v in self.iteritems():
++        for k, v in self.items():
+             s += sep
+             if type(k) == str:
+                 s += "'%s'" % k
+@@ -98,7 +98,7 @@ class OrderedDict(dict):
+             yield key
+ 
+     def update(self, d):
+-        for key, value in d.iteritems():
++        for key, value in d.items():
+             self[key] = value
+ 
+     def pop(self, key, default=None):
+@@ -165,7 +165,7 @@ class LRUList(object):
+         self.clear()
+ 
+     def __str__(self):
+-        return '[' + ', '.join([str(tup) for tup in self.items()]) + ']'
++        return '[' + ', '.join([str(tup) for tup in list(self.items())]) + ']'
+     
+     def __repr__(self):
+         return self.__class__.__name__ + ':' + str(self)
+@@ -177,20 +177,20 @@ class LRUList(object):
+         entry = self.head
+         while entry:
+             yield entry.key
+-            entry = entry.next
++            entry = entry.__next__
+ 
+     def keys(self):
+         return [k for k in self]
+ 
+     def items(self):
+         result = []
+-        for key, value in self.iteritems():
++        for key, value in self.items():
+             result.append((key, value))
+         return result
+ 
+     def values(self):
+         result = []
+-        for key, value in self.iteritems():
++        for key, value in self.items():
+             result.append(value)
+         return result
+ 
+@@ -198,7 +198,7 @@ class LRUList(object):
+         entry = self.head
+         while entry:
+             yield (entry.key, entry.value)
+-            entry = entry.next
++            entry = entry.__next__
+ 
+     def iterkeys(self):
+         self.__iter__()
+@@ -207,12 +207,12 @@ class LRUList(object):
+         entry = self.head
+         while entry:
+             yield entry.value
+-            entry = entry.next
++            entry = entry.__next__
+ 
+     def clear(self):
+         while self.head:
+             cur = self.head
+-            next = self.head.next
++            next = self.head.__next__
+             cur.next = cur.previous = cur.key = cur.value = None
+             self.head = next
+ 
+@@ -220,14 +220,14 @@ class LRUList(object):
+         self.size = 0
+ 
+     def remove(self, entry):
+-        if entry.next:
++        if entry.__next__:
+             entry.next.previous = entry.previous
+ 
+         if entry.previous:
+-            entry.previous.next = entry.next
++            entry.previous.next = entry.__next__
+ 
+         if entry == self.head:
+-            self.head = entry.next
++            self.head = entry.__next__
+ 
+         if entry == self.tail:
+             self.tail = entry.previous
+@@ -309,11 +309,11 @@ class LRUDict(dict):
+             max_capacity : int
+                 The maximum size of the dictionary
+         """
+-        if kw.has_key('max_capacity'):
++        if 'max_capacity' in kw:
+             self.__max_capacity = kw['max_capacity']
+             del kw['max_capacity']
+         else:
+-            self.__max_capacity = sys.maxint
++            self.__max_capacity = sys.maxsize
+             
+         dict.__init__(self)
+         self.__removal_listeners = {}
+@@ -411,7 +411,7 @@ class LRUDict(dict):
+         """
+         Clear all removal and ejection listeners from the list of listeners.
+         """
+-        for key in self.__removal_listeners.keys():
++        for key in list(self.__removal_listeners.keys()):
+             del self.__removal_listeners[key]
+ 
+     def __setitem__(self, key, value):
+@@ -431,7 +431,7 @@ class LRUDict(dict):
+     def __str__(self):
+         s = '{'
+         sep = ''
+-        for k, v in self.iteritems():
++        for k, v in self.items():
+             s += sep
+             if type(k) == str:
+                 s += "'%s'" % k
+@@ -462,25 +462,25 @@ class LRUDict(dict):
+         return value
+ 
+     def keys(self):
+-        return self.__lru_queue.keys()
++        return list(self.__lru_queue.keys())
+ 
+     def items(self):
+-        return self.__lru_queue.items()
++        return list(self.__lru_queue.items())
+ 
+     def values(self):
+-        return self.__lru_queue.values()
++        return list(self.__lru_queue.values())
+ 
+     def iteritems(self):
+-        return self.__lru_queue.iteritems()
++        return iter(self.__lru_queue.items())
+ 
+     def iterkeys(self):
+-        return self.__lru_queue.iterkeys()
++        return iter(self.__lru_queue.keys())
+ 
+     def itervalues(self):
+-        return self.__lru_queue.itervalues()
++        return iter(self.__lru_queue.values())
+ 
+     def update(self, d):
+-        for key, value in d.iteritems():
++        for key, value in d.items():
+             self[key] = value
+ 
+     def pop(self, key, default=None):
+@@ -507,7 +507,7 @@ class LRUDict(dict):
+         :raise KeyError: empty dictionary
+         """
+         if len(self) == 0:
+-            raise KeyError, 'Attempted popitem() on empty dictionary'
++            raise KeyError('Attempted popitem() on empty dictionary')
+ 
+         lru_entry = self.__lru_queue.remove_tail()
+         dict.__delitem__(self, lru_entry.key)
+@@ -553,7 +553,7 @@ class LRUDict(dict):
+     def __notify_listeners(self, ejecting, key_value_pairs):
+         if self.__removal_listeners:
+             for key, value in key_value_pairs:
+-                for func, func_data in self.__removal_listeners.items():
++                for func, func_data in list(self.__removal_listeners.items()):
+                     on_eject_only, args = func_data
+                     if (not on_eject_only) or ejecting:
+                         func(key, value, *args)
+--- grizzled/collections/tuple.py.orig	2010-05-10 02:09:26 UTC
++++ grizzled/collections/tuple.py
+@@ -76,7 +76,7 @@ def _local_namedtuple(typename, fieldnames, verbose=Fa
+     # generating informative error messages and preventing template injection
+     # attacks.
+ 
+-    if isinstance(fieldnames, basestring):
++    if isinstance(fieldnames, str):
+         # names separated by whitespace and/or commas
+         fieldnames = fieldnames.replace(',', ' ').split()
+ 
+@@ -138,13 +138,13 @@ def _local_namedtuple(typename, fieldnames, verbose=Fa
+         template += '        %s = property(itemgetter(%d))\n' % (name, i)
+ 
+     if verbose:
+-        print template
++        print(template)
+ 
+     # Execute the template string in a temporary namespace
+     namespace = dict(itemgetter=_itemgetter)
+     try:
+-        exec template in namespace
+-    except SyntaxError, e:
++        exec(template, namespace)
++    except SyntaxError as e:
+         raise SyntaxError(e.message + ':\n' + template)
+ 
+     result = namespace[typename]
+--- grizzled/config.py.orig	2010-05-10 02:06:31 UTC
++++ grizzled/config.py
+@@ -169,15 +169,15 @@ That will preprocess the enhanced configuration file, 
+ that is suitable for parsing by the standard Python ``config`` module.
+ '''
+ 
+-from __future__ import absolute_import
+ 
++
+ __docformat__ = "restructuredtext en"
+ 
+ # ---------------------------------------------------------------------------
+ # Imports
+ # ---------------------------------------------------------------------------
+ 
+-import ConfigParser
++import configparser
+ import logging
+ import string
+ import os
+@@ -200,8 +200,8 @@ __all__ = ['Configuration', 'preprocess',
+ # ---------------------------------------------------------------------------
+ 
+ log = logging.getLogger('grizzled.config')
+-NoOptionError = ConfigParser.NoOptionError
+-NoSectionError = ConfigParser.NoSectionError
++NoOptionError = configparser.NoOptionError
++NoSectionError = configparser.NoSectionError
+ 
+ # ---------------------------------------------------------------------------
+ # Constants
+@@ -250,7 +250,7 @@ class NoVariableError(ExceptionWithMessage):
+     """
+     pass
+ 
+-class Configuration(ConfigParser.SafeConfigParser):
++class Configuration(configparser.SafeConfigParser):
+     """
+     Configuration file parser. See the module documentation for details.
+     """
+@@ -279,7 +279,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+                 substitute a non-existent variable. Otherwise, simple
+                 substitute an empty value.
+         """
+-        ConfigParser.SafeConfigParser.__init__(self, defaults)
++        configparser.SafeConfigParser.__init__(self, defaults)
+         self.__permit_includes = permit_includes
+         self.__use_ordered_sections = use_ordered_sections
+         self.__strict_substitution = strict_substitution
+@@ -294,7 +294,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :rtype:  dict
+         :return: the instance-wide defaults, or ``None`` if there aren't any
+         """
+-        return ConfigParser.SafeConfigParser.defaults(self)
++        return configparser.SafeConfigParser.defaults(self)
+ 
+     @property
+     def sections(self):
+@@ -305,7 +305,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         
+         Returns a list of sections.
+         """
+-        return ConfigParser.SafeConfigParser.sections(self)
++        return configparser.SafeConfigParser.sections(self)
+ 
+     def add_section(self, section):
+         """
+@@ -318,7 +318,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+ 
+         :raise DuplicateSectionError: section already exists
+         """
+-        ConfigParser.SafeConfigParser.add_section(self, section)
++        configparser.SafeConfigParser.add_section(self, section)
+ 
+     def has_section(self, section):
+         """
+@@ -333,7 +333,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :return: ``True`` if the section exists in the configuration, ``False``
+                  if not.
+         """
+-        return ConfigParser.SafeConfigParser.has_section(self, section)
++        return configparser.SafeConfigParser.has_section(self, section)
+ 
+     def options(self, section):
+         """
+@@ -348,7 +348,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+ 
+         :raise NoSectionError: no such section
+         """
+-        return ConfigParser.SafeConfigParser.options(self, section)
++        return configparser.SafeConfigParser.options(self, section)
+ 
+     def has_option(self, section, option):
+         """
+@@ -364,7 +364,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :return: ``True`` if the section exists in the configuration and
+                  has the specified option, ``False`` if not.
+         """
+-        return ConfigParser.SafeConfigParser.has_option(self, section, option)
++        return configparser.SafeConfigParser.has_option(self, section, option)
+ 
+     def read(self, filenames):
+         """
+@@ -398,7 +398,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :rtype:  list
+         :return: list of successfully parsed filenames or URLs
+         """
+-        if isinstance(filenames, basestring):
++        if isinstance(filenames, str):
+             filenames = [filenames]
+ 
+         newFilenames = []
+@@ -446,9 +446,9 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :raise NoOptionError: no such option in the section
+         """
+         def do_get(section, option):
+-            val = ConfigParser.SafeConfigParser.get(self, section, option)
++            val = configparser.SafeConfigParser.get(self, section, option)
+             if len(val.strip()) == 0:
+-                raise ConfigParser.NoOptionError(option, section)
++                raise configparser.NoOptionError(option, section)
+             return val
+ 
+         if optional:
+@@ -477,7 +477,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :raise NoOptionError: no such option in the section
+         """
+         def do_get(section, option):
+-            return ConfigParser.SafeConfigParser.getint(self, section, option)
++            return configparser.SafeConfigParser.getint(self, section, option)
+ 
+         if optional:
+             return self.__get_optional(do_xget, section, option)
+@@ -505,7 +505,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :raise NoOptionError: no such option in the section
+         """
+         def do_get(section, option):
+-            return ConfigParser.SafeConfigParser.getfloat(self, section, option)
++            return configparser.SafeConfigParser.getfloat(self, section, option)
+ 
+         if optional:
+             return self.__get_optional(do_get, section, option)
+@@ -538,7 +538,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :raise ValueError: non-boolean value encountered
+         '''
+         def do_get(section, option):
+-            return ConfigParser.SafeConfigParser.getboolean(self,
++            return configparser.SafeConfigParser.getboolean(self,
+                                                             section,
+                                                             option)
+ 
+@@ -572,7 +572,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+         :raise NoOptionError: no such option in the section
+         '''
+         def do_get(section, option):
+-            value = ConfigParser.SafeConfigParser.get(self, section, option)
++            value = configparser.SafeConfigParser.get(self, section, option)
+             return value.split(sep)
+ 
+         if optional:
+@@ -667,7 +667,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+ 
+         :raise NoSectionError: no such section
+         """
+-        return ConfigParser.SafeConfigParser.items(self, section)
++        return configparser.SafeConfigParser.items(self, section)
+ 
+     def set(self, section, option, value):
+         """
+@@ -684,7 +684,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+ 
+         :raise NoSectionError: no such section
+         """
+-        ConfigParser.SafeConfigParser.set(self, section, option, value)
++        configparser.SafeConfigParser.set(self, section, option, value)
+ 
+     def write(self, fileobj):
+         """
+@@ -698,7 +698,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+             fileobj : file
+                 file-like object to which to write the configuration
+         """
+-        ConfigParser.SafeConfigParser.write(self, fileobj)
++        configparser.SafeConfigParser.write(self, fileobj)
+ 
+     def remove_section(self, section):
+         """
+@@ -711,7 +711,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+ 
+         :raise NoSectionError: no such section
+         """
+-        ConfigParser.SafeConfigParser.remove_section(self, section)
++        configparser.SafeConfigParser.remove_section(self, section)
+ 
+     def optionxform(self, option_name):
+         """
+@@ -728,9 +728,9 @@ class Configuration(ConfigParser.SafeConfigParser):
+     def __get_optional(self, func, section, option):
+         try:
+             return func(section, option)
+-        except ConfigParser.NoOptionError:
++        except configparser.NoOptionError:
+             return None
+-        except ConfigParser.NoSectionError:
++        except configparser.NoSectionError:
+             return None
+ 
+     def __preprocess(self, fp, name):
+@@ -755,7 +755,7 @@ class Configuration(ConfigParser.SafeConfigParser):
+ 
+         # Parse the resulting file into a local ConfigParser instance.
+ 
+-        parsedConfig = ConfigParser.SafeConfigParser()
++        parsedConfig = configparser.SafeConfigParser()
+ 
+         if self.__use_ordered_sections:
+             parsedConfig._sections = OrderedDict()
+@@ -853,15 +853,15 @@ class _ConfigDict(dict):
+         except KeyError:
+             result = default
+ 
+-        except ConfigParser.NoSectionError:
++        except configparser.NoSectionError:
+             result = default
+ 
+-        except ConfigParser.NoOptionError:
++        except configparser.NoOptionError:
+             result = default
+ 
+         if not result:
+             if self.__strict_substitution:
+-                raise NoVariableError, 'No such variable: "%s"' % key
++                raise NoVariableError('No such variable: "%s"' % key)
+             else:
+                 result = ''
+ 
+@@ -888,7 +888,7 @@ class _ConfigDict(dict):
+         if section == 'env':
+             result = os.environ[option]
+             if len(result) == 0:
+-                raise KeyError, option
++                raise KeyError(option)
+ 
+         elif section == 'program':
+             result = self.__value_from_program_section(option)
+@@ -968,6 +968,6 @@ if __name__ == '__main__':
+         for var in sys.argv[2:]:
+             (section, option) = var.split(':')
+             val = config.get(section, option, optional=True)
+-            print '%s=%s' % (var, val)
++            print('%s=%s' % (var, val))
+     else:
+         config.write(sys.stdout)
+--- grizzled/db/__init__.py.orig	2009-10-24 15:46:15 UTC
++++ grizzled/db/__init__.py
+@@ -149,8 +149,8 @@ def add_driver(key, driver_class, force=False):
+     try:
+         drivers[key]
+         if not force:
+-            raise ValueError, 'A DB driver named "%s" is already installed' %\
+-                  key
++            raise ValueError('A DB driver named "%s" is already installed' %\
++                  key)
+     except KeyError:
+         pass
+ 
+@@ -170,7 +170,7 @@ def get_drivers():
+     :rtype:  list
+     :return: list of ``DBDriver`` class names
+     """
+-    return [str(d) for d in drivers.values()]
++    return [str(d) for d in list(drivers.values())]
+ 
+ def get_driver_names():
+     """
+@@ -178,7 +178,7 @@ def get_driver_names():
+     Each of the returned names may be used as the first parameter to
+     the ``get_driver()`` function.
+     """
+-    return drivers.keys()
++    return list(drivers.keys())
+ 
+ def get_driver(driver_name):
+     """
+@@ -197,9 +197,9 @@ def get_driver(driver_name):
+     try:
+         o = drivers[driver_name]
+         if type(o) == str:
+-            exec 'd = %s()' % o
++            exec('d = %s()' % o)
+         else:
+             d = o()
+         return d
+     except KeyError:
+-        raise ValueError, 'Unknown driver name: "%s"' % driver_name
++        raise ValueError('Unknown driver name: "%s"' % driver_name)
+--- grizzled/db/base.py.orig	2009-10-24 15:45:34 UTC
++++ grizzled/db/base.py
+@@ -118,9 +118,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             return self.__cursor.close()
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def execute(self, statement, parameters=None):
+@@ -152,9 +152,9 @@ class Cursor(object):
+                 self.__rowcount = -1
+             self.__description = self.__cursor.description
+             return result
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+         except:
+             raise Error(sys.exc_info()[1])
+@@ -181,9 +181,9 @@ class Cursor(object):
+             self.__rowcount = self.__cursor.rowcount
+             self.__description = self.__cursor.description
+             return result
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     executeMany = executemany
+@@ -202,9 +202,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             return self.__cursor.fetchone()
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def fetchall(self):
+@@ -221,9 +221,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             return self.__cursor.fetchall()
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     fetchAll = fetchall
+@@ -247,9 +247,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             self.__cursor.fetchmany(n)
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     fetchMany = fetchmany
+@@ -277,9 +277,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             return self.__driver.get_rdbms_metadata(self.__cursor)
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def get_table_metadata(self, table):
+@@ -321,9 +321,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             return self.__driver.get_table_metadata(table, self.__cursor)
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def get_index_metadata(self, table):
+@@ -355,9 +355,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             return self.__driver.get_index_metadata(table, self.__cursor)
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def get_tables(self):
+@@ -376,9 +376,9 @@ class Cursor(object):
+         dbi = self.__driver.get_import()
+         try:
+             return self.__driver.get_tables(self.__cursor)
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+ class DB(object):
+@@ -403,9 +403,9 @@ class DB(object):
+         dbi = driver.get_import()
+         for attr in ['BINARY', 'NUMBER', 'STRING', 'DATETIME', 'ROWID']:
+             try:
+-                exec 'self.%s = dbi.%s' % (attr, attr)
++                exec('self.%s = dbi.%s' % (attr, attr))
+             except AttributeError:
+-                exec 'self.%s = 0' % attr
++                exec('self.%s = 0' % attr)
+ 
+     def paramstyle(self):
+         """
+@@ -607,9 +607,9 @@ class DB(object):
+         dbi = self.__driver.get_import()
+         try:
+             return Cursor(self.__db.cursor(), self.__driver)
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def commit(self):
+@@ -622,9 +622,9 @@ class DB(object):
+         dbi = self.__driver.get_import()
+         try:
+             self.__db.commit()
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def rollback(self):
+@@ -637,9 +637,9 @@ class DB(object):
+         dbi = self.__driver.get_import()
+         try:
+             self.__db.rollback()
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     def close(self):
+@@ -652,9 +652,9 @@ class DB(object):
+         dbi = self.__driver.get_import()
+         try:
+             self.__db.close()
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+ class DBDriver(object):
+@@ -734,9 +734,9 @@ class DBDriver(object):
+                                        password=password,
+                                        database=database)
+             return DB(self.__db, self)
+-        except dbi.Warning, val:
++        except dbi.Warning as val:
+             raise Warning(val)
+-        except dbi.Error, val:
++        except dbi.Error as val:
+             raise Error(val)
+ 
+     @abstract
+@@ -958,7 +958,7 @@ class DBDriver(object):
+         :raise Error: bad table name
+         """
+         if not self._is_valid_table(cursor, table_name):
+-            raise Error, 'No such table: "%s"' % table_name
++            raise Error('No such table: "%s"' % table_name)
+ 
+     def _is_valid_table(self, cursor, table_name):
+         """
+--- grizzled/db/dummydb.py.orig	2009-10-24 15:45:33 UTC
++++ grizzled/db/dummydb.py
+@@ -37,13 +37,13 @@ class DummyCursor(object):
+         return None
+ 
+     def fetchone(self):
+-        raise ValueError, "No results"
++        raise ValueError("No results")
+ 
+     def fetchall(self):
+-        raise ValueError, "No results"
++        raise ValueError("No results")
+ 
+     def fetchmany(self, n):
+-        raise ValueError, "No results"
++        raise ValueError("No results")
+ 
+ class DummyDB(object):
+ 
+@@ -66,7 +66,7 @@ class DummyDriver(DBDriver):
+     """Dummy database driver, for testing."""
+ 
+     def get_import(self):
+-        import dummydb
++        from . import dummydb
+         return dummydb
+ 
+     def get_display_name(self):
+--- grizzled/decorators.py.orig	2010-05-10 02:06:50 UTC
++++ grizzled/decorators.py
+@@ -177,5 +177,5 @@ if __name__ == '__main__':
+     try:
+         b.foo()
+         assert False
+-    except NotImplementedError, ex:
+-        print ex.message
++    except NotImplementedError as ex:
++        print(ex.message)
+--- grizzled/file/__init__.py.orig	2010-05-10 02:04:49 UTC
++++ grizzled/file/__init__.py
+@@ -2,8 +2,8 @@
+ This module contains file- and path-related methods, classes, and modules.
+ """
+ 
+-from __future__ import with_statement, absolute_import
+ 
++
+ __docformat__ = "restructuredtext en"
+ 
+ # ---------------------------------------------------------------------------
+@@ -79,7 +79,7 @@ def list_recursively(dir):
+                        but is not a directory.
+     """
+     if not _os.path.isdir(dir):
+-        raise ValueError, "%s is not a directory." % dir
++        raise ValueError("%s is not a directory." % dir)
+ 
+     for f in _os.listdir(dir):
+         if _os.path.isdir(f):
+@@ -135,7 +135,7 @@ def copy(files, target_dir, create_target=False):
+             _os.mkdir(target_dir)
+ 
+     if _os.path.exists(target_dir) and (not _os.path.isdir(target_dir)):
+-        raise OSError, 'Cannot copy files to non-directory "%s"' % target_dir
++        raise OSError('Cannot copy files to non-directory "%s"' % target_dir)
+ 
+     for f in files:
+         targetFile = _os.path.join(target_dir, _os.path.basename(f))
+@@ -167,7 +167,7 @@ def touch(files, times=None):
+     for f in files:
+         if _os.path.exists(f):
+             if not _os.path.isfile(f):
+-                raise OSError, "Can't touch non-file \"%s\"" % f
++                raise OSError("Can't touch non-file \"%s\"" % f)
+             _os.utime(f, times)
+ 
+         else:
+--- grizzled/file/includer.py.orig	2010-05-10 02:05:02 UTC
++++ grizzled/file/includer.py
+@@ -89,8 +89,8 @@ import sys
+ import re
+ import tempfile
+ import atexit
+-import urllib2
+-import urlparse
++import urllib.request, urllib.error, urllib.parse
++import urllib.parse
+ 
+ import grizzled.exception
+ from grizzled.file import unlink_quietly
+@@ -179,7 +179,7 @@ class Includer(object):
+         self.__name = name
+ 
+         if output == None:
+-            from cStringIO import StringIO
++            from io import StringIO
+             output = StringIO()
+ 
+         self.__maxnest = max_nest_level
+@@ -198,7 +198,7 @@ class Includer(object):
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         """A file object is its own iterator.
+ 
+         :rtype: string
+@@ -302,15 +302,15 @@ class Includer(object):
+ 
+     def truncate(self, size=None):
+         """Not supported, since ``Includer`` objects are read-only."""
+-        raise IncludeError, 'Includers are read-only file objects.'
++        raise IncludeError('Includers are read-only file objects.')
+ 
+     def write(self, s):
+         """Not supported, since ``Includer`` objects are read-only."""
+-        raise IncludeError, 'Includers are read-only file objects.'
++        raise IncludeError('Includers are read-only file objects.')
+ 
+     def writelines(self, iterable):
+         """Not supported, since ``Includer`` objects are read-only."""
+-        raise IncludeError, 'Includers are read-only file objects.'
++        raise IncludeError('Includers are read-only file objects.')
+ 
+     def flush(self):
+         """No-op."""
+@@ -333,8 +333,8 @@ class Includer(object):
+             match = self.__include_pattern.search(line)
+             if match:
+                 if self.__nested >= self.__maxnest:
+-                    raise IncludeError, 'Exceeded maximum include recursion ' \
+-                                        'depth of %d' % self.__maxnest
++                    raise IncludeError('Exceeded maximum include recursion ' \
++                                        'depth of %d' % self.__maxnest)
+ 
+                 inc_name = match.group(1)
+                 logging.debug('Found include directive: %s' % line[:-1])
+@@ -351,12 +351,12 @@ class Includer(object):
+         is_url = False
+         openFunc = None
+ 
+-        parsed_url = urlparse.urlparse(name_to_open)
++        parsed_url = urllib.parse.urlparse(name_to_open)
+ 
+         # Account for Windows drive letters.
+ 
+         if (parsed_url.scheme != '') and (len(parsed_url.scheme) > 1):
+-            openFunc = urllib2.urlopen
++            openFunc = urllib.request.urlopen
+             is_url = True
+ 
+         else:
+@@ -365,8 +365,8 @@ class Includer(object):
+             if enclosing_file_is_url:
+                 # Use the parent URL as the base URL.
+                 
+-                name_to_open = urlparse.urljoin(enclosing_file, name_to_open)
+-                open_func = urllib2.urlopen
++                name_to_open = urllib.parse.urljoin(enclosing_file, name_to_open)
++                open_func = urllib.request.urlopen
+                 is_url = True
+ 
+             elif not os.path.isabs(name_to_open):
+@@ -391,8 +391,8 @@ class Includer(object):
+             log.debug('Opening "%s"' % name_to_open)
+             f = open_func(name_to_open)
+         except:
+-            raise IncludeError, 'Unable to open "%s" as a file or a URL' %\
+-                  name_to_open
++            raise IncludeError('Unable to open "%s" as a file or a URL' %\
++                  name_to_open)
+         return (f, is_url, name_to_open)
+     
+ # ---------------------------------------------------------------------------
+@@ -441,7 +441,7 @@ def preprocess(file_or_url, output=None, temp_suffix='
+ 
+ def _complain_if_closed(closed):
+     if closed:
+-        raise IncludeError, "I/O operation on closed file"
++        raise IncludeError("I/O operation on closed file")
+ 
+ # ---------------------------------------------------------------------------
+ # Main program (for testing)
+@@ -453,21 +453,21 @@ if __name__ == '__main__':
+     logging.basicConfig(level=logging.DEBUG, format=format)
+ 
+     for file in sys.argv[1:]:
+-        import cStringIO as StringIO
++        import io as StringIO
+         out = StringIO.StringIO()
+         preprocess(file, output=out)
+         
+         header = 'File: %s, via preprocess()'
+         sep = '-' * len(header)
+-        print '\n%s\n%s\n%s\n' % (sep, header, sep)
++        print('\n%s\n%s\n%s\n' % (sep, header, sep))
+         for line in out.readlines():
+             sys.stdout.write(line)
+-        print sep
++        print(sep)
+ 
+         inc = Includer(file)
+         header = 'File: %s, via Includer'
+         sep = '-' * len(header)
+-        print '\n%s\n%s\n%s\n' % (sep, header, sep)
++        print('\n%s\n%s\n%s\n' % (sep, header, sep))
+         for line in inc:
+             sys.stdout.write(line)
+-        print '%s' % sep
++        print('%s' % sep)
+--- grizzled/history.py.orig	2010-05-10 02:07:04 UTC
++++ grizzled/history.py
+@@ -19,8 +19,8 @@ To get the appropriate History implementation for the 
+ simply call the ``get_history()`` factory method.
+ """
+ 
+-from __future__ import with_statement
+ 
++
+ __docformat__ = "restructuredtext en"
+ 
+ # ---------------------------------------------------------------------------
+@@ -90,16 +90,16 @@ def get_history(verbose=True):
+     result = None
+     if _have_pyreadline:
+         if verbose:
+-            print 'Using pyreadline for history management.'
++            print('Using pyreadline for history management.')
+         result = PyReadlineHistory()
+ 
+     elif _have_readline:
+         if verbose:
+-            print 'Using readline for history management.'
++            print('Using readline for history management.')
+         result = ReadlineHistory()
+ 
+     else:
+-        print 'WARNING: Readline unavailable. There will be no history.'
++        print('WARNING: Readline unavailable. There will be no history.')
+         result = DummyHistory()
+ 
+     result.max_length = DEFAULT_MAXLENGTH
+@@ -132,7 +132,7 @@ class History(object):
+                 Where to dump the history.
+         """
+         for i in range(1, self.total + 1):
+-            print >> out, '%4d: %s' % (i, self.get_item(i))
++            print('%4d: %s' % (i, self.get_item(i)), file=out)
+ 
+     def get_last_matching_item(self, command_name):
+         """
+--- grizzled/io/__init__.py.orig	2009-10-24 15:48:25 UTC
++++ grizzled/io/__init__.py
+@@ -4,8 +4,8 @@
+ Input/Output utility methods and classes.
+ """
+ 
+-from __future__ import absolute_import
+ 
++
+ __docformat__ = "restructuredtext en"
+ 
+ # ---------------------------------------------------------------------------
+@@ -201,7 +201,7 @@ class PushbackFile(object):
+ 
+         :raise NotImplementedError: unconditionally
+         """
+-        raise NotImplementedError, 'PushbackFile is read-only'
++        raise NotImplementedError('PushbackFile is read-only')
+ 
+     def pushback(self, s):
+         """
+@@ -271,7 +271,7 @@ class PushbackFile(object):
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         """A file object is its own iterator.
+ 
+         :rtype: str
+@@ -296,7 +296,7 @@ class PushbackFile(object):
+ 
+         :raise NotImplementedError: unconditionally
+         """
+-        raise NotImplementedError, 'PushbackFile is read-only'
++        raise NotImplementedError('PushbackFile is read-only')
+ 
+     def truncate(self, size=-1):
+         """
+@@ -310,7 +310,7 @@ class PushbackFile(object):
+ 
+         :raise NotImplementedError: unconditionally
+         """
+-        raise NotImplementedError, 'PushbackFile is read-only'
++        raise NotImplementedError('PushbackFile is read-only')
+ 
+     def tell(self):
+         """
+@@ -323,7 +323,7 @@ class PushbackFile(object):
+ 
+         :raise NotImplementedError: unconditionally
+         """
+-        raise NotImplementedError, 'PushbackFile is not seekable'
++        raise NotImplementedError('PushbackFile is not seekable')
+ 
+     def seek(self, offset, whence=os.SEEK_SET):
+         """
+@@ -338,7 +338,7 @@ class PushbackFile(object):
+ 
+         :raise NotImplementedError: unconditionally
+         """
+-        raise NotImplementedError, 'PushbackFile is not seekable'
++        raise NotImplementedError('PushbackFile is not seekable')
+ 
+     def fileno(self):
+         """
+--- grizzled/io/filelock.py.orig	2009-10-24 15:46:23 UTC
++++ grizzled/io/filelock.py
+@@ -88,8 +88,7 @@ class FileLock(object):
+             self.lock = cls(fd)
+ 
+         except KeyError:
+-            raise NotImplementedError, \
+-                  '''Don't know how to lock files on "%s" systems.''' % os.name
++            raise NotImplementedError('''Don't know how to lock files on "%s" systems.''' % os.name)
+ 
+     def acquire(self, no_wait=False):
+         """
+--- grizzled/net/ftp/parse.py.orig	2009-10-24 15:52:59 UTC
++++ grizzled/net/ftp/parse.py
+@@ -226,10 +226,10 @@ class FTPListDataParser(object):
+                 elif c == 'r':
+                     result.try_retr = True
+                 elif c == 's':
+-                    result.size = long(buf[i+1:j])
++                    result.size = int(buf[i+1:j])
+                 elif c == 'm':
+                     result.mtime_type = MTIME_TYPE.LOCAL
+-                    result.mtime = long(buf[i+1:j])
++                    result.mtime = int(buf[i+1:j])
+                 elif c == 'i':
+                     result.id_type = ID_TYPE.FULL
+                     result.id = buf[i+1:j-i-1]
+@@ -290,7 +290,7 @@ class FTPListDataParser(object):
+ 
+                 elif state == 4: # getting tentative size
+                     try:
+-                        size = long(buf[i:j])
++                        size = int(buf[i:j])
+                     except ValueError:
+                         pass
+                     state = 5
+@@ -300,25 +300,25 @@ class FTPListDataParser(object):
+                     if month >= 0:
+                         state = 6
+                     else:
+-                        size = long(buf[i:j])
++                        size = int(buf[i:j])
+ 
+                 elif state == 6: # have size and month
+-                    mday = long(buf[i:j])
++                    mday = int(buf[i:j])
+                     state = 7
+ 
+                 elif state == 7: # have size, month, mday
+                     if (j - i == 4) and (buf[i+1] == ':'):
+-                        hour = long(buf[i])
+-                        minute = long(buf[i+2:i+4])
++                        hour = int(buf[i])
++                        minute = int(buf[i+2:i+4])
+                         result.mtime_type = MTIME_TYPE.REMOTE_MINUTE
+                         result.mtime = self._guess_time(month, mday, hour, minute)
+                     elif (j - i == 5) and (buf[i+2] == ':'):
+-                        hour = long(buf[i:i+2])
+-                        minute = long(buf[i+3:i+5])
++                        hour = int(buf[i:i+2])
++                        minute = int(buf[i+3:i+5])
+                         result.mtime_type = MTIME_TYPE.REMOTE_MINUTE
+                         result.mtime = self._guess_time(month, mday, hour, minute)
+                     elif j - i >= 4:
+-                        year = long(buf[i:j])
++                        year = int(buf[i:j])
+                         result.mtimetype = MTIME_TYPE.REMOTE_DAY
+                         result.mtime = self._get_mtime(year, month, mday)
+                     else:
+@@ -383,7 +383,7 @@ class FTPListDataParser(object):
+             j = i
+ 
+             j = buf.index('-', j)
+-            mday = long(buf[i:j])
++            mday = int(buf[i:j])
+ 
+             j = _skip(buf, j, '-')
+             i = j
+@@ -395,13 +395,13 @@ class FTPListDataParser(object):
+             j = _skip(buf, j, '-')
+             i = j
+             j = buf.index(' ', j)
+-            year = long(buf[i:j])
++            year = int(buf[i:j])
+ 
+             j = _skip(buf, j, ' ')
+             i = j
+ 
+             j = buf.index(':', j)
+-            hour = long(buf[i:j])
++            hour = int(buf[i:j])
+             j = _skip(buf, j, ':')
+             i = j
+ 
+@@ -410,7 +410,7 @@ class FTPListDataParser(object):
+                 if j == buflen:
+                     raise IndexError # abort, abort!
+ 
+-            minute = long(buf[i:j])
++            minute = int(buf[i:j])
+ 
+             result.mtimetype = MTIME_TYPE.REMOTE_MINUTE
+             result.mtime = self._get_mtime(year, month, mday, hour, minute)
+@@ -434,17 +434,17 @@ class FTPListDataParser(object):
+             result = FTPListData(buf)
+ 
+             j = buf.index('-', j)
+-            month = long(buf[i:j])
++            month = int(buf[i:j])
+ 
+             j = _skip(buf, j, '-')
+             i = j
+             j = buf.index('-', j)
+-            mday = long(buf[i:j])
++            mday = int(buf[i:j])
+ 
+             j = _skip(buf, j, '-')
+             i = j
+             j = buf.index(' ', j)
+-            year = long(buf[i:j])
++            year = int(buf[i:j])
+             if year < 50:
+                 year += 2000
+             if year < 1000:
+@@ -453,14 +453,14 @@ class FTPListDataParser(object):
+             j = _skip(buf, j, ' ')
+             i = j
+             j = buf.index(':', j)
+-            hour = long(buf[i:j])
++            hour = int(buf[i:j])
+             j = _skip(buf, j, ':')
+             i = j
+             while not (buf[j] in 'AP'):
+                 j += 1
+                 if j == buflen:
+                     raise IndexError
+-            minute = long(buf[i:j])
++            minute = int(buf[i:j])
+ 
+             if buf[j] == 'A':
+                 j += 1
+@@ -486,7 +486,7 @@ class FTPListDataParser(object):
+                 i = j
+                 j = buf.index(' ', j)
+ 
+-                result.size = long(buf[i:j])
++                result.size = int(buf[i:j])
+                 result.try_retr = True
+ 
+             j = _skip(buf, j, ' ')
+@@ -560,7 +560,7 @@ if __name__ == '__main__':
+         {'line':    '-rw-r--r--   1 root     other     531 Jan 29 03:26 README',
+          'type':    'Unix',
+          'size':    531,
+-         'time':    (current_year, 1, 29, 03, 26, 0, 0, 0, -1),
++         'time':    (current_year, 1, 29, 0o3, 26, 0, 0, 0, -1),
+          'name':    'README',
+          'try_cwd': False},
+ 
+@@ -632,7 +632,7 @@ if __name__ == '__main__':
+          'type':    'MultiNet/VMS',
+          'size':    0,
+          # Doesn't parse the seconds
+-         'time':    (1996, 1, 29, 03, 33, 0, 0, 0, -1),
++         'time':    (1996, 1, 29, 0o3, 33, 0, 0, 0, -1),
+          'name':    'CII-MANUAL.TEX',
+          'try_cwd': False},
+ 
+@@ -655,7 +655,7 @@ if __name__ == '__main__':
+         {'line':    '04-14-99  03:47PM                  589 readme.htm',
+          'type':    'MS-DOS',
+          'size':    589,
+-         'time':    (1999, 04, 14, 15, 47, 0, 0, 0, -1),
++         'time':    (1999, 0o4, 14, 15, 47, 0, 0, 0, -1),
+          'name':    'readme.htm',
+          'try_cwd': False},
+     ]
+@@ -671,7 +671,7 @@ if __name__ == '__main__':
+     for test in test_data:
+         line = test['line']
+         prefix = 'Test %d (%s)' % (i, test['type'])
+-        print '%s: "%s"' % (prefix, test['name'])
++        print('%s: "%s"' % (prefix, test['name']))
+         result = parser.parse_line(line)
+         assertEquals(result.raw_line, line, prefix)
+         assertEquals(result.size, test['size'], prefix)
+--- grizzled/os.py.orig	2010-05-10 02:08:04 UTC
++++ grizzled/os.py
+@@ -11,8 +11,8 @@ The ``grizzled.os`` module contains some operating sys
+ classes. It is a conceptual extension of the standard Python ``os`` module.
+ """
+ 
+-from __future__ import absolute_import
+ 
++
+ __docformat__ = "restructuredtext en"
+ 
+ # ---------------------------------------------------------------------------
+@@ -270,8 +270,8 @@ def daemonize(no_close=False, pidfile=None):
+     def __fork():
+         try:
+             return _os.fork()
+-        except OSError, e:
+-            raise DaemonError, ('Cannot fork', e.errno, e.strerror)
++        except OSError as e:
++            raise DaemonError('Cannot fork', e.errno, e.strerror)
+ 
+     def __redirect_file_descriptors():
+         import resource  # POSIX resource information
+@@ -306,8 +306,7 @@ def daemonize(no_close=False, pidfile=None):
+ 
+     if _os.name != 'posix':
+         import errno
+-        raise DaemonError, \
+-              ('daemonize() is only supported on Posix-compliant systems.',
++        raise DaemonError('daemonize() is only supported on Posix-compliant systems.',
+                errno.ENOSYS, _os.strerror(errno.ENOSYS))
+ 
+     try:
+@@ -358,8 +357,8 @@ def daemonize(no_close=False, pidfile=None):
+     except DaemonError:
+         raise
+ 
+-    except OSError, e:
+-        raise DaemonError, ('Unable to daemonize()', e.errno, e.strerror)
++    except OSError as e:
++        raise DaemonError('Unable to daemonize()', e.errno, e.strerror)
+ 
+ # ---------------------------------------------------------------------------
+ # Main program (for testing)
+--- grizzled/system.py.orig	2010-05-10 02:07:54 UTC
++++ grizzled/system.py
+@@ -10,8 +10,8 @@ provide information about the Python system (the Pytho
+ etc.). It is a conceptual extension of the standard Python ``sys`` module.
+ """
+ 
+-from __future__ import absolute_import
+ 
++
+ __docformat__ = "restructuredtext en"
+ 
+ # ---------------------------------------------------------------------------
+@@ -95,7 +95,7 @@ def python_version(version):
+ 
+     tokens = version.split('.')
+     if len(tokens) > 3:
+-        raise ValueError, err
++        raise ValueError(err)
+ 
+     major = int(tokens[0])
+     minor = micro = serial = 0
+@@ -104,7 +104,7 @@ def python_version(version):
+     if len(tokens) > 1:
+         match = RELEASE_LEVEL_RE.match(tokens[1])
+         if not match:
+-            raise ValueError, err
++            raise ValueError(err)
+ 
+         minor = int(match.group(1))
+         rl = match.group(2)
+@@ -115,12 +115,12 @@ def python_version(version):
+         if len(tokens) > 2:
+             match = RELEASE_LEVEL_RE.match(tokens[2])
+             if not match:
+-                raise ValueError, err
++                raise ValueError(err)
+ 
+             micro = int(match.group(1))
+             rl2 = match.group(2)
+             if rl and rl2:
+-                raise ValueError, err
++                raise ValueError(err)
+             if rl2:
+                 release_level = rl2[0]
+                 serial = int(rl2[1:])
+@@ -128,7 +128,7 @@ def python_version(version):
+     try:
+         release_level = RELEASE_LEVELS[release_level]
+     except KeyError:
+-        raise ValueError, err
++        raise ValueError(err)
+ 
+     return (major << 24) |\
+            (minor << 16) |\
+@@ -160,9 +160,8 @@ def split_python_version(version=None):
+ 
+     release_level_string = RELEASE_LEVEL_NAMES.get(release_level, None)
+     if not release_level_string:
+-        raise ValueError, \
+-              'Bad release level 0x%x in version 0x%08x' %\
+-              (release_level, version)
++        raise ValueError('Bad release level 0x%x in version 0x%08x' %\
++              (release_level, version))
+ 
+     return (major, minor, micro, release_level_string, serial)
+ 
+@@ -208,15 +207,13 @@ def ensure_version(min_version):
+     elif type(min_version) == int:
+         pass
+     else:
+-        raise TypeError, \
+-              'version %s is not a string or an integer' % min_version
++        raise TypeError('version %s is not a string or an integer' % min_version)
+ 
+     if _sys.hexversion < min_version:
+-        raise RuntimeError, \
+-              'This program requires Python version "%s" or better, but ' \
++        raise RuntimeError('This program requires Python version "%s" or better, but ' \
+               'the current Python version is "%s".' %\
+               (python_version_string(min_version),
+-               python_version_string(sys.hexversion))
++               python_version_string(sys.hexversion)))
+ 
+ 
+ def class_for_name(class_name):
+@@ -238,7 +235,7 @@ def class_for_name(class_name):
+     if len(tokens) > 1:
+         package = '.'.join(tokens[:-1])
+         class_name = tokens[-1]
+-        exec 'from %s import %s' % (package, class_name)
++        exec('from %s import %s' % (package, class_name))
+ 
+     return eval(class_name)
+     
+--- grizzled/text/__init__.py.orig	2009-10-24 15:46:33 UTC
++++ grizzled/text/__init__.py
+@@ -10,7 +10,7 @@ __docformat__ = "restructuredtext en"
+ # Imports
+ # ---------------------------------------------------------------------------
+ 
+-from StringIO import StringIO
++from io import StringIO
+ 
+ # ---------------------------------------------------------------------------
+ # Exports
+@@ -117,10 +117,10 @@ def hexdump(source, out, width=16, start=0, limit=None
+         if length == 0:
+             if repeat_count and (not show_repeats):
+                 if repeat_count > 1:
+-                    print >> out, REPEAT_FORMAT % (repeat_count - 1)
++                    print(REPEAT_FORMAT % (repeat_count - 1), file=out)
+                 elif repeat_count == 1:
+-                    print >> out, lastline
+-                print >> out, lastline
++                    print(lastline, file=out)
++                print(lastline, file=out)
+             break
+ 
+         else:
+@@ -132,9 +132,9 @@ def hexdump(source, out, width=16, start=0, limit=None
+             else:
+                 if repeat_count and (not show_repeats):
+                     if repeat_count == 1:
+-                        print >> out, lastline
++                        print(lastline, file=out)
+                     else:
+-                        print >> out, REPEAT_FORMAT % (repeat_count - 1)
++                        print(REPEAT_FORMAT % (repeat_count - 1), file=out)
+                     repeat_count = 0
+ 
+             # Build output line.
+@@ -149,7 +149,7 @@ def hexdump(source, out, width=16, start=0, limit=None
+             line = "%06x: %-*s %s" % (pos, hex_field_width, hex, asc)
+ 
+             if show_buf:
+-                print >> out, line
++                print(line, file=out)
+ 
+             pos = pos + length
+             lastbuf = buf
+@@ -214,4 +214,4 @@ def str2bool(s):
+                 'off'   : False,
+                 'on'    : True}[s.lower()]
+     except KeyError:
+-        raise ValueError, 'Unrecognized boolean string: "%s"' % s
++        raise ValueError('Unrecognized boolean string: "%s"' % s)
+--- test/collections/TestLRUDict.py.orig	2008-09-10 01:27:50 UTC
++++ test/collections/TestLRUDict.py
+@@ -25,68 +25,68 @@ class TestLRUDict(object):
+     def test1(self):
+         lru = LRUDict(max_capacity=5)
+ 
+-        print "Adding 'a' and 'b'"
++        print("Adding 'a' and 'b'")
+         lru['a'] = 'A'
+         lru['b'] = 'b'
+-        print lru
+-        print lru.keys()
+-        assert lru.keys() == ['b', 'a']
+-        assert lru.values() == ['b', 'A']
++        print(lru)
++        print(list(lru.keys()))
++        assert list(lru.keys()) == ['b', 'a']
++        assert list(lru.values()) == ['b', 'A']
+ 
+-        print "Adding 'c'"
++        print("Adding 'c'")
+         lru['c'] = 'c'
+-        print lru
+-        print lru.keys()
+-        assert lru.keys() == ['c', 'b', 'a']
++        print(lru)
++        print(list(lru.keys()))
++        assert list(lru.keys()) == ['c', 'b', 'a']
+ 
+-        print "Updating 'a'"
++        print("Updating 'a'")
+         lru['a'] = 'a'
+-        print lru
+-        print lru.keys()
+-        assert lru.keys() == ['a', 'c', 'b']
++        print(lru)
++        print(list(lru.keys()))
++        assert list(lru.keys()) == ['a', 'c', 'b']
+ 
+-        print "Adding 'd' and 'e'"
++        print("Adding 'd' and 'e'")
+         lru['d'] = 'd'
+         lru['e'] = 'e'
+-        print lru
+-        print lru.keys()
+-        assert lru.keys() == ['e', 'd', 'a', 'c', 'b']
++        print(lru)
++        print(list(lru.keys()))
++        assert list(lru.keys()) == ['e', 'd', 'a', 'c', 'b']
+ 
+-        print "Accessing 'b'"
++        print("Accessing 'b'")
+         assert lru['b'] == 'b'
+-        print lru
+-        print lru.keys()
+-        assert lru.keys() == ['b', 'e', 'd', 'a', 'c']
++        print(lru)
++        print(list(lru.keys()))
++        assert list(lru.keys()) == ['b', 'e', 'd', 'a', 'c']
+ 
+-        print "Adding 'f'"
++        print("Adding 'f'")
+         lru['f'] = 'f'
+         # Should knock 'c' out of the list
+-        print lru
+-        print lru.keys()
+-        assert lru.keys() == ['f', 'b', 'e', 'd', 'a']
++        print(lru)
++        print(list(lru.keys()))
++        assert list(lru.keys()) == ['f', 'b', 'e', 'd', 'a']
+         
+         def on_remove(key, value, the_list):
+-            print 'on_remove("%s")' % key
++            print('on_remove("%s")' % key)
+             the_list.append(key)
+ 
+-        print 'Reducing capacity. Should result in eviction.'
++        print('Reducing capacity. Should result in eviction.')
+         ejected = []
+         lru.add_ejection_listener(on_remove, ejected)
+         lru.max_capacity = 3
+         ejected.sort()
+-        print 'ejected=%s' % ejected
++        print('ejected=%s' % ejected)
+         assert ejected == ['a', 'd']
+-        print lru.keys()
+-        assert lru.keys() == ['f', 'b', 'e']
++        print(list(lru.keys()))
++        assert list(lru.keys()) == ['f', 'b', 'e']
+         
+-        print 'Testing popitem()'
++        print('Testing popitem()')
+         key, value = lru.popitem()
+-        print lru
+-        print lru.keys()
++        print(lru)
++        print(list(lru.keys()))
+         assert key == 'e'
+-        assert lru.keys() == ['f', 'b']
++        assert list(lru.keys()) == ['f', 'b']
+ 
+-        print 'Clearing dictionary'
++        print('Clearing dictionary')
+         lru.clear_listeners()
+         lru.clear()
+         del lru
+@@ -95,12 +95,12 @@ class TestLRUDict(object):
+         lru[key] = key
+ 
+     def testBig(self):
+-        print 'Putting 10000 entries in a new LRU cache'
++        print('Putting 10000 entries in a new LRU cache')
+         lru = LRUDict(max_capacity=10000)
+         for i in range(0, lru.max_capacity):
+             lru[i] = i
+ 
+         assert len(lru) == lru.max_capacity
+-        print 'Adding one more'
++        print('Adding one more')
+         assert len(lru) == lru.max_capacity
+-        print iter(lru).next()
++        print(next(iter(lru)))
+--- test/file/Test.py.orig	2008-09-10 01:27:50 UTC
++++ test/file/Test.py
+@@ -7,7 +7,7 @@
+ # ---------------------------------------------------------------------------
+ 
+ from grizzled.file import *
+-from cStringIO import StringIO
++from io import StringIO
+ import os
+ import tempfile
+ import atexit
+@@ -36,7 +36,7 @@ class TestFilePackage(object):
+ 
+     def testRecursivelyRemove(self):
+         path = tempfile.mkdtemp()
+-        print 'Created directory "%s"' % path
++        print('Created directory "%s"' % path)
+ 
+         # Create some files underneath
+ 
+--- test/io/TestPushback.py.orig	2008-09-10 01:27:50 UTC
++++ test/io/TestPushback.py
+@@ -7,7 +7,7 @@
+ # ---------------------------------------------------------------------------
+ 
+ from grizzled.io import *
+-from cStringIO import StringIO
++from io import StringIO
+ import os
+ import tempfile
+ import atexit
+@@ -31,24 +31,24 @@ ghi
+         pb = PushbackFile(f)
+ 
+         s = pb.readline()
+-        print s
++        print(s)
+         assert s == 'abc\n'
+         pb.pushback(s)
+         s = pb.readline()
+-        print s
++        print(s)
+         assert s == 'abc\n'
+         s = pb.read(1)
+-        print s
++        print(s)
+         assert s == 'd'
+         s = pb.readline()
+-        print s
++        print(s)
+         assert s == 'ef\n'
+         s = pb.read(-1)
+-        print s
++        print(s)
+         assert s == 'ghi\n'
+         s = pb.readline()
+         assert s == ''
+         pb.pushback('foobar')
+         s = pb.readline()
+-        print s
++        print(s)
+         assert s == 'foobar'
+\ No newline at end of file
+--- test/text/TestStr2Bool.py.orig	2008-09-10 01:27:50 UTC
++++ test/text/TestStr2Bool.py
+@@ -31,7 +31,7 @@ class TestStr2Bool(object):
+                             ('1',     True,)):
+             for s2 in (s, s.upper(), s.capitalize()):
+                 val = str2bool(s2)
+-                print '"%s" -> %s. Expected=%s' % (s2, expected, val)
++                print('"%s" -> %s. Expected=%s' % (s2, expected, val))
+                 assert val == expected, \
+                        '"%s" does not produce expected %s' % (s2, expected)
+ 

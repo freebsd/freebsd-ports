@@ -1,0 +1,3 @@
+This Python package is used by IRIS modules to interact and extend IRIS
+capabilities. It's the interface which module have to use to communicate with
+the platform.

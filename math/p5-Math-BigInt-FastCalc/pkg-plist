@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Math/BigInt/FastCalc.pm
+%%SITE_ARCH%%/auto/Math/BigInt/FastCalc/FastCalc.so
+%%PERL5_MAN3%%/Math::BigInt::FastCalc.3.gz

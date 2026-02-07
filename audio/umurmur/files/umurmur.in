@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: umurmur
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# umurmur_enable (bool):	Set to NO by default.
+#				Set it to YES to enable umurmur.
+# umurmur_user (str):		Set to "umurmur" by default.
+#				Set to change user account.
+# umurmur_flags (str):		Set to "" by default.
+#				Extra flags passed to start command.
+#
+
+. /etc/rc.subr
+
+name=umurmur
+rcvar=umurmur_enable
+
+# pidfile
+pidfile="/var/run/umurmur/umurmur.pid"
+
+command="%%PREFIX%%/bin/umurmurd"
+command_args="-p ${pidfile}"
+
+load_rc_config $name
+
+# Set some defaults
+: ${umurmur_enable="NO"}
+: ${umurmur_user="%%USER%%"}
+
+run_rc_command "$1"

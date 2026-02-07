@@ -1,0 +1,28 @@
+--- Makefile.orig	2003-03-10 10:33:41.000000000 +0800
++++ Makefile	2014-06-29 23:19:14.368465195 +0800
+@@ -4,10 +4,9 @@
+ prefix		= /usr/local
+ exec_prefix	= /usr/local
+ bindir		= $(prefix)/bin
+-mandir		= $(prefix)/man
+-man1dir		= $(mandir)/man1
++mandir		= $(prefix)/share/man/man1
+ 
+-CC		= gcc
++CC		?= gcc
+ CFLAGS		= -g -O
+ LDFLAGS		=
+ LIBS		=
+@@ -25,10 +24,8 @@ tai64nfrac.1: tai64nfrac.pod
+ 	    --section=1 $< > $@
+ 
+ install: tai64nfrac tai64nfrac.1
+-	mkdir -p $(bindir)
+-	cp tai64nfrac $(bindir)
+-	mkdir -p $(man1dir)
+-	cp tai64nfrac.1 $(man1dir)
++	$(BSD_INSTALL_PROGRAM) tai64nfrac $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_MAN) tai64nfrac.1 $(DESTDIR)$(mandir)
+ 
+ clean:
+ 	rm -f *.o tai64nfrac

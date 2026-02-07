@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: diskcheckd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+
+# Add the following line to /etc/rc.conf to enable diskcheckd:
+#
+# diskcheckd_enable="YES"
+
+: ${diskcheckd_enable="NO"}
+
+. /etc/rc.subr
+
+name="diskcheckd"
+rcvar=diskcheckd_enable
+command=%%PREFIX%%/sbin/diskcheckd
+
+load_rc_config $name
+run_rc_command "$1"

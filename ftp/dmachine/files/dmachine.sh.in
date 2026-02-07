@@ -1,0 +1,3 @@
+#!/bin/sh
+
+"%%LOCALBASE%%/bin/java" -jar "%%PREFIX%%/share/java/classes/dmachine.jar" $*

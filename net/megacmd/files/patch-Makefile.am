@@ -1,0 +1,17 @@
+--- Makefile.am.orig	2024-05-20 12:29:43 UTC
++++ Makefile.am
+@@ -39,6 +39,14 @@ endif
+ AM_LIBTOOLFLAGS="--tag=CXX"
+ endif
+ 
++if DRAGONFLY
++AM_LIBTOOLFLAGS="--tag=CXX"
++endif
++
++if NETBSD
++AM_LIBTOOLFLAGS="--tag=CXX"
++endif
++
+ VERSION_INFO=$(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ CLEANFILES=

@@ -1,0 +1,132 @@
+--- Makefile.orig	2020-05-15 23:04:33 UTC
++++ Makefile
+@@ -4,8 +4,11 @@ gcin_tsin_o = tsin.o tsin-util.o win0.o win1.o tsin-pa
+ include suffixes-rule
+ 
+ gcin_tsin_o = tsin.o tsin-util.o win0.o win1.o tsin-parse.o
++SOURCES_gcin_tsin = tsin.cpp tsin-util.cpp win0.cpp win1.cpp tsin-parse.cpp
+ gcin_pho_o = win-pho.o pho.o pho-util.o pho-sym.o table-update.o pho-dbg.o
++SOURCES_gcin_pho = win-pho.cpp pho.cpp pho-util.cpp pho-sym.cpp table-update.cpp pho-dbg.cpp
+ gcin_gtab_o = gtab.o win-gtab.o gtab-util.o gtab-list.o gtab-buf.o
++SOURCES_gcin_gtab = gtab.cpp win-gtab.cpp gtab-util.cpp gtab-list.cpp gtab-buf.cpp
+ 
+ GCIN_SO= gcin1.so gcin2.so
+ 
+@@ -14,8 +17,12 @@ OBJS=gcin.o eve.o util.o gcin-conf.o gcin-settings.o l
+      $(gcin_pho_o) $(gcin_gtab_o) gcin-common.o phrase.o t2s-lookup.o gtab-use-count.o \
+      win-save-phrase.o unix-exec.o pho-kbm-name.o statistic.o tsin-scan.o gcin-module.o lang.o \
+      gcin-module-cb.o gtab-init.o fullchar.o gtab-tsin-fname.o win-screen-status.o en-miss-cand.o
++SOURCES=gcin.cpp eve.cpp util.cpp gcin-conf.cpp gcin-settings.cpp locale.cpp gcin-icon.cpp about.cpp html-browser.cpp \
++     gcin-exec-script.cpp pho-play.cpp cache.cpp gtk_bug_fix.c phrase-save-menu.cpp \
++     $(SOURCES_gcin_pho) $(SOURCES_gcin_gtab) gcin-common.cpp phrase.cpp t2s-lookup.cpp gtab-use-count.cpp \
++     win-save-phrase.cpp unix-exec.cpp pho-kbm-name.cpp statistic.cpp tsin-scan.cpp gcin-module.cpp lang.cpp \
++     gcin-module-cb.o gtab-init.o fullchar.o gtab-tsin-fname.o win-screen-status.cpp en-miss-cand.cpp
+ 
+-
+ OBJS_TSLEARN=tslearn.o util.o gcin-conf.o pho-util.o tsin-util.o gcin-send.o pho-sym.o \
+              table-update.o locale.o gcin-settings.o gcin-common.o gcin-icon.o pho-dbg.o  \
+              pho2pinyin.o pinyin.o lang.o gtab-list.o gtab-init.o fullchar.o \
+@@ -102,8 +109,7 @@ all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) 
+ 
+ all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) gcin.spec gcin-fedora.spec
+ 	$(MAKE) -C data
+-	$(MAKE) -C gtk-im
+-	if [ $(BUILD_MODULE) = 'Y' ]; then $(MAKE) -C modules; fi
++	$(MAKE) -C modules
+ 	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po; fi
+ 	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im; fi
+ 	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im; fi
+@@ -113,18 +119,18 @@ gcin:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
+ #gcc_ld_run_path=-Wl,-rpath,$(gcin_ld_run_path)
+ 
+ gcin:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
+-	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L/usr/X11R6/$(LIB)
++	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L/usr/local/$(LIB)
+ 	rm -f core.* vgcore.*
+ 	ln -sf $@ $@.test
+ 
+ gcin-nocur:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
+-	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/X11R6/$(LIB)
++	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/local/$(LIB)
+ 	rm -f core.*
+ 
+-tslearn:        $(OBJS_TSLEARN)
++tslearn:        $(OBJS_TSLEARN) im-client/libgcin-im-client.so
+ 	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_TSLEARN) -L./im-client -lgcin-im-client $(LDFLAGS)
+ 
+-ts-edit:        $(OBJS_TS_EDIT)
++ts-edit:        $(OBJS_TS_EDIT) im-client/libgcin-im-client.so
+ 	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_TS_EDIT) -L./im-client -lgcin-im-client -lcurl $(LDFLAGS)
+ 
+ ts-contribute:	ts-edit
+@@ -171,16 +177,16 @@ kbmcv:  $(OBJS_kbmcv)
+ kbmcv:  $(OBJS_kbmcv)
+ 	$(CCLD) -o $@ $(OBJS_kbmcv) $(LDFLAGS)
+ 
+-gcin-gb-toggle:	$(OBJS_gcin_gb_toggle)
++gcin-gb-toggle:	$(OBJS_gcin_gb_toggle) im-client/libgcin-im-client.so
+ 	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_gcin_gb_toggle) -L./im-client -lgcin-im-client $(LDFLAGS)
+ 
+-gcin-kbm-toggle:	$(OBJS_gcin_kbm_toggle)
++gcin-kbm-toggle:	$(OBJS_gcin_kbm_toggle) im-client/libgcin-im-client.so
+ 	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_gcin_kbm_toggle) -L./im-client -lgcin-im-client $(LDFLAGS)
+ 
+-gcin-exit:	$(OBJS_gcin_exit)
++gcin-exit:	$(OBJS_gcin_exit) im-client/libgcin-im-client.so
+ 	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_gcin_exit) -L./im-client -lgcin-im-client $(LDFLAGS)
+ 
+-gcin-message:	$(OBJS_gcin_message)
++gcin-message:	$(OBJS_gcin_message) im-client/libgcin-im-client.so
+ 	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_gcin_message) -L./im-client -lgcin-im-client $(LDFLAGS)
+ 
+ pin-juyin:	$(OBJS_pin_juyin)
+@@ -228,24 +234,19 @@ install:
+ 	install -d $(bindir)
+ 	$(MAKE) -C data install
+ 	$(MAKE) -C im-client install
+-	$(MAKE) -C gtk-im install
+-	if [ $(BUILD_MODULE) = 'Y' ]; then $(MAKE) -C modules install; fi
++	$(MAKE) -C modules install
+ 	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im install; fi
+ 	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im install; fi
+ 	if [ $(QT4_IM) = 'Y' ]; then $(MAKE) -C qt4-im install; fi
+ 	if [ $(QT5_IM) = 'Y' ]; then $(MAKE) -C qt5-im install; fi
+-	if [ $(prefix) = /usr/local ]; then \
+-	   install -m 644 gcin.png /usr/share/icons/hicolor/64x64/apps; \
+-	   install -d $(DOC_DIR); \
+-	   install -m 644 README.html Changelog.html $(DOC_DIR); \
++	if [ $(prefix) = /nonstaged ]; then \
++	   install -m 644 gcin.png $(prefix)/share/icons/hicolor/64x64/apps; \
+ 	   install $(PROGS) $(bindir); \
+ 	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
+ 	   rm -f $(bindir)/ts-contribute; ln -sf ts-edit $(bindir)/ts-contribute; \
+ 	   rm -f $(bindir)/ts-contribute-en; ln -sf ts-edit $(bindir)/ts-contribute-en; \
+ 	   rm -f $(bindir)/ts-edit-en; ln -sf ts-edit $(bindir)/ts-edit-en; \
+ 	else \
+-	   install -d $(DOC_DIR_i); \
+-	   install -m 644 README.html Changelog.html $(DOC_DIR_i); \
+ 	   install -s $(PROGS) $(bindir); \
+ 	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
+ 	   rm -f $(bindir)/ts-contribute; ln -sf ts-edit $(bindir)/ts-contribute; \
+@@ -253,6 +254,7 @@ install:
+ 	   rm -f $(bindir)/ts-edit-en; ln -sf ts-edit $(bindir)/ts-edit-en; \
+ 	fi
+ 	$(MAKE) -C scripts install
++	$(MAKE) -C man install
+ 	$(MAKE) -C menu install
+ 	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po install; fi
+ 
+@@ -261,7 +263,6 @@ clean:
+ 	$(MAKE) -C data clean
+ 	$(MAKE) -C scripts clean
+ 	$(MAKE) -C im-client clean
+-	$(MAKE) -C gtk-im clean
+ 	$(MAKE) -C modules clean
+ 	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im clean; fi
+ 	$(MAKE) -C qt-im clean
+@@ -286,5 +287,3 @@ gcin-fedora.spec:	gcin-fedora.spec.in VERSION.gcin
+ gcin-fedora.spec:	gcin-fedora.spec.in VERSION.gcin
+ 	rm -f $@
+ 	sed -e "s/__gcin_version__/$(GCIN_VERSION)/" < $< > $@
+-
+-include .depend

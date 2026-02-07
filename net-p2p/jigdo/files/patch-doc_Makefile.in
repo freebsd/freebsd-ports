@@ -1,0 +1,49 @@
+--- doc/Makefile.in.orig	2023-08-03 19:55:46 UTC
++++ doc/Makefile.in
+@@ -8,32 +8,25 @@ DOCBOOK2MAN =	docbook2man
+ 
+ AWK =		@AWK@
+ DOCBOOK2MAN =	docbook2man
+-DOCBOOK2HTML =	docbook2html
+ #______________________________
+ 
+ .SUFFIXES:
+-.SUFFIXES: .1 .sgml .html
++.SUFFIXES: .1 .sgml
+ 
+ .sgml.1:
+ 		mkdir -p tmp && cp "$<" tmp \
+ 		    && cd tmp && $(DOCBOOK2MAN) "`echo $< | sed 's%.*/%%'`"
+-		sed -e 's/   */ /g' <"`ls tmp/*.1`" >"$@"
++		cd tmp && $(LOCALBASE)/bin/brename -p '[.].+.1$$' -r ".1" -f '\.1$$'
++		mv tmp/*.1 ./
+ 		rm -rf tmp
+ #		sed -e 's%\\%\\\\%g;' <"$<" | tr -s '[:space:]' ' ' \
+ #		    | $(DOCBOOKTOMAN) - >"$@"
+-.sgml.html:
+-		rm -f "$@"
+-		$(DOCBOOK2HTML) "$<" --nochunks
+-		mv "$@" "$@~"
+-		$(AWK) -f "$(srcdir)/../scripts/html-beautify.awk" \
+-		    "$@~" >"$@"
+ #______________________________________________________________________
+ 
+ .PHONY:		all clean distclean mostlyclean maintainer-clean \
+ 		dep depend doc check
+-all:		jigdo-file.1 jigdo-file.html jigdo-lite.1 jigdo-lite.html \
+-		jigdo-mirror.1 jigdo-mirror.html \
+-		debian-jigdo-mini-howto.html
++all:		jigdo-file.1 jigdo-lite.1 \
++		jigdo-mirror.1
+ doc mostlyclean dep depend check: ;
+ 
+ clean:		Makefile
+@@ -43,7 +36,7 @@ maintainer-clean: Makefile distclean
+ 		rm -f *~ \#*\# *.bak
+ 		rm -f Makefile
+ maintainer-clean: Makefile distclean
+-		rm -f *.html *.1
++		rm -f *.1
+ 
+ Makefile:	Makefile.in
+ 		cd .. && sh config.status # update Makefile from Makefile.in

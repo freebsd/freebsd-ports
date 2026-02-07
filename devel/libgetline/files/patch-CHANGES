@@ -1,0 +1,11 @@
+--- CHANGES	Thu Jan 15 02:07:12 1998
++++ CHANGES	Sun Mar 21 15:30:05 1999
+@@ -1,3 +1,8 @@
++
++WGH 20-Mar-99
++	Patches to turn getline into a port for FreeBSD
++	Adapt for FreeBSD RELENG_3 shared library support.
++
+ Hops 14-Jan-98
+     made protos in getline.c stdc style protos
+     Added includes for C std and unix things and removed extern setups

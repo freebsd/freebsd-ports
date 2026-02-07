@@ -1,0 +1,3 @@
+bin/cntlm
+@sample etc/cntlm.conf.sample
+share/man/man1/cntlm.1.gz

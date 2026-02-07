@@ -1,0 +1,110 @@
+[
+{ type: install
+  message: <<EOM
+CONFIGURATION:
+-------------
+The configuration file can be found (or created) at the following path:
+  %%ETCDIR%%/documentserver/local.json
+The default values are available in the default.json configuration file,
+which is available in the folders above. Please do not edit the contents of the
+default.json file directly. The default values will be restored each time you
+upgrade Document Server to a new version and all your changes will be lost. 
+
+1. Enable services at startup in the /etc/rc.conf file:
+  nginx_enable="YES"
+  rabbitmq_enable="YES"
+  supervisord_enable="YES"
+
+  Optionally in case of a jail with local IP and no internet access:
+    update /etc/hosts in order to resolve your nextcloud server to its local IP
+
+2. Install a database server and set up the database (either PostgreSQL or MySQL):
+  For PostgreSQL (don't forget to change the password):
+    # service postgresql initdb
+    # service postgresql start
+    # psql -U postgres -c "CREATE DATABASE onlyoffice;"
+    # psql -U postgres -c "CREATE USER onlyoffice WITH password 'onlyoffice';"
+    # psql -U postgres -c "GRANT ALL privileges ON DATABASE onlyoffice TO onlyoffice;"
+    # psql -U postgres -c "ALTER DATABASE onlyoffice OWNER to onlyoffice;"
+    # psql -hlocalhost -Uonlyoffice -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/createdb.sql
+
+    Optionally in case of a jail with local IP:
+      update /var/db/postgres/data13/pg_hba.conf accordingly
+
+  For MySQL don't forget to change the password):
+    # service mysql-server start
+    # mysql -u root -p -e "CREATE DATABASE onlyoffice DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;"
+    # mysql -u root -p -e "CREATE USER 'onlyoffice'@'localhost' IDENTIFIED BY 'onlyoffice';"
+    # mysql -u root -p -e "GRANT ALL privileges ON  onlyoffice.* TO 'onlyoffice'@'localhost';"
+    # mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/createdb.sql
+
+3. Create a new rabbitmq user for the ONLYOFFICE Document Server configuration (don't forget to change the password):
+  # service rabbitmq start
+  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` add_user onlyoffice password
+  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_user_tags onlyoffice administrator
+  # rabbitmqctl --erlang-cookie `cat /var/db/rabbitmq/.erlang.cookie` set_permissions -p / onlyoffice ".*" ".*" ".*"
+  and change it in %%ETCDIR%%/documentserver/local.json accordingly.
+
+4. Set up supervisord in order to execute documentserver services:
+  - let supervisord.conf load files contained in this directory by adding to
+    %%PREFIX%%/etc/supervisord.conf:
+[include]
+files = %%ETCDIR%%/documentserver/supervisor/*.conf
+
+  - start supervisord:
+    # service supervisord start
+
+5. Set up nginx:
+  - For HTTP include the following in your %%PREFIX%%/etc/nginx/nginx.conf file:
+      include %%ETCDIR%%/documentserver/nginx/ds.conf;
+
+NOTE: documentserver-update-securelink.sh will only update ./nginx/ds.conf and local.json under %%ETCDIR%%/documentserver/!
+  - run documentserver-update-securelink.sh once for creating a verysecretstring
+
+  - start nginx:
+    # service nginx start
+
+6. Follow the following doc if you want to use Onlyoffice with Nextcloud:
+  - https://api.onlyoffice.com/editors/nextcloud
+
+7. Install OnlyOffice plugins (you'll need internet):
+   # %%PREFIX%%/bin/documentserver-pluginsmanager.sh --update=%%PREFIX%%/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
+
+8. Set up Admin Panel, if desired:
+  - locate your temporary bootstrap code in the adminpanel log file:
+      /var/log/onlyoffice/documentserver/adminpanel/out.log
+
+  - access the admin panel at http://host/admin
+
+  - use the bootstrap code to complete setup of new admin password
+
+  - see the following for more info:
+      https://www.onlyoffice.com/blog/2025/10/docs-admin-panel-enterprise
+
+9. Enjoy.
+EOM
+}
+{ type: upgrade
+  maximum_version: 7.1.0.215
+  message: <<EOM
+If you are upgrading onlyoffice-documentserver from a version prior to 7.1.0.215,
+you need to update the database schema:
+  For PostgreSQL:
+    psql -U postgres -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev710.sql
+  For MySQL:
+    mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev710.sql
+EOM
+}
+{ type: upgrade
+  minimum_version: 7.1.0.215
+  maximum_version: 7.2.1.34
+  message: <<EOM
+If you are upgrading onlyoffice-documentserver from a version prior to 7.2.1.34,
+you need to update the database schema:
+  For PostgreSQL:
+    psql -U postgres -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev720.sql
+  For MySQL:
+    mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev720.sql
+EOM
+}
+]

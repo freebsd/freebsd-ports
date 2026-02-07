@@ -1,0 +1,4 @@
+%%APACHEMODDIR%%/%%AP_MODULE%%
+%%PORTDOCS%%%%DOCSDIR%%/mod_fcgid.html
+%%PORTDOCS%%%%DOCSDIR%%/mod_fcgid.html.en
+@dir(www,www,700) /var/run/fcgidsock

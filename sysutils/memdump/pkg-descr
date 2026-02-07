@@ -1,0 +1,8 @@
+This program dumps system memory to the standard output stream, skipping
+over holes in memory maps.  By default, the program dumps the contents of
+physical memory.
+
+Note: consider using Brian Carrier's Sleuthkit, available as `sysutils/
+sleuthkit' port.  It is the official successor, based on parts from TCT.
+Development of the Coroner's Toolkit was stopped years ago.  It is only
+updated for bugfixes, which are very rare.

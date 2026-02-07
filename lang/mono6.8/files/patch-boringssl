@@ -1,0 +1,138 @@
+diff --git a/CODE-OF-CONDUCT.md external/boringssl/CODE-OF-CONDUCT.md
+new file mode 100644
+index 00000000..775f221c
+--- /dev/null
++++ external/boringssl/CODE-OF-CONDUCT.md
+@@ -0,0 +1,6 @@
++# Code of Conduct
++
++This project has adopted the code of conduct defined by the Contributor Covenant
++to clarify expected behavior in our community.
++
++For more information, see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
+diff --git a/THIRD-PARTY-NOTICES.TXT external/boringssl/THIRD-PARTY-NOTICES.TXT
+new file mode 100644
+index 00000000..069ac8f2
+--- /dev/null
++++ external/boringssl/THIRD-PARTY-NOTICES.TXT
+@@ -0,0 +1,20 @@
++Mono uses third-party libraries or other resources that may be
++distributed under licenses different than the .NET Core software.
++
++ Attributions and license notices for test cases originally authored by
++third parties can be found in the respective test directories.
++
++ In the event that we accidentally failed to list a required notice, please
++bring it to our attention. Post an issue or email us:
++
++            dotnet@microsoft.com
++
++ The attached notices are provided for information only.
++
++ License notice for Code Project
++--------------------------------
++
++Title: Thread Local Storage - The C++ Way
++Content: https://www.codeproject.com/Articles/8113/Thread-Local-Storage-The-C-Way
++Reference: https://github.com/mono/boringssl/bloexternal/boringssl/eec2ca7e76c04ca41ef5bfc875ee3b0374cb7a94/crypto/thread_win.c#L138-L148
++License: https://www.codeproject.com/info/EULA.aspx
+diff --git a/crypto/aes/asm/aesv8-armx.pl external/boringssl/crypto/aes/asm/aesv8-armx.pl
+index 89e6f874..c41175a6 100644
+--- a/crypto/aes/asm/aesv8-armx.pl
++++ external/boringssl/crypto/aes/asm/aesv8-armx.pl
+@@ -51,15 +51,7 @@ $code=<<___;
+ .text
+ ___
+ $code.=<<___ if ($flavour =~ /64/);
+-#if !defined(__clang__)
+ .arch   armv8-a+crypto
+-#elif defined(ANDROID) && defined(__clang__) 
+-#if __clang_major__ > 3
+-.arch   armv8-a+crypto
+-#else
+-.arch   armv8-a+crypto,+neon
+-#endif
+-#endif
+ ___
+ $code.=".arch	armv7-a\n.fpu	neon\n.code	32\n"	if ($flavour !~ /64/);
+ 		#^^^^^^ this is done to simplify adoption by not depending
+diff --git a/crypto/cpu-aarch64-linux.c external/boringssl/crypto/cpu-aarch64-linux.c
+index 1b0f3955..93d12237 100644
+--- a/crypto/cpu-aarch64-linux.c
++++ external/boringssl/crypto/cpu-aarch64-linux.c
+@@ -25,6 +25,48 @@
+ 
+ extern uint32_t OPENSSL_armcap_P;
+ 
++#if defined(__FreeBSD__)
++
++#include <stdlib.h>
++#include <sys/types.h>
++#include <machine/armreg.h>
++
++// Support for older version of armreg.h
++#ifndef ID_AA64ISAR0_AES_VAL
++#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
++#endif
++#ifndef ID_AA64ISAR0_SHA1_VAL
++#define ID_AA64ISAR0_SHA1_VAL ID_AA64ISAR0_SHA1
++#endif
++#ifndef ID_AA64ISAR0_SHA2_VAL
++#define ID_AA64ISAR0_SHA2_VAL ID_AA64ISAR0_SHA2
++#endif
++
++void OPENSSL_cpuid_setup(void) {
++  if (getenv("QEMU_EMULATING") != NULL) {
++    return;
++  }
++
++  uint64_t isar0_val = READ_SPECIALREG(id_aa64isar0_el1);
++
++  OPENSSL_armcap_P |= ARMV7_NEON;
++
++  if (ID_AA64ISAR0_AES_VAL(isar0_val) >= ID_AA64ISAR0_AES_BASE) {
++    OPENSSL_armcap_P |= ARMV8_PMULL;
++  }
++  if (ID_AA64ISAR0_AES_VAL(isar0_val) >= ID_AA64ISAR0_AES_PMULL) {
++    OPENSSL_armcap_P |= ARMV8_PMULL;
++  }
++  if (ID_AA64ISAR0_SHA1_VAL(isar0_val) >= ID_AA64ISAR0_SHA1_BASE) {
++    OPENSSL_armcap_P |= ARMV8_SHA1;
++  }
++  if (ID_AA64ISAR0_SHA2_VAL(isar0_val) >= ID_AA64ISAR0_SHA2_BASE) {
++    OPENSSL_armcap_P |= ARMV8_SHA256;
++  }
++}
++
++#else // linux
++
+ void OPENSSL_cpuid_setup(void) {
+   unsigned long hwcap = getauxval(AT_HWCAP);
+ 
+@@ -58,4 +100,6 @@ void OPENSSL_cpuid_setup(void) {
+   }
+ }
+ 
++#endif
++
+ #endif /* OPENSSL_AARCH64 && !OPENSSL_STATIC_ARMCAP */
+diff --git a/crypto/modes/asm/ghashv8-armx.pl external/boringssl/crypto/modes/asm/ghashv8-armx.pl
+index 73421405..eabef0cb 100644
+--- a/crypto/modes/asm/ghashv8-armx.pl
++++ external/boringssl/crypto/modes/asm/ghashv8-armx.pl
+@@ -59,15 +59,7 @@ $code=<<___;
+ .text
+ ___
+ $code.=<<___ if ($flavour =~ /64/);
+-#if !defined(__clang__)
+ .arch   armv8-a+crypto
+-#elif defined(ANDROID) && defined(__clang__) 
+-#if __clang_major__ > 3
+-.arch   armv8-a+crypto
+-#else
+-.arch   armv8-a+crypto,+neon
+-#endif
+-#endif
+ ___
+ $code.=".fpu	neon\n.code	32\n"	if ($flavour !~ /64/);
+ 

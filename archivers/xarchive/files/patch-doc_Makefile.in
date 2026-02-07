@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2006-02-27 17:29:16 UTC
++++ doc/Makefile.in
+@@ -234,7 +234,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
++install-data-am: install-man
+ 
+ install-exec-am:
+ 

@@ -1,0 +1,11 @@
+--- 3rdparty/CMakeLists.txt.orig	2022-04-16 07:39:19 UTC
++++ 3rdparty/CMakeLists.txt
+@@ -47,7 +47,7 @@ option( BUILD_QWTPLOT3D "Build QwtPlot3D using own cod
+ 
+ if( NOT BUILD_QWTPLOT3D )
+ find_library ( QWTPLOT3D_LIBRARY
+-    NAMES qwtplot3d
++    NAMES qwtplot3d qwtplot3d-qt5
+     HINTS ${QT_LIBRARY_DIR}
+   )
+   if( NOT QWTPLOT3D_LIBRARY )

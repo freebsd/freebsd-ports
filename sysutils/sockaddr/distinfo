@@ -1,0 +1,5 @@
+TIMESTAMP = 1727338709
+SHA256 (go/sysutils_sockaddr/sockaddr-v1.0.7/v1.0.7.mod) = 4211f73ac7f74479a5250c373e08ec93a5bdbf5b7565ef78379fdb997f9a3e83
+SIZE (go/sysutils_sockaddr/sockaddr-v1.0.7/v1.0.7.mod) = 1174
+SHA256 (go/sysutils_sockaddr/sockaddr-v1.0.7/v1.0.7.zip) = 53ea8d77b68056fe7f40a53338aa73ed6ddca9558fe1156804070a060f1a930f
+SIZE (go/sysutils_sockaddr/sockaddr-v1.0.7/v1.0.7.zip) = 137026

@@ -1,0 +1,17 @@
+%%SITE_PERL%%/DBIx/Custom.pm
+%%SITE_PERL%%/DBIx/Custom/Mapper.pm
+%%SITE_PERL%%/DBIx/Custom/Model.pm
+%%SITE_PERL%%/DBIx/Custom/NotExists.pm
+%%SITE_PERL%%/DBIx/Custom/Order.pm
+%%SITE_PERL%%/DBIx/Custom/Query.pm
+%%SITE_PERL%%/DBIx/Custom/Result.pm
+%%SITE_PERL%%/DBIx/Custom/Util.pm
+%%SITE_PERL%%/DBIx/Custom/Where.pm
+%%PERL5_MAN3%%/DBIx::Custom.3.gz
+%%PERL5_MAN3%%/DBIx::Custom::Mapper.3.gz
+%%PERL5_MAN3%%/DBIx::Custom::Model.3.gz
+%%PERL5_MAN3%%/DBIx::Custom::NotExists.3.gz
+%%PERL5_MAN3%%/DBIx::Custom::Order.3.gz
+%%PERL5_MAN3%%/DBIx::Custom::Result.3.gz
+%%PERL5_MAN3%%/DBIx::Custom::Util.3.gz
+%%PERL5_MAN3%%/DBIx::Custom::Where.3.gz

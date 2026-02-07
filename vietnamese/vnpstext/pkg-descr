@@ -1,0 +1,11 @@
+Tha^n cha`o ca'c ba.n,
+
+    Vnpstext converts your 8-bit Vietnamese text to a PostScript
+    file suitable for printing to a PostScript printer.  To use it
+    you need to have an 8-bit Vietnamese text file (VISCII, RFC 1456),
+    which may be created with an editor like Vnelvis, or converted from
+    Viet-Std 7-bit (VIQR, quoted-readable) format using vn7to8.
+
+
+David O'Brien
+obrien@cs.ucdavis.edu

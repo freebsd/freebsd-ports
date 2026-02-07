@@ -1,0 +1,1 @@
+APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_MTA_STS')

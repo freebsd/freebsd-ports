@@ -1,0 +1,49 @@
+--- Makefile.orig	2018-01-07 07:10:36 UTC
++++ Makefile
+@@ -2,22 +2,26 @@
+ #  Makefile for ninix-aya
+ #
+ 
+-prefix = /opt/ninix-aya
++prefix ?= ${PREFIX}
+ 
+ exec_libdir = $(prefix)/lib
+ 
+ bindir = $(DESTDIR)$(prefix)/bin
+-docdir = $(DESTDIR)$(prefix)/doc
+-libdir = $(DESTDIR)$(exec_libdir)
+-localedir = /usr/local/share/locale # system specific
++docdir = $(DESTDIR)$(prefix)/share/doc/ninix-aya
++libdir = $(DESTDIR)$(exec_libdir)/ninix
++localedir = $(DESTDIR)$(prefix)/share/locale # system specific
+ 
+-shiori_so_dir = $(DESTDIR)$(prefix)/lib/kawari8:$(DESTDIR)$(prefix)/lib/yaya
++shiori_so_dir = $(prefix)/lib/kawari8:$(prefix)/lib/yaya
+ 
+ ruby = ruby
+ 
+ NINIX = ninix
+ 
++sed_dirs = sed -e "s,@ruby,$(ruby),g" -e "s,@libdir,$(libdir),g" -e "s,@so_path,$(shiori_so_dir),g"
++
+ all:
++	$(sed_dirs) bin/ninix.in         > bin/ninix
++	msgfmt po/ja/ninix-aya.po -o po/ja/ninix-aya.mo
+ 
+ install: install-lib install-bin install-doc
+ 
+@@ -25,13 +29,10 @@ install-lib:
+ 	mkdir -p $(libdir)
+ 	cp -r lib/* $(libdir)
+ 	mkdir -p $(localedir)/ja/LC_MESSAGES
+-	(cd po/ja ; msgfmt ninix-aya.po -o $(localedir)/ja/LC_MESSAGES/ninix-aya.mo)
+-
+-sed_dirs = sed -e "s,@ruby,$(ruby),g" -e "s,@libdir,$(libdir),g" -e "s,@so_path,$(shiori_so_dir),g"
++	cp po/ja/ninix-aya.mo $(localedir)/ja/LC_MESSAGES
+ 
+ install-bin:
+ 	mkdir -p $(bindir)
+-	$(sed_dirs) bin/ninix.in         > bin/ninix
+ 	install -m 755 bin/ninix         $(bindir)/$(NINIX)
+ 
+ install-doc:

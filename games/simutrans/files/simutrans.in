@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd "%%DATADIR%%" && exec "%%PREFIX%%/libexec/simutrans" -use_workdir "$@"

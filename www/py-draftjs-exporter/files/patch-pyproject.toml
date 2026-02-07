@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2026-01-19 14:12:14 UTC
++++ pyproject.toml
+@@ -58,8 +58,8 @@ dev = [
+ ]
+ 
+ [build-system]
+-requires = ["uv_build>=0.9.21,<0.10.0"]
+-build-backend = "uv_build"
++requires = ["setuptools"]
++build-backend = "setuptools.build_meta"
+ 
+ [tool.uv.build-backend]
+ module-name = "draftjs_exporter"

@@ -1,0 +1,14 @@
+--- man/procmail.man.orig	Fri Aug 25 11:04:32 2000
++++ man/procmail.man	Sun Aug 27 13:21:23 2000
+@@ -690,9 +690,8 @@
+ .RE
+ .PP
+ @CF_procmail@
+-In this case your $HOME/@DOT_FORWARD@ (beware, it
+-.B has
+-to be world readable) file should contain the line below.  Be sure to include
++In this case your $HOME/@DOT_FORWARD@
++file should contain the line below.  Be sure to include
+ the single and double quotes, and unless you know your site to be running
+ smrsh (the SendMail Restricted SHell), it must be an
+ .I absolute

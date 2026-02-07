@@ -1,0 +1,4 @@
+include/GL/glpng.h
+lib/libglpng.a
+share/cmake/Modules/FindGLPNG.cmake
+%%PORTDOCS%%%%DOCSDIR%%/glpng.htm

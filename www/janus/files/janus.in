@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: janus
+# REQUIRE: NETWORKING syslogd
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable janus:
+# janus_enable="YES"
+# janus_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=janus
+rcvar=janus_enable
+
+: ${janus_enable="NO"}
+: ${janus_config_dir="%%PREFIX%%/etc/${name}"}
+: ${janus_conf="${janus_config_dir}/$name.jcfg"}
+
+required_files="${janus_conf}"
+command="%%PREFIX%%/bin/janus"
+command_args="-D -f -o -F ${janus_config_dir} -C ${janus_conf} -b -L /var/log/janus.log"
+
+load_rc_config $name
+run_rc_command "$1"

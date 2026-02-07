@@ -1,0 +1,17 @@
+diff -urN editors/2bsd-vi.orig/files/patch-config.h editors/2bsd-vi/files/patch-config.h
+--- editors/2bsd-vi.orig/files/patch-config.h	1970-01-01 09:00:00.000000000 +0900
++++ editors/2bsd-vi/files/patch-config.h	2013-11-11 21:56:16.000000000 +0900
+@@ -0,0 +1,13 @@
++--- config.h.orig	2005-02-19 19:25:39.000000000 +0900
+++++ config.h	2013-11-11 21:54:26.000000000 +0900
++@@ -95,8 +95,8 @@
++ #define TUBESIZE        6000    /* Maximum screen size for visual */
++ #else	/* VMUNIX */
++ #define TUBELINES       100
++-#define TUBECOLS        160
++-#define TUBESIZE        16000
+++#define TUBECOLS        300
+++#define TUBESIZE        30000
++ #endif	/* VMUNIX */
++ 
++ /*

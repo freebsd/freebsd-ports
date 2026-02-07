@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# PROVIDE: volmand
+# REQUIRE: LOGIN
+# KEYWORD: shutdown nojail
+
+. /etc/rc.subr
+
+name="volmand"
+rcvar=volmand_enable
+
+load_rc_config $name
+
+: ${volmand_enable:="NO"}
+
+pidfile="/var/run/volmand.pid"
+
+command_interpreter="/bin/sh"
+command="%%PREFIX%%/sbin/volmand"
+
+run_rc_command "$1"
+

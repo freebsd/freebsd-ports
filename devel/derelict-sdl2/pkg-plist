@@ -1,0 +1,8 @@
+include/d/derelict/sdl2/functions.d
+include/d/derelict/sdl2/image.d
+include/d/derelict/sdl2/mixer.d
+include/d/derelict/sdl2/net.d
+include/d/derelict/sdl2/sdl.d
+include/d/derelict/sdl2/ttf.d
+include/d/derelict/sdl2/types.d
+lib/d/libDerelictSDL2.a

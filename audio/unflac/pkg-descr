@@ -1,0 +1,3 @@
+A command line tool for fast frame accurate audio image + cue sheet splitting.
+It can be used to split single flac file to flack tracks to simplify collection
+management

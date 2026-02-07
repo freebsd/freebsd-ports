@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/UnixCrypt_XS.pm
+%%SITE_ARCH%%/auto/Crypt/UnixCrypt_XS/UnixCrypt_XS.so
+%%PERL5_MAN3%%/Crypt::UnixCrypt_XS.3.gz

@@ -1,0 +1,2 @@
+This module currently only break chinese text into single character
+(Chinese word), it will not break up any alphabet.

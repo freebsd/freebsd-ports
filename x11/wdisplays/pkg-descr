@@ -1,0 +1,6 @@
+wdisplays is a graphical application for configuring displays in
+Wayland compositors. It borrows some code from kanshi. It should work
+in any compositor that implements wlr-output-management-unstable-v1.
+Compositors known to support the protocol are Sway and Wayfire.
+wdisplays' goal is to allow precise adjustment of display settings in
+kiosks, digital signage, and other elaborate multi-monitor setups.

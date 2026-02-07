@@ -1,0 +1,15 @@
+bin/emplacken
+%%SITE_PERL%%/Emplacken.pm
+%%SITE_PERL%%/Emplacken/App.pm
+%%SITE_PERL%%/Emplacken/App/Starman.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Catalyst.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Dancer.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/FromTemplate.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Mason.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Mojo.pm
+%%SITE_PERL%%/Emplacken/Role/CodeBuilder.pm
+%%SITE_PERL%%/Emplacken/Stderr.pm
+%%SITE_PERL%%/Emplacken/Types.pm
+%%SITE_PERL%%/Emplacken/Types/Internal.pm
+%%PERL5_MAN3%%/Emplacken.3.gz
+%%PERL5_MAN3%%/Emplacken::Types.3.gz

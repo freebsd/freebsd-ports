@@ -1,0 +1,26 @@
+#!/bin/sh
+CHMOD="/bin/chmod"
+MKDIR="/bin/mkdir -p"
+
+SNPSERVICES_TMPDIR=%%SNPSERVICES_TMPDIR%%
+
+case "$2" in
+
+POST-INSTALL)
+	if [ ! -d "${SNPSERVICES_TMPDIR}/images" ]; then
+		${MKDIR} "${SNPSERVICES_TMPDIR}/images"
+	fi
+	if [ ! -d "${SNPSERVICES_TMPDIR}/logs" ]; then
+		${MKDIR} "${SNPSERVICES_TMPDIR}/logs"
+	fi
+	if [ ! -d "${SNPSERVICES_TMPDIR}/data" ]; then
+		${MKDIR} "${SNPSERVICES_TMPDIR}/data"
+	fi
+	if [ ! -d "${SNPSERVICES_TMPDIR}/tmp" ]; then
+		${MKDIR} "$SNPSERVICES_TMPDIR"
+		${MKDIR} "${SNPSERVICES_TMPDIR}/tmp"
+		${CHMOD} -R a+rw ${SNPSERVICES_TMPDIR}/tmp
+	fi
+	;;
+esac
+exit 0

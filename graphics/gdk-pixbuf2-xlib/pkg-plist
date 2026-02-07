@@ -1,0 +1,6 @@
+include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
+include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
+lib/libgdk_pixbuf_xlib-2.0.so
+lib/libgdk_pixbuf_xlib-2.0.so.0
+lib/libgdk_pixbuf_xlib-2.0.so.0.4000.2
+libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc

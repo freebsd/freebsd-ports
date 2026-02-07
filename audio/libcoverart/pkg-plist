@@ -1,0 +1,14 @@
+include/coverart/CoverArt.h
+include/coverart/HTTPFetch.h
+include/coverart/Image.h
+include/coverart/ImageList.h
+include/coverart/ReleaseInfo.h
+include/coverart/Thumbnails.h
+include/coverart/Type.h
+include/coverart/TypeList.h
+include/coverart/caa_c.h
+include/coverart/defines.h
+lib/libcoverart.so
+lib/libcoverart.so.0
+lib/libcoverart.so.0.0.1
+libdata/pkgconfig/libcoverart.pc

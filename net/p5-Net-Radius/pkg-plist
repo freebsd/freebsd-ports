@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Net::Radius::Dictionary.3.gz
+%%PERL5_MAN3%%/Net::Radius::Packet.3.gz
+%%SITE_PERL%%/Net/Radius/Dictionary.pm
+%%SITE_PERL%%/Net/Radius/Packet.pm

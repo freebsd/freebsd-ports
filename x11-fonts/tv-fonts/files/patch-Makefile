@@ -1,0 +1,23 @@
+--- Makefile.orig	Sat Jun 19 20:05:38 2004
++++ Makefile	Sat Jun 19 20:06:00 2004
+@@ -1,6 +1,6 @@
+ 
+-CC	:= gcc
+-CFLAGS	:= -O2 -Wall
++CC	?= gcc
++CFLAGS	?= -O2 -Wall
+ 
+ THISDIR    := $(shell basename `pwd`)
+ FONTSPEC   := -misc-fixed-medium-r-semicondensed-*-13-120-75-75-c-60
+@@ -24,11 +24,6 @@
+ 
+ all: $(LED_PCF) $(TT_PCF) $(LED_BDF) $(TT_BDF)
+ 	mkfontdir
+-ifneq ($(DISPLAY),)
+-	-xset fp- "`pwd`:unscaled"
+-	xset +fp "`pwd`:unscaled"
+-	xset fp rehash
+-endif
+ 
+ clean distclean:
+ 	rm -f $(LED_PCF) $(TT_PCF) $(TT_BDF)

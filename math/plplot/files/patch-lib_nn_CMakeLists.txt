@@ -1,0 +1,30 @@
+--- lib/nn/CMakeLists.txt.orig	2019-06-01 23:24:33 UTC
++++ lib/nn/CMakeLists.txt
+@@ -1,5 +1,6 @@
+ # lib/nn/CMakeLists.txt for PLplot
+ # Copyright (C) 2006-2019 Alan W. Irwin
++# Patch borrowed from https://sourceforge.net/p/plplot/plplot/ci/52479b8830ee02900b41fe3ec947aed6b1841a48/
+ #
+ # This file is part of PLplot.
+ #
+@@ -48,19 +49,8 @@ if(PL_HAVE_QHULL)
+       )
+   endif(HAS_LIBQHULL_INCLUDE)
+ 
+-  set_source_files_properties(
+-    ${csironn_LIB_SRCS}
+-    PROPERTIES
+-    COMPILE_FLAGS "-I${QHULL_INCLUDE_DIRS}"
+-    )
+-
+-  set(csironn_LINK_LIBRARIES ${QHULL_LIBRARIES})
+-  if(MATH_LIB)
+-    list(APPEND csironn_LINK_LIBRARIES ${MATH_LIB})
+-  endif(MATH_LIB)
+-
+   set(LIB_INSTALL_RPATH ${QHULL_RPATH})
+-  configure_library_build(csironn "" "${csironn_LIB_SRCS}" "${csironn_LINK_LIBRARIES}" "${QHULL_RPATH}")
++  configure_library_build(csironn "" "${csironn_LIB_SRCS}" Qhull::qhull_r "${QHULL_RPATH}")
+ 
+   set(nn_DOCFILES
+     README

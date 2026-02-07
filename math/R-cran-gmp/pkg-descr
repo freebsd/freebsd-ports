@@ -1,0 +1,3 @@
+Multiple Precision Arithmetic (big integers and rationals, prime
+number tests, matrix computation), "arithmetic without limitations"
+using the C library GMP (GNU Multiple Precision Arithmetic).

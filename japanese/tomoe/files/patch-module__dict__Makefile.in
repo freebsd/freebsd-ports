@@ -1,0 +1,13 @@
+Index: module/dict/Makefile.in
+diff -u module/dict/Makefile.in.orig module/dict/Makefile.in
+--- module/dict/Makefile.in.orig	2007-08-15 03:35:25.000000000 +0900
++++ module/dict/Makefile.in	2007-08-15 03:39:54.000000000 +0900
+@@ -727,7 +727,7 @@
+ @USE_UNIHAN_TRUE@	cd $(top_builddir)/data && $(MAKE) $(AM_MAKEFLAGS) kanjidic2.xml
+ 
+ @USE_UNIHAN_TRUE@tomoe-unihan-data.h: unihan-compiler.rb Unihan.stamp $(top_builddir)/data/kanjidic2.xml
+-@USE_UNIHAN_TRUE@	$(RUBY) -I$(top_srcdir)/bindings/ruby -I$(top_builddir)/bindings/ruby/.libs \
++@USE_UNIHAN_TRUE@	env LD_LIBRARY_PATH=$(top_srcdir)/lib/.libs:/usr/local/lib:/usr/lib:/lib $(RUBY) -I$(top_srcdir)/bindings/ruby -I$(top_builddir)/bindings/ruby/.libs \
+ @USE_UNIHAN_TRUE@	  -I$(top_srcdir)/test unihan-compiler.rb \
+ @USE_UNIHAN_TRUE@	  Unihan.txt $(top_srcdir)/data/kanjidic2.xml > $@.tmp || exit 1;
+ @USE_UNIHAN_TRUE@	mv $@.tmp $@

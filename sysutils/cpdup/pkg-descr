@@ -1,0 +1,6 @@
+This is the distribution of "cpdup", a powerful filesystem mirroring and
+backup utility which also has file integrity testing features, supports
+incremental backups, and remote mirroring via ssh.
+
+Note: This port does not copy (or mirror) any FreeBSD supported ACL
+types and Extended Attributes nor MAC labels.

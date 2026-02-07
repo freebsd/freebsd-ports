@@ -1,0 +1,22 @@
+Let Framework control CPU-specific optimizations
+
+--- CMakeLists.txt.orig	2025-01-05 12:12:08 UTC
++++ CMakeLists.txt
+@@ -269,7 +269,7 @@ endif()
+ 
+ 
+ 
+-################################################################################
++#[[ ################################################################################
+ # FP math
+ ################################################################################
+ # FIXME: Support ARM "-mfpu=vfp -mfloat-abi=hard"
+@@ -286,7 +286,7 @@ if ((TARGET_ARCHITECTURE STREQUAL "x86_64") OR (TARGET
+     list(APPEND Z3_COMPONENT_CXX_FLAGS ${SSE_FLAGS})
+   endif()
+   unset(SSE_FLAGS)
+-endif()
++endif() ]]
+ 
+ ################################################################################
+ # Threading support

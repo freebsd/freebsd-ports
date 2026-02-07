@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/B/Hooks/OP/Check.pm
+%%SITE_ARCH%%/B/Hooks/OP/Check/Install/Files.pm
+%%SITE_ARCH%%/B/Hooks/OP/Check/Install/hook_op_check.h
+%%SITE_ARCH%%/auto/B/Hooks/OP/Check/Check.so
+%%PERL5_MAN3%%/B::Hooks::OP::Check.3.gz

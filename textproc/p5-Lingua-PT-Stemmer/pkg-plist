@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Lingua/GL/Stemmer.pm
+%%SITE_PERL%%/Lingua/PT/Stemmer.pm
+%%PERL5_MAN3%%/Lingua::GL::Stemmer.3.gz
+%%PERL5_MAN3%%/Lingua::PT::Stemmer.3.gz

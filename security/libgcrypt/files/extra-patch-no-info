@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	2021-08-22 16:00:24 UTC
++++ doc/Makefile.in
+@@ -690,7 +690,7 @@ distdir-am: $(DISTFILES)
+ check-am: all-am
+ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-am
+-all-am: Makefile $(INFO_DEPS) $(MANS)
++all-am: Makefile $(MANS)
+ installdirs:
+ 	for dir in "$(DESTDIR)$(infodir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+@@ -750,7 +750,7 @@ info: info-am
+ 
+ info-am: $(INFO_DEPS)
+ 
+-install-data-am: install-info-am install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

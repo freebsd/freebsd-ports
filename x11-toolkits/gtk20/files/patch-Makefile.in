@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-06-27 12:13:41.000000000 +0200
++++ Makefile.in	2010-06-27 12:14:23.000000000 +0200
+@@ -456,7 +456,7 @@
+ 	|| { echo "Gtk+Tests:ERROR: Failed to start Xvfb environment for X11 target tests."; exit 1; } \
+ 	&& DISPLAY=:$$XID && export DISPLAY
+ 
+-SRC_SUBDIRS = gdk gtk modules demos tests perf
++SRC_SUBDIRS = gdk gtk modules demos perf
+ SUBDIRS = po po-properties $(SRC_SUBDIRS) docs m4macros build
+ 
+ # require automake 1.4

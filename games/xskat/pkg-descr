@@ -1,0 +1,12 @@
+XSkat lets you play the card game Skat as defined by the official
+Skat Order.  Features:
+
+* Single- and multiplayer mode.
+* Playing over LAN or IRC.
+* Game lists and logs.
+* Three types of scoring.
+* English or German text.
+* German or French suited cards.
+* Selectable computer playing strength.
+* Pre-definable card distributions.
+* Variations: Ramsch, Bock, Kontra & Re, ...

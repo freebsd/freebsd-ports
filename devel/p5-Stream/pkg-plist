@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Stream/DataEncoding.pm
+%%SITE_PERL%%/Stream/DataInputStream.pm
+%%SITE_PERL%%/Stream/DataOutputStream.pm
+%%SITE_PERL%%/Stream/FileInputStream.pm
+%%SITE_PERL%%/Stream/FileOutputStream.pm
+%%SITE_PERL%%/Stream/IO.pm
+%%SITE_PERL%%/Stream/Streamable.pm
+%%SITE_PERL%%/Stream/StringInputStream.pm
+%%SITE_PERL%%/Stream/StringOutputStream.pm

@@ -1,0 +1,4 @@
+Log4C is a library of C for flexible logging to files, syslog and other
+destinations. It is modeled after the Log for Java library
+(http://jakarta.apache.org/log4j/docs/index.html), staying as close to their
+API as is reasonable.

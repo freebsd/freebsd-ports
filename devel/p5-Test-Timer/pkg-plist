@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Test/Timer/TimeoutException.pm
+%%SITE_PERL%%/Test/Timer.pm
+%%PERL5_MAN3%%/Test::Timer.3.gz
+%%PERL5_MAN3%%/Test::Timer::TimeoutException.3.gz

@@ -1,0 +1,10 @@
+--- MANIFEST.orig	Sat Jan 28 13:53:39 2006
++++ MANIFEST	Sat Jan 28 13:53:39 2006
+@@ -6,7 +6,6 @@
+ Makefile.PL
+ README
+ TODO
+-java_server_install.pl
+ test.pl
+ examples/array.pl
+ examples/byte.pl

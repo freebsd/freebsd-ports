@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/GD::SecurityImage.3.gz
+%%PERL5_MAN3%%/GD::SecurityImage::GD.3.gz
+%%PERL5_MAN3%%/GD::SecurityImage::Magick.3.gz
+%%PERL5_MAN3%%/GD::SecurityImage::Styles.3.gz
+%%SITE_PERL%%/GD/SecurityImage.pm
+%%SITE_PERL%%/GD/SecurityImage/GD.pm
+%%SITE_PERL%%/GD/SecurityImage/Magick.pm
+%%SITE_PERL%%/GD/SecurityImage/Styles.pm

@@ -1,0 +1,35 @@
+--- src/Makefile.in.orig	2012-12-10 06:00:44 UTC
++++ src/Makefile.in
+@@ -115,7 +115,7 @@ am__tbd_SOURCES_DIST = conference.c conference.h confi
+ tbd_OBJECTS = $(am_tbd_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @LINK_BOX_FALSE@tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a \
+-@LINK_BOX_FALSE@	$(top_builddir)/zlib/libzlib.a \
++@LINK_BOX_FALSE@	-lz -lm \
+ @LINK_BOX_FALSE@	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+@@ -233,12 +233,12 @@ top_srcdir = @top_srcdir@
+ @LINK_BOX_TRUE@                   dirclient.c dirclient.h thebridge.c users.c users.h \
+ @LINK_BOX_TRUE@                   hostfile.c hostfile.h eventhook.c eventhook.h avrs.c avrs.h 
+ 
+-@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/zlib -I$(top_srcdir)/spandsp \
++@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/spandsp \
+ @LINK_BOX_FALSE@              -DSYSCON_DIR=\"$(sysconfdir)\"
+ 
+ @LINK_BOX_TRUE@AM_CPPFLAGS = -I$(top_srcdir)/inc \
+ @LINK_BOX_TRUE@	-I$(top_srcdir)/gsm/inc -DLINK_BOX \
+-@LINK_BOX_TRUE@	-I$(top_srcdir)/zlib -I$(top_srcdir)/linkbox \
++@LINK_BOX_TRUE@	-I$(top_srcdir)/linkbox \
+ @LINK_BOX_TRUE@	-DSYSCON_DIR=\"$(sysconfdir)\" $(am__append_1)
+ @LINK_BOX_FALSE@AM_CFLAGS = -Wall $(am__append_2)
+ @LINK_BOX_TRUE@AM_CFLAGS = -Wall $(am__append_2)
+@@ -246,7 +246,7 @@ top_srcdir = @top_srcdir@
+ @LINK_BOX_FALSE@        dirclient.h thebridge.c users.c users.h hostfile.c hostfile.h \
+ @LINK_BOX_FALSE@        eventhook.c eventhook.h avrs.c avrs.h
+ 
+-@LINK_BOX_FALSE@tbd_LDADD = $(top_builddir)/common/libcommon.a $(top_builddir)/zlib/libzlib.a \
++@LINK_BOX_FALSE@tbd_LDADD = $(top_builddir)/common/libcommon.a -lz \
+ @LINK_BOX_FALSE@            $(LIBDMALLOC) -lm
+ 
+ all: all-am

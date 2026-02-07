@@ -1,0 +1,2 @@
+This module returns a prime number of a specified bit length, using
+Maurers algorithm.

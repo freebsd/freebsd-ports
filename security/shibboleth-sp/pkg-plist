@@ -1,0 +1,141 @@
+bin/mdquery
+bin/resolvertest
+etc/shibboleth/metagen.sh
+@sample etc/shibboleth/native.logger.dist etc/shibboleth/native.logger
+@sample etc/shibboleth/shibd.logger.dist etc/shibboleth/shibd.logger
+@sample etc/shibboleth/shibboleth2.xml.dist etc/shibboleth/shibboleth2.xml
+@sample etc/shibboleth/attribute-map.xml.dist etc/shibboleth/attribute-map.xml
+@sample etc/shibboleth/attribute-policy.xml.dist etc/shibboleth/attribute-policy.xml
+@sample etc/shibboleth/example-metadata.xml.dist etc/shibboleth/example-metadata.xml
+@sample etc/shibboleth/console.logger.dist etc/shibboleth/console.logger
+@sample etc/shibboleth/sessionError.html.dist etc/shibboleth/sessionError.html
+@sample etc/shibboleth/metadataError.html.dist etc/shibboleth/metadataError.html
+@sample etc/shibboleth/bindingTemplate.html.dist etc/shibboleth/bindingTemplate.html
+@sample etc/shibboleth/discoveryTemplate.html.dist etc/shibboleth/discoveryTemplate.html
+@sample etc/shibboleth/localLogout.html.dist etc/shibboleth/localLogout.html
+@sample etc/shibboleth/globalLogout.html.dist etc/shibboleth/globalLogout.html
+@sample etc/shibboleth/sslError.html.dist etc/shibboleth/sslError.html
+@sample etc/shibboleth/example-shibboleth2.xml.dist etc/shibboleth/example-shibboleth2.xml
+@sample etc/shibboleth/protocols.xml.dist etc/shibboleth/protocols.xml
+@sample etc/shibboleth/security-policy.xml.dist etc/shibboleth/security-policy.xml
+etc/shibboleth/seckeygen.sh
+etc/shibboleth/shibd-amazon
+etc/shibboleth/shibd-redhat
+etc/shibboleth/shibd-debian
+etc/shibboleth/shibd-suse
+@comment etc/shibboleth/shibd-systemd
+etc/shibboleth/shibd-osx.plist
+etc/shibboleth/apache.config
+etc/shibboleth/apache2.config
+@sample etc/shibboleth/attrChecker.html.dist etc/shibboleth/attrChecker.html
+etc/shibboleth/apache22.config
+etc/shibboleth/apache24.config
+etc/shibboleth/keygen.sh
+@sample etc/shibboleth/postTemplate.html.dist etc/shibboleth/postTemplate.html
+@sample etc/shibboleth/partialLogout.html.dist etc/shibboleth/partialLogout.html
+include/shibsp/AbstractSPRequest.h
+include/shibsp/AccessControl.h
+include/shibsp/Application.h
+include/shibsp/GSSRequest.h
+include/shibsp/RequestMapper.h
+include/shibsp/SPConfig.h
+include/shibsp/SPRequest.h
+include/shibsp/ServiceProvider.h
+include/shibsp/SessionCache.h
+include/shibsp/TransactionLog.h
+include/shibsp/attribute/Attribute.h
+include/shibsp/attribute/AttributeDecoder.h
+include/shibsp/attribute/BinaryAttribute.h
+include/shibsp/attribute/ExtensibleAttribute.h
+include/shibsp/attribute/NameIDAttribute.h
+include/shibsp/attribute/ScopedAttribute.h
+include/shibsp/attribute/SimpleAttribute.h
+include/shibsp/attribute/XMLAttribute.h
+include/shibsp/attribute/filtering/AttributeFilter.h
+include/shibsp/attribute/filtering/BasicFilteringContext.h
+include/shibsp/attribute/filtering/FilterPolicyContext.h
+include/shibsp/attribute/filtering/FilteringContext.h
+include/shibsp/attribute/filtering/MatchFunctor.h
+include/shibsp/attribute/resolver/AttributeExtractor.h
+include/shibsp/attribute/resolver/AttributeResolver.h
+include/shibsp/attribute/resolver/ResolutionContext.h
+include/shibsp/base.h
+include/shibsp/binding/ArtifactResolver.h
+include/shibsp/binding/ProtocolProvider.h
+include/shibsp/binding/SOAPClient.h
+include/shibsp/config_pub.h
+include/shibsp/exceptions.h
+include/shibsp/handler/AbstractHandler.h
+include/shibsp/handler/AssertionConsumerService.h
+include/shibsp/handler/Handler.h
+include/shibsp/handler/LogoutHandler.h
+include/shibsp/handler/LogoutInitiator.h
+include/shibsp/handler/RemotedHandler.h
+include/shibsp/handler/SecuredHandler.h
+include/shibsp/handler/SessionInitiator.h
+include/shibsp/lite/CommonDomainCookie.h
+include/shibsp/lite/SAMLConstants.h
+include/shibsp/metadata/MetadataExt.h
+include/shibsp/metadata/MetadataProviderCriteria.h
+include/shibsp/paths.h
+include/shibsp/remoting/ListenerService.h
+include/shibsp/remoting/ddf.h
+include/shibsp/security/PKIXTrustEngine.h
+include/shibsp/security/SecurityPolicy.h
+include/shibsp/security/SecurityPolicyProvider.h
+include/shibsp/util/CGIParser.h
+include/shibsp/util/DOMPropertySet.h
+include/shibsp/util/IPRange.h
+include/shibsp/util/PropertySet.h
+include/shibsp/util/SPConstants.h
+include/shibsp/util/TemplateParameters.h
+include/shibsp/version.h
+lib/libshibsp.so
+lib/libshibsp.so.12
+lib/libshibsp.so.12.0.2
+lib/shibboleth/adfs-lite.so
+lib/shibboleth/adfs.so
+@comment %%MEMCACHED%%lib/shibboleth/memcache-store.so
+%%ODBC%%lib/shibboleth/odbc-store.so
+lib/shibboleth/plugins-lite.so
+lib/shibboleth/plugins.so
+%%WITH_APACHE_24%%lib/shibboleth/mod_shib_24.so
+%%FASTCGI%%lib/shibboleth/shibauthorizer
+%%FASTCGI%%lib/shibboleth/shibresponder
+lib/libshibsp-lite.so
+lib/libshibsp-lite.so.12
+lib/libshibsp-lite.so.12.0.2
+libdata/pkgconfig/shibsp-lite.pc
+libdata/pkgconfig/shibsp.pc
+sbin/shibd
+share/xml/shibboleth/MetadataExchange.xsd
+share/xml/shibboleth/WS-Trust.xsd
+share/xml/shibboleth/catalog.xml
+share/xml/shibboleth/oasis-200401-wss-wssecurity-secext-1.0.xsd
+share/xml/shibboleth/oasis-200401-wss-wssecurity-utility-1.0.xsd
+share/xml/shibboleth/shibboleth-2.0-afp-mf-basic.xsd
+share/xml/shibboleth/shibboleth-2.0-afp-mf-saml.xsd
+share/xml/shibboleth/shibboleth-2.0-afp.xsd
+share/xml/shibboleth/shibboleth-2.0-attribute-map.xsd
+share/xml/shibboleth/shibboleth-2.0-native-sp-config.xsd
+share/xml/shibboleth/shibboleth-2.0-native-sp-protocols.xsd
+share/xml/shibboleth/shibboleth-2.0-sp-notify.xsd
+share/xml/shibboleth/shibboleth-3.0-native-sp-config.xsd
+share/xml/shibboleth/shibboleth-metadata-1.0.xsd
+share/xml/shibboleth/shibboleth.xsd
+share/xml/shibboleth/ws-addr.xsd
+share/xml/shibboleth/ws-authorization.xsd
+share/xml/shibboleth/ws-federation.xsd
+share/xml/shibboleth/ws-securitypolicy-1.2.xsd
+%%DOCSDIR%%/CREDITS.txt
+%%DOCSDIR%%/FASTCGI.LICENSE
+%%DOCSDIR%%/LICENSE.txt
+%%DOCSDIR%%/LOG4CPP.LICENSE
+%%DOCSDIR%%/NOTICE.txt
+%%DOCSDIR%%/OPENSSL.LICENSE
+%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/RELEASE.txt
+%%DOCSDIR%%/main.css
+@dir(%%SHIBD_USER%%,%%SHIBD_GROUP%%,755) /var/log/shibboleth
+@dir(%%SHIBD_USER%%,%%SHIBD_GROUP%%,755) /var/cache/shibboleth
+@dir(%%SHIBD_USER%%,%%WWWGRP%%,750) /var/run/shibboleth

@@ -1,0 +1,15 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -25,10 +25,10 @@ dependencies = [
+ dependencies = [
+   "cryptography >=3.1",
+   "defusedxml",
+-  "pyopenssl <24.3.0",
++  "pyopenssl",
+   "python-dateutil",
+   "requests >=2.0.0,<3.0.0",  # ^2 means compatible with 2.x
+-  "xmlschema >=2.0.0,<3.0.0"
++  "xmlschema >=2.0.0"
+ ]
+ 
+ [project.optional-dependencies]

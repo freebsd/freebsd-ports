@@ -1,0 +1,7 @@
+Trayer is a small program designed to provide system tray functionality that
+commonly found in GNOME/KDE desktop environments, for window managers which
+lack this feature.  It is similar to other applications such as `peksystray'
+and `docker'.
+
+Trayer code was extracted from fbpanel, lightweight X11 desktop panel (port
+`x11/fbpanel' also available).  You can find more about it on its homepage.

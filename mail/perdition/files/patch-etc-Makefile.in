@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	2007-11-09 22:42:14.000000000 +0900
++++ etc/Makefile.in	2007-11-09 22:42:32.000000000 +0900
+@@ -212,7 +212,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ @PAM_BUILD_TRUE@PAM_DIR = pam.d
+-SUBDIRS = perdition $(PAM_DIR) rc.d sysconfig
++SUBDIRS = perdition
+ EXTRA_DIST = 
+ m4datadir = $(datadir)/aclocal
+ all: all-recursive

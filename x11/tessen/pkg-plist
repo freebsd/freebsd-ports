@@ -1,0 +1,4 @@
+bin/tessen
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config
+share/man/man1/tessen.1.gz
+share/man/man5/tessen.5.gz

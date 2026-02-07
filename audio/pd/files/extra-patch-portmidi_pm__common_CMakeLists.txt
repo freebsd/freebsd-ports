@@ -1,0 +1,54 @@
+--- portmidi/pm_common/CMakeLists.txt.orig	2010-09-20 19:57:48 UTC
++++ portmidi/pm_common/CMakeLists.txt
+@@ -66,21 +66,12 @@ if(UNIX)
+     set(JAVA_INCLUDE_PATHS ${JAVAVM_LIB}/Headers)
+     message(STATUS "SYSROOT: " ${CMAKE_OSX_SYSROOT})
+   else(APPLE)
+-    # LINUX settings...
+-    include(FindJNI)
+-    message(STATUS "JAVA_JVM_LIB_PATH is " ${JAVA_JVM_LIB_PATH})
+-    message(STATUS "JAVA_INCLUDE_PATH is " ${JAVA_INCLUDE_PATH})
+-    message(STATUS "JAVA_INCLUDE_PATH2 is " ${JAVA_INCLUDE_PATH2})
+-    message(STATUS "JAVA_JVM_LIBRARY is " ${JAVA_JVM_LIBRARY})
+-    set(JAVA_INCLUDE_PATHS ${JAVA_INCLUDE_PATH} ${JAVA_INCLUDE_PATH2})
+-    # libjvm.so is found relative to JAVA_INCLUDE_PATH:
+-    set(JAVAVM_LIB ${JAVA_JVM_LIBRARY}/libjvm.so)
+ 
+-    set(LINUXSRC pmlinuxalsa pmlinux finddefault)
+-    prepend_path(LIBSRC ../pm_linux/ ${LINUXSRC})
++    set(LINUXSRC pmsndio)
++    prepend_path(LIBSRC ../pm_sndio/ ${LINUXSRC})
+     list(APPEND LIBSRC ../porttime/ptlinux)
+ 
+-    set(PM_NEEDED_LIBS pthread asound)
++    set(PM_NEEDED_LIBS pthread sndio)
+   endif(APPLE)
+ else(UNIX)
+   if(WIN32)
+@@ -99,7 +90,6 @@ else(UNIX)
+     set(PM_NEEDED_LIBS winmm.lib)
+   endif(WIN32)
+ endif(UNIX)
+-set(JNI_EXTRA_LIBS ${PM_NEEDED_LIBS} ${JAVA_JVM_LIBRARY})
+ 
+ # this completes the list of library sources by adding shared code
+ list(APPEND LIBSRC pmutil portmidi)
+@@ -109,17 +99,10 @@ add_library(portmidi-static ${LIBSRC})
+ set_target_properties(portmidi-static PROPERTIES OUTPUT_NAME "portmidi_s")
+ target_link_libraries(portmidi-static ${PM_NEEDED_LIBS})
+ 
+-# define the jni library
+-include_directories(${JAVA_INCLUDE_PATHS})
+ 
+-set(JNISRC ${LIBSRC} ../pm_java/pmjni/pmjni.c)
+-add_library(pmjni SHARED ${JNISRC})
+-target_link_libraries(pmjni ${JNI_EXTRA_LIBS})
+-set_target_properties(pmjni PROPERTIES EXECUTABLE_EXTENSION "jnilib")
+-
+ # install the libraries (Linux and Mac OS X command line)
+ if(UNIX)
+-  INSTALL(TARGETS portmidi-static pmjni
++  INSTALL(TARGETS portmidi-static
+     LIBRARY DESTINATION /usr/local/lib
+     ARCHIVE DESTINATION /usr/local/lib)
+ # .h files installed by pm_dylib/CMakeLists.txt, so don't need them here

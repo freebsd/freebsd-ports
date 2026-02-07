@@ -1,0 +1,9 @@
+include/nfd.h
+include/nfd.hpp
+include/nfd_glfw3.h
+include/nfd_sdl2.h
+lib/cmake/nfd/nfd-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/nfd/nfd-config.cmake
+lib/libnfd.so
+lib/libnfd.so.1
+lib/libnfd.so.1.2.1

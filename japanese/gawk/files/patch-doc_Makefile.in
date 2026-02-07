@@ -1,0 +1,23 @@
+--- doc/Makefile.in.orig	2000-06-07 08:48:18 UTC
++++ doc/Makefile.in
+@@ -47,7 +47,7 @@ TROFF = groff -t -Tps
+ SEDME = sed -e "s/^level0 restore/level0 restore flashme 100 72 moveto (Copyright `date '+%m-%d-%y %T'`, FSF, Inc. (all)) show/" \
+ 		-e "s/^\/level0 save def/\/level0 save def 30 -48 translate/"
+ 
+-DOCS= gawk.1 igawk.1 gawk.texi
++DOCS= gawk.1 igawk.1 
+ 
+ TEXFILES= gawk.aux gawk.cp gawk.cps gawk.fn gawk.fns gawk.ky gawk.kys \
+ 	   gawk.pg gawk.pgs gawk.toc gawk.tp gawk.tps gawk.vr gawk.vrs
+@@ -67,9 +67,9 @@ AWKCARD = awkcard.ps
+ # to ensure that awkcard.tr is processed by tbl.
+ #AWKCARD = awkcard.nc
+ 
+-all: $(DOCS) info
++all: $(DOCS)
+ 
+-install: $(mandir)/gawk$(manext) $(mandir)/igawk$(manext) $(infodir)/gawk.info
++install: $(mandir)/gawk$(manext) $(mandir)/igawk$(manext)
+ 
+ $(infodir)/gawk.info::
+ 	-if test -f gawk.info; then d=.; \

@@ -1,0 +1,5 @@
+bin/jailaudit
+%%ETCDIR%%.conf.sample
+%%PERIODICDIR%%/security/410.jailaudit
+@dir %%REPORTDIR%%
+@dir %%XTMPDIR%%

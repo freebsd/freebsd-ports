@@ -1,0 +1,43 @@
+--- work/src/config/Project.tmpl.orig	Wed Oct 17 10:37:18 2001
++++ config/Project.tmpl	Sat Oct 19 18:04:30 2002
+@@ -510,7 +510,7 @@
+ #endif
+ 
+ #ifndef WnnWnnDir
+-#define WnnWnnDir	/usr/lib/wnn7
++#define WnnWnnDir	/usr/local/lib/wnn7
+ #endif
+ 
+ #ifndef WnnEtcDir
+@@ -522,11 +522,11 @@
+ #endif
+ 
+ #ifndef WnnIncDir
+-#define WnnIncDir	$(INCROOT)
++#define WnnIncDir	/usr/local/include/wnn7
+ #endif
+ 
+ #ifndef WnnLibDir
+-#define WnnLibDir	$(USRLIBDIR)
++#define WnnLibDir	/usr/local/lib
+ #endif
+ 
+ #ifndef WnnVarDir
+@@ -534,7 +534,7 @@
+ #endif
+ 
+ #ifndef WnnShareDir
+-#define WnnShareDir	/usr/share/wnn7
++#define WnnShareDir	/usr/local/share/wnn7
+ #endif
+ 
+        WNNOWNER = WnnOwner
+@@ -599,7 +599,7 @@
+      XWNMOJDSRC = $(XWNMOTOP)/jd
+ XWNMOROMKANMSRC = $(XWNMOTOP)/romkan_m
+   XWNMOINCLUDES = -I$(XWNMOROMKANMSRC) -I$(WNNINCLUDESRC)
+-      XWNMOJLIB = $(XWNMOJLIBSRC)/libwnn_m.a
++      XWNMOJLIB = $(XWNMOJLIBSRC)/libwnn7_m.a
+  XWNMOLIBRARIES = $(XWNMOJLIB)
+       XWNMODEFS = $(XVERSION) -DUSING_BUSHU
+      XCOMMONDIR = $(IMTOP)/XClient/Common/src

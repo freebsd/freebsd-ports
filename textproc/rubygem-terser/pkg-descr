@@ -1,0 +1,1 @@
+Terser minifies JavaScript files by wrapping TerserJS to be accessible in Ruby

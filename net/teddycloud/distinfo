@@ -1,0 +1,17 @@
+TIMESTAMP = 1769203899
+SHA256 (tonies.json) = bcf1633744f731998b26249b59b37f57905af533739ec24227e19169fe7b33cd
+SIZE (tonies.json) = 5854525
+SHA256 (tonieboxes.json) = 64ef4f28973d410e49274efc22e70ffb26ddb8e54b1750332bb853b273410439
+SIZE (tonieboxes.json) = 3022
+SHA256 (toniebox-reverse-engineering-teddycloud-tc_v0.6.7_GH0.tar.gz) = 6afd7f7b430b68cbfb01a146c5e48a6d3557e4ca46601a7d4904e63d5412dfb9
+SIZE (toniebox-reverse-engineering-teddycloud-tc_v0.6.7_GH0.tar.gz) = 15462180
+SHA256 (toniebox-reverse-engineering-teddycloud_web-tcw_v0.6.7_GH0.tar.gz) = a99b63eefe8df4d9881df0c59a778010abf129c0b578adee5ee8b298c3585d94
+SIZE (toniebox-reverse-engineering-teddycloud_web-tcw_v0.6.7_GH0.tar.gz) = 10479749
+SHA256 (Oryx-Embedded-Common-v2.4.4_GH0.tar.gz) = a94348845ce224fe825086bb0fa7a1598897e532d5088e3af1145314ff01945d
+SIZE (Oryx-Embedded-Common-v2.4.4_GH0.tar.gz) = 50454
+SHA256 (Oryx-Embedded-CycloneCRYPTO-v2.4.4_GH0.tar.gz) = b61a06eedd3c71c4d5b66273682717ceb52b7dda2db51d1e156babb501f6fe79
+SIZE (Oryx-Embedded-CycloneCRYPTO-v2.4.4_GH0.tar.gz) = 1002666
+SHA256 (Oryx-Embedded-CycloneSSL-v2.4.4_GH0.tar.gz) = 2c157a27facb550ff455025439cec47df7ee187e19a52588fa20415c104c10b9
+SIZE (Oryx-Embedded-CycloneSSL-v2.4.4_GH0.tar.gz) = 234959
+SHA256 (Oryx-Embedded-CycloneTCP-v2.4.4_GH0.tar.gz) = e334aadacbd6ddcc7a17f2a1dd0d03b8029c7ba23fd789f2397b04284fee37a0
+SIZE (Oryx-Embedded-CycloneTCP-v2.4.4_GH0.tar.gz) = 2361810

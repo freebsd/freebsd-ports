@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/BSD/getloadavg.pm
+%%SITE_ARCH%%/auto/BSD/getloadavg/getloadavg.so
+%%PERL5_MAN3%%/BSD::getloadavg.3.gz

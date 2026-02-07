@@ -1,0 +1,13 @@
+- workaround for https://github.com/fulhax/ncpamixer/issues/57
+
+--- CMakeLists.txt.orig	2021-12-16 08:19:36 UTC
++++ CMakeLists.txt
+@@ -76,7 +76,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
+     ${CMAKE_THREAD_LIBS_INIT}
+     )
+ 
+-target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC "-Werror")
++#target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC "-Werror")
+ target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC "-Wall")
+ target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC "-Wpedantic")
+ 

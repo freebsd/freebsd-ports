@@ -1,0 +1,22 @@
+Flasher monitors changes to one or more files, and indicates the
+number of writes to these files by briefly flashing a console LED
+once for each write.  The flashing sequence is repeated, after a
+brief pause, until the files have been read.  As the files are
+subsequently read, the number of LED flashes is reduced.  When all
+monitored files have been read, the console LED will be disabled.
+
+The most obvious use is to monitor specific system log or mail files.
+
+Multiple LEDs can be used. Each possible LED (-c, -n or -s) takes
+a list of colon-separated file arguments.  For example, when invoked
+as:
+
+    # ./flasher -s /var/log/messages:/var/mail/root
+
+the Scroll Lock LED will flash once for each write made to either
+of these files, until the files are read.  When /var/log/messages
+has been read, the Scroll Lock LED will continue to flash once for
+each write that has been made to /var/mail/root, until it also has
+been read.
+
+The list of files can include files that don't yet exist.

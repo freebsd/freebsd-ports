@@ -1,0 +1,10 @@
+%%SITE_PERL%%/DBIx/Lite.pm
+%%SITE_PERL%%/DBIx/Lite/ResultSet.pm
+%%SITE_PERL%%/DBIx/Lite/Row.pm
+%%SITE_PERL%%/DBIx/Lite/Schema.pm
+%%SITE_PERL%%/DBIx/Lite/Schema/Table.pm
+%%PERL5_MAN3%%/DBIx::Lite.3.gz
+%%PERL5_MAN3%%/DBIx::Lite::ResultSet.3.gz
+%%PERL5_MAN3%%/DBIx::Lite::Row.3.gz
+%%PERL5_MAN3%%/DBIx::Lite::Schema.3.gz
+%%PERL5_MAN3%%/DBIx::Lite::Schema::Table.3.gz

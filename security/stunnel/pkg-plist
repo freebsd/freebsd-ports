@@ -1,0 +1,36 @@
+bin/stunnel
+bin/stunnel3
+%%ETCDIR%%/stunnel.conf-sample
+%%ETCDIR%%/conf.d/00-daemon.conf
+lib/stunnel/libstunnel.a
+lib/stunnel/libstunnel.so
+share/man/man8/stunnel.8.gz
+share/man/man8/stunnel.pl.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/stunnel.html
+%%PORTDOCS%%%%DOCSDIR%%/stunnel.pl.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ca.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/importCA.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/importCA.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.init
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.service
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.spec
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.md
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.md
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.md
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS.md
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.FIPS.md
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.W32.md
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.WCE.md
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/PORTS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TODO.md
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir lib/stunnel
+@dir etc/stunnel
+@dir etc/stunnel/conf.d
+@preunexec if [ -d %D/etc/stunnel ]; then echo "If you are permanently removing this port, you should run ``rm -rf %D/etc/stunnel`` to remove any configuration files left."; fi

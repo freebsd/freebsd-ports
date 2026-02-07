@@ -1,0 +1,18 @@
+--- ./lib/Makefile.in.orig	2004-11-21 03:01:29.000000000 +0000
++++ ./lib/Makefile.in	2014-01-15 20:23:04.000000000 +0000
+@@ -51,12 +51,10 @@
+ install-only:
+ 	for i in `ls $(srcdir)/*.dir $(srcdir)/*.g $(srcdir)/*.imf $(srcdir)/news.txt`; do \
+ 		echo $$i; \
+-		$(INSTALL_DATA) $(srcdir)/$$i $(gamelibdir); \
++		$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(gamelibdir); \
+ 	done
+-	chown $(GAMEUID) $(gamelibdir) $(gamelibdir)/*
+-	chgrp $(GAMEGRP) $(gamelibdir) $(gamelibdir)/*
+-	chmod $(DIRPERM) $(gamelibdir)
+-	chmod $(FILEPERM) $(gamelibdir)/*
++	chmod $(DIRPERM) $(DESTDIR)$(gamelibdir)
++	chmod $(FILEPERM) $(DESTDIR)$(gamelibdir)/*
+ 
+ clean:
+ 

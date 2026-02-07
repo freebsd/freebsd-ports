@@ -1,0 +1,7 @@
+bin/objconv
+%%DOCSDIR%%/objconv-instructions.pdf
+%%DATADIR%%/extras/u2wstub.asm
+%%DATADIR%%/extras/u2wstubvec1.asm
+%%DATADIR%%/extras/u2wstubvec2.asm
+%%DATADIR%%/extras/w2ustub.asm
+%%DATADIR%%/extras/w2ustubvec.asm

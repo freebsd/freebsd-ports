@@ -1,0 +1,19 @@
+PORTNAME=	Object-Simple
+PORTVERSION=	3.1600
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Simple class builder
+WWW=		https://metacpan.org/release/Object-Simple
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

@@ -1,0 +1,46 @@
+LIB	=	fpx
+INCS	=	fpxlib.h
+SHLIB_MAJOR=	2
+SHLIB_MINOR=	7
+WARNS=	2
+
+LIBDIR	=	${PREFIX}/lib
+INCSDIR	=	${PREFIX}/include
+INCDIR	=	${INCSDIR}		# for pre-bsd.incs.mk API
+
+MK_PROFILE=	no
+HAVES=		-DHAVE_WCHAR_H -DHAVE_DLFCN_H \
+		-DHAVE_SYS_TIME_H \
+		-DHAVE_SYS_PARAM_H -DHAVE_SYS_MOUNT_H
+CFLAGS+=	${HAVES} -Dregister=
+
+CPPS	!=	find ${.CURDIR} -name \*.cpp -print
+# Some of the .cxx files are #include-ed into others, so can't use `find' here:
+OLESS	:=	ascii.cxx cdocfile.cxx chinst.cxx dffuncs.cxx dfiter.cxx \
+		dfstream.cxx difat.cxx dir.cxx dirp.cxx docfile.cxx entry.cxx \
+		expdf.cxx expiter.cxx expst.cxx fat.cxx funcs.cxx header.cxx \
+		iter.cxx mem.cxx msf.cxx msfiter.cxx mstream.cxx page.cxx \
+		refilb.cxx rexpdf.cxx sstream.cxx storage.cxx time.cxx \
+		vect.cxx wchar.c
+JPGS	!=	find ${.CURDIR}/jpeg -name \*.c -not -name dllmain.c
+
+CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
+
+SRCS	=	${CPPS:T:Nejpeg.c}
+
+CXXFLAGS+=	-fno-rtti -fno-exceptions -fno-strict-aliasing ${HAVES}
+LDADD	+=	-L${LOCALBASE}/lib -lm -lstdc++
+
+.PATH: ${CPPS:H}
+
+.for d in oless/h jpeg ole basics ri_image oless fpx .
+CXXFLAGS+=	-I${.CURDIR}/$d
+.endfor
+
+CXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX
+
+.include <bsd.lib.mk>
+
+# Work-around the bug in g++4.2's system header:
+# /usr/include/c++/4.2/bits/basic_ios.h:156: warning: empty body in an if-statement
+CXXFLAGS:=	${CXXFLAGS:N-Wsystem-headers}

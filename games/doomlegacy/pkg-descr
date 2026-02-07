@@ -1,0 +1,15 @@
+Doom Legacy is a source port of Doom available for various operating systems
+which was originally written as a fork of DOSDoom introducing lots of useful
+improvements yet retaining original feel of the game.  It currently features:
+
+  * TCP/IP multiplayer networking (including a master server for Internet
+    game searches)
+  * Nearly complete Boom and Heretic support
+  * OpenGL rendering
+  * Higher resolutions
+  * Console with support for key bindings (Quake-style)
+  * FraggleScript for scripting
+  * 3D floors, water, and coloured lighting
+  * Mouse aim and crosshairs
+  * Jumping
+  * 32 players (including support for custom skins)

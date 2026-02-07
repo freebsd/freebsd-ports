@@ -1,0 +1,4 @@
+Module allows to set and clear input and output headers.
+This is an enhanced version of the standard headers module because it provides
+more utilities like resetting or clearing "builtin headers" like Content-Type,
+Content-Length, and Server.

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Yahoo/BBAuth.pm
+%%PERL5_MAN3%%/Yahoo::BBAuth.3.gz
+%%WWWDIR%%/cgi-bin/testMAIL.cgi
+%%WWWDIR%%/cgi-bin/testPHOTOS.cgi

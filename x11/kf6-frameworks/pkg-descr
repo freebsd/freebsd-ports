@@ -1,0 +1,11 @@
+The KDE Frameworks are add-on libraries for coding applications with Qt.
+
+The individual Frameworks are well documented, tested and their API style will
+be familiar to Qt developers.
+
+Frameworks are developed under the proven KDE governance model with a
+predictable release schedule, a clear and vendor neutral contributor process,
+open governance and flexible LGPL or MIT licensing.
+
+The frameworks are cross-platform and function on Windows, Mac, Android and
+Linux.

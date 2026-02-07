@@ -1,0 +1,43 @@
+--- sys/unix/Makefile.doc.orig	2006-12-30 05:08:31.000000000 -0800
++++ sys/unix/Makefile.doc	2014-06-28 23:55:59.000000000 -0700
+@@ -53,16 +53,16 @@
+ #	tbl tmac.n Guidebook.mn | groff -Wall -Tdvi > Guidebook.dvi
+ 
+ GAME    = slashem
+-MANDIR	= /usr/man/man6
++MANDIR	= ${PREFIX}/share/man/man6
+ MANEXT	= 6
+ FRMANDIR= $(MANDIR:man6=fr/man6)
+ 
+ # manual installation for most BSD-style systems
+-GAMEMANCREATE = cp $(GAME).6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = ${BSD_INSTALL_MAN} $(GAME).6
++LEVMANCREATE = ${BSD_INSTALL_MAN} lev_comp.6
++DGNMANCREATE = ${BSD_INSTALL_MAN} dgn_comp.6
++RCVRMANCREATE = ${BSD_INSTALL_MAN} recover.6
++DLBMANCREATE = ${BSD_INSTALL_MAN} dlb.6
+ FRGAMEMANCREATE = cp fr/$(GAME).6
+ # manual installation for most SYSV-style systems
+ # and for man files readable in less (eg dos DJGPP+GNU)
+@@ -74,12 +74,11 @@
+ # FRGAMEMANCREATE = groff -Wall -mtty-char -Tutf8 -man fr/$(GAME).6 >
+ 
+ manpages:
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+-	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
+-	-$(FRGAMEMANCREATE) $(FRMANDIR)/$(GAME).$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)/$(GAME).$(MANEXT)
++	-$(LEVMANCREATE) ${DESTDIR}$(MANDIR)/lev_comp.$(MANEXT)
++	-$(DGNMANCREATE) ${DESTDIR}$(MANDIR)/dgn_comp.$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)/recover.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)/dlb.$(MANEXT)
+ 
+ # manual creation for distribution
+ DISTRIB = Guidebook.txt $(GAME).txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt

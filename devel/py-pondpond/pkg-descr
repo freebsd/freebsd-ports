@@ -1,0 +1,6 @@
+Pond is a high performance object-pooling library for Python, it has a
+smaller memory usage and a higher borrow hit rate.
+
+Pond is probably the first publicly available object pooling library
+in Python with complete test cases, over 90% coverage, complete code
+comments, and good documentation.

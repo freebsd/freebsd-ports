@@ -1,0 +1,4 @@
+dnsdbck verifies consistency of DNS information in an SQL database.
+
+It is part of dnstools, a set of utilities for DNS management and related
+tasks.

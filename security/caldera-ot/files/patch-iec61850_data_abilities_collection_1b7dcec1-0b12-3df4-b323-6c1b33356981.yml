@@ -1,0 +1,27 @@
+--- iec61850/data/abilities/collection/1b7dcec1-0b12-3df4-b323-6c1b33356981.yml.orig	2024-02-18 18:34:52 UTC
++++ iec61850/data/abilities/collection/1b7dcec1-0b12-3df4-b323-6c1b33356981.yml
+@@ -67,6 +67,24 @@
+             - source: iec61850.attribute.name
+               edge: has_value
+               target: iec61850.attribute.value
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd get value #{iec61850.attribute.name} --fc #{iec61850.attribute.fc}
++          #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
++        parsers:
++          plugins.iec61850.app.parsers.value:
++            - source: iec61850.attribute.name
++              edge: has_fc
++              target: iec61850.attribute.fc
++            - source: iec61850.attribute.name
++              edge: has_datatype
++              target: iec61850.attribute.datatype
++            - source: iec61850.attribute.name
++              edge: has_value
++              target: iec61850.attribute.value
+   repeatable: true
+   plugin: iec61850
+   additional_info:

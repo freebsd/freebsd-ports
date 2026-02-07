@@ -1,0 +1,5 @@
+bin/rsnapshot
+bin/rsnapshot-diff
+%%ETCDIR%%.conf.default
+share/man/man1/rsnapshot-diff.1.gz
+share/man/man1/rsnapshot.1.gz

@@ -1,0 +1,8 @@
+Enscribe creates digital audio watermark images from photographic
+images. These images can only be seen using a third party frequency vs
+time display, such as Baudline (audio/baudline).
+
+Images are still visible even after such audio mangling techniques as
+MP3/Ogg compression, reverb, chorus, etc. Heavy EQ and flange can
+stripe out vertical sections, but they can also ruin an otherwise good
+song as well.

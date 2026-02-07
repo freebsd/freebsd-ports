@@ -1,0 +1,4 @@
+This module parses /robots.txt files which are used to forbid conforming
+robots from accessing parts of a web site. The parsed files are kept in
+a WWW::RobotRules object, and this object provides methods to check if
+access to a given URL is prohibited.

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $2 in
+POST-DEINSTALL)
+	if find %%PACMAN_ROOT%% -type f 2>/dev/null | head -1 | grep -q ''; then
+		echo ""
+		echo "To completely remove the port, please remove the following"
+		echo "directories and the content manually if it's no longer needed:"
+		echo ""
+		echo "    %%PACMAN_ROOT%%"
+		echo "    %%PACMAN_ROOT%%/var/cache/pacman"
+		echo "    %%PACMAN_ROOT%%/var/lib/pacman"
+		echo ""
+	fi
+	;;
+esac

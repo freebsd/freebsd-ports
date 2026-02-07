@@ -1,0 +1,18 @@
+From <http://cran.R-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f>:
+
+R is a system for statistical computation and graphics. It consists of
+a language plus a run-time environment with graphics, a debugger,
+access to certain system functions, and the ability to run programs
+stored in script files.
+
+The core of R is an interpreted computer language which allows branching
+and looping as well as modular programming using functions.  Most of the
+user-visible functions in R are written in R. It is possible for the user
+to interface to procedures written in the C, C++, or FORTRAN languages
+for efficiency. The R distribution contains functionality for a large
+number of statistical procedures. Among these are: linear and generalized
+linear models, nonlinear regression models, time series analysis, classical
+parametric and nonparametric tests, clustering and smoothing. There is also
+a large set of functions which provide a flexible graphical environment for
+creating various kinds of data presentations. Additional modules ("add-on
+packages") are available for a variety of specific purposes.

@@ -1,0 +1,61 @@
+--- win/X11/JNetHack.ad.orig	2014-10-18 21:32:38.000000000 +0900
++++ win/X11/JNetHack.ad	2014-10-18 21:36:57.000000000 +0900
+@@ -22,11 +22,10 @@
+ ! the custom format - to enlarge an XPM file, use processing tools
+ ! such as XV or preferably PBMplus.
+ !
+-!JNetHack.tile_file: x11tiles32j
+-JNetHack.tile_file: t32-1024.xpm
+-JNetHack.tile_width: 32
+-JNetHack.tile_height: 32
+-!JNetHack.double_tile_size: True
++!JNetHack.tile_file: x11tiles
++!JNetHack.tile_width: 16
++!JNetHack.tile_height: 16
++!!JNetHack.double_tile_size: True
+ !
+ ! The annotation of pets.
+ JNetHack.pet_mark_bitmap: pet_mark.xbm
+@@ -132,6 +131,42 @@
+ JNetHack*player_selection*quit.accelerators: #override\n\
+ 				<Key>Escape:	set() notify() unset()
+ 
++JNetHack*race_selection*random.borderColor:	blue
++JNetHack*race_selection*random.borderWidth:	2
++JNetHack*race_selection*random.foreground:	blue
++JNetHack*race_selection*random.accelerators: #override\n\
++				<Key>Return:	set() notify() unset()
++JNetHack*race_selection*quit.borderColor:	blue
++JNetHack*race_selection*quit.foreground:		blue
++JNetHack*race_selection*Command.borderColor:	red
++JNetHack*race_selection*Command.foreground:	red
++JNetHack*race_selection*quit.accelerators: #override\n\
++				<Key>Escape:	set() notify() unset()
++
++JNetHack*gender_selection*random.borderColor:	blue
++JNetHack*gender_selection*random.borderWidth:	2
++JNetHack*gender_selection*random.foreground:	blue
++JNetHack*gender_selection*random.accelerators: #override\n\
++				<Key>Return:	set() notify() unset()
++JNetHack*gender_selection*quit.borderColor:	blue
++JNetHack*gender_selection*quit.foreground:	blue
++JNetHack*gender_selection*Command.borderColor:	red
++JNetHack*gender_selection*Command.foreground:	red
++JNetHack*gender_selection*quit.accelerators: #override\n\
++				<Key>Escape:	set() notify() unset()
++
++JNetHack*alignment_selection*random.borderColor:	blue
++JNetHack*alignment_selection*random.borderWidth:	2
++JNetHack*alignment_selection*random.foreground:	blue
++JNetHack*alignment_selection*random.accelerators: #override\n\
++				<Key>Return:	set() notify() unset()
++JNetHack*alignment_selection*quit.borderColor:	blue
++JNetHack*alignment_selection*quit.foreground:	blue
++JNetHack*alignment_selection*Command.borderColor: red
++JNetHack*alignment_selection*Command.foreground:	red
++JNetHack*alignment_selection*quit.accelerators: #override\n\
++				<Key>Escape:	set() notify() unset()
++
+ JNetHack*extended_commands*dismiss.borderColor:	blue
+ JNetHack*extended_commands*dismiss.foreground:	blue
+ JNetHack*extended_commands*help.borderColor:	blue

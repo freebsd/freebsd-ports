@@ -1,0 +1,2 @@
+timescaledb-backup is a program for making dumping and restoring a TimescaleDB
+database simpler, less error-prone, and more performant.

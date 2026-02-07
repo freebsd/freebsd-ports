@@ -1,0 +1,8 @@
+The XbaeMatrix is a Motif-based widget which displays a grid of cells
+in the same manner as a spreadsheet.  The cell array is scrollable,
+editable, and otherwise reasonably configurable in appearance. Each
+cell usually displays text, but pixmaps can also be displayed (not
+editeable). The XbaeMatrix looks to some extent like a grid of
+XmTextField widgets, but is actually implemented with a single
+XmTextField. This means a big performance improvement due to less
+overhead.

@@ -1,0 +1,37 @@
+--- src/Makefile.orig	Thu Jul  6 19:10:58 2000
++++ src/Makefile	Fri Aug 25 05:15:15 2000
+@@ -14,7 +14,7 @@
+ # Compiler Section (overrides Makefile.cfg)
+ #----------------------------------------------------------------------
+ 
+-INCLUDES += -I$(srcdir)/src
++INCLUDES += -I$(srcdir)/src -I$(srcdir)/src/config
+ 
+ #----------------------------------------------------------------------
+ # Rules Section
+@@ -361,6 +361,7 @@
+ libvga.so.$(VERSION): $(ALLOBJS)
+ 	$(CC) -s -shared -Wl,-soname,libvga.so.$(MAJOR_VER) \
+ 	  -o libvga.so.$(VERSION) $(ALLOBJS) -lm
++	/bin/ln -sf libvga.so.$(VERSION) libvga.so
+ 
+ $(sharedlibdir)/libvga.so.$(VERSION): libvga.so.$(VERSION)
+ 	$(INSTALL_PROGRAM) $< $(sharedlibdir)/$<
+@@ -375,7 +376,7 @@
+ 	$(AR) rcs libvga.a $(ALLOBJS)
+ 
+ libvgagl.a: FORCE
+-	make -f $(srcdir)/gl/Makefile $@ srcdir="$(srcdir)" DLLFLAGS="$(DLLFLAGS)"
++	$(MAKE) -f $(srcdir)/gl/Makefile $@ srcdir="$(srcdir)" DLLFLAGS="$(DLLFLAGS)"
+ 
+ vga.o: vga.c
+ 	$(CC) $(CFLAGS) $(VGA_DEFINES) -c -o $@ $<
+@@ -397,7 +398,7 @@
+ 
+ dep:
+ 	rm -f .depend.src
+-	make .depend.src
++	$(MAKE) .depend.src
+ 
+ .depend.src:
+ 	echo '# Module dependencies' >>.depend.src

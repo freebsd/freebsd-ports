@@ -1,0 +1,12 @@
+bin/dsc
+bin/dsc-psl-convert
+%%ETCDIR%%/dsc.conf.sample
+share/man/man1/dsc.1.gz
+share/man/man1/dsc-psl-convert.1.gz
+share/man/man5/dsc.conf.5.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE.md
+@dir /var/lib/dsc
+@dir /var/lib

@@ -1,0 +1,11 @@
+--- src/fMain.lfm.orig	2022-01-25 15:58:07 UTC
++++ src/fMain.lfm
+@@ -9,7 +9,7 @@ object frmMain: TfrmMain
+   VertScrollBar.Page = 275
+   ActiveControl = Panel2
+   AutoScroll = True
+-  Caption = 'CQRLOG for Linux'
++  Caption = 'CQRLOG for FreeBSD'
+   ClientHeight = 647
+   ClientWidth = 986
+   Constraints.MinHeight = 148

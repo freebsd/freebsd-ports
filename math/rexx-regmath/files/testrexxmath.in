@@ -1,0 +1,96 @@
+#!/usr/local/bin/regina
+
+/*
+ * Tests and examples for RexxMath (AMath)
+ *
+ * Bob Eager   August 2017
+ *
+ */
+
+/* Load the library */
+
+rc = RxFuncAdd('MathLoadFuncs','rexxmath','MathLoadFuncs')
+say 'MathLoadFuncs =>' rc
+call MathLoadFuncs
+
+say ''
+say '+++ Trig functions (all in radians) +++'
+
+pi = 3.14159265358979323846264338327
+rad30 = 30*(pi/180)
+rad45 = 45*(pi/180)
+rc = Sin(rad30)
+say "Sin(rad30) =>" rc '(should be about 0.5)'
+rc = ASin(0.5)
+say "ASin(0.5) =>" rc '(should be about' format(rad30,1,6)')'
+rc = Cos(rad30)
+say "Cos(rad30) =>" rc '(should be about 0.866025)'
+rc = ACos(0.866025)
+say "ACos(0.866025) =>" rc '(should be about' format(rad30,1,6)')'
+rc = Tan(rad45)
+say "Tan(rad45) =>" rc '(should be about 1)'
+rc = ATan(1)
+say "ATan(1) =>" rc '(should be about' format(rad45,1,6)')'
+rc = ATan(1,1)
+say "ATan(1,1) =>" rc '(should be about' format(rad45,1,6)')'
+rc = CoT(rad30)
+say "CoT(rad30) =>" rc '(should be about 1.73205)'
+rc = CoTan(rad30)
+say "CoTan(rad30) =>" rc '(should be about 1.73205)'
+rc = CSc(rad30)
+say "CSc(rad30) =>" rc '(should be about 2)'
+rc = Sec(rad30)
+say "Secc(rad30) =>" rc '(should be about 1.15470)'
+
+say ''
+say '+++ Exponential functions +++'
+
+rc = Exp(0)
+say 'Exp(0) =>' rc '(should be about 1)'
+rc = Exp(1)
+say 'Exp(1) =>' rc '(should be about 2.71828)'
+rc = Log(1)
+say 'Log(1) =>' rc '(should be about 0)'
+rc = Log10(2)
+say 'Log10(2) =>' rc '(should be about 0.30103)'
+rc = Sqrt(2)
+say 'Sqrt(2) =>' rc '(should be about 1.41421)'
+rc = Pow(3,3)
+say 'Pow(3,3) =>' rc '(should be about 27)'
+
+say ''
+say '+++ Hyperbolic functions +++'
+
+rc = SinH(2)
+say 'SinH(2) =>' rc '(should be about 3.6268604)'
+rc = ASinH(3.62686)
+say 'ASinH(2) =>' rc '(should be about 2)'
+rc = CosH(2)
+say 'CosH(2) =>' rc '(should be about 3.7621956)'
+rc = ACosH(3.76219)
+say 'ACosH(2) =>' rc '(should be about 2)'
+rc = TanH(2)
+say 'TanH(2) =>' rc '(should be about 0.9640275)'
+rc = ATanH(0.96402)
+say 'ATanH(2) =>' rc '(should be about 2)'
+
+say ''
+say '+++ Numerical functions +++'
+
+rc = Ceil(2.4)
+say 'Ceil(2.4) =>' rc '(should be 3)'
+rc = Floor(2.4)
+say 'Floor(2.4) =>' rc '(should be 2)'
+rc = Int(2.4)
+say 'Int(2.4) =>' rc '(should be 2)'
+rc = NInt(2.4)
+say 'NInt(2.4) =>' rc '(should be 2)'
+rc = NInt(2.9)
+say 'NInt(2.9) =>' rc '(should be 3)'
+rc = Fact(3)
+say 'Fact(3) =>' rc '(should be 6)'
+
+exit
+
+/* end */
+

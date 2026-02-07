@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2025-03-26 19:37:26 UTC
++++ CMakeLists.txt
+@@ -47,6 +47,7 @@ configure_file(config.h.cmake ${PROJECT_BINARY_DIR}/bc
+ 
+ configure_file(config.h.cmake ${PROJECT_BINARY_DIR}/bcmatroska2_config.h)
+ 
++find_package(OpenSSL REQUIRED)
+ find_package(BCToolbox 5.3.0 REQUIRED)
+ 
+ include_directories(

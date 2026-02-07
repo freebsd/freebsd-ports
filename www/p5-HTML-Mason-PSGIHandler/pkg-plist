@@ -1,0 +1,3 @@
+%%SITE_PERL%%/HTML/Mason/PSGIHandler/Streamy.pm
+%%SITE_PERL%%/HTML/Mason/PSGIHandler.pm
+%%PERL5_MAN3%%/HTML::Mason::PSGIHandler.3.gz

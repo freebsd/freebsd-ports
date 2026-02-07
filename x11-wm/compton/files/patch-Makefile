@@ -1,0 +1,47 @@
+--- Makefile.orig	2016-09-07 08:23:44 UTC
++++ Makefile
+@@ -143,29 +143,31 @@ compton: $(OBJS)
+ 	$(CC) $(CFG) $(CPPFLAGS) $(LDFLAGS) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+ man/%.1: man/%.1.asciidoc
+-	a2x --format manpage $<
++	a2x -v --format manpage $<
+ 
+ man/%.1.html: man/%.1.asciidoc
+ 	asciidoc $<
+ 
+ docs: $(MANPAGES) $(MANPAGES_HTML)
+ 
+-install: $(BINS) docs
+-	@install -d "$(DESTDIR)$(BINDIR)" "$(DESTDIR)$(MANDIR)" "$(DESTDIR)$(APPDIR)"
+-	@install -m755 $(BINS) "$(DESTDIR)$(BINDIR)"/
+-ifneq "$(MANPAGES)" ""
+-	@install -m644 $(MANPAGES) "$(DESTDIR)$(MANDIR)"/
+-endif
++install: $(BINS)
++	@install -d "$(DESTDIR)$(BINDIR)" "$(DESTDIR)$(APPDIR)" "$(DESTDIR)$(XDGDIR)"
++	install -m755 $(filter-out compton,$(BINS)) "$(DESTDIR)$(BINDIR)"/
++	$(BSD_INSTALL_PROGRAM) compton "$(DESTDIR)$(BINDIR)"/
+ 	@install -d \
+ 		"$(DESTDIR)$(ICODIR)/scalable/apps" \
+ 		"$(DESTDIR)$(ICODIR)/48x48/apps"
+-	@install -m644 media/compton.svg "$(DESTDIR)$(ICODIR)/scalable/apps"/
+-	@install -m644 media/icons/48x48/compton.png "$(DESTDIR)$(ICODIR)/48x48/apps"/
+-	@install -m644 compton.desktop "$(DESTDIR)$(APPDIR)"/
++	install -m644 media/compton.svg "$(DESTDIR)$(ICODIR)/scalable/apps"/
++	install -m644 media/icons/48x48/compton.png "$(DESTDIR)$(ICODIR)/48x48/apps"/
++	install -m644 compton.desktop "$(DESTDIR)$(APPDIR)"/
++	install -m644 compton.sample.conf "$(DESTDIR)$(XDGDIR)"/compton.conf.sample
+ ifneq "$(DOCDIR)" ""
+-	@install -d "$(DESTDIR)$(DOCDIR)"
+-	@install -m644 README.md compton.sample.conf "$(DESTDIR)$(DOCDIR)"/
+-	@install -m755 dbus-examples/cdbus-driver.sh "$(DESTDIR)$(DOCDIR)"/
++	@install -d "$(DESTDIR)$(DOCDIR)" "$(DESTDIR)$(MANDIR)"
++ifneq "$(MANPAGES)" ""
++	install -m644 $(MANPAGES) "$(DESTDIR)$(MANDIR)"/
++endif
++	install -m644 README.md "$(DESTDIR)$(DOCDIR)"/
++	install -m755 dbus-examples/cdbus-driver.sh "$(DESTDIR)$(DOCDIR)"/
+ endif
+ 
+ uninstall:

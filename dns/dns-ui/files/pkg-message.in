@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+  Follow the post-installation instructions at:
+  https://github.com/operasoftware/dns-ui#readme
+
+Create a database and user, by running the following as the postgres user:
+  % createuser -P dnsui-user ; createdb -O dnsui-user dnsui
+
+Customize %%WWWDIR%%/config/config.ini
+
+Create an initial admin account by running:
+  % php %%WWWDIR%%/scripts/create_admin_account.php
+EOM
+}
+]

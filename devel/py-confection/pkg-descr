@@ -1,0 +1,20 @@
+confection is a lightweight library that offers a configuration system letting
+you conveniently describe arbitrary trees of objects.
+
+Configuration is a huge challenge for machine-learning code because you may want
+to expose almost any detail of any function as a hyperparameter. The setting you
+want to expose might be arbitrarily far down in your call stack, so it might
+need to pass all the way through the CLI or REST API, through any number of
+intermediate functions, affecting the interface of everything along the way. And
+then once those settings are added, they become hard to remove later. Default
+values also become hard to change without breaking backwards compatibility.
+
+To solve this problem, confection offers a config system that lets you easily
+describe arbitrary trees of objects. The objects can be created via function
+calls you register using a simple decorator syntax. You can even version the
+functions you create, allowing you to make improvements without breaking
+backwards compatibility. The most similar config system we're aware of is Gin,
+which uses a similar syntax, and also allows you to link the configuration
+system to functions in your code using a decorator. confection's config system
+is simpler and emphasizes a different workflow via a subset of Gin's
+functionality.

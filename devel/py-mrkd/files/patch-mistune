@@ -1,0 +1,22 @@
+--- mrkd/__init__.py.orig	2021-05-16 23:32:18 UTC
++++ mrkd/__init__.py
+@@ -5,7 +5,7 @@ import ast
+ import configparser
+ import io
+ import jinja2
+-import mistune
++import mistune0 as mistune
+ import os
+ import pkg_resources
+ import pygments
+--- setup.py.orig	2021-05-29 00:57:43 UTC
++++ setup.py
+@@ -18,7 +18,7 @@ setup(
+         'console_scripts': ['mrkd=mrkd:main'],
+     },
+     include_package_data=True,
+-    install_requires=['Jinja2', 'mistune', 'pygments'],
++    install_requires=['Jinja2', 'mistune0', 'pygments'],
+     classifiers=[
+         'Programming Language :: Python :: 3 :: Only',
+         'License :: OSI Approved :: BSD License',

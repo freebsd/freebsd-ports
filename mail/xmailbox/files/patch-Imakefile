@@ -1,0 +1,43 @@
+--- Imakefile.orig	Thu Jul 17 01:36:17 1997
++++ Imakefile	Sat Apr  8 07:13:59 2000
+@@ -5,8 +5,8 @@
+ # Note: you need to have XPM 3.4 or higher!
+ #------------------------------------------
+ #
+-XPMINCDIR = /usr/include/X11
+-XPMLIBDIR = /usr/X11/lib
++XPMINCDIR = $(INCDIR)/X11
++XPMLIBDIR = $(USRLIBDIR)
+    XPMLIB = -L$(XPMLIBDIR) -lXpm
+ 
+ #-------------------------------
+@@ -20,7 +20,9 @@
+ # Comment the following define if you
+ # want audio support
+ #------------------------------------------
++#ifdef AlphaArcitecture
+ #define NO_AUDIO          /* */
++#endif
+ 
+ #------------------------------------------
+ # Uncomment the following define if your
+@@ -42,7 +44,9 @@
+ #    uncomment the following define to
+ #    turn on sound support. 
+ #------------------------------------------
+-/* SUN_AUDIO = -DSUN_AUDIO   /* */
++#ifdef i386Architecture
++SUN_AUDIO = -DSUN_AUDIO   /* */
++#endif
+ 
+ #------------------------------------------
+ # Uncomment the following define if you
+@@ -84,7 +88,7 @@
+   EXTRA_DEFINES = -DCOM_AUDIO 
+ #else
+          SNDLIB = 
+-       INCLUDES = -I$(XPMINCDIR) -I/usr/public/include
++       INCLUDES = -I$(XPMINCDIR)
+   EXTRA_DEFINES = $(SUN_AUDIO)
+ #endif /* COM_AUDIO */
+ #endif /* RPLAY_AUDIO */

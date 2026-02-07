@@ -1,0 +1,3 @@
+PostgreSQL extension for BM25 relevance-ranked full-text search.
+
+Modern ranked text search for Postgres.

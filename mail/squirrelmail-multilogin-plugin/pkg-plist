@@ -1,0 +1,32 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/multilogin/patches/index.php
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.1.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.12.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.15.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.2.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.3a.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.4.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.5.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.6.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.7.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.8.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.4.9.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.5.0.diff
+%%SQUIRRELDIR%%/plugins/multilogin/patches/multilogin-squirrelmail-1.5.1.diff
+%%SQUIRRELDIR%%/plugins/multilogin/templates/default_smarty/index.php
+%%SQUIRRELDIR%%/plugins/multilogin/templates/default_smarty/login_form.tpl
+%%SQUIRRELDIR%%/plugins/multilogin/templates/default/index.php
+%%SQUIRRELDIR%%/plugins/multilogin/templates/default/login_form.tpl
+%%SQUIRRELDIR%%/plugins/multilogin/templates/index.php
+%%SQUIRRELDIR%%/plugins/multilogin/COPYING
+%%SQUIRRELDIR%%/plugins/multilogin/INSTALL
+%%SQUIRRELDIR%%/plugins/multilogin/README
+%%SQUIRRELDIR%%/plugins/multilogin/config.sample.php
+%%SQUIRRELDIR%%/plugins/multilogin/functions.php
+%%SQUIRRELDIR%%/plugins/multilogin/index.php
+%%SQUIRRELDIR%%/plugins/multilogin/setup.php
+%%SQUIRRELDIR%%/plugins/multilogin/getpot
+%%SQUIRRELDIR%%/plugins/multilogin/make_release.sh
+%%SQUIRRELDIR%%/plugins/multilogin/multilogin.pot
+%%SQUIRRELDIR%%/plugins/multilogin/version
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

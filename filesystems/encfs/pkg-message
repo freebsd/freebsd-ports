@@ -1,0 +1,4 @@
+As of May 2024, upstream has discontinued the development of this
+project with no more support being provided.  This port remains
+available for existing users or to migrate your files to a different
+encrypted file system.  Use in new deployments is not recommended.

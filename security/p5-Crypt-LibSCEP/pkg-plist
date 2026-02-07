@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/LibSCEP.pm
+%%SITE_ARCH%%/auto/Crypt/LibSCEP/LibSCEP.so
+%%PERL5_MAN3%%/Crypt::LibSCEP.3.gz

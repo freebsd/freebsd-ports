@@ -1,0 +1,22 @@
+--- Makefile.prog.in.orig	Tue Jan 22 20:57:53 2002
++++ Makefile.prog.in	Sun Aug 22 05:48:16 2004
+@@ -12,7 +12,9 @@
+ 
+ ALL_LIBS = $(XLIBS) $(LIBS)
+ Makefile.lt:
+-	echo 'LT_LIBS='`echo $(ALL_LIBS)|sed 's/\.a/.la/g'` >Makefile.lt
++	echo 'LT_LIBS='`echo "$(ALL_LIBS)" | sed -e "s/\.a/.la/g" -e "s,[^ ]*libosp\.la[^ ]*,,"` "\\" >Makefile.lt
++	echo "	" `echo "$(ALL_LIBS)" | awk '{print $$4}'` >> Makefile.lt
++#	echo 'LT_LIBS='`echo $(ALL_LIBS)|sed 's/\.a/.la/g'` >Makefile.lt
+ 
+ PROG:=$(shell echo "$(PROG)" | sed '@program_transform_name@')
+ 
+@@ -25,7 +27,7 @@
+ 	-test -d $(DESTDIR)$(bindir) || \
+ 	  (mkdir $(DESTDIR)$(bindir); chmod 755 $(DESTDIR)$(bindir))
+ 	-rm -f $(DESTDIR)$(bindir)/$(PROG)
+-	$(LIBTOOL) --mode=install $(INSTALL) $(PROG) $(DESTDIR)$(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(bindir)
+ 
+ depend: depend_src
+ depend.temp: $(GENSRCS)

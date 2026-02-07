@@ -1,0 +1,17 @@
+Slony-I is enterprise-level "master to multiple slaves"
+replication system with cascading and failover.
+
+The big picture for the development of Slony-I is to build
+a master-slave system that includes all features and
+capabilities needed to replicate large databases to a
+reasonably limited number of slave systems.
+
+Slony-I is developed as a system for data centers and backup
+sites, where the normal mode of operation is that all nodes
+are available.
+
+Differences from 1.2 stream
+
+- Removal of TABLE ADD KEY
+
+- It drops all support for databases prior to PostgreSQL version 8.3.

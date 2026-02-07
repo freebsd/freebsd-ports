@@ -1,0 +1,7 @@
+--- Makefile.in.orig	2010-02-08 13:43:46.000000000 -0600
++++ Makefile.in	2010-10-02 18:09:59.000000000 -0500
+@@ -272,3 +272,3 @@
+ CLEANFILES = org_*.h jicmp.jar
+-jardir = $(datadir)/java
++jardir = $(datadir)/java/classes
+ jar_DATA = jicmp.jar

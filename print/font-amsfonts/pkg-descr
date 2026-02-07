@@ -1,0 +1,11 @@
+The AMSFonts collection is a set of miscellaneous TeX fonts that augment the
+standard Computer Modern set normally distributed with TeX. AMSFonts includes
+
+- Euler math fonts
+- Extra mathematical symbols
+- Blackboard bold letters (uppercase only)
+- Fraktur letters
+- Subscript sizes of bold math italic and bold Greek letters
+- Subscript sizes of large symbols such as sum and product
+- Additional sizes of the Computer Modern small caps font
+- Cyrillic fonts (from the University of Washington)

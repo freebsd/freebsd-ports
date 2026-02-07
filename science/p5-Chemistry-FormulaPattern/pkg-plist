@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Chemistry/File/FormulaPattern.pm
+%%SITE_PERL%%/Chemistry/FormulaPattern.pm
+%%PERL5_MAN3%%/Chemistry::FormulaPattern.3.gz
+%%PERL5_MAN3%%/Chemistry::File::FormulaPattern.3.gz

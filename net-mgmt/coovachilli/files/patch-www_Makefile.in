@@ -1,0 +1,7 @@
+--- www/Makefile.in.orig	2008-06-07 23:49:10.000000000 -0500
++++ www/Makefile.in	2010-10-07 09:08:25.000000000 -0500
+@@ -160,3 +160,3 @@
+ chilli_SCRIPTS = wwwsh
+-wwwdir = $(chillidir)/www
++wwwdir = $(prefix)/www/chilli
+ wwwDATAFILES = \

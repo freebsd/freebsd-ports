@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2024-05-13 02:38:58 UTC
++++ Makefile.in
+@@ -346,7 +346,6 @@ doc_DATA = \
+ man_MANS = doc/$(PACKAGE).6
+ doc_DATA = \
+ 	AUTHORS \
+-	COPYING \
+ 	NEWS \
+ 	README \
+ 	THANKS

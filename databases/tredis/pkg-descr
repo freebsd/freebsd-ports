@@ -1,0 +1,10 @@
+tredis is a terminal-based user interface for managing Redis servers.
+
+Features include:
+- Manage multiple Redis servers from a single interface
+- Browse keys with pagination and filtering
+- View all major Redis data types (strings, lists, sets, hashes,
+  sorted sets, streams)
+- Monitor real-time commands and manage pub/sub channels
+- Inspect server information
+- Secure connections using TLS

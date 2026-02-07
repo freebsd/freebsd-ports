@@ -1,0 +1,61 @@
+--- Makefile.orig	2003-08-28 03:44:07.000000000 +0200
++++ Makefile	2014-01-30 09:36:44.000000000 +0100
+@@ -1,11 +1,11 @@
+ ## This is the makefile for dcd, dave's cd player.
+ 
+ # Select your compiler; gcc is probably just fine.
+-CC = gcc
++#CC = gcc
+ 
+ # Prefix for installing dcd. `make install' will put files in PREFIX/bin
+ # and PREFIX/man/man1 .
+-PREFIX = /usr
++#PREFIX = /usr
+ 
+ # Where should dcd store its process ID? (relative to ~)
+ # This is the default, which you probably don't need to change.
+@@ -21,7 +21,7 @@
+ # with that, you don't even need to uncomment the next line.
+ # CDROM = /dev/cdrom
+ # Or, if you use devfs, uncomment this line:
+-CDROM = /dev/cdroms/cdrom0
++CDROM = /dev/cdrom
+ 
+ 
+ 
+@@ -45,7 +45,7 @@
+ ## If you want to disable the network code, try this. It probably doesn't
+ ## work, but you're welcome to try ... Just comment out the next line.
+ 
+-NETWORK = 1
++# NETWORK = 1
+ 
+ ## Here be dragons... (Non-configurable parts past here.)
+ 
+@@ -94,20 +94,19 @@
+ all: ${PROGS}
+ 
+ .c.o: ${SRCS}
+-	$(CC) -c $(CFLAGS) ${EXTRA_CFLAGS} -I/usr/local/include $< -o $@
++	$(CC) -c $(CFLAGS) ${EXTRA_CFLAGS} -I${LOCALBASE}/include $< -o $@
+ 
+ ${PROGS}: ${OBJECTS}
+-	${CC} ${CFLAGS} ${EXTRA_CFLAGS} *.o ${EXTRA_LFLAGS} -o dcd 
++	${CC} ${CFLAGS} ${EXTRA_CFLAGS} *.o ${EXTRA_LFLAGS} -L${LOCALBASE}/lib -lcdaudio -o dcd 
+ 
+ clean:;
+ 	-${RM} *.o ${PROGS}
+ 
+ install: dcd
+-	install -m 755 -d ${PREFIX}/bin
+-	install -m 755 -s dcd ${PREFIX}/bin
+-	install -m 755 -d ${PREFIX}/man/man1
+-	install -m 644 dcd.1 ${PREFIX}/man/man1
+-	install -m 755 -d ${HOME}/${CDI}
++	install -m 755 -d ${DESTDIR}${PREFIX}/bin
++	install -m 755 -s dcd ${DESTDIR}${PREFIX}/bin
++	install -m 755 -d ${DESTDIR}${PREFIX}/share/man/man1
++	install -m 644 dcd.1 ${DESTDIR}${PREFIX}/share/man/man1
+ 
+ depend:
+ 	makedepend -- ${CFLAGS} ${EXTRA_CFLAGS} -- ${SRCS}

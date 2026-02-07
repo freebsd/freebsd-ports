@@ -1,0 +1,10 @@
+bin/ucat
+lib/cmake/libutp/libutp-config-version.cmake
+lib/cmake/libutp/libutp-config.cmake
+lib/cmake/libutp/libutp-targets.cmake
+lib/cmake/libutp/libutp-targets-release.cmake
+include/libutp/utp.h
+include/libutp/utp_types.h
+lib/libutp.so
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README.md

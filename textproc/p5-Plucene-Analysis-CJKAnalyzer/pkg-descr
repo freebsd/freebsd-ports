@@ -1,0 +1,3 @@
+This is a text analyzer for analyzing CJK texts. Plucene does not support CJK
+texts natively. This module encodes terms in MIME::Base64 format to get around
+this problem. Texts are assumbed to be in UTF-8 encoding.

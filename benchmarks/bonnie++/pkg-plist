@@ -1,0 +1,13 @@
+bin/bon_csv2html
+bin/bon_csv2txt
+bin/generate_randfile
+sbin/bonnie++
+sbin/getc_putc
+sbin/getc_putc_helper
+sbin/zcav
+share/man/man1/bon_csv2html.1.gz
+share/man/man1/bon_csv2txt.1.gz
+share/man/man1/generate_randfile.1.gz
+share/man/man8/bonnie++.8.gz
+share/man/man8/getc_putc.8.gz
+share/man/man8/zcav.8.gz

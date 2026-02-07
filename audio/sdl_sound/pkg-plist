@@ -1,0 +1,7 @@
+bin/playsound
+bin/playsound_simple
+include/SDL/SDL_sound.h
+lib/libSDL_sound-1.0.so.1
+lib/libSDL_sound-1.0.so.1.0.2
+lib/libSDL_sound.a
+lib/libSDL_sound.so

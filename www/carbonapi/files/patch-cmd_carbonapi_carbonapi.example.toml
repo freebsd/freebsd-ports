@@ -1,0 +1,20 @@
+--- cmd/carbonapi/carbonapi.example.toml.orig	2020-08-19 11:50:06 UTC
++++ cmd/carbonapi/carbonapi.example.toml
+@@ -9,7 +9,7 @@ idleConnections = 10
+ listen = "localhost:8081"
+ pidFile = ""
+ tz = ""
+-graphTemplates = "graphTemplates.example.toml"
++graphTemplates = "/usr/local/etc/carbonapi/graphTemplates.example.toml"
+ 
+ [cache]
+ defaultTimeoutSec = 60
+@@ -36,7 +36,7 @@ logger = ""
+ 
+ [[logger]]
+ encoding = "json"
+-file = "carbonapi.log"
++file = "/var/log/carbonapi/carbonapi.log"
+ level = "info"
+ logger = ""
+ 

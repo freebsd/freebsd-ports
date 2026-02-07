@@ -1,0 +1,6 @@
+bin/flowdumper
+%%SITE_ARCH%%/auto/Cflow/Cflow.so
+%%SITE_ARCH%%/auto/Cflow/autosplit.ix
+%%SITE_ARCH%%/Cflow.pm
+%%PERL5_MAN3%%/Cflow.3.gz
+%%PERL5_MAN1%%/flowdumper.1.gz

@@ -1,0 +1,3 @@
+This Objective Caml library provides easy access to compressed files in ZIP
+and GZIP format, as well as to Java JAR files.  It provides functions
+for reading from and writing to compressed files in these formats.

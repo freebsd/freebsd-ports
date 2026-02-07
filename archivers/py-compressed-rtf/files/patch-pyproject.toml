@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-04-20 18:00:54 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "Compressed Rich Text Format (RTF) compression and decompression package"
+ readme = "README.md"
+-license = "MIT"
++license = { text="MIT" }
+ authors = [
+     { name = "Dmitry Alimov" },
+ ]

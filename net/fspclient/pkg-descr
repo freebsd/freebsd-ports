@@ -1,0 +1,4 @@
+FSP Client is single executable client for the FSP protocol. FSP
+Client uses an FTP-like user interface. It feels like FTP, but under
+the hood it uses FSP protocol. FSP is a UDP-based protocol for transfering
+files around, and was designed for anonymous archives.

@@ -1,0 +1,8 @@
+%%SITE_PERL%%/HTML/FormFu/Imager.pm
+%%SITE_PERL%%/HTML/FormFu/Inflator/Imager.pm
+%%SITE_PERL%%/HTML/FormFu/Transformer/Imager.pm
+%%SITE_PERL%%/HTML/FormFu/Validator/Imager/Size.pm
+%%PERL5_MAN3%%/HTML::FormFu::Imager.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Inflator::Imager.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Transformer::Imager.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Validator::Imager::Size.3.gz

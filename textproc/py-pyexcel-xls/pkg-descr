@@ -1,0 +1,3 @@
+pyexcel-xls is a tiny wrapper library to read, manipulate and write data in xls
+format and it can read xlsx and xlsm fromat. You are likely to use it with
+pyexcel.

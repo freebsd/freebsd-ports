@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-09-29 10:45:14 UTC
++++ Makefile
+@@ -20,8 +20,6 @@ OPENMP?= 0
+ LLVM = $(shell $(CC) --version | grep LLVM)
+ ifneq ($(LLVM),)
+ 	CFLAGS+=-Qunused-arguments
+-else
+-	CFLAGS+=-Wno-unused-but-set-variable
+ endif
+ 
+ export DBG

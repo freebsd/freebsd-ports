@@ -1,0 +1,43 @@
+--- src/Makefile.orig	2010-03-09 08:00:16.000000000 +0800
++++ src/Makefile	2010-08-17 17:52:59.000000000 +0800
+@@ -1,4 +1,4 @@
+-LDFLAGS=-L../lib -L/usr/lib
++LDFLAGS=-L../lib -L/usr/lib -lm
+ INCLUDES=-I/usr/include -I../include
+ LIBS=-ldisorder
+ #OPTS=-Wall -g -pg
+@@ -12,14 +12,18 @@
+ 
+ library: libdisorder.a
+ 
+-libdisorder.a: disorder.o
++libdisorder.a: disorder.o disorder.So
+ 	ar rc $@ disorder.o
+ 	mkdir -p ../lib
+ 	mv libdisorder.a ../lib
++	ld -shared -o libdisorder.so disorder.So
+ 
+ disorder: disorder.c ../include/disorder.h
+ 	gcc $(OPTS) -c disorder.c
+ 
++disorder.So: disorder.c ../include/disorder.h
++	gcc $(OPTS) -c disorder.c -fPIC -o disorder.So
++
+ test:	../test/test.c
+ 	gcc $(OPTS) $(LDFLAGS) $(INCLUDES) -o $(TESTOUT) $(TESTSRC) $(LIBS)
+ 
+@@ -27,11 +31,11 @@
+ 	gcc $(OPTS) $(LDFLAGS) $(INCLUDES) -o $(TOOLOUT) $(TOOLSRC) $(LIBS)
+ 
+ clean:
+-	@/bin/rm -f *~ *.o *.a $(TESTOUT) $(TOOLOUT)
++	@/bin/rm -f *~ *.o *.a *.So *.so $(TESTOUT) $(TOOLOUT)
+ 	@/bin/rm -f ../test/*~
+ 	@/bin/rm -f ../tool/*~
+ 	@/bin/rm -Rf ../test/testexec.dSYM/
+ 	@/bin/rm -Rf ../tool/ropy.dSYM/
+ 	@/bin/rm -f ../include/*~
+ 	@/bin/rm -f ../lib/*.a
+-	@/bin/rm -f ../*~
+\ No newline at end of file
++	@/bin/rm -f ../*~

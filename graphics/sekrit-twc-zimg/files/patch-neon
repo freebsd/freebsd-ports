@@ -1,0 +1,33 @@
+Detect NEON and VFPv4 on armv7
+
+--- src/zimg/common/arm/cpuinfo_arm.cpp.orig	2020-08-23 13:47:57 UTC
++++ src/zimg/common/arm/cpuinfo_arm.cpp
+@@ -8,6 +8,19 @@
+ #elif defined(__linux__)
+   #include <sys/auxv.h>
+   #include <asm/hwcap.h>
++#elif defined(__FreeBSD__)
++  #include <sys/auxv.h>
++  static unsigned long getauxval(unsigned long type)
++  {
++      /* Only AT_HWCAP* return unsigned long */
++      if (type != AT_HWCAP && type != AT_HWCAP2) {
++	  return 0;
++      }
++
++      unsigned long ret = 0;
++      elf_aux_info(type, &ret, sizeof(ret));
++      return ret;
++  }
+ #endif
+ 
+ #include "cpuinfo_arm.h"
+@@ -28,7 +41,7 @@ ARMCapabilities do_query_arm_capabilities() noexcept
+ #elif defined(_WIN32)
+ 	caps.neon  = IsProcessorFeaturePresent(PF_ARM_NEON_INSTRUCTIONS_AVAILABLE);
+ 	caps.vfpv4 = IsProcessorFeaturePresent(PF_ARM_FMAC_INSTRUCTIONS_AVAILABLE);
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__FreeBSD__)
+ 	long hwcaps = getauxval(AT_HWCAP);
+ 	caps.neon  = !!(hwcaps & HWCAP_NEON);
+ 	caps.vfpv4 = !!(hwcaps & HWCAP_VFPv4);

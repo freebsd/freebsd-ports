@@ -1,0 +1,10 @@
+bin/physcalc
+%%DATADIR%%/astro.phy
+%%DATADIR%%/bits.phy
+%%DATADIR%%/british.phy
+%%DATADIR%%/light.phy
+%%DATADIR%%/math.phy
+%%DATADIR%%/money.phy
+%%DATADIR%%/nuclear.phy
+%%DATADIR%%/paper.phy
+%%DATADIR%%/physcalc.phy

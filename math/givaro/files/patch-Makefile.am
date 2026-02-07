@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2018-06-02 08:08:15 UTC
++++ Makefile.am
+@@ -6,7 +6,7 @@
+ 
+ ACLOCAL_AMFLAGS = -I macros
+ 
+-SUBDIRS=src macros tests docs examples benchmarks
++SUBDIRS=src macros tests docs
+ 
+ include_HEADERS=givaro-config.h
+ 

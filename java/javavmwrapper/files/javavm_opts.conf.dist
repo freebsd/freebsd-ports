@@ -1,0 +1,47 @@
+# javavm_opts.conf.dist
+#
+# This file is sourced by javavm to determine the options to pass to the
+# Java command that its invoking.
+#
+# There are four different types of environment variables that are used
+# to determine the options for a particular command.
+#
+# 1. JAVAVM_OPTS
+#
+#    The contents of this variable are passed as options to all java
+#    commands invoked by javavm.
+#
+# 2. JAVAVM_OPTS_JAVA_HOME_DIR
+#
+#    The contents of this variable are passed as options to all java
+#    commands invoked by javavm within the JAVA_HOME_DIR directory specified.
+#    The JAVA_HOME_DIR specified here is the directory portion of $JAVA_HOME
+#    with special characters replaced by an underscore.  For example, the
+#    standard installation of the jdk15 port puts it in /usr/local/jdk1.5.0,
+#    so to affect all of its programmes you would set JAVAVM_OPTS_jdk1_5_0.
+#
+# 3. JAVAVM_OPTS_JAVAVM_PROG
+#
+#    The contents of this variable are passed as options to all invocations
+#    of the specified java programme.  For example, if you always wish to
+#    have -deprecation passed to javac, then you would set JAVAVM_OPTS_javac.
+#
+# 4. JAVAVM_OPTS_JAVA_HOME_JAVAVM_PROG
+#
+#    The contents of this variable are passed as options to the invocation
+#    of the specified java programme within the specified JAVA_HOME
+#    directory.  This allows the options to only affect a single programme.
+#    For example, to pass -Xlint to the javac in /usr/local/jdk1.5.0/bin
+#    you would set JAVAVM_OPTS_jdk1_5_0_javac.
+#
+# These variables "stack", in that if multiple variables are
+# defined which apply to a particular command then all the variables
+# contents will be passed to the command as options.  For example,
+# if you set JAVAVM_OPTS_jdk1_5_0 and JAVAVM_OPTS_javac, then the
+# contents of both variables will be passed to an invocation of
+# /usr/local/jdk1.5.0/bin/javac.
+#
+# Note that the order in which variables stack is an implementation
+# detail and should not be relied upon.
+#
+

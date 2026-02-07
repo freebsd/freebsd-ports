@@ -1,0 +1,8 @@
+# nntp_server: Configuration file for NN newsreader
+#
+# Set your NNTP server address or hostname in this file.
+#
+# If this file is left blank, NN will use the server set in the
+# NNTP_SERVER environment variable.
+#
+# news.myisp.com

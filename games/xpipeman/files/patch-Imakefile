@@ -1,0 +1,27 @@
+--- Imakefile.orig	1992-07-28 23:56:27 UTC
++++ Imakefile
+@@ -1,7 +1,7 @@
+ 
+-     SCORE_FILE = -DSCORE_FILE=\"/usr/games/lib/xpipescores\"
++     SCORE_FILE = -DSCORE_FILE=\"$(PREFIX)/lib/X11/xpipescores\"
+       MAXSCORES = -DMAXSCORES=20
+-        DEFINES = $(SCORE_FILE) $(MAXSCORES) -DSYSV
++        DEFINES = $(SCORE_FILE) $(MAXSCORES)
+ 
+            SRCS = actions.c game.c graphics.c main.c score.c popup.c info.c
+            OBJS = actions.o game.o graphics.o main.o score.o popup.o info.o
+@@ -10,6 +10,9 @@
+ LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
+   SYS_LIBRARIES = -lm
+ 
++      MANSUFFIX = 6
++   INSTPGMFLAGS = -g games -m 2755
++
+ all:: xpipeman
+ 
+ ComplexProgramTarget(xpipeman)
+@@ -19,4 +22,3 @@ ComplexProgramTarget(xpipeman)
+  *  InstallManPage(xpipeman,$(MANDIR))
+  *  InstallProgram(xpipeman,$(BINDIR))
+  */
+-

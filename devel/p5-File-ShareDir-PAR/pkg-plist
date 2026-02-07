@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/File::ShareDir::PAR.3.gz
+%%SITE_PERL%%/File/ShareDir/PAR.pm
+%%SITE_PERL%%/auto/share/dist/File-ShareDir-PAR/sample.txt
+%%SITE_PERL%%/auto/share/dist/File-ShareDir-PAR/subdir/sample.txt
+%%SITE_PERL%%/auto/share/module/File-ShareDir-PAR/test_file.txt

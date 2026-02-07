@@ -1,0 +1,211 @@
+--- etc/Makefile.orig	2000-02-06 20:00:07 UTC
++++ etc/Makefile
+@@ -18,7 +18,7 @@ install:
+ install:
+ 	for i in $(FILES); do \
+ 	if test ! -f $(ETCDIR)/$$i; then \
+-		$(INSTALL_DATA) $$i $(ETCDIR); \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(ETCDIR)/$$i.sample; \
+ 	fi; done
+ 
+ uninstall:
+--- gate/Makefile.orig	2001-05-23 06:58:13 UTC
++++ gate/Makefile
+@@ -48,11 +48,11 @@ install:	all
+ all:	$(PROGS)
+ 
+ install:	all
+-	$(INSTALL_PROGRAM) uursmtp uuwsmtp uuwnews $(BINDIR)
+-	$(INSTALL_PROGRAM) -m 4555 uurnews $(BINDIR)
++	$(INSTALL_PROGRAM) uursmtp uuwsmtp uuwnews $(DESTDIR)$(BINDIR)
++	$(INSTALL_PROGRAM) -m 4555 uurnews $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(PROGS)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(PROGS)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES) $(PROGS) $(TPROGS)
+--- shell/Makefile.orig	2001-05-23 06:55:45 UTC
++++ shell/Makefile
+@@ -71,13 +71,13 @@ install: $(FILES)
+ install: $(FILES)
+ 	for i in $(FILESKEEP) ; do \
+ 		if [ ! -e $(BINDIR)/$$i ] ; then \
+-			$(INSTALL_PROGRAM) $$i $(BINDIR) ; \
++			$(INSTALL_PROGRAM) $$i $(DESTDIR)$(BINDIR) ; \
+ 		fi ; \
+ 	done
+-	$(INSTALL_PROGRAM) $(FILESFORCE) $(BINDIR)
++	$(INSTALL_PROGRAM) $(FILESFORCE) $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(FILES)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(FILES)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES)
+--- online/Makefile.orig	2001-05-23 06:55:47 UTC
++++ online/Makefile
+@@ -52,10 +52,10 @@ install:	all
+ all:	$(PROGS)
+ 
+ install:	all
+-	$(INSTALL_PROGRAM) $(PROGS) $(BINDIR)
++	$(INSTALL_PROGRAM) $(PROGS) $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(PROGS)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(PROGS)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES) $(PROGS)
+--- rsmtp/Makefile.orig	2000-01-14 21:42:19 UTC
++++ rsmtp/Makefile
+@@ -19,20 +19,20 @@ BINMIN	= \
+ 	bsmtp
+ 
+ BINMIN	= \
+-	$(BINDIR)/rsmtp \
+-	$(BINDIR)/bsmtp
++	$(DESTDIR)$(BINDIR)/rsmtp \
++	$(DESTDIR)$(BINDIR)/bsmtp
+ 
+ # rules
+ 
+ all:	$(TARMIN)
+ 
+-install:	${BINDIR} \
+-		$(SPOOLDIR)/rsmtp \
++install:	$(DESTDIR)${BINDIR} \
++		$(DESTDIR)$(SPOOLDIR)/rsmtp \
+ 		$(TARMIN) \
+ 		$(BINMIN)
+ 
+ uninstall:
+-	-rm -f $(BINMIN) $(BINDIR)/rgsmtp $(BINDIR)/rcsmtp
++	-rm -f $(BINMIN) $(DESTDIR)$(BINDIR)/rgsmtp $(DESTDIR)$(BINDIR)/rcsmtp
+ 
+ clean:
+ 	-rm -f $(CLEANFILES) $(TARMIN)
+@@ -47,20 +47,20 @@ bsmtp:	bsmtp.o
+ 
+ # install rules
+ 
+-$(BINDIR):
+-	mkdir -p ${BINDIR}
++$(DESTDIR)$(BINDIR):
++	mkdir -p $(DESTDIR)${BINDIR}
+ 
+-$(SPOOLDIR)/rsmtp:
+-	mkdir -p $(SPOOLDIR)/rsmtp
+-	chown $(USER) $(SPOOLDIR)/rsmtp
+-	chmod 1777 $(SPOOLDIR)/rsmtp
++$(DESTDIR)$(SPOOLDIR)/rsmtp:
++	mkdir -p $(DESTDIR)$(SPOOLDIR)/rsmtp
++	chown $(USER) $(DESTDIR)$(SPOOLDIR)/rsmtp
++	chmod 1777 $(DESTDIR)$(SPOOLDIR)/rsmtp
+ 
+-$(BINDIR)/rsmtp: rsmtp
++$(DESTDIR)$(BINDIR)/rsmtp: rsmtp
+ 	$(INSTALL_PROGRAM) rsmtp $@
+-	$(INSTALL_PROGRAM) rsmtp $(BINDIR)/rgsmtp
+-	$(INSTALL_PROGRAM) rsmtp $(BINDIR)/rcsmtp
++	$(INSTALL_PROGRAM) rsmtp $(DESTDIR)$(BINDIR)/rgsmtp
++	$(INSTALL_PROGRAM) rsmtp $(DESTDIR)$(BINDIR)/rcsmtp
+ 
+-$(BINDIR)/bsmtp: bsmtp
++$(DESTDIR)$(BINDIR)/bsmtp: bsmtp
+ 	$(INSTALL_PROGRAM) rsmtp $@
+ 
+ # end of makefile
+--- mail-and-news/inn/Makefile.orig	2000-01-15 20:51:30 UTC
++++ mail-and-news/inn/Makefile
+@@ -7,10 +7,10 @@ install: $(FILES)
+ all: $(FILES)
+ 
+ install: $(FILES)
+-	$(INSTALL_PROGRAM) $(FILES) $(BINDIR)
++	$(INSTALL_PROGRAM) $(FILES) $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(FILES)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(FILES)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES)
+--- mail-and-news/postfix/Makefile.orig	2002-04-07 11:07:30 UTC
++++ mail-and-news/postfix/Makefile
+@@ -7,10 +7,10 @@ install: $(FILES)
+ all: $(FILES) README ucpf.pl
+ 
+ install: $(FILES)
+-	$(INSTALL_PROGRAM) $(FILES) $(BINDIR)
++	$(INSTALL_PROGRAM) $(FILES) $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(FILES)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(FILES)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES)
+--- mail-and-news/qmail/Makefile.orig	2000-01-15 21:06:49 UTC
++++ mail-and-news/qmail/Makefile
+@@ -7,10 +7,10 @@ install: $(FILES)
+ all: $(FILES)
+ 
+ install: $(FILES)
+-	$(INSTALL_PROGRAM) $(FILES) $(BINDIR)
++	$(INSTALL_PROGRAM) $(FILES) $(DESTDIR)$(BINDIR)
+ 	
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(FILES)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(FILES)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES)
+--- mail-and-news/sendmail/Makefile.orig	2001-03-27 05:59:06 UTC
++++ mail-and-news/sendmail/Makefile
+@@ -41,10 +41,10 @@ install: $(FILES)
+ all: RSMTP $(FILES) uconnect.m4
+ 
+ install: $(FILES)
+-	$(INSTALL_PROGRAM) $(FILES) $(BINDIR)
++	$(INSTALL_PROGRAM) $(FILES) $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(FILES)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(FILES)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES)
+--- mail-and-news/smail/Makefile.orig	2001-03-27 05:59:06 UTC
++++ mail-and-news/smail/Makefile
+@@ -41,10 +41,10 @@ install: $(FILES)
+ all: $(FILES)
+ 
+ install: $(FILES)
+-	$(INSTALL_PROGRAM) $(FILES) $(BINDIR)
++	$(INSTALL_PROGRAM) $(FILES) $(DESTDIR)$(BINDIR)
+ 	
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(FILES)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(FILES)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES)
+--- tools/Makefile.orig	2001-05-23 06:55:42 UTC
++++ tools/Makefile
+@@ -44,10 +44,10 @@ install:	all
+ all:	$(PROGS)
+ 
+ install:	all
+-	$(INSTALL_PROGRAM) $(PROGS) $(BINDIR)
++	$(INSTALL_PROGRAM) $(PROGS) $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	-cd $(BINDIR) && rm -f $(PROGS)
++	-cd $(DESTDIR)$(BINDIR) && rm -f $(PROGS)
+ 
+ clean:
+ 	-rm -f $(CLEANFILES) $(PROGS)

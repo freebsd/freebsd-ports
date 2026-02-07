@@ -1,0 +1,26 @@
+--- MANIFEST.orig	2022-05-07 02:51:55 UTC
++++ MANIFEST
+@@ -7,23 +7,4 @@ lib/Net/eBay.pm
+ t/00-load.t
+ t/pod-coverage.t
+ t/pod.t
+-ebay-add-item.pl
+-ebay-api-usage.pl
+-ebay-end-item-early.pl
+-ebay-get-all-bidders.pl
+-ebay-get-categories.pl
+-ebay-get-high-bidders.pl
+-ebay-get-item-transactions.pl
+-ebay-get-item.pl
+-ebay-get-my-selling.pl
+-ebay-get-my-sold.pl
+-ebay-get-seller-list.pl
+-ebay-get-suggested-categories.pl
+-ebay-get-user-contact.pl
+-ebay-get-user-feedback.pl
+-ebay-leave-feedback.pl
+-ebay-official-time.pl
+-ebay-revise-item.pl
+-ebay-search.pl
+-ebay-validate-test-user.pl
+ META.json                                Module JSON meta-data (added by MakeMaker)

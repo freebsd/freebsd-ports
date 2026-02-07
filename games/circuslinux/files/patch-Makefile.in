@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2001-04-29 06:53:31 UTC
++++ Makefile.in
+@@ -83,7 +83,7 @@ VERSION = @VERSION@
+ CC = @CC@
+ DATA_PREFIX = $(pkgdatadir)/data/
+ JOY = @JOY@
+-TARGET_DEF = @TARGET_DEF@
++TARGET_DEF = aaa@TARGET_DEF@
+ 
+ CFLAGS = @CFLAGS@ -Wall -O2 -DDATA_PREFIX=\"$(DATA_PREFIX)\" 	  -D$(TARGET_DEF) -DJOY_$(JOY)
+ 

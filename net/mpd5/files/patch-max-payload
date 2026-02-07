@@ -1,0 +1,161 @@
+Index: src/link.c
+===================================================================
+--- src/link.c	(revision 2481)
++++ src/link.c	(working copy)
+@@ -435,7 +435,8 @@ LinkCreate(Context ctx, int ac, const char *const av[]
+ 
+ 	/* Initialize link configuration with defaults */
+ 	l->conf.mru = LCP_DEFAULT_MRU;
+-        l->conf.mtu = LCP_DEFAULT_MRU;
++	/* Do not assume any MTU value for this moment */
++	l->conf.mtu = 0;
+ 	l->conf.mrru = MP_DEFAULT_MRRU;
+         l->conf.accmap = 0x000a0000;
+         l->conf.max_redial = -1;
+@@ -1549,9 +1562,9 @@ LinkSetCommand(Context ctx, int ac, const char *const 
+     	    name = ((intptr_t)arg == SET_MTU) ? "MTU" : "MRU";
+     	    if (val < LCP_MIN_MRU)
+ 		Error("min %s is %d", name, LCP_MIN_MRU);
+-    	    else if (l->type && (val > l->type->mru)) {
++    	    else if (l->type && (val > l->type->mtu)) {
+ 		Error("max %s on type \"%s\" links is %d",
+-		    name, l->type->name, l->type->mru);
++		    name, l->type->name, l->type->mtu);
+     	    } else if ((intptr_t)arg == SET_MTU)
+ 		l->conf.mtu = val;
+     	    else
+Index: src/phys.c
+===================================================================
+--- src/phys.c	(revision 2481)
++++ src/phys.c	(working copy)
+@@ -483,7 +483,7 @@ PhysGetMtu(Link l, int conf)
+ 	    else
+ 		return (0);
+ 	} else
+-	    return (l->conf.mtu);
++	    return (l->conf.mtu ? l->conf.mtu : LCP_DEFAULT_MRU);
+     } else
+ 	return (0);
+ }
+Index: src/pppoe.c
+===================================================================
+--- src/pppoe.c	(revision 2481)
++++ src/pppoe.c	(working copy)
+@@ -31,6 +31,7 @@
+  * DEFINITIONS
+  */
+ 
++#define PPPOE_MTU_MAX		(ETHER_MAX_LEN_JUMBO - 8)
+ #define PPPOE_MTU		1492	/* allow room for PPPoE overhead */
+ #define PPPOE_MRU		1492
+ 
+@@ -181,7 +182,7 @@ static void	PppoeDoClose(Link l);
+ const struct phystype gPppoePhysType = {
+     .name		= "pppoe",
+     .descr		= "PPP over Ethernet",
+-    .mtu		= PPPOE_MTU,
++    .mtu		= PPPOE_MTU_MAX,
+     .mru		= PPPOE_MRU,
+     .tmpl		= 1,
+     .init		= PppoeInit,
+@@ -886,7 +887,7 @@ PppoeGetMtu(Link l, int conf)
+ 	    if (conf == 0)
+ 		return (l->type->mtu);
+ 	    else
+-		return (l->conf.mtu);
++		return (l->conf.mtu ? l->conf.mtu : PPPOE_MTU);
+ }
+ 
+ static u_short
+@@ -1712,6 +1718,7 @@ PppoeSetCommand(Context ctx, int ac, const char *const
+ 	unsigned i;
+ #ifdef NGM_PPPOE_SETMAXP_COOKIE
+ 	int ap;
++	uint16_t mtu;
+ #endif
+ 	switch ((intptr_t)arg) {
+ 	case SET_IFACE:
+@@ -1732,6 +1739,20 @@ PppoeSetCommand(Context ctx, int ac, const char *const
+ 				}
+ 			}
+ 			strlcpy(pi->hook, hookname, sizeof(pi->hook));
++
++#ifdef NGM_PPPOE_SETMAXP_COOKIE
++			if (pi->max_payload > 0) {
++				mtu = GetSystemIfaceMTU(pi->iface);
++				if (mtu == 0)
++					mtu = ETHER_MAX_LEN;
++				if (pi->max_payload > mtu - 8) {
++					pi->max_payload = mtu - 8;
++					Perror("[%s] PPPoE: PPP-Max-Payload"
++					       " value reduced to %hu",
++						pi->iface, pi->max_payload);
++				}
++			}
++#endif
+ 			break;
+ 		default:
+ 			return(-1);
+@@ -1762,8 +1783,18 @@ PppoeSetCommand(Context ctx, int ac, const char *const
+ 		if (ac != 1)
+ 			return(-1);
+ 		ap = atoi(av[0]);
+-		if (ap < PPPOE_MRU || ap > ETHER_MAX_LEN - 8)
+-			Error("PPP-Max-Payload value \"%s\"", av[0]);
++		if (pi->iface[0] == '\0') {
++			if (ap < PPPOE_MRU)	/* postpone check for MTU */
++			    Error("PPP-Max-Payload value \"%s\" less than %d",
++				av[0], PPPOE_MRU);
++		} else {
++			mtu = GetSystemIfaceMTU(pi->iface);
++			if (mtu == 0)
++				mtu = ETHER_MAX_LEN;
++			if (ap < PPPOE_MRU || ap > mtu - 8)
++			    Error("PPP-Max-Payload value \"%s\" not in a range of %d..%hu",
++				av[0], PPPOE_MRU, mtu);
++		}
+ 		pi->max_payload = ap;
+ 		break;
+ #endif
+Index: src/util.c
+===================================================================
+--- src/util.c	(revision 2481)
++++ src/util.c	(revision 2483)
+@@ -1597,3 +1597,25 @@ ssize_t GetDataAddrs(int sock, void *dbuf, size_t dbuf
+ 
+ 	return (size);
+ }
++
++uint16_t GetSystemIfaceMTU(const char *ifname)
++{
++	struct ifreq ifr;
++	static int sock = -1;
++
++	if (sock == -1 &&
++	    (sock = socket(PF_INET, socktype(SOCK_DGRAM), 0)) == -1) {
++		Perror("[%s] %s: Socket creation error", ifname, __FUNCTION__);
++		return (0);
++	}
++
++	memset(&ifr, 0, sizeof(ifr));
++	strlcpy(ifr.ifr_name, ifname, sizeof(ifr.ifr_name));
++
++	if (ioctl(sock, SIOCGIFMTU, (caddr_t)&ifr) == -1) {
++		Perror("[%s] %s: SIOCGIFMTU failed", ifname, __FUNCTION__);
++		return (0);
++	}
++	/* Let _exit() close sock */
++	return (ifr.ifr_mtu);
++}
+Index: src/util.h
+===================================================================
+--- src/util.h	(revision 2481)
++++ src/util.h	(revision 2483)
+@@ -98,6 +98,7 @@ extern u_int32_t GenerateMagic(void);
+ extern int GetAnyIpAddress(struct u_addr *ipaddr, const char *ifname);
+ extern int GetEther(struct u_addr *addr, struct sockaddr_dl *hwaddr);
+ extern int GetPeerEther(struct u_addr *addr, struct sockaddr_dl *hwaddr);
++extern uint16_t GetSystemIfaceMTU(const char *ifname);
+ extern void ppp_util_ascify(char *buf, size_t max, const char *bytes, size_t len);
+ extern int IfaceSetFlag(const char *ifname, unsigned value);
+ 

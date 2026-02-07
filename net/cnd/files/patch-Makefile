@@ -1,0 +1,15 @@
+--- Makefile.orig	2005-03-03 05:59:05 UTC
++++ Makefile
+@@ -1,10 +1,10 @@
+-CC = cc
++CC ?= cc
+ CFLAGS += -Wall
+ PREFIX ?= /usr/local
+ OBJS = main.o
+ 
+ all: $(OBJS)
+-	$(CC) $(CFLAGS) -o cnd $(OBJS) -lcurses -lkvm
++	$(CC) $(CFLAGS) -o cnd $(OBJS) $(LDFLAGS) -lncurses
+ .c.o:
+ 	$(CC) $(CFLAGS) -c -I/usr/include/ -o $@ $<
+ .SUFFIXS: .c .o

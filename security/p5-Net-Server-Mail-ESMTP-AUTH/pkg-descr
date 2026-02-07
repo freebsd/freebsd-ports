@@ -1,0 +1,5 @@
+Net::Server::Mail::ESMTP::AUTH is an extension to provide
+support for SMTP authentication with Net::Server::Mail::ESMTP
+module.
+
+Currently only LOGIN and PLAIN methods are supported.

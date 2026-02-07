@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Jul 10 22:28:42 2002
++++ Makefile.in	Sun Dec 15 06:00:55 2002
+@@ -78,7 +78,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-SUBDIRS = mm-1.1.3 shmap
++SUBDIRS = shmap
+ include_HEADERS = shmap_config.h
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

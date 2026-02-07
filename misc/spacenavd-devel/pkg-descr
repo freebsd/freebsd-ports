@@ -1,0 +1,7 @@
+Spacenavd is a free software user-space driver (daemon), for 6-dof
+input devices, like 3Dconnexion's space-mice. It's compatible with
+the original 3dxsrv proprietary daemon provided by 3Dconnexion,
+and works as a drop-in replacement with any program that was written
+for the 3Dconnexion driver, but also provides an improved
+communication mechanism for programs designed specifically to work
+with spacenavd.

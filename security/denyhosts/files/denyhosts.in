@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: denyhosts
+# REQUIRE: DAEMON
+#
+
+. /etc/rc.subr
+
+name="denyhosts"
+rcvar=denyhosts_enable
+
+command="%%PREFIX%%/bin/denyhosts.py"
+command_interpreter="%%PYTHON%%"
+command_args="--config %%PREFIX%%/etc/denyhosts.conf --daemon"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+
+: ${denyhosts_enable="NO"}
+
+run_rc_command "$1"

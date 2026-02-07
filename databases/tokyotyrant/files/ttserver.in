@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: ttserver
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="ttserver"
+rcvar=ttserver_enable
+
+: ${ttserver_enable:="NO"}
+
+command="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/ttserver.pid"
+
+load_rc_config $name
+: ${ttserver_flags="-dmn -pid ${pidfile}"}
+
+run_rc_command "$1"

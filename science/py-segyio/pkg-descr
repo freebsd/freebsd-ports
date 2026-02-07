@@ -1,0 +1,2 @@
+Pythin binding for segyio, a small LGPL licensed C library for easy interaction
+with SEG-Y and Seismic Unix formatted seismic data.

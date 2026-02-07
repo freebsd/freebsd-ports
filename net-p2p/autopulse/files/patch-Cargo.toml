@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2026-01-30 17:21:33 UTC
++++ Cargo.toml
+@@ -8,7 +8,7 @@ version = "1.5.0"
+ version = "1.5.0"
+ 
+ [features]
+-vendored = ["autopulse-service/vendored", "autopulse-database/vendored"]
++vendored = ["autopulse-database/vendored"]
+ sqlite = ["autopulse-database/sqlite"]
+ postgres = ["autopulse-database/postgres"]
+ default = ["sqlite", "postgres"]

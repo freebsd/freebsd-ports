@@ -1,0 +1,11 @@
+bin/avarice
+bin/start-avarice
+bin/kill-avarice
+bin/ice-gdb
+bin/ice-insight
+share/man/man1/avarice.1.gz
+share/man/man1/ice-gdb.1.gz
+share/man/man1/ice-insight.1.gz
+share/man/man1/kill-avarice.1.gz
+share/man/man1/start-avarice.1.gz
+share/avarice/gdb-avarice-script

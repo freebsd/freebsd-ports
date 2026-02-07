@@ -1,0 +1,17 @@
+Spamd is a fake sendmail(8)-like daemon which rejects false mail. It is
+designed to be very efficient so that it does not slow down the receiving
+machine.
+
+spamd considers sending hosts to be of three types:
+
+ blacklisted hosts are redirected to spamd and tarpitted i.e. they are
+ communicated with very slowly to consume the sender's resources. Mail is
+ rejected with either a 450 or 550 error message. A blacklisted host will not
+ be allowed to talk to a real mail server.
+
+ whitelisted hosts do not talk to spamd. Their connections are instead sent to
+ a real mail server, such as sendmail(8).
+
+ greylisted hosts are redirected to spamd, but spamd has not yet decided if
+ they are likely spammers. They are given a temporary failure message by spamd
+ when they try to deliver mail.

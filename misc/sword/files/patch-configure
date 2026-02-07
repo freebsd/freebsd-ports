@@ -1,0 +1,13 @@
+--- configure.orig	2018-01-09 02:02:01 UTC
++++ configure
+@@ -16355,8 +16355,8 @@ $as_echo "yes" >&6; }
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+-      AM_CFLAGS=-O3
+-      AM_CXXFLAGS=-O3
++      AM_CFLAGS=
++      AM_CXXFLAGS=
+ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+   CXXFLAGS="$my_save_cxxflags"

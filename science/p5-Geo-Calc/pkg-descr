@@ -1,0 +1,4 @@
+Geo::Calc implements a variety of calculations for latitude/longitude points.
+
+All these formulare are for calculations on the basis of a spherical earth
+(ignoring ellipsoidal effects) which is accurate enough* for most purposes.

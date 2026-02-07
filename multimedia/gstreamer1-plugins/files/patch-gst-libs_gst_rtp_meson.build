@@ -1,0 +1,12 @@
+--- gst-libs/gst/rtp/meson.build.orig	2025-03-11 20:14:44 UTC
++++ gst-libs/gst/rtp/meson.build
+@@ -1,3 +1,4 @@
++if get_option('rtp').enabled()
+ rtp_sources = files([
+   'gstrtpbuffer.c',
+   'gstrtcpbuffer.c',
+@@ -95,3 +96,4 @@ meson.override_dependency(pkg_name, rtp_dep)
+   sources : rtp_gen_sources)
+ 
+ meson.override_dependency(pkg_name, rtp_dep)
++endif

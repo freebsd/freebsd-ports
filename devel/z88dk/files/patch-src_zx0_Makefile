@@ -1,0 +1,13 @@
+--- src/zx0/Makefile.orig	2021-02-08 03:00:08 UTC
++++ src/zx0/Makefile
+@@ -23,8 +23,8 @@ install: z88dk-zx0$(EXESUFFIX) z88dk-dzx0$(EXESUFFIX)
+ 	$(CC) -o z88dk-dzx0$(EXESUFFIX) $(LDFLAGS) $^
+ 
+ install: z88dk-zx0$(EXESUFFIX) z88dk-dzx0$(EXESUFFIX)
+-	$(INSTALL) z88dk-zx0$(EXESUFFIX) $(PREFIX)/bin/z88dk-zx0$(EXESUFFIX)
+-	$(INSTALL) z88dk-dzx0$(EXESUFFIX) $(PREFIX)/bin/z88dk-dzx0$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-zx0$(EXESUFFIX) $(PREFIX)/bin/z88dk-zx0$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-dzx0$(EXESUFFIX) $(PREFIX)/bin/z88dk-dzx0$(EXESUFFIX)
+ 
+ clean:
+ 	$(RM) z88dk-zx0$(EXESUFFIX) $(OBJS)

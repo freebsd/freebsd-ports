@@ -1,0 +1,32 @@
+--- pbmtools/Makefile	2014-03-27 14:47:15.000000000 -0400
++++ pbmtools/Makefile	2014-04-08 09:18:42.000000000 -0400
+@@ -2,14 +2,14 @@
+ 
+ # Select an ANSI/ISO C compiler here, e.g. GNU gcc is recommended
+-CC = gcc
++#CC = gcc
+ 
+ # Options for the compiler
+-CFLAGS = -g -O -W -Wall -Wno-unused-result -ansi -pedantic # --coverage
+-CPPFLAGS = -I../libjbig 
++CFLAGS += -W -Wall -ansi -pedantic # --coverage -Wno-unused-result
++CFLAGS += -I../libjbig 
+ 
+ .SUFFIXES: .1 .5 .txt $(SUFFIXES)
+ .PHONY: txt test test82 test85 clean
+ 
+-all: pbmtojbg jbgtopbm pbmtojbg85 jbgtopbm85 txt
++all: pbmtojbg jbgtopbm pbmtojbg85 jbgtopbm85
+ 
+ txt: pbmtojbg.txt jbgtopbm.txt pbm.txt pgm.txt
+@@ -144,6 +144,8 @@
+ 	cmp test-$(IMG).pbm test-$(IMG).pbm85
+ 
+-test-%.pbm: ../examples/%.jbg
+-	./jbgtopbm $< $@
++.for i in 1 2 3
++test-ccitt$i.pbm: ../examples/ccitt$i.jbg
++	./jbgtopbm ${.ALLSRC} ${.TARGET}
++.endfor
+ 
+ test-t82.pbm:

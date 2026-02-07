@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+ircd-hybrid has now been installed.
+
+*** IMPORTANT: ***
+mkpasswd has been renamed to ircd-hybrid-mkpasswd to avoid conflicts with
+other packages.
+
+	mkpasswd -> ircd-hybrid-mkpasswd
+
+Please read the INSTALL file for more information.
+
+You should now copy
+- %%PREFIX%%/etc/ircd-hybrid/reference.ircd.conf to
+  %%PREFIX%%/etc/ircd-hybrid/ircd.conf
+- %%PREFIX%%/etc/ircd-hybrid/reference.modules.conf to
+  %%PREFIX%%/etc/ircd-hybrid/modules.conf
+and then edit to suit your needs. ircd-hybrid will not start without
+%%PREFIX%%/etc/ircd-hybrid/ircd.conf
+
+Don't forget to add
+
+ircd_hybrid_enable="YES"
+
+into your /etc/rc.conf.  You may then start the server by running:
+
+	%%PREFIX%%/etc/rc.d/ircd-hybrid start
+EOM
+}
+]

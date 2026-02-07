@@ -1,0 +1,107 @@
+[
+{ type: install
+  message: <<EOM
+Cacti is now installed. If you install it for the first time,
+you may have to follow this steps to make it work correctly:
+
+1. Create the MySQL database, a cacti user, and initialize:
+   a) CREATE DATABASE `cacti`;
+   b) Create a mysql user/password for cacti:
+      CREATE USER 'cacti'@'localhost' IDENTIFIED BY 'password';
+      FLUSH PRIVILEGES;
+   c) Add GRANTS:
+      GRANT ALL ON `cacti`.* TO 'cacti'@'localhost';
+      GRANT SELECT ON `mysql`.`time_zone_name` TO 'cacti'@'localhost';
+      FLUSH PRIVILEGES;
+   d) Import the default cacti database:
+      mysql --database=cacti -ucacti -p < %%PREFIX%%/%%CACTIDIR%%/cacti.sql
+
+   If you haven't already imported your MySQL timezone data, you need to do this:
+      mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p mysql
+
+ NOTE:
+   * Cacti does not LOCK TABLES.
+
+2. Edit %%PREFIX%%/%%CACTIDIR%%/include/config.php from the template
+   config.php.orig.
+
+   PHP requires the time zone to be explicitly set rather that rely on
+   the system time zone, otherwise poller complains. I added the
+   following line to my config.php:
+
+   date_default_timezone_set('America/Los_Angeles');
+
+3. Add the following line to cron for %%CACTIUSER%%:
+*/5 * * * * %%LOCALBASE%%/bin/php %%PREFIX%%/%%CACTIDIR%%/poller.php > /dev/null 2>&1
+
+4. Example Apache 2.4 configuration:
+   (This assumes that you have installed a working PHP Apache install, e.g. with mod_php)
+
+
+   <FilesMatch "\.php$">
+       SetHandler application/x-httpd-php
+   </FilesMatch>
+   <FilesMatch "\.phps$">
+       SetHandler application/x-httpd-php-source
+   </FilesMatch>
+
+   DirectoryIndex index.php
+
+   DocumentRoot "/usr/local/share/cacti"
+
+   Alias /cacti "/usr/local/share/cacti/"
+   Alias /Cacti "/usr/local/share/cacti/"
+
+   <Directory "/usr/local/share/cacti">
+      Require all granted
+      AllowOverride None
+      Order Allow,deny
+      Allow from all
+   </Directory>
+
+5. Open a Cacti login page in your web browser and follow the install instructions.
+
+
+If you update cacti, open a login page and an updating process will
+start automatically.
+
+NOTEs as of 10Aug2014:
+
+1) Cacti now better supports hier(7)
+
+   a) Cacti log files are now found under /var/log/cacti where you can
+      manage them using newsyslog.
+   b) Cacti RRD files are now found under /var/db/cacti/rra.
+
+   If you have an existing Cacti installation these paths are also
+   found in Cacti's SQL database and MUST be updated. These two SQL
+   commands should do the trick:
+
+   UPDATE settings SET value='/var/log/cacti/log' \
+     WHERE name='path_cactilog';
+
+   UPDATE poller_item SET rrd_path=\
+     REPLACE(rrd_path,'/usr/local/share/cacti/rra','/var/db/cacti/rra') \
+     WHERE rrd_path REGEXP '^/usr/local/share/cacti/rra';
+
+2) The PERL paths in the Cacti PERL scripts have been updated to
+   /usr/local/bin.
+
+Other Erratas:
+   1) Mount linprocfs in /compat/linux/proc will allow most scripts to work.
+   2) This package does not install a MySQL server in case you wish to use an
+      external MySQL server.  Install a package such as mysql57-server if you
+      require a local server.
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.2.4"
+  message: <<EOM
+Starting with version 1.2.4 the option SNMPBIN is no longer required and has
+therefore been removed.
+
+Now you can enable PHP integrated support via the "$php_snmp_support" variable
+in config.php
+EOM
+}
+]

@@ -1,0 +1,6 @@
+dvi2tty converts a TeX DVI-file to a format that is appropriate for
+terminals and line printers. The program is intended to be used for
+preliminary proofreading of TeX-ed documents. By default the output
+is directed to the terminal, possibly through a pager (depending on
+how the program was installed), but it can be directed to a file or
+a pipe.

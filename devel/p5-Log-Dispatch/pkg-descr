@@ -1,0 +1,11 @@
+Log::Dispatch is a suite of OO modules for logging messages to multiple
+outputs, each of which can have a minimum and maximum log level.  It is
+designed to be easily subclassed, both for creating a new dispatcher
+object and particularly for creating new outputs.
+
+It also allows both global (dispatcher level) and local (logging object)
+message formatting callbacks which allows greater flexibility and should
+reduce the need for subclassing.
+
+Subclassing is only needed to send a message to a different output, not
+to change the message format.

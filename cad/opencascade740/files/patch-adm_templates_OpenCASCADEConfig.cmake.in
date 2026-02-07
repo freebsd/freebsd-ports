@@ -1,0 +1,19 @@
+--- adm/templates/OpenCASCADEConfig.cmake.in.orig	2017-12-27 14:54:08 UTC
++++ adm/templates/OpenCASCADEConfig.cmake.in
+@@ -31,11 +31,11 @@ if (OpenCASCADE_INSTALL_PREFIX MATCHES "
+ endif()
+ 
+ # Set OpenCASCADE paths to headers, binaries, libraries, resources, tests, samples, data
+-set (OpenCASCADE_BINARY_DIR   "${OpenCASCADE_INSTALL_PREFIX}/@INSTALL_DIR_BIN@")
+-set (OpenCASCADE_LIBRARY_DIR  "${OpenCASCADE_INSTALL_PREFIX}/@INSTALL_DIR_LIB@")
+-set (OpenCASCADE_SCRIPT_DIR   "${OpenCASCADE_INSTALL_PREFIX}/@INSTALL_DIR_SCRIPT@")
+-set (OpenCASCADE_INCLUDE_DIR  "${OpenCASCADE_INSTALL_PREFIX}/@INSTALL_DIR_INCLUDE@")
+-set (OpenCASCADE_RESOURCE_DIR "${OpenCASCADE_INSTALL_PREFIX}/@INSTALL_DIR_RESOURCE@")
++set (OpenCASCADE_BINARY_DIR   "@INSTALL_DIR_BIN@")
++set (OpenCASCADE_LIBRARY_DIR  "@INSTALL_DIR_LIB@")
++set (OpenCASCADE_SCRIPT_DIR   "@INSTALL_DIR_SCRIPT@")
++set (OpenCASCADE_INCLUDE_DIR  "@INSTALL_DIR_INCLUDE@")
++set (OpenCASCADE_RESOURCE_DIR "@INSTALL_DIR_RESOURCE@")
+ 
+ # The C and C++ flags added by OpenCASCADE to the cmake-configured flags.
+ set (OpenCASCADE_C_FLAGS      "@CMAKE_C_FLAGS@")

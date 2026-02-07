@@ -1,0 +1,13 @@
+[
+{
+  type: upgrade
+  maximum_version: "5.0.19"
+  message: <<EOM
+Due to a breaking change, emu64 might crash when you open the user color
+palette window. This should happen only once.
+
+To prevent it from happening at all, you could also remove your
+~/.config/emu64/emu64.ini file containing your user's configuration.
+EOM
+}
+]

@@ -1,0 +1,57 @@
+--- Makefile.orig	Sun May 17 16:09:21 1998
++++ Makefile	Thu Nov  6 15:07:34 2003
+@@ -2,11 +2,11 @@
+ 
+ # what C compiler? It better be Ansi-C. Use gcc if you have it.
+ # you may find that KnightCap is very slow if you don't use gcc
+-CC = gcc
++CC ?= gcc
+ 
+ # What compiler switches do you want? These ones work well with gcc
+ #OPT = -O2 -fshort-enums -Wall
+-OPT = -g -fshort-enums -Wall
++# OPT = -g -fshort-enums -Wall
+ 
+ # If you don't have gcc then perhaps try this instead. You only need
+ # the null definition for inline if your C compiler doesn't know about
+@@ -21,23 +21,23 @@
+ # display (or you don't have OpenGL and Glut libraries)
+ # If you do have these libs then make sure the first three
+ # lines point at the right places
+-MESA = /usr/local/Mesa-2.1
+-GLUT = /usr/local/Mesa-2.1/glut-3.2
+-X11 = /usr/X11R6
+-GLUT_LIBS = -L$(GLUT)/lib/glut -lglut
+-MESA_LIBS = -L$(MESA)/lib -lMesaGLU -lMesaGL -lm
++MESA = ${LOCALBASE}
++GLUT = ${LOCALBASE}
++X11 = ${LOCALBASE}
++GLUT_LIBS = -L$(GLUT)/lib -lglut
++MESA_LIBS = -L$(MESA)/lib -lGLU -lGL -lm
+ XLIBS = -L$(X11)/lib -lXmu -lXt -lXext -lX11 -lXi
+-DISPLAYFLAGS = -I$(MESA)/include -I$(GLUT) -DRENDERED_DISPLAY=1
++DISPLAYFLAGS = -I$(X11)/include -I$(MESA)/include -I$(GLUT)/include -DRENDERED_DISPLAY=1
+ 
+ # comment out the following line if you don't want KnightCap's
+ # evaluation function learning turned on. 
+-LEARNFLAGS = -DLEARN_EVAL=1
++#LEARNFLAGS = -DLEARN_EVAL=1
+ 
+ # you shouldn't need to edit anything below this line. Unless
+ # something goes wrong.
+ 
+ INCLUDE = $(DISPLAYFLAGS)
+-CFLAGS = $(OPT) $(INCLUDE) $(LEARNFLAGS)
++CFLAGS += $(OPT) $(INCLUDE) $(LEARNFLAGS)
+ 
+ LIBS = $(GLUT_LIBS) $(MESA_LIBS) $(XLIBS) 
+ 
+@@ -45,7 +45,7 @@
+ 
+ OBJS = knightcap.o trackball.o move.o util.o generate.o eval.o movement.o \
+ 	ordering.o hash.o board.o log.o prog.o timer.o ics.o display.o \
+-	testsuite.o brain.o td.o tactics.o 
++	testsuite.o brain.o td.o tactics.o epd.o epdglue.o 
+ 
+ $(TARGET):  $(OBJS) 
+ 	-mv $@ $@.old

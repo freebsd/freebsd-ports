@@ -1,0 +1,53 @@
+--- common/dbl1it.ent.orig	Wed Feb 19 18:40:36 2003
++++ common/dbl1it.ent	Thu Mar 13 23:01:54 2003
+@@ -92,11 +92,8 @@
+ <!ENTITY sect5           "Sezione">
+ <!ENTITY section         "Sezione">
+ <!ENTITY Section         "Sezione">
+-<!ENTITY See             "Vd.">
+-<!ENTITY see             "Vd.">
+-<!ENTITY SeeAlso         "Vd. Anche">
+-<!ENTITY seealso         "Vd. Anche">
+-<!ENTITY Seealso         "Vd. anche">
++<!ENTITY see             "vd.">
++<!ENTITY seealso         "vd. anche">
+ <!ENTITY set             "Raccolta">
+ <!ENTITY Set             "Raccolta">
+ <!ENTITY setindex        "Indice Raccolta">
+@@ -111,7 +108,7 @@
+ <!ENTITY TIP             "SUGGERIMENTO">
+ <!ENTITY Tip             "Suggerimento">
+ <!ENTITY Warning         "Avvertimento">
+-<!ENTITY warning         "avvertimento">
++<!ENTITY warning         "Avvertimento">
+ <!ENTITY WARNING         "AVVERTIMENTO">
+ <!ENTITY and             "e">
+ <!ENTITY by              "di">
+@@ -125,8 +122,8 @@
+ <!ENTITY nonexistantelement "elemento non esistente">
+ <!ENTITY notes           "Note">
+ <!ENTITY Notes           "Note">
+-<!ENTITY Pgs             "pp.">
+-<!ENTITY pgs             "pp.">
++<!ENTITY Pgs             "Pp.">
++<!ENTITY pgs             "Pp.">
+ <!ENTITY Revisedby       "Revisionato da: ">
+ <!ENTITY revisedby       "Revisionato da: ">
+ <!ENTITY TableNotes      "Note">
+@@ -142,6 +139,8 @@
+ <!ENTITY listofexamples  "Lista degli Esempi">
+ <!ENTITY ListofFigures   "Lista delle Figure">
+ <!ENTITY listoffigures   "Lista delle Figure">
++<!ENTITY ListofProcedures "Lista delle Procedure">
++<!ENTITY listofprocedures "Lista delle Procedure">
+ <!ENTITY listoftables    "Lista delle Tabelle">
+ <!ENTITY ListofTables    "Lista delle Tabelle">
+ <!ENTITY ListofUnknown   "Lista degli Sconosciuti">
+@@ -152,6 +151,7 @@
+ <!ENTITY nav-prev        "Indietro">
+ <!ENTITY nav-prev-sibling "Salta Indietro">
+ <!ENTITY nav-up          "Risali">
++<!ENTITY nav-toc         "Sommario">
+ <!ENTITY Draft           "Bozza">
+ <!ENTITY above           "sopra">
+ <!ENTITY below           "sotto">

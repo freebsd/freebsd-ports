@@ -1,0 +1,20 @@
+--- configure.orig	2011-12-23 09:28:29 UTC
++++ configure
+@@ -3701,7 +3701,7 @@ _ACEOF
+ source_highlightdatadir=$datadir/source-highlight
+ source_highlightdocdir=$docdir
+ source_highlightlibdocdir=$docdir/api
+-source_highlightlibexampledir=$docdir/examples
++source_highlightlibexampledir=$datarootdir/examples/source-highlight
+ bash_completiondir=$sysconfdir/bash_completion.d
+ 
+ LIBRARY_NAMESPACE=srchilite
+@@ -20546,7 +20546,7 @@ else
+ fi
+ 
+ 
+-for ac_prog in ctags exuberant-ctags
++for ac_prog in exctags exuberant-ctags
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2

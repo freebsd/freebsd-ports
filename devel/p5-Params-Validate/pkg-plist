@@ -1,0 +1,8 @@
+%%SITE_ARCH%%/Params/Validate.pm
+%%SITE_ARCH%%/Params/Validate/Constants.pm
+%%SITE_ARCH%%/Params/Validate/PP.pm
+%%SITE_ARCH%%/Params/Validate/XS.pm
+%%SITE_ARCH%%/Params/ValidatePP.pm
+%%SITE_ARCH%%/Params/ValidateXS.pm
+%%SITE_ARCH%%/auto/Params/Validate/XS/XS.so
+%%PERL5_MAN3%%/Params::Validate.3.gz

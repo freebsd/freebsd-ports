@@ -1,0 +1,7 @@
+python-creole is an markup converter in pure Python:
+
+    * creole markup -> html
+    * html -> creole markup
+    * reStructuredText -> html
+    * html -> reStructuredText markup
+    * html -> textile markup

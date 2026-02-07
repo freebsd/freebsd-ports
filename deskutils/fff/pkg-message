@@ -1,0 +1,12 @@
+[
+{
+   message: <<EOM
+Install the devel/xdg-utils port if you wish to use xdg-open with fff.
+
+Install the following ports in order to enable image displaying support:
+- www/w3m-img
+- x11/xdotool
+EOM
+   type: install
+ }
+ ]

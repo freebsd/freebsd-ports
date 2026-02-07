@@ -1,0 +1,4 @@
+There is no easy way to get the address(es) of the machine's network interfaces
+from Python. There is a good reason for this difficulty, which is that it is
+virtually impossible to do so in a portable manner. This package takes care of
+working out the details of doing so on the machine you're using.

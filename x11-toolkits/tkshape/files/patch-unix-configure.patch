@@ -1,0 +1,20 @@
+diff -ur unix/configure unix/configure.new
+--- unix/configure	Thu Sep 14 12:15:35 2000
++++ unix/configure.new	Sat Mar 13 11:15:06 2004
+@@ -448,13 +448,13 @@
+ CC=$TCL_CC
+ SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
+ SHLIB_LD=$TCL_SHLIB_LD
+-SHLIB_LD_LIBS="-lXext $TCL_SHLIB_LD_LIBS"
++SHLIB_LD_LIBS="$TCL_SHLIB_LD_LIBS $TK_LIBS -lXext"
+ SHLIB_SUFFIX=$TCL_SHLIB_SUFFIX
+ SHLIB_VERSION=$TCL_SHLIB_VERSION
+ TCL_LIBS=$TCL_LIBS
+ TCL_VERSION=$TCL_VERSION
+-TCL_INCLUDE=$TCL_PREFIX/include
+-TK_INCLUDE=$TK_PREFIX/include
++TCL_INCLUDE=$TCL_PREFIX/include/tcl$TCL_VERSION
++TK_INCLUDE=$TK_PREFIX/include/tk$TK_VERSION
+ TCL_BIN_DIR=$TK_EXEC_PREFIX/bin
+ 
+ echo $ac_n "checking for -lXext""... $ac_c" 1>&6

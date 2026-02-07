@@ -1,0 +1,6 @@
+Open source immutable database
+
+* High performance and easy to integrate
+* Supports both Key/Value & SQL
+* Cryptographical client-verification, tamper-resistant, and auditable
+* Versioned and temporal queries subject to cryptographic verification

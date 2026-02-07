@@ -1,0 +1,7 @@
+GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj/nfontFaceNames.strings
+GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
+GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/libgnustep-%%BACK%%
+GNUstep/System/Library/Bundles/libgnustep-%%BACK%%.bundle/stamp.make
+GNUstep/System/Library/Documentation/man/man1/gpbs.1.gz
+GNUstep/System/Tools/gpbs

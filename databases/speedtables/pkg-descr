@@ -1,0 +1,8 @@
+Speed tables is a high-performance memory-resident database, currently oriented
+towards Tcl.  Speed tables provides an interface for defining tables containing
+zero or more rows, with each row containing one or more fields. The speed table
+compiler reads the table definition and generates C code to create and manage
+corresponding structures, generating a custom C language Tcl extension to
+create, access and manipulate those tables and building a native code package
+in a shared library that is loadable on demand via Tcl's "package require"
+mechanism.

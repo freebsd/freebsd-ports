@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: varnish_exporter
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# varnish_exporter_enable (bool):         Set to NO by default.
+#                                         Set it to YES to enable varnish_exporter.
+# varnish_exporter_user (string):         Set user that varnish_exporter will run under
+#                                         Default is "varnish".
+# varnish_exporter_group (string):        Set group that varnish_exporter will run under
+#                                         Default is "varnish".
+# varnish_exporter_syslog_priority (str): Set to "info" by default.
+#                                         Set it to priority to be used by syslog
+# varnish_exporter_syslog_facility (str): Set to "daemon" by default.
+#                                         Set it to facility to be used by syslog
+# varnish_exporter_syslog_tag (str):      Set to "ipfs-go" by default.
+#                                         Set it to tag to be used by syslog
+
+. /etc/rc.subr
+
+name=varnish_exporter
+rcvar=varnish_exporter_enable
+
+load_rc_config $name
+
+: ${varnish_exporter_enable:="NO"}
+: ${varnish_exporter_user:="varnish"}
+: ${varnish_exporter_group:="varnish"}
+: ${varnish_exporter_syslog_priority:="info"}
+: ${varnish_exporter_syslog_facility:="daemon"}
+: ${varnish_exporter_syslog_tag:="varnish-exporter"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/${name}"
+command_args="-S -m 3 -s ${varnish_exporter_syslog_priority} -l ${varnish_exporter_syslog_facility} -T ${varnish_exporter_syslog_tag} -p ${pidfile} /usr/bin/env ${procname} ${varnish_exporter_args}"
+
+start_precmd=${name}_startprecmd
+extra_commands="reload"
+
+varnish_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${varnish_exporter_user} \
+            -g ${varnish_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

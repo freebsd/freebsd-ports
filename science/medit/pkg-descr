@@ -1,0 +1,7 @@
+Medit is an interactive mesh visualization software, developed by P. Frey
+(University Pierre et Marie Curie).
+
+It is intended to display computation results (in mechanics of the solids or
+fluids, thermics, electromagnetism, etc.) on grids 2d (triangles and
+quadrangles), 3d (tetrahedrons or hexahedrons) or surfaces (triangles and
+quandrangles).

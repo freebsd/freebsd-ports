@@ -1,0 +1,13 @@
+--- swift/unittests/Parse/CMakeLists.txt.orig	2024-06-06 04:26:30 UTC
++++ swift/unittests/Parse/CMakeLists.txt
+@@ -6,7 +6,10 @@ target_link_libraries(SwiftParseTests
+ 
+ target_link_libraries(SwiftParseTests
+     PRIVATE
++    swiftFrontend
+     swiftSIL
++    swiftSILGen
++    swiftSILOptimizer
+     swiftClangImporter
+     swiftParse
+     swiftAST

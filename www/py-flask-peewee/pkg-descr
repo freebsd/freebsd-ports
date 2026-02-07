@@ -1,0 +1,5 @@
+Flask-Peewee provides a layer of integration between the flask web framework
+and the peewee orm. Batteries included:
+ - admin interface
+ - authentication
+ - rest api

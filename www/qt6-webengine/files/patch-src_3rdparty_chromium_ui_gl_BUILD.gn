@@ -1,0 +1,26 @@
+--- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2025-08-15 18:30:00 UTC
++++ src/3rdparty/chromium/ui/gl/BUILD.gn
+@@ -174,7 +174,6 @@ jumbo_component("gl") {
+   public_deps = [
+     ":gl_enums",
+     "//base",
+-    "//third_party/mesa_headers",
+     "//ui/events/platform",
+     "//ui/gfx",
+     "//ui/gfx/geometry",
+@@ -336,7 +335,6 @@ jumbo_component("gl") {
+     data_deps += [
+       "//third_party/angle:libEGL",
+       "//third_party/angle:libGLESv2",
+-      "//third_party/mesa_headers",
+     ]
+     if (enable_swiftshader) {
+       data_deps += [
+@@ -568,7 +566,6 @@ test("gl_unittests") {
+ 
+   data_deps = [
+     "//testing/buildbot/filters:gl_unittests_filters",
+-    "//third_party/mesa_headers",
+   ]
+ 
+   if (is_win) {

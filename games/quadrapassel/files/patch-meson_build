@@ -1,0 +1,15 @@
+$OpenBSD: patch-meson_build,v 1.3 2020/05/14 15:29:34 jasper Exp $
+
+Drop libmanette dependency which requires libevdev/libinput
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -17,7 +17,6 @@ clutter_gtk_dependency = dependency('clutter-gtk-1.0',
+ cogl_dependency = dependency('cogl-1.0')
+ gsound_dependency = dependency('gsound', version: '>= 1.0.2')
+ gtk_dependency = dependency('gtk+-3.0', version: '>= 3.12.0')
+-manette_dependency = dependency('manette-0.2', version: '>= 0.2.0')
+ pango_depepdency = dependency('pango')
+ pango_cairo_dependency = dependency('pangocairo')
+ posix_dependency = meson.get_compiler('vala').find_library('posix')

@@ -1,0 +1,3 @@
+The Authen::OATH module provides a Perl implementation of the
+HOTP and TOTP One Time Password algorithms as defined by OATH
+(http://www.openautentication.org).

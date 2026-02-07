@@ -1,0 +1,16 @@
+This is an alpha release of a PGP module for Perl5.This module will allow
+for an easy interface to both Phil Zimmermann'sPGP (v2.6.2) program and the
+international version of PGP (v2.6.2i).
+
+PGP.pm will allow you to sign, encrypt (w/signature), decrypt and perform
+key management. The only requirement being that you alreadyhave PGP
+installed on your system to utilize this module.There are sure to be many
+changes in the structure of this module overthe next couple of months--at
+least until a standard interface is acheived.
+
+If you find this module useful and wish to see future developments of it,
+the contribute to Phil Zimmermann's legal defense fund. Ifyou don't know
+anything about the government's attempt to wrongfully prosecute Phil, then
+go to Yahoo and search for "Zimmermann." After reading for a little while,
+you will be wondering how the governmentis getting away with it's criminal
+act.

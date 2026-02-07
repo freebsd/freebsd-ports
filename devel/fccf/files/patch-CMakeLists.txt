@@ -1,0 +1,65 @@
+--- CMakeLists.txt.orig	2022-05-02 12:24:57 UTC
++++ CMakeLists.txt
+@@ -20,31 +20,33 @@ endif()
+ 
+ set(CMAKE_CXX_FLAGS_DEBUG "-g")
+ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+ 
+-# ---- Argparse -------------
+ 
+-set(CMAKE_MODULE_PATH "")
+-set(CMAKE_LIBRARY_ARCHITECTURE "")
++## ---- Argparse -------------
++#
++#set(CMAKE_MODULE_PATH "")
++#set(CMAKE_LIBRARY_ARCHITECTURE "")
++#
++#include(FetchContent)
++#
++#FetchContent_Declare(argparse
++#  GIT_REPOSITORY https://github.com/p-ranav/argparse.git
++#  GIT_TAG master
++#)
++#FetchContent_MakeAvailable(argparse)
++find_package(argparse)
++find_package(fmt)
+ 
+-include(FetchContent)
+-
+-FetchContent_Declare(argparse
+-  GIT_REPOSITORY https://github.com/p-ranav/argparse.git
+-  GIT_TAG master
+-)
+-FetchContent_MakeAvailable(argparse)
+-
+ # ---- Fmt ----------------
++#
++#set(FMT_HEADERS "")
++#
++#FetchContent_Declare(fmt
++#  GIT_REPOSITORY https://github.com/fmtlib/fmt.git
++#  GIT_TAG master
++#)
++#FetchContent_MakeAvailable(fmt)
+ 
+-set(FMT_HEADERS "")
+-
+-FetchContent_Declare(fmt
+-  GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+-  GIT_TAG master
+-)
+-FetchContent_MakeAvailable(fmt)
+-
+ # ---- LLVM ---------------
+ 
+ find_package(LLVM REQUIRED CONFIG)
+@@ -90,7 +92,7 @@ find_package(Threads REQUIRED)
+ ## Append flags to enable exceptions and optimization
+ set(CMAKE_CXX_FLAGS_DEBUG "-g")
+ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -std=c++17 -fexceptions")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -fexceptions")
+ 
+ # ---- Declare library ----
+ 

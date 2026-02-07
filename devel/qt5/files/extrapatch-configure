@@ -1,0 +1,18 @@
+--- configure.orig	2017-07-14 14:53:54.062844000 +0200
++++ configure	2017-07-14 14:55:47.269845000 +0200
+@@ -713,6 +713,7 @@
+ }
+ 
+ # build qmake
++if [ '!' -f "$outpath/bin/qmake" ] ; then 
+     echo "Creating qmake..."
+     mkdir -p "$outpath/qmake" || exit
+ 
+@@ -814,6 +815,7 @@
+         fi
+         echo "Done."
+     fi
++fi # Creating qmake
+ 
+ #-------------------------------------------------------------------------------
+ # create a qt.conf for the Qt build tree itself

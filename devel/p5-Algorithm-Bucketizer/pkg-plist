@@ -1,0 +1,4 @@
+bin/bucketize
+%%SITE_PERL%%/Algorithm/Bucketizer.pm
+%%PERL5_MAN3%%/Algorithm::Bucketizer.3.gz
+%%PERL5_MAN1%%/bucketize.1.gz

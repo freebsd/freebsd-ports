@@ -1,0 +1,19 @@
+--- gl/Makefile.orig	Sun Jul 18 16:14:45 1999
++++ gl/Makefile	Sat Sep 30 20:27:36 2000
+@@ -23,7 +23,7 @@
+ #----------------------------------------------------------------------
+ 
+ MODULES	 = grlib.o driver.o line.o palette.o scale.o text.o font8x8.o \
+-	   cbitmap.o mem.o 
++	   cbitmap.o mem.o cctext.o
+ 
+ all:	libvgagl.a
+ .PHONY: all clean dep
+@@ -31,6 +31,7 @@
+ libvgagl.so.$(VERSION): $(MODULES)
+ 	$(CC) -s -shared -Wl,-soname,libvgagl.so.$(MAJOR_VER) -o libvgagl.so.$(VERSION) \
+ 	  $(MODULES)
++	/bin/ln -sf libvgagl.so.$(MAJOR_VER) libvgagl.so
+ 
+ libvgagl.a: $(MODULES)
+ 	rm -f libvgagl.a

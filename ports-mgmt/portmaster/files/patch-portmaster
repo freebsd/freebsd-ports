@@ -1,0 +1,71 @@
+--- portmaster.orig	2023-11-30 10:13:58 UTC
++++ portmaster
+@@ -3140,7 +3140,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+ 	unset argv
+ 
+ 	make_target=$(target_part "$1")
+-	[ "$make_target" != install ] && PM_MAKE_ARGS="-DDISABLE_CONFLICTS $PM_MAKE_ARGS"
++	[ "$make_target" != install ] && PM_MAKE_ARGS="DISABLE_CONFLICTS=1 $PM_MAKE_ARGS"
+ else
+ 	portdir="${1#$pd/}" ; portdir="${portdir%/}"
+ 	export_flavor $(flavor_part $portdir)
+@@ -3189,7 +3189,7 @@ else
+ 		fi
+ 	fi
+ 
+-	PM_MAKE_ARGS="-DDISABLE_CONFLICTS $PM_MAKE_ARGS"
++	PM_MAKE_ARGS="DISABLE_CONFLICTS=1 $PM_MAKE_ARGS"
+ fi
+ 
+ if [ -n "$upg_port" -a -z "$portdir" ]; then
+@@ -3712,7 +3712,7 @@ if [ -z "$use_package" ]; then
+ 		echo "===>>> Logging build to $port_log"
+ 	fi
+ 
+-	[ -n "$PM_NO_MAKE_CONFIG" ] && PM_MAKE_ARGS="$PM_MAKE_ARGS -D_OPTIONS_OK"
++	[ -n "$PM_NO_MAKE_CONFIG" ] && PM_MAKE_ARGS="$PM_MAKE_ARGS _OPTIONS_OK=1"
+ 
+ # Return flavor for named pkg (must be executed in port directory!)
+ pkg_flavor () {
+@@ -3724,7 +3724,7 @@ pkg_flavor () {
+ 		pm_make extract ask-license || fail "make extract ask-license failed for $portdir"
+ 	fi
+ 	if [ "$make_target" = "extract" -o "$make_target" = "patch" ]; then
+-		eval pm_make -DNO_DEPENDS $make_target $port_log_args || fail "make $make_target failed for $portdir"
++		eval pm_make NO_DEPENDS=1 $make_target $port_log_args || fail "make $make_target failed for $portdir"
+ 		safe_exit
+ 	fi
+ 	starttime=$(date "+%s")
+@@ -3735,7 +3735,7 @@ pkg_flavor () {
+ 	pm_sv Running make stage
+ 	# Defining NO_DEPENDS ensures that we will control the installation
+ 	# of the depends, not bsd.port.mk.
+-	eval pm_make -DNO_DEPENDS stage $port_log_args || fail "make stage failed for $portdir"
++	eval pm_make NO_DEPENDS=1 stage $port_log_args || fail "make stage failed for $portdir"
+ 	[ "$make_target" = "stage" ] && safe_exit
+ else
+ 	[ -z "$local_package" ] && {
+@@ -3858,12 +3858,12 @@ if [ -z "$use_package" ]; then
+ 			[ "$$" -eq "$PM_PARENT_PID" ] && np_orphan=0
+ 		fi
+ 	fi
+-	[ "${np_orphan:-1}" -eq 1 ] && PM_MAKE_ARGS="${PM_MAKE_ARGS} -DINSTALLS_DEPENDS"
++	[ "${np_orphan:-1}" -eq 1 ] && PM_MAKE_ARGS="${PM_MAKE_ARGS} INSTALLS_DEPENDS=1"
+ 	unset np_orphan
+ 	# Defining NO_DEPENDS ensures that we will control the installation
+ 	# of the depends, not bsd.port.mk.
+ 	export_flavor $(flavor_part "$portdir")
+-	eval pm_make_s -DNO_DEPENDS install $port_log_args || install_failed $new_port
++	eval pm_make_s NO_DEPENDS=1 install $port_log_args || install_failed $new_port
+ else
+ 	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
+ 
+@@ -3964,7 +3964,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
+ if [ -n "$MAKE_PACKAGE" ]; then
+ 	if [ -z "$use_package" ]; then
+ 		echo "===>>> Creating a package for new version $new_port"
+-		pm_make_s -D_OPTIONS_OK ${PACKAGE_FORMAT:+PKG_COMPRESSION_FORMAT=$PACKAGE_FORMAT} package >/dev/null || fail "Package creation of $new_port failed"
++		pm_make_s _OPTIONS_OK=1 ${PACKAGE_FORMAT:+PKG_COMPRESSION_FORMAT=$PACKAGE_FORMAT} package >/dev/null || fail "Package creation of $new_port failed"
+ 		echo "	===>>> Package saved to $PACKAGES/All" ; echo ''
+ 	else
+ 		pm_pkg_create $PACKAGES $new_port

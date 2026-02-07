@@ -1,0 +1,4 @@
+The Ruby LSP is an implementation of the language server protocol for Ruby, used
+to improve rich features in editors. It is a part of a wider goal to provide a
+state-of-the-art experience to Ruby developers using modern standards for
+cross-editor features, documentation and debugging.

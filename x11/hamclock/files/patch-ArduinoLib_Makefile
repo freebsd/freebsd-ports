@@ -1,0 +1,11 @@
+--- ArduinoLib/Makefile.orig	2025-04-11 14:48:58 UTC
++++ ArduinoLib/Makefile
+@@ -4,7 +4,7 @@
+ 
+ .PHONY: default
+ 
+-CXX = g++
++CXX ?= g++
+ 
+ OBJS = \
+ 	Adafruit_BME280.o \

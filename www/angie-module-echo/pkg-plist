@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.markdown
+%%MODDIR%%/ngx_http_echo_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_echo_module-debug.so

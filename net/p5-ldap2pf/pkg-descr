@@ -1,0 +1,2 @@
+The ldap2pf utility creates and updates PF tables that reflect the
+membership of LDAP groups.

@@ -1,0 +1,19 @@
+PORTNAME=	ros-urdfdom_headers
+DISTVERSION=	1.0.6
+CATEGORIES=	devel
+
+MAINTAINER=	trueos@norwegianrockcat.com
+COMMENT=	Headers for Unified Robot Description Format (URDF) parsers
+WWW=		https://wiki.ros.org/urdf
+
+LICENSE=	BSD3CLAUSE
+
+USES=		cmake
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	ros
+GH_PROJECT=	${PORTNAME:S/ros-//}
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

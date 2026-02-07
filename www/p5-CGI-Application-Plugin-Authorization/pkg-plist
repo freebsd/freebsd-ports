@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authorization.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authorization::Driver.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authorization::Driver::DBI.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authorization::Driver::Dummy.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authorization::Driver::Generic.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authorization::Driver::HTGroup.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authorization::Driver::SimpleGroup.3.gz
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/DBI.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/Dummy.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/Generic.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/HTGroup.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/SimpleGroup.pm

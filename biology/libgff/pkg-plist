@@ -1,0 +1,14 @@
+include/GArgs.h
+include/GBase.h
+include/GFaSeqGet.h
+include/GFastaIndex.h
+include/GHash.hh
+include/GList.hh
+include/GStr.h
+include/GVec.hh
+include/codons.h
+include/gdna.h
+include/gff.h
+lib/libgff.a
+lib/libgff/cmake/libgffConfig.cmake
+lib/libgff/cmake/libgffConfigVersion.cmake

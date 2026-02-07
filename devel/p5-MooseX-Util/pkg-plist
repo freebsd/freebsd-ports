@@ -1,0 +1,4 @@
+%%SITE_PERL%%/MooseX/Util.pm
+%%SITE_PERL%%/MooseX/Util/Meta/Class.pm
+%%PERL5_MAN3%%/MooseX::Util.3.gz
+%%PERL5_MAN3%%/MooseX::Util::Meta::Class.3.gz

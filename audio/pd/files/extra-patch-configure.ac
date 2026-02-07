@@ -1,0 +1,10 @@
+--- configure.ac.orig	2016-06-18 15:02:47.000000000 -0700
++++ configure.ac	2020-07-06 19:37:37.638911000 -0700
+@@ -38,6 +38,7 @@
+ 	if test "x${ANDROID}" = "xno"; then
+ 	 LINUX=yes
+ 	 portaudio=yes
++	 portmidi=yes
+ 	 CFLAGS="-g -O3 -funroll-loops -fomit-frame-pointer $CFLAGS"
+ 	fi
+ 	EXTERNAL_CFLAGS="-fPIC"

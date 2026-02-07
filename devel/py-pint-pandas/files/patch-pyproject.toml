@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2023-05-26 21:00:53 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "Pint-Pandas"
++name = "pint-pandas"
+ authors = [
+   {name="Hernan E. Grecco", email="hernan.grecco@gmail.com"}
+ ]

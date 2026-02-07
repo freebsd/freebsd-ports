@@ -1,0 +1,2 @@
+This MkDocs plugin creates RSS 2.0 and JSON Feed 1.1 feeds using the creation
+and modification dates from git log and page metadata (YAML frontmatter).

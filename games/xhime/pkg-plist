@@ -1,0 +1,7 @@
+bin/xhime
+share/man/ja/man6/xhime.6.gz
+share/man/man6/xhime.6.gz
+%%PORTDOCS%%share/doc/ja/xhime/xhime-doc.euc
+%%PORTDOCS%%share/doc/ja/xhime/xhime.doc
+%%PORTDOCS%%share/doc/ja/xhime/rh110-doc.euc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rh110.xhm

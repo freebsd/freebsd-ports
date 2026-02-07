@@ -1,0 +1,123 @@
+--- cstream.1.orig
++++ cstream.1
+@@ -46,9 +46,9 @@
+ .Ar num
+ bytes before writing. The default is the blocksize. It is an error to
+ set this to anything below the blocksize. Useful when writing tapes
+-and simlilar that prefer few large writes of many small.
++and similar that prefer few large writes of many small.
+ .It Fl c Ar num
+-Concurrent operation. Use a seperate process for outout. This is
++Concurrent operation. Use a separate process for output. This is
+ especially useful in combination with the -B option.
+ .Bl -tag -compact -width "  "
+ .It 0 = use one process only (default)
+@@ -56,13 +56,13 @@
+ .It 2 = write process will buffer
+ .It 3 = both processes will buffer. 
+ In combination with a large buffer size this will often load your memory
+-heavily, everytime the reader transfers the buffer it collected to the
++heavily, every time the reader transfers the buffer it collected to the
+ writer. If you use -c 3 and have a buffer size of 128 Megabytes 256 MB of
+ memory will be touched at once.
+ .El 
+ .It Fl i Ar num
+ .It Fl o Ar num
+-Set the file names to use for input or output, respectivly. If the
++Set the file names to use for input or output, respectively. If the
+ output file name is "-", data will just be discarded. If the input
+ file name is "-", data will be generated 'out of the void'. If these
+ options aren't given, stdin/stout will be used. If you need to give
+@@ -81,7 +81,7 @@
+ has other network filters, anyone will be able to connect.
+ .It Fl I Ar string
+ .It Fl O Ar string
+-Specify the type of input and output file, respectivly. 
++Specify the type of input and output file, respectively. 
+ .Bl -tag -compact -width "  "
+ .It If string
+ includes 'f', a fifo will be created. 
+@@ -109,7 +109,7 @@
+ .It Fl p Ar filename
+ Write the process id of cstream to 
+ .Ar filename .
+-If cstream uses a seperate writer process (option -c), this is the pid
++If cstream uses a separate writer process (option -c), this is the pid
+ of the parent (reader) process.
+ .It Fl t Ar num
+ Limit the throughput of the data stream to
+@@ -132,7 +132,7 @@
+ and throughput will be displayed at the end of program run. A value of
+ 2 means the transfer rate since the end of the first read/write pair
+ will also be reported (useful when there is an initial delay). A value
+-of 3 means there will also be seperate measurements for read and
++of 3 means there will also be separate measurements for read and
+ write. This option is resource-consuming and currently isn't
+ implemented. A value of 4 means that notices about each single
+ read/write will be displayed. High values include all message types of
+@@ -144,13 +144,13 @@
+ be used as input file if -i has not been used.
+ .It Ic SIGUSR1
+ .It Ic SIGINFO
+-Sending SIGUSR1 (or SIGINFO, which is usually mappend to Control-T on
++Sending SIGUSR1 (or SIGINFO, which is usually mapped to Control-T on
+ you keyboard) to cstream causes it to display throughput rates to
+-stderr. The stream will continue as if nothing happend.
++stderr. The stream will continue as if nothing happened.
+ .It Ic SIGUSR2
+ Exit and report throughput rates, if requested.
+ .It Ic SIGHUP
+-I found myself sending SIGHUP accidentially too often. But ignoring or
++I found myself sending SIGHUP accidentally too often. But ignoring or
+ misusing SIGHUP is not an option for me. Thus, when
+ .Nm cstream
+ received
+@@ -191,19 +191,18 @@
+ .It Ic "cstream -Oa -o /dev/dsp0 myhost.mydomain.com:17324"
+ Connects port 3333 on host myhost.mydomain.com and whatever data it
+ finds there will be sent to the soundcard, with appropriate settings
+-for CD quality stero play.
++for CD quality stereo play.
+ .It Ic "cstream -i myaudiofile.raw -o :17324"
+ This will open a TCP server on port 17324 and waits until someone
+ connects (for example, the commandline from the previous
+ example). Then it will send the contents of myaudiofile.raw down the
+-TCP stream (for the previous audio example, typically a CD audiotrack
++TCP stream (for the previous audio example, typically a CD audio track
+ like you get from the tosha or cdparanoia utilities).
+ .It Ic "cstream -OD -o myfile"
+-
+ Write to file myfile with O_DIRECT.  That usually means that the
+ filesystem buffer cache will not try to cache this file.  You can use
+ that to prevent copying operations from eating up physical memory.
+-Note that when cstream encouters a write error it will switch the
++Note that when cstream encounters a write error it will switch the
+ output file from O_DIRECT to a normal file and write all further
+ blocks without O_DIRECT if writes without O_DIRECT succeed.  In
+ practice that usually means that your last block, if not a multiple of
+@@ -222,7 +221,7 @@
+ you want to ensure that O_DIRECT stays in effect, you need a buffer
+ between the TCP stream and the O_DIRECT stream.  Since cstream does
+ not yet support different input and output block sizes, dd is
+-suitable here.  Note that this is only neccessary if the OS requires
++suitable here.  Note that this is only necessary if the OS requires
+ multiples of the filesystem block size for O_DIRECT.  At the time of
+ this writing this construct is needed on Linux for using TCP
+ streams with O_DIRECT, but it is not needed on FreeBSD.
+@@ -234,6 +233,7 @@
+ both Linux and FreeBSD is very slow (1/5th to 1/10th of normal write)
+ and O_DIRECT is reasonably fast (1/4th to 1/2 of normal write).  You
+ can combined O_SYNC and O_DIRECT. 
++.El
+ .Sh ERRORS
+ .Bl -tag -width "-l num  "
+ .It Exit code 0 means success.
+@@ -252,7 +252,7 @@
+ blocksize to whatever the filesystem of the output file is in) and page
+ alignment requirements (I/O will happen from a page-aligned buffer).
+ However, the combination of concurrent read/writes (-c options) and
+-O_DIRECT has not been tested bejond basic verification that it gets
++O_DIRECT has not been tested beyond basic verification that it gets
+ some tests right.
+ .Sh SEE ALSO
+ .Xr dd 1 ,

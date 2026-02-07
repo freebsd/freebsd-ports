@@ -1,0 +1,20 @@
+--- modules/Makefile.orig	2011-09-18 15:22:35 UTC
++++ modules/Makefile
+@@ -15,7 +15,7 @@
+ 
+ #special build rules
+ 
+-caca.so : override LDLIBS += -lcaca -lncurses
++caca.so : override LDLIBS += -lcaca -lm
+ 
+ all.o: all.c ../src/console_switch.h
+ 
+@@ -37,7 +37,7 @@
+ .PHONY: install-%.so
+ install-%.so: %.so
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(MODULEDIR)
+-	$(INSTALL) -m $(MODULE_MODE) -o root -g $(MODULE_GROUP) $< $(DESTDIR)$(MODULEDIR)/$<
++	$(BSD_INSTALL_LIB) $< $(DESTDIR)$(MODULEDIR)/$<
+ 
+ .PHONY: clean
+ clean:

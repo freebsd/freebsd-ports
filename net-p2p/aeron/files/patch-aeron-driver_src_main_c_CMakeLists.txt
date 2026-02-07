@@ -1,0 +1,11 @@
+--- aeron-driver/src/main/c/CMakeLists.txt.orig	2025-01-13 11:59:44 UTC
++++ aeron-driver/src/main/c/CMakeLists.txt
+@@ -58,7 +58,7 @@ check_symbol_exists(poll "poll.h" POLL_PROTOTYPE_EXIST
+ check_symbol_exists(uuid_generate "uuid/uuid.h" UUID_GENERATE_PROTOTYPE_EXISTS)
+ 
+ check_symbol_exists(poll "poll.h" POLL_PROTOTYPE_EXISTS)
+-check_symbol_exists(epoll_create "sys/epoll.h" EPOLL_PROTOTYPE_EXISTS)
++check_symbol_exists(epoll_create "libepoll-shim/sys/epoll.h" EPOLL_PROTOTYPE_EXISTS)
+ 
+ set(CMAKE_EXTRA_INCLUDE_FILES sys/socket.h)
+ check_type_size("struct mmsghdr" STRUCT_MMSGHDR_TYPE_EXISTS)

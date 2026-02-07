@@ -1,0 +1,13 @@
+--- ./src/error.c.orig	Fri Jun  2 06:16:00 1995
++++ ./src/error.c	Sun Dec  1 16:16:18 2002
+@@ -38,8 +38,10 @@
+ }
+ 
+ static char *strerr(void) {
++#ifndef BSD
+     extern int sys_nerr;
+     extern char *sys_errlist[];
++#endif
+ 
+     return errno > 0 && errno < sys_nerr ?
+ 	sys_errlist[errno] : "unknown error";

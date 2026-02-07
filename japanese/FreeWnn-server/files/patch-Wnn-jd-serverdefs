@@ -1,0 +1,30 @@
+Index: Wnn/jd/serverdefs
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/Wnn/jd/serverdefs,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- Wnn/jd/serverdefs	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jd/serverdefs	20 Dec 2008 07:23:09 -0000	1.2
+@@ -30,12 +30,12 @@
+ ;
+ 
+ ;lang_name	machine_name	unix_domain_socket_name	service_name	port_num
+-ja_JP		jserver		/tmp/jd_sockV4		wnn4		22273
+-japanese	jserver		/tmp/jd_sockV4		wnn4		22273
+-nihongo		jserver		/tmp/jd_sockV4		wnn4		22273
+-zh_CN		cserver		/tmp/cd_sockV4		wnn4_Cn		22289
+-zhongwen	cserver		/tmp/cd_sockV4		wnn4_Cn		22289
+-zh_TW		tserver		/tmp/td_sockV4		wnn4_Tw		22321
+-taiwanese	tserver		/tmp/td_sockV4		wnn4_Tw		22321
+-ko_KR		kserver		/tmp/kd_sockV4		wnn4_Kr		22305
+-korean		kserver		/tmp/kd_sockV4		wnn4_Kr		22305
++ja_JP		localhost	/tmp/jd_sockV4		wnn4		22273
++japanese	localhost	/tmp/jd_sockV4		wnn4		22273
++nihongo		localhost	/tmp/jd_sockV4		wnn4		22273
++zh_CN		localhost	/tmp/cd_sockV4		wnn4_Cn		22289
++zhongwen	localhost	/tmp/cd_sockV4		wnn4_Cn		22289
++zh_TW		localhost	/tmp/td_sockV4		wnn4_Tw		22321
++taiwanese	localhost	/tmp/td_sockV4		wnn4_Tw		22321
++ko_KR		localhost	/tmp/kd_sockV4		wnn4_Kr		22305
++korean		localhost	/tmp/kd_sockV4		wnn4_Kr		22305

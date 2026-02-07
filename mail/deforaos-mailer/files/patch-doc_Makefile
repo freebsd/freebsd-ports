@@ -1,0 +1,13 @@
+--- doc/Makefile.orig	2020-01-12 08:55:32 UTC
++++ doc/Makefile
+@@ -77,10 +77,8 @@ install: all
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" install; \
+ 		else $(MAKE) install; fi) || exit; done
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)compose.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)compose.html"
+ 	./gtkdoc.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)gtkdoc/html.stamp"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)mailer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)mailer.html"
+ 
+ uninstall:
+ 	@for i in $(SUBDIRS); do (cd "$$i" && \

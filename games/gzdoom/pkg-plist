@@ -1,0 +1,10 @@
+bin/gzdoom
+%%DMDIR%%/brightmaps.pk3
+%%DMDIR%%/fm_banks/GENMIDI.GS.wopl
+%%DMDIR%%/fm_banks/gs-by-papiezak-and-sneakernets.wopn
+%%DMDIR%%/game_support.pk3
+%%DMDIR%%/game_widescreen_gfx.pk3
+%%DMDIR%%/gzdoom.pk3
+%%DMDIR%%/lights.pk3
+%%DMDIR%%/soundfonts/gzdoom.sf2
+share/pixmaps/gzdoom.xpm

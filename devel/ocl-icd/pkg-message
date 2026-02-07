@@ -1,0 +1,5 @@
+[
+{ type: install
+  message: " Set environment variale, i.e. OCL_ICD_VENDORDIR=/usr/local/etc/OpenCL/vendors"
+}
+]

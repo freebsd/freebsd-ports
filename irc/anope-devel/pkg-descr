@@ -1,0 +1,17 @@
+Anope is a set of Services for IRC networks that allows users to
+manage their nicks and channels in a secure and efficient way, and
+administrators to manage their network with powerful tools.
+
+Anope currently works with:
+  - InspIRCd 3 or later
+  - UnrealIRCd 6 or later
+  - ircd-hybrid 8.2.34 or later
+  - ircd-ratbox 3 or later
+  - ngIRCd 19.2 or later
+  - Plexus 3 or later
+  - Solanum (all versions)
+
+Anope could also work with some of the daemons derived by the ones listed
+above, but there's no support for them if they work or don't work.
+
+For mysql support, please install -mysql FLAVOR.

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: beehive
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# beehive_enable (bool):  Set to NO by default.
+#                         Set it to YES to enable beehive.
+#
+# beehive_bind (string):  Set to localhost:8181 by default.
+#		          Which address to bind Beehive's API &
+#                         admin interface to.
+#
+# beehive_url (string):   Set to http://localhost:8181 by default.
+#                         Canonical URL for the API & admin interface.
+#
+# beehive_config (path):  Set to %%PREFIX%%/etc/beehive.conf by default.
+#		          Config-file to use.
+
+. /etc/rc.subr
+
+name="beehive"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${beehive_enable:="NO"}
+: ${beehive_bind:="localhost:8181"}
+: ${beehive_url:="http://localhost:8181"}
+: ${beehive_config:="%%ETCDIR%%/${name}.conf"}
+: ${beehive_user:="%%USERS%%"}
+: ${beehive_group:="%%GROUPS%%"}
+
+pidfiledir="/var/run/${name}"
+pidfile="${pidfiledir}/${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} -bind ${beehive_bind} -canonicalurl ${beehive_url} -config ${beehive_config}"
+
+start_precmd="${name}_prestart"
+
+beehive_prestart()
+{
+	if [ ! -d ${pidfiledir} ]; then
+		install -d -o ${beehive_user} -g ${beehive_group} ${pidfiledir}
+	fi
+	if [ ! -d %%ETCDIR%% ]; then
+		install -d -o ${beehive_user} -g ${beehive_group} %%ETCDIR%%
+	fi
+}
+
+run_rc_command "$1"

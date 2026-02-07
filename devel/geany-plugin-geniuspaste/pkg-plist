@@ -1,0 +1,13 @@
+lib/geany/geniuspaste.so
+%%DATADIR%%/geniuspaste/pastebins/codepad.org.conf
+%%DATADIR%%/geniuspaste/pastebins/dpaste.com.conf
+%%DATADIR%%/geniuspaste/pastebins/dpaste.org.conf
+%%DATADIR%%/geniuspaste/pastebins/fpaste.org.conf
+%%DATADIR%%/geniuspaste/pastebins/paste.debian.net.conf
+%%DATADIR%%/geniuspaste/pastebins/pastebin.geany.org.conf
+%%DATADIR%%/geniuspaste/pastebins/sprunge.us.conf
+%%DOCSDIR%%/geniuspaste/AUTHORS
+%%DOCSDIR%%/geniuspaste/COPYING
+%%DOCSDIR%%/geniuspaste/ChangeLog
+%%DOCSDIR%%/geniuspaste/NEWS
+%%DOCSDIR%%/geniuspaste/README

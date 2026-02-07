@@ -1,0 +1,4 @@
+undercover warns about methods, classes and blocks that were changed without
+tests, to help you easily find untested code and reduce the number of bugs. It
+does so by analysing data from git diffs, code structure and SimpleCov coverage
+reports.

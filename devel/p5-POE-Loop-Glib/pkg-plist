@@ -1,0 +1,4 @@
+%%SITE_PERL%%/POE/Loop/Glib.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtk2_counter.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minimal.pl
+%%PERL5_MAN3%%/POE::Loop::Glib.3.gz

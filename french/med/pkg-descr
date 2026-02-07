@@ -1,0 +1,4 @@
+MED is the Data Echange Module used by Code_Aster and based on the HDF library.
+
+MED/HDF can read and save data in a format which is portable between machines of
+different architectures.

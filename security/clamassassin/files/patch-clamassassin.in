@@ -1,0 +1,11 @@
+--- clamassassin.in.orig	2007-03-05 04:19:48 UTC
++++ clamassassin.in
+@@ -132,7 +132,7 @@ ${CAT} > ${MSGTMP}
+ bailiferr $?
+ 
+ # Set version header string
+-CLAMVERS=`${CLAMSCAN} -V --stdout`
++CLAMVERS=`${CLAMSCAN} -V --stdout | tail -1`
+ 
+ if [ ${ADDSCANNERFLAG} != 0 ]
+ then

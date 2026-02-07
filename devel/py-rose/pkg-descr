@@ -1,0 +1,10 @@
+A small library for keeping your version up-to-date easily & everywhere.
+
+The pain of having to update your setup.py, your Sphinx conf.py, your
+__init__.py & everything else on every release of your Python package sucks.
+
+By putting your version number in a top-level VERSION file & using this
+library, you can cut duplication & tedious manual work without having to lean
+on crazy import hacks.
+
+Inspired by crazy discussion with George Hickman (ghickman) at PyCon 2013.

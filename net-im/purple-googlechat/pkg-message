@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+This plugin needs an oauth token in order to work properly. Watch the following
+youtube video https://www.youtube.com/watch?v=hlDhp-eNLMU on how to obtain one.
+EOM
+}
+]

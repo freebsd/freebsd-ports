@@ -1,0 +1,2 @@
+ManimPango is a C binding for Pango using Cython, which is internally used in
+Manim to render (non-LaTeX) text.

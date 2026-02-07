@@ -1,0 +1,53 @@
+--- CMakeLists.txt.orig	2023-07-20 03:46:10 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,7 @@ macro(require_cpp14)
+ endmacro()
+ 
+ option(test "Build all tests" OFF)
+-option(build_static_lib "Build easyloggingpp as a static library" OFF)
++option(build_shared_lib "Build easyloggingpp as a shared library" OFF)
+ option(lib_utc_datetime "Build library with UTC date/time logging" OFF)
+ 
+ set(ELPP_MAJOR_VERSION "9")
+@@ -31,7 +31,7 @@ set(ELPP_PATCH_VERSION "7")
+ set(ELPP_VERSION_STRING "${ELPP_MAJOR_VERSION}.${ELPP_MINOR_VERSION}.${ELPP_PATCH_VERSION}")
+ 
+ set(ELPP_INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The directory the headers are installed in")
+-set(ELPP_PKGCONFIG_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
++set(ELPP_PKGCONFIG_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+ 
+@@ -52,18 +52,18 @@ if (HAVE_EXECINFO)
+ 	add_definitions(-DHAVE_EXECINFO)
+ endif()
+ 
+-if (build_static_lib)
++if (build_shared_lib)
+         if (lib_utc_datetime)
+                 add_definitions(-DELPP_UTC_DATETIME)
+         endif()
+ 
+         require_cpp14()
+-        add_library(easyloggingpp STATIC src/easylogging++.cc)
++        add_library(easyloggingpp SHARED src/easylogging++.cc)
+         set_property(TARGET easyloggingpp PROPERTY POSITION_INDEPENDENT_CODE ON)
+ 
+         install(TARGETS
+             easyloggingpp
+-            ARCHIVE DESTINATION lib)
++            DESTINATION lib)
+ endif()
+ 
+ export(PACKAGE ${PROJECT_NAME})
+@@ -97,7 +97,9 @@ if (test)
+     )
+ 
+     # Standard linking to gtest stuff.
+-    target_link_libraries(easyloggingpp-unit-tests ${GTEST_BOTH_LIBRARIES})
++    target_include_directories(easyloggingpp-unit-tests PRIVATE ${CMAKE_INSTALL_PREFIX}/include)
++    target_link_directories(easyloggingpp-unit-tests PRIVATE ${CMAKE_INSTALL_PREFIX}/lib)
++    target_link_libraries(easyloggingpp-unit-tests ${GTEST_BOTH_LIBRARIES} execinfo)
+ 
+     add_test(NAME easyloggingppUnitTests COMMAND easyloggingpp-unit-tests -v)
+ endif()

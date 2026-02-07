@@ -1,0 +1,6 @@
+XML::Mini is a set of Perl classes that allow you to access XML data and
+create valid XML output with a tree-based hierarchy of elements.
+
+XML::Mini does not require any external libraries or modules and is pure Perl.
+If available, XML::Mini will use the Text::Balanced module in order to escape
+limitations of the regex-only approach (eg "cross-nested" tag parsing).

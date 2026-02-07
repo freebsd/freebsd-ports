@@ -1,0 +1,15 @@
+--- Makefile.orig	2014-06-25 14:04:20 UTC
++++ Makefile
+@@ -51,10 +51,8 @@ $(BIN): $(call OBJS,$(SRCS))
+ 	$(QUIET_CC) $(CFLAGS) -o $(BIN) $(call OBJS,$(SRCS)) $(LDFLAGS)
+ 
+ install: all
+-	install -d -o 0 -g 0 -m 755 $(PREFIX)/bin/
+-	install -o 0 -g 0 -m 755 $(BIN) $(PREFIX)/bin/
+-	install -d -o 0 -g 0 -m 755 $(PREFIX)/man/man1/
+-	install -o 0 -g 0 -m 644 $(BIN).1 $(PREFIX)/man/man1/
++	$(BSD_INSTALL_PROGRAM) $(BIN) $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_MAN) $(BIN).1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 
+ clean:
+ 	-rm -Rf obj dep *.orig *.rej *~

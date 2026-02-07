@@ -1,0 +1,28 @@
+--- data/keymaps/common.orig	2014-09-16 02:55:34 UTC
++++ data/keymaps/common
+@@ -85,14 +85,14 @@ keycode 86 = less
+     shift altgr keycode 86 = brokenbar
+ keycode 87 = F11
+ keycode 88 = F12
+-keycode 98 = KP_Divide
+-keycode 102 = Home
+-keycode 103 = Up
+-keycode 104 = Page_Up
+-keycode 105 = Left
+-keycode 106 = Right
+-keycode 107 = End
+-keycode 108 = Down
+-keycode 109 = Page_Down
+-keycode 110 = Insert
+-keycode 111 = Delete
++keycode 89 = Home
++keycode 90 = Up
++keycode 91 = Page_Up
++keycode 92 = Left
++keycode 94 = Right
++keycode 95 = End
++keycode 96 = Down
++keycode 97 = Page_Down
++keycode 98 = Insert
++keycode 99 = Delete
++keycode 104 = KP_Divide

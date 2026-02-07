@@ -1,0 +1,6 @@
+%%DATADIR%%/bankdata.ch.db
+%%DATADIR%%/bankdata.de.db
+%%DATADIR%%/bankdata.nl.db
+%%DATADIR%%/blz_%%BANKDATA_START_DATE%%.txt
+%%DATADIR%%/ibandata.txt
+%%DATADIR%%/sepa_%%BANKDATA_START_DATE%%.txt

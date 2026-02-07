@@ -1,0 +1,21 @@
+--- unix/mmap.c.orig	2013-04-24 09:59:16.000000000 +0200
++++ unix/mmap.c	2013-04-24 10:00:30.000000000 +0200
+@@ -190,8 +190,7 @@
+     }
+ 
+     /* We check if seek is within range, and fix */
+-    if (data->seek < 0) data->seek = 0;
+-    if (data->seek > data->length) data->seek = data->length;
++    if (data->seek > (unsigned long)data->length) data->seek = data->length;
+     
+     return data->seek;
+ }
+@@ -271,7 +270,7 @@
+ 
+     int i;
+     for (i = 1; i < objc - 1; i++) {
+-        if (Tcl_GetIndexFromObj(interp, objv[i], cmds, "option", 0, &index) != TCL_OK)
++        if (Tcl_GetIndexFromObj(interp, objv[i], (const char **)cmds, "option", 0, &index) != TCL_OK)
+             return TCL_ERROR;
+ 
+         switch (index) {

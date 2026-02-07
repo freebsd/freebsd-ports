@@ -1,0 +1,6 @@
+Ogg is a multimedia container format and the native file and stream
+format for the Xiph.org multimedia codecs.  It encapsulates raw
+compressed data and allows the interleaving of audio and video data
+inside a single convient format.  Ogg is a stream oriented container
+and provides packet framing, error detection, and periodic timestamps
+for seeking.

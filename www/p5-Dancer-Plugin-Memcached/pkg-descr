@@ -1,0 +1,4 @@
+This plugin gives Dancer the ability to get and store page content in a
+memcached server, which in specific configurations could give a
+performance boost - particulary on GET requests that incur significant
+database calls.

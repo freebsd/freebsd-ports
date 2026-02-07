@@ -1,0 +1,5 @@
+libexec/scam-back
+etc/mail/scam-back.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/License
+@unexec [ -f /var/scam-back/backscatter.txt ] || rmdir /var/scam-back 2>/dev/null || true

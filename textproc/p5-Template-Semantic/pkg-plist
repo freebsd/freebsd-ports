@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Template::Semantic.3.gz
+%%PERL5_MAN3%%/Template::Semantic::Cookbook.3.gz
+%%PERL5_MAN3%%/Template::Semantic::Document.3.gz
+%%PERL5_MAN3%%/Template::Semantic::Filter.3.gz
+%%SITE_PERL%%/Template/Semantic.pm
+%%SITE_PERL%%/Template/Semantic/Cookbook.pod
+%%SITE_PERL%%/Template/Semantic/Document.pm
+%%SITE_PERL%%/Template/Semantic/Filter.pm

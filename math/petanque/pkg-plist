@@ -1,0 +1,13 @@
+include/pa/analyses.h
+include/pa/app.h
+include/pa/bitfield.h
+include/pa/exprs.h
+include/pa/matrix.h
+include/pa/prettyprinter.h
+include/pa/subs.h
+include/pa/symbols.h
+include/pa/syms_hist.h
+include/pa/syms_set.h
+include/pa/traits.h
+include/pa/vector.h
+lib/libpetanque.so

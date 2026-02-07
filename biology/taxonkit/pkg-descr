@@ -1,0 +1,8 @@
+TaxonKit allows to:
+* list taxonomic subtrees (TaxIds)
+* query taxonomic lineage of given TaxIds
+* reformat lineage in canonical ranks
+* convert scientific names to TaxIds
+* filter TaxIds by taxonomic rank range
+* compute lowest common ancestor (LCA) for TaxIds
+* create TaxId changelog from dump archives

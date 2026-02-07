@@ -1,0 +1,9 @@
+bin/antipolix-client
+bin/antipolix-server
+%%PORTDOCS%%%%DOCSDIR%%/ANTIPOLIX_RULES
+%%PORTDOCS%%%%DOCSDIR%%/CLIENT_USE
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/SERVER_USE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.motd.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.players.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.server_defaults.sample

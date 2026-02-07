@@ -1,0 +1,24 @@
+PORTNAME=	bgpq4
+PORTVERSION=	1.12
+CATEGORIES=	net-mgmt
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Lightweight prefix-list generator for various routers v4
+WWW=		https://github.com/bgp/bgpq4
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+USES=		autoreconf compiler:c11 libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	bgp
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+MAKE_ARGS+=	CC="${CC}"
+
+PLIST_FILES=	bin/bgpq4 \
+		share/man/man8/bgpq4.8.gz
+
+.include <bsd.port.mk>

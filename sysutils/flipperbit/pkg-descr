@@ -1,0 +1,8 @@
+Flipperbit generates multiple corrupted variants of an input file by
+randomly flipping bits in selected byte ranges.
+
+Flipperbit allows to specify multiple byte ranges and the bit flipping
+probabilty.
+
+The output of flipperbit can be used as input to software (E.g., bulk file
+processing applications, file parsing utilities) as a form of dumb fuzzing.

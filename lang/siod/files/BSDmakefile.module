@@ -1,0 +1,34 @@
+SHLIB_NAME=	%%MODULE%%.so
+MK_PROFILE=	no
+
+WARNS=	7
+
+# Some modules have dependencies installed by other ports:
+gd_CFLAGS=	-isystem ${LOCALBASE}/include
+gd_LDADD=	-L${LOCALBASE}/lib -lgd
+regex_CFLAGS=	-isystem ${LOCALBASE}/include
+regex_LDADD=	-L${LOCALBASE}/lib -lgnuregex
+sql_sybase_CFLAGS=-isystem ${LOCALBASE}/include
+sql_sybase_LDADD=-L${LOCALBASE}/lib -lct
+sql_oracle_CFLAGS=-isystem ${LOCALBASE}/oracle8-client/rdbms/demo
+sql_oracle_LDADD=-L${LOCALBASE}/oracle8-client/lib -lclntsh
+
+.if ${CC:Mgcc?}
+# gcc8, for example, includes ${LOCALBASE}/include before /usr/include
+# which may cause gdbm-provided ndbm.h to be included instead of the
+# base one. We don't want gdbm, because that'll introduce a stealth
+# dependency.
+ndbm_CFLAGS=	-isystem /usr/include
+.endif
+
+CFLAGS+=	-DHAVE_SYS_PARAM_H ${%%MODULE%%_CFLAGS}
+LDADD=		${%%MODULE%%_LDADD}
+.if "%%MODULE%%" == "sql_oracle"
+LD_FATAL_WARNINGS=no	# Oracle client 8 only provides static library
+.endif
+
+SRCS=	%%MODULE%%.c
+
+LIBDIR=	${PREFIX}/lib/siod
+
+.include <bsd.lib.mk>

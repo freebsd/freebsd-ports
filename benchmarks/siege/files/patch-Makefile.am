@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2016-05-20 11:41:06 UTC
++++ Makefile.am
+@@ -20,6 +20,8 @@
+ ## 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ ##
+ 
++ACLOCAL_AMFLAGS   =    -I m4
++
+ AUTOMAKE_OPTIONS  =    foreign no-dependencies  
+ 
+ WARN_CFLAGS       =    @WARN_CFLAGS@

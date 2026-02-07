@@ -1,0 +1,3 @@
+When rebooting after a panic, send an encrypted email containing basic
+dump metadata along with a kernel backtrace, in order to assist FreeBSD
+developers in identifying and fixing common panics.

@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-01-13 17:09:13 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ # require a recent setuptools for `license = ` support
+-requires = ["setuptools >= 78.1.0", "wheel"]
++requires = ["setuptools >= 61.0", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -12,7 +12,7 @@ description = "The property-based testing library for 
+ ]
+ description = "The property-based testing library for Python"
+ 
+-license = "MPL-2.0"
++license = { text = "MPL-2.0" }
+ requires-python = ">= 3.10"
+ keywords = ["python", "testing", "fuzzing", "property-based-testing"]
+ classifiers = [

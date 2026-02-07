@@ -1,0 +1,14 @@
+lml seamlessly finds the lml based plugins from your current python environment
+but loads your plugins on demand. It is designed to support plugins that have
+external dependencies, especially bulky and/or memory hungry ones. lml provides
+the plugin management system only and the plugin interface is on your shoulder.
+
+lml enabled applications helps your customers in two ways:
+- Your customers could cherry-pick the plugins from pypi per python environment.
+  They could remove a plugin using pip uninstall command.
+- Only the plugins used at runtime gets loaded into computer memory.
+
+When you would use lml to refactor your existing code, it aims to flatten the
+complexity and to shrink the size of your bulky python library by distributing
+the similar functionalities across its plugins. However, you as the developer
+need to do the code refactoring by yourself and lml would lend you a hand.

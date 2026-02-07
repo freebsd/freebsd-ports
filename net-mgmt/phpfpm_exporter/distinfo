@@ -1,0 +1,5 @@
+TIMESTAMP = 1676666421
+SHA256 (go/net-mgmt_phpfpm_exporter/phpfpm_exporter-v0.6.1/v0.6.1.mod) = 14224876727118a43d6674cbbd137e10e04d8ce34afab7853bffc7e6626e1312
+SIZE (go/net-mgmt_phpfpm_exporter/phpfpm_exporter-v0.6.1/v0.6.1.mod) = 1082
+SHA256 (go/net-mgmt_phpfpm_exporter/phpfpm_exporter-v0.6.1/v0.6.1.zip) = fbaa3f530f037abb9432bd66c127873243bd093c6d873ccd8276c2189f08e2b3
+SIZE (go/net-mgmt_phpfpm_exporter/phpfpm_exporter-v0.6.1/v0.6.1.zip) = 18207

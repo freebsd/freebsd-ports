@@ -1,0 +1,23 @@
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -173,15 +173,13 @@
+ install: algae.info algae.1 algae_toc.html index.html info.db
+ 	-if test -f algae.info; then d=.; else d=$(srcdir); fi; \
+ 	for f in $$d/algae.info $$d/algae.info-*; do \
+-	  $(INSTALL_DATA) $$f $(infodir); \
+-	done; \
+-	if $(SHELL) -c 'install-info --version' > /dev/null 2>&1; then \
+-	  install-info --info-dir=$(infodir) $$d/algae.info; else true; fi
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(infodir); \
++	done
+ 	-if test -f algae_toc.html; then d=.; else d=$(srcdir); fi; \
+ 	for f in $$d/index.html $$d/algae*.html $$d/icon.gif $$d/info.db; do \
+-	  $(INSTALL_DATA) $$f $(htmldir); done
+-	-rm -f $(datadir)/algae/html; ln -s $(htmldir) $(datadir)/algae/html
+-	-$(INSTALL_DATA) algae.1 $(mandir)/algae.$(manext)
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(htmldir); done
++	-rm -f $(DESTDIR)$(datadir)/algae/html; ln -s $(htmldir) $(DESTDIR)$(datadir)/algae/html
++	-$(INSTALL_DATA) algae.1 $(DESTDIR)$(mandir)/algae.$(manext)
+ 
+ uninstall:
+ 	rm -f $(infodir)/algae.info* $(mandir)/algae.$(manext) \

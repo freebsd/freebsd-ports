@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2015-02-08 16:43:54.226325979 +0600
++++ Makefile.in	2015-02-08 16:45:17.150325866 +0600
+@@ -691,7 +691,7 @@
+ 	uninstall uninstall-am uninstall-local
+ 
+ 
+-install-data-local: uid_bit tpl_dir doc_dir rmail conf_dir
++install-data-local: tpl_dir rmail conf_dir
+ 
+ uninstall-local: rm-rmail rm-doc_dir rm-tpl_dir rm-dirs
+ 
+@@ -706,12 +706,6 @@
+ rm-tpl_dir:
+ 	rm -rf $(DESTDIR)@datadir@/masqmail/
+ 
+-doc_dir:
+-	install -d $(DESTDIR)@docdir@
+-	cp -r docs $(DESTDIR)@docdir@
+-	cp -r examples $(DESTDIR)@docdir@
+-	cp ChangeLog NEWS AUTHORS COPYING README TODO INSTALL THANKS $(DESTDIR)@docdir@
+-
+ rm-doc_dir:
+ 	cd $(DESTDIR)@docdir@ && ( \
+ 	    rm -rf docs examples ; \

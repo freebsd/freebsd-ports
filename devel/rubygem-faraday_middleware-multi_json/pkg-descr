@@ -1,0 +1,2 @@
+Simple Faraday middleware that uses MultiJson to unobtrusively
+encode JSON requests and parse JSON responses.

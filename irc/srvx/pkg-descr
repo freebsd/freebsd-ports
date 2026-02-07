@@ -1,0 +1,5 @@
+srvx is a set of IRC services for ircu P10 protocol networks; it is
+developed by a team of programmers affiliated with the GameSurge IRC
+Network.  srvx is designed to be a fast, extensible, scalable, and
+reliable provider of NickServ, ChanServ, HelpServ, OperServ, and Global
+services as well as advanced proxy detection.

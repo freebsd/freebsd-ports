@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: doh-proxy
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following line in /etc/rc.conf to enable doh-proxy:
+#
+# doh_proxy_enable="YES"
+# doh_proxy_flags="<set as needed>"
+#
+
+. /etc/rc.subr
+
+name=doh_proxy
+rcvar=doh_proxy_enable
+
+load_rc_config ${name}
+
+: ${doh_proxy_enable:="NO"}
+: ${doh_proxy_flags:=""}
+
+command="%%PREFIX%%/bin/doh-proxy"
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+
+doh_proxy_start()
+{
+    echo -n "Starting ${name}."
+    /usr/sbin/daemon -u nobody -S -p ${pidfile} \
+        ${command} ${doh_proxy_flags} && \
+        echo "Done"
+}
+
+run_rc_command "$1"

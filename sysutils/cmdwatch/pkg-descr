@@ -1,0 +1,5 @@
+This is the familiar Linux "watch" utility originally written by Tony
+Rems <rembo@unisoft.com> with help from Francois Pinard and more recently
+Mike Coleman <mkc@acm.org>.  I found it useful, so here it is.  Basically
+"watches" the output of a given command at a specified interval in a nice,
+ncurses-based format.

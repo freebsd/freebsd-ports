@@ -1,0 +1,3 @@
+Xmoji is a simple emoji keyboard for X11 designed to work without
+relying on any toolkit or input method. It doesn't use a toolkit itself
+and instead renders its GUI using XRender requests.

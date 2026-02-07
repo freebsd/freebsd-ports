@@ -1,0 +1,3 @@
+This module will download cartoon comic strip images from various websites
+and return a binary blob of the image, or write it to disk. Multiple comic
+strips can be supported through subclassed plugin modules.

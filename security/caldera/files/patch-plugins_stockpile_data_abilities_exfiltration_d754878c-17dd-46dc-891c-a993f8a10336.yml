@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/exfiltration/d754878c-17dd-46dc-891c-a993f8a10336.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/d754878c-17dd-46dc-891c-a993f8a10336.yml
+@@ -8,7 +8,7 @@
+     attack_id: T1048.003
+     name: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           LocalFile='#{host.dir.compress}';
+@@ -35,4 +35,4 @@
+           $requestStream.Dispose();
+   requirements:
+     - plugins.stockpile.app.requirements.paw_provenance:
+-        - source: host.dir.compress
+\ No newline at end of file
++        - source: host.dir.compress

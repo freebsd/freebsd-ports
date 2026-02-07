@@ -1,0 +1,2 @@
+fugashi is a Cython wrapper for MeCab, a Japanese tokenizer and morphological
+analysis tool.

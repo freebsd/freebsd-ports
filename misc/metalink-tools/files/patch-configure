@@ -1,0 +1,11 @@
+--- configure.orig	2009-01-05 17:28:15 UTC
++++ configure
+@@ -1906,7 +1906,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/s
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
+-  for ac_prog in mkdir gmkdir; do
++  for ac_prog in mkdir; do
+ 	 for ac_exec_ext in '' $ac_executable_extensions; do
+ 	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
+ 	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(

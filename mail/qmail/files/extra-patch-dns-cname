@@ -1,0 +1,11 @@
+--- dns.c	Mon Jun 15 10:53:16 1998
++++ dns.c	Wed Mar  5 11:31:13 2003
+@@ -196,7 +196,7 @@
+    if (!sa->len) return loop;
+    if (sa->s[sa->len - 1] == ']') return loop;
+    if (sa->s[sa->len - 1] == '.') { --sa->len; continue; }
+-   switch(resolve(sa,T_ANY))
++   switch(resolve(sa,T_CNAME))
+     {
+      case DNS_MEM: return DNS_MEM;
+      case DNS_SOFT: return DNS_SOFT;

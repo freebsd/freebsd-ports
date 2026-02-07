@@ -1,0 +1,11 @@
+--- devtools/OS/FreeBSD.orig	2014-03-05 00:59:45 UTC
++++ devtools/OS/FreeBSD
+@@ -6,7 +6,7 @@ dnl	Place personal settings in devtools/
+ define(`confMAPDEF', `-DNEWDB -DNIS -DMAP_REGEX')
+ define(`confLIBS', `-lutil')
+ 
+-define(`confLD', `cc')
++define(`confCC', `%%CC%%')
+ define(`confMTLDOPTS', `-pthread')
+ define(`confMTCCOPTS', `-D_THREAD_SAFE')
+ define(`confLDOPTS_SO', `-shared')

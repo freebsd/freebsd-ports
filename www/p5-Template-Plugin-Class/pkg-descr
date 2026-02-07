@@ -1,0 +1,2 @@
+Template::Plugin::Class allows you to call class methods on arbitrary
+classes. One use for this is in Class::DBI style applications.

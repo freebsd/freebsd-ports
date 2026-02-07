@@ -1,0 +1,18 @@
+--- src/%%NVSRC%%/Makefile.orig
++++ src/%%NVSRC%%/Makefile
+@@ -41,5 +41,14 @@
+ clean:
+ 	@rm -f ${CLEANFILES:S/${RMOBJ}//}
+ 	@rm -f stdarg.h
++
++EXPORT_SYMS=	nv_kthread_q_flush \
++		nv_kthread_q_init \
++		nv_kthread_q_init_on_node \
++		nv_kthread_q_item_init \
++		nv_kthread_q_run_self_test \
++		nv_kthread_q_schedule_q_item \
++		nv_kthread_q_stop \
++		nv_kthread_task_callback
+ 
+ .include <bsd.kmod.mk>
+

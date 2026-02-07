@@ -1,0 +1,17 @@
+bin/hdhomerun_config
+include/libhdhomerun/hdhomerun.h
+include/libhdhomerun/hdhomerun_channels.h
+include/libhdhomerun/hdhomerun_channelscan.h
+include/libhdhomerun/hdhomerun_control.h
+include/libhdhomerun/hdhomerun_debug.h
+include/libhdhomerun/hdhomerun_device.h
+include/libhdhomerun/hdhomerun_device_selector.h
+include/libhdhomerun/hdhomerun_discover.h
+include/libhdhomerun/hdhomerun_os.h
+include/libhdhomerun/hdhomerun_os_posix.h
+include/libhdhomerun/hdhomerun_os_windows.h
+include/libhdhomerun/hdhomerun_pkt.h
+include/libhdhomerun/hdhomerun_sock.h
+include/libhdhomerun/hdhomerun_types.h
+include/libhdhomerun/hdhomerun_video.h
+lib/libhdhomerun.so

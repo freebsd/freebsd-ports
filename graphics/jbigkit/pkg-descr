@@ -1,0 +1,24 @@
+JBIG-KIT implements  a highly  effective data compression  algorithm for
+bi-level high-resolution images such as fax pages or scanned documents.
+
+This is  a portable library  of compression and  decompression functions
+with a  documented interface  that can  be included  into your  image or
+document processing software. Also provided are ready-to-use compression
+and decompression programs with a simple command line interface (similar
+to  the converters  found  in Jef  Poskanzer's  PBM conversion package).
+
+JBIG-KIT implements the specification
+
+  International  Standard ISO/IEC  11544:1993  and ITU-T  Recommendation
+  T.82(1993), "Information technology -  Coded representation of picture
+  and  audio  information  - progressive  bi-level  image  compression",
+  <http://www.itu.ch/itudoc/itu-t/rec/t/t82_23822.html>,
+
+which  is commonly  referred  to  as the  "JBIG  standard". JBIG  (Joint
+Bi-level  Image experts  Group) is  the committee  which developed  this
+international  standard for  the  lossless compression  of images  using
+arithmetic coding.  Like the well-known compression  algorithms JPEG and
+MPEG, also  JBIG has been  developed and published by  the International
+Organization   for   Standardization   (ISO)   and   the   International
+Telecommunication  Union   (ITU)  (see  also   <http://www.iso.ch/>  and
+<http://www.itu.ch/>).

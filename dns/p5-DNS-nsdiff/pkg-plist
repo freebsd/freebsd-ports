@@ -1,0 +1,8 @@
+bin/nsdiff
+bin/nspatch
+bin/nsvi
+%%SITE_PERL%%/DNS/nsdiff.pm
+%%PERL5_MAN1%%/nsdiff.1.gz
+%%PERL5_MAN1%%/nspatch.1.gz
+%%PERL5_MAN1%%/nsvi.1.gz
+%%PERL5_MAN3%%/DNS::nsdiff.3pm.gz

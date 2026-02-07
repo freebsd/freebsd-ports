@@ -1,0 +1,7 @@
+EtherApe is a graphical network monitor for Unix modeled after Etherman.
+Featuring link layer, IP and TCP modes, it displays network activity
+graphically.  Hosts and links change in size with traffic.  Color coded
+protocols display.  It supports Ethernet, FDDI, Token Ring, ISDN, PPP,
+SLIP, and WLAN devices, plus several encapsulation formats.  It can
+filter traffic to be shown, and can read packets from a file as well as
+live from the network.  Node statistics can be exported.

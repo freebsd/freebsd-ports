@@ -1,0 +1,20 @@
+--- configure.ac.orig	2024-05-21 08:01:41 UTC
++++ configure.ac
+@@ -41,7 +41,6 @@
+ AC_LANG([C++])
+ AX_CXX_COMPILE_STDCXX([11], [noext])
+ 
+-AC_ARG_OPTIMIZATION
+ AC_ARG_DEBUG
+ 
+ if test "x$debug" == "xyes"; then
+@@ -69,9 +68,6 @@
+ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"],
+                      [The domain to use with gettext])
+ AC_SUBST(LOCALEDIR)
+-AM_GNU_GETTEXT([external])
+-# This is here so autoreconf will run autopoint
+-AM_GNU_GETTEXT_VERSION([0.15])
+ 
+ case "$host" in
+     *mingw* | *cygwin*)

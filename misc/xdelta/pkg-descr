@@ -1,0 +1,9 @@
+Xdelta provides the ability to generate deltas between a pair
+of files and later apply those deltas.  It operates similar to
+the diff and patch commands, but works on binary files and does
+not produce a human readable output.
+
+Xdelta has three subcommands, delta, patch, and info.  Delta
+accepts two file versions and produces a delta, while patch
+accepts the original file version and delta and produces the
+second version.

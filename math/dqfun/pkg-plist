@@ -1,0 +1,10 @@
+include/dqfuna.mod
+include/dqfune.mod
+include/dqmodule.mod
+%%PORTDOCS%%%%DOCSDIR%%/README-dqfun.txt
+%%PORTDOCS%%%%DOCSDIR%%/testdqfun.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tpphixdq.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tpslqm1dq.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tquaddq.ref.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tpslqm1dq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tpslqm1dq.f90

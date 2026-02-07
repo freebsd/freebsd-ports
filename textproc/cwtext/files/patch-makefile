@@ -1,0 +1,17 @@
+--- makefile.orig	2004-12-16 12:15:22 UTC
++++ makefile
+@@ -1,11 +1,9 @@
+-PREFIX=/usr/local
+-
+ ALL: cwtext cwpcm cwmm
+ 
+ install: ALL
+-	install -sc cwtext ${PREFIX}/bin
+-	install -sc cwpcm ${PREFIX}/bin
+-	install -sc cwmm ${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) cwtext ${DESTDIR}${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) cwpcm ${DESTDIR}${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) cwmm ${DESTDIR}${PREFIX}/bin
+ 
+ cwmm: cwmm.o morse.o
+ 	${CC} ${CFLAGS} -o cwmm $^

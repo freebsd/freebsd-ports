@@ -1,0 +1,10 @@
+--- configure.orig	2014-12-06 19:58:24 UTC
++++ configure
+@@ -2486,6 +2486,7 @@ case $enable_silent_rules in # (((
+    no) AM_DEFAULT_VERBOSITY=1;;
+     *) AM_DEFAULT_VERBOSITY=0;;
+ esac
++unset enableval
+ am_make=${MAKE-make}
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether $am_make supports nested variables" >&5
+ $as_echo_n "checking whether $am_make supports nested variables... " >&6; }

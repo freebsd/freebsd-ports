@@ -1,0 +1,14 @@
+--- hp-uiscan.desktop.in.orig	2022-02-23 07:41:04 UTC
++++ hp-uiscan.desktop.in
+@@ -1,8 +1,8 @@
+-#!/usr/bin/env xdg-open
+ [Desktop Entry]
+ Version=1.0
+ Type=Application
+ Terminal=false
+ Name=hp-uiscan
+-Exec=/usr/bin/hp-uiscan
+-Icon=/usr/share/icons/Humanity/devices/48/printer.svg
++Exec=hp-uiscan
++Icon=hp_logo
++Categories=Utility;

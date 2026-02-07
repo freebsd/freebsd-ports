@@ -1,0 +1,15 @@
+--- shmap/Makefile.in.orig	Wed Jul 10 22:28:42 2002
++++ shmap/Makefile.in	Sun Dec 15 06:02:36 2002
+@@ -80,10 +80,10 @@
+ 
+ lib_LTLIBRARIES = libshmap.la
+ libshmap_la_SOURCES = core.c mem_core.c shmap.c shmap_hm.c shmap_ll.c shmap_value.c shmap_btree.c shmap_fifo.c pool.c
+-libshmap_la_LIBADD = -L../mm-1.1.3 -lmm
++libshmap_la_LIBADD = -lmm
+ noinst_HEADERS = core.h mem_core.h shmap_hm.h shmap_ll.h shmap_value.h shmap_btree.h shmap_fifo.h pool.h shmap_internals.h
+ include_HEADERS = shmap.h
+-CFLAGS = -Wall -g -O2 -I../mm-1.1.3
++CFLAGS = @CFLAGS@
+ subdir = shmap
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/shmap_config.h

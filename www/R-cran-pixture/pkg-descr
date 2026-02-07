@@ -1,0 +1,3 @@
+Pixture is an R package designed to create HTML image galleries. The galleries
+can be standalone, included in an Rmarkdown/Quarto document or incorporated into
+a Shiny app.

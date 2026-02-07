@@ -1,0 +1,14 @@
+include/libcaes.h
+include/libcaes/definitions.h
+include/libcaes/error.h
+include/libcaes/extern.h
+include/libcaes/features.h
+include/libcaes/types.h
+lib/libcaes.a
+lib/libcaes.so
+lib/libcaes.so.1
+lib/libcaes.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pycaes.a
+%%PYTHON_SITELIBDIR%%/pycaes.so
+libdata/pkgconfig/libcaes.pc
+share/man/man3/libcaes.3.gz

@@ -1,0 +1,10 @@
+%%SITE_ARCH%%/Bit/Vector.pm
+%%SITE_ARCH%%/Bit/Vector.pod
+%%SITE_ARCH%%/Bit/Vector/Overload.pm
+%%SITE_ARCH%%/Bit/Vector/Overload.pod
+%%SITE_ARCH%%/Bit/Vector/String.pm
+%%SITE_ARCH%%/Bit/Vector/String.pod
+%%SITE_ARCH%%/auto/Bit/Vector/Vector.so
+%%PERL5_MAN3%%/Bit::Vector.3.gz
+%%PERL5_MAN3%%/Bit::Vector::Overload.3.gz
+%%PERL5_MAN3%%/Bit::Vector::String.3.gz

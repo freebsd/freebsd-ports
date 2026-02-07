@@ -1,0 +1,28 @@
+--- migemo-server.orig	2001-08-13 18:30:51.000000000 +0900
++++ migemo-server	2011-08-22 22:45:10.000000000 +0900
+@@ -10,7 +10,6 @@
+ # the GNU General Public License version 2.
+ #
+ 
+-$KCODE = "e"
+ require 'migemo'
+ require 'cgi'
+ require 'socket'
+@@ -73,7 +72,7 @@
+   end
+ 
+   def print_form (socket)
+-    print_http (socket, 
++    print_http(socket, 
+ 		['HTTP/1.0 200', 
+ 		  'Content-type: text/html'], 
+ 		<<"EOF")
+@@ -111,7 +110,7 @@
+ 
+   def print_http (socket, header, body)
+     header.each { |h| socket.syswrite h + CRLF }
+-    socket.syswrite 'Content-Length: ' + body.size.to_s + CRLF
++    socket.syswrite 'Content-Length: ' + body.bytesize.to_s + CRLF
+     socket.syswrite CRLF
+     socket.syswrite body
+   end

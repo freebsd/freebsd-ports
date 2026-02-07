@@ -1,0 +1,14 @@
+include/suitesparse/cholmod.h
+lib/cmake/CHOLMOD/CHOLMODConfig.cmake
+lib/cmake/CHOLMOD/CHOLMODConfigVersion.cmake
+lib/cmake/CHOLMOD/CHOLMODTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CHOLMOD/CHOLMODTargets.cmake
+lib/cmake/CHOLMOD/CHOLMODTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CHOLMOD/CHOLMODTargets_static.cmake
+lib/libcholmod.a
+lib/libcholmod.so
+lib/libcholmod.so.5
+lib/libcholmod.so.%%VER%%
+libdata/pkgconfig/CHOLMOD.pc
+%%PORTDOCS%%%%DOCSDIR%%/CHOLMOD_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHOLMOD_UserGuide.pdf

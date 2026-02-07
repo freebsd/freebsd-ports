@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Unix/Lsof.pm
+%%SITE_PERL%%/Unix/Lsof/Result.pm
+%%PERL5_MAN3%%/Unix::Lsof.3.gz
+%%PERL5_MAN3%%/Unix::Lsof::Result.3.gz

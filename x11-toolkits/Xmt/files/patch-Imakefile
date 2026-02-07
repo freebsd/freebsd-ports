@@ -1,0 +1,8 @@
+--- Imakefile.orig	2001-07-14 15:40:16.000000000 -0700
++++ Imakefile	2016-03-26 23:12:38.339575000 -0700
+@@ -63,4 +63,4 @@
+ /* 
+  * target to install Xmt.tmpl in /usr/lib/X11/config
+  */
+-InstallNonExec(Xmt.tmpl, $(IRULESRC))
++InstallNonExec(Xmt.tmpl,$(IRULESRC))

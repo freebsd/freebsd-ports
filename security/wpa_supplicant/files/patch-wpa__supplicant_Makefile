@@ -1,0 +1,26 @@
+--- wpa_supplicant/Makefile.orig	2024-07-20 18:04:37 UTC
++++ wpa_supplicant/Makefile
+@@ -140,6 +140,14 @@ OBJS_c += ../src/utils/os_$(CONFIG_OS).o
+ OBJS_p += ../src/utils/os_$(CONFIG_OS).o
+ OBJS_c += ../src/utils/os_$(CONFIG_OS).o
+ 
++ifdef CONFIG_DRIVER_NDIS
++OBJS += ../src/utils/Packet32.o
++ifdef CONFIG_PRIVSEP
++OBJS += ../src/drivers/driver_ndis.o
++endif
++OBJS_priv += ../src/utils/Packet32.o
++endif
++
+ ifdef CONFIG_WPA_TRACE
+ CFLAGS += -DWPA_TRACE
+ OBJS += ../src/utils/trace.o
+@@ -2050,7 +2058,7 @@ libwpa_client.so: $(LIBCTRLSO)
+ 
+ libwpa_client.so: $(LIBCTRLSO)
+ 	@$(E) "  CC  $@ ($^)"
+-	$(Q)$(CC) $(LDFLAGS) -o $@ $(CFLAGS) -shared -fPIC $^
++	$(Q)$(CC) $(LDFLAGS) -o $@ $(CFLAGS) -Wl,-soname,$@.2 -shared -fPIC $^
+ 
+ OBJS_wpatest := libwpa_test.o
+ _OBJS_VAR := OBJS_wpatest

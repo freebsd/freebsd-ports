@@ -1,0 +1,3 @@
+python-libevdev is a Python wrapper around the libevdev C library.
+It provides a Pythonic API to read events from the Linux kernel’s input device
+nodes and to read and/or modify the device’s state and capabilities.

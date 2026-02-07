@@ -1,0 +1,17 @@
+include/freebsd-nvme-shim/asm/bitsperlong.h
+include/freebsd-nvme-shim/asm/byteorder.h
+include/freebsd-nvme-shim/asm/types.h
+include/freebsd-nvme-shim/elf.h
+include/freebsd-nvme-shim/errno.h
+include/freebsd-nvme-shim/linux/errno.h
+include/freebsd-nvme-shim/linux/fs.h
+include/freebsd-nvme-shim/linux/stddef.h
+include/freebsd-nvme-shim/linux/types.h
+include/freebsd-nvme-shim/netinet6/in6.h
+include/freebsd-nvme-shim/strings.h
+include/freebsd-nvme-shim/sys/elf64.h
+include/freebsd-nvme-shim/sys/elf_common.h
+include/freebsd-nvme-shim/sys/ioctl.h
+include/freebsd-nvme-shim/sys/mman.h
+include/freebsd-nvme-shim/sys/sysinfo.h
+include/freebsd-nvme-shim/time.h

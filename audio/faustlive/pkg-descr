@@ -1,0 +1,5 @@
+A standalone application that embeds Faust (as the libfaust library) and
+LLVM compiler to provide dynamical compilation for the Faust programming
+language.
+
+FaustLive is in its alpha stage.

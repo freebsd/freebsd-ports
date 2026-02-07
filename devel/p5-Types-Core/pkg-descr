@@ -1,0 +1,10 @@
+Types::Core provides syntax symplifier for type checking. It allows easy,
+non-quoted usage of types as literals, and allows the standard type names to be
+used as true/false check routines of references.
+
+For the most basic functions, they take either 0 or 1 arguments. If 1 parameter,
+then they test it to see if the ref is of the given type (blessed or not). If
+false, undef is returned, of true, the ref, itself is returned.
+
+For no args, they return literals of themselves, allowing the named strings to
+be used as Literals without quotes.

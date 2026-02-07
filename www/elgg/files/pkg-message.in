@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+1) Make sure your apache's mod_rewrite extension is working,
+and change the AllowOverride setting of the DocumentRoot to
+    AllowOverride all
+
+2) Create a user and a empty database for Elgg to store all
+   its tables in (or choose an existing database).
+
+3) Add the following to your Apache configuration, and
+   restart the server:
+
+   Alias /elgg %%WWWDIR%%/
+   <Directory %%WWWDIR%%>
+      AllowOverride all
+      Require all granted
+   </Directory>
+
+4) Visit your Elgg site with a browser (i.e.,
+   http://your.server.com/elgg/).
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   http://docs.elgg.org/wiki/Installation
+   http://docs.elgg.org/wiki/Troubleshooting
+EOM
+}
+{ type: install
+  message: <<EOM
+Please follow instructions in %%WWWDIR%%/UPGRADE.txt.
+EOM
+}
+]

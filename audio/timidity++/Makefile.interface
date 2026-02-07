@@ -1,0 +1,180 @@
+# Shared by timidity++ interface ports
+
+BUILD_DEPENDS+=	libarc>0:archivers/libarc
+RUN_DEPENDS+=	timidity++>0:audio/timidity++
+
+SLAVEDIRS=	audio/timidity++-emacs audio/timidity++-gtk \
+		audio/timidity++-motif audio/timidity++-slang \
+		audio/timidity++-tcltk audio/timidity++-xaw \
+		audio/timidity++-xskin \
+		japanese/timidity++-slang japanese/timidity++-tcltk
+
+INTERFACE=	${PKGNAMESUFFIX:S/^-//}
+
+DESCR=		${.CURDIR}/pkg-descr
+
+.if exists(${.CURDIR}/pkg-plist)
+PLIST=		${.CURDIR}/pkg-plist
+.else
+PLIST=		${NONEXISTENT}
+.endif
+
+.if exists(${.CURDIR}/pkg-message)
+PKGMESSAGE=	${.CURDIR}/pkg-message
+.else
+PKGMESSAGE=	${NONEXISTENT}
+.endif
+
+BUILD_WRKSRC=	${WRKSRC}/interface
+INSTALL_WRKSRC=	${WRKSRC}/interface
+
+CONFIGURE_ARGS+=--enable-dynamic=${INTERFACE}
+
+# interface section
+
+.if ${INTERFACE} == "emacs"
+CONFIGURE_ARGS+=--with-lispdir=${PREFIX}/share/emacs/site-lisp
+.endif
+
+.if ${INTERFACE} == "gtk"
+LINK=		gtkmidi
+
+USES+=		gnome pkgconfig
+USE_GNOME=	gtk20
+
+DESKTOP_ENTRIES="GtkMidi" "" "" "${LINK}" "GTK;AudioVideo;Audio;Midi;" ""
+.endif
+
+.if ${INTERFACE} == "motif"
+LINK=		xmmidi
+
+USES+=		motif
+
+DESKTOP_ENTRIES="XmMidi" "" "" "${LINK}" "Motif;AudioVideo;Audio;Midi;" ""
+.endif
+
+.if ${INTERFACE} == "slang"
+.if defined(JAPANESE)
+LIB_DEPENDS+=	libslang.so:japanese/libslang
+.else
+LIB_DEPENDS+=	libslang.so:devel/libslang2
+.endif
+
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=\
+		--with-includes=${LOCALBASE}/include \
+		--with-libraries=${LOCALBASE}/lib \
+		--enable-ncurses
+.endif
+
+.if ${INTERFACE} == "tcltk"
+LINK=		tkmidi
+
+.if defined(JAPANESE)
+LIB_DEPENDS+=	libtk80jp.so:japanese/tk80
+CONFIGURE_ARGS+=\
+		--with-tcl-includes=${LOCALBASE}/include/tcl8.0jp \
+		--with-tk-includes=${LOCALBASE}/include/tk8.0jp \
+		--with-tcl-libs=${LOCALBASE}/lib \
+		--with-tk-libs=${LOCALBASE}/lib
+WISH=		${LOCALBASE}/bin/wish8.0jp
+.else
+USES+=		tk
+CONFIGURE_ARGS+=\
+		--with-tcl-includes=${TCL_INCLUDEDIR} \
+		--with-tk-includes=${TK_INCLUDEDIR} \
+		--with-tcl-libs=${LOCALBASE}/lib \
+		--with-tk-libs=${LOCALBASE}/lib
+.endif
+
+USES+=		shebangfix xorg
+SHEBANG_FILES=	interface/tkmidity.ptcl interface/tkpanel.tcl
+SHEBANG_LANG=	wish
+wish_OLD_CMD=	/usr/bin/wish
+wish_CMD=	${WISH}
+USE_XORG=	x11
+CONFIGURE_ENV+=	WISH="${WISH}"
+
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
+
+DESKTOP_ENTRIES="TkMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
+.endif
+
+.if ${INTERFACE} == "xaw"
+LINK=		xawmidi
+
+LIB_DEPENDS+=	libXaw3d.so:x11-toolkits/libXaw3d
+
+USES+=		xorg
+USE_XORG=	x11 xext xmu xt sm ice xpm
+
+DESKTOP_ENTRIES="XawMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
+.endif
+
+.if ${INTERFACE} == "xskin"
+LINK=		xskinmidi
+
+USES+=		xorg
+USE_XORG=	x11
+
+DESKTOP_ENTRIES="XSkinMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
+.endif
+
+post-extract:
+	@${RM} ${WRKSRC}/libarc/*.h
+	@${RM} ${WRKSRC}/utils/mblock.h
+
+post-patch:
+.if ${INTERFACE} == "slang"
+	@${REINPLACE_CMD} -e \
+		's|"-lslang"|"-lslang $$LIBS"|' ${WRKSRC}/configure
+.endif
+.if ${INTERFACE} == "tcltk"
+.if defined(JAPANESE)
+	@${REINPLACE_CMD} -e \
+		's|in tcl.*;|in tcl80jp;| ; \
+		 s|in tk.*;|in tk80jp;|' ${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} -e \
+		's|in tcl.*;|in tcl${TCL_VER:S|.||};| ; \
+		 s|in tk.*;|in tk${TK_VER:S|.||};|' ${WRKSRC}/configure
+.endif
+.endif
+
+post-install:
+.if ${INTERFACE} == "tcltk"
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/C && ${INSTALL_DATA} README.tk \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME}
+	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_DATA} README.tk \
+		${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME})
+.endif
+#
+.if ${INTERFACE} == "xaw"
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/app-defaults
+	cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} TiMidity.ad \
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/TiMidity
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults
+	cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} TiMidity-uj.ad \
+		${STAGEDIR}${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/C && ${INSTALL_DATA} README.xaw \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME}
+	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_DATA} README.xaw \
+		${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME})
+.endif
+#
+.if ${INTERFACE} == "xskin"
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/C && ${INSTALL_DATA} README.xskin \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME}
+	(cd ${WRKSRC}/doc/ja_JP.eucJP && ${INSTALL_DATA} README.xskin \
+		${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME})
+.endif
+#
+.if defined(LINK)
+	${LN} -sf timidity ${STAGEDIR}${PREFIX}/bin/${LINK}
+.endif

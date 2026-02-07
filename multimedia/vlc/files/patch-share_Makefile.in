@@ -1,0 +1,11 @@
+--- share/Makefile.in.orig	2017-04-06 14:40:37 UTC
++++ share/Makefile.in
+@@ -1845,7 +1845,7 @@ skins2/default.vlt: $(skins2_default_vlt
+ 	GZIP=--no-name \
+ 	tar cvvzf skins2/default.vlt.tmp \
+ 		--format=ustar $$tarsort \
+-		--owner=root --group=root --directory="$(srcdir)/skins2" \
++		--directory="$(srcdir)/skins2" \
+ 		default/
+ 	$(AM_V_at)mv -f -- skins2/default.vlt.tmp skins2/default.vlt
+ 

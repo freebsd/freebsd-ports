@@ -1,0 +1,4 @@
+A minimalist FreeBSD program to clone/pull Git repositories.
+
+Intended for non-developers, gitup(1) synchronizes local repositories
+without the complexities of the official Git client, git(1).

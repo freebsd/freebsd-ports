@@ -1,0 +1,8 @@
+rubygem-benelux provides a mad way to time Ruby codes.
+
+Features:
+- A replacement for Benchmark.measure
+- Create timers for any Ruby method
+- Store arbitrary messages
+- Granular statistics
+- Thread-safe

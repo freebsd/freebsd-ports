@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+Make sure to install dependencies with:
+  cd %%WWWDIR%% && composer i
+
+Make sure you modify %%WWWDIR%%/include/config.php to your needs and your web
+server configuration to serve WebSVN!
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+Make sure to update dependencies with:
+  cd %%WWWDIR%% && composer u
+EOM
+},
+{ type: remove
+  message: <<EOM
+You would like to delete:
+  rm -R %%WWWDIR%% %%ETCDIR%%
+EOM
+}
+]

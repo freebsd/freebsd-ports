@@ -1,0 +1,13 @@
+Install docs into share/doc/ rather than include/
+
+--- CMakeLists.txt.orig	2020-09-04 01:23:31 UTC
++++ CMakeLists.txt
+@@ -737,7 +737,7 @@ foreach(pkgconfig IN ITEMS "${qhull_SHAREDR};Qhull ree
+     if(LIBRARY_NAME STREQUAL "libqhull")
+         set(LIBRARY_NAME "qhull")
+     endif()
+-    if(CMAKE_BUILD_TYPE STREQUAL "Debug")
++    if(FALSE AND CMAKE_BUILD_TYPE STREQUAL "Debug")
+         string(REGEX REPLACE "_(.)$" "_\\1d" LIBRARY_NAME ${LIBRARY_NAME})
+         string(REGEX REPLACE "([^d])$" "\\1_d" LIBRARY_NAME ${LIBRARY_NAME})
+     endif()

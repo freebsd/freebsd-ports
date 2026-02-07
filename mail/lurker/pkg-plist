@@ -1,0 +1,86 @@
+bin/lurker-index
+bin/lurker-list
+bin/lurker-params
+bin/lurker-prune
+bin/lurker-regenerate
+bin/lurker-search
+@sample etc/lurker/lurker.conf.sample
+@sample etc/lurker/apache.conf.sample
+share/man/man1/lurker-index.1.gz
+share/man/man1/lurker-list.1.gz
+share/man/man1/lurker-params.1.gz
+share/man/man1/lurker-prune.1.gz
+share/man/man1/lurker-regenerate.1.gz
+share/man/man1/lurker-search.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+www/lurker/bounce.cgi
+www/lurker/imgs/a.png
+www/lurker/imgs/b.png
+www/lurker/imgs/bar.png
+www/lurker/imgs/c.png
+www/lurker/imgs/d.png
+www/lurker/imgs/e.png
+www/lurker/imgs/f.png
+www/lurker/imgs/g.png
+www/lurker/imgs/h.png
+www/lurker/imgs/i.png
+www/lurker/imgs/j.png
+www/lurker/imgs/k.png
+www/lurker/imgs/next.png
+www/lurker/imgs/paperclip.png
+www/lurker/imgs/prev.png
+www/lurker/imgs/reply.png
+www/lurker/imgs/root.png
+www/lurker/imgs/trash.png
+www/lurker/index.html
+www/lurker/jump.cgi
+www/lurker/keyword.cgi
+www/lurker/lurker.cgi
+www/lurker/lurker.docroot
+www/lurker/ui/ca.xml
+www/lurker/ui/common.js
+www/lurker/ui/common.xsl
+www/lurker/ui/da.xml
+www/lurker/ui/de.xml
+www/lurker/ui/default.css
+www/lurker/ui/el.xml
+www/lurker/ui/en.xml
+www/lurker/ui/es.xml
+www/lurker/ui/fi.xml
+www/lurker/ui/fr.xml
+www/lurker/ui/gl.xml
+www/lurker/ui/hu.xml
+www/lurker/ui/it.xml
+www/lurker/ui/ja.xml
+www/lurker/ui/lang.xml
+www/lurker/ui/lang.xsl
+www/lurker/ui/list.xsl
+www/lurker/ui/message.xsl
+www/lurker/ui/mindex.xsl
+www/lurker/ui/nl.xml
+www/lurker/ui/pl.xml
+www/lurker/ui/pt-BR.xml
+www/lurker/ui/pt.xml
+www/lurker/ui/search.xsl
+www/lurker/ui/splash.xsl
+www/lurker/ui/thread.xsl
+@dir www/lurker/zap
+@dir www/lurker/ui
+@dir www/lurker/thread
+@dir www/lurker/splash
+@dir www/lurker/search
+@dir www/lurker/mindex
+@dir www/lurker/message
+@dir www/lurker/mbox
+@dir www/lurker/list
+@dir www/lurker/imgs
+@dir www/lurker/attach
+@dir www/lurker
+@owner
+@group
+@dir /var/lib/lurker
+@dir /var/lib

@@ -1,0 +1,11 @@
+--- build/CMakeLists.txt.orig	2023-11-03 09:52:40 UTC
++++ build/CMakeLists.txt
+@@ -257,7 +257,7 @@ else()
+ 	set (INSTALL_BIN 		${CMAKE_INSTALL_PREFIX}/bin)
+ 	set (INSTALL_LIB 		${CMAKE_INSTALL_PREFIX}/lib)
+ 	set (INSTALL_INC 		${CMAKE_INSTALL_PREFIX}/include/guido)
+-	set (INSTALL_SAMPLES 	${CMAKE_INSTALL_PREFIX}/share/guidolib/examples)
++	set (INSTALL_SAMPLES 	share/examples/guidolib)
+ 	set (INSTALL_APPS 		${CMAKE_INSTALL_PREFIX}/bin)
+ 	set (INSTALL_DOC 		${CMAKE_INSTALL_PREFIX}/share/guidolib/doc)
+ 	set (INSTALL_INTERFACES ${CMAKE_INSTALL_PREFIX}/share/guidolib)

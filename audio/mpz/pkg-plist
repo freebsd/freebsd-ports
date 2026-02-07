@@ -1,0 +1,14 @@
+bin/mpz
+share/applications/mpz.desktop
+share/icons/hicolor/16x16/apps/mpz.png
+share/icons/hicolor/22x22/apps/mpz.png
+share/icons/hicolor/24x24/apps/mpz.png
+share/icons/hicolor/32x32/apps/mpz.png
+share/icons/hicolor/48x48/apps/mpz.png
+share/icons/hicolor/64x64/apps/mpz.png
+share/icons/hicolor/72x72/apps/mpz.png
+share/icons/hicolor/96x96/apps/mpz.png
+share/icons/hicolor/128x128/apps/mpz.png
+share/icons/hicolor/192x192/apps/mpz.png
+share/icons/hicolor/256x256/apps/mpz.png
+share/icons/hicolor/512x512/apps/mpz.png

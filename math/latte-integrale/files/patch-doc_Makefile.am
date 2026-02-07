@@ -1,0 +1,8 @@
+--- doc/Makefile.am.orig	2018-12-05 22:18:20 UTC
++++ doc/Makefile.am
+@@ -1,4 +1,4 @@
+-docdir = $(pkgdatadir)/doc
++docdir = $(prefix)/share/doc/latte-integrale
+ 
+ doc_DATA = manual.pdf
+ 

@@ -1,0 +1,3 @@
+libgedit-gfls is part of Gedit Technology.
+It is a module dedicated to file loading and saving for the needs of Gedit
+and other similar text editors.

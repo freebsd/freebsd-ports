@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: dbus
+# REQUIRE: DAEMON ldconfig
+#
+# Add the following lines to /etc/rc.conf to enable the D-BUS messaging system:
+#
+# dbus_enable="YES"
+#
+
+. /etc/rc.subr
+
+: ${dbus_enable=${gnome_enable-NO}} ${dbus_flags="--system"}
+
+name=dbus
+rcvar=dbus_enable
+
+command="%%PREFIX%%/bin/dbus-daemon"
+pidfile="/var/run/dbus/pid"
+
+start_precmd="dbus_prestart"
+stop_postcmd="dbus_poststop"
+
+dbus_prestart()
+{
+    mkdir -p /var/lib/dbus
+    %%PREFIX%%/bin/dbus-uuidgen --ensure
+    mkdir -p /var/run/dbus
+}
+
+dbus_poststop()
+{
+    rm -f $pidfile
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

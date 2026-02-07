@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sat Apr 28 17:58:52 2007
++++ Makefile.in	Sat Apr 28 18:03:51 2007
+@@ -75,7 +75,7 @@
+ 	uninstall-recursive
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = docs intl icons m4 po src tables skim
++DIST_SUBDIRS = icons tables
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)
+@@ -260,7 +260,7 @@
+ EXTRA_DIST = config.rpath mkinstalldirs  bootstrap scim-tables.spec
+ AUTOMAKE_OPTIONS = gnu
+ @SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR = skim
+-SUBDIRS = docs intl icons m4 po src tables $(SKIM_SUBDIR)
++SUBDIRS = icons tables
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure $(AUX_DIST)
+ CLEANFILES = *.bak 
+ ACLOCAL_AMFLAGS = -I m4

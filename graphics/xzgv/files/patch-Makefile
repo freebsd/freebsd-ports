@@ -1,0 +1,35 @@
+--- Makefile.orig	2009-04-30 21:58:36 UTC
++++ Makefile
+@@ -32,8 +32,8 @@ src: xzgv
+ xzgv:
+ 	cd src && $(MAKE) xzgv
+ 
+-src/install-info: src/install-info.c
+-	cd src && $(MAKE) install-info
++#src/install-info: src/install-info.c
++#	cd src && $(MAKE) install-info
+ 
+ man: doc/xzgv.1
+ 
+@@ -57,13 +57,16 @@ realclean:
+ 	cd doc && $(MAKE) realclean
+ 	$(RM) *~
+ 
+-install: all
+-	cd src && $(MAKE) install
+-	cd doc && $(MAKE) install
++#install: all
++#	cd src && $(MAKE) install
++#	cd doc && $(MAKE) install
++install: 
++#	cd src && $(MAKE) install
++#	cd doc && $(MAKE) install
+ 
+ uninstall:
+-	cd src && $(MAKE) uninstall
+-	cd doc && $(MAKE) uninstall
++#	cd src && $(MAKE) uninstall
++#	cd doc && $(MAKE) uninstall
+ 
+ 
+ # The stuff below makes the distribution tgz.

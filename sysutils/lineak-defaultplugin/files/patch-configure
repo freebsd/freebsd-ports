@@ -1,0 +1,11 @@
+--- configure.orig	Wed Dec 29 19:12:29 2004
++++ configure	Wed Dec 29 19:15:51 2004
+@@ -21305,7 +21305,7 @@
+ echo "${ECHO_T}libraries $x_libraries, headers $x_includes" >&6
+ fi
+ 
+-   LDFLAGS="$all_libraries -L${x_libraries} $X_LDFLAGS -lX11 -lXext -ldl"
++   LDFLAGS="$LDFLAGS $all_libraries -L${x_libraries} $X_LDFLAGS -lX11 -lXext -ldl"
+    CPPFLAGS="$all_includes -I${x_includes} ${CPPFLAGS} "
+       echo "$as_me:$LINENO: checking for ac_check_lineak in -llineak" >&5
+ echo $ECHO_N "checking for ac_check_lineak in -llineak... $ECHO_C" >&6

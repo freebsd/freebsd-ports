@@ -1,0 +1,3 @@
+bin/svn-accounting.pl
+%%SITE_PERL%%/Log/Accounting/SVN.pm
+%%PERL5_MAN3%%/Log::Accounting::SVN.3.gz

@@ -1,0 +1,7 @@
+Phylogenetic Analysis by Maximum Likelihood (PAML)
+
+PAML is a package of programs for phylogenetic analyses of DNA or protein
+sequences using maximum likelihood.  It is not good for tree making.  It may be
+used to estimate parameters and test hypotheses for the study the evolutionary
+process using trees reconstructed with programs such as PAUP*, PHYLIP, MOLPHY,
+PhyML, or RaxML.

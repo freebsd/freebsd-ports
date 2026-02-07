@@ -1,0 +1,985 @@
+Fix most (not all) compiler warnings raised by Java-23.
+
+	-mi
+--- src/free/chess/ImagePiecePainter.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/chess/ImagePiecePainter.java	2025-12-15 15:31:53.748755000 -0500
+@@ -299,5 +299,5 @@
+       return images;
+     else{
+-      ImageDataReceiver receiver = (ImageDataReceiver)imageDataReceivers.get(new Integer(imageSize));
++      ImageDataReceiver receiver = (ImageDataReceiver)imageDataReceivers.get(imageSize);
+       if (receiver != null){ // We're already loading the images
+         receiver.addComponentToRepaint(target);
+@@ -318,5 +318,5 @@
+       Map shadedImages = shadedPieceImages[imageSize];
+       receiver = new ImageDataReceiver(asyncImageLoad ? target : null, imageSize, normalImages, shadedImages);
+-      imageDataReceivers.put(new Integer(imageSize), receiver);
++      imageDataReceivers.put(imageSize, receiver);
+       
+       if (asyncImageLoad){
+@@ -480,5 +480,5 @@
+         }
+         
+-        imageDataReceivers.remove(new Integer(imageSize));
++        imageDataReceivers.remove(imageSize);
+         
+         for (Iterator i = componentsToRepaint.iterator(); i.hasNext();){
+--- src/free/chess/SquareImagesBoardPainter.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/chess/SquareImagesBoardPainter.java	2025-12-15 15:40:08.918160000 -0500
+@@ -250,5 +250,5 @@
+ 
+     if (def.getProperty("scaleSquares") != null) // Backward compatibility
+-      mode = new Boolean(def.getProperty("scaleSquares", "false")).booleanValue() ? SCALE_MODE : SLICE_MODE;
++      mode = Boolean.parseBoolean(def.getProperty("scaleSquares", "false")) ? SCALE_MODE : SLICE_MODE;
+     else{
+       String modeString = def.getProperty("imageUseMode", "slice");
+--- src/free/chessclub/ChessclubConnection.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/chessclub/ChessclubConnection.java	2025-12-15 15:48:03.677166000 -0500
+@@ -661,5 +661,5 @@
+ 
+   public String getRatingCategoryName(int index){
+-    return (String)ratingCategoryNames.get(new Integer(index));
++    return (String)ratingCategoryNames.get(index);
+   }
+ 
+@@ -676,5 +676,5 @@
+ 
+   public String getVariantName(int number){
+-    return (String)variantNames.get(new Integer(number));
++    return (String)variantNames.get(number);
+   }
+ 
+@@ -701,10 +701,10 @@
+       int index = datagram.getInteger(0);
+       String name = datagram.getString(1);
+-      ratingCategoryNames.put(new Integer(index), name);
++      ratingCategoryNames.put(index, name);
+     }
+     else if (id == Datagram.DG_WILD_KEY){
+       int number = datagram.getInteger(0);
+       String name = datagram.getString(1);
+-      variantNames.put(new Integer(number), name);
++      variantNames.put(number, name);
+     }
+     else if (id == Datagram.DG_SET2){
+--- src/free/util/Struct.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/util/Struct.java	2025-12-15 15:49:35.081597000 -0500
+@@ -91,5 +91,5 @@
+ 
+   protected final void setIntegerProperty(String propertyName, int propertyValue){
+-    setProperty(propertyName, new Integer(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+@@ -102,5 +102,5 @@
+ 
+   protected final void setCharProperty(String propertyName, char propertyValue){
+-    setProperty(propertyName, new Character(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+--- src/free/freechess/Ivar.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/freechess/Ivar.java	2025-12-15 15:50:36.482285000 -0500
+@@ -364,7 +364,7 @@
+     this.index = index;
+ 
+-    Object ivar = INDEX_TO_IVAR.put(new Integer(index), this);
++    Object ivar = INDEX_TO_IVAR.put(index, this);
+     if (ivar != null){
+-      INDEX_TO_IVAR.put(new Integer(index), ivar);
++      INDEX_TO_IVAR.put(index, ivar);
+       throw new IllegalArgumentException("The index "+index+" is already taken by "+ivar);
+     }
+@@ -405,5 +405,5 @@
+ 
+   public static Ivar getByIndex(int index){
+-    return (Ivar)INDEX_TO_IVAR.get(new Integer(index));
++    return (Ivar)INDEX_TO_IVAR.get(index);
+   }
+ 
+--- src/free/jin/Preferences.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/Preferences.java	2025-12-15 15:55:56.517227000 -0500
+@@ -221,5 +221,5 @@
+ 
+   public int getInt(String prefName, int defaultValue){
+-    return ((Integer)get(prefName, new Integer(defaultValue))).intValue();
++    return (int)get(prefName, defaultValue);
+   }
+ 
+@@ -233,5 +233,5 @@
+ 
+   public int getInt(String prefName){
+-    return ((Integer)get(prefName)).intValue();
++    return (int)get(prefName);
+   }
+ 
+@@ -244,5 +244,5 @@
+ 
+   public double getDouble(String prefName, double defaultValue){
+-    return ((Double)get(prefName, new Double(defaultValue))).doubleValue();
++    return (double)get(prefName, defaultValue);
+   }
+ 
+@@ -256,5 +256,5 @@
+ 
+   public double getDouble(String prefName){
+-    return ((Double)get(prefName)).doubleValue();
++    return (double)get(prefName);
+   }
+ 
+@@ -391,5 +391,5 @@
+ 
+   public void setInt(String prefName, int prefValue){
+-    set(prefName, new Integer(prefValue));
++    set(prefName, prefValue);
+   }
+ 
+@@ -401,5 +401,5 @@
+ 
+   public void setDouble(String prefName, double prefValue){
+-    set(prefName, new Double(prefValue));
++    set(prefName, prefValue);
+   }
+ 
+@@ -655,7 +655,7 @@
+       return Boolean.valueOf(s.substring("boolean;".length()));
+     else if (s.startsWith("integer;"))
+-      return new Integer(s.substring("integer;".length()));
++      return Integer.parseInt(s.substring("integer;".length()));
+     else if (s.startsWith("double;"))
+-      return new Double(s.substring("double;".length()));
++      return Double.parseDouble(s.substring("double;".length()));
+     else if (s.startsWith("string;"))
+       return StringParser.parseString(s.substring("string;".length()));
+--- src/free/jin/Game.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/Game.java	2025-12-15 16:00:03.250357000 -0500
+@@ -767,5 +767,5 @@
+       throw new IllegalStateException("Unable to set the result more than once");
+ 
+-    props.setProperty("result", new Integer(result));
++    props.setProperty("result", result);
+   }
+ 
+--- src/free/util/BeanProperties.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/util/BeanProperties.java	2025-12-15 16:04:51.507724000 -0500
+@@ -222,5 +222,5 @@
+ 
+   public void setByteProperty(String propertyName, byte propertyValue){
+-    setProperty(propertyName, new Byte(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+@@ -262,5 +262,5 @@
+ 
+   public void setShortProperty(String propertyName, short propertyValue){
+-    setProperty(propertyName, new Short(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+@@ -302,5 +302,5 @@
+ 
+   public void setIntegerProperty(String propertyName, int propertyValue){
+-    setProperty(propertyName, new Integer(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+@@ -342,5 +342,5 @@
+ 
+   public void setLongProperty(String propertyName, int propertyValue){
+-    setProperty(propertyName, new Long(propertyValue));
++    setProperty(propertyName, (long)(propertyValue));
+   }
+ 
+@@ -382,5 +382,5 @@
+ 
+   public void setFloatProperty(String propertyName, float propertyValue){
+-    setProperty(propertyName, new Float(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+@@ -422,5 +422,5 @@
+ 
+   public void setDoubleProperty(String propertyName, double propertyValue){
+-    setProperty(propertyName, new Double(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+@@ -462,5 +462,5 @@
+ 
+   public void setCharacterProperty(String propertyName, char propertyValue){
+-    setProperty(propertyName, new Character(propertyValue));
++    setProperty(propertyName, propertyValue);
+   }
+ 
+--- src/free/jin/ConnectionManager.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/ConnectionManager.java	2025-12-15 16:06:49.016423000 -0500
+@@ -155,5 +155,5 @@
+     
+     // Application parameters
+-    boolean isGuest = new Boolean(jin.getParameter("login.guest")).booleanValue();
++    boolean isGuest = Boolean.parseBoolean(jin.getParameter("login.guest"));
+     String username = jin.getParameter("login.username");
+     if (isGuest)
+@@ -210,5 +210,5 @@
+     
+     String savePassString = jin.getParameter("login.savepassword");
+-    boolean savePassword = new Boolean(savePassString).booleanValue();
++    boolean savePassword = Boolean.parseBoolean(savePassString);
+     if ((savePassString == null) && !connDetails.isGuest())
+       savePassword = connDetails.isSavePassword();
+@@ -232,5 +232,5 @@
+       connDetails = ConnectionDetails.create(server, user, user.getUsername(), password, savePassword, hostname, ports);
+       
+-    if (!(new Boolean(jin.getParameter("autologin")).booleanValue()))
++    if (!(Boolean.parseBoolean(jin.getParameter("autologin"))))
+       connDetails = new LoginPanel(connDetails).askConnectionDetails();
+     
+--- src/free/jin/GameListItem.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/GameListItem.java	2025-12-15 16:08:17.799524000 -0500
+@@ -78,5 +78,5 @@
+       boolean isRated, String variantName, String ratingCategoryName, String eco){
+     
+-    setProperty("Index", new Integer(index));
++    setProperty("Index", index);
+     setProperty("GameID", gameID);
+     setProperty("DateString", dateString);
+@@ -84,10 +84,10 @@
+     setProperty("WhiteName", whiteName);
+     setProperty("BlackName", blackName);
+-    setProperty("WhiteTime", new Integer(whiteTime));
+-    setProperty("WhiteInc", new Integer(whiteInc));
+-    setProperty("BlackTime", new Integer(blackTime));
+-    setProperty("BlackInc", new Integer(blackInc));
+-    setProperty("WhiteRating", new Integer(whiteRating));
+-    setProperty("BlackRating", new Integer(blackRating));
++    setProperty("WhiteTime", whiteTime);
++    setProperty("WhiteInc", whiteInc);
++    setProperty("BlackTime", blackTime);
++    setProperty("BlackInc", blackInc);
++    setProperty("WhiteRating", whiteRating);
++    setProperty("BlackRating", blackRating);
+     setProperty("IsRated", isRated ? Boolean.TRUE : Boolean.FALSE);
+     setProperty("VariantName", variantName);
+--- src/free/jin/HistoryListItem.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/HistoryListItem.java	2025-12-15 16:09:28.478521000 -0500
+@@ -50,5 +50,5 @@
+ 
+     setProperty("EndExplanationString", endExplanationString);
+-    setProperty("ResultStatus", new Integer(resultStatus));
++    setProperty("ResultStatus", resultStatus);
+     setProperty("Player", player);
+   }
+--- src/free/jin/LibListItem.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/LibListItem.java	2025-12-15 16:22:10.288560000 -0500
+@@ -47,5 +47,5 @@
+ 
+     setProperty("EndExplanationString", endExplanationString);
+-    setProperty("ResultStatus", new Integer(resultStatus));
++    setProperty("ResultStatus", resultStatus);
+     setProperty("Note", note);
+   }
+--- src/free/jin/SearchListItem.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/SearchListItem.java	2025-12-15 16:23:32.007890000 -0500
+@@ -47,5 +47,5 @@
+ 
+     setProperty("EndExplanationString", endExplanationString);
+-    setProperty("ResultStatus", new Integer(resultStatus));
++    setProperty("ResultStatus", resultStatus);
+   }
+ 
+--- src/free/jin/board/BoardPanel.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/board/BoardPanel.java	2025-12-15 16:28:07.987648000 -0500
+@@ -414,11 +414,6 @@
+     // Fullscreen mode is broken under Java 1.5.0 when used as an Applet, see
+     // http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5085648
+-    if (!PlatformUtils.isJavaBetterThan("1.4") ||
+-        (PlatformUtils.isMacOSX() && !PlatformUtils.isJavaBetterThan("1.4.2")) ||
+-        ((System.getSecurityManager() != null) && PlatformUtils.isJavaBetterThan("1.5"))){
+-      fullscreenButton.setEnabled(false);
+-      fullscreenButton.setToolTipText(I18n.get(BoardPanel.class).getString("fullscreenUnavailableMessage"));
+-    }
+-    else{
++    /* The checks used deprecated API, always enable full screen now: */
++    {
+       KeyStroke fullscreenKeyStroke = 
+         KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask());
+--- src/free/jin/board/PlayedGameButtonPanel.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/board/PlayedGameButtonPanel.java	2025-12-15 16:30:32.553679000 -0500
+@@ -408,7 +408,7 @@
+     Vector offers = isOppsOffer ? oppTakebacks : userTakebacks;
+     if (isOffered)
+-      offers.addElement(new Integer(plyCount));
++      offers.addElement(plyCount);
+     else
+-      offers.removeElement(new Integer(plyCount));
++      offers.removeElement(plyCount);
+     
+     int newState;
+@@ -644,5 +644,5 @@
+     I18n i18n = I18n.get(PlayedGameButtonPanel.class);
+     
+-    Object [] plyCountArr = new Object[]{new Integer(plyCount)};
++    Object [] plyCountArr = new Object[]{plyCount};
+     
+     String buttonTextPattern = i18n.getFormattedString("multipleTakebackButton.text", plyCountArr);
+--- src/free/jin/board/fics/FreechessBoardManager.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/board/fics/FreechessBoardManager.java	2025-12-15 16:56:15.309837000 -0500
+@@ -74,5 +74,5 @@
+           Integer oldValue = (Integer)evt.getOldValue();
+           Integer newValue = (Integer)evt.getNewValue();
+-          Integer premoveValue = new Integer(PREMOVE_MOVE_SENDING_MODE);
++          Integer premoveValue = PREMOVE_MOVE_SENDING_MODE;
+           
+           if (!newValue.equals(oldValue) &&
+--- src/free/jin/freechess/JinFreechessConnection.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/freechess/JinFreechessConnection.java	2025-12-15 17:25:51.169363000 -0500
+@@ -232,5 +232,5 @@
+       Class tsSocketClass = Class.forName("free.freechess.timeseal.TimesealingSocket");
+       Constructor tsSocketConstructor = tsSocketClass.getConstructor(new Class[]{String.class, int.class});
+-      result = (Socket)tsSocketConstructor.newInstance(new Object[]{hostname, new Integer(port)});
++      result = (Socket)tsSocketConstructor.newInstance(new Object[]{hostname, port});
+     } catch (ClassNotFoundException e){}
+       catch (SecurityException e){}
+@@ -303,5 +303,5 @@
+   protected boolean processSayTell(String username, String titles, int gameNumber, String message){
+     listenerManager.fireChatEvent(new ChatEvent(this, "say", ChatEvent.PERSON_TO_PERSON_CHAT_CATEGORY,
+-      username, (titles == null ? "" : titles), -1, message, new Integer(gameNumber)));
++      username, (titles == null ? "" : titles), -1, message, gameNumber));
+ 
+     return true;
+@@ -333,5 +333,5 @@
+ 
+     listenerManager.fireChatEvent(new ChatEvent(this, "channel-tell", ChatEvent.ROOM_CHAT_CATEGORY,
+-      username, (titles == null ? "" : titles), -1, message, new Integer(channelNumber)));
++      username, (titles == null ? "" : titles), -1, message, channelNumber));
+ 
+     return true;
+@@ -352,5 +352,5 @@
+ 
+     listenerManager.fireChatEvent(new ChatEvent(this, "kibitz", ChatEvent.GAME_CHAT_CATEGORY,
+-      username, titles, rating, message, new Integer(gameNumber)));
++      username, titles, rating, message, gameNumber));
+ 
+     return true;
+@@ -370,5 +370,5 @@
+ 
+     listenerManager.fireChatEvent(new ChatEvent(this, "whisper", ChatEvent.GAME_CHAT_CATEGORY,
+-      username, titles, rating, message, new Integer(gameNumber)));
++      username, titles, rating, message, gameNumber));
+ 
+     return true;
+@@ -398,5 +398,5 @@
+       if (title == null)
+         title = "";
+-      Integer tourneyIndex = new Integer(matcher.group(3));
++      int tourneyIndex = Integer.parseInt(matcher.group(3));
+       message = matcher.group(4);
+       evt = new ChatEvent(this, "qtell.tourney", ChatEvent.TOURNEY_CHAT_CATEGORY,
+@@ -667,5 +667,5 @@
+ 
+   private InternalGameData getGameData(int gameNumber) throws NoSuchGameException{
+-    InternalGameData gameData = (InternalGameData)ongoingGamesData.get(new Integer(gameNumber));
++    InternalGameData gameData = (InternalGameData)ongoingGamesData.get(gameNumber);
+     if (gameData == null)
+       throw new NoSuchGameException();
+@@ -687,5 +687,5 @@
+     Enumeration gameNumbers = ongoingGamesData.keys();
+     while (gameNumbers.hasMoreElements()){
+-      Integer gameNumber = (Integer)gameNumbers.nextElement();
++      int gameNumber = (int)gameNumbers.nextElement();
+       InternalGameData gameData = (InternalGameData)ongoingGamesData.get(gameNumber);
+       Game game = gameData.game;
+@@ -707,5 +707,5 @@
+     Enumeration gameNumbers = ongoingGamesData.keys();
+     while (gameNumbers.hasMoreElements()){
+-      Integer gameNumber = (Integer)gameNumbers.nextElement();
++      int gameNumber = (int)gameNumbers.nextElement();
+       InternalGameData gameData = (InternalGameData)ongoingGamesData.get(gameNumber);
+       Game game = gameData.game;
+@@ -730,5 +730,5 @@
+ 
+   protected boolean processGameInfo(GameInfoStruct data){
+-    unstartedGamesData.put(new Integer(data.getGameNumber()), data);
++    unstartedGamesData.put(data.getGameNumber(), data);
+ 
+     return true;
+@@ -742,5 +742,5 @@
+ 
+   protected boolean processStyle12(Style12Struct boardData){
+-    Integer gameNumber = new Integer(boardData.getGameNumber());
++    int gameNumber = boardData.getGameNumber();
+     InternalGameData gameData = (InternalGameData)ongoingGamesData.get(gameNumber);
+     GameInfoStruct unstartedGameInfo = (GameInfoStruct)unstartedGamesData.remove(gameNumber);
+@@ -809,5 +809,5 @@
+    
+   protected boolean processDeltaBoard(DeltaBoardStruct data){
+-    Integer gameNumber = new Integer(data.getGameNumber());
++    int gameNumber = data.getGameNumber();
+     InternalGameData gameData = (InternalGameData)ongoingGamesData.get(gameNumber);
+     
+@@ -872,5 +872,5 @@
+     Style12Struct boardData = new Style12Struct(boardLexigraphic, currentPlayer, doublePawnPushFile,
+       canWhiteCastleKingside, canWhiteCastleQueenside, canBlackCastleKingside, canBlackCastleQueenside,
+-      pliesSinceIrreversible, gameNumber.intValue(), whiteName, blackName, gameType, isPlayedGame,
++      pliesSinceIrreversible, gameNumber, whiteName, blackName, gameType, isPlayedGame,
+       isMyTurn, initTime, inc, whiteStrength, blackStrength, whiteTime, blackTime, nextMoveNumber,
+       moveVerbose, moveSAN, moveTime, isBoardFlipped, isClockRunning, lag);
+@@ -1103,5 +1103,5 @@
+ 
+     public boolean isOffered(int offerId, Player player){
+-      return offers.containsKey(new Pair(player, new Integer(offerId)));
++      return offers.containsKey(new Pair(player, offerId));
+     }
+ 
+@@ -1114,5 +1114,5 @@
+ 
+     public void setOffer(int offerId, Player player, boolean isMade){
+-      Pair offer = new Pair(player, new Integer(offerId));
++      Pair offer = new Pair(player, offerId);
+       if (isMade) 
+         offers.put(offer, offer);
+@@ -1281,5 +1281,5 @@
+     if (variant == null){
+       warnVariantUnsupported(categoryName);
+-      unsupportedGames.addElement(new Integer(gameInfo.getGameNumber()));
++      unsupportedGames.addElement(gameInfo.getGameNumber());
+       return null;
+     }
+@@ -1330,5 +1330,5 @@
+     InternalGameData gameData = new InternalGameData(game);
+ 
+-    ongoingGamesData.put(new Integer(gameInfo.getGameNumber()), gameData);
++    ongoingGamesData.put(gameInfo.getGameNumber(), gameData);
+ 
+     listenerManager.fireGameEvent(new GameStartEvent(this, game));
+@@ -1479,12 +1479,11 @@
+ 
+   private void closeGame(int gameNumber, int result){
+-    Integer gameID = new Integer(gameNumber);
+ 
+-    if (gameID.intValue() == primaryPlayedGame)
++    if (gameNumber == primaryPlayedGame)
+       primaryPlayedGame = -1;
+-    else if (gameID.intValue() == primaryObservedGame)
++    else if (gameNumber == primaryObservedGame)
+       primaryObservedGame = -1;
+ 
+-    InternalGameData gameData = (InternalGameData)ongoingGamesData.remove(gameID);
++    InternalGameData gameData = (InternalGameData)ongoingGamesData.remove(gameNumber);
+     if (gameData != null){
+       Game game = gameData.game;
+@@ -1497,5 +1496,5 @@
+     }
+     else
+-      unsupportedGames.removeElement(gameID);
++      unsupportedGames.removeElement(gameNumber);
+   }
+ 
+@@ -1708,5 +1707,5 @@
+           !seekInfo.isAutomaticAccept(), seekInfo.isFormulaUsed());
+ 
+-        Integer seekIndex = new Integer(seekInfo.getSeekIndex());
++        int seekIndex = seekInfo.getSeekIndex();
+ 
+         Seek oldSeek = (Seek)seeks.get(seekIndex);
+@@ -1731,5 +1730,5 @@
+   protected boolean processSeeksRemoved(int [] removedSeeks){
+     for (int i = 0; i < removedSeeks.length; i++){
+-      Integer seekIndex = new Integer(removedSeeks[i]);
++      int seekIndex = removedSeeks[i];
+       Seek seek = (Seek)seeks.get(seekIndex);
+       if (seek == null) // Happens if the seek is one we didn't fire an event for,
+@@ -1867,7 +1866,7 @@
+       Player player = toUser ? userPlayer.getOpponent() : userPlayer;
+ 
+-      offerIndicesToGameData.put(new Integer(offerIndex), gameData);
+-      gameData.indicesToTakebackOffers.put(new Integer(offerIndex),
+-        new Pair(player, new Integer(takebackCount)));
++      offerIndicesToGameData.put(offerIndex, gameData);
++      gameData.indicesToTakebackOffers.put(offerIndex,
++        new Pair(player, takebackCount));
+ 
+       updateTakebackOffer(gameData, player, takebackCount);
+@@ -1933,7 +1932,7 @@
+       Player player = toUser ? userPlayer.getOpponent() : userPlayer;
+ 
+-      offerIndicesToGameData.put(new Integer(offerIndex), gameData);
+-      gameData.indicesToOffers.put(new Integer(offerIndex),
+-        new Pair(player, new Integer(offerId)));
++      offerIndicesToGameData.put(offerIndex, gameData);
++      gameData.indicesToOffers.put(offerIndex,
++        new Pair(player, offerId));
+ 
+       updateOffers(gameData, offerId, player, true);
+@@ -1951,17 +1950,17 @@
+ 
+     InternalGameData gameData =
+-      (InternalGameData)offerIndicesToGameData.remove(new Integer(offerIndex));
++      (InternalGameData)offerIndicesToGameData.remove(offerIndex);
+ 
+     if (gameData != null){
+       // Check regular offers
+-      Pair offer = (Pair)gameData.indicesToOffers.remove(new Integer(offerIndex));
++      Pair offer = (Pair)gameData.indicesToOffers.remove(offerIndex);
+       if (offer != null){
+         Player player = (Player)offer.getFirst();
+-        int offerId = ((Integer)offer.getSecond()).intValue();
++        int offerId = (int)offer.getSecond();
+         updateOffers(gameData, offerId, player, false);
+       }
+       else{
+         // Check takeback offers
+-        offer = (Pair)gameData.indicesToTakebackOffers.remove(new Integer(offerIndex));
++        offer = (Pair)gameData.indicesToTakebackOffers.remove(offerIndex);
+         if (offer != null){
+           Player player = (Player)offer.getFirst();
+--- src/free/jin/chessclub/JinChessclubConnection.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/chessclub/JinChessclubConnection.java	2025-12-15 17:33:24.032823000 -0500
+@@ -269,5 +269,5 @@
+       Class tsSocketClass = Class.forName("free.chessclub.timestamp.TimestampingSocket");
+       Constructor tsSocketConstructor = tsSocketClass.getConstructor(new Class[]{String.class, int.class});
+-      result = (Socket)tsSocketConstructor.newInstance(new Object[]{hostname, new Integer(port)});
++      result = (Socket)tsSocketConstructor.newInstance(new Object[]{hostname, port});
+     } catch (ClassNotFoundException e){}
+       catch (SecurityException e){}
+@@ -677,5 +677,5 @@
+ 
+     ChatEvent evt = new ChatEvent(this, tellTypeString, ChatEvent.ROOM_CHAT_CATEGORY, 
+-      playerName, title, -1, message, new Integer(channel));
++      playerName, title, -1, message, channel);
+       
+     listenerManager.fireChatEvent(evt);
+@@ -702,5 +702,5 @@
+   protected void processChannelQTell(int channel, String name, String titles, String message){
+     ChatEvent evt = new ChatEvent(this, "channel-qtell", ChatEvent.ROOM_CHAT_CATEGORY,
+-      name, displayableTitle(titles), -1, message, new Integer(channel));
++      name, displayableTitle(titles), -1, message, channel);
+ 
+     listenerManager.fireChatEvent(evt);
+@@ -731,5 +731,5 @@
+ 
+     ChatEvent evt = new ChatEvent(this, tellTypeString, ChatEvent.GAME_CHAT_CATEGORY,
+-      playerName, title, -1, message, new Integer(gameNumber));
++      playerName, title, -1, message, gameNumber);
+     listenerManager.fireChatEvent(evt);
+   }
+@@ -813,5 +813,5 @@
+ 
+   private GameInfo getGameInfo(int gameNumber) throws NoSuchGameException{
+-    GameInfo gameInfo = (GameInfo)gameNumbersToGameInfo.get(new Integer(gameNumber));
++    GameInfo gameInfo = (GameInfo)gameNumbersToGameInfo.get(gameNumber);
+     if (gameInfo == null)
+       throw new NoSuchGameException();
+@@ -829,5 +829,5 @@
+ 
+   private void addGameInfo(int gameNumber, GameInfo gameInfo){
+-    gameNumbersToGameInfo.put(new Integer(gameNumber), gameInfo);
++    gameNumbersToGameInfo.put(gameNumber, gameInfo);
+     if (gameInfo.game.getGameType() == Game.MY_GAME)
+       userGamesCount++;
+@@ -843,5 +843,5 @@
+ 
+   private GameInfo removeGameInfo(int gameNumber){
+-    GameInfo gameInfo = (GameInfo)gameNumbersToGameInfo.remove(new Integer(gameNumber));
++    GameInfo gameInfo = (GameInfo)gameNumbersToGameInfo.remove(gameNumber);
+     if ((gameInfo != null) && (gameInfo.game.getGameType() == Game.MY_GAME))
+       userGamesCount--;
+@@ -859,5 +859,5 @@
+ 
+   private boolean gameExists(int gameNumber){
+-    return gameNumbersToGameInfo.containsKey(new Integer(gameNumber));
++    return gameNumbersToGameInfo.containsKey(gameNumber);
+   }
+ 
+@@ -887,17 +887,17 @@
+     gameProps.put("RatingCategoryString", ratingCategoryString);
+     gameProps.put("IsRated", isRated ? Boolean.TRUE : Boolean.FALSE);
+-    gameProps.put("WhiteInitial", new Integer(whiteInitial));
+-    gameProps.put("WhiteIncrement", new Integer(whiteIncrement));
+-    gameProps.put("BlackInitial", new Integer(blackInitial));
+-    gameProps.put("BlackIncrement", new Integer(blackIncrement));
++    gameProps.put("WhiteInitial", whiteInitial);
++    gameProps.put("WhiteIncrement", whiteIncrement);
++    gameProps.put("BlackInitial", blackInitial);
++    gameProps.put("BlackIncrement", blackIncrement);
+     gameProps.put("IsPlayedGame", isPlayedGame ? Boolean.TRUE : Boolean.FALSE);
+-    gameProps.put("WhiteRating", new Integer(whiteRating));
+-    gameProps.put("BlackRating", new Integer(blackRating));
++    gameProps.put("WhiteRating", whiteRating);
++    gameProps.put("BlackRating", blackRating);
+     gameProps.put("WhiteTitles", displayableTitle(whiteTitles));
+     gameProps.put("BlackTitles", displayableTitle(blackTitles));
+ 
+-    gameProps.put("GameType", new Integer(gameType));
++    gameProps.put("GameType", gameType);
+ 
+-    nonStartedGames.put(new Integer(gameNumber), gameProps);
++    nonStartedGames.put(gameNumber, gameProps);
+   }
+ 
+@@ -910,5 +910,5 @@
+ 
+   private boolean existsNonStarted(int gameNumber){
+-    return nonStartedGames.containsKey(new Integer(gameNumber));
++    return nonStartedGames.containsKey(gameNumber);
+   }
+ 
+@@ -921,5 +921,5 @@
+ 
+   private Object getPropertyForNonStarted(int gameNumber, String propertyName){
+-    Hashtable gameProps = (Hashtable)nonStartedGames.get(new Integer(gameNumber));    
++    Hashtable gameProps = (Hashtable)nonStartedGames.get(gameNumber);    
+     return gameProps.get(propertyName);
+   }
+@@ -933,5 +933,5 @@
+ 
+   private void putPropertyForNonStarted(int gameNumber, String propertyName, Object propertyValue){
+-    Hashtable gameProps = (Hashtable)nonStartedGames.get(new Integer(gameNumber));    
++    Hashtable gameProps = (Hashtable)nonStartedGames.get(gameNumber);    
+     gameProps.put(propertyName, propertyValue);
+   }
+@@ -950,5 +950,5 @@
+   private Game createGameFromNonStarted(int gameNumber, Position initialPosition){
+     
+-    Hashtable gameProps = (Hashtable)nonStartedGames.remove(new Integer(gameNumber));
++    Hashtable gameProps = (Hashtable)nonStartedGames.remove(gameNumber);
+ 
+     String whiteName = (String)gameProps.get("WhiteName");
+@@ -987,5 +987,5 @@
+     return new Game(gameType, initialPosition, 0, whiteName, blackName, whiteInitial,
+       whiteIncrement, blackInitial, blackIncrement, whiteRating, blackRating,
+-      new Integer(gameNumber), ratingCategoryString, isRated, isPlayedGame, whiteTitles,
++      gameNumber, ratingCategoryString, isRated, isPlayedGame, whiteTitles,
+       blackTitles, isInitiallyFlipped, userPlayer);
+   }
+@@ -1313,5 +1313,5 @@
+   
+       game.setGameType(gameType);
+-      game.setId(new Integer(gameNumber));
++      game.setId(gameNumber);
+       game.setWhiteName(whiteName);
+       game.setBlackName(blackName);
+@@ -1447,5 +1447,5 @@
+ 
+         if (existsNonStarted(gameNumber)) // This way we know it's a non-started game.
+-          putPropertyForNonStarted(gameNumber, "GameType", new Integer(newGameType));
++          putPropertyForNonStarted(gameNumber, "GameType", newGameType);
+         else 
+           return;
+@@ -2557,5 +2557,5 @@
+ 
+     public void setOffer(int offerId, Player player, boolean isMade){
+-      Pair offer = new Pair(player, new Integer(offerId));
++      Pair offer = new Pair(player, offerId);
+       if (isMade) 
+         offers.put(offer, offer);
+@@ -2586,5 +2586,5 @@
+ 
+     public boolean isOfferred(int offerId, Player player){
+-      return offers.containsKey(new Pair(player, new Integer(offerId)));
++      return offers.containsKey(new Pair(player, offerId));
+     }
+ 
+@@ -2717,5 +2717,5 @@
+       ratingCategoryString, time*60*1000, inc*1000, isRated, player, isRatingLimited, minRating, maxRating, !autoaccept, formula);
+ 
+-    seeks.put(new Integer(index), seek);
++    seeks.put(index, seek);
+ 
+     listenerManager.fireSeekEvent(new SeekEvent(this, SeekEvent.SEEK_ADDED, seek));
+@@ -2738,5 +2738,5 @@
+ 
+   protected void processSeekRemoved(int index, int reasonCode){
+-    Seek seek = (Seek)seeks.remove(new Integer(index));
++    Seek seek = (Seek)seeks.remove(index);
+ 
+     if (seek == null)
+@@ -3240,5 +3240,5 @@
+     ChessEvent newEvent = new ChessEvent(id, description, joinCommands.length == 0 ? null : joinCommands, 
+       watchCommands.length == 0 ? null : watchCommands, infoCommands.length == 0 ? null : infoCommands, confirmText);
+-    ChessEvent existingEvent = (ChessEvent)chessEvents.put(new Integer(id), newEvent);
++    ChessEvent existingEvent = (ChessEvent)chessEvents.put(id, newEvent);
+ 
+     if (existingEvent != null)
+@@ -3266,5 +3266,5 @@
+ 
+   protected void processRemoveTourney(int id){
+-    ChessEvent evt = (ChessEvent)chessEvents.get(new Integer(id));
++    ChessEvent evt = (ChessEvent)chessEvents.get(id);
+     if (evt == null) // Ignore DG_REMOVE_TOURNEY for events we didn't get a DG_TOURNEY for.
+       return;
+--- src/free/jin/console/ConsoleManager.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/console/ConsoleManager.java	2025-12-15 17:37:06.198515000 -0500
+@@ -588,7 +588,7 @@
+       new Object[]{
+         evt.getListTitle(),
+-        new Integer(evt.getFirstIndex()),
+-        new Integer(evt.getLastIndex()),
+-        new Integer(evt.getItemCount())
++        evt.getFirstIndex(),
++        evt.getLastIndex(),
++        evt.getItemCount()
+       });
+     title = "  " + title + "  ";
+--- src/free/jin/console/prefs/TextPrefsPanel.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/console/prefs/TextPrefsPanel.java	2025-12-15 17:41:12.060192000 -0500
+@@ -204,5 +204,5 @@
+ 
+       setProperty(category, "font-family", font.getFamily());
+-      setProperty(category, "font-size", new Integer(font.getSize()));
++      setProperty(category, "font-size", font.getSize());
+       setProperty(category, "font-bold", font.isBold() ? Boolean.TRUE : Boolean.FALSE);
+       setProperty(category, "font-italic", font.isItalic() ? Boolean.TRUE : Boolean.FALSE);
+@@ -472,9 +472,9 @@
+   protected Font getCategoryFont(String categoryName){
+     String fontFamily = (String)prefs.lookup("font-family." + categoryName, "Monospaced");
+-    int fontSize = ((Integer)prefs.lookup("font-size." + categoryName, new Integer(14))).intValue();
++    int fontSize = (int)prefs.lookup("font-size." + categoryName, 14);
+     int fontStyle = 0;
+-    if (((Boolean)prefs.lookup("font-bold." + categoryName, Boolean.FALSE)).booleanValue())
++    if ((boolean)prefs.lookup("font-bold." + categoryName, Boolean.FALSE))
+       fontStyle |= Font.BOLD;
+-    if (((Boolean)prefs.lookup("font-italic." + categoryName, Boolean.FALSE)).booleanValue())
++    if ((boolean)prefs.lookup("font-italic." + categoryName, Boolean.FALSE))
+       fontStyle |= Font.ITALIC;
+ 
+--- src/free/util/swing/FontSelectorPanel.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/util/swing/FontSelectorPanel.java	2025-12-15 17:42:28.943047000 -0500
+@@ -242,5 +242,5 @@
+     Integer [] fontSizesInts = new Integer[fontSizes.length];
+     for (int i = 0; i < fontSizes.length; i++)
+-      fontSizesInts[i] = new Integer(fontSizes[i]);
++      fontSizesInts[i] = fontSizes[i];
+     fontSizesList = new JList(fontSizesInts); 
+     fontSizesList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+@@ -453,5 +453,5 @@
+ 
+     fontNamesList.setSelectedValue(font.getFamily(), true);
+-    fontSizesList.setSelectedValue(new Integer(font.getSize()), true);
++    fontSizesList.setSelectedValue(font.getSize(), true);
+ 
+     fireStateChanged();
+--- src/free/jin/scripter/Scripter.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/scripter/Scripter.java	2025-12-15 17:53:39.881363000 -0500
+@@ -859,10 +859,10 @@
+       vars.addElement(new Object[]{"whiteName", game.getWhiteName()});
+       vars.addElement(new Object[]{"blackName", game.getBlackName()});
+-      vars.addElement(new Object[]{"whiteTime", new Integer(game.getWhiteTime()/(1000*60))});
+-      vars.addElement(new Object[]{"whiteInc", new Integer(game.getWhiteInc()/1000)});
+-      vars.addElement(new Object[]{"blackTime", new Integer(game.getBlackTime()/(1000*60))});
+-      vars.addElement(new Object[]{"blackInc", new Integer(game.getBlackInc()/1000)});
+-      vars.addElement(new Object[]{"whiteRating", new Integer(game.getWhiteRating())});
+-      vars.addElement(new Object[]{"blackRating", new Integer(game.getBlackRating())});
++      vars.addElement(new Object[]{"whiteTime", (int)(game.getWhiteTime()/(1000*60))});
++      vars.addElement(new Object[]{"whiteInc", (int)(game.getWhiteInc()/1000)});
++      vars.addElement(new Object[]{"blackTime", (int)(game.getBlackTime()/(1000*60))});
++      vars.addElement(new Object[]{"blackInc", (int)(game.getBlackInc()/1000)});
++      vars.addElement(new Object[]{"whiteRating", game.getWhiteRating()});
++      vars.addElement(new Object[]{"blackRating", game.getBlackRating()});
+       vars.addElement(new Object[]{"whiteTitle", game.getWhiteTitles()});
+       vars.addElement(new Object[]{"blackTitle", game.getBlackTitles()});
+@@ -876,10 +876,10 @@
+           vars.addElement(new Object[]{"myName", game.getWhiteName()});
+           vars.addElement(new Object[]{"oppName", game.getBlackName()});
+-          vars.addElement(new Object[]{"myTime", new Integer(game.getWhiteTime()/(1000*60))});
+-          vars.addElement(new Object[]{"myInc", new Integer(game.getWhiteInc()/1000)});
+-          vars.addElement(new Object[]{"oppTime", new Integer(game.getBlackTime()/(1000*60))});
+-          vars.addElement(new Object[]{"oppInc", new Integer(game.getBlackInc()/1000)});
+-          vars.addElement(new Object[]{"myRating", new Integer(game.getWhiteRating())});
+-          vars.addElement(new Object[]{"oppRating", new Integer(game.getBlackRating())});
++          vars.addElement(new Object[]{"myTime", (int)(game.getWhiteTime()/(1000*60))});
++          vars.addElement(new Object[]{"myInc", (int)(game.getWhiteInc()/1000)});
++          vars.addElement(new Object[]{"oppTime", (int)(game.getBlackTime()/(1000*60))});
++          vars.addElement(new Object[]{"oppInc", (int)(game.getBlackInc()/1000)});
++          vars.addElement(new Object[]{"myRating", game.getWhiteRating()});
++          vars.addElement(new Object[]{"oppRating", game.getBlackRating()});
+           vars.addElement(new Object[]{"myTitle", game.getWhiteTitles()});
+           vars.addElement(new Object[]{"oppTitle", game.getBlackTitles()});
+@@ -888,10 +888,10 @@
+           vars.addElement(new Object[]{"oppName", game.getWhiteName()});
+           vars.addElement(new Object[]{"myName", game.getBlackName()});
+-          vars.addElement(new Object[]{"oppTime", new Integer(game.getWhiteTime()/(1000*60))});
+-          vars.addElement(new Object[]{"oppInc", new Integer(game.getWhiteInc()/1000)});
+-          vars.addElement(new Object[]{"myTime", new Integer(game.getBlackTime()/(1000*60))});
+-          vars.addElement(new Object[]{"myInc", new Integer(game.getBlackInc()/1000)});
+-          vars.addElement(new Object[]{"oppRating", new Integer(game.getWhiteRating())});
+-          vars.addElement(new Object[]{"myRating", new Integer(game.getBlackRating())});
++          vars.addElement(new Object[]{"oppTime", (int)(game.getWhiteTime()/(1000*60))});
++          vars.addElement(new Object[]{"oppInc", (int)(game.getWhiteInc()/1000)});
++          vars.addElement(new Object[]{"myTime", (int)(game.getBlackTime()/(1000*60))});
++          vars.addElement(new Object[]{"myInc", (int)(game.getBlackInc()/1000)});
++          vars.addElement(new Object[]{"oppRating", game.getWhiteRating()});
++          vars.addElement(new Object[]{"myRating", game.getBlackRating()});
+           vars.addElement(new Object[]{"oppTitle", game.getWhiteTitles()});
+           vars.addElement(new Object[]{"myTitle", game.getBlackTitles()});
+@@ -937,5 +937,5 @@
+     public void takebackOccurred(TakebackEvent evt){
+       Vector varsVector = createVarsVector(evt);
+-      varsVector.addElement(new Object[]{"takebackCount", new Integer(evt.getTakebackCount())});
++      varsVector.addElement(new Object[]{"takebackCount", evt.getTakebackCount()});
+ 
+       Object [][] vars = new Object[varsVector.size()][];
+@@ -958,5 +958,5 @@
+       Vector varsVector = createVarsVector(evt);
+       varsVector.addElement(new Object[]{"player", evt.getPlayer().toString().toLowerCase()});
+-      varsVector.addElement(new Object[]{"time", new Integer(evt.getTime())});
++      varsVector.addElement(new Object[]{"time", evt.getTime()});
+       varsVector.addElement(new Object[]{"isClockRunning", evt.isClockRunning() ? Boolean.TRUE : Boolean.FALSE});
+ 
+@@ -994,5 +994,5 @@
+       varsVector.addElement(new Object[]{"player", evt.getPlayer().toString().toLowerCase()});
+       if (evt.getOfferId() == OfferEvent.TAKEBACK_OFFER)
+-        varsVector.addElement(new Object[]{"takebackCount", new Integer(evt.getTakebackCount())});
++        varsVector.addElement(new Object[]{"takebackCount", evt.getTakebackCount()});
+ 
+       Object [][] vars = new Object[varsVector.size()][];
+@@ -1056,5 +1056,5 @@
+ 
+       varsVector.addElement(new Object[]{"game", game});
+-      varsVector.addElement(new Object[]{"gameType", new Integer(game.getGameType())});
++      varsVector.addElement(new Object[]{"gameType", game.getGameType()});
+       varsVector.addElement(new Object[]{"initialPosition", game.getInitialPosition()});
+       varsVector.addElement(new Object[]{"variant", game.getVariant()});
+@@ -1062,10 +1062,10 @@
+       varsVector.addElement(new Object[]{"myName", game.getWhiteName()});
+       varsVector.addElement(new Object[]{"oppName", game.getBlackName()});
+-      varsVector.addElement(new Object[]{"myTime", new Integer(game.getWhiteTime()/(1000*60))});
+-      varsVector.addElement(new Object[]{"myInc", new Integer(game.getWhiteInc()/1000)});
+-      varsVector.addElement(new Object[]{"oppTime", new Integer(game.getBlackTime()/(1000*60))});
+-      varsVector.addElement(new Object[]{"oppInc", new Integer(game.getBlackInc()/1000)});
+-      varsVector.addElement(new Object[]{"myRating", new Integer(game.getWhiteRating())});
+-      varsVector.addElement(new Object[]{"oppRating", new Integer(game.getBlackRating())});
++      varsVector.addElement(new Object[]{"myTime", (int)(game.getWhiteTime()/(1000*60))});
++      varsVector.addElement(new Object[]{"myInc", (int)(game.getWhiteInc()/1000)});
++      varsVector.addElement(new Object[]{"oppTime", (int)(game.getBlackTime()/(1000*60))});
++      varsVector.addElement(new Object[]{"oppInc", (int)(game.getBlackInc()/1000)});
++      varsVector.addElement(new Object[]{"myRating", game.getWhiteRating()});
++      varsVector.addElement(new Object[]{"oppRating", game.getBlackRating()});
+       varsVector.addElement(new Object[]{"myTitle", game.getWhiteTitles()});
+       varsVector.addElement(new Object[]{"oppTitle", game.getBlackTitles()});
+@@ -1073,10 +1073,10 @@
+       varsVector.addElement(new Object[]{"whiteName", game.getWhiteName()});
+       varsVector.addElement(new Object[]{"blackName", game.getBlackName()});
+-      varsVector.addElement(new Object[]{"whiteTime", new Integer(game.getWhiteTime()/(1000*60))});
+-      varsVector.addElement(new Object[]{"whiteInc", new Integer(game.getWhiteInc()/1000)});
+-      varsVector.addElement(new Object[]{"blackTime", new Integer(game.getBlackTime()/(1000*60))});
+-      varsVector.addElement(new Object[]{"blackInc", new Integer(game.getBlackInc()/1000)});
+-      varsVector.addElement(new Object[]{"whiteRating", new Integer(game.getWhiteRating())});
+-      varsVector.addElement(new Object[]{"blackRating", new Integer(game.getBlackRating())});
++      varsVector.addElement(new Object[]{"whiteTime", (int)(game.getWhiteTime()/(1000*60))});
++      varsVector.addElement(new Object[]{"whiteInc", (int)(game.getWhiteInc()/1000)});
++      varsVector.addElement(new Object[]{"blackTime", (int)(game.getBlackTime()/(1000*60))});
++      varsVector.addElement(new Object[]{"blackInc", (int)(game.getBlackInc()/1000)});
++      varsVector.addElement(new Object[]{"whiteRating", game.getWhiteRating()});
++      varsVector.addElement(new Object[]{"blackRating", game.getBlackRating()});
+       varsVector.addElement(new Object[]{"whiteTitle", game.getWhiteTitles()});
+       varsVector.addElement(new Object[]{"blackTitle", game.getBlackTitles()});
+@@ -1097,5 +1097,5 @@
+ 
+       if (Utilities.contains(eventSubtypes, subtypes[2]))
+-        varsVector.addElement(new Object[]{"takebackCount", new Integer(3)});
++        varsVector.addElement(new Object[]{"takebackCount", 3});
+ 
+       if (Utilities.contains(eventSubtypes, subtypes[4]))
+@@ -1104,5 +1104,5 @@
+       if (Utilities.contains(eventSubtypes, subtypes[5])){
+         varsVector.addElement(new Object[]{"player", Player.WHITE_PLAYER.toString().toLowerCase()});
+-        varsVector.addElement(new Object[]{"time", new Integer(4*60*1000)});
++        varsVector.addElement(new Object[]{"time",  4*60*1000});
+         varsVector.addElement(new Object[]{"isClockRunning", Boolean.TRUE});
+       }
+@@ -1162,11 +1162,11 @@
+       vars.addElement(new Object[]{"name", seek.getSeekerName()});
+       vars.addElement(new Object[]{"title", seek.getSeekerTitle()});
+-      vars.addElement(new Object[]{"rating", new Integer(seek.getSeekerRating())});
++      vars.addElement(new Object[]{"rating", seek.getSeekerRating()});
+       vars.addElement(new Object[]{"isProvisional", seek.isSeekerProvisional() ? Boolean.TRUE : Boolean.FALSE});
+       vars.addElement(new Object[]{"isRegistered", seek.isSeekerRegistered() ? Boolean.TRUE : Boolean.FALSE});
+       vars.addElement(new Object[]{"isComputer", seek.isSeekerComputer() ? Boolean.TRUE : Boolean.FALSE});
+       vars.addElement(new Object[]{"ratingCategory", seek.getRatingCategoryString()});
+-      vars.addElement(new Object[]{"time", new Integer(seek.getTime()/(1000*60))});
+-      vars.addElement(new Object[]{"inc", new Integer(seek.getInc()/1000)});
++      vars.addElement(new Object[]{"time", (int)(seek.getTime()/(1000*60))});
++      vars.addElement(new Object[]{"inc", (int)(seek.getInc()/1000)});
+       vars.addElement(new Object[]{"isRated", seek.isRated() ? Boolean.TRUE : Boolean.FALSE});
+       String colorString = seek.getSoughtColor() == null ? null :
+@@ -1174,6 +1174,6 @@
+       vars.addElement(new Object[]{"color", colorString});
+       vars.addElement(new Object[]{"ratingLimited", seek.isRatingLimited() ? Boolean.TRUE : Boolean.FALSE});
+-      vars.addElement(new Object[]{"minRating", new Integer(seek.getMinRating())});
+-      vars.addElement(new Object[]{"maxRating", new Integer(seek.getMaxRating())});
++      vars.addElement(new Object[]{"minRating", seek.getMinRating()});
++      vars.addElement(new Object[]{"maxRating", seek.getMaxRating()});
+       vars.addElement(new Object[]{"isManualAccept", seek.isManualAccept() ? Boolean.TRUE : Boolean.FALSE});
+       vars.addElement(new Object[]{"isFormula", seek.isFormula() ? Boolean.TRUE : Boolean.FALSE});
+@@ -1209,11 +1209,11 @@
+       varsVector.addElement(new Object[]{"name", seek.getSeekerName()});
+       varsVector.addElement(new Object[]{"title", seek.getSeekerTitle()});
+-      varsVector.addElement(new Object[]{"rating", new Integer(seek.getSeekerRating())});
++      varsVector.addElement(new Object[]{"rating", seek.getSeekerRating()});
+       varsVector.addElement(new Object[]{"isProvisional", seek.isSeekerProvisional() ? Boolean.TRUE : Boolean.FALSE});
+       varsVector.addElement(new Object[]{"isRegistered", seek.isSeekerRegistered() ? Boolean.TRUE : Boolean.FALSE});
+       varsVector.addElement(new Object[]{"isComputer", seek.isSeekerComputer() ? Boolean.TRUE : Boolean.FALSE});
+       varsVector.addElement(new Object[]{"ratingCategory", seek.getRatingCategoryString()});
+-      varsVector.addElement(new Object[]{"time", new Integer(seek.getTime()/(1000*60))});
+-      varsVector.addElement(new Object[]{"inc", new Integer(seek.getInc()/1000)});
++      varsVector.addElement(new Object[]{"time", (int)(seek.getTime()/(1000*60))});
++      varsVector.addElement(new Object[]{"inc", (int)(seek.getInc()/1000)});
+       varsVector.addElement(new Object[]{"isRated", seek.isRated() ? Boolean.TRUE : Boolean.FALSE});
+       String colorString = seek.getSoughtColor() == null ? null :
+@@ -1221,6 +1221,6 @@
+       varsVector.addElement(new Object[]{"color", colorString});
+       varsVector.addElement(new Object[]{"ratingLimited", seek.isRatingLimited() ? Boolean.TRUE : Boolean.FALSE});
+-      varsVector.addElement(new Object[]{"minRating", new Integer(seek.getMinRating())});
+-      varsVector.addElement(new Object[]{"maxRating", new Integer(seek.getMaxRating())});
++      varsVector.addElement(new Object[]{"minRating", seek.getMinRating()});
++      varsVector.addElement(new Object[]{"maxRating", seek.getMaxRating()});
+       varsVector.addElement(new Object[]{"isManualAccept", seek.isManualAccept() ? Boolean.TRUE : Boolean.FALSE});
+       varsVector.addElement(new Object[]{"isFormula", seek.isFormula() ? Boolean.TRUE : Boolean.FALSE});
+--- src/free/jin/scripter/UserInvokedScriptMenuItem.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/scripter/UserInvokedScriptMenuItem.java	2025-12-15 17:56:26.029372000 -0500
+@@ -282,5 +282,5 @@
+             try{
+               if ("Integer".equals(type))
+-                value = new Integer(valueString);
++                value = Integer.valueOf(valueString);
+               else if ("String".equals(type))
+                 value = valueString;
+@@ -288,5 +288,5 @@
+                 value = Boolean.valueOf(valueString);
+               else if ("Real".equals(type))
+-                value = new Double(valueString);
++                value = Double.valueOf(valueString);
+               else throw new IllegalStateException("Unknown variable type: "+type);
+             } catch (IllegalArgumentException e){
+--- src/free/jin/scripter/fics/FreechessScripter.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/scripter/fics/FreechessScripter.java	2025-12-15 17:57:39.460399000 -0500
+@@ -127,6 +127,6 @@
+         {"sender", "AlexTheGreat"},
+         {"title", "C"},
+-        {"channel", new Integer(107)},
+-        {"gameNumber", new Integer(100)}
++        {"channel", 107},
++        {"gameNumber", 100}
+       };
+     }
+--- src/free/jin/scripter/icc/ChessclubScripter.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/scripter/icc/ChessclubScripter.java	2025-12-15 17:59:01.324012000 -0500
+@@ -130,6 +130,6 @@
+         {"sender", "AlexTheGreat"},
+         {"title", "C"},
+-        {"channel", new Integer(107)},
+-        {"gameNumber", new Integer(100)}
++        {"channel", 107},
++        {"gameNumber", 100}
+       };
+     }
+--- src/free/util/AWTUtilities.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/util/AWTUtilities.java	2025-12-15 18:00:52.129375000 -0500
+@@ -160,5 +160,5 @@
+         Class frameClass = Class.forName("java.awt.Frame");
+         Method setExtendedStateMethod = frameClass.getMethod("setExtendedState", new Class[]{int.class});
+-        setExtendedStateMethod.invoke(frame, new Object[]{new Integer(state)});
++        setExtendedStateMethod.invoke(frame, new Object[]{state});
+       } catch (ClassNotFoundException e){e.printStackTrace();}
+         catch (NoSuchMethodException e){e.printStackTrace();}

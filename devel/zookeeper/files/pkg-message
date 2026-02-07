@@ -1,0 +1,15 @@
+[
+{ type: upgrade
+  maximum_version: "3.8.0"
+  message: <<EOM
+Builtin logger framework log4j-12 has been replaced by Logback at 3.8.0 (ZOOKEEPER-4427).
+
+When upgrading from before 3.8.0 these variables, if used, should be taken into
+account:
+* zookeeper_log4j_config, zookeeper_rootlogger and zookeeper_log4jpropfile are
+  obsoleted for using with Logback.
+* zookeeper_logback_config is used instead zookeeper_log4j_config for Logback.
+* zookeeper_log4j_config is still used only for log4j-2.
+EOM
+}
+]

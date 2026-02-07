@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: pftabled
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable pftabled:
+# pftabled_enable (bool):	Set it to "YES" to enable pftabled.
+#				Default is "NO".
+# pftabled_flags (flags):	Set flags to alter default behaviour of pftabled.
+# 				Consult with the man page for more info.
+#
+
+. /etc/rc.subr
+
+name="pftabled"
+rcvar=pftabled_enable
+
+load_rc_config $name
+
+: ${pftabled_enable="NO"}
+: ${pftabled_flags="-d"}
+
+command="%%PREFIX%%/sbin/${name}"
+
+run_rc_command "$1"

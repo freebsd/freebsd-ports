@@ -1,0 +1,10 @@
+--- configure.in.orig
++++ configure.in
+@@ -6,6 +6,7 @@
+ AM_INIT_AUTOMAKE
+ 
+ AC_DEFINE([MHASH_VERSION], PROGRAM_VERSION, "MHash Version")
++AC_CONFIG_HEADER([include/mutils/config.h])
+ AC_CONFIG_HEADER([include/mutils/mhash_config.h])
+ 
+ 

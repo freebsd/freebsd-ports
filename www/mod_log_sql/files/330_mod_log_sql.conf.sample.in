@@ -1,0 +1,35 @@
+# www/mod_log_sql2
+# vim: set syntax=apache:
+
+# =====================================================
+# required module
+# =====================================================
+#LoadModule log_sql_module %%APACHEMODDIR%%/mod_log_sql.so
+#LoadModule log_sql_mysql_module %%APACHEMODDIR%%/mod_log_sql_mysql.so
+
+# =====================================================
+# optional modules
+# =====================================================
+#<IfModule ssl_module>
+#LoadModule log_sql_ssl_module %%APACHEMODDIR%%/mod_log_sql_ssl.so
+#</IfModule>
+
+## optional if build with DBI
+#LoadModule log_sql_dbi %%APACHEMODDIR%%/mod_log_sql_dbi.so
+
+
+## =====================================================
+## sample db connection, see
+## %%DOCSDIR%%/manual.html / manual.xml
+## =====================================================
+## <IfModule log_sql_module>
+### log over IP
+## LogSQLLoginInfo mysql://userid:passwd@db.host.name/apachelogs
+### log via socket
+## LogSQLDBParam socketfile /your/path/to/mysql.sock
+## LogSQLCreateTables On
+## LogSQLMassVirtualHosting On
+## LogSQLTransferLogFormat AbHhmRSsTUuv
+## LogSQLRequestIgnore /sample-path/token /server-status
+## LogSQLPreserveFile /var/tmp/offline-preserve
+## </IfModule> 

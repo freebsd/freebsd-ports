@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-12-04 11:23:21 UTC
++++ CMakeLists.txt
+@@ -186,7 +186,7 @@ configure_file( libclc.pc.in libclc.pc @ONLY )
+ 
+ # pkg-config file
+ configure_file( libclc.pc.in libclc.pc @ONLY )
+-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/libclc.pc DESTINATION "${CMAKE_INSTALL_DATADIR}/pkgconfig" )
++install( FILES ${CMAKE_CURRENT_BINARY_DIR}/libclc.pc DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig" )
+ install( DIRECTORY generic/include/clc DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}" )
+ 
+ if( ENABLE_RUNTIME_SUBNORMAL )

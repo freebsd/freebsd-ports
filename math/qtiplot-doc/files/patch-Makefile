@@ -1,0 +1,16 @@
+--- Makefile.orig	2011-11-01 12:28:58.000000000 +0000
++++ Makefile	2011-11-07 21:38:31.839937279 +0000
+@@ -1,11 +1,11 @@
+-all: en pdf-it
++all: web
+ en: web pdf
+ it: web-it pdf-it
+ 
+ # we can't name the target "html", since there is already a folder with that name
+ # and so make thinks this target is already up to date
+ web:
+-	docbook2html -d qtiplot.dsl docbook-en/index.docbook -e no-valid
++	docbook2html -d qtiplot.dsl docbook-en/index.docbook -e no-valid -l /usr/local/share/xml/jade/xml.dcl
+ web-it:
+ 	docbook2html -d qtiplot.dsl docbook-it/index.docbook -e no-valid
+ 

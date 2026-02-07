@@ -1,0 +1,3 @@
+Hey tests HTTP/HTTP2 performance by sending configurable load
+at a provided concurrency level and shows a plethora of
+statistics.

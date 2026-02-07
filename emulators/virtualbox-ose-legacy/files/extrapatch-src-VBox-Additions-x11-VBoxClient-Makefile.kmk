@@ -1,0 +1,11 @@
+--- src/VBox/Additions/x11/VBoxClient/Makefile.kmk.orig	2013-11-29 14:20:43.000000000 -0500
++++ src/VBox/Additions/x11/VBoxClient/Makefile.kmk	2013-12-16 14:03:08.000000000 -0500
+@@ -50,7 +50,7 @@
+ #	Xtst
+ # These are static replacements for gcc-specific parts of libstdc++
+ VBoxClient_LIBS += \
+-	supc++ \
++	cxxrt \
+ 	gcc_eh
+ ifdef VBOX_X11_SEAMLESS_GUEST
+  VBoxClient_DEFS += SEAMLESS_GUEST DYNAMIC_RESIZE

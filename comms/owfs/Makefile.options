@@ -1,0 +1,67 @@
+OPTIONS_DEFINE = \
+        AVAHI \
+        FTDI \
+	OWDEBUG \
+	OWMUTEXDEBUG \
+	OWSHELL \
+	OWNET \
+	I2C \
+	OWHTTPD \
+	OWFTPD \
+	OWSERVER \
+	OWTAP \
+	OWMALLOC \
+	OWMON \
+	OWCAPI \
+	OWEXTERNAL \
+	OWPERL \
+	OWPHP \
+	OWTCL \
+	PROFILING \
+	OWFS \
+	ZERO \
+	USB
+
+# Options disabled
+#	PARPORT	- linux/parport.h not available
+#	W1			- no support on FreeBSD
+
+AVAHI_DESC=		Enable zero-config autodiscovery
+FTDI_DESC=              Enable LinkUSB support via libftdi
+OWDEBUG_DESC=		Enable debug output
+OWMUTEXDEBUG_DESC=	Enable mutex debug
+OWSHELL_DESC=		Enable CLI utils
+OWNET_DESC=		Enable network communication
+I2C_DESC=		Enable i2c (DS2482-x00) support (UNTESTED)
+OWHTTPD_DESC=		Enable owhttpd HTTP server
+OWFTPD_DESC=		Enable owftpd FTP server
+OWSERVER_DESC=		Enable owserver
+OWMALLOC_DESC=		Enable malloc checking
+OWTAP_DESC=		Enable owtap module (X11)
+OWMON_DESC=		Enable owmon module (X11)
+OWCAPI_DESC=		Enable C API
+OWEXTERNAL_DESC=	Enable owexternal
+OWPERL_DESC=		Enable Perl binding (BROKEN)
+OWPHP_DESC=		Enable PHP binding (BROKEN)
+OWTCL_DESC=		Enable TCL binding
+PROFILING_DESC=		Enable profiling (BROKEN)
+OWFS_DESC=		Enable FUSE support
+ZERO_DESC=		Enable Zeroconf/bonjour (UNTESTED)
+USB_DESC=		Enable 1-Wire usb DS2490 support
+
+# Options disabled
+#PARPORT_DESC=		Enable 1-Wire parallel port DS1410E support
+#W1_DESC=Enable w1 support
+
+OPTIONS_DEFAULT=OWDEBUG\
+	OWSHELL\
+	OWNET\
+	I2C\
+	OWHTTPD\
+	OWFTPD\
+	OWSERVER\
+	OWCAPI\
+	OWEXTERNAL \
+	OWFS\
+	USB
+

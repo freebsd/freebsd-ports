@@ -1,0 +1,8 @@
+--- src/genlinedraw.orig	2014-05-22 18:53:16 UTC
++++ src/genlinedraw
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ open TABLE, ">", "table/linedraw.h";
+ select TABLE;

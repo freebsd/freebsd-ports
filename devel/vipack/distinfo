@@ -1,0 +1,11 @@
+TIMESTAMP = 1649325709
+SHA256 (vishaps-vipack-v0.9.1_GH0.tar.gz) = 8d18d371fa38fa16bdd845115cd1d78816782960a114335709142a972cc11ffb
+SIZE (vishaps-vipack-v0.9.1_GH0.tar.gz) = 30299
+SHA256 (norayr-Internet-4b33066_GH0.tar.gz) = 860a8e7a6d21c338320552c72e4f855101a4b996dda82c1e2fc083ec3016e66e
+SIZE (norayr-Internet-4b33066_GH0.tar.gz) = 6918
+SHA256 (norayr-lists-1fc8f0f_GH0.tar.gz) = 59419d8efa43e13be559e4d0ee62b7dc5828f198a017c15a6046feebb80cbd58
+SIZE (norayr-lists-1fc8f0f_GH0.tar.gz) = 7009
+SHA256 (norayr-opts-cc882ee_GH0.tar.gz) = d10df4e74832462cf48fe4d993388a9d351325ba1fe26ef0899f3090f6925669
+SIZE (norayr-opts-cc882ee_GH0.tar.gz) = 3159
+SHA256 (norayr-time-c17a1c7_GH0.tar.gz) = 44be16fbe062110545ed00456e8a5265649ebe7599d541b4652e546d96355826
+SIZE (norayr-time-c17a1c7_GH0.tar.gz) = 1003

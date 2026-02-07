@@ -1,0 +1,11 @@
+--- config.orig	2018-09-09 05:55:48 UTC
++++ config
+@@ -535,7 +535,7 @@ begin:
+   if ( $?CHARM_OPTS ) then
+     echo "CHARMOPTS = $CHARM_OPTS" >> Make.config
+   endif
+-  echo 'CHARM = $(CHARMBASE)/$(CHARMARCH)' >> Make.config
++  echo 'CHARM = $(CHARMBASE)' >> Make.config
+   set ARCH_SUFFIX = ""
+   if ( $CHARM_ARCH =~ *-scyld* ) set ARCH_SUFFIX = ${ARCH_SUFFIX}-Scyld
+   if ( $CHARM_ARCH =~ *-clustermatic* ) then

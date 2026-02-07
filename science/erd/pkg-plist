@@ -1,0 +1,6 @@
+include/ERD/ERD_MANGLE.h
+lib/liberd.so
+share/cmake/erd/erdConfig.cmake
+share/cmake/erd/erdConfigVersion.cmake
+share/cmake/erd/erdTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/erd/erdTargets.cmake

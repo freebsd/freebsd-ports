@@ -1,0 +1,14 @@
+CMatrix - show a scrolling 'Matrix' like screen (curses based)
+
+CMatrix by default operates in 'eye candy' mode.  It must be aborted with
+control-c.  If you wish for more of a 'screen saver' effect, you must
+specify -s on the command line.  For usage, use cmatrix -h.
+
+If you have any suggestions/flames/patches to send, please feel free to
+do so.  Please do not critique my code, I know I'm a hack ;-)  I just got
+the urge to write this one evening, and decided to see how fast I could do
+it.  It's probably not particularly portable or efficient, but I'm pretty
+sure it wont hog *too* much CPU time.
+
+This software is provided under the GNU GPL.  I am in no way affiliated
+in any way with the movie 'The Matrix', just a big fan.

@@ -1,0 +1,32 @@
+--- BUILD.gn.orig	2022-04-21 12:21:39 UTC
++++ BUILD.gn
+@@ -5239,7 +5239,7 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -5256,6 +5256,12 @@ v8_component("v8_libbase") {
+     ]
+ 
+     libs = [ "dl" ]
++  } else if (is_bsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "rt", "execinfo" ]
+   } else if (is_android) {
+     if (current_toolchain == host_toolchain) {
+       libs = [
+@@ -5778,6 +5784,7 @@ if (v8_monolithic) {
+       ":v8_libplatform",
+       "//build/win:default_exe_manifest",
+     ]
++    libs = ["execinfo"]
+ 
+     configs = [ ":internal_config" ]
+   }

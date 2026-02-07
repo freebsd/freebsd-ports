@@ -1,0 +1,14 @@
+This is a Python module and command line fully compatible with WaveDrom, which
+is originally implemented in JavaScript. It is useful if you want to generate
+wavedrom diagrams from a Python environment or simply don't want to install the
+Node.js environment just to use WaveDrom as simple command line.
+
+WaveDromPy is for example used in sphinxcontrib-wavedrom to render wavedrom for
+Sphinx documentation. While the original project renders the diagrams in
+JavaScript in the browser, WaveDromPy renders them to SVG files.
+
+This tool is a direct translation of original Javascript file WaveDrom.js to
+Python. No extra feature added. We seek to have it fully compatible.
+
+The tool WaveDromPy directly converts WaveDrom compatible JSON files into SVG
+format.

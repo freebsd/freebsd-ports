@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Digest/SipHash.pm
+%%SITE_ARCH%%/Digest/SipHash/PP.pm
+%%SITE_ARCH%%/auto/Digest/SipHash/SipHash.so
+%%PERL5_MAN3%%/Digest::SipHash.3.gz
+%%PERL5_MAN3%%/Digest::SipHash::PP.3.gz

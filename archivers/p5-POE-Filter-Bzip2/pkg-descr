@@ -1,0 +1,3 @@
+POE::Filter::Bzip2 provides a POE filter for performing compression/
+decompression using Compress::Bzip2. It is suitable for use with
+POE::Filter::Stackable.

@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/Imager::Plot.3.gz
+%%PERL5_MAN3%%/Imager::Plot::Axis.3.gz
+%%SITE_PERL%%/Imager/Plot.pm
+%%SITE_PERL%%/Imager/Plot/Axis.pm
+%%SITE_PERL%%/Imager/Plot/DataSet.pm
+%%SITE_PERL%%/Imager/Plot/Style.pm
+%%SITE_PERL%%/Imager/Plot/Util.pm
+%%SITE_PERL%%/Imager/plot.pl
+%%SITE_PERL%%/auto/Imager/Plot/autosplit.ix

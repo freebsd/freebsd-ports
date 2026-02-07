@@ -1,0 +1,6 @@
+PoWA (PostgreSQL Workload Analyzer) is a performance tool for PostgreSQL
+allowing to collect, aggregate and purge statistics on multiple PostgreSQL
+instances from various Stats Extensions.
+
+PoWA-collector is the daemon that gather performance metrics from remote
+PostgreSQL instances (optional) on a dedicated repository server.

@@ -1,0 +1,13 @@
+--- ./m4/Makefile.orig	2014-05-19 15:47:33.700018790 +0800
++++ ./m4/Makefile	2014-05-19 15:47:43.063018434 +0800
+@@ -49,8 +49,8 @@
+ all:	$(M4FILES)
+ 
+ install: $(M4FILES)
+-	install -d $(DBOWDIR)
+-	install -C -m 444 $(M4FILES) $(DBOWDIR)
++	install -d $(DESTDIR)$(DBOWDIR)
++	install -C -m 444 $(M4FILES) $(DESTDIR)$(DBOWDIR)
+ 
+ clean:
+ 

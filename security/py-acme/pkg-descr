@@ -1,0 +1,5 @@
+ACME (Automated Certificate Management Environment) is a protocol for
+automating the management of domain-validation certificates, based on a
+simple JSON-over-HTTPS interface.
+
+This packages provides a Python implementation of the protocol.

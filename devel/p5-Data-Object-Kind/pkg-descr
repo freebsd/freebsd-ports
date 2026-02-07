@@ -1,0 +1,2 @@
+Data::Object::Kind provides methods common across all Data::Object value
+classes.

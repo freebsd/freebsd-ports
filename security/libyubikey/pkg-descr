@@ -1,0 +1,2 @@
+Library for decrypting and parsing YubiKey One-Time Passwords (OTP),
+written in C.

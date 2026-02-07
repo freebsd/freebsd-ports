@@ -1,0 +1,11 @@
+--- Makefile.orig	2002-10-23 16:36:20.000000000 +0000
++++ Makefile
+@@ -15,7 +15,7 @@ GKRELLM_HDRS = /usr/include
+ CC := gcc
+ GTKFLAGS := $(shell pkg-config gtk+-2.0 --cflags)
+ CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS) -I$(GKRELLM_HDRS)
+-LDFLAGS := -shared -Wl
++LDFLAGS := -shared
+ INST_DIR := $(DESTDIR)/usr/lib/gkrellm2/plugins
+ USER_INST_DIR := $(DESTDIR)$(HOME)/.gkrellm2/plugins
+ MANPAGES := gkrellkam-list.5

@@ -1,0 +1,2 @@
+Test utility to test UNIX domain socket server programs.
+It is based on Test::TCP.

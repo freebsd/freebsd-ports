@@ -1,0 +1,18 @@
+@dir(%%LEOFS_USER%%,%%LEOFS_GROUP%%,) %%LEOFS_RUNDIR%%
+@dir(%%LEOFS_USER%%,%%LEOFS_GROUP%%,) %%LEOFS_LOGDIR%%
+@dir(%%LEOFS_USER%%,%%LEOFS_GROUP%%,) %%LEOFS_DBDIR%%
+@sample %%ETCDIR%%/leo_gateway.conf.sample
+@sample %%ETCDIR%%/leo_manager.conf.sample
+@sample %%ETCDIR%%/leo_manager_slave.conf.sample
+@sample %%ETCDIR%%/leo_storage.conf.sample
+@sample %%ETCDIR%%/server_cert.pem.sample
+@sample %%ETCDIR%%/server_key.pem.sample
+sbin/leo_gateway
+sbin/leo_manager
+sbin/leo_manager_slave
+sbin/leo_storage
+sbin/leofs
+sbin/leofs-adm
+@comment Insert PLIST.leofs here
+@comment -=[ begin PLIST.leofs ]=-
+@comment -=[ end PLIST.leofs ]=-

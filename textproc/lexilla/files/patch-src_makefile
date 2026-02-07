@@ -1,0 +1,22 @@
+--- src/makefile.orig	2024-04-23 05:51:50 UTC
++++ src/makefile
+@@ -44,7 +44,6 @@ ifdef CLANG
+ BASE_FLAGS += --std=c++17
+ 
+ ifdef CLANG
+-CXX = clang++
+ ifdef windir
+ # Clang on Win32 uses MSVC headers so will complain about strcpy without this
+ DEFINES += -D_CRT_SECURE_NO_DEPRECATE=1
+@@ -73,9 +72,9 @@ RANLIB ?= ranlib
+ 
+ RANLIB ?= ranlib
+ 
+-SCINTILLA_INCLUDE = ../../scintilla/include
++SCINTILLA_INCLUDE = $(LOCALBASE)/include/scintilla
+ 
+-vpath %.h ../include ../../scintilla/include ../lexlib
++vpath %.h ../include $(LOCALBASE)/include/scintilla ../lexlib
+ vpath %.cxx ../src ../lexlib ../lexers
+ 
+ DEFINES += -D$(if $(DEBUG),DEBUG,NDEBUG)

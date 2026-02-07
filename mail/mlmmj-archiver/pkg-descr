@@ -1,0 +1,4 @@
+mlmmj-archiver is a program which will generates HTML archives out of mlmmj archives
+mlmmj-archiver uses the clearsilver templating system in order to allow maximum configurability
+mlmmj-archiver uses SQLite for its database cache
+mlmmj-archiver runs in a capsicum sandbox

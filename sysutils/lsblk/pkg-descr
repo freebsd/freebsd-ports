@@ -1,0 +1,2 @@
+Lists information about block devices in the FreeBSD system in a similar way
+that lsblk(8) from Linux systems does. An example is shown below.

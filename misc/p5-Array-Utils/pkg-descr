@@ -1,0 +1,3 @@
+A small pure-perl module containing list manipulation routines. The
+module emerged because I was tired to include same utility routines
+in numerous projects.

@@ -1,0 +1,5 @@
+IPMI exporter for Prometheus.
+It supports both the regular /metrics endpoint, exposing metrics from the host
+that the exporter is running on, as well as an /ipmi endpoint that supports
+IPMI over RMCP - one exporter running on one host can be used to monitor a
+large number of IPMI interfaces by passing the target parameter to a scrape.

@@ -1,0 +1,6 @@
+bin/geomorph
+share/applications/geomorph.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/geomorph.mo
+%%NLS%%share/locale/en/LC_MESSAGES/geomorph.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/geomorph.mo
+share/pixmaps/GeoMorph.xpm

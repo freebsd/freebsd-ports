@@ -1,0 +1,5 @@
+Test::MockTime::HiRes is a Time::HiRes compatible version of Test::MockTime. You
+can wait milliseconds in simulated time.
+
+It also provides mock_time to restrict the effect of the simulation in a code
+block.

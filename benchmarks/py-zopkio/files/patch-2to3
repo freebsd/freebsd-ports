@@ -1,0 +1,66 @@
+--- zopkio/__main__.py.orig	2022-05-21 20:20:16 UTC
++++ zopkio/__main__.py
+@@ -110,7 +110,7 @@ def call_main(args):
+     if args.output_dir is not None:
+       runtime.set_output_dir(args.output_dir)
+   except ValueError as e:
+-    print str(e)
++    print(str(e))
+     raise
+ 
+   # Set up logging.
+@@ -125,7 +125,7 @@ def call_main(args):
+     config_overrides = utils.parse_config_list(args.config_overrides)
+   except ValueError as e:
+     logger.error(str(e))
+-    print("Error in processing command line arguments:\n {0}".format(traceback.format_exc()))
++    print(("Error in processing command line arguments:\n {0}".format(traceback.format_exc())))
+     raise
+ 
+   runtime.set_machines(machines)
+@@ -149,7 +149,7 @@ def call_main(args):
+     else:
+       test_runner = TestRunner(args.testfile, args.test_list, config_overrides)
+   except BaseException as e:
+-    print("Error setting up testrunner:\n%s" % traceback.format_exc())
++    print(("Error setting up testrunner:\n%s" % traceback.format_exc()))
+     raise ValueError(e.message)
+ 
+   test_runner.run()
+--- zopkio/deployer.py.orig	2022-05-21 20:20:16 UTC
++++ zopkio/deployer.py
+@@ -31,13 +31,12 @@ import zopkio.runtime as runtime
+ 
+ logger = logging.getLogger(__name__)
+ 
+-class Deployer(object):
++class Deployer(object, metaclass=ABCMeta):
+   """Abstract class specifying required contract for a Deployer
+ 
+   A deployer implements both the basic contracts for deployment as well as keeping
+   track of the state of deployed applications
+   """
+-  __metaclass__ = ABCMeta
+   _signalnames = {signal.SIGHUP : "HANGING UP ON",
+                   signal.SIGTERM : "TERMINATING",
+                   signal.SIGKILL : "KILLING",
+@@ -261,7 +260,7 @@ class Deployer(object):
+         for f in logs:
+           try:
+             mode = ftp.stat(f).st_mode
+-          except IOError, e:
++          except IOError as e:
+             if e.errno == errno.ENOENT:
+               logger.error("Log file " + f + " does not exist on " + hostname)
+               pass
+--- zopkio/remote_host_helper.py.orig	2022-05-21 20:20:16 UTC
++++ zopkio/remote_host_helper.py
+@@ -147,7 +147,7 @@ def copy_dir(ftp, filename, outputdir, prefix, pattern
+   """
+   try:
+     mode = ftp.stat(filename).st_mode
+-  except IOError, e:
++  except IOError as e:
+     if e.errno == errno.ENOENT:
+       logger.error("Log file " + filename + " does not exist")
+       pass

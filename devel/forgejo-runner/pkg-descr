@@ -1,0 +1,4 @@
+Act runner is a runner for Forgejo based on the Gitea Act runner
+
+This is a fork of the Gitea act runner developed and maintained by Forgejo
+community and intended to be used with Forgejo only.

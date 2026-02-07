@@ -1,0 +1,27 @@
+--- Makefile.PL.orig	2003-11-16 07:07:26 UTC
++++ Makefile.PL
+@@ -39,13 +39,13 @@ DESTINSTALLMAN5DIR = $(DESTDIR)$(INSTALLMAN5DIR)
+ INST_MAN5DIR = blib/man5
+ INSTALLMAN5DIR = $(PREFIX)/man/man5
+ DESTINSTALLMAN5DIR = $(DESTDIR)$(INSTALLMAN5DIR)
+-INSTALLSITEMAN5DIR = $(SITEPREFIX)/man/man5
++INSTALLSITEMAN5DIR = $(SITEPREFIX)/share/man/man5
+ DESTINSTALLSITEMAN5DIR = $(DESTDIR)$(INSTALLSITEMAN5DIR)
+ INSTALLVENDORMAN5DIR = $(VENDORPREFIX)/man/man5
+ DESTINSTALLVENDORMAN5DIR = $(DESTDIR)$(INSTALLVENDORMAN5DIR)
+ MAN5EXT = 5
+ INST_SYSCONFDIR = blib/etc
+-INSTALLSYSCONFDIR = /etc
++INSTALLSYSCONFDIR = $(SITEPREFIX)/etc
+ DESTINSTALLSYSCONFDIR = $(DESTDIR)$(INSTALLSYSCONFDIR)	
+ # end mp3lint
+ 
+@@ -124,7 +124,7 @@ sub MY::install {
+   my $self = shift;
+   my $inherited = $self->SUPER::install(@_);
+   my $conf="\t\t\$(INST_SYSCONFDIR) \$(DESTINSTALLSYSCONFDIR)";
+-  $inherited =~ s/(^\s*\$\(INST_MAN)3(DIR\s*.*MAN)3(DIR\))/${1}3${2}3$3 \\\n${1}5${2}5$3 \\\n$conf/gm;
++  $inherited =~ s/(^\s*"?\$\(INST_MAN)3(DIR"?.*MAN)3(DIR\)"?)/${1}3${2}3$3 \\\n${1}5${2}5$3 \\\n$conf/gm;
+ 
+   return $inherited;
+ }

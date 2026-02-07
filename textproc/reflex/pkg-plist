@@ -1,0 +1,6 @@
+bin/reflex
+bin/reflex++
+include/reFlexLexer.h
+lib/librefl.a
+share/man/man1/reflex++.1.gz
+share/man/man1/reflex.1.gz

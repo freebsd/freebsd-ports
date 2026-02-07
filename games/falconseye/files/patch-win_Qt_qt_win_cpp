@@ -1,0 +1,12 @@
+--- win/Qt/qt_win.cpp.orig	Tue Jul  3 17:42:00 2001
++++ win/Qt/qt_win.cpp	Wed Jul  4 11:23:29 2001
+@@ -91,7 +91,8 @@ extern "C" {
+ #include "qt_clust.h"
+ #include "qt_xpms.h"
+ 
+-#include <malloc.h>
++//#include <malloc.h>
++#include <stdlib.h>
+ 
+ #ifdef _WS_X11_
+ // For userid control

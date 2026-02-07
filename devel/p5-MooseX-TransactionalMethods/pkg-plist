@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application/ToClass.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application/ToComposite.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application/ToInstance.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Meta/Role.pm
+%%SITE_PERL%%/MooseX/TransactionalMethods.pm
+%%PERL5_MAN3%%/MooseX::Meta::Method::Transactional.3.gz
+%%PERL5_MAN3%%/MooseX::TransactionalMethods.3.gz

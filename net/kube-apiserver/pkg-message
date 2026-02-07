@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+----------------------------------------------------------------------
+Thanks for installing Kubernetes API server on FreeBSD.
+There is a known limitation on kube-apiserver currently:
+* Webhooks cannot work as they require CNI network mesh in most of the
+  deployment. Currently Kubelet hasn't be ported to FreeBSD.
+----------------------------------------------------------------------
+EOM
+}
+]

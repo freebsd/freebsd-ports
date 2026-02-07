@@ -1,0 +1,2 @@
+HTML::ResolveLink is a module to rewrite relative links in XHTML or
+HTML into absolute URI.

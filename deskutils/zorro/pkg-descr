@@ -1,0 +1,7 @@
+The program allows you to set up a tree of actions starting
+from an (invisible) root and going down to as many levels as you
+specify.  Associated with each action is a descriptive note, a done/
+not done flag, an optional priority and an optional completion date
+(more to come). Zorro stores your to-do list in the file ~/.zorrodb
+and it reads the file ~/.zorrorc on startup. There are quite a lot of
+configurable items - look at the file DOTzorrorc for further details.

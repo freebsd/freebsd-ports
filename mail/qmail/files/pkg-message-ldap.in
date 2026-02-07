@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+	ATTENTION:
+
+Do not forget to read %%PREFIX%%/doc/QLDAPINSTALL. After all,
+this is NOT our old stock qmail. And, %%PREFIX%%/doc/ANTISPAM
+for some antispam control measures.
+
+The qmail.schema file was copied to %%DOCSDIR%%. Remember
+to copy it to ldap's schema directory
+
+You can enable qmail as your default mailer executing:
+> %%PREFIX%%/scripts/enable-qmail
+
+=====><=====
+
+If you've built this port with TLS support (WITH_TLS=yes)
+
+==> You will need to provide a working certificate in %%PREFIX%%/control/cert.pem :
+
+# makes a self-signed certificate
+3) do "make certificate"
+
+# makes a certificate request
+4) do "make certificate-req"
+
+=====><=====
+
+Now, you need to use it. Check a little FreeBSD specific how-to at
+http://freebsd.cg.nu/postfixqmail-ldap.html
+EOM
+}
+]

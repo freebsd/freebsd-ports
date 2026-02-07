@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-10-13 20:01:35 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 69.5"]
++requires = ["setuptools >= 61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,7 +7,7 @@ readme = {file = "README.rst", content-type = "text/x-
+ dynamic = ["version"]
+ description = "Generator-based operators for asynchronous iteration"
+ readme = {file = "README.rst", content-type = "text/x-rst"}
+-license = "GPL-3.0-or-later"
++license = {text = "GPL-3.0-or-later"}
+ requires-python = ">=3.9"
+ authors = [
+     { name = "Vincent Michel", email = "vxgmichel@gmail.com" },

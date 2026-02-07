@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+
+Update font map after install:
+
+  # /usr/local/bin/mktexlsr
+  # /usr/local/bin/updmap-sys --force --enable Map=kotex-extra-hlfont.map
+  # /usr/local/bin/updmap-sys --force --enable Map=kotex-extra.map
+EOM
+}
+{ type: remove
+  message: <<EOM
+
+And update font map after deinstall:
+
+  # /usr/local/bin/updmap-sys --syncwithtrees
+  # /usr/local/bin/updmap-sys
+
+EOM
+}
+]

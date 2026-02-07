@@ -1,0 +1,4 @@
+The PDL::IO::Dicom module enables reading 16-bit gray level Dicom images into
+PDL. As Dicom is an extremely complex format, this module can unfortunately not
+handle all different image types included in the DICOM standard. One common
+format that is currently not supported is the Papyrus format.

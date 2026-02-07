@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Text/Tabs.pm
+%%SITE_PERL%%/Text/Wrap.pm
+%%PERL5_MAN3%%/Text::Tabs.3.gz
+%%PERL5_MAN3%%/Text::Wrap.3.gz

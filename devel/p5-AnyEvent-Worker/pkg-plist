@@ -1,0 +1,4 @@
+%%SITE_PERL%%/AnyEvent/Worker.pm
+%%SITE_PERL%%/AnyEvent/Worker/Pool.pm
+%%PERL5_MAN3%%/AnyEvent::Worker.3.gz
+%%PERL5_MAN3%%/AnyEvent::Worker::Pool.3.gz

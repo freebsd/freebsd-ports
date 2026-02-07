@@ -1,0 +1,14 @@
+upstream:
+  default:
+    - 1.1.1.1
+    - tcp-tls:fdns1.dismail.de:853
+    - https://dns.digitale-gesellschaft.ch/dns-query
+blocking:
+  blackLists:
+    ads:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  clientGroupsBlock:
+    default:
+      - ads
+port: 53
+httpPort: 4000

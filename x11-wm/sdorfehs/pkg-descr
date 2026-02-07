@@ -1,0 +1,13 @@
+sdorfehs (pronounced "starfish") is a tiling window manager descended
+from ratpoison (which itself is modelled after GNU Screen).
+
+sdorfehs divides the screen into one or more frames, each only
+displaying one window at a time but can cycle through all available
+windows (those which are not being shown in another frame).
+
+Like Screen, sdorfehs primarily uses prefixed/modal key bindings for
+most actions. sdorfehs's command mode is entered with a configurable
+keystroke (Control+a by default) which then allows a number of bindings
+accessible with just a single keystroke or any other combination. For
+example, to cycle through available windows in a frame, press Control+a
+then n.

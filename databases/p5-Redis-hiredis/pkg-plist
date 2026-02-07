@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Redis/hiredis.pm
+%%SITE_ARCH%%/auto/Redis/hiredis/hiredis.so
+%%PERL5_MAN3%%/Redis::hiredis.3.gz

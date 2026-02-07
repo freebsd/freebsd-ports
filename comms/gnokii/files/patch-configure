@@ -1,0 +1,104 @@
+--- configure.orig	2011-12-02 14:54:03 UTC
++++ configure
+@@ -955,7 +955,7 @@ pdfdir='${docdir}'
+ psdir='${docdir}'
+ libdir='${exec_prefix}/lib'
+ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+ 
+ ac_prev=
+ ac_dashdash=
+@@ -7939,19 +7939,6 @@ _ACEOF
+   fi
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if building on FreeBSD" >&5
+-$as_echo_n "checking if building on FreeBSD... " >&6; }
+-
+-if test `uname -s` = "FreeBSD" ; then
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	CPPFLAGS="$CFLAGS -I/usr/local/include"
+-	LDFLAGS="$LDFLAGS -L/usr/local/lib"
+-else
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking if building on NetBSD" >&5
+ $as_echo_n "checking if building on NetBSD... " >&6; }
+ 
+@@ -15803,7 +15790,7 @@ $as_echo "$as_me: WARNING: we do not kno
+ $as_echo_n "checking if more special flags are required for pthreads... " >&6; }
+         flag=no
+         case "${host_cpu}-${host_os}" in
+-                *-aix* | *-freebsd* | *-darwin*) flag="-D_THREAD_SAFE";;
++                *-aix* | *-darwin*) flag="-D_THREAD_SAFE";;
+                 *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
+         esac
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${flag}" >&5
+@@ -16716,7 +16703,7 @@ $as_echo "#define HAVE_BLUETOOTH 1" >>co
+ $as_echo "#define HAVE_BLUETOOTH_BLUEZ /**/" >>confdefs.h
+ 
+ 			USE_BLUETOOTH="yes"
+-			BLUETOOTH_LIBS="-lbluetooth"
++			BLUETOOTH_LIBS="-lsdp -lbluetooth"
+ 
+ 		fi
+ 	fi
+@@ -16849,7 +16836,7 @@ if ${ac_cv_lib_bluetooth_bt_aton+:} fals
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lbluetooth  $LIBS"
++LIBS="-lsdp -lbluetooth  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16880,7 +16867,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+ $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = xyes; then :
+-  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
++  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
+ else
+   ac_cv_have_bt_lib=no
+ fi
+@@ -16977,7 +16964,7 @@ if ${ac_cv_lib_bluetooth_bt_aton+:} fals
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lbluetooth  $LIBS"
++LIBS="-lsdp -lbluetooth  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17008,7 +16995,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+ $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = xyes; then :
+-  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
++  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
+ else
+   ac_cv_have_bt_lib=no
+ fi
+@@ -17488,8 +17475,7 @@ if ${ac_cv_lib_Xpm_XpmWriteFileFromXpmIm
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lXpm  $XLIBS -lX11
+-             $LIBS"
++LIBS="-lXpm  $XLIBS -lX11 $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17556,7 +17542,7 @@ $as_echo "$as_me: WARNING: Disabling xgn
+    fi
+ fi
+ 
+- if test "x$_support" = "xyes"; then
++ if test "x$x_support" = "xyes"; then
+   XGNOKII_TRUE=
+   XGNOKII_FALSE='#'
+ else

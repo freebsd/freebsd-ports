@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: filebrowser
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for File Browser in /etc/rc.conf
+#
+# filebrowser_enable (bool):     Enable File Browser. (default=NO)
+# filebrowser_port (int):        Port to listen on. (default=8080)
+# filebrowser_address (str):     Address to listen on. (default=0.0.0.0)
+# filebrowser_database (str):    Database path. (default=/var/db/filebrowser/filebrowser.db)
+# filebrowser_log (str):         Log output. (default=/var/log/filebrowser/filebrowser.log)
+# filebrowser_wwwdir (str):      Root to prepend to relative paths. (default=%%WWWDIR%%)
+# filebrowser_runas (str):       User to run File Browser as. (default=%%USER%%)
+#
+
+. /etc/rc.subr
+
+name="filebrowser"
+desc="Web File Browser"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${filebrowser_enable:="NO"}
+: ${filebrowser_port:="8080"}
+: ${filebrowser_address:="0.0.0.0"}
+: ${filebrowser_database:="/var/db/filebrowser/filebrowser.db"}
+: ${filebrowser_log:="/var/log/filebrowser/filebrowser.log"}
+: ${filebrowser_wwwdir:="%%WWWDIR%%"}
+: ${filebrowser_runas:="%%USER%%"}
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="%%LOCALBASE%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -u ${filebrowser_runas} -p ${pidfile} -t \"${desc}\" ${procname} -d ${filebrowser_database} -p ${filebrowser_port} -a ${filebrowser_address} -l ${filebrowser_log} -r ${filebrowser_wwwdir}"
+start_precmd="filebrowser_prestart"
+
+filebrowser_prestart()
+{
+	if [ ! -d "${filebrowser_wwwdir}" ]; then
+		mkdir -p "${filebrowser_wwwdir}" &&
+		chown ${filebrowser_runas} "${filebrowser_wwwdir}" &&
+		chmod 0750 "${filebrowser_wwwdir}"
+	fi
+}
+
+run_rc_command "$1"

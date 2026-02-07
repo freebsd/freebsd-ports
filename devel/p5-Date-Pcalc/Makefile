@@ -1,0 +1,20 @@
+PORTNAME=	Date-Pcalc
+PORTVERSION=	6.1
+PORTREVISION=	1
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:STBEY
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Gregorian calendar date calculations
+WWW=		https://catcode.com/date/pcalc.html
+
+BUILD_DEPENDS=	p5-Carp-Clan>=5.3:devel/p5-Carp-Clan \
+		p5-Bit-Vector>=7.0:math/p5-Bit-Vector
+
+USES=		perl5
+USE_PERL5=	configure
+CONFIGURE_ARGS=	</dev/null
+
+.include <bsd.port.mk>

@@ -1,0 +1,8 @@
+Zelta is a suite of tools offering a streamlined approach to managing
+ZFS snapshot replication across systems. It's built with the intention
+of simplifying complex ZFS functions into safe and user-friendly
+commands while also being the foundation for large-scale backup
+and failover environments. It's easy and accessible while working
+with most UNIX and UNIX-like base systems without additional packages.
+It's optimized for environments with strict permission separation,
+and integrates well into many types of existing ZFS workflows.

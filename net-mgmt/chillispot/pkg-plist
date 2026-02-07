@@ -1,0 +1,9 @@
+sbin/chilli
+share/man/man8/chilli.8.gz
+%%DATADIR%%/chilli.conf.sample
+%%DATADIR%%/dictionary.chillispot
+%%DATADIR%%/freeradius.users
+%%DATADIR%%/hotspotlogin.cgi
+%%DATADIR%%/pf.conf.sample
+%%DATADIR%%/ipfw-config.sample
+%%DATADIR%%/installguide.txt

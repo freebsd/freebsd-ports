@@ -1,0 +1,37 @@
+PORTNAME=	commons-lang3
+PORTVERSION=	3.19.0
+CATEGORIES=	java devel
+MASTER_SITES=	APACHE_COMMONS_BINARIES/lang
+PKGNAMEPREFIX=	apache-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+
+MAINTAINER=	truckman@FreeBSD.org
+COMMENT=	Apache library with helper utilities for the java.lang API
+WWW=		https://commons.apache.org/proper/commons-lang/
+
+LICENSE=	APACHE20
+
+USES=		java
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+JARFILE=	${PORTNAME}-${PORTVERSION}.jar
+DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES=	${JAVAJARDIR}/${JARFILE} \
+		${JAVAJARDIR}/${DESTJARFILE}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+DOCS_ALL_TARGET=	javadoc
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+	${LN} -sf ${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
+
+do-install-DOCS-on:
+	(cd ${WRKSRC}/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

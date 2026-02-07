@@ -1,0 +1,16 @@
+Text::Tmpl is a module for very fast templating. There are dozens of
+templating modules on CPAN, each only a tiny bit different from the
+others. This one is no different - what sets it aside is speed. The
+entire module is implemented as a C library, with only a thin XS/Perl
+layer to make the calls available from Perl. The same templates, then,
+can be used from either Perl or C/C++ programs.
+
+This was originally designed to completely isolate HTML programmers from
+module/CGI programmers, or at least completely separate logic from
+content in dynamic web applications. It is syntactically based on a
+similar system written by a friend of mine, Neil Mix, which was
+proprietary and exclusively written in Perl. It shares no code in common
+with this system, or any other.
+
+-Anton
+<tobez@FreeBSD.org>

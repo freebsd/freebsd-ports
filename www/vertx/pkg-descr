@@ -1,0 +1,8 @@
+Vert.x is the framework for the next generation of asynchronous,
+effortlessly scalable, concurrent web applications.
+
+It is an event driven application framework that runs on the JVM
+- a run-time with real concurrency and unrivalled performance.
+Vert.x then exposes the API in Clojure, DynJS, Groovy, Java,
+JavaScript, Ruby, PHP, Python, and Scala.
+So you choose what language you want to use.

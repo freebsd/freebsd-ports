@@ -1,0 +1,11 @@
+--- Configure.orig	1997-05-11 21:26:36 UTC
++++ Configure
+@@ -8,7 +8,7 @@ fmmode=0
+ mididevno=-1
+ play=PLAY_MIDI
+ gus1=/dos/ultrasnd/midi
+-gus2=/usr/local/lib/Plib
++gus2=${PREFIX}/lib/Plib
+ ##########################################################
+ ### YOU MUST HAVE THE VOXWARE SOUND DRIVER INSTALLED   ###
+ ### FOR THIS SCRIPT TO FUNCTION PROPERLY. /dev/sndstat ###

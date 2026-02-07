@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/X11/IdleTime.pm
+%%SITE_ARCH%%/auto/X11/IdleTime/IdleTime.so
+%%PERL5_MAN3%%/X11::IdleTime.3.gz

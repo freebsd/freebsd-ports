@@ -1,0 +1,38 @@
+--- bin/cfgmaker.orig	2022-01-19 10:25:15 UTC
++++ bin/cfgmaker
+@@ -175,7 +175,7 @@ sub InterfaceInfo($$$$$) {
+         push @Variables,  ($1 > 11.0 or $1 < 10.0 ) ? "ifAlias" : "CiscolocIfDescr";
+         if ($1 > 11.2) {push @Variables, "vmVlan";};
+        if ($1 > 11.3) {push @Variables, "vlanTrunkPortDynamicStatus";};
+-    } elsif ( $routers->{$router}{deviceinfo}{Vendor} =~ /(?:hp|juniper|dlink|wwp|foundry|dellLan|force10|3com|extremenetworks|openBSD|arista|enterasys|zyxel|vyatta|dcn|brocade|datacom|alcatel|mikrotik|huawei|eltex)/i) {
++    } elsif ( $routers->{$router}{deviceinfo}{Vendor} =~ /(?:hp|juniper|dlink|wwp|foundry|dellLan|force10|3com|extremenetworks|openBSD|arista|enterasys|zyxel|vyatta|dcn|brocade|datacom|alcatel|mikrotik|huawei|eltex|ubiquiti)/i) {
+         push @Variables, "ifAlias";
+     }
+ 
+@@ -911,11 +911,11 @@ sub IsCounterBroken ($$$) {
+     my $snmphost = v4onlyifnecessary($router, $ipv4only);
+ 
+     if ($router =~ /:[\d.]*:[\d.]*:[\d.]*:[23]/) {
+-        my $speed = (snmpget($snmphost, $v3opt, 'ifHighSpeed.'.$if))[0] || 'unknown';
++        my $speed = (snmpget($snmphost, $v3opt, 'ifHighSpeed.'.$if))[0] // 'unknown';
+         debug('base',"snmpget $snmphost for ifHighSpeed.$if -> $speed Mb/s");
+         $SNMP_Session::errmsg = undef;
+ 	$Net_SNMP_util::ErrorMessage = undef;
+-        my $counter = (snmpget($snmphost,$v3opt, 'ifHCInOctets.'.$if))[0] || 'unknown';
++        my $counter = (snmpget($snmphost,$v3opt, 'ifHCInOctets.'.$if))[0] // 'unknown';
+         debug('base',"snmpget $snmphost for ifHCInOctets.$if -> $counter");
+         if( $speed eq 'unknown' or $counter !~ /^\d+$/ or $SNMP_Session::errmsg or $Net_SNMP_util::ErrorMessage){
+             $SNMP_Session::errmsg = undef;
+@@ -1018,7 +1018,11 @@ sub DeviceInfo ($$$) {
+             '1.3.6.1.4.1.14988.' =>     'mikrotik',
+             '1.3.6.1.4.1.6486.' =>      'alcatel',
+             '1.3.6.1.4.1.2011.' =>      'huawei',
+-            '1.3.6.1.4.1.35265.' =>     'eltex'
++            '1.3.6.1.4.1.35265.' =>     'eltex',
++            '1.3.6.1.4.1.4413' =>       'ubiquiti',
++            '1.3.6.1.4.1.41112' =>      'ubiquiti'
++
++
+         );
+         $DevInfo{Vendor} = 'Unknown Vendor - '.$DevInfo{sysObjectID};
+         foreach (keys %vendorIDs) {

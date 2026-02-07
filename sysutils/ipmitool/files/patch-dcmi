@@ -1,0 +1,57 @@
+From ab5ce5baff097ebb6e2a17a171858be213ee68d3 Mon Sep 17 00:00:00 2001
+From: Thang Tran <thuutran@amperecomputing.com>
+Date: Tue, 11 Jul 2023 17:27:12 +0700
+Subject: [PATCH] dcmi: update parameters to read temperature sensors
+
+Issue:
+When the system has number of CPU temperature sensors more than 8,
+"ipmitool dcmi get_temp_reading" can not show all of sensors.
+
+Root cause:
+To request to read multiple sensors for each message, ipmitool has to
+send "Get Temperature Readings" command with the "Entity Instance" always
+0 and the "Entity Instance Start" as the offset. But the current code is
+sending "Entity Instance" is offset and "Entity Instance Start" always is
+0. It makes ipmitool only read 1 sensor each time. Besides that, the
+"Entity Instance Start" value starts from 1 (not 0), therefore, the
+initialization has to be set to 1.
+
+Solution:
+This commit corrects the order of parameters and the initialization of
+"Entity Instance Start" byte.
+
+Resolves ipmitool/ipmitool#3
+
+Tested:
+1. Update BMC software to support 24 CPU temperature sensors
+2. Request to read the temperature sensors
+$ipmitool dcmi get_temp_reading
+3. Display full 24 CPU temperature sensors.
+
+Signed-off-by: Thang Tran <thuutran@amperecomputing.com>
+---
+ lib/ipmi_dcmi.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git lib/ipmi_dcmi.c lib/ipmi_dcmi.c
+index 8ed87a9..8cf6d66 100644
+--- lib/ipmi_dcmi.c
++++ lib/ipmi_dcmi.c
+@@ -1595,7 +1595,7 @@ ipmi_dcmi_prnt_get_temp_readings(struct ipmi_intf * intf)
+ 			continue;
+ 		}
+ 		/* Total number of available instances for the Entity ID */
+-		offset = 0;
++		offset = 1;
+ 		tota_inst = rsp->data[1];
+ 		while (tota_inst > 0) {
+ 			get_inst = ((tota_inst / DCMI_MAX_BYTE_TEMP_READ_SIZE) ?
+@@ -1603,7 +1603,7 @@ ipmi_dcmi_prnt_get_temp_readings(struct ipmi_intf * intf)
+ 			            (tota_inst % DCMI_MAX_BYTE_TEMP_READ_SIZE));
+ 			rsp = ipmi_dcmi_get_temp_readings(intf,
+ 			                                  dcmi_temp_read_vals[i].val,
+-			                                  offset, 0);
++			                                  0, offset);
+ 			if (chk_rsp(rsp)) {
+ 				continue;
+ 			}

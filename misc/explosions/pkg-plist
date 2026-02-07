@@ -1,0 +1,9 @@
+bin/explosions
+%%DATADIR%%/spark1.png
+%%DATADIR%%/spark2.png
+%%DATADIR%%/spark3.png
+%%DATADIR%%/spark4.png
+%%DATADIR%%/spark5.png
+%%DATADIR%%/spark6.png
+%%DATADIR%%/spark7.png
+share/pixmaps/explosions.png

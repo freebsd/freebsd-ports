@@ -1,0 +1,11 @@
+--- doc/gnugo.texi.orig	2009-02-17 21:41:31 UTC
++++ doc/gnugo.texi
+@@ -26,7 +26,7 @@
+ 
+ @sp 1
+ @page
+-@title{GNU Go 3.8}
++@title GNU Go 3.8
+ @vskip 0pt plus 1filll
+ Copyright @copyright{} 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
+ 2008 and 2009 @uref{http://www.fsf.org,Free Software Foundation}, Inc.

@@ -1,0 +1,15 @@
+XaoS allows you to zoom and pan around a fractal in real time. It can display
+the animated fractals in graphical or even plain text mode.
+
+It displays the Mandelbrot set or many other fractals and allows you to zoom
+smoothly into the fractal. Various coloring modes are provided for both the
+points inside and outside the selected set. In addition, switching between
+Mandelbrot and Julia fractal types is provided.
+
+Other features include:
+       - autopilot mode
+       - palette changing
+       - image saving
+       - fractal inversion
+       - filters
+       - built in fractal tutorial.

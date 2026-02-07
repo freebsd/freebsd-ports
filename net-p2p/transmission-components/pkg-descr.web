@@ -1,0 +1,8 @@
+Transmission Web Interface (Clutch) is a WebUI for the Transmission BitTorrent
+client. It allows you to manage your torrents from anywhere you can access the
+internet, and runs on OS X and various flavors of *nix. It provides most of
+the basic features of the desktop client, including torrent upload, torrent
+start/stop, file path selection, speed limiting etc.
+
+Use of the Transmission Web Interface requires installation of 
+transmission-daemon, transmisssion-gtk, or transmission-qt.

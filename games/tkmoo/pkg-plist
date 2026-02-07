@@ -1,0 +1,14 @@
+bin/tkmoo
+%%DATADIR%%/plugins/ansi.tcl
+%%DATADIR%%/plugins/cmdcomplete.tcl
+%%DATADIR%%/plugins/displayurl.tcl
+%%DATADIR%%/plugins/mcp21.tcl
+%%DATADIR%%/plugins/message.tcl
+%%DATADIR%%/plugins/rehash.tcl
+%%DATADIR%%/plugins/search_macro.tcl
+%%DATADIR%%/plugins/serverinfo.tcl
+%%DATADIR%%/plugins/simpleedit.tcl
+%%DATADIR%%/plugins/status.tcl
+%%DATADIR%%/plugins/timezone.tcl
+%%DATADIR%%/plugins/url_trigger.tcl
+%%DATADIR%%/plugins/webbrowser.tcl

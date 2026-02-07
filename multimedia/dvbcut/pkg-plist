@@ -1,0 +1,12 @@
+bin/dvbcut
+share/applications/dvbcut.desktop
+%%DATADIR%%/dvbcut.qm
+%%DATADIR%%/dvbcut_cs.html
+%%DATADIR%%/dvbcut_cs.qm
+%%DATADIR%%/dvbcut_de.html
+%%DATADIR%%/dvbcut_de.qm
+%%DATADIR%%/dvbcut_en.html
+%%DATADIR%%/icons/dvbcut.svg
+share/man/man1/dvbcut.1.gz
+share/mime/packages/dvbcut.xml
+@dir %%DATADIR%%/applications

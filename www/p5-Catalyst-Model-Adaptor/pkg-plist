@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Catalyst/Helper/Model/Adaptor.pm
+%%SITE_PERL%%/Catalyst/Helper/Model/Factory.pm
+%%SITE_PERL%%/Catalyst/Helper/Model/Factory/PerRequest.pm
+%%SITE_PERL%%/Catalyst/Model/Adaptor.pm
+%%SITE_PERL%%/Catalyst/Model/Adaptor/Base.pm
+%%SITE_PERL%%/Catalyst/Model/Factory.pm
+%%SITE_PERL%%/Catalyst/Model/Factory/PerRequest.pm
+%%PERL5_MAN3%%/Catalyst::Helper::Model::Adaptor.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::Model::Factory.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::Model::Factory::PerRequest.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::Adaptor.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::Adaptor::Base.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::Factory.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::Factory::PerRequest.3.gz

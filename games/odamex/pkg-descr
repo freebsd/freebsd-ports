@@ -1,0 +1,20 @@
+Odamex is a free and open source port for the classic first-person-shooter
+Doom. Odamex's goal is to emulate the feel of and retain many aspects of the
+original Doom executables while offering a broader expanse of security
+features, personal configuration, gameplay options, and editing features.
+Odamex can run on a wide range of operating systems and hardware, so players
+should be able to play on almost any platform. Features:
+
+* The popular ZDoom 1.22 core engine and CSDoom 0.62 core netcode.
+* Compatibility with many major operating systems, including Windows, Linux,
+  FreeBSD and Mac OSX.
+* Core gameplay modeled on the original doom2.exe.
+* Streamlined WAD loading, allowing the server and clients to load WAD files
+  on the fly without needing to restart the client or server.
+* Compatibility with Boom, MBF and CTF Standard maps.
+* Deathmatch, Cooperative, Team Deathmatch and CTF gametypes.
+* Jumping, Mouselook and other non-standard features available as server-side
+  options.
+* Comprehensive cheat and exploit countermeasures.
+* An open source code base licensed under the GPL, available for anyone to
+  examine, compile, or modify to their liking.

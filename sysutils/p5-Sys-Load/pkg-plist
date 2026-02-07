@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/Sys/Load/Load.so
+%%SITE_ARCH%%/Sys/Load.pm
+%%PERL5_MAN3%%/Sys::Load.3.gz

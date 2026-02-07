@@ -1,0 +1,5 @@
+The cleanroom pattern is a safer, more convenient, Ruby-like approach for
+limiting the information exposed by a DSL while giving users the ability to
+write awesome code!
+
+This is a chef fork of https://github.com/sethvargo/cleanroom.

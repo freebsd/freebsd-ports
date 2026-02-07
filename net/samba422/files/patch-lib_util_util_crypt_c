@@ -1,0 +1,15 @@
+Index: lib/util/util_crypt.c
+--- lib/util/util_crypt.c.orig
++++ lib/util/util_crypt.c
+@@ -2,7 +2,11 @@
+ #include "data_blob.h"
+ #include "discard.h"
+ #include <talloc.h>
++#ifdef __FreeBSD__
++#include <unistd.h>
++#else
+ #include <crypt.h>
++#endif
+ #include "util_crypt.h"
+ 
+ 

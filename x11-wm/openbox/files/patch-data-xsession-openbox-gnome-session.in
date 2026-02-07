@@ -1,0 +1,11 @@
+--- data/xsession/openbox-gnome-session.in.orig	2013-09-08 07:16:28.000000000 +0400
++++ data/xsession/openbox-gnome-session.in	2013-09-08 07:17:08.000000000 +0400
+@@ -13,7 +13,7 @@
+       -remove _NET_CURRENT_DESKTOP 2> /dev/null
+ 
+ VER=$(gnome-session --version 2>/dev/null | \
+-      sed -e 's/[^0-9.]*\([0-9.]\+\)/\1/')
++      awk '{ print $2 }')
+ 
+ MAJOR=$(echo $VER | cut -d . -f 1)
+ MINOR=$(echo $VER | cut -d . -f 2)

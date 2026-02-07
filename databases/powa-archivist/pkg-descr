@@ -1,0 +1,3 @@
+This project is the core extension of the PoWA project, a PostgreSQL Workload
+Analyzer that gathers performance stats and provides real-time charts and
+graphs to help monitor and tune your PostgreSQL servers.

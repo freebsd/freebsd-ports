@@ -1,0 +1,11 @@
+--- src/gandiva/symbols.map.orig	2024-07-11 08:58:17 UTC
++++ src/gandiva/symbols.map
+@@ -21,7 +21,7 @@
+   local:
+     # devtoolset / static-libstdc++ symbols
+     __cxa_*;
+-    __once_proxy;
++    __once_proxy*;
+ 
+     extern "C++" {
+       # devtoolset or -static-libstdc++ - the Red Hat devtoolset statically

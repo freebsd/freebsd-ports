@@ -1,0 +1,11 @@
+SeaView is a multiple sequence alignment editor.
+
+You can align DNA/protein sequences from several organisms, and find
+out their relative postions in phylogenic tree.
+
+Once SeaView is installed, you can open the on-line help window through
+the 'Help' button to learn how to use SeaView.
+
+Example mase files can be found at:
+
+	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/

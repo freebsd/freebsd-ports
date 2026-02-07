@@ -1,0 +1,7 @@
+# This file is installed to config/targets.customized by
+# do-configure-RECOMPILE-on in the port's Makefile, because the
+# following targets are required before recompiling the compiler.
+request	ml-lex
+request	ml-yacc
+request	ml-lex-mllex-tool
+request	src-smlnj

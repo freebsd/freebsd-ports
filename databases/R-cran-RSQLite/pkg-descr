@@ -1,0 +1,2 @@
+Database Interface R driver for SQLite. This package embeds the SQLite database
+engine in R and provides an interface compliant with the DBI package.

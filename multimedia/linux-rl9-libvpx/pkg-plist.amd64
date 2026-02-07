@@ -1,0 +1,10 @@
+usr/lib/libvpx.so.6
+usr/lib/libvpx.so.6.3
+usr/lib/libvpx.so.6.3.0
+usr/lib64/libvpx.so.6
+usr/lib64/libvpx.so.6.3
+usr/lib64/libvpx.so.6.3.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libvpx/LICENSE

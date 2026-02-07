@@ -1,0 +1,11 @@
+--- makefile.unix.orig	2001-09-27 00:40:14 UTC
++++ makefile.unix
+@@ -6,7 +6,7 @@ ods2 : ods2.o rms.o direct.o update.o access.o device.
+ all : ods2
+ 
+ ods2 : ods2.o rms.o direct.o update.o access.o device.o phyunix.o cache.o vmstime.o
+-	cc $(CCFLAGS) -oods2 ods2.o rms.o direct.o update.o access.o device.o phyunix.o cache.o vmstime.o
++	$(CC) $(CCFLAGS) -oods2 ods2.o rms.o direct.o update.o access.o device.o phyunix.o cache.o vmstime.o -lcompat -lutil
+ 
+ vmstime.o : vmstime.c vmstime.h
+ 	cc -c $(CCFLAGS) $(DEFS) vmstime.c

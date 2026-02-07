@@ -1,0 +1,9 @@
+sbin/fwanalog
+@sample etc/fwanalog/fwanalog-dom.tab.sample
+@sample etc/fwanalog/fwanalog.analog.conf.sample
+@sample etc/fwanalog/fwanalog.analog.conf.local.sample
+@sample etc/fwanalog/fwanalog.lng.sample
+@sample etc/fwanalog/fwanalog.opts.sample
+@sample etc/fwanalog/services.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+@unexec rmdir %D/%%ETCDIR%% 2> /dev/null || echo If permanently deleting this package, %D/%%ETCDIR%% must be removed manually

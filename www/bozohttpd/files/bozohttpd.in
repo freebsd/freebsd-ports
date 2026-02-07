@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: bozohttpd
+# REQUIRE: DAEMON
+#
+#
+# Add the following lines to /etc/rc.conf to enable bozohttpd:
+#
+# bozohttpd_enable (bool):      Set it to "YES" to enable bozohttpd.
+#                               Default is "NO".
+# bozohttpd_flags (str):        Options to pass to bozohttpd.
+#                               Default is "-b -t /var/empty -U nobody /".
+#                               The last argument, slashdir, is required.
+#
+
+. /etc/rc.subr
+
+name="bozohttpd"
+rcvar=bozohttpd_enable
+
+load_rc_config $name
+
+: ${bozohttpd_enable="NO"}
+: ${bozohttpd_flags="-b -t /var/empty -U nobody /"}
+
+command=%%PREFIX%%/bin/${name}
+
+run_rc_command "$1"

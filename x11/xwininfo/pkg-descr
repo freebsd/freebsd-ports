@@ -1,0 +1,3 @@
+Xwininfo is a utility for displaying information about windows in X.
+Various information is displayed depending on which options are
+selected. If no options are chosen, -stats is assumed.

@@ -1,0 +1,3 @@
+bin/pod2pdf
+%%PERL5_MAN1%%/pod2pdf.1.gz
+%%SITE_PERL%%/App/pod2pdf.pm

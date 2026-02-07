@@ -1,0 +1,32 @@
+PORTNAME=	GSSAPI
+PORTVERSION=	0.28
+PORTREVISION=	2
+CATEGORIES=	security perl5
+MASTER_SITES=	CPAN/LWP/AGROLMS
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl extension providing access to the GSSAPIv2 library
+WWW=		https://metacpan.org/release/GSSAPI
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+USES=		perl5
+USE_PERL5=	configure
+
+OPTIONS_SINGLE=	GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+OPTIONS_DEFAULT=GSSAPI_BASE
+
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_MIT_USES=	gssapi:mit
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%KRB5CONF%%|${KRB5CONFIG}|g' ${WRKSRC}/Makefile.PL
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/GSSAPI/GSSAPI.so
+
+.include <bsd.port.mk>

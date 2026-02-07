@@ -1,0 +1,81 @@
+--- install-sh.orig	2022-07-03 10:17:29 UTC
++++ install-sh
+@@ -47,16 +47,21 @@ rm -rf $DESTDIR$INSTALL_PREFIX/share/phoronix-test-sui
+ fi
+ 
+ rm -rf $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
+-rm -rf $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
+ 
+ mkdir -p $DESTDIR$INSTALL_PREFIX/bin/
++if [ -z "$WITHOUT_X11" ]
++then
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/appdata/
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/applications/
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/48x48/apps/
++fi
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/man/man1/
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
+ mkdir -p $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
+-mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/bash_completion.d/
++if [ -n "$WITH_BASH_COMPLETIONS" ]
++then
++mkdir -p $DESTDIR$INSTALL_PREFIX/etc/bash_completion.d/
++fi
+ #mkdir -p $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+ #mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/init/
+ 
+@@ -70,15 +75,18 @@ cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX
+ rm -rf $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/man-pages/
+ 
+ cp documentation/man-pages/*.1 $DESTDIR$INSTALL_PREFIX/share/man/man1/
+-cp pts-core/static/bash_completion $DESTDIR$INSTALL_PREFIX/../etc/bash_completion.d/phoronix-test-suite
++if [ -n "$WITH_BASH_COMPLETIONS" ]
++then
++cp pts-core/static/bash_completion $DESTDIR$INSTALL_PREFIX/etc/bash_completion.d/phoronix-test-suite
++fi
++if [ -z "$WITHOUT_X11" ]
++then
+ cp pts-core/static/images/phoronix-test-suite.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/48x48/apps/phoronix-test-suite.png
+ cp pts-core/static/phoronix-test-suite.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
+ cp pts-core/static/phoronix-test-suite-launcher.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
+ cp pts-core/static/phoronix-test-suite.appdata.xml $DESTDIR$INSTALL_PREFIX/share/appdata/
++fi
+ 
+-mkdir -p $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+-cp deploy/*-systemd/*.service $DESTDIR$INSTALL_PREFIX/../usr/lib/systemd/system/
+-
+ # mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/init/
+ # cp pts-core/static/upstart/*.conf $DESTDIR$INSTALL_PREFIX/../etc/init/
+ 
+@@ -93,12 +101,13 @@ rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suit
+ rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/openbenchmarking.png
+ rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/images/%phoronix-test-suite.png
+ 
+-
+ sed 's:export PTS_DIR=$(readlink -f `dirname $0`):export PTS_DIR='"$INSTALL_PREFIX"'\/share\/phoronix-test-suite:g' phoronix-test-suite > $DESTDIR$INSTALL_PREFIX/bin/phoronix-test-suite
+ chmod +x $DESTDIR$INSTALL_PREFIX/bin/phoronix-test-suite
+ 
+ # sed 's:\$url = PTS_PATH . \"documentation\/index.html\";:\$url = \"'"$INSTALL_PREFIX"'\/share\/doc\/packages\/phoronix-test-suite\/index.html\";:g' pts-core/commands/gui_gtk.php > $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/commands/gui_gtk.php
+ 
++if [ -z "$WITHOUT_X11" ]
++then
+ # XDG MIME OpenBenchmarking support
+ if [ "X$DESTDIR" = "X" ] && which xdg-mime >/dev/null && which xdg-icon-resource >/dev/null
+ then
+@@ -113,15 +122,14 @@ fi
+ 	cp pts-core/static/images/openbenchmarking.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
+ 
+ fi
++fi
+ 
+ echo -e "\nPhoronix Test Suite Installation Completed\n
+ Executable File: $INSTALL_PREFIX/bin/phoronix-test-suite
+-Documentation: $INSTALL_PREFIX/share/doc/phoronix-test-suite/
+ Phoronix Test Suite Files: $INSTALL_PREFIX/share/phoronix-test-suite/\n"
+ 
+ if [ "X$DESTDIR" != "X" ]
+ then
+ 	echo "Installed to chroot: $DESTDIR"
+-	echo "Please update your desktop and mime-database manually"
+ fi
+ 

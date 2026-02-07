@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2020-08-01 09:32:59 UTC
++++ Makefile.am
+@@ -3,14 +3,11 @@
+ 
+ SUBDIRS = src po
+ 
+-gvolwheeldocdir = ${prefix}/doc/gvolwheel
++gvolwheeldocdir = ${prefix}/share/doc/gvolwheel
+ gvolwheeldoc_DATA = \
+-	README\
+-	COPYING\
++	README.md\
+ 	AUTHORS\
+-	ChangeLog\
+-	INSTALL\
+-	NEWS
++	ChangeLog
+ 
+ EXTRA_DIST = $(gvolwheeldoc_DATA) \
+ 	$(intltool_DATA)\

@@ -1,0 +1,89 @@
+GETPATCH(1)		FreeBSD General Commands Manual 	 GETPATCH(1)
+
+NAME
+     getpatch - Utility to download patch attachments on Bug Tracking Systems
+
+SYNOPSIS
+     getpatch [-h] [--mode gnats|bz] [--last] [--stdout] <pr-id>
+
+DESCRIPTION
+     getpatch is a utility to download patch attachments from Bug Tracking
+     Systems such Gnats and Bugzilla. It supports retrieving multiple
+     attachments from the command line.
+
+     It's written in python without any extra dependencies. In addition to the
+     functionalities offered by other similar tools suchs as getpr, it does web
+     scrapping on the BTS web interface in order to retrieve the patches attached
+     to PR.
+
+     The following command line options are supported:
+
+	   -h	      Prints a multi-line help message and exits.
+
+	   --mode     Specifies the BTS. Currently "gnats" and "bz" are
+                      supported.
+
+           --last     Only retrieves the latest iteration of a patch.
+
+	   --stdout   Dumps the patch to stdout file descriptor.
+
+     Options can be used after or before the <pr-id> argument on the command line.
+
+FILES
+     ${PORTSDIR}/Tools/scripts/getpatch
+
+EXAMPLES
+     Retrieve all patches attached to PR ports/166692 from Gnats BTS:
+
+	   getpatch --mode gnats ports/166692
+
+     Retrieve all patches attached to PR ports/166692 from Bugzilla BTS:
+
+	   getpatch --mode bz ports/166692
+
+	   or
+
+	   getpatch 166692
+
+     Bugzilla is the default BTS and category isn't mandatory.
+
+     Retrieve only the latest iteration of the patch:
+
+	   getpatch --last ports/166692
+
+     Retrieve a patch and dump it to standard output
+
+	   getpatch --stdout ports/166692
+
+     From inside a port's directory, patching on the fly can be done as follows:
+
+     For a diff
+
+           cd ${PORTSDIR}/category/port
+           patch -p0 < <(getpatch 166692 --stdout)
+
+     For a shar
+
+           cd ${PORTSDIR}/category/port
+           sh <(getpatch 166692 --stdout)
+
+     Redirection <() depends on the shell you're using; validated with zsh and bash.
+
+EXIT STATUS
+     getpatch exits with one of the following values according to sysexits code:
+
+     0 	on success.
+     64	if a help message was displayed.
+     69	if patches are not found.
+
+SEE ALSO
+     getpr
+
+AUTHORS
+     Sofian Brabez <sbz@FreeBSD.org>
+
+BUGS
+     If you're using getpatch and you encounter a bug or want an improvement
+     don't hesitate to mail me.
+
+FreeBSD 			 12 June 2016	                         FreeBSD

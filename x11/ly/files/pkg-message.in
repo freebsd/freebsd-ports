@@ -1,0 +1,10 @@
+[
+{ type: upgrade
+  maximum_version: 1.3.0
+  message: <<EOM
+/!\ make sure you update you /etc/gettytab to use %%PREFIX%%/bin/ly_wrapper
+instead of %%PREFIX%%/bin/ly
+/!\ make sure you reviewed your %%ETCDIR%%/config.ini file which might be incompatible
+EOM
+}
+]

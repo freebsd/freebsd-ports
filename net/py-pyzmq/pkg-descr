@@ -1,0 +1,2 @@
+This package contains Python bindings for ZeroMQ. ZeroMQ is a lightweight and
+fast messaging implementation.

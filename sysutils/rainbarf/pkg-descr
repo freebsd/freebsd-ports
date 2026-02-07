@@ -1,0 +1,5 @@
+Fancy resource usage charts to put into the tmux status line. The CPU
+utilization history chart is tinted with colors to reflect the system
+memory allocation.
+
+If available, battery charge is displayed on the right.

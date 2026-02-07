@@ -1,0 +1,211 @@
+--- SConstruct.orig	2011-04-17 17:57:09 UTC
++++ SConstruct
+@@ -2,13 +2,13 @@
+ # -*- coding: utf-8 -*-
+ 
+ import os
+-import commands
++import subprocess as commands
+ import string
+ 
+ try:
+ 	from bzrlib import branch
+ except ImportError:
+-	print "bzrlib not installed"
++	print("bzrlib not installed")
+ 
+ EnsureSConsVersion(0, 98, 1)
+ 
+@@ -20,7 +20,7 @@ BUILD_LOCALE_PATH = BUILD_PATH + 'locale/'
+ BUILD_FLAGS = {
+ 	'common'  : ['-I#', '-D_GNU_SOURCE', '-D_LARGEFILE_SOURCE', '-D_FILE_OFFSET_BITS=64', '-D_REENTRANT'],
+ 	'debug'   : ['-g', '-ggdb', '-Wall', '-D_DEBUG'], 
+-	'release' : ['-O3', '-fomit-frame-pointer', '-DNDEBUG']
++	'release' : ['-fomit-frame-pointer', '-DNDEBUG']
+ }
+ 
+ # ----------------------------------------------------------------------
+@@ -49,7 +49,7 @@ def check_cxx_version(context, name, major, minor):
+ 		or (string.atoi(ret[0]) > major)):
+ 			retval = 1
+ 	except ValueError:
+-		print "No C++ compiler found!"
++		print("No C++ compiler found!")
+ 
+ 	context.Result(retval)
+ 	return retval
+@@ -62,7 +62,7 @@ def check_bzr_revision(context):
+ 		b = branch.Branch.open('.')
+ 		revision = str(b.revno())
+ 	except:
+-		print "failed"
++		print("failed")
+ 
+ 	context.env['BZR_REVISION'] = revision
+ 	context.Result(revision)
+@@ -106,6 +106,7 @@ else:
+ vars.AddVariables(
+ 	BoolVariable('debug', 'Compile the program with debug information', 0),
+ 	BoolVariable('release', 'Compile the program with optimizations', 0),
++	BoolVariable('libnotify', 'Enable notifications through libnotify', 1),
+ 	BoolVariable('profile', 'Compile the program with profiling information', 0),
+ 	PathVariable('PREFIX', 'Compile the program with PREFIX as the root for installation', '/usr/local', PathVariable.PathIsDir),
+ 	('FAKE_ROOT', 'Make scons install the program under a fake root', '')
+@@ -121,24 +122,33 @@ env = Environment(ENV = os.environ, variables = vars, 
+ env['mode'] = 'debug' if env.get('debug') else 'release'
+ env['build_path'] = BUILD_PATH + env['mode'] + '/'
+ 
+-if os.environ.has_key('CXX'):
++if 'CXX' in os.environ:
+ 	env['CXX'] = os.environ['CXX']
+ else:
+-	print 'CXX env variable is not set, attempting to use g++'
++	print('CXX env variable is not set, attempting to use g++')
+ 	env['CXX'] = 'g++'
+ 
+-if os.environ.has_key('CC'):
++if 'CC' in os.environ:
+ 	env['CC'] = os.environ['CC']
+ 
+-if os.environ.has_key('CXXFLAGS'):
+-	env['CPPFLAGS'] = env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
++if 'CXXFLAGS' in os.environ:
++	env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
+ 
+-if os.environ.has_key('LDFLAGS'):
++if 'CPPFLAGS' in os.environ:
++	env['CPPFLAGS'] = os.environ['CPPFLAGS'].split()
++
++if 'LDFLAGS' in os.environ:
+ 	env['LINKFLAGS'] = os.environ['LDFLAGS'].split()
+ 
+-if os.environ.has_key('CFLAGS'):
++if 'CFLAGS' in os.environ:
+ 	env['CFLAGS'] = os.environ['CFLAGS'].split()
+ 
++if 'CPPPATH' in os.environ:
++	env['CPPPATH'] = os.environ['CPPPATH'].split()
++
++if 'LIBPATH' in os.environ:
++	env['LIBPATH'] = os.environ['LIBPATH'].split()
++
+ env['CPPDEFINES'] = [] # Initialize as a list so Append doesn't concat strings
+ 
+ env.SConsignFile('build/sconf/.sconsign')
+@@ -185,33 +195,29 @@ conf = env.Configure(
+ 
+ if not 'install' in COMMAND_LINE_TARGETS:
+ 
+-	if not conf.CheckCXXVersion(env['CXX'], 4, 1):
+-		print 'Compiler version check failed. g++ 4.1 or later is needed'
+-		Exit(1)
+-
+ 	if not conf.CheckPKGConfig():
+-		print '\tpkg-config not found.'
++		print('\tpkg-config not found.')
+ 		Exit(1)
+ 
+ 	if not conf.CheckPKG('gtk+-2.0 >= 2.12'):
+-		print '\tgtk+ >= 2.12 not found.'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tgtk+ >= 2.12 not found.')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	if not conf.CheckPKG('gthread-2.0 >= 2.4'):
+-		print '\tgthread >= 2.4 not found.'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tgthread >= 2.4 not found.')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	if not conf.CheckPKG('libglade-2.0 >= 2.4'):
+-		print '\tlibglade-2.0 >= 2.4 not found.'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tlibglade-2.0 >= 2.4 not found.')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	
+ 	if not conf.CheckCXXHeader('boost/version.hpp', '<>'):
+-		print '\tboost not found.'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tboost not found.')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	if not conf.CheckHeader('time.h'):
+@@ -224,53 +230,52 @@ if not 'install' in COMMAND_LINE_TARGETS:
+ 		Exit(1)
+ 
+ 	if not conf.CheckLibWithHeader('pthread', 'pthread.h', 'c'):
+-		print '\tpthread library not found'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tpthread library not found')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
+-		print '\tz library (gzip/z compression) not found'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tz library (gzip/z compression) not found')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	if not conf.CheckLibWithHeader('bz2', 'bzlib.h', 'c'):
+-		print '\tbz2 library (bz2 compression) not found'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tbz2 library (bz2 compression) not found')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	# This needs to be before ssl check on *BSD systems
+ 	if not conf.CheckLib('crypto'):
+-		print '\tcrypto library not found'
+-		print '\tNote: This library may be a part of libssl on your system'
++		print('\tcrypto library not found')
++		print('\tNote: This library may be a part of libssl on your system')
+ 		Exit(1)
+ 
+ 	if not conf.CheckLibWithHeader('ssl', 'openssl/ssl.h', 'c'):
+-		print '\tOpenSSL library (libssl) not found'
+-		print '\tNote: You might have the lib but not the headers'
++		print('\tOpenSSL library (libssl) not found')
++		print('\tNote: You might have the lib but not the headers')
+ 		Exit(1)
+ 
+ 	# Needed for XFlush(). Headers shouldn't be needed since we include gdk/gdkx.h
+ 	if not conf.CheckLib('X11'):
+-		print '\tX11 library not found'
++		print('\tX11 library not found')
+ 		Exit(1)
+ 
+ 	if not conf.CheckHeader('iconv.h'):
+ 		Exit(1)
+-	elif conf.CheckLibWithHeader('iconv', 'iconv.h', 'c', 'iconv(0, (const char **)0, 0, (char**)0, 0);'):
+-		conf.env.Append(CPPDEFINES = ('ICONV_CONST', 'const'))
+ 
+ 	if conf.CheckHeader(['sys/types.h', 'sys/socket.h', 'ifaddrs.h', 'net/if.h']):
+ 		conf.env.Append(CPPDEFINES = 'HAVE_IFADDRS_H')
+ 
+ 	# TODO: Implement a plugin system so libnotify doesn't have compile-time dependencies
+-	if not conf.CheckPKG('libnotify >= 0.4.1'):
+-		print '\tlibnotify >= 0.4.1 not found, disabling notifications.'
+-		print '\tNote: You might have the lib but not the headers'
+-	else:
+-		conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY')
+-		conf.env.ParseConfig('pkg-config --libs libnotify')
+-		if conf.CheckPKG('libnotify >= 0.7'):
+-			conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY_0_7')
++	if conf.env.get('libnotify'):
++		if not conf.CheckPKG('libnotify >= 0.4.1'):
++			print('\tlibnotify >= 0.4.1 not found, disabling notifications.')
++			print('\tNote: You might have the lib but not the headers')
++		else:
++			conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY')
++			conf.env.ParseConfig('pkg-config --libs libnotify')
++			if conf.CheckPKG('libnotify >= 0.7'):
++				conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY_0_7')
+ 
+ 	conf.CheckBZRRevision()
+ 

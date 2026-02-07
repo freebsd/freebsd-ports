@@ -1,0 +1,2 @@
+PEAR::Net_LMTP provides an implementation of the RFC2033 LMTP using
+PEAR::Net_Socket and PEAR::Auth_SASL.

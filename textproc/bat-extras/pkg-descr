@@ -1,0 +1,25 @@
+A collection of scripts that integrate textproc/bat (a Rust-based uberpager)
+with various command-line tools. Note that you'll have to install some
+related tools manually if you want them.
+
+batdiff:
+    Diff a file against the current git index, or diff two files.
+    Optional: git-delta
+
+batgrep
+    Quickly search through and highlight files using ripgrep.
+    Requires: ripgrep
+
+batman:
+    Colorize manpages (I'm ruined and can never go back to plain manpages).
+
+batpipe:
+    Drop-in replacement for lesspipe.
+
+batwatch:
+    Watch for changes in one or more files and display them with bat.
+    Optional: entr
+
+prettybat:
+    Reformats and highlights source code.
+    Requires: prettier, shfmt, blank, clang-format, rustfmt, etc. (as needed)

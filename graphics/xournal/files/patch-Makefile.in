@@ -1,0 +1,63 @@
+--- Makefile.in.orig	2017-07-20 18:30:27 UTC
++++ Makefile.in
+@@ -809,38 +809,36 @@ uninstall-am:
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/pixmaps; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
++	  $(mkinstalldirs) $(DESTDIR)$(DATADIR)/pixmaps; \
+ 	  for pixmap in $(srcdir)/pixmaps/*; do \
+ 	    if test -f $$pixmap; then \
+-	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
++	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(DATADIR)/pixmaps; \
+ 	    fi \
+ 	  done \
+ 	fi; \
++	echo "*** Desktop files, icons, MIME types not installed. Run 'make desktop-install'"; \
++	echo "*** (or 'make home-desktop-install' for installation in a home directory)."
++
++install-doc-local:
+ 	if test -d $(srcdir)/html-doc; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/html-doc; \
++	  $(mkinstalldirs) $(DESTDIR)$(docdir); \
+ 	  for docfile in $(srcdir)/html-doc/*; do \
+ 	    if test -f $$docfile; then \
+-	      $(INSTALL_DATA) $$docfile $(DESTDIR)$(pkgdatadir)/html-doc; \
++	      $(INSTALL_DATA) $$docfile $(DESTDIR)$(docdir); \
+ 	    fi \
+ 	  done; \
+-	  if test ! -e $(DESTDIR)$(pkgdatadir)/html-doc/pixmaps; then \
+-	    ln -s ../pixmaps $(DESTDIR)$(pkgdatadir)/html-doc/pixmaps; \
++	  if test ! -e $(DESTDIR)$(docdir)/pixmaps; then \
++	    ln -s $(DESTDIR)$(pkgdatadir)/pixmaps $(DESTDIR)$(docdir)/pixmaps; \
+ 	  fi \
+-	fi; \
+-	echo "*** Desktop files, icons, MIME types not installed. Run 'make desktop-install'"; \
+-	echo "*** (or 'make home-desktop-install' for installation in a home directory)."
++	fi
+ 
+ desktop-install:
+-	if test "$(datadir)" = "/usr/share"; then \
+-	  desktopdir=/usr/share; \
+-	else \
+-	  desktopdir=/usr/local/share; \
+-	fi; \
++	desktopdir=$(DATADIR); \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mime/packages; \
+ 	$(mkinstalldirs) $(DESTDIR)$$desktopdir/applications; \
+-	$(mkinstalldirs) $(DESTDIR)/usr/share/mimelnk/application; \
++	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mimelnk/application; \
+ 	$(INSTALL_DATA) $(srcdir)/pixmaps/xournal.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
+ 	$(INSTALL_DATA) $(srcdir)/pixmaps/xoj.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
+ 	if test ! -e $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg; then \
+@@ -851,7 +849,7 @@ desktop-install:
+ 	fi; \
+ 	$(INSTALL_DATA) $(srcdir)/xournal.xml $(DESTDIR)$$desktopdir/mime/packages; \
+ 	$(INSTALL_DATA) $(srcdir)/xournal.desktop $(DESTDIR)$$desktopdir/applications; \
+-	$(INSTALL_DATA) $(srcdir)/x-xoj.desktop $(DESTDIR)/usr/share/mimelnk/application; \
++	$(INSTALL_DATA) $(srcdir)/x-xoj.desktop $(DESTDIR)$$desktopdir/mimelnk/application; \
+ 	if test -z "$(DESTDIR)"; then \
+ 	  echo "Updating desktop, mime, and icon databases."; \
+ 	  update-desktop-database; \

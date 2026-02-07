@@ -1,0 +1,18 @@
+--- meson.build.orig	2024-05-08 13:33:41 UTC
++++ meson.build
+@@ -8,6 +8,7 @@ datadir = prefix / get_option('datadir')
+ 
+ prefix = get_option('prefix')
+ datadir = prefix / get_option('datadir')
++pkgconfigdir = prefix / 'libdata/pkgconfig'
+ pkgdatadir = datadir / 'mobile-broadband-provider-info'
+ database = pkgdatadir / 'serviceproviders.xml'
+ sp_xml_db = meson.global_source_root() / 'serviceproviders.xml'
+@@ -22,6 +23,7 @@ pkgconfig.generate(
+     'database=${pkgdatadir}/serviceproviders.xml',
+   ],
+   dataonly: true,
++  install_dir: pkgconfigdir,
+ )
+ 
+ custom_target('build-apns-conf',

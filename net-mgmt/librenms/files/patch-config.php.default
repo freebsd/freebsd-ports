@@ -1,0 +1,64 @@
+--- config.php.default.orig	2022-01-23 14:47:41 UTC
++++ config.php.default
+@@ -2,10 +2,26 @@
+ 
+ ## Have a look in misc/config_definitions.json for examples of settings you can set here. DO NOT EDIT misc/config_definitions.json!
+ 
++#
++# The FreeBSD package set the following items
++#
++$config['installed_from_package'] = true;
++
++$config['log_dir']     = '/var/log/librenms';
++$config['rrd_dir']     = '/var/db/librenms/rrd';
++
+ // This is the user LibreNMS will run as
+-//Please ensure this user is created and has the correct permissions to your install
+-#$config['user'] = 'librenms';
++// Please ensure this user is created and has the correct permissions to your install
++// The FreeBSD package sets this.
++// It's up to you to install a webserver, such as Apache or Nginx. By default, they
++// run as the www user.
++//
++$config['user'] = 'www';
+ 
++#
++# The FreeBSD package set the above items
++#
++
+ ### This should *only* be set if you want to *force* a particular hostname/port
+ ### It will prevent the web interface being usable form any other hostname
+ #$config['base_url']        = "/";
+@@ -27,7 +43,8 @@
+ #$config['nets'][] = "192.168.0.0/16";
+ 
+ # Uncomment the next line to disable daily updates
+-#$config['update'] = 0;
++# FreeBSD package uncommented this line for you.
++$config['update'] = 0;
+ 
+ # Number in days of how long to keep old rrd files. 0 disables this feature
+ #$config['rrd_purge'] = 0;
+@@ -43,3 +60,22 @@
+ 
+ # Enable the in-built services support (Nagios plugins)
+ #$config['show_services'] = 1;
++
++# These paths are supplied by the FreeBSD port and correct those found in
++# the code.
++
++$config['snmpwalk']       = '%%LOCALBASE%%/bin/snmpwalk';
++$config['snmpget']        = '%%LOCALBASE%%/bin/snmpget';
++$config['snmpbulkwalk']   = '%%LOCALBASE%%/bin/snmpbulkwalk';
++$config['snmptranslate']  = '%%LOCALBASE%%/bin/snmptranslate';
++
++$config['ping']           = '/sbin/ping';
++$config['mtr']            = '%%LOCALBASE%%/bin/mtr';
++$config['nmap']           = '%%LOCALBASE%%/bin/nmap';
++
++$config['nagios_plugins'] = '%%LOCALBASE%%/libexec/nagios';
++$config['ipmitool']       = '%%LOCALBASE%%/bin/ipmitool';
++$config['virsh']          = '%%LOCALBASE%%/bin/virsh';
++$config['dot']            = '%%LOCALBASE%%/bin/dot';
++$config['sfdp']           = '%%LOCALBASE%%/bin/sfdp';
++$config['nfdump']         = '%%LOCALBASE%%/bin/nfdump';

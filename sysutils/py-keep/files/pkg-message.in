@@ -1,0 +1,44 @@
+[
+{
+  type: install
+  message: <<EOM
+keep was installed and there are some notes:
+
+1. To enable command-line completion (TAB completion) follow these steps for
+   the shell of your choice:
+
+   bash instructions:
+
+   1. Create a directory in your home directory called .bash
+
+      mkdir -p ~/.bash
+
+   2. Copy %%DATADIR%%/completions/keep.bash to ~/.bash/keep
+
+      cp %%DATADIR%%/completions/keep.bash ~/.bash/keep
+
+   3. Add the following lines to ~/.bash_profile file
+
+      [ -f "$HOME/.bash/keep" ] && . "$HOME/.bash/keep"
+
+   zsh instructions:
+
+   1. Create a directory in your home called .zsh
+
+      mkdir -p ~/.zsh
+
+   2. Copy %%DATADIR%%/completions/keep.zsh to ~/.zsh/_keep
+
+      cp %%DATADIR%%/completions/keep.zsh ~/.zsh/_keep
+
+   3. Add the following lines inside ~/.zshrc file
+
+      fpath=($HOME/.zsh $fpath)
+      autoload -Uz compinit && compinit
+
+2. See also the official keep tutorial:
+
+   * https://github.com/OrkoHunter/keep/blob/master/tutorial.md
+EOM
+}
+]

@@ -1,0 +1,2 @@
+ejson provides an API to extend the json library to make it easy to register new
+serializers and new deserializers.

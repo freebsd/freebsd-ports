@@ -1,0 +1,8 @@
+--- configure.orig	2016-11-06 14:21:56 UTC
++++ configure
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ OCAML_MIN_VER="4.02"
+ 

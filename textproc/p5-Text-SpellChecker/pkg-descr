@@ -1,0 +1,6 @@
+This module is built on Text::Aspell, but adds some of the
+functionality provided by the internal gnu aspell API. This allows
+one to deal with blocks of text, rather than just words. For
+instance, we provide methods for iterating through the text,
+serializing the object (thus remembering where we left off), and
+highlighting the current misspelled word within the text.

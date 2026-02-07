@@ -1,0 +1,29 @@
+--- configure.orig	2002-02-09 15:27:38 UTC
++++ configure
+@@ -1501,14 +1501,14 @@ EOF
+ fi
+ 
+ 
+-echo $ac_n "checking for initscr in -lcurses""... $ac_c" 1>&6
+-echo "configure:1506: checking for initscr in -lcurses" >&5
++echo $ac_n "checking for initscr in -lncurses""... $ac_c" 1>&6
++echo "configure:1506: checking for initscr in -lncurses" >&5
+ ac_lib_var=`echo curses'_'initscr | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lcurses  $LIBS"
++LIBS="-lncurses  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1514 "configure"
+ #include "confdefs.h"
+@@ -1542,7 +1542,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lcurses $LIBS"
++  LIBS="-lncurses $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6

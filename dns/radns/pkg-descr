@@ -1,0 +1,6 @@
+Router Advertisement DNS (radns)
+
+radns is an IPv6 DNS server address autoconfiguration client. It
+listens for IPv6 Router Advertisements with the Recursive DNS Server
+(RDNSS) and the DNS Search List (DNSSL) options and stores the search
+list and address(es) in a file in the same syntax as resolv.conf(5).

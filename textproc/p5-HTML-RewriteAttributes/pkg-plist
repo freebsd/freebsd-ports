@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/HTML::RewriteAttributes.3.gz
+%%PERL5_MAN3%%/HTML::RewriteAttributes::Links.3.gz
+%%PERL5_MAN3%%/HTML::RewriteAttributes::Resources.3.gz
+%%SITE_PERL%%/HTML/RewriteAttributes.pm
+%%SITE_PERL%%/HTML/RewriteAttributes/Links.pm
+%%SITE_PERL%%/HTML/RewriteAttributes/Resources.pm

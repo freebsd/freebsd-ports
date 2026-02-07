@@ -1,0 +1,11 @@
+--- XmHTML/Makefile.orig	2015-11-06 21:25:06 UTC
++++ XmHTML/Makefile
+@@ -48,7 +48,7 @@ AR    = ar cq 
+ RANLIB= ranlib
+ 
+ SHELL     = /bin/sh
+-MAKE      = make 
++MAKE      = gmake 
+ # change this to makedepend if your system doesn't have gcc
+ MAKEDEPEND= gccmakedep
+ 

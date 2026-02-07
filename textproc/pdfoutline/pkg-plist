@@ -1,0 +1,4 @@
+bin/pdf-extract-outline
+bin/pdfoutline
+share/man/man1/pdf-extract-outline.1.gz
+share/man/man1/pdfoutline.1.gz

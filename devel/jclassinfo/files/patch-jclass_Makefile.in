@@ -1,0 +1,11 @@
+--- jclass/Makefile.in.orig	2004-07-10 15:20:53 UTC
++++ jclass/Makefile.in
+@@ -156,7 +156,7 @@ INCLUDES = 
+ lib_LTLIBRARIES = libjclass.la
+ libjclass_la_LDFLAGS = -no-undefined -version-info @JCLASS_CURRENT@:@JCLASS_RELEASE@:@JCLASS_AGE@
+ 
+-library_includedir = $(includedir)/jclass/jclass
++library_includedir = $(includedir)/jclass
+ 
+ library_include_HEADERS = \
+ 	attributes.h \

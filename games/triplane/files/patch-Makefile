@@ -1,0 +1,39 @@
+--- Makefile.orig	2013-03-25 15:44:22.000000000 +0100
++++ Makefile	2013-04-04 06:21:32.000000000 +0200
+@@ -2,14 +2,14 @@
+ DESTDIR ?=
+ 
+ CXX	     ?= g++
+-OPTIFLAG     = -O2 -g
++#OPTIFLAG     = -O2 -g
+ SDL_CONFIG  ?= sdl-config
+ VERSION      = 1.0.8
+-CFLAGS      := -Wall -Isrc $(OPTIFLAG) $(CFLAGS_NOSDL) `$(SDL_CONFIG) --cflags` -DHAVE_SDL_MIXER "-DTRIPLANE_DATA=\"$(PREFIX)/share/games/triplane\"" "-DTRIPLANE_VERSION=\"$(VERSION)\""
++CFLAGS      += -Wall -Isrc $(OPTIFLAG) $(CFLAGS_NOSDL) `$(SDL_CONFIG) --cflags` -DHAVE_SDL_MIXER "-DTRIPLANE_VERSION=\"$(VERSION)\""
+ LDFLAGS      = 
+ LIBS        := `$(SDL_CONFIG) --libs` -lSDL_mixer -lm
+-INSTALL_DATA     ?= install -m 644
+-INSTALL_PROGRAM  ?= install
++BSD_INSTALL_DATA     ?= install -m 644
++BSD_INSTALL_PROGRAM  ?= install
+ 
+ COMMON_OBJS = src/gfx/bitmap.o src/gfx/font.o \
+ 	src/gfx/gfx.o src/util/wutil.o src/util/random.o \
+@@ -76,12 +76,11 @@
+ 	$(CXX) -o tools/dksbuild -g src/tools/dksbuild/dksbuild.cc
+ 
+ install:
+-	mkdir -p $(DESTDIR)$(PREFIX)/games
+-	$(INSTALL_PROGRAM) triplane $(DESTDIR)$(PREFIX)/games/triplane
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/games/triplane
+-	$(INSTALL_DATA) fokker.dks $(DESTDIR)$(PREFIX)/share/games/triplane/fokker.dks
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man6
+-	$(INSTALL_DATA) doc/triplane.6 $(DESTDIR)$(PREFIX)/share/man/man6/triplane.6
++	$(BSD_INSTALL_PROGRAM) triplane $(DESTDIR)$(PREFIX)/bin/triplane
++	mkdir -p mkdir -p $(DESTDIR)$(DATADIR)
++	$(BSD_INSTALL_DATA) fokker.dks $(DESTDIR)$(DATADIR)/fokker.dks
++	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man6
++	$(BSD_INSTALL_MAN) doc/triplane.6 $(DESTDIR)$(PREFIX)/share/man/man6/triplane.6
+ test:
+ 	if [ ! -d triplane-testsuite ]; then echo Please darcs get http://iki.fi/lindi/darcs/triplane-testsuite; false; fi
+ 	SDL_VIDEODRIVER=dummy bash tools/run-all-tests tools/run-one-test ./triplane triplane-testsuite

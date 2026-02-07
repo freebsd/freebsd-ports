@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Moose::Policy.3.gz
+%%PERL5_MAN3%%/Moose::Policy::FollowPBP.3.gz
+%%PERL5_MAN3%%/Moose::Policy::JavaAccessors.3.gz
+%%PERL5_MAN3%%/Moose::Policy::SingleInheritence.3.gz
+%%SITE_PERL%%/Moose/Policy.pm
+%%SITE_PERL%%/Moose/Policy/FollowPBP.pm
+%%SITE_PERL%%/Moose/Policy/JavaAccessors.pm
+%%SITE_PERL%%/Moose/Policy/SingleInheritence.pm

@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+  Installed additional documentation in: %%DOCSDIR%%
+EOM
+}
+]

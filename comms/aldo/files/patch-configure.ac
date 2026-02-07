@@ -1,0 +1,36 @@
+--- configure.ac.orig	2013-07-16 10:33:43 UTC
++++ configure.ac
+@@ -2,22 +2,17 @@ AC_PREREQ([2.59])
+ # Process this file with autoconf to produce a configure script.
+ 
+ AC_PREREQ([2.59])
+-AC_INIT([aldo], [0.7.7], [Giuseppe Martino denever@users.sf.net])
++AC_INIT([aldo], [0.7.8], [Giuseppe Martino denever@users.sf.net])
+ AC_CONFIG_AUX_DIR(config)
+-AC_CONFIG_HEADER([config.h])
+-AM_INIT_AUTOMAKE([dist-bzip2])
++AC_CONFIG_HEADERS([config.h])
++AM_INIT_AUTOMAKE
+ 
+-CPPFLAGS="-I${includedir}"
+-LDFLAGS="-L${libdir}"
+-LIBS="-L${libdir} ${LIBS}"
+-
+ # Checks for programs.
+ AC_PROG_CXX
+ AC_PROG_INSTALL
+ #AC_PROG_RANLIB
+ 
+ # Checks for header files.
+-AC_HEADER_STDC
+ AC_CHECK_LIB(ao, main)
+ AC_CHECK_HEADERS(ao/ao.h, [], [echo "Error! You need to have libao (www.xiph.org/ao) around.";exit -1])
+ 
+@@ -27,7 +22,6 @@ AC_C_INLINE
+ AC_C_INLINE
+ 
+ # Checks for library functions.
+-AC_PROG_GCC_TRADITIONAL
+ AC_CHECK_FUNCS([floor])
+ 
+ AC_CONFIG_FILES([Makefile

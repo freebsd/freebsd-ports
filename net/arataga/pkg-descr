@@ -1,0 +1,4 @@
+arataga is a high-performance, configurable, authenticating, throttling
+SOCKS5 and HTTP/1.1 proxy server.  It was developed by Stiffstream for
+a customer who then abandoned the project.  So as not to throw away the
+result, the source code of arataga had been released to the public.

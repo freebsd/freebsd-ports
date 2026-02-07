@@ -1,0 +1,9 @@
+This port installs the module COLAMD of SuiteSparse.
+
+The CCOLAMD column approximate minimum degree ordering algorithm computes a
+permutation vector P such that the LU factorization of A (:,P) tends to be
+sparser than that of A. The Cholesky factorization of (A (:,P))'*(A (:,P)) will
+also tend to be sparser than that of A'*A. CSYMAMD is a symmetric minimum degree
+ordering method based on CCOLAMD, also available as a MATLAB-callable function.
+It constructs a matrix M such that M'*M has the same pattern as A, and then uses
+CCOLAMD to compute a column ordering of M.

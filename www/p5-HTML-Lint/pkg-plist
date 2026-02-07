@@ -1,0 +1,11 @@
+bin/weblint
+%%SITE_PERL%%/HTML/Lint.pm
+%%SITE_PERL%%/HTML/Lint/Error.pm
+%%SITE_PERL%%/HTML/Lint/HTML4.pm
+%%SITE_PERL%%/HTML/Lint/Parser.pm
+%%SITE_PERL%%/Test/HTML/Lint.pm
+%%PERL5_MAN3%%/HTML::Lint.3.gz
+%%PERL5_MAN3%%/HTML::Lint::Error.3.gz
+%%PERL5_MAN3%%/HTML::Lint::HTML4.3.gz
+%%PERL5_MAN3%%/HTML::Lint::Parser.3.gz
+%%PERL5_MAN3%%/Test::HTML::Lint.3.gz

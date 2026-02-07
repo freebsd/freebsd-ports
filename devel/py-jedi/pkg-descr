@@ -1,0 +1,6 @@
+Jedi is an autocompletion tool for Python that can be used in IDEs/editors.
+Jedi works. Jedi is fast. It understands all of the basic Python syntax
+elements including many builtin functions.
+
+Additionaly, Jedi suports two different goto functions and has support for
+renaming as well as Pydoc support and some other IDE features.

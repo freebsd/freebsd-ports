@@ -1,0 +1,31 @@
+--- Makefile.orig	2019-11-04 16:42:35 UTC
++++ Makefile
+@@ -25,6 +25,8 @@ HSQLDB_URL=http://downloads.sourceforge.net/project/hs
+ DEFAULT_HSQLDB_DIR=$(CSCOUT_DIR)/hsqldb-$(HSQLDB_VERSION)/hsqldb
+ export HSQLDB_DIR?=$(DEFAULT_HSQLDB_DIR)
+ 
++all: .PHONY install
++
+ .PHONY: src/build/cscout swill/libswill.a btyacc/btyacc
+ 
+ src/build/cscout: swill/libswill.a btyacc/btyacc
+@@ -33,15 +35,16 @@ src/build/cscout: swill/libswill.a btyacc/btyacc
+ swill/libswill.a: swill
+ 	cd swill && $(MAKE)
+ 
+-swill:
+-	git clone https://github.com/dspinellis/swill.git
++swill: swillconfig
++
++swillconfig:
+ 	cd swill && ./configure
+ 
+ btyacc/btyacc: btyacc
+ 	cd btyacc && $(MAKE)
+ 
+ btyacc:
+-	git clone https://github.com/dspinellis/btyacc
++	#git clone https://github.com/dspinellis/btyacc
+ 
+ # Default installation of HSQLDB
+ $(DEFAULT_HSQLDB_DIR):  hsqldb-$(HSQLDB_VERSION).zip

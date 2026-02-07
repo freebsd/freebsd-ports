@@ -1,0 +1,18 @@
+Avoid fetching the manual via "curl" during build
+
+--- Makefile.common.orig	2021-10-01 11:27:56 UTC
++++ Makefile.common
+@@ -132,13 +132,7 @@ $(EXECUTABLE).dwp: $(EXECUTABLE)
+ endif
+ 
+ # Grab the ScummVM Manual from Read the Docs
+-ifdef USE_CURL
+-DIST_FILES_MANUAL := ScummVM\ Manual\ $(MANUALVERSION).pdf
+ manual:
+-	$(QUIET_CURL)$(CURL) -s https://docs.scummvm.org/_/downloads/en/$(MANUALVERSION)/pdf/ --output $(DIST_FILES_MANUAL)
+-else
+-manual:
+-endif
+ 
+ distclean: clean clean-devtools
+ 	$(RM) config.h config.mk config.log configure.stamp engines/engines.mk engines/detection_table.h engines/plugins_table.h "ScummVM Manual"*.pdf

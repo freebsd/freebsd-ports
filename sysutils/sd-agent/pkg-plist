@@ -1,0 +1,10 @@
+@sample %%ETCDIR%%/config.cfg.sample
+libexec/sd-agent/agent.py
+libexec/sd-agent/checks.py
+libexec/sd-agent/daemon.py
+libexec/sd-agent/logtail.py
+libexec/sd-agent/minjson.py
+libexec/sd-agent/pep8.sh
+libexec/sd-agent/plugins.py
+libexec/sd-agent/sd-deploy.py
+@dir libexec/sd-agent/plugins

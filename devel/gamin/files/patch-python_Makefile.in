@@ -1,0 +1,20 @@
+--- python/Makefile.in.orig	2008-11-26 01:42:29.000000000 -0500
++++ python/Makefile.in	2008-11-26 01:43:26.000000000 -0500
+@@ -53,7 +53,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.
+ am__installdirs = "$(DESTDIR)$(pythondir)" "$(DESTDIR)$(pythondir)"
+ pythonLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(python_LTLIBRARIES)
+-_gamin_la_DEPENDENCIES = $(top_builddir)/libgamin/libgamin-1.la
++_gamin_la_DEPENDENCIES = -lgamin-1
+ am__gamin_la_OBJECTS = gamin.lo
+ _gamin_la_OBJECTS = $(am__gamin_la_OBJECTS)
+ _gamin_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -228,7 +228,7 @@ INCLUDES = \
+ 
+ python_LTLIBRARIES = _gamin.la
+ _gamin_la_SOURCES = gamin.c
+-_gamin_la_LIBADD = $(top_builddir)/libgamin/libgamin-1.la
++_gamin_la_LIBADD = -lgamin-1
+ _gamin_la_LDFLAGS = -module -avoid-version
+ python_PYTHON = gamin.py
+ all: all-recursive

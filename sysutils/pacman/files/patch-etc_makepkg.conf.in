@@ -1,0 +1,28 @@
+--- etc/makepkg.conf.in.orig	2024-03-04 03:07:58 UTC
++++ etc/makepkg.conf.in
+@@ -9,17 +9,17 @@
+ #
+ #-- The download utilities that makepkg should use to acquire sources
+ #  Format: 'protocol::agent'
+-DLAGENTS=('file::/usr/bin/curl -qgC - -o %o %u'
+-          'ftp::/usr/bin/curl -qgfC - --ftp-pasv --retry 3 --retry-delay 3 -o %o %u'
+-          'http::/usr/bin/curl -qgb "" -fLC - --retry 3 --retry-delay 3 -o %o %u'
+-          'https::/usr/bin/curl -qgb "" -fLC - --retry 3 --retry-delay 3 -o %o %u'
+-          'rsync::/usr/bin/rsync --no-motd -z %u %o'
++DLAGENTS=('file::@PREFIX@/bin/curl -qgC - -o %o %u'
++          'ftp::@PREFIX@/bin/curl -qgfC - --ftp-pasv --retry 3 --retry-delay 3 -o %o %u'
++          'http::@PREFIX@/bin/curl -qgb "" -fLC - --retry 3 --retry-delay 3 -o %o %u'
++          'https::@PREFIX@/bin/curl -qgb "" -fLC - --retry 3 --retry-delay 3 -o %o %u'
++          'rsync::@PREFIX@/bin/rsync --no-motd -z %u %o'
+           'scp::/usr/bin/scp -C %u %o')
+ 
+ # Other common tools:
+-# /usr/bin/snarf
+-# /usr/bin/lftpget -c
+-# /usr/bin/wget
++# @PREFIX@/bin/snarf
++# @PREFIX@/bin/lftpget -c
++# @PREFIX@/bin/wget
+ 
+ #-- The package required by makepkg to download VCS sources
+ #  Format: 'protocol::package'

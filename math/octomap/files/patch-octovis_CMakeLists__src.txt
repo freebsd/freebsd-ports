@@ -1,0 +1,47 @@
+--- octovis/CMakeLists_src.txt.orig	2022-05-12 20:49:09 UTC
++++ octovis/CMakeLists_src.txt
+@@ -99,14 +99,14 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAK
+ 
+ 
+ # Library target 
+-add_library(octovis-static STATIC ${viewerlib_SRCS})
+-target_link_libraries(octovis-static
+-  ${OPENGL_gl_LIBRARY} 
+-  ${OPENGL_glu_LIBRARY} 
+-  ${OCTOMAP_LIBRARIES}
+-  ${QGLViewer_LIBRARIES}
+-)
+-set_target_properties(octovis-static PROPERTIES OUTPUT_NAME octovis)
++#add_library(octovis-static STATIC ${viewerlib_SRCS})
++#target_link_libraries(octovis-static
++#  ${OPENGL_gl_LIBRARY} 
++#  ${OPENGL_glu_LIBRARY} 
++#  ${OCTOMAP_LIBRARIES}
++#  ${QGLViewer_LIBRARIES}
++#)
++#set_target_properties(octovis-static PROPERTIES OUTPUT_NAME octovis)
+ 
+ add_library(octovis-shared SHARED ${viewerlib_SRCS})
+ target_link_libraries(octovis-shared 
+@@ -124,7 +124,7 @@ set_target_properties(octovis-shared PROPERTIES
+ # directly depend on the octomap library target when building the
+ # complete distribution, so it is recompiled as needed
+ if (CMAKE_PROJECT_NAME STREQUAL "octomap-distribution")
+-  ADD_DEPENDENCIES(octovis-static octomap-static)
++  #ADD_DEPENDENCIES(octovis-static octomap-static)
+   ADD_DEPENDENCIES(octovis-shared octomap)
+ endif()
+ 
+@@ -151,10 +151,10 @@ if(NOT EXISTS "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake
+   file(MAKE_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/octovis")
+ endif()
+ 
+-export(TARGETS octovis octovis-static octovis-shared
++export(TARGETS octovis octovis-shared
+   FILE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/octovis/octovis-targets.cmake")
+ 
+-install(TARGETS octovis octovis-static octovis-shared
++install(TARGETS octovis octovis-shared
+   EXPORT octovis-targets
+   INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+   ${INSTALL_TARGETS_DEFAULT_ARGS}

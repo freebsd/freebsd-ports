@@ -1,0 +1,10 @@
+--- src/backend/Makefile.in.orig	2024-11-23 13:47:04 UTC
++++ src/backend/Makefile.in
+@@ -62,7 +62,6 @@ install: all
+ 	strip ${AF}
+ 
+ install: all
+-	make strip
+ 	mkdir -p ${PREFIXBIN}
+ 	cp ${BIN} ${PREFIXBIN}/.
+ 

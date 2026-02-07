@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Net/Server/Coro.pm
+%%SITE_PERL%%/Net/Server/Proto/Coro.pm
+%%PERL5_MAN3%%/Net::Server::Coro.3.gz

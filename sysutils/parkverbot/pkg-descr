@@ -1,0 +1,5 @@
+Daemon to prevent hard disk head parking in rotational media.  The daemon
+will issue small read requests periodically to a random location on disk
+in an effort to reset the inactivity timer in the hardware and so prevent
+the dreaded head unloading.  As such, its operation is non-destructive and
+interoperable across different brands of hard drives.

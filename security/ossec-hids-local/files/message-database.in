@@ -1,0 +1,8 @@
+The database schema file:
+%%DB_SCHEMA%%
+
+To enable database output execute:
+# %%OSSEC_HOME%%/bin/ossec-control enable database
+
+For further steps see the documentation:
+https://www.ossec.net/docs/syntax/head_ossec_config.database_output.html

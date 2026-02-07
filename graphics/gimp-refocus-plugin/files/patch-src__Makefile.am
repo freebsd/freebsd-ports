@@ -1,0 +1,47 @@
+--- src/Makefile.am.orig	2003-01-30 19:30:18.000000000 -0200
++++ src/Makefile.am	2014-04-01 22:12:45.000000000 -0300
+@@ -1,22 +1,28 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-INCLUDES=@GTK_CFLAGS@ @GIMP_CFLAGS@ -I @LAPACK_INCLUDE_DIR@
++INCLUDES=@GTK_CFLAGS@ @GIMP_CFLAGS@ @LAPACK_INCLUDES@
+ 
+ bin_PROGRAMS = refocus
+ noinst_PROGRAMS = test-matrix
+ 
+-ldadd_atlas=-L@LAPACK_LIB_DIR@ -llapack -lcblas -latlas
++ldadd_atlas=@LAPACK_LIBS@
+ 
+ noinst_HEADERS=bdclosure.h refocus.h matrix.h tilebuf.h conv.h fwlapack.h gimppreview.h prevman.h util.h
+ EXTRA_DIST = dummy-plugin.c
+ 
+ refocus_SOURCES = refocus.c conv.c gimppreview.c prevman.c util.c matrix.c tilebuf.c bdclosure.c fwlapack.c
+-refocus_LDADD = @GTK_LIBS@ -lgimp ${ldadd_atlas}
+-refocus_DEPENDENCIES=@LAPACK_LIB_DIR@/liblapack.a
++refocus_LDADD = -lm ${ldadd_atlas} @GIMP_LIBS@
++if HAVE_ATLAS
++else
++refocus_DEPENDENCIES=@BUNDLED_LAPACK_LIB_DIR@/liblapack.a
++endif
+ 
+ test_matrix_SOURCES = matrix.c test-matrix.c fwlapack.c
+ test_matrix_LDADD = -lm ${ldadd_atlas} @GLIB_LIBS@
+-test_matrix_DEPENDENCIES=@LAPACK_LIB_DIR@/liblapack.a
++if HAVE_ATLAS
++else
++test_matrix_DEPENDENCIES=@BUNDLED_LAPACK_LIB_DIR@/liblapack.a
++endif
+ 
+ install-bin: refocus
+ 	@if test "x@GIMPTOOL@" = "x" ; then \
+@@ -36,8 +42,8 @@
+ 		@GIMPTOOL@ --install-admin-bin refocus ; \
+ 	fi
+ 
+-@LAPACK_LIB_DIR@/liblapack.a:
+-	cd @LAPACK_LIB_DIR@; make
++@BUNDLED_LAPACK_LIB_DIR@/liblapack.a:
++	cd @BUNDLED_LAPACK_LIB_DIR@; gmake
+ 
+ %.s: %.c
+ 	${CC} ${CFLAGS} -S $< -o $@

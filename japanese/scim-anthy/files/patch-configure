@@ -1,0 +1,11 @@
+--- configure.orig	2025-06-28 16:38:51 UTC
++++ configure
+@@ -31260,7 +31260,7 @@ fi
+ fi
+ 
+ 
+-ANTHY_LIBS="-lanthy -lanthydic"
++ANTHY_LIBS="-lanthy-unicode -lanthydic-unicode"
+ ANTHY_CFLAGS=""
+ 
+ 

@@ -1,0 +1,6 @@
+Disk Usage Analyzer is a graphical application to analyse disk usage in any
+Gnome environment. Disk Usage Analyzer can easily scan device volumes or a
+specific user-requested directory branch (local or remote).
+
+Once the scan is complete Disk Usage Analyzer provides a graphical
+representation of each selected folder.

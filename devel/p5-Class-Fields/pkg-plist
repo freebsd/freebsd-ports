@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Class/Fields.pm
+%%SITE_PERL%%/Class/Fields/Attribs.pm
+%%SITE_PERL%%/Class/Fields/Fuxor.pm
+%%SITE_PERL%%/Class/Fields/Inherit.pm
+%%SITE_PERL%%/private.pm
+%%SITE_PERL%%/protected.pm
+%%SITE_PERL%%/public.pm
+%%PERL5_MAN3%%/Class::Fields.3.gz
+%%PERL5_MAN3%%/Class::Fields::Attribs.3.gz
+%%PERL5_MAN3%%/Class::Fields::Fuxor.3.gz
+%%PERL5_MAN3%%/Class::Fields::Inherit.3.gz
+%%PERL5_MAN3%%/private.3.gz
+%%PERL5_MAN3%%/protected.3.gz
+%%PERL5_MAN3%%/public.3.gz

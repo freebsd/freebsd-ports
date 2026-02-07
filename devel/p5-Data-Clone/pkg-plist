@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Data/Clone.pm
+%%SITE_ARCH%%/auto/Data/Clone/Clone.so
+%%PERL5_MAN3%%/Data::Clone.3.gz

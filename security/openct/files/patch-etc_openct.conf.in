@@ -1,0 +1,11 @@
+--- etc/openct.conf.in.orig	2008-07-27 11:54:37.000000000 +0200
++++ etc/openct.conf.in	2008-08-26 13:00:58.000000000 +0200
+@@ -2,7 +2,7 @@
+ debug	= 0;
+ #
+ # Enable hot plugging
+-hotplug	= yes;
++hotplug	= no;
+ 
+ #
+ # Path to ifdhandler

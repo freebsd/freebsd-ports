@@ -1,0 +1,13 @@
+Hunspell is the spell checker of LibreOffice, OpenOffice.org, Mozilla
+Firefox 3 & Thunderbird, Google Chrome, and it is also used by
+proprietary software packages, like Mac OS X, InDesign, memoQ, Opera
+and SDL Trados.
+
+Main features:
+- Extended support for language peculiarities; Unicode character encoding,
+  compounding and complex morphology.
+- Improved suggestion using n-gram similarity, rule and dictionary based
+  pronunciation data.
+- Morphological analysis, stemming and generation.
+- Hunspell is based on MySpell and works also with MySpell dictionaries.
+- C++ library under GPL/LGPL/MPL tri-license.

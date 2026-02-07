@@ -1,0 +1,1 @@
+DBIx::Class::Cursor::Cached provides cursor class with built-in caching support.

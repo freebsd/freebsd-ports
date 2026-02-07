@@ -1,0 +1,21 @@
+--- meson.build.orig	2023-03-08 16:41:32 UTC
++++ meson.build
+@@ -4,6 +4,9 @@ threads = dependency('threads')
+ libevdev = dependency('libevdev')
+ libpam = meson.get_compiler('cpp').find_library('pam')
+ threads = dependency('threads')
++# On FreeBSD, libepoll-shim library is required for signalfd.h
++epoll_shim = dependency('epoll-shim', required : false)
++libintl = dependency('intl')
+ 
+ # Translations
+ subdir('po')
+@@ -17,6 +20,8 @@ shared_library(
+ 		inih_cpp,
+ 		threads,
+ 		libevdev,
++		epoll_shim,
++		libintl,
+ 	],
+ 	install: true,
+ 	install_dir: '/lib/security',

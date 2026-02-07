@@ -1,0 +1,7 @@
+%%ALLEGRO%%bin/dumbplay
+bin/dumbout
+bin/dumb2wav
+include/dumb.h
+%%ALLEGRO%%include/aldumb.h
+lib/libdumb.a
+%%ALLEGRO%%lib/libaldmb.a

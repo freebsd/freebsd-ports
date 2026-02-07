@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# PROVIDE: twms
+# REQUIRE: DAEMON NETWORKING LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable twms:
+# twms_enable="YES"
+
+. /etc/rc.subr
+
+name=twms
+rcvar=twms_enable
+
+load_rc_config $name
+
+: ${twms_enable="NO"}
+: ${twms_user="${name}"}
+
+pidfile=/var/run/${name}.pid
+procname=/usr/local/bin/twms
+command_interpreter="%%PYTHON_CMD%%"
+start_cmd="twms_start"
+
+pidfile=/var/run/${name}.pid
+command="%%PREFIX%%/bin/${name}"
+
+twms_start()
+{
+	echo "Starting ${name}."
+	/usr/sbin/daemon -c -f -p ${pidfile} -u ${twms_user} ${command_interpreter} ${procname}
+}
+
+run_rc_command "$1"

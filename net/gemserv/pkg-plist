@@ -1,0 +1,12 @@
+bin/gemserv
+@dir %%ETCDIR%%
+@sample %%ETCDIR%%/config.toml.sample
+%%ETCDIR%%/config.toml-dist
+%%DOCSDIR%%/README
+%%DOCSDIR%%/UPDATING
+%%EXAMPLESDIR%%/agena-cgi/Cargo.toml
+%%EXAMPLESDIR%%/agena-cgi/src/main.rs
+%%EXAMPLESDIR%%/scgi/scgi.pl
+%%EXAMPLESDIR%%/scgi/scgi.py
+@dir %%GEMSERV_DATADIR%%
+@sample %%EXAMPLESDIR%%/index.gmi.sample %%GEMSERV_DATADIR%%/index.gmi

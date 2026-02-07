@@ -1,0 +1,20 @@
+bin/tstatd
+%%PERL5_MAN3%%/Tail::Stat.3.gz
+%%PERL5_MAN3%%/Tail::Stat::Plugin.3.gz
+%%PERL5_MAN3%%/Tail::Stat::Plugin::apache.3.gz
+%%PERL5_MAN3%%/Tail::Stat::Plugin::clamd.3.gz
+%%PERL5_MAN3%%/Tail::Stat::Plugin::cvsupd.3.gz
+%%PERL5_MAN3%%/Tail::Stat::Plugin::icecast.3.gz
+%%PERL5_MAN3%%/Tail::Stat::Plugin::nginx.3.gz
+%%PERL5_MAN3%%/Tail::Stat::Plugin::spamd.3.gz
+%%PERL5_MAN1%%/tstatd.1.gz
+%%SITE_PERL%%/Tail/Stat.pm
+%%SITE_PERL%%/Tail/Stat/Plugin.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/apache.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/clamd.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/cvsupd.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/icecast.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/nginx.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/spamd.pm
+@dir(,,1777) /var/db/tstatd
+@dir(,,1777) /var/run/tstatd

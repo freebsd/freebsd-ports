@@ -1,0 +1,4 @@
+@rmtry /var/run/quoted.pid
+bin/quoted
+etc/quotes
+share/man/man1/quoted.1.gz

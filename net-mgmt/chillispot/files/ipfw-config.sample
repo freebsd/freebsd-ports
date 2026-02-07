@@ -1,0 +1,71 @@
+network inetrface
+
+fxp0 : 11.11.11.1
+fxp1 : 10.14.1.254
+
+/etc/ipnat.rules
+
+# NAT
+#
+map fxp0 192.168.182.0/24 -> 11.11.11.1/32 portmap tcp/udp auto
+
+--------------------------------------------------------
+
+/usr/local/etc/rc.d/ipfw.sh
+
+#!/bin/sh
+
+RULENO="1500"
+
+EXT_IF="fxp0"
+INT_IF="fxp1"
+
+EXT_IP="11.11.11.1"
+#INT_IP="10.14.1.0/24"
+
+# flush rules
+#
+ipfw -f flush
+
+## setup loopback
+##
+ipfw $RULENO add pass all from any to any via lo0
+ipfw add deny all from any to 127.0.0.0/8
+ipfw add deny ip from 127.0.0.0/8 to any
+
+# allow related and established on all interfaces
+#
+ipfw add pass ip from any to any established
+
+# allow SA connect to me , deny any others use ssh
+#
+ipfw add pass tcp from 11.11.11.5 to any setup
+ipfw add deny tcp from any to ${EXT_IP} 22
+
+## allow me (firewall) to access anywhere
+##
+ipfw add pass tcp from ${EXT_IP} to any setup
+ipfw add pass udp from ${EXT_IP} to any keep-state
+
+## allow tun0 device to connect to anywhere
+##
+ipfw add pass tcp from any to any via tun0 setup
+ipfw add pass udp from any to any via tun0 keep-state
+
+# allow icmp
+#
+ipfw add pass icmp from any to any icmptypes 0,3,8,11
+
+# allow http , https and dns on internal interface
+#
+ipfw add pass tcp from any to any 80 via ${INT_IF} setup
+ipfw add pass tcp from any to any 443 via ${INT_IF} setup
+ipfw add pass udp from any to any 53 via ${INT_IF} keep-state
+
+# allow tcp port 3990 on internal interface for chillispot redirection
+#
+ipfw add pass tcp from any to any 3990 via ${INT_IF} setup
+
+# except for any condition above , reject everything on all interfaces
+#
+ipfw add deny all from any to any 

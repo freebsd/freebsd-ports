@@ -1,0 +1,16 @@
+{
+  "provider": "MyDDNSProvider",
+  "email": "MyUserName",
+  "password": "MyPassWord",
+  "domains": [{
+     "domain_name": "foobar.domain",
+     "sub_domains": ["subdomain"]
+    }
+  ],
+  "ip_type": "IPv4",
+  "ip_urls": [""],
+  "ip_interface": "igb0",
+  "interval": 300,
+  "debug_info": false,
+  "run_once": false
+}

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-02-16 08:54:15 UTC
++++ CMakeLists.txt
+@@ -34,7 +34,7 @@ if(USE_TUI)
+ include(FindPkgConfig)
+ 
+ if(USE_TUI)
+-  pkg_check_modules(NCURSES REQUIRED ncurses)
++  pkg_check_modules(NCURSES ncurses)
+   target_link_libraries(httping ${NCURSES_LIBRARIES})
+   target_include_directories(httping PUBLIC ${NCURSES_INCLUDE_DIRS})
+   target_compile_options(httping PUBLIC ${NCURSES_CFLAGS_OTHER})

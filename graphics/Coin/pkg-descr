@@ -1,0 +1,9 @@
+Coin3D
+
+Coin3D is a high-level, retained-mode toolkit for effective 3D graphics
+development.  It is API compatible with Open Inventor 2.1.
+
+Open Inventor, for those who are not familiar with it, is an OpenGL-based,
+retain-mode, 3D model scene-graph rendering and interaction library, which
+has become the de-facto standard graphics library for 3D visualization and
+visual simulation software in the scientific and engineering community.

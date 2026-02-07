@@ -1,0 +1,4 @@
+Haplohseq identifies regions of allelic imbalance (AI) in sequencing data
+obtained from impure samples where AI events exist in a potentially low
+proportion of cells in the sample.  Input to the software includes a VCF file
+of genotypes and estimated phased genotypes.

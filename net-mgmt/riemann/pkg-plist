@@ -1,0 +1,4 @@
+%%JAVAJARDIR%%/riemann.jar
+@sample %%ETCDIR%%/riemann.config.sample
+@dir(riemann,riemann,0750) /var/log/riemann
+@dir(riemann,riemann,0750) %%ETCDIR%%/conf.d

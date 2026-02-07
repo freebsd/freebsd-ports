@@ -1,0 +1,5 @@
+TIMESTAMP = 1759774547
+SHA256 (go/textproc_sift/sift-v0.9.1/v0.9.1.mod) = 617c8941bbd68814e02fb4dcfb5210b2439fe6ce9b409e7a5ae1a245e75aeb52
+SIZE (go/textproc_sift/sift-v0.9.1/v0.9.1.mod) = 299
+SHA256 (go/textproc_sift/sift-v0.9.1/v0.9.1.zip) = bda23d45f1e7492fb0ae4f45aec2a6ec86f0ea2147b3b149536284be78edd65c
+SIZE (go/textproc_sift/sift-v0.9.1/v0.9.1.zip) = 46770

@@ -1,0 +1,45 @@
+Relax Linux checks for the code works on any non-Windows platform
+
+In file included from level_zero/tools/source/pin/pin.cpp:11:
+level_zero/source/inc/ze_intel_gpu.h:34:2: error: "Unsupported OS"
+#error "Unsupported OS"
+ ^
+level_zero/api/core/ze_core_loader.cpp:29:41: error: use of undeclared identifier 'LOAD_INTEL_GPU_LIBRARY'
+        driver_ddiTable.driverLibrary = LOAD_INTEL_GPU_LIBRARY();
+                                        ^
+
+core/elf/writer.cpp:54:9: error:
+      use of undeclared identifier 'memcpy_s'
+        memcpy_s(data, queueFront.dataSize, queueFront.data.c_str(), queueFront.dataSize);
+        ^
+core/elf/writer.cpp:59:13: error:
+      use of undeclared identifier 'memcpy_s'
+            memcpy_s(curString, queueFront.name.size(), queueFront.name.c_str(), queueFront.name.size());
+            ^
+core/elf/writer.cpp:76:5: error:
+      use of undeclared identifier 'memcpy_s'
+    memcpy_s(curSectionHeader, sizeof(SElf64SectionHeader),
+    ^
+
+--- shared/source/helpers/string.h.orig	2020-02-28 16:16:42 UTC
++++ shared/source/helpers/string.h
+@@ -10,7 +10,7 @@
+ #include <memory>
+ #include <type_traits>
+ 
+-#if defined(__linux__)
++#if !defined(_WIN32)
+ 
+ #include <cstring>
+ #include <errno.h>
+--- shared/source/os_interface/linux/drm_neo.cpp.orig	2021-06-02 19:58:38 UTC
++++ shared/source/os_interface/linux/drm_neo.cpp
+@@ -733,7 +733,7 @@ int Drm::queryAdapterBDF() {
+ void Drm::setGmmInputArgs(void *args) {
+     auto gmmInArgs = reinterpret_cast<GMM_INIT_IN_ARGS *>(args);
+     auto adapterBDF = this->getAdapterBDF();
+-#if defined(__linux__)
++#if !defined(_WIN32)
+     gmmInArgs->FileDescriptor = adapterBDF.Data;
+ #endif
+     gmmInArgs->ClientType = GMM_CLIENT::GMM_OCL_VISTA;

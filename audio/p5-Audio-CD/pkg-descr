@@ -1,0 +1,9 @@
+Perl interface to libcdaudio (cd + cddb): http://cdcd.undergrid.net/
+
+This module was created for adding CDDB support to <Xmms::shell> and
+cd tray <eject>.  I added methods for a good chunk of other
+<libcdaudio> functions while I was at it, but the docs and glue is
+not complete.  I do not have interest in completing the interface and
+docs, because xmms/Xmms::shell provides everything I need (at the
+moment) for audio.  If you have an interesting reason for needing the
+missing pieces, I'll probably be interested in adding them.

@@ -1,0 +1,20 @@
+--- Makefile.orig	2021-05-18 08:50:05 UTC
++++ Makefile
+@@ -32,14 +32,14 @@ ifdef $(DESTDIR)
+ endif
+ 
+ all install :
+-	${NINJA} -C $(_BuildDir) $@
++	${NINJA} -v -C $(_BuildDir) $@
+ 
+ test : all
+ 	perl/polymake --script run_testcases
+ 
+ clean :
+-	${NINJA} -C $(_BuildDir) clean.all
+-	${NINJA} -C $(_BuildDir) -t clean all
++	${NINJA} -v -C $(_BuildDir) clean.all
++	${NINJA} -v -C $(_BuildDir) -t clean all
+ 	rm -rf ${BuildRoot}/doc
+ 
+ distclean:

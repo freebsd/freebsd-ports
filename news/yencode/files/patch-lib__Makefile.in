@@ -1,0 +1,37 @@
+--- lib/Makefile.in.orig	Fri Mar 22 06:52:35 2002
++++ lib/Makefile.in	Thu Oct 30 02:50:35 2003
+@@ -97,7 +97,7 @@
+ AM_CFLAGS = -Wall
+ libmisc_a_SOURCES = misc.h \
+ 							alloca.c xmalloc.c xstrdup.c \
+-							getopt1.c getopt.c getopt.h getoptstr.c \
++							getoptstr.c \
+ 							error.c \
+ 							input.c \
+ 							path.c \
+@@ -118,7 +118,7 @@
+ 
+ libmisc_a_AR = $(AR) cru
+ am_libmisc_a_OBJECTS = alloca.$(OBJEXT) xmalloc.$(OBJEXT) \
+-	xstrdup.$(OBJEXT) getopt1.$(OBJEXT) getopt.$(OBJEXT) \
++	xstrdup.$(OBJEXT) \
+ 	getoptstr.$(OBJEXT) error.$(OBJEXT) input.$(OBJEXT) \
+ 	path.$(OBJEXT) screen.$(OBJEXT) string.$(OBJEXT) \
+ 	timer.$(OBJEXT)
+@@ -131,7 +131,6 @@
+ LIBS = @LIBS@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/alloca.Po $(DEPDIR)/error.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/getopt.Po $(DEPDIR)/getopt1.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/getoptstr.Po $(DEPDIR)/input.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/path.Po $(DEPDIR)/screen.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/string.Po $(DEPDIR)/timer.Po \
+@@ -174,8 +173,6 @@
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/alloca.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/error.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/getopt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/getoptstr.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/input.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/path.Po@am__quote@

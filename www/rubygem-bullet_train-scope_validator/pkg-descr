@@ -1,0 +1,2 @@
+Bullet Train Scope Validator provides a simple pattern for protecting belongs_to
+associations from malicious ID stuffing.

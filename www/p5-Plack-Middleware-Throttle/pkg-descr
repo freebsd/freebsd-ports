@@ -1,0 +1,1 @@
+A Plack Middleware for rate-limiting incoming HTTP requests.

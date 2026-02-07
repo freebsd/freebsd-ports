@@ -1,0 +1,3 @@
+HKDF - HMAC Key Derivation Function
+
+This module implements the HMAC Key Derivation function

@@ -1,0 +1,118 @@
+--- Makefile.orig	2011-03-08 18:55:26 UTC
++++ Makefile
+@@ -6,7 +6,7 @@
+ 
+ OPTIM = error
+ TARGET = ../../exe/DRAWxtl55
+-PREINC = 
++PREINC =
+ RESFILE =
+ 
+ # post processing command - overwritten for Mac
+@@ -34,29 +34,29 @@ ifeq ($(OS),Linux)
+ 
+   prefix          = /usr/local
+   includedir      = ${prefix}/include
+-  libdir          = /usr/lib/
++  libdir          = ${prefix}/lib/
+ 
+   BUILD_CPU=$(shell uname -m)
+   ifneq (,$(findstring 64,$(BUILD_CPU)))
+-      libdir	  = /usr/lib64/
++      libdir	  = ${prefix}/lib/
+   endif
+ 
+ # compiler name:
+   CXX             = g++
+ 
+ # flags for C++ compiler:
+-  OPTIM           = -g -Wall -Wunused  -fno-exceptions
+-# work around a bug in freeglut 2.4 - only enable this if you have to use a version 
++  OPTIM           = -g -Wall -Wunused  -fno-exceptions --std=c++14
++# work around a bug in freeglut 2.4 - only enable this if you have to use a version
+ # of fltk before 1.1.8 AND exactly version 2.4 of freeglut
+ #  GLUT		  = -DFREEGLUT24
+   CXXFLAGS        = $(OPTIM)  -I/usr/X11R6/include $(GLUT)
+ 
+ # libraries to link with:
+-  GLDLIBS  =  -L/usr/X11R6/lib  -lGLU -lGL -lXinerama -lXft -lpthread -lm  -lXext -lX11  -lXpm \
++  GLDLIBS  =  -L$(prefix)/lib  -lGLU -lGL -lXinerama -lXft -lpthread -lm  -lXext -lX11  -lXpm \
+ 		-lfltk \
+ # -lglut # only needed with old versions of fltk before 1.1.8
+ #       -lXi -lgdkglext-x11-1.0a  # Fedora Core 2 needs these libraries
+-  LINKFLTKGL  = $(libdir)libfltk.a $(libdir)libfltk_gl.a
++  LINKFLTKGL  = $(libdir)libfltk.so $(libdir)libfltk_gl.so
+ 
+ # The extension to use for executables...
+   EXEEXT          =
+@@ -68,7 +68,7 @@ ifeq ($(OS),CYGWIN)
+ # section to define the various symbols needed to build DRAWxtl for cygwin running on Windows
+ 
+   prefix          = /usr/
+-  includedir      = 
++  includedir      =
+   libdir          = /fltk/lib
+ 
+ # compiler name:
+@@ -108,10 +108,10 @@ ifeq ($(OS),IRIX64)               # use GNU g++ compil
+ 
+   # flags for C++ compiler:
+   OPTIM           = -g -O2 -Wall -Wunused  -fno-exceptions
+-  CXXFLAGS        = $(OPTIM) 
++  CXXFLAGS        = $(OPTIM)
+ 
+   # libraries to link with:
+-  GLDLIBS  =  -L/usr/freeware/lib32 -lglut -L/usr/lib32/ -lGL -lGLU -lm -lXpm -lX11 
++  GLDLIBS  =  -L/usr/freeware/lib32 -lglut -L/usr/lib32/ -lGL -lGLU -lm -lXpm -lX11
+   LINKFLTKGL  = -L$(libdir) -lfltk_gl -lfltk
+ 
+   # The extension to use for executables...
+@@ -131,8 +131,8 @@ ifeq ($(OS),Darwin)
+ 
+ # flags for C++ compiler:
+   OPTIM           = -g -O2 -Wall -Wunused  -fno-exceptions
+-  CXXFLAGS        = $(OPTIM)  
+-# in 10.2 I think I needed to add this to the above: 
++  CXXFLAGS        = $(OPTIM)
++# in 10.2 I think I needed to add this to the above:
+ # -framework AGL -framework GLUT -framework OpenGL -framework Carbon -framework ApplicationServices
+ 
+ # libraries to link with:
+@@ -205,7 +205,7 @@ CPPFILES =\
+ 
+ OBJFILES = $(CPPFILES:.cxx=.o) $(RESFILE:.rc=.o)
+ 
+-all:	$(TARGET) 
++all:	$(TARGET)
+ 
+ clean:
+ 	-@ rm -f $(TARGET) *.o core *~ .deps ../../examples/*.{out,cns,pov,wrl,tmp,tga,lst,fl,bmp} \
+@@ -216,23 +216,22 @@ clean:
+ .deps:  $(CPPFILES)
+ 	echo "Building dependencies..."
+ 	echo >.deps
+-	for i in $(CPPFILES); do gcc -MM $(PREINC) $$i >>.deps; done
++	for i in $(CPPFILES); do gcc $(CFLAGS) -MM $(PREINC) $$i >>.deps; done
+ 
+ -include .deps
+ 
+-# DRAWxtl 
++# DRAWxtl
+ 
+-$(TARGET) : .deps $(OBJFILES) 
++$(TARGET) : .deps $(OBJFILES)
+ 	echo Linking $@...
+ 	mkdir -p ../../exe
+ 	$(CXX) $(CXXFLAGS) -o $@ $(OBJFILES) \
+-		$(LINKFLTKGL) $(GLDLIBS) 
++		$(LINKFLTKGL) $(GLDLIBS)
+ 	$(POSTLINK) $@
+ 
+-static: .deps $(OBJFILES) 
++static: .deps $(OBJFILES)
+ 	echo Linking $@...
+ 	mkdir -p ../../exe
+ 	$(CXX) $(CXXFLAGS) -static -o DRAWxtl.$@ $(OBJFILES) \
+ 		$(LINKFLTKGL) $(GLDLIBS) -lXxf86vm -ldl
+ 	strip $@
+-

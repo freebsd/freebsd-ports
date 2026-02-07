@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+You need to do some things before you can use the Amazon Mechanical Turk:
+
+1) Visit http://aws.amazon.com/ to create an Amazon AWS account.
+
+2) Configure the MTurk Perl module with the following command:
+
+   perl -MNet::Amazon::MechanicalTurk::Configurer -e configure
+
+   Your configuration file will be created in the file
+   %%HOME%%/.aws/auth.
+
+3) Try out the samples in %%EXAMPLESDIR%%,
+   if you installed them.
+
+4) Use the MTurk Sandbox to create HITs in a development environment for
+   free. This Perl module uses the sandbox by default.
+
+5) When you are ready to submit real HITs, add the following line to your
+   %%HOME%%/.aws/auth file:
+
+   service_url: http://mechanicalturk.amazonaws.com/?Service=AWSMechanicalTurkRequester
+
+   DISCLAIMER: You are responsible for paying MTurk workers for the HITs
+               that you submit to the live service. Please make sure
+               you know which MTurk service you are submitting HITs to -
+               the sandbox (default) or the production service.
+EOM
+}
+]

@@ -1,0 +1,2 @@
+This is the Cache::Memcached compatible interface to libmemcached, a C library
+to interface with memcached.

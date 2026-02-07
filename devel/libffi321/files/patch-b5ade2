@@ -1,0 +1,112 @@
+# Clang doesn't like the -Wno-psabi argument that we want to pass to GCC.
+# Since clang is detected as GCC via __GNUC__, use ax_cv_c_compiler_vendor.
+# https://github.com/atgreen/libffi/commit/b5ade2fb5d9ba06519484677a5474e5dad48c2e3
+
+diff --git a/testsuite/lib/libffi.exp b/testsuite/lib/libffi.exp
+index 5051d31..0e92bb0 100644
+--- testsuite/lib/libffi.exp
++++ testsuite/lib/libffi.exp
+@@ -100,46 +100,39 @@ proc libffi-init { args } {
+     global libffi_link_flags
+     global tool_root_dir
+     global ld_library_path
+-
+-    global using_gcc
++    global compiler_vendor
+ 
+     set blddirffi [pwd]/.. 
+     verbose "libffi $blddirffi"
+ 
+-    # Are we building with GCC?
+-    set tmp [grep ../config.status "GCC='yes'"]
+-    if { [string match $tmp "GCC='yes'"] } {
+-
+-      set using_gcc "yes"
++    # Which compiler are we building with?
++    set tmp [grep ../config.log "^ax_cv_c_compiler_vendor.*$"]
++    regexp -- {^[^=]*=(.*)$} $tmp nil compiler_vendor
+ 
+-    set gccdir [lookfor_file $tool_root_dir gcc/libgcc.a]
+-    if {$gccdir != ""} {
+-	set gccdir [file dirname $gccdir]
+-    }
+-    verbose "gccdir $gccdir"
+-
+-    set ld_library_path "."
+-    append ld_library_path ":${gccdir}"
+-
+-    set compiler "${gccdir}/xgcc"
+-    if { [is_remote host] == 0 && [which $compiler] != 0 } {
+-	foreach i "[exec $compiler --print-multi-lib]" {
+-	    set mldir ""
+-	    regexp -- "\[a-z0-9=_/\.-\]*;" $i mldir
+-	    set mldir [string trimright $mldir "\;@"]
+-	    if { "$mldir" == "." } {
+-		continue
+-	    }
+-	    if { [llength [glob -nocomplain ${gccdir}/${mldir}/libgcc_s*.so.*]] >= 1 } {
+-		append ld_library_path ":${gccdir}/${mldir}"
++    if { [string match $compiler_vendor "gnu"] } {
++        set gccdir [lookfor_file $tool_root_dir gcc/libgcc.a]
++        if {$gccdir != ""} {
++	    set gccdir [file dirname $gccdir]
++        }
++        verbose "gccdir $gccdir"
++
++        set ld_library_path "."
++        append ld_library_path ":${gccdir}"
++
++        set compiler "${gccdir}/xgcc"
++        if { [is_remote host] == 0 && [which $compiler] != 0 } {
++	    foreach i "[exec $compiler --print-multi-lib]" {
++	        set mldir ""
++	        regexp -- "\[a-z0-9=_/\.-\]*;" $i mldir
++	        set mldir [string trimright $mldir "\;@"]
++	        if { "$mldir" == "." } {
++		    continue
++	        }
++	        if { [llength [glob -nocomplain ${gccdir}/${mldir}/libgcc_s*.so.*]] >= 1 } {
++		    append ld_library_path ":${gccdir}/${mldir}"
++	        }
+ 	    }
+-	}
+-    }
+- 
+-    } else {
+-
+-      set using_gcc "no"
+-
++        }
+     }
+ 
+     # add the library path for libffi.
+@@ -278,18 +271,25 @@ proc libffi-dg-runtest { testcases default-extra-flags } {
+ }
+ 
+ proc run-many-tests { testcases extra_flags } {
+-    global using_gcc
+-    if { [string match $using_gcc "yes"] } {
++    global compiler_vendor
++    switch $compiler_vendor {
++      "clang" {
++	set common "-W -Wall"
++	set optimizations { "-O0" "-O1" "-O2" "-O3" "-Os" }
++      }
++      "gnu" {
+         set common "-W -Wall -Wno-psabi"
+         set optimizations { "-O0" "-O2" "-O3" "-Os" "-O2 -fomit-frame-pointer" }
+-    } else {
++      }
++      default {
+         # Assume we are using the vendor compiler.
+         set common ""
+         set optimizations { "" }
++      }
+     }
+ 
+     set targetabis { "" }
+-    if [string match $using_gcc "yes"] {
++    if [string match $compiler_vendor "gnu"] {
+         if [istarget "i?86-*-*"] {
+             set targetabis {
+                 ""

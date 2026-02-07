@@ -1,0 +1,4 @@
+'abstract.rb' is a library which enable you to define abstract method in Ruby.
+
+Abstract method makes your code more descriptive.
+It is useful even for dynamic language such as Ruby.

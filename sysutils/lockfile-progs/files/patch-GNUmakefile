@@ -1,0 +1,11 @@
+--- GNUmakefile.orig	2024-12-10 21:05:21 UTC
++++ GNUmakefile
+@@ -10,7 +10,7 @@ cleanfiles += $(generated)
+ generated  += $(patsubst %,man/%.1,$(variants))
+ cleanfiles += $(generated)
+ 
+-CFLAGS := -g -Wall -Wformat-security -Werror -O2 -fwrapv -fno-strict-aliasing $(CFLAGS)
++#CFLAGS := -g -Wall -Wformat-security -Werror -O2 -fwrapv -fno-strict-aliasing $(CFLAGS)
+ CPPFLAGS ?=
+ LDFLAGS ?=
+ 

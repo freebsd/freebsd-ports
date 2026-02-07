@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Remove package declaration from PEAR's registry.
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+PACKAGE=%%PKG_NAME%%
+PEAR=${PKG_PREFIX}/bin/pear
+
+${PEAR} uninstall -r -n ${PACKAGE} || true

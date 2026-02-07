@@ -1,0 +1,11 @@
+--- player/k65/tt_player.k65.orig	2021-01-22 19:54:55 UTC
++++ player/k65/tt_player.k65
+@@ -53,7 +53,7 @@ inline tt_getSequenceEntry {
+ .constructPatPtr:
+     y=tt_cur_pat_index,x
+     a=tt_SequenceTable,y <0{
+-        a&0b01111111 tt_cur_pat_index,x=a >=goto .constructPatPtr
++	a&0b01111111 tt_cur_pat_index,x=a >=0goto .constructPatPtr
+     }
+ }
+ #else

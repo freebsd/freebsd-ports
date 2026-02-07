@@ -1,0 +1,8 @@
+%%PORTDOCS%%%%DOCSDIR%%/Ezra SIL Keyboard Chart.doc
+%%PORTDOCS%%%%DOCSDIR%%/Keying+in+Hebrew.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Licenses.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/Simplified keyboard chart.doc
+share/kmfl/EZRAUNI24.kmn
+share/kmfl/icons/HEBDISPY.bmp
+share/kmfl/icons/alef.bmp

@@ -1,0 +1,6 @@
+usr/lib64/libgsm.so.1
+usr/lib64/libgsm.so.1.0.12
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/MACHINES
+%%PORTDOCS%%%%DOCSDIR%%/README

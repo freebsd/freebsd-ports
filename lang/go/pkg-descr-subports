@@ -1,0 +1,7 @@
+Go is an open source programming environment that makes it easy to build
+simple, reliable, and efficient software.
+
+FreeBSD allows you to install multiple versions of Go at the same time.
+As a result, this package installs only versioned binaries (i.e. goXYZ,
+gofmtXYZ). To get unversioned names (go, gofmt, etc.) install the "go"
+package or the lang/go port.

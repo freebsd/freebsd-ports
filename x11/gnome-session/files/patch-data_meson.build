@@ -1,0 +1,18 @@
+--- data/meson.build.orig	2024-03-18 19:30:06 UTC
++++ data/meson.build
+@@ -108,6 +108,7 @@ install_data(
+   install_dir: join_paths(session_datadir, 'glib-2.0', 'schemas'),
+ )
+ 
++if enable_systemd_session
+ unit_conf = configuration_data()
+ unit_conf.set('libexecdir', session_libexecdir)
+ 
+@@ -170,6 +171,7 @@ endforeach
+       session),
+   )
+ endforeach
++endif
+ 
+ data = files('hardware-compatibility')
+ 

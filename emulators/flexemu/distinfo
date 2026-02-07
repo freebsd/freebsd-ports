@@ -1,0 +1,9 @@
+TIMESTAMP = 1766518228
+SHA256 (aladur-flexemu-V3.31_GH0.tar.gz) = 35abc916f125a924a851d1a0751e2ac9cb63ef1b2a9598e0db01e114eda9ee51
+SIZE (aladur-flexemu-V3.31_GH0.tar.gz) = 11467032
+SHA256 (fmtlib-fmt-e424e3f_GH0.tar.gz) = 56742b51a75ec77120a6e4f1d1fb4a26ce02eb16751039de62a3b4d6c800771c
+SIZE (fmtlib-fmt-e424e3f_GH0.tar.gz) = 709029
+SHA256 (google-googletest-b514bdc_GH0.tar.gz) = dcefc4adaca27f89b69371eadef42c4d311d2debfdee2a9a5985cae740463f98
+SIZE (google-googletest-b514bdc_GH0.tar.gz) = 872710
+SHA256 (open-source-parsers-jsoncpp-8214f71_GH0.tar.gz) = ac618109663963435516dcef05773d185f99d6cafbcec59bf2ba3e08c050f6a6
+SIZE (open-source-parsers-jsoncpp-8214f71_GH0.tar.gz) = 212844

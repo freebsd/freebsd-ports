@@ -1,0 +1,22 @@
+Orchestrator is a replication topology manager for MySQL.
+
+Features include:
+
+* The topology and status of the replication tree is automatically detected
+  and monitored.
+* Either a GUI, CLI or API can be used to check the status and perform
+  operations.
+* Supports automatic failover of the master, and the replication tree can
+  be fixed when servers in the tree fail - either manually or automatically.
+* It is not dependent on any specific version or flavor of MySQL (MySQL,
+  Percona Server, MariaDB or even MaxScale binlog servers).
+* Orchestrator supports many different types of topologies, from a single
+  master -> slave  to complex multi-layered replication trees consisting of
+  hundreds of servers.
+* Orchestrator can make topology changes and will do so based on the state
+  at that moment; it does not require a configuration to be defined with what
+  corresponds to the database topology.
+* The GUI is not only there to report the status - one of the cooler things
+  you can do is change replication just by doing a drag and drop in the web
+  interface (of course you can do this and much more through the CLI and API
+  as well).

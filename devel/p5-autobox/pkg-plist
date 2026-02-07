@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/auto/autobox/autobox.so
+%%SITE_ARCH%%/autobox.pm
+%%SITE_ARCH%%/autobox.pod
+%%SITE_ARCH%%/autobox/universal.pm
+%%PERL5_MAN3%%/autobox.3.gz

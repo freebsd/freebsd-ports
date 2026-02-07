@@ -1,0 +1,22 @@
+--- Engine/CMakeLists.txt.orig	2024-09-13 07:39:11 UTC
++++ Engine/CMakeLists.txt
+@@ -74,12 +74,17 @@ add_library(NatronEngine STATIC ${NatronEngine_HEADERS
+     ../libs/SequenceParsing/SequenceParsing.cpp
+ )
+ add_library(NatronEngine STATIC ${NatronEngine_HEADERS} ${NatronEngine_SOURCES})
++
++find_package(
++  Boost 1.85 REQUIRED
++  COMPONENTS serialization system)
++
++
+ target_link_libraries(NatronEngine
+     PUBLIC
+         HostSupport
+-        Boost::headers
+-        Boost::serialization
+         PkgConfig::Cairo
++        ${Boost_LIBRARIES}
+     PRIVATE
+         Shiboken2::libshiboken
+         PySide2::pyside2

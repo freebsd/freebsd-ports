@@ -1,0 +1,135 @@
+--- texk/xdvik/READMEs/ChangeLog.xdvik20a-j1.1.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/ChangeLog.xdvik20a-j1.1
+@@ -0,0 +1,132 @@
++xdvik20a-j1.1 変更履歴
++				千葉大学総合情報処理センター 山賀正人
++
++
++* xdvik20a-j1.1 ---> xdvik20a-j1.1p1  (15/5/97)
++
++	DVIFILTERCMD に jdvi2kps を指定した場合のオプションが不正であったのを
++	修正 (xdefs.make)
++	※ すずきとおる さん のご指摘によるものです。
++
++	VI_KEY を定義したときにカーソルキーが無効になってしまうバグの修正
++	(xdvi.c)
++	※ 永江＠九工大 さん からの情報です。
++
++
++* xdvik20a-j1.1p1 ---> xdvik20a-j1.1p2  (6/6/97)
++
++	wwwlib との不整合を修正 (markring.h) および linux でコンパイル可能に
++	※ 内山＠慶應大 さん からのいただいたパッチです
++
++	竹中＠東大さんによる xdvi-17jp.960209 の color special 対応部分を適用
++	※ 上坂＠東北大さん からいただいた xdvik-18f に対するパッチを
++	   使わせていただきました。
++
++
++* xdvik20a-j1.1p2 ---> xdvik20a-j1.1p3  (14/6/97)
++
++	SunOS 4.1.x でカラー表示しようとすると core dump するバグの修正
++	(special.c)
++
++
++* xdvik20a-j1.1p3 ---> xdvik20a-j1.1p4  (18/6/97)
++
++	(ecl)epsf.sty を使って挿入する PS ファイルの height や width を
++	指定するとその指定が以後も有効になってしまうバグの修正 (special.c)
++	※ 嵯峨田＠ＮＴＴ さん からいただいたパッチです。
++
++
++* xdvik20a-j1.1p4 ---> xdvik20a-j1.1p5  (23/6/97)
++
++	BSD/OS V2.1 でもコンパイルできるように
++	(config.h, sfinternal.h, markring.c)
++	※ 萩平＠大阪大学医学部麻酔(ICU) さん からいただいたパッチです。
++
++
++* xdvik20a-j1.1p5 ---> xdvik20a-j1.1p6  (24/6/97)
++
++	epsbox.sty の BoundingBox の計算が不正になるバグの修正 (special.c)
++	※ 岡久＠愛媛大 さん によるパッチです。
++
++		fj.comp.texhax
++		<5oim44$6dj@news.cs.ehime-u.ac.jp>
++
++
++* xdvik20a-j1.1p6 ---> xdvik20a-j1.1p7  (30/6/97)
++
++	竹中＠東大さんによる xdvi-17jp.960209 の color special 対応
++	部分のうち、eclcolor.sty 対応部分を適用 (special.c)
++
++	LaTeX 2.09 + dvips で使われる colordvi.sty への対応 (special.c)
++
++
++* xdvik20a-j1.1p7 ---> xdvik20a-j1.1p8  (2/8/97)
++
++	VFlib を使うか否か、日本語多書体表示機能を使うか否か、更に
++	dvi --> ps フィルタとして何を使うかを全て configure スクリプトの
++	オプションで指定できるように (configure.in, withenable.ac, config.h)
++
++	epsbox.sty の \special に対して *.ps という名前の PostScript ファイル
++	しか受け付けないバグの修正 (special.c)
++
++
++* xdvik20a-j1.1p8 ---> xdvik20a-j1.1p9  (16/10/97)
++
++	オリジナルの xdvik-20a から存在した、epsf.sty と LaTeX2e の graphicx
++	パッケージに対する special の解釈部分 epsf_special() にあったバグを
++	修正 (special.c)
++
++
++* xdvik20a-j1.1p9 ---> xdvik20a-j1.1p10  (8/11/97)
++
++	graphicx パッケージの \resizebox や \scalebox の中で取り込んだ
++	eps ファイルを表示しない(gs などを起動しない)ようにした場合に
++	代わりに表示される枠線が正しく表示されるように (special.c,
++	psgs.c, psdps.c, psnews.c)
++
++
++* xdvik20a-j1.1p10 ---> xdvik20a-j1.1p11  (25/11/97)
++
++	vfontmap の検索について、カレントディレクトリを最優先するように
++	(vfontmap.c)
++
++	dvi ファイルを読み込んでページ数に変更があった場合は TOC のスク
++	ロールバーを含めて表示し直すように (toc.c)
++
++
++* xdvik20a-j1.1p11 ---> xdvik20a-j1.1p12  (30/12/97)
++
++	sizeof(long) が 4 より大きい場合 (OSF1 など) に対応 (zeit.c)
++
++	vfontmap まわりの無駄にメモリを消費している部分を大幅に書き換え
++	(dvi_init.c, zeit.c, vfontmap.c, xdvi.h)
++
++* xdvik20a-j1.1p12 ---> xdvik20a-j1.1p13  (04/01/98)
++
++	default の DVIFILTER を dvi2ps から dvips に変更 (config.h)
++
++	vfontmap まわりを更に修正 (zeit.c)
++
++	dvips をフィルタとして使うように -f オプションを追加 (config.h)
++
++
++* xdvik20a-j1.1p13 ---> xdvik20a-j1.1p14  (10/01/98)
++
++	xmalloc の使い方を間違っているため、Segmentation Fault する
++	バグの修正 (vfontmap.c)
++
++	※ 永江＠九工大 さん からいただいたパッチです。
++
++
++* xdvik20a-j1.1p14 ---> xdvik20a-j1.1p15  (16/01/98)
++
++	epsbox.sty で取り込んだ複数の画像を表示しようとすると
++	"Too many open files" とエラーメッセージを出して表示できない
++	バグの修正 (special.c)
++
++		fj.comp.texhax
++		<69cfvc$shr$1@picard.cs.osakafu-u.ac.jp>
++		<69hsme$64j$1@pine.cix.chiba-u.ac.jp>
++
++	sscanf() の実装を勘違いしていたために BoundingBox のスケールを
++	正しく読み取れなかったバグの修正 (special.c)

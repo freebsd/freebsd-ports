@@ -1,0 +1,13 @@
+bin/slimeforest-fs
+bin/slimeforest-win
+bin/slimeforest.sh
+%%DATADIR%%/exec.ver
+%%DATADIR%%/images/greenslime.png
+%%DATADIR%%/jad.wad
+%%DATADIR%%/jquest
+@mode %%BINMODE%%
+%%DATADIR%%/jquest32
+@mode
+%%DATADIR%%/maps/forest.map
+%%DATADIR%%/playerdata/data.ver
+%%DATADIR%%/sfd.wad

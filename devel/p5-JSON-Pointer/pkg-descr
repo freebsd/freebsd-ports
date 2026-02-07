@@ -1,0 +1,7 @@
+This library is implemented JSON Pointer
+(http://tools.ietf.org/html/rfc6901) and some useful operator from
+JSON Patch (http://tools.ietf.org/html/rfc6902).
+
+JSON Pointer is available to identify a specified value in JSON
+document, and it is simillar to XPath.  Please read the both of
+specifications for details.

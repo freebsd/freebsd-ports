@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Data/TreeDumper/Renderer/DHTML.pm
+%%SITE_PERL%%/Data/TreeDumper/Renderer/dhtml_test.pl
+%%SITE_PERL%%/auto/Data/TreeDumper/Renderer/DHTML/autosplit.ix
+%%PERL5_MAN3%%/Data::TreeDumper::Renderer::DHTML.3.gz

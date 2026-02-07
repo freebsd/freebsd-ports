@@ -1,0 +1,11 @@
+GNUstep/System/Applications/RemoteDesk.app/RemoteDesk
+GNUstep/System/Applications/RemoteDesk.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/RemoteDesk.app/Resources/LICENSE
+GNUstep/System/Applications/RemoteDesk.app/Resources/README
+GNUstep/System/Applications/RemoteDesk.app/Resources/RemoteDesk.desktop
+GNUstep/System/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.classes
+GNUstep/System/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.info
+GNUstep/System/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/objects.gorm
+GNUstep/System/Applications/RemoteDesk.app/Resources/remotedesk.tiff
+GNUstep/System/Applications/RemoteDesk.app/stamp.make
+GNUstep/System/Tools/RemoteDesk

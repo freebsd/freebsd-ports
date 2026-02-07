@@ -1,0 +1,5 @@
+etc/rc.d/route6d
+sbin/route6d
+sbin/rip6query
+share/man/man8/route6d.8.gz
+share/man/man8/rip6query.8.gz

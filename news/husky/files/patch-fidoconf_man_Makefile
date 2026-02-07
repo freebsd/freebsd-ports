@@ -1,0 +1,11 @@
+--- fidoconf/man/Makefile.orig	2020-01-16 21:50:04 UTC
++++ fidoconf/man/Makefile
+@@ -20,7 +20,7 @@ MAN1DIR   = $(DESTDIR)$(MANDIR)$(DIRSEP)man1
+ 
+ all:
+ 
+-install:	copy link
++install:	copy
+ 
+ copy:
+ 	$(MKDIR) $(MKDIROPT) $(MAN1DIR)

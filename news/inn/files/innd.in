@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: innd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=innd
+rcvar=innd_enable
+
+load_rc_config ${name}
+
+innd_enable=${innd_enable-"NO"}
+innd_user=${innd_user-"news"}
+innd_group=${innd_group-"news"}
+
+required_files="%%DBDIR%%/history.dir"
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+command=%%NEWSBASE%%/bin/rc.news
+
+innd_start() {
+	su -fm ${innd_user} -c "${command} start"
+}
+
+innd_stop() {
+	su -fm ${innd_user} -c "${command} stop"
+}
+
+run_rc_command "$1"

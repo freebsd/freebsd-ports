@@ -1,0 +1,11 @@
+--- label3d.orig	2018-10-06 19:26:10 UTC
++++ label3d
+@@ -39,7 +39,7 @@ if [ ! "$FONTSCALE" ]; then FONTSCALE=3.
+ if [ "$TMPDIR" ]; then
+     tmp=$TMPDIR/$$
+ else
+-    tmp=/usr/tmp/$$
++    tmp=/tmp/$$
+ fi
+ #echo "DEBUG scratch files to $tmp"  1>&2
+ 

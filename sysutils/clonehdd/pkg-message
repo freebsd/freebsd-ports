@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+This tool can damage your data if you will use it without
+understanding how it works!
+Please, run "man clonehdd" or read README file.
+
+All questions you can ask on http://sourceforge.net/projects/clonehdd
+EOM
+}
+]

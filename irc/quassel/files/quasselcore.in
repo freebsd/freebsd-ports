@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# PROVIDE: quasselcore
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable quasselcore:
+#
+# quasselcore_enable="YES"
+# # optional
+# quasselcore_data="/var/db/quasselcore"
+# quasselcore_log="/var/log/quasselcore.log"
+# quasselcore_listen="0.0.0.0,::"
+# quasselcore_args="--configdir=${quasselcore_data} --logfile=${quasselcore_log} --listen=${quasselcore_listen}"
+# quasselcore_user="quasselcore"
+# quasselcore_group="quasselcore"
+
+. /etc/rc.subr
+
+name=quasselcore
+rcvar=quasselcore_enable
+
+load_rc_config ${name}
+
+: ${quasselcore_enable:="NO"}
+: ${quasselcore_data="/var/db/quasselcore"}
+: ${quasselcore_log="/var/log/quasselcore.log"}
+: ${quasselcore_listen="0.0.0.0,::"}
+: ${quasselcore_args="--configdir=${quasselcore_data} --logfile=${quasselcore_log} --listen=${quasselcore_listen}"}
+: ${quasselcore_user="quasselcore"}
+: ${quasselcore_group="${quasselcore_user}"}
+
+procname="%%PREFIX%%/bin/quasselcore"
+pidfile="/var/run/${name}.pid"
+
+command="/usr/sbin/daemon"
+command_args="-cf -p ${pidfile} ${procname} ${quasselcore_args}"
+
+start_precmd="${name}_prestart"
+stop_postcmd="${name}_poststop"
+keygen_cmd="${name}_keygen"
+extra_commands="keygen"
+
+quasselcore_keygen()
+{
+	openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
+	    -keyout "${quasselcore_data}/quasselCert.pem" \
+	    -out "${quasselcore_data}/quasselCert.pem"
+	chown ${quasselcore_user}:${quasselcore_group} "${quasselcore_data}/quasselCert.pem"
+	chmod 400 "${quasselcore_data}/quasselCert.pem"
+}
+
+quasselcore_prestart()
+{
+	install -d -o ${quasselcore_user} -g ${quasselcore_group} ${quasselcore_data}
+
+	if [ ! -f "${quasselcore_log}" ]; then
+		install -o ${quasselcore_user} -g ${quasselcore_group} /dev/null ${quasselcore_log}
+	fi
+	if [ ! -f "${pidfile}" ]; then
+		install -o ${quasselcore_user} -g ${quasselcore_group} /dev/null ${pidfile}
+	fi
+	if [ ! -f "${quasselcore_data}/quasselCert.pem" ]; then
+		quasselcore_keygen
+	fi
+}
+
+quasselcore_poststop()
+{
+    rm -f "${pidfile}"
+}
+
+run_rc_command "$1"

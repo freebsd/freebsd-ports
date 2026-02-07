@@ -1,0 +1,13 @@
+diff --git Makefile.in Makefile.in
+index 7c62305..fe8e602 100644
+--- Makefile.in
++++ Makefile.in
+@@ -56,7 +56,7 @@ docdir = @docdir@
+ 
+ DESTDIR =
+ 
+-pkglibdir = $(libdir)/@PACKAGE@@VERSION@
++pkglibdir = $(libdir)/@PACKAGE@
+ 
+ top_builddir = .
+ 

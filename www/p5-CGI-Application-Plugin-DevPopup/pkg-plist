@@ -1,0 +1,8 @@
+%%SITE_PERL%%/CGI/Application/Plugin/DevPopup/Log.pm
+%%SITE_PERL%%/CGI/Application/Plugin/DevPopup/HTTPHeaders.pm
+%%SITE_PERL%%/CGI/Application/Plugin/DevPopup/Timing.pm
+%%SITE_PERL%%/CGI/Application/Plugin/DevPopup.pm
+%%PERL5_MAN3%%/CGI::Application::Plugin::DevPopup.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::DevPopup::HTTPHeaders.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::DevPopup::Timing.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::DevPopup::Log.3.gz

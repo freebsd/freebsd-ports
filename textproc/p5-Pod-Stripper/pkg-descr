@@ -1,0 +1,3 @@
+This be Pod::Stripper, a subclass of Pod::Parser.  It parses perl files,
+stripping out the pod, and dumping the rest (presumably code) to
+wherever you point it to (like you do with Pod::Parser).

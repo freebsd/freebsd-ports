@@ -1,0 +1,101 @@
+--- sal/inc/rtl/math.h.orig	2014-02-25 08:31:58 UTC
++++ sal/inc/rtl/math.h
+@@ -396,6 +396,21 @@ double SAL_CALL rtl_math_round(double fV
+  */
+ double SAL_CALL rtl_math_pow10Exp(double fValue, int nExp) SAL_THROW_EXTERN_C();
+ 
++/** Similar to pow() with stricter exception handling for indeterminate values.
++
++    powr is specified in the IEEE 754 - 2008 Floating Point Standard.
++
++    @param fValue
++    The value to be raised.
++
++    @param fExp
++    The exponent.
++
++    @return
++    powr(fValue, fExp)
++ */
++double SAL_CALL rtl_math_powr(double fValue, double fExp) SAL_THROW_EXTERN_C();
++
+ /** Rounds value to 15 significant decimal digits.
+ 
+     @param fValue
+--- sal/inc/rtl/math.hxx.orig	2014-02-25 08:31:58 UTC
++++ sal/inc/rtl/math.hxx
+@@ -186,6 +186,13 @@ inline double pow10Exp(double fValue, in
+     return rtl_math_pow10Exp(fValue, nExp);
+ }
+ 
++/** A wrapper around rtl_math_powr.
++ */
++inline double powr(double fValue, double fExp)
++{
++    return rtl_math_powr(fValue, fExp);
++}
++
+ /** A wrapper around rtl_math_approxValue.
+  */
+ inline double approxValue(double fValue)
+--- sal/rtl/source/math.cxx.orig	2014-02-25 08:31:57 UTC
++++ sal/rtl/source/math.cxx
+@@ -1113,6 +1113,19 @@ double SAL_CALL rtl_math_expm1( double f
+     return (fe-1.0) * fValue / log(fe);
+ }
+ 
++double SAL_CALL rtl_math_powr( double fValue,  double fExp ) SAL_THROW_EXTERN_C()
++{
++    if ((fValue == 0.0  && fExp == 0.0) ||
++	(rtl::math::isInf( fExp ) && !rtl::math::isSignBitSet( fExp )) ||
++	(rtl::math::isInf( fValue ) && !rtl::math::isSignBitSet( fValue )))
++    {
++        double fResult;
++        ::rtl::math::setNan( &fResult );
++        return fResult;
++    }
++    return pow(fValue, fExp);
++}
++
+ 
+ double SAL_CALL rtl_math_log1p( double fValue ) SAL_THROW_EXTERN_C()
+ {
+--- sal/util/sal.map.orig	2014-02-25 08:31:48 UTC
++++ sal/util/sal.map
+@@ -629,6 +629,8 @@ UDK_3.12 { # AOO 3.5
+     global:
+         osl_loadAsciiModule;
+         osl_loadAsciiModuleRelative;
++
++        rtl_math_powr;
+ } UDK_3.11;
+ 
+ PRIVATE_1.0 {
+--- sc/source/core/tool/interpr5.cxx.orig	2014-02-25 08:27:49 UTC
++++ sc/source/core/tool/interpr5.cxx
+@@ -1611,14 +1611,14 @@ void ScInterpreter::ScPow()
+             if (bFlag)
+             {   for ( SCSIZE i = 0; i < nCount; i++ )
+                     if (pMat->IsValue(i))
+-                        pResMat->PutDouble(pow(fVal,pMat->GetDouble(i)), i);
++                        pResMat->PutDouble(::rtl::math::powr(fVal,pMat->GetDouble(i)), i);
+                     else
+                         pResMat->PutString(ScGlobal::GetRscString(STR_NO_VALUE), i);
+             }
+             else
+             {   for ( SCSIZE i = 0; i < nCount; i++ )
+                     if (pMat->IsValue(i))
+-                        pResMat->PutDouble(pow(pMat->GetDouble(i),fVal), i);
++                        pResMat->PutDouble(::rtl::math::powr(pMat->GetDouble(i),fVal), i);
+                     else
+                         pResMat->PutString(ScGlobal::GetRscString(STR_NO_VALUE), i);
+             }
+@@ -1628,7 +1628,7 @@ void ScInterpreter::ScPow()
+             PushIllegalArgument();
+     }
+     else
+-        PushDouble(pow(fVal1,fVal2));
++        PushDouble(::rtl::math::powr(fVal1,fVal2));
+ }
+ 
+ void ScInterpreter::ScSumProduct()

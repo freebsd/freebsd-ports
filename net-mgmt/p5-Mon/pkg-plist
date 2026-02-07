@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Mon::Client.3.gz
+%%PERL5_MAN3%%/Mon::Protocol.3.gz
+%%PERL5_MAN3%%/Mon::SNMP.3.gz
+%%SITE_PERL%%/Mon/Client.pm
+%%SITE_PERL%%/Mon/Protocol.pm
+%%SITE_PERL%%/Mon/SNMP.pm

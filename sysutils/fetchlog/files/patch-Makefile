@@ -1,0 +1,11 @@
+--- Makefile.orig	2024-08-23 12:01:44 UTC
++++ Makefile
+@@ -54,7 +54,7 @@ HAS_REGEX=-DHAS_REGEX
+ ### installdir    
+ ###   will use $INSTDIR/bin  and  $INSTDIR/man/man1, 
+ ###   both dirs have to exist for installation
+-INSTDIR=/usr/local
++INSTDIR=${PREFIX}
+ 
+ ### ------------------------------------------------------------------------
+ ### --- end of user settings -----------------------------------------------

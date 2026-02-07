@@ -1,0 +1,8 @@
+bin/foomatic-rip
+@sample etc/foomatic/filter.conf.sample
+libexec/cups/backend/beh
+libexec/cups/filter/foomatic-rip
+lib/ppr/interfaces/foomatic-rip
+lib/ppr/lib/foomatic-rip
+share/man/man1/foomatic-rip.1.gz
+@dir etc/foomatic/direct

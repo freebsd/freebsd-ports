@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: mailgraph
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable mailgraph:
+#
+# mailgraph_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="mailgraph"
+rcvar=mailgraph_enable
+
+command=%%PREFIX%%/sbin/${name}.pl
+command_args='> /dev/null 2>&1'
+command_interpreter=%%PERL%%
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+
+start_precmd()
+{
+    mkdir -p "$mailgraph_chdir"
+    chown "$mailgraph_user" "$mailgraph_chdir"
+    if ! su -m "$mailgraph_user" -c "sh -c \"[ -r "$mailgraph_maillog" ]\""; then
+        echo "MAILGRAPH CANNOT RUN: $mailgraph_maillog not readable by $mailgraph_user"
+        return 1
+    fi
+}
+
+stop_postcmd()
+{
+    rm -f $pidfile
+}
+
+load_rc_config $name
+
+: ${mailgraph_enable="NO"}
+: ${mailgraph_chdir="%%DATADIR%%"}
+: ${mailgraph_pidfile="$mailgraph_chdir/mailgraph.pid"}
+: ${mailgraph_maillog="/var/log/maillog"}
+: ${mailgraph_flags="--logfile $mailgraph_maillog --daemon-rrd=$mailgraph_chdir --ignore-localhost --daemon --daemon-pid=$mailgraph_pidfile"}
+: ${mailgraph_user="%%MAILGRAPH_USER%%"}
+
+pidfile=${mailgraph_pidfile}
+
+run_rc_command "$1"

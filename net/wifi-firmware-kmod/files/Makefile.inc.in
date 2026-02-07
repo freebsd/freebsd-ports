@@ -1,0 +1,26 @@
+# $FreeBSD$
+
+# We remove '.' and '-' as well as '/' as they don't work well in laoder.conf.
+# If (counter part) set, prefix name part with '_' separator.
+_KOFWSUBDIR=	${FWSUBSUBDIR:S,.,_,g:S,-,_,g:S,/,_,g}
+KOFWSUBDIR=	${"${_KOFWSUBDIR}" != "":?_${_KOFWSUBDIR}:}
+
+_FWNAME=	${FWNAME:S,.,_,g:S,-,_,g}
+KOFWNAME=	${"%%FWSUBDIR%%" != "":?_${_FWNAME}:${_FWNAME}}
+
+_NAME?=		%%FWSUBDIR%%${KOFWSUBDIR}${KOFWNAME}
+
+IMG=		${_NAME}
+KMOD=		${_NAME}
+
+CLEANFILES+=	${IMG}
+
+FIRMWS=		${IMG}:${IMG}:${VERSION}
+
+#FIRMWARE_LICENSE=
+
+# If we build from ports let us overwrite this.
+FWSRCDIR?=      ${SRCTOP}/sys/contrib/dev/%%FWDRV%%fw
+
+${IMG}: ${FWSRCDIR}/%%FWSUBDIR%%/${FWSUBSUBDIR}/${FWNAME}
+	cp ${.ALLSRC} ${.TARGET}

@@ -1,0 +1,24 @@
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -48,7 +48,7 @@
+ 
+ # Libraries.
+ 
+-LIBS	=  -L../arpack -larpack -L../superlu -lsuperlu @LOCAL_LIBS@ @LIBS@
++LIBS	=  ../arpack/libarpack.a ../superlu/libsuperlu.a @LOCAL_LIBS@ @LIBS@
+ 
+ # Source files.
+ 
+@@ -218,9 +218,9 @@
+ # ========================== Installation ==========================
+ 
+ install: all
+-	$(INSTALL_PROGRAM) algae $(bindir)/algae-$(VERSION_NUMBER)
+-	rm -f $(bindir)/algae
+-	ln -s $(bindir)/algae-$(VERSION_NUMBER) $(bindir)/algae
++	$(INSTALL_PROGRAM) algae $(DESTDIR)$(bindir)/algae-$(VERSION_NUMBER)
++	rm -f $(DESTDIR)$(bindir)/algae
++	ln -s algae-$(VERSION_NUMBER) $(DESTDIR)$(bindir)/algae
+ .PHONY:	install
+ 
+ uninstall:

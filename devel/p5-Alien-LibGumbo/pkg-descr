@@ -1,0 +1,4 @@
+This distribution installs libgumbo:https://github.com/google/gumbo-parser
+on your system for use by perl modules like HTML::Gumbo.
+
+See also: https://github.com/ruz/Alien-LibGumbo

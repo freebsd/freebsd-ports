@@ -1,0 +1,4 @@
+The Local PHP Security Checker is a command line tool that checks if your PHP
+application depends on PHP packages with known security vulnerabilities. It
+uses the Security Advisories Database behind the scenes availble from
+https://github.com/FriendsOfPHP/security-advisories.

@@ -1,0 +1,24 @@
+--- traefik.sample.toml.orig	2020-10-19 18:27:54 UTC
++++ traefik.sample.toml
+@@ -23,10 +23,10 @@
+ # Default:
+ [entryPoints]
+   [entryPoints.web]
+-    address = ":80"
++    address = ":8088"
+ 
+   [entryPoints.websecure]
+-    address = ":443"
++    address = ":8443"
+ 
+ ################################################################
+ # Traefik logs configuration
+@@ -100,7 +100,7 @@
+   # Optional
+   # Default: false
+   #
+-  # insecure = true
++  insecure = true
+ 
+   # Enabled Dashboard
+   #

@@ -1,0 +1,18 @@
+# Description: Link scripts in the same way Python3 does
+# Submitted by: mva
+
+--- Makefile.pre.in.orig	2014-06-30 04:05:39.000000000 +0200
++++ Makefile.pre.in	2014-07-26 11:09:46.000000000 +0200 
+@@ -900,6 +900,12 @@ bininstall:	altbininstall
+ 	(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python2.pc)
+ 	-rm -f $(DESTDIR)$(LIBPC)/python.pc
+ 	(cd $(DESTDIR)$(LIBPC); $(LN) -s python2.pc python.pc)
++	-rm -f $(DESTDIR)$(BINDIR)/idle
++	(cd $(DESTDIR)$(BINDIR); $(LN) -s idle$(VERSION) idle2)
++	-rm -f $(DESTDIR)$(BINDIR)/pydoc
++	(cd $(DESTDIR)$(BINDIR); $(LN) -s pydoc$(VERSION) pydoc2)
++	-rm -f $(DESTDIR)$(BINDIR)/2to3
++	(cd $(DESTDIR)$(BINDIR); $(LN) -s 2to3-$(VERSION) 2to3)
+ 
+ # Install the interpreter with $(VERSION) affixed
+ # This goes into $(exec_prefix)

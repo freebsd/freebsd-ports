@@ -1,0 +1,6 @@
+include/xdiff.h
+lib/libxdiff.a
+lib/libxdiff.so
+lib/libxdiff.so.0
+lib/libxdiff.so.0.0.0
+share/man/man3/xdiff.3.gz

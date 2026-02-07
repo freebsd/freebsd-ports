@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2025-01-25 16:07:33 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["build>=1.2.1", "setuptools>=64", "setuptools-scm>=8"]
++requires = ["setuptools>=61", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -29,9 +29,9 @@ dependencies = [
+ ]
+ dependencies = [
+     "gnureadline>=8; platform_system == 'Darwin'",
+-    "pyperclip>=1.8",
++    "pyperclip>=1.7",
+     "pyreadline3>=3.4; platform_system == 'Windows'",
+-    "wcwidth>=0.2.10",
++    "wcwidth>=0.2.8",
+ ]
+ 
+ [dependency-groups]

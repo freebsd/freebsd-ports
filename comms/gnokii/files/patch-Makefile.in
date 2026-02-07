@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2015-06-15 14:14:28 UTC
++++ Makefile.in
+@@ -313,9 +313,9 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = getopt include common gnokii po Docs $(am__append_1) \
++SUBDIRS = include common gnokii po $(am__append_1) \
+ 	$(am__append_2) $(am__append_3)
+-DIST_SUBDIRS = include Docs common gnokii gnokiid utils xgnokii po smsd Windows testsuite getopt
++DIST_SUBDIRS = include common gnokii gnokiid utils xgnokii po smsd Windows testsuite getopt
+ EXTRA_DIST = \
+ 		ChangeLog		\
+ 		COPYING			\

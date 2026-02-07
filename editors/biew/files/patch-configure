@@ -1,0 +1,75 @@
+--- configure.orig
++++ configure
+@@ -100,7 +100,7 @@
+ # Use this before starting a check
+ echocheck() {
+   echo "============ Checking for $@ ============" >> "$TMPLOG"
+-  echo ${_echo_n} "Checking for $@ ... ${_echo_c}"
++  echo ${_echo_n} "Checking for $@... ${_echo_c}"
+ }
+ 
+ # Use this to echo the results of a check
+@@ -493,20 +493,20 @@
+ echores "$_target_system"
+ 
+ 
+-echo "Detected host..."$system_name
++echo "Detected host..." $system_name
+ 
+ _cdefos="-DDATADIR='\"$_datadir\"'"
+ 
+-cc_name=`$_cc -v 2>&1 | tail -n 1 | cut -d ' ' -f 1`
+-cc_version=`$_cc -dumpversion`
++eval `$_cc -v 2>&1 | sed -En \
++  '/version/s,(.* )?(.*) version ([0-9.]*).*,cc_name=\2 ; cc_version=\3,p'`
+ 
+ echocheck "C compiler name"
+ echores $cc_name
+ case $cc_name in
+-    gcc)
++    gcc|clang)
+     ;;
+     *)
+-      die "Unknown compiler name $cc_name. Project required GCC"
++      die "Unknown compiler name $cc_name. Project requires GCC or Clang"
+     ;;
+ esac
+ 
+@@ -583,10 +583,10 @@
+   _osldef="$_debug $_profile $_osldef"
+ elif test -z "$CFLAGS" ; then
+     _cdefos="-DNDEBUG=1 -O2 -ffast-math -fomit-frame-pointer $_cdefos"
+-    x86 && _cdefos="-mmmx -msse $_cdefos"
+ else
+     _cdefos="-DNDEBUG=1 $CFLAGS $_cdefos"
+ fi
++x86 && _cdefos="-mmmx -msse $_cdefos"
+ test -n "$LDFLAGS" && _osldef="$LDFLAGS $_osldef"
+ test -n "$LIBS" && _osldef="$LIBS $_osldef"
+ 
+@@ -656,10 +656,10 @@
+ echocheck "slang.h"
+ 	check_header slang.h
+ 	enabled slang_h && _cdefos="-D_SLANG_ -D__OS_NAME__='\"Unix/Slang\"' $_cdefos"
+-	enabled slang_h && _oslibs="-lslang $_oslibs" || disable _slang
++	enabled slang_h && _oslibs="-lslang -lncurses $_oslibs" || disable _slang
+ echores "$slang_h"
+ 	fi
+-	if enabled _curses -a disabled _slang; then
++	if enabled _curses && disabled _slang; then
+ echocheck "curses.h"
+ 	cat > $TMPC << EOF
+ 	#include <curses.h>
+@@ -678,8 +678,10 @@
+ 	fi
+ echores "$_curses"
+ 	fi
+-	disabled _curses -a disabled _slang && _cdefos="-D_VT100_ -D__OS_NAME__='\"Unix/VT100\"' $_cdefos"
+-	disabled _curses -a disabled _slang && echo "Defaulting to VT100"
++	if disabled _curses && disabled _slang ; then
++		_cdefos="-D_VT100_ -D__OS_NAME__='\"Unix/VT100\"' $_cdefos"
++		echo "Defaulting to VT100"
++	fi
+ 	;;
+     *)
+ 	;;

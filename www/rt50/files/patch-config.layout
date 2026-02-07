@@ -1,0 +1,44 @@
+--- ./config.layout.orig	2014-05-06 17:59:04 UTC
++++ ./config.layout
+@@ -103,31 +103,31 @@
+ </Layout>
+ 
+ <Layout FreeBSD>
+-  prefix:		/usr/local
++  prefix:		%%PREFIX%%
+   exec_prefix:		${prefix}
+   bindir:		${exec_prefix}/bin
+   sbindir:		${exec_prefix}/sbin
+   sysconfdir:		${prefix}/etc+
+   mandir:		${prefix}/man
+   plugindir:		${prefix}/plugins
+-  libdir:		${prefix}/lib+
++  libdir:		%%SITE_PERL%%
+   datadir:		${prefix}/share+
+   htmldir:		${datadir}/html
+   lexdir:		${datadir}/po
+-  staticdir:	${datadir}/static
++  staticdir:		${datadir}/static
+   fontdir:		${datadir}/fonts
+   manualdir:		${prefix}/share/doc+
+   logfiledir:		/var/log
+   localstatedir:	/var/run+
+   masonstatedir:	${localstatedir}/mason_data
+   sessionstatedir:	${localstatedir}/session_data
+-  customdir:		${prefix}/share+
+-  custometcdir:		${customdir}/local/etc
+-  customhtmldir:	${customdir}/local/html
+-  customlexdir:		${customdir}/local/po
+-  customstaticdir:	${customdir}/static
+-  customlibdir:		${customdir}/local/lib
+-  customplugindir:  ${customdir}/local/plugins
++  customdir:		${prefix}
++  custometcdir:		${datadir}/etc
++  customhtmldir:	${customdir}/www+
++  customlexdir:		${datadir}/po
++  customstaticdir:	${datadir}/static
++  customlibdir:		${datadir}/lib
++  customplugindir:	${datadir}/plugins
+ </Layout>
+ 
+ #   RH path layout.

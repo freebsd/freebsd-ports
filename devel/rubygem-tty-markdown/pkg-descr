@@ -1,0 +1,3 @@
+TTY::Markdown provides independent markdown processing component for TTY
+toolkit. It converts a markdown document or text into a terminal friendly
+output.

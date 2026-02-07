@@ -1,0 +1,33 @@
+PORTNAME=	hinversi
+PORTVERSION=	0.8.2
+PORTREVISION=	3
+CATEGORIES=	games
+MASTER_SITES=	SF/${PORTNAME}/latest
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Reversi/Othello clone
+WWW=		http://asturio.gmxhome.de/software/hinversi/i.html
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		libtool pathfix
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_OFF=	--disable-nls
+NLS_USES=	gettext
+
+post-patch:
+.for file in cgi/Makefile.in human-cli/Makefile.in lib/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/AM_CFLAGS/s|-O3|| ; \
+		 /_la_LIBADD/s|=$$|= $$(LTLIBINTL)|' ${WRKSRC}/${file}
+.endfor
+
+.include <bsd.port.mk>

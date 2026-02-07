@@ -1,0 +1,10 @@
+This module provides a Perl interface to the ldns library from NLnet Labs and
+depends on it being available. The module can either compile and use those
+libraries internally or link to already available ldns library given that the
+version is high enough. In both cases it relies on a sufficiently recent
+version of OpenSSL being present.
+
+This module is written as part of the Zonemaster project, and therefore
+primarily exposes the functionality needed for that. Since Zonemaster is a
+diagnostic tool, that means the functions most used are those for looking
+things up and inspecting them.

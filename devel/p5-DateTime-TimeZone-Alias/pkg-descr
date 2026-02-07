@@ -1,0 +1,2 @@
+Creates and destroys aliases for DateTime timezones. This module violates the
+encapsulation of the DateTime internals. User _Beware_.

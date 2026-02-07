@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# PROVIDE: zookeeper
+# REQUIRE: NETWORKING SERVERS DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable zookeeper:
+#
+# zookeeper_enable="YES"
+
+. /etc/rc.subr
+
+name=zookeeper
+rcvar=zookeeper_enable
+
+load_rc_config "${name}"
+
+: ${zookeeper_enable:="NO"}
+: ${zookeeper_user:="%%ZOOKEEPER_USER%%"}
+: ${zookeeper_group:="%%ZOOKEEPER_GROUP%%"}
+: ${zookeeper_config:="%%ETCDIR%%/zoo.cfg"}
+%%NO_LOG4J2%%: ${zookeeper_logback_config:="%%ETCDIR%%/logback.xml"}
+%%LOG4J2%%: ${zookeeper_log4j_config:="%%ETCDIR%%/log4j2.properties"}
+: ${zookeeper_logdir:="%%ZOOKEEPER_LOGDIR%%"}
+: ${zookeeper_syslog_output_enable:="YES"}
+
+start_precmd="zookeeper_start_precmd"
+
+# backwards compatibility
+if [ -n "${zookeeper_jvmopts}" ]; then
+	zookeeper_java_opts=${zookeeper_jvmopts}
+fi
+
+if checkyesno zookeeper_syslog_output_enable; then
+	if [ -n "${zookeeper_syslog_output_tag}" ]; then
+		zookeeper_syslog_output_flags="-T ${zookeeper_syslog_output_tag}"
+	else
+		zookeeper_syslog_output_flags="-T ${name}"
+	fi
+	if [ -n "${zookeeper_syslog_output_priority}" ]; then
+		zookeeper_syslog_output_flags="${zookeeper_syslog_output_flags} -s ${zookeeper_syslog_output_priority}"
+	fi
+	if [ -n "${zookeeper_syslog_output_facility}" ]; then
+		zookeeper_syslog_output_flags="${zookeeper_syslog_output_flags} -l ${zookeeper_syslog_output_facility}"
+	fi
+fi
+
+JAVA="%%JAVA%%"
+
+CLASSPATH=":%%DATADIR%%/*"
+
+%%NO_LOG4J2%%zookeeper_log_opts="-Dzookeeper.log.dir=${zookeeper_logdir} -Dlogback.configurationFile=file:${zookeeper_logback_config}"
+%%LOG4J2%%zookeeper_log_opts="-Dzookeeper.log.dir=${zookeeper_logdir} -Dlog4j2.configurationFile=file:${zookeeper_log4j_config}"
+zookeeper_main="${zookeeper_java_opts} ${zookeeper_log_opts} -cp ${CLASSPATH} org.apache.zookeeper.server.quorum.QuorumPeerMain ${zookeeper_config}"
+pidfile="/var/run/${name}.pid"
+required_dirs="${zookeeper_logdir}"
+%%NO_LOG4J2%%required_files="${zookeeper_config} ${zookeeper_logback_config}"
+%%LOG4J2%%required_files="${zookeeper_config} ${zookeeper_log4j_config}"
+
+command="/usr/sbin/daemon"
+command_args="-f ${zookeeper_syslog_output_flags} -P ${pidfile} -t ${name} ${JAVA} ${zookeeper_main}"
+
+zookeeper_start_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o "${zookeeper_user}" -g "${zookeeper_group}" /dev/null "${pidfile}"
+	fi
+}
+
+run_rc_command "$1"

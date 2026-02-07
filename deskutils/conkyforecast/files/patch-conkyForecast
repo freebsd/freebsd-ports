@@ -1,0 +1,21 @@
+--- conkyForecast.orig	2011-09-12 18:05:15.686489911 +0400
++++ conkyForecast	2011-09-12 18:05:39.133432190 +0400
+@@ -1,17 +1,6 @@
+ #! /bin/sh
+ cd /usr/share/conkyforecast/
+ 
+-if [ -f /usr/bin/python2 ]; then
+-	pythoncmd="/usr/bin/python2"
+-elif [ -f /usr/bin/python2.7 ] ; then
+-	pythoncmd="/usr/bin/python2.7"
+-elif [ -f /usr/bin/python2.6 ] ; then
+-	pythoncmd="/usr/bin/python2.6"
+-else
+-	# here's hoping!
+-	pythoncmd="/usr/bin/python"
+-fi
+-
+ pythonfile="/usr/share/conkyforecast/conkyForecast.py"
+ 
+-exec $pythoncmd $pythonfile "$@"
++/usr/bin/env python $pythonfile "$@"

@@ -1,0 +1,30 @@
+[
+{
+	type: upgrade
+	maximum_version: "4.14.0"
+	message: <<EOD
+Since XFCE 4.14 was updated to use gtk3 it is suggested to move to
+a gtk3 compliant theme.
+
+By default XFCE is installed "unthemed", but the Greybird theme is
+installed by the metaport.
+
+The icon theme installed and configured by default is Adwaita. Other
+icon themes are available in the ports tree under the x11-themes
+category.
+
+To switch to the greybird theme you can:
+
+Launch 'xfce4-appearance-settings', also available in the applications
+menu, under settings/appearence, and go to the 'Style' tab to select
+the greybird theme.
+
+Then go to 'Window Manager' or launch 'xfwm4-settings' and select the 
+greybird theme.
+
+Or launch these command in a shell:
+  xfconf-query -c xsettings -p /Net/ThemeName -t string -s "Greybird"
+  xfconf-query -c xfwm4 -p /general/theme -t string -s "Greybird"
+EOD
+}
+]

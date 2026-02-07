@@ -1,0 +1,10 @@
+--- sntp/tests/Makefile.in.orig	2015-10-27 12:47:07 UTC
++++ sntp/tests/Makefile.in
+@@ -791,6 +791,7 @@ LDADD = \
+ 	$(base_LDADD)				\
+ 	$(top_builddir)/unity/libunity.a	\
+ 	$(LIBM)					\
++	$(PTHREAD_LIBS)				\
+ 	$(NULL)
+ 
+ AM_CFLAGS = $(CFLAGS_NTP)

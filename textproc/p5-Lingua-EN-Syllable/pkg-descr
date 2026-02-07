@@ -1,0 +1,4 @@
+Lingua::EN::Syllable::syllable() estimates the number of syllables
+in the word passed to it.
+
+Seamus Venasse <svenasse@polaris.ca>

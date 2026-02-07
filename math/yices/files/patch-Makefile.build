@@ -1,0 +1,20 @@
+--- Makefile.build.orig	2021-10-20 22:20:35 UTC
++++ Makefile.build
+@@ -137,7 +137,7 @@ static_dll_objsubdirs := $(srcsubdirs:%=$(static_dll_o
+ # build_dir/dist: binaries + libraries with distribution not linked with GMP
+ # build_dir/static_dist: includes GMP (statically linked)
+ #
+-dist_dir = $(build_dir)/dist
++dist_dir = $(build_dir)
+ static_dist_dir = $(build_dir)/static_dist
+ 
+ 
+@@ -481,7 +481,7 @@ install-default:
+ 	$(MKDIR_P) $(DESTDIR)$(bindir)
+ 	$(MKDIR_P) $(DESTDIR)$(libdir)
+ 	$(MKDIR_P) $(DESTDIR)$(includedir)
+-	$(INSTALL) -m 664 $(dist_dir)/include/* $(DESTDIR)$(includedir)
++	$(INSTALL) -m 664 $(dist_dir)/../../src/include/* $(DESTDIR)$(includedir)
+ 	$(INSTALL) $(dist_dir)/bin/* $(DESTDIR)$(bindir)
+ 	$(INSTALL) $(dist_dir)/lib/* $(DESTDIR)$(libdir)
+ 

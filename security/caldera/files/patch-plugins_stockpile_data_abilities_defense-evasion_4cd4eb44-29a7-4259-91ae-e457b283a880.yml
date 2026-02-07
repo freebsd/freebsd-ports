@@ -1,0 +1,17 @@
+--- plugins/stockpile/data/abilities/defense-evasion/4cd4eb44-29a7-4259-91ae-e457b283a880.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/defense-evasion/4cd4eb44-29a7-4259-91ae-e457b283a880.yml
+@@ -12,11 +12,11 @@
+       sh:
+         cleanup: |
+           rm #{payload}
+-    linux:
++    freebsd,linux:
+       sh:
+         cleanup: |
+           rm #{payload}
+     windows:
+       psh,pwsh:
+         cleanup: |
+-          Remove-Item -Force -Path "#{payload}"
+\ No newline at end of file
++          Remove-Item -Force -Path "#{payload}"

@@ -1,0 +1,12 @@
+bin/plgadd
+bin/plgclean
+bin/plgmod
+bin/plgrm
+bin/pluadd
+bin/plumod
+bin/plupass
+bin/plurm
+%%SITE_PERL%%/Plugtools.pm
+%%SITE_PERL%%/Plugtools/Plugins/Dump.pm
+%%PERL5_MAN3%%/Plugtools.3.gz
+%%PERL5_MAN3%%/Plugtools::Plugins::Dump.3.gz

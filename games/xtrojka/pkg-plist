@@ -1,0 +1,3 @@
+@(,games,2755) bin/xtrojka
+@(,games,) share/xtrojka/xtrojka.scores
+share/man/man6/xtrojka.6.gz

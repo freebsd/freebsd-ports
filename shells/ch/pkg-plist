@@ -1,0 +1,52 @@
+@shell bin/ch
+%%DATADIR%%/docs/images/softIntegration.gif
+%%DATADIR%%/docs/README
+%%DATADIR%%/docs/index.html
+%%DATADIR%%/docs/chsdk.pdf
+%%DATADIR%%/docs/chinstall.pdf
+%%DATADIR%%/docs/chguide.pdf
+%%DATADIR%%/docs/chref.pdf
+%%DATADIR%%/docs/qanimate.pdf
+%%DATADIR%%/docs/chide.pdf
+%%DATADIR%%/docs/jp/chide.pdf
+%%DATADIR%%/docs/jp/chguide.pdf
+%%DATADIR%%/docs/jp/chref.pdf
+%%DATADIR%%/docs/jp/qanimate.pdf
+%%DATADIR%%/docs/cn/chide.pdf
+%%DATADIR%%/docs/man/man1/ch.1.gz
+%%DATADIR%%/docs/man/man1/createpkg.1.gz
+%%DATADIR%%/docs/man/man1/foreach.1.gz
+%%DATADIR%%/docs/man/man1/gnuplot.1.gz
+%%DATADIR%%/docs/man/man1/installpkg.1.gz
+%%DATADIR%%/docs/man/man1/pkginstall.1.gz
+%%DATADIR%%/docs/man/man1/splint.1.gz
+%%DATADIR%%/docs/man/man1/str2ascii.1.gz
+%%DATADIR%%/docs/man/man1/str2mat.1.gz
+%%DATADIR%%/docs/man/man1/stradd.1.gz
+%%DATADIR%%/docs/man/man1/strconcat.1.gz
+%%DATADIR%%/docs/man/man1/strgetc.1.gz
+%%DATADIR%%/docs/man/man1/strjoin.1..gz
+%%DATADIR%%/docs/man/man1/strputc.1.gz
+%%DATADIR%%/docs/man/man1/strrep.1.gz
+@dir %%DATADIR%%/toolkit/release
+@dir %%DATADIR%%/toolkit/license
+@dir %%DATADIR%%/package/sample/dl
+@dir %%DATADIR%%/demos/lib/libc/tiuser
+@dir %%DATADIR%%/demos/lib/libc/sys/un
+@dir %%DATADIR%%/demos/lib/libc/sys/types
+@dir %%DATADIR%%/demos/lib/libc/sys/time
+@dir %%DATADIR%%/demos/lib/libc/sys/shm
+@dir %%DATADIR%%/demos/lib/libc/sys/sem
+@dir %%DATADIR%%/demos/lib/libc/sys/procset
+@dir %%DATADIR%%/demos/lib/libc/sys/msf
+@dir %%DATADIR%%/demos/lib/libc/sys/lock
+@dir %%DATADIR%%/demos/lib/libc/sys/ioctl
+@dir %%DATADIR%%/demos/lib/libc/sys/file
+@dir %%DATADIR%%/demos/lib/libc/s%%DATADIR%%ed
+@dir %%DATADIR%%/demos/lib/libc/poll
+@dir %%DATADIR%%/demos/lib/libc/netdir
+@dir %%DATADIR%%/demos/lib/libc/netconfig
+@dir %%DATADIR%%/demos/lib/libc/mqueue
+@dir %%DATADIR%%/demos/lib/libc/fenv
+@dir %%DATADIR%%/demos/lib/libc/aio
+@dir %%DATADIR%%/demos/SDK/chapters/runc2chf_dll/sample/chsample/bin

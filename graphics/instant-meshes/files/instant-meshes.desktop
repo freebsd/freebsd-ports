@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Instant Meshes
+GenericName=An interactive field-aligned mesh generator
+Comment=An interactive field-aligned mesh generator
+Icon=instant-meshes
+# radeonsi_dri crash with DRI3
+#Exec=env LIBGL_DRI3_DISABLE=1 "Instant Meshes"
+Exec=sh -c "LIBGL_DRI3_DISABLE=1 instant-meshes"
+Categories=Graphics;3DGraphics;
+StartupNotify=true

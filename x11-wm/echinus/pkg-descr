@@ -1,0 +1,7 @@
+echinus wm is a window manager for X11 supporting managing windows in
+floating, tiled and maximized layouts.
+All the configuration is made via config file in Xresources format.
+So you don't need to recompile echinus every time you change something.
+Echinus supports a small subset of EWMH to be compatible
+with external panels and pagers.
+It draws a border around windows and also an optional titlebar.

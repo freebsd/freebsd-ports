@@ -1,0 +1,7 @@
+jstyleson is a Python library designed to parse JSON data that includes
+JavaScript-style comments (single-line and multi-line) and trailing commas.
+Standard JSON does not permit these features, and the default Python json
+module cannot handle them. This library preprocesses such JSON strings to
+remove comments and trailing commas, making them compatible with the standard
+json module. It provides wrapper functions around the standard json module
+for convenience.

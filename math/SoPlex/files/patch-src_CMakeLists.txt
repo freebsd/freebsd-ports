@@ -1,0 +1,22 @@
+- Change to shared libraries.
+
+--- src/CMakeLists.txt.orig	2022-01-19 13:02:23 UTC
++++ src/CMakeLists.txt
+@@ -129,7 +129,7 @@ if(MSVC)
+ endif()
+ 
+ # create soplex library with pic
+-add_library(libsoplex-pic STATIC ${sources})
++add_library(libsoplex-pic SHARED ${sources})
+ if(MSVC)
+     setLibProperties(libsoplex-pic "libsoplex-pic")
+ else()
+@@ -148,7 +148,7 @@ target_include_directories(libsoplex-pic PUBLIC
+ target_link_libraries(libsoplex-pic ${libs})
+ 
+ # create soplex library without pic
+-add_library(libsoplex STATIC ${sources})
++add_library(libsoplex SHARED ${sources})
+ if(MSVC)
+     setLibProperties(libsoplex "libsoplex")
+ else()

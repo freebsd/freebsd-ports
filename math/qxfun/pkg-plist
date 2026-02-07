@@ -1,0 +1,9 @@
+include/qxfune.mod
+include/qxmodule.mod
+%%PORTDOCS%%%%DOCSDIR%%/README-qxfun.txt
+%%PORTDOCS%%%%DOCSDIR%%/testqxfun.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tpphixqx.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tpslqm1qx.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tquadqx.ref.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tpslqm1qx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tpslqm1qx.f90

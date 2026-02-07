@@ -1,0 +1,8 @@
+pRPC-modules (Perl RPC) is a package that simplifies the writing of
+Perl based client/server applications. RPC::pServer is the package
+used on the server side, and you guess what RPC::pClient is for.
+See the RPC::pServer(3) and RPC::pClient(3) manpages for detailed
+information.
+
+-Vanilla
+vanilla@FreeBSD.ORG

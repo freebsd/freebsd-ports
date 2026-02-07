@@ -1,0 +1,25 @@
+--- Makefile.orig	2008-05-07 02:26:41.000000000 +0400
++++ Makefile	2008-05-07 04:10:55.000000000 +0400
+@@ -19,7 +19,7 @@
+ ARCH_OK = yes
+ endif
+ 
+-ifeq "$(ARCH_OK)" "yes"
++ifeq "yes" "yes"
+ #
+ # The given ARCH is correct
+ #
+@@ -28,8 +28,11 @@
+ # Variables
+ #
+ 
+-CXXFLAGS = -g $(ARCHCXXFLAGS) -DENABLE_SOUND
+-LDFLAGS = -O2 $(ARCHLDFLAGS)
++STRIP = strip
++APP = jigzo
++
++CXXFLAGS += `$(SDL_CONFIG) --cflags` -DENABLE_SOUND
++LDFLAGS += `$(SDL_CONFIG) --libs` -lGL -lpng -ljpeg -lSDL_mixer
+ 
+ #
+ # List of all source files.

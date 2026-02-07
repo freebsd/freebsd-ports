@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+Configure your sshd_config(5) with the following to use opkssh for authorization:
+
+  AuthorizedKeysCommand %%PREFIX%%/bin/opkssh verify %u %k %t
+  AuthorizedKeysCommandUser %%USER%%
+
+opkssh uses the '%%PREFIX%%/etc/opk' directory, where providers and identities are stored.
+Neither the directory nor the files are created automatically, so you must create them
+yourself. After creating the 'auth_id' and 'providers' files, they must have the
+following permissions:
+
+  chown root:%%GROUP%% %%PREFIX%%/etc/opk/auth_id
+  chmod 640 %%PREFIX%%/etc/opk/auth_id
+  chown root:%%GROUP%% %%PREFIX%%/etc/opk/providers
+  chmod 640 %%PREFIX%%/etc/opk/providers
+
+Users attempting to use opkssh from jails, please add "allow.mlock" or it will not run.
+EOM
+}
+]

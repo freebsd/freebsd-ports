@@ -1,0 +1,16 @@
+include/st.h
+lib/libst.a
+lib/libst.so.1
+lib/libst.so
+%%PORTDOCS%%%%DOCSDIR%%/fig.gif
+%%PORTDOCS%%%%DOCSDIR%%/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/st.html
+%%PORTDOCS%%%%DOCSDIR%%/timeout_heap.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/error.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lookupdns.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxy.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/res.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.c

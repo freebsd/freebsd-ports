@@ -1,0 +1,8 @@
+Description
+-----------
+
+Asterisk::FastAGI provides a preforking daemon for handling FastAGI requests
+from Asterisk.
+
+Read the Net::Server for more information about the logging facilities,
+configuration, etc.

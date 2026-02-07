@@ -1,0 +1,20 @@
+--- tumblerd/tumbler.rc.orig	2022-03-29 08:54:49 UTC
++++ tumblerd/tumbler.rc
+@@ -36,7 +36,7 @@ MaxFileSize=0
+ # RAW image files using libopenraw (the libopenraw pixbuf loader is kind of
+ # broken, hence the priority)
+ [RawThumbnailer]
+-Disabled=false
++Disabled=true
+ Priority=3
+ Locations=
+ Excludes=
+@@ -67,7 +67,7 @@ MaxFileSize=0
+ 
+ # ffmpegthumbnailer plugin
+ [FfmpegThumbnailer]
+-Disabled=false
++Disabled=true
+ Priority=2
+ Locations=
+ Excludes=

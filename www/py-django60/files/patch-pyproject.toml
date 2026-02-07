@@ -1,0 +1,25 @@
+--- pyproject.toml.orig	2025-12-03 16:20:32 UTC
++++ pyproject.toml
+@@ -1,9 +1,9 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=63.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Django"
++name = "django"
+ dynamic = ["version"]
+ requires-python = ">= 3.12"
+ dependencies = [
+@@ -16,8 +16,8 @@ readme = "README.rst"
+ ]
+ description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
+ readme = "README.rst"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE", "LICENSE.python"]
++license = {text="BSD-3-Clause"}
++#license-files = ["LICENSE", "LICENSE.python"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Web Environment",

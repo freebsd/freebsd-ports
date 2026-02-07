@@ -1,0 +1,10 @@
+--- examples/whois.bak	Sun Dec 30 09:57:54 2001
++++ examples/whois	Tue Apr 29 10:02:06 2003
+@@ -8,6 +8,6 @@
+ 
+ if ( $e ) { my @emails = $whois->contact_emails; $" = ", "; print "Contacts: @emails\n";  exit }
+ if ( $n ) { my @emails = $whois->nameservers; $" = ", "; print "Nameservers: @emails\n";  exit }
+-if ( $r ) { my @emails = $whois->registrants; $" = ", "; print "Registrants: @emails\n";  exit }
++if ( $r ) { my @emails = $whois->registrant; $" = ", "; print "Registrants: @emails\n";  exit }
+ print $whois->response;
+ 

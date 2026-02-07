@@ -1,0 +1,15 @@
+Web Adjuster, Annotator Generator and TermLayout
+
+These are tools for applying custom processing to Web pages,
+particularly useful for mobile browsers that do not support
+browser extensions.
+
+* Web Adjuster is a domain-rewriting proxy that can inject
+  Javascript and/or CSS into every page, as well as running
+  the text through an arbitrary filter command;
+
+* Annotator Generator is an examples-driven generator of fast
+  text annotators (that add language-learning hints to text):
+  these can be used as filters in Web Adjuster;
+
+* TermLayout displays complex Web layouts on text terminals.

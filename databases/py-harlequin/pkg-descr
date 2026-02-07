@@ -1,0 +1,15 @@
+Harlequin is an easy, fast, and beautiful database client for the terminal.
+
+It has all the features you'd expect from an SQL IDE, delightfully running
+right in your terminal.
+
+  - View tables, columns, and their types across one or more attached
+    databases. Optionally view local files or S3 objects.
+  - A full-featured editor: autocomplete, open, save, format, cut, copy, paste,
+    and more. Supports multiple tabbed buffers!
+  - View 1M+ results in an interactive table. Multiple queries loaded into
+    separate tabs.
+  - Full Screen
+  - Export query results and configure the export using a helpful UI.
+  - View a list of executed queries and a summary of results. Select to insert
+    into a new buffer.

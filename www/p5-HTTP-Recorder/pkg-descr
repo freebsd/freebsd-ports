@@ -1,0 +1,5 @@
+Set HTTP::Recorder as the user agent for a proxy, and it rewrites HTTP
+responses so that additional requests can be recorded.
+
+Then, tell your web browser to use this proxy, and the script will be recorded
+in the specified file.

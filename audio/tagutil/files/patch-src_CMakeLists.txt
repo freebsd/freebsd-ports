@@ -1,0 +1,15 @@
+--- src/CMakeLists.txt.orig	2019-12-23 16:19:17 UTC
++++ src/CMakeLists.txt
+@@ -31,10 +31,10 @@ include_directories(
+ 
+ # CFLAGS
+ add_compile_options(-std=c11 -Wall -Wextra)
+-add_compile_options(-fstack-protector-strong -o aslr -fpie)
++add_compile_options(-fstack-protector-strong -fpie)
+ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pie")
+ # Per build type flags.
+-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS} -O0 -g -fsanitize=undefined")
++set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS}")
+ # CMAKE_BUILD_TYPE=GRIM: *very* strict compiler options
+ set(CMAKE_C_FLAGS_GRIM "${CMAKE_C_FLAGS_DEBUG} -Wextra -pedantic -Wconversion -Wstrict-prototypes -Wcast-qual -Wcast-align -Wshadow -Wredundant-decls -Wundef -Wfloat-equal -Wmissing-include-dirs -Wswitch-default -Wpointer-arith -Wbad-function-cast -Wnested-externs -Wold-style-definition -Wformat=2 -Winit-self -Wwrite-strings -Wmissing-prototypes")
+ include(CheckCCompilerFlag)

@@ -1,0 +1,11 @@
+--- migemo.orig	2011-08-22 02:15:54.000000000 +0900
++++ migemo	2011-08-22 02:16:01.000000000 +0900
+@@ -10,8 +10,6 @@
+ # the GNU General Public License version 2.
+ #
+ 
+-$KCODE = "e"
+-
+ require 'migemo'
+ require 'getoptlong'
+ require 'thread'

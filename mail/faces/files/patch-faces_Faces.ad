@@ -1,0 +1,11 @@
+--- faces/Faces.ad.orig
++++ faces/Faces.ad
+@@ -12,6 +12,6 @@
+ faces.button1clear:		false
+ faces.displayHostname:		false
+ 
+-faces.audioSupport:		false
+-faces.audioCommand:		play
++faces.audioSupport:		true
++faces.audioCommand:		rplay
+ faces.bellAudioFile:

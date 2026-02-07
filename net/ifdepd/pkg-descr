@@ -1,0 +1,12 @@
+ifdepd implements dependencies between network interfaces in a
+reliable way. If any of the source interfaces fails, ifdepd sets all
+destination interfaces to state down. If all source interfaces are active,
+ifdepd sets all destination interfaces to state up.
+
+For example, it can be used with carp(4) to provide failover functionality
+on gateways/firewalls.
+
+ifdepd is a simple replacement for ifstated and was written because of problems
+with ifstated.
+
+Alexander Hausner <alex@hugo.bmg.gv.at>

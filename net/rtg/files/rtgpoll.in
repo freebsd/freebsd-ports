@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: rtgpoll
+# REQUIRE: LOGIN mysql
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# rtgpoll_enable (bool):   Set to NO by default.
+#                          Set it to YES to enable rtgpoll.
+# rtgpoll_config (path):   Set to %%PREFIX%%/etc/rtg/rtg.conf by default.
+# rtgpoll_targets (path):  Set to %%PREFIX%%/etc/rtg/targets.cfg by default.
+# rtgpoll_pidfile (path):  Set to /var/run/rtgpoll.pid by default.
+#
+
+. /etc/rc.subr
+
+name="rtgpoll"
+rcvar=rtgpoll_enable
+
+start_precmd="${name}_prestart"
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config ${name}
+
+: ${rtgpoll_enable="NO"}
+: ${rtgpoll_config="%%PREFIX%%/etc/rtg/rtg.conf"}
+: ${rtgpoll_targets="%%PREFIX%%/etc/rtg/targets.cfg"}
+: ${rtgpoll_pidfile="/var/run/${name}.pid"}
+: ${rtgpoll_user="rtg"}
+: ${rtgpoll_group="rtg"}
+
+required_files="${rtgpoll_targets}"
+command_args="-b -p ${rtgpoll_pidfile} -c ${rtgpoll_config} -t ${rtgpoll_targets}"
+
+rtgpoll_prestart()
+{
+  chown -R "${rtgpoll_user}:${rtgpoll_group}" "%%PREFIX%%/etc/rtg"
+  chmod -R u+rwX,g+rX "%%PREFIX%%/etc/rtg"
+}
+
+run_rc_command "$1"
+

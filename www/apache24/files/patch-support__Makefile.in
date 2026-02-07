@@ -1,0 +1,28 @@
+--- support/Makefile.in.orig	2012-12-11 10:37:25 UTC
++++ support/Makefile.in
+@@ -17,10 +17,10 @@ install:
+ 	@test -d $(DESTDIR)$(sbindir) || $(MKINSTALLDIRS) $(DESTDIR)$(sbindir)
+ 	@test -d $(DESTDIR)$(libexecdir) || $(MKINSTALLDIRS) $(DESTDIR)$(libexecdir)
+ 	@cp -p $(top_builddir)/server/httpd.exp $(DESTDIR)$(libexecdir)
+-	@for i in apxs dbmmanage; do \
++	@for i in apxs dbmmanage split-logfile; do \
+ 	    if test -f "$(builddir)/$$i"; then \
+-	        cp -p $$i $(DESTDIR)$(bindir); \
+-	        chmod 755 $(DESTDIR)$(bindir)/$$i; \
++	        cp -p $$i $(DESTDIR)$(sbindir); \
++	        chmod 755 $(DESTDIR)$(sbindir)/$$i; \
+ 	    fi ; \
+ 	done
+ 	@for i in apachectl; do \
+@@ -30,10 +30,7 @@ install:
+ 	    fi ; \
+ 	done
+ 	@if test -f "$(builddir)/envvars-std"; then \
+-	    cp -p envvars-std $(DESTDIR)$(sbindir); \
+-	    if test ! -f $(DESTDIR)$(sbindir)/envvars; then \
+-	        cp -p envvars-std $(DESTDIR)$(sbindir)/envvars ; \
+-	    fi ; \
++	    cp -p envvars-std $(DESTDIR)$(sbindir)/envvars; \
+ 	fi
+ 
+ htpasswd.lo: passwd_common.h

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Stendhal
+Icon=stendhal
+Exec=stendhal
+Comment=2-demensional MMORPG
+Type=Application
+Terminal=false
+StartupNotify=true
+Categories=Game;

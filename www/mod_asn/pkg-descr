@@ -1,0 +1,3 @@
+mod_asn is an Apache module that uses BGP routing data to look up the
+autonomous system (AS) and the network prefix (subnet) which contains
+a given (clients) IP address.

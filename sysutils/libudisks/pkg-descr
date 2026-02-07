@@ -1,0 +1,5 @@
+The UDisks project provides a daemon, tools and libraries to access and
+manipulate disks, storage devices and technologies.
+
+This port provides the libudisks library only and is meant for use with
+sysutils/bsdisks.

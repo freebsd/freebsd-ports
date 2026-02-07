@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Test/HexDifferences.pm
+%%SITE_PERL%%/Test/HexDifferences/HexDump.pm
+%%PERL5_MAN3%%/Test::HexDifferences.3.gz
+%%PERL5_MAN3%%/Test::HexDifferences::HexDump.3.gz

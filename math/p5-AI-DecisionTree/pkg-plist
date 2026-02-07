@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/AI::DecisionTree.3.gz
+%%PERL5_MAN3%%/AI::DecisionTree::Instance.3.gz
+%%SITE_ARCH%%/AI/DecisionTree.pm
+%%SITE_ARCH%%/AI/DecisionTree/Instance.pm
+%%SITE_ARCH%%/auto/AI/DecisionTree/Instance/Instance.so

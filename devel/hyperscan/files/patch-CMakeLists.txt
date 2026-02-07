@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2017-01-20 03:16:41 UTC
++++ CMakeLists.txt
+@@ -1217,6 +1217,6 @@ install(TARGETS hs_shared
+     LIBRARY DESTINATION lib)
+ endif()
+ 
+-if(NOT WIN32)
+-    add_subdirectory(examples)
+-endif()
++#if(NOT WIN32)
++#add_subdirectory(examples)
++#endif()

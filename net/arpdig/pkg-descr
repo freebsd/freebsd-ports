@@ -1,0 +1,5 @@
+Arpdig is a tool to probe a whole IP address segment or a list of
+IP addresses on the LAN via ARP whohas requests, collecting ARP is-at
+responses and showing the results.
+
+Dmitry Morozovsky <marck@FreeBSD.org>

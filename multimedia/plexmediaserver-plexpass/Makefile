@@ -1,0 +1,16 @@
+DISTVERSION=	1.43.0.10389
+DISTVERSIONSUFFIX=	8be686aa6
+PKGNAMESUFFIX=	-plexpass
+
+USE_RC_SUBR=	${PORTNAME}_plexpass
+
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+FILESDIR=	${.CURDIR}/files
+
+MASTERDIR=	${.CURDIR}/../plexmediaserver
+
+SUB_LIST=	PORTNAME=${PORTNAME}_plexpass
+
+DISTINFO_FILE=	${.CURDIR}/distinfo
+
+.include "${MASTERDIR}/Makefile"

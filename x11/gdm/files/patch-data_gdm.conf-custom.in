@@ -1,0 +1,12 @@
+--- data/gdm.conf-custom.in.orig	2023-05-05 18:12:53 UTC
++++ data/gdm.conf-custom.in
+@@ -2,7 +2,8 @@
+ 
+ [daemon]
+ # Uncomment the line below to force the login screen to use Xorg
+-#WaylandEnable=false
++WaylandEnable=false
++PreferredDisplayServer=xorg
+ 
+ [security]
+ 

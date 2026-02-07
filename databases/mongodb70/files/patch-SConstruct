@@ -1,0 +1,11 @@
+--- SConstruct.orig	2025-11-03 12:58:46 UTC
++++ SConstruct
+@@ -1798,7 +1798,7 @@ if unknown_vars:
+ 
+ unknown_vars = env_vars.UnknownVariables()
+ if unknown_vars:
+-    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
++    print("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
+ 
+ install_actions.setup(env, get_option('install-action'))
+ 

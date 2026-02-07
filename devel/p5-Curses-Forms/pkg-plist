@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Curses::Forms.3.gz
+%%PERL5_MAN3%%/Curses::Forms::Dialog.3.gz
+%%PERL5_MAN3%%/Curses::Forms::Dialog::Input.3.gz
+%%PERL5_MAN3%%/Curses::Forms::Dialog::Logon.3.gz
+%%SITE_PERL%%/Curses/Forms.pm
+%%SITE_PERL%%/Curses/Forms/Dialog.pm
+%%SITE_PERL%%/Curses/Forms/Dialog/Input.pm
+%%SITE_PERL%%/Curses/Forms/Dialog/Logon.pm

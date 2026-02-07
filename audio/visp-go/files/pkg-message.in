@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Limitations:
+============
+
+Visp requires a Spotify Premium account and will not work with free accounts.
+
+Visp is not a player, but a controller, and is thus not capable of outputting
+sound. You can run the official Spotify client in the background, play back
+on Spotify enabled devices, and if you want a headless/server it is recommend
+to use spotifyd as a Spotify client daemon.
+
+Getting started:
+================
+
+To authorize Visp to your Spotify account, please visit https://visp.site/authorize
+to get an access token. Enter your access token with :auth <TOKEN>.
+
+Visp is based around the concept of lists. Every view in Visp is a list of some kind.
+Upon starting the program, you are shown the log console, which keeps track of things
+that happen within the program. Other lists contain playlists, albums, or tracks.
+
+To get an overview of all the lists you've visited while running Visp, press w.
+
+To enter a command, type : followed by the command, then press <Enter>. While entering
+a command, you can press <Tab> to engage tab completion, which will complete the word
+you're typing, provided that Visp can guess what you're trying to do. Tab completion
+in Visp is very powerful and can recognize pretty much anything you want to accomplish.
+See command documentation for a list of all supported commands.
+
+Press <F1>, or enter the command help, at any time to show a list of key bindings.
+EOM
+}
+]

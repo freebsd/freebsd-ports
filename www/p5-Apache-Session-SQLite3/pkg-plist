@@ -1,0 +1,3 @@
+%%PERL5_MAN3%%/Apache::Session::SQLite3.3.gz
+%%SITE_PERL%%/Apache/Session/SQLite3.pm
+%%SITE_PERL%%/Apache/Session/Store/SQLite3.pm

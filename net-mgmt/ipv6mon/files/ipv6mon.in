@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: ipv6mon
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: nojail shutdown
+
+# $ipv6mon_interfaces:
+#	If specified, multiple instances of ipv6mon are invoked.
+#	Configuration files for each interfaces are automatically
+#	generated from %%PREFIX%%/etc/ipv6mon.conf.
+#
+#	Example:
+#		ipv6mon_interfaces="bge0 bge1"
+#
+#	An interface can be specified in a command line argument.  If
+#	not specified, the action is applied to all of the interfaces.
+#
+#		# service ipv6mon start bge0
+#
+. /etc/rc.subr
+
+name="ipv6mon"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+start_precmd="start_precmd"
+
+: ${ipv6mon_enable:=NO}
+
+start_precmd()
+{
+	for ifn in $ipv6mon_interfaces; do
+		(grep -v "LockFile=\|AddressLogFile=\|NetworkInterface=" \
+		    %%PREFIX%%/etc/${name}.conf
+		    echo "NetworkInterface=${ifn}"
+		    echo "LockFile=/var/run/${name}-${ifn}.pid"
+		    echo "AddressLogFile=/var/log/${name}-${ifn}.log"
+		) > "/var/run/${name}-${ifn}.conf"
+	done
+}
+load_rc_config $name
+
+case ${2:-$ipv6mon_interfaces} in
+"")	
+	pidfile="/var/run/${name}.pid"
+	run_rc_command "$1"
+;;
+*)
+	for ifn in ${2:-$ipv6mon_interfaces}; do
+		pidfile="/var/run/${name}${ifn:+-}${ifn}.pid"
+		command_args="$command_args \
+		    -c /var/run/${name}${ifn:+-}${ifn}.conf"
+		run_rc_command "$1"
+	done
+;;
+esac

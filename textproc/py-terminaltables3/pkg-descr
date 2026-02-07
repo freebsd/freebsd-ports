@@ -1,0 +1,8 @@
+Easily draw tables in terminal/console applications from a list of
+lists of strings. Supports multi-line rows.
+
+This is a fork of the terminaltables project. Which is archived and
+unmaintained. This library is in a new namespace but should otherwise
+be a drop in replacement. Maintaining goals consist of maintaining
+ecosystem compatibility, type annotations and responding to community
+pull requests.

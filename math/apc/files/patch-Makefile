@@ -1,0 +1,21 @@
+--- ./Makefile.orig	1997-10-13 21:25:38.000000000 +0200
++++ ./Makefile	2008-04-13 18:59:23.000000000 +0200
+@@ -1,10 +1,13 @@
+ # New Makefile for apc (13 October 1997)
+ #
+-CFLAGS+=-DOS=\"$(OSTYPE)\" -I${X11BASE}/include
+-LDFLAGS+=-L${X11BASE}/lib
+-LDADD+=-lxforms -lX11 -lm
+-BINDIR=${X11BASE}/bin
+-MANDIR=${X11BASE}/man/man
++.if exists(${LOCALBASE}/include/X11/forms.h)
++XFORMSINC=-I${LOCALBASE}/include/X11
++.endif
++CFLAGS+=-DOS=\"$(OSTYPE)\" -I${LOCALBASE}/include ${XFORMSINC}
++LDFLAGS+=-L${LOCALBASE}/lib
++LDADD+=-lforms -lX11 -lm -lXpm
++BINDIR=${LOCALBASE}/bin
++MANDIR=${LOCALBASE}/man/man
+ PROG=	apc
+ SRCS=	about.c apc.c calculate.c main.c mathfun.c setfns.c
+ 

@@ -1,0 +1,41 @@
+--- Makefile.orig	2008-11-19 20:36:12 UTC
++++ Makefile
+@@ -20,15 +20,15 @@
+ # $Id: Makefile 312 2008-06-15 18:09:42Z Joerg Mayer $
+ 
+ DESTDIR=
+-PREFIX=/usr/local
+-ETCDIR=/etc/vpnc
++PREFIX?=/usr/local
++ETCDIR=$(PREFIX)/etc/
+ BINDIR=$(PREFIX)/bin
+ SBINDIR=$(PREFIX)/sbin
+ MANDIR=$(PREFIX)/share/man
+ DOCDIR=$(PREFIX)/share/doc/vpnc
+ 
+ SRCS = sysdep.c vpnc-debug.c isakmp-pkt.c tunip.c config.c dh.c math_group.c supp.c decrypt-utils.c
+-BINS = vpnc cisco-decrypt
++BINS += vpnc
+ OBJS = $(addsuffix .o,$(basename $(SRCS)))
+ BINOBJS = $(addsuffix .o,$(BINS))
+ BINSRCS = $(addsuffix .c,$(BINS))
+@@ -50,9 +50,7 @@ RELEASE_VERSION := $(shell cat VERSION)
+ #OPENSSL_GPL_VIOLATION = -DOPENSSL_GPL_VIOLATION
+ #OPENSSLLIBS = -lcrypto
+ 
+-CC=gcc
+-CFLAGS ?= -O3 -g
+-CFLAGS += -W -Wall -Wmissing-declarations -Wwrite-strings
++CC?=gcc
+ CFLAGS +=  $(shell libgcrypt-config --cflags)
+ CPPFLAGS += -DVERSION=\"$(VERSION)\" $(OPENSSL_GPL_VIOLATION)
+ LDFLAGS ?= -g
+@@ -78,7 +76,7 @@ vpnc-script : vpnc-script.in
+ 	sed -e 's,@''PREFIX''@,$(PREFIX),g' $< > $@ && chmod 755 $@
+ 
+ cisco-decrypt : cisco-decrypt.o decrypt-utils.o
+-	$(CC) -o $@ $^ $(LDFLAGS)
++	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+ 
+ .depend: $(SRCS) $(BINSRCS)
+ 	$(CC) -MM $(SRCS) $(BINSRCS) $(CFLAGS) $(CPPFLAGS) > $@

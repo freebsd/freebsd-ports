@@ -1,0 +1,13 @@
+--- gas/config/tc-ppc.c.orig	2020-11-03 12:21:04.587127000 +0100
++++ gas/config/tc-ppc.c	2020-11-03 12:21:33.039193000 +0100
+@@ -1554,7 +1554,9 @@
+ #endif
+ #ifdef OBJ_ELF
+ # ifdef TE_FreeBSD
+-  return (ppc_obj64 ? "elf64-powerpc-freebsd" : "elf32-powerpc-freebsd");
++  return (target_big_endian
++	  ? (ppc_obj64 ? "elf64-powerpc-freebsd" : "elf32-powerpc-freebsd")
++	  : (ppc_obj64 ? "elf64-powerpcle-freebsd" : "elf32-powerpcle-freebsd"));
+ # elif defined (TE_VXWORKS)
+   return "elf32-powerpc-vxworks";
+ # else

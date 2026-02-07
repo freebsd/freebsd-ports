@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2009-03-17 09:37:59.000000000 -0400
++++ Makefile.in	2009-03-17 09:39:59.000000000 -0400
+@@ -244,16 +244,16 @@
+ redhat/fileschanged.spec: $(top_builddir)/config.status $(top_srcdir)/redhat/fileschanged.spec.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ uninstall-info-am:
+-install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdatadir)" || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
+-	@list='$(dist_pkgdata_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(dist_pkgdataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgdatadir)/$$f'"; \
+-	  $(dist_pkgdataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgdatadir)/$$f"; \
+-	done
+-
++#install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
++#	@$(NORMAL_INSTALL)
++#	test -z "$(pkgdatadir)" || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
++#	@list='$(dist_pkgdata_DATA)'; for p in $$list; do \
++#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++#	  f=$(am__strip_dir) \
++#	  echo " $(dist_pkgdataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgdatadir)/$$f'"; \
++#	  $(dist_pkgdataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgdatadir)/$$f"; \
++#done
++#
+ uninstall-dist_pkgdataDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(dist_pkgdata_DATA)'; for p in $$list; do \

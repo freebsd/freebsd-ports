@@ -1,0 +1,10 @@
+--- pulldown-cmark-mdcat/src/terminal/osc.rs.orig	2025-08-22 12:28:04 UTC
++++ pulldown-cmark-mdcat/src/terminal/osc.rs
+@@ -20,6 +20,7 @@ pub fn write_osc<W: Write + ?Sized>(writer: &mut W, co
+     Ok(())
+ }
+ 
++#[allow(dead_code)]
+ #[derive(Debug, PartialEq, Eq, Copy, Clone)]
+ pub struct Osc8Links;
+ 

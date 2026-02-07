@@ -1,0 +1,47 @@
+bin/dltest
+bin/isql
+bin/iusql
+bin/odbc_config
+bin/odbcinst
+bin/slencheck
+@sample etc/odbc.ini.sample
+@sample etc/odbcinst.ini.sample
+include/autotest.h
+include/odbcinst.h
+include/odbcinstext.h
+include/sql.h
+include/sqlext.h
+include/sqlspi.h
+include/sqltypes.h
+include/sqlucode.h
+include/unixODBC/unixodbc_conf.h
+include/unixodbc.h
+include/uodbc_extras.h
+include/uodbc_stats.h
+lib/libodbc.a
+lib/libodbc.la
+lib/libodbc.so
+lib/libodbc.so.2
+lib/libodbc.so.2.0.0
+lib/libodbccr.a
+lib/libodbccr.la
+lib/libodbccr.so
+lib/libodbccr.so.2
+lib/libodbccr.so.2.0.0
+lib/libodbcinst.a
+lib/libodbcinst.la
+lib/libodbcinst.so
+lib/libodbcinst.so.2
+lib/libodbcinst.so.2.0.0
+libdata/pkgconfig/odbc.pc
+libdata/pkgconfig/odbccr.pc
+libdata/pkgconfig/odbcinst.pc
+share/man/man1/dltest.1.gz
+share/man/man1/isql.1.gz
+share/man/man1/iusql.1.gz
+share/man/man1/odbc_config.1.gz
+share/man/man1/odbcinst.1.gz
+share/man/man5/odbc.ini.5.gz
+share/man/man5/odbcinst.ini.5.gz
+share/man/man7/unixODBC.7.gz
+@dir etc/ODBCDataSources

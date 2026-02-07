@@ -1,0 +1,160 @@
+--- document-server-package/Makefile.orig	2024-02-12 14:46:57 UTC
++++ document-server-package/Makefile
+@@ -23,6 +23,7 @@ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
+ PACKAGE_NAME := $(COMPANY_NAME_LOW)-$(PRODUCT_NAME_LOW)
+ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
+ 
++UNAME_P ?= $(shell uname -p)
+ UNAME_M ?= $(shell uname -m)
+ ifeq ($(UNAME_M),x86_64)
+ 	RPM_ARCH := x86_64
+@@ -138,6 +139,22 @@ else
+ 	endif
+ else
+ 	UNAME_S := $(shell uname -s)
++        ifeq ($(UNAME_S),FreeBSD)
++                PLATFORM := freebsd
++                SHARED_EXT := .so*
++                SHELL_EXT := .sh
++                ARCH_EXT := .zip
++                AR := 7z a -y
++                PACKAGES = tar
++                DS_PREFIX := $(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)
++                NGINX_CONF := %%ETCDIR%%/documentserver/nginx/includes
++                NGINX_LOG := /var/log/$(DS_PREFIX)
++                DS_ROOT := %%LOCALBASE%%/www/$(DS_PREFIX)
++                DS_FILES := /var/db/$(DS_PREFIX)
++                DS_EXAMLE := %%LOCALBASE%%/www/$(DS_PREFIX)-example
++                DEV_NULL := /dev/null
++                PKG_TARGET := node%%PKGFETCH_NODE_MAJOR_VERSION%%
++        endif
+ 	ifeq ($(UNAME_S),Linux)
+ 		PLATFORM := linux
+ 		SHARED_EXT := .so*
+@@ -167,6 +184,12 @@ else
+ 		DS_EXAMLE := /var/www/onlyoffice/documentserver-example
+ 		DEV_NULL := /dev/null
+ 	endif
++        ifeq ($(UNAME_P),amd64)
++                ARCHITECTURE := 64
++        endif
++        ifeq ($(UNAME_P),aarch64)
++                ARCHITECTURE := 64
++        endif
+ 	ifeq ($(UNAME_M),x86_64)
+ 		ARCHITECTURE := 64
+ 	endif
+@@ -334,7 +357,7 @@ documentserver:
+ 		
+ documentserver:
+ 	mkdir -p $(DOCUMENTSERVER_FILES)
+-	cp -rf -t $(DOCUMENTSERVER) ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)/*
++	cp -rf ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)/* $(DOCUMENTSERVER)
+ 
+ 	mkdir -p $(DOCUMENTSERVER_CONFIG)
+ 	mkdir -p $(DOCUMENTSERVER_CONFIG)/log4js
+@@ -343,25 +366,25 @@ documentserver:
+ 	mv -f $(DOCUMENTSERVER)/server/Common/config/log4js/*.json $(DOCUMENTSERVER_CONFIG)/log4js/
+ 
+ 	# rename product specific folders
+-	sed "s|onlyoffice\/documentserver|"$(DS_PREFIX)"|"  -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' "s|onlyoffice\/documentserver|"$(DS_PREFIX)"|" $(DOCUMENTSERVER_CONFIG)/*.json
+ 
+ 	# rename db account params
+-	sed 's|\("db.*": "\)onlyoffice\("\)|\1'$(ONLYOFFICE_VALUE)'\2|'  -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("db.*": "\)onlyoffice\("\)|\1'$(ONLYOFFICE_VALUE)'\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ 
+ 	# rename db schema name
+-	sed 's|onlyoffice|'$(ONLYOFFICE_VALUE)'|'  -i $(DOCUMENTSERVER)/server/schema/**/*.sql
++	sed -i '' 's|onlyoffice|'$(ONLYOFFICE_VALUE)'|' $(DOCUMENTSERVER)/server/schema/**/*.sql
+ 
+ 	# ignore CREATE DATABASE commands in MySQL
+-	sed -r "s/^(CREATE DATABASE|USE)/-- \1/" -i $(DOCUMENTSERVER)/server/schema/mysql/*.sql
++	sed -i '' -r "s/^(CREATE DATABASE|USE)/-- \1/" $(DOCUMENTSERVER)/server/schema/mysql/*.sql
+ 
+ 	# rename product in license
+-	sed 's|ONLYOFFICE|'$(COMPANY_NAME)'|'  -i $(DOCUMENTSERVER)/server/3rd-Party.txt
+-	sed 's|DocumentServer|'$(PRODUCT_NAME)'|'  -i $(DOCUMENTSERVER)/server/3rd-Party.txt
++	sed -i '' 's|ONLYOFFICE|'$(COMPANY_NAME)'|' $(DOCUMENTSERVER)/server/3rd-Party.txt
++	sed -i '' 's|DocumentServer|'$(PRODUCT_NAME)'|' $(DOCUMENTSERVER)/server/3rd-Party.txt
+ 
+ 	# Prevent for modification original config
+ 	chmod ug=r $(DOCUMENTSERVER_CONFIG)/*.json
+ 
+-	cp -fr -t $(DOCUMENTSERVER) $(3RD_PARTY_LICENSE_FILES)
++	cp -fr $(3RD_PARTY_LICENSE_FILES) $(3RD_PARTY_LICENSE_FILES)
+ 	rm -fr $(3RD_PARTY_LICENSE_FILES)
+ 
+ ifeq ($(PLATFORM),win)
+@@ -371,8 +394,8 @@ endif
+ endif
+ 
+ 	[ -f $(LICENSE_FILE) ] \
+-		&& cp -f -t $(DOCUMENTSERVER) $(LICENSE_FILE) \
+-		|| cp -f -t $(DOCUMENTSERVER) LICENSE.txt
++		&& cp -f $(LICENSE_FILE) $(DOCUMENTSERVER) \
++		|| cp -f LICENSE.txt $(DOCUMENTSERVER)
+ 
+ 	chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/x2t$(EXEC_EXT)
+ 	#chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/docbuilder$(EXEC_EXT)
+@@ -380,26 +403,26 @@ endif
+ 	chmod u+x $(DOCUMENTSERVER)/server/tools/allfontsgen$(EXEC_EXT)
+ 
+ 	mv -f $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js.tpl
+-	sed "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  -i $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js.tpl
++	sed -i '' "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|" $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js.tpl
+ 
+ ifeq ($(PRODUCT_NAME_LOW), documentserver)
+-	sed 's|\("packageType": \)[0-9]\+\(.*\)|\10\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
+-	sed 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataMemory\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("packageType": \)[0-9]\+\(.*\)|\10\2|' $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataMemory\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ endif
+ 
+ ifeq ($(PRODUCT_NAME_LOW), $(filter $(PRODUCT_NAME_LOW),documentserver-ee documentserver-ie))
+-	sed 's|\("packageType": \)[0-9]\+\(.*\)|\11\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
+-	sed 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("packageType": \)[0-9]\+\(.*\)|\11\2|' $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ endif
+ 
+ ifeq ($(PRODUCT_NAME_LOW), documentserver-de)
+-	sed 's|\("packageType": \)[0-9]\+\(.*\)|\12\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
+-	sed 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("packageType": \)[0-9]\+\(.*\)|\12\2|' $(DOCUMENTSERVER_CONFIG)/*.json
++	sed -i '' 's|\("editorDataStorage": "\).\+\(".*\)|\1editorDataRedis\2|' $(DOCUMENTSERVER_CONFIG)/*.json
+ endif
+ 
+ 	cd $(DOCUMENTSERVER)/npm && \
+ 		npm install && \
+-		pkg ./node_modules/json $(PKG_TARGET:%=-t %) -o json
++		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/yao-pkg/node_modules/.bin/pkg" ./node_modules/json $(PKG_TARGET:%=-t %) -o json
+ 
+ ifeq ($(PLATFORM),win)		
+ 	cd $(DOCUMENTSERVER)/npm && \
+@@ -413,7 +436,7 @@ documentserver-example:
+ 
+ documentserver-example:
+ 	mkdir -p $(DOCUMENTSERVER_EXAMPLE)
+-	cp -rf -t $(DOCUMENTSERVER_EXAMPLE) ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)-example/* common/documentserver-example/welcome
++	cp -rf ../build_tools/out/$(TARGET)/$(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)-example/* common/documentserver-example/welcome $(DOCUMENTSERVER_EXAMPLE)
+ 	
+ 	mkdir -p $(DOCUMENTSERVER_EXAMPLE_CONFIG)
+ 
+@@ -422,7 +445,7 @@ documentserver-example:
+ 	# Prevent for modification original config
+ 	chmod ug=r $(DOCUMENTSERVER_EXAMPLE_CONFIG)/*.json
+ 
+-	sed "s|{{OFFICIAL_PRODUCT_NAME}}|"$(OFFICIAL_PRODUCT_NAME)"|"  -i $(DOCUMENTSERVER_EXAMPLE)/welcome/*.html
++	sed -i '' "s|{{OFFICIAL_PRODUCT_NAME}}|"$(OFFICIAL_PRODUCT_NAME)"|" $(DOCUMENTSERVER_EXAMPLE)/welcome/*.html
+ 
+ 	/usr/bin/find $(DOCUMENTSERVER_EXAMPLE)/welcome -depth -type f -exec sed -i "s_{{year}}_$(shell date +"%Y")_g" {} \;
+ 
+@@ -517,6 +540,7 @@ $(EXE): iss_file = common.iss
+ 	cd $(@D) && $(ISCC) $(ISCC_PARAMS) $(iss_file)
+ 
+ $(EXE): iss_file = common.iss
++freebsd: $(COMMON_DEPS) $(LINUX_DEPS) documentserver
+ $(EXE): $(COMMON_DEPS) documentserver documentserver-example $(NGINX) $(PSQL) $(WINSW)
+ 
+ $(EXE_PR): iss_file = prerequisites.iss

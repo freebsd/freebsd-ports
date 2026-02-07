@@ -1,0 +1,4 @@
+sbin/dlint
+sbin/digparse
+share/man/man8/dlint.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/README

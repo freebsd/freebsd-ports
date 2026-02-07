@@ -1,0 +1,6 @@
+expandvars is inspired by GNU bash's variable expansion features. It can be used
+as an alternative to Python's os.path.expandvars function.
+
+A good use case is reading config files with the flexibility of reading values
+from environment variables using advanced features like returning a default
+value if some variable is not defined.

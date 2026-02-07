@@ -1,0 +1,9 @@
+Rubygem implementation of docopt.
+
+Docopt helps you:
+- define an interface for your command-line app, and
+- automatically generate a parser for it.
+
+Docopt is based on conventions that have been used in help messages for decades
+and man pages for describing a program's interface. An interface description in
+docopt is such a help message, but formalized.

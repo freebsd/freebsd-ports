@@ -1,0 +1,2 @@
+MooseX::OneArgNew lets your constructor take a single argument,
+which will be translated into the value for a one-entry hashref.

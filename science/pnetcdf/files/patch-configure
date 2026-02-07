@@ -1,0 +1,11 @@
+--- configure.orig	2025-01-21 18:53:29 UTC
++++ configure
+@@ -40769,7 +40769,7 @@ else
+       FSTYPE_PREFIX=
+    else
+       # check if name prefix is one of file system types known to ROMIO
+-      romio_known_fstypes=(ufs nfs xfs pvfs2 gpfs panfs lustre daos testfs ime quobyte)
++      romio_known_fstypes=ufs nfs xfs pvfs2 gpfs panfs lustre daos testfs ime quobyte
+       known_fstype=
+       for pre in $romio_known_fstypes ; do
+           if test "$FSTYPE_PREFIX" = $pre ; then

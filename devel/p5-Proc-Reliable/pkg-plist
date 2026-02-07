@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Proc::Reliable.3.gz
+%%PERL5_MAN3%%/Proc::test_intercept.3.gz
+%%SITE_PERL%%/Proc/Reliable.pm
+%%SITE_PERL%%/Proc/test_intercept.pl
+%%SITE_PERL%%/auto/Proc/Reliable/autosplit.ix

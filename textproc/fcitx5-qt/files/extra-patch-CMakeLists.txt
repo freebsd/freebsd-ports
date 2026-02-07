@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2022-12-30 15:40:01 UTC
++++ CMakeLists.txt
+@@ -84,10 +84,6 @@ endif()
+   add_subdirectory(qt6)
+ endif()
+ 
+-if(NOT BUILD_ONLY_PLUGIN)
+-add_subdirectory(po)
+-endif()
+-
+ enable_testing()
+ add_subdirectory(test)
+ 

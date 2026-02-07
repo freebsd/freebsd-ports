@@ -1,0 +1,4 @@
+include/signon-plugins/oauth1data.h
+include/signon-plugins/oauth2data.h
+lib/signon/liboauth2plugin.so
+libdata/pkgconfig/signon-oauth2plugin.pc

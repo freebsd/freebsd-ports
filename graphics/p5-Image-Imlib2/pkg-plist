@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Image::Imlib2.3.gz
+%%SITE_ARCH%%/Image/Imlib2.pm
+%%SITE_ARCH%%/auto/Image/Imlib2/Imlib2.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maeda.pl

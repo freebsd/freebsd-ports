@@ -1,0 +1,2 @@
+Parses and extracts quotation structure out of a HTML message.
+Purpose and returned structures are very similar to Text::Quoted.

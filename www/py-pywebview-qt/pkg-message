@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+If the error 'Could not initialize GLX' is displayed, set the 'QT_XCB_GL_INTEGRATION=none'
+environment variable or install 'graphics/mesa-dri' and add your user to the 'video' group.
+EOM
+}
+]

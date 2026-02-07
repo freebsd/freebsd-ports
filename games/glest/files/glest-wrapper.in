@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# The executable needs to be run from its data directory, and needs to store
+# configuration in it. We therefore mirror the data directory hierarchy in
+# ~/.glest, and create symlinks to the data files.
+
+if [ -d ~/.glest ]
+then
+        echo "Using existing ~/.glest directory."
+else
+        echo "Creating ~/.glest directory."
+        cd %%DATADIR%% || exit 1
+        find * -type d -exec mkdir -p ~/.glest/{} \;
+        find * -type f -exec ln -s %%DATADIR%%/{} ~/.glest/{} \; 2>/dev/null
+	mkdir -p ~/.glest/screens
+	mkdir -p ~/.glest/shaders/standard
+	touch ~/.glest/glest.log
+	rm ~/.glest/glest.ini ~/.glest/glest ~/.glest/servers.ini
+	cp -f %%DATADIR%%/glest.ini ~/.glest/
+	cp -f %%DATADIR%%/servers.ini ~/.glest/
+	chmod 640 ~/.glest/glest.ini ~/.glest/servers.ini
+fi
+
+cd ~/.glest || exit 1
+exec %%DATADIR%%/glest "$@"

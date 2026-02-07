@@ -1,0 +1,23 @@
+--- Makefile.orig	2022-12-21 06:31:05 UTC
++++ Makefile
+@@ -31,17 +31,16 @@ $(PLUGINS): libs
+ # --------------------------------------------------------------
+ 
+ install: all
+-	install -d $(DESTDIR)$(PREFIX)/$(LIBDIR)/ladspa \
++	mkdir -p $(DESTDIR)$(PREFIX)/$(LIBDIR)/ladspa \
+ 		$(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2 \
+ 		$(DESTDIR)$(PREFIX)/$(LIBDIR)/vst \
+-		$(DESTDIR)$(PREFIX)/$(LIBDIR)/vst3 \
+ 		$(DESTDIR)$(PREFIX)/$(LIBDIR)/clap \
+ 		$(DESTDIR)$(PREFIX)/$(BINDIR)
+ 	for plugin in $(PLUGINS); do \
+-		install -d $(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2/"$$plugin".lv2 ; \
++		mkdir -p $(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2/"$$plugin".lv2 ; \
+ 		install -m 644 bin/"$$plugin".lv2/* \
+ 			$(DESTDIR)$(PREFIX)/$(LIBDIR)/lv2/"$$plugin".lv2/ ; \
+-		cp -r bin/"$$plugin".vst3 $(DESTDIR)$(PREFIX)/$(LIBDIR)/vst3/ ; \
++		#cp -r bin/"$$plugin".vst3 $(DESTDIR)$(PREFIX)/$(LIBDIR)/vst3/ ; \
+ 	done;
+ 	for plugin in $(PLUGINS); do \
+ 		install -m 755 bin/"$$plugin"$(APP_EXT) $(DESTDIR)$(PREFIX)/$(BINDIR)/ ; \

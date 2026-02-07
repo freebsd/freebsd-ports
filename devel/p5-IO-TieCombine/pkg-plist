@@ -1,0 +1,6 @@
+%%SITE_PERL%%/IO/TieCombine.pm
+%%SITE_PERL%%/IO/TieCombine/Handle.pm
+%%SITE_PERL%%/IO/TieCombine/Scalar.pm
+%%PERL5_MAN3%%/IO::TieCombine.3.gz
+%%PERL5_MAN3%%/IO::TieCombine::Handle.3.gz
+%%PERL5_MAN3%%/IO::TieCombine::Scalar.3.gz

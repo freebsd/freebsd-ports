@@ -1,0 +1,42 @@
+fix Unparseable XSUB parameter: 'SV * /*name*/' in ...
+
+--- BinaryProtocol.xs.orig	2025-07-13 08:46:14 UTC
++++ BinaryProtocol.xs
+@@ -129,7 +129,7 @@ int
+   RETVAL
+ 
+ int
+-writeFieldBegin(TBinaryProtocol *p, SV * /*name*/, int type, int id)
++writeFieldBegin(TBinaryProtocol *p, SV * _unused, int type, int id)
+ CODE:
+ {
+   DEBUG_TRACE("writeFieldBegin(type %d, id %d)\n", type, id);
+@@ -487,7 +487,7 @@ int
+   RETVAL
+ 
+ int
+-readFieldBegin(TBinaryProtocol *p, SV * /*name*/, SV *fieldtype, SV *fieldid)
++readFieldBegin(TBinaryProtocol *p, SV * _unused, SV *fieldtype, SV *fieldid)
+ CODE:
+ {
+   DEBUG_TRACE("readFieldBegin()\n");
+--- CompactProtocol.xs.orig	2025-07-13 08:46:25 UTC
++++ CompactProtocol.xs
+@@ -97,7 +97,7 @@ void
+ }
+ 
+ void
+-writeFieldBegin(TBinaryProtocol *p, SV * /*name*/, int type, int id)
++writeFieldBegin(TBinaryProtocol *p, SV * _unused, int type, int id)
+ CODE:
+ {
+   DEBUG_TRACE("writeFieldBegin()\n");
+@@ -362,7 +362,7 @@ void
+ }
+ 
+ void
+-readFieldBegin(TBinaryProtocol *p, SV * /*name*/, SV *fieldtype, SV *fieldid)
++readFieldBegin(TBinaryProtocol *p, SV * _unused, SV *fieldtype, SV *fieldid)
+ CODE:
+ {
+   DEBUG_TRACE("readFieldBegin()\n");

@@ -1,0 +1,6 @@
+ipv6mon is a tool meant for monitoring IPv6 address usage on a local
+network.  It is meant to be particularly useful in networks that employ
+IPv6 Stateless Address Auto-Configuration (as opposed to DHCPv6),
+where address assignment is decentralized and there is no central
+server that records which IPv6 addresses have been assigned to which
+nodes during which period of time.

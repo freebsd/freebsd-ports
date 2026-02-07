@@ -1,0 +1,5 @@
+Do your finances using fava and beancount. Favagtk makes it easy to use the
+Fava and Beancount double-entry bookkeeping software as a GNOME desktop
+application.
+Start fava and beancount as you would any other desktop application.
+Built as a GNOME application, using GTK and webkit.

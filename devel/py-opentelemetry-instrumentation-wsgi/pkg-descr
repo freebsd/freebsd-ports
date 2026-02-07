@@ -1,0 +1,3 @@
+OpenTelemetry WSGI Middleware provides a WSGI middleware that can be used on any
+WSGI framework (such as Django / Flask) to track requests timing through
+OpenTelemetry.

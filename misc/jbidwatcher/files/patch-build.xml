@@ -1,0 +1,11 @@
+--- build.xml.orig	2025-12-14 15:56:48 UTC
++++ build.xml
+@@ -83,7 +83,7 @@
+   <target name="compile" depends="init">
+     <echo level="info" message="Compiling all classes." />
+     <mkdir dir="${build.dir}" />
+-      <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" debug="on" source="1.5" target="1.5">
++      <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" debug="on">
+           <classpath refid="project.class.path" />
+           <include name="**/*.java" />
+       </javac>

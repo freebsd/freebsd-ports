@@ -1,0 +1,13 @@
+%%SITE_ARCH%%/Crypt/Eksblowfish.pm
+%%SITE_ARCH%%/Crypt/Eksblowfish/Bcrypt.pm
+%%SITE_ARCH%%/Crypt/Eksblowfish/Blowfish.pm
+%%SITE_ARCH%%/Crypt/Eksblowfish/Family.pm
+%%SITE_ARCH%%/Crypt/Eksblowfish/Subkeyed.pm
+%%SITE_ARCH%%/Crypt/Eksblowfish/Uklblowfish.pm
+%%SITE_ARCH%%/auto/Crypt/Eksblowfish/Eksblowfish.so
+%%PERL5_MAN3%%/Crypt::Eksblowfish.3.gz
+%%PERL5_MAN3%%/Crypt::Eksblowfish::Bcrypt.3.gz
+%%PERL5_MAN3%%/Crypt::Eksblowfish::Blowfish.3.gz
+%%PERL5_MAN3%%/Crypt::Eksblowfish::Family.3.gz
+%%PERL5_MAN3%%/Crypt::Eksblowfish::Subkeyed.3.gz
+%%PERL5_MAN3%%/Crypt::Eksblowfish::Uklblowfish.3.gz

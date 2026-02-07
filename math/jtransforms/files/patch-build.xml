@@ -1,0 +1,22 @@
+--- build.xml.orig	2025-12-13 15:21:46 UTC
++++ build.xml
+@@ -57,15 +57,15 @@
+ 
+ 	<target name="javac" depends="clean" description="Compilation of java classes and unit-tests">
+ 		<mkdir dir="${javac.dest}" />
+-		<javac srcdir="${javac.src}" destdir="${javac.dest}" includes="**/*.java" includeantruntime="false" deprecation="true" debug="false" source="1.5" target="1.5" />
+-		<javac srcdir="${tests.src.dir}" destdir="${javac.dest}" includes="**/*.java" classpathref="project.class.path" includeantruntime="false" deprecation="true" debug="false" source="1.5" target="1.5" />
++		<javac srcdir="${javac.src}" destdir="${javac.dest}" includes="**/*.java" includeantruntime="false" deprecation="true" debug="false" />
++		<javac srcdir="${tests.src.dir}" destdir="${javac.dest}" includes="**/*.java" classpathref="project.class.path" includeantruntime="false" deprecation="true" debug="false" />
+ 	</target>
+ 
+ 
+ 	<target name="javac-debug" depends="clean" description="Compilation of java classes and unit-tests with debug options on.">
+ 		<mkdir dir="${javac.dest}" />
+-		<javac srcdir="${javac.src}" destdir="${javac.dest}" includes="**/*.java" includeantruntime="false" deprecation="true" debug="on" debuglevel="vars,lines,source" source="1.5" target="1.5" />
+-		<javac srcdir="${tests.src.dir}" destdir="${javac.dest}" includes="**/*.java" classpathref="project.class.path" includeantruntime="false" deprecation="true" debug="true" debuglevel="vars,lines,source" source="1.5" target="1.5" />
++		<javac srcdir="${javac.src}" destdir="${javac.dest}" includes="**/*.java" includeantruntime="false" deprecation="true" debug="on" debuglevel="vars,lines,source" />
++		<javac srcdir="${tests.src.dir}" destdir="${javac.dest}" includes="**/*.java" classpathref="project.class.path" includeantruntime="false" deprecation="true" debug="true" debuglevel="vars,lines,source" />
+ 	</target>
+ 
+ 

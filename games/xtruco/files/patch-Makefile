@@ -1,0 +1,33 @@
+--- Makefile.orig	Tue Oct 22 04:18:27 1996
++++ Makefile	Fri Mar 31 05:23:20 2000
+@@ -6,17 +6,18 @@
+ #                              #
+ ################################
+ 
+-INCLUDES	= -I/usr/X11/include
++INCLUDES	= -I${LOCALBASE}/include
+ 
+ # Remove '-DIPC_OK' if you have problems with 'shared-memory' (IPC routines)
+ OPC		= -DIPC_OK
+ 
+-LIBRARIES	= -lX11 -L/usr/X11/lib
++LIBRARIES	= -lX11 -L${LOCALBASE}/lib
+ 
+ CFILES		= xtruco.c bitmap.c cursor.c display.c event.c gc.c pixmap.c\
+ 		  topwind.c window.c color.c button.c font.c read.c
+ 
+-CC		= gcc -O2 -g -Dlinux -DX11R6 $(INCLUDES) $(OPC)
++CC		?= gcc
++CFLAGS		+= -DX11R6 $(INCLUDES) $(OPC)
+ 
+ PROG=xtruco
+ 
+@@ -25,7 +26,7 @@
+ OBJS=$(CFILES:.c=.o)
+ 
+ all:	$(OBJS)
+-	$(CC) -o $(PROG) $(LIBRARIES) $(OBJS)
++	$(CC) $(CFLAGS) -o $(PROG) $(LIBRARIES) $(OBJS)
+ #	strip ${PROG}
+ 
+ clean:

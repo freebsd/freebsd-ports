@@ -1,0 +1,24 @@
+bin/95.pl
+bin/report.pl
+bin/rtgplot
+bin/rtgpoll
+contrib/README
+contrib/rtgtargmkr-with-modules-0.2.tar.gz
+%%ETCDIR%%/BER.pm
+%%ETCDIR%%/SNMP_Session.pm
+%%ETCDIR%%/SNMP_util.pm
+%%ETCDIR%%/createdb
+@sample %%ETCDIR%%/routers.sample
+@sample %%ETCDIR%%/rtg.conf.sample
+%%ETCDIR%%/rtgtargmkr.pl
+include/common.h
+include/rtg.h
+include/rtgplot.h
+share/man/man1/rtgplot.1.gz
+share/man/man1/rtgpoll.1.gz
+www/data/95.php
+www/data/common.php
+www/data/rtg.php
+www/data/rtg.png
+www/data/rtgback.png
+www/data/view.php

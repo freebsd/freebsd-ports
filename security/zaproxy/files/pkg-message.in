@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+ZAP port was installed
+
+1) You must install Chrome based browser or Firefox based browser for be used
+  in some tasks.
+
+  # pkg install chromium firefox geckodriver
+
+2) ZAP includes linux webdrivers for Chrome and Firefox but these don't work
+   on FreeBSD.
+
+   You must change some paths from Tools/Options/Selenium/Webdrivers:
+
+   Chromedriver to /usr/local/bin/chromedriver
+   Geckodriver to /usr/local/bin/geckodriver
+
+   Also, you must change Chrome and Firefox based web browser binary path files:
+
+   Chrome binary to /usr/local/bin/chrome
+   Firefox binary to /usr/local/bin/firefox
+
+3) If you want to use some python scripts to use ZAP from command line or from
+   another applications, look at the following urls:
+
+   https://github.com/zaproxy/zaproxy/blob/main/docker/zap-baseline.py
+   https://github.com/zaproxy/community-scripts/tree/main/other/api/mass-baseline
+   https://github.com/zaproxy/zap-api-python/tree/main/src/examples
+
+   These scripts use ZAP Python API. Install it from security/py-zaproxy
+
+4) Enjoy it
+EOM
+}
+]
+

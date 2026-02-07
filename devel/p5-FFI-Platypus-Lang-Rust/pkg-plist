@@ -1,0 +1,4 @@
+%%SITE_PERL%%/FFI/Build/File/Cargo.pm
+%%SITE_PERL%%/FFI/Platypus/Lang/Rust.pm
+%%PERL5_MAN3%%/FFI::Build::File::Cargo.3.gz
+%%PERL5_MAN3%%/FFI::Platypus::Lang::Rust.3.gz

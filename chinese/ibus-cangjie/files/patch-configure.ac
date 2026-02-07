@@ -1,0 +1,13 @@
+--- configure.ac.orig	2015-03-29 15:19:21 UTC
++++ configure.ac
+@@ -15,8 +15,8 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+ IT_PROG_INTLTOOL([0.35.0])
+ 
+ # i18n
+-AM_GNU_GETTEXT([external])
+-AM_GNU_GETTEXT_VERSION(0.17)
++#AM_GNU_GETTEXT([external])
++#AM_GNU_GETTEXT_VERSION(0.17)
+ 
+ # Note: If you change GETTEXT_PACKAGE below, you will also need to change it
+ #       in src/config.py, or find a way to de-hardcode it there.

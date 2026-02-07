@@ -1,0 +1,2 @@
+HashDiff is a ruby library to compute the smallest difference between two
+hashes.

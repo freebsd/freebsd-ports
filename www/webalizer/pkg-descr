@@ -1,0 +1,16 @@
+What is The Webalizer?
+----------------------
+
+A fast, free web server log file analysis program.  Produces
+HTML output for viewing with a web browser.  Written in C on
+a Linux platform, however designed to be as ANSI/POSIX
+compliant as possible so porting to other UNIX platforms should
+be painless.  Binary distributions for most popular platforms
+are available.  Features multiple language support, incremental
+processing capabilities, reverse DNS lookup support, export via
+tab separated ascii files to popular databases and spreadsheets,
+and much more.  Supports standard CLF and combined logs, as well
+as wu-ftpd xferlog and squid proxy logs, which can be either in
+standard text format or gzip compressed.
+
+Keywords:      Web Analysis, Log Analysis, Usage Statistics, Linux, Unix

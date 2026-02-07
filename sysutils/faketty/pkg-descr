@@ -1,0 +1,5 @@
+A wrapper binary to exec a command in a pty, even if redirecting the output.
+
+This allows logging the stdout and stderr (separately) of a process, without
+the output being different from what you'd see in the terminal if you weren't
+logging anything.

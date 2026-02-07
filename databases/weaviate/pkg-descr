@@ -1,0 +1,6 @@
+Weaviate is an open-source, cloud-native vector database that stores both
+objects and vectors, enabling semantic search at scale. It combines vector
+similarity search with keyword filtering, retrieval-augmented generation
+(RAG), and reranking in a single query interface. Common use cases include
+RAG systems, semantic and image search, recommendation engines, chatbots,
+and content classification.

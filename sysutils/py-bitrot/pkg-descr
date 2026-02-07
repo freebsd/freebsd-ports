@@ -1,0 +1,6 @@
+Detects bit rotten files on the hard drive to save your precious
+photo and music collection from slow decay.
+
+It reports on files whose contents have changed without their
+modification times being updated.  This may be an indication of
+bitrot.

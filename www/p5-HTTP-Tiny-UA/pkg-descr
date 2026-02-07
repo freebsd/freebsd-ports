@@ -1,0 +1,1 @@
+HTTP::Tiny::UA extends HTTP::Tiny with higher-level convenience features.

@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	2009-01-04 23:43:52 UTC
++++ src/Makefile.in
+@@ -605,12 +605,12 @@ uninstall-am: uninstall-pluginLTLIBRARIE
+ 
+ # create symlinks for the plugin to jack-dssi-host
+ install-exec-hook:
+-	if test -x $(DESTDIR)$(bindir)/jack-dssi-host$(EXEEXT) ; then \
+-	  cd $(DESTDIR)$(bindir) ; \
+-	  if ! test -x ./fluidsynth-dssi$(EXEEXT) ; then \
+-	    $(LN_S) jack-dssi-host$(EXEEXT) fluidsynth-dssi$(EXEEXT) ; \
+-	  fi ; \
+-	fi
++#	if test -x $(DESTDIR)$(bindir)/jack-dssi-host$(EXEEXT) ; then \
++#	  cd $(DESTDIR)$(bindir) ; \
++#	  if ! test -x ./fluidsynth-dssi$(EXEEXT) ; then \
++#	    $(LN_S) jack-dssi-host$(EXEEXT) fluidsynth-dssi$(EXEEXT) ; \
++#	  fi ; \
++#	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

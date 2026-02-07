@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+After installing mqttwarn for the first time, we recommend the following:
+
+1 - Add to /etc/rc.conf:
+
+mqttwarn_enable="YES"
+
+2 - Edit your configuration file
+
+%%PREFIX%%/etc/mqttwarn/mqttwarn.conf
+
+EOM
+}
+]

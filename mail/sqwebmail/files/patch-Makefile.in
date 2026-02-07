@@ -1,0 +1,34 @@
+--- Makefile.in.orig	2025-10-14 23:45:13 UTC
++++ Makefile.in
+@@ -413,13 +413,13 @@ scriptbin_SCRIPTS = \
+ 	packaging/debian/sqwebmail-apache2.lintian-overrides
+ scriptbindir = $(sbindir)
+ scriptbin_SCRIPTS = \
+-	sharedindexinstall sharedindexsplit
++	sharedindexinstall.sqwebmail sharedindexsplit.sqwebmail
+ 
+ pkglibPROGRAMS = maildirmake deliverquota reformime makemime pcpd
+ pkglibexec_PROGRAMS = @pkglibPROGRAMS_exec@
+ libexec_SCRIPTS = sqwebmaild.rc
+ CLEANFILES = $(pkgman1_DATA) $(pkgman8_DATA) $(sysconf_DATA) \
+-	sharedindexinstall sharedindexsplit
++	sharedindexinstall.sqwebmail sharedindexsplit.sqwebmail
+ 
+ WWW = $$HOME/www/hostrocket/courier-mta.org
+ @HAVE_HTMLPAGES_TRUE@NEWS_SOURCE = html/index.html
+@@ -1071,11 +1071,11 @@ makemime: libs/rfc2045/makemime
+ makemime: libs/rfc2045/makemime
+ 	cp libs/rfc2045/makemime .
+ 
+-sharedindexinstall: libs/maildir/sharedindexinstall
+-	cp -f libs/maildir/sharedindexinstall .
++sharedindexinstall.sqwebmail: libs/maildir/sharedindexinstall
++	cp -f libs/maildir/sharedindexinstall ./sharedindexinstall.sqwebmail
+ 
+-sharedindexsplit: libs/maildir/sharedindexsplit
+-	cp -f libs/maildir/sharedindexsplit .
++sharedindexsplit.sqwebmail: libs/maildir/sharedindexsplit
++	cp -f libs/maildir/sharedindexsplit ./sharedindexsplit.sqwebmail
+ 
+ #
+ # Install SqWebMail setuid to root, if we're running as root

@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2013-02-20 03:12:27.000000000 +0100
++++ Makefile.in	2013-07-11 10:16:26.000000000 +0200
+@@ -111,9 +111,7 @@
+ 		do mkdir -p $$dir ; chmod 755 $$dir ; \
+ 	done )
+ 	( for lib in  $(PT_LIBDIR)/$(LIB_SONAME) \
+-	              $(PT_LIBDIR)/$(DEBUG_SONAME) \
+-	              $(PT_LIBDIR)/lib$(PTLIB_BASE)_s.a \
+-	              $(PT_LIBDIR)/lib$(PTLIB_BASE)_d_s.a ; \
++	              $(PT_LIBDIR)/$(DEBUG_SONAME) ; \
+           do \
+ 	  ( if test -e $$lib ; then \
+ 		$(INSTALL) -m 444 $$lib $(DESTDIR)$(LIBDIR); \

@@ -1,0 +1,45 @@
+--- Imakefile.orig	Mon Jan  5 21:19:46 1998
++++ Imakefile	Wed Oct 15 14:30:03 2003
+@@ -11,7 +11,7 @@
+            TAGS = etags
+ 
+ # change if you want it to look elsewhere for its files.
+-       PIEWMDIR = /usr/local/lib/piewm
++       PIEWMDIR = $(LIBDIR)/piewm
+ 
+ #
+ # Keep uncommented to allow the xloadimage program by Jim Frost to
+@@ -19,16 +19,16 @@
+ # other image formats besides Xpm or Xbm)
+ #                                 Chris P. Ross
+ #                                 <cross@eng.umd.edu>
+-    XLOADIM_DEF = -DXLOADIMAGE=\"/usr/local/bin/xloadimage\"
++    XLOADIM_DEF = -DXLOADIMAGE=\"$(BINDIR)/xloadimage\"
+         MATHLIB = -lm
+-  LOCAL_DEFINES = -DSHAPE 
++  LOCAL_DEFINES = -DBITMAPDIR=\"$(INCROOT)/X11/bitmaps\" -DSHAPE 
+ 
+-/**/#   Ultrix doesn't have a mkstemp in libc...
++#   Ultrix doesn't have a mkstemp in libc...
+ #ifdef UltrixArchitecture
+   ULTRIX_DEFINES = -DNOSTEMP
+ #endif
+ 
+-LOCAL_LIBRARIES = $(XMULIB) $(EXTENSIONLIB) $(XLIB) $(MATHLIB) -lXpm
++LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(EXTENSIONLIB) $(XLIB) $(MATHLIB) $(LEXLIB) -lXpm
+        LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
+         DEFINES = ExtensionDefines $(LOCAL_DEFINES) $(SIGNAL_DEFINES) $(ULTRIX_DEFINES)
+ 
+@@ -53,9 +53,9 @@
+ ComplexProgramTarget(piewm)
+ NormalProgramTarget(ssetroot,ssetroot.o,,$(LOCAL_LIBRARIES),)
+ 
+-MakeDirectories(install,$(TWMDIR))
+-InstallNonExec(system.twmrc,$(TWMDIR))
+-# InstallNamedProg(ssetroot,xsetroot,$(BINDIR))
++MakeDirectories(install,$(PIEWMDIR))
++InstallNonExec(system.twmrc,$(PIEWMDIR))
++# InstallNamedProg(ssetroot,ssetroot,$(BINDIR))
+ 
+ gram.h gram.c: gram.y
+ 	$(YACC) $(YFLAGS) gram.y

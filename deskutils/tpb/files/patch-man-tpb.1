@@ -1,0 +1,50 @@
+--- man/tpb.1.orig	2005-07-25 08:40:53 UTC
++++ man/tpb.1
+@@ -7,7 +7,7 @@ tpb \- program to use the IBM ThinkPad (
+ With TPB it is possible to bind a program to the ThinkPad, Mail, Home and Search button.
+ TPB can also run a callback program on each state change with the changed state and the new state as options. 
+ So it is possible to trigger several actions on different events.
+-TPB	has a on-screen display (OSD) to show volume, mute, brightness and some other informations.
++TPB	has an on-screen display (OSD) to show volume, mute, brightness and some other informations.
+ Furthermore TPB supports a software mixer, as the R series ThinkPads have no hardware mixer to change the volume.
+ .SH OPTIONS
+ .TP 8
+@@ -94,7 +94,7 @@ The priority of the configuration option
+ builtin defaults
+ .TP
+ \(bu
+-configuration in /etc/tpbrc
++configuration in %%PREFIX%%/etc/tpbrc
+ .TP
+ \(bu
+ configuration in $HOME/.tpbrc
+@@ -121,7 +121,7 @@ Keywords are:
+ .TP 8
+ .B NVRAM
+ Should define the nvram device from where the information about the key states
+-is read. Default is to try /dev/nvram, followed by /dev/misc/nvram.
++is read. Default is to try /dev/nvram.
+ .TP 8
+ .B POLLTIME
+ Defines the delay between polls in microseconds.
+@@ -332,14 +332,18 @@ Defines the alignment of the osd.
+ Possible values are left, center and right.
+ Default is left.
+ .SH "NOTES"
+-Requires NVRAM device /dev/nvram.
++Requires NVRAM device /dev/nvram on Linux.
+ This must be enabled in your kernel.
+ Although the device file must exist.
+ The device file could be created with \'mknod /dev/nvram c 10 144\'
+ 
++On FreeBSD you have to load the acpi_ibm(4) driver prior to using TPB.
++If ACPI and in turn acpi_ibm(4) is not available, nvram(4) and apm(4)
++are being used.
++
+ This program was developed on a Thinkpad Model T21.
+ .SH EXAMPLE
+-tpb \-\-osd=off \-\-verbose \-\-thinkpad="xterm \-T ntpctl \-e ntpctl"
++tpb \-\-osd=off \-\-verbose \-\-thinkpad="%%LOCALBASE%%/bin/xterm"
+ .SH COPYRIGHT
+ Copyright 2002-2005, Markus Braun <markus.braun@krawel.de>
+ .PP

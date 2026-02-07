@@ -1,0 +1,6 @@
+WebService::Dropbox is Perl interface to Dropbox API
+
+It includes the following features:
+- Supports Dropbox v2 REST API
+- Supports Furl (Fast!!!)
+- Streaming IO (Low Memory)

@@ -1,0 +1,11 @@
+--- extern/btyacc/Makefile.orig	2022-06-07 08:18:52 UTC
++++ extern/btyacc/Makefile
+@@ -42,7 +42,7 @@ OTHERS	      = README README.BYACC \
+ all:		$(PROGRAM)
+ 
+ $(PROGRAM):     $(OBJS) $(LIBS)
+-		$(CC) $(LDFLAGS) -o $(PROGRAM) $(OBJS) $(LIBS)
++		$(CC) $(CFLAGS) $(LDFLAGS) -o $(PROGRAM) $(OBJS) $(LIBS)
+ 
+ clean:;		rm -f $(OBJS)
+ 

@@ -1,0 +1,2 @@
+This plugin checks the content of the current document in Geany
+with the spell check library Enchant.

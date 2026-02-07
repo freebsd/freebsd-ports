@@ -1,0 +1,14 @@
+bin/chaco
+lib/libchaco.a
+%%PORTDOCS%%%%DOCSDIR%%/Empirical.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Multilevel.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Spectral_Overview.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Spectral_Theory.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Term_Prop.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Users_Guide.ps.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/film.coords
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/film.graph
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid20x20.coords
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid20x20.graph
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hammond.coords
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hammond.graph

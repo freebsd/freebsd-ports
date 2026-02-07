@@ -1,0 +1,13 @@
+TIMESTAMP = 1732657094
+SHA256 (rocky/o/orc-0.4.31-8.el9.aarch64.rpm) = a8ad78712f5512776feb719f6dc6a967b8e87303e0b559b0c4876d7c9d2be146
+SIZE (rocky/o/orc-0.4.31-8.el9.aarch64.rpm) = 180781
+SHA256 (rocky/o/orc-0.4.31-8.el9.i686.rpm) = c92f75f5b6eb2fc3ecb802686bc8b8c83c0af416e742d862bbeb77989f1bb37d
+SIZE (rocky/o/orc-0.4.31-8.el9.i686.rpm) = 198319
+SHA256 (rocky/o/orc-0.4.31-8.el9.x86_64.rpm) = e4c568d24d992714f5f6703f03d6460d81b1800c628423932108ae9315813b75
+SIZE (rocky/o/orc-0.4.31-8.el9.x86_64.rpm) = 186781
+SHA256 (rocky/o/orc-compiler-0.4.31-8.el9.aarch64.rpm) = a1ed7d87da88b1a7a49efb5ae210e3b791d2ff76c0c19e074b24bbda123848aa
+SIZE (rocky/o/orc-compiler-0.4.31-8.el9.aarch64.rpm) = 23504
+SHA256 (rocky/o/orc-compiler-0.4.31-8.el9.x86_64.rpm) = bb70ec13385618a521b66ec3d50d4d2a3c4b760149c004aedb0e46fe69200da0
+SIZE (rocky/o/orc-compiler-0.4.31-8.el9.x86_64.rpm) = 23912
+SHA256 (rocky/o/orc-0.4.31-8.el9.src.rpm) = 19acb2f8ca13652cb9d7dd156e0884a711148e435c675ee9fac56330587f5afe
+SIZE (rocky/o/orc-0.4.31-8.el9.src.rpm) = 190415

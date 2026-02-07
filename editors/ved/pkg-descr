@@ -1,0 +1,6 @@
+Ved is a fast and easy to learn screen oriented editor, that implements
+no file size limits.  The user interface is somewhere between emacs and
+vi and does not limit the work speed even of experienced users.
+
+Ved has been inspired by an editor of the same name that appeared in
+1980 as system editor on UNOS (the first UNIX clone).

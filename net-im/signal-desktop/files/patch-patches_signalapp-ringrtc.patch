@@ -1,0 +1,13 @@
+--- patches/signalapp-ringrtc.patch.orig	2025-03-16 15:22:38 UTC
++++ patches/signalapp-ringrtc.patch
+@@ -0,0 +1,10 @@
++--- a/scripts/fetch-prebuild.js
+++++ b/scripts/fetch-prebuild.js
++@@ -44,6 +44,7 @@ async function main() {
++ const finalFile = path.join(__dirname, 'prebuild.tar.gz');
++ 
++ async function main() {
+++  return;
++   if (!HASH) {
++     console.log('(no checksum provided; assuming local build)');
++     process.exit(0);

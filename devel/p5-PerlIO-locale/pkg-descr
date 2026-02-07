@@ -1,0 +1,1 @@
+PerlIO layer to use the encoding of the current locale.

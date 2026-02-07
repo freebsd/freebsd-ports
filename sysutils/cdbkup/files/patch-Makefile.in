@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Wed Mar 24 10:40:13 2004
++++ Makefile.in	Wed Mar 24 10:41:02 2004
+@@ -19,12 +19,14 @@
+ 		(echo "-> Entering $$x"; cd $$x ;\
+ 		make $@ );\
+ 	done
++.if !defined(NOPORTDOCS)
+ 	@echo "-> Creating dirs & installing misc documentation."
+ 	$(INSTALL) -d -o $(DUMPER) -g $(DUMPGRP) -m 700 $(SNARDIR)
+ 	$(INSTALL) -d -m 755 $(DOCDIR)
+ 	$(INSTALL) -m 644 README $(DOCDIR)
+ 	$(INSTALL) -m 644 TODO $(DOCDIR)
+ 	$(INSTALL) -m 644 COMPLIANCE $(DOCDIR)
++.endif
+ 	@echo "-> All done."
+ 
+ uninstall:

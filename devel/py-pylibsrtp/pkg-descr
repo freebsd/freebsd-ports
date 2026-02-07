@@ -1,0 +1,6 @@
+pylibsrtp is a Python wrapper around libsrtp, making it possible to encrypt and
+decrypt Secure Real-time Transport Protocol (SRTP) packets from Python code.
+
+SRTP is a profile of the Real-time Transport Protocol (RTP) which provides
+confidentiality, message authentication, and replay protection. It is defined
+by RFC 3711.

@@ -1,0 +1,71 @@
+#!/bin/sh
+
+# PROVIDE: obspamd
+# REQUIRE: NETWORKING SERVERS syslogd named
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+#
+# Define these spamd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# obspamd_enable="YES"	# Run the spamd(8) daemon (YES/NO).
+# obspamd_flags=""	# Extra flags for spamd(8) (if enabled).
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+obspamd_enable=${obspamd_enable:-"NO"}
+
+. /etc/rc.subr
+
+name="obspamd"
+rcvar=obspamd_enable
+
+command="%%PREFIX%%/libexec/%%SPAMDBIN%%"
+start_precmd="obspamd_precmd"
+start_postcmd="obspamd_postcmd"
+restart_postcmd="obspamd_postcmd"
+stop_postcmd="obspamd_cleanup"
+pidfile="/var/run/spamd.pid"
+
+obspamd_precmd()
+{
+	_rc=0
+	echo "${obspamd_flags}" | egrep "(^\-b| \-b)" 2>&1 > /dev/null
+	if [ $? -eq 1 ]; then
+		/sbin/mount -p | grep 'fdescfs.*/dev/fd.*fdescfs.*rw' 2>&1 > /dev/null
+		_rc=${?}
+		if [ ${_rc} -ne 0 ]; then
+			echo "Unable to start spamd in greylisting mode"
+			echo ""
+			echo "Please mount fdescfs with the following line in /etc/fstab"
+			echo ""
+			echo "  fdescfs /dev/fd fdescfs rw 0 0"
+			echo ""
+		fi
+		return ${_rc}
+	fi
+}
+
+obspamd_postcmd()
+{
+	if [ -x %%PREFIX%%/sbin/spamd-setup ]; then
+		if [ -r %%PREFIX%%/etc/spamd/spamd.conf ]; then
+			echo "${obspamd_flags}" | egrep "(^\-b| \-b)" 2>&1 > /dev/null
+			if [ $? -eq 0 ]; then
+				%%PREFIX%%/sbin/spamd-setup -bD
+			else
+				%%PREFIX%%/sbin/spamd-setup -D
+			fi
+		fi
+	fi
+}
+
+obspamd_cleanup()
+{
+	/bin/rm -f ${pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"

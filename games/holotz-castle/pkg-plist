@@ -1,0 +1,14 @@
+bin/holotz-castle
+bin/holotz-castle-editor
+%%SOLUTIONS%%bin/holotz-castle-solutions
+share/man/man6/holotz-castle-editor.6.gz
+share/man/man6/holotz-castle.6.gz
+%%SOLUTIONS%%share/applications/holotz-castle-solutions.desktop
+share/applications/holotz-castle.desktop
+share/icons/hicolor/128x128/apps/holotz-castle.png
+share/icons/hicolor/32x32/apps/holotz-castle.png
+share/icons/hicolor/48x48/apps/holotz-castle.png
+share/icons/hicolor/64x64/apps/holotz-castle.png
+share/icons/hicolor/72x72/apps/holotz-castle.png
+share/icons/hicolor/96x96/apps/holotz-castle.png
+share/pixmaps/holotz-castle.png

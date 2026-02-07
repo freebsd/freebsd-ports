@@ -1,0 +1,17 @@
+# To depend on courier-authlib you might consider using this file by specifying 
+#
+#.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
+#.include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
+#.endif
+#
+# in your Makefile *after* any
+#.include <bsd.port.pre.mk>
+
+OPTIONS_DEFINE+=        AUTH_LDAP AUTH_MYSQL AUTH_PGSQL AUTH_SQLITE \
+			AUTH_USERDB AUTH_VCHKPW DOCS
+AUTH_LDAP_DESC=		LDAP support
+AUTH_MYSQL_DESC=	MySQL support
+AUTH_PGSQL_DESC=	PostgreSQL support
+AUTH_SQLITE_DESC=	SQLite support
+AUTH_USERDB_DESC=	Userdb support
+AUTH_VCHKPW_DESC=	popmail/vchkpw support

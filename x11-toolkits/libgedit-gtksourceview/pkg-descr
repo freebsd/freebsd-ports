@@ -1,0 +1,5 @@
+libgedit-gtksourceview is a library that extends GtkTextView, the standard
+GTK widget for multiline text editing. It adds support for syntax
+highlighting, undo/redo, file loading and saving, search and replace, a
+completion system, printing, displaying line numbers, and other features
+typical of a source code editor.

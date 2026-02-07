@@ -1,0 +1,3 @@
+This is a Japanese translation of FreeBSD manual pages.
+Note that to build it, you need the CVS repository in
+${CVSROOT} (/home/ncvs by default) on your machine.

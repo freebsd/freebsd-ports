@@ -1,0 +1,13 @@
+--- data/org.defora.view.desktop.orig	2024-09-02 14:56:54 UTC
++++ data/org.defora.view.desktop
+@@ -1,8 +1,8 @@ Comment=Viewer for text and image files
+ [Desktop Entry]
+ Name=File viewer
+ Comment=Viewer for text and image files
+-TryExec=view
+-Exec=view %F
++TryExec=deforaos-view
++Exec=deforaos-view %F
+ Icon=system-file-manager
+ Type=Application
+ Categories=System;Core;FileManager;GTK;

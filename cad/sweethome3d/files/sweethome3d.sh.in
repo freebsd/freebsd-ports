@@ -1,0 +1,6 @@
+#!/bin/sh
+
+JAVA="%%LOCALBASE%%/bin/java"
+SH3D_JAR="%%JAVALIBDIR%%/%%JARNAME%%"
+
+JAVA_VERSION=%%JAVA_VERSION%% exec "${JAVA}" -Xmx1024m -jar "${SH3D_JAR}" "$@"

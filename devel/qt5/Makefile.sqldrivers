@@ -1,0 +1,28 @@
+PORTNAME?=	${DB:tl}
+PORTVERSION?=	${QT5_VERSION}${QT5_KDE_PATCH}
+CATEGORIES?=	databases
+PKGNAMEPREFIX?=	qt5-sqldrivers-
+
+MAINTAINER?=	kde@FreeBSD.org
+COMMENT?=	Qt ${DB_DESC} database plugin
+
+USES+=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base
+USE_PERL5+=	extract
+USE_QT+=	core sql qmake:build buildtools:build
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=-no-gui -no-xcb
+
+BUILD_WRKSRC?=	${WRKSRC}/src/plugins/sqldrivers/${DB:tl}
+INSTALL_WRKSRC?=${BUILD_WRKSRC}
+
+PLIST_FILES+=	${QT_CMAKEDIR_REL}/Qt5Sql/Qt5Sql_Q${DB}DriverPlugin.cmake \
+		${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so \
+		%%DEBUG%%${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so.debug
+
+post-configure:
+.for d in src/plugins/sqldrivers/${DB:tl}
+	${MKDIR} ${WRKSRC}/${d}
+	cd ${WRKSRC}/${d} && ${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${WRKSRC}/${d}
+.endfor
+
+.include <bsd.port.mk>

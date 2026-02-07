@@ -1,0 +1,2 @@
+Math::Currency is a perl module that implements exact currency math
+with formatting and rounding.

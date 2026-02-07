@@ -1,0 +1,2 @@
+mod_maxminddb allows you to query MaxMind DB files from Apache using
+the libmaxminddb library.

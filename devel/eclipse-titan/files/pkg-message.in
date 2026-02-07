@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+The top directory for Eclipse Titan is %%PREFIX%%/%%TTCN3_DIR%%, and
+binaries have been installed to %%PREFIX%%/%%TTCN3_DIR%%/bin.
+
+You generally need to set TTCN3_DIR environment variable to the top
+directory to use Eclipse Titan, while the ttcn3_start utility automatically
+sets it when no TTCN3_DIR is defined.
+
+A demo test case has been installed in %%EXAMPLESDIR%%.
+EOM
+}
+]

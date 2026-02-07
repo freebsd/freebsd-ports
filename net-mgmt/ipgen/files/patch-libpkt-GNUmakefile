@@ -1,0 +1,21 @@
+--- libpkt/GNUmakefile.orig	2024-05-27 06:59:46 UTC
++++ libpkt/GNUmakefile
+@@ -8,16 +8,15 @@ SRCS+=		utils.c
+ SRCS+=		ip6pkt.c
+ SRCS+=		utils.c
+ 
+-CFLAGS+=	-O2
+ CFLAGS+=	-Wall -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith
+ CFLAGS+=	-Wreturn-type -Wswitch -Wshadow
+ CFLAGS+=	-Wcast-qual -Wwrite-strings
+ CFLAGS+=	-Wno-address-of-packed-member
+ 
+ # x86
+-CFLAGS+=	-DUSE_CPU_IN_CKSUM
++#CFLAGS+=	-DUSE_CPU_IN_CKSUM
+ SRCS+=		in_cksum.c
+-SRCS+=		cpu_in_cksum.S
++#SRCS+=		cpu_in_cksum.S
+ 
+ 
+ OBJS+=	$(patsubst %.S,%.o,$(SRCS:%.c=%.o))

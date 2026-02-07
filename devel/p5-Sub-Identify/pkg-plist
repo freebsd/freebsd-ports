@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Sub/Identify.pm
+%%SITE_ARCH%%/auto/Sub/Identify/Identify.so
+%%PERL5_MAN3%%/Sub::Identify.3.gz

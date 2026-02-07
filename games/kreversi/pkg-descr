@@ -1,0 +1,5 @@
+KReversi is a simple one player strategy game played against the
+computer.  If a player's piece is captured by an opposing player,
+that piece is turned over to reveal the color of that player.  A
+winner is declared when one player has more pieces of his own color
+on the board and there are no more possible moves.

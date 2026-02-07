@@ -1,0 +1,7 @@
+A py.test plugin to check gettext po & mo files.
+
+Test check for:
+ - Spelling (using enchant & aspell)
+ - Consistency of mo files
+ - Obsolete translations
+ - Fuzzy translations

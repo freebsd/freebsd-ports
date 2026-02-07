@@ -1,0 +1,14 @@
+--- README.orig	2000-09-01 18:58:55.000000000 +0900
++++ README	2009-01-03 07:51:26.000000000 +0900
+@@ -129,6 +129,11 @@
+ 
+ Comments on Modifications:
+ 
++2008/12/29: hrs@FreeBSD.org
++	Add SUN_LEN() macro to fix calculation of length of sockaddr_un when
++	sun_len is included in the structure.  This fixes the mangled unix
++	domain socket name issue; "/tmp/jd_sockV" is used instead of
++	"/tmp/jd_sockV6".
+ 
+ 
+ ***************************************************************************

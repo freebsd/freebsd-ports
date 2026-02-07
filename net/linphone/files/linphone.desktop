@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=Linphone
+GenericName=SIP Phone
+Comment=Linphone is a libre SIP client
+Type=Application
+Exec=linphone %u
+Icon=linphone
+Terminal=false
+Categories=Network;Telephony;
+
+
+# Translations
+Name[de]=Linphone
+Name[he]=Linphone
+Name[ar]=لِنْفُونْ
+Name[hu]=Linphone
+Name[ru]=Linphone
+Name[nb_NO]=Linphone
+Name[it]=Linphone
+Name[ja]=Linphone
+Name[cs]=Linphone
+Name[sr]=Линфон
+Name[sv]=Linphone
+Name[zh_CN]=Linphone
+Name[fr]=Linphone
+Name[zh_TW]=Linphone

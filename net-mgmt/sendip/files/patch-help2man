@@ -1,0 +1,8 @@
+--- help2man.orig	2001-11-23 18:50:52.000000000 +0100
++++ help2man	2014-07-27 16:48:21.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ 
+ # MODIFICATION OF GNU's help2man

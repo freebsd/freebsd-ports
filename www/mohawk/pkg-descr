@@ -1,0 +1,8 @@
+Simple and lightweight HTTP daemon.
+
+It provides the following features:
+- Basic support for CGI,
+- ipv6, authentication,
+- virtual host,
+- basic authentication
+- basic url mapping system.

@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+BRLCAD is now installed in its own directory.
+
+Be sure to correctly add the proper location to your PATH and MANPATH
+variables as suggested in the mged shell script.
+
+Don't forget to check the http://brlcad.org site for more information.
+EOM
+}
+]

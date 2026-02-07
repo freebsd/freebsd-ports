@@ -1,0 +1,184 @@
+#!%%PREFIX%%/bin/perl
+# assplog.pl
+#	ASSP log pretty-printer
+#
+
+# xterm foreground color codes
+$black	 = "30";
+$red	 = "31";
+$green	 = "32";
+$yellow	 = "33";
+$blue	 = "34";
+$magenta = "35";
+$cyan	 = "36";
+$white	 = "37";
+
+$columns = $ENV{"COLUMNS"};
+$columns = 120 if (!$columns || $columns < 120);
+
+$lines = $ENV{"LINES"};
+$lines = 50 if (!$lines);
+
+if (!open (LOG, "tail -500f %%ASSP_LOG%%/maillog.txt |")) {
+	print STDERR "assplog: cannot open ASSP log\n";
+	exit(1);
+}
+
+$ipwide = 0;
+while (<LOG>) {
+	chop;
+	undef $l;
+	($l->{date}, $l->{time}, $l->{rest}) = split(/\s+/, $_, 3);
+	$patt = ".*[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]";
+	if ($l->{rest} =~ m,^($patt)\s,) {
+		($l->{msgid}, $l->{rest}) = $l->{rest} =~ m,^($patt)\s+(.*)$,;
+	}
+	$patt = "\\[[^]]+]";
+	if ($l->{rest} =~ m,^($patt)\s,) {
+		($l->{code}, $l->{rest}) = $l->{rest} =~ m,^($patt)\s+(.*)$,;
+	}
+	$patt = "[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+|(:?[0-9a-fA-F]*){0,7}:[0-9a-fA-F]+";
+	if ($l->{rest} =~ m,^($patt)\s,) {
+		($l->{cliIP}, $x, $l->{rest}) = $l->{rest} =~ m,^($patt)\s+(.*)$,;
+	}
+	$patt = "<([^@>]+@[^@>]+)?>";
+	if ($l->{rest} =~ m,^($patt)\s,) {
+		($l->{sender}, $x, $l->{rest}) = $l->{rest} =~ m,^($patt)\s+(.*)$,;
+	}
+	$l->{code} = "[BlockReport]"	if ($l->{rest} =~ /blocked email report/);
+	$l->{code} = "[Connection]"	if ($l->{rest} =~ /Connection idle for [0-9]+ secs - timeout/);
+	$l->{code} = "[DenyStrict]"	if ($l->{rest} =~ /denied by denySMTPConnections strict:/);
+	$l->{code} = "[SenderBaseErr]"	if ($l->{rest} =~ / Foreign Country/);
+	$l->{code} = "[SpamReport]"	if ($l->{rest} =~ /^(H|Sp)am-Report:|email: (sp|h)amreport/);
+	$l->{code} = "[MaxErrors]"	if ($l->{rest} =~ /max errors \([0-9]+\) exceeded -- dropping connection/);
+	$l->{code} = "[Connection]"	if ($l->{rest} =~ /no recipients left -- dropping connection/);
+	$l->{code} = "[Connection]"	if ($l->{rest} =~ /not delayed /);
+	$l->{code} = "[RWL]"		if ($l->{rest} =~ /Received-RWL: whitelisted from/);
+	$l->{code} = "[Delayed]"	if ($l->{rest} =~ /recipient delayed:/);
+	$l->{code} = "[SPF]"		if ($l->{rest} =~ /Regex:SPFstrict/);
+	$l->{code} = "[SenderBase]"	if ($l->{rest} =~ / Regex:WhiteOrg/);
+	$l->{code} = "[SenderBaseInfo]"	if ($l->{rest} =~ /SenderBase Info/);
+	$l->{code} = "[Connection]"	if ($l->{rest} =~ /\[SMTP Status]/);
+	$l->{code} = "[SenderBase]"	if ($l->{rest} =~ /White Organization\/Domain in SenderBase:/);
+	$l->{code} = "[WhiteAddition]"	if ($l->{rest} =~ /whitelist addition/);
+	$l->{code} = "[WhiteDeletion]"	if ($l->{rest} =~ /whitelist deletion/);
+	if ($l->{code}) {
+		next if ($l->{code} =~ /\[SMTP Error]/);
+		next if ($l->{code} =~ /\[SMTP Reply]/);
+		next if ($l->{code} =~ /\[spam found]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[Attachment]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[Backscatter]/);
+		$l->{color} = $red	if ($l->{code} =~ /\[Bayesian]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BlackDomain]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BlackHELO]/);
+		$l->{color} = $white	if ($l->{code} =~ /\[BlockReport]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BombBlack]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BombData]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BombHeader]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BombRaw]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BombScript]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BombSender]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[BounceAddress]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[Collect]/);
+		$l->{color} = $black	if ($l->{code} =~ /\[Connection]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[CountryCode]/);
+		$l->{color} = $cyan	if ($l->{code} =~ /\[Delayed]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[DenyIP]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[DenyStrict]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[DNSBL]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[Extreme]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[ForgedHELO]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[ForgedLocalSender]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[FromMissing]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[History]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[InternalAddress]/);
+		$l->{color} = $blue	if ($l->{code} =~ /\[InvalidAddress]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[InvalidHELO]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[IPfrequency]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[IPperDomain]/);
+		$l->{color} = $white	if ($l->{code} =~ /\[Local]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[MalformedAddress]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[MaxErrors]/);
+		$l->{color} = $green	if ($l->{code} =~ /\[MessageOK]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[MessageScore]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[MissingMX]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[MsgID]/);
+		$l->{color} = $green	if ($l->{code} =~ /\[NoProcessing]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[Organization]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[OversizedHeader]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[PenaltyBox]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[Penalty]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[PTRinvalid]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[PTRmissing]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[RelayAttempt]/);
+		$l->{color} = $green	if ($l->{code} =~ /\[RWL]/);
+		$l->{color} = $green	if ($l->{code} =~ /\[SenderBase]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[SenderBaseErr]/);
+		$l->{color} = $black	if ($l->{code} =~ /\[SenderBaseInfo]/);
+		$l->{color} = $black	if ($l->{code} =~ /\[SpamReport]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[SPF]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[SpoofedSender]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[SRS]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[SuspiciousHelo]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[Trap]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[URIBL]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[VIRUS]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[ValidHELO]/);
+		$l->{color} = $white	if ($l->{code} =~ /\[WhiteAddition]/);
+		$l->{color} = $white	if ($l->{code} =~ /\[WhiteDeletion]/);
+		$l->{color} = $white	if ($l->{code} =~ /\[Whitelisted]/);
+		$l->{color} = $magenta	if ($l->{code} =~ /\[WhitelistOnly]/);
+		$ipwide-- if ($ipwide == 2 && $lines2 > $lines-1);
+		$ipwide-- if ($ipwide == 1 && $lines1 > $lines-1);
+		if ($l->{cliIP} =~ /:/ && length($l->{cliIP}) > 20) {
+			$ipwide = 2 if ($ipwide < 2);
+			$lines2 = 0;
+		}
+		elsif ($l->{cliIP} =~ /:/) {
+			$ipwide = 1 if ($ipwide < 1);
+			$lines1 = 0;
+		}
+		if ($ipwide == 2) {
+			$cols = $columns - 9 - 1 - 8 - 1 - 39 - 1 - 18 - 1 - 28 - 1;
+			printf "$l->{date} $l->{time} \033[1;$l->{color}m%-39s %-18s %-28.28s %-${cols}.${cols}s\033[0m\n", $l->{cliIP}, $l->{code}, $l->{sender}, $l->{rest};
+		}
+		elsif ($ipwide == 1) {
+			$cols = $columns - 9 - 1 - 8 - 1 - 20 - 1 - 18 - 1 - 28 - 1;
+			printf "$l->{date} $l->{time} \033[1;$l->{color}m%-20s %-18s %-28.28s %-${cols}.${cols}s\033[0m\n", $l->{cliIP}, $l->{code}, $l->{sender}, $l->{rest};
+		}
+		else {
+			$cols = $columns - 9 - 1 - 8 - 1 - 15 - 1 - 18 - 1 - 28 - 1;
+			printf "$l->{date} $l->{time} \033[1;$l->{color}m%-15s %-18s %-28.28s %-${cols}.${cols}s\033[0m\n", $l->{cliIP}, $l->{code}, $l->{sender}, $l->{rest};
+		}
+		$lines1++;
+		$lines2++;
+	}
+	elsif ($l->{rest} =~ /^Admin/) {
+		$l->{color} = $yellow;
+		$cols = $columns - 9 - 1 - 8 - 1;
+		printf "$l->{date} $l->{time} \033[1;$l->{color}m%-${cols}.${cols}s\033[0m\n", $l->{rest};
+		$lines1++;
+		$lines2++;
+	}
+	else {
+		next if ($l->{rest} =~ /converting to SSL$/);
+		next if ($l->{rest} =~ /^found .* in VERIFY-cache$/);
+		next if ($l->{rest} =~ /IP-Score/);
+		next if ($l->{rest} =~ /MessageScore/);
+		next if ($l->{rest} =~ /Name Server .* ResponseTime/);
+		next if ($l->{rest} =~ /New connection on the secure SSL port/);
+		next if ($l->{rest} =~ /\[SMTP Error]/);
+		next if ($l->{rest} =~ /\[SMTP Reply]/);
+		next if ($l->{rest} =~ /\[spam found]/);
+		next if ($l->{rest} =~ /^to: .* found .* in VERIFY-cache$/);
+		next if ($l->{rest} =~ /^VRFY added .* to VRFY-\/LDAPlist$/);
+		$l->{color} = $black;
+		$cols = $columns - 9 - 1 - 8 - 1;
+		printf "$l->{date} $l->{time} \033[1;$l->{color}m%-${cols}.${cols}s\033[0m\n", $l->{rest};
+		$lines1++;
+		$lines2++;
+	}
+}
+
+close(LOG);
+exit(0);

@@ -1,0 +1,41 @@
+--- src/Makefile.orig	Tue May 27 09:13:02 2003
++++ src/Makefile	Wed Mar  3 00:41:50 2004
+@@ -41,12 +41,12 @@
+ binname = upclient
+ 
+ # Uptimes Server
+-uptimes_server = uptimes.wonko.com
++uptimes_server = uptimes.hostingwired.com
+ 
+ OPTIMIZATION_CFLAGS=-O3
+ 
+ # System directories
+-prefix = /usr/local
++prefix = %%PREFIX%%
+ #prefix = /sw
+ #prefix = /opt/${binname}
+ #prefix = /tmp/upclient
+@@ -59,8 +59,8 @@
+ datadir = ${prefix}/share
+ sysconfdir = ${prefix}/etc
+ #sysconfdir = /etc
+-localstatedir = ${prefix}/var
+-#localstatedir = /var
++#localstatedir = ${prefix}/var
++localstatedir = /var
+ destdir=
+ 
+ 
+@@ -90,9 +90,9 @@
+ 
+ ## [x86] FreeBSD (4.7-RC)
+ ## assumes gettext installed in /usr/local
+-#localedir = ${datadir}/locale
+-#LOCALEFLAGS = -DLOCALEPATH=\"$(localedir)\" -I/usr/local/include
+-#LOCALELIBS = -L/usr/local/lib -lintl
++localedir = ${datadir}/locale
++LOCALEFLAGS = -DLOCALEPATH=\"$(localedir)\" -I%%LOCALBASE%%/include
++LOCALELIBS = -L%%LOCALBASE%%/lib -lintl
+ 
+ ## [Sparc - R220] Sun Solaris (5.8)
+ ## not sure whether this locale dir is correct

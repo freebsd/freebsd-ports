@@ -1,0 +1,6 @@
+--- board/emulation/bhyve-arm/Makefile.orig	2023-11-01 18:14:48 UTC
++++ board/emulation/bhyve-arm/Makefile
+@@ -0,0 +1,3 @@
++# SPDX-License-Identifier: GPL-2.0+
++
++obj-y	+= bhyve-arm.o

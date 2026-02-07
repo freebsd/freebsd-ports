@@ -1,0 +1,38 @@
+--- configure.ac.orig	2024-07-10 10:13:59.977549000 +0000
++++ configure.ac	2024-07-10 10:15:44.659810000 +0000
+@@ -165,7 +165,7 @@
+     AC_COMPILE_IFELSE([AC_LANG_SOURCE(
+     [
+     #include <clamav.h>
+-    int main(int argc, char *argv[])
++    int main(int argc, char **argv)
+     {
+       struct cl_engine node; node.refcount=1;
+      }
+@@ -181,7 +181,7 @@
+     AC_COMPILE_IFELSE([AC_LANG_SOURCE(
+     [
+     #include <clamav.h>
+-    int main(int argc, cgar *argv[])
++    int main(int argc, char **argv)
+     {
+       struct cl_limits limits;
+       limits.maxratio=200;
+@@ -201,7 +201,7 @@
+     AC_COMPILE_IFELSE([AC_LANG_SOURCE(
+     [
+     #include <clamav.h>
+-    int main(int argc, char *argv[])
++    int main(int argc, char **argv)
+     {
+        struct cl_limits limits;
+     }
+@@ -221,7 +221,7 @@
+     AC_COMPILE_IFELSE([AC_LANG_SOURCE(
+     [
+     #include <clamav.h>
+-    int main(int argc, char *argv[])
++    int main(int argc, char **argv)
+     {
+        struct cl_scan_options CLAMSCAN_OPTIONS = { 0, 0, 0, 0, 0 };
+     }

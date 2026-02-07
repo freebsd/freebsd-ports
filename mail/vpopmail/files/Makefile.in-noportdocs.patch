@@ -1,0 +1,32 @@
+Description: Do not install the documentation files.
+ Only applied if NOPORTDOCS is defined during the port's build.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-09-13
+
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -1158,7 +1158,7 @@
+ 	@echo ""                                                                                                                                                                     
+ 
+ install-exec-am:
+-	for d in bin doc etc include lib ; do \
++	for d in bin etc include lib ; do \
+ 	  if test ! -d $(DESTDIR)@vpopmaildir@/$$d; then \
+ 	    $(INSTALL) -d -g @vpopgroup@ -m 0755 -o @vpopuser@ \
+ 	      $(DESTDIR)@vpopmaildir@/$$d ; \
+@@ -1220,14 +1220,6 @@
+ 		$(DESTDIR)@vpopmaildir@/include/ ; \
+ 	done
+ 
+-	$(INSTALL) -d $(DESTDIR)@vpopmaildir@/doc/man_html
+-	$(INSTALL) -d $(DESTDIR)@vpopmaildir@/doc/doc_html
+-	$(INSTALL) -o @vpopuser@ -m 0444 -g @vpopgroup@ \
+-	  doc/man_html/*.* $(DESTDIR)@vpopmaildir@/doc/man_html/
+-
+-	$(INSTALL) -o @vpopuser@ -m 0444 -g @vpopgroup@ \
+-	  doc/doc_html/*.* $(DESTDIR)@vpopmaildir@/doc/doc_html/
+-
+ fix-priv:
+ 	if test -r $(MYSQLCONF); then \
+ 	  chown @vpopuser@  $(MYSQLCONF) ; \

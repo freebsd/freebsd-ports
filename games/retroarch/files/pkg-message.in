@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+RetroArch supports multiple backends for input devices like gamepads:
+
+- Kernel driver (iichid): The functionality previously provided
+  by the sysutils/iichid port is now integrated into the FreeBSD
+  base system. For more details, consult the iichid(4) man page.
+  Users may need to adjust access permissions on the appropriate
+  /dev/input/eventN device for their user account to use gamepads.
+- SDL2, which uses userspace raw USB HID access
+  (you have to grant access permissions on the appropriate
+   /dev/uhidN device to your user account)
+EOM
+}
+]

@@ -1,0 +1,13 @@
+--- configure.ac.orig	2023-07-30 14:56:15 UTC
++++ configure.ac
+@@ -109,8 +109,8 @@ AS_IF(
+              ]
+        )
+ 
+-       AC_SUBST([MFLAGS], ["-mfpmath=sse -msse2"])
+-       AC_SUBST([AVX2FLAGS], ["-mavx2 -mfma -mtune=haswell"])
++       AC_SUBST([MFLAGS], [""])
++       AC_SUBST([AVX2FLAGS], [""])
+       ]
+ )
+ 

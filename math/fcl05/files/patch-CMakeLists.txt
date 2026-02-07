@@ -1,0 +1,44 @@
+--- CMakeLists.txt.orig	2016-07-20 03:11:04 UTC
++++ CMakeLists.txt
+@@ -7,7 +7,7 @@ if(POLICY CMP0042)
+   cmake_policy(SET CMP0042 NEW)
+ endif()
+ 
+-project(fcl CXX C)
++project(fcl05 CXX C)
+ 
+ # set the default build type
+ if (NOT CMAKE_BUILD_TYPE)
+@@ -33,12 +33,14 @@ if(MSVC OR MSVC90 OR MSVC10)
+     set(MSVC ON)
+ endif (MSVC OR MSVC90 OR MSVC10)
+ 
+-set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
++set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/fcl/lib)
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules")
+ include(CompilerSettings)
+ include(FCLVersion)
+ include(GNUInstallDirs)
+ 
++set(CMAKE_INSTALL_INCLUDEDIR "include/fcl05")
++
+ if(MSVC OR IS_ICPC)
+   option(FCL_STATIC_LIBRARY "Whether the FCL library should be static rather than shared" ON)
+ else()
+@@ -143,7 +145,7 @@ add_subdirectory(include/fcl)
+ add_subdirectory(src)
+ 
+ set(pkg_conf_file_in "${CMAKE_CURRENT_SOURCE_DIR}/fcl.pc.in")
+-set(pkg_conf_file_out "${CMAKE_CURRENT_BINARY_DIR}/fcl.pc")
++set(pkg_conf_file_out "${CMAKE_CURRENT_BINARY_DIR}/fcl05.pc")
+ if(NOT MSVC)
+     set(PKG_CFLAGS "-std=c++11")
+ endif()
+@@ -154,6 +156,7 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL
+   PATTERN ".DS_Store" EXCLUDE
+ )
+ 
++SET(CMAKE_INSTALL_LIBDIR "libdata")
+ install(FILES "${pkg_conf_file_out}" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig/ COMPONENT pkgconfig)
+ 
+ # Add uninstall target

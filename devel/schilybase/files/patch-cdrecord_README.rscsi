@@ -1,0 +1,36 @@
+--- cdrecord/README.rscsi.orig	2004-05-19 14:12:05 UTC
++++ cdrecord/README.rscsi
+@@ -18,24 +18,21 @@ There are three possible ways to control access to the
+ 		NOTE: In this case, rscsi must be installed suid root. 
+ 		**** This is the preferred method ****
+ 
++		The FreeBSD port automatically installs the rscsi binary suid
++		root and creates the user "rscsi".
++
+ To enable remote SCSI via the login shell method you should do the following:
+ 
+-	-	Add an entry to /etc/passwd in the form:
++	-	Make sure that there is an entry for rshd(8) in /etc/inetd.conf
++		and inetd(8) is running.
+ 
+-		rscsi:x:1999:1000:Tape:/export/home/rscsi:/opt/schily/sbin/rscsi
++	-	Edit /usr/local/rscsi/.rhosts to allow access to all users you
++		like.
+ 
+-		(modify this according to your OS). And don't forget to
+-		modify /etc/shadow the way it needs to be on your OS.
+-
+-	-	Create a  home directory for this user and add a .rhosts file
+-		to allow access to all users you like.
+-
+-	-	Install rscsi suid root into /opt/schily/sbin
+-
+-	-	Install a file /etc/default/rscsi and define access rights.
++	-	Edit /usr/local/etc/rscsi and define access rights.
+ 		Without this file, rscsi will not work at all.
+ 
+-		The template for this file is: rscsi/rscsi.dfl
++		The template for this file is: /usr/local/etc/rscsi.sample
+ 
+ RSCSI Security:
+ 

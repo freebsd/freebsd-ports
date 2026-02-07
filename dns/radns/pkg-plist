@@ -1,0 +1,5 @@
+bin/radns
+etc/radns/dhclient-exit-hooks
+etc/radns/radns-script
+share/man/man8/radns.8.gz
+@dir(radns,radns,) etc/radns

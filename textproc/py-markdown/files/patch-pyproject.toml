@@ -1,0 +1,25 @@
+--- pyproject.toml.orig	2025-11-03 19:50:58 UTC
++++ pyproject.toml
+@@ -1,10 +1,10 @@
+ [build-system]
+ # Minimum requirements for the build system to execute.
+-requires = ["setuptools>=77.0"]
++requires = ["setuptools>=61.2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = 'Markdown'
++name = 'markdown'
+ dynamic = ['version']
+ description = "Python implementation of John Gruber's Markdown."
+ readme = {file = 'README.md', content-type='text/markdown'}
+@@ -17,8 +17,7 @@ maintainers = [
+     {name = 'Waylan Limberg', email = 'python.markdown@gmail.com'},
+     {name = 'Isaac Muse'}
+ ]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.md"]
++license = {file = 'LICENSE.md'}
+ requires-python = '>=3.10'
+ keywords = ['markdown', 'markdown-parser', 'python-markdown', 'markdown-to-html']
+ classifiers = [

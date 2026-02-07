@@ -1,0 +1,10 @@
+Chafa is a command-line utility that converts all kinds of images, including
+animated GIFs, into sixel or ANSI/Unicode character output that can be displayed
+in a terminal.
+
+It is highly configurable, with support for alpha transparency and multiple
+color modes and color spaces, combining selectable ranges of Unicode characters
+to produce the desired output.
+
+The core functionality is provided by a C library with a public, well-documented
+API.

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Devel/Symdump.pm
+%%SITE_PERL%%/Devel/Symdump/Export.pm
+%%PERL5_MAN3%%/Devel::Symdump.3.gz

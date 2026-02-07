@@ -1,0 +1,4 @@
+bin/vboxtool
+etc/rc.d/vboxtoolinit
+@sample etc/vboxtool/machines.conf.sample
+@sample etc/vboxtool/vboxtool.conf.sample

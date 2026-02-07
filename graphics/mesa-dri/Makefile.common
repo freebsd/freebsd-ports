@@ -1,0 +1,83 @@
+# Makefile.common - shared code between MesaLib ports.
+#
+# !!! Here be dragons !!! (they seem to be everywhere these days)
+#
+# Remember to upgrade the following ports everytime you bump MESAVERSION:
+#
+#    - graphics/libosmesa
+#    - graphics/mesa-dri
+#    - graphics/mesa-libs
+#    - lang/clover
+
+MESAVERSION=	24.1.7
+
+MASTER_SITES=	https://mesa.freedesktop.org/archive/
+
+DISTFILES=	mesa-${MESAVERSION}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://gitlab.freedesktop.org/mesa/mesa/-/commit/
+PATCHFILES+=	4a253aae7ca437201d2a31d2a11a1a5434fe41f1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26284
+PATCHFILES+=	5a9c052ba78e5d1b0020b8f8320d211d2205a958.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/29993
+PATCHFILES+=	5d48fb19553c15bbbac498afcb7cc8710a803716.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31931
+PATCHFILES+=	fa9cd89a85b904615ebc11da609445b5b751e68d.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31533
+
+MAINTAINER=	x11@FreeBSD.org
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/docs/license.rst
+
+COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
+
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+.if ${COMPONENT} != clover
+.if ${PORT_OPTIONS:MX11}
+USES+=	xorg
+.endif
+.endif
+
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm
+.if ${COMPONENT} != osmesa
+LIB_DEPENDS+=	libexpat.so:textproc/expat2
+.endif
+
+USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
+		python:build shebangfix tar:xz
+
+# only have one port to check with portscout.
+.if ${PORTNAME} != mesa-dri
+PORTSCOUT=	ignore:1
+.endif
+
+MASTERDIR=	${.CURDIR:H:H}/graphics/mesa-dri
+PATCHDIR=	${MASTERDIR}/files
+WRKSRC=		${WRKDIR}/mesa-${MESAVERSION}
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
+PKGHELP=	${.CURDIR}/pkg-help
+PKGINSTALL=	${.CURDIR}/pkg-install
+PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
+
+.include <bsd.port.pre.mk>
+
+BINARY_ALIAS+=	python3=${PYTHON_VERSION}
+
+CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG}
+
+# Deal with unclean env if the user have elfutils installed
+# and build the port directly without poudriere
+.if exists(${LOCALBASE}/include/libelf.h)
+LIB_DEPENDS+=	libelf.so:devel/elfutils
+MESON_ARGS+=	-Dlibelf=enabled
+.else
+MESON_ARGS+=	-Dlibelf=disabled
+.endif
+
+# Some symbols in mesa's linker version scripts are not always defined,
+# depending on configuration options. Suppress errors with lld >= 17 due to
+# these undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
+
+LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_VERSION}/lib
+MESON_ARGS+=	-Dllvm=enabled \
+		-Dlibunwind=disabled

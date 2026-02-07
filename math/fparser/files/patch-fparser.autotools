@@ -1,0 +1,58 @@
+- same as https://src.fedoraproject.org/rpms/fparser/blob/f26/f/fparser.autotools.patch
+
+diff -urN configure.ac configure.ac
+--- configure.ac	1970-01-01 01:00:00.000000000 +0100
++++ configure.ac	2014-03-20 09:20:12.990327023 +0100
+@@ -0,0 +1,17 @@
++AC_INIT([fparser], [4.5.2])
++AC_CONFIG_SRCDIR([fparser.cc])
++AM_INIT_AUTOMAKE([foreign])
++AC_CONFIG_MACRO_DIR([m4])
++
++LIBVERSION=4.5
++AC_SUBST(LIBVERSION)
++
++AC_PROG_CXX
++AC_LANG_CPLUSPLUS
++
++AM_DISABLE_STATIC
++AM_PROG_LIBTOOL
++
++AC_SUBST(CXXFLAGS)
++
++AC_OUTPUT(Makefile fparser.pc)
+diff -urN fparser.pc.in fparser.pc.in
+--- fparser.pc.in	1970-01-01 01:00:00.000000000 +0100
++++ fparser.pc.in	2014-03-19 12:05:50.000000000 +0100
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: @PACKAGE_NAME@
++Description: Function parser library for C++
++Version: @PACKAGE_VERSION@
++Libs: -L${libdir} -lfparser
++Cflags: -I${includedir}
+diff -urN Makefile.am Makefile.am
+--- Makefile.am	1970-01-01 01:00:00.000000000 +0100
++++ Makefile.am	2014-04-16 18:50:09.645424287 +0200
+@@ -0,0 +1,17 @@
++fparserincludedir = $(includedir)/fparser
++fparserinclude_HEADERS = \
++fparser.hh \
++fpconfig.hh \
++extrasrc/fptypes.hh \
++extrasrc/fpaux.hh
++
++lib_LTLIBRARIES = libfparser.la
++
++libfparser_la_LDFLAGS = -release @LIBVERSION@
++
++libfparser_la_SOURCES = \
++fparser.cc \
++fpoptimizer.cc
++
++pkgconfigdir = $(libdir)/pkgconfig
++pkgconfig_DATA = fparser.pc

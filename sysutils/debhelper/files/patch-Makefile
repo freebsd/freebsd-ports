@@ -1,0 +1,55 @@
+--- Makefile.orig	2020-05-17 09:32:16 UTC
++++ Makefile
+@@ -3,7 +3,7 @@ PO4A ?= po4a
+ POD2MAN ?= pod2man
+ 
+ # List of files of dh_* commands. Sorted for debhelper man page.
+-COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | grep -v '~$$' | LC_ALL=C sort)
++COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | grep -v '~$$' | cut -c3- | LC_ALL=C sort)
+ MANPAGES=$(COMMANDS:=.1) dh.1
+ 
+ # Find deprecated commands by looking at their synopsis.
+@@ -16,7 +16,7 @@ else
+ endif
+ 
+ # Figure out the `current debhelper version.
+-VERSION=$(shell dpkg-parsechangelog -SVersion)
++#VERSION=$(shell dpkg-parsechangelog -SVersion)
+ 
+ # This generates a list of synopses of debhelper commands, and substitutes
+ # it in to the #LIST# line on the man page fed to it on stdin. Must be passed
+@@ -118,23 +118,21 @@ endif
+ 	done;
+ 
+ install:
+-	install -d $(DESTDIR)$(PREFIX)/bin \
+-		$(DESTDIR)$(PREFIX)/share/debhelper/autoscripts \
+-		$(DESTDIR)$(PERLLIBDIR)/Sequence \
+-		$(DESTDIR)$(PERLLIBDIR)/Buildsystem \
+-		$(DESTDIR)$(PERLLIBDIR)/DH
++	install -d \
++		$(DESTDIR)${SITE_PERL}/Debian/Debhelper/Sequence \
++		$(DESTDIR)${SITE_PERL}/Debian/Debhelper/Buildsystem \
++		$(DESTDIR)${SITE_PERL}/DH
+ 	install dh $(COMMANDS) $(DESTDIR)$(PREFIX)/bin
+-	install -m 0644 autoscripts/* $(DESTDIR)$(PREFIX)/share/debhelper/autoscripts
+-	install -m 0644 lib/Debian/Debhelper/*.pm $(DESTDIR)$(PERLLIBDIR)
++	install -m 0644 autoscripts/* $(DESTDIR)$(PREFIX)/bin
++	install -m 0644 lib/Debian/Debhelper/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper
+ 	[ "$(PREFIX)" = /usr ] || \
+-		sed -i '/$$prefix=/s@/usr@$(PREFIX)@g' $(DESTDIR)$(PERLLIBDIR)/Dh_Lib.pm
++		sed -i '' '/$$prefix=/s@/usr@$(PREFIX)@g' $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Dh_Lib.pm
+ 	if [ "$(VERSION)" ]; then \
+-		MV=$$(echo "$(VERSION)" | $(PERL) -ne 'print $$1 if /^(\d+)[~.]/;') ; \
+-		sed -i "/constant HIGHEST_STABLE_COMPAT_LEVEL =>/s@=>.*;@=> $${MV};@g" $(DESTDIR)$(PERLLIBDIR)/Dh_Lib.pm ; \
++		sed -i '' "/constant HIGHEST_STABLE_COMPAT_LEVEL =>/s@=>.*;@=> $${VERSION};@g" $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Dh_Lib.pm ; \
+ 	fi
+-	install -m 0644 lib/Debian/Debhelper/Sequence/*.pm $(DESTDIR)$(PERLLIBDIR)/Sequence
+-	install -m 0644 lib/Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)$(PERLLIBDIR)/Buildsystem
+-	install -m 0644 lib/Debian/Debhelper/DH/*.pm $(DESTDIR)$(PERLLIBDIR)/DH
++	install -m 0644 lib/Debian/Debhelper/Sequence/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Sequence
++	install -m 0644 lib/Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Buildsystem
++	install -m 0644 lib/Debian/Debhelper/DH/*.pm $(DESTDIR)${SITE_PERL}/DH
+ 
+ test: version
+ 	MAKEFLAGS= HARNESS_OPTIONS=j$(TEST_JOBS) ./run perl -MTest::Harness -e 'runtests grep { ! /CVS/ && ! /\.svn/ && -f && -x && m/\.t$$/ } @ARGV' t/* t/*/*

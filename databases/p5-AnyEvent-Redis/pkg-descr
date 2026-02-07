@@ -1,0 +1,1 @@
+AnyEvent::Redis is a non-blocking (event-driven) Redis client.

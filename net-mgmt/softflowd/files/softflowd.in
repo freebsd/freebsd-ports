@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# (c) 2010 Tom Judge
+
+# PROVIDE: softflowd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# softflowd_enable="YES"
+# softflowd_interfaces="em0 em1"
+# softflowd_em0_collector="collector:1234"
+# softflowd_em1_collector="collector:1235"
+# softflowd_em0_timeouts="-t maxlife=300"
+# softflowd_em1_timeouts="-t maxlife=600"
+# softflowd_em0_max_states="16000"
+# softflowd_em1_max_states="17000"
+# softflowd_em0_extra_args
+# softflowd_em1_extra_args
+
+. /etc/rc.subr
+
+name=softflowd
+rcvar=softflowd_enable
+
+start_precmd="softflowd_precommand $@"
+stop_precmd="softflowd_precommand $@"
+status_precmd="softflowd_precommand $@"
+poll_precmd="softflowd_precommand $@"
+rcvar_precmd="softflowd_precommand $@"
+stop_cmd="softflowd_stop"
+command="%%PREFIX%%/bin/softflowd"
+_pidprefix="/var/run/softflowd"
+if [ -n $2 ]; then
+    pidfile="${_pidprefix}.${2}.pid"
+fi
+
+load_rc_config $name
+
+softflowd_enable=${softflowd_enable:-"NO"}
+softflowd_timeouts="-t maxlife=300"
+softflowd_max_states="16000"
+
+softflowd_precommand ()
+{
+	if [ -n "$2" ]; then
+		profile="$2"
+		ctlfile="${_pidprefix}.${profile}.ctl"
+		eval apache22_flags="\${apache22_${profile}_flags:-${apache22_flags}}"
+		eval softflowd_collector="\${softflowd_${profile}_collector}"
+		if [ "x${softflowd_collector}" = "x" ]; then
+			echo "ERROR: You must specify a collector to send data to."
+			exit 1
+		fi
+		eval softflowd_timeouts="\${softflowd_${profile}_timeouts:-${softflowd_timeouts}}"
+		eval softflowd_max_states="\${softflowd_${profile}_max_states:-${softflowd_max_states}}"
+		eval softflowd_extra_args="\${softflowd_${profile}_extra_args:-${softflowd_extra_args}}"
+		command_args="-i ${profile} -n ${softflowd_collector} -m ${softflowd_max_states} -p ${pidfile} -c ${ctlfile} ${softflowd_timeouts} ${softflowd_extra_args}"
+	else
+		if [ "x${softflowd_interfaces}" != "x" ]; then
+			for profile in ${softflowd_interfaces}; do
+				echo "===> softflowd profile: ${profile}"
+				%%PREFIX%%/etc/rc.d/softflowd $1 ${profile}
+				retcode="$?"
+				if [ "0${retcode}" -ne 0 ]; then
+					failed="${profile} (${retcode}) ${failed:-}"
+				else
+					success="${profile} ${success:-}"
+				fi
+			done
+		fi
+        exit 0
+	fi
+}
+
+softflowd_stop()
+{
+	%%PREFIX%%/bin/softflowctl -c ${ctlfile} shutdown
+}
+
+run_rc_command "$1"

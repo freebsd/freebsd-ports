@@ -1,0 +1,19 @@
+--- configure.orig	2019-05-28 19:31:20 UTC
++++ configure
+@@ -11927,7 +11927,7 @@ if test -z "$GCC"; then
+ 		;;
+         esac
+ else
+-        XIPH_CFLAGS="-Wall -ffast-math -fsigned-char"
++        XIPH_CFLAGS="-Wall -fsigned-char"
+ 
+ $as_echo "#define _GNU_SOURCE /**/" >>confdefs.h
+ 
+@@ -14923,7 +14923,6 @@ EOF
+ done
+ XIPH_LIBS="$xt_filtered $XIPH_LIBS"
+ 
+-    SHOUT_REQUIRES="$SHOUT_REQUIRES, libssl"
+     SHOUT_TLS="1"
+ 
+ else

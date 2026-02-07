@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Devel/Events/Generator/Objects.pm
+%%SITE_PERL%%/Devel/Events/Handler/ObjectTracker.pm
+%%SITE_PERL%%/Devel/Events/Objects.pm
+%%PERL5_MAN3%%/Devel::Events::Generator::Objects.3.gz
+%%PERL5_MAN3%%/Devel::Events::Handler::ObjectTracker.3.gz
+%%PERL5_MAN3%%/Devel::Events::Objects.3.gz

@@ -1,0 +1,8 @@
+--- zlib-hc/Makefile.orig	2025-09-12 01:19:05 UTC
++++ zlib-hc/Makefile
+@@ -1,4 +1,4 @@
+-CXX=g++
++CXX?=	g++
+ 
+ LIBOBJ =  \
+ 	adler32.o \

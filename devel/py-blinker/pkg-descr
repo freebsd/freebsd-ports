@@ -1,0 +1,12 @@
+Blinker provides fast & simple object-to-object and broadcast signaling for
+Python objects.
+
+The core of Blinker is quite small but provides powerful features:
+- a global registry of named signals
+- anonymous signals
+- custom name registries
+- permanently or temporarily connected receivers
+- automatically disconnected receivers via weak referencing
+- sending arbitrary data payloads
+- collecting return values from signal receivers
+- thread safety

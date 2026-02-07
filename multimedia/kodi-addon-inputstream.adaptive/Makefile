@@ -1,0 +1,27 @@
+PORTNAME=	inputstream.adaptive
+DISTVERSION=	22.3.6
+DISTVERSIONSUFFIX=	-Piers
+CATEGORIES=	multimedia
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	decke@FreeBSD.org
+COMMENT=	Adaptive stream support for Kodi
+WWW=		https://github.com/xbmc/inputstream.adaptive
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BUILD_DEPENDS=	googletest>0:devel/googletest \
+		nlohmann-json>0:devel/nlohmann-json
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpugixml.so:textproc/pugixml
+
+USES=		cmake compiler:c++14-lang kodi
+USE_GITHUB=	yes
+GH_ACCOUNT=	xbmc xbmc:bento4
+GH_PROJECT=	Bento4:bento4
+GH_TAGNAME=	1.6.0-641-5-Piers:bento4
+
+CMAKE_ARGS+=	-DENABLE_INTERNAL_BENTO4:BOOL=ON -DBENTO4_URL=${DISTDIR}/${DISTFILE_bento4}
+
+.include <bsd.port.mk>

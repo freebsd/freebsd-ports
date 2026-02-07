@@ -1,0 +1,11 @@
+--- Makefile.orig	2023-01-21 21:59:18 UTC
++++ Makefile
+@@ -61,7 +61,7 @@ ifneq (,$(findstring Darwin,$(shell uname)))
+ endif
+ 
+ BITS := 32
+-ARCH ?= $(shell uname -m)
++ARCH ?= $(shell uname -p)
+ ifneq (,$(findstring $(ARCH), x86_64 amd64))
+   BITS := 64
+   ifeq (1, $(SSE_AVX2))

@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+OpenXcom requires original UFO: Enemy Unknown / X-Com: UFO Defense
+data files. Please copy all subfolders from original game into
+%%DATADIR%%/data directory.
+
+Also note that if you get messages like "GMDEFENT NOT FOUND" or
+"INVALID CHRYS.PCK", you need to patch your UFO date to the latest
+version. See section `Data Patch' of
+
+  http://openxcom.org/index.php/downloads-extras/
+
+for details.
+EOM
+}
+]

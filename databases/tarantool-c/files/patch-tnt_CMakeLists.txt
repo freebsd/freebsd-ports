@@ -1,0 +1,15 @@
+--- tnt/CMakeLists.txt.orig	2019-06-14 13:13:47 UTC
++++ tnt/CMakeLists.txt
+@@ -49,8 +49,10 @@ set (TNT_SOURCES
+ # Builds
+ #----------------------------------------------------------------------------#
+ 
+-set_source_files_properties(${PROJECT_SOURCE_DIR}/third_party/uri.c PROPERTIES
+-    COMPILE_FLAGS "-Wno-implicit-fallthrough")
++if(CMAKE_COMPILER_IS_CLANG AND NOT CMAKE_COMPILER_IS_GNUCC)
++    set_source_files_properties(${PROJECT_SOURCE_DIR}/third_party/uri.c PROPERTIES
++        COMPILE_FLAGS "-Wno-implicit-fallthrough")
++endif()
+ 
+ ## Static library
+ project(tnt)

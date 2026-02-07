@@ -1,0 +1,1 @@
+(load "%%PREFIX%%/etc/cl-freebsd-asdf-init.lisp")

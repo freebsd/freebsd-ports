@@ -1,0 +1,48 @@
+--- ./kWnn/jserver/Makefile.in.orig	2004-05-22 01:39:32.000000000 +0900
++++ ./kWnn/jserver/Makefile.in	2014-09-10 01:31:51.000000000 +0900
+@@ -38,7 +38,6 @@
+  JSERVERDEFINES = -DJSERVER -DWRITE_CHECK
+        INCLUDES = -I$(KWNNJSERVERSRC) -I$(KWNNINCLUDESRC) -I$(top_builddir)
+         DEFINES = $(KWNNDEFINES) $(JSERVERDEFINES) $(WNNTERM) $(KWNNLANGDEF)
+-LOCAL_INSTFLAGS = $(INSTUIDFLAGS) -o $(WNNOWNER)
+   SERVERINITDEF = -DSERVER_INIT_FILE=\"/$(KWNNLANG)/kserverrc\"
+     HINSIDEFINE = -DHINSIDATA_FILE=\"/$(KWNNLANG)/hinsi.data\"
+         WRAPLIB = @WRAPLIB@
+@@ -80,13 +79,17 @@
+ OBJ20= getopt.o
+ SRC21= $(KWNNETCSRC)/getopt1.c
+ OBJ21= getopt1.o
++SRC22= $(KWNNETCSRC)/fake-rfc2553.c
++OBJ22= fake-rfc2553.o
+ OBJSUPPORT = @JS_SUPPORTOBJS@
+ 
+ SRCS= $(SRC0) $(SRC1) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRCGETHINSI) \
+-    $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRCS14) $(SRC20) $(SRC21)
++    $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRCS14) $(SRC20) $(SRC21) \
++	$(SRC22)
+ 
+ OBJS= $(OBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJGETHINSI) \
+     $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14) $(OBJ20) $(OBJ21) \
++	$(OBJ22) \
+     $(OBJSUPPORT)
+ 
+ all:: $(HDRS) $(SRC0) $(SRC1) kserver
+@@ -105,7 +108,7 @@
+ install:: kserver
+ 	@if [ -d $(DESTDIR)$(KWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(KWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) kserver $(DESTDIR)$(KWNNBINDIR)/kserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) kserver $(DESTDIR)$(KWNNBINDIR)/kserver
+ 
+ includes:: $(HDRS) $(SRC0) $(SRC1)
+ 
+@@ -572,6 +575,9 @@
+ $(OBJ21) : $(SRC21) $(KWNNINCLUDESRC)/getopt.h
+ 	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
++$(OBJ22) : $(SRC22)
++	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++
+ mkdir.o : $(WNNETCSRC)/mkdir.c
+ 	$(CC) -c $(CFLAGS)  $?
+ 

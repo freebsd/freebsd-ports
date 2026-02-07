@@ -1,0 +1,21 @@
+--- configure.in.orig	2001-03-10 14:32:29 UTC
++++ configure.in
+@@ -213,13 +213,15 @@ dnl	This needs to be done after the X an
+ dnl	the libplot from GNU plotutils sometimes requires linking the
+ dnl	X and Motif libraries
+ dnl
+-AC_CHECK_LIB(plot, pl_openpl_r,
++if test "$with_motif" = "yes"; then
++  AC_CHECK_LIB(plot, pl_openpl_r,
+ 	AC_DEFINE(HAVE_LIBPLOT)
+ 	LIBS="$LIBS -lplot")
+ 
+-AC_CHECK_LIB(sciplot, sp_begin_plot)
+-if test x$ac_cv_lib_sciplot_sp_begin_plot = xyes; then
++  AC_CHECK_LIB(sciplot, sp_begin_plot)
++    if test x$ac_cv_lib_sciplot_sp_begin_plot = xyes; then
+ 	AC_DEFINE(HAVE_LIBSCIPLOT)
++    fi
+ fi
+ 
+ dnl Checks for Guile

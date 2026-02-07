@@ -1,0 +1,17 @@
+--- vgauth/service/Makefile.am.orig	2025-06-19 04:05:18 UTC
++++ vgauth/service/Makefile.am
+@@ -45,7 +45,7 @@ VGAuthService_SOURCES += ../common/VGAuthUtil.c
+ VGAuthService_SOURCES += ../common/vmxlog.c
+ VGAuthService_SOURCES += ../common/vmxrpc.c
+ 
+-VGAuthServicedir = /etc/vmware-tools/vgauth/schemas
++VGAuthServicedir = %%PREFIX%%/etc/vmware-tools/vgauth/schemas
+ VGAuthService_SCRIPTS =
+ VGAuthService_SCRIPTS += ../serviceImpl/schemas/datatypes.dtd
+ VGAuthService_SCRIPTS += ../serviceImpl/schemas/saml-schema-assertion-2.0.xsd
+@@ -93,4 +93,4 @@ VGAuthMsgDir = $(datadir)/open-vm-tools
+ install-data-hook:
+ 	@INSTVMSG@ VGAuthService $(srcdir)/l10n $(DESTDIR)$(datadir)
+ 	cat vgauth.conf | sed -e"s!@@VGAUTHSCHEMADIR@@!$(VGAuthServicedir)!" \
+-                   |  sed -e"s!@@VGAUTHMSGDIR@@!$(VGAuthMsgDir)!" > $(DESTDIR)/etc/vmware-tools/vgauth.conf
++                   |  sed -e"s!@@VGAUTHMSGDIR@@!$(VGAuthMsgDir)!" > $(DESTDIR)%%PREFIX%%/etc/vmware-tools/vgauth.conf

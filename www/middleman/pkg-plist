@@ -1,0 +1,7 @@
+bin/mman
+@sample etc/rc.d/mman.sh.sample
+@sample etc/mman.xml.sample
+share/man/man8/mman.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/filter.pl
+@dir %%MMAN_CACHE%%

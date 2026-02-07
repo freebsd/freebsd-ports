@@ -1,0 +1,27 @@
+--- configure.ac.orig	2014-10-01 14:43:09 UTC
++++ configure.ac
+@@ -19,15 +19,9 @@ GETTEXT_PACKAGE=parcellite
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [gettext package])
+ 
+-ALL_LINGUAS="ca cs da de es fr hu it ja nb pl pl_PL pt_BR ro ru sv tr zh_CN"
+-AM_GLIB_GNU_GETTEXT()
+-AC_PROG_INTLTOOL([0.23])
+-
+ parcellitelocaledir='${prefix}/${DATADIRNAME}/locale'
+ AC_SUBST(parcellitelocaledir)
+ 
+-AM_GNU_GETTEXT([external])
+-
+ # -------------------------------------------------------------------------------
+ # Main settings.
+ # -------------------------------------------------------------------------------
+@@ -104,7 +98,7 @@ AC_CHECK_LIB([$gtk_libs],gtk_status_icon
+ # -------------------------------------------------------------------------------
+ # Checks for header files.
+ # -------------------------------------------------------------------------------
+-AC_CHECK_HEADERS([stdlib.h string.h pthread.h libintl.h])
++AC_CHECK_HEADERS([stdlib.h string.h pthread.h])
+ 
+ # -------------------------------------------------------------------------------
+ # Checks for typedefs, structures, and compiler characteristics.

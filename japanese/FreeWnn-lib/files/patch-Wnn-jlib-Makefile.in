@@ -1,0 +1,36 @@
+Index: Wnn/jlib/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/Wnn/jlib/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- Wnn/jlib/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jlib/Makefile.in	2 Jan 2009 21:09:34 -0000	1.2
+@@ -62,13 +62,15 @@ SRC8= $(WNNETCSRC)/bcopy.c
+ OBJ8= bcopy.o
+ SRC9= $(WNNETCSRC)/mkdir.c
+ OBJ9= mkdir.o
++SRC10= $(WNNETCSRC)/fake-rfc2553.c
++OBJ10= fake-rfc2553.o
+ 
+ LOCAL_RKSRCS= $(WNNROMKANSRC)/rk_bltinfn.c 	$(WNNROMKANSRC)/rk_main.c 	$(WNNROMKANSRC)/rk_modread.c 	$(WNNROMKANSRC)/rk_read.c 	$(WNNROMKANSRC)/rk_vars.c
+ 
+ LOCAL_RKOBJS= $(WNNROMKANOBJ)/rk_bltinfn.o 	$(WNNROMKANOBJ)/rk_main.o 	$(WNNROMKANOBJ)/rk_modread.o 	$(WNNROMKANOBJ)/rk_read.o 	$(WNNROMKANOBJ)/rk_vars.o
+ 
+-LOCAL_ETCSRCS = $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8) $(SRC9)
+-LOCAL_ETCOBJS = $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8) $(OBJ9)
++LOCAL_ETCSRCS = $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8) $(SRC9) $(SRC10)
++LOCAL_ETCOBJS = $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8) $(OBJ9) $(OBJ10)
+ SRCS= $(SRC1) $(LOCAL_ETCSRCS)
+ OBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
+ 
+@@ -137,6 +139,9 @@ $(OBJ8) : $(SRC8)
+ $(OBJ9) : $(SRC9)
+ 	$(LT_CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
+ 
++$(OBJ10) : $(SRC10)
++	$(LT_CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
++
+ $(LOCAL_RKOBJS) : $(LOCAL_RKSRCS)
+ 	@case '${MFLAGS}' in *[ik]*) set +e;; esac; \
+ 	cd $(WNNROMKANOBJ); \

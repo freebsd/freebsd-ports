@@ -1,0 +1,43 @@
+--- configure.orig	2015-07-23 18:22:50 UTC
++++ configure
+@@ -12,6 +12,8 @@
+ ## M4sh Initialization. ##
+ ## -------------------- ##
+ 
++HOME=/dev/null
++
+ # Be more Bourne compatible
+ DUALCASE=1; export DUALCASE # for MKS sh
+ if test -n "${ZSH_VERSION+set}" && (emulate sh) >/dev/null 2>&1; then :
+@@ -17167,8 +17167,22 @@ else
+   enable_lzma="yes"
+ fi
+
++# any armv6/7 platform has to have this one defined.
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for armv6/7" >&5
++$as_echo_n "checking for armv6/v7... " >&6; }
++if eval "echo $host_cpu|grep -i 'armv[6|7]' >/dev/null"; then
++    NO_OPTIMIZE="yes"
++
++$as_echo "#define WORDS_MUSTALIGN 1" >>confdefs.h
+
++    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++else
++    { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++fi
+
++
+ # Check whether --with-lzma_includes was given.
+ if test "${with_lzma_includes+set}" = set; then :
+   withval=$with_lzma_includes; with_lzma_includes="$withval"
+@@ -18302,7 +18316,7 @@ fi
+
+ # Set to no optimization regardless of what user or autostuff set
+ if test "x$NO_OPTIMIZE" = "xyes"; then
+-    CFLAGS=`echo $CFLAGS | sed -e "s/-O./-O0/"`
++    CFLAGS=`echo $CFLAGS | sed -e "s/-O\d/-O0/"`
+
+     # in case user override doesn't include -O
+     if echo $CFLAGS | grep -qve -O0 ; then

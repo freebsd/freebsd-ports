@@ -1,0 +1,48 @@
+--- configure.orig	2025-03-06 22:52:00 UTC
++++ configure
+@@ -7124,7 +7124,16 @@ fi
+     as_fn_error $? "Sorry, \`--with-system-teckit' requires \`--with-system-zlib'" "$LINENO" 5
+   fi
+ fi
++# Check whether --with-teckit-includes was given.
++if test "${with_teckit_includes+set}" = set; then :
++  withval=$with_teckit_includes;
++fi
+ 
++# Check whether --with-teckit-libdir was given.
++if test "${with_teckit_libdir+set}" = set; then :
++  withval=$with_teckit_libdir;
++fi
++
+ test "x$need_teckit" = xyes && {
+   need_zlib=yes
+ }
+@@ -25164,8 +25173,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+   PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
+ fi
+ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+-  FREETYPE2_INCLUDES=`$FT2_CONFIG --cflags`
+-  FREETYPE2_LIBS=`$FT2_CONFIG --libs`
++  FREETYPE2_INCLUDES=`pkg-config freetype2 --cflags`
++  FREETYPE2_LIBS=`pkg-config freetype2 --libs`
+ elif $PKG_CONFIG --libs freetype2 >/dev/null 2>&1; then
+   FREETYPE2_INCLUDES=`$PKG_CONFIG --cflags freetype2`
+   FREETYPE2_LIBS=`$PKG_CONFIG --libs freetype2`
+@@ -25239,11 +25248,12 @@ fi
+   as_fn_error $? "did not find graphite2" "$LINENO" 5
+ fi
+ 
+-if $PKG_CONFIG teckit; then
+-  TECKIT_INCLUDES=`$PKG_CONFIG teckit --cflags`
+-  TECKIT_LIBS=`$PKG_CONFIG teckit --libs`
+-elif test "x$need_teckit:$with_system_teckit" = xyes:yes; then
+-  as_fn_error $? "did not find teckit" "$LINENO" 5
++if test "x$with_teckit_includes" != x && test "x$with_teckit_includes" != xyes; then
++  TECKIT_INCLUDES="-I$with_teckit_includes"
++fi
++TECKIT_LIBS="-lTECkit"
++if test "x$with_teckit_libdir" != x && test "x$with_teckit_libdir" != xyes; then
++  TECKIT_LIBS="-L$with_teckit_libdir $TECKIT_LIBS"
+ fi
+ 
+ echo 'tldbg:KPSE_ICU_SYSTEM_FLAGS called.' >&5

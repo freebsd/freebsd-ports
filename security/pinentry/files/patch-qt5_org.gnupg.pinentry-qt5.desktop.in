@@ -1,0 +1,12 @@
+Rename icon to prevent install conflicts with the Qt6 frontend.
+
+--- qt5/org.gnupg.pinentry-qt5.desktop.in.orig	2024-07-03 09:19:19 UTC
++++ qt5/org.gnupg.pinentry-qt5.desktop.in
+@@ -4,6 +4,6 @@ NoDisplay=true
+ Categories=Qt;Utility;
+ Exec=@prefix@/bin/pinentry-qt5
+ NoDisplay=true
+-Icon=pinentry
++Icon=pinentry-qt5
+ GenericName=Utility for entering GnuPG secrets
+ X-KDE-Wayland-Interfaces=org_kde_kwin_keystate

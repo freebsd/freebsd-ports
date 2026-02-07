@@ -1,0 +1,147 @@
+Relax Linux checks for the code works on any non-Windows platform.
+
+In file included from _studio/shared/umc/core/umc/src/umc_va_base.cpp:21:
+In file included from _studio/shared/umc/core/umc/include/umc_va_base.h:25:
+In file included from _studio/shared/include/mfx_common.h:27:
+In file included from _studio/shared/include/mfx_utils.h:29:
+_studio/shared/umc/core/umc/include/umc_structures.h:658:11: error: unknown type name 'vm_char'
+    const vm_char* GetErrString(Status ErrCode);
+          ^
+_studio/shared/umc/core/umc/include/umc_structures.h:659:11: error: unknown type name 'vm_char'
+    const vm_char* GetStreamTypeString(SystemStreamType Code);
+          ^
+_studio/shared/umc/core/umc/include/umc_structures.h:660:11: error: unknown type name 'vm_char'
+    const vm_char* GetFormatTypeString(ColorFormat Code);
+          ^
+_studio/shared/umc/core/umc/include/umc_structures.h:661:11: error: unknown type name 'vm_char'
+    const vm_char* GetAudioTypeString(AudioStreamType Code);
+          ^
+_studio/shared/umc/core/umc/include/umc_structures.h:662:11: error: unknown type name 'vm_char'
+    const vm_char* GetVideoTypeString(VideoStreamType Code);
+          ^
+_studio/shared/umc/core/umc/include/umc_structures.h:663:11: error: unknown type name 'vm_char'
+    const vm_char* GetVideoRenderTypeString(VideoRenderType Code);
+          ^
+_studio/shared/umc/core/umc/include/umc_structures.h:664:11: error: unknown type name 'vm_char'
+    const vm_char* GetAudioRenderTypeString(AudioRenderType Code);
+          ^
+In file included from _studio/shared/umc/core/umc/src/umc_va_base.cpp:21:
+_studio/shared/umc/core/umc/include/umc_va_base.h:36:6: error: unsupported platform
+    #error unsupported platform
+     ^
+_studio/shared/umc/core/umc/include/umc_va_base.h:48:10: fatal error: 'va/va.h' file not found
+#include <va/va.h>
+         ^~~~~~~~~
+
+--- CMakeLists.txt.orig	2019-10-30 19:56:10 UTC
++++ CMakeLists.txt
+@@ -57,7 +57,7 @@ option( ENABLE_OPENCL "Build targets dependent on Open
+ #
+ option( ENABLE_ALL "Enable all dependencies and features?" OFF )
+ 
+-if( CMAKE_SYSTEM_NAME MATCHES Linux )
++if( UNIX AND NOT APPLE )
+   option( ENABLE_X11_DRI3 "Build X11 DRI3 versions of the targets?" ${ENABLE_ALL} )
+   option( ENABLE_WAYLAND "Build WAYLAND versions of the targets?" ${ENABLE_ALL} )
+ endif()
+@@ -191,7 +191,7 @@ message("  CMAKE_INSTALL_FULL_LIBDIR               : $
+ message("  CMAKE_INSTALL_FULL_DATADIR              : ${CMAKE_INSTALL_FULL_DATADIR}")
+ message("Enable:")
+ message("  ENABLE_OPENCL                           : ${ENABLE_OPENCL}")
+-if( CMAKE_SYSTEM_NAME MATCHES Linux )
++if( UNIX AND NOT APPLE )
+   message("  ENABLE_X11                              : ${ENABLE_X11}")
+   message("  ENABLE_X11_DRI3                         : ${ENABLE_X11_DRI3}")
+   message("  ENABLE_WAYLAND                          : ${ENABLE_WAYLAND}")
+--- _studio/mfx_lib/shared/include/mediasdk_version.h.orig	2019-10-30 19:56:10 UTC
++++ _studio/mfx_lib/shared/include/mediasdk_version.h
+@@ -23,7 +23,7 @@
+ #pragma once
+ 
+ /* These string constants set Media SDK version information for Linux, Android, OSX. */
+-#ifdef __linux__
++#if !defined(__APPLE__) && !defined(_WIN32)
+ #include "va/va.h"
+ 
+ #ifndef MFX_API_VERSION
+@@ -55,4 +55,4 @@ const char* g_MfxGitCommit       = "mediasdk_git_commi
+ const char* g_MfxBuildInfo       = "mediasdk_build_info: " MFX_BUILD_INFO;
+ const char* g_MfxLibvaVersion    = "mediasdk_libva_version: " VA_VERSION_S;
+ 
+-#endif // __linux__
++#endif // #if !__APPLE__ && !_WIN32
+--- api/include/mfxdefs.h.orig	2019-10-30 19:56:10 UTC
++++ api/include/mfxdefs.h
+@@ -79,7 +79,7 @@ extern "C"
+     #define MFX_PACK_BEGIN_STRUCT_W_PTR()    MFX_PACK_BEGIN_X(8)
+     #define MFX_PACK_BEGIN_STRUCT_W_L_TYPE() MFX_PACK_BEGIN_X(8)
+ /* 32-bit ILP32 data model Windows (Intel architecture) */
+-#elif defined(_WIN32) || defined(_M_IX86) && !defined(__linux__)
++#elif defined(_WIN32)
+     #define MFX_PACK_BEGIN_STRUCT_W_PTR()    MFX_PACK_BEGIN_X(4)
+     #define MFX_PACK_BEGIN_STRUCT_W_L_TYPE() MFX_PACK_BEGIN_X(8)
+ /* 32-bit ILP32 data model Linux */
+--- api/mfx_dispatch/linux/CMakeLists.txt.orig	2019-10-30 19:56:10 UTC
++++ api/mfx_dispatch/linux/CMakeLists.txt
+@@ -58,7 +58,7 @@ message( STATUS "MFX_MODULES_DIR=${MFX_MODULES_DIR}" )
+ 
+ add_definitions(-DUNIX)
+ 
+-if( CMAKE_SYSTEM_NAME MATCHES Linux )
++if( UNIX AND NOT APPLE )
+   add_definitions(-D__USE_LARGEFILE64 -D_FILE_OFFSET_BITS=64 -DLINUX -DLINUX32)
+ 
+   if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+--- builder/FindFunctions.cmake.orig	2019-10-30 19:56:10 UTC
++++ builder/FindFunctions.cmake
+@@ -29,14 +29,14 @@ function( collect_oses )
+     set( NotLinux   true PARENT_SCOPE )
+     set( NotDarwin  true PARENT_SCOPE )
+ 
+-  elseif( CMAKE_SYSTEM_NAME MATCHES Linux )
+-    set( Linux      true PARENT_SCOPE )
+-    set( NotDarwin  true PARENT_SCOPE )
+-    set( NotWindows true PARENT_SCOPE )
+-
+   elseif( CMAKE_SYSTEM_NAME MATCHES Darwin )
+     set( Darwin     true PARENT_SCOPE )
+     set( NotLinux   true PARENT_SCOPE )
++    set( NotWindows true PARENT_SCOPE )
++
++  else()
++    set( Linux      true PARENT_SCOPE )
++    set( NotDarwin  true PARENT_SCOPE )
+     set( NotWindows true PARENT_SCOPE )
+ 
+   endif()
+--- tutorials/common/cmd_options.cpp.orig	2019-10-30 19:56:10 UTC
++++ tutorials/common/cmd_options.cpp
+@@ -24,7 +24,7 @@
+ 
+ #if defined(_WIN32) || defined(_WIN64)
+ #include "bits/windows_defs.h"
+-#elif defined(__linux__)
++#else
+ #include "bits/linux_defs.h"
+ #endif
+ 
+--- tutorials/common/common_utils.h.orig	2019-10-30 19:56:10 UTC
++++ tutorials/common/common_utils.h
+@@ -32,7 +32,7 @@
+ //  - MSDK_SLEEP
+ #if defined(_WIN32) || defined(_WIN64)
+ #include "bits/windows_defs.h"
+-#elif defined(__linux__)
++#else
+ #include "bits/linux_defs.h"
+ #endif
+ 
+--- samples/CMakeLists.txt.orig	2019-10-30 19:56:10 UTC
++++ samples/CMakeLists.txt
+@@ -30,4 +30,6 @@ add_subdirectory(sample_misc/wayland)
+ add_subdirectory(sample_plugins/rotate_cpu)
+ add_subdirectory(sample_plugins/rotate_opencl)
+ add_subdirectory(sample_plugins/vpp_plugin)
++if( CMAKE_SYSTEM_NAME MATCHES Linux )
+ add_subdirectory(metrics_monitor)
++endif()

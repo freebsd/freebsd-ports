@@ -1,0 +1,2 @@
+Squashfuse is a command line utility for mounting SquashFS archives
+in user-space. It supports almost all features of the SquashFS format.

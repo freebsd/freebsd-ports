@@ -1,0 +1,8 @@
+bin/glewinfo-wayland
+bin/visualinfo-wayland
+include/GL/eglew.h
+lib/libGLEW-wayland.a
+lib/libGLEW-wayland.so
+lib/libGLEW-wayland.so.2
+lib/libGLEW-wayland.so.2.2.0
+libdata/pkgconfig/glew-wayland.pc

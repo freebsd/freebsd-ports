@@ -1,0 +1,3 @@
+bin/smake
+share/lib/smake/defaults.smk
+share/man/man1/smake.1.gz

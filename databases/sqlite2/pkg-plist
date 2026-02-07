@@ -1,0 +1,13 @@
+bin/sqlite
+include/sqlite.h
+lib/libsqlite.a
+lib/libsqlite.so
+lib/libsqlite.so.0
+lib/libsqlite.so.0.8.6
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite.a
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite.so
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite.so.0
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite.so.0.8.6
+%%WITH_TCLWRAPPER%%lib/sqlite/pkgIndex.tcl
+libdata/pkgconfig/sqlite.pc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.tcl

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+
+Please read the wifibox(8) manual page first to learn about the
+configuration and use.
+
+EOM
+}
+]

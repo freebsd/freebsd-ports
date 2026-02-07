@@ -1,0 +1,721 @@
+--- tools/System.c	1997-05-07 16:15:47.000000000 -0400
++++ tools/System.c	2013-03-27 21:05:07.000000000 -0400
+@@ -103,6 +103,6 @@
+       printf( "%s: (%d), ", file_name, line_no );
+ 
+-    printf( "SysBaseCalloc(), ref: %d, ref_count: %d\n", 
+-            (int) ref, memory_ref_count );
++    printf( "SysBaseCalloc(), ref: %p, ref_count: %d\n", 
++            ref, memory_ref_count );
+ 
+     memory_ref_count++;
+@@ -134,6 +134,6 @@
+       printf( "%s: (%d), ", file_name, line_no );
+ 
+-    printf( "SysBaseFree(), ref: %d, ref_count: %d\n",
+-            (int) pointer, memory_ref_count );
++    printf( "SysBaseFree(), ref: %p, ref_count: %d\n",
++            pointer, memory_ref_count );
+ 
+     memory_ref_count++;
+@@ -167,6 +167,6 @@
+       printf( "%s: (%d), ", file_name, line_no );
+ 
+-    printf( "SysBaseMalloc(), ref: %d, ref_count: %d\n", 
+-            (int) ref, memory_ref_count );
++    printf( "SysBaseMalloc(), ref: %p, ref_count: %d\n", 
++            ref, memory_ref_count );
+ 
+     memory_ref_count++;
+@@ -209,6 +209,6 @@
+       printf( "%s: (%d), ", file_name, line_no );
+ 
+-    printf( "SysBaseRealloc(), ref: %d, ref_count: %d\n", 
+-            (int) ref, memory_ref_count );
++    printf( "SysBaseRealloc(), ref: %p, ref_count: %d\n", 
++            ref, memory_ref_count );
+ 
+     memory_ref_count++;
+--- xtools/xitColorSel.c	1997-05-04 09:13:45.000000000 -0400
++++ xtools/xitColorSel.c	2013-03-27 21:07:49.000000000 -0400
+@@ -303,5 +303,5 @@
+ 
+     XtAddCallback( menuPb, XmNactivateCallback, 
+-                   (XtCallbackProc) menuSelectCB, (XtPointer) index );
++                   (XtCallbackProc) menuSelectCB, (XtPointer)(intptr_t)index );
+ 
+     /* The default color is the first color. */
+--- xtools/xitError.c	1995-02-18 09:11:29.000000000 -0500
++++ xtools/xitError.c	2013-03-27 21:09:07.000000000 -0400
+@@ -40,4 +40,5 @@
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+--- xtools/xitInfoSrch.c	1997-05-04 18:25:10.000000000 -0400
++++ xtools/xitInfoSrch.c	2013-03-27 21:11:32.000000000 -0400
+@@ -407,5 +407,5 @@
+ 
+     XtAddCallback( gotoBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) gotoCB, (XtPointer) index );
++                   (XtCallbackProc) gotoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -664,5 +664,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Next? */
+--- xtools/xitInfoToc.c	1997-05-04 09:15:28.000000000 -0400
++++ xtools/xitInfoToc.c	2013-03-27 21:13:47.000000000 -0400
+@@ -356,5 +356,5 @@
+ 
+     XtAddCallback( gotoBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) gotoCB, (XtPointer) index );
++                   (XtCallbackProc) gotoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -703,5 +703,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Next? */
+--- xtools/XmUbTimeB.c	1997-05-04 17:09:52.000000000 -0400
++++ xtools/XmUbTimeB.c	2013-03-27 21:21:46.000000000 -0400
+@@ -2160,5 +2160,5 @@
+            For other actions, register as callbacks directly. */
+         if( ( items[ index ].proc != XmUbTB_NO_ACTION ) &&
+-            ( (int) items[ index ].proc <= (int) XmUbTB_LAST_PREDEF_ACTION ) )
++            ( (intptr_t)items[ index ].proc <= (intptr_t)XmUbTB_LAST_PREDEF_ACTION ) )
+           XtAddCallback( w, XmNactivateCallback, 
+                          (XtCallbackProc) MenuItemActivatedCB, 
+@@ -3367,37 +3367,37 @@
+ 
+   /* What to do depends on the selected action. */
+-  switch( (int) action ){
++  switch((intptr_t)action){
+ 
+-    case (int) XmUbTB_ACTION_THIS_WEEK:
++    case (intptr_t) XmUbTB_ACTION_THIS_WEEK:
+       FillInStartOfWeek( tbox );
+       AddDateWeek( tbox, 1, 1 );
+       break;
+ 
+-    case (int) XmUbTB_ACTION_THIS_MONTH:
++    case (intptr_t) XmUbTB_ACTION_THIS_MONTH:
+       FillInStartOfMonth( tbox );
+       AddDateMonth( tbox, 1, 1 );
+       break;
+ 
+-    case (int) XmUbTB_ACTION_PLUS_ONE_HOUR:
++    case (intptr_t) XmUbTB_ACTION_PLUS_ONE_HOUR:
+       AddDateHour( tbox, 1 );
+       break;
+ 
+-    case (int) XmUbTB_ACTION_PLUS_TWO_HOURS:
++    case (intptr_t) XmUbTB_ACTION_PLUS_TWO_HOURS:
+       AddDateHour( tbox, 2 );
+       break;
+ 
+-    case (int) XmUbTB_ACTION_PLUS_ONE_WEEK:
++    case (intptr_t) XmUbTB_ACTION_PLUS_ONE_WEEK:
+       AddDateWeek( tbox, 1, 0 );
+       break;
+ 
+-    case (int) XmUbTB_ACTION_PLUS_TWO_WEEKS:
++    case (intptr_t) XmUbTB_ACTION_PLUS_TWO_WEEKS:
+       AddDateWeek( tbox, 2, 0 );
+       break;
+ 
+-    case (int) XmUbTB_ACTION_PLUS_ONE_MONTH:
++    case (intptr_t) XmUbTB_ACTION_PLUS_ONE_MONTH:
+       AddDateMonth( tbox, 1, 0 );
+       break;
+ 
+-    case (int) XmUbTB_ACTION_TIME_NOW:
++    case (intptr_t) XmUbTB_ACTION_TIME_NOW:
+       (void) XmUbTimeBoxSetStartTime( (Widget) tbox, 
+                                       TimLocalTime( TimMakeTimeNow() ) );
+@@ -3405,5 +3405,5 @@
+       break;
+ 
+-    case (int) XmUbTB_ACTION_DATE_NOW:
++    case (intptr_t) XmUbTB_ACTION_DATE_NOW:
+       (void) XmUbTimeBoxSetStartDate( (Widget) tbox, 
+                                       TimLocalTime( TimMakeTimeNow() ) );
+@@ -3411,5 +3411,5 @@
+       break;
+ 
+-    case (int) XmUbTB_ACTION_NOW:
++    case (intptr_t) XmUbTB_ACTION_NOW:
+       (void) XmUbTimeBoxSetStartDate( (Widget) tbox, 
+                                       TimLocalTime( TimMakeTimeNow() ) );
+@@ -3426,7 +3426,7 @@
+ 
+   /* Set the keyboard focus to the most recently inserted text. */
+-  switch( (int) action ){
++  switch( (intptr_t) action ){
+ 
+-    case (int) XmUbTB_ACTION_TIME_NOW:
++    case (intptr_t) XmUbTB_ACTION_TIME_NOW:
+       /* Set keyboard focus to the start time field. */
+       if( tbox -> tbox.internal_children[ XmUbTB_CHILD_START_TIME ] != NULL )
+@@ -3437,5 +3437,5 @@
+       break;
+ 
+-    case (int) XmUbTB_ACTION_DATE_NOW:
++    case (intptr_t) XmUbTB_ACTION_DATE_NOW:
+       /* Set keyboard focus to the start date field. */
+       if( tbox -> tbox.internal_children[ XmUbTB_CHILD_START_DATE ] != NULL )
+@@ -3446,5 +3446,5 @@
+       break;
+ 
+-    case (int) XmUbTB_ACTION_NOW:
++    case (intptr_t) XmUbTB_ACTION_NOW:
+       /* Set keyboard focus to the start time or date field. */
+       if( tbox -> tbox.internal_children[ XmUbTB_CHILD_START_TIME ] != NULL )
+--- dtools/xtmCalendar.c	1997-05-04 17:09:55.000000000 -0400
++++ dtools/xtmCalendar.c	2013-03-27 21:24:06.000000000 -0400
+@@ -780,5 +780,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) infoCB, (XtPointer) index );
++                   (XtCallbackProc) infoCB, (XtPointer)(intptr_t) index );
+   }
+ 
+@@ -1407,5 +1407,5 @@
+ 
+   /* About window? */
+-  if( (int) call_data -> data == 6 ) {
++  if( (intptr_t) call_data -> data == 6 ) {
+     xtmHlDisplayAboutWindow( cal_ref -> calFormW );
+ 
+@@ -1415,5 +1415,5 @@
+   /* Use the standard help. */
+   xtmHlDisplayHelp( cal_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     cal_window_id, "" );
+ 
+--- dtools/xtmDbTools.c	1997-05-04 18:27:52.000000000 -0400
++++ dtools/xtmDbTools.c	2013-03-27 21:27:23.000000000 -0400
+@@ -1814,5 +1814,5 @@
+     /* Insert the date in the sorted list. */
+     lst_status = LstLinkSearchFirst( *list_ref, 
+-                                     (void *) record.date,
++                                     (void *)(uintptr_t)record.date,
+                                      (EQUALS_FUNC_TYPE) dateSortFunc );
+ 
+@@ -1897,5 +1897,5 @@
+             lst_status = LstLinkSearchFirst( 
+                            *note_list_ref, 
+-                           (void *) entry_record.entry.time_stamp,
++                           (void *)(uintptr_t)entry_record.entry.time_stamp,
+                            (EQUALS_FUNC_TYPE) entryIdSortFunc );
+ 
+@@ -1911,5 +1911,5 @@
+             lst_status = LstLinkSearchFirst( 
+                            *entry_list_ref, 
+-                           (void *) entry_record.entry.time_stamp,
++                           (void *)(uintptr_t)entry_record.entry.time_stamp,
+                            (EQUALS_FUNC_TYPE) entryTimeSortFunc );
+ 
+@@ -1985,5 +1985,5 @@
+           lst_status = LstLinkSearchFirst( 
+                          *note_list_ref, 
+-                         (void *) entry_record.entry.time_stamp,
++                         (void *)(uintptr_t)entry_record.entry.time_stamp,
+                          (EQUALS_FUNC_TYPE) entryIdSortFunc );
+ 
+@@ -1999,5 +1999,5 @@
+           lst_status = LstLinkSearchFirst( 
+                          *entry_list_ref, 
+-                         (void *) entry_record.entry.time_stamp,
++                         (void *)(uintptr_t)entry_record.entry.time_stamp,
+                          (EQUALS_FUNC_TYPE) entryTimeSortFunc );
+ 
+@@ -2073,5 +2073,5 @@
+         lst_status = LstLinkSearchFirst( 
+                        *note_list_ref, 
+-                       (void *) entry_record.entry.time_stamp,
++                       (void *)(uintptr_t)entry_record.entry.time_stamp,
+                        (EQUALS_FUNC_TYPE) entryIdSortFunc );
+ 
+@@ -2087,5 +2087,5 @@
+         lst_status = LstLinkSearchFirst( 
+                        *entry_list_ref, 
+-                       (void *) entry_record.entry.time_stamp,
++                       (void *)(uintptr_t)entry_record.entry.time_stamp,
+                        (EQUALS_FUNC_TYPE) entryTimeSortFunc );
+ 
+--- dtools/xtmEditEntry.c	1997-05-04 18:27:52.000000000 -0400
++++ dtools/xtmEditEntry.c	2013-03-27 21:28:29.000000000 -0400
+@@ -878,5 +878,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) helpCB, (XtPointer) index );
++                   (XtCallbackProc) helpCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -2916,5 +2916,5 @@
+ 
+   xtmHlDisplayHelp( editor_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     edit_window_id, "" );
+ 
+--- xtools/xitXmStr.c	1995-02-18 09:11:37.000000000 -0500
++++ xtools/xitXmStr.c	2013-03-27 21:36:02.000000000 -0400
+@@ -57,8 +57,4 @@
+ ----------------------------------------------------------------------------*/
+ 
+-#ifndef _POSIX_SOURCE
+-#  define  const
+-#endif
+-
+ 
+ /*----------------------------------------------------------------------------
+--- dtools/xtmMsgSelect.c	1995-02-18 09:53:48.000000000 -0500
++++ dtools/xtmMsgSelect.c	2013-03-27 21:37:18.000000000 -0400
+@@ -439,5 +439,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) infoCB, (XtPointer) index );
++                   (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -850,5 +850,5 @@
+ 
+   xtmHlDisplayHelp( sel_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     select_window_id, "" );
+ 
+--- dtools/xtmMsgSend.c	1997-05-04 19:13:08.000000000 -0400
++++ dtools/xtmMsgSend.c	2013-03-27 21:38:29.000000000 -0400
+@@ -612,5 +612,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) infoCB, (XtPointer) index );
++                   (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -940,5 +940,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) infoCB, (XtPointer) index );
++                   (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1812,5 +1812,5 @@
+ 
+   xtmHlDisplayHelp( send_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     send_window_id, "" );
+ 
+--- dtools/xtmPlan.c	1997-05-04 17:09:51.000000000 -0400
++++ dtools/xtmPlan.c	2013-03-27 21:42:11.000000000 -0400
+@@ -1005,5 +1005,5 @@
+     if( XmIsPushButton( menuFileBu[ index ] ) )
+       XtAddCallback( menuFileBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) fileMenuCB, (XtPointer) index );
++                     (XtCallbackProc) fileMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1020,8 +1020,8 @@
+     if( XmIsPushButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+     else if( XmIsToggleButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNvalueChangedCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1036,5 +1036,5 @@
+     if( XmIsPushButton( menuOptBu[ index ] ) )
+       XtAddCallback( menuOptBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) optMenuCB, (XtPointer) index );
++                     (XtCallbackProc) optMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1049,5 +1049,5 @@
+     if( XmIsPushButton( menuHelpBu[ index ] ) )
+       XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) infoCB, (XtPointer) index );
++                     (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -3435,5 +3435,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Instant update. */
+@@ -3584,5 +3584,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Close the window. */
+@@ -3610,5 +3610,5 @@
+   Boolean                 ok;
+   int                     char_read;
+-  int                     ref_count;
++  intptr_t                ref_count;
+   char                    calendar[ XTM_GL_MAX_CAL_NAME + 1 ];
+   char                    *group_name;
+@@ -3665,5 +3665,5 @@
+     XtGetValues( calW, args, n );
+ 
+-    ref_count = (int) user_data_ref;
++    ref_count = (intptr_t) user_data_ref;
+ 
+     if( call_data -> set ) {
+@@ -3711,5 +3711,5 @@
+ 
+   /* About window? */
+-  if( (int) call_data -> data == 6 ) {
++  if( (intptr_t) call_data -> data == 6 ) {
+     xtmHlDisplayAboutWindow( plan_ref -> plannerW );
+ 
+@@ -3719,5 +3719,5 @@
+   /* Use the standard help. */
+   xtmHlDisplayHelp( plan_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     planner_window_id, "" );
+ 
+@@ -3811,5 +3811,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Send message. */
+--- dtools/xtmPrEntries.c	1997-05-04 17:09:51.000000000 -0400
++++ dtools/xtmPrEntries.c	2013-03-27 21:44:05.000000000 -0400
+@@ -779,8 +779,8 @@
+     if( XmIsPushButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+     else if( XmIsToggleButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNvalueChangedCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -794,5 +794,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) infoCB, (XtPointer) index );
++                   (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1816,5 +1816,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Filter window. */
+@@ -2006,5 +2006,5 @@
+ 
+   xtmHlDisplayHelp( printer_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     print_window_id, "" );
+ 
+--- dtools/xtmReminder.c	1997-05-04 17:09:51.000000000 -0400
++++ dtools/xtmReminder.c	2013-03-27 21:45:28.000000000 -0400
+@@ -581,5 +581,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) helpCB, (XtPointer) index );
++                   (XtCallbackProc) helpCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1094,5 +1094,5 @@
+ 
+   /* About window? */
+-  if( (int) call_data -> data == 6 ) {
++  if( (intptr_t) call_data -> data == 6 ) {
+     xtmHlDisplayAboutWindow( reminder_ref -> reminderW );
+ 
+@@ -1106,5 +1106,5 @@
+   (* reminder_ref -> helpCB)( reminder_ref -> reminderW, 
+                               reminder_ref -> user_data,
+-                              (int) call_data -> data );
++                              (intptr_t) call_data -> data );
+ 
+ 
+--- dtools/xtmSchedAct.c	1997-05-04 17:16:55.000000000 -0400
++++ dtools/xtmSchedAct.c	2013-03-27 21:46:28.000000000 -0400
+@@ -1968,5 +1968,5 @@
+     if( XmIsPushButton( menuPopupBu[ index ] ) )
+       XtAddCallback( menuPopupBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) entryPuMenuCB, (XtPointer) index );
++                     (XtCallbackProc) entryPuMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -2107,5 +2107,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Edit the entry. */
+--- dtools/xtmShowToDo.c	1997-05-04 17:26:20.000000000 -0400
++++ dtools/xtmShowToDo.c	2013-03-27 21:51:24.000000000 -0400
+@@ -666,8 +666,8 @@
+     if( XmIsPushButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+     else if( XmIsToggleButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNvalueChangedCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -682,5 +682,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) infoCB, (XtPointer) index );
++                   (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1190,5 +1190,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Display entry flags? */
+@@ -1403,5 +1403,5 @@
+ 
+   xtmHlDisplayHelp( show_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     sum_window_id, "" );
+ 
+--- xdiary/xtmDiary.c	1997-05-05 19:13:48.000000000 -0400
++++ xdiary/xtmDiary.c	2013-03-27 21:52:31.000000000 -0400
+@@ -214,5 +214,5 @@
+ ----------------------------------------------------------------------------*/
+ 
+-void 
++int 
+   main( int argc, char **argv )
+ {
+--- xdaclunix/xtmAclUnix.c	1997-05-04 18:02:19.000000000 -0400
++++ xdaclunix/xtmAclUnix.c	2013-03-27 21:53:22.000000000 -0400
+@@ -227,5 +227,5 @@
+ ----------------------------------------------------------------------------*/
+ 
+-void 
+-  main( unsigned int argc, char *argv[] )
++int 
++  main( int argc, char *argv[] )
+ {
+--- xdalarm/xtmAlarmProc.c	1997-05-04 18:02:19.000000000 -0400
++++ xdalarm/xtmAlarmProc.c	2013-03-27 21:54:22.000000000 -0400
+@@ -453,5 +453,5 @@
+ ----------------------------------------------------------------------------*/
+ 
+-void 
+-  main( unsigned int argc, char *argv[] )
++int 
++  main( int argc, char *argv[] )
+ {
+--- xdcustom/xtmCustom.c	1997-05-04 18:02:16.000000000 -0400
++++ xdcustom/xtmCustom.c	2013-03-27 21:55:45.000000000 -0400
+@@ -232,5 +232,5 @@
+ ----------------------------------------------------------------------------*/
+ 
+-void 
+-  main( unsigned int argc, char *argv[] )
++int 
++  main( int argc, char *argv[] )
+ {
+@@ -616,5 +616,5 @@
+ 
+     XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) infoCB, (XtPointer) index );
++                   (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -642,5 +642,5 @@
+ 
+     XtAddCallback( doCustBu[ index ], XmNactivateCallback, 
+-                   (XtCallbackProc) doCustCB, (XtPointer) index );
++                   (XtCallbackProc) doCustCB, (XtPointer)(intptr_t)index );
+ 
+   } /* loop */
+@@ -1452,5 +1452,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Calendar customization? */
+@@ -1579,5 +1579,5 @@
+ 
+   /* About window? */
+-  if( (int) call_data -> data == 6 ) {
++  if( (intptr_t) call_data -> data == 6 ) {
+ 
+     Widget  tempW;
+@@ -1591,5 +1591,5 @@
+   /* Use the standard help. */
+   xtmHlDisplayHelp( appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     custom_window_id, "" );
+ 
+--- xdlight/xtmDiaryLgt.c	1997-05-04 19:13:08.000000000 -0400
++++ xdlight/xtmDiaryLgt.c	2013-03-27 21:56:32.000000000 -0400
+@@ -221,5 +221,5 @@
+ ----------------------------------------------------------------------------*/
+ 
+-void 
+-  main( unsigned int argc, char **argv )
++int 
++  main( int argc, char **argv )
+ {
+--- xdnotify/xtmNotify.c	1997-05-04 18:02:15.000000000 -0400
++++ xdnotify/xtmNotify.c	2013-03-27 21:57:28.000000000 -0400
+@@ -245,5 +245,5 @@
+ ----------------------------------------------------------------------------*/
+ 
+-void 
+-  main( unsigned int argc, char *argv[] )
++int 
++  main( int argc, char *argv[] )
+ {
+--- xdprformat/xtmPrFormat.c	1997-05-04 18:02:15.000000000 -0400
++++ xdprformat/xtmPrFormat.c	2013-03-27 21:58:19.000000000 -0400
+@@ -38,4 +38,5 @@
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+--- xdremind/xtmRemMain.c	1997-05-04 18:02:15.000000000 -0400
++++ xdremind/xtmRemMain.c	2013-03-27 21:59:08.000000000 -0400
+@@ -178,5 +178,5 @@
+ ----------------------------------------------------------------------------*/
+ 
+-void 
+-  main( unsigned int argc, char *argv[] )
++int 
++  main( int argc, char *argv[] )
+ {
+--- xdrestore/xtmRestore.c	1997-05-04 18:02:14.000000000 -0400
++++ xdrestore/xtmRestore.c	2013-03-27 21:59:54.000000000 -0400
+@@ -38,4 +38,5 @@
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
+--- dtools/xtmSchedMain.c	1997-05-04 19:16:02.000000000 -0400
++++ dtools/xtmSchedMain.c	2013-03-27 22:01:54.000000000 -0400
+@@ -1091,5 +1091,5 @@
+     if( XmIsPushButton( menuFileBu[ index ] ) )
+       XtAddCallback( menuFileBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) fileMenuCB, (XtPointer) index );
++                     (XtCallbackProc) fileMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1110,5 +1110,5 @@
+     if( XmIsPushButton( menuEditBu[ index ] ) )
+       XtAddCallback( menuEditBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) editMenuCB, (XtPointer) index );
++                     (XtCallbackProc) editMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1126,8 +1126,8 @@
+     if( XmIsPushButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+     else if( XmIsToggleButton( menuCtrlBu[ index ] ) )
+       XtAddCallback( menuCtrlBu[ index ], XmNvalueChangedCallback, 
+-                     (XtCallbackProc) ctrlMenuCB, (XtPointer) index );
++                     (XtCallbackProc) ctrlMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1143,5 +1143,5 @@
+     if( XmIsPushButton( menuOptionsBu[ index ] ) )
+       XtAddCallback( menuOptionsBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) optionsMenuCB, (XtPointer) index );
++                     (XtCallbackProc) optionsMenuCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1157,5 +1157,5 @@
+     if( XmIsPushButton( menuHelpBu[ index ] ) )
+       XtAddCallback( menuHelpBu[ index ], XmNactivateCallback, 
+-                     (XtCallbackProc) infoCB, (XtPointer) index );
++                     (XtCallbackProc) infoCB, (XtPointer)(intptr_t)index );
+   }
+ 
+@@ -1972,5 +1972,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Confirm actions? */
+@@ -2278,5 +2278,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Edit the entry. */
+@@ -2402,5 +2402,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Open schedule with the same database. */
+@@ -2494,5 +2494,5 @@
+           can_download = True;
+ 
+-        if( (int) call_data -> data == 4 )
++        if( (intptr_t) call_data -> data == 4 )
+           xtmRtDoRemote( sched_ref -> remote_handle, XTM_RT_UPLOAD,
+                          db_info.short_name, True, can_download );
+@@ -2606,5 +2606,5 @@
+ 
+   /* About window? */
+-  if( (int) call_data -> data == 6 ) {
++  if( (intptr_t) call_data -> data == 6 ) {
+     xtmHlDisplayAboutWindow( sched_ref -> scheduleW );
+ 
+@@ -2614,5 +2614,5 @@
+   /* Use the standard help. */
+   xtmHlDisplayHelp( sched_ref -> appl_data_ref -> info_handle,
+-                    (int) call_data -> data,
++                    (intptr_t) call_data -> data,
+                     day_view_window_id, "" );
+ 
+@@ -3021,5 +3021,5 @@
+ 
+   /* Select what to do. */
+-  switch( (int) call_data -> data ) {
++  switch( (intptr_t) call_data -> data ) {
+ 
+     /* Appointment editor. */

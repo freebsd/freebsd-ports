@@ -1,0 +1,9 @@
+bin/mplayer
+share/man/man1/mplayer.1.gz
+%%GUI%%bin/gmplayer
+%%GUI%%share/man/man1/gmplayer.1.gz
+%%GUI%%share/pixmaps/mplayer.png
+%%DATADIR%%/examples/etc/example.conf
+%%DATADIR%%/examples/etc/input.conf
+%%DATADIR%%/examples/etc/menu.conf
+%%DATADIR%%/examples/etc/dvb-menu.conf

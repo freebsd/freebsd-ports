@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Event/Lib.pm
+%%SITE_ARCH%%/auto/Event/Lib/Lib.so
+%%PERL5_MAN3%%/Event::Lib.3.gz

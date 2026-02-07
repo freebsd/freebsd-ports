@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/JSON::Pointer.3.gz
+%%PERL5_MAN3%%/JSON::Pointer::Context.3.gz
+%%PERL5_MAN3%%/JSON::Pointer::Exception.3.gz
+%%PERL5_MAN3%%/JSON::Pointer::Syntax.3.gz
+%%SITE_PERL%%/JSON/Pointer.pm
+%%SITE_PERL%%/JSON/Pointer/Context.pm
+%%SITE_PERL%%/JSON/Pointer/Exception.pm
+%%SITE_PERL%%/JSON/Pointer/Syntax.pm

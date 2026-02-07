@@ -1,0 +1,366 @@
+#!/usr/bin/perl
+# $Id$
+#
+# Copyright (c) 2003 Stefan Walter <sw@gegenunendlich.de>
+#
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# Interactive script for deinstalling "leaf" packages
+#
+# Syntax: pkg_cutleaves [-cgLlRVx]
+# Options:
+#   -c: Show comments, too; only works with '-l' (ignored otherwise)
+#   -g: Generate exclude list from kept/installed leaf packages
+#   -L: Interpret exclude file as list of packages that *should* be installed
+#   -l: List leaf packages only, don't ask if they should be deinstalled
+#   -R: Autoprune new leaves 
+#   -V: Visual mode, invoke $EDITOR
+#   -x: Honor exclude list in $excludefile
+
+use File::Temp qw/ tempfile /;
+use Getopt::Std;
+use strict;
+
+my $excludefile = "/usr/local/etc/pkg_leaves.exclude";
+my @pkgdeinstall = (qw{/usr/local/sbin/pkg delete -y});
+my @pkgquery = (qw{/usr/local/sbin/pkg query});
+my $exclpattern; 
+my %leavestokeep;
+my %opt;
+
+getopts('cgLlRVx', \%opt);
+set_excl_pattern();
+
+# LIST MODE
+if ($opt{l}) {
+  # Just print out the list of leaves, one per line
+  my %leaves = get_leaves();
+  foreach my $leaf (sort keys %leaves) {
+    if ($opt{c}) {
+      print "$leaf - $leaves{$leaf}\n";
+    }
+    else {
+      print "$leaf\n";
+    }
+    $leavestokeep{$leaf} = 1;
+  }
+} 
+# LINT MODE 
+elsif ($opt{L}) {
+  my @excludes = get_excludelist();
+  my @pkgs = get_packages();
+  # For each installed package
+  for my $pkg (@pkgs) {
+    my ($file, $required) = @$pkg;
+    # Clobber any exclude patterns that match this package
+    for (my $i = 0; $i < @excludes; $i++) {
+      if ($file =~ /\Q$excludes[$i]\E/) {
+        splice(@excludes, $i--, 1);
+      }
+    }
+    # If matches exclude list and is not a leaf
+    if ($required && ($file =~ $exclpattern)) {
+      print "$file matches exclude list, but is not a leaf\n"
+    }
+    else {
+      $leavestokeep{$file} = 1;
+    }
+  }
+  # In exclude list, but not installed
+  # For each remaining entry in exclude list
+  foreach my $exclude (@excludes) {
+    print "Exclude pattern '$exclude' matches no installed packages\n";
+  }
+} 
+# INTERACTIVE MODE
+else {
+  my @cutleaves;
+  my ($i, $again);
+
+  # Get list of leaf packages and put them into a hash
+  my %leaves = get_leaves();
+  # Any leaves to work with?
+  my $nleaves = keys %leaves;
+  if ($nleaves > 0) {
+    # If we don't have superuser rights, notify the user.
+    if ($< != 0) {
+      print "You need to have root permissions for deinstalling packages.\n";
+      $again = 'n';
+    }
+    else {
+      $again = 'y';
+    }
+  }
+  else {
+    # If not, don't go on, there's nothing to do.
+    print "** Didn't find any leaves to work with, exiting.\n";
+    print "** If this is unexpected, check your exclude file, please.\n";
+    $again = 'n';
+  }
+  # Loop while the user wants to
+  ROUND: while($again ne 'n') {
+    # Always start with an empty list of leaves to cut
+    my %leavestocut;
+    # Initialize counter for progress status
+    $i = 1;
+
+    if ($opt{V}) {
+      # Write list, including descriptions out to temp file
+      my ($fh, $filename) = tempfile() or die "Can't create file: $!";
+      print $fh "# Delete the lines whose packages you want removed.\n";
+      print $fh "# Simply save and quit, when you are done.\n";
+      print $fh "# There are $nleaves (new) leaf packages:\n";
+      foreach my $leaf (sort keys %leaves) {
+	# XXX Calculate maximum length first instead of 40?
+	printf $fh "%-40s - %s\n", $leaf, $leaves{$leaf};
+      }
+      close($fh);
+
+      # Invoke $EDITOR, vi if no EDITOR set
+      my $editor = ($ENV{'EDITOR'} eq "") ? "vi" : $ENV{'EDITOR'};
+      system "$editor $filename";
+      if ($? == -1) {
+	print "failed to execute: $!\n";
+	unlink($filename);
+	exit 1;
+      }
+
+      # Read back and parse list, the diff to the original list will be removed
+      open($fh, $filename) or die "Can't reopen file: $!";
+      while(<$fh>) {
+	next if $_ =~ m/\s*#/;
+	next if $_ =~ m/^\s*$/;
+	my ($leaf, $desc) = split(/\s/, $_, 2);
+
+	if (defined $leaves{$leaf}) {
+	  delete $leaves{$leaf};
+	  $leavestokeep{$leaf} = 1;
+	} else {
+	  print "Package \"$leaf\" not known, skipping\n";
+	}
+      }
+      close($fh);
+      unlink($filename);
+
+      exit 0 if (keys %leaves == 0);
+      # print the lists of packages which will be removed, due to
+      # typos in the editor, the user might have 'removed' a package
+      # he is still interested in. This batch mode, really should get a last
+      # confirmation from the user.
+      print "The following packages will be removed:\n";
+      # XXX Use map here?
+      # XXX check empty hash FIXME
+      foreach my $leaf (sort keys %leaves) {
+	$leavestocut{$leaf} = 1;
+	print "   $leaf\n";
+      }
+      print "Are you sure? [yes]: ";
+      my ($answer) = (lc(<STDIN>) =~ /(\S)/o);
+      print "\n";
+      exit 0 if $answer =~ /n/;
+
+      # Fallthrough to actual package removal
+    } else {
+      LEAVESLOOP: foreach my $leaf (sort keys %leaves) {
+	print "Package $i of $nleaves:\n";
+	print "$leaf - $leaves{$leaf}\n";
+	print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
+	# Get first character of input, without leading whitespace
+	my ($answer) = (lc(<STDIN>) =~ m/(\S)/);
+	if ($answer eq 'd') {
+	  print "** Marking $leaf for removal.\n\n";
+	  $leavestocut{$leaf} = 1;
+	}
+	elsif ($answer eq 'f') {
+	  print "\n";
+	  last LEAVESLOOP;
+	}
+	elsif ($answer eq 'a') {
+	  print "\n";
+	  $opt{aborted} = 1;
+	  last ROUND;
+	}
+	else {
+	  print "** Keeping $leaf.\n\n";
+	  $leavestokeep{$leaf} = 1;
+	}
+	$i++;
+      } # LEAVESLOOP
+    }
+
+    AUTOPRUNE: # The -R switch jump
+    # Initialize 'progress meter'
+    my $ncuts = keys %leavestocut;
+    my $noff = 0;
+    # loop through packages marked for removal and pkg_deinstall them
+    foreach my $leaf (sort keys %leavestocut) {
+      $noff++;
+      print "Deleting $leaf (package $noff of $ncuts).\n";
+      my @deinstall_args = (@pkgdeinstall, $leaf);
+      if ((my $status = system(@deinstall_args) >> 8) != 0) {
+        print STDERR "\n\n$0: pkg_deinstall returned $status - exiting, fix this first.\n\n";
+        last ROUND;
+      }
+      push @cutleaves, $leaf;
+    }
+
+    # Get new list of leaf packages and put them into a hash
+    %leaves = get_leaves();
+
+    # Ignore all leaves the user already told us to keep
+    foreach my $leaf (keys %leavestokeep) {
+      delete $leaves{$leaf}
+    }
+
+    # Any leaves left?
+    $nleaves = keys %leaves;
+    if ($nleaves == 0) {
+      # If not, don't go on, there's nothing left to do.
+      print "** Didn't find any new leaves to work with, exiting.\n";
+      last ROUND;
+    }
+
+    if ($opt{R}) { # start autopruning new leaves
+      print "\n** Autopruning new leaves (Ctrl-C now to stop!) **\n" x 2; 
+      sleep 1;
+      %leavestocut = %leaves;
+      goto AUTOPRUNE;
+    } # AUTOPRUNE
+
+    print "Go on with new leaf packages ([yes]/no)? ";
+    # Get first character of input, without leading whitespace
+    ($again) = (lc(<STDIN>) =~ /(\S)/o);
+    print "\n";
+  } # ROUND
+
+  # print list of removed packages, sorted lexically, and their number
+  print "** Deinstalled packages:\n";
+  foreach my $cutleaf (sort @cutleaves) {
+    print "$cutleaf\n";
+  }
+  my $noff = @cutleaves;
+  print "** Number of deinstalled packages: $noff\n";
+}
+
+# Generate exclude file
+if ($opt{g}) {
+  if ($opt{aborted}) {
+    die "\n** Skipping exclude file generation on aborted session **\n";
+  }
+  if (-e $excludefile) {
+    print "\nExclude file ($excludefile) exists! Overwrite ((y)es/[no])? ";
+    my $answer = <STDIN>;
+    unless ($answer =~ /^y(es)?$/io) {
+      exit 0;
+    }
+  }
+  create_excludelist();
+}
+
+#
+# Set the exclude pattern
+#
+sub set_excl_pattern {
+  my @excludes = get_excludelist();
+  $exclpattern = @excludes 
+    ? join('|', map{qr(\Q$_\E)} @excludes) 
+    : ' '; # default non-exclusive 
+  $exclpattern = qr{^($exclpattern)$}o;
+}
+
+#
+# Read the exclude list if the file exists
+# Parameter: path of the exclude file
+#
+sub get_excludelist {
+  my @excludelist;
+  # XXX: Don't check command line params in a subroutine
+  if (($opt{x} || $opt{L}) && -f $excludefile && -T $excludefile) {
+    open(EXCLFILE, $excludefile)
+      or die "Couldn't open $excludefile!";
+    while(my $exclude = <EXCLFILE>) {
+      chomp($exclude);
+      # Ignore comments and empty lines, add others to the list
+      unless ($exclude =~ /(^ *#)|(^ *$)/o) {
+        push(@excludelist, $exclude);
+      }
+    }
+    close(EXCLFILE)
+      or warn "Failed to close exclude file ($excludefile): $!\n";
+  }
+  return @excludelist;
+}
+
+#
+# Return a list of all packages
+#
+sub get_packages {
+  my @pkgs;
+  open(PKGQUERY, '-|', @pkgquery, '-a', '%n\t%n-%v\t%?r\t%c')
+    or die "Couldn't read output from $pkgquery[0]!";
+  while (my $p = <PKGQUERY>) {
+    chomp($p);
+    push(@pkgs, [ split(/\t/, $p) ]);
+  }
+  close PKGQUERY;
+  return @pkgs;
+}
+
+#
+# Get a hash (name => comment) of all leaves
+#
+sub get_leaves {
+  my %leaves;
+  my @pkgs = get_packages(); 
+  foreach my $pkg (@pkgs) {
+    my ($name, $file, $required, $comment) = @$pkg;
+    unless ($required) {
+      if ($name =~ $exclpattern) {
+        $leavestokeep{$file} = 1;
+      }
+      else {
+        unless($comment) {
+	  $comment = 'No short description';
+        }
+        $leaves{$file} = $comment;
+      }
+    }
+  }
+  return %leaves;
+}
+
+#
+# Write the list of exclusions to a file
+#
+sub create_excludelist {
+  open(EXCLFILE, ">$excludefile")
+    or die "Failed to open exclude list ($excludefile): $!\n";
+  print EXCLFILE '# Auto-generated exclude list ', scalar localtime, "\n";
+  for (sort keys %leavestokeep) {
+    /^(.+)-g?\d.*$/o 
+      ? print EXCLFILE $1, "\n"
+      : warn 'Unable to extract exclude pattern from ', $_, "\n";
+  }
+  print "New exclude list ($excludefile) generated.\n";
+}

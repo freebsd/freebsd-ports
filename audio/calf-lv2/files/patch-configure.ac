@@ -1,0 +1,11 @@
+--- configure.ac.orig	2021-04-27 13:20:32 UTC
++++ configure.ac
+@@ -5,7 +5,7 @@ AC_PREREQ(2.63)
+ AC_INIT([calf],[0.90.3],[wdev@foltman.com])
+ AC_CONFIG_SRCDIR([config.h.in])
+ AC_CONFIG_HEADER([config.h])
+-LT_INIT([dlopen])
++LT_INIT([dlopen disable-static])
+ LT_LANG([C++])
+ 
+ AM_INIT_AUTOMAKE(1.8)

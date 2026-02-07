@@ -1,0 +1,101 @@
+--- autocutsel.1.orig	2019-03-25 17:46:04 UTC
++++ autocutsel.1
+@@ -0,0 +1,98 @@
++.TH "AUTOCUTSEL" "1" "5 December 2007" "autocutsel 0.9.0"
++.SH "NAME"
++autocutsel \- keep the X clipboard and the cutbuffer in sync
++.SH "SYNOPSIS"
++.na
++.B autocutsel
++.RB [ \-selection
++.IR selection_name ]
++.RB [ \-cutbuffer
++.IR number ]
++.RB [ \-debug ]
++.RB [ \-verbose ]
++.RB [ \-fork ]
++.RB [ \-pause
++.IR milliseconds ]
++.RB [ \-buttonup ]
++
++.LP
++.SH "DESCRIPTION"
++.PP
++This manual page documents briefly the
++.B autocutsel
++command.
++.PP
++This manual page was written for the
++.B Debian
++distribution because the original
++program does not have a manual page.
++.PP
++.B autocutsel
++tracks changes in the server's
++cutbuffer and clipboard selection.
++When the clipboard is changed,
++it updates the cutbuffer.
++When the cutbuffer is changed,
++it owns the clipboard selection.
++The cutbuffer and clipboard
++selection are always synchronized.
++Since the VNC client synchronizes
++the Windows' clipboard and the
++server's cutbuffer,
++all three "clipboards" are
++always kept synchronized.
++When you copy some text in Windows,
++the cutbuffer and the clipboard
++selection are updated.
++When you copy text on the server
++using either the cutbuffer or
++the clipboard selection,
++the Windows's clipboard is always
++updated.
++
++.SH "OPTIONS"
++.TP
++.B -selection, -select, -sel, -s {CLIPBOARD|PRIMARY}
++Specify which selection to use.
++Default is CLIPBOARD.
++
++.TP
++.B -cutbuffer <number>
++(Details of this parameter unknown.)
++
++.TP
++.B -debug, -d
++Run with debugging mode.
++
++.TP
++.B -verbose, -v
++Be more verbose.
++Reports the version and announces synchronizations.
++
++.TP
++.B -fork, -f
++Run as a daemon program in the background.
++This is recommended when used from an X startup script.
++
++.TP
++.B -pause, -p <milliseconds>
++Wait some milliseconds before owning the selection.
++
++.TP
++.B -buttonup
++Get the selection only when the
++button 1 is not pressed.
++This may help with OpenOffice Writer.
++
++.SH "AUTHOR"
++.PP
++This manual page was written by
++Elmar S. Heeb <elmar@heebs.ch> for the
++.B Debian
++system (but may be used by others).
++Permission is granted to copy,
++distribute and/or modify this
++document under  the terms of the
++GNU General Public License,
++Version 2 any later version published
++by the Free Software Foundation.

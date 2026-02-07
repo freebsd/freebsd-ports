@@ -1,0 +1,17 @@
+TIMESTAMP = 1765189914
+SHA256 (rocky/l/lld-20.1.8-3.el9.aarch64.rpm) = 915bfcede7380734594f1e004a9a1d21b02a19d96828d4d911c761719557ad7b
+SIZE (rocky/l/lld-20.1.8-3.el9.aarch64.rpm) = 35512
+SHA256 (rocky/l/lld-20.1.8-3.el9.x86_64.rpm) = 521c90a17afa2f68d489aeaa057c17b603d2a84cc9e3afaba8ca5fd5927ed82c
+SIZE (rocky/l/lld-20.1.8-3.el9.x86_64.rpm) = 35413
+SHA256 (rocky/l/lld-devel-20.1.8-3.el9.aarch64.rpm) = 2ac6e8a9da1136e7efd5aacd309699e666d605155c2f9e82f23e3f553888f04d
+SIZE (rocky/l/lld-devel-20.1.8-3.el9.aarch64.rpm) = 31795
+SHA256 (rocky/l/lld-devel-20.1.8-3.el9.i686.rpm) = 457f5484daca6860babb35dd701a831680f72a001b54f248d5f8661753da5d73
+SIZE (rocky/l/lld-devel-20.1.8-3.el9.i686.rpm) = 31765
+SHA256 (rocky/l/lld-devel-20.1.8-3.el9.x86_64.rpm) = 9e6927366486ecaaf6bb64ad129e991360f7bfdcab4a37b35ee58ae544a33866
+SIZE (rocky/l/lld-devel-20.1.8-3.el9.x86_64.rpm) = 31861
+SHA256 (rocky/l/lld-libs-20.1.8-3.el9.aarch64.rpm) = af8ab4cb154b052ad49b72e750b9a8d133d85428fba778a7d97a823702b5a24b
+SIZE (rocky/l/lld-libs-20.1.8-3.el9.aarch64.rpm) = 1808116
+SHA256 (rocky/l/lld-libs-20.1.8-3.el9.i686.rpm) = 8be5c46534342b3d6d935d91b73298d7437fbfb6be637b33cc67996b7bf0bf86
+SIZE (rocky/l/lld-libs-20.1.8-3.el9.i686.rpm) = 2054325
+SHA256 (rocky/l/lld-libs-20.1.8-3.el9.x86_64.rpm) = 3e91347cbe6c49e068c5d7f0cb32b9450bd31b804f63a2858a72fe403fc6712d
+SIZE (rocky/l/lld-libs-20.1.8-3.el9.x86_64.rpm) = 1936460

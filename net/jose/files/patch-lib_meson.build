@@ -1,0 +1,11 @@
+--- lib/meson.build.orig	2025-03-24 16:00:40 UTC
++++ lib/meson.build
+@@ -4,7 +4,7 @@ if host_machine.system() == 'freebsd'
+ 
+ if host_machine.system() == 'freebsd'
+   if not cc.links(code, args: flags + ',--undefined-version' , name: '-Wl,--version-script=...')
+-     flags = [ '-export-symbols-regex=^jose_.*' ]
++    #     flags = [ '-export-symbols-regex=^jose_.*' ]
+   endif
+ else
+   if not cc.links(code, args: flags, name: '-Wl,--version-script=...')

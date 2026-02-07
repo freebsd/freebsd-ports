@@ -1,0 +1,32 @@
+#!/bin/sh
+# This shell script invokes Peering Manager's housekeeping management command,
+# which intended to be run nightly.
+#
+# If you want to enable this script, copy it to %%PREFIX%%/etc/periodic/daily
+# and place the following into /etc/periodic.conf:
+#
+# daily_peeringmanager_housekeeping_enable="YES"
+#
+# If Peering Manager has been installed into a nonstandard location, update the
+# paths below.
+command="%%PYTHON_CMD%%"
+peeringmanager_root="%%WWWDIR%%"
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+rc=0
+
+case "$daily_peeringmanager_housekeeping_enable" in
+	[Yy][Ee][Ss])
+	echo ""
+	echo "Running Peering Manager housekeeping:"
+	$command "$peeringmanager_root/manage.py" housekeeping
+	rc=$?
+esac
+
+exit $rc

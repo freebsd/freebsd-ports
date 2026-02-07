@@ -1,0 +1,160 @@
+#!/bin/sh
+#
+# INDEX build tinderbox script.  Build an INDEX for all supported FreeBSD branches
+# using the latest value of OSVERSION according to the src trees.  If the build
+# fails, yowl about it on ${REPORT_ADDRESS}  If not, copy the index to www.freebsd.org so
+# that 'make fetchindex' sees it.
+#
+# When INDEX is broken, assemble the list of committers who touched files
+# on the most recent 'git pull', and put those committers "on the hook".
+# These committers all stay on the hook until INDEX is buildable again.
+#
+# MAINTAINER= portmgr@FreeBSD.org
+#
+
+# --------------------------------------------------------
+# Change these!
+
+GIT=/usr/local/bin/git
+SVN=/usr/local/bin/svn
+
+# Address for success/failure reports
+REPORT_ADDRESS=root@localhost
+
+# Address for script errors
+ERROR_ADDRESS=root@localhost
+
+# Location of ports tree and source trees
+export BASEDIR=/a/tindex
+export PORTSDIR=${BASEDIR}/ports
+export SRCDIR12=${BASEDIR}/src.12
+export SRCDIR13=${BASEDIR}/src.13
+export SRCDIR14=${BASEDIR}/src.14
+export OUTDIR=${BASEDIR}/out
+
+# Target architecture if not set in the environment
+if [ "${ARCH}" = "" ]; then
+	export ARCH=i386
+	export MACHINE_ARCH=i386
+fi
+
+# --------------------------------------------------------
+
+blame() {
+  # Find out who is responsible for current version of file $1
+
+  ${GIT} log --no-patch --max-count=1 --format='%ce' -- $1
+}
+
+indexfail() {
+  BRANCH=$1
+
+  # Leave a cookie behind so that we know when the index is fixed
+  touch ${PORTSDIR}/broken.${BRANCH}
+
+  (
+    echo "INDEX build failed with errors:";
+    len=$(wc -l index.out | awk '{print $1}')
+    if [ "$len" -gt "40" ]; then
+      head -20 index.out
+      echo "[...]"
+      tail -20 index.out
+    else
+      cat index.out
+    fi
+
+    len=$(wc -l index.err | awk '{print $1}')
+    if [ "$len" -gt "40" ]; then
+      head -20 index.err
+      echo "[...]"
+      tail -20 index.err
+    else
+      cat index.err
+    fi
+
+    # Find out which committers are on the hook
+
+    commits=$(${GIT} diff --name-only ${OLD_HEAD})
+    for i in ${commits}; do
+	blame $i >> ${PORTSDIR}/hook
+    done
+    sort -u ${PORTSDIR}/hook > ${PORTSDIR}/hook.new
+    mv ${PORTSDIR}/hook.new ${PORTSDIR}/hook
+    echo
+    echo "Committers on the hook:"
+    tr -s '\n' ' ' < ${PORTSDIR}/hook
+    echo
+    echo 
+    echo "Most recent Git update was:";
+    (IFS=""; echo ${commits})
+  ) | mail -s "INDEX build failed for ${BRANCH}" ${REPORT_ADDRESS}
+  exit 1
+}
+
+checkfixed() {
+  BRANCH=$1
+
+  # If the cookie exists that means that this is the first build for which the
+  # INDEX succeeded, so announce this.
+  if [ -e ${PORTSDIR}/broken.${BRANCH} ]; then
+    rm -f ${PORTSDIR}/broken.${BRANCH}
+    mail -s "INDEX now builds successfully on ${BRANCH}" ${REPORT_ADDRESS} < /dev/null
+  fi
+}
+
+# Sanitize the environment so that the indexes aren't customized by the
+# local machine settinge
+export __MAKE_CONF=/dev/null
+export PORT_DBDIR=/nonexistent
+export PKG_DBDIR=/nonexistent
+export LOCALBASE=/nonexistent
+export INDEX_PRISTINE=1
+export INDEX_JOBS=3
+export INDEX_QUIET=1
+
+# First update the source trees to get current OSVERSION
+${SVN} -q up ${SRCDIR12}/sys/sys
+OSVERSION12=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR12}/sys/sys/param.h)
+
+${GIT} -C ${SRCDIR13} pull --rebase -q
+OSVERSION13=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR13}/sys/sys/param.h)
+
+${GIT} -C ${SRCDIR14} pull --rebase -q
+OSVERSION14=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR14}/sys/sys/param.h)
+
+cd ${PORTSDIR}
+for ver in 12 13 14; do
+	rm -f INDEX-${ver} INDEX-${ver}.bz2 INDEX-${ver}.xz INDEX-${ver}.zst
+done
+
+OLD_HEAD=$(${GIT} rev-parse HEAD)
+if ! ${GIT} pull --ff-only > git.log 2>&1 ; then
+  (echo "Git update failed with conflicts:";
+    cat git.log) | mail -s "Ports Git update failed" ${ERROR_ADDRESS}
+    exit 1
+fi
+
+for branch in 12.x 13.x 14.x; do
+    release=$(echo $branch | sed -e 's,.x,,')
+
+    eval _osver=\$OSVERSION${release}
+    eval _uname_r="$(( ${_osver} / 100000 )).0-RELEASE"
+    export OSVERSION=${_osver}
+    export UNAME_r=${_uname_r}
+
+    echo "Building INDEX for ${branch} with OSVERSION=${OSVERSION}"
+    cd ${PORTSDIR}
+    ( (make index 2> index.err) > index.out) || indexfail ${branch}
+    if [ -s index.err ]; then
+        indexfail ${branch}
+    fi
+    checkfixed ${branch}
+
+    bzip2 -kf ${PORTSDIR}/INDEX-${release}
+    zstd -qf --ultra -22 -k ${PORTSDIR}/INDEX-${release}
+    xz -9e -kf ${PORTSDIR}/INDEX-${release}
+    mv ${PORTSDIR}/INDEX-${release} ${PORTSDIR}/INDEX-${release}.bz2 ${PORTSDIR}/INDEX-${release}.zst ${PORTSDIR}/INDEX-${release}.xz ${OUTDIR}
+done
+
+# All indexes built successfully, clear the hook
+rm -f ${PORTSDIR}/hook

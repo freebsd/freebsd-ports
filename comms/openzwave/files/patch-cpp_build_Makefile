@@ -1,0 +1,23 @@
+# Allow DOXYGEN (DOCS) and DOT to be conditionally disabled
+# TODO: Upstream
+
+--- cpp/build/Makefile.orig	2019-03-27 04:09:23 UTC
++++ cpp/build/Makefile
+@@ -204,7 +204,7 @@ $(top_builddir)/ozw_config: $(top_srcdir)/cpp/build/oz
+ 		< "$<" > "$@"
+ 	@chmod +x $(top_builddir)/ozw_config
+ 
+-ifeq ($(DOT),)
++ifndef DOT
+ HAVE_DOT = -e 's|[@]HAVE_DOT@|NO|g' 
+ else
+ HAVE_DOT = -e 's|[@]HAVE_DOT@|YES|g' 
+@@ -219,7 +219,7 @@ $(top_builddir)/Doxyfile: $(top_srcdir)/docs/Doxyfile.
+ 		-e 's|[@]VERSION@|$(VERSION).$(VERSION_REV)|g' \
+ 		< "$<" > "$@"
+ 
+-ifeq ($(DOXYGEN),)
++ifndef DOXYGEN
+ doc:
+ 		$(warning Documentation not being built)
+ else

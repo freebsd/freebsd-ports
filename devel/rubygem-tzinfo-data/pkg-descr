@@ -1,0 +1,2 @@
+TZInfo::Data contains data from the IANA Time Zone database packaged as Ruby
+modules for use with TZInfo.

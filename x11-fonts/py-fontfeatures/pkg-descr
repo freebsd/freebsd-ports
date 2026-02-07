@@ -1,0 +1,18 @@
+OpenType fonts are "programmed" using features, which are normally authored in
+Adobe's feature file format. This like source code to a computer program: it's a
+user-friendly, but computer-unfriendly, way to represent the features.
+
+Inside a font, the features are compiled in an efficient internal format. This
+is like the binary of a computer program: computers can use it, but they can't
+do else anything with it, and people can't read it.
+
+The purpose of this library is to provide a middle ground for representing
+features in a machine-manipulable format, kind of like the abstract syntax tree
+of a computer programmer. This is so that:
+- features can be represented in a structured human-readable and
+  machine-readable way, analogous to the XML files of the Unified Font Object
+  format.
+- features can be more directly authored by programs (such as font editors),
+  rather than them having to output AFDKO feature file format.
+- features can be easily manipulated by programs - for example, features from
+  two files merged together, or lookups moved between languages.

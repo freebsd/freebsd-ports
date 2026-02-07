@@ -1,0 +1,3 @@
+Test::POE::Server::TCP is a POE component that provides a TCP server
+framework for inclusion in client component test cases, instead of
+having to roll your own.

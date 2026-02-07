@@ -1,0 +1,32 @@
+--- tests/signal.test	2002-04-02 21:44:21.000000000 -0500
++++ tests/signal.test	2009-11-26 12:19:20.000000000 -0500
+@@ -329,5 +329,5 @@
+     echo Notice: restarting of interrupted system calls is not available on this system.
+ } else {
+-    test signal-3.0 {kill tests} {
++    Test signal-3.0 {kill tests} {
+         # Start program on a pipe, but don't doing anything until we send it
+         # something to make timing issues smaller.
+@@ -346,5 +346,14 @@
+             set resp [gets $sp]
+         } {} {
+-            catch {close $sp}
++	    signal -restart error SIGPIPE
++	    if {[catch {close $sp} e]} {
++		if {$e == "SIGPIPE signal received"} {
++		    puts stderr "$e while closing $sp. This Tcl bug is fixed in recent 8.4 and 8.5 releases"
++		} else {
++		    puts stderr "Unexpected error $e while closing $sp."
++		    append resp - $e
++		}
++	    }
++	    signal default SIGPIPE
+             alarm 0
+         }
+@@ -353,5 +362,5 @@
+         # Note this this is somewhat timing dependent and might fail
+         # on a heavly loaded system.
+-    } {HELLO 1}
++    } 0 {HELLO 1}
+ }
+ 

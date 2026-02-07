@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+To automatically start Calibre-Web at boot time:
+# sysrc calibreweb_enable="YES"
+
+To then manually start Calibre-Web without rebooting:
+# service calibreweb start
+
+Once started, visit the following webpage to configure:
+http://localhost:8083/
+
+Default User: admin
+Default Password: admin123
+EOM
+}
+]

@@ -1,0 +1,5 @@
+The board library allows simple drawings in:
+
+    * Encapsulated Postcript files (EPS);
+    * XFig files (FIG);
+    * Scalable Vector Graphics files (SVG).

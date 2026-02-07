@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.9
+Name=Autofirma
+Type=Application
+Terminal=false
+Categories=Office;Utilities;Signature;Java
+Exec=%%LOCALBASE%%/bin/autofirma %u
+Icon=%%DATADIR%%/Autofirma.png
+GenericName=Herramienta de firma
+Comment=Herramienta de firma
+MimeType=x-scheme-handler/afirma;
+StartupNotify=true
+StartupWMClass=autofirma
+Name[es_ES]=Autofirma
+

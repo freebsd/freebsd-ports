@@ -1,0 +1,13 @@
+Remove hardcoded optimization flags.
+
+--- libdiscmage/Makefile.in.orig	2021-12-17 09:58:17 UTC
++++ libdiscmage/Makefile.in
+@@ -23,7 +23,7 @@ INSTALL_DATA=@INSTALL_DATA@
+ ifeq ($(CC),cc)
+ CC=@CC@
+ endif
+-CFLAGS0:=$(CFLAGS) -I. -Wall -W -Wno-implicit-fallthrough -O3 @DEFS@
++CFLAGS0:=$(CFLAGS) -I. -Wall -W -Wno-implicit-fallthrough @DEFS@
+ ifneq ($(findstring clang,$(CC)),clang)
+ CFLAGS0+=-Wno-format-truncation -Wno-stringop-overflow
+ endif

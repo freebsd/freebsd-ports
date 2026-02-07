@@ -1,0 +1,11 @@
+--- components/gwp_asan/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ components/gwp_asan/BUILD.gn
+@@ -15,7 +15,7 @@ test("gwp_asan_unittests") {
+     "//testing/gtest",
+     "//third_party/boringssl",
+   ]
+-  if (is_win || is_mac || is_linux || is_chromeos || is_android || is_ios) {
++  if ((is_win || is_mac || is_linux || is_chromeos || is_android || is_ios) && !is_bsd) {
+     deps += [
+       "//components/gwp_asan/client:unit_tests",
+       "//components/gwp_asan/crash_handler:unit_tests",

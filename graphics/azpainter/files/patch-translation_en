@@ -1,0 +1,13 @@
+--- translation/en.orig	2019-04-30 02:37:30 UTC
++++ translation/en
+@@ -203,8 +203,8 @@
+ +=dim
+ +=brighten
+ +=difference
+-+=luminous(add)
+-+=luminous(dodge)
+++=luminous (add)
+++=luminous (dodge)
+ 
+ #----------------
+ # scale type

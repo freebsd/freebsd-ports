@@ -1,0 +1,20 @@
+--- configure.ac.orig	2015-03-02 23:54:36.000000000 +0100
++++ configure.ac	2017-12-18 17:23:45.215876000 +0100
+@@ -86,14 +86,15 @@ fi
+ if test "x${notify}" = xyes; then
+ # Check for libnotify
+ PKG_CHECK_MODULES([NOTIFY], [libnotify >= 0.5.0])
+-NOTIFY_CFLAGS+="-DCOMPILEWITH_NOTIFY"
++NOTIFY_CFLAGS="-DCOMPILEWITH_NOTIFY"
+ AC_SUBST(NOTIFY_CFLAGS)
+ AC_SUBST(NOTIFY_LIBS)
+ fi
+ 
+ AC_SUBST(OSS_CFLAGS)
+ 
+-AM_CONDITIONAL(ENABLE_OSS, test "$oss" = "yes")
++AM_CONDITIONAL(ENABLE_OSS4, test "x${oss}" = xyes -o "x${oss}" = xv4)
++AM_CONDITIONAL(ENABLE_OSS3, test "x${oss}" = xv3)
+ 
+ DEFAULT_MIXERAPP="xterm -e 'alsamixer'"
+ AC_ARG_WITH(default-mixerapp,

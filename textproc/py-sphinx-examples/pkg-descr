@@ -1,0 +1,3 @@
+sphinx-examples is a small Sphinx extension to create examples of source markup
+and the result of rendering it in your documentation. This is useful if you wish
+to demonstrate the functionality of a new directive or role in Sphinx.

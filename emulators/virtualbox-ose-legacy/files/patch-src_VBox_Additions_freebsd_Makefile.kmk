@@ -1,0 +1,30 @@
+--- src/VBox/Additions/freebsd/Makefile.kmk.orig	2019-07-12 08:42:35 UTC
++++ src/VBox/Additions/freebsd/Makefile.kmk
+@@ -23,8 +23,9 @@ $(error "The FreeBSD guest additions installer can onl
+ endif
+ 
+ # Include sub-makefiles.
+-#include $(PATH_SUB_CURRENT)/vboxvfs/Makefile.kmk
+-include $(PATH_SUB_CURRENT)/drm/Makefile.kmk
++include $(PATH_SUB_CURRENT)/vboxvfs/Makefile.kmk
++#include $(PATH_SUB_CURRENT)/drm/Makefile.kmk
++include $(PATH_SUB_CURRENT)/mount_vboxvfs/Makefile.kmk
+ 
+ #
+ # Globals
+@@ -67,11 +68,13 @@ VBOX_FBSD_ADD_STRIP_BIN = \
+ 	vboxvideo_drv_15.so \
+ 	vboxvideo_drv_16.so \
+ 	vboxvideo_drv_17.so \
+-	VBoxOGL.so
++	$(if $(VBOX_WITH_PAM),pam_vbox.so,) \
++	VBoxOGL.so \
++	mount_vboxvfs
+ 
+ VBOX_FBSD_ADD_MODULES = \
+ 	vboxguest \
+-	vboxvideo_drm
++	vboxvfs
+ 
+ #
+ # All the bin files that go into the archives.

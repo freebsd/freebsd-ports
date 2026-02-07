@@ -1,0 +1,4 @@
+bin/cpanm-reporter
+%%PERL5_MAN1%%/cpanm-reporter.1.gz
+%%PERL5_MAN3%%/App::cpanminus::reporter.3.gz
+%%SITE_PERL%%/App/cpanminus/reporter.pm

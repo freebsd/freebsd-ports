@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Module/Install/Admin/AuthorRequires.pm
+%%SITE_PERL%%/Module/Install/AuthorRequires.pm
+%%PERL5_MAN3%%/Module::Install::AuthorRequires.3.gz

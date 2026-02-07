@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Business/PayPal.pm
+%%SITE_PERL%%/Business/getppcert.pl
+%%PERL5_MAN3%%/Business::PayPal.3.gz

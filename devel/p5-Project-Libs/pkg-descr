@@ -1,0 +1,2 @@
+Project::Libs automatically adds directories that may contain modules
+which a project depends on.

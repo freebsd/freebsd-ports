@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: stirlingpdf
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for Stirling-PDF in /etc/rc.conf:
+#
+# stirlingpdf_enable (bool):
+#   Set tto "NO" by default.
+#   Set it to "YES" to enable Stirling-PDF
+#
+# stirlingpdf_home (str):
+#   Set to "%%STIRLINGPDF_HOME%%" by default.
+#
+# stirlingpdf_user (str):
+#   Set to "%%STIRLINGPDF_USER%%" by default.
+#   User to run Stirling-PDF as.
+#
+# stirlingpdf_group (str):
+#   Set to "%%STIRLINGPDF_GROUP%%" by default.
+#   Group for data file ownership
+
+. /etc/rc.subr
+
+name="stirlingpdf"
+rcvar="${name}_enable"
+load_rc_config "${name}"
+
+: ${stirlingpdf_enable:="NO"}
+: ${stirlingpdf_home="%%STIRLINGPDF_HOME%%"}
+: ${stirlingpdf_user="%%STIRLINGPDF_USER%%"}
+: ${stirlingpdf_group="%%STIRLINGPDF_GROUP%%"}
+
+stirlingpdf_prestart()
+{
+	if [ ! -d "/var/run/${name}" ]; then
+		install -d -o "${stirlingpdf_user}" -g "${stirlingpdf_group}" -m 750 "/var/run/${name}"
+	fi
+}
+
+stirlingpdf_start()
+{
+	su -m ${stirlingpdf_user} -c "cd ${stirlingpdf_home} && exec ${command} ${command_args}"
+}
+
+pidfile=/var/run/${name}/${name}.pid
+command=/usr/sbin/daemon
+procname="%%JAVA%%"
+command_args="-f -p ${pidfile} %%JAVA%% -jar %%DISTNAME%%%%EXTRACT_SUFX%%"
+required_files="%%JAVA%% ${stirlingpdf_home}/%%DISTNAME%%%%EXTRACT_SUFX%%"
+
+start_precmd=stirlingpdf_prestart
+start_cmd=stirlingpdf_start
+
+run_rc_command "$1"

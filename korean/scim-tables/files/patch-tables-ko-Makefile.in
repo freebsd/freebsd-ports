@@ -1,0 +1,11 @@
+--- tables/ko/Makefile.in.orig	2011-05-17 11:57:02.000000000 -0700
++++ tables/ko/Makefile.in	2011-07-19 09:30:04.292794874 -0700
+@@ -274,7 +274,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
++SCIM_MAKE_TABLE = scim-make-table
+ scim_tables_source = Hangul.txt.in HangulRomaja.txt.in Hanja.txt.in
+ scim_tables = Hangul.txt HangulRomaja.txt Hanja.txt
+ scim_tables_bindir = $(SCIM_TABLEDIR)

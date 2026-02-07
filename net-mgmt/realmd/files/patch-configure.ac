@@ -1,0 +1,27 @@
+--- configure.ac.orig	2022-09-29 11:05:56 UTC
++++ configure.ac
+@@ -155,8 +155,13 @@ for lib in "" "-lresolv"; do
+ 	saved_LIBS="$LIBS"
+ 	LIBS="$LIBS $lib"
+ 	AC_LINK_IFELSE([
+-		AC_LANG_PROGRAM([#include <resolv.h>],
+-		                [res_query (0, 0, 0, 0, 0)])
++		AC_LANG_PROGRAM([#include <sys/types.h>],
++				[#include <netinet/in.h>],
++				[#include <arpa/nameser.h>],
++				[#include <resolv.h>],
++		                [res_query (0, 0, 0, 0, 0);
++		                 ns_get32 (NULL);
++		                 ns_get16 (NULL);])
+ 	],
+ 	[ AC_MSG_RESULT(${lib:-libc}); have_res_query="yes"; break; ],
+ 	[ LIBS="$saved_LIBS" ])
+@@ -266,7 +271,7 @@ AC_SUBST(DBUS_SERVICES_DIR)
+ DBUS_SERVICES_DIR="${datadir}/dbus-1/system-services"
+ AC_SUBST(DBUS_SERVICES_DIR)
+ 
+-DBUS_POLICY_DIR="${sysconfdir}/dbus-1/system.d"
++DBUS_POLICY_DIR="${datadir}/dbus-1/system.d"
+ AC_SUBST(DBUS_POLICY_DIR)
+ 
+ POLKIT_ACTION_DIR="${datadir}/polkit-1/actions"

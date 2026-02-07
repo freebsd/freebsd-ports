@@ -1,0 +1,37 @@
+--- src/Makefile.in.orig	2014-05-24 19:19:02.324979295 +0800
++++ src/Makefile.in	2014-05-24 19:19:51.359974924 +0800
+@@ -168,23 +168,23 @@ distclean: clean
+ 	/bin/rm -f Makefile
+ 
+ install: $(LIB_DIR)/$(LIB_SHARED) $(LIB_DIR)/$(LIB_STATIC)
+-	$(top_srcdir)/mkinstalldirs $(bindir)
+-	$(top_srcdir)/mkinstalldirs $(libdir)
+-	$(top_srcdir)/mkinstalldirs $(includedir)
+-	$(top_srcdir)/mkinstalldirs $(includedir)/serdisplib
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(libdir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(includedir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(includedir)/serdisplib
+ 	
+-	$(INSTALL_PROGRAM) $(PROGRAMS) $(bindir)/
+-	$(INSTALL_PROGRAM) $(LIB_DIR)/$(LIB_SHARED) $(libdir)/
+-	$(INSTALL_DATA) $(LIB_DIR)/$(LIB_STATIC) $(libdir)/
++	$(INSTALL_PROGRAM) $(PROGRAMS) $(DESTDIR)$(bindir)/
++	$(INSTALL_PROGRAM) $(LIB_DIR)/$(LIB_SHARED) $(DESTDIR)$(libdir)/
++	$(INSTALL_DATA) $(LIB_DIR)/$(LIB_STATIC) $(DESTDIR)$(libdir)/
+ 	list='$(LIB_HEADERFILES)'; \
+ 	for headerfile in $$list; do \
+-	  $(INSTALL_DATA) ../include/serdisplib/$$headerfile $(includedir)/serdisplib/ ; \
++	  $(INSTALL_DATA) ../include/serdisplib/$$headerfile $(DESTDIR)$(includedir)/serdisplib/ ; \
+ 	done
+ 	if [ -n "$(VERSION_SUBMINOR)" ]  ; then \
+-	  cd $(libdir) && $(LN_S) -f $(LIB_SHARED) lib$(LIB_NAME).so.$(VERSION_MAJOR).$(VERSION_MINOR) ; \
++	  cd $(DESTDIR)$(libdir) && $(LN_S) -f $(LIB_SHARED) lib$(LIB_NAME).so.$(VERSION_MAJOR).$(VERSION_MINOR) ; \
+ 	fi
+-	cd $(libdir) && $(LN_S) -f $(LIB_SHARED) lib$(LIB_NAME).so.$(VERSION_MAJOR)
+-	cd $(libdir) && $(LN_S) -f lib$(LIB_NAME).so.$(VERSION_MAJOR) lib$(LIB_NAME).so
++	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(LIB_SHARED) lib$(LIB_NAME).so.$(VERSION_MAJOR)
++	cd $(DESTDIR)$(libdir) && $(LN_S) -f lib$(LIB_NAME).so.$(VERSION_MAJOR) lib$(LIB_NAME).so
+ 
+ uninstall:
+ 	-/bin/rm -f $(libdir)/libserdisp*

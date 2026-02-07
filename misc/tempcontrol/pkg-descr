@@ -1,0 +1,11 @@
+Tempcontrol is a temperature control program.  In its current version
+it is specifically designed to control the temperature of beer
+fermenters in a fridge.  It controls the temperatures when necessary
+by turning on either the fridge motor to cool the surroundings, or a
+light bulb to warm them.
+
+The specific brewing-related details are relatively minor, and future
+versions may become more general-purpose.
+
+Read the file README in the distribution for more information.  At a
+later date there will be real documentation.

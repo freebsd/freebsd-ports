@@ -1,0 +1,10 @@
+bin/welle-io
+share/applications/io.welle.welle-gui.desktop
+share/icons/hicolor/128x128/apps/io.welle.welle-gui.png
+share/icons/hicolor/16x16/apps/io.welle.welle-gui.png
+share/icons/hicolor/24x24/apps/io.welle.welle-gui.png
+share/icons/hicolor/256x256/apps/io.welle.welle-gui.png
+share/icons/hicolor/32x32/apps/io.welle.welle-gui.png
+share/icons/hicolor/48x48/apps/io.welle.welle-gui.png
+share/man/man1/welle-io.1.gz
+share/metainfo/io.welle.welle-gui.appdata.xml

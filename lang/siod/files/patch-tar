@@ -1,0 +1,61 @@
+--- tar.c	2014-03-25 04:10:42.000000000 -0400
++++ tar.c	2021-02-15 21:31:22.208797000 -0500
+@@ -41,5 +41,5 @@
+ #define SAFE_ATOL8(_buff) (safe_atol8((_buff),sizeof(_buff)))
+ 
+-LISP decode_tartype(char c)
++static LISP decode_tartype(char c)
+ {switch(c)
+    {case 0:
+@@ -61,13 +61,13 @@
+       return(NIL);}}
+ 
+-static struct tar_header *get_tar_header(LISP bytes)
+-{long n;
+- struct tar_header *h;
+- h = (struct tar_header *) get_c_string_dim(bytes,&n);
++static const struct tar_header *get_tar_header(LISP bytes)
++{unsigned long n;
++ const struct tar_header *h;
++ h = (const struct tar_header *) get_c_string_dim(bytes,&n);
+  if (n < sizeof(struct tar_header)) err("too small for tar header",bytes);
+  return(h);}
+ 
+-LISP decode_tar_header(LISP bytes)
+-{struct tar_header *h = get_tar_header(bytes);
++static LISP decode_tar_header(LISP bytes)
++{const struct tar_header *h = get_tar_header(bytes);
+  return(listn(16,
+ 	      cons(cintern("name"),
+@@ -104,14 +104,14 @@
+ 		   strcons(SAFE_STRLEN(h->prefix),h->prefix))));}
+ 
+-static unsigned long checksum(void *start,
+-			    void *end)
+-{unsigned char *ptr;
++static unsigned long checksum(const void *start,
++			    const void *end)
++{const unsigned char *ptr;
+  unsigned long sum = 0;
+- for(ptr=(unsigned char *)start;ptr<(unsigned char *)end;++ptr)
++ for(ptr=(const unsigned char *)start; ptr < (const unsigned char *)end; ++ptr)
+    sum += *ptr;
+  return(sum);}
+ 
+-LISP checksum_tar_header(LISP bytes,LISP whole)
+-{struct tar_header *h = get_tar_header(bytes);
++static LISP checksum_tar_header(LISP bytes,LISP whole)
++{const struct tar_header *h = get_tar_header(bytes);
+  if NNULLP(whole)
+    return(flocons(checksum(&h->name[0],
+@@ -123,4 +123,6 @@
+ 			   &h->end_pad[sizeof(h->end_pad)])));}
+ 
++void init_tar(void);	/* Our sole exported function */
++
+ void init_tar(void)
+ {init_subr_1("decode-tar-header",decode_tar_header);
+@@ -130,3 +132,2 @@
+ 	NIL);
+  init_tar_version();}
+-

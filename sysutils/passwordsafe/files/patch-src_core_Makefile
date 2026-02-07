@@ -1,0 +1,41 @@
+--- src/core/Makefile.orig	2024-11-06 19:10:17 UTC
++++ src/core/Makefile
+@@ -36,6 +36,7 @@ LIBSRC          = CheckVersion.cpp \
+                   Command.cpp PWSrand.cpp Report.cpp \
+                   core_st.cpp RUEList.cpp \
+                   StringX.cpp SysInfo.cpp \
++                  TotpCore.cpp \
+                   UnknownField.cpp  \
+                   UTF8Conv.cpp Util.cpp CoreOtherDB.cpp \
+                   VerifyFormat.cpp XMLprefs.cpp \
+@@ -46,11 +47,13 @@ LIBSRC          = CheckVersion.cpp \
+                   XML/Xerces/XFileSAX2Handlers.cpp XML/Xerces/XFileValidator.cpp \
+                   XML/Xerces/XFileXMLProcessor.cpp XML/Xerces/XFilterSAX2Handlers.cpp \
+                   XML/Xerces/XFilterXMLProcessor.cpp XML/Xerces/XSecMemMgr.cpp PWSLog.cpp \
+-				  RUEList.cpp \
+-				  crypto/AES.cpp crypto/BlowFish.cpp crypto/pbkdf2.cpp \
+-				  crypto/KeyWrap.cpp crypto/sha1.cpp crypto/sha256.cpp \
+-				  crypto/TwoFish.cpp
++                  RUEList.cpp \
++                  crypto/AES.cpp crypto/BlowFish.cpp crypto/pbkdf2.cpp \
++                  crypto/KeyWrap.cpp crypto/sha1.cpp crypto/sha256.cpp \
++                  crypto/TwoFish.cpp \
++                  crypto/external/Chromium/base32.cpp
+ 
++
+ SRC             = $(LIBSRC)
+ 
+ OBJPATH         = ../../obj/$(CONFIG)/$(NAME)
+@@ -110,10 +113,10 @@ setup:
+ 	@rm core_st.cpp core_st.h
+ 
+ setup:
+-	@mkdir -p $(OBJPATH) $(OBJPATH)/pugixml $(OBJPATH)/crypto $(OBJPATH)/XML/Xerces $(OBJPATH)/XML/Pugi $(LIBPATH) $(DEPDIR)
++	@mkdir -p $(OBJPATH) $(OBJPATH)/pugixml $(OBJPATH)/crypto/external/Chromium $(OBJPATH)/XML/Xerces $(OBJPATH)/XML/Pugi $(LIBPATH) $(DEPDIR)
+ 
+ $(DEPDIR)/%.d: %.cpp
+-	@set -e; mkdir -p $(DEPDIR) $(DEPDIR)/pugixml $(DEPDIR)/crypto; \
++	@set -e; mkdir -p $(DEPDIR) $(DEPDIR)/pugixml $(DEPDIR)/crypto/external/Chromium; \
+ 	mkdir -p $(DEPDIR)/XML/Xerces $(DEPDIR)/XML/Pugi; \
+ 	$(RM) $@; \
+ 	$(CXX) -MM $(CPPFLAGS) $< > $@.$$$$; \

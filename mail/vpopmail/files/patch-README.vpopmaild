@@ -1,0 +1,44 @@
+Description: Fix a couple of typos and grammatical errors.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
+
+--- a/doc/README.vpopmaild
++++ b/doc/README.vpopmaild
+@@ -243,7 +243,7 @@
+ 
+ Rights required: Must be a valid email address.
+ 
+-Action:	Verify the username and password of the persion desiring to
++Action:	Verify the username and password of the person desiring to
+ 	login, and set their access rights.
+ 
+ 	For the "login" command, a successful login will return a
+@@ -386,7 +386,7 @@
+ 
+ 
+ The following values are returned as the character '1' or '0'. '1'
+-says the field is active which, for example an active no_password_change
++says the field is active - for example, an active no_password_change field
+ means the user can not change passwords.
+ 
+ no_password_change, no_pop, no_webmail, no_imap, bounce_mail, no_relay,
+@@ -631,7 +631,7 @@
+ Rights required: SA_ADMIN
+ 
+ Action:  List all domains on the system, and their parent domain.
+-If the optional page is given, lines_per_page must be specified also.
++If the optional page is given, lines_per_page must also be specified.
+ When both are given, the data is broken up into pages with lines_per_page
+ lines on each.  The page returned is specified by page.
+ 
+@@ -1088,7 +1088,7 @@
+ The actual error messages are stored in the file vpopmaild.msg for easy translation.
+ Once there are other language files, I'll create a directory to store the various
+ language files, and use a symlink to select a language.  Error messages are set
+-at comile time.
++at compile time.
+ 
+-0.X represents a message passed up from fpopmaild primitives, and does not otherwise
++0.X represents a message passed up from vpopmaild primitives, and does not otherwise
+ follow the standard error reporting structure.  (yet?)

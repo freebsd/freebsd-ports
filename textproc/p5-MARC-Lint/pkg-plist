@@ -1,0 +1,6 @@
+bin/marclint
+%%PERL5_MAN3%%/MARC::Lint.3.gz
+%%PERL5_MAN3%%/MARC::Lint::CodeData.3.gz
+%%SITE_PERL%%/MARC/Lint.pm
+%%SITE_PERL%%/MARC/Lint/CodeData.pm
+%%PERL5_MAN1%%/marclint.1.gz

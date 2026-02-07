@@ -1,0 +1,75 @@
+--- meson.build.orig	2026-01-04 16:50:32.000000000 +0000
++++ meson.build
+@@ -69,6 +69,7 @@
+ datadir = prefix / get_option('datadir')
+ includedir = prefix / get_option('includedir')
+ libdir = prefix / get_option('libdir')
++libexecdir = prefix / get_option('libexecdir')
+ mandir = prefix / get_option('mandir')
+ sbindir = prefix / get_option('sbindir')
+ sysconfdir = prefix / get_option('sysconfdir')
+@@ -141,7 +142,7 @@
+ messagedir = '-DSERVERTEXT="' + localstatedir + '/netatalk/msg/"'
+ naddir = '-D_PATH_NAD="' + bindir + '/nad"'
+ statedir = '-D_PATH_STATEDIR="' + localstatedir + '/netatalk/"'
+-uamdir = '-D_PATH_AFPDUAMPATH="' + libdir + '/netatalk/"'
++uamdir = '-D_PATH_AFPDUAMPATH="' + libexecdir + '/netatalk-uams/"'
+ 
+ ############
+ # Includes #
+@@ -411,6 +412,7 @@
+     endif
+ 
+     bdb_subdirs = [
++        '%%DB_NAME%%',
+         'db62',
+         'db6.2',
+         'db61',
+@@ -927,12 +929,12 @@
+ 
+ dns_sd_libs = []
+ 
+-dns_sd = cc.find_library('dns_sd', required: false)
++dns_sd = cc.find_library('dns_sd', dirs: libsearch_dirs, required: false)
+ if dns_sd.found()
+     dns_sd_libs += dns_sd
+ endif
+ 
+-system = cc.find_library('system', required: false)
++system = cc.find_library('system', dirs: libsearch_dirs, required: false)
+ if dns_sd.found()
+     dns_sd_libs += system
+ endif
+@@ -946,6 +948,8 @@
+     )
+ )
+ 
++threads = dependency('threads', required: true)
++
+ if enable_zeroconf
+     if host_os == 'darwin'
+         # On Darwin/macOS, prefer mDNS (Bonjour) over Avahi
+@@ -955,6 +959,7 @@
+             cdata.set('HAVE_MDNS', 1)
+             cdata.set('freebsd_zeroconf', 'mdnsd')
+             zeroconf_provider += 'mDNS'
++            dns_sd_libs += threads
+         elif avahi.found()
+             have_zeroconf = true
+             cdata.set('USE_ZEROCONF', 1)
+@@ -976,6 +981,7 @@
+             cdata.set('HAVE_MDNS', 1)
+             cdata.set('freebsd_zeroconf', 'mdnsd')
+             zeroconf_provider += 'mDNS'
++            dns_sd_libs += threads
+         endif
+     endif
+ endif
+@@ -1592,6 +1598,7 @@
+ 
+ if not enable_pam
+     have_pam = false
++    pam = dependency('', required: false)
+ else
+     if host_os != 'sunos'
+         pam_paths = [

@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+If this is a new installation, please follow the instructions there:
+
+http://sabre.io/baikal/install/
+
+Baikal has been installed in %%WWWDIR%%
+
+If you are upgrading from a previous version of Baikal, please
+follow the instructions here:
+
+http://sabre.io/baikal/upgrade/
+EOM
+}
+]

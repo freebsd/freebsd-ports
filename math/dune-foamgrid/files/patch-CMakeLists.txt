@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2021-01-17 06:47:55 UTC
++++ CMakeLists.txt
+@@ -20,7 +20,9 @@ dune_project()
+ dune_enable_all_packages()
+ 
+ add_subdirectory(dune)
++if (FREEBSD_INSTALL_DOCS)
+ add_subdirectory(doc)
++endif()
+ add_subdirectory(cmake/modules)
+ add_subdirectory(examples EXCLUDE_FROM_ALL)
+ if (dune-python_FOUND)

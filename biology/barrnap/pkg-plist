@@ -1,0 +1,5 @@
+bin/barrnap
+%%DATADIR%%/db/arc.hmm
+%%DATADIR%%/db/bac.hmm
+%%DATADIR%%/db/euk.hmm
+%%DATADIR%%/db/mito.hmm

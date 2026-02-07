@@ -1,0 +1,19 @@
+This is the set of GNU shar utilities.  This port installs them
+with the letter "g" prepended to their names, to avoid conflict
+with the FreeBSD base system.  The uudecode and uuencode commands
+are omitted (BSD versions are present in the base system).  The
+shar utilities deal with shar files, so-called shell archives, which
+are scripts suitable for transmission by e-mail or Usenet.
+
+When a shar file is executed, the files it contains are unpacked
+without the need for any software other than the shell itself and
+sed.  Because they are scripts, shell archives from strangers should
+be read before executing them, to check for harmful commands.
+
+synopses from the info pages:
+
+	* gmail-files:  Send files to remote site.
+	* gmailshar:    Make and send a shell archive.
+	* gremsync:     Synchronize remote directory trees using e-mail.
+	* gshar:        Make a shell archive.
+	* gunshar:      Explode a shell archive.

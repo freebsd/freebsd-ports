@@ -1,0 +1,8 @@
+--- ./gui/CMakeLists.txt.orig	2013-10-28 01:07:26.000000000 +0900
++++ ./gui/CMakeLists.txt	2014-03-20 13:44:23.000000000 +0900
+@@ -47,4 +47,4 @@
+   ${LIBSKK_LIBRARIES}
+   )
+ 
+-install(TARGETS fcitx-skk-config DESTINATION ${FCITX4_ADDON_INSTALL_DIR}/qt)
++install(TARGETS fcitx-skk-config DESTINATION ${FCITX4_ADDON_INSTALL_DESTDIR}/qt)

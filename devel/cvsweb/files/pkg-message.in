@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+Quickstart:
+	cd %%PREFIX%%/etc/cvsweb
+	cp cvsweb.conf.dist cvsweb.conf
+
+and you can browse your CVS repository via web if you set up
+your web server correctly.  The URL to get to the cvsweb
+will be like `http://localhost/cgi-bin/cvsweb.cgi/'.
+
+  To configure its appearance and repository entries to
+browse, edit cvsweb.conf* as you like.
+
+  For further information, please look into the directory
+`%%DOCSDIR%%'.
+EOM
+}
+]

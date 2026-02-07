@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/csb.dat
+lib/aspell-%%VER%%/l-csb.cmap
+lib/aspell-%%VER%%/l-csb.cset
+share/aspell/csb.multi
+share/aspell/csb.rws
+share/aspell/kashubian.alias
+share/aspell/kaszëbsczi.alias

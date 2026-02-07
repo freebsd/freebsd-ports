@@ -1,0 +1,20 @@
+--- configure.ac.orig	2023-05-20 12:59:00 UTC
++++ configure.ac
+@@ -358,8 +358,6 @@ freebsd*)
+                     libconfig
+                     nice
+                     jansson >= $jansson_version
+-                    libssl >= $ssl_version
+-                    libcrypto
+                     zlib"
+ esac
+ PKG_CHECK_MODULES([JANUS],"$PKGCHECKMODULES")
+@@ -940,8 +938,6 @@ AS_IF([test "x$enable_post_processing" = "xyes"],
+                          [
+                            glib-2.0 >= $glib_version
+                            jansson >= $jansson_version
+-                           libssl >= $ssl_version
+-                           libcrypto
+                            libavutil
+                            libavcodec
+                            libavformat

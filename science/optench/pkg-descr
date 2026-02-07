@@ -1,0 +1,3 @@
+A free virtual optical bench for the design of optical systems, written in C++
+with Qt.
+It simulates interactions between light sources, lenses, mirrors and occluders.

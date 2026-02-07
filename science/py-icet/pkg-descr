@@ -1,0 +1,7 @@
+icet is a tool for the construction and sampling of alloy cluster expansions.
+
+icet is written in Python, which allows easy integration with countless
+first-principles codes and analysis tools accessible from Python, and allows
+for a simple and intuitive user interface. All computationally demanding parts
+are, however, written in C++ providing performance while maintaining
+portability.

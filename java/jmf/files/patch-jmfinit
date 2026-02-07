@@ -1,0 +1,14 @@
+--- bin/jmfinit.orig	Mon Jan 26 17:10:39 2004
++++ bin/jmfinit	Mon Jan 26 17:28:13 2004
+@@ -64,9 +64,9 @@
+ TMPDIR=`dirname $PROGPATH`
+ JMFHOME=`( cd $TMPDIR/.. && /bin/pwd )`; export JMFHOME
+ 
+-CLASSPATH=${JMFHOME}/lib/jmf.jar:${JMFHOME}/lib/sound.jar:${CLASSPATH}; export CLASSPATH
++CLASSPATH=%%JAVAJARDIR%%/jmf.jar:${CLASSPATH}; export CLASSPATH
+ 
+-LD_LIBRARY_PATH=.:/usr/openwin/lib:${JMFHOME}/lib:${LD_LIBRARY_PATH}; export LD_LIBRARY_PATH
++LD_LIBRARY_PATH=.:/usr/X11R6/lib:%%PREFIX%%/lib:${LD_LIBRARY_PATH}; export LD_LIBRARY_PATH
+ 
+ # Use this to run with native threads:
+ # THREADS_FLAG=native; export THREADS_FLAG

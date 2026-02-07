@@ -1,0 +1,7 @@
+--  ISO 12083, maintained by Electronic Publishing Special Interest 
+    Group (EPSIG) --
+
+PUBLIC "ISO 12083:1993//DTD Article//EN" "article.dtd"
+PUBLIC "ISO 12083:1993//DTD Book//EN" "book.dtd"
+PUBLIC "ISO 12083:1993//DTD Mathematics//EN" "maths.dtd"
+PUBLIC "ISO 12083:1993//DTD Serial//EN" "serial.dtd"

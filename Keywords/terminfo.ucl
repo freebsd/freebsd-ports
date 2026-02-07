@@ -1,0 +1,21 @@
+# MAINTAINER: portmgr@FreeBSD.org
+
+actions: []
+post-install: <<EOD
+  terminfodir=%D/share/misc
+  terminfodb=${terminfodir}/terminfo.db
+  if [ -e ${terminfodb}.default ] && which -s tic; then
+    cp ${terminfodb}.default ${terminfodb}
+    find -s ${terminfodir} -name "*.terminfo" -exec tic -x {} \;
+  fi
+EOD
+post-deinstall: <<EOD
+  terminfodir=%D/share/misc
+  terminfodb=${terminfodir}/terminfo.db
+  if [ -e ${terminfodb}.default ] && which -s tic; then
+    cp ${terminfodb}.default ${terminfodb}
+    find -s ${terminfodir} -name "*.terminfo" -exec tic -x {} \;
+  else
+    rm -f ${terminfodb}
+  fi
+EOD

@@ -1,0 +1,5 @@
+Cvswrap is a program that you install to help manage multiple CVS
+repositories.  What it does is sit in front of CVS, determines
+the CVSROOT and runs a program before running CVS.  This allows one
+to protect each CVS repository without special groups and setuid
+programs.

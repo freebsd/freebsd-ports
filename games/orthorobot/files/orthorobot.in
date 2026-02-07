@@ -1,0 +1,3 @@
+#! /bin/sh -
+
+exec %%LOVE_CMD%% %%DATADIR%%/%%PORTNAME%%.love "$@"

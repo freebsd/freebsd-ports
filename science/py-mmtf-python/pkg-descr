@@ -1,0 +1,4 @@
+The python implementation of the MMTF API, decoder and encoder.
+
+The macromolecular transmission format (MMTF) is a binary encoding
+of biological structures.

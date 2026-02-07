@@ -1,0 +1,20 @@
+--- src/build-system/configure.orig	2020-11-15 22:30:27 UTC
++++ src/build-system/configure
+@@ -2015,7 +2015,7 @@ for x_arg in "$@" ; do
+       | --libdir=* | --includedir=* | --build=* | --host=* | --target=* \
+       | --mandir=* | --infodir=* | --docdir=* | --htmldir=* \
+       | --datadir=* | --sysconfdir=* | --localstatedir=* \
+-      | --with-runpath=* | --with-relative-runpath=* \
++      | --with-runpath=* | --with-relative-runpath=* | --localstatedir=* \
+       | --with-experimental=* | --with-extra-action=* | --with-build-root=* \
+       | --with-fake-root=* | --with-build-root-sfx=* | --with-check=* \
+       | --with-check-tools=* | --with-ftds=[0-9]* | --with-fastcgi=[0-9]* \
+@@ -9092,7 +9092,7 @@ case "$host_os:$compiler" in
+ esac
+ 
+ if test "$with_mt" != "no" ; then
+-   CPPFLAGS="$CPPFLAGS -D_MT -D_REENTRANT -D_THREAD_SAFE"
++   CPPFLAGS="$CPPFLAGS -D_MT -D_REENTRANT -D_THREAD_SAFE -D__RUNETYPE_INTERNAL"
+    LIBS="$LIBS $THREAD_LIBS"
+    case "$host_os:$compiler" in
+      solaris2.??:* | solaris*:GCC | *:Compaq | irix* | aix* | darwin* | cygwin*)

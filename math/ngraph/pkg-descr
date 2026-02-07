@@ -1,0 +1,30 @@
+Ngraph is prepared to plot 2-dimensional graph for students,
+scientists and engineers. The program reads numerical data from
+general ASCII text files, and plot to graph.
+
+** Tips **
+
+  - This program support Kanji font. If you want to use it,
+    please set environment variable LANG to ja_JP.EUC.
+
+	(cf, under csh/tcsh)
+	% setenv LANG ja_JP.EUC
+
+    and you need....
+     - kinput2
+     - X True Type or X True Type Font server[best],
+       or kanji18 and kanji26 fonts, these fonts are in below ports[better],
+		- ja-ngraph-fonts	(japanese/ngraph-fonts)
+		- ja-kanji18		(japanese/kanji18)
+		- ja-kanji26		(japanese/kanji26)
+       or to change font name in Ngraph.ini as below[poor].
+
+font_map=Mincho,1,-*-fixed-medium-r-normal--*-*-75-75-c-*-jisx0208.1983-0
+font_map=Gothic,1,-*-fixed-medium-r-normal--*-*-75-75-c-*-jisx0208.1983-0
+
+  - You can get documentation in Japanese from below URL.
+
+** Acknowledgements to this ports file **
+        Special thanks to:
+		Satoshi Ishizaka <isizaka@msa.biglobe.ne.jp>
+		Nobuhiro Yasutomi <nobu@rd.isac.co.jp>

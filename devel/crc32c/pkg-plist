@@ -1,0 +1,8 @@
+include/crc32c/crc32c.h
+lib/cmake/Crc32c/Crc32cConfig.cmake
+lib/cmake/Crc32c/Crc32cConfigVersion.cmake
+lib/cmake/Crc32c/Crc32cTargets-release.cmake
+lib/cmake/Crc32c/Crc32cTargets.cmake
+lib/libcrc32c.so
+lib/libcrc32c.so.1
+lib/libcrc32c.so.1.1.0

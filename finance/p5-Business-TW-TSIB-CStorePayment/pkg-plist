@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Business/TW/TSIB/CStorePayment.pm
+%%SITE_PERL%%/Business/TW/TSIB/CStorePayment/Entry.pm
+%%PERL5_MAN3%%/Business::TW::TSIB::CStorePayment.3.gz

@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: shibboleth_sp
+# REQUIRE: DAEMON
+#
+
+. /etc/rc.subr
+
+name="shibboleth_sp"
+rcvar=shibboleth_sp_enable
+
+: ${shibboleth_sp_enable:='NO'}
+: ${shibboleth_sp_flags:=''}
+
+command=${shibboleth_sp_program:-%%PREFIX%%/sbin/shibd}
+pidfile="${shibboleth_sp_pidfile:-/var/run/shibboleth/${name}.pid}"
+start_precmd="shibboleth_sp_configtest"
+restart_precmd="shibboleth_sp_configtest"
+configtest_cmd="shibboleth_sp_configtest"
+keygen_cmd="shibboleth_sp_keygen"
+
+shibboleth_sp_usr=%%SHIBD_USER%%
+shibboleth_sp_group=%%SHIBD_GROUP%%
+: ${shibboleth_www_group:=%%WWWGRP%%}
+
+load_rc_config $name
+
+command_args="-f -p ${pidfile} -u ${shibboleth_sp_usr} -g ${shibboleth_sp_group}"
+confdir=${SHIBSP_CFGDIR:-%%PREFIX%%/etc}/shibboleth
+cert=sp-cert.pem
+key=sp-key.pem
+
+shibboleth_sp_configtest() {
+	if [ ! -s ${confdir}/${key} -o ! -s ${confdir}/${cert} ]; then
+		run_rc_command keygen
+	else
+		# update from 2.4.x, chown %%SHIBD_USER%% the key and cert
+	       	chown ${shibboleth_sp_usr}:${shibboleth_sp_group} ${confdir}/${key} ${confdir}/${cert}
+		chmod 400 ${confdir}/${key}
+		chmod 444 ${confdir}/${cert}
+	fi
+	# In FreeBSD 10 (r258664), /var/cache mode is corrected to 755. make sure we have that mode.
+	chmod 755 /var/cache
+	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_sp_group} /var/log/shibboleth
+	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_sp_group} /var/cache/shibboleth
+	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_www_group} -m 750 /var/run/shibboleth
+	${command} ${shibboleth_sp_flags} -u ${shibboleth_sp_usr} -g ${shibboleth_sp_group} -t
+}
+
+shibboleth_sp_keygen() {
+	%%SH%% ${confdir}/keygen.sh -o ${confdir} -u ${shibboleth_sp_usr} -g ${shibboleth_sp_group}
+}
+
+extra_commands="configtest keygen"
+
+run_rc_command "$1"

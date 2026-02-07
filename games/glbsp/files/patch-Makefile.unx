@@ -1,0 +1,54 @@
+--- Makefile.unx.orig	2007-07-26 03:14:34 UTC
++++ Makefile.unx
+@@ -18,13 +18,13 @@ DOC_NAME=glbsp.txt
+ GUI_NAME=glBSPX
+ DOC_NAME=glbsp.txt
+ 
+-CC=gcc
+-CXX=g++
++CC?=gcc
++CXX?=g++
+ AR=ar rc
+ RANLIB=ranlib
+ STRIP=strip --strip-unneeded
+ 
+-BASE_FLAGS=-Wall -O2 -I./src -DUNIX -DINLINE_G=inline
++BASE_FLAGS=-Wall $(CFLAGS) -I./src -DUNIX -DINLINE_G=inline
+ 
+ FLTK_DIR=./fltk-1.1.7
+ 
+@@ -34,7 +34,7 @@ MAN_PREFIX=$(INSTALL_PREFIX)/share/man
+ 
+ # ----- GENERAL STUFF ----------------------------------------------
+ 
+-all:    $(LIB_NAME) $(CMD_NAME) $(DOC_NAME)
++all:    $(LIB_NAME) $(CMD_NAME)
+ 
+ clean:
+ 	rm -f $(LIB_NAME) $(CMD_NAME) $(GUI_NAME) $(DOC_NAME)
+@@ -80,7 +80,6 @@ $(CMD_NAME): $(LIB_NAME) $(CMD_OBJS)
+ 
+ $(CMD_NAME): $(LIB_NAME) $(CMD_OBJS)
+ 	$(CC) $(CMD_FLAGS) $(CMD_OBJS) -o $@ $(LIB_NAME) $(CMD_LIBS)
+-	$(STRIP) $@
+ 
+ install: $(CMD_NAME)
+ 	cp $(CMD_NAME) $(INSTALL_PREFIX)/bin/
+@@ -94,14 +93,13 @@ install: $(CMD_NAME)
+ 
+ # ----- GUI PROGRAM ---------------------------------------------
+ 
+-FLTK_FLAGS=-I$(FLTK_DIR) -I$(FLTK_DIR)/zlib
+-FLTK_LIBS=-L$(FLTK_DIR)/lib -lfltk_images -lpng -lz -ljpeg \
+-          -lfltk -lX11 -lXext
++FLTK_FLAGS=$(shell fltk-config --use-images --cflags)
++FLTK_LIBS=$(shell fltk-config --use-images --ldflags)
+ 
+ ## may need: -L/usr/X11R6/lib
+ 
+ GUI_FLAGS=$(BASE_FLAGS) $(FLTK_FLAGS)
+-GUI_LIBS=$(FLTK_LIBS) -lm
++GUI_LIBS=$(FLTK_LIBS)
+ 
+ GUI_OBJS=\
+ 	gui/main.o     \

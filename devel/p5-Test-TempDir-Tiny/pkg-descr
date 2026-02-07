@@ -1,0 +1,6 @@
+Test::TempDir::Tiny works with Test::More to create temporary directories that
+stick around if tests fail.
+
+It is loosely based on Test::TempDir, but with less complexity, greater
+portability and zero non-core dependencies. (Capture::Tiny is recommended for
+testing.)

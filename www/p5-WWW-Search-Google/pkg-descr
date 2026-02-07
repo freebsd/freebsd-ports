@@ -1,0 +1,8 @@
+This class is a Google specialization of WWW::Search. It handles
+searching Google http://www.google.com/ using its new SOAP API
+http://www.google.com/apis/.
+
+All interaction should be done through WWW::Search objects.
+
+Note that you must register for a Google Web API account and have a
+valid Google API license key before using this module.

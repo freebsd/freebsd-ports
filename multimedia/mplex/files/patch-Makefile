@@ -1,0 +1,18 @@
+--- Makefile.orig	1995-04-11 07:46:13 UTC
++++ Makefile
+@@ -19,11 +19,13 @@
+ 
+ #CFLAGS =  -g
+ 
+-CFLAGS =  -O
++CFLAGS?=  -O
+ LDFLAGS=  -lm
+-CC     =  cc
++CC     ?=  cc
+ RM     =  /bin/rm -f
+ 
++CFLAGS+= -DTIMER
++
+ OBJS = main.o bitstrm.o buffer.o inits.o inptstrm.o interact.o multplex.o systems.o timecode.o
+ 
+ SRCS = main.c bitstrm.c buffer.c inits.c inptstrm.c interact.c multplex.c systems.c timecode.c

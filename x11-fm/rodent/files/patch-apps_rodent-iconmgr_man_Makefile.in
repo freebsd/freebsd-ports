@@ -1,0 +1,12 @@
+--- apps/rodent-iconmgr/man/Makefile.in.orig	2024-03-05 19:32:42 UTC
++++ apps/rodent-iconmgr/man/Makefile.in
+@@ -370,8 +370,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ rodentman1_DATA = rodent-iconmgr.1 
+-@WANT_FREEBSD_FALSE@rodentman1dir = ${mandir}/man1
+-@WANT_FREEBSD_TRUE@rodentman1dir = ${prefix}/man/man1
++rodentman1dir = ${mandir}/man1
+ EXTRA_DIST = $(rodentman1_DATA) 
+ all: all-am
+ 

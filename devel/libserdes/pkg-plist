@@ -1,0 +1,6 @@
+include/libserdes/serdes-avro.h
+include/libserdes/serdes-common.h
+include/libserdes/serdes.h
+lib/libserdes.a
+lib/libserdes.so
+lib/libserdes.so.1

@@ -1,0 +1,15 @@
+Log::Report::Lexicon is the main extry point for the distribution, but has
+currently no further use. This distribution contains all components of
+Log::Report which handle translations.
+
+In this distribution:
+- Log::Report::Extract
+  Logic used by the xgettext-perl binary (also included here) to extract msgid's
+  from perl scripts and (website) templates.
+- Log::Report::Lexicon::Table
+  Translation table administration, in PO or MO format.
+- Log::Report::Lexicon::Index
+  Translation table file file administration, understanding locales, domains,
+  and attributes in the filenames.
+- Log::Report::Translator
+  The run-time component of translations.

@@ -1,0 +1,7 @@
+bin/nesasm
+%%PORTDOCS%%%%DOCSDIR%%/cpu_inst.txt
+%%PORTDOCS%%%%DOCSDIR%%/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/neshdr20.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/usage.txt

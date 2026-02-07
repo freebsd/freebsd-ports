@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Encode::HanExtra.3.gz
+%%PERL5_MAN3%%/Encode::TW::Unisys::SOSI1.3.gz
+%%PERL5_MAN3%%/Encode::TW::Unisys::SOSI2.3.gz
+%%SITE_ARCH%%/Encode/HanExtra.pm
+%%SITE_ARCH%%/Encode/TW/Unisys/SOSI1.pm
+%%SITE_ARCH%%/Encode/TW/Unisys/SOSI2.pm
+%%SITE_ARCH%%/auto/Encode/HanExtra/HanExtra.so

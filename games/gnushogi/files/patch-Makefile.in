@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-03-06 05:33:20 UTC
++++ Makefile.in
+@@ -51,7 +51,7 @@ sizetest:
+ sizetest:
+ 	-cd $(GNUSHOGIDIR) && $(MAKE) sizetest
+ 
+-bbk:
++bbk: gnushogi_compile
+ 	-cd $(GNUSHOGIDIR) && $(MAKE) $(PROGNAME).bbk
+ 
+ 

@@ -1,0 +1,5 @@
+Starting with spaCy v3.2, alternate loggers are moved into a separate package so
+that they can be added and updated independently from the core spaCy library.
+
+spacy-loggers also provides additional utility loggers to facilitate
+interoperation between individual loggers.

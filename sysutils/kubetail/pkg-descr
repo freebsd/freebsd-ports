@@ -1,0 +1,2 @@
+Bash script that enables you to aggregate (tail/follow) logs from
+multiple pods into one stream.

@@ -1,0 +1,11 @@
+--- config.h.org	Sat Jun 14 14:47:22 1997
++++ config.h	Sat Jun 14 14:47:28 1997
+@@ -122,7 +122,7 @@
+ /* 
+  * For YOUBIN Service
+ */
+-#undef YOUBIN
++#define YOUBIN
+ 
+ #ifdef YOUBIN
+ #ifdef LOCALBASE

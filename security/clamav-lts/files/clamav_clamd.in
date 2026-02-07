@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# PROVIDE: clamav_clamd
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable clamd:
+#
+# clamav_clamd_enable="YES"
+# clamav_clamd_flags="<set as needed>"
+#
+# See clamd(8) for flags
+#
+
+. /etc/rc.subr
+
+name=clamav_clamd
+rcvar=clamav_clamd_enable
+
+: ${clamav_clamd_svcj_options:="net_basic"}
+
+# read settings, set default values
+load_rc_config "$name"
+
+: ${clamav_clamd_enable:=NO}
+: ${clamav_clamd_pidfile="%%CLAMAV_CLAMD_PIDFILE%%"}
+: ${clamav_clamd_malloc_conf:=""}
+
+command=%%PREFIX%%/sbin/clamd
+pidfile=${clamav_clamd_pidfile}
+required_dirs=%%DBDIR%%
+required_files=%%PREFIX%%/etc/clamd.conf
+
+start_precmd=clamav_clamd_precmd
+extra_commands=reload
+reload_cmd="%%PREFIX%%/bin/clamdscan --reload"
+
+#clamav .93 won't start without a valid main.c[vl]d file
+clamav_clamd_precmd()
+{
+	if [ ! -f %%DBDIR%%/main.cvd -a ! -f %%DBDIR%%/main.cld ];then
+		echo "Missing %%DBDIR%%/*.cvd or *.cld files.  You must run freshclam first"
+		exit 1
+	fi
+}
+
+export MALLOC_CONF="${clamav_clamd_malloc_conf}"
+
+run_rc_command "$1"

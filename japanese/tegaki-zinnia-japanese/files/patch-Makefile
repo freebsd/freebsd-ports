@@ -1,0 +1,10 @@
+--- Makefile.org	2014-06-16 22:34:11.408524238 +0900
++++ Makefile	2014-06-16 22:34:34.187523350 +0900
+@@ -6,5 +6,5 @@
+ installpath=/usr/local/share/tegaki/models/zinnia/
+ 
+ install: $(modelfile).model
+-	mkdir -p $(installpath)
+-	install -c $(modelfile).meta $(modelfile).model $(installpath)
++	mkdir -p ${DESTDIR}$(installpath)
++	install -c $(modelfile).meta $(modelfile).model ${DESTDIR}$(installpath)

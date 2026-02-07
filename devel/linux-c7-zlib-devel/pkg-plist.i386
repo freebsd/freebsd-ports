@@ -1,0 +1,8 @@
+usr/include/zconf.h
+usr/include/zlib.h
+usr/lib/libz.so
+usr/lib/pkgconfig/zlib.pc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/algorithm.txt
+%%PORTDOCS%%%%DOCSDIR%%/example.c
+usr/share/man/man3/zlib.3.gz

@@ -1,0 +1,38 @@
+#!/bin/sh
+
+prog=`basename $0`
+# If script invoked w/o super, then exec super to run this script.
+test "X$SUPERCMD" = "X$prog" || exec /usr/local/bin/super $prog ${1+"$@"}
+
+usage() {
+cat <<-END
+	Use:
+	    $prog hsfs | 4.2
+
+	Purpose:
+	    Mounts a cdrom on /cdrom.
+
+	Argument: the cdrom type; specify one of
+	    hsfs	- cdrom is High Sierra File System
+	    4.2		- usual Unix disk format
+
+END
+}
+
+case $# in
+    1 ) ;;
+    * ) usage ; exit 1 ;;
+esac
+
+type="$1"
+case "$type" in
+    4.2 | hsfs ) ;;
+    -h ) usage ; exit 0 ;;
+    * ) echo "$prog: unknown cd type $1" ; usage ; exit 1 ;;
+esac
+
+PATH=$PATH:/usr/etc		# SunOS 4.x needs this to understand type hsfs
+export PATH
+
+echo /etc/mount -v -r -t $type -o nosuid /dev/sr0 /cdrom
+     /etc/mount -v -r -t $type -o nosuid /dev/sr0 /cdrom

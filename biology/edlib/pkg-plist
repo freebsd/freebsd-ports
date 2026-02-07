@@ -1,0 +1,9 @@
+include/edlib.h
+lib/cmake/edlib/edlib-config-version.cmake
+lib/cmake/edlib/edlib-config.cmake
+lib/cmake/edlib/edlib-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/edlib/edlib-targets.cmake
+lib/libedlib.so
+lib/libedlib.so.1
+lib/libedlib.so.1.2.6
+libdata/pkgconfig/edlib-1.pc

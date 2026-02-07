@@ -1,0 +1,19 @@
+Pit is a command-line project manager that integrates with Git.
+
+Basic Pit entities are projects, tasks, and notes. One project
+can have multiple tasks, and a task can have multiple notes.
+Each entity has a number of attributes. For example, project
+has name and status, task has name, status, priority, date, and
+time, and within note there is message body. All attributes
+except name and message body are optional and can be omitted.
+
+The attributes have no semantic meaning, and do not have a
+pre-defined set of values. For example, depending on the
+particular need, the time attribute could be used as projected
+time in weeks, hours spent on the task, or days left to finish
+the task.
+
+Pit tries to maintain a notion of "current" project, task, or
+note. When you create new project, it automatically becomes
+current. If you do not specify project number when creating a
+task, the new task will be associated with the current project.

@@ -1,0 +1,7 @@
+This library provides support for supplying your machine's Application Default
+Credentials to the OTLP Exporters created automatically by OpenTelemetry
+Python's auto instrumentation. These credentials authorize OTLP traces to be
+sent to telemetry.googleapis.com.
+
+Currently telemetry.googleapis.com only supports OTLP traces, but eventually the
+endpoint will support OTLP logs and metrics too.

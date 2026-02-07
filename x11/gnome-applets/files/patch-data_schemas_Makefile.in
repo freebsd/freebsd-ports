@@ -1,0 +1,11 @@
+--- data/schemas/Makefile.in.orig	2023-09-23 06:39:16 UTC
++++ data/schemas/Makefile.in
+@@ -352,8 +352,6 @@ gsettings_schemas_in =  \
+ 	org.gnome.gnome-applets.geyes.gschema.xml.in \
+ 	org.gnome.gnome-applets.gweather.gschema.xml.in \
+ 	org.gnome.gnome-applets.mini-commander.gschema.xml.in \
+-	org.gnome.gnome-applets.multiload.gschema.xml.in \
+-	org.gnome.gnome-applets.netspeed.gschema.xml.in \
+ 	org.gnome.gnome-applets.stickynotes.gschema.xml.in \
+ 	org.gnome.gnome-applets.timer.gschema.xml.in \
+ 	org.gnome.gnome-applets.window-buttons.gschema.xml.in \

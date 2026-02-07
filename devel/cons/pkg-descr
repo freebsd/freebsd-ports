@@ -1,0 +1,11 @@
+This is a Perl-based make replacement, but does not provide make
+compatibility. It has a number of powerful capabilities not found
+in other software construction systems, including make.
+
+Cons is a system for constructing, primarily, software, but is
+quite different from previous software construction systems. Cons
+was designed from the ground up to deal easily with the construction
+of software spread over multiple source directories. Cons makes it
+easy to create build scripts that are simple, understandable and
+maintainable. Cons ensures that complex software is easily and
+accurately reproducible.

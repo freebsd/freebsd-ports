@@ -1,0 +1,11 @@
+--- x11/driver/Makefile.orig	2013-08-16 10:53:30.000000000 +0200
++++ x11/driver/Makefile	2014-01-27 18:25:14.000000000 +0100
+@@ -5,7 +5,7 @@
+ .endif
+ 
+ DRIVERS=	nvidia_drv.o nvidia_drv.so
+-.if exists(${LOCALBASE}/lib/xorg/modules/drivers)
++.if exists(${DESTDIR}${LOCALBASE}/lib/xorg/modules/drivers)
+ DRIVERDIR=	${LOCALBASE}/lib/xorg/modules/drivers
+ .else
+ DRIVERDIR=	${LOCALBASE}/lib/modules/drivers

@@ -1,0 +1,4 @@
+Litestar is a powerful, flexible yet opinionated ASGI framework, focused on
+building APIs. It offers high-performance data validation, dependency injection,
+first-class ORM integration, authorization primitives, a rich plugin API,
+middleware, and much more that's needed to get applications up and running.

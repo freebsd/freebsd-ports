@@ -1,0 +1,13 @@
+--- configure	2000/10/20 06:57:57	1.1
++++ configure	2000/10/20 06:58:16
+@@ -1783,8 +1783,8 @@
+ 
+ 
+ 
+-sdir=$datadir/games/lbreakout
+-hdir=/var/lib/games
++sdir=$datadir/lbreakout
++hdir=/var/games/lbreakout
+ inst_flag="-DSRC_DIR=\\\"$sdir/\\\""
+ hi_inst_flag="-DHI_DIR=\\\"$hdir/\\\""
+ 

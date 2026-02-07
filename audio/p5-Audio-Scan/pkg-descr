@@ -1,0 +1,4 @@
+Audio::Scan is a C-based scanner for audio file metadata and tag
+information. It currently supports MP3 via an included version of
+libid3tag, MP4, Ogg Vorbis, FLAC (if libFLAC is installed), ASF,
+WAV, AIFF, Musepack, and Monkey's Audio.

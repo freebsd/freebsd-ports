@@ -1,0 +1,4 @@
+%%SITE_PERL%%/URBL/Prepare.pm
+%%SITE_PERL%%/auto/URBL/Prepare/autosplit.ix
+%%SITE_PERL%%/auto/URBL/Prepare/loadcache.al
+%%PERL5_MAN3%%/URBL::Prepare.3.gz

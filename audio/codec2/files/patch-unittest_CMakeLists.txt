@@ -1,0 +1,15 @@
+--- unittest/CMakeLists.txt.orig	2022-01-04 12:38:05 UTC
++++ unittest/CMakeLists.txt
+@@ -97,6 +97,7 @@ target_link_libraries(t48_8 codec2)
+ add_executable(t48_8_short t48_8_short.c ../src/fdmdv.c ../src/kiss_fft.c)
+ target_link_libraries(t48_8_short codec2)
+ 
++if ( BUILD_CML)
+ # Build CML as part of unit test setup
+ find_program(OCTAVE_CMD octave-cli REQUIRED)
+ message("Octave command: ${OCTAVE_CMD}")
+@@ -122,3 +123,4 @@ add_custom_command(
+   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/faster_fading_samples.float
+   COMMAND cd ${CMAKE_CURRENT_SOURCE_DIR} && ./fading_files.sh ${CMAKE_CURRENT_BINARY_DIR}
+ )
++endif()

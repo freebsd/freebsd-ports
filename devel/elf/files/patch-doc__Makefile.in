@@ -1,0 +1,19 @@
+--- doc/Makefile.in.orig	2003-09-20 14:23:28 UTC
++++ doc/Makefile.in
+@@ -1,12 +1,12 @@ INC=-I../include
+ CC=gcc
+ CFLAGS=@CFLAGS@
+ INC=-I../include
+-INSDIR=@prefix@/man/man1
++INSDIR=@prefix@/share/man/man1
+ 
+ 
+-install:	
+-		cp elf.1 $(INSDIR)/
+-		chmod 644 $(INSDIR)/elf.1
++install:
++		cp elf.1 $(DESTDIR)$(INSDIR)/
++		chmod 644 $(DESTDIR)$(INSDIR)/elf.1
+ 
+ uninstall:	install
+ 		rm $(INSDIR)/elf.1

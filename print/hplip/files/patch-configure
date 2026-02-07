@@ -1,0 +1,70 @@
+--- configure.orig	2022-02-23 07:41:20 UTC
++++ configure
+@@ -16074,11 +16074,9 @@ $as_echo "yes" >&6; }
+    epm_scan=\#
+    epm_class_driver=
+    epm_class_install=yes
+-   test `sh ./createPPD.sh -f` == 0
+ else
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+-   test `sh ./createPPD.sh -q` == 0
+ fi
+  if test x$class_driver = xyes; then
+   HPLIP_CLASS_DRIVER_TRUE=
+@@ -17178,13 +17176,13 @@ fi
+ done
+ 
+    else
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libusb_init in -lusb-1.0" >&5
+-$as_echo_n "checking for libusb_init in -lusb-1.0... " >&6; }
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libusb_init in -lusb" >&5
++$as_echo_n "checking for libusb_init in -lusb... " >&6; }
+ if ${ac_cv_lib_usb_1_0_libusb_init+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lusb-1.0  $LIBS"
++LIBS="-lusb  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17220,9 +17218,9 @@ else
+   as_fn_error 2 "cannot find libusb 1.0 support" "$LINENO" 5
+ fi
+ 
+-      for ac_header in libusb-1.0/libusb.h
++      for ac_header in libusb.h
+ do :
+-  ac_fn_c_check_header_mongrel "$LINENO" "libusb-1.0/libusb.h" "ac_cv_header_libusb_1_0_libusb_h" "$ac_includes_default"
++  ac_fn_c_check_header_mongrel "$LINENO" "libusb.h" "ac_cv_header_libusb_1_0_libusb_h" "$ac_includes_default"
+ if test "x$ac_cv_header_libusb_1_0_libusb_h" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_LIBUSB_1_0_LIBUSB_H 1
+@@ -17237,18 +17235,6 @@ done
+    fi
+ fi
+ 
+-SAVE_CPPFLAGS="$CPPFLAGS"
+-CFLAGS=`python-config --includes`
+-if  $? -eq 0
+-then
+-   echo $FLAGS
+-else
+-CFLAGS=`python3-config --includes`
+-   if  $? -eq 0
+-   then
+-   echo $FLAGS
+-   fi
+-fi
+ 
+ #CFLAGS=`(python-config --includes)`
+ if test "$class_driver" = "no" && test "$hpijs_only_build" = "no" && test "$lite_build" = "no" && test "$hpcups_only_build" = "no"; then
+@@ -17565,7 +17551,6 @@ done
+   as_fn_error 6 "cannot find python-devel support" "$LINENO" 5
+ fi
+ fi
+-CFLAGS="$save_CFLAGS"
+ 
+ if test "$hpijs_only_build" = "no" && test "$scan_build" = "yes" && test "$hpcups_only_build" = "no"; then
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sane_open in -lsane" >&5

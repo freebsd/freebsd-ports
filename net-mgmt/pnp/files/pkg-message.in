@@ -1,0 +1,94 @@
+[
+{ type: install
+  message: <<EOM
+You just installed/upgraded PNP graphing tool for %%NAGIOSUSER%%.
+
+You will need to read the documentation at
+  http://docs.pnp4nagios.org/pnp-0.6/doc_complete
+both for new installations and upgrades from 0.4, since you will
+need to tweak your %%NAGIOSUSER%% and PNP configuration according to the
+0.6.x recipes.
+
+We recommend to start with the following restrictive Apache configuration for
+the PNP area:
+{{{
+# PNP graphing tool
+Alias %%PNP_URL%% %%WWWDIR%%
+<Directory "%%WWWDIR%%/">
+    Order deny,allow
+    Allow from all
+    Deny from all
+
+    AddHandler application/x-httpd-php .php
+    DirectoryIndex index.php
+
+    RewriteEngine on
+    RewriteBase %%PNP_URL%%/
+    # Protect application and system files from being viewed
+    RewriteRule ^(application|modules|system) - [F,L]
+    # Allow any files or directories that exist to be displayed directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Rewrite all other URLs to index.php/URL
+    RewriteRule .* index.php/$0 [PT,L]
+</Directory>
+# PNP graphing tool
+Alias %%PNP_URL%% %%WWWDIR%%
+
+<Directory %%WWWDIR%%>
+   <IfModule mod_authz_core.c>
+      # Apache 2.4
+      <RequireAll>
+         Require all granted
+         # Require local
+         Require valid-user
+      </RequireAll>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+      # Apache 2.2
+      Order allow,deny
+      Allow from all
+      #  Order deny,allow
+      #  Deny from all
+      #  Allow from 127.0.0.1
+      Require valid-user
+   </IfModule>
+
+    AuthName "PNP Access"
+    AuthType Basic
+    AuthUserFile %%PREFIX%%/etc%%NAGIOSHTMURL%%/htpasswd.users
+
+    AddHandler application/x-httpd-php .php
+    DirectoryIndex index.php
+
+    RewriteEngine on
+    RewriteBase %%PNP_URL%%/
+    # Protect application and system files from being viewed
+    RewriteRule ^(application|modules|system) - [F,L]
+    # Allow any files or directories that exist to be displayed directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Rewrite all other URLs to index.php/URL
+    RewriteRule .* index.php/$0 [PT,L]
+</Directory>
+}}}
+
+Don't forget to install and enable www/mod_php5 as well as mod_rewrite.
+
+If you use another web server like nginx or lighttpd, take a look at
+%%EXAMPLESDIR%%
+
+Create %%WWWDIR%%/install.ignore to disable sanity check
+and start using PNP.
+
+Please, note that user who runs Apache processes should be able to
+read PNP RRD spool files from
+  %%PNP_RRDS%%
+so you should tune path permissions accordingly.  Probably one could
+start from adding Apache user to the group '%%NAGIOSGROUP%%'.
+
+Remember to restart NPCD service after upgrade if you're using
+'bulk' mode with NPCD.
+EOM
+}
+]

@@ -1,0 +1,10 @@
+--- makefile.unx.orig	1999-07-18 17:15:40 UTC
++++ makefile.unx
+@@ -1,6 +1,6 @@
+ # Makefile for CSRD
+ 
+-RCPATH	=
++RCPATH	=-DRC_PATH='"${PREFIX}/etc/csrd.rc"'
+ #RCPATH	= -DRC_PATH='"/usr/local/lib/csrd.rc"'
+ 
+ CC	= gcc

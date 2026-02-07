@@ -1,0 +1,83 @@
+--- doc/ELISP.orig	2024-11-24 00:02:10 UTC
++++ doc/ELISP
+@@ -1,6 +1,6 @@ This document is written in Japanese.
+ This document is written in Japanese.
+
+-EmacsからAnthyの各機能を用いる方法を記述したドキュメントです
++EmacsからAnthy-unicodeの各機能を用いる方法を記述したドキュメントです
+
+
+ (1)ソフトウェアの構成
+@@ -14,7 +14,7 @@ EmacsからAnthyの各機能を用いる方法を記�
+
+
+ (1)ソフトウェアの構成
+-  Anthyのemacs対応は日本語入力部と個人辞書の管理の
++  Anthy-unicodeのemacs対応は日本語入力部と個人辞書の管理の
+   二つの部分で構成されています。
+   どちらの部分もelispで記述されたフロントエンドから
+   コマンドを起動して、パイプで通信することによって
+@@ -24,24 +24,24 @@ EmacsからAnthyの各機能を用いる方法を記�
+
+
+ (2)使いはじめるために
+-  *まずAnthyを通常にインストールしてください。
++  *まずAnthy-unicodeを通常にインストールしてください。
+   *次にemacs lispをロードする設定をします。
+    一般的には ~/.emacs に
+-   (load-library "anthy")
++   (load-library "anthy-unicode")
+    という行を追加します
+-  *そして使用するinput-methodとしてAnthyを選択します
++  *そして使用するinput-methodとしてAnthy-unicodeを選択します
+    これも一般的には ~/.emacs に
+-   (setq default-input-method 'japanese-anthy)
++   (setq default-input-method 'japanese-anthy-unicode)
+    という行を追加することによって行います
+   *emacsのインストールされている場所とanthyの
+    インストールされている場所が異なる場合には
+    ~/.emacs に下記の行を追加してください
+    (setq load-path
+-    (cons "/usr/local/share/emacs/site-lisp/anthy/" load-path))
++    (cons "/usr/local/share/emacs/site-lisp/anthy-unicode/" load-path))
+    emacsをインストールした先のprefixとanthyをインストールした先のprefixが
+    違う場合は
+    ~/.emacs に下記の行を追加してください
+-   (load-file "/usr/local/share/emacs/site-lisp/anthy/leim-list.el")
++   (load-file "/usr/local/share/emacs/site-lisp/anthy-unicode/leim-list.el")
+
+
+ (3)日本語入力の方法
+@@ -84,22 +84,22 @@ EmacsからAnthyの各機能を用いる方法を記�
+  ~/.emacsに追加する内容の説明です
+  日本語をデフォルトにする
+   (set-language-environment "Japanese")
+- anthy.el をロードできるようにする
+-  (push "/usr/local/share/emacs/site-lisp/anthy/" load-path)
+- anthy.elをロードする
+-  (load-library "anthy")
+- japanese-anthy をデフォルトのinput-methodにする
+-  (setq default-input-method 'japanese-anthy)
++ anthy-unicode.el をロードできるようにする
++  (push "/usr/local/share/emacs/site-lisp/anthy-unicode/" load-path)
++ anthy-unicode.elをロードする
++  (load-library "anthy-unicode")
++ japanese-anthy-unicode をデフォルトのinput-methodにする
++  (setq default-input-method 'japanese-anthy-unicode)
+
+
+
+ (6)技術的な詳細
+-  *src-util/anthy.elがemacs用のanthyのフロントエンドです。
+-  *src-util/anthy-dic.elがemacs用のanthyのフロントエンドです。
++  *src-util/anthy-unicode.elがemacs用のanthy-unicodeのフロントエンドです。
++  *src-util/anthy-unicode-dic.elがemacs用のanthy-unicodeのフロントエンドです。
+   *emacsのsite-lispのディレクトリにインストールされます。
+   *emacs20.7などで動作します。
+   *leimのAPIにも準拠しています。
+-  *anthy.el は同梱されているanthy-agentというコマンドを起動して
++  *anthy-unicode.el は同梱されているanthy-agent-unicodeというコマンドを起動して
+    パイプで通信をすることによって変換の動作を行います。
+-  *anthy-dic.el は同梱されているanthy-dic-toolというコマンドを
++  *anthy-unicode-dic.el は同梱されているanthy-dic-tool-unicodeというコマンドを
+    起動してパイプで通信を行うことによって、個人辞書にアクセスします。

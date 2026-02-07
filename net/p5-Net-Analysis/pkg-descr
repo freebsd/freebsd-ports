@@ -1,0 +1,3 @@
+Net::Analysis is a suite of modules that parse tcpdump files,
+reconstruct TCP sessions from the packets, and provide a very
+lightweight framework for writing protocol anaylsers.

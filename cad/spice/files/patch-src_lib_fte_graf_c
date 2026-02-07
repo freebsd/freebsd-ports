@@ -1,0 +1,39 @@
+--- src/lib/fte/graf.c.orig	Tue Jan  5 22:43:44 1993
++++ src/lib/fte/graf.c	Sat Oct  7 16:02:45 2006
+@@ -48,6 +48,8 @@
+ static char *ticlist = ticbuf;
+ #define MAXTICS 100
+ double *readtics();
++static gr_resize_internal();
++static drawlegend();
+ 
+ #define XFACTOR 2       /* How much to expand the X scale during iplot. */
+ #define YFACTOR 1.5     /* How much to expand the Y scale during iplot. */
+@@ -289,9 +291,11 @@
+ 		if (*tics == (double) np) {
+ 		    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+ 			(int) (toy - currentgraph->fontheight / 2));
+-		    SaveText(currentgraph, "x",
++	       /* gr_redraw will redraw this w/o our having to save it
++                  Guenther Roehrich 22-Jan-99 */ 
++	       /*   SaveText(currentgraph, "x",
+ 			(int) (tox - currentgraph->fontwidth / 2),
+-			(int) (toy - currentgraph->fontheight / 2));
++			(int) (toy - currentgraph->fontheight / 2)); */
+ 		    break;
+ 		}
+ 	    }
+@@ -301,9 +305,11 @@
+ 	    /* Draw an 'x' */
+ 	    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+ 		(int) (toy - currentgraph->fontheight / 2));
+-	    SaveText(currentgraph, "x",
++          /* gr_redraw will redraw this w/o our having to save it
++                  Guenther Roehrich 22-Jan-99 */ 
++	  /* SaveText(currentgraph, "x",
+ 		(int) (tox - currentgraph->fontwidth / 2),
+-		(int) (toy - currentgraph->fontheight / 2));
++		(int) (toy - currentgraph->fontheight / 2)); */
+ 	}
+         break;
+       case PLOT_COMB:

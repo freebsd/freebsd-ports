@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/Apache/ePerl.pm
+%%SITE_ARCH%%/Parse/ePerl.pm
+%%SITE_ARCH%%/auto/Parse/ePerl/autosplit.ix
+%%SITE_ARCH%%/auto/Parse/ePerl/ePerl.so
+%%PERL5_MAN3%%/Parse::ePerl.3.gz
+%%PERL5_MAN3%%/Apache::ePerl.3.gz

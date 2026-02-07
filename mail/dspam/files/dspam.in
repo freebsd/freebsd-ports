@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: dspam
+# REQUIRE: DAEMON %%MYSQL%% %%PGSQL%% %%CLAMD%%
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf[.local] to enable dspam:
+# dspam_enable="YES"
+#
+# dspam_debug="YES" will start dspam with debug logging (you need ar least WITH_DEBUG)
+# you can also set the pid file via dspam_pidfile
+#
+
+. /etc/rc.subr
+
+name="dspam"
+rcvar=dspam_enable
+
+load_rc_config $name
+
+#defaults
+: ${dspam_enable="NO"}
+: ${dspam_debug="NO"}
+: ${dspam_pidfile:-/var/run/dspam/dspam.pid}
+: ${dspam_user="%%DSPAM_OWNER%%"}
+: ${dspam_group="%%DSPAM_GROUP%%"}
+
+command=%%PREFIX%%/bin/${name}
+
+start_precmd=dspam_checkdebug
+extra_commands=reload
+
+required_dirs=%%DSPAM_HOME%%
+required_files=%%PREFIX%%/etc/${name}.conf
+
+dspam_checkdebug()
+{
+	if checkyesno dspam_debug
+	then
+		command_args="--daemon --debug > /dev/null 2>&1 &"
+	else
+		command_args="--daemon > /dev/null 2>&1 &"
+	fi
+}
+
+reload()
+{
+ kill -HUP `cat $pidfile`
+}
+
+run_rc_command "$1"

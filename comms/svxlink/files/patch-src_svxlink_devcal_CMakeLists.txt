@@ -1,0 +1,9 @@
+--- src/svxlink/devcal/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
++++ src/svxlink/devcal/CMakeLists.txt
+@@ -21,3 +21,6 @@ set_target_properties(devcal PROPERTIES
+ 
+ # Install targets
+ install(TARGETS devcal DESTINATION ${BIN_INSTALL_DIR})
++
++# Install targets
++install(TARGETS devcal DESTINATION ${BIN_INSTALL_DIR})

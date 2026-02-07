@@ -1,0 +1,15 @@
+--- libelfsh/Makefile.orig	2003-08-21 01:11:03 UTC
++++ libelfsh/Makefile
+@@ -5,10 +5,10 @@
+ ## Last update Tue Jun  3 09:30:50 2003 mayhem
+ ##
+ 
+-CC			= gcc
++CC			?= gcc
+ RM			= rm -f 
+ AR			= ar rc
+-CFLAGS			= -rdynamic -Iinclude -Wall -fPIC -g3 -O2 -DELFSH_INTERN
++CFLAGS			+= -rdynamic -Iinclude -Wall -fPIC -g3 -DELFSH_INTERN
+ SRC			= dynamic.c dynsym.c elf.c fixup.c got.c hash.c \
+                         interp.c pht.c plt.c section.c sht.c error.c stab.c \
+ 			symbol.c notes.c reloc.c blocks.c ctors.c dtors.c \

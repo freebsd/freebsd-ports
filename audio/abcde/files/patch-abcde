@@ -1,0 +1,13 @@
+--- abcde.orig	2023-12-30 21:03:35.018291000 +0100
++++ abcde	2023-12-30 21:05:32.092326000 +0100
+@@ -3770,8 +3770,8 @@
+ # CDDB
+ # Currently three supported options ("musicbrainz", "cddb" for freedb.org and "cdtext")
+ CDDBMETHOD=musicbrainz
+-CDDBURL="http://freedb.freedb.org/~cddb/cddb.cgi"
+-CDDBSUBMIT=freedb-submit@freedb.org
++CDDBURL="http://gnudb.gnudb.org/~cddb/cddb.cgi"
++CDDBSUBMIT=submit@gnudb.org
+ CDDBPROTO=6
+ HELLOINFO="$(whoami)@$(hostname)"
+ CDDBCOPYLOCAL="n"

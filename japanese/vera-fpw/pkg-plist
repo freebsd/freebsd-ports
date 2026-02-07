@@ -1,0 +1,5 @@
+share/dict/vera-fpw/catalogs
+share/dict/vera-fpw/vera/data/honmon
+share/dict/vera-fpw/vera/gaiji/gai16h
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/vera.tex

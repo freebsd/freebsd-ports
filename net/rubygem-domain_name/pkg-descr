@@ -1,0 +1,2 @@
+This is a domain name manipulation library for Ruby.  It can also be
+used for cookie domain validation based on the Public Suffix List.

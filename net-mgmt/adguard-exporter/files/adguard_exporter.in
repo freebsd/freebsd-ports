@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# PROVIDE: adguard_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# adguard_exporter_enable (bool):		Set to YES to enable exporter (default: NO)
+# adguard_exporter_user (string):		Set user to run adguard_exporter (default: nobody)
+# adguard_exporter_group (string):		Set group to run adguard_exporter (default: nobody)
+# adguard_exporter_port (string):		Set adguard home port (default: 80)
+# adguard_exporter_interval (string):		Set exporter fetch interval (default: 10s)
+# adguard_exporter_protocol (string):		Set adguard protocol (default: http)
+# adguard_exporter_hostname (string):		Set adguard hostname (default: 127.0.0.1)
+# adguard_exporter_username (string): 		Set AdGuard interface login username (default: "")
+# adguard_exporter_password (string):		Set AdGuard interface login password (default: "")
+# adguard_exporter_server_port (string):	Set AdGuard exporter metrics port (default: 9617)
+
+. /etc/rc.subr
+
+name=adguard_exporter
+rcvar=adguard_exporter_enable
+
+load_rc_config $name
+
+: ${adguard_exporter_enable:=NO}
+: ${adguard_exporter_user:=nobody}
+: ${adguard_exporter_group:=nobody}
+: ${adguard_exporter_port:=80}
+: ${adguard_exporter_interval:=10s}
+: ${adguard_exporter_protocol:=http}
+: ${adguard_exporter_hostname:=127.0.0.1}
+: ${adguard_exporter_username:=""}
+: ${adguard_exporter_password:=""}
+: ${adguard_exporter_server_port:=9617}
+
+pidfile=/var/run/adguard_exporter.pid
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/adguard-exporter"
+command_args="-f -p ${pidfile} /usr/bin/env ${procname} \
+    -adguard_port ${adguard_exporter_port} \
+    -adguard_protocol ${adguard_exporter_protocol} \
+    -adguard_hostname ${adguard_exporter_hostname} \
+    -adguard_username ${adguard_exporter_username} \
+    -adguard_password ${adguard_exporter_password} \
+    -interval ${adguard_exporter_interval} \
+    -server_port ${adguard_exporter_server_port}"
+
+start_precmd=adguard_exporter_startprecmd
+
+adguard_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${adguard_exporter_user} -g ${adguard_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+run_rc_command "$1"

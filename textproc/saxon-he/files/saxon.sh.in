@@ -1,0 +1,12 @@
+#!/bin/sh
+
+IAM="`basename "$0"`"
+
+if [ saxon-xquery = "${IAM}" ]
+then
+	LAUNCHER_CLASS="net.sf.saxon.Query"
+else
+	LAUNCHER_CLASS="net.sf.saxon.Transform"
+fi
+
+exec "%%LOCALBASE%%/bin/java" -classpath "%%SAXON_JARS%%" "${LAUNCHER_CLASS}" "$@"

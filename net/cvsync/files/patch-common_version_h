@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_version_h,v 1.1 2014/06/25 17:54:07 naddy Exp $
+--- common/version.h.orig	Fri Jun  3 20:03:17 2005
++++ common/version.h	Wed Jun 25 00:57:44 2014
+@@ -31,8 +31,8 @@
+ #define	__VERSION_H__
+ 
+ #define	CVSYNC_MAJOR		0
+-#define	CVSYNC_MINOR		24
+-#define	CVSYNC_PATCHLEVEL	19
++#define	CVSYNC_MINOR		25
++#define	CVSYNC_PATCHLEVEL	0
+ 
+ #define	CVSYNC_PROTO_MAJOR	CVSYNC_MAJOR
+ #define	CVSYNC_PROTO_MINOR	CVSYNC_MINOR

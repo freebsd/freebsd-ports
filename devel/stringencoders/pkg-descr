@@ -1,0 +1,14 @@
+A collection of high performance c-string transformations, frequently 2x faster
+than standard implementations.
+
+including
+
+    * base64, standard
+    * base64, web/url safe, with configurable alphabet
+    * base85 (good for http cookies)
+    * base16 (hex)
+    * base2 (ascii binary)
+    * url escaping
+    * javascript string escaping
+    * fast number to string conversion, 4-22x faster than sprintf!
+    * fast ascii upper/lower case conversion, 2-66x faster than stdlib!

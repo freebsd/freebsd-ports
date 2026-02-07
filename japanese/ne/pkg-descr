@@ -1,0 +1,13 @@
+NxEdit (ne) is modeless full-screen text editor expected to be compatible
+with VZ Editor, which has been popular editor among MS-DOS users in Japan.
+
+NxEdit provides most features of VZ Editor, such as:
+
+  - Stackable cut and delete buffers
+  - Less cursor movement
+  - Static line buffer
+  - Keyboard macros
+  - Built-in two-window file manager
+  - Profile management
+  - Automatic profile saving on emergency-like signals
+  - Automatic detection of Japanese code sets (EUC/SJIS/JIS)

@@ -1,0 +1,57 @@
+--- Makefile.orig	2017-04-29 20:57:57 UTC
++++ Makefile
+@@ -13,10 +13,8 @@ COMPILED_BY	= `whoami`
+ # Where are shhmsg, shhopt, xalloc, shhcards, Xpm and X11?
+ 
+ # GNU/Linux at home
+-INCDIR		= -I/usr/local/include -I/usr/X11R6/include \
+-		  -I/usr/local/include/X11 -I/opt/X11/include
+-LIBDIR		= -L/usr/local/lib -L/usr/X11R6/lib -L/usr/local/lib/X11 \
+-		  -L/opt/X11/lib
++INCDIR		= -I${LOCALBASE}/include
++LIBDIR		= -L${LOCALBASE}/lib
+ EXTRA_LIBS	= -lSM -lICE
+ 
+ # Irix at Ifi
+@@ -55,18 +53,18 @@ EXTRA_LIBS	= -liberty
+ endif
+ 
+ # DEC Alpha at USIT
+-ifeq ($(HOSTTYPE),alpha)
+-INCDIR		= -I$$HOME/include -I/usr/include/X11 \
+-		  -I/usr/local/X11R5/include
+-LIBDIR		= -L$$HOME/lib/$$HOSTTYPE -L/usr/lib/X11 -L/usr/local/X11R5/lib
+-endif
++#ifeq ($(HOSTTYPE),alpha)
++#INCDIR		= -I$$HOME/include -I/usr/include/X11 \
++#		  -I/usr/local/X11R5/include
++#LIBDIR		= -L$$HOME/lib/$$HOSTTYPE -L/usr/lib/X11 -L/usr/local/X11R5/lib
++#endif
+ 
+ ###########################################################################
+ 
+ # Where do you want to install the program and the highscore file?
+-INSTLIBDIR	= /var/local/lib/games
+-INSTBINDIR	= /usr/local/games
+-INSTMANDIR	= /usr/local/man/man6
++INSTLIBDIR	= ${PREFIX}/lib/games
++INSTBINDIR	= ${PREFIX}/games
++INSTMANDIR	= ${PREFIX}/man/man6
+ #INSTLIBDIR	= /hom/sverrehu/lib
+ #INSTBINDIR	= /hom/sverrehu/bin/$$HOSTTYPE
+ #INSTMANDIR	= /hom/sverrehu/man/man6
+@@ -86,11 +84,11 @@ DEFINES		= -DVERSION=\"$(VERSION)\" \
+ 
+ ###########################################################################
+ 
+-CC		= gcc
++#CC		= gcc
+ 
+ OPTIM		= -s -O2
+-CCOPT		= -Wall $(OPTIM) $(INCDIR) $(DEFINES) $(CFLAGS)
+-LDOPT		= -s $(LIBDIR) $(LDFLAGS) $(EXTRA_LD_OPT)
++CCOPT		= $(INCDIR) $(DEFINES) $(CFLAGS)
++LDOPT		= $(LIBDIR) $(LDFLAGS) $(EXTRA_LD_OPT)
+ 
+ LIBS		= -lshhopt -lshhmsg -lxalloc -lshhcards \
+ 		  -lXaw -lXt -lXpm -lXext -lXmu -lX11 $(EXTRA_LIBS)

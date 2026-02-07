@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/XML::Filter::CharacterChunk.3.gz
+%%PERL5_MAN3%%/XML::Filter::GenericChunk.3.gz
+%%SITE_PERL%%/XML/Filter/CharacterChunk.pm
+%%SITE_PERL%%/XML/Filter/GenericChunk.pm

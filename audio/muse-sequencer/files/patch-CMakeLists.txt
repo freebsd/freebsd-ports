@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2023-08-08 23:49:24 UTC
++++ CMakeLists.txt
+@@ -761,7 +761,7 @@ message("Existing CMAKE_CXX_FLAGS_DEBUG: ${CMAKE_CXX_F
+ 
+ # set(CMAKE_CXX_FLAGS "-Werror=format-security -Wextra -Winvalid-pch -fexceptions -Wall -fPIC" CACHE STRING "Default CXX flags" FORCE)
+ # set(CMAKE_CXX_FLAGS "-Werror=format-security -Wextra -Winvalid-pch -fexceptions -Wall -fPIC ${CMAKE_CXX_FLAGS}" CACHE STRING "Default CXX flags" FORCE)
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror=format-security -Wextra -Winvalid-pch -fexceptions -Wall -fPIC")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wextra -Winvalid-pch -fexceptions -Wall -fPIC")
+ 
+ # set(CMAKE_CXX_FLAGS_RELEASE "-O2 -fomit-frame-pointer -ffast-math -fno-finite-math-only -Wall -Wextra -fPIC" CACHE STRING "Release CXX flags" FORCE)
+ # set(CMAKE_CXX_FLAGS_RELEASE "-O2 -fomit-frame-pointer -ffast-math -fno-finite-math-only -Wall -Wextra -fPIC ${CMAKE_CXX_FLAGS_RELEASE}" CACHE STRING "Release CXX flags" FORCE)
+@@ -776,7 +776,7 @@ set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g -DNDEBUG ${
+ # set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -DQT_DEBUG -Werror -Wall -Wextra -fPIC" CACHE STRING "Debug CXX flags" FORCE)
+ # set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -DQT_DEBUG -Werror -Wall -Wextra -fPIC ${CMAKE_CXX_FLAGS_DEBUG}" CACHE STRING "Debug CXX flags" FORCE)
+ # Debug usually has no -O setting. Let's give it a default one.
+-set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g ${CMAKE_CXX_FLAGS_DEBUG} -DQT_DEBUG -Werror")
++set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g ${CMAKE_CXX_FLAGS_DEBUG} -DQT_DEBUG")
+ 
+ message("Final CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
+ message("Final CMAKE_CXX_FLAGS_RELEASE: ${CMAKE_CXX_FLAGS_RELEASE}")

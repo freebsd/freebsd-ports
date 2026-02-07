@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+
+The ndk dynamic module for Angie has been installed.
+To enable this module, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ndk_http_module;
+
+Please refer to the modules documentation for further details:
+https://github.com/vision5/ngx_devel_kit
+EOM
+}
+]

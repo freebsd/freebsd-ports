@@ -1,0 +1,6 @@
+tkRunIt is a run dialog box for X which allows you to execute
+commandline without using an xterm.  tkRunIt was inspired by Xrun
+but is designed to be completely navigable from the keyboard and
+to allow extreme customizablility as I often find that personal
+workspace tools/shortcuts are seldom workflow compatible across
+users.

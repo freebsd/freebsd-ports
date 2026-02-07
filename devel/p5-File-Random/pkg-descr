@@ -1,0 +1,17 @@
+This module simplifies the routine job of selecting a random file. (As you
+can find at CGI scripts).  It's done, because it's boring (and
+error prone), always to write something like
+
+  my @files = (<*.*>);
+  my $randf = $files[rand @files];
+
+or
+
+  opendir DIR, " ... " or die " ... ";
+  my @files = grep {-f ...} (readdir DIR);
+  closedir DIR;
+  my $randf = $files[rand @files];
+
+It also becomes very boring and very dangerous to write randomly selection
+for subdirectory searching with special check-routines.  The simple
+standard job of selecting a random line from a file is implemented, too.

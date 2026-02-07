@@ -1,0 +1,54 @@
+--- DAEValidator/library/src/Dae.cpp.orig	2018-11-26 22:43:10 UTC
++++ DAEValidator/library/src/Dae.cpp
+@@ -24,14 +24,14 @@ namespace opencollada
+ 
+ 	Dae::Dae(Dae && other)
+ 	{
+-		*this = move(other);
++		*this = std::move(other);
+ 	}
+ 
+ 	const Dae & Dae::operator = (Dae && other)
+ 	{
+-		this->XmlDoc::operator=(move(other));
+-		mUri = move(other.mUri);
+-		mExternalDAEs = move(other.mExternalDAEs);
++		this->XmlDoc::operator=(std::move(other));
++		mUri = std::move(other.mUri);
++		mExternalDAEs = std::move(other.mExternalDAEs);
+ 		return *this;
+ 	}
+ 
+--- DAEValidator/library/src/XmlDoc.cpp.orig	2018-11-26 22:43:10 UTC
++++ DAEValidator/library/src/XmlDoc.cpp
+@@ -20,7 +20,7 @@ namespace opencollada
+ {
+ 	XmlDoc::XmlDoc(XmlDoc && other)
+ 	{
+-		*this = move(other);
++		*this = std::move(other);
+ 	}
+ 
+ 	XmlDoc::~XmlDoc()
+--- DAEValidator/library/src/XmlNode.cpp.orig	2018-11-26 22:43:10 UTC
++++ DAEValidator/library/src/XmlNode.cpp
+@@ -105,7 +105,7 @@ namespace opencollada
+ 
+ 		XmlNodeSet result(xmlXPathEvalExpression(BAD_CAST xpath.c_str(), context));
+ 		xmlXPathFreeContext(context);
+-		auto p = xpathCache.insert(pair<XPathCacheKey, XmlNodeSet>(XPathCacheKey(mNode, xpath), move(result)));
++		auto p = xpathCache.insert(pair<XPathCacheKey, XmlNodeSet>(XPathCacheKey(mNode, xpath), std::move(result)));
+ 		return p.first->second;
+ 	}
+ 
+--- DAEValidator/library/src/XmlNodeSet.cpp.orig	2018-11-26 22:43:10 UTC
++++ DAEValidator/library/src/XmlNodeSet.cpp
+@@ -9,7 +9,7 @@ namespace opencollada
+ 
+ 	XmlNodeSet::XmlNodeSet(XmlNodeSet&& other)
+ 	{
+-		*this = move(other);
++		*this = std::move(other);
+ 	}
+ 
+ 	XmlNodeSet::~XmlNodeSet()

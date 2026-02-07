@@ -1,0 +1,26 @@
+Build fails with some files, probably due to encoding
+
+FAILED: src/ptyxis-resources.h
+/usr/local/bin/glib-compile-resources ../src/ptyxis.gresource.xml --sourcedir ../src --c-name ptyxis --internal --generate --target src/ptyxis-resources.h
+../src/ptyxis.gresource.xml: Failed to locate "palettes/Catppuccin FrappÃ©.palette" in any source directory.
+
+--- src/ptyxis.gresource.xml.orig	2025-03-24 22:21:50 UTC
++++ src/ptyxis.gresource.xml
+@@ -72,7 +72,6 @@
+     <file>palettes/Brogrammer.palette</file>
+     <file>palettes/C64.palette</file>
+     <file>palettes/Cai.palette</file>
+-    <file>palettes/Catppuccin Frappé.palette</file>
+     <file>palettes/Catppuccin Latte.palette</file>
+     <file>palettes/Catppuccin Macchiato.palette</file>
+     <file>palettes/Catppuccin Mocha.palette</file>
+@@ -211,9 +210,6 @@
+     <file>palettes/Red Sands.palette</file>
+     <file>palettes/Relaxed.palette</file>
+     <file>palettes/Rippedcasts.palette</file>
+-    <file>palettes/Rosé Pine Dawn.palette</file>
+-    <file>palettes/Rosé Pine Moon.palette</file>
+-    <file>palettes/Rosé Pine.palette</file>
+     <file>palettes/Royal.palette</file>
+     <file>palettes/Sat.palette</file>
+     <file>palettes/Seafoam Pastel.palette</file>

@@ -1,0 +1,5 @@
+TIMESTAMP = 1746718592
+SHA256 (go/devel_etcd34/etcd-io-etcd-v3.4.37_GH0/go.mod) = 95335ce171f960f95f9d4c3f85dfed94fe9f5553a86b44e8fee330f4422ab191
+SIZE (go/devel_etcd34/etcd-io-etcd-v3.4.37_GH0/go.mod) = 3117
+SHA256 (go/devel_etcd34/etcd-io-etcd-v3.4.37_GH0/etcd-io-etcd-v3.4.37_GH0.tar.gz) = b71194dfb04ccd260ae9546bcedb13e79a22c899ce209848880a5d861a3fce33
+SIZE (go/devel_etcd34/etcd-io-etcd-v3.4.37_GH0/etcd-io-etcd-v3.4.37_GH0.tar.gz) = 6088551

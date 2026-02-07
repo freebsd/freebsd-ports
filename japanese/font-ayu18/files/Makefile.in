@@ -1,0 +1,33 @@
+GZIP_CMD?=	gzip
+MKBOLD_CMD?=	mkbold
+MKITALIC_CMD?=	mkitalic
+
+DIST_ALL=	9x18gm.bdf 9x18grkm.bdf 9x18m.bdf 9x18rkm.bdf \
+		k18gm.bdf k18m.bdf
+
+DIST_NOBOLD=	# empty
+MADE_BOLD=	${DIST_NOBOLD:S/.bdf/b.bdf/g}
+
+DIST_NOITALIC=	${DIST_ALL} ${MADE_BDF} ${MADE_BOLD}
+MADE_ITALIC=	${DIST_NOITALIC:S/m/mi/g:S/b./bi./g:S/b-/bi-/g}
+
+BDF_ALL=	${DIST_ALL} ${MADE_BDF} ${MADE_BOLD} ${MADE_ITALIC}
+PCF_ALL=	${BDF_ALL:S/.bdf/.pcf.gz/g}
+
+all: ${PCF_ALL}
+
+${MADE_BOLD}: ${.TARGET:S/b.bdf/.bdf/}
+	${MKBOLD_CMD} $> > $@
+
+${MADE_ITALIC}: ${.TARGET:S/mi/m/:S/bi./b./:S/bi-/b-/}
+	${MKITALIC_CMD} $> > $@
+
+${PCF_ALL}: ${.TARGET:S/.pcf.gz/.bdf/}
+	bdftopcf $> | ${GZIP_CMD} -c > $@
+
+install:
+	mkdir -p ${DESTDIR}%%FONTSDIR%%
+	${BSD_INSTALL_DATA} ${PCF_ALL} ${DESTDIR}%%FONTSDIR%%
+
+clean::
+	rm ${MADE_BOLD} ${MADE_ITALIC} ${PCF_ALL}

@@ -1,0 +1,23 @@
+PORTNAME=	zlib
+PORTVERSION=	1.2.7
+DISTVERSIONSUFFIX=	-18.el7
+CATEGORIES=	devel linux
+PKGNAMESUFFIX=	-devel
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Zlib headers (Linux CentOS ${LINUX_DIST_VER})
+WWW=		http://zlib.net/
+
+LICENSE=	ZLIB
+
+USES=		cpe linux:c7
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
+
+LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
+
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>

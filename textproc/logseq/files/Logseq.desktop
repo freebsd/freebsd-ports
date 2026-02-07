@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Logseq
+Comment=Open Source platform for knowledge sharing and management
+Icon=Logseq
+Exec=Logseq %u
+Categories=Office;
+MimeType=x-scheme-handler/logseq

@@ -1,0 +1,69 @@
+--- Makefile.in.orig	2018-08-01 13:54:24 UTC
++++ Makefile.in
+@@ -6,7 +6,7 @@ SHELL=/bin/sh
+ ############################################################################
+ 
+ # Step 1: Define ONE of the CHKHISTORY 
+-CHKHISTORY=@HISTORY@
++#CHKHISTORY=@HISTORY@
+ #CHKHISTORY=chkhistory.o	# use flat file history routine
+ #CHKHISTORY=chkhistory_db.o	# use DB history routine, if you use 
+                                 # DBM, GDBM, NDBM, or DBZ
+@@ -17,7 +17,7 @@ CHKHISTORY=@HISTORY@
+ # If you are using flat file, you can skip the rest, they don't matter
+ 
+ # Step 2: Define ONE of the Database Types
+-DB_TYPE=@DB_TYPE@
++#DB_TYPE=@DB_TYPE@
+ #DB_TYPE=-DUSE_DBM
+ #DB_TYPE=-DUSE_GDBM	
+ #DB_TYPE=-DUSE_NDBM
+@@ -29,18 +29,20 @@ DB_TYPE=@DB_TYPE@
+ # If you are using INN-2.X, and the compiler complains 
+ # about Undefined Symbols QIOclose QIOopen QIOread
+ # Use the DB_LIB that includes -lstorage
+-DB_LIB=@DB_LIB@
++#DB_LIB=@DB_LIB@
+ #DB_LIB=-ldbm
+ #DB_LIB=-lgdbm
+ #DB_LIB=-lndbm
+ #DB_LIB=-ldbz
+ #DB_LIB=-linn -lstorage	# see note above
+ #DB_LIB=-linn		# INN puts DBZ code in here
++#DB_LIB=-lcnews		# cnews puts DBZ code in here
+ 
+ # Step 4: IF your DB Library/Includes are in a non-standard place, 
+ # define These
+ #DB_INC_LOC=-I/usr/src/inn-2.3.4/include
+ #DB_LIB_LOC=-L/usr/src/inn-2.3.4/lib
++#DB_LIB_LOC=-L/usr/local/lib
+ 
+ # Step 5: If you want to use embedded PERL functions as kill routines
+ # define these. 
+@@ -67,8 +69,8 @@ PERL_DEFS=-D_REENTRANT -D_GNU_SOURCE
+ #OS2_DEFS=-DEMX
+ 
+ # Step 7: If compiling with SSL uncomment the following
+-SSL_LIB=@SSL_LIB@
+-SSL_DEFS=@SSL_DEFS@
++#SSL_LIB=@SSL_LIB@
++#SSL_DEFS=@SSL_DEFS@
+ #SSL_LIB=-lssl -lcrypto
+ #SSL_DEFS=-I/usr/local/ssl/include -DHAVE_LIBSSL
+ #SSL_LIB_LOC=-L/usr/local/ssl/lib
+@@ -110,7 +112,7 @@ CC = @CC@
+ @SET_MAKE@
+ 
+ CFLAGS = @CFLAGS@
+-CPPFLAGS = -I. -I$(srcdir) @CPPFLAGS@
++CPPFLAGS = -I. -I$(srcdir) $(INCDIR2) @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@ $(DMALLOC_LD) $(OS2_LD)
+ DEFS = @DEFS@ -DSUCK_VERSION=\"$(VERSION)\" $(DMALLOC_DEFS) $(OS2_DEFS) $(DMALLOC_INC)
+ LIBS = @LIBS@ $(DMALLOC_LIB)
+@@ -293,3 +295,6 @@ makerpm: maketar
+ 	rm -rf /tmp/suck*
+ # now generate the .sig files
+ 	#pgps -b ~/suck*.rpm ~/suck*.tar.gz
++
++# Add missing dependency to allow parallel (-jX) builds
++active.o batch.o both.o chkhistory.o chkhistory_db.o db.o dedupe.o killfile.o killprg.o lmove.o rpost.o suck.o suckutils.o testhost.o timer.o xover.o: phrases.h

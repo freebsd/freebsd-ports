@@ -1,0 +1,2 @@
+This is Convert::PEM, a module implementing read/write access
+to ASN.1-encoded PEM files (with optional encryption).

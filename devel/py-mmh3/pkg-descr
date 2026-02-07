@@ -1,0 +1,9 @@
+mmh3 is a Python extension for MurmurHash (MurmurHash3), a set of fast and
+robust non-cryptographic hash functions invented by Austin Appleby.
+
+Combined with probabilistic techniques like a Bloom filter, MinHash, and feature
+hashing, mmh3 allows you to develop high-performance systems in fields such as
+data mining, machine learning, and natural language processing.
+
+Another common use of mmh3 is to calculate favicon hashes used by Shodan, the
+world's first IoT search engine.

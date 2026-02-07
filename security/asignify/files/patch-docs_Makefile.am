@@ -1,0 +1,8 @@
+--- docs/Makefile.am.orig	2015-01-13 13:49:04 UTC
++++ docs/Makefile.am
+@@ -1,4 +1,2 @@ EXTRA_DIST=	asignify.pod
+ dist_man_MANS= asignify.1
+ EXTRA_DIST=	asignify.pod
+-
+-mandir=	$(prefix)/man
+\ No newline at end of file

@@ -1,0 +1,4 @@
+The freedesktop.org project provides a shared MIME database to avoid
+inconsistencies between desktops. This database has been created by
+converting the existing KDE and GNOME databases to a common format and
+merging them together.

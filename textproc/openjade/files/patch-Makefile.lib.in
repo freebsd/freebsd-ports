@@ -1,0 +1,11 @@
+--- Makefile.lib.in.orig	2002-01-22 11:57:53 UTC
++++ Makefile.lib.in
+@@ -28,7 +28,7 @@
+ 
+ install:
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) lib$(LIB).la $(DESTDIR)$(libdir)
++	$(LIBTOOL) --mode=install $(INSTALL) $(STRIP) lib$(LIB).la $(DESTDIR)$(libdir)
+ 
+ depend: depend_src
+ depend.temp: $(GENSRCS)

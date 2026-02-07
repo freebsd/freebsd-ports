@@ -1,0 +1,3 @@
+ExtUtils::Manifest provides a number of utilities to write and check a MANIFEST
+file. At present the list includes mkmanifest, manicheck, filecheck, fullcheck,
+skipcheck, manifind, maniread, manicopy, and maniadd.

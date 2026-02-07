@@ -1,0 +1,1 @@
+Log::Procmail reads procmail(1) logfiles and returns the abstracts one by one.

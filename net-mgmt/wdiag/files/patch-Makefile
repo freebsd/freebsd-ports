@@ -1,0 +1,17 @@
+--- Makefile.orig	2014-06-20 23:12:51.948360777 +0800
++++ Makefile	2014-06-20 23:13:27.178359187 +0800
+@@ -26,9 +26,9 @@ clean:
+ 	rm westell wstart wstop *.o
+ 
+ install: all
+-	$(INSTALL) -o root westell $(DEST_PREFIX)/bin
+-	$(INSTALL) -o root wstart $(DEST_PREFIX)/bin
+-	$(INSTALL) -o root wstop $(DEST_PREFIX)/bin
+-	$(INSTALL) -o root -d $(DEST_PREFIX)/share/examples/wdiag
+-	$(INSTALL) -o root ../examples/wdiag.conf $(DEST_PREFIX)/share/examples/wdiag
++	$(BSD_INSTALL_PROGRAM) westell $(DESTDIR)$(DEST_PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) wstart $(DESTDIR)$(DEST_PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) wstop $(DESTDIR)$(DEST_PREFIX)/bin
++	$(INSTALL) -d $(DESTDIR)$(DEST_PREFIX)/share/examples/wdiag
++	$(BSD_INSTALL_DATA) ../examples/wdiag.conf $(DESTDIR)$(DEST_PREFIX)/share/examples/wdiag
+ 

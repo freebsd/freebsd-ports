@@ -1,0 +1,18 @@
+--- util/rarian-sk-rebuild.in.orig	2023-12-09 03:14:08 UTC
++++ util/rarian-sk-rebuild.in
+@@ -9,7 +9,7 @@ datarootdir=@datarootdir@
+ bindir=@bindir@
+ convert_dir=@CONVERT_DIR@
+ datarootdir=@datarootdir@
+-statedir=@localstatedir@/lib/rarian
++statedir=@localstatedir@/db/rarian
+ datadir=@datadir@
+ output_dir=${datadir}/help
+ package_version=@PACKAGE_VERSION@
+@@ -35,4 +35,4 @@ $bindir/rarian-sk-update -v --clean-index -o $convert_
+ 
+ $bindir/rarian-sk-update -v --clean-index -o $convert_string
+ 
+-fi
+\ No newline at end of file
++fi

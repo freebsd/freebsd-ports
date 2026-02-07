@@ -1,0 +1,3 @@
+Jslice takes a single JPEG picture and slices it up into a
+table to facilitate the activation of various portions of
+the original picture in an HTML document.

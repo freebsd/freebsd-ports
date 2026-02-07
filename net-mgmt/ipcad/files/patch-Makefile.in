@@ -1,0 +1,27 @@
+--- Makefile.in.orig	2014-06-20 17:27:10.338785483 +0800
++++ Makefile.in	2014-06-20 17:28:29.857773300 +0800
+@@ -132,23 +132,7 @@ install-man: man
+ install-conf:
+ 	@${INSTALL} -d $(DESTDIR)${sysconfdir}
+ 	${INSTALL} -m 644 ipcad.conf.simple $(DESTDIR)${sysconfdir}/ipcad.conf.simple
+-	-@diff ${sysconfdir}/ipcad.conf					\
+-	      ${sysconfdir}/ipcad.conf.default >/dev/null 2>&1;		\
+-	if [ "$$?" -eq 0 ] || [ ! -f ${sysconfdir}/ipcad.conf ]; then	\
+-	echo ${INSTALL} -m 644 ipcad.conf.default $(DESTDIR)${sysconfdir}/ipcad.conf.default; \
+-	${INSTALL} -m 644 ipcad.conf.default $(DESTDIR)${sysconfdir}/ipcad.conf.default; \
+-	echo ${INSTALL} -m 644 ipcad.conf.default $(DESTDIR)${sysconfdir}/ipcad.conf;	\
+-	${INSTALL} -m 644 ipcad.conf.default $(DESTDIR)${sysconfdir}/ipcad.conf;	\
+-	echo "**********************************************";		\
+-	echo "* Please customize ${sysconfdir}/ipcad.conf *";		\
+-	echo "**********************************************";		\
+-	else								\
+-	echo ${INSTALL} -m 644 ipcad.conf.default $(DESTDIR)${sysconfdir}/ipcad.conf.default; \
+-	${INSTALL} -m 644 ipcad.conf.default $(DESTDIR)${sysconfdir}/ipcad.conf.default; \
+-	echo "*********************************************";		\
+-	echo "* Updated ${sysconfdir}/ipcad.conf.default *";		\
+-	echo "*********************************************";		\
+-	fi
++	${INSTALL} -m 644 ipcad.conf.default $(DESTDIR)${sysconfdir}/ipcad.conf.sample;
+ 	@echo ""
+ 	@echo "Now you might want to 'make install-man'"
+ 	@echo ""

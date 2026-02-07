@@ -1,0 +1,109 @@
+PORTNAME=	mongo-c-driver
+# Note: devel/mongo-cxx-driver requires specific versions of this port
+DISTVERSION=	1.30.4
+PORTREVISION=	1
+CATEGORIES=	devel
+
+MAINTAINER=	ports@bsdserwis.com
+COMMENT=	C Driver for MongoDB
+WWW=		https://github.com/mongodb/mongo-c-driver
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
+		libutf8proc.so:textproc/utf8proc \
+		libzstd.so:archivers/zstd
+
+USES=		cmake cpe pathfix pkgconfig python:env
+CPE_VENDOR=	mongodb
+PATHFIX_WRKSRC=	${WRKSRC}/src/libmongoc
+USE_GITHUB=	yes
+GH_ACCOUNT=	mongodb
+GH_PROJECT=	mongo-c-driver
+USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DENABLE_ZLIB=SYSTEM
+CMAKE_ON=	ENABLE_MONGOC \
+		ENABLE_ZSTD \
+		USE_SYSTEM_LIBBSON
+CMAKE_OFF=	BUILD_TESTING \
+		ENABLE_EXAMPLES \
+		ENABLE_TESTS \
+		ENABLE_UNINSTALL \
+		USE_BUNDLED_UTF8PROC
+
+OPTIONS_DEFINE=		CRYPTOPROFILE DOCS ICU MONGODBAWS RDTSCP SASL SNAPPY \
+			SRV SSL ZSTD
+OPTIONS_DEFAULT=	SRV SSL
+OPTIONS_SUB=		yes
+
+CRYPTOPROFILE_DESC=	Use system crypto profile (requires OpenSSL)
+MONGODBAWS_DESC=	Enable support for the MONGODB-AWS authentication mechanism
+RDTSCP_DESC=		Fast performance counters on Intel using the RDTSCP instruction
+SRV_DESC=		Enable support for mongodb+srv URIs
+
+CRYPTOPROFILE_CMAKE_ON=	-DENABLE_CRYPTO_SYSTEM_PROFILE=ON
+CRYPTOPROFILE_CMAKE_OFF=	-DENABLE_CRYPTO_SYSTEM_PROFILE=OFF
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-design>0:textproc/py-sphinx-design@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR}
+DOCS_CMAKE_ON=		-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
+
+ICU_LIB_DEPENDS=	libicudata.so:devel/icu
+ICU_CMAKE_ON=		-DENABLE_ICU=ON
+ICU_CMAKE_OFF=		-DENABLE_ICU=OFF
+
+MONGODBAWS_CMAKE_ON=	-DENABLE_MONGODB_AWS_AUTH=ON
+MONGODBAWS_CMAKE_OFF=	-DENABLE_MONGODB_AWS_AUTH=OFF
+
+RDTSCP_CMAKE_ON=	-DENABLE_RDTSCP=ON
+RDTSCP_CMAKE_OFF=	-DENABLE_RDTSCP=OFF
+
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASL_CMAKE_ON=		-DENABLE_SASL=CYRUS
+SASL_CMAKE_OFF=		-DENABLE_SASL=OFF
+
+SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
+SNAPPY_CMAKE_ON=	-DENABLE_SNAPPY=ON
+SNAPPY_CMAKE_OFF=	-DENABLE_SNAPPY=OFF
+
+SRV_CMAKE_ON=		-DENABLE_SRV=ON
+SRV_CMAKE_OFF=		-DENABLE_SRV=OFF
+
+SSL_USES=		ssl
+SSL_CMAKE_OFF=		-DENABLE_SSL=OFF
+
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_CMAKE_ON=		-DENABLE_ZSTD=ON
+ZSTD_CMAKE_OFF=		-DENABLE_ZSTD=OFF
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSL}
+.if	${SSL_DEFAULT:Mlibressl*}
+CMAKE_ARGS+=	-DENABLE_SSL=LIBRESSL
+.endif
+CMAKE_ARGS+=	-DENABLE_SSL=OPENSSL
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
+.endif
+.endif
+
+pre-configure-CRYPTOPROFILE-on:
+.if ${SSL_DEFAULT:Mlibressl*}
+	@${ECHO_MSG} "CRYPTOPROFILE requires OpenSSL."
+	@${FALSE}
+.endif
+
+pre-configure-MONGODBAWS-on:
+.if !${PORT_OPTIONS:MSSL}
+	@${ECHO_MSG} "MONGODBAWS needs SSL."
+	@${FALSE}
+.endif
+
+post-extract:
+	${ECHO} "${DISTVERSION}" > ${WRKSRC}/VERSION_CURRENT
+
+.include <bsd.port.mk>

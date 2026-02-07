@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+AppJail was installed
+
+1) All information about like use and configure appjail can be found at the
+   following url:
+
+   https://github.com/DtxdF/AppJail/blob/main/README.md
+
+2) A configuration file sample was installed to %%ETCDIR%%. Change it accord to
+   your own needs
+
+3) If you want to use OCI feature, you need to install sysutils/buildah and
+   textproc/jq before using the appjail-oci(1) command
+
+4) Enjoy it
+EOM
+}
+]

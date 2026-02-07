@@ -1,0 +1,5 @@
+Ocaml-LSP provides a modern implementation of the Language Server
+Protocol for the OCaml language.
+
+This project includes the jsonrpc library for Objective Caml, an
+implementation of JSONRPC.

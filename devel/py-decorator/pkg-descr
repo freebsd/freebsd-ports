@@ -1,0 +1,5 @@
+The goal of the decorator module is to make it easy to define
+signature-preserving function decorators and decorator factories. It also
+includes an implementation of multiple dispatch and other niceties (please check
+the docs). It is released under a two-clauses BSD license, i.e. basically you
+can do whatever you want with it but I am not responsible.

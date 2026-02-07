@@ -1,0 +1,86 @@
+PORTNAME=		gemrb
+DISTVERSIONPREFIX=	v
+DISTVERSION=		0.9.4
+PORTREVISION=		1
+CATEGORIES=		games emulators
+
+MAINTAINER=	pkubaj@FreeBSD.org
+COMMENT=	GemRB (Game engine made with preRendered Background)
+WWW=		https://www.gemrb.org/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cmake compiler:c++14-lang iconv python sdl shebangfix
+SHEBANG_FILES=	admin/extend2da.py
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+USE_SDL=	sdl2
+
+CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
+		-DHAVE_LDEXPF=1 \
+		-DLAYOUT=fhs \
+		-DPYTHON_VERSION=Auto \
+		-DSANITIZE=None \
+		-DSDL_BACKEND=SDL2
+CMAKE_OFF=	DISABLE_WERROR \
+		INSOURCEBUILD \
+		STATIC_LINK \
+		USE_LIBVLC \
+		USE_SDL_CONTROLLER_API \
+		USE_TESTS \
+		USE_TRACY
+
+SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	DEMO FREETYPE OPENAL OPENGL PNG SDLMIXER VORBIS
+
+OPTIONS_GROUP=		AUDIO RESOURCE VIDEO
+OPTIONS_GROUP_AUDIO=	OPENAL SDLMIXER
+OPTIONS_GROUP_RESOURCE=	DEMO FREETYPE PNG VORBIS
+OPTIONS_GROUP_VIDEO=	OPENGL RESIND
+
+OPTIONS_SUB=		yes
+
+DEMO_DESC=		Optional demo assets
+DEMO_GH_ACCOUNT=	gemrb:demo
+DEMO_GH_PROJECT=	gemrb-assets:demo
+DEMO_GH_TAGNAME=	5b5dcde:demo
+
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
+FREETYPE_CMAKE_BOOL=	USE_FREETYPE
+
+OPENAL_USES=		openal:al,alut
+OPENAL_CMAKE_BOOL=	USE_OPENAL
+
+OPENGL_USES=		gl
+OPENGL_USE=		gl=egl
+OPENGL_CMAKE_ON=	-DOPENGL_BACKEND=OpenGL
+OPENGL_CMAKE_OFF=	-DOPENGL_BACKEND=None
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CMAKE_BOOL=		USE_PNG
+
+RESIND_DESC=		Scale to screensize with pixelscaling
+RESIND_CMAKE_BOOL=	SDL_RESOLUTION_INDEPENDANCE
+
+SDLMIXER_DESC=		Audio support via SDL_mixer
+SDLMIXER_USE=		sdl=mixer2
+SDLMIXER_CMAKE_BOOL=	USE_SDLMIXER
+
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+VORBIS_CMAKE_BOOL=	USE_VORBIS
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+post-extract-DEMO-on:
+	${MKDIR} ${WRKSRC}/demo/music/mx0100
+	${INSTALL_DATA} ${WRKSRC_demo}/demo/audio/whispers-seamless.ogg ${WRKSRC}/demo/music/mx0100/mx0100a.ogg
+	${MKDIR} ${WRKSRC}/demo/music/theme
+	${INSTALL_DATA} ${WRKSRC_demo}/demo/audio/themea.ogg ${WRKSRC}/demo/music/theme
+
+post-install:
+	${RM} ${STAGEDIR}${ETCDIR}/GemRB.cfg
+
+.include <bsd.port.mk>

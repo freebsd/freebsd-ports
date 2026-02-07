@@ -1,0 +1,3 @@
+Newsfetch pulls news from an NNTP server and writes the articles to a file
+or pipes them to the specified command. The file created by newsfetch can be
+used with any mail reader.

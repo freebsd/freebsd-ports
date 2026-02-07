@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Digest/Hashcash.pm
+%%SITE_ARCH%%/auto/Digest/Hashcash/Hashcash.so
+%%PERL5_MAN3%%/Digest::Hashcash.3.gz

@@ -1,0 +1,3 @@
+Albert is a unified and efficient access to your machine. Technically it is a
+plugin based keyboard launcher written in C++/Qt and Python. Not all plugins are
+tested in FreeBSD

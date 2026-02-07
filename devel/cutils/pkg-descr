@@ -1,0 +1,10 @@
+cutils is a collection of miscellaneous utilities useful
+for C programmers.  It is composed by the following utilities:
+
+cinfo, cinfoc and cinfodc - C language documentation tools
+cdecl and cundecl - decode and encode C type declarations
+cobfusc - make a C source file unreadable but compilable
+chilight - highlight C source files with colors
+cunloop - unloop C loops
+yyextract - extract grammar rules from yacc grammar
+yyref - yacc grammar reference program

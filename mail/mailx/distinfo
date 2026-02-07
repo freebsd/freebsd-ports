@@ -1,0 +1,6 @@
+SHA256 (mail-2.2.8.tar.gz) = 104fd378765e13c2d389bbe4c52e76923773123fdf926f8c7d6c79dd7bea3a50
+SIZE (mail-2.2.8.tar.gz) = 87697
+SHA256 (mailx-memo-2.2.8R) = 235249efb9fee46367ae95f6e3b87fc037717f70d5d12323cce5f499b58c213f
+SIZE (mailx-memo-2.2.8R) = 4466
+SHA256 (mailx.v05.patch.gz) = ce42b4bc176d59ce7dacd8b701d2c26e90775cebb02c39c77f82d2e6a3ea95fd
+SIZE (mailx.v05.patch.gz) = 9083

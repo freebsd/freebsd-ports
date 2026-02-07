@@ -1,0 +1,41 @@
+lib/lv2/kpp_bluedream.lv2/base_scale.png
+lib/lv2/kpp_bluedream.lv2/kpp_bluedream.so
+lib/lv2/kpp_bluedream.lv2/kpp_bluedream.ttl
+lib/lv2/kpp_bluedream.lv2/kpp_bluedreamui.so
+lib/lv2/kpp_bluedream.lv2/light.png
+lib/lv2/kpp_bluedream.lv2/manifest.ttl
+lib/lv2/kpp_deadgate.lv2/kpp_deadgate.so
+lib/lv2/kpp_deadgate.lv2/kpp_deadgate.ttl
+lib/lv2/kpp_deadgate.lv2/manifest.ttl
+lib/lv2/kpp_distruction.lv2/base_scale.png
+lib/lv2/kpp_distruction.lv2/kpp_distruction.so
+lib/lv2/kpp_distruction.lv2/kpp_distruction.ttl
+lib/lv2/kpp_distruction.lv2/kpp_distructionui.so
+lib/lv2/kpp_distruction.lv2/light.png
+lib/lv2/kpp_distruction.lv2/manifest.ttl
+lib/lv2/kpp_fuzz.lv2/base_scale.png
+lib/lv2/kpp_fuzz.lv2/kpp_fuzz.so
+lib/lv2/kpp_fuzz.lv2/kpp_fuzz.ttl
+lib/lv2/kpp_fuzz.lv2/kpp_fuzzui.so
+lib/lv2/kpp_fuzz.lv2/light.png
+lib/lv2/kpp_fuzz.lv2/manifest.ttl
+lib/lv2/kpp_octaver.lv2/kpp_octaver.so
+lib/lv2/kpp_octaver.lv2/kpp_octaver.ttl
+lib/lv2/kpp_octaver.lv2/manifest.ttl
+lib/lv2/kpp_single2humbucker.lv2/kpp_single2humbucker.so
+lib/lv2/kpp_single2humbucker.lv2/kpp_single2humbucker.ttl
+lib/lv2/kpp_single2humbucker.lv2/manifest.ttl
+lib/lv2/kpp_tubeamp.lv2/base_scale.png
+lib/lv2/kpp_tubeamp.lv2/kpp_tubeamp.so
+lib/lv2/kpp_tubeamp.lv2/kpp_tubeamp.ttl
+lib/lv2/kpp_tubeamp.lv2/kpp_tubeampui.so
+lib/lv2/kpp_tubeamp.lv2/light.png
+lib/lv2/kpp_tubeamp.lv2/manifest.ttl
+lib/lv2/kpp_tubeamp.lv2/profiles/American Clean.tapf
+lib/lv2/kpp_tubeamp.lv2/profiles/American Vintage.tapf
+lib/lv2/kpp_tubeamp.lv2/profiles/British Crunch.tapf
+lib/lv2/kpp_tubeamp.lv2/profiles/Modern Metal.tapf
+lib/lv2/kpp_tubeamp.lv2/profiles/v1.2/Classic Hard.tapf
+lib/lv2/kpp_tubeamp.lv2/profiles/v1.2/JCM800 (spice).tapf
+lib/lv2/kpp_tubeamp.lv2/profiles/v1.2/MarkII.tapf
+lib/lv2/kpp_tubeamp.lv2/profiles/v1.2/TwinReverb (spice).tapf

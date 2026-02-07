@@ -1,0 +1,11 @@
+%%EMACS_SITE_LISPDIR%%/eat.el
+%%EMACS_SITE_LISPDIR%%/eat.elc
+share/terminfo/65/eat-256color
+share/terminfo/65/eat-color
+share/terminfo/65/eat-mono
+share/terminfo/65/eat-truecolor
+share/terminfo/e/eat-256color
+share/terminfo/e/eat-color
+share/terminfo/e/eat-mono
+share/terminfo/e/eat-truecolor
+%%PORTDOCS%%%%DOCSDIR%%/README.org

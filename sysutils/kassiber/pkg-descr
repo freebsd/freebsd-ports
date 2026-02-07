@@ -1,0 +1,5 @@
+Kassiber takes an executable file from the host and runs it in
+the given jail, taking care of any library dependencies.  This
+allows you to execute commands in jails without transferring
+their executable files or required shared library dependencies
+into them.

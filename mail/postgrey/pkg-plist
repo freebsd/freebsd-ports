@@ -1,0 +1,11 @@
+@sample etc/postfix/postgrey_whitelist_clients.sample
+@sample etc/postfix/postgrey_whitelist_recipients.sample
+share/man/man1/policy-test.1.gz
+share/man/man1/postgrey.1.gz
+share/man/man1/postgreyreport.1.gz
+sbin/postgrey
+sbin/policy-test
+sbin/postgreyreport
+@dir etc/postfix
+@dir(%%POSTGREY_USER%%,%%POSTGREY_GROUP%%,750) %%POSTGREY_DBDIR%%
+@dir(%%POSTGREY_USER%%,%%POSTGREY_GROUP%%,750) %%POSTGREY_RUNDIR%%

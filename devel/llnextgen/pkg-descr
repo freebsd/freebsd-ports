@@ -1,0 +1,9 @@
+LLnextgen is an Extended-LL(1) parser generator. It is a rewrite of the LLgen
+parser generator by D. Grune and C.J.H. Jacobs which is part of the Amsterdam
+Compiler Kit (ACK). Like all parser generators, LLnextgen takes the description
+of the grammar with associated actions as input, and generates a parser routine
+for use in compilers and other text processing programs.
+
+LLgen, and therefore LLnextgen, extends on the LL(1) class of parser generators
+by allowing FIRST/FIRST conflicts and FIRST/FOLLOW conflicts to be resolved with
+both static and dynamic conditions.

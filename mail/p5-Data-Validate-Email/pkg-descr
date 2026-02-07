@@ -1,0 +1,2 @@
+This module collects common email validation routines to
+make input validation, and untainting easier and more readable.

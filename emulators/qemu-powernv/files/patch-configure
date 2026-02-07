@@ -1,0 +1,83 @@
+--- configure.orig	2018-12-25 04:28:30 UTC
++++ configure
+@@ -3387,10 +3387,10 @@ fi
+ # curses probe
+ if test "$curses" != "no" ; then
+   if test "$mingw32" = "yes" ; then
+-    curses_inc_list="$($pkg_config --cflags ncurses 2>/dev/null):"
++    curses_inc_list="$($pkg_config --cflags-only-I ncurses 2>/dev/null):"
+     curses_lib_list="$($pkg_config --libs ncurses 2>/dev/null):-lpdcurses"
+   else
+-    curses_inc_list="$($pkg_config --cflags ncursesw 2>/dev/null):-I/usr/include/ncursesw:"
++    curses_inc_list="$($pkg_config --cflags-only-I ncursesw 2>/dev/null):-I/usr/include/ncursesw:"
+     curses_lib_list="$($pkg_config --libs ncursesw 2>/dev/null):-lncursesw:-lcursesw"
+   fi
+   curses_found=no
+@@ -3501,7 +3501,7 @@ for i in $glib_modules; do
+         glib_libs=$($pkg_config --libs $i)
+         QEMU_CFLAGS="$glib_cflags $QEMU_CFLAGS"
+         LIBS="$glib_libs $LIBS"
+-        libs_qga="$glib_libs $libs_qga"
++        libs_qga="$glib_libs -lintl $libs_qga"
+     else
+         error_exit "glib-$glib_req_ver $i is required to compile QEMU"
+     fi
+@@ -5846,27 +5846,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
+     cat > $TMPC <<EOF
+     int main(void) { return 0; }
+ EOF
+-    textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++    textseg_ldflags="-Wl,--image-base=$textseg_addr"
+     if ! compile_prog "" "$textseg_ldflags"; then
+-      # In case ld does not support -Ttext-segment, edit the default linker
+-      # script via sed to set the .text start addr.  This is needed on FreeBSD
+-      # at least.
+-      if ! $ld --verbose >/dev/null 2>&1; then
+-        error_exit \
+-            "We need to link the QEMU user mode binaries at a" \
+-            "specific text address. Unfortunately your linker" \
+-            "doesn't support either the -Ttext-segment option or" \
+-            "printing the default linker script with --verbose." \
+-            "If you don't want the user mode binaries, pass the" \
+-            "--disable-user option to configure."
+-      fi
++      textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++      if ! compile_prog "" "$textseg_ldflags"; then
++        # In case ld does not support -Ttext-segment, edit the default linker
++        # script via sed to set the .text start addr.  This is needed on FreeBSD
++        # at least.
++        if ! $ld --verbose >/dev/null 2>&1; then
++          error_exit \
++              "We need to link the QEMU user mode binaries at a" \
++              "specific text address. Unfortunately your linker" \
++              "doesn't support either the -Ttext-segment option or" \
++              "printing the default linker script with --verbose." \
++              "If you don't want the user mode binaries, pass the" \
++              "--disable-user option to configure."
++        fi
+ 
+-      $ld --verbose | sed \
+-        -e '1,/==================================================/d' \
+-        -e '/==================================================/,$d' \
+-        -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
+-        -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
+-      textseg_ldflags="-Wl,-T../config-host.ld"
++        $ld --verbose | sed \
++          -e '1,/==================================================/d' \
++          -e '/==================================================/,$d' \
++          -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
++          -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
++        textseg_ldflags="-Wl,-T../config-host.ld"
++      fi
+     fi
+   fi
+ fi
+@@ -6840,6 +6843,8 @@ elif test "$ARCH" = "x86_64" -o "$ARCH" = "x32" ; then
+   QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/i386 $QEMU_INCLUDES"
+ elif test "$ARCH" = "ppc64" ; then
+   QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/ppc $QEMU_INCLUDES"
++elif test "${ARCH%v?}" = "arm" ; then
++  QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/arm $QEMU_INCLUDES"
+ else
+   QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/\$(ARCH) $QEMU_INCLUDES"
+ fi

@@ -1,0 +1,12 @@
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-buffer-list.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-color-theme.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-dired.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-dnd.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-gf.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-goby.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-howm.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-server.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-speedbar.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-w3m.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen-wl.el
+%%EMACS_SITE_LISPDIR%%/elscreen/elscreen.el

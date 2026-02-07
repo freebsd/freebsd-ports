@@ -1,0 +1,10 @@
+--- configure.orig	2022-08-05 23:55:13 UTC
++++ configure
+@@ -14928,7 +14928,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+           LIBS=$SAVED_LIBS
+ 
+   if test "$glut_support" = "yes" -a "$enable_libwebpdemux" = "yes"; then
+-    build_vwebp=yes
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: Not building vwebp. OpenGL libraries and --enable-libwebpdemux are required." >&5
+ printf "%s\n" "$as_me: Not building vwebp. OpenGL libraries and --enable-libwebpdemux are required." >&6;}

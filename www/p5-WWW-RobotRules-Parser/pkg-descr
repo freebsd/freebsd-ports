@@ -1,0 +1,2 @@
+WWW::RobotRules::Parser allows you to simply parse robots.txt files
+as described in http://www.robotstxt.org/wc/norobots.html.

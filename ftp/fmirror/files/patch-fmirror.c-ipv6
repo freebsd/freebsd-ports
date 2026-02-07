@@ -1,0 +1,947 @@
+--- /usr/ports/ftp/fmirror/work/fmirror-0.8.4/fmirror.c	Thu Mar  9 07:52:52 2000
++++ fmirror.c	Mon Aug  8 10:30:10 2005
+@@ -135,11 +135,12 @@
+ 
+ static int loglevel = 3; /* Default logging level is 3 */
+ 
+-#define FTP_CONTROL_PORT 21
++#define FTP_CONTROL_PORT "21"
+ 
+ static double totalsum = 0.0;
+ static double totalbytes = 0.0;
+ 
++static int af = PF_UNSPEC;
+ static char *localdir = NULL;
+ static char *remotedir = NULL;
+ static char *host = NULL;
+@@ -170,6 +171,12 @@
+ static int reset_times = 0; /* reset access and mod times to remote */
+ static int use_mdtm = 1; /* default is use MDTM if we can find remote TZ */
+ 
++struct in6_addr dst6_addr; /* IPv6 destination address. 
++			      for EPSV handling */
++size_t dst_addrlen;
++struct sockaddr_storage localaddr; /* local IP address, used for PORT/EPRT 
++				      command construction */
++
+ static volatile sig_atomic_t alarmed = 0;
+ 
+ static int input_timeout = 240;
+@@ -183,6 +190,8 @@
+ static char rcsid[] = "$Id: fmirror.c,v 1.16 2000/03/09 06:52:52 finnag Exp $";
+ 
+ static char usage[] = 
++" -4 - use only IPv4 connections\n"
++" -6 - use only IPv6 connections\n"
+ " -A <mask> - binary and remote file permissions with <mask> [0111]\n"
+ " -O <mask> - binary or remote file permissions with <mask> [0444]\n"
+ " -C <whatever> - parse <whatever> as if it was a line in a config-file\n"
+@@ -218,13 +227,16 @@
+ struct mirror_info {
+     char *hostname;
+     char *path;
+-    int port;
++    int af; /* force to use this address family */
++    char *port;
+ };
+ 
+ struct connection {
+     int fd;
+-    struct sockaddr_in sad;
+-    struct sockaddr_in dest;
++    struct sockaddr_storage sad;
++    struct sockaddr_storage dest; /* in network order */
++    unsigned short dport; /* dest port - for printing only, in HOST order */
++    int af;
+     FILE *file;
+ };
+ 
+@@ -274,15 +286,17 @@
+ 
+ static int parse_args(int argc, char *const *argv);
+ static void do_mirror(struct mirror_info *);
+-static int do_connect(const char *, int);
++static int do_connect(const char *, const char *);
+ static void clog(const char *);
+ static int logit(const char *, ...) __attribute__((format(printf, 1, 2)));
+ static int handle_input(const char **msg);
+ static int cmd(const char *, ...);
+ static void get_filelist(void);
++static const char *make_active_args(struct sockaddr *);
++static const char *make_eprt_args(struct sockaddr *);
+ static const char *make_port_args(struct sockaddr_in *);
++static const char *make_port_verb(int portaf);
+ static struct connection *new_connection(void);
+-static uint lookup_hostname(const char *);
+ static void handle_dir_listing(struct connection *c);
+ static int parse_filename(char *, char *, struct parse_info *);
+ static struct timeinfo *Date2Min(const char *);
+@@ -301,7 +315,6 @@
+ static int time_dif(time_t, time_t);
+ static int size_dif(unsigned, unsigned);
+ static int mode_dif(int, int);
+-static uint get_local_ip(int);
+ static int recursive_unlink(const char *filename, struct stat *st);
+ static void maybe_delete_dir(const char *pathname);
+ static void delete_delayed_dirs(void);
+@@ -314,12 +327,15 @@
+ static void set_time(const char *name, time_t);
+ static time_t utc_mktime(struct tm *tm);
+ static int sig_permanent(int sig, RETSIGTYPE (*handler)(int));
+-static int make_connected_socket(struct sockaddr_in *sad);
++static int make_connected_socket(struct sockaddr *sad, size_t addrlen);
+ static void init_active(struct connection *c);
+ static int init_passive(struct connection *c);
++static int init_passive_ipv6(struct connection *c);
++static int init_passive_ipv4(struct connection *c);
+ static int make_passive_connection(struct connection *c);
+-static int accept_connection(int fd, struct sockaddr_in *sad);
++static int accept_connection(int fd, struct sockaddr *sad);
+ static int find_timezone(char *);
++void log_conn_from(struct sockaddr *sa);
+ 
+ static FILE *tempfile;
+ static FILE *delayed_delfile;
+@@ -571,7 +587,8 @@
+ 
+     mi.hostname = host;
+     mi.path = remotedir;
+-    mi.port = port ? strtol(port, NULL, 0) : FTP_CONTROL_PORT;
++    mi.port = port ? port : FTP_CONTROL_PORT;
++    mi.af = af;
+ 
+     LOG(1, finished, ("%s @ %s -> %s", remotedir,
+                       mi.hostname, localdir));
+@@ -694,55 +711,98 @@
+ }
+ 
+ 
+-static uint
+-lookup_hostname(const char *addr)
+-{
+-    /* Converts a hostname to an IP address */
+-    uint r;
+-    struct hostent *host_info;
+-    r = inet_addr(addr);
+-    if (r == (uint)-1) {
+-	host_info = gethostbyname(addr);
+-	if(host_info == 0) {
+-	    LOG(0, failure,
+-		("-- ERROR -- gethostbyname(\"%s\") : unknown host", addr));
+-	    exit(EXIT_FAILURE);
+-	}
+-	memcpy((char *)&r, host_info->h_addr, host_info->h_length);
+-    }
+-    return r;
+-}
+-
+-
+ static int
+-do_connect(const char *addr, int dport)
++do_connect(const char *addr, const char *dport)
+ {
+     /* Connects to a specified host and port, and returns a
+      * filedescriptor for the connection.  */
+ 
+-    struct sockaddr_in address;
+-    int sockfd;
++    struct addrinfo hints, *res, *res0;
++    int error;
++    int sockfd = 0;
++    char msg[32];
++    char numaddr[64];
++    int protocol = 0;
++
++    memset(&hints, 0, sizeof(hints));
++    hints.ai_family = af; /* use global variable af */
++    hints.ai_socktype = SOCK_STREAM;
++    error = getaddrinfo(addr, dport, &hints, &res0);
++    if (error) {
++      LOG(0, failure,
++		("-- ERROR -- getaddrinfo : %s", gai_strerror(errno)));
++      exit(1);
++      /*NOTREACHED*/
++    }
++
++    for (res = res0; res; res = res->ai_next) {
++      switch(res->ai_family) {
++	  case AF_INET:
++	        inet_ntop(res->ai_family, 
++			  &((struct sockaddr_in *)res->ai_addr)->sin_addr,
++			  numaddr, sizeof(numaddr));
++		break;
++	  case AF_INET6:
++	        inet_ntop(res->ai_family, 
++			  &((struct sockaddr_in6 *)res->ai_addr)->sin6_addr,
++			  numaddr, sizeof(numaddr));
++		break;
++      }
++      LOG(4, ctrl_connect, ("Attempting to connect to %s", numaddr));
++      sockfd = make_connected_socket(res->ai_addr, res->ai_addrlen);
++      if (sockfd == -1) {
++  	LOG(0, failure, 
++	    ("Too many connect attempts. Giving up connecting to %s", numaddr));
++  	continue;
++      }
++  
++      protocol = res->ai_protocol;
++
++      /* use global variable to export addrlen 
++         this variable will be used by make_passive_connection() */
++      dst_addrlen = res->ai_addrlen;
++  
++      /* set global variable af to acquired address family.
++         this variable will be used by new_connection() */
++      af = res->ai_family;
++      switch (af) {
++  	case AF_INET:
++  	  snprintf(msg, sizeof(msg), "Connected [IPv4]");
++  	  break;
++  	case AF_INET6:
++            /* set global variable dst_addr to res0 if af is IPv6
++              we will need it in EPSV handling */
++  	  dst6_addr = ((struct sockaddr_in6 *)(res->ai_addr))->sin6_addr;
++  	  snprintf(msg, sizeof(msg), "Connected [IPv6]");
++  	  break;
++  	default:
++  	  LOG(0, failure, 
++  	      ("do_connect: wrong AF specification"));
++  	  break;
++      }
++      LOG(3, ctrl_connect, (msg));
++
++      /* sucessfully connected, break the loop */
++      break;
++    } /* for */
+ 
+-    memset(&address, 0, sizeof(address));
+-    address.sin_addr.s_addr = lookup_hostname(addr);
+-    address.sin_family = AF_INET;
+-    address.sin_port = htons(dport);
+-    
+-    sockfd = make_connected_socket(&address);
+     if (sockfd == -1) {
+-	LOG(0, failure, ("Too many connect attempts. Giving up."));
++	LOG(0, failure, ("Was not able to connect to any address. Giving up."));
+ 	return -1;
+     }
+ 
+ #if (defined(IPTOS_LOWDELAY) && defined(IP_TOS))
+     {
+ 	int opt = IPTOS_LOWDELAY;
+-	if (setsockopt(sockfd, IPPROTO_IP, IP_TOS, (char *)&opt, sizeof(opt)))
++	if (af == AF_INET) /* use IP_TOS only for IPv4 */
++	  if (setsockopt(sockfd, protocol, IP_TOS, (char *)&opt, sizeof(opt)))
+ 	    LOG(0, failure,
+ 		("-- ERROR -- setsockopt LOWDELAY : %s", strerror(errno)));
+     }
+ #endif
+ 
++    freeaddrinfo(res0);
++
+     return sockfd;
+ }
+ 
+@@ -770,13 +830,14 @@
+ 
+     goto first;
+     do {
++	LOG(4, ctrl_connect, ("Reconnect timeout - sleeping %d secs", 
++	    reconnect_timeout));
+ 	sleep(reconnect_timeout);
+     first:
+ 	LOG(3, ctrl_connect, ("Connecting to %s...", mi->hostname));
+ 	control_fd = do_connect(mi->hostname, mi->port);
+ 	if (control_fd >= 0) {
+-	    get_local_ip(control_fd);
+-	    LOG(3, ctrl_connect, ("Connected."));
++	    LOG(3, ctrl_connect, ("Acquired local IP address."));
+ 	    if (!(in_file = fdopen(control_fd, "r"))) {
+ 		LOG(0, failure, ("-- ERROR -- fdopen on in_file failed : %s",
+ 				 strerror(errno)));
+@@ -918,7 +979,7 @@
+     struct connection *c;
+     int x;
+     const char *msg;
+-    struct sockaddr_in sad;
++    struct sockaddr_storage sad;
+     FILE *stream;
+     char line[PATH_MAX + 80];
+     int fd;
+@@ -928,6 +989,7 @@
+     } sample_dirs, *nextsdl;
+     struct parse_info p, sample_fil, *pp;
+     int foundtz = 0;
++    char numaddr[64];
+ 
+     sample_fil.filename=0;
+     memset(&sample_dirs, 0, sizeof(sample_dirs));
+@@ -953,7 +1015,8 @@
+ 	}
+     } else {
+ 	init_active(c);
+-	cmd("PORT %s", make_port_args(&c->sad));
++	cmd("%s %s", make_port_verb(c->af), 
++	    make_active_args((struct sockaddr *)&c->sad));
+ 	if(!success()) {
+ 	    close(c->fd);
+ 	    free(c);
+@@ -967,8 +1030,19 @@
+ 	    LOG(0, failure, ("Passive conection failed, aborting."));
+ 	    exit(EXIT_FAILURE);
+ 	}
++	switch (c->af) {
++	      case AF_INET:
++	        inet_ntop(c->af, &((struct sockaddr_in *)&c->dest)->sin_addr,
++			    numaddr, sizeof(numaddr));
++		break;
++	      case AF_INET6:
++	        inet_ntop(c->af, &((struct sockaddr_in6 *)&c->dest)->sin6_addr,
++			    numaddr, sizeof(numaddr));
++		break;
++	}
+ 	LOG(5, connect, ("hdl: Connected passively to %s port %d",
+-			 inet_ntoa(c->dest.sin_addr), ntohs(c->dest.sin_port)));
++			 numaddr,
++			 c->dport));
+     }
+     x = handle_input(&msg);
+     if (x >= 400) {
+@@ -981,14 +1055,13 @@
+ 	fd = c->fd;
+     } else {
+ 	LOG(5, other, ("Dir list: Waiting for connection..."));
+-	fd = accept_connection(c->fd, &sad);
++	fd = accept_connection(c->fd, (struct sockaddr *)&sad);
+ 	if (fd == -1) {
+ 	    LOG(0, failure, ("accept() : %s", errno == EINTR
+ 			     ? "Operation timed out" : strerror(errno)));
+ 	    exit(EXIT_FAILURE);
+ 	}
+-	LOG(5, connect, ("hdl: Connection from %s port %d",
+-			 inet_ntoa(sad.sin_addr), htons(sad.sin_port)));
++        log_conn_from((struct sockaddr *)&sad);
+     }
+     if (!(stream = fdopen(fd, "r"))) {
+ 	LOG(0, failure, ("fdopen(%d, \"r\"): %s", fd, strerror(errno)));
+@@ -1142,11 +1215,52 @@
+ 
+ 
+ static int
++parse_epsv_reply(char *buffer, struct connection *c)
++{
++
++    /* parses EPSV command response (for IPv6) stored in buffer
++       and fills connection structure with address/port it has acquired */
++    unsigned char *s = (unsigned char *)buffer + 4;
++    unsigned short cport;
++    struct sockaddr_in6 *si6;
++    char numaddr[64];
++
++    while (*s && !isdigit(*s))
++	s++;
++    if (!*s)
++	return -1;
++    
++    memset(&c->dest, 0, sizeof(c->dest));
++
++    si6 = (struct sockaddr_in6 *)&c->dest;
++    /* set destination address to the same address to which control 
++       connection is established (according to RFC 2428, 
++       "The response to this command includes only the TCP port number 
++       of the listening connection." 
++     */
++    si6->sin6_addr = dst6_addr;
++    si6->sin6_family = AF_INET6;
++    cport = rdig(&s);
++    c->dport = cport;
++    si6->sin6_port = htons(cport);
++
++    inet_ntop(si6->sin6_family, &(si6->sin6_addr), numaddr, sizeof(numaddr));
++    LOG(5, addrinfo ,("passive reply is %d (using addr %s)", 
++		      c->dport, numaddr));
++    return 0;
++}
++
++
++static int
+ parse_pasv_reply(char *buffer, struct connection *c)
+ {
++
++    /* parses PASV command (for IPv4) */
+     unsigned char *s = (unsigned char *)buffer + 4;
+     unsigned long addr;
+     unsigned short cport;
++    struct sockaddr_in *si;
++
+     while (*s && !isdigit(*s))
+ 	s++;
+     if (!*s)
+@@ -1160,20 +1274,63 @@
+     addr += rdig(&s) << 8;
+     addr += rdig(&s);
+ 
+-    c->dest.sin_addr.s_addr = htonl(addr);
++    si = (struct sockaddr_in *)&c->dest;
++    si->sin_addr.s_addr = htonl(addr);
+ 
+     cport = rdig(&s) << 8;
+     cport += rdig(&s);
++    c->dport = cport;
++
++    si->sin_port = htons(cport);
++    si->sin_family = AF_INET;
++    c->af = AF_INET;
++    LOG(5, addrinfo ,("passive reply is %s.%d", inet_ntoa(si->sin_addr),
++		      ntohs(si->sin_port)));
++
++    return 0;
++}
++
++
++static int
++init_passive(struct connection *c) {
++
++    /* wrapper for _ipv4/_ipv6 functions */
++    switch (c->af) {
++      case AF_INET:
++        return(init_passive_ipv4(c));
++	break;
++      case AF_INET6:
++        return(init_passive_ipv6(c));
++	break;
++      default:
++	return(0);
++    }
++}
++
++static int
++init_passive_ipv6(struct connection *c)
++{
++    char buffer[PATH_MAX + 80];
++    int err;
++
++    cmd("EPSV");
++    err = get_input(buffer, sizeof(buffer));
++    if (err != 229) { /* RFC 2428, section 3 */
++	LOG(0, cmdfail, ("EPSV command failed, skipping: %s", buffer));
++	return -1;
++    }
++
++    if (parse_epsv_reply(buffer, c)) {
++	LOG(0, protoerr, ("EPSV reply not understood: %s", buffer));
++	return -1;
++    }
+ 
+-    c->dest.sin_port = htons(cport);
+-    c->dest.sin_family = AF_INET;
+-    LOG(5, addrinfo ,("passive reply is %s.%d", inet_ntoa(c->dest.sin_addr),
+-		      ntohs(c->dest.sin_port)));
+     return 0;
+ }
+ 
++
+ static int
+-init_passive(struct connection *c)
++init_passive_ipv4(struct connection *c)
+ {
+     char buffer[PATH_MAX + 80];
+     int err;
+@@ -1193,6 +1350,7 @@
+     return 0;
+ }
+ 
++
+ static int
+ do_get_file(char *arg_cmd, time_t mtime, uint perm, uint msize)
+ {
+@@ -1200,6 +1358,9 @@
+     int x;
+     int retries = 4;
+     int err;
++    unsigned short dport = 0;
++    char numaddr[64];
++
+     LOG(7, other, ("do_get_file called with arg `%s'", arg_cmd));
+     do {
+ 	const char *msg;
+@@ -1212,7 +1373,8 @@
+ 	    }
+ 	} else {
+ 	    init_active(c);
+-	    cmd("PORT %s", make_port_args(&c->sad));
++	    cmd("%s %s", make_port_verb(c->af), 
++		make_active_args((struct sockaddr *)&c->sad));
+ 	    if(!success()) {
+ 		LOG(1, cmdfail, ("Port command failed, skipping file"));
+ 		close(c->fd);
+@@ -1227,8 +1389,20 @@
+ 		free(c);
+ 		return 1;
+ 	    }
++	    switch (c->af) {
++	      case AF_INET:
++	        inet_ntop(c->af, &((struct sockaddr_in *)&c->dest)->sin_addr,
++			    numaddr, sizeof(numaddr));
++	        dport = ((struct sockaddr_in *)&c->dest)->sin_port;
++		break;
++	      case AF_INET6:
++	        inet_ntop(c->af, &((struct sockaddr_in6 *)&c->dest)->sin6_addr,
++			    numaddr, sizeof(numaddr));
++		dport = ((struct sockaddr_in *)&c->dest)->sin_port;
++		break;
++	    }
+ 	    LOG(5, connect, ("hdl: Connected passively to %s port %d",
+-		    inet_ntoa(c->dest.sin_addr), ntohs(c->dest.sin_port)));
++		    numaddr, ntohs(dport)));
+ 	}
+ 	x = handle_input(&msg);
+ 	/* ### Should handle transient errors better here */
+@@ -1366,6 +1540,29 @@
+ }
+ 
+ 
++void
++log_conn_from(struct sockaddr *sa)
++{
++    char numaddr[64];
++    unsigned short cport = 0;
++
++    switch(sa->sa_family) {
++	case AF_INET:
++	  inet_ntop(sa->sa_family, &((struct sockaddr_in *)sa)->sin_addr, 
++		    numaddr, sizeof(numaddr));
++	  cport = ((struct sockaddr_in *)sa)->sin_port;
++	  break;
++	case AF_INET6:
++	  inet_ntop(sa->sa_family, &((struct sockaddr_in6 *)sa)->sin6_addr, 
++		    numaddr, sizeof(numaddr));
++	  cport = ((struct sockaddr_in6 *)sa)->sin6_port;
++	  break;
++    }
++
++    LOG(5, connect, ("hdl: Connection from %s port %d", numaddr, cport));
++}
++
++
+ static int
+ handle_ftp_transfer(struct connection *c, char *filename, time_t mtime,
+ 		    uint perm, uint msize)
+@@ -1373,7 +1570,7 @@
+     int ffd;
+     char buffer[10240];
+     int len;
+-    struct sockaddr_in sad;
++    struct sockaddr_storage sad;
+     int fd = -1;
+     int totlen = 0;
+     int hashedlen = 0;
+@@ -1395,7 +1592,7 @@
+     } else {
+ 	LOG(5, connect, ("ftp trans: Waiting for connection..."));
+ 	alarm(connect_timeout);
+-	fd = accept_connection(c->fd, &sad);
++	fd = accept_connection(c->fd, (struct sockaddr *)&sad);
+ 	alarm(0);
+ 	if (fd == -1) {
+ 	    if (errno == EINTR) {
+@@ -1406,8 +1603,7 @@
+ 	    LOG(0, connect, ("-- ERROR -- accept() : %s", strerror(errno)));
+ 	    exit(EXIT_FAILURE);
+ 	}
+-	LOG(5, connect, ("hdl: Connection from %s port %d",
+-			 inet_ntoa(sad.sin_addr), htons(sad.sin_port)));
++	log_conn_from((struct sockaddr *)&sad);
+     }
+ 
+     if ((ffd = creat(tmp_name, 0200)) == -1) { /* create unreadble tempfile */
+@@ -1536,6 +1732,7 @@
+ get_filelist()
+ {
+     struct connection *c;
++    char numaddr[64];
+     int x;
+     const char *msg;
+ 
+@@ -1557,7 +1754,8 @@
+ 	}
+     } else {
+ 	init_active(c);
+-	cmd("PORT %s", make_port_args(&c->sad));
++	cmd("%s %s", make_port_verb(c->af), 
++	    make_active_args((struct sockaddr *)(&c->sad)));
+ 	if(!success()) {
+ 	    close(c->fd);
+ 	    free(c);
+@@ -1578,8 +1776,18 @@
+ 	    LOG(0, failure, ("Passive conection failed, aborting."));
+ 	    exit(EXIT_FAILURE);
+ 	}
++	switch (c->af) {
++	      case AF_INET:
++	        inet_ntop(c->af, &((struct sockaddr_in *)&c->dest)->sin_addr,
++			    numaddr, sizeof(numaddr));
++		break;
++	      case AF_INET6:
++	        inet_ntop(c->af, &((struct sockaddr_in6 *)&c->dest)->sin6_addr,
++			    numaddr, sizeof(numaddr));
++		break;
++	}
+ 	LOG(5, connect, ("hdl: Connected passively to %s port %d",
+-			 inet_ntoa(c->dest.sin_addr), ntohs(c->dest.sin_port)));
++			 numaddr, c->dport));
+     }
+     x = handle_input(&msg);
+     if (x >= 400) {
+@@ -2331,7 +2539,7 @@
+ static void
+ handle_dir_listing(struct connection *c)
+ {
+-    struct sockaddr_in sad;
++    struct sockaddr_storage sad;
+     FILE *stream;
+     char line[PATH_MAX + 80];
+     char prefix[PATH_MAX] = ".";
+@@ -2341,14 +2549,13 @@
+ 	fd = c->fd;
+     } else {
+ 	LOG(5, other, ("Dir list: Waiting for connection..."));
+-	fd = accept_connection(c->fd, &sad);
++	fd = accept_connection(c->fd, (struct sockaddr *)&sad);
+ 	if (fd == -1) {
+ 	    LOG(0, failure, ("accept() : %s", errno == EINTR
+ 			     ? "Operation timed out" : strerror(errno)));
+ 	    exit(EXIT_FAILURE);
+ 	}
+-	LOG(5, connect, ("hdl: Connection from %s port %d",
+-			 inet_ntoa(sad.sin_addr), htons(sad.sin_port)));
++        log_conn_from((struct sockaddr *)&sad);
+     }
+ 
+     if (compressed) {
+@@ -2415,28 +2622,79 @@
+ }
+ 
+ 
+-static uint
+-get_local_ip(int fd)
++static const char *
++make_port_verb(int portaf)
+ {
+-    /* Returns the ip address of this machine in HOST byte order.
+-     * Caches the result for later use.
+-     *
+-     * if fd == -1 return the cached ip-number, otherwise assume
+-     * fd is the file-descriptor used for the control-connection
+-     * to the ftp-server and get the socket-address from that.  */
+-	   
+-    static uint ip = 0;
+-
+-    if (fd != -1) {
+-	struct sockaddr_in sad;
+-	int len = sizeof(sad);
+-	if (getsockname(fd, (struct sockaddr *)&sad, &len)) {
+-	    LOG(0, failure, ("ERROR: getsockname(): %s", strerror(errno)));
+-	    exit(EXIT_FAILURE);
+-	}
+-	ip = ntohl(sad.sin_addr.s_addr);
++    /* use PORT for IPv4, EPORT for IPv6 */
++    switch(portaf) {
++	case AF_INET:
++	  return("PORT");
++	  break;
++	case AF_INET6:
++	  return("EPRT");
++	  break;
++	default:
++	  LOG(0, failure, 
++	      ("make_port_verb: wrong AF specification"));
++	  return(NULL);
++	  break;
+     }
+-    return ip;
++}
++
++
++static const char *
++make_active_args(struct sockaddr *sad)
++{
++    switch (sad->sa_family) {
++	case AF_INET:
++	  return(make_port_args((struct sockaddr_in *)sad));
++	  break;
++	case AF_INET6:
++	  return(make_eprt_args((struct sockaddr *)sad));
++	  break;
++	default:
++	  LOG(0, failure, 
++	      ("make_active_args: wrong AF specification"));
++	  return(NULL);
++	  break;
++    }
++}
++
++
++static const char *
++make_eprt_args(struct sockaddr *sad)
++{
++    /* construct arguments of EPRT verb according to RFC 2428, section 2.
++       this function is currently used only for IPv6 connections,
++       it can be however used for both IPv4 and IPv6 */
++    static char buf[128];
++    char numaddr[64];
++    struct sockaddr_in *si;
++    struct sockaddr_in6 *si6;
++    uint p;
++
++    switch(sad->sa_family) {
++	case AF_INET:
++	  si = (struct sockaddr_in *)sad;
++          inet_ntop(sad->sa_family, 
++		    &(((struct sockaddr_in *)&localaddr)->sin_addr), 
++		    numaddr, sizeof(numaddr));
++	  p = ntohs(si->sin_port);
++	  break;
++	case AF_INET6:
++	  si6 = (struct sockaddr_in6 *)sad;
++          inet_ntop(sad->sa_family, 
++		    &(((struct sockaddr_in6 *)&localaddr)->sin6_addr), 
++		    numaddr, sizeof(numaddr));
++	  p = ntohs(si6->sin6_port);
++	  break;
++    }
++
++    snprintf(buf, sizeof(buf), "|%s|%s|%d|", 
++	     sad->sa_family == AF_INET ? "1" : "2",
++	     numaddr, p);
++
++    return buf;
+ }
+ 
+ 
+@@ -2450,10 +2708,13 @@
+     static char buf[64]; /* more than enough to hold x,x,x,x,x,x */
+     uint ip;
+     uint p;
+-    ip = get_local_ip(-1); /* get the cached ip-address */
++    /* get the cached ip-address */
++    ip = ntohl(((struct sockaddr_in *)&localaddr)->sin_addr.s_addr); 
+     p = ntohs(sad->sin_port);
+-    sprintf(buf, "%d,%d,%d,%d,%d,%d", ip >> 24, (ip >> 16) & 0xff,
+-	    (ip >> 8) & 0xff, ip & 0xff, p >> 8, p & 0xff);
++    snprintf(buf, sizeof(buf), "%d,%d,%d,%d,%d,%d", 
++	     ip >> 24, (ip >> 16) & 0xff,
++	     (ip >> 8) & 0xff, ip & 0xff, p >> 8, p & 0xff);
++    LOG(3, ctrl_connect, ("PORT args: %s", buf));
+     return buf;
+ }
+ 
+@@ -2465,6 +2726,7 @@
+     memset(c, 0, sizeof(*c));
+     c->fd = -1;
+     c->file = NULL;
++    c->af = af;
+     return c;
+ }
+ 
+@@ -2472,8 +2734,14 @@
+ init_active(struct connection *c)
+ {
+     int opt, len;
+-    int sock = socket(AF_INET, SOCK_STREAM, 0);
+-    struct sockaddr_in sad;
++    int sock = socket(c->af, SOCK_STREAM, 0);
++    unsigned int addrlen = 0;
++    struct sockaddr_storage sad;
++    struct sockaddr_in *si;
++    struct sockaddr_in6 *si6;
++    char numaddr[64];
++    const struct in6_addr my_in6addr_any = IN6ADDR_ANY_INIT;
++
+     if (sock < 0) {
+ 	LOG(0, failure, ("ERROR: socket() : %s", strerror(errno)));
+ 	exit(EXIT_FAILURE);
+@@ -2481,16 +2749,36 @@
+     
+ #if (defined(IP_TOS) && defined(IPTOS_THROUGHPUT))
+     opt = IPTOS_THROUGHPUT;
+-    setsockopt(sock, IPPROTO_IP, IP_TOS, (char *)&opt, sizeof(opt));
++    if (c->af == AF_INET) /* set IP_TOS for AF_INET only */
++      setsockopt(sock, IPPROTO_IP, IP_TOS, (char *)&opt, sizeof(opt));
+ #endif
+ 
+-    sad.sin_family = AF_INET;
+-    sad.sin_addr.s_addr = INADDR_ANY;
+-    sad.sin_port = 0;
+-    
+-    if (bind(sock, (struct sockaddr *)&sad, sizeof(sad))) {
+-	LOG(0, failure, ("ERROR: bind(%s,%d): %s", inet_ntoa(sad.sin_addr),
+-			 ntohs(sad.sin_port), strerror(errno)));
++    switch (c->af) {
++      case AF_INET:
++	si = (struct sockaddr_in *)&sad;
++        si->sin_family = c->af;
++    	si->sin_addr.s_addr = INADDR_ANY;
++    	si->sin_port = 0;
++	addrlen = sizeof(*si);
++	inet_ntop(c->af, &(si->sin_addr), numaddr, sizeof(numaddr));
++	break;
++      case AF_INET6:
++	si6 = (struct sockaddr_in6 *)&sad;
++        si6->sin6_family = c->af;
++    	si6->sin6_addr = my_in6addr_any;
++    	si6->sin6_port = 0;
++	addrlen = sizeof(*si6);
++	inet_ntop(c->af, &(si6->sin6_addr), numaddr, sizeof(numaddr));
++	break;
++    }
++    
++    if (bind(sock, (struct sockaddr *)&sad, addrlen)) {
++	LOG(0, failure, ("ERROR: bind(%s,%d): %s", 
++			 numaddr, 
++			 c->af == AF_INET ? 
++			   ntohs(((struct sockaddr_in *)&sad)->sin_port) 
++			   : ntohs(((struct sockaddr_in6 *)&sad)->sin6_port),
++			 strerror(errno)));
+ 	close(sock);
+ 	exit(EXIT_FAILURE);
+     }
+@@ -2502,10 +2790,14 @@
+     }
+     len = sizeof(sad);
+     if (getsockname(sock, (struct sockaddr *)&sad, &len)) {
+-	LOG(0, failure, ("getsockname fails, expect PORT to fail..: %s",
+-			 strerror(errno)));
++      LOG(0, failure, ("ERROR: getsockname(): %s", strerror(errno)));
++      exit(EXIT_FAILURE);
+     }
+-    
++    LOG(3, ctrl_connect, ("listening on ANY:%d",
++			  c->af == AF_INET ? 
++			   ntohs(((struct sockaddr_in *)&sad)->sin_port) 
++			   : ntohs(((struct sockaddr_in6 *)&sad)->sin6_port)));
++   
+     c->fd = sock;
+     c->sad = sad;
+     c->file = NULL;
+@@ -2719,10 +3011,16 @@
+ {
+     while (1) {
+ 	int c = getopt(argc, argv,
+-		"A:C:c:D:d:e:f:F:hi:kl:M:m:NO:o:P:p:Rr:s:ST:t:u:vV:x:z:");
++		"46A:C:c:D:d:e:f:F:hi:kl:M:m:NO:o:P:p:Rr:s:ST:t:u:vV:x:z:");
+ 	if (c == -1)
+ 	    break;
+ 	switch (c) {
++	case '4':
++	    af = AF_INET;
++	    break;
++	case '6':
++	    af = AF_INET6;
++	    break;
+ 	case 'A':
+ 	    file_and_mask = strtoul(optarg, NULL, 0);
+ 	    break;
+@@ -3318,12 +3616,15 @@
+ 
+ 
+ static int
+-make_connected_socket(struct sockaddr_in *sad)
++make_connected_socket(struct sockaddr *sad, size_t addrlen)
+ {
+     int n = connect_retries;
++    char numaddr[64];
++    unsigned short cport = 0;
++
+     while (n--) {
+ 	int err;
+-	int sockfd = socket(sad->sin_family, SOCK_STREAM, 0);
++	int sockfd = socket(sad->sa_family, SOCK_STREAM, 0);
+ 	if(sockfd < 0) {
+ 	    LOG(0, failure, ("-- ERROR -- creating socket: %s",
+ 			     strerror(errno)));
+@@ -3331,16 +3632,54 @@
+ 	}
+ 	
+ 	alarm(connect_timeout);
+-	err = connect(sockfd, (struct sockaddr *)sad, sizeof(*sad));
++	err = connect(sockfd, (struct sockaddr *)sad, addrlen);
+ 	alarm(0);
+ 	if (err == -1) {
++	    switch(sad->sa_family) {
++		case AF_INET:
++	          inet_ntop(sad->sa_family, 
++			    &((struct sockaddr_in *)sad)->sin_addr, 
++			    numaddr, sizeof(numaddr));
++		  cport = ((struct sockaddr_in *)sad)->sin_port;
++		  break;
++		case AF_INET6:
++	          inet_ntop(sad->sa_family, 
++			    &((struct sockaddr_in6 *)sad)->sin6_addr, 
++			    numaddr, sizeof(numaddr));
++		  cport = ((struct sockaddr_in6 *)sad)->sin6_port;
++		  break;
++		default:
++	          LOG(0, failure, 
++		      ("make_connected_socket: wrong AF specification"));
++		  break;
++	    }
+ 	    LOG(0, failure,
+ 		("Connection to %s port %d failed: %s [%s]",
+-		 inet_ntoa(sad->sin_addr), ntohs(sad->sin_port),
++		 numaddr,
++		 cport,
+ 		 errno == EINTR ? "Connection timed out" : strerror(errno),
+ 		 n ? "retrying" : "giving up"));
+ 	    close(sockfd);
+ 	} else {
++	    if (getsockname(sockfd, (struct sockaddr *)&localaddr, &addrlen)) {
++	      LOG(0, failure, ("getsockname fails, expect PORT to fail..: %s",
++			 strerror(errno)));
++	    }
++	    switch(sad->sa_family) {
++		case AF_INET:
++	    	  inet_ntop(sad->sa_family, 
++		            &((struct sockaddr_in *)&localaddr)->sin_addr, 
++	  	      	    numaddr, sizeof(numaddr));
++		  break;
++		case AF_INET6:
++	    	  inet_ntop(sad->sa_family, 
++		            &((struct sockaddr_in6 *)&localaddr)->sin6_addr, 
++	  	      	    numaddr, sizeof(numaddr));
++		  break;
++	    }
++	    LOG(0, failure, ("make_connected_socket: local address: %s", 
++			     numaddr));
++
+ 	    return sockfd;
+ 	}
+     }
+@@ -3349,7 +3688,7 @@
+ 
+ 
+ static int
+-accept_connection(int fd, struct sockaddr_in *sad)
++accept_connection(int fd, struct sockaddr *sad)
+ {
+     int l = sizeof(*sad);
+     alarm(connect_timeout); /* die if no connection in 70 seconds */
+@@ -3361,11 +3700,15 @@
+ static int
+ make_passive_connection(struct connection *c)
+ {
+-    c->fd = make_connected_socket(&c->dest);
++    size_t addrlen = dst_addrlen;
++    char numaddr[64];
++
++    c->fd = make_connected_socket((struct sockaddr *)(&c->dest), addrlen);
+     if (c->fd == -1) {
++	inet_ntop(c->af, &(c->dest), numaddr, sizeof(numaddr));
+ 	LOG(0, failure, ("Could not open passive connection to %s port %d",
+-			 inet_ntoa(c->dest.sin_addr),
+-			 ntohs(c->dest.sin_port)));
++			 numaddr,
++			 c->dport));
+ 	return -1;
+     }
+ #if (defined(IP_TOS) && defined(IPTOS_THROUGHPUT))

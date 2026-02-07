@@ -1,0 +1,11 @@
+--- Makefile.orig	2023-11-25 00:37:51 UTC
++++ Makefile
+@@ -582,7 +582,7 @@ ifneq '$(ARCH)' 'Windows' 
+ 
+ ifneq '$(ARCH)' 'Windows' 
+ # global QMC2 configuration file
+-GLOBAL_QMC2_INI=$(shell $(ECHO) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini | $(SED) -e "s*//*/*g")
++GLOBAL_QMC2_INI=$(shell $(ECHO) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT).ini | $(SED) -e "s*//*/*g")
+ # global data directory
+ GLOBAL_DATADIR=$(shell $(ECHO) $(DESTDIR)/$(DATADIR) | $(SED) -e "s*//*/*g")
+ endif

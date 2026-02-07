@@ -1,0 +1,4 @@
+A script to dynamically configure amd(8) and populate /media with appropriate
+symlinks, when storage devices appear.
+
+It can also apply geli(8) keys from portable media to images and devices,

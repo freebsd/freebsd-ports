@@ -1,0 +1,21 @@
+This Python handler for the "mkdocstrings" package uses PyTkDocs
+(= textproc/py-pytkdocs) to collect documentation from Python source code.
+
+Features:
+
+* Data collection from source code: collection of the object-tree and the
+  docstrings is done thanks to pytkdocs.
+
+* Support for type annotations: pytkdocs collects your type annotations and
+  mkdocstrings uses them to display parameters types or return types.
+
+* Recursive documentation of Python objects: just use the module dotted-path as
+  identifier, and you get the full module docs. You don't need to inject
+  documentation for each class, function, etc.
+
+* Support for documented attributes: attributes (variables) followed by a
+  docstring (triple-quoted string) will be recognized by Griffe in modules,
+  classes and even in __init__ methods.
+
+* Multiple docstring-styles support: common support for Google-style,
+  Numpydoc-style, and Sphinx-style docstrings.

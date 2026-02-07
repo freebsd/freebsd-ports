@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-08-24 08:30:48 UTC
++++ Makefile
+@@ -35,7 +35,7 @@ MINGW		= x86_64-w64-mingw32-
+ MINGW_CFLAGS	= -specs=ucrt-spec -Wno-format
+ MINGW_LIBS	= -lm
+ 
+-CC		= $(CROSS_COMPILE)gcc
++#CC		= $(CROSS_COMPILE)gcc
+ STRIP		= $(CROSS_COMPILE)strip
+ TARGET		= $(shell ${CC} -dumpmachine)
+ 

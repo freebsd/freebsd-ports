@@ -1,0 +1,10 @@
+--- configure.orig	2023-04-08 11:30:26 UTC
++++ configure
+@@ -19974,6 +19974,7 @@ $as_echo "yes" >&6; }
+ fi
+ 	fi
+ 	if test "$have_vte" = "yes" ; then
++		MAKE_DIRS2="gtk ${MAKE_DIRS2}"
+ 		OUTPUT_FILES="gtk/Makefile ${OUTPUT_FILES}"
+ 
+ 	fi

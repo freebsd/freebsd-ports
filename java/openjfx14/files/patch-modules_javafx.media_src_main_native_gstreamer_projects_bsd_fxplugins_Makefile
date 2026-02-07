@@ -1,0 +1,10 @@
+--- modules/javafx.media/src/main/native/gstreamer/projects/bsd/fxplugins/Makefile.orig	2024-06-01 08:37:05 UTC
++++ modules/javafx.media/src/main/native/gstreamer/projects/bsd/fxplugins/Makefile
+@@ -21,7 +21,6 @@ CFLAGS = -fPIC                   \
+          -fstack-protector       \
+          -Werror=implicit-function-declaration \
+          -Werror=trampolines     \
+-         -msse2                  \
+          -fbuiltin               \
+          -DHAVE_STDINT_H         \
+          -DLINUX                 \

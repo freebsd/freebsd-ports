@@ -1,0 +1,5 @@
+This library contains basic functionality that is useful in code compiled using
+mypyc, and efficient C implementations of various Python standard library
+classes and functions. Mypyc can produce faster extensions when you use librt in
+the code you compile. librt also contains some internal library features used by
+mypy.

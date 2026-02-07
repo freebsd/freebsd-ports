@@ -1,0 +1,8 @@
+ftpfind - find directory&file on a ftp server
+
+usage: /usr/local/bin/ftpfind URL [-proxy proxy_server] \
+		[-login login_name] [-password password] \
+		[-regexp pattern] [-type d|f|l] [-ls] [-print] \
+		[-delete|-get [directory] [-new] [-resume] \
+			|-put [directory] [-new] \
+			|-chmod 0???]

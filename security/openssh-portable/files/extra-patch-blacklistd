@@ -1,0 +1,415 @@
+--- Makefile.in.orig	2025-10-02 12:00:00.000000000
++++ Makefile.in	2025-10-02 12:00:00.000000000
+@@ -208,6 +208,8 @@
+ FIXPATHSCMD	= $(SED) $(PATHSUBS)
+ FIXALGORITHMSCMD= $(SHELL) $(srcdir)/fixalgorithms $(SED) \
+ 		     @UNSUPPORTED_ALGORITHMS@
++
++LIBSSH_OBJS+=	blacklist.o
+ 
+ all: $(CONFIGFILES) $(MANPAGES) $(TARGETS)
+ 
+--- auth-pam.c.orig	2025-10-02 12:00:00.000000000
++++ auth-pam.c	2025-10-02 12:00:00.000000000
+@@ -101,6 +101,7 @@
+ #endif
+ #include "monitor_wrap.h"
+ #include "srclimit.h"
++#include "blacklist_client.h"
+ 
+ extern ServerOptions options;
+ extern struct sshbuf *loginmsg;
+@@ -936,6 +937,8 @@
+ 				sshbuf_free(buffer);
+ 				return (0);
+ 			}
++			BLACKLIST_NOTIFY(NULL, BLACKLIST_AUTH_FAIL,
++			    "PAM illegal user");
+ 			error("PAM: %s for %s%.100s from %.100s", msg,
+ 			    sshpam_authctxt->valid ? "" : "illegal user ",
+ 			    sshpam_authctxt->user, sshpam_rhost);
+--- auth.c.orig	2025-10-02 12:00:00.000000000
++++ auth.c	2025-10-02 12:00:00.000000000
+@@ -73,6 +73,7 @@
+ #include "monitor_wrap.h"
+ #include "ssherr.h"
+ #include "channels.h"
++#include "blacklist_client.h"
+ 
+ /* import */
+ extern ServerOptions options;
+@@ -283,8 +284,12 @@
+ 		authmsg = "Postponed";
+ 	else if (partial)
+ 		authmsg = "Partial";
+-	else
++	else {
+ 		authmsg = authenticated ? "Accepted" : "Failed";
++		if (authenticated)
++			BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_OK,
++			    "Authenticated");
++	}
+ 
+ 	if ((extra = format_method_key(authctxt)) == NULL) {
+ 		if (authctxt->auth_method_info != NULL)
+@@ -332,6 +337,7 @@
+ {
+ 	Authctxt *authctxt = (Authctxt *)ssh->authctxt;
+ 
++	BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Maximum attempts exceeded");
+ 	error("maximum authentication attempts exceeded for "
+ 	    "%s%.100s from %.200s port %d ssh2",
+ 	    authctxt->valid ? "" : "invalid user ",
+@@ -492,6 +498,8 @@
+ 	aix_restoreauthdb();
+ #endif
+ 	if (pw == NULL) {
++		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++		    "Invalid user");
+ 		logit("Invalid user %.100s from %.100s port %d",
+ 		    user, ssh_remote_ipaddr(ssh), ssh_remote_port(ssh));
+ #ifdef CUSTOM_FAILED_LOGIN
+--- blacklist.c.orig	2025-10-02 12:00:00.000000000
++++ blacklist.c	2025-10-02 12:00:00.000000000
+@@ -0,0 +1,97 @@
++/*-
++ * Copyright (c) 2015 The NetBSD Foundation, Inc.
++ * Copyright (c) 2016 The FreeBSD Foundation
++ * All rights reserved.
++ *
++ * Portions of this software were developed by Kurt Lidl
++ * under sponsorship from the FreeBSD Foundation.
++ *
++ * This code is derived from software contributed to The NetBSD Foundation
++ * by Christos Zoulas.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE NETBSD FOUNDATION, INC. AND CONTRIBUTORS
++ * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
++ * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR CONTRIBUTORS
++ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++ * POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#include "includes.h"
++
++#include <ctype.h>
++#include <stdarg.h>
++#include <stdbool.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <syslog.h>
++#include <unistd.h>
++
++#include "ssh.h"
++#include "packet.h"
++#include "log.h"
++#include "misc.h"
++#include "servconf.h"
++#include <blacklist.h>
++#include "blacklist_client.h"
++
++static struct blacklist *blstate = NULL;
++
++/* import */
++extern ServerOptions options;
++
++/* internal definition from bl.h */
++struct blacklist *bl_create(bool, char *, void (*)(int, const char *, va_list));
++
++/* impedence match vsyslog() to sshd's internal logging levels */
++void
++im_log(int priority, const char *message, va_list args)
++{
++	LogLevel imlevel;
++
++	switch (priority) {
++	case LOG_ERR:
++		imlevel = SYSLOG_LEVEL_ERROR;
++		break;
++	case LOG_DEBUG:
++		imlevel = SYSLOG_LEVEL_DEBUG1;
++		break;
++	case LOG_INFO:
++		imlevel = SYSLOG_LEVEL_INFO;
++		break;
++	default:
++		imlevel = SYSLOG_LEVEL_DEBUG2;
++	}
++	do_log2(imlevel, message, args);
++}
++
++void
++blacklist_init(void)
++{
++
++	if (options.use_blacklist)
++		blstate = bl_create(false, NULL, im_log);
++}
++
++void
++blacklist_notify(struct ssh *ssh, int action, const char *msg)
++{
++
++	if (blstate != NULL && ssh_packet_connection_is_on_socket(ssh))
++		(void)blacklist_r(blstate, action,
++		ssh_packet_get_connection_in(ssh), msg);
++}
+--- blacklist_client.h.orig	2025-10-02 12:00:00.000000000
++++ blacklist_client.h	2025-10-02 12:00:00.000000000
+@@ -0,0 +1,61 @@
++/*-
++ * Copyright (c) 2015 The NetBSD Foundation, Inc.
++ * Copyright (c) 2016 The FreeBSD Foundation
++ * All rights reserved.
++ *
++ * Portions of this software were developed by Kurt Lidl
++ * under sponsorship from the FreeBSD Foundation.
++ *
++ * This code is derived from software contributed to The NetBSD Foundation
++ * by Christos Zoulas.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE NETBSD FOUNDATION, INC. AND CONTRIBUTORS
++ * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
++ * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR CONTRIBUTORS
++ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++ * POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#ifndef BLACKLIST_CLIENT_H
++#define BLACKLIST_CLIENT_H
++
++#ifndef BLACKLIST_API_ENUM
++enum {
++	BLACKLIST_AUTH_OK = 0,
++	BLACKLIST_AUTH_FAIL,
++	BLACKLIST_ABUSIVE_BEHAVIOR,
++	BLACKLIST_BAD_USER
++};
++#endif
++
++#ifdef USE_BLACKLIST
++void blacklist_init(void);
++void blacklist_notify(struct ssh *, int, const char *);
++
++#define BLACKLIST_INIT() blacklist_init()
++#define BLACKLIST_NOTIFY(ssh,x,msg) blacklist_notify(ssh,x,msg)
++
++#else
++
++#define BLACKLIST_INIT()
++#define BLACKLIST_NOTIFY(ssh,x,msg)
++
++#endif
++
++
++#endif /* BLACKLIST_CLIENT_H */
+--- monitor.c.orig	2025-10-02 12:00:00.000000000
++++ monitor.c	2025-10-02 12:00:00.000000000
+@@ -75,6 +75,8 @@
+ #include "misc.h"
+ #include "servconf.h"
+ #include "monitor.h"
++#include "blacklist_client.h"
++
+ #ifdef GSSAPI
+ #include "ssh-gss.h"
+ #endif
+@@ -343,16 +345,24 @@
+ 			}
+ 		}
+ 		if (authctxt->failures > options.max_authtries) {
++			BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++			    "Too many authentication attempts");
+ 			/* Shouldn't happen */
+ 			fatal_f("privsep child made too many authentication "
+ 			    "attempts");
+ 		}
+ 	}
+ 
+-	if (!authctxt->valid)
+-		fatal_f("authenticated invalid user");
+-	if (strcmp(auth_method, "unknown") == 0)
++	if (!authctxt->valid) {
++		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++		    "Authenticated invalid user");
++		fatal_f("authenticated invalid user");
++	}
++	if (strcmp(auth_method, "unknown") == 0) {
++		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++		    "Authentication method name unknown");
+ 		fatal_f("authentication method name unknown");
++	}
+ 
+ 	debug_f("user %s authenticated by privileged process", authctxt->user);
+ 	auth_attempted = 0;
+--- servconf.c.orig	2025-10-02 12:00:00.000000000
++++ servconf.c	2025-10-02 12:00:00.000000000
+@@ -184,6 +184,7 @@
+ 	options->max_sessions = -1;
+ 	options->banner = NULL;
+ 	options->use_dns = -1;
++	options->use_blacklist = -1;
+ 	options->client_alive_interval = -1;
+ 	options->client_alive_count_max = -1;
+ 	options->num_authkeys_files = 0;
+@@ -449,6 +458,8 @@
+ 		options->max_sessions = DEFAULT_SESSIONS_MAX;
+ 	if (options->use_dns == -1)
+ 		options->use_dns = 0;
++	if (options->use_blacklist == -1)
++		options->use_blacklist = 0;
+ 	if (options->client_alive_interval == -1)
+ 		options->client_alive_interval = 0;
+ 	if (options->client_alive_count_max == -1)
+@@ -567,6 +568,7 @@
+ 	sGatewayPorts, sPubkeyAuthentication, sPubkeyAcceptedAlgorithms,
+ 	sXAuthLocation, sSubsystem, sMaxStartups, sMaxAuthTries, sMaxSessions,
+ 	sBanner, sUseDNS, sHostbasedAuthentication,
++	sUseBlacklist,
+ 	sHostbasedUsesNameFromPacketOnly, sHostbasedAcceptedAlgorithms,
+ 	sHostKeyAlgorithms, sPerSourceMaxStartups, sPerSourceNetBlockSize,
+ 	sPerSourcePenalties, sPerSourcePenaltyExemptList,
+@@ -700,6 +712,8 @@
+ 	{ "maxsessions", sMaxSessions, SSHCFG_ALL },
+ 	{ "banner", sBanner, SSHCFG_ALL },
+ 	{ "usedns", sUseDNS, SSHCFG_GLOBAL },
++	{ "useblacklist", sUseBlacklist, SSHCFG_GLOBAL },
++	{ "useblocklist", sUseBlacklist, SSHCFG_GLOBAL } /* alias */,
+ 	{ "verifyreversemapping", sDeprecated, SSHCFG_GLOBAL },
+ 	{ "reversemappingcheck", sDeprecated, SSHCFG_GLOBAL },
+ 	{ "clientaliveinterval", sClientAliveInterval, SSHCFG_ALL },
+@@ -1782,6 +1796,10 @@
+ 		intptr = &options->use_dns;
+ 		goto parse_flag;
+ 
++	case sUseBlacklist:
++		intptr = &options->use_blacklist;
++		goto parse_flag;
++
+ 	case sLogFacility:
+ 		log_facility_ptr = &options->log_facility;
+ 		arg = argv_next(&ac, &av);
+@@ -3279,6 +3297,7 @@
+ 	dump_cfg_fmtint(sCompression, o->compression);
+ 	dump_cfg_fmtint(sGatewayPorts, o->fwd_opts.gateway_ports);
+ 	dump_cfg_fmtint(sUseDNS, o->use_dns);
++	dump_cfg_fmtint(sUseBlacklist, o->use_blacklist);
+ 	dump_cfg_fmtint(sAllowTcpForwarding, o->allow_tcp_forwarding);
+ 	dump_cfg_fmtint(sAllowAgentForwarding, o->allow_agent_forwarding);
+ 	dump_cfg_fmtint(sDisableForwarding, o->disable_forwarding);
+--- servconf.h.orig	2025-10-02 12:00:00.000000000
++++ servconf.h	2025-10-02 12:00:00.000000000
+@@ -195,6 +195,7 @@
+ 	int	max_sessions;
+ 	char   *banner;			/* SSH-2 banner message */
+ 	int	use_dns;
++	int	use_blacklist;
+ 	int	client_alive_interval;	/*
+ 					 * poke the client this often to
+ 					 * see if it's still there
+--- sshd-session.c.orig	2025-10-02 12:00:00.000000000
++++ sshd-session.c	2025-10-02 12:00:00.000000000
+@@ -102,6 +102,7 @@
+ #include "sk-api.h"
+ #include "srclimit.h"
+ #include "dh.h"
++#include "blacklist_client.h"
+ 
+ #ifdef LIBWRAP
+ #include <tcpd.h>
+@@ -1175,6 +1176,8 @@
+ 	ssh_signal(SIGQUIT, SIG_DFL);
+ 	ssh_signal(SIGCHLD, SIG_DFL);
+ 	ssh_signal(SIGINT, SIG_DFL);
++
++	BLACKLIST_INIT();
+ 
+ 	/*
+ 	 * Register our connection.  This turns encryption off because we do
+@@ -1249,8 +1271,10 @@
+ 	}
+ 
+ 	if ((r = kex_exchange_identification(ssh, -1,
+-	    options.version_addendum)) != 0)
++	    options.version_addendum)) != 0) {
++		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
+ 		sshpkt_fatal(ssh, r, "banner exchange");
++	}
+ 
+ 	ssh_packet_set_nonblocking(ssh);
+ 
+@@ -1395,7 +1419,10 @@
+ 		audit_event(the_active_state, SSH_CONNECTION_ABANDON);
+ #endif
+ 	/* Override default fatal exit value when auth was attempted */
+-	if (i == 255 && auth_attempted)
++	if (i == 255 && auth_attempted) {
++		BLACKLIST_NOTIFY(the_active_state, BLACKLIST_AUTH_FAIL,
++		    "Fatal exit");
+ 		_exit(EXIT_AUTH_ATTEMPTED);
++	}
+ 	_exit(i);
+ }
+--- sshd_config.5.orig	2025-10-02 12:00:00.000000000
++++ sshd_config.5	2025-10-02 12:00:00.000000000
+@@ -2009,6 +2009,20 @@
+ is to never expire connections for having no open channels.
+ This option may be useful in conjunction with
+ .Cm ChannelTimeout .
++.It Cm UseBlacklist
++Specifies whether
++.Xr sshd 8
++attempts to send authentication success and failure messages
++to the
++.Xr blacklistd 8
++daemon.
++The default is
++.Cm no .
++For forward compatibility with an upcoming
++.Xr blacklistd
++rename, the
++.Cm UseBlocklist
++alias can be used instead.
+ .It Cm UseDNS
+ Specifies whether
+ .Xr sshd 8
+--- sshd_config.orig	2025-10-02 12:00:00.000000000
++++ sshd_config	2025-10-02 12:00:00.000000000
+@@ -102,6 +102,7 @@
+ #MaxStartups 10:30:100
+ #PermitTunnel no
+ #ChrootDirectory none
++#UseBlacklist no
+ #VersionAddendum none
+ 
+ # no default banner path

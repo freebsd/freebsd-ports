@@ -1,0 +1,6 @@
+etc/rc.d/ngbuddy
+share/man/man8/ngbuddy.8.gz
+%%DATADIR%%/ngbuddy-status.awk
+%%DATADIR%%/ngbuddy-mmd.awk
+%%DATADIR%%/examples/devfs.rules
+%%DATADIR%%/examples/jail_skel.conf

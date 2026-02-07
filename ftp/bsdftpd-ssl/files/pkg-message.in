@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+You will also need to read "Configuration" and "Supplement information" parts
+of the %%DOCSDIR%%/INSTALL file from the package
+documentation for the subsequent configuration steps:
+  1. Create the server certificate
+  2. Edit PAM configuration
+  3. Start the FTP server
+
+Please note:
+- The example configuration files are available in the
+  %%EXAMPLESDIR%% directory.
+- The manual page for the FTP server is available as ftpd-ssl(8).
+EOM
+}
+]

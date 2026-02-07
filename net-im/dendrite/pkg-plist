@@ -1,0 +1,14 @@
+%%PORTNAME%%/bin/create-account
+%%PORTNAME%%/bin/dendrite
+%%PORTNAME%%/bin/dendrite-demo-pinecone
+%%PORTNAME%%/bin/dendrite-demo-yggdrasil
+%%PORTNAME%%/bin/dendrite-upgrade-tests
+%%PORTNAME%%/bin/furl
+%%PORTNAME%%/bin/generate-config
+%%PORTNAME%%/bin/generate-keys
+%%PORTNAME%%/bin/resolve-state
+@sample %%ETCDIR%%/%%PORTNAME%%.yaml.sample
+%%DOCSDIR%%/FAQ.md
+%%DOCSDIR%%/INSTALL.md
+%%DOCSDIR%%/README.md
+%%DOCSDIR%%/images/details-button-location.jpg

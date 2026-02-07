@@ -1,0 +1,36 @@
+--- Makefile.orig	2015-04-17 05:17:58 UTC
++++ Makefile
+@@ -1,11 +1,17 @@
+-CC=			gcc
+-CFLAGS=		-g -Wall -O2 -Wno-unused-function #-fno-inline-functions -fno-inline-functions-called-once
++CC?=		gcc
++# Allow env to set optimization and warning levels, then add required flags
++CFLAGS?=	-g -Wall -O2
++CFLAGS+=	-Wno-unused-function #-fno-inline-functions -fno-inline-functions-called-once
+ CPPFLAGS=
+ INCLUDES=	
+ OBJS=		kthread.o utils.o bseq.o bbf.o htab.o count.o correct.o bfc.o
+ PROG=		bfc hash2cnt
+ LIBS=		-lm -lz -lpthread
+ 
++MKDIR?=		mkdir
++INSTALL?=	install
++STRIP?=		strip
++
+ .SUFFIXES:.c .o
+ 
+ .c.o:
+@@ -18,6 +24,13 @@ bfc:$(OBJS)
+ 
+ hash2cnt:hash2cnt.o
+ 		$(CC) $(CFLAGS) $< -o $@
++
++install:
++		$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
++		$(INSTALL) -c $(PROG) $(DESTDIR)$(PREFIX)/bin
++
++install-strip: install
++		$(STRIP) $(DESTDIR)$(PREFIX)/bin/*
+ 
+ clean:
+ 		rm -fr gmon.out *.o ext/*.o a.out $(PROG) *~ *.a *.dSYM session*

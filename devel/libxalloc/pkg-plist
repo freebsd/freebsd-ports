@@ -1,0 +1,6 @@
+include/xalloc.h
+lib/libxalloc.a
+lib/libxalloc.so
+lib/libxalloc.so.1
+%%PORTDOCS%%share/doc/libxalloc/CREDITS
+%%PORTDOCS%%share/doc/libxalloc/README

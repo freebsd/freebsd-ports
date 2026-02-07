@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: %%RCNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=%%RCNAME%%
+rcvar=%%RCNAME%%_enable
+pidfile="/var/run/sd-agent/sd-agent.pid"
+logfile="/var/log/sd-agent/sd-agent.log"
+
+start_precmd="${name}_prestart"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+load_rc_config $name
+: ${%%RCNAME%%_enable:=no}
+
+%%RCNAME%%_user=sd-agent
+%%RCNAME%%_group=sd-agent
+
+command='%%PREFIX%%/libexec/sd-agent/agent.py'
+
+%%RCNAME%%_prestart()
+{
+	install -d -o ${%%RCNAME%%_user} -g ${%%RCNAME%%_group} \
+	    $(dirname $pidfile)
+	install -d -o ${%%RCNAME%%_user} -g ${%%RCNAME%%_group} \
+	    $(dirname $logfile)
+}
+
+%%RCNAME%%_start()
+{
+	su -m ${%%RCNAME%%_user} -c "$command start init"
+}
+
+%%RCNAME%%_stop()
+{
+	$command stop init
+}
+
+%%RCNAME%%_status()
+{
+	$command status init
+}
+
+run_rc_command "$1"

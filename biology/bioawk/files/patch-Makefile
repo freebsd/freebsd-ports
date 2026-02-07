@@ -1,0 +1,43 @@
+--- Makefile.orig	2017-09-11 13:43:01 UTC
++++ Makefile
+@@ -22,14 +22,20 @@
+ # THIS SOFTWARE.
+ # ****************************************************************/
+ 
+-CFLAGS = -g -Wall -O2
++CFLAGS ?= -g -Wall -O2
+ 
+-CC = gcc
++CC ?= gcc
+ 
+-YACC = bison -y
++# YACC = bison -y
+ YACC = yacc
+ YFLAGS = -d
+ 
++MKDIR	?= mkdir
++INSTALL	?= install
++DESTDIR	?= .
++PREFIX	?= /usr/local
++STRIP	?= strip
++
+ OFILES = b.o main.o parse.o proctab.o tran.o lib.o run.o lex.o addon.o
+ 
+ SOURCE = awk.h ytab.c ytab.h proto.h awkgram.y lex.c b.c main.c \
+@@ -61,5 +67,15 @@ maketab:	ytab.h maketab.c
+ names:
+ 	@echo $(LISTING)
+ 
++.PHONY:	intall-strip install clean
++
++install-strip: install
++	${STRIP} ${DESTDIR}${PREFIX}/bin/bioawk
++
++install:
++	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c bioawk ${DESTDIR}${PREFIX}/bin
++
+ clean:
+-	rm -fr a.out *.o *.obj maketab maketab.exe *.bb *.bbg *.da *.gcov *.gcno *.gcda awk bioawk ytab.* proctab.c *.dSYM
++	rm -fr a.out *.o *.obj maketab maketab.exe *.bb *.bbg *.da *.gcov \
++		*.gcno *.gcda awk bioawk ytab.* proctab.c *.dSYM

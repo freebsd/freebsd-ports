@@ -1,0 +1,29 @@
+DOCS=	AUTHORS \
+	BENCHMARKS \
+	COPYING \
+	COPYING.GPL \
+	ChangeLog \
+	ChangeLog.2001 \
+	INSTALL \
+	NEWS \
+	README \
+	TODO \
+	libs/imap/BUGS.imap \
+	libs/imap/README.imap.proxy \
+	libs/maildir/README.maildirquota.txt \
+	libs/maildir/README.sharedfolders.txt \
+	libs/tcpd/README.couriertls \
+	libs/sqwebmail/BUGS.sqwebmail \
+	libs/sqwebmail/SECURITY.sqwebmail
+
+HTMLDOCS=NEWS.html \
+	libs/gpglib/README.gpglib.html \
+	libs/imap/BUGS.imap.html \
+	libs/imap/README.imap.proxy.html \
+	libs/maildir/README.maildirfilter.html \
+	libs/maildir/README.maildirquota.html \
+	libs/maildir/README.sharedfolders.html \
+	libs/maildrop/README.maildrop.html \
+	libs/pcp/README.pcp.html \
+	libs/sqwebmail/BUGS.sqwebmail.html \
+	libs/sqwebmail/SECURITY.sqwebmail.html

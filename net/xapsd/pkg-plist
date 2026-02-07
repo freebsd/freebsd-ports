@@ -1,0 +1,2 @@
+@sample(root,xapsd,640) etc/xapsd/xapsd.yaml.sample
+sbin/xapsd

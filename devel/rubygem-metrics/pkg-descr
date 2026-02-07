@@ -1,0 +1,8 @@
+Capture metrics about code execution in a vendor agnostic way. As the author of
+many libraries which would benefit from metrics, there are few key priorities:
+(1) zero overhead if metrics are disabled, minimal overhead if enabled, and (2)
+a small and opinionated interface with standardised semantics.
+
+Features:
+- Zero-overhead if tracing is disabled and minimal overhead if enabled.
+- Small opinionated interface with standardised semantics.

@@ -1,0 +1,14 @@
+The Spreadsheet::WriteExcelXML module can be used to create an
+Excel file in XML format. The Excel XML format is supported in
+Excel 2002 and 2003.
+
+Multiple worksheets can be added to a workbook and formatting
+can be applied to cells. Text, numbers, and formulas can be
+written to the cells. The module supports strings up to 32,767
+characters and the strings can be in UTF8 format.
+
+Spreadsheet::WriteExcelXML uses the same interface as
+Spreadsheet::WriteExcel.
+
+This module cannot, as yet, be used to write to an existing
+Excel XML file.

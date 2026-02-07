@@ -1,0 +1,113 @@
+--- xfconfd/Makefile.in.orig	2024-11-01 21:29:06 UTC
++++ xfconfd/Makefile.in
+@@ -114,8 +114,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+-am__installdirs = "$(DESTDIR)$(xfconfddir)" "$(DESTDIR)$(servicedir)" \
+-	"$(DESTDIR)$(systemd_userdir)"
++am__installdirs = "$(DESTDIR)$(xfconfddir)" "$(DESTDIR)$(servicedir)"
+ PROGRAMS = $(xfconfd_PROGRAMS)
+ am__xfconfd_SOURCES_DIST = main.c xfconf-backend-factory.c \
+ 	xfconf-backend-factory.h xfconf-backend.c xfconf-backend.h \
+@@ -225,7 +224,7 @@ am__uninstall_files_from_dir = { \
+     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+-DATA = $(service_DATA) $(systemd_user_DATA)
++DATA = $(service_DATA)
+ am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
+ # Read a list of newline-separated strings from the standard input,
+ # and print each of them once, without duplicates.  Input order is
+@@ -482,18 +481,13 @@ service_DATA = $(service_in_files:org.xfce.%.service.i
+ servicedir = $(datadir)/dbus-1/services
+ service_in_files = org.xfce.Xfconf.service.in
+ service_DATA = $(service_in_files:org.xfce.%.service.in=@XFCONF_SERVICE_NAME_PREFIX@.%.service)
+-systemd_userdir = $(prefix)/lib/systemd/user
+-systemd_user_in_files = xfconfd.service.in
+-systemd_user_DATA = $(systemd_user_in_files:.service.in=.service)
+ CLEANFILES = \
+-	$(service_DATA) \
+-	$(systemd_user_DATA)
++	$(service_DATA)
+ 
+ EXTRA_DIST = \
+ 	xfconf-backend-perchannel-xml.c \
+ 	xfconf-backend-perchannel-xml.h \
+-	$(service_in_files) \
+-	$(systemd_user_in_files)
++	$(service_in_files)
+ 
+ all: all-am
+ 
+@@ -775,28 +769,7 @@ uninstall-serviceDATA:
+ 	@list='$(service_DATA)'; test -n "$(servicedir)" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	dir='$(DESTDIR)$(servicedir)'; $(am__uninstall_files_from_dir)
+-install-systemd_userDATA: $(systemd_user_DATA)
+-	@$(NORMAL_INSTALL)
+-	@list='$(systemd_user_DATA)'; test -n "$(systemd_userdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(systemd_userdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(systemd_userdir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(systemd_userdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(systemd_userdir)" || exit $$?; \
+-	done
+ 
+-uninstall-systemd_userDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(systemd_user_DATA)'; test -n "$(systemd_userdir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(systemd_userdir)'; $(am__uninstall_files_from_dir)
+-
+ ID: $(am__tagged_files)
+ 	$(am__define_uniq_tagged_files); mkid -fID $$unique
+ tags: tags-am
+@@ -888,7 +861,7 @@ installdirs:
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(xfconfddir)" "$(DESTDIR)$(servicedir)" "$(DESTDIR)$(systemd_userdir)"; do \
++	for dir in "$(DESTDIR)$(xfconfddir)" "$(DESTDIR)$(servicedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -954,7 +927,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-serviceDATA install-systemd_userDATA \
++install-data-am: install-serviceDATA \
+ 	install-xfconfdPROGRAMS
+ 
+ install-dvi: install-dvi-am
+@@ -1008,7 +981,7 @@ ps-am:
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-serviceDATA uninstall-systemd_userDATA \
++uninstall-am: uninstall-serviceDATA \
+ 	uninstall-xfconfdPROGRAMS
+ 
+ .MAKE: install-am install-strip
+@@ -1022,12 +995,12 @@ uninstall-am: uninstall-serviceDATA uninstall-systemd_
+ 	install-dvi-am install-exec install-exec-am install-html \
+ 	install-html-am install-info install-info-am install-man \
+ 	install-pdf install-pdf-am install-ps install-ps-am \
+-	install-serviceDATA install-strip install-systemd_userDATA \
++	install-serviceDATA install-strip \
+ 	install-xfconfdPROGRAMS installcheck installcheck-am \
+ 	installdirs maintainer-clean maintainer-clean-generic \
+ 	mostlyclean mostlyclean-compile mostlyclean-generic \
+ 	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
+-	uninstall-am uninstall-serviceDATA uninstall-systemd_userDATA \
++	uninstall-am uninstall-serviceDATA \
+ 	uninstall-xfconfdPROGRAMS
+ 
+ .PRECIOUS: Makefile

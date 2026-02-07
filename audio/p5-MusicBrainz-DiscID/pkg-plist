@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/MusicBrainz/DiscID/DiscID.so
+%%SITE_ARCH%%/MusicBrainz/DiscID.pm
+%%PERL5_MAN3%%/MusicBrainz::DiscID.3.gz

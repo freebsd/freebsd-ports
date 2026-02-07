@@ -1,0 +1,11 @@
+--- configure.ac.orig	2026-01-07 15:23:13 UTC
++++ configure.ac
+@@ -239,7 +239,7 @@ if test "x${ac_enable_asm}" = xyes; then
+       THEORA_LDFLAGS="$THEORA_LDFLAGS  -Wl,-read_only_relocs,suppress"
+     fi
+       ;;
+-  x86_64)
++  amd64|x86_64)
+     cpu_x86_64=yes
+     cpu_optimization="64 bit x86"
+     AC_DEFINE([OC_X86_ASM], [],  [make use of x86 asm optimization])

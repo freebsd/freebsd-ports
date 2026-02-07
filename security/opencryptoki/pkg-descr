@@ -1,0 +1,3 @@
+openCryptoki implements the PKCS#11 specification version 3.0,
+including several cryptographic tokens: CCA, ICA, TPM , SWToken,
+ICSF and EP11.

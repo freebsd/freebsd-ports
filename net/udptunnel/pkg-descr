@@ -1,0 +1,4 @@
+UDPTunnel is a small program which can tunnel UDP packets bi-directionally
+over a TCP connection.  Its primary purpose (and original motivation) is to
+allow multi-media conferences to traverse a firewall which allows only
+outgoing TCP connections.

@@ -1,0 +1,13 @@
+--- man/Makefile.in.orig	1995-06-15 23:19:24.000000000 -0700
++++ man/Makefile.in	2024-03-01 11:03:34.908632000 -0800
+@@ -34,8 +34,8 @@
+ PIC = @PIC@
+ 
+ prefix = @prefix@
+-man1dir = $(prefix)/man/man1
+-man5dir = $(prefix)/man/man5
++man1dir = $(prefix)/share/man/man1
++man5dir = $(prefix)/share/man/man5
+ man1ext = .1
+ man5ext = .5
+ 

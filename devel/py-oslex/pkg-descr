@@ -1,0 +1,5 @@
+oslex is an OS-independent wrapper for shlex and mslex.
+
+Its main purpose is to provide functions similar in functionality to
+shlex.quote(), shlex.split() and shlex.join() on both Windows and
+POSIX-compatible platforms.

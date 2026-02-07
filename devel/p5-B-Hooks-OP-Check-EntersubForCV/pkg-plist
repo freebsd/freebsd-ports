@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/auto/B/Hooks/OP/Check/EntersubForCV/EntersubForCV.so
+%%SITE_ARCH%%/B/Hooks/OP/Check/EntersubForCV.pm
+%%SITE_ARCH%%/B/Hooks/OP/Check/EntersubForCV/Install/hook_op_check_entersubforcv.h
+%%SITE_ARCH%%/B/Hooks/OP/Check/EntersubForCV/Install/Files.pm
+%%PERL5_MAN3%%/B::Hooks::OP::Check::EntersubForCV.3.gz

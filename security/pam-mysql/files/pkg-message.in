@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+Read files in %%DOCSDIR%% for info on how to set up.
+EOM
+}
+]

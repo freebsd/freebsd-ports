@@ -1,0 +1,8 @@
+Event::RPC supports you in developing Event based networking client/server
+applications with transparent object/method access from the client to the
+server. Network communication is optionally encrypted using IO::Socket::SSL.
+Several event loop managers are supported due to an extensible API. Currently
+Event, Glib and AnyEvent are implemented. The latter lets you use nearly every
+event loop implementation available for Perl. AnyEvent was invented after
+Event::RPC was created and thus Event::RPC started using it's own abstraction
+model.

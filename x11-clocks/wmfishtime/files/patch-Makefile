@@ -1,0 +1,28 @@
+--- Makefile.orig	2001-05-26 20:49:41 UTC
++++ Makefile
+@@ -6,23 +6,21 @@ PREFIX = $(DESTDIR)/usr/X11R6
+ 
+ # no user serviceable parts below this line
+ # optimization cflags
+-CFLAGS = -O3 -Wall `gtk-config --cflags` ${EXTRA}
+ # profiling cflags
+ # CFLAGS=-ansi -pedantic -Wall -pg -O3 `gtk-config --cflags` ${EXTRA} -DPRO
+ # test coverage cflags
+ # CFLAGS=-fprofile-arcs -ftest-coverage -Wall -ansi -pedantic -g `gtk-config --cflags` ${EXTRA} -DPRO
+ 
+ 
+-CC = gcc
+ SHELL = sh
+ OBJS = fishmon.o
+-LIBS = `gtk-config --libs | sed "s/-lgtk//g"`
++LIBS =
+ INSTALL = -m 755
+ 
+ all: wmfishtime
+ 
+ wmfishtime: $(OBJS)
+-	$(CC) $(CFLAGS) -o wmfishtime $(OBJS) $(LIBS)
++	$(CC) $(CFLAGS) -o wmfishtime $(OBJS) $(LIBS) $(LDFLAGS)
+ 
+ clean:
+ 	rm -rf wmfishtime *.o *.bb* *.gcov gmon.* *.da *~ .xvpics

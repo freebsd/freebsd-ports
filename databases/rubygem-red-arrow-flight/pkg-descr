@@ -1,0 +1,11 @@
+Red Arrow Flight is the Ruby bindings of Apache Arrow Flight. Red Arrow Flight
+is based on GObject Introspection.
+
+Apache Arrow Flight is one of Apache Arrow components to read and write semantic
+flights stored in different locations and formats.
+
+GObject Introspection is a middleware for language bindings of C library.
+GObject Introspection can generate language bindings automatically at runtime.
+
+Red Arrow Flight uses Apache Arrow Flight GLib and gobject-introspection gem to
+generate Ruby bindings of Apache Arrow Flight.

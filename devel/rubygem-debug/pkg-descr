@@ -1,0 +1,2 @@
+Debugging functionality for Ruby. This is completely rewritten
+debug.rb which was contained by the encient Ruby versions.

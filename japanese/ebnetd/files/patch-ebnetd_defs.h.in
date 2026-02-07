@@ -1,0 +1,13 @@
+--- ebnetd/defs.h.in.orig	2003-06-15 11:39:27 UTC
++++ ebnetd/defs.h.in
+@@ -313,8 +313,8 @@ extern char work_path[];
+ extern char configuration_file_name[];
+ extern in_port_t listening_port;
+ extern in_port_t old_listening_port;
+-fd_set listening_files;
+-int max_listening_file;
++extern fd_set listening_files;
++extern int max_listening_file;
+ extern int accepted_in_file;
+ extern int accepted_out_file;
+ extern uid_t user_id;

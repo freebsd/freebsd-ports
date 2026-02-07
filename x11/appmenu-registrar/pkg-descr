@@ -1,0 +1,2 @@
+Provides a standalone Appmenu registrar that allows other applications
+to access any active window's application menu tree.

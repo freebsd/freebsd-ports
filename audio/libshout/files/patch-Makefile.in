@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2020-05-08 18:29:05 UTC
++++ Makefile.in
+@@ -158,7 +158,7 @@ am__uninstall_files_from_dir = { \
+   }
+ am__installdirs = "$(DESTDIR)$(ckportdir)" "$(DESTDIR)$(docdir)" \
+ 	"$(DESTDIR)$(m4datadir)" "$(DESTDIR)$(pkgconfigdir)"
+-DATA = $(ckport_DATA) $(doc_DATA) $(m4data_DATA) $(pkgconfig_DATA)
++DATA = $(doc_DATA) $(m4data_DATA) $(pkgconfig_DATA)
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+   distclean-recursive maintainer-clean-recursive
+ am__recursive_targets = \
+@@ -903,7 +903,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-ckportDATA install-docDATA install-m4dataDATA \
++install-data-am: install-docDATA install-m4dataDATA \
+ 	install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive

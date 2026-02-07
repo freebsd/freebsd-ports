@@ -1,0 +1,70 @@
+--- src/command.C.orig	2012-12-30 19:06:27.000000000 +0100
++++ src/command.C	2012-12-30 19:09:32.000000000 +0100
+@@ -403,6 +403,26 @@
+   return param;
+ }
+ 
++void from_imlocale_to_locale(const char *imlocale, const char *locale, wchar_t *wkbuf, int len)
++{
++    if(!imlocale || !locale)
++	return;
++
++    if(!strchr(imlocale,'.') || !strchr(locale,'.'))
++	return;
++
++    codeset imcs = codeset_from_name(strchr(imlocale, '.'));
++    codeset cs = codeset_from_name(strchr(locale, '.'));
++
++    if (imcs == CS_UNKNOWN || cs == CS_UNKNOWN)
++	return;
++
++    for(int i=0; i<len; i++) {
++	wchar_t unicode = TO_UNICODE(imcs, wkbuf[i]);
++	wkbuf[i] = FROM_UNICODE(cs, unicode);
++    }
++}
++
+ void ecb_cold
+ rxvt_term::key_press (XKeyEvent &ev)
+ {
+@@ -456,6 +476,9 @@
+           if (rs[Rs_imLocale])
+             SET_LOCALE (locale);
+ 
++	  if (rs[Rs_imLocale])
++	      from_imlocale_to_locale(rs[Rs_imLocale], locale, wkbuf, len);
++
+           if (status_return == XLookupChars
+               || status_return == XLookupBoth)
+             {
+--- src/encoding.C.orig	2011-06-22 14:44:37.000000000 +0400
++++ src/encoding.C	2011-09-30 01:31:30.000000000 +0400
+@@ -152,6 +152,7 @@
+ static uint32_t cs_us_ascii_from_unicode (unicode_t unicode)   { return unicode <= 127 ? unicode : NOCHAR; }
+ 
+ #define cs_us_ascii_to_unicode_16 cs_unicode_to_unicode
++static unicode_t cs_unicode_16_to_unicode (uint32_t enc)       { return enc <= 65535 ? enc : NOCHAR; }
+ static uint32_t cs_unicode_16_from_unicode (unicode_t unicode) { return unicode <= 65535 ? unicode : NOCHAR; }
+ 
+ #define ENCODING_DEFAULT
+--- src/encoding.h.orig	2011-02-21 10:39:50.000000000 +0300
++++ src/encoding.h	2011-09-30 01:31:30.000000000 +0400
+@@ -2,6 +2,7 @@
+ #define ENCODING_H
+ 
+ #include <inttypes.h>
++#define ENCODING_TO_UNICODE 1
+ 
+ typedef uint32_t unicode_t;
+ 
+--- src/gentables.orig	2011-02-21 10:39:50.000000000 +0300
++++ src/gentables	2011-09-30 01:31:30.000000000 +0400
+@@ -13,7 +13,7 @@
+ 
+ my $gen;
+ 
+-$TO_UNICODE = 0; # also generate to_unicode tables
++$TO_UNICODE = 1; # also generate to_unicode tables
+ 
+ sub linear {
+    my ($a, $l, $h, $b) = @_;

@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2015-12-20 07:53:15 UTC
++++ doc/Makefile.in
+@@ -77,7 +77,7 @@ am__make_running_with_option = \
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/doc/gnupg1
+ pkgincludedir = $(includedir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@

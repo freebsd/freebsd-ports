@@ -1,0 +1,62 @@
+'\" t
+.\"     Title: sponge
+.\"    Author: Joey Hess
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 2006-02-19
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "SPONGE" "1" "2006\-02\-19" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+sponge \- soak up standard input and write to a file
+.SH "SYNOPSIS"
+.HP \w'\fBsed\ \*(Aq\&.\&.\&.\*(Aq\ file\ |\ grep\ \*(Aq\&.\&.\&.\*(Aq\ |\ sponge\ [\-a]\ file\fR\ 'u
+\fBsed \*(Aq\&.\&.\&.\*(Aq file | grep \*(Aq\&.\&.\&.\*(Aq | sponge [\-a] file\fR
+.SH "DESCRIPTION"
+.PP
+\fBsponge\fR
+reads standard input and writes it out to the specified file\&. Unlike a shell redirect,
+\fBsponge\fR
+soaks up all its input before writing the output file\&. This allows constructing pipelines that read from and write to the same file\&.
+.PP
+\fBsponge\fR
+preserves the permissions of the output file if it already exists\&.
+.PP
+When possible,
+\fBsponge\fR
+creates or updates the output file atomically by renaming a temp file into place\&. (This cannot be done if TMPDIR is not in the same filesystem\&.)
+.PP
+If the output file is a special file or symlink, the data will be written to it, non\-atomically\&.
+.PP
+If no file is specified,
+\fBsponge\fR
+outputs to stdout\&.
+.SH "OPTIONS"
+.PP
+\fB\-a\fR
+.RS 4
+Replace the file with a new file that contains the file\*(Aqs original content, with the standard input appended to it\&. This is done atomically when possible\&.
+.RE
+.SH "AUTHOR"
+.PP
+Colin Watson and Tollef Fog Heen

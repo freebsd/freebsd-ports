@@ -1,0 +1,3 @@
+Smug automates your tmux workflow. You can create a single
+configuration file, and Smug will create all the required
+windows and panes from it.

@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# PROVIDE: dnetc
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dnetc:
+# dnetc_enable (bool):		Set to "NO" by default.
+#				Set to "YES" to enable dnetc.
+# dnetc_dir (path):		Set to "%%BINDIR%%" by default.
+# dnetc_user (user):		Set to "dnetc" by default.
+# dnetc_idprio (priority):	Unset by default. See idprio manpage.
+#
+
+. /etc/rc.subr
+
+name="dnetc"
+rcvar=dnetc_enable
+
+load_rc_config $name
+
+: ${dnetc_enable="NO"}
+: ${dnetc_dir="%%BINDIR%%"}
+: ${dnetc_user="dnetc"}
+
+required_files=${dnetc_dir}/${name}.ini
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+extra_commands="flush fetch update"
+
+flush_cmd="${name}_flush"
+fetch_cmd="${name}_fetch"
+update_cmd="${name}_update"
+
+dnetc_start()
+{
+	if ps -x -o ucomm -U${dnetc_user} | grep ${name} >/dev/null; then
+		echo "${name} already running?"
+	else
+		${dnetc_idprio:+idprio} ${dnetc_idprio} su -m ${dnetc_user} -c "${dnetc_dir}/${name} -quiet" >/dev/null 2>&1
+		echo -n " ${name}"
+	fi
+}
+
+dnetc_stop()
+{
+	if ps -x -o ucomm -U${dnetc_user} | grep ${name} >/dev/null; then
+		su -m ${dnetc_user} -c "${dnetc_dir}/${name} -shutdown" >/dev/null 2>&1
+		# wait for dnetc to stop
+		sleep 2
+		echo -n " ${name}"
+	else
+		echo "${name} not running?"
+	fi
+}
+
+dnetc_flush()
+{
+	su -m ${dnetc_user} -c "${dnetc_dir}/${name} -flush" >/dev/null 2>&1
+}
+
+dnetc_fetch()
+{
+	su -m ${dnetc_user} -c "${dnetc_dir}/${name} -fetch" >/dev/null 2>&1
+}
+
+dnetc_update()
+{
+	su -m ${dnetc_user} -c "${dnetc_dir}/${name} -update" >/dev/null 2>&1
+}
+
+run_rc_command "$1"

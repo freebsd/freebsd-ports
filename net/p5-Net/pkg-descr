@@ -1,0 +1,18 @@
+libnet is a collection of Perl modules which provides a simple
+and consistent programming interface (API) to the client side
+of various protocols used in the internet community.
+
+For details of each protocol please refer to the RFC. RFC's
+can be found a various places on the WEB, for a starting
+point look at:
+
+    http://www.yahoo.com/Computers_and_Internet/Standards/RFCs/
+
+    The RFC implemented in this distribution are
+
+    Net::FTP        RFC959          File Transfer Protocol
+    Net::SMTP       RFC821          Simple Mail Transfer Protocol
+    Net::Time       RFC867          Daytime Protocol
+    Net::Time       RFC868          Time Protocol
+    Net::NNTP       RFC977          Network News Transfer Protocol
+    Net::POP3       RFC1939         Post Office Protocol 3

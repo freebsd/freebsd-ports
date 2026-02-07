@@ -1,0 +1,12 @@
+bin/xcalendar
+lib/X11/app-defaults/XCalendar
+lib/X11/ja_JP.eucJP/app-defaults/XCalendar
+lib/X11/ja_JP.eucJP/xcalendar/xcalendar.hol
+lib/X11/ja_JP.eucJP/xcalendar/xcalendar.hlp
+lib/X11/xcalendar/larrow.xbm
+lib/X11/xcalendar/qmark.xbm
+lib/X11/xcalendar/quit.xbm
+lib/X11/xcalendar/rarrow.xbm
+lib/X11/xcalendar/xcalendar.hlp
+share/man/ja/man1/xcalendar.1.gz
+share/man/man1/xcalendar.1.gz

@@ -1,0 +1,2 @@
+%%SITE_PERL%%/AnyEvent/AIO.pm
+%%PERL5_MAN3%%/AnyEvent::AIO.3.gz

@@ -1,0 +1,2 @@
+Ruby/Rsync is a Ruby library to syncronize files between remote
+hosts by wrapping calls to the rsync binary.

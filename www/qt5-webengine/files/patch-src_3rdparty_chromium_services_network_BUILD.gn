@@ -1,0 +1,19 @@
+--- src/3rdparty/chromium/services/network/BUILD.gn.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/services/network/BUILD.gn
+@@ -262,9 +262,15 @@ jumbo_component("network_service") {
+     deps += [ "//components/certificate_transparency" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux && !is_bsd) || is_chromeos) {
+     deps += [
+       "//sandbox/linux:sandbox_services",
++      "//sandbox/policy",
++    ]
++  }
++
++  if (is_bsd) {
++    deps += [
+       "//sandbox/policy",
+     ]
+   }

@@ -1,0 +1,20 @@
+--- setup.h.in.orig	2025-05-25 17:15:56 UTC
++++ setup.h.in
+@@ -798,17 +798,14 @@
+ /*
+  * Define if your compiler has std::tr1::unordered_map
+  */
+-#undef HAVE_TR1_UNORDERED_MAP
+ 
+ /*
+  * Define if your compiler has std::tr1::unordered_set
+  */
+-#undef HAVE_TR1_UNORDERED_SET
+ 
+ /*
+  * Define if your compiler has <tr1/type_traits>
+  */
+-#undef HAVE_TR1_TYPE_TRAITS
+ 
+ /*
+  * Define if your compiler has <type_traits>

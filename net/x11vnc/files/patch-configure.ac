@@ -1,0 +1,16 @@
+--- configure.ac.orig	2018-02-04 21:43:38 UTC
++++ configure.ac
+@@ -62,11 +62,11 @@ AC_SUBST(CRYPT_LIBS)
+ AH_TEMPLATE(HAVE_X509_PRINT_EX_FP, [open ssl X509_print_ex_fp available])
+ if test "x$with_ssl" != "xno"; then
+ 	if test "x$HAVE_LIBCRYPTO" = "xtrue"; then
+-		PKG_CHECK_MODULES(OPENSSL, [openssl >= 1.0.0],
++		AC_CHECK_LIB(ssl, SSL_free,
+ 			SSL_LIBS="-lssl -lcrypto"
+ 			[AC_DEFINE(HAVE_LIBSSL) HAVE_LIBSSL="true"], ,)
+ 	else
+-		PKG_CHECK_MODULES(OPENSSL, [openssl >= 1.0.0],
++		AC_CHECK_LIB(ssl, SSL_free,
+ 			SSL_LIBS="-lssl"
+ 			[AC_DEFINE(HAVE_LIBSSL) HAVE_LIBSSL="true"], ,)
+ 	fi

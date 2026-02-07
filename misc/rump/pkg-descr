@@ -1,0 +1,8 @@
+Rump (Runnable Userspace Meta Program) is a mechanism for running kernel code
+as part of a user program's address space. As opposed to executing system calls
+for requesting kernel services, rump programs do a library call into the kernel
+code for equivalent functionality. Kernel code is simply recompiled as a
+userspace shared library from the kernel sources instead of being rewritten,
+so services imitate the same services being provided by the kernel. Select
+architectures such as i386 and amd64 also support directly linking binary
+kernel modules against rump programs.

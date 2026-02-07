@@ -1,0 +1,3 @@
+share/man/man8/greyfix.8.gz
+sbin/greyfix
+@dir(nobody,mail,770) /var/db/greyfix

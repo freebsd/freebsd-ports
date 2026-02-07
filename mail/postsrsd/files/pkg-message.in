@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+If you upgrading from postsrsd 1.x you should remember to check
+and modify postsrsd.conf file. postsrsd dropped support for command line
+parameters.
+  Additional setup instructions and sample config file can be found at:
+    %%DOCSDIR%%
+EOM
+}
+]

@@ -1,0 +1,2 @@
+pytest-html is a plugin for pytest that generates a HTML report for
+test results.

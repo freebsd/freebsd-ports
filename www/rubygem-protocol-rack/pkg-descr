@@ -1,0 +1,3 @@
+Protocol::Rack provides abstractions for working with the Rack specification on
+top of Protocol::HTTP. This would, in theory, allow you to run any
+Protocol::HTTP compatible application on top any rack-compatible server.

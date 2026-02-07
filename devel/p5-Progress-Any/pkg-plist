@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Progress/Any.pm
+%%SITE_PERL%%/Progress/Any/Output.pm
+%%SITE_PERL%%/Progress/Any/Output/Null.pm
+%%PERL5_MAN3%%/Progress::Any.3.gz
+%%PERL5_MAN3%%/Progress::Any::Output.3.gz
+%%PERL5_MAN3%%/Progress::Any::Output::Null.3.gz

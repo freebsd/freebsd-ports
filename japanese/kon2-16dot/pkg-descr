@@ -1,0 +1,20 @@
+KON2 is a program for displaying Kanji (japanese characters) on the
+console of Linux/FreeBSD. KON2 hooks the output of console and
+redirects to pseudo tty, drawing on the VGA display.
+
+If KON2 would be going to something wrong, check shared-memories being
+loading or not. If not, add "options SYSVSHM" to
+/usr/src/sys/i386/conf/GENERIC, and reconfigure the kernel.
+
+Be aware that using KON2 with X is not allowed (You should shutdown X first
+when you use KON2, and vice versa).
+
+In order to use 30 lines (default is 25), modify the "Normal" entry of
+kon.cfg as follows:
+-------
+VGA:Normal
+        VGA
+        640 680 768 800 480 491 493 525
+        1
+        79 29
+-------

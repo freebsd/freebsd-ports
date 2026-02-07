@@ -1,0 +1,16 @@
+Type::TinyX::Facets make it easy to create parameterized types with facets.
+
+Type::Tiny allows definition of types which can accept parameters:
+    use Types::Standard -types;
+    my $t1 = Array[Int];
+    my $t2 = Tuple[Int, HashRef];
+
+This defines $t1 as an array of integers. and $t2 as a tuple of two elements, an
+integer and a hash.
+
+Parameters are passed as a list to the parameterized constraint generation
+machinery, and there is great freedom in how they may be interpreted.
+
+This module makes it easy to create a parameterized type which takes name -
+value pairs or,facets. (The terminology is taken from Types::XSD::Lite, to which
+this module owes its existence.)

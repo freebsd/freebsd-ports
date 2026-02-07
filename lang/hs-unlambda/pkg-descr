@@ -1,0 +1,2 @@
+This is an interpreter of the Unlambda language, written in the pure,
+lazy, functional language Haskell.

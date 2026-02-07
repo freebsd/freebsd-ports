@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: mogilefsd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=mogilefsd
+rcvar=mogilefsd_enable
+
+load_rc_config mogilefsd
+
+: ${mogilefsd_enable:="NO"}
+
+required_files=%%PREFIX%%/etc/mogtracker.conf
+
+command="%%PREFIX%%/bin/${name}"
+command_args="--config=%%PREFIX%%/etc/mogtracker.conf"
+
+run_rc_command "$1"

@@ -1,0 +1,11 @@
+--- doc/Makefile.am.orig	2019-07-31 16:36:32 UTC
++++ doc/Makefile.am
+@@ -1,5 +1,8 @@
+ ## Process this file with automake to produce Makefile.in
+ 
++if BSD
++else
+ dist_man_MANS = fusermount.1 mount.fuse.8 ulockmgr_server.1
++endif
+ 
+ EXTRA_DIST = how-fuse-works kernel.txt Doxyfile html

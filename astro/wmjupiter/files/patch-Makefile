@@ -1,0 +1,24 @@
+--- Makefile.orig	2015-12-06 02:51:22 UTC
++++ Makefile
+@@ -1,10 +1,8 @@
+ # Makefile for wmJupiter
+ # 
+-CC     = gcc
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
++INCDIR = -I${LOCALBASE}/include
+ DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L${LOCALBASE}/lib
+ # for linux
+ LIBS   = -lXpm -lX11 -lXext -lm
+ # for Solaris
+@@ -14,7 +12,7 @@ OBJS   = wmJupiter.o \
+ 
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) -c $< -o $*.o $(INCDIR)
+ 
+ 
+ all:	wmJupiter.o wmJupiter

@@ -1,0 +1,3 @@
+Gnome-nettool is a utility for getting network information such as interface
+statistics, and for front-ending commands like ping and traceroute.  It
+is very similar to the MacOS X Network Utility.

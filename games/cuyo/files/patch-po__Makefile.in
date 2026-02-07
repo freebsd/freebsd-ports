@@ -1,0 +1,23 @@
+--- po/Makefile.in.orig	2014-10-25 08:21:28 UTC
++++ po/Makefile.in
+@@ -410,9 +410,9 @@ uninstall-local-yes:
+ $(DOMAIN).pot: $(pot_sources) pot.sed
+ 	rm -rf data
+ 	mkdir data
+-	cd ../data && make used_levels
++	cd ../data && $(MAKE) used_levels
+ 	for ldfile in $$(cat ../data/used_levels) ; do \
+-	  ./cual2fakec ../data/$$ldfile > data/$$ldfile ; \
++	  perl ./cual2fakec ../data/$$ldfile > data/$$ldfile ; \
+ 	done
+ 	rm -rf src
+ 	mkdir src
+@@ -426,7 +426,7 @@ $(DOMAIN).pot: $(pot_sources) pot.sed
+ 	    --msgid-bugs-address=cuyo-devel@nongnu.org \
+ 	    -o - \
+ 	    src/* data/* \
+-	  | sed -f pot.sed > cuyo.pot
++	  | gsed -f pot.sed > cuyo.pot
+ 
+ %.mo: %.po
+ 	$(MSGFMT) -c -o t-$*.mo $*.po && mv t-$*.mo $*.mo

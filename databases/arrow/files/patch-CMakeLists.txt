@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2024-03-13 13:37:59 UTC
++++ CMakeLists.txt
+@@ -124,7 +124,7 @@ include(CMakeParseArguments)
+ 
+ include(CMakePackageConfigHelpers)
+ include(CMakeParseArguments)
+-include(ExternalProject)
++#include(ExternalProject) # bundling isn't allowed
+ include(FindPackageHandleStandardArgs)
+ 
+ include(GNUInstallDirs)
+@@ -1010,9 +1010,9 @@ endif()
+   add_subdirectory(examples/arrow)
+ endif()
+ 
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE.txt
+-              ${CMAKE_CURRENT_SOURCE_DIR}/../NOTICE.txt
+-              ${CMAKE_CURRENT_SOURCE_DIR}/README.md DESTINATION "${ARROW_DOC_DIR}")
++#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE.txt
++#              ${CMAKE_CURRENT_SOURCE_DIR}/../NOTICE.txt
++#              ${CMAKE_CURRENT_SOURCE_DIR}/README.md DESTINATION "${ARROW_DOC_DIR}")
+ 
+ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/gdb_arrow.py DESTINATION "${ARROW_GDB_DIR}")
+ 

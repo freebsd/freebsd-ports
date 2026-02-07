@@ -1,0 +1,10 @@
+Terminus Font is designed for long (8 and more hours per day) work
+with computers. Version 4.11 contains 594 characters, covering code
+pages ISO8859-1/2/5/9/13/15/16, Windows-1250/1251/1252/1254/1257,
+IBM-437/852/855/866, KOI8-R/U/E/F, Bulgarian-MIK, Paratype-PT154/PT254,
+Macintosh-Ukrainian and Esperanto, and also the vt100 and xterm
+pseudographic characters.
+
+Note: This ports also installed a slanted version of the terminus
+font, contributed by "Sascha Blank" <sblank@tiscali.de> which is NOT
+in the original release.

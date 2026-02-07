@@ -1,0 +1,4 @@
+The mfc-candidates script compares git commit hashes between branches to
+identify potential MFC candidates.  It was originally designed for the FreeBSD
+src repository, but it also works for ports.
+

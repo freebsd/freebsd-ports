@@ -1,0 +1,69 @@
+--- amqplib/client_0_8/method_framing.py.orig	2011-03-29 17:09:17 UTC
++++ amqplib/client_0_8/method_framing.py
+@@ -18,7 +18,7 @@ Convert between frames and higher-level AMQP methods
+ # License along with this library; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
+ 
+-from Queue import Empty, Queue
++from queue import Empty, Queue
+ from struct import pack, unpack
+ 
+ try:
+@@ -49,9 +49,9 @@ except:
+                 return result
+ 
+ 
+-from basic_message import Message
+-from exceptions import *
+-from serialization import AMQPReader
++from .basic_message import Message
++from .exceptions import *
++from .serialization import AMQPReader
+ 
+ __all__ =  [
+             'MethodReader',
+@@ -131,7 +131,7 @@ class MethodReader(object):
+         while self.queue.empty():
+             try:
+                 frame_type, channel, payload = self.source.read_frame()
+-            except Exception, e:
++            except Exception as e:
+                 #
+                 # Connection was closed?  Framing Error?
+                 #
+@@ -241,7 +241,7 @@ class MethodWriter(object):
+             # problem with the content properties, before sending the
+             # first frame
+             body = content.body
+-            if isinstance(body, unicode):
++            if isinstance(body, str):
+                 coding = content.properties.get('content_encoding', None)
+                 if coding is None:
+                     coding = content.properties['content_encoding'] = 'UTF-8'
+@@ -257,5 +257,5 @@ class MethodWriter(object):
+             self.dest.write_frame(2, channel, payload)
+ 
+             chunk_size = self.frame_max - 8
+-            for i in xrange(0, len(body), chunk_size):
++            for i in range(0, len(body), chunk_size):
+                 self.dest.write_frame(3, channel, body[i:i+chunk_size])
+--- amqplib/client_0_8/transport.py.orig	2011-09-28 22:10:35 UTC
++++ amqplib/client_0_8/transport.py
+@@ -74,7 +74,7 @@ class _AbstractTransport(object):
+                 self.sock = socket.socket(af, socktype, proto)
+                 self.sock.settimeout(connect_timeout)
+                 self.sock.connect(sa)
+-            except socket.error, msg:
++            except socket.error as msg:
+                 self.sock.close()
+                 self.sock = None
+                 continue
+@@ -82,7 +82,7 @@ class _AbstractTransport(object):
+ 
+         if not self.sock:
+             # Didn't connect, return the most recent error message
+-            raise socket.error, msg
++            raise socket.error(msg)
+ 
+         self.sock.settimeout(None)
+         self.sock.setsockopt(socket.SOL_TCP, socket.TCP_NODELAY, 1)

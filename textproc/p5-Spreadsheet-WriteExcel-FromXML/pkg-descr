@@ -1,0 +1,4 @@
+This module uses Spreadsheet::WriteExcel to turn a simple XML data file
+into a binary Excel XLS file.
+
+See also the FromXML.dtd file in the distribution.

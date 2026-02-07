@@ -1,0 +1,5 @@
+Prometheus exporter for ICMP echo requests.
+
+This is a simple server that scrapes go-ping stats and exports them via HTTP
+for Prometheus consumption. The go-ping library is build and maintained by
+Digineo GmbH.

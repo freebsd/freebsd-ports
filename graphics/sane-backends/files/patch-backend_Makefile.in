@@ -1,0 +1,29 @@
+--- backend/Makefile.in.orig	2024-05-24 15:39:35 UTC
++++ backend/Makefile.in
+@@ -1720,7 +1720,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+ am__v_at_1 = 
+-DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include/sane
++DEFAULT_INCLUDES = -I$(top_builddir)/include/sane -I$(top_builddir)/include -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__maybe_remake_depfiles = depfiles
+ am__depfiles_remade = ./$(DEPDIR)/libabaton_la-abaton.Plo \
+@@ -8281,7 +8281,7 @@ install-becfg: becfg
+ 	@# installed library in $(execsanelibdir) to libsane.*, which
+ 	@# causes a conflict with the actual libsane.* in $(libdir).
+ 	-rm -f $(DESTDIR)$(execsanelibdir)/libsane.*
+-	test -z "$(configdir)" || $(MKDIR_P) "$(DESTDIR)$(configdir)"
++	test -z "$(configdir)/dist" || $(MKDIR_P) "$(DESTDIR)$(configdir)/dist"
+ 	test -z "$(configdir)/dll.d" || $(MKDIR_P) "$(DESTDIR)$(configdir)/dll.d"
+ 	@list="$(BACKEND_CONFS_ENABLED) saned.conf dll.conf"; for cfg in $$list; do \
+ 	  if test ! -r $${cfg}; then continue; fi; \
+@@ -8289,7 +8289,7 @@ install-becfg: becfg
+ 	  echo NOT overwriting $${cfg} in $(configdir)...; \
+ 	  else \
+ 	  echo installing $${cfg} in $(configdir)/$${cfg}...; \
+-	  $(INSTALL_DATA) $${cfg} $(DESTDIR)$(configdir)/$${cfg} \
++	  $(INSTALL_DATA) $${cfg} $(DESTDIR)$(configdir)/dist/$${cfg} \
+ 	  || exit 1; \
+ 	  fi; \
+ 	  done

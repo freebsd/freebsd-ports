@@ -1,0 +1,11 @@
+--- src/tools/linguist/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/tools/linguist/CMakeLists.txt
+@@ -100,7 +100,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+ endif()
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "(OpenBSD|FreeBSD|NetBSD)")
+-   list(APPEND EXTRA_LINGUIST_LDFLAGS '-Wl,-rpath,$ORIGIN/../lib')
++   list(APPEND EXTRA_LINGUIST_LDFLAGS '-Wl,-rpath,${CS_FULL_LIBDIR}')
+ endif()
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "Windows")

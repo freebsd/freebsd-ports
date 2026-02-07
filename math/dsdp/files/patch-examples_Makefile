@@ -1,0 +1,67 @@
+--- examples/Makefile.orig	2005-10-21 19:31:14 UTC
++++ examples/Makefile
+@@ -7,31 +7,31 @@ include ../make.include
+ EXAMPLE_LIBS = ${DSDPLIB} ${LAPACKBLAS}
+ 
+ dsdp: exinfo clean
+-	${MEX} -I${DSDPROOT}/include dsdp.c ${DSDPLIB}; 
+-	${MV} dsdp.mex* ${DSDPMATLABDIR}
++	#${MEX} -I${DSDPROOT}/include dsdp.c ${DSDPLIB}; 
++	#${MV} dsdp.mex* ${DSDPMATLABDIR}
+ 
+ dsdpsdpa: exinfo clean readsdpa.o 
+-	${CLINKER} readsdpa.o ${EXAMPLE_LIBS} -o dsdp5
++	${CLINKER} ${LDFLAGS} readsdpa.o ${EXAMPLE_LIBS} -o dsdp5
+ 	${MV} dsdp5 ${EXECDIR}
+ 	${RM} readsdpa.o
+ 
+ maxcut: exinfo clean maxcut.o
+-	${CLINKER} -o maxcut maxcut.o ${EXAMPLE_LIBS}
++	${CLINKER} ${LDFLAGS} -o maxcut maxcut.o ${EXAMPLE_LIBS}
+ 	${MV} maxcut ${EXECDIR}
+ 	${RM} maxcut.o
+ 
+ stable: exinfo clean stable.o
+-	${CLINKER} -o stable stable.o ${EXAMPLE_LIBS}
++	${CLINKER} ${LDFLAGS} -o stable stable.o ${EXAMPLE_LIBS}
+ 	${MV} stable ${EXECDIR}
+ 	${RM} stable.o
+ 
+ color: exinfo clean color.o
+-	${CLINKER} -o color color.o ${EXAMPLE_LIBS}
++	${CLINKER} ${LDFLAGS} -o color color.o ${EXAMPLE_LIBS}
+ 	${MV} color ${EXECDIR}
+ 	${RM} color.o
+ 
+ theta:	exinfo clean theta.o
+-	${CLINKER} -o theta theta.o ${EXAMPLE_LIBS}
++	${CLINKER} ${LDFLAGS} -o theta theta.o ${EXAMPLE_LIBS}
+ 	${MV} theta ${EXECDIR}
+ 	${RM} theta.o
+ 
+@@ -43,18 +43,18 @@ copysrc:
+ 
+ # On most Linux/Unix machines
+ dsdpagain: copysrc
+-	${MEX} -DDSDPMATLAB -DDSDP_TIME dsdp.c allc/*.c
+-	${MV} dsdp.mex* ${DSDPMATLABDIR}
+-	make clean;
++	#${MEX} -DDSDPMATLAB -DDSDP_TIME dsdp.c allc/*.c
++	#${MV} dsdp.mex* ${DSDPMATLABDIR}
++	#make clean;
+ 
+ # On a Windows Machine
+ dsdpagain2: copysrc
+-	${MEX} -DDSDPMATLAB -DDSDP_MS_TIME -DNOUNDERBLAS dsdp.c allc/*.c
+-	${MV} dsdp.mex* ${DSDPMATLABDIR}
+-	make clean;
++	#${MEX} -DDSDPMATLAB -DDSDP_MS_TIME -DNOUNDERBLAS dsdp.c allc/*.c
++	#${MV} dsdp.mex* ${DSDPMATLABDIR}
++	#make clean;
+ 
+ sdpaagain: copysrc	
+-	${CC} -O3 -DDSDP_TIME readsdpa.c allc/*.c ${LAPACKBLAS} -o dsdp5
++	${CC} $(CFLAGS) -DDSDP_TIME readsdpa.c allc/*.c ${LAPACKBLAS} -o dsdp5
+ 	${MV} dsdp5 ${EXECDIR}
+ 	make clean;
+ 

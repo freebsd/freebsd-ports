@@ -1,0 +1,2 @@
+fleep is a library that determines file format by file signature (also known as
+"magic number").

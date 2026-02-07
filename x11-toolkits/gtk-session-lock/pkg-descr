@@ -1,0 +1,7 @@
+This is a library to use GTK 3 to build screen lockers using the
+secure ext-session-lock-v1 protocol. This Library is compatible with
+C, C++ and any language that supports GObject introspection files
+(Python, Vala, etc, see using the library below).
+
+This library is a fork of the incredible gtk-layer-shell, which has
+laid all the groundwork necessary to make this happen.

@@ -1,0 +1,14 @@
+QUIMUP is a 'graphical' client for the music player daemon (MPD)
+written in C++ and Qt5.
+
+Features include:
+
+* Support for (locally stored) albumart.
+* Support for audio streams (url).
+* Drag & drop playlist management.
+* Database browser (artist, album, genre, folder & playlist mode)
+* Database search (artist, album, genre & title mode).
+* Quick search-and-select in the playlist.
+* Mini-mode interface for basic control only.
+* Open folder in external programs to edit tags etc.
+* Generally a quick and clean application.

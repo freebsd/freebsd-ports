@@ -1,0 +1,15 @@
+CScout is a source code analyzer and refactoring browser for
+collections of C programs.  It can process workspaces of multiple
+projects (we define a project as a collection of C source files
+that are linked together) mapping the complexity introduced by the
+C preprocessor back into the original C source code files.  CScout
+takes advantage of modern hardware advances (fast processors and
+large memory capacities) to analyze C source code beyond the level
+of detail and accuracy provided by  current compilers and linkers.
+The analysis CScout performs takes into account the identifier
+scopes introduced by the C preprocessor and the C language proper
+scopes and namespaces.  CScout has already been applied on projects
+ranging from tens of thousands of lines, like the FreeBSD and
+Linux kernels, and the Apache web server.
+
+See also: https://github.com/dspinellis/cscout

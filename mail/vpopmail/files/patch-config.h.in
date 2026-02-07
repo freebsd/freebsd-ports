@@ -1,0 +1,20 @@
+Description: Add two SpamAssassin-related definitions.
+Forwarded: not-needed
+Author: Alex Dupre <ale@FreeBSD.org>
+Last-Update: 2010-09-13
+
+--- a/config.h.in
++++ b/config.h.in
+@@ -313,6 +313,12 @@
+ #undef SPAMC_PROG
+ 
+ /* "" */
++#undef SPAM_THRESHOLD
++
++/* "" */
++#undef SPAM_JUNKFOLDER
++
++/* "" */
+ #undef SQWEBMAIL_PASS
+ 
+ /* Define to 1 if you have the ANSI C header files. */

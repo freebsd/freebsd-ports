@@ -1,0 +1,9 @@
+Redis Vector Library (RedisVL) is the production-ready Python client
+for AI applications built on Redis. Lightning-fast vector search meets
+enterprise-grade reliability.
+
+Built for Modern AI Workloads:
+- RAG Pipelines -> Real-time retrieval with hybrid search capabilities
+- AI Agents -> Short term & long term memory and semantic routing for
+  intent-based decisions
+- Recommendation Systems -> Fast retrieval and reranking

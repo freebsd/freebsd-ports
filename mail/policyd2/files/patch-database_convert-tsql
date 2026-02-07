@@ -1,0 +1,13 @@
+--- database/convert-tsql.orig	2013-10-26 18:53:14 UTC
++++ database/convert-tsql
+@@ -96,7 +96,9 @@ case "$database" in
+ 			-e 's/@SERIAL_TYPE@/SERIAL PRIMARY KEY/' \
+ 			-e 's/@BIG_INTEGER_UNSIGNED@/INT8/' \
+ 			-e 's/@TRACK_KEY_LEN@/512/' \
+-			-e 's/@SERIAL_REF_TYPE@/INT8/' < "$file"
++			-e 's/@SERIAL_REF_TYPE@/INT8/' \
++			-e 's/#/--/' \
++			-e '/^\s*$/d' < "$file"
+ 		;;
+ 
+ 	"sqlite")

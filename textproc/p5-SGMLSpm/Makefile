@@ -1,0 +1,42 @@
+PORTNAME=	SGMLSpm
+PORTVERSION=	1.03
+DISTVERSIONSUFFIX=	ii
+PORTREVISION=	2
+CATEGORIES=	textproc perl5
+MASTER_SITES=	CPAN/SGMLS
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl module for postprocessing the output from sgmls and nsgmls
+WWW=		https://metacpan.org/release/DMEGG/SGMLSpm-1.03ii
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		shebangfix perl5
+USE_PERL5=	run
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+SHEBANG_FILES=	sgmlspl.pl \
+		DOC/sample.pl \
+		DOC/HTML/SGMLSpm/example.html
+
+INSTALL_TARGET=	install BINDIR=${STAGEDIR}${PREFIX}/bin \
+		PERL5DIR=${STAGEDIR}${PREFIX}/${SITE_PERL_REL} SPECDIR=${STAGEDIR}${EXAMPLESDIR}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+PORTDOCS=	*
+
+DOCS_INSTALL_TARGET=	docs install_html HTMLDIR=${STAGEDIR}${DOCSDIR}
+
+pre-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

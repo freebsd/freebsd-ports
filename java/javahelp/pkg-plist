@@ -1,0 +1,15 @@
+bin/jhindexer
+bin/jhsearch
+share/java/classes/dtd/favorites_2_0.dtd
+share/java/classes/dtd/helpset_2_0.dtd
+share/java/classes/dtd/index_2_0.dtd
+share/java/classes/dtd/map_2_0.dtd
+share/java/classes/dtd/toc_2_0.dtd
+share/java/classes/jh-client.jar
+share/java/classes/jh.jar
+share/java/classes/jhall.jar
+share/java/classes/jhbasic.jar
+share/java/classes/jsearch-client.jar
+share/java/classes/jsearch-indexer.jar
+share/java/classes/jsearch-misc.jar
+share/java/classes/jsearch.jar

@@ -1,0 +1,11 @@
+--- scripts/CMakeLists.txt.orig	2015-04-12 10:08:04 UTC
++++ scripts/CMakeLists.txt
+@@ -28,7 +28,7 @@ if(HAVE_BASH)
+     )
+   endif(PLD_plmeta)
+   if(PLD_pstex)
+-    set(scripts_SCRIPTS ${scripts_SCRIPTS} pstex2eps)
++    set(scripts_SCRIPTS "${scripts_SCRIPTS}" pstex2eps)
+   endif(PLD_pstex)
+   if (NOT "${scripts_SCRIPTS}" STREQUAL "")
+     install(PROGRAMS ${scripts_SCRIPTS} DESTINATION ${BIN_DIR})

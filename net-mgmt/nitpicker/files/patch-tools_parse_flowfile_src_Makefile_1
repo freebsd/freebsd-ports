@@ -1,0 +1,11 @@
+--- tools/parse_flowfile/src/Makefile.orig	Sat Aug 23 10:41:23 2003
++++ tools/parse_flowfile/src/Makefile	Sat Aug 23 10:42:27 2003
+@@ -3,6 +3,6 @@
+ LIBS     = 
+ INCLUDES = -I../include -I../../../include
+-CFLAGS   = -Wall -g $(INCLUDES)
+-CC = g++
++CFLAGS   += $(INCLUDES)
++CC = c++
+ INCDIR= ${.CURDIR}/../include
+ .PATH: ${INCDIR}

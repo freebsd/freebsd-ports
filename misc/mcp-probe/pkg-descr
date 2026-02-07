@@ -1,0 +1,15 @@
+MCP Probe is a Model Context Protocol (MCP) client library and debugging toolkit
+written in Rust. It provides both an SDK for building MCP integrations and an
+interactive debugger for testing MCP servers.
+
+Features:
+
+- Terminal User Interface (TUI) for interactive debugging
+- CLI mode for scripting and automation
+- Support for multiple transport protocols (HTTP/SSE, WebSocket, stdio)
+- Real-time monitoring of MCP server interactions
+- Built-in testing capabilities for MCP servers
+
+MCP Probe helps developers build, test, and debug MCP-compatible servers and
+clients, making it easier to integrate with the Model Context Protocol
+ecosystem.

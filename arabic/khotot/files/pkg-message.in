@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+ To get XFree86 to recognize your new fonts you will need to
+ add a line to your XF86Config file. Please consult XF86Config(5)
+ for more information on where to find the configuration file.
+
+ Add the following line to the "Files" section and restart XFree86.
+
+ FontPath "%%PREFIX%%/share/fonts/ae_fonts_mono"
+ FontPath "%%PREFIX%%/share/fonts/ae_fonts1/AAHS"
+ FontPath "%%PREFIX%%/share/fonts/ae_fonts1/AGA"
+ FontPath "%%PREFIX%%/share/fonts/ae_fonts1/FS"
+ FontPath "%%PREFIX%%/share/fonts/ae_fonts1/Kasr"
+ FontPath "%%PREFIX%%/share/fonts/ae_fonts1/MCS"
+ FontPath "%%PREFIX%%/share/fonts/ae_fonts1/Shmookh"
+ FontPath "%%PREFIX%%/share/fonts/kacst_fonts"
+EOM
+}
+]

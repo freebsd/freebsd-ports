@@ -1,0 +1,2 @@
+itextomml provides native Ruby bindings to itex2MML, which converts
+itex equations to MathML.

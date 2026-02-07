@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_var_date_c,v 1.1 2003/04/16 08:29:17 avsm Exp $
+--- src/var_date.c.orig	Mon Apr 14 13:35:42 2003
++++ src/var_date.c	Mon Apr 14 13:38:30 2003
+@@ -44,7 +44,7 @@ int var_get_date( env, var_name, var_val
+ 	char     *var_name ;
+ 	char     **var_value ;
+ {
+-	static char date_str[32] ;  /* Hopefully large enough */
++	static char date_str[64] ;  /* Hopefully large enough */
+ 	char       *date_fmt ;
+ 	time_t      cur_time ;
+ 
+@@ -69,7 +69,7 @@ int var_get_time( env, var_name, var_val
+ 	char     *var_name ;
+ 	char     **var_value ;
+ {
+-	static char time_str[32] ;  /* Hopefully large enough */
++	static char time_str[64] ;  /* Hopefully large enough */
+ 	char       *time_fmt ;
+ 	time_t      cur_time ;
+ 

@@ -1,0 +1,8 @@
+rdup is an utility inspired by rsync and the Plan9 way of doing backups.
+
+rdup itself does not backup anything; it only prints a list of the names
+of files that have changed since the last backup.  It also handles files
+that are removed, allowing for correct incremental backups.
+
+An example script named rdup-simple is included to show how to implement
+a simple snapshot-style backup strategy.

@@ -1,0 +1,24 @@
+--- configure.orig	2025-12-06 22:02:04 UTC
++++ configure
+@@ -13883,13 +13883,8 @@ fi
+ fi
+ 
+ 
+- if test "$datrie_cv_have_version_script" = "yes"; then
+-  LD_HAS_VERSION_SCRIPT_TRUE=
+-  LD_HAS_VERSION_SCRIPT_FALSE='#'
+-else
+-  LD_HAS_VERSION_SCRIPT_TRUE='#'
+-  LD_HAS_VERSION_SCRIPT_FALSE=
+-fi
++LD_HAS_VERSION_SCRIPT_TRUE=
++LD_HAS_VERSION_SCRIPT_FALSE='#'
+ 
+ 
+ # Checks for libraries.
+@@ -16678,5 +16673,3 @@ fi
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-

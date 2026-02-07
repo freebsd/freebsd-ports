@@ -1,0 +1,13 @@
+include/openxr/openxr.h
+include/openxr/openxr_loader_negotiation.h
+include/openxr/openxr_platform.h
+include/openxr/openxr_platform_defines.h
+include/openxr/openxr_reflection.h
+include/openxr/openxr_reflection_parent_structs.h
+include/openxr/openxr_reflection_structs.h
+lib/cmake/openxr/OpenXRConfig.cmake
+lib/cmake/openxr/OpenXRConfigVersion.cmake
+lib/cmake/openxr/OpenXRTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/openxr/OpenXRTargets.cmake
+lib/libopenxr_loader.so
+libdata/pkgconfig/openxr.pc

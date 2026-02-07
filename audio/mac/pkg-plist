@@ -1,0 +1,14 @@
+bin/mac
+include/MAC/APETag.h
+include/MAC/All.h
+include/MAC/CharacterHelper.h
+include/MAC/IAPEIO.h
+include/MAC/MACDll.h
+include/MAC/MACLib.h
+include/MAC/NoWindows.h
+include/MAC/SmartPtr.h
+include/MAC/Version.h
+include/MAC/Warnings.h
+include/MAC/WindowsEnvironment.h
+lib/libMAC.so
+lib/libMAC.so.14

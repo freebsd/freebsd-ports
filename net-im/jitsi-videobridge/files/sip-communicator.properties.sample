@@ -1,0 +1,5 @@
+org.ice4j.ice.harvest.DISABLE_AWS_HARVESTER=true
+
+# NAT
+#org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=10.1.1.17
+#org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=1.2.3.4

@@ -1,0 +1,70 @@
+--- Makefile.orig	2016-11-02 14:44:56 UTC
++++ Makefile
+@@ -39,7 +39,7 @@ PREFIX     ?= /usr
+ DESTDIR    ?=
+ BINPREFIX  ?= $(PREFIX)
+ BINDIR     ?= ${BINPREFIX}/bin
+-INSTALLDIR ?= ${PREFIX}/share/games/atanks
++INSTALLDIR ?= ${PREFIX}/share/atanks
+ 
+ 
+ # ------------------------------------
+@@ -232,7 +232,6 @@ ifeq (YES,$(DEBUG))
+   endif
+ 
+ else
+-  CXXFLAGS := -march=native ${CXXFLAGS} -O2
+ endif
+ 
+ 
+@@ -255,7 +254,7 @@ DISTCOMMON := \
+ atanks/*.dat atanks/COPYING atanks/README atanks/TODO \
+ atanks/Changelog atanks/BUGS atanks/*.txt
+ 
+-INCOMMON   := COPYING README TODO Changelog *.txt unicode.dat
++INCOMMON   := credits.txt unicode.dat
+ 
+ # ------------------------------------
+ # Default target
+@@ -301,11 +300,11 @@ endif
+ # ------------------------------------
+ install: $(TARGET)
+ 	$(INSTALL) -d $(DESTDIR)${BINDIR}
+-	$(INSTALL) -m 755 atanks $(DESTDIR)${BINDIR}
++	$(BSD_INSTALL_PROGRAM) atanks $(DESTDIR)${BINDIR}
+ 	$(INSTALL) -d $(DESTDIR)$(PREFIX)/share/applications
+-	$(INSTALL) -m 644 atanks.desktop $(DESTDIR)$(PREFIX)/share/applications
++	$(BSD_INSTALL_DATA) atanks.desktop $(DESTDIR)$(PREFIX)/share/applications
+ 	$(INSTALL) -d $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps
+-	$(INSTALL) -m 644 atanks.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps
++	$(BSD_INSTALL_DATA) atanks.png $(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps
+ 	$(INSTALL) -d $(DESTDIR)${INSTALLDIR}
+ 	$(INSTALL) -d $(DESTDIR)${INSTALLDIR}/button
+ 	$(INSTALL) -d $(DESTDIR)${INSTALLDIR}/misc
+@@ -316,16 +315,16 @@ install: $(TARGET)
+ 	$(INSTALL) -d $(DESTDIR)${INSTALLDIR}/tankgun
+ 	$(INSTALL) -d $(DESTDIR)${INSTALLDIR}/title
+ 	$(INSTALL) -d $(DESTDIR)${INSTALLDIR}/text
+-	$(INSTALL) -m 644 $(INCOMMON) $(DESTDIR)${INSTALLDIR}
+-	$(INSTALL) -m 644 button/* $(DESTDIR)${INSTALLDIR}/button
+-	$(INSTALL) -m 644 misc/* $(DESTDIR)${INSTALLDIR}/misc
+-	$(INSTALL) -m 644 missile/* $(DESTDIR)${INSTALLDIR}/missile
+-	$(INSTALL) -m 644 sound/* $(DESTDIR)${INSTALLDIR}/sound
+-	$(INSTALL) -m 644 stock/* $(DESTDIR)${INSTALLDIR}/stock
+-	$(INSTALL) -m 644 tank/* $(DESTDIR)${INSTALLDIR}/tank
+-	$(INSTALL) -m 644 tankgun/* $(DESTDIR)${INSTALLDIR}/tankgun
+-	$(INSTALL) -m 644 title/* $(DESTDIR)${INSTALLDIR}/title
+-	$(INSTALL) -m 644 text/* $(DESTDIR)${INSTALLDIR}/text
++	$(BSD_INSTALL_DATA) -m 644 $(INCOMMON) $(DESTDIR)${INSTALLDIR}
++	$(BSD_INSTALL_DATA) -m 644 button/* $(DESTDIR)${INSTALLDIR}/button
++	$(BSD_INSTALL_DATA) -m 644 misc/* $(DESTDIR)${INSTALLDIR}/misc
++	$(BSD_INSTALL_DATA) -m 644 missile/* $(DESTDIR)${INSTALLDIR}/missile
++	$(BSD_INSTALL_DATA) -m 644 sound/* $(DESTDIR)${INSTALLDIR}/sound
++	$(BSD_INSTALL_DATA) -m 644 stock/* $(DESTDIR)${INSTALLDIR}/stock
++	$(BSD_INSTALL_DATA) -m 644 tank/* $(DESTDIR)${INSTALLDIR}/tank
++	$(BSD_INSTALL_DATA) -m 644 tankgun/* $(DESTDIR)${INSTALLDIR}/tankgun
++	$(BSD_INSTALL_DATA) -m 644 title/* $(DESTDIR)${INSTALLDIR}/title
++	$(BSD_INSTALL_DATA) -m 644 text/* $(DESTDIR)${INSTALLDIR}/text
+ 
+ $(TARGET): $(MODULES)
+ 	$(LD) -o $@ $(MODULES) $(CPPFLAGS) $(LDFLAGS) $(CXXFLAGS)

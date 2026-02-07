@@ -1,0 +1,117 @@
+--- examples/Makefile.orig	2025-11-21 07:26:29 UTC
++++ examples/Makefile
+@@ -78,7 +78,7 @@ FILES = CImg_demo \
+ 	use_RGBclass \
+ 
+ # Files which requires external libraries to run.
+-EXTRA_FILES = test_template_types use_tiff_stream use_jpeg_buffer
++EXTRA_FILES = use_tiff_stream use_jpeg_buffer
+ 
+ #---------------------------------
+ # Set correct variables and paths
+@@ -89,7 +89,7 @@ SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
+ VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
+ SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
+ 
+-X11PATH = /usr/X11R6
++X11PATH = $(LOCALBASE)
+ 
+ EXE_PRE =
+ EXE_EXT =
+@@ -111,7 +111,7 @@ CXXVER = $(CXX)
+ endif
+ 
+ CXXVER = $(CXX)
+-CFLAGS = -I.. -Wall -Wextra -Wfatal-errors -Werror=unknown-pragmas -Werror=unused-label
++CFLAGS = -I.. -Wall -Wextra $(CPPFLAGS)
+ LIBS = -lm
+ ifdef IS_GCC
+ CXXVER = $(shell $(CXX) -v 2>&1 | tail -n 1)
+@@ -152,7 +152,7 @@ VT100_CFLAGS = -Dcimg_use_vt100
+ VT100_CFLAGS = -Dcimg_use_vt100
+ 
+ # Flags to enable code optimization by the compiler.
+-OPT_CFLAGS = -Ofast
++OPT_CFLAGS = # -Ofast - handled by the port CFLAGS
+ ifdef IS_GCC
+ # Add -mtune=generic for GCC if supported.
+ NO_MTUNE_GENERIC = $(shell $(CXX) -mtune=generic -E - < /dev/null > /dev/null 2>&1; echo $$?)
+@@ -177,9 +177,9 @@ OPENCV_DEFINE = -Dcimg_use_opencv
+ 
+ # Flags to enable OpenCV support.
+ OPENCV_DEFINE = -Dcimg_use_opencv
+-OPENCV_INCDIR = $(shell pkg-config opencv --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv -I/usr/include/opencv4
++OPENCV_INCDIR = $(shell pkg-config opencv4 --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv -I/usr/include/opencv4
+ OPENCV_CFLAGS = $(OPENCV_DEFINE) $(OPENCV_INCDIR)
+-OPENCV_LIBS = $(shell pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui -lopencv_videoio)
++OPENCV_LIBS = $(shell pkg-config opencv4 --libs || echo -lopencv_core -lopencv_highgui -lopencv_videoio)
+ 
+ # Flags used to disable display capablities of CImg
+ NODISPLAY_CFLAGS = -Dcimg_display=0
+@@ -242,7 +242,7 @@ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
+ TIFF_DEFINE = -Dcimg_use_tiff
+ TIFF_INCDIR =
+ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
+-TIFF_LIBS = -ltiff
++TIFF_LIBS = -ltiff  -ltiffxx
+ 
+ # Flags to enable native support for loading HEIF image files, using the libheif library.
+ # ( https://github.com/strukturag/libheif )
+@@ -261,16 +261,16 @@ OPENEXR_DEFINE = -Dcimg_use_openexr
+ # Flags to enable native support for EXR image files, using the OpenEXR library.
+ # ( http://www.openexr.com/ )
+ OPENEXR_DEFINE = -Dcimg_use_openexr
+-OPENEXR_INCDIR = -I/usr/include/OpenEXR
++OPENEXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
+ OPENEXR_CFLAGS = $(OPENEXR_DEFINE) $(OPENEXR_INCDIR)
+-OPENEXR_LIBS = -lIlmImf -lHalf
++OPENEXR_LIBS = -lOpenEXR -lImath
+ 
+ # Flags to enable native support for various video files, using the FFMPEG library.
+ # ( http://www.ffmpeg.org/ )
+-FFMPEG_DEFINE = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS
+-FFMPEG_INCDIR = -I/usr/include/libavcodec -I/usr/include/libavformat -I/usr/include/libswscale -I/usr/include/ffmpeg
+-FFMPEG_CFLAGS = $(FFMPEG_DEFINE) $(FFMPEG_INCDIR)
+-FFMPEG_LIBS = -lavcodec -lavformat -lswscale
++#FFMPEG_DEFINE = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS
++FFMPEG_INCDIR = -I$(LOCALBASE)/include/libavcodec -I$(LOCALBASE)/include/libavformat -I$(LOCALBASE)/include/libswscale -I$(LOCALBASE)/include/ffmpeg
++#FFMPEG_CFLAGS = $(FFMPEG_DEFINE) $(FFMPEG_INCDIR)
++#FFMPEG_LIBS = -lavcodec -lavformat -lswscale
+ 
+ # Flags to enable native support for compressed .cimgz files, using the Zlib library.
+ # ( http://www.zlib.net/ )
+@@ -377,6 +377,7 @@ $(XSHM_LIBS)" \
+ $(TIFF_LIBS) \
+ $(HEIF_LIBS) \
+ $(XSHM_LIBS)" \
++$(PTHREAD_LIBS)" \
+ all $(EXTRA_FILES)
+ 
+ # Linux/BSD/Mac OSX targets, with X11 display.
+@@ -455,6 +456,7 @@ $(OPT_CFLAGS) \
+ 	@$(MAKE) \
+ "CONF_CFLAGS = \
+ $(OPT_CFLAGS) \
++$(OPENMP_CFLAGS) \
+ $(VT100_CFLAGS) \
+ $(X11_CFLAGS) \
+ $(XSHM_CFLAGS) \
+@@ -468,8 +470,10 @@ $(MAGICK_CFLAGS) \
+ $(CURL_CFLAGS) \
+ $(OPENCV_CFLAGS) \
+ $(MAGICK_CFLAGS) \
++$(WEBP_CFLAGS) \
+ $(FFTW3_CFLAGS)" \
+ "CONF_LIBS = \
++$(FREEBSD_LDFLAGS) \
+ $(X11_LIBS) \
+ $(XSHM_LIBS) \
+ $(XRANDR_LIBS) \
+@@ -482,6 +486,7 @@ $(MAGICK_LIBS) \
+ $(CURL_LIBS) \
+ $(OPENCV_LIBS) \
+ $(MAGICK_LIBS) \
++$(WEBP_LIBS) \
+ $(FFTW3_LIBS)" \
+ "STRIP_EXE=true" \
+ all $(EXTRA_FILES)

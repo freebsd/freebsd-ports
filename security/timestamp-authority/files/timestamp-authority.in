@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: timestamp-server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# timestamp-server_enable (bool):	Set it to YES to enable timestamp-server.
+#			Default is "NO".
+# timestamp-server_user (user):	Set user to run timestamp-server.
+#			Default is "timestamp-server".
+# timestamp-server_group (group):	Set group to run timestamp-server.
+#			Default is "timestamp-server".
+# timestamp-server_config (file):	Set timestamp-server config file.
+#			Default is "%%PREFIX%%/etc/timestamp-server/timestamp-server.yaml".
+
+. /etc/rc.subr
+
+name=timestamp-server
+rcvar=timestamp-server_enable
+
+load_rc_config $name
+
+: ${timestamp-server_enable:="NO"}
+: ${timestamp-server_user:="timestamp-authority"}
+: ${timestamp-server_group:="timestamp-authority"}
+: ${timestamp-server_config:="%%PREFIX%%/etc/timestamp-authority/timestamp-server.yaml"}
+
+pidfile=/var/run/timestamp-server.pid
+procname="%%PREFIX%%/bin/timestamp-server"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -p ${pidfile} ${procname} serve -config=${timestamp-server_config}"
+
+start_precmd=timestamp-server_startprecmd
+required_files="$timestamp-server_config"
+
+timestamp-server_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${timestamp-server_user} -g ${timestamp-server_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"

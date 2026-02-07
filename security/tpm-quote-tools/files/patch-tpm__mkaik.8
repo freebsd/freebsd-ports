@@ -1,0 +1,24 @@
+--- tpm_mkaik.8.orig	2017-01-18 17:10:09 UTC
++++ tpm_mkaik.8
+@@ -3,7 +3,7 @@ tpm_mkaik \- make a TPM Attestation Identity Key
+ tpm_mkaik \- make a TPM Attestation Identity Key
+ .SH SYNOPSIS
+ .B tpm_mkaik
+-.RB [ \-zuhv ]
++.RB [ \-yzuhv ]
+ .RI BLOB-FILE
+ .RI PUBKEY-FILE
+ .br
+@@ -16,8 +16,11 @@ The public key is DER encoded.
+ .RI PUBKEY-FILE.
+ The public key is DER encoded.
+ .TP
+-.RB \-z
++.RB \-y
+ Use the well known secret used as the owner secret.
++.TP
++.RB \-z
++Use the well known secret used as the SRK secret.
+ .TP
+ .RB \-u
+ Use TSS UNICODE encoding for passwords.

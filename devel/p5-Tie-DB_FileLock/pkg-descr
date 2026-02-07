@@ -1,0 +1,7 @@
+Tie::DB_FileLock extends DB_File, providing a locking layer using
+flock().
+
+Unlike Tie::DB_Lock, Tie::DB_FileLock does not duplicate files to
+allow concurrent access for readers and writers.  Tie::DB_FileLock
+is therefore suitable for large dbms with relatively short locking
+periods.

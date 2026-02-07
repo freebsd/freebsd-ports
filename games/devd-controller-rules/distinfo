@@ -1,0 +1,5 @@
+TIMESTAMP = 1763888241
+SHA256 (devd-controller-rules/2025.11.17/usb_ids.h) = e4731c52c51bb7e5afe910f73b2726132a03d8905917e7e0578e3569eba7406e
+SIZE (devd-controller-rules/2025.11.17/usb_ids.h) = 11704
+SHA256 (devd-controller-rules/2025.11.17/controller_list.h) = cc87bb3c596ed9c962cfb1d9c5afa32afadd5190b3833cfc608de0a09ae3a757
+SIZE (devd-controller-rules/2025.11.17/controller_list.h) = 73014

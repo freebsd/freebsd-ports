@@ -1,0 +1,11 @@
+--- scripts/configure.orig	2025-07-30 06:00:02 UTC
++++ scripts/configure
+@@ -9187,7 +9187,7 @@ fi
+     esac
+   fi
+   if test "$with_gnu_ld" = "yes" ; then
+-    LDDL_FLAGS="${LDDL_FLAGS} -Wl,--version-script=\${MAGICDIR}/magic/symbol.map"
++    #LDDL_FLAGS="${LDDL_FLAGS} -Wl,--version-script=\${MAGICDIR}/magic/symbol.map"
+   fi
+ 
+ 

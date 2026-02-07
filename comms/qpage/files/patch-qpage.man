@@ -1,0 +1,11 @@
+--- qpage.man.orig	1999-05-08 22:07:31 UTC
++++ qpage.man
+@@ -867,7 +867,7 @@ if more than one paging service is used 
+ must be able to detect when it's safe to send dial commands to the modem.
+ .LP
+ .SH FILES
+-/etc/qpage.cf
++/usr/local/etc/qpage.conf
+ .SH SEE ALSO
+ .B RFC-1861
+ .SH KNOWN BUGS

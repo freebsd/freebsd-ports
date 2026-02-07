@@ -1,0 +1,5 @@
+include/ini_file_manager/config.adb
+include/ini_file_manager/config.ads
+lib/gnat/ini_file_manager.gpr
+lib/ini_file_manager/config.ali
+lib/ini_file_manager/libinifiles.a

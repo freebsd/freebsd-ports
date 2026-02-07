@@ -1,0 +1,9 @@
+
+Modlogan is for all those who want a log-analyzer that is easy
+to extend and very flexible. Just write a new output plugin and
+create your very special report-design. You don't have to
+reinvent the whole wheel to change the colour of the tire.
+Imagine a SQL-output-plugin that writes the calculated data
+into your database. Or a Memo generator that posts the
+monthly stats to your department mailing list for further
+investigation.

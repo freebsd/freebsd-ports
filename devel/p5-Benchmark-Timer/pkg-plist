@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Benchmark/Timer.pm
+%%SITE_PERL%%/Benchmark/delta.pl
+%%PERL5_MAN3%%/Benchmark::Timer.3.gz
+%%PERL5_MAN3%%/Benchmark::delta.3.gz

@@ -1,0 +1,7 @@
+bin/showimage
+include/SDL/SDL_image.h
+lib/libSDL_image-1.2.so.0
+lib/libSDL_image-1.2.so.0.8.4
+lib/libSDL_image.a
+lib/libSDL_image.so
+libdata/pkgconfig/SDL_image.pc

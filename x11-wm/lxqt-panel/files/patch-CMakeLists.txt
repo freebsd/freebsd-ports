@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2025-06-22 20:12:06 UTC
++++ CMakeLists.txt
+@@ -65,6 +65,9 @@ add_definitions(
+     -DPLUGIN_DIR=\"${PLUGIN_DIR}\"
+ )
+ 
++set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD_REQUIRED ON)
++
+ message(STATUS "CMAKE Module linker flags: ${CMAKE_MODULE_LINKER_FLAGS}")
+ message(STATUS "Panel plugins location: ${PLUGIN_DIR}")
+ 

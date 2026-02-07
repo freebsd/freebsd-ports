@@ -1,0 +1,211 @@
+--- jogl/make/build.xml.orig	2008-04-29 17:18:50.000000000 +1000
++++ jogl/make/build.xml	2008-06-09 10:49:28.000000000 +1000
+@@ -82,8 +82,8 @@
+     </target>
+ 
+    <!-- On jpackage.org-compatible systems, antlr.jar can be found in /usr/share/java -->
+-   <available property="antlr.jar" file="/usr/share/java/antlr.jar"
+-              value="/usr/share/java/antlr.jar"/>
++   <available property="antlr.jar" file="%%JAVALIBDIR%%/antlr.jar"
++              value="%%JAVALIBDIR%%/antlr.jar"/>
+ 
+     <!-- ================================================================== -->
+     <!-- 
+@@ -213,6 +213,9 @@
+         <property name="java.lib.dir.linux" value="${java.home.dir}/jre/lib/i386" />
+         <property name="java.lib.dir.linux.amd64" value="${java.home.dir}/jre/lib/amd64" />
+         <property name="java.lib.dir.linux.ia64" value="${java.home.dir}/jre/lib/ia64" />
++        <property name="java.lib.dir.freebsd.x86" value="${java.home.dir}/jre/lib/i386" />
++        <property name="java.lib.dir.freebsd.amd64" value="${java.home.dir}/jre/lib/amd64" />
++        <property name="java.lib.dir.freebsd.ia64" value="${java.home.dir}/jre/lib/ia64" />
+         <property name="java.lib.dir.hpux" value="${java.home.dir}/jre/lib/PA_RISC2.0" />
+ 	<condition property="cpu" value="sparc">
+             <os name="SunOS" arch="sparc" />
+@@ -437,15 +440,26 @@
+       <property name="linker.cfg.id.core"                   value="linker.cfg.macosx.jogl" /> 
+     </target>
+     
+-    <target name="declare.freebsd" depends="declare.x11" if="isFreeBSD">
+-      <echo message="FreeBSD" />
+-      <property name="java.includes.dir.platform"           value="${java.includes.dir.freebsd}" />
+-      <property name="java.lib.dir.platform"                value="${java.lib.dir.linux}" />
++    <target name="declare.freebsd.x86" depends="declare.x11" if="isFreeBSDx86">
++      <echo message="FreeBSD.x86" />
++      <property name="java.includes.dir.platform"           value="${java.includes.dir}/freebsd" />
++      <property name="java.lib.dir.platform"                value="${java.lib.dir.freebsd.x86}" />
+ 
+-      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.jogl" />
+-      <property name="linker.cfg.id.core"                   value="linker.cfg.linux.jogl" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.jogl" />
++      <property name="linker.cfg.id.core"                   value="linker.cfg.freebsd.jogl" />
+     </target>
+ 
++    <target name="declare.freebsd.amd64" depends="declare.x11" if="isFreeBSDamd64">
++      <echo message="FreeBSD.amd64*" />
++      <property name="java.includes.dir.platform"           value="${java.includes.dir}/freebsd" />
++      <property name="java.lib.dir.platform"                value="${java.lib.dir.freebsd.amd64}" />
++
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.amd64" /> 
++      <property name="linker.cfg.id.core"                   value="linker.cfg.freebsd.amd64.jogl" /> 
++    </target>
++
++    <target name="declare.freebsd" depends="declare.freebsd.x86,declare.freebsd.amd64,declare.x11" if="isFreeBSD" />
++    
+     <target name="declare.hpux" depends="declare.x11" if="isHPUX">
+       <echo message="HP-UX" />
+       <property name="java.includes.dir.platform"           value="${java.includes.dir.hpux}" />
+@@ -727,7 +741,7 @@
+       <compiler id="compiler.cfg.freebsd.jogl" extends="compiler.cfg.freebsd">
+         <!-- Need to force X11R6 headers on to include path after stub_includes -->
+         <includepath path="stub_includes/opengl"/>
+-        <includepath path="/usr/X11R6/include" />
++        <includepath path="%%LOCALBASE%%/include" />
+       </compiler>
+ 
+       <!-- linker configuration -->
+@@ -744,6 +758,18 @@
+         <syslibset dir="${x11.cg.lib}" libs="Cg, CgGL" if="c.compiler.use-cglib"/>
+       </linker>
+ 
++      <linker id="linker.cfg.freebsd.jogl" extends="linker.cfg.freebsd">
++        <syslibset dir="%%LOCALBASE%%/lib" libs="GL, X11"/>
++        <syslibset dir="%%LOCALBASE%%/lib" libs="Xxf86vm" />
++        <syslibset dir="${x11.cg.lib}" libs="Cg, CgGL" if="c.compiler.use-cglib"/>
++      </linker>
++
++      <linker id="linker.cfg.freebsd.amd64.jogl" name="gcc">
++        <syslibset dir="%%LOCALBASE%%/lib" libs="GL, X11"/>
++        <syslibset dir="%%LOCALBASE%%/lib" libs="Xxf86vm" />
++        <syslibset dir="${x11.cg.lib}" libs="Cg, CgGL" if="c.compiler.use-cglib"/>
++      </linker>
++
+       <linker id="linker.cfg.solaris.jogl" extends="linker.cfg.solaris">
+         <syslibset libs="GL, X11"/>
+         <syslibset dir="${x11.cg.lib}" libs="Cg, CgGL" if="c.compiler.use-cglib"/>
+@@ -855,6 +881,7 @@
+           <includepath path="stub_includes/cg" if="c.compiler.use-cglib"/>        
+           <!-- This must come last to not override real include paths -->
+           <!-- includepath path="stub_includes/macosx" if="isOSX" / -->
++          <sysincludepath path="%%LOCALBASE%%/include" if="isFreeBSD"/>
+         </compiler>
+ 
+         <linker extends="${linker.cfg.id}">
+@@ -1210,6 +1237,60 @@
+         </fail>
+     </target>
+ 
++    <target name="dist.check.freebsd-x86" if="jogl.dist.dir">
++        <condition property="freebsd-x86.complete">
++	  <and>
++	    <available file="${jogl.dist.dir}/jogl-freebsd/jogl.jar" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libjogl.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libjogl_awt.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libjogl_cg.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libgluegen-rt.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/gluegen-rt-natives-freebsd-i586.jar" />
++	    <!-- Assume we also copy over these generated files in the FreeBSD build -->
++	    <!-- in order to satisfy requests from end users that we provide these -->
++	    <!-- files for easier source browsing in IDEs                          -->
++	    <available file="${jogl.dist.dir}/jogl-freebsd/DebugGL.java" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/TraceGL.java" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/GL.java" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/GLU.java" />
++	  </and>
++	</condition>
++	<fail unless="freebsd-x86.complete">
++    ********************************************************************
++    ** Files are missing from the FreeBSD/i386 build. This will cause **	
++    ** the distribution to be incomplete. Please check the status of  **
++    ** the FreeBSD/i386 build and try again.                          **
++    ********************************************************************
++        </fail>
++    </target>
++
++    <target name="dist.check.freebsd-amd64" if="jogl.dist.dir">
++        <condition property="freebsd-amd64.complete">
++	  <and>
++	    <available file="${jogl.dist.dir}/jogl-freebsd/jogl.jar" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libjogl.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libjogl_awt.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libjogl_cg.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/libgluegen-rt.so" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/gluegen-rt-natives-freebsd-amd64.jar" />
++	    <!-- Assume we also copy over these generated files in the FreeBSD build -->
++	    <!-- in order to satisfy requests from end users that we provide these -->
++	    <!-- files for easier source browsing in IDEs                          -->
++	    <available file="${jogl.dist.dir}/jogl-freebsd/DebugGL.java" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/TraceGL.java" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/GL.java" />
++	    <available file="${jogl.dist.dir}/jogl-freebsd/GLU.java" />
++	  </and>
++	</condition>
++	<fail unless="freebsd-amd64.complete">
++    ********************************************************************
++    ** Files are missing from the FreeBSD/amd64 build. This will cause **	
++    ** the distribution to be incomplete. Please check the status of  **
++    ** the FreeBSD/amd64 build and try again.                          **
++    ********************************************************************
++        </fail>
++    </target>
++
+     <target name="dist.check.macosx" if="jogl.dist.dir">
+         <condition property="macosx.complete">
+ 	  <and>
+@@ -1373,7 +1454,7 @@
+         <property name="tmp.version" value="${base_version}-pre-${timestamp}" />
+     </target>
+ 
+-    <target name="dist" depends="dist.dir.check,dist.check.windows,dist.check.windows-amd64,dist.check.linux,dist.check.linux-amd64,dist.check.macosx,dist.check.macosxfat,dist.check.solsparc,dist.check.solsparcv9,dist.check.solx86,dist.check.solamd64,setup-version-RI,setup-version-non-RI">
++    <target name="dist" depends="dist.dir.check,dist.check.windows,dist.check.windows-amd64,dist.check.linux,dist.check.linux-amd64,dist.check.freebsd-x86,dist.check.freebsd-amd64,dist.check.macosx,dist.check.macosxfat,dist.check.solsparc,dist.check.solsparcv9,dist.check.solx86,dist.check.solamd64,setup-version-RI,setup-version-non-RI">
+         <delete>
+             <fileset dir="${jogl.dist.dir}" includes="*.jar" />
+         </delete>
+@@ -1391,7 +1472,7 @@
+         <!-- Build jar files suitable for Java Web Start -->
+         <jar manifest="${jogl.dist.dir}/META-INF/MANIFEST.MF" destfile="${jogl.dist.dir}/jogl.jar" duplicate="preserve">
+ 	    <zipgroupfileset dir="${jogl.dist.dir}"
+-	                     includes="jogl-win/jogl.jar, jogl-linux/jogl.jar, jogl-macosx/jogl.jar" />
++	                     includes="jogl-win/jogl.jar, jogl-linux/jogl.jar, jogl-freebsd/jogl.jar, jogl-macosx/jogl.jar" />
+         </jar>
+         <!-- Apply Pack200 repacking to allow later compression by that mechanism -->
+         <apply executable="pack200" verbose="true" >
+@@ -1410,6 +1491,12 @@
+         <jar destfile="${jogl.dist.dir}/jogl-natives-linux-amd64.jar"
+              basedir="${jogl.dist.dir}/jogl-linux/64"
+              includes="libjogl.so,libjogl_awt.so,libjogl_cg.so" />
++        <jar destfile="${jogl.dist.dir}/jogl-natives-freebsd-i586.jar"
++             basedir="${jogl.dist.dir}/jogl-freebsd"
++             includes="libjogl.so,libjogl_awt.so,libjogl_cg.so" />
++        <jar destfile="${jogl.dist.dir}/jogl-natives-freebsd-amd64.jar"
++             basedir="${jogl.dist.dir}/jogl-freebsd"
++             includes="libjogl.so,libjogl_awt.so,libjogl_cg.so" />
+         <jar destfile="${jogl.dist.dir}/jogl-natives-macosx-ppc.jar"
+              basedir="${jogl.dist.dir}/jogl-macosx/ppc"
+              includes="libjogl.jnilib,libjogl_awt.jnilib,libjogl_cg.jnilib" />
+@@ -1444,6 +1531,9 @@
+             <fileset dir="${jogl.dist.dir}/jogl-linux/64" includes="gluegen-natives-*.jar" />
+         </copy>
+         <copy todir="${jogl.dist.dir}">
++            <fileset dir="${jogl.dist.dir}/jogl-freebsd" includes="gluegen-natives-*.jar" />
++        </copy>
++        <copy todir="${jogl.dist.dir}">
+             <fileset dir="${jogl.dist.dir}/jogl-macosx/ppc" includes="gluegen-natives-*.jar" />
+         </copy>
+         <copy todir="${jogl.dist.dir}">
+@@ -1492,6 +1582,16 @@
+             <param name="zip.src.so.dir" value="${jogl.dist.dir}/jogl-linux/64" />
+         </antcall>
+         <antcall target="dist.build.zip" inheritAll="true">
++            <param name="zip.os.arch"    value="freebsd-i586" />
++            <param name="zip.so.suffix"  value=".so" />
++            <param name="zip.src.so.dir" value="${jogl.dist.dir}/jogl-freebsd" />
++        </antcall>
++        <antcall target="dist.build.zip" inheritAll="true">
++            <param name="zip.os.arch"    value="freebsd-amd64" />
++            <param name="zip.so.suffix"  value=".so" />
++            <param name="zip.src.so.dir" value="${jogl.dist.dir}/jogl-freebsd" />
++        </antcall>
++        <antcall target="dist.build.zip" inheritAll="true">
+             <param name="zip.os.arch"    value="macosx-ppc" />
+             <param name="zip.so.suffix"  value=".jnilib" />
+             <param name="zip.src.so.dir" value="${jogl.dist.dir}/jogl-macosx/ppc" />

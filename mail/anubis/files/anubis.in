@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: anubis
+# REQUIRE: %%REQUIRE%%
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable anubis:
+#
+# anubis_enable (bool):	Set to "YES" to enable anubis.
+#			Default is "NO".
+# anubis_conf (file):	Set location of anubisrc.
+#			Default is "%%PREFIX%%/etc/anubisrc"
+#
+
+. /etc/rc.subr
+
+name="anubis"
+rcvar=anubis_enable
+
+load_rc_config ${name}
+
+: ${anubis_enable="NO"}
+: ${anubis_conf="%%PREFIX%%/etc/anubisrc"}
+
+required_files="${anubis_conf}"
+command="%%PREFIX%%/sbin/${name}"
+run_rc_command "$1"

@@ -1,0 +1,16 @@
+--- freebsd/Makefile.orig
++++ freebsd/Makefile
+@@ -4,11 +4,8 @@
+ 
+ NO_PIC=		yes
+ NO_OBJ=		yes
+-NO_PROFILE=	yes
+-
+-NOPIC=		yes
+-NOOBJ=		yes
+-NOPROFILE=	yes
++MK_PROFILE=	no
++MK_ASSERT_DEBUG=no
+ 
+ LIBDIR=		${ORACLE_HOME}/lib
+ 

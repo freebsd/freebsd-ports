@@ -1,0 +1,5 @@
+include/nspsl.h
+lib/libnspsl.so
+lib/libnspsl.so.0
+lib/libnspsl.so.%%VERSION%%
+libdata/pkgconfig/libnspsl.pc

@@ -1,0 +1,100 @@
+PORTNAME=	coloursum
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.0
+PORTREVISION=	22
+CATEGORIES=	misc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Colourise your checksum output
+WWW=		https://github.com/ticky/coloursum
+
+LICENSE=	MIT
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	ticky
+
+CARGO_CRATES=	ansi_term-0.12.1 \
+		anstream-0.3.2 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
+		autocfg-0.1.2 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bitflags-2.3.3 \
+		cc-1.0.81 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		clap-4.3.19 \
+		clap_builder-4.3.19 \
+		clap_derive-4.3.12 \
+		clap_lex-0.5.0 \
+		cloudabi-0.0.3 \
+		colorchoice-1.0.0 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
+		doc-comment-0.3.3 \
+		ecoji-1.0.0 \
+		either-1.5.1 \
+		errno-0.3.2 \
+		errno-dragonfly-0.1.2 \
+		fuchsia-cprng-0.1.1 \
+		heck-0.4.0 \
+		hermit-abi-0.3.2 \
+		indoc-2.0.3 \
+		is-terminal-0.4.9 \
+		itertools-0.10.5 \
+		libc-0.2.147 \
+		linux-raw-sys-0.4.5 \
+		memoffset-0.9.0 \
+		ntapi-0.3.7 \
+		num_cpus-1.16.0 \
+		once_cell-1.18.0 \
+		phf-0.7.24 \
+		phf_codegen-0.7.24 \
+		phf_generator-0.7.24 \
+		phf_shared-0.7.24 \
+		proc-macro2-1.0.66 \
+		quote-1.0.32 \
+		rand-0.6.5 \
+		rand_chacha-0.1.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.3 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
+		rdrand-0.4.0 \
+		rustix-0.38.6 \
+		scopeguard-1.2.0 \
+		siphasher-0.2.3 \
+		strsim-0.10.0 \
+		syn-2.0.28 \
+		sysinfo-0.13.4 \
+		unicode-ident-1.0.11 \
+		utf8parse-0.2.1 \
+		which-3.1.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.1 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.48.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

@@ -1,0 +1,6 @@
+bin/smbftpd-user
+%%ETCDIR%%/smbftpd.conf.sample
+%%ETCDIR%%/smbftpd_mysql.conf.sample
+%%ETCDIR%%/smbftpd_pgsql.conf.sample
+%%ETCDIR%%/smbftpd_share.conf.sample
+sbin/smbftpd

@@ -1,0 +1,4 @@
+This port installs the module AMD of SuiteSparse.
+
+AMD is a set of routines for pre-ordering sparse matrices prior to Cholesky
+or LU factorization, using the approximate minimum degree ordering algorithm.

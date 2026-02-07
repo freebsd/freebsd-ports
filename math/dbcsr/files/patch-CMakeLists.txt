@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2021-05-24 06:39:54 UTC
++++ CMakeLists.txt
+@@ -385,6 +385,6 @@ if (WITH_EXAMPLES)
+   add_subdirectory(examples)
+ endif ()
+ 
+-add_subdirectory(docs)
++#add_subdirectory(docs)
+ 
+ include(CustomTargets)

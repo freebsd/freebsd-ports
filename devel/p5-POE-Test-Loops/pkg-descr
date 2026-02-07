@@ -1,0 +1,2 @@
+POE::Test::Loops contains one function, generate(), which will
+generate all the loop tests for one or more POE::Loop subclasses.

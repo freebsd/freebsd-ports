@@ -1,0 +1,5 @@
+bin/gxkb
+share/applications/gxkb.desktop
+%%DATADIR%%/logo.png
+share/man/man1/gxkb.1.gz
+share/pixmaps/gxkb.xpm

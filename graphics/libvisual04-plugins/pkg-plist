@@ -1,0 +1,16 @@
+%%DATADIR%%/actor/actor_madspin/star1.bmp
+%%DATADIR%%/actor/actor_madspin/star2.bmp
+%%PLUGINS_BASE_DIR%%/actor/actor_lv_gltest.so
+%%PLUGINS_BASE_DIR%%/actor/actor_nastyfft.so
+%%PLUGINS_BASE_DIR%%/actor/actor_madspin.so
+%%PLUGINS_BASE_DIR%%/actor/actor_flower.so
+%%PLUGINS_BASE_DIR%%/actor/actor_infinite.so
+%%PLUGINS_BASE_DIR%%/actor/actor_corona.so
+%%PLUGINS_BASE_DIR%%/actor/actor_lv_scope.so
+%%PLUGINS_BASE_DIR%%/actor/actor_oinksie.so
+%%PLUGINS_BASE_DIR%%/actor/actor_jakdaw.so
+%%PLUGINS_BASE_DIR%%/actor/actor_bumpscope.so
+%%PLUGINS_BASE_DIR%%/morph/morph_alphablend.so
+%%PLUGINS_BASE_DIR%%/morph/morph_flash.so
+%%PLUGINS_BASE_DIR%%/morph/morph_tentacle.so
+%%PLUGINS_BASE_DIR%%/morph/morph_slide.so

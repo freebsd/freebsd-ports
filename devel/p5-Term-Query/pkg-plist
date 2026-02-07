@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Term::Query.3.gz
+%%SITE_PERL%%/Term/Query.pm
+%%SITE_PERL%%/Term/Query_Test.pl
+%%SITE_PERL%%/Term/Tester.pm

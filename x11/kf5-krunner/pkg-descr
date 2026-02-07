@@ -1,0 +1,3 @@
+The Plasma workspace provides an application called KRunner which, among other
+things, allows one to type into a text area which causes various actions and
+information that match the text appear as the text is being typed.

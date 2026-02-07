@@ -1,0 +1,3 @@
+%%SITE_PERL%%/MLDBM/Sync.pm
+%%SITE_PERL%%/MLDBM/Sync/SDBM_File.pm
+%%PERL5_MAN3%%/MLDBM::Sync.3.gz

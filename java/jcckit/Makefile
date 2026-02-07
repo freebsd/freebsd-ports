@@ -1,0 +1,32 @@
+PORTNAME=	jcckit
+PORTVERSION=	1.1
+PORTREVISION=	2
+CATEGORIES=	java graphics
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JCCKit%20${PORTVERSION}
+DISTNAME=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Java Chart Construction Kit
+WWW=		https://jcckit.sourceforge.net/
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		java zip
+
+WRKSRC=		${WRKDIR}/JCCKit
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+
+do-install-DOCS-on:
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "README.html docs" ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

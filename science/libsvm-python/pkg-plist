@@ -1,0 +1,2 @@
+%%PYTHON_SITELIBDIR%%/svm.py
+%%PYTHON_SITELIBDIR%%/svmutil.py

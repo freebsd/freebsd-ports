@@ -1,0 +1,11 @@
+--- scripts/clientchk.orig	Tue May 27 09:03:42 2003
++++ scripts/clientchk	Wed Jun 11 23:42:17 2003
+@@ -31,7 +31,7 @@
+ # variables:
+ 
+ # client: This is the path to the client program.
+-client="/usr/sbin/upclient"
++client="%%PREFIX%%/sbin/upclient"
+ 
+ # clientpid: This is the path to the client PID file.
+ clientpid="/var/run/upclient.pid"

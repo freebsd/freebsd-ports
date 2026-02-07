@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2017-10-08 21:32:39 UTC
++++ Makefile.am
+@@ -1,4 +1,4 @@
+-pkgdata_DATA = README COPYING ChangeLog NEWS AUTHORS
++#pkgdata_DATA = README COPYING ChangeLog NEWS AUTHORS
+ SUBDIRS = adept include benchmark test
+ # The test/ directory does not use automake so we need to specify the
+ # files that will be included in the distribution

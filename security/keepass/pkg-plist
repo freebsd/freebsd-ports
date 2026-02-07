@@ -1,0 +1,13 @@
+bin/keepass.sh
+share/icons/hicolor/16x16/apps/keepass.png
+share/icons/hicolor/256x256/apps/keepass.png
+share/icons/hicolor/32x32/apps/keepass.png
+share/icons/hicolor/48x48/apps/keepass.png
+%%DATADIR%%/KeePass.config.xml
+%%DATADIR%%/KeePass.exe
+%%DATADIR%%/KeePass.exe.config
+%%DATADIR%%/XSL/KDBX_Common.xsl
+%%DATADIR%%/XSL/KDBX_DetailsFull_HTML.xsl
+%%DATADIR%%/XSL/KDBX_DetailsLight_HTML.xsl
+%%DATADIR%%/XSL/KDBX_PasswordsOnly_TXT.xsl
+%%DATADIR%%/XSL/KDBX_Tabular_HTML.xsl

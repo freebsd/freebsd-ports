@@ -1,0 +1,16 @@
+GNUstep/System/Library/Frameworks/CameraKit.framework/CameraKit
+GNUstep/System/Library/Frameworks/CameraKit.framework/Headers
+GNUstep/System/Library/Frameworks/CameraKit.framework/Resources
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/CameraKit
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/Headers/GSCamera.h
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/Headers/GSGPhoto2.h
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/libCameraKit.so
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/libCameraKit.so.%%MAJORVERSION%%
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/%%MAJORVERSION%%/libCameraKit.so.%%VERSION%%
+GNUstep/System/Library/Frameworks/CameraKit.framework/Versions/Current
+GNUstep/System/Library/Frameworks/CameraKit.framework/libCameraKit.so
+GNUstep/System/Library/Headers/CameraKit
+GNUstep/System/Library/Libraries/libCameraKit.so
+GNUstep/System/Library/Libraries/libCameraKit.so.%%MAJORVERSION%%
+GNUstep/System/Library/Libraries/libCameraKit.so.%%VERSION%%

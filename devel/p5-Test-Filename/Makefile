@@ -1,0 +1,20 @@
+PORTNAME=	Test-Filename
+PORTVERSION=	0.03
+PORTREVISION=	1
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl extension for portable filename comparison
+WWW=		https://metacpan.org/release/Test-Filename
+
+RUN_DEPENDS=	\
+	p5-Path-Tiny>0:devel/p5-Path-Tiny
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+NO_ARCH=	yes
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

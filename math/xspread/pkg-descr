@@ -1,0 +1,3 @@
+The program xspread is a public domain spreadsheet which runs under
+X Window system or ascii terminals. Xspread uses the X Window system
+if available or curses and term[cap/info] for ascii displays.

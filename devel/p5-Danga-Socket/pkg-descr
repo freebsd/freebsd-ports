@@ -1,0 +1,8 @@
+This is an abstract base class for objects backed by a socket which
+provides the basic framework for event-driven asynchronous IO,
+designed to be fast.  Danga::Socket is both a base class for objects,
+and an event loop.
+
+Callers subclass Danga::Socket.  Danga::Socket's constructor registers
+itself with the Danga::Socket event loop, and invokes callbacks on the
+object for readability, writability, errors, and other conditions.

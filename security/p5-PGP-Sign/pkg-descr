@@ -1,0 +1,5 @@
+PGP::Sign is a special purpose module designed to create and check detached
+signatures for data. It's mainly intended to be used for things like
+reimplementing PGPMoose, signcontrol and pgpverify.
+
+It can use Gnu Privacy Guard.

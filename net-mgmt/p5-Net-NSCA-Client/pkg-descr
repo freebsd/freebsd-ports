@@ -1,0 +1,2 @@
+This module allows applications to send passive checks to Nagios both locally
+and remotely.

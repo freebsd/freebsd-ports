@@ -1,0 +1,22 @@
+--- config.linux-with-shared-libraries.orig	2025-04-24 20:16:36 UTC
++++ config.linux-with-shared-libraries
+@@ -24,7 +24,7 @@ libgroupsock_LIB_SUFFIX=so.$(shell expr $(libgroupsock
+ libgroupsock_LIB_SUFFIX=so.$(shell expr $(libgroupsock_VERSION_CURRENT) - $(libgroupsock_VERSION_AGE)).$(libgroupsock_VERSION_AGE).$(libgroupsock_VERSION_REVISION)
+ #####
+ 
+-COMPILE_OPTS =		$(INCLUDES) -I/usr/local/include -I. -O2 -DSOCKLEN_T=socklen_t -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64 -fPIC
++COMPILE_OPTS =		$(INCLUDES) -I. -DSOCKLEN_T=socklen_t -DHAVE_SOCKADDR_LEN=1 -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64 -fPIC
+ C =			c
+ C_COMPILER =		$(CC)
+ C_FLAGS =		$(COMPILE_OPTS) $(CPPFLAGS) $(CFLAGS)
+@@ -39,8 +39,8 @@ LIBRARY_LINK_OPTS =	-shared -Wl,-soname,$(NAME).$(SHOR
+ SHORT_LIB_SUFFIX =	so.$(shell expr $($(NAME)_VERSION_CURRENT) - $($(NAME)_VERSION_AGE))
+ LIB_SUFFIX =	 	$(SHORT_LIB_SUFFIX).$($(NAME)_VERSION_AGE).$($(NAME)_VERSION_REVISION)
+ LIBRARY_LINK_OPTS =	-shared -Wl,-soname,$(NAME).$(SHORT_LIB_SUFFIX) $(LDFLAGS)
+-LIBS_FOR_CONSOLE_APPLICATION = -lssl -lcrypto
++LIBS_FOR_CONSOLE_APPLICATION = -L$(OPENSSLLIB) -lssl -lcrypto
+ LIBS_FOR_GUI_APPLICATION =
+-LIBS_FOR_LIVEMEDIA_LIB = -lssl -lcrypto
++LIBS_FOR_LIVEMEDIA_LIB = -L$(OPENSSLLIB) -lssl -lcrypto
+ EXE =
+ INSTALL2 =		install_shared_libraries

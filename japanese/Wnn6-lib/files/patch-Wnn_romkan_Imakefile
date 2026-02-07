@@ -1,0 +1,12 @@
+diff -ur src.orig/contrib/im/Xsi/Wnn/romkan/Imakefile src/contrib/im/Xsi/Wnn/romkan/Imakefile
+--- src.orig/contrib/im/Xsi/Wnn/romkan/Imakefile	Wed Oct 28 13:36:32 1998
++++ Wnn/romkan/Imakefile	Fri Oct 30 03:25:47 1998
+@@ -4,7 +4,7 @@
+ 
+ #ifdef NEED_DEFINE_LIB
+ #define DoNormalLib YES
+-#define DoSharedLib NO
++#define DoSharedLib YES
+ #define DoDebugLib NO
+ #define DoProfileLib NO
+ #endif

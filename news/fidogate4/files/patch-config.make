@@ -1,0 +1,68 @@
+--- config.make.orig	2003-04-15 18:45:20 UTC
++++ config.make
+@@ -57,13 +57,13 @@ DEFAULT_V_CONFIGDIR	= /etc/fidogate
+ 
+ # variable parameters, can be changed at run-time, DO NOT DELETE ANYTHING!!!
+ DEFAULT_V_CONFIGDIR	= /etc/fidogate
+-DEFAULT_V_LIBDIR	= /usr/lib/fidogate
+-DEFAULT_V_BINDIR	= $(DEFAULT_V_LIBDIR)/bin
+-DEFAULT_V_LOGDIR	= /var/log/fidogate
++DEFAULT_V_LIBDIR	= ${PREFIX}/libexec/fidogate
++DEFAULT_V_BINDIR	= ${PREFIX}/libexec/fidogate
++DEFAULT_V_LOGDIR	= /var/spool/fidogate/log
+ DEFAULT_V_VARDIR	= /var/lib/fidogate
+-DEFAULT_V_LOCKDIR	= /var/lock/fidogate
++DEFAULT_V_LOCKDIR	= /var/spool/fidogate/lock
+ DEFAULT_V_SPOOLDIR	= /var/spool/fidogate
+-DEFAULT_V_BTBASEDIR	= /var/spool/bt
++DEFAULT_V_BTBASEDIR	= /var/spool/fidogate/bt
+ DEFAULT_V_INBOUND	= $(DEFAULT_V_BTBASEDIR)/in
+ DEFAULT_V_PINBOUND	= $(DEFAULT_V_BTBASEDIR)/pin
+ DEFAULT_V_UUINBOUND	= $(DEFAULT_V_BTBASEDIR)/uuin
+@@ -87,7 +87,7 @@ DEFAULT_F_NEWSVARDIR	= /var/lib/news
+ DEFAULT_F_NEWSVARDIR	= /var/lib/news
+ # INN 1.7
+ #DEFAULT_F_NEWSLIBDIR	= /usr/lib/news
+-#DEFAULT_F_NEWSSPOOLDIR	= /var/spool/news
++#DEFAULT_F_NEWSSPOOLDIR	= /var/spool/news/articles
+ # INN 2.2
+ #DEFAULT_F_NEWSLIBDIR	= /usr/lib
+ #DEFAULT_F_NEWSSPOOLDIR	= /var/spool/news/articles
+@@ -149,7 +149,7 @@ DEFAULT_A_UUINBOUND	= %U
+ 
+ 
+ # The perl interpreter used by subst.pl
+-PERL			= /usr/bin/perl
++PERL			= ${LOCALBASE}/bin/perl
+ 
+ # Directory with sendmail m4 configuration files
+ # RedHat 6.x
+@@ -158,9 +158,9 @@ SENDMAIL_CF_DIR		= /usr/share/sendmail-cf
+ SENDMAIL_CF_DIR		= /usr/share/sendmail-cf
+ 
+ # Directories for installing documentation, not used by subst.pl
+-INFODIR			= /usr/info
+-HTMLDIR			= /html/fidogate
+-HTMLLOGDIR		= /html/log
++INFODIR			= ${PREFIX}/share/doc/fidogate/info
++HTMLDIR			= ${PREFIX}/share/doc/fidogate/html
++HTMLLOGDIR		= ${PREFIX}/share/doc/fidogate/html
+ 
+ # RedHat RPM related dirs
+ RPMBASEDIR	= /usr/src/redhat
+@@ -224,13 +224,13 @@ INCLUDE		= -I$(TOPDIR) -I$(TOPDIR)/src/include
+ # OS2			   
+ # CFLAGS	= $(DEBUG) $(INCLUDE) -Wall -DOS2
+ # Linux, SunOS
+-CFLAGS		= $(DEBUG) $(INCLUDE) -Wall
++CFLAGS		:= $(DEBUG) $(INCLUDE) -Wall $(CFLAGS)
+ 
+ # NEXTSTEP 3.3
+ # LFLAGS	= $(DEBUG) -L$(TOPDIR)/src/common -posix
+ # OS2
+ # LFLAGS	= -Zexe $(DEBUG) -L$(TOPDIR)/src/common
+-LFLAGS		= $(DEBUG) -L$(TOPDIR)/src/common
++LFLAGS		:= $(DEBUG) -L$(TOPDIR)/src/common $(LDFLAGS)
+ 
+ # ISC 3.x
+ # LIBS		= -lfidogate -linet -lPW -lcposix

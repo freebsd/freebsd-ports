@@ -1,0 +1,6 @@
+--- avocado/etc/avocado/sysinfo/profilers.orig	2025-06-01 04:14:54 UTC
++++ avocado/etc/avocado/sysinfo/profilers
+@@ -1,2 +1,2 @@ vmstat 1
+ vmstat 1
+-journalctl -f
++tail -f /var/log/messages

@@ -1,0 +1,230 @@
+.\" Copyright (c) 2008  Peter Pentchev
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.Dd June 12, 2008
+.Dt S5 1
+.Os
+.Sh NAME
+.Nm s5
+.Nd set up and update S5 presentations
+.Sh SYNOPSIS
+.Nm
+.Op Fl Nv
+.Op Fl T Ar template
+.Cm blank
+.Ar path
+.Nm
+.Op Fl Nv
+.Op Fl T Ar template
+.Cm cksum
+.Ar path
+.Nm
+.Op Fl Nv
+.Op Fl T Ar template
+.Cm mksum
+.Ar path
+.Nm
+.Op Fl Nv
+.Op Fl T Ar template
+.Cm update
+.Ar path
+.Pp
+.Nm
+.Fl h
+.Nm
+.Cm help
+.Sh DESCRIPTION
+The
+.Nm
+tool eases the creation of presentation slides using the
+.Dq Simple Standards-based Slide Show System .
+It may be used to create a working copy of a template directory or, later,
+to update the working copy after the template has changed over time.
+.Pp
+The
+.Nm
+tool supports the following command-line options:
+.Bl -tag -width indent
+.It Fl h
+Display a short help text and exit.
+.It Fl N
+No-operation mode; just display the commands without executing them.
+.It Fl T Ar template
+Specify the template directory instead of the default
+.Pa %%PREFIX%%/share/s5/s5-blank
+.It Fl v
+Verbose operation; display diagnostic information.
+.El
+.Pp
+The
+.Nm
+tool supports the following actions:
+.Bl -tag -width indent
+.It Cm blank Ar path
+Aliases:
+.Cm create ,
+.Cm new
+.Pp
+Copy the template directory into the directory specified by
+.Ar path ,
+creating it if necessary.
+.It Cm cksum Ar path
+Aliases:
+.Cm check ,
+.Cm verify
+.Pp
+Verify the checksums recorded for the S5 presentation files in
+the directory specified by
+.Ar path .
+The
+.Nm
+utility reports both files that have been modified (fail the checksum
+check) and files that no longer exist yet have checksums recorded.
+.It Cm help
+Alias:
+.Cm usage
+.Pp
+Display a short help message and exit.
+.It Cm mksum Ar path
+Record the template checksums into a file in a directory specified by
+.Ar path .
+Users should never really have to execute this by hand, since it is
+done internally as part of the
+.Cm blank
+and
+.Cm update
+command processing.
+.It Cm update Ar path
+Update the S5 presentation files in the directory specified by
+.Ar path
+with the new versions in the S5 template directory.
+.Pp
+Before updating, the
+.Nm
+utility verifies the checksums of the files in the
+.Pa path
+directory, and terminates if a mismatch is found.
+After that,
+.Nm
+checks for any files that exist in both the new template and in the
+.Ar path
+directory, but are not recorded in the checksum file (i.e. have been
+placed in
+.Ar path
+by hand after the last
+.Nm Cm blank
+or
+.Nm Cm update
+run) and terminates if any such files differ.
+.Pp
+If all these checks are successful, the
+.Nm
+utility copies the template files over those in
+.Ar path ,
+overwriting any existing files and retaining any files that do not
+exist in the template directory.
+.El
+.Sh FILES
+.\" FIXME: describe any configuration files when they show up
+The
+.Nm
+utility stores the checksums of blank S5 presentations into a file named
+.Pa s5-checksums.txt
+into the presentation directory.
+This is a simple text file with lines containing of a keyword and values.
+The keywords that the
+.Nm
+utility currently generates and parses are as follows:
+.Bl -tag -width indent
+.It Cm CKSUM_CMD Ar checksum-program
+The name of the checksum program to use; the default is
+.Xr cksum 1 .
+.It Cm CKSUM_ARGS Op Ar [argument...]
+The arguments (if any) passed to the checksum program as defined by the
+.Cm CKSUM_CMD
+line.
+The default is an empty string, no arguments passed.
+.It Cm FILE Ar filename
+The name of the file that the following
+.Cm CKSUM
+line refers to.
+.It Cm CKSUM Ar checksum-line-text
+The output of the checksum command as specified by
+.Cm CKSUM_CMD
+and
+.Cm CKSUM_ARGS
+conflated into a single line.
+.El
+.Sh EXAMPLES
+Start a brand new presentation:
+.Pp
+.Dl s5 blank ~/txt/openfest/2006/gnupg
+.Pp
+Verify if any of the S5 files in the presentation have been modified:
+.Pp
+.Dl s5 cksum gnupg/
+.Pp
+Do the same, but display verbose information about the lines read from
+the checksums file and the files verified:
+.Pp
+.Dl s5 -v cksum gnupg/
+.Pp
+Update the S5 presentation files after installing a new system-wide
+version of the S5 template:
+.Pp
+.Dl s5 update gnupg/
+.Pp
+Store the checksums of the S5 template files
+.Em ( not
+the real files in the presentation directory!) into the
+.Pa s5-checksums.txt
+file in the
+.Pa gnupg/
+directory; this is actually redundant, as it is done as part of the
+.Nm Cm blank
+invocation:
+.Pp
+.Dl s5 mksum gnupg/
+.Sh SEE ALSO
+The home page of the Simple Standards-based Slide Show System:
+.Li http://www.meyerweb.com/eric/tools/s5/
+.Sh HISTORY
+The Simple Standards-based Slide Show System was written by
+.An Eric Meyer
+based on earlier work by
+.An Tantek \[,C]elik .
+The
+.Nm
+tool and this manual page were written by
+.An Peter Pentchev
+in 2008.
+.Sh AUTHORS
+.An Eric Meyer
+.Aq eric@meyerweb.com
+.An Tantek \[,C]elik
+.Aq tantek@tantek.com
+.An Peter Pentchev
+.Aq roam@ringlet.net
+.Sh BUGS
+No configuration files are parsed yet.

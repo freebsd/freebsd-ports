@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2025-11-20 21:01:00 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "wheel"]
++requires = ["setuptools", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -39,7 +39,6 @@ dev = [
+ ]
+ 
+ [tool.setuptools]
+-package-dir = {"" = "src"}
+ include-package-data = true
+ 
+ [tool.setuptools.dynamic]

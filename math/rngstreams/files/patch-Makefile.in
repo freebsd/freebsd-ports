@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2009-01-08 07:48:17.000000000 -0500
++++ Makefile.in	2009-01-21 21:31:18.662039620 -0500
+@@ -183,7 +183,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = . src examples tests doc
++SUBDIRS = . src tests
+ EXTRA_DIST = \
+  autogen.sh
+ 

@@ -1,0 +1,1 @@
+Simple wrapper for perl5 with LD_PRELOAD=libthr.

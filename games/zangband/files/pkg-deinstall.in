@@ -1,0 +1,16 @@
+#!/bin/sh
+
+ANGBANDLIB=${PKG_PREFIX}/%%ANGBANDLIB%%
+
+case $2 in
+POST-DEINSTALL)
+	if [ -e $ANGBANDLIB ]; then
+		echo ""
+		echo "To completely remove the port, please remove the following"
+		echo "directories and the content manually:"
+		echo ""
+		echo "	$ANGBANDLIB"
+		echo ""
+	fi
+	;;
+esac

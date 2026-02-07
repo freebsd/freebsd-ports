@@ -1,0 +1,15 @@
+Data::Sah::Filter contains a standard set of filter rules for Data::Sah (to be
+used in prefilters and postfilters clauses). It is separated from the Data-Sah
+distribution and can be used independently.
+
+A filter rule is put in Data::Sah::Filter::$COMPILER::$CATEGORY:$DESCRIPTION
+module, for example: Data::Sah::Filter::perl::Str::trim for trimming whitespace
+at the beginning and end of string.
+
+Basically, a filter rule will provide an expression (in expr_filter) in the
+target language (e.g. Perl, JavaScript, or others) to convert one data to
+another. Multiple filter rules can be combined to form the final filtering code.
+This code can be used by Data::Sah when generating validator code from Sah
+schema, or can be used directly. Some projects which use filtering rules
+directly include: App::orgadb (which lets users specify filters from the
+command-line).

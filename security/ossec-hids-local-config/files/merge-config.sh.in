@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# This script is part of FreeBSD port - report any issues to the port MAINTAINER
+
+ossec_type="%%OSSEC_TYPE%%"
+ossec_home="%%OSSEC_HOME%%"
+ossec_rc="%%OSSEC_RC%%"
+
+ACTION=$1
+USER=$2
+IP=$3
+
+LOCAL=`dirname $0`;
+cd $LOCAL
+cd ../../tmp
+
+# Logging the call
+echo "`date` $0 $1 $2 $3 $4 $5" >> "${ossec_home}/logs/active-responses.log"
+
+case ${ACTION} in
+    add)
+        "${ossec_rc}" merge_config
+        exit 0
+        ;;
+    delete)
+        exit 0
+        ;;
+    *)
+        echo "$0: invalid action: ${ACTION}"
+        exit 1
+        ;;
+esac

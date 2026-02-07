@@ -1,0 +1,47 @@
+--- panel-plugin/meson.build.orig	2025-05-20 08:31:51 UTC
++++ panel-plugin/meson.build
+@@ -15,6 +15,25 @@ plugin_sources = [
+   xfce_revision_h,
+ ]
+ 
++dependencies = [
++  glib,
++  gtk,
++  libgtop,
++  libm,
++  libxfce4panel,
++  libxfce4ui,
++  libxfce4util,
++  upower_glib,
++  xfconf,
++]
++
++target_os = host_machine.system()
++if target_os == 'freebsd'
++  kvm_lib = cc.find_library('kvm', required : true)
++
++  dependencies += [ kvm_lib ]
++endif
++
+ plugin_install_subdir = 'xfce4' / 'panel' / 'plugins'
+ 
+ plugin_lib = shared_module(
+@@ -27,17 +46,7 @@ plugin_lib = shared_module(
+   include_directories: [
+     include_directories('..'),
+   ],
+-  dependencies: [
+-    glib,
+-    gtk,
+-    libgtop,
+-    libm,
+-    libxfce4panel,
+-    libxfce4ui,
+-    libxfce4util,
+-    upower_glib,
+-    xfconf,
+-  ],
++  dependencies: dependencies,
+   install: true,
+   install_dir: get_option('prefix') / get_option('libdir') / plugin_install_subdir,
+ )

@@ -1,0 +1,20 @@
+--- src/sgDiv.c.in.orig	2008-07-14 16:02:43 UTC
++++ src/sgDiv.c.in
+@@ -745,7 +745,7 @@ char *sgParseRedirect(redirect, req, acl, aclpass)
+       p++;
+       break;
+     case 'u': /* Requested URL */
+-      strcat(buf, req->orig);
++      strncat(buf, req->orig, 2048);
+       p++;
+       break;
+     default:
+@@ -782,7 +782,7 @@ void sgEmergency ()
+   }
+   sgLogError("Going into emergency mode");
+   while(fgets(buf, MAX_BUF, stdin) != NULL){
+-    puts("");
++    puts("ERR");
+     fflush(stdout);
+   }
+   sgLogError("ending emergency mode, stdin empty");

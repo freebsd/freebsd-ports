@@ -1,0 +1,3 @@
+fwanalog is a shell script that parses and summarizes firewall
+logfiles. It uses the excellent log analysis program Analog to create
+its reports.

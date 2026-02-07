@@ -1,0 +1,4 @@
+Excerpted from the README file:
+
+Term::Size is a Perl module which provides a straightforward way to get
+the size of the terminal (or window) on which a script is running.

@@ -1,0 +1,45 @@
+PR:	215828
+--- periodic-snapshot.2016122900	2016-12-29 10:31:43.423980000 -0500
++++ periodic-snapshot	2017-01-05 11:21:16.767572000 -0500
+@@ -47,6 +47,22 @@
+     *            ) exit 0 ;;
+ esac
+ 
++#   explicitly check whether we should take care of ZFS to
++#   prevent us from _implicitly_ loading "zfs.ko" without reason
++zfs_enabled=`( \
++    if [ -r /etc/defaults/rc.conf ]; then \
++        . /etc/defaults/rc.conf; \
++        source_rc_confs; \
++    fi; \
++    . /etc/rc.subr; \
++    load_rc_config zfs; \
++    if checkyesno zfs_enable; then \
++        echo 'yes'; \
++    else \
++        echo 'no'; \
++    fi
++) 2>/dev/null || true`
++
+ #   determine run-time tag and current hour
+ time_tag="$1"
+ time_hour=$((0 + `date '+%k'`))
+@@ -87,10 +103,14 @@
+     OIFS="$IFS"; IFS="$IFS,"
+     for fs in $fs_list; do
+         IFS="$OIFS"
+-        #   sanity check filesystem snapshot schedule
+-        if [ $((0 + $when_weekly + $when_daily + $when_hourly)) -gt 20 ]; then
+-            logger -p daemon.warning \
+-                "snapshot: schedule $schedule on filesystem $fs would require more than maximum number of 20 possible snapshots"
++	if [ ".$zfs_enabled" = .yes ] && (zfs list $fs) >/dev/null 2>&1; then
++	    :
++	else
++            #   sanity check filesystem snapshot schedule
++            if [ $((0 + $when_weekly + $when_daily + $when_hourly)) -gt 20 ]; then
++                logger -p daemon.warning \
++                    "snapshot: schedule $schedule on ufs filesystem $fs would require more than maximum number of 20 possible snapshots"
++            fi
+         fi
+ 
+         #   determine whether to make a snapshot

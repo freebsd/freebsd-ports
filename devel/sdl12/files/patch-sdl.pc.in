@@ -1,0 +1,8 @@
+--- sdl.pc.in.orig	2010-01-02 16:56:18.000000000 +0100
++++ sdl.pc.in	2010-01-02 16:56:37.000000000 +0100
+@@ -12,4 +12,4 @@
+ Conflicts:
+ Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@
+ Libs.private: @SDL_STATIC_LIBS@
+-Cflags: -I${includedir}/SDL @SDL_CFLAGS@
++Cflags: -I${includedir}/SDL -I${includedir} @SDL_CFLAGS@

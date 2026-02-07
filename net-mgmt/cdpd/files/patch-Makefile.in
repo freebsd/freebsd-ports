@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-04-02 08:47:58.000000000 -0700
++++ Makefile.in	2025-03-13 13:51:50.304959000 -0700
+@@ -9,7 +9,7 @@
+ all: cdpd
+ 
+ cdpd: cdpd.o daemon.o strlcpy.o
+-	$(CC) ${CFLAGS} cdpd.o daemon.o strlcpy.o -o cdpd ${LDADD}
++	$(CC) ${CFLAGS} ${LDFLAGS} cdpd.o daemon.o strlcpy.o -o cdpd ${LDADD}
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $< 

@@ -1,0 +1,1 @@
+Import exceptions from potentially bundled packages in requests.

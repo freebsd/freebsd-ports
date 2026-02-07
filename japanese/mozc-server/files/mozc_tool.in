@@ -1,0 +1,16 @@
+#!/bin/sh
+
+: ${MODE:=${1:-about_dialog}}
+case $MODE in
+--mode=*)
+	exec %%PREFIX%%/libexec/mozc_tool $MODE
+;;
+config_dialog|dictionary_tool|word_register_dialog|about_dialog|character_palette|hand_writing)
+	exec %%PREFIX%%/libexec/mozc_tool --mode="$MODE"
+;;
+*)
+	echo "Specify one of the following keywords:"
+	echo "config_dialog|dictionary_tool|word_register_dialog|about_dialog|character_palette|hand_writing" | tr "|" "\n"
+	exit 1
+;;
+esac

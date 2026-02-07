@@ -1,0 +1,29 @@
+--- configure.ac.orig	2016-07-21 12:25:09 UTC
++++ configure.ac
+@@ -1201,7 +1201,7 @@ if test x"${build_egl_device}" = xyes; then
+     build_egl_device=no
+   fi
+   save_CFLAGS="$CFLAGS"
+-  CFLAGS="$CFLAGS -Wall -Werror"
++  CFLAGS="$CFLAGS -Wall -Werror -Wno-unused-but-set-variable "
+   native_window_type=none
+   AC_MSG_CHECKING([For EGLNativeWindowType type])
+   AC_TRY_COMPILE([#include <EGL/eglplatform.h>], [
+@@ -4144,7 +4144,7 @@ if test x${build_ssl} = xyes; then
+     fi
+     echo "        SSL libs are: $SSL_LIBS"
+   else
+-    PKG_ERR([No SSL development package is installed, but it's enabled."])
++    PKG_ERR([No SSL development package is installed, but it's enabled.])
+   fi
+ fi
+ 
+@@ -4157,7 +4157,7 @@ if test x${build_ssh} = xyes; then
+     fi
+     echo "        SSH libs are: $SSH_LIBS"
+   else
+-    PKG_ERR([No SSH development package is installed, but it's enabled."])
++    PKG_ERR([No SSH development package is installed, but it's enabled.])
+   fi
+ fi
+ 

@@ -1,0 +1,36 @@
+--- doc/oidentd.8.orig	2020-04-16 13:34:16 UTC
++++ doc/oidentd.8
+@@ -57,7 +57,7 @@ clients.
+ \fB\-C, \-\-config\fP=\fIFILE\fP
+ .RS 4
+ Use the specified system\-wide configuration file.  If this option is not
+-given, \fBoidentd\fP defaults to \fB/usr/local/etc/oidentd.conf\fP.  The format of the
++given, \fBoidentd\fP defaults to \fB%%PREFIX%%/etc/oidentd.conf\fP.  The format of the
+ system\-wide configuration file is described in \fBoidentd.conf\fP(5).
+ .RE
+ .sp
+@@ -217,7 +217,7 @@ Print version and build information and exit.
+ .RE
+ .SH "FILES"
+ .sp
+-\fB/usr/local/etc/oidentd.conf\fP
++\fB%%PREFIX%%/etc/oidentd.conf\fP
+ .RS 4
+ System\-wide configuration file; see \fBoidentd.conf\fP(5).
+ .RE
+@@ -227,7 +227,7 @@ System\-wide configuration file; see \fBoidentd.conf\f
+ User configuration files; see \fBoidentd.conf\fP(5).
+ .RE
+ .sp
+-\fB/usr/local/etc/oidentd_masq.conf\fP
++\fB%%PREFIX%%/etc/oidentd_masq.conf\fP
+ .RS 4
+ Masquerading configuration file; see \fBoidentd_masq.conf\fP(5).
+ .RE
+@@ -246,4 +246,4 @@ Please report any bugs to \c
+ .SH "SEE ALSO"
+ .sp
+ \fBoidentd.conf\fP(5)
+-\fBoidentd_masq.conf\fP(5)
+\ No newline at end of file
++\fBoidentd_masq.conf\fP(5)

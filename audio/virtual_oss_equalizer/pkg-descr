@@ -1,0 +1,4 @@
+Equalizer utility for virtual_oss.
+
+The port installs virtual_equalizer(8), which provides equalizer functionality
+for virtual_oss(8) devices. See virtual_equalizer.8 for more information.

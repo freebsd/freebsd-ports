@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+Basic Instructions:
+There are three ways to do this:
+
+1)
+% sshfs -o idmap=user username@example.org: /path/to/mount/point
+
+or
+
+2)
+% mount_fusefs auto /path/to/mount/point sshfs -o idmap=user \
+       username@example.org:
+
+or
+
+3)
+% env FUSE_DEV_NAME=/dev/fuse0 sshfs -o idmap=user \
+       username@example.org:
+% mount_fusefs /dev/fuse0 /path/to/mount/point
+
+For further options see ``sshfs -h''.
+EOM
+}
+]

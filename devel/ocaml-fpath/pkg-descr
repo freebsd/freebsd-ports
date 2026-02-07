@@ -1,0 +1,4 @@
+OCaml library to manipulate filesystem paths, file extensions,
+operating system conventions for POSIX and Windows, Set and Map of
+paths, independently from the operating system the program is running
+on.

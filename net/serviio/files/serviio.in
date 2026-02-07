@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: serviio
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable serviio:
+#
+# serviio_enable="YES"
+
+. /etc/rc.subr
+
+name=serviio
+rcvar=serviio_enable
+command=%%PREFIX%%/sbin/serviiod
+
+load_rc_config $name
+
+: ${serviio_user="dlna"}
+: ${serviio_heap="512M"}
+: ${serviio_stack="20M"}
+: ${serviio_svcj_options="net_basic"}
+
+if [ -n "${serviio_lang}" ]; then
+	export LANG=${serviio_lang}
+fi
+
+export SERVIIO_MEM="-Xmx${serviio_heap} -Xms${serviio_stack}"
+
+_dirs="/var/db/serviio /var/db/serviio/home /var/log/serviio"
+start_precmd="mkdir -p $_dirs; chown $serviio_user $_dirs"
+command_args="$serviio_args &"
+
+stop_cmd="$command -stop"
+
+status_cmd=${name}_status
+serviio_status() {
+	serviio_pid=$(ps -wwwaU ${serviio_user} | awk '/java.*org.serviio.MediaServer/ {print $1}')
+	if [ -n "${serviio_pid}" ]; then
+		echo "${name} is running as pid ${serviio_pid}"
+	else
+		echo "${name} is not running"
+		return 1
+	fi
+}
+
+run_rc_command $1

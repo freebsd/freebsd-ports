@@ -1,0 +1,18 @@
+Xmlgui is only needed for the tools.
+
+--- CMakeLists.txt.orig	2025-06-21 11:46:33 UTC
++++ CMakeLists.txt
+@@ -172,8 +172,12 @@ else()
+         IconThemes
+         ${PLASMA_COMPONENT}
+         TextWidgets
+-        XmlGui
+     )
++    if(BUILD_TOOLS)
++        list(APPEND KF_PRIVATE_COMPONENTS
++            XmlGui
++        )
++    endif()
+     find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS ${KF_PRIVATE_COMPONENTS} ${KF_PUBLIC_COMPONENTS})
+ 
+     macro(ecm_add_executable)

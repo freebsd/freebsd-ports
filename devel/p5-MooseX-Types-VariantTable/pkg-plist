@@ -1,0 +1,5 @@
+%%SITE_PERL%%/MooseX/Types/VariantTable/Declare.pm
+%%SITE_PERL%%/MooseX/Types/VariantTable.pm
+%%SITE_PERL%%/Moose/Meta/Method/VariantTable.pm
+%%PERL5_MAN3%%/MooseX::Types::VariantTable::Declare.3.gz
+%%PERL5_MAN3%%/MooseX::Types::VariantTable.3.gz

@@ -1,0 +1,2 @@
+hatch-docstring-description is a hatchling plugin to read the description from
+the package docstring like flit does.

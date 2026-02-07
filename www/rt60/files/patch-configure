@@ -1,0 +1,11 @@
+--- configure.orig	2016-07-20 15:48:58 UTC
++++ configure
+@@ -2112,7 +2112,7 @@ $as_echo "$as_me: WARNING: Layout file $
+ 		s/^#.*$//m;
+ 		s/^\s+//gim;
+ 		s/\s+$/\n/gim;
+-		s/\+$/\/rt3/gim;
++		s/\+$/\/rt60/gim;
+ 		# m4 will not let us just use $srcdir/config.layout, we need $1
+ 		s/^\s*((?:bin|sbin|libexec|data|sysconf|sharedstate|localstate|lib|include|oldinclude|info|man|html)dir)\s*:\s*(.*)$/$1=$2/gim;
+ 		s/^\s*(.*?)\s*:\s*(.*)$/\(test "x\$$1" = "xNONE" || test "x\$$1" = "x") && $1=$2/gim;

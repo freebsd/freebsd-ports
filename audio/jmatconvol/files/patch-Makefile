@@ -1,0 +1,11 @@
+--- Makefile.orig	2021-07-10 05:36:02 UTC
++++ Makefile
+@@ -24,7 +24,7 @@ BINDIR ?= $(PREFIX)/bin
+ VERSION = 0.4.2
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\"
+ CXXFLAGS += -O2 -Wall
+-CXXFLAGS += -march=native
++CXXFLAGS += ${FREEBSD_CXXFLAGS_SIMD}
+ LDLIBS += -lsndfile -lfftw3f -lfftw3 -lpthread
+ 
+ 

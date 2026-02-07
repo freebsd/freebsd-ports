@@ -1,0 +1,3 @@
+pymatreader is Python module to read Matlab files. This module works with both
+the old (< 7.3) and the new (>= 7.3) HDF5 based format. The output should be
+the same for both kinds of files.

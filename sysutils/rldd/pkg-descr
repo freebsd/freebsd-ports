@@ -1,0 +1,6 @@
+The rldd tool resolves and prints the binary or shared library
+dependencies with different visualization options. In opposite to the
+Linux ldd tool, it does not invoke the system loader but instead
+parses the loading information directly from either ELF or Mach-O
+files, along with any required system files (such as loader cache or
+extra configuration files).

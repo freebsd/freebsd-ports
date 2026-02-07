@@ -1,0 +1,3 @@
+Devel::BeginLift 'lifts' arbitrary sub calls to running at compile
+time - sort of a souped up version of "use constant". It does this via
+some slightly insane perlguts magic.

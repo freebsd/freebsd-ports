@@ -1,0 +1,13 @@
+--- lo/lo_macros.h.orig	2018-07-05 18:48:15 UTC
++++ lo/lo_macros.h
+@@ -46,8 +46,8 @@ extern "C" {
+ 
+ /* an internal value, ignored in transmission but check against LO_MARKER in the
+  * argument list. Used to do primitive bounds checking */
+-#	define LO_MARKER_A (void *)0xdeadbeefdeadbeefLLU
+-#	define LO_MARKER_B (void *)0xf00baa23f00baa23LLU
++#	define LO_MARKER_A (void *)0xdeadbeefLLU
++#	define LO_MARKER_B (void *)0xf00baa23LLU
+ 
+ #define LO_ARGS_END LO_MARKER_A, LO_MARKER_B
+ 

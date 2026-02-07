@@ -1,0 +1,2 @@
+%%QT_BINDIR%%/qtpaths
+%%DEBUG%%%%QT_BINDIR%%/qtpaths.debug

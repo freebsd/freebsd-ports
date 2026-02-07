@@ -1,0 +1,21 @@
+# Makefile.features
+# Author:			Hirohisa Yamaguchi <umq@ueo.co.jp>
+#
+# This file is used to tune build time options.
+# Please refer FEATURES file distributed with the source for details.
+
+.if defined(WITH_ANTICIPATE_SENDMAIL_MUNGE) && !defined(WITHOUT_ANTICIPATE_SENDMAIL_MUNGE)
+SITE_SUB+=	-e '/-D_FFR_ANTICIPATE_SENDMAIL_MUNGE/s|^dnl ||'
+.endif
+
+.if defined(WITH_FLUSH_HEADERS) && !defined(WITHOUT_FLUSH_HEADERS)
+SITE_SUB+=	-e '/-D_FFR_FLUSH_HEADERS/s|^dnl ||'
+.endif
+
+.if defined(WITH_REQUIRED_HEADERS) && !defined(WITHOUT_REQUIRED_HEADERS)
+SITE_SUB+=	-e '/-D_FFR_REQUIRED_HEADERS/s|^dnl ||'
+.endif
+
+.if defined(WITH_SELECT_CANONICALIZATION) && !defined(WITHOUT_SELECT_CANONICALIZATION)
+SITE_SUB+=	-e '/-D_FFR_SELECT_CANONICALIZATION/s|^dnl ||'
+.endif

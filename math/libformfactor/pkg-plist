@@ -1,0 +1,13 @@
+cmake/formfactorConfig.cmake
+cmake/formfactorConfigVersion.cmake
+cmake/formfactorTargets-%%CMAKE_BUILD_TYPE%%.cmake
+cmake/formfactorTargets.cmake
+include/ff/Box.h
+include/ff/Face.h
+include/ff/IBody.h
+include/ff/Make.h
+include/ff/Polyhedron.h
+include/ff/Prism.h
+include/ff/Topology.h
+lib/libformfactor.so
+lib/libformfactor.so.0.3.2

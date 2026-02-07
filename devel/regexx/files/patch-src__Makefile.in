@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2013-11-15 21:03:55.000000000 +0900
++++ src/Makefile.in	2013-11-15 21:04:18.000000000 +0900
+@@ -74,7 +74,7 @@
+ 
+ lib_LTLIBRARIES = libregexx.la
+ libregexx_la_SOURCES = regexx.cc regexx.hh split.cc split.hh
+-libregexx_la_LDFLAGS = -version-info 2:0:1 ../pcre/maketables.lo ../pcre/get.lo ../pcre/study.lo ../pcre/pcre.lo
++libregexx_la_LDFLAGS = -version-info 2:0:1
+ include_HEADERS = regexx.hh split.hh
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 

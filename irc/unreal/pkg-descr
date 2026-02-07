@@ -1,0 +1,6 @@
+Unreal IRCd - the next generation ircd
+
+A highly advanced IRCd with a strong focus on modularity and security.
+Other key features include: full IRCv3 support, SSL/TLS, cloaking,
+advanced anti-flood and anti-spam systems, GeoIP, remote includes,
+and lots of other features.

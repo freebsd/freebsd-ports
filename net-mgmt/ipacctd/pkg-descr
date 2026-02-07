@@ -1,0 +1,2 @@
+The ipacctd is intended for IP accounting.  divert(4) and corresponding
+ipfw(8) rules are used for obtaining IP packets.

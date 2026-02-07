@@ -1,0 +1,4 @@
+bin/nfd-debug-devices.pl
+bin/nfd-print-routes6.pl
+%%SITE_PERL%%/Net/Frame/Device.pm
+%%PERL5_MAN3%%/Net::Frame::Device.3.gz

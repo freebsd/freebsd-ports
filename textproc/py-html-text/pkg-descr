@@ -1,0 +1,7 @@
+Extract text from HTML.
+
+html_text is a library for extracting text from HTML, with a few handy
+features:
+- It removes leading and trailing whitespace
+- It handles HTML entities
+- It uses lxml for parsing

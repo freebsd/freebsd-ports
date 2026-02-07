@@ -1,0 +1,9 @@
+--- po/Po.tmpl.orig	Sat Jun 17 02:35:00 2000
++++ po/Po.tmpl	Sat Jun 17 02:35:26 2000
+@@ -8,5 +8,5 @@
+ MKINSTALLDIRS	= install -d
+ 
+ DESTDIR		=
+-SYSNLSDIR	= /usr/share/locale
++SYSNLSDIR	= $(PREFIX)/share/locale
+ NLSDIR		= $(DESTDIR)$(SYSNLSDIR)

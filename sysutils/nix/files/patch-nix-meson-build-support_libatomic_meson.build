@@ -1,0 +1,12 @@
+--- nix-meson-build-support/libatomic/meson.build.orig	2026-01-24 14:43:21 UTC
++++ nix-meson-build-support/libatomic/meson.build
+@@ -3,6 +3,6 @@
+ # This is needed for std::atomic on some platforms
+ # We did not manage to test this reliably on all platforms, so we hardcode
+ # it for now.
+-if host_machine.cpu_family() in [ 'arm', 'ppc' ]
+-  deps_other += cxx.find_library('atomic')
+-endif
++#if host_machine.cpu_family() in [ 'arm', 'ppc' ]
++#  deps_other += cxx.find_library('atomic')
++#endif

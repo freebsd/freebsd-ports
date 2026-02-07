@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2011-02-05 03:32:41 UTC
++++ src/Makefile.in
+@@ -397,7 +397,7 @@
+ 	@if test -f $(DESTDIR)$(sysconfdir)/beacon.conf; then :; else \
+ 	    $(INSTALL_DATA) -v beacon.conf $(DESTDIR)$(sysconfdir); \
+ 	fi
+-@HAVE_FREEBSD_TRUE@	@$(INSTALL_SCRIPT) -v FreeBSD/beacon $(prefix)/etc/rc.d
++@HAVE_FREEBSD_TRUE@	@$(INSTALL_SCRIPT) -v FreeBSD/beacon $(DESTDIR)$(prefix)/etc/rc.d
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,6 @@
+Amberfish is a full-text search engine with a command-line interface.
+Its features include free-text and Boolean queries, relevance-ranked
+results, wildcard search, phrase search, field search and structured
+field path queries for XML, multiple documents per file and nested
+documents, searching across multiple indexes, incremental update of
+indexes, and low memory requirements for building indexes.

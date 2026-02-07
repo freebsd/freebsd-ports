@@ -1,0 +1,8 @@
+%%MLOGC%%bin/mlogc
+%%MLOGC%%bin/mlogc-batch-load.pl
+bin/rules-updater.pl
+@sample %%APACHEETCDIR%%/modules.d/280_mod_security.conf.sample
+@sample %%ETCDIR%%/modsecurity.conf.sample
+%%ETCDIR%%/unicode.mapping
+lib/%%AP_MODULE%%
+%%APACHEMODDIR%%/%%AP_MODULE%%

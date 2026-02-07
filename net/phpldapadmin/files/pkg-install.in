@@ -1,0 +1,22 @@
+#!/bin/sh
+
+PATH=/usr/sbin:/usr/bin:/bin ; export PATH
+
+pla_dir=%%WWWDIR%%
+pla_usr=%%PLA_USR%%
+pla_grp=%%PLA_GRP%%
+
+
+case $2 in
+    POST-INSTALL)
+
+    	# Change ownership of the phpldapadmin directory
+
+        echo "===> Adjusting file ownership in $pla_dir"
+        chown -R $pla_usr:$pla_grp $pla_dir || exit 1
+	;;
+esac
+
+#
+# That's All Folks!
+#

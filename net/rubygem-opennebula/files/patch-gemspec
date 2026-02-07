@@ -1,0 +1,11 @@
+--- opennebula.gemspec.orig	2024-05-16 18:09:12 UTC
++++ opennebula.gemspec
+@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<nokogiri>.freeze, ["< 1.16".freeze])
++  s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<json>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<rbvmomi2>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<xmlrpc>.freeze, [">= 0".freeze])

@@ -1,0 +1,12 @@
+--- src/mlock/Makefile.orig	2022-04-17 00:12:02 UTC
++++ src/mlock/Makefile
+@@ -30,8 +30,7 @@ SHELL = /bin/sh
+ 
+ # Get local definitions from c-client directory
+ 
+-CC = `cat $C/CCTYPE`
+-CFLAGS = `cat $C/CFLAGS`
++CFLAGS+=	-DNFSKLUDGE
+ 
+ all:	mlock
+ 

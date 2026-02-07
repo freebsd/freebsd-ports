@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+In order to launch your session. Copy 'xprofile' into your home directory:
+  cp %%EXAMPLESDIR%%/xprofile ~/.xprofile
+
+Create or edit /var/db/AccountsService/users/YOURLOGIN file:
+  [User]
+  Language=fr_FR.UTF-8 # e.g. for French users
+  Session=gnome-flashback-metacity
+  SystemAccount=false
+
+Replace YOURLOGIN by your login.
+EOM
+}
+]

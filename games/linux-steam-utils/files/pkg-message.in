@@ -1,0 +1,38 @@
+[
+{ type: install
+  message: <<EOM
+Please note, this is an unofficial wrapper for the Steam client
+and as such it is supported on a best effort basis.
+
+Limitations:
+
+- Sandbox is disabled for the web browser component.
+- No controller input, no streaming, no VR.
+- Valve Anti-Cheat is untested.
+- Steam's container runtime (pressure-vessel) doesn't work.
+
+Additional dependencies:
+- If you use an NVIDIA card, you need to install a suitable
+  x11/linux-nvidia-libs(-xxx) port.
+
+Steam setup:
+
+1. Set security.bsd.unprivileged_chroot and vfs.usermount sysctls to 1.
+2. Add nullfs to kld_list, load it.
+3. Create a dedicated FreeBSD non-wheel user account for Steam. Switch to it.
+4. Run `%%LOCALBASE%%/steam-utils/bin/lsu-bootstrap` to download the Steam bootstrap executable.
+5. Run `steam` to download updates and start Steam.
+
+For the list of tested Linux games see https://github.com/shkhln/linuxulator-steam-utils/wiki/Compatibility.
+
+Native Proton setup (optional, semi-experimental):
+
+1. Run `sudo pkg install wine-proton libc6-shim python3`.
+2. Run `%%LOCALBASE%%/wine-proton/bin/pkg32.sh install wine-proton mesa-dri`.
+3. In Steam install the matching Proton version (appid 2348590 for 8.0, 2805730 for 9.0, etc).
+
+To enable it right click a game title in Steam, click Properties,
+click Compatibility, select "FreeBSD Wine (emulators/wine-proton)".
+EOM
+}
+]

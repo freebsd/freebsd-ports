@@ -1,0 +1,25 @@
+--- Makefile.in.orig	2000-05-30 06:07:38 UTC
++++ Makefile.in
+@@ -1,6 +1,6 @@
+-CC = @CC@
+-CFLAGS = @CFLAGS@
+-CPPFLAGS = @CPPFLAGS@
++#CC = @CC@
++CFLAGS = @CFLAGS@ -I@x_includes@
++#CPPFLAGS = @CPPFLAGS@
+ LIBS = @LIBS@
+ LDFLAGS = @LDFLAGS@
+ 
+@@ -31,10 +31,8 @@ xysstats.o: xsysstats.c xsysstats.h config.h headers.h
+ porting.o: xsysstats.c xsysstats.h config.h headers.h
+ 
+ install:
+-	mkdir -p $(BINDIR)
+-	$(INSTALL) xsysstats $(BINDIR)/xsysstats
+-	mkdir -p $(MANDIR)
+-	$(INSTALL) xsysstats.man $(MANDIR)/xsysstats.1
++	$(INSTALL) xsysstats $(DESTDIR)$(BINDIR)/xsysstats
++	$(INSTALL) xsysstats.man $(DESTDIR)$(MANDIR)/xsysstats.1
+ 
+ clean:
+ 	rm -f *.o core xsysstats

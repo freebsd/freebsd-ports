@@ -1,0 +1,5 @@
+This plugin implements fully iCal-compliant calendaring functionality
+for Squirrelmail.
+
+Multiple calendars my be created, where each calendar can be made public,
+private or shared between custom-defined groups of users.

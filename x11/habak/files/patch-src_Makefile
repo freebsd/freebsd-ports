@@ -1,0 +1,32 @@
+--- src/Makefile.orig	2022-08-30 10:14:57 UTC
++++ src/Makefile
+@@ -1,23 +1,22 @@
+ #CFLAGS = -I/usr/X11R6/include -Wall -g -ggdb
+ #LDFLAGS = -L/usr/X11R6/lib -lImlib2 -lm -g -ggdb
+ 
+-CFLAGS += -I/usr/X11R6/include -Wall
+-LDFLAGS += -L/usr/X11R6/lib -lImlib2 -lm
++CFLAGS+=	-Wall
++LDFLAGS+=	-lX11 -lImlib2 -lm
+ 
+ all:	habak
+-	ln -f habak ../habak
+ 
+ habak:	xcore.o random.o habak.o
+-	gcc $(LDFLAGS) -o habak xcore.o random.o habak.o
++	${CC} $(LDFLAGS) -o habak xcore.o random.o habak.o
+ 
+ habak.o: habak.c types.h defaults.h proto.h
+-	gcc $(CFLAGS) -c habak.c -o habak.o
++	${CC} $(CFLAGS) -c habak.c -o habak.o
+ 
+ random.o: random.c proto.h
+-	gcc $(CFLAGS) -c random.c -o random.o
++	${CC} $(CFLAGS) -c random.c -o random.o
+ 
+ xcore.o: xcore.c
+-	gcc $(CFLAGS) -c xcore.c -o xcore.o
++	${CC} $(CFLAGS) -c xcore.c -o xcore.o
+ 
+ clean:
+ 	rm habak *.o

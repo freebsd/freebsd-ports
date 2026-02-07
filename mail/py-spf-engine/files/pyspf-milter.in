@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: pyspf_milter
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable pyspf_milter:
+#
+# pyspf_milter_enable (bool)    Set to 'YES' to enable.
+#                               Default: NO
+# pyspf_milter_conffile (path)  Location of configuration file.
+#                               Default: %%PREFIX%%/pyspf-milter/pyspf-milter.conf
+
+. /etc/rc.subr
+
+name=pyspf_milter
+rcvar=pyspf_milter_enable
+
+load_rc_config $name
+
+: ${pyspf_milter_enable:=NO}
+: ${pyspf_milter_conffile:=%%PREFIX%%/etc/pyspf-milter/pyspf-milter.conf}
+
+command=/usr/sbin/daemon
+command_interpreter=%%PYTHON_CMD%%
+procname=%%PREFIX%%/bin/pyspf-milter
+command_args="-c -f ${procname} ${pyspf_milter_conffile}"
+pidfile=/var/run/pyspf-milter/pyspf-milter.pid
+required_dirs=/var/run/pyspf-milter
+required_files=${pyspf_milter_conffile}
+start_precmd=pyspf_milter_cleanup
+stop_postcmd=pyspf_milter_cleanup
+
+pyspf_milter_cleanup ()
+{
+    rm -f ${pidfile}
+}
+
+run_rc_command "$1"

@@ -1,0 +1,40 @@
+--- Makefile.in.orig	2025-02-02 08:06:22 UTC
++++ Makefile.in
+@@ -104,9 +104,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+ 	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
+ 	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
+ 	md5main$(EXEEXT)
+-bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_4) \
+-	ctie$(EXEEXT) cweave$(EXEEXT) ctwill$(EXEEXT) \
+-	ctwill-refsort$(EXEEXT) ctwill-twinx$(EXEEXT) tie$(EXEEXT) \
++bin_PROGRAMS = $(am__EXEEXT_4) \
+ 	$(am__EXEEXT_5) $(am__EXEEXT_6) $(am__EXEEXT_7) \
+ 	$(am__EXEEXT_8) $(am__EXEEXT_9) $(am__EXEEXT_10) \
+ 	$(am__EXEEXT_11) $(am__EXEEXT_12) $(am__EXEEXT_13) \
+@@ -3146,7 +3144,7 @@ version = $(WEB2CVERSION)
+ AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
+ AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
+ version = $(WEB2CVERSION)
+-SUBDIRS = doc lib man web2c . window omegafonts otps
++SUBDIRS = lib man web2c .
+ proglib = lib/lib.a
+ 
+ #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
+@@ -3168,7 +3166,7 @@ lib_LTLIBRARIES = $(am__append_125)
+ EXTRA_LTLIBRARIES = libsynctex.la
+ lib_LIBRARIES = $(am__append_126)
+ lib_LTLIBRARIES = $(am__append_125)
+-dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
++dist_man_MANS =
+ nodist_man_MANS = 
+ TEST_EXTENSIONS = .pl .test
+ #
+@@ -3901,7 +3899,7 @@ nodist_twill_SOURCES = twill.c twill.h
+ nodist_vptovf_SOURCES = vptovf.c vptovf.h
+ nodist_weave_SOURCES = weave.c weave.h
+ nodist_twill_SOURCES = twill.c twill.h
+-dist_bin_SCRIPTS = cwebdir/ctwill-proofsort cwebdir/twill-refsort
++dist_bin_SCRIPTS =
+ nodist_ctie_SOURCES = ctie.c
+ nodist_cweave_SOURCES = cweave.c cweb.c
+ nodist_ctwill_SOURCES = ctwill.c cweb.c

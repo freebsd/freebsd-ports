@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2016-06-08 14:43:40 UTC
++++ Makefile.in
+@@ -439,7 +439,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = gphoto-m4 art doc help omf-install packaging pixmaps po src test
++SUBDIRS = gphoto-m4 art doc $(GNOME_SUBDIRS) packaging pixmaps po src test
+ ACLOCAL_AMFLAGS = -I m4 -I gphoto-m4
+ 
+ # disable scrollkeeper for distcheck
+@@ -448,7 +448,7 @@ DISTCHECK_CONFIGURE_FLAGS = --disable-sc
+ ########################################################################
+ # Install a few support and doc files
+ gtkamdocdir = $(datadir)/doc/gtkam
+-gtkamdoc_DATA = AUTHORS COPYING NEWS README TODO CHANGES
++gtkamdoc_DATA = AUTHORS NEWS README TODO CHANGES
+ icondir = $(datadir)/pixmaps
+ icon_DATA = gtkam.png
+ DESKTOP_IN_FILES = gtkam.desktop.in

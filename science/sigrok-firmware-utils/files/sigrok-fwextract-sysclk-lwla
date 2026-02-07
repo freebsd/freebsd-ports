@@ -1,0 +1,41 @@
+#! /bin/sh -e
+##
+## This file is part of the sigrok-util project.
+##
+## Copyright (C) 2014 Daniel Elstner <daniel.kitta@gmail.com>
+##
+## This program is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with this program; if not, see <http://www.gnu.org/licenses/>.
+##
+
+infile=$1
+if [ -z "$infile" ]; then
+    echo "Usage: $0 SETUP-EXE" >&2
+    exit 1
+fi
+
+# Verify the checksum to make sure this is the right binary file
+expectsum=f2a9333329200ad1d939d051257f914200cf0c765ff4962b2907dcf30716f455
+set '' $(sha256sum -b "$infile")
+
+if [ "$2" != "$expectsum" ]; then
+    echo "$0: checksum mismatch for '$infile'" >&2
+    echo "$0: make sure you picked the right file (lwla1034_EN_setup.exe on the CD-ROM)" >&2
+    exit 1
+fi
+
+# Extract the firmware binaries from the executable
+dd bs=1 skip=34110338 count=78398 if="$infile" of=sysclk-lwla1034-int.bitstream
+dd bs=1 skip=34266237 count=78247 if="$infile" of=sysclk-lwla1034-extpos.bitstream
+dd bs=1 skip=34344484 count=79145 if="$infile" of=sysclk-lwla1034-extneg.bitstream
+dd bs=1 skip=34578631 count=48525 if="$infile" of=sysclk-lwla1034-off.bitstream

@@ -1,0 +1,17 @@
+--- xwatchwin.man.orig	Tue Nov 28 16:27:49 1995
++++ xwatchwin.man	Sun Sep  3 12:13:23 2000
+@@ -66,12 +66,12 @@
+ If there is a window on "crow" that has no name but has a window id of
+ "0x50000b", you can watch it by typing
+ 
+-xwatchwin crow -w 0x50000b
++xwatchwin -w 0x50000b crow 
+ 
+ If you want to get new copies of a window only every 30 seconds, you
+ can do so by typing
+ 
+-xwatchwin crow -u 30 -w 0x50000b
++xwatchwin -u 30 -w 0x50000b crow 
+ 
+ .SH "SEE ALSO"
+ .PP

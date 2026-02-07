@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2022-06-21 14:53:53 UTC
++++ Makefile.am
+@@ -5,7 +5,7 @@ LIBDIR=@libdir@
+ BINDIR=@bindir@
+ INCDIR=@includedir@/espeak
+ LIBDIR=@libdir@
+-DATADIR=$(PREFIX)/share/espeak-ng-data
++DATADIR=%%DATADIR%%/espeak-ng-data
+ VIMDIR=$(PREFIX)/share/vim
+ 
+ pkgconfigdir = $(libdir)/pkgconfig

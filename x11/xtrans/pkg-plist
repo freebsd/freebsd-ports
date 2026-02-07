@@ -1,0 +1,9 @@
+include/X11/Xtrans/Xtrans.c
+include/X11/Xtrans/Xtrans.h
+include/X11/Xtrans/Xtransint.h
+include/X11/Xtrans/Xtranslcl.c
+include/X11/Xtrans/Xtranssock.c
+include/X11/Xtrans/Xtransutil.c
+include/X11/Xtrans/transport.c
+libdata/pkgconfig/xtrans.pc
+share/aclocal/xtrans.m4

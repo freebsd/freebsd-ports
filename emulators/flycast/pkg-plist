@@ -1,0 +1,17 @@
+bin/flycast
+share/applications/flycast.desktop
+%%PORTDOCS%%%%DOCSDIR%%/DreamCast_Specs.md
+%%PORTDOCS%%%%DOCSDIR%%/Dynarec Architecture.md
+%%PORTDOCS%%%%DOCSDIR%%/Naomi_Overview.md
+%%PORTDOCS%%%%DOCSDIR%%/Notable game bugs.md
+%%PORTDOCS%%%%DOCSDIR%%/microphone support notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/neil_corlett_aica_notes.txt
+share/icons/hicolor/128x128/apps/flycast.png
+share/icons/hicolor/16x16/apps/flycast.png
+share/icons/hicolor/256x256/apps/flycast.png
+share/icons/hicolor/32x32/apps/flycast.png
+share/icons/hicolor/512x512/apps/flycast.png
+share/icons/hicolor/64x64/apps/flycast.png
+share/man/man1/flycast.1.gz
+share/metainfo/org.flycast.Flycast.metainfo.xml
+share/pixmaps/flycast.png

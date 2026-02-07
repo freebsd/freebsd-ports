@@ -1,0 +1,2 @@
+This libpkg plugin is supposed to fill /var/lib/swcatalog/xml/ directory with
+up-to-date AppStream metadata from pkg repositories that support that.

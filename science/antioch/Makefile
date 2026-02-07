@@ -1,0 +1,37 @@
+PORTNAME=	antioch
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.0-156
+DISTVERSIONSUFFIX=	-g90ffa43
+PORTREVISION=	15
+CATEGORIES=	science
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	C++ Chemical Kinetics, Thermodynaimics, and Transport Library
+WWW=		https://libantioch.github.io/
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${LOCALBASE}/include/metaphysicl/metaphysicl_version.h:science/metaphysicl \
+		${LOCALBASE}/include/viennacl/vector.hpp:math/viennacl
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libOpenCL.so:devel/ocl-icd
+
+USES=		autoreconf compiler:c++11-lang eigen:3 gmake libtool localbase
+USE_CXXSTD=	c++11
+USE_GITHUB=	yes
+GH_ACCOUNT=	libantioch
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static \
+		--enable-eigen --with-eigen-include=${LOCALBASE}/include/eigen3 \
+		--enable-opencl \
+		--with-metaphysicl=${LOCALBASE} \
+		--with-viennacl=${LOCALBASE}/include \
+		--with-gsl=${LOCALBASE}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libantioch.so.0.0.0
+
+.include <bsd.port.mk>

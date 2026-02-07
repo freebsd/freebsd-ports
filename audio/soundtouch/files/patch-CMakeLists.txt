@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-04-01 20:14:00 UTC
++++ CMakeLists.txt
+@@ -13,7 +13,7 @@ else()
+   if(EMSCRIPTEN)
+     list(APPEND COMPILE_OPTIONS -O3)
+   else()
+-    list(APPEND COMPILE_OPTIONS -Ofast)
++#    list(APPEND COMPILE_OPTIONS -Ofast)
+   endif()
+ endif()
+ 

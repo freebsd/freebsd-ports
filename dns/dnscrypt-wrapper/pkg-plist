@@ -1,0 +1,2 @@
+sbin/dnscrypt-wrapper
+@dir etc/dnscrypt-wrapper

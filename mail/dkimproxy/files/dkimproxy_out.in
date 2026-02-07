@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: dkimproxy_out
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dkimproxy.out:
+#
+# dkimproxy_out_enable="YES"
+#
+# Before you enable dkimproxy.out you also have to 
+# - create your domainkey
+# - create domainkey records in DNS 
+# - configure %%PREFIX%%/etc/dkimproxy_out.conf
+
+. /etc/rc.subr
+
+name=dkimproxy_out
+rcvar=dkimproxy_out_enable
+
+# set defaults
+: ${dkimproxy_out_enable="NO"}
+
+command_interpreter=%%PERL%%
+command=%%PREFIX%%/bin/dkimproxy.out
+required_files=%%PREFIX%%/etc/${name}.conf
+dkimproxy_out_user=%%DKIMPROXYUSER%%
+command_args="--conf_file=${required_files} --user=${dkimproxy_out_user} --daemonize"
+
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+# dkimproxy_in/out return 0 even if startup failed
+start_postcmd(){
+	pid=$( check_process ${command} ${command_interpreter} )
+	if [ -n "${pid}" ]; then
+		echo "Starting ${name} done."
+		logger -t ${name} "Starting ${name}"
+	else
+		echo "Starting ${name} failed."
+		logger -t ${name} "Starting ${name} failed"
+	fi
+}
+
+stop_postcmd(){
+	logger -t ${name} "Stopped ${name}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,7 @@
+--- config.h.in.orig	Wed Aug 11 16:11:07 2004
++++ config.h.in	Wed Aug 11 16:11:13 2004
+@@ -51,3 +51,4 @@
+ /* Version number of package */
+ #undef VERSION
+ 
++#define HAVE_STRING_H	1

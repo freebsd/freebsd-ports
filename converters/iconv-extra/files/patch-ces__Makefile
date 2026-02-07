@@ -1,0 +1,28 @@
+--- ces/Makefile.orig	2000-11-28 18:42:25 UTC
++++ ces/Makefile
+@@ -4,8 +4,8 @@ all:		${CHARSETS_SO}
+ all:		${CHARSETS_SO}
+ 
+ .if !defined(ICONVDIR_LIBC)
+-CFLAGS +=	-I/usr/local/include
+-LDADD +=	-L/usr/local/lib -liconv
++CFLAGS +=	-I${PREFIX}/include
++LDADD +=	-L${PREFIX}/lib -lbiconv
+ .endif
+ 
+ INTERNALLIB =
+@@ -14,11 +14,11 @@ NOOBJ =
+ 
+ NOOBJ =
+ 
+-CLEANFILES =	${CHARSETS_SO} *.So
++CLEANFILES =	${CHARSETS_SO} *.So .pico
+ 
+-.SUFFIXES:	.so .So
++.SUFFIXES:	.so .So .pico
+ 
+-.So.so:
++.So.so .pico.so:
+ 		@${LDDESTDIRENV} ${CC} -shared -Wl,-x -o ${.TARGET} \
+ 		-Wl,-soname,${.TARGET} `lorder ${.ALLSRC} | tsort -q` \
+ 		${LDDESTDIR} ${LDADD}

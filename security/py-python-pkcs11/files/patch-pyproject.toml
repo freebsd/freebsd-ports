@@ -1,0 +1,39 @@
+Revert:		https://github.com/pyauth/python-pkcs11/commit/d45957fd94abfd01b47cbf6a5b96862cf542dfbb
+
+--- pyproject.toml.orig	2025-06-22 05:22:53 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80.8", "cython", "setuptools-scm>=8.3.1"]
++requires = ["setuptools>=61", "cython", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -24,7 +24,7 @@ dependencies = ["asn1crypto>=1.5.1"]
+     "Topic :: Security :: Cryptography",
+ ]
+ dependencies = ["asn1crypto>=1.5.1"]
+-license = "MIT"
++license = {text = "MIT"}
+ requires-python = ">=3.9"
+ dynamic = ["version"]
+ 
+@@ -49,11 +49,6 @@ combine-as-imports = true
+ 
+ [tool.ruff.lint.isort]
+ combine-as-imports = true
+-
+-[tool.setuptools]
+-ext-modules = [
+-    {name = "pkcs11._pkcs11", sources = ["pkcs11/_pkcs11.pyx"]}
+-]
+ 
+ [tool.cibuildwheel.linux]
+ archs = ["auto64"]
+@@ -96,4 +91,4 @@ dev = [
+     { include-group = "release" },
+ ]
+ 
+-[tool.setuptools_scm]
+\ No newline at end of file
++[tool.setuptools_scm]

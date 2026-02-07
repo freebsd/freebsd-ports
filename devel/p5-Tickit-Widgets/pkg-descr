@@ -1,0 +1,2 @@
+Tickit::Widget acts as an abstract base class for on-screen widget objects. It
+provides the lower-level machinery required by most or all widget types.

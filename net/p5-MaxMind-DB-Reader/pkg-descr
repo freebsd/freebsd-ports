@@ -1,0 +1,1 @@
+MaxMind::DB::Reader provides functionality to read MaxMind DB files.

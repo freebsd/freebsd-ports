@@ -1,0 +1,47 @@
+--- CMakeLists.txt.orig	2025-01-31 23:53:04 UTC
++++ CMakeLists.txt
+@@ -3,18 +3,34 @@ cmake_minimum_required(VERSION 3.12)
+ 
+ cmake_minimum_required(VERSION 3.12)
+ 
+-project(stdgenerator LANGUAGES CXX
+-                     VERSION 0.1)
++project(stdgenerator
++    LANGUAGES CXX
++    VERSION 0.1)
+ 
+-add_library(stdgenerator INTERFACE)
+-
+-target_include_directories(stdgenerator
+-    INTERFACE
+-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>)
+-
+-target_compile_features(stdgenerator INTERFACE cxx_std_20)
+-
++include(CMakePackageConfigHelpers)
++include(CPack)
++include(GNUInstallDirs)
+ enable_testing()
+ include(CTest)
+ 
++add_subdirectory("include")
+ add_subdirectory("tests")
++
++install(EXPORT ${PROJECT_NAME}-target
++    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
++    NAMESPACE "stdgenerator::"
++)
++
++write_basic_package_version_file(
++  "${PROJECT_NAME}-config-version.cmake" COMPATIBILITY SameMajorVersion ARCH_INDEPENDENT)
++
++configure_package_config_file(
++    cmake/${PROJECT_NAME}-config.cmake.in
++    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
++    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
++)
++
++install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
++              "${PROJECT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
++    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
++)

@@ -1,0 +1,40 @@
+--- Makefile.orig	2026-01-09 18:30:01 UTC
++++ Makefile
+@@ -106,7 +106,6 @@ ifeq ($(MODE), release)
+ MATCH=false
+ ifeq ($(MODE), release)
+   outdir = bin/release/
+-  cxxflags += -O2
+   MATCH=true
+ endif
+ ifeq ($(MODE), debug)
+@@ -118,13 +117,13 @@ ifeq ($(MODE), shared)
+ endif
+ ifeq ($(MODE), shared)
+   outdir = bin/shared/
+-  cxxflags += -O2 -fPIC
++  cxxflags += -fPIC
+   library = libfrobby.so
+   MATCH=true
+ endif
+ ifeq ($(MODE), profile)
+   outdir = bin/profile/
+-  cxxflags += -g -pg -O2 -D PROFILE
++  cxxflags += -g -pg -D PROFILE
+   ldflags += -pg
+   MATCH=true
+   benchArgs = _profile $(FROBBYARGS)
+@@ -326,11 +325,11 @@ develDocPdf: bin/develDoc/
+ 	rm -rf bin/develDoc/latexPdf bin/develDoc/warningLog
+ 	cat doc/doxygen.conf doc/doxPdf|doxygen -
+ 	cd bin/develDoc/latexPdf; for f in `ls *.eps`; do epstopdf $$f; done # Cygwin fix
+-	cd bin/develDoc/latexPdf/; make refman.pdf; mv refman.pdf ../develDoc.pdf
++	cd bin/develDoc/latexPdf/; ${MAKE} refman.pdf; mv refman.pdf ../develDoc.pdf
+ develDocPs: bin/develDoc/
+ 	rm -rf bin/develDoc/latexPs bin/develDoc/warningLog
+ 	cat doc/doxygen.conf doc/doxPs|doxygen -
+-	cd bin/develDoc/latexPs/; make refman.ps; mv refman.ps ../develDoc.ps
++	cd bin/develDoc/latexPs/; ${MAKE} refman.ps; mv refman.ps ../develDoc.ps
+ 
+ clean: tidy
+ 	rm -rf bin

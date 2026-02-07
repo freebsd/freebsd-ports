@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-08-19 16:58:25 UTC
++++ CMakeLists.txt
+@@ -227,7 +227,7 @@ if(SDL2NET_INSTALL)
+         endif()
+         # Only install a SDL2_net.pc file in Release mode
+         install(CODE "
+-            if(CMAKE_INSTALL_CONFIG_NAME MATCHES \"Release\")
++            if(1)
+                 # FIXME: use file(COPY_FILE) if minimum CMake version >= 3.21
+                 execute_process(COMMAND \"\${CMAKE_COMMAND}\" -E copy_if_different
+                     \"${CMAKE_CURRENT_BINARY_DIR}/SDL2_net-$<CONFIG>.pc\"

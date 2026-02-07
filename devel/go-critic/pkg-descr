@@ -1,0 +1,7 @@
+Highly extensible Go source code linter providing checks currently
+missing from other linters.  Features:
+
+ - Almost 100 diagnostics that check for bugs, performance and style issues
+ - Extensible without re-compilation with dynamic rules
+ - Includes #opinionated checks with very strict and specific requirements
+ - Self-documented: gocritic doc <checkname> gives a checker description

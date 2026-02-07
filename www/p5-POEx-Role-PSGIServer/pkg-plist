@@ -1,0 +1,8 @@
+%%SITE_PERL%%/POEx/Role/PSGIServer.pm
+%%SITE_PERL%%/POEx/Role/PSGIServer/ProxyWriter.pm
+%%SITE_PERL%%/POEx/Role/PSGIServer/Streamer.pm
+%%SITE_PERL%%/POEx/Types/PSGIServer.pm
+%%PERL5_MAN3%%/POEx::Role::PSGIServer.3.gz
+%%PERL5_MAN3%%/POEx::Role::PSGIServer::ProxyWriter.3.gz
+%%PERL5_MAN3%%/POEx::Role::PSGIServer::Streamer.3.gz
+%%PERL5_MAN3%%/POEx::Types::PSGIServer.3.gz

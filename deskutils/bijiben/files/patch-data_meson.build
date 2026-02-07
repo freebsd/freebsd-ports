@@ -1,0 +1,18 @@
+--- data/meson.build.orig	2021-04-30 11:59:10 UTC
++++ data/meson.build
+@@ -4,7 +4,6 @@ i18n.merge_file(
+ mime = 'org.gnome.Notes.xml'
+ 
+ i18n.merge_file(
+-  mime,
+   input: mime + '.in',
+   output: mime,
+   po_dir: po_dir,
+@@ -18,7 +17,6 @@ i18n.merge_file(
+ desktop_conf.set ('icon', application_id)
+ 
+ i18n.merge_file(
+-  desktop,
+   type: 'desktop',
+   input: configure_file(
+     input: files (desktop + '.in'),

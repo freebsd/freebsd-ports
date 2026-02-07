@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-09-14 09:28:17 UTC
++++ CMakeLists.txt
+@@ -24,6 +24,8 @@ if (CMAKE_SYSTEM_NAME STREQUAL Linux)
+     set(LINUX TRUE)
+ elseif (CMAKE_SYSTEM_NAME STREQUAL Darwin)
+     set(MACOSX TRUE)
++elseif (CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++    set(FREEBSD TRUE)
+ else ()
+     Message (FATAL_ERROR "${CMAKE_SYSTEM_NAME} not supported; Must be Linux or Darwin")
+ endif()

@@ -1,0 +1,8 @@
+--- configure.orig	2013-09-29 23:03:36 UTC
++++ configure
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ # Gartoon Redux configure script
+ # (C) 2008-2009 Krzysztof Kosiński

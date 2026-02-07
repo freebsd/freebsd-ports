@@ -1,0 +1,17 @@
+Intlfonts contains free X11 fonts in the BDF and TrueType formats. They notably
+cover a large number of characters from different writing systems: European,
+Asian, Chinese, Japanese, Korean, Ethiopic and others.
+
+These fonts allow multilingual PostScript printing from Emacs.
+
+Asian -- Asian (non-CJK) fonts
+Chinese  -- Chinese normal size fonts excluding what distributed with X
+Chinese.BIG -- Chinese big fonts
+Ethiopic -- Ethiopic fonts
+European -- European normal size fonts (suitable with the other fonts)
+European-BIG -- European big fonts
+Japanese -- Japanese normal size fonts excluding what distributed with X
+Japanese.BIG -- Japanese big fonts
+Misc -- fonts for the other regions/scripts
+TrueType -- Truetype fonts
+Type1 -- Postscript Type1 fonts

@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	2013-05-26 20:58:37.000000000 -0400
++++ tests/Makefile.in	2013-05-29 11:18:38.000000000 -0400
+@@ -674,7 +674,7 @@
+ 
+ .PHONY: test-sym-resolver
+ test-sym-resolver: symresolve
+-	@$(top_builddir)/tests/$< > $@.out
++	@$(top_builddir)/tests/symresolve > $@.out
+ 	@diff -w $(srcdir)/symresolve.ref $@.out && echo "$@: passed."
+ 
+ .PHONY: oprtest

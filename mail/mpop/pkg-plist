@@ -1,0 +1,16 @@
+bin/mpop
+%%MPOPD%%bin/mpopd
+share/examples/mpop/mpoprc.example
+%%NLS%%share/locale/de/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/es/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/mpop.mo
+share/man/man1/mpop.1.gz
+%%MPOPD%%share/man/man1/mpopd.1.gz

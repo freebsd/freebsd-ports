@@ -1,0 +1,2 @@
+KAuth provides a convenient, system-integrated way to offload actions that need
+to be performed as a privileged user to small helper utilities.

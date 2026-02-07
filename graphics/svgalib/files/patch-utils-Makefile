@@ -1,0 +1,20 @@
+--- utils/Makefile.orig	Fri Aug 25 05:31:18 2000
++++ utils/Makefile	Fri Aug 25 05:31:23 2000
+@@ -15,7 +15,7 @@
+ 
+ CFLAGS = $(WARN) $(OPTIMIZE) -I../include
+ #Use the next one for the Alpha/AXP if you need it
+-#LDFLAGS = -L../staticlib 
++LDFLAGS = -L../sharedlib
+ LIBS = -lvga -lm
+ 
+ #----------------------------------------------------------------------
+@@ -56,7 +56,7 @@
+ 	$(INSTALLPROG) $(UTILPROGS) $(UTILINSTALLDIR)
+ 
+ .depend:
+-	gcc -MM $(patsubst %.o,$(srcdir)/utils/%.c,$(OBJECTS)) >.depend
++	$(CC) $(INCLUDES) -MM $(patsubst %.o,$(srcdir)/utils/%.c,$(OBJECTS)) >.depend
+ 
+ #
+ # include a dependency file if one exists

@@ -1,0 +1,11 @@
+--- renewck.orig	2023-11-18 20:32:22 UTC
++++ renewck
+@@ -438,7 +438,7 @@ GetOptions("help|h" => \$help,
+                    }
+                }
+            },
+-	   "domain|d:s" => sub {
++	   "domain|D:s" => sub {
+ 	       foreach my $dom (split(/,/, $_[1])) {
+ 		   my @s = split(/[=]/, $dom, 2);
+ #                       $s[0] =~ tr/[a-z]/[A-Z]/;

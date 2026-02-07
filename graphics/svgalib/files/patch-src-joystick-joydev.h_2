@@ -1,0 +1,12 @@
+diff -druN svgalib-1.4.2.orig/src/et6000.c src/et6000.c
+--- svgalib-1.4.2.orig/src/et6000.c	Fri Aug 25 04:39:39 2000
++++ src/et6000.c	Fri Aug 25 04:39:57 2000
+@@ -10,7 +10,7 @@
+ #include "vga.h"
+ #include "libvga.h"
+ #include "driver.h"
+-#include <linux/pci.h>
++/*#include <linux/pci.h>*/
+ #include "timing.h"
+ #include "interface.h"
+ #include "vgaregs.h"

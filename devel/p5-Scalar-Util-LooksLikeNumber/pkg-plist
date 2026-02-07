@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Scalar/Util/LooksLikeNumber.pm
+%%SITE_ARCH%%/auto/Scalar/Util/LooksLikeNumber/LooksLikeNumber.so
+%%PERL5_MAN3%%/Scalar::Util::LooksLikeNumber.3.gz

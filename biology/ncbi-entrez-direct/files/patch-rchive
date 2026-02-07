@@ -1,0 +1,10 @@
+--- rchive.orig	2021-03-04 06:50:29 UTC
++++ rchive
+@@ -43,6 +43,7 @@ case "$osname-$cputype" in
+   Darwin-*arm* )           platform=Darwin ;;
+   CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
+   Linux-*arm* )            platform=ARM ;;
++  FreeBSD-* )              platform=FreeBSD ;;
+   * )                      platform=UNSUPPORTED ;;
+ esac
+ compiled=$0."$platform"

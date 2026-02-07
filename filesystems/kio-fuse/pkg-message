@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+To fully use KIO-fuse, you will need FUSE and usermount enabled, e.g.
+    kldload fusefs
+    sysctl vfs.usermount=1
+to make these changes permanent, see loader.conf(5) and sysctl.conf(5).
+EOM
+}
+]

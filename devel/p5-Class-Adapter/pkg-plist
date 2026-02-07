@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Class/Adapter.pm
+%%SITE_PERL%%/Class/Adapter/Builder.pm
+%%SITE_PERL%%/Class/Adapter/Clear.pm
+%%PERL5_MAN3%%/Class::Adapter.3.gz
+%%PERL5_MAN3%%/Class::Adapter::Builder.3.gz
+%%PERL5_MAN3%%/Class::Adapter::Clear.3.gz

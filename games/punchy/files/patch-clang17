@@ -1,0 +1,23 @@
+https://github.com/llvm/llvm-project/commit/066fb7a58c5a
+https://github.com/denoland/chromium_build/commit/67a6e3e79577
+https://github.com/denoland/rusty_v8/commit/0e09f12eca47
+
+--- cargo-crates/v8-0.47.1/build/config/compiler/BUILD.gn.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/v8-0.47.1/build/config/compiler/BUILD.gn
+@@ -1564,16 +1564,6 @@ config("default_warnings") {
+         cflags += [ "-Wno-unqualified-std-cast-call" ]
+       }
+ 
+-      if (!is_nacl && !(is_chromeos ||
+-                        default_toolchain == "//build/toolchain/cros:target") &&
+-          clang_major_version >= 15) {
+-        # TODO(https://crbug.com/1316298): Re-enable once test failure is figured out
+-        cflags += [
+-          "-Xclang",
+-          "-no-opaque-pointers",
+-        ]
+-      }
+-
+       if (is_fuchsia) {
+         # TODO(https://bugs.chromium.org/p/fuchsia/issues/detail?id=77383)
+         cflags += [ "-Wno-deprecated-copy" ]

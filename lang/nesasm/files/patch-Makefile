@@ -1,0 +1,8 @@
+--- Makefile.orig	Tue Aug  7 00:04:20 2007
++++ Makefile	Tue Aug  7 00:04:47 2007
+@@ -1,4 +1,4 @@
+-default:
++all:
+ 	make -f Makefile.unix
+ 
+ clean:

@@ -1,0 +1,66 @@
+--- zetaback.in.orig	2019-01-31 14:04:38.000000000 -0800
++++ zetaback.in	2020-05-02 16:38:22.402137000 -0700
+@@ -434,11 +434,15 @@
+ 
+ This value defaults to (14 * 86400), or two weeks.
+ 
++=item compressionprogram
++
++Compress files using gzip, bzip2, or xz. Defaults to gzip.
++
+ =item compressionlevel
+ 
+-Compress files using gzip at the specified compression level. 0 means no
+-compression. Accepted values are 1-9. Defaults to 1 (fastest/minimal
+-compression.)
++Compress files using gzip, bzip2, or xz at the specified compression level.
++0 means no compression. Accepted values are 1-9. Defaults to 1
++(fastest/minimal compression.)
+ 
+ =item ssh_config
+ 
+@@ -781,9 +785,18 @@
+ 
+   # compression is meaningless for dataset backups
+   if ($type ne "s") {
++    my $cp = config_get($host, 'compressionprogram');
++    if ($cp ne "xz" && $cp ne "bzip2" && $cp ne "gzip" && $cp ne "") {
++	die "zfs_full_backup: unsupported compression program specified\n";
++    } elsif ($cp eq "") {
++	$cp = "gzip";
++	my $cl = 1;
++    } else {
++	my $cl = 1;
++    }
+     my $cl = config_get($host, 'compressionlevel');
+     if ($cl >= 1 && $cl <= 9) {
+-        open(LBACKUP, "|gzip -$cl >$store/.$dumpname") ||
++        open(LBACKUP, "|$cp -$cl >$store/.$dumpname") ||
+         die "zfs_do_backup $host:$fs $type: cannot create dump\n";
+     } else {
+         open(LBACKUP, ">$store/.$dumpname") ||
+@@ -1319,16 +1332,22 @@
+   else {
+     $command = "__ZFS__ recv $fs";
+   }
++  my $cp = config_get($host, 'compressionprogram');
++  if ($cp ne "xz" && $cp ne "bzip2" && $cp ne "gzip" && $cp ne "") {
++      die "zfs_full_backup: unsupported compression program specified\n";
++  } elsif ($cp eq "") {
++      $cp = "gzip";
++  }
+   if ($file) {
+     print " => piping $file to $command\n" if($DEBUG);
+-    print "gzip -dfc $file | ssh $ssh_config $host $command\n" if ($DEBUG && $NEUTERED);
++    print "$cp -dfc $file | ssh $ssh_config $host $command\n" if ($DEBUG);
+   } elsif ($dataset) {
+     print " => piping $dataset to $command using zfs send\n" if ($DEBUG);
+     print "zfs send $dataset | ssh $ssh_config $host $command\n" if ($DEBUG && $NEUTERED);
+   }
+   unless($NEUTERED) {
+     if ($file) {
+-      open(DUMP, "gzip -dfc $file |");
++      open(DUMP, "$cp -dfc $file |");
+     } elsif ($dataset) {
+       open(DUMP, "__ZFS__ send $dataset |");
+     }

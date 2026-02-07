@@ -1,0 +1,16 @@
+include/d/derelict/opengl3/arb.d
+include/d/derelict/opengl3/cgl.d
+include/d/derelict/opengl3/constants.d
+include/d/derelict/opengl3/deprecatedConstants.d
+include/d/derelict/opengl3/deprecatedFunctions.d
+include/d/derelict/opengl3/ext.d
+include/d/derelict/opengl3/functions.d
+include/d/derelict/opengl3/gl.d
+include/d/derelict/opengl3/gl3.d
+include/d/derelict/opengl3/glx.d
+include/d/derelict/opengl3/glxext.d
+include/d/derelict/opengl3/internal.d
+include/d/derelict/opengl3/types.d
+include/d/derelict/opengl3/wgl.d
+include/d/derelict/opengl3/wglext.d
+lib/d/libDerelictGL3.a

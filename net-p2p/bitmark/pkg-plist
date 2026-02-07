@@ -1,0 +1,16 @@
+%%DAEMON%%@sample etc/bitmarkd.conf.sample
+%%DAEMON%%etc/bitmarkd.conf.sub
+%%DAEMON%%etc/newsyslog.conf.d/bitmarkd.conf
+%%DAEMON%%etc/syslog.d/bitmarkd.conf
+%%DAEMON%%sbin/bitmarkd
+%%RECORDER%%@sample etc/recorderd.conf.sample
+%%RECORDER%%etc/newsyslog.conf.d/recorderd.conf
+%%RECORDER%%etc/syslog.d/recorderd.conf
+%%RECORDER%%sbin/recorderd
+%%CLI%%bin/bitmark-cli
+%%DUMPER%%bin/bitmark-dumpdb
+%%DAEMONRECORDER%%@dir /var/lib
+%%DAEMON%%@dir(bitmark,bitmark,) /var/lib/bitmarkd
+%%DAEMON%%@dir(bitmark,bitmark,) /var/run/bitmarkd
+%%RECORDER%%@dir(bitmark-recorder,bitmark-recorder,) /var/lib/recorderd
+%%RECORDER%%@dir(bitmark-recorder,bitmark-recorder,) /var/run/recorderd

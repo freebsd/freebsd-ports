@@ -1,0 +1,15 @@
+include/libayatana-ido3-0.4/libayatana-ido/ayatanamenuitemfactory.h
+include/libayatana-ido3-0.4/libayatana-ido/idocalendarmenuitem.h
+include/libayatana-ido3-0.4/libayatana-ido/idoentrymenuitem.h
+include/libayatana-ido3-0.4/libayatana-ido/idorange.h
+include/libayatana-ido3-0.4/libayatana-ido/idoscalemenuitem.h
+include/libayatana-ido3-0.4/libayatana-ido/idoswitchmenuitem.h
+include/libayatana-ido3-0.4/libayatana-ido/idotimeline.h
+include/libayatana-ido3-0.4/libayatana-ido/libayatana-ido.h
+lib/girepository-1.0/AyatanaIdo3-0.4.typelib
+lib/libayatana-ido3-0.4.so
+lib/libayatana-ido3-0.4.so.0
+lib/libayatana-ido3-0.4.so.0.0.0
+libdata/pkgconfig/libayatana-ido3-0.4.pc
+share/gir-1.0/AyatanaIdo3-0.4.gir
+share/vala/vapi/libayatana-ido3-0.4.vapi

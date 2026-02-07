@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Compress/Bzip2.pm
+%%SITE_ARCH%%/auto/Compress/Bzip2/autosplit.ix
+%%SITE_ARCH%%/auto/Compress/Bzip2/Bzip2.so
+%%PERL5_MAN3%%/Compress::Bzip2.3.gz

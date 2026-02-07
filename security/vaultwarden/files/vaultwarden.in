@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: vaultwarden
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: rust
+
+# Enable this script by adding:
+# vaultwarden_enable="YES"
+# ... to /etc/rc.conf
+# rc_debug=yes
+
+. /etc/rc.subr
+name=vaultwarden
+
+rcvar=vaultwarden_enable
+load_rc_config ${name}
+
+: ${vaultwarden_chdir=%%PREFIX%%/www/vaultwarden}
+: ${vaultwarden_user:=%%WWWOWN%%}
+: ${vaultwarden_group:=%%WWWGRP%%}
+
+# This is the tool init launches
+command="/usr/sbin/daemon"
+
+pidfile="/var/run/${name}/${name}.pid"
+
+task="%%PREFIX%%/bin/${name}"
+procname="${task}"
+
+command_args="-p ${pidfile} -T ${name} ${task}"
+
+start_precmd="start_precmd"
+start_precmd()
+{
+        if [ ! -e "/var/run/${name}" ] ; then
+                install -d -o ${vaultwarden_user} -g ${vaultwarden_group} /var/run/${name};
+        fi
+
+        # checkyesno rubywarden_api_signups
+        # if [ "$?" -eq 0 ]; then
+        #         export ALLOW_SIGNUPS=1
+        #         echo "Vaultwarden Signups Enabled"
+        # fi
+}
+
+run_rc_command "$1"

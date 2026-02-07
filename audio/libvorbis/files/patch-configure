@@ -1,0 +1,24 @@
+--- configure.orig	2015-02-26 22:09:49 UTC
++++ configure
+@@ -12672,7 +12672,7 @@ if test -z "$GCC"; then
+ 		PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
+ 	*)
+ 		DEBUG="-g"
+-		CFLAGS="-O"
++		CFLAGS=""
+ 		PROFILE="-g -p" ;;
+         esac
+ else
+@@ -12816,9 +12816,9 @@ rm -f core conftest.err conftest.$ac_obj
+ 		CFLAGS="-O3 -Wall -W -ffast-math -D_REENTRANT -fsigned-char"
+ 		PROFILE="-pg -g -O3 -ffast-math -D_REENTRANT -fsigned-char";;
+  	*)
+-		DEBUG="-g -Wall -Wextra -D__NO_MATH_INLINES -fsigned-char"
+-		CFLAGS="-O3 -Wall -Wextra -D__NO_MATH_INLINES -fsigned-char"
+-		PROFILE="-O3 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++		DEBUG="-g -Wall -Wextra -fsigned-char"
++		CFLAGS="-Wall -Wextra -fsigned-char"
++		PROFILE="-g -pg -fsigned-char" ;;
+         esac
+ 
+         { $as_echo "$as_me:${as_lineno-$LINENO}: checking if $CC accepts -Wdeclaration-after-statement" >&5

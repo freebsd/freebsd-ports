@@ -1,0 +1,25 @@
+PORTNAME=	belooted
+PORTVERSION=	0.1.4.1
+PORTREVISION=	8
+CATEGORIES=	games
+MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/ \
+		LOCAL/martymac
+
+MAINTAINER=	martymac@FreeBSD.org
+COMMENT=	Popular 32-card trick-taking game played in France
+WWW=		https://gnomefiles.org/content/show.php/Belooted?content=131848
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake gnome pkgconfig
+USE_GNOME=	gtk20 intltool
+GNU_CONFIGURE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} '/^LIBS =/s/$$/ -lm/' ${WRKSRC}/src/Makefile.in
+
+.include <bsd.port.mk>

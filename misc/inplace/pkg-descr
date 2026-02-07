@@ -1,0 +1,11 @@
+The inplace(1) command is a utility to edit files in-place through
+given filter commands preserving the original file attributes.  Mode
+and ownership (user and group) are preserved by default, and time
+(access and modification) by choice.
+
+Examples:
+    # Sort files in-place using sort(1):
+    inplace sort file1 file2 file3
+
+    # Process image files preserving time and taking backup files:
+    inplace -t -b.orig 'convert -rotate 270 -resize 50%% %1 %2' *.jpg

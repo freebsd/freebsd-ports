@@ -1,0 +1,8 @@
+Log4sh is a logging framework for shell scripts that works similar to
+the other wonderful logging products available from the Apache Software
+Foundation (eg. log4j, log4perl). Although not as powerful as the
+others, it can make the task of adding advanced logging to shell scripts
+easier. It has much more power than just using simple "echo" commands
+throughout. In addition, it can be configured from a properties file so
+that scripts in a production environment do not need to be altered to
+change the amount of logging they produce.

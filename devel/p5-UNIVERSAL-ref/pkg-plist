@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/UNIVERSAL/ref.pm
+%%SITE_ARCH%%/auto/UNIVERSAL/ref/ref.so
+%%PERL5_MAN3%%/UNIVERSAL::ref.3.gz

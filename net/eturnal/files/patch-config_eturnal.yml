@@ -1,0 +1,13 @@
+--- config/eturnal.yml.orig	2023-09-28 08:04:22 UTC
++++ config/eturnal.yml
+@@ -7,6 +7,10 @@
+ 
+ eturnal:
+ 
++  ## Minimum configuration needed for FreeBSD file system hierarchy.
++  log_dir: /var/log/eturnal
++  run_dir: /var/spool/eturnal
++
+   ## Shared secret for deriving temporary TURN credentials (default: $RANDOM):
+   #secret: "long-and-cryptic"
+ 

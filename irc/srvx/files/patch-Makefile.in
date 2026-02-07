@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2006-05-14 10:52:30.000000000 +0800
++++ Makefile.in	2013-08-22 16:08:40.000000000 +0800
+@@ -186,6 +186,7 @@
+ SUBDIRS = @MY_SUBDIRS@
+ DIST_SUBDIRS = src rx
+ all: all-recursive
++	cp ./src/srvx $(srcdir)/src/*.help .
+ 
+ .SUFFIXES:
+ am--refresh:
+@@ -601,12 +602,6 @@
+ 	mostlyclean-libtool mostlyclean-recursive pdf pdf-am ps ps-am \
+ 	tags tags-recursive uninstall uninstall-am uninstall-info-am
+ 
+-
+-all: srvx
+-
+-srvx: src/srvx
+-	cp ./src/srvx $(srcdir)/src/*.help .
+-
+ install-exec-local:
+ 	$(INSTALL) -d -m 755 $(prefix)
+ 	$(INSTALL) -m 744 ./src/srvx $(prefix)

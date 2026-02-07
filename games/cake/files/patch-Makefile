@@ -1,0 +1,21 @@
+--- Makefile.orig	Wed Jul 16 19:13:06 2003
++++ Makefile	Fri Jul 16 18:03:40 2004
+@@ -1,10 +1,11 @@
+-INCLUDES = -I/usr/include -I/usr/local/include -I/usr/X11R6/include
+-CXX = g++
+-CXXFLAGS += -g -Wall -W -O2 $(INCLUDES)
+-
+-LDFLAGS += -L/usr/lib -L/usr/local/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lm -ldl 
+-LDFLAGS += -lpthread -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE 
+-LDFLAGS += -lcurses -ljpeg -lz -lfmod-3.63
++INCLUDES = -I$(LOCALBASE)/include
++CXX ?= g++
++CXXFLAGS += -Wall $(INCLUDES)
++
++LDFLAGS += -L$(LOCALBASE)/lib -lglut -lGLU -lGL
++LDFLAGS += -pthread -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE 
++#LDFLAGS += -lcurses -ljpeg -lz -lfmod-3.63
++LDFLAGS += -ljpeg
+ 
+ EXE = main
+ SRC_FILES = $(wildcard cake/*.cpp cake/glsetup/*.cpp cake/zip/*.cpp) main.cpp 

@@ -1,0 +1,43 @@
+--- Makefile.orig	2018-08-24 18:40:37 UTC
++++ Makefile
+@@ -20,10 +20,10 @@
+ 
+ # Modify as required.
+ #
+-SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
++#SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
+ PREFIX ?= /usr/local
+ INCDIR ?= $(PREFIX)/include
+-LIBDIR ?= $(PREFIX)/lib$(SUFFIX)
++LIBDIR ?= $(PREFIX)/lib
+ 
+ 
+ MAJVERS = 2
+@@ -33,7 +33,6 @@ VERSION = $(MAJVERS).$(MINVERS)
+ 
+ CPPFLAGS += -DVERSION=\"$(VERSION)\" -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -I.  
+ CXXFLAGS += -Wall -O2 -fPIC
+-CXXFLAGS += -march=native
+ LDLFAGS += 
+ LDLIBS +=
+ 
+@@ -45,17 +44,16 @@ CLTHREADS_DEP = -lpthread
+ CLTHREADS_O = p_thread.o a_thread.o itc_mesg.o itc_ip1q.o itc_ctrl.o textmsg.o
+ CLTHREADS_H = clthreads.h
+ 
++all: $(CLTHREADS_MIN)
+ 
+ $(CLTHREADS_MIN): $(CLTHREADS_O)
+ 	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(CLTHREADS_MAJ) -o $(CLTHREADS_MIN) $(CLTHREADS_O) $(CLTHREADS_DEP)
+ 
+ 
+ install:	$(CLTHREADS_MIN)
+-	install -d $(DESTDIR)$(PREFIX)/$(INCDIR)
+-	install -d $(DESTDIR)$(PREFIX)/$(LIBDIR)
+ 	install -m 644 $(CLTHREADS_H) $(DESTDIR)$(INCDIR)
+ 	install -m 755 $(CLTHREADS_MIN) $(DESTDIR)$(LIBDIR)
+-	ldconfig
++	ln -sf $(CLTHREADS_MIN) $(DESTDIR)$(LIBDIR)/$(CLTHREADS_MAJ)
+ 	ln -sf $(CLTHREADS_MIN) $(DESTDIR)$(LIBDIR)/$(CLTHREADS_SO)
+ 
+ uninstall:

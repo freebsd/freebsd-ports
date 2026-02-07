@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Crypt/DES_PP.pm
+%%SITE_PERL%%/Crypt/.cvsignore
+%%PERL5_MAN3%%/Crypt::DES_PP.3.gz

@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/csexp/META
+%%OCAML_SITELIBDIR%%/csexp/csexp.a
+%%OCAML_SITELIBDIR%%/csexp/csexp.cma
+%%OCAML_SITELIBDIR%%/csexp/csexp.cmi
+%%OCAML_SITELIBDIR%%/csexp/csexp.cmt
+%%OCAML_SITELIBDIR%%/csexp/csexp.cmti
+%%OCAML_SITELIBDIR%%/csexp/csexp.cmx
+%%OCAML_SITELIBDIR%%/csexp/csexp.cmxa
+%%OCAML_SITELIBDIR%%/csexp/csexp.cmxs
+%%OCAML_SITELIBDIR%%/csexp/csexp.ml
+%%OCAML_SITELIBDIR%%/csexp/csexp.mli
+%%OCAML_SITELIBDIR%%/csexp/dune-package
+%%OCAML_SITELIBDIR%%/csexp/opam

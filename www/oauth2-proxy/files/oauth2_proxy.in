@@ -1,0 +1,92 @@
+#!/bin/sh
+
+# PROVIDE: oauth2_proxy
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add these following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# oauth2_proxy_enable (bool):         Set it to YES to enable keycloak on startup.
+#                                 Default: NO
+# oauth2_proxy_user (string):         User account to run with.
+#                                 Default: www
+# oauth2_proxy_flags (string):        Additional flags for the startup script.
+#
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+ 
+name=${name##*/}
+rcvar=${name}_enable
+desc="OAuth 2.0 proxy server"
+
+load_rc_config "$name"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "${name}_svcj_options=\${${name}_svcj_options:-'net_basic'}"
+eval "_oauth2_proxy_user=\${${name}_user:-'%%USER%%'}"
+eval "_oauth2_proxy_group=\${${name}_group:-'%%GROUP%%'}"
+eval "_oauth2_proxy_flags=\${${name}_flags:-''}"
+eval "_oauth2_proxy_restart=\${${name}_restart:-'60'}"
+
+configname=$(echo ${name}.cfg | sed -e 's:_:-:g')
+
+pidfile=%%RUN_DIR%%/${name}.pid
+childpidfile=%%RUN_DIR%%/${name}_child.pid
+command=/usr/sbin/daemon
+command_args="-u ${_oauth2_proxy_user} -o %%LOG_DIR%%/${name}.out -t ${name} -R ${_oauth2_proxy_restart} -P ${pidfile} -p ${childpidfile}"
+
+start_cmd="oauth2_proxy_start"
+stop_cmd="oauth2_proxy_stop"
+
+oauth2_proxy_start()
+{
+	if [ ! -d "%%LOG_DIR%%" ]; then
+		install -d -o ${_oauth2_proxy_user} %%LOG_DIR%%
+	fi
+	if [ ! -d "%%RUN_DIR%%" ]; then
+		install -d -o ${_oauth2_proxy_user} %%RUN_DIR%%
+	fi
+
+	chown -R ${_oauth2_proxy_user} %%LOG_DIR%%
+
+	echo "Starting ${name}."
+        ${command} ${command_args} \
+                %%PREFIX%%/bin/%%PORTNAME%% \
+                --config %%PREFIX%%/etc/${configname} \
+                ${_oauth2_proxy_flags}
+}
+
+oauth2_proxy_stop()
+{
+    local pid_daemon
+    local pid_child
+
+    echo "Stopping ${name}."
+
+    pid_daemon=$(check_pidfile ${pidfile} ${command})
+    if [ ! -z "${pid_daemon}" ]; then
+        kill -TERM ${pid_daemon}
+    fi
+
+
+    pid_child=$(check_pidfile ${childpidfile} %%PREFIX%%/bin/%%PORTNAME%%)
+    if [ ! -z "${pid_child}" ]; then
+        kill -TERM ${pid_child}
+    fi
+
+    wait_for_pids ${pid_daemon} ${pid_child}
+}
+
+run_rc_command "$1"

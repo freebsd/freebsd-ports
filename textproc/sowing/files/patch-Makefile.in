@@ -1,0 +1,27 @@
+--- Makefile.in.orig	2015-07-06 18:37:03 UTC
++++ Makefile.in
+@@ -8,6 +8,7 @@ datadir     = @datadir@
+ man1dir     = @mandir@/man1
+ INSTALL     = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT  = @INSTALL_SCRIPT@
+ INSTALL_DATA    = @INSTALL_DATA@
+ SHELL = @SHELL@
+ top_srcdir=@top_srcdir@
+@@ -64,13 +65,13 @@ install:
+ 	    @MKDIR@ $(man1dir) ; fi
+ 	@if [ ! -d $(man1dir) ] ; then \
+ 	    echo "Please create $(man1dir)" ; exit 1 ; fi
+-	$(INSTALL_PROGRAM) bin/bib2html $(bindir)/bib2html
++	$(INSTALL_SCRIPT) bin/bib2html $(bindir)/bib2html
+ 	$(INSTALL_PROGRAM) src/doctext/doctext $(bindir)/doctext
+ 	$(INSTALL_PROGRAM) src/doctext/doc2lt $(bindir)/doc2lt
+ 	$(INSTALL_PROGRAM) src/tohtml/tohtml  $(bindir)/tohtml
+ 	if [ "`cd bin && pwd`" != "`cd $(bindir) && pwd`" ] ; then \
+-	    $(INSTALL_PROGRAM) bin/pstoxbm $(bindir)/pstoxbm ; \
+-	    $(INSTALL_PROGRAM) bin/pstogif $(bindir)/pstogif ; \
++	    $(INSTALL_SCRIPT) bin/pstoxbm $(bindir)/pstoxbm ; \
++	    $(INSTALL_SCRIPT) bin/pstogif $(bindir)/pstogif ; \
+ 	fi
+ 	$(INSTALL_PROGRAM) src/bfort/bfort $(bindir)/bfort
+ 	$(INSTALL_PROGRAM) src/mapnames/mapnames $(bindir)/mapnames

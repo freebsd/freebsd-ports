@@ -1,0 +1,3 @@
+libCEED provides fast algebra for element-based discretizations, designed for
+performance portability, run-time flexibility, and clean embedding in higher
+level libraries and applications.

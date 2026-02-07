@@ -1,0 +1,3 @@
+lsknobs is a simple sh(1) script designed to help configure
+ports knobs and options by listing them together with their
+status (either enabled or not). It uses portconf for knobs.

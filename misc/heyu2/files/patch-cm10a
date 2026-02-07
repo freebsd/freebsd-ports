@@ -1,0 +1,21 @@
+--- cm10a.c.orig	2012-05-01 05:04:46.000000000 -0500
++++ cm10a.c	2012-05-01 08:33:49.000000000 -0500
+@@ -58,14 +58,14 @@
+ #include <unistd.h>
+ #include <syslog.h>
+ #else
+-#    if (defined(POSIX) || defined(FREEBSD) || defined(OPENBSD))
+-#include <sys/termios.h>
++#    if (defined(DARWIN) || defined(FREEBSD))
++#include <termios.h>
+ #    else
+ #         ifdef SCO
+ #include <sys/termio.h>
+ #         else
+-#              ifdef DARWIN
+-#include <termios.h>
++#              if (defined(POSIX) || defined(OPENBSD))
++#include <sys/termios.h>
+ #              else
+ #include <termio.h>
+ #              endif

@@ -1,0 +1,9 @@
+Math::GMPq is a bigrational module utilising the GNU MP (GMP) library. Basically
+this module simply wraps all of the mpq rational functions provided by that
+library. See the Math::GMPq test suite for some examples of usage.
+
+IMPORTANT:
+If your perl was built with '-Duse64bitint' you need to assign all integers
+larger than 52-bit in a 'use integer;' block. Failure to do so can result in the
+creation of the variable as an NV (rather than an IV) - with a resultant loss of
+precision.

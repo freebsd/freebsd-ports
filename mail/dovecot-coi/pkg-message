@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+
+Beta version disclaimer
+The purpose of this BETA version of this Dovecot plugin is solely to test its
+features, to obtain defects, failures and malfunctions.
+By using the software, you acknowledge that all of the data that you are
+handling with the BETA version might be subject to such defects, failures
+and malfunctions, up to the point of total loss.
+You are aware to not rely on the functionality and that the use of the software
+in a professional productive environment is not recommended.
+
+Configuration instructions are at https://doc.dovecot.org/configuration_manual/coi/
+
+EOM
+}
+]

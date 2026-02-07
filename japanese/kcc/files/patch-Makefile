@@ -1,0 +1,31 @@
+--- Makefile.orig	1994-06-28 11:42:32 UTC
++++ Makefile
+@@ -7,10 +7,11 @@
+ 
+ #	@(#)Makefile 2.3 (Y.Tonooka) 3/28/94
+ 
+-          BINPATH = /usr/local/bin
+-          MANPATH = /usr/man
+-          JMANDIR = ja_JP.ujis
+-           CFLAGS = -O
++          PREFIX?= /usr/local
++          BINPATH = ${PREFIX}/bin
++          MANPATH = ${PREFIX}/share/man
++          JMANDIR = ja
++           CFLAGS?= -O
+ 
+             SHELL = /bin/sh
+                CP = cp
+@@ -34,10 +35,10 @@ install.man: $(MANPATH)/$(JMANDIR)/man1/
+ 
+ $(BINPATH)/kcc: kcc.c
+ 	$(MAKE) kcc
+-	$(INSTALL) -s kcc $(BINPATH)
++	$(BSD_INSTALL_PROGRAM) kcc $(DESTDIR)$(BINPATH)
+ 
+ $(MANPATH)/$(JMANDIR)/man1/kcc.1: kcc.jman
+-	$(INSTALL) -m 644 kcc.jman $@
++	$(BSD_INSTALL_MAN) kcc.jman $(DESTDIR)$(MANPATH)/$(JMANDIR)/man1/kcc.1
+ 
+ clean:
+ 	rm -f $(CMDS) $(OBJS) mon.out gmon.out make.log

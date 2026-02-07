@@ -1,0 +1,62 @@
+--- Makefile.in.orig	2006-11-05 03:47:23 UTC
++++ Makefile.in
+@@ -20,6 +20,8 @@
+ EXTRA_DIST = AUTHORS INSTALL TODO LICENSE CHANGELOG \
+ 	build-apache13.bat build-apache2.bat \
+ 
++APXS_STAGE = @APXS_STAGE@
++
+ coreSOURCES = @PACKAGE_NAME@.c
+ coreTARGET = @PACKAGE_NAME@@APXS_EXTENSION@
+ coreLDADD = @RT_LIBS@
+@@ -151,41 +153,27 @@
+ 		@DEFS@ @AP_DEFS@ $(dbiLDADD) $(dbiSOURCES)
+ 
+ install: $(TARGETS) install-subdirs
+-	@@APXS_BIN@ -n $(coreNAME) -i $(coreTARGET); \
++	@@APXS_BIN@ $(APXS_STAGE) -n $(coreNAME) -i $(coreTARGET); \
+ 	if test @WANT_MYSQL_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(mysqlNAME) -i $(mysqlTARGET); \
++	    @APXS_BIN@ $(APXS_STAGE) -n $(mysqlNAME) -i $(mysqlTARGET); \
+     fi; \
+ 	if test @WANT_PGSQL_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(pgsqlNAME) -i $(pgsqlTARGET); \
++	    @APXS_BIN@ $(APXS_STAGE) -n $(pgsqlNAME) -i $(pgsqlTARGET); \
+     fi; \
+ 	if test @WANT_DBI_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(dbiNAME) -i $(dbiTARGET); \
++	    @APXS_BIN@ $(APXS_STAGE) -n $(dbiNAME) -i $(dbiTARGET); \
+     fi; \
+ 	if test @WANT_SSL_MOD@ -eq 1; then \
+-		@APXS_BIN@ -n $(sslNAME) -i $(sslTARGET); \
++		@APXS_BIN@ $(APXS_STAGE) -n $(sslNAME) -i $(sslTARGET); \
+ 	fi; \
+ 	if test @WANT_LOGIO_MOD@ -eq 1; then \
+-	    @APXS_BIN@ -n $(logioNAME) -i $(logioTARGET); \
+-    fi; \
+-	echo "*************************************************************************"; \
+-	echo "*** The mod_log_sql modules have been installed."; \
+-	echo "*** Please edit your Apache configuration files and"; \
+-	echo "*** add the appropriate LoadModule directives per the documentation"; \
+-	echo "*** in docs/manual.html"; \
+-	echo "*** If you have previously used 1.18 or lower then you must change"; \
+-	echo "*** >LoadModule sql_log_module modules/mod_log_sql.so"; \
+-	echo "***   to"; \
+-	echo "*** >LoadModule log_sql_module modules/mod_log_sql.so"; \
+-	echo "*** in your httpd.conf as the internal name of the module has changed."; \
+-	echo "*** "; \
+-	echo "*** Also read the documentation about using SSL support and new "; \
+-	echo "*** configuration directives."; \
+-	echo "*************************************************************************";
++	    @APXS_BIN@ $(APXS_STAGE) -n $(logioNAME) -i $(logioTARGET); \
++    fi;
+ 
+ activate: activate-subdirs
+-	@@APXS_BIN@ -n $(coreNAME) -i -a $(coreTARGET); \
++	@@APXS_BIN@ $(APXS_STAGE) -n $(coreNAME) -i $(coreTARGET); \
+ 	if test @WANT_SSL_MOD@ -eq 1; then \
+-		@APXS_BIN@ -n $(sslNAME) -i -a $(sslTARGET); \
++		@APXS_BIN@ $(APXS_STAGE) -n $(sslNAME) -i $(sslTARGET); \
+ 	fi
+ 
+ clean: clean-subdirs

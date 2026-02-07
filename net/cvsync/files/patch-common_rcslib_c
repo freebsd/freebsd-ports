@@ -1,0 +1,91 @@
+$OpenBSD: patch-common_rcslib_c,v 1.2 2014/06/25 17:54:07 naddy Exp $
+--- common/rcslib.c.orig	Mon Jul 18 16:34:30 2005
++++ common/rcslib.c	Wed Jun 25 00:48:47 2014
+@@ -64,6 +64,7 @@ static const struct rcs_keyword rcs_keywords[] = {
+ 	{ "strict",	6 },
+ 	{ "symbols",	7 },
+ 	{ "text",	4 },
++	{ "commitid",	8 },
+ 	{ NULL,		0 }
+ };
+ 
+@@ -83,7 +84,8 @@ enum {
+ 	RCS_STATE,
+ 	RCS_STRICT,
+ 	RCS_SYMBOLS,
+-	RCS_TEXT
++	RCS_TEXT,
++	RCS_COMMITID
+ };
+ 
+ #define	RCS_SKIP(p, e)			\
+@@ -579,6 +581,40 @@ rcslib_parse_delta(struct rcslib_file *rcs, char *sp, 
+ 			return (NULL);
+ 		}
+ 
++		/* commitid id; */
++		rcskey = &rcs_keywords[RCS_COMMITID];
++		if ((sp + rcskey->namelen > bp) ||
++		    (memcmp(sp, rcskey->name, rcskey->namelen) != 0)) {
++			rev->commitid.i_id = NULL;
++			rev->commitid.i_len = 0;
++		} else {
++			sp += rcskey->namelen;
++
++			p = sp;
++			RCS_SKIP_NORET(sp, bp)
++			if ((sp > bp) || (sp == p)) {
++			    free(delta->rd_rev);
++			    return (NULL);
++			}
++
++			if ((sp = rcslib_parse_id(sp, bp, &rev->commitid)) == NULL) {
++				free(delta->rd_rev);
++				return (NULL);
++			}
++
++			RCS_SKIP_NORET(sp, bp)
++			if ((sp > bp) || (*sp++ != ';')) {
++				free(delta->rd_rev);
++				return (NULL);
++			}
++
++			RCS_SKIP_NORET(sp, bp)
++			if (sp > bp) {
++				free(delta->rd_rev);
++				return (NULL);
++			}
++		}
++
+ 		/* { newphrase }* */
+ 		p = sp;
+ 		if ((sp = rcslib_parse_newphrase(sp, bp)) == NULL) {
+@@ -1522,10 +1558,24 @@ rcslib_write_delta(int fd, const struct rcslib_revisio
+ 	iov[0].iov_len = 7;
+ 	iov[1].iov_base = rev->next.n_str;
+ 	iov[1].iov_len = rev->next.n_len;
+-	iov[2].iov_base = ";\n\n";
+-	iov[2].iov_len = 3;
+-	len = iov[0].iov_len + iov[1].iov_len + iov[2].iov_len;
+-	if ((wn = writev(fd, iov, 3)) == -1)
++	iov[2].iov_base = ";\n";
++	iov[2].iov_len = 2;
++	if (rev->commitid.i_len > 0) {
++		iov[3].iov_base ="commitid\t";
++		iov[3].iov_len = 9;
++		iov[4].iov_base = rev->commitid.i_id;
++		iov[4].iov_len = rev->commitid.i_len;
++		iov[5].iov_base = ";\n\n";
++		iov[5].iov_len = 3;
++	} else {
++		iov[3].iov_base = "\n";
++		iov[3].iov_len = 1;
++		iov[4].iov_base = iov[5].iov_base = NULL;
++		iov[4].iov_len = iov[5].iov_len = 0;
++	}
++	len = iov[0].iov_len + iov[1].iov_len + iov[2].iov_len +
++	      iov[3].iov_len + iov[4].iov_len + iov[5].iov_len;
++	if ((wn = writev(fd, iov, 6)) == -1)
+ 		return (false);
+ 	if ((size_t)wn != len)
+ 		return (false);

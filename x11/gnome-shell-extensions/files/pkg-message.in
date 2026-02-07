@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+In order to launch your session. Copy 'xprofile' into your home directory:
+  cp %%EXAMPLESDIR%%/xprofile ~/.xprofile
+
+Create or edit /var/db/AccountsService/users/YOURLOGIN file:
+  [User]
+  Language=fr_FR.UTF-8 # e.g. for French users
+  Session=gnome-classic-xorg
+  SystemAccount=false
+
+Replace YOURLOGIN by your login.
+
+Currently only 'gnome-classic-xorg' is supported, and tested.
+EOM
+}
+]

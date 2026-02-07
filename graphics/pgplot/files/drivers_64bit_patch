@@ -1,0 +1,33 @@
+--- drivers/gidriv.f.orig	1998-05-13 21:05:05.000000000 -0400
++++ drivers/gidriv.f	2011-12-07 16:57:04.000000000 -0500
+@@ -78,7 +78,7 @@
+ C Note: for 64-bit operating systems, change the following 
+ C declaration to INTEGER*8:
+ C
+-      INTEGER PIXMAP, WORK
++      INTEGER*8 PIXMAP, WORK
+ C
+       SAVE UNIT, IC, CTABLE, NPICT, MAXIDX, BX, BY, PIXMAP, FILENM
+       SAVE CDEFLT, STATE
+--- drivers/ppdriv.f.orig	1998-05-13 21:04:29.000000000 -0400
++++ drivers/ppdriv.f	2011-12-07 16:57:39.000000000 -0500
+@@ -68,7 +68,7 @@
+ C Note: for 64-bit operating systems, change the following 
+ C declaration to INTEGER*8:
+ C
+-      INTEGER PIXMAP
++      INTEGER*8 PIXMAP
+ C
+       SAVE    UNIT, IC, CVAL, CTABLE, BX, BY, PIXMAP, NPICT, CDEFLT
+       SAVE    STATE
+--- drivers/wddriv.f.orig	1998-05-13 21:03:53.000000000 -0400
++++ drivers/wddriv.f	2011-12-07 16:56:29.000000000 -0500
+@@ -61,7 +61,7 @@
+ C Note: for 64-bit operating systems, change the following 
+ C declaration to INTEGER*8:
+ C
+-      INTEGER PIXMAP
++      INTEGER*8 PIXMAP
+ C
+       SAVE UNIT, IC, CTABLE, NPICT, MAXIDX, BX, BY, PIXMAP, FILENM
+       SAVE CDEFLT, STATE

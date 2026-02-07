@@ -1,0 +1,17 @@
+@owner games
+@group games
+@(,,4711) bin/moria
+@mode 444
+%%DATADIR%%/hours
+%%DATADIR%%/news
+%%DATADIR%%/origcmds.hlp
+%%DATADIR%%/owizcmds.hlp
+%%DATADIR%%/roglcmds.hlp
+%%DATADIR%%/rwizcmds.hlp
+@(,,644) %%DATADIR%%/scores
+%%DATADIR%%/version.hlp
+%%DATADIR%%/welcome.hlp
+@owner
+@group
+@mode
+share/man/man6/moria.6.gz

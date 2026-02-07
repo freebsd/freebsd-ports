@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: perdition_imap4s
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable perdition.imap4s
+#
+# perdition_imap4s_enable="YES"
+# perdition_imap4s_flags="<set as needed>"
+#
+# See perdition(8) for flags
+#
+
+perdition_imap4s_enable=${perdition_imap4s_enable-"NO"}
+
+. /etc/rc.subr
+
+name="perdition_imap4s"
+rcvar=perdition_imap4s_enable
+
+command="%%PREFIX%%/sbin/perdition.imap4s"
+pidfile="/var/run/perdition.imap4s/perdition.imap4s.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"

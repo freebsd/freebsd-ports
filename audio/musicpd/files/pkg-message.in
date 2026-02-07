@@ -1,0 +1,43 @@
+[
+{ type: install
+  message: <<EOM
+The musicpd package has been successfully installed.
+
+In order to run the MPD server, you need to edit the provided
+sample configuration file
+
+	%%PREFIX%%/etc/musicpd.conf
+
+Edit the variables in the section "Files and directories"
+according to your local environment. Ensure that the referenced
+directories exist and owned by the 'mpd' user, except for the
+variable music_directory. It is sufficient for the 'mpd' user
+to have read permissions to the referenced directory.
+
+To enable the service at boot time, add the following line to
+/etc/rc.conf:
+
+	musicpd_enable="YES"
+
+Then start the server with
+
+	service musicpd start
+
+or reboot.
+
+NOTE: The musicpd server does not come with a client. In order
+      to use it, you need one. They come in all shapes and
+      sizes for many platforms (including iOS and Android for
+      remote controlling musicpd from your smartphone).
+
+      In the FreeBSD ports tree, there is a number of clients as
+      well, for instance (non-exhaustive list):
+
+      Command line: musicpc
+      Curses: ncmpc, ncmpcpp, pms, pms-devel
+      GNOME / GTK: ario, gimmix, glurp, gmpc, sonata
+      KDE / Qt: cantana, quimup, qmpdlient
+      Web: phpmp
+EOM
+}
+]

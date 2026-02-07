@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-08-01 21:31:20 UTC
++++ CMakeLists.txt
+@@ -122,7 +122,7 @@ endif()
+ endif()
+ 
+ #-- minimalist build allowed with boost version older than 1.48
+-set( SFCGAL_Boost_COMPONENTS thread system serialization )
++set( SFCGAL_Boost_COMPONENTS thread serialization )
+ #-- program_options
+ if ( SFCGAL_BUILD_TESTS OR SFCGAL_BUILD_EXAMPLES OR SFCGAL_BUILD_OSG )
+ 	set( SFCGAL_Boost_COMPONENTS chrono unit_test_framework filesystem program_options timer ${SFCGAL_Boost_COMPONENTS} )

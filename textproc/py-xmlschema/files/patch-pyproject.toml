@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-01-15 07:43:09 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 77.0"]
++requires = ["setuptools >= 63.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,7 @@ readme = "README.rst"
+ version = "4.3.0"
+ description = "An XML Schema validator and decoder"
+ readme = "README.rst"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ requires-python = ">=3.10"
+ authors = [
+     { name = "Davide Brunato", email = "brunato@sissa.it" },

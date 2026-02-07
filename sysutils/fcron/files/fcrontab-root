@@ -1,0 +1,20 @@
+# Derived from the default /etc/crontab for FreeBSD
+# See fcrontab(5) for syntax and semantics
+#
+SHELL=/bin/sh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
+HOME=/var/log
+#
+@nolog,lavg5(1.5) 5 /usr/libexec/atrun
+#
+# Rotate log files every hour, if necessary.
+%nolog,hourly *	newsyslog
+#
+# Perform daily/weekly/monthly maintenance.
+%daily,serial * * periodic daily
+%weekly,serial * * periodic weekly
+%monthly,serial * * * periodic monthly
+#
+# Adjust the time zone if the CMOS clock keeps local time, as opposed to
+# UTC time.  See adjkerntz(8) for details.
+1,31	0-5	*	*	*	root	adjkerntz -a

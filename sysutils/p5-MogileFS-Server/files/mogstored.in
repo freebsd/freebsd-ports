@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: mogstored
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=mogstored
+rcvar=mogstored_enable
+
+load_rc_config mogstored
+
+: ${mogstored_enable:="NO"}
+
+required_files=%%PREFIX%%/etc/mogstored.conf
+
+command="%%PREFIX%%/bin/${name}"
+command_args="--config=%%PREFIX%%/etc/mogstored.conf -d"
+
+run_rc_command "$1"

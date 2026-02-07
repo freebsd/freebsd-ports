@@ -1,0 +1,6 @@
+SSLsplit is a tool for man-in-the-middle attacks against SSL/TLS encrypted
+network connections. Connections are transparently intercepted through a
+network address translation engine and redirected to SSLsplit. SSLsplit
+terminates SSL/TLS and initiates a new SSL/TLS connection to the original
+destination address, while logging all data transmitted. SSLsplit is intended
+to be useful for network forensics and penetration testing.

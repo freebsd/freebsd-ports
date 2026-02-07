@@ -1,0 +1,2 @@
+Net::Abuse::Utils::Spamhaus is a Perl extension for checking data
+against the spamhaus blacklists.

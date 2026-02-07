@@ -1,0 +1,22 @@
+bin/wipeclean
+%%DATADIR%%/node_modules/.bin/wipeclean
+%%DATADIR%%/node_modules/.package-lock.json
+%%DATADIR%%/node_modules/commander/LICENSE
+%%DATADIR%%/node_modules/commander/Readme.md
+%%DATADIR%%/node_modules/commander/esm.mjs
+%%DATADIR%%/node_modules/commander/index.js
+%%DATADIR%%/node_modules/commander/lib/argument.js
+%%DATADIR%%/node_modules/commander/lib/command.js
+%%DATADIR%%/node_modules/commander/lib/error.js
+%%DATADIR%%/node_modules/commander/lib/help.js
+%%DATADIR%%/node_modules/commander/lib/option.js
+%%DATADIR%%/node_modules/commander/lib/suggestSimilar.js
+%%DATADIR%%/node_modules/commander/package-support.json
+%%DATADIR%%/node_modules/commander/package.json
+%%DATADIR%%/node_modules/commander/typings/index.d.ts
+%%DATADIR%%/node_modules/wipeclean/.prettierrc
+%%DATADIR%%/node_modules/wipeclean/README.md
+@(,,0755) %%DATADIR%%/node_modules/wipeclean/index.js
+%%DATADIR%%/node_modules/wipeclean/package.json
+%%DATADIR%%/package-lock.json
+%%DATADIR%%/package.json

@@ -1,0 +1,18 @@
+Dancer2::Plugin::LogReport provides easy access to the extensive logging
+facilities provided by Log::Report. Along with Dancer2::Logger::LogReport, this
+brings together all the internal Dancer2 logging, handling for expected and
+unexpected exceptions, translations and application logging.
+
+Logging is extremely flexible using many of the available dispatchers. Multiple
+dispatchers can be used, each configured separately to display different
+messages in different formats. By default, messages are logged to a session
+variable for display on a webpage, and to STDERR.
+
+Messages within this plugin use the extended Dancer2::Logger::LogReport::Message
+class rather than the standard Log::Report::Message class.
+
+Note that it is currently recommended to use the plugin in all apps within a
+Dancer2 program, not only some. Therefore, wherever you use Dancer2 you should
+also use Dancer2::Plugin::LogReport. This does not apply if using the same app
+name (use Dancer2 appname, 'Already::Exists'). In all other modules, you can
+just use Log::Report.

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+You installed OSPRay: A ray-tracing engine.
+
+Due to the limitation of OpenVKL OSPRay requires
+CPU to have SSE4.2 support or higher.
+EOM
+}
+]

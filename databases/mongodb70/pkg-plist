@@ -1,0 +1,10 @@
+bin/mongod
+bin/mongos
+@sample etc/mongodb.conf.sample
+%%DOCSDIR%%/LICENSE-Community.txt
+%%DOCSDIR%%/MPL-2
+%%DOCSDIR%%/README
+%%DOCSDIR%%/THIRD-PARTY-NOTICES
+share/man/man1/mongod.1.gz
+share/man/man1/mongos.1.gz
+share/man/man5/mongodb-parameters.5.gz

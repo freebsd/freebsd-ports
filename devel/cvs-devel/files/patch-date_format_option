@@ -1,0 +1,151 @@
+#
+# Add an extra option to set the DateFormat used in log output.
+#
+# Patch by Steve McIntyre <steve@einval.com>
+diff -Nur doc/cvs.texinfo doc/cvs.texinfo
+--- doc/cvs.texinfo	2005-09-23 10:02:53.000000000 +0800
++++ doc/cvs.texinfo	2006-02-26 23:03:05.000000000 +0800
+@@ -14840,9 +14840,17 @@
+ group to using @code{cvs admin} to change the default keyword
+ substitution mode, lock revisions, unlock revisions, and
+ replace the log message, use @samp{UserAdminOptions=klum}.
+-@end table
+-
+ 
++@cindex DateFormat, in CVSROOT/config
++@item DateFormat=@var{value}
++Control the output format of dates from cvs. cvs version 1.12.x
++changed the default format to use ``iso8601'' dates, which are
++better for many reasons. However, old scripts/programs written to
++parse the output of various cvs commands (especially cvs log) may
++not cope with the change in date format (e.g. gcvs). The default
++value of DateFormat will be ``iso8601'', but if you need temporary
++backwards-compatibility set DateFormat=old.
++@end table
+ 
+ @c ---------------------------------------------------------------------
+ @node Environment variables
+diff -Nur src/log.c src/log.c
+--- src/log.c	2005-03-22 21:19:57.000000000 +0800
++++ src/log.c	2006-02-26 23:03:05.000000000 +0800
+@@ -1607,8 +1607,12 @@
+ 		  &sec);
+     if (year < 1900)
+ 	year += 1900;
+-    sprintf (buf, "%04d-%02d-%02d %02d:%02d:%02d +0000", year, mon, mday,
+-	     hour, min, sec);
++    if ('-' == datesep)
++        sprintf (buf, "%04d%c%02d%c%02d %02d:%02d:%02d +0000", year, datesep,
++                 mon, datesep, mday, hour, min, sec);
++    else
++        sprintf (buf, "%04d%c%02d%c%02d %02d:%02d:%02d", year, datesep,
++                 mon, datesep, mday, hour, min, sec);
+     cvs_output_tagged ("date", buf);
+ 
+     cvs_output_tagged ("text", ";  author: ");
+diff -Nur src/main.c src/main.c
+--- src/main.c	2006-02-26 23:03:04.000000000 +0800
++++ src/main.c	2006-02-26 23:10:12.000000000 +0800
+@@ -1371,9 +1371,19 @@
+     static char buf[sizeof ("yyyy-mm-dd HH:MM:SS -HHMM")];
+     /* Convert to a time in the local time zone.  */
+     struct tm ltm = *(localtime (&unixtime));
+-
+-    if (!my_strftime (buf, sizeof (buf), "%Y-%m-%d %H:%M:%S %z", &ltm, 0, 0))
+-	return NULL;
++    char *format = NULL;
++  
++    switch (datesep)
++    {
++        case '/':
++            format = "%Y/%m/%d %H:%M:%S";
++            break;
++        default:
++            format = "%Y-%m-%d %H:%M:%S %z";
++            break;
++    }
++    if (my_strftime (buf, sizeof (buf), format, &ltm, 0, 0) == 0)
++        return NULL;
+ 
+     return xstrdup (buf);
+ }
+@@ -1388,9 +1398,19 @@
+     static char buf[sizeof ("yyyy-mm-dd HH:MM:SS -HHMM")];
+     /* Convert to a time in the local time zone.  */
+     struct tm ltm = *(gmtime (&unixtime));
+-
+-    if (!my_strftime (buf, sizeof (buf), "%Y-%m-%d %H:%M:%S %z", &ltm, 0, 0))
+-	return NULL;
++    char *format = NULL;
++  
++    switch (datesep)
++    {
++        case '/':
++            format = "%Y/%m/%d %H:%M:%S";
++            break;
++        default:
++            format = "%Y-%m-%d %H:%M:%S %z";
++            break;
++    }
++    if (my_strftime (buf, sizeof (buf), format, &ltm, 0, 0) == 0)
++        return NULL;
+ 
+     return xstrdup (buf);
+ }
+diff -Nur src/parseinfo.c src/parseinfo.c
+--- src/parseinfo.c	2005-09-06 12:40:37.000000000 +0800
++++ src/parseinfo.c	2006-02-26 23:03:05.000000000 +0800
+@@ -626,6 +626,19 @@
+ 		retval->logHistory = xstrdup (p);
+ 	    }
+ 	}
++    /* grab FreeBSD date format idea */
++    else if (strcmp (line, "DateFormat") == 0)
++    {
++        if (strcmp (p, "old") == 0)
++        {
++            datesep = '/';
++        }
++        else if (strcmp (p, "iso8601") == 0)
++        {
++            datesep = '-';
++        }
++    }
++    /* end grabbing */
+ 	else if (strcmp (line, "RereadLogAfterVerify") == 0)
+ 	{
+ 	    if (!strcasecmp (p, "never"))
+diff -Nur src/rcs.c src/rcs.c
+--- src/rcs.c	2006-02-26 23:03:04.000000000 +0800
++++ src/rcs.c	2006-02-26 23:03:05.000000000 +0800
+@@ -33,6 +33,8 @@
+ # endif
+ #endif
+ 
++int datesep = '-';
++
+ /* The RCS -k options, and a set of enums that must match the array.
+    These come first so that we can use enum kflag in function
+    prototypes.  */
+@@ -3537,8 +3539,8 @@
+ 		   &sec);
+     if (year < 1900)
+ 	year += 1900;
+-    sprintf (buf, "%04d/%02d/%02d %02d:%02d:%02d", year, mon, mday,
+-	     hour, min, sec);
++    sprintf (buf, "%04d%c%02d%c%02d %02d:%02d:%02d", year, datesep, mon,
++             datesep, mday, hour, min, sec);
+     return xstrdup (buf);
+ }
+ 
+diff -Nur src/rcs.h src/rcs.h
+--- src/rcs.h	2005-03-18 06:36:24.000000000 +0800
++++ src/rcs.h	2006-02-26 23:03:05.000000000 +0800
+@@ -254,6 +254,7 @@
+ void RCS_setlocalid (const char *, unsigned int, void **, const char *arg);
+ char *make_file_label (const char *, const char *, RCSNode *);
+ 
++extern int datesep;
+ extern bool preserve_perms;
+ 
+ /* From import.c.  */

@@ -1,0 +1,7 @@
+Given a list of scalars or reference variables, writes out their contents in
+perl syntax. The references can also be objects. The contents of each variable
+is output in a single Perl statement. Handles self-referential structures
+correctly.
+
+The return value can be evaled to get back an identical copy of the original
+reference structure.

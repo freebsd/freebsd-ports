@@ -1,0 +1,16 @@
+For a monitoring system to receive more information from an endpoint
+other than that it is simply accessible, help is required from the
+target system. For example - how else can Checkmk know how full a
+server's storage volume is without that system somehow providing the
+information? The component that provides this information is always an
+active piece of software - namely a monitoring agent, usually just
+referred to as an agent. An agent collects data relevant to monitoring
+from a host at specified intervals and transmits that data to the
+monitoring server.
+
+For servers and workstations, Checkmk provides its own agents, these
+are known as Checkmk agents. Checkmk agents are available for a wide
+variety of operating systems - from the commonplace such as Windows and
+Linux to exotics such as OpenVMS. The agents are passive and listen on
+TCP port 6556. Only on receiving a Checkmk server query will these
+agents be activated and respond with the required data.

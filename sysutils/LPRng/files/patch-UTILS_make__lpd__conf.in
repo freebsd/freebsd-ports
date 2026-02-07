@@ -1,0 +1,11 @@
+--- UTILS/make_lpd_conf.in.orig	2012-04-15 10:28:52 UTC
++++ UTILS/make_lpd_conf.in
+@@ -2,7 +2,7 @@
+ date=`LC_ALL=C date`;
+ AWK=@AWK@
+ cat <<EOF
+-# lpd.conf generated for version $1 compiled on $date
++# lpd.conf generated for version $1
+ #   The values in this file are the built-in default values. (Which may depend
+ #   on the build-options used when your LPRng was compiled).
+ #   If you modify the file,  set the value to something other than the default

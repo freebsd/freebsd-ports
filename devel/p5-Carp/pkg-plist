@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Carp.pm
+%%SITE_PERL%%/Carp/Heavy.pm
+%%PERL5_MAN3%%/Carp.3.gz

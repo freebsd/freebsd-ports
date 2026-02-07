@@ -1,0 +1,10 @@
+Waffle is a cross-platform C library that allows one to defer selection
+of an OpenGL API and window system until runtime. For example, on Linux,
+Waffle enables an application to select X11/EGL with an OpenGL 3.3
+core profile, Wayland with OpenGL ES2, and other window system / API
+combinations.
+
+Waffle's immediate goal is to enable Piglit, Mesa's OpenGL test suite,
+to test multiple OpenGL flavors in a cross-platform way. However,
+Waffle's design does not preclude it from being useful to other
+projects.

@@ -1,0 +1,9 @@
+--- Makefile.am.orig	2023-01-24 21:13:11 UTC
++++ Makefile.am
+@@ -8,5 +8,4 @@ EXTRA_DIST = \
+ 	win32/Makefile        \
+ 	win32/icons/grig.ico
+ 
+-# Install any third party macros into our tree for distribution
+-ACLOCAL_AMFLAGS = -I m4 --install
++ACLOCAL_AMFLAGS = -I m4

@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# PROVIDE: imap4d
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name="imap4d"
+rcvar=imap4d_enable
+
+: ${imap4d_enable="NO"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+required_files="%%PREFIX%%/etc/mailutils.conf %%PREFIX%%/etc/mailutils/${name}"
+
+extra_commands="configlint"
+configlint_cmd="${name} --config-lint"
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,11 @@
+--- utils/alsa-utils.spec.in.orig	2020-02-19 12:02:10 UTC
++++ utils/alsa-utils.spec.in
+@@ -41,7 +41,7 @@ Advanced Linux Sound Architecture (ALSA) - Utils
+ * Sun Nov 11 2001 Miroslav Benes <mbenes@tenez.cz>
+ 
+ - dangerous command "rpm -rf $RPM_BUILD_ROOT" checks $RPM_BUILD_ROOT variable
+-- unset key "Docdir" - on some new systems are documentation in /usr/share/doc
++- unset key "Docdir" - on some new systems are documentation in %%PREFIX%%/share/doc
+ 
+ * Mon May 28 1998 Helge Jensen <slog@slog.dk>
+ 

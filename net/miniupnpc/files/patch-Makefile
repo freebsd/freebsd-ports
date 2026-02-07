@@ -1,0 +1,28 @@
+--- Makefile.orig	2024-06-08 22:09:36 UTC
++++ Makefile
+@@ -147,7 +147,6 @@ endif
+ LIBOBJS += $(BUILD)/minissdpc.o
+ endif
+ 
+-LIBDIR ?= lib
+ # install directories
+ ifeq ($(strip $(PREFIX)),)
+ INSTALLPREFIX ?= /usr
+@@ -155,7 +154,7 @@ INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
+ INSTALLPREFIX ?= $(PREFIX)
+ endif
+ INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
+-INSTALLDIRLIB = $(INSTALLPREFIX)/$(LIBDIR)
++INSTALLDIRLIB = $(INSTALLPREFIX)/lib
+ INSTALLDIRBIN = $(INSTALLPREFIX)/bin
+ INSTALLDIRMAN = $(INSTALLPREFIX)/share/man
+ PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
+@@ -245,7 +244,7 @@ updateversion:	include/miniupnpc.h
+ 
+ updateversion:	include/miniupnpc.h
+ 	cp $< $<.bak
+-	sed 's/\(.*MINIUPNPC_API_VERSION\s\+\)[0-9]\+/\1$(APIVERSION)/' < $<.bak > $<
++	sed -E 's/(.*MINIUPNPC_API_VERSION[[:space:]]+)[0-9]+/\1$(APIVERSION)/' < $<.bak > $<
+ 
+ install:	updateversion $(FILESTOINSTALL)
+ 	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRINC)

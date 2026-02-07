@@ -1,0 +1,43 @@
+--- tests/unit/Makefile.in.orig	2025-11-17 08:11:53 UTC
++++ tests/unit/Makefile.in
+@@ -11,10 +11,7 @@ SRCHOME=$(top_srcdir)/src
+ 
+ SRCHOME=$(top_srcdir)/src
+ 
+-ifneq ($(OS),Windows_NT)
+-CFLAGS+=-fPIC -DPIC
+-endif
+-CFLAGS+=-g -I$(SRCHOME)/include -I$(top_builddir)/src/include @NDPI_CFLAGS@ @JSONC_CFLAGS@ @PCAP_INC@ @ADDITIONAL_INCS@
++CFLAGS+=-fPIC -DPIC -g -I$(SRCHOME)/include -I$(top_builddir)/src/include @NDPI_CFLAGS@ @JSONC_CFLAGS@ @PCAP_INC@ @ADDITIONAL_INCS@
+ LIBNDPI=$(top_builddir)/src/lib/libndpi.a
+ LIBS=$(LIBNDPI) @PCAP_LIB@ @ADDITIONAL_LIBS@ @JSONC_LIBS@ @LIBS@
+ LDFLAGS+=@NDPI_LDFLAGS@
+@@ -22,28 +19,7 @@ PREFIX?=@prefix@
+ OBJS=unit
+ PREFIX?=@prefix@
+ 
+-ifneq ($(BUILD_MINGW),)
+-
+-ifeq ($(DISABLE_NPCAP),0)
+-CFLAGS+=-I@srcdir@/../windows/WpdPack/Include -I@srcdir@/../windows/WpdPack/Include/pcap
+-else
+-CFLAGS+=-DDISABLE_NPCAP
+-endif
+-
+-ifeq ($(DISABLE_NPCAP),0)
+-
+-ifneq ($(BUILD_MINGW_X64),)
+-LIBS+=@srcdir@/../windows/WpdPack/Lib/x64/wpcap.lib
+-else
+-LIBS+=@srcdir@/../windows/WpdPack/Lib/wpcap.lib
+-endif
+-
+-endif
+-
+-LIBS+=-Wl,-Bstatic -lpthread -Wl,-Bdynamic
+-else
+ LIBS+=-pthread
+-endif
+ 
+ all: unit$(EXE_SUFFIX)
+ 

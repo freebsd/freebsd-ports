@@ -1,0 +1,13 @@
+--- bin/kafofy.orig	2016-04-03 08:33:38 UTC
++++ bin/kafofy
+@@ -53,8 +53,8 @@ if !File.exists?(options[:config_file])
+   File.chmod 0600, options[:config_file]
+   FileUtils.cp('config/kafo.yaml.example', options[:config_file])
+   if options[:answer_file]
+-    `sed -i 's/^# :answer_file.*$/:answer_file: #{options[:answer_file].gsub('/', '\/')}/' #{options[:config_file]}`
+-    `sed -i 's/^# :name.*$/:name: #{options[:scenario]}/' #{options[:config_file]}`
++    `gsed -i 's/^# :answer_file.*$/:answer_file: #{options[:answer_file].gsub('/', '\/')}/' #{options[:config_file]}`
++    `gsed -i 's/^# :name.*$/:name: #{options[:scenario]}/' #{options[:config_file]}`
+   end
+ end
+ 

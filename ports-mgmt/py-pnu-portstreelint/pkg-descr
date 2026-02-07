@@ -1,0 +1,12 @@
+The portstreelint utility checks the FreeBSD ports tree Index and some
+parts of the ports' Makefiles for errors and warnings.
+
+By default it will scan the whole port tree, but you can select a
+subset of the ports by specifying lists of categories, maintainers and
+ports names.
+
+It is possible to generate a CSV delimited file with the
+per-maintainer findings to a specified filename. This allows for
+automated processing of the results, such as, for example, sending
+warning emails, storing results and displaying only diffs since
+previous run...

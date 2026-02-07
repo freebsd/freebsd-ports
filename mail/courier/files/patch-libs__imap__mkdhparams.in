@@ -1,0 +1,11 @@
+--- libs/imap/mkdhparams.in.orig	2015-04-27 14:11:25.000000000 +0200
++++ libs/imap/mkdhparams.in	2020-04-26 17:12:26.338330000 +0200
+@@ -37,7 +37,7 @@
+ umask 077
+ cp /dev/null $TLS_DHPARAMS.tmp
+ umask 022
+-chown @mailuser@ $TLS_DHPARAMS.tmp
++/usr/sbin/chown @mailuser@ $TLS_DHPARAMS.tmp
+ 
+ BITS="$DH_BITS"
+ if test "@ssllib@" = "openssl"

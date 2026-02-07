@@ -1,0 +1,8 @@
+include/shhopt.h
+lib/libshhopt.a
+lib/libshhopt.so
+lib/libshhopt.so.1
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.c

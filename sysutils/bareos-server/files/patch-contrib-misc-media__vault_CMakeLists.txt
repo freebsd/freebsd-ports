@@ -1,0 +1,42 @@
+--- contrib/misc/media_vault/CMakeLists.txt	2025-12-18 20:20:59.404384000 -0800
++++ contrib/misc/media_vault/CMakeLists.txt	2025-12-18 20:33:03.264603000 -0800
+@@ -36,8 +36,8 @@
+ bareos_configure_file(
+   FILES
+   media_vault.sh.in
+-  media_vault.ini.example.in
+-  job_admin-media_vault.conf.example.in
++  media_vault.ini.in
++  job_admin-media_vault.conf.in
+ )
+ 
+ install(
+@@ -56,24 +56,24 @@
+ 
+ install(
+   CODE "
+-  bareos_install_single_config_file(\"${CMAKE_CURRENT_BINARY_DIR}/media_vault.ini.example\" \"${configtemplatedir}\" \"\")
++  bareos_install_single_config_file(\"${CMAKE_CURRENT_BINARY_DIR}/media_vault.ini\" \"${configtemplatedir}\" \"\")
+ "
+ )
+ 
+ install(
+   CODE "
+-  bareos_install_single_config_file(\"${CMAKE_CURRENT_SOURCE_DIR}/console_media_vault.conf.example\" \"${configtemplatedir}\" \"bareos-dir.d/console\")
++  bareos_install_single_config_file(\"${CMAKE_CURRENT_SOURCE_DIR}/console_media_vault.conf\" \"${configtemplatedir}\" \"bareos-dir.d/console\")
+ "
+ )
+ 
+ install(
+   CODE "
+-  bareos_install_single_config_file(\"${CMAKE_CURRENT_BINARY_DIR}/job_admin-media_vault.conf.example\" \"${configtemplatedir}\" \"bareos-dir.d/job\")
++  bareos_install_single_config_file(\"${CMAKE_CURRENT_BINARY_DIR}/job_admin-media_vault.conf\" \"${configtemplatedir}\" \"bareos-dir.d/job\")
+ "
+ )
+ 
+ install(
+   CODE "
+-  bareos_install_single_config_file(\"${CMAKE_CURRENT_SOURCE_DIR}/profile_media_vault.conf.example\" \"${configtemplatedir}\" \"bareos-dir.d/profile\")
++  bareos_install_single_config_file(\"${CMAKE_CURRENT_SOURCE_DIR}/profile_media_vault.conf\" \"${configtemplatedir}\" \"bareos-dir.d/profile\")
+ "
+ )

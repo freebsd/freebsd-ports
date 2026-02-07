@@ -1,0 +1,8 @@
+PLASMA is an interactive disassembler. It can generate a more readable assembly
+ (pseudo code) with a colored syntax. One can write scripts with the available
+ Python API.
+
+It supports :
+
+* Architectures : x86{64}, ARM, MIPS{64} (partially for ARM and MIPS)
+* Formats : ELF, PE, RAW

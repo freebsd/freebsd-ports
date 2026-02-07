@@ -1,0 +1,12 @@
+bin/charon
+bin/charon.ftp
+bin/charon.local
+bin/charon.pipe
+bin/orpheus
+bin/tartarus
+share/man/man1/charon.1.gz
+share/man/man1/charon.ftp.1.gz
+share/man/man1/charon.local.1.gz
+share/man/man1/charon.pipe.1.gz
+share/man/man1/tartarus.1.gz
+%%SITE_PERL%%/Tartarus/Charon/Filter.pm

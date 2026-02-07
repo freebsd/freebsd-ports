@@ -1,0 +1,3 @@
+bin/axpoint
+%%SITE_PERL%%/XML/Handler/AxPoint.pm
+%%PERL5_MAN3%%/XML::Handler::AxPoint.3.gz

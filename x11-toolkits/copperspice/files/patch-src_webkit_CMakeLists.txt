@@ -1,0 +1,22 @@
+--- src/webkit/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/webkit/CMakeLists.txt
+@@ -2432,7 +2432,7 @@ function_variable_fixup("${EXTRA_WEBKIT_LDFLAGS}"  EXT
+ 
+ target_include_directories(CsWebKit
+    PUBLIC
+-   $<INSTALL_INTERFACE:include/QtWebKit>
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtWebKit
+ )
+ 
+ target_link_libraries(CsWebKit
+@@ -2462,8 +2462,8 @@ install(
+    TARGETS CsWebKit
+    EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(

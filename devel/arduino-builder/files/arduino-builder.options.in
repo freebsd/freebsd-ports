@@ -1,0 +1,6 @@
+{
+  "hardwareFolders": "%%PREFIX%%/arduino/hardware",
+  "otherLibrariesFolders": "%%PREFIX%%/arduino/libraries",
+  "toolsFolders": "%%PREFIX%%/arduino/tools-builder",
+  "runtime.ide.version": "%%IDEVER%%"
+}

@@ -1,0 +1,20 @@
+--- sa-stats-1.0.txt	2014-05-09 07:43:35.000000000 +0200
++++ sa-stats-1.0.txt	2014-05-24 08:00:28.000000000 +0200
+@@ -269,7 +269,7 @@ sub summarize {
+     #my $perc1=sprintf("%.2f",($SPAM_RULES{$key}/$NUM_EMAIL)*100);
+     my $perc1=sprintf("%.2f",(($SPAM_RULES{$key}+$HAM_RULES{$key})/$NUM_EMAIL)*100);
+     my $perc2=sprintf("%.2f",($SPAM_RULES{$key}/$NUM_SPAM)*100);
+-    my $perc3=sprintf("%.2f",($HAM_RULES{$key}/$NUM_HAM)*100);
++    my $perc3=sprintf("%.2f",($NUM_HAM > 0 ? $HAM_RULES{$key}/$NUM_HAM : 0)*100);
+     printf("%4d\t%-24s\t%5s\t%6.2f\t%6.2f\t%6.2f\n",$count+1,$key,$SPAM_RULES{$key},$perc1,$perc2,$perc3);
+     $count++;
+     if ($count >= $TOPRULES && $TOPRULES > 0) {
+@@ -289,7 +289,7 @@ sub summarize {
+   foreach my $key (sort { $HAM_RULES{$b} <=> $HAM_RULES{$a} } keys %HAM_RULES) {
+     #my $perc1=sprintf("%.2f",($HAM_RULES{$key}/$NUM_EMAIL)*100);
+     my $perc1=sprintf("%.2f",(($SPAM_RULES{$key}+$HAM_RULES{$key})/$NUM_EMAIL)*100);
+-    my $perc2=sprintf("%.2f",($SPAM_RULES{$key}/$NUM_SPAM)*100);
++    my $perc2=sprintf("%.2f",($NUM_SPAM > 0 ? $SPAM_RULES{$key}/$NUM_SPAM : 0)*100);
+     my $perc3=sprintf("%.2f",($HAM_RULES{$key}/$NUM_HAM)*100);
+     printf("%4d\t%-24s\t%5s\t%6.2f\t%6.2f\t%6.2f\n",$count+1,$key,$HAM_RULES{$key},$perc1,$perc2,$perc3);
+     $count++;

@@ -1,0 +1,6 @@
+mcwm is a minimalistic floating window manager for the X Window System.
+It is built directly on top of XCB, the C binding for the X11 protocol.
+It doesn't use the Xlib API at all.
+
+All functions are available from the keyboard, but the mouse can be
+used for moving,resizing and raise/lower.

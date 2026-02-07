@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/Callsite.pm
+%%SITE_ARCH%%/auto/Devel/Callsite/Callsite.so
+%%PERL5_MAN3%%/Devel::Callsite.3.gz

@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+The plugin is installed in %%PREFIX%%/libexec/nomad/plugins
+Please set the variable "plugin_dir" to this value in your server.hcl nomad configuration file
+EOM
+}
+{ type: remove
+  message: <<EOM
+The plugin is removed from %%PREFIX%%/libexec/nomad/plugins
+Please, feel free to remove the plugin_dir variable from your server.hcl nomad configuration file
+EOM
+}
+]

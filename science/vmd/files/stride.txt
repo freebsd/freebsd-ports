@@ -1,0 +1,24 @@
+All rights reserved, whether the whole  or  part  of  the  program  is
+concerned.  Permission  to use, copy, and modify this software and its
+documentation is granted for academic use, provided that:
+
+  i.  this copyright notice appears in all copies of the software  and
+      related documentation;
+
+ ii.  the reference given below (Frishman and  Argos,  1995)  must  be
+      cited  in any publication of scientific results based in part or
+      completely on the use of the program;
+
+iii.  bugs will be reported to the authors.
+
+The use of the  software  in  commercial  activities  is  not  allowed
+without a prior written commercial license agreement.
+
+WARNING: STRIDE is provided "as-is" and without warranty of any kind,
+express,  implied  or  otherwise,  including  without  limitation  any
+warranty of merchantability or fitness for a particular purpose. In no
+event will the authors be liable for any special, incidental, indirect
+or consequential damages  of  any  kind,  or  any  damages  whatsoever
+resulting  from loss of data or profits, whether or not advised of the
+possibility of damage, and on any theory of liability, arising out  of
+or in connection with the use or performance of this software.

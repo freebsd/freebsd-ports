@@ -1,0 +1,13 @@
+--- Makefile.orig	Fri Nov  5 00:00:15 1999
++++ Makefile	Wed Jan 12 21:49:27 2000
+@@ -3,8 +3,8 @@
+ #
+ 
+ SHELL	= /bin/sh
+-MAKE	= make
+-CC	= cc
++MAKE	?= make
++CC	?= cc
+ SED	= sed
+ 
+ all:	Makefile.tmp

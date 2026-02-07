@@ -1,0 +1,18 @@
+Super is a setuid-root program that offers:
+
+    o  restricted setuid-root access to executables, adjustable
+	on a per-program and per-user basis;
+
+    o  a relatively secure environment for scripts, so that well-written
+	scripts can be run as root (or some other uid/gid), without
+	unduly compromising security.
+
+The design philosophy behind super is two-fold:
+
+    (a) some users can be trusted when executing certain commands;
+    (b) there are some commands, such as a script to mount CDROM's,
+	which you'd like to be safely executable even by users who
+	are NOT trusted.  Although setuid-root scripts are insecure,
+	a good setuid-root wrapper around a sensible non-setuid script
+	can be hard to break, and super provides that wrapper so that
+	even a non-trusted user can use the scripts.

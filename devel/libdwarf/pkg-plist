@@ -1,0 +1,6 @@
+include/dwarf.h
+include/libdwarf.h
+lib/libdwarf.a
+%%PORTDOCS%%%%DOCSDIR%%/libdwarf2.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libdwarf2p.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/mips_extensions.pdf

@@ -1,0 +1,2 @@
+libvirt-dbus wraps libvirt API to provide a high-level object-oriented API
+better suited for dbus-based applications.

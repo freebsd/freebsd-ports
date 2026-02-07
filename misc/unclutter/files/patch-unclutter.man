@@ -1,0 +1,22 @@
+--- unclutter.man.orig	1994-04-11 17:40:48.000000000 +0200
++++ unclutter.man	2011-11-15 10:30:01.000000000 +0100
+@@ -12,6 +12,8 @@
+ .RB [ -keystroke ]
+ .RB [ -jitter
+ .IR pixels ]
++.RB [ -exec
++.IR idlecommand ]
+ .RB [ -grab ]
+ .RB [ -noevents ]
+ .RB [ -reset ]
+@@ -47,6 +49,10 @@
+ and considered as random noise.
+ The default is 0.
+ .TP
++-exec
++is followed by a command to execute on idle.
++This is for example useful to disable a touchpad.
++.TP
+ -grab
+ means use the original method of grabbing the pointer in order to remove the
+ cursor. 

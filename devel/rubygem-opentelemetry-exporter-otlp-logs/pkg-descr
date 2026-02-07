@@ -1,0 +1,3 @@
+The opentelemetry-exporter-otlp gem provides an OTLP exporter for OpenTelemetry
+for Ruby. Using opentelemetry-exporter-otlp, an application can configure
+OpenTelemetry to export collected tracing data to the OpenTelemetry Collector.

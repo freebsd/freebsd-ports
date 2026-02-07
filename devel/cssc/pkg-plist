@@ -1,0 +1,14 @@
+bin/sccs
+libexec/cssc/admin
+libexec/cssc/cdc
+libexec/cssc/delta
+libexec/cssc/get
+libexec/cssc/prs
+libexec/cssc/prt
+libexec/cssc/rmdel
+libexec/cssc/sact
+libexec/cssc/sccsdiff
+libexec/cssc/unget
+libexec/cssc/val
+libexec/cssc/what
+share/man/man1/sccs.1.gz

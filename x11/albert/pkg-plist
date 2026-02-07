@@ -1,0 +1,198 @@
+bin/albert
+include/albert/albert.h
+include/albert/backgroundexecutor.h
+include/albert/config.h
+include/albert/desktopentryparser.h
+include/albert/download.h
+include/albert/export.h
+include/albert/extension.h
+include/albert/extensionplugin.h
+include/albert/extensionregistry.h
+include/albert/fallbackhandler.h
+include/albert/frontend.h
+include/albert/globalqueryhandler.h
+include/albert/iconprovider.h
+include/albert/indexitem.h
+include/albert/indexqueryhandler.h
+include/albert/inputhistory.h
+include/albert/item.h
+include/albert/logging.h
+include/albert/matchconfig.h
+include/albert/matcher.h
+include/albert/messagebox.h
+include/albert/networkutil.h
+include/albert/notification.h
+include/albert/oauth.h
+include/albert/oauthconfigwidget.h
+include/albert/plugindependency.h
+include/albert/plugininstance.h
+include/albert/pluginloader.h
+include/albert/pluginmetadata.h
+include/albert/pluginprovider.h
+include/albert/property.h
+include/albert/query.h
+include/albert/rankitem.h
+include/albert/standarditem.h
+include/albert/systemutil.h
+include/albert/telemetryprovider.h
+include/albert/timeit.h
+include/albert/triggerqueryhandler.h
+include/albert/urlhandler.h
+include/albert/widgetsutil.h
+lib/albert/application.so
+lib/albert/applications.so
+lib/albert/caffeine.so
+lib/albert/calculator_qalculate.so
+lib/albert/chromium.so
+lib/albert/clipboard.so
+lib/albert/datetime.so
+lib/albert/debug.so
+lib/albert/docs.so
+lib/albert/files.so
+lib/albert/github.so
+lib/albert/hash.so
+lib/albert/mediaremote.so
+lib/albert/path.so
+lib/albert/python.so
+lib/albert/snippets.so
+lib/albert/spotify.so
+lib/albert/ssh.so
+lib/albert/system.so
+lib/albert/timer.so
+lib/albert/timezones.so
+lib/albert/urlhandler.so
+lib/albert/vpn.so
+lib/albert/websearch.so
+lib/albert/widgetsboxmodel-ng.so
+lib/albert/widgetsboxmodel.so
+lib/cmake/Albert/albert-config-version.cmake
+lib/cmake/Albert/albert-config.cmake
+lib/cmake/Albert/albert-macros.cmake
+lib/cmake/Albert/albert-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Albert/albert-targets.cmake
+lib/libalbert.so
+lib/libalbert.so.0.30
+lib/libalbert.so.0.30.1
+%%DATADIR%%/python/plugins/arch_wiki/__init__.py
+%%DATADIR%%/python/plugins/arch_wiki/arch.svg
+%%DATADIR%%/python/plugins/aur/__init__.py
+%%DATADIR%%/python/plugins/aur/arch.svg
+%%DATADIR%%/python/plugins/bitwarden/__init__.py
+%%DATADIR%%/python/plugins/bitwarden/bw.svg
+%%DATADIR%%/python/plugins/coingecko/__init__.py
+%%DATADIR%%/python/plugins/coingecko/coingecko.png
+%%DATADIR%%/python/plugins/color/__init__.py
+%%DATADIR%%/python/plugins/copyq/__init__.py
+%%DATADIR%%/python/plugins/dice_roll/__init__.py
+%%DATADIR%%/python/plugins/dice_roll/icons/d10.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/d100.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/d12.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/d2.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/d20.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/d4.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/d6.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/d8.svg
+%%DATADIR%%/python/plugins/dice_roll/icons/dice.svg
+%%DATADIR%%/python/plugins/docker/__init__.py
+%%DATADIR%%/python/plugins/docker/running.png
+%%DATADIR%%/python/plugins/docker/stopped.png
+%%DATADIR%%/python/plugins/duckduckgo/__init__.py
+%%DATADIR%%/python/plugins/duckduckgo/duckduckgo.svg
+%%DATADIR%%/python/plugins/emoji/__init__.py
+%%DATADIR%%/python/plugins/goldendict/__init__.py
+%%DATADIR%%/python/plugins/jetbrains_projects/__init__.py
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/androidstudio.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/aqua.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/clion.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/datagrip.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/dataspell.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/goland.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/idea.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/phpstorm.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/pycharm.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/rider.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/rubymine.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/rustrover.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/webstorm.svg
+%%DATADIR%%/python/plugins/jetbrains_projects/icons/writerside.svg
+%%DATADIR%%/python/plugins/kill/__init__.py
+%%DATADIR%%/python/plugins/locate/__init__.py
+%%DATADIR%%/python/plugins/locate/locate.svg
+%%DATADIR%%/python/plugins/pacman/__init__.py
+%%DATADIR%%/python/plugins/pacman/arch.svg
+%%DATADIR%%/python/plugins/pass/__init__.py
+%%DATADIR%%/python/plugins/pomodoro/__init__.py
+%%DATADIR%%/python/plugins/pomodoro/pomodoro.svg
+%%DATADIR%%/python/plugins/python_eval/__init__.py
+%%DATADIR%%/python/plugins/python_eval/python.svg
+%%DATADIR%%/python/plugins/syncthing/__init__.py
+%%DATADIR%%/python/plugins/syncthing/syncthing.svg
+%%DATADIR%%/python/plugins/tex_to_unicode/__init__.py
+%%DATADIR%%/python/plugins/tex_to_unicode/tex.svg
+%%DATADIR%%/python/plugins/translators/__init__.py
+%%DATADIR%%/python/plugins/translators/google_translate.png
+%%DATADIR%%/python/plugins/unit_converter/__init__.py
+%%DATADIR%%/python/plugins/unit_converter/icons/currency.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/current.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/length.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/lengthtime.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/luminosity.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/mass.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/printing_unit.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/substance.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/temperature.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/time.svg
+%%DATADIR%%/python/plugins/unit_converter/icons/unit_converter.svg
+%%DATADIR%%/python/plugins/virtualbox/__init__.py
+%%DATADIR%%/python/plugins/vscode_projects/__init__.py
+%%DATADIR%%/python/plugins/vscode_projects/icon.svg
+%%DATADIR%%/python/plugins/wikipedia/__init__.py
+%%DATADIR%%/python/plugins/wikipedia/wikipedia.png
+%%DATADIR%%/python/plugins/x_window_switcher/__init__.py
+%%DATADIR%%/python/plugins/zeal/__init__.py
+%%DATADIR%%/widgetsboxmodel-ng/themes/Nord Dark.ini
+%%DATADIR%%/widgetsboxmodel-ng/themes/Nord Light.ini
+%%DATADIR%%/widgetsboxmodel-ng/themes/Solarized Dark.ini
+%%DATADIR%%/widgetsboxmodel-ng/themes/Solarized Light.ini
+%%DATADIR%%/widgetsboxmodel-ng/themes/Theme.ini.template
+%%DATADIR%%/widgetsboxmodel/themes/Default Dark.qss
+%%DATADIR%%/widgetsboxmodel/themes/Default Light.qss
+%%DATADIR%%/widgetsboxmodel/themes/Default System Palette.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Bright Blue.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Bright Green.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Bright Magenta.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Bright Mint.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Bright Orange.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Bright Violet.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Bright.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Dark Blue.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Dark Green.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Dark Magenta.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Dark Mint.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Dark Orange.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Dark Violet.qss
+%%DATADIR%%/widgetsboxmodel/themes/Legacy Dark.qss
+%%DATADIR%%/widgetsboxmodel/themes/Nord.qss
+%%DATADIR%%/widgetsboxmodel/themes/Numix.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Blue.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Cyan.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Green.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Magenta.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Orange.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Red.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Violet.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Bright Yellow.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Blue.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Cyan.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Green.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Magenta.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Orange.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Red.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Violet.qss
+%%DATADIR%%/widgetsboxmodel/themes/Solarized Dark Yellow.qss
+%%DATADIR%%/widgetsboxmodel/themes/Spotlight Dark.qss
+%%DATADIR%%/widgetsboxmodel/themes/Spotlight.qss
+%%DATADIR%%/widgetsboxmodel/themes/Yosemite Dark.qss
+%%DATADIR%%/widgetsboxmodel/themes/Yosemite.qss
+share/applications/albert.desktop
+share/icons/hicolor/scalable/apps/albert.svg

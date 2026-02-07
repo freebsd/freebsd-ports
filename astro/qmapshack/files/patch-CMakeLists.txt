@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2025-07-04 12:38:57 UTC
++++ CMakeLists.txt
+@@ -46,6 +46,7 @@ include(DefineInstallationPaths)
+ include(DefineCMakeDefaults)
+ include(DefineCompilerFlags)
+ include(DefineInstallationPaths)
++include(FindPkgConfig)
+ include(CPackConfig.cmake)
+ include(ConfigureChecks.cmake)
+ 
+@@ -192,7 +193,10 @@ find_package(GDAL                   REQUIRED)
+ find_package(Qt6Qml                 REQUIRED)
+ find_package(Qt6Help                REQUIRED)
+ find_package(GDAL                   REQUIRED)
+-find_package(PROJ                   REQUIRED)
++find_package(PROJ)
++if (NOT PROJ_FOUND)
++  pkg_search_module(PROJ REQUIRED proj)
++endif()
+ find_package(JPEG                   REQUIRED)
+ find_package(ROUTINO                REQUIRED)
+ find_package(QuaZip-Qt6             REQUIRED)

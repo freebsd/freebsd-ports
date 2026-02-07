@@ -1,0 +1,11 @@
+--- util/configure.orig	Thu Dec 20 11:27:23 2007
++++ util/configure	Thu Dec 20 11:27:57 2007
+@@ -10,7 +10,7 @@
+ if [ "$CC" = "" ]; then
+     CC=gcc
+ fi
+-CFLAGS="-g -Wall -W -Wno-unused-parameter -Wno-unused-function"
++CFLAGS="${CFLAGS}"
+ 
+ if [ "`uname -m`" = "x86_64" ]; then
+     CFLAGS="$CFLAGS -m64"

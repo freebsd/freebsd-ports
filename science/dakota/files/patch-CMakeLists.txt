@@ -1,0 +1,40 @@
+--- CMakeLists.txt.orig	2024-11-12 02:01:36 UTC
++++ CMakeLists.txt
+@@ -274,9 +274,11 @@ if(DAKOTA_MODULE_DAKOTA)
+   endif()
+ 
+   # Legacy examples
+-  add_subdirectory(examples)
++  if (FREEBSD_ENABLE_EXAMPLES)
++    add_subdirectory(examples)
++  endif()
+   # New examples library, taking care to guard against empty directory
+-  if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/dakota-examples/CMakeLists.txt")
++  if(FREEBSD_ENABLE_EXAMPLES AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/dakota-examples/CMakeLists.txt")
+     add_subdirectory(dakota-examples)
+   endif()
+ 
+@@ -299,19 +301,23 @@ install(FILES INSTALL LICENSE COPYRIGHT README
+   DESTINATION ${DAKOTA_TOPFILES_INSTALL}
+   )
+ 
++if (FREEBSD_ENABLE_EXAMPLES)
+ install(DIRECTORY examples DESTINATION ${DAKOTA_EXAMPLES_INSTALL}
+   USE_SOURCE_PERMISSIONS
+   PATTERN "CMakeLists.txt" EXCLUDE
+   PATTERN "*.c" EXCLUDE 
+   PATTERN "*.f" EXCLUDE 
+   )
++endif()
+ 
++if (FREEBSD_INSTALL_TESTS)
+ install(DIRECTORY test DESTINATION ${DAKOTA_TEST_INSTALL}
+   PATTERN "CMakeLists.txt" EXCLUDE
+   PATTERN "*.c" EXCLUDE 
+   PATTERN "*.cpp" EXCLUDE 
+   PATTERN "*.f" EXCLUDE 
+   )
++endif()
+ 
+ if(DAKOTA_VERSION_FOUND)
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/VERSION DESTINATION

@@ -1,0 +1,2 @@
+Please install x11/xclip (if using X11) or x11/wl-clipboard (if using Wayland)
+if clipboard support is desired.

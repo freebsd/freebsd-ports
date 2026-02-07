@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+This port installs Dict server dicod and Dict client dico.
+
+To enable the server, add the following line to /etc/rc.conf:
+
+	dicod_enable="YES"
+
+Before you can start dicod, you have to install dictionaries
+and configure them in %%PREFIX%%/etc/dicod.conf
+
+See %%PREFIX%%/etc/dicod.conf.sample for examples.
+
+For help see info documentation: info Dico
+EOM
+}
+]

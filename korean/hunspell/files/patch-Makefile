@@ -1,0 +1,21 @@
+--- Makefile.orig	2017-12-25 07:30:13 UTC
++++ Makefile
+@@ -1,8 +1,8 @@
+ PYTHON := python3
+ ZIP := zip -r
+ 
+-AFFIX := ko.aff
+-DICT := ko.dic
++AFFIX := ko_KR.aff
++DICT := ko_KR.dic
+ 
+ CLEANFILES := $(AFFIX) $(DICT)
+ 
+@@ -43,6 +43,6 @@ dist:: distdir $(BIN_DISTCONTENT)
+ 	rm -rf $(BIN_DISTNAME)
+ 
+ test:
+-	$(MAKE) -C tests test
++	$(GMAKE) -C tests test
+ 
+ .PHONY: all clean dist distdir test

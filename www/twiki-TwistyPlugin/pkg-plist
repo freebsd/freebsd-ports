@@ -1,0 +1,13 @@
+%%TWDIR%%/data/TWiki/TwistyPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/TwistyPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/TwistyPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/TwistyPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/TwistyPlugin/build.pl
+%%TWDIR%%/pub/TWiki/TwistyPlugin/twistie.dojo.js
+%%TWDIR%%/pub/TWiki/TwistyPlugin/twistie.jquery.css
+%%TWDIR%%/pub/TWiki/TwistyPlugin/twistie.jquery.js
+%%TWDIR%%/templates/twistyplugin.dojo.tmpl
+%%TWDIR%%/templates/twistyplugin.jquery.tmpl
+%%TWDIR%%/templates/twistyplugin.tmpl
+%%TWDIR%%/test/unit/TwistyPlugin/TwistyPluginSuite.pm
+%%TWDIR%%/test/unit/TwistyPlugin/TwistyPluginTests.pm

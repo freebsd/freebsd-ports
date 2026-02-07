@@ -1,0 +1,8 @@
+The LDAP Browser/Editor provides a user-friendly Windows Explorer-like
+interface to LDAP directories with tightly integrated browsing and
+editing capabilities. It is entirely written in Java with the help
+of the JFC (SwingSet) and JNDI class libraries. It connects to LDAP
+v2 and v3 servers.
+
+See also: https://web.archive.org/web/20041019084702/http://www.iit.edu/~gawojar/ldap/
+See also: https://web.archive.org/web/20090224235755/http://ldapmanager.com/en/

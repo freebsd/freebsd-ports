@@ -1,0 +1,5 @@
+RenderCV is a python tool for creating a CV from YAML.
+
+Write your CV or resume as YAML, then run RenderCV, and get a PDF
+with perfect typography. No template wrestling. No broken layouts.
+Consistent spacing, every time.

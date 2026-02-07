@@ -1,0 +1,12 @@
+bin/quasi88
+%%PORTDOCS%%%%DOCSDIR%%/build-unix.txt
+%%PORTDOCS%%%%DOCSDIR%%/build-win.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/format.txt
+%%PORTDOCS%%%%DOCSDIR%%/get-image.txt
+%%PORTDOCS%%%%DOCSDIR%%/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/quasi88.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyconf.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quasi88.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/touchkey.rc

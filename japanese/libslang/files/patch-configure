@@ -1,0 +1,63 @@
+--- configure.orig	Thu Feb 21 20:10:02 2002
++++ configure	Tue May  7 00:40:04 2002
+@@ -1832,8 +1832,8 @@
+ #define HAVE_DLFCN_H 1
+ EOF
+ 
+-  echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
+-echo "configure:1837: checking for dlopen in -ldl" >&5
++  echo $ac_n "checking for dlopen""... $ac_c" 1>&6
++echo "configure:1837: checking for dlopen" >&5
+ ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -1868,7 +1868,7 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-    DYNAMIC_LINK_LIB="-ldl"
++    DYNAMIC_LINK_LIB=""
+     cat >> confdefs.h <<\EOF
+ #define HAVE_DLOPEN 1
+ EOF
+@@ -1943,7 +1943,7 @@
+ 
+ ELFLIB="lib\$(THIS_LIB).so"
+ ELFLIB_MAJOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
+-ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION)"
++ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
+ 
+ case "$host_os" in
+   *linux* )
+@@ -2032,6 +2036,12 @@
+      ELFLIB_MAJOR="lib$(THIS_LIB).$(ELF_MAJOR_VERSION).dylib"
+      ELFLIB_MAJOR_MINOR="lib$(THIS_LIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION).dylib"
+      ;;
++  *freebsd* )
++       ELF_CC="\$(CC)"
++       ELF_CFLAGS="\$(CFLAGS) -fPIC"
++       ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
++       ELF_LINK_CMD="\$(ELF_LINK)"
++     ;;
+   * )
+     echo "Note: ELF compiler for host_os=$host_os may be wrong"
+     ELF_CC="$CC"
+@@ -2432,16 +2449,8 @@
+ 
+ echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
+ echo "configure:2435: checking SLANG_VERSION" >&5
+-slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
+-               awk '{ print $3 }'`
+-slang_major_version=`echo $slang_version |
+- awk '{ print int($1/10000) }'`
+-slang_minor_version=`echo $slang_version $slang_major_version |
+- awk '{ print int(($1 - $2*10000)/100) }'`
+-slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
+- awk '{ print ($1 - $2*10000 - $3*100) }'`
+-
+-slang_minor_version="$slang_minor_version.$slang_mminor_version"
++slang_major_version=2
++slang_minor_version=5
+ slang_version="$slang_major_version.$slang_minor_version"
+ echo "$ac_t""$slang_version" 1>&6
+ 

@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/auto/namespace/clean/xs/xs.so
+%%SITE_ARCH%%/namespace/clean/xs.pm
+%%SITE_ARCH%%/namespace/clean/xs/all.pm
+%%SITE_ARCH%%/namespace/clean/xs/compat.h
+%%PERL5_MAN3%%/namespace::clean::xs.3.gz
+%%PERL5_MAN3%%/namespace::clean::xs::all.3.gz

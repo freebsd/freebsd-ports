@@ -1,0 +1,22 @@
+- Link libinotify for inotify_init1 check on FreeBSD
+- Enable HAVE_PROCSELF since FreeBSD has /proc/curproc
+
+--- src/cpp/core/CMakeLists.txt.orig	2025-10-20 20:09:32 UTC
++++ src/cpp/core/CMakeLists.txt
+@@ -160,12 +160,14 @@ if (UNIX)
+    # platform introspection
+    check_symbol_exists(SA_NOCLDWAIT "signal.h" HAVE_SA_NOCLDWAIT)
+    check_symbol_exists(SO_PEERCRED "sys/socket.h" HAVE_SO_PEERCRED)
++   set(CMAKE_REQUIRED_LIBRARIES ${FREEBSD_LIBDIR}/libinotify.so)
+    check_function_exists(inotify_init1 HAVE_INOTIFY_INIT1)
++   set(CMAKE_REQUIRED_LIBRARIES "")
+    check_function_exists(getpeereid HAVE_GETPEEREID)
+    check_function_exists(setresuid HAVE_SETRESUID)
+-   if(EXISTS "/proc/self")
++   #if(EXISTS "/proc/self")
+       set(HAVE_PROCSELF TRUE)
+-   endif()
++   #endif()
+ 
+    # missing on non-glibc platforms like macOS, musl-based Linux distros, and
+    # the BSDs

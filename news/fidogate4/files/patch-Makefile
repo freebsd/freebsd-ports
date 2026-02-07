@@ -1,0 +1,11 @@
+--- Makefile.orig	2003-06-08 21:01:25 UTC
++++ Makefile
+@@ -9,7 +9,7 @@ TOPDIR		= .
+ include $(TOPDIR)/config.make
+ include $(TOPDIR)/rules.make
+ 
+-SUBDIRS		= src scripts test doc sendmail
++SUBDIRS		= src scripts test doc
+ 
+ INSTALLDIRS	= $(DEFAULT_V_CONFIGDIR) \
+ 		  $(DEFAULT_V_LIBDIR) \

@@ -1,0 +1,2 @@
+Graphical scales map data to aesthetics, and provide methods for
+automatically determining breaks and labels for axes and legends.

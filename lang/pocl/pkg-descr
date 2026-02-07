@@ -1,0 +1,6 @@
+Portable OpenCL (pocl)
+----------------------
+
+Portable OpenCL (>= 3.0) aims to be an efficient open source
+(MIT-licensed) implementation of the OpenCL 2.X standard with
+adaptions of OpenCL 3.0.

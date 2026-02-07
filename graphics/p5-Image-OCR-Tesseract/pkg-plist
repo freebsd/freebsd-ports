@@ -1,0 +1,5 @@
+bin/ocr
+%%SITE_PERL%%/Image/OCR/Tesseract.pm
+%%SITE_PERL%%/Image/OCR/Tesseract.pod
+%%PERL5_MAN1%%/ocr.1.gz
+%%PERL5_MAN3%%/Image::OCR::Tesseract.3.gz

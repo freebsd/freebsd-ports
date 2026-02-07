@@ -1,0 +1,26 @@
+--- packaging/linux/bin/launch.sh.in.orig	2024-04-15 08:04:05 UTC
++++ packaging/linux/bin/launch.sh.in
+@@ -17,6 +17,7 @@ esac
+ /*) PLUGINS="$BIN";;
+ *) PLUGINS="`pwd`/$BIN"
+ esac
++PLUGINS=${PLUGINS%libexec*}lib${PLUGINS#*/libexec}
+ 
+ if [ $(uname -s) = "OpenBSD" ]; then
+   LD_LIBRARY_PATH="$PLUGINS:${LD_LIBRARY_PATH}" exec $GDB "$BIN/@VM_EXECUTABLE_NAME@" "$@"
+@@ -27,13 +28,13 @@ fi
+ # and so it should take precedence over /lib libc.  This is done by setting
+ # LD_LIBRARY_PATH appropriately, based on ldd's idea of the libc use by the VM.
+ #Try extracting Libc
+-LIBC_SO="`/usr/bin/ldd "$BIN/@VM_EXECUTABLE_NAME@" | /bin/fgrep /libc. | sed 's/^.*=> \([^ ]*\).*/\1/'`"
++LIBC_SO="`ldd "$BIN/@VM_EXECUTABLE_NAME@" | grep /libc. | sed 's/^.*=> \([^ ]*\).*/\1/'`"
+ PLATFORMLIBDIR=`expr "$LIBC_SO" : '\(.*\)/libc.*'`
+ 
+ #If empty try extracting Musl
+ if [ "$PLATFORMLIBDIR" = "" ]; then
+ {
+-	LIBC_SO="`/usr/bin/ldd "$BIN/@VM_EXECUTABLE_NAME@" | /bin/fgrep libc. | sed 's/^.*=> \([^ ]*\).*/\1/'`"
++	LIBC_SO="`ldd "$BIN/@VM_EXECUTABLE_NAME@" | grep libc. | sed 's/^.*=> \([^ ]*\).*/\1/'`"
+ 	PLATFORMLIBDIR=`expr "$LIBC_SO" : '\(.*\)/ld-musl.*'`
+ }
+ fi

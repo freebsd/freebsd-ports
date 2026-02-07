@@ -1,0 +1,17 @@
+bin/cmigemo
+include/migemo.h
+lib/libmigemo.so.1.1.0
+lib/libmigemo.so.1
+lib/libmigemo.so
+%%DATADIR%%/cp932/han2zen.dat
+%%DATADIR%%/cp932/hira2kata.dat
+%%DATADIR%%/cp932/roma2hira.dat
+%%DATADIR%%/cp932/zen2han.dat
+%%DATADIR%%/euc-jp/han2zen.dat
+%%DATADIR%%/euc-jp/hira2kata.dat
+%%DATADIR%%/euc-jp/roma2hira.dat
+%%DATADIR%%/euc-jp/zen2han.dat
+%%DATADIR%%/utf-8/han2zen.dat
+%%DATADIR%%/utf-8/hira2kata.dat
+%%DATADIR%%/utf-8/roma2hira.dat
+%%DATADIR%%/utf-8/zen2han.dat

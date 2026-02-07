@@ -1,0 +1,7 @@
+cscope is a screen-oriented software development tool that allows the user to
+browse through C source files for specified code elements. It can find symbols,
+global definitions, functions called by a function, functions calling a
+function, arbitrary regexp patterns and much more. cscope can be used for
+projects of all sizes. Vim and Emacs integration is available.
+
+https://sourceforge.net/projects/cscope/

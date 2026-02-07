@@ -1,0 +1,24 @@
+--- Makefile.orig	Tue Nov  6 00:52:01 2001
++++ Makefile	Sun Dec  2 08:59:00 2001
+@@ -7,18 +7,18 @@
+ # ... in the '.tkMOO-lite' directory under your home directory
+ # ** if you change this value then you'll need to set your TKMOO_LIB_DIR
+ # ** environment variable to the same value
+-TKMOO_LIB_DIR = $(HOME)/.tkMOO-lite
++TKMOO_LIB_DIR ?= $(HOME)/.tkMOO-lite
+ 
+ # where will the executable be installed?
+ # ... in the 'bin' directory under your home directory
+-TKMOO_BIN_DIR = $(HOME)/bin
++TKMOO_BIN_DIR ?= $(HOME)/bin
+ 
+ # which version of WISH will the client use? 'make' will warn you
+ # if WISH can't be found where you say it is.
+ WISH4.1 = /usr/local/bin/wish4.1
+ WISH4.2 = /usr/local/bin/wish4.2
+ WISH8.0 = /usr/local/bin/wish8.0
+-WISH8.3	= /usr/local/bin/wish8.3
++WISH8.3	?= /usr/local/bin/wish8.4
+ WISH = $(WISH8.3)
+ 
+ # ---------------- NO NEED TO CHANGE ANYTHING BELOW THIS LINE ---------------

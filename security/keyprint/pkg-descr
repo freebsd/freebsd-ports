@@ -1,0 +1,19 @@
+This is keyprint: a quick hack for printing S/Key keys on a small piece
+of paper, twice the size of a credit card for easy storage in a
+wallet, card holder, etc.  It produces a PostScript file which can be
+printed and then trimmed to size:
+
+                    hn38925
+    +----------------------------------------+
+    | 1 af fd alfal       26 fd s fdas da    |
+    | 2 af fd alfal       27 fd s fdas da    |
+    | 3 af fd alfal       28 fd s fdas da    |
+    | .                    .                 |
+    | .                    .                 |
+    | 74 af fd alfal      98 fd s fdas da    |
+    | 75 af fd alfal      99 fd s fdas da    |
+    +----------------------------------------+
+
+Warning:  If you don't have a secure network, then it is not a good
+idea to print this key set on a network printer.  It might be obvious,
+but you never know.

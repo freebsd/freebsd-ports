@@ -1,0 +1,14 @@
+--- help/ttcn3_help.orig	2025-05-28 08:04:59 UTC
++++ help/ttcn3_help
+@@ -32,7 +32,10 @@ if test "${TTCN3_DIR}" = "" 
+ 
+ # check for necessary environment variables
+ if test "${TTCN3_DIR}" = "" 
+-then echo "Error: TTCN3_DIR environment variable is not set"; exit 1;
++then if test -d "%%TTCN3_DIR%%"
++  then TTCN3_DIR=%%TTCN3_DIR%%
++  else echo "Error: TTCN3_DIR environment variable is not set"; exit 1;
++  fi
+ fi
+ 
+ # file extension for help files

@@ -1,0 +1,38 @@
+--- src/lib/libast/features/common.orig	2017-11-09 11:01:26.000000000 -0800
++++ src/lib/libast/features/common	2020-02-22 20:00:11.166985000 -0800
+@@ -518,29 +518,12 @@
+ 		printf("#include <varargs.h>\n");
+ 		printf("#endif\n");
+ 		printf("#endif\n");
+-	#if TRY == 4
+-		printf("#define va_listref(p) (&(p))\t");
+-			printf("/* pass va_list to varargs function */\n");
+-		printf("#define va_listval(p) (*(p))\t");
+-			printf("/* retrieve va_list from va_arg(ap,va_listarg) */\n");
+-		printf("#define va_listarg va_list*\t");
+-			printf("/* va_arg() va_list type */\n");
+-	#else
+-		varyfunny(&r);
+-		printf("#define va_listref(p) (p)\t");
+-			printf("/* pass va_list to varargs function */\n");
+-		if (sizeof(va_list) > sizeof(void*))
+-			printf("#define va_listval(p) (*(p))\t");
+-		else
+-			printf("#define va_listval(p) (p)\t");
+-			printf("/* retrieve va_list from va_arg(ap,va_listarg) */\n");
+-	#if TRY == 2
+-		printf("#define va_listarg va_list*\t");
+-	#else
+-		printf("#define va_listarg va_list\t");
+-	#endif /*TRY == 2*/
+-			printf("/* va_arg() va_list type */\n");
+-	#endif /*TRY == 4*/
++	printf("#define va_listref(p) (&(p))\t");
++		printf("/* pass va_list to varargs function */\n");
++	printf("#define va_listval(p) (*(p))\t");
++		printf("/* retrieve va_list from va_arg(ap,va_listarg) */\n");
++	printf("#define va_listarg va_list*\t");
++		printf("/* va_arg() va_list type */\n");
+ 	
+ 	#if _UWIN
+ 		printf("#ifndef va_copy\n");

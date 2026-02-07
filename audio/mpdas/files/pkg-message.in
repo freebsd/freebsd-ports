@@ -1,0 +1,38 @@
+[
+{ type: install
+  message: <<EOM
+mpdas has been successfully installed.
+
+To configure mpdas, simply create a file called .mpdasrc in
+your home directory or in %%PREFIX%%/etc/mpdasrc.
+
+Syntax is easy. Example:
+
+username = lastfmuser
+password = password
+
+Use the runas variable to change the UID the process runs in.
+
+For more information on configuration see:
+http://50hz.ws/mpdas/README.txt
+
+To use the rc-script add the following line to /etc/rc.conf:
+
+	mpdas_enable="YES"
+
+Then start mpdas with
+
+	%%PREFIX%%/etc/rc.d/mpdas start
+
+or reboot.
+EOM
+}
+{
+  type: upgrade
+  maximum_version: 0.4.3
+  message: <<EOM
+As of version 0.4.3 the password is set in plaintext, whereas
+previously it had to be an MD5 hash.
+EOM
+}
+]

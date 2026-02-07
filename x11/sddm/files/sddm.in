@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: sddm
+# REQUIRE: LOGIN cleanvar moused syscons dbus
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf to start SDDM at boot time:
+#
+# sddm_enable="YES"
+
+. /etc/rc.subr
+
+name=sddm
+rcvar=sddm_enable
+
+load_rc_config ${name}
+
+: ${sddm_lang="en_US"} # .UTF-8 suffix will be added later to comply with locale format
+: ${sddm_enable="NO"}
+
+command="%%PREFIX%%/bin/sddm"
+start_cmd="sddm_start"
+
+sddm_start()
+{
+	echo "Starting ${name}."
+	local iter
+
+	( iter=0
+	while ! pgrep -f "^/usr/libexec/getty " > /dev/null; do
+		if [ ${iter} -eq 60 ]; then
+			break
+		fi
+		sleep 1
+		iter=$((${iter} + 1))
+	done
+
+	LANG=${sddm_lang}.UTF-8 ${command} ${sddm_flags} ) &
+}
+
+run_rc_command "$1"

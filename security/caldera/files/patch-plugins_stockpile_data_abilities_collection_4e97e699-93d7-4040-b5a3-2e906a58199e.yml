@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/collection/4e97e699-93d7-4040-b5a3-2e906a58199e.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/4e97e699-93d7-4040-b5a3-2e906a58199e.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           cp #{host.file.path[filters(technique=T1005,max=3)]} #{host.dir.staged[filters(max=1)]}
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           cp #{host.file.path[filters(technique=T1005,max=3)]} #{host.dir.staged[filters(max=1)]}

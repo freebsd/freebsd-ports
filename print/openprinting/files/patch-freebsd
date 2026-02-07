@@ -1,0 +1,517 @@
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/common.c ./source/bsd-sysv-commands/common.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/common.c	2006-02-15 21:24:20.000000000 +0000
++++ ./source/bsd-sysv-commands/common.c	2010-01-31 13:40:22.000000000 +0000
+@@ -8,7 +8,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <string.h>
+ #include <libintl.h>
+ #include <ctype.h>
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/in.lpd.c ./source/bsd-sysv-commands/in.lpd.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/in.lpd.c	2006-01-28 07:02:04.000000000 +0000
++++ ./source/bsd-sysv-commands/in.lpd.c	2010-01-31 13:58:00.000000000 +0000
+@@ -6,6 +6,7 @@
+ #pragma ident	"$Id: in.lpd.c,v 1.3 2006/01/28 07:02:04 njacobs Exp $"
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <stdarg.h>
+ #include <string.h>
+ #include <errno.h>
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/lp.c ./source/bsd-sysv-commands/lp.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/lp.c	2006-02-25 01:08:06.000000000 +0000
++++ ./source/bsd-sysv-commands/lp.c	2010-01-31 13:57:30.000000000 +0000
+@@ -223,7 +223,7 @@
+ 		printer = DEFAULT_DEST;
+ 
+ 	if (modify == -1) {
+-		char *document_format = "application/octet-stream";
++		const char *document_format = "application/octet-stream";
+ 
+ #ifdef MAGIC_MIME
+ 		if (optind != ac) {
+@@ -238,6 +238,7 @@
+ #endif
+ 
+ 		papiAttributeListAddInteger(&list, PAPI_ATTR_EXCL, "copies", 1);
++		/* XXX CONST arg */
+ 		papiAttributeListAddString(&list, PAPI_ATTR_EXCL,
+ 				"document-format", document_format);
+ 		papiAttributeListAddString(&list, PAPI_ATTR_EXCL,
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/lpr.c ./source/bsd-sysv-commands/lpr.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/bsd-sysv-commands/lpr.c	2006-02-01 23:52:42.000000000 +0000
++++ ./source/bsd-sysv-commands/lpr.c	2010-01-31 13:57:05.000000000 +0000
+@@ -51,7 +51,7 @@
+ 	int validate = 0;
+ 	int remove = 0;
+ 	int copy = 1;	/* default is to copy the data */
+-	char *document_format = "application/octet-stream";
++	const char *document_format = "application/octet-stream";
+ 	int c;
+ 
+ 	(void) setlocale(LC_ALL, "");
+@@ -196,6 +196,7 @@
+ #endif
+ 
+ 	papiAttributeListAddInteger(&list, PAPI_ATTR_EXCL, "copies", 1);
++	/* XXX CONST arg */
+ 	papiAttributeListAddString(&list, PAPI_ATTR_EXCL,
+ 				"document-format", document_format);
+ 	papiAttributeListAddString(&list, PAPI_ATTR_EXCL,
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/examples/printer-query.c ./source/examples/printer-query.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/examples/printer-query.c	2005-10-31 18:53:11.000000000 +0000
++++ ./source/examples/printer-query.c	2010-01-31 13:50:47.000000000 +0000
+@@ -16,7 +16,9 @@
+ #include <string.h>
+ #include <locale.h>
+ #include <libintl.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <papi.h>
+ 
+ static void
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libipp-core/ipp_types.c ./source/libipp-core/ipp_types.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libipp-core/ipp_types.c	2005-02-26 06:58:41.000000000 +0000
++++ ./source/libipp-core/ipp_types.c	2010-01-31 13:19:34.000000000 +0000
+@@ -11,7 +11,14 @@
+ #include <string.h>
+ #include <ipp.h>
+ #include <errno.h>
++#ifdef HAVE_VALUES_H
+ #include <values.h>
++#endif
++#include <limits.h>
++
++#ifndef MAXINT
++#define	MAXINT	INT_MAX
++#endif
+ 
+ #ifndef MININT
+ #define	MININT	(-MAXINT - 1)
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libipp-core/read.c ./source/libipp-core/read.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libipp-core/read.c	2006-01-28 07:02:04.000000000 +0000
++++ ./source/libipp-core/read.c	2010-01-31 13:20:03.000000000 +0000
+@@ -7,7 +7,9 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <string.h>
+ #include <stdarg.h>
+ #include <sys/types.h>
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libipp-listener/common.c ./source/libipp-listener/common.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libipp-listener/common.c	2006-02-26 07:40:38.000000000 +0000
++++ ./source/libipp-listener/common.c	2010-01-31 13:55:43.000000000 +0000
+@@ -74,7 +74,7 @@
+ 	} else {
+ 		*printer = job;
+ 		if ((job = strrchr(*printer, '/')) != NULL) {
+-			*job = NULL;
++			*job = '\0';
+ 			*id = atoi(++job);
+ 		}
+ 	}
+@@ -230,7 +230,7 @@
+ 
+ 			name = strtok(buf, " \t\n");
+ 
+-			for (i = 0; ((passed == 1) && (name[i] != NULL)); i++)
++			for (i = 0; ((passed == 1) && (name[i] != '\0')); i++)
+ 				if (isalpha(name[i]) != 0)
+ 					name[i] = tolower(name[i]);
+ 				else if ((name[i] == '_') || (name[i] == '-'))
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-common/attribute.c ./source/libpapi-common/attribute.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-common/attribute.c	2006-02-25 06:06:36.000000000 +0000
++++ ./source/libpapi-common/attribute.c	2010-01-31 13:10:28.000000000 +0000
+@@ -11,7 +11,9 @@
+ #include <stdlib.h>
+ #include <stdarg.h>
+ #include <string.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <papi.h>
+ 
+ static void papiAttributeFree(papi_attribute_t *attribute);
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-common/library.c ./source/libpapi-common/library.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-common/library.c	2005-10-31 18:56:45.000000000 +0000
++++ ./source/libpapi-common/library.c	2010-01-31 13:10:49.000000000 +0000
+@@ -11,7 +11,9 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <string.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <libintl.h>
+ #include <papi.h>
+ 
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-common/uri.c ./source/libpapi-common/uri.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-common/uri.c	2005-09-21 20:04:53.000000000 +0100
++++ ./source/libpapi-common/uri.c	2010-01-31 13:08:57.000000000 +0000
+@@ -16,7 +16,7 @@
+ #include "uri.h"
+ 
+ static char *
+-strndup(char *string, size_t length)
++xstrndup(char *string, size_t length)
+ {
+ 	char *result = NULL;
+ 
+@@ -57,7 +57,7 @@
+ 	if ((*uri = u = calloc(1, sizeof (*u))) == NULL)
+ 		return (-1);
+ 
+-	u->scheme = strndup(string, ptr - string);
++	u->scheme = xstrndup(string, ptr - string);
+ 
+ 	if ((ptr[1] == '/') && (ptr[2] == '/')) {
+ 		/*
+@@ -71,14 +71,14 @@
+ 		if ((path = end = strchr(string, '/')) == NULL)
+ 			for (end = string; *end != '\0'; end++);
+ 
+-		u->host_part = strndup(string, end - string);
++		u->host_part = xstrndup(string, end - string);
+ 
+ 		for (host = string; host < end; host ++)
+ 			if (*host == '@') {
+ 				/* string to host is the user part */
+-				u->user_part = strndup(string, host-string);
++				u->user_part = xstrndup(string, host-string);
+ 				/* host+1 to end is the host part */
+-				u->host_part = strndup(host + 1,
++				u->host_part = xstrndup(host + 1,
+ 							end - (host+1));
+ 				user = string;
+ 				host++;
+@@ -90,11 +90,11 @@
+ 
+ 			for (password = user; (password < host - 1); password++)
+ 				if (*password == ':') {
+-					u->password = strndup(password + 1,
++					u->password = xstrndup(password + 1,
+ 							host - password - 2);
+ 					break;
+ 				}
+-			u->user = strndup(user, password - user);
++			u->user = xstrndup(user, password - user);
+ 		} else
+ 			host = string;
+ 
+@@ -106,10 +106,10 @@
+ 					break;
+ 
+ 			if (port < path) {
+-				u->port = strndup(port + 1, path - port - 1);
++				u->port = xstrndup(port + 1, path - port - 1);
+ 			}
+ 
+-			u->host = strndup(host, port - host);
++			u->host = xstrndup(host, port - host);
+ 		}
+ 
+ 		if (path != NULL) {
+@@ -129,12 +129,12 @@
+ 
+ 				fragment = strrchr(name, '#');
+ 				if ((fragment != NULL) && (*fragment != '\0')) {
+-					u->fragment = strndup(fragment + 1,
++					u->fragment = xstrndup(fragment + 1,
+ 							end - fragment - 1);
+ 					end = fragment;
+ 				}
+ 
+-				u->path = strndup(path, end - path);
++				u->path = xstrndup(path, end - path);
+ 			}
+ 		}
+ 	} else {	/* scheme:scheme_part */
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-dynamic/nss/nss-emulation.h ./source/libpapi-dynamic/nss/nss-emulation.h
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-dynamic/nss/nss-emulation.h	2005-02-26 06:58:42.000000000 +0000
++++ ./source/libpapi-dynamic/nss/nss-emulation.h	2010-01-31 13:14:18.000000000 +0000
+@@ -18,6 +18,10 @@
+   NSS_RETURN
+ } nss_status_t;
+ 
++/* FreeBSD doesn't define YPERR_SUCCESS */
++#ifndef	YPERR_SUCCESS
++#define	YPERR_SUCCESS 0
++#endif	/* YPERR_SUCCESS */
+ 
+ /* Convert YP error number to NSS error number.  */
+ static nss_status_t yperr2nss_tab[] =
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-dynamic/psm.c ./source/libpapi-dynamic/psm.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-dynamic/psm.c	2006-02-23 19:35:34.000000000 +0000
++++ ./source/libpapi-dynamic/psm.c	2010-01-31 13:52:45.000000000 +0000
+@@ -60,7 +60,7 @@
+ void *
+ psm_sym(service_t *svc, char *name)
+ {
+-	char *error = "invalid input";
++	const char *error = "invalid input";
+ 	void *func = NULL;
+ 
+ 	if ((svc != NULL) && (svc->so_handle != NULL) && (name != NULL)) {
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-dynamic/service.c ./source/libpapi-dynamic/service.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-dynamic/service.c	2006-02-23 19:35:34.000000000 +0000
++++ ./source/libpapi-dynamic/service.c	2010-01-31 13:11:35.000000000 +0000
+@@ -11,7 +11,9 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <string.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <libintl.h>
+ #include <papi_impl.h>
+ 
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-ipp/http-core/md5passwd.c ./source/libpapi-ipp/http-core/md5passwd.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-ipp/http-core/md5passwd.c	2005-08-29 06:07:20.000000000 +0100
++++ ./source/libpapi-ipp/http-core/md5passwd.c	2010-01-31 13:54:46.000000000 +0000
+@@ -35,6 +35,8 @@
+  * Include necessary headers...
+  */
+ 
++#include <stdio.h>
++
+ #include "http.h"
+ #include "string.h"
+ 
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-ipp/service.c ./source/libpapi-ipp/service.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-ipp/service.c	2006-01-28 07:02:05.000000000 +0000
++++ ./source/libpapi-ipp/service.c	2010-01-31 13:39:58.000000000 +0000
+@@ -11,7 +11,9 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <string.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <libintl.h>
+ #include <papi_impl.h>
+ 
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/job.c ./source/libpapi-lpd/job.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/job.c	2005-10-31 18:56:45.000000000 +0000
++++ ./source/libpapi-lpd/job.c	2010-01-31 13:31:14.000000000 +0000
+@@ -7,7 +7,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <strings.h>
++#include <string.h>
+ #include <errno.h>
+ #include <unistd.h>
+ #include <limits.h>
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/library.c ./source/libpapi-lpd/library.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/library.c	2005-10-31 18:56:45.000000000 +0000
++++ ./source/libpapi-lpd/library.c	2010-01-31 13:24:20.000000000 +0000
+@@ -9,7 +9,9 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <string.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <libintl.h>
+ #include <papi_impl.h>
+ 
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-cancel.c ./source/libpapi-lpd/lpd-cancel.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-cancel.c	2005-02-26 06:58:42.000000000 +0000
++++ ./source/libpapi-lpd/lpd-cancel.c	2010-01-31 13:32:34.000000000 +0000
+@@ -32,7 +32,7 @@
+ 
+ 	memset(buf, 0, sizeof (buf));
+ 	if (fdgets(buf, sizeof (buf), fd) != NULL) {
+-		if (buf[0] == NULL)
++		if (buf[0] == '\0')
+ 			status = PAPI_NOT_FOUND;
+ 		else if (strstr(buf, "permission denied") != NULL)
+ 			status = PAPI_NOT_AUTHORIZED;
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-job.c ./source/libpapi-lpd/lpd-job.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-job.c	2005-02-26 06:58:42.000000000 +0000
++++ ./source/libpapi-lpd/lpd-job.c	2010-01-31 13:31:51.000000000 +0000
+@@ -14,7 +14,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-#include <strings.h>
++#include <string.h>
+ #include <pwd.h>
+ #include <libintl.h>
+ #include <papi_impl.h>
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-misc.c ./source/libpapi-lpd/lpd-misc.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-misc.c	2005-09-21 20:22:10.000000000 +0100
++++ ./source/libpapi-lpd/lpd-misc.c	2010-01-31 13:34:16.000000000 +0000
+@@ -16,8 +16,15 @@
+ #include <signal.h>
+ #include <sys/socket.h>
+ #include <errno.h>
++#ifdef HAVE_WAIT_H
+ #include <wait.h>
++#endif
++/*#ifdef HAVE_SYS_WAIT_H*/
++#include <sys/wait.h>
++/*#endif*/
++#ifdef HAVE_STROPTS_H
+ #include <stropts.h>
++#endif
+ #include <papi_impl.h>
+ 
+ #include <config-site.h>
+@@ -28,7 +35,7 @@
+ 	char	tmp;
+ 	int	count = 0;
+ 
+-	memset(buf, NULL, len);
++	memset(buf, 0, len);
+ 	while ((count < len) && (read(fd, &tmp, 1) > 0))
+ 		if ((buf[count++] = tmp) == '\n') break;
+ 
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-port.c ./source/libpapi-lpd/lpd-port.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-port.c	2005-09-21 20:22:22.000000000 +0100
++++ ./source/libpapi-lpd/lpd-port.c	2010-01-31 13:29:02.000000000 +0000
+@@ -22,22 +22,35 @@
+ #include <netdb.h>
+ #include <errno.h>
+ #include <syslog.h>
++#ifdef HAVE_VALUES_H
+ #include <values.h>
++#endif
++#ifdef HAVE_STROPTS_H
+ #include <stropts.h>	/* for sendfd */
++#endif
+ #include <sys/uio.h>	/* for sendmsg stuff */
+ #include <pwd.h>
++#ifdef HAVE_SYS_SENDFILE_H
+ #include <sys/sendfile.h>
++#endif
+ #include <ctype.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #ifdef HAVE_PRIV_H
+ #include <priv.h>
+ #endif
+ #include <papi_impl.h>
++#include <limits.h>
+ 
+ #ifndef	JOB_ID_FILE
+ #define	JOB_ID_FILE	"/var/run/rfc-1179.seq"
+ #endif	/* JOB_ID_FILE */
+ 
++#ifndef MAXINT
++#define MAXINT INT_MAX
++#endif
++
+ static int
+ sendfd(int sockfd, int fd)
+ {
+@@ -109,7 +122,7 @@
+ 	}
+ 
+ 	/* linux style NULL usage */
+-	(void) memset((char *)&sin, (int)NULL, sizeof (sin));
++	(void) memset((char *)&sin, (int)0, sizeof (sin));
+ 
+ #if defined(HAVE_GETIPNODEBYNAME) && defined(HAVE_RRESVPORT_AF)
+ 	if ((hp = getipnodebyname(uri->host, AF_INET6, AI_DEFAULT,
+@@ -381,8 +394,14 @@
+ 
+ 	if (fd != -1) {
+ 		/* write the data */
++#ifdef __FreeBSD__
++		if (sendfile(sock, fd, off, st.st_size, NULL, NULL, 0) !=
++		    st.st_size)
++			return (-1);
++#else
+ 		if (sendfile(sock, fd, &off, st.st_size) != st.st_size)
+ 			return (-1);
++#endif
+ 		close(fd);
+ 
+ 		/* request ack/nack after the data transfer */
+@@ -502,7 +521,7 @@
+ 			errno = err;
+ 			return (-1);
+ 		}
+-		if (strcmp(name, "standard input") != NULL)
++		if (strcmp(name, "standard input") != 0)
+ 			sent_files++;
+ 	}
+ 
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-query.c ./source/libpapi-lpd/lpd-query.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/lpd-query.c	2005-10-01 06:49:10.000000000 +0100
++++ ./source/libpapi-lpd/lpd-query.c	2010-01-31 13:33:04.000000000 +0000
+@@ -82,7 +82,7 @@
+ 			do { q--; } while (isdigit(*q) != 0);
+ 
+ 			/* seperate the name and size */
+-			*q = NULL;
++			*q = '\0';
+ 			q++;
+ 
+ 			size = atoi(q);
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/service.c ./source/libpapi-lpd/service.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/libpapi-lpd/service.c	2005-10-31 18:56:45.000000000 +0000
++++ ./source/libpapi-lpd/service.c	2010-01-31 13:21:20.000000000 +0000
+@@ -9,7 +9,9 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdarg.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <uri.h>
+ #include <papi_impl.h>
+ 
+Files /home/bms/x/y/papi-1.0_beta.orig/source/mod_ipp/.mod_ipp.c.swp and ./source/mod_ipp/.mod_ipp.c.swp differ
+diff -uNr /home/bms/x/y/papi-1.0_beta.orig/source/mod_ipp/mod_ipp.c ./source/mod_ipp/mod_ipp.c
+--- /home/bms/x/y/papi-1.0_beta.orig/source/mod_ipp/mod_ipp.c	2006-02-14 06:36:49.000000000 +0000
++++ ./source/mod_ipp/mod_ipp.c	2010-01-31 13:49:30.000000000 +0000
+@@ -14,9 +14,13 @@
+ #include <stdio.h>
+ #include <time.h>
+ #include <sys/time.h>
++#ifdef HAVE_VALUES_H
+ #include <values.h>
++#endif
+ #include <libintl.h>
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ 
+ #include "httpd.h"
+ #include "http_config.h"
+@@ -170,7 +174,7 @@
+ 	va_end(args);
+ 
+ #ifdef APACHE2
+-	ap_log_rerror(file, line, level, NULL, r, message);
++	ap_log_rerror(file, line, level, 0, r, message);
+ #else
+ 	ap_log_rerror(file, line, level, r, message);
+ #endif
+@@ -264,6 +268,7 @@
+ 					config->default_svc);
+ 	}
+ 
++#if defined(sun)
+ 	/*
+ 	 * For Trusted Solaris, pass the fd number of the socket connection
+ 	 * to the backend so the it can be forwarded to the backend print
+@@ -272,6 +277,7 @@
+ 	 */
+ 	(void) papiAttributeListAddInteger(&request, PAPI_ATTR_EXCL,
+ 			"peer-socket", ap_bfileno(r->connection->client, B_RD));
++#endif
+ 
+ 	/* process the request */
+ 	status = ipp_process_request(request, &response, read_data, r);

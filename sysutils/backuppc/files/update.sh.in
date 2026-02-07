@@ -1,0 +1,12 @@
+#!/bin/sh
+
+perl %%PREFIX%%/libexec/backuppc/update.pl \
+    --bin-path perl=%%PREFIX%%/bin/perl \
+    --config-dir %%ETCDIR%% \
+    --cgi-dir %%CGIDIR%% \
+    --data-dir /var/db/BackupPC \
+    --fhs \
+    --html-dir %%WWWDIR%% \
+    --html-dir-url /backuppc \
+    --install-dir %%PREFIX%% \
+    --log-dir /var/log/BackupPC

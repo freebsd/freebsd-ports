@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/l-mn.cmap
+lib/aspell-%%VER%%/l-mn.cset
+lib/aspell-%%VER%%/mn.dat
+lib/aspell-%%VER%%/mn_affix.dat
+share/aspell/mn.multi
+share/aspell/mn.rws
+share/aspell/mongolian.alias

@@ -1,0 +1,3 @@
+Data::Object::Struct provides a class that creates struct-like objects which
+bundle attributes together, is immutable, and provides accessors, without having
+to write an explicit class.

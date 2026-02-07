@@ -1,0 +1,4 @@
+libmatemixer is a mixer library for MATE desktop.
+
+It provides an abstract API allowing access to mixer functionality available
+in the PulseAudio, ALSA and OSS sound systems.

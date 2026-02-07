@@ -1,0 +1,10 @@
+bin/gpg-gui
+share/applications/gpg-gui.desktop
+share/icons/hicolor/128x128/apps/gpg-gui.png
+share/icons/hicolor/16x16/apps/gpg-gui.png
+share/icons/hicolor/24x24/apps/gpg-gui.png
+share/icons/hicolor/32x32/apps/gpg-gui.png
+share/icons/hicolor/48x48/apps/gpg-gui.png
+share/icons/hicolor/64x64/apps/gpg-gui.png
+share/icons/hicolor/scalable/apps/gpg-gui.svg
+share/icons/hicolor/symbolic/apps/gpg-gui-symbolic.svg

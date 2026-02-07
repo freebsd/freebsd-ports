@@ -1,0 +1,10 @@
+@sample etc/portshaker.conf.sample-config etc/portshaker.conf
+etc/portshaker.d/enlightenment
+etc/portshaker.d/gecko
+etc/portshaker.d/github
+etc/portshaker.d/haskell
+etc/portshaker.d/marcuscom_ports
+etc/portshaker.d/marcuscom_ports_stable
+etc/portshaker.d/ports
+etc/portshaker.d/redports
+etc/portshaker.d/xorg

@@ -1,0 +1,32 @@
+--- pyproject.toml.orig	2026-01-24 08:31:03 UTC
++++ pyproject.toml
+@@ -4,9 +4,11 @@ requires = [
+ requires = [
+     # 70.1.0: min version for integrated bdist_wheel command from wheel package
+     # 77.0.0: min version for SPDX expression support for project.license
+-    "setuptools>=70.1.0",
+-    "cmake>=3.27",
+-    "ninja",
++    # FreeBSD: patched to work with setuptools-63.1.0
++    "setuptools>=63.1.0",
++    # FreeBSD: cmake and ninja are provided as BUILD_DEPENDS
++    # "cmake>=3.27",
++    # "ninja",
+     "numpy",
+     "packaging",
+     "pyyaml",
+@@ -22,9 +24,11 @@ dev = [
+     # in PyTorch root until the project fully migrates to pyproject.toml
+     # after which this can be removed as it is already specified in the
+     # [build-system] section
+-    "setuptools>=70.1.0,<80.0",  # setuptools develop deprecated on 80.0
+-    "cmake>=3.27",
+-    "ninja",
++    # FreeBSD: patched to work with setuptools-63.1.0
++    "setuptools>=63.1.0,<80.0",  # setuptools develop deprecated on 80.0
++    # FreeBSD: cmake and ninja are provided as BUILD_DEPENDS
++    # "cmake>=3.27",
++    # "ninja",
+     "numpy",
+     "packaging",
+     "pyyaml",

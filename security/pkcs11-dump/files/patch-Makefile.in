@@ -1,0 +1,31 @@
+--- Makefile.in.orig	2018-01-23 10:46:50 UTC
++++ Makefile.in
+@@ -73,8 +73,7 @@ am__CONFIG_DISTCLEAN_FILES = config.stat
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES = versioninfo.rc
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
+-	"$(DESTDIR)$(docdir)" "$(DESTDIR)$(htmldir)"
++am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am_pkcs11_dump_OBJECTS = pkcs11-dump.$(OBJEXT)
+@@ -665,7 +664,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(docdir)" "$(DESTDIR)$(htmldir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -715,8 +714,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA install-man \
+-	install-nodist_htmlDATA
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

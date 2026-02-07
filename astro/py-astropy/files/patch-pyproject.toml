@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2025-10-10 20:12:49 UTC
++++ pyproject.toml
+@@ -8,8 +8,8 @@ authors = [
+ authors = [
+     { name = "The Astropy Developers", email = "astropy.team@gmail.com" }
+ ]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.rst", "licenses/*.rst"]
++license = { text="BSD-3-Clause" }
++#license-files = ["LICENSE.rst", "licenses/*.rst"]
+ requires-python = ">=3.11"
+ classifiers = [
+     "Intended Audience :: Science/Research",

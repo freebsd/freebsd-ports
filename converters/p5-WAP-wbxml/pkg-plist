@@ -1,0 +1,14 @@
+bin/wbxmlc
+%%PERL5_MAN1%%/wbxmlc.1.gz
+%%SITE_PERL%%/WAP/wbxml.pm
+%%SITE_PERL%%/WAP/wbxml/WbRules.pm
+%%SITE_PERL%%/WAP/wbxml/activesync.wbrules.pl
+%%SITE_PERL%%/WAP/wbxml/activesync.wbrules.xml
+%%SITE_PERL%%/WAP/wbxml/syncml.wbrules.pl
+%%SITE_PERL%%/WAP/wbxml/syncml.wbrules.xml
+%%SITE_PERL%%/WAP/wbxml/wap.wbrules.pl
+%%SITE_PERL%%/WAP/wbxml/wap.wbrules.xml
+%%SITE_PERL%%/WAP/wbxml/wv.wbrules.pl
+%%SITE_PERL%%/WAP/wbxml/wv.wbrules.xml
+%%PERL5_MAN3%%/WAP::wbxml.3.gz
+%%PERL5_MAN3%%/WAP::wbxml::WbRules.3.gz

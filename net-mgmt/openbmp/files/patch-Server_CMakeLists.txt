@@ -1,0 +1,59 @@
+--- Server/CMakeLists.txt.orig	2018-03-06 19:31:59.000000000 +0100
++++ Server/CMakeLists.txt	2023-02-13 13:54:14.656995000 +0100
+@@ -24,6 +24,31 @@
+         PATH_SUFFIXES
+         include)
+ 
++find_path(LIBLZ4_CPP_LIBRARY_DIR
++	NAMES
++	liblz4.so
++        HINTS
++        ${HINT_ROOT_DIR}
++        PATH_SUFFIXES
++        lib)
++
++find_path(LIBZSTD_CPP_LIBRARY_DIR
++	NAMES
++	libzstd.so
++        HINTS
++        ${HINT_ROOT_DIR}
++        PATH_SUFFIXES
++        lib)
++
++find_library(LIBCURL_LIBRARY_DIR
++        NAMES
++        libcurl.so
++        HINTS
++        ${HINT_ROOT_DIR}
++        PATH_SUFFIXES
++        lib64
++        lib)
++
+ find_library(LIBYAML_CPP_LIBRARY
+         NAMES
+         libyaml-cpp.a yaml-cpp
+@@ -33,6 +58,7 @@
+         lib64
+         lib)
+ 
++
+ find_path(LIBRDKAFKA_INCLUDE_DIR
+         librdkafka/rdkafkacpp.h
+         HINTS
+@@ -84,6 +110,7 @@
+ # Update the include dir
+ include_directories(${LIBRDKAFKA_INCLUDE_DIR} ${LIBYAML_CPP_INCLUDE_DIR} src/ src/bmp src/bgp src/bgp/linkstate src/kafka)
+ #link_directories(${LIBRDKAFKA_LIBRARY})
++link_directories(${LIBLZ4_CPP_LIBRARY_DIR} ${LIBZSTD_CPP_LIBRARY_DIR} ${LIBCURL_LIBRARY_DIR})
+ 
+ 
+ # Define the source files to compile
+@@ -134,7 +161,7 @@
+ endif()
+ 
+ # Set the libs to link
+-set (LIBS pthread ${LIBYAML_CPP_LIBRARY} ${LIBRDKAFKA_CPP_LIBRARY} ${LIBRDKAFKA_LIBRARY} z ${SSL_LIBS} dl)
++set (LIBS pthread ${LIBYAML_CPP_LIBRARY} ${LIBRDKAFKA_CPP_LIBRARY} ${LIBRDKAFKA_LIBRARY} z lz4 zstd curl ${SSL_LIBS})
+ 
+ # Set the binary
+ add_executable (openbmpd ${SRC_FILES})

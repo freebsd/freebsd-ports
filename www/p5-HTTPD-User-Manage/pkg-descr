@@ -1,0 +1,9 @@
+HTTPD-User-Manage is set of Perl modules for managing access control
+with the Apache, NCSA httpd, CERN and Netscape servers (and maybe some
+others).
+
+You can install this program as a CGI script to allow remote users to
+change their Web access passwords.  Web administrators can use it to
+remotely add, edit and delete users and their groups.  You can also use
+it from the command line as a nice all-in-one interface to access
+control databases based on text files, DBM files, and SQL databases.

@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Activate the TOTP MFA plugin by adding the following to Roundcube's
+%%PREFIX%%/roundcube/config/config.inc.php:
+
+$config['plugins'] = array('twofactor_gauthenticator');
+
+and edit %%WWWDIR%%/config.inc.php
+to suit your needs.
+EOM
+}
+]

@@ -1,0 +1,27 @@
+PORTNAME=	priority
+PORTVERSION=	1.3.0
+PORTREVISION=	1
+CATEGORIES=	www python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	1
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Pure-Python implementation of the HTTP/2 priority tree
+WWW=		https://python-hyper.org/projects/priority/en/stable/ \
+		https://github.com/python-hyper/priority
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517
+
+NO_ARCH=	yes
+
+PORTSCOUT=	limit:^1\.
+
+.include <bsd.port.mk>

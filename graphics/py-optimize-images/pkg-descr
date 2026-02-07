@@ -1,0 +1,9 @@
+Optimize Images is a command-line interface (CLI) utility written in pure Python
+to help you reduce the file size of images.
+
+This application is intended to be pure Python, with no special dependencies
+besides Pillow, therefore ensuring compatibility with a wide range of systems.
+
+Some aditional features can be added which require the presence of other
+third-party packages that are not written in pure Python, but those packages and
+the features depending on them should be treated as optional.

@@ -1,0 +1,15 @@
+Libre is a portable and generic library for real-time communications
+with async IO support and a complete SIP stack with support for SDP,
+RTP/RTCP, STUN/TURN/ICE, BFCP and DNS Client.
+
+Features:
+
+- SIP Stack (RFC 3261)
+- SDP
+- RTP and RTCP
+- DNS-Client
+- STUN/TURN/ICE
+- BFCP
+- Jitter-buffer
+- Async I/O (poll, epoll, select)
+- UDP/TCP/TLS transport

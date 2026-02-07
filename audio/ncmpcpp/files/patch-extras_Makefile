@@ -1,0 +1,10 @@
+--- extras/Makefile.orig	2024-09-14 20:03:33 UTC
++++ extras/Makefile
+@@ -1,5 +1,5 @@
+-CXX=g++
+-CXXFLAGS=-O2 -march=native -pipe -std=c++0x -Wall -Wextra -Wshadow -Werror
++CXX?=g++
++CXXFLAGS+= -Wall -Wextra -Wshadow -Werror
+ CPPFLAGS=`taglib-config --cflags`
+ LDFLAGS=`taglib-config --libs`
+ 

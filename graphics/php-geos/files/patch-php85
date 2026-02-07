@@ -1,0 +1,11 @@
+--- geos.c.orig	2024-01-31 14:59:13 UTC
++++ geos.c
+@@ -150,7 +150,7 @@ static void errorHandler(const char *fmt, ...)
+     va_end(args);
+ 
+     /* TODO: use a GEOSException ? */
+-    zend_throw_exception_ex(zend_exception_get_default(TSRMLS_C),
++    zend_throw_exception_ex(zend_ce_exception,
+         1 TSRMLS_CC, "%s", message);
+ 
+ }

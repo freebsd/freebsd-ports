@@ -1,0 +1,10 @@
+--- vamos/Makefile.in.orig	2014-04-02 21:56:12 UTC
++++ vamos/Makefile.in
+@@ -356,7 +356,6 @@ cvamos_LDADD = \
+ 	$(top_srcdir)/track/libvamos-track.la \
+ 	$(top_srcdir)/geometry/libvamos-geometry.la \
+ 	$(top_srcdir)/media/libvamos-media.la \
+-	-lboost_system \
+ 	-lboost_filesystem
+ 
+ AM_CXXFLAGS = -fPIC -Wall -pedantic -DDATADIR=\"$(pkgdatadir)\"

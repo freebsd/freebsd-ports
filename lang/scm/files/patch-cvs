@@ -1,0 +1,25 @@
+A couple of fixes from upstream's CVS-repository.
+--- sys.c	2017-10-22 19:48:07.000000000 -0400
++++ sys.c	2023-07-21 18:36:30.000000000 -0400
+@@ -1523,5 +1523,5 @@
+ 	info.name = name;
+ 	for (isubr = subrs_gra.len; 0 < isubr--;) {
+-	  if (0==strcmp(((char **)subrs_gra.elts)[isubr], name)) {
++	  if (0==strcmp(((subr_info *)subrs_gra.elts)[isubr].name, name)) {
+ 	    scm_warn(s_redefining, (char *)name, UNDEFINED);
+ 	    goto foundit;
+@@ -1650,5 +1650,6 @@
+   estk = scm_estk;
+ #else
+-  from[1] = BOOL_F;		/* Can't write to parent stack */
++  /* Can't write to parent stack, it is now shared. */
++  SCM_ESTK_PARENT_WRITABLEP(scm_estk) = BOOL_F;
+   estk = must_malloc_cell((long)n*sizeof(SCM),
+ 			  MAKE_LENGTH(n, tc7_vector), s_cont);
+@@ -3166,5 +3188,5 @@
+ 	(heap_cells - cells_allocated <= scm_ecache_len) || IMP(freelist)) {
+       alloc_some_heap();
+-      growth_mon("number of heaps", (long)(hplim_ind/2), "segments", !0);
++      growth_mon(s_numheaps, (long)(hplim_ind/2), "segments", !0);
+       growth_mon(s_heap, heap_cells, s_cells, !0);
+     }

@@ -1,0 +1,8 @@
+GNOME support utilities, these include:
+
+baobab, a graphics disk space display program.
+gnome-screenshot, desktop screenshot program.
+gnote, note taking application.
+gnome-contacts, integrated address book.
+gnome-dictionary, client for DICT server to look up definitions.
+gnome-font-viewer, show installed fonts.

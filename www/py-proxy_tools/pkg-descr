@@ -1,0 +1,3 @@
+proxy_tools is a very simple and useful proxy (as in the GoF design
+pattern) implementation, that I found to be useful outside the web
+context -- hence the extraction.

@@ -1,0 +1,3 @@
+A library that provides Qt4 implementation of the DBusMenu protocol.
+The DBusMenu protocol makes it possible for applications to export
+and import their menus over DBus.

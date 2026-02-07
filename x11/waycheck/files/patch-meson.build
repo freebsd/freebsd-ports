@@ -1,0 +1,15 @@
+--- meson.build.orig	2025-08-27 20:19:12 UTC
++++ meson.build
+@@ -16,6 +16,12 @@ dep_wayland_client = dependency('wayland-client')
+ )
+ dep_wayland_client = dependency('wayland-client')
+ 
++cc = meson.get_compiler('cpp')
++dep_libutil = dependency('', required : false)
++if host_machine.system() == 'freebsd'
++  dep_libutil = cc.find_library('util', required : true)
++endif
++
+ datadir = get_option('datadir')
+ 
+ subdir('src')

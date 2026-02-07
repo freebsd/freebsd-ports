@@ -1,0 +1,30 @@
+PORTNAME=	wm2
+PORTVERSION=	4.0
+PORTREVISION=	2
+CATEGORIES=	x11-wm
+MASTER_SITES=	${WWW}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Simple window manager for X
+WWW=		https://www.all-day-breakfast.com/wm2/
+
+LICENSE=	MIT
+
+BUILD_DEPENDS=	makedepend:devel/makedepend
+
+USES=		xorg
+USE_XORG=	x11 xext xmu
+
+ALL_TARGET=	depend wm2
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/wm2 ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-02-09 10:44:20.000000000 -0600
++++ Makefile	2014-02-09 10:44:49.000000000 -0600
+@@ -5,7 +5,7 @@
+ TARGETS = bsmtrace
+ OBJ	= y.tab.o bsm.o bsmtrace.o conf.o lex.yy.o log.o pipe.o trigger.o fcache.o
+ PREFIX	= /usr/local
+-LIBS	= -lbsm
++LIBS	+= -lbsm
+ 
+ #.ifdef PCRE
+ #CFLAGS	+= -I /usr/local/include

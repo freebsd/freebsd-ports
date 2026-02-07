@@ -1,0 +1,11 @@
+--- mustache_exceptions.cpp.orig	2022-11-26 22:02:48 UTC
++++ mustache_exceptions.cpp
+@@ -18,7 +18,7 @@ PHP_MINIT_FUNCTION(mustache_exceptions)
+ PHP_MINIT_FUNCTION(mustache_exceptions)
+ {
+   try {
+-    zend_class_entry * exception_ce = zend_exception_get_default();
++    zend_class_entry * exception_ce = zend_ce_exception;
+ 
+     // MustacheException
+     zend_class_entry mustache_exception_ce;

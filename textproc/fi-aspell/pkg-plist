@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/fi.dat
+lib/aspell-%%VER%%/fi_affix.dat
+share/aspell/fi.multi
+share/aspell/fi.rws
+share/aspell/finnish.alias

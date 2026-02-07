@@ -1,0 +1,20 @@
+--- src/sdl/Makefile.in.orig	2009-10-05 18:37:13 UTC
++++ src/sdl/Makefile.in
+@@ -72,7 +72,7 @@ am__base_list = \
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-libguichan_sdl_la_LIBADD =
++libguichan_sdl_la_LIBADD = -lSDL -lSDL_image
+ am_libguichan_sdl_la_OBJECTS = sdl.lo sdlgraphics.lo sdlimage.lo \
+ 	sdlimageloader.lo sdlinput.lo
+ libguichan_sdl_la_OBJECTS = $(am_libguichan_sdl_la_OBJECTS)
+@@ -235,7 +235,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = libguichan_sdl.la
+ INCLUDES = -I$(top_srcdir)/include
+-libguichan_sdl_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libguichan_sdl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ libguichan_sdl_la_SOURCES = \
+ 	sdl.cpp			\
+ 	sdlgraphics.cpp		\

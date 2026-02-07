@@ -1,0 +1,109 @@
+--- Imakefile.orig	1995-01-30 13:41:47.000000000 -0800
++++ Imakefile	2023-07-18 07:06:05.053673000 -0700
+@@ -1,63 +1,62 @@
+-/* */#
+-/* */# @(#)Imakefile - for xmail version 1 patchlevel 5
+-/* */#
+-/* */# Uncomment USE_DIRENT if readdir() uses <dirent.h> instead of <sys/dir.h>
+-/* */#
++#
++# @(#)Imakefile - for xmail version 1 patchlevel 5
++#
++# Uncomment USE_DIRENT if readdir() uses <dirent.h> instead of <sys/dir.h>
++#
+      USE_DIRENT = -DUSE_DIRENT
+-/* */#
+-/* */# Uncomment X_FACE and COMPFACE if you have the compface library installed
+-/* */# and you want xmail to automatically display the X-Face: header, if found
+-/* */# in a message.
+-/* */#
++#
++# Uncomment X_FACE and COMPFACE if you have the compface library installed
++# and you want xmail to automatically display the X-Face: header, if found
++# in a message.
++#
+ #ifdef USE_X_FACE
+           X_FACE = -DX_FACE
+         COMPFACE = -L./compface -lcompface
+ #endif
+-/* */#
+-/* */# Uncomment XPM if you have the Xpm version 3 library and want color icons
+-/* */#
++#
++# Uncomment XPM if you have the Xpm version 3 library and want color icons
++#
+             XPM = -DXPM
+          LIBXPM = -lXpm
+-/* */#
+-/* */# Uncomment LPT if you require att environment support for pseudo ports.
+-/* */#
+-/* */#            LPT = -lpt
+-/* */#
+-/* */# Uncomment REGEXP if your system supplies the regexp.h include file.
+-/* */# Otherwise, xmail will use the regex procedures re_comp and re_exec.
+-/* */#
+-/* */#   REGEXP = -DUSE_REGEXP
+-/* */#
+-/* */# Define MAILBOX_DIRECTORY if your mail spool is located in other than the
+-/* */# default /usr/spool/mail.  (If not specified, the default will be used.)
+-/* */#
+-/* */#    MAILBOX_DIR = -DMAILBOX_DIRECTORY=\"/usr/spool/mail\"
+-/* */#
+-/* */# Define DEFAULT_VISUAL if your copy of vi lies in some place other than
+-/* */# /usr/ucb.  (If not specified, /usr/ucb/vi will be the default editor.)
+-/* */#
++#
++# Uncomment LPT if you require att environment support for pseudo ports.
++#
++#            LPT = -lpt
++#
++# Uncomment REGEXP if your system supplies the regexp.h include file.
++# Otherwise, xmail will use the regex procedures re_comp and re_exec.
++#
++#   REGEXP = -DUSE_REGEXP
++#
++# Define MAILBOX_DIRECTORY if your mail spool is located in other than the
++# default /usr/spool/mail.  (If not specified, the default will be used.)
++#
++    MAILBOX_DIR = -DMAILBOX_DIRECTORY=\"/var/mail\"
++#
++# Define DEFAULT_VISUAL if your copy of vi lies in some place other than
++# /usr/ucb.  (If not specified, /usr/ucb/vi will be the default editor.)
++#
+            DEF_VISUAL = -DDEFAULT_VISUAL=\"/usr/bin/vi\"
+-/* */#
+-/* */# Define DEFAULT_MAILER if your mail program is not the standard
+-/* */# /usr/ucb/Mail.  CAUTION - Operation is NOT guaranteed with other mailers.
++#
++# Define DEFAULT_MAILER if your mail program is not the standard
++# /usr/ucb/Mail.  CAUTION - Operation is NOT guaranteed with other mailers.
+ 	
+-/* */# DEF_MAILER = -DDEFAULT_MAILER=\"/usr/ucb/Mail\"
++    DEF_MAILER = -DDEFAULT_MAILER=\"/usr/bin/Mail\"
+ 
+-/* */#
+-/* */# Define SIGACTION if your system utilizes the sigaction() call rather
+-/* */# than the sigvec() call (true on most SYSV and POSIX compilant systems)
+-/* */# You may also need to add the following BSD define (true on SGI systems)
+-/* */#
+-/* */#         SIGDEF = -D_BSD_SIGNALS
+-/* */#
++#
++# Define SIGACTION if your system utilizes the sigaction() call rather
++# than the sigvec() call (true on most SYSV and POSIX compilant systems)
++# You may also need to add the following BSD define (true on SGI systems)
++#
++#         SIGDEF = -D_BSD_SIGNALS
++#
+                SIGACT = -DSIGACTION
+-/* */#
+ 
+   XMAIL_DEFINES = $(MAILBOX_DIR) $(DEF_VISUAL) $(DEF_MAILER) $(SIGACT) $(SIGDEF)
+         DEFINES = $(USE_DIRENT) $(X_FACE) $(XPM) $(REGEXP) $(XMAIL_DEFINES)
+ 
+         DEPLIBS = $(DEPXAWLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
+-LOCAL_LIBRARIES = $(LIBXPM) $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) $(COMPFACE) $(LPT)
++LOCAL_LIBRARIES = $(LIBXPM) $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) $(COMPFACE) $(LPT) -lcompat -lutil
+ 
+            SRCS = Mailwatch.c HelpText.c actions.c callMail.c callbacks.c \
+ 		  confirm.c directory.c environs.c handler.c mail.c parser.c \

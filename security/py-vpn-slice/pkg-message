@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+This software requires that procfs filesystem be mounted;
+
+# echo "proc /proc procfs rw 0 0" >> /etc/fstab
+# mount /proc
+EOM
+}
+]

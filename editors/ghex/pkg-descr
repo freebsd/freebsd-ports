@@ -1,0 +1,4 @@
+GHEX is a simple binary editor, allowing binary files to be edited in
+both hex and ascii.  It features find and replace functions and conversion
+between binary, octal, decimal and hexadecimal values, making use of an
+alternative, user-configurable MDI concept.

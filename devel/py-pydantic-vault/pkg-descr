@@ -1,0 +1,8 @@
+Pydantic-Vault is a simple extension to Pydantic BaseSettings that can retrieve
+secrets stored in Hashicorp Vault
+
+With Pydantic and Pydantic-Vault, you can easily declare your configuration in a
+type-hinted class, and load configuration from environment variables or Vault
+secrets. Pydantic-Vault will work the same when developing locally (where you
+probably login with the Vault CLI and your own user account) and when deploying
+in production (using a Vault Approle or Kubernetes authentication for example).

@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Plack/Middleware/FixMissingBodyInRedirect.pm
+%%PERL5_MAN3%%/Plack::Middleware::FixMissingBodyInRedirect.3.gz

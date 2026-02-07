@@ -1,0 +1,10 @@
+bin/thrulay
+sbin/thrulayd
+include/thrulay/client.h
+include/thrulay/server.h
+lib/libthrulay.a
+lib/libthrulay.so
+lib/libthrulay.so.0
+lib/libthrulay.so.0.0.0
+share/man/man1/thrulay.1.gz
+share/man/man8/thrulayd.8.gz

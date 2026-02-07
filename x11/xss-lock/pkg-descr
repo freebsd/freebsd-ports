@@ -1,0 +1,2 @@
+xss-lock hooks up your favorite locker to the MIT screen saver extension
+for X11 and also to systemd's login manager (so long as it is available).

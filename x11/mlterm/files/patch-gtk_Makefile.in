@@ -1,0 +1,15 @@
+--- gtk/Makefile.in.orig	2023-04-01 13:54:40 UTC
++++ gtk/Makefile.in
+@@ -30,9 +30,9 @@ LIB_VERSION_2.90 = 9:0:0
+ LIB_VERSION_2.91 = 0:0:0
+ 
+ TARGET = $(TARGET_$(VTE_ABI))
+-TARGET_ = libvte
+-TARGET_2.90 = libvte2_90
+-TARGET_2.91 = libvte-2.91
++TARGET_ = libvte-mlterm
++TARGET_2.90 = libvte-mlterm
++TARGET_2.91 = libvte-mlterm
+ 
+ LPOBL = @LPOBL@
+ LMEF = @LMEF@

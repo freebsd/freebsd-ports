@@ -1,0 +1,311 @@
+PORTNAME=	elan
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.1.2
+PORTREVISION=	1
+CATEGORIES=	math
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Lean version manager
+WWW=		https://github.com/leanprover/elan
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	gmake:devel/gmake
+LIB_DEPENDS=	libcurl.so:ftp/curl
+
+USES=		cargo perl5
+USE_PERL5=	build
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	leanprover
+
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.0 \
+		aes-0.8.4 \
+		aho-corasick-1.1.3 \
+		aligned-0.4.2 \
+		ansi_term-0.12.1 \
+		arbitrary-1.4.1 \
+		as-slice-0.2.1 \
+		atty-0.2.14 \
+		autocfg-1.4.0 \
+		backtrace-0.3.74 \
+		base64-0.21.7 \
+		bitflags-1.3.2 \
+		bitflags-2.6.0 \
+		block-buffer-0.9.0 \
+		block-buffer-0.10.4 \
+		bumpalo-3.16.0 \
+		byteorder-1.5.0 \
+		bytes-1.8.0 \
+		bzip2-0.5.2 \
+		bzip2-sys-0.1.13+1.0.8 \
+		cc-1.2.0 \
+		cfg-if-1.0.0 \
+		cfg_aliases-0.2.1 \
+		cipher-0.4.4 \
+		clap-2.34.0 \
+		constant_time_eq-0.3.1 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.7 \
+		cpufeatures-0.2.15 \
+		crc-3.2.1 \
+		crc-catalog-2.4.0 \
+		crc32fast-1.4.2 \
+		crossbeam-utils-0.8.21 \
+		crypto-common-0.1.6 \
+		curl-0.4.47 \
+		curl-sys-0.4.78+curl-8.11.0 \
+		cvt-0.1.2 \
+		deflate64-0.1.9 \
+		deranged-0.4.0 \
+		derive_arbitrary-1.4.1 \
+		digest-0.9.0 \
+		digest-0.10.7 \
+		dirs-3.0.2 \
+		dirs-next-2.0.0 \
+		dirs-sys-0.3.7 \
+		dirs-sys-next-0.1.2 \
+		displaydoc-0.2.5 \
+		either-1.13.0 \
+		encoding_rs-0.8.35 \
+		env_proxy-0.4.1 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		error-chain-0.12.4 \
+		fastrand-2.2.0 \
+		filetime-0.2.25 \
+		flate2-1.0.34 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		fs_at-0.2.1 \
+		fslock-0.2.1 \
+		futures-0.3.31 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-executor-0.3.31 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
+		gcc-0.3.55 \
+		generic-array-0.14.7 \
+		getrandom-0.2.15 \
+		getrandom-0.3.2 \
+		gimli-0.31.1 \
+		h2-0.3.26 \
+		hashbrown-0.15.1 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.9 \
+		hmac-0.12.1 \
+		http-0.2.12 \
+		http-body-0.4.6 \
+		httparse-1.9.5 \
+		httpdate-1.0.3 \
+		hyper-0.14.31 \
+		hyper-tls-0.5.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
+		indexmap-2.6.0 \
+		inout-0.1.4 \
+		ipnet-2.10.1 \
+		itertools-0.10.5 \
+		itoa-1.0.11 \
+		jobserver-0.1.32 \
+		js-sys-0.3.77 \
+		json-0.12.4 \
+		lazy_static-1.5.0 \
+		libc-0.2.162 \
+		libredox-0.1.3 \
+		libz-sys-1.1.20 \
+		linux-raw-sys-0.4.14 \
+		litemap-0.7.3 \
+		lockfree-object-pool-0.1.6 \
+		log-0.4.22 \
+		lzma-rs-0.3.0 \
+		lzma-sys-0.1.20 \
+		markdown-0.3.0 \
+		memchr-2.7.4 \
+		mime-0.3.17 \
+		miniz_oxide-0.8.0 \
+		mio-1.0.2 \
+		native-tls-0.2.12 \
+		nix-0.29.0 \
+		normpath-1.3.0 \
+		num-conv-0.1.0 \
+		object-0.36.5 \
+		ole32-sys-0.2.0 \
+		once_cell-1.20.2 \
+		opaque-debug-0.3.1 \
+		openssl-0.10.70 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-src-300.4.0+3.4.0 \
+		openssl-sys-0.9.106 \
+		pbkdf2-0.12.2 \
+		percent-encoding-2.3.1 \
+		pest-2.7.14 \
+		pin-project-lite-0.2.15 \
+		pin-utils-0.1.0 \
+		pipeline-0.5.0 \
+		pkg-config-0.3.31 \
+		powerfmt-0.2.0 \
+		ppv-lite86-0.2.20 \
+		proc-macro2-1.0.89 \
+		quote-1.0.37 \
+		r-efi-5.2.0 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.5.7 \
+		redox_users-0.4.6 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		remove_dir_all-0.8.4 \
+		reqwest-0.11.27 \
+		rustc-demangle-0.1.24 \
+		rustix-0.38.40 \
+		rustls-pemfile-1.0.4 \
+		rustversion-1.0.18 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		schannel-0.1.26 \
+		scopeguard-1.2.0 \
+		security-framework-2.11.1 \
+		security-framework-sys-2.12.1 \
+		semver-0.11.0 \
+		semver-1.0.23 \
+		semver-parser-0.10.2 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
+		serde_json-1.0.132 \
+		serde_urlencoded-0.7.1 \
+		sha1-0.10.6 \
+		sha2-0.9.9 \
+		shlex-1.3.0 \
+		simd-adler32-0.3.7 \
+		slab-0.4.9 \
+		smallvec-1.13.2 \
+		socket2-0.5.7 \
+		stable_deref_trait-1.2.0 \
+		strsim-0.8.0 \
+		subtle-2.4.1 \
+		syn-2.0.87 \
+		sync_wrapper-0.1.2 \
+		synstructure-0.13.1 \
+		system-configuration-0.5.1 \
+		system-configuration-sys-0.5.0 \
+		tar-0.4.43 \
+		tempfile-3.14.0 \
+		term-0.7.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
+		time-0.3.41 \
+		time-core-0.1.4 \
+		tinystr-0.7.6 \
+		tokio-1.41.1 \
+		tokio-native-tls-0.3.1 \
+		tokio-util-0.7.12 \
+		toml-0.5.11 \
+		tower-service-0.3.3 \
+		tracing-0.1.40 \
+		tracing-core-0.1.32 \
+		try-lock-0.2.5 \
+		typenum-1.17.0 \
+		ucd-trie-0.1.7 \
+		unicode-ident-1.0.13 \
+		unicode-width-0.1.14 \
+		url-2.5.3 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
+		vcpkg-0.2.15 \
+		vec_map-0.8.2 \
+		version_check-0.9.5 \
+		wait-timeout-0.2.0 \
+		walkdir-2.5.0 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-futures-0.4.45 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
+		web-sys-0.3.72 \
+		winapi-0.2.8 \
+		winapi-0.3.9 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.9 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.6 \
+		winreg-0.8.0 \
+		winreg-0.50.0 \
+		wit-bindgen-rt-0.39.0 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
+		xattr-1.3.1 \
+		xz2-0.1.7 \
+		yoke-0.7.4 \
+		yoke-derive-0.7.4 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
+		zerofrom-0.1.4 \
+		zerofrom-derive-0.1.4 \
+		zeroize-1.8.1 \
+		zeroize_derive-1.4.2 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3 \
+		zip-2.6.1 \
+		zopfli-0.8.1 \
+		zstd-0.12.4 \
+		zstd-0.13.3 \
+		zstd-safe-6.0.6 \
+		zstd-safe-7.2.4 \
+		zstd-sys-2.0.15+zstd.1.5.7
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-init ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

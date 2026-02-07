@@ -1,0 +1,25 @@
+--- Makefile.orig	1998-08-13 17:17:57.000000000 +0900
++++ Makefile	2012-09-08 03:33:04.000000000 +0900
+@@ -1,11 +1,11 @@
+ # Makefile
+ 
+-CC=gcc
++CC?=cc
+ #DEBUG=-g -DDEBUG
+ 
+ # Add -DLINUX if you compile on Linux
+ # Thanks to Gary Miller <gem@rellim.com>
+-CFLAGS=-O2 -Wall
++CFLAGS?=-O -pipe
+ OBJS=main.o null.o ether.o ip.o
+ LIBS= -lpcap
+ SRC=$(OBJS:%.o=%.c)
+@@ -13,7 +13,7 @@
+ all: tdetect
+ 
+ tdetect: $(OBJS)
+-	$(CC) $(OBJS) $(LIBS) $(DEBUG) -s -o tdetect 
++	$(CC) $(OBJS) $(LIBS) $(DEBUG) -o tdetect 
+ 
+ clean:
+ 	rm -f *.o tdetect *.b

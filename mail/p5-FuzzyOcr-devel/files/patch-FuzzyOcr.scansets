@@ -1,0 +1,19 @@
+--- FuzzyOcr.scansets.orig	2009-05-29 23:09:04.000000000 +0300
++++ FuzzyOcr.scansets	2009-05-29 23:09:37.000000000 +0300
+@@ -20,14 +20,14 @@
+ 
+ # Inverted Ocrad scanset with decolorization
+ scanset ocrad-decolorize-invert {
+-    preprocessors = ppmtopgm, pamthreshold, pamtopnm
++    preprocessors = ppmtopgm, pamditherbw, pamtopnm
+     command = $ocrad
+     args = -s5 -i $input
+ }
+ 
+ # Ocrad scanset with decolorization
+ scanset ocrad-decolorize {
+-    preprocessors = ppmtopgm, pamthreshold, pamtopnm
++    preprocessors = ppmtopgm, pamditherbw, pamtopnm
+     command = $ocrad
+     args = -s5 $input
+ }

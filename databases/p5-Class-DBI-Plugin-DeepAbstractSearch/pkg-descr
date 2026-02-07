@@ -1,0 +1,3 @@
+This plugin provides a SQL::Abstract search method for Class::DBI. It is
+similar to Class::DBI::AbstractSearch, but allows you to search and sort
+by fields from joined tables.

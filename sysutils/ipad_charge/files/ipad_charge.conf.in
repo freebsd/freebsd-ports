@@ -1,0 +1,22 @@
+# The following list of product IDs was obtained from
+# https://github.com/mkorenkov/ipad_charge
+
+# Apple iPad/iPod/iPhone devices
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"ATTACH";
+	match "vendor"		"0x05ac";
+	match "product"		"0x129[0-9ab]";
+	action "%%PREFIX%%/etc/rc.d/ipad_charge start $cdev";
+};
+
+# Apple iPad/iPod/iPhone devices
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"ATTACH";
+	match "vendor"		"0x05ac";
+	match "product"		"0x12a[0-9ab]";
+	action "%%PREFIX%%/etc/rc.d/ipad_charge start $cdev";
+};

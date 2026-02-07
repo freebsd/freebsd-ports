@@ -1,0 +1,1104 @@
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	bootstrap/Makefile
+#	bootstrap/crt0.S
+#	bootstrap/display.c
+#	bootstrap/help.txt
+#	bootstrap/lcrt0.S
+#	bootstrap/txt2asm.perl
+#	bootstrap/xcrt0.S
+#
+echo x - bootstrap/Makefile
+sed 's/^X//' >bootstrap/Makefile << 'END-of-bootstrap/Makefile'
+XAS = as86
+XLD = ld86
+XCC = bcc
+XCFLAGS = -0
+XLDFLAGS = -0 ##-M
+X
+X
+X.SUFFIXES: .S .o
+X
+X.S.o:
+X	$(AS) -o $@ $<
+X
+Xall: display.bin README.FreeBSD
+X
+X# The .com file is only to shortcut the development cycles when
+X# modifying something, you won't have to reboot pcemu with the
+X# new image over and over again.
+X#
+X#all: display.com
+X
+Xdisplay.com: display.o text.o crt0.o
+X	$(LD) $(LDFLAGS) -T 0x100 -o display.tmp crt0.o display.o text.o
+X	dd if=display.tmp of=$@ ibs=32 skip=1
+X	rm -f display.tmp
+X
+Xdisplay.bin: display.o text.o lcrt0.o xcrt0.o
+X	$(LD) $(LDFLAGS) -T 0x7c00 -o display.tmp \
+X		lcrt0.o display.o text.o xcrt0.o
+X	dd if=display.tmp of=$@ ibs=32 skip=1 obs=720k conv=osync
+X	rm -f display.tmp
+X
+X# o expand the tabs
+X# o translate german ISO characters into IBM437
+X# o finally convert all this into assembler .ascii/.byte pseudoinstr's
+X#
+Xtext.S: help.txt txt2asm.perl
+X	expand < help.txt |\
+X	tr '\344\366\374\304\326\334\337' '\204\224\201\216\231\232\341' |\
+X	perl txt2asm.perl > $@
+X
+X# maintain the README.FreeBSD from the help.txt
+X# looks magic, 'eh? :^)
+X# The readme consists of everything from section 1 up to before the
+X# headline of section 3.  The highlighting characters will be removed.
+X#
+X# If you've never been using Perl before, don't worry.  Let the lines
+X# below stand as they do. :-)
+XREADME.FreeBSD: help.txt Makefile
+X	perl -e 'print "This is an excerpt of what you can see with";\
+X		print " the standalone \"system\".\n -- J\366rg\n\n\n";\
+X		while(<>) {last if /^[\001-\010\013-\037]1\./;}\
+X		do {tr[\001-\010\013-\037]//d; print;}\
+X		while(($$_=<>) && !m/^[\001-\010\013-\037]3\./);' \
+X	< help.txt > $@
+X
+Xreallyclean: clean
+X	rm -f display.bin README.FreeBSD
+X
+Xclean:
+X	rm -f *.tmp *~ *.core *.o *.s display.com text.S
+X
+Xpack: all clean
+X	rm -f ../../../files/bootstrapper.uu ../../../files/README.FreeBSD
+X	gzip --best --force display.bin
+X	uuencode display.bin.gz display.bin.gz > ../../../files/bootstrapper.uu
+X	cp -p README.FreeBSD ../../../files/README.FreeBSD
+X	rm -f display.bin.gz README.FreeBSD
+X
+X
+Xunpack:
+X	rm -f display.bin README.FreeBSD
+X	uudecode ${FILESDIR}/bootstrapper.uu
+X	gunzip --force display.bin.gz
+X	cp -p ${FILESDIR}/README.FreeBSD README.FreeBSD
+END-of-bootstrap/Makefile
+echo x - bootstrap/crt0.S
+sed 's/^X//' >bootstrap/crt0.S << 'END-of-bootstrap/crt0.S'
+X	;; Hey Emacs, this is an -*- asm -*- file.
+X	;;
+X	;; crt0 -- prologue for simple DOS .com file
+X	;;
+X	;; also implements exit(), by calling the DOS exit service
+X	
+X	use16
+X
+X	entry	_begin
+X_begin:	jmp	.start
+X
+X	extern	_main
+X
+X	public	_exit
+X_exit:
+X_exit.code	set	4
+X
+X	push	bp
+X	mov	bp, sp
+X	mov	al, _exit.code[bp]
+X	mov	ah, 0x4c	; dos service, exit w/ status
+X	int	0x21
+X
+X_exit.1:			; not reached (hopefully)
+X	jmp	_exit.1
+X
+X
+X.start:
+X	call	_main
+X	call	_exit
+X
+END-of-bootstrap/crt0.S
+echo x - bootstrap/display.c
+sed 's/^X//' >bootstrap/display.c << 'END-of-bootstrap/display.c'
+X/*
+X * display -- a simple program to display static text in a more(1)-like
+X * manner.  Designed to run with simple BIOS services on a i*86-PC.
+X *
+X * Purpose of the program: provide a simple method for pcemu to display
+X * a text when there is no DOS boot image installed.  This program will
+X * run as the bootfile then.
+X *
+X * Author: Joerg Wunsch, 95/03/10
+X * Placed in the public domain.  Neither kind of warranty applies.
+X *
+X * Thanks to Bruce Evans for his bcc compiler.  Made my work much
+X * easier.
+X */
+X
+X#define MAXROW 23
+X#define MAXCOL 79
+X#asm
+Xmaxrow:	set 23
+Xmaxcol:	set 79
+Xnl:	set 10
+X#endasm
+X
+X#define WHITE	7
+X#define BROWN	6
+X#define MAGENTA	5
+X#define RED	4
+X#define CYAN	3
+X#define GREEN	2
+X#define BLUE	1
+X#define BLACK	0
+X#define HIGH	8
+X/* convenience: */
+X#define	YELLOW	(BROWN|HIGH)	/* foreground color */
+X#define	GRAY	WHITE		/* background color */
+X
+X#define NOCHANGE (-1)		/* do not change color; for setattrib() */
+X
+X/*
+X * We use a special highlighting scheme: embedded control characters
+X * in the text toggle the attribute selection.
+X *
+X * Define attributes used for highlighting.
+X * NB: do not parenthise the macro expansions below, they are used as
+X * complete parameter lists for setattrib()!
+X */
+X
+X#define REGULAR	BLACK, GRAY		/* ^R */
+X#define	BOLD	WHITE|HIGH, RED|HIGH	/* ^B */
+X#define	EMPHS	BLUE, GRAY		/* ^E */
+X#define	DOUBLE	YELLOW, BLACK		/* ^D */
+X
+X#define	C_REGULAR	('R' & 0x1f)
+X#define	C_BOLD		('B' & 0x1f)
+X#define	C_EMPHS		('E' & 0x1f)
+X#define	C_DOUBLE	('D' & 0x1f)
+X
+X#define	K_CUP	((0x48 << 8) + 0) /* extended ASCII, cursor up */
+X#define	K_CDN	((0x50 << 8) + 0) /* extended ASCII, cursor down */
+X#define	K_PREV	((0x49 << 8) + 0) /* extended ASCII, page up */
+X#define	K_NEXT	((0x51 << 8) + 0) /* extended ASCII, page down */
+X
+X/*
+X * Glue to link to the BIOS services.
+X */
+X
+Xchar attrib;
+Xchar row, col;
+X
+X
+Xvoid scroll(nlines)
+Xint nlines;			/* if nlines == 0, clear entire region */
+X{
+X#asm
+X	push	bp
+X	mov	bp, sp
+X
+X	xor	bh, bh		; page 0
+X	mov	dx, *(maxcol + (maxrow << 8)); bottom/right corner
+X	xor	cx, cx		; top/left corner
+X	mov	al, 4[bp]	; nlines
+X	mov	bh, _attrib
+X	mov	ah, *6		; video bios, scroll (clear) region
+X	test	al, al		; scroll back?
+X	jns	_scroll.1	; positive value -> forward
+X	inc	ah		; scroll backwards
+X	neg	al
+X_scroll.1:
+X	int	0x10
+X
+X	pop	bp
+X#endasm
+X}
+X
+Xvoid gotoxy(x, y)
+Xint x;
+Xint y;
+X{
+X#asm
+X	push	bp
+X	mov	bp, sp
+X
+X	mov	dl, 4[bp]	; x
+X	mov	_col, dl
+X	mov	dh, 6[bp]	; y
+X	mov	_row, dh
+X	xor	bh, bh		; page 0
+X	mov	ah, *2		; video bios, set cursor
+X	int	0x10
+X
+X	pop	bp
+X#endasm
+X}
+X
+Xvoid putchar(c)
+Xint c;
+X{
+X#asm
+X	push	bp
+X	mov	bp, sp
+X
+X	mov	al, 4[bp]	; c
+X	mov	bl, _attrib
+X	xor	bh, bh		; always page 0
+X	mov	cx, *1		; just one char
+X	mov	ah, *9		; video bios, write char
+X	int	0x10
+X
+X	pop	bp
+X#endasm
+X	if(col < MAXCOL)
+X	  gotoxy(col + 1, row);
+X}
+X
+X
+Xvoid cls()
+X{
+X  scroll(0);
+X}
+X
+X
+Xint getchar()
+X{
+X#asm
+X	xor	ah, ah		; kbd bios, get keystroke
+X	int	0x16
+X#endasm
+X}
+X
+Xvoid setattrib(foreground, background)
+Xint foreground;
+Xint background;
+X{
+X  int i;
+X  if(foreground == -1)
+X    i = attrib & 0xf;
+X  else
+X    i = foreground & 0xf;
+X  if(background == -1)
+X    i |= (attrib & 0xf0);
+X  else
+X    i |= ((background & 0xf) << 4);
+X  attrib = i;
+X}
+X
+X
+X/*
+X * Some auxiliary functions
+X */
+X
+X/*
+X * print one line of text up to a newline or a null character
+X */
+X
+Xchar *printline(s)
+Xchar *s;
+X{
+X  register char c;
+X
+X  while((c = *s++) && c != '\n')
+X    switch(c)
+X      {
+X      case C_REGULAR:
+X	setattrib(REGULAR);
+X	break;
+X
+X      case C_BOLD:
+X	setattrib(BOLD);
+X	break;
+X
+X      case C_EMPHS:
+X	setattrib(EMPHS);
+X	break;
+X
+X      case C_DOUBLE:
+X	setattrib(DOUBLE);
+X	break;
+X	
+X      default:
+X	putchar(c);
+X      }
+X	
+X  if(c == 0) s--;
+X  return s;
+X}
+X
+X
+X/*
+X * display a message on the bottom line; if msg == 0, clear bottom line
+X */
+X
+Xvoid more(msg)
+Xchar *msg;
+X{
+X  int i;
+X  
+X  gotoxy(0, MAXROW + 1);
+X  if(msg) {
+X    setattrib(YELLOW, BLUE);
+X    (void)printline(msg);
+X    setattrib(REGULAR);
+X  } else {
+X    setattrib(WHITE, BLACK);
+X    for(i = 0; i < MAXCOL; i++) putchar(' ');
+X    setattrib(REGULAR);
+X  }
+X}
+X
+X
+X/*
+X * go back for numlines newline chars, starting at current, but not before
+X * initial
+X */
+X
+Xchar *goback(initial, current, numlines)
+Xchar *initial;
+Xchar *current;
+Xint numlines;
+X{
+X  current--;
+X  
+X  while(numlines && current > initial)
+X    if(*--current == '\n')
+X      numlines--;
+X  if(*current == '\n')
+X    current++;
+X  return current;
+X}
+X
+X
+X/*
+X * the static text is maintained separately in an (automatically generated)
+X * .S file
+X */
+X
+Xextern char textstr[];		/* do not declare this "char *" - bcc breaks */
+X
+X
+Xint main()
+X{
+X  char *cp, *cp1;
+X  int c;
+X  int lineno;
+X  
+X  lineno = 0;
+X  cp = textstr;
+X  setattrib(REGULAR);
+X  cls();
+X  for(;;) {
+X    gotoxy(0, lineno);
+X    cp = printline(cp);
+X    if(*cp == 0) break;
+X    lineno++;
+X    if(lineno == MAXROW + 1) {
+X      for(;;) {
+X	more("--More--");
+X	c = getchar();
+X	more(0);
+X
+X	if(c & 0xff)		/* regular ASCII */
+X	  c &= 0xff;		/* strip scancode */
+X				
+X	switch(c) {
+X	case ' ':		/* page forward */
+X	case K_NEXT:
+X	  lineno = 0;	
+X	  cls();
+X	  goto out;
+X					
+X	case 'd':		/* half page forward */
+X	  scroll((MAXROW + 1) / 2);
+X	  lineno -= (MAXROW + 1) / 2;
+X	  goto out;
+X
+X	case 'b':		/* page backward */
+X	case K_PREV:
+X	  cp = goback(textstr, cp, 2 * (MAXROW + 1));
+X	  lineno = 0;
+X	  cls();
+X	  goto out;
+X
+X	case '\r':		/* one more line */
+X	case '\n':
+X	case K_CDN:
+X	  lineno--;
+X	  scroll(1);
+X	  goto out;
+X	  
+X	case K_CUP:		/* one line less */
+X	  cp1 = goback(textstr, cp, 2);
+X	  cp = goback(textstr, cp1, MAXROW);
+X	  if(cp == textstr)	/* start of text, redisplay all */
+X	    {
+X	      lineno = 0;
+X	      cls();
+X	    }
+X	  else
+X	    {
+X	      scroll(-1);
+X	      gotoxy(0, 0);
+X	      (void)printline(cp);
+X	      cp = cp1;
+X	      lineno--;
+X	    }
+X	  goto out;
+X
+X	case '?':
+X	case 'h':
+X	  more(
+X"space: next page, d: half page, b: back page, CR, DWN: nxt line, UP: prv line"
+X	      );
+X	  (void)getchar();
+X	  more(0);
+X	  break;
+X
+X	case 'q':		/* quit the game */
+X	  goto done;
+X	}
+X      }
+X    }
+X    out:;
+X  }
+X  done:
+X  more("Hit any key to quit.");
+X  (void)getchar();
+X  more(0);
+X  
+X  return 0;
+X}
+X
+END-of-bootstrap/display.c
+echo x - bootstrap/help.txt
+sed 's/^X//' >bootstrap/help.txt << 'END-of-bootstrap/help.txt'
+XPC Emulator v1.01alpha (C) 1994 University of Bristol
+XPlease report comments, bugs etc to hedley@cs.bris.ac.uk
+X
+X
+XThis is David Hedley's PC Emulator.
+X
+X
+X0. Table of contents
+X
+X	0. Table of contents
+X	1. How to get pcemu really running
+X	2. Information about this FreeBSD port
+X	3. David's original README
+X	4. Copyright notice
+X
+X
+X
+X1. This looks like PC, but where is DOS? How to get pcemu really running
+X
+XPcemu is an emulator that emulates an 8086 CPU as well as a bunch of
+XPC BIOS services, so it basically provides the functionality like an
+Xold PC/XT.  Anyway, as with the XT too, the emulator requires something
+Xlike an operating system to run with.  Since we cannot ship MS-DOS or
+Xone of its variants along with this distribution (for legal reasons),
+Xyou're now actually looking at a (sort of) "standalone operating system",
+Xjust to get pcemu booted and running.  All this system does is show
+Xyou this introduction.
+X
+XYou will have to replace this mini-system by a physical image of a
+XDOS boot floppy.  The "system" currently running is booted from the
+Xfile
+X
+X	/usr/local/lib/pcemu/DriveA.
+X
+XIt pretends to be the image of a 720 KB diskette, which has been
+Xchosen as the default bootfile size.
+X
+XIn order to obtain the image of a bootable DOS floppy, do the following:
+X
+X	Prepare a 720 KB floppy with a DOS system as you'd like
+X	to run it later.  Include all the good stuff you don't want
+X	to miss there.  Don't forget to put a simple text editor
+X	there, so you can modify your configuration files later.
+X
+X	Put a copy of the file
+X
+X		/usr/local/lib/pcemu/C/emufs.sys
+X
+X	onto this diskette, and include a line like
+X
+X		device = a:\emufs.sys /usr/local/lib/pcemu/C
+X
+X	into the config.sys file on this diskette.  This will
+X	provide you with an interface to the BSD file system from
+X	within your DOS session.  (It actually pretends to be a
+X	network drive.)  According to David Hedley, you are also
+X	advised to include the line
+X
+X		stacks = 9, 512
+X
+X	there to avoid stack overflow problems with the emulator.
+X
+X	If you want to retain a copy of the standalone "system" you
+X	are currently looking at, move it away:
+X
+X		# cd /usr/local/lib/pcemu; mv DriveA StandaloneA
+X
+X	Now, make a copy of your disk by either:
+X
+X	- under BSD, perform a
+X
+X		# cp /dev/fd0.720 /usr/local/lib/pcemu/DriveA
+X
+X	  (the number after the fd may vary for drives other than
+X	  the primary one), or
+X
+X	- under DOS, copy the file
+X
+X		/usr/local/lib/pcemu/C/dumpdisk.exe
+X
+X	  to your DOS system and execute it.  This will dump the
+X	  physical copy of either drive A or B to the file drivea
+X	  in your current (DOS) working directory.  You can then move
+X	  this file to
+X
+X		/usr/local/lib/pcemu/DriveA
+X
+X	  in your BSD system.
+X
+XSince pcemu needs to display the standard VGA font, you further need
+Xto tell your X server about the location of the font file.  It has
+Xbeen put under
+X
+X	/usr/local/lib/pcemu/font/
+X
+Xalong with the necessary information for the X server.  All you need
+Xto do is to tell your X server about it.  This can either be done
+Xas a server default by including the directory into the FontPath
+Xsection of your XF86Config file (this is for XFree86, refer to
+Xthe documentation if you're using another X server).  Alternatively,
+Xyou can run the command
+X
+X	$ xset fp+ /usr/local/lib/pcemu/font
+X
+Xwhen X11 is running to instruct your X server to append this directory
+Xto the font path.  Should you wish to run pcemu across the network,
+Xremember that the fonts must be physically available at the server
+Xside, or you need to provide an X11 font server (xfs).  Refer to
+Xthe X11 documentation on how to setup this.
+X
+X
+XThat's all, now you should be able to run pcemu.  Add required
+Xdevice = a:\emufs.sys /... lines to your config.sys as you
+Xneed them.  It's not wise to make the whole BSD hierarchy available
+Xsince DOS does not provide multiuser protection.
+X
+XShould you wish to override some of the emulator defaults like
+Xsize and location of the bootfile, you can do this by settig up a
+X$HOME/.pcemurc file.  Refer to sections 2. and 3. below.
+X
+X
+X
+X2. Information about this FreeBSD port
+X
+X
+XThis `port' of pcemu to FreeBSD has been prepared by Jörg Wunsch.  It
+Xis a modified version of David's code, a few problems have been fixed
+Xfor the BSD compilation environment, the location of the default boot
+Xfile has been moved in order to get you started with just what you are
+Xreading now.  Unfortunately David is no longer developing pcemu, so
+Xduring the past years, a number of improvements have been added to the
+XFreeBSD port.  Thanks to Arne Henrik Juul <arnej@math.ntnu.no> who
+Xsubmitted a large patchset, among them fixes to make harddisk access
+Xwork.
+X
+XThe PostScript document David is mentioning under 3. below has
+Xbeen compressed and stored under
+X
+X	/usr/local/lib/pcemu/doc/report.ps.gz.
+X
+XIt is huge however, so if you don't care much for it you might wish
+Xto remove it later.
+X
+XSince i'm living in Germany with a German keyboard, i found the
+Xoriginal X11 KeySym to PC scancode translation unacceptable.  Several
+Xscancodes have been unreachable for me.  Hence i decided to add another
+Xsection to the .pcemurc file allowing to instruct pcemu of specific
+Xkeyboard layout semantics.  They consist of the keyword keymap,
+Xfollowed by the desired PC scancode, an equal sign, and the character
+Xthat is generated for this key under X11 without any shift keys.  (Note
+Xthat no space is allowed on either side of the equal sign.)  This way
+Xi won't get a German key mapping under DOS, but at least a valid keyboard
+Xlayout where all the scan codes can actually be generated at all.
+X
+XThe appropriate section of my .pcemurc file looks like:
+X
+Xkeymap 12=ß
+Xkeymap 13='
+Xkeymap 21=z
+Xkeymap 26=]
+Xkeymap 27=+
+Xkeymap 39=\
+Xkeymap 40=[
+Xkeymap 41=^
+Xkeymap 43=#
+Xkeymap 44=y
+Xkeymap 53=-
+Xkeymap 86=<
+X
+XAnother recent addition to the .pcemurc file was the option to add
+Xfloppy and hard disk defintions dynamically.  (Previously, everything
+Xneeded to be compiled into the emulator.)  The syntax of those entries
+Xis:
+X
+Xkeyword filename sectors cylinders heads
+X
+XExamples:
+X
+Xfloppydisk /dev/rfd0 18 80 2
+Xharddisk /dev/rad0 255 400 63
+X
+XDrive letters are being assigned in ascending order, where drive A: is
+Xalways reserved for the boot file.  Write permission to the file in
+Xquestion is required by the time pcemu is being started (i. e. any
+Xfloppy media need to be in the drive by that time).  Be careful with
+Xletting DOS tools access your hard disks...
+X
+XShould you wish to contact me regarding this FreeBSD port, you can
+Xreach me as joerg_wunsch@uriah.heep.sax.de.
+X
+X
+X
+X
+X3. Here's David's original README file:
+X
+X
+X		       PC Emulator for Unix and X Windows
+X
+XAs the title suggests, this is a Unix/X windows program which is
+Xdesigned to emulate a standard 8086 based PC.
+X
+XIn its current form it runs most text based programs. The programs I have
+Xtried and found to work are as follows:
+X
+XMSDOS 5.0			  MSDOS 6.2
+XWordPerfect 5.1			  Borland C++ 2.0
+XTurbo Debugger 2.51		  Turbo Assembler 2.51
+XBBCBasic 4.61			  MSDOS QBasic
+XMSDOS GWBASIC			  Virtually all program that came with MSDOS 5
+XHitchhiker's Guide to the Galaxy  PC Magazine's ANSI.COM
+XSemWare's QEdit 2.1		  Norton Utils 4.50 Advanced Edition
+XNorton Utils 6.0		  Xtree Professional 1.1
+XPowerMeter Utils		  Autoroute (ancient version)
+XMinitab 8.0			  Microsoft Diagnostics
+X
+XThis is all the programs I could lay my hands on which were text based
+Xand could run on an 8086
+X
+XThe emulator runs at about 8-10MHz 80286 speed on a Sun SparcStation
+X10/40 (without the -mviking flag) and at about 6MHz 8088 speed on a
+X33MHz 80486 box running Linux.
+X
+XI have included a Postscript representation of my project report. It's
+Xa bit out of date now, but it's the closest thing I've got to
+Xdocumentation!	I'll do some kind of latex thing for the next
+Xrelease....
+X
+XThe program rather hogs the cpu but unmapping the window (iconifying
+Xit) will put it to sleep.
+X
+XThe most recent version of this program will always be in ftp.cs.bris.ac.uk
+Xcurrently in the directory /users/hedley
+X
+XINSTALLING THE EMULATOR
+X
+XEdit the Makefile to change the OPTIONS, CFLAGS and XROOT to be
+Xappropriate for your system (I am assuming you are using GNU GCC,
+Xalthough any ANSI C compiler should work just as well). Ensure you are
+Xusing the best (speed) optimisations possible (e.g. -O2 -fomit-frame-poiner)
+X
+XEdit the file mytypes.h and ensure that the types for INT8, UINT8,
+XINT16, UINT16 etc are correct. Hopefully nothing need be changed in
+Xthis file, but you never can tell... I have assumed that 'char's are 8
+Xbit bytes, 'short's are 16 bit words and 'long's are 32 bit words. If
+Xyour compiler treats these differently to the above then you will have
+Xto edit this header file.
+X
+XType 'make' and go away and have a cup of tea! Compiling 'cpu.c' takes
+Xa while (and quite a bit of memory!).
+X
+XGet a floppy disk of the same size/type as you specified in the Makefile
+X(i.e. if you chose -DBOOT720, then you'll need a 3.5" 720k disk). Install
+XMSDOS on it. Copy the files 'config.sys', 'emufs.sys' and 'lredir.exe' from
+Xthe 'programs' directory onto this floppy disk. Shove it in your Unix box
+Xand type cp /dev/fd0 DriveA This should create a 720k (or whatever) file
+Xwhich the emulator can boot from.  If you do not have access to a Unix box
+Xwith a floppy disk on it, then you can use the supplied 'dumpdisk' program
+Xto create a disk image. All you need is access to a PC. Simply put in a
+Xbootable MSDOS disk into the drive and type dumpdisk A (or dumpdisk B if in
+Xdrive B). The program will copy the entire disk to a file called
+X'drivea'. You must then transfer it to your Unix box...
+X
+XYou then need to convert the vga font (vga.bdf) into a font format
+Xyour X server can understand (either SNF or PCF) using either
+X'bdftosnf' or 'bdftopcf' and install the resulting font file somewhere
+Xwhere your X server can find it. Then type 'mkfontdir' to rebuild the
+Xfonts.dir file and then type 'xset fp rehash' to tell your X server
+Xabout the new font. If you type 'xlsfonts' you should see 'vga' as one
+Xof the fonts listed. If not, then something has gone wrong. I may or
+Xmay not be able to help - it depends on your local setup. The emulator
+Xwill run without the font as it uses the standard 8x16 X11 font -
+Xalthough most programs which use the extended character set will look
+Xpretty terrible. A warning will be displayed if the correct VGA font
+Xcannot be found. If you are using openwindows, you will have to type
+X'convertfont' and then 'bldfamily'
+X
+XYou should now be in a position to run the emulator
+X
+XBy default, the emulator requires the disk image called 'DriveA' to be in
+Xthe current directory or else it will complain. If you don't like this,
+Xthen you can change the file the emulator boots from by altering your
+X.pcemurc file (see below) or by changing the default at compile time (by
+Xmodifying the Makefile)
+X
+XOnce run, the emulator should come up with the usual MSDOS banner and
+Xrequest the current date and time (which should already be
+Xcorrect). You can now run PC programs, mount Unix directories as
+Xdrives etc. You will already have one drive redirection - drive C: is
+Xthe Unix root directory. To mount further directories as drives, you
+Xmust use the program 'lredir'. Consult the file 'lredir.readme' for
+Xinstructions...
+X
+X			The .pcemurc file
+X
+XAt present this file allows a few things to be changed at run time. If this
+Xfile is found (either in the current directory or in your home directory),
+Xthen it is read and parsed and the values overwriting the equivalent
+Xcompile time options. Currently the only options supported at present are:
+X
+Xbootfile diskfile
+X
+Xwhere diskfile is the disk image you want to boot from (no quotes or
+Xanything are needed and the filename must not contain white spaces).
+X
+Xboottype type
+X
+Xwhere type is either 360, 720, 144 or 12. This tells the emulator the type
+Xof disk the disk image file represents (360k, 720k, 1.44MB, 1.2MB
+Xrespectively).
+X
+Xupdatespeed n
+X
+Xwhere n is an integer > 0
+XThis is the rate at which the screen memory gets checked for changes (and
+Xhence the update speed at which the screen gets updated for non-BIOS
+Xwrites). n is measured in internal interrupt ticks of which there are ~72.8
+Xper second (depends on the resolution of the system timer).
+X
+Xcursorspeed n
+X
+Xwhere n is an integer
+XThis specifies how fast the cursor should flash. Flashing the cursor can
+Xtake a fair amount of bandwidth and so on slow/heavily loaded networks it
+Xmay be best to slow down the cursor flashing. Setting n to 0 or less will
+Xdisable cursor flashing - the cursor will be permanently on.
+X
+XAn example .pcemurc file can be found in this directory.
+X
+XIf you have problems compiling or running the emulator, then please contact
+Xme giving details of what went wrong (along with your computer type
+Xetc).
+X
+XArchitectures tested:
+X
+XComputer	OS		Comments
+X-----------------------------------------------------------------------------
+XPC 486/33	Linux 0.99.14w	Runs quite well. A bit pointless though :)
+XSun 3/60	SunOS 4.1.x	Takes an age to compile and not really worth
+X				the effort...
+XSparcStation 10 SunOS 4.1.3	Runs well. Takes > 20MB RAM to compile though
+XHP 755/99	HPUX		Runs OK (>25MB RAM to compile...)
+XSun 4		Solaris 2.3	Runs OK
+XRS6000		???		Had a few problems getting it to compile.
+X				Getting there slowly though.
+XSGI Indigo	IRIX 4.?.?	Doesn't work if compiled with optimisation
+X				using the standard compiler. Haven't tried
+X				it using gcc yet...
+X
+XAs you can see this list is quite small. The main limiting factor is the range 
+Xof machines I have access to. If anyone else can get it running on other
+Xarchitectures then please contact me!
+X
+XWarning: This program is not secure! Do not make is suid or sgid anything
+Xunless you wish to compromise the security of your system!
+X
+XEMULATOR LIMITATIONS etc
+X
+XSome parts of the PC architecture are emulated better than others. The
+XBIOS has been partly implemented - enough to get MSDOS to boot and to
+Xallow most programs to run. Anyhow, most decent programs bypass the
+XBIOS for screen access. BIOS Disk calls for drive A have been mostly
+Xemulated, although formatting doesn't work.
+X
+XSome of the hardware has been emulated but not much. Timer interrupts
+Xare generated by the system but there is now way (at present) to
+Xreprogram the timer. The Programmable Interrupt Controller has been
+Xemulated in part to respond to the End Of Interrupt command and reads
+Xfrom and writes to the mask register should work OK.
+X
+XNone of the VGA hardware has been emulated at present (apart from
+Xscreen updating) although this will change in the near future. Mode
+Xchanges must therefore be done through the BIOS.
+X
+XThe keyboard has been mostly emulated. The program converts X11
+Xkeysyms to raw PC scan codes and then generates an interrupt 9 as per
+Xusual. There is a BIOS routine which takes these scan codes and
+Xgenerates the correct BIOS ASCII/scan code pair. The keysyms used can
+Xbe found in the module 'xstuff.c'. In the future these keysyms will be
+Xread in from a file at run time.
+X
+XTHANKS
+X
+XThanks go to the following:
+X
+XAndy Norman at HPLabs, Bristol (ange@hpl.hewlett-packard.co.uk) for the HP
+Xport.
+XDieter Becker (becker@med-in.uni-sb.de) for help with the Solaris port
+XKlaas Esselink (esselin1@ksla.nl) for help with the RS6000 port
+X
+XPlease report bugs/comments etc to me (hedley@cs.bris.ac.uk) and I'll
+Xdo my best to sort them out (no guarantees though). After June 25th I
+Xwill be leaving University and will not be able to check email very
+Xfrequently - please be patient if you want a response - I will reply
+Xeventually.
+X
+XHave fun...
+X
+XDavid
+X
+X
+X
+X
+X4. And finally, the Copyright notice:
+X
+X
+XAll files, documentation etc with the exception of 'mfs.c',
+X'emufs.sys', 'emufs.S', 'lredir.exe', 'lredir.c' and 'lredir.readme'
+Xare Copyright (C) 1994 University of Bristol, England
+X
+XPermission is granted to use, copy, modify, and distribute this
+Xsoftware and its documentation for any non-commercial purpose,
+Xprovided that the above copyright notice appear in all copies and that
+Xboth that copyright notice and this permission notice appear in the
+Xsupporting documentation.
+X
+XBECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+XFOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT
+XWHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER
+XPARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND,
+XEITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE
+XIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+XPURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
+XPROGRAM IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME
+XTHE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+X
+XIN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+XWILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+XREDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR
+XDAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL
+XDAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM
+X(INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED
+XINACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF
+XTHE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER
+XOR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+X
+X---------------------------------------------------------------------
+X
+X'mfs.c', 'emufs.sys' and 'emufs.S' are covered by the following
+Xnotice:
+X
+X Mach Operating System
+X Copyright (c) 1993,1992,1991,1990 Carnegie Mellon University
+X Copyright (c) 1991 IBM Corporation 
+X All Rights Reserved.
+X 
+X Permission to use, copy, modify and distribute this software and its
+X documentation is hereby granted, provided that both the copyright
+X notice and this permission notice appear in all copies of the
+X software, derivative works or modified versions, and any portions
+X thereof, and that both notices appear in supporting documentation,
+X and that the nema IBM not be used in advertising or publicity 
+X pertaining to distribution of the software without specific, written
+X prior permission.
+X 
+X CARNEGIE MELLON AND IBM ALLOW FREE USE OF THIS SOFTWARE IN ITS "AS IS"
+X CONDITION.  CARNEGIE MELLON AND IBM DISCLAIM ANY LIABILITY OF ANY KIND FOR
+X ANY DAMAGES WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
+X 
+X Carnegie Mellon requests users of this software to return to
+X 
+X  Software Distribution Coordinator  or	 Software.Distribution@CS.CMU.EDU
+X  School of Computer Science
+X  Carnegie Mellon University
+X  Pittsburgh PA 15213-3890
+X 
+X any improvements or extensions that they make and grant Carnegie Mellon
+X the rights to redistribute these changes.
+X
+X--------------------------------------------------------------------
+X
+X'lredir' was written by Tim Bird (Tim_R_Bird@Novell.COM)
+X
+END-of-bootstrap/help.txt
+echo x - bootstrap/lcrt0.S
+sed 's/^X//' >bootstrap/lcrt0.S << 'END-of-bootstrap/lcrt0.S'
+X	;; Hey Emacs, this is an -*- asm -*- file
+X	;;
+X	;; lcrt0 -- C prologue for simple boot-loaded module
+X	;;
+X	;; Bootstraps a simple .com-style area 512 bytes off its
+X	;; own start address, by loading it via the BIOS int 0x13
+X	;; interface.
+X	;; Needs an epilogue counterpart to know about the end
+X	;; address.
+X
+XSECSPERTRACK:	set	9	; bump this for boot disk size != 720 KB
+X	
+X	use16
+X
+X	.text
+X	extern	_main
+X	
+X	.data
+X	extern	.endfile
+X
+X	.text
+X		
+X	entry	.begin
+X.begin:	
+X	
+X	mov	ax, .endfile
+X	mov	bx, .startfile	; from epilogue
+X	sub	ax, bx		; # bytes to load
+X	add	ax, 511		; round to full sectors
+X	mov	cl, 9
+X	shr	ax, cl		; make # sectors
+X
+X	push	cs
+X	push	cs
+X	pop	es
+X	pop	ds
+X
+X	mov	bx, .startfile	; load here
+X
+X	mov	si, ax		; sector count
+X	mov	cx, 2		; starting cylinder/sector
+X	mov	dx, 0		; starting head/drive A
+X.begin.loop:	
+X	mov	ax, 1 + (2 << 8); read one sector
+X	int	0x13		; just do it
+X
+X	add	bx, 512
+X	dec	si
+X	jz	.begin.done
+X	inc	cl
+X	cmp	cl, SECSPERTRACK + 1
+X	jne	.begin.loop
+X	mov	cl, 1
+X	inc	dh
+X	cmp	dh, 1 + 1
+X	jne	.begin.loop
+X	mov	dh, 0
+X	inc	ch
+X	jmp	.begin.loop
+X
+X.begin.done:
+X	call	_main
+X	int	0x19		; reboot -> this will quit pcemu
+X
+X
+X	;; .blkb	(.begin - $ + 512) ; cannot be done in as86
+X	;; XXX  IF ANYTHING IS BEING CHANGED IN THIS FILE, ADJUST THE
+X	;; NUMBER BELOW!  Link with -M and adjust the number so that,
+X	;; when linked to address 0x7c00, the symbol .startfile will
+X	;; be equal 0x7e00.
+X	.blkb	443
+X
+X	export .startfile
+X.startfile:
+X
+END-of-bootstrap/lcrt0.S
+echo x - bootstrap/txt2asm.perl
+sed 's/^X//' >bootstrap/txt2asm.perl << 'END-of-bootstrap/txt2asm.perl'
+X#!/usr/bin/perl
+X#
+X# Convert an input text into a sequence of .ascii or .byte assembler
+X# instructions.  Cares to express any non-printable ASCII character
+X# as well as the double quote and backslashes as a hexadecimal .byte
+X# instruction.
+X#
+X
+X# print one line of input text
+Xsub pline
+X{
+X    local($s) = @_;
+X    local($i, $k, $ele, $c);
+X
+X    # delete any null char to avoid confusion (we use null as the string
+X    # delimiter)
+X    $s =~ tr/\000//d;
+X
+X    $i = 0;
+X    #
+X    # split the string into substrings of printable characters (where
+X    # we can write a singe .ascii instruction for each of them)
+X    #
+X    foreach $ele (split(/[\001-\037\"\\\177-\377]/, $s)) {
+X	next if length($ele) == 0; # split returns a null string for
+X				# succeeding delimiters which dont wann see
+X
+X	$k = index($s, $ele, $i); # see if there are any non-pritables
+X				# just before the current substring
+X	while($i < $k) {	# if so, write a .byte for each
+X	    $c = substr($s, $i++, 1);
+X	    printf "\t.byte\t0x%02x\n", ord($c);
+X	}
+X	print "\t.ascii\t\"$ele\"\n"; # this substring
+X	$i += length($ele);
+X    }
+X    while($i < length($s)) {	# are there any non-printables left at end?
+X	$c = substr($s, $i++, 1);
+X	printf "\t.byte\t0x%02x\n", ord($c);
+X    }
+X    print "\t.byte\tnl\n";	# dont forget the final newline
+X}
+X
+X
+X#
+X# the asm file prologue:
+X#
+X# declare a synonym for newline, and define the entry symbol "_textstr"
+X#
+Xprint ".data\nnl:\tset\t0x0a\n.globl	_textstr\n\n_textstr:\n";
+X
+X# process all lines now
+Xwhile($_ = <>) {
+X	chop;
+X	&pline($_);
+X}
+X
+X# the epilogue: terminate with a null byte
+Xprint "\t.byte\t0\n";
+END-of-bootstrap/txt2asm.perl
+echo x - bootstrap/xcrt0.S
+sed 's/^X//' >bootstrap/xcrt0.S << 'END-of-bootstrap/xcrt0.S'
+X	;; Hey Emacs, this is -*- asm -*- code
+X	use16
+X	.data			; ld86 places .data after .text
+X	export .endfile
+X.endfile:
+END-of-bootstrap/xcrt0.S
+exit
+

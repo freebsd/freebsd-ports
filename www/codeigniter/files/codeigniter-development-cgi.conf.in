@@ -1,0 +1,13 @@
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .phps
+DirectoryIndex index.php index.html
+
+Action php-script %%PHPCGI%%
+AddHandler php-script .php
+
+Alias /codeigniter %%WWWDIR%%
+
+<Location /codeigniter>
+    Order deny,allow
+    Allow from all
+</Location>

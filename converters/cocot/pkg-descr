@@ -1,0 +1,5 @@
+This is a code converter on TTY.  It transparently filters a TTY
+converting characters from one encoding to another.
+
+e.g.
+	$ cocot -p euc-jp -t utf-8 screen -xRR wb

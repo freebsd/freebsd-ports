@@ -1,0 +1,219 @@
+Index: libaf/af_lavcac3enc.c
+===================================================================
+--- libaf/af_lavcac3enc.c	(revision 38679)
++++ libaf/af_lavcac3enc.c	(working copy)
+@@ -100,9 +100,14 @@
+                 s->lavc_actx->sample_rate != af->data->rate ||
+                 s->lavc_actx->bit_rate != bit_rate) {
+ 
+-            if (s->lavc_actx->codec)
+-                avcodec_close(s->lavc_actx);
++            avcodec_free_context(&s->lavc_actx);
++            s->lavc_actx = avcodec_alloc_context3(NULL);
++            if (!s->lavc_actx) {
++                mp_msg(MSGT_AFILTER, MSGL_ERR, MSGTR_CouldntAllocateLavcContext);
++                return AF_ERROR;
++            }
+ 
++
+             // Put sample parameters
+             s->lavc_actx->ch_layout.nb_channels = af->data->nch;
+             s->lavc_actx->sample_rate = af->data->rate;
+@@ -157,9 +162,7 @@
+         af_ac3enc_t *s = af->setup;
+         af->setup = NULL;
+         if(s->lavc_actx) {
+-            if (s->lavc_actx->codec)
+-                avcodec_close(s->lavc_actx);
+-            free(s->lavc_actx);
++            avcodec_free_context(&s->lavc_actx);
+         }
+         free(s->pending_data);
+         free(s);
+@@ -280,12 +283,6 @@
+         return AF_ERROR;
+     }
+ 
+-    s->lavc_actx = avcodec_alloc_context3(NULL);
+-    if (!s->lavc_actx) {
+-        mp_msg(MSGT_AFILTER, MSGL_ERR, MSGTR_CouldntAllocateLavcContext);
+-        return AF_ERROR;
+-    }
+-
+     return AF_OK;
+ }
+ 
+Index: libmpcodecs/ad_ffmpeg.c
+===================================================================
+--- libmpcodecs/ad_ffmpeg.c	(revision 38679)
++++ libmpcodecs/ad_ffmpeg.c	(working copy)
+@@ -196,11 +196,9 @@
+ {
+     AVCodecContext *lavc_context = sh->context;
+ 
+-    if (avcodec_close(lavc_context) < 0)
+-	mp_msg(MSGT_DECVIDEO, MSGL_ERR, MSGTR_CantCloseCodec);
+     av_freep(&lavc_context->opaque);
+     av_freep(&lavc_context->extradata);
+-    av_freep(&lavc_context);
++    avcodec_free_context(&lavc_context);
+ }
+ 
+ static int control(sh_audio_t *sh,int cmd,void* arg, ...)
+Index: libmpcodecs/vd_ffmpeg.c
+===================================================================
+--- libmpcodecs/vd_ffmpeg.c	(revision 38679)
++++ libmpcodecs/vd_ffmpeg.c	(working copy)
+@@ -511,9 +511,6 @@
+     }
+ 
+     if (avctx) {
+-        if (avctx->codec && avcodec_close(avctx) < 0)
+-            mp_msg(MSGT_DECVIDEO, MSGL_ERR, MSGTR_CantCloseCodec);
+-
+         av_freep(&avctx->extradata);
+         av_freep(&avctx->hwaccel_context);
+     }
+@@ -1060,8 +1057,8 @@
+ //    mpi->qscale = av_frame_get_qp_table(pic, &mpi->qstride, &mpi->qscale_type);
+     mpi->pict_type=pic->pict_type;
+     mpi->fields = MP_IMGFIELD_ORDERED;
+-    if(pic->interlaced_frame) mpi->fields |= MP_IMGFIELD_INTERLACED;
+-    if(pic->top_field_first ) mpi->fields |= MP_IMGFIELD_TOP_FIRST;
++    if(pic->flags & AV_FRAME_FLAG_INTERLACED) mpi->fields |= MP_IMGFIELD_INTERLACED;
++    if(pic->flags &AV_FRAME_FLAG_TOP_FIELD_FIRST ) mpi->fields |= MP_IMGFIELD_TOP_FIRST;
+     if(pic->repeat_pict == 1) mpi->fields |= MP_IMGFIELD_REPEAT_FIRST;
+ 
+     return mpi;
+Index: libmpcodecs/ve_lavc.c
+===================================================================
+--- libmpcodecs/ve_lavc.c	(revision 38679)
++++ libmpcodecs/ve_lavc.c	(working copy)
+@@ -152,7 +152,7 @@
+ static int lavc_param_mv0_threshold = 256;
+ static int lavc_param_refs = 1;
+ static int lavc_param_b_sensitivity = 40;
+-static int lavc_param_level = FF_LEVEL_UNKNOWN;
++static int lavc_param_level = AV_LEVEL_UNKNOWN;
+ 
+ char *lavc_param_acodec = "mp2";
+ int lavc_param_atag = 0;
+@@ -722,12 +722,12 @@
+ 
+     if(lavc_param_interlaced_dct){
+         if((mpi->fields & MP_IMGFIELD_ORDERED) && (mpi->fields & MP_IMGFIELD_INTERLACED))
+-            pic->top_field_first= !!(mpi->fields & MP_IMGFIELD_TOP_FIRST);
++            pic->flags |= (mpi->fields & MP_IMGFIELD_TOP_FIRST) ? AV_FRAME_FLAG_TOP_FIELD_FIRST : 0;
+         else
+-            pic->top_field_first= 1;
++            pic->flags |= AV_FRAME_FLAG_TOP_FIELD_FIRST;
+ 
+         if(lavc_param_top!=-1)
+-            pic->top_field_first= lavc_param_top;
++            pic->flags= (pic->flags & ~AV_FRAME_FLAG_TOP_FIELD_FIRST) | lavc_param_top ? AV_FRAME_FLAG_TOP_FIELD_FIRST : 0;
+     }
+ 
+     return encode_frame(vf, pic, pts) >= 0;
+@@ -852,9 +852,6 @@
+     av_freep(&lavc_venc_context->intra_matrix);
+     av_freep(&lavc_venc_context->inter_matrix);
+ 
+-    if (lavc_venc_context->codec)
+-        avcodec_close(lavc_venc_context);
+-
+     if(stats_file) fclose(stats_file);
+ 
+     /* free rc_override */
+Index: libmpcodecs/vf_mcdeint.c
+===================================================================
+--- libmpcodecs/vf_mcdeint.c	(revision 38679)
++++ libmpcodecs/vf_mcdeint.c	(working copy)
+@@ -313,8 +313,7 @@
+     }
+ #endif
+     if (vf->priv->avctx_enc) {
+-    avcodec_close(vf->priv->avctx_enc);
+-    av_freep(&vf->priv->avctx_enc);
++        avcodec_free_context(&vf->priv->avctx_enc);
+     }
+ 
+     free(vf->priv->outbuf);
+Index: libmpcodecs/vf_screenshot.c
+===================================================================
+--- libmpcodecs/vf_screenshot.c	(revision 38679)
++++ libmpcodecs/vf_screenshot.c	(working copy)
+@@ -279,8 +279,7 @@
+ 
+ static void uninit(vf_instance_t *vf)
+ {
+-    avcodec_close(vf->priv->avctx);
+-    av_freep(&vf->priv->avctx);
++    avcodec_free_context(&vf->priv->avctx);
+     if(vf->priv->ctx) sws_freeContext(vf->priv->ctx);
+     av_freep(&vf->priv->pic->data[0]);
+     av_frame_free(&vf->priv->pic);
+Index: libmpdemux/demux_lavf.c
+===================================================================
+--- libmpdemux/demux_lavf.c	(revision 38679)
++++ libmpdemux/demux_lavf.c	(working copy)
+@@ -367,7 +367,10 @@
+                 st->discard= AVDISCARD_ALL;
+             if (priv->audio_streams == 0) {
+                 size_t rg_size;
+-                AVReplayGain *rg = (AVReplayGain*)av_stream_get_side_data(st, AV_PKT_DATA_REPLAYGAIN, &rg_size);
++                const AVPacketSideData *sd = av_packet_side_data_get(st->codecpar->coded_side_data,
++                                                                     st->codecpar->nb_coded_side_data,
++                                                                     AV_PKT_DATA_REPLAYGAIN);
++                AVReplayGain *rg = sd ? (AVReplayGain*)sd->data : NULL;
+                 if (rg && rg_size >= sizeof(*rg)) {
+                     priv->r_gain = rg->track_gain / 10000;
+                 }
+@@ -378,7 +381,10 @@
+         }
+         case AVMEDIA_TYPE_VIDEO:{
+             AVDictionaryEntry *rot = av_dict_get(st->metadata, "rotate",   NULL, 0);
+-            const int32_t *disp_matrix = (const int32_t *)av_stream_get_side_data(st, AV_PKT_DATA_DISPLAYMATRIX, NULL);
++            const AVPacketSideData *sd = av_packet_side_data_get(st->codecpar->coded_side_data,
++                                                                 st->codecpar->nb_coded_side_data,
++                                                                 AV_PKT_DATA_DISPLAYMATRIX);
++            const int32_t *disp_matrix = sd ? (const int32_t *)sd->data : NULL;
+             sh_video_t* sh_video;
+             BITMAPINFOHEADER *bih;
+             sh_video=new_sh_video_vid(demuxer, i, priv->video_streams);
+Index: libvo/vo_png.c
+===================================================================
+--- libvo/vo_png.c	(revision 38679)
++++ libvo/vo_png.c	(working copy)
+@@ -126,8 +126,7 @@
+ 
+ 
+     if (avctx && png_format != format) {
+-        avcodec_close(avctx);
+-        av_freep(&avctx);
++        avcodec_free_context(&avctx);
+     }
+ 
+     if (!avctx) {
+@@ -214,8 +213,7 @@
+ }
+ 
+ static void uninit(void){
+-    avcodec_close(avctx);
+-    av_freep(&avctx);
++    avcodec_free_context(&avctx);
+     av_freep(&outbuffer);
+     outbuffer_size = 0;
+     free(png_outdir);
+Index: sub/av_sub.c
+===================================================================
+--- sub/av_sub.c	(revision 38679)
++++ sub/av_sub.c	(working copy)
+@@ -30,8 +30,7 @@
+         AVCodecContext *ctx = sh->context;
+         ctx->extradata = NULL;
+         ctx->extradata_size = 0;
+-        avcodec_close(sh->context);
+-        av_freep(&sh->context);
++        avcodec_free_context((AVCodecContext **)&sh->context);
+     }
+ }

@@ -1,0 +1,26 @@
+--- /usr/ports/ftp/fmirror/work/fmirror-0.8.4/fmirror.1	Thu Mar  9 07:50:55 2000
++++ fmirror.1	Thu Jul 21 15:54:40 2005
+@@ -3,6 +3,8 @@
+ fmirror \- Mirror directories from ftp servers
+ .SH SYNOPSIS
+ .B fmirror
++[\-4]
++[\-6]
+ [\-A\ and\-mask]
+ [\-O\ or\-mask]
+ [\-C\ config\-line]
+@@ -48,6 +50,14 @@
+ can delete any files not found on the remote server.
+ 
+ .SH OPTIONS
++
++.TP
++.BI "\-4"
++Force using IPv4 address of destination host.
++
++.TP
++.BI "\-6"
++Force using IPv6 address of destination host.
+ 
+ .TP
+ .BI "\-A" " mask"

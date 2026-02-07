@@ -1,0 +1,7 @@
+usr/lib/libstemmer.so.0
+usr/lib/libstemmer.so.0.0.0
+usr/lib64/libstemmer.so.0
+usr/lib64/libstemmer.so.0.0.0
+%%PORTDOCS%%%%DOCSDIR%%/BSD.txt
+%%PORTDOCS%%%%DOCSDIR%%/Notice.txt
+%%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Graphics/Primitive/Driver/Cairo.pm
+%%SITE_PERL%%/Graphics/Primitive/Driver/Cairo/TextLayout.pm
+%%PERL5_MAN3%%/Graphics::Primitive::Driver::Cairo.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Driver::Cairo::TextLayout.3.gz

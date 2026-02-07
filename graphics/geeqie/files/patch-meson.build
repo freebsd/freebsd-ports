@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-03-23 13:57:27 UTC
++++ meson.build
+@@ -459,7 +459,7 @@ endif
+ else
+     summary({'pandoc' : ['disabled - README.html created:', false]}, section : 'Documentation', bool_yn : true)
+ endif
+-install_data('README.md', 'COPYING', 'TODO', install_dir : helpdir)
++install_data('README.md', 'TODO', install_dir : helpdir)
+ 
+ conf_data.set('HAVE_PDF', 0)
+ poppler_glib_dep = []

@@ -1,0 +1,16 @@
+--- third_party/crabbyavif/BUILD.gn.orig	2025-10-21 20:19:54 UTC
++++ third_party/crabbyavif/BUILD.gn
+@@ -197,12 +197,11 @@ rust_static_library("crabbyavif") {
+     "dav1d",
+     "libyuv",
+     "capi",
+-    "disable_cfi",
+   ]
+ 
+   # Required for disable_cfi feature.
+   configs -= [ "//build/config/compiler:disallow_unstable_features" ]
+-  rustflags = [ "-Zallow-features=sanitize" ]
++  rustflags = [ "-Zallow-features=no_sanitize" ]
+ 
+   public_deps = [ ":header_files" ]
+   deps = [

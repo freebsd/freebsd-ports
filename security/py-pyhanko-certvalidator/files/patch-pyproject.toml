@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2025-08-23 12:29:44 UTC
++++ pyproject.toml
+@@ -1,12 +1,11 @@
+ [build-system]
+-requires = ["setuptools>=80.8.0"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "pyhanko-certvalidator"
+ authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ description = "Validates X.509 certificates and paths; forked from wbond/certvalidator"
+ keywords = [
+     "crypto",

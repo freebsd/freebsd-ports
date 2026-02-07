@@ -1,0 +1,6 @@
+Q is a set of Molecular Dynamics (MD) tools tailored to the following
+specific kinds of free energy calculations:
+1. Free Energy Perturbation (FEP)
+2. Empirical Valence Bond (EVB)
+3. Linear Interaction Energies (LIE)
+4. Quantum Classical Path (QCP)

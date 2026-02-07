@@ -1,0 +1,66 @@
+--- cutsel.1.orig	2019-03-25 17:46:04 UTC
++++ cutsel.1
+@@ -0,0 +1,63 @@
++.TH "CUTSEL" "1" "5 December 2007" "autocutsel 0.9.0"
++.SH "NAME"
++cutsel \- show information about the X clipboard and the cutbuffer in sync
++.SH "SYNOPSIS"
++.PP
++.B cutsel
++[\-selection \fIselection_name\fP]
++[\-cutbuffer \fInumber\fP]
++[\-debug]
++[\-verbose]
++{cut|sel}
++
++.LP
++.SH "DESCRIPTION"
++.PP
++This manual page documents briefly the
++.B cutsel
++command.
++.PP
++This manual page was written for the
++.B Debian
++distribution because the original
++program does not have a manual page.
++
++.TP
++.B cutsel [\fIoptions\fP] cut
++shows the contents of the cut buffer
++and
++.TP
++.B cutsel [\fIoptions\fP] sel
++shows the owner of the selection.
++
++.SH "OPTIONS"
++.TP
++.B \-selection, \-select, \-sel, \-s {CLIPBOARD|PRIMARY}
++Specify which selection to use.
++Default is CLIPBOARD.
++
++.TP
++.B \-cutbuffer <number>
++(Details of this parameter unknown.)
++
++.TP
++.B \-debug, \-d
++Run with debugging mode.
++
++.TP
++.B \-verbose, \-v
++Be more verbose.
++Reports the version and announces synchronizations.
++
++.SH "AUTHOR"
++.PP
++This manual page was written by
++Elmar S. Heeb <elmar@heebs.ch> for the
++.B Debian
++system (but may be used by others).
++Permission is granted to copy,
++distribute and/or modify this
++document under  the terms of the
++GNU General Public License,
++Version 2 any later version published
++by the Free Software Foundation.

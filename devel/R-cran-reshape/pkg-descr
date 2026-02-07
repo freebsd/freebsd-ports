@@ -1,0 +1,4 @@
+Reshape (hopefully) makes it easy to do what you have been struggling
+to do with tapply, by, aggregate, xtabs, apply and summarise. It
+is also useful for getting your data into the correct structure for
+lattice or ggplot plots.

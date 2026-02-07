@@ -1,0 +1,27 @@
+--- pyproject.toml.orig	2025-07-01 09:09:51 UTC
++++ pyproject.toml
+@@ -1,12 +1,10 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3",
+-            "wheel",
+-            "oldest-supported-numpy; python_version=='3.8'",
+-            "numpy >=2.0.0rc1; python_version>='3.9'"]
++requires = ["setuptools>=61.0.0",
++            "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "GDAL"
++name = "gdal"
+ dynamic = ["version", "scripts"]
+ authors = [
+     {name = "Frank Warmerdam"},
+@@ -19,7 +17,7 @@ keywords = ["gis", "raster", "vector"]
+ description = "GDAL: Geospatial Data Abstraction Library"
+ readme = "README.rst"
+ keywords = ["gis", "raster", "vector"]
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",

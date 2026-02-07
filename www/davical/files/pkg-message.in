@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+To complete the installation of DAViCal:
+
+1. Create DAViCal's database
+
+       su pgsql %%DATADIR%%/dba/create-database.sh
+
+2. Edit pg_hba.conf file to add the davical_app user close to the
+top of the accounts
+
+	local   davical     davical_app   trust
+
+3. Edit your config file in:
+
+       %%WWWDIR%%/config/config.php
+
+4. Enable in apache by copying
+
+	%%DATADIR%%/httpd-davical.conf
+
+to the Apache Include directory and restart Apache.
+EOM
+}
+]

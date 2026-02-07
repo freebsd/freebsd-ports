@@ -1,0 +1,41 @@
+--- lib/roken/Makefile.in.orig	2020-02-23 12:16:33 UTC
++++ lib/roken/Makefile.in
+@@ -194,8 +194,7 @@ am__uninstall_files_from_dir = { \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" \
+-	"$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)" \
+-	"$(DESTDIR)$(rokenincludedir)"
++	"$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libroken_la_DEPENDENCIES = @LTLIBOBJS@ $(am__DEPENDENCIES_1) \
+@@ -396,8 +395,7 @@ MANS = $(man_MANS)
+ am__dist_include_HEADERS_DIST = base64.h getarg.h hex.h parse_bytes.h \
+ 	parse_time.h parse_units.h resolve.h roken-common.h rtbl.h \
+ 	xdbm.h socket_wrapper.h
+-HEADERS = $(dist_include_HEADERS) $(nodist_include_HEADERS) \
+-	$(nodist_rokeninclude_HEADERS)
++HEADERS = $(dist_include_HEADERS) $(nodist_include_HEADERS)
+ am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
+ # Read a list of newline-separated strings from the standard input,
+ # and print each of them once, without duplicates.  Input order is
+@@ -2274,7 +2272,7 @@ check: $(BUILT_SOURCES)
+ all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(MANS) $(HEADERS) \
+ 		all-local
+ installdirs:
+-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(rokenincludedir)"; do \
++	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)
+@@ -2338,8 +2336,7 @@ info: info-am
+ info-am:
+ 
+ install-data-am: install-dist_includeHEADERS install-man \
+-	install-nodist_includeHEADERS \
+-	install-nodist_rokenincludeHEADERS
++	install-nodist_includeHEADERS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-am

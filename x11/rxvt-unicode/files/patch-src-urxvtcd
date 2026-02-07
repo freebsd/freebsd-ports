@@ -1,0 +1,10 @@
+--- src/urxvtcd.orig	2021-05-14 16:08:01 UTC
++++ src/urxvtcd
+@@ -0,0 +1,7 @@
++#!/bin/sh
++
++urxvtc "$@"
++if [ $? -eq 2 ]; then
++    urxvtd -q -o -f
++    exec urxvtc "$@"
++fi

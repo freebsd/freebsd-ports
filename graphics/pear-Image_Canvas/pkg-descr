@@ -1,0 +1,2 @@
+A PHP PEAR package providing a common interface to image drawing, making image
+source code independent on the library used.

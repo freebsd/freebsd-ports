@@ -1,0 +1,7 @@
+Twoftpd is an FTP server that strives to be secure, simple, and efficient.
+None of the commands can cause execution of other programs, and the normal
+model of execution does a chroot to the logged in user's directory
+immediately after authentication. The name &quot;twoftpd&quot; comes from
+the fact that there are two parts to the server: an authenticating front
+end, which contains no file or data transfer code, and one of two back ends,
+which contain all the data transfer code.

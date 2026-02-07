@@ -1,0 +1,8 @@
+keep is a Meta CLI Toolkit that provides a personal shell command
+keeper with some useful features:
+
+* Save a new command with a brief description
+* Search the saved commands using powerful patterns
+* Save the commands as a secret GitHub gist
+* Use keep push and keep pull to sync the commands between GitHub
+  gist and other computers.

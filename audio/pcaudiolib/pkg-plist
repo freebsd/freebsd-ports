@@ -1,0 +1,5 @@
+include/pcaudiolib/audio.h
+lib/libpcaudio.a
+lib/libpcaudio.so
+lib/libpcaudio.so.0
+lib/libpcaudio.so.0.0.1

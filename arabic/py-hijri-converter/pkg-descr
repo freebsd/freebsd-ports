@@ -1,0 +1,15 @@
+hijri-converter is a Python package to convert accurately between Hijri and
+Gregorian dates using the Umm al-Qura calendar.
+
+Features:
+* Accurate and verified date conversion.
+* Optimized code performance compared to similar packages.
+* Intuitive, clean, and easy-to-use interface.
+* Most of the methods and formats are similar to those of standard library.
+* Multilingual representation of weekday names, months, and calendar era
+  notations.
+* Easily extendable to support other natural languages.
+* Rich comparison between dates.
+* Validation of input dates.
+* Works on Python 3.6+ with zero dependencies.
+* Thoroughly tested with 100% test coverage.

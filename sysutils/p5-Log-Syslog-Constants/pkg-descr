@@ -1,0 +1,6 @@
+Syslog messages--as standardized in RFC3164--embed a priority number
+(the PRI part) which is composed of a severity and a facility
+value. The constants which encode these values are specified in
+section 4.1.1, and are made available by this module. For instance,
+the exportable LOG_FTP constant has a value of 11, the value for the
+FTP facility.

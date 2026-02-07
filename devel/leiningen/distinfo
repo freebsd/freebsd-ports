@@ -1,0 +1,5 @@
+TIMESTAMP = 1706631817
+SHA256 (2.11.1.tar.gz) = 8d8076d4b743cd6b9d51babd086912b84f08b444490e32212836e0d14cb2f61e
+SIZE (2.11.1.tar.gz) = 980076
+SHA256 (leiningen-2.11.1-standalone.jar) = 47d3cd3d436433c59662fb54c5f3c8d87dcf6e8249421b362b38ec3710a3d4f9
+SIZE (leiningen-2.11.1-standalone.jar) = 16481190

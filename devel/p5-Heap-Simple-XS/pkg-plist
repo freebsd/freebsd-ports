@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Heap::Simple::XS.3.gz
+%%SITE_ARCH%%/Heap/Simple/XS.pm
+%%SITE_ARCH%%/Heap/Simple/XS/Package.pm
+%%SITE_ARCH%%/auto/Heap/Simple/XS/XS.so

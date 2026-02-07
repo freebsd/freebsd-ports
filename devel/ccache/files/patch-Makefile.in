@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2020-10-01 05:21:40.000000000 -0700
++++ Makefile.in	2021-07-12 12:12:03.914717000 -0700
+@@ -125,11 +125,5 @@ install: ccache$(EXEEXT) @disable_man@ccache.1
+ clean:
+ 	rm -rf $(files_to_clean)
+ 
+-$(non_3pp_objs) $(test_objs): CFLAGS += @more_warnings@
+-
+-src/snprintf.o: CFLAGS += @no_implicit_fallthrough_warning@
+-$(zlib_objs): CPPFLAGS += -include config.h
+-$(zlib_objs): CFLAGS += @no_implicit_fallthrough_warning@
+-
+ src/zlib/libz.a: $(zlib_objs)
+ 	$(if $(quiet),@echo "  AR       $@")

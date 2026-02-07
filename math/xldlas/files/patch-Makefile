@@ -1,0 +1,44 @@
+--- Makefile.orig	1997-04-01 17:13:32 UTC
++++ Makefile
+@@ -16,11 +16,14 @@
+ #	want to remove the -DXFORMS86 declaration in the CCFLAG 
+ #	assignment. 
+ #
+-CCFLAG		= -O2 -Wall -DXFORMS86
+-CC		= gcc
+-COMMONLIBS	= -L/usr/X11R6/lib/ -lX11 -lm
+-SHAREDLIBS	= -lforms
+-STATICLIBS	= -lXpm /usr/X11R6/lib/libforms.a
++.if exists(${LOCALBASE}/include/X11/forms.h)
++XFORMSINC	= -I${LOCALBASE}/include/X11
++.endif
++CCFLAG		= $(CFLAGS) -DXFORMS86 -DPREFIX=\"$(PREFIX)\" -I$(LOCALBASE)/include ${XFORMSINC}
++#CC		= gcc
++COMMONLIBS	= -L$(LOCALBASE)/lib/ -lX11 -lm
++SHAREDLIBS	= -lforms -lXpm
++STATICLIBS	= $(LOCALBASE)/lib/libxforms.a -lXpm
+ ECHO		= echo
+ RM		= rm
+ RMOPTS		= -f
+@@ -29,9 +32,9 @@ CPOPTS		= -i
+ INSTALL		= install
+ INSTALLOPTS	= -d 
+ 
+-BINDIR		= /usr/local/bin
+-MANDIR		= /usr/man/man1
+-HELPDIR		= /usr/local/xldlas/help
++BINDIR		= $(PREFIX)/bin
++MANDIR		= $(PREFIX)/man/man1
++HELPDIR		= $(PREFIX)/share/xldlas/help
+ SRCDIR		:= $$PWD
+ USER		:= $$LOGNAME
+ 
+@@ -115,7 +118,7 @@ install:	xldlas
+ 			so the following commands will probably fail"; fi 
+ 		@$(ECHO)
+ 		@$(CP) $(CPOPTS) xldlas $(BINDIR)
+-		@if test '/usr/local/xldlas' = $(SRCDIR); then \
++		@if test '/usr/local/share/xldlas' = $(SRCDIR); then \
+ 			$(ECHO) Help Files Already in Place; else \
+ 			$(INSTALL) $(INSTALLOPTS) ./help $(HELPDIR); fi
+ install.man:	

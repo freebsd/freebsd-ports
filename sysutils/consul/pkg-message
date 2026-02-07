@@ -1,0 +1,12 @@
+[
+{
+	message: <<EOD
+Warning! Version 1.9.0 of consul contains breaking changes. See:
+
+https://github.com/hashicorp/consul/blob/master/CHANGELOG.md
+
+for details.
+EOD,
+	type : upgrade
+}
+]

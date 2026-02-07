@@ -1,0 +1,20 @@
+SuiteSparse is a set of sparse matrices libraries.
+
+It contains:
+    * AMD: symmetric approximate minimum degree
+    * BTF: permutation to block triangular form (beta)
+    * CAMD: constrained approximate minimum degree ordering
+    * CCOLAMD: constrained column approximate minimum degree
+    * CHOLMOD: sparse supernodal Cholesky factorization and update/downdate
+    * COLAMD: column approximate minimum degree
+    * CSparse: a concise sparse matrix package
+    * CXSparse: and extended version of CSparse
+    * GraphBLAS: graph algorithms in the language of linear algebra
+    * KLU: sparse LU factorization, for circuit simulation (beta)
+    * LDL: a simple LDL^T factorization
+    * Mongoose: graph partitioning
+    * RBio: read/write sparse matrices
+    * SLIP_LU : Sparse Left-looking Integer-Preserving LU Factorization
+    * SPQR: sparse QR factorization
+    * UMFPACK: sparse multifrontal LU factorization
+    * SuiteSparse_config: common configuration for all of the above

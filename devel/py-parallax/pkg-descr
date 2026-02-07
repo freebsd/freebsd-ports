@@ -1,0 +1,4 @@
+Parallax SSH is a fork of Parallel SSH which focuses less on command-line
+tools and more on providing a flexible and programmable API that can be used by
+Python application developers to perform SSH operations across multiple
+machines.

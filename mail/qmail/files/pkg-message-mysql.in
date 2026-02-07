@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+	ATTENTION:
+
+Do not forget to read http://iain.cx/unix/qmail/mysql.php. After all,
+this is NOT our old stock qmail.
+
+You can enable qmail as your default mailer executing:
+> %%PREFIX%%/scripts/enable-qmail
+EOM
+}
+]

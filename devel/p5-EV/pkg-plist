@@ -1,0 +1,9 @@
+%%SITE_ARCH%%/EV.pm
+%%SITE_ARCH%%/EV/EVAPI.h
+%%SITE_ARCH%%/EV/MakeMaker.pm
+%%SITE_ARCH%%/EV/ev.h
+%%SITE_ARCH%%/EV/libev.pod
+%%SITE_ARCH%%/auto/EV/EV.so
+%%PERL5_MAN3%%/EV.3.gz
+%%PERL5_MAN3%%/EV::MakeMaker.3.gz
+%%PERL5_MAN3%%/EV::libev.3.gz

@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# PROVIDE: mattermostd
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable mattermostdb:
+# mattermostd_enable="YES"
+#
+# mattermostd_enable (bool):        Set to YES to enable mattermostd
+#                                   Default: NO
+# mattermostd_conf (str):           mattermostd configuration file
+#                                   Default: ${PREFIX}/etc/mattermostd.conf
+# mattermostd_user (str):           mattermostd daemon user
+#                                   Default: mattermostd
+# mattermostd_group (str):          mattermostd daemon group
+#                                   Default: mattermostd
+# mattermostd_extraflags (str):     Extra flags passed to mattermostd
+#                                   Default: None
+# mattermostd_facility (str):       Syslog facility to use
+#                                   Default: daemon
+# mattermostd_priority (str):       Syslog priority to use
+#                                   Default: info
+
+. /etc/rc.subr
+
+name="mattermostd"
+rcvar=mattermostd_enable
+load_rc_config $name
+
+: ${mattermostd_enable:="NO"}
+: ${mattermostd_user:="mattermost"}
+: ${mattermostd_group:="mattermost"}
+: ${mattermostd_extraflags:=""}
+: ${mattermostd_facility:="daemon"}
+: ${mattermostd_priority:="info"}
+: ${mattermostd_tag:="mattermostd"}
+: ${mattermostd_conf:="%%PREFIX%%/etc/mattermost/config.json"}
+
+# daemon
+pidfile=/var/run/${name}.pid
+procname=%%PREFIX%%/bin/${name}
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} -S -s ${mattermostd_priority} -l ${mattermostd_facility} -T ${mattermostd_tag} ${procname} server ${mattermostd_extraflags} --config=${mattermostd_conf}"
+start_precmd=mattermostd_startprecmd
+mattermostd_chdir=%%PREFIX%%/www/mattermost
+required_files=${mattermostd_confg}
+
+mattermostd_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+            install -o ${mattermostd_user} -g ${mattermostd_group} /dev/null ${pidfile};
+    fi
+
+    if [ ! -d ${mattermostd_dir} ]; then
+            install -d -o ${mattermostd_user} -g ${mattermostd_group} ${mattermostd_dir}
+    fi
+}
+
+run_rc_command "$1"

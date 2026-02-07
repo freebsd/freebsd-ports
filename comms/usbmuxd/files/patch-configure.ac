@@ -1,0 +1,14 @@
+Disable udev/systemd detection for *BSD as the catch-all assumes a Linux
+system. A configuration file for devd(8) is provided by this port instead.
+
+--- configure.ac.orig	2025-02-01 20:07:39 UTC
++++ configure.ac
+@@ -126,7 +126,7 @@ case ${host_os} in
+     AC_SUBST(WINDRES)
+     activation_method="manual"
+     ;;
+-  darwin*)
++  darwin*|dragonfly*|*bsd*)
+     win32=false
+     AC_MSG_RESULT([no])
+     # No support for launchd yet

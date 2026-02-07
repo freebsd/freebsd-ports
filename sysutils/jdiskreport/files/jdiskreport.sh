@@ -1,0 +1,7 @@
+#! /bin/sh
+
+JDISKDIR="%%JDISKDIR%%"
+JAVAVM="%%JAVAVM%%"
+PORTVERSION="%%PORTVERSION%%"
+
+$JAVAVM -jar "$JDISKDIR/jdiskreport-$PORTVERSION.jar"

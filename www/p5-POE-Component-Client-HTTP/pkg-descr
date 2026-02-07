@@ -1,0 +1,6 @@
+POE::Component::Client::HTTP is an asynchronous, event driven HTTP user
+agent.  It accepts events containing HTTP::Request objects, and it
+returns events carrying HTTP::Response objects.  It supports https and
+simultaneous HTTP transactions.  It lets other sessions run while HTTP
+transactions are being processed, and it lets several HTTP transactions
+be processed in parallel.

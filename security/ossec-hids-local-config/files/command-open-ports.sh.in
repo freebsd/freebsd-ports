@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# This script is part of FreeBSD port - report any issues to the port MAINTAINER
+
+family=$1
+protocol=$2
+ports=$3
+
+if [ -z "${ports}" ]; then
+    privileged_ports="1-$((`sysctl -n net.inet.ip.portrange.first` - 1))"
+
+    ossec_home="%%OSSEC_HOME%%"
+    . "${ossec_home}/etc/command.conf"
+
+    ports="privileged_${protocol}_ports"
+    eval ports=\$${ports}
+fi
+
+sockstat -l -${family} -P ${protocol} -p ${ports} | grep -Eo '[^[:space:]]+:[0-9]+' | sort -u

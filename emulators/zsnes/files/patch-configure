@@ -1,0 +1,104 @@
+--- configure.orig	2007-01-25 00:51:21 UTC
++++ configure
+@@ -5128,92 +5128,6 @@ else
+ 
+   CFLAGSBAK="$CFLAGS"
+ 
+-  { echo "$as_me:$LINENO: checking which cpu architecture to optimize for" >&5
+-echo $ECHO_N "checking which cpu architecture to optimize for... $ECHO_C" >&6; }
+-  if test x$force_arch != x; then
+-    CFLAGS="$CFLAGS -march=$force_arch"
+-    cat >conftest.$ac_ext <<_ACEOF
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
+-
+-int
+-main ()
+-{
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-rm -f conftest.$ac_objext
+-if { (ac_try="$ac_compile"
+-case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+-  (eval "$ac_compile") 2>conftest.er1
+-  ac_status=$?
+-  grep -v '^ *+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } && {
+-	 test -z "$ac_c_werror_flag" ||
+-	 test ! -s conftest.err
+-       } && test -s conftest.$ac_objext; then
+-  { echo "$as_me:$LINENO: result: forcing $force_arch" >&5
+-echo "${ECHO_T}forcing $force_arch" >&6; }
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
+-	{ echo "$as_me:$LINENO: result: $force_arch ??" >&5
+-echo "${ECHO_T}$force_arch ??" >&6; }
+-    { echo "$as_me:$LINENO: WARNING: incorrect force_arch parameter" >&5
+-echo "$as_me: WARNING: incorrect force_arch parameter" >&2;}
+-    force_arch=""
+-    CFLAGS="$CFLAGSBAK"
+-    { echo "$as_me:$LINENO: checking for autodetected architecture" >&5
+-echo $ECHO_N "checking for autodetected architecture... $ECHO_C" >&6; }
+-fi
+-
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-  else
+-    if test x$ARCH_INFO = x; then
+-      case x$target in
+-        i686-*-*)
+-          { echo "$as_me:$LINENO: result: guessing i686" >&5
+-echo "${ECHO_T}guessing i686" >&6; }
+-          CFLAGS="$CFLAGS -march=i686"
+-          ;;
+-        i586-*-*)
+-          { echo "$as_me:$LINENO: result: guessing i586" >&5
+-echo "${ECHO_T}guessing i586" >&6; }
+-          CFLAGS="$CFLAGS -march=i586"
+-          ;;
+-        i486-*-*)
+-          { echo "$as_me:$LINENO: result: guessing i486" >&5
+-echo "${ECHO_T}guessing i486" >&6; }
+-          CFLAGS="$CFLAGS -march=i486"
+-          ;;
+-        *)
+-          { echo "$as_me:$LINENO: result: guessing i386" >&5
+-echo "${ECHO_T}guessing i386" >&6; }
+-          CFLAGS="$CFLAGS -march=i386"
+-          { echo "$as_me:$LINENO: WARNING: This is not what you want, use --target or force-arch" >&5
+-echo "$as_me: WARNING: This is not what you want, use --target or force-arch" >&2;}
+-          ;;
+-      esac
+-    else
+-      { echo "$as_me:$LINENO: result: $ARCH_INFO" >&5
+-echo "${ECHO_T}$ARCH_INFO" >&6; }
+-      CFLAGS="$CFLAGS -march=$ARCH_INFO"
+-    fi
+-  fi
+-
+   # Check whether --enable-release was given.
+ if test "${enable_release+set}" = set; then
+   enableval=$enable_release; release=$enableval
+@@ -5237,7 +5151,7 @@ fi
+     NFLAGS="$NFLAGS -O1"
+   fi
+ fi
+-CXXFLAGS="$CFLAGS -fno-rtti"
++CXXFLAGS="$CXXFLAGS -fno-rtti"
+ 
+ if test x$enable_jma != xno; then
+   JMA_FILES="\$(JMA_D)/7zlzma.o \$(JMA_D)/crc32.o \$(JMA_D)/iiostrm.o\

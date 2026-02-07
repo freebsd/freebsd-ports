@@ -1,0 +1,4 @@
+#!/bin/sh
+
+CUBE_OPTIONS=
+cd %%DATADIR%% && exec %%PREFIX%%/libexec/assaultcube_master ${CUBE_OPTIONS} "$@"

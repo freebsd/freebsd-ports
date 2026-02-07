@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2026-02-04 20:26:25 UTC
++++ CMakeLists.txt
+@@ -36,7 +36,7 @@ cmake_dependent_option(YAML_MSVC_SHARED_RT
+ cmake_dependent_option(YAML_MSVC_SHARED_RT
+   "MSVC: Build yaml-cpp with shared runtime libs (/MD)" ON
+   "CMAKE_SYSTEM_NAME MATCHES Windows" OFF)
+-set(YAML_CPP_INSTALL_CMAKEDIR "${CMAKE_INSTALL_LIBDIR}/cmake/yaml-cpp"
++set(YAML_CPP_INSTALL_CMAKEDIR "lib/cmake/yaml-cpp"
+   CACHE STRING "Path to install the CMake package to")
+  
+ if (YAML_CPP_FORMAT_SOURCE)
+@@ -146,7 +146,7 @@ set_target_properties(yaml-cpp PROPERTIES
+ 
+ set_target_properties(yaml-cpp PROPERTIES
+   VERSION "${PROJECT_VERSION}"
+-  SOVERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
++  SOVERSION "${PROJECT_VERSION_MAJOR}"
+   PROJECT_LABEL "yaml-cpp ${yaml-cpp-label-postfix}"
+   DEBUG_POSTFIX "${CMAKE_DEBUG_POSTFIX}")
+ 
+@@ -181,7 +181,7 @@ if (YAML_CPP_INSTALL)
+       "${PROJECT_BINARY_DIR}/yaml-cpp-config-version.cmake"
+     DESTINATION "${YAML_CPP_INSTALL_CMAKEDIR}")
+   install(FILES "${PROJECT_BINARY_DIR}/yaml-cpp.pc"
+-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++    DESTINATION libdata/pkgconfig)
+ endif()
+ 
+ if(YAML_CPP_BUILD_TESTS)

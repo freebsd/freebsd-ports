@@ -1,0 +1,15 @@
+--- fax/filters/pstotiff.orig	2022-02-23 07:41:04 UTC
++++ fax/filters/pstotiff
+@@ -18,10 +18,10 @@ if (len(sys.argv) > 6):
+ 
+ temp_out_handle, temp_out_fname = tempfile.mkstemp()
+ 
+-font = "-I/usr/share/cups/fonts"
++font = "-I/usr/local/share/cups/fonts"
+ device = "-sDEVICE=tiffg4 -dMaxStripSize=0 -r204x196 -dNOPAUSE -dBATCH -dSAFER -dPARANOIDSAFER -dSHORTERRORS -dWRITESYSTEMDICT -dGHOSTSCRIPT -sstdout=%stderr -sOutputFile=" + temp_out_fname + " " + temp_in_file
+ 
+-gs_command = "/usr/bin/gs" + " " + font + " " + device
++gs_command = "/usr/local/bin/gs" + " " + font + " " + device
+ 
+ exit_code = os.system(gs_command)
+ 

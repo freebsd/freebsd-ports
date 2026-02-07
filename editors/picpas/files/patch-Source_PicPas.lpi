@@ -1,0 +1,20 @@
+--- Source/PicPas.lpi.orig	2021-08-01 06:56:07 UTC
++++ Source/PicPas.lpi
+@@ -25,7 +25,7 @@
+           </Target>
+           <SearchPaths>
+             <IncludeFiles Value="$(ProjOutDir)"/>
+-            <OtherUnitFiles Value="..\_libraries\SynFacilUtils-1.21;..\_libraries\MisUtils-0.6;..\_libraries\MiConfig-0.4;..\_libraries\PicUtils-1.6;..\_libraries\Xpres-1.3.2;..\_libraries\UtilsGrilla-0.8;..\_libraries\ogEditGraf-2.5"/>
++            <OtherUnitFiles Value="..\syncfacilutils;..\misutils;..\miconfig;..\picutils;..\txpres;..\utilsgrilla;..\ogeeditgraf"/>
+             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+           </SearchPaths>
+           <CodeGeneration>
+@@ -301,7 +301,7 @@
+     </Target>
+     <SearchPaths>
+       <IncludeFiles Value="$(ProjOutDir)"/>
+-      <OtherUnitFiles Value="..\..\_libraries\SynFacilUtils-1.21;..\..\_libraries\MisUtils-0.6;..\..\_libraries\MiConfig-0.4;..\..\_libraries\PicUtils-1.6;..\..\_libraries\Xpres-1.3.2;..\..\_libraries\UtilsGrilla-0.8;..\..\_libraries\ogEditGraf-2.5"/>
++      <OtherUnitFiles Value="..\syncfacilutils;..\misutils;..\miconfig;..\picutils;..\txpres;..\utilsgrilla;..\ogeeditgraf"/>
+       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+     </SearchPaths>
+     <Parsing>

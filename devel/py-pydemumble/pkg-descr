@@ -1,0 +1,2 @@
+Python wrapper library for demumble, a tool to demangle C++
+(Itanium ABI and MSVC), Rust, and Swift symbol names.

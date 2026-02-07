@@ -1,0 +1,7 @@
+%%DOCSDIR%%/FSlib.txt
+include/X11/fonts/FSlib.h
+lib/libFS.a
+lib/libFS.so
+lib/libFS.so.6
+lib/libFS.so.6.0.0
+libdata/pkgconfig/libfs.pc

@@ -1,0 +1,5 @@
+Thread::Pool::Simple provides a simple thread-pool implementation without
+external dependencies outside core modules.
+
+Jobs can be submitted to and handled by multi-threaded `workers' managed
+by the pool.

@@ -1,0 +1,13 @@
+--- doc/l2tpd.conf.sample.orig	Sat Aug 10 03:42:22 2002
++++ doc/l2tpd.conf.sample	Wed Apr 16 16:13:48 2003
+@@ -9,8 +9,9 @@
+ ; You most definitely don't have to spell out everything as it is done here
+ ;
+ ; [global]								; Global parameters:
++; address = 0.0.0.0					 	; * Bind to IP address
+ ; port = 1701						 	; * Bind to port 1701
+-; auth file = /etc/l2tp/l2tp-secrets 	; * Where our challenge secrets are
++; auth file = %%PREFIX%%/etc/l2tp/l2tp-secrets 	; * Where our challenge secrets are
+ ; access control = yes					; * Refuse connections without IP match
+ ; rand source = dev                     ; Source for entropy for random
+ ;                                       ; numbers, options are:

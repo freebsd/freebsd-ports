@@ -1,0 +1,49 @@
+-- remove jemalloc dependencies from Cargo.lock
+
+--- Cargo.lock.orig	2025-12-09 21:46:20 UTC
++++ Cargo.lock
+@@ -3590,7 +3590,6 @@ dependencies = [
+  "rayon",
+  "recursive",
+  "serde_json",
+- "tikv-jemallocator",
+  "version_check",
+ ]
+ 
+@@ -5147,24 +5146,6 @@ dependencies = [
+ ]
+ 
+ [[package]]
+-name = "tikv-jemalloc-sys"
+-version = "0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7"
+-source = "git+https://github.com/pola-rs/jemallocator?rev=c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936#c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936"
+-dependencies = [
+- "cc",
+- "libc",
+-]
+-
+-[[package]]
+-name = "tikv-jemallocator"
+-version = "0.6.0"
+-source = "git+https://github.com/pola-rs/jemallocator?rev=c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936#c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936"
+-dependencies = [
+- "libc",
+- "tikv-jemalloc-sys",
+-]
+-
+-[[package]]
+ name = "time"
+ version = "0.3.41"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -6284,3 +6265,11 @@ dependencies = [
+  "cc",
+  "pkg-config",
+ ]
++
++[[patch.unused]]
++name = "tikv-jemalloc-sys"
++version = "0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7"
++
++[[patch.unused]]
++name = "tikv-jemallocator"
++version = "0.6.0"

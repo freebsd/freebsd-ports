@@ -1,0 +1,18 @@
+Emil is a filter for converting Internet Messages. It supports
+three basic formats: MIME, SUN Mailtool and RFC822. It can be
+used with sendmail, as a loopback mailer, as a prefilter or
+backend program with a mail client program, or as a plain
+filter. Conversion can be configured by a configuration file,
+emil.cf, using sender, recipient and recipient host as input
+parameters or by command line arguments.
+
+Emil is able to:
+- convert the format, headers and structure, between messages of type
+	MIME, Sun Mailtool and RFC822.
+- convert the encoding of binary data between Base64, BinHex and Uuencode.
+- convert the encoding of text to and from the MIME encoding Quoted-Printable.
+- convert character set of text between the character sets made
+	available by Keld J. Simonsens strncnv package.
+- do one-way conversions of 8bit text to the Swedish national variant of
+	ISO-646 or to US-ASCII.
+- convert to and from RFC1522 format headers.

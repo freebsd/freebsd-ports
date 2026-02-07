@@ -1,0 +1,6 @@
+Ghostscript is the well-known PostScript interpreter which is available for
+all common and most esoteric platforms and supports many different printers
+and some displays.
+
+This port install the fontpacks with the Type1 fonts ready for X use with
+Adobe foundries.

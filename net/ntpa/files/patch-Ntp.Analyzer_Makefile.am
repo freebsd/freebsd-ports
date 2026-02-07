@@ -1,0 +1,52 @@
+--- Ntp.Analyzer/Makefile.am.orig	2016-12-25 16:19:23 UTC
++++ Ntp.Analyzer/Makefile.am
+@@ -34,7 +34,6 @@ NTP_DATA_PROVIDER_DLL_MDB_SOURCE=../bin/
+ NTP_DATA_PROVIDER_DLL_MDB=$(BUILD_DIR)/Ntp.Data.Provider.dll.mdb
+ MYSQL_DATA_DLL_SOURCE=../packages/MySql.Data.6.9.9/lib/net45/MySql.Data.dll
+ NPGSQL_DLL_SOURCE=../packages/Npgsql.3.1.9/lib/net451/Npgsql.dll
+-NPLOT_DLL_SOURCE=../packages/NPlot.0.9.10.0/lib/net20/NPlot.dll
+ NTP_ANALYZER_IMPORT_DLL_SOURCE=../bin/Ntp.Analyzer.Import.dll
+ NTP_ANALYZER_IMPORT_DLL_MDB_SOURCE=../bin/Ntp.Analyzer.Import.dll.mdb
+ NTP_ANALYZER_IMPORT_DLL_MDB=$(BUILD_DIR)/Ntp.Analyzer.Import.dll.mdb
+@@ -68,7 +67,6 @@ NTP_DATA_PROVIDER_DLL_SOURCE=../bin/Ntp.
+ NTP_DATA_PROVIDER_DLL_MDB=
+ MYSQL_DATA_DLL_SOURCE=../packages/MySql.Data.6.9.9/lib/net45/MySql.Data.dll
+ NPGSQL_DLL_SOURCE=../packages/Npgsql.3.1.9/lib/net451/Npgsql.dll
+-NPLOT_DLL_SOURCE=../packages/NPlot.0.9.10.0/lib/net20/NPlot.dll
+ NTP_ANALYZER_IMPORT_DLL_SOURCE=../bin/Ntp.Analyzer.Import.dll
+ NTP_ANALYZER_IMPORT_DLL_MDB=
+ 
+@@ -91,7 +89,6 @@ PROGRAMFILES = \
+ 	$(NTP_DATA_PROVIDER_DLL_MDB) \
+ 	$(MYSQL_DATA_DLL) \
+ 	$(NPGSQL_DLL) \
+-	$(NPLOT_DLL) \
+ 	$(NTP_ANALYZER_IMPORT_DLL) \
+ 	$(NTP_ANALYZER_IMPORT_DLL_MDB)
+ 
+@@ -281,9 +278,10 @@ REFERENCES =  \
+ 	System \
+ 	System.Core \
+ 	System.Drawing \
+-	System.Runtime.Serialization
++	System.Runtime.Serialization \
++	$(NPLOT_LIBS)
+ 
+-DLL_REFERENCES = $(NPLOT_DLL)
++DLL_REFERENCES =
+ 
+ CLEANFILES = $(PROGRAMFILES)
+ 
+@@ -296,12 +294,10 @@ NTP_ANALYZER_DATA_DLL = $(BUILD_DIR)/Ntp
+ NTP_DATA_PROVIDER_DLL = $(BUILD_DIR)/Ntp.Data.Provider.dll
+ MYSQL_DATA_DLL = $(BUILD_DIR)/MySql.Data.dll
+ NPGSQL_DLL = $(BUILD_DIR)/Npgsql.dll
+-NPLOT_DLL = $(BUILD_DIR)/NPlot.dll
+ NTP_ANALYZER_IMPORT_DLL = $(BUILD_DIR)/Ntp.Analyzer.Import.dll
+ 
+ $(eval $(call emit-deploy-target,MYSQL_DATA_DLL))
+ $(eval $(call emit-deploy-target,NPGSQL_DLL))
+-$(eval $(call emit-deploy-target,NPLOT_DLL))
+ 
+ $(eval $(call emit_resgen_targets))
+ $(build_xamlg_list): %.xaml.g.cs: %.xaml

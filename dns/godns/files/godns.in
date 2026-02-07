@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: godns
+# REQUIRE: DAEMON LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable godns:
+# godns_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable godns.
+# godns_flags (str):		Custom additional arguments to be passed
+#				to godns (default empty).
+# godns_conf_dir (str):		Directory where ${name} configuration
+#				data is stored.
+
+. /etc/rc.subr
+
+name="godns"
+rcvar=godns_enable
+
+load_rc_config ${name}
+
+: ${godns_enable:="NO"}
+: ${godns_user:="nobody"}
+: ${godns_group:="nogroup"}
+: ${godns_conf_dir="%%PREFIX%%/etc"}
+
+start_precmd=godns_precmd
+stop_postcmd=godns_stop_postcmd
+
+procname="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}/${name}.pid"
+logfile="/var/log/${name}/${name}.log"
+
+required_files="${godns_conf_dir}/${name}-config.json"
+
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -o ${logfile} -p ${pidfile} ${procname} -c ${required_files} ${godns_args}"
+
+godns_precmd()
+{
+	local rundir=${pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o ${godns_user} -g ${godns_group} $rundir
+	fi
+	local logdir=${logfile%/*}
+	install -d -m 0750 -o ${godns_user} -g ${godns_group} $logdir
+}
+
+godns_stop_postcmd()
+{
+	rm -f "$rundir"
+}
+
+run_rc_command "$1"

@@ -1,0 +1,15 @@
+--- tools/Makefile.am.orig	2025-05-11 22:29:23 UTC
++++ tools/Makefile.am
+@@ -155,10 +155,10 @@ install-data-hook:
+ 
+ if BUILD_EXULT_THUMB
+ install-data-hook:
+-	update-mime-database $(DESTDIR)$(EXULT_THUMB_PREFIX)/mime || :
++	:
+ 
+ uninstall-hook:
+-	update-mime-database $(DESTDIR)$(EXULT_THUMB_PREFIX)/mime || :
++	:
+ else
+ install-data-hook:
+ uninstall-hook:

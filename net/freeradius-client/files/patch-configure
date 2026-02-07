@@ -1,0 +1,22 @@
+--- configure.orig	2015-01-19 16:18:26 UTC
++++ configure
+@@ -12503,19 +12503,6 @@ fi
+ gethostbyaddrrstyle=""
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking gethostbyaddr_r() syntax" >&5
+ $as_echo_n "checking gethostbyaddr_r() syntax... " >&6; }
+-case "$host" in
+-*-freebsd*)
+-
+-$as_echo "#define GETHOSTBYADDR_R /**/" >>confdefs.h
+-
+-
+-$as_echo "#define GETHOSTBYADDRRSTYLE_BSD /**/" >>confdefs.h
+-
+-        gethostbyaddrrstyle=BSD
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: FreeBSD overridden to BSD-style" >&5
+-$as_echo "$as_me: WARNING: FreeBSD overridden to BSD-style" >&2;}
+-        ;;
+-esac
+ if test "x$gethostbyaddrrstyle" = "x"; then
+         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */

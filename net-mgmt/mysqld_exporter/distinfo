@@ -1,0 +1,5 @@
+TIMESTAMP = 1744045231
+SHA256 (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.mod) = c3ba33fc11f23aab46bfb72efc4ac968c8ce8111a24922370d7ff95f20fd9a6f
+SIZE (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.mod) = 1737
+SHA256 (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.zip) = 798f38caf66342ac72a1b0984633ede719d9b8b35a8a480c8250e2cf37828480
+SIZE (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.zip) = 191673

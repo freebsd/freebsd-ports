@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+* Start postfwd with:
+
+# %%PREFIX%%/etc/rc.d/postfwd start
+
+* Integrate thusly in: %%LOCALBASE%%/etc/postfix/main.cf
+
+127.0.0.1:10040_time_limit   = 3600
+
+smtpd_recipient_restrictions =
+	...
+	permit_mynetworks
+	...
+	reject_unauth_destination
+	reject_unauth_pipelining
+	check_policy_service inet:127.0.0.1:10040
+	...
+
+* NOTE: specify check_policy_service AFTER reject_unauth_destination
+* or else your system can become an open relay.
+*
+* CONFIGURATION:
+*
+* Create and edit %%PREFIX%%/etc/postfwd.conf
+* An example is provided in %%PREFIX%%/etc/postfwd.conf.sample
+EOM
+}
+]

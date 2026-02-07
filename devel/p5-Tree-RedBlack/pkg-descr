@@ -1,0 +1,9 @@
+Tree::RedBlack is a perl implementation of the Red/Black tree algorithm found in
+the book "Algorithms", by Cormen, Leiserson & Rivest (more commonly known as
+"CLR" or "The White Book"). A Red/Black tree is a binary tree which remains
+"balanced"- that is, the longest length from root to a node is at most one more
+than the shortest such length. It is fairly efficient; no operation takes more
+than O(lg(n)) time.
+
+A Tree::RedBlack object supports the following methods: new(), root(), cmp(&),
+insert($, $), delete($), find($), node($), min() and max().

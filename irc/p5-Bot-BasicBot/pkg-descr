@@ -1,0 +1,2 @@
+Basic bot system designed to make it easy to do simple bots, optionally
+forking longer processes (like searches) concurrently in the background.

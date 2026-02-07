@@ -1,0 +1,95 @@
+From 30e77e2571b9b11065be16ca3b88e5f139fec9e5 Mon Sep 17 00:00:00 2001
+From: Bastien Dejean <nihilhill@gmail.com>
+Date: Sun, 24 Jul 2016 11:44:53 +0200
+Subject: [PATCH] Fix compilation with OCaml 4.03.0
+
+---
+ src/networks/donkey/donkeyGlobals.ml |  1 -
+ src/utils/cdk/zip.ml                 |  2 --
+ src/utils/lib/options.ml4            | 41 +---------------------------
+ 3 files changed, 1 insertion(+), 43 deletions(-)
+
+diff --git a/src/networks/donkey/donkeyGlobals.ml b/src/networks/donkey/donkeyGlobals.ml
+index 5125d018..1228830b 100644
+--- a/src/networks/donkey/donkeyGlobals.ml
++++ b/src/networks/donkey/donkeyGlobals.ml
+@@ -781,7 +781,6 @@ let set_client_name c name md4 =
+       c.client_md4 <- md4;
+     end
+ 
+-exception ClientFound of client
+ let find_client_by_name name =
+   try
+     H.iter (fun c ->
+diff --git a/src/utils/cdk/zip.ml b/src/utils/cdk/zip.ml
+index 2ed4e068..32085a8c 100644
+--- a/src/utils/cdk/zip.ml
++++ b/src/utils/cdk/zip.ml
+@@ -72,8 +72,6 @@ type out_file =
+     mutable of_entries: entry list;
+     of_comment: string }
+ 
+-exception Error of string * string * string
+-
+ (* Return the position of the last occurrence of s1 in s2, or -1 if not
+    found. *)
+ 
+diff --git a/src/utils/lib/options.ml4 b/src/utils/lib/options.ml4
+index a5ae1f0c..be5ea347 100644
+--- a/src/utils/lib/options.ml4
++++ b/src/utils/lib/options.ml4
+@@ -330,45 +330,6 @@ the last defined one ("defined" in the order of the program execution).
+ 
+ let exit_exn = Exit
+ 
+-
+-let unsafe_get = String.unsafe_get
+-external is_printable : char -> bool = "caml_is_printable"
+-let unsafe_set = String.unsafe_set
+-  
+-let escaped s =
+-  let n = ref 0 in
+-  for i = 0 to String.length s - 1 do
+-    n :=
+-      !n +
+-        (match unsafe_get s i with
+-           '"' | '\\' -> 2
+-         | '\n' | '\t' -> 1
+-         | c -> if is_printable c then 1 else 4)
+-  done;
+-  if !n = String.length s then s
+-  else
+-    let s' = String.create !n in
+-    n := 0;
+-    for i = 0 to String.length s - 1 do
+-      begin match unsafe_get s i with
+-        '"' | '\\' as c -> unsafe_set s' !n '\\'; incr n; unsafe_set s' !n c
+-      | '\n' | '\t' as c -> unsafe_set s' !n c
+-      | c ->
+-          if is_printable c then unsafe_set s' !n c
+-          else
+-            let a = int_of_char c in
+-            unsafe_set s' !n '\\';
+-            incr n;
+-            unsafe_set s' !n (char_of_int (48 + a / 100));
+-            incr n;
+-            unsafe_set s' !n (char_of_int (48 + a / 10 mod 10));
+-            incr n;
+-            unsafe_set s' !n (char_of_int (48 + a mod 10))
+-      end;
+-      incr n
+-    done;
+-    s'
+-    
+ let safe_string s =
+   if s = "" then "\"\""
+   else
+@@ -388,7 +349,7 @@ let safe_string s =
+             s
+           else raise exit_exn
+     with
+-      _ -> Printf.sprintf "\"%s\"" (escaped s)
++      _ -> Printf.sprintf "\"%s\"" (String.escaped s)
+ 
+ let with_help = ref false
+ let save_private = ref false

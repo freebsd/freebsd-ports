@@ -1,0 +1,102 @@
+commit 20829888caf411a4ac5a4349cbb013334e0b31de
+Author:     Bjoern A. Zeeb <bz@FreeBSD.org>
+AuthorDate: Thu Jul 31 07:31:38 2025 +0000
+Commit:     Jean-Sébastien Pédron <jean-sebastien.pedron@dumbbell.fr>
+CommitDate: Sat Aug 9 16:13:12 2025 +0200
+
+    drm: use LinuxKPI PCI functions rather than bsd native
+    
+    LinuxKPI seems to provide everything needed here, which allows
+    us to remove the special casing for FreeBSD.
+    Switch from bsddev and FreeBSD native functions to LinuxKPI
+    variables and functions/macros; this will avoid conflicts with
+    upcoming additions to LinuxKPI.
+    
+    Sponsored by:   The FreeBSD Foundation
+
+diff --git drivers/gpu/drm/drm_pci.c drivers/gpu/drm/drm_pci.c
+index b7fcd9ea0b..2798d55a48 100644
+--- drivers/gpu/drm/drm_pci.c
++++ drivers/gpu/drm/drm_pci.c
+@@ -57,30 +57,18 @@ static int drm_get_pci_domain(struct drm_device *dev)
+ 		return 0;
+ #endif /* __alpha__ */
+ 
+-#ifdef __FreeBSD__
+-	return pci_get_domain(dev->dev->bsddev);
+-#else
+ 	return pci_domain_nr(to_pci_dev(dev->dev)->bus);
+-#endif
+ }
+ 
+ int drm_pci_set_busid(struct drm_device *dev, struct drm_master *master)
+ {
+ 	struct pci_dev *pdev = to_pci_dev(dev->dev);
+ 
+-#ifdef __FreeBSD__
+-	master->unique = kasprintf(GFP_KERNEL, "pci:%04x:%02x:%02x.%d",
+-					drm_get_pci_domain(dev),
+-					pci_get_bus(dev->dev->bsddev),
+-					pci_get_slot(dev->dev->bsddev),
+-					PCI_FUNC(pdev->devfn));
+-#else
+ 	master->unique = kasprintf(GFP_KERNEL, "pci:%04x:%02x:%02x.%d",
+ 					drm_get_pci_domain(dev),
+ 					pdev->bus->number,
+ 					PCI_SLOT(pdev->devfn),
+ 					PCI_FUNC(pdev->devfn));
+-#endif
+ 	if (!master->unique)
+ 		return -ENOMEM;
+ 
+@@ -93,16 +81,17 @@ int
+ drm_getpciinfo(struct drm_device *dev, void *data, struct drm_file *file_priv)
+ {
+ 	struct drm_pciinfo *info = data;
++	struct pci_dev *pdev = to_pci_dev(dev->dev);
+ 
+-	info->domain = pci_get_domain(dev->dev->bsddev);
+-	info->bus = pci_get_bus(dev->dev->bsddev);
+-	info->dev = pci_get_slot(dev->dev->bsddev);
+-	info->func = pci_get_function(dev->dev->bsddev);
+-	info->vendor_id = pci_get_vendor(dev->dev->bsddev);
+-	info->device_id = pci_get_device(dev->dev->bsddev);
+-	info->subvendor_id = pci_get_subvendor(dev->dev->bsddev);
+-	info->subdevice_id = pci_get_subdevice(dev->dev->bsddev);
+-	info->revision_id = pci_get_revid(dev->dev->bsddev);
++	info->domain = drm_get_pci_domain(dev);
++	info->bus = pdev->bus->number;
++	info->dev = PCI_SLOT(pdev->devfn);
++	info->func = PCI_FUNC(pdev->devfn);
++	info->vendor_id = pdev->vendor;
++	info->device_id = pdev->device;
++	info->subvendor_id = pdev->subsystem_vendor;
++	info->subdevice_id = pdev->subsystem_device;
++	info->revision_id = pdev->revision;
+ 
+ 	return 0;
+ }
+diff --git drivers/gpu/drm/drm_sysctl_freebsd.c drivers/gpu/drm/drm_sysctl_freebsd.c
+index b6dd16b5b5..b9eca7a53c 100644
+--- drivers/gpu/drm/drm_sysctl_freebsd.c
++++ drivers/gpu/drm/drm_sysctl_freebsd.c
+@@ -170,14 +170,13 @@ drm_add_busid_modesetting(struct drm_device *dev, struct sysctl_ctx_list *ctx,
+     struct sysctl_oid *top)
+ {
+ 	struct sysctl_oid *oid;
+-	device_t bsddev;
+ 	int domain, bus, slot, func;
++	struct pci_dev *pdev = to_pci_dev(dev->dev);
+ 
+-	bsddev = dev->dev->bsddev;
+-	domain = pci_get_domain(bsddev);
+-	bus    = pci_get_bus(bsddev);
+-	slot   = pci_get_slot(bsddev);
+-	func   = pci_get_function(bsddev);
++	domain = pci_domain_nr(pdev->bus);
++	bus    = pdev->bus->number;
++	slot   = PCI_SLOT(pdev->devfn);
++	func   = PCI_FUNC(pdev->devfn);
+ 
+ 	snprintf(dev->busid_str, sizeof(dev->busid_str),
+ 	    "pci:%04x:%02x:%02x.%d", domain, bus, slot, func);

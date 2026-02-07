@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# A package removal script for monkeysphere (borrowed from
+# monkeysphere's debian/monkeysphere.postrm)
+#
+# Original Author: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
+# Copyright 2008,2009
+
+# monkeysphere's home dir (via UIDs)
+MSHD="/var/monkeysphere"
+
+case $2 in
+POST-DEINSTALL)
+  USER=monkeysphere
+  if [ -d "$MSHD" ] ; then
+    echo "Warning: You may want to remove ${USER}'s cached authentication data and keyrings in $MSHD"
+  fi
+;;
+esac

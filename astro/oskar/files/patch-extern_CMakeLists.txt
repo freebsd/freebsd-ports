@@ -1,0 +1,8 @@
+--- extern/CMakeLists.txt.orig	2018-07-23 04:41:52 UTC
++++ extern/CMakeLists.txt
+@@ -1,4 +1,4 @@
+ # src/extern/CMakeLists.txt
+ 
+ add_subdirectory(gtest-1.7.0)
+-add_subdirectory(cfitsio-3.41)
++#add_subdirectory(cfitsio-3.41)

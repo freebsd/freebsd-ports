@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Log/Dispatchouli.pm
+%%SITE_PERL%%/Log/Dispatchouli/Global.pm
+%%SITE_PERL%%/Log/Dispatchouli/Proxy.pm
+%%PERL5_MAN3%%/Log::Dispatchouli.3.gz
+%%PERL5_MAN3%%/Log::Dispatchouli::Global.3.gz
+%%PERL5_MAN3%%/Log::Dispatchouli::Proxy.3.gz

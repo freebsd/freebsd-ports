@@ -1,0 +1,3 @@
+Module is a simple robot mitigation module using cookie based
+challenge/response technique. Challenge cookies can be set using different
+methods and can be encrypted and then decrypted at client side with JavaScript.

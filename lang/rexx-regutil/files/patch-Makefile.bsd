@@ -1,0 +1,11 @@
+--- Makefile.bsd.orig	2019-04-07 21:58:45 UTC
++++ Makefile.bsd
+@@ -23,7 +23,7 @@ POPT=-O2 -fomit-frame-pointer
+ PCDEFS=-D_SEMUN_DEFINED -DUSE_STATFS -DINCL_MOUNT -DHAS_F_MNTFROMNAME -DMMAP\
+  -DUSE_TERMCAP_DB -DHAS_GETBOOTFILE -DHAS_WCHAR
+ PCFLAGS=-fpic -pipe
+-PLDFLAGS=-Bdynamic -Bshareable
++PLDFLAGS=-Bdynamic -Bshareable -L/usr/lib
+ PLIBS=-ltermcap
+ 
+ include Makefile.inc

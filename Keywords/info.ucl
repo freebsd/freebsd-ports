@@ -1,0 +1,17 @@
+# MAINTAINER: portmgr@FreeBSD.org
+
+actions: [file]
+post-install: <<EOD
+  case "%@" in
+  /*) file="%@" ;;
+   *) file="%D/%@" ;;
+  esac
+  indexinfo ${PKG_ROOTDIR}${file%/*}
+EOD
+post-deinstall: <<EOD
+  case "%@" in
+  /*) file="%@" ;;
+   *) file="%D/%@" ;;
+  esac
+  indexinfo ${PKG_ROOTDIR}${file%/*}
+EOD

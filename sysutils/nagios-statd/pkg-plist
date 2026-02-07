@@ -1,0 +1,4 @@
+bin/nagios-stat
+sbin/nagios-statd
+share/man/man1/nagios-stat.1.gz
+share/man/man8/nagios-statd.8.gz

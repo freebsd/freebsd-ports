@@ -1,0 +1,15 @@
+--- contrib/groffer/Makefile.sub.orig	2014-02-07 14:16:10.000000000 +0900
++++ contrib/groffer/Makefile.sub	2014-02-07 14:16:30.000000000 +0900
+@@ -39,9 +39,9 @@
+ 	chmod +x $@
+ 
+ install_data: groffer
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	-rm -f $(bindir)/groffer
+-	$(INSTALL_SCRIPT) groffer $(bindir)/groffer
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	-rm -f $(DESTDIR)$(bindir)/groffer
++	$(INSTALL_SCRIPT) groffer $(DESTDIR)$(bindir)/groffer
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/groffer

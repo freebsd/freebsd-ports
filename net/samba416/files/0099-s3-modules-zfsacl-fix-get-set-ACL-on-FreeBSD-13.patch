@@ -1,0 +1,105 @@
+From 4d27a5990311fdd4c73918781f91a3c18196b24c Mon Sep 17 00:00:00 2001
+From: Andrew Walker <awalker@ixsystems.com>
+Date: Fri, 12 Nov 2021 14:48:25 -0500
+Subject: [PATCH] s3:modules:zfsacl - fix get/set ACL on FreeBSD 13+
+
+FreeBSD 13 added support for O_PATH, which means
+that fsp being used in get_nt_acl() and set_nt_acl()
+will have O_PATH opens and we must use either the IO
+fd or use a procfd path for this.
+
+Signed-off-by: Andrew Walker <awalker@ixsystems.com>
+---
+ source3/modules/vfs_zfsacl.c | 62 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+
+diff --git a/source3/modules/vfs_zfsacl.c b/source3/modules/vfs_zfsacl.c
+index 69a1db59249..0472de23825 100644
+--- a/source3/modules/vfs_zfsacl.c
++++ b/source3/modules/vfs_zfsacl.c
+@@ -235,12 +235,43 @@ static bool zfs_process_smbacl(vfs_handle_struct *handle, files_struct *fsp,
+ 	SMB_ASSERT(i == naces);
+ 
+ 	/* store acl */
++#ifdef O_PATH
++	if (fsp->fsp_flags.is_pathref) {
++		const char *proc_fd_path = NULL;
++		char buf[PATH_MAX];
++
++		if (!fsp->fsp_flags.have_proc_fds) {
++			DBG_ERR("fdescfs filesystem must be mounted with 'nodup' "
++				"option \n");
++			errno = EBADF;
++			return -1;
++		}
++
++		fd = fsp_get_pathref_fd(fsp);
++		proc_fd_path = sys_proc_fd_path(fd, buf, sizeof(buf));
++		if (proc_fd_path == NULL) {
++			DBG_ERR("%s: failed to generate pathref fd for %d\n",
++				fsp_str_dbg(fsp), fd);
++			errno = EBADF;
++			return -1;
++		}
++		rv = acl(proc_fd_path, ACE_SETACL, naces, acebuf);
++	} else {
++		fd = fsp_get_io_fd(fsp);
++		if (fd == -1) {
++			errno = EBADF;
++			return false;
++		}
++		rv = facl(fd, ACE_SETACL, naces, acebuf);
++	}
++#else
+ 	fd = fsp_get_pathref_fd(fsp);
+ 	if (fd == -1) {
+ 		errno = EBADF;
+ 		return false;
+ 	}
+ 	rv = facl(fd, ACE_SETACL, naces, acebuf);
++#endif
+ 	if (rv != 0) {
+ 		if(errno == ENOSYS) {
+ 			DEBUG(9, ("acl(ACE_SETACL, %s): Operation is not "
+@@ -321,7 +352,38 @@ static int fget_zfsacl(TALLOC_CTX *mem_ctx,
+ 	ace_t *acebuf = NULL;
+ 	int fd;
+ 
++#ifdef O_PATH
++	if (fsp->fsp_flags.is_pathref) {
++		const char *proc_fd_path = NULL;
++		char buf[PATH_MAX];
++		struct smb_filename smb_fname;
++
++		if (!fsp->fsp_flags.have_proc_fds) {
++			DBG_ERR("fdescfs filesystem must be mounted with 'nodup' "
++				"option \n");
++			errno = EBADF;
++			return -1;
++		}
++
++		fd = fsp_get_pathref_fd(fsp);
++		proc_fd_path = sys_proc_fd_path(fd, buf, sizeof(buf));
++		if (proc_fd_path == NULL) {
++			DBG_ERR("%s: failed to generate pathref fd for %d\n",
++				fsp_str_dbg(fsp), fd);
++			errno = EBADF;
++			return -1;
++		}
++
++		smb_fname = (struct smb_filename) {
++			.base_name = discard_const_p(char, proc_fd_path)
++		};
++
++		return get_zfsacl(mem_ctx, &smb_fname, outbuf);
++	}
++	fd = fsp_get_io_fd(fsp);
++#else
+ 	fd = fsp_get_pathref_fd(fsp);
++#endif
+ 	if (fd == -1) {
+ 		errno = EBADF;
+ 		return -1;
+-- 
+2.37.1
+

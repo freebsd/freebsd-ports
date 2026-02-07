@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+SCRIPT_NAME="$(basename $0)"
+
+if [ -z "${MAVEN_HOME}" ] ; then
+	INSTANCES_DIRECTORY="%%ETCDIR%%/instances.d"
+	INSTANCE="$(%%FIND%% -s "${INSTANCES_DIRECTORY}" -type f -mindepth 1 -maxdepth 1 | %%TAIL%% -n 1)"
+
+	if [ -z "${INSTANCE}" ] ; then
+		echo "Could not find a Maven instance in ${INSTANCES_DIRECTORY}" >&2
+		exit 1
+	fi
+
+	MAVEN_HOME="$(%%CAT%% "${INSTANCE}")"
+
+	if [ ! -d "${MAVEN_HOME}" ] ; then
+		echo "Not a directory: ${MAVEN_HOME}" >&2
+		exit 2
+	fi
+fi
+
+exec "${MAVEN_HOME}/bin/${SCRIPT_NAME}" "$@"

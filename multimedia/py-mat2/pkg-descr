@@ -1,0 +1,22 @@
+Metadata consist of information that characterizes data. Metadata are
+used to provide documentation for data products. In essence, metadata
+answer who, what, when, where, why, and how about every facet of the
+data that are being documented.
+
+Metadata within a file can tell a lot about you. Cameras record data
+about when a picture was taken and what camera was used. Office
+documents like PDF or Office automatically adds author and company
+information to documents and spreadsheets. Maybe you don't want to
+disclose those information.
+
+This is precisely the job of mat2: getting rid, as much as possible,
+of metadata.
+
+mat2 provides a command line tool, and graphical user interfaces via
+a service menu for Dolphin, the default file manager of KDE, and an
+extension for Nautilus, the default file manager of GNOME.
+
+The following formats are supported: avi, bmp, css, epub/ncx, flac,
+gif, jpeg, m4a/mp2/mp3/..., mp4, odc/odf/odg/odi/odp/ods/odt/...,
+off/opus/oga/spx/..., pdf, png, ppm, pptx/xlsx/docx/..., zip, torrent,
+svg/svgz/..., tar/tar.gz/tar.bz2/tar.xz/..., tiff, wav, wmv, ...

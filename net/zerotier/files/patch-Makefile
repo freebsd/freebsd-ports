@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-07-11 08:31:26 UTC
++++ Makefile
+@@ -11,8 +11,6 @@ ifeq ($(OSTYPE),FreeBSD)
+ endif
+ 
+ ifeq ($(OSTYPE),FreeBSD)
+-	CC=clang
+-	CXX=clang++
+ 	ZT_BUILD_PLATFORM=7
+ 	include make-bsd.mk
+ endif

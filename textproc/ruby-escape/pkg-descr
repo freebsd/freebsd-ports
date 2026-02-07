@@ -1,0 +1,10 @@
+Ruby escape - HTML/URI/shell escaping utilities
+
+Features:
+  - several escaping/composing functions
+    * HTML text
+    * HTML attribute value
+    * URI path
+    * shell command line
+  - dedicated classes for escaped strings
+  - escape and compose strongly related strings at once

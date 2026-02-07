@@ -1,0 +1,11 @@
+--- csl/fox/configure.ac.orig	2018-06-17 19:20:00 UTC
++++ csl/fox/configure.ac
+@@ -166,7 +166,7 @@ if test "x$enable_release" = "xyes" && test "x$enable_
+       CXXFLAGS="${CXXFLAGS} -Wuninitialized -ffast-math -fstrict-aliasing"
+       ;;
+   *)
+-      CXXFLAGS="${CXXFLAGS} -Wuninitialized -fomit-frame-pointer -ffast-math -fstrict-aliasing -finline-functions -fexpensive-optimizations"
++      CXXFLAGS="${CXXFLAGS} -Wuninitialized -fomit-frame-pointer -ffast-math -fstrict-aliasing -finline-functions"
+       LDFLAGS="-s ${LDFLAGS}"
+       ;;
+     esac

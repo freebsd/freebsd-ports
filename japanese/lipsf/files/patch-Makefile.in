@@ -1,0 +1,50 @@
+--- Makefile.in.orig	2002-05-27 15:00:00 UTC
++++ Makefile.in
+@@ -3,13 +3,13 @@
+ #
+ 
+ TITLE	= lipsf
+-PREFIX	= /usr/local
++PREFIX	?= /usr/local
++MANLANG	?= ja
+ MANSEC	= 1
+ TOPDIR	= $(PREFIX)
+ BINDIR	= $(TOPDIR)/bin
+-MANDIR	= $(TOPDIR)/man__LANGDIR__/man$(MANSEC)
+-CATDIR	= $(TOPDIR)/man__LANGDIR__/cat$(MANSEC)
+-INSTALL	= __INSTALL__
++MANDIR	= $(TOPDIR)/share/man/$(MANLANG)/man$(MANSEC)
++CATDIR	= $(TOPDIR)/man/$(MANLANG)/cat$(MANSEC)
+ CHMOD	= chmod
+ 
+ LSRC	= lipsf.c output.c print.c control.c args.c var.c
+@@ -42,8 +42,8 @@ POLSB	= $(POLS)__EXE__
+ POBJ1	= pols__OBJ__ term__OBJ__ input__OBJ__ file__OBJ__ style__OBJ__ __DOSOBJ__
+ POBJ2	= output__OBJ__ print__OBJ__ control__OBJ__ args__OBJ__ var__OBJ__ __DOSOBJS__
+ KNJOBJ	= pols__OBJ__ input__OBJ__ file__OBJ__ style__OBJ__
+-LDFLAGS	= __TERMLIBS__ __OTHERLIBS__
+-CFLAGS	= -D__OSTYPE__ __CCOPTIONS__
++LDFLAGS += __TERMLIBS__ __OTHERLIBS__
++CFLAGS	+= -D__OSTYPE__
+ 
+ .SUFFIXES: .h .c __OBJ__ __EXE__
+ 
+@@ -115,14 +115,10 @@ config.h: config.hin
+ # to install all
+ 
+ install: $(LIPSFB) $(POLSB) $(LIPSF).$(MANSEC) $(POLS).$(MANSEC)
+-	$(INSTALL) __INSTSTRIP__ $(LIPSFB) $(BINDIR)
+-	$(CHMOD) a+rx $(BINDIR)/$(LIPSFB)
+-	$(INSTALL) __INSTSTRIP__ $(POLSB) $(BINDIR)
+-	$(CHMOD) a+rx $(BINDIR)/$(POLSB)
+-	$(INSTALL) $(LIPSF).$(MANSEC) $(MANDIR)/$(LIPSF).$(MANSEC)
+-	$(CHMOD) a+r $(MANDIR)/$(LIPSFB).$(MANSEC)
+-	$(INSTALL) $(POLS).$(MANSEC) $(MANDIR)/$(POLS).$(MANSEC)
+-	$(CHMOD) a+r $(MANDIR)/$(POLSB).$(MANSEC)
++	${BSD_INSTALL_PROGRAM} $(LIPSFB) $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_PROGRAM} $(POLSB) $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_MAN} $(LIPSF).$(MANSEC) $(DESTDIR)$(MANDIR)/$(LIPSF).$(MANSEC)
++	${BSD_INSTALL_MAN} $(POLS).$(MANSEC) $(DESTDIR)$(MANDIR)/$(POLS).$(MANSEC)
+ 
+ catman: $(LIPSF).$(MANSEC)c $(POLS).$(MANSEC)c
+ 	$(INSTALL) $(LIPSF).$(MANSEC)c $(CATDIR)/$(LIPSF).$(MANSEC)

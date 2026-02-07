@@ -1,0 +1,11 @@
+--- config.sub.orig	2008-03-05 22:58:16.000000000 +0100
++++ config.sub	2012-05-01 20:43:22.460600001 +0200
+@@ -197,6 +197,8 @@
+ 		basic_machine=a29k-none
+ 		os=-bsd
+ 		;;
++	amd64*)
++		;;
+ 	amdahl)
+ 		basic_machine=580-amdahl
+ 		os=-sysv

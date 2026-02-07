@@ -1,0 +1,11 @@
+--- info2pod.orig	Fri Apr  9 10:03:56 2004
++++ info2pod	Sat Jan 22 21:23:24 2005
+@@ -28,6 +28,8 @@
+ 
+ use strict qw(vars);
+ 
++use lib '%%DATADIR%%/';
++
+ use cs::Misc;
+ use cs::Sink;
+ use cs::GNUInfo;

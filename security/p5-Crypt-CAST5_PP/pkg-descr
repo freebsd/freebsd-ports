@@ -1,0 +1,3 @@
+This module provides a pure Perl implementation of the CAST5 block
+cipher.  CAST5 is also known as CAST-128.  It is a product of the CAST
+design procedure developed by C. Adams and S. Tavares.

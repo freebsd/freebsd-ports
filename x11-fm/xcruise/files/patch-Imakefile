@@ -1,0 +1,11 @@
+--- Imakefile.orig	2003-02-04 02:43:32 UTC
++++ Imakefile
+@@ -12,7 +12,7 @@ LOCAL_LIBRARIES = XawClientLibs XkbClien
+ SYS_LIBRARIES = MathLibrary
+ DEFINES = XkbClientDefines 
+ 
+-CDEBUGFLAGS = -g -Wall
++#CDEBUGFLAGS = -g -Wall
+ 
+ SRCS = MainScreen.c xcruiser.c draw.c zone.c vec3.c info.c
+ OBJS = MainScreen.o xcruiser.o draw.o zone.o vec3.o info.o

@@ -1,0 +1,18 @@
+This is Viewnior, an image viewer program. Created to be simple, fast
+and elegant. It's minimalistic interface provides more screenspace for
+your images. Among its features are:
+
+Fullscreen & Slideshow
+Rotate, flip, crop, save, delete images
+Animation support
+Browse only selected images
+Navigation window
+Set image as wallpaper (GNOME2, GNOME3, XFCE, LXDE, FluxBox, Nitrogen)
+Simple interface
+Configurable mouse actions
+
+Viewnior is insipred by big projects like Eye of Gnome, because of it's
+usability and richness,and by GPicView, because of it's lightweight design
+and minimal interface. So here comes Viewnior - small and light,
+with no compromise with the quality of it's functions.
+The program is made with better integration in mind (follows Gnome HIG2)

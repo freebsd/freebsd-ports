@@ -1,0 +1,22 @@
+--- configure.orig	2005-07-14 22:50:59 UTC
++++ configure
+@@ -2838,7 +2838,7 @@ if test -z "$GCC"; then
+         case $host in
+         *)
+                 DEBUG="-g"
+-                CFLAGS="-O"
++                CFLAGS=""
+                 PROFILE="-g -p"
+                 ;;
+         esac
+@@ -2846,8 +2846,8 @@ else
+         case $host in
+         *)
+                 DEBUG="-g -Wall -fsigned-char"
+-                CFLAGS="-O2 -fsigned-char"
+-                PROFILE="-O2 -g -pg -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char"
+                 ;;
+         esac
+ fi

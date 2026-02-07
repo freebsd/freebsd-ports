@@ -1,0 +1,46 @@
+--- Imakefile.orig	Tue Jun 25 15:42:14 1996
++++ Imakefile	Sat Oct 14 00:59:00 2000
+@@ -6,11 +6,12 @@
+ XPM_INC_FLAGS = -I/usr/local/xpm/include
+ XPM_LIB_FLAGS = -L/usr/local/xpm/lib -lXpm
+ 
++MANSUFFIX = 6
++
+ XCOMM You shouldn't have to change anything below unless you need to
+ XCOMM add a new architecture.
+ #define MyNull
+ 
+-CDEBUGFLAGS = -O
+ OS_C_FLAGS =
+ OS_LIB_FLAGS =
+ OS_DEFINES =
+@@ -19,25 +20,23 @@
+ #if defined(SunArchitecture)
+ #endif
+ 
+-#if defined(AlphaArchitecture)
++#if defined(AlphaArchitecture) && !defined(FreeBSDArchitecture)
+ OS_LIB_FLAGS = -lbsd
+ #endif
+ 
+ #if defined(FreeBSDArchitecture)
++XPM_INC_FLAGS = -I$(INCROOT)/X11
++XPM_LIB_FLAGS = -lXpm
+ #endif
+ 
+ SRCS = init.c oids.c oids_x.c
+ OBJS = init.o oids.o oids_x.o
+ 
+ INCLUDES = $(XPM_INC_FLAGS)
+-CCOPTIONS = $(OS_C_FLAGS)
+ DEFINES = $(OS_DEFINES)
+ EXTRA_LIBRARIES  = $(XPM_LIB_FLAGS) -lX11 -lm $(OS_LIB_FLAGS)
+ 
+-AllTarget(xoids)
+-NormalProgramTarget(xoids, $(OBJS), MyNull, MyNull, MyNull)
+-InstallProgram(xoids,$(BINDIR))
+-DependTarget()
++ComplexProgramTarget(xoids)
+ 
+ XCOMM End of Imakefile
+ 

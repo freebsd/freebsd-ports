@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Business/OnlinePayment/PaymentsGateway.pm
+%%PERL5_MAN3%%/Business::OnlinePayment::PaymentsGateway.3.gz

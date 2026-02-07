@@ -1,0 +1,17 @@
+bin/teams
+share/applications/teams.desktop
+share/icons/hicolor/1024x1024/apps/teams.png
+share/icons/hicolor/128x128/apps/teams.png
+share/icons/hicolor/16x16/apps/teams.png
+share/icons/hicolor/24x24/apps/teams.png
+share/icons/hicolor/256x256/apps/teams.png
+share/icons/hicolor/32x32/apps/teams.png
+share/icons/hicolor/48x48/apps/teams.png
+share/icons/hicolor/512x512/apps/teams.png
+share/icons/hicolor/64x64/apps/teams.png
+share/icons/hicolor/96x96/apps/teams.png
+%%DATADIR%%/resources/app-update.yml
+%%DATADIR%%/resources/app.asar
+%%DATADIR%%/resources/assets/sounds/meeting_started.wav
+%%DATADIR%%/resources/assets/sounds/new_message.wav
+%%DATADIR%%/resources/default_app.asar

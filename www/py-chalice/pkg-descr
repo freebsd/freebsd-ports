@@ -1,0 +1,7 @@
+Chalice is a microframework for writing serverless applications in Python.
+It allows you to quickly create and deploy applications that use AWS
+Lambda and Amazon API Gateway.
+
+Chalice provides a command-line interface for creating, deploying, and
+managing your application. It also provides a simple, declarative API
+for defining your application's resources.

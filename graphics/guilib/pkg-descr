@@ -1,0 +1,5 @@
+This is a very simple GUI framework, for use with SDL. It is very flexible, but
+is by no means a complete windowing system. Feel free to improve it!! :)
+
+It contains a C++ GUI class with a very rudimentary C interface,
+and a set of useful widget classes.

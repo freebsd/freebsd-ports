@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+There is a script to install tDiary in a user directory.
+This script should be run manually.
+
+  # %%PREFIX%%/bin/%%TDIARY_SCRIPT%% --user=User
+   or
+  % %%PREFIX%%/bin/%%TDIARY_SCRIPT%%
+
+ * Option: --suexec Use suExec for CGI execution
+	   --help   Display Help information
+
+---
+There are documents in the following directories.
+  See ...
+  %%DOCSDIR%%
+EOM
+}
+]

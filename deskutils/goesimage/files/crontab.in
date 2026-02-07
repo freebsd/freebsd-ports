@@ -1,0 +1,1 @@
+01,11,21,31,41,51 * * * * env DISPLAY=:0 %%PREFIX%%/bin/%%PORTNAME%%-run-now

@@ -1,0 +1,12 @@
+PORTNAME=	Text_Diff
+PORTVERSION=	1.2.2
+CATEGORIES=	devel pear
+
+MAINTAINER=	joseph@randomnetworks.com
+COMMENT=	Engine for performing and rendering text diffs
+WWW=		https://pear.php.net/package/Text_Diff
+
+USES=		pear
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

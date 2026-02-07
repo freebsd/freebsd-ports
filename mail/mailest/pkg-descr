@@ -1,0 +1,2 @@
+mailest provides a search backend and id index database for
+Mew using Hyper Estraier.

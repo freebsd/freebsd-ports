@@ -1,0 +1,10 @@
+%%SITE_PERL%%/DNS/Config.pm
+%%SITE_PERL%%/DNS/Config/File.pm
+%%SITE_PERL%%/DNS/Config/File/Bind9.pm
+%%SITE_PERL%%/DNS/Config/File/Nsd.pm
+%%SITE_PERL%%/DNS/Config/Server.pm
+%%SITE_PERL%%/DNS/Config/Statement.pm
+%%SITE_PERL%%/DNS/Config/Statement/Key.pm
+%%SITE_PERL%%/DNS/Config/Statement/Options.pm
+%%SITE_PERL%%/DNS/Config/Statement/Zone.pm
+%%PORTDOCS%%%%DOCSDIR%%/README

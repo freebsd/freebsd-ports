@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Fuse.pm
+%%SITE_ARCH%%/auto/Fuse/Fuse.so
+%%SITE_ARCH%%/auto/Fuse/autosplit.ix
+%%PERL5_MAN3%%/Fuse.3.gz

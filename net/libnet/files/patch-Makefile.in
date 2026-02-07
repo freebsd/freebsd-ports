@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2019-10-15 19:00:48 UTC
++++ Makefile.in
+@@ -405,7 +405,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ bin_SCRIPTS = libnet-config
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libnet.pc
+-dist_doc_DATA = README.md ChangeLog.md LICENSE
++dist_doc_DATA = README.md ChangeLog.md # LICENSE
+ EXTRA_DIST = README.win32 autogen.sh libnet-config.in
+ SUBDIRS = include src win32 $(am__append_1) $(am__append_2)
+ MD5 = md5sum

@@ -1,0 +1,5 @@
+bin/hared
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+@mode 640
+@sample %%ETCDIR%%/hared.ini.sample
+@mode

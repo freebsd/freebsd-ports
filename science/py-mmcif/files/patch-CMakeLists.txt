@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-10-04 00:28:23 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,8 @@
+ cmake_minimum_required(VERSION 2.8.12)
+ project(mmciflib)
++
++set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
++
+ #
+ # File: CMakeLists.txt -
+ # Date: 1-Aug-2017

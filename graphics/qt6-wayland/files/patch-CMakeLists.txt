@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-12-12 09:32:26 UTC
++++ CMakeLists.txt
+@@ -21,7 +21,7 @@ find_package(Qt6 ${PROJECT_VERSION} CONFIG REQUIRED CO
+     BuildInternals
+ )
+ 
+-if(NOT MACOS AND NOT QNX AND (ANDROID OR NOT LINUX))
++if(NOT FREEBSD AND NOT MACOS AND NOT QNX AND (ANDROID OR NOT LINUX))
+     message(NOTICE "Skipping the build as the condition \"LINUX OR MACOS OR QNX\" is not met.")
+     return()
+ endif()

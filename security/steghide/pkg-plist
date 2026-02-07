@@ -1,0 +1,12 @@
+bin/steghide
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LEAME
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%NLS%%share/locale/de/LC_MESSAGES/steghide.mo
+%%NLS%%share/locale/es/LC_MESSAGES/steghide.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/steghide.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/steghide.mo
+share/man/man1/steghide.1.gz

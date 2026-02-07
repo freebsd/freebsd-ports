@@ -1,0 +1,6 @@
+%%SITE_PERL%%/HTML/TableLayout/TLCore.pm
+%%SITE_PERL%%/HTML/TableLayout/Symbols.pm
+%%SITE_PERL%%/HTML/TableLayout/Component.pm
+%%SITE_PERL%%/HTML/TableLayout/Form.pm
+%%SITE_PERL%%/HTML/TableLayout.pm
+%%PERL5_MAN3%%/HTML::TableLayout.3.gz

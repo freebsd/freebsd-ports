@@ -1,0 +1,11 @@
+--- src/StepFile/recfile.pc.orig	2017-08-30 13:28:34 UTC
++++ src/StepFile/recfile.pc
+@@ -16,7 +16,7 @@
+ #include "stdio.h"
+ #include "string.h"
+ #include "stdlib.h"
+-#if (!defined(_WIN32) && !defined(__APPLE__))
++#if (!defined(_WIN32) && !defined(__APPLE__) && !defined(__FreeBSD__))
+ #include "malloc.h"
+ #endif
+ #include "recfile.ph" 

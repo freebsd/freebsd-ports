@@ -1,0 +1,8 @@
+bin/pymsgauth-clean
+bin/pymsgauth-confirm
+bin/pymsgauth-mail
+%%DATADIR%%/ConfParser.py
+%%DATADIR%%/pymsgauth.py
+%%DATADIR%%/pymsgauth-clean
+%%DATADIR%%/pymsgauth-confirm
+%%DATADIR%%/pymsgauth-mail

@@ -1,0 +1,6 @@
+Universal Hardware Data Model. A complete modeling of the IEEE SystemVerilog
+Object Model with VPI Interface, Elaborator, Serialization, Visitor and
+Listener. Used as a compiled interchange format in between SystemVerilog tools.
+
+libuhdm implements the hardware object model standardized in:
+IEEE 1800.1-2017 chapter 37: VPI object model.

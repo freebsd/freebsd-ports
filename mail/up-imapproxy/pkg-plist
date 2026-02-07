@@ -1,0 +1,8 @@
+@sample etc/imapproxyd.conf.sample
+sbin/pimpstat
+sbin/in.imapproxyd
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.debian
+%%PORTDOCS%%%%DOCSDIR%%/README.known_issues
+%%PORTDOCS%%%%DOCSDIR%%/README.ssl

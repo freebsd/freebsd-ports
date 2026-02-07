@@ -1,0 +1,58 @@
+--- Makefile.orig	Mon Sep 27 00:29:10 1999
++++ Makefile	Sun Jul  6 19:34:42 2003
+@@ -1,42 +1,42 @@
+-LFLAGS = -L/usr/X11R6/lib -lX11 -g3 -lreadline -lncurses -lvga 
+-CFLAGS = -O6 -DBUILD_SVGA -DBUILD_X11 -DBUILD_JLIB -DCPU_DEBUG  -g3 -ffast-math -fomit-frame-pointer -finline-functions #-DNOT_LINEBASED #-DCPU_DEBUG_EXTENDED 
++LFLAGS = -lX11 -g3 $(LDFLAGS)
++CFLAGS += ${CPPFLAGS} -DBUILD_X11 -g3 #-DNOT_LINEBASED #-DCPU_DEBUG_EXTENDED
+ OBJS = main.o rom.o mem.o cpu.o vram.o debug.o joypad.o jlib.o x11.o svga.o
+ BIN = gbe
+ 
+ all: $(BIN)
+ 
+ $(BIN): $(OBJS)
+-	gcc $(CFLAGS) -o $(BIN) $(OBJS) $(LFLAGS)
++	$(CC) $(CFLAGS) -o $(BIN) $(OBJS) $(LFLAGS)
+ 
+ main.o: main.c rom.h mem.h data.h vram.h 
+-	gcc $(CFLAGS) -o main.o -c main.c
++	$(CC) $(CFLAGS) -o main.o -c main.c
+ 
+ rom.o: rom.c rom.h mem.h
+-	gcc $(CFLAGS) -o rom.o -c rom.c
++	$(CC) $(CFLAGS) -o rom.o -c rom.c
+ 
+ mem.o: mem.c mem.h regs.h
+-	gcc $(CFLAGS) -o mem.o -c mem.c
++	$(CC) $(CFLAGS) -o mem.o -c mem.c
+ 
+ cpu.o: cpu.c cpu.h mem.h data.h
+-	gcc $(CFLAGS) -o cpu.o -c cpu.c
++	$(CC) $(CFLAGS) -o cpu.o -c cpu.c
+ 
+ vram.o: vram.c vram.h x11.h mem.h regs.h
+-	gcc $(CFLAGS) -o vram.o -c vram.c
++	$(CC) $(CFLAGS) -o vram.o -c vram.c
+ 
+ debug.o: debug.c debug.h
+-	gcc $(CFLAGS) -o debug.o -c debug.c
++	$(CC) $(CFLAGS) -o debug.o -c debug.c
+ 
+ joypad.o: joypad.c joypad.c jlib.h
+-	gcc $(CFLAGS) -o joypad.o -c joypad.c
++	$(CC) $(CFLAGS) -o joypad.o -c joypad.c
+ 
+ jlib.o: jlib.c jlib.h
+-	gcc $(CFLAGS) -o jlib.o -c jlib.c
++	$(CC) $(CFLAGS) -o jlib.o -c jlib.c
+ 
+ x11.o: x11.c x11.h
+-	gcc $(CFLAGS) -o x11.o -c x11.c
++	$(CC) $(CFLAGS) -o x11.o -c x11.c
+ 
+ svga.o: svga.c svga.h
+-	gcc $(CFLAGS) -o svga.o -c svga.c
++	$(CC) $(CFLAGS) -o svga.o -c svga.c
+ 
+ clean:
+ 	rm -f $(BIN) $(OBJS) *~ core vram.dump

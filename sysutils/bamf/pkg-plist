@@ -1,0 +1,16 @@
+include/libbamf3/libbamf/bamf-application.h
+include/libbamf3/libbamf/bamf-control.h
+include/libbamf3/libbamf/bamf-matcher.h
+include/libbamf3/libbamf/bamf-tab.h
+include/libbamf3/libbamf/bamf-view.h
+include/libbamf3/libbamf/bamf-window.h
+include/libbamf3/libbamf/libbamf.h
+lib/girepository-1.0/Bamf-3.typelib
+lib/libbamf3.so
+lib/libbamf3.so.2
+lib/libbamf3.so.2.0.0
+libdata/pkgconfig/libbamf3.pc
+libexec/bamf/bamfdaemon
+share/dbus-1/services/org.ayatana.bamf.service
+share/gir-1.0/Bamf-3.gir
+share/vala/vapi/libbamf3.vapi

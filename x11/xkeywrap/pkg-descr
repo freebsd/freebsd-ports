@@ -1,0 +1,14 @@
+XKeyWrap is a wrapper of key sequence between keyboard and an application
+(ex.emacs).
+XKeyWrap can record and play key sequence in real time. And XKeyWrap can send
+key sequence to an application on other X server over the network.
+
+If you want to read more details, type
+    % xkeywrap -readme
+and
+    % man xkeywrap
+
+If you want to see a demonstration of XKeyWrap, type
+    % cp /usr/local/share/examples/xkeywrap/demo.dat .
+    % cp /usr/local/share/examples/xkeywrap/xkeywrap_demo.c .
+    % xkeywrap -p -s 2 -f demo.dat -x emacs -geometry 80x25 xkeywrap_demo.c

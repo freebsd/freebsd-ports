@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: gdm
+# REQUIRE: LOGIN cleanvar moused syscons dbus
+#
+# Add the following to /etc/rc.conf to start GDM at boot time:
+#
+# gdm_enable="YES"
+#
+
+. /etc/rc.subr
+. %%GNOME_SUBR%%
+
+gdm_enable=${gdm_enable-${gnome_enable}}
+gdm_preserve_base_pam_conf=${gdm_preserve_base_pam_conf-NO}
+gdm_lang=${gdm_lang-${LANG}}
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+
+name="gdm"
+rcvar=gdm_enable
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/sbin/gdm-binary"
+start_cmd="gdm_start"
+stop_cmd="gdm_stop"
+
+gdm_start()
+{
+    if ! checkyesno gdm_enable ; then
+	return 0
+    fi
+    echo "Starting ${name}."
+
+    # we need to remove locking files under /var/cache/gdm/.cache/gnome-shell/
+    # until XDG_RUNTIME_DIR can be set and used
+    rm -fr /var/cache/gdm/.cache/gnome-shell/runtime-state*
+
+    # make sure there is no pam configuration for gdm service in base system
+    if ! checkyesno gdm_preserve_base_pam_conf && [ -f /etc/pam.d/gdm ]; then
+	cp -p /etc/pam.d/gdm /etc/pam.d/gdm_disabled
+    	rm -f /etc/pam.d/gdm
+    fi
+
+    ( iter=0
+    while ! ps -axoargs | grep "^/usr/libexec/getty " | grep -qv grep >/dev/null 2>&1; do
+	if [ ${iter} -eq 60 ]; then
+	    break
+	fi
+	sleep 1
+	iter=$(expr ${iter} + 1)
+    done
+    LANG=${gdm_lang} ${command} ${gdm_flags} ) &
+}
+
+gdm_stop()
+{
+    echo "Stopping ${name}."
+    /bin/kill -9 $(/bin/cat "${pidfile}")
+    pkill -9 -u gdm
+    pkill -9 X
+    pkill -9 gdm-session-worker
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,4 @@
+Wcalc is a powerful arbitrary-precision calculator. It has standard functions
+(sin, asinh, logtwo, floor, etc), many pre-defined constants (pi, e, c, etc.),
+variables, "active" variables, command history, and hex/octal/binary i/o,
+conversions, and more.

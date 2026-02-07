@@ -1,0 +1,86 @@
+[
+{ type: install
+  message: <<EOM
+This port does not contain any FreeBSD device drivers for infrared
+devices. This port installs the LIRC daemons and tools for interacting
+with drivers that support the LIRC device interface.
+
+You will need to obtain third party device drivers or port the Linux
+drivers in ${WRKSRC}/drivers to use the LIRC port.
+
+Update for 0.9:  Known working with this update are FTDI-based USB
+IR receivers/transmitters like described here,
+
+	http://www.huitsing.nl/irftdi/
+
+and if you use the recent multimedia/webcamd port then MCE USB based
+ones driven by the Linux mceusb driver as well remotes coming with
+USB DVB tuners that by default work with the Linux drivers used in
+webcamd should also work, i.e. if webcamd creates a /dev/lircX
+device node check if e.g.
+
+	mode2 -d /dev/lirc0
+
+reports pulses and spaces when triggering the remote at the receiver,
+if it does you probably will be able to use lirc.
+
+Some other userland drivers will probably also work (like others
+using libusb), they just were not tested.
+
+The lirc documentation should be accessible at:
+
+	%%LOCALBASE%%/share/doc/lirc/html/index.html
+
+Some example configs should have been installed here:
+
+	%%LOCALBASE%%/share/examples/lirc/remotes
+
+The port now installs an example lircd.conf that's preconfigured
+for use with webcamd, either with USB DVB tuner remotes supported
+by the Linux drivers by default that webcamd uses, or for remotes
+supplied with MCE USB IR receivers.  If you want to create a config
+for a different remote using an IR receiver that works with mode2
+you can try using irrecord like described here:
+
+	file://%%LOCALBASE%%/share/doc/lirc/html/help.html#new_remote
+
+Update for webcamd >= 3.0.0.1:
+
+webcamd 3.0.0.1 now supports /dev/input/eventX (X there can be for
+example 0, 8, 16 etc) and uses it exclusively for almost all tuners,
+only mceusb IR-only devices now support both interfaces.  So if you
+don't get a /dev/lircX device node anymore and want to make lirc
+use a remote with such a tuner you now need the lirc devinput driver,
+if you start lircd via the rc.d script set lircd_flags and lircd_device
+in rc.conf(5), like:
+
+	lircd_flags="-H devinput"
+	lircd_device="/dev/input/event0"
+
+The example lircd.conf includes the devinput config file too so if
+all goes well irw(1) should still work with such tuners and show
+buttons pressed, and if not and the tuner's Linux driver uses the
+rc.core interface you can often still add a custom keymap, only
+with devinput you no longer want to use irrecord(1) but ir-keytable(1)
+which is part of the multimedia/v4l-utils port.  Using that tool
+you can e.g. check remote events coming in on /dev/input/eventX,
+
+	ir-keytable -d /dev/input/eventX -t
+
+list the current keytable,
+
+	ir-keytable -d /dev/input/eventX -r
+
+or add scancodes on the fly by loading a custom keymap,
+
+	ir-keytable -d /dev/input/eventX -w keymap.txt
+
+(on Linux this can be automated using udev, don't know if we need
+something like that also...)  Some (Linux-centric, so not all of
+them apply) notes re ir-keytable(1) and the lirc devinput change
+are also here:
+
+	http://forum.xbmc.org/showthread.php?t=101151
+EOM
+}
+]

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/GDBM_File.pm
+%%SITE_ARCH%%/auto/GDBM_File/GDBM_File.so
+%%PERL5_MAN3%%/GDBM_File.3.gz

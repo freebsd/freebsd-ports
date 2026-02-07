@@ -1,0 +1,8 @@
+Gensio is a framework for giving a consistent view of
+various stream I/O types. You can stack gensio on top
+of another one to add protocol functionality.
+For instance, you can create a TCP gensio, stack SSL
+on top of that, and stack Telnet on top of that.
+
+gensio tools include gensiot, gtlssh(d), gtlssh-keygen
+gmdns and gsound.

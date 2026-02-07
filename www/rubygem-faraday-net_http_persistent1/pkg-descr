@@ -1,0 +1,2 @@
+Faraday::NetHttpPersistent is a Faraday adapter for the Net::HTTP::Persistent
+gem.

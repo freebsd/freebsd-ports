@@ -1,0 +1,12 @@
+%%SITE_PERL%%/CPAN/Reporter/History.pm
+%%SITE_PERL%%/CPAN/Reporter/PrereqCheck.pm
+%%SITE_PERL%%/CPAN/Reporter/Config.pm
+%%SITE_PERL%%/CPAN/Reporter/FAQ.pm
+%%SITE_PERL%%/CPAN/Reporter/API.pm
+%%SITE_PERL%%/CPAN/Reporter.pm
+%%PERL5_MAN3%%/CPAN::Reporter::API.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::Config.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::History.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::PrereqCheck.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::FAQ.3.gz

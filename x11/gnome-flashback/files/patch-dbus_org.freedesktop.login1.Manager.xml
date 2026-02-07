@@ -1,0 +1,32 @@
+--- dbus/org.freedesktop.login1.Manager.xml.orig	2021-11-02 10:13:49 UTC
++++ dbus/org.freedesktop.login1.Manager.xml
+@@ -2,21 +2,23 @@
+ <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+ <node>
+-  <interface name="org.freedesktop.login1.Manager">
++  <interface name="org.freedesktop.ConsoleKit.Manager">
+     <annotation name="org.gtk.GDBus.C.Name" value="LoginManagerGen" />
+ 
+-    <method name="GetSession">
+-      <arg name="session_id" type="s" direction="in" />
+-      <arg name="object_path" type="o" direction="out" />
++    <method name="GetCurrentSession">
++      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
++      <arg name="ssid" type="o" direction="out" />
+     </method>
+ 
+     <method name="Inhibit">
+-      <annotation name="org.gtk.GDBus.C.UnixFD" value="true" />
++      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
++      <annotation name="org.gtk.GDBus.Since" value="0.9.0"/>
++      <annotation name="org.gtk.GDBus.C.UnixFD" value="4"/>
+       <arg name="what" type="s" direction="in" />
+       <arg name="who" type="s" direction="in" />
+       <arg name="why" type="s" direction="in" />
+       <arg name="mode" type="s" direction="in" />
+-      <arg name="pipe_fd" type="h" direction="out" />
++      <arg name="fd" type="h" direction="out" />
+     </method>
+ 
+     <signal name="PrepareForSleep">

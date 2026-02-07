@@ -1,0 +1,7 @@
+Python package for uv, an extremely fast Python package installer and resolver.
+
+This package provides Python bindings for uv functionality and requires the
+uv binary to be installed separately from the devel/uv port.
+
+The uv module allows Python programs to programmatically interact with uv
+for package management and dependency resolution tasks.

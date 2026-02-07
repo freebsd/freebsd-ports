@@ -1,0 +1,6 @@
+This module implements the twofish cipher in a less braindamaged (read:
+slow and ugly) way than the existing "Crypt::Twofish" module.
+
+Although it is "Crypt::CBC" compliant you usually gain nothing by using
+that module (except generality), since "Crypt::Twofish2" can work in
+either ECB or CBC mode.

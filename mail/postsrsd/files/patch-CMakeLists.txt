@@ -1,0 +1,86 @@
+--- CMakeLists.txt.orig	2023-08-25 21:10:07 UTC
++++ CMakeLists.txt
+@@ -49,7 +49,7 @@ set(POSTSRSD_CONFIGDIR
+         "The default directory where PostSRSd should look for configuration files"
+ )
+ set(POSTSRSD_DATADIR
+-    "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/${PROJECT_NAME}"
++    "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/db/${PROJECT_NAME}"
+     CACHE PATH "The default directory where PostSRSd should put runtime data"
+ )
+ set(POSTSRSD_CHROOTDIR
+@@ -73,24 +73,21 @@ option(WITH_REDIS
+        OFF
+ )
+ add_feature_info(WITH_REDIS WITH_REDIS "use Redis as database backend")
++set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
++option(MK_CHROOT_DIR "Chroot jail for daemon" OFF)
+ option(TESTS_WITH_ASAN "Run test suite with AddressSanitizer" ON)
+ option(DEVELOPER_BUILD "Add strict compiler options for development only" OFF)
+-option(GENERATE_SRS_SECRET "Generate and install a postsrsd.secret" ON)
++option(GENERATE_SRS_SECRET "Generate and install a postsrsd.secret" OFF)
+ add_feature_info(
+     GENERATE_SRS_SECRET
+     GENERATE_SRS_SECRET
+     "generate missing ${CMAKE_INSTALL_FULL_SYSCONFDIR}/${PROJECT_NAME}.secret on install"
+ )
+-option(INSTALL_SYSTEMD_SERVICE "Install the systemd postsrsd.service unit" ON)
++option(INSTALL_SYSTEMD_SERVICE "Install the systemd postsrsd.service unit" OFF)
+ add_feature_info(
+     INSTALL_SYSTEMD_SERVICE INSTALL_SYSTEMD_SERVICE
+     "install the systemd postsrsd.service unit"
+ )
+-find_systemd_unit_destination(DETECTED_SYSTEMD_UNITDIR)
+-set(SYSTEMD_UNITDIR
+-    "${DETECTED_SYSTEMD_UNITDIR}"
+-    CACHE PATH "Install destination for the systemd postsrsd.service unit"
+-)
+ find_systemd_sysusers_destination(DETECTED_SYSTEMD_SYSUSERSDIR)
+ set(SYSTEMD_SYSUSERSDIR
+     "${DETECTED_SYSTEMD_SYSUSERSDIR}"
+@@ -118,7 +115,6 @@ mark_as_advanced(
+     TESTS_WITH_ASAN
+     GENERATE_SRS_SECRET
+     DEVELOPER_BUILD
+-    SYSTEMD_UNITDIR
+     POSTSRSD_CONFIGDIR
+     POSTSRSD_CHROOTDIR
+     POSTSRSD_DATADIR
+@@ -200,11 +196,7 @@ endif()
+ set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+ find_package(Threads QUIET)
+ 
+-add_autotools_dependency(
+-    Confuse
+-    LIBRARY_NAME confuse
+-    EXPORTED_TARGET Confuse::Confuse
+-)
++find_package(Confuse REQUIRED)
+ 
+ if(WITH_REDIS)
+     set(DISABLE_TESTS
+@@ -221,6 +213,7 @@ if(WITH_REDIS)
+             DIRECTORY "${hiredis_SOURCE_DIR}" PROPERTY EXCLUDE_FROM_ALL TRUE
+         )
+     endif()
++    find_package(Hiredis REQUIRED)
+     if(TARGET hiredis::hiredis_static)
+         set(HIREDIS_TARGET hiredis::hiredis_static)
+     elseif(TARGET hiredis::hiredis)
+@@ -364,13 +357,9 @@ install(TARGETS postsrsd RUNTIME DESTINATION ${CMAKE_I
+ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.conf"
+         DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/${PROJECT_NAME}"
+ )
+-if(INSTALL_SYSTEMD_SERVICE)
+-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.service"
+-            DESTINATION "${SYSTEMD_UNITDIR}"
+-    )
+-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/sysusers.d/${PROJECT_NAME}.conf"
+-            DESTINATION "${SYSTEMD_SYSUSERSDIR}"
+-    )
++
++if(ENABLE_DOCS)
++       install(FILES README.rst CHANGELOG.rst doc/postsrsd.conf DESTINATION "${DOC_DIR}" )
+ endif()
+ 
+ if(GENERATE_SRS_SECRET)

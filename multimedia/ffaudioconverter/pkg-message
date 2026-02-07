@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+You installed FFaudioConverter, graphical audio covert and filter tool
+
+In order for it to work, you need to have the LAME option in
+multimedia/ffmpeg to be "on", it enables the libmp3lame encoder.
+EOM
+}
+]

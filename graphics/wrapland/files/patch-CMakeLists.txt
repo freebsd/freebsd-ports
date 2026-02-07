@@ -1,0 +1,15 @@
+Qt 6.10+ does not automatically provide Qt6::GuiPrivate target for the
+QPA API which is not guaranteed to be compatible between releases.
+
+--- CMakeLists.txt.orig	2024-10-09 11:05:14 UTC
++++ CMakeLists.txt
+@@ -35,6 +35,9 @@ find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRE
+ set(KDE_COMPILERSETTINGS_LEVEL "5.84")
+ 
+ find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Concurrent Gui)
++if (Qt6_VERSION VERSION_GREATER_EQUAL 6.10.0)
++  find_package(Qt6 CONFIG REQUIRED COMPONENTS GuiPrivate)
++endif()
+ 
+ find_package(Wayland 1.18 COMPONENTS Client Server)
+ set_package_properties(Wayland PROPERTIES TYPE REQUIRED)

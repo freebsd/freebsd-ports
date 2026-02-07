@@ -1,0 +1,9 @@
+bin/friskserver
+bin/risk
+bin/xfrisk
+bin/aiDummy
+bin/aiConway
+bin/aiColson
+lib/xfrisk/World.risk
+lib/xfrisk/Countries.risk
+lib/xfrisk/Help.risk

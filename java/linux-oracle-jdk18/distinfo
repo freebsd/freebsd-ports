@@ -1,0 +1,9 @@
+TIMESTAMP = 1620192536
+SHA256 (jdk-8u291-linux-i586.tar.gz) = 8d28779179de73bfc1915151e37511664aaedf272b95fb8810ebdc36d63ff42d
+SIZE (jdk-8u291-linux-i586.tar.gz) = 144616467
+SHA256 (jdk-8u291-linux-i586-demos.tar.gz) = 9c52769477d900eb7eef663960668b584ae364652f3a8c2c226dfeae6fcd3ed2
+SIZE (jdk-8u291-linux-i586-demos.tar.gz) = 55043070
+SHA256 (jdk-8u291-linux-x64.tar.gz) = c5052d2e1dd9621a44658ef06be145c5cdfcd7ea956c0c9d655ccd64e79c8613
+SIZE (jdk-8u291-linux-x64.tar.gz) = 144935989
+SHA256 (jdk-8u291-linux-x64-demos.tar.gz) = 085d485c97968989e155e2fb1ee75c4c3617136b070f1ce8a5e8b4a8105404c8
+SIZE (jdk-8u291-linux-x64-demos.tar.gz) = 55139584

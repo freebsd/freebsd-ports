@@ -1,0 +1,19 @@
+--- tools/zapccs/CMakeLists.txt.orig	2018-08-10 13:36:19 UTC
++++ tools/zapccs/CMakeLists.txt
+@@ -12,6 +12,8 @@ include_directories(BEFORE
+ set(LLVM_LINK_COMPONENTS
+   ${LLVM_TARGETS_TO_BUILD}
+   Analysis
++  AsmPrinter
++  BitWriter
+   CodeGen
+   Core
+   Support
+@@ -64,6 +66,7 @@ target_link_libraries(zapccs
+   clangLex
+   clangParse
+   clangSema
++  clangSerialization
+ )
+ 
+ add_custom_target (

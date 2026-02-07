@@ -1,0 +1,2 @@
+Provides a parallel backend for the %dopar% function using the
+parallel package.

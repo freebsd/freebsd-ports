@@ -1,0 +1,3 @@
+Email::Simple::FromHandle provides an Email::Simple object which uses a
+filehandle as its source, so it does not need to hold the entire body in memory
+until needed.

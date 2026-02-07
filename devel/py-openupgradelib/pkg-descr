@@ -1,0 +1,5 @@
+Open Upgrade Library (openupgradelib) is a Python library designed
+to assist with migrating Odoo databases between different versions,
+particularly major releases. It provides helper functions for writing
+migration scripts that handle complex data transformations and
+structural changes in the database.

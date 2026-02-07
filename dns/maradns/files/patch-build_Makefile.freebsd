@@ -1,0 +1,15 @@
+--- build/Makefile.freebsd.orig	2023-05-03 00:53:39 UTC
++++ build/Makefile.freebsd
+@@ -31,8 +31,10 @@ Q="DEFINES=-DSELECT_PROBLEM"
+ Q="DEFINES=-DSELECT_PROBLEM"
+ 
+ # FreeBSD needs some special flags to compile MaraDNS
+-CC="cc -O2 -Wall -pipe -D_THREAD_SAFE -pthread"
+-M=CC=$(CC) 
++#CC="cc -O2 -Wall -pipe -D_THREAD_SAFE -pthread"
++#M=CC=$(CC) 
++CFLAGS+=-D_THREAD_SAFE -pthread
++M="CC=$(CC) $(CFLAGS)"
+ V="VERSION=$(VERSION)"
+ 
+ # Debug

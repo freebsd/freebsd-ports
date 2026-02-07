@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Shell/EnvImporter.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell.pm
+%%SITE_PERL%%/Shell/EnvImporter/Result.pm
+%%SITE_PERL%%/Shell/EnvImporter/Change.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/sh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/perl.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/tcsh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/zsh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/ksh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/bash.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/csh.pm
+%%PERL5_MAN3%%/Shell::EnvImporter.3.gz
+%%PERL5_MAN3%%/Shell::EnvImporter::Result.3.gz
+%%PERL5_MAN3%%/Shell::EnvImporter::Shell.3.gz

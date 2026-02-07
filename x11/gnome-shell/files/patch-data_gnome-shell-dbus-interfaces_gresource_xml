@@ -1,0 +1,12 @@
+Index: data/gnome-shell-dbus-interfaces.gresource.xml
+--- data/gnome-shell-dbus-interfaces.gresource.xml.orig
++++ data/gnome-shell-dbus-interfaces.gresource.xml
+@@ -8,6 +8,8 @@
+     <file preprocess="xml-stripblanks">org.freedesktop.Application.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.bolt1.Device.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.bolt1.Manager.xml</file>
++    <file preprocess="xml-stripblanks">org.freedesktop.ConsoleKit.Manager.xml</file>
++    <file preprocess="xml-stripblanks">org.freedesktop.ConsoleKit.Session.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.DBus.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.GeoClue2.Agent.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.GeoClue2.Manager.xml</file>

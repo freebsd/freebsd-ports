@@ -1,0 +1,4 @@
+Advanced Graphics and Image-Processing in R
+Bindings to ImageMagick. Supports many common formats and manipulations.
+The package includes a native graphics device for creating in-memory
+graphics or drawing onto images using pixel coordinates.

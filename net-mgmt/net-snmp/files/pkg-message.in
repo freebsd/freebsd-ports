@@ -1,0 +1,77 @@
+[
+{ type: install
+  message: <<EOM
+**** This port installs snmpd, header files and libraries but does not
+     start snmpd by default.
+     If you want to auto-start snmpd and snmptrapd, add the following to
+     /etc/rc.conf:
+
+	snmpd_enable="YES"
+	snmpd_flags="-a"
+	snmpd_conffile="%%PREFIX%%/share/snmp/snmpd.conf /etc/snmpd.conf"
+	snmptrapd_enable="YES"
+	snmptrapd_flags="-a -p /var/run/snmptrapd.pid"
+
+**** You may also specify the following make variables:
+
+	NET_SNMP_SYS_CONTACT="zi@FreeBSD.org"
+	NET_SNMP_SYS_LOCATION="USA"
+	DEFAULT_SNMP_VERSION=3
+	NET_SNMP_MIB_MODULES="host smux mibII/mta_sendmail ucd-snmp/diskio"
+	NET_SNMP_LOGFILE=/var/log/snmpd.log
+	NET_SNMP_PERSISTENTDIR=/var/net-snmp
+
+     to define default values (or to override the defaults).  To avoid being
+     prompted during the configuration process, you should (minimally) define
+     the first two variables. (NET_SNMP_SYS_*)
+
+     You may also define the following to avoid all interactive configuration:
+
+	BATCH="yes"
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+snmpd now drops privileges by default after initialization is completed.
+Ensure that any extension commands defined in your snmpd.conf can be executed
+by the snmpd user.
+
+It is possible to start and run snmpd entirely as a non-root user with the
+following steps:
+
+1. Add the following lines to /etc/rc.conf:
+
+	snmpd_user="snmpd"
+	snmpd_group="snmpd"
+	snmpd_pidfile="/var/net-snmp/snmpd.pid"
+
+2. Configure the mac_portacl(4) kernel module:
+
+   a. Load mac_portacl.ko at boot time by adding the following line to
+      /etc/rc.conf:
+
+	kld_list="mac_portacl"
+
+   b. Configure the following sysctls in sysctl.conf(5):
+
+      net.inet.ip.portrange.reservedhigh=0
+      security.mac.portacl.rules=gid:344:udp:161,gid:344:tcp:161,gid:344:tcp:199,gid:344:tcp:705
+
+   This allows snmpd to bind to these privileged ports without holding
+   special privileges.
+
+3. Make sure that the snmpd user has read/write or read-only access to the
+   following:
+
+	RW - /var/log/snmpd.log
+	RW - /var/net-snmp/*
+	RO - /usr/local/share/snmp/*
+
+   Note that snmpd creates the /var/net-snmp directory upon its initial
+   startup, and this cannot be done by the snmpd user.
+
+4. Ensure that any and all extension commands defined in snmpd.conf can be
+   executed by the snmpd user.
+EOM
+}
+]

@@ -1,0 +1,132 @@
+From 08e648c899e5023f337d2fa56e4e758f62f31ec4 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Mon, 31 May 2021 00:38:38 +0200
+Subject: [PATCH 15/28] Add extra debug class to trck down DB locking code.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ lib/dbwrap/dbwrap.c               | 3 +++
+ lib/dbwrap/dbwrap_local_open.c    | 3 +++
+ lib/dbwrap/dbwrap_rbt.c           | 3 +++
+ lib/dbwrap/dbwrap_tdb.c           | 3 +++
+ lib/dbwrap/dbwrap_util.c          | 3 +++
+ source3/lib/dbwrap/dbwrap_ctdb.c  | 3 +++
+ source3/lib/dbwrap/dbwrap_open.c  | 3 +++
+ source3/lib/dbwrap/dbwrap_watch.c | 3 +++
+ 8 files changed, 24 insertions(+)
+
+diff --git a/lib/dbwrap/dbwrap.c b/lib/dbwrap/dbwrap.c
+index 7555efaa3ab..51f58fea851 100644
+--- a/lib/dbwrap/dbwrap.c
++++ b/lib/dbwrap/dbwrap.c
+@@ -28,6 +28,9 @@
+ #include "lib/util/util_tdb.h"
+ #include "lib/util/tevent_ntstatus.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ /*
+  * Fall back using fetch if no genuine exists operation is provided
+  */
+diff --git a/lib/dbwrap/dbwrap_local_open.c b/lib/dbwrap/dbwrap_local_open.c
+index 20c5fa0e1d2..b834bbd0e41 100644
+--- a/lib/dbwrap/dbwrap_local_open.c
++++ b/lib/dbwrap/dbwrap_local_open.c
+@@ -23,6 +23,9 @@
+ #include "dbwrap/dbwrap_tdb.h"
+ #include "tdb.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ struct db_context *dbwrap_local_open(TALLOC_CTX *mem_ctx,
+ 				     const char *name,
+ 				     int hash_size, int tdb_flags,
+diff --git a/lib/dbwrap/dbwrap_rbt.c b/lib/dbwrap/dbwrap_rbt.c
+index db456dfffba..483558a6dc7 100644
+--- a/lib/dbwrap/dbwrap_rbt.c
++++ b/lib/dbwrap/dbwrap_rbt.c
+@@ -24,6 +24,9 @@
+ #include "../lib/util/rbtree.h"
+ #include "../lib/util/dlinklist.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ #define DBWRAP_RBT_ALIGN(_size_) (((_size_)+15)&~15)
+ 
+ struct db_rbt_ctx {
+diff --git a/lib/dbwrap/dbwrap_tdb.c b/lib/dbwrap/dbwrap_tdb.c
+index 6cd95fa25ad..4a75cd80256 100644
+--- a/lib/dbwrap/dbwrap_tdb.c
++++ b/lib/dbwrap/dbwrap_tdb.c
+@@ -29,6 +29,9 @@
+ #include "lib/param/param.h"
+ #include "libcli/util/error.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ struct db_tdb_ctx {
+ 	struct tdb_wrap *wtdb;
+ 
+diff --git a/lib/dbwrap/dbwrap_util.c b/lib/dbwrap/dbwrap_util.c
+index df6dea40097..465814f0952 100644
+--- a/lib/dbwrap/dbwrap_util.c
++++ b/lib/dbwrap/dbwrap_util.c
+@@ -26,6 +26,9 @@
+ #include "dbwrap.h"
+ #include "lib/util/util_tdb.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ struct dbwrap_fetch_int32_state {
+ 	NTSTATUS status;
+ 	int32_t result;
+diff --git a/source3/lib/dbwrap/dbwrap_ctdb.c b/source3/lib/dbwrap/dbwrap_ctdb.c
+index 0907089164a..9fc771d1217 100644
+--- a/source3/lib/dbwrap/dbwrap_ctdb.c
++++ b/source3/lib/dbwrap/dbwrap_ctdb.c
+@@ -38,6 +38,9 @@
+ #include "lib/cluster_support.h"
+ #include "lib/util/tevent_ntstatus.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ struct db_ctdb_transaction_handle {
+ 	struct db_ctdb_ctx *ctx;
+ 	/*
+diff --git a/source3/lib/dbwrap/dbwrap_open.c b/source3/lib/dbwrap/dbwrap_open.c
+index 52c8a94aeff..caefb579058 100644
+--- a/source3/lib/dbwrap/dbwrap_open.c
++++ b/source3/lib/dbwrap/dbwrap_open.c
+@@ -31,6 +31,9 @@
+ #include "ctdbd_conn.h"
+ #include "global_contexts.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ bool db_is_local(const char *name)
+ {
+ 	const char *sockname = lp_ctdbd_socket();
+diff --git a/source3/lib/dbwrap/dbwrap_watch.c b/source3/lib/dbwrap/dbwrap_watch.c
+index 17a52de37cc..77f7b178229 100644
+--- a/source3/lib/dbwrap/dbwrap_watch.c
++++ b/source3/lib/dbwrap/dbwrap_watch.c
+@@ -28,6 +28,9 @@
+ #include "server_id_watch.h"
+ #include "lib/dbwrap/dbwrap_private.h"
+ 
++#undef DBGC_CLASS
++#define DBGC_CLASS DBGC_LOCKING
++
+ struct dbwrap_watcher {
+ 	/*
+ 	 * Process watching this record
+-- 
+2.37.1
+

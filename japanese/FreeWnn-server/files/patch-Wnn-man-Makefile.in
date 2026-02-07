@@ -1,0 +1,20 @@
+Index: Wnn/man/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/Wnn/man/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- Wnn/man/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/man/Makefile.in	2 Jan 2010 12:44:07 -0000	1.2
+@@ -32,9 +32,9 @@
+ include @top_srcdir@/makerule.mk
+ top_builddir = ../..
+ 
+-LIB_WNNMANDIR = 3.libwnn
++LIB_WNNMANDIR?= 3.libwnn
+ 
+-SERVER_WNNMANDIR = 2.env 4.cmd 6.jutil
++SERVER_WNNMANDIR?= 2.env 4.cmd 6.jutil
+ 
+ SUBDIRS = @WNNMANDIR@
+ 

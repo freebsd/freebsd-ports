@@ -1,0 +1,11 @@
+This module is a fast XSLT library, based on the Gnome libxslt engine
+that you can find at http://www.xmlsoft.org/XSLT/
+
+Performance is currently about twice that of XML::Sablotron (based on
+XSLTMark tests converted to Perl).
+
+The libxslt processor is also highly standards compliant, with
+practically all of XSLT 1.0 being supported in version 0.9 of libxslt.
+
+This is free software, you may use it and distribute it under the same
+terms as Perl itself. Copyright 2001 AxKit.com Ltd, All rights reserved.

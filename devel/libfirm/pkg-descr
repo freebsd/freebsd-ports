@@ -1,0 +1,22 @@
+The Firm library implements the Firm intermediate representation (IR). libFirm
+contains algorithms for construction of the SSA form directly from the
+attributed syntax tree. A set of analyses and optimisation phases is provided.
+This version includes a complete backend for the IA32 architecture, as well as
+some unfinished backends for SPARC, ARM
+
+* support for object oriented type hierarchies
+* analyses: dominance, loop tree, execution frequency, control dependencies,
+  call graph, rapid type, def-use, alias analysis, class hierarchy analysis
+* Optimisations: constant folding, local common subexpression elimination,
+  global common subexpression elimination, code placement, operator strength
+  reduction, scalar replacement, load/store, control flow optimisations,
+  if-conversion, partial condition evaluation, reassociation, tail recursion
+  elimination, inlining, procedure cloning, dead code elimination, ...
+* enhanced debugging support: extensive checkers, breakpoints on node creation,
+  entity creation, graph dumping
+* lowering of intrinsics, double word arithmetics, bitfields
+* backend with SSA based register allocation including several algorithms for
+  spilling and copy coalescing. Instruction and block scheduling, support for
+  ABI handling.
+* working ia32 backend with support for x87 and SSE2 floating point
+* handwritten recursive descent C90/C99 frontend available (lang/cparser)

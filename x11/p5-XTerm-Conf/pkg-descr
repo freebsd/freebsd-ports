@@ -1,0 +1,2 @@
+XTerm::Conf provides functions to change some aspects of a running
+xterm and compatible terminal emulators (e.g. rxvt or urxvt).

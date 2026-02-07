@@ -1,0 +1,44 @@
+--- Makefile.orig	2001-12-22 23:55:11 UTC
++++ Makefile
+@@ -4,7 +4,6 @@
+ # Well, the only configurable part is the following variable.
+ # Make sure the directory you specify exists.
+ 
+-PREFIX=/usr/local
+ 
+ # End of configurable part
+ 
+@@ -16,19 +15,19 @@ LIBDIR=$(PREFIX)/lib
+ all: installwatch.so
+ 
+ installwatch.so: installwatch.o
+-	ld -shared -o installwatch.so installwatch.o -ldl -lc
++	ld -shared -o installwatch.so installwatch.o -lc
+ 
+ installwatch.o: installwatch.c localdecls.h
+-	gcc -Wall -c -D_GNU_SOURCE -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
++	$(CC) -Wall -c $(CFLAGS) -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
+ 
+ localdecls.h:
+ 	./create-localdecls
+ 
+ install: all
+-	if [ -r $(LIBDIR)/installwatch.so ]; then rm  $(LIBDIR)/installwatch.so; export LD_PRELOAD=""; cp installwatch.so $(LIBDIR); LD_PRELOAD=$(LIBDIR)/installwatch.so; else cp installwatch.so $(LIBDIR); fi
++	if [ -r ${DESTDIR}$(LIBDIR)/installwatch.so ]; then rm  ${DESTDIR}$(LIBDIR)/installwatch.so; export LD_PRELOAD=""; cp installwatch.so ${DESTDIR}$(LIBDIR); LD_PRELOAD=${DESTDIR}$(LIBDIR)/installwatch.so; else cp installwatch.so ${DESTDIR}$(LIBDIR); fi
+ 	
+-	sed -e "s|#PREFIX#|$(PREFIX)|" < installwatch > $(BINDIR)/installwatch
+-	chmod 755 $(BINDIR)/installwatch
++	sed -e "s|#PREFIX#|$(PREFIX)|" < installwatch > ${DESTDIR}$(BINDIR)/installwatch
++	chmod 755 ${DESTDIR}$(BINDIR)/installwatch
+ 
+ uninstall:
+ 	rm $(LIBDIR)/installwatch.so
+@@ -41,7 +40,7 @@ tarball: clean
+ 	tar -czvC .. -f ../installwatch-$(VERSION).tar.gz installwatch-$(VERSION)
+ 
+ test: install
+-	gcc -Wall -DVERSION=\"$(VERSION)\" -o test-installwatch test-installwatch.c -ldl
++	$(CC) -Wall -DVERSION=\"$(VERSION)\" -o test-installwatch test-installwatch.c
+ 	$(PREFIX)/bin/installwatch ./test-installwatch
+ 
+ 

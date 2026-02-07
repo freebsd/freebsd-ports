@@ -1,0 +1,7 @@
+FUSE makes it possible to implement a filesystem in a userspace program.
+
+This version 3 of the fuse library is not compatible with file-systems
+developed for version 2.
+
+A list of filesystems supported by this version of the library is
+maintained in the WiKi on GitHub.

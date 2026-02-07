@@ -1,0 +1,8 @@
+bin/dvdid
+include/dvdid/dvdid.h
+include/dvdid/dvdid2.h
+include/dvdid/export.h
+lib/libdvdid.a
+lib/libdvdid.so
+lib/libdvdid.so.0
+lib/libdvdid.so.0.1.0

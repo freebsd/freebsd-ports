@@ -1,0 +1,4 @@
+Unicode::Emoji provides Unicode Emoji data and regexes, incorporating the latest
+Unicode and Emoji standards.
+
+It also includes a categorized list of recommended Emoji.

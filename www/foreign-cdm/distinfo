@@ -1,0 +1,7 @@
+TIMESTAMP = 1741067231
+SHA256 (cdm-06395a2863cb1ebdb47617a995b73f95c14fe120.tar.gz) = 6b64bae344abc37c4d5db0fa83766224a4520ddfcc6eaffb87668bd6165672ef
+SIZE (cdm-06395a2863cb1ebdb47617a995b73f95c14fe120.tar.gz) = 14936
+SHA256 (shkhln-foreign-cdm-20250224_GH0.tar.gz) = 090c4fc7ccbb3c9076de4b9c856950f079a1338c465c9ab7399b7841b08f1ea1
+SIZE (shkhln-foreign-cdm-20250224_GH0.tar.gz) = 17679
+SHA256 (capnproto-capnproto-928c8390d4d562bd32dc79a42eb64e9bdba572d8_GH0.tar.gz) = 5c867f4758d7a3e2e0213e732e2b9a5ad70d1193a4d615bbab41df1d4051de37
+SIZE (capnproto-capnproto-928c8390d4d562bd32dc79a42eb64e9bdba572d8_GH0.tar.gz) = 2413835

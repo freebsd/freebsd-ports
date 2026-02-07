@@ -1,0 +1,3 @@
+bin/check_ldap_repl
+%%SITE_PERL%%/Nagios/Plugin/LDAP.pm
+%%PERL5_MAN3%%/Nagios::Plugin::LDAP.3.gz

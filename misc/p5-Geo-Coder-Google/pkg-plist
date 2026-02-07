@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Geo/Coder/Google.pm
+%%SITE_PERL%%/Geo/Coder/Google/V2.pm
+%%SITE_PERL%%/Geo/Coder/Google/V3.pm
+%%PERL5_MAN3%%/Geo::Coder::Google.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Google::V2.3.gz
+%%PERL5_MAN3%%/Geo::Coder::Google::V3.3.gz

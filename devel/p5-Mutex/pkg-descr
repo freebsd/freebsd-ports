@@ -1,0 +1,14 @@
+This module, a standalone version of MCE::Mutex, implements locking methods
+that can be used to coordinate access to shared data from multiple workers
+spawned as processes or threads.
+
+The inspiration for this module came from reading Mutex for Ruby.
+
+$m1 = Mutex->new( );
+$m1->impl();   # Channel
+$m2 = Mutex->new( path => /tmp/my.lock );
+$m2->impl();   # Flock
+$m3 = Mutex->new( impl => "Channel" );
+$m3->impl();   # Channel
+$m4 = Mutex->new( impl => "Flock" );
+$m4->impl();   # Flock

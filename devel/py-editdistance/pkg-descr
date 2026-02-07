@@ -1,0 +1,1 @@
+This library simply implements Levenshtein distance with C++ and Cython.

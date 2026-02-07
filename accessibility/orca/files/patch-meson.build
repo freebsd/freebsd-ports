@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-06-25 12:03:30 UTC
++++ meson.build
+@@ -8,7 +8,7 @@ python_minimum_version = '3.10'
+ i18n = import('i18n')
+ 
+ python_minimum_version = '3.10'
+-python3 = python.find_installation('python3', required: true)
++python3 = python.find_installation(required: true)
+ if not python3.language_version().version_compare(f'>= @python_minimum_version@')
+   error(f'Python @python_minimum_version@ or newer is required.')
+ endif

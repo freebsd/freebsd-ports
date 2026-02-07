@@ -1,0 +1,10 @@
+--- cargo-crates/rug-1.24.0/Cargo.toml.orig
++++ cargo-crates/rug-1.24.0/Cargo.toml
+@@ -43,6 +43,7 @@
+ version = "~1.6"
+ optional = true
+ default-features = false
++features = [ "use-system-libs" ]
+ 
+ [dependencies.libc]
+ version = "0.2.44"

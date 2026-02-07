@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: tetrinetx
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable tetrinet-x
+#
+# tetrinetx_enable (bool):	Set it to "YES" to enabl tetrinet-x
+#				Default is "NO".
+
+. /etc/rc.subr
+
+name=tetrinetx
+rcvar=tetrinetx_enable
+
+load_rc_config $name
+
+: ${tetrinetx_enable:=NO}
+
+command="%%DATADIR%%/tetrix.freebsd"
+
+run_rc_command "$1"

@@ -1,0 +1,17 @@
+--- bar/bar.json.orig	2020-07-15 00:25:01 UTC
++++ bar/bar.json
+@@ -11,12 +11,12 @@
+   },
+   {
+     "name": "Reboot",
+-    "exec": "systemctl reboot",
++    "exec": "shutdown -r now",
+     "icon": "system-reboot"
+   },
+   {
+     "name": "Shutdown",
+-    "exec": "systemctl -i poweroff",
++    "exec": "shutdown -p now",
+     "icon": "system-shutdown"
+   }
+ ]

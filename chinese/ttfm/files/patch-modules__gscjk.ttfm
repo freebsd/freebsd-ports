@@ -1,0 +1,32 @@
+--- ./modules/gscjk.ttfm.orig	Wed Sep 24 17:51:46 2003
++++ ./modules/gscjk.ttfm	Mon Nov 27 02:06:36 2006
+@@ -18,7 +18,7 @@
+ 
+ # Global constants
+ 
+-export PREFIX; PREFIX=/usr/local
++export PREFIX; PREFIX=%%PREFIX%%
+ export TTFINFOPath; TTFINFOPath="${PREFIX}/bin/ttfinfo"
+ export GS6Path; GS6Path="${PREFIX}/share/ghostscript"
+ export GS6CJKPath; GS6CJKPath="${GS6Path}/Resource"
+@@ -148,9 +148,8 @@
+ remove_fonts()
+ {
+     for f in "$@"; do
+-        targetname=`basename $f`
+-
+-        rm -f ${CJKCIDPath}/${targetname} ${CJKFontPath}/${targetname}*
++        guess_ttf_info "$f"
++        rm -f ${CJKCIDPath}/${TTF_ALIAS}* ${CJKFontPath}/${TTF_ALIAS}*
+     done
+ }
+ 
+@@ -236,7 +235,7 @@
+ #    else
+ #        TTF_ALIAS=${TTFINFO_FOUNDRY_NAME}"`echo $TTFINFO_FONT_NAME |sed -e "s/ //g"`"
+ #    fi
+-    TTF_ALIAS=$TTFINFO_FONT_PSNAME
++    TTF_ALIAS=`echo $TTFINFO_FONT_PSNAME | sed -e "s/ //g"`
+ 
+ #    case "$fontweight" in
+ #    'bold')

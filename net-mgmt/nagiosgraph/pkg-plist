@@ -1,0 +1,31 @@
+@sample etc/nagios/%%PORTNAME%%/access.conf.sample
+@sample etc/nagios/%%PORTNAME%%/datasetdb.conf.sample
+@sample etc/nagios/%%PORTNAME%%/groupdb.conf.sample
+@sample etc/nagios/%%PORTNAME%%/hostdb.conf.sample
+@sample etc/nagios/%%PORTNAME%%/labels.conf.sample
+@sample etc/nagios/%%PORTNAME%%/map.sample
+@sample etc/nagios/%%PORTNAME%%/%%PORTNAME%%.conf.sample
+@sample etc/nagios/%%PORTNAME%%/%%PORTNAME%%_de.conf.sample
+@sample etc/nagios/%%PORTNAME%%/%%PORTNAME%%_es.conf.sample
+@sample etc/nagios/%%PORTNAME%%/%%PORTNAME%%_fr.conf.sample
+etc/nagios/%%PORTNAME%%/ngshared.pm
+@sample etc/nagios/%%PORTNAME%%/rrdopts.conf.sample
+@sample etc/nagios/%%PORTNAME%%/servdb.conf.sample
+libexec/%%PORTNAME%%/insert.pl
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testentry.pl
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/show.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showconfig.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgraph.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgroup.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showhost.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showservice.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/testcolor.cgi
+%%NAGIOSWWWDIR%%/images/action-%%PORTNAME%%.gif
+%%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.css
+%%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.js
+%%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.ssi

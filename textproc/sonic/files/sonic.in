@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# PROVIDE: sonic
+# REQUIRE: NETWORKING
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=sonic
+desc="Fast, lightweight, and schema-less search backend"
+rcvar=sonic_enable
+
+load_rc_config $name
+
+: ${sonic_enable:=NO}
+: ${sonic_config="%%ETCDIR%%/config.cfg"}
+
+sonic_chdir=/var/db/sonic
+pidfile=/var/run/sonic.pid
+start_precmd="/usr/bin/install -d -o sonic -g sonic -m 750 /var/db/sonic"
+command=/usr/sbin/daemon
+command_args="-S -u sonic -P ${pidfile} %%PREFIX%%/bin/sonic -c ${sonic_config}"
+
+run_rc_command "$1"

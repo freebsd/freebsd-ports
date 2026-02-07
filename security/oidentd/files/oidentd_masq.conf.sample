@@ -1,0 +1,2 @@
+192.168.1.1/32 client1 UNIX
+192.168.2.1/32 client2 UNIX

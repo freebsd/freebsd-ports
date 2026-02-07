@@ -1,0 +1,9 @@
+The Perl Cache package provides Cache::Cache, a generic interface for
+creating persistent data stores.  This interface is implemented by the
+Cache::MemoryCache, Cache::SharedMemoryCache, Cache::FileCache,
+Cache::SizeAwareFileCache, Cache::SizeAwareMemoryCache, and
+Cache::SizeAwareSharedMemoryCache classes.  This work replaces
+File::Cache and IPC::Cache.
+
+-Anton
+<tobez@FreeBSD.org>

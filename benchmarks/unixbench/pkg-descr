@@ -1,0 +1,7 @@
+UnixBench based on the BYTE UNIX Benchmarks v3.
+The purpose of UnixBench is to provide a basic indicator of the performance
+of a Unix-like system; hence, multiple tests are used to test various aspects of
+the system's performance. These test results are then compared to the scores
+from a baseline system to produce an index value, which is generally easier to
+handle than the raw scores. The entire set of index values is then combined to
+make an overall index for the system.

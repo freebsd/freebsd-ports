@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: garage
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf to enable garage:
+#
+# garage_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=garage
+desc="Distributed object storage"
+rcvar=${name}_enable
+
+# read configuration and set defaults
+load_rc_config $name
+: ${garage_enable="NO"}
+: ${garage_config="%%PREFIX%%/etc/garage.toml"}
+: ${garage_log_file="/var/log/garage.log"}
+
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/${name}"
+required_files=${garage_config}
+pidfile=/var/run/${name}.pid
+command_args=
+
+if [ "${garage_log_file}" = syslog ]; then
+	garage_env="${garage_env} GARAGE_LOG_TO_SYSLOG=1"
+else
+	command_args="-o ${garage_log_file}"
+fi
+
+command_args="${command_args} -p $pidfile -H -f $procname -c ${garage_config} server"
+
+status_cmd="$procname -c ${garage_config} status"
+
+run_rc_command "$1"

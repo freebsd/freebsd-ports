@@ -1,0 +1,10 @@
+These utilities display several types of images under X11, or load images
+onto the X11 root window.
+
+A variety of options are available to modify images prior to viewing.  These
+options include clipping, dithering, depth reduction, zoom (either X or Y
+axis independently or both at once), brightening or darkening, input gamma
+correction, and image merging.  When applicable, these options are applied
+automatically (e.g. a color image to be displayed on a monochrome screen
+will be dithered automatically).  An utility (xlito) is provided that allows
+these viewing options to be appended to the image files.

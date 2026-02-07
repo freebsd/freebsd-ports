@@ -1,0 +1,6 @@
+sbin/sentinel
+etc/sentinel.cf.dist
+etc/rc.d/sentinel.sh-dist
+@dir(smmsp,smmsp,) /var/spool/sentinel
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD

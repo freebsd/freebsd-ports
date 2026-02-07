@@ -1,0 +1,11 @@
+The Google API Client for Python is a client library for accessing
+the adexchangebuyer, adexchangeseller, adsense, adsensehost, analytics,
+androidpublisher, audit, bigquery, blogger, books, calendar, civicinfo,
+compute, coordinate, customsearch, dfareporting, discovery, drive,
+freebase, fusiontables, gan, groupsmigration, groupssettings, latitude,
+licensing, oauth2, orkut, pagespeedonline, plus, prediction, reseller,
+shopping, siteVerification, storage, taskqueue, tasks, translate,
+urlshortener, webfonts, youtube, youtubeAnalytics APIs.
+
+If you wish to use a Google API that is not in that list then you should
+look at the Google Data APIs Python Client Library (devel/py-gdata).

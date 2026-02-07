@@ -1,0 +1,7 @@
+%%SITE_ARCH%%/DateTime/Astro.pm
+%%SITE_ARCH%%/DateTime/AstroPP.pm
+%%SITE_ARCH%%/DateTime/AstroXS.pm
+%%SITE_ARCH%%/DateTime/Event/SolarTerm.pm
+%%SITE_ARCH%%/auto/DateTime/Astro/Astro.so
+%%PERL5_MAN3%%/DateTime::Astro.3.gz
+%%PERL5_MAN3%%/DateTime::Event::SolarTerm.3.gz

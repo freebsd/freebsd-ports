@@ -1,0 +1,12 @@
+OpenSC provides a set of libraries and utilities to
+access smart cards. Its main focus is on cards that
+support cryptographic operations, and facilitate their
+use in security applications such as mail encryption,
+authentication, and digital signature.
+
+OpenSC implements the PKCS#11 API so applications
+supporting this API such as Mozilla Firefox and
+Thunderbird can use it.
+
+OpenSC implements the PKCS#15 standard and aims to be
+compatible with every software that does so, too.

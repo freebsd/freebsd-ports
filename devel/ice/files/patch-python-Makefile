@@ -1,0 +1,11 @@
+--- python/Makefile.orig	2019-08-12 19:54:18 UTC
++++ python/Makefile
+@@ -19,7 +19,7 @@ SUBDIRS		= modules python
+ 
+ INSTALL_SUBDIRS = $(install_pythondir) $(install_libdir)
+ 
+-install:: install-common
++install::
+ 	@for subdir in $(INSTALL_SUBDIRS); \
+ 	do \
+ 	    if test ! -d $(DESTDIR)$$subdir ; \

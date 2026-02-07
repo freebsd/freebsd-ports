@@ -1,0 +1,21 @@
+Module for interfacing to BreakingPoint appliance. Let's you connect to their
+appliances for simulating real-world legitimate traffic, DDoS, exploits,
+malware, and fuzzing.
+
+# Login to BPS box
+bps = BPS(bps_system, bpsuser, bpspass)
+bps.login()
+
+print("Load a canned test: ")
+bps.testmodel.load(canned_test_name)
+
+print("Reserve Ports")
+for p in port_list:
+    bps.topology.reserve([{'slot': slot_number, 'port': p, 'group': 2}])
+
+
+print("Run test and Get Stats:")
+test_id_json = bps.testmodel.run(modelname=canned_test_name, group=2)
+testid = str( test_id_json["runid"] )
+run_id = 'TEST-' + testid
+print("Test Run Id: %s"%run_id)

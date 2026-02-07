@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2025-10-05 12:06:18 UTC
++++ CMakeLists.txt
+@@ -325,7 +325,7 @@ INSTALL(
+ 	AUTHORS
+ 	COPYING
+ 	README
+-  DESTINATION "share/pano13/doc"
++  DESTINATION "share/doc/libpano13"
+   COMPONENT headers
+         )
+ INSTALL(
+@@ -334,7 +334,7 @@ INSTALL(
+         doc/PTblender.readme
+         doc/PTmender.readme
+         doc/stitch.txt
+-  DESTINATION "share/pano13/doc"
++  DESTINATION "share/doc/libpano13"
+   COMPONENT doc
+         )
+ 

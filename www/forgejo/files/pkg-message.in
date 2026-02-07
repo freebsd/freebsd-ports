@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Before starting forgejo for the first time, you must set a number of
+secrets in the configuration file. For your convenience, a sample file
+has been copied to %%PREFIX%%/etc/forgejo/conf/app.ini.
+
+You need to replace every occurence of CHANGE_ME in the file with
+sensible values. Please refer to the official documentation at
+https://forgejo.org for details.
+
+You will also likely need to create directories for persistent storage.
+Run
+    su -m git -c 'forgejo doctor check'
+to check if all prerequisites have been met.
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.21"
+  message: <<EOM
+Since forgejo version 7, the startup script will run forgejo doctor check
+to verify that forgejo can be started successfully. If you are sure that
+forgejo will start even if doctor has identified an issue, you can disable
+the check by setting forgejo_configcheck_enabled=NO in rc.conf.
+EOM
+}
+{ type: upgrade
+  maximum_version: "8.0.2"
+  message: <<EOM
+Breaking changes: upgrading from Forgejo 8 changes the semantics of some
+authentication, breaking previously working API calls. Please see the
+release notes for details: https://codeberg.org/forgejo/forgejo/milestone/7235
+EOM
+}
+]

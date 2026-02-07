@@ -1,0 +1,16 @@
+This program is designed to match up items in two different lists, which may
+have two different systems of coordinates. The program allows the two sets of
+coordinates to be related by a linear, quadratic, or cubic transformation.
+There was a major change in version 0.15: the first stage uses the clever method
+of finding the most likely triangles described in Tabur, Publications of the
+Astronomical Society of Australia, vol 24 , page 189 (2007). This replaces the
+more brute-force-ish method of Valdes et al., Publications of the Astronomical
+Society of the Pacific, vol 107, page 1119 (1995), which was employed in version
+up to 0.14.
+
+The program was designed and written to work on lists of stars and other
+astronomical objects, but it might be applied to other types of data. In order
+to match two lists of N points, the main algorithm calls for O(N^6) operations
+(yes, that's N-to-the-sixth), so it's not the most efficient choice. I find
+myself becoming impatient for N >= 100, but your mileage may vary. On the other
+hand, it does allow for arbitrary translation, rotation, and scaling...

@@ -1,0 +1,4 @@
+The zzip library provides read access to zipped file in a zip-archive.
+It is based solely on free algorithms provided by zlib and can
+transparently access files being either real files or zipped files
+with the same file path argument.

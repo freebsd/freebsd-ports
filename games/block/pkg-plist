@@ -1,0 +1,10 @@
+bin/block
+bin/bed
+share/man/man6/bed.6.gz
+share/man/man6/block.6.gz
+%%DATADIR%%/1.block
+%%DATADIR%%/2.block
+%%DATADIR%%/3.block
+%%DATADIR%%/4.block
+%%DATADIR%%/5.block
+%%DATADIR%%/6.block

@@ -1,0 +1,20 @@
+sff is a simple, fast, and feature-rich terminal file manager inspired
+by nnn and guided by the suckless philosophy. It aims to provide a
+reliable, efficient, and user-friendly file management experience with
+high extensibility.
+
+Features:
+  - POSIX-compliant and highly optimized
+  - Fast startup and low memory footprint
+  - Extensible with shell scripts
+  - Customizable detail columns
+  - Type-to-navigate
+  - Advanced search via 'find
+  - Fast file search via 'fzf'
+  - Convenient temporary sudo mode
+  - Undo/Redo for the last file operation
+  - Batch file and directory creation
+  - Batch rename
+  - Multi-tab support, cross-directory selection
+  - Extract, list, create archives
+  - ... and more!

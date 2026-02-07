@@ -1,0 +1,3 @@
+Geocoder DAMS (Distributed Address Matching System) is software
+that provides a "geocoding" function that converts address strings
+into latitude and longitude.

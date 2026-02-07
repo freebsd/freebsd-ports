@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Ref/Util.pm
+%%SITE_PERL%%/Ref/Util/PP.pm
+%%PERL5_MAN3%%/Ref::Util.3.gz
+%%PERL5_MAN3%%/Ref::Util::PP.3.gz

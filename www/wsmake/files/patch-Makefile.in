@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2002-11-25 02:45:53.000000000 +0100
++++ Makefile.in	2008-06-04 09:51:49.000000000 +0200
+@@ -154,7 +154,7 @@
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure \
+ 			config.log config.status $(AUX_DIST)
+ 
+-EXTRA_INSTALL = README NEWS ChangeLog TODO THANKS
++@DOCS_TRUE@EXTRA_INSTALL = README NEWS ChangeLog TODO THANKS
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+@@ -491,7 +491,7 @@
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am @DOCS_TRUE@install-data-am
+ 
+ installcheck: installcheck-recursive
+ install-strip:

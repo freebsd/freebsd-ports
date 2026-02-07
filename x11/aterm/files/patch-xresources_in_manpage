@@ -1,0 +1,19 @@
+diff -urNad aterm-0.4.2/doc/aterm.1 /tmp/dpep.SAKh5b/aterm-0.4.2/doc/aterm.1
+--- aterm-0.4.2/doc/aterm.1	2005-03-29 15:58:53.000000000 +0200
++++ doc/aterm.1	2005-03-29 16:06:31.000000000 +0200
+@@ -255,9 +255,12 @@
+ .IP 
+ .SH "RESOURCES (available also as long-options)" 
+ .PP 
+-\fBaterm\fP accepts application defaults set in XAPPLOADDIR/aterm (compile-time
+-defined: usually \fB/etc/X11/Xresources/aterm\fP) and resources set in
+-\fB~/\&.Xdefaults\fP or \fB~/\&.Xresources\fP\&.  Note that when reading X resources,
++.\" \fBaterm\fP accepts application defaults set in XAPPLOADDIR/aterm (compile-time
++.\" defined: usually \fB/etc/X11/Xresources/aterm\fP) and resources set in
++.\" \fB~/\&.Xdefaults\fP or \fB~/\&.Xresources\fP\&.
++\fBaterm\fP accepts application defaults from the X server resource database.
++\fBxrdb\fP is used to update this database.
++Note that when reading X resources,
+ \fBaterm\fP recognizes two class names: \fBXTerm\fP and \fBAterm\fP\&.  The class name
+ \fBXTerm\fP allows resources common to both \fBaterm\fP and \fIxterm\fP to be easily
+ configured, while the class name \fBAterm\fP allows resources unique to \fBaterm\fP,

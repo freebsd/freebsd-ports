@@ -1,0 +1,23 @@
+--- Imakefile.orig	1996-05-05 16:51:27 UTC
++++ Imakefile
+@@ -1,16 +1,10 @@
+ 
+-#define IHaveSubdirs
+-#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+-
+-        DEPLIBS = $(DEPXLIB)
+-LOCAL_LIBRARIES = $(XLIB)
+-	CDEBUGFLAGS =
+-	CCOPTIONS = -O3 -s -pipe -Wall
++OBJS = mouseclock.o
++SRCS = mouseclock.c
++SYS_LIBRARIES = $(XONLYLIB)
+ 
+-AllTarget(mouseclock)
+ 
+-MakeMakeSubdirs($(SUBDIRS),install)
+-SimpleProgramTarget(mouseclock)
++ComplexProgramTargetNoMan(mouseclock)
+ 
+ arc : clean
+ 	(cd .. ; tar zcvf mouseclock.tar.gz mouseclock)

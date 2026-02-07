@@ -1,0 +1,9 @@
+--- data/shiboken2.pc.in.orig	2018-12-17 07:28:47 UTC
++++ data/shiboken2.pc.in
+@@ -9,5 +9,5 @@ python_include_dir=@SBK_PYTHON_INCLUDE_DIR@
+ Name: shiboken2
+ Description: Support library for Python bindings created with the Shiboken2 generator.
+ Version: @shiboken2_VERSION@
+-Libs: @SBK_PYTHON_LIBRARIES@ -L${libdir} -lshiboken2@shiboken2_SUFFIX@@PYTHON_SHARED_LIBRARY_SUFFIX@@LIBRARY_OUTPUT_SUFFIX@
++Libs: @SBK_PYTHON_LIBRARIES@ -L${libdir} -lshiboken2@shiboken2_SUFFIX@@PYTHON_SHARED_LIBRARY_SUFFIX@@LIBRARY_OUTPUT_SUFFIX@ -lexecinfo
+ Cflags: -I@SBK_PYTHON_INCLUDE_DIR@ -I${includedir}/@shiboken2_SUFFIX@@SBK_PKG_CONFIG_PY_DEBUG_DEFINITION@

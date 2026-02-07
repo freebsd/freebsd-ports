@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/Lingua::JA::Summarize::Extract.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Summarize::Extract::Plugin::Parser::Ngram.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Summarize::Extract::Plugin::Parser::NgramSimple.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Summarize::Extract::Plugin::Parser::Trim.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Summarize::Extract::Plugin::Sentence::Base.3.gz
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/ResultSet.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Parser/Trim.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Parser/Ngram.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Parser/NgramSimple.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Sentence/Base.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Sentence/Tiny.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Scoring/Base.pm

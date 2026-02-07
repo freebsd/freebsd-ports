@@ -1,0 +1,3 @@
+monotable is a Python package that provides ASCII table generation with per
+column format specs, multi-line content, formatting directives, column
+width control.

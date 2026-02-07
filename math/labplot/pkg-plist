@@ -1,0 +1,371 @@
+bin/labplot
+include/labplot/backend/datasources/filters/filters.h
+include/labplot/backend/gsl/Parser.h
+include/labplot/backend/gsl/ParserDeclarations.h
+include/labplot/backend/gsl/constants.h
+include/labplot/backend/gsl/functions.h
+include/labplot/backend/gsl/parserFunctionTypes.h
+include/labplot/backend/lib/Debug.h
+include/labplot/backend/lib/macros.h
+include/labplot/backend/lib/macrosWarningStyle.h
+include/labplot/backend/nsl/nsl_conv.h
+include/labplot/backend/nsl/nsl_corr.h
+include/labplot/backend/nsl/nsl_dft.h
+include/labplot/backend/nsl/nsl_diff.h
+include/labplot/backend/nsl/nsl_filter.h
+include/labplot/backend/nsl/nsl_fit.h
+include/labplot/backend/nsl/nsl_geom_linesim.h
+include/labplot/backend/nsl/nsl_hilbert.h
+include/labplot/backend/nsl/nsl_int.h
+include/labplot/backend/nsl/nsl_interp.h
+include/labplot/backend/nsl/nsl_kde.h
+include/labplot/backend/nsl/nsl_math.h
+include/labplot/backend/nsl/nsl_sf_kernel.h
+include/labplot/backend/nsl/nsl_sf_stats.h
+include/labplot/backend/nsl/nsl_sf_window.h
+include/labplot/backend/nsl/nsl_smooth.h
+include/labplot/backend/worksheet/plots/cartesian/plots.h
+include/labplot/labplot.h
+include/labplot/labplot_export.h
+include/labplot/tools/TeXRenderer.h
+lib/cmake/labplot/LabPlotConfig.cmake
+lib/cmake/labplot/LabPlotConfigVersion.cmake
+lib/cmake/labplot/LabPlotTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/labplot/LabPlotTargets.cmake
+lib/liblabplot.so
+lib/liblabplot.so.%%SHLIB_VER%%
+share/applications/org.kde.labplot.desktop
+share/doc/HTML/en/labplot/datapicker_active_curve_data_spreadsheet.png
+share/doc/HTML/en/labplot/datapicker_original_transformed_segments.png
+share/doc/HTML/en/labplot/datapicker_segments.png
+share/doc/HTML/en/labplot/example-FFT_python-1024x532.png
+share/doc/HTML/en/labplot/example-fourier_filter-1024x532.png
+share/doc/HTML/en/labplot/example-maxima_2-1024x532.png
+share/doc/HTML/en/labplot/export_spreadsheet_dialog.png
+share/doc/HTML/en/labplot/export_worksheet_dialog.png
+share/doc/HTML/en/labplot/file_data_source.png
+share/doc/HTML/en/labplot/import-dialog.png
+share/doc/HTML/en/labplot/index.cache.bz2
+share/doc/HTML/en/labplot/index.docbook
+share/doc/HTML/en/labplot/labplot.png
+share/doc/HTML/en/labplot/matrix.png
+share/doc/HTML/en/labplot/matrix_function_values.png
+share/doc/HTML/en/labplot/pe-context-menu.png
+share/doc/HTML/en/labplot/project-explorer.png
+share/doc/HTML/en/labplot/properties.png
+share/doc/HTML/en/labplot/spreadsheet.png
+share/doc/HTML/en/labplot/spreadsheet_generate_equidistant_values.png
+share/doc/HTML/en/labplot/spreadsheet_generate_function_values.png
+share/doc/HTML/en/labplot/spreadsheet_generate_multivariant_function_values.png
+share/doc/HTML/en/labplot/spreadsheet_generate_random_values.png
+share/doc/HTML/en/labplot/sub_window_tabbed_view_interfaces.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet1.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet2.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet3.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet4.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet5.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet6.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet7.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet8.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet9.png
+share/doc/HTML/en/labplot/tutorial-xy-function1.png
+share/doc/HTML/en/labplot/tutorial-xy-function10.png
+share/doc/HTML/en/labplot/tutorial-xy-function2.png
+share/doc/HTML/en/labplot/tutorial-xy-function3.png
+share/doc/HTML/en/labplot/tutorial-xy-function4.png
+share/doc/HTML/en/labplot/tutorial-xy-function5.png
+share/doc/HTML/en/labplot/tutorial-xy-function6.png
+share/doc/HTML/en/labplot/tutorial-xy-function7.png
+share/doc/HTML/en/labplot/tutorial-xy-function8.png
+share/doc/HTML/en/labplot/tutorial-xy-function9.png
+share/doc/HTML/en/labplot/workbook.png
+share/doc/HTML/en/labplot/worksheet.png
+share/icons/hicolor/128x128/apps/labplot.png
+share/icons/hicolor/150x150/apps/labplot.png
+share/icons/hicolor/16x16/apps/labplot.png
+share/icons/hicolor/22x22/apps/labplot.png
+share/icons/hicolor/256x256/apps/labplot.png
+share/icons/hicolor/310x310/apps/labplot.png
+share/icons/hicolor/32x32/apps/labplot.png
+share/icons/hicolor/44x44/apps/labplot.png
+share/icons/hicolor/48x48/apps/labplot.png
+share/icons/hicolor/512x512/apps/labplot.png
+share/icons/hicolor/64x64/apps/labplot.png
+share/icons/hicolor/scalable/apps/labplot-1x-zoom.svg
+share/icons/hicolor/scalable/apps/labplot-2x-zoom.svg
+share/icons/hicolor/scalable/apps/labplot-3x-zoom.svg
+share/icons/hicolor/scalable/apps/labplot-4x-zoom.svg
+share/icons/hicolor/scalable/apps/labplot-5x-zoom.svg
+share/icons/hicolor/scalable/apps/labplot-MQTT.svg
+share/icons/hicolor/scalable/apps/labplot-TeX-logo.svg
+share/icons/hicolor/scalable/apps/labplot-auto-scale-all.svg
+share/icons/hicolor/scalable/apps/labplot-auto-scale-x.svg
+share/icons/hicolor/scalable/apps/labplot-auto-scale-y.svg
+share/icons/hicolor/scalable/apps/labplot-axis-horizontal.svg
+share/icons/hicolor/scalable/apps/labplot-axis-vertical.svg
+share/icons/hicolor/scalable/apps/labplot-back.svg
+share/icons/hicolor/scalable/apps/labplot-cursor-arrow.svg
+share/icons/hicolor/scalable/apps/labplot-editbreaklayout.svg
+share/icons/hicolor/scalable/apps/labplot-editgrid.svg
+share/icons/hicolor/scalable/apps/labplot-edithlayout.svg
+share/icons/hicolor/scalable/apps/labplot-editvlayout.svg
+share/icons/hicolor/scalable/apps/labplot-format-text-symbol.svg
+share/icons/hicolor/scalable/apps/labplot-forward.svg
+share/icons/hicolor/scalable/apps/labplot-json-array.svg
+share/icons/hicolor/scalable/apps/labplot-json-object.svg
+share/icons/hicolor/scalable/apps/labplot-kaggle.svg
+share/icons/hicolor/scalable/apps/labplot-matrix-new.svg
+share/icons/hicolor/scalable/apps/labplot-matrix.svg
+share/icons/hicolor/scalable/apps/labplot-maximize.svg
+share/icons/hicolor/scalable/apps/labplot-minimize.svg
+share/icons/hicolor/scalable/apps/labplot-plot-axis-points.svg
+share/icons/hicolor/scalable/apps/labplot-shift-down-y.svg
+share/icons/hicolor/scalable/apps/labplot-shift-left-x.svg
+share/icons/hicolor/scalable/apps/labplot-shift-right-x.svg
+share/icons/hicolor/scalable/apps/labplot-shift-up-y.svg
+share/icons/hicolor/scalable/apps/labplot-spreadsheet-new.svg
+share/icons/hicolor/scalable/apps/labplot-spreadsheet.svg
+share/icons/hicolor/scalable/apps/labplot-transform-move.svg
+share/icons/hicolor/scalable/apps/labplot-workbook-new.svg
+share/icons/hicolor/scalable/apps/labplot-workbook.svg
+share/icons/hicolor/scalable/apps/labplot-worksheet-new.svg
+share/icons/hicolor/scalable/apps/labplot-worksheet.svg
+share/icons/hicolor/scalable/apps/labplot-xy-curve-points.svg
+share/icons/hicolor/scalable/apps/labplot-xy-curve-segments.svg
+share/icons/hicolor/scalable/apps/labplot-xy-curve.svg
+share/icons/hicolor/scalable/apps/labplot-xy-equation-curve.svg
+share/icons/hicolor/scalable/apps/labplot-xy-fit-curve.svg
+share/icons/hicolor/scalable/apps/labplot-xy-plot-four-axes.svg
+share/icons/hicolor/scalable/apps/labplot-xy-plot-two-axes-centered-origin.svg
+share/icons/hicolor/scalable/apps/labplot-xy-plot-two-axes-centered.svg
+share/icons/hicolor/scalable/apps/labplot-xy-plot-two-axes.svg
+share/icons/hicolor/scalable/apps/labplot-zoom-in-x.svg
+share/icons/hicolor/scalable/apps/labplot-zoom-in-y.svg
+share/icons/hicolor/scalable/apps/labplot-zoom-out-x.svg
+share/icons/hicolor/scalable/apps/labplot-zoom-out-y.svg
+share/icons/hicolor/scalable/apps/labplot-zoom-select-x.svg
+share/icons/hicolor/scalable/apps/labplot-zoom-select-y.svg
+share/icons/hicolor/scalable/apps/labplot-zoom-select.svg
+share/icons/hicolor/scalable/apps/labplot-zoom.svg
+share/icons/hicolor/scalable/apps/labplot.svgz
+share/icons/hicolor/scalable/apps/org.kde.labplot.svg
+%%DATADIR%%/application-x-labplot.ico
+%%DATADIR%%/color-schemes/Breeze.colors
+%%DATADIR%%/color-schemes/BreezeDark.colors
+%%DATADIR%%/color-schemes/BreezeHighContrast.colors
+%%DATADIR%%/color-schemes/Dracula.colors
+%%DATADIR%%/color-schemes/Honeycomb.colors
+%%DATADIR%%/color-schemes/Norway.colors
+%%DATADIR%%/color-schemes/ObsidianCoast.colors
+%%DATADIR%%/color-schemes/Oxygen.colors
+%%DATADIR%%/color-schemes/OxygenCold.colors
+%%DATADIR%%/color-schemes/Steel.colors
+%%DATADIR%%/color-schemes/WontonSoup.colors
+%%DATADIR%%/color-schemes/Zion.colors
+%%DATADIR%%/color-schemes/ZionReversed.colors
+%%DATADIR%%/colormaps/ColorBrewer (Diverging).json
+%%DATADIR%%/colormaps/ColorBrewer (Qualitative).json
+%%DATADIR%%/colormaps/ColorBrewer (Sequential).json
+%%DATADIR%%/colormaps/ColorCET (Colour Blind).json
+%%DATADIR%%/colormaps/ColorCET (Cyclic).json
+%%DATADIR%%/colormaps/ColorCET (Diverging).json
+%%DATADIR%%/colormaps/ColorCET (Isoluminant).json
+%%DATADIR%%/colormaps/ColorCET (Linear).json
+%%DATADIR%%/colormaps/ColorCET (Rainbow).json
+%%DATADIR%%/colormaps/ColormapCollections.json
+%%DATADIR%%/colormaps/Diverging Color Maps for Scientific Visualization.json
+%%DATADIR%%/colormaps/Dracula (Categorical).json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Cyclic).json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Diverging).json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Multi-sequential).json
+%%DATADIR%%/colormaps/Scientific Colour Maps (Sequential).json
+%%DATADIR%%/colormaps/cmocean (Circular).json
+%%DATADIR%%/colormaps/cmocean (Diverging).json
+%%DATADIR%%/colormaps/cmocean (Multi-sequential).json
+%%DATADIR%%/colormaps/cmocean (Sequential).json
+%%DATADIR%%/colormaps/viridis (Sequential).json
+%%DATADIR%%/datasets/DASL.json
+%%DATADIR%%/datasets/DatasetCategories.json
+%%DATADIR%%/datasets/DatasetCollections.json
+%%DATADIR%%/datasets/JSEDataArchive.json
+%%DATADIR%%/datasets/OzDASL.json
+%%DATADIR%%/datasets/README.md
+%%DATADIR%%/datasets/Rdatasets.json
+%%DATADIR%%/datasets/StatLib.json
+%%DATADIR%%/datasets/seaborn.json
+%%DATADIR%%/examples/Analysis/Fit/ENSO.lml
+%%DATADIR%%/examples/Analysis/Fit/NIST - Linear Regression.lml
+%%DATADIR%%/examples/Analysis/Fit/NIST - Nonlinear Regression.lml
+%%DATADIR%%/examples/Analysis/Fourier Filter/SOS Morse Signal.lml
+%%DATADIR%%/examples/Analysis/Hilbert Transformation/Time response of a super regenerative receiver.lml
+%%DATADIR%%/examples/Analysis/Smooth/Data = Smooth + Rough.lml
+%%DATADIR%%/examples/Computing/Maxima/Duffing Oscillator in Maxima.lml
+%%DATADIR%%/examples/Computing/Maxima/Maxima Tutorial for Beginners.lml
+%%DATADIR%%/examples/ExampleCollections.json
+%%DATADIR%%/examples/General/Anatomy of a Box Plot.lml
+%%DATADIR%%/examples/General/Basic Plots.lml
+%%DATADIR%%/examples/General/Helium Rydberg Spectrum.lml
+%%DATADIR%%/examples/General/Hertzsprung-Russel Diagram.lml
+%%DATADIR%%/examples/General/Logarithmic Scales.lml
+%%DATADIR%%/examples/General/Mathematical Functions.lml
+%%DATADIR%%/examples/General/Multi-Ranges.lml
+%%DATADIR%%/examples/General/Multicopter.lml
+%%DATADIR%%/examples/General/SLOC History.lml
+%%DATADIR%%/examples/General/Space Debris.lml
+%%DATADIR%%/examples/General/Tufte's Minimal Ink Design.lml
+%%DATADIR%%/examples/Statistics/Language Learning - Percent Correct PBC.lml
+%%DATADIR%%/examples/Statistics/PBC Examples (Wheeler and Montgomery).lml
+%%DATADIR%%/examples/Statistics/Same Data, Different Boxplots.lml
+%%DATADIR%%/examples/Statistics/SameStats.lml
+%%DATADIR%%/labplot.ico
+%%DATADIR%%/latex/preview.sty
+%%DATADIR%%/pics/colorchooser/colorchooser_hue.xpm
+%%DATADIR%%/pics/colorchooser/colorchooser_saturation.xpm
+%%DATADIR%%/pics/colorchooser/colorchooser_value.xpm
+%%DATADIR%%/pics/fit_models/alg_sigmoid.pdf
+%%DATADIR%%/pics/fit_models/atan.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz1.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz2.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz3.pdf
+%%DATADIR%%/pics/fit_models/cauchy_lorentz4.pdf
+%%DATADIR%%/pics/fit_models/erf.pdf
+%%DATADIR%%/pics/fit_models/exponential1.pdf
+%%DATADIR%%/pics/fit_models/exponential2.pdf
+%%DATADIR%%/pics/fit_models/exponential3.pdf
+%%DATADIR%%/pics/fit_models/exponential4.pdf
+%%DATADIR%%/pics/fit_models/fourier1.pdf
+%%DATADIR%%/pics/fit_models/fourier2.pdf
+%%DATADIR%%/pics/fit_models/fourier3.pdf
+%%DATADIR%%/pics/fit_models/fourier4.pdf
+%%DATADIR%%/pics/fit_models/gaussian1.pdf
+%%DATADIR%%/pics/fit_models/gaussian2.pdf
+%%DATADIR%%/pics/fit_models/gaussian3.pdf
+%%DATADIR%%/pics/fit_models/gaussian4.pdf
+%%DATADIR%%/pics/fit_models/gd.pdf
+%%DATADIR%%/pics/fit_models/gompertz.pdf
+%%DATADIR%%/pics/fit_models/hill.pdf
+%%DATADIR%%/pics/fit_models/inv_exponential1.pdf
+%%DATADIR%%/pics/fit_models/logistic1.pdf
+%%DATADIR%%/pics/fit_models/logistic2.pdf
+%%DATADIR%%/pics/fit_models/logistic3.pdf
+%%DATADIR%%/pics/fit_models/logistic4.pdf
+%%DATADIR%%/pics/fit_models/logistic_function.pdf
+%%DATADIR%%/pics/fit_models/polynom1.pdf
+%%DATADIR%%/pics/fit_models/polynom2.pdf
+%%DATADIR%%/pics/fit_models/polynom3.pdf
+%%DATADIR%%/pics/fit_models/polynom4.pdf
+%%DATADIR%%/pics/fit_models/power1.pdf
+%%DATADIR%%/pics/fit_models/power2.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt11.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt12.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt13.pdf
+%%DATADIR%%/pics/fit_models/pseudovoigt14.pdf
+%%DATADIR%%/pics/fit_models/sech1.pdf
+%%DATADIR%%/pics/fit_models/sech2.pdf
+%%DATADIR%%/pics/fit_models/sech3.pdf
+%%DATADIR%%/pics/fit_models/sech4.pdf
+%%DATADIR%%/pics/fit_models/tanh.pdf
+%%DATADIR%%/pics/fit_models/voigt1.pdf
+%%DATADIR%%/pics/fit_models/voigt2.pdf
+%%DATADIR%%/pics/fit_models/voigt3.pdf
+%%DATADIR%%/pics/fit_models/voigt4.pdf
+%%DATADIR%%/pics/gsl_distributions/bernoulli.pdf
+%%DATADIR%%/pics/gsl_distributions/beta.pdf
+%%DATADIR%%/pics/gsl_distributions/binomial.pdf
+%%DATADIR%%/pics/gsl_distributions/cauchy_lorentz.pdf
+%%DATADIR%%/pics/gsl_distributions/chi_squared.pdf
+%%DATADIR%%/pics/gsl_distributions/exponential.pdf
+%%DATADIR%%/pics/gsl_distributions/exponential_power.pdf
+%%DATADIR%%/pics/gsl_distributions/fdist.pdf
+%%DATADIR%%/pics/gsl_distributions/flat.pdf
+%%DATADIR%%/pics/gsl_distributions/frechet.pdf
+%%DATADIR%%/pics/gsl_distributions/gamma.pdf
+%%DATADIR%%/pics/gsl_distributions/gaussian.pdf
+%%DATADIR%%/pics/gsl_distributions/gaussian_tail.pdf
+%%DATADIR%%/pics/gsl_distributions/geometric.pdf
+%%DATADIR%%/pics/gsl_distributions/gumbel1.pdf
+%%DATADIR%%/pics/gsl_distributions/gumbel2.pdf
+%%DATADIR%%/pics/gsl_distributions/hypergeometric.pdf
+%%DATADIR%%/pics/gsl_distributions/landau.pdf
+%%DATADIR%%/pics/gsl_distributions/laplace.pdf
+%%DATADIR%%/pics/gsl_distributions/levy.pdf
+%%DATADIR%%/pics/gsl_distributions/levy_alpha_stable.pdf
+%%DATADIR%%/pics/gsl_distributions/levy_skew_alpha_stable.pdf
+%%DATADIR%%/pics/gsl_distributions/logarithmic.pdf
+%%DATADIR%%/pics/gsl_distributions/logistic.pdf
+%%DATADIR%%/pics/gsl_distributions/lognormal.pdf
+%%DATADIR%%/pics/gsl_distributions/maxwell_boltzmann.pdf
+%%DATADIR%%/pics/gsl_distributions/negative_binomial.pdf
+%%DATADIR%%/pics/gsl_distributions/pareto.pdf
+%%DATADIR%%/pics/gsl_distributions/pascal.pdf
+%%DATADIR%%/pics/gsl_distributions/poisson.pdf
+%%DATADIR%%/pics/gsl_distributions/rayleigh.pdf
+%%DATADIR%%/pics/gsl_distributions/rayleigh_tail.pdf
+%%DATADIR%%/pics/gsl_distributions/sech.pdf
+%%DATADIR%%/pics/gsl_distributions/students_t.pdf
+%%DATADIR%%/pics/gsl_distributions/weibull.pdf
+%%DATADIR%%/splash.png
+%%DATADIR%%/themes/BlackOnLightYellow
+%%DATADIR%%/themes/BlackOnWhite
+%%DATADIR%%/themes/BlueOnBlack
+%%DATADIR%%/themes/Bright
+%%DATADIR%%/themes/Creme
+%%DATADIR%%/themes/Dark
+%%DATADIR%%/themes/DarkPastels
+%%DATADIR%%/themes/Default
+%%DATADIR%%/themes/Dracula
+%%DATADIR%%/themes/GgplotDark
+%%DATADIR%%/themes/GgplotGrey
+%%DATADIR%%/themes/GreenOnBlack
+%%DATADIR%%/themes/GreyOnBlack
+%%DATADIR%%/themes/GreySlate
+%%DATADIR%%/themes/Monokai
+%%DATADIR%%/themes/RedOnBlack
+%%DATADIR%%/themes/Solarized
+%%DATADIR%%/themes/SolarizedLight
+%%DATADIR%%/themes/Sparkline
+%%DATADIR%%/themes/Tufte
+%%DATADIR%%/themes/screenshots/BlackOnLightYellow.png
+%%DATADIR%%/themes/screenshots/BlackOnWhite.png
+%%DATADIR%%/themes/screenshots/BlueOnBlack.png
+%%DATADIR%%/themes/screenshots/Bright.png
+%%DATADIR%%/themes/screenshots/Creme.png
+%%DATADIR%%/themes/screenshots/Dark.png
+%%DATADIR%%/themes/screenshots/DarkPastels.png
+%%DATADIR%%/themes/screenshots/Default.png
+%%DATADIR%%/themes/screenshots/Dracula.png
+%%DATADIR%%/themes/screenshots/GgplotDark.png
+%%DATADIR%%/themes/screenshots/GgplotGrey.png
+%%DATADIR%%/themes/screenshots/GreenOnBlack.png
+%%DATADIR%%/themes/screenshots/GreyOnBlack.png
+%%DATADIR%%/themes/screenshots/GreySlate.png
+%%DATADIR%%/themes/screenshots/Monokai.png
+%%DATADIR%%/themes/screenshots/RedOnBlack.png
+%%DATADIR%%/themes/screenshots/Solarized.png
+%%DATADIR%%/themes/screenshots/SolarizedLight.png
+%%DATADIR%%/themes/screenshots/Sparkline.png
+%%DATADIR%%/themes/screenshots/Tufte.png
+%%DATADIR%%/themes/screenshots/Unavailable.png
+share/locale/ar/LC_MESSAGES/labplot.mo
+share/locale/ca/LC_MESSAGES/labplot.mo
+share/locale/ca@valencia/LC_MESSAGES/labplot.mo
+share/locale/cs/LC_MESSAGES/labplot.mo
+share/locale/de/LC_MESSAGES/labplot.mo
+share/locale/es/LC_MESSAGES/labplot.mo
+share/locale/eu/LC_MESSAGES/labplot.mo
+share/locale/fi/LC_MESSAGES/labplot.mo
+share/locale/fr/LC_MESSAGES/labplot.mo
+share/locale/gl/LC_MESSAGES/labplot.mo
+share/locale/it/LC_MESSAGES/labplot.mo
+share/locale/ka/LC_MESSAGES/labplot.mo
+share/locale/nl/LC_MESSAGES/labplot.mo
+share/locale/pl/LC_MESSAGES/labplot.mo
+share/locale/pt_BR/LC_MESSAGES/labplot.mo
+share/locale/sl/LC_MESSAGES/labplot.mo
+share/locale/sv/LC_MESSAGES/labplot.mo
+share/locale/tr/LC_MESSAGES/labplot.mo
+share/locale/uk/LC_MESSAGES/labplot.mo
+share/locale/zh_CN/LC_MESSAGES/labplot.mo
+share/man/man1/labplot.1.gz
+share/metainfo/org.kde.labplot.appdata.xml
+share/mime/packages/labplot.xml

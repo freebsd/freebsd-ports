@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2024-04-05 07:42:05 UTC
++++ CMakeLists.txt
+@@ -17,11 +17,13 @@ set(CMAKE_AUTOUIC ON)
+ set(CMAKE_AUTOUIC ON)
+ 
+ # This will find the Qt files.
++if (USE_QT6)
+ find_package(Qt6 COMPONENTS Core Widgets Xml OpenGL OpenGLWidgets)
+ if (Qt6_FOUND)
+     message("Building with Qt6")
+-    set(QtLibs Qt::Core Qt::Widgets Qt::Xml Qt::OpenGL Qt::OpenGLWidgets)
+-else()
++    set(QtLibs Qt::Core Qt::Widgets Qt::Xml Qt::OpenGL Qt::OpenGLWidgets)
++endif(Qt6_FOUND)
++else(USE_QT6)
+     find_package(Qt5 5.15 REQUIRED COMPONENTS Core Widgets Xml OpenGL)
+     message("Building with Qt5")
+     set(QtLibs Qt::Core Qt::Widgets Qt::Xml Qt::OpenGL)

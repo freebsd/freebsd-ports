@@ -1,0 +1,23 @@
+--- ./images/Makefile.in.orig	2004-11-21 02:59:21.000000000 +0000
++++ ./images/Makefile.in	2014-01-15 20:22:48.000000000 +0000
+@@ -51,16 +51,14 @@
+ install-only:
+ 	for i in `ls $(srcdir)/*.gif `; do \
+ 		echo $$i; \
+-		$(INSTALL_DATA) $(srcdir)/$$i $(imagesdir); \
++		$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(imagesdir); \
+ 	done
+ 	for i in `ls $(srcdir)/*.bmp `; do \
+ 		echo $$i; \
+-		$(INSTALL_DATA) $(srcdir)/$$i $(imagesdir); \
++		$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(imagesdir); \
+ 	done
+-	chown $(GAMEUID) $(imagesdir) $(imagesdir)/*
+-	chgrp $(GAMEGRP) $(imagesdir) $(imagesdir)/*
+-	chmod $(DIRPERM) $(imagesdir)
+-	chmod $(FILEPERM) $(imagesdir)/*
++	chmod $(DIRPERM) $(DESTDIR)$(imagesdir)
++	chmod $(FILEPERM) $(DESTDIR)$(imagesdir)/*
+ 
+ clean:
+ 

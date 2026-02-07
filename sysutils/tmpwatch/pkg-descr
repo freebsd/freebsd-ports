@@ -1,0 +1,6 @@
+The tmpwatch utility recursively searches through specified
+directories and removes files which have not been accessed in a
+specified period of time.  Tmpwatch is normally used to clean up
+directories which are used for temporarily holding files (for example,
+/tmp).  Tmpwatch ignores symlinks, won't switch filesystems and only
+removes empty directories and regular files.

@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: VTK
+Version: %%PORTVERSION%%
+Summary: 3-D computer graphics, image processing, and visualization
+Home-page: 
+Author: 
+Author-email: 
+License: BSD
+Download-URL: http://www.vtk.org/
+Description: The Visualization Toolkit (VTK) is an open source, freely
+        available software system for 3D computer graphics, modeling,
+        image processing, volume rendering, scientific visualization and
+        information visualization.
+Platform: UNKNOWN

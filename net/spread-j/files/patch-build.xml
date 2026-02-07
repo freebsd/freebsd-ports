@@ -1,0 +1,10 @@
+--- build.xml.orig	2008-04-16 20:55:56.000000000 +0200
++++ build.xml	2008-04-16 20:56:01.000000000 +0200
+@@ -12,7 +12,6 @@
+         <property name="project" value="spread"/>
+         <property name="title" value="${Name} ${version} API for Java"/>
+         <property name="year" value="2004"/>
+-        <property name="build.compiler" value="jikes"/>
+         <property name="build.dir" value="dest"/>
+         <property name="build.src" value="${build.dir}/src"/>
+         <property name="build.dest" value="${build.dir}/class"/>

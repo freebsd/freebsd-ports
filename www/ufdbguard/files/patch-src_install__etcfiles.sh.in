@@ -1,0 +1,35 @@
+--- src/install_etcfiles.sh.in.orig	2024-03-22 12:30:31 UTC
++++ src/install_etcfiles.sh.in
+@@ -22,19 +22,6 @@ else
+    DESTDIR=""
+ fi
+ 
+-# the installer must be root to install files under /etc and we check for this
+-# but the exception is rpmbuild.  When a package is made using rpmbuild,
+-# it is comon practise to _NOT_ run the install as root.
+-ID=`id -un`
+-if [ "$ID" != root  -a  $PKGNAME != ufdbGuard ]
+-then
+-   echo
+-   echo "***  You must be root but you appear to be $ID. ***"
+-   echo "The ufdb startup script cannot be installed..."
+-   echo
+-   exit 1
+-fi
+-
+ OS="@ufdb_os_type@"
+ INITDIR="@ufdb_initdir@"
+ 
+@@ -293,12 +280,10 @@ fix_piddir_permissions () {
+ 
+ 
+ case $OS in
+-   freebsd)       install_freebsd ;;
+    openbsd)       install_openbsd ;;
+    linux_systemd) install_linux_systemd ;;
+    smoothwall)    install_smoothwall ;;
+    solaris_smf)   install_solaris_smf ;;
+-   *) 		  install_unix ;;
+ esac
+ 
+ 

@@ -1,0 +1,6 @@
+Moose classes (and some other classes) distinguish between an attribute being
+unset and the attribute being set to undef.
+
+To ensure that the Person constructor does not try to set a name or age at all
+when they are undefined, ugly looking code is often used. A slightly more
+elegant solution is the maybe function.

@@ -1,0 +1,4 @@
+This module provides a few useful functions for manipulating module
+names. Its main aim is to centralise some of the functions commonly used
+by modules that manipulate other modules in some way, like converting
+module names to relative paths.

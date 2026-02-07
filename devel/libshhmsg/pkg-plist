@@ -1,0 +1,7 @@
+include/shhmsg.h
+lib/libshhmsg.a
+lib/libshhmsg.so
+lib/libshhmsg.so.1
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/shhmsg.txt

@@ -1,0 +1,64 @@
+From a8fc78c1e28c55af83a57d97dff3f6a93c45b46c Mon Sep 17 00:00:00 2001
+From: Philippe Antoine <contact@catenacyber.fr>
+Date: Fri, 3 Sep 2021 09:29:36 +0200
+Subject: [PATCH] rust: use explicitily Integer::div_ceil
+
+cf https://github.com/rust-lang/rust/issues/88581
+---
+ src/biguint.rs         |  2 +-
+ src/biguint/convert.rs | 15 ++++++---------
+ 2 files changed, 7 insertions(+), 10 deletions(-)
+
+diff --git a/src/biguint.rs b/src/biguint.rs
+index 271a8837..623823c8 100644
+--- cargo-crates/num-bigint-0.3.2/src/biguint.rs
++++ cargo-crates/num-bigint-0.3.2/src/biguint.rs
+@@ -395,7 +395,7 @@ impl Roots for BigUint {
+                 // Try to guess by scaling down such that it does fit in `f64`.
+                 // With some (x * 2ⁿᵏ), its nth root ≈ (ⁿ√x * 2ᵏ)
+                 let extra_bits = bits - (core::f64::MAX_EXP as u64 - 1);
+-                let root_scale = extra_bits.div_ceil(&n64);
++                let root_scale = Integer::div_ceil(&extra_bits, &n64);
+                 let scale = root_scale * n64;
+                 if scale < bits && bits - scale > n64 {
+                     (self >> scale).nth_root(n) << root_scale
+diff --git a/src/biguint/convert.rs b/src/biguint/convert.rs
+index edeed84c..799152d5 100644
+--- cargo-crates/num-bigint-0.3.2/src/biguint/convert.rs
++++ cargo-crates/num-bigint-0.3.2/src/biguint/convert.rs
+@@ -65,9 +65,8 @@ fn from_inexact_bitwise_digits_le(v: &[u8], bits: u8) -> BigUint {
+     debug_assert!(!v.is_empty() && bits <= 8 && big_digit::BITS % bits != 0);
+     debug_assert!(v.iter().all(|&c| BigDigit::from(c) < (1 << bits)));
+ 
+-    let big_digits = (v.len() as u64)
+-        .saturating_mul(bits.into())
+-        .div_ceil(&big_digit::BITS.into())
++    let big_digits = (v.len() as u64).saturating_mul(bits.into());
++    let big_digits = Integer::div_ceil(&big_digits, &big_digit::BITS.into())
+         .to_usize()
+         .unwrap_or(core::usize::MAX);
+     let mut data = Vec::with_capacity(big_digits);
+@@ -580,9 +579,8 @@ pub(super) fn to_bitwise_digits_le(u: &BigUint, bits: u8) -> Vec<u8> {
+     let last_i = u.data.len() - 1;
+     let mask: BigDigit = (1 << bits) - 1;
+     let digits_per_big_digit = big_digit::BITS / bits;
+-    let digits = u
+-        .bits()
+-        .div_ceil(&u64::from(bits))
++    let digits = u.bits();
++    let digits = Integer::div_ceil(&digits, &u64::from(bits))
+         .to_usize()
+         .unwrap_or(core::usize::MAX);
+     let mut res = Vec::with_capacity(digits);
+@@ -608,9 +606,8 @@ fn to_inexact_bitwise_digits_le(u: &BigUint, bits: u8) -> Vec<u8> {
+     debug_assert!(!u.is_zero() && bits <= 8 && big_digit::BITS % bits != 0);
+ 
+     let mask: BigDigit = (1 << bits) - 1;
+-    let digits = u
+-        .bits()
+-        .div_ceil(&u64::from(bits))
++    let digits = u.bits();
++    let digits = Integer::div_ceil(&digits, &u64::from(bits))
+         .to_usize()
+         .unwrap_or(core::usize::MAX);
+     let mut res = Vec::with_capacity(digits);

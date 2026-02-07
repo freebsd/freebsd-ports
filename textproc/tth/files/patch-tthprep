@@ -1,0 +1,11 @@
+--- tthprep.orig	2025-11-03 23:36:21 UTC
++++ tthprep
+@@ -7,7 +7,7 @@ if ls $1 ; then
+ 	if cp $1 tth_temp.tex  ; then
+ 	echo "Copying latex file to:" 
+ 	if ls tth_temp.tex  ; then
+-		sed -e '/\\document/r tthprep.sty' tth_temp.tex > $1
++		sed -e '/\\document/r %%DATADIR%%/styles/tthprep.sty' tth_temp.tex > $1
+ #		cat tth_prep.tex tth_temp.tex > $1
+ 		echo "Running Latex twice on temporarily modified file:"
+ 		ls $1

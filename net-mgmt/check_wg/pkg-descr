@@ -1,0 +1,4 @@
+Icinga2 health check of wireguard peers, using output of wg(8).
+
+It analizes latest handshake of every peer and outputs warning or critical
+status if any of them is greater of given threshold.

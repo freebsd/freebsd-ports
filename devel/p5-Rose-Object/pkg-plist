@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Rose/Class.pm
+%%SITE_PERL%%/Rose/Class/MakeMethods/Generic.pm
+%%SITE_PERL%%/Rose/Class/MakeMethods/Set.pm
+%%SITE_PERL%%/Rose/Object.pm
+%%SITE_PERL%%/Rose/Object/MakeMethods.pm
+%%SITE_PERL%%/Rose/Object/MakeMethods/DateTime.pm
+%%SITE_PERL%%/Rose/Object/MakeMethods/Generic.pm
+%%SITE_PERL%%/Rose/Object/MixIn.pm
+%%PERL5_MAN3%%/Rose::Class.3.gz
+%%PERL5_MAN3%%/Rose::Class::MakeMethods::Generic.3.gz
+%%PERL5_MAN3%%/Rose::Class::MakeMethods::Set.3.gz
+%%PERL5_MAN3%%/Rose::Object.3.gz
+%%PERL5_MAN3%%/Rose::Object::MakeMethods.3.gz
+%%PERL5_MAN3%%/Rose::Object::MakeMethods::DateTime.3.gz
+%%PERL5_MAN3%%/Rose::Object::MakeMethods::Generic.3.gz
+%%PERL5_MAN3%%/Rose::Object::MixIn.3.gz

@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Wayland requires XDG_RUNTIME_DIR to be defined to a path that will
+contain "wayland-%d" unix(4) sockets. This is usually handled by
+consolekit2 (via ck-launch-session) or pam_xdg (via login).
+EOM
+}
+]

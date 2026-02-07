@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: musicpd
+# REQUIRE: mixer LOGIN avahi_daemon oss
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable mpd:
+#
+# musicpd_enable=YES
+
+. /etc/rc.subr
+
+name=musicpd
+rcvar=musicpd_enable
+desc="Music Player Daemon"
+
+load_rc_config $name
+
+: ${musicpd_enable:=NO}
+
+command=%%PREFIX%%/bin/musicpd
+command_args=%%PREFIX%%/etc/musicpd.conf
+required_files=%%PREFIX%%/etc/musicpd.conf
+start_precmd=${name}_getpidfile
+stop_precmd=${name}_getpidfile
+
+musicpd_getpidfile()
+{
+	if get_pidfile_from_conf pid_file %%PREFIX%%/etc/musicpd.conf ; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile="/var/mpd/.mpd/pid"
+	fi
+}
+
+run_rc_command $1

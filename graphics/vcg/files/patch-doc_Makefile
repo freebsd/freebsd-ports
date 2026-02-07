@@ -1,0 +1,20 @@
+--- 1.1	1995/02/18 16:57:50
++++ doc/Makefile	1995/02/18 16:58:35
+@@ -72,7 +72,7 @@
+ 
+ 
+ # RCS Version control stuff
+-	
++
+ $(SOURCES):
+ 	$(CHECKOUT) $@
+ 
+@@ -87,7 +87,7 @@
+ 
+ clean:
+ 	$(RM) -f *.aux *.toc *.log *.lof *.lot *.spell tmp* core
+- 
++
+ veryclean: clean
+ 	$(RM) -f *.dvi 
+ 

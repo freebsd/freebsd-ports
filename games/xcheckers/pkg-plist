@@ -1,0 +1,8 @@
+bin/simplech
+bin/xcheckers
+share/man/man6/simplech.6.gz
+share/man/man6/xcheckers.6.gz
+%%DATADIR%%/big.xpm
+%%DATADIR%%/scene.xpm
+%%DATADIR%%/stars.xpm
+lib/X11/app-defaults/XCheckers

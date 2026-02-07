@@ -1,0 +1,9 @@
+TIMESTAMP = 1750957345
+SHA256 (biojppm-c4core-v0.2.6_GH0.tar.gz) = a8877d95198da5efe30624a861bab5089ab67b4228e0ebce25c30f080298c981
+SIZE (biojppm-c4core-v0.2.6_GH0.tar.gz) = 1453607
+SHA256 (biojppm-cmake-e87e11f_GH0.tar.gz) = a68e1ed2b92bab8111ce9de0fb21202af6e5e5c9a1b3f9e8c35a0a57d322b41b
+SIZE (biojppm-cmake-e87e11f_GH0.tar.gz) = 145370
+SHA256 (biojppm-debugbreak-328e4ab_GH0.tar.gz) = 7b0cc87a9bc52242755a26df3bea471b29adf9ace075b065cd2b7d8d7f06abe7
+SIZE (biojppm-debugbreak-328e4ab_GH0.tar.gz) = 7033
+SHA256 (biojppm-fast_float-d28a332_GH0.tar.gz) = edd36543fe3dcdf91132c33ce9f91500d9bcaf9ede8bc499cb8ef8a4b2755a0f
+SIZE (biojppm-fast_float-d28a332_GH0.tar.gz) = 120963

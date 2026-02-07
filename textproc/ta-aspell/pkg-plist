@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/ta.dat
+lib/aspell-%%VER%%/u-taml.cmap
+lib/aspell-%%VER%%/u-taml.cset
+share/aspell/ta.multi
+share/aspell/ta.rws
+share/aspell/tamil.alias

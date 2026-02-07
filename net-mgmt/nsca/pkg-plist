@@ -1,0 +1,8 @@
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/LEGAL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%SERVER%%etc/nagios/nsca.cfg-sample
+%%SERVER%%sbin/nsca
+%%CLIENT%%etc/nagios/send_nsca.cfg-sample
+%%CLIENT%%sbin/send_nsca

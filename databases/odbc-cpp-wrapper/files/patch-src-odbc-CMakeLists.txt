@@ -1,0 +1,10 @@
+--- src/odbc/CMakeLists.txt.orig	2022-08-05 08:39:29 UTC
++++ src/odbc/CMakeLists.txt
+@@ -57,6 +57,7 @@ TARGET_COMPILE_DEFINITIONS(odbccpp_static
+         ODBC_STATIC
+ )
+ SET_PROPERTY(TARGET odbccpp_static PROPERTY POSITION_INDEPENDENT_CODE ON)
++SET_TARGET_PROPERTIES(odbccpp_static PROPERTIES OUTPUT_NAME "odbccpp")
+ 
+ # Shared library
+ ADD_LIBRARY(odbccpp

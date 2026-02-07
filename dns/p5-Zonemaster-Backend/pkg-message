@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+The Zonemaster Backend requires a database, PostgreSQL 16 recommended for
+production, but SQLite is adequate for testing.
+
+Refer to the documentation for setting up a suitable database, and testing.
+
+https://doc.zonemaster.net/latest/installation/zonemaster-backend.html#5-installation-on-freebsd
+EOM
+}
+]

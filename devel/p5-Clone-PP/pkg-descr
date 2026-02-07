@@ -1,0 +1,4 @@
+This module provides a general-purpose clone function to make deep
+copies of Perl data structures. It calls itself recursively to copy
+nested hash, array, scalar and reference types, including tied
+variables and objects.

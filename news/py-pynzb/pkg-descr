@@ -1,0 +1,6 @@
+NZB is an XML-based file format for retrieving posts from NNTP
+(Usenet) servers.
+
+Since NZB is XML-based, it's relatively easy to build one-off parsers
+to parse NZB files. This project is an attempt to consolidate those
+many one-off NZB parsers into one simple interface.

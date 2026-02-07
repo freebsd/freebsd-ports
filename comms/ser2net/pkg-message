@@ -1,0 +1,14 @@
+[
+{
+  type: upgrade
+  maximum_version: "4.6.4"
+  message: <<EOM
+Upgrading from before 4.6.4, old ser2net configuration is not supported anymore.
+You must convert the existing configuration into the new YAML format.
+See ser2net.yaml.sample and ser2net.yaml manpage for more details.
+
+Additional resources can be found on the following wiki page:
+https://wiki.freebsd.org/RodrigoOsorio/HowTo/Ser2Net
+EOM
+}
+]

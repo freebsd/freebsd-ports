@@ -1,0 +1,11 @@
+datapipe.c is a simple program that allows a listening TCP/IP port to be
+constructed on the machine it is running on.  Any connections to that port
+will then be forwarded to the specified remote host and remote port.  This
+program can be useful for allowing your Distributed.net clients
+communicate to the outside world by running it on a gateway machine that
+has access to both the inside firewall and the outside realworld.
+
+Additionally, if you live behind a SOCKS firewall, you can compile this
+code with SOCKS support for your system and use it to act as a
+"SOCKS translator" for your Distributed.net clients.  In this case,
+datapipe doesn't even need to be run on a gateway machine.

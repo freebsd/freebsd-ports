@@ -1,0 +1,166 @@
+{
+  "name": "teams-for-linux",
+  "version": "2.6.18",
+  "main": "app/index.js",
+  "description": "Unofficial client for Microsoft Teams for Linux",
+  "homepage": "https://github.com/IsmaelMartinez/teams-for-linux",
+  "keywords": [
+    "Teams",
+    "Microsoft Teams"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/IsmaelMartinez/teams-for-linux"
+  },
+  "author": {
+    "name": "Ismael Martinez",
+    "email": "ismaelmartinez@gmail.com",
+    "url": "https://github.com/IsmaelMartinez/"
+  },
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "lint": "eslint **/*.js",
+    "test:e2e": "playwright test",
+    "prestart": "npm ci",
+    "start": "electron ./app --trace-warnings",
+    "start:dev": "electron ./app --trace-warnings --no-sandbox",
+    "release:prepare": "node scripts/release-prepare.mjs",
+    "generate-release-info": "node scripts/generateReleaseInfo.js",
+    "generate-ipc-docs": "node scripts/generateIpcDocs.js",
+    "prebuild": "npm run generate-release-info",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:linux": "electron-builder --linux",
+    "dist:linux:targz": "electron-builder --x64 --armv7l --arm64 -l tar.gz",
+    "dist:linux:deb": "electron-builder --x64 --armv7l --arm64 -l deb",
+    "dist:linux:rpm": "electron-builder --x64 --armv7l --arm64 -l rpm",
+    "dist:linux:appimage": "electron-builder --x64 --armv7l --arm64 -l AppImage",
+    "dist:linux:snap": "electron-builder -l snap",
+    "dist:linux:snap:armv7l": "electron-builder --armv7l -l snap",
+    "dist:linux:snap:arm64": "electron-builder --arm64 -l snap",
+    "dist:mac:x64": "electron-builder --mac --x64",
+    "dist:mac:arm64": "electron-builder --mac --arm64",
+    "dist:windows": "electron-builder --windows --x64",
+    "dist:linux:x64": "electron-builder --x64 -l tar.gz deb rpm AppImage",
+    "dist:linux:arm64": "electron-builder --arm64 -l tar.gz deb rpm AppImage",
+    "dist:linux:arm": "electron-builder --armv7l -l tar.gz deb rpm AppImage",
+    "release": "electron-builder"
+  },
+  "dependencies": {
+    "@homebridge/dbus-native": "0.7.2",
+    "electron-log": "^5.4.3",
+    "electron-positioner": "^4.1.0",
+    "electron-store": "8.2.0",
+    "electron-window-state": "5.0.3",
+    "lodash": "^4.17.21",
+    "mqtt": "^5.10.1",
+    "node-sound": "^0.0.8",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@electron/fuses": "^2.0.0",
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.56.1",
+    "electron": "^37.9.0",
+    "electron-builder": "^26.1.0",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "http-server": "^14.1.1",
+    "xml2js": "^0.6.2"
+  },
+  "build": {
+    "appId": "teams-for-linux",
+    "asarUnpack": [
+      "node_modules/spellchecker/vendor/hunspell_dictionaries"
+    ],
+    "protocols": {
+      "name": "msteams",
+      "schemes": [
+        "msteams"
+      ]
+    },
+    "extraResources": [
+      {
+        "from": "app/assets/sounds",
+        "to": "assets/sounds"
+      }
+    ],
+    "linux": {
+      "category": "Chat;Network;Office",
+      "packageCategory": "net",
+      "executableName": "teams-for-linux",
+      "synopsis": "Teams for Linux",
+      "description": "Unofficial Microsoft Teams client for Linux using Electron. It uses the Web App and wraps it as a standalone application using Electron.",
+      "desktop": {
+        "entry": {
+          "Name": "Teams for Linux",
+          "Comment": "Unofficial client for Microsoft Teams for Linux"
+        }
+      },
+      "target": [
+        "rpm",
+        "deb",
+        "tar.gz",
+        "AppImage"
+      ],
+      "publish": {
+        "provider": "github",
+        "releaseType": "draft"
+      },
+      "releaseInfo": {
+        "releaseNotesFile": "release-info.json"
+      }
+    },
+    "rpm": {
+      "depends": [
+        "gtk3",
+        "libnotify",
+        "nss",
+        "libXScrnSaver",
+        "(libXtst or libXtst6)",
+        "xdg-utils",
+        "at-spi2-core",
+        "(libuuid or libuuid1)"
+      ],
+      "fpm": [
+        "--rpm-rpmbuild-define=_build_id_links  none",
+        "--rpm-digest=sha256"
+      ]
+    },
+    "snap": {
+      "summary": "Teams for Linux",
+      "confinement": "strict",
+      "grade": "stable",
+      "base": "core22",
+      "environment": {
+        "DISABLE_WAYLAND": 1
+      },
+      "plugs": [
+        "default",
+        "camera",
+        "screen-inhibit-control",
+        "upower-observe",
+        "audio-record",
+        "hardware-observe",
+        "network-bind",
+        "network-manager-observe",
+        "system-observe"
+      ],
+      "publish": [
+        "snapStore"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "extendInfo": {
+        "NSCameraUsageDescription": "We need camera access for video calls.",
+        "NSMicrophoneUsageDescription": "We need microphone access for audio."
+      },
+      "hardenedRuntime": true,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
+    },
+    "afterPack": "scripts/afterpack.js"
+  }
+}

@@ -1,0 +1,114 @@
+--- CONFIG.orig	1999-07-16 21:26:29 UTC
++++ CONFIG
+@@ -3,19 +3,19 @@ COPYRIGHT   = "Eugene G. Crosser, 1993-1
+ VERSION     = "2.15"
+ 
+ # Main configuration file. This default may be overwritten by -I key.
+-CONFIGFILE  = "/etc/ifmail/config"
++CONFIGFILE  = "%%PREFIX%%/etc/ifmail/config"
+ 
+ # Debug messages turned on by -x key are written here.
+ # Some error messages may occationally appear here too.
+ # This may be changed in the 'config' file.
+-DEBUGFILE   = "/var/log/ifmail/ifdebug"
++DEBUGFILE   = "/var/spool/ifmail/ifdebug"
+ 
+ # Procession log. Usually gets several lines for each invocation.
+ # Also look for error diagnostics here.  If HAS_SYSLOG defined,
+ # only stdout and stderr from the packers and unpackers go to this
+ # file, while actual logging is done via syslog() calls.
+ # This may be changed in the 'config' file.
+-LOGFILE     = "/var/log/ifmail/iflog"
++LOGFILE     = "/var/spool/ifmail/iflog"
+ 
+ # Use syslog() facility codes for mail gate, news gate and ifcico.
+ # Define -DHAS_SYSLOG (see below)
+@@ -27,13 +27,13 @@ NEWSLOG    = LOG_LOCAL0
+ CICOLOG    = LOG_LOCAL0
+ 
+ # Directory where UUCP lock files reside.
+-#LOCKDIR     = "/var/spool/uucp"
+-LOCKDIR     = "/var/lock"
++LOCKDIR     = "/var/spool/lock"
++#LOCKDIR     = "/var/lock"
+ 
+ # Directory from which file requests are resolved.
+ # This may be changed from the 'config' file.
+-#PUBDIR      = "/home/ftp/pub"
+-PUBDIR      = "/var/spool/uucppublic"
++PUBDIR      = "/home/ftp/pub"
++#PUBDIR      = "/var/spool/uucppublic"
+ 
+ # News spool directory (to check space only)
+ #NEWSSPOOL   = "/usr/spool/news"
+@@ -152,20 +152,20 @@ NEWSSPOOL   = "/var/spool/news"
+ # system, usually "-DINT32=long -DINT16=short"
+ 
+ # Linux/x86:  (remove -DHAS_BSD_SIGNALS if you have libc5 (not glibc2))
+-OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
+-		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
+-		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
+-		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
+-		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK -DHAS_BSD_SIGNALS \
+-		-DHAS_BSD_DB -DINT32=long -DINT16=short
++#OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
++#		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
++#		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
++#		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
++#		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK -DHAS_BSD_SIGNALS \
++#		-DHAS_BSD_DB -DINT32=long -DINT16=short
+ 
+ # 386BSD:
+-#OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
+-#		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
+-#		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
+-#		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
+-#		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
+-#		-DINT32=long -DINT16=short
++OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
++		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
++		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
++		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
++		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
++		-DINT32=long -DINT16=short
+ 
+ # SVR4:
+ #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
+@@ -222,7 +222,7 @@ OPTS        = -DHAS_STATFS -DSTATFS_IN_V
+ #		-DNEED_BSY -DSLAVE_SENDS_NAK_TOO -DINT32=int -DINT16=short
+ 
+ # for make install, where to put binaries and what owner to set
+-BINDIR = /usr/lib/ifmail
++BINDIR = ${DESTDIR}${PREFIX}/libexec/ifmail
+ OWNER = ifmail
+ GROUP = uucp
+ MODE = 0711
+@@ -242,7 +242,7 @@ AWK = awk
+ TAR = tar
+ 
+ #CFLAGS = -g -Wall
+-# Linux, 386BSD, SunOS:
++# Linux, 386BSD, FreeBSD, SunOS:
+ CFLAGS = -g -O2 -Wall
+ # SVR4:
+ #CFLAGS = -O -Xa
+@@ -261,7 +261,7 @@ LDFLAGS =
+ # Linux w/libc5
+ #LIBS = -lgdbm
+ # Linux w/glibc
+-LIBS = -lndbm
++#LIBS = -lndbm
+ # SunOS:
+ #LIBS =
+ # Solaris:
+@@ -276,6 +276,10 @@ LIBS = -lndbm
+ #LIBS = -lcposix -lmalloc -ldbm -linet -lPW
+ # NeXTSTEP
+ #LIBS = -lgdbm -lposix
++# FreeBsd:
++LDFLAGS = -L%%LOCALBASE%%/lib
++LIBS = -lgnuregex
++
+ 
+ INCLUDES = -I${INCDIR}
+ # ISC

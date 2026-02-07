@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2018-03-20 16:01:21 UTC
++++ Makefile.in
+@@ -49,11 +49,11 @@ install:	$(TARGET)
+ 		mkdir -p -m 755 $(DESTDIR)$(prefix)/share/doc/autossh
+ 		mkdir -p -m 755 $(DESTDIR)$(datadir)/examples/autossh
+ 		mkdir -p -m 755 $(DESTDIR)$(mandir)/man1
+-		cp $(TARGET) $(DESTDIR)$(bindir)
+-		cp CHANGES README $(DESTDIR)$(datadir)/doc/autossh
+-		cp autossh.host	$(DESTDIR)$(datadir)/examples/autossh
+-		cp rscreen $(DESTDIR)$(datadir)/examples/autossh
+-		cp autossh.1 $(DESTDIR)$(mandir)/man1
++		${BSD_INSTALL_PROGRAM} $(TARGET) $(DESTDIR)$(bindir)
++		${BSD_INSTALL_DATA} CHANGES README $(DESTDIR)$(datadir)/doc/autossh
++		${BSD_INSTALL_DATA} autossh.host $(DESTDIR)$(datadir)/examples/autossh
++		${BSD_INSTALL_DATA} rscreen $(DESTDIR)$(datadir)/examples/autossh
++		${BSD_INSTALL_MAN} autossh.1 $(DESTDIR)$(mandir)/man1
+ 		chmod 755 $(DESTDIR)$(bindir)/$(TARGET)
+ 		chmod 644 $(DESTDIR)$(datadir)/doc/autossh/CHANGES
+ 		chmod 644 $(DESTDIR)$(datadir)/doc/autossh/README

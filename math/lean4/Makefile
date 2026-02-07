@@ -1,0 +1,83 @@
+PORTNAME=	lean4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.25.2-20251201
+CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Theorem prover and functional language for math (new gen)
+WWW=		https://lean-lang.org/ \
+		https://github.com/leanprover/lean4
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_13=	compilation fails: error: use of undeclared identifier 'clearenv'
+BROKEN_armv7=	compilation fails: ../../.build/stage1/lib/temp/Init/Coe.depend: No such file or directory
+BROKEN_i386=	linking fails: INTERNAL PANIC: out of memory (during: Linking runLinter)
+
+BUILD_DEPENDS=	bash:shells/bash \
+		cadical:math/cadical
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libuv.so:devel/libuv
+RUN_DEPENDS=	cadical:math/cadical
+
+USES=		cmake:noninja,testing compiler:c++14-lang gmake pkgconfig python:build # ninja fails + gmake scripts are included in the project
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	leanprover
+GH_TAGNAME=	5e165e3
+
+CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
+
+CMAKE_OFF=	USE_MIMALLOC
+
+#MAKE_ARGS+=	V=1 VERBOSE=1
+MAKE_ENV=	LD_LIBRARY_PATH=${BUILD_WRKSRC}/stage0/lib/lean
+
+BINARY_ALIAS=	make=${GMAKE} python=${PYTHON_CMD}
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Please note that build Lean requires /proc to be mounted."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  The usual way to do this is to add this line to /etc/fstab:"
+	@${ECHO_MSG} "  proc /proc procfs rw 0 0"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  and then run this command as root:"
+	@${ECHO_MSG} "  # mount /proc"
+	@${ECHO_MSG} ""
+
+post-patch:
+	# Add weakLeancArgs = ["-fPIC"] to all test lakefile.toml files
+	@${FIND} ${WRKSRC}/tests -name "lakefile.toml" | while read f; do \
+		${GREP} -q "weakLeancArgs" "$$f" || \
+		( ${PRINTF} 'weakLeancArgs = ["-fPIC"]\n\n' | cat - "$$f" > "$$f.tmp" && ${MV} "$$f.tmp" "$$f" ); \
+	done
+	# Add weakLeancArgs to lakefile.lean files that define packages
+	@${FIND} ${WRKSRC}/tests -name "lakefile.lean" | while read f; do \
+		if ${GREP} -q "^package .* where" "$$f" && ! ${GREP} -q "weakLeancArgs" "$$f"; then \
+			${AWK} '/^package .* where$$/ {print; print "  weakLeancArgs := #[\"-fPIC\"]"; next} 1' "$$f" > "$$f.tmp" && ${MV} "$$f.tmp" "$$f"; \
+		fi; \
+	done
+
+post-install:
+	# remove empty dirs
+	@${FIND} ${STAGEDIR}${DATADIR} -type d -empty -delete
+	# remove stray files
+	@${RM} ${STAGEDIR}${PREFIX}/LICENSE*
+	# remove bin/cadical, workaround for https://github.com/leanprover/lean4/issues/5603
+	@${RM} ${STAGEDIR}${PREFIX}/bin/cadical
+	# strip binaries
+	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} \
+		bin/lake \
+		bin/lean \
+		bin/leanc \
+		lib/lean/libInit_shared.so \
+		lib/lean/libleanshared.so \
+		lib/lean/libleanshared_1.so \
+		lib/lean/libLake_shared.so
+
+# tests as of 4.25.2-20251201: 100% tests passed, 0 tests failed out of 3367
+
+.include <bsd.port.mk>

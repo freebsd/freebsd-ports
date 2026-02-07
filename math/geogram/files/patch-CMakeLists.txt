@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-06-14 05:04:18 UTC
++++ CMakeLists.txt
+@@ -141,7 +141,7 @@ endif()
+   add_subdirectory(tests)
+ endif()
+ 
+-add_subdirectory(doc)
++#add_subdirectory(doc)
+ 
+ ##############################################################################
+ # Cleanup from previous builds

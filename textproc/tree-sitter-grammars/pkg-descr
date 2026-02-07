@@ -1,0 +1,9 @@
+Collection of tree-sitter grammars
+
+Language support such as tokenizing and highlighting is provided by Tree-sitter.
+Each language requires a Tree-sitter grammar to have tokenization and queries
+to provide additional features such as syntax highlighting.
+
+Lapce has select few (Rust, JSON, TOML) grammars built-in for convenience.
+All other languages need to provide an externally loadable grammar in a form of
+shared library, which this port provides.

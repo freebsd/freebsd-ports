@@ -1,0 +1,27 @@
+--- etc/pam_script.orig	2017-08-10 17:20:16 UTC
++++ etc/pam_script
+@@ -21,7 +21,7 @@ PAMSCRIPTDIR=${PAMSCRIPTDIR:-$basedir/pam-script.d}
+ 
+ goodperms () {
+ 	local path="$1"
+-	stat_output=`/usr/bin/stat -c "%A:%u:%g" "$path"`
++	stat_output=`/usr/bin/stat -f "%SLp%SMp%SHp:%u:%g" "$path"`
+ 	if [ $? -ne 0 ]; then
+ 		echo "$0: Could not stat path $path" 1>&2
+ 		return 1
+@@ -106,13 +106,11 @@ rmlink () {
+ 	# $4 xpamscript
+ 
+ 	if [ x$1 = xlink ]; then
+-		(cd $PAMSCRIPTDIR;
+-			[ -e $4_$2 ] || [ -e $3 ] && \
++		([ -e $4_$2 ] || [ -e $3 ] && \
+ 			( [ $verbose = 1 ] && echo ln -s $3 $4_$2;
+ 			ln -s $3 $4_$2))
+ 	elif [ x$1 = xremove ]; then
+-		(cd $PAMSCRIPTDIR;
+-			[ -e $4_$2 ] && \
++		([ -e $4_$2 ] && \
+ 			( [ $verbose = 1 ] && echo rm -f $4_$2;
+ 			rm -f $4_$2))
+ 	fi

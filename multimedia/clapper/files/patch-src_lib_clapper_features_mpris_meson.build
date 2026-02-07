@@ -1,0 +1,11 @@
+--- src/lib/clapper/features/mpris/meson.build.orig	2025-01-06 06:18:43 UTC
++++ src/lib/clapper/features/mpris/meson.build
+@@ -5,7 +5,7 @@ endif
+ endif
+ 
+ # Known OSes that can support our MPRIS implementation
+-os_supported = ['linux'].contains(host_machine.system())
++os_supported = ['linux', 'freebsd'].contains(host_machine.system())
+ 
+ if not os_supported
+   if feature_option.enabled()

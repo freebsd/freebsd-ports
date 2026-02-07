@@ -1,0 +1,31 @@
+/usr/bin/ld: error: duplicate symbol: scan_ulong
+	>>> defined at scan_ulong.c
+	>>>            scan_ulong.o:(scan_ulong) in archive fs.a
+	>>> defined at scan_ulong.c
+	>>>            scan_ulong.o:(.text+0x0)
+
+--- Makefile.orig	2018-07-20 14:10:56 UTC
++++ Makefile
+@@ -37,8 +37,8 @@ scan.h fmt.h
+ 	./compile auto-gid.c
+ 
+ auto-int: \
+-load auto-int.o substdio.a error.a str.a fs.a
+-	./load auto-int substdio.a error.a str.a fs.a 
++load auto-int.o substdio.a error.a str.a fs.a scan_ulong.o
++	./load auto-int substdio.a error.a str.a fs.a scan_ulong.o
+ 
+ auto-int.o: \
+ compile auto-int.c substdio.h readwrite.h exit.h scan.h fmt.h
+@@ -609,9 +609,9 @@ strerr.h substdio.h fmt.h
+ 
+ fs.a: \
+ makelib fmt_str.o fmt_strn.o fmt_uint.o fmt_uint0.o fmt_ulong.o \
+-scan_ulong.o scan_8long.o
++scan_8long.o
+ 	./makelib fs.a fmt_str.o fmt_strn.o fmt_uint.o fmt_uint0.o \
+-	fmt_ulong.o scan_ulong.o scan_8long.o
++	fmt_ulong.o scan_8long.o
+ 
+ getln.a: \
+ makelib getln.o getln2.o

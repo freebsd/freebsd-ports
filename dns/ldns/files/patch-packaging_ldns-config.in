@@ -1,0 +1,11 @@
+--- packaging/ldns-config.in.orig	2021-11-16 13:49:37 UTC
++++ packaging/ldns-config.in
+@@ -4,7 +4,7 @@ prefix="@prefix@"
+ exec_prefix="@exec_prefix@"
+ VERSION="@PACKAGE_VERSION@"
+ CFLAGS="@CFLAGS@"
+-CPPFLAGS="@CPPFLAGS@ @LIBSSL_CPPFLAGS@"
++CPPFLAGS="@CPPFLAGS@ @LIBSSL_CPPFLAGS@ @PYTHON_CPPFLAGS@"
+ LDFLAGS="@LDFLAGS@ @LIBSSL_LDFLAGS@"
+ PYTHON_CPPFLAGS="@PYTHON_CPPFLAGS@"
+ PYTHON_LDFLAGS="@PYTHON_LDFLAGS@"

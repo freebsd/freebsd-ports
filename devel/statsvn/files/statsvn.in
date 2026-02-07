@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "%%JAVA%%" ${STATSVN_JAVA_ARGS} -jar "%%DATADIR%%/statsvn.jar" "$@"

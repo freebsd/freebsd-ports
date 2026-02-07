@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Start or stop gkrellmd
+
+# PROVIDE: gkrellmd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these gkrellmd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/gkrellmd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+gkrellmd_enable=${gkrellmd_enable:-"NO"}	# Enable gkrellmd
+#gkrellmd_program="%%PREFIX%%/sbin/gkrellmd"	# Location of gkrellmd
+gkrellmd_flags=${gkrellmd_flags:-"-d"}		# Flags to gkrellmd
+
+. /etc/rc.subr
+
+name="gkrellmd"
+rcvar=gkrellmd_enable
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+load_rc_config $name
+run_rc_command "$1"

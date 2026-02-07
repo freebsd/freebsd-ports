@@ -1,0 +1,3 @@
+hmmlearn is a set of algorithms for unsupervised learning and inference
+of Hidden Markov Models. For supervised learning learning of HMMs and
+similar models see seqlearn.

@@ -1,0 +1,7 @@
+JVim 3.0 is a text editor with upward-compatibility to vi. It can
+handle both ASCII and Japanese(SJIS/JIS/EUC/Unicode) text, and
+has useful feature for editing source code.
+
+It has a lot of enhancements compared to the normal vi: multi level undo,
+command line editing, filename completion, online help, quoting, etc..
+Read difference.doc for a summary of the differences between vi and Vim.

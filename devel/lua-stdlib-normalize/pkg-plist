@@ -1,0 +1,10 @@
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ldoc.css
+%%LUA_MODSHAREDIR%%/std/normalize/_base.lua
+%%LUA_MODSHAREDIR%%/std/normalize/_strict.lua
+%%LUA_MODSHAREDIR%%/std/normalize/_typecheck.lua
+%%LUA_MODSHAREDIR%%/std/normalize/init.lua
+%%LUA_MODSHAREDIR%%/std/normalize/version.lua

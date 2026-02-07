@@ -1,0 +1,46 @@
+--- CMakeLists.txt.orig	2025-07-29 17:36:04 UTC
++++ CMakeLists.txt
+@@ -77,7 +77,11 @@ set(WANT_LIBTAR TRUE)
+ # CONFIG OPTIONS
+ #
+ set(WANT_LIBTAR TRUE)
++if (CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+ option(WANT_DEBUG           "Build with debug information" ON)
++else()
++option(WANT_DEBUG           "Build with debug information" OFF)
++endif()
+ if(APPLE)
+     option(WANT_SHARED      "Build the core library shared." OFF)
+     option(WANT_ALSA        "Include ALSA (Advanced Linux Sound Architecture) support" OFF)
+@@ -130,10 +134,8 @@ if(WANT_DEBUG)
+ include(StatusSupportOptions)
+ 
+ if(WANT_DEBUG)
+-    set(CMAKE_BUILD_TYPE Debug)
+     set(H2CORE_HAVE_DEBUG TRUE)
+ else()
+-    set(CMAKE_BUILD_TYPE Release)
+     set(H2CORE_HAVE_DEBUG FALSE)
+ endif()
+ 
+@@ -172,9 +174,9 @@ if(WANT_DEBUG)
+ endif()
+ 
+ if(WANT_DEBUG)
+-	set(CMAKE_CXX_FLAGS "$ENV{CMAKE_CXX_FLAGS} -O0")
++	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+ else()
+-	set(CMAKE_CXX_FLAGS "$ENV{CMAKE_CXX_FLAGS} -O3 -ffast-math")
++	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+ endif()
+ 
+ if(WANT_APPIMAGE)
+@@ -304,6 +306,8 @@ if("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
+ 
+ if("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
+ 	find_helper(OSS oss sys/soundcard.h ossaudio )
++elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++	find_helper(OSS oss sys/soundcard.h c )
+ else()
+ 	find_helper(OSS oss sys/soundcard.h OSSlib )
+ endif()

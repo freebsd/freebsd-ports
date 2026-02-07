@@ -1,0 +1,7 @@
+TIMESTAMP = 1679869853
+SHA256 (go/devel_gitty/gitty-v0.7.0/v0.7.0.mod) = 261999d5275b443e4f047bdca65908bda31ff32b375fca5d7add08169b307657
+SIZE (go/devel_gitty/gitty-v0.7.0/v0.7.0.mod) = 676
+SHA256 (go/devel_gitty/gitty-v0.7.0/v0.7.0.zip) = d657ebaef893494987a05a660232d5e65de375b2d9cc7680e79c427c13b1f57d
+SIZE (go/devel_gitty/gitty-v0.7.0/v0.7.0.zip) = 327332
+SHA256 (go/devel_gitty/gitty-v0.7.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/devel_gitty/gitty-v0.7.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

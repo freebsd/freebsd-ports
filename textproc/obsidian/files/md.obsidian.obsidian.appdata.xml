@@ -1,0 +1,51 @@
+<component type="desktop">
+    <id>md.obsidian.obsidian</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-EULA-1</project_license>
+    <name>Obsidian</name>
+    <name xml:lang="ru">Obsidian</name>
+    <summary>Application for creating notes and full-fledged knowledge bases</summary>
+    <summery xml:lang="ru">Приложение для создания заметок и полноценных баз знаний</summary>
+    <description>
+        <p>Obsidian helps teams and individual users store important information in the form of structured and interconnected data. Thanks to this, Obsidian allows users to quickly navigate through the data and find the necessary information.</p>
+        <p xml:lang="ru">Obsidian помогает командам и отдельным пользователям хранить важную информацию в виде структурированных и взаимосвязанных данных. Благодаря этому Obsidian позволяет пользователям быстро ориентироваться в данных и находить необходимую информацию.</p>
+        <p>Obsidian features:</p>
+        <p xml:lang="ru">Особенности Obsidian:</p>
+        <p>Creating documents using Markdown markup;</p>
+        <p xml:lang="ru">Создание документов с помощью разметки Markdown;</p>
+        <p>File attachment, images and video;</p>
+        <p xml:lang="ru">Вложение файлов, изображений и видео;</p>
+        <p>Storing documents on users' devices;</p>
+        <p xml:lang="ru">Хранение документов на устройствах пользователей;</p>
+        <p>Downloading and viewing Markdown files;</p>
+        <p xml:lang="ru">Загрузка и просмотр Markdown-файлов;</p>
+        <p>Visualization of connections between documents;</p>
+        <p xml:lang="ru">Визуализация связей между документами;</p>
+        <p>Loading documents from Evernote and Notion;</p>
+        <p xml:lang="ru">Выгрузка документов из Evernote и Notion;</p>
+        <p>Increasing functionality with plugins</p>
+        <p xml:lang="ru">Увеличение функциональности с помощью плагинов</p>
+    </description>
+    <url type="homepage">https://obsidian.md/</url>
+    <url type="help">https://help.obsidian.md/Home</url>
+    <screenshots>
+        <screenshot type="default">
+            <caption>Interface</caption>
+            <caption xml:lang="ru">Интерфейс</caption>
+            <image>https://obsidian.md/images/screenshot-1.0-hero-combo.png</image>
+        </screenshot>
+        <screenshot type="default">
+            <caption>History of changes</caption>
+            <caption xml:lang="ru">История изменений</caption>
+            <image>https://obsidian.md/images/sync-diff.png</image>
+        </screenshot>
+        <screenshot type="default">
+            <caption>Сотрудничество</caption>
+            <caption xml:lang="ru">Совместная работа</caption>
+            <image>https://obsidian.md/images/sync-share.png</image>
+        </screenshot>
+    </screenshots>
+    <provides>
+        <binary>obsidian</binary>
+    </provides>
+</component>

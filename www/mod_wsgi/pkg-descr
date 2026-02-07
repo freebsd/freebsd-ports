@@ -1,0 +1,2 @@
+The mod_wsgi package provides an Apache module that implements a WSGI-compliant
+interface for hosting Python based web applications on top of the Apache web server.

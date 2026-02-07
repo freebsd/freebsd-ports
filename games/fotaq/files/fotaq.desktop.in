@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Flight of the Amazon Queen
+GenericName=Adventure game
+GenericName[de]=Abenteuerspiel
+GenericName[fr]=Jeu vidéo d'aventure
+GenericName[he]=משחק הרפתקה ממוחשב
+GenericName[it]=Avventura grafica
+Icon=scummvm.png
+Exec=%%LOCALBASE%%/bin/scummvm -f -p %%DATADIR%% queen
+Exec[de]=%%LOCALBASE%%/bin/scummvm -f -p %%DATADIR%% queen
+Exec[fr]=%%LOCALBASE%%/bin/scummvm -f -p %%DATADIR%% queen
+Exec[he]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% queen
+Exec[it]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% queen
+Categories=Game;AdventureGame;
+StartupNotify=false

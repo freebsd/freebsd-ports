@@ -1,0 +1,13 @@
+outside is a multi-purpose weather client for your terminal that provides
+real-time weather information in various formats.
+
+Features:
+
+- Multiple output formats: TUI, simple, detailed, JSON, and Waybar
+- Auto-detects location via IP address
+- Configurable units (metric/imperial)
+- Streaming mode for continuous weather updates
+- Caches location and weather data for efficiency
+- Waybar integration support
+- Customizable display templates
+- Weather icons with Nerd Fonts support

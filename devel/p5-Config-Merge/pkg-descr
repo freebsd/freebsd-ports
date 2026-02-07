@@ -1,0 +1,3 @@
+Config::Merge - load a configuration directory tree
+containing YAML, JSON, XML, Perl, INI
+or Config::General files

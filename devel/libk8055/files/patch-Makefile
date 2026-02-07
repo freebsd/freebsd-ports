@@ -1,0 +1,84 @@
+--- Makefile.orig	2006-07-29 10:03:43 UTC
++++ Makefile
+@@ -1,22 +1,22 @@
+-cc = gcc
++CC ?= gcc
+ exec = k8055
+-bindir = /usr/local/bin
+-libdir = /usr/local/lib
+-includedir = /usr/local/include
+-mandir = /usr/local/man/man1
++bindir = ${PREFIX}/bin
++libdir = ${PREFIX}/lib
++includedir = ${PREFIX}/include
++mandir = ${PREFIX}/share/man/man1
+ OBJS = main.o libk8055.o
+ # if your are using Linux comment out next line
+-CFLAGS = -DDAEMON -Wall -D_BSD
++CFLAGS += -DDAEMON -Wall -D_BSD
+ # if you are using Linux incomment following line
+ #CFLAGS = -DDAEMON -Wall
+ 
+-libs = -lusb -L/usr/lib -lm
++libs = -lusb -L/usr/lib ${LDFLAGS} -lm
+ 
+ libk8055.so.0.1: libk8055.o
+-	$(cc) -Wall -o libk8055.so.0.2 -shared libk8055.o
++	$(CC) -Wall -o libk8055.so.0.2 -shared libk8055.o
+ 
+ libk8055.o: libk8055.c
+-	$(cc) -Wall -O -c -g -fPIC $(CFLAGS) libk8055.c
++	$(CC) -Wall -O -c -g -fPIC $(CFLAGS) libk8055.c
+ 	-ln -sf libk8055.so.0.2 libk8055.so
+ 
+ libk8055.c: k8055.h
+@@ -24,33 +24,33 @@ all: k8055_prog libk8055.so.0.1
+ all: k8055_prog libk8055.so.0.1
+ 
+ %.o: %.c
+-	$(cc) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ k8055_prog: $(OBJS)
+-	$(cc) $(OBJS) -o $(exec) $(libs)
++	$(CC) $(OBJS) -o $(exec) $(libs)
+ 	strip $(exec)
+-    
++
+ clean:
+ 	rm -f *.o libk8055.so libk8055.so.0.2 $(exec)
+-    
++
+ install: k8055_prog libk8055.so.0.1
+-	cp -f $(exec) $(bindir)/
+-	if !(test -d $(libdir)); then \
+-	  mkdir $(libdir); \
++	cp -f $(exec) $(DESTDIR)$(bindir)/
++	if !(test -d $(DESTDIR)$(libdir)); then \
++	  mkdir $(DESTDIR)$(libdir); \
+ 	fi
+-	if !(test -d $(includedir)); then \
+-	  mkdir $(includedir); \
++	if !(test -d $(DESTDIR)$(includedir)); then \
++	  mkdir $(DESTDIR)$(includedir); \
+ 	fi
+-	cp -Pf lib* $(libdir)
+-	cp -f k8055.h $(includedir)
+-	if !(test -d $(mandir)); then \
+-	  mkdir $(mandir); \
++	cp -Pf lib* $(DESTDIR)$(libdir)
++	cp -f k8055.h $(DESTDIR)$(includedir)
++	if !(test -d $(DESTDIR)$(mandir)); then \
++	  mkdir $(DESTDIR)$(mandir); \
+ 	fi
+-	cp -f man/k8055.1.gz $(mandir)/
+-    
++	cp -f man/k8055.1.gz $(DESTDIR)$(mandir)/
++
+ uninstall:
+ 	rm -f $(bindir)/$(exec) $(libdir)/libk8055* $(includedir)/k8055.h
+-    
++
+ test: k8055_prog
+ 	killall $(exec)
+ 	./$(exec)

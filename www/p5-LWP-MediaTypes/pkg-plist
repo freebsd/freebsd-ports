@@ -1,0 +1,3 @@
+%%SITE_PERL%%/LWP/MediaTypes.pm
+%%SITE_PERL%%/LWP/media.types
+%%PERL5_MAN3%%/LWP::MediaTypes.3.gz

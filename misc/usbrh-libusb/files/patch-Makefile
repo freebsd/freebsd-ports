@@ -1,0 +1,13 @@
+--- Makefile.orig	2008-03-24 14:22:09 UTC
++++ Makefile
+@@ -2,8 +2,9 @@
+ SRC = usbrh_main.c
+ EXE = usbrh
+ 
++all:	$(EXE)
+ $(EXE): $(SRC)
+-	gcc -lusb -g -o $@ $^
++	${CC} ${CFLAGS} ${LDFLAGS} -lusb -o $@ $(SRC)
+ 
+ clean: 
+ 	rm $(EXE)

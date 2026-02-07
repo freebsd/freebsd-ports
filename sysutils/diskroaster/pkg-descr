@@ -1,0 +1,6 @@
+Diskroaster is a multithreaded disk testing utility
+that writes and verifies data on a raw disk device.
+It is designed to stress-test hard drives and
+SSDs by dividing the disk into sections,
+writing data in parallel using multiple worker threads,
+and verifying the written content for integrity.

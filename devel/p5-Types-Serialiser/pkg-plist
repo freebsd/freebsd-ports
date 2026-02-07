@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Types/Serialiser.pm
+%%SITE_PERL%%/Types/Serialiser/Error.pm
+%%PERL5_MAN3%%/Types::Serialiser.3.gz
+%%PERL5_MAN3%%/Types::Serialiser::Error.3.gz

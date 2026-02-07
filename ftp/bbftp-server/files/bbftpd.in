@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: bbftpd
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bbftp_enable (bool):   Set to NO by default.
+#               Set it to YES to enable bbftpd.
+#
+
+. /etc/rc.subr
+
+name="bbftpd"
+rcvar=bbftpd_enable
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${bbftp_enable="NO"}
+: ${bbftp_svcj_options:="net_basic"}
+
+command_args="-b"
+
+run_rc_command "$1"

@@ -1,0 +1,15 @@
+Szyszka is a simple but powerful and fast bulk file renamer.
+
+Features:
+- Written in Rust
+- Simple GUI created using GTK3
+- Multiple rules which can be freely combined:
+  - Replace text
+  - Trim text
+  - Add text
+  - Add numbers
+  - Purge text
+  - Change letters to upper-/lowercase
+  - Custom rules
+- Ability to edit, reorder rules and results
+- Handle even hundreds thousands of records

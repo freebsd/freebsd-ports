@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2024-09-04 09:02:02 UTC
++++ CMakeLists.txt
+@@ -52,9 +52,6 @@ mark_as_advanced(ONLY_BUILD_SOLIDITY_LIBRARIES)
+ mark_as_advanced(IGNORE_VENDORED_DEPENDENCIES)
+ mark_as_advanced(ONLY_BUILD_SOLIDITY_LIBRARIES)
+ 
+-# Setup cccache.
+-include(EthCcache)
+-
+ # Let's find our dependencies
+ include(EthDependencies)
+ if (NOT IGNORE_VENDORED_DEPENDENCIES)

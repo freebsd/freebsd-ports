@@ -1,0 +1,3 @@
+Swapper is an unofficial API for the undocumented but very powerful Django
+feature: swappable models. Swapper facilitates implementing arbitrary swappable
+models in your own reusable apps.

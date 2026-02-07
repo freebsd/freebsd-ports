@@ -1,0 +1,2 @@
+Textual-fastdatatable is a performance-focused reimplementation of Textual's
+DataTable widget, with a pluggable data storage backend.

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/PerlIO/Layers.pm
+%%SITE_ARCH%%/auto/PerlIO/Layers/Layers.so
+%%PERL5_MAN3%%/PerlIO::Layers.3.gz

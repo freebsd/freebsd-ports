@@ -1,0 +1,11 @@
+Writing systems for different languages usually have specific sort
+orders for the glyphs (characters, or clusters of characters) that each
+writing system uses. For well-known national languages, these different
+sort orders (or someone's idea of them) are formalized in the locale for
+each such language, on operating system flavors that support locales.
+However, there are problems with locales; cf. the perllocale manpage.
+
+This module is meant to provide an alternative to locale-based sorting.
+
+-Anton
+<tobez@FreeBSD.org>

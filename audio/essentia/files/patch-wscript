@@ -1,0 +1,11 @@
+--- wscript.orig	2022-11-03 19:50:02 UTC
++++ wscript
+@@ -148,6 +148,8 @@ def configure(ctx):
+     elif ctx.options.MODE == 'release':
+         print ('→ Building in release mode')
+         ctx.env.CXXFLAGS += ['-O2']  # '-march=native' ] # '-msse3', '-mfpmath=sse' ]
++        ctx.env.LINKFLAGS += ['-L/usr/local/ffmpeg4/lib']
++        ctx.env.LDFLAGS += ['-L/usr/local/ffmpeg4/lib']
+ 
+     elif ctx.options.MODE == 'default':
+         pass

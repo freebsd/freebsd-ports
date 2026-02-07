@@ -1,0 +1,12 @@
+This port provides an implementation of ULID.
+
+A ULID is a universally unique lexicographically sortable identifier. It is
+- 128-bit compatible with UUID
+- 1.21e+24 unique ULIDs per millisecond
+- Lexicographically sortable!
+- Canonically encoded as a 26 character string, as opposed to the 36 character
+  UUID
+- Uses Crockford's base32 for better efficiency and readability (5 bits per
+  character)
+- Case insensitive
+- No special characters (URL safe)

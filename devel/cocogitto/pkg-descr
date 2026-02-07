@@ -1,0 +1,13 @@
+cocogitto is the Conventional Commits toolbox.
+
+Features:
+* Verified commits: create conventional compliant commits with ease.
+* Automatic Version bump and changelog: automatically bump versions and generate
+  changelogs with your own custom steps and workflows.
+* Release profiles: your branching model requires different steps for releases,
+* Depends only on libgit2: cocogitto has one standalone binary, the only system
+  dependency is libgit2.
+* Conventional git log: search your commit history matching Conventional Commits
+  items such as scope and commit type.
+* GitHub integration: enforce the conventional commits specification with our
+  GitHub action and bot.

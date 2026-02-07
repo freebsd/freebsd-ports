@@ -1,0 +1,15 @@
+This is the collection of nam files (codepoint subsets) that are used to subset
+fonts before serving on the Google Fonts CSS API.
+
+The Python module gfsubsets provides an interface to these subset definitions.
+It exports the following functions:
+- CodepointsInFont(filename): Lists the Unicode codepoints supported by the font
+- ListSubsets(): Returns the name of all defined subsets.
+- SubsetsForCodepoint(cp): Returns the names of all subsets including the
+  codepoint.
+- SubsetForCodepoint(cp): Returns the name of the "most relevant" subset
+  including the codepoint.
+- CodepointsInSubset(subset): Returns a set of codepoints included in the
+  subset.
+- SubsetsInFont(filename, min_pct, ext_min_pct): Returns the name of subsets
+  "well" supported by a font.

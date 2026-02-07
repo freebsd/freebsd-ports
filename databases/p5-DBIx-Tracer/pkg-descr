@@ -1,0 +1,4 @@
+DBIx::Tracer is easy tracer for DBI. You can trace a SQL queries without
+modifying configuration in your application.
+
+You can insert snippets using DBIx::Tracer, and profile it.

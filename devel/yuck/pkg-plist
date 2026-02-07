@@ -1,0 +1,10 @@
+bin/yuck
+share/aclocal/yuck.m4
+share/man/man1/yuck.1.gz
+%%DATADIR%%/yuck-coru.c.m4
+%%DATADIR%%/yuck-coru.h.m4
+%%DATADIR%%/yuck-scmver.m4
+%%DATADIR%%/yuck.am
+%%DATADIR%%/yuck.m4
+%%DATADIR%%/yuck.man.m4
+%%DATADIR%%/yuck.mk

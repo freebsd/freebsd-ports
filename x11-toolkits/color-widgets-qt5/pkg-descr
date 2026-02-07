@@ -1,0 +1,20 @@
+Qt-Color-Widgets is a color dialog that is more user-friendly than the default
+QColorDialog and several other color-related widgets.
+
+The provided widgets are:
+* ColorWheel, An analog widget used to select a color
+* ColorPreview, A simple widget that displays a color
+* GradientSlider, A slider that has a gradient background
+* HueSlider, A variant of GradientSlider that has a rainbow background
+* ColorSelector, A ColorPreview that shows a ColorDialog when clicked
+* ColorDialog, A dialog that uses the above widgets to provide a better user
+  experience than QColorDialog
+* ColorListWidget, A widget to edit a list of colors
+* Swatch, A widget to display a color palette
+* ColorPaletteWidget, A widget to use and manage a list of palettes
+* Color2DSlider, An analog widget used to select 2 color components
+* ColorLineEdit, A widget to manipulate a string representing a color
+* HarmonyColorWheel, A ColorWheel which allows defining multiple colors,
+  separated by hue
+* GradientListModel, A QAbstractListModel used to list gradients (useful for
+  comboboxes, list views and the like)

@@ -1,0 +1,11 @@
+--- Makefile.orig	2024-03-17 07:41:26 UTC
++++ Makefile
+@@ -13,7 +13,7 @@ FIND	  = find . -maxdepth 1 -name
+ EMACS	  = emacs
+ ETAGS	  = etags
+ FIND	  = find . -maxdepth 1 -name
+-FLAGS     = --batch --no-init-file --quick --load SKK-MK
++FLAGS     = --batch --no-init-file --quick --eval '(setq PREFIX "${PREFIX}")' --eval '(setq SKK_LISPDIR "${SKK_LISPDIR}")' --eval '(setq skk-server-host nil)' --load SKK-MK
+ GIT       = git
+ GZIP      = gzip -9
+ MD5	  = md5

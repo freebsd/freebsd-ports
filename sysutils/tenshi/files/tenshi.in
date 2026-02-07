@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: tenshi
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable `tenshi':
+#
+# tenshi_enable="YES"
+
+. /etc/rc.subr
+
+name='tenshi'
+rcvar=tenshi_enable
+
+load_rc_config "$name"
+
+tenshi_enable="${tenshi_enable:-NO}"
+
+extra_commands='reload'
+
+command='%%PREFIX%%/sbin/tenshi'
+command_interpreter='%%PERL%%'
+
+pidfile='/var/run/tenshi.pid'
+
+required_files='%%ETCDIR%%/tenshi.conf'
+
+run_rc_command "$1"

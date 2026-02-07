@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Text::DHCPLeases.3.gz
+%%PERL5_MAN3%%/Text::DHCPLeases::Object.3.gz
+%%PERL5_MAN3%%/Text::DHCPLeases::Object::Iterator.3.gz
+%%SITE_PERL%%/Text/DHCPLeases.pm
+%%SITE_PERL%%/Text/DHCPLeases/Object.pm
+%%SITE_PERL%%/Text/DHCPLeases/Object/Iterator.pm

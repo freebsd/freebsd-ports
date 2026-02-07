@@ -1,0 +1,42 @@
+--- CMakeLists.txt.orig	2012-02-06 11:30:53 UTC
++++ CMakeLists.txt
+@@ -5,7 +5,7 @@ set(Teapot_VERSION_MAJOR 2)
+ set(Teapot_VERSION_MINOR 3)
+ set(Teapot_VERSION_PATCH 0)
+ 
+-option(ENABLE_HELP "Enable built-in documentation" ON)
++option(ENABLE_HELP "Enable built-in documentation" OFF)
+ option(ENABLE_UTF8 "Enable UTF-8 support" ON)
+ option(ENABLE_STATIC "Link FLTK statically" OFF)
+ 
+@@ -40,30 +40,6 @@ if (CURSES_FOUND)
+ 	install(TARGETS teapot DESTINATION bin)
+ endif ()
+ 
+-find_package(FLTK NO_MODULE)
+-if (FLTK_FOUND)
+-	include("${FLTK_USE_FILE}")
+-
+-	fltk_wrap_ui(fteapot fteapot.fl)
+-	add_executable(fteapot WIN32 ${fteapot_FLTK_UI_SRCS})
+-	set(fteapot_DEB_DEPENDS ", libstdc++6 (>= 4.1.1), libfltk1.3")
+-	if (ENABLE_HELP)
+-		set(fteapot_DEB_DEPENDS "${fteapot_DEB_DEPENDS}, libfltk-images1.3")
+-		if (ENABLE_STATIC)
+-			target_link_libraries(fteapot teapotlib fltk fltk_images ${LIB_PORTABLEXDR})
+-		else ()
+-			target_link_libraries(fteapot teapotlib fltk_SHARED fltk_images_SHARED ${LIB_PORTABLEXDR})
+-		endif ()
+-	else ()
+-		if (ENABLE_STATIC)
+-			target_link_libraries(fteapot teapotlib fltk fltk_images ${LIB_PORTABLEXDR})
+-		else ()
+-			target_link_libraries(fteapot teapotlib fltk_SHARED ${LIB_PORTABLEXDR})
+-		endif ()
+-	endif ()
+-	install(TARGETS fteapot DESTINATION bin)
+-endif ()
+-
+ if (ENABLE_HELP)
+ 	add_custom_command(
+ 		OUTPUT teapot.tex teapot.lyx

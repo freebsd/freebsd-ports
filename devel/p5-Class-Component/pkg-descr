@@ -1,0 +1,2 @@
+Class::Component is pluggable component framework. The compatibilities such
+as dump and load such as YAML are good.

@@ -1,0 +1,2 @@
+Libkexiv2 is a wrapper around Exiv2 library to manipulate pictures
+metadata as EXIF/IPTC and XMP.

@@ -1,0 +1,37 @@
+PORTNAME=	libircclient
+DISTVERSION=	1.10
+CATEGORIES=	irc devel
+MASTER_SITES=	SF
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	IRC library to create IRC clients
+WWW=		https://www.ulduzsoft.com/libircclient/
+
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		compiler:c11
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
+
+MAKE_ARGS=	exec_prefix=${PREFIX}
+BUILD_WRKSRC=	${WRKSRC}/src
+
+OPTIONS_DEFINE=		OPENSSL IPV6 EXAMPLES
+OPTIONS_DEFAULT=	OPENSSL
+
+OPENSSL_USES=			ssl
+OPENSSL_CONFIGURE_ENV=		ac_cv_lib_ssl_SSL_library_init=yes
+OPENSSL_CONFIGURE_ENABLE=	openssl
+OPENSSL_LDFLAGS=		-L${OPENSSLLIB}
+OPENSSL_CFLAGS=			-I${OPENSSLINC}
+IPV6_CONFIGURE_ENABLE=		ipv6
+
+PORTEXAMPLES=	*
+
+do-install-EXAMPLES-on:
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+.include <bsd.port.mk>

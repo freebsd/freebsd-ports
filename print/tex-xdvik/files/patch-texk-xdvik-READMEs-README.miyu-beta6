@@ -1,0 +1,242 @@
+--- texk/xdvik/READMEs/README.miyu-beta6.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.miyu-beta6
+@@ -0,0 +1,239 @@
++
++                << miyu-patch for xdvi PL17 について >>
++
++○miyu-patch for xdvi PL17 とは: 
++  いままで出ている xdvi 用のパッチをまとめて, xdvi PL17 用に修正したものです。
++  収録したパッチは以下のようなものです。
++
++    1) tpic2.2 対応にするためのパッチ
++       xdvi-16-tpic2.2         (1993/02 鷲坂@NTT; fj.sources.d,fj.comp.texhax)
++       xdvi-16-tpic2.2-fix1    (1993/02 鷲坂@NTT; fj.sources.d,fj.comp.texhax)
++
++    2) DVI ファイルをメニュー形式で選択するためのパッチ
++       xdvi+selfile            (fj 未投稿？)
++
++    3) ASCII "日本語" TeX 対応にするためのパッチ
++       xdvi-16j.patch          (1992/09 野呂＠富士通国際研; fj.sources)
++
++    4) Zeit の書体倶楽部などのアウトライン・フォント対応にするためのパッチ
++       xdvi-zeit               (1993/08 林＠青山学院大学; fj.sources)
++
++    5) ghostscript を利用して ps で描いた図対応にするためのパッチ
++       xdvi-16jgs.patch        (1992/09 仙田＠京大; fj.sources.d)
++       xdvi-16jgs.patch-fix1   (1992/09 升谷＠阪大; fj.sources.d)
++       xdvi-16jgs.patch-fix2   (1992/09 升谷＠阪大; fj.sources.d)
++       xdvi-16jgs.patch-fix3   (1992/09 木本豪＠筑波大学; fj.sources.d)
++       xdvi-16jgs.patch-fix4   (1993/06 森田＠北陸先端大; fj.sources)
++       xdvi-16jgs.patch-fix5   (1993/08 森田＠北陸先端大; fj.sources.d)
++
++    6) dvips 附属の epsf.sty に対応するためのパッチ
++       (名称なし)              (fj 未投稿)
++
++    7) jdvi2kps で処理する psfrag への対応 (バグあり)
++       (名称なし)              (fj 未投稿)
++
++    8) "PS Fig" ボタンの追加
++       (名称なし)              (fj 未投稿)
++
++  それぞれについての詳細は header の下にあるファイルを参照してください。
++
++  なお, 
++  2) のパッチは鈴木＠情報科学.東京大学さん <dai@is.s.u-tokyo.ac.jp> に, 
++  6) のパッチは上原＠京大基研さん <uehara@yisun1.yukawa.kyoto-u.ac.jp> に, 
++  8) のパッチは山上＠ＳＯＮＹさん <kaol@is.crl.sony.co.jp> に, 
++  ご協力いただきました。
++
++  また, 鈴木＠情報科学.東京大学さん <dai@is.s.u-tokyo.ac.jp> には, 
++  ドキュメントの対応も協力いただきました。
++
++○インストールについて: 
++  1. ファイルの入手
++
++    まず, xdvi PL17 のソース・ファイルである xdvi-17.tar.gz と
++    それに対するパッチ xdvi-17miyu.patch-beta6.gz を入手してください (*1)。
++
++  2. パッチの適用
++
++    次に, 作業ディレクトリを作成して, そのディレクトリに移った後, 
++    xdvi-17.tar.gz を展開します。そのまま, ディレクトリを移動しないで, 
++    xdvi-17miyu.patch-beta6.gz を用いてパッチをあてます。
++    このとき, GNU のツールである gzip および patch が必要となります (*2)。
++
++        < 実行例 >
++
++      % set srcdir=$cwd
++      % mkdir xdvi-17
++      % cd xdvi-17
++      % gzip -d -c $srcdir/xdvi-17.tar.gz | tar xvf -
++      % gzip -d -c $srcdir/xdvi-17miyu.patch-beta6.gz | patch -p1
++
++  3. コンパイルの準備
++
++    システムに応じて Imakefile を編集した後, 
++    xmkmf を実行して Makefile を生成します。
++
++  3.1 Imakefile の編集
++
++    ここでは, おもにオリジナルの xdvi での設定から
++    変更された部分について述べます。
++
++    まず最初は, ファイルの先頭の Use_MAKEPK, Use_SELFILE, 
++    Use_KANJI, Use_ASCIIDNP, Use_ZEIT, Use_NTTZEIT, Use_PS についての
++    #define または #undef を変更します。
++    
++        Use_MAKEPK      MakeTeXPK を用いて, 足りないフォントを自動的に作成する
++
++        Use_SELFILE     メニュー形式のファイル選択機能を有効にする
++
++        Use_KANJI       ASCII "日本語" TeX の DVI ファイルを扱うようにする
++
++        Use_ASCIIDNP    大日本印刷のフォントを用いて 
++                        ASCII "日本語" TeX を表示する
++
++        Use_ZEIT        ASCII "日本語" TeX の DVI ファイルの表示に
++                        Zeit の書体倶楽部などのアウトライン・フォントを使用する
++        Use_NTTZEIT     NTT-JTeX の表示にもアウトライン・フォントを使用する
++
++        Use_PS          ghostscript を用いて ps の図を表示する
++
++    * さて, Use_KANJI, Use_ASCIIDNP, Use_ZEIT, Use_NTTZEIT の関係ですが。
++
++      オリジナルの英語 TeX および NTT-JTeX で作成された DVI ファイルを
++      PK フォント, GF フォント, PXL フォントを用いて表示する場合には, 
++      すべてを #undef してください。
++
++      ASCII "日本語" TeX で作成された DVI ファイルを 
++      NTT-JTeX 用の大日本印刷フォント (または渡辺フォントなど互換フォント) を
++      用いて表示する場合には, Use_KANJI と Use_ASCIIDNP を #define して, 
++      それ以外を #undef してください。
++
++      ASCII "日本語" TeX で作成された DVI ファイルを 
++      Zeit の書体倶楽部などのアウトライン・フォントを用いて表示する場合には, 
++      Use_KANJI と Use_ZEIT を #define して, Use_ASCIIDNP を #undef ください。
++      このとき, NTT-JTeX で作成された DVI も 
++      Zeit の書体倶楽部などのベクトル・フォントを用いて表示する場合には, 
++      さらに Use_NTTZEIT も #define する必要があります。
++      もし, NTT-JTeX で作成された DVI ファイルは 
++      大日本印刷フォント (またはその互換フォント) を用いて表示する場合には, 
++      Use_NTTZEIT を #undef してください。
++
++      なお, 現在のところ Use_ASCIIDNP と Use_ZEIT は
++      同時に指定することはできません。
++      もし両方とも指定されたときには, Use_ASCIIDNP が優先されます。
++
++    * Use_MAKEPK, Use_SELFILE, Use_PS は上記の値とは独立に 
++      #define また #undef を指定することができます。
++
++    次に, フォントのサーチ・パスである 
++    DEFAULT_FONT_PATH, DEFAULT_VF_PATH, DEFAULT_SUBDIR_PATH を設定します。
++
++        DEFAULT_FONT_PATH     フォントのサーチ・パスを指定する
++                              一般に, PK ファイル, GF ファイル,
++                              PXL ファイルのパスを指定しますが, 
++                              USE_ZEIT が指定する場合には, それに加えて, 
++                              ASCII "日本語" TeX の tfm ファイルのパスも
++                              指定する必要があります
++
++        DEFAULT_VF_PATH       Virtual Font のサーチ・パスを指定する
++
++        DEFAULT_SUBDIR_PATH   SEARCH_SUBDIRECTORIES が指定されているときに
++                              検索を始めるトップ・ディレクトリを指定する
++                              一般にはなにも指定しておかない方がよい
++
++    もし, Use_MAKEPK を #define した場合には,
++    MakeTeXPK がインストールされるディレクトリ MAKEPK_BINDIR と
++    makeTeXPK で作られたフォントを格納するディレクトリ MAKEPK_DESTDIR を
++    設定してください。
++
++    もし, Use_ZEIT を #define した場合には, 
++    アウトライン・フォントの設定ファイルである FontConf がインストールされる
++    ディレクトリを DEFAULT_FONTCONFDIR を設定してください。
++
++    もし, Use_PS を #define した場合には, 
++    ps のヘッダ・ファイルのサーチ・パスの DEFAULT_PS_PATH と 
++    ghostscript がインストールされているディレクトリ GHOSTSCRIPT_BINDIR を
++    設定してください。
++
++    最後は DEFS の設定です。
++    まず, マシンに応じて, DEFS に -DMSBITFIRST を設定してください。
++    これは i[34]86 以外では大抵の場合設定する必要があります。
++    次に, マシンに応じて, DEFS に -DBLONG, -DBMSHORT を設定してください。
++    -DBMLONG, -DBMSHORT は設定してもしなくても, 動作しますが, 
++    これらを適切に設定すると実行速度が著しく改善される場合があります。
++    -DBMLONG と -DBMSHORT の両方を設定すると -DBMLONG のみが有効になります。
++    次に, 解像度を -DBDPI=… で, 
++    縮小率を -DDEFAULT_SHRINK=… で設定してください。
++    解像度は, 240DPI なら -DBDPI=240, 300DPI なら -DBDPI=300, 
++    400DPI なら -DBDPI=400 と設定してください。
++    縮小率は, 好みによりますが, 
++    解像度が 240DPI なら -DDEFAULT_SHRINK=\"3\", 
++    300DPI なら -DDEFAULT_SHRINK=\"4\", 
++    400DPI なら -DDEFAULT_SHRINK=\"5\" あたりが適当です。
++    また, ウィンド移動のキー・バインディングを
++    vi ライクなものにしたいときには -DVI_KEY を設定してください。
++
++        < 実行例 >
++
++      % vi Imakefile
++      (編集)
++
++  3.2 Makefile の生成
++
++    Imakefile の設定がすんだら Makefile の生成を行ないます。
++
++        < 実行例 >
++
++      % xmkmf
++      % make includes
++      % make depend
++
++  3.3 アウトライン・フォント用ライブラリの設定
++
++    また, USE_ZEIT を Imakefile 中で #define した場合には,
++    VFlib-1.32 に移って, config.h および FontConf を編集します。
++    詳しくは Doc,euc を参照してください。
++
++        < 実行例 >
++
++      % cd VFlib-1.32
++      % vi config.h
++      (編集)
++      % vi FontConf
++      (編集)
++      % cd ..
++
++  4. コンパイル
++
++    設定が終ったらコンパイルを行ないます。
++
++        < 実行例 >
++
++      % make
++
++  5. インストール
++
++    正常にコンパイルできたら, 実行ファイルおよびマニュアルのインストールを
++    行ないます。
++
++        < 実行例 >
++
++      % make install
++      % make install.man
++
++    必要ならば, さらに MakeTeXPK のインストールも行なってください。
++
++        < 実行例 >
++
++      % make install.MakeTeXPK
++
++    *1 これらは, 
++       ftp.tohoku.ac.jp[130.34.8.9]:~ftp/pub/tex/dviwares/xdvi/PL17 などの
++       anonymous ftp などから入手できます。
++
++    *2 これらは, 
++       ftp.ecei.tohoku.ac.jp[130.34.222.67]:~ftp/pub/GNU/gzip および
++       ftp.ecei.tohoku.ac.jp[130.34.222.67]:~ftp/pub/GNU/patch 以下にあります。
++
++--
++1993年 9月15日(祝)        すぎうら しげき  <miyu@ftp.tohoku.ac.jp>
++

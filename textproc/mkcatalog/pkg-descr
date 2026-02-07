@@ -1,0 +1,44 @@
+A maintainance utility for sgml catalog files.
+
+mkcatalog maintains sgml "catalog" files.
+
+usage: mkcatalog [-pq] install|deinstall dtd-subdirectory [catalog-filename]
+    options:
+        -p          preserve old catalog file.
+        -q          silent mode
+
+    commands(required):
+        install     set DTD configuration to catalog files.
+        deinstall   usset DTD configuration from catalog files.
+
+    required arguments:
+        dtd-subdirectory  DTD sub-directory.
+                          (root sgml direcotry is ${PREFIX}/share/sgml.)
+
+    optional arguments:
+        catalog-filename  DTD catalog filename.
+
+    for example:
+        # mkcatalog install html/4.0
+
+        This commands do the following actions:
+            1. Add `CATALOG "html/catalog"' to ${PREFIX}/share/sgml/catalog.
+            2. Add `CATALOG "4.0/catalog"'
+                to ${PREFIX}/share/sgml/html/catalog.
+
+
+        # mkcatalog install docbook/4.1 docbook41.cat
+
+        This commands do the following actions:
+            1. Add `CATALOG "docbook/catalog"' to ${PREFIX}/share/sgml/catalog.
+            2. Add `CATALOG "4.1/docbook41.cat"'
+                to ${PREFIX}/share/sgml/docbook/catalog.
+
+
+        # mkcatalog deinstall docbook/4.1 docbook41.cat
+
+        This commands do the following actions:
+            1. Delete `CATALOG "4.1/docbook41.cat"'
+                from ${PREFIX}/share/sgml/docbook/catalog.
+            2. Delete `CATALOG "docbook/catalog"'
+                from ${PREFIX}/share/sgml/catalog.

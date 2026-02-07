@@ -1,0 +1,7 @@
+PyGLM is a mathematics library for graphics programming.
+GLSL + Optional features + Python = PyGLM
+
+PyGLM is a Python extension written in C++.
+By using GLM by G-Truc under the hood, it manages to bring glm's features
+to Python.
+Some features are unsupported (such as most unstable extensions).

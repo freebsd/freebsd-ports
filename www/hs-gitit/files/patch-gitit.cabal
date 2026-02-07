@@ -1,0 +1,31 @@
+--- gitit.cabal.orig	2001-09-09 01:46:40 UTC
++++ gitit.cabal
+@@ -104,6 +104,10 @@ Flag plugins
+                      plugins should disable this flag.
+   default:           True
+ 
++Flag with_rtsopts
++  description:       Use -with-rtsopts=-I0 to avoid idle GC.
++  default:           True
++
+ Library
+   hs-source-dirs:    src
+   exposed-modules:   Network.Gitit, Network.Gitit.ContentTransformer,
+@@ -176,6 +180,8 @@ Library
+     exposed-modules: Network.Gitit.Interface
+     build-depends:   ghc, ghc-paths
+     cpp-options:     -D_PLUGINS
++  if flag(with_rtsopts)
++    cpp-options:     -DRTSOPTS
+   default-extensions: CPP
+   default-language:  Haskell2010
+   ghc-options:       -Wall -fno-warn-unused-do-bind
+@@ -198,6 +204,8 @@ Executable           gitit
+   default-extensions: CPP
+   default-language:  Haskell2010
+   ghc-options:       -Wall -threaded -fno-warn-unused-do-bind
++  if flag(with_rtsopts)
++    ghc-options:     -rtsopts=all -with-rtsopts=-I0
+   ghc-prof-options:  -fprof-auto-exported -rtsopts
+ 
+ Executable           expireGititCache

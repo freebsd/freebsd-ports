@@ -1,0 +1,28 @@
+--- src/Makefile.in.orig	Sat Nov 15 21:06:49 2003
++++ src/Makefile.in	Sat Nov 15 21:09:47 2003
+@@ -171,9 +171,9 @@
+ #CXXFLAGS = -O6 -s
+ #CFLAGS = -DXMESA -Wall -O3 -I$(INCDIR)
+ #CFLAGS = -Wall -O3 -I$(INCDIR) `freetype-config --cflags`
+-@USE_SDL_TRUE@SDL_CFLAGS = `sdl-config --cflags` -DUSE_SDL
++@USE_SDL_TRUE@SDL_CFLAGS = `$(SDL_CONFIG) --cflags` -DUSE_SDL
+ @USE_SDL_FALSE@SDL_CFLAGS = 
+-@USE_SDL_TRUE@SDL_LIBS = `sdl-config --libs`
++@USE_SDL_TRUE@SDL_LIBS = `$(SDL_CONFIG) --libs`
+ @USE_SDL_FALSE@SDL_LIBS = 
+ @USE_SDL_TRUE@GLUT_LIBS = 
+ @USE_SDL_FALSE@GLUT_LIBS = -lglut
+@@ -187,11 +187,11 @@
+ @USE_SOUND_TRUE@SOUND_CFLAGS = -DUSE_SOUND
+ @USE_SOUND_FALSE@SOUND_CFLAGS = 
+ 
+-AM_CFLAGS = -Wall `freetype-config --cflags` ${SDL_CFLAGS} ${NVIDIA_CFLAGS} ${SOUND_CFLAGS} ${DEBUG_CFLAGS}
++AM_CFLAGS = -Wall `%%FREETYPE_CONFIG%% --cflags` ${SDL_CFLAGS} ${NVIDIA_CFLAGS} ${SOUND_CFLAGS} ${DEBUG_CFLAGS}
+ 
+ #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz
+ #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz
+-AM_LDFLAGS = ${all_libraries} `freetype-config --libs` ${SDL_LIBS} ${GLUT_LIBS}
++AM_LDFLAGS = ${all_libraries} `%%FREETYPE_CONFIG%% --libs` ${SDL_LIBS} ${GLUT_LIBS}
+ #LDADD = ${X_PRE_LIBS} ${X_LIBS} ${X_EXTRA_LIBS} -lGL -lGLU -lXaw -lm -lXi -lpng -lz -L/home/floh/nvsdk/OpenGL/lib/ -lnvparse
+ LDADD = ${X_PRE_LIBS} ${X_LIBS} ${X_EXTRA_LIBS} -lGL -lGLU -lXaw -lm -lXi -lpng -lz
+ subdir = src

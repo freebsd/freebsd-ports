@@ -1,0 +1,45 @@
+bin/fsdiff
+bin/ktcheck
+bin/lapply
+bin/lcksum
+bin/lcreate
+bin/lfdiff
+bin/lmerge
+bin/lsort
+bin/ra.sh
+bin/repo
+bin/twhich
+sbin/radmind
+share/man/man1/fsdiff.1.gz
+share/man/man1/ktcheck.1.gz
+share/man/man1/lapply.1.gz
+share/man/man1/lcksum.1.gz
+share/man/man1/lcreate.1.gz
+share/man/man1/lfdiff.1.gz
+share/man/man1/lmerge.1.gz
+share/man/man1/lsort.1.gz
+share/man/man1/rash.1.gz
+share/man/man1/repo.1.gz
+share/man/man1/twhich.1.gz
+share/man/man5/applefile.5.gz
+share/man/man8/radmind.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/SPEC
+@sample(,,700) /%%RADMIND_BASE_DIR%%/config.sample
+@owner %%RADMINUSER%%
+@group %%RADMINUSER%%
+@dir /%%RADMIND_BASE_DIR%%/transcript
+@dir /%%RADMIND_BASE_DIR%%/tmp/transcript
+@dir /%%RADMIND_BASE_DIR%%/tmp/file
+@dir /%%RADMIND_BASE_DIR%%/tmp
+@dir /%%RADMIND_BASE_DIR%%/special
+@dir /%%RADMIND_BASE_DIR%%/postapply
+@dir /%%RADMIND_BASE_DIR%%/preapply
+@dir /%%RADMIND_BASE_DIR%%/file
+@dir /%%RADMIND_BASE_DIR%%/command
+@dir /%%RADMIND_BASE_DIR%%/client
+@dir /%%RADMIND_BASE_DIR%%/cert
+@dir /%%RADMIND_BASE_DIR%%
+@owner
+@group

@@ -1,0 +1,8 @@
+bin/snortconfig
+bin/verify-rule
+%%PERL5_MAN3%%/Net::Snort::Parser::File.3.gz
+%%PERL5_MAN3%%/Net::Snort::Parser::Rule.3.gz
+%%SITE_PERL%%/Net/Snort/Parser/File.pm
+%%SITE_PERL%%/Net/Snort/Parser/Rule.pm
+%%SITE_PERL%%/Net/Snort/Parser/RuleOptions.pm
+%%PERL5_MAN1%%/snortconfig.1.gz

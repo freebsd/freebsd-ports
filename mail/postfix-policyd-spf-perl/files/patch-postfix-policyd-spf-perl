@@ -1,0 +1,33 @@
+--- postfix-policyd-spf-perl.orig	2018-07-29 19:23:55 UTC
++++ postfix-policyd-spf-perl
+@@ -358,7 +358,7 @@ sub sender_policy_framework {
+                 $attr->{helo_name} || '<UNKNOWN>'
+             );
+         };
+-        return "550 $helo_authority_exp";
++        return "%%SPF_FAIL%% $helo_authority_exp";
+     }
+     elsif ($helo_result->is_code('temperror')) {
+         if ($VERBOSE) {
+@@ -368,7 +368,7 @@ sub sender_policy_framework {
+                 $attr->{helo_name} || '<UNKNOWN>'
+             );
+         };
+-        return "DEFER_IF_PERMIT SPF-Result=$helo_local_exp";
++        return "%%SPF_TEMPERROR%% SPF-Result=$helo_local_exp";
+     }
+     elsif ($attr->{sender} eq '') {
+         if ($VERBOSE) {
+@@ -442,10 +442,10 @@ sub sender_policy_framework {
+         );
+     };
+     if ($mfrom_result->is_code('fail')) {
+-        return "550 $mfrom_authority_exp";
++        return "%%SPF_FAIL%% $mfrom_authority_exp";
+     }
+     elsif ($mfrom_result->is_code('temperror')) {
+-        return "DEFER_IF_PERMIT SPF-Result=$mfrom_local_exp";
++        return "%%SPF_TEMPERROR%% SPF-Result=$mfrom_local_exp";
+     }
+     else {
+         return "PREPEND $mfrom_spf_header"

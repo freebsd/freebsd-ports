@@ -1,0 +1,5 @@
+TIMESTAMP = 1658079166
+SHA256 (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.mod) = 7908eb62edb9e475d39706b7e1f2a20626010e389202b095581201bc5fc74e49
+SIZE (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.mod) = 1131
+SHA256 (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.zip) = aba26a8c4128b483ce8435a0d401302afc7e8d81562ace33dc64778dcb951be7
+SIZE (go/sysutils_gotop/gotop-v4.1.4/v4.1.4.zip) = 1253828

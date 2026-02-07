@@ -1,0 +1,203 @@
+etc/bash_completion.d/icinga2
+@sample %%ETCDIR%%/conf.d/app.conf.sample
+@sample %%ETCDIR%%/conf.d/commands.conf.sample
+@sample %%ETCDIR%%/conf.d/downtimes.conf.sample
+@sample %%ETCDIR%%/conf.d/groups.conf.sample
+@sample %%ETCDIR%%/conf.d/hosts.conf.sample
+@sample %%ETCDIR%%/conf.d/notifications.conf.sample
+@sample %%ETCDIR%%/conf.d/services.conf.sample
+@sample %%ETCDIR%%/conf.d/templates.conf.sample
+@sample %%ETCDIR%%/conf.d/timeperiods.conf.sample
+@sample %%ETCDIR%%/conf.d/users.conf.sample
+@sample %%ETCDIR%%/constants.conf.sample
+@sample %%ETCDIR%%/features-available/api.conf.sample
+@sample %%ETCDIR%%/features-available/checker.conf.sample
+@sample %%ETCDIR%%/features-available/command.conf.sample
+@sample %%ETCDIR%%/features-available/compatlog.conf.sample
+@sample %%ETCDIR%%/features-available/debuglog.conf.sample
+@sample %%ETCDIR%%/features-available/elasticsearch.conf.sample
+@sample %%ETCDIR%%/features-available/gelf.conf.sample
+@sample %%ETCDIR%%/features-available/graphite.conf.sample
+@sample %%ETCDIR%%/features-available/icingadb.conf.sample
+%%MYSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-mysql.conf.sample
+%%PGSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-pgsql.conf.sample
+@sample %%ETCDIR%%/features-available/influxdb.conf.sample
+@sample %%ETCDIR%%/features-available/influxdb2.conf.sample
+@sample %%ETCDIR%%/features-available/livestatus.conf.sample
+@sample %%ETCDIR%%/features-available/mainlog.conf.sample
+@sample %%ETCDIR%%/features-available/notification.conf.sample
+@sample %%ETCDIR%%/features-available/opentsdb.conf.sample
+@sample %%ETCDIR%%/features-available/perfdata.conf.sample
+@sample %%ETCDIR%%/features-available/syslog.conf.sample
+%%ETCDIR%%/features-enabled/checker.conf
+%%ETCDIR%%/features-enabled/mainlog.conf
+%%ETCDIR%%/features-enabled/notification.conf
+@sample %%ETCDIR%%/icinga2.conf.sample
+@sample %%ETCDIR%%/scripts/mail-host-notification.sh.sample
+@sample %%ETCDIR%%/scripts/mail-service-notification.sh.sample
+@sample %%ETCDIR%%/zones.conf.sample
+%%ETCDIR%%/zones.d/README
+%%MYSQL%%lib/icinga2/libmysql_shim.so
+%%MYSQL%%lib/icinga2/libmysql_shim.so.2.15.1
+%%PGSQL%%lib/icinga2/libpgsql_shim.so
+%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.15.1
+lib/icinga2/sbin/icinga2
+libexec/nagios/check_nscp_api
+sbin/icinga2
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/01-about.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/02-installation.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/03-monitoring-basics.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/04-configuration.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/05-service-monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/06-distributed-monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/07-agent-based-monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/08-advanced-topics.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/09-object-types.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/10-icinga-template-library.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/11-cli-commands.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/12-icinga2-api.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/13-addons.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/14-features.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/15-troubleshooting.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/16-upgrading-icinga-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/17-language-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/18-library-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/19-technical-concepts.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/20-script-debugger.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/21-development.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/22-selinux.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/23-migrating-from-icinga-1x.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/24-appendix.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/dashing_icinga2.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/icinga_certificate_monitoring.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/icinga_reporting.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/icingaweb2_businessprocess.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/icingaweb2_grafana.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/icingaweb2_graphite.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/icingaweb2_maps.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/nano-syntax.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/addons/vim-syntax.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/advanced-topics/flapping-state-graph.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/advanced-topics/icinga2_external_checks_freshness_icingaweb2.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/advanced-topics/icingaweb2_downtime_handled.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/api/icinga2_api_powershell_ise.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/configuration/icinga_web_local_server.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/development/windows_boost_build_dev_cmd.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/development/windows_builds_gitlab_pipeline.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/development/windows_powershell_posh_git.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/development/windows_visual_studio_installer_01.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/development/windows_visual_studio_installer_02.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/development/windows_visual_studio_installer_03.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/development/windows_visual_studio_tabs_c++.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_agent_checks_command_endpoint.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_endpoints.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_roles.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_satellite_config_sync.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_scenario_ha_masters_with_agents.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_scenarios_master_satellites_agents.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_scenarios_master_with_agents.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_monitoring_zones.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_windows_client_disk_icingaweb2.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp_api_drivesize_icingaweb2.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_windows_nscp_counter_icingaweb2.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_running_service.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_01.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_02.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_03.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_04.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_05.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_01.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_02.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_02_global_zone.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_03.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_04.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_no_ticket.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_with_ticket.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_examine_config.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/icingadb/icingadb-architecture.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/icingadb/icingadb-daemon.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/icingadb/icingadb-icinga2.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/icingadb/icingadb-redis.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsyslog/icinga2.conf
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/mysql.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.0.2.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.1.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.11.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.12.7.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.13.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.13.3.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.2.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.3.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.4.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.5.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.6.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.8.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.8.1.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/pgsql.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.0.2.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.1.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.2.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.3.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.4.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.5.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.6.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.8.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.8.1.sql
+%%DATADIR%%/include/command-icinga.conf
+%%DATADIR%%/include/command-nscp-local.conf
+%%DATADIR%%/include/command-plugins-manubulon.conf
+%%DATADIR%%/include/command-plugins-windows.conf
+%%DATADIR%%/include/command-plugins.conf
+%%DATADIR%%/include/hangman
+%%DATADIR%%/include/itl
+%%DATADIR%%/include/manubulon
+%%DATADIR%%/include/nscp
+%%DATADIR%%/include/plugins
+%%DATADIR%%/include/plugins-contrib
+%%DATADIR%%/include/plugins-contrib.d/big-data.conf
+%%DATADIR%%/include/plugins-contrib.d/databases.conf
+%%DATADIR%%/include/plugins-contrib.d/hardware.conf
+%%DATADIR%%/include/plugins-contrib.d/icingacli.conf
+%%DATADIR%%/include/plugins-contrib.d/ipmi.conf
+%%DATADIR%%/include/plugins-contrib.d/logmanagement.conf
+%%DATADIR%%/include/plugins-contrib.d/metrics.conf
+%%DATADIR%%/include/plugins-contrib.d/network-components.conf
+%%DATADIR%%/include/plugins-contrib.d/network-services.conf
+%%DATADIR%%/include/plugins-contrib.d/operating-system.conf
+%%DATADIR%%/include/plugins-contrib.d/raid-controller.conf
+%%DATADIR%%/include/plugins-contrib.d/smart-attributes.conf
+%%DATADIR%%/include/plugins-contrib.d/storage.conf
+%%DATADIR%%/include/plugins-contrib.d/systemd.conf
+%%DATADIR%%/include/plugins-contrib.d/virtualization.conf
+%%DATADIR%%/include/plugins-contrib.d/vmware.conf
+%%DATADIR%%/include/plugins-contrib.d/web.conf
+%%DATADIR%%/include/windows-plugins
+share/man/man8/icinga2.8.gz
+share/vim/vimfiles/ftdetect/icinga2.vim
+share/vim/vimfiles/syntax/icinga2.vim
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) %%ETCDIR%%
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) %%ETCDIR%%/conf.d
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) %%ETCDIR%%/features-enabled
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/cache/icinga2
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/log
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/zones
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/zones-stage
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/certificate-requests
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/certs
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2
+@dir /var/lib
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2/compat/archives
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2/compat
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2/crash
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2
+@dir(%%ICINGA2USER%%,%%WWWGRP%%,2750) /var/run/icinga2/cmd
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0775) /var/run/icinga2
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/spool/icinga2/perfdata
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/spool/icinga2/tmp
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0775) /var/spool/icinga2

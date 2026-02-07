@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+Simple config:
+
+  LoadModule perl_module %%APACHEMODDIR%%/mod_perl.so
+  #PerlModule Apache::compat
+  # your config comes here
+
+For a more detailed version (including more options) refer to:
+
+  docs/user/intro/start_fast.pod
+
+or online:
+
+  http://perl.apache.org/docs/2.0/user/intro/start_fast.html
+
+The module can be enabled in
+ %%APACHEETCDIR%%/modules.d/260_mod_perl.conf
+EOM
+}
+]

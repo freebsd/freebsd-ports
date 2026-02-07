@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/POSIX::Regex.3.gz
+%%SITE_ARCH%%/POSIX/Regex.pm
+%%SITE_ARCH%%/POSIX/Regex.pod
+%%SITE_ARCH%%/auto/POSIX/Regex/Regex.so

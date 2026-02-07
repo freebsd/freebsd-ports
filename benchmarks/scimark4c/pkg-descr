@@ -1,0 +1,8 @@
+This is an ANSI C version of the SciMark2 benchmark, translated from the
+original Java sources. The intent in making this benchmark available in
+C is mainly for performance comparisons.
+
+Version 4.0 of the software has added check-sum counters to adequately test
+newer optimizing compilers.
+
+Results of this benchmark can be sent to pozo@nist.gov.

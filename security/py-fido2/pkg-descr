@@ -1,0 +1,2 @@
+Provides library functionality for communicating with a FIDO device over USB
+as well as verifying attestation and assertion signatures.

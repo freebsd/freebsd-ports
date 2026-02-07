@@ -1,0 +1,11 @@
+include/fxscintilla/FXScintilla.h
+include/fxscintilla/ILexer.h
+include/fxscintilla/Platform.h
+include/fxscintilla/SciLexer.h
+include/fxscintilla/Scintilla.h
+include/fxscintilla/ScintillaWidget.h
+lib/libfxscintilla.a
+lib/libfxscintilla.so
+lib/libfxscintilla.so.20
+lib/libfxscintilla.so.20.3.0
+libdata/pkgconfig/fxscintilla.pc

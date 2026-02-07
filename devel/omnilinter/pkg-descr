@@ -1,0 +1,4 @@
+Define path pattern and regular expression rules and match against
+all your repositories/projects/codebases at once. Use that to push
+and uphold good practices, chase deprecations, and fix common
+problems all over your code.

@@ -1,0 +1,20 @@
+Compress::LeadingBlankSpaces - Perl class to compress leading blank
+spaces in (HTML, JavaScript, etc.) web content.
+
+This class provides the functionality for the most simple web content
+compression.
+
+Basically, the outgoing web content (HTML, JavaScript, etc.) contains
+a lot of leading blank spaces, because of being structured on
+development stage.  Usually, the client browser ignores leading
+blank spaces.  Indeed, the amount of those blank spaces is as
+significant as 10 to 20 percent of the length of regular web page.
+We can reduce this part of web traffic on busy servers with no
+visible impact on transferred web content, especially for old
+browsers incapable to understand modern content compression.
+
+The main functionality of this class is concentrated within the
+"squeeze_string" member function that is supposed to be used inside
+the data transfer loop on server side.  The rest of the class is
+developed in order to serve possible exceptions, like pre-formatted
+data within HTML.

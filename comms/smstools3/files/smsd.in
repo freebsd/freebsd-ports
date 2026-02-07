@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: smsd 
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable smsd:
+#
+# smsd_enable="YES"
+#
+. /etc/rc.subr
+
+name=smsd
+rcvar=smsd_enable
+
+load_rc_config ${name}
+: ${smsd_enable:=NO}
+: ${smsd_pidfile:="%%PIDDIR%%/smsd.pid"}
+: ${smsd_infofile:="%%PIDDIR%%/smsd.working"}
+: ${smsd_config:="%%PREFIX%%/etc/smsd.conf"}
+
+pidfile=${smsd_pidfile}
+command="%%PREFIX%%/bin/smsd"
+command_args="-c${smsd_config} -p${smsd_pidfile} -i${smsd_infofile}"
+
+run_rc_command "$1"

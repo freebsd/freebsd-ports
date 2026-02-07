@@ -1,0 +1,10 @@
+The Qt Location API helps you create viable mapping solutions using the
+data available from some of the popular location services.
+
+The Qt Location API enables you to:
+  - access and present map data,
+  - support touch gesture on a specific area of the map,
+  - query for a specific geographical location and route,
+  - add additional layers on top, such as polylines and circles,
+  - and search for places and related images.
+

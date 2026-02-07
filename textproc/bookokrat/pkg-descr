@@ -1,0 +1,16 @@
+Bookokrat is a terminal-based EPUB reader with a split-view library and reader,
+full MathML and image rendering, automatic bookmarks, inline annotations, and
+customizable themes.
+
+What you can do:
+
+  - Browse every EPUB in the current directory, drill into the table of
+    contents, and resume exactly where you left off.
+  - Search inside the current chapter or across the whole book, jump through a
+    per-book history, and inspect reading statistics.
+  - Highlight text, attach comments, copy snippets or entire chapters, and
+    toggle the raw HTML source for debugging.
+  - Open images in-place, follow internal anchors, launch external links in
+    your browser, and hand off the book to your system viewer.
+  - Customize with multiple color themes, adjustable margins, and zen mode;
+    settings persist across sessions.

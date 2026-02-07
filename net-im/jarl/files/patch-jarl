@@ -1,0 +1,20 @@
+--- jarl~	Fri Jun  1 18:50:01 2001
++++ jarl	Sun Nov 10 09:57:48 2002
+@@ -88,14 +88,10 @@
+ 
+ $VERSION = "0.5001";
+ 
+-$Bitmaps = "$Bin/../share/jarl/bitmaps";
+-$Bitmaps = "$Bin/bitmaps" if !(-d $Bitmaps);
+-$Libs = "$Bin/../share/jarl/lib";
+-$Libs = "$Bin/lib" if !(-d $Libs);
++$Bitmaps = "%%PREFIX%%/share/jarl/bitmaps";
++$Libs = "%%PREFIX%%/share/jarl/lib";
+ 
+-use lib ((-d "$Bin/../share/jarl/lib") ?
+-	 "$Bin/../share/jarl/lib" :
+-	 "$Bin/lib");
++use lib "%%PREFIX%%/share/jarl/lib";
+ 
+ use Jarl;
+ 

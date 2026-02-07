@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Net::OpenID::Association.3.gz
+%%PERL5_MAN3%%/Net::OpenID::ClaimedIdentity.3.gz
+%%PERL5_MAN3%%/Net::OpenID::Consumer.3.gz
+%%PERL5_MAN3%%/Net::OpenID::VerifiedIdentity.3.gz
+%%SITE_PERL%%/Net/OpenID/Association.pm
+%%SITE_PERL%%/Net/OpenID/ClaimedIdentity.pm
+%%SITE_PERL%%/Net/OpenID/Consumer.pm
+%%SITE_PERL%%/Net/OpenID/VerifiedIdentity.pm

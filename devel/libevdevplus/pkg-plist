@@ -1,0 +1,4 @@
+include/CommonIncludes.hpp
+include/InputEvent.hpp
+include/evdevPlus.hpp
+lib/libevdevPlus.a

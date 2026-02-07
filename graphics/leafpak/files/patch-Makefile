@@ -1,0 +1,20 @@
+--- Makefile.orig	Wed Nov 22 03:53:10 2000
++++ Makefile	Sun Oct 19 02:25:14 2003
+@@ -1,13 +1,14 @@
+ DEST=/usr/local/bin
+-CFLAGS=-Wall
++CFLAGS?=-O -pipe
++CFLAGS+=-Wall
+ 
+ all: leafpak leafpak2
+ 
+ leafpak.o: leafpak.c leafpak.h
+-	$(CC) -c -Wall -g leafpak.c
++	$(CC) $(CFLAGS) -c -Wall -g leafpak.c
+ 
+ main.o: main.c leafpak.h
+-	$(CC) -c -Wall -g main.c
++	$(CC) $(CFLAGS) -c -Wall -g main.c
+ 
+ leafpak: main.o leafpak.o
+ 	$(CC) -o leafpak main.o leafpak.o

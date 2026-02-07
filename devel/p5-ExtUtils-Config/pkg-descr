@@ -1,0 +1,1 @@
+ExtUtils::Config is an abstraction around the %Config hash.

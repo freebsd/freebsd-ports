@@ -1,0 +1,3 @@
+Module is a filter that transforms images in JPEG, GIF, PNG, and WebP formats.
+Transformation capabilities include crop, resize, rotate, and others. Several
+resulting image options are configurable.

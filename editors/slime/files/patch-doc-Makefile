@@ -1,0 +1,18 @@
+--- doc/Makefile.orig	2018-12-14 22:54:16 UTC
++++ doc/Makefile
+@@ -35,13 +35,13 @@ slime.ps: slime.dvi
+ 	dvips -o $@ $<
+ 
+ slime.info: $(TEXI)
+-	makeinfo $<
++	/usr/local/bin/texi2any $<
+ 
+ slime.html: $(TEXI)
+ 	texi2html --css-include=slime.css $<
+ 
+ html/index.html: $(TEXI)
+-	makeinfo -o html --css-include=slime.css --html $<
++	/usr/local/bin/texi2any -o html --css-include=slime.css --html $<
+ 
+ html.tgz: html/index.html
+ 	tar -czf $@ html

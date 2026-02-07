@@ -1,0 +1,33 @@
+PORTNAME=	qnetwalk
+PORTVERSION=	1.9.0
+PORTREVISION=	3
+CATEGORIES=	games
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	Game for system administrators
+WWW=		https://github.com/AMDmi3/qnetwalk
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cmake compiler:c++17-lang qt:6
+USE_QT=		base tools:build
+USE_GITHUB=	yes
+GH_ACCOUNT=	AMDmi3
+
+PORTDOCS=	ChangeLog.md README.md
+PORTDATA=	*
+
+OPTIONS_DEFINE=	SOUND DOCS NLS
+OPTIONS_DEFAULT=SOUND
+OPTIONS_SUB=	yes
+
+SOUND_CMAKE_BOOL=ENABLE_SOUND
+SOUND_USE=	qt=multimedia
+NLS_CMAKE_BOOL=	ENABLE_NLS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.mk>

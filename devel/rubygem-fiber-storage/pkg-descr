@@ -1,0 +1,2 @@
+Fiber::Storage provides a shim for Fiber.[], Fiber.[]=, Fiber#storage,
+Fiber#storage=, which was introduced in Ruby 3.2.

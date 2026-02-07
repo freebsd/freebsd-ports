@@ -1,0 +1,15 @@
+include/libdaemon/daemon.h
+include/libdaemon/dexec.h
+include/libdaemon/dfork.h
+include/libdaemon/dlog.h
+include/libdaemon/dnonblock.h
+include/libdaemon/dpid.h
+include/libdaemon/dsignal.h
+lib/libdaemon.a
+lib/libdaemon.la
+lib/libdaemon.so
+lib/libdaemon.so.0
+lib/libdaemon.so.0.5.0
+libdata/pkgconfig/libdaemon.pc
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/style.css

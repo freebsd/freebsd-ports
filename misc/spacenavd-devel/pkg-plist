@@ -1,0 +1,4 @@
+bin/spacenavd
+bin/spnavd_ctl
+etc/rc.d/spacenavd
+@sample etc/spnavrc.sample

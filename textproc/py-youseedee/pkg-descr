@@ -1,0 +1,2 @@
+youseedee provides an interface to the UCD. This module allows you to query the
+Unicode Character Database. The main function to be imported is ucd_data.

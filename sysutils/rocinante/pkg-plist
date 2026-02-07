@@ -1,0 +1,18 @@
+bin/rocinante
+@sample %%ETCDIR%%.conf.sample
+libexec/rocinante/bootstrap.sh
+libexec/rocinante/cmd.sh
+libexec/rocinante/common.sh
+libexec/rocinante/cp.sh
+libexec/rocinante/limits.sh
+libexec/rocinante/list.sh
+libexec/rocinante/pkg.sh
+libexec/rocinante/service.sh
+libexec/rocinante/sysctl.sh
+libexec/rocinante/sysrc.sh
+libexec/rocinante/template.sh
+libexec/rocinante/update.sh
+libexec/rocinante/upgrade.sh
+libexec/rocinante/verify.sh
+libexec/rocinante/zfs.sh
+libexec/rocinante/zpool.sh

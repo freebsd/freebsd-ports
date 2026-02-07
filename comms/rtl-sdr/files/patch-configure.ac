@@ -1,0 +1,11 @@
+--- configure.ac.orig	2023-11-03 09:21:21 UTC
++++ configure.ac
+@@ -35,7 +35,7 @@ dnl pthreads
+ 
+ dnl checks for required libraries
+ dnl pthreads
+-AC_CHECK_LIB(pthread, pthread_create, [LIBS="$LIBS -lpthread"])
++AC_CHECK_LIB(pthread, pthread_create, [LIBS="$LIBS -pthread"])
+ 
+ dnl libmath (for rtl_fm)
+ AC_CHECK_LIB(m, atan2, [LIBS="$LIBS -lm"])

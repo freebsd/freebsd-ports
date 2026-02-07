@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Carp/Always/Color.pm
+%%SITE_PERL%%/Carp/Always/Color/HTML.pm
+%%SITE_PERL%%/Carp/Always/Color/Term.pm
+%%PERL5_MAN3%%/Carp::Always::Color.3.gz
+%%PERL5_MAN3%%/Carp::Always::Color::HTML.3.gz
+%%PERL5_MAN3%%/Carp::Always::Color::Term.3.gz

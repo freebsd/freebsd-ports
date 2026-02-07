@@ -1,0 +1,2 @@
+This module adds a create_structured_tree subroutine to the
+Directory::Scratch.

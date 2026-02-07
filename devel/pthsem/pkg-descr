@@ -1,0 +1,6 @@
+GNU pth is a user mode multi threading library. pthsem is an extend
+version, with support for semaphores added. It can be installed parallel
+to a normal pth. The header file is called pthsem.h, the configuration
+program pthsem-config and the autoconf macro AC_CHECK_PTHSEM. If
+references to one of these names are changed, pthsem can be used as an
+replacement of GNU pth.

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+# hourly_rancid_enable		- Enable hourly rancid run (values: YES | NO)
+
+case "${hourly_rancid_enable-"NO"}" in
+	[Yy][Ee][Ss])
+		/usr/bin/su -f rancid %%LOCALBASE%%/libexec/rancid/rancid-run
+		;;
+
+	*)
+		exit 0
+		;;
+esac

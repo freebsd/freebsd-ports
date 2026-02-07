@@ -1,0 +1,2 @@
+package ifneeded Whip %%VERSION%% [list load [file join $dir whiptcl.so]]
+package ifneeded Whip %%VERSION%% [list load [file join $dir whiptcl.so]]

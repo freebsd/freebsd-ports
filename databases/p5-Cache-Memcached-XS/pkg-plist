@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Cache/Memcached/XS.pm
+%%SITE_ARCH%%/auto/Cache/Memcached/XS/XS.so
+%%PERL5_MAN3%%/Cache::Memcached::XS.3.gz

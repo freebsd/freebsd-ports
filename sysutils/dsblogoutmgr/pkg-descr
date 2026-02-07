@@ -1,0 +1,3 @@
+DSBLogoutmgr is a Qt utility that allows you to leave your current window
+manager-session, reboot, suspend or shutdown your system. Furthermore, it
+supports time-controlled shutdown.

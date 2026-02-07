@@ -1,0 +1,5 @@
+Tie::LevelDB is the Perl Interface for Google NoSQL database called LevelDB. See
+http://code.google.com/p/leveldb/ for more details.
+
+Interface is implemented both as a reflection of an original LevelDB C++ API and
+a Perl-ish TIEHASH mechanism.

@@ -1,0 +1,27 @@
+How to play LambdaMOO
+
+1. Get core database,
+   ftp://ftp.lambda.moo.mud.org/pub/MOO/LambdaMOO-latest.tar.gz.
+
+   If you want to get other two commonly used core databases, visit
+   http://www.moo.mud.org/.
+
+2. /usr/local/sbin/moo INITIAL-DB-FILE CHECKPOINT-DB-FILE.
+
+!NOTICE!
+
+According to MOO-Cows FAQ in http://www.moo.mud.org/moo-faq/,
+LambdaCore-latest.db has password problem on FreeBSD.
+Apply following patch to resolve.
+
+--- LambdaCore-latest.db.orig	Sun Jul  4 08:34:16 1999
++++ LambdaCore-latest.db	Sun Jul  4 14:05:25 1999
+@@ -227748,7 +227748,7 @@
+ elseif (length(args) != 2)
+ player:notify(tostr("Usage:  ", verb, " <old-password> <new-password>"));
+ return;
+-elseif (player.password != crypt(tostr(args[1]), player.password))
++elseif (player.password != crypt(tostr(args[1]), player.password[4..5]))
+ player:notify("That's not your old password.");
+ return;
+ elseif (is_clear_property(player, "password"))

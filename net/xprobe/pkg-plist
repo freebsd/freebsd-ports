@@ -1,0 +1,3 @@
+bin/xprobe2
+@sample %%ETCDIR%%/xprobe2.conf.sample
+share/man/man1/xprobe2.1.gz

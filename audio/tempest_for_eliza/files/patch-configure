@@ -1,0 +1,11 @@
+--- configure.orig	2001-12-01 17:50:18 UTC
++++ configure
+@@ -1055,7 +1055,7 @@ YYY_CXXFLAGS="$CXXFLAGS"
+ if test "$yyynooptimizing" = "yes"; then
+   YYY_CXXFLAGS="$YYY_CXXFLAGS -O0"
+ else
+-  YYY_CXXFLAGS="$YYY_CXXFLAGS -O2"
++#  YYY_CXXFLAGS="$YYY_CXXFLAGS -O2"
+ fi
+ 
+ if test "$yyyprofiling" = "yes"; then

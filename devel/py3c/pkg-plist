@@ -1,0 +1,8 @@
+include/py3c.h
+include/py3c/capsulethunk.h
+include/py3c/comparison.h
+include/py3c/compat.h
+include/py3c/fileshim.h
+include/py3c/py3shims.h
+include/py3c/tpflags.h
+libdata/pkgconfig/py3c.pc

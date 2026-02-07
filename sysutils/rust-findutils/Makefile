@@ -1,0 +1,154 @@
+PORTNAME=	rust-findutils
+DISTVERSION=	0.7.0
+PORTREVISION=	13
+CATEGORIES=	sysutils
+
+MAINTAINER=	pkubaj@FreeBSD.org
+COMMENT=	Rust implementation of findutils
+WWW=		https://crates.io/crates/findutils
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libonig.so:devel/oniguruma
+
+USES=		cargo llvm:lib
+USE_GITHUB=	yes
+GH_ACCOUNT=	uutils
+GH_PROJECT=	findutils
+
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.12 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-3.0.1 \
+		assert_cmd-2.0.16 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bitflags-2.4.1 \
+		bstr-1.9.1 \
+		bumpalo-3.12.0 \
+		cc-1.0.72 \
+		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
+		cfg_aliases-0.2.1 \
+		chrono-0.4.38 \
+		clap-4.5.17 \
+		clap_builder-4.5.17 \
+		clap_lex-0.7.0 \
+		colorchoice-1.0.0 \
+		core-foundation-sys-0.8.3 \
+		diff-0.1.13 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		dunce-1.0.4 \
+		errno-0.3.8 \
+		faccess-0.2.4 \
+		fastrand-2.0.1 \
+		filetime-0.2.25 \
+		float-cmp-0.9.0 \
+		futures-0.3.21 \
+		futures-channel-0.3.21 \
+		futures-core-0.3.21 \
+		futures-executor-0.3.21 \
+		futures-io-0.3.21 \
+		futures-sink-0.3.21 \
+		futures-task-0.3.21 \
+		futures-util-0.3.21 \
+		glob-0.3.1 \
+		iana-time-zone-0.1.47 \
+		js-sys-0.3.59 \
+		libc-0.2.155 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.12 \
+		lock_api-0.4.7 \
+		log-0.4.14 \
+		memchr-2.7.2 \
+		nix-0.28.0 \
+		nix-0.29.0 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.14 \
+		number_prefix-0.4.0 \
+		once_cell-1.19.0 \
+		onig-6.4.0 \
+		onig_sys-69.8.1 \
+		os_display-0.1.3 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.24 \
+		predicates-3.1.2 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.1 \
+		pretty_assertions-1.4.0 \
+		proc-macro2-1.0.60 \
+		quote-1.0.28 \
+		redox_syscall-0.4.1 \
+		redox_syscall-0.5.3 \
+		regex-1.10.6 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
+		rustix-0.38.31 \
+		same-file-1.0.4 \
+		scc-2.1.0 \
+		scopeguard-1.1.0 \
+		sdd-0.2.0 \
+		serde-1.0.147 \
+		serial_test-3.1.1 \
+		serial_test_derive-3.1.1 \
+		slab-0.4.6 \
+		smallvec-1.8.0 \
+		strsim-0.11.0 \
+		syn-2.0.18 \
+		tempfile-3.12.0 \
+		terminal_size-0.3.0 \
+		treeline-0.1.0 \
+		unicode-ident-1.0.9 \
+		unicode-width-0.1.9 \
+		utf8parse-0.2.1 \
+		uucore-0.0.27 \
+		uucore_procs-0.0.20 \
+		uuhelp_parser-0.0.20 \
+		wait-timeout-0.2.0 \
+		walkdir-2.5.0 \
+		wasm-bindgen-0.2.91 \
+		wasm-bindgen-backend-0.2.91 \
+		wasm-bindgen-macro-0.2.91 \
+		wasm-bindgen-macro-support-0.2.91 \
+		wasm-bindgen-shared-0.2.91 \
+		wild-2.2.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.8 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.48.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.48.0 \
+		windows_x86_64_msvc-0.52.6 \
+		yansi-0.5.1
+
+PLIST_FILES=	bin/find \
+		bin/testing-commandline \
+		bin/xargs
+
+.include <bsd.port.mk>

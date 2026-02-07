@@ -1,0 +1,10 @@
+--- Makefile.orig	Tue Oct  3 19:42:32 2006
++++ Makefile	Tue Oct  3 19:43:32 2006
+@@ -108,6 +108,7 @@
+ 	@$(SHELL) $(srcdir)checkos.sh $(FLAGSM)
+ 	@echo "Using CFLAGS = $(CFLAGS)"
+ 	@echo "Using LIBS = $(LIBS)"
++	@echo "Using CC = $(CC)"
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o .h

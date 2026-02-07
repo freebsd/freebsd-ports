@@ -1,0 +1,2 @@
+liblscp is a C library written as a wrapper around the LSCP network
+protocol, thus to control linuxsampler.

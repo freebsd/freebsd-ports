@@ -1,0 +1,13 @@
+--- tests/meson.build.orig	2024-09-19 10:01:21 UTC
++++ tests/meson.build
+@@ -1,8 +1,8 @@
+-if get_option('tests').disabled() or static_build
++if get_option('tests').disabled() and get_option('examples').disabled() or static_build
+   subdir_done()
+ endif
+ 
+-if gstcheck_dep.found()
++if not get_option('tests').disabled() and gstcheck_dep.found()
+   subdir('check')
+   subdir('interactive')
+   subdir('validate')

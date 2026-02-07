@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: kwnn
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=kwnn
+rcvar=kwnn_enable
+command=%%PREFIX%%/bin/kWnn4/kserver
+procname=%%PREFIX%%/bin/kWnn4/kserver
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+WTCMD=%%PREFIX%%/bin/kWnn4/kwnntouch
+
+: ${kwnn_enable:=NO}
+
+start_precmd()
+{
+	rm -f /tmp/kd_sockV4
+	install -d -o wnn -m 755 %%PREFIX%%/lib/wnn/ko_KR/dic/usr
+	${WTCMD} %%PREFIX%%/lib/wnn/ko_KR/dic/sys/*
+}
+
+stop_postcmd()
+{
+	rm -f /tmp/kd_sockV4
+}
+
+load_rc_config $name
+run_rc_command $1

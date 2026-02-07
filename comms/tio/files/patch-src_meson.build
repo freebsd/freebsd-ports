@@ -1,0 +1,9 @@
+--- src/meson.build.orig	2025-04-21 16:31:39 UTC
++++ src/meson.build
+@@ -1,5 +1,5 @@
+ # Generate version header
+-version_h = vcs_tag(command : ['git', 'describe', '--tags', '--always', '--dirty'],
++version_h = vcs_tag(command : ['false'],
+                         input : 'version.h.in',
+                         output :'version.h',
+                         replace_string:'@VERSION@')

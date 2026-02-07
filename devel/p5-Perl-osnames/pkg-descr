@@ -1,0 +1,2 @@
+Perl::osnames contains $data which lists possible values of $^O along with
+description for each. It also provides some helper functions.

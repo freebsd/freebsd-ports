@@ -1,0 +1,34 @@
+--- src/CMakeLists.txt.orig	2024-04-16 04:08:00 UTC
++++ src/CMakeLists.txt
+@@ -23,7 +23,7 @@ include(AddIOWOW)
+ 
+ find_package(Threads REQUIRED CMAKE_THREAD_PREFER_PTHREAD)
+ 
+-set(CMAKE_C_FLAGS
++string(REGEX REPLACE " +" " " CMAKE_C_FLAGS
+     "${CMAKE_C_FLAGS} \
+                   -Wall \
+                   -Wextra \
+@@ -60,7 +60,7 @@ endif()
+ set(CMAKE_C_FLAGS_DEBUG
+     "${CMAKE_C_ASAN} -O0 -g -ggdb -Werror -DDEBUG -D_DEBUG -UNDEBUG -Wno-unused-variable"
+ )
+-set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_ASAN} -O3 -DNDEBUG")
++set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_ASAN} -DNDEBUG")
+ set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-Wl,-s")
+ set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g")
+ set(CMAKE_C_FLAGS_RELEASEWITHDEBINFO ${CMAKE_C_FLAGS_RELWITHDEBINFO})
+@@ -178,13 +178,6 @@ if(BUILD_SHARED_LIBS)
+                SOVERSION ${PROJECT_VERSION_MAJOR}
+                PUBLIC_HEADER "${PUB_HDRS}"
+                DEFINE_SYMBOL IW_API_EXPORTS)
+-
+-  if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-    add_custom_command(
+-      TARGET iwnet
+-      POST_BUILD
+-      COMMAND ${STRIP_CMD} $<TARGET_FILE:iwnet>)
+-  endif()
+ 
+   set_target_properties(
+     iwnet_s

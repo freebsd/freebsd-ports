@@ -1,0 +1,36 @@
+PORTNAME=	lacaml
+DISTVERSION=	11.0.10
+PORTREVISION=	3
+CATEGORIES=	devel
+PKGNAMEPREFIX=	ocaml-
+
+MAINTAINER=	freebsd@dev.thsi.be
+COMMENT=	OCaml interface to BLAS and LAPACK libraries
+WWW=		https://mmottl.github.io/lacaml/
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		blaslapack fortran ocaml:dune,ldconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
+
+MAKE_ENV+=	LACAML_LIBS="-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB}"
+
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
+
+PORTDOCS=	CHANGES.md LICENSE.md README.md
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.cmxs
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.so
+
+post-install-EXAMPLES-on:
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
+
+.include <bsd.port.mk>

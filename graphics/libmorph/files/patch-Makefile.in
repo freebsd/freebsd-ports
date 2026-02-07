@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Dec  6 16:23:50 1999
++++ Makefile.in	Thu Sep 14 10:32:13 2000
+@@ -77,7 +77,7 @@
+ VERSION = @VERSION@
+ 
+ SUBDIRS = src
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = libmorphConf.sh
+ 
+ EXTRA_DIST = configure acconfig.h libmorphConf.sh.in

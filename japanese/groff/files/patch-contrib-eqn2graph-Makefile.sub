@@ -1,0 +1,15 @@
+--- contrib/eqn2graph/Makefile.sub.orig	2014-02-07 14:15:24.000000000 +0900
++++ contrib/eqn2graph/Makefile.sub	2014-02-07 14:15:44.000000000 +0900
+@@ -11,9 +11,9 @@
+ 	chmod +x $@
+ 
+ install_data: eqn2graph
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	-rm -f $(bindir)/eqn2graph
+-	$(INSTALL_SCRIPT) eqn2graph $(bindir)/eqn2graph
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	-rm -f $(DESTDIR)$(bindir)/eqn2graph
++	$(INSTALL_SCRIPT) eqn2graph $(DESTDIR)$(bindir)/eqn2graph
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/eqn2graph

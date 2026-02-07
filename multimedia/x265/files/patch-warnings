@@ -1,0 +1,349 @@
+--- source/encoder/entropy.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/entropy.cpp	2024-09-24 00:56:25.162151000 -0400
+@@ -1758,5 +1762,7 @@
+     bool            bDenomCoded  = false;
+     int             numRefDirs   = slice.m_sliceType == B_SLICE ? 2 : 1;
++#if CHECKED_BUILD || _DEBUG
+     uint32_t        totalSignalledWeightFlags = 0;
++#endif
+ 
+     if ((slice.m_sliceType == P_SLICE && slice.m_pps->bUseWeightPred) ||
+@@ -1784,5 +1790,7 @@
+                 }
+                 WRITE_FLAG(!!wp[0].wtPresent, "luma_weight_lX_flag");
++#if CHECKED_BUILD || _DEBUG
+                 totalSignalledWeightFlags += wp[0].wtPresent;
++#endif
+             }
+ 
+@@ -1797,5 +1805,7 @@
+                     wp = slice.m_weightPredTable[list][ref];
+                     WRITE_FLAG(!!wp[1].wtPresent, "chroma_weight_lX_flag");
++#if CHECKED_BUILD || _DEBUG
+                     totalSignalledWeightFlags += 2 * wp[1].wtPresent;
++#endif
+                 }
+             }
+--- source/encoder/sao.cpp	2023-06-27 10:11:49.000000000 -0400
++++ source/encoder/sao.cpp	2023-10-22 21:03:08.008923000 -0400
+@@ -740,5 +740,4 @@ 
+     const pixel* fenc0 = m_frame->m_fencPic->getPlaneAddr(plane, addr);
+     const pixel* rec0  = reconPic->getPlaneAddr(plane, addr);
+-    const pixel* fenc;
+     const pixel* rec;
+     intptr_t stride = plane ? reconPic->m_strideC : reconPic->m_stride;
+@@ -870,5 +869,4 @@ 
+                 }
+ 
+-                fenc = fenc0;
+                 rec  = rec0;
+ 
+@@ -880,5 +878,4 @@ 
+                 if (startY)
+                 {
+-                    fenc += stride;
+                     rec += stride;
+                 }
+@@ -895,5 +892,4 @@ 
+                     skipR = 5;
+                 }
+-                fenc = fenc0;
+                 rec  = rec0;
+                 startX = !lpelx;
+@@ -905,5 +901,4 @@ 
+                 if (startY)
+                 {
+-                    fenc += stride;
+                     rec += stride;
+                 }
+--- source/test/pixelharness.cpp	2023-06-27 10:11:49.000000000 -0400
++++ source/test/pixelharness.cpp	2023-10-22 21:37:53.184785000 -0400
+@@ -999,5 +999,4 @@ 
+ bool PixelHarness::check_pixel_var(var_t ref, var_t opt)
+ {
+-    int j = 0;
+ 
+     intptr_t stride = STRIDE;
+@@ -1012,5 +1011,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1352,6 +1350,4 @@ 
+     int8_t _upBuff1_vec[MAX_CU_SIZE + 2], *upBuff1_vec = _upBuff1_vec + 1;
+ 
+-    int j = 0;
+-
+     for (int i = 0; i < ITERS; i++)
+     {
+@@ -1380,5 +1376,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1400,6 +1395,4 @@ 
+     int8_t _upBufft_vec[MAX_CU_SIZE + 2], *upBufft_vec = _upBufft_vec + 1;
+ 
+-    int j = 0;
+-
+     // NOTE: verify more times since our asm is NOT exact match to C, the output of upBuff* will be DIFFERENT
+     for (int i = 0; i < ITERS * 10; i++)
+@@ -1434,5 +1427,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1452,6 +1444,4 @@ 
+     int8_t _upBuff1_vec[MAX_CU_SIZE + 2], *upBuff1_vec = _upBuff1_vec + 1;
+ 
+-    int j = 0;
+-
+     // (const pixel *fenc, const pixel *rec, intptr_t stride, int8_t *upBuff1, int endX, int endY, int32_t *stats, int32_t *count)
+     for (int i = 0; i < ITERS; i++)
+@@ -1483,5 +1473,4 @@ 
+ 
+         reportfail();
+-        j += INCR;
+     }
+ 
+@@ -1736,5 +1725,4 @@ 
+     uint16_t ref_coeffFlag[MLS_GRP_NUM], opt_coeffFlag[MLS_GRP_NUM];    // bit mask map for non-zero coeff
+ 
+-    int totalCoeffs = 0;
+     for (int i = 0; i < 32 * 32; i++)
+     {
+@@ -1748,5 +1736,4 @@ 
+         if ((rand() % 10) < 8)
+             ref_src[i] *= -1;
+-        totalCoeffs += (ref_src[i] != 0);
+     }
+ 
+@@ -1873,5 +1860,4 @@ 
+     memset(opt_absCoeff, 0xCD, sizeof(opt_absCoeff));
+ 
+-    int totalCoeffs = 0;
+     for (int i = 0; i < 32 * 32; i++)
+     {
+@@ -1885,5 +1871,4 @@ 
+         if ((rand() % 10) < 8)
+             ref_src[i] *= -1;
+-        totalCoeffs += (ref_src[i] != 0);
+     }
+ 
+@@ -2230,5 +2215,4 @@ 
+ {
+     intptr_t srcStep = 64;
+-    int j = 0;
+     uint32_t dst_ref[BUFFSIZE] = { 0 };
+     uint32_t dst_opt[BUFFSIZE] = { 0 };
+@@ -2260,6 +2244,5 @@ 
+             return false;
+ 
+-        reportfail()
+-            j += INCR;
++        reportfail();
+     }
+     return true;
+@@ -2272,5 +2255,4 @@ 
+      * where data movement in AVX2 is 8 elements at a time */
+     intptr_t srcStep[2] = { 56, 64 };
+-    int j = 0;
+     uint32_t dst_ref[BUFFSIZE] = { 0 };
+     uint32_t dst_opt[BUFFSIZE] = { 0 };
+@@ -2290,6 +2272,5 @@ 
+                 return false;
+ 
+-            reportfail()
+-                j += INCR;
++            reportfail();
+         }
+     }
+--- source/common/scaler.cpp	2023-06-27 10:11:49.000000000 -0400
++++ source/common/scaler.cpp	2023-10-22 21:43:05.304243000 -0400
+@@ -512,8 +512,5 @@ 
+     int  srcVCrPos;
+     int  dstVCrPos;
+-    int dst_stride = SCALER_ALIGN(dstW * sizeof(int16_t) + 66, 16);
+     m_bitDepth = dstVideoDesc->m_inputDepth;
+-    if (m_bitDepth == 16)
+-        dst_stride <<= 1;
+ 
+     m_algorithmFlags = algorithmFlags;
+--- source/encoder/ratecontrol.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/ratecontrol.cpp	2024-09-23 23:12:11.531124000 -0400
+@@ -661,5 +661,4 @@
+                 /* read stats */
+                 p = statsIn;
+-                double totalQpAq = 0;
+                 for (int i = 0; i < m_numEntries; i++)
+                 {
+@@ -726,5 +725,4 @@
+                     }
+                     rce->qScale = rce->newQScale = x265_qp2qScale(qpRc);
+-                    totalQpAq += qpAq;
+                     rce->qpNoVbv = qNoVbv;
+                     rce->qpaRc = qpRc;
+@@ -1105,5 +1103,5 @@
+ bool RateControl::initPass2()
+ {
+-    uint64_t allConstBits = 0, allCodedBits = 0;
++    uint64_t allConstBits = 0;
+     uint64_t allAvailableBits = uint64_t(m_param->rc.bitrate * 1000. * m_numEntries * m_frameDuration);
+     int startIndex, endIndex;
+@@ -1124,5 +1122,4 @@
+         {
+             allConstBits += m_rce2Pass[endIndex].miscBits;
+-            allCodedBits += m_rce2Pass[endIndex].coeffBits + m_rce2Pass[endIndex].mvBits;
+         }
+ 
+@@ -1222,5 +1219,5 @@
+     double qScaleMin = x265_qp2qScale(m_param->rc.qpMin);
+     double qScaleMax = x265_qp2qScale(m_param->rc.qpMax);
+-    int iterations = 0 , adjMin, adjMax;
++    int adjMin, adjMax;
+     CHECKED_MALLOC(fills, double, m_numEntries + 1);
+     fills++;
+@@ -1229,5 +1226,4 @@
+     do
+     {
+-        iterations++;
+         prevBits = expectedBits;
+ 
+--- source/encoder/search.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/search.cpp	2024-09-23 23:37:29.009223000 -0400
+@@ -277,5 +277,4 @@
+     }
+ 
+-    uint32_t tuDepthC = tuDepth;
+     uint32_t log2TrSizeC = log2TrSize - m_hChromaShift;
+ 
+@@ -286,5 +285,4 @@
+             return;
+         log2TrSizeC = 2;
+-        tuDepthC--;
+     }
+ 
+@@ -5706,10 +5708,8 @@
+     uint32_t log2TrSizeC = log2TrSize - m_hChromaShift;
+     uint32_t codeChroma = (m_csp != X265_CSP_I400 && m_frame->m_fencPic->m_picCsp != X265_CSP_I400) ? 1 : 0;
+-    uint32_t tuDepthC = tuDepth;
+     if (log2TrSizeC < 2)
+     {
+         X265_CHECK(log2TrSize == 2 && m_csp != X265_CSP_I444 && tuDepth, "invalid tuDepth\n");
+         log2TrSizeC = 2;
+-        tuDepthC--;
+         codeChroma &= !(absPartIdx & 3);
+     }
+--- source/dynamicHDR10/json11/json11.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/dynamicHDR10/json11/json11.cpp	2024-09-23 23:43:58.447286000 -0400
+@@ -158,5 +158,5 @@
+     // Constructors
+     explicit Value(const T &value) : m_value(value) {}
+-    explicit Value(T &&value)      : m_value(move(value)) {}
++    explicit Value(T &&value)      : m_value(std::move(value)) {}
+ 
+     // Get type tag
+@@ -205,5 +205,5 @@
+ public:
+     explicit JsonString(const string &value) : Value(value) {}
+-    explicit JsonString(string &&value)      : Value(move(value)) {}
++    explicit JsonString(string &&value)      : Value(std::move(value)) {}
+ };
+ 
+@@ -213,5 +213,5 @@
+ public:
+     explicit JsonArray(const Json::array &value) : Value(value) {}
+-    explicit JsonArray(Json::array &&value)      : Value(move(value)) {}
++    explicit JsonArray(Json::array &&value)      : Value(std::move(value)) {}
+ };
+ 
+@@ -221,5 +221,5 @@
+ public:
+     explicit JsonObject(const Json::object &value) : Value(value) {}
+-    explicit JsonObject(Json::object &&value)      : Value(move(value)) {}
++    explicit JsonObject(Json::object &&value)      : Value(std::move(value)) {}
+ };
+ 
+@@ -263,10 +263,10 @@
+ Json::Json(bool value)                 : m_ptr(value ? statics().t : statics().f) {}
+ Json::Json(const string &value)        : m_ptr(make_shared<JsonString>(value)) {}
+-Json::Json(string &&value)             : m_ptr(make_shared<JsonString>(move(value))) {}
++Json::Json(string &&value)             : m_ptr(make_shared<JsonString>(std::move(value))) {}
+ Json::Json(const char * value)         : m_ptr(make_shared<JsonString>(value)) {}
+ Json::Json(const Json::array &values)  : m_ptr(make_shared<JsonArray>(values)) {}
+-Json::Json(Json::array &&values)       : m_ptr(make_shared<JsonArray>(move(values))) {}
++Json::Json(Json::array &&values)       : m_ptr(make_shared<JsonArray>(std::move(values))) {}
+ Json::Json(const Json::object &values) : m_ptr(make_shared<JsonObject>(values)) {}
+-Json::Json(Json::object &&values)      : m_ptr(make_shared<JsonObject>(move(values))) {}
++Json::Json(Json::object &&values)      : m_ptr(make_shared<JsonObject>(std::move(values))) {}
+ 
+ /* * * * * * * * * * * * * * * * * * * *
+@@ -362,5 +362,5 @@
+      */
+     Json fail(string &&msg) {
+-        return fail(move(msg), Json());
++        return fail(std::move(msg), Json());
+     }
+ 
+--- source/encoder/slicetype.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/slicetype.cpp	2024-09-23 23:46:16.350590000 -0400
+@@ -1455,5 +1455,4 @@
+     uint32_t variance;
+ 
+-    uint64_t blockXY = 0;
+     pixel* src = curFrame->m_fencPic->m_picOrg[0];
+ 
+@@ -1471,5 +1470,4 @@
+ 
+             rowVariance += variance;
+-            blockXY++;
+         }
+         picTotVariance += (uint16_t)(rowVariance / maxCol);
+@@ -1502,5 +1500,4 @@
+ 
+             rowVariance += variance;
+-            blockXY++;
+         }
+         picTotVariance += (uint16_t)(rowVariance / maxColChroma);
+@@ -1526,5 +1523,4 @@
+ 
+             rowVariance += variance;
+-            blockXY++;
+         }
+         picTotVariance += (uint16_t)(rowVariance / maxColChroma);
+--- source/common/param.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/common/param.cpp	2024-09-23 23:52:41.800395000 -0400
+@@ -871,10 +871,13 @@
+     bool bExtraParams = false;
+     char nameBuf[64];
+-    static int count;
+ 
+     if (!name)
+         return X265_PARAM_BAD_NAME;
+ 
++#ifdef SVT_HEVC
++    static int count;
+     count++;
++#endif
++
+     // skip -- prefix if provided
+     if (name[0] == '-' && name[1] == '-')
+--- source/encoder/level.cpp	2024-11-22 07:07:34.000000000 -0500
++++ source/encoder/level.cpp	2025-11-01 20:29:50.066886000 -0400
+@@ -61,13 +61,4 @@
+ };
+ 
+-static inline int _confirm(x265_param* param, bool bflag, const char* message)
+-{
+-    if (!bflag)
+-        return 0;
+-
+-    x265_log(param, X265_LOG_ERROR, "%s\n", message);
+-    return 1;
+-}
+-
+ /* determine minimum decoder level required to decode the described video */
+ void determineLevel(const x265_param &param, VPS& vps)

@@ -1,0 +1,17 @@
+--- src/CMakeLists.txt.orig	2025-05-24 06:53:57 UTC
++++ src/CMakeLists.txt
+@@ -1,6 +1,6 @@ set(TARGET mcp)
+ set(TARGET mcp)
+ 
+-add_library(${TARGET} STATIC
++add_library(${TARGET}
+     ../include/mcp_client.h
+     mcp_message.cpp
+     ../include/mcp_message.h
+@@ -22,3 +22,6 @@ endif()
+ if(OPENSSL_FOUND)
+     target_link_libraries(${TARGET} PUBLIC ${OPENSSL_LIBRARIES})
+ endif()
++
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../include/. DESTINATION include/mcp)
++install(TARGETS ${TARGET} DESTINATION lib)

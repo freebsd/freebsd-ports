@@ -1,0 +1,29 @@
+--- config.tmpl.orig	1998-04-04 14:58:33 UTC
++++ config.tmpl
+@@ -16,7 +16,7 @@ XCOMM CC = gcc
+ XCOMM CDEBUGFLAGS = -g -Wall 
+ XCOMM CCOPTIONS = 
+ INLINE = 
+-YACC = bison -y
++YACC = byacc
+ LEX  = flex 
+ 
+ XCOMM -----------  Making shared object options
+@@ -25,7 +25,7 @@ XCOMM compile shared object
+ XCOMM PICFLAG = -fpic -DPIC
+ 
+ XCOMM for BSD
+-XCOMM SHAREFLAGS = -x -Bshareable
++SHAREFLAGS = -x -Bshareable
+ 
+ XCOMM for Linux
+ XCOMM SYS_LIBRARIES += -rdynamic -ldl
+@@ -35,7 +35,7 @@ XCOMM for SunOS 4.1.x
+ XCOMM SHAREFLAGS = 
+ 
+ XCOMM for Other OSs (don't make modules) Ex. SunOS 5.0
+-SHAREFLAGS = 
++XCOMM SHAREFLAGS = 
+ #define NOMODULE
+ 
+ XCOMM  ---------------------------------------

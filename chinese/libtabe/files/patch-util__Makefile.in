@@ -1,0 +1,23 @@
+--- ./util/Makefile.in.orig	2014-05-19 15:29:43.541103099 +0800
++++ ./util/Makefile.in	2014-05-19 15:30:16.727090377 +0800
+@@ -87,13 +87,13 @@
+ 
+ .PHONY: install clean distclean
+ install: $(DUMP) $(DEL) $(ADD) $(CHK) $(TY) $(GUESS)
+-	if [ ! -d $(bindir) ]; then $(INSTALL) -d $(bindir); fi
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(DUMP) $(bindir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(DEL) $(bindir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(ADD) $(bindir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(CHK) $(bindir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(TY) $(bindir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(GUESS) $(bindir)
++	if [ ! -d $(DESTDIR)$(bindir) ]; then $(INSTALL) -d $(DESTDIR)$(bindir); fi
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(DUMP) $(DESTDIR)$(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(DEL) $(DESTDIR)$(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(ADD) $(DESTDIR)$(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(CHK) $(DESTDIR)$(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(TY) $(DESTDIR)$(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(GUESS) $(DESTDIR)$(bindir)
+ 
+ clean:
+ 	$(RM) $(DUMP) $(DUMPOBJ) $(DEL) $(DELOBJ) $(ADD) $(ADDOBJ) \

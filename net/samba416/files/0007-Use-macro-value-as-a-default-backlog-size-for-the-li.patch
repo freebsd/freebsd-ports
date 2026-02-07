@@ -1,0 +1,105 @@
+From 75f20f8e144a926873b619e1c0918896689d39a0 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 03:28:09 +0200
+Subject: [PATCH 07/28] Use macro value as a default backlog size for the
+ `listen()` syscall.
+
+Set that macro to -1 on FreeBSD, specifying maximum kernel configured
+allowed backlog size.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ lib/tevent/echo_server.c    |  2 +-
+ source3/include/local.h     | 11 +++++++++++
+ source3/libsmb/unexpected.c |  2 +-
+ source3/utils/smbfilter.c   |  2 +-
+ source3/winbindd/winbindd.c |  4 ++--
+ 5 files changed, 16 insertions(+), 5 deletions(-)
+
+diff --git a/lib/tevent/echo_server.c b/lib/tevent/echo_server.c
+index f93d8bcdee7..49354dbf0e5 100644
+--- a/lib/tevent/echo_server.c
++++ b/lib/tevent/echo_server.c
+@@ -633,7 +633,7 @@ int main(int argc, const char **argv)
+ 		exit(1);
+ 	}
+ 
+-	ret = listen(listen_sock, 5);
++	ret = listen(listen_sock, DEFAULT_LISTEN_BACKLOG);
+ 	if (ret == -1) {
+ 		perror("listen() failed");
+ 		exit(1);
+diff --git a/source3/include/local.h b/source3/include/local.h
+index 297e5572fdb..d85aab09f9f 100644
+--- a/source3/include/local.h
++++ b/source3/include/local.h
+@@ -163,7 +163,18 @@
+ #define WINBIND_SERVER_MUTEX_WAIT_TIME (( ((NUM_CLI_AUTH_CONNECT_RETRIES) * ((CLI_AUTH_TIMEOUT)/1000)) + 5)*2)
+ 
+ /* size of listen() backlog in smbd */
++#if defined (FREEBSD)
++#define SMBD_LISTEN_BACKLOG -1
++#else
+ #define SMBD_LISTEN_BACKLOG 50
++#endif
++
++/* size of listen() default backlog */
++#if defined (FREEBSD)
++#define DEFAULT_LISTEN_BACKLOG -1
++#else
++#define DEFAULT_LISTEN_BACKLOG 5
++#endif
+ 
+ /* Number of microseconds to wait before a sharing violation. */
+ #define SHARING_VIOLATION_USEC_WAIT 950000
+diff --git a/source3/libsmb/unexpected.c b/source3/libsmb/unexpected.c
+index ced46969b88..317d6b1e0e2 100644
+--- a/source3/libsmb/unexpected.c
++++ b/source3/libsmb/unexpected.c
+@@ -95,7 +95,7 @@ NTSTATUS nb_packet_server_create(TALLOC_CTX *mem_ctx,
+ 		status = map_nt_error_from_unix(errno);
+ 		goto fail;
+ 	}
+-	rc = listen(result->listen_sock, 5);
++	rc = listen(result->listen_sock, DEFAULT_LISTEN_BACKLOG);
+ 	if (rc < 0) {
+ 		status = map_nt_error_from_unix(errno);
+ 		goto fail;
+diff --git a/source3/utils/smbfilter.c b/source3/utils/smbfilter.c
+index 3fbd63975c9..b2d90f993fc 100644
+--- a/source3/utils/smbfilter.c
++++ b/source3/utils/smbfilter.c
+@@ -291,7 +291,7 @@ static void start_filter(char *desthost)
+ 		exit(1);
+ 	}
+ 
+-	if (listen(s, 5) == -1) {
++	if (listen(s, DEFAULT_LISTEN_BACKLOG) == -1) {
+ 		d_printf("listen failed\n");
+ 	}
+ 
+diff --git a/source3/winbindd/winbindd.c b/source3/winbindd/winbindd.c
+index 0f9c6449a5a..c2df0c92372 100644
+--- a/source3/winbindd/winbindd.c
++++ b/source3/winbindd/winbindd.c
+@@ -1312,7 +1312,7 @@ static bool winbindd_setup_listeners(void)
+ 	if (pub_state->fd == -1) {
+ 		goto failed;
+ 	}
+-	rc = listen(pub_state->fd, 5);
++	rc = listen(pub_state->fd, DEFAULT_LISTEN_BACKLOG);
+ 	if (rc < 0) {
+ 		goto failed;
+ 	}
+@@ -1344,7 +1344,7 @@ static bool winbindd_setup_listeners(void)
+ 	if (priv_state->fd == -1) {
+ 		goto failed;
+ 	}
+-	rc = listen(priv_state->fd, 5);
++	rc = listen(priv_state->fd, DEFAULT_LISTEN_BACKLOG);
+ 	if (rc < 0) {
+ 		goto failed;
+ 	}
+-- 
+2.37.1
+

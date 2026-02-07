@@ -1,0 +1,27 @@
+--- meson.build.orig	2023-05-29 21:44:20 UTC
++++ meson.build
+@@ -160,6 +160,8 @@ libots = library('ots',
+   include_directories: include_directories('include'),
+   cpp_args : '-DHAVE_CONFIG_H',
+   dependencies: ots_deps,
++  version : meson.project_version(),
++  install: true,
+ )
+ 
+ 
+@@ -186,6 +188,7 @@ ots_fuzzer = executable('ots-fuzzer',
+   cpp_args: fuzzer_defines,
+   link_with: libots,
+   link_args: fuzzer_ldflags,
++  install: true,
+ )
+ 
+ 
+@@ -259,6 +262,7 @@ cff_charstring = executable('cff_charstring',
+   include_directories: include_directories(['include', 'src']),
+   link_with: libots,
+   dependencies: gtest,
++  install: true,
+ )
+ 
+ test('cff_charstring', cff_charstring)

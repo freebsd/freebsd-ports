@@ -1,0 +1,4 @@
+include/xorg/xf86-mouse-properties.h
+lib/xorg/modules/input/mouse_drv.so
+libdata/pkgconfig/xorg-mouse.pc
+share/man/man4/mousedrv.4x.gz

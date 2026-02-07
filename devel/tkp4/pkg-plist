@@ -1,0 +1,8 @@
+bin/tkp4
+%%DATADIR%%/combobox.tcl
+%%DATADIR%%/mclistbox.tcl
+%%DATADIR%%/tkp4.tcl
+%%DATADIR%%/tree.tcl
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/P4WINdifferences
+%%PORTDOCS%%%%DOCSDIR%%/UsingTkP4

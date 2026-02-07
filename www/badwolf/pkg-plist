@@ -1,0 +1,23 @@
+bin/badwolf
+share/applications/badwolf.desktop
+%%DATADIR%%/interface.css
+share/icons/hicolor/128x128/apps/badwolf.png
+share/icons/hicolor/24x24/apps/badwolf.png
+share/icons/hicolor/256x256/apps/badwolf.png
+share/icons/hicolor/32x32/apps/badwolf.png
+share/icons/hicolor/48x48/apps/badwolf.png
+share/icons/hicolor/64x64/apps/badwolf.png
+share/icons/hicolor/scalable/apps/badwolf.svg
+share/man/man1/badwolf.1.gz
+%%NLS%%@dir %%DATADIR%%/locale
+%%NLS%%%%DATADIR%%/locale/de/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/fr/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/pt_BR/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/tr/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/vi/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/sr/LC_MESSAGES/Badwolf.mo
+%%NLS%%share/man/de/man1/badwolf.1.gz
+%%NLS%%share/man/fr/man1/badwolf.1.gz
+%%NLS%%share/man/tr/man1/badwolf.1.gz
+%%NLS%%share/man/vi/man1/badwolf.1.gz
+%%NLS%%share/man/sr/man1/badwolf.1.gz

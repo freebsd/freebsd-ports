@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Perl/Critic/Policy/Tics/ProhibitLongLines.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Tics/ProhibitManyArrows.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Tics/ProhibitUseBase.pm
+%%SITE_PERL%%/Perl/Critic/Tics.pm
+%%PERL5_MAN3%%/Perl::Critic::Policy::Tics::ProhibitLongLines.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Tics::ProhibitManyArrows.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Tics::ProhibitUseBase.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Tics.3.gz

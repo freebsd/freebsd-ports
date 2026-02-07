@@ -1,0 +1,9 @@
+gmrun is a very featureful GTK+-2 Run box. Its features include:
+
+	* Tilde completion
+	* Completion for separate words
+	* Cycleable command history
+	* Configuration file in ${PREFIX}/share/gmrun/gmrunrc,
+	  which can be copied to ~/.gmrunrc
+	* Can spawn commands in a terminal
+	* Intelligent URL handling

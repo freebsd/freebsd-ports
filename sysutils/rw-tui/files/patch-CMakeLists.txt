@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2023-07-30 15:32:56 UTC
++++ CMakeLists.txt
+@@ -14,11 +14,10 @@ set_property(TARGET rw-tui PROPERTY CXX_STANDARD 17)
+ 
+ set_property(TARGET rw-tui PROPERTY CXX_STANDARD 17)
+ 
+-add_subdirectory(${CMAKE_SOURCE_DIR}/lib/ftxui ${CMAKE_BINARY_DIR}/ftxui EXCLUDE_FROM_ALL)
++find_package(ftxui REQUIRED)
+  
+ target_link_libraries(rw-tui
+   PRIVATE ftxui::screen
+   PRIVATE ftxui::dom
+   PRIVATE ftxui::component
+-  -static
+ )
+\ No newline at end of file

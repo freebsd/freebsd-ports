@@ -1,0 +1,5 @@
+Module allows on-the-fly repackaging of MP4 files to DASH, HDS, HLS, MSS.
+It provides following working modes:
+- local: serve locally accessible files (local disk/NFS mounted)
+- remote: serve files accessible via HTTP using range requests
+- mapped - serve files according to a specification encoded in JSON format

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: softether_bridge
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable softether_bridge:
+# softether_bridge_enable (bool):  Set to "NO" by default.
+#                                  Set it to "YES" to enable
+#
+. /etc/rc.subr
+
+name=softether_bridge
+rcvar=softether_bridge_enable
+load_rc_config ${name}
+
+: ${softether_bridge_enable:=NO}
+
+command="%%PREFIX%%/libexec/softether/vpnbridge/vpnbridge"
+
+datadir="%%SE_DBDIR%%"
+
+start_precmd="${name}_precmd"
+start_cmd="${command} start"
+stop_cmd="${command} stop"
+
+softether_bridge_precmd()
+{
+	if [ ! -d "${datadir}" ]; then
+	    mkdir -p ${datadir}
+	fi
+}
+
+run_rc_command "$1"

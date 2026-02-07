@@ -1,0 +1,64 @@
+--- Makefile.orig	1999-12-27 22:27:24 UTC
++++ Makefile
+@@ -8,22 +8,22 @@
+ #   current directory. (Not recommended for serious users.)
+ 
+ #   Change SGBDIR to the directory where all GraphBase files will go:
+-SGBDIR = /usr/local/sgb
++SGBDIR = ${PREFIX}
+ 
+ #   Change DATADIR to the directory where GraphBase data files will go:
+-DATADIR = $(SGBDIR)/data
++DATADIR = $(SGBDIR)/lib/sgb
+ 
+ #   Change INCLUDEDIR to the directory where GraphBase header files will go:
+ INCLUDEDIR = $(SGBDIR)/include
+ 
+ #   Change LIBDIR to the directory where GraphBase library routines will go:
+-LIBDIR = /usr/local/lib
++LIBDIR = $(SGBDIR)/lib
+ 
+ #   Change BINDIR to the directory where installdemos will put demo programs:
+-BINDIR = /usr/local/bin
++BINDIR = $(SGBDIR)/bin
+ 
+ #   Change CWEBINPUTS to the directory where CWEB include files will go:
+-CWEBINPUTS = /usr/local/lib/cweb
++CWEBINPUTS = $(SGBDIR)/lib/cweb
+ 
+ #   SHORTCUT: Uncomment these lines, for single-directory installation:
+ #DATADIR = .
+@@ -130,22 +130,22 @@ tests: test_io test_graph test_flip
+ install: lib
+ 	if test ! -r certified; then echo "Please run 'make tests' first!"; fi
+ 	test -r certified
++	- mkdir ${DESTDIR}$(LIBDIR)
++	- cp libgb.a ${DESTDIR}$(LIBDIR)
+ 	make installdata
+-	- mkdir $(LIBDIR)
+-	- cp libgb.a $(LIBDIR)
+-	- mkdir $(CWEBINPUTS)
+-	- cp -p boilerplate.w gb_types.w $(CWEBINPUTS)
+-	- mkdir $(INCLUDEDIR)
+-	- cp -p $(HEADERS) Makefile $(INCLUDEDIR)
++	- mkdir ${DESTDIR}$(CWEBINPUTS)
++	- cp -p boilerplate.w gb_types.w ${DESTDIR}$(CWEBINPUTS)
++	- mkdir ${DESTDIR}$(INCLUDEDIR)
++	- cp -p $(HEADERS) Makefile ${DESTDIR}$(INCLUDEDIR)
+ 
+ installdata: $(DATAFILES)
+-	- mkdir $(SGBDIR)
+-	- mkdir $(DATADIR)
+-	- cp -p $(DATAFILES) $(DATADIR)
++	- mkdir ${DESTDIR}$(SGBDIR)
++	- mkdir ${DESTDIR}$(DATADIR)
++	- cp -p $(DATAFILES) ${DESTDIR}$(DATADIR)
+ 
+ installdemos: lib $(DEMOS)
+-	- mkdir $(BINDIR)
+-	- mv $(DEMOS) $(BINDIR)
++	- mkdir ${DESTDIR}$(BINDIR)
++	- mv $(DEMOS) ${DESTDIR}$(BINDIR)
+ 
+ uninstalldemos:
+ 	- cd $(BINDIR); rm -f $(DEMOS)

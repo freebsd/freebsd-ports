@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: redir
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to enable redir:
+#
+# redir_enable (bool):		Set it to "YES" to enable redir.
+#				Default is "NO".
+# redir_flags (flags):		Set flags to redir.
+#				Default is "". see redir(1).
+#				Example: "--lport=80 --cport=3128 --syslog"
+#
+
+. /etc/rc.subr
+
+name="redir"
+rcvar=redir_enable
+
+load_rc_config $name
+
+: ${redir_enable="NO"}
+
+command=%%PREFIX%%/bin/redir
+command_args="&"
+start_precmd="${name}_flags_check"
+
+redir_flags_check()
+{
+	if [ "${redir_flags}" = "" ]; then
+		err 1 "\$redir_flags are required. see available options in redir(1)"
+	fi
+}
+
+run_rc_command "$1"

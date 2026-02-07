@@ -1,0 +1,8 @@
+This simple module serves one purpose - to provide a simple means to read (or
+slurp) an entire file into memory for processing. This module allows the
+replacement of the prototypical foreach- or while- loops used for opening
+and reading of files with single-line constructs.
+
+Of note with this module is that the magic of the @ARGV variable and the
+input record separator, $/, are used to facilitate the reading of entire
+files into either an array or scalar using minimal code.

@@ -1,0 +1,3 @@
+SysctlTUI is a sysctl MIB explorer for FreeBSD, each object represents a
+kernel parameter.
+SysctlTUI allows you to view a parameter's properties and get or set its value.

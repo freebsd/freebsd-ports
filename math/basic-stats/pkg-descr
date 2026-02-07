@@ -1,0 +1,6 @@
+Basic-stats is a command-line tool to perform basic statistics on a
+tabular data stream.  It supports performing multiple functions such as
+mean, median, etc. on independent rows and/or columns during a single
+pass on independent rows and/or columns.  Memory use is trivial except
+for functions that require loading the sample/population for sorting,
+such as median.

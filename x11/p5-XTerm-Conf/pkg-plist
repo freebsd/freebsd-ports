@@ -1,0 +1,4 @@
+bin/xterm-conf
+%%PERL5_MAN3%%/XTerm::Conf.3.gz
+%%SITE_PERL%%/XTerm/Conf.pm
+%%PERL5_MAN1%%/xterm-conf.1.gz

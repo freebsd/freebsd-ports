@@ -1,0 +1,10 @@
+Klib is a standalone and lightweight C library distributed under MIT/X11
+license. Most components are independent of external libraries, except the
+standard C library, and independent of each other. To use a component of
+this library, you only need to copy a couple of files to your source code
+tree without worrying about library dependencies.
+
+Klib strives for efficiency and a small memory footprint. Some components,
+such as hash table, B-tree, vector and sorting algorithms, are among the most
+efficient implementations of similar algorithms or data structures in all
+programming languages, in terms of both speed and memory use.

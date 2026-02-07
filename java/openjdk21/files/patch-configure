@@ -1,0 +1,14 @@
+--- configure.orig	2019-03-12 12:38:39.648907000 -0700
++++ configure	2019-03-12 12:39:04.275572000 -0700
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ #
+ # Copyright (c) 2012, 2014, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+@@ -32,4 +32,4 @@
+ # Delegate to wrapper, forcing wrapper to believe $0 is this script by using -c.
+ # This trick is needed to get autoconf to co-operate properly.
+ # The ${-:+-$-} construction passes on bash options.
+-bash ${-:+-$-} -c ". $this_script_dir/make/autoconf/configure" $this_script_dir/configure CHECKME $this_script_dir "$@"
++%%LOCALBASE%%/bin/bash ${-:+-$-} -c ". $this_script_dir/make/autoconf/configure" $this_script_dir/configure CHECKME $this_script_dir "$@"

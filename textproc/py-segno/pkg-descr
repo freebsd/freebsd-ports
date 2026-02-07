@@ -1,0 +1,14 @@
+Segno is a pure Python QR Code generator with no dependencies.
+
+This package implements ISO/IEC 18004:2015(E) "QR Code bar code symbology
+specification" and produces QR Codes and Micro QR Codes with nearly no effort.
+It supports the Structured Append mode which splits a message across several QR
+codes.
+
+Segno (Italian for "sign" / "symbol") provides several serialization formats
+like Scalable Vector Graphics (SVG), Encapsulated PostScript (EPS), Portable
+Network Graphics (PNG), Portable Document Format (PDF), Netpbm (PAM, PBM, PPM),
+LaTeX (PGF/TikZ), X PixMap (XBM), and X Bitmap (XPM) etc. None of these
+serializers require an external lib. Further, it provides several high level
+functions to create QR Codes which encode contact data (vCard, MeCard), EPC QR
+Codes, or WIFI QR Codes.

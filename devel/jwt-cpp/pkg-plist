@@ -1,0 +1,16 @@
+include/jwt-cpp/base.h
+include/jwt-cpp/jwt.h
+include/jwt-cpp/traits/boost-json/defaults.h
+include/jwt-cpp/traits/boost-json/traits.h
+include/jwt-cpp/traits/danielaparker-jsoncons/defaults.h
+include/jwt-cpp/traits/danielaparker-jsoncons/traits.h
+include/jwt-cpp/traits/defaults.h.mustache
+include/jwt-cpp/traits/kazuho-picojson/defaults.h
+include/jwt-cpp/traits/kazuho-picojson/traits.h
+include/jwt-cpp/traits/nlohmann-json/defaults.h
+include/jwt-cpp/traits/nlohmann-json/traits.h
+include/jwt-cpp/traits/open-source-parsers-jsoncpp/defaults.h
+include/jwt-cpp/traits/open-source-parsers-jsoncpp/traits.h
+lib/cmake/jwt-cpp/jwt-cpp-config-version.cmake
+lib/cmake/jwt-cpp/jwt-cpp-config.cmake
+lib/cmake/jwt-cpp/jwt-cpp-targets.cmake

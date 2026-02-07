@@ -1,0 +1,11 @@
+--- plugins/wordperfect/xp/Makefile.am.orig	2008-05-08 15:12:53.000000000 +0200
++++ plugins/wordperfect/xp/Makefile.am	2016-01-26 20:42:39.161783000 +0100
+@@ -6,8 +6,6 @@
+ 	-DABI_BUILD_VERSION=\"$(VERSION)\"
+ 
+ libxp_la_SOURCES = \
+-	ie_exp_WordPerfect.cpp \
+-	ie_exp_WordPerfect.h \
+ 	ie_impexp_WordPerfect.cpp \
+ 	ie_impexp_WordPerfect.h \
+ 	ie_imp_WordPerfect.cpp \

@@ -1,0 +1,2 @@
+BiocGenerics is an R/Bioconductor package that defines many S4 generic functions
+used in Bioconductor.

@@ -1,0 +1,65 @@
+--- Makefile.in.orig	2008-05-17 18:36:44 UTC
++++ Makefile.in
+@@ -47,48 +47,31 @@ install:	install-build install-conf
+ 
+ install-conf:
+ 	@echo Installing configuration file  ;
+-	@if [ ! -d $(prefix)/squidGuard ]; then \
+-		$(MKINSTALLDIRS) $(prefix)/squidGuard ; \
+-		echo Created directory $(prefix)/squidGuard ; \
+-		chown -R $(SQUIDUSER) $(prefix)/squidGuard || exit 1  ; \
+-		echo Assigned $(prefix)/squidGuard to user $(SQUIDUSER) ; \
++	@if [ ! -d $(DESTDIR)$(dbhomedir) ]; then \
++		$(MKINSTALLDIRS) $(DESTDIR)$(dbhomedir) ; \
++		echo Created directory $(DESTDIR)$(dbhomedir) ; \
++		echo Assigned $(DESTDIR)$(dbhomedir) to user $(SQUIDUSER) ; \
+ 	fi ; 
+-	@if [ ! -d $(dbhomedir) ]; then \
+-		$(MKINSTALLDIRS) $(dbhomedir) ; \
+-		echo Created directory $(dbhomedir) ; \
+-		chown -R $(SQUIDUSER) $(dbhomedir) || exit 1 ; \
+-		echo Assigned $(dbhomedir) to user $(SQUIDUSER) ; \
++	@if [ ! -d $(DESTDIR)$(logdir) ]; then \
++		$(MKINSTALLDIRS) $(DESTDIR)$(logdir) ; \
++		echo Created directory $(DESTDIR)$(logdir) ; \
++		echo Assigned $(DESTDIR)$(logdir) to user $(SQUIDUSER) ; \
+ 	fi ; 
+-	@if [ ! -d $(logdir) ]; then \
+-		$(MKINSTALLDIRS) $(logdir) ; \
+-		echo Created directory $(logdir) ; \
+-		chown -R $(SQUIDUSER) $(logdir) || exit 1 ; \
+-		echo Assigned $(logdir) to user $(SQUIDUSER) ; \
+-	fi ; 
+-	@if [ ! -d `dirname $(configfile)` ]; then \
++	@if [ ! -d `dirname $(DESTDIR)$(configfile)` ]; then \
+ 		umask 022 ; \
+-		mkdir -p `dirname $(configfile)` ; \
+-		echo No configuration directory found. Created `dirname $(configfile)`. ; \
++		mkdir -p `dirname $(DESTDIR)$(configfile)` ; \
++		echo No configuration directory found. Created `dirname $(DESTDIR)$(configfile)`. ; \
+ 	fi;
+-	@if test ! -f $(configfile); then \
+-		cp samples/sample.conf $(configfile) || exit 1  ; \
+-		echo Copied sample squidGuard.conf ; \
+-		chmod 644 $(configfile) || exit 1 ; \
+-		echo $(configfile) is now readable ; \
+-		echo The initial configuration is complete. ; \
+-	else \
+-		echo Configuration file found. Not changing anything ; \
+-	fi; 
+ 	@echo ;
+ 	@echo Congratulation. SquidGuard is sucessfully installed. ;
+ 	@echo ;
+ 
+ install-build:
+ 	@echo Installing squidGuard 
+-	@if [ ! -d $(bindir) ]; then \
+-		$(MKINSTALLDIRS) $(bindir) ; \
++	@if [ ! -d $(DESTDIR)$(bindir) ]; then \
++		$(MKINSTALLDIRS) $(DESTDIR)$(bindir) ; \
+ 	fi ; \
+-	cp src/squidGuard $(bindir) || exit 1 ;  \
++	$(BSD_INSTALL_PROGRAM) src/squidGuard $(DESTDIR)$(bindir) || exit 1 ;  \
+ 	echo Done. ;
+ 
+ clean::

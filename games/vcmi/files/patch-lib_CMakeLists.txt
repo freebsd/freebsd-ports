@@ -1,0 +1,14 @@
+--- lib/CMakeLists.txt.orig	2025-01-09 19:59:03 UTC
++++ lib/CMakeLists.txt
+@@ -793,6 +793,11 @@ if(WIN32)
+ 	)
+ endif()
+ 
++if(BSD)
++	set_source_files_properties(CConsoleHandler.cpp PROPERTIES
++		COMPILE_FLAGS -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED)
++endif(BSD)
++
+ # Use '-Wa,-mbig-obj' for files that generate very large object files
+ # when compiling with MinGW lest you get "too many sections" assembler errors
+ if(MINGW AND CMAKE_BUILD_TYPE STREQUAL "Debug")

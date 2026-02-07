@@ -1,0 +1,12 @@
+--- zotero.desktop.orig	2022-07-19 02:55:23 UTC
++++ zotero.desktop
+@@ -1,7 +1,7 @@ Name=Zotero
+ [Desktop Entry]
+ Name=Zotero
+-Exec=bash -c "$(dirname $(realpath $(echo %k | sed -e 's/^file:\/\///')))/zotero -url %U"
+-Icon=zotero.ico
++Exec=%%PREFIX%%/bin/zotero -url %U
++Icon=zotero.png
+ Type=Application
+ Terminal=false
+ Categories=Office;

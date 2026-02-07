@@ -1,0 +1,3 @@
+Scamper is a program that conducts Internet measurement techniques such
+as ping and traceroute to large numbers of IPv4 and IPv6 addresses in
+parallel to fill a specified packets-per-second rate.

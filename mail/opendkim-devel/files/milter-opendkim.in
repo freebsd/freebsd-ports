@@ -1,0 +1,213 @@
+#!/bin/sh
+
+# PROVIDE: milter-opendkim
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these milteropendkim_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/milteropendkim
+#
+# milteropendkim_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to enable dkim-milter
+# milteropendkim_uid (str):       Set username to run milter.
+# milteropendkim_gid (str):       Set group to run milter.
+# milteropendkim_profiles (list): Set to "" by default.
+#                             Define your profiles here.
+# milteropendkim_cfgfile (str):   Configuration file. See opendkim.conf(5)
+#
+# milteropendkim_${profile}_* :   Variables per profile.
+#                             Sockets must be different from each other.
+#
+# milteropendkim_socket_perms (str):
+#                                 Permissions for local|unix socket.
+#
+#  all parameters below now can be set in opendkim.conf(5).
+# milteropendkim_socket (str):    Path to the milter socket.
+# milteropendkim_domain (str):    Domainpart of From: in mails to sign.
+# milteropendkim_key (str):       Path to the private key file to sign with.
+# milteropendkim_selector (str):  Selector to use when signing
+# milteropendkim_alg (str):       Algorithm to use when signing
+# milteropendkim_flags (str):     Flags passed to start command.
+
+. /etc/rc.subr
+
+name="milteropendkim"
+rcvar=milteropendkim_enable
+
+extra_commands="reload"
+start_precmd="dkim_prepcmd"
+start_postcmd="dkim_start_postcmd"
+stop_postcmd="dkim_postcmd"
+command="%%PREFIX%%/sbin/opendkim"
+_piddir="/var/run/milteropendkim"
+pidfile="${_piddir}/pid"
+sig_reload="USR1"
+
+load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${milteropendkim_enable:="NO"}
+: ${milteropendkim_uid:="mailnull"}
+: ${milteropendkim_gid:="mailnull"}
+: ${milteropendkim_cfgfile:="%%PREFIX%%/etc/mail/opendkim.conf"}
+: ${milteropendkim_socket_perms:="0755"}
+
+# Options other than above can be set with $milteropendkim_flags.
+# see dkim-milter documentation for detail.
+
+extra_commands="reload"
+start_precmd="dkim_prepcmd"
+start_postcmd="dkim_start_postcmd"
+stop_postcmd="dkim_cleansockets"
+command="%%PREFIX%%/sbin/opendkim"
+sig_reload="USR1"
+
+dkim_cleansockets()
+{
+    case ${milteropendkim_socket%:*} in
+    local|unix)
+	rm -f "${milteropendkim_socket#*:}"
+	;;
+    esac
+}
+
+dkim_get_pidfile()
+{
+	if get_pidfile_from_conf PidFile ${milteropendkim_cfgfile#-x }; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile="/var/run/milteropendkim/${profile:-pid}"
+	fi
+}
+
+dkim_prepcmd()
+{
+    dkim_cleansockets
+    dkim_get_pidfile
+    if [ ! -d "$(dirname "$pidfile")" ]; then
+        mkdir "$(dirname "$pidfile")"
+    fi
+    case ${milteropendkim_socket%:*} in
+    local|unix)
+	socketfile=${milteropendkim_socket#*:}
+	install -d -o ${milteropendkim_uid%:*} -g $milteropendkim_gid \
+	    -m ${milteropendkim_socket_perms} \
+	       ${pidfile%/*} ${socketfile%/*}
+	;;
+    esac
+}
+
+dkim_start_postcmd()
+{
+    case ${milteropendkim_socket%:*} in
+    local|unix)
+	# postcmd is executed too fast and socket is not created before checking...
+	sleep 1
+	chmod -f ${milteropendkim_socket_perms} ${milteropendkim_socket#*:}
+	;;
+    esac
+}
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ -n "${milteropendkim_profiles}" ]; then
+	pidfile="${_piddir}/${profile}.pid"
+	eval milteropendkim_enable="\${milteropendkim_${profile}_enable:-${milteropendkim_enable}}"
+	eval milteropendkim_socket="\${milteropendkim_${profile}_socket:-}"
+	eval milteropendkim_socket_perms="\${milteropendkim_${profile}_socket_perms:-}"
+	if [ -z "${milteropendkim_socket}" ];then
+	    echo "You must define a socket (milteropendkim_${profile}_socket)"
+	    exit 1
+	fi
+	eval milteropendkim_cfgfile="\${milteropendkim_${profile}_cfgfile:-${milteropendkim_cfgfile}}"
+	eval milteropendkim_domain="\${milteropendkim_${profile}_domain:-${milteropendkim_domain}}"
+	eval milteropendkim_key="\${milteropendkim_${profile}_key:-${milteropendkim_key}}"
+	eval milteropendkim_selector="\${milteropendkim_${profile}_selector:-${milteropendkim_selector}}"
+	eval milteropendkim_alg="\${milteropendkim_${profile}_alg:-${milteropendkim_alg}}"
+	eval milteropendkim_flags="\${milteropendkim_${profile}_flags:-${milteropendkim_flags}}"
+	if [ -f "${milteropendkim_cfgfile}" ];then
+	    milteropendkim_cfgfile="-x ${milteropendkim_cfgfile}"
+	else
+	    milteropendkim_cfgfile=""
+	fi
+	if [ -n "${milteropendkim_socket}" ];then
+	    _socket_prefix="-p"
+	fi
+	if [ -n "${milteropendkim_uid}" ];then
+	    _uid_prefix="-u"
+	    if [ -n "${milteropendkim_gid}" ];then
+		milteropendkim_uid=${milteropendkim_uid}:${milteropendkim_gid}
+	    fi
+	fi
+	if [ -n "${milteropendkim_domain}" ];then
+	    milteropendkim_domain="-d ${milteropendkim_domain}"
+	fi
+	if [ -n "${milteropendkim_key}" ];then
+	    milteropendkim_key="-k ${milteropendkim_key}"
+	fi
+	if [ -n "${milteropendkim_selector}" ];then
+	    milteropendkim_selector="-s ${milteropendkim_selector}"
+	fi
+	if [ -n "${milteropendkim_alg}" ];then
+	    milteropendkim_alg="-S ${milteropendkim_alg}"
+	fi
+	dkim_get_pidfile
+	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
+    else
+	echo "$0: extra argument ignored"
+    fi
+else
+    if [ -n "${milteropendkim_profiles}" ] && [ -n "$1" ]; then
+	if [ "$1" != "restart" ]; then
+	    for profile in ${milteropendkim_profiles}; do
+		echo "===> milteropendkim profile: ${profile}"
+		%%PREFIX%%/etc/rc.d/milter-opendkim $1 ${profile}
+		retcode="$?"
+		if [ "${retcode}" -ne 0 ]; then
+		    failed="${profile} (${retcode}) ${failed:-}"
+		else
+		    success="${profile} ${success:-}"
+		fi
+	    done
+	    exit 0
+	else
+	    restart_precmd=""
+	fi
+    else
+	if [ -f "${milteropendkim_cfgfile}" ];then
+	    milteropendkim_cfgfile="-x ${milteropendkim_cfgfile}"
+	else
+	    milteropendkim_cfgfile=""
+	fi
+	if [ -n "${milteropendkim_socket}" ];then
+	    _socket_prefix="-p"
+	fi
+	if [ -n "${milteropendkim_uid}" ];then
+	    _uid_prefix="-u"
+	    if [ -n "${milteropendkim_gid}" ];then
+		milteropendkim_uid=${milteropendkim_uid}:${milteropendkim_gid}
+	    fi
+	fi
+	if [ -n "${milteropendkim_domain}" ];then
+	    milteropendkim_domain="-d ${milteropendkim_domain}"
+	fi
+	if [ -n "${milteropendkim_key}" ];then
+	    milteropendkim_key="-k ${milteropendkim_key}"
+	fi
+	if [ -n "${milteropendkim_selector}" ];then
+	    milteropendkim_selector="-s ${milteropendkim_selector}"
+	fi
+	if [ -n "${milteropendkim_alg}" ];then
+	    milteropendkim_alg="-S ${milteropendkim_alg}"
+	fi
+	dkim_get_pidfile
+	command_args="-l ${_socket_prefix} ${milteropendkim_socket} ${_uid_prefix} ${milteropendkim_uid} -P ${pidfile} ${milteropendkim_cfgfile} ${milteropendkim_domain} ${milteropendkim_key} ${milteropendkim_selector} ${milteropendkim_alg}"
+    fi
+fi
+
+run_rc_command "$1"

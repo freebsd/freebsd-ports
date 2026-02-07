@@ -1,0 +1,25 @@
+--- src/tcshrc.complete.orig	2009-01-25 02:52:00.000000000 +0900
++++ src/tcshrc.complete	2009-02-05 02:08:57.000000000 +0900
+@@ -715,17 +715,11 @@
+     endif
+     unset _maildir
+ 
+-    if (! $?MANPATH) then
+-	if (-r /usr/share/man) then
+-	    if (-r /usr/local/man) then
+-	       setenv MANPATH /usr/share/man:/usr/local/man:
+-            else
+-               setenv MANPATH /usr/share/man:
+-	    endif
+-	else
+-	    setenv MANPATH /usr/man:
+-	endif
+-    endif
++# changed from original file to allow to use all manpathes found
++# by the manpath utility, not only one path
++
++unsetenv MANPATH
++setenv MANPATH `manpath`
+ 
+ 	if ($?traditional_complete) then
+     # use of $MANPATH from Dan Nicolaescu <dann@ics.uci.edu>

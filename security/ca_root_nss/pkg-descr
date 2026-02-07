@@ -1,0 +1,4 @@
+Root certificates from certificate authorities included in the Mozilla
+NSS library and thus in Firefox and Thunderbird.
+
+This port directly tracks the version of NSS in the security/nss port.

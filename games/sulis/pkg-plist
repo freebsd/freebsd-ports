@@ -1,0 +1,3 @@
+bin/sulis
+bin/sulis-editor
+@sample etc/sulis/config.yml.sample

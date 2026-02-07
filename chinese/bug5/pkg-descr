@@ -1,0 +1,15 @@
+bug5 is a Big5/GBK <-> UTF-8 translating layer in terminal.
+It's modified from script(1).
+
+Features that screen doesn't have:
+- Autoset locale
+- UAO
+- Unpad padded ambiguous-width characters
+- ANSI-Broken Big5 (eg. Double Color) fixing
+- Optional Traditional-Simplified conversion
+- BSD License
+- Specifying size for slave terminal + auto scrolling region setting
+
+Features that both bug5 and screen has:
+- Optional ambiguous-width characters padding
+- Specify I/O conversion

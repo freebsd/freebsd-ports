@@ -1,0 +1,26 @@
+--- Makefile.in.orig	2021-05-11 17:26:29 UTC
++++ Makefile.in
+@@ -185,7 +185,7 @@ include_server_SRC = \
+ include_server_SRC = \
+ 	include_server/c_extensions/distcc_pump_c_extensions_module.c
+ 
+-update_distcc_symlinks_PY = update-distcc-symlinks.py
++update_distcc_symlinks_PY = 
+ 
+ # These are included in the distribution but not installed anywhere.
+ dist_extra =							\
+@@ -416,13 +416,12 @@ bin_PROGRAMS = \
+ 
+ bin_PROGRAMS = \
+ 	distcc@EXEEXT@ \
+-	distccd@EXEEXT@ \
+ 	distccmon-text@EXEEXT@ \
+ 	lsdistcc@EXEEXT@ \
+ 	@GNOME_BIN@ 
+ 
+ sbin_PROGRAMS = \
+-	update-distcc-symlinks
++	distccd@EXEEXT@ \
+ 
+ check_PROGRAMS = \
+ 	h_argvtostr@EXEEXT@ \

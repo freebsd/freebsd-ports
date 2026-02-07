@@ -1,0 +1,10 @@
+%%SITE_ARCH%%/OpenGL.pm
+%%SITE_ARCH%%/OpenGL.pod
+%%SITE_ARCH%%/OpenGL/Array.pod
+%%SITE_ARCH%%/OpenGL/Config.pm
+%%SITE_ARCH%%/OpenGL/Tessellation.pod
+%%SITE_ARCH%%/auto/OpenGL/OpenGL.so
+%%SITE_ARCH%%/auto/OpenGL/autosplit.ix
+%%PERL5_MAN3%%/Array.3.gz
+%%PERL5_MAN3%%/OpenGL.3.gz
+%%PERL5_MAN3%%/Tessellation.3.gz

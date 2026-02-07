@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2023-06-18 17:06:06 UTC
++++ CMakeLists.txt
+@@ -107,6 +107,7 @@ if(WITH_DISCORD)
+ endif()
+ 
+ # Meshoptimizer
++if (FALSE)
+ set(MESHOPTIMIZER_VERSION 0.16)
+ if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.11)
+   include(FetchContent)
+@@ -137,6 +138,7 @@ if(NOT meshoptimizer_POPULATED)
+     FetchContent_Populate(meshoptimizer)
+   endif()
+   add_subdirectory(${meshoptimizer_SOURCE_DIR} ${meshoptimizer_BINARY_DIR} EXCLUDE_FROM_ALL)
++endif()
+ endif()
+ 
+ set(GUI_LIB_SOURCES

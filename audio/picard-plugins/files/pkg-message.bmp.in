@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Due to toolchain issues, the bpm plugin will probably not work
+out-of-the-box. Upon startup, picard will likely write to stderr
+something like:
+
+  Original error was: /lib/libgcc_s.so.1: version GCC_4.8.0 required by 
+  %%LOCALBASE%%/lib/gcc%%GCC_VER%%/libgfortran.so.4 not found
+
+This will not affect other plugins or picard operations. If you wish to
+use the bpm plugin, you can use the following workaround until a better
+solution can be worked out:
+
+  $ env LD_LIBRARY_PATH=%%LOCALBASE%%/lib/gcc%%GCC_VER%% picard
+
+See: https://wiki.freebsd.org/libgcc%20problem
+EOM
+}
+]

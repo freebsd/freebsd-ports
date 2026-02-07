@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2018-07-27 17:13:45 UTC
++++ CMakeLists.txt
+@@ -183,8 +183,8 @@ add_subdirectory(doc)
+ 
+ install(DIRECTORY share/castxml/ DESTINATION "${CastXML_INSTALL_DATA_DIR}")
+ 
+-install(FILES
+-  "LICENSE"
+-  "NOTICE"
+-  DESTINATION "${CastXML_INSTALL_DOC_DIR}"
+-  )
++#install(FILES
++#  "LICENSE"
++#  "NOTICE"
++#  DESTINATION "${CastXML_INSTALL_DOC_DIR}"
++#  )

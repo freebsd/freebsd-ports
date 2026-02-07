@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/bsdconv/bsdconv.so
+%%SITE_ARCH%%/bsdconv.pm
+%%PERL5_MAN3%%/bsdconv.3.gz

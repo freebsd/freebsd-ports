@@ -1,0 +1,3 @@
+bin/dsbautostart
+share/applications/dsbautostart.desktop
+%%DATADIR%%/dsbautostart_de.qm

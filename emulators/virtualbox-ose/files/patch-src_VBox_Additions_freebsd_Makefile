@@ -1,0 +1,38 @@
+--- src/VBox/Additions/freebsd/Makefile.orig	2020-05-13 19:37:06 UTC
++++ src/VBox/Additions/freebsd/Makefile
+@@ -30,6 +30,14 @@ all:
+ 	        cp vboxvfs/vboxvfs.ko .; \
+ 	    fi; \
+ 	fi
++	@echo
++	@if [ -d mount_vboxvfs ]; then \
++	    echo "=== Building mount_vboxvfs binary ==="; \
++	    $(MAKE) KBUILD_VERBOSE=$(KBUILD_VERBOSE) -C  mount_vboxvfs clean obj depend all; \
++	    if [ -f mount_vboxvfs ]; then \
++	        cp mount_vboxvfs/mount_vboxvfs .; \
++	    fi; \
++	fi
+ 
+ 
+ install:
+@@ -37,13 +45,19 @@ install:
+ 	@if [ -d vboxvfs ]; then \
+ 	    $(MAKE) KBUILD_VERBOSE=$(KBUILD_VERBOSE) -C vboxvfs install; \
+ 	fi
++	@if [ -d mount_vboxvfs ]; then \
++	    $(MAKE) KBUILD_VERBOSE=$(KBUILD_VERBOSE) -C mount_vboxvfs install; \
++	fi
+ 
+ clean:
+ 	@$(MAKE) -C vboxguest clean
+ 	@if [ -d vboxvfs ]; then \
+ 	    $(MAKE) -C vboxvfs clean; \
+ 	fi
+-	rm -f vboxguest.*o vboxvfs.*o
++	@if [ -d mount_vboxvfs ]; then \
++	    $(MAKE) -C mount_vboxvfs clean; \
++	fi
++	rm -f vboxguest.*o vboxvfs.*o mount_vboxvfs
+ 
+ load:
+ 	@/sbin/kldunload vboxvfs || true

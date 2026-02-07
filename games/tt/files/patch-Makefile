@@ -1,0 +1,22 @@
+--- Makefile.orig	2003-05-27 10:46:17 UTC
++++ Makefile
+@@ -6,13 +6,14 @@ OBJ = $(SRC:.c=.o)
+ LINTFLAGS = -abh
+ 
+ # --- Choose one of these CFLAGS ---
+-CFLAGS = $(OPT)					# Sun BSD, Red Hat Linux
+-#CFLAGS = $(OPT) -DSYSV				# SCO System V
+-#CFLAGS = $(OPT) -DSYSV -DNO_NAP_SYSCALL	# Generic System V?
+-#CFLAGS = $(OPT) -DNO_USLEEP_SYSCALL		# Generic BSD?
++CFLAGS += $(OPT)				# Sun BSD, Red Hat Linux
++#CFLAGS += $(OPT) -DSYSV			# SCO System V
++#CFLAGS += $(OPT) -DSYSV -DNO_NAP_SYSCALL	# Generic System V?
++#CFLAGS += $(OPT) -DNO_USLEEP_SYSCALL		# Generic BSD?
+ 
+ # --- Choose one of these LDLIBS ---
+-LDLIBS = -lcurses -ltermcap 			# Sun and Generic BSD
++LDLIBS=	-lncurses
++#LDLIBS = -lcurses -ltermcap 			# Sun and Generic BSD
+ #LDLIBS = -lcurses -lx				# SCO System V
+ #LBLIBS = -lcurses				# Generic System V?
+ 

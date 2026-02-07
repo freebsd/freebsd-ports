@@ -1,0 +1,40 @@
+--- BlockOut/Makefile.orig	2014-05-06 09:47:56 UTC
++++ BlockOut/Makefile
+@@ -47,27 +47,27 @@ else
+ SDL_LIBS = /usr/lib/i386-linux-gnu
+ endif
+ 
+-CXX		= g++
++#CXX		= g++
+ 
+ ifdef _release
+ 
+-CXXFLAGS =     -O2 -Dlinux -c \
+-               -I/usr/include/SDL -I../ImageLib/src -I.
++CXXFLAGS +=     -Dlinux -c \
++		-I$(LOCALBASE)/include/SDL -I$(LOCALBASE)/include -I../ImageLib/src -I.
+ 
+ LFLAGS   =      -Wl,--strip-all \
+ 		$(ADD_LIBS) \
+-		-lSDL_mixer -lSDL -lasound \
+-		-lGL -lGLU -lpthread -lm -ldl
++		-lSDL_mixer -lSDL \
++		-lGL -lGLU -lpthread -lm
+ 
+ else
+ 
+-CXXFLAGS =     -g -D_DEBUG -Dlinux -c \
+-               -I/usr/include/SDL -I../ImageLib/src -I.
++CXXFLAGS +=     -D_DEBUG -Dlinux -c \
++		-I$(LOCALBASE)/include/SDL -I$(LOCALBASE)/include -I../ImageLib/src -I.
+ 
+-LFLAGS   =      -L $(SDL_LIBS) \
++LFLAGS   =      -L $(LOCALBASE)/lib \
+ 		$(ADD_LIBS) \
+-		-lSDL_mixer -lSDL -lasound \
+-		-lGL -lGLU -lpthread -lm -ldl
++		-lSDL_mixer -lSDL \
++		-lGL -lGLU -lpthread -lm
+ 
+ endif
+ 

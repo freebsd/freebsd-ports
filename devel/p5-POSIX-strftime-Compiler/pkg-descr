@@ -1,0 +1,8 @@
+POSIX::strftime::Compiler provides GNU C library compatible
+strftime(3).  But this module will not affected by the system locale.
+This feature is useful when you want to write loggers, servers and
+portable applications.
+
+For generate same result strings on any locale,
+POSIX::strftime::Compiler wraps POSIX::strftime and converts some
+format characters to perl code.

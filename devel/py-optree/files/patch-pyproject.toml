@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-05-28 07:15:37 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ # Package ######################################################################
+ 
+ [build-system]
+-requires = ["setuptools >= 77.0", "pybind11 >= 2.12"]
++requires = ["setuptools", "pybind11 >= 2.12"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,7 +10,7 @@ authors = [{ name = "OpTree Contributors" }]
+ readme = "README.md"
+ requires-python = ">= 3.9"
+ authors = [{ name = "OpTree Contributors" }]
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ keywords = [
+     "PyTree",
+     "Tree Manipulation",

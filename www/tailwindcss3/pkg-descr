@@ -1,0 +1,10 @@
+Tailwind CSS is a utility-first CSS framework for rapidly building custom
+user interfaces. This port comprises Tailwind CSS along with commonly used
+related packages via npm:
+
+- tailwindcss: the core framework
+- postcss: optimise resulting CSS
+- @tailwindcss/forms: official CSS forms plugin
+- daisyui: component library
+
+The packages are installed globally and can be used from the command line.

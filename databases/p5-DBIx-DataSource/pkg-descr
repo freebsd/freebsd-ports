@@ -1,0 +1,5 @@
+This module implements create_database and drop_database functions for
+databases.  It aims to provide a common interface to database creation
+and deletion regardless of the actual database being used.
+
+Currently supported databases are MySQL and PostgreSQL.

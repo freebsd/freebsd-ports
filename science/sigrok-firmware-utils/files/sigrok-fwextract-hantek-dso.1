@@ -1,0 +1,39 @@
+.TH SIGROK\-FWEXTRACT\-HANTEK\-DSO 1 "Aug 08, 2013"
+.SH "NAME"
+sigrok\-fwextract\-hantek\-dso \- Extract Hantek DSO-2xxx/52xx firmware
+.SH "SYNOPSIS"
+.B sigrok\-fwextract\-hantek\-dso [FILE]
+.SH "DESCRIPTION"
+This tool extracts firmware from the driver that comes with the
+Hantek DSO-2xxx/52xx series USB oscilloscopes. Find the 32-bit
+driver installed on the Windows system -- typically called
+.B DSOxxxx1.sys
+or
+.BR DsoxxxxX861.sys ,
+where xxxx is your device's model.
+.PP
+Use it like this:
+.PP
+.B "  $ sigrok-fwextract-hantek-dso Dso2090X861.sys"
+.br
+.RB "  saved 4730 bytes to hantek-dso-2090.fw"
+.PP
+Copy the resulting file over to the location where libsigrok expects
+to find its firmware files. By default this is
+.BR /usr/local/share/sigrok-firmware .
+.SH OPTIONS
+None.
+.SH "EXIT STATUS"
+Exits with 0 on success, 1 on most failures.
+.SH "SEE ALSO"
+\fBsigrok\-fwextract\-saleae\-logic16\fP(1)
+.SH "BUGS"
+Please report any bugs via Bugzilla
+.RB "(" http://sigrok.org/bugzilla ")"
+or on the sigrok\-devel mailing list
+.RB "(" sigrok\-devel@lists.souceforge.net ")."
+.SH "LICENSE"
+This program is covered by the GNU General Public License (GPL),
+version 3 or later.
+.SH "AUTHORS"
+Please see the individual source code files.

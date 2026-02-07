@@ -1,0 +1,55 @@
+--- foo2hp2600-wrapper.in.orig	2011-01-20 04:01:09.000000000 +0300
++++ foo2hp2600-wrapper.in	2011-06-19 21:21:05.231903101 +0400
+@@ -34,13 +34,6 @@ PREFIX=/usr
+ SHARE=$PREFIX/share/foo2hp
+ PATH=$PATH:/sw/bin:/opt/local/bin
+ 
+-#
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger -o -x /bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- "$BASENAME $@" </dev/null
+-fi
+-
+ usage() {
+ 	cat <<EOF
+ Usage:
+@@ -186,8 +179,8 @@ nup() {
+ #
+ # N.B. := operator used here, when :- would be better, because "ash"
+ # doesn't have :-
+-if eval gs.foo -v >/dev/null 2>&1; then
+-        GSBIN=${GSBIN:-gs.foo}
++if eval gs -v >/dev/null 2>&1; then
++        GSBIN=${GSBIN:-gs}
+ else
+         GSBIN=${GSBIN:-gs}
+ fi
+@@ -359,7 +352,7 @@ case "$BPP" in
+ 	    GSDEV="-sDEVICE=cups -dcupsColorSpace=6 -dcupsBitsPerColor=2"
+ 	    GSDEV="$GSDEV -dcupsColorOrder=2"
+ 	fi
+-	if [ $GSBIN = "gs.foo" ]; then
++	if [ $GSBIN = "gs" ]; then
+ 	    GSBIN=gs
+ 	fi
+ 
+@@ -793,18 +786,6 @@ $PREFILTER \
+ 	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
+ 
+ #
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"$GSBIN $PAPERSIZE -g$DIM -r$RES $GSDEV $GSOPTS $GAMMAFILE"
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"foo2hp -r$RES -g$DIM -p$PAPER -m$MEDIA \
+--n$COPIES -d$DUPLEX -s$SOURCE $COLOR -b$BPP $CLIP_UL $CLIP_LR $CLIP_LOG \
+-$SAVETONER -O$OFF_C,$OFF_M,$OFF_Y,$OFF_K $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
+-fi
+-
+-#
+ #	Remove cruft
+ #
+ if [ $DEBUG -eq 0 ]; then

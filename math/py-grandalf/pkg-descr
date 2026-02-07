@@ -1,0 +1,7 @@
+Grandalf is a python package made for experimentations with graphs drawing
+algorithms. It is written in pure python, and currently implements two layouts:
+the Sugiyama hierarchical layout and the force-driven or energy minimization
+approach. While not as fast or featured as graphviz or other libraries like OGDF
+(C++), it provides a way to walk and draw graphs no larger than thousands of
+nodes, while keeping the source code simple enough to make it possible to easily
+tweak and hack any part of it for experimental purpose.

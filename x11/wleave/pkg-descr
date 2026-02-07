@@ -1,0 +1,3 @@
+A Wayland layer-shell logout prompt, now ported to GTK4!
+
+A fork of wlogout with a bunch of quality-of-life features.

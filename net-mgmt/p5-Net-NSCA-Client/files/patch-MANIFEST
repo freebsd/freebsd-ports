@@ -1,0 +1,15 @@
+--- MANIFEST.orig	2012-10-16 01:16:50.000000000 +0000
++++ MANIFEST	2012-10-16 01:17:32.000000000 +0000
+@@ -1,4 +1,3 @@
+-bin/send_nsca
+ Build.PL
+ Changes
+ lib/Net/NSCA/Client.pm
+@@ -18,7 +17,6 @@
+ t/00-load.t
+ t/live_server.t
+ t/run.t
+-t/send_nsca.t
+ t/tests/MyTest/Class.pm
+ t/tests/MyTest/Net/NSCA/Client.pm
+ t/tests/MyTest/Net/NSCA/Client/DataPacket.pm

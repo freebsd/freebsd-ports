@@ -1,0 +1,6 @@
+Pkl - pronounced Pickle - is an embeddable configuration language which
+provides rich support for data templating and validation. It can be used from
+the command line, integrated in a build pipeline, or embedded in a program.
+
+Pkl scales from small to large, simple to complex, ad-hoc to repetitive
+configuration tasks.

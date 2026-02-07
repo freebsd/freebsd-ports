@@ -1,0 +1,5 @@
+This is yet another module that generates standard 'get' and 'set' methods for
+Perl classes. It also handles initialization of object and class data from
+parameter lists or defaults, and arranges for object creation and initialization
+to occur in top-down, textbook order even in the presence of multiple
+inheritance.

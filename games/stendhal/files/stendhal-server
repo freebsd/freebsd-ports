@@ -1,0 +1,16 @@
+#!/bin/sh
+
+LOCALCLASSPATH=/usr/local/share/java/classes/*:/usr/local/share/stendhal/*:/usr/local/share/stendhal/lib/*:/usr/local/share/stendhal/data/script/*:/usr/local/share/stendhal/data/conf/*
+
+CONFIGDIR=${HOME}/.config/stendhal
+SERVERLOG=${CONFIGDIR}/log/server.log
+if [ ! -d ${CONFIGDIR}/log ]; then
+	mkdir -p ${CONFIGDIR}/log
+fi
+if [ ! -f ${SERVERLOG} ]; then
+	touch ${SERVERLOG}
+fi
+
+cd ${CONFIGDIR}
+
+java -Dconfig.dir="" $@ -Xmx400m -cp "${LOCALCLASSPATH}" games.stendhal.server.StendhalServer -c "${HOME}/.config/stendhal/server.ini" -l

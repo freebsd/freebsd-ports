@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: neolink
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable neolink:
+#
+# neolink_enable="YES"
+#
+# Optionally, the following default values are set and may be adjusted:
+#
+# neolink_config="%%ETCDIR%%/config.toml"
+# neolink_user="neolink"
+
+. /etc/rc.subr
+
+name="neolink"
+rcvar=neolink_enable
+
+load_rc_config $name
+
+: ${neolink_enable="NO"}
+: ${neolink_config:=%%ETCDIR%%/config.toml}
+: ${neolink_user="neolink"}
+
+pidfile=/var/run/neolink.pid
+command="%%PREFIX%%/bin/neolink"
+
+start_cmd="${name}_start"
+
+neolink_start()
+{
+	echo -n "Starting ${name}."
+	/usr/sbin/daemon -fp ${pidfile} -u ${neolink_user} ${command} rtsp -c ${neolink_config}
+}
+
+run_rc_command "$1"

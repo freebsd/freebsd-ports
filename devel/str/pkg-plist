@@ -1,0 +1,8 @@
+bin/str-config
+include/str.h
+lib/libstr.a
+lib/libstr.so
+lib/libstr.so.9
+lib/libstr.so.9.0.32
+share/man/man1/str-config.1.gz
+share/man/man3/str.3.gz

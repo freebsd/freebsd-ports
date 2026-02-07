@@ -1,0 +1,3 @@
+This plugin enables Mojolicious to automatically generate Devel::NYTProf
+profiles and routes for your app, and sets up a route for viewing the
+collected data.

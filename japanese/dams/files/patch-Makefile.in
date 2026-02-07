@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2015-12-24 23:13:21 UTC
++++ Makefile.in
+@@ -731,10 +731,10 @@ test:	$(DIC) $(DAMS)
+ dic:	$(DIC)
+ 
+ install-dic:
+-	@if ! [ -d $(libdir)/dams ]; \
+-		then mkdir -p $(libdir)/dams; \
++	@if ! [ -d $(DESTDIR)$(libdir)/dams ]; \
++		then mkdir -p $(DESTDIR)$(libdir)/dams; \
+ 	fi
+-	$(install_sh_DATA) $(DIC) $(libdir)/dams
++	$(install_sh_DATA) $(DIC) $(DESTDIR)$(libdir)/dams
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,8 @@
+--- etc/freebsd/getty-ttyv4/run	2016-07-28 16:39:47.000000000 +0100
++++ run	2016-08-10 22:28:33.566527000 +0100
+@@ -1,2 +1,4 @@
+ #!/bin/sh
+-exec /usr/libexec/getty Pc ttyv4
++export TERM=xterm
++. whichtty
++exec /usr/libexec/getty Pc $tty

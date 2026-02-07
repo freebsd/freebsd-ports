@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: qmailsmtpd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+# To use the checkpassword interface to qmail-smtpd, set
+# qmailsmtpd_checkpassword to the full path to the checkpassword program (e.g.
+# security/checkpassword or security checkpassword-pam).
+#
+# Note: tcpserver can be found in the sysutils/ucspi-tcp package.
+#
+# qmailsmtpd_checkpassword could be set to e.g. /usr/local/bin/checkpassword-pam
+
+. /etc/rc.subr
+
+name=qmailsmtpd
+rcvar=qmailsmtpd_enable
+
+load_rc_config $name
+
+: ${qmailsmtpd_tcpserver:=%%LOCALBASE%%/bin/tcpserver}
+: ${qmailsmtpd_tcprules:=%%LOCALBASE%%/bin/tcprules}
+: ${qmailsmtpd_pidfile:=/var/run/qmailsmtpd.pid}
+: ${qmailsmtpd_enable:=NO}
+: ${qmailsmtpd_cdb:=/etc/tcp.smtp}
+: ${qmailsmtpd_flags="-R -H -u 82 -g 81"}
+: ${qmailsmtpd_host:=0}
+: ${qmailsmtpd_port:=smtp}
+: ${qmailsmtpd_smtpd:=%%PREFIX%%/bin/qmail-smtpd}
+: ${qmailsmtpd_fqdn:=`hostname`}
+: ${qmailsmtpd_checksubprogram:=/usr/bin/true}
+
+start_cmd=qmailsmtpd_start
+start_precmd=qmailsmtpd_precmd
+pidfile=${qmailsmtpd_pidfile}
+procname=${qmailsmtpd_tcpserver}
+
+qmailsmtpd_start()
+{
+	if [ -n "$qmailsmtpd_checkpassword" ]; then
+		qmailsmtpd_usercheck="$qmailsmtpd_fqdn $qmailsmtpd_checkpassword $qmailsmtpd_checksubprogram"
+	fi
+
+	echo "Starting qmailsmtpd."
+
+	$qmailsmtpd_tcpserver -x $qmailsmtpd_cdb.cdb $qmailsmtpd_flags $qmailsmtpd_host $qmailsmtpd_port \
+	  $qmailsmtpd_smtpd $qmailsmtpd_usercheck &
+	echo $! > $pidfile
+}
+
+qmailsmtpd_precmd()
+{
+	if ! [ -e "${qmailsmtpd_tcpserver}" ]; then
+		echo "sysutils/ucspi-tcp is required" >&2
+		return 1
+	fi
+	if ! [ -e "${qmailsmtpd_cdb}" ]; then
+		echo "TCP rules file '${qmailsmtpd_cdb}' is missing." >&2
+		return 1
+	fi
+	$qmailsmtpd_tcprules $qmailsmtpd_cdb.cdb $qmailsmtpd_cdb.tmp < $qmailsmtpd_cdb \
+	  || return 1
+}
+
+run_rc_command "$1"

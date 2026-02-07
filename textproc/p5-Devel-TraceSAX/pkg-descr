@@ -1,0 +1,3 @@
+Traces SAX events in a program. Works by applying Devel::TraceCalls
+to a tracer on the desired classes for all known SAX event types
+(according to XML::SAX::EventMethodMaker and XML::SAX::Machines).

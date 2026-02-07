@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Catalyst/Engine/Apache.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache2.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP13.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache2/MP19.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache2/MP20.pm
+%%PERL5_MAN3%%/Catalyst::Engine::Apache.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache2.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache2::MP19.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache2::MP20.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache::MP13.3.gz

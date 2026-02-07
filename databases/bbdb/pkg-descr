@@ -1,0 +1,5 @@
+BBDB is the Insidious Big Brother Database for GNU Emacs. It provides an
+address book for email and snail mail addresses, phone numbers and the
+like. It can be linked with various Emacs mail clients (Message and Mail
+mode, Rmail, Gnus, MH-E, Mu4e, VM, and Wanderlust). BBDB is fully
+customizable.

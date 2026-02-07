@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2025-04-24 10:33:03 UTC
++++ CMakeLists.txt
+@@ -60,7 +60,7 @@ check_cxx_compiler_flag("-march=native" CXX_HAS_NATIVE
+ 
+ # Specify target architecture.
+ check_cxx_compiler_flag("-march=native" CXX_HAS_NATIVE)
+-if(CXX_HAS_NATIVE)
++if(FALSE AND CXX_HAS_NATIVE)
+     set(ARB_DEFAULT_ARCH "native")
+ else()
+     set(ARB_DEFAULT_ARCH "none")
+@@ -302,11 +302,7 @@ install(TARGETS ext-hwloc EXPORT arbor-targets)
+ endif()
+ install(TARGETS ext-hwloc EXPORT arbor-targets)
+ 
+-CPMFindPackage(NAME json
+-              GITHUB_REPOSITORY nlohmann/json
+-              VERSION 3.12.0
+-              OPTIONS "CMAKE_SUPPRESS_DEVELOPER_WARNINGS ON")
+-install(TARGETS nlohmann_json EXPORT arbor-targets)
++find_package(nlohmann_json REQUIRED)
+ 
+ add_library(ext-random123 INTERFACE)
+ CPMFindPackage(NAME random123

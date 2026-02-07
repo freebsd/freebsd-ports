@@ -1,0 +1,3 @@
+The Template-GD distribution provides a number of Template Toolkit
+plugin modules to interface with Lincoln Stein's GD modules. These in
+turn provide an interface to Thomas Boutell's GD graphics library.

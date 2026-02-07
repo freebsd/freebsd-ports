@@ -1,0 +1,16 @@
+DIST_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	50
+
+CONFLICTS_INSTALL=	\
+		bugzilla52* \
+		bugzilla4*
+
+PORTSCOUT=	limitw:1,even
+
+WWWDIR=		${PREFIX}/www/bugzilla
+
+BINMODE=	700
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+

@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+To enable the openfire startup script please add
+openfire_enable="YES" to your /etc/rc.conf file.
+
+The following sample configuration files have been
+placed in %%ETCDIR%%:
+
+openfire.xml.sample
+security.xml.sample
+keystore.sample
+truststore.sample
+crowd.properties.sample
+EOM
+}
+]

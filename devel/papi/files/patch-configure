@@ -1,0 +1,11 @@
+--- configure.orig	2015-12-03 22:41:27 UTC
++++ configure
+@@ -6946,7 +6946,7 @@ echo "$as_me: error: PAPI requires FreeB
+    { (exit 1); exit 1; }; }
+     fi
+     # Determine if HWPMC module is on the kernel
+-    dmesg | grep hwpmc 2> /dev/null > /dev/null
++    sysctl -a | grep hwpmc 2> /dev/null > /dev/null
+     if test "$?" != "0" ; then
+       { { echo "$as_me:$LINENO: error: HWPMC module not found. (see INSTALL.TXT)" >&5
+ echo "$as_me: error: HWPMC module not found. (see INSTALL.TXT)" >&2;}

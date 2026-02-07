@@ -1,0 +1,22 @@
+Enable build for older versions of py-setuptools.
+
+--- pyproject.toml.orig	2026-01-20 09:51:18 UTC
++++ pyproject.toml
+@@ -4,7 +4,6 @@ name = "django-post_office"
+ 
+ [project]
+ name = "django-post_office"
+-license = "MIT"
+ requires-python = ">=3.9"
+ authors = [{name = "Selwin Ong", email = "selwin.ong@gmail.com"}]
+ description = "A Django app to monitor and send mail asynchronously, complete with template support."
+@@ -38,6 +37,9 @@ dynamic = ["version"]
+     "django>=4.2",
+ ]
+ dynamic = ["version"]
++
++[project.license]
++text = "MIT"
+ 
+ [project.readme]
+ file = "README.md"

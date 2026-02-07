@@ -1,0 +1,7 @@
+include/iml.h
+lib/libiml.a
+lib/libiml.so
+lib/libiml.so.0
+lib/libiml.so.0.1.1
+%%DATADIR%%/liblink
+%%DATADIR%%/libroutines

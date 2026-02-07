@@ -1,0 +1,10 @@
+--- kconfig/freebsd_miniconfig.orig	2024-04-09 01:50:07 UTC
++++ kconfig/freebsd_miniconfig
+@@ -150,6 +150,7 @@ CONFIG_SYNC=y
+ CONFIG_SEQ=y
+ CONFIG_SU=y
+ CONFIG_SYNC=y
++CONFIG_UNAME=y
+ CONFIG_TOYBOX_SUID=y
+ CONFIG_TOYBOX_FLOAT=y
+ CONFIG_TOYBOX_HELP=y

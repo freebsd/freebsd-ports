@@ -1,0 +1,11 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/secure_login/COPYING
+%%SQUIRRELDIR%%/plugins/secure_login/functions.php
+%%SQUIRRELDIR%%/plugins/secure_login/README
+%%SQUIRRELDIR%%/plugins/secure_login/setup.php
+%%SQUIRRELDIR%%/plugins/secure_login/index.php
+%%SQUIRRELDIR%%/plugins/secure_login/make_release.sh
+%%SQUIRRELDIR%%/plugins/secure_login/version
+%%SQUIRRELDIR%%/plugins/secure_login/INSTALL
+%%SQUIRRELDIR%%/plugins/secure_login/config.sample.php
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

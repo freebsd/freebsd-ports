@@ -1,0 +1,10 @@
+This virtual port is Japanese Font Set for math/ngraph.
+
+  This virtual port is for the ngraph user who can't use True Type
+Font under X.
+  If you can use True Type Font with X True Type Server(aka X-TT)
+or X True Type Font Server(xfs.xtt), use True Type Font and don't
+use this ports.
+
+SEE ALSO
+	math/ngraph description file

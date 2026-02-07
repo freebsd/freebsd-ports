@@ -1,0 +1,5 @@
+AdPlug is a free, cross-platform, hardware independent AdLib sound player
+library, mainly written in C++ and released under the LGPL. AdPlug plays
+sound data, originally created for the AdLib (OPL2) audio board, directly
+from its original format on top of an OPL2 emulator or by using the real
+hardware. No OPL chip is required for playback.

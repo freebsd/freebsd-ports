@@ -1,0 +1,49 @@
+#!/bin/sh
+
+name=%%PORTNAME%%
+comment="Slim Devices SlimServer/SqueezeCenter pseudo-user"
+slimdir="%%PREFIX%%/%%SLIMDIR%%"
+statedir=%%SLIMDBDIR%%
+cachedir=${statedir}/cache
+prefsdir=${statedir}/prefs
+playlistdir=${statedir}/playlists
+oldprefsdir=/var/db/squeezecenter/prefs
+logdir=/var/log/${name}
+conffile=${prefsdir}/server.prefs
+pidfile=/var/run/${name}/${name}.pid
+newsyslogfile=/etc/newsyslog.conf
+logcomment="# added by audio/${name} port"
+serverlogfile=/var/log/${name}/server.log
+serverlogline="${serverlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
+
+case $2 in
+POST-INSTALL)
+	if egrep -q "^${serverlogfile}\>" ${newsyslogfile}; then
+		echo "Using existing ${newsyslogfile} entry."
+	else
+		echo "Adding ${name} log entry to ${newsyslogfile}."
+		echo "$logcomment" >> ${newsyslogfile}
+		echo "$serverlogline" >> ${newsyslogfile}
+	fi
+	for file in %%CONFFILES%%; do
+		path="${slimdir}/${file}"
+		if [ ! -e ${path} ]; then
+			cp ${path}.sample ${path}
+			chmod 644 ${path}
+		fi
+	done
+
+	if [ ! -f ${serverlogfile} ]; then
+		touch ${serverlogfile}
+		chown -H ${u}:${g} ${serverlogfile}
+	fi
+
+	if [ ! -e ${conffile} ]; then
+		if [ -e ${oldprefsdir}/server.prefs ]; then
+			mkdir -p ${statedir}
+			cp -r ${oldprefsdir}* ${statedir}
+			chown -RH ${u}:${g} ${prefsdir}
+		fi
+	fi
+	;;
+esac

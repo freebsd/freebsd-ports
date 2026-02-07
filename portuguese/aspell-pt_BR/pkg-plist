@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/br-abnt2.kbd
+lib/aspell-%%VER%%/pt_BR.dat
+lib/aspell-%%VER%%/pt_BR_affix.dat
+%%DATADIR%%/brasileiro.alias
+%%DATADIR%%/brazilian.alias
+%%DATADIR%%/pt_BR.multi
+%%DATADIR%%/pt_BR.rws

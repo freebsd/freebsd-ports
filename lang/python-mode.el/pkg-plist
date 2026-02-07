@@ -1,0 +1,4 @@
+share/emacs/site-lisp/doctest-mode.el
+share/emacs/site-lisp/python-mode.el
+share/emacs/site-lisp/pycomplete.el
+share/emacs/site-lisp/pycomplete.py

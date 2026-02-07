@@ -1,0 +1,10 @@
+include/hubbub/errors.h
+include/hubbub/functypes.h
+include/hubbub/hubbub.h
+include/hubbub/parser.h
+include/hubbub/tree.h
+include/hubbub/types.h
+lib/libhubbub.so
+lib/libhubbub.so.0
+lib/libhubbub.so.%%VERSION%%
+libdata/pkgconfig/libhubbub.pc

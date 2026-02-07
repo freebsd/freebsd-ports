@@ -1,0 +1,34 @@
+PORTNAME=	jcmdline
+PORTVERSION=	2.0.0
+CATEGORIES=	devel java
+MASTER_SITES=	SF
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Java command line processor
+WWW=		https://jcmdline.sourceforge.net/
+
+LICENSE=	MPL11
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		java
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+JARFILE=	${PORTNAME}.jar
+
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_DATA} ${JARFILE:S|.jar|-${PORTVERSION}.jar|:S|^|${WRKSRC}/|}	\
+		${STAGEDIR}${JAVAJARDIR}/${JARFILE}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} CHANGES CREDITS README ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,29 @@
+--- xboing.man.orig	1996-11-22 01:28:46 UTC
++++ xboing.man
+@@ -45,7 +45,7 @@
+ xboing \- An X Window System based blockout clone. V2.4
+ .SH SYNOPSIS
+ .B xboing 
+-[-version] [-usage] [-help] [-sync] [-display <displayName>] [-speed <1-10>] [-scores] [-keys] [-sound] [-setup] [-nosfx] [-grab] [-maxvol <1-100>] [-startlevel <1-MAXLEVELS>] [-usedefcmap] [-nickname <name>] [-noicon]
++[-version] [-usage] [-help] [-sync] [-display <displayName>] [-speed <1-10>] [-scores] [-keys] [-no-sound] [-setup] [-nosfx] [-grab] [-maxvol <1-100>] [-startlevel <1-MAXLEVELS>] [-no-usedefcmap] [-nickname <name>] [-noicon]
+ .IP
+ -speed <n>         - The game speed, 1 - 9. 9=Fast
+ .br
+@@ -67,6 +67,8 @@ xboing \- An X Window System based blockout clone. V2.
+ .br
+ -sound             - Turn audio ON for game
+ .br
++-no-sound          - Turn audio OFF for game
++.br
+ -setup             - Print setup information
+ .br
+ -nosfx             - Turn off special effects
+@@ -74,6 +76,8 @@ xboing \- An X Window System based blockout clone. V2.
+ -grab              - Turn pointer grabbing on
+ .br
+ -usedefcmap        - Use the default colourmap
++.br
++-no-usedefcmap     - Do not use the default colourmap
+ .br
+ -nickname <name>   - Use nickname instead of real one
+ .br

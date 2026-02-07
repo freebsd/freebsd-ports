@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-03-18 00:29:14 UTC
++++ Makefile.in
+@@ -163,7 +163,7 @@ am__untar = @am__untar@
+ bindir = @bindir@
+ build_alias = @build_alias@
+ builddir = @builddir@
+-datadir = @datadir@
++datadir = @datadir@/ical2html
+ datarootdir = @datarootdir@
+ docdir = @docdir@
+ dvidir = @dvidir@

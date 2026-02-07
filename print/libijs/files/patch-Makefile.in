@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Wed Feb 11 20:51:54 2004
++++ Makefile.in	Thu Mar 11 13:37:51 2004
+@@ -143,12 +143,12 @@
+ @SYSDEPS_WINDOWS_TRUE@libijs_la_LIBADD = ijs_exec_win.lo $(IJS_DEPLIBS)
+ @SYSDEPS_WINDOWS_FALSE@libijs_la_LIBADD = ijs_exec_unix.lo $(IJS_DEPLIBS)
+ # Uncommment to build an unversioned library (version in soname)
+-libijs_la_LDFLAGS = -release $(IJS_VERSION) -rpath $(libdir)
++#libijs_la_LDFLAGS = -release $(IJS_VERSION) -rpath $(libdir)
+ 
+ # Uncomment to build a versioned library
+-#libijs_la_LDFLAGS = \
+-# -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-# -rpath $(libdir)
++libijs_la_LDFLAGS = \
++ -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
++ -rpath $(libdir)
+ ijs_client_example_SOURCES = ijs_client_example.c
+ ijs_client_example_LDADD = libijs.la
+ 

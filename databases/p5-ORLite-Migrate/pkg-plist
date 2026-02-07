@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/ORLite::Migrate.3.gz
+%%PERL5_MAN3%%/ORLite::Migrate::Timeline.3.gz
+%%SITE_PERL%%/ORLite/Migrate.pm
+%%SITE_PERL%%/ORLite/Migrate/Patch.pm
+%%SITE_PERL%%/ORLite/Migrate/Timeline.pm

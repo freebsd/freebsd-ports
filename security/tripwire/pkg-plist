@@ -1,0 +1,23 @@
+share/man/man5/twfiles.5.gz
+share/man/man5/twconfig.5.gz
+share/man/man5/twpolicy.5.gz
+share/man/man8/siggen.8.gz
+share/man/man8/tripwire.8.gz
+share/man/man8/twadmin.8.gz
+share/man/man8/twintro.8.gz
+share/man/man8/twprint.8.gz
+sbin/tripwire
+sbin/twadmin
+sbin/twprint
+sbin/twtest
+sbin/siggen
+share/doc/tripwire/COMMERCIAL
+share/doc/tripwire/COPYING
+share/doc/tripwire/ChangeLog
+share/doc/tripwire/ReadMe-2.4.3
+share/doc/tripwire/TRADEMARK
+share/doc/tripwire/policyguide.txt
+%%ETCDIR%%/twpol-FreeBSD.txt
+@dir(,,0750) %%ETCDIR%%
+@dir %%TWDB%%/report
+@dir %%TWDB%%

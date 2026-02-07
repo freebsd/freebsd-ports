@@ -1,0 +1,9 @@
+The pdl2 program, also known as the Perldl2 shell, is a second generation
+version of the original perldl interactive PDL shell. It attempts to be backward
+compatible in usage while providing improved features, better support for Perl
+syntax, and an more easily extended framework based on the Devel::REPL shell.
+
+By default, command lines beginning with the default prompt of either pdl2 or
+perldl (one of 'pdl> ', 'PDL> ', or 'perldl> ') will have the prefix string and
+surrounding whitespace stripped. This allows for easy cut-and-paste from sample
+PDL shell sessions or other examples into another PDL shell session.

@@ -1,0 +1,8 @@
+FreeWnn is a Japanese/Chinese/Korean input method.
+
+This port has only libraries for a Chinese imput method. The libraries
+containes a archive file (libcwnn.a), header files and files which are
+used to a client.
+
+Note that you must set a environment variable CSERVER or TSERVER if
+you use a client of Wnn.

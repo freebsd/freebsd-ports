@@ -1,0 +1,96 @@
+--- CMakeLists.txt.orig	2024-12-21 22:21:33 UTC
++++ CMakeLists.txt
+@@ -180,6 +180,16 @@ set_target_properties(openshot-audio PROPERTIES
+   EXPORT_NAME Audio  # Exports as OpenShot::Audio target
+ )
+ 
++#
++include(CheckFunctionExists)
++include(CheckLibraryExists)
++
++# Thread library
++find_package(Threads REQUIRED)
++if(Threads_FOUND)
++	target_link_libraries(openshot-audio PRIVATE ${CMAKE_THREAD_LIBS_INIT})
++endif(Threads_FOUND)
++
+ # Require language features we use
+ if(CMAKE_VERSION VERSION_GREATER 3.8)
+   target_compile_features(openshot-audio PUBLIC
+@@ -198,7 +208,8 @@ endif()
+ # Enable stack-unwinding support in c objects on gcc-based platforms.
+ # Failing to do so will cause your program to be terminated when a png
+ # or a jpeg exception is thrown on linux or macosx.
+-if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
++if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
++    CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+   target_compile_options(openshot-audio PRIVATE -fexceptions)
+ endif()
+ 
+@@ -262,8 +273,10 @@ if(UNIX AND NOT APPLE)
+       INTERFACE_INCLUDE_DIRECTORIES ${ALSA_INCLUDE_DIR}
+       INTERFACE_LINK_LIBRARIES ${ALSA_LIBRARIES})
+   endif()
++  if(LINUX)
+   target_compile_definitions(openshot-audio PUBLIC LINUX)
+-  target_link_libraries(openshot-audio PUBLIC ALSA::ALSA)
++  endif(LINUX)
++  target_link_libraries(openshot-audio PRIVATE ALSA::ALSA)
+ else()
+   # For EXPORTED Config
+   set(NEED_ALSA FALSE)
+@@ -271,10 +284,52 @@ find_package(ZLIB REQUIRED)
+ 
+ # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1
+ find_package(ZLIB REQUIRED)
+-target_link_libraries(openshot-audio PUBLIC ZLIB::ZLIB)
++target_link_libraries(openshot-audio PRIVATE ZLIB::ZLIB)
+ 
++# EXECINFO
++check_function_exists(backtrace FUNCTION_BACKTRACE_FOUND)
++if(NOT FUNCTION_BACKTRACE_FOUND)
++	find_library(EXECINFO_LIBRARY NAMES execinfo)
++	if(EXECINFO_LIBRARY)
++		unset(FUNCTION_BACKTRACE_FOUND CACHE)
++		check_library_exists(${EXECINFO_LIBRARY} backtrace "" FUNCTION_BACKTRACE_FOUND)
++	endif(EXECINFO_LIBRARY)
++endif(NOT FUNCTION_BACKTRACE_FOUND)
++if(NOT FUNCTION_BACKTRACE_FOUND)
++	message(FATAL_ERROR "backtrace - ${FUNCTION_BACKTRACE_FOUND}")
++endif(NOT FUNCTION_BACKTRACE_FOUND)
++if(EXECINFO_LIBRARY)
++	target_link_libraries(openshot-audio PRIVATE ${EXECINFO_LIBRARY})
++endif(EXECINFO_LIBRARY)
++
++# JACK
++if(ENABLE_JACK)
++	find_package(PkgConfig QUIET)
++	if(NOT PKG_CONFIG_FOUND)
++		message(FATAL_ERROR "PKG_CONFIG_FOUND: ${PKG_CONFIG_FOUND}")
++	endif(NOT PKG_CONFIG_FOUND)
++	pkg_check_modules(JACK REQUIRED jack)
++	if(NOT JACK_FOUND)
++		message(FATAL_ERROR "JACK_FOUND: ${JACK_FOUND}")
++	endif(NOT JACK_FOUND)
++	if(NOT TARGET JACK::JACK)
++		add_library(JACK::JACK INTERFACE IMPORTED)
++		set_target_properties(JACK::JACK
++			PROPERTIES
++			INTERFACE_INCLUDE_DIRECTORIES ${JACK_INCLUDE_DIRS}
++			)
++	endif(NOT TARGET JACK::JACK)
++	target_link_libraries(openshot-audio PRIVATE JACK::JACK)
++	target_compile_definitions(openshot-audio PRIVATE JUCE_JACK=1)
++	if(DEFINED JUCE_JACK_CLIENT_NAME AND NOT JUCE_JACK_CLIENT_NAME STREQUAL "")
++		target_compile_definitions(openshot-audio PRIVATE "JUCE_JACK_CLIENT_NAME=\"${JUCE_JACK_CLIENT_NAME}\"")
++	else(DEFINED JUCE_JACK_CLIENT_NAME AND NOT JUCE_JACK_CLIENT_NAME STREQUAL "")
++		target_compile_definitions(openshot-audio PRIVATE "JUCE_JACK_CLIENT_NAME=\"${PROJECT_NAME}\"")
++	endif(DEFINED JUCE_JACK_CLIENT_NAME AND NOT JUCE_JACK_CLIENT_NAME STREQUAL "")
++endif(ENABLE_JACK)
++
+ # Link with dynamic loader for platform
+-target_link_libraries(openshot-audio PUBLIC ${CMAKE_DL_LIBS})
++target_link_libraries(openshot-audio PRIVATE ${CMAKE_DL_LIBS})
+ 
+ # Create an alias so our EXPORT target name works internally, as well
+ add_library(OpenShot::Audio ALIAS openshot-audio)

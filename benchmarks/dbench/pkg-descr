@@ -1,0 +1,4 @@
+Dbench is a filesystem benchmark that generates load patterns similar to those
+of the commercial Netbench benchmark, but without requiring a lab of Windows
+load generators to run. It is now considered a de-facto standard for generating
+load on the Linux VFS.

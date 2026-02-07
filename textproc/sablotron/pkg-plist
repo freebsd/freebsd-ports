@@ -1,0 +1,13 @@
+bin/sabcmd
+bin/sablot-config
+include/sabcfg.h
+include/sabdbg.h
+include/sablot.h
+include/sdom.h
+include/shandler.h
+include/sxpath.h
+lib/libsablot.a
+lib/libsablot.so
+lib/libsablot.so.0
+lib/libsablot.so.0.100.3
+share/man/man1/sabcmd.1.gz

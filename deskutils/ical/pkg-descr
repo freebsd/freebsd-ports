@@ -1,0 +1,24 @@
+Ical is an X based calendar program.
+* Calendar items can be created edited and deleted easily.
+* Items can be made to repeat in various ways.
+* Ical will post reminders for upcoming appointments.
+* Ical can print and list item occurrences.
+* An ical calendar can include other calendars.
+* Ical calendars can be shared by different users.
+
+This software was developed by the original author, Sanjay Ghemawat
+from 1993-1997.  His last version was v2.2.  As system developments
+warranted it, other folks published patches and maintenance releases
+in order to keep Ical working.  Versions v2.3.1 and 2.3.2 are such
+releases.  In 2008, renewed interest in Ical led to new features
+such as timezone support, link support, key bindings and per-calendar
+colors.  This is the v3.0.x series of releases.
+
+#WWW: http://www.annexia.org/freeware/ical/
+#WWW: ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
+#WWW: http://clef.lcs.mit.edu/%7Esanjay/ical.html
+#WWW: http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/doc.html
+
+See also: http://opal.com/jr/ical/
+See also: https://launchpad.net/ical-tcl/
+See also: https://blog.tcl.tk/1861

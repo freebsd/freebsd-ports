@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+SMPlayer has been installed.
+
+For YouTube videos please use multimedia/smtube port.
+EOM
+}
+]

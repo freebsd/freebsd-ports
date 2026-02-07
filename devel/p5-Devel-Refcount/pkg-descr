@@ -1,0 +1,3 @@
+This module provides a single function, refcount(), which obtains the
+reference count of the object being pointed to by the passed reference
+value.

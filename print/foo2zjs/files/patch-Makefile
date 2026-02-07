@@ -1,0 +1,198 @@
+--- Makefile.orig	2016-12-03 21:16:15 UTC
++++ Makefile
+@@ -17,28 +17,26 @@ SYSNAME := $(shell uname -n)
+ VERSION=0.0
+ 
+ # Installation prefix...
+-PREFIX=/usr/local
+-PREFIX=/usr
+-PREFIX=$(DESTDIR)/usr
++PREFIX?=/usr/local
+ 
+ # Pathnames for this package...
+-BIN=$(PREFIX)/bin
+-SHAREZJS=$(PREFIX)/share/foo2zjs
+-SHAREOAK=$(PREFIX)/share/foo2oak
+-SHAREHP=$(PREFIX)/share/foo2hp
+-SHAREXQX=$(PREFIX)/share/foo2xqx
+-SHARELAVA=$(PREFIX)/share/foo2lava
+-SHAREQPDL=$(PREFIX)/share/foo2qpdl
+-SHARESLX=$(PREFIX)/share/foo2slx
+-SHAREHC=$(PREFIX)/share/foo2hiperc
+-SHAREHBPL=$(PREFIX)/share/foo2hbpl
+-MANDIR=$(PREFIX)/share/man
+-DOCDIR=$(PREFIX)/share/doc/foo2zjs/
+-INSTALL=install
++BIN=$(DESTDIR)$(PREFIX)/bin
++SHAREZJS=$(DESTDIR)$(PREFIX)/share/foo2zjs
++SHAREOAK=$(DESTDIR)$(PREFIX)/share/foo2oak
++SHAREHP=$(DESTDIR)$(PREFIX)/share/foo2hp
++SHAREXQX=$(DESTDIR)$(PREFIX)/share/foo2xqx
++SHARELAVA=$(DESTDIR)$(PREFIX)/share/foo2lava
++SHAREQPDL=$(DESTDIR)$(PREFIX)/share/foo2qpdl
++SHARESLX=$(DESTDIR)$(PREFIX)/share/foo2slx
++SHAREHC=$(DESTDIR)$(PREFIX)/share/foo2hiperc
++SHAREHBPL=$(DESTDIR)$(PREFIX)/share/foo2hbpl
++MANDIR=$(DESTDIR)$(PREFIX)/man
++DOCDIR=$(DESTDIR)$(PREFIX)/share/doc/foo2zjs
++INSTALL?=install
+ ROOT=root
+ 
+ # Pathnames for referenced packages...
+-FOODB=$(DESTDIR)/usr/share/foomatic/db/source
++FOODB=$(DESTDIR)$(PREFIX)/foomatic/db/source
+ 
+ # User ID's
+ LPuid=-oroot
+@@ -295,7 +293,7 @@ endif
+ 
+ # Compiler flags
+ #CFLAGS +=	-O2 -Wall -Wno-unused-but-set-variable
+-CFLAGS +=	-O2 -Wall 
++CFLAGS ?=	-O2 -Wall 
+ #CFLAGS +=	-g
+ 
+ #
+@@ -612,10 +610,9 @@ command2foo2lava-pjl.o: command2foo2lava
+ #
+ # Installation rules
+ #
+-install: all install-test install-prog install-icc2ps install-osx-hotplug \
+-	    install-extra install-crd install-foo install-ppd \
+-	    install-gui install-desktop install-filter \
+-	    install-man install-doc
++install: all install-prog install-icc2ps \
++	    install-crd install-foo install-ppd
++
+ 	#
+ 	# If you use CUPS, then restart the spooler:
+ 	#	make cups
+@@ -630,6 +627,7 @@ install: all install-test install-prog i
+ 	# On Ubuntu 7.10/8.x/9.x, run "system-config-printer".
+ 
+ install-test:
++	echo "install-test:"
+ 	#
+ 	# Installation Dependencies...
+ 	#
+@@ -649,19 +647,22 @@ install-test:
+ 	fi
+ 	# ... OK!
+ 	#
++	echo "install-test: exit"
+     
+ 
+-UDEVBIN=$(DESTDIR)/bin/
++UDEVBIN=$(DESTDIR)$(PREFIX)/bin
+ 
+ install-prog:
++	echo "install-prog:"
+ 	#
+ 	# Install driver, wrapper, and development tools
+ 	#
+ 	$(INSTALL) -d $(BIN)
+-	$(INSTALL) -c $(PROGS) $(SHELLS) $(BIN)/
++	$(INSTALL) -s -c $(PROGS) $(BIN)
++	$(INSTALL) -c $(SHELLS) $(BIN)
+ 	if [ "$(BINPROGS)" != "" ]; then \
+ 	    $(INSTALL) -d $(UDEVBIN); \
+-	    $(INSTALL) -c $(BINPROGS) $(UDEVBIN); \
++	    $(INSTALL) -s -c $(BINPROGS) $(UDEVBIN); \
+ 	fi
+ 	#
+ 	# Install gamma correction files.  These are just templates,
+@@ -678,24 +679,16 @@ install-prog:
+ 	$(INSTALL) -d $(SHAREHC)/
+ 
+ install-foo:
++	echo "install-foo:"
+ 	#
+ 	# Remove obsolete foomatic database files from previous versions
+ 	#
+-	rm -f $(FOODB)/opt/foo2zjs-Media.xml
+-	rm -f $(FOODB)/opt/foo2zjs-PaperSize.xml
+-	rm -f $(FOODB)/opt/foo2zjs-Source.xml
+-	rm -f $(FOODB)/opt/foo2zjs-DitherPPI.xml
+-	rm -f $(FOODB)/opt/foo2zjs-Copies.xml
+-	rm -f $(FOODB)/opt/foo2zjs-Nup.xml
+-	rm -f $(FOODB)/opt/foo2zjs-NupOrient.xml
+-	rm -f $(FOODB)/opt/foo2*-Quality.xml
+-	rm -f $(FOODB)/opt/foo2hp-AlignCMYK.xml
+-	rm -f $(FOODB)/printer/KonicaMinolta*.xml
+ 	#
+ 	# Install current database files
+ 	#
++	mkdir -p $(FOODB)
+ 	@if [ -d $(FOODB) ]; then \
+-	    for dir in driver printer opt; do \
++	    for dir in printer opt; do \
+ 		echo install -d $(FOODB)/$$dir/; \
+ 		$(INSTALL) -d $(FOODB)/$$dir/; \
+ 		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
+@@ -712,28 +705,20 @@ install-foo:
+ 	    echo "*** ... wherever foomatic is stashed on your machine."; \
+ 	    echo "***"; \
+ 	fi
+-	#
+-	# Clear foomatic cache and rebuild database if needed
+-	#
+-	rm -rf /var/cache/foomatic/*/*
+-	rm -f /var/cache/foomatic/printconf.pickle
+-	if [ -d /var/cache/foomatic/compiled ]; then \
+-	    cd /var/cache/foomatic/compiled; \
+-	    foomatic-combo-xml -O >overview.xml; \
+-	fi
++	echo "install-foo: exit"
+ 
+ install-icc2ps:
+ 	#
+ 	# Install ICM to Postscript file conversion utility
+ 	#
+-	cd icc2ps; $(MAKE) PREFIX=$(PREFIX) install
++	cd icc2ps; $(MAKE) PREFIX=$(DESTDIR)$(PREFIX) install
+ 
+ install-osx-hotplug:
+ ifeq ($(UNAME),Darwin)
+ 	#
+ 	# Install Mac OSX hotplug utility
+ 	#
+-	cd osx-hotplug; $(MAKE) PREFIX=$(PREFIX) install
++	cd osx-hotplug; $(MAKE) PREFIX=$(DESTDIR)$(PREFIX) install
+ endif
+ 
+ install-crd:
+@@ -840,10 +825,10 @@ install-extra:
+ 	    fi; \
+ 	done
+ 
+-MODEL=$(PREFIX)/share/cups/model
+-LOCALMODEL=$(DESTDIR)/usr/local/share/cups/model
++MODEL=$(DESTDIR)$(PREFIX)/share/cups/model
++LOCALMODEL=$(DESTDIR)$(PREFIX)/share/cups/model
+ MACMODEL=/Library/Printers/PPDs/Contents/Resources
+-PPD=$(PREFIX)/share/ppd
++PPD=$(DESTDIR)$(PREFIX)/ppd
+ VARPPD=/var/lp/ppd
+ install-ppd:
+ 	#
+@@ -878,6 +863,7 @@ install-ppd:
+ 	fi
+ 	#
+ 	export PATH=$$PATH:`pwd`:; \
++	mkdir -p $(MODEL) ; \
+ 	if [ -d $(MODEL) ]; then \
+ 	    rm -f $(MODEL)/KonicaMinolta*; \
+ 	    cd PPD; \
+@@ -908,9 +894,9 @@ install-ppd:
+ 	    done; \
+ 	fi
+ 
+-APPL=$(DESTDIR)/usr/share/applications
+-OLDAPPL=$(DESTDIR)/usr/share/gnome/apps/System
+-PIXMAPS=$(DESTDIR)/usr/share/pixmaps
++APPL=$(DESTDIR)$(PREFIX)/share/applications
++OLDAPPL=$(DESTDIR)$(PREFIX)/share/gnome/apps/System
++PIXMAPS=$(DESTDIR)$(PREFIX)/share/pixmaps
+ 
+ install-desktop:
+ 	#

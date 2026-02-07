@@ -1,0 +1,1 @@
+This is a daemon that converts a raw MIDI device into a JACK MIDI device.

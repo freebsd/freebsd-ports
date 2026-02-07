@@ -1,0 +1,3 @@
+%%SITE_PERL%%/MediaWiki.pm
+%%SITE_PERL%%/MediaWiki/page.pm
+%%PERL5_MAN3%%/MediaWiki.3.gz

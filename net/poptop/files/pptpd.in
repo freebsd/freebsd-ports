@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: pptpd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to enable pptpd:
+#
+# pptpd_enable="YES"
+# pptpd_flags="<set as needed>"
+
+pptpd_enable=${pptpd_enable-"NO"}
+
+. /etc/rc.subr
+
+name=pptpd
+rcvar=pptpd_enable
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+sig_stop=KILL
+
+load_rc_config ${name}
+run_rc_command "$1"

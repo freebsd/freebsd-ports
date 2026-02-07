@@ -1,0 +1,2 @@
+mmcif includes a native Python mmCIF API for data files and dictionaries along
+with pybind11 wrappers for the PDB C++ Core mmCIF Library.

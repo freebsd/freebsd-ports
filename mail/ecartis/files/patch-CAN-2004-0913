@@ -1,0 +1,12 @@
+--- modules/lsg2/lsg2-main.c.orig
++++ modules/lsg2/lsg2-main.c
+@@ -180,6 +180,9 @@
+    struct listserver_cgi_mode *curmode;
+    char *tbuf;
+
++   /* turn off loose host matching */
++   LMAPI->set_var("no-loose-domain-match", "yes", VAR_GLOBAL);
++
+    /* Generic header */
+
+    if (LMAPI->get_bool("lsg2-iis-support"))

@@ -1,0 +1,2 @@
+Text::Table::Org provides a single function, table, which formats a
+two-dimensional array of data as an Org text table.

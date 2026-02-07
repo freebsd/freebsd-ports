@@ -1,0 +1,11 @@
+pmacct is a set of network tools to gather IP traffic
+informations (bytes counter and number of packets); aggregation
+of statistics is done using simple primitives (MAC addresses,
+source host, destination host, ports and ip protocols) that can
+be used alone or combined together to form complex aggregation
+methods; counters are either global or historical (broken at
+fixed timeslots). Data is either stored in a memory table,
+pulled to stdout or in a SQL database (MySQL or PostgreSQL).
+Gathering packets off the wire is done either using pcap
+library (and promiscuous mode of the listening interface) or
+reading Netflow packets coming from the network.

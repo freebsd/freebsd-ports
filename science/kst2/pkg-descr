@@ -1,0 +1,18 @@
+Kst is a fast real-time large-dataset viewing and plotting tool
+with basic data analysis functionality. Kst contains many powerful
+built-in features and is expandable with plugins and extensions.
+
+Features of Kst include:
+
+- Robust plotting of live "streaming" data.
+- Powerful keyboard and mouse plot manipulation.
+- Large selection of built-in plotting and data manipulation functions,
+  such as histograms, equations, and power spectra.
+- Color mapping and contour mapping capabilities for three-dimensional
+  data, as well as matrix and image support.
+- Monitoring of events and notifications support.
+- Built-in filtering and curve fitting capabilities.
+- Convenient command-line interface.
+- Powerful graphical user interface.
+- Support for several popular data formats.
+- Extended annotation objects similar to vector graphics applications.

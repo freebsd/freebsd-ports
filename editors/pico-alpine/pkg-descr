@@ -1,0 +1,12 @@
+Pico and Pilot are simple, display-oriented tools.  Commands are displayed
+at the bottom of the screen, and context-sensitive help is provided.
+
+In Pico as characters are typed they are immediately inserted into the text.
+It has three basic features: paragraph justification, searching, and block
+cut/paste.
+
+In Pilot several basic file manipulation commands are provided:
+Delete, Rename, Copy, View, Launch, and Edit.  The "View" and "Edit"
+commands operate on text files only.  The "Edit" command invokes "pico."
+The "Launch" command provides a convenient way to either execute the selected
+file or to run an application on it.

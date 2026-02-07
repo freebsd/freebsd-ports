@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: renterd
+# REQUIRE: LOGIN FILESYSTEMS netwait
+# KEYWORD: SHUTDOWN
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# renterd_enable (bool):	Set to NO by default.
+#			Set it to YES to enable doormand.
+# renterd_config (path):	Set to %%PREFIX%%/etc/renterd.yml
+#			by default.
+
+. /etc/rc.subr
+
+name=renterd
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${renterd_enable:=NO}
+: ${renterd_executable:="%%PREFIX%%/bin/renterd"}
+: ${renterd_config:="%%PREFIX%%/etc/renterd.yml"}
+
+renterd_env="RENTERD_CONFIG_FILE=${renterd_config}"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-r -f -H \
+  -o \"/var/log/${name}.log\" \
+  -P \"${pidfile}\" \
+  -u %%USERS%% \"${renterd_executable}\""
+
+
+run_rc_command "$1"

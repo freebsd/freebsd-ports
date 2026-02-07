@@ -1,0 +1,9 @@
+XSpringies is a mass and spring simulation system.  It's intended use is more
+like that of a game, than some design package.
+
+It's written using Xlib only.  No Motif or any other widgets sets are used.
+
+The animation in XSpringies is done using an off-screen Pixmap.  The next
+frame is drawn on this pixmap, then is blitted onto the screen.  Since the
+frame rate is about 30 frames per second, slower machines (or machines which
+have poorly written bit-blitting code) will be deathly slow and blinky.

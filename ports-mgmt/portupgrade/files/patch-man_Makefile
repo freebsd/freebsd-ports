@@ -1,0 +1,9 @@
+--- man/Makefile.orig	2018-03-09 18:59:29 UTC
++++ man/Makefile
+@@ -1,5 +1,5 @@
+ 
+-MANDIR=		${PREFIX}/man/man
++MANDIR=		${PREFIX}/share/man/man
+ 
+ MAN1=		pkg_deinstall.1 \
+ 		pkg_fetch.1 \

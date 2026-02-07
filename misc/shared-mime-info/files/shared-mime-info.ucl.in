@@ -1,0 +1,42 @@
+path: "%%PREFIX%%/share/mime/packages"
+cleanup: {
+	type: lua
+	script: <<EOS
+local mimedir = "%%PREFIX%%/share/mime/"
+local files = { "XMLnamespaces", "aliases", "generic-icons", "globs", "globs2", "icons", "mime.cache", "subclasses", "treemagic", "types", "version"}
+for _,filename in ipairs(files) do
+	local fpath = mimedir .. filename
+	local st = pkg.stat(fpath)
+	if st then
+		os.remove(fpath)
+	end
+end
+local res = pkg.readdir(mimedir)
+if res == nil then goto cleanmime end
+
+for _,dir in ipairs(res) do
+	if  dir == "packages" then goto continue end
+
+	local directory = mimedir .. "/" .. dir
+	local r = pkg.readdir(directory)
+	if r == nil then goto cleandir end
+	for _,file in ipairs(r) do
+		os.remove(directory .. "/" .. file)
+	end
+	::cleandir::
+	os.remove(directory)
+
+	::continue::
+end
+::cleanmime::
+os.remove(mimedir)
+EOS
+}
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+print("Building the Shared MIME-Info database cache")
+pkg.exec({"%%PREFIX%%/bin/update-mime-database", "%%PREFIX%%/share/mime"})
+EOS
+}

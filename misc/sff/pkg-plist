@@ -1,0 +1,6 @@
+bin/sff
+lib/sff/sff-extfunc
+lib/sff/plugins/archive
+lib/sff/plugins/fzf-find
+lib/sff/plugins/preview
+share/man/man1/sff.1.gz

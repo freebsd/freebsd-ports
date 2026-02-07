@@ -1,0 +1,8 @@
+%%SITE_PERL%%/CPAN/Audit/DB.pm
+%%SITE_PERL%%/CPAN/Audit/DB.pm.gpg
+%%SITE_PERL%%/CPAN/Audit/DB.pod
+%%SITE_PERL%%/CPANSA/DB.pm
+%%SITE_PERL%%/CPANSA/DB.pm.gpg
+%%SITE_PERL%%/CPANSA/DB.pod
+%%PERL5_MAN3%%/CPAN::Audit::DB.3.gz
+%%PERL5_MAN3%%/CPANSA::DB.3.gz

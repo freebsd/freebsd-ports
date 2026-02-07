@@ -1,0 +1,13 @@
+dropbox-api is a command line interface to access Dropbox API.
+
+It includes the following commands:
+- ls
+- find
+- du
+- sync
+- cp
+- mv
+- rm
+- mkdir
+- get
+- put

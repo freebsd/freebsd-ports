@@ -1,0 +1,3 @@
+mod_qos is a quality of service module for the Apache web server implementing
+control mechanisms that can provide different levels of priority to different
+HTTP requests.

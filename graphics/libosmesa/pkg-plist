@@ -1,0 +1,13 @@
+@comment include/GL/gl.h
+@comment include/GL/glcorearb.h
+@comment include/GL/glext.h
+include/GL/osmesa.h
+@comment include/KHR/khrplatform.h
+lib/libOSMesa.so
+lib/libOSMesa.so.8
+lib/libOSMesa.so.8.0.0
+@comment lib/libglapi.so
+@comment lib/libglapi.so.0
+@comment lib/libglapi.so.0.0.0
+libdata/pkgconfig/osmesa.pc
+@comment share/drirc.d/00-mesa-defaults.conf

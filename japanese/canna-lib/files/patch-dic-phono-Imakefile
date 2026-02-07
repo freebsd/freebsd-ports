@@ -1,0 +1,14 @@
+--- dic/phono/Imakefile.orig	2002-10-19 17:27:40.000000000 +0900
++++ dic/phono/Imakefile	2010-04-11 21:03:35.000000000 +0900
+@@ -103,6 +103,11 @@
+ InstallNamedNonExec(wx2+.kpdef,wx2+.ctd,$(SAMPLESRCDIR))
+ #endif
+ 
++install::
++	$(CHGRP) $(cannaGroup) $(DESTDIR)$(DICDIR)
++	$(CHOWN) $(cannaOwner) $(DESTDIR)$(DICDIR)
++	$(CHMOD) ug+w $(DESTDIR)$(DICDIR)
++
+ clean::
+ 	$(RM) $(ROMKANA_TABLES)
+ 

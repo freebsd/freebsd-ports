@@ -1,0 +1,4 @@
+Simple yet fancy CPU architecture fetching tool.
+
+cpufetch is a command-line tool written in C that displays the CPU information
+in a clean and beautiful way.

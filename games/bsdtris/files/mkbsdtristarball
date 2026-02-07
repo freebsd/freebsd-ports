@@ -1,0 +1,11 @@
+#!/bin/sh
+touch test || exit 1			# i need write perms
+rm test || exit 1			# if this fails - you'r in limbo
+echo enter "anoncvs"
+cvs -d :pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs login || exit 1			# please login again
+cvs -d :pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs get src/games/tetris || exit 1	# it's important this succeeds
+cvs -d :pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs logout				# don't care if this fails
+rm -rf ./src/games/tetris/CVS/ || exit 1
+rm -rf ./src/games/tetris/Makefile || exit 1
+tar -czpf bsdtris-`date "+%d%m%Y"`.tar.gz  -C ./src/games/tetris/ . || exit 1 
+rm -rf ./src

@@ -1,0 +1,3 @@
+POE::Filter::IRCD is a POE-based parser for the IRC protocol.
+It provides a convenient way of parsing and creating IRC
+protocol lines.

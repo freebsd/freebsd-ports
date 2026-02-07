@@ -1,0 +1,28 @@
+--- alloc.c.orig	2007-12-26 14:24:10.000000000 -0200
++++ alloc.c	2007-12-26 14:25:40.000000000 -0200
+@@ -1,7 +1,6 @@
++#include <stdlib.h>
+ #include "alloc.h"
+ #include "error.h"
+-extern char *malloc();
+-extern void free();
+ 
+ #define ALIGNMENT 16 /* XXX: assuming that this alignment is enough */
+ #define SPACE 4096 /* must be multiple of ALIGNMENT */
+--- spawn.c.orig	2007-12-26 14:24:53.000000000 -0200
++++ spawn.c	2007-12-26 14:25:09.000000000 -0200
+@@ -1,5 +1,6 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include "alloc.h"
+ #include "sig.h"
+ #include "wait.h"
+ #include "substdio.h"
+--- cdbmake_add.c.orig	2009-04-20 08:28:36.000000000 -0300
++++ cdbmake_add.c	2009-04-20 08:28:52.000000000 -0300
+@@ -1,4 +1,5 @@
+ #include "cdbmake.h"
++#include "alloc.h"
+ 
+ void cdbmake_init(cdbm)
+ struct cdbmake *cdbm;

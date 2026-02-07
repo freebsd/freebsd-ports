@@ -1,0 +1,14 @@
+This project implements Python based Engine.IO client and server that can run
+standalone or integrated with a variety of Python web frameworks and
+applications.
+
+Engine.IO is a lightweight transport protocol that enables real-time
+bidirectional event-based communication between clients (typically, though not
+always, web browsers) and a server. The official implementations of the client
+and server components are written in JavaScript. This package provides Python
+implementations of both, each with standard and asyncio variants.
+
+The Engine.IO protocol is extremely simple. Once a connection between a client
+and a server is established, either side can send "messages" to the other side.
+Event handlers provided by the applications on both ends are invoked when a
+message is received, or when a connection is established or dropped.

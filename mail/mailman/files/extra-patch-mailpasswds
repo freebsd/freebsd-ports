@@ -1,0 +1,22 @@
+--- cron/mailpasswds.orig	2018-07-25 00:01:28.000000000 +0200
++++ cron/mailpasswds	2018-10-03 11:00:40.137699000 +0200
+@@ -148,17 +148,8 @@
+                 if mlist.getMemberOption(member,
+                                          mm_cfg.SuppressPasswordReminder):
+                     continue
+-                # Group by the lower-cased address, since Mailman always
+-                # treates person@dom.ain the same as PERSON@dom.ain.
+-                try:
+-                    password = mlist.getMemberPassword(member)
+-                except Errors.NotAMemberError:
+-                    # Here's a member with no passwords, which I think was
+-                    # possible in older versions of Mailman.  Log this and
+-                    # move on.
+-                    syslog('error', 'password-less member %s for list %s',
+-                           member, mlist.internal_name())
+-                    continue
++                # https://mail.python.org/pipermail/mailman-users/2016-April/080746.html
++                password = '****'
+                 optionsurl = mlist.GetOptionsURL(member)
+                 lang = mlist.getMemberLanguage(member)
+                 info = (listaddr, password, optionsurl, lang)

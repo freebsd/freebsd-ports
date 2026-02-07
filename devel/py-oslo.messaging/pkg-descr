@@ -1,0 +1,2 @@
+The Oslo messaging API supports RPC and notifications over a number of
+different messaging transports.

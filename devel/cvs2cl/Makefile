@@ -1,0 +1,42 @@
+PORTNAME=	cvs2cl
+PORTVERSION=	2.73
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	http://www.red-bean.com/cvs2cl/ \
+		http://www.sysfault.org/freebsd/${DIST_SUBDIR}/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.pl
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+EXTRACT_ONLY=	# none
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CVS-log-message-to-ChangeLog conversion script
+WWW=		https://www.red-bean.com/cvs2cl/
+
+LICENSE=	GPLv2+
+
+USES=		perl5
+
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|exec perl -w -x|exec ${PERL} -w -x|" \
+		-e "s|#!perl -w|#!${PERL} -w|" ${WRKSRC}/${PORTNAME}
+
+pre-install:
+	pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+
+.include <bsd.port.mk>

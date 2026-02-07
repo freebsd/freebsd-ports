@@ -1,0 +1,10 @@
+bin/catseye-fm
+%%DATADIR%%/catseye_16x16_NOSHOW.gif
+%%DATADIR%%/catseye_48x48.gif
+%%DATADIR%%/catseye_64x64.gif
+%%DATADIR%%/catseye_128x128.gif
+%%DATADIR%%/catseye_160x160.gif
+%%DATADIR%%/catseye_128x128.png
+%%DATADIR%%/catseye_160x160.png
+%%DATADIR%%/catseye_XML_config_file.conf.sample
+%%DATADIR%%/user_install.sh

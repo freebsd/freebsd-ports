@@ -1,0 +1,5 @@
+Mickey is a hexadecimal/ASCII file viewer and editor that runs on all
+major operating systems thanks to FLTK.  It supports various integer
+and floating-point data types, and allows to work with multiple files
+simultaneously via well-known tabbed interface.  Unfortunately, there
+is no support for editing of very large files yet.

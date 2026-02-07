@@ -1,0 +1,11 @@
+--- xkeycaps.man.orig	Mon Dec 13 02:14:48 1999
++++ xkeycaps.man	Thu Aug  9 02:40:59 2001
+@@ -48,7 +48,7 @@
+ .TP 4
+ .B \-font \fIfontname\fP
+ Specifies the font to use to display the keycaps.
+-.SH ""
++.SH "X OPTIONS"
+ The following standard X Toolkit command line arguments are commonly 
+ used with \fIxkeycaps\fP:
+ .TP 4

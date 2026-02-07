@@ -1,0 +1,13 @@
+Adapt to API changes since kidentitymanagement 24.02.0.
+
+--- kmymoney/mymoney/CMakeLists.txt.orig	2025-08-04 11:03:25 UTC
++++ kmymoney/mymoney/CMakeLists.txt
+@@ -137,7 +137,7 @@ if(ENABLE_ADDRESSBOOK)
+ )
+ 
+ if(ENABLE_ADDRESSBOOK)
+-target_link_libraries(kmm_mymoney PUBLIC ${PIMPREFIX}::IdentityManagement ${PIMPREFIX}::AkonadiCore KF${QT_MAJOR_VERSION}::Contacts)
++target_link_libraries(kmm_mymoney PUBLIC ${PIMPREFIX}::IdentityManagementCore ${PIMPREFIX}::AkonadiCore KF${QT_MAJOR_VERSION}::Contacts)
+ endif()
+ 
+ set_target_properties(kmm_mymoney PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})

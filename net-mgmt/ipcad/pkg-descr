@@ -1,0 +1,6 @@
+IPCAD is an IP accounting daemon. It uses bpf or pcap to access interfaces
+and gather IP statistics. Collected numbers are arranged to form an
+address-to-address flow pairs and than can be accessed via rsh in Cisco
+fashion, or exported via NetFlow UDP protocol.
+
+See README file and man pages for details.

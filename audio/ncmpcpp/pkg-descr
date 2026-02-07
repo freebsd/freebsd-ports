@@ -1,0 +1,12 @@
+ncmpcpp is a featureful ncurses based MPD client inspired by ncmpc.
+Features include:
+
+* tag editor
+* playlist editor
+* easy to use search engine
+* media library
+* music visualizer
+* ability to fetch artist info from last.fm
+* new display mode
+* alternative user interface
+* ability to browse and add files from outside of MPD music directory

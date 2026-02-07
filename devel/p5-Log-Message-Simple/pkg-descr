@@ -1,0 +1,2 @@
+This module provides standardized logging facilities using the
+Log::Message module.

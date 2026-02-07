@@ -1,0 +1,136 @@
+#!/bin/sh
+
+# PROVIDE: lighttpd
+# REQUIRE: %%REQUIRE%%
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable lighttpd:
+#
+# lighttpd_enable (bool):	Set it to "YES" to enable lighttpd
+#				Default is "NO".
+# lighttpd_conf (path):		Set full path to configuration file.
+#				Default is "%%ETCDIR%%/lighttpd.conf".
+# lighttpd_pidfile (path):	Set full path to pid file.
+#				Default is "/var/run/lighttpd.pid".
+#
+# Add the following lines to /etc/rc.conf for multiple instances:
+# (overrides lighttpd_conf and lighttpd_pidfile from above)
+#
+# lighttpd_instances (string):	Instances of lighttpd
+#				Default is "" (no instances).
+# lighttpd_${i}_conf (path):	Set full path to instance configuration file.
+#				Default is "%%ETCDIR%%/${i}.conf".
+# lighttpd_${i}_pidfile (path):	Set full path to instance pid file
+#				Default is "/var/run/lighttpd_${i}.pid".
+#
+
+. /etc/rc.subr
+
+name="lighttpd"
+rcvar=lighttpd_enable
+
+load_rc_config $name
+
+: ${lighttpd_enable="NO"}
+: ${lighttpd_pidfile="/var/run/${name}.pid"}
+
+# Compatibility for old configuration file location
+deprecated_conf=
+if [ -z "${lighttpd_conf}" ]; then
+	if [ -f "%%PREFIX%%/etc/lighttpd.conf" ]; then
+		deprecated_conf=1
+		lighttpd_conf="%%PREFIX%%/etc/lighttpd.conf"
+	else
+		lighttpd_conf="%%ETCDIR%%/lighttpd.conf"
+	fi
+fi
+
+command=%%PREFIX%%/sbin/lighttpd
+stop_postcmd=stop_postcmd
+restart_precmd="lighttpd_checkconfig"
+graceful_precmd="lighttpd_checkconfig"
+graceful_cmd="lighttpd_graceful"
+gracefulstop_cmd="lighttpd_gracefulstop"
+configtest_cmd="lighttpd_checkconfig"
+extra_commands="reload graceful gracefulstop configtest"
+command_args="-f ${lighttpd_conf}"
+pidfile=${lighttpd_pidfile}
+required_files=${lighttpd_conf}
+
+lighttpd_check_deprecated()
+{
+	if [ -n "${deprecated_conf}" ]; then
+		echo ""
+		echo "*** NOTICE: ***"
+		echo "The default location of %%PREFIX%%/etc/lighttpd.conf is deprecated"
+		echo "Please consider moving to %%ETCDIR%%/lighttpd.conf"
+		echo ""
+	fi
+}
+
+lighttpd_checkconfig()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval "${command} ${command_args} -tt"
+}
+
+lighttpd_gracefulstop()
+{
+	echo "Stopping ${name} gracefully."
+	sig_reload="SIGUSR1"
+	run_rc_command reload
+}
+
+lighttpd_graceful()
+{
+	lighttpd_gracefulstop
+	rm -f ${pidfile}
+	run_rc_command start
+}
+
+lighttpd_run_instance()
+{
+	_i="$1"
+	_rcmd="$2"
+	name=${_orig_name}_${_i}
+	eval ${name}_enable=${lighttpd_enable}
+	eval lighttpd_conf=\"\${lighttpd_${_i}_conf:-"%%ETCDIR%%/${_i}.conf"}\"
+	eval lighttpd_pidfile=\"\${lighttpd_${_i}_pidfile:-"/var/run/lighttpd_${_i}.pid"}\"
+	command_args="-f ${lighttpd_conf}"
+	pidfile=${lighttpd_pidfile}
+	required_files=${lighttpd_conf}
+	run_rc_command ${_rcmd}
+}
+
+stop_postcmd()
+{
+	rm -f ${pidfile}
+}
+
+if [ -n "${lighttpd_instances}" ]; then
+	_orig_name="${name}"
+	_run_cmd="$1"
+	if [ $# -gt 0 ]; then
+		shift
+	fi
+	if [ -n "$*" ]; then
+		_run_instances="$*"
+	fi
+	if [ -n "${_run_instances}" ]; then
+		for _a in $_run_instances; do
+			for _in in ${lighttpd_instances}; do
+				if [ "$_a" = "$_in" ]; then
+					_runlist="${_runlist} ${_a}"
+				fi
+			done
+		done
+	else
+		_runlist="${lighttpd_instances}"
+	fi
+	for _in in ${_runlist}; do
+		lighttpd_run_instance $_in $_run_cmd
+	done
+else
+	start_precmd="lighttpd_check_deprecated"
+	run_rc_command "$1"
+fi

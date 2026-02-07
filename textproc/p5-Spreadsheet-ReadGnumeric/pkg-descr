@@ -1,0 +1,10 @@
+Given a source of saved Gnumeric data, Spreadsheet::ReadGnumeric parses it and
+returns the result in the same format as Spreadsheet::Read. In fact,
+Spreadsheet::Read has a few more bells and whistles, such as transposing the
+resulting sheets and providing an object-oriented interface to the resulting
+data, so it may be easier to access this module through Spreadsheet::Read, even
+if you only want to parse Gnumeric data.
+
+Note that Gnumeric only saves raw cell values, and not their formatted versions.
+In particular, Gnumeric saves formulas, and not formula values, never mind
+formatted formula values.

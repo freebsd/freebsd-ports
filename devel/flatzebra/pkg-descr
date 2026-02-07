@@ -1,0 +1,3 @@
+Flatzebra is a generic C++ game engine library supporting 2D double-buffering.
+
+It is used by games such as BurgerSpace, Afternoon Stalker and Cosmosmash.

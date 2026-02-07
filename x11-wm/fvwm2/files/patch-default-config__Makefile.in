@@ -1,0 +1,13 @@
+--- default-config/Makefile.in.orig	2018-05-30 16:41:08.000000000 -0700
++++ default-config/Makefile.in	2018-06-13 05:23:26.137557000 -0700
+@@ -603,6 +603,10 @@
+ 	ln -sf default-config/FvwmScript-DateTime $(inst_location)/..
+ 	ln -sf default-config/FvwmScript-ConfirmQuit $(inst_location)/..
+ 	ln -sf default-config/FvwmScript-ConfirmCopyConfig $(inst_location)/..
++	cd $(inst_location)
++	ln -sf FvwmScript-DateTime ..
++	ln -sf FvwmScript-ConfirmQuit ..
++	ln -sf FvwmScript-ConfirmCopyConfig ..
+ 
+ uninstall-hook:
+ 	rm -fr $(DESTDIR)/$(configdir)

@@ -1,0 +1,5 @@
+TIMESTAMP = 1748239472
+SHA256 (go/www_minio-client/minio-client-2025.05.21.01.59.54/v0.0.0-20250521015954-f71ad84bcf0f.mod) = 70fbae658ab6b548d37f107a0b0128d8a8132379bd5715200d8f8422ee5d16db
+SIZE (go/www_minio-client/minio-client-2025.05.21.01.59.54/v0.0.0-20250521015954-f71ad84bcf0f.mod) = 5307
+SHA256 (go/www_minio-client/minio-client-2025.05.21.01.59.54/v0.0.0-20250521015954-f71ad84bcf0f.zip) = 6caa78c86093cfe72a3a28dc84a512471d3a6a1348d7f255f82596b6240eac4e
+SIZE (go/www_minio-client/minio-client-2025.05.21.01.59.54/v0.0.0-20250521015954-f71ad84bcf0f.zip) = 1037540

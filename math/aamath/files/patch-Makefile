@@ -1,0 +1,38 @@
+--- ./Makefile.orig	2005-06-22 22:12:18.000000000 +0200
++++ ./Makefile	2014-07-22 01:12:20.000000000 +0200
+@@ -1,17 +1,22 @@
+-CXX		= g++
+-LD		= g++
++CXX		?= g++
++LD		= $(CXX)
+ CXXFILES	= parser.cc lexer.cc expr.cc canvas.cc aamath.cc
+ OBJS		= $(CXXFILES:.cc=.o) 
+ TARGET		= aamath
+-CFLAGS		= -Wall -O2 -g -DUSE_READLINE
+-LFLAGS		= -g
++CFLAGS		+= -Wall -DUSE_READLINE
+ LIBS		= -lreadline -ltermcap
+ 
+ $(TARGET): $(OBJS)
+-	$(LD) $(LFLAGS) $(OBJS) -o $@ $(LIBS)
++	$(LD) $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
+ 
+-parser.cc parser.h: parser.y
+-	yacc -d parser.y && mv y.tab.c parser.cc && mv y.tab.h parser.h
++yacc: parser.y
++	yacc -d parser.y
++
++parser.cc: yacc
++	mv y.tab.c parser.cc
++
++parser.h: yacc
++	mv y.tab.h parser.h
+ 
+ lexer.cc: lexer.l parser.h
+ 	lex lexer.l && mv lex.yy.c lexer.cc
+@@ -21,3 +26,5 @@
+ 
+ clean:
+ 	rm -f *.o lexer.cc parser.h parser.cc $(TARGET)
++
++all: $(TARGET)

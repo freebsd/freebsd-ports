@@ -1,0 +1,3 @@
+PnetCDF-Python is a Python interface to PnetCDF, a high-performance I/O library
+for accessing NetCDF files in parallel. It can provide MPI-based parallel python
+programs to achieve a scalable I/O performance.

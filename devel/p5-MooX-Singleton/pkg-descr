@@ -1,0 +1,6 @@
+Role::Tiny role that provides "instance" method turning your object into
+singleton.
+
+NOTE: Subsequent calls to "instance" will return the singleton instance ignoring
+any arguments. This is different from MooseX::Singleton which does not allow any
+arguments.

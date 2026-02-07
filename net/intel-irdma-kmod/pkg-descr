@@ -1,0 +1,5 @@
+This release includes the FreeBSD RDMA Driver for Intel(R) Ethernet Network Connections.
+
+The irdma driver supports devices based on the following controllers:
+ * Intel® Ethernet Controller E810-C
+ * Intel® Ethernet Controller E810-XXV

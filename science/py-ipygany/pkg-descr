@@ -1,0 +1,16 @@
+ipygany is a Jupyter Interactive Widgets library for 3-D mesh analysis.
+
+Features:
+ipygany has many features including:
+* VTK loader for displaying your computation results in the Jupyter Notebook
+* Structured and Unstructured grids support
+* 2-D cell based meshes support (quads, triangles...) as well as 3-D cell based
+  meshes support (tetrahedrons, quadratic tetrahedrons...)
+* Animations
+* IsoColor effect
+* Warp effect
+* IsoSurface computation
+* Threshold effect (for visualizing only the parts that are inside of a range
+  of data)
+* Point cloud visualization
+* Water effect, for nice water visualization with real-time caustics

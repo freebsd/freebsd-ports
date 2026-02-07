@@ -1,0 +1,44 @@
+Tgif.UseNKF:			true
+Tgif.CopyAndPasteJIS:		true
+Tgif.GridSystem:		Metric
+Tgif.PSA4PaperSize:		true
+
+Tgif.FontSizes:			8 9 10 11 12 13 14 16 18 20 24 26 32 34 36 40 44 60 70 100 200 250 300
+
+!Tgif.AdditionalFonts:		\n\
+!	lucidabright-medium-r-normal,iso8859-1,ZapfChancery-Medium\n\
+!	lucidabright-demibold-r-normal,iso8859-1,ZapfChancery-Bold\n\
+!	lucidabright-medium-i-normal,iso8859-1,ZapfChancery-Italic\n\
+!	lucidabright-demibold-i-normal,iso8859-1,ZapfChancery-BoldItalic
+!Tgif.FontNamePrefix:		-*
+!Tgif.ZapfChanceryShowFontChar:	ZC
+
+Tgif.MenuFontSet:		-*-helvetica-bold-r-normal--12-*-*-*-*-*-*-*,-ipa-uigothic-medium-r-*--12-*-*-*-c-*-jisx0208.1983-*
+Tgif.MsgFontSet:		-*-helvetica-medium-r-normal--12-*-*-*-*-*-*-*,-ipa-uigothic-medium-r-*--12-*-*-*-c-*-jisx0208.1983-*
+Tgif.BoldMsgFontSet:		-*-helvetica-bold-r-normal--12-*-*-*-*-*-*-*,-ipa-uigothic-bold-r-*--12-*-*-*-c-*-jisx0208.1983-*
+
+Tgif.DoubleByteInputMethod:	xim
+Tgif.PreeditType:		overthespot
+
+Tgif.RyuminShowFontChar:	\314\300
+Tgif.GothicBBBShowFontChar:	\245\264
+Tgif.SquareDoubleByteFonts: \n\
+-ipa-mincho-medium-r-*--%d-*-*-*-c-*-jisx0208.1983-*,H,Ryumin-Light-EUC-H\n\
+-ipa-mincho-bold-r-*--%d-*-*-*-c-*-jisx0208.1983-*,H,Ryumin-Light-EUC-H\n\
+-ipa-mincho-medium-i-*--%d-*-*-*-c-*-jisx0208.1983-*,H,Ryumin-Light-EUC-H\n\
+-ipa-mincho-bold-i-*--%d-*-*-*-c-*-jisx0208.1983-*,H,Ryumin-Light-EUC-H\n\
+\n\
+-ipa-gothic-medium-r-*--%d-*-*-*-c-*-jisx0208.1983-*,H,GothicBBB-Medium-EUC-H\n\
+-ipa-gothic-bold-r-*--%d-*-*-*-c-*-jisx0208.1983-*,H,GothicBBB-Medium-EUC-H\n\
+-ipa-gothic-medium-i-*--%d-*-*-*-c-*-jisx0208.1983-*,H,GothicBBB-Medium-EUC-H\n\
+-ipa-gothic-bold-i-*--%d-*-*-*-c-*-jisx0208.1983-*,H,GothicBBB-Medium-EUC-H\n\
+\n\
+-ipa-mincho-medium-r-*--%d-*-*-*-c-*-jisx0208.1983-*,V,Ryumin-Light-EUC-V\n\
+-ipa-mincho-bold-r-*--%d-*-*-*-c-*-jisx0208.1983-*,V,Ryumin-Light-EUC-V\n\
+-ipa-mincho-medium-i-*--%d-*-*-*-c-*-jisx0208.1983-*,V,Ryumin-Light-EUC-V\n\
+-ipa-mincho-bold-i-*--%d-*-*-*-c-*-jisx0208.1983-*,V,Ryumin-Light-EUC-V\n\
+\n\
+-ipa-gothic-medium-r-*--%d-*-*-*-c-*-jisx0208.1983-*,V,GothicBBB-Medium-EUC-V\n\
+-ipa-gothic-bold-r-*--%d-*-*-*-c-*-jisx0208.1983-*,V,GothicBBB-Medium-EUC-V\n\
+-ipa-gothic-medium-i-*--%d-*-*-*-c-*-jisx0208.1983-*,V,GothicBBB-Medium-EUC-V\n\
+-ipa-gothic-bold-i-*--%d-*-*-*-c-*-jisx0208.1983-*,V,GothicBBB-Medium-EUC-V

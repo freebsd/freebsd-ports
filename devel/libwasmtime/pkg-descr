@@ -1,0 +1,5 @@
+Wasmtime is a Bytecode Alliance project that is a standalone
+wasm-only optimizing runtime for WebAssembly and WASI.  It runs
+WebAssembly code outside of the Web, and can be used both as a
+command-line utility or as a library embedded in a larger
+application.

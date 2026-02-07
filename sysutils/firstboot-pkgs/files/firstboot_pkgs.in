@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# KEYWORD: firstboot
+# PROVIDE: firstboot_pkgs
+# REQUIRE: NETWORKING
+# BEFORE: LOGIN
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf (in the disk
+# image, since this only runs on the first boot) to enable this:
+#
+# firstboot_pkgs_enable="YES"
+#
+# and place a list of packages in firstboot_pkgs_list, e.g.,
+#
+# firstboot_pkgs_list="apache24 php83 mysql80-server"
+
+. /etc/rc.subr
+
+: ${firstboot_pkgs_enable:="NO"}
+
+name="firstboot_pkgs"
+rcvar=firstboot_pkgs_enable
+start_cmd="firstboot_pkgs_run"
+stop_cmd=":"
+
+firstboot_pkgs_run()
+{
+
+	# Count rc.d scripts
+	nscriptso=`ls /usr/local/etc/rc.d | wc -l`
+
+	# Bootstrap and update pkg to ensure synchronization with the repository
+	env ASSUME_ALWAYS_YES=YES pkg bootstrap -f | cat
+	env ASSUME_ALWAYS_YES=YES pkg update -f | cat
+
+	# Install requested packages, if any
+	for package in ${firstboot_pkgs_list}; do
+		env ASSUME_ALWAYS_YES=YES pkg install ${package} </dev/null |
+		    cat
+	done
+
+	# Count rc.d scripts again
+	nscriptsn=`ls /usr/local/etc/rc.d | wc -l`
+
+	# If we have more scripts, request a reboot
+	if [ $nscriptsn -ne $nscriptso ]; then
+		echo "Requesting reboot after installing packages with rc.d scripts."
+		touch ${firstboot_sentinel}-reboot
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

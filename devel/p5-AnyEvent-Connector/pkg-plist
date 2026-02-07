@@ -1,0 +1,4 @@
+%%SITE_PERL%%/AnyEvent/Connector.pm
+%%SITE_PERL%%/AnyEvent/Connector/Proxy/http.pm
+%%PERL5_MAN3%%/AnyEvent::Connector.3.gz
+%%PERL5_MAN3%%/AnyEvent::Connector::Proxy::http.3.gz

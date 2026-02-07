@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Authen::SASL::Cyrus.3.gz
+%%SITE_ARCH%%/Authen/SASL/Cyrus.pm
+%%SITE_ARCH%%/Authen/SASL/Cyrus.pod
+%%SITE_ARCH%%/Authen/SASL/Cyrus/Security.pm
+%%SITE_ARCH%%/auto/Authen/SASL/Cyrus/Cyrus.so

@@ -1,0 +1,58 @@
+bin/comp_err
+bin/my_print_defaults
+bin/mysql
+bin/mysql_config
+bin/mysql_config_editor
+bin/mysql_migrate_keyring
+bin/mysqladmin
+bin/mysqlbinlog
+bin/mysqlcheck
+bin/mysqldump
+bin/mysqlimport
+bin/mysqlpump
+bin/mysqlshow
+bin/mysqlslap
+bin/perror
+@comment bin/zlib_decompress
+include/mysql/errmsg.h
+include/mysql/field_types.h
+include/mysql/my_command.h
+include/mysql/my_compress.h
+include/mysql/my_list.h
+include/mysql/mysql.h
+include/mysql/mysql/client_plugin.h
+include/mysql/mysql/plugin_auth_common.h
+include/mysql/mysql/udf_registration_types.h
+include/mysql/mysql_com.h
+include/mysql/mysql_time.h
+include/mysql/mysql_version.h
+include/mysql/mysqld_error.h
+lib/mysql/libmysqlclient.a
+lib/mysql/libmysqlclient.so
+lib/mysql/libmysqlclient.so.21
+lib/mysql/libmysqlclient_r.a
+lib/mysql/libmysqlclient_r.so
+lib/mysql/libmysqlclient_r.so.21
+@comment lib/private/libprotobuf-lite.so.3.19.4
+@comment lib/private/libprotobuf.so.3.19.4
+%%SASLCLIENT%%lib/mysql/plugin/authentication_ldap_sasl_client.so
+lib/mysql/plugin/authentication_fido_client.so
+lib/mysql/plugin/authentication_oci_client.so
+libdata/pkgconfig/mysqlclient.pc
+@comment share/man/man1/comp_err.1.gz
+@comment share/man/man1/lz4_decompress.1.gz
+@comment share/man/man1/mysql.1.gz
+@comment share/man/man1/mysql_config.1.gz
+@comment share/man/man1/mysql_config_editor.1.gz
+@comment share/man/man1/mysqladmin.1.gz
+@comment share/man/man1/mysqlbinlog.1.gz
+@comment share/man/man1/mysqlcheck.1.gz
+@comment share/man/man1/mysqldump.1.gz
+@comment share/man/man1/mysqlimport.1.gz
+@comment share/man/man1/mysqlman.1.gz
+@comment share/man/man1/mysqlpump.1.gz
+@comment share/man/man1/mysqlshow.1.gz
+@comment share/man/man1/mysqlslap.1.gz
+@comment share/man/man1/perror.1.gz
+@comment share/man/man1/zlib_decompress.1.gz
+share/aclocal/mysql.m4

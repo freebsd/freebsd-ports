@@ -1,0 +1,173 @@
+Add library suffix to avoid conflict with mesa-libs + mesa-dri.
+Library selection is handled by libglvnd and/or libmap.conf.
+
+--- meson.build.orig	2024-04-06 18:40:47 UTC
++++ meson.build
+@@ -100,7 +100,7 @@ if dri_drivers_path == ''
+ 
+ dri_drivers_path = get_option('dri-drivers-path')
+ if dri_drivers_path == ''
+-  dri_drivers_path = join_paths(get_option('prefix'), get_option('libdir'), 'dri')
++  dri_drivers_path = join_paths(get_option('prefix'), get_option('libdir'), 'dri' + get_option('egl-lib-suffix'))
+ endif
+ dri_search_path = get_option('dri-search-path')
+ if dri_search_path == ''
+@@ -550,8 +550,7 @@ _glvnd = get_option('glvnd') \
+            error_message: 'Cannot build glvnd support for GLX that is not DRI based.') \
+   .require(with_glx != 'disabled' or with_egl,
+            error_message: 'glvnd requires DRI based GLX and/or EGL') \
+-  .require(get_option('egl-lib-suffix') == '',
+-           error_message: '''EGL lib suffix can't be used with libglvnd''')
++
+ dep_glvnd = dependency('libglvnd', version : '>= 1.3.2', required : _glvnd)
+ with_glvnd = dep_glvnd.found()
+ if with_glvnd
+@@ -739,7 +738,7 @@ if va_drivers_path == ''
+ 
+ va_drivers_path = get_option('va-libs-path')
+ if va_drivers_path == ''
+-  va_drivers_path = join_paths(get_option('libdir'), 'dri')
++  va_drivers_path = join_paths(get_option('libdir'), 'dri' + get_option('egl-lib-suffix'))
+ endif
+ 
+ with_gallium_xa = get_option('gallium-xa') \
+--- src/amd/vulkan/meson.build.orig	2024-03-20 22:46:44 UTC
++++ src/amd/vulkan/meson.build
+@@ -207,7 +207,7 @@ libvulkan_radeon = shared_library(
+ endif
+ 
+ libvulkan_radeon = shared_library(
+-  'vulkan_radeon',
++  'vulkan_radeon' + get_option('egl-lib-suffix'),
+   [libradv_files, radv_entrypoints, sha1_h, radix_sort_spv, bvh_spv, radv_annotate_layer],
+   vs_module_defs : vulkan_api_def,
+   include_directories : [
+--- src/egl/meson.build.orig	2020-12-03 22:36:27 UTC
++++ src/egl/meson.build
+@@ -144,7 +144,7 @@ if not with_glvnd
+   egl_lib_name = 'EGL' + get_option('egl-lib-suffix')
+   egl_lib_version = '1.0.0'
+ else
+-  egl_lib_name = 'EGL_@0@'.format(glvnd_vendor_name)
++  egl_lib_name = 'EGL_@0@'.format(glvnd_vendor_name) + get_option('egl-lib-suffix')
+   egl_lib_version = '0.0.0'
+   deps_for_egl += dep_glvnd
+   files_egl += [g_egldispatchstubs_h, g_egldispatchstubs_c]
+--- src/gallium/targets/dri/meson.build.orig	2024-08-31 18:55:15 UTC
++++ src/gallium/targets/dri/meson.build
+@@ -29,7 +29,7 @@ libgallium_dri = shared_library(
+ endif
+ 
+ libgallium_dri = shared_library(
+-  libgallium_name,
++  libgallium_name + get_option('egl-lib-suffix'),
+   files('dri_target.c'),
+   include_directories : [
+     inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_gallium_aux, inc_util, inc_gallium_drivers,
+--- src/gbm/backends/dri/meson.build.orig	2024-11-27 22:48:04 UTC
++++ src/gbm/backends/dri/meson.build
+@@ -9,7 +9,7 @@ shared_library(
+ endif
+ 
+ shared_library(
+-  'dri_gbm',
++  'dri' + get_option('egl-lib-suffix') + '_gbm',
+   files('gbm_dri.c', 'gbm_driint.h'),
+   include_directories : [incs_gbm, incs_gbm_dri, inc_st_dri, inc_gallium_aux],
+   link_args : [ld_args_gc_sections],
+--- src/gbm/meson.build.orig	2022-09-12 22:59:56 UTC
++++ src/gbm/meson.build
+@@ -52,7 +52,7 @@ libgbm = shared_library(
+ endif
+ 
+ libgbm = shared_library(
+-  libgbm_name,
++  libgbm_name + get_option('egl-lib-suffix'),
+   files_gbm,
+   include_directories : incs_gbm,
+   c_args : [args_gbm],
+--- src/glx/meson.build.orig	2020-12-03 22:36:27 UTC
++++ src/glx/meson.build
+@@ -108,10 +108,10 @@ elif with_dri_platform == 'windows'
+ endif
+ 
+ if not with_glvnd
+-  gl_lib_name = 'GL'
++  gl_lib_name = 'GL' + get_option('egl-lib-suffix')
+   gl_lib_version = '1.2.0'
+ else
+-  gl_lib_name = 'GLX_@0@'.format(glvnd_vendor_name)
++  gl_lib_name = 'GLX_@0@'.format(glvnd_vendor_name) + get_option('egl-lib-suffix')
+   gl_lib_version = '0.0.0'
+   files_libglx += files(
+     'g_glxglvnddispatchfuncs.c',
+--- src/intel/vulkan/meson.build.orig	2024-12-06 19:52:50 UTC
++++ src/intel/vulkan/meson.build
+@@ -264,7 +264,7 @@ libvulkan_intel = shared_library(
+ )
+ 
+ libvulkan_intel = shared_library(
+-  'vulkan_intel',
++  'vulkan_intel' + get_option('egl-lib-suffix'),
+   [files('anv_gem.c'), anv_entrypoints[0], bvh_spv],
+   include_directories : [
+     inc_include, inc_src, inc_intel,
+--- src/intel/vulkan_hasvk/meson.build.orig	2022-09-03 20:27:51 UTC
++++ src/intel/vulkan_hasvk/meson.build
+@@ -181,7 +181,7 @@ libvulkan_intel_hasvk = shared_library(
+ )
+ 
+ libvulkan_intel_hasvk = shared_library(
+-  'vulkan_intel_hasvk',
++  'vulkan_intel_hasvk' + get_option('egl-lib-suffix'),
+   [files('anv_gem.c'), anv_hasvk_entrypoints[0]],
+   include_directories : [
+     inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_intel, inc_compiler,
+--- src/mesa/glapi/es1api/meson.build.orig	2025-08-06 21:21:09 UTC
++++ src/mesa/glapi/es1api/meson.build
+@@ -23,7 +23,7 @@ libglesv1_cm = shared_library(
+ )
+ 
+ libglesv1_cm = shared_library(
+-  'GLESv1_CM' + get_option('gles-lib-suffix'),
++  'GLESv1_CM' + get_option('egl-lib-suffix') + get_option('gles-lib-suffix'),
+   ['libgles1_public.c', es1_glapi_mapi_tmp_h],
+   vs_module_defs : gles1_def,
+   c_args : [
+--- src/mesa/glapi/es2api/meson.build.orig	2025-08-06 21:21:09 UTC
++++ src/mesa/glapi/es2api/meson.build
+@@ -23,7 +23,7 @@ libgles2 = shared_library(
+ )
+ 
+ libgles2 = shared_library(
+-  'GLESv2' + get_option('gles-lib-suffix'),
++  'GLESv2' + get_option('egl-lib-suffix') + get_option('gles-lib-suffix'),
+   ['libgles2_public.c', es2_glapi_mapi_tmp_h],
+   vs_module_defs : gles2_def,
+   c_args : [
+--- src/mesa/glapi/shared-glapi/meson.build.orig	2025-08-06 21:21:09 UTC
++++ src/mesa/glapi/shared-glapi/meson.build
+@@ -11,7 +11,7 @@ libglapi = static_library(
+ )
+ 
+ libglapi = static_library(
+-  'glapi',
++  'glapi' + get_option('egl-lib-suffix'),
+   ['core.c', shared_glapi_mapi_tmp_h],
+   c_args : [
+     c_msvc_compat_args,
+--- src/util/meson.build.orig	2022-12-03 14:41:29 UTC
++++ src/util/meson.build
+@@ -170,10 +170,10 @@ files_mesa_util = files(
+   'mesa_cache_db.h',
+ )
+ 
+-files_drirc = files('00-mesa-defaults.conf')
++files_drirc = files('00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
+ 
+ if with_amd_vk
+-  files_drirc += files('00-radv-defaults.conf')
++  files_drirc += files('00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
+ endif
+ 
+ if with_tests

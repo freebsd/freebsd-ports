@@ -1,0 +1,4 @@
+Scientific Python INcantations (spin) is a developer tool for scientific Python
+libraries. The goal of spin is therefore to provide a simple, user-friendly,
+extendable interface for common development tasks. It comes with a few common
+build commands out the box, but can easily be customized per project.

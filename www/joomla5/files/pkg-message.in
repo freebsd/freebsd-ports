@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+ 1) Add the following to your Apache configuration, and restart the server:
+
+  Alias /joomla %%WWWDIR%%/
+  AcceptPathInfo On
+
+  <Directory %%WWWDIR%%>
+      AllowOverride None
+      Require all granted
+  </Directory>
+
+ 2) Visit your Joomla site with a browser (i.e. http://your.server.com/joomla/),
+    and you should be taken to the install.php script, which will lead you
+    through creating a config.php file and then setting up Joomla, creating
+    an admin account, etc.
+EOM
+}
+]

@@ -1,0 +1,11 @@
+--- Xmris-ad.src.orig	1995-12-22 12:05:55 UTC
++++ Xmris-ad.src
+@@ -18,7 +18,7 @@
+ *Monochrome:		no
+ *Gender:		he
+ *Random:		no
+-*Busywait:		no
++*Busywait:		yes
+ *UserName:		no
+ *Font:			FONT
+ *Static:		no

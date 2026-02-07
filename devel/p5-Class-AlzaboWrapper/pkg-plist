@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Class/AlzaboWrapper.pm
+%%SITE_PERL%%/Class/AlzaboWrapper/Cursor.pm
+%%PERL5_MAN3%%/Class::AlzaboWrapper.3.gz
+%%PERL5_MAN3%%/Class::AlzaboWrapper::Cursor.3.gz

@@ -1,0 +1,11 @@
+--- src/SaneWrapper/Linux/CMakeLists.txt.orig	2024-09-12 07:10:30 UTC
++++ src/SaneWrapper/Linux/CMakeLists.txt
+@@ -19,8 +19,6 @@ PROJECT(sane-epsonscan2)
+ # プロジェクト名
+ PROJECT(sane-epsonscan2)
+ 
+-add_definitions(-DBOOST_NO_CXX11_RVALUE_REFERENCES=1)
+-
+ if(COMMAND cmake_policy)
+       cmake_policy(SET CMP0003 NEW)  
+ endif(COMMAND cmake_policy)

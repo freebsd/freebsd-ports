@@ -1,0 +1,22 @@
+--- src/svg/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/svg/CMakeLists.txt
+@@ -89,7 +89,7 @@ target_sources(CsSvg
+ 
+ target_include_directories(CsSvg
+    PUBLIC
+-   $<INSTALL_INTERFACE:include/QtSvg>
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtSvg
+ )
+ 
+ target_link_libraries(CsSvg
+@@ -123,8 +123,8 @@ install(
+    TARGETS CsSvg
+    EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(

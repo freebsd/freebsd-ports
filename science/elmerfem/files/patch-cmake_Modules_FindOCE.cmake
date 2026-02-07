@@ -1,0 +1,15 @@
+--- cmake/Modules/FindOCE.cmake.orig	2020-03-08 13:46:44 UTC
++++ cmake/Modules/FindOCE.cmake
+@@ -0,0 +1,12 @@
++MESSAGE(STATUS "Faking OCE")
++
++SET(OCE_FOUND TRUE)
++SET(OCE_VERSION "${VERSION}")
++SET(OCE_INCLUDE_DIRS "${INCLUDE}")
++
++
++MARK_AS_ADVANCED(
++  OCE_FOUND
++  OCE_VERSION
++  OCE_INCLUDE_DIRS
++  )

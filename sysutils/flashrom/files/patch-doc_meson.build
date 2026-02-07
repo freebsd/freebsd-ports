@@ -1,0 +1,11 @@
+--- doc/meson.build.orig	2025-07-28 09:13:11 UTC
++++ doc/meson.build
+@@ -30,7 +30,7 @@ if sphinx.found()
+     git_dir = meson.project_source_root() / '.git'
+ 
+     # TODO: investigate whether this version can be lowered.
+-    version_for_authors_list = '7.2.0'
++    version_for_authors_list = '5.3.0'
+     # TODO: use sphinx.version().version_compare() instead, after we increase min required meson version to 0.62
+     sphinx_for_authors_list = find_program('sphinx-build',
+ 						native : true,

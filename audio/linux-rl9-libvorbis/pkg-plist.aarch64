@@ -1,0 +1,8 @@
+usr/lib64/libvorbis.so.0
+usr/lib64/libvorbis.so.0.4.9
+usr/lib64/libvorbisenc.so.2
+usr/lib64/libvorbisenc.so.2.0.12
+usr/lib64/libvorbisfile.so.3
+usr/lib64/libvorbisfile.so.3.3.8
+%%PORTDOCS%%usr/share/doc/libvorbis/AUTHORS
+usr/share/licenses/libvorbis/COPYING

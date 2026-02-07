@@ -1,0 +1,10 @@
+This module processes XML files with an approach similar to OMNIMARK.
+
+Down translation function dt() receives a filename and a set of
+expressions (functions) defining the processing and associated values
+for each element.
+
+dtstring() is similar but takes input from a string instead of a file.
+
+-Anton
+<tobez@FreeBSD.org>

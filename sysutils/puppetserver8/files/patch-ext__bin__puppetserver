@@ -1,0 +1,15 @@
+--- ext/bin/puppetserver.orig	2018-10-03 16:18:58 UTC
++++ ext/bin/puppetserver
+@@ -15,6 +15,12 @@ elif [ `uname` == "OpenBSD" ] ; then
+     USER="_puppet"
+     INSTALL_DIR="/opt/puppetlabs/server/apps/puppetserver"
+     CONFIG="/etc/puppetlabs/puppetserver/conf.d"
++elif [ `uname` == "FreeBSD" ] ; then
++    JAVA_BIN="%%JAVA%%"
++    JAVA_ARGS="-Xms2g -Xmx2g"
++    USER="puppet"
++    INSTALL_DIR="%%DATADIR%%"
++    CONFIG="%%ETCDIR%%/conf.d"
+ else
+     echo "You seem to be missing some important configuration files; could not find /etc/default/puppetserver or /etc/sysconfig/puppetserver" >&2
+     exit 1

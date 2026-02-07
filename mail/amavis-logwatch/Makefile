@@ -1,0 +1,43 @@
+PORTNAME=	amavis-logwatch
+PORTVERSION=	1.51.03
+PORTREVISION=	2
+CATEGORIES=	mail
+MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Amavisd-new log parser
+WWW=		https://logreporters.sourceforge.net/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+PORTDOCS=	Bugs Changes README
+PORTEXAMPLES=	${PORTNAME}.conf
+
+USES=		perl5 shebangfix tar:tgz
+USE_PERL5=	run
+NO_BUILD=	yes
+SHEBANG_FILES=	amavis-logwatch
+OPTIONS_DEFINE=	EXAMPLES DOCS
+
+post-patch:
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '\
+		s!/usr/local/etc!${ETCDIR}! \
+		' ${PORTNAME} ${PORTNAME}.1 README
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	@${CP} ${WRKSRC}/${PORTNAME}.conf ${WRKSRC}/${PORTNAME}.conf.sample
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${ETCDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

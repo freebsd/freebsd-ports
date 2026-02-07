@@ -1,0 +1,12 @@
+--- zone1970.tab.orig	2019-06-22 19:39:01 UTC
++++ zone1970.tab
+@@ -9,7 +9,8 @@
+ # UTF-8 encoding.  The columns of the table are as follows:
+ #
+ # 1.  The countries that overlap the timezone, as a comma-separated list
+-#     of ISO 3166 2-character country codes.  See the file 'iso3166.tab'.
++#     of ISO 3166 2-character country codes.
++#     See the file '/usr/share/misc/iso3166'.
+ # 2.  Latitude and longitude of the timezone's principal location
+ #     in ISO 6709 sign-degrees-minutes-seconds format,
+ #     either ±DDMM±DDDMM or ±DDMMSS±DDDMMSS,

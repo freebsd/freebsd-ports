@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/PPPort.pm
+%%SITE_ARCH%%/auto/Devel/PPPort/PPPort.so
+%%PERL5_MAN3%%/Devel::PPPort.3.gz

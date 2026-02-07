@@ -1,0 +1,9 @@
+--- man/meson.build.orig	2025-08-15 11:35:35 UTC
++++ man/meson.build
+@@ -1,5 +1,5 @@ configure_file(input : 'intel.man',
+ configure_file(input : 'intel.man',
+-	       output : 'intel.4',
++	       output : 'intel.4x',
+ 	       command : [
+ 		 'sed',
+ 		 '-e',

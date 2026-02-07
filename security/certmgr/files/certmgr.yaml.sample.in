@@ -1,0 +1,47 @@
+# directory containing the certificate specs
+dir: %%ETCDIR%%.d
+
+# this specifies the service manager to use for restarting or reloading
+# services. This can be systemd (using systemctl), sysv (using service),
+# circus (using circusctl), openrc (using rc-service), dummy (no
+# restart/reload behavior), or command (see the command svcmgr section
+# for details of how to use this).
+svcmgr: sysv
+
+# optional: this is the default duration before a certificate expiry
+# that certmgr starts attempting to renew PKI. This defaults to
+# 72 hours.
+# before: 72h
+
+# optional: this is the default for how often certmgr will check
+# certificate expirations and update PKI material on disk upon any
+# changes (if necessary). This defaults to one hour.
+# interval: 60m
+
+# optional: this is used to vary the interval period. A random time
+# between 0 and this value is added to interval if specified. This
+# defaults to 0.
+# interval_splay: 0
+
+# if specified, a random sleep period between 0 and this value is used
+# for the initial sleep after startup of a spec. This provides a way to
+# ensure that if a fleet of certmgr are restarted at the same time,
+# their period of wakeup is randomized to avoid said fleet waking up and
+# doing interval checks at the same time for a given spec. This defaults
+# to 0.
+# initial_splay: 0
+
+# specifies the address for the Prometheus HTTP endpoint.
+metrics_address: localhost
+
+# specifies the port for the Prometheus HTTP endpoint.
+metrics_port: 8080
+
+# boolean, if true, only fire a spec's action if the service is actually
+# running. If this is set to false (the default for historical reasons),
+# this can lead to certmgr starting a downed service when PKI expiry
+# occurs.
+take_actions_only_if_running: false
+
+default_remote: ca.example.net:8888
+

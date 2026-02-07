@@ -1,0 +1,2 @@
+The modules in this distribution implement the Salted Challenge Response
+Authentication Mechanism (SCRAM) from RFC 5802.

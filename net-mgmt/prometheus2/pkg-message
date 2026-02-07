@@ -1,0 +1,78 @@
+[
+{
+  message: <<EOF
+TLS 1.0 and 1.1 disabled by default client-side.
+Prometheus users can override this with the min_version parameter of tls_config.
+Certificates signed with the SHA-1 hash function are rejected. This doesn't apply to self-signed root certificates.
+EOF
+  maximum_version: "2.36.0"
+  type: upgrade
+}
+{
+  message: <<EOF
+promtool: Changed rule numbering from 0-based to 1-based when reporting rule errors.
+Added `prometheus_remote_storage_read_queries_total` counter and
+`prometheus_remote_storage_read_request_duration_seconds` histogram, removed
+`prometheus_remote_storage_remote_read_queries_total` counter.
+Added buckets for longer durations to
+`prometheus_remote_storage_sent_batch_duration_seconds` histogram.
+WAL compression is enabled by default.
+EOF
+  maximum_version: "2.20"
+  type: upgrade
+}
+{
+  message: <<EOF
+The `prometheus_sd_kubernetes_cache_*` metrics were removed.
+The `prometheus_sd_kubernetes_workqueue_latency_seconds` and
+`prometheus_sd_kubernetes_workqueue_work_duration_seconds` now show correct
+values in seconds.
+The `query` label on `prometheus_remote_storage_*` metrics has been changed to
+`remote_name` and `url`.
+EOF
+  maximum_version: "2.15"
+  type: upgrade
+}
+{
+  message: <<EOF
+The `prometheus_tsdb_wal_reader_corruption_errors` metric was renamed to
+`prometheus_tsdb_wal_reader_corruption_errors_total`.
+EOF
+  maximum_version: "2.11"
+  type: upgrade
+}
+{
+  message: <<EOF
+The `prometheus_tsdb_storage_blocks_bytes_total` metric is now
+`prometheus_tsdb_storage_blocks_bytes`.
+EOF
+  maximum_version: "2.8"
+  type: upgrade
+}
+{
+  message: <<EOF
+The `storage.tsdb.retention` flag has been deprecated in Prometheus 2.7.0.
+Users of this flag will want to update their configuration to use the newer
+`storage.tsdb.retention.time` flag.
+EOF
+  maximum_version: "2.7"
+  type: upgrade
+}
+{
+  message: <<EOF
+Users of `marathon_sd` should now use `auth_token` and `auth_token_file` for
+token-based authentication instead of `bearer_token` and `bearer_token_file`
+respectively.
+Metric names for the HTTP server metrics were changed.
+EOF
+  maximum_version: "2.3"
+  type: upgrade
+}
+{
+  message: <<EOF
+The `file_sd` mtime metric was renamed.
+EOF
+  maximum_version: "2.2"
+  type: upgrade
+}
+]

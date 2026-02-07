@@ -1,0 +1,15 @@
+TIMESTAMP = 1759304389
+SHA256 (go/security_openbao/openbao-openbao-v2.4.1_GH0/go.mod) = ea189356b4c13872d79e3966f0014901237783b5ad137788f26435f45900efde
+SIZE (go/security_openbao/openbao-openbao-v2.4.1_GH0/go.mod) = 18705
+SHA256 (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/go.mod) = 60a1ac8f4f20a408d77099fcd89f6b5534755748e5e4644e95d609a7c76a168e
+SIZE (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/go.mod) = 1698
+SHA256 (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/auth/approle/go.mod) = 16c1d35f624f21049ec5f175f9dad8c0f3fb3ac247f9b3444a4932e7b27d2c3f
+SIZE (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/auth/approle/go.mod) = 1087
+SHA256 (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/auth/kubernetes/go.mod) = 8bf6b245793725b07fc6e152a2d707e34a28895a560b401ce8e7fd209c5789ca
+SIZE (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/auth/kubernetes/go.mod) = 1090
+SHA256 (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/auth/userpass/go.mod) = 000b76a1b52e94f97a90645003d164652c66adf7511c2b1f9fc4e9dee8b1b383
+SIZE (go/security_openbao/openbao-openbao-v2.4.1_GH0/api/auth/userpass/go.mod) = 1088
+SHA256 (go/security_openbao/openbao-openbao-v2.4.1_GH0/sdk/go.mod) = 2a4a4b60af7a05c7b67a09ca1fe1a011f0eaca8cf3b086225eaf4dabf54044be
+SIZE (go/security_openbao/openbao-openbao-v2.4.1_GH0/sdk/go.mod) = 5570
+SHA256 (go/security_openbao/openbao-openbao-v2.4.1_GH0/openbao-openbao-v2.4.1_GH0.tar.gz) = 51755264feea4924c1ee91780c13312a7f762da7ba01f1ac8bc4bf74734fe322
+SIZE (go/security_openbao/openbao-openbao-v2.4.1_GH0/openbao-openbao-v2.4.1_GH0.tar.gz) = 23530108

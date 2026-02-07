@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-01-09 11:40:56 UTC
++++ Makefile
+@@ -55,8 +55,6 @@ install: dvtm
+ 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+ 	@sed "s/VERSION/${VERSION}/g" < dvtm.1 > ${DESTDIR}${MANPREFIX}/man1/dvtm.1
+ 	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dvtm.1
+-	@echo installing terminfo description
+-	@TERMINFO=${TERMINFO} tic -s dvtm.info
+ 
+ uninstall:
+ 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin

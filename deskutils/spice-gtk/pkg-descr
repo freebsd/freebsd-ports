@@ -1,0 +1,4 @@
+spice-gtk is a GTK+2 and GTK+3 SPICE widget. It features glib-based objects
+for SPICE protocol parsing and a gtk widget for embedding the SPICE display
+into other applications such as virt-manager.
+Python bindings are available too.

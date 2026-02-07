@@ -1,0 +1,4 @@
+SHA256 (squid_radius_auth-1.10.tar.gz) = ace4fb470094575fd0d7501d690fa3e2a53ed05772b74c9d13f08cb138b60d2e
+SIZE (squid_radius_auth-1.10.tar.gz) = 14929
+SHA256 (squid_radius_freebsd.diff) = f27012c5cf79894f688c1dc73023ad748783d5e57f38f3c966f9b7052a326719
+SIZE (squid_radius_freebsd.diff) = 574

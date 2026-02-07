@@ -1,0 +1,9 @@
+--- ./clients/Makefile.am.orig	2006-05-01 13:23:44.000000000 +0200
++++ ./clients/Makefile.am	2011-01-01 16:31:56.000000000 +0100
+@@ -1,5 +1,5 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS = examples lcdexec lcdproc lcdvc metar
++SUBDIRS = lcdexec lcdproc
+ 
+ ## EOF

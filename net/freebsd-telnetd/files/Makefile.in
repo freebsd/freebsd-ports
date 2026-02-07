@@ -1,0 +1,8 @@
+.include <src.opts.mk>
+
+SUBDIR=	lib/libtelnet \
+	libexec/telnetd
+
+.include <bsd.arch.inc.mk>
+
+.include <bsd.subdir.mk>

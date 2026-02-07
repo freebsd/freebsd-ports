@@ -1,0 +1,7 @@
+This is a stable version of AfterStep.  AfterStep is a NeXTstep style
+window manager and features quick easy configuration of the look and
+feel of your setup without the use of a .steprc file.  Configuration in
+most cases is far easier than it used to be.  There are a few small bugs,
+but this release is fairly stable.  Included are a number of AfterStep
+applications including asclock, ascd, and xiterm.  There are a number of
+other very Linux specific applications which are not at present included.

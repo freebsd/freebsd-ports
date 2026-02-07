@@ -1,0 +1,78 @@
+@owner %%EC_USER%%
+@group %%EC_GROUP%%
+@(%%EC_USER%%,%%EC_GROUP%%,6755) ecartis/ecartis
+ecartis/banned
+ecartis/documentation/Makefile
+ecartis/documentation/ecartis.sty
+ecartis/documentation/ecartis.tex
+ecartis/queue/README
+ecartis/modules/README
+ecartis/modules/bouncer.lpm
+ecartis/modules/listarchive.lpm
+ecartis/modules/filearchive.lpm
+ecartis/modules/admin.lpm
+ecartis/modules/acctmgr.lpm
+ecartis/modules/stat.lpm
+ecartis/modules/send.lpm
+ecartis/modules/base.lpm
+ecartis/modules/digest.lpm
+ecartis/modules/antispam.lpm
+ecartis/modules/administrivia.lpm
+ecartis/modules/toolbox.lpm
+ecartis/modules/pantomime.lpm
+ecartis/modules/lsg2.lpm
+ecartis/modules/password.lpm
+ecartis/modules/peruser.lpm
+ecartis/scripts/lsg2.cgi.dist
+ecartis/lists/test/text/blacklist.txt
+ecartis/lists/test/text/closed-post.txt
+ecartis/lists/test/text/footer.txt
+ecartis/lists/test/text/intro.txt
+ecartis/lists/test/config
+ecartis/lists/test/cookies
+ecartis/lists/test/users
+ecartis/templates/userlist.lsc
+ecartis/templates/admin-usersetinfo.lsc
+ecartis/templates/adminmenu.lsc
+ecartis/templates/config.lsc
+ecartis/templates/error.lsc
+ecartis/templates/fileedit.lsc
+ecartis/templates/flagedit.lsc
+ecartis/templates/footer.lsc
+ecartis/templates/frontpage.lsc
+ecartis/templates/generic.lsc
+ecartis/templates/header.lsc
+ecartis/templates/listmenu.lsc
+ecartis/templates/logincookie.lsc
+ecartis/templates/mainmenu.lsc
+ecartis/templates/subscribe.lsc
+ecartis/templates/textfile.lsc
+ecartis/templates/unsubscribe.lsc
+ecartis/templates/userinfo.lsc
+ecartis/templates/userlist-deny.lsc
+ecartis/templates/admin-userinfo.lsc
+ecartis/README.LISTS
+ecartis/README.DIGEST
+ecartis/README.ANTISPAM
+ecartis/README.CVS
+ecartis/README
+ecartis/NOTE
+ecartis/LICENSE
+ecartis/ECARTIS.TODO
+ecartis/COPYRIGHT
+ecartis/spam-regexp.sample
+ecartis/ecartis.spec
+ecartis/ecartis.hlp
+ecartis/ecartis.cfg.dist
+ecartis/ecartis.aliases.dist
+@dir ecartis/lists/test/text
+@dir ecartis/lists/test
+@dir ecartis/lists
+@dir ecartis/templates
+@dir ecartis/scripts
+@dir ecartis/queue
+@dir ecartis/modules
+@dir ecartis/documentation
+@dir ecartis
+@owner
+@group

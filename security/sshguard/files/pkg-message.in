@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+To enable SSHGuard at startup, add the following line to your 'rc.conf':
+sshguard_enable="YES"
+
+Starting SSHGuard through syslogd(8) is discouraged and not supported.
+
+Configure SSHGuard by editing BACKEND in '%%PREFIX%%/etc/sshguard.conf'. See
+sshguard-setup(7) for instructions on setting up your firewall.
+
+Please note that a few rc script parameters have been renamed to
+better reflect the documentation:
+
+sshguard_safety_thresh -> sshguard_danger_thresh
+sshguard_pardon_min_interval -> sshguard_release_interval
+sshguard_prescribe_interval -> sshguard_reset_interval
+EOM
+}
+]

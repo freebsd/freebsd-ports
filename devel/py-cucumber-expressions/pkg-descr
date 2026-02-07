@@ -1,0 +1,11 @@
+Cucumber Expressions is an alternative to Regular Expressions with a more
+intuitive syntax.
+
+Cucumber supports both Cucumber Expressions and Regular Expressions for defining
+Step Definitions, but you cannot mix Cucumber Expression syntax with Regular
+Expression syntax in the same expression.
+
+On platforms that don't have a literal syntax for regular expressions (such as
+Java), Cucumber will create a Cucumber Expression by default. To use Regular
+Expressions, add anchors (starting with ^ and ending with $) or forward slashes
+(/). For more information, see Cucumber Expression - Java Heuristics.

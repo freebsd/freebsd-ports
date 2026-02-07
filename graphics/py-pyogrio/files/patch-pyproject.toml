@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-11-28 18:23:16 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ requires = [
+     "setuptools",
+     "Cython>=3.1",
+-    "versioneer[toml]==0.28",
++    "versioneer[toml]>=0.28",
+     # tomli is used by versioneer
+     "tomli; python_version < '3.11'",
+ ]

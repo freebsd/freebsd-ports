@@ -1,0 +1,102 @@
+#!/bin/sh
+
+# PROVIDE: php_fpm
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable php_fpm:
+# php_fpm_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable php_fpm
+# php_fpm_profiles (str):       Set to "" by default.
+#                               Define your profiles here.
+# php_fpm_pid_prefix (str):     Set to "" by default.
+#                               When using profiles manually assign value to "php_fpm_"
+#                               for prevent collision with other PIDs names.
+
+. /etc/rc.subr
+
+name="php_fpm"
+rcvar=php_fpm_enable
+
+start_precmd="php_fpm_prestart"
+restart_precmd="php_fpm_checkconfig"
+reload_precmd="php_fpm_checkconfig"
+command="%%PREFIX%%/sbin/php-fpm"
+configtest_cmd="php_fpm_checkconfig"
+_pidprefix="/var/run"
+pidfile="${_pidprefix}/php-fpm.pid"
+required_files="%%PREFIX%%/etc/php-fpm.conf"
+
+load_rc_config "${name}"
+
+: ${php_fpm_enable="NO"}
+: ${php_fpm_umask=""}
+: ${php_fpm_svcj_options:="net_basic"}
+
+if [ -n "$2" ]; then
+        profile="$2"
+        if [ "x${php_fpm_profiles}" != "x" ]; then
+                pidfile="${_pidprefix}/${php_fpm_pid_prefix}php-fpm-${profile}.pid"
+                eval php_fpm_configfile="\${php_fpm_${profile}_configfile:-}"
+                if [ "x${php_fpm_configfile}" = "x" ]; then
+                        echo "You must define a configuration file (php_fpm_${profile}_configfile)"
+                        exit 1
+                fi
+                required_files="${php_fpm_configfile}"
+                eval php_fpm_enable="\${php_fpm_${profile}_enable:-${php_fpm_enable}}"
+                php_fpm_flags="-y ${php_fpm_configfile} -g ${pidfile}"
+        else
+                echo "$0: extra argument ignored"
+        fi
+else
+        if [ "x${php_fpm_profiles}" != "x" -a "x$1" != "x" ]; then
+                for profile in ${php_fpm_profiles}; do
+                        echo "===> php_fpm profile: ${profile}"
+                        %%PREFIX%%/etc/rc.d/php_fpm $1 ${profile}
+                        retcode="$?"
+                        if [ "0${retcode}" -ne 0 ]; then
+                                failed="${profile} (${retcode}) ${failed:-}"
+                        else
+                                success="${profile} ${success:-}"
+                        fi
+                done
+                exit 0
+        fi
+fi
+
+extra_commands="reload configtest logrotate"
+sig_stop="QUIT"
+sig_reload="USR2"
+logrotate_cmd="php_fpm_logrotate"
+
+php_fpm_logrotate() {
+        if [ -z "$rc_pid" ]; then
+                _run_rc_notrunning
+                return 1
+        fi
+        echo "Rotating logs $name."
+        kill -USR1 $rc_pid
+}
+
+php_fpm_checkconfig()
+{
+        echo "Performing sanity check on php-fpm configuration:"
+        eval ${command} ${php_fpm_flags} -t
+}
+
+php_fpm_prestart()
+{
+	php_fpm_checkconfig
+	checkconfig=$?
+	if [ $checkconfig -ne 0  ]; then
+		return $checkconfig
+	fi
+
+	if [ ! -z "$php_fpm_umask"  ]; then
+		echo "Setting umask to: ${php_fpm_umask}"
+		umask $php_fpm_umask
+	fi
+}
+
+run_rc_command "$1"

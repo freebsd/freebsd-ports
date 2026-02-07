@@ -1,0 +1,5 @@
+include/nss_compat_ossl/nss_compat_ossl.h
+lib/libnss_compat_ossl.a
+lib/libnss_compat_ossl.so
+lib/libnss_compat_ossl.so.0
+lib/libnss_compat_ossl.so.0.0.0

@@ -1,0 +1,2 @@
+XML::SAX::Expat::Incremental supplies a non-blocking, incremental
+parsing interface to XML::SAX::Expat.

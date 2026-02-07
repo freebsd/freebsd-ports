@@ -1,0 +1,4 @@
+include/tox_extension_messages.h
+lib/cmake/ToxExtensionMessages/ToxExtensionMessagesConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ToxExtensionMessages/ToxExtensionMessagesConfig.cmake
+lib/libtox_extension_messages.so

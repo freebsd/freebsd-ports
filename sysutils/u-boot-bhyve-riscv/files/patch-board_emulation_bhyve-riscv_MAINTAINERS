@@ -1,0 +1,9 @@
+--- board/emulation/bhyve-riscv/MAINTAINERS.orig
++++ board/emulation/bhyve-riscv/MAINTAINERS
+@@ -0,0 +1,6 @@
++RISCV 'BHYVE' BOARD
++M:	Ruslan Bukin <br@bsdpad.com>
++S:	Maintained
++F:	board/emulation/bhyve-riscv/
++F:	include/configs/bhyve-riscv.h
++F:	configs/bhyve-riscv64_smode_defconfig

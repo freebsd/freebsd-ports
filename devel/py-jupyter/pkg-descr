@@ -1,0 +1,2 @@
+The jupyter metapackage installs the Jupyter system, including the notebook,
+qtconsole, and the IPython kernel.

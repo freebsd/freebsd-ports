@@ -1,0 +1,6 @@
+bin/c++decl
+bin/cdecl
+share/bash-completions/completions/_cdecl
+share/man/man1/c++decl.1.gz
+share/man/man1/cdecl.1.gz
+share/zsh/site-functions/_cdecl

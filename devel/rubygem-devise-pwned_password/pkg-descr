@@ -1,0 +1,11 @@
+Devise::PwnedPassword is a Devise extension that checks user passwords against
+the PwnedPasswords dataset.
+
+It checks for compromised ("pwned") passwords in 2 different places/ways:
+- As a standard model validation using pwned. This:
+  - prevents new users from being created (signing up) with a compromised
+    password
+  - prevents existing users from changing their password to a password that is
+    known to be compromised
+- (Optionally) Whenever a user signs in, checks if their current password is
+  compromised and shows a warning if it is.

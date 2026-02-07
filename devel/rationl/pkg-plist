@@ -1,0 +1,14 @@
+include/rationl.h
+lib/librationl.so
+lib/librationl.so.0
+lib/librationl.so.0.0.0
+share/man/man3/regex_compile.3.gz
+share/man/man3/regex_free.3.gz
+share/man/man3/regex_match.3.gz
+share/man/man3/regex_search.3.gz
+share/man/man3/regex_sub.3.gz
+share/man/manm/regex_compile.man.gz
+share/man/manm/regex_free.man.gz
+share/man/manm/regex_match.man.gz
+share/man/manm/regex_search.man.gz
+share/man/manm/regex_sub.man.gz

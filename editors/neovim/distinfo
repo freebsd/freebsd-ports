@@ -1,0 +1,15 @@
+TIMESTAMP = 1769479091
+SHA256 (neovim-neovim-v0.11.6_GH0.tar.gz) = d1c8e3f484ed1e231fd5f48f53b7345b628e52263d5eef489bb8b73ca8d90fca
+SIZE (neovim-neovim-v0.11.6_GH0.tar.gz) = 13012085
+SHA256 (tree-sitter-tree-sitter-c-v0.24.1_GH0.tar.gz) = 25dd4bb3dec770769a407e0fc803f424ce02c494a56ce95fedc525316dcf9b48
+SIZE (tree-sitter-tree-sitter-c-v0.24.1_GH0.tar.gz) = 379147
+SHA256 (tree-sitter-grammars-tree-sitter-lua-v0.4.1_GH0.tar.gz) = cef44b8773bde69d427b5e50ca95e417c86c0be91caa37a6782c90d6f529da70
+SIZE (tree-sitter-grammars-tree-sitter-lua-v0.4.1_GH0.tar.gz) = 65878
+SHA256 (tree-sitter-grammars-tree-sitter-markdown-v0.5.2_GH0.tar.gz) = 122be47d4a50ac75a4f6861a17c3c88144197e0949f5d83ca917f2382b37761b
+SIZE (tree-sitter-grammars-tree-sitter-markdown-v0.5.2_GH0.tar.gz) = 420951
+SHA256 (tree-sitter-grammars-tree-sitter-query-v0.8.0_GH0.tar.gz) = c2b23b9a54cffcc999ded4a5d3949daf338bebb7945dece229f832332e6e6a7d
+SIZE (tree-sitter-grammars-tree-sitter-query-v0.8.0_GH0.tar.gz) = 40303
+SHA256 (tree-sitter-grammars-tree-sitter-vim-v0.8.0_GH0.tar.gz) = aa0a45027408bc33da0f2244272dbdc0b4e71bd18f71e5b885f6f7cbae407338
+SIZE (tree-sitter-grammars-tree-sitter-vim-v0.8.0_GH0.tar.gz) = 356943
+SHA256 (neovim-tree-sitter-vimdoc-v4.1.0_GH0.tar.gz) = 020e8f117f648c8697fca967995c342e92dbd81dab137a115cc7555207fbc84f
+SIZE (neovim-tree-sitter-vimdoc-v4.1.0_GH0.tar.gz) = 61551

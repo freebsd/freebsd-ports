@@ -1,0 +1,11 @@
+--- Makefile.freebsd.orig	2022-04-14 23:17:12 UTC
++++ Makefile.freebsd
+@@ -1,6 +1,6 @@
+-CXX=clang++
++CXX?=clang++
+ #CXXFLAGS+=-O2 -Wall -D_FILE_OFFSET_BITS=64 -D USE_UTF16 -I/usr/local/include
+-CXXFLAGS+=-O2 -Wall -D_FILE_OFFSET_BITS=64 -I /usr/local/include 
++CXXFLAGS+=-O2 -Wall -D_FILE_OFFSET_BITS=64 $(CPPFLAGS)
+ LDFLAGS+=-L/usr/local/lib
+ LDLIBS+=-luuid #-licuio
+ LIB_NAMES=crc32 support guid gptpart mbrpart basicmbr mbr gpt bsd parttypes attributes diskio diskio-unix

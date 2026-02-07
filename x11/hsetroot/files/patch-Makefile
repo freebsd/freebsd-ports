@@ -1,0 +1,12 @@
+--- Makefile.orig	2019-11-15 11:09:41 UTC
++++ Makefile
+@@ -30,8 +30,7 @@ hsetroot: hsetroot.o
+ hsr-outputs: hsr-outputs.o
+ 
+ install: hsetroot hsr-outputs
+-	install -st $(PREFIX)/bin/ hsetroot
+-	install -st $(PREFIX)/bin/ hsr-outputs
++	$(BSD_INSTALL_PROGRAM) $^ $(DESTDIR)$(PREFIX)/bin
+ 
+ clean:
+ 	rm -f *.o hsetroot hsr-outputs

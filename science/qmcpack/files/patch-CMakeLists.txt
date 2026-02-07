@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2023-08-25 11:42:03 UTC
++++ CMakeLists.txt
+@@ -303,7 +303,7 @@ include(Testlibstdc++)
+ include(Testlibstdc++)
+ 
+ # Check that a C++ standard library is configured properly
+-include(TestCxx17Library)
++#include(TestCxx17Library) # this test fails for clang-14 from base on 13-STABLE
+ 
+ #-----------------------------------------------------------------------
+ # SETUP SANITIZERS FLAGS
+@@ -1063,7 +1063,7 @@ include(CTest)
+ #-------------------------------------------------------------------
+ # Verify Python3 available
+ #-------------------------------------------------------------------
+-find_package(Python3)
++find_package(Python3 ${FREEBSD_PYTHON_VER} EXACT)
+ if(NOT Python3_FOUND)
+   message(FATAL_ERROR "Could not find required python3")
+ endif(NOT Python3_FOUND)

@@ -1,0 +1,7 @@
+XCAP protocol, defined in RFC 4825, allows a client to read, write, and
+modify application configuration data stored in XML format on a server. XCAP
+maps XML document sub-trees and element attributes to HTTP URIs, so that
+these components can be directly accessed by HTTP. An XCAP server used by
+XCAP clients to store data like presence policy in combination with a SIP
+Presence server that supports PUBLISH/SUBSCRIBE/NOTIFY SIP methods can
+provide a complete SIP SIMPLE solution.

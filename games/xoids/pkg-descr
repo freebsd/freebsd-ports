@@ -1,0 +1,16 @@
+   Xoids is an asteroids-type game written for X in my (spare) time. The
+game was originally developed on a Sun4 system while on an oceanographic
+research cruise.  It's by no means finished.
+
+   While  Xoids  is  strikingly  similar to the original Asteroids game,
+there are some differences:
+
+   o  Full color pixmaps
+   o  One or Two Player (duel and cooperative) modes
+   o  Can bounce off asteroids instead of dying (if going slow)
+   o  Shots have relative speed, and impart intertia to the ship
+   o  Asteroids have appropriate "masses": realistic physics
+   o  The alien (called the Slurb) tracks players rather than
+      flying around aimlessly
+   o  Thrusting and using hyperspace can overheat your engines (boom!)
+   o  Co-op mode links players together via a flexible space-cable

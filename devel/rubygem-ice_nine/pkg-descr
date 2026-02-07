@@ -1,0 +1,3 @@
+The ice_nine gem provides a Ruby module that allows one to deep freeze
+Ruby objects. This module provides an alternative method of freezing
+objects to the embedded from the Ruby Object module.

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+export LC_ALL=en_US.UTF-8
+
+MEM_OPTS_SET_BY_USER="no"
+for o in $@; do
+  case $o in
+    -X* )
+      MEM_OPTS_SET_BY_USER="yes"
+      ;;
+  esac
+done
+
+if [ $MEM_OPTS_SET_BY_USER = "no" ]; then
+  # memory options
+  physmem_b=$(sysctl -n hw.physmem)
+  physmem_mb=$((physmem_b/1024/1024))
+  physmem_mb=$((physmem_mb*3/4)) # allow 3/4 of the memory
+  #    -Xms<size>        set initial Java heap size
+  #    -Xmx<size>        set maximum Java heap size
+  MEM_OPTS="-Xms512m -Xmx${physmem_mb}m"
+fi
+
+# execute the command
+%%JAVA%% $MEM_OPTS -jar %%JAVAJARDIR%%/%%PORTNAME%%-%%PORTVERSION%%.jar "$@"

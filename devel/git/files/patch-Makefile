@@ -1,0 +1,66 @@
+--- Makefile.orig	2025-06-16 05:42:57 UTC
++++ Makefile
+@@ -614,17 +614,17 @@ mandir = $(prefix)/share/man
+ prefix = $(HOME)
+ bindir = $(prefix)/bin
+ mandir = $(prefix)/share/man
+-infodir = $(prefix)/share/info
++infodir = $(prefix)/info
+ bash_completion_dir = $(prefix)/share/bash-completion/completions
+ gitexecdir = libexec/git-core
+ mergetoolsdir = $(gitexecdir)/mergetools
+ sharedir = $(prefix)/share
+-gitwebdir = $(sharedir)/gitweb
++gitwebdir = $(sharedir)/examples/git/gitweb
+ gitwebstaticdir = $(gitwebdir)/static
+-perllibdir = $(sharedir)/perl5
++perllibdir = %%SITE_PERL%%
+ localedir = $(sharedir)/locale
+ template_dir = share/git-core/templates
+-htmldir = $(prefix)/share/doc/git-doc
++htmldir = $(prefix)/share/doc/git
+ ETC_GITCONFIG = $(sysconfdir)/gitconfig
+ ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
+ lib = lib
+@@ -649,8 +649,8 @@ INSTALL = install
+ TAR = tar
+ FIND = find
+ INSTALL = install
+-TCL_PATH = tclsh
+-TCLTK_PATH = wish
++TCL_PATH ?= tclsh
++TCLTK_PATH ?= wish
+ XGETTEXT = xgettext
+ MSGCAT = msgcat
+ MSGFMT = msgfmt
+@@ -1723,9 +1723,9 @@ ifndef NO_OPENSSL
+ 
+ ifndef NO_OPENSSL
+ 	OPENSSL_LIBSSL = -lssl
+-        ifdef OPENSSLDIR
+-		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
+-		OPENSSL_LINK = $(call libpath_template,$(OPENSSLDIR)/$(lib))
++	ifdef OPENSSLBASE
++		BASIC_CFLAGS += -I$(OPENSSLBASE)/include
++		OPENSSL_LINK = -L$(OPENSSLBASE)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLBASE)/$(lib)
+         else
+ 		OPENSSL_LINK =
+         endif
+@@ -2672,7 +2672,7 @@ else # NO_PERL
+ 	chmod +x $@+ && \
+ 	mv $@+ $@
+ else # NO_PERL
+-$(SCRIPT_PERL_GEN) git-instaweb: % : unimplemented.sh
++$(SCRIPT_PERL_GEN) git-instaweb git-request-pull: % : unimplemented.sh
+ 	$(QUIET_GEN) \
+ 	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
+ 	    -e 's|@REASON@|NO_PERL=$(NO_PERL)|g' \
+@@ -3540,7 +3540,7 @@ install: all
+ 	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
+ 	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
+ 	$(INSTALL) $(INSTALL_STRIP) $(install_bindir_xprograms) '$(DESTDIR_SQ)$(bindir_SQ)'
+-	$(INSTALL) $(BINDIR_PROGRAMS_NO_X) '$(DESTDIR_SQ)$(bindir_SQ)'
++	if [ $(BINDIR_PROGRAMS_NO_X) ]; then  $(INSTALL) $(BINDIR_PROGRAMS_NO_X) '$(DESTDIR_SQ)$(bindir_SQ)'; fi
+ 
+ ifdef MSVC
+ 	# We DO NOT install the individual foo.o.pdb files because they

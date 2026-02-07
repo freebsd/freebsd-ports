@@ -1,0 +1,20 @@
+--- ./src/Makefile.in.orig	2014-06-30 01:00:41.968114000 +0200
++++ ./src/Makefile.in	2014-06-30 01:04:35.052096953 +0200
+@@ -811,7 +811,7 @@
+ 		ss st sv sw ta tet th tg ti tk tl tn tpi tr ts \
+ 		tt ty tzm-Latn ug uk uz uz-Cyrl ve vep vi wa xh \
+ 		yi yo zh-Hans zh-Hant zu; do \
+-		bash ./test-primary.sh $$primarylanguage; \
++		$(SHELL) ./test-primary.sh $$primarylanguage; \
+ 		if test x$$? != x0; then \
+ 			echo FAIL: $$primarylanguage && exit 1; \
+ 		else \
+@@ -820,7 +820,7 @@
+ 	done
+ 	@echo secondary languages
+ 	@for secondarylanguage in sco; do \
+-		bash ./test-secondary.sh $$secondarylanguage; \
++		$(SHELL) ./test-secondary.sh $$secondarylanguage; \
+ 		if test x$$? != x0; then \
+ 			echo FAIL: $$secondarylanguage && exit 1; \
+ 		else \

@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+graphics/vhs needs www/chromium or www/ungoogled-chromium to work
+properly, please install one of them.
+EOM
+}
+]

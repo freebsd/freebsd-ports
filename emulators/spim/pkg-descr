@@ -1,0 +1,13 @@
+MIPS32 Simulator -- "1/25th the performance at none of the cost"
+
+Spim/Xspim simulates MIPS32 assembly code, providing a gdb and xgdb
+like interface to the classical MIPS RISC CPU.  The virtual machine
+it provides can be either the one presented by the MIPS assembler or the
+one of the bare hardware.  The simulator can also be built to simulate the
+pipeline architecture of the MIPS machine (both the control and floating
+point pipelines).  When built for this, it also simulates and displays
+an instruction and data cache.
+
+This simulator is useful in CS and EE classes, including providing a
+target machine for compilers courses, lower division assembly language
+programming, microprocessor design courses, etc...

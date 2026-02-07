@@ -1,0 +1,17 @@
+--- misc/blkid.8.in.orig	2020-03-21 04:24:04 UTC
++++ misc/blkid.8.in
+@@ -144,10 +144,10 @@ option.
+ Display tokens from only the specified device.  It is possible to
+ give multiple
+ .I device
+-options on the command line.  If none is given, all devices which
+-appear in
+-.I /proc/partitions
+-are shown, if they are recognized.
++options on the command line.  If none is given, all DISK and PART devices which
++appear in the
++.I kern.geom.conftxt
++sysctl variable are shown, if they are recognized.
+ .SH "RETURN CODE"
+ If the specified token was found, or if any tags were shown from (specified)
+ devices, 0 is returned.  If the specified token was not found, or no

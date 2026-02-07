@@ -1,0 +1,2 @@
+Date::Calc::Iterator objects are used to iterate over a range of dates,
+day by day or with a specified step.

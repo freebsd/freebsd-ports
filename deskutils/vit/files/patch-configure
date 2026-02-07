@@ -1,0 +1,14 @@
+--- configure.orig	2017-12-25 16:56:35 UTC
++++ configure
+@@ -1771,11 +1771,6 @@ fi
+ if test "$PERL" = "NOT_FOUND"; then
+   as_fn_error $? "can not continue: perl not found" "$LINENO" 5
+ fi
+-if test "$PERL" != "/usr/bin/perl"; then
+-  echo configure: error: can not continue... perl must be installed as /usr/bin/perl
+-  echo confgiure: hint: try \"sudo ln -s $PERL /usr/bin/perl\"
+-  exit 1
+-fi
+ 
+ PERL_MODULE_CHECK=`perl -e "use Curses" 2> /dev/null; echo $?`
+ if test "$PERL_MODULE_CHECK" = "2"; then

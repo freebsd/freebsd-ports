@@ -1,0 +1,36 @@
+PORTNAME=	lineak-xosdplugin
+PORTVERSION=	0.9
+PORTREVISION=	11
+CATEGORIES=	sysutils deskutils
+MASTER_SITES=	SF/lineak/lineak_xosdplugin/${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	lineak
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Xosd-plugin for lineakd
+WWW=		https://lineak.sourceforge.net/
+
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libxosd.so:misc/xosd \
+		liblineak.so:sysutils/lineakd
+
+USES=		gmake libtool xorg
+USE_LDCONFIG=	yes
+USE_XORG=	x11 xext xt
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=	ac_cv_path_xosd_config_script="${TRUE}" \
+		kde_cv_prog_cxx_fno_check_new=no
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+
+PLIST_FILES=	lib/lineakd/plugins/xosdplugin.so \
+		share/man/man1/lineak_xosdplugin.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|"-O2 $$CXXFLAGS"|"$$CXXFLAGS"| ; \
+		 /LDFLAGS/s|-ldl||' ${WRKSRC}/configure
+
+.include <bsd.port.mk>

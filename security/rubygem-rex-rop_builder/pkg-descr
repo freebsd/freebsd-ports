@@ -1,0 +1,2 @@
+This is the Ruby Exploitation(Rex) Library for building ROP chains. It also
+comes with the msfrop command line tool.

@@ -1,0 +1,175 @@
+PORTNAME=	convco
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.2
+PORTREVISION=	3
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Conventional commit CLI
+WWW=		https://github.com/convco/convco
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.0 \
+		aho-corasick-1.1.3 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.6 \
+		anyhow-1.0.95 \
+		backtrace-0.3.74 \
+		bitflags-2.6.0 \
+		block-buffer-0.10.4 \
+		cc-1.2.6 \
+		cfg-if-1.0.0 \
+		cfg_aliases-0.2.1 \
+		clap-4.5.27 \
+		clap_builder-4.5.27 \
+		clap_complete-4.5.43 \
+		clap_derive-4.5.24 \
+		clap_lex-0.7.4 \
+		cmake-0.1.52 \
+		colorchoice-1.0.3 \
+		console-0.15.10 \
+		cpufeatures-0.2.16 \
+		crypto-common-0.1.6 \
+		ctrlc-3.4.5 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
+		derive_builder-0.20.2 \
+		derive_builder_core-0.20.2 \
+		derive_builder_macro-0.20.2 \
+		dialoguer-0.11.0 \
+		digest-0.10.7 \
+		displaydoc-0.2.5 \
+		encode_unicode-1.0.0 \
+		equivalent-1.0.1 \
+		errno-0.3.10 \
+		fastrand-2.3.0 \
+		fnv-1.0.7 \
+		form_urlencoded-1.2.1 \
+		fuzzy-matcher-0.3.7 \
+		generic-array-0.14.7 \
+		gimli-0.31.1 \
+		git2-0.20.0 \
+		handlebars-6.3.0 \
+		hashbrown-0.15.2 \
+		heck-0.5.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		ident_case-1.0.1 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
+		indexmap-2.7.0 \
+		is_terminal_polyfill-1.70.1 \
+		itoa-1.0.14 \
+		jiff-0.1.28 \
+		jiff-tzdb-0.1.2 \
+		jiff-tzdb-platform-0.1.2 \
+		jobserver-0.1.32 \
+		libc-0.2.169 \
+		libgit2-sys-0.18.0+1.9.0 \
+		libssh2-sys-0.3.0 \
+		libz-sys-1.1.20 \
+		linux-raw-sys-0.4.14 \
+		litemap-0.7.4 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		miniz_oxide-0.8.2 \
+		nix-0.29.0 \
+		num-modular-0.6.1 \
+		num-order-1.2.0 \
+		object-0.36.7 \
+		once_cell-1.20.2 \
+		openssl-sys-0.9.104 \
+		percent-encoding-2.3.1 \
+		pest-2.7.15 \
+		pest_derive-2.7.15 \
+		pest_generator-2.7.15 \
+		pest_meta-2.7.15 \
+		pkg-config-0.3.31 \
+		portable-atomic-1.10.0 \
+		portable-atomic-util-0.2.4 \
+		proc-macro2-1.0.92 \
+		quote-1.0.38 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		rustc-demangle-0.1.24 \
+		rustix-0.38.42 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		semver-1.0.25 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.134 \
+		serde_norway-0.9.42 \
+		sha2-0.10.8 \
+		shell-words-1.1.0 \
+		shlex-1.3.0 \
+		smallvec-1.13.2 \
+		stable_deref_trait-1.2.0 \
+		strsim-0.11.1 \
+		syn-2.0.93 \
+		synstructure-0.13.1 \
+		tempfile-3.14.0 \
+		thiserror-1.0.69 \
+		thiserror-2.0.11 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.11 \
+		thread_local-1.1.8 \
+		tinystr-0.7.6 \
+		typenum-1.17.0 \
+		ucd-trie-0.1.7 \
+		unicode-ident-1.0.14 \
+		unicode-width-0.2.0 \
+		unsafe-libyaml-norway-0.2.15 \
+		url-2.5.4 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
+		utf8parse-0.2.2 \
+		vcpkg-0.2.15 \
+		version_check-0.9.5 \
+		walkdir-2.5.0 \
+		winapi-util-0.1.9 \
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
+		zeroize-1.8.1 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

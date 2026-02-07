@@ -1,0 +1,50 @@
+--- Xvnc/config/cf/FreeBSD.cf.orig	2000-06-11 12:00:51 UTC
++++ Xvnc/config/cf/FreeBSD.cf
+@@ -223,7 +223,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ # define GccGasOption /**/
+ #endif
+ 
++#ifndef x86_64Architecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines
++#endif
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
+@@ -253,11 +255,17 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #endif
+ 
+ #ifdef i386Architecture
+-# define OptimizedCDebugFlags DefaultGcc2i386Opt
++# define OptimizedCDebugFlags %%CFLAGS%%
+ #else
+-# define OptimizedCDebugFlags -O2
++# define OptimizedCDebugFlags %%CFLAGS%%
+ #endif
+ 
++#ifdef x86_64Architecture 
++# define OptimizedCDebugFlags    %%CFLAGS%%
++# define ServerOSDefines         XFree86ServerOSDefines -DDDXTIME 
++# define ServerExtraDefines      GccGasOption XFree86ServerDefines -D_XSERVER64 
++#endif /* x86_64Architecture */ 
++
+ #ifndef PreIncDir
+ # define PreIncDir	/usr/include
+ #endif
+@@ -353,12 +361,15 @@ install.man::                                         
+ #define HasBsdMake	YES
+ #endif
+ 
++#if OSMajorVersion > 5 || (OSMajorVersion == 5 && OSMinorVersion >= 3)
++#define HasFfsl	YES
++#endif
++
+ #ifndef StaticLibrary
+ #define StaticLibrary(libpath,libname) -Wl,-Bstatic Concat(-L,libpath) Concat(-l,libname) -Wl,-Bdynamic
+ #endif
+ 
+ #include <bsdLib.rules>
+ 
+-#ifdef i386Architecture
+ #include <xfree86.cf>
+-#endif
++

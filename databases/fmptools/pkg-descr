@@ -1,0 +1,3 @@
+Some tools for reading FileMaker Pro files
+(fp3, fp5, fp7, and fmp12). Options to export
+to multiple formats: xlsx, json, sqlite.

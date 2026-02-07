@@ -1,0 +1,8 @@
+{
+  "id" : "org.coin-or.couenne",
+  "name" : "Couenne",
+  "executable" : "%%PREFIX%%/bin/couenne",
+  "version": "%%PORTVERSION%%",
+  "supportsFzn":false,
+  "supportsNL":true
+}

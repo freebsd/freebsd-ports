@@ -1,0 +1,21 @@
+Use the WASM build to prevent the following error during build:
+
+Error: Your current platform "freebsd" and architecture "x64" combination is not yet supported by the native Rollup build. Please use the WASM build "@rollup/wasm-node" instead.
+
+The following platform-architecture combinations are supported:
+[...]
+
+If this is important to you, please consider supporting Rollup to make a native build for your platform and architecture available.
+    at Object.<anonymous> (/wrkdirs/usr/ports/games/anki/work/anki-24.06.2/out/node_modules/rollup/dist/native.js:38:8)
+    [...]
+
+--- package.json.orig	2025-07-04 08:49:17 UTC
++++ package.json
+@@ -81,6 +81,7 @@
+     },
+     "resolutions": {
+         "canvas": "npm:empty-npm-package@1.0.0",
++        "rollup": "npm:@rollup/wasm-node",
+         "cookie": "0.7.0",
+         "vite": "6"
+     },

@@ -1,0 +1,4 @@
+#!/bin/sh
+exec %%PREFIX%%/bin/rblcheck `
+  [ -f "%%PREFIX%%/etc/rblcheckrc" ] && cat "%%PREFIX%%/etc/rblcheckrc";
+  [ -f "$HOME/.rblcheckrc" ] && cat "$HOME/.rblcheckrc"` "$@"

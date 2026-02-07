@@ -1,0 +1,26 @@
+bin/pcsc-spy
+@sample etc/default/pcscd.sample
+include/PCSC/debuglog.h
+include/PCSC/ifdhandler.h
+include/PCSC/pcsclite.h
+include/PCSC/reader.h
+include/PCSC/winscard.h
+include/PCSC/wintypes.h
+lib/libpcsclite.so
+lib/libpcsclite.so.1
+lib/libpcsclite_real.so
+lib/libpcsclite_real.so.1
+lib/libpcscspy.so
+lib/libpcscspy.so.0
+libdata/pkgconfig/libpcsclite.pc
+sbin/pcscd
+%%PORTDOCS%%%%DOCSDIR%%/setup_spy.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcsc_demo.c
+share/man/man1/pcsc-spy.1.gz
+share/man/man5/reader.conf.5.gz
+share/man/man8/pcscd.8.gz
+share/metainfo/fr.apdu.pcsclite.metainfo.xml
+%%POLKIT%%share/polkit-1/actions/org.debian.pcsc-lite.policy
+@dir lib/pcsc/services
+@dir lib/pcsc/drivers

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-02-04 14:24:43 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+   # Includes pep660 support in setuptools
+-  "setuptools>=64.0.0;python_version>='3.7'",
++  "setuptools>=61.0.0;python_version>='3.7'",
+   # Fallback to whatever we can get otherwise.
+   # Note this is not something projects should typically
+   # need. PBR attempts to support a wide range of python

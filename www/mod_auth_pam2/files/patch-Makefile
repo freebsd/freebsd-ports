@@ -1,0 +1,19 @@
+--- Makefile.orig	Sat Aug 24 15:33:12 2002
++++ Makefile	Mon Jan 17 22:30:14 2005
+@@ -1,5 +1,4 @@
+ LIBS=-lpam
+-APXS=apxs
+ # try this, if you're not root and apxs is in the standard place
+ #APXS=/usr/sbin/apxs
+ 
+@@ -14,8 +13,8 @@
+ 	$(APXS) -c $< $(LIBS)
+ 
+ install: $(TARGETS)
+-	$(APXS) -i $(TARGETS)
+-	[ -d /etc/pam.d/ -a ! -f /etc/pam.d/httpd ] && install -m 644 -o root -g root samples/httpd /etc/pam.d/
++	$(APXS) -i -A mod_auth_pam.la
++	$(APXS) -i -A mod_auth_sys_group.la
+ 
+ clean:
+ 	-rm -f $(TARGETS) *~ $(SOURCES:.c=.slo) $(SOURCES:.c=.lo) $(SOURCES:.c=.so) $(SOURCES:.c=.o) 

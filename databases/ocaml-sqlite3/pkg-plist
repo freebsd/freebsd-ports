@@ -1,0 +1,15 @@
+%%OCAML_SITELIBDIR%%/sqlite3/META
+%%OCAML_SITELIBDIR%%/sqlite3/dllsqlite3_stubs.so
+%%OCAML_SITELIBDIR%%/sqlite3/dune-package
+%%OCAML_SITELIBDIR%%/sqlite3/libsqlite3_stubs.a
+%%OCAML_SITELIBDIR%%/sqlite3/opam
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.a
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.cma
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.cmi
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.cmt
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.cmti
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.cmx
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.cmxa
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.cmxs
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.ml
+%%OCAML_SITELIBDIR%%/sqlite3/sqlite3.mli

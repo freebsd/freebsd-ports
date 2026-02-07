@@ -1,0 +1,6 @@
+GDBM_File is a perl module which allows Perl programs to make use of the
+facilities provided by the GNU gdbm library.  If you intend to use this
+module you should really have a copy of the gdbm manualpage at hand.
+
+Most of the libgdbm.a functions are available through the GDBM_File
+interface.

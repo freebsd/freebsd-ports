@@ -1,0 +1,61 @@
+--- Makefile.orig	2025-04-12 08:53:59 UTC
++++ Makefile
+@@ -6,7 +6,6 @@ INSTALLMAN=${INSTALL} -m 444
+ INSTALLBIN=${INSTALL} -m 555
+ INSTALLFILE=${INSTALL} -m 444
+ INSTALLMAN=${INSTALL} -m 444
+-INSTALLDOC=${INSTALL} -m 444
+ INSTALLCONF=${INSTALL} -m 644
+ PANDOC=./scripts/pandoc-sh
+ 
+@@ -140,22 +139,6 @@ install: docs vimpager.configured vimcat.configured
+ 	    echo ${INSTALLMAN} man/vimcat.1 "${DESTDIR}${prefix}/share/man/man1/vimcat.1"; \
+ 	    ${INSTALLMAN} man/vimcat.1 "${DESTDIR}${prefix}/share/man/man1/vimcat.1"; \
+ 	fi
+-	@${MKPATH} "${DESTDIR}${prefix}/share/doc/vimpager"
+-	${INSTALLDOC} markdown_src/vimpager.md "${DESTDIR}${prefix}/share/doc/vimpager/vimpager.md"
+-	${INSTALLDOC} markdown_src/vimcat.md "${DESTDIR}${prefix}/share/doc/vimpager/vimcat.md"
+-	${INSTALLDOC} TODO.yml "${DESTDIR}${prefix}/share/doc/vimpager/TODO.yml"
+-	${INSTALLDOC} DOC_AUTHORS.yml "${DESTDIR}${prefix}/share/doc/vimpager/DOC_AUTHORS.yml"
+-	${INSTALLDOC} ChangeLog_vimpager.yml "${DESTDIR}${prefix}/share/doc/vimpager/ChangeLog_vimpager.yml"
+-	${INSTALLDOC} ChangeLog_vimcat.yml "${DESTDIR}${prefix}/share/doc/vimpager/ChangeLog_vimcat.yml"
+-	${INSTALLDOC} uganda.txt "${DESTDIR}${prefix}/share/doc/vimpager/uganda.txt"
+-	${INSTALLDOC} debian/copyright "${DESTDIR}${prefix}/share/doc/vimpager/copyright"
+-	@if [ -d html ]; then \
+-	    ${MKPATH} "${DESTDIR}${prefix}/share/doc/vimpager/html"; \
+-	    echo ${INSTALLDOC} html/vimpager.html "${DESTDIR}${prefix}/share/doc/vimpager/html/vimpager.html"; \
+-	    ${INSTALLDOC} html/vimpager.html "${DESTDIR}${prefix}/share/doc/vimpager/html/vimpager.html"; \
+-	    echo ${INSTALLDOC} html/vimcat.html "${DESTDIR}${prefix}/share/doc/vimpager/html/vimcat.html"; \
+-	    ${INSTALLDOC} html/vimcat.html "${DESTDIR}${prefix}/share/doc/vimpager/html/vimcat.html"; \
+-	fi
+ 	${MKPATH} "${DESTDIR}${prefix}/share/vimpager"
+ 	@for rt_file in ${RUNTIME}; do \
+ 	    if [ ! -d "`dirname "${DESTDIR}${prefix}/share/vimpager/$$rt_file"`" ]; then \
+@@ -264,13 +247,6 @@ man/%.1: markdown_src/%.md
+ 	    echo 'generating $@'; \
+ 	    ${MKPATH} `dirname '$@'` 2>/dev/null || true; \
+ 	    ${PANDOC} -s -f markdown_github $< -o $@; \
+-	else \
+-	    if [ ! -r docs-warn-stamp ]; then \
+-		echo >&2; \
+-		echo "[1;31mWARNING[0m: pandoc is not available, man pages and html will not be generated. If you want to install the man pages and html, install pandoc and re-run make." >&2; \
+-		echo >&2; \
+-		touch docs-warn-stamp; \
+-	    fi; \
+ 	fi
+ 
+ .SECONDARY: vimpager.md.work vimcat.md.work
+@@ -285,13 +261,6 @@ html/%.html: %.md.work
+ 	    ${MKPATH} `dirname '$@'` 2>/dev/null || true; \
+ 	    ${PANDOC} -s --toc -f markdown_github $< -o $@; \
+ 	    rm -f $<; \
+-	else \
+-	    if [ ! -r docs-warn-stamp ]; then \
+-		echo >&2; \
+-		echo "[1;31mWARNING[0m: pandoc is not available, man pages and html will not be generated. If you want to install the man pages and html, install pandoc and re-run make." >&2; \
+-		echo >&2; \
+-		touch docs-warn-stamp; \
+-	    fi; \
+ 	fi
+ 
+ realclean distclean clean:

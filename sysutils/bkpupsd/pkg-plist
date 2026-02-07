@@ -1,0 +1,6 @@
+libexec/bkpupsd/bkpups.battlow
+libexec/bkpupsd/bkpups.failed
+libexec/bkpupsd/bkpups.restored
+libexec/bkpupsd/bkpups.shutdown
+share/man/man8/bkpupsd.8.gz
+sbin/bkpupsd

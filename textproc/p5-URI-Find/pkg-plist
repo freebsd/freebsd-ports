@@ -1,0 +1,6 @@
+bin/urifind
+%%PERL5_MAN3%%/URI::Find.3.gz
+%%PERL5_MAN3%%/URI::Find::Schemeless.3.gz
+%%SITE_PERL%%/URI/Find.pm
+%%SITE_PERL%%/URI/Find/Schemeless.pm
+%%PERL5_MAN1%%/urifind.1.gz

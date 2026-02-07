@@ -1,0 +1,46 @@
+bin/battleship
+bin/checkers
+@(,games,2555) bin/darrt
+bin/fifteen
+@(,games,2555) bin/fisher
+@(,games,2555) bin/jewels
+bin/memoblocks
+@(,games,2555) bin/miketron
+bin/mines
+@(,games,2555) bin/muncher
+bin/nbsdgames
+@(,games,2555) bin/pipes
+bin/rabbithole
+bin/redsquare
+bin/reversi
+bin/snakeduel
+bin/sos
+bin/sudoku
+@(,games,2555) bin/tugow
+@dir(,games) /var/games/nbsdgames
+@sample(,games,0664) /var/games/nbsdgames/darrt_scores.sample
+@sample(,games,0664) /var/games/nbsdgames/fisher_scores.sample
+@sample(,games,0664) /var/games/nbsdgames/jewels_scores.sample
+@sample(,games,0664) /var/games/nbsdgames/muncher_scores.sample
+@sample(,games,0664) /var/games/nbsdgames/miketron_scores.sample
+@sample(,games,0664) /var/games/nbsdgames/pipes_scores.sample
+@sample(,games,0664) /var/games/nbsdgames/tugow_scores.sample
+share/applications/nbsdgames.desktop
+share/icons/hicolor/scalable/apps/nbsdgames.svg
+share/man/man6/battleship.6.gz
+share/man/man6/checkers.6.gz
+share/man/man6/darrt.6.gz
+share/man/man6/fifteen.6.gz
+share/man/man6/fisher.6.gz
+share/man/man6/jewels.6.gz
+share/man/man6/memoblocks.6.gz
+share/man/man6/miketron.6.gz
+share/man/man6/mines.6.gz
+share/man/man6/muncher.6.gz
+share/man/man6/pipes.6.gz
+share/man/man6/rabbithole.6.gz
+share/man/man6/redsquare.6.gz
+share/man/man6/reversi.6.gz
+share/man/man6/snakeduel.6.gz
+share/man/man6/sos.6.gz
+share/man/man6/sudoku.6.gz

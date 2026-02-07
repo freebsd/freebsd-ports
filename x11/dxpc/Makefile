@@ -1,0 +1,29 @@
+PORTNAME=	dxpc
+PORTVERSION=	3.9.2
+PORTREVISION=	1
+CATEGORIES=	x11
+MASTER_SITES=	http://www.vigor.nu/dxpc/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Compressing X protocol proxy designed to support X11 over slow links
+WWW=		http://www.vigor.nu/dxpc/
+
+LIB_DEPENDS=	liblzo2.so:archivers/lzo2
+
+LICENSE=	BSD2CLAUSE
+
+USES=		gmake tar:tgz xorg
+USE_XORG=	x11
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}
+MAKE_ARGS=	INSTALL="${INSTALL_PROGRAM}" \
+		bindir=${STAGEDIR}${PREFIX}/bin \
+		man1dir=${STAGEDIR}${PREFIX}/share/man/man1
+
+PLIST_FILES=	bin/dxpc \
+		share/man/man1/dxpc.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-R$$withval/lib||' ${WRKSRC}/configure
+
+.include <bsd.port.mk>

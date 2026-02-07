@@ -1,0 +1,2 @@
+The memoize library allows you to cache methods for faster lookup. Cached
+results can either be stored in memory (the default) or to a file.

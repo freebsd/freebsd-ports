@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: xymon_server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=xymon_server
+rcvar=xymon_server_enable
+
+load_rc_config "$name"
+: ${xymon_server_enable:=NO}
+: ${xymon_server_user:=%%XYMONUSER%%}
+
+command="%%WWWDIR%%/server/xymon.sh"
+command_args=start
+start_precmd=xymon_prestart
+pidfile=/var/log/xymon/xymonlaunch.pid
+procname="%%WWWDIR%%/server/bin/xymonlaunch"
+
+xymon_prestart()
+{
+	if [ ! -d /var/log/xymon ]; then
+		install -d -o xymon /var/log/xymon
+	fi
+
+	for i in critical.cfg critical.cfg.bak ; do
+		if [ ! -f ${i} ]; then
+			install -o xymon -g xymon /dev/null %%WWWDIR%%/server/etc/${i} ;
+		fi
+	done
+}
+
+run_rc_command "$1"

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/PIR.pm
+%%SITE_PERL%%/Path/Iterator/Rule.pm
+%%PERL5_MAN3%%/PIR.3.gz
+%%PERL5_MAN3%%/Path::Iterator::Rule.3.gz

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-02-01 15:45:39 UTC
++++ CMakeLists.txt
+@@ -365,7 +365,7 @@ install(
+ )
+ install(
+ 	FILES ${CMAKE_CURRENT_BINARY_DIR}/generated/${PROJECT_NAME}.pc
+-	DESTINATION ${FAudio_INSTALL_LIBDIR}/pkgconfig
++	DESTINATION ${FAudio_INSTALL_LIBDIR}/../libdata/pkgconfig
+ )
+ 
+ # Generate cmake-config file, install CMake files

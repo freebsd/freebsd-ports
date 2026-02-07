@@ -1,0 +1,3 @@
+The HyperNetX library provides classes and methods for the analysis
+and visualization of complex network data modeled as hypergraphs.
+The library generalizes traditional graph metrics.

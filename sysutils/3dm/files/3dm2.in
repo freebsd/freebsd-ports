@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: 3dm2
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable 3dm2:
+# twdm2_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=twdm2
+rcvar=twdm2_enable
+
+start_precmd=twdm2_precmd
+command="%%PREFIX%%/sbin/3dm2"
+required_files=%%PREFIX%%/etc/3dm2/3dm2.conf
+sig_stop=INT
+
+twdm2_precmd()
+{
+	umask 077
+}
+
+# set default
+twdm2_enable=${twdm2_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,229 @@
+--- common/src/IO/GameConfigParser.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/GameConfigParser.cpp
+@@ -36,7 +36,7 @@ namespace TrenchBroom {
+             using Model::GameConfig;
+ 
+             const ConfigEntry::Ptr root = m_parser.parse();
+-            if (root == NULL)
++            if (root.get() == NULL)
+                 throw ParserException("Empty game config");
+             
+             expectEntry(ConfigEntry::Type_Table, *root);
+--- common/src/IO/GameFileSystem.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/GameFileSystem.cpp
+@@ -44,7 +44,7 @@ namespace TrenchBroom {
+                     Path::List::const_iterator it, end;
+                     for (it = paks.begin(), end = paks.end(); it != end; ++it) {
+                         MappedFile::Ptr file = diskFS->openFile(*it);
+-                        assert(file != NULL);
++                        assert(file.get() != NULL);
+                         m_fileSystems.push_back(FSPtr(new PakFileSystem(path, file)));
+                     }
+                 } else {
+@@ -95,7 +95,7 @@ namespace TrenchBroom {
+                 const FSPtr fileSystem = *it;
+                 if (fileSystem->fileExists(path)) {
+                     const MappedFile::Ptr file = fileSystem->openFile(path);
+-                    if (file != NULL)
++                    if (file.get() != NULL)
+                         return file;
+                 }
+             }
+--- common/src/IO/Wad.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/IO/Wad.cpp
+@@ -83,7 +83,7 @@ namespace TrenchBroom {
+ 
+         Wad::Wad(const Path& path) :
+         m_file(Disk::openFile(path)) {
+-            if (m_file == NULL)
++            if (m_file.get() == NULL)
+                 throw AssetException("Cannot open wad file " + path.asString());
+             loadEntries();
+         }
+--- common/src/Model/BrushContentType.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/Model/BrushContentType.cpp
+@@ -32,7 +32,7 @@ namespace TrenchBroom {
+         m_transparent(transparent),
+         m_flagValue(flagValue),
+         m_evaluator(evaluator) {
+-            assert(m_evaluator != NULL);
++            assert(m_evaluator.get() != NULL);
+         }
+         
+         const String& BrushContentType::name() const {
+--- common/src/Model/GameImpl.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/Model/GameImpl.cpp
+@@ -258,7 +258,7 @@ namespace TrenchBroom {
+         Assets::EntityModel* GameImpl::doLoadEntityModel(const IO::Path& path) const {
+             try {
+                 const IO::MappedFile::Ptr file = m_fs.openFile(path);
+-                assert(file != NULL);
++                assert(file.get() != NULL);
+                 
+                 const String modelName = path.lastComponent().asString();
+                 const String extension = StringUtils::toLower(path.extension());
+--- common/src/Model/PickResult.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/Model/PickResult.cpp
+@@ -54,7 +54,7 @@ namespace TrenchBroom {
+         }
+         
+         void PickResult::addHit(const Hit& hit) {
+-            assert(m_compare != NULL);
++            assert(m_compare.get() != NULL);
+             Hit::List::iterator pos = std::upper_bound(m_hits.begin(), m_hits.end(), hit, CompareWrapper(m_compare.get()));
+             m_hits.insert(pos, hit);
+         }
+--- common/src/Renderer/IndexArray.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/Renderer/IndexArray.cpp
+@@ -45,11 +45,11 @@ namespace TrenchBroom {
+         }
+         
+         size_t IndexArray::sizeInBytes() const {
+-            return m_holder == NULL ? 0 : m_holder->sizeInBytes();
++            return m_holder.get() == NULL ? 0 : m_holder->sizeInBytes();
+         }
+         
+         size_t IndexArray::indexCount() const {
+-            return m_holder == NULL ? 0 : m_holder->indexCount();
++            return m_holder.get() == NULL ? 0 : m_holder->indexCount();
+         }
+         
+         bool IndexArray::prepared() const {
+--- common/src/Renderer/VertexArray.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/Renderer/VertexArray.cpp
+@@ -46,11 +46,11 @@ namespace TrenchBroom {
+         }
+ 
+         size_t VertexArray::sizeInBytes() const {
+-            return m_holder == NULL ? 0 : m_holder->sizeInBytes();
++            return m_holder.get() == NULL ? 0 : m_holder->sizeInBytes();
+         }
+ 
+         size_t VertexArray::vertexCount() const {
+-            return m_holder == NULL ? 0 : m_holder->vertexCount();
++            return m_holder.get() == NULL ? 0 : m_holder->vertexCount();
+         }
+ 
+         bool VertexArray::prepared() const {
+--- common/src/TrenchBroomApp.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/TrenchBroomApp.cpp
+@@ -165,7 +165,7 @@ namespace TrenchBroom {
+ 
+             const Model::GameFactory& gameFactory = Model::GameFactory::instance();
+             Model::GamePtr game = gameFactory.createGame(gameName);
+-            assert(game != NULL);
++            assert(game.get() != NULL);
+ 
+             MapFrame* frame = m_frameManager->newFrame();
+             frame->newDocument(game, mapFormat);
+@@ -190,7 +190,7 @@ namespace TrenchBroom {
+                 }
+ 
+                 Model::GamePtr game = gameFactory.createGame(gameName);
+-                assert(game != NULL);
++                assert(game.get() != NULL);
+ 
+                 frame = m_frameManager->newFrame();
+                 frame->openDocument(game, mapFormat, path);
+--- common/src/View/ExecutableEvent.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/ExecutableEvent.cpp
+@@ -46,7 +46,7 @@ namespace TrenchBroom {
+         }
+ 
+         void ExecutableEvent::execute() {
+-            if (m_executable != NULL)
++            if (m_executable.get() != NULL)
+                 (*m_executable)();
+         }
+     }
+--- common/src/View/GLContextManager.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/GLContextManager.cpp
+@@ -42,7 +42,7 @@ namespace TrenchBroom {
+ 
+         GLContext::Ptr GLContextManager::createContext(wxGLCanvas* canvas) {
+             GLContext::Ptr context(new GLContext(canvas, this));
+-            if (m_mainContext == NULL)
++            if (m_mainContext.get() == NULL)
+                 m_mainContext = context;
+             return context;
+         }
+--- common/src/View/MapDocument.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/MapDocument.cpp
+@@ -154,7 +154,7 @@ namespace TrenchBroom {
+         }
+         
+         bool MapDocument::isGamePathPreference(const IO::Path& path) const {
+-            return m_game != NULL && m_game->isGamePathPreference(path);
++            return m_game.get() != NULL && m_game->isGamePathPreference(path);
+         }
+         
+         Model::Layer* MapDocument::currentLayer() const {
+@@ -257,7 +257,7 @@ namespace TrenchBroom {
+         }
+         
+         void MapDocument::saveDocumentTo(const IO::Path& path) {
+-            assert(m_game != NULL);
++            assert(m_game.get() != NULL);
+             assert(m_world != NULL);
+             m_game->writeMap(m_world, path);
+         }
+--- common/src/View/MapFrame.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/MapFrame.cpp
+@@ -86,7 +86,7 @@ namespace TrenchBroom {
+ 
+         void MapFrame::Create(FrameManager* frameManager, MapDocumentSPtr document) {
+             assert(frameManager != NULL);
+-            assert(document != NULL);
++            assert(document.get() != NULL);
+ 
+             m_frameManager = frameManager;
+             m_document = document;
+--- common/src/View/SmartAttributeEditorManager.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/SmartAttributeEditorManager.cpp
+@@ -123,7 +123,7 @@ namespace TrenchBroom {
+         }
+         
+         void SmartAttributeEditorManager::deactivateEditor() {
+-            if (m_activeEditor != NULL) {
++            if (m_activeEditor.get() != NULL) {
+                 m_activeEditor->deactivate();
+                 m_activeEditor = EditorPtr();
+                 m_name = "";
+@@ -131,7 +131,7 @@ namespace TrenchBroom {
+         }
+ 
+         void SmartAttributeEditorManager::updateEditor() {
+-            if (m_activeEditor != NULL) {
++            if (m_activeEditor.get() != NULL) {
+                 MapDocumentSPtr document = lock(m_document);
+                 m_activeEditor->update(document->allSelectedAttributableNodes());
+             }
+--- common/src/View/ViewEditor.cpp.orig	2016-03-09 20:19:17 UTC
++++ common/src/View/ViewEditor.cpp
+@@ -252,7 +252,7 @@ namespace TrenchBroom {
+             MapDocumentSPtr document = lock(m_document);
+             Model::GamePtr game = document->game();
+             
+-            if (game != NULL) {
++            if (game.get() != NULL) {
+                 Model::BrushContentType::FlagType hiddenFlags = 0;
+                 const Model::BrushContentType::List& contentTypes = game->brushContentTypes();
+                 
+@@ -452,7 +452,7 @@ namespace TrenchBroom {
+             
+             MapDocumentSPtr document = lock(m_document);
+             Model::GamePtr game = document->game();
+-            if (game == NULL) {
++            if (game.get() == NULL) {
+                 createEmptyBrushContentTypeFilter(parent);
+             } else {
+                 const Model::BrushContentType::List& contentTypes = game->brushContentTypes();
+@@ -574,7 +574,7 @@ namespace TrenchBroom {
+             const Model::BrushContentType::FlagType hiddenFlags = editorContext.hiddenBrushContentTypes();
+             
+             Model::GamePtr game = document->game();
+-            if (game != NULL) {
++            if (game.get() != NULL) {
+                 const Model::BrushContentType::List& contentTypes = game->brushContentTypes();
+                 for (size_t i = 0; i < contentTypes.size(); ++i) {
+                     const Model::BrushContentType& contentType = contentTypes[i];

@@ -1,0 +1,137 @@
+--- instant/tables.c.orig	1996-09-08 03:55:10.000000000 +0200
++++ instant/tables.c	2013-11-30 23:51:25.000000000 +0100
+@@ -84,7 +84,7 @@
+ #include <sys/types.h>
+ #include <errno.h>
+ 
+-#include <regexp.h>
++#include <regex.h>
+ #include "general.h"
+ #include "translate.h"
+ 
+--- instant/traninit.c.orig	1997-07-16 18:44:12.000000000 +0200
++++ instant/traninit.c	2013-11-30 23:51:25.000000000 +0100
+@@ -69,7 +69,7 @@
+ #include <memory.h>
+ #include <sys/types.h>
+ #include <errno.h>
+-#include <regexp.h>
++#include <regex.h>
+ 
+ #include "general.h"
+ #include "translate.h"
+@@ -100,6 +100,23 @@
+ void	AddSDATA(const char *from, const char *to);
+ 
+ /* ______________________________________________________________________ */
++/* minimal compatibility wrapper for UNIX V8 regexp, match only
++ */
++
++static regex_t *v8_regcomp(const char *pattern)
++{
++	regex_t *re;
++	if ((re = malloc(sizeof(regex_t))) != NULL) {
++		if (regcomp(re, pattern, REG_EXTENDED|REG_NOSUB)) {
++			free(re);
++			return NULL;
++		}
++	}
++	return re;
++}
++#define regcomp	v8_regcomp
++
++/* ______________________________________________________________________ */
+ /*  Read the translation specs from the input file, storing in memory.
+  *  Arguments:
+  *	Name of translation spec file.
+--- instant/translate.c.orig	1996-09-08 03:55:10.000000000 +0200
++++ instant/translate.c	2013-11-30 23:51:25.000000000 +0100
+@@ -69,7 +69,7 @@
+ #include <memory.h>
+ #include <sys/types.h>
+ #include <errno.h>
+-#include <regexp.h>
++#include <regex.h>
+ 
+ #include "general.h"
+ #define STORAGE
+@@ -82,6 +82,18 @@
+ static void	WasProcessed(Element_t *);
+ 
+ /* ______________________________________________________________________ */
++/* minimal compatibility wrapper for UNIX V8 regexp, match only 
++ */
++
++static int v8_regexec(const regex_t *re, const char *string)
++{
++	if (re == NULL)
++		return 0;
++	return !regexec(re, string, 0, NULL, 0);
++}
++#define regexec	v8_regexec
++
++/* ______________________________________________________________________ */
+ /*  Translate the subtree starting at 'e'. Output goes to 'fp'.
+  *  This is the entry point for translating an instance.
+  *  Arguments:
+--- instant/translate.h.orig	1996-09-08 03:55:10.000000000 +0200
++++ instant/translate.h	2013-11-30 23:51:25.000000000 +0100
+@@ -75,7 +75,7 @@
+ typedef struct {
+     char	*name;		/* attribute name string */
+     char	*val;		/* attribute value string */
+-    regexp	*rex;		/* attribute value reg expr (compiled) */
++    regex_t	*rex;		/* attribute value reg expr (compiled) */
+ } AttPair_t;
+ 
+ typedef struct _Trans {
+@@ -83,19 +83,19 @@
+     char	*gi;		/* element name of tag under consideration */
+     char	**gilist;	/* list of element names (multiple gi's) */
+     char	*context;	/* context in tree - looking depth levels up */
+-    regexp	*context_re;	/* tree heirarchy looking depth levels up */
++    regex_t	*context_re;	/* tree heirarchy looking depth levels up */
+     int		depth;		/* number of levels to look up the tree */
+     AttPair_t	*attpair;	/* attr name-value pairs */
+     int		nattpairs;	/* number of name-value pairs */
+     char	*parent;	/* GI has this element as parent */
+     int		nth_child;	/* GI is Nth child of this of parent element */
+     char	*content;	/* element has this string in content */
+-    regexp	*content_re;	/* content reg expr (compiled) */
++    regex_t	*content_re;	/* content reg expr (compiled) */
+     char	*pattrset;	/* is this attr set (any value) in parent? */
+     char	*var_name;	/* variable name */
+     char	*var_value;	/* variable value */
+     char	*var_RE_name;	/* variable name (for VarREValue) */
+-    regexp	*var_RE_value;	/* variable value (compiled, for VarREValue) */
++    regex_t	*var_RE_value;	/* variable value (compiled, for VarREValue) */
+     Map_t	*relations;	/* various relations to check */
+ 
+     /* actions */
+@@ -150,4 +150,3 @@
+ void	OSFtable(Element_t *, FILE *, char **, int);
+ 
+ /* ______________________________________________________________________ */
+-
+--- instant/tranvar.c.orig	1997-02-07 03:40:45.000000000 +0100
++++ instant/tranvar.c	2013-11-30 23:51:25.000000000 +0100
+@@ -66,7 +66,7 @@
+ #include <sys/types.h>
+ #include <errno.h>
+ 
+-#include <regexp.h>
++#include <regex.h>
+ #include "general.h"
+ #include "translate.h"
+ 
+--- instant/util.c.orig	1996-09-08 03:55:10.000000000 +0200
++++ instant/util.c	2013-11-30 23:51:25.000000000 +0100
+@@ -85,7 +85,7 @@
+ #include <sys/stat.h>
+ #include <sys/file.h>
+ #include <errno.h>
+-#include <regexp.h>
++#include <regex.h>
+ /* CSS don't have it and I don't see where it's used
+ #include <values.h>
+ */

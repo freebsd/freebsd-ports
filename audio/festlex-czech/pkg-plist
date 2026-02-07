@@ -1,0 +1,6 @@
+share/festival/lib/czech.scm
+share/festival/lib/czech-debug.scm
+share/festival/lib/czech-mbrola.scm
+share/festival/lib/czech-unisyn.scm
+share/festival/lib/dicts/czech-lexicon.out
+share/festival/lib/dicts/czech-lexicon.scm

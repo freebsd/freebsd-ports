@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2023-07-23 19:53:46 UTC
++++ Makefile.in
+@@ -864,7 +864,7 @@ distcleancheck: distclean
+ 	       exit 1; } >&2
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h
++all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(DATA) config.h
+ installdirs:
+ 	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(docdir)" "$(DESTDIR)$(sysconfdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \

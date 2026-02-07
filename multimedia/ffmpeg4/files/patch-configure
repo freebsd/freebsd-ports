@@ -1,0 +1,43 @@
+--- configure.orig	2023-04-12 18:52:51 UTC
++++ configure
+@@ -3784,13 +3784,7 @@ target_os_default=$(tolower $(uname -s))
+ host_os=$target_os_default
+ 
+ # machine
+-if test "$target_os_default" = aix; then
+-    arch_default=$(uname -p)
+-    strip_default="strip -X32_64"
+-    nm_default="nm -g -X32_64"
+-else
+-    arch_default=$(uname -m)
+-fi
++arch_default=$(uname -p)
+ cpu="generic"
+ intrinsics="none"
+ 
+@@ -5387,6 +5381,7 @@ case $target_os in
+         disable symver
+         ;;
+     freebsd)
++        enable section_data_rel_ro
+         ;;
+     bsd/os)
+         add_extralibs -lpoll -lgnugetopt
+@@ -6369,7 +6369,7 @@ enabled libfribidi        && require_pkg_config libfri
+ enabled libfontconfig     && require_pkg_config libfontconfig fontconfig "fontconfig/fontconfig.h" FcInit
+ enabled libfreetype       && require_pkg_config libfreetype freetype2 "ft2build.h FT_FREETYPE_H" FT_Init_FreeType
+ enabled libfribidi        && require_pkg_config libfribidi fribidi fribidi.h fribidi_version_info
+-enabled libglslang        && require_cpp libglslang glslang/SPIRV/GlslangToSpv.h "glslang::TIntermediate*" -lglslang -lMachineIndependent -lOSDependent -lHLSL -lOGLCompiler -lGenericCodeGen -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++
++enabled libglslang        && require_cpp libglslang glslang/SPIRV/GlslangToSpv.h "glslang::TIntermediate*" -lglslang -lMachineIndependent -lOSDependent -lGenericCodeGen -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++
+ enabled libgme            && { check_pkg_config libgme libgme gme/gme.h gme_new_emu ||
+                                require libgme gme/gme.h gme_new_emu -lgme -lstdc++; }
+ enabled libgsm            && { for gsm_hdr in "gsm.h" "gsm/gsm.h"; do
+@@ -6758,7 +6753,7 @@ enabled vulkan &&
+ 
+ if enabled x86; then
+     case $target_os in
+-        mingw32*|mingw64*|win32|win64|linux|cygwin*)
++        freebsd|mingw32*|mingw64*|win32|win64|linux|cygwin*)
+             ;;
+         *)
+             disable ffnvcodec cuvid nvdec nvenc

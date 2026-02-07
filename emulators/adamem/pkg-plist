@@ -1,0 +1,7 @@
+bin/adamem
+bin/cvem
+%%DATADIR%%/adamem.snd
+%%DATADIR%%/OS7.rom
+%%DATADIR%%/WP.rom
+%%DATADIR%%/EOS.rom
+%%PORTDOCS%%%%DOCSDIR%%/adamem.txt

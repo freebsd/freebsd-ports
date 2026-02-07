@@ -1,0 +1,142 @@
+Adapted from the https://github.com/distribution/distribution/pull/3943
+
+	-mi
+
+From 9b4f2caaf89c63b015bbed3e710501df5cf2f75a Mon Sep 17 00:00:00 2001
+From: Alex Lavallee <73203142+lavalleeale@users.noreply.github.com>
+Date: Sun, 18 Jun 2023 09:52:12 -0700
+Subject: [PATCH] Add support for modern ACME
+
+Signed-off-by: Alex Lavallee <73203142+lavalleeale@users.noreply.github.com>
+---
+ configuration/configuration.go                |    4 +
+ configuration/configuration_test.go           |   14 +-
+ docs/configuration.md                         |   12 +-
+ registry/registry.go                          |   29 +-
+...
+
+--- configuration/configuration.go
++++ configuration/configuration.go
+@@ -129,6 +129,10 @@ type Configuration struct {
+ 				// Hosts specifies the hosts which are allowed to obtain Let's
+ 				// Encrypt certificates.
+ 				Hosts []string `yaml:"hosts,omitempty"`
++
++				// DirectoryURL points to the CA directory endpoint.
++				// If empty, LetsEncrypt is used.
++				DirectoryURL string `yaml:"directoryurl,omitempty"`
+ 			} `yaml:"letsencrypt,omitempty"`
+ 		} `yaml:"tls,omitempty"`
+ 
+--- configuration/configuration_test.go
++++ configuration/configuration_test.go
+@@ -89,9 +89,10 @@ var configStruct = Configuration{
+ 			MinimumTLS   string   `yaml:"minimumtls,omitempty"`
+ 			CipherSuites []string `yaml:"ciphersuites,omitempty"`
+ 			LetsEncrypt  struct {
+-				CacheFile string   `yaml:"cachefile,omitempty"`
+-				Email     string   `yaml:"email,omitempty"`
+-				Hosts     []string `yaml:"hosts,omitempty"`
++				CacheFile    string   `yaml:"cachefile,omitempty"`
++				Email        string   `yaml:"email,omitempty"`
++				Hosts        []string `yaml:"hosts,omitempty"`
++				DirectoryURL string   `yaml:"directoryurl,omitempty"`
+ 			} `yaml:"letsencrypt,omitempty"`
+ 		} `yaml:"tls,omitempty"`
+ 		Headers http.Header `yaml:"headers,omitempty"`
+@@ -113,9 +114,10 @@ var configStruct = Configuration{
+ 			MinimumTLS   string   `yaml:"minimumtls,omitempty"`
+ 			CipherSuites []string `yaml:"ciphersuites,omitempty"`
+ 			LetsEncrypt  struct {
+-				CacheFile string   `yaml:"cachefile,omitempty"`
+-				Email     string   `yaml:"email,omitempty"`
+-				Hosts     []string `yaml:"hosts,omitempty"`
++				CacheFile    string   `yaml:"cachefile,omitempty"`
++				Email        string   `yaml:"email,omitempty"`
++				Hosts        []string `yaml:"hosts,omitempty"`
++				DirectoryURL string   `yaml:"directoryurl,omitempty"`
+ 			} `yaml:"letsencrypt,omitempty"`
+ 		}{
+ 			ClientCAs: []string{"/path/to/ca.pem"},
+--- docs/configuration.md
++++ docs/configuration.md
+@@ -229,6 +229,7 @@ http:
+       cachefile: /path/to/cache-file
+       email: emailused@letsencrypt.com
+       hosts: [myregistryaddress.org]
++      directoryurl: https://acme-v02.api.letsencrypt.org/directory
+   debug:
+     addr: localhost:5001
+     prometheus:
+@@ -879,11 +880,12 @@ TLS certificates provided by
+ > that are valid for this registry to avoid trying to get certificates for random
+ > hostnames due to malicious clients connecting with bogus SNI hostnames.
+ 
+-| Parameter | Required | Description                                           |
+-|-----------|----------|-------------------------------------------------------|
+-| `cachefile` | yes    | Absolute path to a file where the Let's Encrypt agent can cache data. |
+-| `email`   | yes      | The email address used to register with Let's Encrypt. |
+-| `hosts`   | no       | The hostnames allowed for Let's Encrypt certificates. |
++| Parameter      | Required | Description                                                           |
++|----------------|----------|-----------------------------------------------------------------------|
++| `cachefile`    | yes      | Absolute path to a file where the Let's Encrypt agent can cache data. |
++| `email`        | yes      | The email address used to register with Let's Encrypt.                |
++| `hosts`        | no       | The hostnames allowed for Let's Encrypt certificates.                 |
++| `directoryurl` | no       | The url to use for the ACME server.                                   |
+ 
+ ### `debug`
+ 
+--- registry/registry.go
++++ registry/registry.go
+@@ -13,7 +13,8 @@ import (
+ 	"syscall"
+ 	"time"
+ 
+-	"rsc.io/letsencrypt"
++	"golang.org/x/crypto/acme"
++	"golang.org/x/crypto/acme/autocert"
+ 
+ 	logrus_bugsnag "github.com/Shopify/logrus-bugsnag"
+ 
+@@ -210,6 +211,14 @@ func getCipherSuiteNames(ids []uint16) []string {
+ 	return names
+ }
+ 
++// set ACME-server/DirectoryURL, if provided
++func setDirectoryURL(directoryurl string) *acme.Client {
++	if len(directoryurl) > 0 {
++		return &acme.Client{DirectoryURL: directoryurl}
++	}
++	return nil
++}
++
+ // ListenAndServe runs the registry's HTTP server.
+ func (registry *Registry) ListenAndServe() error {
+ 	config := registry.config
+@@ -247,19 +256,15 @@ func (registry *Registry) ListenAndServe() error {
+ 			if config.HTTP.TLS.Certificate != "" {
+ 				return fmt.Errorf("cannot specify both certificate and Let's Encrypt")
+ 			}
+-			var m letsencrypt.Manager
+-			if err := m.CacheFile(config.HTTP.TLS.LetsEncrypt.CacheFile); err != nil {
+-				return err
+-			}
+-			if !m.Registered() {
+-				if err := m.Register(config.HTTP.TLS.LetsEncrypt.Email, nil); err != nil {
+-					return err
+-				}
+-			}
+-			if len(config.HTTP.TLS.LetsEncrypt.Hosts) > 0 {
+-				m.SetHosts(config.HTTP.TLS.LetsEncrypt.Hosts)
++			m := &autocert.Manager{
++				HostPolicy: autocert.HostWhitelist(config.HTTP.TLS.LetsEncrypt.Hosts...),
++				Cache:      autocert.DirCache(config.HTTP.TLS.LetsEncrypt.CacheFile),
++				Email:      config.HTTP.TLS.LetsEncrypt.Email,
++				Prompt:     autocert.AcceptTOS,
++				Client:     setDirectoryURL(config.HTTP.TLS.LetsEncrypt.DirectoryURL),
+ 			}
+ 			tlsConf.GetCertificate = m.GetCertificate
++			tlsConf.NextProtos = append(tlsConf.NextProtos, acme.ALPNProto)
+ 		} else {
+ 			tlsConf.Certificates = make([]tls.Certificate, 1)
+ 			tlsConf.Certificates[0], err = tls.LoadX509KeyPair(config.HTTP.TLS.Certificate, config.HTTP.TLS.Key)

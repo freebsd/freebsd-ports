@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+Anope now installs to %%PREFIX%%/anope
+EOM
+}
+{ type: upgrade
+  maximum_version: 2.1.0
+  message: <<EOM
+If you are upgrading from < 2.1.0, you will need
+to migrate your configs to the new format. There
+is also a guide to migrate your databases to the
+new format. Please read the release notes:
+
+https://www.anope.org/upgrading.html
+EOM
+}
+]
+

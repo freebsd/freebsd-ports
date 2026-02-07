@@ -1,0 +1,13 @@
+mqttwarn is a highly configurable MQTT message router, where the routing
+targets are notification plugins, primarily written in Python.
+
+mqttwarn subscribes to any number of MQTT topics and publishes received
+payloads to one or more notification services after optionally applying
+sophisticated transformations.
+
+It comes with over 70 notification handler plugins covering a wide range
+of notification services, and has an adapter for the Apprise notification
+library, covering another set of 80+ notification services.
+
+Repository: https://github.com/jpmens/mqttwarn
+Documentation: https://mqttwarn.readthedocs.io/

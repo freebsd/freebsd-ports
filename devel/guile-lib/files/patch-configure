@@ -1,0 +1,11 @@
+--- configure.orig	2023-05-20 13:27:01 UTC
++++ configure
+@@ -4950,7 +4950,7 @@ fi
+ 
+ 
+ if test "x$guile_site" = "xyes"; then
+-   SITEDIR="$GUILE_GLOBAL_SITE";
++   SITEDIR="$GUILE_SITE";
+    SITECCACHEDIR="$GUILE_SITE_CCACHE";
+ else
+    SITEDIR="$datadir/guile-lib";

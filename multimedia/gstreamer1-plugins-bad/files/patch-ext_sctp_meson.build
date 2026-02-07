@@ -1,0 +1,11 @@
+--- ext/sctp/meson.build.orig	2025-03-11 20:14:44 UTC
++++ ext/sctp/meson.build
+@@ -20,7 +20,7 @@ plugin_sources += {
+   'sctp': pathsep.join(doc_sources)
+ }
+ 
+-sctp_option = get_option('sctp').enable_if(get_option('webrtc').enabled(), error_message: 'webrtc option is enabled')
++sctp_option = get_option('sctp')
+ if sctp_option.disabled()
+   subdir_done()
+ endif

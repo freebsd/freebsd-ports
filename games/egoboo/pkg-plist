@@ -1,0 +1,3 @@
+bin/egoboo
+@sample %%ETCDIR%%/controls.txt.sample
+@sample %%ETCDIR%%/setup.txt.sample

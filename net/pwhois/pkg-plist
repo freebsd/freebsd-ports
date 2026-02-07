@@ -1,0 +1,8 @@
+bin/pwhois-pwdump
+etc/periodic/daily/512.pwhois-updatedb
+sbin/pwhois-updatedb
+sbin/pwhoisd
+@sample(,pwhois,640) %%ETCDIR%%/pwhoisd.conf.sample
+%%DATADIR%%/createdb.sql
+@dir(pwhois,pwhois,) /var/db/pwhois
+@dir(pwhois,pwhois,) /var/log/pwhois

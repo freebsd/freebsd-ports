@@ -1,0 +1,2 @@
+Plack::Middleware::SocketIO is a server implmentation of SocketIO in
+Perl.

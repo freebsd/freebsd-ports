@@ -1,0 +1,2 @@
+GSK is a C library for writing servers. It is designed for writing servers
+where everything happens in a single thread.

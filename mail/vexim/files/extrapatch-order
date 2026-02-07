@@ -1,0 +1,42 @@
+--- ./vexim/admingroupchange.php.orig	2016-08-17 21:00:21.000000000 +1000
++++ ./vexim/admingroupchange.php	2017-03-07 17:12:43.849900000 +1000
+@@ -145,7 +145,7 @@
+                 <?php
+                   $query = "SELECT realname, localpart, user_id FROM users
+                     WHERE enabled='1' AND domain_id=:domain_id AND type!='fail'
+-                    ORDER BY realname, username, type desc";
++                    ORDER BY username, realname, type desc";
+                   $sth = $dbh->prepare($query);
+                   $sth->execute(array(':domain_id'=>$_SESSION['domain_id']));
+                   while ($row = $sth->fetch()) {
+--- ./vexim/adminuser.php	2016-08-17 21:00:21.000000000 +1000
++++ ./vexim/adminuser.php	2017-03-05 20:21:00.000000000 +1000
+@@ -83,7 +83,7 @@
+           $query .= ' AND ' . $dbh->quote($_POST['field']) .  ' LIKE :searchfor"%';
+           $queryParams[':searchfor'] = '%'.$_POST['searchfor'].'%';
+         }
+-        $query .= ' ORDER BY realname, localpart';
++        $query .= ' ORDER BY !admin, localpart, realname';
+         $sth = $dbh->prepare($query);
+         $sth->execute($queryParams);
+         while ($row = $sth->fetch()) {
+--- ./vexim/adminuserchange.php.orig	2016-08-17 21:00:21.000000000 +1000
++++ ./vexim/adminuserchange.php	2017-03-07 17:13:39.572382000 +1000
+@@ -301,7 +301,7 @@
+                 $queryuserlist = "SELECT realname, username, user_id, unseen
+                 FROM users
+                 WHERE enabled='1' AND domain_id=:domain_id AND type != 'fail'
+-                ORDER BY realname, username, type desc";
++                ORDER BY username, realname, type desc";
+                 $sthuserlist = $dbh->prepare($queryuserlist);
+                 $sthuserlist->execute(array(':domain_id'=>$_SESSION['domain_id']));
+                 while ($rowuserlist = $sthuserlist->fetch()) {
+@@ -338,7 +338,7 @@
+           <?php
+             # Print the aliases associated with this account
+             $query = "SELECT user_id,localpart,domain,realname FROM users,domains
+-              WHERE smtp=:smtp AND users.domain_id=domains.domain_id ORDER BY realname";
++              WHERE smtp=:smtp AND users.domain_id=domains.domain_id ORDER BY localpart";
+             $sth = $dbh->prepare($query);
+             $sth->execute(array(':smtp'=>$row['localpart'].'@'.$_SESSION['domain']));
+             if ($sth->rowCount()) {

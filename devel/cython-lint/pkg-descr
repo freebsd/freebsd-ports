@@ -1,0 +1,3 @@
+cython-lint provides everything flake8 used to do (by accident), plus much more.
+
+cython-lint is a tool and pre-commit hook to lint Cython files.

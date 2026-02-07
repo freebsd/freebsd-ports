@@ -1,0 +1,3 @@
+bin/spine
+@sample etc/spine.conf.sample
+share/man/man1/spine.1.gz

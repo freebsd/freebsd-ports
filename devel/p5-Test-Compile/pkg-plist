@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Test/Compile.pm
+%%SITE_PERL%%/Test/Compile/Internal.pm
+%%PERL5_MAN3%%/Test::Compile.3.gz
+%%PERL5_MAN3%%/Test::Compile::Internal.3.gz

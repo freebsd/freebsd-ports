@@ -1,0 +1,22 @@
+--- configure.orig	2004-01-17 23:19:56 UTC
++++ configure
+@@ -2536,15 +2536,16 @@ echo $ECHO_N "checking for Berkeley DB... $ECHO_C" >&6
+ # Check whether --with-db or --without-db was given.
+ if test "${with_db+set}" = set; then
+   withval="$with_db"
+-  DBINC=NO
+-  DBLIB=NO
+-  DBHDR=NO
+   S=1
+   case "$withval" in
+   yes|no)
++     if test -z "$DBHDR" ; then
+       { { echo "$as_me:$LINENO: error: Berkeley DB was not found. Please check your installation or use --with-db=PATH" >&5
+ echo "$as_me: error: Berkeley DB was not found. Please check your installation or use --with-db=PATH" >&2;}
+    { (exit 1); exit 1; }; }
++     fi
++     echo "$as_me:$LINENO: result: $DBHDR (${DBINC:-default location})" >&5
++     echo "${ECHO_T}$DBHDR (${DBINC:-default location})" >&6
+      ;;
+   *)
+   echo "$as_me:$LINENO: result: $withval" >&5

@@ -1,0 +1,9 @@
+TIMESTAMP = 1765203035
+SHA256 (rocky/g/gtk3-3.24.31-8.el9.aarch64.rpm) = 5736caa93cac0f154ca24e8dde7c84b3fefeb89ab10a247c6a07ace630aaf6dd
+SIZE (rocky/g/gtk3-3.24.31-8.el9.aarch64.rpm) = 4978946
+SHA256 (rocky/g/gtk3-3.24.31-8.el9.i686.rpm) = a1a3500c69627a842655ed4be59ab110095d12481ce184735268c2df0bd23df4
+SIZE (rocky/g/gtk3-3.24.31-8.el9.i686.rpm) = 5302417
+SHA256 (rocky/g/gtk3-3.24.31-8.el9.x86_64.rpm) = c2fd1bcfd0dc62611ba7cbd54d555738a683892f79db22818198a42ef2c72c3e
+SIZE (rocky/g/gtk3-3.24.31-8.el9.x86_64.rpm) = 5077818
+SHA256 (rocky/g/gtk3-3.24.31-8.el9.src.rpm) = 1dde0309d105a97f51fc59ea387ccab0567e07725920bda0ba5334af51e41cb1
+SIZE (rocky/g/gtk3-3.24.31-8.el9.src.rpm) = 22492789

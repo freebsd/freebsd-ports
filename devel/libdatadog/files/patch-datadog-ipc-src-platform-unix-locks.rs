@@ -1,0 +1,11 @@
+--- datadog-ipc/src/platform/unix/locks.rs.orig	2023-03-27 13:18:03 UTC
++++ datadog-ipc/src/platform/unix/locks.rs
+@@ -78,6 +78,8 @@ impl FLock {
+             l_start: 0,
+             l_len: 0,
+             l_pid: 0,
++            #[cfg(target_os = "freebsd")]
++            l_sysid: 0,
+         };
+ 
+         match nix::fcntl::fcntl(this.fd, FcntlArg::F_SETLK(&lock)) {

@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	2016-09-28 02:20:42 UTC
++++ man/Makefile.in
+@@ -202,7 +202,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ yakker = @yakker@
+-SUBDIRS = manl catl
++SUBDIRS = manl
+ all: all-recursive
+ 
+ .SUFFIXES:

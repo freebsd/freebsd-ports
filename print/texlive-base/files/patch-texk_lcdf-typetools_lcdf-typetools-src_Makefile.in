@@ -1,0 +1,22 @@
+--- texk/lcdf-typetools/lcdf-typetools-src/Makefile.in.orig	2024-07-12 16:22:16 UTC
++++ texk/lcdf-typetools/lcdf-typetools-src/Makefile.in
+@@ -164,8 +164,8 @@ am__uninstall_files_from_dir = { \
+   || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+	$(am__cd) "$$dir" && echo $$files | $(am__xargs_n) 40 $(am__rm_f); }; \
+   }
+-am__installdirs = "$(DESTDIR)$(encdir)" "$(DESTDIR)$(glyphlistdir)"
+-DATA = $(enc_DATA) $(glyphlist_DATA)
++am__installdirs =
++DATA =
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+   distclean-recursive maintainer-clean-recursive
+ am__recursive_targets = \
+@@ -724,7 +724,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-encDATA install-glyphlistDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 

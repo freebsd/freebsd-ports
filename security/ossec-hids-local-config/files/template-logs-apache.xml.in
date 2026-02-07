@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config os="FreeBSD" profile="%%LOGS_APACHE_PROFILE%%">
+
+  <localfile>
+    <log_format>apache</log_format>
+    <location>/var/log/httpd-error.log</location>
+  </localfile>
+
+  <localfile>
+    <log_format>apache</log_format>
+    <location>/var/log/httpd-access.log</location>
+  </localfile>
+
+</template_config>
+
+<template_config os="Linux" profile="%%LOGS_APACHE_PROFILE%%">
+
+  <localfile>
+    <log_format>apache</log_format>
+    <location>/var/log/apache2/error.log</location>
+  </localfile>
+
+  <localfile>
+    <log_format>apache</log_format>
+    <location>/var/log/apache2/access.log</location>
+  </localfile>
+
+</template_config>

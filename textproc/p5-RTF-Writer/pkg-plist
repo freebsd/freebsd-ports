@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/RTF::Cookbook.3.gz
+%%PERL5_MAN3%%/RTF::Writer.3.gz
+%%PERL5_MAN3%%/RTF::Writer::TableRowDecl.3.gz
+%%SITE_PERL%%/RTF/Cookbook.pod
+%%SITE_PERL%%/RTF/Writer.pm
+%%SITE_PERL%%/RTF/Writer.pod
+%%SITE_PERL%%/RTF/Writer/TableRowDecl.pm

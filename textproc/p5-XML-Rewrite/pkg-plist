@@ -1,0 +1,8 @@
+bin/xmlrewrite
+%%PERL5_MAN1%%/xmlrewrite.1.gz
+%%SITE_PERL%%/XML/Rewrite.pm
+%%SITE_PERL%%/XML/Rewrite.pod
+%%SITE_PERL%%/XML/Rewrite/Schema.pm
+%%SITE_PERL%%/XML/Rewrite/Schema.pod
+%%PERL5_MAN3%%/XML::Rewrite.3.gz
+%%PERL5_MAN3%%/XML::Rewrite::Schema.3.gz

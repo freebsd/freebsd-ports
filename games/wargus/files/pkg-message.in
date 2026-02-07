@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Wartool has been installed to "%%PREFIX%%/bin/wartool".
+Wargus has been installed to "%%PREFIX%%/bin/wargus"
+
+Either can be used to extract Warcraft 2 data for use with the
+Stratagus engine from the following sources:
+
+* Original Warcraft 2 DOS REZDAT.WAR
+* Battle.Net Edition INSTALL.MPQ/INSTALL.EXE
+* GoG installation exe
+
+Manual for wargus:	man 6 wargus
+Manual for wartool:	man 6 wartool
+
+For more information, please visit: https://stratagus.com/
+EOM
+}
+]

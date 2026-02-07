@@ -1,0 +1,4 @@
+%%SITE_PERL%%/CatalystX/Profile/Controller/ControlProfiling.pm
+%%SITE_PERL%%/CatalystX/Profile.pm
+%%PERL5_MAN3%%/CatalystX::Profile.3.gz
+%%PERL5_MAN3%%/CatalystX::Profile::Controller::ControlProfiling.3.gz

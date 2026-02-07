@@ -1,0 +1,7 @@
+Find recursive dependencies of 'R' packages from various sources. Solve the
+dependencies to obtain a consistent set of packages to install. Download
+packages, and install them. It supports packages on 'CRAN', 'Bioconductor' and
+other 'CRAN-like' repositories, 'GitHub', package 'URLs', and local package
+trees and files. It caches metadata and package files via the 'pkgcache'
+package, and performs all 'HTTP' requests, downloads, builds and installations
+in parallel. 'pkgdepends' is the workhorse of the 'pak' package.

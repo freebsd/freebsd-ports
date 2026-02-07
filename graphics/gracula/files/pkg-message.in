@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+        Please read the file %%DOCSDIR%%/README
+        to learn how to use Graphic Counter Language (if you haven't
+	installed WITHOUT=DOCS).
+
+        An introductory tutorial, and a GCL FAQ, can be found at
+        http://www.whizkidtech.redprince.net/gcl/
+        You should read both to take full advantage of the power
+        of Graphic Counter Language.
+
+        Also, sample scripts and graphics are available from
+        Count Gracula's Gallery,
+        http://www.whizkidtech.redprince.net/gcl/gallery/
+EOM
+}
+]

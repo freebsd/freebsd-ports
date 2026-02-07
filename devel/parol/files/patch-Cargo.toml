@@ -1,0 +1,13 @@
+- prevent breakage due to crates/.cargo inclusion
+
+--- Cargo.toml.orig	2025-09-20 09:01:51 UTC
++++ Cargo.toml
+@@ -3,7 +3,7 @@ members = [
+ resolver = "2"
+ 
+ members = [
+-  "crates/*",
++  "crates/parol",
+ ]
+ 
+ exclude = [

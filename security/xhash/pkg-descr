@@ -1,0 +1,11 @@
+This Go program uses goroutines to calculate multiple hashes on strings & files.
+
+The output format is fully configurable.
+
+Supported hashes:
+- All Blake2b
+- Blake2s256
+- All SHA-3
+- All SHA-2
+- Legacy SHA-1, MD5
+- HMAC for some of the above.

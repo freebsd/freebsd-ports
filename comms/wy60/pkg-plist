@@ -1,0 +1,3 @@
+bin/wy60
+@sample etc/wy60.rc.sample
+share/man/man1/wy60.1.gz

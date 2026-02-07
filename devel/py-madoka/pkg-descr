@@ -1,0 +1,3 @@
+Madoka is an implementation of a Count-Min sketch data structure for
+summarizing data streams. String-int pairs in a Madoka-Sketch may take
+less memory than in a standard Python dict, Counter, Redis.

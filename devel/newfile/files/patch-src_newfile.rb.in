@@ -1,0 +1,11 @@
+--- src/newfile.rb.in.orig	2015-01-23 10:28:31 UTC
++++ src/newfile.rb.in
+@@ -431,7 +431,7 @@ class NewfileOpts
+       |proj|
+       arr = proj.split(".")
+       @opts["template"] = arr[0]
+-      @opts["project"] = arr[1]
++      @opts["project"] = arr.drop(1).join('.')
+     }
+     @parser.def_option("-s", "--show",
+ 		     "Show installed file templates, project#{NL}" +

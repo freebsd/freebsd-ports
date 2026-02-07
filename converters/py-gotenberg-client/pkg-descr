@@ -1,0 +1,5 @@
+This is a Python client for interfacing with Gotenberg, which in turn is
+a wrapper around powerful tools for PDF generation and creation in various
+ways, using a stateless API.
+
+It's a very powerful tool to generate and manipulate PDFs.

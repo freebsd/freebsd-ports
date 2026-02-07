@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# PROVIDE: bind_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bind_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable bind_exporter.
+# bind_exporter_user (string):          Set user that bind_exporter will run under
+#               Default is "nobody".
+# bind_exporter_group (string):         Set group that bind_exporter will run under
+#               Default is "nobody".
+# bind_exporter_args (string):          Set extra arguments to pass to bind_exporter
+#               Default is "".
+# bind_exporter_listen_address (string):Set ip:port that bind_exporter will listen on
+#               Default is ":9119".
+# bind_exporter_stats_url (string):     Set URL where BIND is serving statistics
+#               Default is "http://localhost:8053/".
+# bind_exporter_named_pidfile (path):   Set path to named's pidfile
+#               Default is "/var/run/named/pid".
+
+. /etc/rc.subr
+
+name=bind_exporter
+desc="Prometheus exporter for BIND"
+rcvar=bind_exporter_enable
+
+load_rc_config $name
+
+: ${bind_exporter_enable:="NO"}
+: ${bind_exporter_user:="nobody"}
+: ${bind_exporter_group:="nobody"}
+: ${bind_exporter_args:=""}
+: ${bind_exporter_listen_address:=":9119"}
+: ${bind_exporter_stats_url:="http://localhost:8053/"}
+: ${bind_exporter_named_pidfile:="/var/run/named/pid"}
+
+
+pidfile=/var/run/bind_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/bind_exporter"
+command_args="-f -p ${pidfile} -T ${name} \
+    /usr/bin/env ${procname} \
+    --web.listen-address=${bind_exporter_listen_address} \
+    --bind.pid-file=${bind_exporter_named_pidfile} \
+    --bind.stats-url=${bind_exporter_stats_url} \
+    ${bind_exporter_args}"
+
+start_precmd=bind_exporter_startprecmd
+
+bind_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${bind_exporter_user} \
+            -g ${bind_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

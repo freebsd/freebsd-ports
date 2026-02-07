@@ -1,0 +1,2 @@
+Console provides beautiful console logging for Ruby applications. Implements
+fast, buffered log output.

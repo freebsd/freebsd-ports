@@ -1,0 +1,2 @@
+Mirrorselect is an HTTP backend service that selects the pkg(8) mirrors
+according to their "distances" to the client.

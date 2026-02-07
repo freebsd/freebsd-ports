@@ -1,0 +1,33 @@
+PORTNAME=	nmrpflash
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.25
+CATEGORIES=	sysutils
+
+MAINTAINER=	se@FreeBSD.org
+COMMENT=	Unofficial flash tool for Netgear network devices
+WWW=		https://github.com/jclehner/nmrpflash
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jclehner
+
+MAKE_FLAGS=	VERSION=${DISTVERSION}
+
+ALL_TARGET=	${PORTNAME}
+
+PLIST_FILES=	sbin/${PORTNAME}
+PORTDOCS=	README.md README-R7000.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README-R7000.md ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.mk>

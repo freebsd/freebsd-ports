@@ -1,0 +1,14 @@
+Jhead is a command line driven program for manipulating the non-image parts of
+Exif flavour JPEG files that most digital cameras produce.
+
+It has the following features:
+- Extracting camera settings from Exif image files
+- Able to set and/or adjust the Exif time field
+- Manipulation (extract, replace, regenerate) of Exif integral thumbnails
+- Transplant Exif image header from one JPEG to another
+- Edit JPEG comment fields
+- Automatically rotate images upright (using jpegtran) according to
+  "orientation" tag.
+- Manage running programs on large batches of Jpegs and restoring Exif header
+  information afterwards.
+- Display embedded GPS info (if present)

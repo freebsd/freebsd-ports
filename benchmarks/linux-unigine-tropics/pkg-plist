@@ -1,0 +1,8 @@
+bin/unigine-tropics_1024x768_windowed.sh
+bin/unigine-tropics_1920x1080_fullscreen.sh
+%%DATADIR%%/bin/Tropics
+%%DATADIR%%/bin/libUnigine_x86.so
+%%DATADIR%%/data/core.ung
+%%DATADIR%%/data/demos/tropics.zip
+%%DATADIR%%/data/scripts.ung
+%%DATADIR%%/data/unigine.cfg

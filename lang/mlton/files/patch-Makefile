@@ -1,0 +1,15 @@
+--- Makefile.orig	2021-08-16 18:18:28 UTC
++++ Makefile
+@@ -387,9 +387,11 @@ install-no-strip:
+ 		-e "s;^LIB_REL_BIN=.*;LIB_REL_BIN=\"$(TLIB_REL_TBIN)\";" \
+ 		< "$(BIN)/$(MLTON)" > "$(TBIN)/$(MLTON)"
+ 	$(CHMOD) a+x "$(TBIN)/$(MLTON)"
+-	$(CP) "$(LIB)/." "$(TLIB)/"
++#	$(CP) "$(LIB)/." "$(TLIB)/"
+ 	$(MKDIR) "$(TMAN)"
+ 	cd "$(SRC)/man" && $(CP) $(MAN_PAGES) "$(TMAN)/"
++	cd "$(LIB)" && $(CP) include mlton-compile \
++		sml static-library targets "$(TLIB)/"
+ ifeq (true, $(GZIP_MAN))
+ 	cd "$(TMAN)" && $(GZIP) --force --best $(MAN_PAGES);
+ endif

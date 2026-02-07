@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Set/Scalar.pm
+%%SITE_PERL%%/Set/Scalar/Base.pm
+%%SITE_PERL%%/Set/Scalar/Null.pm
+%%SITE_PERL%%/Set/Scalar/Real.pm
+%%SITE_PERL%%/Set/Scalar/ValuedUniverse.pm
+%%SITE_PERL%%/Set/Scalar/Valued.pm
+%%SITE_PERL%%/Set/Scalar/Virtual.pm
+%%SITE_PERL%%/Set/Scalar/Universe.pm
+%%PERL5_MAN3%%/Set::Scalar.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Base.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Null.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Real.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Virtual.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Valued.3.gz
+%%PERL5_MAN3%%/Set::Scalar::ValuedUniverse.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Universe.3.gz

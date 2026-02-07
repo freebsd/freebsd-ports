@@ -1,0 +1,3 @@
+This class is the base class for all time zone objects. A time zone is
+represented internally as a set of observances, each of which describes the
+offset from GMT for a given time period.

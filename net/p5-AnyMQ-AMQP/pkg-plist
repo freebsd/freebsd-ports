@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/AnyMQ::AMQP.3.gz
+%%SITE_PERL%%/AnyMQ/AMQP.pm
+%%SITE_PERL%%/AnyMQ/Topic/Trait/AMQP.pm
+%%SITE_PERL%%/AnyMQ/Trait/AMQP.pm

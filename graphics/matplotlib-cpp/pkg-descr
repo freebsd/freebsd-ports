@@ -1,0 +1,2 @@
+matplotlib-cpp is possibly the simplest C++ plotting library. It is built to
+resemble the plotting API used by Matlab and matplotlib.

@@ -1,0 +1,63 @@
+# Upstream PR: https://bugzilla.mozilla.org/show_bug.cgi?id=1128119
+===================================================================
+--- extensions/MoreBugUrl/Extension.pm.orig	2016-02-15 15:30:02 UTC
++++ extensions/MoreBugUrl/Extension.pm
+@@ -22,6 +22,7 @@ use constant MORE_SUB_CLASSES => qw(
+     Bugzilla::Extension::MoreBugUrl::PHP
+     Bugzilla::Extension::MoreBugUrl::Redmine
+     Bugzilla::Extension::MoreBugUrl::Savane
++    Bugzilla::Extension::MoreBugUrl::Phabricator
+ );
+ 
+ # We need to update bug_see_also table because both
+--- extensions/MoreBugUrl/lib/Phabricator.pm.orig	2016-02-15 15:40:28 UTC
++++ extensions/MoreBugUrl/lib/Phabricator.pm
+@@ -0,0 +1,41 @@
++# This Source Code Form is subject to the terms of the Mozilla Public
++# License, v. 2.0. If a copy of the MPL was not distributed with this
++# file, You can obtain one at http://mozilla.org/MPL/2.0/.
++#
++# This Source Code Form is "Incompatible With Secondary Licenses", as
++# defined by the Mozilla Public License, v. 2.0.
++
++package Bugzilla::Extension::MoreBugUrl::Phabricator;
++
++use 5.10.1;
++use strict;
++use warnings;
++
++use parent qw(Bugzilla::BugUrl);
++
++###############################
++####        Methods        ####
++###############################
++
++sub should_handle {
++    my ($class, $uri) = @_;
++    return ($uri->path =~ m|^/T\d+$|) ? 1 : 0;
++}
++
++sub _check_value {
++    my $class = shift;
++
++    my $uri = $class->SUPER::_check_value(@_);
++
++    # Phabricator URLs have only one form:
++    #   http://example.com/T111
++
++    # Make sure there are no query parameters.
++    $uri->query(undef);
++    # And remove any # part if there is one.
++    $uri->fragment(undef);
++
++    return $uri;
++}
++
++1;
+--- extensions/MoreBugUrl/template/en/default/hook/global/user-error-bug_url_invalid_tracker.html.tmpl.orig	2015-12-22 21:22:11 UTC
++++ extensions/MoreBugUrl/template/en/default/hook/global/user-error-bug_url_invalid_tracker.html.tmpl
+@@ -14,3 +14,4 @@
+ <li>A b[% %]ug on b[% %]ugs.php.net.</li>
+ <li>An issue in a Redmine installation.</li>
+ <li>A b[% %]ug in a Savane installation.</li>
++<li>A task in a Phabricator installation.</li>

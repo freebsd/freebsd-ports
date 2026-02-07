@@ -1,0 +1,67 @@
+--- Makefile.in.orig	2008-03-06 06:58:16.000000000 +0900
++++ Makefile.in	2014-02-01 11:53:20.000000000 +0900
+@@ -15,9 +15,9 @@
+ bindir = $(exec_prefix)
+ libdir = $(prefix)/lib
+ infodir = $(prefix)/info
+-#mandir = @mandir@
+-mandir = /usr/share/man
+-creditsfile = @CREDITSFILE@
++mandir = @mandir@
++#mandir = /usr/share/man
++creditsfile = $(prefix)/CREDITS
+ distversion = 2.1.1.0
+ 
+ @SET_MAKE@
+@@ -65,8 +65,8 @@
+ 	for i in levels/*.xgl; do $(INSTALL) $$i $(DESTDIR)$(prefix)/$$i ; done
+ 	for i in sounds/*.raw; do $(INSTALL) $$i $(DESTDIR)$(prefix)/$$i ; done
+ 	$(INSTALL) CREDITS $(DESTDIR)$(creditsfile)
+-	$(INSTALL) xgalaga.6x.gz $(mandir)/man6/xgalaga.6x.gz
+-	chmod 644 $(mandir)/man6/xgalaga.6x.gz
++	$(INSTALL) xgalaga.6x.gz $(DESTDIR)$(mandir)/man6/xgalaga.6x.gz
++#	chmod 644 $(mandir)/man6/xgalaga.6x.gz
+ #	touch $(prefix)/scores
+ #	chmod 666 $(prefix)/scores
+ #       chown ${GAMEOWN}:${GAMEGRP} $(prefix)/scores
+@@ -74,14 +74,14 @@
+ #       chmod ${GAMEMODE} $(bindir)/$(TARGET)
+ #       chmod ${GAMEDATAMODE} $(prefix)/scores
+ 
+-subdirs:
+-	for i in $(SUBDIRS); do cd $$i ; make ; done
++$(SUBDIRS)::
++	$(MAKE) -C $@
+ 
+-$(TARGET): subdirs $(OBJS)
++$(TARGET): $(SUBDIRS) $(OBJS)
+ 	$(RM) $(TARGET)
+ 	$(CC) $(LDFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
+ 
+-$(TARGET2): subdirs $(OBJS_HYPER)
++$(TARGET2): $(SUBDIRS) $(OBJS_HYPER)
+ 	$(RM) $(TARGET2)
+ 	$(CC) $(LDFLAGS) -o $(TARGET2) $(OBJS_HYPER) $(LIBS)
+ 
+@@ -98,17 +98,17 @@
+ 	$(RM) core *.o $(OBJS) $(OBJS_HYPER) $(TARGET) $(TARGET2) $(MANPAGE)
+ 
+ dist: clean
+-	cd libsprite;make clean
++	$(MAKE) -C libsprite clean
+ 	if test -d xgalaga-$(distverson) ; then echo -n; else  mkdir xgalaga-$(distversion); fi
+ 	cp -rf $(SRCS) configure *.in *.sub *.guess images sounds xgal.sndsrv.*.c libsprite README* INSTALL CHANGES CREDITS xgalaga.6x *.h install-sh levels mkimgsrc* mkinstalldirs xgalaga-$(distversion)
+-	cd xgalaga-$(distversion); rm -f config.h
+-	cd xgalaga-$(distversion)/libsprite; make distclean ; rm -rf CVS
++	rm -f xgalaga-$(distversion)/config.h
++	$(MAKE) -C xgalaga-$(distversion)/libsprite distclean
+ 	find xgalaga-$(distversion) -name "CVS" -exec rm -rf {} \; -prune
+ 	tar czvf xgalaga-$(distversion).tar.gz xgalaga-$(distversion)
+ 
+ distclean: clean
+ 	$(RM) Makefile config.h config.status config.cache config.log
+-	cd libsprite;$(MAKE) distclean
++	$(MAKE) -C libsprite distclean
+ 
+ depend:
+ 	makedepend $(CFLAGS) $(SRCS)

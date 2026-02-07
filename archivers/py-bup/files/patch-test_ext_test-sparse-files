@@ -1,0 +1,15 @@
+--- test/ext/test-sparse-files.orig	2021-01-09 22:11:10 UTC
++++ test/ext/test-sparse-files
+@@ -31,6 +31,12 @@ if [ "$probe_size" -ge "$((data_size / 1024))" ]; then
+     exit 0
+ fi
+ 
++if [ "$(current-filesystem)" == "zfs" ]; then
++    WVSTART "WARNING!! If zfs compression is enabled in the current " \
++       "filesytem, sparse test might fail!!. " \
++    " See https://groups.google.com/forum/#!topic/bup-list/NZCJ5wHwbFE"
++fi
++
+ WVSTART "sparse restore on $(current-filesystem), assuming ${block_size}B blocks"
+ 
+ WVPASS bup init

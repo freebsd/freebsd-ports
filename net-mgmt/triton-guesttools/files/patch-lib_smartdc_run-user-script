@@ -1,0 +1,11 @@
+--- lib/smartdc/run-user-script.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/run-user-script
+@@ -10,7 +10,7 @@
+ # This script is executed on each system boot
+ 
+ # load common functions and vars
+-. /lib/smartdc/common.lib
++. %%PREFIX%%/lib/smartdc/common.lib
+ 
+ lib_triton_info "Retrieving metadata user-script..."
+ $MDATA_GET user-script >/var/tmp/mdata-user-script.new

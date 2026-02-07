@@ -1,0 +1,19 @@
+--- ./ifstated.conf-sample.orig	2012-01-03 20:24:21.000000000 -0500
++++ ./ifstated.conf-sample	2012-01-03 20:26:25.000000000 -0500
+@@ -18,12 +18,12 @@
+ # The "net" addresses are other addresses which can be used to determine
+ # whether we have connectivity. Make sure the hosts are always up, or
+ # test multiple ip's, 'or'-ing the tests.
+-net = '( "ping -q -c 1 -w 1 192.168.6.8 > /dev/null" every 10 && \
+-    "ping -q -c 1 -w 1 192.168.3.8 > /dev/null" every 10)'
++net = '( "ping -q -c 1 -W 1000 192.168.6.8 > /dev/null" every 10 && \
++    "ping -q -c 1 -W 1000 192.168.3.8 > /dev/null" every 10)'
+ 
+ # The peer addresses below are the real ip addresses of the OTHER firewall
+-peer = '( "ping -q -c 1 -w 1 192.168.6.7 > /dev/null" every 10 && \
+-    "ping -q -c 1 -w 1 192.168.3.7 > /dev/null" every 10)'
++peer = '( "ping -q -c 1 -W 1000 192.168.6.7 > /dev/null" every 10 && \
++    "ping -q -c 1 -W 1000 192.168.3.7 > /dev/null" every 10)'
+ 
+ state auto {
+ 	if $carp_up

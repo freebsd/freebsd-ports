@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+Healthchecks is located in its home directory %%HOMEDIR%% and can be run like any
+Django application using 'hcks runserver' but for production use it is recommended
+to use uWSGI or Gunicorn.
+
+If you plan to use uWSGI, install www/uwsgi and configure in your rc.conf(5):
+
+  sysrc uwsgi_enable="YES"
+  sysrc uwsgi_procname="uWSGI"
+  sysrc uwsgi_profiles="hc"
+  sysrc uwsgi_hc_socket="/var/run/healthchecks/hc.sock"
+  sysrc uwsgi_hc_socket_owner="healthchecks:www"
+  sysrc uwsgi_hc_uid="healthchecks"
+  sysrc uwsgi_hc_gid="healthchecks"
+  sysrc uwsgi_hc_configfile="%%EXAMPLESDIR%%/uwsgi.ini"
+  sysrc uwsgi_hc_pidfile="/var/run/healthchecks/hc.pid"
+  sysrc uwsgi_hc_logfile="/var/log/healthchecks/hc.log"
+EOM
+}
+]

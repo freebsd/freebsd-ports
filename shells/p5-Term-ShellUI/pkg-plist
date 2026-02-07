@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Term::ShellUI.3.gz
+%%PERL5_MAN3%%/Text::Shellwords::Cursor.3.gz
+%%SITE_PERL%%/Term/ShellUI.pm
+%%SITE_PERL%%/Text/Shellwords/Cursor.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileman-example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis-big
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tui-sample

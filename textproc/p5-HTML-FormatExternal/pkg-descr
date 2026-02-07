@@ -1,0 +1,9 @@
+HTML-FormatExternal lets you turn HTML into plain text using one of
+the browsing/formatting programs,
+
+    elinks        www/elinks
+    html2text     textproc/html2text
+    links         www/links
+    lynx          www/lynx
+    netrik        www/netrik
+    w3m           www/w3m

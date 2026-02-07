@@ -1,0 +1,17 @@
+Image::Size is a library based on the image-sizing code in the wwwimagesize
+script, a tool that analyzes HTML files and adds HEIGHT and WIDTH tags to
+IMG directives. Image::Size has generalized that code to return a raw (X, Y)
+pair, and included wrappers to pre-format that output into either HTML or a
+set of attribute pairs suitable for the CGI.pm library by Lincoln Stein.
+Currently, Image::Size can size images in XPM, XBM, GIF, JPEG and PNG
+formats.
+
+I did this because my WWW server generates a lot of documents on demand
+rather than keeping them in static files. These documents not only use
+directional icons and buttons, but other graphics to annotate and highlight
+sections of the text. Without size attributes, browsers cannot render the
+text of a page until the image data is loaded and the size known for layout.
+This library enables scripts to size their images at run-time and include
+that as part of the generated HTML. Or for any other utility that uses and
+manipulates graphics. The idea of the basic interface + wrappers is to not
+limit the programmer to a certain data format.

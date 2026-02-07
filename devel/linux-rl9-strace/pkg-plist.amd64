@@ -1,0 +1,10 @@
+usr/bin/strace
+usr/bin/strace-log-merge
+usr/share/man/man1/strace-log-merge.1.gz
+usr/share/man/man1/strace.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog-CVS.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.gz
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,0 +1,21 @@
+===============================================================================
+
+ ATENTION!!!
+
+ The EMBOSS port is currently affected by a CONFLICTS condition.
+ If you install the port in the default prefix
+ PREFIX = LOCALBASE = %%LOCALBASE%%
+ it will conflict with other ports that install applications with the 
+ same name, in the same places. 
+
+ It is highly recommended that you install EMBOSS to a different prefix,
+ for example PREFIX=%%LOCALBASE%%/emboss
+ In this case, all of the documentation and examples will be installed 
+ within this PREFIX. 
+
+ If you still choose to install EMBOSS on the default prefix, do note 
+ that documentation, examples and shared data will not be installed 
+ in the usual places for a FreeBSD port (i.e. docs in
+ PREFIX/share/EMBOSS/doc instead of in PREFIX/share/doc/EMBOSS).
+
+===============================================================================

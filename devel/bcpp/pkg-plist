@@ -1,0 +1,4 @@
+bin/bcpp
+@sample etc/bcpp.cfg.sample
+%%PORTDOCS%%%%DOCSDIR%%/hirachy.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt

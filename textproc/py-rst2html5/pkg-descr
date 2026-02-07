@@ -1,0 +1,2 @@
+rst2html5 generates HTML5 documents from standalone reStructuredText sources.
+It's complet rewrite of the docutils rst2html.

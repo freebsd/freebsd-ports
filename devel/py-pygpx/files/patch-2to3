@@ -1,0 +1,44 @@
+--- pygpx.py.orig	2006-07-30 12:33:23 UTC
++++ pygpx.py
+@@ -44,7 +44,7 @@ class GPXTrackPt:
+             elif node.nodeName == "ele":
+                 self.elevation = float(node.firstChild.data)
+             else:
+-                raise ValueError, "Can't handle node", node.nodeName
++                raise ValueError("Can't handle node").with_traceback(node.nodeName)
+ 
+     def distance(self, other):
+         """Compute the distance from this point to another."""
+@@ -72,7 +72,7 @@ class GPXTrackSeg:
+             elif node.nodeName == "trkpt":
+                 self.trkpts.append(GPXTrackPt(node, self.version))
+             else:
+-                raise ValueError, "Can't handle node <%s>" % node.nodeName
++                raise ValueError("Can't handle node <%s>" % node.nodeName)
+ 
+     def distance(self):
+         """Return the distance along the track segment."""
+@@ -105,7 +105,7 @@ class GPXTrack:
+             elif node.nodeName == "number":
+                 self.name = node.firstChild.data                
+             else:
+-                raise ValueError, "Can't handle node <%s>" % node.nodeName
++                raise ValueError("Can't handle node <%s>" % node.nodeName)
+ 
+     def distance(self):
+         """Return the distance for this track."""
+@@ -155,7 +155,7 @@ class GPX:
+         if self.version == "1.0":
+             self._init_version_1_0()
+         else:
+-            raise ValueError, "Can't handle version", self.version
++            raise ValueError("Can't handle version").with_traceback(self.version)
+ 
+     def _init_version_1_0(self):
+         """Initialise a version 1.0 GPX instance."""
+@@ -168,4 +168,4 @@ class GPX:
+             elif node.nodeName == "trk":
+                 self.tracks.append(GPXTrack(node, self.version))
+             else:
+-                raise ValueError, "Can't handle node", node.nodeName
++                raise ValueError("Can't handle node").with_traceback(node.nodeName)

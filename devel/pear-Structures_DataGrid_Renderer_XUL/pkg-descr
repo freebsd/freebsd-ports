@@ -1,0 +1,2 @@
+Renderer driver for pear-Structures_DataGrid that generates the XML string
+for a XUL listbox.

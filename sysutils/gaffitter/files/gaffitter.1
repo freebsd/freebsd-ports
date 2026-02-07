@@ -1,0 +1,190 @@
+.TH GAFFITTER "1" "August 2008" "gaffitter 0.6.0" "User Commands"
+.SH NAME
+gaffitter \- Genetic Algorithm File Fitter
+.SH SYNOPSIS
+.B gaffitter
+\fI-t target\fR[\fIunit\fR] [\fIoptions\fR...] \fI<files>\fR
+.PP
+\fIcommand\fR | \fBgaffitter\fR - \fI-t target\fR[\fIunit\fR] [\fIoptions\fR...] \fI[files]\fR
+.PP
+the unit suffixes 'k', 'm', 'g' or 't' can be used, where:
+.PP
+k = KB/KiB, m = MB/MiB, g = GB/GiB and t = TB/TiB [default = bytes]
+.SH DESCRIPTION
+Genetic Algorithm File Fitter, GAFFitter for short, is a tool based on a genetic algorithm (GA) that tries to fit a collection of items into as few as possible volumes of a specific size. 
+.PP
+For example, the items might be files/directories and the volumes might be CDs or DVDs. 
+.PP
+The task of arranging items in such manner that the number of required bins is minimized is called Bin Packing, a NP-hard combinatorial problem for which no deterministic polynomial-time algorithm is known. Using heuristics, such as GAs, it is usually possible to approximate -- and often reach -- the best solution for the problem within a reasonable time.
+.SS "General options:"
+.HP
+\fB\-t\fR <f>[unit], \fB\-\-target\fR <f>[unit]
+.IP
+target size (mandatory), f>0.0
+.HP
+\fB\-\-si\fR
+.IP
+use powers of 1000 (not 1024) for target, min, max and output sizes
+.HP
+\fB\-\-bins\fR <n>, \fB\-\-vols\fR <n>
+.IP
+maximum number of bins (volumes) [default = "unlimited"]
+.HP
+\fB\-v\fR, \fB\-\-verbose\fR
+.IP
+verbose
+.HP
+\fB\-\-min\fR <f>[unit], \fB\-\-min\-size\fR <f>[unit]
+.IP
+minimum file size [default = none]
+.HP
+\fB\-\-max\fR <f>[unit], \fB\-\-max\-size\fR <f>[unit]
+.IP
+maximum file size [default = none]
+.HP
+\fB\-B\fR <n>, \fB\-\-block\-size\fR <n>
+.IP
+the smallest amount of bytes a file can occupy [default = 1]
+.HP
+\fB\-\-ss\fR, \fB\-\-show\-size\fR
+.IP
+print the size of each file
+.HP
+\fB\-\-sb\fR, \fB\-\-show\-bytes\fR
+.IP
+also print the sizes in bytes
+.HP
+\fB\-\-hi\fR, \fB\-\-hide\-items\fR
+.IP
+don't print the selected items
+.HP
+\fB\-\-hs\fR, \fB\-\-hide\-summary\fR
+.IP
+hide summary line containing sum, difference and number of
+selected items
+.HP
+\fB\-s\fR, \fB\-\-sort\-by\-size\fR
+.IP
+sort the output by size, not by name
+.HP
+\fB\-n\fR, \fB\-\-no\-case\fR
+.IP
+use case\-insensitive sorting
+.HP
+\fB\-r\fR, \fB\-\-sort\-reverse\fR
+.IP
+sort the output in reverse order
+.HP
+\fB\-z\fR, \fB\-\-null\-data\fR
+.IP
+assume NULL (\e0) as the delimiter of input files via stdin (pipe)
+.HP
+\fB\-Z\fR, \fB\-\-null\fR
+.IP
+same as \fB\-\-dw\fR '\e0'. See also the \fB\-0\fR and \fB\-\-hs\fR options
+.HP
+\fB\-0\fR, \fB\-\-null\-bins\fR
+.IP
+same as \fB\-\-bs\fR '\e0'. See also the \fB\-Z\fR and \fB\-\-hs\fR options
+.HP
+\fB\-\-bs\fR <char>, \fB\-\-bins\-separator\fR <char>
+.IP
+separate bins (vols) with "char" [default = newline]
+.HP
+\fB\-\-ew\fR <char>, \fB\-\-enclose\-with\fR <char>
+.IP
+enclose file names with "char" [default = none]
+.HP
+\fB\-\-dw\fR <char>, \fB\-\-delimit\-with\fR <char>
+.IP
+delimit file names (lines) with "char" [default = newline]
+.HP
+\fB\-\-version\fR
+.IP
+print GAFFitter version and exit
+.HP
+\fB\-h\fR, \fB\-\-help\fR
+.IP
+print this help and exit
+.SS "Direct Input options:"
+.HP
+\fB\-\-di\fR, \fB\-\-direct\-input\fR
+.IP
+switch to direct input mode, i.e., read directly "size identifier"
+pairs instead of file names
+.HP
+\fB\-\-di\-b\fR, \fB\-\-di\-bytes\fR
+.IP
+assume input sizes as bytes
+.HP
+\fB\-\-di\-k\fR, \fB\-\-di\-kb\fR
+.IP
+assume input sizes as kibi bytes (KiB); KB if \fB\-\-di\-si\fR
+.HP
+\fB\-\-di\-m\fR, \fB\-\-di\-mb\fR
+.IP
+assume input sizes as mebi bytes (MiB); MB if \fB\-\-di\-si\fR
+.HP
+\fB\-\-di\-g\fR, \fB\-\-di\-gb\fR
+.IP
+assume input sizes as gibi bytes (GiB); GB if \fB\-\-di\-si\fR
+.HP
+\fB\-\-di\-t\fR, \fB\-\-di\-tb\fR
+.IP
+assume input sizes as tebi bytes (TiB); TB if \fB\-\-di\-si\fR
+.HP
+\fB\-\-di\-si\fR
+.IP
+use powers of 1000 (not 1024) for input sizes
+.SS "Genetic Algorithm options:"
+.HP
+\fB\-\-ga\-s\fR <n>, \fB\-\-ga\-seed\fR <n>
+.IP
+GA initialization seed, n>=0 [default = 1]; 0 = random
+.HP
+\fB\-\-ga\-rs\fR, \fB\-\-ga\-random\-seed\fR
+.IP
+use random GA seed (same as \fB\-\-ga\-seed\fR 0)
+.HP
+\fB\-\-ga\-ng\fR <n>, \fB\-\-ga\-num\-generations\fR <n>
+.IP
+maximum number of generations, n>0 [default = auto]
+.HP
+\fB\-\-ga\-ps\fR <n>, \fB\-\-ga\-pop\-size\fR <n>
+.IP
+number of individuals, n>tournament_size [default = auto]
+.HP
+\fB\-\-ga\-cp\fR <f>, \fB\-\-ga\-cross\-prob\fR <f>
+.IP
+crossover probability, 0.0<=f<=1.0 [default = 0.95]
+.HP
+\fB\-\-ga\-mp\fR <f>, \fB\-\-ga\-mutation\-prob\fR <f>
+.IP
+mutation probability, 0.0<=f<=1.0 [default = 0.10]
+.HP
+\fB\-\-ga\-sp\fR <n>, \fB\-\-ga\-sel\-pressure\fR <n>
+.IP
+selection pressure (tournament size), 2<=n<pop_size [default = 2]
+.HP
+\fB\-\-ga\-theo\fR [n], \fB\-\-ga\-theoretical\fR [n]
+.IP
+stop if the theoretical minimum number of bins is reached. If n is
+given, it is assumed to be the theoretical minimum number of bins.
+.PP
+Other search methods
+.HP
+\fB\-\-ap\fR, \fB\-\-approximate\fR
+.IP
+local approximation using Best Fit search (non\-optimal but
+very fast)
+.HP
+\fB\-\-sp\fR, \fB\-\-split\fR
+.IP
+just split the input when target size is reached (preserves
+original order while splitting)
+.SH LICENSE
+This is free software. You may redistribute copies of it under the terms
+of the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+.SH AUTHOR
+Written by Douglas Adriano Augusto (daaugusto).

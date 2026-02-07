@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Digest/Haval256.pm
+%%SITE_ARCH%%/auto/Digest/Haval256/Haval256.so
+%%PERL5_MAN3%%/Digest::Haval256.3.gz

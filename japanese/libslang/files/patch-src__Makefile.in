@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	Tue May  7 00:20:07 2002
++++ src/Makefile.in	Tue May  7 00:21:34 2002
+@@ -38,8 +38,8 @@
+ exec_prefix = @exec_prefix@
+ install_lib_dir = @libdir@
+ install_include_dir = @includedir@
+-install_doc_dir = $(prefix)/doc/slang
+-DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
++install_doc_dir = $(prefix)/share/doc/slang
++DOC_FILES = ../changes.txt ../COPYING ../doc/slangdoc.html ../doc/text/*.txt
+ MODULE_INSTALL_DIR = @libdir@/slang/modules
+ #---------------------------------------------------------------------------
+ # DESTDIR is designed to facilitate making packages.  Normally it is empty
+@@ -150,7 +150,6 @@
+ 	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(DEST_INCDIR)
+ 	$(INSTALL_DATA) $(SRCDIR)/slkanji.h $(DEST_INCDIR)
+ install_docs: $(DEST_DOCDIR)
+-	$(INSTALL_DATA) $(DOC_FILES) $(install_doc_dir)/
+ 	@for i in $(DOC_FILES); \
+ 	do \
+ 		echo $(INSTALL_DATA) $$i $(DEST_DOCDIR)/; \

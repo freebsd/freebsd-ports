@@ -1,0 +1,2 @@
+On request, decodes all params from UTF-8 octets into a sequence of
+logical characters. On response, encodes body into UTF-8 octets.

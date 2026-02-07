@@ -1,0 +1,76 @@
+--- src/lib/fte/grid.c.orig	1993-04-25 23:53:11.000000000 +0200
++++ src/lib/fte/grid.c
+@@ -17,11 +17,14 @@ Copyright 1990 Regents of the University
+ #include "suffix.h"
+ 
+ #define RAD_TO_DEG	(180.0 / M_PI)
++#define LABEL_CHARS	20
+ 
+ static double *lingrid(), *loggrid();
+ static void polargrid(), smithgrid();
+ static void drawpolargrid( );
+ static void drawsmithgrid( );
++static void drawlingrid( );
++static void drawloggrid( );
+ 
+ static void arcset();
+ static double cliparc();
+@@ -225,7 +228,7 @@ lingrid(graph, lo, hi, delta, type, axis
+     int max;
+     static double dd[2];
+     int mult = 1;
+-    char buf[16], *s;
++    char buf[LABEL_CHARS], *s;
+     int slim, digits;
+ 
+     if (axis == y_axis && graph->grid.ysized) {
+@@ -473,11 +476,11 @@ lingrid(graph, lo, hi, delta, type, axis
+     return (dd);
+ }
+ 
+-static
++static void
+ drawlingrid(graph, units, spacing, nsp, dst, lmt, hmt, onedec, mult, mag,
+     digits, axis)
+     GRAPH *graph;
+-    char units[16];
++    char *units;
+     bool onedec;
+     int nsp, spacing, mult;
+     double hmt, lmt, dst;
+@@ -488,7 +491,7 @@ drawlingrid(graph, units, spacing, nsp, 
+ 
+     int i, j;
+     double m, step;
+-    char buf[16];
++    char buf[LABEL_CHARS];
+ 
+     /* i counts how many pixels we have drawn, and j counts which unit
+      * we are at.
+@@ -567,7 +570,7 @@ loggrid(graph, lo, hi, type, axis)
+     double k;
+     double decs;
+     double mag, gain;
+-    char buf[32], *s;
++    char buf[LABEL_CHARS], *s;
+ 
+     if (axis == x_axis && graph->grid.xsized) {
+       lmt = graph->grid.xaxis.log.lmt;
+@@ -661,7 +664,7 @@ loggrid(graph, lo, hi, type, axis)
+ 
+ }
+ 
+-static
++static void
+ drawloggrid(graph, units, hmt, lmt, decsp, subs, pp, axis)
+     GRAPH *graph;
+     char *units;
+@@ -671,7 +674,7 @@ drawloggrid(graph, units, hmt, lmt, decs
+ {
+     int i, j, k, l, m;
+     double t;
+-    char buf[16];
++    char buf[LABEL_CHARS];
+ 
+     /* Now plot every pp'th decade line, with subs lines between them. */
+     if (subs > 1)

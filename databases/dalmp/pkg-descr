@@ -1,0 +1,22 @@
+DALMP - Database Abstraction Layer for MySQL using PHP
+
+%0 fat, extremely easy to use. Only connect to database when needed.
+
+Details
+* Dependecy Injector (DI) support, load once, trigger when required.
+* APC, Disk, Memcache, Redis.io cache support.
+* Group caching cache by groups and flush by groups or individual keys.
+* Prepared statements ready, support dynamic building queries, auto
+  detect types (i,d,s,b).
+* Secure connections with SSL.
+* SQLite3 Encryption.
+* Save sessions in database (mysql/sqlite) or a cache like redis/memcache/apc.
+* Easy to use/install/adapt.
+* Nested Transactions (SAVEPOINT / ROLLBACK TO SAVEPOINT).
+* Support connections via unix_sockets.
+* SQL queues.
+* Export to CSV.
+* Trace/measure everything enabling the debugger.
+* Works out of the box with Cloud databases like Amazon RDS or Google cloud.
+* Lazy database connection. Connect only when needed.
+* PSR-0 compliance.

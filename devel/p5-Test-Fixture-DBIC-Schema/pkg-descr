@@ -1,0 +1,2 @@
+The Perl 5 module Test::Fixture::DBIC::Schema is a fixture data loader
+for DBIx::Class::Schema.

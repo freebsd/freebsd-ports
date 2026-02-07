@@ -1,0 +1,13 @@
+Multipart provides a parser for the multipart/form-data format. It can read from
+a file, a socket or a WSGI environment. The parser can be used to replace
+cgi.FieldStorage to work around its limitations.
+
+Features:
+- Parses multipart/form-data and application/x-www-form-urlencoded.
+- Produces useful error messages in 'strict'-mode.
+- Gracefully handle uploads of unknown size (missing Content-Length header).
+- Fast memory mapped files (io.BytesIO) for small uploads.
+- Temporary files on disk for big uploads.
+- Memory and disk resource limits to prevent DOS attacks.
+- Fixes many shortcomings and bugs of cgi.FieldStorage.
+- 100% test coverage.

@@ -1,0 +1,11 @@
+[all]
+arm_64bit=1
+dtparam=audio=on,i2c_arm=on,spi=on
+dtoverlay=mmc
+dtoverlay=disable-bt
+device_tree_address=0x4000
+kernel=u-boot.bin
+
+[pi4]
+hdmi_safe=1
+armstub=armstub8-gic.bin

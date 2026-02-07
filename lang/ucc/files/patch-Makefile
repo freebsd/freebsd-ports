@@ -1,0 +1,27 @@
+--- Makefile.orig	2011-12-31 14:41:27.000000000 +0800
++++ Makefile	2011-12-31 14:43:38.000000000 +0800
+@@ -1,5 +1,5 @@
+-UCCDIR = /usr/local/lib/ucc
+-export UCCDIR
++UCCDIR = ${PREFIX}
++#export UCCDIR
+ 
+ all:
+ 	make -C driver
+@@ -10,11 +10,11 @@
+ 	make -C ucl clean
+ 	
+ install:
+-	mkdir -p $(UCCDIR)
+-	cp driver/ucc $(UCCDIR)
+-	cp ucl/ucl $(UCCDIR)
+-	cp ucl/assert.o $(UCCDIR)
+-	cp -r ucl/linux/include $(UCCDIR)
++	mkdir -p $(UCCDIR)/include/ucc
++	cp driver/ucc $(UCCDIR)/bin
++	cp ucl/ucl $(UCCDIR)/bin
++	cp ucl/assert.o $(UCCDIR)/lib
++	cp ucl/linux/include/* $(UCCDIR)/include/ucc/
+ 
+ test:
+ 	make -C ucl test

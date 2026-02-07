@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -25,7 +25,7 @@ dependencies = [
+     "Programming Language :: Python",
+ ]
+ dependencies = [
+-    "numpy>=2.0",
++    "numpy",
+     "typing-extensions>=4.6.1,<5.0.0",
+ ]
+ 

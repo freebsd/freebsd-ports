@@ -1,0 +1,41 @@
+--- Makefile.orig	2024-03-01 11:31:48.391757000 -0800
++++ Makefile	2024-03-01 11:33:37.299163000 -0800
+@@ -2,7 +2,7 @@
+ 
+ # BASENAME should point to where the whole lot will be installed
+ # change BASENAME to your home directory if need be
+-BASENAME	= /usr
++BASENAME      = $(DESTDIR)$(PREFIX)
+ # For display in the man pages
+ VISIBLE_BASENAME= $(BASENAME)
+ 
+@@ -11,7 +11,7 @@
+ #ARCHITECTURE	=.sun4
+ 
+ BINDIR_TAIL	= bin$(ARCHITECTURE)
+-MANDIR		= $(BASENAME)/man
++MANDIR		= $(BASENAME)/share/man
+ BINDIR		= $(BASENAME)/$(BINDIR_TAIL)
+ VISIBLE_BINDIR	= $(VISIBLE_BASENAME)/$(BINDIR_TAIL)
+ # MAN1SUFFIX for regular utility manuals
+@@ -53,7 +53,11 @@
+ 
+ # Makefile.0 - mark, don't (re)move this, a sed script needs it
+ 
++.if defined(BATCH)
++LOCKINGTEST=/tmp .
++.else
+ LOCKINGTEST=__defaults__
++.endif
+ 
+ #LOCKINGTEST=/tmp .	# Uncomment and add any directories you see fit.
+ #			If LOCKINGTEST is defined, autoconf will NOT
+@@ -86,7 +90,7 @@
+  #-Wimplicit -Wshadow -Wid-clash-6 #-Wuninitialized
+ 
+ # The place to put your favourite extra cc flag
+-CFLAGS0 = -O #$(GCC_WARNINGS)
++CFLAGS0 = #-O #$(GCC_WARNINGS)
+ LDFLAGS0= -s
+ # Read my libs :-)
+ LIBS=

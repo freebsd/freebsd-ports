@@ -1,0 +1,11 @@
+bin/keydb-benchmark
+bin/keydb-check-aof
+bin/keydb-check-rdb
+bin/keydb-cli
+bin/keydb-sentinel
+bin/keydb-server
+@sample etc/keydb.conf.sample
+@sample(%%KEYDB_USER%%,%%KEYDB_GROUP%%,) etc/keydb_sentinel.conf.sample
+@dir(%%KEYDB_USER%%,%%KEYDB_GROUP%%,) %%KEYDB_DBDIR%%
+@dir(%%KEYDB_USER%%,%%KEYDB_GROUP%%,) %%KEYDB_LOGDIR%%
+@dir(%%KEYDB_USER%%,%%KEYDB_GROUP%%,) %%KEYDB_RUNDIR%%

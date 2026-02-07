@@ -1,0 +1,7 @@
+--- Makefile.orig	2024-12-12 16:16:21 UTC
++++ Makefile
+@@ -0,0 +1,4 @@
++SUBDIR+=	vmblock
++SUBDIR+=	vmmemctl
++
++.include <bsd.subdir.mk>

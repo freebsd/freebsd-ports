@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2005-08-26 04:45:46 UTC
++++ Makefile.in
+@@ -30,10 +30,10 @@
+ 	rm -f config.log config.cache config.status Makefile
+ 
+ install: simpleproxy
+-	$(top_srcdir)/mkinstalldirs $(bindir)
+-	$(INSTALL)   simpleproxy $(bindir)
+-	$(top_srcdir)/mkinstalldirs $(mandir)/man1
+-	$(INSTALL)   simpleproxy.man $(mandir)/man1/simpleproxy.1
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_PROGRAM)   simpleproxy $(DESTDIR)$(bindir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
++	$(BSD_INSTALL_MAN)   simpleproxy.man $(DESTDIR)$(mandir)/man1/simpleproxy.1
+ 
+ simpleproxy: simpleproxy.o cfg.o Makefile
+ 	$(CC) $(CFLAGS) -o simpleproxy simpleproxy.o cfg.o $(LIBS)

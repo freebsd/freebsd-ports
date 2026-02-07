@@ -1,0 +1,70 @@
+--- data/Makefile.am.orig	2012-07-27 22:26:17.000000000 -0500
++++ data/Makefile.am	2012-07-27 22:26:55.000000000 -0500
+@@ -82,35 +82,35 @@
+ endif
+ 
+ install-data-hook:
+-	@system=`uname`; \
+-	if test -f /usr/include/security/pam_appl.h; then \
+-	  if test '!' -d $(DESTDIR)$(PAM_PREFIX)/pam.d; then \
+-		$(mkinstalldirs) $(DESTDIR)$(PAM_PREFIX)/pam.d; \
+-		chmod 755 $(DESTDIR)$(PAM_PREFIX)/pam.d; \
+-	   fi; \
+-	   if test $$system = Linux; then \
+-		if test '!' -f $(DESTDIR)$(PAM_PREFIX)/pam.d/mate-screensaver; then \
+-		     $(INSTALL_DATA) mate-screensaver $(DESTDIR)$(PAM_PREFIX)/pam.d/mate-screensaver; \
+-		fi; \
+-		if test "x$(PAM_PREFIX)" != "x/etc/pam.d"; then \
+-	             echo "***" ; \
+-	             echo "***  Warning: mate-screensaver has been compiled with support for" ; \
+-	             echo "***           Pluggable Authentication Modules (PAM).  However, you may need to" ; \
+-	             echo "***           manually install $(PAM_PREFIX)/pam.d/mate-screensaver" ; \
+-	             echo "***           to /etc/pam.d/mate-screensaver.  Otherwise, unlocking might" ; \
+-	             echo "***           not work." ; \
+-	             echo "***" ; \
+-	             echo "***           Note: If you are using SuSE/Novell you may have to modify this file." ; \
+-	             echo "***" ; \
+-		fi; \
+-	   fi; \
+-	   if test $$system = SunOS; then \
+-	        echo "***" ; \
+-	        echo "***  Warning: mate-screensaver has been compiled with support for" ; \
+-	        echo "***           Pluggable Authentication Modules (PAM).  However, you" ; \
+-	        echo "***           need to manually add authentication for mate-screensaver in" ; \
+-	        echo "***           $(PAM_PREFIX)/pam.conf or /etc/pam.conf." ; \
+-	        echo "***           Otherwise, unlocking might not work." ; \
+-	        echo "***" ; \
+-	   fi; \
+-	fi
++#	@system=`uname`; \
++#	if test -f /usr/include/security/pam_appl.h; then \
++#	  if test '!' -d $(DESTDIR)$(PAM_PREFIX)/pam.d; then \
++#		$(mkinstalldirs) $(DESTDIR)$(PAM_PREFIX)/pam.d; \
++#		chmod 755 $(DESTDIR)$(PAM_PREFIX)/pam.d; \
++#	   fi; \
++#	   if test $$system = Linux; then \
++#		if test '!' -f $(DESTDIR)$(PAM_PREFIX)/pam.d/mate-screensaver; then \
++#		     $(INSTALL_DATA) mate-screensaver $(DESTDIR)$(PAM_PREFIX)/pam.d/mate-screensaver; \
++#		fi; \
++#		if test "x$(PAM_PREFIX)" != "x/etc/pam.d"; then \
++#	             echo "***" ; \
++#	             echo "***  Warning: mate-screensaver has been compiled with support for" ; \
++#	             echo "***           Pluggable Authentication Modules (PAM).  However, you may need to" ; \
++#	             echo "***           manually install $(PAM_PREFIX)/pam.d/mate-screensaver" ; \
++#	             echo "***           to /etc/pam.d/mate-screensaver.  Otherwise, unlocking might" ; \
++#	             echo "***           not work." ; \
++#	             echo "***" ; \
++#	             echo "***           Note: If you are using SuSE/Novell you may have to modify this file." ; \
++#	             echo "***" ; \
++#		fi; \
++#	   fi; \
++#	   if test $$system = SunOS; then \
++#	        echo "***" ; \
++#	        echo "***  Warning: mate-screensaver has been compiled with support for" ; \
++#	        echo "***           Pluggable Authentication Modules (PAM).  However, you" ; \
++#	        echo "***           need to manually add authentication for mate-screensaver in" ; \
++#	        echo "***           $(PAM_PREFIX)/pam.conf or /etc/pam.conf." ; \
++#	        echo "***           Otherwise, unlocking might not work." ; \
++#	        echo "***" ; \
++#	   fi; \
++#	fi

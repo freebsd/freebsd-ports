@@ -1,0 +1,2 @@
+Rmilter is a milter that makes greylisting, rate limiting,
+clamav, spamd, spf, regexp and other checks for incoming e-mail.

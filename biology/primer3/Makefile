@@ -1,0 +1,30 @@
+PORTNAME=	primer3
+PORTVERSION=	2.3.6
+CATEGORIES=	biology
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Primer3 helps to choose primers for PCR reactions
+WWW=		http://www-genome.wi.mit.edu/genome_software/other/primer3.html
+
+LICENSE=	GPLv2
+
+USES=		gmake
+MAKE_ARGS=	CC="${CC}" CPP="${CXX}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+PLIST_FILES=	bin/primer3
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's#^CFLAGS.*#CFLAGS  += \$$\(CC_OPTS\)#;' \
+		-e 's#^CC_OPTS.*#CC_OPTS= -Wall -D__USE_FIXED_PROTOTYPES_ -Dregister=#;' \
+		-e 's#LDFLAGS = -g#LDFLAGS +=#;' \
+		-e 's#^WHITEHEAD_SPECIFIC_HACK.*##;' \
+		${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/primer3_core \
+		${STAGEDIR}${PREFIX}/bin/primer3
+
+.include <bsd.port.mk>

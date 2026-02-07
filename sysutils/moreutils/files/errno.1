@@ -1,0 +1,71 @@
+'\" t
+.\"     Title: errno
+.\"    Author: Lars Wirzenius
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 2012-06-05
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "ERRNO" "1" "2012\-06\-05" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+errno \- look up errno names and descriptions
+.SH "SYNOPSIS"
+.HP \w'\fBerrno\fR\ 'u
+\fBerrno\fR {\fIname\-or\-code\fR}
+.HP \w'\fBerrno\fR\ 'u
+\fBerrno\fR [\-ls] [\-\-list]
+.HP \w'\fBerrno\fR\ 'u
+\fBerrno\fR [\-s] [\-\-search] {\fIword\fR}
+.HP \w'\fBerrno\fR\ 'u
+\fBerrno\fR [\-S] [\-\-search\-all\-locales] {\fIword\fR}
+.SH "DESCRIPTION"
+.PP
+\fBerrno\fR
+looks up errno macro names, errno codes, and the corresponding descriptions\&. For example, if given
+ENOENT
+on a Linux system, it prints out the code 2 and the description "No such file or directory"\&. If given the code 2, it prints
+ENOENT
+and the same description\&.
+.SH "OPTIONS"
+.PP
+\fB\-l\fR, \fB\-\-list\fR
+.RS 4
+List all errno values\&.
+.RE
+.PP
+\fB\-s\fR, \fB\-\-search\fR
+.RS 4
+Search for errors whose description contains all the given words (case\-insensitive)\&.
+.RE
+.PP
+\fB\-S\fR, \fB\-\-search\-all\-locales\fR
+.RS 4
+Like
+\fB\-\-search\fR, but searches all installed locales\&.
+.RE
+.SH "AUTHOR"
+.PP
+Lars Wirzenius
+.SH "SEE ALSO"
+.PP
+\fBerrno\fR(3)

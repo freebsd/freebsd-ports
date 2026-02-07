@@ -1,0 +1,28 @@
+--- doc/Makefile.in.orig	2020-11-18 13:58:37 UTC
++++ doc/Makefile.in
+@@ -35,6 +35,7 @@ OPTIM		=	@OPTIM@
+ bindir		=	@bindir@
+ datadir		=	@datadir@
+ datarootdir	=	@datarootdir@
++docdir		=	@docdir@
+ exec_prefix	=	@exec_prefix@
+ includedir	=	@includedir@
+ infodir		=	@infodir@
+@@ -82,7 +83,7 @@ clean:
+ install:
+ 	echo Installing EPM manpages in $(BUILDROOT)$(mandir)/man1
+ 	$(INSTALL) -d -m 755 $(BUILDROOT)$(mandir)/man1
+-	for file in epm.1 epminstall.1 mkepmlist. setup.1; do \
++	for file in epm.1 epminstall.1 mkepmlist.1 setup.1; do \
+ 		$(INSTALL) -c -m 644 $$file $(BUILDROOT)$(mandir)/man1; \
+ 	done
+ 	echo Installing EPM manpages in $(BUILDROOT)$(mandir)/man5
+@@ -92,7 +93,7 @@ install:
+ 	done
+ 	echo Installing EPM documentation in $(BUILDROOT)$(docdir)
+ 	$(INSTALL) -d -m 755 $(BUILDROOT)$(docdir)
+-	for file in $(srcdir)/COPYING $(srcdir)/README.md $(BOOKS); do \
++	for file in $(top_srcdir)/COPYING $(top_srcdir)/README.md $(BOOKS); do \
+ 		$(INSTALL) -c -m 644 $$file $(BUILDROOT)$(docdir); \
+ 	done
+ 

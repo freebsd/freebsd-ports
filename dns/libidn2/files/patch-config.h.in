@@ -1,0 +1,10 @@
+--- config.h.in.orig	2019-11-14 10:05:07 UTC
++++ config.h.in
+@@ -246,7 +246,6 @@
+ #undef HAVE_STRVERSCMP
+ 
+ /* The toolchain supports aliases and .symver. */
+-#undef HAVE_SYMVER_ALIAS_SUPPORT
+ 
+ /* Define to 1 if you have the <sys/bitypes.h> header file. */
+ #undef HAVE_SYS_BITYPES_H

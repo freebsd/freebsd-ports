@@ -1,0 +1,6 @@
+Libdmapsharing is a library you may use to access, share and control the
+playback of media content using DMAP (DAAP, DPAP & DACP). Libdmapsharing
+also detects audio AirPlay services; coupled with the AirPlay support
+in PulseAudio or GStreamer, this can allow an application to stream audio
+to an AirPlay device. The library presently supports Linux and other
+POSIX-based systems.

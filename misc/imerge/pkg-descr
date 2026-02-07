@@ -1,0 +1,5 @@
+The imerge(1) command is a utility to help merge one file to another
+interactively.
+
+This utility was (obviously) inspired by the mergemaster utility in
+hope of using part of its functionality stand-alone.

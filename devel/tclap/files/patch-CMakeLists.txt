@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2021-09-07 09:26:56 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,13 @@ install(FILES "${PROJECT_BINARY_DIR}/tclap/TCLAPConfig
+   DESTINATION include/tclap
+   )
+ 
++if (FREEBSD_DOCS)
+ add_subdirectory(docs)
++endif()
++if (FREEBSD_EXAMPLES)
+ add_subdirectory(examples)
++endif()
++if (FREEBSD_TESTS)
+ add_subdirectory(tests)
++endif()
+ add_subdirectory(include/tclap)

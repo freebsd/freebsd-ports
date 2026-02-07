@@ -1,0 +1,13 @@
+--- usr/lib/byobu/cpu_count.orig	2016-04-07 22:05:52 UTC
++++ usr/lib/byobu/cpu_count
+@@ -25,7 +25,9 @@ __cpu_count_detail() {
+ 
+ __cpu_count() {
+ 	local c
+-	c=$(getconf _NPROCESSORS_ONLN 2>/dev/null || grep -ci "^processor" /proc/cpuinfo)
++	c=$(getconf _NPROCESSORS_ONLN 2>/dev/null || \
++		grep -ci "^processor" /proc/cpuinfo || \
++		sysctl -n hw.ncpu)
+ 	[ "$c" = "1" ] || printf "%sx" "$c"
+ }
+ 

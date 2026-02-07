@@ -1,0 +1,12 @@
+--- htdocs/Makefile.am.orig	2018-02-02 21:14:55 UTC
++++ htdocs/Makefile.am
+@@ -41,6 +41,6 @@ nobase_js_DATA = $(JS)
+ 
+ install-data-local:
+ 	$(MKDIR) -p $(DESTDIR)$(HTDOCSDIR)
+-	$(ECHO)	"#!/bin/sh" > $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
+-	$(ECHO)	"exec $(bindir)/smokeping_cgi $(sysconfdir)/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
+-	chmod +x $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.dist
++	$(ECHO)	"#!/bin/sh" > $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.sample
++	$(ECHO)	"exec $(bindir)/smokeping_cgi $(sysconfdir)/config" >> $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.sample
++	chmod +x $(DESTDIR)$(HTDOCSDIR)/smokeping.fcgi.sample

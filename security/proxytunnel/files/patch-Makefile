@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-05-07 15:17:41 UTC
++++ Makefile
+@@ -75,7 +75,7 @@ endif
+ 
+ .PHONY: all clean docs install
+ 
+-all: proxytunnel
++all: proxytunnel docs
+ 
+ docs:
+ 	$(MAKE) -C docs

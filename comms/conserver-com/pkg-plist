@@ -1,0 +1,10 @@
+bin/console
+%%EXAMPLESDIR%%/conserver.cf
+%%EXAMPLESDIR%%/conserver.passwd
+%%EXAMPLESDIR%%/conserver.rc
+sbin/conserver
+sbin/conserver-convert
+share/man/man1/console.1.gz
+share/man/man5/conserver.cf.5.gz
+share/man/man5/conserver.passwd.5.gz
+share/man/man8/conserver.8.gz

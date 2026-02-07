@@ -1,0 +1,7 @@
+Efficient routines for manipulation of date-time objects while
+accounting for time-zones and daylight saving times. The package
+includes utilities for updating of date-time components (year,
+month, day etc.), modification of time-zones, rounding of date-times,
+period addition and subtraction etc. Parts of the 'CCTZ' source
+code, released under the Apache 2.0 License, are included in this
+package. See <https: //github.com/google/cctz> for more details.

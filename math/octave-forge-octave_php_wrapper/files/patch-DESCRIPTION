@@ -1,0 +1,9 @@
+--- DESCRIPTION.orig	2025-07-11 04:12:11 UTC
++++ DESCRIPTION
+@@ -1,5 +1,5 @@ Name: octave_php_wrapper
+ Name: octave_php_wrapper
+-Version: 0.1.0
++Version: 1.0.0
+ Date: 2025-5-16
+ Author: various authors
+ Maintainer: Yu Hongbo <yuhongbo@member.fsf.org>, CNOCTAVE <cnoctave@qq.com>

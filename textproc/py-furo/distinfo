@@ -1,0 +1,5 @@
+TIMESTAMP = 1766953410
+SHA256 (furo-2025.12.19.tar.gz) = 188d1f942037d8b37cd3985b955839fea62baa1730087dc29d157677c857e2a7
+SIZE (furo-2025.12.19.tar.gz) = 1661473
+SHA256 (furo-2025.12.19-static.tar.gz) = 21c7babc6a9e9687b97bd0942a8fbcb9df9164edf2c6ebcea7dcc3d885ccde25
+SIZE (furo-2025.12.19-static.tar.gz) = 182784

@@ -1,0 +1,3 @@
+qcs-sdk-python is a Python bindgins to make use of the Rigetti Rust SDK.
+
+This software allows to interace with Rigetti products.

@@ -1,0 +1,7 @@
+%%PORTDOCS%%%%DOCSDIR%%/changes.rst
+%%PORTDOCS%%%%DOCSDIR%%/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/topics/advanced.rst
+%%PORTDOCS%%%%DOCSDIR%%/topics/commands.rst
+%%PORTDOCS%%%%DOCSDIR%%/topics/getting-started.rst
+%%PORTDOCS%%%%DOCSDIR%%/topics/logging.rst
+%%PORTDOCS%%%%DOCSDIR%%/topics/porting.rst

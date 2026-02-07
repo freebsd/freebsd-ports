@@ -1,0 +1,11 @@
+include/evhtp.h
+include/evhtp/config.h
+include/evhtp/evhtp.h
+include/evhtp/parser.h
+%%SSL%%include/evhtp/sslutils.h
+%%THREADS%%include/evhtp/thread.h
+%%NO_STATIC%%lib/libevhtp.so
+%%NO_STATIC%%lib/libevhtp.so.0
+%%NO_STATIC%%lib/libevhtp.so.%%PORTVERSION%%
+%%STATIC%%lib/libevhtp.a
+libdata/pkgconfig/evhtp.pc

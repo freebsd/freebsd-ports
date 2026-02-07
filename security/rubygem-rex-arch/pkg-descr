@@ -1,0 +1,2 @@
+This Ruby Exploitation(Rex) library contains architecture specific information
+such as registers, opcodes, and stack manipulation routines.

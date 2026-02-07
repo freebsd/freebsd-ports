@@ -1,0 +1,11 @@
+smooth is an object-oriented C++ class library for Windows, macOS, and
+most Unix-like operating systems.  It provides basic functionality and
+platform support for applications and libraries.
+
+Features provided by smooth include:
+
+  - User interface API with various widgets
+  - Simple to use multithreading API
+  - File and network I/O interface
+  - Unicode and internationalization support
+  - Libxml2-based XML parser

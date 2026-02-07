@@ -1,0 +1,22 @@
+--- zzip/CMakeLists.txt.orig	2025-04-18 21:40:05 UTC
++++ zzip/CMakeLists.txt
+@@ -242,16 +242,16 @@ endif()
+ add_custom_target(libzzipmmapped.gcov DEPENDS libzzipmmapped.so.gcov)
+ endif()
+ 
+-set_target_properties(libzzip PROPERTIES OUTPUT_NAME "zzip" RELEASE_POSTFIX "-${RELNUM}")
++set_target_properties(libzzip PROPERTIES OUTPUT_NAME "zzip")
+ SET_TARGET_PROPERTIES(libzzip PROPERTIES VERSION ${VERNUM}.${FIXNUM} SOVERSION ${VERNUM})
+ 
+ if(ZZIPFSEEKO)
+-set_target_properties(libzzipfseeko PROPERTIES OUTPUT_NAME "zzipfseeko" RELEASE_POSTFIX "-${RELNUM}")
++set_target_properties(libzzipfseeko PROPERTIES OUTPUT_NAME "zzipfseeko")
+ SET_TARGET_PROPERTIES(libzzipfseeko PROPERTIES VERSION ${VERNUM}.${FIXNUM} SOVERSION ${VERNUM})
+ endif()
+ 
+ if(ZZIPMMAPPED)
+-set_target_properties(libzzipmmapped PROPERTIES OUTPUT_NAME "zzipmmapped" RELEASE_POSTFIX "-${RELNUM}")
++set_target_properties(libzzipmmapped PROPERTIES OUTPUT_NAME "zzipmmapped")
+ SET_TARGET_PROPERTIES(libzzipmmapped PROPERTIES VERSION ${VERNUM}.${FIXNUM} SOVERSION ${VERNUM})
+ endif()
+ 

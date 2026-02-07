@@ -1,0 +1,67 @@
+--- Makefile.orig	Sun Dec 10 18:59:54 2006
++++ Makefile	Mon Dec 18 00:44:03 2006
+@@ -1,52 +1,36 @@
+-PREFIX = /usr/local
+-INSTALL = install
+-MANPAGE_XSL = /sw/share/xml/xsl/docbook-xsl/manpages/docbook.xsl
+-
+ BINDIR = $(PREFIX)/bin
+ MANDIR = $(PREFIX)/share/man
+ 
+ VERSION = 1.0.2
+ 
+-#DEBUG = -g
+-OPTIMIZE = -O2
+-#PROFILE = -pg
+-
+-MACOS_LDOPTS = -L/sw/lib
+-MACOS_CCOPTS = -I/sw/include
+-
+ FORMATDEFS = -DRWIMG_JPEG -DRWIMG_PNG -DRWIMG_GIF
+ 
+-LDOPTS = $(MACOS_LDOPTS) -L/usr/X11R6/lib $(PROFILE) $(DEBUG)
+-CCOPTS = $(MACOS_CCOPTS) -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I. -Irwimg -Wall $(OPTIMIZE) $(DEBUG) $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
+-CC = gcc
+-#LIBFFM = -lffm
++LDOPTS = ${LDFLAGS} $(PROFILE) $(DEBUG)
++CCOPTS = ${CFLAGS} ${CPPFLAGS} -Irwimg -Wall $(FORMATDEFS) -DMETAPIXEL_VERSION=\"$(VERSION)\"
+ 
+ export CCOPTS CC FORMATDEFS
+ 
+ LISPREADER_OBJS = lispreader.o pools.o allocator.o
+-OBJS = metapixel.o vector.o zoom.o $(LISPREADER_OBJS) getopt.o getopt1.o
+-CONVERT_OBJS = convert.o $(LISPREADER_OBJS) getopt.o getopt1.o
++OBJS = metapixel.o vector.o zoom.o $(LISPREADER_OBJS)
++CONVERT_OBJS = convert.o $(LISPREADER_OBJS)
+ IMAGESIZE_OBJS = imagesize.o
+ 
+-all : metapixel metapixel.1 convert metapixel-imagesize
++all : metapixel metapixel-convert metapixel-imagesize
+ 
+ metapixel : $(OBJS) librwimg
+-	$(CC) $(LDOPTS) -o metapixel $(OBJS) rwimg/librwimg.a -lpng -ljpeg -lgif $(LIBFFM) -lm -lz
+-
+-metapixel.1 : metapixel.xml
+-	xsltproc --nonet $(MANPAGE_XSL) metapixel.xml
++	$(CC) $(LDOPTS) -o metapixel $(OBJS) rwimg/librwimg.a -lpng -ljpeg -lgif $(LIBFFM) -lm -lz
+ 
+-convert : $(CONVERT_OBJS)
+-	$(CC) $(LDOPTS) -o convert $(CONVERT_OBJS)
++metapixel-convert : $(CONVERT_OBJS)
++	$(CC) $(LDOPTS) -o metapixel-convert $(CONVERT_OBJS)
+ 
+ metapixel-imagesize : $(IMAGESIZE_OBJS) librwimg
+-	$(CC) $(LDOPTS) -o metapixel-imagesize $(IMAGESIZE_OBJS) rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
++	$(CC) $(LDOPTS) -o metapixel-imagesize $(IMAGESIZE_OBJS) rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
+ 
+-zoom : zoom.c librwimg
+-	$(CC) -o zoom $(OPTIMIZE) $(PROFILE) $(MACOS_CCOPTS) -DTEST_ZOOM zoom.c $(MACOS_LDOPTS) rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
++metapixel-zoom : zoom.c librwimg
++	$(CC) $(CCOPTS) $(LDOPTS) -o $@ -DTEST_ZOOM zoom.c rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
+ 
+ %.o : %.c
+-	$(CC) $(CCOPTS) $(FORMATDEFS) -c $<
++	$(CC) $(CCOPTS) -c $<
+ 
+ librwimg :
+ 	$(MAKE) -C rwimg

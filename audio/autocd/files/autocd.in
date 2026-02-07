@@ -1,0 +1,33 @@
+#
+
+# PROVIDE: autocd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable autocd:
+#
+# autocd_enable="YES"
+#
+# See autocd(8) for relevant values for autocd_flags
+#
+
+. /etc/rc.subr
+
+name=autocd
+rcvar=autocd_enable
+
+command=%%PREFIX%%/sbin/autocd
+
+stop_cmd=${name}_stop
+
+autocd_stop ()
+{
+	%%PREFIX%%/bin/cdctl die
+}
+
+load_rc_config $name
+
+autocd_enable=${autocd_enable-NO}
+
+run_rc_command "$1"

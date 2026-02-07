@@ -1,0 +1,4 @@
+lib/aspell-%%VER%%/ia.dat
+share/aspell/ia.multi
+share/aspell/ia.rws
+share/aspell/interlingua.alias

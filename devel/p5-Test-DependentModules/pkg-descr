@@ -1,0 +1,7 @@
+Test::DependentModules is intended as a tool for module authors who would like
+to easily test that a module release will not break dependencies. This is
+particularly useful for module authors (like myself) who have modules which are
+a dependency of many other modules.
+
+WARNING: The tests this module does should *NEVER* be included as part of a
+normal CPAN install!

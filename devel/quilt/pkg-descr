@@ -1,0 +1,8 @@
+quilt is a collection of bash scripts to manage a series of patches by
+keeping track of the changes each patch makes. Patches can be applied,
+un-applied, refreshed, etc.
+The key philosophical concept is that your primary output is
+patches. Not ".c" files, not ".h" files. But patches. So patches are
+the first-class object here.
+Quilt was originally based on Andrew Morton's patch scripts published
+on the Linux kernel mailing list.

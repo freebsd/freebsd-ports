@@ -1,0 +1,144 @@
+--- sys/unix/Makefile.src.orig	2019-05-08 00:00:16.000000000 -0700
++++ sys/unix/Makefile.src	2019-05-16 08:16:17.494864000 -0700
+@@ -165,13 +165,24 @@
+ # directories.  The ones given below is the usual spot for linux systems.
+ # The paths are for glibconfig.h and gnomesupport.h respectively.
+ #
+-GNOMEINC=-I/usr/lib/glib/include -I/usr/lib/gnome-libs/include -I../win/gnome
++GNOMEINC= $(shell ${GNOME_CONFIG} --cflags gnomeui)
+ 
+ # flags for debugging:
+ # CFLAGS = -g -I../include
++CFLAGS += -I../include
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS -I${LOCALBASE}/include
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS ${CPPFLAGS}
++endif
+ 
+ #CFLAGS = -O -I../include
+ #LFLAGS = 
++LINK = $(CC)
+ 
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
+@@ -273,6 +284,29 @@
+ # Curses - Karl Garrison, Tangles
+ #WINSRC = $(WINCURSESSRC)
+ #WINOBJ = $(WINCURSESOBJ)
++
++WINSRC = $(WINTTYSRC) $(WINCURSESSRC)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINSRC += $(WINX11SRC)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINSRC += $(WINQTSRC)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINSRC += $(WINGNOMESRC)
++endif
++
++WINOBJ = $(WINTTYOBJ) $(WINCURSESOBJ)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINOBJ += $(WINX11OBJ)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINOBJ += $(WINQTOBJ)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINOBJ += $(WINGNOMEOBJ)
++endif
++
+ #
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -289,6 +323,7 @@
+ # WINTTYLIB = -lcurses16
+ # WINTTYLIB = -lncurses
+ #WINTTYLIB = -ltermlib
++WINTTYLIB = -lncurses -L${LOCALBASE}/lib
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+@@ -296,10 +331,12 @@
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
+ #
+ #
+ # libraries for Qt 3
+-WINQTLIB = -L$(QTDIR)/lib -lqt
++#WINQTLIB = -L$(QTDIR)/lib -lqt
+++WINQTLIB = ${QTCFGLIBS} ${LIBQT}
+ #
+ # libraries for Qt 4
+ WINQT4LIB = `pkg-config QtGui --libs`
+@@ -311,7 +348,8 @@
+ WINKDELIB = -lkdecore -lkdeui -lXext
+ #
+ # libraries for Gnome
+-WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
++#WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
++WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) ${LDFLAGS}
+ #
+ # libraries for Gem port
+ WINGEMLIB = -le_gem -lgem
+@@ -321,7 +359,7 @@
+ #
+ # libraries for curses port
+ # link with ncurses
+-WINCURSESLIB = -lncurses
++WINCURSESLIB = -lncurses -L${LOCALBASE}/lib
+ # link with pdcurses for SDL, installed in a separate directory
+ #WINCURSESLIB = -L/usr/local/lib/pdcurses -lpdcurses -lSDL
+ # same as above, for XCurses
+@@ -331,6 +369,18 @@
+ #
+ # For Curses
+ #WINLIB = $(WINCURSESLIB)
++
++WINLIB = $(WINTTYLIB)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINLIB += $(WINX11LIB)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINLIB += $(WINQTLIB)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINLIB += $(WINGNOMELIB)
++endif
++
+ #
+ # any other strange libraries your system needs (for Sysunix only -- the more
+ # specialized targets should already be right)
+@@ -363,7 +413,7 @@
+ LIBS =
+ 
+ # make NetHack
+-GAME     = nethack
++GAME     = nethack%%HACKEXT%%
+ # GAME     = nethack.prg
+ 
+ # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
+@@ -597,13 +647,13 @@
+ 
+ # Qt 3 windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc -o qt_kde0.moc ../include/qt_kde0.h
++	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc -o qt_win.moc ../include/qt_win.h
++	${MOC} -o qt_win.moc ../include/qt_win.h
+ 
+ qttableview.moc: ../include/qttableview.h
+-	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
++	${MOC} -o qttableview.moc ../include/qttableview.h
+ 
+ # Qt 4 windowport meta-object-compiler output
+ qt4kde0.moc : ../win/Qt4/qt4kde0.h

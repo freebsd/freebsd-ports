@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# PROVIDE: traccar
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable traccar:
+#
+# traccar_enable (bool):	Set to YES to enable traccar
+# 				Default: NO
+# traccar_flags (str):		Extra flags passed to traccar
+# traccar_config (str):	traccar configuration directory
+#				Default: ${PREFIX}/etc/beats
+# traccar_conffile (str):	traccar configuration file
+#				relative to ${traccar_conf}
+#				Default: traccar.xml
+
+. /etc/rc.subr
+
+name="traccar"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${traccar_enable:="NO"}
+: ${traccar_config:="%%ETCDIR%%/traccar.xml"}
+: ${traccar_home:="%%PREFIX%%/traccar"}
+: ${traccar_logs:="%%TRACCAR_LOGDIR%%"}
+
+# daemon
+start_precmd=traccar_prestart
+command=/usr/sbin/daemon
+pidfile="/var/run/${name}"
+command_args="-frP ${pidfile} --user traccar %%PREFIX%%/bin/java -jar tracker-server.jar  ${traccar_flags} ${traccar_config}"
+
+traccar_prestart() {
+# Have to empty rc_flags so they don't get passed to daemon(8)
+	rc_flags=""
+	cd ${traccar_home}
+}
+
+run_rc_command "$1"

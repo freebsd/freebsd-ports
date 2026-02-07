@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+Now that OpenUpgrade is installed on your system, you can upgrade Odoo from one
+major version to another using a command like the following:
+
+  # service odoo stop
+  # su -m odoo -c "odoo \
+      --upgrade-path=%%PYTHON_SITELIBDIR%%/odoo/addons/openupgrade_scripts/scripts \
+      --update all \
+      --stop-after-init \
+      --load=base,web,openupgrade_framework \
+      --database=odoodb \
+      --data-dir=/var/lib/odoo \
+      --logfile=/dev/stdout \
+      --config=%%PREFIX%%/etc/odoo/odoo.conf \
+      --without-demo=all"
+
+Before executing a command such as the one above, consult both the documentation and
+OpenUpgrade's issue tracker.
+EOM
+}
+]

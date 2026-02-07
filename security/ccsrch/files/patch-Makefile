@@ -1,0 +1,22 @@
+--- Makefile.orig	2007-08-30 04:43:27.000000000 +0400
++++ Makefile	2013-09-16 15:34:28.000000000 +0400
+@@ -21,7 +21,7 @@
+ # Makefile for ccsrch
+ #
+ 
+-CC	=gcc
++#CC	=gcc
+ #
+ # for mingw use something like the following
+ #INCL	= -I./ -I/mingw/include
+@@ -29,8 +29,8 @@
+ #
+ # for *UNIX* the following tends to work
+ INCL	= -I./
+-CFLAGS	=-O2 -static
+-#CFLAGS	=-O2 # for linux
++#CFLAGS	=-O2 -static
++CFLAGS	=-O2 # for linux
+ #CFLAGS	=-DDEBUG # if you want a lot of noise
+ LDFLAGS	=-s
+ OBJS=  ccsrch.o

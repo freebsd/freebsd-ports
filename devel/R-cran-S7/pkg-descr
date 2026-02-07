@@ -1,0 +1,8 @@
+An Object Oriented System Meant to Become a Successor to S3 and S4
+
+A new object oriented programming system designed to be a successor to S3 and
+S4. It includes formal class, generic, and method specification, and a limited
+form of multiple dispatch. It has been designed and implemented collaboratively
+by the R Consortium Object-Oriented Programming Working Group, which includes
+representatives from R-Core, 'Bioconductor', 'Posit'/'tidyverse', and the wider
+R community.

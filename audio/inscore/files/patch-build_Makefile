@@ -1,0 +1,11 @@
+--- build/Makefile.orig	2021-11-08 06:26:08 UTC
++++ build/Makefile
+@@ -28,7 +28,7 @@ MAKEFILE  ?= Makefile		# used to check the dependency 
+ GENERATOR ?= 
+ 
+ all :
+-	$(MAKE) modules
++	#$(MAKE) modules
+ 	$(MAKE) inscore
+ 
+ test: PATH := /Users/Shared/Qt/5.15.2/5.15.2/ios/bin:$(PATH)

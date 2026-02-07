@@ -1,0 +1,17 @@
+--- ./Imakefile.org	Thu Oct 15 03:24:34 1998
++++ ./Imakefile	Wed Sep  6 19:13:20 2000
+@@ -7,7 +7,7 @@
+ OBJS = $(SRCS:.c=.o)
+ 
+ #SCOREFILE = /opt/X11R6/lib/X11/tama_score
+-SCOREFILE = ./.tama_score
++SCOREFILE = $(LIBDIR)/xpuzzletama/tama_score
+ 
+ # もしネットワーク対戦をサポートしないなら下の -DNET を削ってください。
+ # スコアファイルにロック機構が必要ないなら -DFILELOCK を付けてください。
+@@ -15,4 +15,4 @@
+ #DEFINES = -DSFILE=\"${SCOREFILE}\" -DNET -DFILELOCK -I/opt/X11R6/include
+ DEFINES = -DSFILE=\"${SCOREFILE}\" -DNET
+ 
+-ComplexProgramTarget(xpuzzletama)
++ComplexProgramTargetNoMan(xpuzzletama)

@@ -1,0 +1,7 @@
+bin/unicode-config
+etc/unicodeConf.sh
+include/unicode.h
+lib/libunicode.a
+lib/libunicode.so
+lib/libunicode.so.0
+lib/libunicode.so.0.0.0

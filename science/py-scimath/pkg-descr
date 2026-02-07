@@ -1,0 +1,5 @@
+The SciMath project includes packages to support scientific and
+mathematical calculations, beyond the capabilities offered by SciPy.
+    * enthought.interpolate
+    * enthought.mathematics
+    * enthought.units

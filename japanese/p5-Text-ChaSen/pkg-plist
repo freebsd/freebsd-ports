@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Text::ChaSen.3.gz
+%%SITE_ARCH%%/Text/ChaSen.pm
+%%SITE_ARCH%%/auto/Text/ChaSen/ChaSen.so
+%%PORTDOCS%%%%DOCSDIR%%/README.perl

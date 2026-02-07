@@ -1,0 +1,4 @@
+%%SITE_PERL%%/MIME/Lite.pm
+%%SITE_PERL%%/MIME/changes.pod
+%%PERL5_MAN3%%/MIME::Lite.3.gz
+%%PERL5_MAN3%%/MIME::changes.3.gz

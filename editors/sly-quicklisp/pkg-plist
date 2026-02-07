@@ -1,0 +1,6 @@
+%%THIS_LISPDIR%%/sly-quicklisp-tests.el
+%%THIS_LISPDIR%%/sly-quicklisp-tests.elc
+%%THIS_LISPDIR%%/sly-quicklisp.el
+%%THIS_LISPDIR%%/sly-quicklisp.elc
+%%THIS_LISPDIR%%/slynk-quicklisp.asd
+%%THIS_LISPDIR%%/slynk-quicklisp.lisp

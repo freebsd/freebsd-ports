@@ -1,0 +1,49 @@
+--- configure.orig	2001-03-10 14:32:48 UTC
++++ configure
+@@ -4523,6 +4523,9 @@ LDFLAGS="$X_LIBS $LDFLAGS"
+ cat > conftest.$ac_ext <<EOF
+ #line 4525 "configure"
+ #include "confdefs.h"
++#include <stdio.h>
++#include <X11/Intrinsic.h>
++#include <X11/StringDefs.h>
+ #include <SciPlot/SciPlot.h>
+ int main() {
+ int a;
+@@ -4589,7 +4592,7 @@ ice_sciplot_save_CFLAGS="$CFLAGS"
+ ice_sciplot_save_CPPFLAGS="$CPPFLAGS"
+ ice_sciplot_save_LDFLAGS="$LDFLAGS"
+ #
+-LIBS="$X_PRE_LIBS -lSciPlot -lXm -lXt -lX11 $X_EXTRA_LIBS $LIBS"
++LIBS="$X_PRE_LIBS -lsciplot -lXm -lXt -lX11 $X_EXTRA_LIBS $LIBS"
+ CFLAGS="$X_CFLAGS $CFLAGS"
+ CPPFLAGS="$X_CFLAGS $CPPFLAGS"
+ LDFLAGS="$X_LIBS $LDFLAGS"
+@@ -4597,6 +4600,9 @@ LDFLAGS="$X_LIBS $LDFLAGS"
+ cat > conftest.$ac_ext <<EOF
+ #line 4599 "configure"
+ #include "confdefs.h"
++#include <stdio.h>
++#include <X11/Intrinsic.h>
++#include <X11/StringDefs.h>
+ #include <SciPlot/SciPlot.h>
+ int main() {
+ SciPlotQuickUpdate();
+@@ -4633,7 +4639,7 @@ for dir in "$x_libraries" "${prefix}/lib" /usr/lib /us
+ 	   /home/SciPlot*/lib /usr/SciPlot*/lib /opt/SciPlot*/lib \
+            "${prefix}"/*/lib /usr/*/lib /usr/local/*/lib \
+            "${prefix}"/lib/* /usr/lib/* /usr/local/lib/*; do
+-if test -d "$dir" && test "`ls $dir/libSciPlot.* 2> /dev/null`" != ""; then
++if test -d "$dir" && test "`ls $dir/libsciplot.* 2> /dev/null`" != ""; then
+ ice_cv_sciplot_libraries="$dir"
+ break
+ fi
+@@ -4657,7 +4663,7 @@ fi
+ # Provide an easier way to link
+ #
+ if test "$sciplot_includes" != "" && test "$sciplot_includes" != "$x_includes" && test "$sciplot_includes" != "none"; then
+-	link_sciplot="-L$sciplot_libraries -lSciPlot"
++	link_sciplot="-L$sciplot_libraries -lsciplot"
+ 	include_sciplot="-I$sciplot_includes"
+ 	cat >> confdefs.h <<\EOF
+ #define HAVE_SciPlot_H 1

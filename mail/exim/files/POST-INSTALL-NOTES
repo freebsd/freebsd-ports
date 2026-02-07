@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+The following documentation has been installed:
+
+  man exim                              -> Exim options (command line)
+  %%DOCSDIR%%/spec.txt    -> Exim Specification (User Guide)
+  %%DOCSDIR%%/filter.txt  -> Exim Filter Specification (for end-users)
+
+Postscript, PDF, HTML and texinfo versions of these documents can be
+installed via one of the mail/exim-doc-* ports.
+
+An online version as well as a comprehensive FAQ and a mailing list
+archive is available at:
+
+  http://www.exim.org/
+
+Descriptions of new features not available it the manual, and a listing
+of all changes, including bug fixes are documented in:
+
+  %%DOCSDIR%%/NewStuff
+  %%DOCSDIR%%/ChangeLog
+
+To use Exim instead of sendmail on startup:
+
+*) Clear the sendmail queue and stop the sendmail daemon.
+*) Adjust mailer.conf(5) as appropriate.
+*) Set the 'sendmail_enable' rc.conf(5) variable to 'NONE'.
+*) Set the 'daily_status_include_submit_mailq' and
+   'daily_clean_hoststat_enable' periodic.conf(5)
+   variables to 'NO'.
+*) Consider setting 'daily_queuerun_enable' and
+   'daily_submit_queuerun' to "NO" in periodic.conf(5),
+   if you intend to manage queue runners / deliveries closely.
+*) Set the 'exim_enable' rc.conf(5) variable to 'YES'.
+*) Start exim with '%%PREFIX%%/etc/rc.d/exim start'.
+
+You may also want to configure newsyslog(8) to rotate Exim log files:
+
+%%LOGDIR%%/mainlog	mailnull:mail 640 7 * @T00 ZN
+%%LOGDIR%%/rejectlog	mailnull:mail 640 7 * @T00 ZN
+
+Additional scripts to help upgrading are installed in:
+
+  %%EXAMPLESDIR%%
+EOM
+}
+]

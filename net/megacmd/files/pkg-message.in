@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+To use %%PORTNAME%% features on DragonFly you need to generate a machine-id.
+For that, run the following command as root:
+
+# dbus-uuidgen --ensure
+EOM
+}
+]

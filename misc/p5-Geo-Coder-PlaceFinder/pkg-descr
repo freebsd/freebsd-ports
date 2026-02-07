@@ -1,0 +1,2 @@
+Geo::Coder::PlaceFinder provides an interface to the Yahoo PlaceFinder geocoding
+service.

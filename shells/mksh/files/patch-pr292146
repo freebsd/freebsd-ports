@@ -1,0 +1,28 @@
+For PR 292146: mksh segfaults on 16-CURRENT.
+
+--- Build.sh	2020-09-05 00:02:04.000000000 +0300
++++ Build.sh.new	2026-01-06 12:05:33.268065000 +0200
+@@ -26,6 +26,11 @@
+ #
+ # Used environment documentation is at the end of this file.
+ 
++HAVE_SYS_SIGNAME=0 
++HAVE__SYS_SIGNAME=0 
++HAVE_SYS_SIGLIST=0 
++HAVE__SYS_SIGLIST=0
++
+ LC_ALL=C; LANGUAGE=C
+ export LC_ALL; unset LANGUAGE
+ 
+--- histrap.c	2020-10-02 01:53:47.000000000 +0300
++++ histrap.c.new	2026-01-06 12:05:40.049235000 +0200
+@@ -1106,7 +1106,8 @@
+ #if HAVE_SYS_SIGLIST
+ 		sigtraps[i].mess = sys_siglist[i];
+ #elif HAVE_STRSIGNAL
+-		sigtraps[i].mess = strsignal(i);
++		//sigtraps[i].mess = strsignal(i);
++		 strdupx(sigtraps[i].mess, strsignal(i), APERM);
+ #else
+ 		sigtraps[i].mess = NULL;
+ #endif

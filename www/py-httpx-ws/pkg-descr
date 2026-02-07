@@ -1,0 +1,10 @@
+httpx-ws provides WebSocket support for HTTPX.
+
+Features:
+- Sync and async client
+- Helper methods to send text, binary and JSON data
+- Helper methods to receive text, binary and JSON data
+- Automatic ping/pong answers
+- HTTPX transport to test WebSockets defined in ASGI apps
+- Automatic keepalive ping
+- asyncio and Trio support through AnyIO

@@ -1,0 +1,10 @@
+A small set of open-source tools for manipulating game data files from
+various early Command and Conquer games by Westwood Studios, namely:
+
+  - strgen, which converts between a UTF-8 INI file format for easy
+    translation and the in game binary string table in an old DOS
+    code page
+
+  - makemix, which packs files into MIX archive files
+
+  - unmakemix, which extracts files from MIX archive files

@@ -1,0 +1,6 @@
+%%TWDIR%%/data/TWiki/GluePlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin/build.pl
+%%TWDIR%%/pub/TWiki/GluePlugin/wikiringlogo40x40.png

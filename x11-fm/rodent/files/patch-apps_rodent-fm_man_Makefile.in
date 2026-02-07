@@ -1,0 +1,12 @@
+--- apps/rodent-fm/man/Makefile.in.orig	2024-03-05 17:41:28 UTC
++++ apps/rodent-fm/man/Makefile.in
+@@ -372,8 +372,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ rodentman1_DATA = rodent.1 rodent-anim.1 rodent-fm.1 rodent-desk.1 rodent-getpass.1 rodent-plug.1 rodent-root.1
+-@WANT_FREEBSD_FALSE@rodentman1dir = ${mandir}/man1
+-@WANT_FREEBSD_TRUE@rodentman1dir = ${prefix}/man/man1
++rodentman1dir = ${mandir}/man1
+ EXTRA_DIST = $(rodentman1_DATA) 
+ all: all-am
+ 

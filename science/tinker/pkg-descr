@@ -1,0 +1,15 @@
+Tinker is a comprehensive and versatile molecular modeling software package
+designed for molecular mechanics and dynamics simulations, with specialized
+capabilities for biopolymers. It provides a complete set of tools for
+energy minimizations, geometry calculations, simulated annealing, and
+molecular dynamics.
+
+Tinker supports a wide array of force fields, including Amber, CHARMM,
+OPLS, MMFF94, and advanced polarizable models like AMOEBA. It features
+atomic multipole-based electrostatics with explicit dipole polarizability
+and various continuum solvation treatments. The software offers efficient
+truncated Newton optimization, normal mode vibrational analysis, and
+free energy calculations. It also includes algorithms for conformational
+searches, global optimization, and transition state location. Written in
+Fortran 95, Tinker is a modular and extensible system, widely used in
+computational chemistry and biophysics.

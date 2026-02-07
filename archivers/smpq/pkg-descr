@@ -1,0 +1,8 @@
+StormLib MPQ (SMPQ) archiving utility.
+SMPQ is designed for full manipulating with Blizzard MPQ archives. SMPQ can
+create archives, as well as extract, append, rename, and delete files within
+MPQ archives. Support for encrypted, versioned, and different types of archives
+is included. SMPQ is a free, open-source command-line utility written in C/C++,
+utilising the multiplatform C++ library, StormLib.
+
+See `man 1 smpq` or `smpq --help` for more information.

@@ -1,0 +1,8 @@
+%%SITE_PERL%%/BorderStyle/Test/CustomChar.pm
+%%SITE_PERL%%/BorderStyle/Test/Labeled.pm
+%%SITE_PERL%%/BorderStyleBase.pm
+%%SITE_PERL%%/BorderStyleBase/Constructor.pm
+%%PERL5_MAN3%%/BorderStyle::Test::CustomChar.3.gz
+%%PERL5_MAN3%%/BorderStyle::Test::Labeled.3.gz
+%%PERL5_MAN3%%/BorderStyleBase.3.gz
+%%PERL5_MAN3%%/BorderStyleBase::Constructor.3.gz

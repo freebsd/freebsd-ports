@@ -1,0 +1,2 @@
+Pytest parametrize hook to generate ids for parametrized tests that are a little
+more descriptive than the default (which just outputs id numbers).

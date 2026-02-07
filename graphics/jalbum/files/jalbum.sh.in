@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd "%%DATADIR%%" && "%%LOCALBASE%%/bin/java" -jar JAlbum.jar "$@"

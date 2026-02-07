@@ -1,0 +1,10 @@
+This is cross-platform (wxWidgets-based) hexadecimal editor for reverse
+engineering, and everything else.  It features:
+
+  - Large (1TB+) file support
+  - Decoding of integer/floating point value types
+  - Inline disassembly of machine code
+  - Highlighting and annotation of ranges of bytes
+  - Side by side comparison of selections
+  - Lua scripting support with documented API
+  - Virtual address mapping support

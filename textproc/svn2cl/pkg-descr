@@ -1,0 +1,4 @@
+svn2cl is a simple xsl transformation and shell script wrapper for generating
+a classic GNU-style ChangeLog from a subversion repository log. It is made
+from several changelog-like scripts using common xslt constructs found in
+different places.

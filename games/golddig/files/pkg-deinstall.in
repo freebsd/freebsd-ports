@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[ "$2" != "POST-DEINSTALL" ] && exit 0
+
+if [ -s "%%SCOREFILE%%" ]; then
+	echo
+	echo "To completely remove the port, please remove the following"
+	echo "file manually, if it's no longer needed:"
+	echo
+	echo "    %%SCOREFILE%%"
+	echo
+else
+	rm -f "%%SCOREFILE%%"
+fi

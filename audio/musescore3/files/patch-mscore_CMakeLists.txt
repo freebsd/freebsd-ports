@@ -1,0 +1,70 @@
+--- mscore/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ mscore/CMakeLists.txt
+@@ -147,7 +147,7 @@ if (APPLE)
+       set_target_properties (
+          cocoabridge
+          PROPERTIES
+-         COMPILE_FLAGS "-g -Wall -Wextra -Winvalid-pch  -include ${PROJECT_SOURCE_DIR}/all.h"
++         COMPILE_FLAGS "-Wall -Wextra -Winvalid-pch  -include ${PROJECT_SOURCE_DIR}/all.h"
+          )
+ else (APPLE)
+       set(INCS "")
+@@ -354,13 +354,13 @@ if (MINGW)
+    if(CMAKE_BUILD_TYPE MATCHES "DEBUG")
+      set_target_properties( mscoreapp
+         PROPERTIES
+-           COMPILE_FLAGS "${PCH_INCLUDE} -g -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
++           COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
+            LINK_FLAGS "-mwindows -mconsole -L ${QT_INSTALL_LIBS}"
+         )
+    else(CMAKE_BUILD_TYPE MATCHES "DEBUG")
+      set_target_properties( mscoreapp
+           PROPERTIES
+-             COMPILE_FLAGS "${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
++             COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
+              LINK_FLAGS "-Wl,-S -mwindows -L ${QT_INSTALL_LIBS}"
+           )
+    endif(CMAKE_BUILD_TYPE MATCHES "DEBUG")
+@@ -394,7 +394,7 @@ else (MINGW)
+          )
+ 
+        if (USE_SYSTEM_FREETYPE)
+-            target_link_libraries(mscoreapp freetype)
++            target_link_libraries(mscoreapp ${FREETYPE_LIBRARIES})
+        else (USE_SYSTEM_FREETYPE)
+             target_link_libraries(mscoreapp mscore_freetype)
+        endif (USE_SYSTEM_FREETYPE)
+@@ -424,7 +424,7 @@ else (MINGW)
+       set_target_properties (
+          mscoreapp
+          PROPERTIES
+-            COMPILE_FLAGS "${PCH_INCLUDE} -g -Wall -Wno-overloaded-virtual -Winvalid-pch"
++            COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wno-overloaded-virtual -Winvalid-pch"
+          )
+ 
+       if (OMR)
+@@ -469,13 +469,13 @@ else (MINGW)
+       if(CMAKE_BUILD_TYPE MATCHES "REL*")
+         set_target_properties( mscoreapp
+            PROPERTIES
+-              COMPILE_FLAGS "${PCH_INCLUDE} ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
++              COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
+               LINK_FLAGS    "/LIBPATH:${QT_INSTALL_LIBS} ${all_library_paths}"
+            )
+       else(CMAKE_BUILD_TYPE MATCHES "REL*")
+         set_target_properties( mscoreapp
+            PROPERTIES
+-              COMPILE_FLAGS "${PCH_INCLUDE} ${QT_DEFINITIONS} /DQT_SVG_LIB /DQT_GUI_LIB /DQT_XML_LIB /DQT_CORE_LIB"
++              COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h ${QT_DEFINITIONS} /DQT_SVG_LIB /DQT_GUI_LIB /DQT_XML_LIB /DQT_CORE_LIB"
+               LINK_FLAGS    "/LIBPATH:${QT_INSTALL_LIBS} ${all_library_paths}"
+            )
+       endif(CMAKE_BUILD_TYPE MATCHES "REL*")
+@@ -542,7 +542,7 @@ else (NOT MSVC)
+    set_target_properties (
+       inspectorplugin
+       PROPERTIES
+-         COMPILE_FLAGS "${PCH_INCLUDE} -D_GNU_SOURCE -D_REENTRANT -DHAVE_CONFIG_H -DQT_PLUGIN -DQT_SVG_LIB -DQT_SHARED -DQT_NO_DEBUG"
++         COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -D_GNU_SOURCE -D_REENTRANT -DHAVE_CONFIG_H -DQT_PLUGIN -DQT_SVG_LIB -DQT_SHARED -DQT_NO_DEBUG"
+       )
+ endif (NOT MSVC)
+ 

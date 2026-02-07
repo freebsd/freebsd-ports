@@ -1,0 +1,4 @@
+%%SITE_PERL%%/auto/share/module/DateTime-Calendar-Japanese-Era/eras.yaml
+%%SITE_PERL%%/auto/share/module/DateTime-Calendar-Japanese-Era/south-eras.yaml
+%%SITE_PERL%%/DateTime/Calendar/Japanese/Era.pm
+%%PERL5_MAN3%%/DateTime::Calendar::Japanese::Era.3.gz

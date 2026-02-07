@@ -1,0 +1,4 @@
+Loki97 is 128-bit block cipher that accepts a variable-length key. It was
+designed by Lawrie Brown, Josef Pieprzyk, and Jennifer Seberry. The default
+key length in this implementation is 128 bits. Loki97 was one of the 15
+candidates for the AES.

@@ -1,0 +1,2 @@
+check_smartmon is a Nagios plug-in written in python that uses
+smartmontools to check disk health status and temperature.

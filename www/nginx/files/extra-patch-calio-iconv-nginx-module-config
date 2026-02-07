@@ -1,0 +1,19 @@
+--- ../iconv-nginx-module-0.14/config.orig	2013-04-16 17:57:17.000000000 -0700
++++ ../iconv-nginx-module-0.14/config	2013-05-01 17:16:28.134624745 -0700
+@@ -39,12 +39,12 @@
+     fi
+ 
+     if [ $ngx_found = no ]; then
+-        ngx_feature="libiconv in /usr/local/"
+-        ngx_feature_path="/usr/local/include"
++        ngx_feature="libiconv in %%PREFIX%%/"
++        ngx_feature_path="%%PREFIX%%/include"
+         if [ $NGX_RPATH = YES ]; then
+-            ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -liconv"
++            ngx_feature_libs="-R%%PREFIX%%/lib -L%%PREFIX%%/lib -liconv"
+         else
+-            ngx_feature_libs="-L/usr/local/lib -liconv"
++            ngx_feature_libs="-L%%PREFIX%%/lib -liconv"
+         fi
+         . auto/feature
+     fi

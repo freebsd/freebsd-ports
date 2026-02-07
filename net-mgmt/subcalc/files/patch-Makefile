@@ -1,0 +1,23 @@
+--- Makefile.orig	2018-06-30 21:11:02 UTC
++++ Makefile
+@@ -13,14 +13,14 @@ install:
+ 	$(CC) -o $@ $(OBJS) $(LIBS) $(CFLAGS)
+ 
+ install:
+-	[ -d $(PREFIX)/bin ] || mkdir -p $(PREFIX)/bin
+-	cp subcalc $(PREFIX)/bin
+-	[ -d $(PREFIX)/share/man/man1/ ] || mkdir -p $(PREFIX)/share/man/man1/
+-	cp subcalc.1 $(PREFIX)/share/man/man1/
++	[ -d $(DESTDIR)$(PREFIX)/bin ] || mkdir -p $(DESTDIR)$(PREFIX)/bin
++	cp subcalc $(DESTDIR)$(PREFIX)/bin
++	[ -d $(DESTDIR)$(PREFIX)/share/man/man1/ ] || mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1/
++	cp subcalc.1 $(DESTDIR)$(PREFIX)/share/man/man1/
+ 
+ deinstall:
+-	rm -f $(PREFIX)/share/man/man1/subcalc.1.gz
+-	rm -f $(PREFIX)/bin/subcalc
++	rm -f $(DESTDIR)$(PREFIX)/share/man/man1/subcalc.1.gz
++	rm -f $(DESTDIR)$(PREFIX)/bin/subcalc
+ 
+ clean:
+ 	rm -f subcalc

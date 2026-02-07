@@ -1,0 +1,4 @@
+Auto-admin is a set of tools for automating common systems management tasks
+from the command line.  It is meant as a library of scripts to be used by
+more specific automated systems management scripts.  It is also intended to
+serve as a compatibility layer to ease management of multiple POSIX platforms.

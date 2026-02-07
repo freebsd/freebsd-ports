@@ -1,0 +1,25 @@
+--- shibboleth.spec.in.orig	2020-03-18 19:45:13.000000000 +0100
++++ shibboleth.spec.in	2020-04-13 23:31:22.397381000 +0200
+@@ -72,7 +72,7 @@
+ %if "%{_vendor}" == "suse"
+ %define pkgdocdir %{_docdir}/shibboleth
+ %else
+-%define pkgdocdir %{_docdir}/shibboleth-%{version}
++%define pkgdocdir %{_docdir}/shibboleth
+ %endif
+ 
+ %description
+@@ -293,13 +293,6 @@
+ 
+ %post
+ /sbin/ldconfig
+-
+-# Generate two keys on new installs.
+-if [ $1 -eq 1 ] ; then
+-	cd %{_sysconfdir}/shibboleth
+-	/bin/sh ./keygen.sh -b -n sp-signing -u %{runuser} -g %{runuser}
+-	/bin/sh ./keygen.sh -b -n sp-encrypt -u %{runuser} -g %{runuser}
+-fi
+ 
+ %if "%{_vendor}" == "redhat" || "%{_vendor}" == "amazon"
+ if [ $1 -gt 1 ] ; then

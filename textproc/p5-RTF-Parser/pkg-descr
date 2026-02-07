@@ -1,0 +1,11 @@
+The RTF package set is a minimal RTF processor.  This set is provided
+with an RTF to HTML converter.  This converter is just an example, not
+a full-fledged application.
+
+You can try this converter the RTF specification (see the "Ressources"
+section).  For example:
+
+	% rtf2html RTF-Spec-1_5.rtf > RTF-Spec-1_5.htm
+
+Philippe Verdret
+pverdret@sonovision-itep.fr

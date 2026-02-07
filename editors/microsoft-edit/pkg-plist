@@ -1,0 +1,6 @@
+bin/edit
+bin/msedit
+share/applications/com.microsoft.edit.desktop
+share/icons/hicolor/scalable/apps/msedit.svg
+share/man/man1/edit.1.gz
+share/man/man1/msedit.1.gz

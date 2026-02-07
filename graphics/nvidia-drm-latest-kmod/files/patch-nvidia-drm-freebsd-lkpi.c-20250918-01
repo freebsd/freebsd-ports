@@ -1,0 +1,47 @@
+--- nvidia-drm-freebsd-lkpi.c.orig	2025-08-27 17:59:14 UTC
++++ nvidia-drm-freebsd-lkpi.c
+@@ -104,6 +104,35 @@ lkpinew_pci_dev(device_t dev)
+  * FreeBSD linuxkpi based loading support code.
+  *************************************************************************/
+ 
++static int
++dummy_nv_pci_probe(struct pci_dev *pci_dev __unused,
++    const struct pci_device_id *id_table __unused)
++{
++	return (0);
++}
++
++static void
++dummy_nv_pci_remove(struct pci_dev *pci_dev __unused)
++{
++}
++
++static void
++dummy_nv_pci_shutdown(struct pci_dev *pci_dev __unused)
++{
++}
++
++struct pci_driver nv_pci_driver = {
++	.name =		"drmn",
++	.id_table =	nv_pci_table,
++	.probe =	dummy_nv_pci_probe,
++	.remove =	dummy_nv_pci_remove,
++	.shutdown =	dummy_nv_pci_shutdown,
++#if defined(__FreeBSD__)
++	/* FreeBSD internal/specifc. */
++	.isdrm =	true,
++#endif
++};
++
+ static struct pci_dev *nv_lkpi_pci_devs[NV_MAX_DEVICES];
+ 
+ int nv_drm_probe_devices(void)
+@@ -153,7 +182,7 @@ int nv_drm_probe_devices(void)
+             return -ENOMEM;
+         }
+ 
+-        if (linux_pci_attach_device(sc->dev, NULL, NULL, pdev)) {
++        if (linux_pci_attach_device(sc->dev, &nv_pci_driver, NULL, pdev)) {
+             NV_DRM_LOG_ERR("Failed to attach linuxkpi PCI device");
+             free(pdev, M_DEVBUF);
+             return -ENOMEM;

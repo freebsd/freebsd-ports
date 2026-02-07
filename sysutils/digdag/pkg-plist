@@ -1,0 +1,5 @@
+@sample etc/digdag.conf.sample
+%%JAVAJARDIR%%/digdag/digdag-%%VERSION%%.jar
+bin/digdag
+@owner %%USERS%%
+@dir /var/run/digdag

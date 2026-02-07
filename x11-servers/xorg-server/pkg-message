@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Xorg-server has been installed.
+
+If your kernel is compiled with the EVDEV_SUPPORT option enabled
+(default starting from FreeBSD 12.1) it is recommended to enable evdev mode in
+pointer device drivers like ums(4) and psm(4). This will give improvements like
+better tilt wheel support for mice and centralized gesture support via
+xf86-input-synaptics or libinput drivers for touchpads.
+
+This is also needed for PS/2 devices to be properly detected by Xorg when
+moused service is disabled in /etc/rc.conf and kernel is compiled with
+EVDEV_SUPPORT.
+
+To enable evdev in such a device, run the following:
+
+# sysctl kern.evdev.rcpt_mask=6
+
+To make it persistent across reboots, add the following to /etc/sysctl.conf:
+
+kern.evdev.rcpt_mask=6
+
+In case you're using a serial mouse or any other mouse that *only* works over
+sysmouse(4) and moused(8) on an evdev enabled kernel, please run this:
+
+# sysctl kern.evdev.rcpt_mask=3
+
+To make it persistent across reboots, add to this /etc/sysctl.conf:
+
+kern.evdev.rcpt_mask=3
+
+EOM
+}
+]

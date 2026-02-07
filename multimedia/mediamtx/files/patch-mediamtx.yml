@@ -1,0 +1,113 @@
+--- mediamtx.yml.orig	2025-08-12 20:37:33 UTC
++++ mediamtx.yml
+@@ -450,7 +450,6 @@ pathDefaults:
+   # * whep://existing-url -> the stream is pulled from another WebRTC server / camera
+   # * wheps://existing-url -> the stream is pulled from another WebRTC server / camera with HTTPS
+   # * redirect -> the stream is provided by another path or server
+-  # * rpiCamera -> the stream is provided by a Raspberry Pi Camera
+   # The following variables can be used in the source string:
+   # * $MTX_QUERY: query parameters (passed by first reader)
+   # * $G1, $G2, ...: regular expression groups, if path name is
+@@ -564,101 +563,7 @@ pathDefaults:
+   # It can be can be a relative path (i.e. /otherstream) or an absolute RTSP URL.
+   sourceRedirect:
+ 
+-  ###############################################
+-  # Default path settings -> Raspberry Pi Camera source (when source is "rpiCamera")
+-
+-  # ID of the camera.
+-  rpiCameraCamID: 0
+-  # Whether this is a secondary stream.
+-  rpiCameraSecondary: false
+-  # Width of frames.
+-  rpiCameraWidth: 1920
+-  # Height of frames.
+-  rpiCameraHeight: 1080
+-  # Flip horizontally.
+-  rpiCameraHFlip: false
+-  # Flip vertically.
+-  rpiCameraVFlip: false
+-  # Brightness [-1, 1].
+-  rpiCameraBrightness: 0
+-  # Contrast [0, 16].
+-  rpiCameraContrast: 1
+-  # Saturation [0, 16].
+-  rpiCameraSaturation: 1
+-  # Sharpness [0, 16].
+-  rpiCameraSharpness: 1
+-  # Exposure mode.
+-  # values: normal, short, long, custom.
+-  rpiCameraExposure: normal
+-  # Auto-white-balance mode.
+-  # (auto, incandescent, tungsten, fluorescent, indoor, daylight, cloudy or custom).
+-  rpiCameraAWB: auto
+-  # Auto-white-balance fixed gains. This can be used in place of rpiCameraAWB.
+-  # format: [red,blue].
+-  rpiCameraAWBGains: [0, 0]
+-  # Denoise operating mode (off, cdn_off, cdn_fast, cdn_hq).
+-  rpiCameraDenoise: "off"
+-  # Fixed shutter speed, in microseconds.
+-  rpiCameraShutter: 0
+-  # Metering mode of the AEC/AGC algorithm (centre, spot, matrix or custom).
+-  rpiCameraMetering: centre
+-  # Fixed gain.
+-  rpiCameraGain: 0
+-  # EV compensation of the image in range [-10, 10].
+-  rpiCameraEV: 0
+-  # Region of interest, in format x,y,width,height (all normalized between 0 and 1).
+-  rpiCameraROI:
+-  # Whether to enable HDR on Raspberry Camera 3.
+-  rpiCameraHDR: false
+-  # Tuning file.
+-  rpiCameraTuningFile:
+-  # Sensor mode, in format [width]:[height]:[bit-depth]:[packing]
+-  # bit-depth and packing are optional.
+-  rpiCameraMode:
+-  # frames per second.
+-  rpiCameraFPS: 30
+-  # Autofocus mode (auto, manual or continuous).
+-  rpiCameraAfMode: continuous
+-  # Autofocus range (normal, macro or full).
+-  rpiCameraAfRange: normal
+-  # Autofocus speed (normal or fast).
+-  rpiCameraAfSpeed: normal
+-  # Lens position (for manual autofocus only), will be set to focus to a specific distance
+-  # calculated by the following formula: d = 1 / value
+-  # Examples: 0 moves the lens to infinity.
+-  #           0.5 moves the lens to focus on objects 2m away.
+-  #           2 moves the lens to focus on objects 50cm away.
+-  rpiCameraLensPosition: 0.0
+-  # Autofocus window, in the form x,y,width,height where the coordinates
+-  # are given as a proportion of the entire image.
+-  rpiCameraAfWindow:
+-  # Manual flicker correction period, in microseconds.
+-  rpiCameraFlickerPeriod: 0
+-  # Enables printing text on each frame.
+-  rpiCameraTextOverlayEnable: false
+-  # Text that is printed on each frame.
+-  # format is the one of the strftime() function.
+-  rpiCameraTextOverlay: '%Y-%m-%d %H:%M:%S - MediaMTX'
+-  # Codec (auto, hardwareH264, softwareH264 or mjpeg).
+-  # When is "auto" and stream is primary, it defaults to hardwareH264 (if available) or softwareH264.
+-  # When is "auto" and stream is secondary, it defaults to mjpeg.
+-  rpiCameraCodec: auto
+-  # Period between IDR frames (when codec is hardwareH264 or softwareH264).
+-  rpiCameraIDRPeriod: 60
+-  # Bitrate (when codec is hardwareH264 or softwareH264).
+-  rpiCameraBitrate: 5000000
+-  # Hardware H264 profile (baseline, main or high) (when codec is hardwareH264).
+-  rpiCameraHardwareH264Profile: main
+-  # Hardware H264 level (4.0, 4.1 or 4.2) (when codec is hardwareH264).
+-  rpiCameraHardwareH264Level: '4.1'
+-  # Software H264 profile (baseline, main or high) (when codec is softwareH264).
+-  rpiCameraSoftwareH264Profile: baseline
+-  # Software H264 level (4.0, 4.1 or 4.2) (when codec is softwareH264).
+-  rpiCameraSoftwareH264Level: '4.1'
+-  # M-JPEG JPEG quality (when codec is mjpeg).
+-  rpiCameraMJPEGQuality: 60
+-
+-  ###############################################
++  #################################################
+   # Default path settings -> Hooks
+ 
+   # Command to run when this path is initialized.

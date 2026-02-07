@@ -1,0 +1,21 @@
+--- Makefile.orig	2020-07-23 22:56:39 UTC
++++ Makefile
+@@ -27,12 +27,12 @@ $(PROGRAM): $(OBJECTS)
+ 	$(CC) $(CFLAGS) -DSYSCONFDIR='"$(sysconfdir)"' -c -o $@ $<
+ 
+ install: $(PROGRAM) $(MANPAGE) $(SYSCONF)
+-	mkdir --parents "$(DESTDIR)$(bindir)"
+-	$(INSTALL_PROGRAM) "$(PROGRAM)" -t "$(DESTDIR)$(bindir)"
+-	mkdir --parents "$(DESTDIR)$(man1dir)"
+-	$(INSTALL_DATA) "$(MANPAGE)" -t "$(DESTDIR)$(man1dir)"
+-	mkdir --parents "$(DESTDIR)$(sysconfdir)/$(PROGRAM)"
+-	$(INSTALL_DATA) "$(SYSCONF)" -t "$(DESTDIR)$(sysconfdir)/$(PROGRAM)"
++	mkdir -p "$(DESTDIR)$(bindir)"
++	$(BSD_INSTALL_PROGRAM) "$(PROGRAM)" "$(DESTDIR)$(bindir)"
++	mkdir -p "$(DESTDIR)$(man1dir)"
++	$(BSD_INSTALL_DATA) "$(MANPAGE)" "$(DESTDIR)$(man1dir)"
++	mkdir -p "$(DESTDIR)$(sysconfdir)/$(PROGRAM)"
++	$(BSD_INSTALL_DATA) "$(SYSCONF)" "$(DESTDIR)$(sysconfdir)/$(PROGRAM)/$(SYSCONF).sample"
+ 
+ uninstall:
+ 	rm -f "$(DESTDIR)$(bindir)/$(PROGRAM)"

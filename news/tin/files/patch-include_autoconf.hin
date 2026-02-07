@@ -1,0 +1,10 @@
+--- include/autoconf.hin.orig	2022-12-09 09:03:48 UTC
++++ include/autoconf.hin
+@@ -49,7 +49,6 @@
+ 
+ /* compiler, compilerflags, ... */
+ #	undef TIN_CC
+-#	undef TIN_CFLAGS
+ #	undef TIN_CPP
+ #	undef TIN_CPPFLAGS
+ #	undef TIN_LD

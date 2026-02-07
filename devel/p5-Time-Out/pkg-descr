@@ -1,0 +1,2 @@
+Time::Out provides an easy interface to alarm(2) based timeouts.  Nested
+timeouts are supported.

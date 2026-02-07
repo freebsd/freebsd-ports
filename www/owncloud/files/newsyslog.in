@@ -1,0 +1,2 @@
+# logfilename          [owner:group]    mode count size when  flags [/pid_file] [sig_num]
+%%WWWDIR%%/data/owncloud.log www:www	640  10    1000 *     XCBN

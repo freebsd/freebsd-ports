@@ -1,0 +1,5 @@
+bin/blackbox_exporter
+%%DATADIR%%/newsyslog.conf.d/blackbox_exporter.conf
+%%DATADIR%%/syslog.d/blackbox_exporter.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blackbox.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.yml

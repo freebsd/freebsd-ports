@@ -1,0 +1,2 @@
+This module implements a very thin layer around the getgroups(2) and
+setgroups(2) syscalls.

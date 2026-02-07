@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Math/Random/ISAAC/PP.pm
+%%SITE_PERL%%/Math/Random/ISAAC.pm
+%%PERL5_MAN3%%/Math::Random::ISAAC::PP.3.gz
+%%PERL5_MAN3%%/Math::Random::ISAAC.3.gz

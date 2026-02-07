@@ -1,0 +1,8 @@
+bin/dgvalidator
+bin/drumgizmo
+lib/lv2/drumgizmo.lv2/drumgizmo.so
+lib/lv2/drumgizmo.lv2/manifest.ttl
+share/man/man1/dgvalidator.1.gz
+share/man/man1/dgvalidator.fr.1.gz
+share/man/man1/drumgizmo.1.gz
+share/man/man1/drumgizmo.fr.1.gz

@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Types/Namespace.pm
+%%SITE_PERL%%/URI/Namespace.pm
+%%SITE_PERL%%/URI/NamespaceMap.pm
+%%SITE_PERL%%/URI/NamespaceMap/ReservedLocalParts.pm
+%%PERL5_MAN3%%/Types::Namespace.3.gz
+%%PERL5_MAN3%%/URI::Namespace.3.gz
+%%PERL5_MAN3%%/URI::NamespaceMap.3.gz
+%%PERL5_MAN3%%/URI::NamespaceMap::ReservedLocalParts.3.gz

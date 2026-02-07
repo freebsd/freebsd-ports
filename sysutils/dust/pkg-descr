@@ -1,0 +1,6 @@
+Dust is an alternative to du(1) that makes it easier to actually reason about
+your disk space utilization. It has bar charts, shows both large directories
+and large files where appropriate, and has many filtering options.
+
+Unless your intent was just to pipe du's output, dust is more likely to give
+you the utilization information you were actually looking for.

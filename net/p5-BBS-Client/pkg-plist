@@ -1,0 +1,5 @@
+bin/bbs_get.pl
+bin/bbs_listen.pl
+%%PERL5_MAN3%%/BBS::Client.3.gz
+%%SITE_PERL%%/BBS/Client.pm
+%%SITE_PERL%%/BBS/Client/Scheme.pm

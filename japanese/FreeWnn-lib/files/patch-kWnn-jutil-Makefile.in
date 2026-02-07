@@ -1,0 +1,19 @@
+--- ./kWnn/jutil/Makefile.in.orig	2014-09-10 01:32:13.000000000 +0900
++++ ./kWnn/jutil/Makefile.in	2014-09-10 01:32:26.000000000 +0900
+@@ -39,7 +39,6 @@
+ 
+        INCLUDES = -I$(KWNNINCLUDESRC) -I$(top_builddir)
+         DEFINES = $(KWNNDEFINES) $(KWNNLANGDEF)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+     HINSIDEFINE = -DHINSIDATA_FILE=\"/$(KWNNLANG)/hinsi.data\"
+ 
+ CLIENTPROGRAMS = kwnnstat kwnnkill kwddel kwdreg
+@@ -329,7 +328,7 @@
+ 	@for flag in ${MAKEFLAGS} ''; do \
+ 	case "$$flag" in *=*) ;; *[i]*) set +e;; esac; done; \
+ 	for i in $(PROGRAMS); do \
+-	(set -x; $(LT_INSTALL) $(INSTBINFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) $$i $(DESTDIR)$(KWNNBINDIR)); \
++	(set -x; $(LT_INSTALL) $(INSTBINFLAGS) $(INSTPGMFLAGS) $$i $(DESTDIR)$(KWNNBINDIR)); \
+ 	done
+ 
+ $(OBJ1) : $(SRC1)

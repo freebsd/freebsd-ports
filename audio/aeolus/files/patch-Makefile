@@ -1,0 +1,26 @@
+--- Makefile.orig	2022-05-10 14:21:40 UTC
++++ Makefile
+@@ -21,12 +21,12 @@
+ SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+-LIBDIR ?= $(PREFIX)/lib$(SUFFIX)
++LIBDIR ?= $(PREFIX)/lib
+ 
+ VERSION = 0.10.4
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(LIBDIR)\"
+ CXXFLAGS += -O2 -Wall
+-CXXFLAGS += -march=native
++#CXXFLAGS += -march=native # doesn't work on arm64
+ 
+ 
+ all:	aeolus aeolus_x11.so aeolus_txt.so
+@@ -75,7 +75,7 @@ install:	aeolus aeolus_x11.so aeolus_txt.so 
+ 	install -m 755 aeolus $(DESTDIR)$(BINDIR)
+ 	install -m 755 aeolus_x11.so $(DESTDIR)$(LIBDIR)
+ 	install -m 755 aeolus_txt.so $(DESTDIR)$(LIBDIR)
+-	ldconfig $(PREFIX)/$(LIBDIR)
++	#ldconfig $(PREFIX)/$(LIBDIR)
+ 
+ 
+ clean:

@@ -1,0 +1,2 @@
+gojq is an implementation of the jq command written in Go.
+You can also embed gojq as a library to your Go products.

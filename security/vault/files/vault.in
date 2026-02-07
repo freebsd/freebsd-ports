@@ -1,0 +1,88 @@
+#!/bin/sh
+
+# PROVIDE: vault
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# vault_enable (bool):	Set it to YES to enable vault.
+#			Default is "NO".
+# vault_user (user):	Set user to run vault.
+#			Default is "vault".
+# vault_group (group):	Set group to run vault.
+#			Default is "vault".
+# vault_config (file):	Set vault config file.
+#			Default is "%%PREFIX%%/etc/vault.hcl".
+# vault_syslog_output_enable (bool):	Set to enable syslog output.
+#					Default is "NO". See daemon(8).
+# vault_syslog_output_priority (str):	Set syslog priority if syslog enabled.
+#					Default is "info". See daemon(8).
+# vault_syslog_output_facility (str):	Set syslog facility if syslog enabled.
+#					Default is "daemon". See daemon(8).
+# vault_limits_mlock (size): allowd memorylocked value in size. Default is 1024M
+
+. /etc/rc.subr
+
+name=vault
+rcvar=vault_enable
+
+load_rc_config $name
+
+: ${vault_enable:="NO"}
+: ${vault_user:="vault"}
+: ${vault_group:="vault"}
+: ${vault_config:="%%PREFIX%%/etc/vault.hcl"}
+: ${vault_limits_mlock:="1024M"}
+: ${vault_limits:="-l ${vault_limits_mlock}"}
+
+DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
+if [ ${DAEMON} -eq 0 ]; then
+        : ${vault_syslog_output_enable:="NO"}
+        : ${vault_syslog_output_priority:="info"}
+        : ${vault_syslog_output_facility:="daemon"}
+        if checkyesno vault_syslog_output_enable; then
+                vault_syslog_output_flags="-T ${name}"
+
+                if [ -n "${vault_syslog_output_priority}" ]; then
+                        vault_syslog_output_flags="${vault_syslog_output_flags} -s ${vault_syslog_output_priority}"
+                fi
+
+                if [ -n "${vault_syslog_output_facility}" ]; then
+                        vault_syslog_output_flags="${vault_syslog_output_flags} -l ${vault_syslog_output_facility}"
+                fi
+        fi
+else
+        vault_syslog_output_enable="NO"
+        vault_syslog_output_flags=""
+fi
+
+pidfile=/var/run/vault.pid
+procname="%%PREFIX%%/bin/vault"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${vault_syslog_output_flags} -p ${pidfile} /usr/bin/env ${vault_env} ${procname} server -config=${vault_config}"
+
+extra_commands="reload monitor"
+monitor_cmd=vault_monitor
+start_precmd=vault_startprecmd
+required_files="$vault_config"
+
+vault_monitor()
+{
+	sig_reload=USR1
+	run_rc_command "reload"
+}
+
+vault_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${vault_user} -g ${vault_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${vault_dir} ]; then
+                install -d -o ${vault_user} -g ${vault_group} ${vault_dir}
+        fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,6 @@
+FreeBSD Port Tools includes the following commands:
+- port create: create a new port from a template
+- port diff: generate a diff against a previous version of the port
+- port fetch: fetch distfile(s) of a new version of the port
+- port help: display usage summary for port(1) commands
+- port test: automate testing a new port or a port update

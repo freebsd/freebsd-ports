@@ -1,0 +1,6 @@
+bin/rabin.pl
+%%PERL5_MAN3%%/Algorithm::RabinKarp.3.gz
+%%PERL5_MAN3%%/Algorithm::RabinKarp::Util.3.gz
+%%SITE_PERL%%/Algorithm/RabinKarp.pm
+%%SITE_PERL%%/Algorithm/RabinKarp/Util.pm
+%%SITE_PERL%%/Algorithm/rabin.pl

@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Authen/Simple.pm
+%%SITE_PERL%%/Authen/Simple/Adapter.pm
+%%SITE_PERL%%/Authen/Simple/Apache.pm
+%%SITE_PERL%%/Authen/Simple/Log.pm
+%%SITE_PERL%%/Authen/Simple/Password.pm
+%%PERL5_MAN3%%/Authen::Simple.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Adapter.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Apache.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Log.3.gz
+%%PERL5_MAN3%%/Authen::Simple::Password.3.gz

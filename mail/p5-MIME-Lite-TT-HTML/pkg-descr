@@ -1,0 +1,2 @@
+This module provide easy interface to make MIME::Lite object with html
+    formatted mail.

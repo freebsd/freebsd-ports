@@ -1,0 +1,15 @@
+--- XADMaster/Makefile.common.orig	2016-05-17 06:39:04 UTC
++++ XADMaster/Makefile.common
+@@ -209,12 +209,6 @@ LIBRARY_C_FILES =	BWT.c \
+ 			PPMd/VariantG.c \
+ 			PPMd/VariantH.c \
+ 			PPMd/VariantI.c \
+-			wavpack/bits.c \
+-			wavpack/float.c \
+-			wavpack/metadata.c \
+-			wavpack/unpack.c \
+-			wavpack/words.c \
+-			wavpack/wputils.c \
+ 			WinZipJPEG/ArithmeticDecoder.c \
+ 			WinZipJPEG/Decompressor.c \
+ 			WinZipJPEG/JPEG.c

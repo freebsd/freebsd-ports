@@ -1,0 +1,13 @@
+diff --git ccs/Makefile ccs/Makefile
+index b61420c..faffe0f 100644
+--- ccs/Makefile
++++ ccs/Makefile
+@@ -67,8 +67,6 @@ beforeinstall:
+ 	cd ${.CURDIR}; \
+ 	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m 444 \
+ 		${INSTALLFLAGS} ${CHARSETS_TBL} ${DESTDIR}${TABLEDIR}; \
+-	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+-		iconv_mktbl ${DESTDIR}${BINDIR}
+ 
+ CLEANFILES +=	*.c *.cct
+ 

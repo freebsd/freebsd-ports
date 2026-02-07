@@ -1,0 +1,8 @@
+bin/migrate
+bin/migrate-n
+share/man/man1/migrate-n.1.gz
+share/man/man1/migrate.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/graphics/librarian.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/mail.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/migrate.gif
+%%PORTDOCS%%%%DOCSDIR%%/graphics/packet.gif

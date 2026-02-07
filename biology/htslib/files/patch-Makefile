@@ -1,0 +1,14 @@
+--- Makefile.orig	2023-02-24 13:35:28 UTC
++++ Makefile
+@@ -60,9 +60,9 @@ INSTALL = install -p
+ INSTALL_DATA    = $(INSTALL) -m 644
+ INSTALL_DIR     = $(MKDIR_P) -m 755
+ LIB_PERM        = 644
+-INSTALL_LIB     = $(INSTALL) -m $(LIB_PERM)
++INSTALL_LIB     = $(BSD_INSTALL_LIB)
+ INSTALL_MAN     = $(INSTALL_DATA)
+-INSTALL_PROGRAM = $(INSTALL)
++INSTALL_PROGRAM = $(BSD_INSTALL_PROGRAM)
+ 
+ # Set by config.mk if plugins are enabled
+ plugindir =

@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-04-29 18:43:05 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ # We assume X64 unless HH_POWER, HH_ARM, or HH_AARCH64 are defined.
+ 
+ override CPPFLAGS += -I.
+-override CXXFLAGS += -std=c++11 -Wall -O3 -fPIC -pthread
++override CXXFLAGS += -std=c++11 -Wall -fPIC -pthread
+ override LDFLAGS += -pthread
+ 
+ PREFIX ?= /usr/local

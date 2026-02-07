@@ -1,0 +1,6 @@
+include/SDL2_Pango.h
+lib/libSDL2_Pango.a
+lib/libSDL2_Pango.so
+lib/libSDL2_Pango.so.4
+lib/libSDL2_Pango.so.4.1.0
+libdata/pkgconfig/SDL2_Pango.pc

@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2024-03-03 12:06:29 UTC
++++ CMakeLists.txt
+@@ -77,9 +77,6 @@ if (FREEBSD)
+ endif (NETBSD)
+ 
+ if (FREEBSD)
+-SET (TASKD_MAN1DIR man/man1  CACHE STRING "Installation directory for man pages, section 1")
+-SET (TASKD_MAN5DIR man/man5  CACHE STRING "Installation directory for man pages, section 5")
+-else (FREEBSD)
+ SET (TASKD_MAN1DIR share/man/man1  CACHE STRING "Installation directory for man pages, section 1")
+ SET (TASKD_MAN5DIR share/man/man5  CACHE STRING "Installation directory for man pages, section 5")
+ endif (FREEBSD)

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2018-08-24 22:46:14 UTC
++++ src/Makefile.in
+@@ -292,7 +292,7 @@ INCLUDES = \
+ 	-DIMAGEDIR=\"$(imagedir)\"   \
+ 	-DMETADATADIR=\"$(metadatadir)\"
+ 
+-compiz_LDADD = @COMPIZ_LIBS@ @GL_LIBS@ -lm -ldl
++compiz_LDADD = @COMPIZ_LIBS@ @GL_LIBS@ -lm
+ compiz_LDFLAGS = -export-dynamic -pthread
+ compiz_SOURCES = \
+ 	main.c	   \

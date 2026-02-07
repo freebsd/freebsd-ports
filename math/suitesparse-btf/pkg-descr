@@ -1,0 +1,9 @@
+This port installs the module BTF of SuiteSparse.
+
+BTF is a software package for permuting a matrix into block upper triangular
+form. It includes a maximum transversal algorithm, which finds a permutation
+of a square or rectangular matrix so that it has a zero-free diagonal (if one
+exists); otherwise, it finds a maximal matching which maximizes the number of
+nonzeros on the diagonal. The package also includes a method for finding the
+strongly connected components of a graph. These two methods together give the
+permutation to block upper triangular form.

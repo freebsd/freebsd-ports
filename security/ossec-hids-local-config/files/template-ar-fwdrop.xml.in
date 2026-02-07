@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <active-response>
+    <!-- Block the IP on the firewall. -->
+    <!-- See: http://www.ossec.net/docs/syntax/head_ossec_config.active-response.html#active-response-options -->
+    <command>firewall-drop</command>
+    <location>local</location>
+    <level>6</level>
+    <timeout>600</timeout>
+  </active-response>
+
+</template_config>

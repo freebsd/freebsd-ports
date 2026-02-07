@@ -1,0 +1,37 @@
+--- man/Makefile.in.orig	2024-02-25 17:08:15 UTC
++++ man/Makefile.in
+@@ -466,28 +466,18 @@ EXTRA_DIST = $(bootstrap_man_sources) $(web_man_source
+ 	mf.man mpost.man etex.man $(pdftex_man_sources) ptex.man \
+ 	ppltotf.man ptftopl.man pbibtex.man luatex.man xetex.man \
+ 	$(otangle_man_sources) aleph.man $(misc_man_sources) spell.add
+-bootstrap_man_sources = ctie.man cweb.man ctwill.man tangle.man tie.man
++bootstrap_man_sources =
+ 
+ # Symlinks within $(man1dir): FILE:LINK indicates LINK.1->FILE.1
+-man1_links = cweb:ctangle cweb:cweave ctwill:ctwill-proofsort \
+-	ctwill:ctwill-refsort ctwill:ctwill-twinx $(am__append_2) \
++man1_links = $(am__append_2) \
+ 	$(am__append_4) $(am__append_6) $(am__append_7) \
+ 	$(am__append_11) $(am__append_13) $(am__append_15) \
+-	$(am__append_18) latex-dev:pdflatex-dev latex-dev:xelatex-dev \
+-	latex-dev:lualatex-dev latex-dev:dvilualatex-dev \
+-	latex-dev:platex-dev latex-dev:uplatex-dev
+-web_man_sources = bibtex.man dvicopy.man dvitomp.man dvitype.man gftodvi.man \
+-	gftopk.man gftype.man mft.man patgen.man pktogf.man pktype.man \
+-	pltotf.man pooltype.man tftopl.man twill.man \
+-	vftovp.man vptovf.man weave.man
++	$(am__append_18)
++web_man_sources =
+ 
+ pdftex_man_sources = pdftex.man pdftosrc.man ttf2afm.man
+-otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.man ovp2ovf.man
+-misc_man_sources = \
+-	amstex.man \
+-	latex.man \
+-	latex-dev.man \
+-	pdfetex.man
++otangle_man_sources =
++misc_man_sources =
+ 
+ SUFFIXES = .1 .man .ps .dvi
+ man_files = $(man_sources:.man=.1)

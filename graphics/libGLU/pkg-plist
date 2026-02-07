@@ -1,0 +1,5 @@
+include/GL/glu.h
+lib/libGLU.so
+lib/libGLU.so.1
+lib/libGLU.so.1.3.1
+libdata/pkgconfig/glu.pc

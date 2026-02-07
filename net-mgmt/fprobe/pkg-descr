@@ -1,0 +1,3 @@
+fprobe: a NetFlow probe - libpcap-based tool that collects
+network traffic data and emit it as NetFlow flows towards the
+specified collector.

@@ -1,0 +1,5 @@
+TIMESTAMP = 1648655356
+SHA256 (sqsh-2.5.16.1.tgz) = d6641f365ace60225fc0fa48f82b9dbed77a4e506a0e497eb6889e096b8320f2
+SIZE (sqsh-2.5.16.1.tgz) = 623715
+SHA256 (patch-src_cmd_connect_c) = 1270ac466cacbac98952190315964cda0e8da0e955e01d14030a4091ed3ce9b7
+SIZE (patch-src_cmd_connect_c) = 1579

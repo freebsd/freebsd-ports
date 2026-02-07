@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: fwknopd
+# REQUIRE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf to enable fwknopd:
+#
+# fwknopd_enable="YES"
+#
+# See fwknopd(8) for flags
+#
+
+. /etc/rc.subr
+
+name=fwknopd
+rcvar=fwknopd_enable
+
+command=%%PREFIX%%/sbin/fwknopd
+required_files=%%PREFIX%%/etc/fwknop/access.conf
+
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+
+extra_commands="reload"
+
+start_precmd()
+{
+}
+
+stop_postcmd()
+{
+}
+
+# read settings, set default values
+load_rc_config $name
+: ${fwknopd_enable="NO"}
+
+run_rc_command "$1"

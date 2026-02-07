@@ -1,0 +1,1 @@
+Creates a temporary instance of OpenLDAP's slapd daemon to run tests against.

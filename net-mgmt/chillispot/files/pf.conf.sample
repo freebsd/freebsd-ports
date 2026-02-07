@@ -1,0 +1,47 @@
+#
+# Basic Chillispot PF Config
+# A tweak of Example 1 from the PF FAQ
+# http://www.openbsd.org/faq/pf/example1.html
+# By Venture37 
+# venture37@geeklan.co.uk
+# http://www.geeklan.co.uk
+
+# macros
+int_if = "ral0"
+ext_if = "fxp0"
+chilli_if = "tun0"
+
+tcp_services = "{ 22, 113 }"
+icmp_types = "echoreq"
+
+priv_nets = "{ 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8 }"
+        
+# options
+set block-policy return
+set loginterface $ext_if
+
+# scrub
+scrub in all
+
+# nat/rdr
+nat on $ext_if from $chilli_if:network to any -> ($ext_if)
+
+# filter rules
+block all
+
+pass quick on lo0 all
+
+block drop in  quick on $ext_if from $priv_nets to any
+block drop out quick on $ext_if from any to $priv_nets
+block drop on $int_if all
+
+pass in on $ext_if inet proto tcp from any to ($ext_if) \
+   port $tcp_services flags S/SA keep state
+
+pass in inet proto icmp all icmp-type $icmp_types keep state
+
+pass in  on $chilli_if from $chilli_if:network to any keep state
+pass out on $chilli_if from any to $chilli_if:network keep state
+
+pass out on $ext_if proto tcp all modulate state flags S/SA
+pass out on $ext_if proto { udp, icmp } all keep state

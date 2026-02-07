@@ -1,0 +1,1 @@
+P_NO_FLAGS = -DNO_MALLOC_H

@@ -1,0 +1,63 @@
+--- Makefile.orig	2024-08-22 17:41:01 UTC
++++ Makefile
+@@ -7,11 +7,7 @@ SRCDIR ?= .
+ DESTDIR = 
+ SRCDIR ?= .
+ 
+-CC = gcc
+-SHELL := bash
+-RPM_OPT_FLAGS ?= -Os -Wall -g -D_FORTIFY_SOURCE=2
+-CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS) -DHAVE_CONFIG_H -I .
+-CFLAGS_OPT = $(CFLAGS) -O3
++CFLAGS_OPT = $(CFLAGS) -DHAVE_CONFIG_H
+ INSTALL ?= install
+ INSTALLFLAGS = -s
+ prefix = $(DESTDIR)/usr
+@@ -39,7 +35,7 @@ ID = $(shell git describe --tags || cat REL-ID)
+ LIBDIR = /usr/$(LIB)
+ COMPILER = $(shell $(CC) --version | head -n1)
+ ID = $(shell git describe --tags || cat REL-ID)
+-DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" -DID=\"$(ID)\" # -DPLUGSEARCH="\"$(LIBDIR)\""
++DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" -DID=\"$(ID)\" -DHAVE_CONFIG_H # -DPLUGSEARCH="\"$(LIBDIR)\""
+ OUT = -o dd_rescue
+ PIC = -fPIC
+ PIE = -fPIE
+@@ -75,19 +71,13 @@ endif
+   HAVE_XATTR=0
+ endif
+ 
+-ifeq ($(CC),wcl386)
+-  CFLAGS = "-ox -wx $(EXTRA_CFLAGS)"
+-  DEFINES = -dMISS_STRSIGNAL -dMISS_PREAD -dVERSION=\"$(VERSION)\" -d__COMPILER__="\"$(COMPILER)\""
+-  OUT = ""
+-endif
+-
+ MACH := $(shell uname -m | tr A-Z a-z | sed 's/i[3456]86/i386/')
+ 
+ ISX86 := 0
+ ifeq ($(MACH),i386)
+   ISX86 := 1
+ endif
+-ifeq ($(MACH),x86_64)
++ifeq ($(MACH),amd64)
+   ISX86 := 1
+   LIB = lib64
+ endif
+@@ -296,7 +286,7 @@ libddr_lzo.so: libddr_lzo.po
+ 	ln -sf $< $@
+ 
+ libddr_lzo.so: libddr_lzo.po
+-	$(CC) -shared -o $@ $^ -llzo2
++	$(CC) -shared -o $@ $^ $(EXTRA_LDFLAGS) -llzo2
+ 
+ libddr_null.so: libddr_null.po
+ 	$(CC) -shared -o $@ $^
+@@ -367,7 +357,7 @@ dd_rescue: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS) $(OBJE
+ 
+ # This is the default built
+ dd_rescue: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS) $(OBJECTS) $(OBJECTS2)
+-	$(CC) $(CFLAGS) $(PIE) $(LDPIE) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) -ldl $(EXTRA_LDFLAGS) $(RDYNAMIC)
++	$(CC) $(CFLAGS) $(PIE) $(LDPIE) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) $(EXTRA_LDFLAGS) $(RDYNAMIC)
+ 
+ # Test programs 
+ md5: $(SRCDIR)/md5.c $(SRCDIR)/md5.h $(SRCDIR)/hash.h config.h

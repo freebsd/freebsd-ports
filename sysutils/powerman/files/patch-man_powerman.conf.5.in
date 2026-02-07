@@ -1,0 +1,20 @@
+--- man/powerman.conf.5.in.orig	2012-01-13 23:01:47 UTC
++++ man/powerman.conf.5.in
+@@ -5,7 +5,7 @@ powerman.conf \- configuration file for PowerMan
+ 
+ .SH DESCRIPTION
+ The powerman.conf file typically includes one or more of the remote power 
+-controller (RPC) device files provided in the /etc/powerman directory; 
++controller (RPC) device files provided in the @X_SYSCONFDIR@/powerman directory;
+ sets a few global options; 
+ instantiates RPC devices with unique names, hostnames, and ports;  
+ and maps node names to RPC's and plug numbers.
+@@ -32,7 +32,7 @@ The following example is a 16-node cluster that uses t
+ Baytech RPC-3 remote power controllers.
+ .LP
+ .nf
+-include "/etc/powerman/baytech.dev"  # include def for "baytech" RPC
++include "@X_SYSCONFDIR@/powerman/baytech.dev"  # include def for "baytech" RPC
+ 
+ tcpwrappers yes                      # enable TCP wrappers
+ 

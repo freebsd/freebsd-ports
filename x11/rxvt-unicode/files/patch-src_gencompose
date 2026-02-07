@@ -1,0 +1,8 @@
+--- src/gencompose.orig	2014-05-22 18:53:16 UTC
++++ src/gencompose
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ open UNIDATA, "<", "www.unicode.org/Public/UNIDATA/UnicodeData.txt"
+    or die "www.unicode.org/Public/UNIDATA/UnicodeData.txt: $!";

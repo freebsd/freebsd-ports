@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+net/dataplaneapi needs HAProxy to work properly, please install it.
+EOM
+}
+]

@@ -1,0 +1,6 @@
+s/\bNETHACK\b/FALCONSEYE/g;
+s/\bNet[hH]ack\b(?!\s+v3.1)/Falcon's Eye/g;
+s/\bnethack\b/falconseye/g;
+s/\bnethackdir\b/falconseyedir/g;
+s|/usr/games|/usr/local|g;
+s/\brecover\b/frecover/g;

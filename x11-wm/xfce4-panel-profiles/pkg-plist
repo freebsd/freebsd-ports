@@ -1,0 +1,81 @@
+bin/xfce4-panel-profiles
+share/applications/org.xfce.PanelProfiles.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/icons/hicolor/128x128/apps/org.xfce.PanelProfiles.png
+share/icons/hicolor/16x16/apps/org.xfce.PanelProfiles.png
+share/icons/hicolor/48x48/apps/org.xfce.PanelProfiles.png
+share/icons/hicolor/scalable/apps/org.xfce.PanelProfiles.svg
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/hy_AM/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/is/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/th/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/vec/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-panel-profiles.mo
+share/man/man1/xfce4-panel-profiles.1.gz
+share/metainfo/org.xfce.PanelProfiles.appdata.xml
+%%DATADIR%%/layouts/Cupertino.tar.bz2
+%%DATADIR%%/layouts/GNOME 2.tar.bz2
+%%DATADIR%%/layouts/Redmond 7.tar.bz2
+%%DATADIR%%/layouts/Redmond.tar.bz2
+%%DATADIR%%/layouts/Unity.tar.bz2
+%%DATADIR%%/layouts/Xfce 4.12.tar.bz2
+%%DATADIR%%/layouts/Xfce 4.14.tar.bz2
+%%DATADIR%%/layouts/Xfce 4.16.tar.bz2
+%%DATADIR%%/layouts/Xubuntu 12.04 (Precise).tar.bz2
+%%DATADIR%%/layouts/Xubuntu 14.04 (Trusty).tar.bz2
+%%DATADIR%%/layouts/Xubuntu 18.04 (Bionic).tar.bz2
+%%DATADIR%%/layouts/openSUSE Leap 15.x.tar.bz2
+%%DATADIR%%/xfce4-panel-profiles/info.py
+%%DATADIR%%/xfce4-panel-profiles/panelconfig.py
+%%DATADIR%%/xfce4-panel-profiles/xfce4-panel-profiles.glade
+%%DATADIR%%/xfce4-panel-profiles/xfce4-panel-profiles.py

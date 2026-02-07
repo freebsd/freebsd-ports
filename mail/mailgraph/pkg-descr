@@ -1,0 +1,3 @@
+Mailgraph is a very simple mail statistics RRDtool frontend for Postfix
+that produces daily, weekly, monthly and yearly graphs of received/sent
+and bounced/rejected mail.

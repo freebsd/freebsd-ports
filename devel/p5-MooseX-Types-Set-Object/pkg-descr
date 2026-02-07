@@ -1,0 +1,2 @@
+MooseX::Types::Set::Object provides Moose type constraints
+(see Moose::Util::TypeConstraints, MooseX::Types).

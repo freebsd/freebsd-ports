@@ -1,0 +1,6 @@
+A library for using the Layer Shell Wayland protocol with GTK4. With
+this library you can build desktop shell components such as panels,
+notifications and wallpapers. You can use it to anchor your windows to
+a corner or edge of the output, or stretch them across the entire
+output. This Library is compatible with C, C++ and any language that
+supports GObject introspection files (Python, Vala, etc).

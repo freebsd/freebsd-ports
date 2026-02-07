@@ -1,0 +1,3 @@
+bin/csscompressor
+%%SITE_PERL%%/CSS/Compressor.pm
+%%PERL5_MAN3%%/CSS::Compressor.3.gz

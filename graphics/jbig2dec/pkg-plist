@@ -1,0 +1,8 @@
+bin/jbig2dec
+include/jbig2.h
+lib/libjbig2dec.a
+lib/libjbig2dec.so
+lib/libjbig2dec.so.0
+lib/libjbig2dec.so.0.0.0
+libdata/pkgconfig/jbig2dec.pc
+share/man/man1/jbig2dec.1.gz

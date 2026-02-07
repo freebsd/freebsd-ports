@@ -1,0 +1,17 @@
+--- dub.json	2021-07-16 11:10:51.000000000 -0500
++++ dub.json	2022-11-14 15:30:23.405796000 -0500
+@@ -7,12 +7,10 @@
+   ],
+   "license": "GPL-3.0",
+   "dependencies": {
+-    "dsymbol": ">=0.11.2 <0.12.0",
+-    "libdparse": ">=0.15.4 <0.16.0",
+     ":common": "*",
+-    "stdx-allocator": "~>2.77.5",
+-    "emsi_containers": "~>0.8.0"
+   },
++  "libs": ["dsymbol","dparse","emsi_containers","msgpack-d","mir-core","stdx-allocator"],
++  "lflags": ["-L%%LOCALBASE%%/lib/d"],
+   "subPackages": ["common"],
+   "versions": ["built_with_dub"],
+   "configurations": [

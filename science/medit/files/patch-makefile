@@ -1,0 +1,27 @@
+--- makefile.orig	2008-12-15 20:17:56.000000000 +0100
++++ makefile	2010-10-16 20:05:32.000000000 +0200
+@@ -3,6 +3,7 @@
+ 
+ default:
+ 	@echo "Type one of the following:"
++	@echo "  make FreeBSD      for FreeBSD"
+ 	@echo "  make macosx       for Apple Mac OS X"
+ 	@echo "  make macosx-x64   for Apple Mac OS X 64 bits"
+ 	@echo "  make macosx-ub    for Apple Mac OS X Universal binary"
+@@ -52,6 +53,16 @@
+ 			    -framework OpenGL -framework Cocoa" \
+ 	"EXEDIR = /Applications/medit.app/Contents/MacOS"
+ 
++FreeBSD:
++	$(MAKE) $(MFLAGS) -f Makefile.arch \
++        "prog   = medit" \
++        "INCDIR = -I. -I$(WRKSRC)/sources -I$(LOCALBASE)/include" \
++	"XLIBS  = -L$(LOCALBASE)/lib -lXmu -lXext -lX11 -lpmc -pthread" \
++        "GL_LIB   = -lGL" \
++	"GLU_LIB  = -lGLU" \
++	"GLUT_LIB = -lglut" \
++        "EXEDIR = $(WRKSRC)/bin"
++
+ linux:
+ 	$(MAKE) $(MFLAGS) -f Makefile.arch \
+         "prog   = medit-2.3-linux"\

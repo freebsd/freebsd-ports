@@ -1,0 +1,3 @@
+This module functions identically to its superclass HTML::Fraction, but
+rather than converting fractions into HTML entities they are replaced by
+the unicode characters for those fractions.

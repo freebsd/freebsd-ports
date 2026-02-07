@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-10-26 04:47:57 UTC
++++ CMakeLists.txt
+@@ -112,7 +112,7 @@ IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
+ ENDIF()
+ 
+ SET(LINUX FALSE)
+-IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
++IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux|FreeBSD")
+     SET(LINUX TRUE)
+ ENDIF()
+ 

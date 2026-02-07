@@ -1,0 +1,5 @@
+multiskkserv is a skk server which can search multiple dictionaries.
+This server uses cdb format as the dictionary format. cdb is the
+efficient and constant (i.e. cannot add, delete, modify) database
+format by Dan J. Bernstein, which I think is the appropriate format
+for the system-wide constant dictionary storage.

@@ -1,0 +1,11 @@
+--- lib/common/Makefile.orig	2015-10-26 10:22:55 UTC
++++ lib/common/Makefile
+@@ -56,7 +56,7 @@ SUBDIRS=
+ # rule to create .o files from .c files 
+ .c.o:
+ 	$(RM) $@
+-	$(CC) $(CFLAGS) -DVERSION=$(VERSION) $(CPPFLAGS) $(INCLUDES) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -DVERSION=$(VERSION) $(CPPFLAGS) $(INCLUDES) -c $<
+ 
+ # targets to build
+ all: $(TARGET)

@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/br.dat
+lib/aspell-%%VER%%/br_phonet.dat
+share/aspell/br.multi
+share/aspell/br.rws
+share/aspell/breton.alias
+share/aspell/brezhoneg.alias

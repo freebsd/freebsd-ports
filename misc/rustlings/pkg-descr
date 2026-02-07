@@ -1,0 +1,4 @@
+Rustlings is an interactive corpus of bite-sized exercises to get you used to
+reading and writing Rust code. Written and maintained by the Rust community,
+it is a companion app to the official Rust book
+(https://doc.rust-lang.org/book).

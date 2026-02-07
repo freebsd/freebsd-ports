@@ -1,0 +1,15 @@
+This Perl extension implements the BSD process resource limit functions
+
+	getrusage()	getrlimit()	setrlimit()
+
+and the BSD process priority functions.  These are available also via
+core Perl but here we do more tricks so that the PRIO_* are available.
+
+	getpriority()	setpriority()
+
+Also is provided
+
+	times()
+
+which provides the same functionality as the one in core Perl, only with
+better time resolution.

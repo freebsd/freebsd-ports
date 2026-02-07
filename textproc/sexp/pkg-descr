@@ -1,0 +1,4 @@
+Sexp is a command-line tool offering commands for assembling,
+escaping, transforming, flattening, fuzzy searching, extracting,
+diff-ing, pretty-printing, converting from JSON and XML, converting to
+JSON and CSV, and other manipulations on S-expressions.

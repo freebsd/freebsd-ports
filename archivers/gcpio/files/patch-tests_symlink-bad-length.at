@@ -1,0 +1,11 @@
+--- tests/symlink-bad-length.at.orig	2019-11-13 23:07:23 UTC
++++ tests/symlink-bad-length.at
+@@ -44,7 +44,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ # but that could hurt backward compatibility.
+ 
+ AT_CHECK([
+-base64 -d ARCHIVE.base64 > ARCHIVE || AT_SKIP_TEST
++b64decode -r ARCHIVE.base64 > ARCHIVE || AT_SKIP_TEST
+ TZ=UTC cpio -ntv < ARCHIVE 2>stderr 
+ cat stderr | grep -v \
+     -e 'stored filename length is out of range' \

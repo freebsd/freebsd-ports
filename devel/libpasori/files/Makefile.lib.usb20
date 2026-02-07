@@ -1,0 +1,18 @@
+.PATH:		${.CURDIR}/../src
+
+LIB=		pasori
+SRCS=		libpasori_command.c libpasori_com_libusb.c \
+		libpasori_polling.c 
+INCS=		libpasori.h libpasori_com.h libpasori_command.h \
+		libpasori_config.h libpasori_liblocal.h
+
+LIBDIR=		${LOCALBASE}/lib
+INCLUDEDIR=	${LOCALBASE}/include 
+MK_PROFILE=	no
+SHLIB_MAJOR=	1
+
+CFLAGS+=	-D__LIBPASORI_WITH_LIBUSB
+CFLAGS+=	-Wall -W
+LDFLAGS+=	-lusb
+
+.include <bsd.lib.mk>

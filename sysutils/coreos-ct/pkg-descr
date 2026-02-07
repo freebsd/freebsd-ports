@@ -1,0 +1,4 @@
+The Config Transpiler, ct, is the utility responsible for transforming a
+user-provided Container Linux Configuration into an Ignition configuration.
+The resulting Ignition config can then be provided to a Container Linux machine
+when it first boots in order to provision it.

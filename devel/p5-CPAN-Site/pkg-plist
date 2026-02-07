@@ -1,0 +1,4 @@
+bin/cpansite
+%%SITE_PERL%%/CPAN/Site.pm
+%%SITE_PERL%%/CPAN/Site/Index.pm
+%%PERL5_MAN1%%/cpansite.1.gz

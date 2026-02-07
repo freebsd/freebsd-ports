@@ -1,0 +1,4 @@
+pyhanko is a library for working with signatures in PDF documents.
+
+pyHanko's CLI is no longer bundled together with the library. This functionality
+is now distributed separately as pyhanko-cli.

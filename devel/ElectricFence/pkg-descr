@@ -1,0 +1,15 @@
+Electric Fence is a different kind of malloc() debugger. It uses the virtual
+memory hardware of your system to detect when software overruns the boundaries
+of a malloc() buffer. It will also detect any accesses of memory that has
+been released by free(). Because it uses the VM hardware for detection,
+Electric Fence stops your program on the first instruction that causes
+a bounds violation. It's then trivial to use a debugger to display the
+offending statement.
+
+It will probably port to any ANSI/POSIX system that provides mmap(), and
+mprotect(), as long as mprotect() has the capability to turn off all access
+to a memory page, and mmap() can use /dev/zero or the MAP_ANONYMOUS flag
+to create virtual memory pages.
+
+Complete information on the use of Electric Fence is in the manual page
+efence(3).

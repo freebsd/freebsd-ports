@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: lcdproc
+# REQUIRE: LCDd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+
+. /etc/rc.subr
+
+name="lcdproc"
+rcvar=lcdproc_enable
+
+load_rc_config $name
+
+: ${lcdproc_enable="NO"}
+: ${lcdproc_conf="%%PREFIX%%/etc/lcdproc.conf"}
+: ${lcdproc_flags="-c ${lcdproc_conf}"}
+
+required_files=${lcdproc_conf}
+command="%%PREFIX%%/bin/lcdproc"
+
+run_rc_command "$1"

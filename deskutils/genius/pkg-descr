@@ -1,0 +1,17 @@
+Genius Calculator is a precision calculator for Gnome Desktop Environment.
+
+Features of Genius:
+
+ * arbitrary precision integers (2-36), multiple precision floats
+ * uses rationals when possible
+ * will calculate and show half calculated expressions if the calculation
+   could not be completed
+ * variables
+ * user functions
+ * variable and function references with C like syntax
+ * anonymous functions
+ * it will add missing parenthesis on the ends of expressions (only in
+   the GUI version)
+ * matrix support
+ * complex numbers
+ * more ...

@@ -1,0 +1,12 @@
+--- src/verbiste/Makefile.in.orig	2014-04-06 23:50:04 UTC
++++ src/verbiste/Makefile.in
+@@ -347,7 +347,8 @@ libverbiste_0_1_la_CXXFLAGS = \
+ 	$(LIBXML2_CFLAGS)
+ 
+ libverbiste_0_1_la_LIBADD = \
+-	$(LIBXML2_LIBS)
++	$(LIBXML2_LIBS) \
++	$(LTLIBICONV)
+ 
+ pkginclude_HEADERS = \
+ 	misc-types.h \

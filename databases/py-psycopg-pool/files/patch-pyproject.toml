@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-12-01 03:37:38 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80.3.1", "wheel>=0.37"]
++requires = ["setuptools>=61", "wheel>=0.37"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -11,8 +11,7 @@ version = "3.3.0"
+ # also change:
+ # - `docs/news_pool.rst` to declare this version current or unreleased
+ 
+-license = "LGPL-3.0-only"
+-license-files = ["LICENSE.txt"]
++license = {text = "LGPL-3.0-only"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",

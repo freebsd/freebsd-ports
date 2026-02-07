@@ -1,0 +1,22 @@
+Release notes for version 0.6.7-epsilon
+=======================================
+This version is the "almost-there" version of STonX 0.6.7 (which is going
+to be the last "release" version before the major changes in the current
+development versions are released.
+
+Some information about the problems with different TOS versions and STonX:
+==========================================================================
+(1) Can't run programs from the Unix filesystem interface
+(2) not thoroughly tested or tested by someone else
+(3) untested
+(4) set TOS_1 to 1 in options.h before compiling
+(5) A: and B: can't be used because they're implicitly considered Floppy disk
+    drives and always accessed using the FDC
+
+TOS 1.00:  (1)(2)(4)(5)
+TOS 1.02:  (1)(2)(4)(5)
+TOS 1.04:  (2)(4)
+TOS 1.06:  (3)
+TOS 1.62:  (3)
+TOS 2.05:  tested, should be OK
+TOS 2.06:  tested, should be OK

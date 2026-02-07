@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+Please note that everything has been installed in %%WWWDIR%%.
+
+You will probably want to add an alias to your httpd.conf file, something
+like this:
+
+    	Alias /owncloud %%WWWDIR%%
+	AcceptPathInfo On
+	<Directory %%WWWDIR%%>
+	    AllowOverride All
+	    Require all granted
+	</Directory>
+
+And restart Apache.
+
+
+The owncloud newsyslog.conf(5) filename has been changed:
+  OLD: ${PREFIX}/etc/newsyslog.conf.d/owncloud
+  NEW: ${PREFIX}/etc/newsyslog.conf.d/owncloud.conf
+
+Any file found at the old location has been automatically moved to
+the new location. This was done to ensure log rotation continued to
+work after change r340318 made to FreeBSD base, where the default
+newsyslog configuration now only includes filenames that end with
+'.conf' and do not begin with '.'.
+
+If you use provisioning/configuration management tools to create or
+edit this file, you will need to change their configuration to use
+the new filename.
+EOM
+}
+]

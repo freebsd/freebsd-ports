@@ -1,0 +1,3 @@
+GD::SVG seamlessly enables the scalable vector graphics (SVG) output
+from scripts written using GD.  It accomplishes this by translating GD
+functions into SVG functions.

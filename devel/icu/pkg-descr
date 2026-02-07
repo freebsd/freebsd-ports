@@ -1,0 +1,5 @@
+The International Components for Unicode (ICU) is a C and C++ library
+providing Unicode support (ex. character set conversions, locales,
+normalization, transliteration, etc.).
+
+More information on ICU can be found on the homepage

@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: spamilter
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+# Define these spamilter_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/spamilter
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# spamilter_flags Flags to spamilter
+
+. /etc/rc.subr
+
+name="spamilter"
+desc="Spamilter (SPAM Milter) Daemon"
+rcvar="spamilter_enable"
+
+load_rc_config $name
+
+: ${spamilter_enable:="NO"}
+
+command="%%PREFIX%%/bin/spamilter"
+pidfile="/tmp/Spamilter.pid"
+required_files="%%PREFIX%%/etc/spamilter.rc"
+start_precmd="spamilter_prestart"
+stop_postcmd="spamilter_poststop"
+
+spamilter_prestart()
+{
+	/bin/rm -f "${pidfile}"
+}
+
+spamilter_poststop()
+{
+	/bin/rm -f "${pidfile}"
+}
+
+run_rc_command "$1"

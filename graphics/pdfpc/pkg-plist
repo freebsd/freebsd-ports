@@ -1,0 +1,23 @@
+bin/pdfpc
+@sample etc/pdfpcrc.sample
+share/man/man1/pdfpc.1.gz
+share/man/man5/pdfpcrc.5.gz
+%%DATADIR%%/css/notes.css
+%%DATADIR%%/css/pdfpc.css
+%%DATADIR%%/icons/blank.svg
+%%DATADIR%%/icons/empty.svg
+%%DATADIR%%/icons/eraser.svg
+%%DATADIR%%/icons/hidden.svg
+%%DATADIR%%/icons/highlight.svg
+%%DATADIR%%/icons/linewidth.svg
+%%DATADIR%%/icons/loaded.svg
+%%DATADIR%%/icons/locked.svg
+%%DATADIR%%/icons/move.svg
+%%DATADIR%%/icons/pause.svg
+%%DATADIR%%/icons/pause_cur.svg
+%%DATADIR%%/icons/pen.svg
+%%DATADIR%%/icons/play_cur.svg
+%%DATADIR%%/icons/saved.svg
+%%DATADIR%%/icons/settings.svg
+%%DATADIR%%/icons/snow.svg
+%%DATADIR%%/icons/spotlight.svg

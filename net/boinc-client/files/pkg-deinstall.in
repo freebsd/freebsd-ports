@@ -1,0 +1,29 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+user=%%BOINC_CLIENT_USER%%
+group=%%BOINC_CLIENT_GROUP%%
+home="%%BOINC_CLIENT_HOME%%"
+option_manager=%%OPTION_MANAGER%%
+option_user=%%OPTION_USER%%
+
+case $2 in
+POST-DEINSTALL)
+	if [ -n "${option_user}" ] ; then
+		if [ -n "${option_manager}" -a -L "${home}/skins" ]; then
+			if [ `readlink "${home}/skins"` = "%%PREFIX%%/share/boinc/skins" ]; then
+				rm -f "${home}/skins"
+			fi
+		fi
+		if [ -L "${home}/ca-bundle.crt" ]; then
+			if [ `readlink "${home}/ca-bundle.crt"` = "%%LOCALBASE%%/share/certs/ca-root-nss.crt" ]; then
+				rm -f "${home}/ca-bundle.crt"
+			fi
+		fi
+		rmdir "${home}" >/dev/null 2>&1
+	fi
+	;;
+esac
+
+exit 0

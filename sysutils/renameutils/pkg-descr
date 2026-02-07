@@ -1,0 +1,8 @@
+The file renaming utilities consists of five programs designed to make renaming
+of files faster and less cumbersome:
+- qmv ("quick move") allows a bunch of file names to be edited in a text editor;
+- imv ("interactive move") allows a single file name to be edited in the
+  terminal using the GNU Readline library
+- qcp and icp are similar to qmv and imv but copy files instead of moving them;
+- deurlname removes URL encoded characters (such as %20 representing space) from
+  file names.

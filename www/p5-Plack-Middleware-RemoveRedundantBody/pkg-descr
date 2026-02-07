@@ -1,0 +1,2 @@
+Plack::Middleware::RemoveRedundantBody removes body in HTTP response, if it is
+not required.

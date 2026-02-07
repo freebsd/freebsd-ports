@@ -1,0 +1,6 @@
+share/sgml/linuxdoc/README
+@xmlcatmgr share/sgml/linuxdoc/catalog
+share/sgml/linuxdoc/freebsd-1.0.dtd
+share/sgml/linuxdoc/freebsd-1.1.dtd
+share/sgml/linuxdoc/linuxdoc.dec
+share/sgml/linuxdoc/original.dtd

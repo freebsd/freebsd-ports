@@ -1,0 +1,7 @@
+This port builds the module CSparse of SuiteSparse.
+
+CSparse is a Concise Sparse Matrix package. This code goes with the book "Direct
+Methods for Sparse Linear Systems," Timothy A. Davis, SIAM, Philadelphia, 2006.
+
+Note: the CSparse library is meant for personal experimentation. For system-wide
+installation, please install math/suitesparse-cxsparse instead.

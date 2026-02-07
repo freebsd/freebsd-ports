@@ -1,0 +1,8 @@
+linkify-it-py is a Python port of linkify-it. It links recognition library with
+FULL unicode support. Focused on high quality link patterns detection in plain
+text.
+
+Why it's awesome:
+- Full unicode support, with astral characters!
+- International domains support.
+- Allows rules extension & custom normalizers.

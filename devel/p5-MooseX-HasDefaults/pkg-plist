@@ -1,0 +1,6 @@
+%%SITE_PERL%%/MooseX/HasDefaults/Meta/IsRO.pm
+%%SITE_PERL%%/MooseX/HasDefaults/Meta/IsRW.pm
+%%SITE_PERL%%/MooseX/HasDefaults/RW.pm
+%%SITE_PERL%%/MooseX/HasDefaults/RO.pm
+%%SITE_PERL%%/MooseX/HasDefaults.pm
+%%PERL5_MAN3%%/MooseX::HasDefaults.3.gz

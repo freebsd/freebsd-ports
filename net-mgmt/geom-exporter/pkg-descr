@@ -1,0 +1,4 @@
+FreeBSD GEOM statistics exporter for Prometheus
+
+The is a Prometheus exporter for FreeBSD's GEOM statistics.  The metrics it
+exports are basically the same as what gstat provides on the terminal.

@@ -1,0 +1,3 @@
+Penlight is a set of pure Lua libraries for making it easier to work with
+common tasks like iterating over directories, reading configuration files and
+the like. Provides functional operations on tables and sequences.

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+LNX_ROOT=$(sysctl -n compat.linux.emul_path)
+
+if [ ! -f "$LNX_ROOT/proc/self/exe" -o ! -d "$LNX_ROOT/sys/dev/char" ]
+then
+	echo "This program requires mounted linprocfs(5) and linsysfs(5)" >&2
+	exit 1
+fi
+
+# OpenAL Soft uses PulseAudio by default, which might not work on FreeBSD
+
+ALSOFT_CONF=$LNX_ROOT/etc/openal/alsoft.conf
+
+if ! grep -qs '^drivers[[:blank:]]*=[[:blank:]]*oss' "$ALSOFT_CONF"
+then
+	echo "If there's no sound, try putting \`oss' as the first item" \
+	"on the \`drivers' line in the $ALSOFT_CONF file." | fmt -76 >&2
+	sleep 2
+fi
+
+cd %%DATADIR%% && exec $LNX_ROOT/bin/bash ./heaven

@@ -1,0 +1,11 @@
+TIMESTAMP = 1644457669
+SHA256 (sircmpwn-kineto-857f8c97ebc5_SRHT0.tar.gz) = aa5b0e85bb5b2bca86f4c7c493e3c80368847e22369ffa174170f5833bf493e4
+SIZE (sircmpwn-kineto-857f8c97ebc5_SRHT0.tar.gz) = 18419
+SHA256 (adnano-go-gemini-v0.1.17_SRHT0.tar.gz) = 82d42664147f58d4048b3e421eeeca053d21612972c9a34fa58b397ced2bbab2
+SIZE (adnano-go-gemini-v0.1.17_SRHT0.tar.gz) = 30371
+SHA256 (sircmpwn-getopt-23622cc906b3_SRHT0.tar.gz) = 0d80fe37a650699c195b70e79684a1c6ec25eaabbe9993b54243754be6edb7a7
+SIZE (sircmpwn-getopt-23622cc906b3_SRHT0.tar.gz) = 8496
+SHA256 (golang-net-5f4716e94777_GH0.tar.gz) = 987ec0774e8480615daf0664cd9c9ec9eb25cf6e553e32ae38697515629714b6
+SIZE (golang-net-5f4716e94777_GH0.tar.gz) = 1251426
+SHA256 (golang-text-v0.3.3_GH0.tar.gz) = 1604233637e3593749fbbb13b5069b08e6feba6d2b55a02fd3148793d5871185
+SIZE (golang-text-v0.3.3_GH0.tar.gz) = 7747332

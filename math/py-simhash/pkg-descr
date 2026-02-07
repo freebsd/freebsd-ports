@@ -1,0 +1,2 @@
+A Python implementation of the SimHash algorithm, a technique for quickly
+estimating how similar two sets are.

@@ -1,0 +1,17 @@
+--- configure.in.orig	2016-12-02 11:36:06 UTC
++++ configure.in
+@@ -838,8 +837,14 @@ AC_DEFINE_UNQUOTED(HTTPD_ROOT, "${ap_pre
+ 	[Root directory of the Apache install area])
+ AC_DEFINE_UNQUOTED(SERVER_CONFIG_FILE, "${rel_sysconfdir}/${progname}.conf",
+ 	[Location of the config file, relative to the Apache root directory])
++AC_DEFINE_UNQUOTED(DEFAULT_ERRORLOG, "${rel_logfiledir}/httpd-error.log",
++	[Location of error log file])
++AC_DEFINE_UNQUOTED(DEFAULT_SCOREBOARD, "${rel_runtimedir}/apache_runtime_status",
++	[Location of ScoreBoard file])
+ AC_DEFINE_UNQUOTED(AP_TYPES_CONFIG_FILE, "${rel_sysconfdir}/mime.types",
+ 	[Location of the MIME types config file, relative to the Apache root directory])
++AC_DEFINE_UNQUOTED(DOCUMENT_LOCATION, "${rel_htdocsdir}",
++	[Location of document root])
+ 
+ perlbin=`$ac_aux_dir/PrintPath perl`
+ if test "x$perlbin" = "x"; then

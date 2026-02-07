@@ -1,0 +1,16 @@
+--- Configure.orig	2010-09-02 06:12:26 UTC
++++ Configure
+@@ -4920,10 +4920,10 @@ x)
+ esac
+ case "$xxx" in
+ x)
+-	xxx=`./loc libcurses.$so'*' x $libpth`
++	xxx=`./loc libncurses.$so'*' x $libpth`
+ 	case "$xxx" in
+-	/usr/lib*|/lib*)
+-		termlib='-lcurses'
++	/usr/lib*|/lib*|$prefix/lib*)
++		termlib='-lncurses'
+ 		d_havetlib="$define"
+ 		echo "Terminfo library found." >&4
+ 		;;

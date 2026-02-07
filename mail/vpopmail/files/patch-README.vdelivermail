@@ -1,0 +1,16 @@
+Description: Fix a typo.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2009-11-26
+
+--- a/doc/README.vdelivermail
++++ b/doc/README.vdelivermail
+@@ -57,7 +57,7 @@
+ 
+ If you are not sure what you are doing writing .qmail files, and mucking around
+ the internals of vpopmail, I strongly suggest you leave this file to the programs.
+-Qmailadmin is probably the easiset way to manage the .qmail-default file once the
++Qmailadmin is probably the easiest way to manage the .qmail-default file once the
+ domain has been created.  
+ 
+ Due to the requirement that Maildirs accessed by vpopmail must be owned by vpopmail

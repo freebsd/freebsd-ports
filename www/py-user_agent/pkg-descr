@@ -1,0 +1,4 @@
+This module is for generating random, valid web user agents:
+
+- content of "User-Agent" HTTP headers
+- content of window.navigator JavaScript object

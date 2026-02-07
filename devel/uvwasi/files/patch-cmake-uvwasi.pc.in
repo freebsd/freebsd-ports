@@ -1,0 +1,11 @@
+--- cmake/uvwasi.pc.in.orig	2024-05-02 20:17:00 UTC
++++ cmake/uvwasi.pc.in
+@@ -1,7 +1,7 @@ libdir=@CMAKE_INSTALL_FULL_LIBDIR@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ libdir=@CMAKE_INSTALL_FULL_LIBDIR@
+-includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/uvwasi
+ bindir=@CMAKE_INSTALL_FULL_BINDIR@
+ libuv_includedir=@LIBUV_INCLUDE_DIR@
+ 

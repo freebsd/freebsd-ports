@@ -1,0 +1,11 @@
+--- tools/smicache.in.orig	2008-02-27 16:28:07.815119612 +0100
++++ tools/smicache.in	2008-02-27 16:30:11.112918032 +0100
+@@ -42,7 +42,7 @@
+ 
+ 
+ do_fetch () {
+-    $WGET -q -O "$dir/$1" "$prefix/$1"
++    fetch -q -o "$dir/$1" "$prefix/$1"
+ }
+ 
+ 

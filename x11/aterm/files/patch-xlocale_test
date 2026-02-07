@@ -1,0 +1,24 @@
+diff -urNad aterm-1.0.1~/autoconf/configure.in aterm-1.0.1/autoconf/configure.in
+--- aterm-1.0.1~/autoconf/configure.in	2007-08-04 00:23:29.000000000 +0200
++++ autoconf/configure.in	2007-08-04 00:28:14.000000000 +0200
+@@ -608,7 +608,7 @@
+ 
+ dnl# this is a really hack test for some basic Xlocale stuff
+ SAVETHELIBS=$LIBS
+-LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11 -lXmu"
++LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11"
+ CFLAGS="$CFLAGS $X_CFLAGS"
+ AC_CACHE_CHECK(for working Xlocale, rxvt_cv_func_xlocale,
+ [AC_TRY_RUN(
+diff -urNad aterm-1.0.1~/configure aterm-1.0.1/configure
+--- aterm-1.0.1~/configure	2007-08-04 00:23:29.000000000 +0200
++++ configure	2007-08-04 00:28:29.000000000 +0200
+@@ -10434,7 +10434,7 @@
+ fi
+ 
+ SAVETHELIBS=$LIBS
+-LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11 -lXmu"
++LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11"
+ CFLAGS="$CFLAGS $X_CFLAGS"
+ { echo "$as_me:$LINENO: checking for working Xlocale" >&5
+ echo $ECHO_N "checking for working Xlocale... $ECHO_C" >&6; }

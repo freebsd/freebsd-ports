@@ -1,0 +1,13 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	Mon Mar 22 08:40:58 2004
++++ configure	Sat Mar 27 13:15:10 2004
+@@ -3334,7 +3334,7 @@
+ if test $ac_cv_func_getopt_long = yes; then
+   :
+ else
+-  LIBOBJS="$LIBOBJS getopt.$ac_objext"LIBOBJS="$LIBOBJS getopt1.$ac_objext"
++  LIBOBJS="$LIBOBJS getopt.$ac_objext"; LIBOBJS="$LIBOBJS getopt1.$ac_objext"
+ fi
+ 
+ 

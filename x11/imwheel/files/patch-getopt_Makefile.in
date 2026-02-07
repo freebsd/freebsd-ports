@@ -1,0 +1,11 @@
+--- getopt/Makefile.in.orig	2004-08-29 10:33:21 UTC
++++ getopt/Makefile.in
+@@ -161,7 +161,7 @@ subdirs = @subdirs@
+ suid = @suid@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-AM_CFLAGS = -O6 -s -Wall
++#AM_CFLAGS = -O6 -s -Wall
+ noinst_LIBRARIES = libgetopt.a
+ libgetopt_a_SOURCES = getopt.c getopt1.c getopt.h
+ EXTRA_DIST = Makefile.unix

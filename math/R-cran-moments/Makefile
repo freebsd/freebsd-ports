@@ -1,0 +1,15 @@
+PORTNAME=	moments
+PORTVERSION=	0.14.1
+PORTREVISION=	1
+CATEGORIES=	math
+DISTNAME=	${PORTNAME}_${DISTVERSION}
+
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	Moments, Cumulants, Skewness, Kurtosis and Related Tests
+WWW=		https://cran.r-project.org/package=moments
+
+LICENSE=	GPLv2+
+
+USES=		cran
+
+.include <bsd.port.mk>

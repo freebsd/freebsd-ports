@@ -1,0 +1,3 @@
+pyaml-env is a very small library that parses a yaml configuration
+file and it resolves the environment variables, so that no secrets
+are kept in text.

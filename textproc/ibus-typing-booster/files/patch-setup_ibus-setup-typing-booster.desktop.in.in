@@ -1,0 +1,10 @@
+--- setup/ibus-setup-typing-booster.desktop.in.in.orig	2025-05-21 16:18:59 UTC
++++ setup/ibus-setup-typing-booster.desktop.in.in
+@@ -5,4 +5,5 @@ Type=Application
+ Icon=ibus-typing-booster
+ NoDisplay=true
+ Type=Application
+-StartupNotify=true
+\ No newline at end of file
++StartupNotify=true
++Categories=Settings;

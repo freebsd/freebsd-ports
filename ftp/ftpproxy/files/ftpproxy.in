@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: ftpproxy
+# REQUIRE: LOGIN FILESYSTEMS ftp
+# KEYWORD: shutdown
+#
+# ftpproxy_enable (bool):     Set to "YES" to enable ftpproxy.
+#                             (default: "NO")
+#
+# ftpproxy_config (str):      Name of ftpproxy config file
+#                             (default: "/usr/local/etc/ftpproxy.conf")
+#
+# ftpproxy_defaulthost (str): Name of ftp server to connect to.
+#                             (default: "localhost")
+#
+# ftpproxy_flags (str):       Additional flags for ftpproxy
+#                             (default: "")
+#
+# ftpproxy_user (str):        The user to run ftpproxy as
+#                             (default: "root")
+#
+
+. /etc/rc.subr
+
+name=ftpproxy
+rcvar=ftpproxy_enable
+pidfile="/var/run/ftpproxy.pid"
+start_cmd="${name}_start"
+command="%%PREFIX%%/sbin/ftp.proxy"
+
+load_rc_config $name
+
+: ${ftpproxy_enable="NO"}
+: ${ftpproxy_config="%%PREFIX%%/etc/ftpproxy.conf"}
+: ${ftpproxy_defaulthost="localhost"}
+: ${ftpproxy_flags=""}
+: ${ftpproxy_user="root"}
+
+ftpproxy_start()
+{
+        /usr/bin/install -o ${ftpproxy_user} /dev/null ${pidfile}
+        /usr/bin/su -m ${ftpproxy_user} -c "${command} -f ${ftpproxy_config} \
+                -P ${pidfile} ${ftpproxy_flags} ${ftpproxy_defaulthost}"
+}
+
+run_rc_command "$1"

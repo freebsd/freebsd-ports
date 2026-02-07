@@ -1,0 +1,196 @@
+%%ETCDIR%%/shibboleth-idp
+sbin/shibboleth-idp.sh
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/bin/install.bat
+%%DATADIR%%/bin/install.sh
+@comment %%DATADIR%%/bin/lib/.gitkeep
+%%DATADIR%%/bin/lib/ant-1.10.14.jar
+%%DATADIR%%/bin/lib/ant-launcher-1.10.14.jar
+%%DATADIR%%/bin/lib/bcpg-jdk18on-1.78.1.jar
+%%DATADIR%%/bin/lib/commons-compress-1.26.2.jar
+%%DATADIR%%/bin/lib/commons-io-2.16.1.jar
+%%DATADIR%%/bin/lib/idp-cli-%%PORTVERSION%%.jar
+%%DATADIR%%/bin/lib/idp-installer-%%PORTVERSION%%.jar
+%%DATADIR%%/bin/lib/jcommander-1.81.jar
+%%DATADIR%%/bin/lib/shib-cli-%%SHIBVER%%.jar
+@comment %%DATADIR%%/credentials/.gitkeep
+%%DATADIR%%/doc/BC-LICENSE.txt
+%%DATADIR%%/doc/CREDITS.txt
+%%DATADIR%%/doc/DUO-LICENSE.txt
+%%DATADIR%%/doc/JQUERY-LICENSE.txt
+%%DATADIR%%/doc/README.txt
+%%DATADIR%%/doc/RELEASE-NOTES.txt
+%%DATADIR%%/doc/SPYMEMCACHED-LICENSE.txt
+@comment %%DATADIR%%/logs/.gitkeep
+%%DATADIR%%/webapp/META-INF/MANIFEST.MF
+%%DATADIR%%/webapp/WEB-INF/idpui.tld
+%%DATADIR%%/webapp/WEB-INF/jsp/metadata.jsp
+%%DATADIR%%/webapp/WEB-INF/jsp/status.jsp
+%%DATADIR%%/webapp/WEB-INF/lib/annotations-17.0.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/bcpkix-jdk18on-1.82.jar
+%%DATADIR%%/webapp/WEB-INF/lib/bcprov-jdk18on-1.82.jar
+%%DATADIR%%/webapp/WEB-INF/lib/bcutil-jdk18on-1.82.jar
+%%DATADIR%%/webapp/WEB-INF/lib/checker-qual-3.41.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/commons-codec-1.16.1.jar
+%%DATADIR%%/webapp/WEB-INF/lib/commons-compiler-3.1.12.jar
+%%DATADIR%%/webapp/WEB-INF/lib/commons-dbcp2-2.9.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/commons-lang3-3.14.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/commons-logging-1.3.5.jar
+%%DATADIR%%/webapp/WEB-INF/lib/commons-pool2-2.10.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/cryptacular-1.3.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/error_prone_annotations-2.23.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/failureaccess-1.0.2.jar
+%%DATADIR%%/webapp/WEB-INF/lib/guava-33.0.0-jre.jar
+%%DATADIR%%/webapp/WEB-INF/lib/httpclient5-5.3.1.jar
+%%DATADIR%%/webapp/WEB-INF/lib/httpclient5-cache-5.3.1.jar
+%%DATADIR%%/webapp/WEB-INF/lib/httpcore5-5.2.5.jar
+%%DATADIR%%/webapp/WEB-INF/lib/httpcore5-h2-5.2.5.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-admin-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-admin-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-authn-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-authn-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-cas-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-cas-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-conf-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-consent-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-consent-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-core-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-profile-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-profile-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-saml-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-saml-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-schema-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-session-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-session-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-spring-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/idp-ui-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/j2objc-annotations-2.8.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jackson-annotations-2.16.2.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jackson-core-2.16.2.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jackson-databind-2.16.2.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jackson-datatype-jsr310-2.16.2.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jakarta.activation-2.0.1.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jakarta.json-2.0.1.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jakarta.mail-2.0.1.jar
+%%DATADIR%%/webapp/WEB-INF/lib/janino-3.1.12.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jsonapi-converter-0.13.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jspecify-1.0.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jsr305-3.0.2.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jul-to-slf4j-2.0.13.jar
+%%DATADIR%%/webapp/WEB-INF/lib/ldaptive-2.5.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+%%DATADIR%%/webapp/WEB-INF/lib/log4j-over-slf4j-2.0.13.jar
+%%DATADIR%%/webapp/WEB-INF/lib/logback-classic-%%LOGBACKVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/logback-core-%%LOGBACKVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/metrics-core-4.2.26.jar
+%%DATADIR%%/webapp/WEB-INF/lib/metrics-json-4.2.26.jar
+%%DATADIR%%/webapp/WEB-INF/lib/metrics-jvm-4.2.26.jar
+%%DATADIR%%/webapp/WEB-INF/lib/micrometer-commons-%%MMVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/micrometer-observation-%%MMVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-buffer-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-codec-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-common-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-handler-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-resolver-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-classes-epoll-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-classes-kqueue-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.128.Final-linux-aarch_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.128.Final-linux-x86_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-kqueue-4.1.128.Final-osx-aarch_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-kqueue-4.1.128.Final-osx-x86_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-core-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-core-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-messaging-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-messaging-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-profile-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-profile-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-saml-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-saml-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-security-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-security-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-soap-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-soap-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-spring-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-storage-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-storage-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-xmlsec-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/opensaml-xmlsec-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-filter-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-filter-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-filter-spring-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-resolver-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-resolver-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-attribute-resolver-spring-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-metadata-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-metadata-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-metadata-spring-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-networking-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-networking-spring-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-profile-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-profile-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-saml-attribute-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-saml-attribute-impl-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-saml-profile-api-%%PORTVERSION%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-security-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-security-spring-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-service-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-spring-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-support-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-velocity-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/shib-velocity-spring-%%SHIBVER%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/slf4j-api-2.0.13.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-aop-%%SPRINGVER1%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-beans-%%SPRINGVER1%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-binding-%%SPRINGVER2%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-context-%%SPRINGVER1%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-core-%%SPRINGVER1%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-expression-%%SPRINGVER1%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-web-%%SPRINGVER1%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-webflow-%%SPRINGVER2%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spring-webmvc-%%SPRINGVER1%%.jar
+%%DATADIR%%/webapp/WEB-INF/lib/spymemcached-2.12.3.jar
+%%DATADIR%%/webapp/WEB-INF/lib/velocity-engine-core-2.3.jar
+%%DATADIR%%/webapp/WEB-INF/lib/xmlsec-3.0.6.jar
+%%DATADIR%%/webapp/WEB-INF/spring.tld
+%%DATADIR%%/webapp/WEB-INF/web.xml
+%%DATADIR%%/webapp/css/logout.css
+%%DATADIR%%/webapp/css/placeholder.css
+%%DATADIR%%/webapp/images/failure-32x32.png
+%%DATADIR%%/webapp/images/placeholder-logo.png
+%%DATADIR%%/webapp/images/success-32x32.png
+%%DATADIR%%/webapp/index.jsp
+%%DATADIR%%/webapp/js/jquery-3.7.1.min.js
+@dir %%DATADIR%%/webapp/WEB-INF/classes
+@dir %%ETCDIR%%
+@sample %%EXAMPLESDIR%%/etc/jetty-requestlog.xml %%WWWDIR%%/etc/jetty-requestlog.xml
+@sample %%EXAMPLESDIR%%/index.html %%WWWDIR%%/webapps/ROOT/index.html
+@sample %%EXAMPLESDIR%%/modules/idp.mod %%WWWDIR%%/modules/idp.mod
+@sample %%EXAMPLESDIR%%/resources/logback.xml %%WWWDIR%%/resources/logback.xml
+@sample %%EXAMPLESDIR%%/start.d/http.ini %%WWWDIR%%/start.d/http.ini
+@mode 640
+@group %%SHIBGROUP%%
+@sample %%EXAMPLESDIR%%/start.d/idp.ini %%WWWDIR%%/start.d/idp.ini
+@mode
+@group
+@sample %%EXAMPLESDIR%%/start.d/start.ini %%WWWDIR%%/start.d/start.ini
+@sample %%EXAMPLESDIR%%/webapps/idp.xml %%WWWDIR%%/webapps/idp.xml
+@sample %%EXAMPLESDIR%%/webapps/static.xml %%WWWDIR%%/webapps/static.xml
+%%WWWDIR%%/etc/jetty-pid.xml
+%%WWWDIR%%/lib/logging/logback-classic-%%LOGBACKVER%%.jar
+%%WWWDIR%%/lib/logging/logback-core-%%LOGBACKVER%%.jar
+@dir %%WWWDIR%%/conf
+@dir %%WWWDIR%%/credentials
+@dir %%WWWDIR%%/etc
+@dir(%%SHIBUSER%%,%%SHIBGROUP%%,755) %%WWWDIR%%/jsp
+@dir %%WWWDIR%%/modules
+@dir %%WWWDIR%%/resources
+@dir %%WWWDIR%%/start.d
+@dir %%WWWDIR%%/webapps/ROOT
+@dir %%WWWDIR%%/webapps
+@dir %%WWWDIR%%
+@dir(%%SHIBUSER%%,%%SHIBGROUP%%,755) %%RUNDIR%%
+@dir(%%SHIBUSER%%,%%SHIBGROUP%%,755) %%LOGDIR%%

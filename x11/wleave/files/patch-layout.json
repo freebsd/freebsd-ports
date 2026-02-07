@@ -1,0 +1,62 @@
+--- layout.json.orig	2026-01-21 16:43:58 UTC
++++ layout.json
+@@ -4,11 +4,10 @@
+             "label": "lock",
+             "action": [
+                 {
+-                    "$DESKTOP_SESSION": "gnome",
+-                    "shell": "loginctl lock-session"
++                    "executable": "gtklock"
+                 },
+                 {
+-                    "executable": "gtklock"
++                    "executable": "hyprlock"
+                 },
+                 {
+                     "executable": "swaylock"
+@@ -20,7 +19,7 @@
+         },
+         {
+             "label": "hibernate",
+-            "action": "systemctl hibernate",
++            "action": "acpiconf -s 4",
+             "text": "Hibernate",
+             "keybind": "h",
+             "icon": "/usr/share/wleave/icons/hibernate.svg"
+@@ -44,7 +43,10 @@
+                     "$DESKTOP_SESSION": "gnome",
+                     "shell": "gnome-session-quit --no-prompt"
+                 },
+-                "loginctl terminate-user $USER"
++                {
++                    "$DESKTOP_SESSION": "hyprland",
++                    "shell": "hyprctl dispatch exit"
++                }
+             ],
+             "text": "Logout",
+             "keybind": "e",
+@@ -52,21 +54,21 @@
+         },
+         {
+             "label": "shutdown",
+-            "action": "systemctl poweroff",
++            "action": "shutdown -p now",
+             "text": "Shutdown",
+             "keybind": "s",
+             "icon": "/usr/share/wleave/icons/shutdown.svg"
+         },
+         {
+             "label": "suspend",
+-            "action": "systemctl suspend",
++            "action": "zzz",
+             "text": "Suspend",
+             "keybind": "u",
+             "icon": "/usr/share/wleave/icons/suspend.svg"
+         },
+         {
+             "label": "reboot",
+-            "action": "systemctl reboot",
++            "action": "shutdown -r now",
+             "text": "Reboot",
+             "keybind": "r",
+             "icon": "/usr/share/wleave/icons/reboot.svg"

@@ -1,0 +1,12 @@
+sbin/mopd
+sbin/mopprobe
+sbin/moptrace
+sbin/mopchk
+sbin/mopa.out
+%%PORTDOCS%%%%DOCSDIR%%/VAX-netboot-HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/VS3100-console-cmds.txt
+share/man/man1/mopa.out.1.gz
+share/man/man1/mopchk.1.gz
+share/man/man1/mopprobe.1.gz
+share/man/man1/moptrace.1.gz
+share/man/man8/mopd.8.gz

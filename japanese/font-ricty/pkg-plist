@@ -1,0 +1,9 @@
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/Ricty-Bold.ttf
+%%FONTSDIR%%/Ricty-BoldOblique.ttf
+%%FONTSDIR%%/Ricty-Oblique.ttf
+%%FONTSDIR%%/Ricty-Regular.ttf
+etc/fonts/conf.avail/20-unhint-ricty.conf
+etc/fonts/conf.avail/62-fonts-ricty.conf
+etc/fonts/conf.d/20-unhint-ricty.conf
+etc/fonts/conf.d/62-fonts-ricty.conf

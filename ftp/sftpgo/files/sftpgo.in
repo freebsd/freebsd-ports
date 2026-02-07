@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: sftpgo
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable SFTPGo:
+#
+# sftpgo_enable (bool):    Set to "NO" by default.
+#                          Set to "YES" to enable SFTPGo.
+# sftpgo_user (str):       Default to "sftpgo".
+# sftpgo_group (str):      Default to "sftpgo".
+#                          User and group to run SFTPGo with.
+# sftpgo_flags (str):      Additional flags to append to "sftpgo serve" command.
+#                          Read sftpgo(1) for more information.
+# sftpgo_config (str):     Default to "%%PREFIX%%/etc/sftpgo.json".
+#                          SFTPGo config directory.
+# sftpgo_configdir (str):  Default to "/var/db/sftpgo".
+#                          Directory for private keys, SQLite database etc.
+# sftpgo_logdir (str):     Default to "/var/log/sftpgo".
+#                          Directory to store sftpgo logs
+
+. /etc/rc.subr
+
+name=sftpgo
+rcvar=sftpgo_enable
+desc=SFTPGo
+
+load_rc_config sftpgo
+
+: ${sftpgo_enable:=NO}
+: ${sftpgo_user:=sftpgo}
+: ${sftpgo_group:=sftpgo}
+: ${sftpgo_config=%%PREFIX%%/etc/sftpgo.json}
+: ${sftpgo_configdir=/var/db/sftpgo}
+: ${sftpgo_logdir=/var/log/sftpgo}
+
+pidfile=/var/run/${name}/${name}.pid
+start_precmd=sftpgo_precmd
+procname="%%PREFIX%%/bin/sftpgo"
+required_files="${sftpgo_config}"
+command=/usr/sbin/daemon
+command_args="-cf -p ${pidfile} ${procname} serve --config-dir ${sftpgo_configdir} --config-file ${sftpgo_config} --log-file-path ${sftpgo_logdir}/sftpgo.log ${sftpgo_flags}"
+
+sftpgo_precmd()
+{
+    # Create PID file directory
+    install -d -o ${sftpgo_user} -g ${sftpgo_group} -m 0755 "$(dirname ${pidfile})"
+
+    install -d -o ${sftpgo_user} -g ${sftpgo_group} -m 0755 "${sftpgo_configdir}"
+    install -d -o ${sftpgo_user} -g ${sftpgo_group} -m 0755 "${sftpgo_logdir}"
+
+    # Remove default flags, they're added in `command_args` manually
+    rc_flags=""
+}
+
+run_rc_command "$1"

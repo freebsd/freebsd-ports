@@ -1,0 +1,6 @@
+Cobalt SKK library.
+
+CSKK is a library to implement Simple Kana-Kanji henkan.
+
+Of course, this library is named as 'CSKK' because it is extensionally equal to
+SKK.

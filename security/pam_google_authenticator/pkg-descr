@@ -1,0 +1,2 @@
+The PAM module can add a two-factor authentication
+step to any PAM-enabled application.

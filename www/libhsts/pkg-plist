@@ -1,0 +1,7 @@
+bin/hsts
+include/libhsts.h
+lib/libhsts.a
+lib/libhsts.so
+lib/libhsts.so.0
+lib/libhsts.so.0.0.0
+libdata/pkgconfig/libhsts.pc

@@ -1,0 +1,5 @@
+--- dune-project.orig	2024-11-19 15:50:04 UTC
++++ dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

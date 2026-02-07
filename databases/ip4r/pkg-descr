@@ -1,0 +1,4 @@
+IP4R is a contributed PostgreSQL module that embraces and extends the
+existing 'inet' and 'cidr' built-in types, providing extra functionality
+and simplicity to IPv4 and IPv6 address lookup within large-scale
+environments.

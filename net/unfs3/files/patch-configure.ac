@@ -1,0 +1,17 @@
+--- configure.ac.orig	2019-06-12 14:22:57 UTC
++++ configure.ac
+@@ -31,14 +31,12 @@ AC_CHECK_FUNCS(xdr_int xdr_u_int)
+ AC_CHECK_FUNCS(xdr_int32 xdr_int32_t)
+ AC_CHECK_FUNCS(xdr_uint32 xdr_uint32_t xdr_u_int32_t)
+ AC_CHECK_FUNCS(xdr_uint64 xdr_uint64_t xdr_u_int64_t)
+-AC_CHECK_FUNCS(svc_getreq_poll)
+ AC_CHECK_FUNCS(statvfs)
+ AC_CHECK_FUNCS(seteuid setegid)
+ AC_CHECK_FUNCS(setresuid setresgid)
+ AC_CHECK_FUNCS(vsyslog)
+ AC_CHECK_FUNCS(lchown)
+ AC_CHECK_FUNCS(setgroups)
+-UNFS3_SOLARIS_RPC
+ UNFS3_PORTMAP_DEFINE
+ UNFS3_COMPILE_WARNINGS
+ 

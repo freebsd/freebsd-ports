@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+You installed rearx: TUI client for the Searx meta-search engine
+
+You must edit %%ETCDIR%%/rearx.yaml to setup rearx.
+You can use one of Searx instances listed in https://searx.space/
+or you can install your own Searx instance by running these commands:
+$ sudo pkg install searx
+$ sudo service searx start
+EOM
+}
+]

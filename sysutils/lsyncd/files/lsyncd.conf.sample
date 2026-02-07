@@ -1,0 +1,19 @@
+settings {
+  logfile    = "/var/log/lsyncd.log",
+  statusFile = "/var/log/lsyncd.status",
+  statusInterval = 1,
+  maxProcesses = 2,
+  insist = 1,
+}
+
+sync{
+  default.rsync,
+  delay = 0,
+  source = "/data/test1",
+  target = "some_host::test1",
+  rsync = {
+    archive  = true,
+    compress = true
+  },
+  delete = true
+}

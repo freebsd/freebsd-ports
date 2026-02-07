@@ -1,0 +1,28 @@
+Port 888
+EmailEnable 0
+EmailSender 
+EmailServer 
+EmailServerLogin 
+EmailServerPasswd 
+EmailRecipient 
+EmailServerPortLastSetTo 25
+EmailServerNoSSLPort 25
+EmailServerSSLPort 465
+EmailSeverity 1
+EmailServerPortFlag 0
+ROpwd twOmwmsK8lKk2
+ADMINpwd twOmwmsK8lKk2
+RemoteAccess 1
+Language 0
+Logger 0
+Refresh 5
+BGRate 3333333333333333
+MsgPath %%PREFIX%%/etc/3dm2/msg
+imgPath %%PREFIX%%/etc/3dm2
+Help %%PREFIX%%/share/3dm2/help
+OEM 0
+OEMBrand 3ware
+AutoLogout 0
+CommandLog 1
+EnclosureMonitor 1
+EnclMonitorSleepMinutes 2

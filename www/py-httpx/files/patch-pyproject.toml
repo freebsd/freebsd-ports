@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -43,7 +43,7 @@ cli = [
+ cli = [
+     "click==8.*",
+     "pygments==2.*",
+-    "rich>=10,<14",
++    "rich>=10,<15",
+ ]
+ http2 = [
+     "h2>=3,<5",

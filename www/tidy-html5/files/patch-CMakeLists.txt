@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-11-25 13:54:41 UTC
++++ CMakeLists.txt
+@@ -102,7 +102,7 @@ option( TIDY_COMPAT_HEADERS "Set ON to include compati
+ #   Allow building with non-default man page directory.
+ #------------------------------------------------------------------------
+ if (NOT MAN_INSTALL_DIR)
+-    set(MAN_INSTALL_DIR share/man/man1)
++    set(MAN_INSTALL_DIR man/man1)
+ endif ()
+ 
+ 

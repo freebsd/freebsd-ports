@@ -1,0 +1,108 @@
+#!/bin/sh
+#
+# Copyright (c) 2007, Gabriel Linder <linder.gabriel@gmail.com>
+# This work is based on a script written by Maxim Khitrov and posted
+# on FreeBSD Questions mailing list at Wed, 22 Aug 2007.
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+
+dir="`pwd`"
+dir="`dirname $dir`"
+dir="`dirname $dir`"
+if [ "/usr/ports" != "$dir" ]
+then
+	echo 1>&2 "This script must be run from a port directory !"
+	exit 1
+fi
+
+if [ ! -z "$CLICOLOR" ] && [ -t 1 ]
+then
+	NORMAL="\033[0;0m"
+	BLACK="\033[1;30m"
+	RED="\033[1;31m"
+	GREEN="\033[1;32m"
+	YELLOW="\033[1;33m"
+	BLUE="\033[1;34m"
+	MAGENTA="\033[1;35m"
+	CYAN="\033[1;36m"
+	WHITE="\033[1;37m"
+else
+	NORMAL=""
+	BLACK=""
+	RED=""
+	GREEN=""
+	YELLOW=""
+	BLUE=""
+	MAGENTA=""
+	CYAN=""
+	WHITE=""
+fi
+
+print_knob()
+{
+	port="$1"
+	knob="$2"
+	if [ -z "`cd /usr/ports/$port && /usr/local/libexec/portconf | grep $knob`" ]
+	then
+		echo -e "    $RED[KNOB]$NORMAL       $WHITE$knob$NORMAL"
+	else
+		echo -e "    $RED[KNOB]$NORMAL   $MAGENTA(*)$NORMAL $BLACK$knob$NORMAL"
+	fi
+}
+
+print_option()
+{
+	port="$1"
+	knob="$2"
+	options="$3"
+	pre="`echo $knob | cut -d _ -f 1`"
+	if [ "$pre" = "WITH" ] || [ "$pre" = "WITHOUT" ]
+	then
+		opt="`echo $knob | sed s,${pre}_,,`"
+	else
+		opt="$knob"
+	fi
+	if [ -z "`echo $options | grep -Eho $opt=on`" ]
+	then
+		if [ -z "`echo $options | grep -Eho $opt=off`" ]
+		then
+			print_knob "$port" "$knob"
+		else
+			echo -e "    $GREEN[OPTION]$NORMAL     $WHITE$opt$NORMAL"
+		fi
+	else
+		echo -e "    $GREEN[OPTION]$NORMAL $MAGENTA(*)$NORMAL $BLACK$opt$NORMAL"
+	fi
+}
+
+ports="`make missing` `pwd | sed s,/usr/ports/,,`"
+for port in $ports
+do
+	knobs="`grep -Eho '(defined[:space:]*\([:space:]*.+[:space:]*\))|(^\.ifdef[:space:]*\([:space:]*.+[:space:]*\))|(^\.ifndef[:space:]*\([:space:]*.+[:space:]*\))' /usr/ports/$port/Makefile | sed -E 's,defined\(([^)]*)\),\1,g;s,\.ifdef\(([^)]*)\),\1,g;s,\.ifndef\(([^)]*)\),\1,g' | tr -d '&|!' | tr ' ' '\n' | grep -Eho '^[A-Z_0-9]+$' | sort | uniq`"
+	if [ -z "$knobs" ]
+	then
+		continue
+	fi
+	echo "==> $port"
+	options="`make showconfig | grep -Eho '^[:space:]*.+=(on|off)'`"
+	for knob in $knobs
+	do
+		if [ -z "$options" ]
+		then
+			print_knob "$port" "$knob"
+		else
+			print_option "$port" "$knob" "$options"
+		fi
+	done
+done

@@ -1,0 +1,8 @@
+bin/boxdumper
+bin/muxer
+bin/remuxer
+bin/timelineeditor
+include/lsmash.h
+lib/liblsmash.so
+lib/liblsmash.so.2
+libdata/pkgconfig/liblsmash.pc

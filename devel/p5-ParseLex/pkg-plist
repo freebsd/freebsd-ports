@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Parse/Lex.pm
+%%SITE_PERL%%/Parse/ALex.pm
+%%SITE_PERL%%/Parse/LexEvent.pm
+%%SITE_PERL%%/Parse/YYLex.pm
+%%SITE_PERL%%/Parse/CLex.pm
+%%SITE_PERL%%/Parse/Trace.pm
+%%SITE_PERL%%/Parse/Token.pm
+%%SITE_PERL%%/Parse/Token-t.pm
+%%PERL5_MAN3%%/Parse::ALex.3.gz
+%%PERL5_MAN3%%/Parse::Lex.3.gz
+%%PERL5_MAN3%%/Parse::Token.3.gz
+%%PERL5_MAN3%%/Parse::YYLex.3.gz
+%%PERL5_MAN3%%/Parse::LexEvent.3.gz
+%%PERL5_MAN3%%/Parse::CLex.3.gz
+%%PERL5_MAN3%%/Parse::Trace.3.gz

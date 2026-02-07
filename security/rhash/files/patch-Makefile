@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-12-14 16:52:11 UTC
++++ Makefile
+@@ -80,7 +80,7 @@ install-man:
+ 
+ install-conf:
+ 	$(INSTALL) -d $(SYSCONFDIR)
+-	tr -d \\r < dist/rhashrc.sample > rc.tmp && $(INSTALL_DATA) rc.tmp $(SYSCONFDIR)/rhashrc
++	tr -d \\r < dist/rhashrc.sample > rc.tmp && $(INSTALL_DATA) rc.tmp $(SYSCONFDIR)/rhashrc.sample
+ 	rm -f rc.tmp
+ 
+ # dependencies should be properly set, otherwise 'make -j<n>' can fail

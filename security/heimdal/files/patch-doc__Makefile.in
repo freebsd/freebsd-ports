@@ -1,0 +1,48 @@
+--- doc/Makefile.in.orig	2020-02-23 12:16:33 UTC
++++ doc/Makefile.in
+@@ -501,7 +501,7 @@ texi_subst = sed -e 's,[@]dbdir[@],$(localstatedir),g'
+ 	-e 's,[@]dbtype[@],$(db_type),g' \
+ 	-e 's,[@]PACKAGE_VERSION[@],$(PACKAGE_VERSION),g'
+ 
+-PROJECTS = base hdb hx509 gssapi krb5 ntlm wind hcrypto
++PROJECTS = base hdb hx509 gssapi krb5 ntlm wind
+ heimdal_TEXINFOS = \
+ 	ack.texi \
+ 	apps.texi \
+@@ -524,7 +524,6 @@ EXTRA_DIST = \
+ 	footer.html \
+ 	gssapi.din \
+ 	hdb.din \
+-	hcrypto.din \
+ 	header.html \
+ 	heimdal.css \
+ 	base.din \
+@@ -542,7 +541,6 @@ EXTRA_DIST = \
+ 	vars.tin
+ 
+ CLEANFILES = \
+-	hcrypto.dxy* \
+ 	base.dxy* \
+ 	hx509.dxy* \
+ 	hdb.dxy* \
+@@ -1199,11 +1197,6 @@ distdir-in-tree: $(DISTFILES) $(INFO_DEPS)
+ 	  fi ; \
+ 	done
+ 
+-hcrypto.dxy: hcrypto.din Makefile
+-	$(dxy_subst) < $(srcdir)/hcrypto.din > hcrypto.dxy.tmp
+-	chmod +x hcrypto.dxy.tmp
+-	mv hcrypto.dxy.tmp hcrypto.dxy
+-
+ hdb.dxy: hdb.din Makefile
+ 	$(dxy_subst) < $(srcdir)/hdb.din > hdb.dxy.tmp
+ 	chmod +x hdb.dxy.tmp
+@@ -1244,7 +1237,7 @@ vars.texi: vars.tin Makefile
+ 	chmod +x vars.texi.tmp
+ 	mv vars.texi.tmp vars.texi
+ 
+-doxyout doxygen: base.dxy hdb.dxy hx509.dxy hcrypto.dxy gssapi.dxy krb5.dxy ntlm.dxy wind.dxy
++doxyout doxygen: base.dxy hdb.dxy hx509.dxy gssapi.dxy krb5.dxy ntlm.dxy wind.dxy
+ 	@test -d $(srcdir)/doxyout && \
+ 	find $(srcdir)/doxyout -type d ! -perm -200 -exec chmod u+w {} ';' ; \
+ 	rm -rf $(srcdir)/doxyout ; \

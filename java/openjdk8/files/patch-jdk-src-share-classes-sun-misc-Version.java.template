@@ -1,0 +1,20 @@
+--- jdk/src/share/classes/sun/misc/Version.java.template.orig	2020-07-12 22:11:20.576241000 -0700
++++ jdk/src/share/classes/sun/misc/Version.java.template	2020-07-12 22:12:30.301432000 -0700
+@@ -106,7 +106,7 @@
+ 
+         /* Second line: runtime version (ie, libraries). */
+ 
+-        ps.print(java_runtime_name + " " + company_name + "(build " + java_runtime_version);
++        ps.print(java_runtime_name + " (build " + java_runtime_version);
+ 
+         if (java_profile_name.length() > 0) {
+             // profile name
+@@ -123,7 +123,7 @@
+         String java_vm_name    = System.getProperty("java.vm.name");
+         String java_vm_version = System.getProperty("java.vm.version");
+         String java_vm_info    = System.getProperty("java.vm.info");
+-        ps.println(java_vm_name + " " + company_name + "(build " + java_vm_version + ", " +
++        ps.println(java_vm_name + " (build " + java_vm_version + ", " +
+                    java_vm_info + ")");
+     }
+ 

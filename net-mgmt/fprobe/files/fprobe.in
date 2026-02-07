@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: fprobe
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable fprobe:
+#
+# fprobe_enable="YES"
+#
+# See fprobe(8) for fprobe_flags
+#
+
+. /etc/rc.subr
+
+name="fprobe"
+rcvar=fprobe_enable
+
+load_rc_config "$name"
+
+: ${fprobe_enable="NO"}
+: ${fprobe_flags:="-i lo0 127.0.0.1:2055"}
+
+command="%%PREFIX%%/sbin/fprobe"
+pidfile="/var/run/$name.pid"
+
+run_rc_command "$1"

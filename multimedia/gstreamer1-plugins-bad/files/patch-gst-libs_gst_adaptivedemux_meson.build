@@ -1,0 +1,17 @@
+--- gst-libs/gst/adaptivedemux/meson.build.orig	2025-03-11 20:14:44 UTC
++++ gst-libs/gst/adaptivedemux/meson.build
+@@ -1,5 +1,8 @@
++if get_option('adaptivedemux').enabled()
+ adaptivedemux_sources = files('gstadaptivedemux.c')
+-adaptivedemux_headers = files('gstadaptivedemux.h')
++adaptivedemux_headers = files('gstadaptivedemux.h',
++  'adaptive-demux-prelude.h')
++install_headers(adaptivedemux_headers, subdir : 'gstreamer-1.0/gst/adaptivedemux')
+ 
+ doc_sources = []
+ foreach s: adaptivedemux_sources + adaptivedemux_headers
+@@ -29,3 +32,4 @@ meson.override_dependency(pkg_name, gstadaptivedemux_d
+   dependencies : [gstbase_dep, gsturidownloader_dep])
+ 
+ meson.override_dependency(pkg_name, gstadaptivedemux_dep)
++endif

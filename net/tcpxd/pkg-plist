@@ -1,0 +1,2 @@
+@sample etc/tcpxd.conf.dist etc/tcpxd.conf
+sbin/tcpxd

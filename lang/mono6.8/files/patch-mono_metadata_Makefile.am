@@ -1,0 +1,11 @@
+--- mono/metadata/Makefile.am.orig    2020-05-20 16:09:20.183060000 +0000
++++ mono/metadata/Makefile.am 2020-05-20 16:10:38.992083000 +0000
+@@ -143,7 +143,7 @@
+
+ lib_LTLIBRARIES = $(icall_table_libraries) $(ilgen_libraries)
+
+-AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/mono $(LIBGC_CPPFLAGS) $(GLIB_CFLAGS) $(SHARED_CFLAGS)
++AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/mono $(LIBGC_CPPFLAGS) $(GLIB_CFLAGS) $(SHARED_CFLAGS) $(METADATA_CFLAGS)
+
+ #
+ # Make sure any prefix changes are updated in the binaries too.

@@ -1,0 +1,4 @@
+Oblige is a random level generator for classic FPS games, especially the
+DOOM games, but aiming to support Heretic, Hexen, and Quake eventually.
+The goal is to produce high quality levels which are easy to create and
+fun to play.  Scripting in Lua is supported for easy customisation.

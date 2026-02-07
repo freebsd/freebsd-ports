@@ -1,0 +1,11 @@
+TIMESTAMP = 1752352749
+SHA256 (uowuo-abaddon-v0.2.2_GH0.tar.gz) = a858fca424468a304e3cfc30be9b9982f3fbf078a897cb19a36a0da77fa02d41
+SIZE (uowuo-abaddon-v0.2.2_GH0.tar.gz) = 14502623
+SHA256 (machinezone-IXWebSocket-bc765e7_GH0.tar.gz) = 1766879d2c20961c0b021f937481308e7423ace98fa547b6d3bcd4640c964ef6
+SIZE (machinezone-IXWebSocket-bc765e7_GH0.tar.gz) = 637308
+SHA256 (hrantzsch-keychain-8846e78_GH0.tar.gz) = 89b8045b5b7e21547c8a803dcda407149af9658c6a000c942de936866dc77cbb
+SIZE (hrantzsch-keychain-8846e78_GH0.tar.gz) = 138571
+SHA256 (mackron-miniaudio-350784a_GH0.tar.gz) = 95247705b45e9854d4af3b0e245c6d49442577388ecd3b598ed0c1aba1ad038e
+SIZE (mackron-miniaudio-350784a_GH0.tar.gz) = 4485213
+SHA256 (nayuki-QR-Code-generator-22fac31_GH0.tar.gz) = ef059ba5a9e193ffa6b2a594fc65b43da68c47113863be80c038839f72c57bad
+SIZE (nayuki-QR-Code-generator-22fac31_GH0.tar.gz) = 193349

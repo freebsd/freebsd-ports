@@ -1,0 +1,13 @@
+%%PERL5_MAN3%%/WDDX.3.gz
+%%SITE_PERL%%/WDDX.pm
+%%SITE_PERL%%/WDDX/Array.pm
+%%SITE_PERL%%/WDDX/Binary.pm
+%%SITE_PERL%%/WDDX/Boolean.pm
+%%SITE_PERL%%/WDDX/Datetime.pm
+%%SITE_PERL%%/WDDX/Null.pm
+%%SITE_PERL%%/WDDX/Number.pm
+%%SITE_PERL%%/WDDX/Parser.pm
+%%SITE_PERL%%/WDDX/Recordset.pm
+%%SITE_PERL%%/WDDX/String.pm
+%%SITE_PERL%%/WDDX/Struct.pm
+%%PORTDOCS%%%%DOCSDIR%%/Changes

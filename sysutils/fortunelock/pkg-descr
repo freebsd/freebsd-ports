@@ -1,0 +1,4 @@
+Fortunelock is a "keep it simple, stupid" program to lock a terminal while
+showing fortunes. It was designed to be as small and simple as possible
+and therefore does not support PAM, NIS, shadow passwords or even regular
+passwords: the user must enter a lock password to lock the terminal.

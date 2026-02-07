@@ -1,0 +1,21 @@
+--- configure.orig	2005-06-07 15:29:14 UTC
++++ configure
+@@ -22091,14 +22091,13 @@ fi
+   if test ! x$silent = xyes; then
+     exec 6>&1
+   fi
+-  #standalone library rules over libc
+-  if test $iconv_in_iconv = 1 -o $libiconv_in_iconv = 1; then
++  if test $iconv_in_libc = 1; then
++    echo "$as_me:$LINENO: result: libc" >&5
++echo "${ECHO_T}libc" >&6
++  elif test $iconv_in_iconv = 1 -o $libiconv_in_iconv = 1; then
+     echo "$as_me:$LINENO: result: libiconv" >&5
+ echo "${ECHO_T}libiconv" >&6
+     ICONV_LIB=-liconv
+-  elif test $iconv_in_libc = 1; then
+-    echo "$as_me:$LINENO: result: libc" >&5
+-echo "${ECHO_T}libc" >&6
+   else
+     echo "$as_me:$LINENO: result: not found (panic)" >&5
+ echo "${ECHO_T}not found (panic)" >&6

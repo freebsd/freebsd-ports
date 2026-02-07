@@ -1,0 +1,8 @@
+Multican is Canon EOS cameras USB remote control utility for 300D, 350D, 30D,
+20D, and 5D.  Multican allows scripted remote control of multiple cameras; it
+is possible to control up to six cameras attached at the same time.
+
+Multican communicates with camera directly, without generic library such as
+provided by gPhoto2, and currently has no GUI, which makes it no replacement
+for Canon's EOS Utility, but it can be useful nonetheless in various setups,
+e.g. for astrophotography.

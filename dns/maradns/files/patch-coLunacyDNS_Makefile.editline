@@ -1,0 +1,9 @@
+--- coLunacyDNS/Makefile.editline.orig	2023-05-03 00:53:39 UTC
++++ coLunacyDNS/Makefile.editline
+@@ -1,5 +1,5 @@
+ # To use other flags, invoke as "make CFLAGS=-g" or some such
+-CFLAGS =-O3 -DLUA_USE_LINUX
++CFLAGS =-O2 -Wall -Wpedantic
+ 
+ all: coLunacyDNS HalfSipHash13 
+ 

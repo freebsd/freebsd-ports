@@ -1,0 +1,7 @@
+GDD is a graphics device for R which uses libgd for creating bitmap output.
+Supported output formats are png8, png24, gif and jpeg.
+
+The main purpose of this package is to replace png/jpeg and similar native
+devices in R which either rely on X11 or use GhostScript are thus are very slow
+and not suitable in server applications. GDD also supports advanced features
+such as anti-aliasing of both lines and text.

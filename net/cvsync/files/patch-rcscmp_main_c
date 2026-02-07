@@ -1,0 +1,14 @@
+$OpenBSD: patch-rcscmp_main_c,v 1.1 2014/06/25 17:54:07 naddy Exp $
+--- rcscmp/main.c.orig	Mon Jul 18 16:37:38 2005
++++ rcscmp/main.c	Wed Jun 25 00:48:47 2014
+@@ -220,6 +220,10 @@ rcscmp_hash(struct rcslib_file *rcs, const struct hash
+ 			(*hashops->update)(ctx, rev->next.n_str,
+ 					   rev->next.n_len);
+ 		}
++		if (rev->commitid.i_len > 0) {
++			(*hashops->update)(ctx, rev->commitid.i_id,
++					   rev->commitid.i_len);
++		}
+ 	}
+ 
+ 	if (rcs->desc.s_len > 0)

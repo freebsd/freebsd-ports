@@ -1,0 +1,25 @@
+@sample %%ETCDIR%%/rntrack.cfg.sample
+%%ETCDIR%%/tbl/alt2koi.tbl
+%%ETCDIR%%/tbl/koi2alt.tbl
+%%ETCDIR%%/test.pl
+%%ETCDIR%%/tpl/audit.tpl
+%%ETCDIR%%/tpl/badfrom.tpl
+%%ETCDIR%%/tpl/badto.tpl
+%%ETCDIR%%/tpl/loop.tpl
+sbin/rntrack
+%%PORTDOCS%%%%DOCSDIR%%/FAQ_en
+%%PORTDOCS%%%%DOCSDIR%%/FAQ_ru
+%%PORTDOCS%%%%DOCSDIR%%/report.err
+%%PORTDOCS%%%%DOCSDIR%%/report.err.ru
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bignode.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bignode2.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node1042.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node1157.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node2.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/node3.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl-test.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point2.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/traflog.tpl
+share/man/man1/rntrack.1.gz

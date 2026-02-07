@@ -1,0 +1,7 @@
+Netmagis is a network management information system,
+which allows a network administrator to:
+ - manage data for your BIND DNS and ISC DHCPD server,
+ - delegate DNS management,
+ - automatically generate network maps,
+ - assign VLAN to equipment interfaces via a Web interface,
+ - generate traffic graphs.

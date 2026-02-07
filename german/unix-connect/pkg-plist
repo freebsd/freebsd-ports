@@ -1,0 +1,72 @@
+@sample etc/uconnect/alias.sample
+@sample etc/uconnect/approved.sample
+@sample etc/uconnect/autoeintrag.zconnect.sample
+@sample etc/uconnect/config.sample
+@sample etc/uconnect/myself.zconnect.sample
+etc/uconnect/systems.sample
+@sample etc/uconnect/xprogs.sample
+@sample etc/uconnect/zconnecthosts.sample
+libexec/uconnect/anruf
+libexec/uconnect/auspack
+libexec/uconnect/bsmtp
+libexec/uconnect/cron.d.hourly
+libexec/uconnect/einpack
+libexec/uconnect/import
+libexec/uconnect/januslogin
+libexec/uconnect/list-systems
+libexec/uconnect/logrotate.d.entry
+libexec/uconnect/prearc
+libexec/uconnect/rcsmtp
+libexec/uconnect/receiver
+libexec/uconnect/rgsmtp
+libexec/uconnect/rsmtp
+libexec/uconnect/uumlist
+libexec/uconnect/uursmtp
+libexec/uconnect/uuwnews
+libexec/uconnect/uuwsmtp
+libexec/uconnect/zcall
+libexec/uconnect/zconsplit
+@(news,dialer,4555) libexec/uconnect/uurnews
+%%SENDMAIL%%libexec/uconnect/mail.uuconnect
+%%SENDMAIL%%libexec/uconnect/zbatchsmtp
+%%POSTFIX%%libexec/uconnect/zbatchsmtp
+%%POSTFIX%%libexec/uconnect/run_as
+%%QMAIL%%libexec/uconnect/zbatchsmtp
+%%SMAIL%%libexec/uconnect/zbatchsmtp
+%%CNEWS%%libexec/uconnect/viazconnect
+%%INN%%libexec/uconnect/send-zcon
+@owner news
+@group dialer
+@dir etc/uconnect
+@dir etc/uconnect/systems
+@dir /var/spool/uconnect/backin
+@dir /var/spool/uconnect/backout
+@dir /var/spool/uconnect/error
+@dir /var/spool/uconnect/locks
+@dir /var/spool/uconnect/logfiles
+@dir /var/spool/uconnect/rsmtp
+@dir /var/spool/uconnect
+@group
+@dir /var/spool/uconnect/netcall
+@owner
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.configure
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.OLD
+%%PORTDOCS%%%%DOCSDIR%%/POLICY
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.systeme
+%%PORTDOCS%%%%DOCSDIR%%/THANX
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/bnews.patch
+%%PORTDOCS%%%%DOCSDIR%%/changes.doc
+%%PORTDOCS%%%%DOCSDIR%%/ger-texinfo.tex
+%%PORTDOCS%%%%DOCSDIR%%/iso8859-1.tex
+%%PORTDOCS%%%%DOCSDIR%%/lizenz.deutsch
+%%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
+%%PORTDOCS%%%%DOCSDIR%%/unix-connect.dvi
+%%PORTDOCS%%%%DOCSDIR%%/unix-connect.texinfo
+%%PORTDOCS%%%%DOCSDIR%%/xpoint.dok
+%%PORTDOCS%%%%DOCSDIR%%/zcon31.changes
+%%PORTDOCS%%%%DOCSDIR%%/zconnect.doc

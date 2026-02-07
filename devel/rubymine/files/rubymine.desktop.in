@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=RubyMine
+GenericName=RubyMine
+Comment=Ruby on Rails IDE from JetBrains
+Icon=%%DATADIR%%/rubymine.png
+Exec=%%DATADIR%%/bin/rubymine.sh
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

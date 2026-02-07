@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+You installed OpenVKL: Kernel library for graphics applications
+
+OpenVKL can only work on CPUs that have SSE4.2 support or higher.
+EOM
+}
+]

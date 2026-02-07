@@ -1,0 +1,11 @@
+bin/highlight
+%%GUI%%bin/highlight-gui
+@sample %%ETCDIR%%/filetypes.conf.sample
+@sample %%ETCDIR%%/lsp.conf.sample
+%%GUI%%share/applications/highlight.desktop
+share/bash-completion/completions/highlight
+share/fish/vendor_completions.d/highlight.fish
+%%GUI%%share/icons/hicolor/256x256/apps/highlight.png
+share/man/man1/highlight.1.gz
+share/man/man5/filetypes.conf.5.gz
+share/zsh/site-functions/_highlight

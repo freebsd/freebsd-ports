@@ -1,0 +1,4 @@
+%%SITE_PERL%%/HTTP/CookieJar.pm
+%%SITE_PERL%%/HTTP/CookieJar/LWP.pm
+%%PERL5_MAN3%%/HTTP::CookieJar.3.gz
+%%PERL5_MAN3%%/HTTP::CookieJar::LWP.3.gz

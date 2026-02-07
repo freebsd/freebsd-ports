@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/hy.dat
+lib/aspell-%%VER%%/hy_affix.dat
+lib/aspell-%%VER%%/u-armn.cmap
+lib/aspell-%%VER%%/u-armn.cset
+share/aspell/armenian.alias
+share/aspell/hy-common.rws
+share/aspell/hy.multi

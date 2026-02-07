@@ -1,0 +1,43 @@
+--- Makefile.orig	2008-12-23 10:56:02.000000000 +0200
++++ Makefile	2008-12-27 16:33:07.000000000 +0200
+@@ -1,14 +1,11 @@
+-#   Makefile for Linux, FreeBSD, OpenBSD, and Darwin
+ #   Requirements: GNU Make, GCC 4.0 or later
+ #   Options: DESTDIR, PREFIX, DATAMODEL(ILP32/LP64)
+ 
+ PROG 	 = ypsilon
+ 
+-PREFIX 	 = /usr/local
++CPPFLAGS = -DNDEBUG -DSYSTEM_SHARE_PATH='"$(DESTDIR)$(DATADIR)"'
+ 
+-CPPFLAGS = -DNDEBUG -DSYSTEM_SHARE_PATH='"$(DESTDIR)$(PREFIX)/share/$(PROG)"'
+-
+-CXXFLAGS = -pipe -x c++ -pthread -O3 -fstrict-aliasing -fomit-frame-pointer -momit-leaf-frame-pointer
++CXXFLAGS = -x c++ ${CFLAGS}
+ 
+ SRCS 	 = file.cpp main.cpp vm0.cpp object_heap_compact.cpp subr_flonum.cpp vm1.cpp object_set.cpp \
+ 	   subr_hash.cpp vm2.cpp object_slab.cpp subr_list.cpp interpreter.cpp serialize.cpp \
+@@ -60,15 +57,7 @@
+ endif
+ 
+ ifneq (, $(findstring FreeBSD, $(UNAME)))
+-  ifeq ($(shell $(CXX) -dumpspecs | grep 'march=native'), )
+-    ifeq ($(DATAMODEL), ILP32)  
+-      CXXFLAGS += -march=i686
+-    endif
+-  else
+-    CXXFLAGS += -march=native
+-  endif
+   CPPFLAGS += -D__LITTLE_ENDIAN__
+-  CXXFLAGS += -msse2 -mfpmath=sse  
+   ifeq ($(DATAMODEL), ILP32)  
+     CPPFLAGS += -DDEFAULT_HEAP_LIMIT=32
+     CXXFLAGS += -m32
+@@ -123,7 +112,6 @@
+ .PHONY: all install uninstall sitelib stdlib check bench clean distclean
+ 
+ all: $(PROG)
+-	@mkdir -p -m755 $(HOME)/.ypsilon
+ 
+ $(PROG): $(OBJS)
+ 	$(CXX) $(LDFLAGS) $(LDLIBS) -o $@ $^

@@ -1,0 +1,17 @@
+--- jdk/make/mapfiles/libnio/mapfile-bsd.orig	2020-01-16 18:18:12 UTC
++++ jdk/make/mapfiles/libnio/mapfile-bsd
+@@ -141,6 +141,14 @@ SUNWprivate_1.1 {
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_initializeGnomeVfs;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_probeUsingGio;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_probeUsingGnomeVfs;
++		Java_sun_nio_fs_LinuxWatchService_configureBlocking;
++		Java_sun_nio_fs_LinuxWatchService_eventOffsets;
++		Java_sun_nio_fs_LinuxWatchService_eventSize;
++		Java_sun_nio_fs_LinuxWatchService_inotifyAddWatch;
++		Java_sun_nio_fs_LinuxWatchService_inotifyInit;
++		Java_sun_nio_fs_LinuxWatchService_inotifyRmWatch;
++		Java_sun_nio_fs_LinuxWatchService_poll;
++		Java_sun_nio_fs_LinuxWatchService_socketpair;
+ 		Java_sun_nio_fs_MagicFileTypeDetector_initialize0;
+ 		Java_sun_nio_fs_MagicFileTypeDetector_probe0;
+ 		Java_sun_nio_fs_UnixCopyFile_transfer;

@@ -1,0 +1,13 @@
+[
+{
+  message: <<EOF
+There were a number of changes to amtool in 0.17.0 which are not fully
+backwards compatible, related to the backup and import of silences.
+If a backup of silences is created using a previous version of amtool (v0.16.1
+or earlier), it is possible that not all silences can be correctly imported
+using a later version of amtool.
+EOF
+  maximum_version: "0.17.0"
+  type: upgrade
+}
+]

@@ -1,0 +1,50 @@
+[
+{ type: install
+  message: <<EOM
+The Piwigo Photo Gallery has been installed in the directory
+%%WWWDIR%%
+and optionally, with the documentation at
+%%DOCSDIR%%
+and the content of the tools directory at
+%%EXAMPLESDIR%%.
+
+If this is a new installation, don't forget to verify that your
+PHP configuration is OK and that you have an MySQL database.
+The local directory contains the empty structure
+used to store local configuration.
+
+If you are upgrading, alwyas read the documentation
+on the site. There may be special steps you need to
+bring your site to the new version.
+
+Make sure the ownership and mode of the installation
+directores and files match your intended use.
+
+If you included ImageMagick, don't forget to set
+$conf['ext_imagick_dir'] = '%%LOCALBASE%%/bin/';
+in your local config.
+
+You must add appropriate configuration directives to your
+apache configuration file (%%PREFIX%%/etc/apache/httpd.conf).
+A typical configuration would be:
+
+    Alias /gallery/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%">
+	AllowOverride None
+	Order allow,deny
+	Allow from all
+    </Directory>
+
+For installation and upgrade information, check the readme file.
+EOM
+},
+{ type: remove
+  message: <<EOM
+WARNING: If you intend *NOT* use this package anymore,
+  you may need to remove the following directory manually:
+  %%WWWDIR%%
+  and delete the application database.
+EOM
+}
+]

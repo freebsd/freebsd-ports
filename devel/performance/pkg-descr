@@ -1,0 +1,12 @@
+This library is a collection of classes intended to be used to help
+improve the performance of GNUstep and Cocoa applications.  The scope
+of the library is therefore -
+
+1. Subclasses of standard Cocoa classes which are optimised for
+   particular uses.
+2. Classes to perform tasks which can improve application performance
+   by mechanisms not covered by existing classes.
+3. Classes to monitor/analyse performance issues so you can tell what
+   needs to be optimised.
+
+LICENSE: LGPL3 or later

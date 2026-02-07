@@ -1,0 +1,20 @@
+PORTNAME=	Test-Corpus-Audio-MPD
+PORTVERSION=	1.120990
+PORTREVISION=	1
+CATEGORIES=	audio perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Automate launching of fake mdp for testing purposes
+WWW=		https://metacpan.org/release/Test-Corpus-Audio-MPD
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-ShareDir-PathClass>0:devel/p5-File-ShareDir-PathClass \
+		p5-Path-Class>=0:devel/p5-Path-Class \
+		p5-Readonly>=0:devel/p5-Readonly
+
+USES=		perl5
+USE_PERL5=	modbuild
+
+.include <bsd.port.mk>

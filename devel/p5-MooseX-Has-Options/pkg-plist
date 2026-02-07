@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/MooseX::Has::Options.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Options::Handler::Accessors.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Options::Handler::NativeTypes.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Options::Handler::NoInit.3.gz
+%%SITE_PERL%%/MooseX/Has/Options.pm
+%%SITE_PERL%%/MooseX/Has/Options/Handler/Accessors.pm
+%%SITE_PERL%%/MooseX/Has/Options/Handler/NativeTypes.pm
+%%SITE_PERL%%/MooseX/Has/Options/Handler/NoInit.pm

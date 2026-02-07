@@ -1,0 +1,22 @@
+bin/jwhois
+@sample etc/jwhois.conf.sample
+share/man/man1/jwhois.1.gz
+share/man/sv/man1/jwhois.1.gz
+%%NLS%%share/locale/es/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/id/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/it/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/jwhois.mo
+@rmtry var/jwhois/jwhois.db
+@dir(,nogroup,775) var/jwhois
+@dir var

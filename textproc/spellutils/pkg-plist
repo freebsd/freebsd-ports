@@ -1,0 +1,8 @@
+bin/pospell
+bin/newsbody
+share/locale/da/LC_MESSAGES/spellutils.mo
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aspell.sl
+share/man/man1/newsbody.1.gz
+share/man/man1/pospell.1.gz

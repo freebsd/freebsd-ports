@@ -1,0 +1,2 @@
+The code is adapted from python-docx. It can however also extract text from
+header, footer and hyperlinks. It can now also extract images.

@@ -1,0 +1,3 @@
+bin/ADMsnmp
+share/ADMsnmp/snmp.passwd
+share/doc/ADMsnmp/ADMsnmp.README

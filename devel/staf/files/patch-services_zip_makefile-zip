@@ -1,0 +1,121 @@
+--- services/zip/makefile.zip.orig	2015-09-28 13:33:59 UTC
++++ services/zip/makefile.zip
+@@ -15,14 +15,19 @@ CleanupTargets += cleanup_stafzip
+ $(stafzip_targets): SUBSYS_REL := services/zip
+ SUBSYS_REL := services/zip
+ 
++# Location of zlib headers
++ZLIB_INCLUDEDIRS ?= $(ZLIB_ROOT:/=)/include
++# Name of the zip library to link against
++ZLIB_LIBNAME=z
++
+ #=====================================================================
+ #   C/C++ Info Flags
+ #=====================================================================
+ 
+ $(stafzip_targets): OBJS = $(stafzip_objs)
+-$(stafzip_targets): LIBS = STAF STAFZlib
++$(stafzip_targets): LIBS = STAF $(ZLIB_LIBNAME)
+ $(stafzip_targets): CFLAGS := $(CC_EXPORT_SHARED_LIB_SYMBOLS)
+-$(stafzip_targets): INCLUDEDIRS := $(ZLIB_SOURCEDIR)
++$(stafzip_targets): INCLUDEDIRS := $(ZLIB_INCLUDEDIRS)
+ 
+ stafzip_objs :=\
+   STAFZip\
+@@ -43,7 +48,7 @@ stafzip_objs :=\
+ stafzip_objs        := $(foreach obj,$(stafzip_objs),$(O)/services/zip/$(obj)$(OS_OE))
+ stafzip_dependents  := $(stafzip_objs:$(OS_OE)=.d)
+ $(stafzip_dependents): SUBSYS_REL := services/zip
+-$(stafzip_dependents): INCLUDEDIRS := $(ZLIB_SOURCEDIR)
++$(stafzip_dependents): INCLUDEDIRS := $(ZLIB_INCLUDEDIRS)
+ 
+ ifeq ($(OS_NAME),win32)
+     stafzip_objs += $(SR_SRC)/STAFZip.def
+@@ -61,86 +66,8 @@ include $(InferenceRules)
+ 
+ # STAFZIP targets
+ 
+-$(REL)/lib/$(LIB_STAFZIP): $(stafzip_objs) $(LIB_STAF_FP) $(REL)/lib/$(subst Name,STAFZlib,$(DLL)) $(MAKEFILE_NAME)
++$(REL)/lib/$(LIB_STAFZIP): $(stafzip_objs) $(LIB_STAF_FP) $(MAKEFILE_NAME)
+ 	$(SHARED_LIB_IT)
+ 
+ cleanup_stafzip:
+ 	-@$(DEL) $(O)/services/zip/* $(OUT_ERR_TO_DEV_NULL)
+-
+-
+-#=====================================================================
+-#   zLib section
+-#=====================================================================
+-
+-LIB_STAFZLIB = $(subst Name,STAFZlib,$(DLL))
+-
+-stafzlib_targets += $(REL)/lib/$(LIB_STAFZLIB)
+-
+-Targets += $(stafzlib_targets)
+-CleanupTargets += cleanup_stafzlib
+-
+-$(stafzlib_targets): SUBSYS_REL := libs/zlib
+-SUBSYS_REL := libs/zlib
+-
+-#=====================================================================
+-#   C/C++ Info Flags
+-#=====================================================================
+-
+-$(stafzlib_targets): OBJS = $(stafzlib_objs)
+-$(stafzlib_targets): LIBS = 
+-$(stafzlib_targets): CFLAGS := $(CC_EXPORT_SHARED_LIB_SYMBOLS)
+-
+-# The Solaris gcc compiler does not support the GNU C extension attribute,
+-# visibility (*hidden*), which is used by zlib 1.2.5 source code.  Setting
+-# the NO_VIZ compiler flag resolves this problem when building zlib on
+-# Solaris.
+-
+-ifeq ($(OS_NAME),solaris)
+-    $(stafzlib_targets): CFLAGS += -DNO_VIZ
+-endif
+-
+-$(stafzlib_targets): LIBDIRS = $(SR_SRC)
+-
+-stafzlib_objs :=\
+-  zutil\
+-  uncompr\
+-  trees\
+-  inftrees\
+-  inflate\
+-  inffast\
+-  infback\
+-  gzclose\
+-  gzread\
+-  gzwrite\
+-  gzlib\
+-  deflate\
+-  crc32\
+-  compress\
+-  adler32
+-
+-stafzlib_objs        := $(foreach obj,$(stafzlib_objs),$(O)/libs/zlib/$(obj)$(OS_OE))
+-stafzlib_dependents  := $(stafzlib_objs:$(OS_OE)=.d)
+-$(stafzlib_dependents): SUBSYS_REL := libs/zlib
+-
+-ifeq ($(OS_NAME),win32)
+-    stafzlib_objs += $(ZLIB_SOURCEDIR)/win32/zlib.def
+-endif
+-
+-# Include dependencies
+-ifneq ($(InCleanup), "1")
+-    include $(stafzlib_dependents)
+-endif
+-
+-# Include inference rules
+-$(O)/$(SUBSYS_REL)/%$(OS_OE): $(ZLIB_SOURCEDIR)/%.c
+-	$(COMPILE_IT_C)
+-$(O)/$(SUBSYS_REL)/%.d: $(ZLIB_SOURCEDIR)/%.c
+-	$(C_DEPEND_IT_C)
+-
+-# STAFZLIB targets
+-
+-$(REL)/lib/$(LIB_STAFZLIB): $(stafzlib_objs) $(LIB_STAF_FP) $(MAKEFILE_NAME)
+-	$(SHARED_LIB_IT)
+-
+-cleanup_stafzlib:
+-	-@$(DEL) $(O)/libs/zlib/* $(OUT_ERR_TO_DEV_NULL)

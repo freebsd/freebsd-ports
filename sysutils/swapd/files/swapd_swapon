@@ -1,0 +1,16 @@
+#!/bin/sh
+swapfile=$1
+if [ -z "$swapfile" ]; then
+  echo "usage: $0 swapfile"
+  exit 1
+fi
+if [ ! -f $swapfile ]; then
+  echo "$0: swapfile '$swapfile' not found"
+  exit 1
+fi
+mdev=`/sbin/mdconfig -a -t vnode -f ${swapfile}`
+if [ -z "$mdev" ]; then
+  echo "$0: unable to create vnode for swapfile '$swapfile'"
+  exit 1
+fi
+/sbin/swapon /dev/${mdev}

@@ -1,0 +1,4 @@
+include/pdjson.h
+lib/libpdjson.so
+lib/libpdjson.so.0
+libdata/pkgconfig/pdjson.pc

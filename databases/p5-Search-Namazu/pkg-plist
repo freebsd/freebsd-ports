@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Search/Namazu.pm
+%%SITE_ARCH%%/auto/Search/Namazu/Namazu.so
+%%PERL5_MAN3%%/Search::Namazu.3.gz

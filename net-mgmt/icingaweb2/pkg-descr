@@ -1,0 +1,4 @@
+Icinga Web 2 is the next generation open source monitoring web interface,
+framework and command-line interface developed by the Icinga Project,
+supporting Icinga 2, Icinga Core and any other monitoring backend compatible
+with the IDO database.

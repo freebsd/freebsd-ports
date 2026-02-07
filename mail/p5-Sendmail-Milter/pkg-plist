@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Sendmail::Milter.3.gz
+%%SITE_ARCH%%/Sendmail/Milter.pm
+%%SITE_ARCH%%/Sendmail/sample.pl
+%%SITE_ARCH%%/auto/Sendmail/Milter/Milter.so
+%%SITE_ARCH%%/auto/Sendmail/Milter/autosplit.ix

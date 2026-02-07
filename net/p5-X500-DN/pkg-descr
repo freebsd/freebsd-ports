@@ -1,0 +1,4 @@
+These modules handle X.500 DNs (Distinguished Names) and X.500 RDNs
+(Relative Distinguished Names).
+
+RFC: 2253

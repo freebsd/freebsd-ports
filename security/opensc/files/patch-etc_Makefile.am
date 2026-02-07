@@ -1,0 +1,17 @@
+--- etc/Makefile.am.orig	2018-09-13 11:52:42 UTC
++++ etc/Makefile.am
+@@ -32,13 +32,7 @@ opensc.conf.example: opensc.conf.example.in force
+ 
+ install-exec-hook: opensc.conf.example
+ 	$(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
+-	if [ -f "$(DESTDIR)$(sysconfdir)/opensc.conf" ]; then \
+-		$(INSTALL_DATA) $(srcdir)/opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf.new"; \
+-	else \
+-		$(INSTALL_DATA) $(srcdir)/opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf"; \
+-	fi
+-	$(MKDIR_P) "$(DESTDIR)$(docdir)"
+-	$(INSTALL_DATA) opensc.conf.example "$(DESTDIR)$(docdir)/opensc.conf";
++	$(INSTALL_DATA) opensc.conf.example "$(DESTDIR)$(sysconfdir)/opensc.conf.sample";
+ 
+ uninstall-hook: opensc.conf.example
+ 	rm -f "$(DESTDIR)$(sysconfdir)/opensc.conf.new" "$(DESTDIR)$(sysconfdir)/opensc.conf"

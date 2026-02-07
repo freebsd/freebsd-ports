@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: percona_orchestrator
+# REQUIRE: LOGIN mysql
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# percona_orchestrator_enable (bool):          Set to NO by default.
+#               Set it to YES to enable percona_orchestrator.
+# percona_orchestrator_user (string):          Set user that percona_orchestrator will run under
+#               Default is "percona".
+# percona_orchestrator_group (string):         Set group that percona_orchestrator will run under
+#               Default is "percona".
+# percona_orchestrator_config (string):        Set path to config file
+#               Default is "%%ETCDIR%%/orchestrator.cfg".
+# percona_orchestrator_args (string):          Set extra arguments to pass to percona_orchestrator
+#               Default is "".
+
+. /etc/rc.subr
+
+name=percona_orchestrator
+rcvar=percona_orchestrator_enable
+
+load_rc_config $name
+
+: ${percona_orchestrator_enable:="NO"}
+: ${percona_orchestrator_user:="percona"}
+: ${percona_orchestrator_group:="percona"}
+: ${percona_orchestrator_config:="%%ETCDIR%%/orchestrator.conf"}
+: ${percona_orchestrator_args:=""}
+: ${percona_orchestrator_restart_delay:="10"}
+
+
+pidfile="/var/run/orchestrator/orchestrator.pid"
+command="/usr/sbin/daemon"
+percona_orchestrator_command="%%PREFIX%%/sbin/orchestrator"
+command_args="-rP ${pidfile} -S -R ${percona_orchestrator_restart_delay} \
+    -T ${name} ${percona_orchestrator_command} \
+    -config ${percona_orchestrator_config} \
+    ${percona_orchestrator_args} http"
+required_files="${percona_orchestrator_config}"
+
+start_precmd=percona_start_precmd
+
+percona_start_precmd () {
+        local piddir
+        piddir=`/usr/bin/dirname "${pidfile}"`
+        if [ ! -d "${piddir}" ] ; then
+                /usr/bin/install -d -o "${percona_orchestrator_user}" -g "${percona_orchestrator_group}" "${piddir}"
+        fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

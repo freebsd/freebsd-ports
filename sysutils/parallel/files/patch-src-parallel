@@ -1,0 +1,18 @@
+--- src/parallel.orig	2023-11-23 00:27:43 UTC
++++ src/parallel
+@@ -8704,13 +8704,9 @@ sub sct_freebsd($) {
+     local $/ = "\n";
+     my $cpu = shift;
+     $cpu->{'cores'} ||=
+-	(::qqx(qq{ sysctl -a dev.cpu | grep \%parent | awk '{ print \$2 }' | uniq | wc -l | awk '{ print \$1 }' })
+-	 or
+-	 ::qqx(qq{ sysctl hw.ncpu | awk '{ print \$2 }' }));
++	::qqx(qq{ sysctl kern.smp.cores | awk '{ print \$2 }' });
+     $cpu->{'threads'} ||=
+-	(::qqx(qq{ sysctl hw.ncpu | awk '{ print \$2 }' })
+-	 or
+-	 ::qqx(qq{ sysctl -a dev.cpu | grep \%parent | awk '{ print \$2 }' | uniq | wc -l | awk '{ print \$1 }' }));
++	::qqx(qq{ sysctl kern.smp.cpus | awk '{ print \$2 }' });
+     return $cpu;
+ }
+ 

@@ -1,0 +1,73 @@
+--- Makefile.orig	2003-09-24 18:02:34 UTC
++++ Makefile
+@@ -1,11 +1,10 @@
+ ################################
+ # Configuration
+ 
+-CC = gcc
+-CFLAGS = 
+-LDFLAGS = -lm
+-PREFIX = /usr/local
+-WANT_DEBUG=TRUE
++CC ?= gcc
++CFLAGS ?=
++LDFLAGS ?= -lm
++PREFIX ?= /usr/local
+ 
+ # nothing below here should need to be changed
+ 
+@@ -21,19 +20,13 @@ SRCDIR = src
+ 
+ CFLAGS += -DNSF_PLAYER
+ 
+-ifeq "$(WANT_DEBUG)" "TRUE"
+-	CFLAGS += -ggdb
+-else
+-	CFLAGS += -O2 -fomit-frame-pointer -ffast-math -funroll-loops
+-	DEBUG_OBJECTS =
+-endif
+-
+ CFLAGS +=\
+  -I$(SRCDIR)\
+  -I$(SRCDIR)/linux\
+  -I$(SRCDIR)/sndhrdw\
+  -I$(SRCDIR)/machine\
+  -I$(SRCDIR)/cpu/nes6502\
++ -I$(LOCALBASE)/include\
+  -I$(BUILDTOP)\
+  -I/usr/local/include/
+ 
+@@ -59,6 +52,8 @@ SRCS = $(addsuffix .c, $(FILES) linux/ma
+ SOURCES = $(addprefix $(SRCDIR)/, $(SRCS))
+ OBJECTS = $(patsubst $(SRCDIR)/%.c,$(BUILDDIR)/%.o,$(SOURCES))
+ 
++LDLIBS = -lm
++
+ ALL_OBJECTS = $(OBJECTS)
+ 
+ ALL_TARGETS = $(BUILDTOP)/$(NAME)
+@@ -82,12 +77,13 @@ $(BUILDTOP)/config.h: $(BUILDDIR) Makefi
+ 
+ $(BUILDDIR)/dep: $(BUILDTOP)/config.h
+ 	$(CC) $(NSFINFO_CFLAGS) $(CFLAGS) -M $(SOURCES) > $@
++dep: $(BUILDDIR)/dep
+ 
+--include $(BUILDDIR)/dep/
++-include $(BUILDDIR)/dep
+ 
+ install: all
+ 	mkdir -p $(PREFIX)/bin
+-	cp $(ALL_TARGETS) $(PREFIX)/bin
++	$(INSTALL) $(COPY) $(STRIP) -g $(BINGRP) -m $(BINMODE) -o $(BINOWN) $(BUILDTOP)/$(NAME) $(PREFIX)/bin
+ 	@echo "-----------------------------------------------"
+ 	@echo "Be sure to run chmod +s $(PREFIX)/bin/$(NAME) if you want ordinary users"
+ 	@echo "to be able to use /dev/dsp.  SUID isn't necessary, though, if you want to"
+@@ -105,7 +101,7 @@ clean: 
+ # The real heavy lifting
+ 
+ $(BUILDTOP)/$(NAME): $(OBJECTS)
+-	$(CC) $(NSFINFO_CFLAGS) $(LDFLAGS) -o $@ $^
++	$(CC) $(NSFINFO_CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+ 
+ $(BUILDDIR)/%.o: $(SRCDIR)/%.c 
+ 	$(CC)  $(NSFINFO_CFLAGS) -o $@ -c $<

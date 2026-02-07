@@ -1,0 +1,4 @@
+This is a library that includes all the code I tend to carry from project to
+project for wrapping POSIX APIs for C++.  Where possible, things are
+implemented inline so that there is minimal to no cost above and beyond using
+the good old C APIs.

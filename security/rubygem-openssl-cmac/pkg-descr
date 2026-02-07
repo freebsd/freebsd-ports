@@ -1,0 +1,2 @@
+rubygem-openssl-cmac is an implementation of RFC 4493, 4494, 4615 - AES-CMAC
+Algorithm.

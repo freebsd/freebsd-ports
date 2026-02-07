@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/auto/Devel/Declare/Declare.so
+%%SITE_ARCH%%/Devel/Declare/Context/Simple.pm
+%%SITE_ARCH%%/Devel/Declare/MethodInstaller/Simple.pm
+%%SITE_ARCH%%/Devel/Declare.pm
+%%PERL5_MAN3%%/Devel::Declare.3.gz

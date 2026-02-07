@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+===============================================================================
+You installed Patchage: a modular patch bay for Jack.
+
+In order to use it you need to install alsa-seq-server and start the service
+alsa-seq-server.
+alsa-seq-server creates /dev/snd/seq that is required by Patchage.
+===============================================================================
+EOM
+}
+]

@@ -1,0 +1,5 @@
+TIMESTAMP = 1679694752
+SHA256 (terraform-providers-terraform-provider-gridscale-v1.6.2_GH0.tar.gz) = df888f340572685bd6fc0565836f6be28a803d117cf472f364b76f727ae6185d
+SIZE (terraform-providers-terraform-provider-gridscale-v1.6.2_GH0.tar.gz) = 4621680
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

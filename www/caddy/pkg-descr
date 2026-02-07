@@ -1,0 +1,15 @@
+Caddy is a powerful, enterprise-ready, open source web server with automatic
+HTTPS written in Go.
+
+Features:
+
+- Easy configuration with the Caddyfile
+- Powerful configuration with JSON config
+- Dynamic configuration with a JSON API
+- Config adapters if you don't like JSON
+- Automatic HTTPS by default
+  - ACME (Let's Encrypt) for public sites
+  - Fully-managed local CA for internal names and IPs
+  - Can coordinate with other Caddy instances in a cluster
+- HTTP/1.1, HTTP/2, and HTTP/3 support
+- Actually fun to use

@@ -1,0 +1,12 @@
+Command line utility for publishing to any WriteFreely instance.
+The WriteFreely CLI is compatible with WriteFreely v0.11 or later.
+
+Features
+
+ * Authenticate with any WriteFreely instance
+ * Publish drafts
+ * Manage multiple WriteFreely accounts on multiple instances
+ * A stable, easy back-end for your GUI app or desktop-based workflow
+ * Locally keeps track of any posts you make
+ * Update and delete posts
+ * Fetch any post by ID

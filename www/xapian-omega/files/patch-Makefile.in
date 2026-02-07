@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2023-02-02 01:01:36 UTC
++++ Makefile.in
+@@ -841,7 +841,7 @@ AM_CPPFLAGS = \
+ 	-DCONFIGFILE_SYSTEM=\"$(sysconfdir)/omega.conf\" \
+ 	-DPKGLIBBINDIR=\"$(pkglibbindir)\"
+ 
+-pkglibbindir = $(pkglibdir)/bin
++pkglibbindir = $(prefix)/www/xapian-omega/cgi-bin
+ dist_pkglibbin_SCRIPTS = mhtml2html outlookmsg2html rfc822tohtml vcard2text
+ dist_bin_SCRIPTS = dbi2omega htdig2omega mbox2omega
+ dist_check_SCRIPTS = omegatest sourcetest
+@@ -857,7 +857,6 @@ TESTS = atomparsetest$(EXEEXT)\
+ 
+ omegadatadir = $(datadir)/omega
+ dist_omegadata_DATA = htdig2omega.script mbox2omega.script
+-dist_sysconf_DATA = omega.conf
+ 
+ # headers maintained in xapian-core
+ noinst_HEADERS = omega.h query.h cgiparam.h index_file.h mime.h \

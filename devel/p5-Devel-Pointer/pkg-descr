@@ -1,0 +1,6 @@
+The primary purpose of this is to turn a smashed reference address back
+into a value.  Once a reference is treated as a numeric value, you can't
+dereference it normally; although with this module, you can.
+
+Be careful, though, to avoid dereferencing things that don't want to be
+dereferenced.

@@ -1,0 +1,12 @@
+Terminal feed reader with a fancy UI
+
+tuifeed is a news feed reader with a fancy terminal user interface.
+It allows you read news from your favourite RSS and Atom sources,
+which can be easily configured in a TOML file.
+
+Features
+
+- Read feed from any RSS/Atom source
+- Open any article in your favourite browser in one-click
+- Compatible with Windows, Linux, *BSD and MacOS
+- Easy setup

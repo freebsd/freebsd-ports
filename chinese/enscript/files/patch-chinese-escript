@@ -1,0 +1,235 @@
+diff -ruN src.orib/gsint.h src/gsint.h
+--- src.orib/gsint.h	Thu May 13 12:41:04 2004
++++ src/gsint.h	Thu May 13 12:58:29 2004
+@@ -190,7 +190,9 @@
+   ENC_VMS,
+   ENC_HP8,
+   ENC_KOI8,
+-  ENC_PS
++  ENC_PS,
++  ENC_BIG5,
++  ENC_UNICNS_UTF8,
+ } InputEncoding;
+ 
+ struct encoding_registry_st
+diff -ruN src.orib/main.c src/main.c
+--- src.orib/main.c	Thu May 13 12:41:04 2004
++++ src/main.c	Thu May 13 12:42:28 2004
+@@ -817,6 +817,8 @@
+   {{"koi8", NULL, NULL},		ENC_KOI8,		'\n', 8},
+   {{"ps", "PS", NULL},			ENC_PS, 		'\n', 8},
+   {{"pslatin1", "ISOLatin1Encoding", NULL},	ENC_ISO_8859_1,	'\n', 8},
++  {{"big5", "Formal Chinese", NULL},	ENC_BIG5,		'\n', 8},
++  {{"UniCNS-UTF8", "Formal Chinese", NULL},	ENC_UNICNS_UTF8,	'\n', 8},
+ 
+   {{NULL, NULL, NULL}, 0, 0, 0},
+ };
+diff -ruN src.orib/psgen.c src/psgen.c
+--- src.orib/psgen.c	Thu May 13 12:41:04 2004
++++ src/psgen.c	Thu May 13 12:53:07 2004
+@@ -323,15 +323,21 @@
+   if (!paste_file ("enscript", ".pro"))
+     FATAL ((stderr, _("couldn't find prolog \"%s\": %s\n"), "enscript.pro",
+ 	    strerror (errno)));
++  if (encoding == ENC_BIG5 || encoding == ENC_UNICNS_UTF8) 
++    { /*overwrite the defintion of MF for CJK */
++      OUTPUT((cofp, "/MF {exch findfont definefont pop} def\n"));
++    }
+   OUTPUT ((cofp, "%%%%EndResource\n"));
+ 
+   /* Encoding vector. */
+-  OUTPUT ((cofp, "%%%%BeginResource: procset Enscript-Encoding-%s %s\n",
+-	   encoding_name, ps_version_string));
+-  if (!paste_file (encoding_name, ".enc"))
+-    FATAL ((stderr, _("couldn't find encoding file \"%s.enc\": %s\n"),
+-	    encoding_name, strerror (errno)));
+-  OUTPUT ((cofp, "%%%%EndResource\n"));
++  if (encoding != ENC_BIG5 && encoding != ENC_UNICNS_UTF8) {
++    OUTPUT ((cofp, "%%%%BeginResource: procset Enscript-Encoding-%s %s\n",
++	     encoding_name, ps_version_string));
++    if (!paste_file (encoding_name, ".enc"))
++      FATAL ((stderr, _("couldn't find encoding file \"%s.enc\": %s\n"),
++	      encoding_name, strerror (errno)));
++    OUTPUT ((cofp, "%%%%EndResource\n"));
++  }
+ 
+   OUTPUT ((cofp, "%%%%EndProlog\n"));
+ 
+@@ -1129,7 +1135,12 @@
+ /* Help macros. */
+ 
+ /* Check if character <ch> fits to current line. */
+-#define FITS_ON_LINE(ch) ((linepos + CHAR_WIDTH (ch) < linew) || col == 0)
++/* NO wraping for CJK at this moment. Added by C.S. Chin Sept.1 */
++
++#define FITS_ON_LINE(ch) ( ( (encoding == ENC_BIG5 && b5firstc) ||\
++			     (encoding == ENC_UNICNS_UTF8 && u8firstc) ) ?\
++			     (linepos + 2 * CHAR_WIDTH (ch) < linew) :\
++			     (linepos + CHAR_WIDTH (ch) < linew || in_u8) )
+ 
+ /* Is line buffer empty? */
+ #define BUFFER_EMPTY() (bufpos == 0)
+@@ -1594,8 +1605,12 @@
+   static unsigned int buflen = 0; /* output buffer's length */
+   unsigned int bufpos = 0;	/* current position in output buffer */
+   int ch = 0;
++  int ch2 = 0;
+   int done = 0;
+   int i;
++  int b5firstc = 0;
++  int u8firstc = 0;
++  int in_u8 = 0;
+   static int pending_token = tNONE;
+   unsigned int original_col = col;
+ 
+@@ -1745,6 +1760,39 @@
+ 	      break;
+ 	    }
+ 
++	  /*Check for big5 characters*/
++	  if (encoding == ENC_BIG5) 
++	    {
++	      if (ch >= 161 && ch <= 249 && b5firstc == 0) 
++		{
++		  ch2 = is_getc (is);
++		  if ((ch2 >= 161 && ch2 <=254) || (ch2 >=64 && ch2 <= 126)) /*big5 char*/
++		    {
++		      b5firstc = 1;
++		    } else {
++		      b5firstc = 0;
++		    }
++		  is_ungetc(ch2, is);
++		} else {
++		  b5firstc = 0;
++		}
++	    }
++
++	  /*Check for utf8 character*/
++	  if (encoding == ENC_UNICNS_UTF8)
++	    {
++	      if (ch >= 0340 && u8firstc==0) {
++		u8firstc = 1;
++	      } else {
++		u8firstc = 0;
++	      }
++	      if (ch >= 0200) {
++		in_u8 = 1;
++	      } else {
++		in_u8 = 0;
++	      }
++	    }
++	  
+ 	  /* Check normal characters. */
+ 	  if (EXISTS (ch))
+ 	    {
+diff -ruN src.orib/util.c src/util.c
+--- src.orib/util.c	Thu May 13 12:41:04 2004
++++ src/util.c	Thu May 13 12:56:31 2004
+@@ -890,11 +890,18 @@
+ 	       * Do not report failures for "Courier*" fonts because
+ 	       * AFM library's default font will fix them.
+ 	       */
+-	      if (strncmp (Fname, COUR, strlen (COUR)) != 0)
+-		MESSAGE (0,
+-			 (stderr,
+-			  _("couldn't open AFM file for font \"%s\", using default\n"),
+-			  Fname));
++	      if (strncmp (Fname, COUR, strlen (COUR)) != 0) {
++		if (encoding == ENC_BIG5 || encoding == ENC_UNICNS_UTF8) 
++		  { MESSAGE(0, 
++			    (stderr, 
++			     _("CJK encoding, ignore AFM file, use default.\n"),Fname));
++		  } else {
++		    MESSAGE (0,
++			     (stderr,
++			      _("couldn't open AFM file for font \"%s\", using default\n"),
++			      Fname));
++		  }
++	      }
+ 	      error = afm_open_default_font (afm, &font);
+ 	      if (error != AFM_SUCCESS)
+ 		{
+@@ -997,6 +1004,12 @@
+ 	    case ENC_PS:
+ 	      /* Let's use font's default encoding -- nothing here. */
+ 	      break;
++            case ENC_BIG5:
++              /* CJK encoding, ignore AFM, added by C.S.Chin Aug.31 00 */
++              break;
++            case ENC_UNICNS_UTF8:
++              /* CJK encoding, ignore AFM, added by C.S.Chin Aug.31 00 */
++              break;
+ 	    }
+ 
+ 	  /* Put it to the AFM cache. */
+@@ -1006,20 +1019,56 @@
+ 
+       font_info = (CachedFontInfo *) xcalloc (1, sizeof (*font_info));
+       /* Read character widths and types. */
+-      for (i = 0; i < 256; i++)
+-	{
+-	  AFMNumber w0x, w0y;
+-
+-	  (void) afm_font_charwidth (font, Fpt.w, i, &w0x, &w0y);
+-	  font_info->font_widths[i] = w0x;
+-
+-	  if (font->encoding[i] == AFM_ENC_NONE)
+-	    font_info->font_ctype[i] = ' ';
+-	  else if (font->encoding[i] == AFM_ENC_NON_EXISTENT)
+-	    font_info->font_ctype[i] = '.';
+-	  else
+-	    font_info->font_ctype[i] = '*';
+-	}
++      if (encoding != ENC_BIG5 && encoding != ENC_UNICNS_UTF8) {
++        for (i = 0; i < 256; i++)
++	  {
++	    AFMNumber w0x, w0y;
++
++	    (void) afm_font_charwidth (font, Fpt.w, i, &w0x, &w0y);
++	    font_info->font_widths[i] = w0x;
++
++	    if (font->encoding[i] == AFM_ENC_NONE)
++	      font_info->font_ctype[i] = ' ';
++	    else if (font->encoding[i] == AFM_ENC_NON_EXISTENT)
++	      font_info->font_ctype[i] = '.';
++	    else
++	      font_info->font_ctype[i] = '*';
++	  }
++       } else {
++	if (encoding == ENC_BIG5) 
++	  {
++	    for (i = 0; i < 256; i++)
++	      {
++		AFMNumber w0x, w0y;
++		if ( i < 040 ) 
++		  {
++		    font_info->font_widths[i] = Fpt.w * 0.525;
++		    font_info->font_ctype[i] = ' ';
++		  } else {
++		    font_info->font_widths[i] = Fpt.w * 0.525;
++		    font_info->font_ctype[i] = '*';
++		  }
++	      }
++	  } else {
++	    /*UTF8*/
++	    for (i = 0; i < 256; i++)
++	      {
++		AFMNumber w0x, w0y;
++		if ( i < 040 ) 
++		  {
++		    font_info->font_widths[i] = Fpt.w * 0.525;
++		    font_info->font_ctype[i] = ' ';
++		  } else {
++		    if (i >= 0200) {
++		      font_info->font_widths[i] = Fpt.w * 0.525 * 2.0 / 3.0;
++		    } else {
++		      font_info->font_widths[i] = Fpt.w * 0.525;
++		    }
++		    font_info->font_ctype[i] = '*';
++		  }
++	      }
++	  }
++       }
+ 
+       font_info->font_is_fixed
+ 	= font->writing_direction_metrics[0].IsFixedPitch;

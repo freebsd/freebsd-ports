@@ -1,0 +1,22 @@
+U-Boot loader for Wandboard Solo, Dual, and Quad.
+
+Install the u-boot.imx file onto the boot disk using:
+
+  dd if=u-boot.imx of=/dev/whatever bs=1k oseek=1 conv=sync
+
+The U-Boot built by this port expects the first 1MB of the boot media to
+be reserved for the U-Boot executable and saved environment.  The u-boot.imx
+file begins at an offset of 1K from the start of the boot disk.  The U-Boot
+environment area begins at an offset of 512K.
+
+This version is patched so that:
+ * ELF and API features are enabled to support ubldr.
+ * A single U-Boot image supports Solo, Dual[lite], and Quad processors.
+ * When the selected board has multiple SD or MMC devices available, the
+   mmc0 device in U-Boot (and thus the disk0 device in loader(8)) will be
+   whichever device U-Boot was loaded from by the ROM bootloader routines.
+
+The sources for this port were originally obtained from commit 87f595d1ee
+at https://github.com/TechNexion/U-Boot-edm/ which appears to be a slightly
+modified fork of the stock U-Boot 2013.10 release.  As of this writing,
+the changes in this fork have not been rolled back into upstream U-Boot.

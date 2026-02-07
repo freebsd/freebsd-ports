@@ -1,0 +1,22 @@
+--- ifcico/nodelist.c.orig	1997-10-04 09:21:44 UTC
++++ ifcico/nodelist.c
+@@ -207,7 +207,7 @@ faddr *addr;
+ 	debug(20,"getnlent: phone	%s",nodebuf.phone);
+ 	debug(20,"getnlent: speed	%u",nodebuf.speed);
+ 	debug(20,"getnlent: flags	0x%lx",nodebuf.flags);
+-	for (j=0;nodebuf.uflags[j];j++)
++	for (j=0; (j < MAXUFLAGS) && nodebuf.uflags[j];j++)
+ 		debug(20,"getnlent: uflag	%s",nodebuf.uflags[j]);
+ 
+ 	return &nodebuf;
+--- ifcico/nodelist.h.orig	1994-10-29 11:19:33 UTC
++++ ifcico/nodelist.h
+@@ -3,7 +3,7 @@
+ 
+ #include "ftn.h"
+ 
+-#define MAXUFLAGS 8
++#define MAXUFLAGS 16
+ 
+ typedef struct _node {
+ 	faddr addr;

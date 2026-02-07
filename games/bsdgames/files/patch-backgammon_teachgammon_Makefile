@@ -1,0 +1,11 @@
+--- backgammon/teachgammon/Makefile.orig	2019-03-07 17:01:43 UTC
++++ backgammon/teachgammon/Makefile
+@@ -1,7 +1,7 @@
+ #	@(#)Makefile	8.1 (Berkeley) 5/31/93
+ 
+ PROG=	teachgammon
+-NOMAN=	noman
++MK_MAN= no
+ CFLAGS+=-DTEACHGAMMON_TEXT -I${.CURDIR}/../common_source
+ SRCS=	allow.c board.c check.c data.c fancy.c init.c odds.c one.c save.c \
+ 	subs.c table.c teach.c ttext1.c ttext2.c tutor.c

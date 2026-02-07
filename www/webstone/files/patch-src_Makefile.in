@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	1998-07-25 07:50:19 UTC
++++ src/Makefile.in
+@@ -64,9 +64,9 @@ TARGETS = $(EXECUTABLE1) $(EXECUTABLE2) 
+ .SUFFIXES:
+ .SUFFIXES: .c .o
+ 
+-all:	$(TARGETS) cgi api
++all:	$(TARGETS) cgi
+ 
+-install: all install-api install-cgi
++install: all install-cgi
+ 	$(CP) $(TARGETS) $(BINDIR)
+ 
+ pure: all

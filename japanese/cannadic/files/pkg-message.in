@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+You should do set up after the installation.
+See %%PREFIX%%/share/doc/cannadic/README.FreeBSD
+EOM
+}
+]

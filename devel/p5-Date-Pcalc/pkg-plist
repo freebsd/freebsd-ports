@@ -1,0 +1,16 @@
+%%PERL5_MAN3%%/Date::Pcalc.3.gz
+%%PERL5_MAN3%%/Date::Pcalc::Object.3.gz
+%%PERL5_MAN3%%/Date::Pcalendar.3.gz
+%%PERL5_MAN3%%/Date::Pcalendar::Profiles.3.gz
+%%PERL5_MAN3%%/Date::Pcalendar::Year.3.gz
+%%SITE_ARCH%%/Date/Pcalc.pm
+%%SITE_ARCH%%/Date/Pcalc.pod
+%%SITE_ARCH%%/Date/Pcalc/Object.pm
+%%SITE_ARCH%%/Date/Pcalc/Object.pod
+%%SITE_ARCH%%/Date/Pcalendar.pm
+%%SITE_ARCH%%/Date/Pcalendar.pod
+%%SITE_ARCH%%/Date/Pcalendar/Profiles.pm
+%%SITE_ARCH%%/Date/Pcalendar/Profiles.pod
+%%SITE_ARCH%%/Date/Pcalendar/Year.pm
+%%SITE_ARCH%%/Date/Pcalendar/Year.pod
+%%SITE_ARCH%%/auto/Date/Pcalc/Pcalc.so

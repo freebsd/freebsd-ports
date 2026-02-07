@@ -1,0 +1,27 @@
+PORTNAME=	mirror
+PORTVERSION=	2.9
+PORTREVISION=	3
+CATEGORIES=	ftp
+MASTER_SITES=	http://cschubert.com/distfiles/ \
+		LOCAL/cy
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	ftp.pl_wupatch
+
+MAINTAINER=	cy@FreeBSD.org
+COMMENT=	Mirror packages on remote sites
+WWW=		http://ry.ca/mirror/mirror/
+
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+
+USES=		perl5 shebangfix
+SHEBANG_FILES=	dateconv.pl ftp.pl  lchat.pl mirror.pl pkgs_to_mmin.pl \
+		do_unlinks.pl install.pl lsparse.pl mm.pl  prune_logs.pl
+
+NO_WRKSUBDIR=	yes
+MAKEFILE=	makefile
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mirror
+
+.include <bsd.port.mk>

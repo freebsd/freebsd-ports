@@ -1,0 +1,10 @@
+--- xtract.orig	2018-04-02 18:50:22 UTC
++++ xtract
+@@ -8,6 +8,7 @@ case "$osname-$cputype" in
+   Darwin-x86_64 )          platform=Darwin ;;
+   CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
+   Linux-*arm* )            platform=ARM ;;
++  FreeBSD-* )              platform=FreeBSD ;;
+   * )                      platform=UNSUPPORTED ;;
+ esac
+ compiled=$0."$platform"

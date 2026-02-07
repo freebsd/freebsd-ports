@@ -1,0 +1,11 @@
+--- Util/helpfiles.orig	2019-01-27 15:34:43 UTC
++++ Util/helpfiles
+@@ -57,7 +57,7 @@ $coltmp = $destdir . '/' . $coltmpbase;
+ $args = "$manfile >$mantmp";
+ unlink($mantmp);
+ &Info('attempting man ', $args);
+-if(system('man ' . $args) || !(-s $mantmp)) {
++if(system('man ./' . $args) || !(-s $mantmp)) {
+     unlink($mantmp);
+     &Info('attempting nroff -man ', $args);
+     if(system('nroff -man ' . $args) || !(-s $mantmp)) {

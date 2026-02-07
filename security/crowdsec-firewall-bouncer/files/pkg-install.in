@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $2 in
+        "POST-INSTALL")
+                if [ -e /var/run/crowdsec_firewall.running ]; then
+                        service crowdsec_firewall start
+                        rm -f /var/run/crowdsec_firewall.running
+                fi
+                ;;
+esac

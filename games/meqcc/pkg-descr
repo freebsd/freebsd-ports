@@ -1,0 +1,6 @@
+This is a modification to the QuakeC compiler from id Software.  It allows
+creating `progs.dat' file which cannot be decompiled to QuakeC source code.
+As an added bonus, such `progs.dat' file is a lot smaller.
+
+The compiler also has a C compatible precompiler.  A description of the
+precompiler directives can be found in a regular C manual.

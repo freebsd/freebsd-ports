@@ -1,0 +1,8 @@
+include/r3/r3.h
+include/r3/r3_str.h
+include/r3/str_array.h
+lib/libr3.a
+lib/libr3.so
+lib/libr3.so.0
+lib/libr3.so.0.0.0
+libdata/pkgconfig/r3.pc

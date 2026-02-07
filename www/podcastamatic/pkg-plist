@@ -1,0 +1,4 @@
+bin/podcastamatic
+@sample etc/podcastamatic.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%DATADIR%%/style.css

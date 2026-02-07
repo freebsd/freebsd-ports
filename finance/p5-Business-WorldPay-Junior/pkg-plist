@@ -1,0 +1,12 @@
+%%PERL5_MAN3%%/Business::WorldPay::Junior.3.gz
+%%SITE_PERL%%/Business/WorldPay/Junior.pm
+%%SITE_PERL%%/Business/WorldPay/get-rates.pl
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/authorised.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/autosplit.ix
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/callback.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/db_connect.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/errstr.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/exchange_rate.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/new.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/register.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/valid_callback_host.al

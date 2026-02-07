@@ -1,0 +1,14 @@
+Mono is an open source implementation of .NET Development Framework. Its
+objective is to enable UNIX developers to build and deploy cross-platform
+.NET Applications. The project implements various technologies developed by
+Microsoft that have now been submitted to the ECMA for standardization.
+
+Mono provides the necessary software to develop and run .NET client and
+server applications on BSD, Linux, Solaris, Mac OS X, Windows, and Unix.
+
+SPECTRE MITIGATION: Mono 6.4+ introduces additional internal changes to
+better protect against Spectre and Meltdown attacks for both compiled and
+interpreted code during runtime. This can cause severe performance impacts
+to applications in a number of scenarios, and is not enabled by default for
+that reason. When used in high risk environments such as shared hosting,
+it is strongly recommended to enable this option.

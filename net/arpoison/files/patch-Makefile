@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-07-23 21:17:28 UTC
++++ Makefile
+@@ -2,7 +2,7 @@ all: arpoison
+ 
+ arpoison: arpoison.c
+ 
+-	gcc -lnet -o arpoison `libnet-config --defines` -I/opt/local/include -L/opt/local/lib arpoison.c
++	$(CC) -o arpoison `libnet-config --defines --cflags --libs` arpoison.c
+ 
+ clean:
+ 

@@ -1,0 +1,2 @@
+bin/wping
+@sample etc/wping.conf.sample

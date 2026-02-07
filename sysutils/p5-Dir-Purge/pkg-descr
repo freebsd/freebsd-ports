@@ -1,0 +1,3 @@
+Dir::Purge implements functions to reduce the number of files in a directory
+according to a strategy. It currently provides one strategy: removal of files by
+age.

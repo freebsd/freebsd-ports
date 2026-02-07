@@ -1,0 +1,8 @@
+Virtual OSS is an audio mixing application that multiplexes and
+demultiplexes a single OSS device into multiple customizable OSS
+compatible devices using character devices in userspace. These devices
+can be used to record played back audio and mix the individual
+channels in multiple ways.
+
+Virtual OSS also supports playback and recording through bluetooth
+audio devices.

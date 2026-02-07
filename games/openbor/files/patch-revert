@@ -1,0 +1,32 @@
+Partially revert https://github.com/DCurrent/openbor/commit/16939d70c3af
+due to breaking fonts with old games (e.g., Rocket Viper v2.41)
+
+--- openbor.c.orig	2024-02-09 23:00:00 UTC
++++ openbor.c
+@@ -46507,10 +46507,6 @@ void startup()
+     // init. input recorder
+     init_input_recorder();
+ 
+-    printf("Loading fonts................\t");
+-    load_all_fonts();
+-    printf("Done!\n");
+-
+     printf("Loading sprites..............\t");
+     load_special_sprites();
+     printf("Done!\n");
+@@ -46545,9 +46541,13 @@ void startup()
+     load_menu_txt();
+     printf("Done!\n");
+ 
++    printf("Loading fonts................\t");
++    load_all_fonts();
++    printf("Done!\n");
++
+     /*
+-        Kratus (01-2024) Moved the translation and menu functions to the end of the engine "startup" function,
+-        but before the "control init" function (reverted the font function to load before scripts)
++        Kratus (10-2021) Moved the translation, menu and font functions to the end of the engine "startup" function,
++        but before the "control init" function
+     */
+     printf("Loading translation..........\t");
+     ob_inittrans();

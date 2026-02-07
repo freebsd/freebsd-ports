@@ -1,0 +1,38 @@
+[
+{
+  message: <<EOT
+This ports installs only the scripts, the data/config files are to be installed
+by the 
+   %%PREFIX%%/sbin/install-ngxblocker
+   %%PREFIX%%/sbin/update-ngxblocker
+scripts (they change too frequently).
+
+While reading
+   https://github.com/netchild/nginx-ultimate-bad-bot-blocker/blob/freebsdport/AUTO-CONFIGURATION.md
+for setup instructions keep in mind that the port of the scripts is using FreeBSD
+locations of things, like
+   %%LOCALBASE%%/etc/nginx/
+and
+   service nginx reload
+(this includes the test-config functionality on reload).
+
+FreeBSD does not define a standard location and naming convention for sites/vhosts,
+this port uses
+   %%LOCALBASE%%/etc/nginx/sites/*.conf
+by default. The scripts allow to override this via command line flags.
+
+Example crontab entry for /etc/cron.d/nginx-bad-bot-blocker:
+---snip---
+#
+SHELL=/bin/sh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin
+
+# See crontab(5) for field format.
+53	10	*	*	*	root	%%PREFIX%%/sbin/update-ngxblocker -q
+---snip---
+See
+   %%PREFIX%%/sbin/update-ngxblocker -h
+for mail-sending options.
+EOT
+}
+]

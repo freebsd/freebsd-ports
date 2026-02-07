@@ -1,0 +1,2 @@
+DefHash is a specification for using hashes to define things. It was born out of
+several other projects/specifications like Sah, Rinci, Riap, Module::Patch.

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2022-11-09 12:37:21 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ requires = [
+     "scikit-build-core",
+     "cython>=3",
+-    "numpy>=2.1",
++    "numpy",
+ ]
+ build-backend = "scikit_build_core.build"
+ 

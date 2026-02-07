@@ -1,0 +1,19 @@
+--- mailnag.orig	2021-01-30 10:40:37 UTC
++++ mailnag
+@@ -30,6 +30,7 @@ import argparse
+ import logging
+ import os
+ import signal
++from setproctitle import setproctitle
+ 
+ from Mailnag.common.utils import fix_cwd
+ 
+@@ -86,7 +87,7 @@ def main():
+ 	mainloop = GLib.MainLoop()
+ 	daemon = None
+ 	
+-	set_procname(PROGNAME)
++	setproctitle(PROGNAME)
+ 
+ 	DBusGMainLoop(set_as_default = True)
+ 	GLib.unix_signal_add(GLib.PRIORITY_HIGH, signal.SIGTERM, 

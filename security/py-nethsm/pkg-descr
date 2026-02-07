@@ -1,0 +1,2 @@
+NetHSM is a trustworthy, open Hardware Security Module developed by Nitrokey.
+This package provides a Python client for NetHSM.

@@ -1,0 +1,32 @@
+--- perl/cops.orig	Sat Feb 21 19:20:10 1998
++++ perl/cops	Sat Feb 21 19:21:06 1998
+@@ -1,8 +1,4 @@
+-#!/bin/sh -- need to mention perl here to avoid recursion
+-'true' || eval 'exec perl -S $0 $argv:q';
+-eval '(exit $?0)' && eval 'exec perl -S $0 ${1+"$@"}'
+-& eval 'exec /usr/local/bin/perl -S $0 $argv:q'
+-        if 0;
++#!/usr/bin/perl
+ 
+ #
+ #  Usage: cops [-vx] [-c config file] [-s secure_dir] [architecture]
+@@ -83,7 +79,7 @@
+ 
+ #  Read stuff to do from the config file
+ die "$0: Can't trust $CONFIG to reconfig!\n" 	if &'is_writable($CONFIG);
+-open CONFIG || die "can't open $CONFIG: $!";
++open (CONFIG) || die "can't open $CONFIG: $!";
+ 
+ &argh unless -s $CONFIG;
+ 
+@@ -219,8 +215,8 @@
+ 	}
+     return 1 if (($FILE2 eq "") || (-s $FILE1 != -s $report));
+ 
+-    open FILE1 || die "can't open $FILE1: $!\n";
+-    open FILE2 || die "can't open $FILE2: $!\n";
++    open (FILE1) || die "can't open $FILE1: $!\n";
++    open (FILE2) || die "can't open $FILE2: $!\n";
+ 
+     for (1..5) {
+ 	$_ = <FILE1>;

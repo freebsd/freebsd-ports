@@ -1,0 +1,14 @@
+VCMI is an open-source project aiming to reimplement HoMM3:WoG and SoD
+game engines, giving it new and extended possibilities.  Among current
+features are:
+
+  - Complete gameplay mechanics
+  - Almost all objects, abilities, spells, and other content
+  - Basic battle AI and adventure AI
+  - Many GUI improvements: high resolutions, stack queue,
+    creature window
+  - Advanced and easy modding support -- add new towns, creatures,
+    heroes, artifacts, and spells without limits or conflicts
+  - Launcher for easy configuration -- download mods from our
+    server and install them immediately!
+  - Random map generator that supports objects added by mods

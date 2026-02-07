@@ -1,0 +1,20 @@
+Drop after net/miniupnpc >= 2.3.3 update.
+
+-- Checking for module 'miniupnpc>=2.3.3'
+--   Package dependency requirement 'miniupnpc >= 2.3.3' could not be satisfied.
+Package 'miniupnpc' has version '2.3.2', required version is '>= 2.3.3'
+CMake Error at /usr/local/share/cmake/Modules/FindPkgConfig.cmake:645 (message):
+  The following required packages were not found:
+
+   - miniupnpc>=2.3.3
+
+--- 3rdparty/miniupnp/CMakeLists.txt.orig	2025-09-30 21:49:18 UTC
++++ 3rdparty/miniupnp/CMakeLists.txt
+@@ -1,6 +1,6 @@ if(USE_SYSTEM_MINIUPNPC)
+ if(USE_SYSTEM_MINIUPNPC)
+   message(STATUS "RPCS3: using shared MiniUPnPc")
+-  pkg_check_modules(MiniUPnPc REQUIRED IMPORTED_TARGET miniupnpc>=2.3.3)
++  pkg_check_modules(MiniUPnPc REQUIRED IMPORTED_TARGET miniupnpc)
+   add_library(3rdparty_miniupnpc INTERFACE)
+   target_link_libraries(3rdparty_miniupnpc INTERFACE PkgConfig::MiniUPnPc)
+   target_include_directories(3rdparty_miniupnpc INTERFACE PkgConfig::MiniUPnPc)

@@ -1,0 +1,2 @@
+empty - run applications under pseudo-terminal (PTY) sessions and replace
+TCL/Expect with a simple tool.

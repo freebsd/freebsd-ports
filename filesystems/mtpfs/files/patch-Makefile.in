@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2016-12-15 23:55:52 UTC
++++ Makefile.in
+@@ -287,7 +287,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ mtpfs_SOURCES = mtpfs.c mtpfs.h $(am__append_1)
+-mtpfs_CPPFLAGS = -DFUSE_USE_VERSION=22 $(FUSE_CFLAGS) $(GLIB_CFLAGS) \
++mtpfs_CPPFLAGS = -DFUSE_USE_VERSION=26 $(FUSE_CFLAGS) $(GLIB_CFLAGS) \
+ 	$(MTP_CFLAGS) $(am__append_2)
+ mtpfs_LDADD = $(FUSE_LIBS) $(GLIB_LIBS) $(MTP_LIBS) $(am__append_3)
+ all: all-am

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Class/Load.pm
+%%SITE_PERL%%/Class/Load/PP.pm
+%%PERL5_MAN3%%/Class::Load.3.gz

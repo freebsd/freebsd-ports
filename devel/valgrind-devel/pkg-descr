@@ -1,0 +1,15 @@
+Valgrind is a system for debugging and profiling un*x programs. With the tools
+that come with Valgrind, you can automatically detect many memory management
+and threading bugs, avoiding hours of frustrating bug-hunting, making your
+programs more stable. You can also perform detailed profiling, to speed up and
+reduce memory use of your programs.
+
+The Valgrind distribution includes 10 tools:
+ - memcheck, the primary tool, a memory error detector
+ - helgrind and drd, thread error detectors
+ - callgrind and cachegrind, execution and cache profiling tools
+ - massif, a memory tracker
+ - dhat, a memory content profiler
+ - lackey, an example of using the framework
+ - none, does no instumentation and can check that Valgrind runs correctly
+ - exp-bbv, and experimental profiling tool using sampling

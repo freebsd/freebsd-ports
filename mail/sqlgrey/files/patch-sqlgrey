@@ -1,0 +1,11 @@
+--- sqlgrey.orig	2012-02-13 16:54:08 UTC
++++ sqlgrey
+@@ -1037,7 +1037,7 @@ sub ipv6_smart($) {
+         return join(":", (split(/:/, $addr))[0..3]);
+     } else {
+         ## For Non-EUI64 or Non-Global-Unicast return the address
+-        return $addr;
++        return join(":", (split(/:/, $addr))[0..3]);
+     }
+ }
+ 

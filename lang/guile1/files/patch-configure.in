@@ -1,0 +1,59 @@
+--- configure.in.orig	2010-12-13 17:24:39 UTC
++++ configure.in
+@@ -659,7 +659,7 @@ AC_SUBST([SCM_I_GSC_HAVE_STRUCT_DIRENT64
+ #
+ AC_CHECK_HEADERS([complex.h fenv.h io.h libc.h limits.h malloc.h memory.h process.h string.h \
+ regex.h rxposix.h rx/rxposix.h sys/dir.h sys/ioctl.h sys/select.h \
+-sys/time.h sys/timeb.h sys/times.h sys/stdtypes.h sys/types.h \
++sys/time.h sys/times.h sys/stdtypes.h sys/types.h \
+ sys/utime.h time.h unistd.h utime.h pwd.h grp.h sys/utsname.h \
+ direct.h strings.h machine/fpu.h])
+ 
+@@ -762,6 +762,7 @@ AC_CHECK_FUNCS([DINFINITY DQNAN cexp chs
+ #   sys/param.h - not in mingw
+ #   pthread.h - only available with pthreads.  ACX_PTHREAD doesn't
+ #       check this specifically, we need it for the timespec test below.
++#   pthread_np.h - available on FreeBSD
+ #   sethostname - the function itself check because it's not in mingw,
+ #       the DECL is checked because Solaris 10 doens't have in any header
+ #   strncasecmp - on NetBSD 1.6 the symbol is available in libc but the
+@@ -779,7 +780,7 @@ AC_CHECK_FUNCS([DINFINITY DQNAN cexp chs
+ #   vsnprintf - on AIX 5.3, the declaration is only visible with
+ #       `_XOPEN_SOURCE >= 500' or `_ISOC99_SOURCE'.
+ #
+-AC_CHECK_HEADERS(crypt.h netdb.h pthread.h sys/param.h sys/resource.h sys/file.h)
++AC_CHECK_HEADERS(crypt.h netdb.h pthread.h pthread_np.h sys/param.h sys/resource.h sys/file.h)
+ AC_CHECK_FUNCS(chroot flock getlogin cuserid getpriority setpriority getpass sethostname gethostname)
+ AC_CHECK_DECLS([sethostname, strncasecmp, unsetenv, hstrerror, cuserid, flock, vsnprintf])
+ 
+@@ -1298,9 +1299,11 @@ case "$with_threads" in
+     #         all; not present on MacOS X or Solaris 10
+     #     pthread_get_stackaddr_np - "np" meaning "non portable" says it
+     #         all; specific to MacOS X
++    #     pthread_attr_get_np - "np" meaning "non portable" says it
++    #         all; specific to FreeBSD
+     #     pthread_sigmask - not available on mingw
+     #
+-    AC_CHECK_FUNCS(pthread_attr_getstack pthread_getattr_np pthread_get_stackaddr_np pthread_sigmask)
++    AC_CHECK_FUNCS(pthread_attr_getstack pthread_getattr_np pthread_get_stackaddr_np pthread_attr_get_np pthread_sigmask)
+ 
+     # On past versions of Solaris, believe 8 through 10 at least, you
+     # had to write "pthread_once_t foo = { PTHREAD_ONCE_INIT };".
+@@ -1315,7 +1318,7 @@ case "$with_threads" in
+     if test "$GCC" = "yes"; then
+       # Since GCC only issues a warning for missing braces, so we need
+       # `-Werror' to catch it.
+-      CFLAGS="-Werror -Wmissing-braces $CFLAGS"
++      CFLAGS="-Wmissing-braces $CFLAGS"
+     fi
+ 
+     AC_CACHE_CHECK([whether PTHREAD_ONCE_INIT needs braces],
+@@ -1466,7 +1469,7 @@ case "$GCC" in
+     # not be "warning free"
+     if test "${GUILE_ERROR_ON_WARNING}" = yes
+     then
+-	CFLAGS="${CFLAGS} -Werror"
++	CFLAGS="${CFLAGS}"
+ 	enable_compile_warnings=no
+     fi
+     ;;

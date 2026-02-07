@@ -1,0 +1,53 @@
+Build with system wx workaround:
+https://github.com/aardappel/treesheets/issues/1083
+
+--- CMakeLists.txt.orig	2026-01-03 13:46:06 UTC
++++ CMakeLists.txt
+@@ -7,7 +7,7 @@ endif()
+     set(TREESHEETS_VERSION "${timestamp}")
+ endif()
+ 
+-project(TreeSheets
++project(treesheets
+     DESCRIPTION "A free-form hierarchical data organizer"
+     HOMEPAGE_URL "https://github.com/aardappel/treesheets"
+     VERSION "${TREESHEETS_VERSION}")
+@@ -37,15 +37,6 @@ include(FetchContent)
+ 
+ include(FetchContent)
+ 
+-FetchContent_Declare(
+-    wxwidgets
+-    GIT_REPOSITORY https://github.com/wxWidgets/wxWidgets
+-    GIT_TAG v3.2.9
+-    GIT_SHALLOW ON
+-    FIND_PACKAGE_ARGS 3.2.9 NAMES wxWidgets
+-)
+-FetchContent_MakeAvailable(wxwidgets)
+-
+ if(ENABLE_LOBSTER)
+     FetchContent_Declare(
+         lobster
+@@ -130,7 +121,12 @@ target_precompile_headers(TreeSheets PUBLIC src/stdafx
+ target_precompile_headers(TreeSheets PUBLIC src/stdafx.h)
+ 
+ ## Link wxWidgets and lobster-impl into TreeSheets
+-set(TREESHEETS_LIBS wx::aui wx::adv wx::core wx::xml wx::net)
++find_package(wxWidgets REQUIRED COMPONENTS aui adv core xml net)
++set(TREESHEETS_LIBS ${wxWidgets_LIBRARIES} lobster-impl)
++target_link_libraries(TreeSheets PRIVATE ${TREESHEETS_LIBS})
++target_include_directories(TreeSheets PRIVATE ${wxWidgets_INCLUDE_DIRS})
++target_compile_definitions(TreeSheets PRIVATE ${wxWidgets_DEFINITIONS})
++# https://github.com/aardappel/treesheets/issues/1083
+ if(ENABLE_LOBSTER)
+     list(APPEND TREESHEETS_LIBS lobster-impl)
+ endif(ENABLE_LOBSTER)
+@@ -180,7 +176,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
+ install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
+ file(GLOB treesheets_readme_files "TS/readme*.html")
+ install(FILES ${treesheets_readme_files} DESTINATION ${TREESHEETS_DOCDIR})
+-install(DIRECTORY TS/examples DESTINATION ${TREESHEETS_DOCDIR})
++install(DIRECTORY TS/examples DESTINATION ${CMAKE_INSTALL_DATADIR}/examples/${CMAKE_PROJECT_NAME})
+ 
+ install(DIRECTORY TS/images DESTINATION ${TREESHEETS_PKGDATADIR})
+ install(DIRECTORY TS/scripts DESTINATION ${TREESHEETS_PKGDATADIR})

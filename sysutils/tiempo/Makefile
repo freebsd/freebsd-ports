@@ -1,0 +1,163 @@
+PORTNAME=	tiempo
+DISTVERSION=	1.11.5
+PORTREVISION=	3
+CATEGORIES=	sysutils
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Command-line time tracker
+WWW=		https://tiempo.categulario.xyz/ \
+		https://gitlab.com/categulario/tiempo-rs
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	categulario
+GL_PROJECT=	tiempo-rs
+GL_TAGNAME=	10820c5d77eafaa31f3eede6811e8ca8a757c9cd
+
+CARGO_CRATES=	ahash-0.8.11 \
+		aho-corasick-1.1.3 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		ansi_term-0.12.1 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.1.0 \
+		anstyle-wincon-3.0.3 \
+		atty-0.2.14 \
+		autocfg-0.1.8 \
+		autocfg-1.3.0 \
+		bitflags-1.3.2 \
+		bitflags-2.6.0 \
+		bumpalo-3.16.0 \
+		cc-1.0.104 \
+		cfg-if-1.0.0 \
+		chrono-0.4.38 \
+		clap-4.5.8 \
+		clap_builder-4.5.8 \
+		clap_derive-4.5.8 \
+		clap_lex-0.7.1 \
+		cloudabi-0.0.3 \
+		colorchoice-1.0.1 \
+		core-foundation-sys-0.8.6 \
+		csv-1.3.0 \
+		csv-core-0.1.11 \
+		diff-0.1.13 \
+		directories-3.0.2 \
+		dirs-sys-0.3.7 \
+		either-1.13.0 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		fallible-iterator-0.3.0 \
+		fallible-streaming-iterator-0.1.9 \
+		fastrand-2.1.0 \
+		fuchsia-cprng-0.1.1 \
+		getrandom-0.2.15 \
+		hashbrown-0.14.5 \
+		hashlink-0.9.1 \
+		heck-0.4.1 \
+		heck-0.5.0 \
+		hermit-abi-0.1.19 \
+		hostname-0.3.1 \
+		iana-time-zone-0.1.60 \
+		iana-time-zone-haiku-0.1.2 \
+		indexmap-2.2.6 \
+		is_executable-1.0.1 \
+		is_terminal_polyfill-1.70.0 \
+		isolang-1.0.0 \
+		itertools-0.10.5 \
+		itoa-1.0.11 \
+		js-sys-0.3.69 \
+		lazy_static-1.5.0 \
+		libc-0.2.155 \
+		libredox-0.1.3 \
+		libsqlite3-sys-0.28.0 \
+		linux-raw-sys-0.4.14 \
+		log-0.4.22 \
+		match_cfg-0.1.0 \
+		memchr-2.7.4 \
+		num-traits-0.2.19 \
+		once_cell-1.19.0 \
+		phf-0.7.24 \
+		phf_codegen-0.7.24 \
+		phf_generator-0.7.24 \
+		phf_shared-0.7.24 \
+		pkg-config-0.3.30 \
+		pretty_assertions-1.4.0 \
+		proc-macro2-1.0.86 \
+		quote-1.0.36 \
+		rand-0.6.5 \
+		rand_chacha-0.1.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
+		redox_users-0.4.5 \
+		regex-1.10.5 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
+		rusqlite-0.31.0 \
+		rustix-0.38.34 \
+		rustversion-1.0.17 \
+		ryu-1.0.18 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
+		serde_json-1.0.120 \
+		serde_yaml-0.9.34+deprecated \
+		siphasher-0.2.3 \
+		smallvec-1.13.2 \
+		smawk-0.3.2 \
+		strsim-0.11.1 \
+		strum-0.24.1 \
+		strum_macros-0.24.3 \
+		syn-1.0.109 \
+		syn-2.0.68 \
+		tempfile-3.10.1 \
+		textwrap-0.14.2 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
+		timeago-0.3.1 \
+		toml-0.5.11 \
+		unicode-ident-1.0.12 \
+		unicode-linebreak-0.1.5 \
+		unicode-width-0.1.13 \
+		unsafe-libyaml-0.2.11 \
+		utf8parse-0.2.2 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.52.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.52.5 \
+		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_msvc-0.52.5 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
+		windows_i686_msvc-0.52.5 \
+		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_msvc-0.52.5 \
+		yansi-0.5.1 \
+		zerocopy-0.7.34 \
+		zerocopy-derive-0.7.34
+
+PLIST_FILES=	bin/t
+
+.include <bsd.port.mk>

@@ -1,0 +1,4 @@
+bin/elf_reader.py
+bin/macho_reader.py
+bin/pe_reader.py
+%%PYTHON_SITELIBDIR%%/lief.cpython-%%PY_VER%%.so

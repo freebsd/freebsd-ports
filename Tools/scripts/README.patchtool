@@ -1,0 +1,137 @@
+INTRODUCTION
+------------
+Patchtool is a tool aimed to simplify common operations with patchfiles. It
+was designed using real world's experience with the subject and expected to be
+very handy for an active porter.
+
+
+MODES OF OPERATION
+------------------
+The tool has the following two basic modes of operation:
+o generation/update of patchfiles. In this mode user provides list of working
+  files for which patchfiles are to be generated and the tool generates or
+  updates corresponding patches automatically guessing if there is an original
+  version (.orig file, rcs(1)) or it is a completely new file;
+
+o automatic update of the existing patchfiles. In this mode user provides a
+  list of patchfiles or directories containing patchfiles and the tool
+  re-generates specified patches. In this mode the tool tries hard to guess
+  whether the patchfile in question is already up to date or not and updates
+  only those patchfiles, which are found to be outdated.
+
+The following options are supported:
+  -a -- automatically save resulting diff into a patchfile;
+  -f -- don't ask any question if target patchfile already exists and is to be
+        replaced;
+  -u -- run tool in the "update" mode (see above);
+  -i -- perform requested operation (generate or update) even if the
+	patchfile seems to be up-to-date based on last modification time of
+	all files involved.
+
+The tool supports dozen environment variables that can be used to override
+default settings. You can find complete list at the top of patchtool.py,
+following are the most useful ones:
+PT_CVS_ID	-- CVS id to be added at the top of each patchfile generated
+		   ("FreeBSD");
+PT_DIFF_ARGS	-- diff(1) args used to generate patchfile ("-du");
+PT_DIFF_SUFX	-- suffix used to save original version of the file (".orig");
+
+
+KNOWN BUGS AND LIMITATIONS
+--------------------------
+o It is assumed that each patchfile contains exactly one diff, so the tool
+  may remove useful diffs when there are several diffs merged into one
+  patchfile. Actually I don't think that it is a bug, because Porter's
+  Handbook clearly demands to follow a "one diff - one patchfile" rule.
+  Perhaps portlint(1) should be extended to warn about such abuses;
+
+o only '+++' supported as the prefix for the name of target file in the
+  patchfile. Neither '***' nor 'Index:' are not recognised/supported yet;
+
+o please keep in mind that when you are trying to do automatic update and
+  some of the patches are for auto-generated/mangled files (e.g. configure
+  script in the situation when USE_LIBTOOL is used) then you would end up
+  with some of patchfiles containing bogus hunks;
+
+o by default the tool tries to recognise saved original version on the file
+  first by probing file with '.orig' suffix added and if it fails then by
+  probing file with ',v' suffix added. If you use other suffix to save
+  original version, for example '~', then set PT_DIFF_SUFX environment
+  variable to match your settings, otherwise the tool will not function
+  properly.
+
+
+REPORTING BUGS AND PROPOSING ENHANCEMENTS
+-----------------------------------------
+The author of the tool is Maxim Sobolev <sobomax@FreeBSD.org>. Any bug
+reports, patches, proposals or suggestions are encouraged. You can do it
+either contacting author directly at the e-mail above or submitting a FreeBSD
+problem report.
+
+
+EXAMPLES
+--------
+Following are several sample sessions which show common usage patterns for
+this tool.
+
+1. Generation mode (useful when creating new port).
+$ cd /somewhere/foo ; make
+[compilation blows with error in src/bar/baz.c]
+$ cd work/foo-1.0/src/bar
+[dig here and there and finally find that the problem in baz.c]
+$ cp baz.c baz.c.orig
+$ vi baz.c
+[fixing it]
+$ patchtool baz.c
+[reading diff]
+$ patchtool -a baz.c
+Generating patchfile: patch-src_bar_baz.c...ok
+$ cd ../../../../
+$ make
+[works as expected, wow!]
+$ make install clean
+$ send-pr
+[...]
+
+2. Generation mode when target patchfile already exists (Minor port update).
+$ cd /somewhere/foo ; make
+[...]
+1 out of 4 hunks failed--saving rejects to Makefile.rej
+>> Patch patch-aa failed to apply cleanly.
+*** Error code 1
+$ cd work/foo-1.0
+[examining Makefile.rej]
+$ vi Makefile
+[merging changes by hand]
+$ patchtool Makefile
+[reading diff]
+$ patchtool -a Makefile
+Target patchfile "patch-aa" already exists, do you want to  replace it? [y/N]: y
+Generating patchfile: patch-aa...ok
+$ cd ../../
+$ make clean
+$ make install clean
+$ send-pr
+[...]
+
+3. "Gross" update mode (Major update, when several existing patches do not apply
+   cleanly).
+$ cd /somewhere/foo
+$ vi Makefile
+[increase PORTVERSION]
+$ make fetch makesum patch
+[several patches are failing to apply cleanly]
+$ cd work/foo-1.0
+[doing merging work, finally all changes are merged]
+$ cd ../../ ; make all install
+[compile and works like a charm]
+$ pwd
+/somewhere/foo
+$ patchtool -u ./
+Updating patchfile: patch-aa
+Updating patchfile: patch-as
+Updating patchfile: patch-foo.c
+Updating patchfile: patch-foo_bar.c
+$ make clean
+$ send-pr
+[...]

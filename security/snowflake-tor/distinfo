@@ -1,0 +1,5 @@
+TIMESTAMP = 1767448473
+SHA256 (go/security_snowflake-tor/snowflake-v2.11.0/v2.11.0.mod) = d69b0bf5731e8c7d31ee8497d7b2e47b9ffe55353993d89da74e0bbd5c2865cf
+SIZE (go/security_snowflake-tor/snowflake-v2.11.0/v2.11.0.mod) = 3916
+SHA256 (go/security_snowflake-tor/snowflake-v2.11.0/v2.11.0.zip) = 721e7fb861c4023fffb5b58caff2e8999d856fe8b4c78556ad760da0bff910f8
+SIZE (go/security_snowflake-tor/snowflake-v2.11.0/v2.11.0.zip) = 244014

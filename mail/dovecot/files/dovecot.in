@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# PROVIDE: dovecot
+# REQUIRE: %%REQUIRE%%
+# BEFORE:  mail
+# KEYWORD: shutdown
+
+# dovecot_enable (bool):	Set it to YES to enable dovecot
+#				Default: NO
+# dovecot_config (str):		Path to dovecot.conf
+#				Default: %%ETCDIR%%/dovecot.conf
+#				Set it to a space-separated list to start
+#				multiple dovecot instances
+# dovecot_flags (str):		Extra flags to pass to dovecot
+#				Default: empty
+
+# Define dovecot_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/dovecot
+
+. /etc/rc.subr
+
+name=dovecot
+rcvar=dovecot_enable
+
+# read configuration and set defaults
+load_rc_config ${name}
+: ${dovecot_enable:="NO"}
+: ${dovecot_config:="%%ETCDIR%%/${name}.conf"}
+: ${dovecot_svcj_options:="net_basic"}
+
+command="%%PREFIX%%/sbin/${name}"
+start_precmd="start_precmd"
+stop_postcmd="stop_postcmd"
+restart_cmd="restart_cmd"
+extra_commands="reload"
+
+start_precmd()
+{	# Ensure runtime directory exists with correct permissions
+	/usr/bin/install -o root -g wheel -m 0755 -d ${base_dir}
+}
+
+stop_postcmd()
+{	# Cleanup runtime directory. The dovecot.conf link has to stay.
+	/usr/bin/find ${base_dir} ! -type l -delete
+}
+
+restart_cmd()
+{	# Overriding makes rc.subr run this once for each instance
+	run_rc_command stop
+	run_rc_command start
+}
+
+# To start multiple instances of dovecot set dovecot_config to
+# a space separated list of configuration files.
+for config in ${dovecot_config}; do
+	required_files="${config}"
+	command_args="-c ${config}"
+	if [ -s ${config} ]; then
+		doveconf_settings="$(${command} ${command_args} -a 2>/dev/null)"
+		if [ $? -ne 0 ]; then
+			echo "==Error=="
+			echo "Configuration file check failed."
+			# Use dovecot to print the config error.
+			${command} ${command_args} -a
+			exit $?
+		fi
+		base_dir="$(echo "$doveconf_settings" | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')"
+		pidfile="${base_dir}/master.pid"
+	else
+		echo "==Error=="
+		echo "Config file ${config} does not exist. If this is"
+		echo "a new installation, please create the config files as outlined in"
+		echo "	# pkg info -D dovecot"
+	fi
+	run_rc_command "$1"
+done

@@ -1,0 +1,8 @@
+Unipath is an object-oriented front end to the file/directory functions
+scattered throughout several Python library modules.
+
+It's based on Jason Orendorff's path.py but does not adhere as strictly to the
+underlying functions' syntax, in order to provide more user convenience and
+higher-level functionality.
+
+Unipath is stable, well-tested, and has been used in production since 2008.

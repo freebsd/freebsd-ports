@@ -1,0 +1,24 @@
+@sample %%ETCDIR%%/davfs2.conf.sample
+@sample %%ETCDIR%%/secrets.sample
+sbin/mount.davfs
+sbin/umount.davfs
+%%DATADIR%%/davfs2.conf
+%%DATADIR%%/secrets
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/README.translators
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%NLS%%share/locale/cs/LC_MESSAGES/davfs2.mo
+%%NLS%%share/locale/de/LC_MESSAGES/davfs2.mo
+share/man/de/man5/davfs2.conf.5.gz
+share/man/de/man8/mount.davfs.8.gz
+share/man/de/man8/umount.davfs.8.gz
+share/man/es/man5/davfs2.conf.5.gz
+share/man/man5/davfs2.conf.5.gz
+share/man/man8/mount.davfs.8.gz
+share/man/man8/umount.davfs.8.gz
+@dir %%ETCDIR%%/certs/private

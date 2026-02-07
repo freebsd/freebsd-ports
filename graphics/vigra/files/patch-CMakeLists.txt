@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2018-10-19 16:12:20 UTC
++++ CMakeLists.txt
+@@ -97,14 +97,27 @@ endif()
+ #
+ ##################################################
+ 
++# FreeBSD ports: add toggles for options
++option( WITH_PNG "Enable PNG support" ON )
++option( WITH_JPEG "Enable JPEG support" ON )
++option( WITH_TIFF "Enable TIFF support" ON )
++option( WITH_FFTW "Enable FFTW support" ON )
++
+ INCLUDE(VigraFindPackage)
+ VIGRA_FIND_PACKAGE(ZLIB)
++if (WITH_TIFF)
+ VIGRA_FIND_PACKAGE(TIFF NAMES libtiff_i libtiff) # prefer DLL on Windows
++endif ()
++if (WITH_JPEG)
+ VIGRA_FIND_PACKAGE(JPEG NAMES libjpeg)
++endif ()
++if (WITH_PNG)
+ VIGRA_FIND_PACKAGE(PNG)
++endif ()
++if (WITH_FFTW)
+ VIGRA_FIND_PACKAGE(FFTW3 NAMES libfftw3-3 libfftw-3.3)
+ VIGRA_FIND_PACKAGE(FFTW3F NAMES libfftw3f-3 libfftwf-3.3)
+-
++endif ()
+ 
+ IF(WITH_OPENEXR)
+     VIGRA_FIND_PACKAGE(OpenEXR)

@@ -1,0 +1,11 @@
+--- src/plugins/multimedia/ffmpeg/CMakeLists.txt.orig	2025-11-13 22:23:51 UTC
++++ src/plugins/multimedia/ffmpeg/CMakeLists.txt
+@@ -94,7 +94,7 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
+         ../../../3rdparty/signalsmith-stretch
+ )
+ 
+-if (LINUX OR ANDROID)
++if (UNIX OR ANDROID)
+     # We have 2 options: link shared stubs to FFmpegMediaPluginImplPrivate vs
+     # static compilation of the needed stubs to the FFmpeg plugin.
+     # Currently, we chose the second option so that user could trivially

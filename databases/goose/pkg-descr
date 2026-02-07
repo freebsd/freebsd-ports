@@ -1,0 +1,2 @@
+goose is a database migration tool. Manage your database schema by creating
+incremental SQL changes and/or Go functions.

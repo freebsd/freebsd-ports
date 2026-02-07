@@ -1,0 +1,4 @@
+libmysofa is a simple set of C functions to read AES SOFA (Spatially
+Oriented Format for Acoustics) files, if they contain HRTFs
+(Head-Related Transfer Functions) stored according to the AES69-2015
+standard [http://www.aes.org/publications/standards/search.cfm?docID=99].

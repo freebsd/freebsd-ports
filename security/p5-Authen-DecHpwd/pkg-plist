@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Authen/DecHpwd.pm
+%%SITE_ARCH%%/auto/Authen/DecHpwd/DecHpwd.so
+%%PERL5_MAN3%%/Authen::DecHpwd.3.gz

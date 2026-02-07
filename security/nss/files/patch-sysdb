@@ -1,0 +1,145 @@
+--- cmd/platlibs.mk.orig	2018-08-31 12:55:53 UTC
++++ cmd/platlibs.mk
+@@ -29,7 +29,7 @@ endif # BUILD_SUN_PKG
+ ifdef NSS_DISABLE_DBM
+ DBMLIB = $(NULL)
+ else
+-DBMLIB = $(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) 
++DBMLIB = $(NULL)
+ endif
+ 
+ ifeq ($(NSS_BUILD_UTIL_ONLY),1)
+--- lib/certdb/xauthkid.c.orig	2018-08-31 12:55:53 UTC
++++ lib/certdb/xauthkid.c
+@@ -7,7 +7,7 @@
+  *
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+ #include "secoidt.h"
+--- lib/certdb/xbsconst.c.orig	2018-08-31 12:55:53 UTC
++++ lib/certdb/xbsconst.c
+@@ -6,7 +6,7 @@
+  * X.509 v3 Basic Constraints Extension
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include <limits.h> /* for LONG_MAX */
+ #include "seccomon.h"
+ #include "secdert.h"
+--- lib/certdb/xconst.c.orig	2018-08-31 12:55:53 UTC
++++ lib/certdb/xconst.c
+@@ -6,7 +6,7 @@
+  * X.509 Extension Encoding
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+ #include "secoidt.h"
+--- lib/ckfw/dbm/ckdbm.h.orig	2018-08-31 12:55:53 UTC
++++ lib/ckfw/dbm/ckdbm.h
+@@ -23,7 +23,7 @@
+ #include "ckt.h"
+ #endif /* CKT_H */
+ 
+-#include "mcom_db.h"
++#include <db.h>
+ 
+ NSS_EXTERN_DATA NSSCKMDInstance nss_dbm_mdInstance;
+ 
+--- lib/Makefile.orig	2020-05-29 20:34:42 UTC
++++ lib/Makefile
+@@ -49,7 +49,7 @@ endif
+ endif # MOZILLA_CLIENT
+ 
+ ifndef NSS_DISABLE_DBM
+-DBM_SRCDIR = dbm
++DBM_SRCDIR = $(NULL)
+ endif
+ 
+ ifndef NSS_DISABLE_LIBPKIX
+--- lib/softoken/legacydb/cdbhdl.h.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/cdbhdl.h
+@@ -9,7 +9,8 @@
+ #define _CDBHDL_H_
+ 
+ #include "nspr.h"
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "pcertt.h"
+ #include "prtypes.h"
+ 
+--- lib/softoken/legacydb/config.mk.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/config.mk
+@@ -8,7 +8,6 @@ CRYPTOLIB=$(DIST)/lib/$(LIB_PREFIX)freebl.$(LIB_SUFFIX
+ 
+ EXTRA_LIBS += \
+ 	$(CRYPTOLIB) \
+-	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) \
+ 	$(NULL)
+ 
+ # can't do this in manifest.mn because OS_TARGET isn't defined there.
+--- lib/softoken/legacydb/dbmshim.c.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/dbmshim.c
+@@ -5,7 +5,8 @@
+ /*
+  * Berkeley DB 1.85 Shim code to handle blobs.
+  */
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "secitem.h"
+ #include "nssb64.h"
+ #include "blapi.h"
+--- lib/softoken/legacydb/keydb.c.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/keydb.c
+@@ -9,7 +9,6 @@
+ #include "blapi.h"
+ #include "secitem.h"
+ #include "pcert.h"
+-#include "mcom_db.h"
+ #include "secerr.h"
+ 
+ #include "keydbi.h"
+--- lib/softoken/legacydb/keydbi.h.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/keydbi.h
+@@ -10,7 +10,7 @@
+ 
+ #include "nspr.h"
+ #include "seccomon.h"
+-#include "mcom_db.h"
++#include <db.h>
+ 
+ /*
+  * Handle structure for open key databases
+--- lib/softoken/legacydb/pcertdb.c.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/pcertdb.c
+@@ -7,7 +7,8 @@
+  */
+ #include "lowkeyti.h"
+ #include "pcert.h"
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "pcert.h"
+ #include "secitem.h"
+ #include "secder.h"
+--- lib/softoken/legacydb/pk11db.c.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/pk11db.c
+@@ -8,7 +8,8 @@
+  */
+ 
+ #include "lgdb.h"
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "secerr.h"
+ #include "utilpars.h"
+ 

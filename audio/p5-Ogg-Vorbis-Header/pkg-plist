@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Ogg/Vorbis/Header.pm
+%%SITE_ARCH%%/auto/Ogg/Vorbis/Header/Header.so
+%%PERL5_MAN3%%/Ogg::Vorbis::Header.3.gz

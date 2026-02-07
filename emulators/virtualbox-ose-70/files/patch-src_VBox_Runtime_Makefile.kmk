@@ -1,0 +1,12 @@
+--- src/VBox/Runtime/Makefile.kmk.orig	2024-11-20 20:11:05.667725000 +0100
++++ src/VBox/Runtime/Makefile.kmk	2024-11-20 20:12:40.904599000 +0100
+@@ -220,6 +220,9 @@
+ 	$(QUIET)$(oiddb2c_1_TARGET) "$@" $(filter %.cfg,$^)
+ 	$(QUIET)$(CP) --changed -fv "$@" "$(IPRT_OUT_DIR)/oiddb.h"
+ 
++# Set the defines that utf8-posix.cpp needs. It's used by several targets.
++#
++r3/posix/utf8-posix.cpp_DEFS.freebsd = $(VBOX_ICONV_DEFS)
+ 
+ #
+ # Unicode Specification reader used to regenerate unidata-*.cpp.

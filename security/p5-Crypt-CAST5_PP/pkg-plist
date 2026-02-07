@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Crypt::CAST5_PP.3.gz
+%%SITE_PERL%%/Crypt/CAST5_PP.pm
+%%SITE_PERL%%/Crypt/CAST5_PP/Tables.pm
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/autosplit.ix
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/decrypt.al
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/encrypt.al
+%%SITE_PERL%%/auto/Crypt/CAST5_PP/init.al

@@ -1,0 +1,3 @@
+PHP5 Object-oriented interface to the session_* family functions
+it provides extra features such as database storage for session
+data using DB/MDB2 packages.

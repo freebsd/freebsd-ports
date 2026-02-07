@@ -1,0 +1,4 @@
+Generate README.md from doc comments.
+
+Cargo subcommand that extract documentation from your crate's doc comments that
+you can use to populate your README.md.

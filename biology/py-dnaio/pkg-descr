@@ -1,0 +1,3 @@
+dnaio is a Python 3 library for fast input and output of FASTQ and FASTA files.
+It supports paired-end data in separate files, interleaved paired-end in a
+single file and compression using gzip, bzip, and xz.

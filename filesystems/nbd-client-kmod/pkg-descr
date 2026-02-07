@@ -1,0 +1,5 @@
+FreeBSD Geom NBD Client is a Network Block Device (NBD) client for
+the FreeBSD kernel GEOM framework.
+
+The project consists of a kernel driver for the NBD GEOM class in
+mod/ and a user library for the geom(8) control utility in lib/.

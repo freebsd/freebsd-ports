@@ -1,0 +1,10 @@
+include/hmat/config-oss.h
+include/hmat/config.h
+include/hmat/hmat.h
+lib/cmake/hmat/HMATConfig.cmake
+lib/cmake/hmat/HMATConfigVersion.cmake
+lib/cmake/hmat/HMATTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/hmat/HMATTargets.cmake
+lib/libhmat.so
+lib/libhmat.so.1.11.1
+lib/libhmat.so.4

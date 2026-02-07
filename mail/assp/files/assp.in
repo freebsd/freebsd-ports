@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: assp
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=assp
+rcvar=assp_enable
+
+command=%%PREFIX%%/sbin/assp
+command_interpreter=%%PERL%%
+pidfile=%%ASSP_HOME%%/pid
+
+load_rc_config $name
+: ${assp_enable="NO"}
+: ${assp_flags="%%ASSP_HOME%%"}
+
+run_rc_command "$1"

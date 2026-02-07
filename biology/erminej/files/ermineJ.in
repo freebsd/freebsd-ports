@@ -1,0 +1,17 @@
+#!/bin/sh
+
+ERMINEJ_HOME=%%JAVAJARDIR%%/erminej
+ERMINEJ_ETC=%%PREFIX%%/etc
+JAVA_HOME=%%JAVA_HOME%%
+JAVACMD=$JAVA_HOME/bin/java
+
+MAIN_CLASS=com.werken.forehead.Forehead
+
+set -x
+"$JAVACMD" \
+  -Xmx3g \
+  -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl \
+  -classpath "$ERMINEJ_HOME/forehead.jar" \
+  "-Dforehead.conf.file=$ERMINEJ_ETC/forehead.conf" \
+  "-DermineJ.home=$ERMINEJ_HOME" \
+  $MAIN_CLASS "$@"

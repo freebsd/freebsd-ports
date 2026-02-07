@@ -1,0 +1,9 @@
+usr/bin/xmlwf
+usr/lib/libexpat.so.1
+usr/lib/libexpat.so.1.8.10
+usr/lib64/libexpat.so.1
+usr/lib64/libexpat.so.1.8.10
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+usr/share/licenses/expat/COPYING
+usr/share/man/man1/xmlwf.1.gz

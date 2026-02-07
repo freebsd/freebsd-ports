@@ -1,0 +1,10 @@
+define(`confEBINDIR',`%%PREFIX%%/libexec')
+define(`confMANROOT',`%%PREFIX%%/share/man/cat')
+define(`confMANROOTMAN',`%%PREFIX%%/share/man/man')
+define(`confMBINDIR',`%%PREFIX%%/sbin')
+define(`confSBINDIR',`%%PREFIX%%/sbin')
+define(`confUBINDIR',`%%PREFIX%%/bin')
+define(`confNO_STATISTICS_INSTALL',`True')
+define(`confHFDIR', `%%PREFIX%%/share/sendmail')
+APPENDDEF(`conf_sendmail_ENVDEF', `-DTCPWRAPPERS')
+APPENDDEF(`conf_sendmail_LIBS', `-lwrap')"

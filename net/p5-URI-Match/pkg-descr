@@ -1,0 +1,11 @@
+This is a simple utility that adds ability to match URL parts against
+regular expressions, subroutines, or objects that implement a match()
+method.
+
+Since this module uses loops and method calls, writing up a clever
+regular expression and using it directly against the whole URL is
+probably faster. This module aims to solve the problem where
+readability matters, or when you need to assemble the match conditions
+at run time.
+
+URI::Match adds the following methods to the URI namespace.

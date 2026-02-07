@@ -1,0 +1,4 @@
+JUMP Ultimate Math Package (JUMP) is a Java-based extensible
+high-precision math package. Includes support for computations
+based on fractions. Support is included for converting to
+floating point numbers and BigDecimals.

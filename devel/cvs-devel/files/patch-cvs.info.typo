@@ -1,0 +1,58 @@
+# Minor documentation changes
+#
+# Patch by Steve McIntyre <steve@einval.com> and Britton Leo Kerin <fsblk@aurora.uaf.edu>
+diff -Nur doc/cvsclient.texi doc/cvsclient.texi
+--- doc/cvsclient.texi	2005-07-20 18:39:59.000000000 +0800
++++ doc/cvsclient.texi	2006-02-26 22:39:20.000000000 +0800
+@@ -3,9 +3,10 @@
+ @setfilename cvsclient.info
+ @include version-client.texi
+ 
+-@dircategory Programming
++@dircategory Development
+ @direntry
+-* cvsclient: (cvsclient).      The CVS client/server protocol.
++* CVS client/server: (cvsclient).  Describes the client/server protocol
++                                   used by CVS.
+ @end direntry
+ 
+ @node Top
+diff -Nur doc/cvs.texinfo doc/cvs.texinfo
+--- doc/cvs.texinfo	2006-02-26 22:39:19.000000000 +0800
++++ doc/cvs.texinfo	2006-02-26 22:39:20.000000000 +0800
+@@ -97,7 +97,7 @@
+ @end macro
+ @end ifhtml
+ 
+-@dircategory GNU Packages
++@dircategory Development
+ @direntry
+ * CVS: (cvs).                   Concurrent Versions System
+ @end direntry
+@@ -2385,13 +2385,16 @@
+ There are two access methods that you use in @code{CVSROOT}
+ for rsh.  @code{:server:} specifies an internal rsh
+ client, which is supported only by some @sc{cvs} ports.
++This is not supported on most Unix-style systems,
++including Debian.
+ @code{:ext:} specifies an external rsh program.  By
+ default this is @code{rsh} (unless otherwise specified
+ by the @file{--with-rsh} flag to configure) but you may set the
+ @code{CVS_RSH} environment variable to invoke another
+ program which can access the remote server (for
+ example, @code{remsh} on HP-UX 9 because @code{rsh} is
+-something different).  It must be a program which can
++something different, or @code{ssh} to allow the use of
++secure and/or compressed connections).  It must be a program which can
+ transmit data to and from the server without modifying
+ it; for example the Windows NT @code{rsh} is not
+ suitable since it by default translates between CRLF
+@@ -12711,7 +12714,7 @@
+ @item @var{mname} [ options ] @var{dir} [ @var{files}@dots{} ]
+ In the simplest case, this form of module definition
+ reduces to @samp{@var{mname} @var{dir}}.  This defines
+-all the files in directory @var{dir} as module mname.
++all the files in directory @var{dir} as module @var{mname}.
+ @var{dir} is a relative path (from @code{$CVSROOT}) to a
+ directory of source in the source repository.  In this
+ case, on checkout, a single directory called

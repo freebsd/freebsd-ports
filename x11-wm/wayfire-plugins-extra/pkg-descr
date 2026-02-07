@@ -1,0 +1,2 @@
+Plugins that have external dependencies, debugging purposes or
+otherwise will not be included with Wayfire core.

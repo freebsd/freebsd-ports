@@ -1,0 +1,11 @@
+--- unix/installManPage.orig	2020-12-11 19:22:34 UTC
++++ unix/installManPage
+@@ -108,7 +108,7 @@ done
+ 
+ First=""
+ for Target in $Names; do
+-    Target=$Target.$Section$Suffix
++    Target=$Target$Suffix.$Section
+     rm -f "$Dir/$Target" "$Dir/$Target.*"
+     if test -z "$First" ; then
+ 	First=$Target

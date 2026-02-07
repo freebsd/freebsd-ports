@@ -1,0 +1,604 @@
+--- authvchkpw.c.orig	2024-01-31 08:30:47 UTC
++++ authvchkpw.c
+@@ -0,0 +1,242 @@
++/*
++** Copyright 1998 - 2007 Double Precision, Inc.  See COPYING for
++** distribution information.
++*/
++
++#if	HAVE_CONFIG_H
++#include	"courier_auth_config.h"
++#endif
++#include	<stdio.h>
++#include	<stdlib.h>
++#include	<string.h>
++#include	<errno.h>
++#include	<pwd.h>
++#if	HAVE_UNISTD_H
++#include	<unistd.h>
++#endif
++#include	"auth.h"
++#include	"courierauthstaticlist.h"
++#include	"courierauthdebug.h"
++#include	"vpopmail_config.h"
++#include	<vpopmail.h>
++#include	<vauth.h>
++
++static const char rcsid[]="$Id: authvchkpw.c,v 1.29 2007/10/07 02:50:45 mrsam Exp $";
++
++
++extern int auth_vchkpw_pre(const char *userid, const char *service,
++        int (*callback)(struct authinfo *, void *),
++                        void *arg);
++
++extern FILE *authvchkpw_file(const char *, const char *);
++
++static int auth_vchkpw_login(const char *service, char *authdata,
++	int (*callback_func)(struct authinfo *, void *), void *callback_arg);
++
++struct callback_info {
++	const char *pass;
++	int (*callback_func)(struct authinfo *, void *);
++	void *callback_arg;
++	};
++
++static int callback_vchkpw(struct authinfo *a, void *p)
++{
++struct callback_info *i=(struct callback_info *)p;
++
++	/* exit with perm failure if the supplied password is empty,
++	 * or if the supplied password doesnt match the retrieved password */ 
++	if (a->passwd == 0)
++	{
++		DPRINTF("no password supplied");
++		return (-1);
++	}
++
++	if (authcheckpassword(i->pass, a->passwd))
++		return (-1);
++
++	a->clearpasswd=i->pass;
++	return (*i->callback_func)(a, i->callback_arg);
++}
++
++#if HAVE_HMACLIB
++
++#include        "libhmac/hmac.h"
++#include        "cramlib.h"
++
++static int auth_vchkpw_login(const char *service, char *authdata,
++			int (*callback_func)(struct authinfo *, void *), void *callback_arg);
++
++static int auth_vchkpw_cram(const char *service,
++                           const char *authtype, char *authdata,
++                           int (*callback_func)(struct authinfo *, void *),
++                           void *callback_arg)
++{
++        struct  cram_callback_info      cci;
++
++        if (auth_get_cram(authtype, authdata, &cci))
++                return (-1);
++
++        cci.callback_func=callback_func;
++        cci.callback_arg=callback_arg;
++
++        return auth_vchkpw_pre(cci.user, service, &auth_cram_callback, &cci);
++}
++#endif
++
++int auth_vchkpw(const char *service, const char *authtype, char *authdata,
++               int (*callback_func)(struct authinfo *, void *),
++               void *callback_arg)
++{
++        if (strcmp(authtype, AUTHTYPE_LOGIN) == 0)
++                return (auth_vchkpw_login(service, authdata,
++                        callback_func, callback_arg));
++
++#if HAVE_HMACLIB
++        return (auth_vchkpw_cram(service, authtype, authdata,
++                        callback_func, callback_arg));
++#else
++        errno=EPERM;
++        return (-1);
++#endif
++
++}
++
++
++
++static int auth_vchkpw_login(const char *service, char *authdata,
++	int (*callback_func)(struct authinfo *, void *), void *callback_arg)
++{
++char *user, *pass;
++struct	callback_info	ci;
++int	rc;
++	/* Make sure that we have been supplied with the correct
++	 * AUTHDATA format which is : userid<NEWLINE>password<NEWLINE>
++	 */
++	if ( (user=strtok(authdata, "\n")) == 0 || (pass=strtok(0, "\n")) == 0)
++	{
++		/* login syntax was invalid */
++		errno=EPERM;
++		return (-1);
++	}
++
++	ci.pass=pass;
++	ci.callback_func=callback_func;
++	ci.callback_arg=callback_arg;
++
++	/* auth_vchkpw_pre() does this :
++	 *   - lookup the passwd entry for this user from the auth backend
++	 *   - check to see if this user is permitted to use this service type
++	 * If successful it will populate the ci struct with the 
++	 * user's passwd entry. Return value of function will be 0.
++	 * If unsuccessful (eg user doesnt exist, or is not permitted to 
++	 * use this auth method), it will return :
++	 *  <0 on a permanent failure (eg user doesnt exist)
++	 *  >0 on a temp failure
++         */
++	rc=auth_vchkpw_pre(user, service, &callback_vchkpw, &ci);
++
++	if (rc)
++		return rc;
++
++	/* user has been successfully auth'ed at this point */
++
++#if 0
++	/*
++	** sam - new courier-authlib never receives TCPREMOTEIP, at this
++	** time.
++	*/
++
++#ifdef HAVE_OPEN_SMTP_RELAY
++	if ( (strcmp("pop3", service)==0) || (strcmp("imap", service)==0) ) {
++		/* Michael Bowe 13th August 2003
++		 *
++		 * There is a problem here because open_smtp_relay needs 
++		 * to get the user's ip from getenv("TCPREMOTEIP").
++		 * If we run --with-authvchkpw --without-authdaemon,
++		 * then this var is available.
++		 * But if we run --with-authvchkpw --with-authdaemon,
++		 * then TCPREMOTEIP is null
++		 * 
++		 * If TCPREMOTEIP isnt available, then open_smtp_relay()
++		 * will just return() back immediately.
++		 */
++		open_smtp_relay();
++	}
++#endif
++#endif
++
++	return 0;
++}
++
++static void authvchkpwclose()
++{
++}
++
++static int auth_vchkpw_changepass(const char *service,
++				  const char *username,
++				  const char *pass,
++				  const char *npass)
++{
++struct vqpasswd *vpw;
++char	User[256];
++char	Domain[256];
++
++        /* Take the supplied userid, and split it out into the user and domain
++         * parts. (If a domain was not supplied, then set the domain to be
++         * the default domain)
++         */
++        /* WARNING: parse_email lowercases the username in place - not const!! */
++        if ( parse_email(username, User, Domain, 256) != 0) {
++                /* Failed to successfully extract user and domain.
++                 * So now exit with a permanent failure code
++                 */
++                return(-1);
++        }
++
++	/* check to see if domain exists.
++	 * If you pass an alias domain to vget_assign, it will change it
++	 * to be the real domain on return from the function
++	 */
++        if ( vget_assign(Domain,NULL,0,NULL,NULL) ==NULL ) {
++		/* domain doesnt exist */
++		return (-1);
++	}
++
++        if ( (vpw=vauth_getpw(User, Domain)) == NULL) {
++		/* That user doesnt exist in the auth backend */
++		errno=ENOENT;
++		return (-1);
++	}
++
++	/* Exit if any of the following :
++	 *   - user's password field in the passwd entry is empty
++	 *   - supplied current password doesnt match stored password
++	 */
++	if (vpw->pw_passwd == 0 || authcheckpassword(pass, vpw->pw_passwd)) {
++		errno=EPERM;
++		return (-1);
++	}
++
++	/* save the new password into the auth backend */
++	if ( vpasswd(User, Domain, (char *)npass, 0) != 0 ) {
++		/* password set failed */
++		return (-1);
++	};
++
++	return (0);
++}
++
++struct authstaticinfo authvchkpw_info={
++	"authvchkpw",
++	auth_vchkpw,
++	auth_vchkpw_pre,
++	authvchkpwclose,
++	auth_vchkpw_changepass,
++	authvchkpwclose,
++	NULL};
++
++
++struct authstaticinfo *courier_authvchkpw_init()
++{
++	return &authvchkpw_info;
++}
+--- authvchkpwlib.c.orig	2024-01-31 08:30:47 UTC
++++ authvchkpwlib.c
+@@ -0,0 +1,33 @@
++/*
++** Copyright 1998 - 2000 Double Precision, Inc.  See COPYING for
++** distribution information.
++*/
++
++#if	HAVE_CONFIG_H
++#include	"courier_auth_config.h"
++#endif
++#include	<stdio.h>
++#include	<stdlib.h>
++#include	<string.h>
++#include	<errno.h>
++#include	<pwd.h>
++#if	HAVE_UNISTD_H
++#include	<unistd.h>
++#endif
++#include	<sys/types.h>
++#include	<sys/stat.h>
++#include	"auth.h"
++
++static const char rcsid[]="$Id: authvchkpwlib.c,v 1.8 2004/10/21 00:10:49 mrsam Exp $";
++
++char *authvchkpw_isvirtual(char *c)
++{
++char *p;
++
++	if ((p=strchr(c, '@')) != 0)    return (p);
++#if 0
++	if ((p=strchr(c, '%')) != 0)    return (p);
++#endif
++	if ((p=strchr(c, ':')) != 0)    return (p);
++	return (0);
++}
+--- courier_auth_config.h.in.orig	2024-01-28 13:22:18 UTC
++++ courier_auth_config.h.in
+@@ -121,6 +121,9 @@
+ /* Define to 1 if you have the `opendir' function. */
+ #undef HAVE_OPENDIR
+ 
++/* Whether -lvpopmail has the open_smtp_relay() function */
++#undef HAVE_OPEN_SMTP_RELAY
++
+ /* Define to 1 if you have the <Pam/pam_appl.h> header file. */
+ #undef HAVE_PAM_PAM_APPL_H
+ 
+@@ -223,6 +226,9 @@
+ 
+ /* Define to the shared archive member specification, say "(shr.o)". */
+ #undef LT_SHARED_LIB_MEMBER
++
++/* Whether -lvpopmail has the vset_lastauth() function */
++#undef HAVE_VSET_LASTAUTH
+ 
+ /* Whether we must a prototype for crypt() */
+ #undef NEED_CRYPT_PROTOTYPE
+--- preauthvchkpw.c.orig	2024-01-31 08:30:47 UTC
++++ preauthvchkpw.c
+@@ -0,0 +1,159 @@
++/*
++** Copyright 1998 - 2001 Double Precision, Inc.  See COPYING for
++** distribution information.
++*/
++
++#if	HAVE_CONFIG_H
++#include	"courier_auth_config.h"
++#endif
++#include	<stdio.h>
++#include	<stdlib.h>
++#include	<string.h>
++#include	<errno.h>
++#include	<pwd.h>
++#if	HAVE_UNISTD_H
++#include	<unistd.h>
++#endif
++#include	"auth.h"
++#include	"courierauthdebug.h"
++#include	<vpopmail.h>
++#include	<vauth.h>
++#include	"vpopmail_config.h"
++
++/* make use of pw_flags only if available */
++#ifndef VQPASSWD_HAS_PW_FLAGS
++#define pw_flags pw_gid
++#endif
++
++extern FILE *authvchkpw_file(const char *, const char *);
++
++static const char rcsid[]="$Id: preauthvchkpw.c,v 1.26 2007/04/22 18:53:30 mrsam Exp $";
++
++/* This function is called by the auth_vchkpw() function
++ *
++ * This function does the following :
++ *   - extract the username and domain from the supplied userid
++ *   - lookup the passwd entry for that user from the auth backend
++ *   - populate *and return) a courier authinfo structure with the values
++ *     from the vpopmail passwd entry 
++ * 
++ * Return -1 on perm failure
++ * Return  0 on success
++ * Return  1 on temp failure
++ *
++ */
++
++int auth_vchkpw_pre(
++	const char *userid,
++	const char *service,
++        int (*callback)(struct authinfo *, void *),
++	void *arg)
++{
++struct vqpasswd *vpw;
++static uid_t uid;
++gid_t	gid;
++struct authinfo auth;
++static char User[256];
++static char Domain[256];
++static char options[80];
++
++	/* Make sure the auth struct is empty */
++        memset(&auth, 0, sizeof(auth));
++
++	/* Take the supplied userid, and split it out into the user and domain
++         * parts. (If a domain was not supplied, then set the domain to be
++	 * the default domain)
++         */
++        if ( parse_email(userid, User, Domain, 256) != 0) {
++		/* Failed to successfully extract user and domain.
++		 * So now exit with a permanent failure code
++		 */
++		DPRINTF("vchkpw: unable to split into user and domain");
++		return(-1);
++        }
++
++	/* Check to see if the domain exists.
++         * If so, on return vget_assign will :
++         *   Rewrite Domain to be the real domain if it was sent as an alias domain
++         *   Retrieve the domain's uid and gid
++	 */
++        if ( vget_assign(Domain,NULL,0,&uid, &gid) == NULL ) {
++		/* Domain does not exist
++		 * So now exit with a permanent failure code */
++		DPRINTF("vchkpw: domain does not exist");
++		return (-1);
++	}
++
++	/* Try and retrieve the user's passwd entry from the auth backend */
++        if ( (vpw=vauth_getpw(User, Domain)) == NULL) {
++		/* User does not exist
++		 * So now exit with a permanent failure code
++		 */
++		DPRINTF("vchkpw: user does not exist");
++		return (-1);
++	}
++
++	/* Check to see if the user has been allocated a dir yet.
++	 * Some of the vpopmail backends (eg mysql) allow users to
++	 * be manually inserted into the auth backend but without
++	 * allocating a dir. A dir will be created when the user
++	 * first trys to auth (or when they 1st receive mail)
++	 */
++	if (vpw->pw_dir == NULL || strlen(vpw->pw_dir) == 0 ) {
++		/* user does not have a dir allocated yet */
++		if ( make_user_dir(User, Domain, uid, gid) == NULL) {
++			/* Could not allocate a user dir at this time
++			 * so exit with a temp error code 
++			 */
++			DPRINTF("vchkpw: make_user_dir failed");
++			return(1);
++		}
++		/* We have allocated the user a dir now.
++		 * Go and grab the updated passwd entry
++		 */
++		if ( (vpw=vauth_getpw(User, Domain)) == NULL ) {
++			/* Could not get the passwd entry
++			 * So exit with a permanent failure code
++			 */
++			DPRINTF("vchkpw: could not get the password entry");
++			return(-1);
++		}
++	}
++
++	snprintf(options, sizeof(options),
++		"disablewebmail=%d,disablepop3=%d,disableimap=%d",
++                vpw->pw_flags & NO_WEBMAIL ? 1 : 0,
++                vpw->pw_flags & NO_POP ? 1 : 0,
++                vpw->pw_flags & NO_IMAP ? 1 : 0);
++
++#ifdef HAVE_VSET_LASTAUTH
++        /* if we are keeping track of their last auth time,
++         * then store this value now. Note that this isnt 
++	 * consistent with the authentication via vchkpw 
++	 * because it only stores the lastauth attempt
++	 * after the password has been verified. Here we are
++	 * logging it after the user has been found to exist,
++	 * but before the password has been verified. We could
++	 * do the logging inside authvchkpw.c, but that would
++	 * be a lot harder because we would have to go and
++	 * parse_email() again there before calling vset_lastauth()
++         */
++        vset_lastauth(User, Domain, service);
++#endif
++
++	/* save the user's passwd fields into the appropriate 
++	 * courier structure 
++	 */
++	/*auth.sysusername	= userid;*/
++	auth.sysuserid		= &uid;
++	auth.sysgroupid		= gid;
++	auth.homedir		= vpw->pw_dir;
++	auth.address		= userid;
++	auth.fullname		= vpw->pw_gecos;
++	auth.passwd		= vpw->pw_passwd;
++	auth.clearpasswd	= vpw->pw_clear_passwd;
++	auth.options		= options;
++	courier_authdebug_authinfo("DEBUG: authvchkpw: ", &auth, 0, vpw->pw_passwd);
++
++	return ((*callback)(&auth, arg));
++}
+--- userdb/Makefile.in.orig	2023-11-18 22:04:05 UTC
++++ userdb/Makefile.in
+@@ -107,7 +107,7 @@ CONFIG_HEADER = config.h
+  configure.lineno config.status.lineno
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb
++CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb vchkpw2userdb
+ CONFIG_CLEAN_VPATH_FILES =
+ PROGRAMS = $(noinst_PROGRAMS)
+ LTLIBRARIES = $(noinst_LTLIBRARIES)
+@@ -221,6 +221,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/conf
+ AM_RECURSIVE_TARGETS = cscope
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
++	$(srcdir)/vchkpw2userdb.in \
+ 	$(srcdir)/userdb.pl.in $(top_srcdir)/../compile \
+ 	$(top_srcdir)/../config.guess $(top_srcdir)/../config.sub \
+ 	$(top_srcdir)/../depcomp $(top_srcdir)/../install-sh \
+@@ -383,7 +384,7 @@ BUILT_SOURCES = makeuserdb.html.in makeuserdb.8.in \
+ 		userdb.html.in userdb.8.in \
+ 		userdbpw.html.in userdbpw.8.in
+ 
+-noinst_SCRIPTS = makeuserdb pw2userdb dummy
++noinst_SCRIPTS = makeuserdb pw2userdb vchkpw2userdb dummy
+ noinst_DATA = makeuserdb.html userdb.html userdbpw.html
+ userdbpw_SOURCES = userdbpw.c
+ userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
+@@ -450,6 +451,8 @@ pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2
+ makeuserdb: $(top_builddir)/config.status $(srcdir)/makeuserdb.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
++vchkpw2userdb: $(top_builddir)/config.status $(srcdir)/vchkpw2userdb.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ 
+ clean-noinstPROGRAMS:
+--- userdb/configure.orig	2023-11-18 22:04:06 UTC
++++ userdb/configure
+@@ -13559,7 +13559,7 @@ fi
+ fi
+ 
+ 
+-ac_config_files="$ac_config_files Makefile userdb.pl makeuserdb pw2userdb"
++ac_config_files="$ac_config_files Makefile userdb.pl makeuserdb pw2userdb vchkpw2userdb"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -14577,6 +14577,7 @@ do
+     "userdb.pl") CONFIG_FILES="$CONFIG_FILES userdb.pl" ;;
+     "makeuserdb") CONFIG_FILES="$CONFIG_FILES makeuserdb" ;;
+     "pw2userdb") CONFIG_FILES="$CONFIG_FILES pw2userdb" ;;
++    "vchkpw2userdb") CONFIG_FILES="$CONFIG_FILES vchkpw2userdb" ;;
+ 
+   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
+   esac
+--- userdb/vchkpw2userdb.in.orig	2024-01-31 08:30:47 UTC
++++ userdb/vchkpw2userdb.in
+@@ -0,0 +1,80 @@
++#! @PERL@
++#
++#  Convert vchkpw to userdb format.
++#
++#  $Id: vchkpw2userdb.in,v 1.4 2000/02/16 01:12:13 mrsam Exp $
++#
++# Copyright 1998 - 1999 Double Precision, Inc.  See COPYING for
++# distribution information.
++
++use Getopt::Long;
++
++die "Invalid options.\n" unless
++	GetOptions("vpopmailhome=s" => \$vpopmailhome,
++		"todir=s" => \$todir);
++
++if ( ! ( $vpopmailhome =~ /./ ))
++{
++	(undef, undef, undef, undef, undef, undef, undef, $vpopmailhome)
++			= getpwnam("vpopmail");
++
++	die "Cannot find vpopmail home.\n" unless $vpopmailhome =~ /./;
++}
++
++-d "$vpopmailhome" || die "$vpopmailhome: not found.\n";
++
++if ( $todir =~ /./ )
++{
++	-d "$todir" || mkdir($todir, 0700) || die "$!\n";
++}
++
++$bindir=$0;
++
++if ($bindir =~ /^(.*)\/[^\/]*$/ )
++{
++	$bindir=$1;
++}
++else
++{
++	$bindir=".";
++}
++
++die "Unable to locate pw2userdb.\n" unless -f "$bindir/pw2userdb";
++
++$redir="";
++
++if ( $todir =~ /./ )
++{
++	$redir=">$todir/users-vpasswd";
++	-d "$todir/domains" || mkdir("$todir/domains", 0700) || die "$!\n";
++}
++
++if ( -f "$vpopmailhome/users/vpasswd")
++{
++	$rc=system ("$bindir/pw2userdb --vpopuid --passwd='$vpopmailhome/users/vpasswd' --noshadow --nouid $redir");
++	exit $rc / 256 if $rc;
++}
++
++if ( opendir(DIR, "$vpopmailhome/domains"))
++{
++	while ($domain=readdir(DIR))
++	{
++		$domainopt="--domain='$domain'";
++		$domainopt="" if $domain eq "default";
++		next if $domain eq "." || $domain eq "..";
++		next unless -f "$vpopmailhome/domains/$domain/vpasswd";
++		$redir="";
++		if ( $todir =~ /./ )
++		{
++			$redir=">$todir/domains/$domain";
++			$redir=">$todir/users-default"
++				if $domain eq "default";
++		}
++
++		$rc=system ("$bindir/pw2userdb --passwd='$vpopmailhome/domains/$domain/vpasswd' --vpopuid --noshadow --nouid $domainopt $redir");
++
++		exit $rc / 256 if $rc != 0;
++	}
++	close(DIR);
++}
++

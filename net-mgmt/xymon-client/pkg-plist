@@ -1,0 +1,34 @@
+%%WWWDIR%%/client/bin/clientupdate
+%%WWWDIR%%/client/bin/freebsd-meminfo
+%%WWWDIR%%/client/bin/orcaxymon
+%%WWWDIR%%/client/bin/xymon
+%%WWWDIR%%/client/bin/xymoncfg
+%%WWWDIR%%/client/bin/xymonclient-aix.sh
+%%WWWDIR%%/client/bin/xymonclient-darwin.sh
+%%WWWDIR%%/client/bin/xymonclient-freebsd.sh
+%%WWWDIR%%/client/bin/xymonclient-hp-ux.sh
+%%WWWDIR%%/client/bin/xymonclient-irix.sh
+%%WWWDIR%%/client/bin/xymonclient-linux.sh
+%%WWWDIR%%/client/bin/xymonclient-netbsd.sh
+%%WWWDIR%%/client/bin/xymonclient-openbsd.sh
+%%WWWDIR%%/client/bin/xymonclient-osf1.sh
+%%WWWDIR%%/client/bin/xymonclient-sco_sv.sh
+%%WWWDIR%%/client/bin/xymonclient-sunos.sh
+%%WWWDIR%%/client/bin/xymonclient-unixware.sh
+%%WWWDIR%%/client/bin/xymonclient.sh
+%%WWWDIR%%/client/bin/xymoncmd
+%%WWWDIR%%/client/bin/xymondigest
+%%WWWDIR%%/client/bin/xymongrep
+%%WWWDIR%%/client/bin/xymonlaunch
+%%WWWDIR%%/client/bin/logfetch
+%%WWWDIR%%/client/bin/msgcache
+@sample %%WWWDIR%%/client/etc/clientlaunch.cfg.sample
+@sample %%WWWDIR%%/client/etc/xymonclient.cfg.sample
+@sample %%WWWDIR%%/client/etc/localclient.cfg.sample
+%%WWWDIR%%/client/local/README
+%%WWWDIR%%/client/runclient.sh
+@owner %%XYMONUSER%%
+@dir %%WWWDIR%%/client/tmp
+@dir %%WWWDIR%%/client/logs
+@dir %%WWWDIR%%/client/ext
+@owner

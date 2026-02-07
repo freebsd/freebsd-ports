@@ -1,0 +1,44 @@
+--- man/man4/twconfig.4.orig	2018-03-30 23:05:50.000000000 -0700
++++ man/man4/twconfig.4	2018-04-01 06:21:21.327692000 -0700
+@@ -35,7 +35,7 @@
+ ..
+ .nh
+ .ad l
+-.TH TWCONFIG 4 "04 Jan 2018" "Open Source Tripwire 2.4"
++.TH TWCONFIG 5 "04 Jan 2018" "Open Source Tripwire 2.4"
+ .SH NAME
+ twconfig \- \fITripwire\fP configuration file reference
+ .SH DESCRIPTION
+@@ -48,7 +48,7 @@
+ signed with the site key, and the site passphrase is
+ required to edit the file.
+ .PP
+-During installation, a signed \fITripwire\fP configuration file \fItw.cfg\fP will be created in the \fI/etc/tripwire\fP directory, and a plain text copy of this configuration file \fItwcfg.txt\fP will be created in the same directory.
++During installation, a signed \fITripwire\fP configuration file \fItw.cfg\fP will be created in the \fI/usr/local/etc/tripwire\fP directory, and a plain text copy of this configuration file \fItwcfg.txt\fP will be created in the same directory.
+ .PP
+ The configuration file is modified using the
+ .B twadmin\ \(hy\(hycreate\(hycfgfile
+@@ -102,11 +102,11 @@
+ .if n .nr Ti \n(.i
+ .Nf
+ .if n .in 0
+-POLFILE         Default = /etc/tripwire/tw.pol
++POLFILE         Default = /usr/local/etc/tripwire/tw.pol
+ DBFILE          Default = /var/lib/tripwire/$(HOSTNAME).twd
+ REPORTFILE      Default = /var/lib/tripwire/report/$(HOSTNAME)-$(DATE).twr
+-SITEKEYFILE     Default = /etc/tripwire/site.key
+-LOCALKEYFILE    Default = /etc/tripwire/$(HOSTNAME)-local.key
++SITEKEYFILE     Default = /usr/local/etc/tripwire/site.key
++LOCALKEYFILE    Default = /usr/local/etc/tripwire/$(HOSTNAME)-local.key
+ .Fi
+ .if n .in +\n(Tiu 
+ .SS Other Variables
+@@ -318,7 +318,7 @@
+ .BR twadmin (8),
+ .BR twprint (8),
+ .BR siggen (8),
+-.BR twpolicy (4),
++.BR twpolicy (5),
+ .BR twfiles (5),
+ .BR sendmail (1),
+ .BR vi (1),

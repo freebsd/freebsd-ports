@@ -1,0 +1,4 @@
+Module performs both regular expression and fixed string substitutions
+on response bodies. This module is quite different from the native
+substitution module. It scans the output chains buffer and matches string
+line by line, just like Apache's mod_substitute.

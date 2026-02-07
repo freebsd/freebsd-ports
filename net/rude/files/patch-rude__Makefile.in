@@ -1,0 +1,14 @@
+--- rude/Makefile.in.orig	2002-06-13 12:15:21 UTC
++++ rude/Makefile.in
+@@ -50,9 +50,9 @@
+ 
+ install: rude
+ 	@if [ ! -d $(bindir) ]; then mkdir -m 0755 $(bindir); fi;
+-	$(INSTALL) rude $(bindir)
++	$(BSD_INSTALL_PROGRAM) rude $(DESTDIR)$(bindir)
+ 	@if [ ! -d $(mandir) ]; then mkdir -m 0755 $(mandir); fi;
+-	$(INSTALL) rude.8 $(mandir)
++	$(BSD_INSTALL_MAN) rude.8 $(DESTDIR)$(mandir)
+  
+ 
+ ##############################################################################

@@ -1,0 +1,5 @@
+GNU Datamash is a command-line program which performs basic numeric,
+textual, and statistical operations on input textual data files.
+
+It is designed to be portable, reliable, and aid researchers to easily
+automate analysis pipelines, without writing code or even short scripts.

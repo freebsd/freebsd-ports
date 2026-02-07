@@ -1,0 +1,5 @@
+sigrok-firmware is a collection of firmware files required for some of the
+devices libsigrok supports (logic analyzers, oscilloscopes, or others).
+
+We only carry firmware files for which we have an explicit permission/license
+that allows at _least_ redistribution of the firmware.

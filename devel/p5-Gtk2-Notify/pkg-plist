@@ -1,0 +1,9 @@
+%%SITE_ARCH%%/Gtk2/Notify.pm
+%%SITE_ARCH%%/Gtk2/Notify.pod
+%%SITE_ARCH%%/Gtk2/Notify/Install/Files.pm
+%%SITE_ARCH%%/Gtk2/Notify/Install/notify-autogen.h
+%%SITE_ARCH%%/Gtk2/Notify/Install/notify.typemap
+%%SITE_ARCH%%/Gtk2/Notify/index.pod
+%%SITE_ARCH%%/auto/Gtk2/Notify/Notify.so
+%%PERL5_MAN3%%/Gtk2::Notify.3.gz
+%%PERL5_MAN3%%/Gtk2::Notify::index.3.gz

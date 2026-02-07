@@ -1,0 +1,13 @@
+bin/gambit-convert
+bin/gambit-enummixed
+bin/gambit-enumpoly
+bin/gambit-enumpure
+bin/gambit-gnm
+bin/gambit-ipa
+bin/gambit-lcp
+bin/gambit-liap
+bin/gambit-logit
+bin/gambit-lp
+bin/gambit-simpdiv
+share/applications/gambit.desktop
+share/pixmaps/gambit.xpm

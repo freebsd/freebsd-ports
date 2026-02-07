@@ -1,0 +1,2 @@
+A cross-platform interface to file system operations, built on top of the
+'libuv' C library.

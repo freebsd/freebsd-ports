@@ -1,0 +1,20 @@
+--- awl/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ awl/CMakeLists.txt
+@@ -51,7 +51,7 @@ if (NOT MSVC)
+    set_target_properties (
+       awl
+       PROPERTIES
+-         COMPILE_FLAGS "${PCH_INCLUDE} -g -Wall -Wextra -Winvalid-pch"
++         COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch"
+       )
+ else (NOT MSVC)
+    set_target_properties (
+@@ -107,7 +107,7 @@ else (NOT MSVC)
+    set_target_properties (
+       awlplugin
+       PROPERTIES
+-         COMPILE_FLAGS "${PCH_INCLUDE} -D_GNU_SOURCE -D_REENTRANT -DHAVE_CONFIG_H -DQT_PLUGIN -DQT_SHARED -DQT_NO_DEBUG"
++         COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -D_GNU_SOURCE -D_REENTRANT -DHAVE_CONFIG_H -DQT_PLUGIN -DQT_SHARED -DQT_NO_DEBUG"
+       )
+ endif (NOT MSVC)   
+ 

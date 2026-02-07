@@ -1,0 +1,13 @@
+share/rime-data/build/wubi86.prism.bin
+share/rime-data/build/wubi86.reverse.bin
+share/rime-data/build/wubi86.schema.yaml
+share/rime-data/build/wubi86.table.bin
+share/rime-data/build/wubi86.table.txt
+share/rime-data/build/wubi_pinyin.prism.bin
+share/rime-data/build/wubi_pinyin.schema.yaml
+share/rime-data/build/wubi_trad.prism.bin
+share/rime-data/build/wubi_trad.schema.yaml
+share/rime-data/wubi86.dict.yaml
+share/rime-data/wubi86.schema.yaml
+share/rime-data/wubi_pinyin.schema.yaml
+share/rime-data/wubi_trad.schema.yaml

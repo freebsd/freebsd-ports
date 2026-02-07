@@ -1,0 +1,14 @@
+--- src/scripts/charmc.orig	2018-09-08 18:56:55 UTC
++++ src/scripts/charmc
+@@ -1490,9 +1490,9 @@ MakeSO() {
+ 	fi
+ 	if test "$MAKE_LDXX" = "1"
+ 	then
+- 	  soCmd="$CMK_LDXX -o $OBJECT $OPTS_LD $OPTS_LDRO $OBJECTFILES $PRE_LIBRARIES $POST_LIBRARIES $CMK_LD_SHARED_LIBS"
++ 	  soCmd="$CMK_LDXX -o $OBJECT -Wl,-soname,$(echo $OBJECT | sed 's|^.*/lib_so/||') $OPTS_LD $OPTS_LDRO $OBJECTFILES $PRE_LIBRARIES $POST_LIBRARIES $CMK_LD_SHARED_LIBS"
+ 	else
+-	  soCmd="$CMK_LD -o $OBJECT $OPTS_LD $OPTS_LDRO $OBJECTFILES $PRE_LIBRARIES $POST_LIBRARIES $CMK_LD_SHARED_LIBS"
++	  soCmd="$CMK_LD -o $OBJECT -Wl,-soname,$(echo $OBJECT | sed 's|^.*/lib_so/||') $OPTS_LD $OPTS_LDRO $OBJECTFILES $PRE_LIBRARIES $POST_LIBRARIES $CMK_LD_SHARED_LIBS"
+ 	fi
+ 	DoNoErrCheck $soCmd
+ 	Do_res=$?

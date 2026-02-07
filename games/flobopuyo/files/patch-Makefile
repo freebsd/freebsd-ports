@@ -1,0 +1,42 @@
+--- Makefile.orig	2013-09-30 06:31:44.043518968 +0400
++++ Makefile	2013-09-30 06:31:58.306519003 +0400
+@@ -12,9 +12,8 @@
+ DEBUG_MODE=false
+ 
+ # Unix/Linux settings
+-PREFIX=/usr/local
+-DATADIR=$(PREFIX)/share/games/flobopuyo
+-INSTALL_BINDIR=$(DESTDIR)/$(PREFIX)/games
++DATADIR=$(PREFIX)/share/flobopuyo
++INSTALL_BINDIR=$(DESTDIR)/$(PREFIX)/bin
+ INSTALL_DATADIR=$(DESTDIR)/$(DATADIR)
+ 
+ # Mac settings
+@@ -40,15 +39,12 @@
+ #
+ ##############
+ 
+-SDL_CONFIG=sdl-config
+-CC=g++
+-CXX=g++
++CC=${CXX}
+ 
+-CFLAGS= -DDATADIR=\"${DATADIR}\"
+-LDFLAGS=
++CFLAGS+= -DDATADIR=\"${DATADIR}\"
+ 
+ ifneq ($(PLATFORM), $(CYGWIN_VERSION))
+-CFLAGS:=$(CFLAGS) `$(SDL_CONFIG) --cflags` -I/sw/include
++CFLAGS:=$(CFLAGS) `$(SDL_CONFIG) --cflags`
+ LDFLAGS:=$(LDFLAGS) `$(SDL_CONFIG) --cflags --libs`
+ endif
+ 
+@@ -110,7 +106,7 @@
+ all: prelude flobopuyo
+ 
+ flobopuyo: ${OBJFILES}
+-	@echo "[flobopuyo]" && g++ $(CFLAGS) $(LDFLAGS) -o flobopuyo -lSDL_mixer -lSDL_image ${OBJFILES}
++	@echo "[flobopuyo]" && ${CXX} $(CFLAGS) $(LDFLAGS) -o flobopuyo -lSDL_mixer -lSDL_image ${OBJFILES}
+ 	@echo "--------------------------------------"
+ 	@echo " Compilation finished"
+ 	@[ "x`cat WARNINGS | wc -l`" != "x0" ] && echo -e "--------------------------------------\n There have been some warnings:\n" && cat WARNINGS && rm -f WARNINGS && echo "--------------------------------------" || true

@@ -1,0 +1,7 @@
+[
+{
+  type: upgrade
+  maximum_version: "0.17.0"
+  message: "This release will require a relink of Flare."
+}
+]

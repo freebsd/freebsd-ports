@@ -1,0 +1,81 @@
+[
+{ type: install,
+  message <<EOM
+Mailman has been installed, but requires further configuration before use!
+
+You also must configure both your MTA (mail server) and web server to
+integrate with Mailman.  If the port's documentation has been installed,
+extensive post-installation instructions may be found in:
+
+  %%DOCSDIR%%/FreeBSD-post-install-notes
+  %%DOCSDIR%%/mailman-install.txt (start at section 4)
+
+Note (1): 
+- ESPECIALLY RELEVANT FOR USERS OF THE BINARY PACKAGE -
+The FreeBSD binary package is built for use with Sendmail, and it will
+not work properly with alternative MTAs such as Exim or Postfix.
+  In order for Mailman to work with an alternative mailer, please use
+mailman-exim4 or mailman-postfix instead, or
+mailman-exim4-with-htdig or mailman-postfix-with-htdig.
+  For use with other mailers (Courier, OpenSMTPd), the port must be installed
+from source, with proper options configured, or from a package built in
+poudriere (which is a separate port in ports-mgmt) with adapted options.
+(poudriere options -cn mail/mailman)
+
+- FOR USERS OF A PORT BUILT FROM SOURCE -
+If you use an alternate MTA (meaning "not Sendmail"), you MUST
+be sure that the correct value of MAIL_GID was used when this port or
+package was built.  You can choose your MTA with the correct MAIL_GID by
+running "make config" in the Mailman port's directory.
+
+Note (2):  The entire Mailman installation resides under %%MAILMANDIR%%.
+The command-line scripts necessary to administer Mailman have been
+installed in %%MAILMANDIR%%/bin.
+
+In order to make private archives searchable with namazu2, you need
+to copy or link %%LOCALBASE%%/libexec/namazu.cgi to
+%%MAILMANDIR%%/archives/private/<ML_name>/ and configure .namazurc.
+Refer to %%LOCALBASE%%/etc/namazu/namazurc.sample.
+EOM
+}
+{ type: install,
+  message: <<EOM
+If you did just install mailman with pkg -I, --no-script or
+--no-install-scripts, you MUST(!) run the post-install script now, as root:
+
+env "PKG_PREFIX=%%PREFIX%%" sh \
+    %%MAILMANDIR%%/bin/FreeBSD-post-install x POST-INSTALL
+
+This will set up most defaults (cron jobs, default configuration etc.).
+EOM
+}
+{ type: upgrade
+  maximum_version: 2.1.18
+  message <<EOM
+UPDATE INFORMATION FOR UPDATES OF 2.1.18/OLDER TO VERSION 2.1.19 AND NEWER:
+
+  Changed behavior
+
+    - Mailman's log files, request.pck files and heldmsg-* files are no
+      longer created world readable to protect against access by untrusted
+      local users.  Note that permissions on existing log files won't be
+      changed so if you are concerned about this and don't rotate logs or
+      have a logrotate process that creates new log files instead of letting
+      Mailman create them, you will need to address that.  (LP: #1327404)
+
+The mailman newsyslog.conf(5) filename has been changed:
+  OLD: %%PREFIX%%/etc/newsyslog.conf.d/mailman.newsyslog
+  NEW: %%PREFIX%%/etc/newsyslog.conf.d/mailman.conf
+
+Any file found at the old location has been automatically moved to
+the new location. This was done to ensure log rotation continues to
+work after change r340318 made to FreeBSD base, where the default
+newsyslog configuration now only includes filenames that end with
+'.conf' and do not begin with '.'.
+
+If you use provisioning/configuration management tools to create or
+edit this file, you will need to change their configuration to use
+the new filename.
+EOM
+}
+]

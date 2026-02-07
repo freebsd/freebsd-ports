@@ -1,0 +1,6 @@
+%%DATADIR%%/DomainPublicSuffix.dll
+%%DATADIR%%/Fleck2.dll
+%%DATADIR%%/Jayrock.Json.dll
+%%DATADIR%%/Jayrock.dll
+%%DATADIR%%/KeePassRPC.dll
+%%DATADIR%%/KeePassRPC.pdb

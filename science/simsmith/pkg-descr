@@ -1,0 +1,11 @@
+Java based Smith chart program.  Performs single-frequency and sweep charting
+with both Smitch charts and SWR/PWR curves.  Does drag-and-drop schematic entry
+with direct entry of component values as well as "drag tuning".  Can import
+load parameters directly from the following:
+
+- EZNEC (and EZNEC GAM files)
+- miniVNA and miniVNApro
+- AIM4170
+- CocoaNEC
+- Rig Expert ".aaplot" files
+- Touchstone S1P ".s1p" files (shunt and series)

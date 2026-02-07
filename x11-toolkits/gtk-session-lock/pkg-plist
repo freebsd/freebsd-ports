@@ -1,0 +1,9 @@
+include/gtk-session-lock/gtk-session-lock.h
+lib/girepository-1.0/GtkSessionLock-0.1.typelib
+lib/libgtk-session-lock.so
+lib/libgtk-session-lock.so.0
+lib/libgtk-session-lock.so.0.2.0
+libdata/pkgconfig/gtk-session-lock-0.pc
+share/gir-1.0/GtkSessionLock-0.1.gir
+share/vala/vapi/gtk-session-lock-0.deps
+share/vala/vapi/gtk-session-lock-0.vapi

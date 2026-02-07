@@ -1,0 +1,2 @@
+BIND::Config::Parser provides a lightweight parser to the configuration
+file syntax of BIND v8 and v9 using a Parse::RecDescent grammar.

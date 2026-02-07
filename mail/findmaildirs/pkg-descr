@@ -1,0 +1,3 @@
+This simple utility scans a directory for maildirs and prints them in
+mutt-compatible format. It may be called from .muttrc to automatically
+fill mutt's mailboxes parameter on startup with all available maildirs.

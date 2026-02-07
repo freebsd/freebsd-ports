@@ -1,0 +1,50 @@
+PORTNAME=	mod_auth_cas
+PORTVERSION=	1.2
+DISTVERSIONPREFIX=	v
+PORTREVISION=	0
+CATEGORIES=	www
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
+
+MAINTAINER=	apache@FreeBSD.org
+COMMENT=	Apache 2.x module that supports the CASv1 and CASv2 protocols
+WWW=		https://wiki.jasig.org/display/CASC/mod_auth_cas
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/README
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre
+
+USES=		apache ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Jasig
+
+HAS_CONFIGURE=	yes
+# configure requires LDFLAGS to find libpcre
+LDFLAGS+=	-L${AP_LIB}
+
+AP_LIB=		${LOCALBASE}/lib
+AP_EXTRAS=	-lpcre -lssl -lcrypto
+
+PLIST_FILES=	@sample\ %%APACHEETCDIR%%/modules.d/%%APMOD_FILE%% \
+		%%APACHEMODDIR%%/mod_auth_cas.so
+
+PORTDOCS=	README
+
+SUB_FILES=	${APMOD_FILE}
+APMOD_FILE=	250_${PORTNAME}.conf.sample
+PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR} ${STAGEDIR}${DOCSDIR}
+	${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} \
+		-i -n ${MODULENAME} ${WRKSRC}/src/${MODULENAME}.la
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

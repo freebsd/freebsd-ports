@@ -1,0 +1,9 @@
+# Derived from the default /etc/crontab for FreeBSD
+# See fcrontab(5) for syntax and semantics
+#
+SHELL=/bin/sh
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
+HOME=/var/log
+#
+# Save some entropy so that /dev/random can re-seed on boot.
+@ 11 /usr/libexec/save-entropy

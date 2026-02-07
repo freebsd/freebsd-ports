@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/MooseX::Log::Log4perl.3.gz
+%%PERL5_MAN3%%/MooseX::Log::Log4perl::Easy.3.gz
+%%SITE_PERL%%/MooseX/Log/Log4perl.pm
+%%SITE_PERL%%/MooseX/Log/Log4perl/Easy.pm

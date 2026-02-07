@@ -1,0 +1,42 @@
+--- configure.orig	2014-01-27 17:10:36 UTC
++++ configure
+@@ -12054,7 +12054,7 @@ if test -z "$GCC"; then
+         *)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
+                 DEBUG="-g"
+-                CFLAGS="-O"
++                CFLAGS=""
+                 PROFILE="-g -p" ;;
+         esac
+ else
+@@ -12077,9 +12077,9 @@ else
+                 PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
+      	*)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
+-                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++                DEBUG="-g -Wall -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char" ;;
+         esac
+ fi
+ CFLAGS="$CFLAGS $cflags_save -DAO_BUILDING_LIBAO"
+@@ -13897,7 +13897,7 @@ if ${ac_cv_lib_audio_AuOpenServer+:} fal
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-laudio -lXau $X_LIBS $LIBS"
++LIBS="-laudio -lXau -lXt -lm $X_LIBS $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -13958,7 +13958,7 @@ fi
+ 
+ if test "x$have_nas" = xyes; then
+ 	NAS_CFLAGS="$X_CFLAGS"
+-	NAS_LIBS="-laudio -lXau $X_LIBS"
++	NAS_LIBS="-laudio -lXau -lXt -lm $X_LIBS"
+ else
+ 	NAS_CFLAGS=""
+ 	NAS_LIBS=""

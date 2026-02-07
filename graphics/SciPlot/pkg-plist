@@ -1,0 +1,9 @@
+include/SciPlot/SciPlot.h
+include/SciPlot/SciPlotP.h
+include/SciPlot/SciPlotUtil.h
+lib/%%LIBNAME%%.a
+lib/%%LIBNAME%%.so
+lib/%%LIBNAME%%.so.0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/realtime
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sciplot

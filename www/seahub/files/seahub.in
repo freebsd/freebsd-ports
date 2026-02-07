@@ -1,0 +1,162 @@
+#!/bin/sh
+#
+# PROVIDE: seahub
+# REQUIRE: LOGIN cleanvar seafile
+# KEYWORD: shutdown
+#
+
+#
+# Add the following lines to /etc/rc.conf to enable seahub:
+#
+# seahub_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable seahub.
+# seafile_user (str): 		User to run seafile as
+#				Default to "%%USERS%%" created by the port
+# seafile_group (str):		Group to run seafile as
+#				Default to "%%GROUPS%%" created by the port
+# seafile_path (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%SEAFILE_SERVER%%.
+#				Set it to a different path.
+# seafile_ccnet (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%HAIWENDIR%%/ccnet.
+#				Set it to a different path.
+# seafile_conf (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%HAIWENDIR%%/conf.
+#				Set it to a different path.
+# seafile_datadir (str):	Set to "" by default will use the path
+#				in file %%PREFIX%%/%%HAIWENDIR%%/ccnet/seafile.ini.
+#				Set it to a different path.
+# seafile_logdir (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%HAIWENDIR%%/logs.
+#				Set it to a different path.
+# seahub_host (int):		Default is 0.0.0.0.
+# seahub_port (int):		Default is 8000.
+
+. /etc/rc.subr
+
+name="seahub"
+rcvar=seahub_enable
+
+load_rc_config $name
+
+extra_commands="clearsessions"
+start_cmd="seahub_start"
+restart_cmd="seahub_restart"
+stop_cmd="seahub_stop"
+clearsessions_cmd="seahub_clearsessions"
+
+: ${seahub_enable="NO"}
+: ${seafile_user:="%%USERS%%"}
+: ${seafile_group:="%%GROUPS%%"}
+: ${seafile_path:="%%PREFIX%%/%%SEAFILE_SERVER%%"}
+: ${seafile_ccnet:="%%PREFIX%%/%%HAIWENDIR%%/ccnet"}
+: ${seafile_conf:="%%PREFIX%%/%%HAIWENDIR%%/conf"}
+: ${seafile_datadir:="%%PREFIX%%/%%HAIWENDIR%%/seafile-data"}
+: ${seafile_logdir:="%%PREFIX%%/%%HAIWENDIR%%/logs"}
+: ${seahub_host:="0.0.0.0"}
+: ${seahub_port:="8000"}
+
+manage_py=${seafile_path}/seahub/manage.py
+gunicorn_exe=%%PREFIX%%/bin/gunicorn-%%PYTHON_VER%%
+gunicorn_conf=${seafile_conf}/gunicorn.conf.py
+pidfile=%%PREFIX%%/%%HAIWENDIR%%/pids/seahub.pid
+
+command="%%PREFIX%%/bin/%%PYTHON%%"
+
+required_dirs="${seafile_ccnet} ${seafile_conf} ${seafile_datadir} ${seafile_logdir}"
+
+validate_seahub_running() {
+	if pgrep -f "${manage_py}" 2>/dev/null 1>&2; then
+		echo "Seahub is already running."
+		exit 1;
+	fi
+}
+
+warning_if_seafile_not_running() {
+	if ! pgrep -f "seafile-controller -c ${seafile_ccnet}" 2>/dev/null 1>&2; then
+		echo
+		echo "Warning: seafile not running. Have you run \"service seafile start\" ?"
+		echo
+		exit 1
+	fi
+}
+
+prepare_env() {
+	if [ -z "$LANG" ]; then
+		echo "LANG is not set in ENV, set to en_US.UTF-8"
+		export LANG='en_US.UTF-8'
+	fi
+	if [ -z "$LC_ALL" ]; then
+		echo "LC_ALL is not set in ENV, set to en_US.UTF-8"
+		export LC_ALL='en_US.UTF-8'
+	fi
+
+	export CCNET_CONF_DIR=${seafile_ccnet}
+	export SEAFILE_CONF_DIR=${seafile_datadir}
+	export SEAFILE_CENTRAL_CONF_DIR=${seafile_conf}
+	export PYTHONPATH=${seafile_path}/seafile/lib/%%PYTHON%%/site-packages:${seafile_path}/seafile/lib64/%%PYTHON%%/site-packages:${seafile_path}/seahub/thirdpart:$PYTHONPATH
+	export SEAHUB_LOG_DIR=${seafile_logdir}
+	export SEAFILE_RPC_PIPE_PATH=${seafile_path}/runtime
+
+}
+
+before_start() {
+	prepare_env;
+	warning_if_seafile_not_running;
+	validate_seahub_running;
+}
+
+seahub_clearsessions() {
+	prepare_env;
+
+	echo "Start clear expired session records ..."
+	su -m "${seafile_user}" -c "$command \"${manage_py}\" clearsessions"
+
+	echo
+	echo "Done"
+	echo
+}
+
+seahub_start()
+{
+	if checkyesno seahub_enable; then
+		check_required_before;
+		before_start;
+		echo "Starting seahub at port ${seahub_port} ..."
+		su -m "${seafile_user}" -c "$command \"${gunicorn_exe}\" seahub.wsgi:application -c \"${gunicorn_conf}\" -b \"${seahub_host}:${seahub_port}\" --preload --chdir \"$seafile_path/seahub\""
+
+	# Ensure seahub is started successfully
+		sleep 5
+		if ! pgrep -f "seahub.wsgi:application" 2>/dev/null 1>&2; then
+			printf "\033[33mError:Seahub failed to start.\033[m\n"
+			echo "Please try to run \"./seahub.sh start\" again"
+			exit 1;
+		fi
+		echo
+		echo "Seahub is started"
+		echo
+		else
+			return 0
+	fi
+}
+
+seahub_stop() {
+	if [ -f ${pidfile} ]; then
+		pid=$(cat "${pidfile}")
+		echo "Stopping ${name}."
+		kill ${pid}
+		rm -f ${pidfile}
+		return 0
+	else
+		echo "Seahub is not running"
+	fi
+}
+
+seahub_restart()
+{
+	seahub_stop;
+	sleep 2
+	seahub_start;
+}
+
+run_rc_command "$1"

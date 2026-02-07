@@ -1,0 +1,12 @@
+%%PERL5_MAN3%%/Net::Whois::ARIN.3.gz
+%%PERL5_MAN3%%/Net::Whois::ARIN::AS.3.gz
+%%PERL5_MAN3%%/Net::Whois::ARIN::Contact.3.gz
+%%PERL5_MAN3%%/Net::Whois::ARIN::Customer.3.gz
+%%PERL5_MAN3%%/Net::Whois::ARIN::Network.3.gz
+%%PERL5_MAN3%%/Net::Whois::ARIN::Organization.3.gz
+%%SITE_PERL%%/Net/Whois/ARIN.pm
+%%SITE_PERL%%/Net/Whois/ARIN/AS.pm
+%%SITE_PERL%%/Net/Whois/ARIN/Contact.pm
+%%SITE_PERL%%/Net/Whois/ARIN/Customer.pm
+%%SITE_PERL%%/Net/Whois/ARIN/Network.pm
+%%SITE_PERL%%/Net/Whois/ARIN/Organization.pm

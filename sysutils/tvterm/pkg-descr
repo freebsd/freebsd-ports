@@ -1,0 +1,4 @@
+tvterm is an experimental terminal emulator widget and application
+based on the Turbo Vision framework. It was created for the purpose
+of demonstrating new features in Turbo Vision such as 24-bit color
+support.

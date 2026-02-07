@@ -1,0 +1,17 @@
+include/vlcpp/Dialog.hpp
+include/vlcpp/Equalizer.hpp
+include/vlcpp/EventManager.hpp
+include/vlcpp/Instance.hpp
+include/vlcpp/Internal.hpp
+include/vlcpp/Media.hpp
+include/vlcpp/MediaDiscoverer.hpp
+include/vlcpp/MediaLibrary.hpp
+include/vlcpp/MediaList.hpp
+include/vlcpp/MediaListPlayer.hpp
+include/vlcpp/MediaPlayer.hpp
+include/vlcpp/Picture.hpp
+include/vlcpp/RendererDiscoverer.hpp
+include/vlcpp/common.hpp
+include/vlcpp/structures.hpp
+include/vlcpp/vlc.hpp
+libdata/pkgconfig/libvlcpp.pc

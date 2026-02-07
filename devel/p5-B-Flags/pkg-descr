@@ -1,0 +1,7 @@
+Friendlier flags for B
+
+By default, "$foo->flags" when passed an object in the "B" class will
+produce a relatively meaningless number, which one would need to grovel
+through the Perl source code in order to do anything useful with. This
+module adds "flagspv" to the SV and op classes and "privatepv" to the op
+classes, which makes them easier to understand.

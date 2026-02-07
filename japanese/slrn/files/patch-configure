@@ -1,0 +1,19 @@
+*** configure.orig    Wed Oct  6 13:56:07 1999
+--- configure Wed Oct  6 13:56:10 1999
+***************
+*** 2488,2494 ****
+  
+  JD_Search_Dirs="$JD_Search_Dirs \
+                  $includedir,$libdir \
+!                 /usr/local/include,/usr/local/lib \
+  		/usr/include,/usr/lib \
+  		/usr/include/slang,/usr/lib \
+  		/usr/include/slang,/usr/lib/slang"
+--- 2488,2494 ----
+  
+  JD_Search_Dirs="$JD_Search_Dirs \
+                  $includedir,$libdir \
+!                 /usr/local/include/slang,/usr/local/lib \
+  		/usr/include,/usr/lib \
+  		/usr/include/slang,/usr/lib \
+  		/usr/include/slang,/usr/lib/slang"

@@ -1,0 +1,11 @@
+--- panels/keyboard/meson.build.orig	2025-02-04 21:56:28 UTC
++++ panels/keyboard/meson.build
+@@ -23,7 +23,7 @@ configure_file(
+   input: pc + '.in',
+   output: pc,
+   install: true,
+-  install_dir: join_paths(control_center_datadir, 'pkgconfig'),
++  install_dir: join_paths(control_center_prefix, 'libdata/pkgconfig'),
+   configuration: pc_conf
+ )
+ 

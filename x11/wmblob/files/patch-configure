@@ -1,0 +1,28 @@
+--- configure.orig	Mon Nov 29 23:58:10 2004
++++ configure	Mon Nov 29 23:59:20 2004
+@@ -2520,13 +2520,13 @@
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS=""
+   else
+-    CFLAGS="-g"
++    CFLAGS=""
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -4728,7 +4728,7 @@
+ 
+ 
+ # compiler flags
+-CFLAGS="$CFLAGS -O2 -Wall"
++CFLAGS="$CFLAGS"
+ 
+                               ac_config_files="$ac_config_files Makefile src/Makefile doc/Makefile"
+ 

@@ -1,0 +1,14 @@
+bin/i3blocks
+libexec/i3blocks/audaci3block
+libexec/i3blocks/backlight
+libexec/i3blocks/batterybar
+libexec/i3blocks/calendar
+libexec/i3blocks/checkupdates
+libexec/i3blocks/disk
+libexec/i3blocks/layout
+libexec/i3blocks/load
+libexec/i3blocks/memory
+libexec/i3blocks/mocp
+libexec/i3blocks/volume
+libexec/i3blocks/weather
+@sample etc/i3blocks.conf.sample

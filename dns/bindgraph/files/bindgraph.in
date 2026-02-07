@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: bindgraph
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable bindgraph:
+#
+# bindgraph_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="bindgraph"
+rcvar=bindgraph_enable
+
+command=%%PREFIX%%/sbin/${name}.pl
+command_args='> /dev/null 2>&1'
+command_interpreter="%%PREFIX%%/bin/perl"
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+    rm -f $pidfile
+}
+
+load_rc_config $name
+load_rc_config_var named chrootdir
+
+: ${bindgraph_enable="NO"}
+: ${bindgraph_pidfile="%%DATADIR%%/bindgraph.pid"}
+: ${bindgraph_flags="--logfile ${named_chrootdir}/var/log/query.log --daemon_rrd=%%DATADIR%% --daemon --daemon_pid=${bindgraph_pidfile}"}
+: ${bindgraph_user="%%BINDGRAPH_USER%%"}
+: ${bindgraph_chdir="%%DATADIR%%"}
+
+pidfile=${bindgraph_pidfile}
+
+run_rc_command "$1"

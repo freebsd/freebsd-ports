@@ -1,0 +1,26 @@
+@sample %%ETCDIR%%/fossmixer.conf.sample
+@sample %%ETCDIR%%/fossmixer.res.sample
+bin/fossmixer
+share/detroit/fonts/KEEPME
+share/detroit/fonts/NotoSans-Italic.ttf
+share/detroit/fonts/NotoSans-Regular.ttf
+share/detroit/widgets/button_1_1.widget
+share/detroit/widgets/button_2_1.widget
+share/detroit/widgets/button_3_1.widget
+share/detroit/widgets/knob_1_1.widget
+share/detroit/widgets/knob_1_2.widget
+share/detroit/widgets/knob_2_1.widget
+share/detroit/widgets/knob_2_2.widget
+share/detroit/widgets/knob_3_1.widget
+share/detroit/widgets/knob_3_2.widget
+share/detroit/widgets/lamp_1_1.widget
+share/detroit/widgets/led_1_1.widget
+share/detroit/widgets/led_2_1.widget
+share/detroit/widgets/led_3_1.widget
+share/detroit/widgets/slide_1_1.widget
+share/detroit/widgets/slide_1_2.widget
+share/detroit/widgets/slide_2_1.widget
+share/detroit/widgets/slide_2_2.widget
+share/detroit/widgets/slide_3_1.widget
+share/detroit/widgets/slide_3_2.widget
+share/fossmixer/fossmixer_bg.tga

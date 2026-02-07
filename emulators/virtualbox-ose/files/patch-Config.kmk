@@ -1,0 +1,234 @@
+--- Config.kmk.orig	2021-01-07 15:31:21 UTC
++++ Config.kmk
+@@ -469,11 +469,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
+  # Enable OSS audio support.
+  VBOX_WITH_AUDIO_OSS = 1
+ endif
+-if1of ($(KBUILD_TARGET), linux)
++if1of ($(KBUILD_TARGET), freebsd linux)
+  # Enable ALSA audio support.
+  VBOX_WITH_AUDIO_ALSA = 1
+ endif
+-if1of ($(KBUILD_TARGET), linux)
++if1of ($(KBUILD_TARGET), freebsd linux)
+  # Enable PulseAudio audio support.
+  VBOX_WITH_AUDIO_PULSE = 1
+ endif
+@@ -489,11 +489,11 @@ VBOX_WITH_AUDIO_MMNOTIFICATION_CLIENT = 1
+ # (disabled with 6.1, since it's not complete/useful enough)
+ VBOX_WITH_PCI_PASSTHROUGH =
+ # Enable statically linked dbus support.
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), freebsd linux solaris)
+  VBOX_WITH_DBUS = 1
+ endif
+ # Enable building PAM modules.
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), freebsd linux solaris)
+  VBOX_WITH_PAM = 1
+ endif
+ # Enable internal networking.
+@@ -501,7 +501,7 @@ VBOX_WITH_INTERNAL_NETWORKING = 1
+ # Enable vmsvga (svga2) graphics device variant, 2D part
+ VBOX_WITH_VMSVGA = 1
+ # Enable vmsvga (svga2) graphics device variant, 3D part
+-if1of ($(KBUILD_TARGET), darwin linux win)
++if1of ($(KBUILD_TARGET), darwin freebsd linux win)
+  VBOX_WITH_VMSVGA3D = 1
+ endif
+ # Enable the generic 3D settings support if at least one 3D capable solution is enabled
+@@ -647,7 +647,7 @@ VBOX_WITH_MAIN_USB_ID_DATABASE = 1
+ #endif
+ # Set this to prefix all C symbols in XPCOM, to avoid dynamic linking problems
+ # caused by our XPCOM library polluting the symbol namespace for system libs.
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), freebsd linux solaris)
+  VBOX_WITH_XPCOM_NAMESPACE_CLEANUP = 1
+ endif
+ # The webservices api.
+@@ -1064,10 +1064,6 @@ ifeq ($(KBUILD_TARGET),darwin)
+  VBOX_WITH_VBOXSDL=
+ endif
+ 
+-ifeq ($(KBUILD_TARGET),freebsd)
+- VBOX_WITH_DOCS=
+-endif
+-
+ ifeq ($(KBUILD_TARGET),haiku)
+  # Don't bother with SDL ttf for now.
+  VBOX_WITH_SECURELABEL=
+@@ -1228,7 +1224,7 @@ ifdef VBOX_OSE
+  VBOX_WITH_KCHMVIEWER=
+  VBOX_WITH_PLUGIN_CRYPT=
+  VBOX_WITH_DRAG_AND_DROP_PROMISES=
+- ifn1of ($(KBUILD_TARGET), linux)
++ ifn1of ($(KBUILD_TARGET), freebsd linux)
+   VBOX_WITH_DOCS=
+   VBOX_WITH_DOCS_PACKING=
+  endif
+@@ -4928,7 +4924,7 @@ define TOOL_FREEBSDKMODLD_LINK_SYSMOD_CMDS
+ 		| xargs -J% objcopy % $(outbase).kld
+ 
+ # Link the final .ko (a shared object).
+-	ld $(flags) -Bshareable -o $(out) $(outbase).kld
++    ld $(flags) -Bshareable -znotext -o $(out) $(outbase).kld
+ endef
+  endif # x86
+ 
+@@ -5205,6 +5201,7 @@ TEMPLATE_VBOXR3EXE_LDFLAGS.x86         = -m32
+ TEMPLATE_VBOXR3EXE_LDFLAGS.amd64       = -m64
+ TEMPLATE_VBOXR3EXE_LDFLAGS.sparc32     = -m32
+ TEMPLATE_VBOXR3EXE_LDFLAGS.sparc64     = -m64
++TEMPLATE_VBOXR3EXE_LDFLAGS.freebsd     = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
+ TEMPLATE_VBOXR3EXE_LDFLAGS.linux       = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
+ TEMPLATE_VBOXR3EXE_LDFLAGS.solaris     = -Wl,-z,ignore # same as VBOX_LD_as_needed
+ TEMPLATE_VBOXR3EXE_LDFLAGS.debug       = $(VBOX_GCC_SANITIZER_FLAGS) $(VBOX_GCC_SANITIZER_LDFLAGS)
+@@ -5238,10 +5235,18 @@ TEMPLATE_VBOXR3EXE_LIBPATH            += \
+ TEMPLATE_VBOXR3EXE_CFLAGS             += -fno-pic
+ TEMPLATE_VBOXR3EXE_CXXFLAGS           += -fno-pic
+ TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
+- else if1of ($(KBUILD_TARGET), freebsd openbsd)
++ else ifeq ($(KBUILD_TARGET),freebsd)
+ TEMPLATE_VBOXR3EXE_TOOL                = GXX3
+ TEMPLATE_VBOXR3EXE_LIBS                = pthread
++TEMPLATE_VBOXR3EXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
+ TEMPLATE_VBOXR3EXE_INCS               += \
++	/usr/local/include
++TEMPLATE_VBOXR3EXE_LIBPATH            += \
++	/usr/local/lib
++ else ifeq ($(KBUILD_TARGET),openbsd)
++TEMPLATE_VBOXR3EXE_TOOL                = GXX3
++TEMPLATE_VBOXR3EXE_LIBS                = pthread
++TEMPLATE_VBOXR3EXE_INCS               += \
+ 	/usr/include \
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+@@ -5273,6 +5278,7 @@ TEMPLATE_VBOXR3EXE_CXXFLAGS.kprofile   = $(TEMPLATE_VB
+   TEMPLATE_VBOXR3EXE_LDFLAGS          += '$(VBOX_GCC_RPATH_OPT)$(VBOX_WITH_RELATIVE_RUNPATH)'
+  endif
+  ifdef VBOX_WITH_ORIGIN
++  TEMPLATE_VBOXR3EXE_LDFLAGS.freebsd  += $(VBOX_GCC_ORIGIN_OPT)
+   TEMPLATE_VBOXR3EXE_LDFLAGS.linux    += $(VBOX_GCC_ORIGIN_OPT)
+  endif
+ endif
+@@ -5412,7 +5418,7 @@ ifeq ($(KBUILD_TARGET),win)
+  	$(PATH_TOOL_$(TEMPLATE_VBOXR3STATIC_TOOL.win.amd64)_LIB)/libcmt$(VBOX_VCC_CRT_TYPE).lib \
+  	$(PATH_TOOL_$(TEMPLATE_VBOXR3STATIC_TOOL.win.amd64)_LIB)/libcpmt$(VBOX_VCC_CRT_TYPE).lib \
+  	$(PATH_TOOL_$(TEMPLATE_VBOXR3STATIC_TOOL.win.amd64)_LIB)/oldnames.lib
+-else ifn1of ($(KBUILD_TARGET), darwin linux solaris)
++else ifn1of ($(KBUILD_TARGET), darwin freebsd linux solaris)
+  # The gcc guys sans darwin, linux and solaris (don't depend on statically compiled system libs there)
+  TEMPLATE_VBOXR3STATIC_CFLAGS          = $(TEMPLATE_VBOXR3EXE_CFLAGS) -static
+  TEMPLATE_VBOXR3STATIC_CXXFLAGS        = $(TEMPLATE_VBOXR3EXE_CXXFLAGS) -static
+@@ -5557,6 +5563,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
+ else ifn1of ($(KBUILD_TARGET), os2 solaris)
+  # We want to keep the RPATH on Solaris to be able to find libgcc_1/libstdc++ within $(VBOX_WITH_RUNPATH)
+  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
++ TEMPLATE_VBoxR3HardenedTstDll_LDFLAGS.freebsd = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBoxR3TstDll_LDFLAGS.freebsd))
+  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
+ endif
+ 
+@@ -5584,6 +5591,7 @@ TEMPLATE_VBoxR3HardenedTstDll_INST = $(INST_TESTCASE)
+  TEMPLATE_VBoxR3HardenedTstDll_LDFLAGS.win = $(TEMPLATE_VBoxR3TstDll_LDFLAGS.win) -IntegrityCheck
+ ifn1of ($(KBUILD_TARGET), win os2)
+  TEMPLATE_VBoxR3HardenedTstDll_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBoxR3TstDll_LDFLAGS))
++ TEMPLATE_VBoxR3HardenedTstDll_LDFLAGS.freebsd = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBoxR3TstDll_LDFLAGS.freebsd))
+  TEMPLATE_VBoxR3HardenedTstDll_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBoxR3TstDll_LDFLAGS.linux))
+ endif
+ 
+@@ -5606,6 +5614,7 @@ ifndef VBOX_WITH_HARDENING
+   TEMPLATE_VBoxR3SetUidToRoot_LDFLAGS += '$(VBOX_GCC_RPATH_OPT)$(VBOX_WITH_RELATIVE_RUNPATH)'
+  endif
+  ifdef VBOX_WITH_ORIGIN
++  TEMPLATE_VBoxR3SetUidToRoot_LDFLAGS.freebsd += $(VBOX_GCC_ORIGIN_OPT)
+   TEMPLATE_VBoxR3SetUidToRoot_LDFLAGS.linux += $(VBOX_GCC_ORIGIN_OPT)
+  endif
+ endif
+@@ -6132,10 +6141,19 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
+  else ifeq ($(KBUILD_TARGET),haiku)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
+ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME) network stdc++ supc++
+- else if1of ($(KBUILD_TARGET), freebsd openbsd)
++ else ifeq ($(KBUILD_TARGET),freebsd)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
+ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
++TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd     = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
++TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
+ TEMPLATE_VBOXMAINEXE_INCS               += \
++	/usr/local/include
++TEMPLATE_VBOXMAINEXE_LIBPATH            += \
++	/usr/local/lib
++ else ifeq ($(KBUILD_TARGET),openbsd)
++TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
++TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
++TEMPLATE_VBOXMAINEXE_INCS               += \
+ 	/usr/include \
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+@@ -6167,6 +6185,7 @@ TEMPLATE_VBOXMAINEXE_LDFLAGS            += '$(VBOX_GCC
+ TEMPLATE_VBOXMAINEXE_LDFLAGS            += '$(VBOX_GCC_RPATH_OPT)$(VBOX_WITH_RELATIVE_RUNPATH)'
+  endif
+  ifdef VBOX_WITH_ORIGIN
++TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd    += $(VBOX_GCC_ORIGIN_OPT)
+ TEMPLATE_VBOXMAINEXE_LDFLAGS.linux      += $(VBOX_GCC_ORIGIN_OPT)
+  endif
+ 
+@@ -6735,13 +6754,11 @@ ifdef VBOX_WITH_QTGUI
+    TEMPLATE_VBOXQTGUIEXE_LIBPATH += \
+ 	$(VBOX_LIBPATH_X11)
+    ifeq ($(KBUILD_TARGET),freebsd)
++    TEMPLATE_VBOXQTGUIEXE_LDFLAGS += -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
++    TEMPLATE_VBOXQTGUIEXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
+     TEMPLATE_VBOXQTGUIEXE_INCS += \
+-	/usr/include \
+-	/usr/X11R6/include \
+ 	/usr/local/include
+     TEMPLATE_VBOXQTGUIEXE_LIBPATH += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+    endif
+    ifeq ($(KBUILD_TARGET),solaris)
+@@ -6988,10 +7005,17 @@ TEMPLATE_VBoxBldProg_TOOL                = GXX3
+ TEMPLATE_VBoxBldProg_LIBS                = network iconv
+ TEMPLATE_VBoxBldProg_LIBPATH            += \
+ 	/boot/common/lib
+- else if1of ($(KBUILD_HOST), freebsd openbsd)
++ else ifeq ($(KBUILD_HOST),freebsd)
+ TEMPLATE_VBoxBldProg_TOOL                = GXX3
+ TEMPLATE_VBoxBldProg_LIBS                = pthread
+ TEMPLATE_VBoxBldProg_INCS               += \
++	/usr/local/include
++TEMPLATE_VBoxBldProg_LIBPATH            += \
++	/usr/local/lib
++ else ifeq ($(KBUILD_HOST),openbsd)
++TEMPLATE_VBoxBldProg_TOOL                = GXX3
++TEMPLATE_VBoxBldProg_LIBS                = pthread
++TEMPLATE_VBoxBldProg_INCS               += \
+ 	/usr/include \
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+@@ -7115,6 +7139,7 @@ else # the gcc guys
+  # Do not inherit sanitizer flags from VBOXR3EXE in guest executables.  Deal with them separately.
+  TEMPLATE_VBOXGUESTR3EXE_CXXFLAGS.debug = $(NO_SUCH_VARIABLE)
+  TEMPLATE_VBOXGUESTR3EXE_CFLAGS.debug = $(NO_SUCH_VARIABLE)
++ TEMPLATE_VBOXGUESTR3EXE_LDFLAGS.freebsd = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.freebsd))
+  TEMPLATE_VBOXGUESTR3EXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
+  TEMPLATE_VBOXGUESTR3EXE_LDFLAGS.debug = $(NO_SUCH_VARIABLE)
+  TEMPLATE_VBOXGUESTR3EXE_LDFLAGS  = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
+@@ -7138,6 +7163,7 @@ TEMPLATE_VBOXGUESTR3EXE_CXXFLAGS.linux    = \
+ 	$(VBOX_GCC_fno-stack-protector)
+ TEMPLATE_VBOXGUESTR3EXE_CFLAGS.linux      = $(TEMPLATE_VBOXGUESTR3EXE_CXXFLAGS.linux)
+ # The GNU_HASH ELF tag is not supported by older systems.
++TEMPLATE_VBOXGUESTR3EXE_LDFLAGS.freebsd    += $(VBOX_LD_hash_style_sysv)
+ TEMPLATE_VBOXGUESTR3EXE_LDFLAGS.linux      += $(VBOX_LD_hash_style_sysv)
+ 
+ #
+@@ -7345,6 +7371,7 @@ TEMPLATE_VBOXGUESTR3XF86MOD_LIBS.$(KBUILD_TYPE)      =
+ TEMPLATE_VBOXGUESTR3XF86MOD_LIBS.$(KBUILD_TARGET)    = $(NO_SUCH_VARIABLE)
+ TEMPLATE_VBOXGUESTR3XF86MOD_LDFLAGS.$(KBUILD_TARGET) = $(NO_SUCH_VARIABLE)
+ # The GNU_HASH ELF tag is not supported by older glibc dynamic linkers.
++TEMPLATE_VBOXGUESTR3XF86MOD_LDFLAGS.freebsd = $(subst -Wl$(COMMA),,$(VBOX_LD_hash_style_sysv))
+ TEMPLATE_VBOXGUESTR3XF86MOD_LDFLAGS.linux = $(subst -Wl$(COMMA),,$(VBOX_LD_hash_style_sysv))
+ TEMPLATE_VBOXGUESTR3XF86MOD_LDFLAGS.$(KBUILD_TYPE)   = $(NO_SUCH_VARIABLE)
+ TEMPLATE_VBOXGUESTR3XF86MOD_LDFLAGS          = -r

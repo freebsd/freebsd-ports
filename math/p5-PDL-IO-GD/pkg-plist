@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/PDL/IO/GD.pm
+%%SITE_ARCH%%/auto/PDL/IO/GD/GD.so
+%%PERL5_MAN3%%/PDL::IO::GD.3.gz

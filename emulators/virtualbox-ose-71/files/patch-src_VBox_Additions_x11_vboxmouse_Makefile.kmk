@@ -1,0 +1,29 @@
+--- src/VBox/Additions/x11/vboxmouse/Makefile.kmk.orig	2025-10-16 14:25:37 UTC
++++ src/VBox/Additions/x11/vboxmouse/Makefile.kmk
+@@ -237,10 +237,22 @@ ifdef VBOX_USE_SYSTEM_XORG_HEADERS
+ 
+ 
+ ifdef VBOX_USE_SYSTEM_XORG_HEADERS
+- # As vboxmouse_drv is not needed at all for X.Org Server 1.7 and later do not
+- # build it in this case.
+- DLLS    := $(filter-out vboxmouse_drv_%,$(DLLS))
+- SYSMODS := $(filter-out vboxmouse_drv%,$(SYSMODS))
++ ifeq ($(KBUILD_TARGET),freebsd)
++  DLLS += vboxmouse_drv_system
++  vboxmouse_drv_system_TEMPLATE = VBoxGuestR3XOrgMod
++  vboxmouse_drv_system_DEFS := $(vboxmouse_drv_70_DEFS) NO_ANSIC
++  vboxmouse_drv_system_INCS := \
++	/usr/local/include/pixman-1 \
++	/usr/local/include/xorg \
++	$(PATH_SUB_CURRENT)
++  vboxmouse_drv_system_SOURCES = \
++	vboxmouse.c
++ else
++  # As vboxmouse_drv is not needed at all for X.Org Server 1.7 and later do not
++  # build it in this case.
++   DLLS    := $(filter-out vboxmouse_drv_%,$(DLLS))
++  SYSMODS := $(filter-out vboxmouse_drv%,$(SYSMODS))
++ endif
+ endif
+ 
+ 

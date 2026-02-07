@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Lingua/Stem/Snowball.pm
+%%SITE_ARCH%%/auto/Lingua/Stem/Snowball/Snowball.so
+%%PERL5_MAN3%%/Lingua::Stem::Snowball.3.gz

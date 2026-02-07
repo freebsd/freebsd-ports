@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2015-12-04 19:51:35 UTC
++++ Makefile.in
+@@ -38392,6 +38392,14 @@ all-target-libgcc: stage_current
+ TARGET-target-libgcc=all
+ maybe-all-target-libgcc: all-target-libgcc
+ all-target-libgcc: configure-target-libgcc
++	cp ${HOST_SUBDIR}/gcc/libgcc.mvars gcc/
++	cp ${HOST_SUBDIR}/gcc/tconfig.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/auto-host.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/tm.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/options.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/insn-constants.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/insn-modes.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/version.h libgcc/
+ 	@r=`${PWD_COMMAND}`; export r; \
+ 	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
+ 	$(NORMAL_TARGET_EXPORTS)  \

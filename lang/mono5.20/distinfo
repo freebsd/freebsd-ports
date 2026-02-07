@@ -1,0 +1,5 @@
+TIMESTAMP = 1563832168
+SHA256 (mono-5.20.1.34.tar.bz2) = cd91d44cf62515796ba90dfdc274bb33471c25a2f1a262689a3bdc0a672b7c8b
+SIZE (mono-5.20.1.34.tar.bz2) = 246845984
+SHA256 (monolite-linux-1051000004-latest.tar.gz) = 209804685ba87ecc5838addc8f089e858bfad4c7627c26d118f4f6889648e0cd
+SIZE (monolite-linux-1051000004-latest.tar.gz) = 4820712

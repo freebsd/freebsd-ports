@@ -1,0 +1,11 @@
+--- configure.ac.orig	2025-01-26 11:45:07 UTC
++++ configure.ac
+@@ -39,7 +39,7 @@ AS_IF([test "x$enable_sse2" != "xno"], [
+    if test "$m4ri_wrapword" = "yes"; then
+       AC_MSG_ERROR([SSE2 cannot be supported when wrapping word in a C++ class.])
+    fi
+-   AX_EXT()
++#   AX_EXT()
+ ])
+ if test x"$ax_cv_have_sse2_ext" = x"yes"; then
+   M4RI_HAVE_SSE2=1

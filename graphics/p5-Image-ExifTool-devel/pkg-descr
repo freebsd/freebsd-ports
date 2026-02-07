@@ -1,0 +1,10 @@
+ExifTool is a highly customizable Perl script and module for reading,
+writing and editing meta information in a wide variety of files.
+
+ExifTool supports many different metadata formats including EXIF, GPS, IPTC,
+XMP, JFIF, GeoTIFF, ICC Profile, Photoshop IRB, FlashPix, AFCP and ID3,
+Lyrics3, as well as the maker notes of many digital cameras by Canon, Casio,
+DJI, FLIR, FujiFilm, GE, GoPro, HP, JVC/Victor, Kodak, Leaf,
+Minolta/Konica-Minolta, Motorola, Nikon, Nintendo, Olympus/Epson,
+Panasonic/Leica, Pentax/Asahi, Phase One, Reconyx, Ricoh, Samsung, Sanyo,
+Sigma/Foveon and Sony.

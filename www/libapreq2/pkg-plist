@@ -1,0 +1,16 @@
+bin/apreq2-config
+%%APACHEINCLUDEDIR%%/apreq2/apreq_module_apache2.h
+include/apreq2/apreq.h
+include/apreq2/apreq_cookie.h
+include/apreq2/apreq_error.h
+include/apreq2/apreq_module.h
+include/apreq2/apreq_param.h
+include/apreq2/apreq_parser.h
+include/apreq2/apreq_util.h
+include/apreq2/apreq_version.h
+lib/libapreq2.a
+lib/libapreq2.so
+lib/libapreq2.so.3
+lib/libapreq2.so.3.8.1
+%%APACHEMODDIR%%/mod_apreq2.a
+%%APACHEMODDIR%%/mod_apreq2.so

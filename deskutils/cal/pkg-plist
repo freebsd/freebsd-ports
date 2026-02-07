@@ -1,0 +1,4 @@
+bin/cal
+@sample %%ETCDIR%%/cal.col.sample
+@sample %%ETCDIR%%/cal.dat.sample
+share/man/man1/cal.1.gz

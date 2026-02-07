@@ -1,0 +1,5 @@
+TIMESTAMP = 1762716289
+SHA256 (go/textproc_jqp/jqp-v0.8.0/v0.8.0.mod) = 4f747c2d7580daa7d4fbc6fc24ea7a28e0c2514c9f81f54d6d48bde7d2b82016
+SIZE (go/textproc_jqp/jqp-v0.8.0/v0.8.0.mod) = 2091
+SHA256 (go/textproc_jqp/jqp-v0.8.0/v0.8.0.zip) = eee0cf4b9bdc74cebfb363c68ad84d92b4de22adcea689a9849e003dc1f6a30f
+SIZE (go/textproc_jqp/jqp-v0.8.0/v0.8.0.zip) = 49262

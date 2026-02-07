@@ -1,0 +1,107 @@
+--- src/sv_user.c.orig	2007-12-28 07:25:47.000000000 +0800
++++ src/sv_user.c	2013-09-05 14:53:30.000000000 +0800
+@@ -363,7 +363,7 @@ void SV_Info_f(void){
+ 			continue;  //only print serverinfo cvars
+ 			
+ 		snprintf(line, MAX_STRING_CHARS, "%s %s\n", cvar->name, cvar->string);
+-		SV_ClientPrintf(sv_client, PRINT_MEDIUM, line);
++		SV_ClientPrintf(sv_client, PRINT_MEDIUM, "%s", line);
+ 	}
+ }
+ 
+--- src/cl_main.c.orig	2007-12-28 07:25:47.000000000 +0800
++++ src/cl_main.c	2013-09-05 14:53:30.000000000 +0800
+@@ -23,7 +23,7 @@
+ 
+ #include "client.h"
+ 
+-cvar_t *rcon_password;
++extern cvar_t *rcon_password;
+ cvar_t *rcon_address;
+ 
+ cvar_t *cl_noskins;
+@@ -43,9 +43,6 @@ cvar_t *cl_shownet;
+ cvar_t *cl_showmiss;
+ cvar_t *cl_showclamp;
+ 
+-cvar_t *paused;
+-cvar_t *timedemo;
+-
+ cvar_t *cl_vwep;
+ 
+ cvar_t *cl_railtrailcolor;
+@@ -691,7 +691,7 @@ void CL_Ping_f(void){
+ 		}
+ 		
+ 		if(!adr.port) adr.port = BigShort(PORT_SERVER);
+-		Netchan_OutOfBandPrint(NS_CLIENT, adr, va("info %i", PROTOCOL_34));
++		Netchan_OutOfBandPrint(NS_CLIENT, adr, "info %i", PROTOCOL_34);
+ 		return;
+ 	}
+ 	
+@@ -700,7 +700,7 @@ void CL_Ping_f(void){
+ 	
+ 	adr.type = NA_IP_BROADCAST;
+ 	adr.port = BigShort(PORT_SERVER);
+-	Netchan_OutOfBandPrint(NS_CLIENT, adr, va("info %i", PROTOCOL_34));
++	Netchan_OutOfBandPrint(NS_CLIENT, adr, "info %i", PROTOCOL_34);
+ }
+ 
+ 
+--- src/cl_keys.c.orig	2007-12-28 07:25:47.000000000 +0800
++++ src/cl_keys.c	2013-09-05 14:53:30.000000000 +0800
+@@ -143,7 +143,7 @@ void CompleteCommand(void){
+ 	cvar = Cvar_CompleteVariable(partial, &cvars);  //partial cvar lookup
+ 	if(cvar && !strcmp(cvar, partial)) goto append;  //exact match
+ 	
+-	if(cmds == 1 && cvars == 0) cmd = cmd;
++	if(cmds == 1 && cvars == 0);
+ 	else if(cmds == 0 && cvars == 1) cmd = cvar;
+ 	else cmd = NULL;
+ 	
+--- src/cl_ents.c.orig	2007-12-28 07:25:47.000000000 +0800
++++ src/cl_ents.c	2014-11-30 22:57:36.000000000 +0800
+@@ -168,9 +168,9 @@ void CL_DeltaEntity(frame_t *frame, int 
+ 			|| state->modelindex2 != ent->current.modelindex2
+ 			|| state->modelindex3 != ent->current.modelindex3
+ 			|| state->modelindex4 != ent->current.modelindex4
+-			|| abs(state->origin[0] - ent->current.origin[0]) > 512
+-			|| abs(state->origin[1] - ent->current.origin[1]) > 512
+-			|| abs(state->origin[2] - ent->current.origin[2]) > 512
++			|| fabsf(state->origin[0] - ent->current.origin[0]) > 512
++			|| fabsf(state->origin[1] - ent->current.origin[1]) > 512
++			|| fabsf(state->origin[2] - ent->current.origin[2]) > 512
+ 			|| state->event == EV_PLAYER_TELEPORT
+ 			|| state->event == EV_OTHER_TELEPORT
+ 	  ){
+@@ -912,7 +912,7 @@ void CL_CalcViewValues(void){
+ 	ops = &oldframe->playerstate;
+ 	
+ 	// see if the player entity was teleported this frame
+-	if(fabs(ops->pmove.origin[0] - ps->pmove.origin[0]) > 256 * 8
++	if(abs(ops->pmove.origin[0] - ps->pmove.origin[0]) > 256 * 8
+ 			|| abs(ops->pmove.origin[1] - ps->pmove.origin[1]) > 256 * 8
+ 			|| abs(ops->pmove.origin[2] - ps->pmove.origin[2]) > 256 * 8)
+ 		ops = ps;  // don't interpolate
+--- src/vanctf/m_move.c.orig	2007-12-28 07:25:45.000000000 +0800
++++ src/vanctf/m_move.c	2014-11-30 22:58:47.000000000 +0800
+@@ -370,7 +370,7 @@ void SV_NewChaseDir(edict_t *actor, edic
+ 	}
+ 	
+ // try other directions
+-	if(((rand()&3) & 1) ||  abs(deltay) > abs(deltax)){
++	if(((rand()&3) & 1) ||  fabsf(deltay) > fabsf(deltax)){
+ 		tdir = d[1];
+ 		d[1] = d[2];
+ 		d[2] = tdir;
+--- src/qmass/g_cmds.c.orig	2007-12-28 07:25:44.000000000 +0800
++++ src/qmass/g_cmds.c	2013-09-05 14:53:30.000000000 +0800
+@@ -724,7 +724,7 @@ void Cmd_Say_f(edict_t *ent, qboolean te
+ 	
+ 	if(chatlog != NULL){  //write chatlog
+ 		
+-		fprintf(chatlog, text);
++		fprintf(chatlog, "%s", text);
+ 		
+ 		fflush(chatlog);
+ 	}

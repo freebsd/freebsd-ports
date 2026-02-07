@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2021-12-18 04:22:38 UTC
++++ Makefile.in
+@@ -77,7 +77,7 @@ export QT_CPPFLAGS = @QTDEFINES@ @QTINCLUDES@
+ export LINKQT = @QTLIBS@
+ export MPFR_CPPFLAGS = @GMP_CPPFLAGS@ @MPFR_CPPFLAGS@
+ ifeq "@enable_mpfr@" "yes"
+-export LINKMPFR = @MPFR_LIB_PATH@ @GMP_LIB_PATH@ @MPFR_LINK@ @GMP_LINK@
++export LINKMPFR = $(FREEBSD_LDFLAGS) @MPFR_LIB_PATH@ @GMP_LIB_PATH@ @MPFR_LINK@ @GMP_LINK@
+ else
+ export LINKMPFR =
+ endif

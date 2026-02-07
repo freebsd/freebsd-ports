@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/FreeBSD::Ports.3.gz
+%%PERL5_MAN3%%/FreeBSD::Ports::Port.3.gz
+%%SITE_PERL%%/FreeBSD/Ports.pm
+%%SITE_PERL%%/FreeBSD/Ports/Port.pm

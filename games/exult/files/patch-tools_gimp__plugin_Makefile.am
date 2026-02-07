@@ -1,0 +1,20 @@
+--- tools/gimp_plugin/Makefile.am.orig	2025-05-11 22:33:59 UTC
++++ tools/gimp_plugin/Makefile.am
+@@ -27,13 +27,13 @@ install-exec-local:
+ 
+ if GIMP3_PLUGIN
+ install-exec-local:
+-	install -d $(DESTDIR)$(GIMP_PLUGIN_PREFIX)/u7shp
+-	install -c $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)/u7shp
++	$(MKDIR_P) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
++	$(INSTALL_PROGRAM) $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
+ else
+ if GIMP2_PLUGIN
+ install-exec-local:
+-	install -d $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
+-	install -c $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
++	$(MKDIR_P) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
++	$(INSTALL_PROGRAM) $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
+ else
+ install-exec-local:
+ endif

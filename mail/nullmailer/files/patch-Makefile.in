@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2018-10-12 20:49:36 UTC
++++ Makefile.in
+@@ -278,7 +278,7 @@ includedir = @includedir@
+ infodir = @infodir@
+ install_sh = @install_sh@
+ libdir = @libdir@
+-libexecdir = @libexecdir@
++libexecdir = @libexecdir@/nullmailer
+ localedir = @localedir@
+ localstatedir = @localstatedir@/spool/nullmailer
+ mandir = @mandir@
+@@ -793,8 +793,8 @@ install-root:
+ 	chown nullmail $(DESTDIR)$(localstatedir)/*
+ 	chown nullmail $(DESTDIR)$(sbindir)/nullmailer-queue
+ 	chmod u+s $(DESTDIR)$(sbindir)/nullmailer-queue
+-	chown nullmail $(DESTDIR)$(bindir)/mailq
+-	chmod u+s $(DESTDIR)$(bindir)/mailq
++	chown nullmail $(DESTDIR)$(libexecdir)/mailq
++	chmod u+s $(DESTDIR)$(libexecdir)/mailq
+ 
+ dist-hook:
+ 	sed -e s/@VERSION\@/@VERSION@/ \

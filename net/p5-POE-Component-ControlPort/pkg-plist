@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/POE::Component::ControlPort.3.gz
+%%PERL5_MAN3%%/POE::Component::ControlPort::Command.3.gz
+%%PERL5_MAN3%%/POE::Component::ControlPort::DefaultCommands.3.gz
+%%SITE_PERL%%/POE/Component/ControlPort.pm
+%%SITE_PERL%%/POE/Component/ControlPort/Command.pm
+%%SITE_PERL%%/POE/Component/ControlPort/DefaultCommands.pm

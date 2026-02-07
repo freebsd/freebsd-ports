@@ -1,0 +1,12 @@
+A ready to go Wayland status bar for Hyprland.
+
+- Ready to Go
+  Ashell is ready to use out of the box. Just install it, start using
+  it, and customize only what you need.
+- Everything You Need, Built In
+  Ashell comes with essential modules like workspaces, time, battery,
+  network, and more. No need to hunt for plugins or write custom
+  scripts.
+- Powered by iced
+  A cross-platform GUI library for Rust focused on simplicity and
+  type-safety.

@@ -1,0 +1,3 @@
+pybloom is a Python implementation of the bloom filter probabilistic data
+structure. The module also provides a Scalable Bloom Filter that allows a
+bloom filter to grow without knowing the original set size.

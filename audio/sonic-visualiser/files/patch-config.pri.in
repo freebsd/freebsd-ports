@@ -1,0 +1,11 @@
+--- config.pri.in.orig	2020-04-16 19:38:03 UTC
++++ config.pri.in
+@@ -17,6 +17,8 @@ CONFIG += @CXXSTANDARD@
+ 
+ linux*:LIBS += -L$$PWD -lbase -lasound -ldl 
+ 
++LIBS += -L$$PWD -lbase -lvamp-hostsdk
++
+ macx*:DEFINES += HAVE_COREAUDIO
+ macx*:LIBS += -framework CoreAudio -framework CoreMidi -framework AudioUnit -framework AudioToolbox -framework CoreFoundation -framework CoreServices
+ 

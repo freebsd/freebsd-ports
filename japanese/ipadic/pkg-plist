@@ -1,0 +1,12 @@
+share/chasen/dic/ipadic/Makefile.bat
+share/chasen/dic/ipadic/cforms.cha
+share/chasen/dic/ipadic/chadic.da
+share/chasen/dic/ipadic/chadic.dat
+share/chasen/dic/ipadic/chadic.lex
+share/chasen/dic/ipadic/chasenrc
+@sample share/chasen/dic/ipadic/chasenrc.sample
+share/chasen/dic/ipadic/connect.cha
+share/chasen/dic/ipadic/ctypes.cha
+share/chasen/dic/ipadic/grammar.cha
+share/chasen/dic/ipadic/matrix.cha
+share/chasen/dic/ipadic/table.cha

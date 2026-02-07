@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2004-08-13 07:04:21 UTC
++++ Makefile.in
+@@ -27,9 +27,9 @@ LIBSX=$(LIBS) @X_LIBS@ -lXt @X_PRE_LIBS@
+ 
+ #CC=/compat/linux/usr/bin/gcc
+ CC=@CC@
+-CFLAGS=-O3 $(INCLUDES) $(DEFS)
++CFLAGS+=$(INCLUDES) $(DEFS)
+ CFLAGSX=$(CFLAGS) @X_CFLAGS@
+-LDFLAGS=-s
++LDFLAGS=
+ 
+ LINT=lint
+ # LINT=$(CC) -c -Wall -Wshadow -Wpointer-arith

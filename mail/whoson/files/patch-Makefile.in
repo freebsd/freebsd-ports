@@ -1,0 +1,25 @@
+--- Makefile.in.orig	2009-04-08 12:35:09 UTC
++++ Makefile.in
+@@ -336,7 +336,7 @@ whosond_SOURCES = whosond.c mainloop.c l
+ nodist_whosond_SOURCES = servlist.c
+ EXTRA_whosond_SOURCES = serv_tcp.c serv_unix.c serv_unixd.c serv_udp.c
+ whosond_LDADD = $(lib_LTLIBRARIES) @LIBOBJS@ @SERV_CONN_OBJ@
+-whosond_DEPENDENCIES = @SERV_CONN_OBJ@
++whosond_DEPENDENCIES = @SERV_CONN_OBJ@ $(lib_LTLIBRARIES)
+ libwhoson_la_SOURCES = clnt_common.c rtconfig.c checkperm.c
+ nodist_libwhoson_la_SOURCES = clntlist.c
+ EXTRA_libwhoson_la_SOURCES = clnt_tcp.c clnt_unix.c clnt_unixd.c clnt_udp.c
+@@ -982,12 +982,7 @@ uninstall-man: uninstall-man3 uninstall-
+ 
+ 
+ install-data-hook:
+-	if test -f $(DESTDIR)$(DEFAULT_CONFIG); then \
+-		$(ECHO) "$(DESTDIR)$(DEFAULT_CONFIG) exists, not overwritten"; \
+-	else \
+-		$(mkinstalldirs) `dirname $(DESTDIR)$(DEFAULT_CONFIG)`; \
+-		$(INSTALL_DATA) $(srcdir)/whoson.conf $(DESTDIR)$(DEFAULT_CONFIG); \
+-	fi; \
++	$(INSTALL_DATA) $(srcdir)/whoson.conf $(DESTDIR)$(DEFAULT_CONFIG).sample; \
+ 	for f in $(MAN3XTRA); do \
+ 		rm -f $(DESTDIR)$(man3dir)/$$f; \
+ 		$(LN) $(DESTDIR)$(man3dir)/whoson.3 $(DESTDIR)$(man3dir)/$$f; \

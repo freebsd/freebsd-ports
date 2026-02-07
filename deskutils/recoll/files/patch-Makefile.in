@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2021-12-01 09:04:57 UTC
++++ Makefile.in
+@@ -884,7 +884,7 @@ recollindex_SOURCES = \
+     index/webqueue.cpp \
+     index/webqueue.h
+ 
+-recollindex_LDADD = librecoll.la 
++recollindex_LDADD = librecoll.la $(LIBFAM)
+ recollq_SOURCES = query/recollqmain.cpp
+ recollq_LDADD = librecoll.la
+ xadump_SOURCES = query/xadump.cpp

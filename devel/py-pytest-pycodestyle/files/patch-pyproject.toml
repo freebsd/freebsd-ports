@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2025-07-21 05:47:27 UTC
++++ pyproject.toml
+@@ -12,7 +12,6 @@ readme = "README.md"
+ name = "pytest-pycodestyle"
+ description = "pytest plugin to run pycodestyle"
+ readme = "README.md"
+-license = "MIT"
+ authors = [
+   { name = "OMOTO Tsukasa", email = "tsukasa@oomo.to" }
+ ]

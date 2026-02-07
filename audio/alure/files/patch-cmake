@@ -1,0 +1,563 @@
+- CMake related changes from alure-1.2..e9d4fb8a6a3dd367fc4611fcdc48a22d0c7da6a5
+  from http://repo.or.cz/alure.git 
+- Add option to disable docs building (it's already generated)
+
+--- CMakeLists.txt.orig	2011-07-29 08:37:48 UTC
++++ CMakeLists.txt
+@@ -14,8 +14,6 @@ INCLUDE(CheckIncludeFile)
+ INCLUDE(CheckIncludeFiles)
+ INCLUDE(CheckLibraryExists)
+ INCLUDE(CheckSharedFunctionExists)
+-INCLUDE(FindPkgConfig)
+-INCLUDE(UsePkgConfig)
+ INCLUDE(CheckFileOffsetBits)
+ 
+ PROJECT(ALURE)
+@@ -93,11 +91,6 @@ ELSE(MSVC)
+         ADD_DEFINITIONS(-Wextra)
+     ENDIF(HAVE_WEXTRA)
+     ADD_DEFINITIONS(-Wall)
+-
+-    CHECK_C_COMPILER_FLAG(-funswitch-loops HAVE_FUNSWITCH_LOOPS)
+-    IF(HAVE_FUNSWITCH_LOOPS)
+-        ADD_DEFINITIONS(-funswitch-loops)
+-    ENDIF(HAVE_FUNSWITCH_LOOPS)
+ ENDIF(MSVC)
+ 
+ # Set visibility/export options if available
+@@ -129,7 +122,7 @@ ELSE(HAVE_WINDOWS_H)
+     CHECK_INCLUDE_FILE(pthread.h HAVE_PTHREAD_H)
+     IF(NOT HAVE_PTHREAD_H)
+         MESSAGE(FATAL_ERROR "PThreads is required for non-Windows builds!")
+-    ENDIF()
++    ENDIF(NOT HAVE_PTHREAD_H)
+     # Some systems need pthread_np.h to get recursive mutexes
+     CHECK_INCLUDE_FILES("pthread.h;pthread_np.h" HAVE_PTHREAD_NP_H)
+ 
+@@ -163,7 +156,6 @@ IF(HAVE_DLFCN_H)
+     ENDIF(HAVE_LIBDL)
+ ENDIF(HAVE_DLFCN_H)
+ 
+-OPTION(DYNLOAD    "Dynamically load support libs at run-time" ON)
+ OPTION(SNDFILE    "SoundFile support (for various formats)" ON)
+ OPTION(VORBIS     "VorbisFile support (for Ogg Vorbis)"  ON)
+ OPTION(FLAC       "FLAC support (for FLAC and Ogg FLAC)" ON)
+@@ -174,28 +166,17 @@ OPTION(FLUIDSYNTH "FluidSynth support (for MID)" ON)
+ 
+ IF(WIN32)
+     ADD_DEFINITIONS(-D_WIN32)
+-ELSE(WIN32)
+-    IF(NOT HAVE_DLFCN_H OR NOT HAVE_LIBDL)
+-        SET(DYNLOAD OFF)
+-    ENDIF(NOT HAVE_DLFCN_H OR NOT HAVE_LIBDL)
+-    PKG_CHECK_MODULES(OPENAL openal)
+ ENDIF(WIN32)
+ 
++FIND_PACKAGE(OpenAL)
+ IF(NOT OPENAL_FOUND)
+-    FIND_PACKAGE(OpenAL)
+-    IF(NOT OPENAL_FOUND)
+-        MESSAGE(FATAL_ERROR "OpenAL not found!\nPlease try setting the OPENALDIR environment variable and try again.")
+-    ENDIF(NOT OPENAL_FOUND)
++    MESSAGE(FATAL_ERROR "OpenAL not found!\nPlease try setting the OPENALDIR environment variable and try again.")
++ENDIF(NOT OPENAL_FOUND)
+ 
+-    MESSAGE(STATUS "OpenAL include: ${OPENAL_INCLUDE_DIR}")
+-    MESSAGE(STATUS "OpenAL lib: ${OPENAL_LIBRARY}")
++MESSAGE(STATUS "OpenAL include: ${OPENAL_INCLUDE_DIR}")
++MESSAGE(STATUS "OpenAL lib: ${OPENAL_LIBRARY}")
+ 
+-    INCLUDE_DIRECTORIES(${OPENAL_INCLUDE_DIR})
+-    SET(OPENAL_LIBRARIES ${OPENAL_LIBRARY})
+-ELSE(NOT OPENAL_FOUND)
+-    INCLUDE_DIRECTORIES(${OPENAL_INCLUDE_DIRS})
+-    LINK_DIRECTORIES(${OPENAL_LIBRARY_DIRS})
+-ENDIF(NOT OPENAL_FOUND)
++INCLUDE_DIRECTORIES(${OPENAL_INCLUDE_DIR})
+ 
+ # Base source files
+ SET(ALURE_OBJS  src/alure.cpp
+@@ -210,188 +191,95 @@ SET(ALURE_OBJS  src/alure.cpp
+ 
+ # SndFile support
+ IF(SNDFILE)
+-    PKG_CHECK_MODULES(SNDFILE sndfile)
++    FIND_PACKAGE(SndFile)
+     IF(SNDFILE_FOUND)
+         SET(HAS_SNDFILE 1)
+-        LINK_DIRECTORIES(${SNDFILE_LIBRARY_DIRS})
+-        SET_SOURCE_FILES_PROPERTIES(src/codec_sndfile.cpp PROPERTIES
+-                                    COMPILE_FLAGS "${SNDFILE_CFLAGS}")
+-    ELSE(SNDFILE_FOUND)
+-        FIND_PACKAGE(SndFile)
+-        IF(SNDFILE_FOUND)
+-            SET(HAS_SNDFILE 1)
+-            INCLUDE_DIRECTORIES(${SNDFILE_INCLUDE_DIRS})
+-        ENDIF(SNDFILE_FOUND)
+-    ENDIF(SNDFILE_FOUND)
+-    IF(HAS_SNDFILE)
+         SET(ALURE_OBJS ${ALURE_OBJS} src/codec_sndfile.cpp)
+-    ENDIF(HAS_SNDFILE)
+-ELSE(SNDFILE)
+-    SET(SNDFILE_LIBRARIES "")
++        SET(EXTRA_LIBS ${SNDFILE_LIBRARIES} ${EXTRA_LIBS})
++        INCLUDE_DIRECTORIES(${SNDFILE_INCLUDE_DIRS})
++    ENDIF(SNDFILE_FOUND)
+ ENDIF(SNDFILE)
+ 
+ # Vorbis support
+ IF(VORBIS)
+-    PKG_CHECK_MODULES(VORBISFILE vorbisfile)
+-    IF(VORBISFILE_FOUND)
++    FIND_PACKAGE(OggVorbis)
++    IF(OGGVORBIS_FOUND)
+         SET(HAS_VORBISFILE 1)
+-        LINK_DIRECTORIES(${VORBISFILE_LIBRARY_DIRS})
+-        SET_SOURCE_FILES_PROPERTIES(src/codec_vorbisfile.cpp PROPERTIES
+-                                    COMPILE_FLAGS "${VORBISFILE_CFLAGS}")
+-    ELSE(VORBISFILE_FOUND)
+-        FIND_PACKAGE(OggVorbis)
+-        IF(OGGVORBIS_FOUND)
+-            SET(HAS_VORBISFILE 1)
+-            INCLUDE_DIRECTORIES(${OGGVORBIS_INCLUDE_DIRS})
+-            SET(VORBISFILE_LIBRARIES ${OGGVORBIS_LIBRARIES})
+-        ENDIF(OGGVORBIS_FOUND)
+-    ENDIF(VORBISFILE_FOUND)
++        SET(ALURE_OBJS ${ALURE_OBJS} src/codec_vorbisfile.cpp)
++        SET(EXTRA_LIBS ${OGGVORBIS_LIBRARIES} ${EXTRA_LIBS})
++        INCLUDE_DIRECTORIES(${OGGVORBIS_INCLUDE_DIRS})
++    ENDIF(OGGVORBIS_FOUND)
+     IF(NOT HAS_VORBISFILE)
+-        PKG_CHECK_MODULES(VORBISIDEC vorbisidec)
+-        IF(NOT VORBISIDEC_FOUND)
+-            CHECK_INCLUDE_FILE(tremor/ivorbisfile.h HAVE_TREMOR_IVORBISFILE_H)
+-            IF(HAVE_TREMOR_IVORBISFILE_H)
+-                CHECK_SHARED_FUNCTION_EXISTS(ov_open "tremor/ivorbisfile.h" vorbisidec "" HAVE_LIBVORBISIDEC)
+-                IF(DYNLOAD OR HAVE_LIBVORBISIDEC)
+-                    SET(HAS_VORBISFILE 1)
+-                    IF(HAVE_LIBVORBISIDEC)
+-                        SET(VORBISFILE_LIBRARIES "vorbisidec")
+-                    ENDIF(HAVE_LIBVORBISIDEC)
+-                    SET_SOURCE_FILES_PROPERTIES(src/codec_vorbisfile.cpp PROPERTIES
+-                                                COMPILE_FLAGS "-DHAS_VORBISIDEC")
+-                ENDIF(DYNLOAD OR HAVE_LIBVORBISIDEC)
+-            ENDIF(HAVE_TREMOR_IVORBISFILE_H)
+-        ELSE(NOT VORBISIDEC_FOUND)
+-            SET(HAS_VORBISFILE 1)
+-            LINK_DIRECTORIES(${VORBISIDEC_LIBRARY_DIRS})
+-            SET_SOURCE_FILES_PROPERTIES(src/codec_vorbisfile.cpp PROPERTIES
+-                                        COMPILE_FLAGS "${VORBISIDEC_CFLAGS} -DHAS_VORBISIDEC")
+-        ENDIF(NOT VORBISIDEC_FOUND)
++        CHECK_INCLUDE_FILE(tremor/ivorbisfile.h HAVE_TREMOR_IVORBISFILE_H)
++        IF(HAVE_TREMOR_IVORBISFILE_H)
++            CHECK_SHARED_FUNCTION_EXISTS(ov_open "tremor/ivorbisfile.h" vorbisidec "" HAVE_LIBVORBISIDEC)
++            IF(HAVE_LIBVORBISIDEC)
++                SET(HAS_VORBISFILE 1)
++                SET(ALURE_OBJS ${ALURE_OBJS} src/codec_vorbisfile.cpp)
++                SET(EXTRA_LIBS "vorbisidec" ${EXTRA_LIBS})
++                SET_SOURCE_FILES_PROPERTIES(src/codec_vorbisfile.cpp PROPERTIES
++                                            COMPILE_FLAGS "-DHAS_VORBISIDEC")
++            ENDIF(HAVE_LIBVORBISIDEC)
++        ENDIF(HAVE_TREMOR_IVORBISFILE_H)
+     ENDIF(NOT HAS_VORBISFILE)
+-    IF(HAS_VORBISFILE)
+-        SET(ALURE_OBJS ${ALURE_OBJS} src/codec_vorbisfile.cpp)
+-    ENDIF(HAS_VORBISFILE)
+-ELSE(VORBIS)
+-    SET(VORBISFILE_LIBRARIES "")
+ ENDIF(VORBIS)
+ 
+ # FLAC support
+ IF(FLAC)
+     FIND_PACKAGE(FLAC)
+     IF(FLAC_FOUND)
+-        INCLUDE_DIRECTORIES(${FLAC_INCLUDE_DIR})
+         SET(HAS_FLAC 1)
+-    ENDIF(FLAC_FOUND)
+-    IF(HAS_FLAC)
+         SET(ALURE_OBJS ${ALURE_OBJS} src/codec_flac.cpp)
+-    ENDIF(HAS_FLAC)
+-ELSE(FLAC)
+-    SET(LIBFLAC_LIBRARIES "")
++        SET(EXTRA_LIBS ${FLAC_LIBRARIES} ${EXTRA_LIBS})
++        INCLUDE_DIRECTORIES(${FLAC_INCLUDE_DIR})
++    ENDIF(FLAC_FOUND)
+ ENDIF(FLAC)
+ 
+ # MPG123 support
+ IF(MPG123)
+-    PKG_CHECK_MODULES(MPG123 libmpg123)
+-    IF(NOT MPG123_FOUND)
+-        CHECK_INCLUDE_FILE(mpg123.h HAVE_MPG123_H)
+-        IF(HAVE_MPG123_H)
+-            CHECK_SHARED_FUNCTION_EXISTS(mpg123_init "mpg123.h" mpg123 "" HAVE_LIBMPG123)
+-            IF(DYNLOAD OR HAVE_LIBMPG123)
+-                SET(HAS_MPG123 1)
+-                IF(HAVE_LIBMPG123)
+-                    SET(MPG123_LIBRARIES "mpg123")
+-                ENDIF(HAVE_LIBMPG123)
+-            ENDIF(DYNLOAD OR HAVE_LIBMPG123)
+-        ENDIF(HAVE_MPG123_H)
+-    ELSE(NOT MPG123_FOUND)
++    FIND_PACKAGE(MPG123)
++    IF(MPG123_FOUND)
+         SET(HAS_MPG123 1)
+-        LINK_DIRECTORIES(${MPG123_LIBRARY_DIRS})
+-        SET_SOURCE_FILES_PROPERTIES(src/codec_mpg123.cpp PROPERTIES
+-                                    COMPILE_FLAGS "${MPG123_CFLAGS}")
+-    ENDIF(NOT MPG123_FOUND)
+-    IF(HAS_MPG123)
+         SET(ALURE_OBJS ${ALURE_OBJS} src/codec_mpg123.cpp)
+-    ENDIF(HAS_MPG123)
+-ELSE(MPG123)
+-    SET(MPG123_LIBRARIES "")
++        SET(EXTRA_LIBS ${MPG123_LIBRARIES} ${EXTRA_LIBS})
++        INCLUDE_DIRECTORIES(${MPG123_INCLUDE_DIR})
++    ENDIF(MPG123_FOUND)
+ ENDIF(MPG123)
+ 
+ # DUMB support
+ IF(DUMB)
+-    CHECK_INCLUDE_FILE(dumb.h HAVE_DUMB_H)
+-    IF(HAVE_DUMB_H)
+-        IF(HAS_LIBM)
+-            CHECK_LIBRARY_EXISTS("dumb;m" dumbfile_open_ex "" HAVE_LIBDUMB)
+-        ELSE(HAS_LIBM)
+-            CHECK_LIBRARY_EXISTS(dumb dumbfile_open_ex "" HAVE_LIBDUMB)
+-        ENDIF(HAS_LIBM)
+-        IF(DYNLOAD OR HAVE_LIBDUMB)
+-            SET(HAS_DUMB 1)
+-            IF(HAVE_LIBDUMB)
+-                SET(DUMB_LIBRARIES dumb)
+-            ENDIF(HAVE_LIBDUMB)
+-        ENDIF(DYNLOAD OR HAVE_LIBDUMB)
+-    ENDIF(HAVE_DUMB_H)
+-    IF(HAS_DUMB)
++    FIND_PACKAGE(DUMB)
++    IF(DUMB_FOUND)
++        SET(HAS_DUMB 1)
+         SET(ALURE_OBJS ${ALURE_OBJS} src/codec_dumb.cpp)
+-    ENDIF(HAS_DUMB)
+-ELSE(DUMB)
+-    SET(DUMB_LIBRARIES "")
++        SET(EXTRA_LIBS ${DUMB_LIBRARIES} ${EXTRA_LIBS})
++        INCLUDE_DIRECTORIES(${DUMB_INCLUDE_DIR})
++    ENDIF(DUMB_FOUND)
+ ENDIF(DUMB)
+ 
+ # ModPlug support
+ IF(MODPLUG)
+-    CHECK_INCLUDE_FILE(libmodplug/modplug.h HAVE_LIBMODPLUG_MODPLUG_H)
+-    IF(HAVE_LIBMODPLUG_MODPLUG_H)
+-        CHECK_SHARED_FUNCTION_EXISTS(ModPlug_Load "libmodplug/modplug.h" modplug "" HAVE_LIBMODPLUG)
+-        IF(DYNLOAD OR HAVE_LIBMODPLUG)
+-            SET(HAS_MODPLUG 1)
+-            IF(HAVE_LIBMODPLUG)
+-                SET(MODPLUG_LIBRARIES "modplug")
+-            ENDIF(HAVE_LIBMODPLUG)
+-        ENDIF(DYNLOAD OR HAVE_LIBMODPLUG)
+-    ENDIF(HAVE_LIBMODPLUG_MODPLUG_H)
+-    IF(HAS_MODPLUG)
++    FIND_PACKAGE(ModPlug)
++    IF(MODPLUG_FOUND)
++        SET(HAS_MODPLUG 1)
+         SET(ALURE_OBJS ${ALURE_OBJS} src/codec_modplug.cpp)
+-    ENDIF(HAS_MODPLUG)
+-ELSE(MODPLUG)
+-    SET(MODPLUG_LIBRARIES "")
++        SET(EXTRA_LIBS ${MODPLUG_LIBRARIES} ${EXTRA_LIBS})
++        INCLUDE_DIRECTORIES(${MODPLUG_INCLUDE_DIR})
++    ENDIF(MODPLUG_FOUND)
+ ENDIF(MODPLUG)
+ 
+ # FluidSynth support
+ IF(FLUIDSYNTH)
+-    PKG_CHECK_MODULES(FLUIDSYNTH fluidsynth>=1.1.1)
+-    IF(NOT FLUIDSYNTH_FOUND)
+-        CHECK_INCLUDE_FILE(fluidsynth.h HAVE_FLUIDSYNTH_H)
+-        IF(HAVE_FLUIDSYNTH_H)
+-            CHECK_SHARED_FUNCTION_EXISTS(new_fluid_synth "fluidsynth.h" fluidsynth "" HAVE_LIBFLUIDSYNTH)
+-            IF(DYNLOAD OR HAVE_LIBFLUIDSYNTH)
+-                SET(HAS_FLUIDSYNTH 1)
+-                IF(HAVE_LIBFLUIDSYNTH)
+-                    SET(FLUIDSYNTH_LIBRARIES "fluidsynth")
+-                ENDIF(HAVE_LIBFLUIDSYNTH)
+-            ENDIF(DYNLOAD OR HAVE_LIBFLUIDSYNTH)
+-        ENDIF(HAVE_FLUIDSYNTH_H)
+-    ELSE(NOT FLUIDSYNTH_FOUND)
++    FIND_PACKAGE(FluidSynth)
++    IF(FLUIDSYNTH_FOUND)
+         SET(HAS_FLUIDSYNTH 1)
+-        LINK_DIRECTORIES(${FLUIDSYNTH_LIBRARY_DIRS})
+-        SET_SOURCE_FILES_PROPERTIES(src/codec_fluidsynth.cpp PROPERTIES
+-                                    COMPILE_FLAGS "${FLUIDSYNTH_CFLAGS}")
+-    ENDIF(NOT FLUIDSYNTH_FOUND)
+-    IF(HAS_FLUIDSYNTH)
+         SET(ALURE_OBJS ${ALURE_OBJS} src/codec_fluidsynth.cpp)
+-    ENDIF(HAS_FLUIDSYNTH)
+-ELSE(FLUIDSYNTH)
+-    SET(FLUIDSYNTH_LIBRARIES "")
++        SET(EXTRA_LIBS ${FLUIDSYNTH_LIBRARIES} ${EXTRA_LIBS})
++        INCLUDE_DIRECTORIES(${FLUIDSYNTH_INCLUDE_DIR})
++    ENDIF(FLUIDSYNTH_FOUND)
+ ENDIF(FLUIDSYNTH)
+ 
+ 
+-IF(NOT DYNLOAD)
+-    SET(EXTRA_LIBS ${SNDFILE_LIBRARIES} ${VORBISFILE_LIBRARIES} ${LIBFLAC_LIBRARIES} ${MPG123_LIBRARIES} ${DUMB_LIBRARIES} ${MODPLUG_LIBRARIES} ${FLUIDSYNTH_LIBRARIES} ${EXTRA_LIBS})
+-ELSE(NOT DYNLOAD)
+-    ADD_DEFINITIONS(-DDYNLOAD=1)
+-ENDIF(NOT DYNLOAD)
+-
+ # For alure.pc.in
+ SET(prefix ${CMAKE_INSTALL_PREFIX})
+ SET(exec_prefix "\${prefix}")
+@@ -432,7 +320,7 @@ IF(BUILD_SHARED)
+     ELSEIF(NOT APPLE)
+         SET_TARGET_PROPERTIES(${LIBNAME} PROPERTIES LINK_FLAGS "-Wl,--version-script=${ALURE_SOURCE_DIR}/libalure.map")
+     ENDIF(WIN32)
+-    TARGET_LINK_LIBRARIES(${LIBNAME} ${OPENAL_LIBRARIES} ${EXTRA_LIBS})
++    TARGET_LINK_LIBRARIES(${LIBNAME} ${OPENAL_LIBRARY} ${EXTRA_LIBS})
+ 
+     INSTALL(TARGETS ${LIBNAME}
+             RUNTIME DESTINATION bin
+@@ -455,7 +343,9 @@ ENDIF(BUILD_STATIC)
+ 
+ 
+ OPTION(BUILD_EXAMPLES   "Build example programs"   ON)
++OPTION(BUILD_DOCS       "Build documentation"      ON)
+ OPTION(INSTALL_EXAMPLES "Install example programs" ON)
++OPTION(INSTALL_DOCS     "Install documentation"      ON)
+ 
+ IF(BUILD_EXAMPLES)
+     IF(HAVE_DDK_NTDDCDRM_H)
+@@ -466,20 +356,21 @@ IF(BUILD_EXAMPLES)
+     ADD_EXECUTABLE(alurecdplay examples/alurecdplay.c)
+     ADD_EXECUTABLE(alurestream examples/alurestream.c)
+     IF(BUILD_SHARED)
+-        TARGET_LINK_LIBRARIES(alureplay ${LIBNAME} ${OPENAL_LIBRARIES} ${EXTRA_LIBS})
+-        TARGET_LINK_LIBRARIES(alurecdplay ${LIBNAME} ${OPENAL_LIBRARIES} ${EXTRA_LIBS})
+-        TARGET_LINK_LIBRARIES(alurestream ${LIBNAME} ${OPENAL_LIBRARIES} ${EXTRA_LIBS})
++        TARGET_LINK_LIBRARIES(alureplay ${LIBNAME} ${OPENAL_LIBRARY} ${EXTRA_LIBS})
++        TARGET_LINK_LIBRARIES(alurecdplay ${LIBNAME} ${OPENAL_LIBRARY} ${EXTRA_LIBS})
++        TARGET_LINK_LIBRARIES(alurestream ${LIBNAME} ${OPENAL_LIBRARY} ${EXTRA_LIBS})
+     ELSE(BUILD_SHARED)
+         SET_TARGET_PROPERTIES(alureplay PROPERTIES COMPILE_FLAGS -DALURE_STATIC_LIBRARY)
+         SET_TARGET_PROPERTIES(alurecdplay PROPERTIES COMPILE_FLAGS -DALURE_STATIC_LIBRARY)
+         SET_TARGET_PROPERTIES(alurestream PROPERTIES COMPILE_FLAGS -DALURE_STATIC_LIBRARY)
+-        TARGET_LINK_LIBRARIES(alureplay ${LIBNAME}-static ${OPENAL_LIBRARIES} ${EXTRA_LIBS})
+-        TARGET_LINK_LIBRARIES(alurecdplay ${LIBNAME}-static ${OPENAL_LIBRARIES} ${EXTRA_LIBS})
+-        TARGET_LINK_LIBRARIES(alurestream ${LIBNAME}-static ${OPENAL_LIBRARIES} ${EXTRA_LIBS})
++        TARGET_LINK_LIBRARIES(alureplay ${LIBNAME}-static ${OPENAL_LIBRARY} ${EXTRA_LIBS})
++        TARGET_LINK_LIBRARIES(alurecdplay ${LIBNAME}-static ${OPENAL_LIBRARY} ${EXTRA_LIBS})
++        TARGET_LINK_LIBRARIES(alurestream ${LIBNAME}-static ${OPENAL_LIBRARY} ${EXTRA_LIBS})
+     ENDIF(BUILD_SHARED)
+ ENDIF(BUILD_EXAMPLES)
+ 
+ 
++IF(BUILD_DOCS)
+ FIND_PROGRAM(NATDOCS_BIN NaturalDocs)
+ IF(NATDOCS_BIN)
+     ADD_CUSTOM_TARGET(docs
+@@ -488,6 +379,7 @@ IF(NATDOCS_BIN)
+ ELSE(NATDOCS_BIN)
+     MESSAGE(STATUS "\nNaturalDocs not found; building documentation is disabled")
+ ENDIF(NATDOCS_BIN)
++ENDIF(BUILD_DOCS)
+ 
+ 
+ #add an install target here
+@@ -497,9 +389,11 @@ ELSE(APPLE)
+     SET(INCPATH AL)
+ ENDIF(APPLE)
+ 
++IF(INSTALL_DOCS)
+ INSTALL(DIRECTORY "${ALURE_SOURCE_DIR}/docs/html"
+         DESTINATION share/doc/alure
+ )
++ENDIF(INSTALL_DOCS)
+ INSTALL(FILES include/AL/alure.h
+         DESTINATION "include/${INCPATH}"
+ )
+@@ -527,6 +421,16 @@ ELSEIF(BUILD_SHARED)
+ ELSE(BUILD_SHARED AND BUILD_STATIC)
+     MESSAGE(STATUS "Building static library")
+ ENDIF(BUILD_SHARED AND BUILD_STATIC)
++IF(BUILD_DOCS)
++    MESSAGE(STATUS "Building documentation")
++ELSE(BUILD_DOCS)
++    MESSAGE(STATUS "Not building documentation")
++ENDIF(BUILD_DOCS)
++IF(INSTALL_DOCS)
++    MESSAGE(STATUS "Installing documentation")
++ELSE(INSTALL_DOCS)
++    MESSAGE(STATUS "Not installing documentation")
++ENDIF(INSTALL_DOCS)
+ IF(BUILD_EXAMPLES AND INSTALL_EXAMPLES)
+     MESSAGE(STATUS "Building and installing examples")
+ ELSEIF(BUILD_EXAMPLES)
+--- cmake/FindDUMB.cmake.orig	2018-07-26 06:46:16 UTC
++++ cmake/FindDUMB.cmake
+@@ -0,0 +1,28 @@
++# - Find DUMB
++# Find the native DUMB includes and library
++#
++#  DUMB_INCLUDE_DIR - where to find dumb.h
++#  DUMB_LIBRARIES   - List of libraries when using dumb
++#  DUMB_FOUND       - True if dumb found.
++
++IF(DUMB_INCLUDE_DIR AND DUMB_LIBRARIES)
++  # Already in cache, be silent
++  SET(DUMB_FIND_QUIETLY TRUE)
++ENDIF(DUMB_INCLUDE_DIR AND DUMB_LIBRARIES)
++
++FIND_PATH(DUMB_INCLUDE_DIR dumb.h
++          PATHS "${DUMB_DIR}"
++          PATH_SUFFIXES include
++          )
++
++FIND_LIBRARY(DUMB_LIBRARIES NAMES dumb
++             PATHS "${DUMB_DIR}"
++             PATH_SUFFIXES lib
++             )
++
++MARK_AS_ADVANCED(DUMB_LIBRARIES DUMB_INCLUDE_DIR)
++
++# handle the QUIETLY and REQUIRED arguments and set DUMB_FOUND to TRUE if
++# all listed variables are TRUE
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(DUMB DEFAULT_MSG DUMB_LIBRARIES DUMB_INCLUDE_DIR)
+--- cmake/FindFluidSynth.cmake.orig	2018-07-26 06:46:16 UTC
++++ cmake/FindFluidSynth.cmake
+@@ -0,0 +1,28 @@
++# - Find fluidsynth
++# Find the native fluidsynth includes and library
++#
++#  FLUIDSYNTH_INCLUDE_DIR - where to find fluidsynth.h
++#  FLUIDSYNTH_LIBRARIES   - List of libraries when using fluidsynth.
++#  FLUIDSYNTH_FOUND       - True if fluidsynth found.
++
++IF(FLUIDSYNTH_INCLUDE_DIR AND FLUIDSYNTH_LIBRARIES)
++  # Already in cache, be silent
++  SET(FluidSynth_FIND_QUIETLY TRUE)
++ENDIF(FLUIDSYNTH_INCLUDE_DIR AND FLUIDSYNTH_LIBRARIES)
++
++FIND_PATH(FLUIDSYNTH_INCLUDE_DIR fluidsynth.h
++          PATHS "${FLUID_DIR}"
++          PATH_SUFFIXES include
++          )
++
++FIND_LIBRARY(FLUIDSYNTH_LIBRARIES NAMES fluidsynth
++             PATHS "${FLUID_DIR}"
++             PATH_SUFFIXES lib
++             )
++
++MARK_AS_ADVANCED(FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR)
++
++# handle the QUIETLY and REQUIRED arguments and set FLUIDSYNTH_FOUND to TRUE if
++# all listed variables are TRUE
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(FluidSynth DEFAULT_MSG FLUIDSYNTH_LIBRARIES FLUIDSYNTH_INCLUDE_DIR)
+--- cmake/FindMPG123.cmake.orig	2018-07-26 06:46:16 UTC
++++ cmake/FindMPG123.cmake
+@@ -0,0 +1,28 @@
++# - Find mpg123
++# Find the native mpg123 includes and library
++#
++#  MPG123_INCLUDE_DIR - where to find mpg123.h
++#  MPG123_LIBRARIES   - List of libraries when using mpg123.
++#  MPG123_FOUND       - True if mpg123 found.
++
++IF(MPG123_INCLUDE_DIR AND MPG123_LIBRARIES)
++  # Already in cache, be silent
++  SET(MPG123_FIND_QUIETLY TRUE)
++ENDIF(MPG123_INCLUDE_DIR AND MPG123_LIBRARIES)
++
++FIND_PATH(MPG123_INCLUDE_DIR mpg123.h
++          PATHS "${MPG123_DIR}"
++          PATH_SUFFIXES include
++          )
++
++FIND_LIBRARY(MPG123_LIBRARIES NAMES mpg123 mpg123-0
++             PATHS "${MPG123_DIR}"
++             PATH_SUFFIXES lib
++             )
++
++MARK_AS_ADVANCED(MPG123_LIBRARIES MPG123_INCLUDE_DIR)
++
++# handle the QUIETLY and REQUIRED arguments and set MPG123_FOUND to TRUE if
++# all listed variables are TRUE
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(MPG123 DEFAULT_MSG MPG123_LIBRARIES MPG123_INCLUDE_DIR)
+--- cmake/FindModPlug.cmake.orig	2018-07-26 06:46:16 UTC
++++ cmake/FindModPlug.cmake
+@@ -0,0 +1,28 @@
++# - Find ModPlug
++# Find the native ModPlug includes and library
++#
++#  MODPLUG_INCLUDE_DIR - where to find dumb.h
++#  MODPLUG_LIBRARIES   - List of libraries when using dumb
++#  MODPLUG_FOUND       - True if dumb found.
++
++IF(MODPLUG_INCLUDE_DIR AND MODPLUG_LIBRARIES)
++  # Already in cache, be silent
++  SET(ModPlug_FIND_QUIETLY TRUE)
++ENDIF(MODPLUG_INCLUDE_DIR AND MODPLUG_LIBRARIES)
++
++FIND_PATH(MODPLUG_INCLUDE_DIR libmodplug/modplug.h
++          PATHS "${MODPLUG_DIR}"
++          PATH_SUFFIXES include
++          )
++
++FIND_LIBRARY(MODPLUG_LIBRARIES NAMES modplug
++             PATHS "${MODPLUG_DIR}"
++             PATH_SUFFIXES lib
++             )
++
++MARK_AS_ADVANCED(MODPLUG_LIBRARIES MODPLUG_INCLUDE_DIR)
++
++# handle the QUIETLY and REQUIRED arguments and set MODPLUG_FOUND to TRUE if
++# all listed variables are TRUE
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(ModPlug DEFAULT_MSG MODPLUG_LIBRARIES MODPLUG_INCLUDE_DIR)
+--- cmake/FindOggVorbis.cmake.orig	2011-07-29 08:37:48 UTC
++++ cmake/FindOggVorbis.cmake
+@@ -30,16 +30,19 @@ mark_as_advanced(VORBIS_INCLUDE_DIR OGG_INCLUDE_DIR
+                  OGG_LIBRARY VORBIS_LIBRARY VORBISFILE_LIBRARY VORBISENC_LIBRARY)
+ 
+ 
+-if(VORBIS_INCLUDE_DIR AND VORBIS_LIBRARY AND VORBISFILE_LIBRARY AND VORBISENC_LIBRARY)
++if(VORBIS_INCLUDE_DIR AND VORBIS_LIBRARY AND VORBISFILE_LIBRARY)
+    set(OGGVORBIS_FOUND TRUE)
+ 
+-   set(OGGVORBIS_LIBRARIES ${OGG_LIBRARY} ${VORBIS_LIBRARY} ${VORBISFILE_LIBRARY} ${VORBISENC_LIBRARY})
++   set(OGGVORBIS_LIBRARIES ${OGG_LIBRARY} ${VORBIS_LIBRARY} ${VORBISFILE_LIBRARY})
+    set(OGGVORBIS_INCLUDE_DIRS ${OGG_INCLUDE_DIR} ${VORBIS_INCLUDE_DIR})
+ 
+-   set(_CMAKE_REQUIRED_LIBRARIES_TMP ${CMAKE_REQUIRED_LIBRARIES})
+-   set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} ${OGGVORBIS_LIBRARIES})
+-   check_function_exists(vorbis_bitrate_addblock HAVE_LIBVORBISENC2)
+-   set(CMAKE_REQUIRED_LIBRARIES ${_CMAKE_REQUIRED_LIBRARIES_TMP})
++   if(VORBISENC_LIBRARY)
++       set(OGGVORBIS_LIBRARIES ${OGGVORBIS_LIBRARIES} ${VORBISENC_LIBRARY})
++       set(_CMAKE_REQUIRED_LIBRARIES_TMP ${CMAKE_REQUIRED_LIBRARIES})
++       set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} ${OGGVORBIS_LIBRARIES})
++       check_function_exists(vorbis_bitrate_addblock HAVE_LIBVORBISENC2)
++       set(CMAKE_REQUIRED_LIBRARIES ${_CMAKE_REQUIRED_LIBRARIES_TMP})
++   endif(VORBISENC_LIBRARY)
+ 
+    if(HAVE_LIBVORBISENC2)
+       set(OGGVORBIS_VERSION 2)
+@@ -47,10 +50,10 @@ if(VORBIS_INCLUDE_DIR AND VORBIS_LIBRARY AND VORBISFIL
+       set(OGGVORBIS_VERSION 1)
+    endif(HAVE_LIBVORBISENC2)
+ 
+-else(VORBIS_INCLUDE_DIR AND VORBIS_LIBRARY AND VORBISFILE_LIBRARY AND VORBISENC_LIBRARY)
++else(VORBIS_INCLUDE_DIR AND VORBIS_LIBRARY AND VORBISFILE_LIBRARY)
+    set(OGGVORBIS_VERSION)
+    set(OGGVORBIS_FOUND FALSE)
+-endif(VORBIS_INCLUDE_DIR AND VORBIS_LIBRARY AND VORBISFILE_LIBRARY AND VORBISENC_LIBRARY)
++endif(VORBIS_INCLUDE_DIR AND VORBIS_LIBRARY AND VORBISFILE_LIBRARY)
+ 
+ 
+ if(OGGVORBIS_FOUND)

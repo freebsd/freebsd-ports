@@ -1,0 +1,7 @@
+IGT GPU Tools is a collection of tools for development and testing of the
+DRM drivers. There are many macro-level test suites that get used against
+the drivers, including xtest, rendercheck, piglit, and oglconform, but
+failures from those can be difficult to track down to kernel changes, and
+many require complicated build procedures or specific testing environments
+to get useful results. Therefore, IGT GPU Tools includes low-level tools
+and tests specifically for development and testing of the DRM Drivers.

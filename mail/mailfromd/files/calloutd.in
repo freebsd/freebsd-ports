@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# PROVIDE: calloutd
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name="calloutd"
+rcvar=calloutd_enable
+
+: ${calloutd_enable="NO"}
+: ${mailfromd_runpath="%%MFD_RUN_DIR%%"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="${mailfromd_runpath}/${name}.pid"
+
+required_files="%%PREFIX%%/etc/mailfromd.conf"
+
+extra_commands="configlint"
+configlint_cmd="${name} --config-lint"
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Net/Divert.pm
+%%SITE_PERL%%/auto/Net/Divert/autosplit.ix
+%%PERL5_MAN3%%/Net::Divert.3.gz

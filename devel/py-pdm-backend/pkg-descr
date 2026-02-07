@@ -1,0 +1,3 @@
+This is the backend for PDM projects that is fully-compatible with PEP 517 spec,
+but you can also use it alone. It reads the metadata of PEP 621 format and
+coverts it to Core metadata.

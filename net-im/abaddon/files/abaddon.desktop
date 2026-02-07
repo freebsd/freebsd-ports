@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=abaddon
+GenericName=alternative Discord client
+Exec=abaddon
+Icon=abaddon
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;
+Keywords=discord;messenger;

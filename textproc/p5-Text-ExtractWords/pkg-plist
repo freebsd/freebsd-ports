@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Text::ExtractWords.3.gz
+%%SITE_ARCH%%/Text/ExtractWords.pm
+%%SITE_ARCH%%/auto/Text/ExtractWords/ExtractWords.so
+%%SITE_ARCH%%/auto/Text/ExtractWords/autosplit.ix

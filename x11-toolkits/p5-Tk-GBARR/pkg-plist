@@ -1,0 +1,15 @@
+%%SITE_ARCH%%/Tk/TFrame.pm
+%%SITE_ARCH%%/Tk/NumEntry.pm
+%%SITE_ARCH%%/Tk/NumEntryPlain.pm
+%%SITE_ARCH%%/Tk/FireButton.pm
+%%SITE_ARCH%%/Tk/Cloth.pm
+%%SITE_ARCH%%/Tk/demos/widtrib/cloth.pl
+%%SITE_ARCH%%/Tk/demos/widtrib/firebutton.pl
+%%SITE_ARCH%%/Tk/demos/widtrib/numentry.pl
+%%SITE_ARCH%%/Tk/demos/widtrib/numentryplain.pl
+%%SITE_ARCH%%/Tk/demos/widtrib/tframe.pl
+%%PERL5_MAN3%%/Tk::Cloth.3.gz
+%%PERL5_MAN3%%/Tk::FireButton.3.gz
+%%PERL5_MAN3%%/Tk::NumEntry.3.gz
+%%PERL5_MAN3%%/Tk::NumEntryPlain.3.gz
+%%PERL5_MAN3%%/Tk::TFrame.3.gz

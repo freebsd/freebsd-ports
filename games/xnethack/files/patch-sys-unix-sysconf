@@ -1,0 +1,11 @@
+--- sys/unix/sysconf.orig	2025-03-15 15:02:36 UTC
++++ sys/unix/sysconf
+@@ -146,7 +146,7 @@ LIVELOG=0x11FFF
+ #   %D current time, YYYYMMDDhhmmss format
+ #   %n player name
+ #   %N first character of player name
+-DUMPLOGFILE=/tmp/xnethack.%n.%d.log
++DUMPLOGFILE=/tmp/nethack.%v.%u.%n.%D.log
+ 
+ # End of game HTML dump.
+ # Only available if NetHack was compiled with DUMPHTML

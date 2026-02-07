@@ -1,0 +1,6 @@
+Yet another DCF77 decoder.  This one is intended for the Raspberry Pi
+platform but might work on other devices using GPIO pins too.
+
+The received data can be logged for later playback/analysis.
+
+The software is written as a library for easy reuse into other software.

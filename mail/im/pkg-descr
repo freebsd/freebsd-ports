@@ -1,0 +1,18 @@
+IM (Internet Message) provides a series of user interface commands
+(imput, imget, imls, ...) and backend Perl5 modules to integrate
+E-mail and NetNews user interface. They are designed to be used both
+from Mew version 1.x and on command line.
+
+The folder style of IM is exactly the same as that of MH. So, you can
+replace MH with this package without any migration works. Moreover,
+you are able to operate your messages both by IM and MH with
+consistent manner.
+
+IM is copyrighted by IM developing team. You can redistribute it
+and/or modify it under the modified BSD license.
+
+Although you installed IM successfully, yet you must be initialized on
+your home directory at once. Execute imsetup command with your account
+after im installed.
+
+        % imsetup

@@ -1,0 +1,19 @@
+--- tools/migration/Makefile.orig	2025-03-13 13:12:42 UTC
++++ tools/migration/Makefile
+@@ -18,14 +18,14 @@ install: prosody-migrator.install migrator.cfg.lua.ins
+ 	install -d $(BIN) $(CONFIG) $(SOURCE)
+ 	install -d $(MAN)/man1
+ 	install -m755 ./prosody-migrator.install $(BIN)/prosody-migrator
+-	test -e $(CONFIG)/migrator.cfg.lua || install -m644 migrator.cfg.lua.install $(CONFIG)/migrator.cfg.lua
++	install -m644 migrator.cfg.lua.install $(CONFIG)/migrator.cfg.lua.sample
+ 
+ clean:
+ 	rm -f prosody-migrator.install
+ 	rm -f migrator.cfg.lua.install
+ 
+ prosody-migrator.install: prosody-migrator.lua
+-	sed "1s/\blua\b/$(RUNWITH)/; \
++	sed "1s/ lua$$/ $(RUNWITH)/; \
+ 		s|^CFG_SOURCEDIR=.*;$$|CFG_SOURCEDIR='$(INSTALLEDSOURCE)';|; \
+ 		s|^CFG_CONFIGDIR=.*;$$|CFG_CONFIGDIR='$(INSTALLEDCONFIG)';|; \
+ 		s|^CFG_DATADIR=.*;$$|CFG_DATADIR='$(INSTALLEDDATA)';|; \

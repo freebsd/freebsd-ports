@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon May 14 14:23:30 2007
++++ src/Makefile.in	Tue May 15 20:50:22 2007
+@@ -222,7 +222,7 @@
+ 
+ 
+ #noinst_HEADERS = scim_chewing_imengine.h scim_chewing_config_entry.h
+-moduledir = @SCIM_MODULEDIR@/IMEngine
++moduledir = ${PREFIX}/lib/scim-1.0/1.4.0/IMEngine
+ module_LTLIBRARIES = OVLoader-SCIM.la
+ OVLoader_SCIM_la_SOURCES = OVLoader-SCIM.cpp
+ OVLoader_SCIM_la_CFLAGS = @SCIM_CFLAGS@ @SCIM_DEBUG_FLAGS@ 

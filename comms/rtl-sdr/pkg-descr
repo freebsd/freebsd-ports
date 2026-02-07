@@ -1,0 +1,2 @@
+Set of tools that can initialize the RTL2832, tune to a given frequency, and
+record the I/Q-samples to a file.

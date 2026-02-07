@@ -1,0 +1,4 @@
+Microsoft Azure Active Directory Authentication Library (ADAL) for Python
+
+The ADAL for python library makes it easy for python applications to
+authenticate to AAD in order to access AAD protected web resources.

@@ -1,0 +1,16 @@
+Darktile is a GPU rendered terminal emulator designed for tiling window
+managers.
+
+Features:
+* GPU rendering
+* Unicode support
+* Variety of themes available (or build your own!)
+* Compiled-in powerline font
+* Works with your favourite monospaced TTF/OTF fonts
+* Font ligatures (turn it off if you're not a ligature fan)
+* Hints: Context-aware overlays e.g. hex colour viewer, octal permission
+  annotation
+* Take screenshots with a single key-binding
+* Sixels
+* Window transparency (0-100%)
+* Customisable cursor (most popular image formats supported)

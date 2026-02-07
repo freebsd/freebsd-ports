@@ -1,0 +1,433 @@
+--- less.nro.orig	Sun Sep 15 23:00:49 1996
++++ less.nro	Sun Sep 15 23:06:46 1996
+@@ -1,12 +1,12 @@
+ .TH LESS 1
+ .SH NAME
+-less \- opposite of more
++cless \- opposite of more
+ .SH SYNOPSIS
+-.B "less -?"
++.B "cless -?"
+ .br
+-.B "less -V"
++.B "cless -V"
+ .br
+-.B "less [-[+]aBcCdeEfgGiImMnNqQrsSuUVwX]"
++.B "cless [-[+]aBcCdeEfgGiImMnNqQrsSuUVwX]"
+ .br
+ .B "     [-b \fIbufs\fP] [-h \fIlines\fP] [-j \fIline\fP] [-k \fIkeyfile\fP]"
+ .br
+@@ -23,7 +23,7 @@
+ (1), but which allows backward movement
+ in the file as well as forward movement.
+ Also,
+-.I less
++.I cless
+ does not have to read the entire input file before starting,
+ so with large input files it starts up faster than text editors like
+ .I vi
+@@ -114,7 +114,7 @@
+ Go to a position N percent into the file.
+ N should be between 0 and 100.
+ (This works if standard input is being read, but only if
+-.I less
++.I cless
+ has already read to the end of the file.
+ It is always fast, but not always useful.)
+ .PP
+@@ -329,18 +329,18 @@
+ .IP +cmd
+ Causes the specified cmd to be executed each time a new file is examined.
+ For example, +G causes 
+-.I less
++.I cless
+ to initially display each file starting at the end 
+ rather than the beginning.
+ .PP
+ .IP V
+ Prints the version number of 
+-.I less 
++.I cless 
+ being run.
+ .PP
+ .IP "q or :q or :Q or ZZ"
+ Exits
+-.I less.
++.I cless.
+ .PP
+ The following 
+ three
+@@ -374,13 +374,13 @@
+ .SH OPTIONS
+ Command line options are described below.
+ Most options may be changed while
+-.I less 
++.I cless 
+ is running, via the "\-" command.
+ .PP
+ Options are also taken from the environment variable "LESS".
+ For example, 
+-to avoid typing "less -options ..." each time 
+-.I less 
++to avoid typing "cless -options ..." each time 
++.I cless 
+ is invoked, you might tell 
+ .I csh:
+ .sp
+@@ -402,10 +402,10 @@
+ following string.
+ .IP -?
+ This option displays a summary of the commands accepted by
+-.I less
++.I cless
+ (the same as the h command).
+ If this option is given, all other options are ignored, and
+-.I less
++.I cless
+ exits after the help screen is viewed.
+ (Depending on how your shell interprets the question mark,
+ it may be necessary to quote the question mark, thus: "-\\?".)
+@@ -417,7 +417,7 @@
+ (or after the last found line; see the -j option).
+ .IP -b\fIn\fP
+ Specifies the number of buffers
+-.I less
++.I cless
+ will use for each file.
+ Buffers are 1K, and by default 10 buffers are used for each file
+ (except if the file is a pipe; see the -B option).
+@@ -444,7 +444,7 @@
+ that is, lacks some important capability,
+ such as the ability to clear the screen or scroll backward.
+ The -d option does not otherwise change the behavior of
+-.I less
++.I cless
+ on a dumb terminal).
+ .IP -D\fBx\fP\fIcolor\fP
+ [MS-DOS only]
+@@ -457,31 +457,31 @@
+ A single number \fIN\fP is the same as \fIN.0\fP.
+ .IP -e
+ Causes 
+-.I less 
++.I cless 
+ to automatically exit
+ the second time it reaches end-of-file.
+ By default, the only way to exit 
+-.I less
++.I cless
+ is via the "q" command.
+ .IP -E
+ Causes 
+-.I less
++.I cless
+ to automatically exit the first time it reaches end-of-file.
+ .IP -f
+ Forces non-regular files to be opened.
+ (A non-regular file is a directory or a device special file.)
+ Also suppresses the warning message when a binary file is opened.
+ By default,
+-.I less
++.I cless
+ will refuse to open non-regular files.
+ .IP -g
+ Normally, 
+-.I less 
++.I cless 
+ will highlight ALL strings which match the last search command.
+ The -g flag changes this behavior to highlight only the particular string 
+ which was found by the last search command.
+ This can cause 
+-.I less 
++.I cless 
+ to run somewhat faster than the default.
+ .IP -G
+ The -G flag suppresses all highlighting of strings found by search commands.
+@@ -519,32 +519,32 @@
+ on the screen.
+ .IP -k\fIfilename\fP
+ Causes
+-.I less
++.I cless
+ to open and interpret the named file as a
+-.I lesskey
++.I clesskey
+ (1) file.
+ Multiple -k options may be specified.
+-If a file called .less exists in the user's home directory, this
++If a file called .cless exists in the user's home directory, this
+ file is also used as a
+-.I lesskey
++.I clesskey
+ file.
+ .IP -m
+ Causes 
+-.I less
++.I cless
+ to prompt verbosely (like \fImore\fP),
+ with the percent into the file.
+ By default,
+-.I less
++.I cless
+ prompts with a colon.
+ .IP -M
+ Causes 
+-.I less
++.I cless
+ to prompt even more verbosely than 
+ .I more.
+ .IP -n
+ Suppresses line numbers.
+ The default (to use line numbers) may cause
+-.I less
++.I cless
+ to run more slowly in some cases, especially with a very large input file.
+ Suppressing line numbers with the -n flag will avoid this problem.
+ Using line numbers means: the line number will be displayed in the verbose
+@@ -556,12 +556,12 @@
+ each line in the display.
+ .IP -o\fIfilename\fP
+ Causes
+-.I less
++.I cless
+ to copy its input to the named file as it is being viewed.
+ This applies only when the input file is a pipe,
+ not an ordinary file.
+ If the file already exists, 
+-.I less
++.I cless
+ will ask for confirmation before overwriting it.
+ .IP -O\fIfilename\fP
+ The -O option is like -o, but it will overwrite an existing
+@@ -569,23 +569,23 @@
+ .sp
+ If no log file has been specified,
+ the -o and -O options can be used from within 
+-.I less
++.I cless
+ to specify a log file.
+ Without a file name, they will simply report the name of the log file.
+ The "s" command is equivalent to specifying -o from within
+-.I less.
++.I cless.
+ .IP -p\fIpattern\fP
+ The -p option on the command line is equivalent to 
+ specifying +/\fIpattern\fP;
+ that is, it tells
+-.I less
++.I cless
+ to start at the first occurrence of \fIpattern\fP in the file.
+ .IP -P\fIprompt\fP
+ Provides a way to tailor the three prompt
+ styles to your own preference.
+ This option would normally be put in the LESS environment
+ variable, rather than being typed in with each 
+-.I less
++.I cless
+ command.
+ Such an option must either be the last option in the LESS variable,
+ or be terminated by a dollar sign.
+@@ -613,7 +613,7 @@
+ The default is to display control characters using the caret notation;
+ for example, a control-A (octal 001) is displayed as "^A".
+ Warning: when the -r flag is used,
+-.I less
++.I cless
+ cannot keep track of the actual appearance of the screen
+ (since this depends on how the screen responds to
+ each type of control character).
+@@ -638,10 +638,10 @@
+ .I ctags
+ (1) command.
+ This option may also be specified from within 
+-.I less 
++.I cless 
+ (using the \- command) as a way of examining a new file.
+ The command ":t" is equivalent to specifying -t from within
+-.I less.
++.I cless.
+ .IP -T\fItagsfile\fP
+ Specifies a tags file to be used instead of "tags".
+ .IP -u
+@@ -667,7 +667,7 @@
+ if neither -u nor -U is in effect.
+ .IP -V
+ Displays the version number of 
+-.I less.
++.I cless.
+ .IP -w
+ Causes blank lines to be used to represent lines
+ past the end of the file.
+@@ -705,9 +705,9 @@
+ .IP +
+ If a command line option begins with \fB+\fP,
+ the remainder of that option is taken to be an initial command to
+-.I less.
++.I cless.
+ For example, +G tells
+-.I less
++.I cless
+ to start at the end of the file rather than the beginning,
+ and +/xyz tells it to start at the first occurrence of "xyz" in the file.
+ As a special case, +<number> acts like +<number>g; 
+@@ -777,25 +777,25 @@
+ 
+ .SH "KEY BINDINGS"
+ You may define your own 
+-.I less
++.I cless
+ commands by using the program 
+-.I lesskey
++.I clesskey
+ (1)
+-to create a file called ".less" in your home directory.
++to create a file called ".cless" in your home directory.
+ This file specifies a set of command keys and an action
+ associated with each key.
+ You may also use
+-.I lesskey
++.I clesskey
+ to change the line-editing keys (see LINE EDITING).
+ See the
+-.I lesskey
++.I clesskey
+ manual page for more details.
+ 
+ .SH "INPUT PREPROCESSOR"
+ You may define an "input preprocessor" for 
+-.I less.
++.I cless.
+ Before
+-.I less
++.I cless
+ opens a file, it first gives your input preprocessor a chance to modify the
+ way the contents of the file are displayed.
+ An input preprocessor is simply an executable program (or shell script),
+@@ -805,7 +805,7 @@
+ in place of the contents of the original file.
+ However, it will appear to the user as if the original file is opened;
+ that is, 
+-.I less
++.I cless
+ will display the original filename as the name of the current file.
+ .PP
+ An input preprocessor receives one command line argument, the original filename,
+@@ -813,7 +813,7 @@
+ It should create the replacement file, and when finished,
+ print the name of the replacement file to its standard output.
+ If the input preprocessor does not output a replacement filename, 
+-.I less
++.I cless
+ uses the original file, as normal.
+ The input preprocessor is not called when viewing standard input.
+ To set up an input preprocessor, set the LESSOPEN environment variable
+@@ -823,7 +823,7 @@
+ when the input preprocessor command is invoked.
+ .PP
+ When 
+-.I less
++.I cless
+ closes a file opened in such a way, it will call another program,
+ called the input postprocessor,
+ which may perform any desired clean-up action (such as deleting the
+@@ -839,24 +839,24 @@
+ .PP
+ For example, on many Unix systems, these two scripts will allow you
+ to keep files in compressed format, but still let
+-.I less
++.I cless
+ view them directly:
+ .PP
+-lessopen.sh:
++clessopen.sh:
+ .br
+ 	#! /bin/sh
+ .br
+ 	case "$1" in
+ .br
+-	*.Z)	uncompress -c $1  >/tmp/less.$$  2>/dev/null
++	*.Z)	uncompress -c $1  >/tmp/cless.$$  2>/dev/null
+ .br
+-		if [ -s /tmp/less.$$ ]; then 
++		if [ -s /tmp/cless.$$ ]; then 
+ .br
+-			echo /tmp/less.$$
++			echo /tmp/cless.$$
+ .br
+ 		else
+ .br
+-			rm -f /tmp/less.$$
++			rm -f /tmp/cless.$$
+ .br
+ 		fi
+ .br
+@@ -878,7 +878,7 @@
+ .PP
+ It is also possible to set up an input preprocessor to
+ pipe the file data directly to 
+-.I less,
++.I cless,
+ rather than putting the data into a replacement file.
+ This avoids the need to decompress the entire file before 
+ starting to view it.
+@@ -888,7 +888,7 @@
+ writes the entire contents of the replacement file on its standard output.
+ If the input pipe does not write any characters on its standard output,
+ then there is no replacement file and 
+-.I less
++.I cless
+ uses the original file, as normal.
+ To use an input pipe,
+ make the first character in the LESSOPEN environment variable a 
+@@ -950,7 +950,7 @@
+ Selects a character set appropriate for NeXT computers.
+ .PP
+ In special cases, it may be desired to tailor
+-.I less
++.I cless
+ to use a character set other than the ones definable by LESSCHARSET.
+ In this case, the environment variable LESSCHARDEF can be used
+ to define a character set.
+@@ -983,7 +983,7 @@
+ but your system supports the 
+ .I setlocale
+ interface,
+-.I less
++.I cless
+ will use setlocale to determine the character set.
+ setlocale is controlled by setting the LANG or LC_CTYPE environment variables.
+ .PP
+@@ -1173,14 +1173,14 @@
+ .IP EDITOR
+ The name of the editor (used for the v command).
+ .IP HOME
+-Name of the user's home directory (used to find a .less file).
++Name of the user's home directory (used to find a .cless file).
+ .IP LANG
+ Language for determining the character set.
+ .IP LC_CTYPE
+ Language for determining the character set.
+ .IP LESS
+ Flags which are passed to 
+-.I less
++.I cless
+ automatically.
+ .IP LESSBINFMT
+ Format for displaying non-printable, non-control characters.
+@@ -1204,13 +1204,14 @@
+ The shell used to execute the ! command, as well as to expand filenames.
+ .IP TERM
+ The type of terminal on which
+-.I less
++.I cless
+ is being run.
+ .IP VISUAL
+ The name of the editor (used for the v command).
+ 
+ .SH "SEE ALSO"
+-lesskey(1)
++clesskey(1)
++less(1)
+ 
+ .SH WARNINGS
+ The = command and prompts (unless changed by -P)

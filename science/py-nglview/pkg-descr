@@ -1,0 +1,5 @@
+nglview is an IPython/Jupyter widget to interactively view molecular structures
+and trajectories. Utilizes the embeddable NGL Viewer for rendering. Support for
+showing data from the file-system, RCSB PDB, simpletraj and from objects of
+analysis libraries mdtraj, pytraj, mdanalysis, ParmEd, rdkit, ase, HTMD,
+biopython, cctbx, pyrosetta, schrodinger's Structure.

@@ -1,0 +1,17 @@
+@(,games,2555) bin/columns
+%%DATADIR%%/applause.wav
+%%DATADIR%%/bg.bmp
+%%DATADIR%%/big.fnt
+%%DATADIR%%/bye.wav
+%%DATADIR%%/drop.wav
+%%DATADIR%%/hello.wav
+%%DATADIR%%/laugh.wav
+%%DATADIR%%/level.wav
+%%DATADIR%%/magic.wav
+%%DATADIR%%/move.wav
+%%DATADIR%%/perfect.wav
+%%DATADIR%%/remove.wav
+%%DATADIR%%/rotate.wav
+%%DATADIR%%/small.fnt
+%%DATADIR%%/tiles.bmp
+@sample(,games,664) /var/games/columns.hsc.sample

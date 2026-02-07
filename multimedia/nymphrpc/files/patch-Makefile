@@ -1,0 +1,83 @@
+--- Makefile.orig	2022-03-20 11:56:45 UTC
++++ Makefile
+@@ -7,6 +7,8 @@ export TOP := $(CURDIR)
+ 
+ export TOP := $(CURDIR)
+ 
++CXX ?= g++
++
+ ifndef ANDROID_ABI_LEVEL
+ ANDROID_ABI_LEVEL := 24
+ endif
+@@ -37,9 +39,7 @@ endif
+ endif
+ endif
+ 
+-ifndef ARCH
+-ARCH := $(shell g++ -dumpmachine)/
+-endif
++ARCH :=
+ 
+ USYS := $(shell uname -s)
+ UMCH := $(shell uname -m)
+@@ -71,7 +71,7 @@ else
+ RM = rm
+ AR = ar 
+ else
+-GCC = g++
++GCC = $(CXX)
+ MAKEDIR = mkdir -p
+ RM = rm
+ AR = ar
+@@ -92,9 +92,10 @@ INCLUDE = -I src
+ 
+ 
+ INCLUDE = -I src
++INCLUDE += -I /usr/local/include
+ LIBS := -lPocoNet -lPocoUtil -lPocoFoundation -lPocoJSON 
+-CFLAGS := $(INCLUDE) -g3 -std=c++11 -O0
+-SHARED_FLAGS := -fPIC -shared -Wl,$(SONAME),$(LIBNAME)
++CFLAGS := $(INCLUDE) -g3 -std=c++14 -O0
++SHARED_FLAGS := -fPIC -shared -Wl,$(SONAME),$(LIBNAME) -L /usr/local/lib
+ 
+ ifdef ANDROID
+ CFLAGS += -fPIC
+@@ -132,9 +133,10 @@ SHARED_OBJECTS := $(addprefix obj/shared/$(ARCH),$(not
+ OBJECTS := $(addprefix obj/static/$(ARCH),$(notdir) $(SOURCES:.cpp=.o))
+ SHARED_OBJECTS := $(addprefix obj/shared/$(ARCH),$(notdir) $(SOURCES:.cpp=.o))
+ 
+-all: lib
++all: makedir 
++	$(MAKE) lib
+ 
+-lib: makedir lib/$(ARCH)$(OUTPUT).a lib/$(ARCH)$(LIBNAME)
++lib: makedir lib/$(OUTPUT).a lib/$(LIBNAME)
+ 	
+ obj/static/$(ARCH)%.o: %.cpp
+ 	$(GCC) -c -o $@ $< $(CFLAGS)
+@@ -142,11 +144,11 @@ obj/shared/$(ARCH)%.o: %.cpp
+ obj/shared/$(ARCH)%.o: %.cpp
+ 	$(GCC) -c -o $@ $< $(SHARED_FLAGS) $(CFLAGS) $(LIBS)
+ 	
+-lib/$(ARCH)$(OUTPUT).a: $(OBJECTS)
++lib/$(OUTPUT).a: $(OBJECTS)
+ 	-rm -f $@
+ 	$(AR) rcs $@ $^
+ 	
+-lib/$(ARCH)$(LIBNAME): $(SHARED_OBJECTS)
++lib/$(LIBNAME): $(SHARED_OBJECTS)
+ 	$(GCC) -o $@ $(CFLAGS) $(SHARED_FLAGS) $(SHARED_OBJECTS) $(LIBS)
+ 	
+ makedir:
+@@ -184,9 +186,9 @@ install:
+ .PHONY: install
+ install:
+ 	install -d $(DESTDIR)$(PREFIX)/lib/
+-	install -m 644 lib/$(ARCH)$(OUTPUT).a $(DESTDIR)$(PREFIX)/lib/
++	install -m 644 lib/$(OUTPUT).a $(DESTDIR)$(PREFIX)/lib/
+ ifndef OS
+-	install -m 644 lib/$(ARCH)$(OUTPUT).so.$(VERSION) $(DESTDIR)$(PREFIX)/lib/
++	install -m 644 lib/$(OUTPUT).so.$(VERSION) $(DESTDIR)$(PREFIX)/lib/
+ endif
+ 	install -d $(DESTDIR)$(PREFIX)/include/nymph
+ 	install -m 644 src/*.h $(DESTDIR)$(PREFIX)/include/nymph/

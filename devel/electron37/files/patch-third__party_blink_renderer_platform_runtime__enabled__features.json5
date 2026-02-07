@@ -1,0 +1,74 @@
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-07-17 20:56:08 UTC
++++ third_party/blink/renderer/platform/runtime_enabled_features.json5
+@@ -505,7 +505,7 @@
+       name: "AppTitle",
+       status: "experimental",
+       origin_trial_feature_name: "AppTitle",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "WebAppEnableAppTitle",
+     },
+     {
+@@ -1844,7 +1844,7 @@
+       name: "DocumentIsolationPolicy",
+       status: "experimental",
+       origin_trial_feature_name: "DocumentIsolationPolicy",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "none",
+     },
+     {
+@@ -2105,7 +2105,7 @@
+       base_feature: "none",
+       public: true,
+       origin_trial_feature_name: "FedCmMultipleIdentityProviders",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+     },
+     {
+@@ -3598,7 +3598,7 @@
+       // Tracking bug for the implementation: https://crbug.com/1462930
+       name: "PermissionElement",
+       origin_trial_feature_name: "PermissionElement",
+-      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "android"],
++      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "android", "openbsd", "freebsd"],
+       status: "experimental",
+       public: true,
+       base_feature_status: "enabled",
+@@ -3762,7 +3762,7 @@
+     {
+       name: "PrivateNetworkAccessPermissionPrompt",
+       origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
+-      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+       status: "stable",
+       public: true,
+       base_feature: "none",
+@@ -5051,7 +5051,7 @@
+       name: "UnrestrictedSharedArrayBuffer",
+       base_feature: "none",
+       origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
+-      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+     },
+     // Enables using policy-controlled feature "usb-unrestricted" to allow
+     // isolated context to access protected USB interface classes and to
+@@ -5221,7 +5221,7 @@
+     {
+       name: "WebAppScopeExtensions",
+       origin_trial_feature_name: "WebAppScopeExtensions",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+       base_feature: "none",
+     },
+@@ -5508,7 +5508,7 @@
+     {
+       name: "WebIdentityDigitalCredentials",
+       origin_trial_feature_name: "WebIdentityDigitalCredentials",
+-      origin_trial_os: ["android", "win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["android", "win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       implied_by: ["WebIdentityDigitalCredentialsCreation"],
+       public: true,

@@ -1,0 +1,2 @@
+This model is a thin wrapper around Class::DBI::Sweet to let you use it as
+a Catalyst Model easily. It's similar to Catalyst::Model::CDBI::Plain.

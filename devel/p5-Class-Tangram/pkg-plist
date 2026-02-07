@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Class::Tangram.3.gz
+%%PERL5_MAN3%%/Class::Tangram::Containers.3.gz
+%%PERL5_MAN3%%/Class::Tangram::Generator.3.gz
+%%SITE_PERL%%/Class/Tangram.pm
+%%SITE_PERL%%/Class/Tangram/Containers.pod
+%%SITE_PERL%%/Class/Tangram/Generator.pm
+%%SITE_PERL%%/Class/Tangram/Generator/Stub.pm

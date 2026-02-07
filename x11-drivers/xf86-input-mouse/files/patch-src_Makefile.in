@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2018-06-21 20:18:48 UTC
++++ src/Makefile.in
+@@ -357,7 +357,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include $(XORG_CFLAGS)
+ # _ladir passes a dummy rpath to libtool so the thing will actually link
+ # TODO: -nostdlib/-Bstatic/-lgcc platform magic, not installing the .a, etc.
+ @DRIVER_NAME@_drv_la_LTLIBRARIES = @DRIVER_NAME@_drv.la
+-@DRIVER_NAME@_drv_la_LDFLAGS = -module -avoid-version
++@DRIVER_NAME@_drv_la_LDFLAGS = -module -avoid-version -lusbhid
+ @DRIVER_NAME@_drv_ladir = @inputdir@
+ 
+ # We have to list all the mouse drivers here, even if we don't build them, so

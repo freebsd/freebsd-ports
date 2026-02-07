@@ -1,0 +1,8 @@
+bin/pglogctl
+bin/pglogd
+share/pglogd/pglogd_tables.sql
+share/pglogd/pglogd.conf
+share/pglogd/queries.txt
+share/pglogd/weblog_daily.sql
+share/pglogd/README
+share/pglogd/CHANGELOG

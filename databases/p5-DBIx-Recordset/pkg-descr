@@ -1,0 +1,9 @@
+DBIx::Recordset is a perl module for abstraction and simplification of
+database access.
+
+The goal is to make standard database access
+(select/insert/update/delete) easier to handle and independend of the
+underlying DBMS.  Special attention is made on web applications to make
+it possible to handle the state-less access and to process the posted
+data of formfields, but DBIx::Recordset is not limited to web
+applications.

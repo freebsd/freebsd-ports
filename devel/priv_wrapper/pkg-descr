@@ -1,0 +1,1 @@
+priv_wrapper allows to disable chroot, prctl, pledge and setrlmit system calls.

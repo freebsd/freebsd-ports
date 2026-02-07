@@ -1,0 +1,2 @@
+Ruby-FFI is a ruby extension for programmatically loading dynamic libraries,
+binding functions within them, and calling those functions from Ruby code.

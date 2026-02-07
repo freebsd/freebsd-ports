@@ -1,0 +1,2 @@
+ufoNormalizer provides a standard formatting so that there are meaningful diffs
+in version control rather than formatting noise.

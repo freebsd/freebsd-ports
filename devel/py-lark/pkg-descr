@@ -1,0 +1,18 @@
+ark is a parsing toolkit for Python, built with a focus on ergonomics,
+performance and modularity.
+
+Lark can parse all context-free languages. To put it simply, it means that it is
+capable of parsing almost any programming language out there, and to some degree
+most natural languages too.
+
+What can it do?
+- Parse all context-free grammars, and handle any ambiguity gracefully
+- Build an annotated parse-tree automagically, no construction code required.
+- Provide first-rate performance in terms of both Big-O complexity and measured
+  run-time (considering that this is Python ;)
+- Run on every Python interpreter (it's pure-python)
+- Generate a stand-alone parser (for LALR(1) grammars)
+- And many more features. Read ahead and find out!
+
+Most importantly, Lark will save you time and prevent you from getting parsing
+headaches.

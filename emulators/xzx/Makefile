@@ -1,0 +1,40 @@
+PORTNAME=	xzx
+PORTVERSION=	4.6
+PORTREVISION=	6
+CATEGORIES=	emulators
+MASTER_SITES=	http://wos.meulie.net/pub/sinclair/emulators/unix/ \
+		http://fossies.org/linux/misc/old/
+DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
+WWW=		https://web.archive.org/web/20150211123250/http://erik-kunze.de/xzx/
+
+# Converted from RESTRICTED
+LICENSE=	xzx
+LICENSE_NAME=	xzx
+LICENSE_TEXT=	Redistribution forbidden by license
+LICENSE_PERMS=	auto-accept
+
+USES=		imake:env motif xorg
+USE_XORG=	x11 ice sm xext xpm xt xxf86vm
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-oss
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-pro
+
+OPTIONS_DEFINE=	DOCS
+
+pre-configure:
+	@${REINPLACE_CMD} 's,(pkglibdir),(datadir)/doc/@PACKAGE@,' ${WRKSRC}/doc/Makefile.in
+
+# Prevent configure from trying to run auto* since it's not needed and will
+# error if auto* < 2.54
+post-configure:
+		@${REINPLACE_CMD} 's@autoheader@${TRUE}@g' ${WRKSRC}/Makefile
+		@${REINPLACE_CMD} 's@autoconf@${TRUE}@g' ${WRKSRC}/Makefile
+		@${ECHO_CMD} "${TRUE}" > ${WRKSRC}/missing
+
+.include <bsd.port.mk>

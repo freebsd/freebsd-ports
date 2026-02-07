@@ -1,0 +1,114 @@
+#!/bin/sh
+
+# PROVIDE: memcached
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to run memcached:
+#
+# memcached_enable (bool):	Set it to "YES" to enable memcached.
+#				Default is "NO".
+# memcached_flags (flags):	Set extra flags here. More options in memcached(1)
+#				Default is empty "".
+# memcached_user (user):	Set user to run memcached.
+#				Default is "nobody".
+# memcached_group (group):	Set group to run memcached.
+#				Default is "nobody".
+# memcached_profiles (str):     Set to "" by default.
+#                               Define your profiles here.
+# memcached_post_start (str):   Set extra commands that should be executed after memcached was successfully
+#                               started here.
+#                               Default is empty "".
+
+. /etc/rc.subr
+
+name="memcached"
+rcvar=memcached_enable
+
+_piddir="/var/run/memcached"
+pidfile="${_piddir}/memcached.pid"
+
+: ${memcached_enable="NO"}
+: ${memcached_user="nobody"}
+: ${memcached_group="nobody"}
+
+load_rc_config ${name}
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${memcached_profiles}" ]; then
+		pidfile="${_piddir}/memcached.${profile}.pid"
+		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
+                eval memcached_user="\${memcached_${profile}_user:-${memcached_user}}"
+                eval memcached_group="\${memcached_${profile}_group:-${memcached_group}}"
+		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
+		eval memcached_post_start="\${memcached_${profile}_post_start:-${memcached_post_start}}"
+	else
+		echo "%%PREFIX%%/etc/rc.d/memcached%%RC_SUBR_SUFFIX%%: extra argument ignored"
+	fi
+else
+	if [ -n "${memcached_profiles}" -a -n "$1" ]; then
+		for profile in ${memcached_profiles}; do
+			eval _enable="\${memcached_${profile}_enable}"
+			case "${_enable:-${memcached_enable}}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+				;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=memcached_enable
+				else
+					_var=memcached_"${profile}"_enable
+				fi
+				warn "Bad value" \
+				    "'${_enable:-${memcached_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> memcached profile: ${profile}"
+			if %%PREFIX%%/etc/rc.d/memcached%%RC_SUBR_SUFFIX%% $1 ${profile} ; then
+				success="${profile} ${success:-}"
+			else
+				failed="${profile} (${retcode}) ${failed:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+memcached_poststart()
+{
+    if [ -n "$memcached_post_start" ]; then
+        eval $memcached_post_start
+    fi
+}
+
+memcached_poststop()
+{
+	if [ -n "${profile}" ]; then
+		[ -e "$pidfile" ] && unlink $pidfile
+	else
+		local file
+
+		for file in ${_piddir}/* ; do
+			case "$file" in
+			*\*)
+				continue ;;
+			esac
+			unlink $file
+		done
+	fi
+}
+
+command=%%PREFIX%%/bin/memcached
+command_args="-d -P ${pidfile} "
+
+start_precmd="install -d -o $memcached_user -g $memcached_group -m 755 $_piddir"
+start_postcmd="${name}_poststart"
+stop_postcmd="${name}_poststop"
+
+run_rc_command "$1"

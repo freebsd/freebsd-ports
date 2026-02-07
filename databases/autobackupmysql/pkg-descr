@@ -1,0 +1,9 @@
+A script to take daily, weekly and monthly backups of your MySQL
+databases using mysqldump.
+
+Features:
+- Backup multiple databases
+- Single backup file or to a separate file for each DB
+- Compress backup files
+- Backup remote servers
+- E-mail logs

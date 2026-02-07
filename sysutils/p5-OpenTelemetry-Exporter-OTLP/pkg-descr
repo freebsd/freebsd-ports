@@ -1,0 +1,15 @@
+The OpenTelemetry Protocol Exporter uses the OpenTelemetry Protocol to send
+the telemetry data to a collector. For ways to generate that telemetry data,
+you should look into the OpenTelemetry API distribution (if you are a library
+author) or the OpenTelemetry::SDK distribution (if you are an application
+author).
+
+The telemetry data provided by the API and SDK distributions needs to be sent
+and collected somewhere for processing. This distribution provides an OTLP
+exporter class that can be used to send telemetry data to a collector that
+supports that protocol.
+
+This distribution will be used by the OpenTelemetry::SDK distribution to send
+telemetry data (if configured to do so). If you are not writing an application
+that will send telemetry data to a collector, then you are unlikely to need
+distribution directly.

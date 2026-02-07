@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ncursesw
+Description: ncurses 5.9 library (wide-char/UTF-8 flavor)
+Version: 5.9.20140222
+URL: https://invisible-island.net/ncurses
+Libs: -lncursesw

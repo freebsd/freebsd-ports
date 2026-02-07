@@ -1,0 +1,22 @@
+--- configure.orig	2014-06-10 19:32:22 UTC
++++ configure
+@@ -12181,7 +12181,7 @@ $as_echo "yes" >&6; }
+ fi
+ 
+ case "${host_os}" in
+-darwin*)
++darwin* | freebsd*)
+   darwin=yes
+ 
+ pkg_failed=no
+@@ -12490,8 +12490,8 @@ if test "x$GCC" = "xyes"; then
+       # add '-finline-limit=...' only for GCC 3.x and 4.x:
+       case `$CC -dumpversion 2>/dev/null` in
+       # these --params are also in 3.4.6, but not in 3.3.6
+-      4.*) CFLAGS="$CFLAGS -finline-limit=5000 --param large-function-growth=4900 --param inline-unit-growth=900" ;;
+-      3.*) CFLAGS="$CFLAGS -finline-limit=5000" ;;
++      4.*) CFLAGS="$CFLAGS  --param large-function-growth=4900 --param inline-unit-growth=900" ;;
++      3.*) CFLAGS="$CFLAGS " ;;
+       esac ;;
+   esac
+ fi

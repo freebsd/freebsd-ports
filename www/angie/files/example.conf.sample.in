@@ -1,0 +1,24 @@
+#upstream stream_backend {
+#    server backend1.example.com:12345 weight=5;
+#    server backend2.example.com:12345 max_fails=2 fail_timeout=30s;
+#    server backend3.example.com:12345 max_conns=3;
+#}
+#
+#upstream dns_servers {
+#    least_conn;
+#    server 192.168.136.130:53;
+#    server 192.168.136.131:53;
+#    server 192.168.136.132:53;
+#}
+#
+#server {
+#    listen        12345;
+#    proxy_pass    stream_backend;
+#    proxy_timeout 3s;
+#    proxy_connect_timeout 1s;
+#}
+#
+#server {
+#    listen     53 udp;
+#    proxy_pass dns_servers;
+#}

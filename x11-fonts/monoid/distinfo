@@ -1,0 +1,13 @@
+TIMESTAMP = 1572105265
+SHA256 (monoid-0.61/Monoid.zip) = c28acd76ae1f0244f7c869bf1ba3272da3eb900dd50fbbd368265468a1a34794
+SIZE (monoid-0.61/Monoid.zip) = 145031
+SHA256 (monoid-0.61/Monoid-Tight.zip) = c2abf6a212cf027b4fa07141641156c4eb231ffb38cb510de481bbe82115d548
+SIZE (monoid-0.61/Monoid-Tight.zip) = 145480
+SHA256 (monoid-0.61/Monoid-HalfTight.zip) = d32c6ba277b9a700f1c72fb5f10d150cebb113c0a35fd7cdae01bbddabc9a283
+SIZE (monoid-0.61/Monoid-HalfTight.zip) = 145762
+SHA256 (monoid-0.61/Monoid-HalfLoose.zip) = 3461c88097b8a07cfdf50765a827bd5edd8fcedbed3a48cd05c538d376ec58a9
+SIZE (monoid-0.61/Monoid-HalfLoose.zip) = 145348
+SHA256 (monoid-0.61/Monoid-Loose.zip) = 51238c5027182a8d993a0a58a2cb68a2e96209ee93105ee7653cabe87885c637
+SIZE (monoid-0.61/Monoid-Loose.zip) = 145290
+SHA256 (monoid-0.61/Monoisome-Regular.ttf) = 0aedac5663ea33f5a7d5c802408ff0ee16cf62b680f9e05980ccd2ba40040930
+SIZE (monoid-0.61/Monoisome-Regular.ttf) = 254384

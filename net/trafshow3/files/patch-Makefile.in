@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Mon Aug 24 13:54:16 1998
++++ Makefile.in	Tue May  2 00:51:47 2000
+@@ -28,8 +28,8 @@
+ 
+ PROG = trafshow
+ CC = @CC@
+-CCOPT = @V_CCOPT@
+-INCLS = -I. @V_INCLS@
++CCOPT = @CFLAGS@
++INCLS = -I. @CPPFLAGS@
+ DEFS = @DEFS@
+ 
+ CFLAGS = $(CCOPT) $(DEFS) $(INCLS)

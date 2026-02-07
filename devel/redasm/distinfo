@@ -1,0 +1,9 @@
+TIMESTAMP = 1558623521
+SHA256 (REDasmOrg-REDasm-v2.1.1_GH0.tar.gz) = 2fdd97822279791688b761af66564429727867523cfc31c7018da54d101f0ce3
+SIZE (REDasmOrg-REDasm-v2.1.1_GH0.tar.gz) = 4000712
+SHA256 (REDasmOrg-REDasm-Library-b59bdc3_GH0.tar.gz) = 53424b354dc1d179ea26b0e58c0e6f644ac1ad9bf2d15291ad41e866fb416695
+SIZE (REDasmOrg-REDasm-Library-b59bdc3_GH0.tar.gz) = 420985
+SHA256 (Dax89-QHexView-4524ca3_GH0.tar.gz) = e09e312ce5bd049e74fb1065161f1ae056552cb8e0b23373abfa2ef7f3550729
+SIZE (Dax89-QHexView-4524ca3_GH0.tar.gz) = 160332
+SHA256 (aquynh-capstone-4948fd1_GH0.tar.gz) = 8b004faf0c6fa696fe49de13f01da8cebb735459a10c9b08e7d244a02a776f6b
+SIZE (aquynh-capstone-4948fd1_GH0.tar.gz) = 3408171

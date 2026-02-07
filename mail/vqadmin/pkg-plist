@@ -1,0 +1,48 @@
+bin/vqadmin
+@owner vpopmail
+@group vchkpw
+@(nobody,,644) %%CGIBINDIR%%/vqadmin/.htaccess
+%%CGIBINDIR%%/vqadmin/html/add_alias_domain.html
+%%CGIBINDIR%%/vqadmin/html/add_domain.html
+%%CGIBINDIR%%/vqadmin/html/add_domain_body.html
+%%CGIBINDIR%%/vqadmin/html/add_domain_foot.html
+%%CGIBINDIR%%/vqadmin/html/add_domain_head.html
+%%CGIBINDIR%%/vqadmin/html/add_user.html
+%%CGIBINDIR%%/vqadmin/html/auth_failed.html
+%%CGIBINDIR%%/vqadmin/html/br
+%%CGIBINDIR%%/vqadmin/html/control.html
+%%CGIBINDIR%%/vqadmin/html/ctrl_file.html
+%%CGIBINDIR%%/vqadmin/html/de
+%%CGIBINDIR%%/vqadmin/html/del_domain.html
+%%CGIBINDIR%%/vqadmin/html/del_user.html
+%%CGIBINDIR%%/vqadmin/html/en
+%%CGIBINDIR%%/vqadmin/html/en-us
+%%CGIBINDIR%%/vqadmin/html/error.html
+%%CGIBINDIR%%/vqadmin/html/fi
+%%CGIBINDIR%%/vqadmin/html/fr
+%%CGIBINDIR%%/vqadmin/html/info_user.html
+%%CGIBINDIR%%/vqadmin/html/init_error.html
+%%CGIBINDIR%%/vqadmin/html/hu
+%%CGIBINDIR%%/vqadmin/html/it
+%%CGIBINDIR%%/vqadmin/html/ja
+%%CGIBINDIR%%/vqadmin/html/main.html
+%%CGIBINDIR%%/vqadmin/html/mod_domain.html
+%%CGIBINDIR%%/vqadmin/html/mod_user.html
+%%CGIBINDIR%%/vqadmin/html/my_main.html
+%%CGIBINDIR%%/vqadmin/html/nl
+%%CGIBINDIR%%/vqadmin/html/pl
+%%CGIBINDIR%%/vqadmin/html/qmail_controls_bottom.html
+%%CGIBINDIR%%/vqadmin/html/qmail_controls_middle.html
+%%CGIBINDIR%%/vqadmin/html/qmail_controls_top.html
+%%CGIBINDIR%%/vqadmin/html/show_domains.html
+%%CGIBINDIR%%/vqadmin/html/show_users.html
+%%CGIBINDIR%%/vqadmin/html/view_domain.html
+%%CGIBINDIR%%/vqadmin/html/view_user.html
+%%CGIBINDIR%%/vqadmin/vqadmin.acl
+@(root,wheel,6755) %%CGIBINDIR%%/vqadmin/vqadmin.cgi
+%%WEBDATADIR%%/images/vqadmin/vqadmin.css
+@dir(,,755) %%WEBDATADIR%%/images/vqadmin
+@dir(,,755) %%CGIBINDIR%%/vqadmin/html
+@dir(,,755) %%CGIBINDIR%%/vqadmin
+@owner
+@group

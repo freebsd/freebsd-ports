@@ -1,0 +1,7 @@
+The Levenshtein Python C extension module contains functions for fast
+computation of:
+
+* Levenshtein (edit) distance, and edit operations
+* string similarity
+* approximate median strings, and generally string averaging
+* string sequence and set similarity

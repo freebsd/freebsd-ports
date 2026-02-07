@@ -1,0 +1,10 @@
+--- tensorflow/python/BUILD.orig	2023-09-12 16:46:28 UTC
++++ tensorflow/python/BUILD
+@@ -5043,7 +5043,6 @@ tf_python_pybind_extension(
+     features = ["-layering_check"],
+     deps = [
+         ":pywrap_densor_device_headers",
+-        "//tensorflow/dtensor/proto:layout_proto_cc",
+         "//tensorflow/python/lib/core:pybind11_lib",
+         "//tensorflow/python/lib/core:pybind11_status_headers",
+         "//third_party/python_runtime:headers",  # buildcleaner: keep

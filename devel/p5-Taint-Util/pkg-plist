@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Taint/Util.pm
+%%SITE_ARCH%%/auto/Taint/Util/Util.so
+%%PERL5_MAN3%%/Taint::Util.3.gz

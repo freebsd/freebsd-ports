@@ -1,0 +1,13 @@
+Prunes bash'ism.
+
+--- testsuite.orig	2012-11-07 13:50:33.152011945 +0400
++++ testsuite	2012-11-07 13:50:50.403002720 +0400
+@@ -26,7 +26,7 @@
+ 
+ TEST1()
+ {
+-    typeset f
++    local f
+     f=$1
+     shift
+     ./pmccabe -vt $* > $f.out 2>&1

@@ -1,0 +1,10 @@
+bin/aiksaurus
+bin/caiksaurus
+include/Aiksaurus/Aiksaurus.h
+include/Aiksaurus/AiksaurusC.h
+lib/libAiksaurus-1.2.so.0
+lib/libAiksaurus-1.2.so.0.0.1
+lib/libAiksaurus.so
+libdata/pkgconfig/aiksaurus-1.0.pc
+%%DATADIR%%/meanings.dat
+%%DATADIR%%/words.dat

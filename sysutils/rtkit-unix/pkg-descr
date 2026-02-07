@@ -1,0 +1,7 @@
+RealtimeKit is a D-Bus system service that changes the scheduling policy of user
+processes/threads to the realtime scheduling mode on request. It is intended to
+be used as a secure mechanism to allow real-time scheduling to be used by
+unprivileged user processes.
+
+rtkit-unix is a BSD licensed C++ implementation of the RealtimeKit's interface
+aimed at running on non-Linux OSes.

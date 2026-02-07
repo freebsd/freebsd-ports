@@ -1,0 +1,13 @@
+--- xanalyser.spec.in.orig	2019-10-05 23:01:18 UTC
++++ xanalyser.spec.in
+@@ -45,8 +45,8 @@ rm -rf $RPM_BUILD_ROOT
+ 
+ %files
+ %defattr (-, root, root)
+-/usr/bin/xanalyser
++%%PREFIX%%/bin/xanalyser
+ %doc %{_mandir}/man1/xanalyser.1.gz
+-%config /usr/share/X11/app-defaults/XAnalyser
++%config %%PREFIX%%/lib/X11/app-defaults/XAnalyser
+ 
+ %changelog -n xanalyser

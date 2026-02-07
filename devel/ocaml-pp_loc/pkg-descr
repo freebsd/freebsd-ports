@@ -1,0 +1,5 @@
+This OCaml library allows to format the location, of an error e.g., in
+a source file. The source of the error will be highlighted,
+differently if the location, or set there-of, spans multiple
+lines. This library was originally extracted from the sources of the
+OCaml compiler version 4.08.

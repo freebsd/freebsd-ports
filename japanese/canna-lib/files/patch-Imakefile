@@ -1,0 +1,28 @@
+--- Imakefile.orig	2004-05-20 00:39:22.000000000 +0900
++++ Imakefile	2009-04-13 02:34:56.483862702 +0900
+@@ -122,14 +122,14 @@
+ 
+ CANNAROOT = .
+ SERVERDIR = server dic/phono dic/ideo
+-CLIENTDIR = cmd dic/phono misc
+-SGSDIR = canna lib
++CLIENTDIR = cmd
++SGSDIR = canna lib dic/phono misc
+ MOSTDIR = lib canna server cmd dic/phono misc doc
+ 
+ install:: mkbindir mklibdir mkdicdir mkerrdir
+ instserver:: mkdicdir mkerrdir
+ instclient:: mkbindir mkdicdir
+-instsgs:: mklibdir
++instsgs::
+ instmost:: mkbindir mklibdir mkdicdir mkerrdir
+ 
+ MakeDirectories(mkbindir, $(cannaBinDir))
+@@ -184,6 +184,7 @@
+ 		(cd $$i ; echo "installing" "in $(CURRENT_DIR)/$$i..."; \
+ 		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install); \
+ 	done
++	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) pubconf.h $(DESTDIR)$(cannaIncDir)
+ 
+ instmost::
+ 	@case '${MFLAGS}' in *[ik]*) set +e;; esac; \

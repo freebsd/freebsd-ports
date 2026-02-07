@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+PCSX2 should be recompiled with CPUTYPE defined for best performance.
+EOM
+}
+]

@@ -1,0 +1,31 @@
+--- environment_variables.orig	2025-08-19 09:57:12 UTC
++++ environment_variables
+@@ -66,12 +66,16 @@
+ #  For this reason, a plain "diff" of your results against the reference
+ #  data may not work and human inspection of the results may be needed.
+ 
+-PREFIX=`cd ../../.. ; pwd`
++if [ -z "$PREFIX" ]; then
++  echo "Please set the PREFIX environment variable"
++  exit 1
++fi
+ # $PREFIX is the root of the Quantum ESPRESSO source tree.
+ BIN_DIR=$PREFIX/bin
+-PSEUDO_DIR=$PREFIX/pseudo
++PSEUDO_DIR=$PREFIX/share/quantum-espresso
++ESPRESSO_PSEUDO=/tmp
+ # Beware: everything in $TMP_DIR will be destroyed !
+-TMP_DIR=$PREFIX/tempdir
++TMP_DIR=/tmp
+ 
+ PARA_PREFIX=" "
+ # PARA_PREFIX="mpirun -np 4"
+@@ -85,7 +89,7 @@ PARA_PREFIX=" "
+ #                  -nd n        number of processors for linear algebra 
+ #                                            (or -ndiag, -northo) 
+ 
+-PARA_POSTFIX=" -nk 1 -nd 1 -nb 1 -nt 1 "
++#PARA_POSTFIX=" -nk 1 -nd 1 -nb 1 -nt 1 "
+ 
+ # The following variables are used for image parallelization of PHonon 
+ # (see example in PHonon/examples/Image_example) 

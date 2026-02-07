@@ -1,0 +1,6 @@
+%%SITE_PERL%%/StackTrace/Auto.pm
+%%SITE_PERL%%/Throwable.pm
+%%SITE_PERL%%/Throwable/Error.pm
+%%PERL5_MAN3%%/StackTrace::Auto.3.gz
+%%PERL5_MAN3%%/Throwable.3.gz
+%%PERL5_MAN3%%/Throwable::Error.3.gz

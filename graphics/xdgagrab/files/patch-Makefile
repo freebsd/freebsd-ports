@@ -1,0 +1,9 @@
+--- Makefile.orig	Sat Sep 18 17:32:21 1999
++++ Makefile	Sat Sep 18 17:32:30 1999
+@@ -1,5 +1,5 @@
+ # $Id: Makefile,v 1.1.1.1 1999/02/22 09:12:08 taoka Exp $
+ 
+ xdgagrab : xdgagrab.c
+-	gcc -O2 -m486 -Wall -I/usr/X11R6/include -o xdgagrab xdgagrab.c -L/usr/X11R6/lib -lX11 -lXxf86dga -lXext
++	${CC} ${CFLAGS} -I${LOCALBASE}/include -o xdgagrab xdgagrab.c -L${LOCALBASE}/lib -lX11 -lXxf86dga -lXext
+ 

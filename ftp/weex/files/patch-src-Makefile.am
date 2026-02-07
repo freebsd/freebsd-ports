@@ -1,0 +1,10 @@
+--- src/Makefile.am.orig	2014-09-19 09:09:22 UTC
++++ src/Makefile.am
+@@ -3,6 +3,5 @@ weex_SOURCES=config.c ftplib.c ftplib.h weex.c intl.h 
+ parsecfg.c parsecfg.h proto.h shhopt.c shhopt.h strlib.c strlib.h variable.h \
+ ftpmain.c message.c cache.c sub.c filedata.c log.c
+ 
+-LDADD=$(INTLLIBS)
++LDADD=$(LIBINTL)
+ AM_CPPFLAGS=-DLOCALEDIR=\""$(localedir)"\"
+-INCLUDES=-I$(top_srcdir)/intl -I$(top_builddir)/intl

@@ -1,0 +1,9 @@
+include/layout/ParagraphLayout.h
+include/layout/RunArrays.h
+include/layout/playout.h
+include/layout/plruns.h
+lib/libiculx.a
+lib/libiculx.so
+lib/libiculx.so.%%ICUMAJOR%%
+lib/libiculx.so.%%ICUVER%%
+libdata/pkgconfig/icu-lx.pc

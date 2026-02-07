@@ -1,0 +1,42 @@
+--- ./Makefile.orig	2005-04-20 09:30:18.000000000 -0400
++++ ./Makefile	2009-07-19 22:46:18.989207649 -0400
+@@ -4,10 +4,8 @@
+ PROG = ifdepd
+ RM = rm -f
+ INSTALL = install
+-CFLAGS += -O2 -Wall -Wnested-externs -Wpointer-arith -Winline -Wcast-qual 
+-.if ${OSTYPE}!="OpenBSD"
++CFLAGS += -Wall -Wnested-externs -Wpointer-arith -Winline -Wcast-qual 
+ CFLAGS += -Wredundant-decls
+-.endif
+ MAN8 = ifdepd.8
+ 
+ OBJ = ifdepd.o
+@@ -22,18 +20,12 @@
+ 			${RM} *.o ${PROJ} *.core core ${PROG} tags *.err
+ 
+ install:		${PROG}
+-			${INSTALL} -o root -g wheel -s -m 711 ${PROG} ${PREFIX}/bin
+-.if ${OSTYPE}!="OpenBSD"
+-			${INSTALL} -o root -g wheel -m 755 ${PROG}.sh ${PREFIX}/etc/rc.d
+-.endif
+-			${INSTALL} -o root -g wheel -m 644 ${MAN8} ${PREFIX}/man/man8
++			${BSD_INSTALL_PROGRAM} ${PROG} ${PREFIX}/bin
++			${BSD_INSTALL_MAN} ${MAN8} $${PREFIX}/man/man8
+ 
+ deinstall:
+ 			${RM} ${PREFIX}/bin/${PROG}
+ 			${RM} ${PREFIX}/man/man8/${PROG}.8
+-.if ${OSTYPE}!="OpenBSD"
+-			${RM} ${PREFIX}/etc/rc.d/${PROG}.sh
+-.endif
+ 
+ ${PROG}:		${OBJ}
+ 			${CC} ${CFLAGS} -o ${PROG} ${OBJ} ${LIBS}
+@@ -41,4 +33,4 @@
+ %.o: %.cc %.H %.h
+ 	$(CCXX) $(CXXFLAGS) -c $<
+ 
+-#.include <bsd.prog.mk>
+\ No newline at end of file
++#.include <bsd.prog.mk>

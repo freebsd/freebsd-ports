@@ -1,0 +1,6 @@
+The sysinfo utility is a shell script, for the purpose of interrogating
+your system for information and return the hardware and software
+configuration of the given host system running on FreeBSD.
+
+The goal is to provide a system operator with descriptive information
+about an otherwise unknown FreeBSD installation.

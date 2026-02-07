@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# PROVIDE: mongodb_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mongodb_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable mongodb_exporter.
+# mongodb_exporter_user (string):          Set user that mongodb_exporter will run under
+#               Default is "nobody".
+# mongodb_exporter_group (string):         Set group that mongodb_exporter will run under
+#               Default is "nobody".
+# mongodb_exporter_args (string):          Set extra arguments to pass to mongodb_exporter
+#               Default is "".
+# mongodb_exporter_listen_address (string):Set ip:port that mongodb_exporter will listen on
+#               Default is ":9216".
+# mongodb_exporter_textfile_dir (string):  Set directory that mongodb_exporter will watch
+#               Default is "/var/tmp/mongodb_exporter".
+
+. /etc/rc.subr
+
+name=mongodb_exporter
+rcvar=mongodb_exporter_enable
+
+load_rc_config $name
+
+: ${mongodb_exporter_enable:="NO"}
+: ${mongodb_exporter_user:="nobody"}
+: ${mongodb_exporter_group:="nobody"}
+: ${mongodb_exporter_args:=""}
+: ${mongodb_exporter_listen_address:=":9216"}
+
+pidfile=/var/run/mongodb_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/mongodb_exporter"
+command_args="-f -p ${pidfile} -T ${name} \
+    /usr/bin/env ${procname} \
+    --web.listen-address=${mongodb_exporter_listen_address} \
+    ${mongodb_exporter_args}"
+
+start_precmd=mongodb_exporter_startprecmd
+
+mongodb_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${mongodb_exporter_user} \
+            -g ${mongodb_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+    if [ ! -d ${mongodb_exporter_textfile_dir} ]; then
+        install \
+            -d \
+            -o ${mongodb_exporter_user} \
+            -g ${mongodb_exporter_group} \
+            -m 1755 \
+            ${mongodb_exporter_textfile_dir}
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

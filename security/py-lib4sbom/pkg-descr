@@ -1,0 +1,17 @@
+Lib4SBOM is a library to parse and generate Software Bill of Materials (SBOMs).
+It supports SBOMs created in both SPDX and CycloneDX formats.
+
+It has been developed on the assumption that having a generic abstraction of
+SBOM regardless of the underlying format will be useful to developers.
+
+The following facilities are provided:
+ * Generate SPDX SBOM in TagValue, JSON and YAML formats
+ * Generate CycloneDX SBOM in JSON format
+ * Parse SPDX SBOM in TagValue, JSON, YAML, XML and RDF formats
+ * Parse CycloneDX SBOM in JSON and XMLformat
+ * Create and manipulate a SBOM file object
+ * Create and manipulate a SBOM package object
+ * Create and manipulate a SBOM dependency relationship object
+ * Create and manipulate a Vulnerability object
+ * Create and manipulate a Software Service object
+ * Generated SBOM can be output to a file or to the console

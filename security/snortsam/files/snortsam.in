@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: snortsam
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable snortsam:
+#
+#  snortsam_enable="YES"
+#
+#  # optional Snortsam configuration file:
+#  snortsam_conf="%%ETCDIR%%/snortsam.conf"
+#
+# DO NOT CHANGE THE DEFAULT VALUES HERE
+#
+. /etc/rc.subr
+
+name="snortsam"
+rcvar=snortsam_enable
+load_rc_config snortsam
+
+# defaults
+command="%%PREFIX%%/sbin/snortsam"
+snortsam_enable=${snortsam_enable:-"NO"}
+snortsam_flags=${snortsam_conf:-"%%ETCDIR%%/snortsam.conf"}
+
+run_rc_command "$1"

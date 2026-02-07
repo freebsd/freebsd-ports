@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2004-08-29 03:36:33.000000000 -0700
++++ Makefile.in	2024-09-11 12:36:57.567005000 -0700
+@@ -215,7 +215,7 @@
+ imwheel_DEPENDENCIES = imwheel.o util.o cfg.o jax/libjax.a
+ man_MANS = imwheel.1
+ EXTRA_DIST = BUGS FREEBSD EMACS M-BA47 BUGS see imwheel.1.html imwheel.1 TODO imwheelrc @extras_dist@ @mdump_dist@ lefty.sh imwheel.spec slack.sh
+-ETCDIR = /etc/X11/imwheel
++ETCDIR = ${PREFIX}/etc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+@@ -782,9 +782,7 @@
+ @SUID_TRUE@	chown @suid@ $$progname ; \
+ @SUID_TRUE@	chmod u+s $$progname
+ 	$(mkinstalldirs) $(ETCDIR)
+-	-[ -f /etc/imwheelrc ] && mv /etc/imwheelrc $(ETCDIR)/imwheelrc || true
+-	-[ -f /etc/X11/imwheelrc ] && mv /etc/X11/imwheelrc $(ETCDIR)/imwheelrc || true
+-	-[ -f $(ETCDIR)/imwheelrc ] && install -m 644 imwheelrc $(ETCDIR)/imwheelrc.new || install -m 644 imwheelrc $(ETCDIR)/imwheelrc
++	install -m 644 imwheelrc $(DESTDIR)$(ETCDIR)/imwheelrc
+ 
+ extras: $(EXTRA_PROGRAMS)
+ 

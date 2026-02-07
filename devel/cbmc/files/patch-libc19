@@ -1,0 +1,171 @@
+From 6ba37b383990f1542005fc252bcd3030c477d8ba Mon Sep 17 00:00:00 2001
+From: Sergei Zimmerman <145775305+xokdvium@users.noreply.github.com>
+Date: Mon, 6 Jan 2025 19:13:29 +0300
+Subject: [PATCH] util: Replace std::basic_string<unsigned> with
+ std::basic_string<char32_t>
+
+Fixes build with libc++19 that fails with the error:
+
+> implicit instantiation of undefined template 'std::char_traits<unsigned int>'
+
+Motivation for the change: std::basic_string<T> requires that
+T implements std::char_traits and standard library provides specializations only
+for the following types: char, char16_t, char32_t, wchar_t as per [1].
+
+Note that this has been pointed out during a review previously [2], but made its
+way back into the code in other places.
+
+libc++19 has dropped implementations of std::char_traits for types not required
+by the standard [3].
+
+> The base template for std::char_traits has been removed in LLVM 19.
+> If you are using std::char_traits with types other than char, wchar_t, char8_t, char16_t, char32_t
+> or a custom character type for which you specialized std::char_traits, your code will stop working.
+
+[1] N4713, 24.2.1 Character traits [char.traits] (C++17)
+[2] https://www.github.com/diffblue/cbmc/pull/5277#discussion_r396609205
+[3] https://libcxx.llvm.org/ReleaseNotes/19.html#deprecations-and-removals
+--- src/ansi-c/literals/convert_character_literal.cpp.orig	2024-11-28 20:55:26 UTC
++++ src/ansi-c/literals/convert_character_literal.cpp
+@@ -32,7 +32,7 @@ exprt convert_character_literal(
+     PRECONDITION(src[1] == '\'');
+     PRECONDITION(src[src.size() - 1] == '\'');
+ 
+-    std::basic_string<unsigned int> value=
++    std::basic_string<char32_t> value=
+       unescape_wide_string(std::string(src, 2, src.size()-3));
+     // the parser rejects empty character constants
+     CHECK_RETURN(!value.empty());
+ src/ansi-c/literals/convert_character_literal.cpp |  2 +-
+ src/ansi-c/literals/convert_string_literal.cpp    | 10 +++++-----
+ src/ansi-c/literals/unescape_string.cpp           |  8 ++++----
+ src/ansi-c/literals/unescape_string.h             |  2 +-
+ src/ansi-c/scanner.l                              |  2 +-
+ src/util/unicode.cpp                              |  2 +-
+ src/util/unicode.h                                |  2 +-
+ 7 files changed, 14 insertions(+), 14 deletions(-)
+
+--- src/ansi-c/literals/convert_string_literal.cpp.orig	2024-11-28 20:55:26 UTC
++++ src/ansi-c/literals/convert_string_literal.cpp
+@@ -18,7 +18,7 @@ Author: Daniel Kroening, kroening@kroening.com
+ 
+ #include "unescape_string.h"
+ 
+-std::basic_string<unsigned int> convert_one_string_literal(
++std::basic_string<char32_t> convert_one_string_literal(
+   const std::string &src)
+ {
+   PRECONDITION(src.size() >= 2);
+@@ -28,7 +28,7 @@ std::basic_string<unsigned int> convert_one_string_lit
+     PRECONDITION(src[src.size() - 1] == '"');
+     PRECONDITION(src[2] == '"');
+ 
+-    std::basic_string<unsigned int> value=
++    std::basic_string<char32_t> value=
+       unescape_wide_string(std::string(src, 3, src.size()-4));
+ 
+     // turn into utf-8
+@@ -57,7 +57,7 @@ std::basic_string<unsigned int> convert_one_string_lit
+       unescape_string(std::string(src, 1, src.size()-2));
+ 
+     // pad into wide string
+-    std::basic_string<unsigned int> value;
++    std::basic_string<char32_t> value;
+     value.resize(char_value.size());
+     for(std::size_t i=0; i<char_value.size(); i++)
+       value[i]=char_value[i];
+@@ -72,7 +72,7 @@ exprt convert_string_literal(const std::string &src)
+   // e.g., something like "asd" "xyz".
+   // GCC allows "asd" L"xyz"!
+ 
+-  std::basic_string<unsigned int> value;
++  std::basic_string<char32_t> value;
+ 
+   char wide=0;
+ 
+@@ -101,7 +101,7 @@ exprt convert_string_literal(const std::string &src)
+     INVARIANT(j < src.size(), "non-terminated string constant '" + src + "'");
+ 
+     std::string tmp_src=std::string(src, i, j-i+1);
+-    std::basic_string<unsigned int> tmp_value=
++    std::basic_string<char32_t> tmp_value=
+       convert_one_string_literal(tmp_src);
+     value.append(tmp_value);
+     i=j;
+--- src/ansi-c/literals/unescape_string.cpp.orig	2024-11-28 20:55:26 UTC
++++ src/ansi-c/literals/unescape_string.cpp
+@@ -20,7 +20,7 @@ static void append_universal_char(
+   unsigned int value,
+   std::string &dest)
+ {
+-  std::basic_string<unsigned int> value_str(1, value);
++  std::basic_string<char32_t> value_str(1, value);
+ 
+   // turn into utf-8
+   const std::string utf8_value = utf32_native_endian_to_utf8(value_str);
+@@ -30,7 +30,7 @@ static void append_universal_char(
+ 
+ static void append_universal_char(
+   unsigned int value,
+-  std::basic_string<unsigned int> &dest)
++  std::basic_string<char32_t> &dest)
+ {
+   dest.push_back(value);
+ }
+@@ -153,10 +153,10 @@ std::string unescape_string(const std::string &src)
+   return unescape_string_templ<char>(src);
+ }
+ 
+-std::basic_string<unsigned int> unescape_wide_string(
++std::basic_string<char32_t> unescape_wide_string(
+   const std::string &src)
+ {
+-  return unescape_string_templ<unsigned int>(src);
++  return unescape_string_templ<char32_t>(src);
+ }
+ 
+ unsigned hex_to_unsigned(const char *hex, std::size_t digits)
+--- src/ansi-c/literals/unescape_string.h.orig	2024-11-28 20:55:26 UTC
++++ src/ansi-c/literals/unescape_string.h
+@@ -15,7 +15,7 @@ std::string unescape_string(const std::string &);
+ #include <string>
+ 
+ std::string unescape_string(const std::string &);
+-std::basic_string<unsigned int> unescape_wide_string(const std::string &);
++std::basic_string<char32_t> unescape_wide_string(const std::string &);
+ 
+ unsigned hex_to_unsigned(const char *, std::size_t digits);
+ unsigned octal_to_unsigned(const char *, std::size_t digits);
+--- src/ansi-c/scanner.l.orig	2024-11-28 20:55:26 UTC
++++ src/ansi-c/scanner.l
+@@ -89,7 +89,7 @@ int make_identifier()
+       for(; *p!=0 && digits>0; digits--, p++);
+       p--; // go back for p++ later
+       
+-      std::basic_string<unsigned> utf32;
++      std::basic_string<char32_t> utf32;
+       utf32+=letter;
+       
+       // turn into utf-8
+--- src/util/unicode.cpp.orig	2024-11-28 20:55:26 UTC
++++ src/util/unicode.cpp
+@@ -134,7 +134,7 @@ std::string
+ /// \param s: UTF-32 encoded wide string
+ /// \return utf8-encoded string with the same unicode characters as the input.
+ std::string
+-utf32_native_endian_to_utf8(const std::basic_string<unsigned int> &s)
++utf32_native_endian_to_utf8(const std::basic_string<char32_t> &s)
+ {
+   std::string result;
+ 
+--- src/util/unicode.h.orig	2024-11-28 20:55:26 UTC
++++ src/util/unicode.h
+@@ -29,7 +29,7 @@ std::string
+ #endif
+ 
+ std::string
+-utf32_native_endian_to_utf8(const std::basic_string<unsigned int> &s);
++utf32_native_endian_to_utf8(const std::basic_string<char32_t> &s);
+ 
+ /// \param utf8_str: UTF-8 string
+ /// \return UTF-32 encoding of the string

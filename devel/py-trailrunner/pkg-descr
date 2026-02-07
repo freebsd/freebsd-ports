@@ -1,0 +1,6 @@
+trailrunner is a simple library for walking paths on the filesystem, and
+executing functions for each file found. trailrunner obeys project level
+.gitignore files, and runs functions on a process pool for increased
+performance. trailrunner is designed for use by linting, formatting, and other
+developer tools that need to find and operate on all files in project in a
+predictable fashion with a minimal API.

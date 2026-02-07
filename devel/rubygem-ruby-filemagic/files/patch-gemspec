@@ -1,0 +1,11 @@
+--- ruby-filemagic.gemspec.orig	2022-09-02 10:22:38 UTC
++++ ruby-filemagic.gemspec
+@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
+   s.email = "jens.wille@gmail.com".freeze
+   s.extensions = ["ext/filemagic/extconf.rb".freeze]
+   s.extra_rdoc_files = ["README".freeze, "ChangeLog".freeze, "ext/filemagic/filemagic.c".freeze]
+-  s.files = ["CONTRIBUTING.md".freeze, "ChangeLog".freeze, "Dockerfile".freeze, "README".freeze, "Rakefile".freeze, "TODO".freeze, "ext/filemagic/extconf.rb".freeze, "ext/filemagic/filemagic.c".freeze, "ext/filemagic/filemagic.h".freeze, "lib/filemagic.rb".freeze, "lib/filemagic/ext.rb".freeze, "lib/filemagic/magic.mgc".freeze, "lib/filemagic/version.rb".freeze, "lib/ruby-filemagic.rb".freeze, "test/excel-example.xls".freeze, "test/filemagic_test.rb".freeze, "test/leaktest.rb".freeze, "test/mahoro.c".freeze, "test/perl".freeze, "test/perl.mgc".freeze, "test/pyfile".freeze, "test/pyfile-compressed.gz".freeze, "test/pylink".freeze]
++  s.files = ["CONTRIBUTING.md".freeze, "ChangeLog".freeze, "Dockerfile".freeze, "README".freeze, "Rakefile".freeze, "TODO".freeze, "ext/filemagic/extconf.rb".freeze, "ext/filemagic/filemagic.c".freeze, "ext/filemagic/filemagic.h".freeze, "lib/filemagic.rb".freeze, "lib/filemagic/ext.rb".freeze, "lib/filemagic/magic.mgc".freeze, "lib/filemagic/version.rb".freeze, "lib/ruby-filemagic.rb".freeze, "test/excel-example.xls".freeze, "test/filemagic_test.rb".freeze, "test/leaktest.rb".freeze, "test/mahoro.c".freeze, "test/perl".freeze, "test/perl.mgc".freeze, "test/pyfile".freeze, "test/pyfile-compressed.gz".freeze]
+   s.homepage = "http://github.com/blackwinter/ruby-filemagic".freeze
+   s.licenses = ["Ruby".freeze]
+   s.post_install_message = "\nruby-filemagic-0.7.3 [2022-01-07]:\n\n* Dockerfile to build native extension (pull request #26 by Pavel Lobashov).\n* Include paths for ARM-based Apple Macs (Apple Silicon) (pull request #35 by\n  @545ch4).\n\n".freeze

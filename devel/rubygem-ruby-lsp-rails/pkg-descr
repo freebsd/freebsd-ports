@@ -1,0 +1,4 @@
+Ruby LSP Rails is a Ruby LSP addon for extra Rails editor features, such as:
+- Displaying an ActiveRecord model's database columns and types when hovering
+  over it
+- Running tests and debugging tests through the terminal or the editor's UI

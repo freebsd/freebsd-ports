@@ -1,0 +1,18 @@
+--- Makefile.orig	2020-02-02 18:34:05 UTC
++++ Makefile
+@@ -33,7 +33,7 @@ all: $(target)
+ 
+ $(target): $(objects)
+ 	@echo Linking...
+-	$(CXX) $(LDFLAGS) -O3 -o $(target) $(objects) -lsqlite3 -lpthread
++	$(CXX) $(LDFLAGS) -o $(target) $(objects) -lsqlite3 -lpthread
+ 	@echo Done.
+ clean:
+ 	@echo Cleaning Up...
+@@ -41,4 +41,5 @@ clean:
+ 	@echo Done.
+ 
+ install: $(target)
+-	@echo Installing $(target) to '$(exec_prefix)/bin'...
++	@echo Installing $(target) to '$(PREFIX)/bin'...
++	$(BSD_INSTALL_PROGRAM) $(target) $(DESTDIR)$(PREFIX)/bin

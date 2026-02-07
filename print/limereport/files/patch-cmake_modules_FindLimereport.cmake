@@ -1,0 +1,37 @@
+--- cmake/modules/FindLimereport.cmake.orig	2021-02-25 14:54:26 UTC
++++ cmake/modules/FindLimereport.cmake
+@@ -0,0 +1,34 @@
++# - Find LIMEREPORT
++# Find the native LIMEREPORT includes and library
++#
++#  LIMEREPORT_INCLUDE_DIR - where to find limereport.h, etc.
++#  LIMEREPORT_LIBRARIES   - List of libraries when using LIMEREPORT.
++#  LIMEREPORT_FOUND       - True if LIMEREPORT found.
++
++################### FIND LIMEREPORT ######################
++
++
++IF (LIMEREPORT_INCLUDE_DIR)
++  # Already in cache, be silent
++  SET(LIMEREPORT_FIND_QUIETLY TRUE)
++ENDIF (LIMEREPORT_INCLUDE_DIR)
++
++FIND_PATH(LIMEREPORT_INCLUDE_DIR limereport/lrreportengine.h)
++FIND_PATH(LIMEREPORT_LIBRARY_DIR lib/liblimereport.so.1.4.7)
++FIND_LIBRARY(LIMEREPORT_LIBRARY NAMES limereport )
++
++SET(LIMEREPORT_INCLUDE_DIR ${LIMEREPORT_INCLUDE_DIR}/limereport)
++SET(LIMEREPORT_LIBRARY_DIR ${LIMEREPORT_LIBRARY_DIR}/lib)
++
++# handle the QUIETLY and REQUIRED arguments and set LIMEREPORT_FOUND to TRUE if 
++# all listed variables are TRUE
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(LIMEREPORT DEFAULT_MSG LIMEREPORT_LIBRARY LIMEREPORT_INCLUDE_DIR)
++
++IF(LIMEREPORT_FOUND)
++  SET( LIMEREPORT_LIBRARIES ${LIMEREPORT_LIBRARY} )
++ELSE(LIMEREPORT_FOUND)
++  SET( LIMEREPORT_LIBRARIES )
++ENDIF(LIMEREPORT_FOUND)
++
++MARK_AS_ADVANCED( LIMEREPORT_LIBRARY LIMEREPORT_INCLUDE_DIR )

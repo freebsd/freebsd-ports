@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2016-11-13 03:24:32 UTC
++++ Makefile.in
+@@ -37,7 +37,7 @@ libexecdir=@libexecdir@
+ datadir=@datadir@
+ datarootdir=@datarootdir@
+ mandir=@mandir@
+-mansubdir=@mansubdir@
++mansubdir=man
+ sysconfdir=@sysconfdir@
+ piddir=@piddir@
+ srcdir=@srcdir@
+@@ -157,7 +157,7 @@ uninstallall:	uninstall
+ 
+ uninstall:
+ 	-rm -f $(DESTDIR)$(libexecdir)/pam_ssh_agent_auth.so
+-	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)8/$(mansubdir)8/pam_ssh_agent_auth.8
++	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)8/pam_ssh_agent_auth.8
+ 
+ compat-tests: $(LIBCOMPAT)
+ 	(cd openbsd-compat/regress && $(MAKE))

@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+TIGCC is now installed but in order for it
+to work you need to define some stuff.
+
+The TIGCC environment variable must point to
+the folder where TIGCC is installed.
+
+Additionally the TIGCC bin folder must be in the path.
+
+If you use the csh shell you would put something like
+
+setenv TIGCC	%%PREFIX%%/tigcc
+setenv PATH	$PATH:$TIGCC/bin
+
+into the .cshrc file in your home directory.
+EOM
+}
+]

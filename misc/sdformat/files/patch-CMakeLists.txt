@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2018-11-21 00:21:52 UTC
++++ CMakeLists.txt
+@@ -4,7 +4,9 @@ if(COMMAND CMAKE_POLICY)
+   CMAKE_POLICY(SET CMP0003 NEW)
+   CMAKE_POLICY(SET CMP0004 NEW)
+ endif(COMMAND CMAKE_POLICY)
+-enable_testing()
++if (BUILD_TESTING)
++  enable_testing()
++endif()
+ 
+ # with -fPIC
+ if(UNIX AND NOT WIN32)
+@@ -256,7 +258,9 @@ else (build_errors)
+ 
+     link_directories(${PROJECT_BINARY_DIR}/src)
+ 
+-    add_subdirectory(test)
++    if (BUILD_TESTING)
++      add_subdirectory(test)
++    endif()
+     add_subdirectory(src)
+     add_subdirectory(include/sdf)
+     add_subdirectory(sdf)

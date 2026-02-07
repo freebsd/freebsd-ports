@@ -1,0 +1,13 @@
+- workaround for https://github.com/KarlsruheMIS/KaMIS/issues/30
+
+--- wmis/CMakeLists.txt.orig	2023-11-28 08:57:29 UTC
++++ wmis/CMakeLists.txt
+@@ -20,7 +20,7 @@ if(COMPILER_SUPPORTS_OMIT_FRAME_POINTER)
+   add_compile_options(-fno-omit-frame-pointer)
+ endif()
+ 
+-CHECK_CXX_COMPILER_FLAG(-march=native COMPILER_SUPPORTS_MARCH_NATIVE)
++#CHECK_CXX_COMPILER_FLAG(-march=native COMPILER_SUPPORTS_MARCH_NATIVE)
+ if(COMPILER_SUPPORTS_MARCH_NATIVE)
+   add_compile_options(-march=native)
+ endif()

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Color/Theme/Role.pm
+%%SITE_PERL%%/Color/Theme/Role/ANSI.pm
+%%PERL5_MAN3%%/Color::Theme::Role.3.gz
+%%PERL5_MAN3%%/Color::Theme::Role::ANSI.3.gz

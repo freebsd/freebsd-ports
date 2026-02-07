@@ -1,0 +1,39 @@
+PORTNAME=	commons-net
+PORTVERSION=	3.11.1
+CATEGORIES=	net java
+MASTER_SITES=	APACHE_COMMONS_BINARIES
+PKGNAMEPREFIX=	apache-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+
+MAINTAINER=	nc@FreeBSD.org
+COMMENT=	Collection of network protocol implementations for Java
+WWW=		https://commons.apache.org/proper/commons-net/
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		java
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+JARFILE=	${PORTNAME}-${PORTVERSION}.jar
+DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
+PORTDOCS=	*
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} \
+		${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} apidocs ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.txt NOTICE.txt \
+		RELEASE-NOTES.txt ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

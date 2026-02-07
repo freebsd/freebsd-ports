@@ -1,0 +1,8 @@
+Domination is a board game that is a bit like the well known game Risk.
+
+Domination is a game that is a bit like the well known board game of Risk
+or RisiKo. It has many game options and includes many maps.
+
+Written in java it includes a map editor, a simple map format, multiplayer
+network play, single player, hotseat, 5 user interfaces and many more features,
+it works in all OSs that run java.

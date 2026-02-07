@@ -1,0 +1,2 @@
+Data::Object::Role::Throwable provides mechanisms for throwing the object as an
+exception.

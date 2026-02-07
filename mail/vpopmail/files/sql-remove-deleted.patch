@@ -1,0 +1,14 @@
+Description: Activate the SQL_REMOVE_DELETED code.
+ Only applied if this is requested at port build time.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-09-13
+
+--- a/config.h.in
++++ b/config.h.in
+@@ -407,3 +407,5 @@
+ 
+ /* Define to `int' if <sys/types.h> doesn't define. */
+ #undef uid_t
++
++#define ENABLE_SQL_REMOVE_DELETED

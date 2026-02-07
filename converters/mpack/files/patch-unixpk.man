@@ -1,0 +1,11 @@
+--- unixpk.man.orig	Tue Feb 28 21:38:44 2006
++++ unixpk.man	Tue Feb 28 21:39:33 2006
+@@ -136,7 +136,7 @@
+ .SH ENVIRONMENT
+ .TP
+ .B TMPDIR
+-Directory to store temporary files.  Default is /usr/tmp.
++Directory to store temporary files.  Default is /tmp.
+ .TP
+ .B SPLITSIZE
+ Default value of the -m switch.

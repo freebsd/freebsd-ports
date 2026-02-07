@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: pkcsslotd
+# REQUIRE: LOGIN tcsd
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pkcsslotd_enable (bool): Set to NO by default.
+#                          Set it to YES to enable pkcsslotd.
+#
+
+. /etc/rc.subr
+
+name=pkcsslotd
+rcvar=${name}_enable
+command="%%PREFIX%%/sbin/$name"
+start_precmd=${name}_prestart
+
+pkcsslotd_prestart () {
+	install -d -o %%USERS%% -g %%GROUPS%% -m 0755 \
+	    /var/run/opencryptoki/swtok \
+	    /var/run/opencryptoki/tpm \
+	    /var/run/opencryptoki/icsf
+}
+
+load_rc_config $name
+
+: ${pkcsslotd_enable="NO"}
+
+run_rc_command "$1"
+

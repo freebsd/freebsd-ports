@@ -1,0 +1,2 @@
+Tools to read, write, create, and manipulate DESCRIPTION files. It is intended
+for packages that create or manipulate other packages.

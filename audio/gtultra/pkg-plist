@@ -1,0 +1,34 @@
+bin/gt2relocu
+bin/gtultra
+bin/ins2snd2u
+bin/mod2sng2
+bin/ss2stereo
+%%PORTDOCS%%%%DOCSDIR%%/GTUltra.pdf
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$3GarysGlitteringSaliva_4x.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$3LastNight_Jammer.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$3TrippyTrappy.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$6Boileroom_2SID.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$6StarsAreUs_2SID.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/JasonPage/RType_Amiga2SID.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LMan/$3LMan-Rivalry-Dubs.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LMan/$3LMan-SID-Chip-Club-Menu.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3Cold-War-Generation.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3Space_Beer.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3childhood-ends.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3elevate-me-to-the-gallows.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3heavy-weight-blues-beard.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3modern-love-classics.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3pissholes-in-the-snow.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3sys64738-days.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mibri/$3Mibri - A Tune for Unity [8580].sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mibri/$3Mibri - Brigade Akin Eco [8580].sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mibri/$3Mibri - Ebisu [8580].sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mibri/$3Mibri - I Can't Go On I'll Go On [2x speed 8580].sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mibri/$3Mibri - Lydia on Speed Dial [8580].sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mibri/$3Mibri - Psychic Carpet Bombing [3x speed 8580].sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Shogoon/$3In-clouds.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Shogoon/$3jammar-akhbar.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Shogoon/$6Oum-Le-Dauphin.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Shogoon/$6To-Norah.sng
+share/pixmaps/gtultra.ico

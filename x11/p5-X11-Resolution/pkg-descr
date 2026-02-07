@@ -1,0 +1,2 @@
+X11::Resolution provides a method to easily get the resolution
+of screens in X11.

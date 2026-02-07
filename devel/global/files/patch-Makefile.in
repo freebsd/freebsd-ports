@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2021-05-02 07:39:08 UTC
++++ Makefile.in
+@@ -414,7 +414,7 @@ SUBDIRS = libglibc libutil libparser libltdl plugin-fa
+ 	$(am__append_1) global gozilla gtags htags htags-refkit \
+ 	htags-server globash doc script $(am__append_2)
+ gtagsdir = ${datadir}/gtags
+-gtags_DATA = AUTHORS COPYING COPYING.LIB ChangeLog FAQ INSTALL LICENSE NEWS README THANKS \
++gtags_DATA = AUTHORS ChangeLog FAQ INSTALL LICENSE NEWS README THANKS \
+ 	DONORS BUILD_TOOLS README.PATCHES \
+         gtags.conf gtags.el gtags.pl gtags.vim gtags-cscope.vim \
+ 	elvis.rc elvis-2.2_0.patch geco.rc \

@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-06-16 22:25:09 UTC
++++ pyproject.toml
+@@ -7,8 +7,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "Pythonic WebAuthn"
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-3-Clause" }
+ keywords = ["webauthn", "fido2"]
+ authors = [{ name = "Duo Labs", email = "labs@duo.com" }]
+ classifiers = [

@@ -1,0 +1,14 @@
+A command-line tool to download picturs and control still digital cameras
+based on Sierra Imaging chipset and compatibles
+(Olympus, Nikon, Epson, Agfa and some others).
+
+This is a library and a command-line frontend to manipulate digital still
+cameras based on Fujitsu chipset and Sierra Imaging firmware.  The
+program is known to work with Agfa, Epson, Olympus, Sanyo and Nikon (at
+least CoolPix 900, 950 and 8x0 but not CoolPix 600!) cameras.
+
+The cameras typically come with software for Windows and for Mac, and no
+description of the protocol.  With this tool, they are managable from a
+UNIX box.  Bruce D. Lightner <lightner@lightner.net> has added support
+for Win32 and DOS platforms.  Note that the program does not have any
+GUI, it is plain command-line even on Windows.

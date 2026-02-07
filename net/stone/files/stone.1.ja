@@ -1,0 +1,514 @@
+.\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
+.TH stone 1 "version 2.3e"
+.
+.SH 名称
+stone \- Simple Repeater
+.
+.SH 書式
+.B "stone [-C \fIfile\fP] [-P \fIcommand\fP] [-Q \fIoptions\fP] [-N] [-d] [-p] [-n]"
+.br
+.B "      [-u \fImax\fP] [-f \fIn\fP] [-l] [-L \fIfile\fP] [-a \fIfile\fP] [-i \fIfile\fP]"
+.br
+.B "      [-X \fIn\fP] [-T \fIn\fP] [-A <n>] [-r]"
+.br
+.B "      [-x \fIport\fP[,\fIport\fP][-\fIport\fP]... \fIxhost\fP... --]"
+.br
+.B "      [-s \fIsend\fP \fIexpect\fP... --]"
+.br
+.B "      [-b [\fIvar\fP=\fIval\fP]... \fIn\fP \fImaster\fP:\fIport\fP \fIbackup\fP:\fIport\fP]"
+.br
+.B "      [-B \fIhost\fP:\fIport\fP \fIhost1\fP:\fIport1\fP... --]"
+.br
+.B "      [-I \fIhost\fP]"
+.br
+.B "      [-o \fIn\fP] [-g \fIn\fP] [-t \fIdir\fP] [-D] [-c \fIdir\fP]"
+.br
+.B "      [-q \fISSL\fP] [-z \fISSL\fP]"
+.br
+.B "      [-M install \fIname\fP] [-M remove \fIname\fP]"
+.br
+.B "      \fIst\fP [-- \fIst\fP]..."
+.
+.SH 解説
+\fBstone\fPは、アプリケーションレベルの TCP & UDP リピーターです。ファイア
+ウォールの内から外へ、あるいは外から内へ、TCP あるいは UDP を中継します。
+.P
+\fBstone\fP には以下のような特徴があります。
+.
+.TP
+.B 1. Win32 に対応している
+以前は UNIX マシンで構成されることが多かったファイアウォールです
+が、最近は WindowsNT が使われるケースが増えてきました。\fBstone\fP は
+WindowsNT あるいは Windows95 上で手軽に実行することができます。
+もちろん、Linux, FreeBSD, BSD/OS, SunOS, Solaris, HP-UX などの
+UNIX マシンでも使うことができます。
+.
+.TP
+.B 2. 単純
+わずか 10000 行 (C 言語) ですので、セキュリティホールが生じる可能
+性を最小限にできます。
+.
+.TP
+.B 3. SSL 対応
+OpenSSL (\fIhttp://www.openssl.org/\fP) を使うことにより、暗号化/復号
+して中継できます。また、クライアント認証およびサーバ認証をサポー
+トしています。さらに、認証によって得られる証明書のサブジェクトの
+一部を、中継先へ送ることもできます。
+.
+.TP
+.B 4. http proxy
+簡易型 http proxy としても使うことができます。
+.
+.TP
+.B 5. POP -> APOP 変換
+APOP に対応していないメーラと \fBstone\fP を使うことで、APOP サーバへ
+アクセスできます。
+.
+.TP
+.B 6. IPv6 対応
+IP/IPv6 変換して中継することができます。IPv6 に対応していない
+ソフトウェアを手軽に IPv6 化することが可能です。
+.
+.SH オプション
+\fB-C\fP はオプションおよび \fIst\fP をコマンドラインで指定するかわりに設
+定ファイルから読み込みます。\fB-P\fP は設定ファイルを読み込む際のプリ
+プロセッサを指定します。プリプロセッサへ与える引数は \fB-Q\fP で指定で
+きます。\fB-N\fP を指定すると、コマンドラインおよび設定ファイルを読み
+込んだ後、終了します。つまりポートを開くこと無く設定ファイルの
+チェックを行なうことができます。
+.P
+オプションとして \fB-d\fP を指定すると、デバッグレベルを増加させます。
+\fB-p\fP を指定すると中継したデータをダンプします。\fB-n\fP を指定すると、ホ
+スト名やサービス名の代わりに IP アドレスやサービス番号を表示しま
+す。
+.P
+\fB-u\fP オプションは同時に記憶できる UDP の発信元の最大数を指定します。
+デフォルトは 100 です。\fB-f\fP オプションは子プロセスの数を指定します。
+デフォルトは子プロセス無しです。
+.P
+\fB-l\fP を指定すると、エラーメッセージ等を syslog へ出力します。\fB-L\fP を
+指定すると、エラーメッセージ等を \fIfile\fP へ出力します。\fB-a\fP を指定す
+ると、アクセスログを \fIfile\fP へ出力します。\fB-i\fP は \fBstone\fP のプロセス
+ID を出力するファイルを指定します。
+.P
+\fB-X\fP は中継を行なう際のバッファの大きさを指定します。デフォルトは
+1000 バイトです。\fB-T\fP を指定すると TCP セッションのタイムアウトの
+秒数を変更できます。デフォルトは 600 (10 分) です。
+\fB-A\fP を指定すると listen 呼び出しの未処理接続キューの最大長を変更できます。
+デフォルトは 50 です。
+\fB-r\fP を指定すると \fIst\fP のソケットに SO_REUSEADDR を設定します。
+.P
+\fB-x\fP を指定すると http proxy の接続先を制限できます。接続先のポー
+ト番号のリスト \fIport\fP[,\fIport\fP][-\fIport\fP]... および接続先ホストの
+リスト \fIxhost\fP... を指定します。\fB-x\fP を複数指定すると、最後に指定
+したものから順に、ポート番号のリストがマッチするものを検索します。
+\fB-x\fP \fB--\fP を指定すると、それ以前のものは検索対象となりません。
+.P
+\fB-b\fP は中継先 \fImaster\fP:\fIport\fP に接続できないときのバックアップとし
+て \fIbackup\fP:\fIport\fP を指定します。すなわち \fIn\fP 秒ごとに
+\fImaster\fP:\fIport\fP に対するヘルスチェック (後述する \fB-s\fP オプションで
+設定) が成功するかチェックし、もしチェックに失敗した場合は、中継
+先を \fIbackup\fP:\fIport\fP へ変更します。\fIvar\fP として「host」を指定す
+ることにより、\fImaster\fP とは異なるホストをチェックすることができ
+ます。同様に、\fIvar\fP として「port」を指定することにより、異なるポー
+トをチェックすることができます。
+.P
+\fB-s\fP はヘルスチェックのスクリプトを設定します。\fIsend\fP を送信後、レ
+スポンスが、正規表現 \fIexpect\fP にマッチするか確認します。
+.P
+\fB-B\fP は中継先グループの指定です。中継先が \fIhost\fP:\fIport\fP である場合、
+このグループの中からランダムに一つの中継先を選んで中継します。\fB-b\fP
+オプションで設定済みの中継先で、ヘルスチェックに失敗したものは、
+選択枝から除外します。
+.P
+\fB-I\fP は中継先へ接続する際に用いるインタフェースを指定します。
+.P
+\fB-o\fP と \fB-g\fP はそれぞれユーザ ID とグループ ID を指定します。ID は数
+字のみ指定可能です。\fB-t\fP を指定すると、\fIdir\fP へ chroot します。\fB-D\fP を
+指定すると、\fBstone\fP をデーモンとして起動します。\fB-c\fP はコアダンプを
+行なうディレクトリを指定します。
+.P
+\fB-M\fP は \fBstone\fP を NT サービスとして登録/削除するためのオプションで
+す。サービス名 \fIname\fP を指定します。サービスとして登録した後、
+net start \fIname\fP コマンドを実行してサービスを開始させてください。
+例:
+.P
+.RS
+C:\\>\fBstone -M install \fIrepeater\fB -C \fIC:\\stone.cfg\fR
+.br
+C:\\>\fBnet start \fIrepeater\fR
+.RE
+.P
+\fB-q\fP および \fB-z\fP は、SSL 暗号化/復号 のオプションです。\fB-q\fP は、\fBstone\fP
+が SSL クライアントとして、他の SSL サーバへ接続するとき、すなわ
+ち中継先が SSL サーバの時の、SSL オプションです。\fB-z\fP は \fBstone\fP が
+SSL サーバとして、他の SSL クライアントからの接続を受付ける時の、
+SSL オプションです。
+.P
+\fISSL\fP は SSL オプションで、次のいずれかです。
+.P
+.PD 0
+.IP default 15
+SSL オプション指定をデフォルトに戻します。
+複数の \fIst\fP を指定する際、\fIst\fP 毎に異なる SSL オ
+プションを指定することができます。
+.IP verbose
+デバッグ用文字列をログに出力します。
+.IP verify
+SSL 接続相手に、SSL 証明書を要求します。
+.IP verify,once
+セッション開始時に一度だけ、
+SSL クライアントに証明書を要求します。(\fB-z\fP 専用)
+.IP verify,ifany
+SSL クライアントから証明書が送られてきたときのみ
+認証します。送られてこない場合は認証せずに
+セッションを開始します。(\fB-z\fP 専用)
+.IP verify,none
+SSL 接続相手に SSL 証明書を要求しません。
+.IP crl_check
+CRL をチェックします。
+.IP crl_check_all
+証明書チェーンの全てにおいて CRL をチェックします。
+.IP uniq
+SSL 接続相手の SSL 証明書のシリアル番号が前回の
+接続と異なる場合、接続を拒否します。
+.IP re\fIn\fP=\fIregex\fP
+SSL 証明書のチェーンが満たすべき正規表現を指定します。
+\fIn\fP は depth です。re0 が証明書のサブジェクト、
+re1 がその発行者を意味します。
+\fIn\fP は 9 まで指定できます。
+\fIn\fP が負の値の場合は、re-1 が root CA で、
+re-2 がその子 CA を意味します。
+.IP depth=\fIn\fP
+SSL 証明書チェーンの長さの最大値を指定します。
+チェーンの長さがこの値を越えると認証が失敗します。
+\fIn\fP の最大値は 9 です。
+.IP tls1
+プロトコルとして TLSv1 を用います。
+.IP ssl3
+プロトコルとして SSLv3 を用います。
+.IP ssl2
+プロトコルとして SSLv2 を用います。
+.IP no_tls1
+プロトコルの選択枝から TLSv1 を外します。
+.IP no_ssl3
+プロトコルの選択枝から SSLv3 を外します。
+.IP no_ssl2
+プロトコルの選択枝から SSLv2 を外します。
+.IP sni
+サーバ名通知 (Server Name Indication) を行ないます。
+.IP servername=\fIstr\fP
+SNI で通知するサーバ名を指定します。
+.IP bugs
+SSL の実装にバグがある接続相手との接続を可能にします。
+.IP serverpref
+SSL サーバの指定した暗号を用います (SSLv2 のみ)。
+.IP sid_ctx=\fIstr\fP
+SSL セッション ID コンテキストを設定します。
+.IP passfile=\fIfile\fP
+秘密鍵のパスフレーズを格納したファイルを指定します。
+.IP passfilepat=\fIfile\fP
+ファイル名のパターンを指定します。
+.IP key=\fIfile\fP
+証明書の秘密鍵ファイルを指定します。
+.IP keypat=\fIfile\fP
+ファイル名のパターンを指定します。
+.IP cert=\fIfile\fP
+証明書ファイルを指定します。
+.IP certpat=\fIfile\fP
+ファイル名のパターンを指定します。
+.IP certkey=\fIfile\fP
+秘密鍵付証明書ファイルを指定します。
+.IP certkeypat=\fIfile\fP
+ファイル名のパターンを指定します。
+.IP CAfile=\fIfile\fP
+認証局の証明書ファイルを指定します。
+.IP CApath=\fIdir\fP
+認証局の証明書があるディレクトリを指定します。
+.IP pfx=\fIfile\fP
+PKCS#12 ファイルを指定します。
+.IP pfxpat=\fIfile\fP
+ファイル名のパターンを指定します。
+.IP store=\fIprop\fP
+[Windows] 証明書ストア内の秘密鍵付証明書を指定。
+"SUBJ:<substr>" あるいは "THUMB:<hex>"
+.IP storeCA
+[Windows] 証明書ストア内の認証局証明書を使用します。
+.IP cipher=\fIlist\fP
+暗号化アルゴリズムのリストを指定します。
+.IP lb\fIn\fP=\fIm\fP
+SSL 証明書の CN に応じて中継先を切り替えます。
+SSL オプションの re\fIn\fP= で指定した正規表現中、
+\fIn\fP 番目の ( ... ) 内の正規表現にマッチした文字
+列から算出した数値の剰余 \fIm\fP に基づいて、\fB-B\fP オプ
+ションで指定した中継先グループの中から中継先を選
+びます。
+.PD
+.P
+\fIst\fP は次のいずれかです。\fIst\fP は「\fB--\fP」で区切ることにより、複数個
+指定できます。
+.P
+.PD 0
+.IP (1)
+\fIhost\fP:\fIport\fP \fIsport\fP [\fIxhost\fP...]
+.IP (2)
+\fIhost\fP:\fIport\fP \fIshost\fP:\fIsport\fP [\fIxhost\fP...]
+.IP (3)
+proxy \fIsport\fP [\fIxhost\fP...]
+.IP (4)
+\fIhost\fP:\fIport\fP/http \fIsport\fP \fIrequest\fP [\fIxhost\fP...]
+.IP (5)
+\fIhost\fP:\fIport\fP/proxy \fIsport\fP \fIheader\fP [\fIxhost\fP...]
+.IP (6)
+health \fIsport\fP [\fIxhost\fP...]
+.PD
+.P
+\fBstone\fP を実行しているマシンのポート \fIsport\fP への接続を、他のマシ
+ン \fIhost\fP のポート \fIport\fP へ中継します。インタフェースを複数持つ
+マシンでは、(2) のようにインタフェースのアドレス \fIshost\fP を指定
+することにより、特定のインタフェースへの接続のみを転送することが
+できます。\fIhost\fP:\fIport\fP の代わりに、「/」ないし「./」から始まる
+パス名を指定することにより、UNIX ドメインソケットを扱うこともで
+きます。
+.P
+(3) は、http proxy です。WWW ブラウザの http proxy の設定で、
+\fBstone\fP を実行しているマシンおよびポート \fIsport\fP を指定します。
+「proxy」には、「/」に続けて以下の拡張子を付けることができます。
+.P
+.IP v4only
+proxy の接続先を IP アドレスに限定します。
+.IP v6only
+proxy の接続先を IPv6 アドレスに限定します。
+.P
+(4) は、http リクエストにのせて中継します。\fIrequest\fP は HTTP 1.0
+で規定されるリクエストです。リクエスト文字列中、「\\」はエスケー
+プ文字であり、次のような置き換えが行なわれます。
+.PP
+.RS 8
+.PD 0
+.IP \\\\n 8
+改行 (0x0A)
+.IP \\\\r
+復帰 (0x0D)
+.IP \\\\t
+タブ (0x09)
+.IP \\\\\\\\
+\\    (0x5C)
+.IP \\\\a
+接続元の IP アドレス
+.IP \\\\A
+「接続元の IP アドレス」:「ポート番号」
+.IP \\\\d
+接続先の IP アドレス
+.IP \\\\D
+「接続先の IP アドレス」:「ポート番号」(透過プロキシ用)
+.IP \\\\u
+接続元のユーザ ID (番号)
+.IP \\\\U
+接続元のユーザ名
+.IP \\\\g
+接続元のグループ ID (番号)
+.IP \\\\G
+接続元のグループ名
+.br
+\\u \\U \\g \\G は UNIX ドメインソケットの場合のみ
+.IP \\\\0
+SSL 証明書のシリアル番号
+.IP "\\\\1 - \\\\9"
+SSL オプションの re\fIn\fP= で指定した正規表現中、
+( ... ) 内の正規表現にマッチした文字列
+.IP \\\\?1\fIthen\fP\\\\:\fIelse\fP\\\\/
+もし \\1 (\\2 - \\9 も同様) の文字列が、空文字列で
+なければ \fIthen\fP、空文字列であれば \fIelse\fP
+.PD
+.RE
+.P
+(5) は、http リクエストヘッダの先頭に \fIheader\fP を追加して中継し
+ます。(4) と同様のエスケープを使うことができます。
+\fI/proxy\fP の代わりに \fI/mproxy\fP を指定すると、
+リクエストヘッダごとに \fIheader\fP を追加します。
+.P
+(6) は、\fBstone\fP が正常に動作しているか検査するためのポートの指定で
+す。\fIsport\fP で指定したポートに接続して以下のコマンドを送信すると、
+\fBstone\fP の状態が返されます。
+.P
+.RS 8
+.PD 0
+.IP "HELO \fI任意の文字列\fP" 24
+stone, pair, trash 等の個数
+.IP "STAT"
+スレッドの個数, mutex コンフリクト回数
+.IP "FREE"
+free リスト長
+.IP "CLOCK"
+経過秒数
+.IP "CVS_ID"
+CVS の ID
+.IP "CONFIG"
+config ファイルの内容
+.IP "STONE"
+各 \fIstone\fP の設定内容
+.IP "LIMIT \fIvar\fP \fIn\fP"
+変数 \fIvar\fP の値が \fIn\fP 未満か調べる
+.PD
+.RE
+.P
+\fIvar\fP は次のうちのいずれかです。
+.P
+.RS 8
+.PD 0
+.IP PAIR 16
+pair の個数
+.IP CONN
+conn の個数
+.IP ESTABLISHED
+最後に接続確立してからの秒数
+.IP READWRITE
+最後に read or write してからの秒数
+.IP ASYNC
+スレッドの本数
+.PD
+.RE
+.P
+\fBstone\fP からの応答は、正常時は 200 番台、異常時は 500 番台の数値が
+先頭につきます。
+.P
+\fIxhost\fP を列挙することにより、\fBstone\fP へ接続可能なマシンを制限する
+ことができます。マシン名、あるいはその IP アドレスを空白で区切っ
+て指定すると、そのマシンからの接続のみを中継します。
+.P
+\fIxhost\fP には、「/」に続けて以下の拡張子を付けることができます。
+複数の拡張子を指定するときは「,」で区切ります。
+.IP \fIm\fP
+ネットワーク・マスクのビット数を指定することにより、特定
+のネットワークのマシンからの接続を許可することができます。
+例えば、クラス C のネットワーク 192.168.1.0 の場合は、
+「192.168.1.0/24」と指定します。
+.IP v4
+\fIxhost\fP を IP アドレスとして扱います。
+.IP v6
+\fIxhost\fP を IPv6 アドレスとして扱います。
+.IP p\fIm\fP
+\fIxhost\fP からの接続のみ、中継したデータをダンプします。
+\fIm\fP はダンプ方法の指定です。\fB-p\fP オプションの個数に相当し
+ます。
+.P
+\fIxhost\fP の代わりに「!」を指定すると、後続の \fIxhost\fP は接続を拒否
+するマシンの指定になります。
+.P
+\fIport\fP には、「/」に続けて以下の拡張子を付けることができます。
+複数の拡張子を指定するときは「,」で区切ります。
+.IP udp
+TCP を中継する代わりに、UDP を中継します。
+.IP ssl
+SSL で暗号化して中継します。
+.IP v6
+中継先へ IPv6 接続します。
+.IP base
+MIME base64 で符号化して中継します。
+.P
+\fIsport\fP には、「/」に続けて以下の拡張子を付けることができます。
+複数の拡張子を指定するときは「,」で区切ります。
+.IP udp
+TCP を中継する代わりに、UDP を中継します。
+.IP apop
+POP を APOP へ変換して中継します。
+.br
+変換には RSA Data Security 社の MD5 Message-Digest アル
+ゴリズムを使用します。
+.IP ssl
+SSL を復号して中継します。
+.IP v6
+IPv6 接続を受付けます。(1) のようにインタフェースの
+アドレス \fIshost\fP を指定しない場合は、IP 接続も受付けるこ
+とができます。
+.IP v6only
+IPv6 接続のみを受付けます。(1) のようにインタフェースの
+アドレス \fIshost\fP を指定しない場合も、IP 接続を受付けるこ
+とはありません。
+.IP base
+MIME base64 を復号して中継します。
+.IP http
+http リクエストヘッダを取り除いて中継します。
+.IP ident
+接続を受付けるときに接続元に対し ident プロトコル
+(RFC1413) を使ってユーザ名を照会します。
+.SH 例
+.PD 0
+.IP \fIouter\fP\^:
+ファイアウォールの外側にあるマシン
+.IP \fIinner\fP\^:
+ファイアウォールの内側にあるマシン
+.IP \fIfwall\fP\^:
+ファイアウォール. このマシン上で \fBstone\fP を実行
+.PD
+.TP
+\fBstone \fIouter\fB:telnet 10023\fR
+\fIouter\fP へ telnet プロトコルを中継
+.br
+\fIinner\fP で telnet fwall 10023 を実行
+.TP
+\fBstone \fIouter\fB:domain/udp domain/udp\fR
+DNS 問い合わせを \fIouter\fP へ中継
+.br
+\fIinner\fP で \fBnslookup -\fP \fIfwall\fP を実行
+.TP
+\fBstone \fIouter\fB:ntp/udp ntp/udp\fR
+\fIouter\fP へ NTP を中継
+.br
+\fIinner\fP で \fBntpdate \fIfwall\fR を実行
+.TP
+\fBstone localhost:http 443/ssl\fR
+WWW サーバを https 対応にする
+.br
+WWW ブラウザで \fBhttps://\fIfwall\fB/\fR をアクセス
+.TP
+\fBstone localhost:telnet 10023/ssl\fR
+telnet を SSL 化
+.br
+\fIinner\fP で \fBSSLtelnet -z ssl \fIfwall\fB 10023\fR を実行
+.TP
+\fBstone proxy 8080\fR
+http proxy
+.TP
+\fBstone\fP \fIouter\fB:110/apop 110\fR
+APOP に対応していないメーラで \fIinner\fP:pop へ接続
+.PP
+\fIfwall\fP が http proxy (port 8080) である時:
+.TP
+\fBstone \fIfwall\fB:8080/http 10023 'POST http://\fIouter\fB:8023 HTTP/1.0'\fR
+.br
+.ns
+.TP
+\fBstone localhost:telnet 8023/http
+.nf
+\fIinner\fP と \fIouter\fP でそれぞれ \fBstone\fP を実行
+http 上でパケットを中継
+.TP
+\fBstone \fIfwall\fB:8080/proxy 9080 \'Proxy-Authorization: Basic \fIc2VuZ29rdTpoaXJvYWtp\fB\'\fR
+proxy 認証に対応していないブラウザ用
+.fi
+.
+.SH ホームページ
+\fBstone\fP の公式ホームページは次の URL です。
+.br
+\fIhttp://www.gcd.org/sengoku/stone/Welcome.ja.html\fP
+.
+.SH 著作権
+この \fBstone\fP に関する全ての著作権は、原著作者である仙石浩明が所有
+します。この \fBstone\fP は、\fIGNU General Public License (GPL)\fP に準ずる
+フリーソフトウェアです。個人的に使用する場合は、改変・複製に制限
+はありません。配布する場合は GPL に従って下さい。また、openssl と
+リンクして使用することを許可します。
+.
+.SH 無保証
+この \fBstone\fP は無保証です。この \fBstone\fP を使って生じたいかなる損害に
+対しても、原著作者は責任を負いません。詳しくは \fIGPL\fP を参照して下
+さい。
+.
+.SH 著者
+.nf
+仙石 浩明
+sengoku@gcd.org
+http://www.gcd.org/sengoku/
+.fi

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-03-08 01:33:47 UTC
++++ CMakeLists.txt
+@@ -36178,7 +36178,7 @@ function(generate_pkgconfig name description version r
+     "${output_filepath}"
+     @ONLY)
+   install(FILES "${output_filepath}"
+-    DESTINATION "${gRPC_INSTALL_LIBDIR}/pkgconfig")
++    DESTINATION "libdata/pkgconfig")
+ endfunction()
+ 
+ # gpr .pc file

@@ -1,0 +1,4 @@
+Terminality aims to be a cross-platform terminal manipulation library. It
+provides a set of functions which are used to manipulate a text terminal,
+functions such as clearing the screen, changing text colours, moving the
+cursor, etc.

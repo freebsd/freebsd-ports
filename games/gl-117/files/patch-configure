@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jun 12 01:44:13 2004
++++ configure	Mon Jun 14 11:14:35 2004
+@@ -7524,7 +7524,7 @@
+ 
+ 
+ CFLAGS="$CFLAGS"
+-CPPFLAGS="-DDATADIR='\"$datadir\"' -Wall -pedantic"
++CPPFLAGS="-DDATADIR='\"$datadir\"' -Wall"
+ CXXFLAGS="$CXXFLAGS"
+ 
+                     ac_config_files="$ac_config_files Makefile src/Makefile"

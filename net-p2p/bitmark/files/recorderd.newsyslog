@@ -1,0 +1,2 @@
+# recorderd syslog rotation
+/var/lib/recorderd/log/recorderd.syslog	root:wheel	644	7	1000	*	CJ

@@ -1,0 +1,10 @@
+lua-mode is an Emacs major mode for editing Lua files.
+
+Main features:
+- syntactic indentation & highlighting (incl. multiline literals/comments)
+- evaluation of lines/regions/functions/files in Lua subprocess or direct
+  interaction with its REPL
+- documentation lookup (using online/offline reference manual, e.g.
+  string.find
+- imenu integration
+- HideShow integration

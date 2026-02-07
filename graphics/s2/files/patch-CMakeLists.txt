@@ -1,0 +1,58 @@
+--- CMakeLists.txt.orig	2025-02-02 07:37:37 UTC
++++ CMakeLists.txt
+@@ -206,7 +206,7 @@ add_library(s2
+             src/s2/util/math/mathutil.cc
+             src/s2/util/units/length-units.cc)
+ 
+-if (GOOGLETEST_ROOT)
++if (BUILD_TESTS)
+   add_library(s2testing STATIC
+               src/s2/gmock_matchers.cc
+               src/s2/s2builderutil_testing.cc
+@@ -244,7 +244,7 @@ target_link_libraries(
+     absl::vlog_is_on
+     ${CMAKE_THREAD_LIBS_INIT})
+ 
+-if (GOOGLETEST_ROOT)
++if (BUILD_TESTS)
+   target_link_libraries(
+       s2testing
+       absl::check
+@@ -454,7 +454,7 @@ install(FILES src/s2/util/units/length-units.h
+               src/s2/util/units/physical-units.h
+         DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/s2/util/units")
+ 
+-if (GOOGLETEST_ROOT)
++if (BUILD_TESTS)
+   set(S2_TARGETS s2 s2testing)
+ else()
+   set(S2_TARGETS s2)
+@@ -477,15 +477,7 @@ if (BUILD_TESTS)
+         DESTINATION share/s2/)
+ 
+ if (BUILD_TESTS)
+-  if (NOT GOOGLETEST_ROOT)
+-    message(FATAL_ERROR "BUILD_TESTS requires GOOGLETEST_ROOT")
+-  endif()
+-  message("GOOGLETEST_ROOT: ${GOOGLETEST_ROOT}")
+-
+-  add_subdirectory(${GOOGLETEST_ROOT}/googlemock build_gmock)
+-  include_directories(${GOOGLETEST_ROOT}/googlemock/include)
+-  include_directories(${GOOGLETEST_ROOT}/googletest/include)
+-
++  find_package(GTest REQUIRED)
+   set(S2TestFiles
+       src/s2/encoded_s2cell_id_vector_test.cc
+       src/s2/encoded_s2point_vector_test.cc
+@@ -630,7 +622,10 @@ if (BUILD_TESTS)
+         absl::status
+         absl::strings
+         absl::synchronization
+-        gmock_main)
++        GTest::gtest
++        GTest::gtest_main
++        GTest::gmock
++        GTest::gmock_main)
+     add_test(${test} ${test})
+   endforeach()
+ endif()

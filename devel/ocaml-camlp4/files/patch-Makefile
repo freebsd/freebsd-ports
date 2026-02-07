@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-10-11 20:17:38 UTC
++++ Makefile
+@@ -21,7 +21,7 @@ all: byte native
+ 
+ .PHONY: install
+ install:
+-	env DESTDIR=$(DESTDIR) sh ./build/install.sh
++	env LIBDIR=$(LIBDIR) BINDIR=$(BINDIR) DESTDIR=$(DESTDIR) sh ./build/install.sh
+ 
+ .PHONY: install-META
+ install-META: camlp4/META

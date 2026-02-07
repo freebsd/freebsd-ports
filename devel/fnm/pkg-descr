@@ -1,0 +1,7 @@
+fnm is a fast and simple Node.js version manager, built in Rust.
+
+Features:
+* Cross-platform support
+* Single file, easy installation, instant startup
+* Built with speed in mind
+* Works with `.node-version` and `.nvmrc` files

@@ -1,0 +1,18 @@
+--- SIGNATURE.orig	2012-10-16 01:29:10.000000000 +0000
++++ SIGNATURE	2012-10-16 01:29:40.000000000 +0000
+@@ -21,7 +21,6 @@
+ SHA1 25374deef7e5c8e43ac3292102e2afbfef2d582d META.json
+ SHA1 32774af2a7d8013f9895f99072f28a68b8d17b05 META.yml
+ SHA1 6cf9983c8276ba78518d05f738a5b4fd1ebf0a7f README
+-SHA1 705ef2954530010a1c595dce068dccebe9ba3cdc bin/send_nsca
+ SHA1 8029b3cc8e61c11074e14b7107564311e13ce75a lib/Net/NSCA/Client.pm
+ SHA1 8bcfd32c5d953e4fb884835b2a6a46cb58e0840d lib/Net/NSCA/Client/Connection.pm
+ SHA1 b788771cf65638e5065bf47bb9519eb7a32b67b9 lib/Net/NSCA/Client/Connection/TLS.pm
+@@ -34,7 +33,6 @@
+ SHA1 d6966bb79264ca7bba1987e8b1db09daa1ab040f t/00-load.t
+ SHA1 f439ed87c8d7d4c54e9bb248c83461e1ba5d42e3 t/live_server.t
+ SHA1 8e97b73d24521fc341d1e0c56e8380efbc43007f t/run.t
+-SHA1 64527851d5cece080bacdbfcc7bed0418a4a41b9 t/send_nsca.t
+ SHA1 05c5f452595881a225d21d3d114db69832d7cd76 t/tests/MyTest/Class.pm
+ SHA1 6e94cf782c305b07587d9238d0624f23c5c60ac3 t/tests/MyTest/Net/NSCA/Client.pm
+ SHA1 4d16d6f818e5a1efa147d6b22362c5f9c6cfe3f0 t/tests/MyTest/Net/NSCA/Client/DataPacket.pm

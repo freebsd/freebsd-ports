@@ -1,0 +1,30 @@
+PORTNAME=	crcmod
+PORTVERSION=	1.7
+PORTREVISION=	3
+CATEGORIES=	devel python
+MASTER_SITES=	PYPI \
+		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	rm@FreeBSD.org
+COMMENT=	Module for Cyclic Redundancy Check (CRC) calculations
+WWW=		https://crcmod.sourceforge.net/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		python
+USE_PYTHON=	autoplist distutils
+
+DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/changelog ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crcmod/_crcfunext*.so
+
+.include <bsd.port.mk>

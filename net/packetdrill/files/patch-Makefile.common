@@ -1,0 +1,31 @@
+--- Makefile.common.orig	2025-04-23 21:59:38 UTC
++++ Makefile.common
+@@ -37,7 +37,7 @@ packetdrill: $(packetdrill-objs)
+ packetdrill-objs := packetdrill.o $(packetdrill-lib)
+ 
+ packetdrill: $(packetdrill-objs)
+-	$(CC) -o packetdrill -g $(packetdrill-objs) $(packetdrill-ext-libs)
++	$(CC) $(LDFLAGS) -o packetdrill -g $(packetdrill-objs) $(packetdrill-ext-libs)
+ 
+ test-bins := checksum_test packet_parser_test packet_to_string_test
+ tests: $(test-bins)
+@@ -49,16 +49,16 @@ checksum_test: $(checksum_test-objs)
+ 
+ checksum_test-objs := $(packetdrill-lib) checksum_test.o
+ checksum_test: $(checksum_test-objs)
+-	$(CC) -o checksum_test $(checksum_test-objs) $(packetdrill-ext-libs)
++	$(CC) $(LDFLAGS) -o checksum_test $(checksum_test-objs) $(packetdrill-ext-libs)
+ 
+ packet_parser_test-objs := $(packetdrill-lib) packet_parser_test.o
+ packet_parser_test: $(packet_parser_test-objs)
+-	$(CC) -o packet_parser_test $(packet_parser_test-objs) \
++	$(CC) $(LDFLAGS) -o packet_parser_test $(packet_parser_test-objs) \
+                 $(packetdrill-ext-libs)
+ 
+ packet_to_string_test-objs := $(packetdrill-lib) packet_to_string_test.o
+ packet_to_string_test: $(packet_to_string_test-objs)
+-	$(CC) -o packet_to_string_test $(packet_to_string_test-objs) \
++	$(CC) $(LDFLAGS) -o packet_to_string_test $(packet_to_string_test-objs) \
+                 $(packetdrill-ext-libs)
+ 
+ clean:

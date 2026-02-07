@@ -1,0 +1,19 @@
+PORTNAME=	paranoia
+PORTVERSION=	3.1.0
+CATEGORIES=	databases rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Soft deletion mapper for activerecord
+WWW=		https://github.com/rubysherpas/paranoia
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-activerecord81>=7<8.2:databases/rubygem-activerecord81
+
+USES=		gem
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

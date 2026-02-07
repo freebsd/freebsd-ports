@@ -1,0 +1,20 @@
+--- src/shared/CMakeLists.txt.orig	2011-03-16 20:21:07.000000000 -0400
++++ src/shared/CMakeLists.txt	2013-03-27 17:31:13.000000000 -0400
+@@ -42,7 +42,7 @@
+ find_package(ZLIB)
+ IF ( ZLIB_FOUND )
+   SET ( EXTRA_LIBS ${EXTRA_LIBS} ${ZLIB_LIBRARY} )
+-ELSEIF ( ZLIB_FOUND )
++ELSE ( ZLIB_FOUND )
+   MESSAGE( "ZLIB not found, using local: ${clucene-ext_SOURCE_DIR}/zlib" )
+   SET(ZLIB_INCLUDE_DIR ${clucene-ext_SOURCE_DIR}/zlib )
+   SET(ZLIB_LIBRARY ${clucene-ext_BINARY_DIR})
+@@ -62,7 +62,7 @@
+                         stdint.h unistd.h io.h direct.h sys/dir.h sys/ndir.h dirent.h wctype.h fcntl.h
+                         stat.h sys/stat.h stdexcept errno.h fcntl.h windef.h windows.h wchar.h 
+                         hash_map hash_set ext/hash_map ext/hash_map tr1/unordered_set tr1/unordered_map
+-                        sys/timeb.h tchar.h strings.h stdexcept sys/mman.h winerror.h )
++                        tchar.h strings.h stdexcept sys/mman.h winerror.h )
+ 
+ 
+ ########################################################################

@@ -1,0 +1,14 @@
+Bullet Train includes a collection of view partials that are intended to DRY-up
+as much redundant presentation logic as possible for different types of form
+fields without taking on a third-party dependency like Formtastic.
+
+These form field partials standardize and centralize the following behavior
+across all form fields that use them:
+- Apply theme styling and classes.
+- Display any error messages for a specific field inline under the field itself.
+- Display a stylized asterisk next to the label of fields that are known to be
+  required.
+- Any labels, placeholder values, and help text are defined in a standardized
+  way in the model's localization Yaml file.
+- For fields presenting a static list of options (e.g. a list of buttons or a
+  select field) the options can be defined in the localization Yaml file.

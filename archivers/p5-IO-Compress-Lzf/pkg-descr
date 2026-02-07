@@ -1,0 +1,1 @@
+IO::Compress::Lzf is a perl module for reading/writing lzf files/buffer.

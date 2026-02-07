@@ -1,0 +1,6 @@
+This project aims to reimplement the game engine of Theme Hospital, and be
+able to load the original game data files.  This means that you will need
+a purchased copy of Theme Hospital, or a copy of the demo, in order to use
+CorsixTH.  After most of the original engine has been reimplemented, the
+the project will serve as a base from which extensions and improvements to
+the original game can be made.

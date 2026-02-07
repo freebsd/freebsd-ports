@@ -1,0 +1,3 @@
+This is a port of dnscrypt-wrapper, which adds dnscrypt support to any name
+resolver. It is the server-side counterpart of dnscrypt-proxy, and is in fact
+derived from its source.

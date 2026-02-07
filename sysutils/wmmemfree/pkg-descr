@@ -1,0 +1,4 @@
+WMMemFree shows system memory usage.  It runs as a dockapp for window
+manager like WindowMaker or some other which supports dockapps.  On
+the top side you have your physical memory usage and on the bottom there
+is your swap space usage.

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-09-30 05:19:34 UTC
++++ CMakeLists.txt
+@@ -118,7 +118,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID S
+ 
+     if(CMAKE_TARGET_ARCHITECTURE STREQUAL "x86_64")
+         list(APPEND LIBCDS_PUBLIC_CXX_FLAGS "-mcx16")
+-        set(LIB_SUFFIX "64")
++        set(LIB_SUFFIX "")
+ 
+         # GCC-7: 128-bit atomics support is implemented via libatomic on amd64
+         #        see https://gcc.gnu.org/ml/gcc/2017-01/msg00167.html

@@ -1,0 +1,5 @@
+Xmountains is a X11 based fractal landscape generator. It generates
+random fractal surfaces and displays them in a window. While the
+program is running the fractal is continuously extended on the right
+and the image is scrolled from right to left to expose the newly
+generated area.

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-12-27 17:43:52 UTC
++++ CMakeLists.txt
+@@ -71,7 +71,7 @@ if(IS_BIG_ENDIAN)
+ include (TestBigEndian)
+ TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
+ if(IS_BIG_ENDIAN)
+-	target_compile_definitions(${PROJECT_NAME} __BIG_ENDIAN__Q__)
++	target_compile_definitions(${PROJECT_NAME} PRIVATE __BIG_ENDIAN__Q__)
+ 	message(STATUS "BIG_ENDIAN")
+ else()
+ 	target_compile_definitions(${PROJECT_NAME} PRIVATE __LITTLE_ENDIAN__Q__)

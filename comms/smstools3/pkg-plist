@@ -1,0 +1,34 @@
+bin/smsd
+bin/sendsms
+bin/sms2html
+bin/sms2unicode
+bin/unicode2sms
+%%DATADIR%%/callhandler
+%%DATADIR%%/checkhandler-utf-8
+%%DATADIR%%/email2sms
+%%DATADIR%%/eventhandler-utf-8
+%%DATADIR%%/eventhandler_report
+%%DATADIR%%/forwardsms
+%%DATADIR%%/hex2bin
+%%DATADIR%%/hex2dec
+%%DATADIR%%/load_balancing.sh
+%%DATADIR%%/mysmsd
+%%DATADIR%%/pkill
+%%DATADIR%%/regular_run
+%%DATADIR%%/sendsms
+%%DATADIR%%/sms3
+%%DATADIR%%/sms2html
+%%DATADIR%%/sms2unicode
+%%DATADIR%%/sms2xml
+%%DATADIR%%/smsevent
+%%DATADIR%%/smsresend
+%%DATADIR%%/smstest.php
+%%DATADIR%%/sql_demo
+%%DATADIR%%/unicode2sms
+@sample etc/smsd.conf.sample
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/incoming
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/outgoing
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%/checked
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%LOGDIR%%
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%PIDDIR%%
+@dir(%%SMSD_USER%%,%%SMSD_GROUP%%,) %%SPOOLDIR%%

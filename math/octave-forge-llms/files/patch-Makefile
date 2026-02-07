@@ -1,0 +1,9 @@
+--- Makefile.orig	2025-12-22 13:05:16 UTC
++++ Makefile
+@@ -1,5 +1,5 @@ all:
+ # Makefile for compiling required oct files
+ 
+ all:
+-	$(MKOCTFILE)       -march=native -O2 fig2base64.cc fpng.cpp
++	$(MKOCTFILE)       -O2 fig2base64.cc fpng.cpp
+ 	$(MKOCTFILE)       __ollama__.cc

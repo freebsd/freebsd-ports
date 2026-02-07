@@ -1,0 +1,13 @@
+Don't run git during the build
+
+--- Makefile.orig	2016-11-20 12:29:46 UTC
++++ Makefile
+@@ -9,7 +9,7 @@ _ver2	= $(shell git rev-parse --verify -
+ # hand-made
+ _ver3	= v2.8.0-rc0
+ 
+-VERSION	= $(or $(_ver0),$(_ver1),$(_ver2),$(_ver3))
++VERSION	= $(_ver3)
+ 
+ all: main plugins man
+ 

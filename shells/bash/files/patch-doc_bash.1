@@ -1,0 +1,25 @@
+--- doc/bash.1.orig	2025-04-30 13:04:32 UTC
++++ doc/bash.1
+@@ -6632,7 +6632,7 @@ If that file  does not exist or cannot be read, \fBrea
+ If that variable is unset, the default is
+ .FN \*~/.inputrc .
+ If that file  does not exist or cannot be read, \fBreadline\fP looks for
+-.FN /etc/inputrc .
++.FN /usr/local/usr/local/etc/inputrc .
+ When a program that uses the \fBreadline\fP library starts up,
+ \fBreadline\fP reads the initialization file
+ and sets the key bindings and variables found there,
+@@ -7398,11 +7398,11 @@ For example, the following directive would read
+ This directive takes a single filename as an argument and reads commands
+ and key bindings from that file.
+ For example, the following directive would read
+-.FN /etc/inputrc :
++.FN /usr/local/usr/local/etc/inputrc :
+ .PP
+ .RS
+ .nf
+-\fB$include\fP \^ \fI/etc/inputrc\fP
++\fB$include\fP \^ \fI/usr/local/usr/local/etc/inputrc\fP
+ .fi
+ .RE
+ .SS Searching

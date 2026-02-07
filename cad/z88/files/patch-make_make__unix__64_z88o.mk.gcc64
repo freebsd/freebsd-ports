@@ -1,0 +1,18 @@
+--- make/make_unix_64/z88o.mk.gcc64.orig	2017-07-17 07:14:23 UTC
++++ make/make_unix_64/z88o.mk.gcc64
+@@ -11,13 +11,9 @@ DIROUT = $(DIRECA)/bin/unix64
+ 
+ CC = gcc
+ 
+-CFLAGS = -I$(DIRCOM) -I$(DIRUNI) -O2 -fomit-frame-pointer \
+-         -DFR_UNIX -DFR_LINUX -DFR_XDOUB -DFR_XLONG -DFR_LINUX \
+-         -lm -Wl,--copy-dt-needed-entries \
+-         `pkg-config --cflags --libs gtk+-2.0` -lGL 
++CFLAGS = -I$(DIRCOM) -I$(DIRUNI) -O2 -fomit-frame-pointer -DFR_UNIX -DFR_LINUX -DFR_XDOUB -DFR_XLONG -DFR_LINUX -lm -Wl,--copy-dt-needed-entries `pkg-config --cflags --libs gtk+-2.0` -lGL -lX11
+ 
+-OBJECTSO = z88o.o cb88o.o lan88o.o dyn88o.o wlog88o.o ale88o.o rcoo88.o \
+- m9.o m10.o m12.o m15.o oc88.o m16.o man88o.o gdkgl.o gtkglarea.o fr_gltext3d.o 
++OBJECTSO = z88o.o cb88o.o lan88o.o dyn88o.o wlog88o.o ale88o.o rcoo88.o m9.o m10.o m12.o m15.o oc88.o m16.o man88o.o gdkgl.o gtkglarea.o fr_gltext3d.o 
+ 
+ z88o: $(OBJECTSO)
+ 	$(CC) $(OBJECTSO) $(CFLAGS) -o $@ 

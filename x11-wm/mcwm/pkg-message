@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+With default config.h mcwm uses urxvt as terminal.
+
+You can define your own custom config with
+MCWM_CONF=/path/to/mcwm/config.h or you can use
+flags for basic configuration.
+
+See man mcwm(1) for details.
+EOM
+}
+]

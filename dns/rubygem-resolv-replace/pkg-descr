@@ -1,0 +1,1 @@
+resolv-replace.rb replaces Socket DNS with Resolv.

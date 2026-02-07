@@ -1,0 +1,6 @@
+--- interfaces/Makefile.am.orig	2020-06-15 21:52:01 UTC
++++ interfaces/Makefile.am
+@@ -1,2 +1,2 @@
+-SUBDIRS = emacs xmaxima
++SUBDIRS = emacs
+ EXTRA_DIST = bin/xmaxima.iss Readme.txt

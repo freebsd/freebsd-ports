@@ -1,0 +1,15 @@
+include/IL/il.h
+include/IL/ilu.h
+include/IL/ilut.h
+lib/libIL.so
+lib/libIL.so.1
+lib/libIL.so.1.1.0
+lib/libILU.so
+lib/libILU.so.1
+lib/libILU.so.1.1.0
+lib/libILUT.so
+lib/libILUT.so.1
+lib/libILUT.so.1.1.0
+libdata/pkgconfig/IL.pc
+libdata/pkgconfig/ILU.pc
+libdata/pkgconfig/ILUT.pc

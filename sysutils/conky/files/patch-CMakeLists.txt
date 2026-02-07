@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2024-05-30 14:36:45 UTC
++++ CMakeLists.txt
+@@ -79,12 +79,15 @@ if(NOT DEFINED DOC_PATH)
+ endif()
+ 
+ if(NOT DEFINED DOC_PATH)
+-  set(DOC_PATH "share/doc/${CPACK_PACKAGE_NAME}-${RELEASE_VERSION}")
++  set(DOC_PATH "share/doc/${CPACK_PACKAGE_NAME}")
+ endif(NOT DEFINED DOC_PATH)
+ 
+-set(DOC_FILES extras/convert.lua data/conky_no_x11.conf data/conky.conf)
++if(NOT DEFINED SAMPLE_PATH)
++  set(SAMPLE_PATH "share/examples/${CPACK_PACKAGE_NAME}")
++endif(NOT DEFINED SAMPLE_PATH)
++set(SAMPLE_FILES extras/convert.lua data/conky_no_x11.conf data/conky.conf)
+ 
+-install(FILES ${DOC_FILES} DESTINATION ${DOC_PATH})
++install(FILES ${SAMPLE_FILES} DESTINATION ${SAMPLE_PATH})
+ 
+ if(CHECK_CODE_QUALITY)
+   find_package(ClangTidy)

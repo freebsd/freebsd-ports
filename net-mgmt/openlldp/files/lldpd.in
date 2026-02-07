@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: lldpd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable lldpd:
+#
+# lldpd_enable="YES"
+#
+# You can define flags for lldpd running. See lldpd(8) for details.
+#
+# Example:
+# lldpd_flags="-i em0"
+
+. /etc/rc.subr
+
+name=lldpd
+rcvar=lldpd_enable
+
+command=%%PREFIX%%/sbin/$name
+command_args=">/dev/null 2>/dev/null &"
+
+# set defaults
+
+lldpd_enable=${lldpd_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"

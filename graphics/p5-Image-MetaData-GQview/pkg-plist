@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Image/MetaData/.perltidyrc
+%%SITE_PERL%%/Image/MetaData/GQview.pm
+%%PERL5_MAN3%%/Image::MetaData::GQview.3.gz

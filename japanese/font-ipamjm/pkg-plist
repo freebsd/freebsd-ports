@@ -1,0 +1,5 @@
+etc/fonts/conf.avail/20-unhint-ipamjm.conf
+etc/fonts/conf.avail/62-fonts-ipamjm.conf
+etc/fonts/conf.d/20-unhint-ipamjm.conf
+etc/fonts/conf.d/62-fonts-ipamjm.conf
+%%FONTSDIR%%/ipamjm.ttf

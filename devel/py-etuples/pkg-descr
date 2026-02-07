@@ -1,0 +1,6 @@
+Python S-expression emulation using tuple-like objects.
+
+In computer programming, an S-expression (or symbolic expression, abbreviated
+as sexpr or sexp) is an expression in a like-named notation for nested list
+(tree-structured) data. S-expressions were invented for and popularized by the
+programming language Lisp, which uses them for source code as well as data.

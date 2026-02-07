@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Bio/SCF/Arrays.pm
+%%SITE_ARCH%%/Bio/SCF.pm
+%%SITE_ARCH%%/auto/Bio/SCF/SCF.so
+%%PERL5_MAN3%%/Bio::SCF.3.gz

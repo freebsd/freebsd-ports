@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Apr 30 03:02:34 1999
++++ Makefile	Sun Feb  6 22:25:51 2000
+@@ -2,15 +2,18 @@
+ INSTDIR=/usr/local/bin
+ MAN=/usr/local/man
+ 
++CC ?= gcc
++CFLAGS ?= -O2
++
+ webcrawl: $(OBJ)
+-	gcc -o webcrawl $(OBJ)
++	$(CC) -o webcrawl $(OBJ)
+ clean:
+ 	rm -f *.o *~ webcrawl
+ install: webcrawl
+ 	install webcrawl $(INSTDIR)
+ 	install webcrawl.1 $(MAN)/man1
+ .c.o:
+-	gcc -Wall -c $*.c
++	$(CC) ${CFLAGS} -Wall -c $*.c
+ 
+ webcrawl.o: webcrawl.c web.h
+ http.o: http.c web.h

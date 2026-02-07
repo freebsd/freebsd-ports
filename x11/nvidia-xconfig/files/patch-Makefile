@@ -1,0 +1,17 @@
+--- Makefile.orig	2023-05-09 16:28:29 UTC
++++ Makefile
+@@ -112,12 +112,12 @@ install: NVIDIA_XCONFIG_install MANPAGE_install
+ .PHONY: NVIDIA_XCONFIG_install
+ NVIDIA_XCONFIG_install: $(NVIDIA_XCONFIG)
+ 	$(MKDIR) $(BINDIR)
+-	$(INSTALL) $(INSTALL_BIN_ARGS) $< $(BINDIR)/$(notdir $<)
++	$(BSD_INSTALL_PROGRAM) $< $(BINDIR)/$(notdir $<)
+ 
+ .PHONY: MANPAGE_install
+ MANPAGE_install: $(MANPAGE)
+ 	$(MKDIR) $(MANDIR)
+-	$(INSTALL) $(INSTALL_DOC_ARGS) $< $(MANDIR)/$(notdir $<)
++	$(BSD_INSTALL_MAN) $< $(MANDIR)/$(notdir $<)
+ 
+ $(eval $(call DEBUG_INFO_RULES, $(NVIDIA_XCONFIG)))
+ $(NVIDIA_XCONFIG).unstripped: $(OBJS)

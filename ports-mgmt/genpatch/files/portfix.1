@@ -1,0 +1,72 @@
+.Dd 17 May 2015
+.Dt PORTFIX 1     
+.Os 
+.Sh NAME
+.Nm portfix
+.Nd macro to execute three programs to create a ports patch
+.Sh SYNOPSIS
+.Nm
+.Ar original               
+.Sh DESCRIPTION        
+.Nm
+is a wrapper.  It consecutively runs:
+
+.Bl -enum -compact
+.It 
+dupe
+.Ar original
+.It
+<editor>
+.Ar original
+.It
+genpatch
+.Ar original
+.El
+
+If PORTEDITOR is defined in the environment then that program will be used to edit
+.Op original
+file.  If PORTEDITOR is not defined but EDITOR is defined, then the EDITOR program
+will be invoked.  If neither variable is defined in the environment, then
+.Xr vi 1
+will be invoked for the edit step.
+
+.Nm
+should be launched when the current working directory is equal to the port's WRKSRC, and
+.Op original
+should be a relative path to file that needs a patch.  Assuming changes are saved after
+the editor appears, a patch file will be automatically generated in the proper diff format
+with the standard "make makepatch" naming convention.  It only needs to be moved to the
+port's "files" directory to be used.
+
+If
+.Nm
+is launched outside of the port's WRKSRC, then diff output will still be generated, but it
+will be sent to stdout rather than to a file.  This will also occur when the port is located
+outside of the standard tree.
+.Pp
+.Pp
+.Sh ERRORS
+The script will abort if the number of arguments does not equal one, or if the one argument
+is not an existing regular file.
+
+If the editor is closed without making changes, no patch will be created.  However, the 
+duplicated file will exist.  If the script is run again, it will detect the duplicate and
+create a second duplicate with the .intermediate extension.  See
+.Xr genpatch 1
+for more information.
+.Sh ENVIRONMENT 
+.Bl -tag -width "PORTEDITOR" -indent 
+.It Ev PORTEDITOR
+First priority editor to use for modifying file to be patched
+.It Ev EDITOR
+Second priority editor to use for modifying file to be patched
+.El                      
+.Sh SEE ALSO 
+.Xr dupe 1 , 
+.Xr genpatch 1 
+.Sh HISTORY     
+This script was inspired by pkgsrc's pkgdiff suite although it works a bit differently.
+It was written by 
+.An John Marino Aq Mt marino@freebsd.org
+and used for a couple of years on DragonFly's DPorts before being formally imported
+into FreeBSD Ports Collection.

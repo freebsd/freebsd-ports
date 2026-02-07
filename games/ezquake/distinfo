@@ -1,0 +1,5 @@
+TIMESTAMP = 1612950115
+SHA256 (ezquake/3.2.3.tar.gz) = ec5187b47ad859cf459381296e8d1d560041fd90462dbe0ab89c65e320677ed4
+SIZE (ezquake/3.2.3.tar.gz) = 5760982
+SHA256 (ezquake/ezquake-ubuntu-3.2.3-full.tar.gz) = d58f26ed912166615420f0d0b208a10fd2539a84b90e85edfcb1aedc94615af5
+SIZE (ezquake/ezquake-ubuntu-3.2.3-full.tar.gz) = 19076232

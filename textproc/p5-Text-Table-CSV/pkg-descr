@@ -1,0 +1,2 @@
+Text::Table::CSV provides a single function, table, which formats a
+two-dimensional array of data as CSV.

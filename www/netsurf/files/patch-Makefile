@@ -1,0 +1,27 @@
+--- Makefile.orig	2023-12-28 00:26:04 UTC
++++ Makefile
+@@ -105,16 +105,6 @@ endif
+   COMMON_WARNFLAGS += -Wno-unused-parameter
+ endif
+ 
+-# deal with lots of unwanted warnings from javascript
+-ifeq ($(call cc_ver_ge,4,6),1)
+-  COMMON_WARNFLAGS += -Wno-unused-but-set-variable
+-endif
+-
+-# Implicit fallthrough warnings suppressed by comment
+-ifeq ($(call cc_ver_ge,7,1),1)
+-  COMMON_WARNFLAGS += -Wimplicit-fallthrough=3
+-endif
+-
+ # deal with chaging warning flags for different platforms
+ ifeq ($(HOST),OpenBSD)
+   # OpenBSD headers are not compatible with redundant declaration warning
+@@ -168,7 +158,6 @@ endif
+ else
+     $(eval $(call pkg_config_find_and_add_enabled,CURL,libcurl,Curl))
+ endif
+-$(eval $(call pkg_config_find_and_add_enabled,OPENSSL,openssl,OpenSSL))
+ 
+ $(eval $(call pkg_config_find_and_add_enabled,UTF8PROC,libutf8proc,utf8))
+ $(eval $(call pkg_config_find_and_add_enabled,JPEGXL,libjxl,JPEGXL))

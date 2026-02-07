@@ -1,0 +1,46 @@
+--- configure.orig	2001-02-09 06:07:26 UTC
++++ configure
+@@ -58,22 +58,8 @@ case "$UNAME_S" in
+     LDFLAGS="$LDDBG -L/usr/local/lib"
+     SYSLIBS="-lpthread"
+     ;;
+-  FreeBSD)
+-    case "$UNAME_R" in
+-      2.*)
+-        OSVER=20
+-        ;;
+-      3.*)
+-        OSVER=30
+-        ;;
+-      4.*)
+-        OSVER=40
+-        ;;
+-      *)
+-        # Assume 5.0 +
+-        OSVER=50
+-        ;;
+-    esac
++  FreeBSD|DragonFly)
++    OSVER=50
+     if [ "$DEBUG" -ne 0 ]; then
+       CCDBG="-g"
+       LDDBG="-g"
+@@ -81,15 +67,12 @@ case "$UNAME_S" in
+       CCDBG="-DNDEBUG"
+       LDDBG=""
+     fi
+-    CC=gcc
+-    CFLAGS="$CCDBG -D_UNIX -D_BSD=$OSVER -Wall -I/usr/local/include"
+-    CXX=g++
++    CFLAGS="$CCDBG -D_UNIX -D_BSD=$OSVER -Wall"
+     CXXFLAGS=${CFLAGS}
+     AR=ar
+     ARFLAGS="-rc"
+-    LD=gcc
+-    LDFLAGS="$LDDBG -pthread -L/usr/local/lib"
+-    SYSLIBS=""
++    LDFLAGS="$LDDBG"
++    SYSLIBS="-lpthread"
+     ;;
+   SunOS)
+     case "$UNAME_R" in

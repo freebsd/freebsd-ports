@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/XML::Directory.3.gz
+%%PERL5_MAN3%%/XML::Directory::Apache.3.gz
+%%PERL5_MAN3%%/XML::Directory::SAX.3.gz
+%%PERL5_MAN3%%/XML::Directory::String.3.gz
+%%SITE_PERL%%/XML/Directory.pm
+%%SITE_PERL%%/XML/Directory/Apache.pm
+%%SITE_PERL%%/XML/Directory/SAX.pm
+%%SITE_PERL%%/XML/Directory/String.pm

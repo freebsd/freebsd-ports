@@ -1,0 +1,11 @@
+bin/esic
+bin/icmpsic
+bin/icmpsic6
+bin/isic
+bin/isic6
+bin/multisic
+bin/tcpsic
+bin/tcpsic6
+bin/udpsic
+bin/udpsic6
+share/man/man1/isic.1.gz

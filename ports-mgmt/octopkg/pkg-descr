@@ -1,0 +1,3 @@
+OctoPkg is a graphical front-end to the pkg package manager. OctoPkg enables
+users to search for, install, remove and upgrade pkg packages through a
+simple GUI interface.

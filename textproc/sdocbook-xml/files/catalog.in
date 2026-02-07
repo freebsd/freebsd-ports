@@ -1,0 +1,3 @@
+OVERRIDE YES
+PUBLIC "-//OASIS//DTD Simplified DocBook XML V1.1//EN" "sdocbook.dtd"
+PUBLIC "-//OASIS//DTD Simplified DocBook RefEntry XML V1.1//EN" "sdocbookref.dtd"

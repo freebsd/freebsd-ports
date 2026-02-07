@@ -1,0 +1,17 @@
+TIMESTAMP = 1769276965
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/go.mod) = bedf3c3f23b06ec46cf7dd2c6a0723f1dad0e3bba012f8e2c91d2939a113f7b0
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/go.mod) = 30997
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/go.mod) = 4eae17cd71523cd1321fc184d88ef4ae434faa1c4a7e3821ff91a957b0f4c319
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/go.mod) = 1639
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/auth/approle/go.mod) = a14eb767444bb9faf0093fa1604b70fe0fbdf60c794f535a1ffe9e3fc9639c07
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/auth/approle/go.mod) = 1045
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/auth/kubernetes/go.mod) = 2fe888f8f9f1cdef123dbdf60e980d5960d6698631ce27ab8c0859d6455d122a
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/auth/kubernetes/go.mod) = 1048
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/auth/userpass/go.mod) = 827968c126537e2a119677104edc3f127cf02490a22019afcd0cbd39f98046ec
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/api/auth/userpass/go.mod) = 1046
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/sdk/go.mod) = 4d3deb6db70d219d564038579354cc71df871f38420b141eb61079a74ac472d6
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/sdk/go.mod) = 6753
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/vault-web_ui-1.21.2.tar.gz) = 9f641d532b405a7a674fa06cb1e34ddc19432b1eb918087a4ed2a742668c5898
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/vault-web_ui-1.21.2.tar.gz) = 3575920
+SHA256 (go/security_vault/hashicorp-vault-v1.21.2_GH0/hashicorp-vault-v1.21.2_GH0.tar.gz) = c741843ae467d6d5ef51b77054b13cfdb5fd45ffcff83f81dad6de759c2ab6f3
+SIZE (go/security_vault/hashicorp-vault-v1.21.2_GH0/hashicorp-vault-v1.21.2_GH0.tar.gz) = 8673896

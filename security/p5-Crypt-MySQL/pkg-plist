@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/MySQL.pm
+%%SITE_ARCH%%/auto/Crypt/MySQL/MySQL.so
+%%PERL5_MAN3%%/Crypt::MySQL.3.gz

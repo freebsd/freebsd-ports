@@ -1,0 +1,4 @@
+Scalar::Util::LooksLikeNumber contains looks_like_number() like
+Scalar::Util's looks_like_number(), except it returns the raw value
+from the C function.  Scalar::Util used to do this also, but it
+returns a booleanized value since 1.39.

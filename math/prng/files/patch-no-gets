@@ -1,0 +1,48 @@
+--- examples/pairs.c.orig	2019-06-30 22:57:59.603524000 +0300
++++ examples/pairs.c	2019-06-30 23:06:55.659597000 +0300
+@@ -54,6 +54,18 @@
+ #include <string.h>
+ #include "prng.h"
+ 
++static void
++safe_gets(char *buf, int size)
++{
++	size_t len;
++
++	if (fgets(buf, size, stdin) == NULL)
++		return;
++	len = strlen(buf);
++	if (len && buf[len - 1] == '\n')
++		buf[len - 1] = '\0';
++}
++
+ struct prng_struct *generator;
+ char outfile[200] = "pairs.out";
+ FILE *out;
+@@ -71,7 +83,7 @@
+ else
+ 	{
+ 	printf("\nGenerator ? ");
+-	gets(input);
++	safe_gets(input, sizeof(input));
+ 	g = prng_new(input);
+ 	}
+ 
+@@ -88,7 +100,7 @@
+  	{
+ 	npairs = 10000;
+ 	printf("\nHow many pairs [%d] ",npairs);
+-	gets(input);
++	safe_gets(input, sizeof(input));
+ 	if (input[0] != 0 ) npairs = atoi(input);
+ 	}
+ 
+@@ -97,7 +109,7 @@
+ else
+ 	{
+ 	printf("Output filename ('-' for stdout) ? [%s] ",outfile);
+-	gets(input);
++	safe_gets(input, sizeof(input));
+ 	if (input[0] != 0 ) strncpy(outfile,input,100);
+ 	}
+ 

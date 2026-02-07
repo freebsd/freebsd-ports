@@ -1,0 +1,4 @@
+bin/svnup
+share/man/man1/svnup.1.gz
+share/man/man5/svnup.conf.5.gz
+@sample etc/svnup.conf.sample

@@ -1,0 +1,10 @@
+--- meson.build.orig	2024-09-16 09:23:25 UTC
++++ meson.build
+@@ -58,6 +58,7 @@ pkg.generate(
+     name: 'tecla',
+     description: 'Keyboard layout previewer',
+     dataonly: true,
++    install_dir: get_option('prefix') / 'libdata' / 'pkgconfig',
+     variables: [
+         'prefix=' + get_option('prefix'),
+         'app=${prefix}' / get_option('bindir') / 'tecla',

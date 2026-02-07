@@ -1,0 +1,7 @@
+%%SITE_PERL%%/JSON/WebToken.pm
+%%SITE_PERL%%/JSON/WebToken/Constants.pm
+%%SITE_PERL%%/JSON/WebToken/Crypt.pm
+%%SITE_PERL%%/JSON/WebToken/Crypt/HMAC.pm
+%%SITE_PERL%%/JSON/WebToken/Crypt/RSA.pm
+%%SITE_PERL%%/JSON/WebToken/Exception.pm
+%%PERL5_MAN3%%/JSON::WebToken.3.gz

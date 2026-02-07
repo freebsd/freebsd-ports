@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/Layout::Manager.3.gz
+%%PERL5_MAN3%%/Layout::Manager::Absolute.3.gz
+%%PERL5_MAN3%%/Layout::Manager::Axis.3.gz
+%%PERL5_MAN3%%/Layout::Manager::Compass.3.gz
+%%PERL5_MAN3%%/Layout::Manager::Flow.3.gz
+%%PERL5_MAN3%%/Layout::Manager::Grid.3.gz
+%%PERL5_MAN3%%/Layout::Manager::Single.3.gz
+%%SITE_PERL%%/Layout/Manager.pm
+%%SITE_PERL%%/Layout/Manager/Absolute.pm
+%%SITE_PERL%%/Layout/Manager/Axis.pm
+%%SITE_PERL%%/Layout/Manager/Compass.pm
+%%SITE_PERL%%/Layout/Manager/Flow.pm
+%%SITE_PERL%%/Layout/Manager/Grid.pm
+%%SITE_PERL%%/Layout/Manager/Single.pm

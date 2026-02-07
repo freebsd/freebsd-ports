@@ -1,0 +1,16 @@
+https://gitlab.com/veloren/veloren/-/issues/1975
+
+--- cargo-crates/wgpu-27.0.1/src/backend/wgpu_core.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/wgpu-27.0.1/src/backend/wgpu_core.rs
+@@ -1965,10 +1965,7 @@ impl dispatch::QueueInterface for CoreQueue {
+             &size,
+         ) {
+             Ok(()) => (),
+-            Err(err) => {
+-                self.context
+-                    .handle_error_nolabel(&self.error_sink, err, "Queue::write_texture")
+-            }
++            Err(_err) => ()
+         }
+     }
+ 

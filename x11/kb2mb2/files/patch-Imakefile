@@ -1,0 +1,8 @@
+--- Imakefile.orig	Wed Dec 24 10:45:38 1997
++++ Imakefile	Wed Nov  1 07:09:12 2000
+@@ -1,2 +1,4 @@
+ LOCAL_LIBRARIES = $(XTESTLIB) $(XLIB)
+-SimpleProgramTarget(kb2mb2)
++SRCS = kb2mb2.c
++OBJS = kb2mb2.o
++ComplexProgramTargetNoMan(kb2mb2)

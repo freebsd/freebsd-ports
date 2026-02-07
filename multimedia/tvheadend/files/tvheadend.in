@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: tvheadend
+# REQUIRE: DAEMON webcamd
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable tvheadend
+#
+# tvheadend_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable tvheadend.
+# tvheadend_user (str):		User account to run with.
+# tvheadend_group (str):	Group to run as.
+# tvheadend_flags (str):	Custom flags for tvheadend.
+
+. /etc/rc.subr
+
+name=tvheadend
+rcvar=tvheadend_enable
+load_rc_config $name
+
+: ${tvheadend_enable:=NO}
+: ${tvheadend_user="%%TVHUSER%%"}
+: ${tvheadend_group="%%TVHGROUP%%"}
+
+pidfile="/var/run/${name}.pid"
+confdir="%%PREFIX%%/etc/tvheadend"
+logdir="/var/log/tvheadend"
+command="%%PREFIX%%/bin/tvheadend"
+
+command_args="-f -p ${pidfile} -c ${confdir} -l ${logdir}/tvheadend.log -u ${tvheadend_user} -g ${tvheadend_group}"
+start_precmd="${name}_prestart"
+
+# TvHeadend looks for EPG Grabber executables 'tv_grab_*' on $PATH, so PATH must include %%PREFIX%%/bin
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin
+
+tvheadend_prestart()
+{
+	if [ ! -f "${pidfile}" ]; then
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 644 /dev/null ${pidfile}
+	fi
+	if [ ! -d "${confdir}" ]; then
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 755 -d ${confdir}
+	fi
+	if [ ! -d "${logdir}" ]; then
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 755 -d ${logdir}
+	fi
+}
+
+run_rc_command "$1"

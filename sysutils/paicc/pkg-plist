@@ -1,0 +1,3 @@
+bin/paicc
+libdata/paiccmm.a
+share/man/man1/paicc.1.gz

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/DBIx/Skinny/InflateColumn/DateTime.pm
+%%SITE_PERL%%/DBIx/Skinny/InflateColumn/DateTime/Auto.pm
+%%PERL5_MAN3%%/DBIx::Skinny::InflateColumn::DateTime.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::InflateColumn::DateTime::Auto.3.gz

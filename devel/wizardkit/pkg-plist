@@ -1,0 +1,16 @@
+GNUstep/System/Library/Frameworks/WizardKit.framework/Headers
+GNUstep/System/Library/Frameworks/WizardKit.framework/Resources
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers/WKWizardPanel.h
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers/WizardKit.h
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/WizardKit
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so.%%LIBVERSION%%
+GNUstep/System/Library/Frameworks/WizardKit.framework/Versions/Current
+GNUstep/System/Library/Frameworks/WizardKit.framework/WizardKit
+GNUstep/System/Library/Frameworks/WizardKit.framework/libWizardKit.so
+GNUstep/System/Library/Headers/WizardKit
+GNUstep/System/Library/Libraries/libWizardKit.so
+GNUstep/System/Library/Libraries/libWizardKit.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libWizardKit.so.%%LIBVERSION%%

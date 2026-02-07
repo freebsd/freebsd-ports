@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+##
+## This file is part of the sigrok-util project.
+##
+## Copyright (C) 2012 Bert Vermeulen <bert@biot.com>
+##
+## This program is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with this program; if not, see <http://www.gnu.org/licenses/>.
+##
+
+import sys
+import os
+import re
+import struct
+from array import array
+
+import parsepe
+
+
+def find_model(filename):
+	filename = os.path.split(filename)[-1]
+	m = re.search('^dso([a-z0-9]+)1.sys$', filename, re.I)
+	if m:
+		model = m.group(1).upper()
+		model = model.replace('X86', '').replace('AMD64', '').replace('IA64', '')
+		if model == '520A':
+			model = '5200A'
+	else:
+		model = 'unknown'
+
+	return model
+
+
+def unsparse(data):
+	p = 0
+	maxaddr = 0
+	blob = array('B', [0] * 0x4000)
+	while p <= len(data) and data[p+4] == 0:
+		num_bytes = struct.unpack("<H", data[p:p+2])[0]
+		address = struct.unpack("<H", data[p+2:p+4])[0]
+		chunk = array('B')
+		chunk.frombytes(data[p+5:p+5+num_bytes])
+		p += 22
+
+		if address > 0x4000:
+			# the FX2 only has 16K RAM. other writes are to registers
+			# in the 0xe000 region, skip those
+			continue
+
+		blob[address:address+num_bytes] = chunk
+
+		if address + num_bytes > maxaddr:
+			maxaddr = address + num_bytes
+
+	return blob[:maxaddr].tostring()
+
+
+def usage():
+	print("sigrok-fwextract-hantek-dso <driverfile>")
+	sys.exit()
+
+
+#
+# main
+#
+
+if len(sys.argv) != 2:
+	usage()
+
+try:
+	filename = sys.argv[1]
+	binihx = parsepe.extract_symbol(filename, '_firmware')
+	if binihx is None:
+		raise Exception("no firmware found")
+	blob = unsparse(binihx)
+	outfile = 'hantek-dso-' + find_model(filename) + '.fw'
+	open(outfile, 'wb').write(blob)
+	print("saved %d bytes to %s" % (len(blob), outfile))
+except Exception as e:
+	print("Error: %s" % str(e))

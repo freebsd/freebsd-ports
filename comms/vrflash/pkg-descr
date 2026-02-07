@@ -1,0 +1,13 @@
+  The purpose of this utility is to provide an easy way to flash
+  kernels and romdisks to the Agenda VR3.
+
+FEATURES
+
+  o  Direct serial access (w/o minicom)
+  o  Built-in Xmodem (send) support
+  o  Built-in Etxack (send) support (c/o Brad @ Agenda)
+  o  Progress meters
+  o  Capture file
+  o  PMON over-write detection/protection
+
+LICENSE: GPL2 or later

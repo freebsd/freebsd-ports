@@ -1,0 +1,5 @@
+2.11BSD's original diff works significantly better with very large
+files with default datasize limits.
+
+GNU diff fails with out of memmory when operating on files at or
+above the default limit to datasize.

@@ -1,0 +1,9 @@
+OnCalendar is a systemd expression parser and evaluator written for
+and being used in Healthchecks (a scheduled task monitoring service).
+
+This package provides three iterators:
+
+- base: supports expressions without timezone.
+- tz: supports expressions with and without timezone.
+- oncalendar: supports multiple expressions with or without timezones,
+  separated by newlines.

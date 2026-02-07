@@ -1,0 +1,4 @@
+websocket-client module is a WebSocket client for python. This provide the
+low level APIs for WebSocket. All APIs are the synchronous functions.
+
+websocket-client supports only hybi-13.

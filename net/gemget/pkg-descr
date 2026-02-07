@@ -1,0 +1,3 @@
+Gemget is a cli downloader for the gemini protocol.
+This tool allows you to download files from gemini capsules.
+It is built with go.

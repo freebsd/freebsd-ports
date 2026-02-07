@@ -1,0 +1,3 @@
+Library containing a QToolButton with color popup menu for selecting a color.
+The popup features a color dialog button which can be used to add custom
+colors to the popup menu.

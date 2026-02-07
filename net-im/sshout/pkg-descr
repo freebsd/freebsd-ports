@@ -1,0 +1,9 @@
+SSHOUT is an instant-messaging platform designed to make uses of the existing
+OpenSSH SSH server in your system.
+SSHOUT creates a private chat room in your host. The authentication of the
+chat room is done by SSH public authentication. Users can join your chat room
+by either directly connecting the SSH server with any SSH client, or by using
+a SSHOUT client that implements the client side SSHOUT API.
+This package provides the SSHOUT server side programs; if you are looking for
+a SSHOUT client software, see the project page. You can also create your own
+client software using the SSHOUT API.

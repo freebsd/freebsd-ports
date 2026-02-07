@@ -1,0 +1,5 @@
+Microsoft Edit pays homage to the classic MS-DOS Editor, but with a modern
+interface and input controls similar to VS Code.
+
+The goal is to provide an accessible editor that even users largely
+unfamiliar with terminals can easily use.

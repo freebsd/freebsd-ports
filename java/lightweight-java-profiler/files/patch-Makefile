@@ -1,0 +1,41 @@
+--- Makefile.orig	2017-03-31 01:58:22 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+-SHELL:=/bin/bash
++SHELL:=/usr/bin/env bash
+ UNAME:=$(shell uname | tr '[A-Z]' '[a-z]')
+ 
+-BITS?=32
++#BITS?=32
+ ifeq ($(UNAME), darwin)
+   READLINK_ARGS:=""
+   PLATFORM_WARNINGS:=-Weverything -Wno-c++98-compat-pedantic -Wno-padded \
+@@ -23,6 +23,13 @@ else ifeq ($(UNAME), linux)
+   HEADERS:=include
+   CC=g++
+   LDFLAGS=-Wl,--fatal-warnings
++else ifeq ($(UNAME), freebsd)
++  READLINK_ARGS:=""
++  PLATFORM_WARNINGS:=-Weverything -Wno-c++98-compat-pedantic -Wno-padded \
++        -Wno-missing-prototypes
++  PLATFORM_COPTS:=-std=c++11
++  HEADERS:=include
++  LDFLAGS=-Wl,-fatal_warnings
+ endif
+ 
+ JAVA_HOME := $(shell \
+@@ -32,11 +39,11 @@ JAVA_HOME := $(shell \
+ 	[[ -n "$${JAVA_HOME}" ]] || (echo "Cannot find JAVA_HOME" && exit) ; \
+ 	echo $${JAVA_HOME})
+ AGENT=liblagent.so
+-LIBS=-ldl
+-BUILD_DIR ?= $(shell mkdir build-$(BITS) 2> /dev/null ; echo build-$(BITS))
++LIBS=-lc
++BUILD_DIR ?= $(shell mkdir build 2> /dev/null ; echo build)
+ SRC_DIR:=${PWD}/src
+ OPT?=-O2
+-GLOBAL_WARNINGS=-Wall -Werror -Wformat-security -Wno-char-subscripts \
++GLOBAL_WARNINGS=-Wall -Wformat-security -Wno-char-subscripts \
+ 	-Wno-sign-compare -Wno-strict-overflow -Wwrite-strings -Wnon-virtual-dtor \
+ 	-Woverloaded-virtual
+ GLOBAL_COPTS=-fdiagnostics-show-option -fno-exceptions \

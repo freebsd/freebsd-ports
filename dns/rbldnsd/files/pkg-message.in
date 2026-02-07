@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+The rbldnsd port has been installed with an example zone file, located
+in %%PREFIX%%/etc/rbldnsd/.
+
+After starting the daemon with this example data, you should be able to
+test the success of your install with the command:
+
+	% host -a 1.1.31.172.bl.example.com. localhost
+or
+	% dig @localhost 1.1.31.172.bl.example.com. any
+or
+	% nslookup -query=any 1.1.31.172.bl.example.com. localhost
+
+If you see a response that mentions 127.0.0.2, the install worked!
+EOM
+}
+]

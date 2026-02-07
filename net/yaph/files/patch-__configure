@@ -1,0 +1,22 @@
+--- configure.old	Sun Feb  9 06:37:18 2003
++++ configure	Sat Jun 14 15:03:07 2003
+@@ -854,6 +854,8 @@
+ 
+ VERSION=0.91
+ 
++PREFIX=$prefix
++
+ if test "`cd $srcdir && pwd`" != "`pwd`" && test -f $srcdir/config.status; then
+   { echo "configure: error: source directory already configured; run "make distclean" there first" 1>&2; exit 1; }
+ fi
+@@ -863,6 +865,10 @@
+ 
+ cat >> confdefs.h <<EOF
+ #define VERSION "$VERSION"
++EOF
++
++cat >> confdefs.h <<EOF
++#define PREFIX "$PREFIX"
+ EOF
+ 
+ 

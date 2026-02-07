@@ -1,0 +1,3 @@
+A multivalue dictionary is a dictionary that can store multiple values per key.
+An ordered multivalue dictionary is a multivalue dictionary that retains the
+order of insertions and deletions.

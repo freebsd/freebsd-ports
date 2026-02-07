@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Net/FastCGI.pm
+%%SITE_PERL%%/Net/FastCGI.pod
+%%SITE_PERL%%/Net/FastCGI/Constant.pm
+%%SITE_PERL%%/Net/FastCGI/Constant.pod
+%%SITE_PERL%%/Net/FastCGI/IO.pm
+%%SITE_PERL%%/Net/FastCGI/IO.pod
+%%SITE_PERL%%/Net/FastCGI/Protocol.pm
+%%SITE_PERL%%/Net/FastCGI/Protocol.pod
+%%SITE_PERL%%/Net/FastCGI/Protocol/PP.pm
+%%PERL5_MAN3%%/Net::FastCGI.3.gz
+%%PERL5_MAN3%%/Net::FastCGI::Constant.3.gz
+%%PERL5_MAN3%%/Net::FastCGI::IO.3.gz
+%%PERL5_MAN3%%/Net::FastCGI::Protocol.3.gz

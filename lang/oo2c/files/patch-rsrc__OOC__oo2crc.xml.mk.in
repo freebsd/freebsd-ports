@@ -1,0 +1,11 @@
+--- ./rsrc/OOC/oo2crc.xml.mk.in.orig	2014-08-26 13:22:18.819656990 -0400
++++ ./rsrc/OOC/oo2crc.xml.mk.in	2014-08-26 13:22:32.780265990 -0400
+@@ -5,7 +5,7 @@
+     <set name='cppflags'>@CPPFLAGS@</set>
+     <set name='cflags'>@CFLAGS@</set>
+     <set name='ldflags'>@LDFLAGS@</set>
+-    <set name='libs'>-L%libdir%</set>
++    <set name='libs'>-L%libdir% -lm</set>
+ 
+     <set name='libtool'>@LIBTOOL@</set>
+     <set name='libdir'>%libdir%</set>

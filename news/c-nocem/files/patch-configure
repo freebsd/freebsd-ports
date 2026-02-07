@@ -1,0 +1,13 @@
+--- configure.orig	2001-05-22 12:49:44 UTC
++++ configure
+@@ -1276,8 +1276,8 @@ if test "X$nsys" = "Xcnews" ; then
+ #define CNEWS 1
+ EOF
+ 
+-  CPPFLAGS="$CPPFLAGS -I$nsrc/libdbz"
+-  LIBS="-L$nsrc -lcnews $LIBS"
++  CPPFLAGS="$CPPFLAGS -I$prefix/include"
++  LIBS="-L$prefix/lib -lcnews $LIBS"
+   PROGS="fastcancel"
+   echo $ac_n "checking for newslib""... $ac_c" 1>&6
+ echo "configure:1284: checking for newslib" >&5

@@ -1,0 +1,44 @@
+--- cargo-crates/v8-142.2.0/v8/BUILD.gn.orig   2021-01-19 00:12:40 UTC
++++ cargo-crates/v8-142.2.0/v8/BUILD.gn
+@@ -974,6 +974,8 @@ external_v8_defines = [
+   "V8_TARGET_OS_MACOS",
+   "V8_TARGET_OS_WIN",
+   "V8_TARGET_OS_CHROMEOS",
++  "V8_TARGET_OS_FREEBSD",
++  "V8_TARGET_OS_BSD",
+ ]
+ 
+ enabled_external_v8_defines = [
+@@ -1053,6 +1055,10 @@ if (target_os == "android") {
+ } else if (target_os == "chromeos") {
+   enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
+   enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
++} else if (target_os == "openbsd") {
++  enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
++  enabled_external_v8_defines += [ "V8_TARGET_OS_OPENBSD" ]
++  enabled_external_v8_defines += [ "V8_TARGET_OS_BSD" ]
+ }
+ 
+ disabled_external_v8_defines = external_v8_defines - enabled_external_v8_defines
+@@ -6565,7 +6571,7 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -6576,6 +6582,12 @@ v8_component("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_freebsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "execinfo" ]
+   } else if (current_os == "aix") {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",

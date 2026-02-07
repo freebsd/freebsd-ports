@@ -1,0 +1,3 @@
+This package contains the GNOME Panel of the GNOME Flashback project.
+It consists of the gnome-panel binary, the libpanel-applet library
+and several applets.

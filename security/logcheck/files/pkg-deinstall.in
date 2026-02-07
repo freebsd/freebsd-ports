@@ -1,0 +1,12 @@
+#!/bin/sh
+
+user="%%LOGCHECK_USER%%"
+
+case $2 in
+POST-DEINSTALL)
+	if /usr/bin/crontab -u "${user}" -l > /dev/null 2>&1; then
+		echo y | /usr/bin/crontab -u "${user}" -r
+		echo "==> Removed crontab for \"${user}\"."
+	fi
+;;
+esac

@@ -1,0 +1,2 @@
+mypy-boto3-s3 contains type annotations for boto3.S3 1.26.58 service compatible
+with VSCode, PyCharm, Emacs, Sublime Text, mypy, pyright and other tools.

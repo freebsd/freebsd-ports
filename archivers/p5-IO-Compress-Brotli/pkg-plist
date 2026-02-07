@@ -1,0 +1,6 @@
+bin/bro-perl
+%%SITE_ARCH%%/IO/Compress/Brotli.pm
+%%SITE_ARCH%%/IO/Uncompress/Brotli.pm
+%%SITE_ARCH%%/auto/IO/Compress/Brotli/Brotli.so
+%%PERL5_MAN3%%/IO::Compress::Brotli.3.gz
+%%PERL5_MAN3%%/IO::Uncompress::Brotli.3.gz

@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2005-04-23 22:43:23 UTC
++++ Makefile.in
+@@ -38,7 +38,7 @@ RELEASE = @ALLOWRELEASE@
+ 
+ # libtool compile/link/install
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(TCC)
+-LTLINK = $(LIBTOOL) --mode=link $(TCC)
++LTLINK = $(LIBTOOL) --mode=link $(TCC) @TARGET_LIBS@
+ LTINSTALL = $(LIBTOOL) --mode=install $(INSTALL)
+ 
+ # Compiler options needed for programs that use the TCL library.
+@@ -474,6 +474,10 @@ install:	sqlite libsqlite.la sqlite.h
+ 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
+ 	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
+ 
++install-tcl:	libtclsqlite.la
++	$(INSTALL) -d $(DESTDIR)$(prefix)/lib/sqlite
++	$(LTINSTALL) libtclsqlite.la $(DESTDIR)$(prefix)/lib/sqlite
++
+ clean:	
+ 	rm -f *.lo *.la *.o sqlite@TARGET_EXEEXT@ libsqlite.la sqlite.h opcodes.*
+ 	rm -rf .libs .deps 

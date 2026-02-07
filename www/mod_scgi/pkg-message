@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+ If your mod_scgi seg faults, try disabling mod_fastcgi
+EOM
+}
+]

@@ -1,0 +1,6 @@
+The user space command line tools from the latest version of BIND:
+	delv, dig, host, nslookup, nsupdate
+
+It also includes various dnssec related tools:
+	dnssec-dsfromkey, dnssec-importkey, dnssec-keyfromlabel, dnssec-keygen,
+	dnssec-revoke, dnssec-settime, dnssec-signzone, dnssec-verify

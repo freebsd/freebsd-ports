@@ -1,0 +1,116 @@
+--- Makefile.orig	2017-10-25 07:17:42.000000000 -0700
++++ Makefile	2022-02-16 13:38:09.182449000 -0800
+@@ -8,19 +8,19 @@
+ # after "=", this is parsed and rewritten by the configure script.
+ #
+ #				# user-callable executable (plan)
+-DIR=/usr/local/bin
++DIR=${PREFIX}/bin
+ #				# auxiliary programs (pland, notifier, PS)
+-LIB=/usr/local/lib
++LIB=${DATADIR}
+ #				# help file (plan.help)
+-SBIN=/usr/local/bin
++SBIN=${PREFIX}/bin
+ #				# system programs (netplan)
+-HELP=/usr/local/lib
++HELP=${DOCSDIR}
+ #				# netplan expects netplan.dir/ here
+-NETPLANDIR=/usr/local/lib
++NETPLANDIR=${DATADIR}
+ #				# unformatted nroff manpage (plan.[14])
+-MAN=/usr/local/man/man
++MAN=${MANPREFIX}/man/man
+ #				# formatted manpage (plan.[14])
+-CATMAN=/usr/catman/local/cat
++CATMAN=${MANPREFIX}/man/cat
+ #				# subdirectory in home dir, or empty
+ PLANRULE=
+ #				# lockfile for plan, %d is uid
+@@ -34,9 +34,9 @@
+ #				# standard Unix compiler generator
+ YACC=yacc
+ #				# numerical user ID of <nobody> account
+-NOB_UID=60001
++NOB_UID=65534
+ #				# default numerical group ID of <nobody>
+-NOB_GID=60001
++NOB_GID=65534
+ # 				# used by plan to pre-process holiday files,
+ #				# plan will check if this file really exists
+ CPP_PATH='/lib/cpp -P -I$(HELP)'
+@@ -49,13 +49,17 @@
+ #				# uncomment this for Japanese version of plan
+ #				# JAPAN requires X11R5 and a Japanese env.
+ JAPANDEFS='-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 -DLOCALE_SJIS=ja_JP.SJIS -DLOCALE_EUC=ja_JP.EUC'
++.if defined(JAPANESE)
++JAPAN=-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
++	-DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
++.else
+ JAPAN=
++.endif
+ #				# default holiday locale
+ HOLIDAY=german
+ #				# do NOT define -O2 on DEC OSF/1 machines!
+ #				# use -O instead of -O2 on HP and Solaris
+-DEBUG=-g
+-DEBUG=-O2
++DEBUG=${CFLAGS}
+ #				# what to do without make arguments
+ DEFTARGET=linux
+ #------------------------- end of configuration section ----------------------
+@@ -139,7 +143,7 @@
+ BSDIG_C	= -DBSD -DRABBITS -I/usr/X11/include -DFLOCK -DNOREGEX -Dbsdi -ansi 
+ NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
+ 	  -DNO_MOTIF
+-FBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
++FBSD_C	= -ansi -I$(LOCALBASE)/include -DBSD -DNOLOCK -DRABBITS\
+ 	  -DSTDLIBMALLOC
+ OBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
+ 	  -DNO_MOTIF -DSTDLIBMALLOC
+@@ -226,10 +230,10 @@
+ BSDIG_L2= -L/usr/X11/lib -lc
+ NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
+ NBSD_L2	= -L/usr/X11R6/lib -lc
+-FBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11 -lXext -lSM -lICE -lXpm
+-FBSD_L2	= -L/usr/X11R6/lib -lc
+-OBSD_L1	= -L/usr/local/lib -lXm -L/usr/X11R6/lib -lXt -lX11
+-OBSD_L2	= -lc
++FBSD_L1	= -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++FBSD_L2	=
++OBSD_L1	= -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++OBSD_L2	=
+ LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lXm -lXt -lX11 -lXpm -lc -lXext -lICE -lX11
+ LINUX_L2= -lc
+ DEBIAN_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lXm -lXt -lX11 -lXpm -lc -lXext -lICE -lX11
+@@ -298,7 +302,7 @@
+ 	@echo "  make bsdi      BSDI/386"
+ 	@echo "  make bsdig     BSDI/386 with gcc"
+ 	@echo "  make netbsd    NetBSD/i386 1.0A (maybe others too)"
+-	@echo "  make freebsd   FreeBSD 2.x"
++	@echo "  make freebsd   FreeBSD"
+ 	@echo "  make openbsd	OpenBSD"
+ 	@echo "  make svr4      SVR4 Using gcc"
+ 	@echo "  make news4     Sony NEWS-OS4.x"
+@@ -552,7 +556,7 @@
+ 	$(CCLINE) -c -DLIB=\"$(LIB)\" $<
+ 
+ holiday.o: holiday.c $(MAKEFILE)
+-	$(CCLINE) -DCPP_PATH=\"$(CPP_PATH)\" -c -DLIB=\"$(LIB)\" $<
++	$(CCLINE) -DCPP_PATH=\"$(CPP_PATH)\" -c -DLIB=\"$(DOCS)\" $<
+ 
+ util.o: util.c $(MAKEFILE)
+ 	$(CCLINE) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
+@@ -627,10 +631,10 @@
+ LIST	= README HISTORY plan.spec holiday/* language/* misc/* src/resources.h.bigfonts web/*
+ SRC	= Makefile $(P_SRC) daemon.c $(N_SRC) $(S_SRC) $(INC) $(S_INC) configure
+ 
+-LDIR	= /usr/X11R6/lib
++LDIR	= ${LOCALBASE}/lib
+ BINDIR	= plan-$(VERSION)
+ gMYCC	= gcc
+-gCF	= -m32 -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX -Dlinux
++gCF	= -m32 -I${LOCALBASE}/include -D_POSIX_SOURCE -DNOLOCK -DLINUX -Dlinux
+ gL1F	= -L$(LDIR) $(LDIR)/libXm.a -lXt -lX11 $(LDIR)/libXpm.a -lc -lXext -lICE -lX11
+ gL2F	= -lc
+ 

@@ -1,0 +1,3 @@
+This module attempts to generate a stack dump from a core file by
+locating the best available debugger (if any) and running it with the
+appropriate arguments and command script.

@@ -1,0 +1,12 @@
+Autoray is a lightweight Python library that provides automatic dispatching of
+array operations to the appropriate backend, allowing code to work seamlessly
+with different array libraries like NumPy, JAX, PyTorch, TensorFlow, CuPy,
+Dask, and others.
+
+Key features:
+* Automatic backend detection and dispatching
+* Support for multiple array libraries
+* Minimal overhead and dependencies
+* Easy integration with existing code
+* Extensible for custom backends
+* Compatible with most common array operations

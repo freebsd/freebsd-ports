@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-12-11 06:30:24 UTC
++++ CMakeLists.txt
+@@ -61,7 +61,7 @@ endif()
+ endif()
+ 
+ # Set common C compiler flags for all targets (the library and the programs).
+-set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG")
++# set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG")
+ set(CMAKE_C_STANDARD 99)
+ if(NOT MSVC)
+     check_c_compiler_flag(-Wdeclaration-after-statement HAVE_WDECLARATION_AFTER_STATEMENT)

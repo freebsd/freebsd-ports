@@ -1,0 +1,14 @@
+Parsley is a parsing library for people who find parsers scary or annoying. I
+wrote it because I wanted to parse a programming language, and tools like PLY or
+ANTLR or Bison were very hard to understand and integrate into my Python code.
+Most parser generators are based on LL or LR parsing algorithms that compile to
+big state machine tables. It was like I had to wake up a different section of my
+brain to understand or work on grammar rules.
+
+Parsley, like pyparsing and ZestyParser, uses the PEG algorithm, so each
+expression in the grammar rules works like a Python expression. In particular,
+alternatives are evaluated in order, unlike table-driven parsers such as yacc,
+bison or PLY.
+
+Parsley is an implementation of OMeta, an object-oriented pattern-matching
+language developed by Alessandro Warth.

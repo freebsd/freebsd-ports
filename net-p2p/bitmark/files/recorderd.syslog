@@ -1,0 +1,3 @@
+# recorderd syslog
+!+recorderd
+daemon.info			/var/lib/recorderd/log/recorderd.syslog

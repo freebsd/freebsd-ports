@@ -1,0 +1,12 @@
+Xfce panel plugin which allows to put the maximized window title
+and windows buttons on the panel.
+
+
+Original plugin's features:
+
+ - Show the title and buttons of the maximized window on the panel.
+ - Allow window actions on buttons and title clicks
+   (activate, (un)maximize, close).
+ - Allow window action menu on left button click.
+ - Title formatting options.
+ - xfwm4/unity theming support for buttons.

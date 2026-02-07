@@ -1,0 +1,5 @@
+%%LUA_MODSHAREDIR%%/mpd.lua
+%%PORTDOCS%%%%DOCSDIR%%/files/mpd.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/luadoc.css
+%%PORTDOCS%%%%DOCSDIR%%/modules/mpd.html

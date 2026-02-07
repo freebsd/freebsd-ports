@@ -1,0 +1,5 @@
+Memfetch is a simple utility to dump all memory of a running process, either
+immediately, or when a fault condition is discovered.  It is an attractive
+alternative to the vastly inferior search capabilities of many debuggers and
+tracers -- and a convenient way to grab "screen shots" from many types of
+text-based interactive utilities, like ssh or screen sessions.

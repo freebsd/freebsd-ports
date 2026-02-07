@@ -1,0 +1,34 @@
+PORTNAME=	tass64
+PORTVERSION=	1.60.3243
+CATEGORIES=	devel
+MASTER_SITES=	SF/tass64/source
+DISTNAME=	64tass-${PORTVERSION}-src
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Multi pass optimizing macro assembler for 65xx series processors
+WWW=		https://tass64.sourceforge.net/
+
+LICENSE=	GPLv2+ LGPL20+ LGPL21+ MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE-GPL-2.0
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSE-LGPL-2.0
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPL-2.1
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-my_getopt
+
+USES=		gmake zip
+
+MAKE_ARGS=	-w CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
+
+PLIST_FILES=	bin/tass64
+PORTDOCS=	README README.html README.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/64tass ${STAGEDIR}${PREFIX}/bin/tass64
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- test/data/etc/polkit-1/rules.d/10-testing.rules.orig	2025-12-17 16:14:53 UTC
++++ test/data/etc/polkit-1/rules.d/10-testing.rules
+@@ -162,7 +162,7 @@ polkit.addRule(function(action, subject) {
+ polkit.addRule(function(action, subject) {
+     if (action.id == "net.company.spawning.helper_with_output") {
+         try {
+-            var out = polkit.spawn(["echo", "-n", "-e", "Hello\nWorld"]);
++            var out = polkit.spawn(["printf", "Hello\nWorld"]);
+             if (out == "Hello\nWorld")
+                 return polkit.Result.YES;
+             else

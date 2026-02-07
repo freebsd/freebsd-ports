@@ -1,0 +1,10 @@
+libuutil is a library of userland utilities originating from solaris
+
+This library provides both a doubly linked-list implementation and a
+AVL tree implementation.  This has been a private library best known
+as a core component for ZFS and SMF.
+
+The performance is considered excellent.  As this has always been a
+private library, it is not well documented and there is no man page
+for it.  The best documentation is located in the source code and
+reading OpenSolaris/Illumos ZFS and SMF sources will help as well.

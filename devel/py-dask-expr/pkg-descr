@@ -1,0 +1,4 @@
+Dask DataFrames with query optimization.
+
+This is a rewrite of Dask DataFrame that includes query optimization and
+generally improved organization.

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Unix/Groups.pm
+%%SITE_ARCH%%/auto/Unix/Groups/Groups.so
+%%PERL5_MAN3%%/Unix::Groups.3.gz

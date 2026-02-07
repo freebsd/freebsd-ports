@@ -1,0 +1,46 @@
+--- rt/src/runtime/byte_array.rs.orig	2025-08-22 09:33:51 UTC
++++ rt/src/runtime/byte_array.rs
+@@ -50,6 +50,7 @@ pub unsafe extern "system" fn inko_byte_array_set(
+     old_value as i64
+ }
+ 
++#[allow(dangerous_implicit_autorefs)]
+ #[no_mangle]
+ pub unsafe extern "system" fn inko_byte_array_get(
+     bytes: *mut ByteArray,
+--- rt/src/runtime/process.rs.orig	2025-08-22 09:32:50 UTC
++++ rt/src/runtime/process.rs
+@@ -156,6 +156,7 @@ pub unsafe extern "system" fn inko_process_stacktrace(
+     Box::into_raw(Box::new(process.stacktrace()))
+ }
+ 
++#[allow(dangerous_implicit_autorefs)]
+ #[no_mangle]
+ pub unsafe extern "system" fn inko_process_stack_frame_name(
+     state: *const State,
+@@ -167,6 +168,7 @@ pub unsafe extern "system" fn inko_process_stack_frame
+     InkoString::alloc((*state).string_type, val.clone())
+ }
+ 
++#[allow(dangerous_implicit_autorefs)]
+ #[no_mangle]
+ pub unsafe extern "system" fn inko_process_stack_frame_path(
+     state: *const State,
+@@ -178,6 +180,7 @@ pub unsafe extern "system" fn inko_process_stack_frame
+     InkoString::alloc((*state).string_type, val.clone())
+ }
+ 
++#[allow(dangerous_implicit_autorefs)]
+ #[no_mangle]
+ pub unsafe extern "system" fn inko_process_stack_frame_line(
+     trace: *const Vec<StackFrame>,
+--- rt/src/runtime.rs.orig	2025-08-22 09:32:38 UTC
++++ rt/src/runtime.rs
+@@ -102,6 +102,7 @@ pub unsafe extern "system" fn inko_runtime_state(
+     (*runtime).state.as_ptr() as _
+ }
+ 
++#[allow(dangerous_implicit_autorefs)]
+ #[no_mangle]
+ pub unsafe extern "system" fn inko_runtime_stack_mask(
+     runtime: *mut Runtime,

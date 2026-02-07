@@ -1,0 +1,39 @@
+GNUstep/System/Applications/Preview.app/Preview
+GNUstep/System/Applications/Preview.app/Resources/About.tiff
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Main.gorm/data.classes
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Main.gorm/data.info
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Main.gorm/objects.gorm
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Preview.gorm/data.classes
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Preview.gorm/data.info
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Preview.gorm/fitWidth.tiff
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Preview.gorm/fitWindow.tiff
+GNUstep/System/Applications/Preview.app/Resources/Bulgarian.lproj/Preview.gorm/objects.gorm
+GNUstep/System/Applications/Preview.app/Resources/Contributors.rtf
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Main.gorm/data.classes
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Main.gorm/data.info
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Main.gorm/objects.gorm
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Preview.gorm/data.classes
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Preview.gorm/data.info
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Preview.gorm/fitWidth.tiff
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Preview.gorm/fitWindow.tiff
+GNUstep/System/Applications/Preview.app/Resources/English.lproj/Preview.gorm/objects.gorm
+GNUstep/System/Applications/Preview.app/Resources/FileIcon_gif.tiff
+GNUstep/System/Applications/Preview.app/Resources/FileIcon_jpeg.tiff
+GNUstep/System/Applications/Preview.app/Resources/FileIcon_png.tiff
+GNUstep/System/Applications/Preview.app/Resources/FileIcon_tiff.tiff
+GNUstep/System/Applications/Preview.app/Resources/French.lproj/Main.gorm/data.classes
+GNUstep/System/Applications/Preview.app/Resources/French.lproj/Main.gorm/data.info
+GNUstep/System/Applications/Preview.app/Resources/French.lproj/Main.gorm/objects.gorm
+GNUstep/System/Applications/Preview.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Preview.app/Resources/Preview.desktop
+GNUstep/System/Applications/Preview.app/Resources/Preview.tiff
+GNUstep/System/Applications/Preview.app/Resources/first_page.tiff
+GNUstep/System/Applications/Preview.app/Resources/fitWidth.tiff
+GNUstep/System/Applications/Preview.app/Resources/fitWindow.tiff
+GNUstep/System/Applications/Preview.app/Resources/hand.tiff
+GNUstep/System/Applications/Preview.app/Resources/last_page.tiff
+GNUstep/System/Applications/Preview.app/stamp.make
+GNUstep/System/Tools/Preview
+@dir GNUstep/System/Applications/Preview.app/Resources/English.lproj/Preview.help
+@dir GNUstep/System/Applications/Preview.app/Resources/French.lproj/Preview.gorm
+@dir GNUstep/System/Applications/Preview.app/Resources/French.lproj/Preview.help

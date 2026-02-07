@@ -1,0 +1,10 @@
+--- openssl-ccm.gemspec.orig	2025-12-18 12:39:52 UTC
++++ openssl-ccm.gemspec
+@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<openssl>.freeze, ["~> 3.0".freeze])
++  s.add_runtime_dependency(%q<openssl>.freeze, [">= 3.0".freeze])
+ end
+ 

@@ -1,0 +1,23 @@
+--- Makefile.orig	2021-11-18 00:25:55 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ NAME=igal2
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/bin
+ DATADIR=$(PREFIX)/share
+ MANDIR=$(DATADIR)/man/man1
+@@ -24,13 +24,11 @@ old-clean:
+ install:
+ 	install -d $(DESTDIR)$(BINDIR)
+ 	install -m 0755 $(NAME) $(DESTDIR)$(BINDIR)
+-	ln -si $(NAME) $(DESTDIR)$(BINDIR)/igal
+ 	install -m 0755 utilities/$(NAME).sh $(DESTDIR)$(BINDIR)
+ 	install -d $(DESTDIR)$(MANDIR)
+ 	install -m 0644 $(NAME).1 $(DESTDIR)$(MANDIR)
+ 	install -d $(DESTDIR)$(IGALDIR)
+ 	install -m 0644 README ChangeLog COPYING indextemplate2.html slidemovtemplate2.html slidetemplate2.html tile.png $(NAME).css directoryline2.html $(DESTDIR)$(IGALDIR)
+-	sed -i 's_/usr/local_$(PREFIX)_' $(DESTDIR)$(BINDIR)/$(NAME) $(DESTDIR)$(BINDIR)/$(NAME).sh $(DESTDIR)$(MANDIR)/$(NAME).1
+ 
+ 
+ 

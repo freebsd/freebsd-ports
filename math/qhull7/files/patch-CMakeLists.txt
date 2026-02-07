@@ -1,0 +1,25 @@
+Install docs into share/doc/ rather than include/
+
+--- CMakeLists.txt.orig	2019-06-29 00:30:15 UTC
++++ CMakeLists.txt
+@@ -335,7 +335,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
+ 
+ include_directories(${CMAKE_SOURCE_DIR}/src)
+ 
+-if(CMAKE_BUILD_TYPE MATCHES "[dD]ebug")
++if(FALSE AND CMAKE_BUILD_TYPE MATCHES "[dD]ebug")
+     set(qhull_CPP qhullcpp_d)
+     set(qhull_SHARED qhull_d) 
+     set(qhull_SHAREDP qhull_pd)
+@@ -661,9 +661,9 @@ install(FILES ${libqhull_HEADERS}    DESTINATION ${INC
+ )
+ 
+ install(FILES ${libqhull_HEADERS}    DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull)
+-install(FILES ${libqhull_DOC}        DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull)
++install(FILES ${libqhull_DOC}        DESTINATION ${DOC_INSTALL_DIR}/libqhull)
+ install(FILES ${libqhullr_HEADERS}    DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull_r)
+-install(FILES ${libqhullr_DOC}        DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull_r)
++install(FILES ${libqhullr_DOC}        DESTINATION ${DOC_INSTALL_DIR}/libqhull_r)
+ install(FILES ${libqhullcpp_HEADERS} DESTINATION ${INCLUDE_INSTALL_DIR}/libqhullcpp)
+ install(FILES html/qhull.man         DESTINATION ${MAN_INSTALL_DIR} RENAME qhull.1)
+ install(FILES html/rbox.man          DESTINATION ${MAN_INSTALL_DIR} RENAME rbox.1)

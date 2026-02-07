@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config os="FreeBSD">
+
+  <syscheck>
+    <alert_new_files>yes</alert_new_files>
+  </syscheck>
+
+</template_config>
+
+<template_config os="Linux">
+
+  <syscheck>
+    <alert_new_files>yes</alert_new_files>
+  </syscheck>
+
+</template_config>

@@ -1,0 +1,4 @@
+beangulp provides a framework for importing transactions into a Beancount
+ledger from account statements and other documents and for managing documents.
+
+Documentation is available in form of code docstrings and examples.

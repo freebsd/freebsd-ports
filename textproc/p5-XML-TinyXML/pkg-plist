@@ -1,0 +1,15 @@
+%%SITE_ARCH%%/XML/TinyXML.pm
+%%SITE_ARCH%%/XML/TinyXML/Node.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath/Context.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath/Axes.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath/Functions.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector/XPath.pm
+%%SITE_ARCH%%/XML/TinyXML/Selector.pm
+%%SITE_ARCH%%/XML/TinyXML/NodeAttribute.pm
+%%SITE_ARCH%%/auto/XML/TinyXML/TinyXML.so
+%%SITE_ARCH%%/auto/XML/TinyXML/autosplit.ix
+%%PERL5_MAN3%%/XML::TinyXML.3.gz
+%%PERL5_MAN3%%/XML::TinyXML::Node.3.gz
+%%PERL5_MAN3%%/XML::TinyXML::NodeAttribute.3.gz
+%%PERL5_MAN3%%/XML::TinyXML::Selector.3.gz
+%%PERL5_MAN3%%/XML::TinyXML::Selector::XPath.3.gz

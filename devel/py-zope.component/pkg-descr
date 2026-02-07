@@ -1,0 +1,11 @@
+zope.component, together with zope.interface, provides facilities
+for defining, registering and looking up components.
+
+There are two basic kinds of components: adapters and utilities.
+
+Utilities are just components that provide an interface and that
+are looked up by an interface and a name.
+
+Adapters are components that are computed from other components
+to adapt them to some interface. Because they are computed from
+other objects, they are provided as factories, usually classes.

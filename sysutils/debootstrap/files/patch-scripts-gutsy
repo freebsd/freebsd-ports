@@ -1,0 +1,51 @@
+--- scripts/gutsy.orig	2023-02-08 17:55:01 UTC
++++ scripts/gutsy
+@@ -296,10 +296,21 @@ echo \"Warning: Fake initctl called, doing nothing\"" 
+ 		predep=$(without "$(without "$(resolve_deps $predep)" "$required")" "$done_predeps")
+ 		# XXX: progress is tricky due to how dpkg_progress works
+ 		# -- cjwatson 2009-07-29
++		# This step sometimes fails due to some missing functionality in Linuxulator.  Just ignore it.
++		set +e
+ 		p; smallyes '' |
+ 		in_target dpkg --force-overwrite --force-confold --skip-same-version --install $(debfor $predep)
++		rc=$?
+ 		base=$(without "$base" "$predep")
+ 		done_predeps="$done_predeps $predep"
++
++		if [ $rc != 0 ]; then
++			warning FREEBSD_00 "Applying FreeBSD-specific workaround..."
++			# ... for "Failed to mount /etc/machine-id: Bad address" with Focal.
++			in_target truncate -s0 /var/lib/dpkg/info/systemd.postinst
++			in_target dpkg --configure systemd
++		fi
++		set -e
+ 	done
+ 
+ 	if [ -n "$base" ]; then
+@@ -310,10 +321,13 @@ echo \"Warning: Fake initctl called, doing nothing\"" 
+ 
+ 		info CONFBASE "Configuring the base system..."
+ 
++		# This step sometimes fails due to some missing functionality in Linuxulator.  Just ignore it.
++		set +e
+ 		smallyes '' |
+ 			(repeatn 5 in_target_failmsg CONF_BASE_FAIL_FIVE "Failure while configuring base packages.  This will be re-attempted up to five times." "" \
+ 			dpkg --status-fd 8 --force-confold --skip-same-version --configure -a 8>&1 1>&7 || echo EXITCODE $?) |
+ 			dpkg_progress $baseprog $bases CONFBASE "Configuring base system" CONFIGURING
++		set -e
+ 	fi
+ 
+ 	if [ -x "$TARGET/sbin/initctl.REAL" ]; then
+@@ -321,6 +335,12 @@ echo \"Warning: Fake initctl called, doing nothing\"" 
+ 	fi
+ 	mv "$TARGET/sbin/start-stop-daemon.REAL" "$TARGET/sbin/start-stop-daemon"
+ 	rm -f "$TARGET/usr/sbin/policy-rc.d"
++
++	echo \
++"# Workaround for Linuxulator missing mremap(2) support; without it,
++# apt(8) fails like this:
++# E: Dynamic MMap ran out of room. Please increase the size of APT::Cache-Start.
++APT::Cache-Start 251658240;" >> "$TARGET/etc/apt/apt.conf.d/00freebsd"
+ 
+ 	progress $bases $bases CONFBASE "Configuring base system"
+ 	info BASESUCCESS "Base system installed successfully."

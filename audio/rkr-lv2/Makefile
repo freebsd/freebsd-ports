@@ -1,0 +1,34 @@
+PORTNAME=	rkr
+DISTVERSIONPREFIX=	beta_
+DISTVERSION=	2-2
+DISTVERSIONSUFFIX=	-gd8c17d3
+PORTREVISION=	1
+CATEGORIES=	audio
+PKGNAMESUFFIX=	-lv2
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Rakarrack effects as LV2 plugins
+WWW=		https://github.com/ssj71/rkrlv2
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	lv2>0:audio/lv2
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libsamplerate.so:audio/libsamplerate
+
+USES=		cmake pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	ssj71
+GH_PROJECT=	${PORTNAME}lv2
+
+DATADIR=	${PREFIX}/share/${PORTNAME}.lv2
+
+OPTIONS_DEFINE_amd64=	SIMD
+OPTIONS_DEFINE_i386=	SIMD
+OPTIONS_DEFAULT_amd64=	SIMD
+OPTIONS_DEFAULT_i386=	SIMD
+
+SIMD_CMAKE_ON=	-DPORT_SIMD_FLAGS:STRING="-msse -msse2 -mfpmath=sse"
+
+.include <bsd.port.mk>

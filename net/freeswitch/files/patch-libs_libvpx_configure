@@ -1,0 +1,11 @@
+--- libs/libvpx/configure.orig	2021-10-24 18:22:28 UTC
++++ libs/libvpx/configure
+@@ -146,7 +146,7 @@ for t in ${all_targets}; do
+     [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
+ done
+ 
+-if ! diff --version >/dev/null; then
++if ! command -v diff >/dev/null; then
+   die "diff missing: Try installing diffutils via your package manager."
+ fi
+ 

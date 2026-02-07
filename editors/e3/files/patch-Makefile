@@ -1,0 +1,52 @@
+--- Makefile.orig	2010-05-27 18:58:59 UTC
++++ Makefile
+@@ -7,7 +7,7 @@ OS=LINUX
+ 
+ # 2. edit dest dir prefix if you want....
+ 
+-PREFIX='/usr/local'
++PREFIX?='/usr/local'
+ 
+ # 3. for programmers only: debugging in 64 bit Linux
+ DEBUG=false
+@@ -21,7 +21,7 @@ MANSEC='1'
+ 
+ BINDIR='$(PREFIX)/bin'
+ MANSEC='1'
+-MANDIR='$(PREFIX)/man/man$(MANSEC)'
++MANDIR='$(PREFIX)/share/man/man$(MANSEC)'
+ 
+ ASOURCES=e3.asm e3.h
+ AFLAGS = -w+orphan-labels -f elf
+@@ -43,7 +43,7 @@ else
+ 	chmod +x e3
+ else
+ 	echo $(ASVER)
+-	nasm -O2 $(AFLAGS) -o e3.o e3.asm -l e3.lst -D$(OS) -D$(EXMODE)
++	nasm -O2 $(AFLAGS) -o e3.o e3.asm -l e3.lst -D$(OS)
+ 	ld -s -o e3 e3.o
+ 	strip --remove-section .comment e3
+ endif
+@@ -71,14 +71,14 @@ install:	e3
+ # -------------------------------------------------
+ 
+ install:	e3
+-	install -d $(PREFIX) $(BINDIR) $(MANDIR)
+-	install -m 755 e3 $(BINDIR)
+-	ln -sf $(BINDIR)/e3 $(BINDIR)/e3ws
+-	ln -sf $(BINDIR)/e3 $(BINDIR)/e3em
+-	ln -sf $(BINDIR)/e3 $(BINDIR)/e3pi
+-	ln -sf $(BINDIR)/e3 $(BINDIR)/e3vi
+-	ln -sf $(BINDIR)/e3 $(BINDIR)/e3ne
+-	install -m 644 e3.man $(MANDIR)/e3.$(MANSEC)
++	install -d $(DESTDIR)$(PREFIX) $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)
++	${BSD_INSTALL_PROGRAM} e3 $(DESTDIR)$(BINDIR)
++	ln -sf e3 $(DESTDIR)$(BINDIR)/e3ws
++	ln -sf e3 $(DESTDIR)$(BINDIR)/e3em
++	ln -sf e3 $(DESTDIR)$(BINDIR)/e3pi
++	ln -sf e3 $(DESTDIR)$(BINDIR)/e3vi
++	ln -sf e3 $(DESTDIR)$(BINDIR)/e3ne
++	${BSD_INSTALL_MAN} e3.man $(DESTDIR)$(MANDIR)/e3.$(MANSEC)
+ 
+ clean:
+ 	rm -f e3*.o e3*.lst e3.tmp e3 e3em e3pi e3vi e3ws e3ne *~

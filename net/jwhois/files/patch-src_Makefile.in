@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2007-07-01 08:56:14 UTC
++++ src/Makefile.in
+@@ -231,6 +231,7 @@ jwhois_CFLAGS = $(OLDCFLAGS) -DSYSCONFDI
+          -DLOCALEDIR="\"$(localedir)\""
+ 
+ jwhois_LDADD = $(top_srcdir)/gl/libgnu.a
++jwhois_LDFLAGS = $(LDFLAGS) $(LTLIBINTL)
+ AM_CFLAGS = $(jwhois_CFLAGS)
+ INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/intl -I$(top_srcdir)/gl
+ all: all-am

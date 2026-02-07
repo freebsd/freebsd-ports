@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Time/HiRes.pm
+%%SITE_ARCH%%/auto/Time/HiRes/HiRes.so
+%%PERL5_MAN3%%/Time::HiRes.3.gz

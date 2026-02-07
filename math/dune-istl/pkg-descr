@@ -1,0 +1,4 @@
+dune-istl is a module of the DUNE Numerics framework for solving partial
+differential equations (PDEs) with grid-based methods.
+
+dune-istl contains the basic DUNE iterative solver template library classes.

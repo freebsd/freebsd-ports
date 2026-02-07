@@ -1,0 +1,201 @@
+# Makefile.RUNTIMES
+#
+# LIBCLANG_RT_LIBS_<arch> - clang runtime files (actual name prefixed with
+# "libclang_rt." (e.g., asan.a -> libclang_rt.asan.a).
+#
+# RT_LIBS_<arch> - full name of other runtimes.
+
+RT_ARCHES=
+
+RT_ARCHES+=aarch64
+LIBCLANG_RT_LIBS_aarch64= \
+	asan-preinit.a \
+	asan.a \
+	asan.a.syms \
+	asan.so \
+	asan_cxx.a \
+	asan_cxx.a.syms \
+	asan_static.a \
+	builtins.a \
+	cfi.a \
+	cfi_diag.a \
+	fuzzer.a \
+	fuzzer_interceptors.a \
+	fuzzer_no_main.a \
+	msan.a \
+	msan.a.syms \
+	msan_cxx.a \
+	msan_cxx.a.syms \
+	profile.a \
+	safestack.a \
+	stats.a \
+	stats_client.a \
+	tsan.a \
+	tsan.a.syms \
+	tsan.so \
+	tsan_cxx.a \
+	tsan_cxx.a.syms \
+	ubsan_minimal.a \
+	ubsan_minimal.a.syms \
+	ubsan_minimal.so \
+	ubsan_standalone.a \
+	ubsan_standalone.a.syms \
+	ubsan_standalone.so \
+	ubsan_standalone_cxx.a \
+	ubsan_standalone_cxx.a.syms \
+	xray-basic.a \
+	xray-fdr.a \
+	xray-profiling.a \
+	xray.a
+RT_LIBS_aarch64= liborc_rt.a
+
+RT_ARCHES+=i386
+LIBCLANG_RT_LIBS_i386= \
+	asan.a \
+	asan.so \
+	asan-preinit.a \
+	asan_static.a \
+	asan_cxx.a \
+	builtins.a \
+	cfi.a \
+	cfi_diag.a \
+	fuzzer.a \
+	fuzzer_interceptors.a \
+	fuzzer_no_main.a \
+	profile.a \
+	safestack.a \
+	stats.a \
+	stats_client.a \
+	ubsan_minimal.a \
+	ubsan_minimal.so \
+	ubsan_standalone.a \
+	ubsan_standalone.so \
+	ubsan_standalone_cxx.a
+
+RT_ARCHES+=powerpc
+LIBCLANG_RT_LIBS_powerpc= \
+	builtins.a \
+	profile.a
+
+RT_ARCHES+=powerpc64
+LIBCLANG_RT_LIBS_powerpc64= \
+	asan.a \
+	asan.a.syms \
+	asan.so \
+	asan-preinit.a \
+	asan_cxx.a \
+	asan_cxx.a.syms \
+	asan_static.a \
+	builtins.a \
+	profile.a \
+	stats.a \
+	stats_client.a \
+	ubsan_minimal.a \
+	ubsan_minimal.a.syms \
+	ubsan_minimal.so \
+	ubsan_standalone.a \
+	ubsan_standalone.a.syms \
+	ubsan_standalone.so \
+	ubsan_standalone_cxx.a \
+	ubsan_standalone_cxx.a.syms
+
+RT_ARCHES+=powerpc64le
+LIBCLANG_RT_LIBS_powerpc64le= \
+	asan.a \
+	asan.a.syms \
+	asan.so \
+	asan-preinit.a \
+	asan_cxx.a \
+	asan_cxx.a.syms \
+	asan_static.a \
+	builtins.a \
+	profile.a \
+	stats.a \
+	stats_client.a \
+	ubsan_minimal.a \
+	ubsan_minimal.a.syms \
+	ubsan_minimal.so \
+	ubsan_standalone.a \
+	ubsan_standalone.a.syms \
+	ubsan_standalone.so \
+	ubsan_standalone_cxx.a \
+	ubsan_standalone_cxx.a.syms \
+	xray-basic.a \
+	xray-fdr.a \
+	xray.a \
+	xray-profiling.a
+
+RT_ARCHES+=riscv64
+LIBCLANG_RT_LIBS_riscv64= \
+	asan-preinit.a \
+	asan.a \
+	asan.a.syms \
+	asan.so \
+	asan_cxx.a \
+	asan_cxx.a.syms \
+	asan_static.a \
+	builtins.a \
+	profile.a \
+	stats.a \
+	stats_client.a \
+	ubsan_minimal.a \
+	ubsan_minimal.a.syms \
+	ubsan_minimal.so \
+	ubsan_standalone.a \
+	ubsan_standalone.a.syms \
+	ubsan_standalone.so \
+	ubsan_standalone_cxx.a \
+	ubsan_standalone_cxx.a.syms
+
+RT_ARCHES+=x86_64
+LIBCLANG_RT_LIBS_x86_64= \
+	asan-preinit.a \
+	asan_static.a \
+	asan.a \
+	asan.a.syms \
+	asan.so \
+	asan_cxx.a \
+	asan_cxx.a.syms \
+	builtins.a \
+	cfi.a \
+	cfi_diag.a \
+	dd.a \
+	dyndd.so \
+	fuzzer.a \
+	fuzzer_interceptors.a \
+	fuzzer_no_main.a \
+	msan.a \
+	msan.a.syms \
+	msan_cxx.a \
+	msan_cxx.a.syms \
+	xray-basic.a \
+	xray-dso.a \
+	xray-fdr.a \
+	xray-profiling.a \
+	xray.a \
+	profile.a \
+	safestack.a \
+	stats.a \
+	stats_client.a \
+	tsan.a \
+	tsan.a.syms \
+	tsan.so \
+	tsan_cxx.a \
+	tsan_cxx.a.syms \
+	ubsan_minimal.a \
+	ubsan_minimal.a.syms \
+	ubsan_minimal.so \
+	ubsan_standalone.a \
+	ubsan_standalone.a.syms \
+	ubsan_standalone.so \
+	ubsan_standalone_cxx.a \
+	ubsan_standalone_cxx.a.syms
+RT_LIBS_x86_64= liborc_rt.a
+
+.for CRT_ARCH in ${RT_ARCHES}
+COMPILER_RT_LIBS_${CRT_ARCH}:=${LIBCLANG_RT_LIBS_${CRT_ARCH}:S|^|libclang_rt.|}
+.ifdef RT_LIBS_${CRT_ARCH}
+COMPILER_RT_LIBS_${CRT_ARCH}:= ${COMPILER_RT_LIBS_${CRT_ARCH}} ${RT_LIBS_${CRT_ARCH}}
+.endif
+.endfor
+

@@ -1,0 +1,10 @@
+Add bind-tools option to ease the server/tools package split
+
+--- meson.options.orig	2025-12-09 17:51:25 UTC
++++ meson.options
+@@ -203,3 +203,5 @@ option(
+     value: 'auto',
+     description: 'Enable Link Time Optimization for named.',
+ )
++
++option('bind-tools', type: 'feature', value: 'disabled', description: 'build tools only')

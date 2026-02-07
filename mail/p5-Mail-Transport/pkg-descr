@@ -1,0 +1,7 @@
+Mail::Transport extends Mail::Transport implement sending and/or receiving of
+messages, using various protocols.
+
+Mail::Transport::Send extends this class, and offers general functionality for
+send protocols, like SMTP. Mail::Transport::Receive also extends this class, and
+offers receive method. Some transport protocols will implement both sending and
+receiving.

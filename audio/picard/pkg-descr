@@ -1,0 +1,11 @@
+MusicBrainz Picard is a cross-platform application written in Python
+and is the official MusicBrainz tagger.
+
+Picard supports the majority of audio file formats, is capable of
+using audio fingerprints (AcoustIDs), performing CD lookups and
+disc ID submissions, and it has excellent Unicode support. Additionally,
+there are several plugins available that extend Picard's features.
+
+When tagging files, Picard uses an album-oriented approach.  This
+approach allows it to utilize the MusicBrainz data as effectively
+as possible and correctly tag your music.

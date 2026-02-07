@@ -1,0 +1,4 @@
+ntpstat is a shell script which prints the ntpd or chronyd synchronisation
+status, using the ntpq or chronyc program. It emulates the original ntpstat
+program written in C by G. Richard Keech, which implemented a subset of the
+mode6 protocol supported by ntpd.

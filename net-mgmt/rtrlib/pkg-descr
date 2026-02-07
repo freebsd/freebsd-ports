@@ -1,0 +1,2 @@
+The RTRlib implements the client-side of the RPKI-RTR protocol (RFC 6810) and
+BGP Prefix Origin Validation (RFC 6811).

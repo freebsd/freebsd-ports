@@ -1,0 +1,2 @@
+autocommand is a library to automatically generate and run simple argparse
+parsers from function signatures.

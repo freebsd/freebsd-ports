@@ -1,0 +1,2 @@
+backports.tarfile is the backport of CPython tarfile module for Python 3.11 or
+below.

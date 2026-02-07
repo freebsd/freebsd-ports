@@ -1,0 +1,36 @@
+{
+    "common" : {
+        "client_id" : "myilias"
+    },
+    "database" : {
+        "user" : "xxx",
+        "password" : "xxx"
+    },
+    "filesystem" : {
+        "data_dir" : "/usr/local/www/iliasfiles"
+    },
+    "http" : {
+        "path" : "http://www.xxx.com"
+    },
+    "language" : {
+        "default_language" : "en",
+        "install_languages" : ["en"]
+    },
+    "logging" : {
+        "enable" : true,
+        "path_to_logfile" : "/var/www/logs/ilias.log",
+        "errorlog_dir" : "/var/www/logs/"
+    },
+    "systemfolder" : {
+        "contact" : {
+            "firstname" : "Richard",
+            "lastname" : "Klees",
+            "email" : "richard.klees@concepts-and-training.de"
+        }
+    },
+    "utilities" : {
+        "path_to_convert" : "/usr/local/bin/convert",
+        "path_to_zip" : "/usr/local/bin/zip",
+        "path_to_unzip" : "/usr/local/bin/unzip"
+    }
+}

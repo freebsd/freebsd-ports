@@ -1,0 +1,5 @@
+Perl sscanf() can be used very much like the C stdio sscanf(), for detailed
+sscanf() documentation please refer to your usual documentation resources.
+The supported formats are: [diuoxefgsc] and the character class [].
+
+Seamus Venasse <svenasse@polaris.ca>

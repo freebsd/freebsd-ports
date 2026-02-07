@@ -1,0 +1,23 @@
+Nineteen ISO 8879:1986 character entity sets used by many DTDs:
+
+  Added Latin 1
+  Added Latin 2
+  Added Math Symbols: Arrow Relations
+  Added Math Symbols: Binary Operators
+  Added Math Symbols: Delimiters
+  Added Math Symbols: Negated Relations
+  Added Math Symbols: Ordinary
+  Added Math Symbols: Relations, Box and Line Drawing
+  Alternative Greek Symbols
+  Diacritical Marks
+  General Technical
+  Greek Letters
+  Greek Symbols
+  Monotoniko Greek
+  Non-Russian Cyrillic
+  Numeric and Special Graphic
+  Publishing
+  Russian Cyrillic
+
+John Fieber
+jfieber@FreeBSD.org

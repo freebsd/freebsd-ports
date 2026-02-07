@@ -1,0 +1,10 @@
+bin/simple-fb2-reader
+share/applications/simple-fb2-reader.desktop
+share/icons/hicolor/scalable/apps/simple-fb2-reader.svg
+share/icons/hicolor/scalable/mimetypes/application-x-fictionbook+xml.svg
+share/icons/hicolor/scalable/mimetypes/application-x-zip-compressed-fb2.svg
+share/locale/en_US/LC_MESSAGES/simple-fb2-reader.mo
+share/locale/ru/LC_MESSAGES/simple-fb2-reader.mo
+share/mime/packages/simple-fb2-reader.xml
+%%DATADIR%%/simple-fb2-reader.css
+%%DATADIR%%/simple-fb2-reader.glade

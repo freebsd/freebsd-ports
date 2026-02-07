@@ -1,0 +1,3 @@
+Simple Navigation is a ruby library for creating navigations (with multiple
+levels) for your Rails, Sinatra or Padrino applications. It runs with all ruby
+versions.

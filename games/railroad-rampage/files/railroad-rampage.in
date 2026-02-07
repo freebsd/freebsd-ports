@@ -1,0 +1,7 @@
+#!/bin/sh
+
+DOTDIR=$HOME/.railroad-rampage
+
+mkdir -p $DOTDIR
+
+exec %%LOCALBASE%%/bin/bgdi -i %%DATADIR%% -i $DOTDIR %%DATADIR%%/RailroadRampage.dcb "$@"

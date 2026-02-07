@@ -1,0 +1,6 @@
+include/libestr.h
+lib/libestr.a
+lib/libestr.so
+lib/libestr.so.0
+lib/libestr.so.0.0.0
+libdata/pkgconfig/libestr.pc

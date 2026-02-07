@@ -1,0 +1,13 @@
+xxdiff is a computer program that allows a user (usually a software
+developer of some sort) to easily visualize the differences between
+files. The manner and goal for which this process is applied over
+multiple files is highly dependent on the application, and most of
+the time is driven by custom user scripts.
+
+For example, a configuration management engineer in a company might
+provide some kind of merge policing environment, that allows software
+developers to review changes in files for the purpose of accepting or
+rejecting a submitted changeset to a codebase. Another example is
+that of a developer wishing to review the changes he made to a
+checkout of files from a source-code management system such as CVS,
+Subversion, ClearCase, Perforce, etc.

@@ -1,0 +1,3 @@
+A Business::OnlinePayment backend module for aymentOne (formerly eBillit)
+PayConnect.  It is only useful if you have a merchant account with PaymentOne
+(formerly eBillit): http://www.paymentone.com/products/paycon.asp

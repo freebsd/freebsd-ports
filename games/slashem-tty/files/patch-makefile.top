@@ -1,0 +1,154 @@
+--- sys/unix/Makefile.top.orig	2006-12-30 05:08:31.000000000 -0800
++++ sys/unix/Makefile.top	2014-06-28 23:58:08.000000000 -0700
+@@ -14,20 +14,19 @@
+ # MAKE = make
+ 
+ # make NetHack
+-PREFIX   = /usr
+ GAME     = slashem
+ # GAME     = slashem.prg
+ GAMEUID  = games
+-GAMEGRP  = bin
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+ GAMEPERM = 04755
+-FILEPERM = 0644
++FILEPERM = 0664
+ EXEPERM  = 0755
+ DIRPERM  = 0755
+-VARFILEPERM = 0644
+-VARDIRPERM  = 0755
++VARFILEPERM = 0664
++VARDIRPERM  = 0775
+ 
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -40,7 +39,7 @@
+ # These must agree with the definitions in unixconf.h
+ 
+ # Defs. for non file areas support.
+-GAMEDIR  = $(PREFIX)/local/slashemdir
++GAMEDIR  = $(DATADIR)
+ VARDIR = $(GAMEDIR)
+ FILE_AREA_VAR = $(VARDIR)
+ FILE_AREA_SAVE = $(VARDIR)/save
+@@ -49,7 +48,7 @@
+ FILE_AREA_DOC = $(GAMEDIR)
+ FILE_AREA_BONES = $(FILE_AREA_VAR)
+ FILE_AREA_LEVL = $(FILE_AREA_VAR)
+-SHELLDIR = $(PREFIX)/local/bin
++SHELLDIR = $(PREFIX)/bin
+ 
+ # Defs. compatible with Linux's FSSTND 1.2
+ # FILE_AREA_VAR = /var/lib/games/slashem
+@@ -288,60 +287,32 @@
+ 		-e '}' 					\
+ 	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
+ 	$(MAKE) dofiles-$${target-nodlb}
+-	cp src/$(GAME) $(FILE_AREA_UNSHARE)
+-	cp util/recover $(FILE_AREA_UNSHARE)
+-	cp dat/license doc/Guidebook.txt $(FILE_AREA_DOC)
++	cp src/$(GAME) ${DESTDIR}$(FILE_AREA_UNSHARE)
++	cp util/recover ${DESTDIR}$(FILE_AREA_UNSHARE)
++	cp dat/license ${DESTDIR}$(FILE_AREA_DOC)
+ #	cp win/Qt/KDE/kslashem.kdelnk $(KDEDIR)/share/applnk/Games
+-	-rm -f $(SHELLDIR)/$(GAME)
++	-rm -f ${DESTDIR}$(SHELLDIR)/$(GAME)
+ 	sed -e 's;/usr/games/lib/nethackdir;$(FILE_AREA_UNSHARE);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+-		> $(SHELLDIR)/$(GAME)
+-# set up their permissions
+-	-( cd $(FILE_AREA_UNSHARE) ; $(CHOWN) $(GAMEUID) $(GAME) recover ; \
+-			$(CHGRP) $(GAMEGRP) $(GAME) recover )
+-	chmod $(GAMEPERM) $(FILE_AREA_UNSHARE)/$(GAME)
+-	chmod $(EXEPERM) $(FILE_AREA_UNSHARE)/recover
+-	-( cd $(FILE_AREA_DOC) ; \
+-			$(CHOWN) $(GAMEUID) license Guidebook.txt ; \
+-			$(CHGRP) $(GAMEGRP) license Guidebook.txt ; \
+-			chmod $(FILEPERM) license Guidebook.txt )
+-	-$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME)
+-	$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME)
+-	chmod $(EXEPERM) $(SHELLDIR)/$(GAME)
++		> ${DESTDIR}$(SHELLDIR)/$(GAME)
+ 
+ dofiles-dlb: check-dlb
+-	( cd dat ; cp nhshare $(SHARE_DATNODLB) $(FILE_AREA_SHARE) )
+-	( cd dat ; cp nhushare $(UNSHARE_DATNODLB) $(FILE_AREA_UNSHARE) )
+-# set up their permissions
+-	-( cd $(FILE_AREA_SHARE) ; \
+-			$(CHOWN) $(GAMEUID) nhshare $(SHARE_DATNODLB) ; \
+-			$(CHGRP) $(GAMEGRP) nhshare $(SHARE_DATNODLB) ; \
+-			chmod $(FILEPERM) nhshare $(SHARE_DATNODLB) )
+-	-( cd $(FILE_AREA_UNSHARE) ; \
+-			$(CHOWN) $(GAMEUID) nhushare $(UNSHARE_DATNODLB) ; \
+-			$(CHGRP) $(GAMEGRP) nhushare $(UNSHARE_DATNODLB) ; \
+-			chmod $(FILEPERM) nhushare $(UNSHARE_DATNODLB) )
++	( cd dat ; cp nhshare $(SHARE_DATNODLB) ${DESTDIR}$(FILE_AREA_SHARE) )
++	( cd dat ; cp nhushare $(UNSHARE_DATNODLB) ${DESTDIR}$(FILE_AREA_UNSHARE) )
+ 
+ dofiles-nodlb:
+ # copy over the game files
+-	( cd dat ; cp $(SHARE_DAT) $(FILE_AREA_SHARE) )
+-	( cd dat ; cp $(UNSHARE_DAT) $(FILE_AREA_UNSHARE) )
+-# set up their permissions
+-	-( cd $(FILE_AREA_SHARE) ; $(CHOWN) $(GAMEUID) $(SHARE_DAT) ; \
+-			$(CHGRP) $(GAMEGRP) $(SHARE_DAT) ; \
+-			chmod $(FILEPERM) $(SHARE_DAT) )
+-	-( cd $(FILE_AREA_UNSHARE) ; $(CHOWN) $(GAMEUID) $(UNSHARE_DAT) ; \
+-			$(CHGRP) $(GAMEGRP) $(UNSHARE_DAT) ; \
+-			chmod $(FILEPERM) $(UNSHARE_DAT) )
++	( cd dat ; cp $(SHARE_DAT) ${DESTDIR}$(FILE_AREA_SHARE) )
++	( cd dat ; cp $(UNSHARE_DAT) ${DESTDIR}$(FILE_AREA_UNSHARE) )
+ 
+ update: $(GAME) recover $(CNF_SHARE_DAT) dungeon spec_levs Guidebook.txt
+ #	(don't yank the old version out from under people who're playing it)
+-	-mv $(FILE_AREA_UNSHARE)/$(GAME) $(FILE_AREA_UNSHARE)/$(GAME).old
++	-mv ${DESTDIR}$(FILE_AREA_UNSHARE)/$(GAME) ${DESTDIR}$(FILE_AREA_UNSHARE)/$(GAME).old
+ #	quest.dat is also kept open and has the same problems over NFS
+ #	(quest.dat may be inside nhushare if dlb is in use)
+-	-mv $(FILE_AREA_UNSHARE)/quest.dat $(FILE_AREA_UNSHARE)/quest.dat.old
+-	-mv $(FILE_AREA_UNSHARE)/nhushare $(FILE_AREA_UNSHARE)/nhushare.old
++	-mv ${DESTDIR}$(FILE_AREA_UNSHARE)/quest.dat ${DESTDIR}$(FILE_AREA_UNSHARE)/quest.dat.old
++	-mv ${DESTDIR}$(FILE_AREA_UNSHARE)/nhushare ${DESTDIR}$(FILE_AREA_UNSHARE)/nhushare.old
+ # set up new versions of the game files
+ 	( $(MAKE) dofiles )
+ # touch time-sensitive files
+@@ -354,27 +325,18 @@
+ install: $(GAME) recover $(CNF_SHARE_DAT) dungeon spec_levs Guidebook.txt
+ # set up the directories
+ # not all mkdirs have -p; those that don't will create a -p directory
+-	-mkdir -p $(SHELLDIR)
+-	-rm -rf $(FILE_AREA_VAR) $(FILE_AREA_BONES) $(FILE_AREA_SAVE)
+-	-rm -rf $(FILE_AREA_LEVL) $(FILE_AREA_SHARE) $(FILE_AREA_UNSHARE)
+-	-rm -rf $(FILE_AREA_DOC)
+-	-mkdir -p $(FILE_AREA_VAR) $(FILE_AREA_BONES) $(FILE_AREA_SAVE)
+-	-mkdir -p $(FILE_AREA_LEVL) $(FILE_AREA_SHARE) $(FILE_AREA_UNSHARE)
+-	-mkdir -p $(FILE_AREA_DOC)
++	-mkdir -p ${DESTDIR}$(SHELLDIR)
++	-rm -rf ${DESTDIR}$(FILE_AREA_VAR) ${DESTDIR}$(FILE_AREA_BONES) ${DESTDIR}$(FILE_AREA_SAVE)
++	-rm -rf ${DESTDIR}$(FILE_AREA_LEVL) ${DESTDIR}$(FILE_AREA_SHARE) ${DESTDIR}$(FILE_AREA_UNSHARE)
++	-rm -rf ${DESTDIR}$(FILE_AREA_DOC)
++	-mkdir -p ${DESTDIR}$(FILE_AREA_VAR) ${DESTDIR}$(FILE_AREA_BONES)
++	-mkdir -p ${DESTDIR}$(FILE_AREA_LEVL) ${DESTDIR}$(FILE_AREA_SHARE) ${DESTDIR}$(FILE_AREA_UNSHARE)
++	-mkdir -p ${DESTDIR}$(FILE_AREA_DOC)
+ 	-rmdir ./-p
+-	-$(CHOWN) $(GAMEUID) $(FILE_AREA_VAR) $(FILE_AREA_BONES) $(FILE_AREA_SAVE) $(FILE_AREA_LEVL)
+-	$(CHGRP) $(GAMEGRP) $(FILE_AREA_VAR) $(FILE_AREA_BONES) $(FILE_AREA_SAVE) $(FILE_AREA_LEVL)
+-	chmod $(VARDIRPERM) $(FILE_AREA_VAR) $(FILE_AREA_BONES) $(FILE_AREA_SAVE) $(FILE_AREA_LEVL)
+-	-$(CHOWN) $(GAMEUID) $(FILE_AREA_SHARE) $(FILE_AREA_UNSHARE)
+-	$(CHGRP) $(GAMEGRP) $(FILE_AREA_SHARE) $(FILE_AREA_UNSHARE)
+-	chmod $(DIRPERM) $(FILE_AREA_SHARE) $(FILE_AREA_UNSHARE)
+ # set up the game files
+ 	( $(MAKE) dofiles )
+ # set up some additional files
+-	touch $(FILE_AREA_VAR)/perm $(FILE_AREA_VAR)/record $(FILE_AREA_VAR)/logfile
+-	-( cd $(FILE_AREA_VAR) ; $(CHOWN) $(GAMEUID) perm record logfile ; \
+-			$(CHGRP) $(GAMEGRP) perm record logfile ; \
+-			chmod $(VARFILEPERM) perm record logfile )
++	touch ${DESTDIR}$(FILE_AREA_VAR)/perm ${DESTDIR}$(FILE_AREA_VAR)/record ${DESTDIR}$(FILE_AREA_VAR)/logfile
+ # and a reminder
+ 	@echo You may also want to reinstall the man pages via the doc Makefile.
+ 

@@ -1,0 +1,976 @@
+  <vuln vid="bfe9adc8-0224-11f1-8790-c5fb948922ad">
+    <topic>python -- several security vulnerabilities</topic>
+    <affects>
+      <package><name>python310</name> <range><ge>0</ge></range></package>
+      <package><name>python311</name> <range><lt>3.11.14_2</lt></range></package>
+      <package><name>python312</name> <range><ge>0</ge></range></package>
+      <package><name>python313</name> <range><lt>3.13.12</lt></range></package>
+      <package><name>python313t</name> <range><lt>3.13.12</lt></range></package>
+      <package><name>python314</name> <range><lt>3.14.3</lt></range></package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Python project announces a new release with several security fixes:</p>
+	<blockquote cite="https://docs.python.org/release/3.14.3/whatsnew/changelog.html">
+	  <ul>
+	    <li>CVE-2026-1299: gh-144125: BytesGenerator will now refuse to serialize (write) headers that are unsafely folded or delimited; see verify_generated_headers. (Contributed by Bas Bloemsaat and Petr Viktorin in gh-121650).</li>
+	    <li>gh-143935: Fixed a bug in the folding of comments when flattening an email message using a modern email policy. Comments consisting of a very long sequence of non-foldable characters could trigger a forced line wrap that omitted the required leading space on the continuation line, causing the remainder of the comment to be interpreted as a new header field. This enabled header injection with carefully crafted inputs.</li>
+	    <li>gh-143925: Reject control characters in data: URL media types.</li>
+	    <li>gh-143919: Reject control characters in http.cookies.Morsel fields and values.</li>
+	    <li>CVE-2026-0865: gh-143916: Reject C0 control characters within wsgiref.headers.Headers fields, values, and parameters.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1299</cvename>
+      <cvename>CVE-2026-0865</cvename>
+      <url>https://docs.python.org/release/3.14.3/whatsnew/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-16</discovery>
+      <entry>2026-02-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="232e16cc-fd83-11f0-981a-98b78501ef2a">
+    <topic>xrdp -- remote code execution</topic>
+    <affects>
+<package>
+<name>xrdp</name>
+<range><lt>0.10.5</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Denis Skvortsov, Security Researcher at Kaspersky reports:</p>
+	<blockquote cite="https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-rwvg-gp87-gh6f">
+	  <p>xrdp before v0.10.5 contains an unauthenticated stack-based buffer overflow vulnerability. The issue stems from improper bounds checking when processing user domain information during the connection sequence. If exploited, the vulnerability could allow remote attackers to execute arbitrary code on the target system.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-68670</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2025-68670</url>
+    </references>
+    <dates>
+      <discovery>2025-12-06</discovery>
+      <entry>2026-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8173e68a-88f3-4862-882c-6e58779d98e7">
+    <topic>zeek -- potential DoS vulnerability</topic>
+    <affects>
+<package>
+<name>zeek</name>
+<range><lt>8.0.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v8.0.6">
+	  <p>Zeek's HTTP analyzer can be tricked into interpreting
+	  Transfer-Encoding or Content-Length headers set in MIME
+	  entities within HTTP bodies and change the analyzer
+	  behavior.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v8.0.6</url>
+    </references>
+    <dates>
+      <discovery>2026-01-29</discovery>
+      <entry>2026-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="409d70ab-fc23-11f0-85c5-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.109</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_27.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[474435504] High CVE-2026-1504: Inappropriate implementation in Background Fetch API. Reported by Luan Herrera (@lbherrera_) on 2026-01-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1504</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9dac4f05-fc65-11f0-96db-b42e991fc52e">
+    <topic>Firefox -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>147.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2007302 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2007302">
+	  <p>Mitigation bypass in the Privacy: Anti-Tracking component.</p>
+	  <p>Use-after-free in the Layout: Scrolling and Overflow component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-24868</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-24868</url>
+      <cvename>CVE-2026-24869</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-24869</url>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="90071333-fbe5-11f0-a13f-bc241121aa0a">
+    <topic>FreeBSD -- Jail escape by a privileged user via nullfs</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.3</ge><lt>14.3_8</lt></range>
+	<range><ge>13.5</ge><lt>13.5_9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>By default, jailed processes cannot mount filesystems, including
+	  nullfs(4).  However, the allow.mount.nullfs option enables mounting
+	  nullfs filesystems, subject to privilege checks.</p>
+	  <p>If a privileged user within a jail is able to nullfs-mount directories,
+	  a limitation of the kernel's path lookup logic allows that user to
+	  escape the jail's chroot, yielding access to the full filesystem
+	  of the host or parent jail.</p>
+	<h1>Impact:</h1>
+	  <p>In a jail configured to allow nullfs(4) mounts from within the
+	  jail, the jailed root user can escape the jail's filesystem root.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-15547</cvename>
+      <freebsdsa>SA-26:02.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4b824428-fb93-11f0-b194-8447094a420f">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_2</lt></range>
+	<range><ge>14.3</ge><lt>14.3_8</lt></range>
+	<range><ge>13.5</ge><lt>13.5_9</lt></range>
+      </package>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.19,1</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.6</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.4</lt></range>
+      </package>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.5</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.19</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20260127.txt">
+	  <ul>
+	    <li>Improper validation of PBMAC1 parameters in PKCS#12 MAC verification (CVE-2025-11187)</li>
+	    <li>Stack buffer overflow in CMS AuthEnvelopedData parsing (CVE-2025-15467)</li>
+	    <li>NULL dereference in SSL_CIPHER_find() function on unknown cipher ID (CVE-2025-15468)</li>
+	    <li>"openssl dgst" one-shot codepath silently truncates inputs >16MB (CVE-2025-15469)</li>
+	    <li>TLS 1.3 CompressedCertificate excessive memory allocation (CVE-2025-66199)</li>
+	    <li>Heap out-of-bounds write in BIO_f_linebuffer on short writes (CVE-2025-68160)</li>
+	    <li>Unauthenticated/unencrypted trailing bytes with low-level OCB function calls (CVE-2025-69418)</li>
+	    <li>Out of bounds write in PKCS12_get_friendlyname() UTF-8 conversion (CVE-2025-69419)</li>
+	    <li>Missing ASN1_TYPE validation in TS_RESP_verify_response() function (CVE-2025-69420)</li>
+	    <li>NULL Pointer Dereference in PKCS12_item_decrypt_d2i_ex function (CVE-2025-69421)</li>
+	    <li>Missing ASN1_TYPE validation in PKCS#12 parsing (CVE-2026-22795)</li>
+	    <li>ASN1_TYPE Type Confusion in the PKCS7_digest_from_attributes() function (CVE-2026-22796)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11187</cvename>
+      <cvename>CVE-2025-15467</cvename>
+      <cvename>CVE-2025-15468</cvename>
+      <cvename>CVE-2025-15469</cvename>
+      <cvename>CVE-2025-66199</cvename>
+      <cvename>CVE-2025-68160</cvename>
+      <cvename>CVE-2025-69418</cvename>
+      <cvename>CVE-2025-69419</cvename>
+      <cvename>CVE-2025-69420</cvename>
+      <cvename>CVE-2025-69421</cvename>
+      <cvename>CVE-2026-22795</cvename>
+      <cvename>CVE-2026-22796</cvename>
+      <url>https://openssl-library.org/news/secadv/20260127.txt</url>
+      <freebsdsa>SA-26:01.openssl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-27</entry>
+      <modified>2026-01-28</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="ab01cb11-f911-11f0-b194-8447094a420f">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.45</lt></range>
+      </package>
+      <package>
+	<name>mysql84-server</name>
+	<range><lt>8.4.8</lt></range>
+      </package>
+      <package>
+	<name>mysql91-server</name>
+	<range><lt>9.1.3</lt></range>
+      </package>
+      <package>
+	<name>mysql94-server</name>
+	<range><lt>9.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujan2026.html#AppendixMSQL">
+	  <p>Oracle reports multiple vulnerabilities in its MySQL server products.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-21949</cvename>
+      <cvename>CVE-2026-21950</cvename>
+      <cvename>CVE-2026-21968</cvename>
+      <cvename>CVE-2026-21929</cvename>
+      <cvename>CVE-2026-21936</cvename>
+      <cvename>CVE-2026-21937</cvename>
+      <cvename>CVE-2026-21941</cvename>
+      <cvename>CVE-2026-21948</cvename>
+      <cvename>CVE-2026-21952</cvename>
+      <cvename>CVE-2026-21964</cvename>
+      <cvename>CVE-2026-21965</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujan2026.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2026-01-20</discovery>
+      <entry>2026-01-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="65439aa0-f77d-11f0-9821-b0416f0c4c67">
+    <topic>wheel -- CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</topic>
+    <affects>
+    <package>
+	<name>py310-wheel</name>
+	<name>py311-wheel</name>
+	<name>py312-wheel</name>
+	<name>py313-wheel</name>
+	<name>py313t-wheel</name>
+	<name>py314-wheel</name>
+	<range><lt>0.46.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/pypa/wheel/security/advisories/GHSA-8rrh-rw8j-w5fx reports:</p>
+	<blockquote cite="https://github.com/pypa/wheel/security/advisories/GHSA-8rrh-rw8j-w5fx">
+	  <p>wheel is a command line tool for manipulating Python wheel files,
+as defined in PEP 427.  In versions 0.46.1 and below, the unpack
+function is vulnerable to file permission modification through
+mishandling of file permissions after extraction.  The logic blindly
+trusts the filename from the archive header for the chmod operation,
+even though the extraction process itself might have sanitized the
+path.  Attackers can craft a malicious wheel file that, when unpacked,
+changes the permissions of critical system files (e.g., /etc/passwd,
+SSH keys, config files), allowing for Privilege Escalation or
+arbitrary code execution by modifying now-writable scripts.  This
+issue has been fixed in version 0.46.2.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-24049</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-24049</url>
+    </references>
+    <dates>
+      <discovery>2026-01-22</discovery>
+      <entry>2026-01-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8560c1b-f772-11f0-85c5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.96</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_20.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[473851441] High CVE-2026-1220: Race in V8. Reported by @p1nky4745 on 2026-01-07</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1220</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_20.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-20</discovery>
+      <entry>2026-01-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="61dc7f67-f6e5-11f0-b051-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+<name>gitlab-ce</name>
+<name>gitlab-ee</name>
+<range><ge>18.8.0</ge><lt>18.8.2</lt></range>
+<range><ge>18.7.0</ge><lt>18.7.2</lt></range>
+<range><ge>11.9.0</ge><lt>18.6.4</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2026/01/21/patch-release-gitlab-18-8-2-released/">
+	  <p>Denial of Service issue in Jira Connect integration impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Releases API impacts GitLab CE/EE</p>
+	  <p>Unchecked Return Value issue in authentication services impacts GitLab CE/EE</p>
+	  <p>Infinite Loop issue in Wiki redirects impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in API endpoint impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13927</cvename>
+      <cvename>CVE-2025-13928</cvename>
+      <cvename>CVE-2026-0723</cvename>
+      <cvename>CVE-2025-13335</cvename>
+      <cvename>CVE-2026-1102</cvename>
+      <url>https://about.gitlab.com/releases/2026/01/21/patch-release-gitlab-18-8-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-01-21</discovery>
+      <entry>2026-01-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="01f34a27-f560-11f0-bbdc-10ffe07f9334">
+    <topic>mail/mailpit -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>mailpit</name>
+<range><lt>1.28.3</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/releases/tag/v1.28.3">
+	  <p>Ensure SMTP TO &amp; FROM addresses are RFC 5322
+	  compliant and prevent header injection (GHSA-54wq-72mp-cq7c)</p>
+	  <p>Prevent Server-Side Request Forgery (SSRF) via HTML
+	  Check API (GHSA-6jxm-fv7w-rw5j)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-23829</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-54wq-72mp-cq7c</url>
+      <cvename>CVE-2026-23845</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-6jxm-fv7w-rw5j</url>
+    </references>
+    <dates>
+      <discovery>2026-01-18</discovery>
+      <entry>2026-01-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb561db9-0fc1-4d92-81a2-ee01839c9119">
+    <topic>oauth2-proxy -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>oauth2-proxy</name>
+	<range><lt>7.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.</p>
+	<p>A flaw was found in the crypto/x509 package in the Go standard library. This vulnerability allows a certificate validation bypass via an excluded subdomain constraint in a certificated chain as it does not restrict the usage of wildcard SANs in the leaf certificate.</p>
+	<p>SSH Agent servers do not validate the size of messages when processing new identity requests, which may cause the program to panic if the message is malformed due to an out of bounds read.</p>
+	<p>SSH servers parsing GSSAPI authentication requests do not validate the number of mechanisms specified in the request, allowing an attacker to cause unbounded memory consumption.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-61729</cvename>
+      <cvename>CVE-2025-61727</cvename>
+      <cvename>CVE-2025-47914</cvename>
+      <cvename>CVE-2025-58181</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-16</discovery>
+      <entry>2026-01-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ff20d3a3-f211-11f0-9ca3-b42e991fc52e">
+    <topic>Mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>147.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>147.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>
+	Memory safety bugs present in Firefox 146 and Thunderbird
+	146. Some of these bugs showed evidence of memory corruption
+	and we presume that with enough effort some of these could
+	have been exploited to run arbitrary code.
+	</p>
+	<p>Denial-of-service in the DOM: Service Workers component.</p>
+	<p>Information disclosure in the XML component.</p>
+	<p>Sandbox escape in the Messaging System component.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0892</cvename>
+      <cvename>CVE-2026-0889</cvename>
+      <cvename>CVE-2026-0888</cvename>
+      <cvename>CVE-2026-0881</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="085101eb-f212-11f0-9ca3-b42e991fc52e">
+    <topic>Mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>147.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.7.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>147</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Memory safety bugs present in firefox-esr 140.6,
+	Thunderbird ESR 140.6, Firefox 146 and Thunderbird 146.</p>
+	<p>Spoofing issue in the DOM: Copy &amp; Paste and Drag &amp;
+	Drop component.</p>
+	<p>Clickjacking issue and information disclosure in the PDF
+	Viewer component.</p>
+	<p>Use-after-free in the JavaScript: GC component.</p>
+	<p>Use-after-free in the JavaScript Engine component.</p>
+	<p>Information disclosure in the Networking component.</p>
+	<p>Sandbox escape due to incorrect boundary conditions in the
+	Graphics: CanvasWebGL component.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0891</cvename>
+      <cvename>CVE-2026-0890</cvename>
+      <cvename>CVE-2026-0887</cvename>
+      <cvename>CVE-2026-0885</cvename>
+      <cvename>CVE-2026-0884</cvename>
+      <cvename>CVE-2026-0883</cvename>
+      <cvename>CVE-2026-0878</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="06061c59-f212-11f0-9ca3-b42e991fc52e">
+    <topic>Mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>147.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.7</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>147.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Incorrect boundary conditions in the Graphics
+	component.</p>
+	<p>Use-after-free in the IPC component.</p>
+	<p>Sandbox escape due to integer overflow in the Graphics
+	component.</p>
+	<p>Sandbox escape due to incorrect boundary conditions in the
+	Graphics component.</p>
+	<p>Mitigation bypass in the DOM: Security component.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0886</cvename>
+      <cvename>CVE-2026-0882</cvename>
+      <cvename>CVE-2026-0880</cvename>
+      <cvename>CVE-2026-0879</cvename>
+      <cvename>CVE-2026-0877</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f76a1db-f124-11f0-85c5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.59</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.59</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_13.html">
+	 <p>This update includes 10 security fixes:</p>
+	 <ul>
+	    <li>[458914193] High CVE-2026-0899: Out of bounds memory access in V8. Reported by @p1nky4745 on 2025-11-08</li>
+	    <li>[465730465] High CVE-2026-0900: Inappropriate implementation in V8. Reported by Google on 2025-12-03</li>
+	    <li>[40057499] High CVE-2026-0901: Inappropriate implementation in Blink. Reported by Irvan Kurniawan (sourc7) on 2021-10-04</li>
+	    <li>[469143679] Medium CVE-2026-0902: Inappropriate implementation in V8. Reported by 303f06e3 on 2025-12-16</li>
+	    <li>[444803530] Medium CVE-2026-0903: Insufficient validation of untrusted input in Downloads. Reported by Azur on 2025-09-13</li>
+	    <li>[452209495] Medium CVE-2026-0904: Incorrect security UI in Digital Credentials. Reported by Hafiizh on 2025-10-15</li>
+	    <li>[465466773] Medium CVE-2026-0905: Insufficient policy enforcement in Network. Reported by Google on 2025-12-02</li>
+	    <li>[467448811] Low CVE-2026-0906: Incorrect security UI. Reported by Khalil Zhani on 2025-12-10</li>
+	    <li>[444653104] Low CVE-2026-0907: Incorrect security UI in Split View. Reported by Hafiizh on 2025-09-12</li>
+	    <li>[452209503] Low CVE-2026-0908: Use after free in ANGLE. Reported by Glitchers BoB 14th. on 2025-10-15</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0899</cvename>
+      <cvename>CVE-2026-0900</cvename>
+      <cvename>CVE-2026-0901</cvename>
+      <cvename>CVE-2026-0902</cvename>
+      <cvename>CVE-2026-0903</cvename>
+      <cvename>CVE-2026-0904</cvename>
+      <cvename>CVE-2026-0905</cvename>
+      <cvename>CVE-2026-0906</cvename>
+      <cvename>CVE-2026-0907</cvename>
+      <cvename>CVE-2026-0908</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fd3855b8-efbc-11f0-9e3f-b0416f0c4c67">
+    <topic>virtualenv -- CWE-59: Improper Link Resolution Before File Access ('Link Following')</topic>
+    <affects>
+    <package>
+	<name>py310-virtualenv</name>
+	<name>py311-virtualenv</name>
+	<name>py312-virtualenv</name>
+	<name>py313-virtualenv</name>
+	<name>py313t-virtualenv</name>
+	<name>py314-virtualenv</name>
+	<range><lt>20.36.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/pypa/virtualenv/security/advisories/GHSA-597g-3phw-6986 reports:</p>
+	<blockquote cite="https://github.com/pypa/virtualenv/security/advisories/GHSA-597g-3phw-6986">
+	  <p>virtualenv is a tool for creating isolated virtual python environments.
+Prior to version 20.36.1, TOCTOU (Time-of-Check-Time-of-Use)
+vulnerabilities in virtualenv allow local attackers to perform
+symlink-based attacks on directory creation operations.  An attacker
+with local access can exploit a race condition between directory
+existence checks and creation to redirect virtualenv's app_data and
+lock file operations to attacker-controlled locations.  This issue
+has been patched in version 20.36.1.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-22702</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-22702</url>
+    </references>
+    <dates>
+      <discovery>2026-01-10</discovery>
+      <entry>2026-01-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7e63d0dd-eeff-11f0-b135-c01803b56cc4">
+    <topic>libtasn1 -- Stack-based buffer overflow</topic>
+    <affects>
+<package>
+<name>libtasn1</name>
+<range><lt>4.21.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oss-security@ list reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2026/01/08/5">
+	<p>Stack-based buffer overflow in libtasn1 version: v4.20.0.
+	The function fails to validate the size of input data resulting
+	in a buffer overflow in asn1_expend_octet_string.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13151</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-13151</url>
+    </references>
+    <dates>
+      <discovery>2026-01-07</discovery>
+      <entry>2026-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c9b610e9-eebc-11f0-b051-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.7.0</ge><lt>18.7.1</lt></range>
+	<range><ge>18.6.0</ge><lt>18.6.3</lt></range>
+	<range><ge>8.3.0</ge><lt>18.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2026/01/07/patch-release-gitlab-18-7-1-released/">
+	  <p>Stored Cross-site Scripting issue in GitLab Flavored Markdown placeholders impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Web IDE impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in Duo Workflows API impacts GitLab EE</p>
+	  <p>Missing Authorization issue in AI GraphQL mutation impacts GitLab EE</p>
+	  <p>Denial of Service issue in import functionality impacts GitLab CE/EE</p>
+	  <p>Insufficient Access Control Granularity issue in GraphQL runnerUpdate mutation impacts GitLab CE/EE</p>
+	  <p>Information Disclosure issue in Mermaid diagram rendering impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9222</cvename>
+      <cvename>CVE-2025-13761</cvename>
+      <cvename>CVE-2025-13772</cvename>
+      <cvename>CVE-2025-13781</cvename>
+      <cvename>CVE-2025-10569</cvename>
+      <cvename>CVE-2025-11246</cvename>
+      <cvename>CVE-2025-3950</cvename>
+      <url>https://about.gitlab.com/releases/2026/01/07/patch-release-gitlab-18-7-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-01-07</discovery>
+      <entry>2026-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d822839e-ee4f-11f0-b53e-0897988a1c07">
+    <topic>mail/mailpit -- Cross-Site WebSocket Hijacking</topic>
+    <affects>
+<package>
+<name>mailpit</name>
+<range><lt>1.28.2</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-524m-q5m7-79mm">
+	  <p>The Mailpit WebSocket server is configured to accept
+	  connections from any origin. This lack of Origin header
+	  validation introduces a Cross-Site WebSocket Hijacking
+	  (CSWSH) vulnerability.</p>
+
+	  <p>An attacker can host a malicious website that, when
+	  visited by a developer running Mailpit locally, establishes
+	  a WebSocket connection to the victim's Mailpit instance
+	  (default ws://localhost:8025). This allows the attacker
+	  to intercept sensitive data such as email contents,
+	  headers, and server statistics in real-time.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-22689</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-524m-q5m7-79mm</url>
+    </references>
+    <dates>
+      <discovery>2026-01-10</discovery>
+      <entry>2026-01-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79c3c751-ee20-11f0-b17e-50ebf6bdf8e9">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq-php82</name>
+	<name>phpmyfaq-php83</name>
+	<name>phpmyfaq-php84</name>
+	<name>phpmyfaq-php85</name>
+	<range><lt>4.0.16</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyFAQ team reports:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2025-12-29/">
+	  <p>Stored cross-site scripting (XSS) and unauthenticated config backup
+	    download vulnerability</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.phpmyfaq.de/security/advisory-2025-12-29/</url>
+    </references>
+    <dates>
+      <discovery>2025-12-29</discovery>
+      <entry>2026-01-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8826fb1c-ebd8-11f0-a15a-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>143.0.7499.192</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>143.0.7499.192</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[463155954] High CVE-2026-0628: Insufficient policy enforcement in WebView tag. Reported by Gal Weizman on 2025-11-23</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0628</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-06</discovery>
+      <entry>2026-01-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="583b63f5-ebae-11f0-939f-47e3830276dd">
+	  <topic>security/libsodium -- crypto_core_ed25519_is_valid_point mishandles checks for whether an elliptic curve point is valid</topic>
+    <affects>
+<package>
+<name>libsodium</name>
+<range><lt>1.0.21</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Libsodium maintainer reports:</p>
+	<blockquote cite="https://00f.net/2025/12/30/libsodium-vulnerability/">
+	  <p>The function crypto_core_ed25519_is_valid_point(), a low-level function
+	  used to check if a given elliptic curve point is valid, was supposed to
+	  reject points that aren't in the main cryptographic group,
+	  but some points were slipping through.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-69277</cvename>
+      <url>https://00f.net/2025/12/30/libsodium-vulnerability/</url>
+    </references>
+    <dates>
+      <discovery>2025-12-30</discovery>
+      <entry>2026-01-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="df33c83b-eb4f-11f0-a46f-0897988a1c07">
+    <topic>mail/mailpit -- Server-Side Request Forgery</topic>
+    <affects>
+<package>
+<name>mailpit</name>
+<range><lt>1.28.1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-8v65-47jx-7mfr">
+	  <p>A Server-Side Request Forgery (SSRF) vulnerability
+	  exists in Mailpit's /proxy endpoint that allows attackers
+	  to make requests to internal network resources.</p>
+	  <p>The /proxy endpoint allows requests to internal network
+	  resources. While it validates http:// and https:// schemes,
+	  it does not block internal IP addresses, allowing attackers
+	  to access internal services and APIs.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-21859</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-8v65-47jx-7mfr</url>
+    </references>
+    <dates>
+      <discovery>2026-01-06</discovery>
+      <entry>2026-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e2cd20fd-eb10-11f0-a1c0-0050569f0b83">
+    <topic>net-mgmt/net-snmp -- Remote Code Execution (snmptrapd)</topic>
+    <affects>
+<package>
+<name>net-snmp</name>
+<range><lt>5.9.5</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>net-snmp development team reports:</p>
+	<blockquote cite="https://github.com/net-snmp/net-snmp/security/advisories/GHSA-4389-rwqf-q9gq">
+	  <p>A specially crafted packet to an net-snmp snmptrapd daemon can cause a buffer overflow and
+	   the daemon to crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-68615</cvename>
+      <url>https://github.com/net-snmp/net-snmp/security/advisories/GHSA-4389-rwqf-q9gq</url>
+    </references>
+    <dates>
+      <discovery>2025-12-23</discovery>
+      <entry>2026-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="500cc49c-e93b-11f0-b8d8-4ccc6adda413">
+    <topic>gstreamer1-plugins-bad -- Out-of-bounds reads in MIDI parser</topic>
+    <affects>
+<package>
+<name>gstreamer1-plugins-bad</name>
+<range><lt>1.26.10</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/sa-2025-0009.html">
+	  <p>Multiple out-of-bounds reads in the MIDI parser that can cause
+	  crashes for certain input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-67326</cvename>
+      <cvename>CVE-2025-67327</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2025-0009.html</url>
+    </references>
+    <dates>
+      <discovery>2025-12-27</discovery>
+      <entry>2026-01-04</entry>
+    </dates>
+  </vuln>

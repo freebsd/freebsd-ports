@@ -1,0 +1,2 @@
+Allows to create classes similar to ArrayObject with additional element type or
+index constraints.

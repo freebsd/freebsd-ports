@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2024-10-20 16:16:08 UTC
++++ Makefile.in
+@@ -13,7 +13,7 @@ datarootdir = @datarootdir@
+ # Make options - override these to see more output
+ #####################################################################
+ 
+-RUNPIPE     = \>/dev/null
++RUNPIPE     = \>/dev/null || true
+ FLAGS       = -k -s
+ 
+ #####################################################################

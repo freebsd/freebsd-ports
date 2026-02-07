@@ -1,0 +1,2 @@
+This library provides generic parsers for parsing S-expressions in
+OCaml.

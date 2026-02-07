@@ -1,0 +1,10 @@
+--- IVL/src/makeGlobalLib.orig	1998-09-17 19:25:30 UTC
++++ IVL/src/makeGlobalLib
+@@ -9,6 +9,7 @@ SRC = IO.c \
+       init.c \
+       instance.c \
+       listmanip.c \
++      subIVL.c \
+       misc.c \
+       util.c
+ 

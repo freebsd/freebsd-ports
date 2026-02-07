@@ -1,0 +1,11 @@
+--- lib/smartdc/add-network-interface.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/add-network-interface
+@@ -4,7 +4,7 @@
+ # This script checks new network interfaces for and enables via DHCP at boot.
+ 
+ # load common functions and vars
+-. /lib/smartdc/common.lib
++. %%PREFIX%%/lib/smartdc/common.lib
+ 
+ nic_added=n
+ 

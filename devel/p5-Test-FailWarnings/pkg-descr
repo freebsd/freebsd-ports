@@ -1,0 +1,3 @@
+This module hooks $SIG{__WARN__} and converts warnings to Test::More's
+fail() calls.  It is designed to be used with done_testing, when you
+don't need to know the test count in advance.

@@ -1,0 +1,10 @@
+--- configure.ac.orig	2018-02-26 13:46:34 UTC
++++ configure.ac
+@@ -414,7 +414,6 @@ WARNLIST="
+ 	pointer-arith
+ 	write-strings
+ 	cast-align
+-	bad-function-cast
+ 	missing-format-attribute
+ 	float-equal
+ 	format=2

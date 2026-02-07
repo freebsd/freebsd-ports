@@ -1,0 +1,33 @@
+--- Makefile.orig	2025-07-05 17:44:26 UTC
++++ Makefile
+@@ -37,20 +37,8 @@ SHLIB_LINK += -Ldeps/v8-cmake/build
+ 
+ SHLIB_LINK += -Ldeps/v8-cmake/build
+ 
+-all: v8 $(OBJS)
++all: $(OBJS)
+ 
+-# For some reason, this solves parallel make dependency.
+-plv8_config.h plv8.so: v8
+-
+-deps/v8-cmake/README.md:
+-	@git submodule update --init --recursive
+-	$(foreach patch,$(PATCH_V8),cd deps/v8-cmake && patch -p1 <../../$(patch);)
+-
+-deps/v8-cmake/build/libv8_libbase.a: deps/v8-cmake/README.md
+-	@cd deps/v8-cmake && mkdir -p build && cd build && cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -Denable-fPIC=ON -DCMAKE_BUILD_TYPE=Release ../ && make -j $(NUMPROC)
+-
+-v8: deps/v8-cmake/build/libv8_libbase.a
+-
+ # enable direct jsonb conversion by default
+ CCFLAGS += -DJSONB_DIRECT_CONVERSION
+ 
+@@ -76,7 +64,7 @@ endif
+ 	REGRESS += bigint_graceful
+ endif
+ 
+-SHLIB_LINK += -lv8_base_without_compiler -lv8_compiler -lv8_snapshot -lv8_inspector -lv8_libplatform -lv8_base_without_compiler -lv8_libsampler -lv8_torque_generated -lv8_libbase
++SHLIB_LINK += -lv8_libbase -lv8 -lv8_libplatform 
+ 
+ OPTFLAGS = -std=c++17 -fno-rtti -O2
+ CCFLAGS += -Wall $(OPTFLAGS)

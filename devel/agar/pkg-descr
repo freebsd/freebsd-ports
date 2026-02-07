@@ -1,0 +1,9 @@
+Agar is a cross-platform GUI system. It provides a base framework and
+a toolkit of widgets from which portable, high-performance graphical
+applications can be built.
+
+The toolkit is extensible through class registration. A style engine
+allows precise control over the appearance of elements. Agar applications
+work under X Windows, MS Windows, MacOS, SDL (1.2 and 2.0) and others.
+It can attach to an existing graphical context and work as self contained
+window manager. Agar is fully thread-safe when built with threads support.

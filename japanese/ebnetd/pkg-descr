@@ -1,0 +1,22 @@
+This EBNETD distribution contains three server commands: ebnetd, ndtpd
+and ebhttpd. They are servers for accessing CD-ROM book on remote host
+via TCP/IP.
+
+ebnetd:  ebnetd is a server of EBNET protocol which is designed to
+	 communicate with EB Library. For more details about EB
+	 Library.
+
+ndtpd:   ndtpd is an NDTP (Network Dictionary Transfer Protocol)
+	 server. The first implementation of the NDTP esrver is
+	 `dserver'. ndtpd has upper compatibility with dserver-2.2.
+
+ebhttpd: ebhttpd is a WWW (World Wide Web) server. It supprts HTTP/1.0
+	 and HTTP/1.1 (Hypertext Transfer Protocol version 1.0 and 1.1).
+
+The servers support CD-ROM books of EB, EBG, EBXA, EBXA-C, S-EBXA and
+EPWING formats. The servers can run as a standalone daemons by
+default, but can also run as children of `inetd'.
+
+In addition, you must follow the licenses of your CD-ROM books. Though
+EBNETD is free software, your books may not be free. Don't open your
+books to unlicensed hosts nor users.

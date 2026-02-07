@@ -1,0 +1,94 @@
+diff -urN crunchfc.c crunchfc.c
+--- crunchfc.c	2008-03-30 01:21:47.000000000 +1300
++++ crunchfc.c	2009-10-26 09:13:04.000000000 +1300
+@@ -407,6 +407,7 @@
+ 	MESSAGE(VERB_HIGH, "Writing %d bytes at offset %d\n", 
+ 		TYPE_SIZE(key.type), offset);
+ 
++#if !defined(__FreeBSD__)
+ 	/* do an actual write to the device or file */
+ 	if (lseek(data->fd, data->offset+offset, SEEK_SET) == -1) {
+ 		MESSAGE(VERB_LOW, "lseek() failed\n");
+@@ -416,6 +417,7 @@
+ 		MESSAGE(VERB_LOW, "write() failed\n");
+ 		return -1;
+ 	}
++#endif
+ 	/* keep our buffer in sync with the device or file */
+ 	memcpy(key.dataval, buf, TYPE_SIZE(key.type));
+ 
+@@ -451,6 +453,7 @@
+ 
+ 	MESSAGE(VERB_HIGH, "Writing CRC at offset %d\n", len-4);
+ 
++#if !defined(__FreeBSD__)
+ 	/* do an actual write to the device or file */
+ 	if (lseek(data->fd, data->offset+len-4, SEEK_SET) == -1) {
+ 		MESSAGE(VERB_LOW, "CRC: lseek() failed\n");
+@@ -460,6 +463,7 @@
+ 		MESSAGE(VERB_LOW, "CRC: write() failed\n");
+ 		return;
+ 	}
++#endif
+ 	/* keep our buffer in sync with the device or file */
+ 	memcpy(buf+len-4, &crc, sizeof(crc));
+ 
+diff -urN fconfig.c fconfig.c
+--- fconfig.c	2008-03-30 01:21:48.000000000 +1300
++++ fconfig.c	2009-10-26 10:11:01.000000000 +1300
+@@ -45,6 +45,8 @@
+ #include "ftypes.h"
+ #include "crunchfc.h"
+ 
++#define REDBOOT_DEV	"/dev/redboot/RedBoot config"
++
+ /*
+  * Parse type name, return type ID. 
+  * Type ID is the type number in the type table. 
+@@ -163,6 +165,16 @@
+ 
+ 	recalculate_crc(&data);
+ 
++#if defined(__FreeBSD__)
++	/* FreeBSD needs to do a full sector write */
++	if (lseek(data.fd, 0, SEEK_SET) == -1) {
++		MESSAGE(VERB_LOW, "lseek() failed\n");
++		return -1;
++	}	
++	if (write(data.fd, data.buf, MAX_CONFIG_DATA) == -1) {
++		MESSAGE(VERB_LOW, "write() failed\n");
++	}
++#endif
+ 	close_fconfig_handle(&data);
+ 	return 0;
+ 
+@@ -292,8 +304,12 @@
+ 	}
+ 
+ 	if (device == NULL) {
++#if defined(__FreeBSD__)
++		device = REDBOOT_DEV;
++#else
+ 		MESSAGE(VERB_LOW, "You must provide a device name.\n");
+ 		exit(1);
++#endif
+ 	}
+ 
+ 	switch (mode) {
+diff -urN ftypes.c ftypes.c
+--- ftypes.c	2006-03-15 03:18:18.000000000 +1300
++++ ftypes.c	2009-10-26 10:07:04.000000000 +1300
+@@ -21,8 +21,13 @@
+ #include <arpa/inet.h>
+ 
+ /* For ether_aton */
++#if defined(__FreeBSD__)
++#include <sys/types.h>
++#include <net/ethernet.h>
++#else
+ #include <net/ethernet.h>
+ #include <netinet/ether.h>
++#endif
+ 
+ #include <stdlib.h>
+ #include <stdio.h>

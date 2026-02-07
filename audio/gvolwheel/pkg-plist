@@ -1,0 +1,7 @@
+bin/gvolwheel
+%%NLS%%share/locale/ru/LC_MESSAGES/gvolwheel.mo
+share/pixmaps/gvolwheel.png
+share/pixmaps/gvolwheel/audio-volume-high.png
+share/pixmaps/gvolwheel/audio-volume-low.png
+share/pixmaps/gvolwheel/audio-volume-medium.png
+share/pixmaps/gvolwheel/audio-volume-muted.png

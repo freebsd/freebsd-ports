@@ -1,0 +1,13 @@
+bin/airspyhf_calibrate
+bin/airspyhf_gpio
+bin/airspyhf_info
+bin/airspyhf_lib_version
+bin/airspyhf_rx
+include/libairspyhf/airspyhf.h
+include/libairspyhf/airspyhf_commands.h
+include/libairspyhf/iqbalancer.h
+lib/libairspyhf.a
+lib/libairspyhf.so
+lib/libairspyhf.so.0
+lib/libairspyhf.so.1.6.8
+libdata/pkgconfig/libairspyhf.pc

@@ -1,0 +1,23 @@
+DSVPN uses a shared secret. Create it with the following command:
+
+  # dd if=/dev/urandom of=%%PREFIX%%/etc/dsvpn.key count=1 bs=2048
+
+Example usage on the server (defaults to listen on 443/TCP):
+
+  # sysrc dsvpn_enable=YES
+  # service dsvpn start
+
+Example usage on the client (i.e. server's IP is 10.20.30.40):
+
+  # sysrc dsvpn_enable=YES
+  # sysrc dsvpn_remote=10.20.30.40
+  # service dsvpn start
+
+Remember to retrieve the shared key from the server before starting it.
+
+If you were previously using a DNS resolver only accessible from the
+local network, it won't be accessible through the VPN. That might be
+the only thing you may have to change. Use a public resolver, a local
+resolver, or DNSCrypt.
+
+The default network created by DSVPN is 192.168.192.0/24.

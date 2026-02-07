@@ -1,0 +1,2 @@
+The GenMon plugin cyclically spawns the indicated script/program,
+captures its output and displays it as a string into the panel.

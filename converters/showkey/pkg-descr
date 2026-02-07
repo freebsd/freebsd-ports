@@ -1,0 +1,6 @@
+This program puts your terminal in raw mode, eats keystrokes, and prints
+them back it you in a recognizable printed form (using <>-surrounded
+ASCII mnemonics for non-printables).
+
+This may be useful, for example, if you're not certain what your keyboard
+keys are sending.

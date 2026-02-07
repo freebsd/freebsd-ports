@@ -1,0 +1,29 @@
+--- Makefile.orig	2011-09-18 15:22:35 UTC
++++ Makefile
+@@ -57,9 +57,9 @@
+ .PHONY: install-programs
+ install-programs: $(PROGRAMS)
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) -m 755 -o root -g $(ROOT_GROUP) vlock $(DESTDIR)$(BINDIR)/vlock
++	$(BSD_INSTALL_SCRIPT) vlock $(DESTDIR)$(BINDIR)/vlock
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(PREFIX)/sbin
+-	$(INSTALL) -m 4711 -o root -g $(ROOT_GROUP) vlock-main $(DESTDIR)$(SBINDIR)/vlock-main
++	$(BSD_INSTALL_PROGRAM) vlock-main $(DESTDIR)$(SBINDIR)/vlock-main
+ 
+ .PHONY: install-plugins
+ install-plugins: install-modules install-scripts
+@@ -75,11 +75,11 @@
+ .PHONY: install-man
+ install-man:
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(MANDIR)/man1
+-	$(INSTALL) -m 644 -o root -g $(ROOT_GROUP) man/vlock.1 $(DESTDIR)$(MANDIR)/man1/vlock.1
++	$(BSD_INSTALL_MAN) man/vlock.1 $(DESTDIR)$(MANDIR)/man1/vlock.1
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(MANDIR)/man8
+-	$(INSTALL) -m 644 -o root -g $(ROOT_GROUP) man/vlock-main.8 $(DESTDIR)$(MANDIR)/man8/vlock-main.8
++	$(BSD_INSTALL_MAN) man/vlock-main.8 $(DESTDIR)$(MANDIR)/man8/vlock-main.8
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(MANDIR)/man5
+-	$(INSTALL) -m 644 -o root -g $(ROOT_GROUP) man/vlock-plugins.5 $(DESTDIR)$(MANDIR)/man5/vlock-plugins.5
++	$(BSD_INSTALL_MAN) man/vlock-plugins.5 $(DESTDIR)$(MANDIR)/man5/vlock-plugins.5
+ 
+ 
+ ### build rules ###

@@ -1,0 +1,13 @@
+--- src/preproc/eqn/Makefile.sub.orig	2014-02-07 13:47:49.000000000 +0900
++++ src/preproc/eqn/Makefile.sub	2014-02-07 13:48:06.000000000 +0900
+@@ -52,8 +52,8 @@
+ 	chmod +x $@
+ 
+ install_data: neqn
+-	-rm -f $(bindir)/$(NAMEPREFIX)neqn
+-	$(INSTALL_SCRIPT) neqn $(bindir)/$(NAMEPREFIX)neqn
++	-rm -f $(DESTDIR)$(bindir)/$(NAMEPREFIX)neqn
++	$(INSTALL_SCRIPT) neqn $(DESTDIR)$(bindir)/$(NAMEPREFIX)neqn
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/$(NAMEPREFIX)neqn

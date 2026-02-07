@@ -1,0 +1,1 @@
+pytest-nunit is a pytest plugin for generating NUnit3 test result XML output.

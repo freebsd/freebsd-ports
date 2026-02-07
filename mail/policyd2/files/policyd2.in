@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Start or stop policyd2
+
+# PROVIDE: policyd2
+# KEYWORD: shutdown
+#
+# Define these policyd2_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+
+. /etc/rc.subr
+
+name="policyd2"
+rcvar=policyd2_enable
+
+command="%%LOCALBASE%%/bin/cbpolicyd"
+command_interpreter="%%LOCALBASE%%/bin/perl"
+
+load_rc_config $name
+
+: ${policyd2_enable="NO"}
+
+run_rc_command "$1"

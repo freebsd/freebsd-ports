@@ -1,0 +1,18 @@
+--- ThirdParty/BSL430_DLL/Makefile.orig	2019-11-18 10:16:00 UTC
++++ ThirdParty/BSL430_DLL/Makefile
+@@ -47,10 +47,14 @@ ifeq ($(PLATFORM),Linux)
+ 	INCLUDES += -I$(BOOST_DIR)
+ 	endif
+ else
+-	CXX:= clang++
++#	CXX:= clang++
+ 
+ 	ifdef BOOST_DIR
+ 	INCLUDES += -I$(BOOST_DIR)/include
++	endif
++	ifdef HIDAPI_DIR
++	INCLUDES += -I$(HIDAPI_DIR)/include/hidapi
++	LIBDIRS += -L$(HIDAPI_DIR)/lib
+ 	endif
+ endif
+ 

@@ -1,0 +1,2 @@
+lib/gstreamer-%%VERSION%%/libgstamrnb.so
+%%DATADIR%%-%%VERSION%%/presets/GstAmrnbEnc.prs

@@ -1,0 +1,7 @@
+@preunexec if cmp -s %D/etc/authlib/authsqliterc.dist %D/etc/authlib/authsqliterc; then rm -f %D/etc/authlib/authsqliterc; fi
+@(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authsqliterc.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authsqliterc
+lib/courier-authlib/libauthsqlite.so
+lib/courier-authlib/libauthsqlite.so.0
+lib/courier-authlib/libauthsqlite.so.0.0.0
+%%PORTDOCS%%%%DOCSDIR%%/README.authsqlite.html

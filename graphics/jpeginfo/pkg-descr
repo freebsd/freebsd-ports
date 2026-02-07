@@ -1,0 +1,3 @@
+Jpeginfo is an utility to generate informative listings from JPEG files, and to
+check JPEG files for errors. Program also supports automatic deletion of broken
+JPEG files.

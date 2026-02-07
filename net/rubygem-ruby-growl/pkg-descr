@@ -1,0 +1,13 @@
+A pure-ruby growl notifier.  ruby-growl allows you to perform Growl
+notification via UDP from machines without growl installed (for
+example, non-OSX machines).
+
+What's Growl?  Growl is a really cool "global notification system
+for Mac OS X".
+
+You can receive Growl notifications on various platforms and send
+them from any machine that runs Ruby.
+
+ruby-growl also contains a command-line notification tool named
+'growl'.  Where possible, it isoption-compatible with growlnotify.
+(Use --priority instead of -p.)

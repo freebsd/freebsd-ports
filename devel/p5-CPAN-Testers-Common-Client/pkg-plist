@@ -1,0 +1,8 @@
+%%SITE_PERL%%/CPAN/Testers/Common/Client.pm
+%%SITE_PERL%%/CPAN/Testers/Common/Client/Config.pm
+%%SITE_PERL%%/CPAN/Testers/Common/Client/History.pm
+%%SITE_PERL%%/CPAN/Testers/Common/Client/PrereqCheck.pm
+%%PERL5_MAN3%%/CPAN::Testers::Common::Client.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Common::Client::Config.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Common::Client::History.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Common::Client::PrereqCheck.3.gz

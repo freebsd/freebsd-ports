@@ -1,0 +1,10 @@
+%%TWDIR%%/data/TWiki/TablePlugin.txt
+%%TWDIR%%/data/TWiki/VarTABLE.txt
+%%TWDIR%%/lib/TWiki/Plugins/TablePlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/TablePlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/TablePlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/TablePlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/TablePlugin/build.pl
+%%TWDIR%%/pub/TWiki/TablePlugin/.keep_me
+%%TWDIR%%/test/unit/TablePlugin/TablePluginSuite.pm
+%%TWDIR%%/test/unit/TablePlugin/TablePluginTests.pm

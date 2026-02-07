@@ -1,0 +1,11 @@
+--- heartbeat/IPaddr2.orig	2020-02-07 12:39:35 UTC
++++ heartbeat/IPaddr2
+@@ -555,7 +555,7 @@ ip_init() {
+ 			# 5. Make sure the first octet is odd,
+ 			#    so the result is a multicast MAC
+ 			IF_MAC=`echo $OCF_RESKEY_ip $NETMASK $BRDCAST |	\
+-				md5sum |				\
++				md5 |				\
+ 				sed -e 's#\(............\).*#\1#'	\
+ 				    -e 's#..#&:#g; s#:$##'		\
+ 				    -e 's#^\(.\)[02468aAcCeE]#\11#'`

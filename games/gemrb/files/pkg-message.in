@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+You will need one of the original Infinity Engine games or the free Baldur's Gate II
+demo. GemRB does not support the Enhanced Edition versions of the games. GemRB comes
+with its own short demo.
+
+GemRB needs access to game files. You have several options to provide the files:
+  - copy from a Windows system
+  - install with emulators/wine
+  - extract with archivers/unshield and archivers/cabextract
+    (https://github.com/gemrb/gemrb/wiki/Unshield:-alternative-game-install-method)
+  - use the custom GemRB games installers
+    (http://git.njw.name/cgit/cgit.cgi/gemrb-gameinstallers)
+
+Additionally, %%ETCDIR%%/GemRB.cfg needs to be edited to point to the Infinity
+Engine game installation directory, i.e. the directory where you provide the game
+files from above. If it doesn't point to a valid game directory then GemRB will
+start its demo instead.
+
+Please see https://www.gemrb.org for additional help and instructions.
+EOM
+}
+]

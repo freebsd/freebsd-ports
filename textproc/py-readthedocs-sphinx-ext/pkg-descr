@@ -1,0 +1,10 @@
+Read the Docs Sphinx Extensions
+
+The Sphinx extension that make Sphinx easier to use. Some extensions require
+Read the Docs features, others are just extensions that and enabled during
+builds of Read the Docs.
+
+Currently packaged extensions include:
+ * An extension for building documentation like readthedocs.io. fame
+ * template-meta, allows users to specify template overrides in per-page
+   context.

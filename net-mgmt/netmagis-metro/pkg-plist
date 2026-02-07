@@ -1,0 +1,34 @@
+bin/metrocreatedb
+bin/metropoller
+bin/metropoller-run
+lib/netmagis/gen-rrdgraph.pl
+lib/netmagis/libgraph.pl
+lib/netmagis/libmetro.pl
+lib/netmagis/plugins/plugin-ipmac
+lib/netmagis/plugins/plugin-portmac
+lib/netmagis/probes/sensor-arp-table.pl
+lib/netmagis/probes/sensor-assoc-ap.pl
+lib/netmagis/probes/sensor-generic-gauge.pl
+lib/netmagis/probes/sensor-if-broadcast.pl
+lib/netmagis/probes/sensor-if-by-ip.pl
+lib/netmagis/probes/sensor-if-error.pl
+lib/netmagis/probes/sensor-if-multicast.pl
+lib/netmagis/probes/sensor-if-snmp-ap.pl
+lib/netmagis/probes/sensor-if-snmp32.pl
+lib/netmagis/probes/sensor-if-snmp64.pl
+lib/netmagis/probes/sensor-plugins.pl
+lib/netmagis/probes/sensor-portmac.pl
+lib/netmagis/probes/sensor-stp-catalyst.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache-metro.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.metro
+www/metro/gengraph
+@dir /var/netmagis/metro/wifi
+@dir /var/netmagis/metro/spool
+@dir /var/netmagis/metro/report
+@dir /var/netmagis/metro/log
+@dir /var/netmagis/metro/lock
+@dir /var/netmagis/metro/graph
+@dir /var/netmagis/metro/db
+@dir /var/netmagis/metro/cache
+@dir /var/netmagis/metro
+@dir /var/netmagis

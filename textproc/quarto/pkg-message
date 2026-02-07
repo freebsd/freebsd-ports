@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+You installed Quarto: the scientific and technical publishing system.
+
+Please note that you need to have the Linux compatibility enabled
+on your system in order for html rendering to work.
+EOM
+}
+]

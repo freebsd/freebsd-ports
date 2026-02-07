@@ -1,0 +1,6 @@
+TrueSkill is a rating system for game players.  It was developed by
+Microsoft Research and has been used on Xbox network, formerly known
+and commonly referred to as Xbox Live, for ranking and matchmaking
+service.  This system quantifies players' TRUE skill points by the
+Bayesian inference algorithm.  It also works well with any type of
+match rule including N:N team game or free-for-all.

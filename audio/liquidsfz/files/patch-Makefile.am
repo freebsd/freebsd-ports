@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2020-10-21 16:07:55 UTC
++++ Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = lib tests
++SUBDIRS = lib
+ 
+ if COND_WITH_JACK
+ SUBDIRS += src

@@ -1,0 +1,10 @@
+bin/IMB-EXT
+bin/IMB-IO
+bin/IMB-MPI1
+bin/IMB-MT
+bin/IMB-NBC
+bin/IMB-P2P
+bin/IMB-RMA
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe_IMB.txt
+%%PORTDOCS%%%%DOCSDIR%%/third-party-programs.txt
+%%PORTDOCS%%%%DOCSDIR%%/use-of-trademark-license.txt

@@ -1,0 +1,6 @@
+This program implements the Eudora password changing protocol. This protocol
+allows remote users to change their password and is supported by mail clients
+such as Eudora, NuPOP and a variety of webmail systems.
+
+poppwd supports PAM and so can be used against almost any password database,
+including local password files, LDAP or SQL databases.

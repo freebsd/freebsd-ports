@@ -1,0 +1,13 @@
+include/gsl/algorithm
+include/gsl/assert
+include/gsl/byte
+include/gsl/gsl
+include/gsl/narrow
+include/gsl/pointers
+include/gsl/span
+include/gsl/span_ext
+include/gsl/util
+include/gsl/zstring
+share/cmake/Microsoft.GSL/GSL.natvis
+share/cmake/Microsoft.GSL/Microsoft.GSLConfig.cmake
+share/cmake/Microsoft.GSL/Microsoft.GSLConfigVersion.cmake

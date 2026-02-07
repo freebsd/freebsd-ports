@@ -1,0 +1,5 @@
+%%SITE_PERL%%/AnyEvent/Redis.pm
+%%SITE_PERL%%/AnyEvent/Redis/Error.pm
+%%SITE_PERL%%/AnyEvent/Redis/Protocol.pm
+%%PERL5_MAN3%%/AnyEvent::Redis.3.gz
+%%PERL5_MAN3%%/AnyEvent::Redis::Protocol.3.gz

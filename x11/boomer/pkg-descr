@@ -1,0 +1,3 @@
+Boomer is a screen zoomer for X11, written using OpenGL shaders for
+fast screen grab and drag, enlighten the portion of the screen with
+a variable radius (flashlight effect), etc.

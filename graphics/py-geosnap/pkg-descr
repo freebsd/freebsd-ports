@@ -1,0 +1,21 @@
+geosnap provides a suite of tools for exploring, modeling, and visualizing the
+social context and spatial extent of neighborhoods and regions over time. It
+brings together state-of-the-art techniques from geodemographics,
+regionalization, spatial data science, and segregation analysis to support
+social science research, public policy analysis, and urban planning. It provides
+a simple interface tailored to formal analysis of spatiotemporal urban data.
+
+Main Features:
+- fast, efficient tooling for standardizing data from multiple time periods into
+  a shared geographic representation appropriate for spatiotemporal analysis
+- analytical methods for understanding sociospatial structure in neighborhoods,
+  cities, and regions, using unsupervised ML from scikit-learn and spatial
+  optimization from PySAL
+- classic and spatial analytic methods for diagnosing model fit, and locating
+  (spatial) statistical outliers novel techniques for understanding the
+  evolution of neighborhoods over time, including identifying hotspots of local
+  neighborhood change, as well as modeling and simulating neighborhood
+  conditions into the future
+- quick access to a large database of commonly-used neighborhood indicators from
+  U.S. providers including Census, EPA, LEHD, NCES, and NLCD, streamed from the
+  cloud thanks to quilt and the highly-performant geoparquet file format.

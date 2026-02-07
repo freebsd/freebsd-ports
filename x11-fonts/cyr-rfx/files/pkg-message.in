@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+
+This port provides Cyrillic replacements for most of the standard
+	%%PREFIX%%/share/fonts/misc
+and
+	%%PREFIX%%/share/fonts/75dpi
+fonts.
+
+You may want to make sure, the
+	%%FONTSDIR%%
+is listed in your fontpath before those two paths.
+EOM
+}
+]

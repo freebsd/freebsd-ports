@@ -1,0 +1,5 @@
+Futhark is a purely functional data-parallel programming language in the
+ML family. It can be compiled to typically very efficient parallel code, running
+on either a CPU or GPU. The language is developed at DIKU at the University of
+Copenhagen, originally as part of the HIPERFIT centre. It is quite stable and
+suitable for practical programming.

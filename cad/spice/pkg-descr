@@ -1,0 +1,12 @@
+SPICE is a general-purpose circuit simulation program for nonlinear DC,
+nonlinear transient, and linear AC analyses. Circuits may contain resistors,
+capacitors, inductors, mutual inductors, independent voltage and current
+sources, four types of dependent sources, lossless and lossy transmission
+lines (two separate implementations), switches, uniform distributed RC
+lines, and the five most common semiconductor devices: diodes, BJTs, JFETs,
+MESFETs, and MOSFETs.
+
+Patch Levels I and II (including a new spec command for spectral analysis)
+and the level 2 JFET model are courtesy from the Macquarie University.
+
+Online documentation at:

@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/DBD/MariaDB.pm
+%%SITE_ARCH%%/DBD/MariaDB.pod
+%%SITE_ARCH%%/DBD/MariaDB/INSTALL.pod
+%%SITE_ARCH%%/auto/DBD/MariaDB/MariaDB.so
+%%PERL5_MAN3%%/DBD::MariaDB.3.gz
+%%PERL5_MAN3%%/DBD::MariaDB::INSTALL.3.gz

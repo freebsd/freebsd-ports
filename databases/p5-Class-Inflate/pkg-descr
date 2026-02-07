@@ -1,0 +1,2 @@
+Allows for any blessed HASH object to be populated from a database, by
+describing table relationships to each method.

@@ -1,0 +1,12 @@
+--- Makefile.orig	2024-11-06 06:26:09 UTC
++++ Makefile
+@@ -9,7 +9,8 @@ DOCPREFIX = ${PREFIX}/share/doc/${NAME}
+ DOCPREFIX = ${PREFIX}/share/doc/${NAME}
+ 
+ # use system flags.
+-TABBED_CFLAGS = -I/usr/X11R6/include -I/usr/include/freetype2 ${CFLAGS}
++FREETYPE_CFLAGS!=pkg-config --cflags freetype2
++TABBED_CFLAGS = -I/usr/X11R6/include ${FREETYPE_CFLAGS} ${CFLAGS}
+ TABBED_LDFLAGS = -L/usr/X11R6/lib -lX11 -lfontconfig -lXft ${LDFLAGS}
+ TABBED_CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700L
+ 

@@ -1,0 +1,2 @@
+This is par, an archiver for Quake I and II packed data files (pakX.pak).
+It supports listing, extraction, and creation of .pak archives.

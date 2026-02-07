@@ -1,0 +1,6 @@
+Collection of scripts over user{add,del,mod} and group{add,del,mod}
+system tools to manipulate users and groups stored in LDAP directory
+for DEN system like SAMBA-LDAP and pam/nss_ldap systems.
+
+Additionally, some scripts are designed to ease the migration from
+a Windows NT 4.0 PDC server to a Samba-LDAP PDC server.

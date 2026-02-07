@@ -1,0 +1,7 @@
+-s dev.null.dk
+-s blackholes.mail-abuse.org
+-s relays.mail-abuse.org
+-s dialups.mail-abuse.org
+-s relays.ordb.org
+-s list.dsbl.org
+-s multihop.dsbl.org

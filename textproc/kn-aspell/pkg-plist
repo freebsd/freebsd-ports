@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/kn.dat
+lib/aspell-%%VER%%/u-knda.cmap
+lib/aspell-%%VER%%/u-knda.cset
+share/aspell/kn.multi
+share/aspell/kn.rws
+share/aspell/kannada.alias

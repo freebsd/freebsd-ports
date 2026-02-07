@@ -1,0 +1,9 @@
+powwow is a client program, which replaces telnet for the lazy
+mudder who wants some (only some?) extra features.
+It is primarily designed for DikuMUDs, but nothing prevents its use
+for other types of muds.  powwow is based on another client, cancan,
+and cancan was originally inspired by tintin (yet another client)
+by Peter Unold (pjunold@daimi.aau.dk), but is entirely re-written.
+powwow also implements the MUME remote editing protocol, which
+enables you to edit texts on the mud using your own favourite
+editor, several texts at once if you have a windowing terminal.

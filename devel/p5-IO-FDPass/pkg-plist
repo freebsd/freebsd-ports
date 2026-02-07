@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/IO/FDPass.pm
+%%SITE_ARCH%%/auto/IO/FDPass/FDPass.so
+%%PERL5_MAN3%%/IO::FDPass.3.gz

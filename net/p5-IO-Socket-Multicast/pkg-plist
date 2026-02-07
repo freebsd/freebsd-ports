@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/IO/Socket/Multicast.pm
+%%SITE_ARCH%%/auto/IO/Socket/Multicast/Multicast.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.pl
+%%PERL5_MAN3%%/IO::Socket::Multicast.3.gz

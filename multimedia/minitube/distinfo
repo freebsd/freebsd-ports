@@ -1,0 +1,15 @@
+TIMESTAMP = 1651863580
+SHA256 (flaviotordini-minitube-3.9.3_GH0.tar.gz) = 04539c9cfb67f24fa0fa14a75475be6b8cf3a63acfdb29fd278a84a560907f58
+SIZE (flaviotordini-minitube-3.9.3_GH0.tar.gz) = 1323478
+SHA256 (flaviotordini-http-68b9cf0_GH0.tar.gz) = bb2bd331df6fc16e19291f118797827d6ea5897de3b8065f4353aaf465d4538f
+SIZE (flaviotordini-http-68b9cf0_GH0.tar.gz) = 11162
+SHA256 (flaviotordini-idle-6aa092d_GH0.tar.gz) = 9aa3ac940f900d8b6924492905ff1351e9af6224fdcb2d1b6e5a55af920c81eb
+SIZE (flaviotordini-idle-6aa092d_GH0.tar.gz) = 1675
+SHA256 (flaviotordini-js-c026465_GH0.tar.gz) = 6e298bd9d8331e46579fef478aa75921a15393cead8e7290f0b687334c6f4a0e
+SIZE (flaviotordini-js-c026465_GH0.tar.gz) = 16546
+SHA256 (flaviotordini-media-b2f5678_GH0.tar.gz) = ed7b955935b8f85017132477e56e3f19b51902492200699cfc3e2d66c565e7c4
+SIZE (flaviotordini-media-b2f5678_GH0.tar.gz) = 25160
+SHA256 (flaviotordini-promises-e6e5653_GH0.tar.gz) = cd92f5b14f7e7e80078f19cc95b01a27d743b5b38afc2b516764ce1d01c1a58f
+SIZE (flaviotordini-promises-e6e5653_GH0.tar.gz) = 1636
+SHA256 (flaviotordini-updater-17b8f7b_GH0.tar.gz) = f029871851410cbecd844a71e504a87f985419cde33c7be5d90c0eb09c8e1fd8
+SIZE (flaviotordini-updater-17b8f7b_GH0.tar.gz) = 24263

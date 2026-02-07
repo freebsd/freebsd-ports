@@ -1,0 +1,8 @@
+--- src/sxe/CMakeLists.txt.orig	2018-07-20 20:15:10 UTC
++++ src/sxe/CMakeLists.txt
+@@ -34,4 +34,5 @@ set(PLAIN_HEADERS
+ 
+ qt_wrap_cpp(MOC_SOURCES ${HEADERS})
+ add_library(sxe STATIC ${HEADERS} ${MOC_SOURCES} ${PLAIN_SOURCES} ${PLAIN_HEADERS})
++add_dependencies(sxe build_ui_files)
+ target_link_libraries(sxe ${QT_LIBRARIES} ${iris_LIB} libpsi_tools widgets)

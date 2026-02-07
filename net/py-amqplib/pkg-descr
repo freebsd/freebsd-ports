@@ -1,0 +1,2 @@
+Implements a simple non-threaded Python client library for AMQP 0-8,
+tested with RabbitMQ.

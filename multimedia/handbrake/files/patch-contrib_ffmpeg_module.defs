@@ -1,0 +1,10 @@
+--- contrib/ffmpeg/module.defs.orig	2025-08-08 16:41:24 UTC
++++ contrib/ffmpeg/module.defs
+@@ -35,6 +35,7 @@ FFMPEG.CONFIGURE.extra = \
+     --disable-hwaccels \
+     --disable-vdpau \
+     --disable-postproc \
++    --disable-vulkan \
+     --disable-encoders \
+     --enable-libmp3lame \
+     --enable-encoder=aac \

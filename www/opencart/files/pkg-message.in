@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+1) Create a user and a database for opencart to store all
+   its tables in (or choose an existing database).
+
+2) Add the following to your Apache configuration file
+   httpd.conf, and restart the server:
+
+   Alias /opencart %%WWWDIR%%/
+   AcceptPathInfo On
+   <Directory %%WWWDIR%%>
+      AllowOverride None
+      Require all granted
+   </Directory>
+
+3) Visit your opencart site with a browser (i.e.,
+   http://your.server.com/opencart/), and you should
+   be taken to the install script, which will lead
+   you through configing opencart.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   https://github.com/opencart/opencart/blob/master/INSTALL.md
+EOM
+}
+]

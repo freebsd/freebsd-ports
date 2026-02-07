@@ -1,0 +1,8 @@
+%%USE_LOGDIR%%@dir(pandora,wheel,770) %%LOGDIR%%
+%%USE_SPOOL_OUT%%@dir(pandora,wheel,700) %%SPOOLDIR%%/data_out
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/collections
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/conf
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/md5
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in/netflow
+%%USE_SPOOL_IN%%@dir(pandora,www,770) %%SPOOLDIR%%/data_in
+@dir(pandora,www,770) %%SPOOLDIR%%

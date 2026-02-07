@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Prevent et from resetting unsafe settings to their default value (see
+# http://www.splashdamage.com/forums/viewtopic.php?t=3883&highlight=pid).
+rm ~/.etwolf/*/profiles/*/profile.pid >/dev/null 2>&1
+
+cd @ETDIR@ || exit 1
+exec ./et.x86 "$@"

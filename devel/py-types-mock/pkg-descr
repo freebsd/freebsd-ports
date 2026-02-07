@@ -1,0 +1,2 @@
+This is a PEP 561 type stub package for the mock package. It can be used by type
+checkers to check code that uses mock.

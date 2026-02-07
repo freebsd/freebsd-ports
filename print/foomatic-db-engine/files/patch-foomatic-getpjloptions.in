@@ -1,0 +1,50 @@
+Do not require bash -- BSD sh(1) is perfectly capable of executing
+this script.
+
+While here, replace use of perl in removal of some characters from
+streams with the much lighter tr(1) invocations. Strip out
+carriage-returns (\r) characters from remote printer's responses too.
+
+Remove useless braces around variable-names.
+
+	-mi
+
+--- foomatic-getpjloptions.in.orig	2018-03-02 19:15:50 UTC
++++ foomatic-getpjloptions.in
+@@ -1,4 +1,4 @@
+-#!@SH@
++#!/bin/sh
+ #
+ # Polls PJL options from local or network printers
+ #
+@@ -22,8 +22,7 @@
+ 
+ NC=@NC@
+ CAT=@CAT@
+-PRINTF=@PRINTF@
+-PERL=@PERL@
++PRINTF=printf	# sh builtin
+ 
+ usage(){
+     cat <<EOF ;
+@@ -60,15 +59,16 @@ esac
+ 	$PRINTF "@PJL INFO CONFIG\r\n"
+ 	$PRINTF "\033%%-12345X"
+     ) | if [ ${2:-X} != X ]; then
+-	# We have two arguments, do ethernet printer request
++	# We have two arguments, do network printer request
+ 	# Poll the printer's answer and filter out the newpage characters
+-	${NC} -w 3 ${1} ${2} 2>/dev/null | ${PERL} -p -e "s/\014//"
++	# as well as the carriage-returns (\r or, in octal, 015)
++	$NC -w 3 $1 $2 2>/dev/null | tr -d "\015\014"
+     else
+ 	# We have one argument, do local printer request
+ 	# Send commands to printer port
+-	${CAT} > ${1}
++	$CAT > $1
+ 	# Wait ten seconds for the printer to process the request
+ 	sleep 10
+ 	# Poll the printer's answer and filter out the newpage and CR characters
+-	${CAT} < ${1} | ${PERL} -p -e "s/[\015\014]//"
++	exec tr -d "\015\014" < $1
+     fi

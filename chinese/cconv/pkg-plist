@@ -1,0 +1,7 @@
+bin/cconv
+include/cconv.h
+include/unicode.h
+lib/libcconv.a
+lib/libcconv.so
+lib/libcconv.so.0
+lib/libcconv.so.0.0.0

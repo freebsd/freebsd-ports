@@ -1,0 +1,3 @@
+Gradually dim the screen.
+
+Can be used to implement a grace period before locking the session.

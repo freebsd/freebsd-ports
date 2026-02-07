@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# Authored by vvd@unislabs.com.
+
+# PROVIDE: nut_upslog
+# REQUIRE: NETWORKING nut
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+
+name=${name##*/}
+rcvar=${name}_enable
+
+load_rc_config "${name}"
+
+# Define these nut_upslog* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/nut_upslog
+#
+# If you want to log several different UPSes:
+# ln -s nut_upslog /usr/local/etc/rc.d/NAME
+# then set variables NAME_enable, NAME_ups, NAME_pidbase, NAME_logfile and etc.
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "_prefix=\${${name}_prefix:-'/usr/local'}"
+eval "_logfile=\${${name}_logfile:-'/var/log/nut/ups.log'}"
+eval "_interval=\${${name}_interval:-'300'}"
+eval "_ups=\${${name}_ups:-'myups@localhost'}"
+eval "_pidbase=\${${name}_pidbase:-'upslog'}"
+eval "_format=\${${name}_format:+-f \${${name}_format}}"
+eval "${name}_flags=\${${name}_flags:-'-s ${_ups} -l ${_logfile} -i ${_interval} -p ${_pidbase} ${_format}'}"
+
+required_dirs="%%STATEDIR%%"
+pidfile="%%STATEDIR%%/${_pidbase}.pid"
+command="${_prefix}/bin/upslog"
+
+run_rc_command "$1"

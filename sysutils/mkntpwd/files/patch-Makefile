@@ -1,0 +1,51 @@
+--- Makefile.orig	1998-05-11 16:47:09.000000000 +0200
++++ Makefile	2011-05-16 18:15:48.391100964 +0200
+@@ -2,15 +2,15 @@
+ 
+ # C compiler
+ #CC=cc
+-CC=gcc
++CC?=gcc
+ 
+ # Uncomment the following to add symbols to the code for debugging
+-DEBUG=-g -Wall -D_DEBUG
++#DEBUG=-g -Wall -D_DEBUG
+ #DEBUG=-D_DEBUG
+ 
+ # Optimization for the compiler
+ #OPTIMIZE=
+-OPTIMIZE=-O2
++#OPTIMIZE=-O2
+ 
+ # Choose your architecture
+ #  note that if you are on a big-endian machine like SUN's
+@@ -18,9 +18,9 @@
+ #  the correct order yet. You're on your own right now.
+ #
+ # FreeBSD
+-ARCH=-DMPU8086 
+-STATIC=
+-XLIBS=
++#ARCH=-DMPU8086 
++#STATIC=
++#XLIBS=
+ #
+ # SUNOS
+ #ARCH=-DBIGENDIAN
+@@ -47,12 +47,12 @@
+ #OPTIMIZE=
+ #XLIBS=
+ 
+-CFLAGS= $(DEBUG) $(OPTIMIZE) $(ARCH) $(VISUAL) $(PERMUTE) $(STATIC) 
++#CFLAGS= $(DEBUG) $(OPTIMIZE) $(ARCH) $(VISUAL) $(PERMUTE) $(STATIC) 
+ 
+-OBJS = getopt.o        md4.o           mkntpwd.o       smbdes.o
++OBJS = md4.o           mkntpwd.o       smbdes.o
+ 
+-lc:	$(OBJS)
+-	$(CC) $(CFLAGS) $(XLIBS) -o mkntpwd $(OBJS)
++all:	$(OBJS)
++	$(CC) $(CFLAGS) -o mkntpwd $(OBJS)
+ 
+ clean:
+ 	rm -f core *.o mkntpwd

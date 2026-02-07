@@ -1,0 +1,7 @@
+Many Perl distributions use a Build.PL file instead of a Makefile.PL file to
+drive distribution configuration, build, test and installation. Traditionally,
+Build.PL uses Module::Build as the underlying build system. This module provides
+a simple, lightweight, drop-in replacement.
+
+Whereas Module::Build has over 6,700 lines of code; this module has less than
+70, yet supports the features needed by most pure-Perl distributions.

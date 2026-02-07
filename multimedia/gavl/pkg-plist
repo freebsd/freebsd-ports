@@ -1,0 +1,13 @@
+include/gavl/compression.h
+include/gavl/gavl.h
+include/gavl/gavl_version.h
+include/gavl/gavldefs.h
+include/gavl/gavldsp.h
+include/gavl/gavltime.h
+include/gavl/metatags.h
+include/gavl/metadata.h
+include/gavl/timecode.h
+lib/libgavl.so
+lib/libgavl.so.1
+lib/libgavl.so.1.0.0
+libdata/pkgconfig/gavl.pc

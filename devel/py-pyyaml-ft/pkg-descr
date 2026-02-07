@@ -1,0 +1,14 @@
+PyYAML-ft provides a full-featured YAML processing framework for Python with
+support for free-threading.
+
+PEP 703 introduced free-threaded Python as a separate build of CPython 3.13.
+Thread-safety issues that might have otherwise gone unnoticed are now much
+easier to trigger because of the absence of protection from the GIL. Also,
+because the free-threaded build is ABI-incompatible, extension modules need to
+be separate, free-threaded wheels and declare support for it.
+
+The PyYAML maintainers decided to not port PyYAML to the free-threaded build
+before the latter, along with Cython support for it, has been tested more
+extensively in real-world applications. Our rationale with this fork is to
+implement support for the free-threaded build, so that PyYAML can be tested with
+it by its users, even before the port is merged upstream.

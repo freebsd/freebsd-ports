@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+   The author requests that you return a license form
+   to him if you find Tinker to be useful.
+
+   See %%PREFIX%%/share/licenses for license forms.
+
+   The name of TINKER's 'analyze' program has been changed
+   to 'analyze_t' during installation to allow for use on
+   systems where the very common hunspell package is
+   installed as well.
+EOM
+}
+]

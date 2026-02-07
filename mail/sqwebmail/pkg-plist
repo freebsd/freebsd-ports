@@ -1,0 +1,139 @@
+@sample %%ETCDIR%%/ldapaddressbook.sample
+@sample %%ETCDIR%%/sqwebmaild.sample
+libexec/sqwebmail/deliverquota
+libexec/sqwebmail/maildirmake
+libexec/sqwebmail/makemime
+libexec/sqwebmail/pcpd
+libexec/sqwebmail/reformime
+libexec/sqwebmail/sqwebmaild
+@(%%MAILOWN%%,%%MAILGRP%%,2755) libexec/sqwebmail/sqwebpasswd
+libexec/sqwebmaild.rc
+%%CACHE%%@preunexec %D/share/sqwebmail/cleancache.pl
+sbin/sharedindexinstall.sqwebmail
+sbin/sharedindexsplit.sqwebmail
+share/sqwebmail/cleancache.pl
+share/sqwebmail/html/en
+share/sqwebmail/html/en-us/CHARSET
+share/sqwebmail/html/en-us/ISPELLDICT
+share/sqwebmail/html/en-us/LANGUAGE
+share/sqwebmail/html/en-us/LANGUAGE_PREF
+share/sqwebmail/html/en-us/LOCALE
+share/sqwebmail/html/en-us/TIMEZONELIST
+share/sqwebmail/html/en-us/abooklist.html
+share/sqwebmail/html/en-us/acl.html
+share/sqwebmail/html/en-us/attachments.html
+share/sqwebmail/html/en-us/autoresponder.html
+share/sqwebmail/html/en-us/calendarlogin.inc.html
+share/sqwebmail/html/en-us/empty.html
+share/sqwebmail/html/en-us/eventacl.html
+share/sqwebmail/html/en-us/eventdaily.html
+share/sqwebmail/html/en-us/eventdelete.html
+share/sqwebmail/html/en-us/eventmonthly.html
+share/sqwebmail/html/en-us/eventnotifydelete.txt
+share/sqwebmail/html/en-us/eventnotifynew.txt
+share/sqwebmail/html/en-us/eventnotifysubject.txt
+share/sqwebmail/html/en-us/eventshow.html
+share/sqwebmail/html/en-us/eventweekly.html
+share/sqwebmail/html/en-us/expired.html
+share/sqwebmail/html/en-us/filter.html
+share/sqwebmail/html/en-us/folder.html
+share/sqwebmail/html/en-us/folders.html
+share/sqwebmail/html/en-us/gpg.html
+share/sqwebmail/html/en-us/gpgcreate.html
+share/sqwebmail/html/en-us/gpgerr.html
+share/sqwebmail/html/en-us/index.html
+share/sqwebmail/html/en-us/invalid.html
+share/sqwebmail/html/en-us/keyimport.html
+share/sqwebmail/html/en-us/ldaplist.html
+share/sqwebmail/html/en-us/ldapsearch.html
+share/sqwebmail/html/en-us/login.html
+share/sqwebmail/html/en-us/loginform.inc.html
+share/sqwebmail/html/en-us/navbar.inc.html
+share/sqwebmail/html/en-us/navbar2.inc.html
+share/sqwebmail/html/en-us/navbar3.inc.html
+share/sqwebmail/html/en-us/newevent.html
+share/sqwebmail/html/en-us/newmsg.html
+share/sqwebmail/html/en-us/preferences.html
+share/sqwebmail/html/en-us/print.html
+share/sqwebmail/html/en-us/printnocookie.html
+share/sqwebmail/html/en-us/printredirect.html
+share/sqwebmail/html/en-us/quickadd.html
+share/sqwebmail/html/en-us/readmsg.html
+share/sqwebmail/html/en-us/redirect.html
+share/sqwebmail/html/en-us/refreshfr.html
+share/sqwebmail/html/en-us/smileys.txt
+share/sqwebmail/html/en-us/spellchk.html
+share/sqwebmail/ldapsearch
+share/sqwebmail/sendit.sh
+share/sqwebmail/webgpg
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.logindomainlist.html
+%%PORTDOCS%%%%DOCSDIR%%/README.pam
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir etc/sqwebmail
+%%CACHE%%@dir(%%CACHEOWN%%,,) %%CACHEDIR%%
+@dir /var/sqwebmail/calendar/public
+@dir /var/sqwebmail/calendar/private
+@dir /var/sqwebmail/calendar/localcache
+@dir /var/sqwebmail/calendar
+@dir /var/sqwebmail/run
+@dir /var/sqwebmail
+@dir share/sqwebmail/html/en-us
+@dir share/sqwebmail/html
+@dir share/sqwebmail
+@dir libexec/sqwebmail
+%%CGIBINDIR%%/%%CGIBINSUBDIR%%/sqwebmail
+@dir %%CGIBINDIR%%/%%CGIBINSUBDIR%%
+@dir %%CGIBINDIR%%
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bg.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluebottomright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluetopleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/bluetopright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/calendar.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/cancel.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/eventadd.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/eventedit.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/first.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folder.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folder2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/folders.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/forward.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/forwardatt.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/fullheaders.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graybottomleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graybottomright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/key.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/last.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/left.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/left2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/logo.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/print.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/reply.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/replyall.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/replylist.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/right.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/right2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/save.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sep.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/signin.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-frowney.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-frowney2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-notsmiley.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-notsmiley2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-ohno.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-smiley.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-smiley2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-wink.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sm-wink2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/sqwebmail.css
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/trash2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/uncancel.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/wikifmt.html
+@dir %%WEBDATADIR%%/%%WEBDATASUBDIR%%
+@dir %%WEBDATADIR%%

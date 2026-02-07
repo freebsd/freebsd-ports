@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2025-01-05 22:29:55 UTC
++++ CMakeLists.txt
+@@ -21,10 +21,10 @@ endif()
+   endif()
+ endif()
+ 
+-find_package(Boost REQUIRED COMPONENTS filesystem iostreams regex system random CONFIG)
++find_package(Boost REQUIRED COMPONENTS filesystem iostreams regex random CONFIG)
+ 
+ # Main library target
+-add_library(oink STATIC)
++add_library(oink)
+ add_library(oink::oink ALIAS oink)
+ set_target_properties(oink PROPERTIES VERSION ${oink_VERSION} SOVERSION ${oink_VERSION_MAJOR})
+ 

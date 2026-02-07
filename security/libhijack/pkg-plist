@@ -1,0 +1,7 @@
+include/hijack.h
+lib/libdummyso.so
+lib/libdummyso.so.0
+lib/libhijack.so
+lib/libhijack.so.2
+sbin/hijack
+sbin/injectable

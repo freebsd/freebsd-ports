@@ -1,0 +1,31 @@
+- Allow finding system node/npm/npx instead of only bundled versions
+
+--- src/node/CMakeNodeTools.txt.orig	2025-11-30 10:22:28 UTC
++++ src/node/CMakeNodeTools.txt
+@@ -42,7 +42,7 @@ else()
+    # Detect node.js, npm, and npx; use versions supplied by the dependency scripts
+    find_program(NODEJS
+       NAMES node
+-      NO_DEFAULT_PATH PATH_SUFFIXES "bin"
++      PATH_SUFFIXES "bin"
+       PATHS "${RSTUDIO_TOOLS_ROOT}/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+       "/opt/rstudio-tools/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+       "c:/rstudio-tools/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+@@ -51,7 +51,7 @@ else()
+    find_program(NPM
+       NAMES npm
+       PATH_SUFFIXES "bin"
+-      NO_DEFAULT_PATH 
++      
+       PATHS "${RSTUDIO_TOOLS_ROOT}/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+       "/opt/rstudio-tools/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+       "c:/rstudio-tools/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+@@ -60,7 +60,7 @@ else()
+    find_program(NPX
+       NAMES npx
+       PATH_SUFFIXES "bin"
+-      NO_DEFAULT_PATH 
++      
+       PATHS "${RSTUDIO_TOOLS_ROOT}/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+       "/opt/rstudio-tools/dependencies/common/node/${RSTUDIO_NODE_VERSION}"
+       "c:/rstudio-tools/dependencies/common/node/${RSTUDIO_NODE_VERSION}"

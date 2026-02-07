@@ -1,0 +1,28 @@
+--- configure.ac.orig	2024-11-04 08:26:47.400346000 +0000
++++ configure.ac	2024-11-04 08:28:53.253697000 +0000
+@@ -344,25 +344,10 @@
+ 
+ AC_CONFIG_FILES([Makefile \
+       lyx.1:lyx.1in \
+-      3rdparty/Makefile \
+-      3rdparty/boost/Makefile \
+-      3rdparty/dtl/Makefile \
+-      3rdparty/hunspell/Makefile \
+-      3rdparty/mythes/Makefile \
+       3rdparty/nod/Makefile \
+-      3rdparty/libiconv/Makefile \
+       $ICONV_ICONV_H_IN \
+-      3rdparty/zlib/Makefile \
+       autotests/Makefile \
+       config/Makefile \
+-      development/Makefile \
+-      development/MacOSX/Makefile \
+-      development/MacOSX/Info.plist \
+-      development/MacOSX/lyxrc.dist \
+-      development/MacOSX/spotlight/Makefile \
+-      development/cygwin/Makefile \
+-      development/cygwin/lyxrc.dist \
+-      development/lyx.spec \
+       lib/lyx.desktop-temp:lib/lyx.desktop.in
+       lib/Makefile \
+       lib/doc/Makefile \

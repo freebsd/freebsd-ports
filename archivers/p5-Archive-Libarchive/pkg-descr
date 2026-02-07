@@ -1,0 +1,7 @@
+Archive::Libarchive provides a Perl object-oriented interface to the libarchive
+library. The libarchive library is the API used to implemnt bsdtar, the default
+tar implementation on a number of operating systems, including FreeBSD, macOS
+and Windows. It can also be installed on most Linux distributions. But wait,
+there is more, libarchive supports a number of formats, compressors and filters
+transparently, so it can be a useful when used as a universal
+archiver/extractor.

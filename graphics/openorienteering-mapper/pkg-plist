@@ -1,0 +1,107 @@
+bin/Mapper
+share/man/man1/Mapper.1.gz
+share/applications/Mapper.desktop
+%%DOCSDIR%%/3rd-party/qtsingleapplication.txt
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/3rd-party/potrace-1.6.txt
+%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.5 Manual.qch
+%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.5 Manual.qhc
+%%DOCSDIR%%/common-licenses/GPL-3.txt
+%%DOCSDIR%%/licensing.html
+share/icons/hicolor/128x128/apps/Mapper.png
+share/icons/hicolor/128x128/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/128x128/mimetypes/application-x-openorienteering-xmap.png
+share/icons/hicolor/16x16/apps/Mapper.png
+share/icons/hicolor/16x16/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/16x16/mimetypes/application-x-openorienteering-xmap.png
+share/icons/hicolor/24x24/apps/Mapper.png
+share/icons/hicolor/24x24/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/24x24/mimetypes/application-x-openorienteering-xmap.png
+share/icons/hicolor/256x256/apps/Mapper.png
+share/icons/hicolor/256x256/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/256x256/mimetypes/application-x-openorienteering-xmap.png
+share/icons/hicolor/32x32/apps/Mapper.png
+share/icons/hicolor/32x32/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/32x32/mimetypes/application-x-openorienteering-xmap.png
+share/icons/hicolor/48x48/apps/Mapper.png
+share/icons/hicolor/48x48/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/48x48/mimetypes/application-x-openorienteering-xmap.png
+share/icons/hicolor/512x512/apps/Mapper.png
+share/icons/hicolor/512x512/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/512x512/mimetypes/application-x-openorienteering-xmap.png
+share/icons/hicolor/96x96/apps/Mapper.png
+share/icons/hicolor/96x96/mimetypes/application-x-openorienteering-ocd.png
+share/icons/hicolor/96x96/mimetypes/application-x-openorienteering-xmap.png
+share/mime/packages/openorienteering-mapper.xml
+%%EXAMPLES%%%%DATADIR%%/examples/complete map.omap
+%%EXAMPLES%%%%DATADIR%%/examples/forest sample.omap
+%%EXAMPLES%%%%DATADIR%%/examples/overprinting.omap
+%%GDAL%%%%DATADIR%%/gdal/mapper-osmconf.ini
+%%DATADIR%%/symbol sets/10000/Course_Design_10000.omap
+%%DATADIR%%/symbol sets/10000/ISMTBOM_10000.omap
+%%DATADIR%%/symbol sets/10000/ISOM 2017-2_10000.omap
+%%DATADIR%%/symbol sets/10000/ISSkiOM 2019_10000.omap
+%%DATADIR%%/symbol sets/12500/ISSkiOM 2019_12500.omap
+%%DATADIR%%/symbol sets/15000/Course_Design_15000.omap
+%%DATADIR%%/symbol sets/15000/ISMTBOM_15000.omap
+%%DATADIR%%/symbol sets/15000/ISOM 2017-2_15000.omap
+%%DATADIR%%/symbol sets/15000/ISSkiOM 2019_15000.omap
+%%DATADIR%%/symbol sets/20000/ISMTBOM_20000.omap
+%%DATADIR%%/symbol sets/4000/Course_Design_4000.omap
+%%DATADIR%%/symbol sets/4000/ISSprOM 2019_4000.omap
+%%DATADIR%%/symbol sets/5000/Course_Design_5000.omap
+%%DATADIR%%/symbol sets/5000/ISMTBOM_5000.omap
+%%DATADIR%%/symbol sets/5000/ISSkiOM 2019_5000.omap
+%%DATADIR%%/symbol sets/7500/ISMTBOM_7500.omap
+%%DATADIR%%/symbol sets/7500/ISSkiOM 2019_7500.omap
+%%DATADIR%%/symbol sets/ISOM 2017-2-ISSkiOM 2019.crt
+%%DATADIR%%/symbol sets/ISOM 2017-2-ISSprOM 2019.crt
+%%DATADIR%%/symbol sets/ISOM2000-ISOM 2017-2.crt
+%%DATADIR%%/symbol sets/ISSOM-ISSprOM 2019.crt
+%%DATADIR%%/symbol sets/OSM-ISOM 2017-2.crt
+%%DATADIR%%/symbol sets/OSM-ISSkiOM 2019.crt
+%%DATADIR%%/symbol sets/OSM-ISSprOM 2019.crt
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_cs.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_da.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_de.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_en.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_eo.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_es.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_fi.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_fr.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_he.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_hr.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_hu.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_id.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_it.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_ja.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_lv.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_nb.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_nl.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_pl.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_pt_BR.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_pt_PT.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_ru.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_sv.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_uk.qm
+%%NLS%%%%DATADIR%%/translations/OpenOrienteering_zh_CN.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_cs.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_da.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_de.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_eo.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_es.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_fi.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_fr.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_hr.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_hu.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_it.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_nb.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_ru.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_sv.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_tr.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_uk.qm
+%%NLS%%%%DATADIR%%/translations/map_symbols_zh_CN.qm
+%%NLS%%%%DATADIR%%/translations/qt_eo.qm
+%%NLS%%%%DATADIR%%/translations/qt_et.qm
+%%NLS%%%%DATADIR%%/translations/qt_id.qm
+%%NLS%%%%DATADIR%%/translations/qt_nb.qm
+%%NLS%%%%DATADIR%%/translations/qt_nl.qm

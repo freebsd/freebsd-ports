@@ -1,0 +1,4 @@
+This is the Microsoft Azure Key Vault Client Library.
+
+Use the Azure Key Vault management libraries to create key vaults, authorize
+applications, and manage permissions.

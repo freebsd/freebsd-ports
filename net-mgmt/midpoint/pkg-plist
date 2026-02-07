@@ -1,0 +1,8 @@
+@dir %%JAVASHAREDIR%%/icf-connectors
+%%JAVASHAREDIR%%/midpoint/midpoint.war
+@dir(midpoint,midpoint,) /var/db/midpoint
+/var/db/midpoint/icf-connectors
+/var/db/midpoint/lib
+@(midpoint,midpoint,) /var/db/midpoint/log
+@dir(midpoint,midpoint,) /var/log/midpoint
+@dir(midpoint,midpoint,) /var/run/midpoint

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+wxlauncher --add-profile --file="%%DATADIR%%/pro00099.ini" --profile=Diaspora
+wxlauncher --select-profile --profile=Diaspora
+wxlauncher

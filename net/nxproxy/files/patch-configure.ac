@@ -1,0 +1,12 @@
+--- configure.ac.orig	2019-11-16 05:32:28 UTC
++++ configure.ac
+@@ -16,9 +16,6 @@ AC_CONFIG_MACRO_DIR([m4])
+ 
+ AM_INIT_AUTOMAKE([foreign no-dist-gzip dist-bzip2])
+ 
+-# Initialize libtool
+-AC_PROG_LIBTOOL
+-
+ PROXY_VERSION=nxproxy_version
+ AC_SUBST([PROXY_VERSION])
+ 

@@ -1,0 +1,7 @@
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+PATH=/bin
+
+echo "Remember to remove popa3d from /etc/inetd.conf and restart inetd"

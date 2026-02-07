@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+For the UI to display correctly, install a font containing all the latest
+Unicode emojis, for example x11-fonts/noto-emoji.
+EOM
+}
+]

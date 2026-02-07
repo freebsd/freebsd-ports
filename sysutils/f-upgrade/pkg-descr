@@ -1,0 +1,2 @@
+f-upgrade automates the process of installing FreeBSD operating system updates.
+It targets server fleets, not desktop environments.

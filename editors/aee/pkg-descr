@@ -1,0 +1,9 @@
+"Another Easy Editor"
+An easy to use text editor intended to be usable with little or no
+instruction. Provides a full-screen text interface via curses (aee)
+as well as a graphical user interface under X windows (xae).
+Features include pop-up menus, cut-and-paste, journaling, and
+multiple edit buffers.
+
+aee is a superset of the "Easy Editor" (ee) which is part of the
+FreeBSD base system.

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Sys/Mmap.pm
+%%SITE_ARCH%%/auto/Sys/Mmap/Mmap.so
+%%PERL5_MAN3%%/Sys::Mmap.3.gz

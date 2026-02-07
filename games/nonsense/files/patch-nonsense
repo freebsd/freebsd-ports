@@ -1,0 +1,59 @@
+--- nonsense	2000/12/22 17:29:22	1.1.1.4
++++ nonsense	2000/12/22 17:31:00	1.7
+@@ -40,6 +40,10 @@
+ use POSIX qw( strftime );   # Just in case somebody needs the date
+ use CGI;
+ 
++my $PREFIX = "/usr/local";
++my $datadir = "$PREFIX/share/nonsense/data";
++my $templatedir = "$PREFIX/share/nonsense/template";
++
+ my %pool;                   # Where the datafiles are slurped into
+ my %static;                 # Hash of persistent data (to maintain state)
+ 
+@@ -332,7 +336,8 @@
+ sub LoadDataFile { 
+    my $file = shift;
+    $file = SafeFile( $file ) if $cgi_mode;
+-   open IN, $file or die "Error opening $file... $!\n";
++   open IN, $file or open IN, "$datadir/$file"
++        or die "Error opening $file... $!\n";
+    local $/ = '';
+    
+    SECTION: while( <IN> ) { 
+@@ -348,7 +353,8 @@
+    my $file = shift;
+    my $m = '';
+    $file = SafeFile( $file ) if $cgi_mode;   
+-   open IN, $file or die "Error opening $file template... $!\n";
++   open IN, $file or open IN, "$templatedir/$file"
++        or die "Error opening $file template... $!\n";
+    local $/; undef $/; my $t = <IN>; 
+    close IN;
+    if( $t =~ /__BEGIN__/ ) {     # Check for a header
+@@ -365,10 +371,24 @@
+    return $file;
+ }
+ 
++sub ListUniq {
++  my ($v, $last) = (undef, undef);
++  my @l = ();
++
++  foreach $v (@_) {
++    push (@l, $v) if (defined($last) && ($v ne $last));
++    $last = $v;
++  }
++  return @l;
++}
++
+ ### Return all of the datafiles in the current directory
+ sub GlobCurrentDirectory {
+    opendir(DIR, ".");
+    my @datafiles = grep { /\.data$/ } readdir(DIR);
++   closedir(DIR);
++   opendir(DIR, "$datadir");
++   push(@datafiles, grep { /\.data$/ } readdir(DIR));
+    closedir(DIR);
+-   return @datafiles;
++   return ListUniq(sort @datafiles);
+ }

@@ -1,0 +1,13 @@
+bin/megaglest
+%%EDITOR%%bin/megaglest_editor
+%%VIEWER%%bin/megaglest_g3dviewer
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.source_code.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.source_code.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%EDITOR%%share/pixmaps/editor.ico
+%%VIEWER%%share/pixmaps/g3dviewer.ico
+share/pixmaps/megaglest.ico
+%%DATADIR%%/glest.ini
+%%DATADIR%%/glestkeys.ini
+%%DATADIR%%/servers.ini

@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+Remote development over ssh:
+
+If you want to use remote development over ssh and a remote host runs
+FreeBSD, take the following steps:
+
+1. Create a directory for storing the remote server
+   $ ssh <remote-host> mkdir ~/.zed_server
+2. Upload the remote server to the remote host
+   $ scp %%PREFIX%%/bin/zed-remote-server-stable-%%DISTVERSION%%+stable <remote-host>:~/.zed_server
+
+Now you are all set for remote development.
+
+If your remote host runs Linux or macOS, remote development should
+work out of the box.
+
+General information on remote development is available at the
+following URL:
+- https://zed.dev/docs/remote-development
+
+Limitations on FreeBSD:
+
+Realtime collaboration features based on WebRTC are not yet
+supported. In addition, integrated terminal is very laggy (might
+depending on a user's environment).
+
+More information on Zed developments for FreeBSD is available at the
+following URLs:
+
+- https://zed.dev/docs/development/freebsd
+- https://github.com/zed-industries/zed/discussions/29550
+- https://github.com/zed-industries/zed/issues/15309
+EOM
+}
+]

@@ -1,0 +1,2 @@
+Gathers statistics about real reads and writes done by the filesystem layer. It
+is provided in the form of an extension for PostgreSQL >= 9.4.

@@ -1,0 +1,3 @@
+Crypt::Rijndael is a Crypt::CBC compliant Rijndael encryption module that
+implements the Rijndael cipher, which has just been selected as the new
+Advanced Encryption Standard (AES).

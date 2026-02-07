@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+You installed OpenSPH: a tool for running SPH and N-body simulations.
+
+In order to see how it works please open any of the *.sph files in the
+source tree with the opensph executable, and choose the Simulation/Start
+menu item.
+
+EOM
+}
+]

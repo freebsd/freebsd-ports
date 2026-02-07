@@ -1,0 +1,3 @@
+Confctl is a sysctl-like tool to provide access to C-syntax configuration
+files, such as /etc/hast.conf.  It allows for retrieving, modifying, adding
+and removing variables, while preserving comments and formatting.

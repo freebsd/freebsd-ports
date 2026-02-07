@@ -1,0 +1,3 @@
+%%CLASSDIR%%/res.cls
+@postexec %%MKTEXLSR%%
+@postunexec %%MKTEXLSR%%

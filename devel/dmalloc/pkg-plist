@@ -1,0 +1,16 @@
+@(,,755) bin/dmalloc
+include/dmalloc.h
+lib/libdmalloc.a
+lib/libdmalloc.so
+lib/libdmalloc.so.1
+lib/libdmallocth.a
+lib/libdmallocth.so
+lib/libdmallocth.so.1
+lib/libdmallocthcxx.a
+lib/libdmallocthcxx.so
+lib/libdmallocthcxx.so.1
+lib/libdmallocxx.a
+lib/libdmallocxx.so
+lib/libdmallocxx.so.1
+%%PORTDOCS%%%%DOCSDIR%%/dmalloc.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt

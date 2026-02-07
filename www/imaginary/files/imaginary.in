@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: imaginary
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable imaginary:
+#
+# imaginary_enable (bool):  Set to "NO" by default.
+#                           Set to "YES" to enable imaginary.
+# imaginary_user (str):     Defaults to "nobody".
+# imaginary_group (str):    Defaults to "nobody".
+#                           User and group to run imaginary with.
+# imaginary_flags (str):    Additional flags to append to "imaginary" command.
+#                           run "imaginary -help" for more information.
+# imaginary_logdir (str):   Default to "/var/log/imaginary".
+#                           Directory to store logs for imaginary
+
+. /etc/rc.subr
+
+name=imaginary
+rcvar=imaginary_enable
+desc=imaginary
+
+load_rc_config imaginary
+
+: ${imaginary_enable:=NO}
+: ${imaginary_user:=nobody}
+: ${imaginary_group:=nobody}
+: ${imaginary_logdir=/var/log/imaginary}
+
+pidfile=/var/run/${name}/${name}.pid
+start_precmd=imaginary_precmd
+procname="%%PREFIX%%/bin/imaginary"
+command=/usr/sbin/daemon
+command_args="-cf -p ${pidfile} -o ${imaginary_logdir}/imaginary.out ${procname} ${imaginary_flags}"
+
+imaginary_precmd()
+{
+    # Create PID file directory
+    install -d -o ${imaginary_user} -g ${imaginary_group} -m 0755 "$(dirname ${pidfile})"
+    # Create log file directory
+    install -d -o ${imaginary_user} -g ${imaginary_group} -m 0755 "${imaginary_logdir}"
+
+    # Remove default flags, they're added in `command_args` manually
+    rc_flags=""
+}
+
+run_rc_command "$1"

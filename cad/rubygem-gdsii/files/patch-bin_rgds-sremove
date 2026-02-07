@@ -1,0 +1,19 @@
+--- bin/rgds-sremove.orig	2016-05-16 07:41:38 UTC
++++ bin/rgds-sremove
+@@ -58,11 +58,11 @@ opts = GetoptLong.new(
+ 
+ opts.each do |option, argument|
+   case option
+-  when '--structs'      : structs = argument.split(/\s+/)
+-  when '--force'        : force = true
+-  when '--keep-refs'    : keep_refs = true
+-  when '--keep-structs' : keep_structs = true
+-  when '--help'         : abort usage
++  when '--structs'       then structs = argument.split(/\s+/)
++  when '--force'         then force = true
++  when '--keep-refs'     then keep_refs = true
++  when '--keep-structs'  then keep_structs = true
++  when '--help'          then abort usage
+   end
+ end
+ 

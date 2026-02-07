@@ -1,0 +1,15 @@
+Essentials OpenAPI provides classes and utilities to generate OpenAPI
+Documentation in both version 3 and version 2 formats. It supports
+output in JSON and YAML formats for API documentation.
+
+Key features:
+* Generate OpenAPI 3.x and 2.x documentation
+* Support for JSON and YAML output formats
+* Automatic schema generation from Python types
+* Integration with web frameworks
+* Extensible documentation system
+* Template-based documentation generation
+* Command-line interface for documentation generation
+
+This library is particularly useful for web APIs that need to generate
+comprehensive API documentation automatically from code annotations.

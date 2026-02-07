@@ -1,0 +1,95 @@
+#!/bin/sh
+
+# prepare-commit-msg: Prepare a commit message upon `git commit` for the
+# user to edit.  A script (rather than a static template) is used, so
+# that we can insert our template text other than at the top of the
+# message.
+#
+# Install by either setting the configuration of the repository to:
+#   git config --add core.hooksPath .hooks
+# or copy it to the hooks directory, but it will not get automatically updated:
+#   cp .hooks/prepare-commit-msg .git/hooks/
+
+case "$2" in
+commit|message)
+	# It appears git invokes this script for interactive rebase but does
+	# not remove commented lines, so just exit if we're not called with the
+	# default (comment-containing) template.
+	grep -E -q '^#' "$1" || exit 0
+	;;
+template)
+	exit 0
+	;;
+merge)
+	exit 0
+	;;
+esac
+
+outfile=$(mktemp /tmp/freebsd-git-commit.XXXXXXXX)
+exec 3> "$outfile"
+
+if [ -z "$3" ]
+then
+  what=$(git diff-index --name-only --cached --diff-filter=ACMR HEAD|sed -Ee 's/^([^\/]+\/[^\/]+).*/\1/'|sort -u|xargs)
+
+  case $what in
+    *\ *)
+      # More than one port, do nothing
+      ;;
+    *)
+      # One port, prepare the commit message.
+      {
+	echo "# Uncomment and add a short description of why things changed."
+	echo "# $what: "
+	echo
+      } >&3
+      ;;
+esac
+fi
+
+# Create a commit message template from three parts:
+#
+# 1. The beginning of the git-provided template (up to the first comment-only
+#    line) which explains commented lines and such.
+#
+# 2. Our template.
+#
+# 3. The remainder of the git-provided template (from the first comment-only
+#    line to the end of the file) which lists files staged for commit, files
+#    not staged, and untracked files.
+
+awk '1;/^#$/{exit}' "$1" >&3
+
+cat >&3 <<EOF
+# category/port: Subject goes here, max 50 cols -|
+# <then a blank line>
+#                                                         72 columns --|
+#
+# Do not add a Submitted by line.  If someone besides the committer sent in the
+# change, the commit author should be set using \`git commit --author\`.
+#
+# Uncomment and complete these metadata fields, as appropriate:
+#
+# PR:		<If and which Problem Report is related.>
+# Reported by:	<If someone else reported the issue.>
+# Reviewed by:	<If someone else reviewed your modification.>
+# Tested by:	<If someone else tested the change.>
+# Approved by:	<If you needed approval for this commit.>
+# Obtained from:	<If the change is from a third party.>
+# Fixes:	<Short hash and title line of commit fixed by this change>
+# MFH:		<Ports tree branch name you plan to merge to.>
+# Relnotes:	<Set to 'yes' for mention in release notes.>
+# Security:	<Vulnerability reference (one per line) or description.>
+# Sponsored by:	<If the change was sponsored by an organization.>
+# Pull Request:	<https://github.com/freebsd/freebsd-ports/pull/###>
+# Differential Revision:	<https://reviews.freebsd.org/D###>
+#
+# "Pull Request" and "Differential Revision" require the *full* GitHub or
+# Phabricator URL.
+EOF
+
+awk '/^#$/,EOF' "$1" >&3
+
+exec 3>&-
+
+mv "$outfile" "$1"

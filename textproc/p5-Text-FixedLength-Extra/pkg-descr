@@ -1,0 +1,5 @@
+Right now, Text::FixedLength::Extra does two things for those who like
+using Text::FixedLength - simpler API and extended number processing.
+
+-Anton
+<tobez@FreeBSD.org>

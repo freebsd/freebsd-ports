@@ -1,0 +1,106 @@
+Use BSD's message-digest library (-lmd) instead of UDT's own
+MD5-implementation.
+
+Original proposed to use OpenSSL for portability, but rejected by
+the author anyway out of concern for Windows computers and mobile
+devices:
+
+	https://sourceforge.net/p/udt/patches/5/
+
+This new version also allows to pass the length of the input and
+modifies the only two callers (both in core.cpp) to do that -- to
+avoid a strlen().
+
+	-mi
+
+--- src/common.h	2013-02-20 11:35:26.000000000 -0500
++++ src/common.h	2013-02-26 13:53:52.000000000 -0500
+@@ -315,4 +315,5 @@
+ {
+    static void compute(const char* input, unsigned char result[16]);
++   static void compute(const char* input, size_t ilen, unsigned char result[16]);
+ };
+ 
+--- src/common.cpp	2013-02-20 11:35:26.000000000 -0500
++++ src/common.cpp	2013-02-26 13:56:57.000000000 -0500
+@@ -56,5 +56,5 @@
+ 
+ #include <cmath>
+-#include "md5.h"
++#include <md5.h>
+ #include "common.h"
+ 
+@@ -756,10 +756,15 @@
+ 
+ //
+-void CMD5::compute(const char* input, unsigned char result[16])
++void CMD5::compute(const char* input, size_t ilen, unsigned char result[16])
+ {
+-   md5_state_t state;
++   MD5_CTX	state;
++
++   MD5Init(&state);
++   MD5Update(&state, (const void *)input, ilen);
++   MD5Final(result, &state);
++}
+ 
+-   md5_init(&state);
+-   md5_append(&state, (const md5_byte_t *)input, strlen(input));
+-   md5_finish(&state, result);
++void CMD5::compute(const char* input, unsigned char result[16])
++{
++   compute(input, strlen(input), result);
+ }
+--- src/core.cpp	2013-02-20 11:35:26.000000000 -0500
++++ src/core.cpp	2013-02-26 18:49:00.000000000 -0500
+@@ -40,4 +40,6 @@
+ 
+ #ifndef WIN32
++   #include <err.h>
++   #include <stdint.h>
+    #include <unistd.h>
+    #include <netdb.h>
+@@ -2460,12 +2461,28 @@
+ 
+    // SYN cookie
+-   char clienthost[NI_MAXHOST];
+-   char clientport[NI_MAXSERV];
+-   getnameinfo(addr, (AF_INET == m_iVersion) ? sizeof(sockaddr_in) : sizeof(sockaddr_in6), clienthost, sizeof(clienthost), clientport, sizeof(clientport), NI_NUMERICHOST|NI_NUMERICSERV);
++   char clientport[6]; /* Longest decimal representation of a short number */
++   char cookiestr[(AF_INET == addr->sa_family ? INET_ADDRSTRLEN : INET6_ADDRSTRLEN) +
++      sizeof(clientport) + 64];
++   int gaie = getnameinfo(addr, addr->sa_len, cookiestr, INET6_ADDRSTRLEN,
++      clientport, sizeof(clientport), NI_NUMERICHOST|NI_NUMERICSERV);
++   if (gaie) {
++#ifndef WIN32
++	warnx("getnameinfo: %s (addr->sa_family: %d -- %sAF_INET, family: %d, length: %u, "
++	    "size: %zd of %zd and %zd)",
++	    gai_strerror(gaie), addr->sa_family, addr->sa_family == AF_INET ? "" : "not ",
++	    addr->sa_family, (unsigned int)addr->sa_len,
++	    AF_INET == addr->sa_family ? sizeof(sockaddr_in) : sizeof(sockaddr_in6),
++	    sizeof(sockaddr_in), sizeof(sockaddr_in6));
++#endif
++	return -1;
++   }
+    int64_t timestamp = (CTimer::getTime() - m_StartTime) / 60000000; // secret changes every one minute
+-   stringstream cookiestr;
+-   cookiestr << clienthost << ":" << clientport << ":" << timestamp;
++   size_t cookielen, saltedlen;
++
++   cookielen = strlen(cookiestr);
++   cookielen += sprintf(cookiestr + cookielen, ":%s:", clientport);
++   saltedlen = cookielen + sprintf(cookiestr + cookielen, "%jd", (intmax_t)timestamp);
+    unsigned char cookie[16];
+-   CMD5::compute(cookiestr.str().c_str(), cookie);
++   CMD5::compute(cookiestr, saltedlen, cookie);
+ 
+    if (1 == hs.m_iReqType)
+@@ -2483,6 +2500,6 @@
+       {
+          timestamp --;
+-         cookiestr << clienthost << ":" << clientport << ":" << timestamp;
+-         CMD5::compute(cookiestr.str().c_str(), cookie);
++         saltedlen = cookielen + sprintf(cookiestr + cookielen, "%jd", (intmax_t)timestamp);
++         CMD5::compute(cookiestr, saltedlen, cookie);
+ 
+          if (hs.m_iCookie != *(int*)cookie)

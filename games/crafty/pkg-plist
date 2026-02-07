@@ -1,0 +1,12 @@
+@group nogroup
+@mode 2755
+bin/crafty
+@mode 664
+lib/crafty/book.bin
+lib/crafty/books.bin
+lib/crafty/crafty.hlp
+@mode 775
+@dir lib/crafty/cpf
+@dir lib/crafty
+@mode
+@group wheel

@@ -1,0 +1,4 @@
+# Phabricator sudoers file.
+
+www ALL=www SETENV: NOPASSWD: %%LOCALBASE%%/bin/git, %%LOCALBASE%%/libexec/git-core/git-http-backend, %%LOCALBASE%%/bin/hg, %%LOCALBASE%%/bin/ssh, /usr/bin/ssh
+git ALL=www SETENV: NOPASSWD: %%LOCALBASE%%/bin/git, %%LOCALBASE%%/bin/git-upload-pack, %%LOCALBASE%%/bin/git-receive-pack, %%LOCALBASE%%/bin/hg, %%LOCALBASE%%/bin/svnserve, %%LOCALBASE%%/bin/ssh, /usr/bin/ssh

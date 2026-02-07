@@ -1,0 +1,2 @@
+man2web is a program for converting man (manual) output to HTML on
+the fly (as a CGI program) or on the command line.

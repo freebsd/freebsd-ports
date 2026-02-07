@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# PROVIDE: znc
+# REQUIRE: LOGIN DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable znc:
+#
+# znc_enable:       Set to NO by default. Set it to YES to enable it.
+# znc_conf_dir:     Directory where znc configuration
+#                   data is stored.
+#                   Default: %%PREFIX%%/etc/znc
+# znc_user:         The user account znc runs as what
+#                   you want it to be. It uses 'znc' user by
+#                   default. Do not sets it as empty or it will run
+#                   as root.
+#
+
+. /etc/rc.subr
+
+name=znc
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/znc
+
+load_rc_config ${name}
+
+: ${znc_enable:="NO"}
+: ${znc_user:="znc"}
+: ${znc_conf_dir="%%PREFIX%%/etc/znc"}
+
+znc_flags=" \
+	${znc_conf_dir:+-d ${znc_conf_dir}} \
+	${znc_flags}"
+
+run_rc_command "$1"

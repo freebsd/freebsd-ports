@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: pcheckd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+# /etc/rc.conf lines:
+# pcheckd_enable="YES"   # enable pcheckd
+# pcheckd_user="pop"   # user for pcheckd
+
+. /etc/rc.subr
+
+name="pcheckd"
+rcvar=pcheckd_enable
+
+load_rc_config $name
+
+: ${pcheckd_enable="NO"}
+: ${pcheckd_user="pop"}
+
+command="%%PREFIX%%/sbin/pcheckd"
+start_precmd="${name}_prestart"
+extra_commands="reload"
+
+pproxy_prestart()
+{
+	mkdir -p /var/log/popular
+	chown ${pcheckd_user} /var/log/popular
+	mkdir -p /var/run/popular
+	chown ${pcheckd_user} /var/run/popular
+}
+
+run_rc_command "$1"

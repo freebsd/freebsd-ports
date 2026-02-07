@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/signatures/signatures.so
+%%SITE_ARCH%%/signatures.pm
+%%PERL5_MAN3%%/signatures.3.gz

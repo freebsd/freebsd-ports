@@ -1,0 +1,193 @@
+--- tcpwatch.py.orig	2004-06-17 00:03:46 UTC
++++ tcpwatch.py
+@@ -71,8 +71,8 @@ Revision information:
+ $Id: tcpwatch.py,v 1.9 2004/06/17 00:03:46 shane Exp $
+ """
+ 
+-from __future__ import nested_scopes
+ 
++
+ VERSION = '1.3'
+ COPYRIGHT = (
+     'TCPWatch %s Copyright 2001 Shane Hathaway, Zope Corporation'
+@@ -346,7 +346,7 @@ class BasicObserver:
+         if not show_cr:
+             data = data.replace('\r', '')
+         lines = data.split('\n')
+-        lines = map(escape, lines)
++        lines = list(map(escape, lines))
+         s = ('\n%s' % arrow).join(lines)
+         self.write(s)
+ 
+@@ -472,13 +472,13 @@ def setupTk(titlepart, config_info, colorized=1):
+     """Starts the Tk application and returns an observer factory.
+     """
+ 
+-    import Tkinter
+-    from ScrolledText import ScrolledText
+-    from Queue import Queue, Empty
++    import tkinter
++    from tkinter.scrolledtext import ScrolledText
++    from queue import Queue, Empty
+     try:
+-        from cStringIO import StringIO
++        from io import StringIO
+     except ImportError:
+-        from StringIO import StringIO
++        from io import StringIO
+ 
+     startup_text = COPYRIGHT + ("""
+ 
+@@ -489,11 +489,11 @@ the list on the left to see the data transferred.
+ """ % config_info)
+ 
+ 
+-    class TkTCPWatch (Tkinter.Frame):
++    class TkTCPWatch (tkinter.Frame):
+         '''The tcpwatch top-level window.
+         '''
+         def __init__(self, master):
+-            Tkinter.Frame.__init__(self, master)
++            tkinter.Frame.__init__(self, master)
+             self.createWidgets()
+             # connections maps ids to TkConnectionObservers.
+             self.connections = {}
+@@ -502,15 +502,15 @@ the list on the left to see the data transferred.
+             self.processQueue()
+ 
+         def createWidgets(self):
+-            listframe = Tkinter.Frame(self)
+-            listframe.pack(side=Tkinter.LEFT, fill=Tkinter.BOTH, expand=1)
+-            scrollbar = Tkinter.Scrollbar(listframe, orient=Tkinter.VERTICAL)
+-            self.connectlist = Tkinter.Listbox(
++            listframe = tkinter.Frame(self)
++            listframe.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=1)
++            scrollbar = tkinter.Scrollbar(listframe, orient=tkinter.VERTICAL)
++            self.connectlist = tkinter.Listbox(
+                 listframe, yscrollcommand=scrollbar.set, exportselection=0)
+             scrollbar.config(command=self.connectlist.yview)
+-            scrollbar.pack(side=Tkinter.RIGHT, fill=Tkinter.Y)
++            scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
+             self.connectlist.pack(
+-                side=Tkinter.LEFT, fill=Tkinter.BOTH, expand=1)
++                side=tkinter.LEFT, fill=tkinter.BOTH, expand=1)
+             self.connectlist.bind('<Button-1>', self.mouseListSelect)
+             self.textbox = ScrolledText(self, background="#ffffff")
+             self.textbox.tag_config("message", foreground="#000000")
+@@ -520,32 +520,32 @@ the list on the left to see the data transferred.
+             self.textbox.tag_config("server", foreground="#770000")
+             self.textbox.tag_config(
+                 "serveresc", foreground="#770000", background="#dddddd")
+-            self.textbox.insert(Tkinter.END, startup_text, "message")
+-            self.textbox.pack(side='right', fill=Tkinter.BOTH, expand=1)
+-            self.pack(fill=Tkinter.BOTH, expand=1)
++            self.textbox.insert(tkinter.END, startup_text, "message")
++            self.textbox.pack(side='right', fill=tkinter.BOTH, expand=1)
++            self.pack(fill=tkinter.BOTH, expand=1)
+ 
+         def addConnection(self, id, conn):
+             self.connections[id] = conn
+             connectlist = self.connectlist
+-            connectlist.insert(Tkinter.END, id)
++            connectlist.insert(tkinter.END, id)
+ 
+         def updateConnection(self, id, output):
+             if id == self.showingid:
+                 textbox = self.textbox
+                 for data, style in output:
+-                    textbox.insert(Tkinter.END, data, style)
++                    textbox.insert(tkinter.END, data, style)
+ 
+         def mouseListSelect(self, event=None):
+             connectlist = self.connectlist
+             idx = connectlist.nearest(event.y)
+             sel = connectlist.get(idx)
+             connections = self.connections
+-            if connections.has_key(sel):
++            if sel in connections:
+                 self.showingid = ''
+                 output = connections[sel].getOutput()
+-                self.textbox.delete(1.0, Tkinter.END)
++                self.textbox.delete(1.0, tkinter.END)
+                 for data, style in output:
+-                    self.textbox.insert(Tkinter.END, data, style)
++                    self.textbox.insert(tkinter.END, data, style)
+                 self.showingid = sel
+ 
+         def processQueue(self):
+@@ -630,7 +630,7 @@ the list on the left to see the data transferred.
+             # Escape the input data.
+             was_escaped = 0
+             start_idx = 0
+-            for idx in xrange(len(data)):
++            for idx in range(len(data)):
+                 c = data[idx]
+                 escaped = (c < ' ' and c != '\n') or c >= '\x80'
+                 if was_escaped != escaped:
+@@ -661,7 +661,7 @@ the list on the left to see the data transferred.
+ 
+ 
+     def createApp(titlepart):
+-        master = Tkinter.Tk()
++        master = tkinter.Tk()
+         app = TkTCPWatch(master)
+         try:
+             wm_title = app.master.wm_title
+@@ -1165,7 +1165,7 @@ class HTTPProxyToClientConnection (ForwardingEndpoint)
+         """
+         first_line = request.first_line.strip()
+         if not ' ' in first_line:
+-            raise ValueError, ('Malformed request: %s' % first_line)
++            raise ValueError('Malformed request: %s' % first_line)
+         command, url = first_line.split(' ', 1)
+         pos = url.rfind(' HTTP/')
+         if pos >= 0:
+@@ -1187,7 +1187,7 @@ class HTTPProxyToClientConnection (ForwardingEndpoint)
+             host = request.headers.get('HOST')
+             path = url
+         if not host:
+-            raise ValueError, ('Request type not supported: %s' % url)
++            raise ValueError('Request type not supported: %s' % url)
+ 
+         if ':' in host:
+             host, port = host.split(':')
+@@ -1324,7 +1324,7 @@ def main(args):
+                                         'no-record-responses',
+                                         'no-record-errors',
+                                        ])
+-    except getopt.GetoptError, msg:
++    except getopt.GetoptError as msg:
+         usageError(msg)
+ 
+     fwd_params = []
+@@ -1404,15 +1404,11 @@ def main(args):
+     config_info_lines = []
+     title_lst = []
+     if fwd_params:
+-        config_info_lines.extend(map(
+-            lambda args: 'Forwarding %s:%d -> %s:%d' % args, fwd_params))
+-        title_lst.extend(map(
+-            lambda args: '%s:%d -> %s:%d' % args, fwd_params))
++        config_info_lines.extend(['Forwarding %s:%d -> %s:%d' % args for args in fwd_params])
++        title_lst.extend(['%s:%d -> %s:%d' % args for args in fwd_params])
+     if proxy_params:
+-        config_info_lines.extend(map(
+-            lambda args: 'HTTP proxy listening on %s:%d' % args, proxy_params))
+-        title_lst.extend(map(
+-            lambda args: '%s:%d -> proxy' % args, proxy_params))
++        config_info_lines.extend(['HTTP proxy listening on %s:%d' % args for args in proxy_params])
++        title_lst.extend(['%s:%d -> proxy' % args for args in proxy_params])
+     if split_http:
+         config_info_lines.append('HTTP connection splitting enabled.')
+     if record_directory:
+@@ -1469,8 +1465,8 @@ def main(args):
+         # Run the main loop.
+         try:
+             if mainloop is not None:
+-                import thread
+-                thread.start_new_thread(asyncore.loop, (), {'timeout': 1.0})
++                import _thread
++                _thread.start_new_thread(asyncore.loop, (), {'timeout': 1.0})
+                 mainloop()
+             else:
+                 asyncore.loop(timeout=1.0)

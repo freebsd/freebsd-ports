@@ -1,0 +1,17 @@
+--- ogg2mp3.orig	2009-08-28 00:49:03 UTC
++++ ogg2mp3
+@@ -50,10 +50,10 @@ print "    Maintainership assumed by James Ausmus\n";
+ print "  This code is released under the General Public License v2.\n";
+ print " ------------------------------------------------------------------- \n\n";
+ 
+-my $MP3ENC  = "/usr/bin/lame";
+-#my $MP3INFO = "/usr/bin/mp3_check";
+-my $OGGINFO = "/usr/bin/ogginfo";
+-my $OGG123  = "/usr/bin/ogg123";
++my $MP3ENC  = "%%LOCALBASE%%/bin/lame";
++#my $MP3INFO = "%%LOCALBASE%%/bin/mp3_check";
++my $OGGINFO = "%%LOCALBASE%%/bin/ogginfo";
++my $OGG123  = "%%LOCALBASE%%/bin/ogg123";
+ 
+ # check presence of executables
+ stat($MP3ENC) or die "Error: $MP3ENC not present!\n";

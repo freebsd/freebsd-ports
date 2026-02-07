@@ -1,0 +1,25 @@
+Index: configure.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/configure.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- configure.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ configure.in	2 Jan 2009 21:09:32 -0000	1.2
+@@ -422,6 +422,16 @@ dnl for bcopy/index -> memcpy/strchr con
+ AC_CHECK_FUNCS(bcopy bzero bcmp index rindex \
+ 	memcpy memmove memset strchr strrchr)
+ 
++AC_CHECK_HEADER(netdb.h)
++AC_CHECK_FUNCS(getaddrinfo)
++AC_CHECK_FUNCS(freeaddrinfo)
++AC_CHECK_FUNCS(getnameinfo)
++AC_CHECK_FUNCS(gai_strerror)
++AC_CHECK_TYPES([struct sockaddr_storage],,,[#include <sys/socket.h>])
++AC_CHECK_TYPES([struct addrinfo],,,[#include <netdb.h>])
++AC_CHECK_TYPES([struct in6_addr],,,[#include <netinet/in.h>])
++AC_CHECK_TYPES([struct sockaddr_in6],,,[#include <netinet/in.h>])
++
+ dnl Check fallback functions for jserver (should use AC_REPLACE_FUNCS?)
+ JS_SUPPORTOBJS=
+ AC_CHECK_FUNCS(mkdir vasprintf, ,

@@ -1,0 +1,2 @@
+Custom SQLite functions written in Python for ranking documents
+indexed using the FTS4 extension.

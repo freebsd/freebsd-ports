@@ -1,0 +1,117 @@
+--- build.xml.orig	2022-10-28 19:54:09 UTC
++++ build.xml
+@@ -31,6 +31,8 @@
+     <property file="build.properties" />
+     <property file="build.properties.default" />
+     <property name="debuglevel" value="source,lines,vars"/>
++    <property name="pycmd" value="python"/>
++    <property name="rat.skip" value="true"/>
+ 
+     <!-- default version and SCM information -->
+     <property name="base.version" value="3.11.14"/>
+@@ -85,7 +87,7 @@
+     <condition property="version" value="${base.version}">
+       <isset property="release"/>
+     </condition>
+-    <property name="version" value="${base.version}-SNAPSHOT"/>
++    <property name="version" value="${base.version}"/>
+     <property name="version.properties.dir"
+               value="${build.src.resources}/org/apache/cassandra/config/" />
+     <property name="final.name" value="${ant.project.name}-${version}"/>
+@@ -272,6 +274,7 @@
+     <target name="gen-doc" description="Generate documentation" depends="gen-asciidoc,generate-cql-html" unless="ant.gen-doc.skip">
+         <exec executable="make" osfamily="unix" dir="${doc.dir}">
+             <arg value="html"/>
++            <arg value="PYTHON_CMD=${pycmd}"/>
+         </exec>
+     </target>
+ 
+@@ -924,6 +927,88 @@
+       </jar>
+     </target>
+ 
++    <!-- FreeBSD for staging -->
++    <target name="freebsd-stage" depends="jar"
++            description="Create Cassandra directory structure for staging">
++      <mkdir dir="${dist.dir}"/>
++      <copy todir="${dist.dir}/lib">
++        <fileset dir="${build.lib}">
++          <exclude name="sigar*.jar"/>
++          <exclude name="sigar-bin/*"/>
++          <exclude name="snappy*.jar"/>
++          <exclude name="licenses/snappy*.txt"/>
++        </fileset>
++        <fileset dir="${build.dir}">
++          <include name="${final.name}.jar" />
++          <include name="${ant.project.name}-thrift-${version}.jar" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/bin">
++        <fileset dir="bin">
++	  <exclude name="*.bat" />
++	  <exclude name="*.ps1" />
++	  <exclude name="*.orig" />
++	</fileset>
++      </copy>
++      <copy todir="${dist.dir}/conf">
++        <fileset dir="conf">
++          <exclude name="*.ps1" />
++	  <exclude name="*.orig" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/interface">
++        <fileset dir="interface">
++          <include name="**/*.thrift" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/pylib">
++        <fileset dir="pylib">
++          <include name="**" />
++          <exclude name="**/*.pyc" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/">
++        <fileset dir="${basedir}">
++          <include name="*.txt" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/tools/bin">
++        <fileset dir="${basedir}/tools/bin">
++          <exclude name="*.bat" />
++          <exclude name="*.ps1" />
++	  <exclude name="*.orig" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/tools/">
++        <fileset dir="${basedir}/tools/">
++            <include name="*.yaml"/>
++	</fileset>
++      </copy>
++      <copy todir="${dist.dir}/tools/lib">
++        <fileset dir="${build.dir}/tools/lib/">
++            <include name="*.jar" />
++        </fileset>
++      </copy>
++    </target>
++
++    <target name="freebsd-stage-doc" depends="freebsd-stage,javadoc,gen-doc"
++            description="Create Cassandra directory structure for staging, including docs">
++      <copy todir="${dist.dir}/javadoc">
++        <fileset dir="${javadoc.dir}"/>
++      </copy>
++      <copy todir="${dist.dir}/doc">
++        <fileset dir="doc">
++          <include name="cql3/CQL.html" />
++          <include name="cql3/CQL.css" />
++          <include name="SASI.md" />
++        </fileset>
++      </copy>
++      <copy todir="${dist.dir}/doc/html">
++        <fileset dir="doc" />
++        <globmapper from="build/html/*" to="*"/>
++      </copy>
++    </target>
++    
+     <!-- creates release tarballs -->
+     <target name="artifacts" depends="jar,gen-doc,build-test,stress-build-test,sources-jar"
+             description="Create Cassandra release artifacts">

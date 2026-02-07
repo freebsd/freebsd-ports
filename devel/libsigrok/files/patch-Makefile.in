@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2025-04-10 19:22:13 UTC
++++ Makefile.in
+@@ -5262,6 +5262,7 @@ $(CPPXMLDOC): bindings/cxx/include/libsigrokcxx/libsig
+ @BINDINGS_RUBY_TRUE@$(RDOC): $(srcdir)/bindings/swig/doc.py $(CPPXMLDOC)
+ @BINDINGS_RUBY_TRUE@	$(AM_V_at)test -d $(RDIR) || $(MKDIR_P) $(RDIR)
+ @BINDINGS_RUBY_TRUE@	$(AM_V_GEN)$(PYTHON) $(srcdir)/bindings/swig/doc.py ruby $(CPPXMLDOC) > $@
++@BINDINGS_RUBY_TRUE@	/bin/cp /dev/null  $@
+ 
+ @BINDINGS_RUBY_TRUE@$(RWRAP): $(srcdir)/$(RDIR)/classes.i $(RDOC) \
+ @BINDINGS_RUBY_TRUE@		bindings/swig/classes.i bindings/swig/templates.i \

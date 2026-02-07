@@ -1,0 +1,42 @@
+--- Makefile.in.orig	Mon Jun  5 13:44:42 2000
++++ Makefile.in	Thu Nov 21 17:54:41 2002
+@@ -67,7 +67,7 @@
+ 
+ bin_PROGRAMS = npadmin
+ 
+-npadmin_SOURCES = argflags.h ber.C ber.h beroid.C berseq.C compat.h 	npaconsts.h npadmin.C npahelpers.C npahelpers.h npaoids.h         npastructs.h oidseq.C oidseq.h printmib.C printmib.h session.C         session.h structfill.C structfill.h getopt.h getopt.c getopt1.c 	snmpsock.h snmpsock.C
++npadmin_SOURCES = argflags.h ber.C ber.h beroid.C berseq.C compat.h 	npaconsts.h npadmin.C npahelpers.C npahelpers.h npaoids.h         npastructs.h oidseq.C oidseq.h printmib.C printmib.h session.C         session.h structfill.C structfill.h snmpsock.h snmpsock.C
+ 
+ 
+ npadmin_LDADD = @LIBOBJS@
+@@ -86,7 +86,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LIBS = @LIBS@
+ npadmin_OBJECTS =  ber.o beroid.o berseq.o npadmin.o npahelpers.o \
+-oidseq.o printmib.o session.o structfill.o getopt.o getopt1.o \
++oidseq.o printmib.o session.o structfill.o getopt.o \
+ snmpsock.o
+ npadmin_DEPENDENCIES =  @LIBOBJS@
+ npadmin_LDFLAGS = 
+@@ -333,8 +333,7 @@
+ beroid.o: beroid.C ber.h compat.h config.h
+ berseq.o: berseq.C ber.h compat.h config.h
+ getopt.o: getopt.c config.h
+-getopt1.o: getopt1.c config.h getopt.h
+-npadmin.o: npadmin.C config.h getopt.h compat.h structfill.h session.h \
++npadmin.o: npadmin.C config.h compat.h structfill.h session.h \
+ 	ber.h oidseq.h snmpsock.h argflags.h npaoids.h npaconsts.h \
+ 	npastructs.h npahelpers.h printmib.h
+ npahelpers.o: npahelpers.C argflags.h npaconsts.h npastructs.h npaoids.h \
+@@ -345,9 +344,9 @@
+ printmib.o: printmib.C printmib.h session.h ber.h compat.h config.h \
+ 	oidseq.h snmpsock.h npaconsts.h npastructs.h npaoids.h \
+ 	argflags.h npahelpers.h structfill.h
+-session.o: session.C getopt.h compat.h config.h ber.h session.h oidseq.h \
++session.o: session.C compat.h config.h ber.h session.h oidseq.h \
+ 	snmpsock.h argflags.h
+-snmpsock.o: snmpsock.C snmpsock.h getopt.h
++snmpsock.o: snmpsock.C snmpsock.h
+ structfill.o: structfill.C structfill.h session.h ber.h compat.h \
+ 	config.h oidseq.h snmpsock.h
+ 

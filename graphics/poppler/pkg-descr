@@ -1,0 +1,4 @@
+Poppler is a fork of the xpdf PDF viewer developed by Derek Noonburg
+of Glyph and Cog, LLC.  It provides PDF rendering functionality as a
+shared library, and uses modern components from Freedesktop.org such as
+fontconfig and cairo to take advantage of modern UNIX desktops.

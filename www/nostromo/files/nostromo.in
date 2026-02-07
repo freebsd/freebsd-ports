@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: nostromo
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable nostromo:
+#
+# nostromo_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=nostromo
+rcvar=nostromo_enable
+
+command=%%PREFIX%%/sbin/nhttpd
+
+nostromo_enable=${nostromo_enable:-"NO"}
+nostromo_flags=${nostromo_flags:-"-c %%PREFIX%%/nostromo/conf/nhttpd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

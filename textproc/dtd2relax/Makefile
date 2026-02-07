@@ -1,0 +1,37 @@
+PORTNAME=	dtd2relax
+PORTVERSION=	1.1.1
+PORTREVISION=	2
+CATEGORIES=	textproc java
+MASTER_SITES=	http://www.horobi.com/Projects/RELAX/Archive/
+DISTNAME=	${PORTNAME:tu}_${PORTVERSION:S/./_/g}
+DISTFILES=	${JARFILE} ${DISTNAME}-src${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}-src${EXTRACT_SUFX}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	DTD to RELAX converter for Java
+WWW=		https://www.horobi.com/Projects/RELAX/Archive/DTD2RELAX.html
+
+USES=		java zip
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+JARFILE=	${DISTNAME}-bin-XML4J.jar
+PLIST_FILES=	${JAVAJARDIR:S/${PREFIX}\///}/dtd2relax.jar
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-install:
+	${INSTALL_DATA} ${DISTDIR}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

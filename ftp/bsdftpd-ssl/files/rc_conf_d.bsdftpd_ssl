@@ -1,0 +1,16 @@
+##
+## This file contains configuration parameters for the bsdftpd-ssl FTP server,
+## whose are required to run it in the daemon mode with help of rc.d/ script.
+##
+## There are several ways to make those parameters available for the script:
+## 1. Copy this file into the /etc/rc.conf.d/bsdftpd_ssl one.
+## 2. Add the following parameters into /etc/rc.conf file.
+##
+
+## Set this flag to "YES" to run the bsdftpd-ssl FTP server in the daemon mode.
+bsdftpd_ssl_enable=NO
+
+## Command-line options for the FTP server, see ftpd-ssl(8) man page for more
+## information. The "-D" and "-p" options will be added automatically, you
+## should not specify them.
+bsdftpd_ssl_flags="-l -l"

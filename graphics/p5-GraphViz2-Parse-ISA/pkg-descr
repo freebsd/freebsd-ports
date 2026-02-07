@@ -1,0 +1,2 @@
+GraphViz2::Parse::ISA takes a class name and converts its class hierarchy into a
+graph. This can be done for N different classes before the graph is generated.

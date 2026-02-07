@@ -1,0 +1,9 @@
+The Embedded Multicore Building Blocks (EMBB) are an easy to use yet
+powerful and efficient C/C++ library for the development of parallel
+applications. EMBB has been specifically designed for embedded systems and
+the typical requirements that accompany them, such as real-time capability
+and constraints on memory consumption. As a major advantage, low-level
+operations are hidden in the library which relieves software developers
+from the burden of thread management and synchronization. This not only
+improves productivity of parallel software development, but also results
+in increased reliability and performance of the applications.

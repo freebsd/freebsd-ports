@@ -1,0 +1,3 @@
+Simple library to do http requests asynchronously via CURL in C++.
+(Eventually as coroutines, once all the compilers I need to support
+support them.) This is based on the CURL-libevent example.

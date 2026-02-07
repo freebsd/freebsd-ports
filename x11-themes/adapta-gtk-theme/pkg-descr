@@ -1,0 +1,10 @@
+Adaptive Gtk+ theme based on Material Design Guidelines.
+
+Supported Desktop Environments:
+
+* GNOME-Shell     >= 3.20.0
+* GNOME-Flashback >= 3.20
+* Cinnamon        >= 3.2.0
+* XFce4           >= 4.12.2
+* Mate            >= 1.14.0
+* LXDE            >= 0.99.1 (Gtk+ 2.x only)

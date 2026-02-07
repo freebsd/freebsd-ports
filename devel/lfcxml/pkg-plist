@@ -1,0 +1,12 @@
+include/lfcxml/Attribute.h
+include/lfcxml/Document.h
+include/lfcxml/Element.h
+include/lfcxml/XML.h
+include/lfcxml/XMLEscaper.h
+include/lfcxml/XMLInStream.h
+include/lfcxml/XMLOutStream.h
+include/lfcxml/XMLSuite.h
+lib/liblfcxml.a
+lib/liblfcxml.so
+lib/liblfcxml.so.1
+lib/liblfcxml.so.1.0.0

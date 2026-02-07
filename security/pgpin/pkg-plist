@@ -1,0 +1,8 @@
+bin/pgpin
+lib/pgpin/pgp.hlp
+@sample lib/pgpin/language.txt.sample
+@sample lib/pgpin/config.txt.sample
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/pgpdoc1.txt
+%%PORTDOCS%%%%DOCSDIR%%/pgpdoc2.txt
+share/man/man1/pgpin.1.gz

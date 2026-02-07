@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+A default configuration file has been installed in
+%%ETCDIR%%/fort-config.json.sample.
+
+To use FORT, you will need the Trust Anchor Locator (TAL) files.
+You can download these by running "fort --init-tals" as follows:
+
+# fort --init-tals --tal %%ETCDIR%%/tal
+
+When you have downloaded the TAL files, you can start the RTR
+server and validator:
+
+# sysrc fort_enable=YES # or edit /etc/rc.conf manually
+# service fort start
+
+The default configuration will bind the RTR server to localhost
+on port 8323.
+
+Consult the FORT manual for more information:
+https://nicmx.github.io/FORT-validator/run.html
+EOM
+}
+]

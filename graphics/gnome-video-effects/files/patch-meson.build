@@ -1,0 +1,11 @@
+--- meson.build.orig	2023-06-13 17:10:45 UTC
++++ meson.build
+@@ -10,7 +10,7 @@ prefix = get_option('prefix')
+ datadir_relative = get_option('datadir')
+ datadir = prefix / datadir_relative
+ pkgdatadir = datadir / meson.project_name()
+-pkgconfigdir = datadir / 'pkgconfig'
++pkgconfigdir = join_paths(prefix, 'libdata/pkgconfig')
+ 
+ subdir('effects')
+ subdir('po')

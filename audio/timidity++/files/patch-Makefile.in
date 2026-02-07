@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2012-06-28 14:14:25 UTC
++++ Makefile.in
+@@ -284,7 +284,6 @@ M4DIR = autoconf
+ SUBDIRS = \
+ 	autoconf \
+ 	utils \
+-	libarc \
+ 	libunimod \
+ 	interface \
+ 	timidity \

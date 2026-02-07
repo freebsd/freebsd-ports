@@ -1,0 +1,2 @@
+This module provides a C api for XS modules to hook into the execution
+of perl opcodes.

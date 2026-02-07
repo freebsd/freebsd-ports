@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/collection/485e97e7-c352-432d-b8d3-fa8460e4fe49.yml	2024-12-21 00:57:08.538685000 -0800
++++ bacnet/data/abilities/collection/485e97e7-c352-432d-b8d3-fa8460e4fe49.yml	2024-12-21 01:02:20.136256000 -0800
+@@ -20,6 +20,11 @@
+     name: Point & Tag Identification
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacrpm #{bacnet.device.instance} device #{bacnet.device.instance} 77,121,70,28,76
+     linux:
+       sh:
+         timeout: 360
+@@ -33,4 +38,4 @@
+         command: |
+           .\bacrpm.exe #{bacnet.device.instance} device #{bacnet.device.instance} 77,121,70,28,76
+         payloads:
+-          - bacrpm.exe
+\ No newline at end of file
++          - bacrpm.exe

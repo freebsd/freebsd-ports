@@ -1,0 +1,3 @@
+libcdaudio is a library designed to provide functions to control
+operation of a CD-ROM when playing audio CDs.  It also contains
+functions for CDDB and CD Index lookup.

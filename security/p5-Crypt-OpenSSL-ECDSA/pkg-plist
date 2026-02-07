@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Crypt/OpenSSL/ECDSA.pm
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/ECDSA/ECDSA.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/ECDSA/autosplit.ix
+%%PERL5_MAN3%%/Crypt::OpenSSL::ECDSA.3.gz

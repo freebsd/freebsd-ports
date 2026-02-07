@@ -1,0 +1,11 @@
+HTMLProofer is a set of tests to validate your HTML output. These tests check if
+your image references are legitimate, if they have alt tags, if your internal
+links are working, and so on. It's intended to be an all-in-one checker for your
+output.
+
+In scope for this project is any well-known and widely-used test for HTML
+document quality. A major use for this project is continuous integration -- so
+we must have reliable results. We usually balance correctness over performance.
+And, if necessary, we should be able to trace this program's detection of HTML
+errors back to documented best practices or standards, such as W3
+specifications.

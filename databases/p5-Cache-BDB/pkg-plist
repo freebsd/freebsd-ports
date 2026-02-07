@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Cache/BDB.pm
+%%SITE_PERL%%/Cache/BDB.pod
+%%PERL5_MAN3%%/Cache::BDB.3.gz

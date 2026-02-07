@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/threads/shared/shared.so
+%%SITE_ARCH%%/threads/shared.pm
+%%PERL5_MAN3%%/threads::shared.3.gz

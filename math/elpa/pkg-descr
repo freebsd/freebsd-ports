@@ -1,0 +1,5 @@
+The ELPA library provides highly efficient and highly scalable direct
+eigensolvers for symmetric matrices. Though especially designed for use for
+PetaFlop/s applications solving large problem sizes on massively parallel
+supercomputers, ELPA eigensolvers have proven to be also very efficient for
+smaller matrices.

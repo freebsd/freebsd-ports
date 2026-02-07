@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+
+To use snac, enable it in rc.conf using
+
+  sysrc snac_enable=yes
+
+To initialize the data, run
+
+  service snac init
+
+You can then start snac by running:
+
+  service snac start
+
+You can add a user by running:
+
+  service snac run adduser <name>
+
+Data is stored at %%SNACDATADIR%%/data. For convenience the service includes
+a `run` command for executing snac commands against this directory, such as
+the `adduser` command shown above. See `snac --help` for a full list of
+commands.
+EOM
+}
+]

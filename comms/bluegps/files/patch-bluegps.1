@@ -1,0 +1,35 @@
+--- bluegps.1  2006-06-04 13:41:03.000000000 +0200
++++ bluegps.1  2007-07-29 18:53:13.000000000 +0200
+@@ -14,8 +14,9 @@
+ .LP
+ The bluetooth address (bdaddr) of the RBT-3000 to be used has to 
+ be specified on the command line. This bluetooth address can e.g. 
+-be determined using the \fBhcitool(1)\fP command.
+-
++be determined using the \fBhcitool(1)\fP command (linux). Or 
++alternatively use the friendly name. (freebsd, see
++\fBbluetooth.hosts(5)\fP).
+ .SH OPTIONS
+ .TP
+ .BI \-d " filename" 
+@@ -112,6 +113,13 @@
+ bluegps -d testlog.nmea 00:02:C7:00:11:22
+ .RE
+ .LP
++On freebsd; if there is an entry in /etc/bluetooth/hosts you can
++also use:
++.LP
++.RS +4
++bluegps -d testlog.nmea BlueGPS
++.RE
++.LP
+ If the GPS has been setup to use the password 1234 use the following 
+ command:
+ .LP
+@@ -130,4 +138,5 @@
+ accompanies each copy of \fIbluegps\fP.
+ .SH AUTHORS
+ Till Harbaum <Till@Harbaum.org>,
+-Simon Budig <simon@budig.de>
++Simon Budig <simon@budig.de> and
++some minor changes for FreeBSD by Dirk-Willem van Gulik <dirkx@webweaving.org>.

@@ -1,0 +1,15 @@
+https_dns_proxy is light-weight DNS<->HTTPS, non-caching translation
+proxy for the RFC 8484 DNS-over-HTTPS standard.  It receives regular
+(UDP) DNS requests and issues them via DoH.
+
+Using DNS over HTTPS makes eavesdropping and spoofing of DNS traffic
+between you and the HTTPS DNS provider (Google/Cloudflare) much less
+likely, of course so long as you trust your DoH provider.  Features:
+
+  - Tiny size (<45kiB)
+  - Uses cURL for HTTP/2 and pipelining, keeping resolve latencies
+    extremely low
+  - Single-threaded, non-blocking select() server for use on
+    resource-starved embedded systems
+  - Designed to sit in front of dnsmasq or similar caching resolver
+    for transparent use

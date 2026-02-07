@@ -1,0 +1,13 @@
+smtpmail is a little console-based tool for users who have no
+local mailserver on her machine. it enables these users to send
+their mail over a remote smtp server.
+
+Features
+
+    * Use of an remote smtp server
+    * Use of a user-defined sender address
+    * SMPT auth (type login)
+    * You can define unlimited recivers for the mail, the
+    * carbon copy and the blind carbon copy
+    * You can add an unlimited number of attachments to the
+    * mail

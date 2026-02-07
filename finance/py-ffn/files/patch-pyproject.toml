@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2024-06-23 07:27:54 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "oldest-supported-numpy",
++    "numpy",
+     "setuptools",
+     "wheel",
+ ]

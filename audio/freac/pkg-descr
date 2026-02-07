@@ -1,0 +1,13 @@
+fre:ac is a free audio converter and CD ripper with support for various
+popular formats and encoders.  It converts freely between MP3, M4A/AAC,
+FLAC, WMA, Opus, Ogg Vorbis, Speex, Monkey's Audio (APE), WavPack, WAV,
+and other formats.
+
+With fre:ac you easily rip your audio CDs to MP3 or M4A files for use
+with your hardware player or convert files that do not play with other
+audio software.  You can even convert whole music libraries retaining
+the folder and filename structure.
+
+The integrated CD ripper supports the CDDB/GNUdb online CD database.
+It will automatically query song information and write it to ID3v2 or
+other title information tags.

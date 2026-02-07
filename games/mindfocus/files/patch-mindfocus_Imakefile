@@ -1,0 +1,11 @@
+--- mindfocus/Imakefile.orig	Wed Jun 14 20:00:24 2000
++++ mindfocus/Imakefile	Wed Nov  1 07:25:08 2000
+@@ -27,7 +27,7 @@
+ 
+ CFLAGS += $(CDEFINES)
+ 
+-ComplexProgramTarget(mindfocus)
++ComplexProgramTargetNoMan(mindfocus)
+ InstallNamedNonExec(../system.mindfocus,system.mindfocus,DATADIR)
+ 
+ mindfocus.o:: ../lib/inifile/inifile.h mfc.h

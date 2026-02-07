@@ -1,0 +1,4 @@
+lib/aspell-%%VER%%/hsb_affix.dat
+lib/aspell-%%VER%%/hsb.dat
+share/aspell/hsb.multi
+share/aspell/hsb.rws

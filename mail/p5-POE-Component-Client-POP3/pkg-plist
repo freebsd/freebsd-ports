@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/POE::Component::Client::POP3.3.gz
+%%SITE_PERL%%/POE/Component/Client/POP3.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/term.perl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.perl

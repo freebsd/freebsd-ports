@@ -1,0 +1,2 @@
+sagemaker-shim adapts algorithms that implement the Grand Challenge inference
+API for running in Amazon SageMaker.

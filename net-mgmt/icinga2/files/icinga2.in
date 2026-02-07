@@ -1,0 +1,119 @@
+#!/bin/sh
+
+# PROVIDE: icinga2
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable icinga2:
+# icinga2_enable (bool):    Set to "NO" by default.
+#                           Set it to "YES" to enable icinga2.
+# icinga2_flags (str):      Set to "" by default.
+# icinga2_configfile (str): Set to "%%PREFIX%%/etc/icinga2/icinga2.conf" by default.
+# icinga2_mkvar (bool):     Set to "NO" by default.
+#                           Set it to "YES" to have the rc script create all
+#                           directories in /var (needed when /var is on a ramdisk)
+#
+
+. /etc/rc.subr
+
+# Add /usr/local/bin to path, so that the notification scripts
+# can work (#!/usr/bin/env bash)
+export PATH=$PATH:%%LOCALBASE%%/bin:%%PREFIX%%/sbin
+
+name="icinga2"
+desc="Icinga 2 monitoring (core)"
+rcvar=icinga2_enable
+
+load_rc_config "${name}"
+
+: ${icinga2_enable:="NO"}
+: ${icinga2_configfile="%%PREFIX%%/etc/${name}/${name}.conf"}
+: ${icinga2_user:="%%ICINGA2USER%%"}
+: ${icinga2_group:="%%ICINGA2GROUP%%"}
+: ${icinga2_webgroup:="www"}
+
+
+command="%%PREFIX%%/sbin/${name}"
+procname="/usr/local/lib/icinga2/sbin/icinga2"
+extra_commands="reload checkconfig configtest"
+
+icinga2_cachedir="/var/cache/${name}"
+icinga2_libdir="/var/lib/${name}"
+icinga2_logdir="%%ICINGA2LOGDIR%%"
+icinga2_rundir="/var/run/${name}"
+icinga2_spooldir="/var/spool/${name}"
+
+pidfile="${icinga2_rundir}/${name}.pid"
+icinga2_logfile="${icinga2_logdir}/${name}.log"
+icinga2_errorlogfile="${icinga2_logdir}/error.log"
+
+start_cmd="start_cmd"
+start_precmd="start_precmd"
+restart_precmd="icinga2_checkconfig"
+reload_precmd="reload_precmd"
+checkconfig_cmd="icinga2_checkconfig verbose"
+configtest_cmd="${checkconfig_cmd}"
+sig_reload=HUP
+
+required_files="${icinga2_configfile}"
+command_args="daemon -d -e ${icinga2_errorlogfile} -c ${icinga2_configfile}"
+
+icinga2_checkconfig() {
+  echo -n "Performing sanity check of icinga2 configuration: "
+
+  if [ "$1" != "verbose" ]; then
+    quietredir="2>&1 >/dev/null"
+  fi
+
+  ${command} daemon -c ${icinga2_configfile} -C
+
+  if [ $? -ne 0 ]; then
+    echo "FAILED"
+    return 1
+  else
+    echo "OK"
+  fi
+}
+
+reload_precmd() {
+  if ! icinga2_checkconfig; then
+    return 1
+  fi
+}
+
+start_precmd() {
+  # Create necessary directories / change ownership
+  # While this is also done through pkg-plist, /var might be on a ramdisk,
+  # so make sure all needed files and directories are created before starting
+  # Icinga.
+  for d in "${icinga2_logdir}" "${icinga2_logdir}/compat" \
+           "${icinga2_logdir}/compat/archives" "${icinga2_libdir}" \
+           "${icinga2_spooldir}" "${icinga2_spooldir}/tmp" \
+           "${icinga2_rundir}" "${icinga2_cachedir}"; do
+      if [ ! -d "${d}" ]; then
+        install -d -o ${icinga2_user} -g ${icinga2_group} "${d}"
+      fi
+  done
+
+  install -d -o ${icinga2_user} -g ${icinga2_webgroup} -m 2750 "${icinga2_rundir}/cmd"
+
+  chown -R ${icinga2_user}:${icinga2_group} "${icinga2_libdir}"
+  chown -R ${icinga2_user}:${icinga2_group} "${icinga2_spooldir}"
+  chown -R ${icinga2_user}:${icinga2_group} "${icinga2_cachedir}"
+  chown -R ${icinga2_user}:${icinga2_webgroup} "${icinga2_rundir}/cmd"
+
+
+  if ! icinga2_checkconfig; then
+    return 1
+  fi
+
+  if [ ! -f "${icinga2_logfile}" ]; then
+    install -o "${icinga2_user}" -g "${icinga2_group}" -m 644 /dev/null "${icinga2_logfile}"
+  fi
+}
+
+start_cmd() {
+  ${command} ${command_args}
+}
+
+run_rc_command "$1"

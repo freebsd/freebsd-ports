@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Data/Validate/Email.pm
+%%SITE_PERL%%/auto/Data/Validate/Email/new.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_email.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_email_rfc822.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_domain.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_username.al
+%%SITE_PERL%%/auto/Data/Validate/Email/autosplit.ix
+%%PERL5_MAN3%%/Data::Validate::Email.3.gz

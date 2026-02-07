@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+To use the Jottacloud CLI, you must first start the jottad
+
+# service jottad onestart
+
+You can make this happen at start up by setting the jottad_enable variable.
+
+# sysrc jottad_enable=YES
+
+Instructions for using the Jottacloud CLI is available at:
+
+  https://docs.jottacloud.com/en/articles/1437248-login-and-basic-use-with-jottacloud-cli
+
+EOM
+}
+]

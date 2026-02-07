@@ -1,0 +1,15 @@
+#%PAM-1.0
+
+# auth
+auth       include	system
+auth       optional %%LOCALBASE%%/lib/pam_gnome_keyring.so
+
+# account
+account    include	system
+
+# session
+session    include	system
+session    optional %%LOCALBASE%%/lib/pam_gnome_keyring.so  auto_start
+
+# password
+password   include	system

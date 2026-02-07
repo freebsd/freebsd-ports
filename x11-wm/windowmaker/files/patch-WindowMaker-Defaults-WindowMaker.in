@@ -1,0 +1,12 @@
+--- WindowMaker/Defaults/WindowMaker.in.orig	2020-04-05 13:41:16 UTC
++++ WindowMaker/Defaults/WindowMaker.in
+@@ -37,7 +37,8 @@
+ 		"~/pixmaps",
+ 		"#pkgdatadir#/Icons",
+ 		"#pkgdatadir#/Pixmaps",
+-		"#pixmapdir#"
++		"#pixmapdir#",
++		"#prefix#/share/icons"
+ 	);
+ 	ColormapMode = auto;
+ 	AutoFocus = YES;

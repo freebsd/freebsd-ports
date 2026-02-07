@@ -1,0 +1,15 @@
+--- Makefile.orig	2018-12-29 05:21:08.000000000 -0800
++++ Makefile	2021-03-30 17:02:38.009421000 -0700
+@@ -70,11 +70,7 @@
+ 	EXE=
+ 	# You can set this to anywhere you like and do a 
+ 	# build production" and you'll have an installed BitKeeper.
+-	ifeq (,$(INSTALLED_BK))
+-		BINDIR := /usr/local/bitkeeper
+-	else
+-		BINDIR := $(shell "$(INSTALLED_BK)" bin)
+-	endif
++	BINDIR := /bitkeeper
+ 	INSTALL=install
+ 	RESOURCE=
+ endif

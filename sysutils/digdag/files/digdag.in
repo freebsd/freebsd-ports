@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: digdag
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# digdag_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# digdag_user:		The user account the digdag daemon runs as.
+#			It uses 'digdag' user by default.
+#			Do not sets it as empty or it will run as root.
+# digdag_conf:		The configuration file digdag uses.    
+#			Default: %%PREFIX%%/etc/digdag.conf
+# digdag_logfile:	The log file digdag uses.
+#			Default: /var/log/digdag/digdag.log
+
+. /etc/rc.subr
+name="digdag"
+rcvar="${name}_enable"
+load_rc_config ${name}
+
+: ${digdag_enable:="NO"}
+: ${digdag_user:="digdag"}
+: ${digdag_conf:="%%PREFIX%%/etc/digdag.conf"}
+: ${digdag_logdir:="/var/log/digdag"}
+: ${digdag_logfile:="${digdag_logdir}/digdag.log"}
+: ${digdag_taskdir:="${digdag_logdir}/tasks"}
+: ${digdag_dbdir:="/var/db/digdag"}
+
+command="/usr/sbin/daemon"
+pidfile=/var/run/digdag/digdag.pid
+procname="%%JAVA%%"
+digdag_flags="-f -p ${pidfile} ${name} server --log ${digdag_logfile} --task-log ${digdag_taskdir} --database ${digdag_dbdir} --config ${digdag_conf}"
+
+start_precmd="digdag_prestart"
+
+digdag_prestart()
+{
+	for dir in ${digdag_logdir} ${digdag_taskdir}
+	do
+		if [ ! -d ${dir} ]; then
+			install -d -m 0755 -o ${digdag_user} ${dir}
+		fi
+	done
+
+	if [ ! -d ${digdag_dbdir} ]; then
+		install -d -m 0750 -o ${digdag_user} ${digdag_dbdir}
+	fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,10 @@
+--- intro/Makefile.orig	1997-05-08 22:37:08 UTC
++++ intro/Makefile
+@@ -2,7 +2,6 @@ include ../Make.defines
+ 
+ PROGS =	daytimetcpcli daytimetcpcli1 daytimetcpcli2 daytimetcpcli3 \
+ 		daytimetcpsrv daytimetcpsrv1 daytimetcpsrv2 daytimetcpsrv3 \
+-		daytimetcpcliv6 daytimetcpsrvv6 \
+ 		byteorder
+ 
+ all:	${PROGS}

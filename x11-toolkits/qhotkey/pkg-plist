@@ -1,0 +1,8 @@
+include/QHotkey
+include/qhotkey.h
+lib/cmake/QHotkey/QHotkeyConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QHotkey/QHotkeyConfig.cmake
+lib/cmake/QHotkey/QHotkeyConfigVersion.cmake
+lib/libqhotkey.so
+lib/libqhotkey.so.1
+lib/libqhotkey.so.1.5.0

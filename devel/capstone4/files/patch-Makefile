@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-05-08 10:03:30 UTC
++++ Makefile
+@@ -419,7 +419,7 @@ endif
+ 	$(INSTALL_DATA) $(PKGCFGF) $(PKGCFGDIR)
+ ifeq (,$(findstring yes,$(CAPSTONE_BUILD_CORE_ONLY)))
+ 	mkdir -p $(BINDIR)
+-	$(INSTALL_LIB) cstool/cstool $(BINDIR)
++	$(INSTALL_BIN) cstool/cstool $(BINDIR)
+ endif
+ 
+ uninstall:

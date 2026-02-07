@@ -1,0 +1,56 @@
+--- cdk/protocol/mysqlx/protocol.cc.orig	2023-03-23 16:32:48 UTC
++++ cdk/protocol/mysqlx/protocol.cc
+@@ -37,6 +37,7 @@
+ 
+ #include <mysql/cdk/foundation/common.h>
+ #include <google/protobuf/io/zero_copy_stream.h>
++#include <absl/base/log_severity.h>
+ 
+ /*
+   Note: On Windows the INIT_ONCE structure was added only in later
+@@ -117,7 +118,7 @@ namespace mysqlx {
+   Protobuf log handler initialization.
+ */
+ 
+-static void log_handler(LogLevel level, const char* filename, int line, const std::string& message);
++static void log_handler(absl::LogSeverity level, const char* filename, int line, const std::string& message);
+ 
+ #ifdef _WIN32
+ BOOL CALLBACK log_handler_init(PINIT_ONCE, PVOID, PVOID*)
+@@ -128,7 +129,6 @@ BOOL CALLBACK log_handler_init(PINIT_ONCE, PVOID, PVOI
+ #else
+ static void log_handler_init()
+ {
+-  SetLogHandler(log_handler);
+ }
+ #endif
+ 
+@@ -290,14 +290,14 @@ Message* mk_message(Protocol_side side, msg_type_t msg
+ */
+ 
+ static void log_handler(
+-  LogLevel level, const char* /*filename*/, int /*line*/,
++  absl::LogSeverity level, const char* /*filename*/, int /*line*/,
+   const std::string& message
+ )
+ {
+   switch(level)
+   {
+-    case LOGLEVEL_FATAL:
+-    case LOGLEVEL_ERROR:
++    case absl::LogSeverity::kFatal:
++    case absl::LogSeverity::kError:
+       /*
+         With this code the error description is:
+ 
+@@ -311,8 +311,8 @@ static void log_handler(
+       */
+       throw_error(cdkerrc::protobuf_error, message);
+ 
+-    case LOGLEVEL_WARNING:
+-    case LOGLEVEL_INFO:
++    case absl::LogSeverity::kWarning:
++    case absl::LogSeverity::kInfo:
+     default:
+     {
+       // just ignore for now

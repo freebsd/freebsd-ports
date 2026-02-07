@@ -1,0 +1,16 @@
+   The  original  puzzle has 9 triangles per face (size = 3)
+and has period  4 turning (i.e. the face or points turn with
+90 degree intervals). The puzzle was designed by Uwe Meffert
+and  called  the  Magic  Octahedron  (or Star Puzzler).  The
+puzzle was not widely distributed but not exactly rare. This
+puzzle  has  some  analogies  to  the  Rubik's  Cube and the
+solving  techniques  are  the  same to that of the Pyraminx.
+Christoph's  Magic  Jewel  is  similar  except  there are no
+trivial    corners   to   solve.  This   has   2^22*12!   or
+2,009,078,326,886,400 different combinations.
+   Uwe Meffert also noticed that there could be an alternate
+twisting  for  the  octahedron where it has period 3 turning
+(i.e. faces turn with 120 degree intervals).
+   One is able  to simulate a Trajber's Octahedron (period 3
+turning and sticky  mode).  Also one is able to simulate one
+with variant turning (period 4 turning and sticky mode).

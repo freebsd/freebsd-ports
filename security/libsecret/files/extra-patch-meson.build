@@ -1,0 +1,10 @@
+--- meson.build.orig	2025-03-18 22:16:57 UTC
++++ meson.build
+@@ -113,7 +113,6 @@ endif
+ endif
+ 
+ # Subfolders
+-subdir('po')
+ subdir('egg')
+ subdir('libsecret')
+ subdir('tool')

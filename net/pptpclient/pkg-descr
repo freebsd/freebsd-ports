@@ -1,0 +1,13 @@
+This is a port of the "pptp-linux" PPTP client.  It can establish a
+PPP connection with an NT server, tunneled through a PPTP link over
+the Internet.  In effect, it makes the client machine behave as if
+it were on the same LAN as the server.
+
+John Polstra has created the port, including bug fixes that were
+subsequently integrated in the upstream release, and a patch to
+use FreeBSD's userland "ppp" package rather than "pppd" which it
+was originally designed to use.
+
+There is no manpage for this package, but you will find some
+quickstart instructions and example configuration files in
+"${PREFIX}/share/examples/pptpclient".

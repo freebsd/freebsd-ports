@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<html>
+  <head>
+    <title>The FreeBSD Ports Collection (%%PORT%%)</title>
+  </head>
+
+  <body>
+    <h1>The FreeBSD Ports Collection (%%PORT%%)</h1>
+    <hr>
+
+    <p>You are now in the directory for the port "%%PORT%%".</p>
+
+    <p>The package name of this port is "%%PKG%%".</p>
+
+    <p>This is the one-line description for this port:</p>
+    <hr>
+
+    <p>
+%%COMMENT%%
+    </p>
+    <hr>
+
+    <p>Please read the "<a href="%%DESCR%%">description file</a>" for a
+    longer description%%WEBSITE%%.</p>
+
+    <p>If needed, you may contact the <a href=
+    "mailto:%%EMAIL%%">maintainer</a> of this port or the port <a href=
+    "mailto:ports@FreeBSD.org">mailing-list</a>.</p>
+
+    <p>%%BUILD_DEPENDS%%</p>
+
+    <p>%%RUN_DEPENDS%%</p>
+
+    <p>Go to the <a href="%%TOP%%/README.html">top of the ports tree</a> for
+    a summary on how to use the ports collection.</p>
+    <hr>
+
+    <p><a href="../README.html">Go up one level</a> | <a href=
+    "%%TOP%%/README.html">Go to top of ports tree</a></p>
+  </body>
+</html>
+

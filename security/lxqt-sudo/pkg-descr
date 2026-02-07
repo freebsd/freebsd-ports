@@ -1,0 +1,3 @@
+lxqt-sudo, lxdoas and lxsu are a graphical front-end of commands
+sudo, doas and su respectively.
+It enables regular users to launch applications with permissions of root.

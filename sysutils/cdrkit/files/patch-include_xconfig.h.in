@@ -1,0 +1,10 @@
+--- include/xconfig.h.in.orig
++++ include/xconfig.h.in
+@@ -147,7 +147,6 @@
+ #define HAVE_POLL 1		/* poll() is present in libc */
+ #define HAVE_SELECT 1		/* select() is present in libc */
+ #define HAVE_LCHOWN 1		/* lchown() is present in libc */
+-#define HAVE_SBRK 1		/* sbrk() is present in libc */
+ #define HAVE_VA_COPY 1		/* va_copy() is present in varargs.h/stdarg.h */
+ #define HAVE_DUP2 1		/* dup2() is present in libc */
+ #define HAVE_GETCWD 1		/* POSIX getcwd() is present in libc */

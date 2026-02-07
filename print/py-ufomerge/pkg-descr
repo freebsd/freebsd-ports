@@ -1,0 +1,8 @@
+ufomerge is a command line utility and Python library merges together two UFO
+source format fonts into a single file. It can be used to include glyphs from
+one font into another font. It takes care of handling:
+- Glyph outlines and information
+- Kerning
+- lib entries
+- Including any needed components
+- "Subsetting" and merging layout rules

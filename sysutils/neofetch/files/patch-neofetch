@@ -1,0 +1,11 @@
+--- neofetch.orig	2022-08-05 13:28:08 UTC
++++ neofetch
+@@ -1193,7 +1193,7 @@ get_distro() {
+ 
+     # Get OS architecture.
+     case $os in
+-        Solaris|AIX|Haiku|IRIX|FreeMiNT)
++        Solaris|AIX|Haiku|IRIX|FreeMiNT|BSD)
+             machine_arch=$(uname -p)
+         ;;
+ 

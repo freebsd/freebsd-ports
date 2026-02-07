@@ -1,0 +1,15 @@
+pdumpfs: a daily backup system similar to Plan9's dumpfs
+
+What's pdumpfs?
+
+pdumpfs is a simple daily backup system similar to Plan9's dumpfs
+which preserves every daily snapshot.  pdumpfs is written in Ruby.
+You can access the past snapshots at any time for retrieving a certain
+day's file.  Let's backup your home directory with pdumpfs!
+
+pdumpfs constructs the snapshot YYYY/MM/DD in the destination
+directory.  All source files are copied to the snapshot directory for
+the first time.  On and after the second time, pdumpfs copies only
+updated or newly created files and stores unchanged files as hard
+links to the files of the previous day's snapshot for saving a disk
+space.

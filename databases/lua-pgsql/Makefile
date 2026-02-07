@@ -1,0 +1,29 @@
+PORTNAME=	pgsql
+PORTVERSION=	1.6.8
+PORTREVISION=	1
+CATEGORIES=	databases
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
+
+MAINTAINER=	dmitry.wagin@ya.ru
+COMMENT=	Lua binding for PostgreSQL
+WWW=		https://github.com/arcapos/luapgsql
+
+LICENSE=	BSD3CLAUSE
+
+USES=		lua:flavors,53+ pgsql:11+
+WANT_PGSQL=	client
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	arcapos
+GH_PROJECT=	luapgsql
+GH_TAGNAME=	0f80ff5
+
+MAKE_ARGS=	LUA_VERSION=${LUA_VER}
+
+PLIST_FILES=	${LUA_MODLIBDIR}/pgsql.so
+
+do-install:
+	${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	${INSTALL_LIB} ${WRKSRC}/libpgsql.so ${STAGEDIR}${LUA_MODLIBDIR}/pgsql.so
+
+.include <bsd.port.mk>

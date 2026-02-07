@@ -1,0 +1,7 @@
+Nkf is a yet another kanji code converter among networks, hosts and
+terminals.  It converts input kanji code to designated kanji code such
+as 7-bit JIS, MS-kanji (shifted-JIS), EUC, or UTF-8.
+
+One of the most unique facicility of nkf is the guess of the input
+kanji code.  It currently recognizes 7-bit JIS, MS-kanji (shifted-JIS),
+EUC, and UTF-8.  So users needn't the input kanji code specification.

@@ -1,0 +1,2 @@
+rich-rst allows rich to print a reStructuredText document in a rich format
+similar to rich.Markdown.

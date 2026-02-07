@@ -1,0 +1,4 @@
+pytest-remotedata provides a plugin for the pytest framework that allows
+developers to control unit tests that require access to data from the internet.
+It was originally part of the astropy core package, but has been moved to a
+separate package in order to be of more general use.

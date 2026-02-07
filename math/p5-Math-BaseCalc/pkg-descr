@@ -1,0 +1,5 @@
+This module facilitates the conversion of numbers between various number
+bases. You may define your own digit sets, or use any of several
+predefined digit sets.
+
+Seamus Venasse <svenasse@polaris.ca>

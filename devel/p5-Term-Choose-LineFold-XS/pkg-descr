@@ -1,0 +1,6 @@
+Width in this context refers to the number of occupied columns of a character
+string on a terminal with a monospaced font.
+
+By default ambiguous width characters are treated as half width. If the
+environment variable TC_AMBIGUOUS_WIDTH_IS_WIDE is set to a true value,
+ambiguous width characters are treated as full width.

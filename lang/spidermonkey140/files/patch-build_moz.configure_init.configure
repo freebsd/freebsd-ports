@@ -1,0 +1,12 @@
+--- build/moz.configure/init.configure.orig	2022-03-30 19:25:29 UTC
++++ build/moz.configure/init.configure
+@@ -729,6 +729,9 @@ def split_triplet(triplet, allow_msvc=False, allow_was
+     elif cpu in ("x86_64", "ia64"):
+         canonical_cpu = cpu
+         endianness = "little"
++    elif cpu in ("amd64"):
++        canonical_cpu = "x86_64"
++        endianness = "little"
+     elif cpu in ("s390", "s390x"):
+         canonical_cpu = cpu
+         endianness = "big"

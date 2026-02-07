@@ -1,0 +1,11 @@
+--- doc/CMakeLists.txt.orig	2023-09-24 18:22:03 UTC
++++ doc/CMakeLists.txt
+@@ -129,7 +129,7 @@ if(SPHINX)
+ 
+     if (UNIX AND NOT APPLE)
+         install(FILES ${QTHELP_DEST} ${QTHELP_IDX}
+-                DESTINATION ${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME}/html
++                DESTINATION ${CMAKE_INSTALL_DOCDIR}/html
+         )
+     elseif (WIN32)
+         install(FILES ${QTHELP_DEST} ${QTHELP_IDX}

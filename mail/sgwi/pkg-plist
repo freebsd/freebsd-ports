@@ -1,0 +1,15 @@
+@sample www/sgwi/.htaccess.sample
+@sample www/sgwi/.htpasswd.sample
+www/sgwi/awl.php
+www/sgwi/connect.php
+www/sgwi/includes/awl.inc.php
+@sample www/sgwi/includes/config.inc.php.sample
+www/sgwi/includes/connect.inc.php
+www/sgwi/includes/copyright.inc.php
+www/sgwi/includes/functions.inc.php
+www/sgwi/includes/opt_in_out.inc.php
+www/sgwi/index.php
+www/sgwi/license.txt
+www/sgwi/main.css
+www/sgwi/opt_in_out.php
+www/sgwi/readme.txt

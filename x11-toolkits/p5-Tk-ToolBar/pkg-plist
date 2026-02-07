@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Tk/ToolBar.pm
+%%SITE_ARCH%%/Tk/ToolBar/tkIcons
+%%SITE_ARCH%%/Tk/demos/widtrib/toolbar.pl
+%%PERL5_MAN3%%/Tk::ToolBar.3.gz

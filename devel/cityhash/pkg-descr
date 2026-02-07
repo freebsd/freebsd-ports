@@ -1,0 +1,22 @@
+CityHash provides hash functions for strings.  The functions mix the
+input bits thoroughly but are not suitable for cryptography.  See
+"Hash Quality," below, for details on how CityHash was tested and so on.
+
+Functions by CityHash:
+
+- CityHash32() returns a 32-bit hash.
+- CityHash64() and similar return a 64-bit hash.
+- CityHash128() and similar return a 128-bit hash and are tuned for
+strings of at least a few hundred bytes.  Depending on your compiler
+and hardware, it's likely faster than CityHash64() on sufficiently long
+strings.  It's slower than necessary on shorter strings, but we expect
+that case to be relatively unimportant.
+- CityHashCrc128() and similar are variants of CityHash128() that depend
+on _mm_crc32_u64(), an intrinsic that compiles to a CRC32 instruction
+on some CPUs.  However, none of the functions we provide are CRCs.
+- CityHashCrc256() is a variant of CityHashCrc128() that also depends
+on _mm_crc32_u64().  It returns a 256-bit hash.
+
+All members of the CityHash family were designed with heavy reliance
+on previous work by Austin Appleby, Bob Jenkins, and others.
+For example, CityHash32 has many similarities with Murmur3a.

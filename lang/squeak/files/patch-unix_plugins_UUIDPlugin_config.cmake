@@ -1,0 +1,13 @@
+--- unix/plugins/UUIDPlugin/config.cmake.orig	2012-09-13 19:09:00 UTC
++++ unix/plugins/UUIDPlugin/config.cmake
+@@ -4,8 +4,8 @@ CONFIG_DEFINE (HAVE_UUID_H)
+ PLUGIN_FIND_INCLUDE (SYS_UUID sys/uuid.h)
+ CONFIG_DEFINE (HAVE_SYS_UUID_H)
+ 
+-PLUGIN_FIND_INCLUDE (UUID_UUID uuid/uuid.h)
+-CONFIG_DEFINE (HAVE_UUID_UUID_H)
++#---PLUGIN_FIND_INCLUDE (UUID_UUID uuid/uuid.h)
++#---CONFIG_DEFINE (HAVE_UUID_UUID_H)
+ 
+ PLUGIN_FIND_LIBRARY (UUID uuid)
+ 

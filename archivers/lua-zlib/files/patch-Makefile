@@ -1,0 +1,62 @@
+--- Makefile.orig	2017-01-03 01:42:12 UTC
++++ Makefile
+@@ -3,7 +3,7 @@
+ LUAPATH  ?= /usr/share/lua/5.1
+ LUACPATH ?= /usr/lib/lua/5.1
+ INCDIR   ?= -I/usr/include/lua5.1
+-LIBDIR   ?= -L/usr/lib
++LUALIBDIR   ?= -L/usr/lib
+ 
+ # For Mac OS X: set the system version
+ MACOSX_VERSION = 10.4
+@@ -11,21 +11,21 @@ MACOSX_VERSION = 10.4
+ CMOD = zlib.so
+ OBJS = lua_zlib.o
+ 
+-LIBS = -lz -llua -lm
++LIBS = -lz -lm
+ WARN = -Wall -pedantic
+ 
+ BSD_CFLAGS  = -O2 -fPIC $(WARN) $(INCDIR) $(DEFS)
+-BSD_LDFLAGS = -O -shared -fPIC $(LIBDIR)
++BSD_LDFLAGS = -O2 -shared $(LUALIBDIR)
+ 
+ LNX_CFLAGS  = -O2 -fPIC $(WARN) $(INCDIR) $(DEFS)
+-LNX_LDFLAGS = -O -shared -fPIC $(LIBDIR)
++LNX_LDFLAGS = -O2 -shared -fPIC $(LUALIBDIR)
+ 
+ MAC_ENV     = env MACOSX_DEPLOYMENT_TARGET='$(MACVER)'
+ MAC_CFLAGS  = -O2 -fPIC -fno-common $(WARN) $(INCDIR) $(DEFS)
+-MAC_LDFLAGS = -bundle -undefined dynamic_lookup -fPIC $(LIBDIR)
++MAC_LDFLAGS = -bundle -undefined dynamic_lookup -fPIC $(LUALIBDIR)
+ 
+-CC = gcc
+-LD = $(MYENV) gcc
++CC ?= gcc
++LD ?= $(MYENV) gcc
+ CFLAGS  = $(MYCFLAGS)
+ LDFLAGS = $(MYLDFLAGS)
+ 
+@@ -44,13 +44,13 @@ uninstall:
+ 	rm $(LUACPATH)/zlib.so
+ 
+ linux:
+-	@$(MAKE) $(CMOD) MYCFLAGS="$(LNX_CFLAGS)" MYLDFLAGS="$(LNX_LDFLAGS)" INCDIR="$(INCDIR)" LIBDIR="$(LIBDIR)" DEFS="$(DEFS)"
++	@$(MAKE) $(CMOD) MYCFLAGS="$(LNX_CFLAGS)" MYLDFLAGS="$(LNX_LDFLAGS)" INCDIR="$(INCDIR)" LUALIBDIR="$(LUALIBDIR)" DEFS="$(DEFS)"
+ 
+ bsd:
+-	@$(MAKE) $(CMOD) MYCFLAGS="$(BSD_CFLAGS)" MYLDFLAGS="$(BSD_LDFLAGS)" INCDIR="$(INCDIR)" LIBDIR="$(LIBDIR)" DEFS="$(DEFS)"
++	@$(MAKE) $(CMOD) MYCFLAGS="$(BSD_CFLAGS)" MYLDFLAGS="$(BSD_LDFLAGS)" INCDIR="$(INCDIR)" LUALIBDIR="$(LUALIBDIR)" DEFS="$(DEFS)"
+ 
+ macosx:
+-	@$(MAKE) $(CMOD) MYCFLAGS="$(MAC_CFLAGS)" MYLDFLAGS="$(MAC_LDFLAGS)" MYENV="$(MAC_ENV)" INCDIR="$(INCDIR)" LIBDIR="$(LIBDIR)" DEFS="$(DEFS)"
++	@$(MAKE) $(CMOD) MYCFLAGS="$(MAC_CFLAGS)" MYLDFLAGS="$(MAC_LDFLAGS)" MYENV="$(MAC_ENV)" INCDIR="$(INCDIR)" LUALIBDIR="$(LUALIBDIR)" DEFS="$(DEFS)"
+ 
+ clean:
+ 	rm -f $(OBJS) $(CMOD)
+@@ -59,4 +59,4 @@ clean:
+ 	$(CC) -c $(CFLAGS) $(DEFS) $(INCDIR) -o $@ $<
+ 
+ $(CMOD): $(OBJS)
+-	$(LD) $(LDFLAGS) $(LIBDIR) $(OBJS) $(LIBS) -o $@
++	$(LD) $(LDFLAGS) $(LUALIBDIR) $(OBJS) $(LIBS) -o $@

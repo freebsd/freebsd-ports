@@ -1,0 +1,39 @@
+PORTNAME=	mozjpeg
+PORTVERSION=	4.1.5
+DISTVERSIONPREFIX=	v
+CATEGORIES=	graphics
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Improved JPEG encoder by Mozilla
+WWW=		https://github.com/mozilla/mozjpeg
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BROKEN_mips64=	does not configure: error: SIMD support cannot be enabled
+
+BUILD_DEPENDS=	nasm>=2.10,1:devel/nasm
+LIB_DEPENDS=	libpng.so:graphics/png
+
+USES=		cmake cpe
+
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
+CMAKE_OFF=	REQUIRE_SIMD WITH_12BIT WITH_ARITH_DEC WITH_ARITH_ENC WITH_FUZZ WITH_JAVA WITH_JPEG7
+CMAKE_ON=	ENABLE_SHARED ENABLE_STATIC FORCE_INLINE PNG_SUPPORTED WITH_JPEG8 WITH_MEM_SRCDST WITH_SIMD WITH_TURBOJPEG
+#PIE_UNSAFE=	yes
+TEST_TARGET=	test
+USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	jpeg-turbo
+
+CPE_VENDOR=	mozilla
+
+GH_ACCOUNT=	mozilla
+USE_GITHUB=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.mk>

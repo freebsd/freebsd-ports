@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2004-10-18 05:05:24 UTC
++++ Makefile.in
+@@ -30,11 +30,11 @@ distclean: clean
+ 	rm -f Makefile config.h config.status config.log swapd.8 swapd.conf.5
+ 
+ install: all
+-	-$(INSTALL) -d $(sbindir)
+-	-$(INSTALL) -d $(sysconfdir)
+-	-$(INSTALL) -d $(mandir)/man8
+-	-$(INSTALL) -d $(mandir)/man5
+-	$(INSTALL) -m 755 swapd$(EXEEXT) $(sbindir)/swapd$(EXEEXT)
+-	$(INSTALL) -m 644 swapd.conf $(sysconfdir)/swapd.conf
+-	$(INSTALL) -m 644 swapd.8 $(mandir)/man8/swapd.8
+-	$(INSTALL) -m 644 swapd.conf.5 $(mandir)/man5/swapd.conf.5
++	-$(INSTALL) -d $(DESTDIR)$(sbindir)
++	-$(INSTALL) -d $(DESTDIR)$(sysconfdir)
++	-$(INSTALL) -d $(DESTDIR)$(mandir)/man8
++	-$(INSTALL) -d $(DESTDIR)$(mandir)/man5
++	$(INSTALL) -m 755 swapd$(EXEEXT) $(DESTDIR)$(sbindir)/swapd$(EXEEXT)
++	$(INSTALL) -m 644 swapd.conf $(DESTDIR)$(sysconfdir)/swapd.conf.sample
++	$(INSTALL) -m 644 swapd.8 $(DESTDIR)$(mandir)/man8/swapd.8
++	$(INSTALL) -m 644 swapd.conf.5 $(DESTDIR)$(mandir)/man5/swapd.conf.5

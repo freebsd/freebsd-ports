@@ -1,0 +1,16 @@
+Aview is powerful graphics viewer which utilize the aalib API and allows
+viewing netpbm format (and others in the presence of netpbm or ImageMagick)
+on console (using slang) and X.
+There are three programs.
+
+aview: the main program which could used to view pnm, ppm, pgm and pbm
+	files. It runs under X or slang.
+
+asciiview: a shell script wraps around aview to allow wider range of image
+	formats to be viewed. Netpbm package is required for the conversion.
+
+aaflip: a program to view flip animation using ascii text. Works under X
+	and slang.
+
+You could press h to get help. You may also save the pics in various text
+format. Thanks to aalib!

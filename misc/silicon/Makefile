@@ -1,0 +1,237 @@
+PORTNAME=	silicon
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.3
+PORTREVISION=	13
+CATEGORIES=	misc
+PKGNAMESUFFIX=	-code-visualizer
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Create beautiful image of your source code
+WWW=		https://github.com/Aloxaf/silicon
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libonig.so:devel/oniguruma
+
+USES=		cargo python:build xorg
+USE_XORG=	xcb
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Aloxaf
+
+CARGO_CRATES=	ab_glyph_rasterizer-0.1.8 \
+		adler-1.0.2 \
+		adler2-2.0.0 \
+		ansi_term-0.12.1 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
+		anstyle-wincon-3.0.4 \
+		anyhow-1.0.89 \
+		approx-0.5.1 \
+		atty-0.2.14 \
+		autocfg-1.3.0 \
+		base64-0.22.1 \
+		bincode-1.3.3 \
+		bitflags-1.3.2 \
+		bitflags-2.6.0 \
+		block-0.1.6 \
+		bytemuck-1.18.0 \
+		byteorder-1.5.0 \
+		cc-1.1.21 \
+		cfg-if-1.0.0 \
+		clap-2.34.0 \
+		clipboard-0.5.0 \
+		clipboard-win-2.2.0 \
+		clipboard-win-5.4.0 \
+		cocoa-0.24.1 \
+		cocoa-foundation-0.1.2 \
+		color_quant-1.1.0 \
+		colorchoice-1.0.2 \
+		conv-0.3.3 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.7 \
+		core-graphics-0.22.3 \
+		core-graphics-types-0.1.3 \
+		core-text-19.2.0 \
+		crc32fast-1.4.2 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.20 \
+		cstr-0.2.12 \
+		custom_derive-0.1.7 \
+		deranged-0.3.11 \
+		dirs-5.0.1 \
+		dirs-next-2.0.0 \
+		dirs-sys-0.4.1 \
+		dirs-sys-next-0.1.2 \
+		dlib-0.5.2 \
+		dwrote-0.11.1 \
+		either-1.13.0 \
+		env_filter-0.1.2 \
+		env_logger-0.11.5 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		error-code-3.3.1 \
+		fastrand-2.1.1 \
+		fdeflate-0.3.5 \
+		flate2-1.0.33 \
+		float-ord-0.3.2 \
+		fnv-1.0.7 \
+		font-kit-0.12.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		freetype-0.7.2 \
+		freetype-sys-0.20.1 \
+		getrandom-0.1.16 \
+		getrandom-0.2.15 \
+		harfbuzz-sys-0.5.0 \
+		hashbrown-0.14.5 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		humantime-2.1.0 \
+		image-0.24.9 \
+		imageproc-0.23.0 \
+		indexmap-2.5.0 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.10.5 \
+		itoa-1.0.11 \
+		jpeg-decoder-0.3.1 \
+		lazy_static-1.5.0 \
+		libc-0.2.159 \
+		libloading-0.8.5 \
+		libredox-0.1.3 \
+		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.4.14 \
+		log-0.4.22 \
+		malloc_buf-0.0.6 \
+		matrixmultiply-0.3.9 \
+		memchr-2.7.4 \
+		miniz_oxide-0.7.4 \
+		miniz_oxide-0.8.0 \
+		nalgebra-0.30.1 \
+		num-0.4.3 \
+		num-bigint-0.4.6 \
+		num-complex-0.4.6 \
+		num-conv-0.1.0 \
+		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-rational-0.4.2 \
+		num-traits-0.2.19 \
+		objc-0.2.7 \
+		objc-foundation-0.1.1 \
+		objc_id-0.1.1 \
+		once_cell-1.19.0 \
+		onig-6.4.0 \
+		onig_sys-69.8.1 \
+		option-ext-0.2.0 \
+		os_info-3.8.2 \
+		owned_ttf_parser-0.15.2 \
+		paste-1.0.15 \
+		pasteboard-0.1.3 \
+		pathfinder_geometry-0.5.1 \
+		pkg-config-0.3.31 \
+		plist-1.7.0 \
+		png-0.17.13 \
+		powerfmt-0.2.0 \
+		ppv-lite86-0.2.20 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.86 \
+		quick-xml-0.32.0 \
+		quote-1.0.37 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_distr-0.2.2 \
+		rand_hc-0.2.0 \
+		rawpointer-0.2.1 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		redox_users-0.4.6 \
+		regex-syntax-0.8.4 \
+		rustc_version-0.4.1 \
+		rustix-0.38.37 \
+		rusttype-0.9.3 \
+		ryu-1.0.18 \
+		safe_arch-0.7.2 \
+		same-file-1.0.6 \
+		semver-1.0.23 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
+		shell-words-1.1.0 \
+		shlex-1.3.0 \
+		simba-0.7.3 \
+		simd-adler32-0.3.7 \
+		strsim-0.8.0 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		syn-1.0.109 \
+		syn-2.0.77 \
+		syntect-5.2.0 \
+		tempfile-3.12.0 \
+		term_size-0.3.2 \
+		textwrap-0.11.0 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
+		time-0.3.36 \
+		time-core-0.1.2 \
+		time-macros-0.2.18 \
+		ttf-parser-0.15.2 \
+		typenum-1.17.0 \
+		unicode-ident-1.0.13 \
+		unicode-segmentation-1.12.0 \
+		unicode-width-0.1.14 \
+		utf8parse-0.2.2 \
+		vec_map-0.8.2 \
+		version_check-0.9.5 \
+		walkdir-2.5.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wide-0.7.28 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.9 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.6 \
+		wio-0.2.2 \
+		x11-clipboard-0.3.3 \
+		xcb-0.8.2 \
+		yaml-rust-0.4.5 \
+		yeslogic-fontconfig-sys-5.0.0 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
+		pathfinder_simd@git+https://github.com/servo/pathfinder\#1b7c8bcdaf9da3f045af6a650b5f5c00f0c5a7eb
+
+PLIST_FILES=	bin/${PORTNAME}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+PORTSCOUT=	limit:^.*[0-9]\.[0-9].*$$ # prevent tags like preview-3
+
+.include <bsd.port.mk>

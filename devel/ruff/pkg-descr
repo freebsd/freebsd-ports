@@ -1,0 +1,13 @@
+ruff is an extremely fast Python linter, written in Rust.
+
+Features:
+* 10-100x faster than existing linters
+* Installable via pip
+* Python 3.11 compatibility
+* pyproject.toml support
+* Built-in caching, to avoid re-analyzing unchanged files
+* Autofix support, for automatic error correction (e.g., automatically
+  remove unused imports)
+* Near-parity with the built-in Flake8 rule set
+* Native re-implementations of popular Flake8 plugins, like flake8-bugbear
+* Monorepo-friendly configuration via hierarchical and cascading settings

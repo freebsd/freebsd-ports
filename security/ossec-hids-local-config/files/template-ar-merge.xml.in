@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <active-response>
+    <!-- Create "ossec.conf" and "agent.conf" if "ossec.conf.d/*" or "agent.conf.d/*" files change. -->
+    <command>merge-config</command>
+    <location>local</location>
+    <rules_id>56001,56003,56021,56023</rules_id>
+  </active-response>
+
+</template_config>

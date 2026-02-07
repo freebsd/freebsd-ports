@@ -1,0 +1,33 @@
+--- tinyca2.orig
++++ tinyca2
+@@ -18,7 +18,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ 
+-BEGIN { unshift(@INC, './lib'); # put here the location of the modules
++BEGIN { unshift(@INC, '%%SITE_PERL%%/tinyca'); # put here the location of the modules
+ }
+ 
+ use strict;
+@@ -55,9 +55,9 @@
+ my $init = {};
+ 
+ # location of openssl
+-$init->{'opensslbin'} = "/usr/bin/openssl";
+-$init->{'zipbin'} = "/usr/bin/zip";
+-$init->{'tarbin'} = "/bin/tar";
++$init->{'opensslbin'} = "%%OPENSSLBASE%%/bin/openssl";
++$init->{'zipbin'} = "%%PREFIX%%/bin/zip";
++$init->{'tarbin'} = "/usr/bin/tar";
+ 
+ if(not -x $init->{'opensslbin'}) {
+    printf(gettext("Can't execute %s.\n"), $init->{'opensslbin'});
+@@ -76,7 +76,7 @@
+ }
+ 
+ # directory with the templates
+-$init->{'templatedir'} = "./templates";
++$init->{'templatedir'} = "%%PREFIX%%/etc";
+ 
+ if(not -d $init->{'templatedir'}) {
+    print gettext("Can't find templatedir.\n");

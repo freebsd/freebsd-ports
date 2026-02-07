@@ -1,0 +1,22 @@
+PORTNAME=	Class-Component
+PORTVERSION=	0.17
+PORTREVISION=	1
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Pluggable component framework
+WWW=		https://metacpan.org/release/Class-Component
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Carp-Clan>0:devel/p5-Carp-Clan \
+		p5-Class-Accessor>0:devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>0:devel/p5-Class-Data-Inheritable \
+		p5-Class-Inspector>0:devel/p5-Class-Inspector \
+		p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

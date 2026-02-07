@@ -1,0 +1,14 @@
+Drop after comms/lirc >= 0.9.2 update.
+https://sourceforge.net/p/lirc/git/ci/c763e92584a9
+
+--- meson.build.orig	2022-06-21 12:04:40 UTC
++++ meson.build
+@@ -224,7 +224,7 @@ endif
+   plugins += 'notification'
+ endif
+ 
+-lirc = dependency('lirc', required: get_option('lirc'))
++lirc = cc.find_library('lirc_client', required: get_option('lirc'))
+ if lirc.found()
+   plugins += 'lirc'
+ endif

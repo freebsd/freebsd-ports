@@ -1,0 +1,31 @@
+PORTNAME=	squish
+DISTVERSION=	1.15
+PORTREVISION=	1
+CATEGORIES=	graphics
+MASTER_SITES=	SF/lib${PORTNAME}
+DISTNAME=	lib${PORTNAME}-${DISTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Open source DXT compression library
+WWW=		https://sourceforge.net/projects/libsquish/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		cmake tar:tgz
+USE_LDCONFIG=	yes
+
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	lib/libsquish.so.0.0 \
+		lib/libsquish.so \
+		include/squish.h
+
+CMAKE_ON_aarch64=	BUILD_SQUISH_WITH_OPENMP
+CMAKE_ON_amd64=		BUILD_SQUISH_WITH_OPENMP BUILD_SQUISH_WITH_SSE2
+CMAKE_ON_i386=		BUILD_SQUISH_WITH_OPENMP
+CMAKE_ON_powerpc64=	BUILD_SQUISH_WITH_OPENMP
+CMAKE_ON_powerpc64le=	BUILD_SQUISH_WITH_OPENMP
+CMAKE_ON=		BUILD_SHARED_LIBS ${CMAKE_ON_${ARCH}}
+
+.include <bsd.port.mk>

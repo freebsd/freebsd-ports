@@ -1,0 +1,115 @@
+#! /bin/sh -
+
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Copyright (c) 2020 Mateusz Piotrowski <0mp@FreeBSD.org>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#     1. Redistributions of source code must retain the above copyright notice,
+#        this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright
+#        notice, this list of conditions and the following disclaimer in the
+#        documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+# PROVIDE: fahclient
+# REQUIRE: DAEMON LOGIN NETWORKING linux
+
+#
+# Add the following lines to /etc/rc.conf to enable nginx:
+# fahclient_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable fahclient.
+# fahclient_user (str):		Default: "fahclient"
+#				User to run fahclient as.
+# fahclient_chdir (str):	Default: "%%FAHCLIENT_WORK_DIR%%"
+#				Directory to chdir before starting fahclient.
+# fahclient_config (str):	Default: "%%ETCDIR%%/config.xml"
+#				Path to fahclient configuration file.
+# fahclient_donor (str):	Default: "Anonymous"
+#				Donor to attribute work units to.
+#				Settings in fahclient_config take precedence.
+# fahclient_team (str):		Default: "11743" (FreeBSD Team)
+#				Team to attribute work units to.
+#				Settings in fahclient_config take precedence.
+# fahclient_pidfile (str):	Default: "%%FAHCLIENT_WORK_DIR%%/fahclient.pid"
+#				Path to PID file.
+# fahclient_logfile (str):	Default: "%%FAHCLIENT_WORK_DIR%%/log.txt"
+#				Path to log file. Takes precedence over
+#				settings in fahclient_config.
+# fahclient_flags (str):	Default: ""
+#				Extra flags passed to start command *before*
+#				other options.
+# fahclient_extra_flags (str):	Defaults to ""
+#				Extra flags passed to start command *after*
+#				other options.
+
+. /etc/rc.subr
+
+name='fahclient'
+rcvar='fahclient_enable'
+
+load_rc_config 'fahclient'
+
+# Default settings.
+: "${fahclient_enable:=NO}"
+: "${fahclient_user:=fahclient}"
+: "${fahclient_chdir:=%%FAHCLIENT_WORK_DIR%%}"
+: "${fahclient_svcj_options:=net_basic}"
+
+: "${fahclient_donor:=Anonymous}"
+: "${fahclient_team:=11743}"
+
+: "${fahclient_pidfile:=%%FAHCLIENT_WORK_DIR%%/fahclient.pid}"
+: "${fahclient_config:=%%ETCDIR%%/config.xml}"
+: "${fahclient_logfile:=%%FAHCLIENT_WORK_DIR%%/log.txt}"
+
+pidfile="${fahclient_pidfile}"
+procname="%%FAHCLIENT_PROGRAM%%"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -- ${procname}"
+# Some notes on the specified options:
+# - fahclient_flags are passed in before other options by the rc
+#   framework.
+# - --user sets the donor work units are attributed to (config file takes
+#   precedence).
+# - --team sets the team work units are attributed to (cfg file takes
+#   precedence).
+# - --config is necessary to point the program to the correct configuration
+#   file.
+# - --chdir is used to switch to a desired work directory. The program is going
+#   to create a lot of files in its current working directory so should not be
+#   just any directory on the system.
+# - fahclient_extra_flags are passed in after all other options.
+_fahclient_command_args=
+_fahclient_command_args="${_fahclient_command_args} --user=${fahclient_donor}"
+_fahclient_command_args="${_fahclient_command_args} --team=${fahclient_team}"
+_fahclient_command_args="${_fahclient_command_args} --config=${fahclient_config}"
+#_fahclient_command_args="${_fahclient_command_args} --chdir=${fahclient_chdir}"
+_fahclient_command_args="${_fahclient_command_args} --log=${fahclient_logfile}"
+_fahclient_command_args="${_fahclient_command_args} --log-rotate-dir=$(dirname ${fahclient_logfile})"
+_fahclient_command_args="${_fahclient_command_args} --log-to-screen=false"
+_fahclient_command_args="${_fahclient_command_args} ${fahclient_extra_flags}"
+command_args="${command_args} ${_fahclient_command_args}"
+extra_commands="log showconfig"
+log_cmd="tail -F -- ${fahclient_logfile}"
+showconfig_cmd="${procname} ${fahclient_flags} ${_fahclient_command_args} --print"
+if [ -n "$fahclient_user" ]; then
+	showconfig_cmd="su -m $fahclient_user -c 'sh -c \"$showconfig_cmd\"'"
+fi
+required_modules='linprocfs linsysfs linux64:linux64elf'
+
+cd ${fahclient_chdir}
+run_rc_command "$1"

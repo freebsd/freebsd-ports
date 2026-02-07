@@ -1,0 +1,3 @@
+ColourChooser is a dialogue box which allows the user to pick a colour from
+the list in rgb.txt (supplied with X Windows), or to create a colour by
+setting RGB (red, green, blue) values with slider controls.

@@ -1,0 +1,11 @@
+--- unixunpk.man.orig   Wed Mar  1 13:54:19 2006
++++ unixunpk.man        Wed Mar  1 13:54:38 2006
+@@ -107,7 +107,7 @@
+ .SH ENVIRONMENT
+ .TP
+ .B TMPDIR
+-Directory to store temporary files.  Default is /usr/tmp.
++Directory to store temporary files.  Default is /tmp.
+ .SH FILES
+ .TP
+ .B $TMPDIR/m-prts-$USER/

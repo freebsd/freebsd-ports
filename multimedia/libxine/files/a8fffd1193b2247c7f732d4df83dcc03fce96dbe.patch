@@ -1,0 +1,20 @@
+# HG changeset patch
+# User Xavier Bachelot <xavier@bachelot.org>
+# Date 1758280185 -7200
+#      Fri Sep 19 13:09:45 2025 +0200
+# Node ID a8fffd1193b2247c7f732d4df83dcc03fce96dbe
+# Parent  9bb3977ea7e2b652742b3cdd200b0a4a72eb48bc
+Fix FFmpeg compatibilty update.
+
+diff -r 9bb3977ea7e2 -r a8fffd1193b2 src/combined/ffmpeg/ff_video_decoder.c
+--- a/src/combined/ffmpeg/ff_video_decoder.c	Sat Sep 13 10:59:45 2025 +0200
++++ b/src/combined/ffmpeg/ff_video_decoder.c	Fri Sep 19 13:09:45 2025 +0200
+@@ -61,7 +61,7 @@
+ #include "ffmpeg_compat.h"
+ 
+ #if XFF_FRAME_RATE == 2
+-#  include <avcodec/codec_desc.h>
++#  include <libavcodec/codec_desc.h>
+ #endif
+ 
+ #if LIBAVCODEC_VERSION_INT >= XFF_INT_VERSION(59,0,100)

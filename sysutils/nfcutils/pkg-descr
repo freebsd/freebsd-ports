@@ -1,0 +1,4 @@
+Near Field Communication (NFC) utilities
+
+This package contains one utility for listing NFC devices and
+in-field tags or targets.

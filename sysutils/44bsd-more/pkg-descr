@@ -1,0 +1,9 @@
+This is /usr/bin/more from FreeBSD before the import of the less(1) pager.
+It is an older version of less that includes some enhancements and fixes
+not in less.  These enhancments include support for global(1) tags,
+nicer horizontal scrolling, support for portable keyboard configurations
+using termcap(5), and a much shorter manpage.
+
+Due to the debatability of the latter feature (is it an enhancement or
+a bug?), /usr/bin/more has been replaced.  This port is available for
+those who desire any of the above features.

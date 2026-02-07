@@ -1,0 +1,147 @@
+--- data/Makefile.in.orig	2022-07-18 03:38:31 UTC
++++ data/Makefile.in
+@@ -99,7 +99,6 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
+ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
+ 	$(ACLOCAL_M4)
+ DIST_COMMON = $(srcdir)/Makefile.am \
+-	$(dist_apparmor_profile_abstractions_DATA) \
+ 	$(dist_completions_DATA) $(dist_conf_DATA) $(dist_dbus_DATA) \
+ 	$(dist_dbusconf_DATA) $(dist_init_DATA) $(dist_pam_DATA) \
+ 	$(am__DIST_COMMON)
+@@ -155,16 +154,13 @@ am__uninstall_files_from_dir = { \
+   }
+ man1dir = $(mandir)/man1
+ am__installdirs = "$(DESTDIR)$(man1dir)" \
+-	"$(DESTDIR)$(apparmor_profiledir)" \
+-	"$(DESTDIR)$(apparmor_profile_abstractionsdir)" \
+ 	"$(DESTDIR)$(completionsdir)" "$(DESTDIR)$(confdir)" \
+ 	"$(DESTDIR)$(dbusdir)" "$(DESTDIR)$(dbusconfdir)" \
+ 	"$(DESTDIR)$(initdir)" "$(DESTDIR)$(pamdir)" \
+ 	"$(DESTDIR)$(polkitdir)"
+ NROFF = nroff
+ MANS = $(dist_man1_MANS)
+-DATA = $(apparmor_profile_DATA) \
+-	$(dist_apparmor_profile_abstractions_DATA) \
++DATA = \
+ 	$(dist_completions_DATA) $(dist_conf_DATA) $(dist_dbus_DATA) \
+ 	$(dist_dbusconf_DATA) $(dist_init_DATA) $(dist_pam_DATA) \
+ 	$(polkit_DATA)
+@@ -375,15 +371,7 @@ dist_pam_DATA = pam/lightdm \
+ 
+ completionsdir = $(datadir)/bash-completion/completions
+ dist_completions_DATA = bash-completion/dm-tool bash-completion/lightdm
+-apparmor_profiledir = $(sysconfdir)/apparmor.d
+-apparmor_profile_DATA = \
+-    lightdm-guest-session
+ 
+-apparmor_profile_abstractionsdir = $(apparmor_profiledir)/abstractions
+-dist_apparmor_profile_abstractions_DATA = \
+-    apparmor/abstractions/lightdm \
+-    apparmor/abstractions/lightdm_chromium-browser
+-
+ accountsservice_interface = org.freedesktop.DisplayManager.AccountsService.xml
+ dbusdir = $(datadir)/dbus-1/interfaces
+ dist_dbus_DATA = \
+@@ -476,48 +464,6 @@ uninstall-man1:
+ 	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
+ 	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
+-install-apparmor_profileDATA: $(apparmor_profile_DATA)
+-	@$(NORMAL_INSTALL)
+-	@list='$(apparmor_profile_DATA)'; test -n "$(apparmor_profiledir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(apparmor_profiledir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(apparmor_profiledir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(apparmor_profiledir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(apparmor_profiledir)" || exit $$?; \
+-	done
+-
+-uninstall-apparmor_profileDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(apparmor_profile_DATA)'; test -n "$(apparmor_profiledir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(apparmor_profiledir)'; $(am__uninstall_files_from_dir)
+-install-dist_apparmor_profile_abstractionsDATA: $(dist_apparmor_profile_abstractions_DATA)
+-	@$(NORMAL_INSTALL)
+-	@list='$(dist_apparmor_profile_abstractions_DATA)'; test -n "$(apparmor_profile_abstractionsdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(apparmor_profile_abstractionsdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(apparmor_profile_abstractionsdir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(apparmor_profile_abstractionsdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(apparmor_profile_abstractionsdir)" || exit $$?; \
+-	done
+-
+-uninstall-dist_apparmor_profile_abstractionsDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(dist_apparmor_profile_abstractions_DATA)'; test -n "$(apparmor_profile_abstractionsdir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(apparmor_profile_abstractionsdir)'; $(am__uninstall_files_from_dir)
+ install-dist_completionsDATA: $(dist_completions_DATA)
+ 	@$(NORMAL_INSTALL)
+ 	@list='$(dist_completions_DATA)'; test -n "$(completionsdir)" || list=; \
+@@ -708,7 +654,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(MANS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(apparmor_profiledir)" "$(DESTDIR)$(apparmor_profile_abstractionsdir)" "$(DESTDIR)$(completionsdir)" "$(DESTDIR)$(confdir)" "$(DESTDIR)$(dbusdir)" "$(DESTDIR)$(dbusconfdir)" "$(DESTDIR)$(initdir)" "$(DESTDIR)$(pamdir)" "$(DESTDIR)$(polkitdir)"; do \
++	for dir in "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(completionsdir)" "$(DESTDIR)$(confdir)" "$(DESTDIR)$(dbusdir)" "$(DESTDIR)$(dbusconfdir)" "$(DESTDIR)$(initdir)" "$(DESTDIR)$(pamdir)" "$(DESTDIR)$(polkitdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -762,9 +708,8 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-apparmor_profileDATA \
+-	install-dist_apparmor_profile_abstractionsDATA \
+-	install-dist_completionsDATA install-dist_confDATA \
++install-data-am: install-dist_completionsDATA \
++	install-dist_confDATA \
+ 	install-dist_dbusDATA install-dist_dbusconfDATA \
+ 	install-dist_initDATA install-dist_pamDATA install-man \
+ 	install-polkitDATA
+@@ -812,9 +757,8 @@ ps: ps-am
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-apparmor_profileDATA \
+-	uninstall-dist_apparmor_profile_abstractionsDATA \
+-	uninstall-dist_completionsDATA uninstall-dist_confDATA \
++uninstall-am: uninstall-dist_completionsDATA \
++	uninstall-dist_confDATA \
+ 	uninstall-dist_dbusDATA uninstall-dist_dbusconfDATA \
+ 	uninstall-dist_initDATA uninstall-dist_pamDATA uninstall-man \
+ 	uninstall-polkitDATA
+@@ -826,8 +770,8 @@ uninstall-man: uninstall-man1
+ .PHONY: all all-am check check-am clean clean-generic clean-libtool \
+ 	cscopelist-am ctags-am distclean distclean-generic \
+ 	distclean-libtool distdir dvi dvi-am html html-am info info-am \
+-	install install-am install-apparmor_profileDATA install-data \
+-	install-data-am install-dist_apparmor_profile_abstractionsDATA \
++	install install-am install-data \
++	install-data-am \
+ 	install-dist_completionsDATA install-dist_confDATA \
+ 	install-dist_dbusDATA install-dist_dbusconfDATA \
+ 	install-dist_initDATA install-dist_pamDATA install-dvi \
+@@ -838,8 +782,7 @@ uninstall-man: uninstall-man1
+ 	installcheck installcheck-am installdirs maintainer-clean \
+ 	maintainer-clean-generic mostlyclean mostlyclean-generic \
+ 	mostlyclean-libtool pdf pdf-am ps ps-am tags-am uninstall \
+-	uninstall-am uninstall-apparmor_profileDATA \
+-	uninstall-dist_apparmor_profile_abstractionsDATA \
++	uninstall-am \
+ 	uninstall-dist_completionsDATA uninstall-dist_confDATA \
+ 	uninstall-dist_dbusDATA uninstall-dist_dbusconfDATA \
+ 	uninstall-dist_initDATA uninstall-dist_pamDATA uninstall-man \

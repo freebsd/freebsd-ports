@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2016-01-14 02:00:17 UTC
++++ CMakeLists.txt
+@@ -101,7 +101,11 @@ if(CRYPTO_OPENSSL AND NOT OPENSSL_FOUND)
+ endif()
+ if(OPENSSL_FOUND)
+     set(HAVE_OPENSSL TRUE)
+-    check_include_files(openssl/fips.h HAVE_OPENSSL_FIPS_H)
++    if(${CMAKE_SYSTEM_NAME} MATCHES "^(FreeBSD|DragonFly)$")
++        set(HAVE_OPENSSL_FIPS_H "")
++    else()
++        check_include_files(openssl/fips.h HAVE_OPENSSL_FIPS_H)
++    endif()
+ elseif(PKGCONFIG_FOUND)
+     pkg_check_modules(GNUTLS gnutls>=3.0.0)
+ endif()

@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2024-10-10 01:50:58 UTC
++++ pyproject.toml
+@@ -24,8 +24,7 @@ description = "Client for Microsoft Exchange Web Serv
+ description = "Client for Microsoft Exchange Web Services (EWS)"
+ readme = {file = "README.md", content-type = "text/markdown"}
+ requires-python = ">=3.10"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-2-Clause"}
+ keywords = [
+     "autodiscover",
+     "ews",

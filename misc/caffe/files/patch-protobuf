@@ -1,0 +1,77 @@
+--- src/caffe/layers/hdf5_data_layer.cpp.orig	2020-02-13 07:20:36 UTC
++++ src/caffe/layers/hdf5_data_layer.cpp
+@@ -7,7 +7,9 @@ TODO:
+   :: don't forget to update hdf5_daa_layer.cu accordingly
+ - add ability to shuffle filenames if flag is set
+ */
++#include <algorithm>
+ #include <fstream>  // NOLINT(readability/streams)
++#include <random>
+ #include <string>
+ #include <vector>
+ 
+@@ -38,6 +40,9 @@ void HDF5DataLayer<Dtype>::LoadHDF5FileData(const char
+   const int MIN_DATA_DIM = 1;
+   const int MAX_DATA_DIM = INT_MAX;
+ 
++  std::random_device rd;
++  std::mt19937 g(rd());
++
+   for (int i = 0; i < top_size; ++i) {
+     hdf_blobs_[i] = shared_ptr<Blob<Dtype> >(new Blob<Dtype>());
+     // Allow reshape here, as we are loading data not params
+@@ -62,7 +67,7 @@ void HDF5DataLayer<Dtype>::LoadHDF5FileData(const char
+ 
+   // Shuffle if needed.
+   if (this->layer_param_.hdf5_data_param().shuffle()) {
+-    std::random_shuffle(data_permutation_.begin(), data_permutation_.end());
++    std::shuffle(data_permutation_.begin(), data_permutation_.end(), g);
+     DLOG(INFO) << "Successfully loaded " << hdf_blobs_[0]->shape(0)
+                << " rows (shuffled)";
+   } else {
+@@ -73,6 +78,8 @@ void HDF5DataLayer<Dtype>::LoadHDF5FileData(const char
+ template <typename Dtype>
+ void HDF5DataLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,
+       const vector<Blob<Dtype>*>& top) {
++  std::random_device rd;
++  std::mt19937 g(rd());
+   // Refuse transformation parameters since HDF5 is totally generic.
+   CHECK(!this->layer_param_.has_transform_param()) <<
+       this->type() << " does not transform data.";
+@@ -105,7 +112,7 @@ void HDF5DataLayer<Dtype>::LayerSetUp(const vector<Blo
+ 
+   // Shuffle if needed.
+   if (this->layer_param_.hdf5_data_param().shuffle()) {
+-    std::random_shuffle(file_permutation_.begin(), file_permutation_.end());
++    std::shuffle(file_permutation_.begin(), file_permutation_.end(), g);
+   }
+ 
+   // Load the first HDF5 file and initialize the line counter.
+@@ -138,14 +145,16 @@ bool HDF5DataLayer<Dtype>::Skip() {
+ 
+ template<typename Dtype>
+ void HDF5DataLayer<Dtype>::Next() {
++  std::random_device rd;
++  std::mt19937 g(rd());
+   if (++current_row_ == hdf_blobs_[0]->shape(0)) {
+     if (num_files_ > 1) {
+       ++current_file_;
+       if (current_file_ == num_files_) {
+         current_file_ = 0;
+         if (this->layer_param_.hdf5_data_param().shuffle()) {
+-          std::random_shuffle(file_permutation_.begin(),
+-                              file_permutation_.end());
++          std::shuffle(file_permutation_.begin(),
++                              file_permutation_.end(), g);
+         }
+         DLOG(INFO) << "Looping around to first file.";
+       }
+@@ -154,7 +163,7 @@ void HDF5DataLayer<Dtype>::Next() {
+     }
+     current_row_ = 0;
+     if (this->layer_param_.hdf5_data_param().shuffle())
+-      std::random_shuffle(data_permutation_.begin(), data_permutation_.end());
++      std::shuffle(data_permutation_.begin(), data_permutation_.end(), g);
+   }
+   offset_++;
+ }

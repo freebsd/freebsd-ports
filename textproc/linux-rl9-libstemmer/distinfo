@@ -1,0 +1,9 @@
+TIMESTAMP = 1732662542
+SHA256 (rocky/l/libstemmer-0-18.585svn.el9.aarch64.rpm) = 4b10cc6e35e2dcc8d93a0f7ad765063d06b4ebe4c672f684804820bf8c3d9e67
+SIZE (rocky/l/libstemmer-0-18.585svn.el9.aarch64.rpm) = 84020
+SHA256 (rocky/l/libstemmer-0-18.585svn.el9.i686.rpm) = bedd4d56f895d5f3c4d96412b9a75a1220c5b12b8ea42d8650040cfd405075c2
+SIZE (rocky/l/libstemmer-0-18.585svn.el9.i686.rpm) = 80704
+SHA256 (rocky/l/libstemmer-0-18.585svn.el9.x86_64.rpm) = 1c100c574348ee586077add5d13aa526b47cf69f88eb51750555d86a3e7127d0
+SIZE (rocky/l/libstemmer-0-18.585svn.el9.x86_64.rpm) = 84609
+SHA256 (rocky/l/libstemmer-0-18.585svn.el9.src.rpm) = 33c028d6c7975c35b36f7648706d23d7eb9b3c372faed20f543a64cee9e83464
+SIZE (rocky/l/libstemmer-0-18.585svn.el9.src.rpm) = 140327

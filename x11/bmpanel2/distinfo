@@ -1,0 +1,6 @@
+SHA256 (bmpanel2-2.1pre1.tar.gz) = 56c316ea3cd35ae033610d073b7d532c6a12070f9c349ec3c09e85c60591564c
+SIZE (bmpanel2-2.1pre1.tar.gz) = 386297
+SHA256 (bmpanel2-opacity-setting.diff) = c2737077d7b0834511e0a792677f8cde819bdc017045175a916b8aceca478896
+SIZE (bmpanel2-opacity-setting.diff) = 2006
+SHA256 (bmpanel2-temperature-widget.diff) = 47d980108a7385c0f1e2b221fafa0e53c3384ec74cb921779580cb8aa6988972
+SIZE (bmpanel2-temperature-widget.diff) = 7636

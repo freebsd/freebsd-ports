@@ -1,0 +1,32 @@
+PORTNAME=	Net-SSLeay
+PORTVERSION=	1.94
+CATEGORIES=	security perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl5 interface to SSL
+WWW=		https://metacpan.org/release/Net-SSLeay
+
+LICENSE=	OpenSSL
+
+USES=		perl5 shebangfix ssl
+USE_PERL5=	configure
+
+CONFIGURE_ENV=	OPENSSL_PREFIX=${OPENSSLBASE}
+
+PORTEXAMPLES=	*
+
+SHEBANG_FILES=	examples/*.pl
+
+OPTIONS_DEFINE=	EXAMPLES
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/SSLeay/SSLeay.so
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/req.conf ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

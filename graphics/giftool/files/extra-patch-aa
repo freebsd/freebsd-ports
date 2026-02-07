@@ -1,0 +1,17 @@
+--- main.c.orig	1994-12-07 18:31:59 UTC
++++ main.c
+@@ -1275,7 +1275,7 @@ static void usage()
+ 	exit(1);
+ }
+ 
+-main(int argc, char *argv[]) 
++int main(int argc, char *argv[]) 
+ {
+ 	int		c, i;
+ 	int		batchMode = 0;
+@@ -1410,4 +1410,5 @@ main(int argc, char *argv[]) 
+ 			GIFFree(stream);
+ 		}
+ 	}
++	return 0;
+ }

@@ -1,0 +1,67 @@
+--- meson.build.orig	2025-06-24 07:55:28 UTC
++++ meson.build
+@@ -861,7 +861,7 @@ conf.set('HAVE_DECL_VMADDR_CID_LOCAL', have ? 1 : fals
+                             prefix : '#include <sys/socket.h>')
+ conf.set('HAVE_DECL_VMADDR_CID_LOCAL', have ? 1 : false)
+ 
+-build_plymouth_support = (not build_plymouth_support.disabled() and 
++build_plymouth_support = (not build_plymouth_support.disabled() and
+                           have_tiocglcktrmios and
+                           have_sock_cloexec and
+                           have_sock_nonblock and
+@@ -1868,14 +1868,7 @@ endif
+   bashcompletions += ['zramctl']
+ endif
+ 
+-exe = executable(
+-  'prlimit',
+-  prlimit_sources,
+-  include_directories : includes,
+-  link_with : [lib_common,
+-               lib_smartcols],
+-  install_dir : usrbin_exec_dir,
+-  install : true)
++exe = disabler()
+ if not is_disabler(exe)
+   exes += exe
+   manadocs += prlimit_manadocs
+@@ -1991,15 +1984,7 @@ endif
+   bashcompletions += ['swapoff']
+ endif
+ 
+-exe = executable(
+-  'lscpu',
+-  lscpu_sources,
+-  include_directories : includes,
+-  link_with : [lib_common,
+-               lib_smartcols],
+-  dependencies : [rtas_libs],
+-  install_dir : usrbin_exec_dir,
+-  install : true)
++exe = disabler()
+ if not is_disabler(exe)
+   exes += exe
+   manadocs += lscpu_manadocs
+@@ -2021,13 +2006,7 @@ endif
+   bashcompletions += ['chcpu']
+ endif
+ 
+-exe = executable(
+-  'wdctl',
+-  wdctl_sources,
+-  include_directories : includes,
+-  link_with : [lib_common,
+-               lib_smartcols],
+-  install : true)
++exe = disabler()
+ if not is_disabler(exe)
+   exes += exe
+   manadocs += wdctl_manadocs
+@@ -4024,7 +4003,6 @@ run_target(
+   depends : exes)
+ 
+ 
+-manadocs += lib_tcolors_manadocs
+ if build_libblkid
+   manadocs += lib_blkid_manadocs
+ endif

@@ -1,0 +1,2 @@
+The dbt-snowflake package contains all of the code enabling dbt to work with
+Snowflake.

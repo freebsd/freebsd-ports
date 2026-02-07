@@ -1,0 +1,10 @@
+--- build.xml.orig	2014-04-04 16:45:10 UTC
++++ build.xml
+@@ -7,7 +7,6 @@
+ 	<import file="platform_build/build-applet.xml"/>
+ 	<import file="platform_build/build-webstart.xml"/>
+ 	<import file="platform_build/build-maven.xml"/>
+-	<import file="eclipse-update/org.lwjgl.build/build-updatesite.xml"/>
+ 
+ 	<!-- ================================================================== -->
+ 	<!-- Everything below this line is targets.								-->

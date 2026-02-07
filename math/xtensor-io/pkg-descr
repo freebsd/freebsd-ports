@@ -1,0 +1,7 @@
+xtensor-io offers an API to read and write various file formats into xtensor
+data structures:
+* images
+* audio files
+* NumPy's compressed storage format (NPZ)
+* HDF5 files
+* Blosc

@@ -1,0 +1,38 @@
+--- configure.orig	2022-07-11 16:50:06 UTC
++++ configure
+@@ -6355,7 +6355,7 @@ fi
+                 if test "X$additional_includedir" = "X/usr/local/include"; then
+                   if test -n "$GCC"; then
+                     case $host_os in
+-                      linux* | gnu* | k*bsd*-gnu) haveit=yes;;
++                      linux* | gnu* | k*bsd*-gnu | freebsd* ) haveit=yes;;
+                     esac
+                   fi
+                 fi
+@@ -6401,7 +6401,7 @@ fi
+                          || test "X$additional_libdir" = "X/usr/local/$acl_libdirstem2"; then
+                         if test -n "$GCC"; then
+                           case $host_os in
+-                            linux* | gnu* | k*bsd*-gnu) haveit=yes;;
++                            linux* | gnu* | k*bsd*-gnu | freebsd* ) haveit=yes;;
+                           esac
+                         fi
+                       fi
+@@ -7252,7 +7252,7 @@ fi
+                 if test "X$additional_includedir" = "X/usr/local/include"; then
+                   if test -n "$GCC"; then
+                     case $host_os in
+-                      linux* | gnu* | k*bsd*-gnu) haveit=yes;;
++                      linux* | gnu* | k*bsd*-gnu | freebsd* ) haveit=yes;;
+                     esac
+                   fi
+                 fi
+@@ -7298,7 +7298,7 @@ fi
+                          || test "X$additional_libdir" = "X/usr/local/$acl_libdirstem2"; then
+                         if test -n "$GCC"; then
+                           case $host_os in
+-                            linux* | gnu* | k*bsd*-gnu) haveit=yes;;
++                            linux* | gnu* | k*bsd*-gnu | freebsd* ) haveit=yes;;
+                           esac
+                         fi
+                       fi

@@ -1,0 +1,33 @@
+bin/ircat
+bin/irexec
+bin/irpty
+bin/irrecord
+bin/irsend
+bin/irw
+bin/irxevent
+bin/lircrcd
+bin/mode2
+bin/pronto2lirc
+bin/xmode2
+include/lirc/lirc_client.h
+lib/liblirc_client.a
+lib/liblirc_client.so
+lib/liblirc_client.so.0
+lib/liblirc_client.so.0.2.1
+share/man/man1/ircat.1.gz
+share/man/man1/irexec.1.gz
+share/man/man1/irpty.1.gz
+share/man/man1/irrecord.1.gz
+share/man/man1/irsend.1.gz
+share/man/man1/irw.1.gz
+share/man/man1/irxevent.1.gz
+share/man/man1/lircrcd.1.gz
+share/man/man1/mode2.1.gz
+share/man/man1/smode2.1.gz
+share/man/man1/xmode2.1.gz
+share/man/man8/lircd.8.gz
+share/man/man8/lircmd.8.gz
+sbin/lircd
+sbin/lircmd
+@sample etc/lircd.conf.sample
+@dir /var/run/lirc

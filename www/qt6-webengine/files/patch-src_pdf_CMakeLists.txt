@@ -1,0 +1,20 @@
+--- src/pdf/CMakeLists.txt.orig	2025-08-15 18:30:00 UTC
++++ src/pdf/CMakeLists.txt
+@@ -69,7 +69,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
+ #   TOOLCHAIN SETUP
+ ##
+ 
+-if(LINUX OR MINGW OR ANDROID OR WIN32)
++if(LINUX OR MINGW OR ANDROID OR WIN32 OR FREEBSD)
+     setup_toolchains()
+ endif()
+ 
+@@ -144,7 +144,7 @@ foreach(arch ${archs})
+           webnn_use_tflite=false
+         )
+ 
+-        if(LINUX OR ANDROID)
++        if(LINUX OR ANDROID OR FREEBSD)
+             list(APPEND gnArgArg
+                 enable_vr=false
+                 is_cfi=false

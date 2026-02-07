@@ -1,0 +1,26 @@
+--- bin/elasticsearch-env.orig	2022-11-26 09:28:22 UTC
++++ bin/elasticsearch-env
+@@ -46,12 +46,17 @@ if [ ! -z "$ES_JAVA_HOME" ]; then
+   "$JAVA" -cp "$ES_HOME/lib/java-version-checker/*" org.elasticsearch.tools.java_version_checker.JavaVersionChecker
+ else
+   # use the bundled JDK (default)
+-  if [ "$(uname -s)" = "Darwin" ]; then
+-    # macOS has a different structure
+-    JAVA="$ES_HOME/jdk.app/Contents/Home/bin/java"
+-  else
+-    JAVA="$ES_HOME/jdk/bin/java"
+-  fi
++  case "$(uname -s)" in
++    "Darwin")
++      JAVA="$ES_HOME/jdk.app/Contents/Home/bin/java"
++      ;;
++    "FreeBSD")
++      JAVA=%%LOCALBASE%%/bin/java
++      ;;
++    *)
++      JAVA="$ES_HOME/jdk/bin/java"
++      ;;
++  esac
+   JAVA_TYPE="bundled JDK"
+ fi
+ 

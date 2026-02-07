@@ -1,0 +1,28 @@
+--- Makefile.orig	2014-07-12 16:42:52 UTC
++++ Makefile
+@@ -10,8 +10,8 @@
+ # this is fixed by deleting "-static" from the LDLIBS line.
+ 
+ CFLAGS = -O3 -funroll-loops -Winline -DNDEBUG=1
+-LDLIBS = -lm -static
+-# LDLIBS = -lm
++#LDLIBS = -lm -static
++LDLIBS = -lm
+ 
+ OBJ = .o
+ EXE =
+@@ -19,7 +19,7 @@ EXE =
+ RM = rm -f
+ CP = cp
+ 
+-GPP = g++
++GPP = $(CXX)
+ LD = $(GPP) $(CFLAGS)
+ CPP = $(GPP) -c $(CFLAGS) 
+ 
+@@ -33,4 +33,4 @@ $(CPPOBJ): %.o: %.cpp
+ 
+ muscle: $(CPPOBJ)
+ 	$(LD) -o muscle $(CPPOBJ) $(LDLIBS)
+-	strip muscle
++#	strip muscle

@@ -1,0 +1,5 @@
+If pagecache clearing is disabled, the program will *not* be
+able to clear the pagecache in any way.
+
+If the KF5Auth helper is not built, the program will be able
+to clear the pagecache if it is run as super-user (root).

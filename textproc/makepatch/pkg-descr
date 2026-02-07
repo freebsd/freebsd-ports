@@ -1,0 +1,3 @@
+'makepatch', containing a pair of programs, makepatch and applypatch, to
+assist in the generation and application of patch kits to synchronise
+source trees.

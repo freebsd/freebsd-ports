@@ -1,0 +1,5 @@
+The Webalizer GeoDB geolocation database
+
+This package contains the Webalizer GeoDB geolocation database
+file "GeoDB.dat". This database allows the Webalizer to perform
+geographical location lookups for both IPv4 and IPv6 addresses.

@@ -1,0 +1,15 @@
+--- Makefile.install.directories.orig	2024-02-26 07:39:16 UTC
++++ Makefile.install.directories
+@@ -5,9 +5,9 @@ MAIN_DIRECTORY         = /usr/local
+ 
+ # installing in /usr/local
+ MAIN_DIRECTORY         = /usr/local
+-BIN_DIRECTORY          = $(MAIN_DIRECTORY)/games
+-DATA_DIRECTORY         = $(MAIN_DIRECTORY)/share/games/FreeDoko
+-HELP_DIRECTORY         = $(MAIN_DIRECTORY)/share/doc/FreeDoko
++BIN_DIRECTORY          = $(MAIN_DIRECTORY)/bin
++DATA_DIRECTORY         = $(MAIN_DIRECTORY)/share/freedoko
++HELP_DIRECTORY         = $(MAIN_DIRECTORY)/share/doc/freedoko
+ MAN_DIRECTORY          = $(MAIN_DIRECTORY)/share/man/man6
+ ICON_DIRECTORY         = $(MAIN_DIRECTORY)/share/pixmaps
+ LOCALE_DIRECTORY       = $(MAIN_DIRECTORY)/share/locale

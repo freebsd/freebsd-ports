@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Log/Trace.pm
+%%SITE_PERL%%/Log/Trace/Manual.pod
+%%PERL5_MAN3%%/Log::Trace.3.gz
+%%PERL5_MAN3%%/Log::Trace::Manual.3.gz

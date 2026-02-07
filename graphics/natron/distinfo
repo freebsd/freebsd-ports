@@ -1,0 +1,17 @@
+TIMESTAMP = 1731608910
+SHA256 (NatronGitHub-Natron-v2.5.1-pre2_GH0.tar.gz) = ef17cbd89fd6c8c89caec9a9681763a13ab1e4ccf40ed34e31bf0ed4d7d6a916
+SIZE (NatronGitHub-Natron-v2.5.1-pre2_GH0.tar.gz) = 31486167
+SHA256 (NatronGitHub-google-breakpad-9474c3f7f9939391f281d46c42bfe20cc0f0abd9_GH0.tar.gz) = d2f22ce15aec2efd085e2ea1317ca2a5773e7faaa0aff297b0f2f4839a439f2d
+SIZE (NatronGitHub-google-breakpad-9474c3f7f9939391f281d46c42bfe20cc0f0abd9_GH0.tar.gz) = 4891139
+SHA256 (NatronGitHub-google-mock-17945db42c0b42496b2f3c6530307979f2e2a5ce_GH0.tar.gz) = 25c9f97ca781e8e50e653c1d4638e90718a8aaa5341423b3ef889c5e4c59ee03
+SIZE (NatronGitHub-google-mock-17945db42c0b42496b2f3c6530307979f2e2a5ce_GH0.tar.gz) = 299646
+SHA256 (NatronGitHub-google-test-50d6fc317c843a2e40dbf08c2efd3f068801ae6d_GH0.tar.gz) = ed7ae95f3f6b810dd74202e78d40cf0f076ebd6f1a76da71f3c8bdb94fb07c03
+SIZE (NatronGitHub-google-test-50d6fc317c843a2e40dbf08c2efd3f068801ae6d_GH0.tar.gz) = 474810
+SHA256 (NatronGitHub-OpenColorIO-Configs-557b981_GH0.tar.gz) = 5fc2456c5be991f5508715b28ef9b2ee05aacef83a68ce8f9722129ed4291ccc
+SIZE (NatronGitHub-OpenColorIO-Configs-557b981_GH0.tar.gz) = 292560783
+SHA256 (NatronGitHub-openfx-0759758d0fb57932b5c4698fff9ef6b4a3132309_GH0.tar.gz) = 8b9935fac81be1ceb2d632135748c9a1b22a37b873c18022e09a637a3a00918b
+SIZE (NatronGitHub-openfx-0759758d0fb57932b5c4698fff9ef6b4a3132309_GH0.tar.gz) = 10707420
+SHA256 (NatronGitHub-SequenceParsing-3c93fcc488632b0bdfeee3181586809932357598_GH0.tar.gz) = b3a2db99901e3edaadb301c91f845db832559ad3c003a13d45e74b6816d2f67f
+SIZE (NatronGitHub-SequenceParsing-3c93fcc488632b0bdfeee3181586809932357598_GH0.tar.gz) = 16064
+SHA256 (NatronGitHub-tinydir-3aae922_GH0.tar.gz) = eb816fff00d9713742a1f1367432fee0ea73ccb0f458c90035543e923e8e55d1
+SIZE (NatronGitHub-tinydir-3aae922_GH0.tar.gz) = 24552

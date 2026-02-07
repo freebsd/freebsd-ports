@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+VVVVVV is copyright of Terry Cavanagh (c) 2010--2020.
+This copy of VVVVVV may have been altered for compatibility with FreeBSD.
+
+VVVVVV may require the data file from an official copy.
+Take data.zip and put it in %%DATADIR%%/data.zip
+or ~/.local/share/VVVVVV/data.zip.
+EOM
+}
+]

@@ -1,0 +1,2 @@
+The default_value_for plugin allows one to define default values for
+ActiveRecord models in a declarative manner

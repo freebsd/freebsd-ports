@@ -1,0 +1,5 @@
+lib/cmake/LATTE/LATTEConfig.cmake
+lib/cmake/LATTE/LATTEConfigVersion.cmake
+lib/cmake/LATTE/LATTE_Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LATTE/LATTE_Targets.cmake
+lib/liblatte.so

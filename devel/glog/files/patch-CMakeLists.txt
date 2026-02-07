@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-02-17 17:49:26 UTC
++++ CMakeLists.txt
+@@ -970,7 +970,7 @@ if (WITH_PKGCONFIG)
+ if (WITH_PKGCONFIG)
+   install (
+     FILES "${glog_BINARY_DIR}/libglog.pc"
+-    DESTINATION "${_glog_CMake_LIBDIR}/pkgconfig"
++    DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig"
+   )
+ endif (WITH_PKGCONFIG)
+ 

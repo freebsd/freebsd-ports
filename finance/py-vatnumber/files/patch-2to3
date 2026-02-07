@@ -1,0 +1,30 @@
+--- setup.py.orig	2014-01-09 15:58:31 UTC
++++ setup.py
+@@ -43,5 +43,4 @@ setup(name='vatnumber',
+         'suds': ['suds'],
+         },
+     test_suite="vatnumber.tests",
+-    use_2to3=True,
+     )
+--- vatnumber/__init__.py.orig	2014-01-09 15:58:31 UTC
++++ vatnumber/__init__.py
+@@ -80,7 +80,7 @@ def check_vat_ar(vat):
+         return False
+     base = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2]
+     aux = 0
+-    for i in xrange(10):
++    for i in range(10):
+         aux += int(vat[i]) * base[i]
+     aux = 11 - (aux - (int(aux / 11) * 11))
+     if aux == 11:
+--- vatnumber/tests.py.orig	2014-01-09 15:58:31 UTC
++++ vatnumber/tests.py
+@@ -199,7 +199,7 @@ class VatNumberTest(unittest.TestCase):
+         Test vies
+         '''
+         for vat in VIES_NUMBERS:
+-            self.assert_(vatnumber.check_vies(vat))
++            self.assertTrue(vatnumber.check_vies(vat))
+ 
+     def test_countries(self):
+         '''

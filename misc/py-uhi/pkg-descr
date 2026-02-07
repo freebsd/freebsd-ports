@@ -1,0 +1,5 @@
+UHI is a library that helps connect other Histogramming libraries. It is
+primarily indented to be a guide and static type check helper; you do not need
+an runtime dependency on UHI.
+
+See also: https://github.com/Scikit-HEP/uhi

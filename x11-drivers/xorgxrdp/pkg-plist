@@ -1,0 +1,10 @@
+@dir /etc/X11/xrdp
+/etc/X11/xrdp/xorg.conf
+%%XMODDIR%%/drivers/xrdpdev_drv.a
+%%XMODDIR%%/drivers/xrdpdev_drv.so
+%%XMODDIR%%/input/xrdpkeyb_drv.a
+%%XMODDIR%%/input/xrdpkeyb_drv.so
+%%XMODDIR%%/input/xrdpmouse_drv.a
+%%XMODDIR%%/input/xrdpmouse_drv.so
+%%XMODDIR%%/libxorgxrdp.a
+%%XMODDIR%%/libxorgxrdp.so

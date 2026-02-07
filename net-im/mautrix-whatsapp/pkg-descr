@@ -1,0 +1,3 @@
+Mautrix-whatsapp is a Matrix-WhatsApp puppeting bridge, which means it runs
+along a Matrix server and relays messages between a WhatsApp account and a
+Matrix account.

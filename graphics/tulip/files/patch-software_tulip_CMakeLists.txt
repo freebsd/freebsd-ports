@@ -1,0 +1,16 @@
+--- software/tulip/CMakeLists.txt.orig	2025-03-31 21:30:22 UTC
++++ software/tulip/CMakeLists.txt
+@@ -96,13 +96,6 @@ IF(LINUX)
+     CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/linux_desktop/Tulip.desktop.in
+                    ${CMAKE_CURRENT_BINARY_DIR}/Tulip-${Tulip_VERSION}.desktop)
+ 
+-    INSTALL(CODE
+-      "EXECUTE_PROCESS(COMMAND mkdir -p ${DESKTOP_CONFIG_INSTALL_PREFIX}/share/mime/packages
+-                       COMMAND mkdir -p ${DESKTOP_CONFIG_INSTALL_PREFIX}/share/applications
+-                       COMMAND mkdir -p ${DESKTOP_CONFIG_INSTALL_PREFIX}/share/pixmaps
+-                       COMMAND mkdir -p ${DESKTOP_CONFIG_INSTALL_PREFIX}/share/icons)"
+-    )
+-
+     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/linux_desktop/application-x-tulip-tlpx.xml
+                   ${CMAKE_CURRENT_SOURCE_DIR}/linux_desktop/application-x-tulip-tlp.xml
+                   ${CMAKE_CURRENT_SOURCE_DIR}/linux_desktop/application-x-tulip-tlpgz.xml

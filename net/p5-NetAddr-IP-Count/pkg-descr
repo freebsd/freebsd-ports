@@ -1,0 +1,6 @@
+This module implements a symplistic way to match individual IP Addresses
+to subnets. It can be used to, among other things, help analyze HTTPD
+logs.
+
+-Anton
+<tobez@FreeBSD.org>

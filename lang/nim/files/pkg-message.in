@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+  Nim is now installed in %%PREFIX%%/nim, so you should add %%PREFIX%%/nim/bin
+  to your shell path.
+  EOM
+}
+]

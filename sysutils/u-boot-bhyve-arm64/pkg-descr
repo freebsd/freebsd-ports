@@ -1,0 +1,9 @@
+U-Boot loader for arm64 bhyve
+
+The loader is configured to boot automatically from the first VirtIO block
+device.  Specify
+
+  -o bootrom=$LOCALBASE/share/u-boot/u-boot-bhyve-arm64/u-boot.bin
+
+in bhyve(8) parameters.  Note that this loader is experimental as the arm64
+bhyve port is still under development.

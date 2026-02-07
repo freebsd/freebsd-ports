@@ -1,0 +1,5 @@
+This module tests if cpanfile lists every used modules or not.
+
+It's ok if you list a module that is evaled in the code, or a module
+that does not appear in the code, as requires, but it complains if a
+used module is listed as recommends or suggests.

@@ -1,0 +1,4 @@
+DBOW is a database compiler-compiler or front-end.  It takes table
+definitions in a relatively high-level language and prepares C,
+C++, PHP, Perl (etc) functions for manipulating the database.  It
+will also produce SQL table data for MySQL.

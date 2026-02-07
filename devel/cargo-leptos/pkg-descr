@@ -1,0 +1,13 @@
+Build tool for the Leptos web framework.
+
+Features
+- Parallel build of server and client in watch mode for fast developer feedback
+- CSS hot-reload (no page-reload, only CSS updated)
+- Build server and client for hydration (client-side rendering mode not
+  supported)
+- Support for both workspace and single-package setup
+- SCSS compilation using dart-sass
+- CSS transformation and minification using Lightning CSS
+- Builds server and client (wasm) binaries using Cargo
+- Generates JS - Wasm bindings with wasm-bindgen
+- Optimises the wasm with wasm-opt from Binaryen

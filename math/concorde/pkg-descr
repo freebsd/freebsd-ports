@@ -1,0 +1,14 @@
+Concorde is a computer code for the traveling salesman problem (TSP)
+and some related network optimization problems.  The code is written
+in the ANSI C programming language and it is available for academic
+research use; for other uses, contact bico@isye.gatech.edu for
+licensing options.
+
+Concorde's TSP solver has been used to obtain the optimal solutions to
+106 of the 110 TSPLIB instances; the largest having 15,112 cities.
+
+The Concorde callable library includes over 700 functions permitting
+users to create specialized codes for TSP-like problems.  All Concorde
+functions are thread-safe for programming in shared-memory parallel
+environments; the main TSP solver includes code for running over
+networks of Unix workstations.

@@ -1,0 +1,12 @@
+U-Boot loader for BeagleBone and BeagleBone Black.
+
+To install this bootloader, copy the files MLO and bb-uboot.img to the FAT
+partition on an SD card or the eMMC.  Normally this is partition 1, but
+different partitions can be set with U-Boot environment variables.
+
+This version is patched so that:
+ * API features are enabled.
+ * A boot.scr (U-Boot scripts ) that loads ubldr.bin and execute it is included
+
+For information about running FreeBSD on BeagleBone or BeagleBone Black, see
+https://wiki.freebsd.org/FreeBSD/arm/BeagleBone

@@ -1,0 +1,3 @@
+bin/daa2iso
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/daa2iso.txt

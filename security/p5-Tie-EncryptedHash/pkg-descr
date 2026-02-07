@@ -1,0 +1,12 @@
+Tie::EncryptedHash augments Perl hash semantics to build secure, encrypting
+containers of data. Tie::EncryptedHash introduces special hash fields that are
+coupled with encrypt/decrypt routines to encrypt assignments at STORE() and
+decrypt retrievals at FETCH(). By design, encrypting fields are associated with
+keys that begin in single underscore. The remaining keyspace is used for
+accessing normal hash fields, which are retained without modification.
+
+While the password is set, a Tie::EncryptedHash behaves exactly like a standard
+Perl hash. This is its transparent mode of access. Encrypting and normal fields
+are identical in this mode. When password is deleted, encrypting fields are
+accessible only as ciphertext. This is Tie::EncryptedHash's opaque mode of
+access, optimized for serialization.

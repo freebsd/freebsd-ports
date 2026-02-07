@@ -1,0 +1,38 @@
+--- CMakeLists.txt.orig	2024-05-04 20:00:40 UTC
++++ CMakeLists.txt
+@@ -4,9 +4,7 @@ set(PROJECT_NAMESPACE Topologic)
+ set(PROJECT_NAMESPACE Topologic)
+ 
+ 
+-# Import pybind11
+-set(PYBIND11_FINDPYTHON ON)
+-add_subdirectory(pybind11)
++find_Package(pybind11 REQUIRED)
+ 
+ 
+ # Source groups
+@@ -50,12 +48,14 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${P
+ target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
+ 
+ # Import TopologicCore from parent dir when not building from global project
++if (FALSE)
+ if(NOT TARGET ${PROJECT_NAMESPACE}::TopologicCore)
+     add_subdirectory(${PROJECT_SOURCE_DIR}/../TopologicCore ${PROJECT_BINARY_DIR}/TopologicCore)
+ endif()
++endif()
+ 
+ # Dependency: TopologicCore
+-target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAMESPACE}::TopologicCore)
++target_link_libraries(${PROJECT_NAME} PRIVATE TopologicCore)
+ 
+ 
+ # install definitions
+@@ -66,7 +66,7 @@ install(TARGETS ${PROJECT_NAME}
+ 
+ # set install rpaths to origin if TopologicCore is built as a shared lib
+ # in this case TopologicCore is expected to be copied into the TopologicPythonBindings install dir post-install
+-get_property(TopologicCore_TARGET_TYPE TARGET TopologicCore PROPERTY TYPE)
++set(TopologicCore_TARGET_TYPE SHARED_LIBRARY)
+ if (${TopologicCore_TARGET_TYPE} STREQUAL SHARED_LIBRARY)
+     if(NOT CMAKE_INSTALL_RPATH)
+         if(NOT APPLE)

@@ -1,0 +1,7 @@
+bin/pengpong
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/24P_Copperplate_Blue.png
+%%DATADIR%%/ball.tga
+%%DATADIR%%/logo.jpg
+%%DATADIR%%/paddle.tga
+%%DATADIR%%/red.png

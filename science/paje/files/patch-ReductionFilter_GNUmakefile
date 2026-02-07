@@ -1,0 +1,8 @@
+--- ReductionFilter/GNUmakefile.orig	2006-10-30 02:45:37 UTC
++++ ReductionFilter/GNUmakefile
+@@ -1,4 +1,4 @@
+-BUNDLE_INSTALL_DIR=$(GNUSTEP_INSTALLATION_DIR)/Library/Bundles/Paje
++BUNDLE_INSTALL_DIR=$(DESTDIR)/$(GNUSTEP_SYSTEM_LIBRARY)/Bundles/Paje
+ 
+ include $(GNUSTEP_MAKEFILES)/common.make
+ 

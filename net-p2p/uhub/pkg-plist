@@ -1,0 +1,16 @@
+bin/uhub
+bin/uhub-passwd
+@sample(,uhub,0640) %%ETCDIR%%/motd.txt.sample
+@sample(,uhub,0640) %%ETCDIR%%/rules.txt.sample
+@sample(,uhub,0640) %%ETCDIR%%/uhub.conf.sample
+@sample(,uhub,0640) %%ETCDIR%%/users.conf.sample
+lib/uhub/mod_auth_simple.so
+lib/uhub/mod_auth_sqlite.so
+lib/uhub/mod_chat_history.so
+lib/uhub/mod_chat_history_sqlite.so
+lib/uhub/mod_chat_only.so
+lib/uhub/mod_example.so
+lib/uhub/mod_logging.so
+lib/uhub/mod_no_guest_downloads.so
+lib/uhub/mod_topic.so
+lib/uhub/mod_welcome.so

@@ -1,0 +1,44 @@
+--- makefile.orig	2025-09-30 06:45:40 UTC
++++ makefile
+@@ -6,11 +6,11 @@ USE_GDB ?= 0
+ USE_FLTO ?= 0
+ USE_GDB ?= 0
+ 
+-CC := gcc
++#CC := gcc
+ LIBS := -lm -ldl -lpthread -lncurses
+ INCS := -Icii/include
+-CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
+-CURSES_LIBS := $(shell ncursesw6-config --libs)
++#CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
++#CURSES_LIBS := $(shell ncursesw6-config --libs)
+ 
+ 
+ CFLAGS += $(INCS) -Wall $(CURSES_CFLAGS) 
+@@ -33,7 +33,7 @@ ifeq ($(USE_FLTO),1)
+ CFLAGS += -O3 -DNDEBUG=1 -Wno-stringop-truncation 
+ 
+ ifeq ($(USE_FLTO),1)
+-CFLAGS += -O3 -flto -DNDEBUG=1 -Wno-stringop-truncation
++CFLAGS += -O3 -DNDEBUG=1 -Wno-stringop-truncation
+ endif
+ ifeq ($(USE_GDB),1)
+ CFLAGS += -O0 -g -DNDEBUG=1 -Wno-stringop-truncation
+@@ -98,7 +98,7 @@ eisl: $(EISL_OBJS) $(OBJ_CII)
+ all: $(TARGETS)
+ 
+ eisl: $(EISL_OBJS) $(OBJ_CII)
+-	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) 
++	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) $(LDFLAGS)
+ 
+ %.o: %.c eisl.h ffi.h term.h cii/include/except.h 
+ 	$(CC) $(CFLAGS) -c $< -o $@
+@@ -126,7 +126,7 @@ edlis: edlis.o syn_highlight.o $(OBJ_CII) 
+ 
+ 
+ edlis: edlis.o syn_highlight.o $(OBJ_CII) 
+-	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS)
++	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS) $(LDFLAGS)
+ 
+ edlis.o: edlis.c edlis.h term.h
+ 	$(CC) $(CFLAGS) -c edlis.c

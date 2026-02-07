@@ -1,0 +1,5 @@
+This module provides a wrapper for the DB_File module, adding locking.
+
+When you need locking, simply use this module in place of DB_File and
+add an extra argument onto the tie command specifying if the file should
+be locked for reading or writing.

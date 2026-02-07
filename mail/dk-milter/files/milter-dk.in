@@ -1,0 +1,119 @@
+#!/bin/sh
+
+# PROVIDE: milter-dk
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Define these milterdk_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/milterdk
+#
+# milterdk_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to enable dk-milter
+# milterdk_uid (str):        Set username to run milter.
+# milterdk_profiles (list):  Set to "" by default.
+#                             Define your profiles here.
+# milterdk_socket (str):    Path to the milter socket.
+# milterdk_domain (str):    Domainpart of From: in mails to sign.
+# milterdk_key (str):       Path to the private key file to sign with.
+# milterdk_flags (str):     Flags passed to start command.
+# milterdk_selector (str):  Selector from which the receiving side should
+#			    obtain the public key.
+#
+# milterdk_${profile}_* :   Variables per profile.
+#                             Sockets must be different from each other.
+#
+
+. /etc/rc.subr
+
+name="milterdk"
+rcvar="milterdk_enable"
+load_rc_config $name
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+milterdk_enable=${milterdk_enable:-"NO"}
+milterdk_uid=${milterdk_uid:-"mailnull"}
+milterdk_profiles=${milterdk_profiles:-}
+milterdk_socket=${milterdk_socket:-"unix:/var/run/milterdk/filter"}
+milterdk_domain=${milterdk_domain:-"example.com"}
+milterdk_key=${milterdk_key:-"/var/db/domainkeys/default.key.pem"}
+milterdk_selector=${milterdk_selector:-"default"}
+## milterdk_flags expands escaped variables later.
+milterdk_flags=${milterdk_flags:-'-d ${milterdk_domain} -c nofws -H -m MSA -s ${milterdk_key} -S ${milterdk_selector}'}
+
+start_precmd="dk_prepcmd"
+stop_postcmd="dk_postcmd"
+command="%%PREFIX%%/libexec/dk-filter"
+_piddir="/var/run/milterdk"
+pidfile="${_piddir}/pid"
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${milterdk_profiles}" != "x" ]; then
+	pidfile="${_piddir}/${profile}.pid"
+	eval milterdk_enable="\${milterdk_${profile}_enable:-${milterdk_enable}}"
+	eval milterdk_socket="\${milterdk_${profile}_socket:-}"
+	if [ "x${milterdk_socket}" = "x" ];then
+	    echo "You must define a socket (milterdk_${profile}_socket)"
+	    exit 1
+	fi
+	eval milterdk_domain="\${milterdk_${profile}_domain:-${milterdk_domain}}"
+	eval milterdk_key="\${milterdk_${profile}_key:-${milterdk_key}}"
+	eval milterdk_flags="\${milterdk_${profile}_flags:-${milterdk_flags}}"
+	command_args="-l -p ${milterdk_socket} -u ${milterdk_uid} -P ${pidfile}"
+    else
+	echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${milterdk_profiles}" != "x" -a "x$1" != "x" ]; then
+	if [ "x$1" != "xrestart" ]; then
+	    for profile in ${milterdk_profiles}; do
+		echo "===> milterdk profile: ${profile}"
+		%%RC_SCRIPT%% $1 ${profile}
+		retcode="$?"
+		if [ "0${retcode}" -ne 0 ]; then
+		    failed="${profile} (${retcode}) ${failed:-}"
+		else
+		    success="${profile} ${success:-}"
+		fi
+	    done
+	    exit 0
+	else
+	    restart_precmd=""
+	fi
+    else
+	milterdk_flags=${milterdk_flags}
+	command_args="-l -p ${milterdk_socket} -u ${milterdk_uid} -P ${pidfile}"
+    fi
+fi
+
+dk_prepcmd ()
+{
+    if [ -S ${milterdk_socket##local:} ] ; then
+        rm -f ${milterdk_socket##local:}
+    elif [ -S ${milterdk_socket##unix:} ] ; then
+        rm -f ${milterdk_socket##unix:}
+    fi
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
+    fi
+    if [ -n "${milterdk_uid}" ] ; then
+	chown ${milterdk_uid} ${_piddir}
+    fi
+}
+
+dk_postcmd()
+{
+    if [ -S ${milterdk_socket##local:} ] ; then
+        rm -f ${milterdk_socket##local:}
+    elif [ -S ${milterdk_socket##unix:} ] ; then
+        rm -f ${milterdk_socket##unix:}
+    fi
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+run_rc_command "$1"

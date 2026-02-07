@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: xenguest
+# REQUIRE: LOGIN
+# KEYWORD: nojail shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# xenguest_enable (bool): Set to NO by default.
+#       Set it to YES to enable xenguest.
+
+. /etc/rc.subr
+
+name=xenguest
+desc="Xen Guest Daemon"
+rcvar=xenguest_enable
+
+load_rc_config $name
+
+command="%%PREFIX%%/sbin/xe-daemon"
+pidfile=/var/run/xe-daemon.pid
+command_interpreter=/bin/sh
+command_args='-p ${pidfile} &'
+
+autoxen=`sysctl kern.vm_guest`
+autoxen="${autoxen#kern.vm_guest: }"
+case "${autoxen}" in
+xen)
+	: ${xenguest_enable:=YES}
+	;;
+*)
+	: ${xenguest_enable:=NO}
+	;;
+esac
+
+run_rc_command "$1"

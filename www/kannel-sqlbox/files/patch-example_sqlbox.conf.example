@@ -1,0 +1,11 @@
+--- example/sqlbox.conf.example.orig	2014-04-29 11:58:00 UTC
++++ example/sqlbox.conf.example
+@@ -8,7 +8,7 @@ smsbox-port = 13005
+ smsbox-port-ssl = false
+ sql-log-table = sent_sms
+ sql-insert-table = send_sms
+-log-file = "/var/log/kannel/kannel-sqlbox.log"
++log-file = "/var/log/kannel/sqlbox.log"
+ log-level = 0
+ #ssl-client-certkey-file = ""
+ #ssl-server-cert-file = ""

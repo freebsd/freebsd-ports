@@ -1,0 +1,41 @@
+diff -up modules/scicos/src/cpp/XMIResource_load.cpp.orig modules/scicos/src/cpp/XMIResource_load.cpp
+--- modules/scicos/src/cpp/XMIResource_load.cpp.orig	2021-07-15 13:55:14.000000000 +0200
++++ modules/scicos/src/cpp/XMIResource_load.cpp	2025-07-14 14:43:30.773655000 +0200
+@@ -56,11 +56,11 @@ struct LibXML2State
+     LibXML2State()
+     {
+         xmlGenericErrorFunc f = &console_print;
+-        initGenericErrorDefaultFunc(&f);
++        xmlSetGenericErrorFunc(nullptr, f);
+     }
+     ~LibXML2State()
+     {
+-        initGenericErrorDefaultFunc(nullptr);
++        xmlSetGenericErrorFunc(nullptr, nullptr);
+     }
+ };
+ 
+diff -up modules/xml/src/cpp/XMLDocument.cpp.orig modules/xml/src/cpp/XMLDocument.cpp
+--- modules/xml/src/cpp/XMLDocument.cpp.orig	2021-07-15 13:55:21.000000000 +0200
++++ modules/xml/src/cpp/XMLDocument.cpp	2025-07-14 14:31:16.844487000 +0200
+@@ -520,7 +520,7 @@ void XMLDocument::errorFunction(void *ctx, const char 
+     errorBuffer.append(str);
+ }
+ 
+-void XMLDocument::errorXPathFunction(void *ctx, xmlError * error)
++void XMLDocument::errorXPathFunction(void *ctx, const xmlError * error)
+ {
+     errorXPathBuffer.append(error->message);
+ }
+diff -up modules/xml/src/cpp/XMLDocument.hxx.orig modules/xml/src/cpp/XMLDocument.hxx
+--- modules/xml/src/cpp/XMLDocument.hxx.orig	2021-07-15 13:55:21.000000000 +0200
++++ modules/xml/src/cpp/XMLDocument.hxx	2025-07-14 14:31:29.264578000 +0200
+@@ -175,7 +175,7 @@ class XML_SCILAB_IMPEXP XMLDocument: public XMLObject 
+      * Error function used when the XPath query is compiled/
+      * @see http://xmlsoft.org/html/libxml-xmlerror.html#xmlStructuredErrorFunc
+      */
+-    static void errorXPathFunction(void *ctx, xmlError * error);
++    static void errorXPathFunction(void *ctx, const xmlError * error);
+ 
+     /**
+      * Reads and parses a document given in a file.

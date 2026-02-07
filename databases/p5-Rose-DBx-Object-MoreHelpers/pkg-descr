@@ -1,0 +1,5 @@
+In the tradition of Rose::DB::Object::Helpers, more importable methods.
+
+This class inherits from Rose::Object::MixIn. See the Rose::Object::MixIn
+documentation for a full explanation of how to import methods from
+this class. The helper methods themselves are described below.

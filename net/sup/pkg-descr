@@ -1,0 +1,5 @@
+Sup is a program used for upgrading collections of files from other machines
+to your machine.  You execute sup, the client program, which talks over the
+network using IP/TCP to a file server process.  The file server process
+cooperates with sup to determine which files of the collection need to be
+upgraded on your machine.

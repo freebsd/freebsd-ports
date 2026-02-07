@@ -1,0 +1,22 @@
+BDFTOPCF_CMD=	%%BDFTOPCF_CMD%%
+GZIP_CMD=	%%GZIP_CMD%%
+
+SRCS=	elisat10.bdf jpnhn4-jis.bdf jpnhn4-iso.bdf
+
+.for F in ${SRCS:R}
+${F}.pcf.gz: ${F}.bdf
+	${BDFTOPCF_CMD} ${.ALLSRC} | ${GZIP_CMD} -c > ${.TARGET}
+
+all: ${F}.pcf.gz
+.endfor
+
+.for F in ${SRCS:R}
+${DESTDIR}%%FONTSDIR%%/${F}.pcf.gz: ${F}.pcf.gz
+	mkdir -p ${DESTDIR}%%FONTSDIR%%
+	${BSD_INSTALL_DATA} ${.ALLSRC} ${.TARGET}
+
+install: ${DESTDIR}%%FONTSDIR%%/${F}.pcf.gz
+.endfor
+
+all install:
+	@true

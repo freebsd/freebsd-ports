@@ -1,0 +1,6 @@
+X-CD-roast is an X11 based CD-burner.  You can burn Audio and Data
+CD-ROMs.  It can be used to extract data and audio tracks.
+You can format CD-RWs, create ISO images, burn ISO images, and many
+other stuff...
+
+Note:  It uses cdrecord and works only on SCSI drives.

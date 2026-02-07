@@ -1,0 +1,10 @@
+--- Imakefile.orig	1994-02-02 04:54:35 UTC
++++ Imakefile
+@@ -14,4 +14,6 @@ all::  $(PROGRAMS)
+ 
+ LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
+ 
+-NormalProgramTarget(xmix,$(OBJS1),,$(LOCAL_LIBRARIES),)
++PROGRAM = $(PROGRAMS)
++
++ComplexProgramTarget_1($(PROGRAM),$(LOCAL_LIBRARIES),)

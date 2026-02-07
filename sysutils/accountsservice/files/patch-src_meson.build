@@ -1,0 +1,13 @@
+--- src/meson.build.orig	2022-01-28 20:47:34 UTC
++++ src/meson.build
+@@ -28,8 +28,8 @@ cflags = [
+   '-DLOCALSTATEDIR="@0@"'.format(act_localstatedir),
+   '-DDATADIR="@0@"'.format(act_datadir),
+   '-DSYSCONFDIR="@0@"'.format(act_sysconfdir),
+-  '-DICONDIR="@0@"'.format(join_paths(act_localstatedir, 'lib', 'AccountsService', 'icons')),
+-  '-DUSERDIR="@0@"'.format(join_paths(act_localstatedir, 'lib', 'AccountsService', 'users')),
++  '-DICONDIR="@0@"'.format(join_paths(act_localstatedir, 'db', 'AccountsService', 'icons')),
++  '-DUSERDIR="@0@"'.format(join_paths(act_localstatedir, 'db', 'AccountsService', 'users')),
+ ]
+ 
+ libaccounts_generated = static_library(

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=XScreenSaver Stop
+Comment=Stop XScreenSaver daemon
+Icon=process-stop
+Exec=%%PREFIX%%/bin/xscreensaver-command -exit
+Categories=Settings;DesktopSettings;Security;X-XFCE;XScreenSaver;
+Terminal=false
+StartupNotify=false

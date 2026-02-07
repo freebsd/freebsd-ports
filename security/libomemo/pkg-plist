@@ -1,0 +1,7 @@
+include/libomemo/libomemo.h
+include/libomemo/libomemo_crypto.h
+include/libomemo/libomemo_storage.h
+lib/libomemo.so
+lib/libomemo.so.0
+lib/libomemo.so.0.8.1
+libdata/pkgconfig/libomemo.pc

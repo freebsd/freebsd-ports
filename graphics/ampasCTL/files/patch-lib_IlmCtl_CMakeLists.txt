@@ -1,0 +1,11 @@
+--- lib/IlmCtl/CMakeLists.txt.orig	2021-04-11 04:25:00 UTC
++++ lib/IlmCtl/CMakeLists.txt
+@@ -22,7 +22,7 @@ add_library( IlmCtl ${DO_SHARED}
+ )
+ 
+ target_link_libraries( IlmCtl ${IlmBase_LDFLAGS_OTHER} )
+-target_link_libraries( IlmCtl Iex IlmThread Half )
++target_link_libraries( IlmCtl Iex IlmThread Imath)
+ 
+ set_target_properties( IlmCtl PROPERTIES
+   VERSION ${CTL_VERSION}

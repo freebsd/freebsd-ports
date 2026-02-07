@@ -1,0 +1,18 @@
+--- objdump/Makefile.orig	1996-11-08 16:26:58.000000000 +0300
++++ objdump/Makefile	2013-10-09 13:51:17.000000000 +0400
+@@ -1,12 +1,12 @@
+ 
+-CC 	= gcc
+-CFLAGS 	= -O2 -Wall -g
++CC 	?= gcc
++CFLAGS 	?= -O2 -Wall -g
+ 
+ 
+ all: 	objdump
+ 
+ objdump: objdump.o disasm.o 
+-	gcc -O2 -Wall objdump.o disasm.o -o objdump
++	$(CC) -O2 -Wall objdump.o disasm.o -o objdump
+ 
+ objdump.o: objdump.c disasm.h bool.h
+ 	$(CC) $(CFLAGS) -c $< -o $@

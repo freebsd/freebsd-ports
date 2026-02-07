@@ -1,0 +1,5 @@
+TIMESTAMP = 1719689989
+SHA256 (go/sysutils_gcp-ops-agent/ops-agent-2.48.0/v0.0.0-20240624194131-536ab1c138a1.mod) = 66c7a34c581265c40aa0636f154769fff9abe895e048bfebeb01a59bf42b9517
+SIZE (go/sysutils_gcp-ops-agent/ops-agent-2.48.0/v0.0.0-20240624194131-536ab1c138a1.mod) = 8743
+SHA256 (go/sysutils_gcp-ops-agent/ops-agent-2.48.0/v0.0.0-20240624194131-536ab1c138a1.zip) = 2e8dbc9c69c933140dca5e6207df4d334cd46801eed4819545528849657bbd5f
+SIZE (go/sysutils_gcp-ops-agent/ops-agent-2.48.0/v0.0.0-20240624194131-536ab1c138a1.zip) = 9984793

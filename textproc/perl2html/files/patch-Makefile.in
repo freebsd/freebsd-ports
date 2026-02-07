@@ -1,0 +1,58 @@
+--- Makefile.in.orig	2000-05-03 01:14:04.000000000 +0800
++++ Makefile.in	2014-06-30 23:46:37.906409781 +0800
+@@ -27,7 +27,7 @@ SHELL = /bin/sh
+ # for gzip because otherwise the load on the web server
+ # grows without having big benefits.
+ # COMPRESSION = -DCOMPRESSION=4
+-COMPRESSION = -DCOMPRESSION=1
++COMPRESSION ?= -DCOMPRESSION=1
+ 
+ # Dont change things beyond this line.
+ TARGET          = @PROJECT_NAME@
+@@ -59,7 +59,7 @@ srcdir          = @srcdir@
+ docdir          = @DOCDIR@
+ CPPFLAGS        = @CPPFLAGS@
+ 
+-CFLAGS += -O2 -Wall
++CFLAGS ?= -O2 -Wall
+ ALL_CFLAGS = $(CFLAGS) -I$(srcdir) -I. $(COMPRESSION) 
+ 
+ all: $(TARGET)
+@@ -70,24 +70,25 @@ $(TARGET): $(CONFIGIN) $(CONFIGS) $(LEXO
+ $(LEXOUTPUT): $(CONFIGS) $(LEXSRCS) $(HDRS)
+ 	$(LEX) $(LEXSRCS)
+ 
+-install: $(TARGET) install-doc
++install: $(TARGET)
+ 	@echo "Installing" $(TARGET) "to" $(bindir)
+-	-mkdir -p $(bindir)
+-	$(INSTALL_PROGRAM) $(TARGET) $(bindir)/$(TARGET)
++	-mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(bindir)/$(TARGET)
++	-mkdir -p $(DESTDIR)$(man1dir)
++	$(INSTALL_DATA) $(srcdir)/$(MANPAGE) $(DESTDIR)$(man1dir)/$(MANPAGE)
+ 
+ install-strip: $(TARGET) install-doc
+ 	@echo "Installing" $(TARGET) "to" $(bindir)
+-	-mkdir -p $(bindir)
+-	$(INSTALL_PROGRAM) -s $(TARGET) $(bindir)/$(TARGET)
++	-mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL_PROGRAM) -s $(TARGET) $(DESTDIR)$(bindir)/$(TARGET)
+ 
+ install-doc: 
+-	-mkdir -p $(man1dir) $(docdir)
+-	$(INSTALL_DATA) $(srcdir)/$(MANPAGE) $(man1dir)/$(MANPAGE)
+-	$(INSTALL_DATA) $(srcdir)/AUTHORS $(docdir)/AUTHORS
+-	$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/COPYING
+-	$(INSTALL_DATA) $(srcdir)/NEWS $(docdir)/NEWS
+-	$(INSTALL_DATA) $(srcdir)/README $(docdir)/README
+-	$(INSTALL_DATA) $(srcdir)/$(LSM) $(docdir)/$(LSM)
++	-mkdir -p $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) $(srcdir)/AUTHORS $(DESTDIR)$(docdir)/AUTHORS
++	$(INSTALL_DATA) $(srcdir)/COPYING $(DESTDIR)$(docdir)/COPYING
++	$(INSTALL_DATA) $(srcdir)/NEWS $(DESTDIR)$(docdir)/NEWS
++	$(INSTALL_DATA) $(srcdir)/README $(DESTDIR)$(docdir)/README
++	$(INSTALL_DATA) $(srcdir)/$(LSM) $(DESTDIR)$(docdir)/$(LSM)
+ 
+ uninstall:
+ 	rm -f $(bindir)/$(TARGET)

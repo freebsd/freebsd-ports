@@ -1,0 +1,3 @@
+Search::QueryParser parses a query string into a data structure to be handled by
+external search engines. For examples of such engines, see File::Tabular and
+Search::Indexer.

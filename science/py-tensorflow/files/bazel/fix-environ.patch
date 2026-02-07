@@ -1,0 +1,42 @@
+--- a/llvm/lib/Support/Unix/Program.inc	2023-04-28 21:51:01.000000000 +0200
++++ b/llvm/lib/Support/Unix/Program.inc	2024-07-02 11:12:41.645169000 +0200
+@@ -54,10 +54,8 @@
+ #define USE_NSGETENVIRON 0
+ #endif
+ 
+-#if !USE_NSGETENVIRON
++#if USE_NSGETENVIRON
+ extern char **environ;
+-#else
+-#include <crt_externs.h> // _NSGetEnviron
+ #endif
+ #endif
+ 
+@@ -238,14 +236,6 @@
+       }
+     }
+ 
+-    if (!Envp)
+-#if !USE_NSGETENVIRON
+-      Envp = const_cast<const char **>(environ);
+-#else
+-      // environ is missing in dylibs.
+-      Envp = const_cast<const char **>(*_NSGetEnviron());
+-#endif
+-
+     constexpr int maxRetries = 8;
+     int retries = 0;
+     pid_t PID;
+@@ -312,11 +302,7 @@
+ 
+     // Execute!
+     std::string PathStr = std::string(Program);
+-    if (Envp != nullptr)
+-      execve(PathStr.c_str(), const_cast<char **>(Argv),
+-             const_cast<char **>(Envp));
+-    else
+-      execv(PathStr.c_str(), const_cast<char **>(Argv));
++    execv(PathStr.c_str(), const_cast<char **>(Argv));
+     // If the execve() failed, we should exit. Follow Unix protocol and
+     // return 127 if the executable was not found, and 126 otherwise.
+     // Use _exit rather than exit so that atexit functions and static

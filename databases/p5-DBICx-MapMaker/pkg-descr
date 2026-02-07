@@ -1,0 +1,2 @@
+The Perl 5 module DBICx::MapMaker automatically creates a DBIx::Class
+result source for "many to many" relationship.

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+CUBE_OPTIONS="--home=${HOME}/.assaultcube --init"
+cd %%DATADIR%% && exec %%PREFIX%%/libexec/assaultcube_client ${CUBE_OPTIONS} "$@"

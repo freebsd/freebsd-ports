@@ -1,0 +1,11 @@
+Puppet master is a Ruby application that compiles configurations
+for any number of Puppet agent nodes, using Puppet code and various
+other data sources. (For more info, see Overview of Puppet's
+Architecture.)
+
+Puppet Server is an application that runs on the Java Virtual Machine
+(JVM) and provides the same services as the classic Puppet master
+application. It mostly does this by running the existing Puppet
+master code in several JRuby interpreters, but it replaces some
+parts of the classic application with new services written in
+Clojure.

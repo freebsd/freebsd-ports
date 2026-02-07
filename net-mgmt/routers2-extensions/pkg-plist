@@ -1,0 +1,8 @@
+www/routers2/extensions/ifrouter.cgi
+www/routers2/extensions/ifstatus.cgi
+www/routers2/extensions/ifswitch.cgi
+www/routers2/extensions/pdfreport.cgi
+www/routers2/extensions/routingtable.cgi
+www/routers2/extensions/showcfg.cgi
+www/routers2/extensions/tonagios.cgi
+www/routers2/extensions/trend.cgi

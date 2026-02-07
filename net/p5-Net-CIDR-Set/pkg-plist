@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Net::CIDR::Set.3.gz
+%%PERL5_MAN3%%/Net::CIDR::Set::IPv4.3.gz
+%%PERL5_MAN3%%/Net::CIDR::Set::IPv6.3.gz
+%%SITE_PERL%%/Net/CIDR/Set.pm
+%%SITE_PERL%%/Net/CIDR/Set/IPv4.pm
+%%SITE_PERL%%/Net/CIDR/Set/IPv6.pm

@@ -1,0 +1,15 @@
+This package contains the URI.pm module with friends.  The module
+implements the URI class.  Objects of this class represent Uniform
+Resource Identifier (URI) references as specified in RFC 2396 and
+updated by RFC 2732.  Release 1.50 includes the initial attempt at
+providing support to IRIs.  URI objects now support the 'as_iri'
+and 'ihost' methods.
+
+URI objects can be used to access and manipulate the various
+components that make up these strings.  There are also methods to
+combine URIs in various ways.
+
+The URI class replaces the URI::URL class that used to be distributed
+with libwww-perl.  This package contains an emulation of the old
+URI::URL interface.  The emulated URI::URL implements both the old and
+the new interface.

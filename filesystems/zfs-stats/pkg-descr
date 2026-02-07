@@ -1,0 +1,8 @@
+ZFS statistics tool for FreeBSD.
+
+The zfs-stats script displays general ZFS information and
+human-readable statistics for the following subsystems:
+  * ARC
+  * L2ARC
+  * DMU (zfetch)
+  * vdev cache

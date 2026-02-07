@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+You installed goesimage, the program that downloads images from the
+NOAA Geostationary Operational Environment Satellite and makes them
+your wallpaper.
+
+It only makes sense to install goesimage if you are running some
+graphical desktop environment.
+
+You need to enable goesimage by running this command:
+$ goesimage-enable
+
+This will install the crontab procedure for your current user.
+
+Images will be saved in your ~/.cache/goesimage/ directory, and will
+be set as a wallpaper on the Xorg server running on DISPLAY=:0
+
+Before uninstalling, you need to disable it:
+$ goesimage-disable
+
+You can also download and update the wallpaper any time:
+$ goesimage-run-now
+EOM
+}
+]

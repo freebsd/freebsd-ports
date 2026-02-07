@@ -1,0 +1,18 @@
+--- product/community/DBeaver.product.orig	2025-07-18 15:47:12 UTC
++++ product/community/DBeaver.product
+@@ -50,6 +50,7 @@
+ 
+     <launcher name="dbeaver">
+         <linux icon="/icons/dbeaver.xpm"/>
++        <freebsd icon="/icons/dbeaver.xpm"/>
+         <macosx icon="/icons/dbeaver.icns"/>
+         <solaris/>
+         <win useIco="true">
+@@ -85,6 +86,7 @@
+ 
+     <features>
+         <feature id="org.jkiss.dbeaver.ce.feature"/>
++        <feature id="org.eclipse.justj.openjdk.hotspot.jre.full.stripped" installMode="root"/>
+     </features>
+ 
+     <configurations>

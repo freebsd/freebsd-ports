@@ -1,0 +1,18 @@
+--- configure.orig	2024-03-20 15:31:17 UTC
++++ configure
+@@ -7847,7 +7847,6 @@ then
+    echo "   The bash package is most likely on your UNIX distribution media."
+    echo "   It is required to install the bash package and rerun configure."
+    echo
+-   exit 1
+ fi
+ 
+ # Extract the first word of "wget", so it can be a program name with args.
+@@ -7905,7 +7904,6 @@ then
+    echo "   The wget package is most likely on your UNIX distribution media."
+    echo "   It is required to install the wget package and rerun configure."
+    echo
+-   exit 1
+ fi
+ 
+ # Extract the first word of "curl", so it can be a program name with args.

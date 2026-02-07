@@ -1,0 +1,13 @@
+--- code/makefile.unx.orig	2002-11-23 13:45:58 UTC
++++ code/makefile.unx
+@@ -4,8 +4,8 @@
+ 
+ D		=./
+ 
+-CXX		=g++
+-CXXFLAGS	=-I$(D) -O2 -Wall #-DDEBUG -DDEBUG2
++CXX		?=g++
++CXXFLAGS	=-I$(D) -Wall #-DDEBUG -DDEBUG2
+ 
+ .SUFFIXES:	.cpp .o
+ 

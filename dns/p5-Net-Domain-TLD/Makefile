@@ -1,0 +1,19 @@
+PORTNAME=	Net-Domain-TLD
+PORTVERSION=	1.75
+CATEGORIES=	dns perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	vivek@khera.org
+COMMENT=	Look up and validate TLDs
+WWW=		https://metacpan.org/release/Net-Domain-TLD
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5
+USE_PERL5=	configure
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

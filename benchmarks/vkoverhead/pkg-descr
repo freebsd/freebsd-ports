@@ -1,0 +1,8 @@
+vkoverhead is a tool for evaluating CPU-based overhead of Vulkan
+drivers. It was inspired heavily by drawoverhead from piglit.
+
+## Features
+* extreme granularity for profiling specific scenarios
+* simple to use
+* CSV output for ease of script parsing
+* zero dependencies

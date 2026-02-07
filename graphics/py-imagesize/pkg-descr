@@ -1,0 +1,2 @@
+This module analyzes JPEG/JPEG 2000/PNG/GIF/TIFF/SVG/Netpbm image headers and
+returns image size or DIP.

@@ -1,0 +1,39 @@
+PORTNAME=	jchessboard
+PORTVERSION=	1.5
+PORTREVISION=	5
+CATEGORIES=	games java
+MASTER_SITES=	SF
+DISTNAME=	JChessBoard-${PORTVERSION}
+
+MAINTAINER=	jgh@FreeBSD.org
+COMMENT=	Chess game and PGN viewer/editor written in Java
+WWW=		https://jchessboard.sourceforge.net/
+
+LICENSE=	GPLv2
+
+USES=		java:ant,run tar:tgz
+USE_LOCALE=	en_US.ISO8859-1
+
+NO_ARCH=	yes
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME} \
+		%%DATADIR%%/${JARFILE}
+SUB_FILES=	${PORTNAME}
+SUB_LIST=	JARFILE=${JARFILE} \
+		PORTNAME=${PORTNAME}
+PORTDOCS=	*
+
+JARFILE=	JChessBoard.jar
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

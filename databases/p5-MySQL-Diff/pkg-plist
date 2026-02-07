@@ -1,0 +1,10 @@
+bin/mysqldiff
+%%PERL5_MAN1%%/mysqldiff.1.gz
+%%SITE_PERL%%/MySQL/Diff.pm
+%%SITE_PERL%%/MySQL/Diff/Database.pm
+%%SITE_PERL%%/MySQL/Diff/Table.pm
+%%SITE_PERL%%/MySQL/Diff/Utils.pm
+%%PERL5_MAN3%%/MySQL::Diff.3.gz
+%%PERL5_MAN3%%/MySQL::Diff::Database.3.gz
+%%PERL5_MAN3%%/MySQL::Diff::Table.3.gz
+%%PERL5_MAN3%%/MySQL::Diff::Utils.3.gz

@@ -1,0 +1,16 @@
+Hybrid Bar is a simple status bar focused on wlroots Wayland compositors.
+
+It supports:
+- Straight-forward configuration;
+- Labels with shell commands (+ listen support);
+- Spacings (a.k.a. Separators if styled);
+- Boxes with child widgets;
+- Custom update-rate for dynamic labels;
+- Cava;
+- Buttons with shell commands;
+- Tooltips for buttons and labels;
+- Markup for buttons and labels;
+- Top and Bottom pinning;
+- Transparency (+ blur if your compositor allows for blurring surface layers);
+- Experimental system tray via "stray";
+- Different monitors for each configuration

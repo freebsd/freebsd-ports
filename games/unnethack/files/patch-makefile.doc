@@ -1,0 +1,24 @@
+--- sys/autoconf/Makefile.doc.orig	2010-01-10 23:51:59.000000000 +0900
++++ sys/autoconf/Makefile.doc	2010-01-19 14:56:00.437356006 +0900
+@@ -49,15 +49,15 @@
+ #	tbl tmac.n Guidebook.mn | groff -Wall -Tdvi > Guidebook.dvi
+ 
+ GAME    = unnethack
+-MANDIR	= /usr/man/man6
++MANDIR	= $(MANPREFIX)/man/man6
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+-GAMEMANCREATE = cp $(GAME).6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = $(BSD_INSTALL_MAN) $(GAME).6
++LEVMANCREATE = $(BSD_INSTALL_MAN) lev_comp.6
++DGNMANCREATE = $(BSD_INSTALL_MAN) dgn_comp.6
++RCVRMANCREATE = $(BSD_INSTALL_MAN) recover.6
++DLBMANCREATE = $(BSD_INSTALL_MAN) dlb.6
+ # manual installation for most SYSV-style systems
+ # and for man files readable in less (eg dos DJGPP+GNU)
+ # GAMEMANCREATE = groff -Wall -mtty-char -Tascii -man $(GAME).6 >

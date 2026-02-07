@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+Thanks to Nikos Ntarmos, it is now possible to start slim from /etc/ttys.
+Please see %%PREFIX%%/etc/rc.d/slim for instructions on how to do that.
+
+Alternatively, just put the following entry in /etc/rc.conf:
+
+slim_enable=yes
+
+slim requires a dbus session bus to connect to. Add the following entry in
+/etc/rc.conf:
+
+dbus_enable="YES"
+
+*** Option "sessions" is no longer supported. ***
+
+Now you need to put session files in the directory specified by option
+"sessiondir". They should be xdg-style .desktop files.
+
+WARNING: the default behaviour in parsing .xinitrc file has changed!
+         You can now set a default xsession as described here:
+         https://github.com/iwamatsu/slim/pull/1
+         You can turn back to random xsession selection by compiling
+         this port without the option XDEFAULT.
+
+EOM
+}
+]

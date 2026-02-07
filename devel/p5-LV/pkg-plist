@@ -1,0 +1,5 @@
+%%SITE_PERL%%/LV.pm
+%%SITE_PERL%%/LV/Backend/Magic.pm
+%%SITE_PERL%%/LV/Backend/Sentinel.pm
+%%SITE_PERL%%/LV/Backend/Tie.pm
+%%PERL5_MAN3%%/LV.3.gz

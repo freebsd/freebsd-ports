@@ -1,0 +1,10 @@
+--- Imakefile.orig	2024-02-02 17:45:34 UTC
++++ Imakefile
+@@ -23,6 +23,7 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
+     PUCCPTYDDEF = -DPUCC_PTYD		/* does not need to be setuid */
+          PTYLIB = -lpucc
+ #endif
++         PTYLIB += -lutil
+ 
+  OSMAJORVERSION = OSMajorVersion
+  OSMINORVERSION = OSMinorVersion

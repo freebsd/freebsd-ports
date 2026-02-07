@@ -1,0 +1,13 @@
+Fix libtool path.
+
+--- xpaintrw/Makefile.am.orig	2023-07-13 21:19:11 UTC
++++ xpaintrw/Makefile.am
+@@ -28,7 +28,7 @@ xpaint_DEFINES = $(ARCH_DEFINES) $(EXTRA_DEFINES) $(XA
+ 
+ xpaint_DEFINES = $(ARCH_DEFINES) $(EXTRA_DEFINES) $(XAWLIB_DEFINES)
+ 
+-LIBTOOL = /usr/bin/libtool
++LIBTOOL = ${LOCALBASE}/bin/libtool
+ AM_CFLAGS   = @X_CFLAGS@ @SPECIAL_CFLAGS@ $(xpaint_DEFINES)
+ AM_YFLAGS     = -d
+ CLEANFILES    = 

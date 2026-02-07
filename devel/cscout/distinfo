@@ -1,0 +1,7 @@
+TIMESTAMP = 1575242282
+SHA256 (dspinellis-cscout-3.01-bd7dfac_GH0.tar.gz) = d2e0af80a0e581e36020c319931cac67337b5c6d6d33b73d2d1cd4c7edef116d
+SIZE (dspinellis-cscout-3.01-bd7dfac_GH0.tar.gz) = 1165610
+SHA256 (dspinellis-swill-fafde76_GH0.tar.gz) = 52303d4e83f170f1c454314471b5d4c76cfbb3e41828272416d6370e8bac4052
+SIZE (dspinellis-swill-fafde76_GH0.tar.gz) = 119107
+SHA256 (dspinellis-btyacc-4d0be15_GH0.tar.gz) = 18d71bcfff135167f7a3997bdf36796ed0a53f3a82b97aa6c06cf378599b78b2
+SIZE (dspinellis-btyacc-4d0be15_GH0.tar.gz) = 87570

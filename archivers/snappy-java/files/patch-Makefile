@@ -1,0 +1,52 @@
+--- Makefile.orig	2025-07-19 20:40:49 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ MVN:=mvn
+ $(info OS_NAME:$(OS_NAME), OS_ARCH:$(OS_ARCH))
+ 
+ MVN:=mvn
+-SBT:=./sbt
++SBT:=sbt -Dsbt.ivy.home=$(SBT_IVY_HOME) -Dsbt.offline=true -Dsbt.boot.directory=$(SBT_BOOT_DIR) -Dsbt.coursier=false -Dsbt.global.base=$(SBT_GLOBAL_DIR)
+ 
+ all: snappy
+ 
+@@ -17,7 +17,6 @@ SNAPPY_UNPACKED:=$(TARGET)/snappy-extracted.log
+ # Change this variable to use a specific git commit
+ SNAPPY_GIT_REV:=$(SNAPPY_VERSION)
+ SNAPPY_UNPACKED:=$(TARGET)/snappy-extracted.log
+-SNAPPY_GIT_UNPACKED:=$(TARGET)/snappy-git-extracted.log
+ SNAPPY_CMAKE_CACHE=$(SNAPPY_OUT)/CMakeCache.txt
+ 
+ BITSHUFFLE_ARCHIVE:=$(TARGET)/bitshuffle-$(BITSHUFFLE_VERSION).tar.gz
+@@ -74,21 +73,12 @@ $(SNAPPY_UNPACKED): $(SNAPPY_ARCHIVE)
+ 	$(TAR) xvfz $< -C $(TARGET)
+ 	touch $@
+ 
+-$(SNAPPY_GIT_UNPACKED):
++$(SNAPPY_CMAKE_CACHE): $(SNAPPY_UNPACKED)
+ 	@mkdir -p $(SNAPPY_OUT)
+-	rm -rf $(SNAPPY_SRC_DIR)
+-	@mkdir -p $(SNAPPY_SRC_DIR)
+-	git clone $(SNAPPY_GIT_REPO_URL) $(SNAPPY_SRC_DIR)
+-	git --git-dir=$(SNAPPY_SRC_DIR)/.git --work-tree=$(SNAPPY_SRC_DIR) checkout -b local/snappy-$(SNAPPY_VERSION) $(SNAPPY_GIT_REV)
+-	cd $(SNAPPY_SRC_DIR) && git submodule update --init
+-	touch $@
+-
+-$(SNAPPY_CMAKE_CACHE): $(SNAPPY_GIT_UNPACKED)
+-	@mkdir -p $(SNAPPY_OUT)
+ 	cd $(SNAPPY_OUT) && cmake $(SNAPPY_CMAKE_OPTS) ../../$(SNAPPY_SRC_DIR)
+ 	touch $@
+ 
+-jni-header: $(SNAPPY_GIT_UNPACKED) $(BITSHUFFLE_UNPACKED) $(SRC)/org/xerial/snappy/SnappyNative.h $(SRC)/org/xerial/snappy/BitShuffleNative.h
++jni-header: $(SNAPPY_UNPACKED) $(BITSHUFFLE_UNPACKED) $(SRC)/org/xerial/snappy/SnappyNative.h $(SRC)/org/xerial/snappy/BitShuffleNative.h
+ 
+ snappy-header: $(SNAPPY_CMAKE_CACHE)
+ 
+@@ -104,7 +94,7 @@ $(SRC)/org/xerial/snappy/BitShuffleNative.h: $(TARGET)
+ 
+ $(SRC)/org/xerial/snappy/BitShuffleNative.h: $(TARGET)/jni-classes/org/xerial/snappy/BitShuffleNative.class
+ 
+-$(SNAPPY_SRC): $(SNAPPY_GIT_UNPACKED)
++$(SNAPPY_SRC): $(SNAPPY_UNPACKED)
+ 
+ # aarch64 can use big-endian optimzied code
+ ifeq ($(OS_ARCH),aarch64)

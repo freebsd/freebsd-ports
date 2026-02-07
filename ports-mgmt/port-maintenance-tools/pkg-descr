@@ -1,0 +1,5 @@
+Here is a meta-port for a collection of tools that will help you
+manage your ports tree, both for installation, deinstallation,
+updating, and browsing.  Many FreeBSD administrators and users
+find these tools to be helpful, especially when working with
+building ports from their sources.

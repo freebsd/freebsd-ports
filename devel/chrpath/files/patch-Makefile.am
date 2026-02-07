@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2025-02-23 10:11:45 UTC
++++ Makefile.am
+@@ -1,6 +1,6 @@
+ SUBDIRS = testsuite deb
+ 
+-docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/$(PACKAGE)
+ 
+ doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README
+ 

@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# PROVIDE: mohawk
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable mohawk:
+#
+# mohawk_enable (bool):         Set it to "YES" to enable mohawk
+#                               Default is "NO".
+# mohawk_conf (path):           Set full path to config file.
+#                               Default is "%%PREFIX%%/etc/mohawk.conf".
+
+. /etc/rc.subr
+
+name="mohawk"
+rcvar=mohawk_enable
+
+load_rc_config $name
+
+: ${mohawk_enable="NO"}
+: ${mohawk_conf="%%PREFIX%%/etc/mohawk.conf"}
+
+command=%%PREFIX%%/sbin/mohawk
+command_args="-c ${mohawk_conf}"
+required_files=${mohawk_conf}
+
+run_rc_command "$1"

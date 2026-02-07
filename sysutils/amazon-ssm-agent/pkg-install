@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	echo "Creating ssm-user for SSM Agent Sessions"
+	if [ -n "${PKG_METALOG}" ] && \
+	    pw useradd --help 2>&1 | grep -q -F -- '-M metalog'; then
+		METALOG="-M ${PKG_METALOG}"
+	fi
+	pw ${METALOG} -R ${PKG_ROOTDIR} useradd ssm-user -G wheel -m
+fi

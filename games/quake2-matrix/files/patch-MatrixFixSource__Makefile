@@ -1,0 +1,74 @@
+--- ./MatrixFixSource/Makefile.orig	Fri Feb  3 05:47:07 2006
++++ ./MatrixFixSource/Makefile	Wed Jan 10 19:07:23 2007
+@@ -16,22 +16,12 @@
+ # this nice line comes from the linux kernel makefile
+ ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
+ 
+-ifneq ($(ARCH),i386)
+-ifneq ($(ARCH),axp)
+-ifneq ($(ARCH),ppc)
+-ifneq ($(ARCH),sparc)
+-$(error arch $(ARCH) is currently not supported)
+-endif
+-endif
+-endif
+-endif
+-
+-BUILD_DEBUG_DIR=debug$(ARCH)
+-BUILD_RELEASE_DIR=release$(ARCH)
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
+ 
+ 
+-CC=gcc
+-BASE_CFLAGS=-Dstricmp=strcasecmp 
++CC?=gcc
++BASE_CFLAGS=-Dstricmp=strcasecmp
+ 
+ RELEASE_CFLAGS=$(BASE_CFLAGS) -ffast-math -funroll-loops \
+ 	-fomit-frame-pointer -fexpensive-optimizations
+@@ -55,7 +45,7 @@
+ DO_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+ DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+ 
+-TARGETS=$(BUILDDIR)/matrix/game$(ARCH).$(SHLIBEXT)
++TARGETS=$(BUILDDIR)/matrix/game.$(SHLIBEXT)
+ 	
+ all:
+ 	@echo
+@@ -66,11 +56,11 @@
+ 	@echo
+ debug:
+ 	@-mkdir -p $(BUILD_DEBUG_DIR)/matrix
+-	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS)"
++	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS+="$(DEBUG_CFLAGS)"
+ 	
+ release:
+ 	@-mkdir -p $(BUILD_RELEASE_DIR)/matrix
+-	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(RELEASE_CFLAGS)"
++	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS)"
+ 	
+ targets: $(TARGETS)
+ 
+@@ -153,7 +143,7 @@
+         $(BUILDDIR)/q_shared.o
+ 
+ 
+-$(BUILDDIR)/matrix/game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
++$(BUILDDIR)/matrix/game.$(SHLIBEXT) : $(GAME_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS) $(LDFLAGS)
+ 	
+ $(BUILDDIR)/g_ai.o :        g_ai.c
+@@ -374,10 +364,10 @@
+ clean: clean-debug clean-release
+ 
+ clean-debug:
+-	$(MAKE) clean2 BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS)"
++	$(MAKE) clean2 BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS+="$(DEBUG_CFLAGS)"
+ 	
+ clean-release:
+-	$(MAKE) clean2 BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(DEBUG_CFLAGS)"
++	$(MAKE) clean2 BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(DEBUG_CFLAGS)"
+ 	
+ clean2:
+ 	-rm -f $(GAME_OBJS)

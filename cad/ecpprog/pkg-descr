@@ -1,0 +1,6 @@
+ecpprog is a basic driver for FTDI based JTAG probes, to program ECP5 FPGAs.
+
+Features:
+* Flash programing via JTAG link to ECP5 part
+* Validate ECP5 IDCODEs
+* Read/Decode ECP5 status register

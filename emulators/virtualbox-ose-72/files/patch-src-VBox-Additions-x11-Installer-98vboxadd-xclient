@@ -1,0 +1,25 @@
+--- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2025-08-13 19:41:21 UTC
++++ src/VBox/Additions/x11/Installer/98vboxadd-xclient
+@@ -42,15 +42,15 @@ elif test -z "${SSH_CONNECTION}"; then
+    # not use "exit" here as this script is "source"d, not executed.
+ 
+     # Check wheather X11 or Wayland version of VBoxClient should be started.
+-    vbox_wl_check=$(/usr/bin/vboxwl --check 2> /dev/null)
++    vbox_wl_check=$(/usr/local/bin/vboxwl --check 2> /dev/null)
+     if test "$vbox_wl_check" = "WL"; then
+-        /usr/bin/VBoxClient --wayland
++        /usr/local/bin/VBoxClient --wayland
+     else
+-        /usr/bin/VBoxClient --clipboard
+-        /usr/bin/VBoxClient --seamless
+-        /usr/bin/VBoxClient --draganddrop
++        /usr/local/bin/VBoxClient --clipboard
++        /usr/local/bin/VBoxClient --seamless
++        /usr/local/bin/VBoxClient --draganddrop
+     fi
+ 
+-    /usr/bin/VBoxClient --checkhostversion
+-    /usr/bin/VBoxClient --vmsvga-session # In case VMSVGA emulation is enabled
++    /usr/local/bin/VBoxClient --checkhostversion
++    /usr/local/bin/VBoxClient --vmsvga-session # In case VMSVGA emulation is enabled
+ fi

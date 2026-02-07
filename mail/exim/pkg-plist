@@ -1,0 +1,46 @@
+%%SUID%%@mode 4755
+%%EXIM%%sbin/exim
+%%SUID%%@mode
+%%EXIM%%sbin/exim_checkaccess
+%%EXIM%%sbin/exim_dbmbuild
+%%EXIM%%sbin/exim_dumpdb
+%%EXIM%%sbin/exim_fixdb
+%%EXIM%%sbin/exim_id_update
+%%EXIM%%sbin/exim_lock
+%%EXIM%%sbin/exim_msgdate
+%%EXIM%%sbin/exim_tidydb
+%%EXIM%%sbin/exicyclog
+%%EXIM%%sbin/exigrep
+%%EXIM%%sbin/eximstats
+%%EXIM%%sbin/exinext
+%%EXIM%%sbin/exipick
+%%EXIM%%sbin/exiqgrep
+%%EXIM%%sbin/exiqsumm
+%%EXIM%%sbin/exiwhat
+%%EXIM%%share/man/man8/exim.8.gz
+%%EXIMON%%sbin/eximon
+%%EXIMON%%sbin/eximon.bin
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/README.UPDATING
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/Exim3.upgrade
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/Exim4.upgrade
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/NewStuff
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/OptionLists.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/README.SIEVE
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/dbm.discuss.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/experimental-spec.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/filter.txt
+%%EXIM%%%%PORTDOCS%%%%DOCSDIR%%/spec.txt
+%%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r3
+%%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/convert4r4
+%%EXIM%%%%PORTDOCS%%%%EXAMPLESDIR%%/transport-filter.pl
+%%EXIMDAEMON%%etc/periodic/daily/150.exim-tidydb
+%%EXIMDAEMON%%etc/periodic/daily/460.exim-mail-rejects
+@sample %%ETCDIR%%/configure.sample
+%%SA_EXIM%%@sample %%ETCDIR%%/sa-exim.conf.sample
+%%EXIM%%@dir(%%EXIM_USER%%,%%EXIM_GROUP%%,) /%%LOGDIR%%

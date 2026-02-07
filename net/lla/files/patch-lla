@@ -1,0 +1,19 @@
+*** lla.orig	Wed Sep 26 16:22:29 2001
+--- lla	Wed Sep 26 16:22:45 2001
+***************
+*** 269,275 ****
+  if (@email) {
+      my $MailSubject = "LDAP Log Analyse Report";
+      my $all_email = join ' ', @email;
+!     open OUTPUT, "| /bin/mail -s \"$MailSubject\" $all_email";
+  } else {
+      open OUTPUT, ">&STDOUT";
+  }
+--- 269,275 ----
+  if (@email) {
+      my $MailSubject = "LDAP Log Analyse Report";
+      my $all_email = join ' ', @email;
+!     open OUTPUT, "| /usr/bin/mail -s \"$MailSubject\" $all_email";
+  } else {
+      open OUTPUT, ">&STDOUT";
+  }

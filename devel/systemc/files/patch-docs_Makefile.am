@@ -1,0 +1,15 @@
+# DEVELOPMENT.md is not shipped in tarball since 3.0.0, yet it is in
+# doc/Makefile.am install targets, causing build error
+
+# https://github.com/accellera-official/systemc/issues/105
+
+--- docs/Makefile.am.orig	2024-10-15 13:47:45 UTC
++++ docs/Makefile.am
+@@ -39,7 +39,6 @@ DOC_FILES = \
+ ## Core documentation (see also root directory)
+ 
+ DOC_FILES = \
+-	DEVELOPMENT.md \
+ 	git_branches.svg
+ 
+ ##

@@ -1,0 +1,8 @@
+bin/corona
+%%PERL5_MAN1%%/corona.1.gz
+%%PERL5_MAN3%%/Corona.3.gz
+%%PERL5_MAN3%%/Plack::Handler::Corona.3.gz
+%%SITE_PERL%%/Corona.pm
+%%SITE_PERL%%/Corona/Server.pm
+%%SITE_PERL%%/Plack/Handler/Corona.pm
+%%SITE_PERL%%/Plack/Server/Coro.pm

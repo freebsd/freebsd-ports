@@ -1,0 +1,23 @@
+--- bootstrap.orig	2022-10-15 12:48:23 UTC
++++ bootstrap
+@@ -24,16 +24,16 @@ main(Args) ->
+ 
+     %% Clear directories for builds since bootstrapping may require
+     %% a changed structure from an older one
+-    rm_rf("_build/bootstrap"),
++    %% rm_rf("_build/bootstrap"),
+     %% When recompiling rebar3 itself, the path swaps and cleaning
+     %% removes the modules in _build/bootstrap, but the VM still
+     %% manages to discover those in _build/prod from previous builds and
+     %% cause weird failures when compilers get modified between releases.
+-    rm_rf("_build/prod"),
++    %% rm_rf("_build/prod"),
+     %% The same pattern happens with default/ as well, particularly when
+     %% developing new things.
+-    rm_rf("_build/default/"),
+-    rm_rf("_build/test/"),
++    %% rm_rf("_build/default/"),
++    %% rm_rf("_build/test/"),
+ 
+     filelib:ensure_dir("_build/bootstrap/lib/rebar/ebin/"),
+ 

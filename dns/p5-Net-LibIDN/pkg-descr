@@ -1,0 +1,2 @@
+This module provides Perl bindings for the GNU IDN Library (Libidn)
+(see also Port devel/libidn).

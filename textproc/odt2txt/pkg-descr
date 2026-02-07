@@ -1,0 +1,16 @@
+odt2txt is a command-line tool which extracts the text out of OpenDocument Texts
+produced by LibreOffice, OpenOffice, StarOffice, KOffice and others.
+
+odt2txt can also extract text from some file formats similar to OpenDocument
+Text, such as OpenOffice.org XML, which was used by OpenOffice.org version 1.x
+and older StarOffice versions. To a lesser extent, odt2txt may be useful to
+extract content from OpenDocument spreadsheets and OpenDocument presentations.
+
+odt2txt is:
+- small
+- supports multiple output encodings
+- adopts to your locale
+- able to substitute common characters which the output charset does not contain
+  with ascii look-a-likes
+- written in C, has few dependencies
+- portable (runs on Linux, Mac OS X, Windows, *BSD, Cygwin, Solaris, HP-UX)

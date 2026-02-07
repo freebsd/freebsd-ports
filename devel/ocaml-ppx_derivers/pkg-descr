@@ -1,0 +1,3 @@
+Legacy OCaml PPX library which allows the interoperability of
+ppx_deriving and ppx_type_conv. New code should depend on ocaml-ppxlib
+instead of depending on this library.

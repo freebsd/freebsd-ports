@@ -1,0 +1,7 @@
+msoak is a utility with which to simultaneously subscribe to an
+arbitrary number of topics on any number of MQTT brokers and
+optionally modify or normalize received payloads before printing
+them out. This utility was created to back up to a central location
+messages received by a handfull of brokers, instead of launching
+(and having to monitor success of) a large number of mosquitto_sub(1)
+programs.

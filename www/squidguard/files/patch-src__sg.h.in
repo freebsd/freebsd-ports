@@ -1,0 +1,11 @@
+--- src/sg.h.in.orig	2007-11-16 16:58:32 UTC
++++ src/sg.h.in
+@@ -73,7 +73,7 @@ int tolower();
+ #define REQUEST_TYPE_REDIRECT   2
+ #define REQUEST_TYPE_PASS       3
+ 
+-#define MAX_BUF 4096
++#define MAX_BUF 12288
+ 
+ #define DEFAULT_LOGFILE "squidGuard.log"
+ #define WARNING_LOGFILE "squidGuard.log"

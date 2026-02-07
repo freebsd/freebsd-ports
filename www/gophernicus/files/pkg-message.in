@@ -1,0 +1,9 @@
+[
+{ type: install,
+  message: <<EOD
+Enable gophernicus in /etc/inetd.conf:
+
+gopher	stream	tcp46	nowait	nobody	%%PREFIX%%/sbin/gophernicus gophernicus <options>
+EOD
+}
+]

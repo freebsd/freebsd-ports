@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2016-07-02 15:04:34 UTC
++++ CMakeLists.txt
+@@ -98,7 +98,7 @@ install(
+   FILES
+     ${CMAKE_BINARY_DIR}/opencc.pc
+   DESTINATION
+-    ${DIR_LIBRARY}/pkgconfig
++    ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig
+ )
+ 
+ ######## Compiler flags

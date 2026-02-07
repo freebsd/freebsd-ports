@@ -1,0 +1,27 @@
+--- doc/Makefile.in.orig	2022-06-20 15:56:39 UTC
++++ doc/Makefile.in
+@@ -293,13 +293,13 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+-INFO_DEPS = $(srcdir)/gsasl.info
++INFO_DEPS =
+ TEXINFO_TEX = $(top_srcdir)/build-aux/texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/build-aux
+ DVIS = gsasl.dvi
+ PDFS = gsasl.pdf
+ PSS = gsasl.ps
+-HTMLS = gsasl.html
++HTMLS =
+ TEXINFOS = gsasl.texi
+ TEXI2PDF = $(TEXI2DVI) --pdf --batch
+ MAKEINFOHTML = $(MAKEINFO) --html
+@@ -1947,7 +1947,7 @@ AM_MAKEINFOFLAGS = -I $(top_srcdir)/examples \
+ 
+ TEXI2DVI = texi2dvi $(AM_MAKEINFOFLAGS)
+ AM_MAKEINFOHTMLFLAGS = --no-split $(AM_MAKEINFOFLAGS)
+-dist_man_MANS = gsasl.1 $(gdoc_MANS)
++dist_man_MANS = $(gdoc_MANS)
+ MAINTAINERCLEANFILES = $(dist_man_MANS)
+ gdoc_MANS = man/gsasl_base64_to.3 man/gsasl_base64_from.3 \
+ 	man/gsasl_hex_to.3 man/gsasl_hex_from.3 \

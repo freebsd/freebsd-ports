@@ -1,0 +1,21 @@
+--- ./Makefile.orig	2008-11-21 23:27:15.000000000 +0100
++++ ./Makefile	2011-09-12 15:00:30.000000000 +0200
+@@ -1,8 +1,7 @@
+ TGT=noip2
+-CC=gcc
+ PKG=noip-2.1.tgz
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ CONFDIR=${PREFIX}/etc
+ BINDIR=${PREFIX}/bin
+ 
+@@ -22,7 +21,7 @@
+ # ARCH=sun
+ 
+ ${TGT}: Makefile ${TGT}.c 
+-	${CC} -Wall -g -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
++	${CC} -Dbsd_with_getifaddrs -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
+ 
+ install: ${TGT} 
+ 	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi

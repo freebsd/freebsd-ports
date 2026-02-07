@@ -1,0 +1,22 @@
+The ResourcePool is a generic connection caching and pooling management
+facility. It might be used in an Apache/mod_perl environment to support
+connection caching like Apache::DBI for non-DBI resources
+(e.g. Net::LDAP). It's also useful in a stand alone perl application
+to handle connection pools.
+
+The key benefit of ResourcePool is the generic design which makes it
+easily extensible to new resource types.
+
+The ResourcePool has a simple check mechanism to detect and close broken
+connections (e.g. if the database server was restarted) and opens new
+connections if possible.
+
+If you are new to ResourcePool you should go to the ResourcePool::BigPicture
+documentation which provides the best entry point to this module.
+
+The ResourcePool itself handles always exactly equivalent connections
+(e.g. connections to the same server with the same user-name and password)
+and is therefore not able to do a load balancing. The
+ResourcePool::LoadBalancer is able to do a advanced load balancing across
+different servers and increases the overall availability by applying a
+failover policy if there is a server breakdown.

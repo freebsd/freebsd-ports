@@ -1,0 +1,55 @@
+--- invoke/config.py.orig	2023-07-12 18:04:20 UTC
++++ invoke/config.py
+@@ -440,16 +440,16 @@ class Config(DataProxy):
+ 
+         .. versionadded:: 1.0
+         """
+-        # On Windows, which won't have /bin/bash, check for a set COMSPEC env
++        # On Windows, which won't have /bin/sh, check for a set COMSPEC env
+         # var (https://en.wikipedia.org/wiki/COMSPEC) or fallback to an
+         # unqualified cmd.exe otherwise.
+         if WINDOWS:
+             shell = os.environ.get("COMSPEC", "cmd.exe")
+-        # Else, assume Unix, most distros of which have /bin/bash available.
++        # Else, assume Unix, most distros of which have /bin/sh available.
+         # TODO: consider an automatic fallback to /bin/sh for systems lacking
+         # /bin/bash; however users may configure run.shell quite easily, so...
+         else:
+-            shell = "/bin/bash"
++            shell = "/bin/sh"
+ 
+         return {
+             # TODO: we document 'debug' but it's not truly implemented outside
+--- invoke/runners.py.orig	2023-05-23 15:52:36 UTC
++++ invoke/runners.py
+@@ -335,7 +335,7 @@ class Runner:
+             Default: ``False``.
+ 
+         :param str shell:
+-            Which shell binary to use. Default: ``/bin/bash`` (on Unix;
++            Which shell binary to use. Default: ``/bin/sh`` (on Unix;
+             ``COMSPEC`` or ``cmd.exe`` on Windows.)
+ 
+         :param timeout:
+--- tests/config.py.orig	2023-07-12 18:04:20 UTC
++++ tests/config.py
+@@ -107,7 +107,7 @@ class Config_:
+                     "out_stream": None,
+                     "pty": False,
+                     "replace_env": False,
+-                    "shell": "/bin/bash",
++                    "shell": "/bin/sh",
+                     "warn": False,
+                     "watchers": [],
+                 },
+--- tests/runners.py.orig	2023-05-02 02:12:54 UTC
++++ tests/runners.py
+@@ -81,7 +81,7 @@ def _expect_platform_shell(shell):
+     if WINDOWS:
+         assert shell.endswith("cmd.exe")
+     else:
+-        assert shell == "/bin/bash"
++        assert shell == "/bin/sh"
+ 
+ 
+ def _make_tcattrs(cc_is_ints=True, echo=False):

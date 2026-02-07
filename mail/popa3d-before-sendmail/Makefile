@@ -1,0 +1,10 @@
+CATEGORIES=	mail
+
+MAINTAINER=	ports@FreeBSD.org
+
+WITH_SMTP_AFTER_POP3=	yes
+MASTERDIR?=	${.CURDIR}/../popa3d
+
+OPTIONS_DEFAULT=	SMTP_AFTER_POP3
+
+.include "${MASTERDIR}/Makefile"

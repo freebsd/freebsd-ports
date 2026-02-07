@@ -1,0 +1,14 @@
+Beyond the level of what Javadoc does, DoctorJ compares documentation against
+code. Among what it detects:
+    * misspelled words
+    * parameter and exception names:
+          o missing
+          o misordered
+          o misspelled
+    * Javadoc tags:
+          o invalid
+          o misordered
+          o missing expected arguments
+          o invalid arguments
+          o missing descriptions
+    * undocumented classes, methods, fields, parameters

@@ -1,0 +1,101 @@
+# Sample yafic.conf(5) file for FreeBSD.
+# $Id: yafic.conf.sample 687 2003-04-26 20:09:44Z asaddi $
+
+#### / ####
+
+# /
+/
+
+# /dev
+/dev		E
+$/dev		L
+
+# /etc
+/etc/dumpdates	L
+/etc/motd	L
+/etc/opiekeys	L
+/etc/skeykeys	L
+
+# /home
+=/home
+
+# /root
+/root/.history	L
+
+# /tmp
+=/tmp		L-n
+
+# /var
+=/var
+
+#### /usr ####
+
+# /usr
+/usr
+
+# /usr/compat
+=/usr/compat
+
+# /usr/games
+=/usr/games
+
+# /usr/home
+=/usr/home
+
+# /usr/ports
+=/usr/ports	L
+
+# /usr/obj
+=/usr/obj	L
+
+# /usr/share/man
+=/usr/share/man	L
+
+# /usr/share/openssl/man
+=/usr/share/openssl/man	L
+
+# /usr/share/perl/man
+=/usr/share/perl/man	L
+
+# /usr/src
+=/usr/src	L
+
+# /usr/sup
+=/usr/sup	L
+
+# /usr/tmp
+=/usr/tmp	L-n
+
+#### /usr/X11R6 ####
+
+# /usr/X11R6
+/usr/X11R6
+
+# /usr/X11R6/lib/X11/xdm
+/usr/X11R6/lib/X11/xdm/xdm-pid		L
+/usr/X11R6/lib/X11/xdm/xdm-errors	L
+
+# /usr/X11R6/lib/X11/xdm/authdir/authfiles
+=/usr/X11R6/lib/X11/xdm/authdir/authfiles	L
+
+# /usr/X11R6/lib/X11/xkb/compiled
+=/usr/X11R6/lib/X11/xkb/compiled	L
+
+# /usr/X11R6/man
+=/usr/X11R6/man	L
+
+#### /usr/local ####
+
+# /usr/local
+/usr/local
+
+# /usr/local/lib/perl5/5.00503/man
+=/usr/local/lib/perl5/5.00503/man	L
+
+# /usr/local/man
+=/usr/local/man	L
+
+# /usr/local/www
+=/usr/local/www	L
+
+####

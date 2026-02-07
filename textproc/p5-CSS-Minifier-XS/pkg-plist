@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/CSS/Minifier/XS.pm
+%%SITE_ARCH%%/auto/CSS/Minifier/XS/XS.so
+%%PERL5_MAN3%%/CSS::Minifier::XS.3.gz

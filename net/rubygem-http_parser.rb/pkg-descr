@@ -1,0 +1,2 @@
+A simple callback-based HTTP request/response parser for writing http servers,
+clients and proxies.

@@ -1,0 +1,13 @@
+Eclipse Enterprise for Java
+
+Eclipse GlassFish is a complete application server that implements the Jakarta
+EE specification. GlassFish includes implementations of all required and
+optional Jakarta EE APIs, and passes all Jakarta EE TCKs. GlassFish also
+includes a complete administration console, clustering support, and other
+developer and production focused tools and features.
+
+The release marks the transition to the latest version of the Java Platform,
+so we dropped support for Java 11, and are now supporting Java 25 instead.
+GlassFish 7.1.0 introduces support for Microprofile Health, switches
+keystores from JKS to PKCS12, the current industry standard, and adapted
+server bootstrap to JPMS.

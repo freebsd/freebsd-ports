@@ -1,0 +1,13 @@
+diff -Nur ta-lib-config.in.orig ta-lib-config.in
+--- ta-lib-config.in.orig	2007-09-15 03:42:08.000000000 +0000
++++ ta-lib-config.in	2007-11-01 19:21:46.000000000 +0000
+@@ -8,6 +8,9 @@
+       exit 1
+ fi
+ 
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++
+ while test $# -gt 0; do
+   case $1 in
+     --version)

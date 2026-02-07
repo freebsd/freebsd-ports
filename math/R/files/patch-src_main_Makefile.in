@@ -1,0 +1,20 @@
+--- src/main/Makefile.in.orig	2024-05-01 21:07:24 UTC
++++ src/main/Makefile.in
+@@ -115,7 +115,7 @@ libR_la_DEPENDENCIES = $(STATIC_LIBS) $(R_TZONE) @WANT
+ libR_la_DEPENDENCIES = $(STATIC_LIBS) $(R_TZONE) @WANT_R_SHLIB_TRUE@ @USE_EXPORTFILES_TRUE@ $(top_builddir)/etc/R.exp
+ 
+ ## The next is needed for macOS only at present
+-LIBR_LDFLAGS = @LIBR_LDFLAGS@
++LIBR_LDFLAGS = @LIBR_LDFLAGS@ -Wl,-soname,libR.so.%%MAJORVER%%
+ 
+ 
+ all: R
+@@ -203,6 +203,8 @@ install-lib: installdirs
+ install-lib: installdirs
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
+ 	@$(SHELL) $(top_srcdir)/tools/copy-if-change $(libR_la) "$(DESTDIR)$(Rexeclibdir)/$(libR_la)"
++	@cd "$(DESTDIR)$(Rexeclibdir)" && ln -s $(libR_la) libR.so.%%MAJORVER%%
++	@cd "$(DESTDIR)$(Rexeclibdir)" && ln -s $(libR_la) libR.so.%%FULLVER%%
+ install-static: installdirs
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
+ 	@$(SHELL) $(top_srcdir)/tools/copy-if-change libR.a "$(DESTDIR)$(Rexeclibdir)/libR.a"

@@ -1,0 +1,8 @@
+bin/starman
+%%SITE_PERL%%/HTTP/Server/PSGI/Net/Server/PreFork.pm
+%%SITE_PERL%%/Plack/Handler/Starman.pm
+%%SITE_PERL%%/Starman.pm
+%%SITE_PERL%%/Starman/Server.pm
+%%PERL5_MAN1%%/starman.1.gz
+%%PERL5_MAN3%%/Plack::Handler::Starman.3.gz
+%%PERL5_MAN3%%/Starman.3.gz

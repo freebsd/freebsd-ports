@@ -1,0 +1,14 @@
+Tcllib is  a collection  of utility  modules for Tcl.  The intent  is to
+collect commonly  used function into  a single library, which  users can
+rely on to be available and stable.
+
+There  are  too many  modules  now  to  list  here. Browse  the  on-line
+documentation at
+
+	http://tcllib.sourceforge.net/doc/
+
+to get the idea.
+
+This port installs pure-Tcl versions of the modules only.
+C-implementations -- for some of the modules -- can be added by
+installing devel/tcllibc port.

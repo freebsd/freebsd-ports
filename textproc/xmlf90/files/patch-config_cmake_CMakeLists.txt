@@ -1,0 +1,11 @@
+--- config/cmake/CMakeLists.txt.orig	2024-09-01 13:00:51 UTC
++++ config/cmake/CMakeLists.txt
+@@ -3,7 +3,7 @@ set(
+ 
+ set(
+   module-dir
+-  "${PROJECT_NAME}/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}"
++  "${PROJECT_NAME}"
+ )
+ set(module-dir "${module-dir}" PARENT_SCOPE)
+ 

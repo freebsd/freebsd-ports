@@ -1,0 +1,216 @@
+Allow use of either libfuse3 or libfuse...
+
+	-mi
+
+--- src/event.c	2018-01-04 15:59:38 -0500
++++ src/event.c	2018-02-01 11:12:59 -0500
+@@ -5,5 +5,5 @@
+ #include <pthread.h>
+ #include <libsmbclient.h>
+-#include <fuse/fuse.h>
++#include <fuse.h>
+ #include <glib.h>
+ 
+--- configure	2018-01-04 16:00:23 -0500
++++ configure	2018-02-01 11:16:43 -0500
+@@ -4059,5 +4059,5 @@
+ fi
+ LIBS="$LIBS $FUSE_LIBS"
+-CFLAGS="$CFLAGS -D_REENTRANT -D_GNU_SOURCE -DFUSE_USE_VERSION=26 $FUSE_CFLAGS"
++CFLAGS="$CFLAGS -D_REENTRANT -D_GNU_SOURCE $FUSE_CFLAGS"
+ 
+ 
+--- src/event.h	2018-01-04 15:59:38.000000000 -0500
++++ src/event.h	2018-02-01 11:20:21.779895000 -0500
+@@ -2,5 +2,5 @@
+ #define __EVENT_H__
+ 
+-#include <fuse/fuse.h>
++#include <fuse.h>
+ 
+ int  event_set_query_browser_flag(int flag);
+--- src/function.h	2018-01-04 15:59:38.000000000 -0500
++++ src/function.h	2018-02-01 11:21:10.116105000 -0500
+@@ -2,5 +2,5 @@
+ #define __FUNCTION_H__
+ 
+-#include <fuse/fuse.h>
++#include <fuse.h>
+ 
+ extern	struct fuse_operations	smb_oper;
+--- src/function.c	2018-01-04 20:59:38.000000000 +0000
++++ src/function.c	2018-02-01 18:28:01.664078000 +0000
+@@ -149,5 +151,13 @@
+ }
+ 
+-static int function_rename(const char *from, const char *to){
++static int function_rename(const char *from, const char *to
++#if FUSE_USE_VERSION > 29
++    , unsigned int flags __unused
++#endif
++){
++    /*
++     * XXX Maybe, we should check the flags-argument to better
++     * XXX manage the caller's expectations?
++     */
+     DPRINTF(5, "(%s, %s)\n", from, to);
+     if (smbitem_what_is(from) != SMBITEM_SMB_SHARE_ITEM) return -EINVAL;
+@@ -188,6 +198,15 @@
+ }
+ 
++
+ static int function_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
+-			off_t offset, struct fuse_file_info *fi){
++			off_t offset, struct fuse_file_info *fi
++#if FUSE_USE_VERSION > 29
++			, enum fuse_readdir_flags flags __unused
++#define CALL_FILLER(buf, path, st, offset)	\
++	filler(buf, path, st, offset, 0)
++#else
++#define CALL_FILLER	filler
++#endif
++){
+     samba_fd		fd;
+     int			error, rec_cnt;
+@@ -208,6 +227,6 @@
+ 	error = EINVAL;
+ 	st.st_mode = S_IFDIR;
+-	if (filler(buf, ".",  &st, 0)) goto error0;
+-	if (filler(buf, "..", &st, 0)) goto error0;
++	if (CALL_FILLER(buf, ".",  &st, 0)) goto error0;
++	if (CALL_FILLER(buf, "..", &st, 0)) goto error0;
+ 
+ 	show_hidden_hosts = function_get_hidden_hosts_visibility();
+@@ -227,5 +246,5 @@
+ 		    goto error0;
+ 	    }
+-	    if (filler(buf, dir->childs[i]->name,  &st, 0)) goto end;
++	    if (CALL_FILLER(buf, dir->childs[i]->name,  &st, 0)) goto end;
+ 	}
+ 	error = 0;
+@@ -299,9 +318,9 @@
+ 		memset(&st, 0, sizeof(st));
+ 		st.st_mode = S_IFDIR;
+-		if (filler(buf, ".",  &st, 0)) goto end;
+-		if (filler(buf, "..", &st, 0)) goto end;
++		if (CALL_FILLER(buf, ".",  &st, 0)) goto end;
++		if (CALL_FILLER(buf, "..", &st, 0)) goto end;
+ 		rec_cnt += 2;
+ 	    }
+-	    if (filler(buf, rec->d_name, &st, 0)){
++	    if (CALL_FILLER(buf, rec->d_name, &st, 0)){
+ 		error = EINVAL;
+ 		goto end;
+@@ -317,6 +336,6 @@
+ 	error = EINVAL;
+ 	st.st_mode = S_IFDIR;
+-	if (filler(buf, ".",  &st, 0)) goto end;
+-	if (filler(buf, "..", &st, 0)) goto end;
++	if (CALL_FILLER(buf, ".",  &st, 0)) goto end;
++	if (CALL_FILLER(buf, "..", &st, 0)) goto end;
+ 	rec_cnt += 2;
+     }
+@@ -341,5 +360,11 @@
+ }
+ 
+-static int function_stat(const char *path, struct stat *stbuf){
++static int function_fstat(const char *path, struct stat *stbuf,
++			struct fuse_file_info *fi);
++static int function_stat(const char *path, struct stat *stbuf
++#if FUSE_USE_VERSION > 29
++    , struct fuse_file_info *fi
++#endif
++){
+     int			i, count;
+     size_t		len;
+@@ -347,4 +372,8 @@
+     char		buf[2048];
+ 
++#if FUSE_USE_VERSION > 29
++    if (fi != NULL)
++	return function_fstat(path, stbuf, fi);
++#endif
+     DPRINTF(5, "(%s)\n", path);
+     if (stat_workaround_is_name_ignored(path)) return -ENOENT;
+@@ -462,5 +491,9 @@
+ }
+ 
+-static int function_chmod(const char *path, mode_t mode){
++static int function_chmod(const char *path, mode_t mode
++#if FUSE_USE_VERSION > 29
++    , struct fuse_file_info *fi __unused /* XXX make some use of it? */
++#endif
++){
+     DPRINTF(5, "(%s, %o)\n", path, mode);
+     if (smbitem_what_is(path) != SMBITEM_SMB_SHARE_ITEM) return -EINVAL;
+@@ -469,4 +502,5 @@
+ }
+ 
++#if FUSE_USE_VERSION < 30
+ static int function_utimes(const char *path, struct utimbuf *buffer){
+     struct timeval	tbuf[2];
+@@ -483,4 +517,21 @@
+     return 0;
+ }
++#else
++static int function_utimens(const char *path, const struct timespec tv[2],
++    struct fuse_file_info *fi __unused)
++{
++    struct timeval	tbuf[2];
++
++    DPRINTF(5, "(%s, %lu)\n", path, (unsigned long)tv[0].tv_sec);
++    if (smbitem_what_is(path) != SMBITEM_SMB_SHARE_ITEM) return -EINVAL;
++
++    tbuf[0].tv_sec = tv[0].tv_sec;
++    tbuf[0].tv_usec = tv[0].tv_nsec / 1000;
++    tbuf[1].tv_sec = tv[1].tv_sec;
++    tbuf[1].tv_usec = tv[1].tv_nsec / 1000;
++    if (samba_utimes(path, tbuf) != 0) return -errno;
++    return 0;
++}
++#endif
+ 
+ /* libfuse does not support lsetxattr() and fsetxattr(), but samba does */
+@@ -542,5 +593,9 @@
+ }
+ 
+-static int function_chown(const char *path, uid_t uid, gid_t gid){
++static int function_chown(const char *path, uid_t uid, gid_t gid
++#if FUSE_USE_VERSION > 29
++    , struct fuse_file_info *fi __unused
++#endif
++){
+     (void) path;
+     (void) uid;
+@@ -552,7 +607,15 @@
+ }
+ 
+-static int function_truncate(const char *path, off_t size){
++static int function_truncate(const char *path, off_t size
++#if FUSE_USE_VERSION > 29
++    , struct fuse_file_info *fi
++#endif
++){
+     samba_fd	fd;
+ 
++#if FUSE_USE_VERSION > 29
++    if (fi != NULL)
++	return function_ftruncate(path, size, fi);
++#endif
+     DPRINTF(5, "(%s, %lld)\n", path, (long long) size);
+     if (size < 0) return -EINVAL;
+@@ -602,8 +665,14 @@
+     .rmdir	= function_rmdir,
+     .getattr	= function_stat,
++#if FUSE_USE_VERSION < 30
+     .fgetattr	= function_fstat,
+     .ftruncate	= function_ftruncate,
++#endif
+     .chmod	= function_chmod,
++#if FUSE_USE_VERSION < 30
+     .utime	= function_utimes,
++#else
++    .utimens	= function_utimens,
++#endif
+     .setxattr	= function_setxattr,
+     .getxattr	= function_getxattr,

@@ -1,0 +1,21 @@
+bin/openvas-nasl
+bin/openvas-nasl-lint
+@sample %%ETCDIR%%/openvas_log.conf.sample
+lib/libopenvas_misc.so
+lib/libopenvas_misc.so.23
+lib/libopenvas_misc.so.23.31.4
+lib/libopenvas_nasl.so
+lib/libopenvas_nasl.so.23
+lib/libopenvas_nasl.so.23.31.4
+sbin/openvas
+share/man/man1/openvas-nasl-lint.1.gz
+share/man/man1/openvas-nasl.1.gz
+share/man/man8/openvas.8.gz
+@dir %%ETCDIR%%/gnupg
+@dir %%DATADIR%%
+@dir /var/lib
+@dir(gvm,gvm,750) /var/lib/openvas/gnupg
+@dir(gvm,gvm,750) /var/lib/openvas/plugins
+@dir(gvm,gvm,750) /var/lib/openvas
+@dir(gvm,gvm,750) /var/log/gvm
+@dir(gvm,gvm,750) /var/run/ospd

@@ -1,0 +1,11 @@
+--- module/Makefile.in.orig
++++ module/Makefile.in
+@@ -100,7 +100,7 @@
+ CONFIG_HEADER = $(top_builddir)/include/apreq_config.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+-PROGRAMS = $(noinst_PROGRAMS)
++PROGRAMS = 
+ test_cgi_SOURCES = test_cgi.c
+ test_cgi_OBJECTS = test_cgi.$(OBJEXT)
+ test_cgi_LDADD = $(LDADD)

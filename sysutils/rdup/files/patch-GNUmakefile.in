@@ -1,0 +1,20 @@
+--- GNUmakefile.in.orig	2016-03-02 15:39:44 UTC
++++ GNUmakefile.in
+@@ -19,7 +19,7 @@ libdir=@libdir@
+ sbindir=@sbindir@
+ mandir=@mandir@
+ sysconfdir=@sysconfdir@
+-datadir=@datadir@/rdup
++datadir=@datadir@
+ 
+ ARCHIVE_L=@ARCHIVE_L@
+ NETTLE_L=@NETTLE_L@
+@@ -28,7 +28,7 @@ GLIB_CFLAGS=@GLIB_CFLAGS@
+ GLIB_LIBS=@GLIB_LIBS@
+ LIBS=@LIBS@
+ DEBUG=@DEBUG@
+-CFLAGS=-Wall -W -Werror @CFLAGS@ @DEFS@ -DLOCALEROOTDIR=\"@localedir@\" -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -Os -Wpointer-arith -Wstrict-prototypes 
++CFLAGS=-Wall -W @CFLAGS@ @DEFS@ -DLOCALEROOTDIR=\"@localedir@\" -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -Os -Wpointer-arith -Wstrict-prototypes 
+ INSTALL=./install-sh -c
+ INSTALL_DATA=$(INSTALL) -m 644
+ 

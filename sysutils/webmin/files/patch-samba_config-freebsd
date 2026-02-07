@@ -1,0 +1,11 @@
+--- samba/config-freebsd.orig	2021-09-12 11:31:58 UTC
++++ samba/config-freebsd
+@@ -6,7 +6,7 @@ run_from_inetd=0
+ samba_password_program=/usr/local/bin/smbpasswd
+ samba_server=/usr/local/sbin/smbd
+ samba_status_program=/usr/local/bin/smbstatus
+-smb_conf=/usr/local/etc/smb.conf
++smb_conf=/usr/local/etc/smb4.conf
+ smb_passwd=/usr/local/private/smbpasswd
+ text_lists=0
+ swat_path=/usr/local/sbin/swat

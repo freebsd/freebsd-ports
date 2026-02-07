@@ -1,0 +1,3 @@
+Hoe is a simple rake/rubygems helper for project Rakefiles. It
+generates all the usual tasks for projects including rdoc generation,
+testing, packaging, and deployment.

@@ -1,0 +1,22 @@
+- Use port version instead of git revision hash for versioning
+- Set RSTUDIO_VERSION from FreeBSD port variable
+
+--- CMakeLists.txt.orig	2025-05-30 14:20:38 UTC
++++ CMakeLists.txt
+@@ -39,7 +39,7 @@ if (NOT RSTUDIO_SESSION_WIN32)
+ if (NOT RSTUDIO_SESSION_WIN32)
+    # dynamically configure SOURCE with the git revision hash
+    INSTALL(CODE "
+-      execute_process(COMMAND git rev-parse HEAD
++      execute_process(COMMAND printf ${FREEBSD_PORT_VERSION}
+                       WORKING_DIRECTORY \"${CMAKE_CURRENT_SOURCE_DIR}\"
+                       OUTPUT_VARIABLE RSTUDIO_GIT_REVISION_HASH)
+       configure_file (\"${CMAKE_CURRENT_SOURCE_DIR}/SOURCE.in\"
+@@ -48,6 +48,7 @@ if (NOT RSTUDIO_SESSION_WIN32)
+ 
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/VERSION.in
+                   ${CMAKE_CURRENT_BINARY_DIR}/VERSION)
++   set(RSTUDIO_VERSION ${FREEBSD_RSTUDIO_VERSION})
+ 
+    # install root docs
+    include(cmake/install-docs.cmake)

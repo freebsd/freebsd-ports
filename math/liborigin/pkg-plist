@@ -1,0 +1,9 @@
+bin/opj2dat
+include/liborigin/OriginFile.h
+include/liborigin/OriginObj.h
+include/liborigin/OriginParser.h
+include/liborigin/tree.hh
+lib/liborigin.so
+lib/liborigin.so.3
+lib/liborigin.so.%%SHLIB_VER%%
+libdata/pkgconfig/liborigin.pc

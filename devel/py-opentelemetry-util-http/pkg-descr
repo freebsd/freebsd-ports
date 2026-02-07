@@ -1,0 +1,3 @@
+OpenTelemetry Util HTTP provides ASGI, WSGI middleware and other HTTP-related
+functionality that is common to instrumented web frameworks (such as Django,
+Starlette, FastAPI, etc.) to track requests timing through OpenTelemetry.

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-08-29 12:53:21 UTC
++++ Makefile.in
+@@ -988,7 +988,7 @@ XVkbd-common.h: XVkbd-common.ad
+ 	[ which ad2c > /dev/null ] || ad2c XVkbd-common.ad > XVkbd-common.h
+ 
+ install-data-hook:
+-	[ -d $(DESTDIR)$(appdefaultdir) ] || mkdir $(DESTDIR)$(appdefaultdir)
++	[ -d $(DESTDIR)$(appdefaultdir) ] || mkdir -p $(DESTDIR)$(appdefaultdir)
+ 	for file in *.ad; do \
+ 		$(INSTALL_DATA) $$file $(DESTDIR)$(appdefaultdir)/$${file%.ad}; \
+ 	done

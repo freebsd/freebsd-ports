@@ -1,0 +1,19 @@
+Video converter reading from DVD and Bluray
+
+MakeMKV is your one-click solution to convert video that you own into free and
+patents-unencumbered format that can be played everywhere. MakeMKV is a format
+converter, otherwise called "transcoder". It converts the video clips from
+proprietary (and usually encrypted) disc into a set of MKV files, preserving
+most information but not changing it in any way.
+
+Only the commandline interface works, so there is no GUI in this port. The port
+includes a small manpage to get you started using makemkvcon.
+
+Requirements:
+
+* A custom FreeBSD kernel with sg devices (Linux' "scsi generic" interface) is
+  required to use makemkvcon. To build such a kernel, add "device sg" to your
+  kernel configuration and follow the instructions at
+  https://docs.freebsd.org/en/books/handbook/kernelconfig/#kernelconfig-building
+* Make sure you have the "linux" kernel module loaded. On amd64, "linux64" is
+  also required.

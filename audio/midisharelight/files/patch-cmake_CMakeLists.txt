@@ -1,0 +1,11 @@
+--- cmake/CMakeLists.txt.orig	2021-02-23 04:57:03 UTC
++++ cmake/CMakeLists.txt
+@@ -65,7 +65,7 @@ file (GLOB PUBLICHEADERS RELATIVE ${CMAKE_CURRENT_SOUR
+ # set library target
+ set(LIBCONTENT ${LIBSRC} ${LIBH} ${PUBLICHEADERS})
+ 
+-add_library(${target} STATIC ${LIBCONTENT})
++add_library(${target} ${LIBCONTENT})
+ set_target_properties (${target} PROPERTIES PUBLIC_HEADER "${PUBLICHEADERS}")
+ 
+ if(WIN32)

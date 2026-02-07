@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ "$2" != "DEINSTALL" ] && exit 0
+
+[ -f "%%DATADIR%%/httpdocs/geoip/GeoLite2-City.mmdb" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoLite2-City.mmdb"
+[ -f "%%DATADIR%%/httpdocs/geoip/GeoLite2-ASN.mmdb" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoLite2-ASN.mmdb"
+[ -d "%%DATADIR%%/httpdocs/geoip" ] && /usr/bin/find "%%DATADIR%%/httpdocs/geoip" -type d -empty -delete

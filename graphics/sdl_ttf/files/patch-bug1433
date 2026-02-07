@@ -1,0 +1,19 @@
+Description: Fix bug report "TTF_RenderGlyph_Shaded is broken"
+ Introduced in 2.0.11-2 (Sat, 03 Mar 2012).
+Author: Unknown
+Last-Update: 2012-03-03
+Bug-Debian: http://bugs.debian.org/661987
+Bug-Upstream: https://bugzilla.libsdl.org/show_bug.cgi?id=1433
+
+--- SDL_ttf.c
++++ SDL_ttf.c
+@@ -1752,7 +1752,7 @@
+ 	/* Copy the character from the pixmap */
+ 	src = glyph->pixmap.buffer;
+ 	dst = (Uint8*) textbuf->pixels;
+-	for ( row = 0; row < glyph->bitmap.rows; ++row ) {
++	for ( row = 0; row < glyph->pixmap.rows; ++row ) {
+ 		memcpy( dst, src, glyph->pixmap.width );
+ 		src += glyph->pixmap.pitch;
+ 		dst += textbuf->pitch;
+

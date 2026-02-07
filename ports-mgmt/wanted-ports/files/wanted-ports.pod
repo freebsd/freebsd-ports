@@ -1,0 +1,129 @@
+=head1 NAME
+
+%%PORTNAME%% -- depend on the ports that you want installed
+
+=head1 SYNOPSIS
+
+B<%%PORTNAME%%> [B<-n>] [B<-f> F<config>] [B<-a|-d> F<portname>]]
+
+=head1 DESCRIPTION
+
+B<%%PORTNAME%%> is a small port that simply has a user modifiable list
+of run-time dependencies.  The idea is that by marking a port as
+wanted, it adds a double check helping to prevent accidental deletion
+of the ports you really want to have installed.  L<pkg_delete(1)> will
+refuse to delete a port when that port is a dependency required by
+some other installed port, unless you give the B<-f> option to force
+the action.
+
+B<%%PORTNAME%%> can also be used as a means to automate installing the
+required software load on a server.
+
+=head2 Using B<%%PORTNAME%%>
+
+The first time you run the B<%%PORTNAME%%> script, it will generate a
+skeleton configuration file.  Run B<%%PORTNAME%%> to modify the list
+of ports that you want to have marked.  This will automatically
+increment the C<PORTREVISION> of B<%%PORTNAME%%>, marking the
+F<ports-mgmt/%%PORTNAME%%> port to be updated, eg. the next time that
+L<portmaster(8)> or L<portupgrade(1)> is run.
+
+Updating or reinstalling the port will cause the ports system to force
+all of the marked ports to be installed, using the standard dependency
+resolution mechanisms of the ports.
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<-n>
+
+Dry-run.  Causes B<%%PORTNAME%%> not to update the configuration file,
+but instead to display what the final result would have been.
+
+=item B<-f> F<config>
+
+Read and modify an alternate configuration file.  F<config> should be
+the full path to the alternate file.  I<Note:> when updating the
+F<ports-management/%%PORTNAME%%> port, set C<CFGFILE> or
+C<WANTEDPORTSCFG> in the L<make(1)> environment to achieve the same
+effect.
+
+=item B<-a> F<portname>
+
+Add dependencies.  Find all matching package names or port paths from
+the F<INDEX> file, and prompt the user whether to add any that are not
+already listed as dependencies in the configuration file.
+
+=item B<-d> F<portname>
+
+Delete dependencies. Find all matching package names or port paths
+from the F<INDEX> file, and prompt the user whether to delete any that
+are currently listed as dependencies in the configuration file.
+
+=back
+
+The add B<-a> and delete B<-d> options are processed in the order
+given on the command line, so a later option can override an earlier
+one.  The F<portname> argument will match any substring of the port or
+package name: care should be taken that you don't accidentally match
+unintended items.  You can anchor searches to start or end of item
+using C<^> or C<$>.
+
+=head1 FILES
+
+=over 16
+
+=item F</var/db/%%PORTNAME%%.conf>
+
+The default configuration file used by B<%%PORTNAME%%>.  This is a
+F<makefile> snippet, that will be included by
+F<ports-mgmt/%%PORTNAME%%/Makefile>.  A skeleton version will be
+created by B<%%PORTNAME%%> if it doesn't exist.  The B<%%PORTNAME%%>
+script exists to add or remove C<RUN_DEPENDS> entries and update the
+C<PORTREVISION> setting.
+
+=back
+
+=head1 ENVIRONMENT
+
+The following environment variables affect the operation of
+B<%%PORTNAME%%>.  C<PORTSDIR>, C<INDEXFILE> and C<WANTEDPORTSCFG>
+override the system default settings: normally they will not need to
+be set.  C<USER> and C<LOGNAME> are standard settings, from
+L<login(1)>.
+
+=over 16
+
+=item C<PORTSDIR>
+
+As in L<ports(7)>, the location where the ports tree is installed.
+Default F</usr/ports>
+
+=item C<INDEXFILE>
+
+As in L<ports(7)>, overrides the automatic logic to determine the name
+of the index file.  Default F<INDEX-I<N>> where I<N> is the OS major
+version number.
+
+=item C<USER>
+
+=item C<LOGNAME>
+
+The name of the user running the script.  If neither are set, uses
+C<an unknown user>.
+
+=item C<WANTEDPORTSCFG>
+
+Override the default location of the configuration file.  Using the
+B<-f config> command line option superceeds this setting.  Default
+F</var/db/%%PORTNAME%%.conf>
+
+=back
+
+=head1 SEE ALSO
+
+L<ports(7)>, L<pkg_delete(1)>, L<pkg_cutleaves(1)>, L<portmaster(8)>,
+L<portupgrade(1)>
+
+=cut

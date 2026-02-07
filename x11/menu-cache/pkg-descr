@@ -1,0 +1,2 @@
+Libmenu-cache is a library creating and utilizing caches to speed up the
+manipulation for freedesktop.org defined application menus.

@@ -1,0 +1,4 @@
+bin/ipfmeta
+share/man/man1/ipfmeta.1.gz
+%%DATADIR%%/ipf.metarules
+%%DATADIR%%/ipf.objs

@@ -1,0 +1,3 @@
+These routines will reflow the paragraphs in the given file, filehandle,
+string or array using Knuth's paragraphing algorithm (as used in TeX) to
+pick "good" places to break the lines.

@@ -1,0 +1,2 @@
+Term::ANSIScreen is an Term::ANSIColor clone with support for screen mode,
+cursor control and keyboard mapping sequences.

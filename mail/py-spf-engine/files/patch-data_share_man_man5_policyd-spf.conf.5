@@ -1,0 +1,27 @@
+--- data/share/man/man5/policyd-spf.conf.5.orig	2022-12-16 22:56:41 UTC
++++ data/share/man/man5/policyd-spf.conf.5
+@@ -137,7 +137,7 @@ policyd-spf python configuration parameters
+ 
+ .SH "USAGE"
+ Usage:
+-  policyd-spf [/etc/policyd-spf/policyd-spf.conf]
++  policyd-spf [%%PREFIX%%/etc/policyd-spf/policyd-spf.conf]
+ 
+ .SH "OTHER DOCUMENTATION"
+ This documentation assumes you have read Postfix's README_FILES/
+@@ -688,12 +688,12 @@ visible to milters such as DMARC milter.
+ To use this feature requires additional postfix configuration to execute the
+ second, mock, instance of the policy server:
+ 
+- Add a second service to /etc/postfix/master.cf:
++ Add a second service to %%PREFIX%%/etc/postfix/master.cf:
+ 
+         policyd-spf-mock  unix  -       n       n       -       0       spawn
+-            user=nobody argv=/usr/bin/policyd-spf '/etc/pypolicyd-spf/mock
++            user=nobody argv=%%PREFIX%%/bin/policyd-spf '%%PREFIX%%/etc/pypolicyd-spf/mock
+ 
+-Configure the Postfix additional policy service in /etc/postfix/main.cf to
++Configure the Postfix additional policy service in %%PREFIX%%/etc/postfix/main.cf to
+ run before the regular service:
+ 
+         smtpd_recipient_restrictions =

@@ -1,0 +1,18 @@
+NTHU-CS Maple BBS 2.36 BBS-like editor
+
+Besides normal functions, it has some great features for programmers --
+goto line (ESC-G)
+cut & paste cross files (Ctrl-G to see ve.hlp)
+block shift left/right (ESC-J/K, Ctrl-G to see ve.hlp)
+parenthesis matching (ESC-[)
+seaching (Ctrl-S, ESC-n, ESC-p)
+   (matching start of line, case sensitive/in-sensitive, forward/backward)
+undo line (ESC - '-', or ESC-_   )
+undelete lines (ESC-u)
+...
+emacs-like hot-key
+
+ve is a tiny editor, about 60K. It's woju's favorite UNIX editor.
+The most obvious weakness of ve is changing TABs into Spaces. So
+please don't use ve to edit TAB-important files, such as Makefile,
+sendmail.cf, syslog.conf... etc.

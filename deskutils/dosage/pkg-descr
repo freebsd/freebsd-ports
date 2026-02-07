@@ -1,0 +1,5 @@
+Dosage is an application designed to keep a local copy of specific webcomics
+and other picture-based content such as Picture of the Day sites. With the
+dosage commandline script you can get the latest strip of a webcomic, or
+catch-up to the last strip downloaded, or download a strip for a particular
+date/index (if the webcomic's site layout allows this).

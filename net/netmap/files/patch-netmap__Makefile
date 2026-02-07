@@ -1,0 +1,28 @@
+--- netmap/Makefile.orig	2010-01-06 07:59:38.000000000 +0900
++++ netmap/Makefile	2011-11-23 22:27:31.000000000 +0900
+@@ -1,8 +1,7 @@
+ CFILES   = misc.c hostclass.c netmap.c drawmap.c config.c args.c lookup.c
+ OFILES   = $(CFILES:.c=.o)
+ 
+-CFLAGS = -O -Wall -Wno-deprecated
+-CC = g++
++CC = ${CXX}
+ 
+ CPPFLAGS = -I../belgolib
+ 
+@@ -28,13 +27,13 @@
+ 
+ test: $(OFILES)
+ 	$(CC) -o $(OEXE) $(OFILES) $(LDFLAGS)
+-	strip $(OEXE)
++#	strip $(OEXE)
+ 
+ clean:
+ 	-/bin/rm -f $(OFILES) $(OEXE)
+ 
+ depend: 
+-	makedepend $(CPP_HEADERS)  -D__make_dep__ -- $(CFLAGS) -- $(CFILES)
++	makedepend $(CPP_HEADERS)  -D__make_dep__ -- $(CXXFLAGS) -- $(CFILES)
+ 
+ 
+ # DO NOT DELETE

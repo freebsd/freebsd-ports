@@ -1,0 +1,39 @@
+#! /bin/sh
+
+# PROVIDE: ttrssd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `ttrssd':
+#
+# ttrssd_enable="YES"
+
+. /etc/rc.subr
+
+name="ttrssd"
+rcvar=ttrssd_enable
+
+: ${ttrssd_svcj_options:="net_basic"}
+
+# read settings, set default values
+load_rc_config "${name}"
+: ${ttrssd_enable="NO"}
+
+long_name="Tiny Tiny RSS updating feeds daemon."
+required_files="%%WWWDIR%%/config.php"
+pidfile="/var/run/${name}.pid"
+cpidfile="/var/run/${name}_child.pid"
+phpcli="%%LOCALBASE%%/bin/php"
+
+initdb_php="%%WWWDIR%%/update.php"
+phpupd="%%WWWDIR%%/update_daemon2.php"
+ttrssd_log="/var/log/${name}.log"
+
+command="/usr/sbin/daemon"
+command_args="-rR 10 -H -u %%WWWOWN%% \
+		-P $pidfile -p $cpidfile \
+		-o $ttrssd_log sh -c \
+		'$initdb_php --update-schema=force-yes; \
+			$phpupd;'"
+
+run_rc_command "$1"

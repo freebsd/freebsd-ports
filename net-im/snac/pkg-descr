@@ -1,0 +1,13 @@
+Snac is a simple, minimalistic ActivityPub instance.
+
+It features:
+
+- Lightweight, minimal dependencies
+- Extensive support of ActivityPub operations.
+- Multiuser
+- Mastodon API support, so Mastodon-compatible apps can be used
+- Simple but effective web interface
+- Easily-accessed MUTE button
+- Tested interoperability with related software
+- No database needed
+- Totally JavaScript-free

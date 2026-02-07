@@ -1,0 +1,14 @@
+Boost.MPI is a library for message passing in high-performance parallel applications.
+
+A Boost.MPI program is one or more processes that can communicate either via sending
+and receiving individual messages (point-to-point communication) or by coordinating
+as a group (collective communication). Unlike communication in threaded environments
+or using a shared-memory library, Boost.MPI processes can be spread across many 
+different machines, possibly with different operating systems and underlying architectures.
+
+Boost.MPI provides an alternative MPI interface from the Python programming language
+via the boost.mpi module. 
+
+The Boost.MPI Python bindings, built on top of the C++ Boost.MPI using
+the Boost.Python library, provide nearly all of the functionality of
+Boost.MPI within a dynamic, object-oriented language.

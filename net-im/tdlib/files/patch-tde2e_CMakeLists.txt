@@ -1,0 +1,11 @@
+--- tde2e/CMakeLists.txt.orig	2025-05-09 16:51:07 UTC
++++ tde2e/CMakeLists.txt
+@@ -62,7 +62,7 @@ set(TDE2E_TEST_SOURCE "${TDE2E_TEST_SOURCE}" PARENT_SC
+ 
+ set(TDE2E_TEST_SOURCE "${TDE2E_TEST_SOURCE}" PARENT_SCOPE)
+ 
+-add_library(tde2e STATIC ${TDE2E_SOURCE})
++add_library(tde2e ${TDE2E_SOURCE})
+ if (NOT CMAKE_CROSSCOMPILING)
+   add_dependencies(tde2e tl_generate_common)
+ endif()

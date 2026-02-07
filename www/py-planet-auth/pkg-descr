@@ -1,0 +1,7 @@
+The Planet Auth Library provides generic authentication utilities for clients
+and for services. For clients, it provides means to obtain access tokens that
+can be used to access network services. For services, it provides tools to
+validate the same access tokens.
+
+The Planet SDK for Python leverages this library, and is pre-configured for the
+Planet Cloud Service used by customers.

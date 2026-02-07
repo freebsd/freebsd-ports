@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: influxd
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable influxdb:
+# influxd_enable="YES"
+#
+# influxd_enable (bool):	Set to YES to enable influxd
+#				Default: NO
+# influxd_conf (str):		influxd configuration file
+#				Default: ${PREFIX}/etc/influxd.conf
+# influxd_user (str):		influxd daemon user
+#				Default: influxd
+# influxd_group (str):		influxd daemon group
+#				Default: influxd
+# influxd_flags (str):		Extra flags passed to influxd
+#
+# influxd_facility (str):       Syslog facility to use
+#                               Default: daemon
+# influxd_priority (str):       Syslog priority to use
+#                               Default: info
+
+. /etc/rc.subr
+
+name="influxd"
+rcvar=influxd_enable
+load_rc_config $name
+
+: ${influxd_enable:="NO"}
+: ${influxd_user:="%%INFLUXD_USER%%"}
+: ${influxd_group:="%%INFLUXD_GROUP%%"}
+: ${influxd_flags:=""}
+: ${influxd_facility:="daemon"}
+: ${influxd_priority:="info"}
+: ${influxd_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${influxd_options:="${influxd_flags} -config=${influxd_conf}"}
+
+# daemon
+influxd_pidfile="%%INFLUXD_PIDDIR%%${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+command=/usr/sbin/daemon
+start_precmd="influxd_precmd"
+start_cmd="influxd_startcmd_%%INFLUXD_LOGCMD%%"
+
+influxd_precmd()
+{
+    install -d -o ${influxd_user} %%INFLUXD_PIDDIR%%
+}
+
+influxd_startcmd_daemon()                      
+{   
+    echo "Starting ${name}."
+    /usr/sbin/daemon -c -p ${influxd_pidfile} -S -s ${influxd_priority} -l ${influxd_facility} -T ${name} \
+	-u ${influxd_user} ${procname} ${influxd_options}
+}                                              
+
+influxd_startcmd_logger()
+{   
+    echo "Starting ${name}."
+    /usr/sbin/daemon -c -p ${influxd_pidfile} -u ${influxd_user} /bin/sh -c "${procname} ${influxd_options} 2>&1 \
+        | /usr/bin/logger -t ${name} -p ${influxd_facility}.${influxd_priority}"
+}
+
+run_rc_command "$1"

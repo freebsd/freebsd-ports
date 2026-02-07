@@ -1,0 +1,31 @@
+--- Makefile.orig	2020-11-07 11:15:40 UTC
++++ Makefile
+@@ -1,22 +1,14 @@
+ #	@(#)Makefile	8.1 (Berkeley) 6/6/93
+ # $FreeBSD: head/usr.bin/calendar/Makefile 367051 2020-10-26 03:26:18Z imp $
+ 
+-.include <src.opts.mk>
+-
+ PROG=	calendar
+-SRCS=	calendar.c locale.c events.c dates.c parsedata.c io.c day.c \
+-	ostern.c paskha.c pom.c sunpos.c
+-LIBADD=	m util
+ 
+-.if ${MK_ICONV} == "yes"
+-CFLAGS+=	-DWITH_ICONV
+-.endif
++OBJS=	calendar.o locale.o events.o dates.o parsedata.o io.o day.o \
++	ostern.o paskha.o pom.o sunpos.o
+ 
+-FILESGROUPS+=	CALS
+-CALS=	calendars/calendar.freebsd
+-CALSDIR=	${SHAREDIR}/calendar
++LDFLAGS=	-lm -lutil
+ 
+-HAS_TESTS=
+-SUBDIR.${MK_TESTS}+= tests
++all:		${PROG}
+ 
+-.include <bsd.prog.mk>
++${PROG}:	${OBJS}
++		${CC} ${OBJS} ${LDFLAGS} -o ${PROG}

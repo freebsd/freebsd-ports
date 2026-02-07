@@ -1,0 +1,2 @@
+oyaml is a drop-in replacement for PyYAML which preserves dict ordering. You'll
+no longer be annoyed by screwed-up mappings when dumping/loading.

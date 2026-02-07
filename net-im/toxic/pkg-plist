@@ -1,0 +1,14 @@
+bin/toxic
+share/man/man1/toxic.1.gz
+share/man/man5/toxic.conf.5.gz
+share/applications/toxic.desktop
+%%DATADIR%%/nameservers
+%%DATADIR%%/sounds/ToxicContactOffline.wav
+%%DATADIR%%/sounds/ToxicContactOnline.wav
+%%DATADIR%%/sounds/ToxicError.wav
+%%DATADIR%%/sounds/ToxicIncomingCall.wav
+%%DATADIR%%/sounds/ToxicOutgoingCall.wav
+%%DATADIR%%/sounds/ToxicRecvMessage.wav
+%%DATADIR%%/sounds/ToxicTransferComplete.wav
+%%DATADIR%%/sounds/ToxicTransferStart.wav
+%%DATADIR%%/toxic.conf.example

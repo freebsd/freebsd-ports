@@ -1,0 +1,41 @@
+[
+{ type: install
+  message: <<EOM
+Please note that everything has been installed in %%WWWDIR%%.
+
+Make sure to install dependencies with:
+  cd %%WWWDIR%% && composer i
+
+Create inital user:
+  su -m www -c "cd %%WWWDIR%% && php bwc setupauth"
+
+Make sure you modify %%WWWDIR%%/application/config/config.php to your needs.
+The installed config.php should work with the standard setup already.
+Use the manual as a reference:
+http://docs.bacula-web.org/en/v8.3.3/02_install/configure.html
+
+Depending on the webserver you use,
+you will probably want to add an alias to your httpd.conf file, something
+like this:
+
+	Alias /bacula-web "%%WWWDIR%%/"
+
+And restart Apache.
+
+
+EOM
+}
+{ type:upgrade
+  message: <<EOM
+Make sure to update dependencies with:
+  cd %%WWWDIR%%; composer i
+EOM
+}
+{
+  type: remove
+  message: <<EOM
+You would like to delete:
+  rm -R %%WWWDIR%%
+EOM
+}
+]

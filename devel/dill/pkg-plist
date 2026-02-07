@@ -1,0 +1,13 @@
+bin/dill-config
+include/dill.h
+lib/cmake/dill/FindBinUtils.cmake
+lib/cmake/dill/FindLibFFI.cmake
+lib/cmake/dill/dill-config-common.cmake
+lib/cmake/dill/dill-config-version.cmake
+lib/cmake/dill/dill-config.cmake
+lib/cmake/dill/dill-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/dill/dill-targets.cmake
+lib/libdill.so
+lib/libdill.so.3
+lib/libdill.so.3.0.0
+libdata/pkgconfig/dill.pc

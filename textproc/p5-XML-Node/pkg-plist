@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/XML::Node.3.gz
+%%SITE_PERL%%/XML/Node.pm
+%%SITE_PERL%%/XML/parse-foo.pl
+%%SITE_PERL%%/XML/parse-orders.pl
+%%SITE_PERL%%/XML/parse-testsuite.pl

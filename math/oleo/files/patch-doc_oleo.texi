@@ -1,0 +1,12 @@
+--- doc/oleo.texi.orig	2000-08-10 21:01:55 UTC
++++ doc/oleo.texi
+@@ -7,6 +7,9 @@
+ 
+ @setfilename oleo.info
+ @settitle Oleo @value{version}
++@direntry
++* Oleo: (oleo).			Oleo, the GNU spreadsheet.
++@end direntry
+ @c make a command index:
+ @defcodeindex cm
+ @c %**end of header

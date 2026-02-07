@@ -1,0 +1,38 @@
+*** prim-sys.c.original	Mon Jun  8 14:55:11 1998
+--- prim-sys.c	Mon Jun  8 14:51:15 1998
+***************
+*** 213,219 ****
+  				lim /= suf->amount;
+  				break;
+  			}
+! 		print("%-8s\t%d%s\n", limit->name, lim, (suf == NULL || lim == 0) ? "" : suf->name);
+  	}
+  }
+  
+--- 213,219 ----
+  				lim /= suf->amount;
+  				break;
+  			}
+! 		print("%-8s\t%d%s\n", limit->name, (int)lim, (suf == NULL || lim == 0) ? "" : suf->name);
+  	}
+  }
+  
+*** configure.orig	Mon Jun  8 15:02:05 1998
+--- configure	Mon Jun  8 15:02:37 1998
+***************
+*** 2344,2350 ****
+  
+  
+  cat >> confdefs.h <<EOF
+! #define LIMIT_T $es_cv_rlimit_t
+  EOF
+  
+  
+--- 2344,2350 ----
+  
+  
+  cat >> confdefs.h <<EOF
+! #define LIMIT_T u_quad_t
+  EOF
+  
+  

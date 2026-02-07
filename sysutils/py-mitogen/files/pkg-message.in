@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+If you are intending to use mitogen together with [sysutils/ansible]
+then simply append this into your ansible.cfg file, whether in /etc
+or in the root directory of your ansible playbook:
+
+[defaults]
+strategy         = mitogen_linear
+strategy_plugins = %%PYTHON_SITELIBDIR%%/ansible_mitogen/plugins/strategy
+EOM
+}
+]

@@ -1,0 +1,5 @@
+pyexcel-io provides one application programming interface (API) to read and
+write the data in excel format, import the data into and export the data from
+database. It provides support for csv(z) format, django database and sqlalchemy
+supported databases. Its supported file formats are extended to cover "xls",
+"xlsx", "ods".

@@ -1,0 +1,24 @@
+--- example.jwmrc.orig	2015-09-13 18:02:54 UTC
++++ example.jwmrc
+@@ -3,7 +3,8 @@
+
+     <!-- The root menu. -->
+     <RootMenu onroot="12">
+-        <Program icon="utilities-terminal" label="Terminal">xterm</Program>
++        <Program icon="rxvt.png" label="Terminal">rxvt</Program>
++        <Program icon="xterm.png" label="Terminal">xterm</Program>
+         <Menu icon="folder" label="Applications">
+             <Program icon="sound" label="Audacious">audacious</Program>
+             <Program icon="calc" label="Calculator">xcalc</Program>
+@@ -139,6 +140,13 @@
+     <IconPath>
+       /usr/local/share/jwm
+     </IconPath>
++    <IconPath>
++      $HOME/.icons
++      %%PREFIX%%/share/icons
++      %%PREFIX%%/share/pixmaps
++      %%PREFIX%%/lib/X11/icons
++    </IconPath>
++
+

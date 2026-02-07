@@ -1,0 +1,4 @@
+Source code metric analyser for C, C++, Java and Ada
+Presents a report in HTML with figures for
+Lines of Code, McCabes Complexity, Ratio of Comments
+to Lines of Code and McCabe, module Fan-In and Fan-Out

@@ -1,0 +1,41 @@
+--- contrib/cookies/login.tcl	Wed Feb  6 20:09:11 2002
++++ contrib/cookies/login.tcl	Sun Nov  5 13:46:17 2006
+@@ -15,6 +15,7 @@
+    global env
+ 
+-   set expire [clock format [expr {[clock seconds] + 3600}] \
+-                -format "%A, %d-%b-%Y %H:%M:%S GMT" -gmt 1]
++   # Cookiedate's default is a WEEK from now. We want a shorter expiration
++   # of one hour, so we have to specify the time explicitly:
++   set expire [cookiedate [expr [clock seconds] + 3600]]
+ 
+    Doc_SetCookie -name username -value $username -expires $expire \
+--- lib/httpd.tcl	Wed Apr 28 21:34:16 2004
++++ lib/httpd.tcl	Sun Nov  5 14:08:35 2006
+@@ -1899,6 +1899,8 @@
+ # Side Effects:
+ #	None
+-
+-proc HttpdDate {seconds} {
++proc HttpdDate {{seconds now}} {
++    if {$seconds == "now"} {
++	set seconds [clock seconds]
++    }
+     return [clock format $seconds -format {%a, %d %b %Y %T GMT} -gmt true]
+ }
+--- lib/cookie.tcl	Sat May  1 09:49:21 2004
++++ lib/cookie.tcl	Sun Nov  5 14:35:44 2006
+@@ -128,6 +128,5 @@
+ 	    }
+ 	    default {
+-		set expires [clock format [clock scan $opt(-expires)] \
+-			-format "%A, %d-%b-%Y %H:%M:%S GMT" -gmt 1]
++		set expires [cookiedate [clock scan $opt(-expires)]]
+ 	    }
+ 	}
+@@ -170,4 +169,4 @@
+ proc Cookie_Unset {name args} {
+     Httpd_RemoveCookies [Httpd_CurrentSocket] name
+-    Cookie_Set -name $name -value "" -expires [clock format [clock scan "last year"] -format "%A, %d-%b-%Y %H:%M:%S GMT" -gmt 1]
++    Cookie_Set -name $name -value "" -expires {Thu, 01-Jan-1970 00:00:00 GMT}
+ }

@@ -1,0 +1,6 @@
+fasttext-predict is a python package for fasttext:
+
+* keep only the predict method, all other features are removed
+* standalone package without external dependency (numpy is not a
+  dependency) wheels for various architectures using GitHub workflows.
+* The script is inspired by lxml build scripts.

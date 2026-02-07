@@ -1,0 +1,3 @@
+sbin/%%PORTNAME%%
+@sample etc/%%PORTNAME%%.nsupdate.sample
+etc/cron.d/%%PORTNAME%%

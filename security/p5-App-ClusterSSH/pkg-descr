@@ -1,0 +1,3 @@
+ClusterSSH controls a number of xterm windows via a single graphical
+console window to allow commands to be interactively run on multiple
+servers over an ssh connection.

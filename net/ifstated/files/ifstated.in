@@ -1,0 +1,99 @@
+#!/bin/sh
+
+# PROVIDE: ifstated
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable ifstated:
+#
+# ifstated_enable (bool):        Set to "NO" by default.
+#                                Set it to "YES" to enable ifstated.
+# ifstated_flags (str):          Set to "" by default.
+#                                Extra flags passed to start command.
+#
+# With no profiles defined, the default configuration file will be
+# used (%%PREFIX%%/etc/ifstated.conf).
+#
+# For profiles (separate ifstated intances):
+#
+# ifstated_profiles (str):       Set to "" by default.
+#                                Define profile names (e.g. "dns
+#                                http ssh").
+# ifstated_<name>_configfile (str):
+#                                [Required] Path to the configuration
+#                                file for profile <name>.
+# ifstated_<name>_enable (bool): Set to ${ifstated_enable} by default.
+#                                Set it to "YES" or "NO" to
+#                                independently enable or disable
+#                                profile <name>.
+# ifstated_<name>_flags (str):   Set to ${ifstated_flags} by default.
+#                                Extra flags passed to start command
+#                                for profile <name>.
+#
+
+. /etc/rc.subr
+
+name="ifstated"
+rcvar=ifstated_enable
+
+command="%%PREFIX%%/sbin/ifstated"
+pidfile="/var/run/${name}.pid"
+command_args="-p \"${pidfile}\""
+
+load_rc_config $name
+
+: ${ifstated_enable:="NO"}
+
+if [ -n "$2" ]
+then
+  profile="$2"
+
+  if [ "x${ifstated_profiles}" != "x" ]
+  then
+    pidfile="/var/run/${name}.${profile}.pid"
+    eval ifstated_configfile="\${ifstated_${profile}_configfile:-}"
+
+    if [ "x${ifstated_configfile}" = "x" ]
+    then
+      echo "You must define a configuration file (ifstated_${profile}_configile)." >&2
+      exit 1
+    fi
+
+    required_files="${ifstated_configfile}"
+    command_args="-f \"${ifstated_configfile}\" -p \"${pidfile}\""
+    eval ifstated_enable="\${ifstated_${profile}_enable:=${ifstated_enable}}"
+    eval ifstated_flags="\${ifstated_${profile}_flags:=${ifstated_flags}}"
+  else
+    echo "$0: extra argument ignored." >&2
+  fi
+else
+  if [ "x${ifstated_profiles}" != "x" -a "x$1" != "x" ]
+  then
+    for profile in ${ifstated_profiles}
+    do
+      eval ifstated_enable_tmp="\${ifstated_${profile}_enable:=${ifstated_enable}}"
+
+      case "x${ifstated_enable_tmp}"
+      in
+        x|x[Nn][Oo])
+          continue
+          ;;
+        x[Yy][Ee][Ss])
+          ;;
+        *)
+          echo "Bad value \"${ifstated_enable_tmp}\" for ifstated_${profile}_enable. Profile ${profile} skipped." >&2
+          continue
+          ;;
+      esac
+
+      echo "===> ifstated profile: ${profile}"
+      '%%PREFIX%%/etc/rc.d/ifstated' "$1" "${profile}"
+    done
+
+    exit 0
+  fi
+fi
+
+run_rc_command "$1"

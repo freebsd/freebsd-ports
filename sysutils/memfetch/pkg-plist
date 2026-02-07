@@ -1,0 +1,3 @@
+bin/memfetch
+bin/mffind.pl
+%%PORTDOCS%%%%DOCSDIR%%/README

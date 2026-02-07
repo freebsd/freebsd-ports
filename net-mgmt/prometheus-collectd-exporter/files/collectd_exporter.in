@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: collectd_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# collectd_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable collectd_exporter.
+# collectd_exporter_user (string):          Set user that collectd_exporter will run under
+#               Default is "nobody".
+# collectd_exporter_group (string):         Set group that collectd_exporter will run under
+#               Default is "nobody".
+# collectd_exporter_args (string):          Set extra arguments to pass to collectd_exporter
+#               Default is "".
+# collectd_exporter_listen_address (string):Set ip:port that collectd_exporter will listen on
+#               Default is ":9103".
+# collectd_exporter_collectd_listen_address (string):Set ip:port that collectd_exporter will listen on
+#               Default is ":25826".
+
+. /etc/rc.subr
+
+name=collectd_exporter
+rcvar=collectd_exporter_enable
+
+load_rc_config $name
+
+: ${collectd_exporter_enable:="NO"}
+: ${collectd_exporter_user:="nobody"}
+: ${collectd_exporter_group:="nobody"}
+: ${collectd_exporter_args:=""}
+: ${collectd_exporter_log_file:="/var/log/collectd_exporter.log"}
+: ${collectd_exporter_listen_address:=":9103"}
+: ${collectd_exporter_collectd_listen_address:=":25826"}
+
+pidfile=/var/run/collectd_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/prometheus-collectd-exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    --collectd.listen-address=${collectd_exporter_collectd_listen_address} \
+    --web.listen-address=${collectd_exporter_listen_address} \
+    ${collectd_exporter_args} >> ${collectd_exporter_log_file} 2>&1"
+
+start_precmd=collectd_exporter_startprecmd
+
+collectd_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${collectd_exporter_user} \
+            -g ${collectd_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+    if [ ! -e ${collectd_exporter_log_file} ]; then
+        install \
+            -o ${collectd_exporter_user} \
+            -g ${collectd_exporter_group} \
+            -m 640 \
+            /dev/null ${collectd_exporter_log_file};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

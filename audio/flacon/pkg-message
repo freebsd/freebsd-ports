@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+  Flacon uses external programs to perform audio conversion.  Install
+  them manually, depending on your needs, from the following ports or
+  corresponding packages:
+
+		audio/faac		audio/flac
+		audio/lame		audio/mac
+		audio/opus-tools	audio/tta
+		audio/vorbis-tools	audio/wavpack
+EOM
+}
+]

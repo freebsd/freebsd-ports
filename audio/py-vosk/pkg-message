@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+You installed vosk, an open source speech recognition toolkit.
+
+In order to transcribe the audio file with speech please run this command:
+$ vosk-transcriber -i speech-audio.mp4 -o text-transcription.txt
+
+EOM
+}
+]

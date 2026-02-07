@@ -1,0 +1,6 @@
+bin/pod2xhtml
+%%PERL5_MAN3%%/Pod::Hyperlink::BounceURL.3.gz
+%%PERL5_MAN3%%/Pod::Xhtml.3.gz
+%%SITE_PERL%%/Pod/Hyperlink/BounceURL.pm
+%%SITE_PERL%%/Pod/Xhtml.pm
+%%PERL5_MAN1%%/pod2xhtml.1.gz

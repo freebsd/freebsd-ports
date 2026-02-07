@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.markdown
+%%MODDIR%%/ngx_http_redis2_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_redis2_module-debug.so

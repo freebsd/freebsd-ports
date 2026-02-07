@@ -1,0 +1,11 @@
+--- transfig/Imakefile.orig	Tue Mar 25 12:52:37 2003
++++ transfig/Imakefile
+@@ -32,7 +32,7 @@
+ XCOMM \\usepackage{} command for LaTeX2e. 
+ XCOMM The default is to use \\documentstyle{} for LaTeX209.
+ 
+-XCOMM USELATEX2E = -DLATEX2E
++USELATEX2E = -DLATEX2E
+ 
+ XCOMM ******* DON'T CHANGE ANYTHING BELOW THIS POINT *******
+ 

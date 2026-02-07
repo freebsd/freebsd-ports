@@ -1,0 +1,7 @@
+include/jitterentropy-base-user.h
+include/jitterentropy.h
+lib/libjitterentropy.a
+lib/libjitterentropy.so
+lib/libjitterentropy.so.%%PORTVERSION_MAJOR%%
+lib/libjitterentropy.so.%%PORTVERSION%%
+share/man/man3/jitterentropy.3.gz

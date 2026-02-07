@@ -1,0 +1,2 @@
+inflect.py correctly generates plurals, singular nouns, ordinals, indefinite
+articles and converts numbers to words.

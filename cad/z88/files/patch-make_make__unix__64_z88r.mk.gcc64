@@ -1,0 +1,19 @@
+--- make/make_unix_64/z88r.mk.gcc64.orig	2018-12-05 14:30:53 UTC
++++ make/make_unix_64/z88r.mk.gcc64
+@@ -13,15 +13,7 @@ CFLAGS = -I$(DIRCOM) -DFR_UNIX -DFR_XDOU
+ 
+ LDLIBSOX = -lm -lc 
+ 
+-OBJECTSR = z88r.o ale88r.o dyn88r.o clr88.o jaco88.o choy88.o m1.o m2.o \
+- cshe88.o hexa88.o lqua88.o qshe88.o isod88.o tetr88.o spur88.o stop88r.o \
+- apla88.o  spla88.o hpla88.o who88r.o wlog88r.o prfl88.o wrim88r.o \
+- lan88r.o z88br.o z88cr.o ri588i.o bhexa88.o btetr88.o bqshe88.o bspla88.o \
+- bspur88.o blqua88.o bcshe88.o bapla88.o bhpla88.o ri188r.o z88a.o z88ai.o \
+- wria88r.o z88dr.o m3.o m4.o fuvs88.o scsh88.o shex88.o slqu88.o sqsh88.o \
+- siso88.o stet88.o sspu88.o sapl88.o sspl88.o shpl88.o span88.o z88er.o \
+- forc88.o shaq88.o sshq88.o shad88.o sshd88.o shaf88.o bshaf88.o sshf88.o \
+- shav88.o bshav88.o sshv88.o man88r.o timo88.o stim88.o
++OBJECTSR = z88r.o ale88r.o dyn88r.o clr88.o jaco88.o choy88.o m1.o m2.o cshe88.o hexa88.o lqua88.o qshe88.o isod88.o tetr88.o spur88.o stop88r.o apla88.o  spla88.o hpla88.o who88r.o wlog88r.o prfl88.o wrim88r.o lan88r.o z88br.o z88cr.o ri588i.o bhexa88.o btetr88.o bqshe88.o bspla88.o bspur88.o blqua88.o bcshe88.o bapla88.o bhpla88.o ri188r.o z88a.o z88ai.o wria88r.o z88dr.o m3.o m4.o fuvs88.o scsh88.o shex88.o slqu88.o sqsh88.o siso88.o stet88.o sspu88.o sapl88.o sspl88.o shpl88.o span88.o z88er.o forc88.o shaq88.o sshq88.o shad88.o sshd88.o shaf88.o bshaf88.o sshf88.o shav88.o bshav88.o sshv88.o man88r.o timo88.o stim88.o
+ 
+ z88r: $(OBJECTSR)
+ 	$(CC) $(CFLAGS) -o $@ $(OBJECTSR) $(LDLIBSOX)

@@ -1,0 +1,16 @@
+Description: Skip the run-time test suite if requested by the port options.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-01-05
+
+--- Makefile.orig
++++ Makefile
+@@ -264,7 +264,7 @@
+ rts: envdir envuidgid fghack matchtest multilog pgrphack \
+ readproctitle rts.tests setlock setuidgid softlimit supervise svc \
+ svok svscan svscanboot svstat tai64n tai64nlocal
+-	env - /bin/sh rts.tests 2>&1 | cat -v > rts
++	echo env - /bin/sh rts.tests 2>&1 | cat -v > rts
+ 
+ scan_ulong.o: compile scan.h scan_ulong.c
+ 	./compile scan_ulong.c

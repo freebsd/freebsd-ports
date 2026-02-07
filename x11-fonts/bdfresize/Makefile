@@ -1,0 +1,19 @@
+PORTNAME=	bdfresize
+PORTVERSION=	1.5
+PORTREVISION=	3
+CATEGORIES=	x11-fonts
+MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tool for resizing BDF format font
+WWW=		http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+PLIST_FILES=	bin/bdfresize \
+		share/man/man1/bdfresize.1.gz
+
+.include <bsd.port.mk>

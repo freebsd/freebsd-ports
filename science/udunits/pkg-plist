@@ -1,0 +1,16 @@
+bin/udunits2
+include/converter.h
+include/udunits.h
+include/udunits2.h
+lib/libudunits2.a
+lib/libudunits2.so
+lib/libudunits2.so.0
+lib/libudunits2.so.0.1.0
+%%PORTDOCS%%%%DOCSDIR%%/CHANGE_LOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/udunits2-accepted.xml
+%%DATADIR%%/udunits2-base.xml
+%%DATADIR%%/udunits2-common.xml
+%%DATADIR%%/udunits2-derived.xml
+%%DATADIR%%/udunits2-prefixes.xml
+%%DATADIR%%/udunits2.xml

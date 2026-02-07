@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+To enable microcode updates at boot time:
+cat << EOF >> /boot/loader.conf
+cpu_microcode_load="YES"
+cpu_microcode_name="/boot/firmware/intel-ucode.bin"
+EOF
+EOM
+}
+]

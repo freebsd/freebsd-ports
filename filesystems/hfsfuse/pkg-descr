@@ -1,0 +1,8 @@
+FUSE driver for HFS+ based on NetBSD's kernel driver with
+modifications.
+
+This driver is read-only and cannot write to or damage the target
+filesystem in any way.
+
+hfsfuse also includes two standalone tools, hfsdump and hfstar,
+which can be used in an HFS+ volume without FUSE.

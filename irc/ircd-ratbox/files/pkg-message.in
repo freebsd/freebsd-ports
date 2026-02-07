@@ -1,0 +1,40 @@
+[
+{ type: install
+  message: <<EOM
+ircd-ratbox has been successfully installed.
+
+Sample 'ircd.conf' and 'ircd.motd' files have been created in the
+ircd-ratbox configuration directory. A sample configuration file is
+included for EFNet-like configurations that can be used instead. You
+should now edit these files as per the ratbox documentation.
+A configured ircd.conf file is required to start the server.
+
+Once you have added ircd_ratbox_enable="YES" to /etc/rc.conf, the
+server can be started by running:
+
+	%%PREFIX%%/etc/rc.d/ircd-ratbox start
+
+You can check your ircd.conf configuration file for syntactical errors
+using the following rc.d script command:
+
+	%%PREFIX%%/etc/rc.d/ircd-ratbox conftest
+
+The ban.db database should be checked and updated using 'bantool -u'.
+For safety, bantool updates must be done while no ircd is running and
+before starting the new version.
+
+	%%PREFIX%%/bin/bantool -u
+
+Notice: ircd-ratbox has been updated to follow the current stable
+release branch (3.0.x). All previous branches are no longer supported
+by the ratbox team. Users of ircd-ratbox are advised to create new ircd
+configuration files based on the examples provided.
+
+For more information on upgrading, see:
+
+	http://svn.ratbox.org/svnroot/ircd-ratbox/trunk/INSTALL
+
+Be sure to check out 'ratbox-services' if you need a services package.
+EOM
+}
+]

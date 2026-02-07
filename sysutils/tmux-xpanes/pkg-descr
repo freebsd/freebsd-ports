@@ -1,0 +1,12 @@
+Ultimate terminal divider powered by tmux
+
+- Split tmux window into multiple panes
+- * Construct command lines & execute them on the panes
+- Runnable from outside of tmux session
+- Runnable from inside of tmux session
+- Record operation log
+- Flexible layout arrangement for panes
+- * Select layout presets
+- * Set columns or rows as you like
+- Display pane title on each pane
+- Generate command lines from standard input (Pipe mode)

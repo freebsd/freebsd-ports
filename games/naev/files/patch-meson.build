@@ -1,0 +1,20 @@
+--- meson.build	2025-04-06 20:26:44.000000000 -0700
++++ meson.build	2025-04-23 21:21:05.417597000 -0700
+@@ -111,7 +111,7 @@
+    yaml = dependency('yaml-0.1', required: true, version: '>=0.2.5', fallback: ['libyaml', 'yaml_dep'], static: get_option('steamruntime'))
+ 
+    # TODO replace nfd with SDL3 native functions when possible
+-   nfd = dependency('nfd', required: false, static: true)
++   nfd = dependency('nfd', required: true, static: false)
+    if not nfd.found()
+       nfd = dependency('nativefiledialog-extended', required: true, fallback: ['nativefiledialog-extended'], static: true)
+    endif
+@@ -293,7 +293,7 @@
+    config_data.set10('HAVE_CBLAS_HYPHEN_OPENBLAS_H', cc.links('#include <cblas-openblas.h>' + cblas_test, dependencies: blas))
+    config_data.set10('HAVE_OPENBLAS_CBLAS_H', cc.links('#include <openblas/cblas.h>' + cblas_test, dependencies: blas))
+    config_data.set10('HAVE_F77BLAS_H', cc.has_header('f77blas.h', dependencies: blas))
+-   config_data.set10('HAVE_OPENBLAS_F77BLAS_H', cc.has_header('openblas/f77blas.h', dependencies: blas))
++   config_data.set10('HAVE_OPENBLAS_F77BLAS_H', cc.has_header('f77blas.h', dependencies: blas))
+ 
+    ### Generated sources
+ 

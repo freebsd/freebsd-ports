@@ -1,0 +1,9 @@
+The purpose of this project is to provide a simple and reliable ffmpeg wrapper
+for working with video files. It implements two simple generator functions for
+reading and writing data from/to ffmpeg, which reliably terminate the ffmpeg
+process when done. It also takes care of publishing platform-specific wheels
+that include the binary ffmpeg executables.
+
+This library is used as the basis for the imageio ffmpeg plugin, but it can also
+be used by itself. Imageio provides a higher level API, and adds support for
+e.g. cameras and seeking.

@@ -1,0 +1,14 @@
+bin/jlog_change_endian
+bin/jlog_sanity_check
+bin/jlogctl
+include/jlog.h
+include/jlog_config.h
+lib/libjlog.a
+lib/libjlog.so
+%%SITE_ARCH%%/JLog.pm
+%%SITE_ARCH%%/JLog/Reader.pm
+%%SITE_ARCH%%/JLog/Writer.pm
+%%SITE_ARCH%%/auto/JLog/JLog.so
+%%PERL5_MAN3%%/JLog.3.gz
+%%PERL5_MAN3%%/JLog::Reader.3.gz
+%%PERL5_MAN3%%/JLog::Writer.3.gz

@@ -1,0 +1,19 @@
+Kombu is an AMQP messaging framework for Python.
+
+The aim of Kombu is to make messaging in Python as easy as
+possible by providing an idiomatic high-level interface for
+the AMQP protocol, and also provide proven and tested solutions
+to common messaging problems.
+
+Features:
+
+    * Allows application authors to support several message
+      server solutions by using pluggable transports.
+    * Supports automatic encoding, serialization and compression
+      of message payloads.
+    * Consistent exception handling across transports.
+    * The ability to ensure that an operation is performed by
+      gracefully handling connection and channel errrors.
+    * Several annoyances with amqplib has been fixed, like
+      supporting timeouts and the ability to wait for events on
+      more than one channel.

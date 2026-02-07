@@ -1,0 +1,16 @@
+include/d/dsymbol/builtin/names.d
+include/d/dsymbol/builtin/symbols.d
+include/d/dsymbol/cache_entry.d
+include/d/dsymbol/conversion/first.d
+include/d/dsymbol/conversion/package.d
+include/d/dsymbol/conversion/second.d
+include/d/dsymbol/deferred.d
+include/d/dsymbol/import_.d
+include/d/dsymbol/modulecache.d
+include/d/dsymbol/scope_.d
+include/d/dsymbol/semantic.d
+include/d/dsymbol/string_interning.d
+include/d/dsymbol/symbol.d
+include/d/dsymbol/tests.d
+include/d/dsymbol/type_lookup.d
+lib/d/libdsymbol.a

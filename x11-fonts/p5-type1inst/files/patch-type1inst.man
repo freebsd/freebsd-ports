@@ -1,0 +1,11 @@
+--- type1inst.man.orig	Mon Jun 12 01:35:19 2000
++++ type1inst.man	Mon Jun 12 01:37:08 2000
+@@ -11,7 +11,7 @@
+ .if n .sp 1
+ .if t .sp .5
+ ..
+-.TH Type1inst 0.6.1 "11-Feb-98"
++.TH TYPE1INST 1 "February 11, 1998"
+ .SH NAME
+ type1inst - Type 1 PostScript font installation utility for the X Window System and Ghostscript
+ .SH VERSION

@@ -1,0 +1,17 @@
+Index: cWnn/td/tserverrc
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/td/tserverrc,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- cWnn/td/tserverrc	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/td/tserverrc	20 Dec 2008 07:23:12 -0000	1.2
+@@ -35,6 +35,8 @@ readfile	sys/cns_wd.dic
+ 
+ readfile	sys/full.con
+ 
++listenaddr	127.0.0.1
++
+ max_client	32
+ max_sticky_env	10
+ 

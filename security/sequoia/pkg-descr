@@ -1,0 +1,5 @@
+Sequoia is a new OpenPGP library implemented in Rust. Focusing on
+safety and correctness, using a memory-safe language, with a
+first-class library.
+
+This meta-port includes programs under the Sequoia project.

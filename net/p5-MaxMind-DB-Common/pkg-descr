@@ -1,0 +1,1 @@
+MaxMind::DB::Common provides code shared by the DB reader and writer modules.

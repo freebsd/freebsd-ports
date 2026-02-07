@@ -1,0 +1,17 @@
+--- Makefile.orig	Mon Nov 24 04:56:28 1997
++++ Makefile	Fri Nov 12 15:53:26 1999
+@@ -1,4 +1,4 @@
+-CFLAGS=	-g 
++#CFLAGS=	-g 
+ #Solaris
+ #CFLAGS= -g -Dsys5
+ LDFLAGS=
+@@ -10,6 +10,8 @@
+ OBJS= nsping.o dns-lib.o dns-rr.o
+ SRCS= nsping.c dns-lib.c dns-rr.c
+ HEADERS= nsping.h dns-lib.h dns-rr.h 
++
++all: ${TARGET}
+ 
+ ${TARGET} : ${OBJS}
+ 	${CC} ${CFLAGS} -o ${TARGET} ${OBJS} ${LDFLAGS} ${LIBS}

@@ -1,0 +1,143 @@
+*** unix/rpsi2.orig	Sat May 25 03:50:02 1991
+--- unix/rpsi2	Thu Nov 12 23:41:19 1998
+***************
+*** 13,79 ****
+     if ($1 == '-hp') goto noargs
+     if ($1 == '-ct') goto noargs
+     echo -n 'no [-ps][-pk][-hp][-ct] options - attempting to run PSI2 '
+!    /bin/time PSI2 < $1.psi2
+  else
+     if ($argv[1] == '-hp') then 
+        echo "Generating contours ... please wait."
+!       /bin/time PSI2HP < $2.psi2
+        echo -n "Renaming HP Plotter file to "$2".hpp"
+!       mv -f fort.10 $2.hpp
+        echo "Done"
+     else if ($argv[2] == '-hp') then 
+        echo "Generating contours ... please wait."
+!       /bin/time PSI2HP < $1.psi2
+        echo -n "Renaming HP Plotter file to "$1".hpp"
+!       mv -f fort.10 $1.hpp
+        echo "Done"
+     else if ($argv[1] == '-ct') then 
+        echo "Generating contours ... please wait."
+!       /bin/time PSI2CT < $2.psi2
+        echo -n "Plotting for ChemText ... "
+        echo -n "Renaming ChemText Metafile to "$2".met"
+!       mv -f fort.10 $2.met
+        echo "Done"
+     else if ($argv[2] == '-ct') then 
+        echo "Generating contours ... please wait."
+!       /bin/time PSI2CT < $1.psi2
+        echo -n "Renaming ChemText Metafile to "$1".met"
+        mv -f fort.10 $1.met
+        echo "Done"
+     else if ($argv[1] == '-pk') then 
+        echo "Generating contours ... please wait."
+  #      setenv OUTPUT_DEVICE PostScript
+!       /bin/time PSI2PS < $2.psi2
+        echo -n "Renaming PostScript file to "$2".ps"
+        mv -f psplot $argv[2].ps
+        echo "Done"
+     else if ($argv[2] == '-pk') then 
+        echo "Generating contours ... please wait."
+  #      setenv OUTPUT_DEVICE PostScript
+!       /bin/time PSI2PS < $1.psi2
+        echo -n "Renaming PostScript file to "$1".ps"
+        mv -f psplot $argv[1].ps
+        echo "Done"
+     else if ($argv[1] == '-ps') then 
+        echo "Generating contours ... please wait."
+        setenv OUTPUT_DEVICE PostScript
+!       /bin/time PSI2 < $2.psi2
+  #SYSV     echo -n "Plotting on the LaserWriter ... ";lp -c /tmp/ps_plot$USER
+  #SYSV     rm -f /tmp/ps_plot$USER
+! #BSD      echo -n "Plotting on the LaserWriter ... ";lpr -r /tmp/ps_plot$USER
+  
+! echo ' edit command file to choose print options, then remove this line'
+  
+        echo "Done"
+     else if ($argv[2] == '-ps') then 
+        echo "Generating contours ... please wait."
+        setenv OUTPUT_DEVICE PostScript
+!       /bin/time PSI2 < $1.psi2
+  #SYSV     echo -n "Plotting on the LaserWriter ... ";lp -c /tmp/ps_plot$USER
+  #SYSV     rm -f /tmp/ps_plot$USER
+! #BSD      echo -n "Plotting on the LaserWriter ... ";lpr -r /tmp/ps_plot$USER
+  
+! echo ' edit command file to choose print options, then remove this line'
+  
+        echo "Done"
+     else
+--- 13,83 ----
+     if ($1 == '-hp') goto noargs
+     if ($1 == '-ct') goto noargs
+     echo -n 'no [-ps][-pk][-hp][-ct] options - attempting to run PSI2 '
+!    time PSI2 < $1.psi2
+! # PSI2 is linked to PSI2PS, then output file `psplot' will moved to $argv[1].ps
+!    echo ': PSI2 is PSI2PS, now'
+!    mv -f psplot $argv[1].ps
+!    echo "Done"
+  else
+     if ($argv[1] == '-hp') then 
+        echo "Generating contours ... please wait."
+!       time PSI2HP < $2.psi2
+        echo -n "Renaming HP Plotter file to "$2".hpp"
+!       mv -f fort.66 $2.hpp
+        echo "Done"
+     else if ($argv[2] == '-hp') then 
+        echo "Generating contours ... please wait."
+!       time PSI2HP < $1.psi2
+        echo -n "Renaming HP Plotter file to "$1".hpp"
+!       mv -f fort.66 $1.hpp
+        echo "Done"
+     else if ($argv[1] == '-ct') then 
+        echo "Generating contours ... please wait."
+!       time PSI2CT < $2.psi2
+        echo -n "Plotting for ChemText ... "
+        echo -n "Renaming ChemText Metafile to "$2".met"
+!       mv -f fort.66 $2.met
+        echo "Done"
+     else if ($argv[2] == '-ct') then 
+        echo "Generating contours ... please wait."
+!       time PSI2CT < $1.psi2
+        echo -n "Renaming ChemText Metafile to "$1".met"
+        mv -f fort.10 $1.met
+        echo "Done"
+     else if ($argv[1] == '-pk') then 
+        echo "Generating contours ... please wait."
+  #      setenv OUTPUT_DEVICE PostScript
+!       time PSI2PS < $2.psi2
+        echo -n "Renaming PostScript file to "$2".ps"
+        mv -f psplot $argv[2].ps
+        echo "Done"
+     else if ($argv[2] == '-pk') then 
+        echo "Generating contours ... please wait."
+  #      setenv OUTPUT_DEVICE PostScript
+!       time PSI2PS < $1.psi2
+        echo -n "Renaming PostScript file to "$1".ps"
+        mv -f psplot $argv[1].ps
+        echo "Done"
+     else if ($argv[1] == '-ps') then 
+        echo "Generating contours ... please wait."
+        setenv OUTPUT_DEVICE PostScript
+!       time PSI2 < $2.psi2
+  #SYSV     echo -n "Plotting on the LaserWriter ... ";lp -c /tmp/ps_plot$USER
+  #SYSV     rm -f /tmp/ps_plot$USER
+!       echo -n "Plotting on the LaserWriter ... ";lpr -r /tmp/ps_plot$USER
+  
+! #echo ' edit command file to choose print options, then remove this line'
+  
+        echo "Done"
+     else if ($argv[2] == '-ps') then 
+        echo "Generating contours ... please wait."
+        setenv OUTPUT_DEVICE PostScript
+!       time PSI2 < $1.psi2
+  #SYSV     echo -n "Plotting on the LaserWriter ... ";lp -c /tmp/ps_plot$USER
+  #SYSV     rm -f /tmp/ps_plot$USER
+!       echo -n "Plotting on the LaserWriter ... ";lpr -r /tmp/ps_plot$USER
+  
+! #echo ' edit command file to choose print options, then remove this line'
+  
+        echo "Done"
+     else

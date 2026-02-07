@@ -1,0 +1,11 @@
+Open Cubic Player first appeared around December 1994 as a DOS
+binary-only module player. It supported many sound cards and module
+formats.
+
+At some point, the source code was released to the public under the
+terms of the GNU General Public License, and around 2003 Stian
+Skjelstad ported the code to Linux.
+
+In addition to legacy tracker formats such as mod, xm and s3m, Open
+Cubic Player now also supports mp3, ogg and ay files and can be compiled
+with libadplug support.

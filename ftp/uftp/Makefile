@@ -1,0 +1,28 @@
+PORTNAME=	uftp
+PORTVERSION=	5.0.3
+PORTREVISION=	1
+PORTEPOCH=	1
+CATEGORIES=	ftp
+MASTER_SITES=	SF/uftp-multicast/source-tar
+
+MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Multicast capable FTP client and server
+WWW=		https://uftp-multicast.sourceforge.net
+
+LICENSE=	GPLv3
+
+MAKEFILE=	makefile
+USES=		gmake ssl
+MAKE_ARGS=	OPENSSL=${OPENSSLBASE}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/uftp ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/uftpd ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/uftp_keymgt ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/uftpproxyd ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/uftp.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/uftpd.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/uftpproxyd.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/uftp_keymgt.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+
+.include <bsd.port.mk>

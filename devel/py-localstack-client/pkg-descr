@@ -1,0 +1,4 @@
+LocalStack Python Client is an easy-to-use Python client for LocalStack. The
+client library provides a thin wrapper around boto3 which automatically
+configures the target endpoints to use LocalStack for your local cloud
+application development.

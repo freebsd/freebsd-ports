@@ -1,0 +1,3 @@
+Python bindings for the GpgME library, offering a high-level and curated
+interface, as well as an idiomatic interface implemented as a shim,
+automatically created using SWIG, on top of the low-level interface.

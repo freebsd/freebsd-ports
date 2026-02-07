@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Test/Group.pm
+%%SITE_PERL%%/Test/Group/Extending.pod
+%%SITE_PERL%%/Test/Group/NoWarnings.pm
+%%SITE_PERL%%/Test/Group/Plan.pm
+%%SITE_PERL%%/Test/Group/Tester.pm
+%%PERL5_MAN3%%/Test::Group.3.gz
+%%PERL5_MAN3%%/Test::Group::Extending.3.gz
+%%PERL5_MAN3%%/Test::Group::NoWarnings.3.gz
+%%PERL5_MAN3%%/Test::Group::Plan.3.gz
+%%PERL5_MAN3%%/Test::Group::Tester.3.gz

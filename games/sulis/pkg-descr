@@ -1,0 +1,24 @@
+Sulis is a Role Playing Game (RPG) with turn based, tactical combat, deep
+character customization and an engaging storyline. The game has been built from
+the ground up with modding and custom content in mind.
+
+The game is currently fully playable and includes the complete three acts of The
+Twin Expanse, an old school RPG campaign in the vein of classic games such as
+Baldur's Gate, but mixing in modern elements from titles like Divinity: Original
+Sin and Pillars of Eternity. There is additionally The Endless Dungeon, a pure
+action dungeon crawl with more Roguelike elements.
+
+The core game engine as well as the campaign are now considered largely
+complete, although there is always room for improvement. Users are encouraged to
+file issues with bugs, feature requests, or any other feedback.
+
+Features:
+- Multiple campaigns with many hours of playtime, featuring both handcrafted and
+  procedural content.
+- We are designing a detailed and fully realized world and story - check out the
+  Lore page.
+- Highly extensible and designed from the ground up for modding support.
+- A powerful 2D graphics engine with zoom, scalable UI, HiDPI support, and a
+  swappable graphics backend.
+- Runs on very modest hardware - even software renderers (although at a reduced
+  frame rate).

@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: softether_trafficserver
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable softether_trafficserver:
+#
+# softether_trafficserver_enable (bool):
+#         Set it to "YES" to enable.
+#         (default: NO)
+# softether_trafficserver_user (username):
+#         Username used to run the daemon.
+#         (default: nobody)
+# softether_trafficserver_pid (str):
+#         Path of the pid file.
+#         (default: %%SE_PIDDIR%%/trafficserver.pid)
+# softether_trafficserver_log (str):
+#         Path of the log file.
+#         (default: %%SE_LOGDIR%%/trafficserver/trafficserver.log)
+
+. /etc/rc.subr
+
+name=softether_trafficserver
+rcvar=softether_trafficserver_enable
+load_rc_config ${name}
+
+: ${softether_trafficserver_enable:=NO}
+: ${softether_trafficserver_pid:="%%SE_PIDDIR%%/trafficserver.pid"}
+: ${softether_trafficserver_log:="%%SE_LOGDIR%%/trafficserver/trafficserver.log"}
+: ${softether_trafficserver_user:=nobody}
+
+command="%%PREFIX%%/libexec/softether/vpncmd"
+command_args="/TOOLS /CMD:TrafficServer /NOHUP:yes"
+
+logdir="%%SE_LOGDIR%%"
+
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+
+pidfile="${softether_trafficserver_pid}"
+ts_user="${softether_trafficserver_user}"
+logfile="${softether_trafficserver_log}"
+
+softether_trafficserver_precmd()
+{
+	if [ ! -d "${logdir}/trafficserver" ]; then
+	    umask 077
+	    mkdir -p ${logdir}/trafficserver
+	fi
+}
+
+softether_trafficserver_start()
+{
+	/usr/sbin/daemon \
+		-c \
+		-t trafficserver \
+		-o "${logfile}" \
+		-p "${pidfile}" \
+		-u "${ts_user}" \
+		${command} ${command_args}
+}
+
+run_rc_command "$1"

@@ -1,0 +1,20 @@
+--- configure.orig	2020-01-11 12:16:00 UTC
++++ configure
+@@ -6156,7 +6156,7 @@ $as_echo "none" >&6; }
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: none" >&5
+ $as_echo "none" >&6; }
+ 	if test x$PYTHONPATH != xnone; then
+-	    python_prefix_tmp=`python -c "import sys; print (sys.prefix + '/lib/python' + sys.version[:3])"`
++	    python_prefix_tmp=`python -c "import sysconfig; print(sysconfig.get_path('stdlib'))"`
+ 	else
+ 	    python_prefix_tmp="DIR"
+ 	fi
+@@ -6178,7 +6178,7 @@ $as_echo "$as_me: WARNING:
+ 	" >&2;}
+     else
+         pymoddirs="/usr/local/lib /usr/lib"
+-                pymoddirsmore=`python -c "import sys; print (sys.prefix + '/lib/python' + sys.version[:3])"`
++                pymoddirsmore=`python -c "import sysconfig; print(sysconfig.get_path('stdlib'))"`
+         pymoddirs="$pymoddirs $pymoddirsmore"
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $pymoddirs" >&5
+ $as_echo "$pymoddirs" >&6; }

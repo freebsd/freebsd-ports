@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+    SCRFILE=/var/games/moon-buggy/mbscore
+    if cmp -s ${SCRFILE} ${SCRFILE}.baseline ; then
+	rm ${SCRFILE} ${SCRFILE}.baseline
+	rmdir /var/games/moon-buggy > /dev/null 2>&1 || :
+    else
+	rm ${SCRFILE}.baseline
+    fi
+fi

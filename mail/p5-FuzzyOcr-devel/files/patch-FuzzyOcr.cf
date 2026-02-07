@@ -1,0 +1,130 @@
+--- FuzzyOcr.cf.orig	2009-05-29 23:10:39.000000000 +0300
++++ FuzzyOcr.cf	2009-05-29 23:21:13.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Syntax:
+ # loadplugin <Plugin_Name> <Location>
+ #  <Location> path where Plugin resides.
+-loadplugin FuzzyOcr FuzzyOcr.pm
++loadplugin Mail::SpamAssassin::Plugin::FuzzyOcr
+ 
+ body     FUZZY_OCR                   eval:fuzzyocr_check()
+ body     FUZZY_OCR_WRONG_CTYPE       eval:dummy_check()
+@@ -50,8 +50,8 @@
+ ###
+ 
+ # Here we defined the words to scan for
+-# Default value: /etc/mail/spamassassin/FuzzyOcr.words
+-#focr_global_wordlist /etc/mail/spamassassin/FuzzyOcr.words
++# Default value: /usr/local/etc/mail/spamassassin/FuzzyOcr.words
++#focr_global_wordlist /usr/local/etc/mail/spamassassin/FuzzyOcr.words
+ #
+ # This is the path RELATIVE to the respective home directory
+ # for the personalized list. This list is merged with the global 
+@@ -96,7 +96,7 @@
+ 
+ # Include additional scanner/preprocessor commands here:
+ #
+-focr_bin_helper pnmnorm, pnminvert, pamthreshold, ppmtopgm, pamtopnm
++focr_bin_helper pnmnorm, pnminvert, pamditherbw, ppmtopgm, pamtopnm
+ focr_bin_helper tesseract
+ 
+ # These helpers must be defined before enabling PDF scanning
+@@ -109,7 +109,7 @@
+ ###
+ 
+ # Search path for locating helper applications
+-#focr_path_bin /usr/local/netpbm/bin:/usr/local/bin:/usr/bin
++#focr_path_bin /usr/local/netpbm/bin:/usr/local/bin:/usr/local/bin
+ 
+ ###
+ ### Step 3:
+@@ -117,25 +117,25 @@
+ ### the search path algorithm. Please note that if the helper app is not
+ ### previously defined, it will generate an error:
+ 
+-#focr_bin_gifsicle /usr/bin/gifsicle
+-#focr_bin_giffix /usr/bin/giffix
+-#focr_bin_giftext /usr/bin/giftext
+-#focr_bin_gifinter /usr/bin/gifinter
+-#focr_bin_giftopnm /usr/bin/giftopnm
+-#focr_bin_jpegtopnm /usr/bin/jpegtopnm
+-#focr_bin_pngtopnm /usr/bin/pngtopnm
+-#focr_bin_bmptopnm /usr/bin/bmptopnm
+-#focr_bin_tifftopnm /usr/bin/tifftopnm
+-#focr_bin_ppmhist /usr/bin/ppmhist
+-#focr_bin_gocr /usr/bin/gocr
+-#focr_bin_ocrad /usr/bin/ocrad
+-
+-#focr_bin_pnmnorm /usr/bin/pnmnorm
+-#focr_bin_pnminvert /usr/bin/pnminvert
+-
+-#focr_bin_pdfinfo /usr/bin/pdfinfo
+-#focr_bin_pdftops /usr/bin/pdftops
+-#focr_bin_pstopnm /usr/bin/pstopnm
++#focr_bin_gifsicle /usr/local/bin/gifsicle
++#focr_bin_giffix /usr/local/bin/giffix
++#focr_bin_giftext /usr/local/bin/giftext
++#focr_bin_gifinter /usr/local/bin/gifinter
++#focr_bin_giftopnm /usr/local/bin/giftopnm
++#focr_bin_jpegtopnm /usr/local/bin/jpegtopnm
++#focr_bin_pngtopnm /usr/local/bin/pngtopnm
++#focr_bin_bmptopnm /usr/local/bin/bmptopnm
++#focr_bin_tifftopnm /usr/local/bin/tifftopnm
++#focr_bin_ppmhist /usr/local/bin/ppmhist
++#focr_bin_gocr /usr/local/bin/gocr
++#focr_bin_ocrad /usr/local/bin/ocrad
++
++#focr_bin_pnmnorm /usr/local/bin/pnmnorm
++#focr_bin_pnminvert /usr/local/bin/pnminvert
++
++#focr_bin_pdfinfo /usr/local/bin/pdfinfo
++#focr_bin_pdftops /usr/local/bin/pdftops
++#focr_bin_pstopnm /usr/local/bin/pstopnm
+ 
+ ###
+ ### Scansets 
+@@ -143,8 +143,8 @@
+ 
+ # Paths to the files containing Scansets and Preprocessors definitions
+ #
+-#focr_preprocessor_file /etc/mail/spamassassin/FuzzyOcr.preps
+-#focr_scanset_file /etc/mail/spamassassin/FuzzyOcr.scansets
++#focr_preprocessor_file /usr/local/etc/mail/spamassassin/FuzzyOcr.preps
++#focr_scanset_file /usr/local/etc/mail/spamassassin/FuzzyOcr.scansets
+ 
+ # Setting this to 1 will cause FuzzyOcr to skip all other scansets,
+ # if a scanset has reached the amount of hits specified in 
+@@ -313,18 +313,18 @@
+ 
+ # If the image hash database feature is enabled (Type 1 Hashing),
+ # specify the file to use as database
+-# Default value: /etc/mail/spamassassin/FuzzyOcr.hashdb
+-#focr_digest_db /etc/mail/spamassassin/FuzzyOcr.hashdb
++# Default value: /usr/local/etc/mail/spamassassin/FuzzyOcr.hashdb
++#focr_digest_db /usr/local/etc/mail/spamassassin/FuzzyOcr.hashdb
+ 
+ # If the image hash db feature is enabled (Type 2 Hashing),
+ # specify the file to use as the SPAM database
+-# Default value: /etc/mail/spamassassin/FuzzyOcr.db
+-#focr_db_hash /etc/mail/spamassassin/FuzzyOcr.db
++# Default value: /usr/local/etc/mail/spamassassin/FuzzyOcr.db
++#focr_db_hash /usr/local/etc/mail/spamassassin/FuzzyOcr.db
+ 
+ # If the image hash db feature is enabled (Type 2 Hashing), 
+ # specify the file to use as the HAM database
+-# Default value: /etc/mail/spamassassin/FuzzyOcr.safe.db
+-#focr_db_safe /etc/mail/spamassassin/FuzzyOcr.safe.db
++# Default value: /usr/local/etc/mail/spamassassin/FuzzyOcr.safe.db
++#focr_db_safe /usr/local/etc/mail/spamassassin/FuzzyOcr.safe.db
+ 
+ # Auto-prune: Expire records from hasing databases after these many days
+ # Default value: 35
+@@ -352,7 +352,7 @@
+ #  + score, 
+ #  + word-info
+ # Default value: 0
+-#focr_mysql_update_hash 1
++focr_mysql_update_hash 0
+ 
+ ###
+ ### Miscellaneous Options

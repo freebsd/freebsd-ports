@@ -1,0 +1,9 @@
+This is a module that parses WDDX packets. Which are
+well supported in Allaire Coldfusion, and pretty
+useful.
+
+This is from the WDDX.org web site: "The Web Distributed
+Data Exchange, or WDDX, is a free, open XML-based
+technology that allows Web applications created with any
+platform to easily exchange data with one another over the
+Web."

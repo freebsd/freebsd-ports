@@ -1,0 +1,50 @@
+--- doc/texi2html.in.orig	2000-04-08 12:20:05 UTC
++++ doc/texi2html.in
+@@ -2752,7 +2752,7 @@ INPUT_LINE: while ($_ = &next_line) {
+     s/\@refill\s+//g;
+     # other substitutions
+     &simple_substitutions;
+-    s/\@value{($VARRE)}/$value{$1}/eg;
++    s/\@value\{($VARRE)\}/$value{$1}/eg;
+     s/\@footnote\{/\@footnote$docu_doc\{/g; # mark footnotes, cf. pass 4
+     #
+     # analyze the tag again
+@@ -3174,7 +3174,7 @@ while (@lines) {
+     #
+     # xref
+     #
+-    while (/\@(x|px|info|)ref{([^{}]+)(}?)/) {
++    while (/\@(x|px|info|)ref\{([^{}]+)(\}?)/) {
+ 	# note: Texinfo may accept other characters
+ 	($type, $nodes, $full) = ($1, $2, $3);
+ 	($before, $after) = ($`, $');
+@@ -3790,9 +3790,9 @@ sub update_sec_num {
+     my $ret;
+ 
+     $level--; # here we start at 0
+-    if ($name =~ /^appendix/ || defined(@appendix_sec_num)) {
++    if ($name =~ /^appendix/ || @appendix_sec_num) {
+ 	# appendix style
+-	if (defined(@appendix_sec_num)) {
++	if (@appendix_sec_num) {
+ 	    &incr_sec_num($level, @appendix_sec_num);
+ 	} else {
+ 	    @appendix_sec_num = ('A', 0, 0, 0);
+@@ -3800,7 +3800,7 @@ sub update_sec_num {
+ 	$ret = join('.', @appendix_sec_num[0..$level]);
+     } else {
+ 	# normal style
+-	if (defined(@normal_sec_num)) 
++	if (@normal_sec_num) 
+ 	{
+ 	  &incr_sec_num($level, @normal_sec_num);
+ 	} 
+@@ -4168,7 +4168,7 @@ sub substitute_style {
+     while ($changed) {
+ 	$changed = 0;
+ 	$done = '';
+-	while (/\@(\w+){([^\{\}]+)}/ || /\@(,){([^\{\}]+)}/) {
++	while (/\@(\w+)\{([^\{\}]+)\}/ || /\@(,)\{([^\{\}]+)\}/) {
+ 	    $text = &apply_style($1, $2);
+ 	    if ($text) {
+ 		$_ = "$`$text$'";

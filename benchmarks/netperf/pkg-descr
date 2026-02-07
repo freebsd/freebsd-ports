@@ -1,0 +1,15 @@
+Netperf is a serious networking performance evaluation tool being
+distributed under BSD-1-clause by HP's Information Networks Division.
+Testing is done using a pair of programs: `netserver' (the server) and
+`netperf' (the measurement tool).
+
+Netperf allows control over a large number of test `variables'.
+Some of these are:
+        * specification of desired confidence levels for the tests
+          Netperf will warn the user if these levels were not achieved.
+        * filling send buffers with specified data (to beat compression schemes)
+        * specification of send/receive buffer alignments and data offsets
+        * requesting CPU utilization and service demand calculations
+        * specification of sizes of data to send
+Netperf can be used for measuring stream performance as well as
+round-trip performance.

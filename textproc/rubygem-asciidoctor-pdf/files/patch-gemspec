@@ -1,0 +1,11 @@
+--- asciidoctor-pdf.gemspec.orig	2024-07-28 14:40:29 UTC
++++ asciidoctor-pdf.gemspec
+@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<matrix>.freeze, ["~> 0.4".freeze])
+   s.add_runtime_dependency(%q<prawn-table>.freeze, ["~> 0.2.0".freeze])
+   s.add_runtime_dependency(%q<prawn-templates>.freeze, ["~> 0.1.0".freeze])
+-  s.add_runtime_dependency(%q<prawn-svg>.freeze, ["~> 0.34.0".freeze])
++  s.add_runtime_dependency(%q<prawn-svg>.freeze, ["~> 0.36.1".freeze])
+   s.add_runtime_dependency(%q<prawn-icon>.freeze, ["~> 3.0.0".freeze])
+   s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.3".freeze])
+   s.add_runtime_dependency(%q<treetop>.freeze, ["~> 1.6.0".freeze])

@@ -1,0 +1,2 @@
+bin/sensu-agent
+@sample etc/sensu-agent.yml.sample

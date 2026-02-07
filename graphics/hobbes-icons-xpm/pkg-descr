@@ -1,0 +1,10 @@
+These icons were converted from the Hobbes OS/2 archive at hobbes.nmsu.edu.
+
+There were over 7000 icons on Hobbes, but many were duplicates.
+All duplicates (based on comparing CRC's) have been removed, a suffix of .N
+was added when there were name clashes, and any icons with 256 colors were
+also deleted.  What remained became 3,382 icons which are mostly 32x32
+and 16 colors.
+
+If you want the converter program used, write to:
+	-Rick Richardson, rick@pcroe.digibd.com, 10/29/93

@@ -1,0 +1,2 @@
+Text::Table::LTSV provides a single function, table, which formats a
+two-dimensional array of data as LTSV.

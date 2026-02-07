@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/MooseX::InsideOut.3.gz
+%%PERL5_MAN3%%/MooseX::InsideOut::Role::Meta::Instance.3.gz
+%%SITE_PERL%%/MooseX/InsideOut.pm
+%%SITE_PERL%%/MooseX/InsideOut/Role/Meta/Instance.pm

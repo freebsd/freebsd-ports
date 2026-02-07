@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-01-30 21:49:37 UTC
++++ pyproject.toml
+@@ -13,5 +13,6 @@ exclude = '''
+   | buck-out
+   | build
+   | dist
++  | test
+ )/
+ '''

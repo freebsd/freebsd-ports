@@ -1,0 +1,4 @@
+bin/confregdecode
+%%DATADIR%%/confregdecode.jar
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ConfregDecode.html

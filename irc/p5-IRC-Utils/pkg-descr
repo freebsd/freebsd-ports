@@ -1,0 +1,3 @@
+The functions in this module take care of many of the tasks you are
+faced with when working with IRC. Mode lines, ban masks, message
+encoding and formatting, etc.

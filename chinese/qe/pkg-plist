@@ -1,0 +1,4 @@
+bin/pe2
+bin/qe
+%%DATADIR%%/qe.hlp
+%%DATADIR%%/qe.pro

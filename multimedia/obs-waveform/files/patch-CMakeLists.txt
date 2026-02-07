@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2022-09-11 15:31:21 UTC
++++ CMakeLists.txt
+@@ -165,10 +165,12 @@ if(NOT DISABLE_X86_SIMD)
+         set_source_files_properties("src/filter_fma3.cpp" PROPERTIES COMPILE_FLAGS "-mavx -mfma")
+     endif()
+ 
+-    add_subdirectory(deps/cpu_features EXCLUDE_FROM_ALL)
+-    if(NOT MSVC AND NOT BUILD_SHARED_LIBS) # Clang complains
+-        target_compile_options(cpu_features PRIVATE "-fPIC")
+-    endif()
++    #add_subdirectory(deps/cpu_features EXCLUDE_FROM_ALL)
++    #if(NOT MSVC AND NOT BUILD_SHARED_LIBS) # Clang complains
++    #    target_compile_options(cpu_features PRIVATE "-fPIC")
++    #endif()
++    find_package(CpuFeatures REQUIRED)
++    include_directories(${CMAKE_INSTALL_PREFIX}/include/cpu_features)
+ endif()
+ 
+ if(MAKE_BUNDLE)
+@@ -191,7 +193,7 @@ set_target_properties(waveform PROPERTIES PREFIX "")
+ target_include_directories(waveform PRIVATE ${FFTW_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR}/include)
+ target_link_libraries(waveform PRIVATE OBS::libobs ${FFTW_LIBRARIES})
+ if(NOT DISABLE_X86_SIMD)
+-    target_link_libraries(waveform PRIVATE cpu_features)
++    add_dependencies(waveform CpuFeatures::cpu_features)
+ endif()
+ target_compile_definitions(waveform PRIVATE _USE_MATH_DEFINES)
+ if(MSVC)

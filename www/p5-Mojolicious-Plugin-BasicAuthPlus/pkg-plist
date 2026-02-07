@@ -1,0 +1,3 @@
+bin/sample.pl
+%%SITE_PERL%%/Mojolicious/Plugin/BasicAuthPlus.pm
+%%PERL5_MAN3%%/Mojolicious::Plugin::BasicAuthPlus.3.gz

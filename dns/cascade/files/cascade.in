@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# PROVIDE: cascade
+# REQUIRE: LOGIN networking
+# KEYWORD: shutdown
+#
+# cascade_enable (bool):
+#   Default value: "NO"
+#   Flag that determines whether cascade is enabled
+#
+# cascade_config (string)
+#   Default value %%ETCDIR%%/config.toml
+#   Path to the cascade configuration file
+#
+# cascade_user (string)
+#   This is the user that cascade runs as
+#   Set to %%USERS%% by default
+#
+# cascade_group (string)
+#   This is the group that cascade runs as
+#   Set to %%GROUPS%% by default
+
+. /etc/rc.subr
+
+name=cascade
+rcvar=cascade_enable
+
+load_rc_config $name
+
+: ${cascade_enable:="NO"}
+: ${cascade_config:="%%ETCDIR%%/config.toml"}
+: ${cascade_user:=%%USERS%%}
+: ${cascade_group:=%%GROUPS%%}
+
+command="%%PREFIX%%/bin/cascaded"
+command_args="--config ${cascade_config} --daemonize"
+start_precmd="cascade_checkconf"
+restart_precmd="cascade_checkconf"
+configtest_cmd="cascade_checkconf"
+extra_commands="configtest"
+
+required_files="${cascade_config}"
+
+cascade_checkconf()
+{
+  ${command} --config ${cascade_config} --check-config
+}
+
+run_rc_command "$1"

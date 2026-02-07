@@ -1,0 +1,3 @@
+Test::Weaken allows easy detection of unfreed Perl data and the
+examination of unfreed objects, even those that would usually have
+been made inaccessible.

@@ -1,0 +1,3 @@
+Perl module which implements an ordered hash-like object. It's a cross between
+a Perl hash and a linked list. Use it whenever you want the speed and structure
+of a Perl hash, but the orderedness of a list.

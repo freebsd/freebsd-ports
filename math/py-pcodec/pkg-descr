@@ -1,0 +1,10 @@
+Pcodec (or Pco) losslessly compresses and decompresses numerical sequences with
+high compression ratio and moderately fast speed.
+
+Use cases include:
+- columnar data
+- long-term time series data
+- serving numerical data to web clients
+- low-bandwidth communication
+
+Data types: u16, u32, u64, i16, i32, i64, f16, f32, f64

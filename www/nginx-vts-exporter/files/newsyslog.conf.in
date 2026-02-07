@@ -1,0 +1,4 @@
+# newsyslog(8) file for net-mgmt/nginx-vts-exporter
+# See newsyslog.conf(5) for details.
+
+%%NGINX_VTS_EXPORTER_LOG_FILE%%	640	7	*	@T00	JC

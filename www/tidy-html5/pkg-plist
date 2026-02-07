@@ -1,0 +1,11 @@
+bin/tidy5
+include/tidy.h
+include/tidybuffio.h
+include/tidyenum.h
+include/tidyplatform.h
+lib/libtidy.so.58
+lib/libtidy.so.%%VER%%
+lib/libtidy5.so
+lib/libtidys.a
+libdata/pkgconfig/tidy.pc
+share/man/man1/tidy5.1.gz

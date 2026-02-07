@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Digest/Tiger.pm
+%%SITE_ARCH%%/auto/Digest/Tiger/autosplit.ix
+%%SITE_ARCH%%/auto/Digest/Tiger/Tiger.so
+%%PERL5_MAN3%%/Digest::Tiger.3.gz

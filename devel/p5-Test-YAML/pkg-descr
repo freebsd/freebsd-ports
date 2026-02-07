@@ -1,0 +1,2 @@
+Testing Module for YAML Implementations.
+Test::YAML is a subclass of Test::Base with YAML specific support.

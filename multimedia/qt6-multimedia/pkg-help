@@ -1,0 +1,2 @@
+The X11 option should only be enabled if the FFMPEG option is also
+enabled and devel/qt6-base has been built with the X11 option enabled.

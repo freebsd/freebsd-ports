@@ -1,0 +1,5 @@
+This package supplies batch SMTP support for sendmail, both incoming
+and outgoing.  Batch SMTP can be used to batch and compress mail
+messages for UUCP links, which is faster and doesn't suffer from
+the address limitations of rmail.  Bsmtp's version of batch SMTP
+is fully compatible with smail.

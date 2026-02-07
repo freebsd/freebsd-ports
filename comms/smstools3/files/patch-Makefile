@@ -1,0 +1,33 @@
+--- Makefile.orig	2007-04-22 11:42:22 UTC
++++ Makefile
+@@ -2,21 +2,21 @@
+ 
+ # If you change destination of executables, remember to change
+ # startup script (init.d/sms3) too.
+-BINDIR=/usr/local/bin
++BINDIR=%%STAGEDIR%%%%PREFIX%%/bin
+ 
+ VERSION=$(shell grep package_version src/version.h | cut -f2)
+ 
+-compile: 
+-	cd src && $(MAKE) -$(MAKEFLAGS) 
++all: 
++	cd src && $(MAKE)
+ 
+-install: compile
+-	./install.sh $(BINDIR)
++install:
++	$(SH) ./install.sh $(BINDIR)
+ 
+ uninstall: 
+-	./uninstall.sh $(BINDIR)
++	$(SH) ./uninstall.sh $(BINDIR)
+ 
+ clean:
+-	cd src && $(MAKE) -$(MAKEFLAGS) clean
++	cd src && $(MAKE) clean
+ 
+-package: compile clean
+-	./package.sh
++package: clean
++	$(SH) ./package.sh

@@ -1,0 +1,24 @@
+--- Makefile.orig	2007-07-03 16:49:52 UTC
++++ Makefile
+@@ -17,7 +17,7 @@ BIN_DIR=${PREFIX}/bin
+ .endif
+ 
+ BIN_DIR=${PREFIX}/bin
+-MAN_DIR=${PREFIX}/man/man1
++MAN_DIR=${PREFIX}/share/man/man1
+ 
+ COMPRESS=/usr/bin/gzip
+ STRIP= /usr/bin/true
+@@ -48,9 +48,9 @@ install: xglurbules xglurbules-noshm ${MAN_FILE}
+ 	gcc -E -MM *.c > .depend
+ 
+ install: xglurbules xglurbules-noshm ${MAN_FILE}
+-	${INSTALL} xglurbules ${BIN_DIR}
+-	${INSTALL} xglurbules-noshm ${BIN_DIR}
+-	${INSTALL} ${MAN_FILE} ${MAN_DIR}
++	${INSTALL} xglurbules $(DESTDIR)${BIN_DIR}
++	${INSTALL} xglurbules-noshm $(DESTDIR)${BIN_DIR}
++	${INSTALL} ${MAN_FILE} $(DESTDIR)${MAN_DIR}
+ 
+ xglurbules.1.gz: xglurbules.1
+ 	${COMPRESS} xglurbules.1 -c > xglurbules.1.gz

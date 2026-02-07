@@ -1,0 +1,5 @@
+DeltaRPM is a tool that generates RPMs that contains the difference between an
+old and a new version of an RPM. This makes it possible to recreate the new RPM
+from the deltarpm and the old one. You don't have to have a copy of the old
+RPM, as it can also work with installed RPMs. The package also contains tools
+for creating and applying delta ISOs.

@@ -1,0 +1,11 @@
+--- Makefile.in
++++ Makefile.in
+@@ -108,7 +108,7 @@ ACLOCAL_AMFLAGS = -I m4
+ 
+ BABYL = ../rmail/* ../*/rmail/* ../*/*/RMAIL ../*/*/rmail/*
+ EXTRA_DIST = COPYING-LIB PATCHES-AC rebox.el recode.spec aclocal.sh
+-SUBDIRS = m4 doc lib libiconv i18n src tests contrib
++SUBDIRS = m4 doc lib i18n src tests contrib
+ 
+ POTFILES = src/main.c src/names.c src/outer.c src/recode.c src/request.c src/strip-data.c src/task.c src/testdump.c
+ 

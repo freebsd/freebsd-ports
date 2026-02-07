@@ -1,0 +1,2 @@
+Text::CSV::Encoded is a perl module of encoding aware Text::CSV.
+It inherits Text::CSV and is aware of input/output encodings.

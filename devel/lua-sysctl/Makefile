@@ -1,0 +1,36 @@
+PORTNAME=	sysctl
+PORTVERSION=	2.1
+DISTVERSIONPREFIX=	v
+CATEGORIES=	devel
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
+
+MAINTAINER=	uzsolt@FreeBSD.org
+COMMENT=	Small sysctl(3) interface for lua
+WWW=		https://github.com/kAworu/lua-sysctl
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		lua:52+,module pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kAworu
+GH_PROJECT=	lua-${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+DOCSDIR=	${LUA_DOCSDIR}
+EXAMPLESDIR=	${LUA_EXAMPLESDIR}
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	${INSTALL_LIB} ${WRKSRC}/build/sysctl.so ${STAGEDIR}${LUA_MODLIBDIR}/sysctl.so
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/misc/*.lua ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

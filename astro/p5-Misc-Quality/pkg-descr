@@ -1,0 +1,2 @@
+Misc::Quality provides a class for handling quality flags for astronomical
+objects. This class can handle any type of flag used.

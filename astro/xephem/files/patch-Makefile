@@ -1,0 +1,21 @@
+--- Makefile.orig	2024-02-13 14:35:36 UTC
++++ Makefile
+@@ -201,12 +201,12 @@ libs:
+ 	nroff -man $? > $@
+ 
+ libs:
+-	cd ../../libastro; make
+-	cd ../../libip; make
+-	cd ../../libjpegd; make
+-	cd ../../liblilxml; make
+-	cd ../../libpng; make
+-	cd ../../libz; make
++	cd ../../libastro; $(MAKE)
++	cd ../../libip; $(MAKE)
++	cd ../../libjpegd; $(MAKE)
++	cd ../../liblilxml; $(MAKE)
++	cd ../../libpng; $(MAKE)
++	cd ../../libz; $(MAKE)
+ 
+ clean:
+ 	rm -fr *.o ../../lib*/*.[ao]

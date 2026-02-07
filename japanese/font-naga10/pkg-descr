@@ -1,0 +1,7 @@
+Japanese 10 dot font named `naga10'.
+
+You can use 'k10' as an alias for knj10.pcf.gz, and 'a10' for 5x10a.pcf.gz.
+For detail description, please read the 'README'
+
+A simple usage:
+	% kterm -fn a10 -fr r10 -fk k10 -km euc

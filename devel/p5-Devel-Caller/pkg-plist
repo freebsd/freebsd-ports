@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/Caller.pm
+%%SITE_ARCH%%/auto/Devel/Caller/Caller.so
+%%PERL5_MAN3%%/Devel::Caller.3.gz

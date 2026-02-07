@@ -1,0 +1,37 @@
+--- man/popper.8.orig	Wed Nov  1 11:33:06 2000
++++ man/popper.8	Wed Nov  1 11:38:58 2000
+@@ -19,7 +19,7 @@
+ .SH NAME
+ qpopper \-\- pop 3 server (v3.1b7)
+ .SH SYNOPSIS
+-.B /usr/local/lib/popper
++.B %%PREFIX%%/libexec/qpopper
+ [
+ .I [ address ]
+ .I [ ":" ]
+@@ -628,7 +628,7 @@
+ systems with BSD 4.3 syslogging, the server logs (by default) to the
+ "local0" facility at priority "notice" for all messages except
+ debugging which is logged at priority "debug".  The default log file is
+-/usr/spool/mqueue/POPlog.  These can be changed, if desired.  On
++/var/log/messages.  These can be changed, if desired.  On
+ systems with 4.2 syslogging all messages are logged to the local log
+ file, usually /usr/spool/mqueue/syslog.
+ .SH DEBUGGING
+@@ -663,7 +663,7 @@
+ .PP
+ The server implements several extended commands.
+ .PP
+-XTND XMIT: Sends a mail message using /usr/lib/sendmail.
++XTND XMIT: Sends a mail message using /usr/sbin/sendmail.
+ .PP
+ XTND XLIST header [num]: Extracts and returns the specified header line
+ for the specified message number. If the "num" parameter is missing, 
+@@ -688,6 +688,7 @@
+ .SH FILES
+ .nf
+ /var/mail               mail files
++/etc/ftpusers           list of unwelcome/restricted users
+ /etc/inetd.conf         pop program invocation
+ /etc/syslog.conf        logging specifications
+ /var/spool/bulls        bulletins

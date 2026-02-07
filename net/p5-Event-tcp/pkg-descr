@@ -1,0 +1,2 @@
+Event::tcp is a bunch of glue code to make it very easy to build
+client-server style TCP-based services.

@@ -1,0 +1,27 @@
+--- ./configure.orig	2014-05-10 02:38:56.233878961 +0100
++++ ./configure	2014-05-10 02:40:14.188873049 +0100
+@@ -3504,8 +3504,8 @@
+ $as_echo "#define HAVE_LIBSTATGRAB 1" >>confdefs.h
+ 
+ 		    LIBS="$LIBS $LIBSTATGRABFLAGS -lstatgrab"
+-  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for statgrab_drop_privileges in -lstatgrab" >&5
+-$as_echo_n "checking for statgrab_drop_privileges in -lstatgrab... " >&6; }
++  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sg_drop_privileges in -lstatgrab" >&5
++$as_echo_n "checking for sg_drop_privileges in -lstatgrab... " >&6; }
+ if ${ac_cv_lib_statgrab_statgrab_drop_privileges+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+@@ -3520,11 +3520,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char statgrab_drop_privileges ();
++char sg_drop_privileges ();
+ int
+ main ()
+ {
+-return statgrab_drop_privileges ();
++return sg_drop_privileges ();
+   ;
+   return 0;
+ }

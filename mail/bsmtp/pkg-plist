@@ -1,0 +1,19 @@
+@(uucp,,4555) bin/_bqueue
+bin/bqueue
+bin/bsmtp
+bin/cbsmtp
+bin/crsmtp
+bin/rcsmtp
+bin/rgsmtp
+bin/rsmtp
+libexec/bsmtp/batcher
+@(root,,4555) libexec/bsmtp/bsmtp
+libexec/bsmtp/rsmtp
+libexec/bsmtp/transmitter.c-cbsmtp
+libexec/bsmtp/transmitter.c-rcsmtp
+libexec/bsmtp/transmitter.g-rcsmtp
+libexec/bsmtp/transmitter.g-rgsmtp
+libexec/bsmtp/transmitter.n-rsmtp
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/sendmail/bsmtp.m4
+@dir(uucp,uucp,770) /var/spool/bsnmp

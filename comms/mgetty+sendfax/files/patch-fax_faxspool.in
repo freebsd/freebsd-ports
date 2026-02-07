@@ -1,0 +1,17 @@
+--- fax/faxspool.in.orig	2010-06-04 13:01:49 UTC
++++ fax/faxspool.in
+@@ -417,11 +417,11 @@ fs_cvt_pdf()
+ 
+ # user name (for fax header only! auth is done by faxq-helper via getuid())
+ ##########
+-if user=`logname 2>/dev/null`
+-then :
++if [ `id -u` = 0 ]; then
++    user=root
+ else
+     id=`id`
+-    user=`expr "$id" : "[^( ]*(\([^)]*\)"`
++    user=`logname`
+ fi
+ test -z "$user" && user=$LOGNAME
+ test -z "$user" && user=$USER

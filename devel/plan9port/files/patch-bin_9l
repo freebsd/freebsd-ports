@@ -1,0 +1,11 @@
+--- bin/9l.orig	2020-04-27 21:22:16 UTC
++++ bin/9l
+@@ -14,7 +14,7 @@ case "$tag" in
+ *DragonFly*|*BSD*)
+ 	ld=${CC9:-gcc}
+ 	userpath=true
+-	extralibs="$extralibs -lutil"
++	extralibs="$extralibs -lutil -lpthread"
+ 	;;
+ *OSF1*)
+ 	ld=${CC9:-cc}

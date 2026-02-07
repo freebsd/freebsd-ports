@@ -1,0 +1,4 @@
+MatchIt selects matched samples of the the original treated and
+control groups with similar covariate distributions - can be used
+to match exactly on covariates, to match on propensity scores, or
+perform a variety of other matching procedures.

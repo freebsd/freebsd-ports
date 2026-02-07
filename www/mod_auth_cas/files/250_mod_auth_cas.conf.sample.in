@@ -1,0 +1,28 @@
+LoadModule auth_cas_module    %%APACHEMODDIR%%/mod_auth_cas.so
+<IfModule auth_cas_module>
+  #CASVersion 2
+  #CASDebug Off
+  #CASValidateServer On
+  #CASValidateDepth 9
+  #CASAllowWildcardCert Off
+  #CASAllowWildcardCert On
+  #CASCertificatePath /usr/local/etc/ssl/cert.pem
+  CASLoginURL https://CAS_SERVER/cas/login
+  CASValidateURL https://CAS_SERVER/cas/serviceValidate
+  # CASCookiePath /dev/null
+  #CASCookiePath /var/tmp/
+  #CASTimeout 7200
+  #CASIdleTimeout 3600
+  #CASCacheCleanInterval 1800 # 30 min
+  #CASCookieDomain NULL
+  #CASCookieHttpOnly Off
+
+  ## per directory (or htaccess):
+  #AuthType CAS
+  #CASCookie MOD_AUTH_CAS # over http
+  #CASSecureCookie MOD_AUTH_CAS_S # over https
+
+  # add HTTP header (for use of REMOTE_USER by backend)
+  #CASAuthNHeader None
+</IfModule>
+

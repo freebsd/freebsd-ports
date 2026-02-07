@@ -1,0 +1,32 @@
+--- coolmail.man.orig	1996-01-11 18:57:28.000000000 +0100
++++ coolmail.man	2009-04-09 09:00:38.000000000 +0200
+@@ -37,12 +37,9 @@
+ Ring bell when new mail is first detected, but not when more new mail is
+ detected.
+ .TP 8
+--af filename 
+-Specifies the audio file to use rather than the standard system beep.
+-.TP 8
+ -vol n
+-Value between 0 and 100 for the volume setting for both the system
+-beep and the sound file. The default is 50.
++Value between 0 and 100 for the volume setting for the system
++beep. The default is 50.
+ .TP 8
+ -v
+ Print version and inbox path.
+@@ -71,12 +68,9 @@
+ .B monochrome (\fPclass\fB Monochrome)
+ A Boolean value that enables monochrome mode when true.
+ .TP 8
+-.B soundFile (\fPclass \fB SoundFile)
+-Specifies the audio file to use rather than the standard system beep.
+-.TP 8
+ .B volume (\fPclass \fB Volume)
+-Value between 0 and 100 for the volume setting for both the system
+-beep and the sound file.
++Value between 0 and 100 for the volume setting for the system
++beep.
+ .SH COPYRIGHT
+ Copyright 1994
+ 

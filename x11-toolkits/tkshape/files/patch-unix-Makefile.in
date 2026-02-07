@@ -1,0 +1,11 @@
+--- unix/Makefile.in.orig	2000-09-11 17:10:01.000000000 +0200
++++ unix/Makefile.in	2013-05-13 17:20:31.000000000 +0200
+@@ -71,7 +71,7 @@
+ 	$(CC) -c $(CC_SWITCHES) $(UNIX_DIR)/shapeUnixText.c
+ # ----------------------------------------------------------------------
+ $(SOFILE): $(OBJS)
+-	${SHLIB_LD} -o $@ $^ @SHLIB_LD_LIBS@
++	${SHLIB_LD} -o $@ $^ @SHLIB_LD_LIBS@ ${TK_LIB_SPEC} ${TCL_LIB_SPEC} ${TK_LIBS}
+ $(EXEFILE): $(OBJS) tkAppInit.o
+ 	$(CC) -o $@ $^ @SHLIB_LD_LIBS@ ${TK_LIB_SPEC} ${TCL_LIB_SPEC} ${TK_LIBS}
+ # ----------------------------------------------------------------------

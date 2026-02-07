@@ -1,0 +1,8 @@
+lib/aspell-%%VER%%/l-sr.cmap
+lib/aspell-%%VER%%/l-sr.cset
+lib/aspell-%%VER%%/sr.dat
+share/aspell/sr-cyrl-only.rws
+share/aspell/sr-cyrl.multi
+share/aspell/sr-latn-only.rws
+share/aspell/sr-latn.multi
+share/aspell/sr.multi

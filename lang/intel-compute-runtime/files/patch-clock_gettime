@@ -1,0 +1,28 @@
+CLOCK_MONOTONIC_RAW doesn't exist on non-Linux systems.
+
+runtime/os_interface/linux/os_time_linux.cpp:61:21: error:
+      use of undeclared identifier 'CLOCK_MONOTONIC_RAW'
+    if (getTimeFunc(CLOCK_MONOTONIC_RAW, &ts)) {
+                    ^
+runtime/os_interface/linux/os_time_linux.cpp:138:24: error:
+      use of undeclared identifier 'CLOCK_MONOTONIC_RAW'
+    if (resolutionFunc(CLOCK_MONOTONIC_RAW, &ts)) {
+                       ^
+
+--- shared/source/os_interface/linux/os_time_linux.cpp.orig	2020-05-15 20:36:40 UTC
++++ shared/source/os_interface/linux/os_time_linux.cpp
+@@ -14,6 +14,14 @@
+ 
+ #include <time.h>
+ 
++#ifndef CLOCK_MONOTONIC_RAW
++# ifdef CLOCK_MONOTONIC_FAST
++#  define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC_FAST
++# else
++#  define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC
++# endif
++#endif
++
+ namespace NEO {
+ 
+ OSTimeLinux::OSTimeLinux(OSInterface *osInterface) {

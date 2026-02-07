@@ -1,0 +1,72 @@
+.Dd February 23, 2020
+.Dt HP2100 1 CON
+.Os
+.Sh NAME
+.Nm hp2100
+.Nd Simulator for HP 21xx/1000 series computers
+.Sh SYNOPSIS
+.Nm
+.Op Fl e
+.Op Fl q
+.Op Fl v
+.Oo
+.Ar startup-file
+.Op Ar arguments
+.Oc
+.Sh DESCRIPTION
+.Nm
+is a simulator for the HP 2116/15/14, 2100, and 1000 M/E/F-Series
+machines (hereafter referred collectively as the HP 2100 simulator). A
+large variety of CPU options, device interface cards, and peripherals
+are provided.
+.Pp
+The following options are available:
+.Bl -tag -width indent
+.It Fl e
+Processing of
+.Ar startup-file
+(including nested command invocations) is aborted if
+a command error is encountered.
+.It Fl q
+Certain informational messages are suppressed.
+.It Fl v
+The commands in
+.Ar startup-file
+are echoed before they are executed.
+.El
+.Pp
+If
+.Ar startup-file
+is specified, it is used as an initial source of simulator commands.
+If
+.Ar startup-file
+is not specified, default locations are searched. See the
+.Em SIMH User's Supplement
+for more details.
+.Pp
+If a startup file is specified, either on the
+command line or otherwise,
+it should contain a series of non-interactive simulator
+commands, one per line.
+These commands can be used to set up standard parameters.
+.Pp
+After initializing its internal structures and processing the startup file (if any),
+the simulator types out its name and version and then prompts for input with:
+.Bd -ragged -offset indent
+.Sy sim>
+.Ed
+.Sh EXIT STATUS
+.Nm
+exits 0 on success, and >0 if an error occurs.
+.Sh SEE ALSO
+Documentation is available; it can be found locally in
+.Pa %%DOCSDIR%%
+(if installed), and also at
+.Pa http://simh.trailing-edge.com/hp/#Documentation .
+.Sh SEE ALSO
+.Xr hp3000 1 ,
+.Xr hpdoc 1 .
+.Sh AUTHORS
+.An "J. David Bryan, Robert M. Supnik and others" .
+.Fx "port maintenance, and this manual page, by"
+.An "Bob Eager" Aq bob@eager.cx .

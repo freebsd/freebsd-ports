@@ -1,0 +1,25 @@
+--- wmscript/Makefile.orig	2000-01-16 13:27:20 UTC
++++ wmscript/Makefile
+@@ -1,6 +1,7 @@
+-LIBDIR = -L/usr/X11R6/lib
++CC?=	cc
++LIBDIR = -L%%LOCALBASE%%/lib
+ LIBS   = -lXpm -lXext -lX11
+-FLAGS = -O2
++CFLAGS += -O2
+ OBJS =	wmscript.o \
+ 		../wmgeneral/wmgeneral.o \
+ 		../wmgeneral/misc.o \
+@@ -8,10 +9,10 @@ OBJS =	wmscript.o \
+ 
+ 
+ .c.o:
+-	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
++	$(CC) -I%%LOCALBASE%%/include $(CFLAGS) -c -Wall $< -o $*.o
+ 
+ wmscript: $(OBJS)
+-	cc $(FLAGS) -o wmscript $^ -lXext $(LIBDIR) $(LIBS)
++	$(CC) -o wmscript $^ -lXext $(LIBDIR) $(LIBS)
+ 
+ all:: wmscript
+ 

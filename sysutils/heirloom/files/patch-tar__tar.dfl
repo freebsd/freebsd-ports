@@ -1,0 +1,19 @@
+--- tar/tar.dfl.orig	Wed Feb  4 03:59:04 2004
++++ tar/tar.dfl	Thu Jun  3 17:11:39 2004
+@@ -1,9 +1,11 @@
+ #
+ # Sccsid @(#)tar.dfl	1.4 (gritter) 2/4/04
+ 
+-archive=/dev/rmt/c0s0	20	0
++archive=/dev/sa0	20	0
+ 
+-archive0=/dev/dsk/f0t	18	1440
+-archive1=/dev/dsk/f1t	15	1200
+-archive2=/dev/cdrom/c1t0d0	20	0
+-archive3=/dev/cdrom/c1t0d1	20	0
++archive0=/dev/sa0	20	0
++archive1=/dev/sa1	20	0
++archive2=/dev/nsa0	20	0
++archive3=/dev/nsa1	20	0
++archive4=/dev/fd0	18	1440	N
++archive5=/dev/fd1	15	1200	N

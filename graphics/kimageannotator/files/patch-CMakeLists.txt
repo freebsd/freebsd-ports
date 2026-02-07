@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2024-03-01 16:05:11 UTC
++++ CMakeLists.txt
+@@ -97,6 +97,7 @@ set_target_properties(kImageAnnotator
+ 					  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin
+ 					  VERSION ${PROJECT_VERSION}
+ 					  SOVERSION 0
++					  OUTPUT_NAME kImageAnnotator-Qt${QT_MAJOR_VERSION}
+ 					  )
+ 
+ install(TARGETS kImageAnnotator

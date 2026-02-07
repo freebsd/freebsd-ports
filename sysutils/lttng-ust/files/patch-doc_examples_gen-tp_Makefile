@@ -1,0 +1,13 @@
+--- doc/examples/gen-tp/Makefile.orig	2022-03-25 15:37:17 UTC
++++ doc/examples/gen-tp/Makefile
+@@ -12,8 +12,8 @@
+ 
+ PYTHON := python
+ 
+-LIBS = -ldl -llttng-ust		#On Linux
+-#LIBS = -lc -llttng-ust		#On BSD
++#LIBS = -ldl -llttng-ust		#On Linux
++LIBS = -llttng-ust		#On FreeBSD
+ AM_V_P := :
+ 
+ all: sample

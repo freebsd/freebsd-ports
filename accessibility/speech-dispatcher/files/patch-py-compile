@@ -1,0 +1,17 @@
+Fix staging violations. We currently only account for one level of Python
+bytecode optimization in the ports tree.
+
+=>> Error: Filesystem touched during stage (files must install to ${STAGEDIR}):
+extra: usr/local/lib/python3.11/site-packages/_distutils_hack/__pycache__/__init__.cpython-311.opt-2.pyc
+
+--- py-compile.orig	2025-02-23 21:19:45 UTC
++++ py-compile
+@@ -210,7 +210,7 @@ case $python_major.$python_minor in
+ # Then byte compile w/more optimization.
+ # Only do this for Python 3.5+, see https://bugs.gnu.org/38043 for background.
+ case $python_major.$python_minor in
+-2.*|3.[0-4])
++2.*|3.*)
+   ;;
+ *)
+   $PYTHON -OO -c "

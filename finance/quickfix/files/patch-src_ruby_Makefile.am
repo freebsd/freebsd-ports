@@ -1,0 +1,16 @@
+--- src/ruby/Makefile.am.orig	2018-04-16 02:40:31 UTC
++++ src/ruby/Makefile.am
+@@ -16,9 +16,10 @@ clean-local:
+ 	rm -rf $(local_ruby_lib)
+ 
+ install-exec-local:
+-	cp -f $(top_builddir)/lib/ruby/*.rb $(RUBY_SITE_PACKAGES)
+-	cp -f $(top_builddir)/lib/ruby/quickfix.so $(RUBY_SITE_PACKAGES) || :
+-	cp -f $(top_builddir)/lib/ruby/quickfix.bundle $(RUBY_SITE_PACKAGES) || :
++	$(MKDIR_P) "$(DESTDIR)$(RUBY_SITE_PACKAGES)"
++	cp -f $(top_builddir)/lib/ruby/*.rb "$(DESTDIR)$(RUBY_SITE_PACKAGES)"
++	cp -f $(top_builddir)/lib/ruby/quickfix.so "$(DESTDIR)$(RUBY_SITE_PACKAGES)" || :
++	cp -f $(top_builddir)/lib/ruby/quickfix.bundle "$(DESTDIR)$(RUBY_SITE_PACKAGES)" || :
+ 
+ uninstall-local:
+ 	rm -rf $(RUBY_SITE_PACKAGES)/quickfix*.rb

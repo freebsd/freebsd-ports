@@ -1,0 +1,14 @@
+--- plugingui/widgets/Makefile.orig	2009-08-23 07:00:28 UTC
++++ plugingui/widgets/Makefile
+@@ -18,9 +18,9 @@
+ 
+ # GENERAL
+ 
+-CC		=	gcc
++CC ?= cc
+ LD		=	ld
+-CFLAGS		=	-I. `pkg-config --cflags gtk+-2.0`  -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
++CFLAGS +=	-I. `pkg-config --cflags gtk+-2.0`  -Wall -fomit-frame-pointer -funroll-loops -ffast-math -c -fPIC
+ 
+ 
+ 

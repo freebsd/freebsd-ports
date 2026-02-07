@@ -1,0 +1,3 @@
+etcd3gw (or the gateway python client) is a library that provides
+a python client for etcd3 grpc-gateway v3 API. Using this library
+you can manipulate an instance or cluster etcd in a pythonic way.

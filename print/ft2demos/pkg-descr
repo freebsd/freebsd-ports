@@ -1,0 +1,10 @@
+Demo programs for FreeType2.
+
+   ftdump     show information on given font file
+   ftlint     'lint' for font files
+   ftmemchk   test memory allocation of freetype library
+   ftmulti    multiple master font viewer
+   ftstring   render given string and show
+   fttimer    time rasterization
+   ftview     simple glyph viewer
+   testnames  dump PostScript name of each glyph

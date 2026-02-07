@@ -1,0 +1,20 @@
+bin/tim-config
+bin/wrap
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-tim.so
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wenju.mo
+%%DATADIR%%/bxm.tim
+%%DATADIR%%/cj.tim
+%%DATADIR%%/cj5-s.tim
+%%DATADIR%%/erbi.tim
+%%DATADIR%%/greek.tim
+%%DATADIR%%/liu.tim
+%%DATADIR%%/phone.tim
+%%DATADIR%%/pianpang.tim
+%%DATADIR%%/pinyin-p.tim
+%%DATADIR%%/pinyin.tim
+%%DATADIR%%/qfrench.tim
+%%DATADIR%%/shengdiao.tim
+%%DATADIR%%/wubi.tim
+%%DATADIR%%/wubihua-n.tim
+@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

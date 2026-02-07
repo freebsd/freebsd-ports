@@ -1,0 +1,12 @@
+bin/dlist_test
+bin/get_device
+bin/get_driver
+bin/get_module
+bin/systool
+include/sysfs/dlist.h
+include/sysfs/libsysfs.h
+lib/libsysfs.a
+lib/libsysfs.so
+lib/libsysfs.so.2
+lib/libsysfs.so.2.0.1
+share/man/man1/systool.1.gz

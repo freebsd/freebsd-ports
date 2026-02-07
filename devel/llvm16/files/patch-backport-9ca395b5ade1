@@ -1,0 +1,63 @@
+commit 9ca395b5ade105aee63db20534d49a1c58ac76c7
+Author: Haojian Wu <hokein.wu@gmail.com>
+Date:   Mon Jul 10 18:22:12 2023 +0200
+
+    [clang][AST] Propagate the contains-errors bit to DeclRefExpr from VarDecl's initializer.
+    
+    Similar to the https://reviews.llvm.org/D86048 (it only sets the bit for C++
+    code), we propagate the contains-errors bit for C-code path.
+    
+    Fixes https://github.com/llvm/llvm-project/issues/50236
+    Fixes https://github.com/llvm/llvm-project/issues/50243
+    Fixes https://github.com/llvm/llvm-project/issues/48636
+    Fixes https://github.com/llvm/llvm-project/issues/50320
+    
+    Differential Revision: https://reviews.llvm.org/D154861
+
+diff --git clang/lib/AST/ComputeDependence.cpp clang/lib/AST/ComputeDependence.cpp
+index 632f38f711fb..09df5401d669 100644
+--- clang/lib/AST/ComputeDependence.cpp
++++ clang/lib/AST/ComputeDependence.cpp
+@@ -489,7 +489,7 @@ ExprDependence clang::computeDependence(DeclRefExpr *E, const ASTContext &Ctx) {
+   // more bullets here that we handle by treating the declaration as having a
+   // dependent type if they involve a placeholder type that can't be deduced.]
+   if (Type->isDependentType())
+-    return Deps | ExprDependence::TypeValueInstantiation;
++    Deps |= ExprDependence::TypeValueInstantiation;
+   else if (Type->isInstantiationDependentType())
+     Deps |= ExprDependence::Instantiation;
+ 
+@@ -525,13 +525,13 @@ ExprDependence clang::computeDependence(DeclRefExpr *E, const ASTContext &Ctx) {
+   //   - it names a potentially-constant variable that is initialized with an
+   //     expression that is value-dependent
+   if (const auto *Var = dyn_cast<VarDecl>(Decl)) {
+-    if (Var->mightBeUsableInConstantExpressions(Ctx)) {
+-      if (const Expr *Init = Var->getAnyInitializer()) {
+-        if (Init->isValueDependent())
+-          Deps |= ExprDependence::ValueInstantiation;
+-        if (Init->containsErrors())
+-          Deps |= ExprDependence::Error;
+-      }
++    if (const Expr *Init = Var->getAnyInitializer()) {
++      if (Init->containsErrors())
++        Deps |= ExprDependence::Error;
++
++      if (Var->mightBeUsableInConstantExpressions(Ctx) &&
++          Init->isValueDependent())
++        Deps |= ExprDependence::ValueInstantiation;
+     }
+ 
+     // - it names a static data member that is a dependent member of the
+diff --git clang/test/SemaCXX/cxx11-crashes.cpp clang/test/SemaCXX/cxx11-crashes.cpp
+index a15fea336f8c..11bc42315421 100644
+--- clang/test/SemaCXX/cxx11-crashes.cpp
++++ clang/test/SemaCXX/cxx11-crashes.cpp
+@@ -65,7 +65,7 @@ namespace b6981007 {
+   struct S {}; // expected-note 3{{candidate}}
+   void f() {
+     S s(1, 2, 3); // expected-error {{no matching}}
+-    for (auto x : s) { // expected-error {{invalid range expression of}}
++    for (auto x : s) {
+       // We used to attempt to evaluate the initializer of this variable,
+       // and crash because it has an undeduced type.
+       const int &n(x);

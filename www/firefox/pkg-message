@@ -1,0 +1,66 @@
+[
+{ type: install
+  message: <<EOM
+## Missing features
+
+Some features found on Windows, macOS and Linux are not implemented:
+
+- Encrypted Media Extensions (requires Widevine CDM binary)
+- Process sandboxing (requires Capsicum backend)
+- Reduced memory usage (requires mozjemalloc)
+- Crash Reporter (requires Google Breakpad and reproducible builds)
+- WebVR (requires open source runtime)
+- TCP fast open
+- `about:networking#networkid` (requires link state notification)
+
+## Cursors
+
+From Firefox 142 on, this port defaults to using the new (themed)
+cursor selection. On the upside, this makes Firefox respect the
+desktop environment's theme, on the downside this breaks compatibility
+with the legacy X cursor names. If you experience issues (i.e. the
+mouse cursor not changing to the pointer ("hand") when hovering over
+links), your desktop environment is most likely still set to the legacy
+default/builtin "theme". To remedy this, either
+- set about:config variable "widget.gtk.legacy-cursors.enabled" to "true"
+  to re-enable the legacy cursors, or
+- use the Xcursor framework to set a cursor theme (e.g. X resource
+  item Xcursor.theme), see Xcursor(3) for details. The Adwaita theme
+  will have been installed as a dependency of gtk3 and does work.
+The latter option is only available for X environments.
+
+## Audio backend
+
+Currently used audio backend can be inspected on `about:support` page.
+Supported backends and default probing order is as follows:
+- `pulse-rust` if `pulseaudio` package is installed (PULSEAUDIO option)
+- `jack` if `jackit` package is installed (JACK option)
+- `sndio` if `sndio` package is installed (SNDIO option)
+- `alsa` if `alsa-lib` package is installed (ALSA option)
+- `oss` (always available)
+To force a specific backend open `about:config` page and create
+`media.cubeb.backend` preference.
+
+Microphone selection only works in `oss`, `pulse-rust` backends.
+Other backends are limited to `default` which is usually `/dev/dsp`,
+so use virtual_oss to reroute microphones from non-default devices.
+
+## Gamepad API
+
+Requires evdev(4) joystick support. On FreeBSD 13 and later enable hgame(4)
+while older versions can use sysutils/iichid or multimedia/webcamd.
+
+## smb:// issues
+Network group, machine, and share browsing does not work correctly.
+
+## sftp://
+Only sftp access using public key authentication works. To easily
+setup public key authentication to `remote_host`:
+
+    $ ssh-keygen
+    $ cat ~/.ssh/id_rsa.pub | ssh remote_host "cat >> .ssh/authorized_keys"
+
+The SSH server on `remote_host` must allow pub key authentication.
+EOM
+}
+]

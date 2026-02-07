@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: miniupnpc
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable miniupnpc
+# miniupnpc_enable="YES"
+# miniupnpc_config="port protocol [port2 protocol2] [...]"
+
+. /etc/rc.subr
+
+name="miniupnpc"
+desc="MiniUPnP Client Startup Config"
+rcvar=miniupnpc_enable
+
+load_rc_config $name
+
+: ${miniupnpc_enable:="NO"}
+command="%%PREFIX%%/bin/upnpc"
+start_cmd="miniupnpc_start"
+stop_cmd="miniupnpc_stop"
+
+miniupnpc_start()
+{
+	eval "${command} -r ${miniupnpc_config} | grep duration"
+}
+
+miniupnpc_stop()
+{
+	echo "Remove redirections" ${miniupnpc_config}
+	eval ${command} -d ${miniupnpc_config} > /dev/null
+}
+
+run_rc_command "$1"

@@ -1,0 +1,12 @@
+--- Makefile.am.orig
++++ Makefile.am
+@@ -4,7 +4,8 @@
+ AUTOMAKE_OPTIONS = 1.4 gnu
+ SUBDIRS = tme libltdl libtme generic ic machine host bus serial scsi tmesh tools
+ EXTRA_DIST = modules dist
+-pkglib_DATA = tmeconfig.h
++tmeconfigdir = $(pkglibdir)
++tmeconfig_DATA = tmeconfig.h
+ 
+ # target to hook into the distribution:
+ #

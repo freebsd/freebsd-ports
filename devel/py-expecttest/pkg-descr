@@ -1,0 +1,6 @@
+The expecttest library implements expect tests (also known as "golden" tests).
+Expect tests are a method of writing tests where instead of hard-coding the
+expected output of a test, you run the test to get the output, and the test
+framework automatically populates the expected output. If the output of the
+test changes, you can rerun the test with the environment variable
+EXPECTTEST_ACCEPT=1 to automatically update the expected output.

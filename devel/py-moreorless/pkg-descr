@@ -1,0 +1,2 @@
+moreorless is a thin wrapper around difflib.unified_diff that Does The Right
+Thing for "No newline at eof".

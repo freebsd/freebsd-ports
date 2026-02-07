@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+To enable mod_maxminddb in Apache, add the following line to your Apache configuration:
+
+  LoadModule maxminddb_module libexec/apache24/mod_maxminddb.so
+
+A common way on FreeBSD is to create a separate file, for example:
+
+  /usr/local/etc/apache24/modules.d/270_maxminddb.conf
+
+and put the LoadModule line there.
+
+After enabling the module, restart Apache:
+
+  service apache24 restart
+EOM
+}
+]

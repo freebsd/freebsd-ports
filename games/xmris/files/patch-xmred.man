@@ -1,0 +1,29 @@
+--- xmred.man.orig	1995-12-22 12:08:24 UTC
++++ xmred.man
+@@ -1,13 +1,13 @@
+-. Copyright (C) 1993 Nathan Sidwell
+-. RCS $Id: xmred.man,v 4.6 1995/12/14 13:53:27 nathan Exp $
++.\" Copyright (C) 1993 Nathan Sidwell
++.\" RCS $Id: xmred.man,v 4.6 1995/12/14 13:53:27 nathan Exp $
+ .TH XMRED 6 "20 December 1993" "X Version 11"
+-.IX xmred#(n) "" "\fLxmred\fP(n)"
++.\" .IX xmred#(n) "" "\fLxmred\fP(n)"
+ .SH NAME
+ xmred - garden editor for xmris
+ .SH SYNOPSIS
+ .B xmred
+ [-option ...] [-toolkitoption ...]
+-.IX xmred#(n) "" "\fLxmred\fP(n) \(em video game editor"
++.\" .IX xmred#(n) "" "\fLxmred\fP(n) \(em video game editor"
+ .SH DESCRIPTION
+ .PP
+ Mr Ed is a tool for creating and editing alternate gardens for Mr Is.
+@@ -70,7 +70,7 @@ This controls where the initial path is.
+ of a centre and four edges. Depending on the exact location of the pointer,
+ you will select either the centre, or an edge. Filling a path will place a
+ random apple in the filled location. The four locations immediately below the
+-'EXTRA' letters must be clear.
++\fIEXTRA\fR letters must be clear.
+ .TP
+ .B Player
+ This controls where the player starts from. There must be exactly one

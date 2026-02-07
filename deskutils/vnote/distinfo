@@ -1,0 +1,11 @@
+TIMESTAMP = 1761324771
+SHA256 (vnotex-vnote-v3.20.0_GH0.tar.gz) = 9d716541193aa7766e9c87313de612b5db49683a525649109128e1780edf4553
+SIZE (vnotex-vnote-v3.20.0_GH0.tar.gz) = 7498396
+SHA256 (vnotex-QHotkey-d7b5250_GH0.tar.gz) = 49bcd9f72394112c2b44f596c3a2d2aca1ab7dc6d2b0da3a65b22772d265087a
+SIZE (vnotex-QHotkey-d7b5250_GH0.tar.gz) = 52347
+SHA256 (vnotex-vtextedit-c8fe95e_GH0.tar.gz) = e82f91eafe78800919aedee90beafa5d2ff92d5e497ffda40ac56ff527a2dfa0
+SIZE (vnotex-vtextedit-c8fe95e_GH0.tar.gz) = 1480279
+SHA256 (vnotex-syntax-highlighting-25f6871_GH0.tar.gz) = bb532853f9bc9394743cc26c953af4680902c295d5e2e8cc2eaca3a978f2ffaf
+SIZE (vnotex-syntax-highlighting-25f6871_GH0.tar.gz) = 2310298
+SHA256 (vnotex-sonnet-7320206_GH0.tar.gz) = e6674d47735119060b5d851188c530e8d791f6fdf495cd1f691538b8316de8f9
+SIZE (vnotex-sonnet-7320206_GH0.tar.gz) = 279084

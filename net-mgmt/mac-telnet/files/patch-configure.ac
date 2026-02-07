@@ -1,0 +1,13 @@
+--- configure.ac.orig	2024-08-12 21:08:19 UTC
++++ configure.ac
+@@ -93,6 +93,10 @@ case "$host_os" in
+         AC_MSG_ERROR([pthreads library not found])
+     fi
+     ;;
++  freebsd*)
++    AC_CHECK_LIB([intl], [libintl_gettext], [HAVE_LIBINTL=yes], [HAVE_LIBINTL=no])
++    AC_CHECK_LIB([pthread], [pthread_create])
++    ;;
+   *)
+     ;;
+ esac

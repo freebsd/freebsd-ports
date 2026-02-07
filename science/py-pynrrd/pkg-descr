@@ -1,0 +1,4 @@
+NRRD (Nearly Raw Raster Data) is a library and file format designed to
+support scientific visualization and image processing involving N-dimensional
+raster data. This library provides the ability to read and write NRRD files
+using pure Python.

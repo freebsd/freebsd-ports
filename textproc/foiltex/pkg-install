@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	echo "Updating content cache to let LaTeX know about the new style files:"
+	if [ -x ${LOCALBASE}/bin/mktexlsr ]; then
+		${LOCALBASE}/bin/mktexlsr
+	elif [ -x ${PKG_PREFIX}/bin/mktexlsr ]; then
+		${PKG_PREFIX}/bin/mktexlsr
+	elif [ -x /usr/local/bin/mktexlsr ]; then
+		/usr/local/bin/mktexlsr
+	else
+		echo "Could not find mktexlsr. Please run it manually to update"
+		echo "LaTeX's content cache, or you won't be able to use the"
+		echo "new style files."
+	fi
+fi

@@ -1,0 +1,13 @@
+FSF gcc-4.x for Atmel AVR cross-development
+
+Included is the basic C++ compiler, although this is only of limited
+use without a libstdc++.
+
+Supported debugging formats: -gdwarf-2 [default], -gstabs
+
+Locally added support for the following AVR devices:
+
+  ATmega64RFR2, ATmega644RFR2, ATmega128RFR2, ATmega1284RFR2,
+  ATmega256RFR2, ATmega2564RFR2
+
+See also: https://gcc.gnu.org/

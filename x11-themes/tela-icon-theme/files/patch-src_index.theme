@@ -1,0 +1,11 @@
+--- src/index.theme.orig	2023-02-02 17:20:55 UTC
++++ src/index.theme
+@@ -1,7 +1,7 @@
+ [Icon Theme]
+ Name=%NAME%
+ Comment=Flat and colorful personality icon theme
+-Inherits=hicolor,Adwaita,breeze
++Inherits=hicolor,Adwaita
+ Example=folder
+ 
+ # KDE/Plasma Stuff

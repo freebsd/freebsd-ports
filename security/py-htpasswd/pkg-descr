@@ -1,0 +1,4 @@
+Replacement for htpasswd.
+
+This port will install htpasswd.py that can be found in trac contrib
+directory.

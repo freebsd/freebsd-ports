@@ -1,0 +1,8 @@
+Cirrus CLI is a tool for running containerized tasks reproducibly in any
+environment. Most commonly, Cirrus tasks are used as part of continuous
+integration workflows but can also be used as part of local development
+process as a hermetic replacement of helper scripts/Makefiles. Cirrus
+CLI runs your tasks locally the same way they are executed in CI or on
+your colleague's machine. Immutability of containers ensures the tasks
+will be executed the same way years from now regardless what versions
+of packages you'll have locally.

@@ -1,0 +1,20 @@
+--- tools/dumpit/Makefile.orig	Fri May 23 10:54:06 2003
++++ tools/dumpit/Makefile	Tue Sep 23 09:49:32 2003
+@@ -1,8 +1,7 @@
+ TARGET = dumpit
+ 
+-CC = gcc
++CC = cc
+ INCLUDES = -I../../include -I/usr/pkg/include
+-CFLAGS   = -Wall -g $(INCLUDES) 
+-PREFIX   = /usr/local
++CFLAGS   += $(INCLUDES) 
+ 
+ #CFLAGS += -DDEBUG	# Debugging
+@@ -20,5 +19,5 @@
+ 
+ install:
+-	mkdirhier $(PREFIX)/bin && cp dumpit $(PREFIX)/bin
++	mkdir -p $(PREFIX)/bin && cp dumpit $(PREFIX)/bin
+ 
+ $(OBJS): $(HDRS)

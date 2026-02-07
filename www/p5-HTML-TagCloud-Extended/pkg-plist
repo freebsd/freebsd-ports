@@ -1,0 +1,7 @@
+%%SITE_PERL%%/HTML/TagCloud/Extended.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/Exception.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/Factor.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/Tag.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/TagColors.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/TagList.pm
+%%PERL5_MAN3%%/HTML::TagCloud::Extended.3.gz

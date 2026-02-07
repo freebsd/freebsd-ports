@@ -1,0 +1,16 @@
+The Bftpd file server is designed to be as small and easy to manage as possible,
+while providing most of the features you would expect from a file server. On
+most home systems, bftpd is ready to work out-of-the-box without requiring any
+extra configuration. Production systems can be set up by editing a few lines in
+an easy-to-read config file.
+
+Features of bftpd include:
+* Easy configuration
+* Speed
+* Support for most RFC FTP commands
+* tar.gz on-the-fly compression/archiving
+* Security with chroot without special setup
+* No need for files (sh, ls...) in a chroot environment
+* Logging to wtmp and to a config file
+* PAM support
+* Support for site chown/chmod

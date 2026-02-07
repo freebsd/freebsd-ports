@@ -1,0 +1,94 @@
+*** main.c.orig	Wed Jun 22 16:24:50 1994
+--- main.c	Tue Jan 24 18:37:18 1995
+***************
+*** 39,44 ****
+--- 39,56 ----
+      exit(0);
+  }
+  
++ static char *set_keymap(char *buf)
++ {
++ 	char c;
++ 	int code;
++ 	
++ 	if(sscanf(buf, " %*s %i=%c", &code, &c) != 2)
++ 		return "usage: keymap code=char";
++ 	if(put_scan_table(code, (unsigned char)c))
++ 		return "bad value for keymap";
++ 	return 0;
++ }
++ 
+  
+  void check_error(char *msg, int line)
+  {
+***************
+*** 89,94 ****
+--- 101,108 ----
+              check_error(set_update_rate(strtol(value, NULL,10)), line);
+          else if (strcasecmp(keyword,"cursorspeed") == 0)
+              check_error(set_cursor_rate(strtol(value, NULL,10)), line);
++ 	else if (strcasecmp(keyword,"keymap") == 0)
++ 		check_error(set_keymap(buffer), line);
+          else
+              check_error("Syntax error in .pcemu file", line);
+      }
+*** xstuff.c.orig	Wed Jun 22 16:24:51 1994
+--- xstuff.c	Tue Jan 24 18:37:19 1995
+***************
+*** 316,322 ****
+  }
+  
+  
+! static BYTE scan_table1[] =
+  {
+      0x39, 0x02, 
+  #ifdef KBUK             /* double quotes, hash symbol */
+--- 316,322 ----
+  }
+  
+  
+! static BYTE scan_table1[256 - 0x20] =
+  {
+      0x39, 0x02, 
+  #ifdef KBUK             /* double quotes, hash symbol */
+***************
+*** 360,365 ****
+--- 360,366 ----
+  #else
+      0x29,
+  #endif
++     0
+  };
+  
+  
+***************
+*** 458,463 ****
+--- 459,474 ----
+              return (scan_table2[i].scan_code);
+  
+      return 0;
++ }
++ 
++ 
++ int put_scan_table(BYTE code, unsigned char c)
++ {
++ 	/* interface to overload scan_table1 from .pcemurc */
++ 	if(c < ' ' || c >= ' ' + sizeof scan_table1)
++ 		return 1;
++ 	scan_table1[c - ' '] = code;
++ 	return 0;
+  }
+  
+  
+*** xstuff.h.orig	Wed Jun 22 16:24:51 1994
+--- xstuff.h	Tue Jan 24 18:37:19 1995
+***************
+*** 17,22 ****
+--- 17,23 ----
+  
+  void start_X(void);
+  void end_X(void);
++ int put_scan_table(BYTE, unsigned char);
+  void process_Xevents(void);
+  void flush_X(void);
+  

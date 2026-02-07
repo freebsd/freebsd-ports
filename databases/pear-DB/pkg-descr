@@ -1,0 +1,17 @@
+DB is a database abstraction layer providing:
+- an OO-style query API
+- portability features that make programs written for one DBMS work with other
+  DBMS's
+- a DSN (data source name) format for specifying database servers
+- prepare/execute (bind) emulation for databases that don't support it natively
+- a result object for each query response
+- portable error codes
+- sequence emulation
+- sequential and non-sequential row fetching as well as bulk fetching
+- formats fetched rows as associative arrays, ordered arrays or objects
+- row limit support
+- transactions support
+- table information interface
+- DocBook and phpDocumentor API documentation
+
+DB layers itself on top of PHP's existing database extensions.

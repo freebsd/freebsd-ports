@@ -1,0 +1,10 @@
+--- tools/krb5-config.in.orig	2017-04-11 21:38:21 UTC
++++ tools/krb5-config.in
+@@ -85,6 +85,7 @@ for i in $*; do
+     ;;
+   --libs)
+     do_libs=yes
++    do_lib_deps=yes
+     ;;
+   --deps)
+     do_lib_deps=yes

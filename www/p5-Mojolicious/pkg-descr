@@ -1,0 +1,20 @@
+A next generation web framework for the Perl programming language; duct
+tape for the HTML5 web.
+
+An amazing real-time web framework, allowing you to easily grow single file
+prototypes into well-structured web applications.
+
+Powerful out of the box with RESTful routes, plugins, commands, Perl-ish
+templates, content negotiation, session management, form validation, testing
+framework, static file server, CGI/PSGI detection, first class Unicode support
+and much more for you to discover.
+
+Full stack HTTP and WebSocket client/server implementation with IPv6, TLS, SNI,
+IDNA, HTTP/SOCKS5 proxy, Comet (long polling), keep-alive, connection pooling,
+timeout, cookie, multipart and gzip compression support.
+
+Built-in non-blocking I/O web server, supporting multiple event loops as well
+as optional preforking and hot deployment, perfect for building highly scalable
+web services.
+
+JSON and HTML/XML parser with CSS selector support.

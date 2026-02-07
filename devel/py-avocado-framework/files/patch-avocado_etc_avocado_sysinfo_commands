@@ -1,0 +1,24 @@
+--- avocado/etc/avocado/sysinfo/commands.orig	2025-06-01 04:14:46 UTC
++++ avocado/etc/avocado/sysinfo/commands
+@@ -1,15 +1,14 @@ uname -a
+ df -mP
+ dmesg
+ uname -a
+-lspci -vvnn
+-gcc --version
++pciconf -lv
++cc --version
+ ld --version
+ hostname
+ uptime
+ dmidecode
+ ifconfig -a
+-brctl show
+-ip link
+-numactl --hardware show
+-lscpu
+-fdisk -l
++sysctl kern.sched.topology_spec
++gpart show
++kldstat
++vmstat

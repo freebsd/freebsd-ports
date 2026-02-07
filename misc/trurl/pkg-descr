@@ -1,0 +1,3 @@
+Command line tool for URL parsing and manipulation.
+
+It can be used as a complementary tool with `curl'.

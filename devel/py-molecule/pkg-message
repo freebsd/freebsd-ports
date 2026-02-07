@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+DOCKER option doesn't enable local DOCKER HOST as DOCKER is BROKEN in FreeBSD.
+This just installs DOCKER client to interact with a remote DOCKER HOST which has
+remote API enabled.
+EOM
+}
+]

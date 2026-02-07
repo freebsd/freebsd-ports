@@ -1,0 +1,11 @@
+--- meson.build.orig	2023-11-11 04:37:00 UTC
++++ meson.build
+@@ -7,7 +7,7 @@ dir_man7        = join_paths(get_option('prefix'), get
+ dir_xkb_base    = join_paths(dir_data, 'X11', 'xkb')
+ dir_xkb_rules   = join_paths(dir_xkb_base, 'rules')
+ dir_man7        = join_paths(get_option('prefix'), get_option('mandir'), 'man7')
+-dir_pkgconfig   = join_paths(dir_data, 'pkgconfig')
++dir_pkgconfig   = join_paths(get_option('prefix'), 'libdata', 'pkgconfig')
+ 
+ i18n = import('i18n')
+ 

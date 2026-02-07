@@ -1,0 +1,12 @@
+--- config.h.in.orig	2017-05-09 05:22:02.000000000 +0200
++++ config.h.in	2018-04-08 23:58:00.107115000 +0200
+@@ -397,6 +397,9 @@
+ /* Do we have zlib? */
+ #undef HAVE_ZLIB
+ 
++/* Does icaltimetype have is_utc field? */
++#undef ICALTIME_HAS_IS_UTC
++
+ /* Define to the sub-directory where libtool stores uninstalled libraries. */
+ #undef LT_OBJDIR
+ 

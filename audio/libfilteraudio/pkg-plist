@@ -1,0 +1,6 @@
+include/filter_audio.h
+lib/libfilteraudio.a
+lib/libfilteraudio.so
+lib/libfilteraudio.so.0
+lib/libfilteraudio.so.0.0.0
+libdata/pkgconfig/filteraudio.pc

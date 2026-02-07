@@ -1,0 +1,15 @@
+StrictYAML is a type-safe YAML parser that parses and validates a
+restricted subset of the YAML specification.
+
+Priorities:
+
+* Beautiful API.
+* Refusing to parse the ugly, hard to read and insecure features
+  of YAML like the Norway problem.
+* Strict validation of markup and straightforward type casting.
+* Clear, readable exceptions with code snippets and line numbers.
+* Acting as a near-drop in replacement for pyyaml, ruamel.yaml or
+  poyo.
+* Ability to read in YAML, make changes and write it out again
+  with comments preserved.
+* Not speed, currently.

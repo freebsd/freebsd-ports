@@ -1,0 +1,5 @@
+docplex is an IBM Decision Optimization CPLEX Modeling for Python.
+
+With this library, you can quickly and easily add the power of optimization to
+your application. You need IBM ILOG CPLEX Optimization Studio to solve the
+models.

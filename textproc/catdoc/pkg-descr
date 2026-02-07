@@ -1,0 +1,8 @@
+This is a program for viewing RTF and MS Word 97 documents.  It produces
+plain text output and can optionally convert some non-standard characters
+into TeX control sequences.  It has rudimentary table handling in TeX
+mode.  Also included are:
+- wordview, a small GUI frontend to catdoc that works with Tcl/Tk 7.6 and up;
+- xls2csv, which converts Excel spreadsheets to plain text files with CSV
+  (comma-separated value) lines; and
+- catppt, which extracts text from PowerPoint files.

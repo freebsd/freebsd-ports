@@ -1,0 +1,9 @@
+#!/bin/sh
+
+JPATHj%%PORTVERSION%%=%%PREFIX%%/lib/j
+export JPATHj%%PORTVERSION%%
+if [ ! -d ${HOME}/J ]
+then
+	cp -r ${JPATHj%%PORTVERSION%%}/user ${HOME}/J
+fi
+exec %%PREFIX%%/lib/j/jconsole "$@"

@@ -1,0 +1,2 @@
+# logfilename			[owner:group]	mode	count	size(kb)	when	flags	[/pid_file]				[sig_num]
+/var/log/urbackupclient.log	root:wheel	644  	10	5120		*	JC	/var/run/urbackupclientbackend.pid

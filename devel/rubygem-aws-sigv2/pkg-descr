@@ -1,0 +1,2 @@
+rubygem-aws-sigv2 is Amazon Web Services Signature Version 2 signing library
+which generates sigv2 signature for HTTP requests.

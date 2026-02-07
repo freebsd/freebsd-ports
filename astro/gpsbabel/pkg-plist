@@ -1,0 +1,10 @@
+bin/gpsbabel
+bin/gpsbabelfe
+share/applications/gpsbabel.desktop
+%%DATADIR%%/translations/gpsbabelfe_de.qm
+%%DATADIR%%/translations/gpsbabelfe_es.qm
+%%DATADIR%%/translations/gpsbabelfe_fr.qm
+%%DATADIR%%/translations/gpsbabelfe_hu.qm
+%%DATADIR%%/translations/gpsbabelfe_it.qm
+%%DATADIR%%/translations/gpsbabelfe_ru.qm
+share/pixmaps/gpsbabel.png

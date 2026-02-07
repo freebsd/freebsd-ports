@@ -1,0 +1,12 @@
+aiorwlock provides read write lock for asyncio . A RWLock maintains a pair of
+associated locks, one for read-only operations and one for writing. The read
+lock may be held simultaneously by multiple reader tasks, so long as there are
+no writers. The write lock is exclusive.
+
+Whether or not a read-write lock will improve performance over the use of a
+mutual exclusion lock depends on the frequency that the data is read compared to
+being modified. For example, a collection that is initially populated with data
+and thereafter infrequently modified, while being frequently searched is an
+ideal candidate for the use of a read-write lock. However, if updates become
+frequent then the data spends most of its time being exclusively locked and
+there is little, if any increase in concurrency.

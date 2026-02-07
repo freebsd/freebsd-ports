@@ -1,0 +1,14 @@
+include/suitesparse/ldl.h
+lib/cmake/LDL/LDLConfig.cmake
+lib/cmake/LDL/LDLConfigVersion.cmake
+lib/cmake/LDL/LDLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LDL/LDLTargets.cmake
+lib/cmake/LDL/LDLTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LDL/LDLTargets_static.cmake
+lib/libldl.a
+lib/libldl.so
+lib/libldl.so.3
+lib/libldl.so.%%VER%%
+libdata/pkgconfig/LDL.pc
+%%PORTDOCS%%%%DOCSDIR%%/LDL_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ldl_userguide.pdf

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+zookeeper_log4jpropfile="file:%%ETCDIR%%/log4j.properties"
+zookeeper_rootlogger="WARN,CONSOLE"
+zookeeper_logdir="%%ZOOKEEPER_LOGDIR%%"
+
+JAVA=%%JAVA%%
+
+CLASSPATH=":%%DATADIR%%/*"
+
+zookeeper_main="org.apache.zookeeper.ZooKeeperMain"
+log4j_params="-Dzookeeper.log.dir=${zookeeper_logdir} \
+		-Dzookeeper.root.logger=${zookeeper_rootlogger} \
+		-Dlog4j.configuration=${zookeeper_log4jpropfile}"
+
+${JAVA} -cp "$CLASSPATH" $CLIENT_JVMFLAGS $JVMFLAGS \
+	${log4j_params} ${zookeeper_main} $@

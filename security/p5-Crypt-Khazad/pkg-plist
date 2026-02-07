@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/Khazad.pm
+%%SITE_ARCH%%/auto/Crypt/Khazad/Khazad.so
+%%PERL5_MAN3%%/Crypt::Khazad.3.gz

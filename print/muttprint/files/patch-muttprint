@@ -1,0 +1,57 @@
+--- muttprint.orig	2008-12-26 01:33:36.000000000 +0100
++++ muttprint	2016-02-17 12:27:58.437344000 +0100
+@@ -105,13 +105,13 @@
+ ######## 'private' variables for the rest
+ %Config = (
+ 	PRINTER			=> 	'',
+-	PRINT_COMMAND	=>	'lpr -P$PRINTER',
++	PRINT_COMMAND	=>	'%%PRINT_COMMAND%%',
+ 	PENGUIN			=>	'on',
+ 	DUPLEX			=>	'off',
+ 	SPEED			=>	'30',
+ 	PAPERSAVE		=>	'off',
+ 	FONT			=>	'Latex',
+-	PAPER			=>	'A4',
++	PAPER			=>	'%%PAPERSIZE%%',
+ 	DEBUG			=>	'0',
+ 	REM_SIG			=>	'off',
+ 	REM_QUOTE		=>	'off',
+@@ -211,16 +211,16 @@
+ 	}
+ }
+ 
+-$Config{PAPER} = getPaperConfig ();
+-readConfig ("/etc/Muttprintrc", "$ENV{HOME}/.muttprintrc");
++# $Config{PAPER} = getPaperConfig ();
++readConfig ("%%PREFIX%%/etc/Muttprintrc", "$ENV{HOME}/.muttprintrc");
+ 
+ 
+ @print = readOpts ();
+ 
+ if ($Config{PENGUIN} eq "on") {
+ 	my $sharedir = findCommonDir("share");
+-	$Config{PENGUIN} = (-r "$sharedir/penguin.eps")
+-			? "$sharedir/penguin.eps" 
++	$Config{PENGUIN} = (-r "$sharedir/Beastie.eps")
++			? "$sharedir/Beastie.eps" 
+ 			: "off";
+ }
+ 
+@@ -1633,7 +1633,7 @@ sub getNumberOfPages ($) {
+ 	open (AUX, "$auxfile") or fatalError "Could not open $auxfile:\n$!";
+ 	
+ 	while (<AUX>) {
+-		($numberOfPages) = /\\newlabel{LastPage}{{}{(\d+)}}/;
++		($numberOfPages) = /\\newlabel\{LastPage\}\{\{\}\{(\d+)\}\}/;
+ 	}
+ 	
+ 	close AUX or fatalError "Could not close $auxfile:\n$!";
+@@ -2027,7 +2027,7 @@
+ Options:
+ 
+ PLEASE NOTICE: These options override the corresponding settings in 
+-~/.muttprintrc and /etc/Muttprintrc.
++~/.muttprintrc and %%PREFIX%%/etc/Muttprintrc.
+ 
+ -h, --help
+        This help.

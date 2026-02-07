@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: pdns_server
+# REQUIRE: DAEMON SERVERS mysql postgresql slapd
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable powerdns:
+#
+# pdns_enable="YES"
+# pdns_flags="<set as needed>"
+#
+# See pdns_server(8) for flags.
+#
+
+. /etc/rc.subr
+
+name=pdns
+rcvar=pdns_enable
+
+load_rc_config ${name}
+
+pdns_enable=${pdns_enable:-"NO"}
+: ${pdns_svcj_options:="net_basic"}
+pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns/pdns.conf"}
+
+required_files=${pdns_conf}
+
+pidfile=/var/run/${name}/${name}.pid
+
+command=%%PREFIX%%/sbin/pdns_server
+command_args="${pdns_flags} --daemon --guardian"
+
+monitor_cmd="${command} --daemon=no --guardian=no --control-console --loglevel=9"
+extra_commands="monitor"
+
+run_rc_command "$1"

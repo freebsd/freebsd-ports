@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-05-23 06:02:35 UTC
++++ CMakeLists.txt
+@@ -86,7 +86,7 @@ if (${CMAKE_SYSTEM_NAME} STREQUAL Windows)
+ 		source/msw/image.c
+ 		source/msw/window.c)
+ 	set(BUILD_GUI 1)
+-elseif (${CMAKE_SYSTEM_NAME} STREQUAL Linux)
++elseif (${CMAKE_SYSTEM_NAME} STREQUAL Linux OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|DragonFly")
+ 	list(APPEND SOURCES
+ 		source/linux/l1tf.c
+ 		source/linux/meltdown.c

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Audio/FLAC/Header.pm
+%%SITE_ARCH%%/auto/Audio/FLAC/Header/Header.so
+%%PERL5_MAN3%%/Audio::FLAC::Header.3.gz

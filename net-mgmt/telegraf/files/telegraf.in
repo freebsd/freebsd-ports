@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# PROVIDE: telegraf
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable telegrafb:
+# telegraf_enable="YES"
+#
+# telegraf_enable (bool):	Set to YES to enable telegraf
+#				Default: NO
+# telegraf_conf (str):		telegraf configuration file
+#				Default: ${PREFIX}/etc/telegraf.conf
+# telegraf_confdir (str):	telegraf configuration directory
+#				Default: none
+# telegraf_user (str):		telegraf daemon user
+#				Default: %%TELEGRAF_USER%%
+# telegraf_group (str):		telegraf daemon group
+#				Default: %%TELEGRAF_GROUP%%
+# telegraf_flags (str):		Extra flags passed to telegraf
+#				Default: --quiet
+
+. /etc/rc.subr
+
+PATH=${PATH}:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin
+
+name="telegraf"
+rcvar=telegraf_enable
+load_rc_config $name
+
+: ${telegraf_enable:="NO"}
+: ${telegraf_user:="%%TELEGRAF_USER%%"}
+: ${telegraf_group:="%%TELEGRAF_GROUP%%"}
+: ${telegraf_flags:="--quiet"}
+: ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${telegraf_confdir:=""}
+: ${telegraf_options:="${telegraf_flags} --config=${telegraf_conf}"}
+
+if [ -n "${telegraf_confdir}" ]; then
+	telegraf_options="${telegraf_options} --config-directory=${telegraf_confdir}"
+fi
+
+logfile="%%TELEGRAF_LOGDIR%%/${name}.log"
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+start_precmd="telegraf_prestart"
+start_cmd="telegraf_start"
+stop_cmd="telegraf_stop"
+
+telegraf_prestart()
+{
+    if [ ! -r "${telegraf_conf}" ]; then
+        echo WARNING: missing ${telegraf} configuration. Start aborted.
+        exit 1
+    fi
+    install -d -o ${telegraf_user} -g ${telegraf_group} -m750 %%TELEGRAF_LOGDIR%%
+}
+
+telegraf_start()
+{
+    echo "Starting ${name}"
+    /usr/sbin/daemon -fcr -P ${pidfile} -u ${telegraf_user} -o ${logfile} \
+        %%PREFIX%%/bin/${name} ${telegraf_options}
+}
+
+telegraf_stop()
+{
+    pid=$(check_pidfile $pidfile $command)
+    if [ -n "${pid}" ]; then
+        echo "Stopping ${name} (pid=${pid})"
+        kill -- -${pid}
+        wait_for_pids ${pid}
+    else
+        echo "${name} isn't running"
+    fi
+}
+
+run_rc_command "$1"

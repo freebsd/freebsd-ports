@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2000-01-11 01:54:05 UTC
++++ Makefile.in
+@@ -14,10 +14,10 @@ CC = @CC@
+ #   Pavel@Xerox.Com
+ 
+ CC = @CC@
+-LIBRARIES = @LIBS@
++LIBRARIES = @LIBS@ -lm
+ YACC = @YACC@
+ 
+-CFLAGS = -O
++CFLAGS?= -O
+ # If you're using GCC, you may prefer:
+ # CFLAGS = -O2 -finline-functions
+ #

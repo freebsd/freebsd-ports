@@ -1,0 +1,9 @@
+lib/%%TCL_PKG%%/libtkdnd.so.1
+lib/%%TCL_PKG%%/pkgIndex.tcl
+lib/%%TCL_PKG%%/tkdnd.tcl
+lib/%%TCL_PKG%%/tkdnd_compat.tcl
+lib/%%TCL_PKG%%/tkdnd_generic.tcl
+lib/%%TCL_PKG%%/tkdnd_macosx.tcl
+lib/%%TCL_PKG%%/tkdnd_unix.tcl
+lib/%%TCL_PKG%%/tkdnd_windows.tcl
+share/man/mann/tkDND.n.gz

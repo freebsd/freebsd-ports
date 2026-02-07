@@ -1,0 +1,45 @@
+--- Jamfile.orig	2013-11-27 03:31:12.000000000 -0600
++++ Jamfile	2013-11-28 11:35:43.262503298 -0600
+@@ -47,10 +47,10 @@
+ }
+ 
+ 
+-Prepare $(INSTALLROOT)$(JAILDIR) ;
+-Prepare $(INSTALLROOT)$(JAILDIR)/var/run ;
+-Prepare $(INSTALLROOT)$(MESSAGEDIR) ;
+-Prepare $(INSTALLROOT)$(PIDFILEDIR) ;
++#Prepare $(INSTALLROOT)$(JAILDIR) ;
++#Prepare $(INSTALLROOT)$(JAILDIR)/var/run ;
++#Prepare $(INSTALLROOT)$(MESSAGEDIR) ;
++#Prepare $(INSTALLROOT)$(PIDFILEDIR) ;
+ Prepare $(INSTALLROOT)$(CONFIGDIR) ;
+ Prepare $(INSTALLROOT)$(LIBDIR)/contrib ;
+ if ( $(LOGFILE:D) != "" && $(LOGFILE:D) != "syslog" ) {
+@@ -59,14 +59,14 @@
+ 
+ 
+ # if we make JAILDIR, we should chmod it so noone can read it:
+-MODE on $(INSTALLROOT)$(JAILDIR) = 701 ;
+-Chmod $(INSTALLROOT)$(JAILDIR) ;
++#MODE on $(INSTALLROOT)$(JAILDIR) = 701 ;
++#Chmod $(INSTALLROOT)$(JAILDIR) ;
+ 
+ # if we make MESSAGEDIR, we should chmod it similarly. AOXUSER needs to
+ # be able to write to it, but we can't chown here, because the user may
+ # not exist yet.
+-MODE on $(INSTALLROOT)$(MESSAGEDIR) = 700 ;
+-Chmod $(INSTALLROOT)$(MESSAGEDIR) ;
++#MODE on $(INSTALLROOT)$(MESSAGEDIR) = 700 ;
++#Chmod $(INSTALLROOT)$(MESSAGEDIR) ;
+ 
+ 
+ actions Message {
+@@ -90,7 +90,7 @@
+ EOM
+ }
+ 
+-Message install ;
++#Message install ;
+ 
+ 
+ if $(BUILDDOC) {

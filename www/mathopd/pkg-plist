@@ -1,0 +1,11 @@
+etc/mathopd.conf.sample
+etc/rc.d/mathopd.sh-dist
+sbin/mathopd
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/cgi.txt
+%%PORTDOCS%%%%DOCSDIR%%/config.txt
+%%PORTDOCS%%%%DOCSDIR%%/running.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample.cfg
+%%PORTDOCS%%%%DOCSDIR%%/syntax.txt

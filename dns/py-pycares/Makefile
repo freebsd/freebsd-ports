@@ -1,0 +1,32 @@
+PORTNAME=	pycares
+PORTVERSION=	5.0.1
+CATEGORIES=	dns python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Python interface to c-ares
+WWW=		https://pypi.org/project/pycares/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.5.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.5.0:devel/py-cffi@${PY_FLAVOR}
+
+USES=		cmake:indirect python
+USE_PYTHON=	autoplist pep517 unittest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+OPTIONS_DEFINE=		IDNA
+IDNA_DESC=		IDNA support
+IDNA_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR}
+IDNA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/_cares*.so
+
+.include <bsd.port.mk>

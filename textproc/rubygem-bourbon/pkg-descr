@@ -1,0 +1,7 @@
+Bourbon is a library of Sass mixins and functions that are designed to make you
+a more efficient style sheet author.
+
+It is ...
+- Dependency-free: Bourbon is pure Sass.
+- Human-readable: We aim for clarity over brevity.
+- Lightweight: Zero output post-install and has no visual opinion.

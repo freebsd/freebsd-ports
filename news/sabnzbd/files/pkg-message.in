@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+news/sabnzbdplus includes an RC script:
+%%PREFIX%%/etc/rc.d/sabnzbd
+
+TO START SABNZBD ON BOOT:
+# sysrc sabnzbd_enable=YES
+
+START MANUALLY:
+# service sabnzbd start
+
+Once started, visit the following to configure:
+http://localhost:8080/sabnzbd/
+
+Note that your URL may differ slightly if you have an old sabnzbd.ini
+that specifies a different address to bind to.
+EOM
+}
+]

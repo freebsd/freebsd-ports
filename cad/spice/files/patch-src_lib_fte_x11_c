@@ -1,0 +1,109 @@
+--- src/lib/fte/x11.c.orig	1993-04-14 19:44:56.000000000 +0000
++++ src/lib/fte/x11.c	2011-07-26 23:16:48.000000000 +0000
+@@ -36,6 +36,10 @@
+ extern int _Xdebug;
+ #  endif
+ 
++void initlinestyles(void);
++void initcolors(GRAPH *graph);
++void slopelocation(GRAPH *graph, int x0, int y0);
++
+ /* forward declarations */
+ extern void handlebuttonev(), handlekeypressed(), killwin(), hardcopy(),
+ 	    redraw(), resize();
+@@ -120,7 +124,10 @@
+ 	/* "invert" works better than "xor" for B&W */
+ 
+ 	/* xor gc should be a function of the pixels that are written on */
+-	gcvalues.function = GXxor;
++	/* gcvalues.function = GXxor; */
++	/* this patch makes lines visible on true color displays
++           Guenther Roehrich 22-Jan-99 */
++	gcvalues.function = GXinvert;
+ 	gcvalues.line_width = 1;
+ 	gcvalues.foreground = 1;
+ 	gcvalues.background = 0;
+@@ -152,7 +159,7 @@
+ {
+ 	XGetErrorText(display, errorev->error_code, ErrorMessage, 1024);
+ 	externalerror(ErrorMessage);
+-	return;
++	return (0);
+ }
+ 
+ /* Recover from bad NewViewPort call. */
+@@ -302,7 +309,8 @@
+ 	return (0);
+ }
+ 
+-static
++/* PN static */
++void
+ initlinestyles()
+ {
+ 
+@@ -318,7 +326,8 @@
+ 	return;
+ }
+ 
+-static
++/* PN static */
++void
+ initcolors(graph)
+     GRAPH *graph;
+ {
+@@ -405,6 +414,7 @@
+ }
+ 
+ /*ARGSUSED*/
++void
+ X11_Arc(x0, y0, radius, theta1, theta2)
+ int x0, y0, radius;
+ double theta1, theta2;
+@@ -612,6 +622,7 @@
+ }
+ #  endif
+ 
++void
+ slopelocation(graph, x0, y0)
+ GRAPH *graph;
+ int x0, y0;         /* initial position of mouse */
+@@ -805,8 +816,9 @@
+ 
+ 	/* Iplots are done asynchronously */
+ 	DEVDEP(graph).isopen = 0;
++	w = DEVDEP(graph).shell;
+ 	DestroyGraph(graph->graphid);
+-	XtDestroyWidget(DEVDEP(graph).shell);
++	XtDestroyWidget(w);
+ 
+ }
+ 
+@@ -915,6 +927,7 @@
+ }
+ #  endif
+ 
++void
+ X11_Input(request, response)
+     REQUEST *request;
+     RESPONSE *response;
+@@ -942,7 +955,8 @@
+ 	            1 << ConnectionNumber(display);
+ 
+ 	      /* block on ConnectionNumber and request->fp */
+-	      select(nfds + 1, &readfds, (int *) NULL, (int *) NULL, NULL);
++	      /* PN added fd_set * casting */
++	      select(nfds + 1, (fd_set *) &readfds, (fd_set *) NULL, (fd_set *) NULL, NULL);
+ 
+ 	      /* handle X events first */
+ 	      if (readfds & (1 << ConnectionNumber(display))) {
+@@ -995,7 +1009,8 @@
+ 
+ }
+ 
+-static X_ScreentoData(graph, x, y, fx, fy)
++/* PN static */ 
++X_ScreentoData(graph, x, y, fx, fy)
+ GRAPH *graph;
+ int x,y;
+ double *fx, *fy;

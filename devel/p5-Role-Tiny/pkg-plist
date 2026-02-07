@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Role/Tiny.pm
+%%SITE_PERL%%/Role/Tiny/With.pm
+%%PERL5_MAN3%%/Role::Tiny.3.gz
+%%PERL5_MAN3%%/Role::Tiny::With.3.gz

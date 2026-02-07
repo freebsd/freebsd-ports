@@ -1,0 +1,13 @@
+RLog provides a flexible message logging facility for C++ programs
+and libraries.  It is subscription based, meaning you can subscribe
+to messages of your choice in an number of ways: by hierarchical
+channel name (e.g. "debug", "debug/ special", "error", etc.), or
+file name, component name, etc.  Log messages are individually enabled.
+It is meant to be fast enough to leave in production code - even
+where it may be called many times, as both the GCC and Intel compilers
+reduce the logging overhead a few clock cycles if they are dormant
+(with no subscribers).  Other add-on components can extend subscriptions
+to external programs, allowing you to enable and collect debugging
+messages remotely.
+
+See also: https://github.com/anastmag/rlog

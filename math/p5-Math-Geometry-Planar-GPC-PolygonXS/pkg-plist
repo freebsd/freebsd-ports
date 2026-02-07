@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Math/Geometry/Planar/GPC/PolygonXS.pm
+%%SITE_ARCH%%/auto/Math/Geometry/Planar/GPC/PolygonXS/PolygonXS.so
+%%PERL5_MAN3%%/Math::Geometry::Planar::GPC::PolygonXS.3.gz

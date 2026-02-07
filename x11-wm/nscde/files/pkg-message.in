@@ -1,0 +1,58 @@
+[
+{ type: install
+  message: <<EOM
+NsCDE runs a setup script when started the first time. To
+ensure the best experience, it is recommended to install
+a few additional ports, i.e.:
+
+  * audio/pavucontrol - for audio/volume control
+  * www/firefox - or any other browser to access help
+  * x11/xcalc - as destination for a pre-set up calculator link
+  * editors/nedit - as text editor
+  * x11/arandr - for multi screen configuration
+  * x11/xscreensaver - as lock screen
+  * x11-fm/pcmanfm - as file manager
+
+While NsCDE will generally run fine without those ports,
+there will be keyboard shortcuts and links in your initial
+setup, which will not work without them or without further
+configuration work on your end.
+
+NsCDE comes with a default xsessions configuration that is
+managed by and integrated with fvwm; for further details on 
+how to integrate NsCDE xsessions with other session managers, 
+refer to the examples in %%EXAMPLESDIR%%.
+EOM
+},
+{ type: upgrade
+  maximum_version: 2.2
+  message: <<EOM
+NsCDE changed its installation layout when switching between
+versions 1.x and 2.x.
+
+Point your X start scripts to %%PREFIX%%/bin/nscde instead of
+previously %%PREFIX%%/sbin/NsCDE.
+
+For backward compatibility of your local 1.x configuration
+files, it is recommended to create a symbolic link from the
+old nscde shared folder to the new one:
+
+ln -s %%PREFIX%%/share/NsCDE %%PREFIX%%/share/nscde
+ 
+Also, default key bindings were changed. To restore original 1.x
+key bindings, use the keyboard settings app or alternatively
+add the following configuration to your
+~/.NsCDE/Keybindings.fvwmlocal file:
+
+  # restore nscde 1.4 key bindings
+  Silent Key F4 A 1 Resize
+  Silent Key F5 A 1 Move
+  Silent Key F6 A 1 RaiseLower
+
+Last but not least, it's recommended to check whether any old 1.x
+installation files remain after upgrading to 2.x because it may
+cause unexpected behavior. For example, remove the legacy directory
+%%PREFIX%%/lib/nscde.
+EOM
+}
+]

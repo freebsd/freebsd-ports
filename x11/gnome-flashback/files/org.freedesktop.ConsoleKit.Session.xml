@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.freedesktop.ConsoleKit.Session">
+    <annotation name="org.gtk.GDBus.C.Name" value="ConsoleKitSessionGen" />
+
+    <property name="Active" type="b" access="read" />
+
+    <property name="LockedHint" type="b" access="read" />
+
+    <method name="SetLockedHint">
+      <arg direction="in" type="b" />
+    </method>
+
+    <signal name="Lock" />
+
+    <signal name="Unlock" />
+
+  </interface>
+</node>

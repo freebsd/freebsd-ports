@@ -1,0 +1,45 @@
+[
+{ type: install
+  message: <<EOM
+SeaweedFS presents a simple interface behind a complex distributed system.
+
+For a single node "demo setup" you can just run:
+
+$ mkdir /tmp/weeds
+$ %%PREFIX%%/bin/weed -logtostderr server -dir /tmp/weeds -s3
+
+For a more typical setup, you should have either 1 or 3 masters, and
+multiple filers, with replication enabled.
+
+Adjust %%PREFIX%%/etc/seaweedfs/*.toml according to your requirements,
+using the sample configs in the same directory. Most parameters can be
+ignored, refer to the seaweedfs wiki for further explanations.
+
+Please read the documentation carefully, particularly around data
+replication, and running redundant masters. Prime numbers of servers are
+your friend, choose them wisely.
+
+EOM
+}
+{ type: upgrade
+  maximum_version: "3.26"
+  message: <<EOM
+When upgrading from before 3.26 these variables, if used, should be replaced:
+* seaweedfs_syslog_output_enable replaces seaweedfs_syslog_enable
+  (seaweedfs_syslog_enable, seaweedfs_syslog_output_priority
+  and seaweedfs_syslog_output_facility still work),
+* seaweedfs_syslog_output_priority replaces seaweedfs_syslog_priority
+  (seaweedfs_syslog_priority still works only when seaweedfs_syslog_enable
+  is set),
+* seaweedfs_syslog_output_facility replaces seaweedfs_syslog_facility
+  (seaweedfs_syslog_facility still works only when seaweedfs_syslog_enable
+  is set).
+
+Also default directory to store data files ("${seaweedfs_dir}/data"), if need,
+should be moved to "${seaweedfs_dir}" (ex, %%SEAWEEDFS_DIR%%/data
+to %%SEAWEEDFS_DIR%%).
+
+And weed executable has been moved from %%PREFIX%%/sbin to %%PREFIX%%/bin.
+EOM
+}
+]

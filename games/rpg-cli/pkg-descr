@@ -1,0 +1,3 @@
+Bare-bones JRPG-inspired terminal game written in Rust.
+It can work as an alternative to cd where you randomly
+encounter enemies as you change directories.

@@ -1,0 +1,5 @@
+zsh-completions is the additional completion definitions for Zsh.
+
+This projects aims at gathering/developing new completion scripts that are not
+available in Zsh yet. The scripts may be contributed to the Zsh project when
+stable enough.

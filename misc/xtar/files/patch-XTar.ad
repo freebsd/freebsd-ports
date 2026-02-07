@@ -1,0 +1,15 @@
+*** XTar.ad.orig	Mon Jul 17 14:00:59 1995
+--- XTar.ad	Tue Nov 19 17:46:59 1996
+***************
+*** 1,5 ****
+  !!!! Help document !!!!
+! XTar*helpDoc:			/usr/local/lib/X11/xtar/xtar.doc
+  
+  !!! Set this to true if you want push buttons !!!
+  XTar*showPB:			False
+--- 1,5 ----
+  !!!! Help document !!!!
+! XTar*helpDoc:			/usr/X11R6/lib/X11/xtar/xtar.doc
+  
+  !!! Set this to true if you want push buttons !!!
+  XTar*showPB:			False

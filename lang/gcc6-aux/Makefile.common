@@ -1,0 +1,11 @@
+.include "Makefile.version"
+
+LIB_DEPENDS=		libgmp.so:math/gmp
+LIB_DEPENDS+=		libmpfr.so:math/mpfr
+LIB_DEPENDS+=		libmpc.so:math/mpc
+
+GNU_CONFIGURE=		yes
+USES=			gmake libtool perl5 tar:bzip2
+USE_PERL5=		build
+ALL_TARGET=		default
+CFLAGS:=		${CFLAGS:N-march=*}

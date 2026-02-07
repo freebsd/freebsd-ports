@@ -1,0 +1,4 @@
+X-pired is an action-puzzle game written in C using SDL, SDL_mixer,
+SDL_image and SDL_gfx libraries distributed under the terms of GNU
+GPL. The goal of the game in each level is to reach the exit square,
+avoiding exploding barrels and other deadly stuff...

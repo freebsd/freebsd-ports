@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: postfix-policyd-sf
+# REQUIRE: LOGIN mysql
+# BEFORE: mail postfix
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable policyd:
+#
+# postfix_policyd_sf_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=postfix_policyd_sf
+rcvar=postfix_policyd_sf_enable
+
+command=%%PREFIX%%/sbin/%%PKGBASE%%
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+postfix_policyd_sf_enable=${postfix_policyd_sf_enable:-"NO"}
+postfix_policyd_sf_pidfile=${postfix_policyd_sf_pidfile:-"/var/run/%%PKGBASE%%.pid"}
+postfix_policyd_sf_flags=${postfix_policyd_sf_flags:-"-c %%PREFIX%%/etc/%%PKGBASE%%.conf"}
+
+pidfile="${postfix_policyd_sf_pidfile}"
+
+load_rc_config $name
+run_rc_command "$1"

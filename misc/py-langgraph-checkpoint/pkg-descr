@@ -1,0 +1,6 @@
+The langgraph-checkpoint  library defines the base interface for LangGraph
+checkpointers. Checkpointers provide a persistence layer for LangGraph.
+They allow you to interact with and manage the graph's state. When you use
+a graph with a checkpointer, the checkpointer saves a checkpoint of the
+graph state at every superstep, enabling several powerful capabilities like
+human-in-the-loop, "memory" between interactions and more.

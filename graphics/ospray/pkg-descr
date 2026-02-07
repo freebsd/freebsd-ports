@@ -1,0 +1,4 @@
+OSPRay features interactive CPU rendering capabilities geared towards Scientific
+Visualization applications. Advanced shading effects such as Ambient Occlusion,
+shadows, and transparency can be rendered interactively, enabling new insights
+into data exploration.

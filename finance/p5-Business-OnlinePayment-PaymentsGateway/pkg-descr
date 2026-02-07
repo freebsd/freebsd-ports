@@ -1,0 +1,2 @@
+A Business::OnlinePayment backend module for PaymentsGateway.net ACH Direct.
+It is only useful if you have a merchant account with PaymentsGateway.net.

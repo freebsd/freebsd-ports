@@ -1,0 +1,45 @@
+--- dmenu-translate.orig	2024-11-26 19:46:24 UTC
++++ dmenu-translate
+@@ -53,7 +53,7 @@ formatmenu() {
+ }
+ 
+ formatmenu() {
+-	echo "$1" | tr '\n' '  ' | sed 's/\s\{3,\}//g; s/^\(.\{30\}\).\+/\1.../; s/$/\n/'
++	echo "$1" | tr '\n' '  ' | gsed 's/\s\{3,\}//g; s/^\(.\{30\}\).\+/\1.../; s/$/\n/'
+ }
+ 
+ get_selection() {
+@@ -62,12 +62,12 @@ clip_menu() {
+ 
+ clip_menu() {
+ 	{ formatmenu "$1"; formatmenu "$2"; } |
+-		sed 's/^\s*$//; 1s/^./Primary: &/; 2s/^./Clipboard: &/' |
+-		sed '/^$/d'
++		gsed 's/^\s*$//; 1s/^./Primary: &/; 2s/^./Clipboard: &/' |
++		gsed '/^$/d'
+ }
+ 
+ lang_menu() {
+-	echo "$TRANS_LANGS" | sed 's/\s\+/\n/g' | sed '/:/!s/^/:/'
++	echo "$TRANS_LANGS" | gsed 's/\s\+/\n/g' | gsed '/:/!s/^/:/'
+ 	echo '[Define]'
+ }
+ 
+@@ -86,7 +86,7 @@ save_file() (
+ }
+ 
+ save_file() (
+-	tmp="$(mktemp --tmpdir 'dmenu-translate.XXXXXX')"
++	tmp="$(mktemp --tmpdir -t dmenu-translate)"
+ 	echo "$1" > "$tmp"
+ 	echo "$tmp"
+ )
+@@ -98,7 +98,7 @@ get_text() {
+ get_text() {
+ 	echo "$2" | while IFS= read -r clip; do
+ 	[ "$1" = "$clip" ] && {
+-		type="$(echo "$clip" | sed 's/^\(\w\+\):.*/\1/')"
++		type="$(echo "$clip" | gsed 's/^\(\w\+\):.*/\1/')"
+ 			case "$type" in
+ 				Primary)   echo "$primary"   ;;
+ 				Clipboard) echo "$clipboard" ;;

@@ -1,0 +1,28 @@
+[Desktop Entry]
+Version=1.0
+Name=Namecoin Core
+Comment=Connect to the Namecoin P2P Network
+Comment[de]=Verbinde mit dem Namecoin peer-to-peer Netzwerk
+Comment[fr]=Namecoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Namecoin, eşten eşe kriptografik sanal para birimi
+Exec=namecoin-qt %u
+Terminal=false
+Type=Application
+Icon=namecoin128
+MimeType=x-scheme-handler/namecoin;
+Categories=Office;Finance;
+StartupWMClass=Namecoin-qt
+[Desktop Entry]
+Version=1.0
+Name=Namecoin Core
+Comment=Connect to the Namecoin P2P Network
+Comment[de]=Verbinde mit dem Namecoin peer-to-peer Netzwerk
+Comment[fr]=Namecoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Namecoin, eşten eşe kriptografik sanal para birimi
+Exec=namecoin-qt %u
+Terminal=false
+Type=Application
+Icon=namecoin128
+MimeType=x-scheme-handler/namecoin;
+Categories=Office;Finance;
+StartupWMClass=Namecoin-qt

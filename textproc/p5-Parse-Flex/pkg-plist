@@ -1,0 +1,5 @@
+bin/makelexer.pl
+%%PERL5_MAN3%%/Parse::Flex.3.gz
+%%PERL5_MAN3%%/Parse::Flex::Generate.3.gz
+%%SITE_PERL%%/Parse/Flex.pm
+%%SITE_PERL%%/Parse/Flex/Generate.pm

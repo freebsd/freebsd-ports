@@ -1,0 +1,9 @@
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%RUBY_SITELIBDIR%%/zfstools.rb
+%%RUBY_SITELIBDIR%%/zfstools/dataset.rb
+%%RUBY_SITELIBDIR%%/zfstools/features.rb
+%%RUBY_SITELIBDIR%%/zfstools/pool.rb
+%%RUBY_SITELIBDIR%%/zfstools/snapshot.rb
+sbin/zfs-auto-snapshot
+sbin/zfs-cleanup-snapshots
+sbin/zfs-snapshot-mysql

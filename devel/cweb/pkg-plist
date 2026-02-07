@@ -1,0 +1,7 @@
+bin/ctangle
+bin/cweave
+share/man/man1/cweb.1.gz
+%%DATADIR%%/c++lib.w
+%%PORTDOCS%%%%DOCSDIR%%/cwebman.tex
+share/emacs/site-lisp/cweb.el
+share/texmf/tex/generic/misc/cwebmac.tex

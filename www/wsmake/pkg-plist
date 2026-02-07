@@ -1,0 +1,13 @@
+bin/wsmake
+%%PORTDOCS%%%%DOCSDIR%%/wsmake.html
+%%PORTDOCS%%%%DOCSDIR%%/iwsmake.html
+%%PORTDOCS%%%%DOCSDIR%%/gwsmake.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/wsmake.dvi
+%%PORTDOCS%%%%DOCSDIR%%/manual/wsmake.ps
+%%PORTDOCS%%%%DOCSDIR%%/manual/wsmake.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+share/man/man1/wsmake.1.gz

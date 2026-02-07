@@ -1,0 +1,55 @@
+--- clockspeed.c.orig	Tue Oct 13 15:37:28 1998
++++ clockspeed.c	Sat Dec 21 15:00:32 2002
+@@ -14,11 +14,13 @@
+ 
+ #ifndef HASRDTSC
+ #ifndef HASGETHRTIME
++#ifndef HASCLOCK_GETTIME
+ 
+   Error! Need an unadjusted hardware clock.
+ 
+ #endif
+ #endif
++#endif
+ 
+ struct point {
+   timing lowlevel;
+@@ -83,7 +85,7 @@
+   if (deriv <= 0) return;
+   if (deriv > 200000000) return; /* 5Hz ticks? be serious */
+ 
+-  fd = open_trunc("etc/atto.tmp");
++  fd = open_trunc("etc/clockspeed/atto.tmp");
+   if (fd == -1) return;
+ 
+   buf[0] = 0;
+@@ -119,7 +121,7 @@
+   if (fsync(fd) == -1) { close(fd); return; }
+   if (close(fd) == -1) return; /* NFS stupidity */
+ 
+-  rename("etc/atto.tmp","etc/atto"); /* if it fails, bummer */
++  rename("etc/clockspeed/atto.tmp","etc/clockspeed/atto"); /* if it fails, bummer */
+ }
+ 
+ void main()
+@@ -136,16 +138,16 @@
+   if (chdir(auto_home) == -1) _exit(1);
+   umask(033);
+ 
+-  if (open_read("etc/atto") == 0) {
++  if (open_read("etc/clockspeed/atto") == 0) {
+     r = read(0,buf,sizeof buf);
+     if (r == sizeof buf)
+       deriv = nano(buf);
+     close(0);
+   }
+ 
+-  if (fifo_make("adjust",0600) == -1) if (errno != error_exist) _exit(1);
+-  if (open_read("adjust") != 0) _exit(1);
+-  if (open_write("adjust") == -1) _exit(1);
++  if (fifo_make("etc/clockspeed/adjust",0600) == -1) if (errno != error_exist) _exit(1);
++  if (open_read("etc/clockspeed/adjust") != 0) _exit(1);
++  if (open_write("etc/clockspeed/adjust") == -1) _exit(1);
+ 
+   now(&first);
+ 

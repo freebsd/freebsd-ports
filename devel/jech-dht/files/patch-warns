@@ -1,0 +1,117 @@
+--- dht.c.orig	2022-04-27 07:37:34.000000000 -0700
++++ dht.c	2023-05-19 06:27:34.710210000 -0700
+@@ -382,5 +382,5 @@
+     switch(sa->sa_family) {
+     case AF_INET: {
+-        struct sockaddr_in *sin = (struct sockaddr_in*)sa;
++        const struct sockaddr_in *sin = (const struct sockaddr_in*)sa;
+         const unsigned char *address = (const unsigned char*)&sin->sin_addr;
+         return sin->sin_port == 0 ||
+@@ -390,5 +390,5 @@
+     }
+     case AF_INET6: {
+-        struct sockaddr_in6 *sin6 = (struct sockaddr_in6*)sa;
++        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
+         const unsigned char *address = (const unsigned char*)&sin6->sin6_addr;
+         return sin6->sin6_port == 0 ||
+@@ -1448,13 +1448,13 @@
+     int i, len;
+     struct storage *st;
+-    unsigned char *ip;
++    const unsigned char *ip;
+ 
+     if(sa->sa_family == AF_INET) {
+-        struct sockaddr_in *sin = (struct sockaddr_in*)sa;
+-        ip = (unsigned char*)&sin->sin_addr;
++        const struct sockaddr_in *sin = (const struct sockaddr_in*)sa;
++        ip = (const unsigned char*)&sin->sin_addr;
+         len = 4;
+     } else if(sa->sa_family == AF_INET6) {
+-        struct sockaddr_in6 *sin6 = (struct sockaddr_in6*)sa;
+-        ip = (unsigned char*)&sin6->sin6_addr;
++        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
++        ip = (const unsigned char*)&sin6->sin6_addr;
+         len = 16;
+     } else {
+@@ -1573,15 +1573,15 @@
+ make_token(const struct sockaddr *sa, int old, unsigned char *token_return)
+ {
+-    void *ip;
++    const void *ip;
+     int iplen;
+     unsigned short port;
+ 
+     if(sa->sa_family == AF_INET) {
+-        struct sockaddr_in *sin = (struct sockaddr_in*)sa;
++        const struct sockaddr_in *sin = (const struct sockaddr_in*)sa;
+         ip = &sin->sin_addr;
+         iplen = 4;
+         port = htons(sin->sin_port);
+     } else if(sa->sa_family == AF_INET6) {
+-        struct sockaddr_in6 *sin6 = (struct sockaddr_in6*)sa;
++        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
+         ip = &sin6->sin6_addr;
+         iplen = 16;
+@@ -1844,5 +1844,5 @@
+ 
+ int
+-dht_uninit()
++dht_uninit(void)
+ {
+     if(dht_socket < 0 && dht_socket6 < 0) {
+@@ -2051,5 +2051,5 @@
+         }
+ 
+-        if(((char*)buf)[buflen] != '\0') {
++        if(((const char*)buf)[buflen] != '\0') {
+             debugf("Unterminated message.\n");
+             errno = EINVAL;
+@@ -2908,5 +2908,5 @@
+ 
+ #define CHECK(ptr, len)                                                 \
+-    if(((unsigned char*)ptr) + (len) > (buf) + (buflen)) goto overflow;
++    if(((const unsigned char*)ptr) + (len) > (buf) + (buflen)) goto overflow;
+ 
+     p = dht_memmem(buf, buflen, "1:t", 3);
+@@ -2914,5 +2914,5 @@
+         long l;
+         char *q;
+-        l = strtol((char*)p + 3, &q, 10);
++        l = strtol((const char*)p + 3, &q, 10);
+         if(q && *q == ':' && l > 0 && l < PARSE_TID_LEN) {
+             CHECK(q + 1, l);
+@@ -2938,5 +2938,5 @@
+         long l;
+         char *q;
+-        l = strtol((char*)p + 7, &q, 10);
++        l = strtol((const char*)p + 7, &q, 10);
+         if(q && *q == 'e' && l > 0 && l < 0x10000)
+             m->port = l;
+@@ -2947,5 +2947,5 @@
+         long l;
+         char *q;
+-        l = strtol((char*)p + 16, &q, 10);
++        l = strtol((const char*)p + 16, &q, 10);
+         if(q && *q == 'e' && l > 0 && l < 0x10000)
+             m->implied_port = l;
+@@ -2962,5 +2962,5 @@
+         long l;
+         char *q;
+-        l = strtol((char*)p + 7, &q, 10);
++        l = strtol((const char*)p + 7, &q, 10);
+         if(q && *q == ':' && l > 0 && l < PARSE_TOKEN_LEN) {
+             CHECK(q + 1, l);
+@@ -2974,5 +2974,5 @@
+         long l;
+         char *q;
+-        l = strtol((char*)p + 7, &q, 10);
++        l = strtol((const char*)p + 7, &q, 10);
+         if(q && *q == ':' && l > 0 && l <= PARSE_NODES_LEN) {
+             CHECK(q + 1, l);
+@@ -2986,5 +2986,5 @@
+         long l;
+         char *q;
+-        l = strtol((char*)p + 8, &q, 10);
++        l = strtol((const char*)p + 8, &q, 10);
+         if(q && *q == ':' && l > 0 && l <= PARSE_NODES6_LEN) {
+             CHECK(q + 1, l);

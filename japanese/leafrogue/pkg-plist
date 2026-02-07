@@ -1,0 +1,7 @@
+bin/leafrogue
+share/rogue_s/leaf.msg
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/lf_rogue.html
+%%PORTDOCS%%%%DOCSDIR%%/lf_rogue.txt
+%%PORTDOCS%%%%DOCSDIR%%/guide.tex
+%%PORTDOCS%%%%DOCSDIR%%/guide.txt

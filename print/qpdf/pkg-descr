@@ -1,0 +1,16 @@
+QPDF is a program that can be used to linearize (web-optimize),
+encrypt (password-protect), decrypt, and inspect PDF files from the
+command-line.  It does these and other structural, content-preserving
+transformations on PDF files, reading a PDF file as input and
+creating a new one as output.  It also provides many useful
+capabilities to developers of PDF-producing software or for people
+who just want to look at the innards of a PDF file to learn more
+about how they work.
+
+QPDF understands PDF files that use compressed object streams
+(supported by newer PDF applications) and can convert such files into
+those that can be read with older viewers.  It can also be used for
+checking PDF files for structural errors, inspecting stream contents,
+or extracting objects from PDF files.  QPDF is not PDF content
+creation or viewing software -- it does not have the capability to
+create PDF files from scratch or to display PDF files.

@@ -1,0 +1,27 @@
+Clang does not support -fthread-jumps as of now.
+This fixes "cc: error: unknown argument: '-fthread-jumps'"
+
+Replace hardcoded "gcc" with $CC
+
+Include system $CFLAGS to the local CFLAGS variable
+
+--- Makefile.orig	2025-04-05 22:56:41 UTC
++++ Makefile
+@@ -50,14 +50,13 @@ ifeq ($(origin CC),default)
+ ######################################################################
+ 
+ ifeq ($(origin CC),default)
+-CC = gcc
++CC = ${CC}
+ endif
+ 
+ PKG_CONFIG ?= pkg-config
+ INSTALL    ?= install
+-CFLAGS    = -O2 -Wall \
+-	    -fcaller-saves -ffast-math -fno-strength-reduce \
+-	    -fthread-jumps
++CFLAGS    := ${CFLAGS} -Wall \
++	    -fcaller-saves -ffast-math -fno-strength-reduce
+ 
+ GDK_VERS := 3
+ 

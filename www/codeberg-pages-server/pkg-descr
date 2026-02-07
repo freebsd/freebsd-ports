@@ -1,0 +1,5 @@
+Gitea/Forgejo lacks the ability to host static pages from Git.
+The Codeberg Pages Server addresses this lack by implementing a
+standalone service that connects to Gitea/Forgejo via API. It is
+suitable to be deployed by other Gitea/Forgejo instances, too,
+to offer static pages hosting to their users.

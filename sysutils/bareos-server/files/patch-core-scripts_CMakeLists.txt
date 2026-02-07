@@ -1,0 +1,62 @@
+--- core/scripts/CMakeLists.txt	2025-12-04 05:19:30.000000000 -0800
++++ core/scripts/CMakeLists.txt	2025-12-17 23:21:00.429268000 -0800
+@@ -31,37 +31,37 @@
+   mtx-logrotate.in
+ )
+ 
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/btraceback
+-  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
+-              WORLD_READ WORLD_EXECUTE
+-  DESTINATION "${sbindir}"
+-)
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config-lib.sh btraceback.gdb
+-  PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+-  DESTINATION "${scriptdir}"
+-)
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config
+-  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
+-              WORLD_READ WORLD_EXECUTE
+-  DESTINATION "${scriptdir}"
+-)
+-if(NOT client-only)
++if(client-only)
+   install(
+-    FILES btraceback.dbx btraceback.mdb
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/btraceback
++    PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++                WORLD_READ WORLD_EXECUTE
++    DESTINATION "${sbindir}"
++  )
++  install(
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config-lib.sh btraceback.gdb
+     PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+     DESTINATION "${scriptdir}"
+   )
+-endif()
+-if(TARGET python3-fd)
+   install(
+-    FILES bareos_encode_string.py
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/bareos-config
+     PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
+                 WORLD_READ WORLD_EXECUTE
+     DESTINATION "${scriptdir}"
+   )
++  install(
++    FILES btraceback.dbx btraceback.mdb
++    PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
++    DESTINATION "${scriptdir}"
++  )
++  if(TARGET python3-fd)
++    install(
++      FILES bareos_encode_string.py
++      PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++                  WORLD_READ WORLD_EXECUTE
++      DESTINATION "${scriptdir}"
++    )
++  endif()
+ endif()
+ 
+ if(NOT client-only)

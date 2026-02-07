@@ -1,0 +1,17 @@
+XML::Compile::WSDL11 understands WSDL version 1.1. An WSDL file defines a set of
+messages to be send and received over (SOAP) connections. This involves encoding
+of the message to be send into XML, sending the message to the server, collect
+the answer, and finally decoding the XML to Perl.
+
+As end-user, you do not have to worry about the complex details of the messages
+and the way to exchange them: it's all simple Perl for you. Also, faults are
+handled automatically. The only complication you have to worry about is to shape
+a nested HASH structure to the sending message structure.
+XML::Compile::Schema::template() may help you.
+
+When the definitions are spread over multiple files you will need to use
+addWSDL() (wsdl) or importDefinitions() (additional schema's) explicitly.
+Usually, interreferences between those files are broken. Often they reference
+over networks (you should never trust). So, on purpose you must explicitly load
+the files you need from local disk! (of course, it is simple to find one-liners
+as work-arounds, but I will to tell you how!)

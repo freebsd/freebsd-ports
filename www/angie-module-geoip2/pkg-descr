@@ -1,0 +1,2 @@
+Module captures information from the client IP address in variables,
+using the MaxMind GeoIP2 databases.

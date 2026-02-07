@@ -1,0 +1,29 @@
+PyGOST is pure Python 2.7/3.x GOST cryptographic functions library.
+Currently supported algorithms are:
+
+GOST 28147-89 (RFC 5830) block cipher with ECB, CNT (CTR), CFB, MAC,
+ CBC (RFC 4357) modes of operation
+various 28147-89-related S-boxes included
+GOST R 34.11-94 hash function (RFC 5831)
+GOST R 34.11-94 based PBKDF2 function
+GOST R 34.11-2012 Streebog hash function (RFC 6986)
+GOST R 34.11-2012 based PBKDF2 function (R 50.1.111-2016)
+GOST R 34.10-2001 (RFC 5832) public key signature function
+GOST R 34.10-2012 (RFC 7091) public key signature function
+various 34.10 curve parameters included
+Coordinates conversion from twisted Edwards to Weierstrass form and vice versa
+VKO GOST R 34.10-2001 key agreement function (RFC 4357)
+VKO GOST R 34.10-2012 key agreement function (RFC 7836)
+28147-89 and CryptoPro key wrapping (RFC 4357)
+28147-89 CryptoPro key meshing for CFB and CBC modes (RFC 4357)
+RFC 4491 (using GOST algorithms with X.509) compatibility helpers
+GOST R 34.12-2015 128-bit block cipher Kuznechik (RFC 7801)
+GOST R 34.12-2015 64-bit block cipher Magma
+GOST R 34.13-2015 padding methods and block cipher modes of operation (ECB,
+  CTR, OFB, CBC, CFB, MAC), ISO 10126 padding
+MGM AEAD mode for 64 and 128 bit ciphers (RFC 9058)
+CTR-ACPKM, OMAC-ACPKM-Master modes of operation (R 1323565.1.017-2018)
+KExp15/KImp15 key export/import functions (R 1323565.1.017-2018)
+KDF_GOSTR3411_2012_256, KDF_TREE_GOSTR3411_2012_256 (R 50.1.113-2016)
+KEG export key generation function (R 1323565.1.020-2018)
+PEP247-compatible hash/MAC functions

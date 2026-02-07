@@ -1,0 +1,8 @@
+%%SITE_PERL%%/SVN/Notify/Mirror.pm
+%%SITE_PERL%%/SVN/Notify/Mirror/ConfigData.pm
+%%SITE_PERL%%/SVN/Notify/Mirror/Rsync.pm
+%%SITE_PERL%%/SVN/Notify/Mirror/SSH.pm
+%%PERL5_MAN3%%/SVN::Notify::Mirror.3.gz
+%%PERL5_MAN3%%/SVN::Notify::Mirror::ConfigData.3.gz
+%%PERL5_MAN3%%/SVN::Notify::Mirror::Rsync.3.gz
+%%PERL5_MAN3%%/SVN::Notify::Mirror::SSH.3.gz

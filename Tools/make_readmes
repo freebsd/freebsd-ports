@@ -1,0 +1,49 @@
+#!/usr/bin/perl
+
+$PORTSDIR="/usr/ports";
+$TEMPLATES=$ENV{TEMPLATES} || "${PORTSDIR}/Templates";
+$README=`cat ${TEMPLATES}/README.port`;
+
+while(<>) {
+	(@F)=split(/\|/, $_);
+	$PKG=$F[0];
+	$PORT=$F[1];
+	$COMMENT=$F[3];
+	$DESCR=$F[4];
+	$EMAIL=$F[5];
+	$BUILD_DEPENDS=$F[7];
+	$RUN_DEPENDS=$F[8];
+	$WEBSITE=$F[9];
+	
+
+	$DESCR=~s|^\Q$PORT/\E||;
+	$PORT=~s|`pwd`||;
+
+	if($WEBSITE) {
+		$WEBSITE=" and/or visit the <a href=\"$WEBSITE\">web site</a> for futher informations"
+	};
+	if($BUILD_DEPENDS) {
+		$BUILD_DEPENDS="This port requires package(s) \"$BUILD_DEPENDS\" to build."
+	};
+	if($RUN_DEPENDS) {
+		$RUN_DEPENDS="This port requires package(s) \"$RUN_DEPENDS\" to run."
+	};
+
+	$TOP=$PORT;
+	$TOP=~s|[^/]+|..|g;
+
+	$tmp=$README;
+	$tmp=~s|%%PKG%%|$PKG|g;
+	$tmp=~s|%%PORT%%|$PORT|g;
+	$tmp=~s|%%COMMENT%%|$COMMENT|g;
+	$tmp=~s|%%DESCR%%|$DESCR|g;
+	$tmp=~s|%%EMAIL%%|$EMAIL|g;
+	$tmp=~s|%%WEBSITE%%|$WEBSITE|g;
+	$tmp=~s|%%BUILD_DEPENDS%%|$BUILD_DEPENDS|g;
+	$tmp=~s|%%RUN_DEPENDS%%|$RUN_DEPENDS|g;
+	$tmp=~s|%%TOP%%|$TOP|g;
+
+	open F,">$PORT/README.html";
+	print F $tmp;
+	close F
+}

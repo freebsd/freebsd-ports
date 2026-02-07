@@ -1,0 +1,16 @@
+--- python/python/Makefile.orig	2019-08-12 19:54:18 UTC
++++ python/python/Makefile
+@@ -146,10 +146,11 @@ IceStorm_%_ice.py: $(slicedir)/IceStorm/%.ice $(SLICEP
+ 
+ install:: $(ALL_SRCS)
+ 	@echo "Installing generated code"
+-	$(INSTALL_DATA) *.py $(DESTDIR)$(install_pythondir)
++	$(INSTALL_DATA) *.py* $(DESTDIR)$(install_pythondir)
+ 	@for i in $(PACKAGES) ; \
+ 	do \
+-	    $(INSTALL_DATA) -r $$i $(DESTDIR)$(install_pythondir) ; \
++	    mkdir -p $(DESTDIR)$(install_pythondir)/$$i ; \
++	    $(INSTALL_DATA) $$i/*.py* $(DESTDIR)$(install_pythondir)/$$i ; \
+ 	done
+ 
+ clean::

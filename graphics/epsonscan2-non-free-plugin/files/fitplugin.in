@@ -1,0 +1,11 @@
+#!/bin/sh
+# This wrapper script sets environment variable LD_LIBRARY_PATH to the list
+# of needed Linux library directories, then invokes the Linux binary in the
+# Linux directories.
+
+LINUX_EPSONSCAN2=%%LINUXBASE%%/usr/%%LINUX_LIB%%/epsonscan2
+
+PROG=${LINUX_EPSONSCAN2}/non-free-exec/`basename $0`
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${LINUX_EPSONSCAN2}/non-free-exec:${LINUX_EPSONSCAN2}/libexec
+
+exec $PROG ${@+"$@"}

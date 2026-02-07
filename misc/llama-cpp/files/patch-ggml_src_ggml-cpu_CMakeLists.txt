@@ -1,0 +1,11 @@
+--- ggml/src/ggml-cpu/CMakeLists.txt.orig	2025-04-23 21:32:35 UTC
++++ ggml/src/ggml-cpu/CMakeLists.txt
+@@ -236,7 +236,7 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
+         else ()
+             if (GGML_NATIVE)
+                 list(APPEND ARCH_FLAGS -march=native)
+-            else ()
++            elseif (FREEBSD_ALLOW_ADVANCED_CPU_FEATURES)
+                 if (GGML_SSE42)
+                     list(APPEND ARCH_FLAGS -msse4.2)
+                     list(APPEND ARCH_DEFINITIONS GGML_SSE42)

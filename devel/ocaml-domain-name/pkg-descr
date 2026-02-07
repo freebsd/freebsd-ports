@@ -1,0 +1,4 @@
+This library provides an abstract data type to represent conformant
+internet domain names, and some functions for creating (parsing),
+canonicalize, printing, manipulating, comparing and testing properties
+of internet domain names.

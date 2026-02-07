@@ -1,0 +1,273 @@
+--- sql_sybase.c	2014-03-25 04:10:42.000000000 -0400
++++ sql_sybase.c	2021-02-16 12:43:21.514873000 -0500
+@@ -19,6 +19,6 @@
+ #include <pwd.h>
+ #include <errno.h>
+-#include <ctpublic.h>
+-#include "siod.h"
++
++#include "sql_sybasec.c"
+ 
+ #ifdef SUN5
+@@ -31,21 +31,10 @@
+ 	NIL);}
+ 
+-char *sybase_retstr(CS_RETCODE n);
+-char *sybase_typestr(CS_INT n);
+-void init_sql_sybasec(void);
+-
+-long tc_sybase_state = 0;
+-
+-LISP sym_sybase = NIL;
+-LISP sym_sybase_messages = NIL;
+-
+-static void complain(char *msg, ...)
+-{va_list args;
+- char msgbuff[1024];
+- if (siod_verbose_check(1))
+-   {va_start(args,msg);
+-    vsprintf(msgbuff,msg,args);
+-    va_end(args);
+-    fprintf(stdout,"\nSYBASE: %s\n",msgbuff);}}
++static long tc_sybase_state = 0;
++
++static LISP sym_sybase = NIL;
++static LISP sym_sybase_messages = NIL;
++
++#define complain(...) fprintf(stderr, "\nSYBASE: " __VA_ARGS__)
+ 
+ struct sybase_state
+@@ -171,14 +160,14 @@
+  return(status);}
+ 
+-static char *getarg(LISP l,char *name,char *dflt)
++static char *getarg(LISP l, const char *name)
+ {LISP cell,key;
+  key = rintern(name);
+  for(cell=l;NNULLP(cell);cell=cdr(cdr(cell)))
+    if EQ(car(cell),key)
+-     return(get_c_string(cadr(cell)));
+- return(dflt);}
++     return(get_string_data(cadr(cell)));
++ return(NULL);}
+ 
+ static LISP statcons(CS_RETCODE n)
+-{char *str;
++{const char *str;
+  if ((str = sybase_retstr(n)))
+    return(cintern(str));
+@@ -186,8 +175,8 @@
+    return(flocons(n));}
+ 
+-struct sybase_state *get_sybase_state(LISP ptr,long openp)
++static struct sybase_state *get_sybase_state(LISP ptr, long openp)
+ {struct sybase_state *s;
+  if TYPEP(ptr,tc_sybase_state)
+-   {if ((s = (struct sybase_state *) ptr->storage_as.string.data))
++   {if ((s = (struct sybase_state *)(void *)ptr->storage_as.string.data))
+      return(s);
+     else if (openp)
+@@ -200,5 +189,5 @@
+     return(NULL);}}
+ 
+-LISP sybase_open(LISP args)
++static LISP sybase_open(LISP args)
+ {int iflag;
+  CS_RETCODE status;
+@@ -212,7 +201,7 @@
+  setvar(sym_sybase_messages,NIL,NIL);
+  status = sybase_setup(get_sybase_state(value,0),
+-		       getarg(args,"username","sa"),
+-		       getarg(args,"password",""),
+-		       getarg(args,"appname","htqx"));
++		       getarg(args,"username"),
++		       getarg(args,"password"),
++		       getarg(args,"appname"));
+  no_interrupt(iflag);
+  if (status != CS_SUCCEED)
+@@ -222,5 +211,5 @@
+  return(value);}
+ 
+-LISP sybase_close(LISP value)
++static LISP sybase_close(LISP value)
+ {int iflag;
+  CS_RETCODE status;
+@@ -240,5 +229,5 @@
+  return(statcons(status));}
+ 
+-LISP sybase_status(LISP value)
++static LISP sybase_status(LISP value)
+ {int iflag;
+  CS_RETCODE status;
+@@ -290,5 +279,5 @@
+          for the above sort of thing */
+ 
+-CS_RETCODE CS_PUBLIC fetch_data(CS_COMMAND *cmd,LISP *header,LISP *items)
++static CS_RETCODE CS_PUBLIC fetch_data(CS_COMMAND *cmd,LISP *header,LISP *items)
+ {CS_RETCODE retcode;
+  CS_INT	num_cols,i,row_count = 0,rows_read = 0;
+@@ -463,8 +452,8 @@
+ static CS_INT *param_data = NULL;
+ 
+-LISP sybase_execute(LISP arglist)
++static LISP sybase_execute(LISP arglist)
+ {CS_RETCODE status = CS_SUCCEED;
+  LISP obj,str,kind,args;
+- char *cmdstr,*argname;
++ const char *cmdstr, *argname;
+  int iflag,j,m;
+  CS_INT restype,ivalue;
+@@ -489,6 +478,6 @@
+  iflag = no_interrupt(1);
+  if (!param_fmt)
+-   {param_fmt = (CS_DATAFMT *) malloc(sizeof(CS_DATAFMT) * MAX_PARAM_ARGS);
+-    param_data = (CS_INT *) malloc(sizeof(CS_INT) * MAX_PARAM_ARGS);}
++   {param_fmt = malloc(sizeof(CS_DATAFMT) * MAX_PARAM_ARGS);
++    param_data = malloc(sizeof(CS_INT) * MAX_PARAM_ARGS);}
+  status = ct_command(sybase_state->cmd,
+ 		     NNULLP(kind) ? get_c_long(kind) : CS_LANG_CMD,
+@@ -537,7 +526,6 @@
+ 	    param_fmt[j].maxlength = datalen;}
+ 	 break;
+-       case tc_symbol:
+        case tc_string:
+-	 data = get_c_string(argvalue);
++	 data = get_string_data(argvalue);
+ 	 datalen = strlen(data);
+ 	 param_fmt[j].datatype = CS_CHAR_TYPE;
+@@ -560,5 +548,5 @@
+     status = ct_param(sybase_state->cmd,
+ 		      &param_fmt[j],data,datalen,
+-		      CS_UNUSED);
++		      (CS_SMALLINT)CS_UNUSED);
+     if (status != CS_SUCCEED)
+       {complain("sybase-execute ct_param %d",status);
+@@ -630,5 +618,5 @@
+ static long ignore_msgs[] = {5701,5703,5704};
+ 
+-void push_sybase_messages(LISP value)
++static void push_sybase_messages(LISP value)
+ {setvar(sym_sybase_messages,
+ 	cons(value,leval(sym_sybase_messages,NIL)),
+@@ -636,8 +624,8 @@
+ 
+ 
+-static CS_RETCODE server_err_handler(CS_CONTEXT *cp,
+-				     CS_CONNECTION *chp,
++static CS_RETCODE server_err_handler(CS_CONTEXT *cp __unused,
++				     CS_CONNECTION *chp __unused,
+ 				     CS_SERVERMSG *msgp)
+-{long j,docomplain = 1;
++{size_t j,docomplain = 1;
+  for(j=0;j<(sizeof(ignore_msgs)/sizeof(ignore_msgs[0]));++j)
+    if (msgp->msgnumber == ignore_msgs[j])
+@@ -657,6 +645,6 @@
+  return(CS_SUCCEED);}
+ 
+-static CS_RETCODE client_err_handler(CS_CONTEXT *cp,
+-				     CS_CONNECTION *chp,
++static CS_RETCODE client_err_handler(CS_CONTEXT *cp __unused,
++				     CS_CONNECTION *chp __unused,
+ 				     CS_CLIENTMSG *emsgp)
+ {LISP note;
+@@ -681,7 +669,7 @@
+  return (CS_SUCCEED);}
+ 
+-static CS_RETCODE cs_err_handler(CS_CONTEXT *cp,CS_CLIENTMSG *msg)
++static CS_RETCODE cs_err_handler(CS_CONTEXT *cp __unused, CS_CLIENTMSG *msg)
+ {LISP note;
+- complain("CS-Library error %ld/%ld/%ld/%ld - %s",
++ complain("CS-Library error %d/%d/%d/%d - %s",
+ 	  CS_LAYER(msg->msgnumber), 
+ 	  CS_ORIGIN(msg->msgnumber), 
+@@ -690,5 +678,5 @@
+ 	  msg->msgstring);
+  if (msg->osstringlen > 0)
+-   complain("CS-Library OS error %ld - %s.",
++   complain("CS-Library OS error %d - %s.",
+ 	    msg->osnumber, msg->osstring);
+  note = listn(6,
+@@ -708,16 +696,18 @@
+  return (CS_SUCCEED);}
+ 
+-void sybase_prin1(LISP ptr,struct gen_printio *f)
++static void sybase_prin1(LISP ptr,struct gen_printio *f)
+ {char buff[256];
+  sprintf(buff,"#<SYBASE %p>",ptr->storage_as.string.data);
+  gput_st(f,buff);}
+ 
+-void sybase_gc_free(LISP ptr)
++static void sybase_gc_free(LISP ptr)
+ {struct sybase_state *sybase_state;
+- if ((sybase_state = (struct sybase_state *) ptr->storage_as.string.data))
++ if ((sybase_state = (struct sybase_state *)(void *)ptr->storage_as.string.data))
+    {sybase_teardown(sybase_state);
+     free(ptr->storage_as.string.data);
+     ptr->storage_as.string.data = NULL;}}
+ 
++void init_sql_sybase(void); /* Our sole exported symbol - the entrypoint */
++
+ void init_sql_sybase(void)
+ {long j;
+--- sql_sybasec.c	2014-03-25 04:10:42.000000000 -0400
++++ sql_sybasec.c	2021-02-16 12:42:51.031627000 -0500
+@@ -10,9 +10,9 @@
+ struct a_cs_retcode
+ {CS_RETCODE n;
+- char *name;};
++ const char *name;};
+ 
+ struct a_cs_int
+ {CS_INT n;
+- char *name;};
++ const char *name;};
+ 
+ static struct a_cs_retcode retcodes[] = {
+@@ -34,4 +34,5 @@
+   {CS_NOMSG, "CS_NOMSG"},
+   {CS_TIMED_OUT, "CS_TIMED_OUT"},
++#ifdef CS_PASSTHRU_EOM	/* A bunch of defines not provided by FreeTDS */
+   {CS_PASSTHRU_EOM, "CS_PASSTHRU_EOM"},
+   {CS_PASSTHRU_MORE, "CS_PASSTHRU_MORE"},
+@@ -55,12 +56,18 @@
+   {CS_ESTYLE, "CS_ESTYLE"},
+   {CS_EBADXLT, "CS_EBADXLT"},
+-  {CS_ENOXLT, "CS_ENOXLT"}};
++  {CS_ENOXLT, "CS_ENOXLT"}
++#endif
++};
+ 
+ static struct a_cs_int cmds[] = {
+   {CS_LANG_CMD, "CS_LANG_CMD"},
+   {CS_RPC_CMD, "CS_RPC_CMD"},
++#ifdef CS_MSG_CMD
+   {CS_MSG_CMD, "CS_MSG_CMD"},
++#endif
+   {CS_SEND_DATA_CMD, "CS_SEND_DATA_CMD"},
++#ifdef CS_PACKAGE_CMD
+   {CS_PACKAGE_CMD, "CS_PACKAGE_CMD"},
++#endif
+   {CS_SEND_BULK_CMD, "CS_SEND_BULK_CMD"}};
+ 
+@@ -91,5 +98,5 @@
+   {CS_BOUNDARY_TYPE, "CS_BOUNDARY_TYPE"}};
+ 
+-char *sybase_retstr(CS_RETCODE n)
++static const char *sybase_retstr(CS_RETCODE n)
+ {long j,m;
+  m = sizeof(retcodes) / sizeof(struct a_cs_retcode);
+@@ -99,5 +106,5 @@
+  return(NULL);}
+ 
+-char *sybase_typestr(CS_INT n)
++static const char *sybase_typestr(CS_INT n)
+ {long j,m;
+  m = sizeof(types) / sizeof(struct a_cs_int);
+@@ -107,6 +114,5 @@
+  return(NULL);}
+ 
+-
+-void init_sql_sybasec(void)
++static void init_sql_sybasec(void)
+ {long j,n;
+  n = sizeof(retcodes) / sizeof(struct a_cs_retcode);

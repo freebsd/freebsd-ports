@@ -1,0 +1,26 @@
+--- src/LercLib/fpl_EsriHuffman.cpp.orig	2022-07-31 08:46:15 UTC
++++ src/LercLib/fpl_EsriHuffman.cpp
+@@ -31,8 +31,6 @@ Original coding 2021 Yuriy Yakimenko
+ 
+ USING_NAMESPACE_LERC
+ 
+-void _assert(bool v);
+-
+ bool decodePackBits (const unsigned char *ptr, const size_t size, size_t expected, unsigned char **output)
+ {
+     unsigned char *out = NULL;
+--- src/LercLib/fpl_Lerc2Ext.cpp.orig	2022-07-31 08:46:15 UTC
++++ src/LercLib/fpl_Lerc2Ext.cpp
+@@ -31,12 +31,6 @@ Original coding 2021 Yuriy Yakimenko
+ 
+ USING_NAMESPACE_LERC
+ 
+-void _assert(bool v)
+-{
+-  if (v == false)
+-    throw "Assertion failed";
+-}
+-
+ template<typename T>
+ size_t getMinIndex(const T* array, size_t size)
+ {

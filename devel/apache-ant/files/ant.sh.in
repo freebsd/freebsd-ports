@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+#-*- mode: Fundamental; tab-width: 4; -*-
+# ex:ts=4
+#
+# FreeBSD-specific startup script for Apache Ant.
+#
+# See: http://ant.apache.org/
+
+
+DEFAULT_JIKES=false
+ANT_HOME=${ANT_HOME:-"%%DATADIR%%"}
+
+
+#-----------------------------------------------------------------------------
+# Determine configuration settings
+#-----------------------------------------------------------------------------
+
+# Load system-wide configuration
+if [ -f "%%PREFIX%%/etc/ant.conf" ]; then 
+	. "%%PREFIX%%/etc/ant.conf"
+fi
+
+# Load user-specific configuration
+if [ -f "${HOME}/.antrc" ]; then 
+	. "${HOME}/.antrc"
+fi
+
+# Determine if Jikes should be used
+usejikes=${usejikes:-${DEFAULT_JIKES}};
+
+# Set ANT_LIB location
+ANT_LIB="${ANT_HOME}/lib"
+
+#-----------------------------------------------------------------------------
+# Determine CLASSPATH
+#-----------------------------------------------------------------------------
+
+# Prepend LOCALCLASSPATH variable with ant-launcher.jar
+if [ -z "${LOCALCLASSPATH}" ]; then
+	LOCALCLASSPATH=${ANT_LIB}/ant-launcher.jar
+else
+	LOCALCLASSPATH=${ANT_LIB}/ant-launcher.jar:${LOCALCLASSPATH}
+fi
+
+# FreeBSD-specific: Add the .jar files from ${JAVALIBDIR}
+if [ -n "${ANT_INCLUDE_SHARED_JARS}" ]; then
+	CLASSPATH_CMD=%%LOCALBASE%%/bin/classpath
+	if [ -x "${CLASSPATH_CMD}" ]; then
+		SHARED_JARS=`${CLASSPATH_CMD}`
+		LOCALCLASSPATH=${SHARED_JARS}:"${LOCALCLASSPATH}"
+	fi
+fi
+
+#-----------------------------------------------------------------------------
+# Determine all Ant options
+#-----------------------------------------------------------------------------
+
+# Add Jikes flag if appropriate
+if ${usejikes}; then
+	ANT_OPTS="${ANT_OPTS} -Dbuild.compiler=jikes"
+	if [ -n "${JIKESPATH}" ]; then
+		ANT_OPTS="${ANT_OPTS} -Djikes.class.path=${JIKESPATH}"
+	fi
+fi
+
+#-----------------------------------------------------------------------------
+# Execute Ant
+#-----------------------------------------------------------------------------
+
+JAVACMD="${JAVACMD:-"%%LOCALBASE%%/bin/java"}"
+if [ ! -x "${JAVACMD}" ]; then
+	echo "Error: ${JAVACMD} is not present on your system" >&2
+	echo "       Please specify the path to an existing java executable with the" >&2
+	echo "       JAVACMD environment variable when running ant." >&2
+	exit 1
+fi
+
+exec "${JAVACMD}" ${ANT_OPTS} -classpath "${LOCALCLASSPATH}" -Dant.home="${ANT_HOME}" org.apache.tools.ant.launch.Launcher ${ANT_ARGS} -lib "${CLASSPATH}" "$@"

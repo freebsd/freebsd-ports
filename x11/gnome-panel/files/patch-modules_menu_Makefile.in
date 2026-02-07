@@ -1,0 +1,101 @@
+--- modules/menu/Makefile.in.orig	2023-07-10 18:52:39 UTC
++++ modules/menu/Makefile.in
+@@ -156,7 +156,7 @@ org_gnome_gnome_panel_menu_la_DEPENDENCIES =  \
+ am__objects_1 =
+ am__objects_2 = org_gnome_gnome_panel_menu_la-menu-resources.lo \
+ 	org_gnome_gnome_panel_menu_la-gp-dm-seat-gen.lo \
+-	org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.lo \
++	org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.lo \
+ 	org_gnome_gnome_panel_menu_la-gp-screensaver-gen.lo \
+ 	org_gnome_gnome_panel_menu_la-gp-session-manager-gen.lo \
+ 	$(am__objects_1)
+@@ -206,7 +206,7 @@ am__depfiles_remade =  \
+ 	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-bookmarks.Plo \
+ 	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-dm-seat-gen.Plo \
+ 	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-lock-logout.Plo \
+-	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.Plo \
++	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.Plo \
+ 	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-main-menu-applet.Plo \
+ 	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar-applet.Plo \
+ 	./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar.Plo \
+@@ -529,8 +529,8 @@ BUILT_SOURCES = \
+ 	menu-resources.h \
+ 	gp-dm-seat-gen.c \
+ 	gp-dm-seat-gen.h \
+-	gp-login1-manager-gen.c \
+-	gp-login1-manager-gen.h \
++	gp-consolekit-manager-gen.c \
++	gp-consolekit-manager-gen.h \
+ 	gp-screensaver-gen.c \
+ 	gp-screensaver-gen.h \
+ 	gp-session-manager-gen.c \
+@@ -540,7 +540,7 @@ BUILT_SOURCES = \
+ EXTRA_DIST = \
+ 	menu.gresource.xml \
+ 	org.freedesktop.DisplayManager.Seat.xml \
+-	org.freedesktop.login1.Manager.xml \
++	org.freedesktop.ConsoleKit.Manager.xml \
+ 	org.gnome.ScreenSaver.xml \
+ 	org.gnome.SessionManager.xml \
+ 	$(gsettings_SCHEMAS) \
+@@ -634,7 +634,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-bookmarks.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-dm-seat-gen.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-lock-logout.Plo@am__quote@ # am--include-marker
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.Plo@am__quote@ # am--include-marker
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-main-menu-applet.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar-applet.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar.Plo@am__quote@ # am--include-marker
+@@ -798,12 +798,12 @@ org_gnome_gnome_panel_menu_la-gp-dm-seat-gen.lo: gp-dm
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(org_gnome_gnome_panel_menu_la_CPPFLAGS) $(CPPFLAGS) $(org_gnome_gnome_panel_menu_la_CFLAGS) $(CFLAGS) -c -o org_gnome_gnome_panel_menu_la-gp-dm-seat-gen.lo `test -f 'gp-dm-seat-gen.c' || echo '$(srcdir)/'`gp-dm-seat-gen.c
+ 
+-org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.lo: gp-login1-manager-gen.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(org_gnome_gnome_panel_menu_la_CPPFLAGS) $(CPPFLAGS) $(org_gnome_gnome_panel_menu_la_CFLAGS) $(CFLAGS) -MT org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.lo -MD -MP -MF $(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.Tpo -c -o org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.lo `test -f 'gp-login1-manager-gen.c' || echo '$(srcdir)/'`gp-login1-manager-gen.c
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.Tpo $(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.Plo
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gp-login1-manager-gen.c' object='org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.lo' libtool=yes @AMDEPBACKSLASH@
++org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.lo: gp-consolekit-manager-gen.c
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(org_gnome_gnome_panel_menu_la_CPPFLAGS) $(CPPFLAGS) $(org_gnome_gnome_panel_menu_la_CFLAGS) $(CFLAGS) -MT org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.lo -MD -MP -MF $(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.Tpo -c -o org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.lo `test -f 'gp-consolekit-manager-gen.c' || echo '$(srcdir)/'`gp-consolekit-manager-gen.c
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.Tpo $(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gp-consolekit-manager-gen.c' object='org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.lo' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(org_gnome_gnome_panel_menu_la_CPPFLAGS) $(CPPFLAGS) $(org_gnome_gnome_panel_menu_la_CFLAGS) $(CFLAGS) -c -o org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.lo `test -f 'gp-login1-manager-gen.c' || echo '$(srcdir)/'`gp-login1-manager-gen.c
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(org_gnome_gnome_panel_menu_la_CPPFLAGS) $(CPPFLAGS) $(org_gnome_gnome_panel_menu_la_CFLAGS) $(CFLAGS) -c -o org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.lo `test -f 'gp-consolekit-manager-gen.c' || echo '$(srcdir)/'`gp-consolekit-manager-gen.c
+ 
+ org_gnome_gnome_panel_menu_la-gp-screensaver-gen.lo: gp-screensaver-gen.c
+ @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(org_gnome_gnome_panel_menu_la_CPPFLAGS) $(CPPFLAGS) $(org_gnome_gnome_panel_menu_la_CFLAGS) $(CFLAGS) -MT org_gnome_gnome_panel_menu_la-gp-screensaver-gen.lo -MD -MP -MF $(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-screensaver-gen.Tpo -c -o org_gnome_gnome_panel_menu_la-gp-screensaver-gen.lo `test -f 'gp-screensaver-gen.c' || echo '$(srcdir)/'`gp-screensaver-gen.c
+@@ -960,7 +960,7 @@ distclean: distclean-am
+ 		-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-bookmarks.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-dm-seat-gen.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-lock-logout.Plo
+-	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.Plo
++	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-main-menu-applet.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar-applet.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar.Plo
+@@ -1025,7 +1025,7 @@ maintainer-clean: maintainer-clean-am
+ 		-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-bookmarks.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-dm-seat-gen.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-lock-logout.Plo
+-	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-login1-manager-gen.Plo
++	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-consolekit-manager-gen.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-main-menu-applet.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar-applet.Plo
+ 	-rm -f ./$(DEPDIR)/org_gnome_gnome_panel_menu_la-gp-menu-bar.Plo
+@@ -1099,11 +1099,11 @@ gp-dm-seat-gen.c: org.freedesktop.DisplayManager.Seat.
+ 		--generate-c-code gp-dm-seat-gen \
+ 		$(srcdir)/org.freedesktop.DisplayManager.Seat.xml
+ 
+-gp-login1-manager-gen.h:
+-gp-login1-manager-gen.c: org.freedesktop.login1.Manager.xml
++gp-consolekit-manager-gen.h:
++gp-consolekit-manager-gen.c: org.freedesktop.ConsoleKit.Manager.xml
+ 	$(AM_V_GEN) $(GDBUS_CODEGEN) --c-namespace Gp \
+-		--generate-c-code gp-login1-manager-gen \
+-		$(srcdir)/org.freedesktop.login1.Manager.xml
++		--generate-c-code gp-consolekit-manager-gen \
++		$(srcdir)/org.freedesktop.ConsoleKit.Manager.xml
+ 
+ gp-screensaver-gen.h:
+ gp-screensaver-gen.c: org.gnome.ScreenSaver.xml

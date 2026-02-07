@@ -1,0 +1,27 @@
+--- src/3rdparty/chromium/v8/BUILD.gn.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/v8/BUILD.gn
+@@ -4116,9 +4116,15 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (is_bsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "rt", "execinfo" ]
++  } else if (is_linux || is_chromeos) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+     ]
+ 
+@@ -4524,6 +4530,7 @@ if (current_toolchain == v8_generator_toolchain) {
+       "src/interpreter/bytecodes.cc",
+       "src/interpreter/bytecodes.h",
+     ]
++    libs = ["execinfo"]
+ 
+     configs = [ ":internal_config" ]
+ 

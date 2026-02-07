@@ -1,0 +1,4 @@
+include/hydrogen.h
+lib/libhydrogen.a
+lib/libhydrogen.so
+libdata/pkgconfig/libhydrogen.pc

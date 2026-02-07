@@ -1,0 +1,15 @@
+Drop after devel/py-setuptools >= 64 update
+
+ERROR Missing dependencies:
+        setuptools>=64
+
+--- pyproject.toml.orig	2024-11-24 19:38:57 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 64",
++    "setuptools >= 63",
+     "setuptools_scm >= 6.4"
+ ]
+ build-backend = "setuptools.build_meta"

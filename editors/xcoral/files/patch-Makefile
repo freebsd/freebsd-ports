@@ -1,0 +1,10 @@
+--- Makefile.orig	2008-04-21 19:51:52 UTC
++++ Makefile
+@@ -113,7 +113,6 @@ lint:	$(SRCS)
+ BR_Parser.c BR_Parser.h: BR_Parser.y
+ 	$(BISON) -d -t -p BR_yy BR_Parser.y
+ 	mv BR_Parser.tab.c BR_Parser.c
+-	mv BR_Parser.tab.h BR_Parser.h
+  
+ BR_Lexer.c: BR_Lexer.l BR_Parser.h
+ 	$(FLEX) -8 -PBR_yy -oBR_Lexer.c BR_Lexer.l

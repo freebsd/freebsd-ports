@@ -1,0 +1,11 @@
+--- INSTALL.orig	2012-03-02 15:33:23 UTC
++++ INSTALL
+@@ -41,7 +41,7 @@ Distributed tar Sources
+    (use gmake instead of the standard make on FreeBSD)
+ 
+ 3) Copy some truetype (.ttf) files or create symlinks to truetype directories
+-   in the default installation directory /usr/local/share/fonts/truetype
++   in the default installation directory %%TTFONTDIR%%
+    (note that this directory may be changed in the configure step). Then to
+    generate the font databases:
+ 

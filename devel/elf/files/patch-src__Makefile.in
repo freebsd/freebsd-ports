@@ -1,0 +1,24 @@
+--- src/Makefile.in.orig	2003-09-20 14:23:28 UTC
++++ src/Makefile.in
+@@ -1,9 +1,9 @@
+-CC=gcc
+-INC=-I../include
++CC=cc
++INC=-I../include ${CPPFLAGS}
+ CFLAGS=@CFLAGS@
+ PREFIX=@prefix@
+ BINDIR=$(PREFIX)/bin
+-LIBS=@LIBS@
++LIBS=@LIBS@ ${LDFLAGS}
+ 
+ elf:		main.o elf.o
+ 		$(CC) $(CFLAGS) $(INC) main.o elf.o -o elf $(LIBS)
+@@ -16,7 +16,7 @@ install:	elf
+ 		$(CC) $(CFLAGS) $(INC) -c main.c
+ 
+ install:	elf
+-		cp elf $(BINDIR)
++		cp elf $(DESTDIR)$(BINDIR)
+ 
+ uninstall:	install
+ 		rm $(BINDIR)/elf

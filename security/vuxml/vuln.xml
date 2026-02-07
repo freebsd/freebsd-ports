@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd" [
+<!ENTITY vuln-2003 SYSTEM "vuln/2003.xml">
+<!ENTITY vuln-2004 SYSTEM "vuln/2004.xml">
+<!ENTITY vuln-2005 SYSTEM "vuln/2005.xml">
+<!ENTITY vuln-2006 SYSTEM "vuln/2006.xml">
+<!ENTITY vuln-2007 SYSTEM "vuln/2007.xml">
+<!ENTITY vuln-2008 SYSTEM "vuln/2008.xml">
+<!ENTITY vuln-2009 SYSTEM "vuln/2009.xml">
+<!ENTITY vuln-2010 SYSTEM "vuln/2010.xml">
+<!ENTITY vuln-2011 SYSTEM "vuln/2011.xml">
+<!ENTITY vuln-2012 SYSTEM "vuln/2012.xml">
+<!ENTITY vuln-2013 SYSTEM "vuln/2013.xml">
+<!ENTITY vuln-2014 SYSTEM "vuln/2014.xml">
+<!ENTITY vuln-2015 SYSTEM "vuln/2015.xml">
+<!ENTITY vuln-2016 SYSTEM "vuln/2016.xml">
+<!ENTITY vuln-2017 SYSTEM "vuln/2017.xml">
+<!ENTITY vuln-2018 SYSTEM "vuln/2018.xml">
+<!ENTITY vuln-2019 SYSTEM "vuln/2019.xml">
+<!ENTITY vuln-2020 SYSTEM "vuln/2020.xml">
+<!ENTITY vuln-2021 SYSTEM "vuln/2021.xml">
+<!ENTITY vuln-2022 SYSTEM "vuln/2022.xml">
+<!ENTITY vuln-2023 SYSTEM "vuln/2023.xml">
+<!ENTITY vuln-2024 SYSTEM "vuln/2024.xml">
+<!ENTITY vuln-2025 SYSTEM "vuln/2025.xml">
+<!ENTITY vuln-2026 SYSTEM "vuln/2026.xml">
+]>
+<!--
+Copyright 2003-2026 Jacques Vidrine and contributors
+
+Redistribution and use in source (VuXML) and 'compiled' forms (SGML,
+HTML, PDF, PostScript, RTF and so forth) with or without modification,
+are permitted provided that the following conditions are met:
+1. Redistributions of source code (VuXML) must retain the above
+   copyright notice, this list of conditions and the following
+   disclaimer as the first lines of this file unmodified.
+2. Redistributions in compiled form (transformed to other DTDs,
+   published online in any format, converted to PDF, PostScript,
+   RTF and other formats) must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer
+   in the documentation and/or other materials provided with the
+   distribution.
+
+THIS DOCUMENTATION IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS
+BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+QUICK GUIDE TO ADDING A NEW ENTRY
+
+1. run 'make newentry' to add a template to the top of the document
+2. fill in the template
+3. use 'make validate' to verify syntax correctness (you might need to install
+   textproc/libxml2 for parser, and this port for catalogs)
+4. fix any errors
+5. use 'make VID=xxx-yyy-zzz html' to emit the entry's html file for formatting review
+6. profit!
+
+Additional tests can be done this way:
+ $ make vuln-flat.xml
+ $ pkg audit -f ./vuln-flat.xml py26-django-1.6
+ $ pkg audit -f ./vuln-flat.xml py27-django-1.6.1
+
+Extensive documentation of the format and help with writing and verifying
+a new entry is available in The Porter's Handbook at:
+
+  https://docs.freebsd.org/en/books/porters-handbook/security/#security-notify
+
+Help is also available from ports-security@freebsd.org.
+
+Notes:
+
+  * Please add new entries to the beginning of the current year's file.
+  * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
+-->
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+&vuln-2026;
+&vuln-2025;
+&vuln-2024;
+&vuln-2023;
+&vuln-2022;
+&vuln-2021;
+&vuln-2020;
+&vuln-2019;
+&vuln-2018;
+&vuln-2017;
+&vuln-2016;
+&vuln-2015;
+&vuln-2014;
+&vuln-2013;
+&vuln-2012;
+&vuln-2011;
+&vuln-2010;
+&vuln-2009;
+&vuln-2008;
+&vuln-2007;
+&vuln-2006;
+&vuln-2005;
+&vuln-2004;
+&vuln-2003;</vuxml>
+<!-- EOF -->
+<!-- Note:  Please add new entries to the beginning of this file. -->
+<!-- ex: set ts=8 tw=80 sw=2: -->
+<!-- vim: set softtabstop=2 noexpandtab: -->

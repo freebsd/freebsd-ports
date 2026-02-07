@@ -1,0 +1,10 @@
+lib/aspell-%%VER%%/ca.dat
+lib/aspell-%%VER%%/ca_affix.dat
+share/aspell/ca-common.rws
+share/aspell/ca-general.multi
+share/aspell/ca-valencia-mes.rws
+share/aspell/ca-valencia.multi
+share/aspell/ca.alias
+share/aspell/catalan-general.alias
+share/aspell/catalan-valencia.alias
+share/aspell/catalan.alias

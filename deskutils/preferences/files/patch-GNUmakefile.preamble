@@ -1,0 +1,31 @@
+--- GNUmakefile.preamble.orig	2002-02-12 04:35:17 UTC
++++ GNUmakefile.preamble
+@@ -2,10 +2,10 @@
+ ADDITIONAL_CPPFLAGS +=
+ 
+ # Additional flags to pass to the Objective-C compiler
+-ADDITIONAL_OBJCFLAGS += -Wall -Werror
++ADDITIONAL_OBJCFLAGS += -Wall
+ 
+ # Additional flags to pass to the C compiler
+-ADDITIONAL_CFLAGS += -Wall -Werror
++ADDITIONAL_CFLAGS += -Wall
+ 
+ # Additional include directories the compiler should search
+ ADDITIONAL_INCLUDE_DIRS +=
+@@ -30,15 +30,3 @@ ADDITIONAL_OBJC_LIBS +=
+ ADDITIONAL_TOOL_LIBS +=
+ # WebObjects
+ ADDITIONAL_WO_LIBS +=
+-
+-#
+-# Flags dealing with installing and uninstalling
+-#
+-GNUSTEP_INSTALLATION_DIR=$(GNUSTEP_SYSTEM_ROOT)
+-
+-# Additional directories to be created during installation
+-ADDITIONAL_INSTALL_DIRS += \
+-	$(GNUSTEP_USER_ROOT)/Library/Preferences \
+-	$(GNUSTEP_LOCAL_ROOT)/Library/Preferences \
+-	$(GNUSTEP_NETWORK_ROOT)/Library/Preferences \
+-	$(GNUSTEP_SYSTEM_ROOT)/Library/Preferences

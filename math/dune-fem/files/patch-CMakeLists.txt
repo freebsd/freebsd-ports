@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2021-08-24 13:32:47 UTC
++++ CMakeLists.txt
+@@ -34,7 +34,10 @@ if( DUNE_ENABLE_PYTHONBINDINGS )
+ endif()
+ 
+ #add sub_directories
+-dune_add_subdirs(dune lib doc cmake/modules ${PYDEMO_DIR})
++dune_add_subdirs(dune lib cmake/modules ${PYDEMO_DIR})
++if (FREEBSD_INSTALL_DOCS)
++dune_add_subdirs(doc)
++endif()
+ 
+ # finalize the dune project, e.g. generating config.h etc.
+ finalize_dune_project(GENERATE_CONFIG_H_CMAKE)

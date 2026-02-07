@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2022-07-06 21:24:18 UTC
++++ CMakeLists.txt
+@@ -652,8 +652,11 @@ add_subdirectory(Utilities/Doxygen)
+ 
+ # Create target to download data from the ITKData group. This must come after
+ # all tests have been added that reference the group, so we put it last.
+-include(ExternalData)
+-ExternalData_Add_Target(ITKData)
++
++if (BUILD_TESTING)
++  include(ExternalData)
++  ExternalData_Add_Target(ITKData)
++endif()
+ 
+ mark_as_advanced(FORCE
+   Module_AdaptiveDenoising

@@ -1,0 +1,11 @@
+--- examples/Makefile.in.orig	2022-03-14 14:29:40 UTC
++++ examples/Makefile.in
+@@ -431,7 +431,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = rrdcached
+ EXTRA_DIST = cgi-demo.cgi.in stripes.py
+-examplesdir = $(pkgdatadir)/examples
++examplesdir = $(datadir)/examples/rrdtool
+ examples_SCRIPTS = cgi-demo.cgi piped-demo.pl shared-demo.pl \
+ 	stripes.pl bigtops.pl minmax.pl 4charts.pl perftest.pl \
+         stripes.py

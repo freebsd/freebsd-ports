@@ -1,0 +1,16 @@
+bin/lego_bluetooth_config
+bin/legoctl
+bin/nxtremote
+bin/vexctl
+include/roboctl/rct_machdep.h
+include/roboctl/rct_nxt.h
+include/roboctl/rct_nxt_output.h
+include/roboctl/rct_pic.h
+include/roboctl/rct_protos.h
+include/roboctl/rct_rcx.h
+include/roboctl/roboctl.h
+lib/libroboctl.a
+share/man/man1/legoctl.1.gz
+share/man/man1/nxtremote.1.gz
+share/man/man1/vexctl.1.gz
+share/man/man3/roboctl.3.gz

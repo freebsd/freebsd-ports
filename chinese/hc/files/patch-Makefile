@@ -1,0 +1,22 @@
+--- Makefile.orig	1993-03-11 15:22:44.000000000 +0800
++++ Makefile	2011-09-05 14:30:15.000000000 +0800
+@@ -1,16 +1,16 @@
+ # Makefile for hc (Hanzi Converter) 3.0
+ 
+ hc:	hc.o hclib.o
+-	cc -o hc hc.o hclib.o
++	$(CC) -o hc hc.o hclib.o
+ 
+ b2g:
+ 	echo "#! /bin/csh" > b2g
+-	echo $(PWD)/hc "-m b2g -t" $(PWD)/hc.tab "$$*" >> b2g
++	echo $(PREFIX)/bin/hc "-m b2g -t" $(PREFIX)/share/chinese/hc.tab "$$*" >> b2g
+ 	chmod a+x b2g
+ 
+ g2b:
+ 	echo "#! /bin/csh" > g2b
+-	echo $(PWD)/hc -m g2b -t $(PWD)/hc.tab "$$*" >> g2b
++	echo $(PREFIX)/bin/hc -m g2b -t $(PREFIX)/share/chinese/hc.tab "$$*" >> g2b
+ 	chmod a+x g2b
+ 
+ clean:

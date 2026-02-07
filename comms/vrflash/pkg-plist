@@ -1,0 +1,5 @@
+bin/vrflash
+%%PORTDOCS%%%%DOCSDIR%%/agenda-flashing-overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/troubleshooting.txt
+%%PORTDOCS%%%%DOCSDIR%%/pmon-protect-unprotect.txt
+%%PORTDOCS%%%%DOCSDIR%%/usage.txt

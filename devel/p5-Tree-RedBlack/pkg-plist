@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Tree/RedBlack.pm
+%%SITE_PERL%%/Tree/RedBlack/Node.pm
+%%PERL5_MAN3%%/Tree::Node.3.gz
+%%PERL5_MAN3%%/Tree::RedBlack.3.gz

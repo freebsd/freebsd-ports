@@ -1,0 +1,70 @@
+--- src-stormbaancoureur/Makefile.orig	2009-12-01 03:23:51 UTC
++++ src-stormbaancoureur/Makefile
+@@ -5,23 +5,21 @@ VERSION=2.1.6-generic
+ GLPREFIX=/usr
+ PLIBPREFIX=/usr
+ ODEPREFIX=/usr
+-CXX=g++
++CXX?=g++
+ LIBDIRNAME=lib
+ 
+ # END OF CUSTOM SETTINGS
+ 
+-CXXFLAGS=\
+-  -I$(GLPREFIX)/include \
+-  -I$(ODEPREFIX)/include \
+-  -I$(PLIBPREFIX)/include \
++CXXFLAGS+=\
+   -I../src-common \
+   -I. \
++  -I$(LOCALBASE)/include \
++  `pkg-config --cflags ode` \
+   -DGAMEVERSION=$(VERSION) \
+-  -O2 -g -Wall
++  -g -Wall
+ 
+ LFLAGS=\
+-  -L$(PLIBPREFIX)/$(LIBDIRNAME) \
+-  -L/usr/X11R6/$(LIBDIRNAME)
++  -L$(LOCALBASE)/lib
+ 
+ 
+ OBJS=\
+@@ -39,15 +37,15 @@ OBJS=\
+ 
+ 
+ LIBS=\
+-  $(ODEPREFIX)/$(LIBDIRNAME)/libode.a \
++  `pkg-config --libs ode` \
+   -lplibssgaux -lplibssg -lplibsg -lplibpu -lplibfnt -lplibul \
+-  -lglut -lGLU -lGL -lasound
++  -lglut -lGLU -lGL $(ALSA_LIBS)
+ 
+ 
+ all: stormbaancoureur
+ 
+ 
+-stormbaancoureur: $(OBJS) $(ODEPREFIX)/$(LIBDIRNAME)/libode.a
++stormbaancoureur: $(OBJS)
+ 	$(CXX) -o stormbaancoureur $(OBJS) $(LFLAGS) $(LIBS)
+ 
+ staticworldobject.o: ../src-common/staticworldobject.cxx ../src-common/staticworldobject.h ../src-common/worldobject.h
+@@ -92,16 +90,15 @@ run: stormbaancoureur
+ clean:
+ 	rm -f *.o stormbaancoureur
+ 
+-GAMEDIR=$(DESTDIR)/usr/share/games/stormbaancoureur
++GAMEDIR=$(DESTDIR)$(PREFIX)/share/stormbaancoureur
+ install: stormbaancoureur
+ 	# Directories
+-	mkdir -p $(DESTDIR)/usr/games/
+ 	mkdir -p $(GAMEDIR)/images/
+ 	mkdir -p $(GAMEDIR)/sounds/
+ 	mkdir -p $(GAMEDIR)/shaders/
+ 	mkdir -p $(GAMEDIR)/models/
+ 	# Binary
+-	install stormbaancoureur $(DESTDIR)/usr/games/stormbaancoureur
++	install stormbaancoureur $(DESTDIR)$(PREFIX)/bin/stormbaancoureur
+ 	# Images
+ 	install -m 644 images/info_carpet_smooth.rgb $(GAMEDIR)/images/info_carpet_smooth.rgb
+ 	install -m 644 images/info_door_smooth.rgb $(GAMEDIR)/images/info_door_smooth.rgb

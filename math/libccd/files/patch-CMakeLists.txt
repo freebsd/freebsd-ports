@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2018-11-20 04:50:23 UTC
++++ CMakeLists.txt
+@@ -72,4 +72,4 @@ configure_file(ccd.pc.in ccd.pc @ONLY)
+ install(FILES "${CMAKE_BINARY_DIR}/ccd.pc"
+   DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+ 
+-install(FILES BSD-LICENSE DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/doc/ccd")
++#install(FILES BSD-LICENSE DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/doc/ccd")

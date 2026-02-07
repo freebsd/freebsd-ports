@@ -1,0 +1,49 @@
+--- configure.orig	2004-01-20 18:54:58 UTC
++++ configure
+@@ -2379,7 +2379,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libnet_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libnet_a" >&6
+ if test $ac_cv_file__usr_local_lib_libnet_a = yes; then
+-  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
+ 
+ fi
+@@ -2530,7 +2530,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libpcap_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libpcap_a" >&6
+ if test $ac_cv_file__usr_local_lib_libpcap_a = yes; then
+-  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
+ 
+ fi
+@@ -2680,7 +2680,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libncurses_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libncurses_a" >&6
+ if test $ac_cv_file__usr_local_lib_libncurses_a = yes; then
+-  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
+ 
+ fi
+@@ -2840,7 +2840,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libmenu_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libmenu_a" >&6
+ if test $ac_cv_file__usr_local_lib_libmenu_a = yes; then
+-  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
+ 
+ fi
+@@ -3045,8 +3045,8 @@ fi
+ 
+ 	CFLAGS="-Wall -O2"
+ 	;;
+-*bsd*)
+-	CFLAGS="-Wall -O2 -pthread"
++*bsd*|*dragonfly*)
++	CFLAGS="${CFLAGS} -Wall -lpthread"
+ 	;;
+ esac
+ 

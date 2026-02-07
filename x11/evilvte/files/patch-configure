@@ -1,0 +1,11 @@
+--- configure.orig	2012-07-12 03:30:12 UTC
++++ configure
+@@ -93,6 +93,8 @@ if [ "$with_gtk" = "3.0" ]; then
+   LIBS_VTE_L=`pkg-config --libs-only-L vte-2.90 2> /dev/null`
+ fi
+ 
++LIBS_VTE="${LIBS_VTE} -lintl"
++
+ if [ "$real_gtk" = "2+3" ] || [ "$real_gtk" = "3+2" ]; then
+   real_gtk="all"
+   LIBS_VTE="-ldl"

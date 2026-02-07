@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Filesys/Statvfs.pm
+%%SITE_ARCH%%/auto/Filesys/Statvfs/Statvfs.so
+%%PERL5_MAN3%%/Filesys::Statvfs.3.gz

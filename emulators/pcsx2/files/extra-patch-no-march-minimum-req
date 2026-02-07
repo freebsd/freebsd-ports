@@ -1,0 +1,11 @@
+--- cmake/BuildParameters.cmake.orig	2024-04-10 06:59:09 UTC
++++ cmake/BuildParameters.cmake
+@@ -95,7 +95,7 @@ if("${CMAKE_HOST_SYSTEM_PROCESSOR}" STREQUAL "x86_64" 
+ 		else()
+ 			# Can't use march=native on Apple Silicon.
+ 			if(NOT APPLE OR "${CMAKE_HOST_SYSTEM_PROCESSOR}" STREQUAL "x86_64")
+-				add_compile_options("-march=native")
++				add_compile_options("-march=penryn")
+ 			endif()
+ 		endif()
+ 	endif()

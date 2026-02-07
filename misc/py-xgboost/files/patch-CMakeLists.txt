@@ -1,0 +1,67 @@
+--- ../CMakeLists.txt.orig	2026-01-08 13:54:31 UTC
++++ ../CMakeLists.txt
+@@ -162,11 +162,11 @@ endif()
+ if(PLUGIN_RMM AND NOT (CMAKE_SYSTEM_NAME STREQUAL "Linux"))
+   message(SEND_ERROR "`PLUGIN_RMM` must be used with Linux.")
+ endif()
+-if(ENABLE_ALL_WARNINGS)
+-  if((NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang") AND (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
+-    message(SEND_ERROR "ENABLE_ALL_WARNINGS is only available for Clang and GCC.")
+-  endif()
+-endif()
++#if(ENABLE_ALL_WARNINGS)
++#  if((NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang") AND (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
++#    message(SEND_ERROR "ENABLE_ALL_WARNINGS is only available for Clang and GCC.")
++#  endif()
++#endif()
+ if(BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
+   message(SEND_ERROR "Cannot build a static library libxgboost.a when R or JVM packages are enabled.")
+ endif()
+@@ -289,7 +289,7 @@ set(DMLC_FORCE_SHARED_CRT ${FORCE_SHARED_CRT})
+ 
+ # dmlc-core
+ set(DMLC_FORCE_SHARED_CRT ${FORCE_SHARED_CRT})
+-add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
++#add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
+ 
+ if(MSVC)
+   if(TARGET dmlc_unit_tests)
+@@ -302,7 +302,7 @@ add_subdirectory(${xgboost_SOURCE_DIR}/src)
+ 
+ # core xgboost
+ add_subdirectory(${xgboost_SOURCE_DIR}/src)
+-target_link_libraries(objxgboost PUBLIC dmlc)
++#target_link_libraries(objxgboost PUBLIC dmlc)
+ 
+ # Link -lstdc++fs for GCC 8.x
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.0")
+@@ -391,7 +391,7 @@ if(BUILD_DEPRECATED_CLI)
+   target_include_directories(runxgboost
+     PRIVATE
+     ${xgboost_SOURCE_DIR}/include
+-    ${xgboost_SOURCE_DIR}/dmlc-core/include
++    #${xgboost_SOURCE_DIR}/dmlc-core/include
+   )
+   set_target_properties(runxgboost PROPERTIES OUTPUT_NAME xgboost)
+   xgboost_target_properties(runxgboost)
+@@ -407,7 +407,7 @@ endif()
+ #-- End CLI for xgboost
+ 
+ # Common setup for all targets
+-foreach(target xgboost objxgboost dmlc)
++foreach(target xgboost objxgboost)
+   xgboost_target_properties(${target})
+   xgboost_target_link_libraries(${target})
+   xgboost_target_defs(${target})
+@@ -469,9 +469,9 @@ if(BUILD_STATIC_LIB)
+ # https://github.com/dmlc/xgboost/issues/6085
+ if(BUILD_STATIC_LIB)
+   if(BUILD_DEPRECATED_CLI)
+-    set(INSTALL_TARGETS xgboost runxgboost objxgboost dmlc)
++    set(INSTALL_TARGETS xgboost runxgboost objxgboost)
+   else()
+-    set(INSTALL_TARGETS xgboost objxgboost dmlc)
++    set(INSTALL_TARGETS xgboost objxgboost)
+   endif()
+ else()
+   if(BUILD_DEPRECATED_CLI)

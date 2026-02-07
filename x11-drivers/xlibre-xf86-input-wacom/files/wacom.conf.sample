@@ -1,0 +1,33 @@
+# Manual configuration example for Bamboo Pen & Touch for use without devd or HAL.
+
+Section "InputDevice"
+	Identifier	"wacom stylus"
+	Driver		"wacom"
+	Option		"Type"			"stylus"
+	Option		"Device"		"/dev/input/event0"
+	Option          "AutoServerLayout"	"true"
+EndSection
+
+Section "InputDevice"
+	Identifier	"wacom eraser"
+	Driver		"wacom"
+	Option		"Type"			"eraser"
+	Option		"Device"		"/dev/input/event0"
+	Option          "AutoServerLayout"	"true"
+EndSection
+
+Section "InputDevice"
+	Identifier	"wacom touch"
+	Driver		"wacom"
+	Option		"Type"			"touch"
+	Option		"Device"		"/dev/input/event1"
+	Option          "AutoServerLayout"	"true"
+EndSection
+
+Section "InputDevice"
+	Identifier	"wacom pad"
+	Driver		"wacom"
+	Option		"Type"			"pad"
+	Option		"Device"		"/dev/input/event1"
+	Option          "AutoServerLayout"	"true"
+EndSection

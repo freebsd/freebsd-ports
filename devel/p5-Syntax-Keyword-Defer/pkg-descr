@@ -1,0 +1,14 @@
+This module provides a syntax plugin that implements a block which executes
+when the containing scope has finished.
+
+       use Syntax::Keyword::Defer;
+
+       {
+          my $dbh = DBI->connect( ... ) or die "Cannot connect";
+          defer { $dbh->disconnect; }
+
+          my $sth = $dbh->prepare( ... ) or die "Cannot prepare";
+          defer { $sth->finish; }
+
+          ...
+       }

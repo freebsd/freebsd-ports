@@ -1,0 +1,30 @@
+bin/notekit
+%%DATADIR%%/data/default_config.json
+%%DATADIR%%/data/fonts/Charter Bold Italic.otf
+%%DATADIR%%/data/fonts/Charter Bold.otf
+%%DATADIR%%/data/fonts/Charter Italic.otf
+%%DATADIR%%/data/fonts/Charter Regular.otf
+%%DATADIR%%/data/fonts/Charter license.txt
+%%DATADIR%%/data/icons/hicolor/index.theme
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/eraser-tool-symbolic.svg
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/large-pen-symbolic.svg
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/medium-pen-symbolic.svg
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/pen-tool-symbolic.svg
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/pick-color-symbolic.svg
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/select-symbolic.svg
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/small-pen-symbolic.svg
+%%DATADIR%%/data/icons/hicolor/scalable/emblems/text-symbolic.svg
+%%DATADIR%%/data/preferences.glade
+%%DATADIR%%/data/stylesheet.css
+%%DATADIR%%/data/toolbar.glade
+%%DATADIR%%/sourceview/classic.xml
+%%DATADIR%%/sourceview/def.lang
+%%DATADIR%%/sourceview/language.dtd
+%%DATADIR%%/sourceview/language.rng
+%%DATADIR%%/sourceview/language2.rng
+%%DATADIR%%/sourceview/markdown-basic.lang
+%%DATADIR%%/sourceview/markdown.lang
+%%DATADIR%%/sourceview/markdown.lang.in
+%%DATADIR%%/sourceview/markdownlisting.lang
+%%DATADIR%%/sourceview/notekit.xml
+%%DATADIR%%/sourceview/styles.rng

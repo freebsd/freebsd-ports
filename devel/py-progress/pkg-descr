@@ -1,0 +1,10 @@
+It provides easy to use progress bars for Python.
+
+There are 7 progress bars to choose from:
+- Bar
+- ChargingBar
+- FillingSquaresBar
+- FillingCirclesBar
+- IncrementalBar
+- PixelBar
+- ShadyBar

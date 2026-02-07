@@ -1,0 +1,7 @@
+This is a C program to do "bulk" mailing.  For input, it takes a file
+of recipient addresses (one address per line) and a message (with
+headers already attached) to be sent to the recipients.  It sorts the
+recipient list by reversed domain (so similar ones sort together),
+splits up the recipients into several groups containing no more than N
+domains each, creates an SMTP envelope for each group of recipients,
+and feeds that envelope to "/usr/sbin/sendmail -bs".

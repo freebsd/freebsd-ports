@@ -1,0 +1,49 @@
+Index: Wnn/jlib.V3/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/Wnn/jlib.V3/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- Wnn/jlib.V3/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jlib.V3/Makefile.in	2 Jan 2010 12:10:14 -0000	1.2
+@@ -71,12 +71,12 @@ includes::
+ 
+ .c.o:
+ 	$(RM) $@
+-	$(LIBTOOL) $(CC) -c $(CFLAGS) $(_NOOP_) $*.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(_NOOP_) $*.c
+ 
+ all:: libjd.la
+ 
+ libjd.la: $(OBJS) $(EXTRALIBRARYDEPS)
+-	$(LIBTOOL) $(CC) -o $@ $(OBJS:.o=.lo) -rpath $(WNNLIBDIR) -version-info $(WNNJLIBVERSION)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS:.o=.lo) -rpath $(WNNLIBDIR) -version-info $(WNNJLIBVERSION)
+ 
+ lintlib:: llib-ljd.ln
+ 
+@@ -87,7 +87,7 @@ llib-ljd.ln: $(SRCS) $(EXTRALIBRARYDEPS)
+ install:: libjd.la
+ 	@if [ -d $(DESTDIR)$(WNNLIBDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(WNNLIBDIR)); fi
+-	$(LIBTOOL) $(INSTALL) $(INSTLIBFLAGS) libjd.la $(DESTDIR)$(WNNLIBDIR)
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTLIBFLAGS) libjd.la $(DESTDIR)$(WNNLIBDIR)
+ 
+ install:: jlib.h
+ 	@if [ -d $(DESTDIR)$(JWNNINCDIR) ]; then set +x; \
+@@ -109,13 +109,13 @@ $(WNNJLIB)::
+ 	done
+ 
+ $(OBJ2) : $(SRC2)
+-	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ3) : $(SRC3)
+-	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
+ 
+ $(OBJ4) : $(SRC4)
+-	$(LIBTOOL) $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
++	$(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)  $(WNNETCSRC)/`basename $@ .o`.c
+ 
+ depend:: .depend
+ 

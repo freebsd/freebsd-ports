@@ -1,0 +1,11 @@
+--- plugin/seq/load.link.in.orig	2020-04-02 12:11:06 UTC
++++ plugin/seq/load.link.in
+@@ -245,7 +245,7 @@ case "$WIN32$uu" in
+ 	;;
+     FreeBSD|NetBSD)
+ 	SHARED="-shared"
+-	FLAGS='-fPIC';;
++	FLAGS="-fPIC $LDFLAGS";;
+ 	# 64 bit Linux needs -fPIC (ALH)
+     SunOS)
+         SHARED="-shared"

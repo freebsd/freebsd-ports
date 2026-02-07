@@ -1,0 +1,28 @@
+PORTNAME=	pinta
+PORTVERSION=	1.7.1
+PORTREVISION=	4
+CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/PintaProject/Pinta/releases/download/${PORTVERSION}/
+
+MAINTAINER=	olivierw1+bugzilla-freebsd@hotmail.com
+COMMENT=	Simple Gtk\# Paint Program
+WWW=		https://pinta-project.com/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license-mit.txt
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:devel/mono-addins \
+		intltool-update:textproc/intltool
+RUN_DEPENDS=	mono-addins>0:devel/mono-addins
+
+USES=		desktop-file-utils gmake gnome mono pkgconfig gettext-tools:build
+USE_GNOME=	gtksharp20
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+
+.include <bsd.port.mk>

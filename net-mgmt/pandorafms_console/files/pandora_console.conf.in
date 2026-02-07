@@ -1,0 +1,6 @@
+Alias /pandora_console %%WWWDIR%%
+
+<Location /pandora_console>
+    DirectoryIndex index.php
+    Require all granted
+</Location>

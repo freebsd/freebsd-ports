@@ -1,0 +1,3 @@
+This is a proxy that retrieves data from 5ch.net, bbspink.com, talk.jp
+and returns it to the client. If the destination is *.2ch.net, the URL
+is converted internally to *.5ch.net before connecting.

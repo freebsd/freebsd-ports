@@ -1,0 +1,14 @@
+Index: Makefile
+@@ -1,10 +1,9 @@
+-CC	= gcc
+-CFLAGS	= -O2 -Wall $(shell sdl-config --cflags)
++CFLAGS	+= $(shell sdl-config --cflags)
++LDFLAGS += $(shell sdl-config --libs)
+ EXE	= lopan
+ OBJS	= $(EXE).o gfx.o font.o
+ 
+ $(EXE):	$(OBJS)
+-	gcc -o $(EXE) $(OBJS) $(shell sdl-config --libs)
+ 
+ $(EXE).o: $(EXE).c gfx.h font.h
+ 

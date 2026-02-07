@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2017-12-31 05:56:38 UTC
++++ Makefile.in
+@@ -99,19 +99,6 @@ install-lisp: lisp
+ 	      $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/s$$p";\
+ 	    fi;\
+ 	  done;\
+-	  for p in `cd shimbun && echo *.el`; do\
+-	    echo "$(INSTALL_DATA) shimbun/$$p \"$(DESTDIR)$(lispdir)/$$p\"";\
+-	    $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/$$p";\
+-	    if test $(COMPRESS_INSTALL) = yes -a -n "$(GZIP_PROG)"\
+-		-a -f "shimbun/$$p"c; then\
+-		rm -f "$(DESTDIR)$(lispdir)/$$p".gz;\
+-		"$(GZIP_PROG)" -9n "$(DESTDIR)$(lispdir)/$$p";\
+-	    fi;\
+-	  done;\
+-	  for p in `cd shimbun && echo *.elc`; do\
+-	    echo "$(INSTALL_DATA) shimbun/$$p \"$(DESTDIR)$(lispdir)/$$p\"";\
+-	    $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/$$p";\
+-	  done;\
+ 	fi
+ 
+ install-icons:

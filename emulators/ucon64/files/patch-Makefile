@@ -1,0 +1,13 @@
+Remove hardcoded optimization flags.
+
+--- Makefile.orig	2021-12-17 09:54:12 UTC
++++ Makefile
+@@ -11,7 +11,7 @@ endif
+ CFLAGS0:=$(CFLAGS)
+ include config.mak
+ 
+-CFLAGS+=-I. -Wall -W -Wno-implicit-fallthrough -O3 -fsigned-char
++CFLAGS+=-I. -Wall -W -Wno-implicit-fallthrough -fsigned-char
+ ifneq ($(findstring clang,$(CC)),clang)
+ CFLAGS+=-Wno-format-truncation -Wno-stringop-overflow
+ endif

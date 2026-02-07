@@ -1,0 +1,10 @@
+lib/compat/libcrypto.so.111
+lib/compat/libdialog.so.9
+lib/compat/libdpv.so.2
+lib/compat/libnv.so.0
+lib/compat/libssl.so.111
+%%COMPAT32%%lib32/compat/libcrypto.so.111
+%%COMPAT32%%lib32/compat/libdialog.so.9
+%%COMPAT32%%lib32/compat/libdpv.so.2
+%%COMPAT32%%lib32/compat/libnv.so.0
+%%COMPAT32%%lib32/compat/libssl.so.111

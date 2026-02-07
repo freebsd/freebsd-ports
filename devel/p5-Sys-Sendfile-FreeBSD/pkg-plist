@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Sys/Sendfile/FreeBSD.pm
+%%PERL5_MAN3%%/Sys::Sendfile::FreeBSD.3.gz
+%%SITE_ARCH%%/auto/Sys/Sendfile/FreeBSD/FreeBSD.so

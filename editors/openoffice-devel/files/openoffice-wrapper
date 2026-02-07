@@ -1,0 +1,15 @@
+#!/bin/sh
+
+program=`echo $0 | sed -e 's|.*%%EXECBASE%%-||'`
+
+case $program in
+$0)
+	exec %%OOPATH%%/program/soffice "$@"
+	;;
+printeradmin)
+	exec %%OOPATH%%/program/spadmin
+	;;
+*)
+	exec %%OOPATH%%/program/$program "$@"
+	;;
+esac

@@ -1,0 +1,8 @@
+A small set of command-line tools to work with the Haiku Vector Icon
+Format (HVIF).
+
+Usage for hvif2svg:
+hvif2svg input.hvif outout.svg [width] [height]
+
+Usage for svg2hvif:
+svg2hvif [-v | --verbose] input.svg output.hvif

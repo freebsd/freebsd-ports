@@ -1,0 +1,10 @@
+mistletoe is a Markdown parser in pure Python, designed to be fast,
+spec-compliant and fully customizable.
+
+Apart from being the fastest CommonMark-compliant Markdown parser implementation
+in pure Python, mistletoe also supports easy definitions of custom tokens.
+Parsing Markdown into an abstract syntax tree also allows us to swap out
+renderers for different output formats, without touching any of the core
+components.
+
+Remember to spell mistletoe in lowercase!

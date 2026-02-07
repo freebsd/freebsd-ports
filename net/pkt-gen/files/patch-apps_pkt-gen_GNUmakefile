@@ -1,0 +1,11 @@
+--- apps/pkt-gen/GNUmakefile.orig	2023-04-22 12:00:00 UTC
++++ apps/pkt-gen/GNUmakefile
+@@ -10,7 +10,7 @@ VPATH = $(SRCDIR)/apps/pkt-gen
+ 
+ NO_MAN=
+ CFLAGS = -O2 -pipe
+-CFLAGS += -Werror -Wall -Wunused-function
++CFLAGS += -Wall -Wunused-function
+ CFLAGS += -I $(SRCDIR)/sys -I $(SRCDIR)/apps/include -I $(SRCDIR)/libnetmap
+ CFLAGS += -Wextra -Wno-address-of-packed-member
+ 

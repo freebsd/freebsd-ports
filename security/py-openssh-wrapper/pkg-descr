@@ -1,0 +1,7 @@
+Under some circumstances simple wrapper around OpenSSH ssh command-line
+utility seems more preferable than paramiko machinery.
+
+This project proposes yet another hopefully thin wrapper around ssh to
+execute commands on remote servers. All you need thereis to make sure that
+OpenSSH client and Python interpreter are installed, and then install
+openssh-wrapper package.

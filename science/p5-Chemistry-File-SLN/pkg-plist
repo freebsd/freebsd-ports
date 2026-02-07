@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Chemistry/File/SLN/Parser.pm
+%%SITE_PERL%%/Chemistry/File/SLN.pm
+%%PERL5_MAN3%%/Chemistry::File::SLN.3.gz

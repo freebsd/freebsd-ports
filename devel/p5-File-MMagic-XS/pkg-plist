@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/File/MMagic/XS.pm
+%%SITE_ARCH%%/File/MMagic/benchmark.pl
+%%SITE_ARCH%%/File/MMagic/magic
+%%SITE_ARCH%%/auto/File/MMagic/XS/XS.so
+%%PERL5_MAN3%%/File::MMagic::XS.3.gz

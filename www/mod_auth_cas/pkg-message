@@ -1,0 +1,36 @@
+[
+{ type: install
+  message: <<EOM
+ Set a few required parameters in your Apache configuration:
+
+ CASCookiePath   /var/cache/apache2/mod_auth_cas/
+ CASLoginURL     https://login.example.org/cas/login
+ CASValidateURL  https://login.example.org/cas/serviceValidate
+
+ Protect a "Location" or "Directory" block in your Apache configuration:
+
+ <Location /secured>
+   Authtype CAS
+   require valid-user
+ </Location>
+
+ If SAML-delivered attribute authorization is also desired, use the
+ samlValidate URL, enable SAML validation, and specify cas-attribute
+ in your require rule (please note: both attribute name and value are
+ case-sensitive):
+
+ CASCookiePath /var/cache/apache2/mod_auth_cas/
+ CASLoginURL https://login.example.org/cas/login
+ CASValidateURL https://login.example.org/cas/samlValidate
+ CASValidateSAML On
+
+ <Location /secured>
+   Authtype CAS
+   require cas-attribute edupersonaffiliation:staff
+ </Location>
+
+ For more informations see:
+ https://github.com/Jasig/mod_auth_cas
+EOM
+}
+]

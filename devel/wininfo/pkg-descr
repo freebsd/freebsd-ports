@@ -1,0 +1,11 @@
+X Window Information is a window information utility for developers of
+applications, toolkits, and window managers. X Window Information
+follows your pointer providing information about the windows below.
+Information presented includes:
+
+  *  A detailed description of the window hierarchy below the pointer.
+
+  *  Parsed interpretations of standard properties from both the
+     application window and the window manager.
+
+  *  Information about X server resources used by the application.

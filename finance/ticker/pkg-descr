@@ -1,0 +1,8 @@
+Terminal stock watcher and stock position tracker
+
+Features
+
+ * Live stock price quotes
+ * Track value of your stock positions
+ * Support for multiple cost basis lots
+ * Support for pre and post market price quotes

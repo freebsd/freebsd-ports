@@ -1,0 +1,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -3,7 +3,6 @@
+ 
+ CFLAGS+= -g -Wall -Wunused
+ 
+-NOMAN=
+-NO_MAN=
++MAN=
+ 
+ .include <bsd.prog.mk>

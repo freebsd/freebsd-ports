@@ -1,0 +1,10 @@
+--- plugins/configure.in.orig	2013-07-08 22:41:36.000000000 +0200
++++ plugins/configure.in	2013-07-08 22:44:52.000000000 +0200
+@@ -250,6 +250,7 @@
+ AC_ARG_ENABLE(bsdvideo, [  --enable-bsdvideo       enable BSD video support],,enable_bsdvideo=yes)
+ 
+ if test "${enable_bsdvideo}z" = "yesz" ; then
++  AC_CHECK_HEADER(dev/bktr/ioctl_meteor.h, BSDVIDEOHDR=1)
+   AC_CHECK_HEADER(machine/ioctl_meteor.h, BSDVIDEOHDR=1)
+   AC_CHECK_HEADER(i386/ioctl_meteor.h, BSDVIDEOHDR=1)
+   AC_CHECK_HEADER(dev/ic/bt8xx.h, BSDVIDEOHDR=1)

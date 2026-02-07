@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Async/Interrupt.pm
+%%SITE_ARCH%%/auto/Async/Interrupt/Interrupt.so
+%%PERL5_MAN3%%/Async::Interrupt.3.gz

@@ -1,0 +1,1 @@
+IO::Compress::Lzma is a perl module for reading/writing lzma files/buffer.

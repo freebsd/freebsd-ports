@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/PadWalker.pm
+%%SITE_ARCH%%/auto/PadWalker/PadWalker.so
+%%PERL5_MAN3%%/PadWalker.3.gz

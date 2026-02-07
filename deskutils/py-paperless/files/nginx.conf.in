@@ -1,0 +1,18 @@
+    server {
+        listen 80;
+        server_name localhost;
+
+        location /static/ {
+            alias %%WWWDIR%%/static/;
+        }
+
+        location / {
+            uwsgi_pass unix:/tmp/uwsgi-paperless.sock;
+            include uwsgi_params;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   %%PREFIX%%/www/nginx-dist;
+        }
+    }

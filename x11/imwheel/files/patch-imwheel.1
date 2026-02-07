@@ -1,0 +1,20 @@
+--- imwheel.1.orig	2004-06-10 01:41:49 UTC
++++ imwheel.1
+@@ -329,7 +329,7 @@ sum = 0
+ .fi
+ .RE
+ .SH "IMWHEELRC"
+-IMWheel uses, optionally, two configuration files.  One called /etc/X11/imwheel/imwheelrc,
++IMWheel uses, optionally, two configuration files.  One called %%PREFIX%%/etc/imwheelrc,
+ which is used for everybody.  The other is $HOME/.imwheelrc, used only for one
+ user.  One is supplied and should have been installed automatically in /etc/X11/imwheel/
+ if not also in the installing users $HOME as well.  All whitespace is ignored
+@@ -671,7 +671,7 @@ Jonathan Atkins <jcatki@jonatkins.org>
+ $HOME/.imwheelrc
+ 	The users configuration file.
+ 
+-/etc/X11/imwheel/imwheelrc
++%%PREFIX%%/etc/imwheelrc
+ 	The global location for the configuration
+ 	file, it is always loaded.  Overided by
+ 	the users configuration file.

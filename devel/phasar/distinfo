@@ -1,0 +1,7 @@
+TIMESTAMP = 1742108395
+SHA256 (secure-software-engineering-phasar-v2503_GH0.tar.gz) = 3f46464ddb5451886f4926a144d44333f9f5320be01fbde705186be2fec230c7
+SIZE (secure-software-engineering-phasar-v2503_GH0.tar.gz) = 7520485
+SHA256 (nlohmann-json-9cca280_GH0.tar.gz) = 68c2ca874e6ee3940938ba409e65f231684784aabf4041094d4c02fa4fa3bc2b
+SIZE (nlohmann-json-9cca280_GH0.tar.gz) = 8053755
+SHA256 (pboettch-json-schema-validator-349cba9_GH0.tar.gz) = e2cf35fc41ffa87c043bb8285e1aeb45d32f4a9f393ed7f744a5938cf3bfcbee
+SIZE (pboettch-json-schema-validator-349cba9_GH0.tar.gz) = 77890

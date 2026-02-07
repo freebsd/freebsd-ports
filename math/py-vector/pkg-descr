@@ -1,0 +1,4 @@
+Vector is a Python library for 2D and 3D spatial vectors, as well as 4D
+space-time vectors. It is especially intended for performing geometric
+calculations on arrays of vectors, rather than one vector at a time in a Python
+for loop.

@@ -1,0 +1,5 @@
+The R package hdrcde provides tools for computing highest density regions in one
+and two dimensions, kernel estimates of univariate density functions conditional
+on one covariate, and multimodal regression.
+
+See also: https://pkg.robjhyndman.com/hdrcde/

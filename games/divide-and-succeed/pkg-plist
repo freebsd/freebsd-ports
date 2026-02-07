@@ -1,0 +1,17 @@
+bin/divideandsucceed
+share/applications/divideandsucceed.desktop
+%%DATADIR%%/font.ttf
+%%DATADIR%%/levels/00.csv
+%%DATADIR%%/levels/01.csv
+%%DATADIR%%/levels/02.csv
+%%DATADIR%%/levels/03.csv
+%%DATADIR%%/levels/04.csv
+%%DATADIR%%/levels/05.csv
+%%DATADIR%%/levels/06.csv
+%%DATADIR%%/levels/07.csv
+%%DATADIR%%/levels/08.csv
+%%DATADIR%%/levels/09.csv
+%%DATADIR%%/levels/10.csv
+%%DATADIR%%/levels/11.csv
+share/icons/hicolor/64x64/apps/divideandsucceed.png
+share/pixmaps/divideandsucceed.png

@@ -1,0 +1,5 @@
+bin/qstardict
+lib/qstardict/plugins/libstardict.so
+lib/qstardict/plugins/libweb.so
+share/applications/qstardict.desktop
+share/pixmaps/qstardict.png

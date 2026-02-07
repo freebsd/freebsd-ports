@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Apr 13 11:14:20 2005
++++ Makefile	Wed Apr 13 11:15:49 2005
+@@ -32,7 +34,7 @@
+ allopt:  $(XARCHIVE)
+ 
+ depend: *.c *.ml *.mli
+-	gcc -MM *.c > depend	
++	$(CC) -I$(EXPAT_INCDIR) -I$(CAML_INCDIR) -MM *.c > depend	
+ 	$(OCAMLDEP) *.mli *.ml >> depend
+ 
+ ## Library creation

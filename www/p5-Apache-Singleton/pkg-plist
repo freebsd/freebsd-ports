@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Apache::Singleton.3.gz
+%%PERL5_MAN3%%/Apache::Singleton::Process.3.gz
+%%PERL5_MAN3%%/Apache::Singleton::Request.3.gz
+%%SITE_PERL%%/Apache/Singleton.pm
+%%SITE_PERL%%/Apache/Singleton/Process.pm
+%%SITE_PERL%%/Apache/Singleton/Request.pm

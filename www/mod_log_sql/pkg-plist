@@ -1,0 +1,6 @@
+@sample %%APACHEETCDIR%%/modules.d/%%APMODCFG%%
+%%APACHEMODDIR%%/%%AP_MODULE%%
+%%APACHEMODDIR%%/mod_log_sql_mysql.so
+%%APACHEMODDIR%%/mod_log_sql_logio.so
+%%APACHEMODDIR%%/mod_log_sql_ssl.so
+%%DBI%%%%APACHEMODDIR%%/mod_log_sql_dbi.so

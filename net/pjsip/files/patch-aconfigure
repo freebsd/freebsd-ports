@@ -1,0 +1,11 @@
+--- aconfigure.orig	2023-11-01 09:37:28 UTC
++++ aconfigure
+@@ -10177,7 +10177,7 @@ printf "%s\n" "Checking if libwebrtc is disabled...no"
+ 			ac_webrtc_instset=sse2
+ 			ac_webrtc_cflags="-msse2"
+ 			;;
+-		     *win32* | *w32* | *darwin* | *linux*)
++		     *win32* | *w32* | *darwin* | *linux* | *amd64*freebsd* | *x86_64*freebsd*)
+                          case $target in
+                              armv7l*gnueabihf)
+                                  ac_webrtc_instset=neon

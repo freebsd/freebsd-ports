@@ -1,0 +1,82 @@
+#!/bin/sh
+
+# fossil startup script
+#
+# PROVIDE: fossil
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# fossil_enable="YES"
+#
+# You can fine tune others variables too:
+#
+# variable           default        description
+# =============================================
+# fossil_port        8080           TCP port to listen to
+# fossil_directory   /nonexistent   directory to serve
+# fossil_repolist    ""             if non-empty, fossil will list the repositories in the fossil_directory when visiting /
+# fossil_baseurl     ""             the server URL, for reverse proxies
+# fossil_proto       http           spawn an http or scgi server
+# fossil_listenall   ""             if empty, only listen on 127.0.0.1
+# fossil_https       ""             if non-empty, force the HTTPS CGI parameter to "on"
+# fossil_files       ""             if non-empty, comma separated glob patterns of files to serve
+# fossil_notfound    ""             if non-empty, URI to redirect to in case of 404
+# fossil_errorlog    ""             if non-empty, path to log file for errors
+# fossil_user        nobody         user to run fossil as
+
+
+. /etc/rc.subr
+
+name="fossil"
+rcvar=fossil_enable
+load_rc_config $name
+pidprefix="/var/run/fossil/fossil"
+pidfile="${pidprefix}.pid"
+
+procname="%%PREFIX%%/bin/fossil"
+command="/usr/sbin/daemon"
+start_precmd="fossil_precmd"
+stop_postcmd="fossil_postcmd"
+
+fossil_enable=${fossil_enable:-"NO"}
+fossil_user=${fossil_user:-"nobody"}
+fossil_port=${fossil_port:-"8080"}
+fossil_proto=${fossil_proto:-"http"}
+fossil_directory=${fossil_directory:-"/nonexistent"}
+
+case "${fossil_proto}" in
+http)
+	# http is the default
+	;;
+scgi)
+	fossil_args="--scgi"
+	;;
+*)
+	echo "unsupported protocol: ${fossil_proto}, only scgi and http are supported" >&2
+	exit 1
+	;;
+esac
+
+[ -n "${fossil_baseurl}"   ] && fossil_args="${fossil_args} --baseurl ${fossil_baseurl}"
+[ -z "${fossil_listenall}" ] && fossil_args="${fossil_args} --localhost"
+[ -n "${fossil_https}"     ] && fossil_args="${fossil_args} --https"
+[ -n "${fossil_files}"     ] && fossil_args="${fossil_args} --files '${fossil_files}'"
+[ -n "${fossil_notfound}"  ] && fossil_args="${fossil_args} --notfound \"${fossil_notfound}\""
+[ -n "${fossil_repolist}"  ] && fossil_args="${fossil_args} --repolist"
+[ -n "${fossil_errorlog}"  ] && fossil_args="${fossil_args} --errorlog \"${fossil_errorlog}\""
+
+command_args="-S -T ${name} -p ${pidfile} ${procname} server -P ${fossil_port} ${fossil_args} ${fossil_directory}"
+
+fossil_precmd()
+{
+        install -d -o root -g wheel -m 1777 /var/run/fossil
+}
+
+fossil_postcmd()
+{
+	rm -rf /var/run/fossil
+}
+
+run_rc_command "$1"

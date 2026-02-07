@@ -1,0 +1,171 @@
+PORTNAME=	comrak
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.48.0
+PORTREVISION=	2
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	CommonMark + GFM compatible Markdown parser and renderer
+WWW=		https://docs.rs/comrak/latest/comrak/ \
+		https://github.com/kivikakk/comrak
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libonig.so:devel/oniguruma
+
+USES=		cargo pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kivikakk
+
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-0.7.20 \
+		arbitrary-1.3.2 \
+		autocfg-1.1.0 \
+		base64-0.13.1 \
+		bincode-1.3.3 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		bon-3.0.0 \
+		bon-macros-3.0.0 \
+		caseless-0.2.1 \
+		cc-1.0.78 \
+		cfg-if-1.0.0 \
+		clap-4.0.32 \
+		clap_derive-4.0.21 \
+		clap_lex-0.3.0 \
+		crc32fast-1.3.2 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
+		derive_arbitrary-1.3.2 \
+		deunicode-0.4.5 \
+		deunicode-1.4.4 \
+		diff-0.1.13 \
+		emojis-0.6.2 \
+		entities-1.0.1 \
+		errno-0.3.8 \
+		fancy-regex-0.7.1 \
+		flate2-1.0.25 \
+		fmt2io-1.0.0 \
+		fnv-1.0.7 \
+		hashbrown-0.12.3 \
+		heck-0.4.1 \
+		heck-0.5.0 \
+		hermit-abi-0.3.9 \
+		ident_case-1.0.1 \
+		indexmap-1.9.2 \
+		io-lifetimes-1.0.11 \
+		is-terminal-0.4.5 \
+		itoa-1.0.5 \
+		jetscii-0.5.3 \
+		lazy_static-1.4.0 \
+		libc-0.2.153 \
+		line-wrap-0.1.1 \
+		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.3.8 \
+		memchr-2.7.2 \
+		miniz_oxide-0.6.2 \
+		ntest-0.9.2 \
+		ntest_test_cases-0.9.2 \
+		ntest_timeout-0.9.2 \
+		once_cell-1.19.0 \
+		onig-6.4.0 \
+		onig_sys-69.9.1 \
+		os_str_bytes-6.6.1 \
+		percent-encoding-rfc3986-0.1.3 \
+		phf-0.11.1 \
+		phf_shared-0.11.1 \
+		pkg-config-0.3.26 \
+		plist-1.3.1 \
+		pretty_assertions-1.4.1 \
+		prettyplease-0.2.25 \
+		proc-macro-crate-1.2.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.89 \
+		quote-1.0.36 \
+		regex-1.5.5 \
+		regex-syntax-0.6.28 \
+		rustix-0.36.17 \
+		rustix-0.37.27 \
+		rustversion-1.0.17 \
+		ryu-1.0.12 \
+		safemem-0.3.3 \
+		same-file-1.0.6 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
+		serde_spanned-0.6.1 \
+		shell-words-1.1.0 \
+		siphasher-0.3.10 \
+		slug-0.1.4 \
+		strsim-0.10.0 \
+		strsim-0.11.1 \
+		strum-0.26.3 \
+		strum_macros-0.26.4 \
+		syn-1.0.107 \
+		syn-2.0.87 \
+		syntect-5.0.0 \
+		termcolor-1.4.1 \
+		terminal_size-0.2.6 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		time-0.3.17 \
+		time-core-0.1.0 \
+		time-macros-0.2.6 \
+		tinyvec-1.8.0 \
+		tinyvec_macros-0.1.1 \
+		toml-0.5.10 \
+		toml-0.7.3 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.6 \
+		typed-arena-2.0.2 \
+		unicode-ident-1.0.6 \
+		unicode-normalization-0.1.23 \
+		unicode_categories-0.1.1 \
+		version_check-0.9.4 \
+		walkdir-2.3.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.4 \
+		winnow-0.3.8 \
+		xdg-2.5.2 \
+		xml-rs-0.8.14 \
+		yaml-rust-0.4.5 \
+		yansi-1.0.1
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

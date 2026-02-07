@@ -1,0 +1,2 @@
+DBIx::Class::QueryProfiler is a profiler for DBIx::Class. Also
+it provides more usable output or queries.

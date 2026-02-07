@@ -1,0 +1,2 @@
+RQ Scheduler is a small package that adds job scheduling capabilities to RQ, a
+Redis based Python queuing library.

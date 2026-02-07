@@ -1,0 +1,115 @@
+--- draw.c.orig	2013-09-23 11:57:39.000000000 +0200
++++ draw.c	2014-12-06 20:30:50.785932524 +0100
+@@ -395,21 +395,20 @@
+ 	XpmColorSymbol xpms;
+ #endif
+ 
++	/* icon cache */
++	int ip;
++
+ #ifdef DZEN_XFT
+ 	XftDraw *xftd=NULL;
+ 	XftColor xftc;
+ 	char *xftcs;
+-	int xftcs_f=0;
+ 	char *xftcs_bg;
+-	int xftcs_bgf=0;
+ 
+-	xftcs    = (char *)dzen.fg;
+-    xftcs_bg = (char *)dzen.bg;
++	/* set default fg/bg for XFT */
++	xftcs = estrdup(dzen.fg);
++	xftcs_bg = estrdup(dzen.bg);
+ #endif
+ 
+-	/* icon cache */
+-	int ip;
+-
+ 	/* parse line and return the text without control commands */
+ 	if(nodraw) {
+ 		rbuf = emalloc(MAX_LINE_LEN);
+@@ -446,8 +445,7 @@
+ 			xpms.pixel = dzen.norm[ColBG];
+ #endif
+ #ifdef DZEN_XFT
+-			xftcs_bg = (char *)dzen.bg;
+-			xftcs_bgf = 0;
++			xftcs_bg = estrdup(dzen.bg);
+ #endif
+ 		}
+ 		else {
+@@ -679,15 +677,9 @@
+ 						case bg:
+ 							lastbg = tval[0] ? (unsigned)getcolor(tval) : dzen.norm[ColBG];
+ #ifdef DZEN_XFT
+-							if(xftcs_bgf) free(xftcs_bg);				
+-							if(tval[0]) {
+-								xftcs_bg = estrdup(tval);
+-								xftcs_bgf = 1;
+-							} else {
+-								xftcs_bg = (char *)dzen.bg;
+-								xftcs_bgf = 0;
+-							}
+-#endif							
++							if(xftcs_bg) free(xftcs_bg);
++							xftcs_bg = estrdup(tval[0] ? tval : dzen.bg);
++#endif
+ 
+ 							break;
+ 
+@@ -695,19 +687,14 @@
+ 							lastfg = tval[0] ? (unsigned)getcolor(tval) : dzen.norm[ColFG];
+ 							XSetForeground(dzen.dpy, dzen.tgc, lastfg);
+ #ifdef DZEN_XFT
+-							if(tval[0]) {
+-								xftcs = estrdup(tval);
+-								xftcs_f = 1;
+-							} else {
+-								xftcs = (char *)dzen.fg;
+-								xftcs_f = 0;
+-							}
+-#endif							
++							if (xftcs) free(xftcs);
++							xftcs = estrdup(tval[0] ? tval : dzen.fg);
++#endif
+ 							break;
+ 
+ 						case fn:
+ 							if(tval[0]) {
+-#ifndef DZEN_XFT		
++#ifndef DZEN_XFT
+ 								if(!strncmp(tval, "dfnt", 4)) {
+ 									cur_fnt = &(dzen.fnpl[atoi(tval+4)]);
+ 
+@@ -816,18 +803,8 @@
+ 						DefaultColormap(dzen.dpy, dzen.screen),  xftcs,  &xftc);
+ 				}
+ 
+-				XftDrawStringUtf8(xftd, &xftc, 
++				XftDrawStringUtf8(xftd, &xftc,
+ 						cur_fnt->xftfont, px, py + dzen.font.xftfont->ascent, (const FcChar8 *)lbuf, strlen(lbuf));
+-
+-				if(xftcs_f) {
+-					free(xftcs);
+-					xftcs_f = 0;
+-				}
+-				if(xftcs_bgf) {
+-					free(xftcs_bg);
+-					xftcs_bgf = 0;
+-				}
+-
+ #endif
+ 
+ 				max_y = MAX(max_y, py+dzen.font.height);
+@@ -920,6 +897,11 @@
+ #endif
+ 	}
+ 
++#ifdef DZEN_XFT
++	if(xftcs) free(xftcs);
++	if(xftcs_bg) free(xftcs_bg);
++#endif
++
+ 	return nodraw ? rbuf : NULL;
+ }
+ 

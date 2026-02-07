@@ -1,0 +1,12 @@
+--- mksignal.orig	Fri Apr 11 22:54:34 1997
++++ mksignal	Tue Jan 10 19:34:36 2006
+@@ -141,7 +141,9 @@
+ 				lcname = lcname c
+ 			}
+ 			print "#ifdef", signal
++			print "#if ", signal, " < NSIG"
+ 			printf "\t{ %s,\t\"%s\",\t\"%s\" },\n", signal, lcname, mesg[signal]
++			print "#endif"
+ 			print "#endif"
+ 		}
+ 	}

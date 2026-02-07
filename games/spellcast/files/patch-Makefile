@@ -1,0 +1,17 @@
+--- Makefile.orig	Sat Jan 15 07:41:10 1994
++++ Makefile	Fri Nov 10 19:25:53 2000
+@@ -22,11 +22,11 @@
+ # all the time, try uncommenting the next line.
+ #OTHERLIBS = -lbsdmalloc
+ 
+-CFLAGS = -g -I/usr/local/include -I./bitmaps -DBODYFONT=$(FONT1) \
++CFLAGS += -I${LOCALBASE}/include -I./bitmaps -DBODYFONT=$(FONT1) \
+ 	-DBODYFONT_ALT=$(FONT2) -DBODYFONT_ALT2=$(FONT3) -DTRANSCRIPTDIR=$(LOGDIR)
+-LFLAGS = -g
++LFLAGS =
+ 
+-XLIB = -L/usr/local/lib -lX11
++XLIB = -L${LOCALBASE}/lib -lX11
+ 
+ OBJS = engine.o espells.o execute.o execute2.o emonster.o etran.o
+ XOBJS = main.o xtext.o xquery.o xloop.o xgest.o xbutton.o xtalk.o

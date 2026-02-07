@@ -1,0 +1,8 @@
+%%SITE_PERL%%/SMS/Send.pm
+%%SITE_PERL%%/SMS/Send/AU/Test.pm
+%%SITE_PERL%%/SMS/Send/Driver.pm
+%%SITE_PERL%%/SMS/Send/Test.pm
+%%PERL5_MAN3%%/SMS::Send.3.gz
+%%PERL5_MAN3%%/SMS::Send::AU::Test.3.gz
+%%PERL5_MAN3%%/SMS::Send::Driver.3.gz
+%%PERL5_MAN3%%/SMS::Send::Test.3.gz

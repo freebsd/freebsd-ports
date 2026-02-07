@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+This game requires a datafile from the original Diablo(tm) CD or the GOG release.
+If you don't own it yet, you can buy it at https://www.gog.com/game/diablo
+
+Copy DIABDAT.MPQ to ~/.local/share/diasurgical/devilution/
+
+For the Hellfire expansion you will also need to copy hellfire.mpq, hfmonk.mpq, hfmusic.mpq and hfvoice.mpq files.
+
+If you have any issues with this game, please file a bug report on the GitHub page:
+https://github.com/diasurgical/devilutionX/issues
+EOM
+}
+{
+type: upgrade
+maximum_version: "1.1.0"
+  message: <<EOM
+Upgrading from before 1.1.0 needs to do remove ~/.local/share/diasurgical/devilution/diablo.ini
+so devilutionX runs correctly
+EOM
+}
+]

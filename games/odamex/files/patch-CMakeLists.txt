@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	2014-07-19 15:08:45.000000000 +0200
++++ CMakeLists.txt	2014-07-19 15:10:19.000000000 +0200
+@@ -9,7 +9,7 @@
+ # Default build type
+ if(NOT MSVC)
+   if(NOT CMAKE_BUILD_TYPE)
+-    set(CMAKE_BUILD_TYPE Debug CACHE STRING
++    set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
+       "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
+       FORCE)
+   endif()
+@@ -29,12 +29,12 @@
+ # Global compile options.  Useful defines for any Odamex project.
+ macro(global_compile_options)
+   if(NOT MSVC)
+-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -DNDEBUG")
+     if(USE_STATIC_STDLIB)
+       set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++")
+     endif()
+     if(USE_SANITIZE_ADDRESS)
+-      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address -O1 -fno-omit-frame-pointer -fno-optimize-sibling-calls")
++      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -O1 -fno-omit-frame-pointer -fno-optimize-sibling-calls -DNDEBUG")
+     endif()
+   endif()
+ endmacro(global_compile_options)
+@@ -81,7 +81,9 @@
+ add_subdirectory(client)
+ add_subdirectory(server)
+ add_subdirectory(master)
+-add_subdirectory(odalaunch)
++if(ODALAUNCH_TARGET)
++  add_subdirectory(odalaunch)
++endif()
+ 
+ # Disable the ag-odalaunch target completely: -DNO_AG-ODALAUNCH_TARGET
+ # This is only really useful when setting up a universal build.

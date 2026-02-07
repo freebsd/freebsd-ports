@@ -1,0 +1,15 @@
+--- sbin/upload-salt-reports.orig	2020-12-19 12:46:33 UTC
++++ sbin/upload-salt-reports
+@@ -3,9 +3,9 @@
+ 
+ from __future__ import print_function
+ 
+-LAST_UPLOADED = '/etc/salt/last_uploaded'
+-FOREMAN_CONFIG = '/etc/salt/foreman.yaml'
+-LOCK_FILE = '/var/lock/salt-report-upload.lock'
++LAST_UPLOADED = '%%LOCALBASE%%/etc/salt/last_uploaded'
++FOREMAN_CONFIG = '%%LOCALBASE%%/etc/salt/foreman.yaml'
++LOCK_FILE = '/var/run/salt-report-upload.lock'
+ 
+ try:
+     from http.client import HTTPConnection, HTTPSConnection

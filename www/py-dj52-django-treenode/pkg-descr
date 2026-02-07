@@ -1,0 +1,12 @@
+The authors of django-treenode describe it as "probably the best
+abstract model / admin for your tree based stuff".
+
+Features:
+- Fast - get ancestors, children, descendants, parent, root, siblings, tree
+  with no queries
+- Synced - in-memory model instances are automatically updated
+- Compatibility - you can easily add treenode to existing projects
+- No dependencies
+- Easy configuration - just extend the abstract model / model-admin
+- Admin integration - great tree visualization: accordion, breadcrumbs or
+  indentation

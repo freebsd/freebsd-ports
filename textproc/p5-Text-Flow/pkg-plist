@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Text::Flow.3.gz
+%%PERL5_MAN3%%/Text::Flow::Wrap.3.gz
+%%SITE_PERL%%/Text/Flow.pm
+%%SITE_PERL%%/Text/Flow/Wrap.pm

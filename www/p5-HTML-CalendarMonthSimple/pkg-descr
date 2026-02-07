@@ -1,0 +1,3 @@
+HTML::CalendarMonthSimple is a Perl module for generating, manipulating,
+and printing a HTML calendar grid for a specified month. It is intended
+as a faster and easier-to-use alternative to HTML::CalendarMonth.

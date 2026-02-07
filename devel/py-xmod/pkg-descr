@@ -1,0 +1,6 @@
+xmod is a Python library that allows you to give modules attributes of
+other Python objects. A module can be made callable, or it can be
+indexed like a list, or it can have a __str__() method that gets
+called when you print it.
+
+xmod can be used as a decorator or as a simple function.

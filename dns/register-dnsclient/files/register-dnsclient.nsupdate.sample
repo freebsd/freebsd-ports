@@ -1,0 +1,5 @@
+zone %%ZONE%%
+update delete %%HOSTNAME%%. A
+update add %%HOSTNAME%%. 3600 A %%PRIMARY_IP%%
+send
+

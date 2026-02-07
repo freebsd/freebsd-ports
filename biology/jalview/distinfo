@@ -1,0 +1,5 @@
+TIMESTAMP = 1665557435
+SHA256 (jalview_2_11_2_5.tar.gz) = dcb7211fe55db9b598281f2025787defdfbe8ce048141df7c38501ad4554c998
+SIZE (jalview_2_11_2_5.tar.gz) = 211101247
+SHA256 (jalview-2.11.2.5-deps.tar.gz) = 9eff680720f3f56f9d07f8b416c63d5460220f0562471e7c796cc28dce3b5182
+SIZE (jalview-2.11.2.5-deps.tar.gz) = 88745285

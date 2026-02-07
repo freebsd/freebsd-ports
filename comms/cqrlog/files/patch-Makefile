@@ -1,0 +1,20 @@
+--- Makefile.orig	2021-02-12 16:24:42 UTC
++++ Makefile
+@@ -1,12 +1,12 @@
+-CC=lazbuild
++LAZBUILD_CMD?=lazbuild -d
+ ST=strip
+-datadir  = $(DESTDIR)/usr/share/cqrlog
+-bindir   = $(DESTDIR)/usr/bin
+-sharedir = $(DESTDIR)/usr/share
++datadir  = $(DESTDIR)${PREFIX}/share/cqrlog
++bindir   = $(DESTDIR)${PREFIX}/bin
++sharedir = $(DESTDIR)${PREFIX}/share
+ tmpdir   = /tmp
+ 
+ cqrlog: src/cqrlog.lpi
+-	$(CC) --ws=gtk2 --pcp=$(tmpdir)/.lazarus src/cqrlog.lpi
++	$(LAZBUILD_CMD) $(LAZBUILD_ARGS) --ws=$(LCL_PLATFORM) --lazarusdir=$(LAZARUS_DIR) src/cqrlog.lpi
+ 	$(ST) src/cqrlog
+ 	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
+ 

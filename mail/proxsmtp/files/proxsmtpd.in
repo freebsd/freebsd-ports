@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: proxsmtpd
+# REQUIRE: DAEMON
+#
+# Add the fellowing line to /etc/rc.conf to enable proxsmtpd:
+#
+# proxsmtpd_enable (bool):	Set to "YES" to enable proxsmtpd.
+#				Default is "NO".
+# proxsmtpd_conf (file):	Set location of proxsmtpd.conf.
+#				Default is "%%PREFIX%%/etc/proxsmtpd.conf"
+#
+
+. /etc/rc.subr
+
+name="proxsmtpd"
+rcvar=proxsmtpd_enable
+
+load_rc_config ${name}
+
+: ${proxsmtpd_enable="NO"}
+: ${proxsmtpd_conf="%%PREFIX%%/etc/proxsmtpd.conf"}
+
+required_files="${proxsmtpd_conf}"
+command=%%PREFIX%%/sbin/proxsmtpd
+command_args="-f ${proxsmtpd_conf}"
+
+run_rc_command "$1"

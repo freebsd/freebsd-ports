@@ -1,0 +1,27 @@
+--- rtspproxy/Makefile.in.orig	2001-02-07 23:40:54 UTC
++++ rtspproxy/Makefile.in
+@@ -1,10 +1,10 @@
+-CC=@CC@
+-CXX=@CXX@
++CC?=@CC@
++CXX?=@CXX@
+ LD=@LD@
+ 
+-CFLAGS=@CFLAGS@ -I../libapp -I../librtsp -I.
+-CXXFLAGS=@CXXFLAGS@ -I../libapp -I../librtsp -I.
+-LDFLAGS=@LDFLAGS@
++CFLAGS+=@CFLAGS@ -I../libapp -I../librtsp -I.
++CXXFLAGS+=@CXXFLAGS@ -I../libapp -I../librtsp -I.
++LDFLAGS+=@LDFLAGS@
+ SYSLIBS=@SYSLIBS@
+ 
+ OBJS=rtspproxy.o proxysession.o tranhdr.o proxytran.o
+@@ -24,7 +24,7 @@ TARGET=rtspproxy
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJS) $(LIBS)
+-	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(SYSLIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(SYSLIBS)
+ 
+ clean:
+ 	rm -f rtspproxy $(OBJS) core

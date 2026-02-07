@@ -1,0 +1,8 @@
+This is a rewrite of the Blues Brothers and Blues Brothers: Jukebox
+Adventure game engines developed by Titus Interactive.  There is also
+support for Prehistorik 2.  Compared to the original DOS executables,
+the rewritten engines feature:
+
+  - Horizontal scrolling
+  - Configurable screen size
+  - Game cheats: unlimited lives and energy, no hit

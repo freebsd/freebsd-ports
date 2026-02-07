@@ -1,0 +1,8 @@
+--- export/pkgconfig/OpenColorIO.pc.in.orig	2021-12-06 23:53:07 UTC
++++ export/pkgconfig/OpenColorIO.pc.in
+@@ -7,4 +7,4 @@ Name: OpenColorIO
+ Description: A color management framework for visual effects and animation
+ Version: @OCIO_VERSION@
+ Cflags: -I${includedir}
+-Libs: -L${libdir} -lOpenColorIO
++Libs: -L${libdir} -lOpenColorIOv1

@@ -1,0 +1,11 @@
+--- Compile/SPIRV-Cross/CMakeLists.txt.orig	2024-03-06 14:26:57 UTC
++++ Compile/SPIRV-Cross/CMakeLists.txt
+@@ -475,7 +475,7 @@ if (SPIRV_CROSS_CLI)
+ 				set(PYTHONINTERP_FOUND OFF)
+ 			endif()
+ 		else()
+-			find_package(PythonInterp)
++			find_package(PythonInterp ${FREEBSD_PYTHON_VER} EXACT REQUIRED)
+ 		endif()
+ 
+ 		find_program(spirv-cross-glslang NAMES glslangValidator

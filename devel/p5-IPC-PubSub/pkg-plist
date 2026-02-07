@@ -1,0 +1,13 @@
+%%SITE_PERL%%/IPC/PubSub.pm
+%%SITE_PERL%%/IPC/PubSub/Cache.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/DBM_Deep.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI/Stash.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI/Stash/Item.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/JiftyDBI/Stash/Publisher.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/Memcached.pm
+%%SITE_PERL%%/IPC/PubSub/Cache/PlainHash.pm
+%%SITE_PERL%%/IPC/PubSub/Cacheable.pm
+%%SITE_PERL%%/IPC/PubSub/Publisher.pm
+%%SITE_PERL%%/IPC/PubSub/Subscriber.pm
+%%PERL5_MAN3%%/IPC::PubSub.3.gz

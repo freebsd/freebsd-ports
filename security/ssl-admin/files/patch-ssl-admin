@@ -1,0 +1,14 @@
+--- ssl-admin.orig	2023-08-20 13:30:11 UTC
++++ ssl-admin
+@@ -476,9 +476,9 @@ sub menu_handler {
+ 			chomp($yn = <>);
+ 		} until $yn =~ m/^[yn]$/;
+ 		if ($yn eq "n"){ 
+-			$zip_cmd = "cd $working_dir/packages/ && zip $cn.zip client.crt client.key ca.crt";
++			$zip_cmd = "cd $working_dir/packages/ && bsdtar -a -cf $cn.zip client.crt client.key ca.crt";
+ 		} else { 
+-			$zip_cmd = "cd $working_dir/packages/ && zip $cn.zip client.crt client.key ca.crt client.ovpn";
++			$zip_cmd = "cd $working_dir/packages/ && bsdtar -a -cf $cn.zip client.crt client.key ca.crt client.ovpn";
+ 		}
+ 		print "=================> Zipping File\n";
+ 		system($zip_cmd);

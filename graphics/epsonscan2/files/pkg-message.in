@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+This port supports scanners connected using a USB cable.
+
+To access a network scanner and also to access some older USB scanner
+models, you must also install the port:
+	graphics/epsonscan2-non-free-plugin
+which provides the Linux binaries needed to access the scanner.  The kernel
+Linux emulation modules and emulators/linux_base-c7 ports are also needed
+for the non-free-plugin.
+
+Please read %%PREFIX%%/lib/epsonscan2/Read_me.FreeBSD for further details
+of how to configure and use this software.
+EOM
+}
+]

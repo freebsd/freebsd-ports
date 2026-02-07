@@ -1,0 +1,2 @@
+Music::Audioscrobbler::MPD is a scrobbler for MPD. It provides routines
+to submit songs to last.fm from MPD.

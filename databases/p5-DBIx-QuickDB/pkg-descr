@@ -1,0 +1,2 @@
+DBIx::QuickDB makes it easy to spin up a temporary database server for any
+supported driver. PostgreSQL and MySQL are the initially supported drivers.

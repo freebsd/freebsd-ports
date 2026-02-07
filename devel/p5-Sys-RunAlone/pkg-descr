@@ -1,0 +1,2 @@
+Provide a simple way to make sure the script from which this module is
+loaded, is only running once on the server.

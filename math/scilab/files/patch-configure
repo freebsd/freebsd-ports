@@ -1,0 +1,51 @@
+--- configure.orig	2020-02-25 09:59:42 UTC
++++ configure
+@@ -9995,7 +9995,7 @@ if test -z "$CXX"; then
+ fi
+ 
+ case "$CXX" in
+-    g++-* | g++ | ccache*g++ | ccache*g++-* )
++    g++-* | g++ | ccache*g++ | ccache*g++-* | c++ | clang++* )
+         ## With GNU C++ Compiler
+ 
+         # enable the code coverage
+@@ -10022,7 +10022,7 @@ esac
+ #### 64 bits detection
+ IS_64_BITS_CPU=false
+ case "$host" in
+-         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd*)
++         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd* | amd64-*-freebsd* | powerpc64*-*-freebsd*)
+                 IS_64_BITS_CPU=true
+     ;;
+ esac
+@@ -10030,7 +10030,7 @@ esac
+ ##########"
+ 
+ case "$CC" in
+-     gcc-* | gcc | ccache*gcc | ccache*gcc-* )
++     gcc-* | gcc | ccache*gcc | ccache*gcc-* | cc | clang* )
+    ## With GNU Compiler
+ 
+    # enable the code coverage
+@@ -13126,7 +13126,7 @@
+              ;;
+              *)
+
+-    machine=`uname -m`
++    machine=`uname -p`
+     case "$machine" in
+         i?86)
+           machine=i386
+@@ -13142,10 +13142,10 @@
+         powerpc)
+           machine=ppc
+           ;;
+-        ppc64le)
++        powerpc64le|ppc64le)
+           machine=ppc64le
+           ;;
+-        ppc64)
++        powerpc64|ppc64)
+           machine=ppc64
+           ;;
+         armv*)

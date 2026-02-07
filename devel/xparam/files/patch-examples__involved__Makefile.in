@@ -1,0 +1,15 @@
+--- examples/involved/Makefile.in.orig	Sat Oct 26 09:45:35 2002
++++ examples/involved/Makefile.in	Sat Dec 21 14:11:44 2002
+@@ -20,10 +20,10 @@
+ 	$(CXX) -c -o $@ $<
+ 
+ sobj/circle.so : $(SLOBJECTS)
+-	libtool $(CXX) -shared $^ -lxparam -o $@
++	libtool --mode=link $(CXX) -shared $^ -lxparam -o $@
+ 
+ $(SLOBJECTS) : obj/%.lo : src/%.cpp include/circle.h include/shapes.h
+-	libtool $(CXX) -c -o $@ $<
++	libtool --mode=compile $(CXX) -c -o $@ $<
+ 
+ clean :
+ 	-rm -f $(TARGETS) $(OBJECTS) $(SOBJECTS) $(SLOBJECTS)

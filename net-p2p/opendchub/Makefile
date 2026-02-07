@@ -1,0 +1,38 @@
+PORTNAME=	opendchub
+PORTVERSION=	0.8.3
+PORTREVISION=	1
+CATEGORIES=	net-p2p
+MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Unofficial Unix version of the Direct Connect Hub software
+WWW=		https://opendchub.sourceforge.net/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		perl5 gmake localbase ssl
+GNU_CONFIGURE=	yes
+# Fix build with clang 11
+CFLAGS+=	-fcommon
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	README configfiles general scriptdoc
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
+pre-install:
+	@${CHMOD} a+rx ${WRKSRC}/install-sh
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/* ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

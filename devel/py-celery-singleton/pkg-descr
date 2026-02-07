@@ -1,0 +1,22 @@
+celery-singleton uses the JSON representation of a task's delay() or
+apply_async() arguments to generate a unique lock and stores it in redis. By
+default it uses the redis server of the celery result backend. If you use a
+different/no result backend or want to use a different redis server for
+celery-singleton, refer the configuration section for how to customize the
+redis.
+
+import time
+from celery_singleton import Singleton
+from somewhere import celery_app
+
+@celery_app.task(base=Singleton)
+def do_stuff(*args, **kwargs):
+	time.sleep(4)
+	return 'I just woke up'
+
+# run the task as normal
+async_result = do_stuff.delay(1, 2, 3, a='b')
+async_result2 = do_stuff.delay(1, 2, 3, a='b')
+
+# These are the same, task is only queued once
+assert async_result == async_result2

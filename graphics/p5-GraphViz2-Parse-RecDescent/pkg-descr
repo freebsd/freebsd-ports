@@ -1,0 +1,2 @@
+GraphViz2::Parse::RecDescent takes a Parse::RecDescent grammar and converts it
+into a graph.

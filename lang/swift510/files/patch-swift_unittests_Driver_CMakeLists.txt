@@ -1,0 +1,13 @@
+--- swift/unittests/Driver/CMakeLists.txt.orig	2024-06-06 04:26:30 UTC
++++ swift/unittests/Driver/CMakeLists.txt
+@@ -7,4 +7,9 @@ target_link_libraries(SwiftDriverTests PRIVATE
+ target_link_libraries(SwiftDriverTests PRIVATE
+    swiftAST
+    swiftClangImporter
+-   swiftDriver)
++   swiftDriver
++   swiftFrontend
++   swiftSIL
++   swiftSILGen
++   swiftSILOptimizer
++)

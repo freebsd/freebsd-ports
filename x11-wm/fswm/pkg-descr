@@ -1,0 +1,2 @@
+Full screen window manager in libxcb. It is lightweight, as it uses about 200
+lines of code.

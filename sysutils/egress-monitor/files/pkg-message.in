@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Please note that egress-monitor will not pick up changes in net.fibs sysctl, so
+if you change it, you have to "service egress-monitor restart".
+EOM
+}
+]

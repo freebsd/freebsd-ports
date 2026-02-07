@@ -1,0 +1,12 @@
+--- Makefile.orig	2016-04-16 07:45:30 UTC
++++ Makefile
+@@ -6,7 +6,8 @@ SRCS=	getdtablecount.c \
+ 	imsg-buffer.c \
+ 	imsg.c \
+ 	ohash.c
+-INTERNALLIB=
++INCS=	imsg.h ohash.h
++MAN=	imsg_init.3 ohash_init.3 ohash_interval.3
+ 
+ CFLAGS+= -I${.CURDIR}
+ 

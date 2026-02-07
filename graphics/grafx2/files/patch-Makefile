@@ -1,0 +1,12 @@
+--- Makefile.orig	2024-04-29 15:47:02 UTC
++++ Makefile
+@@ -1250,7 +1250,8 @@ install : $(BIN)
+ 	test -d $(DESTDIR)$(datadir)/grafx2/fonts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/fonts
+ 	test -d $(DESTDIR)$(datadir)/grafx2/skins || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/skins
+ 	test -d $(DESTDIR)$(datadir)/grafx2/scripts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts
+-	test -d $(DESTDIR)$(datadir)/grafx2/scripts/libs || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/libs
++	# this is an empty directory on FreeBSD, we don't need it
++	#test -d $(DESTDIR)$(datadir)/grafx2/scripts/libs || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/libs
+ 	test -d $(DESTDIR)$(datadir)/applications || $(MKDIR) $(DESTDIR)$(datadir)/applications
+ 	test -d $(DESTDIR)$(datadir)/metainfo || $(MKDIR) $(DESTDIR)$(datadir)/metainfo
+ 	test -d $(DESTDIR)$(pixmapdir) || $(MKDIR) $(DESTDIR)$(pixmapdir)

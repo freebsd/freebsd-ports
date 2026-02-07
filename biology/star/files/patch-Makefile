@@ -1,0 +1,62 @@
+--- Makefile.orig	2023-08-15 19:21:58 UTC
++++ Makefile
+@@ -11,14 +11,19 @@ CXXFLAGSextra ?=
+ # user may define the compiler
+ CXX ?= g++
+ 
++# user may set to '' and sed "htslib/htslib/*.h" to <htslib/*.h>
++# if they don't want the bundled htslib
++HTSLIB ?= htslib
++
+ # pre-defined flags
+-LDFLAGS_shared := -pthread -Lhtslib -Bstatic -lhts -Bdynamic -lz
+-LDFLAGS_static := -static -static-libgcc -pthread -Lhtslib -lhts -lz
++LDFLAGS_shared := -pthread -lhts -lz
++LDFLAGS_static := -static -pthread -lhts -lz
+ LDFLAGS_Mac :=-pthread -lz htslib/libhts.a
+ LDFLAGS_Mac_static :=-pthread -lz -static-libgcc htslib/libhts.a
+ LDFLAGS_gdb := $(LDFLAGS_shared)
+ 
+-DATE_FMT = --iso-8601=seconds
++# --iso-8601 is not portable
++DATE_FMT = -Iseconds
+ ifdef SOURCE_DATE_EPOCH
+     BUILD_DATE ?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u "$(DATE_FMT)")
+ else
+@@ -41,12 +46,12 @@ GIT_BRANCH_COMMIT_DIFF := -D'GIT_BRANCH_COMMIT_DIFF="$
+ 
+ # Defaults, can be overridden by make arguments or environment
+ CXXFLAGS ?= -pipe -Wall -Wextra
+-CFLAGS ?= -pipe -Wall -Wextra -O3
++CFLAGS ?= -pipe -Wall -Wextra
+ CXXFLAGS_SIMD ?= -mavx2
+ 
+ # Unconditionally set essential flags and optimization options
+ CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE) $(GIT_BRANCH_COMMIT_DIFF)
+-CXXFLAGS_main := -O3 $(CXXFLAGS_common)
++CXXFLAGS_main := $(CXXFLAGS_common)
+ CXXFLAGS_gdb := -O0 -g3 $(CXXFLAGS_common)
+ 
+ ##########################################################################################################
+@@ -114,7 +119,7 @@ clean:
+ 
+ .PHONY: CLEAN
+ CLEAN: clean
+-	$(MAKE) -C htslib clean
++	$(MAKE) -C $(HTSLIB) clean
+ 
+ 
+ .PHONY: clean_solo
+@@ -131,10 +136,10 @@ ifneq ($(MAKECMDGOALS),CLEAN)
+ ifneq ($(MAKECMDGOALS),clean_solo)
+ ifneq ($(MAKECMDGOALS),STARforMac)
+ ifneq ($(MAKECMDGOALS),STARforMacGDB)
+-Depend.list: $(SOURCES) parametersDefault.xxd htslib
++Depend.list: $(SOURCES) parametersDefault.xxd $(HTSLIB)
+ 	echo $(SOURCES)
+ 	'rm' -f ./Depend.list
+-	$(CXX) $(CXXFLAGS_common) -MM $^ >> Depend.list
++	$(CXX) $(CXXFLAGS) $(CXXFLAGS_common) -MM $^ >> Depend.list
+ include Depend.list
+ endif
+ endif

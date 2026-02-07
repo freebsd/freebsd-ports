@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/puppetlabs/forge-ruby/commit/d2d3d097aa889b59a857cd7ff9d6db68cbdfc460
+
+--- puppet_forge.gemspec.orig	2026-01-13 03:25:14 UTC
++++ puppet_forge.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<base64>.freeze, [">= 0.2.0".freeze, "< 0.4.0".freeze])
+   s.add_runtime_dependency(%q<faraday>.freeze, ["~> 2.0".freeze])
+-  s.add_runtime_dependency(%q<faraday-follow_redirects>.freeze, [">= 0.3".freeze, "< 0.5".freeze])
++  s.add_runtime_dependency(%q<faraday-follow_redirects>.freeze, [">= 0.3".freeze, "< 0.6".freeze])
+   s.add_runtime_dependency(%q<minitar>.freeze, ["~> 1.0".freeze, ">= 1.0.2".freeze])
+   s.add_runtime_dependency(%q<semantic_puppet>.freeze, ["~> 1.0".freeze])
+   s.add_development_dependency(%q<cane>.freeze, [">= 0".freeze])

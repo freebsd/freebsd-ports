@@ -1,0 +1,7 @@
+Shaperglot is a library and a utility for testing a font's language support. You
+give it a font, and it tells you what languages are supported and to what
+degree.
+
+Most other libraries to check for language support (for example, Rosetta's
+wonderful hyperglot library) do this by looking at the Unicode codepoints that
+the font supports. Shaperglot takes a different approach.

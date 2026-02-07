@@ -1,0 +1,27 @@
+@sample %%ETCDIR%%/config.yaml.sample
+@sample %%ETCDIR%%/pf.conf.kleene.sample
+libexec/kleened/bin/kleened
+libexec/kleened/bin/kleened_pty
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.Collectable.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.DBConnection.Query.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.Enumerable.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.IEx.Info.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.Inspect.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.Jason.Encoder.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.List.Chars.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.OpenApiSpex.Extendable.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.Plug.Exception.beam
+libexec/kleened/releases/%%DISTVERSION%%/consolidated/Elixir.String.Chars.beam
+libexec/kleened/releases/%%DISTVERSION%%/elixir
+libexec/kleened/releases/%%DISTVERSION%%/env.sh
+libexec/kleened/releases/%%DISTVERSION%%/iex
+libexec/kleened/releases/%%DISTVERSION%%/kleened.rel
+libexec/kleened/releases/%%DISTVERSION%%/remote.vm.args
+libexec/kleened/releases/%%DISTVERSION%%/start.boot
+libexec/kleened/releases/%%DISTVERSION%%/start.script
+libexec/kleened/releases/%%DISTVERSION%%/start_clean.boot
+libexec/kleened/releases/%%DISTVERSION%%/start_clean.script
+libexec/kleened/releases/%%DISTVERSION%%/sys.config
+libexec/kleened/releases/%%DISTVERSION%%/vm.args
+libexec/kleened/releases/COOKIE
+libexec/kleened/releases/start_erl.data

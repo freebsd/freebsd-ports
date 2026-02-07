@@ -1,0 +1,6 @@
+include/wauxlib.h
+include/wavelib.h
+lib/cmake/wavelib/wavelib-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/wavelib/wavelib-config.cmake
+lib/libwauxlib.so
+lib/libwavelib.so

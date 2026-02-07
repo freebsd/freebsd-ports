@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-11-30 00:43:34 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ authors = [{ name = "Tyler Barrus", email = "barrust@g
+ name = "pyprobables"
+ dynamic = ["version"]
+ authors = [{ name = "Tyler Barrus", email = "barrust@gmail.com" }]
+-license = "MIT"
++license = { text = "MIT" }
+ description = "Probabilistic data structures in python"
+ keywords = [
+     "python",
+@@ -158,5 +158,5 @@ docstring-code-line-length = "dynamic"
+ docstring-code-line-length = "dynamic"
+ 
+ [build-system]
+-requires = ["setuptools>=77.0.0", "wheel"]
++requires = ["setuptools>=61.2.0", "wheel"]
+ build-backend = "setuptools.build_meta"

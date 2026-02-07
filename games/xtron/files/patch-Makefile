@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun Apr 16 22:26:00 1995
++++ Makefile	Fri Mar 31 22:59:19 2000
+@@ -18,10 +18,11 @@
+ #
+ #  Last Modified: 16/4/95
+ #
+-CC=		gcc
+-CFLAGS=		-O4 -Wall
+-INCLUDES=	-I/usr/X386/include/X11 -I/usr/include
+-LIBS=		-L/usr/X386/lib
++CC?=		gcc
++CFLAGS?=		-O4 -Wall
++DEFINES=	-DPREFIX=\"${PREFIX}\"
++INCLUDES=	-I${LOCALBASE}/include -I${LOCALBASE}/include/X11
++LIBS=		-L${LOCALBASE}/lib
+ LDLIBS=		-lXpm -lX11
+ DEPEND=		makedepend
+ OBJS=		wintype.o xtron.o main.o xpm2pixmap.o resource.o

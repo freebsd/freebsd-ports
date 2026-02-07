@@ -1,0 +1,30 @@
+--- tests/CMakeLists.txt.orig	2019-10-27 18:01:06 UTC
++++ tests/CMakeLists.txt
+@@ -3,9 +3,9 @@ if (NOT WITH_TEST)
+     return()
+ endif()
+ 
+-add_subdirectory(googletest EXCLUDE_FROM_ALL)
+-add_subdirectory(rapidcheck EXCLUDE_FROM_ALL)
+-add_subdirectory(rapidcheck/extras/gtest EXCLUDE_FROM_ALL)
++#add_subdirectory(googletest EXCLUDE_FROM_ALL)
++#add_subdirectory(rapidcheck EXCLUDE_FROM_ALL)
++#add_subdirectory(rapidcheck/extras/gtest EXCLUDE_FROM_ALL)
+ include(../cmake/settings.cmake)
+ include(../cmake/profiling.cmake)
+ 
+@@ -13,10 +13,10 @@ include_directories(
+   ${PROJECT_SOURCE_DIR}/mkl-dnn/include
+   ${PROJECT_SOURCE_DIR}/mkl-dnn/tests/gtests
+   in
+-  googletest/googletest/include
+-  googletest/googlemock/include
+-  rapidcheck/include
+-  rapidcheck/extras/gtest/include
++  #googletest/googletest/include
++  #googletest/googlemock/include
++  #rapidcheck/include
++  #rapidcheck/extras/gtest/include
+   ${vtune_include}
+   )
+ 

@@ -1,0 +1,11 @@
+prefix=%%LOCALBASE%%
+exec_prefix=\${prefix}
+libdir=\${exec_prefix}/${LIBDIR}
+includedir=\${prefix}/include/tensorflow
+
+Name: TensorFlow
+Version: %%VERSION%%
+Description: Library for computation using data flow graphs for scalable machine learning
+Requires:
+Libs: -L\${libdir} -ltensorflow_cc -ltensorflow_framework
+Cflags: -I\${includedir}

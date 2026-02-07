@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Yahoo/Search.pm
+%%SITE_PERL%%/Yahoo/Search/Request.pm
+%%SITE_PERL%%/Yahoo/Search/Response.pm
+%%SITE_PERL%%/Yahoo/Search/Result.pm
+%%SITE_PERL%%/Yahoo/Search/XML.pm
+%%PERL5_MAN3%%/Yahoo::Search.3.gz
+%%PERL5_MAN3%%/Yahoo::Search::Request.3.gz
+%%PERL5_MAN3%%/Yahoo::Search::Response.3.gz
+%%PERL5_MAN3%%/Yahoo::Search::Result.3.gz
+%%PERL5_MAN3%%/Yahoo::Search::XML.3.gz

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: dictd
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf[.local] to enable dictd:
+#
+# dictd_enable="YES"
+#
+
+dictd_enable=${dictd_enable:-"NO"}
+
+. /etc/rc.subr
+
+name=dictd
+rcvar=dictd_enable
+command=%%PREFIX%%/sbin/dictd
+
+load_rc_config $name
+run_rc_command "$1"

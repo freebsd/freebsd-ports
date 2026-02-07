@@ -1,0 +1,2 @@
+A prometheus exporter for PHP-FPM. The exporter connects directly to PHP-FPM
+over FastCGI and exports the metrics via HTTP.

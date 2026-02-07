@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2022-12-20 18:30:03 UTC
++++ CMakeLists.txt
+@@ -197,7 +197,6 @@ include(cmake/Coverage.cmake)
+ include(cmake/CompilerWarnings.cmake)
+ include(cmake/Coverage.cmake)
+ 
+-add_subdirectory(libmd5)
+ add_subdirectory(liblodepng)
+ add_subdirectory(libmscgen)
+ add_subdirectory(libversion)

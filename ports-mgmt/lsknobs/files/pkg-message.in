@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+Typical use :
+
+  1) Choose a port
+# cd /usr/ports/editors/vim
+
+  2) Configure it, with its dependencies
+# lsknobs
+# make config-recursive
+  (repeat these two steps until you agree with what is shown)
+
+  3) Install everything
+# make install clean
+EOM
+}
+]

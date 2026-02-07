@@ -1,0 +1,4 @@
+Remote Arpwatch collects ARP tables from  remote devices using SNMP and
+checks them  for changes. It is very useful for detecting  problems and
+malicious users in networks  with routers that don't support static
+ARP tables.

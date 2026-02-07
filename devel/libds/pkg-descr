@@ -1,0 +1,14 @@
+LibDS is a small but powerful and easy to use library containing a few
+very useful data structures. Currently, the following data structures are
+supported:
+  - a balanced binary tree (an AVL tree);
+  - a binary HEAP;
+  - a QUEUE;
+  - a HASH table;
+  - a SET and a BAG;
+  - a variable length array that can grows dynamically as new elements are
+    added or deleted (PARRAY).
+  - a STACK;
+
+LibDS has been designed to be very easy to use, without sacrificing either
+flexibility or speed. The API is small, and clean.

@@ -1,0 +1,5 @@
+In data compression, BCJ, short for Branch-Call-Jump, refers
+to a technique that improves the compression of machine code of
+executable binaries by replacing relative branch addresses with
+absolute ones. This allows a LZMA compressor to identify duplicate
+targets and archive higher compression rate.

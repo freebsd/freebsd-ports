@@ -1,0 +1,31 @@
+PORTNAME=	2048
+PORTVERSION=	0.9.1
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+CATEGORIES=	games
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Command line version of 2048
+WWW=		https://github.com/Tiehuis/2048-cli
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Tiehuis
+GH_PROJECT=	2048-cli
+
+USES=		ncurses gmake
+ALL_TARGET=	curses
+PLIST_FILES=	bin/2048 share/man/man1/2048.1.gz
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/2048 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/2048.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

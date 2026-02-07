@@ -1,0 +1,13 @@
+<configuration name="amd.conf" description="mod_amd Configuration">
+  <settings>
+    <param name="silence_threshold" value="256"/>
+    <param name="maximum_word_length" value="5000"/>
+    <param name="maximum_number_of_words" value="3"/>
+    <param name="between_words_silence" value="50"/>
+    <param name="min_word_length" value="100"/>
+    <param name="total_analysis_time" value="5000"/>
+    <param name="after_greeting_silence" value="800"/>
+    <param name="greeting" value="1500"/>
+    <param name="initial_silence" value="2500"/>
+  </settings>
+</configuration>

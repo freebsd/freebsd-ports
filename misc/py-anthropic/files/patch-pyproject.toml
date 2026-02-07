@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-24 08:31:41 UTC
++++ pyproject.toml
+@@ -65,7 +65,7 @@ dev-dependencies = [
+ ]
+ 
+ [build-system]
+-requires = ["hatchling==1.26.3", "hatch-fancy-pypi-readme"]
++requires = ["hatchling>=1.26.3", "hatch-fancy-pypi-readme"]
+ build-backend = "hatchling.build"
+ 
+ [tool.hatch.build]

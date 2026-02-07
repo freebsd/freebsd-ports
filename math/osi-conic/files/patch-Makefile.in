@@ -1,0 +1,13 @@
+- workaround for https://github.com/aykutbulut/OSI-CONIC/issues/2
+
+--- Makefile.in.orig	2021-05-12 16:40:29 UTC
++++ Makefile.in
+@@ -768,7 +768,7 @@ uninstall-info: uninstall-info-recursive
+ 
+ install-data-hook:
+ 	@$(mkdir_p) "$(addlibsdir)"
+-@COIN_HAS_PKGCONFIG_TRUE@	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@ \
++@COIN_HAS_PKGCONFIG_TRUE@	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@:$(FREEBSD_STAGEDIR)$(PREFIX)/lib/pkgconfig \
+ @COIN_HAS_PKGCONFIG_TRUE@	$(PKG_CONFIG) --libs osiconic > $(addlibsdir)/osiconic_addlibs.txt
+ @COIN_CXX_IS_CL_TRUE@@COIN_HAS_PKGCONFIG_FALSE@	echo "-libpath:`$(CYGPATH_W) @abs_lib_dir@` libOsiConic.lib @OSICONICLIB_LIBS_INSTALLED@" > $(addlibsdir)/osiconic_addlibs.txt
+ @COIN_CXX_IS_CL_FALSE@@COIN_HAS_PKGCONFIG_FALSE@	echo -L@abs_lib_dir@ -lOsiConic @OSICONICLIB_LIBS_INSTALLED@ > $(addlibsdir)/osiconic_addlibs.txt

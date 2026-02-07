@@ -1,0 +1,9 @@
+An open-source distributed storage service you can
+self-host to fullfill many needs.
+
+Goals:
+
+ - Self-contained
+ - Fast to deploy, safe to operate
+ - Deploy everywhere on every machine
+ - Highly resilient

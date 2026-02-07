@@ -1,0 +1,3 @@
+Edinburgh-style Prolog compiler including modules, autoload,
+libraries, Garbage-collector, stack-expandor, C-interface,
+GNU-readline and GNU-Emacs interface, very fast compiler.

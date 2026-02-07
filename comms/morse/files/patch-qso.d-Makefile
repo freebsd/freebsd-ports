@@ -1,0 +1,17 @@
+--- qso.d/Makefile.orig	2024-02-14 19:40:27 UTC
++++ qso.d/Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS  = -O3
++#CFLAGS  = -O3
+ 
+ OBJECTS = QSO.o put_form.o make_fre.o grammar.o util.o init_str.o
+ INCLUDES = antenna.i callsign.i city.i cityh.i heights.i jobs.i misc.i \
+@@ -7,7 +7,7 @@ QSO:	$(OBJECTS)
+ all:	QSO
+ 
+ QSO:	$(OBJECTS)
+-	$(CC) -o $@ $(OBJECTS)
++	$(CC) $(CFLAGS) -o $@ $(LDFLAGS) $(OBJECTS)
+ 
+ init_str.o:	$(INCLUDES)
+ 

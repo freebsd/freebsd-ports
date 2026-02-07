@@ -1,0 +1,10 @@
+share/cmake-%%CMAKE_VERSION%%/Modules/CommonBuildFlags.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/DpkgBuildFlags.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/FindGLIB-GENMARSHAL.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/FindGLIB-MKENUMS.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/FindKurentoHelpers.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/GLibHelpers.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/GenericFind.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/KurentoGitHelpers.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/TestHelpers.cmake
+share/cmake-%%CMAKE_VERSION%%/Modules/VersionHelpers.cmake

@@ -1,0 +1,7 @@
+bin/argon2
+include/argon2.h
+lib/libargon2.a
+lib/libargon2.so
+lib/libargon2.so.0
+libdata/pkgconfig/libargon2.pc
+share/man/man1/argon2.1.gz

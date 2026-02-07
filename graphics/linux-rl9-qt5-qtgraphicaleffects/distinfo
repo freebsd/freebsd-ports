@@ -1,0 +1,9 @@
+TIMESTAMP = 1731449780
+SHA256 (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.aarch64.rpm) = 4d48dc0b8ca4c542829048095800764f4c241495cd5dc54bf4fc36725aaa94a9
+SIZE (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.aarch64.rpm) = 112156
+SHA256 (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.i686.rpm) = 223c065ebc4fd40a600e3efbb7e162cb2b6b8c398dfdaab1663464da5abf240d
+SIZE (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.i686.rpm) = 114017
+SHA256 (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.x86_64.rpm) = eb2463ec0994dacba8ae35d3eab263b65a302b71ed1e4e5a9cffc5f3f61502d7
+SIZE (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.x86_64.rpm) = 112447
+SHA256 (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.src.rpm) = 2cd95743097421a57abd46a9acd5f34e57d70a214ed9859ef447dabda0205eb7
+SIZE (rocky/q/qt5-qtgraphicaleffects-5.15.9-1.el9.src.rpm) = 14058707

@@ -1,0 +1,5 @@
+etc/fonts/conf.avail/20-unhint-myricam.conf
+etc/fonts/conf.avail/62-fonts-myricam.conf
+etc/fonts/conf.d/20-unhint-myricam.conf
+etc/fonts/conf.d/62-fonts-myricam.conf
+%%FONTSDIR%%/MyricaM.TTC

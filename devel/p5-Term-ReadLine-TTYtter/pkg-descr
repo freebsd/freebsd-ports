@@ -1,0 +1,5 @@
+ReadLine::TTYtter is a fork of the Term::ReadLine::Perl module, allowing
+to edit a command line.
+
+This module have UTF-8 support, let erase or repaint the prompt and
+to hook a process to further line control.

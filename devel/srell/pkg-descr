@@ -1,0 +1,19 @@
+SRELL (std::regex-like library) is a Unicode-aware regular expression template
+library for C++.
+
+* Header-only and the same class design as std::regex
+
+SRELL is a header-only template library and does not need any
+installation. SRELL has an ECMAScript (JavaScript) compatible regular expression
+engine wrapped into the same class design as std::regex. As APIs are compatible,
+SRELL can be used in the same way as std::regex (or boost::regex on which
+std::regex is based).
+
+* Unicode-specific implementation
+
+SRELL has native support for Unicode.
+
+* Consideration for ignore-case (icase) search
+
+SRELL has been tuned up not to slow down remarkably when case-insensitive
+(icase) search is performed.

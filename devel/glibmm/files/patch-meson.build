@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-08-06 18:37:14 UTC
++++ meson.build
+@@ -103,7 +103,7 @@ install_datadir = get_option('datadir')
+ install_includedir = get_option('includedir')
+ install_libdir = get_option('libdir')
+ install_datadir = get_option('datadir')
+-install_pkgconfigdir = install_libdir / 'pkgconfig'
++install_pkgconfigdir = install_prefix / 'libdata' / 'pkgconfig'
+ 
+ # Dependencies. <pkg> = glib and gio
+ # <pkg>mm_build_dep: Dependencies when building the <pkg>mm library.

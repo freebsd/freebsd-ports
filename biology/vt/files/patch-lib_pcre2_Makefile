@@ -1,0 +1,11 @@
+--- lib/pcre2/Makefile.orig	2020-06-04 16:13:50 UTC
++++ lib/pcre2/Makefile
+@@ -28,7 +28,7 @@ TOOLSRC = $(SOURCES:=.c)
+ TOOLOBJ = $(TOOLSRC:.c=.o)
+ 
+ .c.o :
+-	gcc -g -O3 -DHAVE_CONFIG_H -DPCRE2_CODE_UNIT_WIDTH=8 -I. -o $@ -c $*.c
++	${CC} ${CFLAGS} -DHAVE_CONFIG_H -DPCRE2_CODE_UNIT_WIDTH=8 -I. -o $@ -c $*.c
+ 
+ libpcre2.a: $(TOOLOBJ) 
+ 	@-rm -f $@

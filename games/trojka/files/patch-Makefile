@@ -1,0 +1,43 @@
+--- Makefile.orig	1995-10-20 21:17:43 UTC
++++ Makefile
+@@ -6,21 +6,31 @@
+ #
+ 
+ 
+-
++SCOREDIR=/var/games
++SCOREFILE=$(SCOREDIR)/trojka.scores
++CFLAGS+= -DSCOREFILE=\"$(SCOREFILE)\"
+ OBJS= trojka.o screen.o scan.o hiscore.o system.o
+ 
++all:	freebsd	trojka.6.out
++
+ make:
+ 	@echo please specify: hpux, xenix68, linux or sunos
+ 
+ install:
+-	cp trojka /usr/games
++	${BSD_INSTALL_PROGRAM} trojka $(DESTDIR)$(PREFIX)/bin
++	${BSD_INSTALL_MAN} trojka.6.out $(DESTDIR)$(PREFIX)/share/man/man6/trojka.6
++	mkdir -p $(DESTDIR)$(SCOREDIR)
++	touch $(DESTDIR)$(SCOREFILE).sample
++
++trojka.6.out:	trojka.6
++	sed "s|%%PREFIX%%|$(PREFIX)|" trojka.6 > trojka.6.out
+ 
+ clean:
+ 	rm -f $(PROGS) *.o core a.out trojka.scores
+ 
+ trojka: $(OBJS)
+ #	$(CC) $(CFLAGS) $(OBJS) -lcurses -ltermlib -o trojka
+-	$(CC) $(CFLAGS) $(OBJS) -lcurses -o trojka
++	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -lncurses -o trojka
+ 
+ 
+ # patch for HP-UX, need 'codelibs'
+@@ -53,3 +63,5 @@ hpux:
+ 
+ linux:
+ 	make trojka "CFLAGS=-DLINUX"
++
++freebsd: trojka	

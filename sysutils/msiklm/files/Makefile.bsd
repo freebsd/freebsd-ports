@@ -1,0 +1,8 @@
+BINDIR=		${PREFIX}/bin
+PROG=		msiklm
+SRCS=		src/main.c src/msiklm.c 
+CFLAGS+=	-Wall -W -D_REENTRANT
+LDADD=		-lhidapi
+MK_MAN=		no
+
+.include <bsd.prog.mk>

@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/mojo/public/js/mojo_bindings_resources.grd.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/mojo/public/js/mojo_bindings_resources.grd
+@@ -59,7 +59,7 @@
+           file="${root_gen_dir}/mojo/public/mojom/base/text_direction.mojom-lite.js"
+           use_base_dir="false"
+           type="BINDATA" />
+-      <if expr="is_win or is_macosx or is_linux or is_android">
++      <if expr="is_win or is_macosx or is_posix or is_android">
+         <include name="IDR_MOJO_TIME_MOJOM_HTML"
+             file="${root_gen_dir}/mojo/public/mojom/base/time.mojom.html"
+             use_base_dir="false"

@@ -1,0 +1,2 @@
+Astroquery is an astropy affiliated package that contains a collection of tools
+to access online Astronomical data. Each web service has its own sub-package.

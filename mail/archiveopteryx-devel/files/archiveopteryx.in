@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# PROVIDE: archiveopteryx
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# archiveopteryx_enable (bool):	Set to NO by default.
+#	Set it to YES to enable archiveopteryx.
+#
+
+. /etc/rc.subr
+
+name=archiveopteryx
+rcvar=archiveopteryx_enable
+
+load_rc_config $name
+
+archiveopteryx_enable=${archiveopteryx_enable:-"NO"}
+pidfile=/var/run/${name}.pid
+config_file=%%PREFIX%%/etc/archiveopteryx/archiveopteryx.conf
+required_files=$config_file
+
+command=%%PREFIX%%/bin/aox
+extra_commands=status
+status_cmd="${command} show status"
+start_cmd=do_start
+start_precmd=do_prestart
+stop_cmd=do_stop
+restart_cmd=do_restart
+
+do_prestart()
+{
+	if [ ! -d /var/db/aox/jail ] ; then
+		install -d -o root -g wheel -m 001 /var/db/aox/jail
+	fi
+
+	for i in /var/run/aox /var/db/aox/messages /var/db/aox/jail/var/run /var/db/aox/jail/messages ; do
+		if [ ! -d ${i} ] ; then
+			install -d -o aox -g aox ${i} ;
+		fi
+	done
+}
+
+do_start()
+{
+    echo -n "Starting Archiveopteryx: "
+    ${command} start
+    echo "done."
+}
+
+do_stop()
+{
+    echo -n "Stopping Archiveopteryx: "
+    ${command} stop
+    echo "done."
+}
+
+do_restart()
+{
+    echo -n "Restarting Archiveopteryx: "
+    ${command} restart
+    echo "done."
+}
+
+run_rc_command "$1"

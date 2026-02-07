@@ -1,0 +1,6 @@
+Provides UTF-8 conversion for perl versions from 5.00 and up. It
+was mainly written for use with perl 5.00 to 5.6.0 because those
+perl versions do not support Unicode::MapUTF8 or Encode.
+
+Unicode::UTF8simple is written in plain perl (no C code) and will
+work with any Perl 5 version. It is just slightly slower than Encode.

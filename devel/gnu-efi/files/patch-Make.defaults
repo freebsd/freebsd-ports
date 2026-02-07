@@ -1,0 +1,12 @@
+--- Make.defaults.orig	2024-03-22 13:38:35 UTC
++++ Make.defaults
+@@ -64,6 +64,9 @@ INSTALL	 := install
+ INCLUDEDIR   := $(PREFIX)/include
+ INSTALL	 := install
+ 
++LOCALBASE    := /usr/local
++CROSS_COMPILE:= $(LOCALBASE)/bin/
++
+ # Compilation tools
+ HOSTCC       := $(prefix)gcc
+ CC           := $(prefix)$(CROSS_COMPILE)gcc

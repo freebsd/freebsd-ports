@@ -1,0 +1,8 @@
+Sqitch is a database change management application. What makes it
+different from your typical migration-style approaches? A few things:
+
+* No opinions
+* Native scripting
+* Dependency resolution
+* Deployment integrity
+* Iterative development

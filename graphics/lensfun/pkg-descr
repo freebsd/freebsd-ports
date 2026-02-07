@@ -1,0 +1,16 @@
+The goal of the lensfun library is to provide an open source database of
+photographic lenses and their characteristics.  In the past there was an
+effort in this direction (see http://www.epaperpress.com/ptlens/), but then
+author decided to take the commercial route and the database froze at the
+last public stage.  This database was used as the basement on which lensfun
+database grew, thanks to PTLens author which gave his permission for this,
+while the code was totally rewritten from scratch (and the database was
+converted to a totally new, XML-based format).
+
+The lensfun library not only provides a way to read the lens database and
+search for specific things in it, but also offers a set of algorithms for
+correcting images based on detailed knowledge of lens properties and
+calibration data.  Right now lensfun is designed to correct distortion,
+transversal (also known as lateral) chromatic aberrations, vignetting, and
+colour contribution of the lens (e.g. when sometimes people says one lens
+gives "yellowish" images and another, say, "bluish").

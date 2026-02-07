@@ -1,0 +1,4 @@
+%%SITE_PERL%%/SVN/Notify/Snapshot.pm
+%%SITE_PERL%%/SVN/Notify/Snapshot/ConfigData.pm
+%%PERL5_MAN3%%/SVN::Notify::Snapshot.3.gz
+%%PERL5_MAN3%%/SVN::Notify::Snapshot::ConfigData.3.gz

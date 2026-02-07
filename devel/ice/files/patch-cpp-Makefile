@@ -1,0 +1,13 @@
+--- cpp/Makefile.orig	2019-08-12 19:54:18 UTC
++++ cpp/Makefile
+@@ -13,8 +13,8 @@ include $(top_srcdir)/config/Make.rules
+ 
+ SUBDIRS		= config src include
+ 
+-ifneq ($(MAKECMDGOALS),install)
+-    SUBDIRS		:= $(SUBDIRS) test
++ifeq ($(NOTESTS),)
++	SUBDIRS		:= $(SUBDIRS) test
+ endif
+ 
+ ifeq ($(NOTEST),yes)

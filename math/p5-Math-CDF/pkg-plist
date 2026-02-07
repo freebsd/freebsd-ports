@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Math/CDF.pm
+%%SITE_ARCH%%/auto/Math/CDF/CDF.so
+%%SITE_ARCH%%/auto/Math/CDF/autosplit.ix
+%%PERL5_MAN3%%/Math::CDF.3.gz

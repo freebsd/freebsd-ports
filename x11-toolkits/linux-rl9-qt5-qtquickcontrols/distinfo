@@ -1,0 +1,17 @@
+TIMESTAMP = 1731444944
+SHA256 (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.aarch64.rpm) = 9f7b039c78b6992139d9680dc0434ff1bfa73d8553cd26f1b1e2ab244269527c
+SIZE (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.aarch64.rpm) = 1047882
+SHA256 (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.i686.rpm) = a442c93d79b0a6726b1e284ee051060f92d775e30fe034e9e9b504265386f4ae
+SIZE (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.i686.rpm) = 1063302
+SHA256 (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.x86_64.rpm) = 58106cb40c598574d597a85b0280ada8d35fcfe7831d4d55529f7fd70382643f
+SIZE (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.x86_64.rpm) = 1042927
+SHA256 (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.aarch64.rpm) = c9dd28a0e368f6705b94b4c4b5cd0716127d1516ca450181c70606bac1af3b4d
+SIZE (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.aarch64.rpm) = 1704085
+SHA256 (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.i686.rpm) = e0ab50fd1242bf87ba0a26c080704c8715c28d6c95ff8fcb81a1fb6384c732b0
+SIZE (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.i686.rpm) = 1771679
+SHA256 (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.x86_64.rpm) = 1f31aa103d8fc692ced0392dcdc1a94e66b29e74f4b7de31564261a8ea3b6077
+SIZE (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.x86_64.rpm) = 1707585
+SHA256 (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.src.rpm) = f4f0a7ddb6273519d045d465a935c34494abd6cf81a77452a8692f7484fd5f9d
+SIZE (rocky/q/qt5-qtquickcontrols-5.15.9-1.el9.src.rpm) = 5995664
+SHA256 (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.src.rpm) = e64fd7e0271a4f91ee26868276d282112d2495a13c72330bc8c22b902306220b
+SIZE (rocky/q/qt5-qtquickcontrols2-5.15.9-1.el9.src.rpm) = 8314122

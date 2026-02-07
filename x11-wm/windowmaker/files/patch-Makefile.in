@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-08-13 06:26:57 UTC
++++ Makefile.in
+@@ -389,7 +389,7 @@ ACLOCAL_AMFLAGS = -I m4
+ 
+ # Improve coverage in 'make distcheck' by checking that translations work
+ AM_DISTCHECK_CONFIGURE_FLAGS = --enable-silent-rules LINGUAS='*'
+-SUBDIRS = wrlib WINGs src util po WindowMaker wmlib WPrefs.app doc
++SUBDIRS = WINGs src util po WindowMaker wmlib WPrefs.app doc
+ DIST_SUBDIRS = $(SUBDIRS) test
+ EXTRA_DIST = TODO BUGS BUGFORM FAQ INSTALL \
+ 	INSTALL-WMAKER README.i18n README.definable-cursor \

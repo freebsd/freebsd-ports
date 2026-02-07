@@ -1,0 +1,13 @@
+--- src/lib/fte/cpitf.c.orig	Tue Mar 30 16:55:42 1993
++++ src/lib/fte/cpitf.c	Thu Jul 17 00:47:50 2003
+@@ -212,7 +212,9 @@
+ 		cp_interactive = false;
+ 		inp_spsource(fp, true, buf);
+ 		cp_interactive = true;
+-		(void) fclose(fp);
++                /* the following caused me SIGSEGV's since inp_spsource
++                   already closes fp - A. Veliath 12/7/97 */
++		/* (void) fclose(fp); */
+ 		found = true;
+ 		break;
+ 	    } else if (ft_controldb)

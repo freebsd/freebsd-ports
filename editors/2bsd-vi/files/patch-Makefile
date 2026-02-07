@@ -1,0 +1,90 @@
+--- Makefile.orig	2005-03-24 15:50:09 UTC
++++ Makefile
+@@ -79,7 +79,6 @@
+ # Destinations for installation. $(PRESERVEDIR) is used for recovery files.
+ # It will get mode 1777.
+ #
+-PREFIX		= /usr/local
+ BINDIR		= $(PREFIX)/bin
+ LIBEXECDIR	= $(PREFIX)/libexec
+ MANDIR		= $(PREFIX)/share/man
+@@ -94,7 +93,7 @@
+ #
+ # A BSD-like install program. GNU install will fit well here, too.
+ #
+-INSTALL		= /usr/ucb/install
++INSTALL		= /usr/bin/install
+ 
+ #
+ # Compiler and linker flags.
+@@ -161,9 +160,7 @@
+ # (wchar.h, wctype.h, btowc() etc.) which is not provided by older
+ # compilation environments.
+ #
+-REINC	= -I./libuxre -DUXRE
+-RELIB	= -L./libuxre -luxre
+-RETGT	= uxre
++REINC	= -DUXRE -DREG_ANGLES=0 -DNO_BE_BACKSLASH
+ 
+ #
+ # VMUNIX should be correct for any modern Unix.
+@@ -205,13 +202,13 @@
+ #
+ # You may also get terminfo access by using the ncurses library.
+ #
+-#TERMLIB	= ncurses
++TERMLIB	= ncurses
+ #
+ # The preferred choice for ex on Linux distributions, other systems that
+ # provide a good termcap file, or when setting the TERMCAP environment
+ # variable is deemed sufficient, is the included 2.11BSD termcap library.
+ #
+-TERMLIB	= termlib
++#TERMLIB	= termlib
+ 
+ #
+ # Since ex uses sbrk() internally, a conflict with the libc's version of
+@@ -240,7 +237,6 @@
+ 			-DEXPRESERVE=\"$(LIBEXECDIR)/expreserve\"
+ CCFLAGS	= $(CFLAGS) $(WARN) $(CPPFLAGS) $(FEATURES) $(CHARSET) $(OSTYPE) \
+ 		$(LARGEF) $(RECOVER) $(LANGMSG) $(REINC) $(RPMCFLAGS)
+-TLIB	= libterm/libtermlib.a
+ INCLUDE	= /usr/include
+ OBJS	= ex.o ex_addr.o ex_cmds.o ex_cmds2.o ex_cmdsub.o \
+ 		ex_data.o ex_extern.o ex_get.o ex_io.o ex_put.o ex_re.o \
+@@ -296,24 +292,13 @@
+ # install in standard place
+ 
+ install-man:
+-	test -d $(DESTDIR)$(PREFIX) || mkdir -p $(DESTDIR)$(PREFIX)
+-	test -d $(DESTDIR)$(MANDIR) || mkdir -p $(DESTDIR)$(MANDIR)
+-	test -d $(DESTDIR)$(MANDIR)/man1 || mkdir -p $(DESTDIR)$(MANDIR)/man1
+-	rm -f $(DESTDIR)$(MANDIR)/man1/ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1 \
+-		$(DESTDIR)$(MANDIR)/man1/vedit.1 \
+-		$(DESTDIR)$(MANDIR)/man1/vi.1 \
+-		$(DESTDIR)$(MANDIR)/man1/view.1
+ 	$(INSTALL) -c -m 644 ex.1 $(DESTDIR)$(MANDIR)/man1/ex.1
+ 	$(INSTALL) -c -m 644 vi.1 $(DESTDIR)$(MANDIR)/man1/vi.1
+ 	ln -s ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1
+ 	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/vedit.1
+ 	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/view.1
+ 
+-install: all install-man
+-	rm -f $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/edit \
+-		$(DESTDIR)$(BINDIR)/vedit $(DESTDIR)$(BINDIR)/vi \
+-		$(DESTDIR)$(BINDIR)/view
+-	test -d $(DESTDIR)$(BINDIR) || mkdir -p $(DESTDIR)$(BINDIR)
++install: all install-man
+ # special provisions for sticky install
+ 	if test -f $(DESTDIR)$(BINDIR)/ex; \
+ 	then	test -f $(DESTDIR)$(BINDIR)/ex.old.$$$$ && exit 1; \
+@@ -322,8 +307,7 @@
+ 		mv $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
+ 		rm -f $(DESTDIR)$(BINDIR)/ex.old.$$$$; \
+ 	fi
+-	$(INSTALL) -c $(STRIP) -m 1755 ex $(DESTDIR)$(BINDIR)/ex
+-	test -d $(DESTDIR)$(LIBEXECDIR) || mkdir -p $(DESTDIR)$(LIBEXECDIR)
++	$(INSTALL) -c $(STRIP) -m 755 ex $(DESTDIR)$(BINDIR)/ex
+ 	$(INSTALL) -c $(STRIP) exrecover $(DESTDIR)$(LIBEXECDIR)/exrecover
+ 	$(INSTALL) -c $(STRIP) expreserve $(DESTDIR)$(LIBEXECDIR)/expreserve
+ 	ln -s ex $(DESTDIR)$(BINDIR)/edit

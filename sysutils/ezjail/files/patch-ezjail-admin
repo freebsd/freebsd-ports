@@ -1,0 +1,20 @@
+--- ezjail-admin.orig	2018-08-17 10:07:06 UTC
++++ ezjail-admin
+@@ -335,7 +335,7 @@ ezjail_queryftpserver () {
+   unset _ret
+   echo -n "Querying your ftp-server... "
+   TIFS=${IFS}; IFS=
+-  for ezjail_path in pub/FreeBSD/releases pub/FreeBSD/snapshot pub/FreeBSD releases snapshots pub/FreeBSD-Archive/old-releases NO; do
++  for ezjail_path in pub/FreeBSD/releases pub/FreeBSD/snapshots pub/FreeBSD releases snapshots pub/FreeBSD-Archive/old-releases NO; do
+     if [ ${ezjail_path} = "NO" ]; then
+       echo "Warning: I am having problems querying the ftp server you specified (${ezjail_disturi})."
+       _ret=1; break
+@@ -1053,7 +1053,7 @@ setup|update)
+ 
+     # make and setup our world, then split basejail and newjail
+     cd "${ezjail_sourcetree}" && env DESTDIR="${ezjail_jailfull}" make ${ezjail_installaction} || exerr "Error: The command 'make ${ezjail_installaction}' failed.\n  Refer to the error report(s) above."
+-    cd "${ezjail_sourcetree}/etc" && env DESTDIR="${ezjail_jailfull}" make distribution || exerr "Error: The command 'make distribution' failed.\n  Refer to the error report(s) above."
++    cd "${ezjail_sourcetree}" && env DESTDIR="${ezjail_jailfull}" make distribution || exerr "Error: The command 'make distribution' failed.\n  Refer to the error report(s) above."
+     ezjail_splitworld
+ 
+   fi # installaction="none"

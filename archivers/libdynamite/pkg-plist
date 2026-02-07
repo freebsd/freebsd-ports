@@ -1,0 +1,8 @@
+bin/dynamite
+include/libdynamite.h
+lib/libdynamite.a
+lib/libdynamite.so
+lib/libdynamite.so.0
+lib/libdynamite.so.0.0.0
+libdata/pkgconfig/libdynamite.pc
+share/man/man1/dynamite.1.gz

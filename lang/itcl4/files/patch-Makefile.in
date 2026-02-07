@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2020-12-21 21:44:42 UTC
++++ Makefile.in
+@@ -244,8 +244,9 @@ install-doc: doc
+ 	    if test X"$$i" = X'$(srcdir)/doc/*.n'; then break; fi; \
+ 	    bi=`basename $$i`; \
+ 	    echo "Installing $$bi"; \
++	    sfxname=`echo $$bi | sed -e 's|.n$$|.i4|'`; \
+ 	    sed -e '/man\.macros/r $(srcdir)/doc/man.macros' -e '/man\.macros/d' $$i > $$bi.tmp \
+-	    && $(INSTALL_DATA) $$bi.tmp "$(DESTDIR)$(mandir)/mann/$$bi" \
++	    && $(INSTALL_DATA) $$bi.tmp $(DESTDIR)$(mandir)/mann/$$sfxname \
+ 	    && rm -f $$bi.tmp; \
+ 	done
+ 

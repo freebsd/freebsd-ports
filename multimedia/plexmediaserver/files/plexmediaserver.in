@@ -1,0 +1,101 @@
+#!/bin/sh
+# Created by: KalleDK <plexmaintainer@k-moeller.dk>
+
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the Plex Media Server:
+#
+# %%PORTNAME%%_enable="YES"
+#
+# %%PORTNAME%%_support_path="%%PREFIX%%/plexdata" # Plex data: logs, media metadata, settings, etc
+#
+# %%PORTNAME%%_tmp="/var/tmp/plex" # configure tmp directory used for the transcoding process if desired
+#
+# %%PORTNAME%%_maxplugins="6" # Maximum number of background plugin procs. May have to raise in rare cases.
+#
+
+. /etc/rc.subr
+
+name=%%PORTNAME%%
+rcvar=%%PORTNAME%%_enable
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable:=NO}
+: ${%%PORTNAME%%_support_path="%%PREFIX%%/plexdata"}
+: ${%%PORTNAME%%_user="%%USERS%%"}
+: ${%%PORTNAME%%_group="%%GROUPS%%"}
+: ${%%PORTNAME%%_maxplugins=6}
+
+command=/usr/sbin/daemon
+procname="%%DATADIR%%/Plex_Media_Server"
+command_args="-f ${procname}"
+pidfile=/var/run/plex/plex.pid
+start_precmd=plex_precmd
+stop_precmd=plex_stop_precmd
+stop_postcmd=plex_stop_postcmd
+
+plex_precmd()
+{
+	#Set identification variables for FreeNAS; with fallback to FreeBSD
+	if [ -f "/etc/version" ]; then
+	  export PLEX_MEDIA_SERVER_INFO_VENDOR="$(cat /etc/version|cut -d- -f1)"
+	  export PLEX_MEDIA_SERVER_INFO_DEVICE=NAS
+	  export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
+	  export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(cat /etc/version|cut -d- -f2-)"
+	else
+	  export PLEX_MEDIA_SERVER_INFO_VENDOR=FreeBSD
+	  export PLEX_MEDIA_SERVER_INFO_DEVICE=PC
+	  export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
+	  export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(uname -r)"
+	fi
+	export SUPPORT_PATH="${%%PORTNAME%%_support_path}"
+	export HOME="${%%PORTNAME%%_support_path}/Plex Media Server"
+	export PYTHONHOME="%%DATADIR%%/Resources/Python"
+	export SCRIPTPATH="%%DATADIR%%"
+	export LD_LIBRARY_PATH="${SCRIPTPATH}/lib"
+	export PLEX_MEDIA_SERVER_HOME="${SCRIPTPATH}"
+	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${%%PORTNAME%%_maxplugins}
+	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${%%PORTNAME%%_support_path}
+	export PLEX_MEDIA_SERVER_PIDFILE=${pidfile}
+	export PLEX_MEDIA_SERVER_LOG_DIR="${%%PORTNAME%%_support_path}/Plex Media Server/Logs"
+	export PATH="${SCRIPTPATH}/Resources/Python/bin:${PATH}"
+	export LC_ALL="en_US.UTF-8"
+	export LANG="en_US.UTF-8"
+	ulimit -s 3000
+
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o ${%%PORTNAME%%_user} ${pidfile%/*};
+	fi
+	
+	if [ ! -d "${%%PORTNAME%%_support_path}/Plex Media Server" ]; then
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_support_path}/Plex Media Server";
+	fi
+
+	if [ ! -d "${%%PORTNAME%%_support_path}/Plex" ]; then
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_support_path}/Plex";
+	fi
+	
+	if [ ${%%PORTNAME%%_tmp} ]; then 
+		export TMPDIR=${%%PORTNAME%%_tmp};
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_tmp}";
+	fi
+}
+
+plex_stop_precmd()
+{
+	if [ -r ${pidfile} ]; then
+		export _PLEXPID=$(check_pidfile ${pidfile} ${procname})
+	fi
+}
+
+plex_stop_postcmd()
+{
+	_PLEX_CHILDREN=$(pgrep -g ${_PLEXPID})
+	echo "Cleaning up leftover child processes."
+	kill -9 ${_PLEX_CHILDREN}
+	wait_for_pids ${_PLEX_CHILDREN}
+}
+
+run_rc_command "$1"

@@ -1,0 +1,12 @@
+--- conf/wwwoffle.conf.template.orig	2016-04-23 12:44:35 UTC
++++ conf/wwwoffle.conf.template
+@@ -12,7 +12,8 @@
+ StartUp
+ {
+  bind-ipv4         = 0.0.0.0
+- bind-ipv6         = ::
++#bind-ipv6         = ::
++ bind-ipv6         = none
+ 
+  http-port         = 8080
+  https-port        = 8443

@@ -1,0 +1,6 @@
+highspy is a Python binding for HiGHS.
+
+HiGHS is a high performance serial and parallel solver for large scale sparse
+linear programming (LP) problems of the form:
+
+Minimize c^Tx subject to L <= Ax <= U; l <= x <= u

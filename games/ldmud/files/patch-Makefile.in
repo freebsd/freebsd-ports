@@ -1,0 +1,31 @@
+--- Makefile.in.orig	2011-02-26 21:05:08 UTC
++++ Makefile.in
+@@ -1,6 +1,5 @@
+ # TODO: Add some of the symbols in here to configure
+ # These lines are needed on some machines.
+-MAKE=make
+ SHELL=@CONFIG_SHELL@
+ INSTALL=@INSTALL@
+ mkinstalldirs=$(SHELL) @top_srcdir@/mkinstalldirs
+@@ -83,7 +82,7 @@ SFMT_FLAGS = -fno-strict-aliasing
+ #
+ MPATH=-DMUD_LIB='"$(MUD_LIB)"' -DBINDIR='"$(BINDIR)"' -DERQ_DIR='"$(ERQ_DIR)"'
+ #
+-CFLAGS= @EXTRA_CFLAGS@ $(OPTIMIZE) $(DEBUG) $(WARN) $(MPATH) $(PROFIL)
++CFLAGS= @CPPFLAGS@ @CFLAGS@ @EXTRA_CFLAGS@ $(DEBUG) $(WARN) $(MPATH) $(PROFIL)
+ #
+ LIBS=@LIBS@ @PKGLIBS@
+ #
+@@ -135,9 +134,9 @@ install: install-driver
+ 	@echo "To install everything in one go, use 'make install-all'."
+ 
+ install-driver: ldmud@EXEEXT@ docs
+-	$(mkinstalldirs) $(BINDIR) $(MANDIR)/man1
+-	$(INSTALL) -c ldmud@EXEEXT@ $(BINDIR)/ldmud@EXEEXT@
+-	$(INSTALL) -c ../doc/man/ldmud.1 $(MANDIR)/man1/ldmud.1
++	$(mkinstalldirs) $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)/man1
++	$(INSTALL) -c ldmud@EXEEXT@ $(DESTDIR)$(BINDIR)/ldmud@EXEEXT@
++	$(INSTALL) -c ../doc/man/ldmud.1 $(DESTDIR)$(MANDIR)/man1/ldmud.1
+ 
+ install-headers: 
+ 	$(mkinstalldirs) $(MUD_LIB_INCLUDE)

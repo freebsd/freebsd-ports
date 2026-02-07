@@ -1,0 +1,62 @@
+--- paperless.conf.example.orig	2019-01-27 13:48:05 UTC
++++ paperless.conf.example
+@@ -11,22 +11,22 @@
+ # This where your documents should go to be consumed.  Make sure that it exists
+ # and that the user running the paperless service can read/write its contents
+ # before you start Paperless.
+-PAPERLESS_CONSUMPTION_DIR=""
++PAPERLESS_CONSUMPTION_DIR="/var/db/paperless/consume/input"
+ 
+ 
+ # You can specify where you want the SQLite database to be stored instead of
+ # the default location of /data/ within the install directory.
+-#PAPERLESS_DBDIR=/path/to/database/file
++PAPERLESS_DBDIR=/var/db/paperless/sqlite
+ 
+ 
+ # Override the default MEDIA_ROOT here.  This is where all files are stored.
+ # The default location is /media/documents/ within the install folder.
+-#PAPERLESS_MEDIADIR=/path/to/media
++PAPERLESS_MEDIADIR=/var/db/paperless/media
+ 
+ 
+ # Override the default STATIC_ROOT here.  This is where all static files
+ # created using "collectstatic" manager command are stored.
+-#PAPERLESS_STATICDIR=""
++PAPERLESS_STATICDIR=%%WWWDIR%%/static
+ 
+ 
+ # Override the MEDIA_URL here.  Unless you're hosting Paperless off a subdomain
+@@ -98,7 +98,7 @@ PAPERLESS_EMAIL_SECRET=""
+ # servers to the list of allowed hosts that can do CORS calls. By default
+ # Paperless allows calls from localhost:8080, but you'd like to change that,
+ # you can set this value to a comma-separated list.
+-#PAPERLESS_CORS_ALLOWED_HOSTS="localhost:8080,example.com,localhost:8000"
++#PAPERLESS_CORS_ALLOWED_HOSTS="http://localhost:8080,http://example.com,http://localhost:8000"
+ 
+ # To host paperless under a subpath url like example.com/paperless you set
+ # this value to /paperless. No trailing slash!
+@@ -135,6 +135,23 @@ PAPERLESS_EMAIL_SECRET=""
+ # as normal.
+ #PAPERLESS_FILENAME_DATE_ORDER="YMD"
+ 
++# Sometimes devices won't create filenames which can be parsed properly
++# by the filename parser (see
++# https://paperless.readthedocs.io/en/latest/guesswork.html).
++#
++# This setting allows to specify a list of transformations
++# in regular expression syntax, which are passed in order to re.sub.
++# Transformation stops after the first match, so at most one transformation
++# is applied.
++#
++# Syntax is a JSON array of dictionaries containing "pattern" and "repl"
++# as keys.
++#
++# The example below transforms filenames created by a Brother ADS-2400N
++# document scanner in its standard configuration `Name_Date_Count', so that
++# count is used as title, name as tag and date can be parsed by paperless.
++#PAPERLESS_FILENAME_PARSE_TRANSFORMS=[{"pattern":"^([a-z]+)_(\\d{8})_(\\d{6})_([0-9]+)\\.", "repl":"\\2\\3Z - \\4 - \\1."}]
++
+ #
+ # The following values use sensible defaults for modern systems, but if you're
+ # running Paperless on a low-resource device (like a Raspberry Pi), modifying

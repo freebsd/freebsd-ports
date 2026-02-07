@@ -1,0 +1,17 @@
+The xxkb program is a keyboard layout switcher and indicator.  Unlike the
+programs that reload keyboard maps and use their own hot-keys, xxkb is a
+simple GUI for XKB (X keyboard extension) and just sends commands to and
+accepts events from XKB.  That means that it will work with the existing
+configuration of X11 server without any modifications.
+
+Additional features include:
+
+  - Remembers the current layout in each application and switches to it
+    on window focus change
+  - Can put its own icon on an application window titlebar
+  - Allows to designate two main layouts from multi-layout keymaps
+  - Alternative layouts can be set separately for each application and
+    can be changed during run-time
+  - Supports custom actions for certain windows (e.g. ignore, set initial
+    active layout on application startup)
+  - Can be docked as a docklet or placed in the system tray

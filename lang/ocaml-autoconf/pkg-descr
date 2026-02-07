@@ -1,0 +1,2 @@
+This port contains standard, useful autoconf macros for detecting
+OCaml, findlib, OCaml packages, etc.

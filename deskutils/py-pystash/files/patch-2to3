@@ -1,0 +1,50 @@
+--- pystash/common.py.orig	2014-05-17 19:30:11 UTC
++++ pystash/common.py
+@@ -79,12 +79,11 @@ class StashedItem():
+             return '\n'.join(items)
+ 
+ 
+-class AbstractStorage(object):
++class AbstractStorage(object, metaclass=abc.ABCMeta):
+     # todo: update methods signature
+     """
+     Here will be a docstring
+     """
+-    __metaclass__ = abc.ABCMeta
+ 
+     @abc.abstractmethod
+     def get_connection(self, db):
+@@ -140,7 +139,7 @@ class ShelveStorage(AbstractStorage):
+         self.DBFILE = db_file if db_file is not None else self.DBFILE
+         path_to_dir = os.path.join('/', *self.DBFILE.split('/')[1:-1])
+         if not os.path.exists(path_to_dir):
+-            os.makedirs(path_to_dir, 0755)
++            os.makedirs(path_to_dir, 0o755)
+         self.connection = self.get_connection(self.DBFILE)
+         if not 'storage' in self.connection:
+             self.connection['storage'] = {}
+@@ -224,13 +223,13 @@ class ShelveStorage(AbstractStorage):
+ 
+     def get_all(self):
+         result = {}
+-        for k, v in self.db.iteritems():
++        for k, v in self.db.items():
+             result[k] = StashedItem(v)
+         return result
+ 
+     def tags(self, tag):
+         result = {}
+-        for k, v in self.db.iteritems():
++        for k, v in self.db.items():
+             if 'tags' in v:
+                 if tag in v['tags']:
+                     result[k] = StashedItem(v)
+@@ -238,7 +237,7 @@ class ShelveStorage(AbstractStorage):
+ 
+     def alltags(self):
+         result = []
+-        for k, v in self.db.iteritems():
++        for k, v in self.db.items():
+             if 'tags' in v:
+                 for tag in v['tags']:
+                     result.append(tag)

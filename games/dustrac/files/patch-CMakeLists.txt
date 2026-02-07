@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2021-02-21 12:07:18 UTC
++++ CMakeLists.txt
+@@ -108,15 +108,6 @@ elseif(WIN32)
+ endif()
+ 
+ if(CMAKE_COMPILER_IS_GNUCXX OR MINGW OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
+-    add_compile_options("$<$<CONFIG:RELEASE>:-W;-Wall;-O3;-pedantic;-fomit-frame-pointer>")
+-    add_compile_options("$<$<CONFIG:DEBUG>:-W;-Wall;-O0;-pedantic>")
+-
+-    # Automatically use ccache if found
+-    find_program(CCACHE_FOUND ccache)
+-    if(CCACHE_FOUND)
+-        set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+-        set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
+-    endif(CCACHE_FOUND)
+ 
+ elseif(MSVC)
+     add_definitions(-DNOMINMAX)

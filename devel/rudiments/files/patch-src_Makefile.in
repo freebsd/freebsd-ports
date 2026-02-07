@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2021-11-04 04:41:34 UTC
++++ src/Makefile.in
+@@ -14,7 +14,7 @@ APACHELOBJS = @APACHELOBJS@
+ .SUFFIXES: .lo
+ 
+ .cpp.lo:
+-	$(LTCOMPILE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(COMPILE) $< $(OUT)$@
++	$(LTCOMPILE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(COMPILE) $< $(OUT) $@
+ 
+ .cpp.obj:
+ 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(COMPILE) $<
+@@ -27,7 +27,7 @@ librudiments.$(LIBEXT): $(SRCS) $(LOBJS)
+ 	$(LTCLEAN) $(RM) *.lo *.o *.obj *.$(LIBEXT) *.lib *.exp *.idb *.pdb *.manifest *.ii
+ 
+ librudiments.$(LIBEXT): $(SRCS) $(LOBJS)
+-	$(LTLINK) $(LINK) $(OUT)$@ $(LOBJS) $(LDFLAGS) $(LIBS) $(LINKFLAGS)
++	$(LTLINK) $(LINK) $(OUT) $@ $(LOBJS) $(LDFLAGS) $(LIBS) $(LINKFLAGS)
+ 
+ librudiments-apache.$(LIBEXT): $(APACHESRCS) $(APACHELOBJS)
+ 	$(LTLINK) $(LINK) $(OUT)$@ $(APACHELOBJS) $(LDFLAGS) $(RUDIMENTSLIB) $(LIBS) $(APACHELIBS) $(LINKFLAGS)

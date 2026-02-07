@@ -1,0 +1,18 @@
+bin/open_jtalk
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DATADIR%%/dic/char.bin
+%%DATADIR%%/dic/matrix.bin
+%%DATADIR%%/dic/sys.dic
+%%DATADIR%%/dic/unk.dic
+%%DATADIR%%/dic/left-id.def
+%%DATADIR%%/dic/rewrite.def
+%%DATADIR%%/dic/pos-id.def
+%%DATADIR%%/dic/right-id.def
+@dir %%DATADIR%%/dic
+@dir %%DOCSDIR%%
+@dir share/licenses/ja-open_jtalk-1.11

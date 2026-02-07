@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/DBIC/ExpectedQueries.pm
+%%SITE_PERL%%/Test/DBIC/ExpectedQueries/Query.pm
+%%PERL5_MAN3%%/Test::DBIC::ExpectedQueries.3.gz

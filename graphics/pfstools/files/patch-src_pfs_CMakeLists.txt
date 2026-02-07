@@ -1,0 +1,11 @@
+--- src/pfs/CMakeLists.txt.orig	2018-01-19 06:59:44 UTC
++++ src/pfs/CMakeLists.txt
+@@ -29,7 +29,7 @@ install (TARGETS pfs 
+ 
+ #install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cygpfs.dll DESTINATION bin)
+ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/pfs.h ${CMAKE_CURRENT_SOURCE_DIR}/array2d.h DESTINATION include/pfs)
+-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/pfs.pc DESTINATION lib${LIB_SUFFIX}/pkgconfig)
++install (FILES ${CMAKE_CURRENT_BINARY_DIR}/pfs.pc DESTINATION libdata/pkgconfig)
+ 	
+ #install (FILES pfsoutppm.1 DESTINATION ${MAN_DIR})
+ 

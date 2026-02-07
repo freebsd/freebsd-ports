@@ -1,0 +1,5 @@
+The VuXML Query Tool, vxquery, is a simple utility for selecting
+entries from a VuXML document by package name and version.
+
+Suggested usage:
+/bin/ls /var/db/pkg | vxquery -f - /usr/ports/security/vuxml/vuln.xml

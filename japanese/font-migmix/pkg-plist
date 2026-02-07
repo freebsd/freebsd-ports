@@ -1,0 +1,12 @@
+%%FONTSDIR%%/migmix-1m-bold.ttf
+%%FONTSDIR%%/migmix-1m-regular.ttf
+%%FONTSDIR%%/migmix-1p-bold.ttf
+%%FONTSDIR%%/migmix-1p-regular.ttf
+%%FONTSDIR%%/migmix-2m-bold.ttf
+%%FONTSDIR%%/migmix-2m-regular.ttf
+%%FONTSDIR%%/migmix-2p-bold.ttf
+%%FONTSDIR%%/migmix-2p-regular.ttf
+etc/fonts/conf.avail/20-unhint-migmix.conf
+etc/fonts/conf.avail/62-fonts-migmix.conf
+etc/fonts/conf.d/20-unhint-migmix.conf
+etc/fonts/conf.d/62-fonts-migmix.conf

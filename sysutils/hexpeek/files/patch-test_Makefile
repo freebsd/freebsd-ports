@@ -1,0 +1,17 @@
+--- test/Makefile.orig	2020-08-04 05:58:52 UTC
++++ test/Makefile
+@@ -28,10 +28,13 @@ SRCDIR := .
+ BINDIR := .
+ EXEC   := $(BINDIR)/simplediff
+ CC     ?= clang
+-CFLAGS := -O3 -Wall #-fPIC
++CFLAGS ?= -O3 -Wall #-fPIC
+ 
+ all: $(EXEC)
+ 	make -C base
++
++test:	all
++	sh run
+ 
+ clear:
+ 	rm -f $(EXEC)

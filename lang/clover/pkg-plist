@@ -1,0 +1,7 @@
+etc/OpenCL/vendors/mesa.icd
+lib/gallium-pipe/pipe_r600.so
+lib/gallium-pipe/pipe_radeonsi.so
+lib/libMesaOpenCL.so
+lib/libMesaOpenCL.so.1
+lib/libMesaOpenCL.so.1.0.0
+@comment share/drirc.d/00-mesa-defaults.conf

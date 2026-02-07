@@ -1,0 +1,442 @@
+Make sure we have a sane numeric locale.
+
+--- plugins-root/check_dhcp.c.orig	2019-12-04 21:53:08 UTC
++++ plugins-root/check_dhcp.c
+@@ -254,7 +254,7 @@ int main(int argc, char **argv) {
+   int dhcp_socket;
+   int result = STATE_UNKNOWN;
+ 
+-  setlocale(LC_ALL, "");
++  setlocale(LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+   bindtextdomain(PACKAGE, LOCALEDIR);
+   textdomain(PACKAGE);
+ 
+--- plugins-root/check_icmp.c.orig	2020-02-20 19:14:52 UTC
++++ plugins-root/check_icmp.c
+@@ -501,7 +501,7 @@ int main(int argc, char **argv) {
+   int on = 1;
+ #endif
+ 
+-  setlocale(LC_ALL, "");
++  setlocale(LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+   bindtextdomain(PACKAGE, LOCALEDIR);
+   textdomain(PACKAGE);
+ 
+--- plugins/check_by_ssh.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_by_ssh.c
+@@ -74,7 +74,7 @@ main (int argc, char **argv)
+ 	remotecmd = "";
+ 	comm_append(SSH_COMMAND);
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_cluster.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_cluster.c
+@@ -65,7 +65,7 @@ int main(int argc, char **argv){
+ 	int return_code=STATE_OK;
+ 	thresholds *thresholds = NULL;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_dbi.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_dbi.c
+@@ -117,7 +117,7 @@ main (int argc, char **argv)
+ 
+ 	int i;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_dig.c.orig	2020-02-24 15:32:00 UTC
++++ plugins/check_dig.c
+@@ -76,7 +76,7 @@ main (int argc, char **argv)
+   int result = STATE_UNKNOWN;
+   int timeout_interval_dig;
+ 
+-  setlocale (LC_ALL, "");
++  setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
+ 
+--- plugins/check_disk.c.orig	2020-02-20 19:14:52 UTC
++++ plugins/check_disk.c
+@@ -250,7 +250,7 @@ main (int argc, char **argv)
+   perf = strdup ("");
+   stat_buf = malloc(sizeof *stat_buf);
+ 
+-  setlocale (LC_ALL, "");
++  setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
+ 
+--- plugins/check_dns.c.orig	2020-02-20 19:14:52 UTC
++++ plugins/check_dns.c
+@@ -120,7 +120,7 @@ main (int argc, char **argv)
+     output chld_out, chld_err;
+     size_t i;
+ 
+-    setlocale (LC_ALL, "");
++    setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+     bindtextdomain (PACKAGE, LOCALEDIR);
+     textdomain (PACKAGE);
+ 
+--- plugins/check_dummy.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_dummy.c
+@@ -44,7 +44,7 @@ main (int argc, char **argv)
+ {
+   int result = STATE_UNKNOWN;
+ 
+-  setlocale (LC_ALL, "");
++  setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
+ 
+--- plugins/check_fping.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_fping.c
+@@ -82,7 +82,7 @@ main (int argc, char **argv)
+   char *option_string = "";
+   input_buffer = malloc (MAX_INPUT_BUFFER);
+ 
+-  setlocale (LC_ALL, "");
++  setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
+ 
+--- plugins/check_game.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_game.c
+@@ -71,7 +71,7 @@ main (int argc, char **argv)
+   size_t i = 0;
+   output chld_out;
+ 
+-  setlocale (LC_ALL, "");
++  setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
+ 
+--- plugins/check_hpjd.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_hpjd.c
+@@ -94,7 +94,7 @@ main (int argc, char **argv)
+ 
+ 	errmsg = malloc(MAX_INPUT_BUFFER);
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_http.c.orig	2020-02-20 19:14:52 UTC
++++ plugins/check_http.c
+@@ -156,7 +156,7 @@ main (int argc, char **argv)
+ {
+     int result = STATE_UNKNOWN;
+ 
+-    setlocale (LC_ALL, "");
++    setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+     bindtextdomain (PACKAGE, LOCALEDIR);
+     textdomain (PACKAGE);
+ 
+--- plugins/check_ide_smart.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_ide_smart.c
+@@ -200,7 +200,7 @@ main (int argc, char *argv[]) 
+ 	/* Parse extra opts if any */
+ 	argv=np_extra_opts (&argc, argv, progname);
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_ldap.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_ldap.c
+@@ -108,7 +108,7 @@ main (int argc, char *argv[])
+ 	int status_entries = STATE_OK;
+ 	int num_entries = 0;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_mrtg.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_mrtg.c
+@@ -64,7 +64,7 @@ main (int argc, char **argv)
+ 	unsigned long maximum_value_rate = 0L;
+ 	unsigned long rate = 0L;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_mrtgtraf.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_mrtgtraf.c
+@@ -76,7 +76,7 @@ main (int argc, char **argv)
+ 	char incoming_speed_rating[8];
+ 	char outgoing_speed_rating[8];
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_mysql.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_mysql.c
+@@ -113,7 +113,7 @@ main (int argc, char **argv)
+ 
+         perf = strdup ("");
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_mysql_query.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_mysql_query.c
+@@ -73,7 +73,7 @@ main (int argc, char **argv)
+ 	char *error = NULL;
+ 	int status;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_nagios.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_nagios.c
+@@ -82,7 +82,7 @@ main (int argc, char **argv)
+ 	output chld_out, chld_err;
+ 	size_t i;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_nt.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_nt.c
+@@ -116,7 +116,7 @@ int main(int argc, char **argv){
+ 	int isPercent = FALSE;
+ 	int allRight = FALSE;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_ntp.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_ntp.c
+@@ -782,7 +782,7 @@ int main(int argc, char *argv[]){
+ 	double offset=0, jitter=0;
+ 	char *result_line, *perfdata_line;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_ntp_peer.c.orig	2020-02-20 19:14:52 UTC
++++ plugins/check_ntp_peer.c
+@@ -564,7 +564,7 @@ int main(int argc, char *argv[]){
+ 	double offset=0, jitter=0;
+ 	char *result_line, *perfdata_line;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	setlocale (LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+--- plugins/check_ntp_time.c.orig	2020-02-20 19:14:52 UTC
++++ plugins/check_ntp_time.c
+@@ -575,7 +575,7 @@ int main(int argc, char *argv[]){
+ 	double offset=0;
+ 	char *result_line, *perfdata_line;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	setlocale (LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+--- plugins/check_nwstat.c.orig	2017-01-19 16:01:31 UTC
++++ plugins/check_nwstat.c
+@@ -162,7 +162,7 @@ main(int argc, char **argv) {
+ 	unsigned long sap_entries=0;
+ 	char uptime[MAX_INPUT_BUFFER];
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_overcr.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_overcr.c
+@@ -91,7 +91,7 @@ main (int argc, char **argv)
+ 	int uptime_hours = 0;
+ 	int uptime_minutes = 0;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_ping.c.orig	2020-02-20 19:14:52 UTC
++++ plugins/check_ping.c
+@@ -83,7 +83,7 @@ main (int argc, char **argv)
+ 	int this_result = STATE_UNKNOWN;
+ 	int i;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	setlocale (LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+--- plugins/check_procs.c.orig	2020-02-20 19:14:52 UTC
++++ plugins/check_procs.c
+@@ -169,7 +169,7 @@ main (int argc, char **argv)
+ 	int ret = 0;
+ 	output chld_out, chld_err;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 	setlocale(LC_NUMERIC, "POSIX");
+--- plugins/check_radius.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_radius.c
+@@ -170,7 +170,7 @@ main (int argc, char **argv)
+ 	char *ether;
+ 	char *str;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_real.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_real.c
+@@ -69,7 +69,7 @@ main (int argc, char **argv)
+ 	char buffer[MAX_INPUT_BUFFER];
+ 	char *status_line = NULL;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_smtp.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_smtp.c
+@@ -148,7 +148,7 @@ main (int argc, char **argv)
+ 	(void) signal (SIGPIPE, SIG_IGN);
+ #endif /* HAVE_SIGACTION */
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_snmp.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_snmp.c
+@@ -212,7 +212,7 @@ main (int argc, char **argv)
+ 	int command_interval;
+ 	int is_ticks= 0;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_swap.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_swap.c
+@@ -100,7 +100,7 @@ main (int argc, char **argv)
+ 	char str[32];
+ 	char *status;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_tcp.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_tcp.c
+@@ -108,7 +108,7 @@ main (int argc, char **argv)
+ 
+ 	FD_ZERO(&rfds);
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_time.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/check_time.c
+@@ -67,7 +67,7 @@ main (int argc, char **argv)
+ 	int result = STATE_UNKNOWN;
+ 	time_t conntime;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_ups.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/check_ups.c
+@@ -110,7 +110,7 @@ main (int argc, char **argv)
+ 	double ups_utility_deviation = 0.0;
+ 	int res;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/check_users.c.orig	2017-04-19 16:03:12 UTC
++++ plugins/check_users.c
+@@ -73,7 +73,7 @@ main (int argc, char **argv)
+ 	char input_buffer[MAX_INPUT_BUFFER];
+ #endif
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/negate.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/negate.c
+@@ -65,7 +65,7 @@ main (int argc, char **argv)
+ 	output chld_out, chld_err;
+ 	int i;
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 
+--- plugins/remove_perfdata.c.orig	2019-12-04 21:53:08 UTC
++++ plugins/remove_perfdata.c
+@@ -63,7 +63,7 @@ main(int argc, char **argv)
+     output chld_out;
+     output chld_err;
+ 
+-    setlocale(LC_ALL, "");
++    setlocale(LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
+ 
+--- plugins/urlize.c.orig	2017-01-16 17:24:03 UTC
++++ plugins/urlize.c
+@@ -63,7 +63,7 @@ main (int argc, char **argv)
+ 		{0, 0, 0, 0}
+ 	};
+ 
+-	setlocale (LC_ALL, "");
++	setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");
+ 	bindtextdomain (PACKAGE, LOCALEDIR);
+ 	textdomain (PACKAGE);
+ 

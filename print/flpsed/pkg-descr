@@ -1,0 +1,10 @@
+flpsed is a WYSIWYG PostScript annotator.  flpsed can add arbitrary text lines
+to existing PostScript documents, but cannot remove or modify existing elements
+of such documents. The added lines can later be re-edited with flpsed, either
+interactively or via batch-processing (the latter is useful for repeatedly
+filling in forms). Text lines can also be imported from other documents that
+have been modified with flpsed.
+
+Using pdftops, which is part of xpdf, one can convert PDF documents to
+PostScript and then add text to them using flpsed.  flpsed is thus useful for
+filling in forms, adding notes, etc.

@@ -1,0 +1,50 @@
+{
+  "name": "@vscode/policy-watcher-installer",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "@vscode/policy-watcher-installer",
+      "version": "1.0.0",
+      "dependencies": {
+        "@vscode/policy-watcher": "^1.3.5"
+      }
+    },
+    "node_modules/@vscode/policy-watcher": {
+      "version": "1.3.5",
+      "resolved": "https://registry.npmjs.org/@vscode/policy-watcher/-/policy-watcher-1.3.5.tgz",
+      "integrity": "sha512-k1n9gaDBjyVRy5yJLABbZCnyFwgQ8OA4sR3vXmXnmB+mO9JA0nsl/XOXQfVCoLasBu3UHCOfAnDWGn2sRzCR+A==",
+      "hasInstallScript": true,
+      "license": "MIT",
+      "dependencies": {
+        "bindings": "^1.5.0",
+        "node-addon-api": "^8.2.0"
+      }
+    },
+    "node_modules/@vscode/policy-watcher/node_modules/bindings": {
+      "version": "1.5.0",
+      "resolved": "https://registry.npmjs.org/bindings/-/bindings-1.5.0.tgz",
+      "integrity": "sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==",
+      "license": "MIT",
+      "dependencies": {
+        "file-uri-to-path": "1.0.0"
+      }
+    },
+    "node_modules/@vscode/policy-watcher/node_modules/file-uri-to-path": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz",
+      "integrity": "sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==",
+      "license": "MIT"
+    },
+    "node_modules/@vscode/policy-watcher/node_modules/node-addon-api": {
+      "version": "8.5.0",
+      "resolved": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.5.0.tgz",
+      "integrity": "sha512-/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A==",
+      "license": "MIT",
+      "engines": {
+        "node": "^18 || ^20 || >= 21"
+      }
+    }
+  }
+}

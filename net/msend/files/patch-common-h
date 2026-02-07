@@ -1,0 +1,10 @@
+--- common.h.orig	1999-05-02 17:00:39.000000000 +0400
++++ common.h	2012-02-22 02:20:34.000000000 +0400
+@@ -45,6 +45,7 @@
+ 
+ #ifdef USE_UTMPX
+ #include <utmpx.h>
++#define ut_name ut_user
+ #else
+ #include <utmp.h>
+ #endif

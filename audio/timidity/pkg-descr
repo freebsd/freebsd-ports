@@ -1,0 +1,9 @@
+TiMidity is a software synthesizer. It can play MIDI files by converting them
+into PCM waveform data; give it a MIDI data along with digital instrument data
+files, then it synthesizes them in real-time, and plays. It can not only play
+sounds, but also can save the generated waveforms into hard disks as various
+audio file formats.
+
+TiMidity 0.2i was written by Tuukka Toivonen <tt@cgs.fi> in 1995. No new version
+of this project has been released since then. Development has been continued by
+Masanao Izumo et al. in the new project named TiMidity++ (audio/timidity++).

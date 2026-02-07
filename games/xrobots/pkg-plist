@@ -1,0 +1,3 @@
+@(,games,2755) bin/xrobots
+@(,games,0664) lib/X11/xrobotscores
+share/man/man6/xrobots.6.gz

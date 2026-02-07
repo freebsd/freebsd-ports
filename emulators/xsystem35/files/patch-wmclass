@@ -1,0 +1,15 @@
+Origin: https://gist.github.com/smly/5787574
+
+--- src/xcore_video.c.orig	2003-06-29 15:28:12 UTC
++++ src/xcore_video.c
+@@ -307,6 +307,10 @@ static void init_window(void) {
+ 					   0, WIN_DEPTH,
+ 					   InputOutput, x11_visual, attrib_mask, &at);
+ 	}
++	XClassHint wm_class;
++	wm_class.res_name = "XSystem35";
++	wm_class.res_class = "XSystem35";
++	XSetClassHint( x11_display, x11_window, &wm_class );
+ 	
+ 	/* determin dib depth candidate */
+ 	dib_depth_candidate = (depth == 16 && vinfo.red_mask == 0x7c00) ? 15: WIN_DEPTH;

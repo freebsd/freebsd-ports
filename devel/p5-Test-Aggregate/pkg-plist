@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Test/Aggregate/Builder.pm
+%%SITE_PERL%%/Test/Aggregate/Base.pm
+%%SITE_PERL%%/Test/Aggregate/Nested.pm
+%%SITE_PERL%%/Test/Aggregate.pm
+%%PERL5_MAN3%%/Test::Aggregate.3.gz
+%%PERL5_MAN3%%/Test::Aggregate::Base.3.gz
+%%PERL5_MAN3%%/Test::Aggregate::Builder.3.gz
+%%PERL5_MAN3%%/Test::Aggregate::Nested.3.gz

@@ -1,0 +1,28 @@
+This is an implementation of a base64 stream encoding/decoding library in C99
+with SIMD (AVX2, AVX512, NEON, AArch64/NEON, SSSE3, SSE4.1, SSE4.2, AVX) and
+OpenMP acceleration. It also contains wrapper functions to encode/decode simple
+length-delimited strings. This library aims to be:
+- FAST;
+- easy to use;
+- elegant.
+
+On x86, the library does runtime feature detection. The first time it's called,
+the library will determine the appropriate encoding/decoding routines for the
+machine. It then remembers them for the lifetime of the program. If your
+processor supports AVX2, SSSE3, SSE4.1, SSE4.2 or AVX instructions, the library
+will pick an optimized codec that lets it encode/decode 12 or 24 bytes at a
+time, which gives a speedup of four or more times compared to the "plain"
+bytewise codec.
+
+AVX512 support is only for encoding at present, utilizing the AVX512 VL and VBMI
+instructions. Decoding part reused AVX2 implementations. For CPUs later than
+Cannonlake (manufactured in 2018) supports these instructions.
+
+NEON support is hardcoded to on or off at compile time, because portable runtime
+feature detection is unavailable on ARM.
+
+Even if your processor does not support SIMD instructions, this is a very fast
+library. The fallback routine can process 32 or 64 bits of input in one round,
+depending on your processor's word width, which still makes it significantly
+faster than naive bytewise implementations. On some 64-bit machines, the 64-bit
+routines even outperform the SSSE3 ones.

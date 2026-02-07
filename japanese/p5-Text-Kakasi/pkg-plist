@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Text::Kakasi.3.gz
+%%PERL5_MAN3%%/Text::Kakasi::JP.3.gz
+%%SITE_ARCH%%/Text/Kakasi.pm
+%%SITE_ARCH%%/Text/Kakasi/JP.pod
+%%SITE_ARCH%%/auto/Text/Kakasi/Kakasi.so

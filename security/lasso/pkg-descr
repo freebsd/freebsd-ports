@@ -1,0 +1,8 @@
+Lasso is a free software C library aiming to implement the Liberty Alliance
+standards; it defines processes for federated identities, single sign-on and
+related protocols.  Lasso is built on top of libxml2, XMLSec and OpenSSL and
+is licensed under the GNU General Public License (with an OpenSSL exception).
+
+Lasso first focused on implementing the Liberty Alliance ID-FF 1.2 protocols.
+It now supports a good part of ID-WSF, and SAML 2.0 support has also been
+completed.

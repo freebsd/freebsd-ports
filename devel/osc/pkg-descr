@@ -1,0 +1,7 @@
+osc is a command-line client for openSUSE build service. It is
+written in Python, and in addition to the commandline interface it
+also provides a Python module, for use by other Python programs.
+
+osc is a subversion-like client. It serves as client for the source
+code repository component of the build service, and it is used to
+edit metadata or query about build results.

@@ -1,0 +1,21 @@
+--- configure.orig	2018-08-29 19:42:22 UTC
++++ configure
+@@ -23453,15 +23453,15 @@ postdeps_FC=$(echo $postdeps_FC | sed 's
+ 
+ if test x"${with_mpi}" = x"yes"; then
+   if test x"${enable_openmp}" = x"yes"; then
+-        SUFFIX="_openmp"
++        SUFFIX=""
+   else
+         SUFFIX=""
+   fi
+ else
+   if test x"${enable_openmp}" = x"yes"; then
+-        SUFFIX="_onenode_openmp"
++        SUFFIX=""
+   else
+-        SUFFIX="_onenode"
++        SUFFIX=""
+   fi
+ fi
+ 

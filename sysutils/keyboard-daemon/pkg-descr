@@ -1,0 +1,6 @@
+The author has not found any simple programs that listen on a device and
+run commands based on the values received.
+
+keyboard-daemon binds to a device (for example, a remote control) and
+listens for button presses.  These are then mapped to programs that are
+executed.

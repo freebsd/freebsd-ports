@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/CGI/Cookie/XS/XS.so
+%%SITE_ARCH%%/CGI/Cookie/XS.pm
+%%PERL5_MAN3%%/CGI::Cookie::XS.3.gz

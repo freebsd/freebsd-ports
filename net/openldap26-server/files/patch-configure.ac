@@ -1,0 +1,17 @@
+--- configure.ac.orig	2024-01-29 18:52:23 UTC
++++ configure.ac
+@@ -1225,12 +1225,12 @@ if test $ol_with_tls = openssl || test $ol_with_tls = 
+ 	if test $ac_cv_header_openssl_ssl_h = yes ; then
+ 			AC_PREPROC_IFELSE([AC_LANG_SOURCE(
+ 				[[#include <openssl/opensslv.h>]
+-[#if OPENSSL_VERSION_NUMBER < 0x1010100fL]
++[#if OPENSSL_VERSION_NUMBER < 0x1000215fL]
+ [#error "OpenSSL is too old"]
+ [#endif]])],
+ 					, [AC_MSG_FAILURE([OpenSSL 1.1.1 or newer required])])
+ 
+-		AC_CHECK_LIB(ssl, SSL_CTX_set_ciphersuites,
++		AC_CHECK_LIB(ssl, SSL_CTX_new,
+ 			[have_openssl=yes], [have_openssl=no],
+ 			[-lcrypto])
+ 

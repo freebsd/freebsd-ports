@@ -1,0 +1,29 @@
+#
+# Make the "ext" method more intelligent; allow specification of the
+# "rsh" command using ext=<command>. Extended to recognise "extssh" the
+# same way as "ext=ssh"
+#
+# Original patch by Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com>,
+# extension by Steve McIntyre <steve@einval.com>. Bugs #165432 and #276328
+diff -Nur src/root.c.orig src/root.c
+--- src/root.c.orig	2006-05-05 23:35:40.000000000 +0800
++++ src/root.c	2006-05-05 23:34:12.000000000 +0800
+@@ -553,6 +547,18 @@
+ 	    newroot->method = gserver_method;
+ 	else if (!strcasecmp (method, "server"))
+ 	    newroot->method = server_method;
++	else if (strncmp (method, "ext=", 4) == 0)
++	{
++	    const char *rsh = method + 4;
++	    setenv ("CVS_RSH", rsh, 1); /* This is a hack, but simplifies */
++	    newroot->method = ext_method;
++	}
++	else if (strncmp (method, "extssh", 6) == 0)
++	{
++	    const char *rsh = method + 3;
++	    setenv ("CVS_RSH", rsh, 1); /* This is a hack, but simplifies */
++	    newroot->method = ext_method;
++	}
+ 	else if (!strcasecmp (method, "ext"))
+ 	    newroot->method = ext_method;
+ 	else if (!strcasecmp (method, "fork"))

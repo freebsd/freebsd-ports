@@ -1,0 +1,18 @@
+A Perl based tool to parse DMARC reports, based on John Levine's rddmarc,
+but extended by the following features:
+
+    Allow to read messages from an IMAP server and not only from
+    the local filesystem.
+
+    Store much more XML values into the database (for example the
+    missing SPF and DKIM results from the policy_evaluated section)
+    and also the entire XML for later reference.
+
+    Supports MySQL and PostgreSQL.
+
+    Needed database tables and columns are created automatically,
+    user only needs to provide a database. The database schema is
+    compatible to the one used by rddmarc, but extends it by
+    additional fields.  Users can switch from rddmarc to
+    dmarcts-report-parser without having to do any changes to the
+    database by themselves.

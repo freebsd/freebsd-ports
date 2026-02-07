@@ -1,0 +1,5 @@
+Niquests is a simple, yet elegant, HTTP library. It is a drop-in replacement for
+Requests, which is under feature freeze.
+
+Niquests, is the "Safest, Fastest, Easiest, and Most advanced" Python HTTP
+Client. Production Ready!

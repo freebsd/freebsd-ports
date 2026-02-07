@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+The runtime requirements are (please install at your preference):
+
+* `xsel' or `xclip' for clipboard support in X11 environments
+* `wl-clipboard' for clipboard support in Wayland environments
+EOM
+}
+]

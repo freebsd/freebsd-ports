@@ -1,0 +1,34 @@
+--- src/Makefile.orig	2011-05-10 12:56:32 UTC
++++ src/Makefile
+@@ -20,7 +20,9 @@ z:
+ include $(topdir)/Makefile.inc
+ 
+ mumps_lib:    $(libdir)/libmumps_common$(PLAT)$(LIBEXT) \
+-              $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT)
++              $(libdir)/libmumps_common$(PLAT).so.@SOVER@ \
++              $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT) \
++              $(libdir)/lib$(ARITH)mumps$(PLAT).so.@SOVER@
+ 
+ OBJS_COMMON = \
+         mumps_part9.o\
+@@ -53,12 +55,18 @@ OBJS = 	$(ARITH)mumps_part1.o\
+ 
+ 
+ $(libdir)/libmumps_common$(PLAT)$(LIBEXT):	$(OBJS_COMMON)
+-	$(AR)$@ $?
++	$(AR) $@ $?
+ 	$(RANLIB) $@
+ 
++$(libdir)/libmumps_common$(PLAT).so.@SOVER@:	$(OBJS_COMMON)
++	$(FC) -shared ${.ALLSRC} -Wl,-soname,libmumps_common$(PLAT).so.@SOVER@ -L$(libdir) $(LORDERINGS) $(LIBPAR) $(LIBOTHERS) -o $(libdir)/libmumps_common$(PLAT).so.@SOVER@ -Wl,-z,defs
++
+ $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT):    $(OBJS)
+-	$(AR)$@ $?
++	$(AR) $@ $?
+ 	$(RANLIB) $@
++
++$(libdir)/lib$(ARITH)mumps$(PLAT).so.@SOVER@:    $(OBJS)
++	$(FC) -shared ${.ALLSRC} -Wl,-soname,lib$(ARITH)mumps$(PLAT).so.@SOVER@ -L$(libdir) -lmumps_common$(PLAT) $(LORDERINGS) $(LIBPAR) -lblas $(SCALAP) $(LIBOTHERS) -o $(libdir)/lib$(ARITH)mumps$(PLAT).so.@SOVER@ -Wl,-z,defs
+ 
+ $(ARITH)mumps_load.o:		$(ARITH)mumps_comm_buffer.o \
+ 				$(ARITH)mumps_struc_def.o

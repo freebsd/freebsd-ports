@@ -1,0 +1,10 @@
+lib/libgluegen2-rt.so
+lib/libjogl_cg.so
+lib/libjogl_desktop.so
+lib/libjogl_mobile.so
+lib/libnativewindow_awt.so
+lib/libnativewindow_x11.so
+lib/libnewt.so
+%%JAVAJARDIR%%/gluegen2-rt.jar
+%%JAVAJARDIR%%/gluegen2.jar
+%%JAVAJARDIR%%/jogl2.jar

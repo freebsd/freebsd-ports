@@ -1,0 +1,7 @@
+The dolmen library for OCaml provides modules for parsing,
+type-checking and main loop controling.
+
+The dolmen binary allows to parse and type-check input against a
+language specification.
+
+Dolmen comes with a LSP server implementation.

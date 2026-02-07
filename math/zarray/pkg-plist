@@ -1,0 +1,17 @@
+include/zarray/zarray.hpp
+include/zarray/zarray_config.hpp
+include/zarray/zarray_impl.hpp
+include/zarray/zarray_wrapper.hpp
+include/zarray/zassign.hpp
+include/zarray/zchunked_iterator.hpp
+include/zarray/zchunked_wrapper.hpp
+include/zarray/zdispatcher.hpp
+include/zarray/zdispatching_types.hpp
+include/zarray/zexpression_wrapper.hpp
+include/zarray/zfunction.hpp
+include/zarray/zmath.hpp
+include/zarray/zscalar_wrapper.hpp
+include/zarray/zwrappers.hpp
+lib/cmake/zarray/zarrayConfig.cmake
+lib/cmake/zarray/zarrayConfigVersion.cmake
+lib/cmake/zarray/zarrayTargets.cmake

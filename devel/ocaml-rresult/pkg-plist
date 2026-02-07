@@ -1,0 +1,16 @@
+%%OCAML_SITELIBDIR%%/rresult/opam
+%%OCAML_SITELIBDIR%%/rresult/META
+%%OCAML_SITELIBDIR%%/rresult/rresult.a
+%%OCAML_SITELIBDIR%%/rresult/rresult.cma
+%%OCAML_SITELIBDIR%%/rresult/rresult.cmi
+%%OCAML_SITELIBDIR%%/rresult/rresult.cmti
+%%OCAML_SITELIBDIR%%/rresult/rresult.cmx
+%%OCAML_SITELIBDIR%%/rresult/rresult.cmxa
+%%OCAML_SITELIBDIR%%/rresult/rresult.cmxs
+%%OCAML_SITELIBDIR%%/rresult/rresult.mli
+%%OCAML_SITELIBDIR%%/rresult/rresult_top.a
+%%OCAML_SITELIBDIR%%/rresult/rresult_top.cma
+%%OCAML_SITELIBDIR%%/rresult/rresult_top.cmx
+%%OCAML_SITELIBDIR%%/rresult/rresult_top.cmxa
+%%OCAML_SITELIBDIR%%/rresult/rresult_top.cmxs
+%%OCAML_SITELIBDIR%%/rresult/rresult_top_init.ml

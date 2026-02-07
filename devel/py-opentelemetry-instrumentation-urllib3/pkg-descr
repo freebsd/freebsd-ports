@@ -1,0 +1,2 @@
+OpenTelemetry urllib3 Instrumentation allows tracing HTTP requests made by the
+urllib3 library.

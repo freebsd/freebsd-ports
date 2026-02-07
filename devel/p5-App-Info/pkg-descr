@@ -1,0 +1,5 @@
+App::Info provides a generalized interface for providing metadata about
+software packages installed on a system. The idea is that App::Info subclasses
+can be used in Perl application installers in order to determine whether
+software dependencies have been fulfilled, and to get necessary metadata about
+those software packages.

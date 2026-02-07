@@ -1,0 +1,4 @@
+%%JAVAJARDIR%%/%%PORTNAME%%-%%PORTVERSION%%.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Flooder.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/recThread.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/User.java

@@ -1,0 +1,24 @@
+--- cmd/wmii/column.c.orig
++++ cmd/wmii/column.c
+@@ -89,16 +89,12 @@
+ 
+ static void
+ drawimg(Image *img, ulong cbg, ulong cborder) {
+-	Point pt[6];
++	Point pt[4];
+ 
+-	pt[0] = Pt(0, 0);
+-	pt[1] = Pt(Dx(img->r)/2 - 1, Dx(img->r)/2 - 1);
+-
+-	pt[2] = Pt(pt[1].x, Dy(img->r));
+-	pt[3] = Pt(Dx(img->r)/2, pt[2].y);
+-
+-	pt[4] = Pt(pt[3].x, Dx(img->r)/2 - 1);
+-	pt[5] = Pt(Dx(img->r) - 1, 0);
++	pt[0] = Pt(Dx(img->r)/2 - 1, 0);
++	pt[1] = Pt(pt[0].x, Dy(img->r));
++	pt[2] = Pt(Dx(img->r)/2, pt[1].y);
++	pt[3] = Pt(pt[2].x, pt[0].y);
+ 
+ 	fillpoly(img, pt, nelem(pt), cbg);
+ 	drawpoly(img, pt, nelem(pt), CapNotLast, 1, cborder);

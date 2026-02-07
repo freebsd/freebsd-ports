@@ -1,0 +1,8 @@
+Recursively evaluate a BLOCK over a list of data structures (locally setting $_
+to each element) and return the list composed of the results of such
+evaluations. $_ can be used to modify the elements.
+
+Data::Rmap currently traverses HASH, ARRAY, SCALAR and GLOB reference types and
+ignores others. Depending on which rmap_* wrapper is used, the BLOCK is called
+for only scalar values, arrays, hashes, references, all elements or a
+customizable combination.

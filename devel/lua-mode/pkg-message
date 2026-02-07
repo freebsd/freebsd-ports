@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+You should add the following line to your ~/.emacs:
+
+    (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+    (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+    (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+EOM
+}
+]

@@ -1,0 +1,74 @@
+# MAINTAINER: portmgr@FreeBSD.org
+#
+# @sample etc/somefile.conf.sample
+# or
+# @sample file1 file2
+#
+# Where file1 is considered as a sample file and file2 the target file
+#
+# This will install the somefile.conf.sample and automatically copy to
+# somefile.conf if it doesn't exist. On deinstall it will remove the
+# somefile.conf if it still matches the sample, otherwise it is
+# kept.
+#
+# This replaces the old pattern:
+#  @unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
+#  etc/pkgtools.conf.sample
+#  @exec [ -f %B/pkgtools.conf ] || cp %B/%f %B/pkgtools.conf
+
+actions: [file(1)]
+arguments: true
+prepackaging: <<EOS
+  if #arg == 1 then
+    if string.find(arg[1], "%.sample$") == nil then
+      io.stderr:write("@sample with 1 single argument expect \".sample\" extension\n")
+      return(1)
+    end
+  elseif #arg == 2 then
+    if arg[1] == arg[2] then
+      io.stderr:write("@sample: 2 identicals arguments are provided\n")
+      return(1)
+    end
+  else
+    io.stderr:write("@sample expect 1 or 2 arguments, got " .. #arg .. "\n")
+    return(1)
+  end
+EOS
+post-install-lua: <<EOS
+  args = {}
+  for arg in string.gmatch("%@", "%S+") do
+    table.insert(args, arg)
+  end
+  sample_file = pkg.prefixed_path(args[1])
+  if args[2] == nil then
+    target_file = string.gsub(sample_file,'%.sample$', "")
+  else
+    target_file = pkg.prefixed_path(args[2])
+  end
+  if not pkg.stat(target_file) then
+    pkg.copy(sample_file, target_file)
+    if pkg_metalog ~= nil and pkg.metalog_copy ~= nil then
+      pkg.metalog_copy(sample_file, target_file)
+    end
+  end
+EOS
+
+pre-deinstall-lua: <<EOS
+  args = {}
+  for arg in string.gmatch("%@", "%S+") do
+    table.insert(args, arg)
+  end
+  sample_file = pkg.prefixed_path(args[1])
+  if args[2] == nil then
+    target_file = string.gsub(sample_file,'%.sample$', "")
+  else
+    target_file = pkg.prefixed_path(args[2])
+  end
+  if pkg.filecmp(sample_file, target_file) == 0 then
+    os.remove(target_file)
+  else
+    if not pkg.pkg_upgrade then
+      pkg.print_msg("You may need to manually remove " .. target_file .. " if it is no longer needed.")
+    end
+  end
+EOS

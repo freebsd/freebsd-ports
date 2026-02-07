@@ -1,0 +1,4 @@
+session_info outputs version information for modules loaded in the current
+session, Python, the OS, and the CPU. It is designed as a minimum measure to
+increase reproducibility and provides similar information as sessionInfo and
+devtools::session_info in R.

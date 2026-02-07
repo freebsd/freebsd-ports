@@ -1,0 +1,16 @@
+--- configure.orig	2025-02-09 15:13:16 UTC
++++ configure
+@@ -9959,6 +9959,13 @@ fi
+ 
+ fi
+ 
++  ac_fn_c_check_func "$LINENO" "closefrom" "ac_cv_func_closefrom"
++if test "x$ac_cv_func_closefrom" = xyes
++then :
++  printf "%s\n" "#define HAVE_CLOSEFROM 1" >>confdefs.h
++
++fi
++
+ 
+   # replace some functions if they are not on the system
+   ac_fn_c_check_func "$LINENO" "getopt_long" "ac_cv_func_getopt_long"

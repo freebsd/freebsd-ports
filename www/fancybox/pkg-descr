@@ -1,0 +1,14 @@
+fancyBox is a tool that offers a nice and elegant way to add zooming
+functionality for images, html content and multi-media on your webpages. It is
+built on the top of the popular JavaScript framework jQuery and is both easy to
+implement and a snap to customize.
+
+Features:
+- Can display images, HTML elements, SWF movies, iframes and also Ajax
+  requests.
+- Customizable through settings and CSS.
+- Groups related items and adds navigation.
+- If the mouse wheel plugin is included in the page then FancyBox will
+  respond to mouse wheel events as well.
+- Support fancy transitions by using easing plugin.
+- Adds a nice drop shadow under the zoomed item.

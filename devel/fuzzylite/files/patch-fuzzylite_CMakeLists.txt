@@ -1,0 +1,11 @@
+--- fuzzylite/CMakeLists.txt.orig	2017-11-18 07:28:31 UTC
++++ fuzzylite/CMakeLists.txt
+@@ -174,7 +174,7 @@ if(FL_BUILD_SHARED)
+     set_target_properties(fl-shared PROPERTIES DEBUG_POSTFIX -debug)
+     target_compile_definitions(fl-shared PRIVATE FL_EXPORT_LIBRARY)
+     set_target_properties(fl-shared PROPERTIES VERSION 6.0)
+-    target_link_libraries(fl-shared ${FL_LIBS})
++    target_link_libraries(fl-shared ${FL_LIBS} execinfo)
+ endif()
+ 
+ if(FL_BUILD_STATIC)

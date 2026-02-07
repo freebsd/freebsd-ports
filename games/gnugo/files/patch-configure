@@ -1,0 +1,10 @@
+--- configure.org	Fri Apr 26 01:28:25 2002
++++ configure	Fri Apr 26 01:28:59 2002
+@@ -1306,6 +1306,7 @@
+ AUTOHEADER=${AUTOHEADER-"${am_missing_run}autoheader"}
+ 
+ MAKEINFO=${MAKEINFO-"${am_missing_run}makeinfo"}
++MAKEINFO="$MAKEINFO --no-split"
+ 
+ AMTAR=${AMTAR-"${am_missing_run}tar"}
+ 

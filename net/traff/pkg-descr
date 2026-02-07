@@ -1,0 +1,10 @@
+WHAT IS IT?
+  Traff is a program that attaches itself to one or more
+  network interfaces, sniffs all IP-packages passing at it and
+  accounts each packets size. The collected information can be
+  dumped to a mysql-Database, for further processing.
+  The configuration is very flexible, allowing you to create
+  different/multiple accounting rules.
+COPYRIGHT
+  Copyright (C) 2001 - Hans Marcus Kr<FC>ger <hanskruger at iname.com>,
+  Porter - Dan Caescu <dan.caescu at netcaetera.ro> <daniel at freebsd.ro>

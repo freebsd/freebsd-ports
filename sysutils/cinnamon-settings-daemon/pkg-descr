@@ -1,0 +1,3 @@
+Cinnamon-settings-daemon is a collection of plugins.
+These plugins are started by cinnamon-session when you log in.
+The plugins run in the background, each with its own process.

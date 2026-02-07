@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-08-02 14:54:40 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@ requires-python = ">=3.9"
+ description = "xml2rfc generates RFCs and IETF drafts from document source in XML according to the IETF xml2rfc v2 and v3 vocabularies."
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {file = "LICENSE"}
+ authors = [{name = "IETF Tools", email = "tools-help@ietf.org"}]
+ keywords = ["ietf", "rfc", "id", "internet-draft", "xml", "xml2rfc", "xmlrfc"]
+ classifiers = [

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTTP/ProxyPAC.pm
+%%SITE_PERL%%/HTTP/ProxyPAC/Functions.pm
+%%SITE_PERL%%/HTTP/ProxyPAC/Result.pm
+%%PERL5_MAN3%%/HTTP::ProxyPAC.3.gz
+%%PERL5_MAN3%%/HTTP::ProxyPAC::Result.3.gz

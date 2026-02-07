@@ -1,0 +1,57 @@
+%%JAVAJARDIR%%/serviio/activation.jar
+%%JAVAJARDIR%%/serviio/commons-codec.jar
+%%JAVAJARDIR%%/serviio/commons-imaging.jar
+%%JAVAJARDIR%%/serviio/commons-io.jar
+%%JAVAJARDIR%%/serviio/commons-jcs-core.jar
+%%JAVAJARDIR%%/serviio/commons-jxpath.jar
+%%JAVAJARDIR%%/serviio/commons-lang.jar
+%%JAVAJARDIR%%/serviio/commons-logging.jar
+%%JAVAJARDIR%%/serviio/derby.jar
+%%JAVAJARDIR%%/serviio/freemarker.jar
+%%JAVAJARDIR%%/serviio/groovy-all.jar
+%%JAVAJARDIR%%/serviio/gson.jar
+%%JAVAJARDIR%%/serviio/httpclient-cache.jar
+%%JAVAJARDIR%%/serviio/httpclient.jar
+%%JAVAJARDIR%%/serviio/httpcore.jar
+%%JAVAJARDIR%%/serviio/icu4j.jar
+%%JAVAJARDIR%%/serviio/imgscalr-lib.jar
+%%JAVAJARDIR%%/serviio/jaudiotagger.jar
+%%JAVAJARDIR%%/serviio/javax.xml.soap-api.jar
+%%JAVAJARDIR%%/serviio/jcl-over-slf4j.jar
+%%JAVAJARDIR%%/serviio/jdom.jar
+%%JAVAJARDIR%%/serviio/jnat-pmplib.jar
+%%JAVAJARDIR%%/serviio/jul-to-slf4j.jar
+%%JAVAJARDIR%%/serviio/log4j-api.jar
+%%JAVAJARDIR%%/serviio/log4j-core.jar
+%%JAVAJARDIR%%/serviio/log4j-slf4j-impl.jar
+%%JAVAJARDIR%%/serviio/lucene-analyzers-common.jar
+%%JAVAJARDIR%%/serviio/lucene-core.jar
+%%JAVAJARDIR%%/serviio/mimepull.jar
+%%JAVAJARDIR%%/serviio/org.restlet.ext.gson.jar
+%%JAVAJARDIR%%/serviio/org.restlet.ext.simple.jar
+%%JAVAJARDIR%%/serviio/org.restlet.ext.slf4j.jar
+%%JAVAJARDIR%%/serviio/org.restlet.ext.xstream.jar
+%%JAVAJARDIR%%/serviio/org.restlet.jar
+%%JAVAJARDIR%%/serviio/padlock.jar
+%%JAVAJARDIR%%/serviio/rome-modules.jar
+%%JAVAJARDIR%%/serviio/rome.jar
+%%JAVAJARDIR%%/serviio/saaj-impl.jar
+%%JAVAJARDIR%%/serviio/serviio-mediabrowser-api.jar
+%%JAVAJARDIR%%/serviio/serviio-mediabrowser-web.jar
+%%JAVAJARDIR%%/serviio/serviio-web-console-api.jar
+%%JAVAJARDIR%%/serviio/serviio-web-console.jar
+%%JAVAJARDIR%%/serviio/serviio.jar
+%%JAVAJARDIR%%/serviio/simple.jar
+%%JAVAJARDIR%%/serviio/slf4j-api.jar
+%%JAVAJARDIR%%/serviio/stax-api.jar
+%%JAVAJARDIR%%/serviio/stax-ex.jar
+%%JAVAJARDIR%%/serviio/streamflyer-core.jar
+%%JAVAJARDIR%%/serviio/waifupnp.jar
+%%JAVAJARDIR%%/serviio/winp.jar
+%%JAVAJARDIR%%/serviio/xstream.jar
+@sample %%ETCDIR%%/application-profiles.xml.sample
+@sample %%ETCDIR%%/console-log4j.properties.sample
+@sample %%ETCDIR%%/log4j2.xml.sample
+@sample %%ETCDIR%%/profiles.xml.sample
+@sample %%ETCDIR%%/serviio.jks.sample
+sbin/serviiod

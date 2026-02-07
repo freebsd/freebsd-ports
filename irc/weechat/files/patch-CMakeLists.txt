@@ -1,0 +1,46 @@
+--- CMakeLists.txt.orig	2024-05-31 11:34:43 UTC
++++ CMakeLists.txt
+@@ -102,11 +102,13 @@ option(ENABLE_ALIAS          "Enable Alias plugin"    
+ option(ENABLE_ZSTD           "Enable Zstandard compression"             ON)
+ option(ENABLE_CJSON          "Enable cJSON support"                     ON)
+ option(ENABLE_ALIAS          "Enable Alias plugin"                      ON)
++option(ENABLE_BACKTRACE      "Enable backtraces (via libexecinfo)"      ON)
+ option(ENABLE_BUFLIST        "Enable Buflist plugin"                    ON)
+ option(ENABLE_CHARSET        "Enable Charset plugin"                    ON)
+ option(ENABLE_EXEC           "Enable Exec plugin"                       ON)
+ option(ENABLE_FIFO           "Enable FIFO plugin"                       ON)
+ option(ENABLE_FSET           "Enable Fast Set plugin"                   ON)
++option(ENABLE_ICONV          "Enable character conversion support"      ON)
+ option(ENABLE_IRC            "Enable IRC plugin"                        ON)
+ option(ENABLE_LOGGER         "Enable Logger plugin"                     ON)
+ option(ENABLE_RELAY          "Enable Relay plugin"                      ON)
+@@ -233,10 +236,12 @@ endif()
+   add_definitions(-DHAVE_CJSON)
+ endif()
+ 
+-# Check for iconv
+-find_package(Iconv)
+-if(ICONV_FOUND)
+-  add_definitions(-DHAVE_ICONV)
++if (ENABLE_ICONV)
++  # Check for iconv
++  find_package(Iconv)
++  if(ICONV_FOUND)
++    add_definitions(-DHAVE_ICONV)
++  endif()
+ endif()
+ 
+ # Check for CURL
+@@ -311,10 +316,10 @@ set(exec_prefix "\${prefix}")
+ set(PACKAGE "${PROJECT_NAME}")
+ set(prefix "${CMAKE_INSTALL_PREFIX}")
+ set(exec_prefix "\${prefix}")
+-string(REPLACE "${CMAKE_INSTALL_PREFIX}" "\${prefix}" libdir "${LIBDIR}")
++string(REPLACE "${CMAKE_INSTALL_PREFIX}" "\${prefix}" libdir "${LIBDATADIR}")
+ set(includedir "\${prefix}/include")
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/weechat.pc.in" "${CMAKE_CURRENT_BINARY_DIR}/weechat.pc" @ONLY)
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/weechat.pc" DESTINATION "${LIBDIR}/pkgconfig")
++install(FILES "${CMAKE_CURRENT_BINARY_DIR}/weechat.pc" DESTINATION "${LIBDATADIR}/pkgconfig")
+ 
+ # cygport file (used to build Cygwin packages)
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/weechat.cygport.in" "${CMAKE_CURRENT_BINARY_DIR}/weechat-${VERSION}-1.cygport" @ONLY)

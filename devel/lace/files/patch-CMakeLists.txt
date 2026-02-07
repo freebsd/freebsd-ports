@@ -1,0 +1,34 @@
+--- CMakeLists.txt.orig	2023-11-18 14:52:47 UTC
++++ CMakeLists.txt
+@@ -25,11 +25,11 @@ endif()
+     endif()
+ endif()
+ 
+-add_library(lace STATIC
++add_library(lace
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace.c
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace.h
+ )
+-add_library(lace14 STATIC
++add_library(lace14
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace14.c
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace14.h
+ )
+@@ -56,7 +56,7 @@ target_compile_options(lace PRIVATE
+ 
+ target_compile_options(lace PRIVATE
+     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
+-        -pipe -march=native
++        -pipe
+         $<$<CONFIG:Debug>:-O0 -Wall -Wextra -Wpedantic>>
+     $<$<CXX_COMPILER_ID:MSVC>:
+         $<$<CONFIG:Debug>:/Od /Wall /Zi>>
+@@ -64,7 +64,7 @@ target_compile_options(lace14 PRIVATE
+ 
+ target_compile_options(lace14 PRIVATE
+     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
+-        -pipe -march=native
++        -pipe
+         $<$<CONFIG:Debug>:-O0 -Wall -Wextra -Wpedantic>>
+     $<$<CXX_COMPILER_ID:MSVC>:
+         $<$<CONFIG:Debug>:/Od /Wall /Zi>>

@@ -1,0 +1,17 @@
+--- configure.ac.orig	2025-08-05 14:15:15 UTC
++++ configure.ac
+@@ -1365,8 +1365,12 @@ if test "x$with_libedit" != xno; then
+     AC_DEFINE([HAVE_LIBEDIT], 1, [Define if building with libedit.])
+     AC_MSG_NOTICE([Using libedit for readline support])
+   elif test "x$with_libedit" = xyes; then
+-    # We were explicitly asked for libedit and couldn't find it.
+-    AC_MSG_ERROR([Could not detect libedit with pkg-config])
++    AC_MSG_NOTICE([Using libedit in FreeBSD base])
++    AC_CHECK_LIB([edit], [main], :,
++               AC_MSG_ERROR([Could not detect libedit]))
++    AC_DEFINE([HAVE_LIBEDIT], 1, [Define if building with libedit.])
++    RL_CFLAGS=-DFreeBSD_BASE_EDITLINE
++    RL_LIBS='-ledit'
+   else
+     AC_MSG_NOTICE([Not using any readline support])
+   fi

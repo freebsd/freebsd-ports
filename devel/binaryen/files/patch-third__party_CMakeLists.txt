@@ -1,0 +1,20 @@
+Don't attempt to build a local copy of GoogleTest.
+
+--- third_party/CMakeLists.txt.orig	2025-02-03 23:57:26 UTC
++++ third_party/CMakeLists.txt
+@@ -1,15 +1,5 @@ if(BUILD_FUZZTEST)
+ if(BUILD_FUZZTEST)
+   add_subdirectory(fuzztest)
+-elseif(BUILD_TESTS)
+-  # fuzztest includes gtest, but if we're not building fuzztest, build gtest ourselves.
+-  add_library(gtest STATIC googletest/googletest/src/gtest-all.cc)
+-  add_library(gtest_main STATIC googletest/googletest/src/gtest_main.cc)
+-  target_compile_options(gtest PRIVATE "-fno-rtti")
+-  target_compile_options(gtest_main PRIVATE "-fno-rtti")
+-  include_directories(
+-    googletest/googletest
+-    googletest/googletest/include
+-  )
+ endif()
+ 
+ if(BUILD_LLVM_DWARF)

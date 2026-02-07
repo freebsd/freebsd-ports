@@ -1,0 +1,11 @@
+--- courier/webmlmrc.dist.in.orig	Sun Apr  8 21:03:03 2007
++++ courier/webmlmrc.dist.in	Sun Jun 10 11:54:35 2007
+@@ -19,7 +19,7 @@
+ #
+ # The PID file.  Don't change unless you know what you're doing.
+ 
+-PIDFILE="${PORT}.pid"
++PIDFILE=@piddir@/webmlm.pid
+ 
+ 
+ ##NAME: PREFORK:0

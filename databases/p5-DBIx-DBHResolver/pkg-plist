@@ -1,0 +1,14 @@
+%%SITE_PERL%%/DBIx/DBHResolver.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/Key.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/List.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/Range.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/Remainder.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/RoundRobin.pm
+%%PERL5_MAN3%%/DBIx::DBHResolver.3.gz
+%%PERL5_MAN3%%/DBIx::DBHResolver::Strategy.3.gz
+%%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::Key.3.gz
+%%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::List.3.gz
+%%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::Range.3.gz
+%%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::Remainder.3.gz
+%%PERL5_MAN3%%/DBIx::DBHResolver::Strategy::RoundRobin.3.gz

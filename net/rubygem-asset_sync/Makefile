@@ -1,0 +1,22 @@
+PORTNAME=	asset_sync
+PORTVERSION=	2.19.3
+CATEGORIES=	net rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Synchronizes Assets between Rails and S3
+WWW=		https://github.com/AssetSync/asset_sync
+
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-activemodel4>=4.1.0:databases/rubygem-activemodel4 \
+		rubygem-cgi>=0:www/rubygem-cgi \
+		rubygem-fog-core>=0:devel/rubygem-fog-core \
+		rubygem-mime-types>=2.99:misc/rubygem-mime-types \
+		rubygem-unf>=0:textproc/rubygem-unf
+
+USES=		gem
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

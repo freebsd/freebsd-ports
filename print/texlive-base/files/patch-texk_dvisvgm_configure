@@ -1,0 +1,13 @@
+--- texk/dvisvgm/configure.orig	2025-01-12 14:58:51 UTC
++++ texk/dvisvgm/configure
+@@ -24780,8 +24780,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+   PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
+ fi
+ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+-  FREETYPE2_INCLUDES=`$FT2_CONFIG --cflags`
+-  FREETYPE2_LIBS=`$FT2_CONFIG --libs`
++  FREETYPE2_INCLUDES=`pkg-config freetype2 --cflags`
++  FREETYPE2_LIBS=`pkg-config freetype2 --libs`
+ elif $PKG_CONFIG --libs freetype2 >/dev/null 2>&1; then
+   FREETYPE2_INCLUDES=`$PKG_CONFIG --cflags freetype2`
+   FREETYPE2_LIBS=`$PKG_CONFIG --libs freetype2`

@@ -1,0 +1,51 @@
+PORTNAME=	libvncserver
+PORTVERSION=	0.9.15
+DISTVERSIONPREFIX=	LibVNCServer-
+CATEGORIES=	net devel
+
+MAINTAINER=	nc@FreeBSD.org
+COMMENT=	Provide an easy API to a custom vnc server
+WWW=		https://libvnc.github.io/
+
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libpng.so:graphics/png \
+		liblzo2.so:archivers/lzo2
+
+USES=		cmake cpe jpeg pathfix pkgconfig
+USE_LDCONFIG=	yes
+
+CPE_VENDOR=	libvncserver_project
+
+CMAKE_ON=	WITH_24BPP WITH_JPEG WITH_LZO WITH_PNG \
+		WITH_THREADS WITH_TIGHTVNC_FILETRANSFER \
+		WITH_WEBSOCKETS WITH_ZLIB
+CMAKE_OFF=	WITH_FFMPEG WITH_SDL WITH_SYSTEMD
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	LibVNC
+
+OPTIONS_DEFINE=		GCRYPT IPV6 SASL
+OPTIONS_SINGLE=		SSL
+OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	GCRYPT OPENSSL
+GCRYPT_DESC=		libgcrypt support
+SASL_DESC=		SASL support
+
+GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error
+
+IPV6_CMAKE_BOOL=	WITH_IPv6
+
+SASL_CMAKE_BOOL=	WITH_SASL
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+
+GNUTLS_IMPLIES=		GCRYPT
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CMAKE_BOOL=	WITH_GNUTLS
+
+OPENSSL_CMAKE_BOOL=	WITH_OPENSSL
+OPENSSL_USES=		ssl
+
+.include <bsd.port.mk>

@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2024-12-05 23:06:19 UTC
++++ CMakeLists.txt
+@@ -73,9 +73,9 @@ if(NB_CREATE_INSTALL_RULES AND NOT CMAKE_SKIP_INSTALL_
+   # Normally these would be configurable by the user, but we can't allow that
+   # because the lookup paths are hard-coded in 'cmake/nanobind-config.cmake'
+   set(NB_INSTALL_INC_DIR "${NB_INSTALL_DATADIR}/include")
+-  set(NB_INSTALL_SRC_DIR "${NB_INSTALL_DATADIR}/src")
++  set(NB_INSTALL_SRC_DIR "${NB_INSTALL_DATADIR}/share/nanobind/src")
+   set(NB_INSTALL_EXT_DIR "${NB_INSTALL_DATADIR}/ext")
+-  set(NB_INSTALL_MODULE_DIR "${NB_INSTALL_DATADIR}")
++  set(NB_INSTALL_MODULE_DIR "${NB_INSTALL_DATADIR}/share/nanobind")
+   set(NB_INSTALL_CMAKE_DIR "${NB_INSTALL_DATADIR}/cmake")
+ 
+   install(

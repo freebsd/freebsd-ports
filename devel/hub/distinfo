@@ -1,0 +1,5 @@
+TIMESTAMP = 1679072305
+SHA256 (github-hub-v2.14.2_GH0.tar.gz) = e19e0fdfd1c69c401e1c24dd2d4ecf3fd9044aa4bd3f8d6fd942ed1b2b2ad21a
+SIZE (github-hub-v2.14.2_GH0.tar.gz) = 2080107
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

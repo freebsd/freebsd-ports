@@ -1,0 +1,4 @@
+Open source PMIx Reference RunTime Environment (PRRTE), a lightweight
+orchestration layer that launches, monitors, and manages parallel jobs
+across nodes. PRRTE is used as the back-end runtime by projects such as
+OpenMPI.

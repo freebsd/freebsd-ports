@@ -1,0 +1,100 @@
+#!/bin/sh
+
+# PROVIDE: pureftpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+#
+# pureftpd_enable="yes"
+# pureftpd_flags="<set as needed>"
+#
+# Add the following lines to /etc/rc.conf to enable pure-authd daemon:
+#
+# pureftpd_authd_enable="yes"
+# pureftpd_authdscript="/full/path/to/auth_script"
+# pureftpd_authsocket="/var/run/ftpd.sock"
+#
+# Add the following lines to /etc/rc.conf to enable uploadscript daemon:
+#
+# pureftpd_upload_enable="yes"
+# pureftpd_uploadscript="/full/path/to/upload_script"
+
+. /etc/rc.subr
+
+name=pureftpd
+rcvar=pureftpd_enable
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/pure-ftpd
+procname=pure-ftpd
+pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
+pureftpd_enable=${pureftpd_enable:-"no"}
+pureftpd_pidfile=${pureftpd_pidfile:-"/var/run/pure-ftpd.pid"}
+required_files=${pureftpd_config}
+# authd
+command_authd=%%PREFIX%%/sbin/pure-authd
+pidfile_authd=${pidfile_authd:-"/var/run/pure-authd.pid"}
+pureftpd_authd_enable=${pureftpd_authd_enable:-"no"}
+pureftpd_authdscript=${pureftpd_authdscript:-"%%PREFIX%%/sbin/pure-alwaysfail"}
+pureftpd_authsocket=${pureftpd_authsocket:-"/var/run/ftpd.sock"}
+# uploadscript
+command_upload=%%PREFIX%%/sbin/pure-uploadscript
+pidfile_uploadscript=${pidfile_uploadscript:-"/var/run/pure-uploadscript.pid"}
+pureftpd_upload_enable=${pureftpd_upload_enable:-"no"}
+pureftpd_uploadscript=${pureftpd_uploadscript:-"/usr/bin/touch"}
+# command_args
+flags="${pureftpd_config}"
+command_args="${pureftpd_flags}"
+command_authd_args="-B -p ${pidfile_authd} -r ${pureftpd_authdscript} -s ${pureftpd_authsocket}"
+command_upload_args="-B -p ${pidfile_uploadscript} -r ${pureftpd_uploadscript}"
+
+start_precmd=start_precmd
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+start_precmd()
+{
+	if checkyesno pureftpd_authd_enable && test -x ${pureftpd_authdscript}; then
+		echo "Starting ${command_authd}."
+		${command_authd} ${command_authd_args}
+	fi
+}
+
+start_postcmd()
+{
+	if checkyesno pureftpd_upload_enable; then
+		echo "Starting ${command_upload}."
+		${command_upload} ${command_upload_args}  
+	fi
+}
+
+stop_postcmd()
+{
+	if checkyesno pureftpd_authd_enable; then
+		pid=$(check_pidfile ${pidfile_authd} ${command_authd})
+		if [ -z ${pid} ]; then
+			echo "pure-authd not running? (check ${pidfile_authd})."
+			return 1
+		fi
+		echo "Stopping ${command_authd}."
+		kill -${sig_stop:-TERM} ${pid}
+		[ $? -ne 0 ] && [ -z "$rc_force" ] && return 1
+		wait_for_pids ${pid}
+	fi
+	if checkyesno pureftpd_upload_enable; then
+		pid=$(check_pidfile ${pidfile_uploadscript} ${command_upload})
+		if [ -z ${pid} ]; then
+			echo "Upload script not running? (check ${pidfile_uploadscript})."
+			return 1
+		fi
+		echo "Stopping ${command_upload}."
+		kill -${sig_stop:-TERM} ${pid}
+		[ $? -ne 0 ] && [ -z "$rc_force" ] && return 1
+		wait_for_pids ${pid}
+	fi
+}
+
+run_rc_command "$1"

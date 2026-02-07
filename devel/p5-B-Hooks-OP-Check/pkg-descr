@@ -1,0 +1,2 @@
+This module provides a c api for XS modules to hook into the callbacks of
+PL_check.

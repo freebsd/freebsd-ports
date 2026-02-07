@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+For the first start in your /etc/rc.conf:
+  tvheadend_enable="YES"
+  tvheadend_flags="-C"
+
+As soon as you have set an admin password the second line is not needed
+anymore and should be removed.
+
+If you plan to use webcamd you need to add tvheadend to the webcamd group.
+
+  pw usermod tvheadend -G webcamd
+
+Some IPTV channel lists expect ffmpeg on a static path (/usr/bin/ffmpeg)
+so either fix the m3u file or add an symlink.
+
+Patches, feedback and help are always welcome!
+EOM
+}
+]

@@ -1,0 +1,16 @@
+XAnim  is a program that can display animations of various
+formats on systems running X11.  XAnim currently  supports
+the following animation types:
+
+FLI animations, FLC animations, IFF animations,
+GIF87a, GIF89a, GIF89a animation extension
+DL animations, Amiga PFX(PageFlipper Plus F/X) animations,
+Amiga MovieSetter animations (For Eric Schwartz fans),
+Utah Raster Toolkit RLE images and animations,
+AVI animations, MPEG  animations, WAV audio files
+
+XAnim also provides various options that allow the user to
+alter colormaps, playback speeds, looping  modes  and  can
+provide on-the-fly scaling of animations with the mouse.
+
+LICENSE: freely used, copied and redistributed without fee for non-commerical purposes

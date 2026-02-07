@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/it.dat
+lib/aspell-%%VER%%/it_affix.dat
+share/aspell/it.multi
+share/aspell/it.rws
+share/aspell/italian.alias
+share/aspell/italiano.alias

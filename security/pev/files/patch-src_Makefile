@@ -1,0 +1,29 @@
+--- src/Makefile.orig	2017-01-07 22:34:07 UTC
++++ src/Makefile
+@@ -52,7 +52,7 @@ endif
+ 
+ ####### Compiler options
+ 
+-override LDFLAGS += -L$(LIBPE) -lpe -ldl
++override LDFLAGS += -L$(LIBPE) -lpe
+ override CFLAGS += -I$(LIBPE) -I"../include" -W -Wall -Wextra -std=c99 -pedantic
+ override CPPFLAGS += -D_GNU_SOURCE -DSHAREDIR="\"$(SHAREDIR)"\"
+ 
+@@ -145,6 +145,17 @@ install: installdirs
+ install: installdirs
+ 	for prog in $(PROGS); do \
+ 		$(INSTALL_PROGRAM) $(pev_BUILDDIR)/$$prog $(DESTDIR)$(bindir); \
++		$(CHK_FILE_EXISTS) $(MANDIR)/$$prog$(man1ext) && \
++			gzip -c -9 $(MANDIR)/$$prog$(man1ext) > $(DESTDIR)$(man1dir)/$$prog$(man1ext).gz || \
++			echo -n; \
++	done
++
++	$(INSTALL_DATA) $(srcdir)/userdb.txt $(DESTDIR)$(SHAREDIR)
++	cd $(PLUGINS_DIR) && $(MAKE) $@
++
++install-strip: installdirs
++	for prog in $(PROGS); do \
++		$(INSTALL_PROGRAM) -s $(pev_BUILDDIR)/$$prog $(DESTDIR)$(bindir); \
+ 		$(CHK_FILE_EXISTS) $(MANDIR)/$$prog$(man1ext) && \
+ 			gzip -c -9 $(MANDIR)/$$prog$(man1ext) > $(DESTDIR)$(man1dir)/$$prog$(man1ext).gz || \
+ 			echo -n; \

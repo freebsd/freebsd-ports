@@ -1,0 +1,5 @@
+include/libg15.h
+lib/libg15.a
+lib/libg15.so
+lib/libg15.so.3
+lib/libg15.so.3.0.0

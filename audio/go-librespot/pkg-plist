@@ -1,0 +1,2 @@
+bin/go-librespot
+@sample %%ETCDIR%%/config.yml.sample

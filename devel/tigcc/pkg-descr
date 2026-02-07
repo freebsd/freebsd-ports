@@ -1,0 +1,3 @@
+TIGCC is mainly a C compiler for the Texas Instruments TI-89, TI-89 Titanium,
+TI-92 Plus and Voyage 200 calculators. It is based on GCC,
+the GNU Compiler Collection.

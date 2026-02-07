@@ -1,0 +1,11 @@
+--- qmHandle.orig	2008-08-27 10:10:19.000000000 -0300
++++ qmHandle	2008-08-27 10:22:20.000000000 -0300
+@@ -51,6 +51,8 @@
+ 
+ ####################  USER CONFIGURATION END  ####################
+ 
++require "%%LOCALBASE%%/etc/qmHandle.conf" if ( -f "%%LOCALBASE%%/etc/qmHandle.conf" );
++
+ # Print usage if no arguments
+ if ($#ARGV == -1) {
+     &Usage();

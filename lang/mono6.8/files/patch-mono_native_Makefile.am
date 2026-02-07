@@ -1,0 +1,15 @@
+# Upstreamed for next release
+# PR#19234
+--- mono/native/Makefile.am.orig	2020-03-16 13:42:24.386278000 -0400
++++ mono/native/Makefile.am	2020-03-16 13:42:43.715070000 -0400
+@@ -159,10 +159,11 @@
+ 	-I$(abs_top_srcdir)/external/corefx/src/Native/Unix/Common \
+ 	-I$(abs_top_srcdir)/external/corefx/src/Native/Unix/System.Native \
+ 	-I$(abs_top_srcdir)/external/corefx/src/Native/AnyOS/brotli/include \
+ 	$(GLIB_CFLAGS) \
+ 	$(SHARED_CFLAGS) \
++	$(METADATA_CFLAGS) \
+ 	-DBROTLI_BUILD_NO_RBIT \
+ 	-Wno-typedef-redefinition
+ 
+ endif # !ENABLE_MSVC_ONLY

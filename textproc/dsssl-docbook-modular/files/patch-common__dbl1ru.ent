@@ -1,0 +1,20 @@
+--- common/dbl1ru.ent.orig	Wed Feb 19 20:41:30 2003
++++ common/dbl1ru.ent	Thu Aug 26 13:31:31 2004
+@@ -125,7 +125,7 @@
+ <!ENTITY set             "\U-041F;\U-043E;\U-0434;\U-0431;\U-043E;\U-0440;\U-043A;\U-0430;">
+ <!ENTITY SetIndex        "\U-0418;\U-043D;\U-0434;\U-0435;\U-043A;\U-0441; \U-043F;\U-043E;\U-0434;\U-0431;\U-043E;\U-0440;\U-043A;\U-0438;">
+ <!ENTITY setindex        "\U-0418;\U-043D;\U-0434;\U-0435;\U-043A;\U-0441; \U-043F;\U-043E;\U-0434;\U-0431;\U-043E;\U-0440;\U-043A;\U-0438;">
+-<!ENTITY Sidebar         "\U-0412;\U-044B;\U-0434;\U-0435;\U-043B;\U-0435;\U-043D;\U-0438;\U-0435;">
++<!ENTITY Sidebar         "">
+ <!ENTITY sidebar         "\U-0432;\U-044B;\U-0434;\U-0435;\U-043B;\U-0435;\U-043D;\U-0438;\U-0435;">
+ <!ENTITY Step            "\U-0428;\U-0430;\U-0433;">
+ <!ENTITY step            "\U-0448;\U-0430;\U-0433;">
+@@ -139,7 +139,7 @@
+ <!ENTITY WARNING         "\U-0412;\U-041D;\U-0418;\U-041C;\U-0410;\U-041D;\U-0418;\U-0415;">
+ <!ENTITY Warning         "\U-0412;\U-043D;\U-0438;\U-043C;\U-0430;\U-043D;\U-0438;\U-0435;">
+ <!ENTITY warning         "\U-0412;\U-043D;\U-0438;\U-043C;\U-0430;\U-043D;\U-0438;\U-0435;">
+-<!ENTITY and             "">
++<!ENTITY and             "\U-0438;">
+ <!ENTITY by              "">
+ <!ENTITY called          "">
+ <!ENTITY edited          "\U-041F;\U-043E;\U-0434; \U-0440;\U-0435;\U-0434;\U-0430;\U-043A;\U-0446;\U-0438;\U-0435;\U-0439;">

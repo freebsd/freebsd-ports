@@ -1,0 +1,2 @@
+File::Dir::Dumper - dump directory structures' meta-data in a consistent and
+machine-readable way.

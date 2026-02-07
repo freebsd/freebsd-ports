@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+Configuration hints:
+- Edit %%PREFIX%%/etc/%%PORTNAME%%tab
+- Deactivate the 'periodic' commands in /etc/crontab
+- Add a call to %%PORTNAME%% to /etc/crontab, like
+  0  0  *  *  *    root    %%PREFIX%%/sbin/%%PORTNAME%%
+- Add %%PORTNAME%%_enable="YES" to /etc/rc.conf
+  or execute one of the following commands as root:
+    service %%PORTNAME%% enable
+    sysrc %%PORTNAME%%_enable=YES
+- Read %%PORTNAME%%(8) and %%PORTNAME%%tab(5)
+- To avoid overlapping periodic(8) jobs, you may want to serialize jobs:
+    sysrc %%PORTNAME%%_flags+=" -s"
+EOM
+}
+]

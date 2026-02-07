@@ -1,0 +1,4 @@
+SHA256 (serialmail-0.75.tar.gz) = 1825c911087f28692c3441d4f95747201c520a22575ab3e6132b5c14097038f3
+SIZE (serialmail-0.75.tar.gz) = 55079
+SHA256 (serialmail-auth.patch) = 374b911e6758636865a44af6bf0ec2988b831a7ffddef205f4ca8f9be05dd905
+SIZE (serialmail-auth.patch) = 24469

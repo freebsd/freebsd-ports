@@ -1,0 +1,42 @@
+Adjust includes in various places.
+
+tools/legacy/sample_encode/src/sample_encode.cpp:1677:52: error: no member named 'ceil' in namespace 'std'
+        pParams->nBitRateMultiplier = (mfxU16)std::ceil(static_cast<double>(maxVal) / mfxU16Limit);
+                                              ~~~~~^
+tools/legacy/sample_multi_transcode/src/pipeline_transcode.cpp:3943:55: error: no member named 'ceil' in namespace 'std'
+        mfxU32 framesForEncode = std::min(mfxU32(std::ceil(m_MaxFramesForTranscode / frcFactor)),
+                                                 ~~~~~^
+tools/legacy/sample_multi_transcode/src/transcode_utils.cpp:2894:26: error: no member named 'ceil' in namespace 'std'
+            (mfxU16)std::ceil(static_cast<double>(maxVal) / mfxU16Limit);
+                    ~~~~~^
+
+--- tools/legacy/sample_encode/src/sample_encode.cpp.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_encode/src/sample_encode.cpp
+@@ -8,6 +8,7 @@
+ #include "vpl_implementation_loader.h"
+ 
+ #include <stdarg.h>
++#include <cmath>
+ #include <memory>
+ #include <string>
+ #include "pipeline_encode.h"
+--- tools/legacy/sample_multi_transcode/src/pipeline_transcode.cpp.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_multi_transcode/src/pipeline_transcode.cpp
+@@ -12,6 +12,7 @@
+ 
+ #include <assert.h>
+ #include <algorithm>
++#include <cmath>
+ #include <cstring>
+ #include <set>
+ #include "mfx_itt_trace.h"
+--- tools/legacy/sample_multi_transcode/src/transcode_utils.cpp.orig	2021-12-07 00:05:44 UTC
++++ tools/legacy/sample_multi_transcode/src/transcode_utils.cpp
+@@ -27,6 +27,7 @@
+ 
+ #include <algorithm>
+ #include <cctype>
++#include <cmath>
+ #include <cstdlib>
+ #include <cstring>
+ #include <fstream>

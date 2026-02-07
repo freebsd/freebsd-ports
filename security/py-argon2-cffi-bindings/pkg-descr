@@ -1,0 +1,2 @@
+argon2-cffi-bindings provides low-level CFFI bindings to the Argon2 password
+hashing algorithm including a vendored version of them.

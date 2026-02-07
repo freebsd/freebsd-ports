@@ -1,0 +1,5 @@
+TIMESTAMP = 1703965461
+SHA256 (go/sysutils_nomad-pot-driver/nomad-pot-driver-v0.10.0/v0.10.0.mod) = 4f7e7d0a9de8cffcc7b38d4d54db6158908fda3fdf1364ec1a604cccb7354f4a
+SIZE (go/sysutils_nomad-pot-driver/nomad-pot-driver-v0.10.0/v0.10.0.mod) = 3291
+SHA256 (go/sysutils_nomad-pot-driver/nomad-pot-driver-v0.10.0/v0.10.0.zip) = e4559dbabde8be374c0a873344f1759193c955795c281f4502e5d1b7f4180b7f
+SIZE (go/sysutils_nomad-pot-driver/nomad-pot-driver-v0.10.0/v0.10.0.zip) = 472466

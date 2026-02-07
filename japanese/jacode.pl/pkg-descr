@@ -1,0 +1,4 @@
+This software can convert each other "JIS", "SJIS", "EUC-JP", and "UTF-8" that
+are frequently used as encoding for Japanese string.
+
+Interface of "jacode.pl" is same of "jcode.pl" that we know well.

@@ -1,0 +1,9 @@
+--- Makefile.in.orig	Sun Feb 27 21:54:53 2005
++++ Makefile.in	Tue Jun 21 10:27:59 2005
+@@ -1,5 +1,5 @@
+ CC=@CC@
+-CFLAGS=-g -Wall
++CFLAGS=@CFLAGS@
+ OBJS=action.o matchline.o oak.o queuelist.o fire.o queue.o util.o list.o global.o readconfig.o text.o queue_entry.o string.o
+ 
+ oak: $(OBJS)

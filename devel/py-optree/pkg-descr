@@ -1,0 +1,7 @@
+OpTree provides optimized PyTree utilities.
+
+A PyTree is a recursive structure that can be an arbitrarily nested Python
+container (e.g., tuple, list, dict, OrderedDict, NamedTuple, etc.) or an opaque
+Python object. The key concepts of tree operations are tree flattening and its
+inverse (tree unflattening). Additional tree operations can be performed based
+on these two basic functions.

@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-09-24 05:25:27 UTC
++++ Makefile
+@@ -24,7 +24,7 @@ sharedir.h : ./Makefile
+ ifeq ("$(OS)", "win32")
+ 	echo '#define NETWALK_SHARE_DIR "."' > sharedir.h
+ else
+-	echo '#define NETWALK_SHARE_DIR "'$(PREFIX)'/share/netwalk"' > sharedir.h
++	echo '#define NETWALK_SHARE_DIR "/usr/local/share/netwalk"' > sharedir.h
+ 
+ endif
+ version.h : ./Makefile

@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2023-02-11 12:58:35 UTC
++++ src/Makefile.am
+@@ -32,7 +32,7 @@ liberasurecode_la_SOURCES = \
+ 		backends/shss/shss.c \
+ 		backends/phazrio/libphazr.c
+ 
+-liberasurecode_la_CPPFLAGS = -Werror @GCOV_FLAGS@
++liberasurecode_la_CPPFLAGS = @GCOV_FLAGS@
+ liberasurecode_la_LIBADD = \
+ 		builtin/null_code/libnullcode.la \
+ 		builtin/xor_codes/libXorcode.la \

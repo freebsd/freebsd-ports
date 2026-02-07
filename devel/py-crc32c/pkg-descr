@@ -1,0 +1,7 @@
+This package exposes to Python the crc32c algorithm implemented in the SSE 4.2
+instruction set of Intel CPUs.
+
+By default, if your CPU doesn't support this instruction, the package will fail
+to load with an ImportError. If you still need to use the crc32c checksum
+algorithm this package comes with a software implementation that can be loaded
+instead.

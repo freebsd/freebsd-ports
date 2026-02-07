@@ -1,0 +1,11 @@
+--- makefile.orig	Fri May 20 13:36:14 1994
++++ makefile	Sun Mar 25 08:28:08 2001
+@@ -2 +2 @@
+-	cc -o vnconvert vnconvert.c conv.o vn78.o
++	cc -o vnconvert vnconvert.c conv.o vn78.o
+@@ -5 +5 @@
+-	cc -c conv.c
++	cc ${CFLAGS} -c conv.c
+@@ -8 +8 @@
+-	cc -c vn78.c
++	cc ${CFLAGS} -c vn78.c

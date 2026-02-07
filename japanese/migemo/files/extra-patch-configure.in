@@ -1,0 +1,10 @@
+--- configure.in.orig	Mon Sep 17 18:33:52 2001
++++ configure.in	Mon Sep 17 18:35:03 2001
+@@ -6,7 +6,6 @@
+     AC_MSG_ERROR(ruby not found)
+ fi
+ 
+-AM_PATH_LISPDIR
+ AM_PATH_RUBYDIR
+ 
+ echo -n "checking Ruby/Bsearch... "

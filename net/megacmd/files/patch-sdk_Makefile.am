@@ -1,0 +1,17 @@
+--- sdk/Makefile.am.orig	2024-05-17 14:19:43 UTC
++++ sdk/Makefile.am
+@@ -46,6 +46,14 @@ endif
+ AM_LIBTOOLFLAGS="--tag=CXX"
+ endif
+ 
++if DRAGONFLY
++AM_LIBTOOLFLAGS="--tag=CXX"
++endif
++
++if NETBSD
++AM_LIBTOOLFLAGS="--tag=CXX"
++endif
++
+ VERSION_INFO=$(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ CLEANFILES=

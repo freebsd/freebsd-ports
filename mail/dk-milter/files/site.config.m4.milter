@@ -1,0 +1,2 @@
+APPENDDEF(`bld_dk_filter_INCDIRS',`-I%%LOCALBASE%%/include')
+APPENDDEF(`bld_dk_filter_LIBDIRS', `-L%%LOCALBASE%%/lib')

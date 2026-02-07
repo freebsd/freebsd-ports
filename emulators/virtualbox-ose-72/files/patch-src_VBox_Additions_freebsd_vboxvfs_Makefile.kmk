@@ -1,0 +1,50 @@
+--- src/VBox/Additions/freebsd/vboxvfs/Makefile.kmk.orig	2025-10-22 19:18:12 UTC
++++ src/VBox/Additions/freebsd/vboxvfs/Makefile.kmk
+@@ -43,32 +43,37 @@ vboxvfs_SOURCES       = \
+ 	$(vboxvfs_0_OUTDIR)
+ vboxvfs_SOURCES       = \
+ 	vboxvfs_vfsops.c \
+-	vboxvfs_vnops.c
++	bcmp.c \
++	vboxvfs_vnops.c \
++	vboxvfs_prov.c
+ vboxvfs_LIBS          = \
+ 	$(VBOX_LIB_VBGL_R0) \
+ 	$(VBOX_LIB_IPRT_GUEST_R0)
+ vboxvfs_DEPS          = \
+-	$$(vboxvfs_0_OUTDIR)/vnode_if.h \
+-	$$(vboxvfs_0_OUTDIR)/vnode_if_newproto.h \
+-	$$(vboxvfs_0_OUTDIR)/vnode_if_typedef.h
++	$(vboxvfs_0_OUTDIR)/vnode_if.h \
++	$(vboxvfs_0_OUTDIR)/vnode_if_newproto.h \
++	$(vboxvfs_0_OUTDIR)/vnode_if_typedef.h
+ vboxvfs_CLEAN        += $(vboxvfs_DEPS)
+ 
+ VBOX_AWK := /usr/bin/awk
+ 
+-$$(vboxvfs_0_OUTDIR)/vnode_if.h: $(VBOX_FREEBSD_SRC)/kern/vnode_if.src
++$$(vboxvfs_0_OUTDIR):
++	$(QUIET)$(MKDIR) -p $(vboxvfs_0_OUTDIR)
++
++$$(vboxvfs_0_OUTDIR)/vnode_if.h: $$(vboxvfs_0_OUTDIR) $(VBOX_FREEBSD_SRC)/kern/vnode_if.src
+ 	$(call MSG_TOOL,awk,VBoxGuest,$<,$@)
+ 	$(QUIET)$(VBOX_AWK) -f $(VBOX_FREEBSD_SRC)/tools/vnode_if.awk $(VBOX_FREEBSD_SRC)/kern/vnode_if.src -h
+-	$(QUIET)$(MV) $(vboxvfs_0_OUTDIR)/vnode_if.h $(vboxvfs_0_OUTDIR)/vnode_if.h
++	$(QUIET)$(MV) vnode_if.h $(vboxvfs_0_OUTDIR)/vnode_if.h
+ 
+-$$(vboxvfs_0_OUTDIR)/vnode_if_newproto.h: $(VBOX_FREEBSD_SRC)/kern/vnode_if.src
++$$(vboxvfs_0_OUTDIR)/vnode_if_newproto.h: $$(vboxvfs_0_OUTDIR) $(VBOX_FREEBSD_SRC)/kern/vnode_if.src
+ 	$(call MSG_TOOL,awk,VBoxGuest,$<,$@)
+ 	$(QUIET)$(VBOX_AWK) -f $(VBOX_FREEBSD_SRC)/tools/vnode_if.awk $(VBOX_FREEBSD_SRC)/kern/vnode_if.src -p
+-	$(QUIET)$(MV) $(vboxvfs_0_OUTDIR)/vnode_if_newproto.h $(vboxvfs_0_OUTDIR)/vnode_if_newproto.h
++	$(QUIET)$(MV) vnode_if_newproto.h $(vboxvfs_0_OUTDIR)/vnode_if_newproto.h
+ 
+-$$(vboxvfs_0_OUTDIR)/vnode_if_typedef.h: $(VBOX_FREEBSD_SRC)/kern/vnode_if.src
++$$(vboxvfs_0_OUTDIR)/vnode_if_typedef.h: $$(vboxvfs_0_OUTDIR) $(VBOX_FREEBSD_SRC)/kern/vnode_if.src
+ 	$(call MSG_TOOL,awk,VBoxGuest,$<,$@)
+ 	$(QUIET)$(VBOX_AWK) -f $(VBOX_FREEBSD_SRC)/tools/vnode_if.awk $(VBOX_FREEBSD_SRC)/kern/vnode_if.src -q
+-	$(QUIET)$(MV) $(vboxvfs_0_OUTDIR)/vnode_if_typedef.h $(vboxvfs_0_OUTDIR)/vnode_if_typedef.h
++	$(QUIET)$(MV) vnode_if_typedef.h $(vboxvfs_0_OUTDIR)/vnode_if_typedef.h
+ 
+ include $(FILE_KBUILD_SUB_FOOTER)
+ 

@@ -1,0 +1,22 @@
+--- configure.orig	2025-12-09 20:43:08 UTC
++++ configure
+@@ -3439,7 +3439,7 @@ CFLAGS="-DCYTHON_FALLTHROUGH"
+ esac
+ 
+ CFLAGS="-DCYTHON_FALLTHROUGH"
+-LIBS="-lzfs -lnvpair -lzfs_core -luutil"
++LIBS="-lzfs -lnvpair -lzfs_core -lpthread"
+ 
+ if [ "${build_freebsd}" = "yes" ]; then
+ 	LIBS="-lgeom ${LIBS}"
+--- setup.py.orig	2025-12-09 20:55:09 UTC
++++ setup.py
+@@ -43,7 +43,7 @@ except ImportError:
+         config = namedtuple('config', ['CFLAGS', 'CPPFLAGS', 'LDFLAGS'])([], [], [])
+ 
+ 
+-libraries = ['nvpair', 'zfs', 'zfs_core', 'uutil']
++libraries = ['nvpair', 'zfs', 'zfs_core']
+ if platform.system().lower() == 'freebsd':
+     libraries.append('geom')
+ 

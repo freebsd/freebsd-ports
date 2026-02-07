@@ -1,0 +1,2 @@
+resolve-march-native is a small command line tool to resolve -march=native into
+explicit GCC flags.

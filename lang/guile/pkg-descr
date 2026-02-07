@@ -1,0 +1,7 @@
+GUILE, GNU's Ubiquitous Intelligent Language for Extension,
+is a library that implements the Scheme language plus various
+convenient facilities. See the lang/guile3 port for more detail.
+
+This is a meta port to the Guile interpreter and provides symbolic
+links to bin/guile and bin/guild as a convenience to users. Do not
+depend on this port.

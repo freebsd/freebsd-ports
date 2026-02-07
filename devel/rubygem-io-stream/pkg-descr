@@ -1,0 +1,2 @@
+IO::Stream provides a buffered stream implementation for Ruby, independent of
+the underlying IO.

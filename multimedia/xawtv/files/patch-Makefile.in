@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2020-05-15 23:32:25 UTC
++++ Makefile.in
+@@ -69,24 +69,11 @@ LIBV4L		:= @LIBV4L@
+ FOUND_EXPLAIN	:= @FOUND_EXPLAIN@
+ 
+ # build final cflags
+-CFLAGS   := @CFLAGS@
+-CFLAGS   += $(WARN_FLAGS)
+-CFLAGS   += $(LFS_FLAGS)
+-CFLAGS   += $(X11_FLAGS)
+-CFLAGS   += $(LIB_FLAGS)
+-CFLAGS   += $(QT_FLAGS)
+-CFLAGS   += -DCONFIGFILE='"$(config)"'
+-CFLAGS   += -DLIBDIR='"$(libdir)"'
+-CFLAGS   += -DDATADIR='"$(datadir)"'
+-CFLAGS   += -DVERSION='"$(VERSION)"'
++CFLAGS   += @CFLAGS@ $(WARN_FLAGS) $(LFS_FLAGS) $(X11_FLAGS) $(LIB_FLAGS) $(QT_FLAGS) -DCONFIGFILE='"$(config)"' -DLIBDIR='"$(libdir)"' -DDATADIR='"$(datadir)"' -DVERSION='"$(VERSION)"' -fPIC
+ CXXFLAGS := $(CFLAGS)
+ 
+ # for gcc3
+ #CFLAGS   += -std-gnu99
+-
+-# shared objects need -fPIC
+-%.so : CFLAGS   += -fPIC
+-%.so : CXXFLAGS += -fPIC
+ 
+ # libraries
+ LDLIBS  := @LDLIBS@

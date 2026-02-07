@@ -1,0 +1,12 @@
+--- resgen.orig	2013-09-12 11:56:10.000000000 +0200
++++ resgen	2013-09-12 11:56:20.000000000 +0200
+@@ -16,7 +16,8 @@
+ #	These files will be included
+ #	in the source code as a fall-back resource.
+ #
+-INPUT=XTrojka
++set -x
++INPUT=XTrojka.uk
+ RESFILE=_resdefs.h
+ HFILE=_strdefs.h
+ H="/* hoi */"

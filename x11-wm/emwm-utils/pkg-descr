@@ -1,0 +1,4 @@
+Goodies for use with EMWM (Enhanced Motif Window Manager): XmToolbox, a
+toolchest like application launcher, which reads it's multi-level menu structure
+from a simple plain-text file ~/.toolboxrc, and XmSm, a simple session manager
+that provides session configuration, locking and shutdown/suspend options.

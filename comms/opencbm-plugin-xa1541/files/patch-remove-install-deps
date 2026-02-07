@@ -1,0 +1,20 @@
+From f4988756c4630a2ab15cfe465ba3275e4c5b4c8c Mon Sep 17 00:00:00 2001
+From: Spiro Trikaliotis <spiro.trikaliotis@gmx.de>
+Date: Thu, 14 Jul 2022 17:36:37 +0200
+Subject: [PATCH] Remove superfluous install dependencies
+
+This was discussed in #72,
+https://github.com/OpenCBM/OpenCBM/issues/72#issuecomment-1180627558
+--- LINUX/Makefile.orig	2022-01-22 22:01:25 UTC
++++ LINUX/Makefile
+@@ -73,10 +73,6 @@ $(call CREATE_TARGETS,opencbm/lib,all):: $(call CREATE
+ $(call CREATE_TARGETS,$(filter-out $(SUBDIRS_PLUGIN_XA1541),$(SUBDIRS_ALL_NON_OPTIONAL)) $(SUBDIRS_OPTIONAL),all):: $(call CREATE_TARGET,opencbm/lib,all)
+ $(call CREATE_TARGETS,opencbm/sample/libtrans,all):: $(call CREATE_TARGET,opencbm/libtrans,all)
+ 
+-$(call CREATE_TARGETS,opencbm/lib,install):: $(call CREATE_TARGET,opencbm/arch/$(OS_ARCH) opencbm/libmisc,install)
+-$(call CREATE_TARGETS,$(SUBDIRS_ALL_NON_OPTIONAL) $(SUBDIRS_OPTIONAL),install):: $(call CREATE_TARGET,opencbm/lib,install)
+-$(call CREATE_TARGETS,opencbm/sample/libtrans,install):: $(call CREATE_TARGET,opencbm/libtrans,install)
+-
+ 
+ .PHONY: $(call CREATE_TARGETS,$(SUBDIRS_ALL_NON_OPTIONAL),all clean mrproper install install-files install-files-doc install-doc uninstall)
+ $(call CREATE_TARGETS,$(SUBDIRS_ALL_NON_OPTIONAL),all clean mrproper install install-files install-files-doc install-doc uninstall)::

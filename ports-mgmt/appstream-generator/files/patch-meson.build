@@ -1,0 +1,13 @@
+--- meson.build.orig	2025-09-25 21:14:13 UTC
++++ meson.build
+@@ -57,8 +57,8 @@ endif
+ #
+ # Compiler flags
+ #
+-add_project_arguments('-D_POSIX_C_SOURCE=201710L', language: 'c')
+-add_project_arguments('-D_POSIX_C_SOURCE=201710L', language: 'cpp')
++#add_project_arguments('-D_POSIX_C_SOURCE=201710L', language: 'c')
++#add_project_arguments('-D_POSIX_C_SOURCE=201710L', language: 'cpp')
+ 
+ if get_option('maintainer')
+     maintainer_c_args = [

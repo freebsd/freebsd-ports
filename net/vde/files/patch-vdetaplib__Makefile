@@ -1,0 +1,11 @@
+--- vdetaplib/Makefile	Sat Jan 29 15:02:08 2005
++++ vdetaplib/Makefile	Sun Jan 30 12:21:39 2005
+@@ -9,7 +9,7 @@
+ all: vdetap libvdetap.so
+ 
+ libvdetap.so: libvdetap.a
+-	$(LD) -E -o $@ -L./ -ldl -shared -export-dynamic -Bdynamic \
++	$(LD) -E -o $@ -L./ -shared -export-dynamic -Bdynamic \
+ 	              --whole-archive libvdetap.a
+ 
+ libvdetap.a: libvdetap.o

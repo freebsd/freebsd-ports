@@ -1,0 +1,4 @@
+D2 is a scripting language that turns text into diagrams, similar to
+Mermaid and PlantUML. However, D2 puts more focus on simply doing the
+right thing, and it can produce highly visually-appealing diagrams with
+very little input.

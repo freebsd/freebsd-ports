@@ -1,0 +1,7 @@
+Arti is a complete rewrite of the C Tor codebase, and it is currently under
+active development. It is written in Rust, and it is designed to be modular,
+reusable, and easy to audit.
+
+This is the full version of the port, offering additional features and
+binaries, for example to run onion services. For regular client mode, the
+default version is just fine.

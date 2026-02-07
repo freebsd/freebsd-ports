@@ -1,0 +1,3 @@
+An interactive ncurses browser for Fossil repositories.
+
+fnc uses libfossil to create a fossil ui experience in the terminal.

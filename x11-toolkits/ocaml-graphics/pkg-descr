@@ -1,0 +1,3 @@
+The OCaml Graphics library provides a portable graphic interface for
+OCaml on Unix (X11) and Windows (Win32 API). It used to be distributed
+with the main OCaml distribution up until version 4.08.

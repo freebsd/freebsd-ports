@@ -1,0 +1,11 @@
+--- cargo-crates/servo-fontconfig-sys-4.0.9/makefile.cargo.orig	2019-12-08 04:12:07 UTC
++++ cargo-crates/servo-fontconfig-sys-4.0.9/makefile.cargo
+@@ -58,7 +58,7 @@ SRC_DIR = $(shell pwd)
+ all: $(OUT_DIR)/libfontconfig.a
+ 
+ $(OUT_DIR)/libfontconfig.a: $(OUT_DIR)/Makefile
+-	cd $(OUT_DIR) && make -j$(NUM_JOBS)
++	cd $(OUT_DIR) && gmake -j$(NUM_JOBS)
+ 	cp $(OUT_DIR)/src/.libs/libfontconfig.a $(OUT_DIR)
+ 
+ EXPAT_INCLUDE_DIR ?= $(DEP_EXPAT_OUTDIR)/include

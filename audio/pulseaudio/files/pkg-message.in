@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOD
+Pulseaudio tries to determine default values for FreeBSD OSS driver at first
+start, based on /dev/sndstat output. The hw.snd.default_unit sysctl may affect
+these values, but restart of the Pulseaudio might be needed to rescan it again,
+e.g. `pacmd exit`.
+
+Pulseaudio has separate input and output configure lines. You can change them
+with using following commands:
+
+To change the default sink (output):
+# pacmd set-default-sink 3
+To change the default source (input):
+# pacmd set-default-source 3
+
+This can also be set in %%PREFIX%%/etc/pulse/default.pa
+
+Replace the number '3' with the new default you want to set.
+
+The audio/freedesktop-sound-theme is needed if the default sound files
+are uncommented in the %%PREFIX%%/etc/pulse/default.pa file.
+EOD
+}
+]

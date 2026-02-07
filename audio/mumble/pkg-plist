@@ -1,0 +1,13 @@
+bin/mumble
+bin/mumble-overlay
+%%OVERLAY_32BIT%%lib/mumble/libmumbleoverlay%%OVERLAY_32BIT_SUFFIX%%.so
+%%OVERLAY_32BIT%%lib/mumble/libmumbleoverlay%%OVERLAY_32BIT_SUFFIX%%.so.%%MUMBLE_VERSION%%.0
+lib/mumble/libmumbleoverlay%%OVERLAY_NATIVE_SUFFIX%%.so
+lib/mumble/libmumbleoverlay%%OVERLAY_NATIVE_SUFFIX%%.so.%%MUMBLE_VERSION%%.0
+lib/mumble/plugins/liblink.so
+share/applications/info.mumble.Mumble.desktop
+share/icons/hicolor/256x256/apps/mumble.png
+share/icons/hicolor/scalable/apps/mumble.svg
+share/man/man1/mumble.1.gz
+share/man/man1/mumble-overlay.1.gz
+share/metainfo/info.mumble.Mumble.appdata.xml

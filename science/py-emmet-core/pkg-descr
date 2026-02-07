@@ -1,0 +1,3 @@
+emmet is the Materials API Toolkit for the Materials Project.
+Emmet defines the core models, data pipelines, the API server,
+and the convenience CLI.

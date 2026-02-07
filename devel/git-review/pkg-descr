@@ -1,0 +1,5 @@
+Git review allows you to extend git to interact more easily with a Gerrit server
+from the console.
+
+It allows you to push change to review, download a changeset into a new branch,
+push a change as draft or push an amended change as new patchset.

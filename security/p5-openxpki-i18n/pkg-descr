@@ -1,0 +1,7 @@
+Translation files for
+
+        security/p5-openxpki
+
+which is a Perl based trustcenter software for PKI: server and client parts
+
+Note: I18n is needed for the English interface too.

@@ -1,0 +1,6 @@
+SNMP::MIB::Compiler is a MIB compiler that fully supports
+both SMI(v1) and SMIv2. This module can be use to compile
+MIBs (recursively or not) or load already compiled MIBs for
+later use.
+
+More information about this module is included in this package.

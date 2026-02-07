@@ -1,0 +1,45 @@
+--- docs/en/pnm2ppa.1.orig	2002-06-23 05:17:58 UTC
++++ docs/en/pnm2ppa.1
+@@ -60,13 +60,13 @@ Econofast mode: lower print quality that is faster and
+ .\"{{{	-f configFile
+ .IP "\fB\-f \fIconfigFile\fR\fP"
+ Re-reads configuration from \fIconfigFile\fR (after 
+-initially reading it from /etc/pnm2ppa.conf). 
++initially reading it from %%PREFIX%%/etc/pnm2ppa.conf). 
+ .\"}}}
+ 
+ .\"{{{	-F GammaFile
+ .IP "\fB\-F \fIGammaFile\fR\fP"
+ Overrides reading the color-correction table (Gamma curve) from the default 
+-file /etc/pnm2ppa.gamma, and uses \fIGammaFile\fR instead.
++file %%PREFIX%%/etc/pnm2ppa.gamma, and uses \fIGammaFile\fR instead.
+ .\"}}}
+ 
+ .\"{{{	--fd
+@@ -170,7 +170,7 @@ Sets the y-offset \fIyoffset\fR from the top of the pa
+ 
+  
+ .SH NOTES
+-The default configuration file \fI/etc/pnm2ppa.conf\fR  is read in first. Command line arguments then modify the resulting definitions.
++The default configuration file \fI%%PREFIX%%/etc/pnm2ppa.conf\fR  is read in first. Command line arguments then modify the resulting definitions.
+ .PP
+ The \fB-v\fP option resets all definitions (margins, offsets, etc.)  back to
+ the inbuilt defaults for that printer and should be used before subsequent
+@@ -180,13 +180,13 @@ pnm(5), ppm(5), pbm(5)
+ 
+ .SH FILES
+ 
+-.\"{{{	/etc/pnm2ppa.conf
+-.IP "\fB\fI/etc/pnm2ppa.conf\fR\fP"
++.\"{{{	%%PREFIX%%/etc/pnm2ppa.conf
++.IP "\fB\fI%%PREFIX%%/etc/pnm2ppa.conf\fR\fP"
+ Default configuration file.
+ .\"}}}
+ 
+-.\"{{{	/etc/pnm2ppa.gamma
+-.IP "\fB\fI/etc/pnm2ppa.gamma\fR\fP"
++.\"{{{	%%PREFIX%%/etc/pnm2ppa.gamma
++.IP "\fB\fI%%PREFIX%%/etc/pnm2ppa.gamma\fR\fP"
+ Default Gamma (color-correction) file.
+ .\"}}}
+ 

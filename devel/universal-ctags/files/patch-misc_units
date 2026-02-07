@@ -1,0 +1,11 @@
+--- misc/units.orig	2019-05-22 11:44:20 UTC
++++ misc/units
+@@ -1929,7 +1929,7 @@ failed_git_marker ()
+     local f=$1
+     local l
+ 
+-    if type "git" > /dev/null 2>&1; then
++    if false && type "git" > /dev/null 2>&1; then
+ 	l=$(git ls-files -- "$f")
+ 	if [ -z "$l" ]; then
+ 	    echo '<G>'

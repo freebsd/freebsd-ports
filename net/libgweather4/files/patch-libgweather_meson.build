@@ -1,0 +1,11 @@
+--- libgweather/meson.build.orig	2023-09-16 11:21:48 UTC
++++ libgweather/meson.build
+@@ -24,7 +24,7 @@ add_project_arguments(c_compiler.get_supported_argumen
+ 
+   # We guarantee that our code base does not fail these
+   '-Werror=format=2',
+-  '-Werror=implicit-function-declaration',
++#  '-Werror=implicit-function-declaration',
+   '-Werror=init-self',
+   '-Werror=missing-include-dirs',
+ ]), language: 'c')

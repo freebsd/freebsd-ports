@@ -1,0 +1,6 @@
+%%SITE_PERL%%/ToolSet.pm
+%%SITE_PERL%%/ToolSet.pod
+%%SITE_PERL%%/ToolSet/SWC.pm
+%%SITE_PERL%%/ToolSet/SWC.pod
+%%PERL5_MAN3%%/ToolSet.3.gz
+%%PERL5_MAN3%%/ToolSet::SWC.3.gz

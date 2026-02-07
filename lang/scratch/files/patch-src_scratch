@@ -1,0 +1,18 @@
+--- src/scratch.orig	2011-07-01 22:21:32 UTC
++++ src/scratch
+@@ -4,11 +4,11 @@
+ # Original Author: Bert Freudenberg
+ # Adapted by:      Miriam Ruiz
+ 
+-VM_VERSION=`find /usr/lib/squeak/ -name "squeakvm" -type f|cut -f5 -d"/"`
+-SQ_DIR=/usr/lib/squeak/$VM_VERSION
++VM_VERSION=`find %%PREFIX%%/lib/squeak/ -name "squeakvm" -type f|awk -F/ '{print $(NF-1)}'`
++SQ_DIR=%%PREFIX%%/lib/squeak/$VM_VERSION
+ VM="$SQ_DIR/squeakvm"
+-VMOPTIONS="-encoding UTF-8 -vm-display-x11 -xshm -plugins /usr/lib/scratch/Plugins/:$SQ_DIR/"
+-IMAGE="/usr/lib/scratch/Scratch.image"
++VMOPTIONS="-encoding UTF-8 -vm-display-x11 -xshm -plugins %%PREFIX%%/share/scratch/Plugins/:$SQ_DIR/"
++IMAGE="%%PREFIX%%/share/scratch/Scratch.image"
+ IMOPTIONS=""
+ DOCUMENT=""
+ WRAPPER=""

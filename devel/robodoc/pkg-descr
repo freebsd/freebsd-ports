@@ -1,0 +1,5 @@
+A source code documentation tool for C, C++, Fortran, Perl,
+shell scripts, Assembler, DCL, DB/C, Tcl/Tk, Forth, Lisp,
+COBOL, Occam, Basic, HTML, Clarion, and more. It can produce
+documentation in HTML, XML DocBook, TROFF, ASCII, LaTeX or
+RTF format.

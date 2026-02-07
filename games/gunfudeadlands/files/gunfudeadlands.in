@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec %%LOCALBASE%%/bin/love07 %%DATADIR%%/GunFuDeadlands.zip "$@"

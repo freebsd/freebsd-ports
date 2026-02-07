@@ -1,0 +1,105 @@
+.Dd March 26, 2017
+.Dt SIMH 1 CON
+.Os
+.Sh NAME
+.Nm simh
+.Nd Simulation suite for various computer systems
+.Sh SYNOPSIS
+.Nm
+.Op Fl e
+.Op Fl q
+.Op Fl v
+.Oo
+.Ar startup-file
+.Op Ar arguments
+.Oc
+.Sh DESCRIPTION
+.Nm
+is a comprehensive suite of simulators for a number of legacy computer systems.
+.Pp
+Note that there is no actual
+.Nm
+command; each simulator is invoked with its own command.
+Currently, the
+available commands are:
+.Bd -ragged -offset indent
+.Sy altair ,
+.Sy altairz80 ,
+.Sy gri ,
+.Sy h316 ,
+.Sy hp2100 ,
+.Sy i1401 ,
+.Sy i1620 ,
+.Sy i7094 ,
+.Sy ibm1130 ,
+.Sy id16 ,
+.Sy id32 ,
+.Sy lgp ,
+.Sy nova ,
+.Sy pdp1 ,
+.Sy pdp10 ,
+.Sy pdp11 ,
+.Sy pdp15 ,
+.Sy pdp4 ,
+.Sy pdp7 ,
+.Sy pdp8 ,
+.Sy pdp9 ,
+.Sy s3 ,
+.Sy sds ,
+.Sy simh-eclipse ,
+.Sy swtp6800mp-a ,
+.Sy swtp6800mp-a2 ,
+.Sy vax ,
+.Sy vax780 .
+.Ed
+.Pp
+The following options are available for all of the commands:
+.Bl -tag -width indent
+.It Fl e
+Processing of
+.Ar startup-file
+(including nested command invocations) is aborted if
+a command error is encountered.
+.It Fl q
+Certain informational messages are suppressed.
+.It Fl v
+The commands in
+.Ar startup-file
+are echoed before they are executed.
+.El
+.Pp
+If
+.Ar startup-file
+is specified, it is used as an initial source of simulator commands.
+If
+.Ar startup-file
+is not specified,
+the simulator looks for a startup file consisting of the simulator
+name (including its path components) plus the extension
+.Pa .ini .
+.Pp
+If a startup file is specified, either on the
+command line or implicitly via the
+.Pa .ini
+capability, it should contain a series of non-interactive simulator
+commands, one per line.
+These commands can be used to set up standard parameters, for example disk
+sizes.
+.Pp
+After initializing its internal structures and processing the startup file (if any),
+the simulator types out its name and version and then prompts for input with:
+.Bd -ragged -offset indent
+.Sy sim>
+.Ed
+.Sh EXIT STATUS
+.Nm
+exits 0 on success, and >0 if an error occurs.
+.Sh SEE ALSO
+Documentation is available for each of the simulators. There is
+also generic simulator documentation. It can be found locally in
+.Pa %%DOCSDIR%%
+(if installed), and also at
+.Pa http://simh.trailing-edge.com/pdf/all_docs.html .
+.Sh AUTHORS
+.An "Robert M. Supnik and many others" .
+.Fx "port maintenance, and this manual page, by" An "Bob Eager" Aq bob@eager.cx .

@@ -1,0 +1,2 @@
+The Perl 5 module DBICx::Deploy deploys a DBIx::Class schema to a
+database. A command line script, dbicdeploy, is provided.

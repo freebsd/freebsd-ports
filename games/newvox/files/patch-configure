@@ -1,0 +1,20 @@
+--- configure.orig	Thu Aug 23 05:17:29 2001
++++ configure	Thu Aug 23 05:19:36 2001
+@@ -1112,7 +1112,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ 
+ char*
+ my_strdup (char *str)
+@@ -1205,7 +1205,7 @@
+ #include "confdefs.h"
+ 
+ #include <stdio.h>
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ 
+ int main() {
+  return 0; 

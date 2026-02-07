@@ -1,0 +1,4 @@
+bin/gist
+%%PERL5_MAN3%%/App::gist.3.gz
+%%SITE_PERL%%/App/gist.pm
+%%PERL5_MAN1%%/gist.1.gz

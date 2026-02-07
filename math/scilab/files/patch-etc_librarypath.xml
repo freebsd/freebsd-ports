@@ -1,0 +1,12 @@
+--- etc/librarypath.xml.orig	2020-02-25 09:59:42 UTC
++++ etc/librarypath.xml
+@@ -42,6 +42,9 @@
+     <!-- Some distributions (like openSUSE) put gluegen-rt in /usr/lib instead pf /usr/lib/jni -->
+     <path value="/usr/lib/" />
+     <path value="/usr/lib64/" />
++    <!-- FreeBSD ports -->
++    <path value="/usr/local/share/java/classes" />
++    <path value="/usr/local/lib" />
+ 
+     <!-- SCILAB LIBRARIES -->
+     <!-- Developpement environment -->

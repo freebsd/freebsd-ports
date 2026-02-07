@@ -1,0 +1,6 @@
+include/plutovg/plutovg.h
+%%STATIC%%lib/libplutovg.a
+lib/libplutovg.so
+lib/libplutovg.so.1
+lib/libplutovg.so.%%SOVERSION%%
+libdata/pkgconfig/plutovg.pc

@@ -1,0 +1,10 @@
+Orthanc-dicomweb extends the native REST API of Orthanc with a reference
+implementation of the DICOMweb standard. Loading the plugin into Orthanc will
+provide support of WADO-URI (previously known simply as WADO), WADO-RS,
+QIDO-RS and STOW-RS.
+
+Out-of-the-box, Orthanc comes with its own REST API. This API allows full
+CRUD operations (create, read, update and delete) on the set of DICOM
+resources that Orthanc stores, together with commands that trigger calls to
+the DICOM protocol (C-Echo SCU/SCP, C-Store SCU/SCP, C-Find SCU/SCP, C-Move
+SCU/SCP).

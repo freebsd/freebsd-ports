@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+1) Add lib paths to %%PREFIX%%/etc/fpc.cfg
+
+   # searchpath for libraries
+   -Fl/usr/local/lib
+
+   This is necessary for correct linking of libraries.
+
+2) If you want to see all documentation about FreePascal, you can install
+
+   * lang/fpc-docs
+
+3) Take on mind that fpc only works with binutils on this moment but could work
+   with another ld tool later on next versions of freepascal
+
+4) Enjoy it ;)
+EOM
+}
+]

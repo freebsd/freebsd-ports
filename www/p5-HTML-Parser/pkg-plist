@@ -1,0 +1,15 @@
+%%SITE_ARCH%%/HTML/Entities.pm
+%%SITE_ARCH%%/HTML/Filter.pm
+%%SITE_ARCH%%/HTML/HeadParser.pm
+%%SITE_ARCH%%/HTML/LinkExtor.pm
+%%SITE_ARCH%%/HTML/Parser.pm
+%%SITE_ARCH%%/HTML/PullParser.pm
+%%SITE_ARCH%%/HTML/TokeParser.pm
+%%SITE_ARCH%%/auto/HTML/Parser/Parser.so
+%%PERL5_MAN3%%/HTML::Entities.3.gz
+%%PERL5_MAN3%%/HTML::Filter.3.gz
+%%PERL5_MAN3%%/HTML::HeadParser.3.gz
+%%PERL5_MAN3%%/HTML::LinkExtor.3.gz
+%%PERL5_MAN3%%/HTML::Parser.3.gz
+%%PERL5_MAN3%%/HTML::PullParser.3.gz
+%%PERL5_MAN3%%/HTML::TokeParser.3.gz

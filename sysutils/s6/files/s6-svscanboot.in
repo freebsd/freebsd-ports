@@ -1,0 +1,14 @@
+#!%%LOCALBASE%%/bin/execlineb -S0
+define SCANROOT $1
+%%LOCALBASE%%/bin/exec -c
+%%LOCALBASE%%/bin/foreground { 
+%%LOCALBASE%%/bin/if -n {
+/bin/test -p ${SCANROOT}/s6-svscan-log/fifo }
+mkfifo -m 0622 ${SCANROOT}/s6-svscan-log/fifo 
+}
+%%LOCALBASE%%/bin/foreground { /usr/sbin/chown nobody:nogroup ${SCANROOT}/s6-svscan-log/fifo }
+%%LOCALBASE%%/bin/redirfd -wnb 1 ${SCANROOT}/s6-svscan-log/fifo
+%%LOCALBASE%%/bin/fdmove -c 2 1
+%%PREFIX%%/bin/s6-envdir -I ${SCANROOT}/.s6-svscan/env
+%%LOCALBASE%%/bin/exec -a s6-svscan
+%%PREFIX%%/bin/s6-svscan -t0 ${SCANROOT}

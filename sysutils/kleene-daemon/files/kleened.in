@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# PROVIDE: kleened
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable and configure this service:
+#
+# kleened_enable (bool):    Set to NO by default.
+#                          Set it to YES to enable kleened.
+# kleened_user (str):      Set to "root" by default.
+# kleened_config (str):    Path to config file.
+#                          Default: %%PREFIX%%/etc/kleened/config.yaml
+# kleened_shutdown_timeout (int): Seconds to wait for graceful shutdown.
+#                                Default: 60
+
+. /etc/rc.subr
+name=kleened
+rcvar=kleened_enable
+extra_commands="init dryinit"
+# kleened_init: Initialize host configuration
+# kleened_dryinit: Test host configuration without applying changes
+
+required_files="${kleened_config}"
+
+command="%%PREFIX%%/libexec/kleened/bin/kleened"
+pidfile="/var/run/kleened.pid"
+procname="$(/usr/bin/find %%PREFIX%%/libexec/kleened -name beam.smp)"
+
+start_cmd="${command} daemon"
+status_cmd="${command} ping"
+stop_cmd="kleened_stop"
+init_cmd="kleened_init"
+dryinit_cmd="kleened_dryinit"
+
+load_rc_config $name
+
+: ${kleened_enable:=no}
+: ${kleened_user:="root"}
+: ${kleened_config:="%%ETCDIR%%/config.yaml"}
+: ${kleened_shutdown_timeout:=60}
+: ${kleened_env="LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 PATH=%%PREFIX%%/libexec/kleened/bin:${PATH}"}
+
+kleened_stop()
+{
+    echo "Stopping ${name}."
+    ${command} stop
+    wait_for_pids ${pidfile} ${kleened_shutdown_timeout}
+}
+
+kleened_init()
+{
+    echo "Initializing kleened host configuration..."
+    if %%PREFIX%%/libexec/kleened/bin/kleened eval "Kleened.Core.Config.initialize_host(%{dry_run: false})"; then
+        echo "Host initialization completed successfully"
+    else
+        echo "Host initialization failed"
+        return 1
+    fi
+}
+
+kleened_dryinit()
+{
+    echo "Testing kleened host configuration..."
+    if %%PREFIX%%/libexec/kleened/bin/kleened eval "Kleened.Core.Config.initialize_host(%{dry_run: true})"; then
+        echo "Host configuration test completed successfully"
+    else
+        echo "Host configuration test failed"
+        return 1
+    fi
+}
+
+run_rc_command "$1"

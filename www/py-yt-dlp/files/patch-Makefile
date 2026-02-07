@@ -1,0 +1,16 @@
+--- Makefile.orig	2026-01-29 17:00:40 UTC
++++ Makefile
+@@ -146,6 +146,13 @@ supportedsites:
+ supportedsites:
+ 	$(PYTHON) devscripts/make_supportedsites.py supportedsites.md
+ 
++freebsd-install-all-files:
++	mkdir -p $(PYTHON_SITELIBDIR)
++	for d in $(PY_CODE_FOLDERS) ; do \
++	  mkdir -p $(PYTHON_SITELIBDIR)/$$d ;\
++	  cp -pPR $$d/*.py $(PYTHON_SITELIBDIR)/$$d/ ;\
++	done
++
+ README.txt: README.md
+ 	pandoc -f $(MARKDOWN) -t plain README.md -o README.txt
+ 

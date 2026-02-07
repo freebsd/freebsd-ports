@@ -1,0 +1,12 @@
+include/eastasianwidthdef.h
+include/graphemebreak.h
+include/linebreak.h
+include/linebreakdef.h
+include/unibreakbase.h
+include/unibreakdef.h
+include/wordbreak.h
+lib/libunibreak.a
+lib/libunibreak.so
+lib/libunibreak.so.6
+lib/libunibreak.so.6.0.1
+libdata/pkgconfig/libunibreak.pc

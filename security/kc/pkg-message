@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Please read ${PREFIX}/share/doc/kc/Changelog.md to see why you might not be able to open your v2.4 database anymore.
+
+For YubiKey support, the user needs to have r/w access to the USB device under /dev/usb.
+EOM
+}
+]

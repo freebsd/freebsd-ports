@@ -1,0 +1,6 @@
+UFTP is an encrypted multicast file transfer program, designed to securely,
+reliably, and efficiently transfer files to multiple receivers simultaneously.
+This is useful for distributing large files to a large number of receivers,
+and is especially useful for data distribution over a satellite link
+(with two way communication), where the inherent delay makes any TCP based
+communication highly inefficient.

@@ -1,0 +1,20 @@
+Cdparanoia is a Compact Disc Digital Audio (CDDA) Digital Audio Extraction
+(DAE) tool, commonly known on the net as a 'ripper'.  The application is
+built on top of the Paranoia library, which is doing the real work (the
+Paranoia source is included in the cdparanoia source distribution).
+Cdparanoia reads audio from the CDROM directly as data, with no analog step
+between, and writes the data to a file or pipe in WAV, AIFC, or raw 16 bit
+linear PCM.
+
+Cdparanoia is a bit different than most other CDDA extraction tools.  It
+contains few-to-no 'extra' features, concentrating only on the ripping
+process and knowing as much as possible about the hardware performing it.
+Cdparanoia will read correct, rock-solid audio data from inexpensive drives
+prone to misalignment, frame jitter, and loss of streaming during atomic
+reads.  Cdparanoia will also read and repair data from CDs that have been
+damaged in some way.
+
+Cdparanoia is easy to use and administrate.  It has no compile time
+configuration, happily autodetecting the CDROM, its type, its interface and
+other aspects of the ripping process at runtime.  A single binary can serve
+the diverse hardware of the do-it-yourself computer laboratory from Hell.

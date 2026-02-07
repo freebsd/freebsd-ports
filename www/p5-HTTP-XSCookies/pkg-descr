@@ -1,0 +1,2 @@
+HTTP::XSCookies implements cookie creation (baking) and parsing (crushing) using
+XS, therefore improving the speed of a pure Perl implementation.

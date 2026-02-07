@@ -1,0 +1,11 @@
+ExtUtils::InstallPaths tries to make install path resolution as easy as
+possible.
+
+When you want to install a module, it needs to figure out where to install
+things. The nutshell version of how this works is that default installation
+locations are determined from ExtUtils::Config, and they may be individually
+overridden by using the install_path attribute. An install_base attribute lets
+you specify an alternative installation root like /home/foo and prefix does
+something similar in a rather different (and more complicated) way. destdir lets
+you specify a temporary installation directory like /tmp/install in case you
+want to create bundled-up installable packages.

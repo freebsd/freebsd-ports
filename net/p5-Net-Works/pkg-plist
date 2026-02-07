@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Net/Works.pm
+%%SITE_PERL%%/Net/Works/Address.pm
+%%SITE_PERL%%/Net/Works/Network.pm
+%%SITE_PERL%%/Net/Works/Role/IP.pm
+%%SITE_PERL%%/Net/Works/Types.pm
+%%SITE_PERL%%/Net/Works/Util.pm
+%%PERL5_MAN3%%/Net::Works.3.gz
+%%PERL5_MAN3%%/Net::Works::Address.3.gz
+%%PERL5_MAN3%%/Net::Works::Network.3.gz
+%%PERL5_MAN3%%/Net::Works::Util.3.gz

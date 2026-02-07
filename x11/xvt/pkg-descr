@@ -1,0 +1,7 @@
+xvt - an xterm replacement, supporting color, transparency, and more,
+with less!
+
+xvt, simply continues on the original authors work -- John Bovey, University
+of Kent at Canterbury. With few exceptions, it does everything Xterm does.
+But also does a great deal more, with less overhead. This version will also
+leverage vt(4), FreeBSD's new console driver. Which replaces syscons(4).

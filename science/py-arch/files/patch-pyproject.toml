@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2023-09-27 08:13:24 UTC
++++ pyproject.toml
+@@ -54,8 +54,8 @@ requires = [
+ requires = [
+   "setuptools>=61",
+   "wheel",
+-  "setuptools_scm[toml]>=8.0.3,<9",
+-  "oldest-supported-numpy>=2022.11.19",
++  "setuptools_scm[toml]",
++  "numpy",
+   "cython>=0.29.34", # Works with 3.0.0b2
+ 
+ ]

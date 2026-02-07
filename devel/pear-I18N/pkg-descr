@@ -1,0 +1,6 @@
+This package supports you to localize your applications.
+
+Multiple ways of supporting translation are implemented and methods to determine
+the current users (browser-)language.
+
+Localizing Numbers, DateTime and currency is also implemented.

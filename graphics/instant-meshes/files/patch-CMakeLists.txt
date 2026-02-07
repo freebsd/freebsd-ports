@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2017-09-06 16:18:14 UTC
++++ CMakeLists.txt
+@@ -11,11 +11,11 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CO
+ endif()
+ string(TOUPPER "${CMAKE_BUILD_TYPE}" U_CMAKE_BUILD_TYPE)
+ 
+-if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/ext/nanogui/ext/glfw")
+-  message(FATAL_ERROR "The Instant Meshes dependency repositories (NanoGUI, GLFW, etc.) are missing! "
+-    "You probably did not clone the project with --recursive. It is possible to recover "
+-    "by calling \"git submodule update --init --recursive\"")
+-endif()
++#if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/ext/nanogui/ext/glfw")
++#  message(FATAL_ERROR "The Instant Meshes dependency repositories (NanoGUI, GLFW, etc.) are missing! "
++#    "You probably did not clone the project with --recursive. It is possible to recover "
++#    "by calling \"git submodule update --init --recursive\"")
++#endif()
+ 
+ # Enable folders for projects in Visual Studio
+ if (CMAKE_GENERATOR MATCHES "Visual Studio")
+@@ -66,7 +66,7 @@ set(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL
+ set(NANOGUI_BUILD_SHARED  OFF CACHE BOOL " " FORCE)
+ set(NANOGUI_BUILD_PYTHON  OFF CACHE BOOL " " FORCE)
+ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ext/nanogui ext_build/nanogui)
+-set_property(TARGET nanogui glfw glfw_objects bin2c PROPERTY FOLDER "dependencies")
++set_property(TARGET nanogui bin2c PROPERTY FOLDER "dependencies")
+ 
+ # Build TBB
+ set(TBB_BUILD_STATIC ON CACHE BOOL " " FORCE)

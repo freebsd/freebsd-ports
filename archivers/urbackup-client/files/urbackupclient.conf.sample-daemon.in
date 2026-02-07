@@ -1,0 +1,29 @@
+#
+# This is parsed as a key=value file
+#
+
+#logfile name
+#If you change the LOGFILE, you should also change the "logfilename" in %%PREFIX%%/etc/newsyslog.conf.d/urbackupclient.conf
+LOGFILE="/var/log/urbackupclient.log"
+
+#Either debug,warn,info or error
+LOGLEVEL=warn
+
+#Tmp file directory
+DAEMON_TMPDIR="/tmp"
+
+# Valid settings:
+#
+# "client-confirms": If you have the GUI component the currently active user
+#                    will need to confirm restores from the web interface.
+#                    If you have no GUI component this will cause restores
+#                    from the server web interface to not work
+# "server-confirms": The server will ask the user starting the restore on 
+#                    the web interface for confirmation
+# "disabled":        Restores via web interface are disabled.
+#                    Restores via urbackupclientctl still work
+#
+RESTORE=disabled
+
+#If true client will not bind to any external network ports (either true or false)
+INTERNET_ONLY=false

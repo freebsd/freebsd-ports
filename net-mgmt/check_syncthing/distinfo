@@ -1,0 +1,5 @@
+TIMESTAMP = 1764951174
+SHA256 (go/net-mgmt_check_syncthing/dsh2dsh-check_syncthing-v1.0.0_GH0/go.mod) = 96d5a3cd0b89ea15c69478de434fb1c5481dfdf06d608cfd7ca991f51d858ca7
+SIZE (go/net-mgmt_check_syncthing/dsh2dsh-check_syncthing-v1.0.0_GH0/go.mod) = 579
+SHA256 (go/net-mgmt_check_syncthing/dsh2dsh-check_syncthing-v1.0.0_GH0/dsh2dsh-check_syncthing-v1.0.0_GH0.tar.gz) = bb5c0ef38d8f7bdbb18662dd1a3f2481c408653d89bf6da08c58c4cf08183999
+SIZE (go/net-mgmt_check_syncthing/dsh2dsh-check_syncthing-v1.0.0_GH0/dsh2dsh-check_syncthing-v1.0.0_GH0.tar.gz) = 29344

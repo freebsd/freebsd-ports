@@ -1,0 +1,12 @@
+include/X11/extensions/Xinerama.h
+include/X11/extensions/panoramiXext.h
+lib/libXinerama.a
+lib/libXinerama.so
+lib/libXinerama.so.1
+lib/libXinerama.so.1.0.0
+libdata/pkgconfig/xinerama.pc
+share/man/man3/Xinerama.3.gz
+share/man/man3/XineramaQueryExtension.3.gz
+share/man/man3/XineramaQueryVersion.3.gz
+share/man/man3/XineramaIsActive.3.gz
+share/man/man3/XineramaQueryScreens.3.gz

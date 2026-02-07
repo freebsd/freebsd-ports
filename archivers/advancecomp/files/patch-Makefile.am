@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2021-10-29 17:10:27 UTC
++++ Makefile.am
+@@ -332,7 +332,7 @@ check-local: ./advzip$(EXEEXT) test/test.lst
+ 	@cp $(srcdir)/test/basn2c08.png $(srcdir)/test/basn3p01.png $(srcdir)/test/basn3p02.png $(srcdir)/test/basn3p04.png $(srcdir)/test/basn3p08.png $(srcdir)/test/basn6a08.png $(srcdir)/test/basn6a04.png .
+ 	$(TESTENV) ./advpng$(EXEEXT) -f -z basn2c08.png basn3p01.png basn3p02.png basn3p04.png basn3p08.png basn6a08.png basn6a04.png
+ 	$(TESTENV) ./advpng$(EXEEXT) -L basn2c08.png basn3p01.png basn3p02.png basn3p04.png basn3p08.png basn6a08.png basn6a04.png >> check.lst
+-	cat check.lst | $(DTOU) | cmp $(srcdir)/test/test.lst
++	cat check.lst | $(DTOU) | cmp - $(srcdir)/test/test.lst
+ 	@echo Success!
+ 
+ DISTDOS_ROOT = \

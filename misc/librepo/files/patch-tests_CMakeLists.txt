@@ -1,0 +1,10 @@
+--- tests/CMakeLists.txt.orig	2023-01-28 07:22:09 UTC
++++ tests/CMakeLists.txt
+@@ -16,6 +16,7 @@ SET (librepotest_SRCS
+      test_url_substitution.c
+      test_util.c
+      test_version.c
++     ../librepo/xattr.c
+     )
+ 
+ #ADD_LIBRARY(testsys STATIC testsys.c)

@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+MAngband has been installed.
+
+The following mangclient directories could be copied to a user-writable
+location:
+
+    %%DATADIR%%/user
+    %%DATADIR%%/xtra
+
+To provide a path for those directories ~/.mangrc should be used.
+Please copy example mangrc to your home directory and adjust it
+
+    cp %%EXAMPLESDIR%%/mangrc ~/.mangrc
+    chmod 644 ~/.mangrc
+
+To run mangband server as an unpriviliged user, such user must be added
+to the games group. For example:
+
+    pw usermod <user> -G games
+EOM
+}
+]

@@ -1,0 +1,4 @@
+Mg is a small, fast, portable, and free (public domain) Emacs-like
+editor maintained by the OpenBSD Project.  It is intended for people
+who can't, or don't want to, run the real GNU Emacs, or are not
+familiar with the vi(1) editor.

@@ -1,0 +1,4 @@
+logistro is an extremely light addition to logging, providing sensible defaults.
+
+It also includes getPipeLogger() which can be passed to Popen() so that its
+stderr is piped to the already thread-safe logging library.

@@ -1,0 +1,4 @@
+dhall-python contains Dhall bindings for Python using the rust implementation.
+It is meant to be used to integrate Dhall into your python applications.
+
+Dhall is a programmable configuration language optimized for maintainability.

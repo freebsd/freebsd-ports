@@ -1,0 +1,15 @@
+Fix docs build on CURRENT. qdoc needs to be supplied with the path to
+the headers via 'includepaths'.
+
+PR: 287614
+
+--- doc/accounts-qml-module-common.qdocconf.orig	2023-10-28 16:29:37 UTC
++++ doc/accounts-qml-module-common.qdocconf
+@@ -5,6 +5,7 @@ headerdirs = ../src
+ outputdir   = html
+ outputformats = HTML
+ headerdirs = ../src
++includepaths = ../src
+ sourcedirs = ../src
+ sources.fileextensions = "*.qml *.qdoc *.cpp"
+ exampledirs = ./examples

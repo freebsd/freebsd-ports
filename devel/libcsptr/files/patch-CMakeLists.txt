@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-07-03 22:54:45 UTC
++++ CMakeLists.txt
+@@ -72,7 +72,7 @@ if (NOT WIN32)
+ endif ()
+ 
+ include_directories(include/csptr src)
+-add_library(csptr STATIC ${SOURCE_FILES} ${INTERFACE_FILES})
++add_library(csptr ${SOURCE_FILES} ${INTERFACE_FILES})
+ 
+ if (COVERALLS AND NOT LIBCSPTR_DISABLE_COVERALLS)
+   coveralls_setup("${SOURCE_FILES}" ${COVERALLS_UPLOAD})

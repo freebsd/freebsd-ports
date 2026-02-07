@@ -1,0 +1,4367 @@
+Updating Information for FreeBSD ports developers
+
+This file is maintained by portmgr@FreeBSD.org and copyrighted by the
+FreeBSD Foundation.
+
+This file contains major changes to ports and the ports infrastructure.
+Intended audience are ports committers, maintainers and other
+developers. User oriented changes should be submitted for inclusion
+in the release notes and/or placed into UPDATING.
+
+All ports committers are allowed to commit to this file.
+
+20251111:
+AUTHOR: kiwi@FreeBSD.org
+
+  USES=sudo has been added into ports, to allow depending on a
+  different sudo flavor. Ports depending on sudo were updated
+  to use and introduced USES.
+
+  You can update make.conf to use sssd version of sudo with:
+
+        DEFAULT_VERSIONS+=sudo=sssd
+
+20250619:
+AUTHOR: python@FreeBSD.org
+
+  PYTHON_EXT_SUFFIX has been renamed to PYTHON_TAG due to semantic
+  ambiguity between existing ports usage and PEP 3147 and PEP 3149's
+  specifications. Especially with Python 3.13's free-threaded mode,
+  the tags between bytecode and compiled extension modules do not
+  necessarily match. See python.mk for details.
+
+20250307:
+AUTHOR: python@FreeBSD.org
+
+  setuptools has been removed as a RUN_DEPENDS for USE_PYTHON=distutils
+  ports, except for those operating under Python 2. If your port
+  needs setuptools to run, you can add it back to RUN_DEPENDS, but
+  keep in mind that this practice is deprecated and discouraged in
+  the greater Python ecosystem.
+
+  setuptools includes a module, pkg_resources, that historically
+  has been used as a runtime API for "finding, introspecting,
+  activating and using installed Python distributions." These
+  functions have been superseded by the importlib family and the
+  packaging package.
+
+  setuptools also includes their own copy of distutils, which is
+  not present in the base Python distribution starting in 3.12. The
+  use of distutils primitives directly in consumers is also discouraged
+  and deprecated.
+
+20250306:
+AUTHOR: jhale@FreeBSD.org
+
+  TEST_DEPENDS support has been added to Mk/Uses/qt.mk.
+
+  If a component defined by USE_QT is only needed for regession tests,
+  it can be added to TEST_DEPENDS buy suffixing it with ':test'.
+
+  For example:
+      USES=	qt:5
+      USE_QT=	testlib:test
+
+      Will add devel/qt5-testlib to TEST_DEPENDS
+
+20250205:
+AUTHOR: yasu@FreeBSD.org
+
+  3 new variables are defined if you add 'USES=samba' in Makefile.
+
+  * SAMBA_TALLOC_PORT
+  * SAMBA_TDB_PORT
+  * SAMBA_TEVENT_PORT
+
+  They are intended to be used by ports that works with Samba to
+  specify proper version of talloc, tdb and/or tevent as dependency
+  such as bellow.
+
+      LIB_DEPENDS=	ibtalloc.so:${SAMBA_TALLOC_PORT} \
+			libtdb.so:${SAMBA_TDB_PORT} \
+			libtevent.so:${SAMBA_TEVENT_PORT}
+      USES=		samba:env
+
+  You need not use them if port just depends on talloc, tdb and/or
+  tevent and it has nothing to do with Samba.
+
+20250203:
+AUTHOR: yasu@FreeBSD.org
+
+  Following legacy variables are removed from Mk/Uses/samba.mk
+
+  * SAMBAPORT
+  * SAMBAINCLUDES
+  * SAMBALIBS
+
+  And ones below should be used instead.
+
+  * SAMBA_PORT
+  * SAMBA_INCLUDEDIR
+  * SAMBA_LIBDIR
+
+20241231:
+AUTHOR: bofh@FreeBSD.org
+
+  Convert bsd.java.mk to USES
+
+  The following features have been added or changed:
+  - Instead of USE_JAVA use USES=java. This defaults to
+    USES=java:build,run if NO_BUILD is undefined. Else it defaults to
+    USES=java:run
+  - Instead of USE_ANT=yes use USES=java:ant which also implies
+    USES=java:build
+  - Instead of JAVA_BUILD=yes use USES=java:build. Does not imply run or
+    extract
+  - Instead of JAVA_EXTRACT=yes use USES=java:extract does not imply
+    build or run
+  - Instead of JAVA_RUN=yes use USES=java:run does not imply extract or
+    build
+  - Instead of USE_JAVA=<version> use USES=java and JAVA_VERSION=<version>
+
+20241231:
+AUTHOR: bofh@FreeBSD.org
+
+  Converted remaining bsd.ocaml.mk to Uses/ocaml.mk
+
+  - Instead of USE_OCAML=yes use USES=ocaml. If empty USES=ocaml implies
+    build and run
+  - Instead of USE_OCAMLFIND_PLIST use USES=ocaml:findplist which also
+    implies USES=ocaml:findlib
+  - Instead of USE_OCAML_CAMLP4 use USES=ocaml:camlp4
+  - Instead of USE_OCAML_FINDLIB use USES=ocaml:findlib
+  - Instead of USE_OCAML_LDCONFIG use USES=ocaml:ldconfig
+  - Instead of USE_OCAML_WASH use USES=ocaml:wash
+  - Instead of NO_OCAML_BUILDDEPENDS use USES=ocaml:run
+  - Instead of NO_OCAML_RUNDDEPENDS use USES=ocaml:build
+  - Instead of USE_OCAML_TK use USES=ocaml:tk which actually implies
+    USES=ocaml:tkbuild and USES=ocaml:tkrun
+  - Instead of NO_OCAMLTK_BUILDDEPENDS use USES=ocaml:tkrun
+  - Instead of NO_OCAMLTK_RUNDEPENDS use USES=ocaml:tkbuild
+  - USES=ocaml:dune remains unchanged
+  - Prepare to add/remove keywords easily
+
+20240408:
+AUTHOR: flo@FreeBSD.org
+
+  A new variable DBD_MYSQL has been introduced and should be used to depend
+  on the correct version of p5-DBD-mysql. Versions >= 5.000 removed support
+  for MariaDB. DBD_MYSQL will check which MYSQL_FLAVOUR is used and set the
+  correct version as a dependency. For this to work, ports need to add mysql
+  to USES.
+
+20240408:
+AUTHOR: makc@FreeBSD.org
+
+  USES=cmake now supports `indirect' argument. This argument adds cmake binary
+  to the BUILD_DEPENDS and and exposes CMAKE_ARGS and some other helpers, but
+  does not run cmake in the configure step. cmake:indirect is intended
+  primarily for ports which use meson or pep517 for build.
+
+20240229:
+AUTHOR: tijl@FreeBSD.org
+
+  A new command SETENVI that clears the environment and a new variable
+  WRK_ENV that contains a basic environment to use with SETENVI have
+  been added.
+  Ports that run (parts of) the upstream build system directly using
+  commands like "${SETENV} ${MAKE_ENV} ${MAKE_CMD} ..." should change
+  that to "${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ...".  This way
+  the build system runs with a clean environment without interference
+  from the user environment or ports framework environment.  Ports can
+  add extra environment variables to WRK_ENV similar to CONFIGURE_ENV,
+  MAKE_ENV, TEST_ENV, and so on, but WRK_ENV is used in all targets
+  while the latter are target-specific.
+
+20240111:
+AUTHOR: bapt@FreeBSD.org
+
+  MAN[1-8LN]PREFIX variable has been removed from the framework, use PREFIX
+  directly.
+
+20230929:
+AUTHOR: sunpoet@FreeBSD.org
+
+  USE_PYTHON=cryptography{,_build,_test} has been added to the ports tree.
+  20230722 entry is obsoleted now. All existing USES=pycryptography* have
+  been converted to USE_PYTHON=cryptography{,_build,_test} in PR 273727.
+
+  Usage:
+    USE_PYTHON=cryptography_build adds security/py-cryptography to BUILD_DEPENDS
+    USE_PYTHON=cryptography adds security/py-cryptography to RUN_DEPENDS
+    USE_PYTHON=cryptography_test adds security/py-cryptography to TEST_DEPENDS
+
+20230823:
+AUTHOR: tcberner@FreeBSD.org
+
+  USES=llvm.mk now supports 'export' (default) and 'noexport' arguments.
+  When export is set, CC, CXX and CPP will be set to the path corresponding
+  to the chosen llvm-version.
+
+20230821:
+AUTHOR: jhale@FreeBSD.org
+
+  A new uses 'ebur128' has been added to transparently depend on the
+  proper variant of 'rust' or 'legacy' depending on the default version
+  set by the user.
+
+  Usage:	USES=ebur128:ARGS
+  Valid ARGS:	<none>, build, lib, run, test
+    <none>:	(default) same as lib
+    build:	add BUILD_DEPENDS
+    lib:	add LIB_DEPENDS
+    run:	add RUN_DEPENDS
+    test:	add TEST_DEPENDS
+
+  If you prefer not to use rust, add the following to your make.conf:
+
+	DEFAULT_VERSIONS+=ebur128=legacy
+
+20230728:
+AUTHOR: andrew@tao11.riddles.org.uk, fuz@FreeBSD.org
+
+  A new uses 'guile' has been added to transparently depend on the
+  proper variant of guile depending on the default version set by the
+  user and the demands of the port.
+
+  See Mk/Uses/guile.mk for in-depth documentation.
+
+20230722:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new uses 'pycryptography' has been added to transparently depend on the
+  proper variant of 'rust' or 'legacy' depending on the default version set
+  by the user.
+
+  Supported arguments: <none>,build,run
+  Passing no arguments (<none>) is equivalent to passing both build and run.
+
+  Usage:
+	USES=pycryptography:build
+		-> adds a BUILD_DEPENDS only
+	USES=pycryptography:run
+		-> adds a RUN_DEPENDS only
+	USES=pycryptography:test
+		-> adds a TEST_DEPENDS only
+	USES=pycryptography:build,run   or   USES=pycryptography
+		-> adds a BUILD_ and RUN_DEPENDS
+
+20230712:
+AUTHOR: zirias@FreeBSD.org
+
+  USE_GITLAB has been changed to allow fetching by tag name. This was done by
+  removing the GL_COMMIT variable and introducing GL_TAGNAME instead.
+
+  Similar to USE_GITHUB/GH_TAGNAME, you can still use a commit hash with
+  GL_TAGNAME (the full 40-character hash is required for that). If not
+  specified, GL_TAGNAME defaults to DISTVERSIONFULL.
+
+  Note fetching by tag name might not work on gitlab installations running
+  very old versions; in that case, you must still specify a commit hash.
+
+  For now, GL_COMMIT is still recognized but deprecated, using it will issue
+  a warning in developer mode.
+
+20230712:
+AUTHOR: 0mp@FreeBSD.org
+
+  Two new targets are now available: fetch-url-recursive-list
+  and fetch-urlall-recursive-list. They are the recursive variants
+  of the well-established targets fetch-url-list and fetch-urlall-list,
+  which allow for listing the complete URLs of DISTFILES and PATCHFILES
+  of a port. The recursive variants add the URLs of the port's dependencies
+  to the output.
+
+20230430:
+AUTHOR: zirias@FreeBSD.org
+
+  USES=magick has been updated based on flavorized ports.
+
+  A new argument 'x11' is available to specifically depend on the flavor
+  with X11 support. Fallback to DEFAULT_VERSIONS now happens
+  independently for the version (currently 6 or 7) and the flavor
+  (currently x11 or nox11).
+
+  Only use arguments for version or flavor if your port really requires
+  it. Also, there is no need to add options for selecting the -nox11
+  flavor any more, as the user setting in DEFAULT_VERSIONS will be
+  honored.
+
+20230111:
+AUTHOR: vishwin@FreeBSD.org
+
+  USE_PYTHON=pep517 has been added to facilitate building using the
+  new format.
+
+  USE_PYTHON=pep517 takes no arguments. Operation is similar to
+  USE_PYTHON=distutils, although the build backend specified in
+  pyproject.toml shall be specified in BUILD_DEPENDS.
+
+  A usage guide and implementation primer is available at:
+        https://wiki.freebsd.org/Python/PEP-517
+
+20221217:
+AUTHOR: tcberner@FreeBSD.org
+
+  USES=llvm has been added to more easily depend on llvm.
+
+  USES=llvm supports two kinds of arguments:
+
+  * mode
+	<none>:	defaults to build
+	build:	add a BUILD_DEPENDS on chosen llvm-port
+	run:	add a RUN_DEPENDS on chosen llvm-port
+	lib:	add a LIB_DEPENDS on chosen llvm-port
+
+  * version
+	<none>:		defaults to ${LLVM_DEFAULT}
+	number:		use explicitly the specified version
+	min=number:	use specified min if ${LLVM_DEFAULT} is lower
+	max=number:	use specified max if ${LLVM_DEFAULT} is higher
+
+  An example usage might be:
+	USES=	llvm
+  or
+	USES=	llvm:13,build
+  or
+	USES=	llvm:min=14,lib
+
+  The following variables are exposed to be used in the ports tree at the moment:
+	* LLVM_VERSION	version chosen from the arguments to llvm.mk
+	* LLVM_PORT	chosen llvm port
+	* LLVM_CONFIG	llvm-config of the chosen port
+	* LLVM_LIBLLVM	libLLVM.so of the chosen port
+	* LLVM_PREFIX	installation prefix of the chosen port
+
+20221026:
+AUTHOR: bapt@FreeBSD.org
+  3 new features are available now: PIE, RELRO, BIND_NOW, each port can
+  specify the inability to support any via <feature>_UNSAFE
+
+  All 3 are off by default, the intent is to activate following the freebsd
+  base activation of the same features.
+
+  End users can activate/deactivate globally via WITH_/WITHOUT_ <feature>
+
+20221014:
+AUTHOR: adamw@FreeBSD.org
+
+  USES=luajit has been added to support a unified luajit version. The
+  default here is luajit-devel, which should be the right version for
+  nearly everybody.
+
+  luajit-openresty is a drop-in replacement for anything that luajit-devel
+  works in, though not necessarily the other way around. If a program uses
+  the openresty-specific API then you will need USES=luajit:luajit-openresty.
+
+  The standard USES for most ports:
+    USES=luajit
+
+  For anything that requires the openresty API:
+    USES=luajit:luajit-openresty
+
+20220911:
+AUTHOR: zirias@FreeBSD.org
+
+  kde.mk, qt.mk and pyqt.mk now use a colon for component suffixes
+
+  Suffixes for build, run and test (for pyqt) dependencies used an underscore
+  previously. This was not in line with most other USES, using a colon for
+  that purpose.
+
+  So if you previously had for example
+
+	USE_QT=	buildtools_build
+
+  replace it with
+
+	USE_QT= buildtools:build
+
+20220907:
+AUTHOR: se@FreeBSD.org
+
+  The convention of a WWW: line at the end of each port's pkg-descr file
+  has been changed to a WWW= definition in the port's Makefile. All ports
+  have been converted to follow this new scheme.
+
+  The portlint and portfmt ports will be updated, but may erroneously flag
+  the new convention as incorrect until the new versions have been installed.
+
+20220826:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new Uses for 'vala' has been added.
+
+  To depend on libvala, use
+  	USES=vala:lib
+  to only add a build-time dependency, use
+  	USES=vala:build
+
+20220821:
+AUTHOR: kde@FreeBSD.org
+
+  qt.mk now supports both Qt 5 and Qt 6.
+
+  To make use of Qt6 write:
+
+        USES=qt:6
+        USE_QT=list of Qt6 components
+
+  Please take a look at qt.mk to see the available components.
+
+20220722:
+AUTHOR: portmgr@FreeBSD.org
+
+  'Created by' are being removed from the ports makefiles.
+
+  Created by lines have historically been used to attribute contributions
+  to the original creators of the ports. However, those might no longer
+  be contributing to the port
+
+20220430:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new USES has been added to handle dependency on gstreamer.
+
+  Instead of writing
+
+        USE_GSTREAMER1=[list of components]
+
+  you now have to write
+
+        USES=gstreamer
+        USE_GSTREAMER=[list of components]
+
+  If your port previously set just
+
+        USE_GSTREAMER=yes
+
+  this now is simply
+
+        USES=gstreamer
+
+20220415:
+AUTHOR: amdmi3@FreeBSD.org
+
+  A new USES has been added to handle testing with pytest.
+
+    USES=           pytest
+
+  Introduces dependency on pytest and adds do-test target which calls
+  pytest with the right environment and arguments.
+
+  Additionally, PYTEST_{IGNORED,BROKEN}_TESTS knobs are provided for
+  skipping failing tests in a convenient and documented way.
+
+20220218:
+AUTHOR: jrm@FreeBSD.org
+
+  A new USES has been added to change an ELF binary's feature control note.
+
+    USES=           elfctl
+    ELF_FEATURES=   +noaslr,wxneeded:foo \
+                    -noprotmax:foo \
+                    +nostackgap:bar
+
+  Turns on noaslr and wxneeded and turns off noprotmax for the ELF
+  binary foo and turns on nostackgap for the ELF binary bar.
+
+  The file paths listed in ELF_FEATURES are relative to ${BUILD_WRKSRC}.
+  File modifications are made post-build as certain test targets may run on
+  the build-tree binaries.
+
+20220127:
+AUTHOR: kde@FreeBSD.org
+
+  PyQt modules have been merged into devel/py-qt5-pyqt.
+
+  This allows us to simplify PyQt framework and to be in adequacy with the
+  packages that the author of these libraries proposes, namely:
+
+  * PyQt - devel/py-qt5-pyqt
+  * PyQt-Charts - x11-toolkits/py-qt5-chart
+  * PyQt-NetworkAuth – net/py-qt5-networkauth
+  * PyQt-WebEngine – www/py-qt5-webengine
+  * SIP – devel/py-sip
+  * py-sip - devel/py-qt5-sip
+  * PyQt-builder - devel/py-qtbuilder
+  * Qscintilla - devel/py-qt5-qscintilla2
+
+  Ports depending on PyQt, must be declared with USE_PYQT=pyqt5 instead of
+  USE_PYQT=core gui svg etc.
+
+20220117:
+AUTHOR: tobik@FreeBSD.org
+
+  Standalone USE_GL, USE_GNOME, USE_MATE, USE_PHP, USE_SDL,
+  USE_XORG have been deprecated for a while. For migration
+  purposes the framework automatically loaded the corresponding
+  USES={gl,gnome,mate,php,sdl,xorg} with a warning. The migration
+  period is now over and you must add the USES manually for USE_*
+  to have any effect.
+
+20220111:
+AUTHOR: se@FreeBSD.org
+
+  The CPU_AND, CPU_ANDNOT, CPU_OR, and CPU_XOR macros in 14-CURRENT
+  and 13-STABLE after this date have been made compatible with GLIBC
+  conventions. Specifically, they now take 3 arguments instead of 2.
+  Ports can check whether the CPU_ALLOC macro is defined and then
+  use the 3 parameter form, e.g.:
+
+    #ifdef CPU_ALLOC
+	CPU_AND(dst, dst, src);
+    #else
+	CPU_AND(dst, src);
+    #endif
+
+20211211:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new USES has been added to depend on ImageMagick.
+
+     USES=magick
+
+  adds a LIB_DEPENDS on graphics/ImageMagick${IMAGEMAGICK_DEFAULT}.
+
+  If a specific version is required, use for example
+
+     USES=magick:6        resp.     USES=magick:7
+
+  If only a build, run or test is required, use for example
+
+     USES=magick:build    resp.     USES=magick:6,build,test
+
+  If a dependency on the nox11 flavor is required, use for example
+
+     USES=magick:nox11    resp.     USES=magick:7,nox11,run,test
+
+  See magick.mk for more details on the available flags.
+
+20211122:
+AUTHOR: bapt@FreeBSD.org
+
+  The default compression for INDEX file as fetch via make fetchindex has
+  switched from .bz2 to .xz (.zst is also available).
+
+  The .bz2 format is still available but is considered deprecated and may
+  be removed in the future.
+
+20211010:
+AUTHOR: bapt@FreeBSD.org
+
+  INSTALLS_ICONS has been replace by a trigger on gtk-update-icon-cache.
+  the macro does nothing anymore.
+
+20211010:
+AUTHOR: bapt@FreeBSD.org
+
+  A new USES has been added, to simplify the integration of triggers in
+  the ports tree.
+
+20210801:
+AUTHOR: delphij@FreeBSD.org
+
+  WANT_OPENLDAP_SASL is removed now that OpenLDAP is always built with
+  SASL support.
+
+20210730:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new USES has been added to depend on the mlt multimedia framework.
+
+  Ports that depend on mlt should now use USES=mlt:<version> to specify
+  their dependency.
+
+  At the moment the supported version is 6, but will be extended to also
+  allow for selection of mlt 7 shortly.
+
+20210604:
+AUTHOR: mat@FreeBSD.org
+
+  The prepare-commit-msg hook was enhanced to auto-fill the first line of the
+  commit with the category/port in case only one port was committed to.
+
+20210525:
+AUTHOR: amdmi3@FreeBSD.org
+
+  PYTHON_REL has been switched from a 4 digits number to a 5 digits number to
+  handle python 3.10.0.  Ports checking for python 3.7.10 should compare
+  PYTHON_REL against 30710 and ports checking for python 3.10.0 should compare
+  PYTHON_REL against 31000.
+
+20210420:
+AUTHOR: mat@FreeBSD.org
+
+  A prepare-commit-msg hook was added to the repository.  This hooks prepares
+  the commit message template for specific ports tree usage.
+
+  To make use of it, the easiest way is to run:
+
+    git config --add core.hooksPath .hooks
+
+20201120:
+AUTHOR: gnome@FreeBSD.org
+
+  New default version for librsvg2.
+
+  Current versions of graphics/librsvg2 are using parts written in rust.
+  For architectures that do not have support for rust, and for people
+  who prefer not to have, or are not able to compile rust software due
+  to hardware limitations, the version can be chosen via this new flag.
+
+  The default on almost all architectures is rust.
+
+  If you prefer no to use rust, add the following to your make.conf:
+
+  	DEFAULT_VERSIONS+=librsvg2=legacy
+
+20210327:
+AUTHOR: bapt@FreeBSD.org
+
+  New @touch keyword
+  Its purpose is to ensure that a file is being created at install time
+  while not necessary tracked by the package.
+
+20201120:
+AUTHOR: pauamma@gundo.com
+
+  New virtual category: education.
+
+  This category comprises ports that are mainly educational in nature or
+  purpose, such as:
+  * course-writing or course-delivery applications,
+  * classroom or school management applications (eg, scheduling classes),
+  * applications, utilities, or games primarily or substantially designed
+    to help the user learn a specific topic or study in general, like typing
+    tutors, flashcard applications, or educational games.
+
+20201110:
+AUTHOR: bapt@FreeBSD.org
+
+  Patents are a complicated topic, and their regulation varies depending on
+  jurisdiction. Patents are not necessarily related to the license and so
+  should not be connected to the license framework.
+
+  Patent limitations within the ports tree have been removed and left to the
+  user or consumer to deal with their local legislation to determine if they
+  can use the software without legal restrictions.
+
+20201022:
+AUTHOR: bapt@FreeBSD.org
+
+  New @rmempty keyword
+  Its purpose is to delete empty files at deinstallation time. It is meant
+  to be used for generated files/untracked by the package manager files.
+
+  It respects rootdir
+
+20201022:
+AUTHOR: bapt@FreeBSD.org
+
+  @shell has been rewritten in lua
+  It provides the exact same feature set as the previous version but it is now
+  sandboxed and rootdir compliant (see the pkg -r option).
+
+20201001:
+AUTHOR: manu@FreeBSD.org
+
+  The @sample keyword was rewritten in lua.
+  It behaves exactly like the previous one but it is sandboxed and
+  is rootdir compliant (see pkg -r option).
+
+20201001:
+AUTHOR: bapt@FreeBSD.org
+
+  packages scripts and keywords can both be written in lua (version 5.3), see
+  pkg-lua-script(5) for the API.
+
+  Note that all scripts written in lua will:
+
+  - run inside a capsicum sandbox,
+  - be rootdir compatible (see pkg -r option)
+  - be cross installation compatible example: installing packages in an arm64
+    rootdir on and amd64 host.
+
+20200531:
+AUTHOR: kde@FreeBSD.org
+
+  pyqt.mk gained support for test-only dependencies. If a component, say
+  py-qt5-gui is only required for testing, you can add
+
+    USE_PYQT=<other_deps> gui_test
+
+20200514:
+AUTHOR: mat@FreeBSD.org
+
+  Add PATCH_CONTINUE_ON_FAIL to allow patching to go through all the patches
+  even if one fail.
+
+  This helps when upgrading ports with a large number of patches, like
+  www/chromium where having to fix one patch, re-do the patching, fix the
+  fallout, 800 times, is really painful.
+
+20200414:
+AUTHOR: bapt@FreeBSD.org
+
+  package scripts can now be done in lua, the following are supported:
+
+  - pkg-pre-install.lua
+  - pkg-post-install.lua
+  - pkg-pre-deinstall.lua
+  - pkg-post-deinstall.lua
+
+  see pkg-lua-script(5) for more details.
+
+20200414:
+AUTHOR: mat@FreeBSD.org
+
+  USES=lua gained flavors.
+
+  Ports using USES=lua:module or lua:flavors will be flavored.  A range of
+  supported lua versions can be set using XX-YY (or XX-, or -YY, or simply ZZ)
+  for ports not supporting all lua versions.
+
+  USES=lua sets LUA_FLAVOR that needs to be used on all dependencies of
+  flavored lua ports, in a similar way as PHP or Python flavors.
+
+20200115:
+AUTHOR: bapt@FreeBSD.org
+
+  ${PREFIX}/share/man is now a valid location for manpages ${PREFIX}/man being
+  considered as deprecated.
+
+20191009:
+AUTHOR: bapt@FreeBSD.org
+
+  The ipv6 virtual category is gone, it does not make sense anymore in 2019
+  where the norm in applications is to have support both ipv4 and ipv6.
+
+20191001:
+AUTHOR: bapt@FreeBSD.org
+
+  BINARY_WRAPPERS allow to push in front of the PATH wrappers for binaries.
+  This is useful when 2 tools do provide the same feature, but the configure
+  scripts do test for some variables which are not in one of the tool.
+
+20190919:
+AUTHOR: madpilot@FreeBSD.org
+
+  USES=xfce now defaults to gtk3, so for ported applications requiring
+  GTK2 XFCE support USES=xfce:gtk2 should be used.
+
+20190903:
+AUTHOR: bapt@FreeBSD.org
+
+  The ports tree now supports overlays
+
+  overlays are a way to help users to integrate their own ports tree
+  with the official ports tree without having to maintain clone of the
+  official tree and remerge on regular basis.
+
+  The ports tree will lookup in the overlays (in the order the are listed in
+  OVERLAY variable) for the dependencies and the USES. It will use the first
+  found.
+
+  in order to use it the user have to declare his overlays that way in their
+  make.conf:
+  OVERLAYS= overlay1 overlay2 overlay3
+
+20181225:
+AUTHOR: kde@FreeBSD.org
+
+  cmake.mk now defaults to out-of-sourcetree builds. The option 'outsource'
+  has been removed. Ports that need an intree build now can pass 'insource'.
+
+20181110:
+AUTHOR: bapt@FreeBSD.org
+
+  texinfo files are now installed in ${PREFIX}/share/info
+
+20180630:
+AUTHOR: kde@FreeBSD.org
+
+  bsd.qt.mk has been replaced by qt.mk. This changes the way ports have to
+  depend on Qt slightly.
+
+  Previously one would have written
+  	USE_QT4=foo bar
+  or
+  	USE_QT5=foo bar
+  while now one has to write
+  	USES=qt:4
+  	USE_QT=foo bar
+  respectively
+  	USES=qt:5
+  	USE_QT=foo bar
+
+  Further qmake.mk no longer respects QT_NONSTANDARD. Ports that don't want to
+  get the configure environment provided by qmake.mk should add the argument
+  no_env, ports that don't want the configure target should specify no_configure.
+
+20180506:
+AUTHOR: brnrd@FreeBSD.org
+
+  All USE_ and WANT_ variables for PHP have been removed and marked
+  UNSUPPORTED. Use USES= php:<feature> as a replacement.
+
+  USE_PHPIZE, USE_PHPEXT, USE_ZENDEXT, USE_PHP_BUILD,
+  WANT_PHP_CLI, WANT_PHP_CGI, WANT_PHP_MOD, WANT_PHP_WEB, WANT_PHP_EMB
+
+20180311:
+AUTHOR: brnrd@FreeBSD.org
+
+  USE_APACHE has been replaced by USES=apache.
+
+20180308:
+AUTHOR: mat@FreeBSD.org
+
+  Ports using USES=php:phpize, php:ext, php:zend, and php:pecl are now
+  flavored.  They will automatically get flavors (php56, php70, php71, php72)
+  depending of the versions they support (set with IGNORE_WITH_PHP).  As a
+  consequence, ports using USES=pear and USES=horde are also flavored.
+
+  As all packages must have different package names, the following variables
+  must be used in PKGNAMEPREFIX/SUFFIX:
+
+    Variable                     + Values                +
+    --------------------------------------------------------------------------------------
+    PHP_PKGNAMEPREFIX            | php56- php72-         | PHP Extensions
+                                 |                       | and modules
+    --------------------------------------------------------------------------------------
+    PHP_PKGNAMESUFFIX            | -php56 -php72         | PHP Applications
+    --------------------------------------------------------------------------------------
+    PECL_PKGNAMEPREFIX           | php56-pecl-           | PECL extensions
+                                 |                       | automatic
+    --------------------------------------------------------------------------------------
+    PEAR_PKGNAMEPREFIX           | php56-pear-           | PEAR modules
+                                 |                       | without PEAR_CHANNEL
+    PEAR_<channel>_PKGNAMEPREFIX | php56-pear-channel-   | with PEAR_CHANNEL
+                                 |                       | automatic
+
+  In all the ports with PHP dependencies, the *_DEPENDS entries MUST end with
+  the flavor so that the framework knows which to build/use.  This is done by
+  appending '@${PHP_FLAVOR}' after the origin.  For example:
+
+    RUN_DEPENDS=  ${PEAR_PKGNAMEPREFIX}Validate>=0.5.0:devel/pear-Validate@${PHP_FLAVOR} \
+                  ${PECL_PKGNAMEPREFIX}smbclient>=0.8.0:net/pecl-smbclient@${PHP_FLAVOR} \
+
+  PHP applications (for example, www/wordpress) can also get flavors, add the
+  flavors keyword to USES=php, for example: USES=php:flavors, and add
+  ${PHP_PKGNAMESUFFIX} to its PKGNAMESUFFIX.
+
+20180125:
+AUTHOR: mat@FreeBSD.org
+
+  Add support to passing directories to EXTRA_PATCHES.
+
+  Instead of:
+
+    EXTRA_PATCHES=        ${PATCHDIR}/feat-foo-patch-file.c \
+                          ${PATCHDIR}/feat-foo-patch-file.h \
+                          ${PATCHDIR}/feat-foo-patch-file2.c
+
+  Move those files to ${PATCHDIR}/feat-foo/, name them patch-*, and set:
+
+    EXTRA_PATCHES=        ${PATCHDIR}/feat-foo
+
+20180116:
+AUTHOR: mat@FreeBSD.org
+
+  The deprecated PYTHON_DEFAULT_VERSION, PYTHON2_DEFAULT_VERSION, and
+  PYTHON3_DEFAULT_VERSION have been removed.
+
+20180106:
+AUTHOR: kde@FreeBSD.org
+
+  USES=qmake now accepts a new variable, QMAKE_CONFIGURE_ARGS.
+
+  Starting with Qt 5.8.0, qmake can use configure.json files to help define
+  configuration options and configuration time checks. These options are
+  generally in the form '-foo -no-bar', and must be passed after "--" at the
+  end of qmake's command line.
+
+  The QMAKE_CONFIGURE_ARGS variable allows one to set those options, and
+  USES=qmake takes care of passing them at the right position when invoking
+  qmake.
+
+20180102:
+AUTHOR: kde@FreeBSD.org
+
+  There is a new USES=eigen to depend on math/eigen[23].
+
+  Usage:
+    USES=eigen:<version>[,<type>]
+
+    version: 2 or 3 (required)
+    type:    build (default), run
+
+  For example:
+    USES=eigen:2,build,run
+  will add a BUILD- and RUN_DEPENDS on math/eigen2, and
+    USES=eigen:3
+  will add a BUILD_DEPENDS on math/eigen3.
+
+20171231:
+AUTHOR: kde@FreeBSD.org
+
+  USES=cmake now supports two additional list variables:
+    * CMAKE_ON  : List of variables to turn on
+    * CMAKE_OFF : List of variables to turn off
+  This can be used as a shortcut to append these to CMAKE_ARGS.
+
+  For example ports that previously set
+    CMAKE_ARGS=		-DVAR1:BOOL=TRUE -DVAR2:BOOL=TRUE -DVAR3:BOOL=FALSE
+  can now set this as
+    CMAKE_ON=		VAR1 VAR2
+    CMAKE_OFF=		VAR3
+
+20171130:
+AUTHOR: mat@FreeBSD.org
+
+  Ports using USE_PYTHON=distutils are now flavored.  They will automatically
+  get flavors (py27, py34, py35, py36) depending on what versions they support.
+
+  There is also a USE_PYTHON=flavors for ports that do not use distutils but
+  need FLAVORS to be set.  A USE_PYTHON=noflavors can be set if the port is
+  using distutils but flavors are not wanted.
+
+  A new USE_PYTHON=optsuffix that will add PYTHON_PKGNAMESUFFIX has been added
+  to cope with Python ports that did not have the Python PKGNAMEPREFIX but are
+  flavored.
+
+  USES=python now also exports a PY_FLAVOR variable that contains the current
+  python flavor.  It can be used in dependency lines when the port itself is
+  not python flavored, for example, deskutils/calibre.
+
+  By default it will only generate flavors for the versions in PYTHON2_DEFAULT
+  and PYTHON3_DEFAULT.  Define BUILD_ALL_PYTHON_FLAVORS in your make.conf to
+  generate all possible flavors.  A port can set USE_PYTHON=allflavors to have
+  all the flavors and not simply the default ones.
+
+  In all the ports with Python dependencies, the *_DEPENDS entries MUST end
+  with the flavor so that the framework knows which to build/use.  This is done
+  by appending '@${PY_FLAVOR}' after the origin.  For example:
+
+    RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+
+20171130:
+AUTHOR: mat@FreeBSD.org
+
+  To help with flavored ports, helpers are available.  In these, replace <*>
+  with the flavor name.
+
+  *_PKGNAMEPREFIX *_PKGNAMESUFFIX *_PLIST *_DESCR will overwrite the variable.
+
+  *_CONFLICTS *_CONFLICTS_BUILD *_CONFLICTS_INSTALL *_PKG_DEPENDS
+  *_EXTRACT_DEPENDS *_PATCH_DEPENDS *_FETCH_DEPENDS *_BUILD_DEPENDS
+  *_LIB_DEPENDS *_RUN_DEPENDS *_TEST_DEPENDS will append to the variable.
+
+  For example:
+
+    flavor2_PKGNAMESUFFIX=	-foo
+
+  can replace:
+
+    .if ${FLAVOR:U} == flavor2
+    PKGNAMESUFFIX=	-foo
+    .endif
+
+20171130:
+AUTHOR: mat@FreeBSD.org
+
+  Flavors are a way to have multiple variations of a port.  The port is built
+  multiple times, with the variations.  To declare flavors, set the FLAVORS
+  variable to the flavors you want defined.  The first flavor will be the
+  default:
+
+    FLAVORS=   flavor1 flavor2
+
+  The flavors MUST be lowercase, and can contain [[:lower:][:digit:]_].
+
+  Then, when building the port, pass the FLAVOR as an argument after make to
+  select the flavor.
+
+    $ make install FLAVOR=flavor2
+
+  In the port, you can then change the behavior depending on the value of the
+  FLAVOR variable.  Note that the different flavors MUST have different
+  PKGNAMEs.  Be sure to guard against an empty FLAVOR variable by using
+  ${FLAVOR:U}:
+
+    .if ${FLAVOR:U} == flavor2
+    PKGNAMESUFFIX=	-foo
+    OPTIONS_DEFAULT+=   FOO
+    .endif
+
+  A tools guide is available at:
+        https://wiki.freebsd.org/Ports/FlavorsTools
+  A port migration guide is available at:
+        https://wiki.freebsd.org/Ports/FlavorsMigration
+
+20171020:
+AUTHOR: ak@FreeBSD.org
+
+  The USES=fmake has been removed. It was created to help migration from
+  old FreeBSD make (pmake) and there are no more users of it left in
+  the ports tree.
+
+20171012:
+AUTHOR: mat@FreeBSD.org
+
+  Remove WANT_GNOME and HAVE_GNOME, they were in disuse, and made useless by
+  options.
+
+20171011:
+AUTHOR: bapt@FreeBSD.org
+
+  New BINARY_ALIAS variable has been added, when defined it will create symlinks
+  of some given binaries in a directory which will be prepended to the PATH.
+
+  The syntax is the following:
+  BINARY_ALIAS=   target1=source1  target2=source2
+
+  For example to have a "swig" binary in the path which will be pointing at
+  swig3.0 and a "sed" pointing at GNU sed: gsed
+
+  BINARY_ALIAS=  swig=swig3.0 sed=gsed
+
+20170625:
+AUTHOR: kde@FreeBSD.org
+
+  The default generator for USES=cmake ports has been switched to ninja.
+
+  Previously it was possible to opt-in to using ninja instead of make(1)
+  by setting CMAKE_NINJA, now ports need to opt-out.
+
+  Ports that do not build with ninja must switch from
+      USES=cmake:<args>
+  to
+      USES=cmake:<args>,noninja
+
+20170417:
+AUTHOR:	kwm@FreeBSD.org
+
+  New USES: meson, to handle properly the meson building system.
+
+20170313:
+AUTHOR: tijl@FreeBSD.org
+
+  HTTPS certificates are now verified when "make makesum" fetches distfiles.
+  If this fails make sure you have a CA certificate bundle installed such as
+  security/ca_root_nss.  If it still fails and there are other HTTPS sites
+  with a valid certificate consider removing the site from MASTER_SITES.
+  If the site cannot be removed you can disable certificate verification by
+  adding the following line to the port Makefile:
+
+  FETCH_ENV=	SSL_NO_VERIFY_PEER=1 SSL_NO_VERIFY_HOSTNAME=1
+
+20170218:
+AUTHOR: kde@FreeBSD.org
+
+  * Qt 4's binaries have been moved to lib/qt4/bin to match what is already done
+    to Qt 5's binaries. Since these binaries are no longer in ${LOCALBASE}/bin,
+    they also do not have the -qt4 suffix in their names any more.
+
+  * Consequently, there are no Qt 4 or Qt 5 binaries in the default $PATH, and
+    misc/qtchooser is now used to select the actual Qt binaries. In other
+    words, calling "qmake" or "moc" now goes through qtchooser, which prefers
+    Qt 5 binaries by default.
+
+    The ports framework handles this automatically. The UPDATING entry covers
+    this in more detail.
+
+  * Qt 5.7.1 requires a C++11-capable compiler to be used. qmake and CMake pass
+    the appropriate flags to the compiler (such as -std=c++11) automatically,
+    but if your port fetches Qt's build flags via pkg-config (which can be the
+    case for autotools-based ports), you might need to take care of this
+    manually by setting USE_CXXSTD in your Makefile:
+
+      USE_CXXSTD=	c++11
+
+20160116:
+AUTHOR: mat@FreeBSD.org
+
+  A new EXTRA_PATCH_TREE has been added.  Points to a directory hierarchy with
+  the same layout as the ports tree, where local patches can be found.  This
+  allows a third party to keep their patches in some other source control
+  system if needed.
+
+  For example, if you have EXTRA_PATCH_TREE=/patches, when building
+  lang/perl5.24, any file named patch-* in /patches/lang/perl5.24/ will be used
+  to patch the Perl distribution.
+
+20160116:
+AUTHOR: mat@FreeBSD.org
+
+  During extraction of the do-patch target into a separate script, the "-d
+  PATCH_WRKSRC" had to be removed from the PATCH_ARGS and PATCH_DIST_ARGS
+  variables.  If using these variables directly, you will need to adapt the
+  Makefile. For example:
+
+    ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch
+
+    needs to be changed to:
+
+    ${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch
+
+20161218:
+AUTHOR: tcberner@FreeBSD.org
+
+  QT_PREFIX has been dropped, in favour of using PREFIX directly.
+
+20160911:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Support has been added for complete set of Creative Commons licenses
+
+  CC-(BY|BY-ND|BY-NC|BY-NC-ND|BY-NC-SA|BY-SA)-(1.0|2.0|2.5|3.0|4.0)
+
+20160909:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Verbose build logs are now preferred and enabled by default for cmake,
+  ninja and GNU configure.  Ports which still produce quiet build logs
+  (hiding actual commands) are strongly advised to switch to verbose logs.
+
+20160908:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Support has been added for NONE license, use it when the port doesn't
+  have cleanly defined licensing terms.  Note that without clean license
+  allowing you to use and distribute the code it would be be illegal to do
+  so in many jurisdictions, so for ports with NONE license no distfiles or
+  packages are distributed.
+
+20160824:
+AUTHOR: mat@FreeBSD.org
+
+  To complete the USE_GITHUB framework, a GH_SUBDIR variable has been added.
+  It automatically moves a secondary distfile to the right place inside WRKSRC.
+  It also extends the GH_TUPLE variable to make it as easy to use as possible.
+
+  Before:
+
+    GH_TUPLE=   Regaddi:Chart.js:f13f99b:chart_js \
+                FVANCOP:ChartNew.js:77e7f87:chartnew_js
+    post-extract:
+            @${RMDIR} ${WRKSRC}/database ${WRKSRC}/3rd/Chart.js
+            @${MV} ${WRKSRC_database} ${WRKSRC}/database
+            @${MV} ${WRKSRC_chart_js} ${WRKSRC}/3rd/Chart.js
+
+  After:
+
+    GH_TUPLE=   Regaddi:Chart.js:f13f99b:chart_js/3rd/Chart.js \
+                FVANCOP:ChartNew.js:77e7f87:chartnew_js/3rd/ChartNew.js
+
+  It also works if not using GH_TUPLE but the regular
+  GH_ACCOUNT/PROJECT/TAGNAME variables:
+
+    GH_SUBDIR=  3rd/Chart.js:chart_js 3rd/ChartNew.js:chartnew_js
+
+20160824:
+AUTHOR: kde@FreeBSD.org
+
+  A new USES file has been introduced: USES=kde:4, which replaces the old
+  bsd.kde4.mk file in preparation for upcoming KDE Frameworks and Plasma5
+  ports.
+
+  Ports depending on KDE4 have to switch from
+     USE_KDE4=foo bar
+  to
+     USES=kde:4
+     USE_KDE=foo bar
+  and make sure to switch from using KDE4_PREFIX to the new name KDE_PREFIX
+  in the Makefiles as well as plists.
+
+20160821:
+AUTHOR: kde@FreeBSD.org
+
+  A new USES file has been introduced: USES=grantlee:[4,5], which introduces a
+  LIB_DEPENDS on either devel/grantlee (Qt4) or devel/grantlee5 (Qt5).
+
+  Uses/grantlee.mk also exports the GRANTLEE_VERSION variable to users, and the
+  GRANTLEE_VERSION_FULL and GRANTLEE_VERSION_SHORT pkg-plist substitutions.
+
+20160817:
+AUTHOR: mat@FreeBSD.org
+
+  This adds the possibility to use regular expressions for the makeplist stage
+  of the PLIST_SUB life.
+
+  From time to time, the values are too generic, and they get in the way of
+  other stuff.
+
+  This adds the possibility to have a VAR_regex=regex that will be used
+  instead of the VAR=string to search for possible replacements.
+
+  For example, in lang/perl5*, there is PERL_ARCH=mach, which will get replaced
+  in paths if a file is called, say "machine", will end up being
+  "%%PERL_ARCH%%ine".  Adding PERL_ARCH_regex="\bmach\b" will ensure only full
+  words are replaced, so machine will stay machine, but "lib/mach/foo "will
+  still be replaced by "lib/%%PERL_ARCH%%/foo".
+
+20160803:
+AUTHOR: mat@FreeBSD.org
+
+  Every PHP (or Zend) extension now installs its own .ini file in
+  /usr/local/etc/php.  A PHP extension will be automatically activated when
+  installed.  The order into which extensions are loaded is automatically
+  guessed.  In some very rare cases, the guess will be wrong, and PHP_MOD_PRIO
+  will need to be set.  Refer to the USES=php section of the Porter's Handbook
+  for more information.
+
+20160628:
+AUTHOR: mat@FreeBSD.org
+
+  USEify USES=php.
+
+  The following variables have been folded into arguments:
+
+  - USE_PHPIZE -> USES=php:phpize
+  - USE_PHPEXT -> USES=php:ext
+  - USE_ZENDEXT -> USES=php:zend
+  - USE_PHP_BUILD -> USES=php:build
+  - WANT_PHP_CLI -> USES=php:cli
+  - WANT_PHP_CGI -> USES=php:cgi
+  - WANT_PHP_MOD -> USES=php:mod
+  - WANT_PHP_WEB -> USES=php:web
+  - WANT_PHP_EMB -> USES=php:embed
+
+20160627:
+AUTHOR: mat@FreeBSD.org
+
+  USE_OPENSSL has been replaced by USES=ssl.
+
+20160625:
+AUTHOR: adamw@FreeBSD.org
+
+  A new ${opt}_CMAKE_BOOL OPTIONS helper has been added. Instead of:
+
+    FOO_CMAKE_ON=	-DWITH_FOO:BOOL=YES -DWITH_BAR:BOOL=YES
+    FOO_CMAKE_OFF=	-DWITH_FOO:BOOL=NO  -DWITH_BAR:BOOL=NO
+
+  you can use this shortcut:
+
+    SOMEOPT_CMAKE_BOOL=	WITH_FOO WITH_BAR
+
+20160525:
+AUTHOR: mat@FreeBSD.org
+
+  A new stage-qa test has been added, it reports all shared libraries
+  dependencies that are not part of the port list of dependencies.  It help
+  finds what is called proxy dependencies.
+
+  A is needed by B, and B is needed by C.  If C also needs A, then it needs to
+  be registered, and this check will tell you to do so.
+
+  Right now, it is only reporting the problems, but if you add
+  PROXYDEPS_FATAL=yes to your environment, it will give an error and will force
+  you to fix the dependencies.
+
+20160525:
+AUTHOR: bapt@FreeBSD.org
+
+  New keyword @xmlcatmgr has been added, to handle the XML and SGML catalog
+  maintainance, in order to improve consistency and correctness of the
+  generation of the catalog.
+  If the catalog file has an extension being '.xml' it will be automatically
+  added to the XML catalog, otherwise it will be added to the SGML catalog
+
+20160512:
+AUTHOR: emaste@FreeBSD.org
+
+  "make makesum" now writes the current timestamp to distinfo when it is run.
+  This is done to support development and prototyping efforts for reproducible
+  package builds, which require some concept of a "last updated" time.
+
+  The TIMESTAMP can currently be ignored for ports that have no distinfo, and
+  for updates done without using "make makesum."
+
+20160428
+AUTHOR: mat@FreeBSD.org
+
+  USE_RUBYGEMS has been replaced by USES=gem.
+
+20160426:
+AUTHOR: mat@FreeBSD.org
+
+  USE_MYSQL and USE_BDB have been replaced by USES=mysql and USES=bdb.
+
+  WANT_BDB_VER=XX should be replaced by USES=bdb:XX.
+
+20160414:
+AUTHOR: mat@FreeBSD.org
+
+  USE_RC_SUBR=yes has not done anything for a long time, it will now give an error.
+
+20160413:
+AUTHOR: jbeich@FreeBSD.org
+
+  Introducing CONFIGURE_OUTSOURCE. It changes HAS_CONFIGURE and GNU_CONFIGURE
+  by invoking configure, build and install stage outside of source tree e.g.,
+
+    $ mkdir ../.build
+    $ cd ../.build
+    $ ${OLDPWD}/configure
+    $ gmake
+    $ gmake install
+
+20160402:
+AUTHOR: bapt@FreeBSD.org
+
+  Adding ${PORTSDIR} in dependency lines is no longer necessary meaning
+
+  RUN_DEPENDS=  foo:${PORTSDIR}/bar/foo
+
+  can now be written
+
+  RUN_DEPENDS=  foo:bar/foo
+
+  if the path after ':' is not absolute the framework will automatically
+  prepend ${PORTSDIR}/
+
+20160301:
+AUTHOR: mat@FreeBSD.org
+
+  Introduce GH_TUPLE.
+
+  GH_TUPLE allows one to put all the GH_{ACCOUNT,PROJECT,TAGNAME} into one
+  variable, in the form of account:project:tagname[:group].  It is helpful when
+  there are many submodules.
+
+20160207:
+AUTHOR: kwm@FreeBSD.org
+
+  The GNOME and MATE framework activation changed. To use the frameworks
+  now either gnome or mate needs to be added USES.
+
+  The usage of USE_GNOME, USE_MATE, INSTALLS_ICONS and for example
+  GLIB_SCHEMAS stays the same.
+
+  Like with USES, the use of USE_GNOME and so after bsd.port.pre.mk
+  is now forbidden.
+
+20160112:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Support has been added for "or later" variants of GNU licenses
+  (e.g. LICENSE=GPLv2+) and for Public Domain (LICENSE=PD).
+
+  Complete list of new LICENSE values:
+
+  AGPLv3+ GPLv1+ GPLv2+ GPLv3+ GPLv3RLE+ LGPL20+ LGPL21+ LGPL3+ PD
+
+20160110:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_FIREBIRD and USE_SQLITE has been replaced by USES=firebird and
+  USES=sqlite
+
+20151105:
+AUTHOR: mat@FreeBSD.org
+
+  Change the meaning of NO_WRKSUBDIR to force a WRKDIR != WRKSRC.
+
+  Right now, NO_WRKSUBDIR means that the extraction does not produce a
+  subdirectory, and that everything goes straight into WRKDIR.  It is
+  problematic, because during the build of a port, quite a few files
+  are created in there, and then, a stage directory, where everything
+  is installed, and then a pkg directory where the package is created,
+  and those often conflict, or get in the way, of the building
+  process.
+
+  With this, NO_WRKSUBDIR will extract the distfiles directly into
+  WRKSRC instead of WRKDIR.  In this case, WRKSRC is artificial and is
+  based on PKGNAME and not DISTNAME, mitigate conflicts with rc files.
+
+20151022:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Improved support for USES=shebangfix
+
+  - We now support multiple values for *_OLD_CMD
+  - We replace more variants by default (/bin/${lang}, /usr/bin/${lang},
+    /usr/bin/env ${lang}).
+  - shebangfix now also supports lua if USES=lua is specified
+  - Pattern matching has been improved: we now only match whole worlds,
+    e.g. "/usr/bin/perl5.005" is no longer erroneously replaced with
+    "${perl_CMD}5.005".
+
+  Note that *_OLD_CMD entries which contain spaces must now be quoted.
+
+20150928:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Implemented complete support for test target.
+
+  You can now `make test' on any port to run test sequence, no-op by default.
+  If a port defines TEST_TARGET, it'll run sub-make with specified target,
+  usually `check' or `test', useful if upstream supports that. The port may
+  instead define custom do-test target, as well as usual satellite targets:
+
+    {pre,do,post}-test, {pre,do,post}-test-OPT, {pre,do,post}-test-OPT-off
+
+  `make test' builds and stages port first, so test may use both WRKDIR and
+  STAGEDIR, and both BUILD and RUN depends are available for test target.
+  Additionally, TEST_DEPENDS is now properly supported and may be used to
+  define additional depends specifically for testing.
+
+  Framework may define default tests for specific cases. For instance,
+  perl5.mk and cran.mk provide default test target on their own.
+
+20150926:
+AUTHOR: bapt@FreeBSD.org
+
+  @sample now accept arguments, so it can now be used the following way:
+
+  @sample afile.sample
+  or
+  @sample path/to/example etc/target
+
+20150926:
+AUTHOR: bapt@FreeBSD.org
+
+  New keywords are supported in pkg since 1.5.x:
+  @preexec <command>: execute the <command> during pre-install scripts
+  @postexec <command>: execute the <command> during post-install scripts
+  @preunexec <command>: execute the <command> during pre-deinstall scripts
+  @postunexec <command>: execute the <command> during post-deinstall scripts
+
+  @exec does not specify when it should be executed and is now considered as
+  deprecated.
+
+20150914:
+AUTHOR: mat@FreeBSD.org
+
+  Introducing the %%PERL5_MAN1%% PLIST_SUB entry, as Perl now installs man1
+  pages in the same prefix as man3 pages.
+
+20150828:
+AUTHOR: mat@FreeBSD.org
+
+  <opt>_VARS and <opt>_VARS_OFF have been introduced to allow for a generic way
+  to set/append to variables.
+
+  OPT1_VARS=  foo=bar baz+=bam
+
+  will set FOO to bar and append bam to BAZ if OPT1 is enabled.  <opt>_VARS_OFF
+  works the same way, if the option is disabled.
+
+20150818:
+AUTHOR: kde@FreeBSD.org
+
+  The CMAKE_ENV option has been deprecated. It no longer has any effect, and
+  the CONFIGURE_ENV variable should be used instead.
+
+20150818:
+AUTHOR: mat@FreeBSD.org
+
+  <opt>_IMPLIES and <opt>_PREVENTS have been introduced to register dependency,
+  or conflicts between options.
+
+    OPTIONS_DEFINE= FOO BAR BAZ
+
+    FOO_IMPLIES=	BAR
+    BAZ_PREVENTS= BAR
+
+  If the FOO option is selected, the BAR option will be enabled as well.  If
+  the BAZ and BAR options are both enabled, an error will be given.
+
+20150817:
+AUTHOR: mat@FreeBSD.org
+
+  UNIQUENAME and LATEST_LINK have been removed. LATEST_LINK was only used by
+  ports-mgmt/pkg{,-devel} and PKGBASE can be used in its stead.  UNIQUENAME was
+  used by USE_LDCONFIG where it was not unique enough, and as old compat shims
+  with options.
+
+20150716:
+AUTHOR:	kwm@FreeBSD.org
+
+  USE_GHOSTSCRIPT was replaced by USES=ghostscript. The ghostscript USES
+  accepts version, build, run, nox11 and for version 9 the agpl argument.
+  If no version is specified, the default 9 for GHOSTSCRIPT_DEFAULT is honored.
+
+20150701:
+AUTHOR: mat@FreeBSD.org
+
+  Make option target helpers have been added, it allows replacing:
+
+    .include <bsd.port.options.mk>
+
+    post-patch:
+      ${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
+    .if ${PORT_OPTIONS:MPTHREAD}
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
+	${WRKSRC}/hints/freebsd.sh
+    .else
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
+	${WRKSRC}/hints/freebsd.sh
+    .endif
+
+  with:
+
+    post-patch:
+      ${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
+
+    post-patch-PTHREAD-on:
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
+	${WRKSRC}/hints/freebsd.sh
+
+    post-patch-PTHREAD-off:
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
+	${WRKSRC}/hints/freebsd.sh
+
+20150622:
+AUTHOR: bapt@FreeBSD.org
+
+  Remove USE_RCORDER, USE_RC_SUBR has been modified to support PREFIX=/usr
+  automatically
+
+20150529:
+AUTHOR: mat@FreeBSD.org
+
+  Extend the multiple distfiles USE_GITHUB framework by allowing it to fetch
+  only additional distfiles, but not the main one.  Set USE_GITHUB=nodefault
+  and use the GH_* variables with groups as usual.
+
+20150528:
+AUTHOR: mat@FreeBSD.org
+
+  USE_GITHUB can now fetch multiple distfiles.  It uses a grouping feature
+  similar to MASTER_SITES/PATCH_SITES.
+
+  Some helpful variables are provided: WRKSRC_<group> for putting things in the
+  right place in post-extract, and DISTNAME_<group>/DISTFILE_<group> for use
+  with EXTRACT_ONLY.
+
+  A simple example:
+
+    PORTNAME=     bar
+    PORTVERSION=  1.0
+    USE_GITHUB= yes
+    GH_ACCOUNT= foo
+    GH_PROJECT= ${PORTNAME}-images:images
+
+    post-extract:
+	    @${MV} ${WRKSRC_images} ${WRKSRC}/images
+
+  It will fetch those two distfiles:
+
+    $ make fetch-urlall-list
+    https://codeload.github.com/foo/bar/tar.gz/1.0?dummy=/foo-bar-1.0_GH0.tar.gz
+    https://codeload.github.com/foo/bar-images/tar.gz/1.0?dummy=/foo-bar-images-1.0-1.0.tar.gz
+
+  It will then extract them to ${WRKDIR} in their respectives directories.
+
+20150526:
+AUTHOR: antoine@FreeBSD.org
+
+  PYTHON_REL has been switched from a 3 digits number to a 4 digits number to
+  handle python 2.7.10.  Ports checking for python 2.7.9 should compare
+  PYTHON_REL against 2709 and ports checking for python 2.7.10 should compare
+  PYTHON_REL against 2710.
+
+20150521:
+AUTHOR: mat@FreeBSD.org
+
+  GH_COMMIT support has been removed, see the 20150319 for more informations.
+
+20150419:
+AUTHOR: tijl@FreeBSD.org
+
+  USE_AUTOTOOLS has been deprecated.  It can be replaced with USES=autoreconf
+  and GNU_CONFIGURE=yes.
+
+  Support for USE_AUTOTOOLS=libtoolize has been removed.  It can be replaced
+  with "USES=autoreconf libtool".
+
+20150409:
+AUTHOR: bapt@FreeBSD.org
+
+  Add a new USES=gnustep to handle the GNUstep ports. Now the dependencies on
+  GNUstep libraries is done via the regular LIB_DEPENDS
+
+  USE_GNUSTEP is now a macro that accept many arguments: back, build, gui, back
+  Depending on the feature needed for a given port
+
+  Reuse USES=objc to avoid duplicating code
+
+20150408:
+AUTHOR: bapt@FreeBSD.org
+
+  Add a new USES=waf to handle the waf building system, allowing to factorise
+  code. Plug waf into MAKE_CMD and CONFIGURE_CMD so the regular defined targets
+  can be reused.
+
+  Always define _MAKE_JOBS so that when bsd.port.mk will stop overwritting
+  _MAKE_JOBS when parallel jobs are disabled we can enforce -j1 (which is needed
+  to really disable parallelisation with waf
+
+  WAF_CMD has been created to allow one to override the location of the waf
+  script relatively to WRKSRC
+
+  CONFIGURE_TARGET is by default defined to "configure"
+  ALL_TARGET is by default defined to "build"
+  INSTALL_TARGET is by default defined to "install"
+
+  USES=waf is by default stagedir safe
+
+20150407:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_XZ and USE_BZIP2 are not supported anymore, they have been replaced by
+  USES=tar:bzip2 and tar:xz
+
+20150328:
+AUTHOR: bapt@FreeBSD.org
+
+  New "metaport" USES to take care of predefining correctly the needed
+  macros as expected by meta ports.
+
+20150323:
+AUTHOR: bapt@FreeBSD.org
+
+  Remove "@fc" and "@fontsdir". All fonts should always use @fcfontsdir which
+  Properly takes care of the fonts.dir and fonts.scale cache files as well
+  as ensure to properly update the fontconfig cache
+
+  New "fonts" USES. It defines the default variables needed for fonts and also
+  takes care of the run time dependencies
+
+20150326:
+AUTHOR: bdrewery@FreeBSD.org
+
+  PTHREAD_CFLAGS and PTHREAD_LIBS have been removed.  Please see entry
+  20130207 for more information.
+
+20150319:
+  AUTHOR: bdrewery@FreeBSD.org
+
+  MASTER_SITE GHR (GITHUB_RELEASE) has been removed.  The same functionality
+  can be achieved with just USE_GITHUB/GH_ACCOUNT/GH_PROJECT. GH_TAGNAME
+  defaults to DISTVERSION. If the tag needs to be adjusted then change
+  GH_TAGNAME. No GH_COMMIT is needed.
+
+20150319:
+  AUTHOR: bdrewery@FreeBSD.org
+
+  USE_GITHUB has been updated to make GH_COMMIT optional.  Using this new
+  scheme allows only setting the _tag_ or _commit hash_ in GH_TAGNAME and
+  not having to know the hash for a tag.  This scheme will download a tarball
+  that has a different checksum than before due to a changed directory name
+  for extraction.
+
+  GH_TAGNAME can now be any length of the hash as long as it is unique.  There
+  is no longer a 7-character requirement.
+
+  The following MASTER_SITES are provided to retain the old checksum and
+  directory structure (that require GH_COMMIT):
+    GH -> GHL
+    GITHUB -> GITHUB_LEGACY
+
+20150305:
+  AUTHOR: olivierd@FreeBSD.org
+
+  Dependencies on the Xfce ports have been migrated to USES. Instead
+  of USE_XFCE= configenv, you should use USES= xfce.
+
+20150224:
+  AUTHOR: makc@FreeBSD.org
+
+  New USE_QT4 component has been introduced to reduce buildtime
+  dependencies for Qt 4 ports that use localization support. Instead
+  of USE_QT4=linguist you should now use USE_QT4=linguisttools_build.
+  Conversion of existing ports may require USE_QT4 adjustment for
+  missing components.
+
+20141217:
+  AFFECTS: users of lang/perl5.*
+  AUTHOR: mat@FreeBSD.org
+
+  Perl now links libperl.so with all .so it builds.  The stage-qa checks have
+  been extended to check that libperl.so is in fact linked with .so in
+  SITE_ARCH and errors out if none of the .so build by a port are linked with
+  it.  It also checks that the rpath and runpath elf attributes are present.
+
+20141130:
+AUTHOR: tijl@FreeBSD.org
+
+  The devel/gettext port has been split up in devel/gettext-runtime which
+  contains runtime libraries such as libintl, and devel/gettext-tools which
+  contains build tools such as msgfmt.  You can use USES=gettext-runtime to
+  set a LIB/BUILD/RUN_DEPENDS on devel/gettext-runtime and USES=gettext-tools
+  to set a BUILD/RUN_DEPENDS on devel/gettext-tools.
+
+  USES=gettext is now the same as "USES=gettext-runtime gettext-tools",
+  meaning a LIB_DEPENDS on devel/gettext-runtime and a BUILD_DEPENDS on
+  devel/gettext-tools.
+
+20141126:
+AUTHOR: mat@FreeBSD.org
+
+  The way Perl modules are installed has changed.  Before, we had
+
+    site_perl :           lib/perl5/site_perl/5.18
+    site_perl/perl_arch : lib/perl5/site_perl/5.18/mach
+    perl_man3 :           lib/perl5/5.18/man/man3
+
+  Now we have :
+
+    site_perl : lib/perl5/site_perl
+    site_arch : lib/perl5/site_perl/mach/5.18
+    perl_man3 : lib/perl5/site_perl/man/man3
+
+  Modules without any .so will be installed at the same place regardless of the
+  Perl version, minimizing the upgrade when the major Perl version is changed.
+  It uses a version dependent directory for modules with compiled bits.
+
+  As PERL_ARCH is no longer needed in plists, it has been removed from
+  PLIST_SUB.
+
+  The USE_PERL5=fixpacklist keyword is removed, the .packlist file is now
+  always removed, as is perllocal.pod.
+
+  The old site_perl and site_perl/arch directories have been kept in the
+  default Perl @INC for all Perl ports, and will be phased out as these old
+  Perl versions expire.
+
+20141122:
+AUTHOR: crees@FreeBSD.org
+
+  Dependencies on the PostgreSQL ports have been migrated
+  to USES. Instead of USE_PGSQL, please use USES=pgsql instead.
+
+    USE_PGSQL=yes becomes USES=pgsql
+    WANT_PGSQL_VER=91+ becomes USES=pgsql:9.1+
+    USE_PGSQL=server becomes USES=pgsql and WANT_PGSQL=server
+
+20141118:
+AUTHOR: mat@FreeBSD.org
+
+  To ease future work, a new SITE_ARCH variable and PLIST_SUB replacement
+  containing SITE_PERL/PERL_ARCH has been added.
+
+20141102:
+AUTHOR: bdrewery@FreeBSD.org
+
+  SSP is now default. This can be disabled with WITHOUT_SSP.
+  SSP_CFLAGS defaults to -fstack-protector.
+  SSP will be used on all amd64 releases. It will only be used on i386
+  releases over 10.0.
+
+20141007:
+AUTHOR: mat@FreeBSD.org
+
+  The @cwd [path] construct in plist files is deprecated.  Instead of adding
+  those lines to the plist:
+
+  @cwd /
+  etc/rc.d/foo
+  var/db/bar
+  @cwd /some
+  @exec mkdir -p %D/nested/dir
+
+  add this:
+
+  /etc/rc.d/foo
+  /var/db/bar
+  @exec mkdir -p /some/nested/dir
+
+20141002:
+AUTHOR: bapt@FreeBSD.org
+
+  New BUNDLE_LIBS knobs to allow a port to tell pkg(8) not to compute provided
+  libraries, this is to be used when a port bundles libraries it doesn't want
+  to expose to other ports.
+
+20141001:
+AUTHOR: tijl@FreeBSD.org
+
+  Support for autoconf213, autoheader213, aclocal14 and automake14 has been
+  removed from USE_AUTOTOOLS.
+
+20140930:
+AUTHOR: bdrewery@FreeBSD.org
+
+  Building ports in a chroot or jail have always required a particular
+  environment be setup. This was not clear though and the ports framework
+  did not enforce it. These requirements are:
+    1. Either a SRC_BASE/sys/sys/param.h, or /usr/include/sys/param.h be
+       present with the __FreeBSD_version_ number of the target system,
+       or OSVERSION be set in the environment. Lack of these would fallback
+       on kern.osreldate before, which is no longer the case.
+    2. UNAME_r,UNAME_v,UNAME_s all must be set for the target system.
+
+  Not having these values in sync will now cause the build to error until it is
+  resolved.
+
+  Setting these in the environment can be done via your own wrapper scripts,
+  or /etc/login.conf (along with cap_mkdb /etc/login.conf) or
+  via /etc/make.conf using appropriate values. Note that OSVERSION is redundant
+  if a proper param.h is in the environment:
+
+    OSVERSION+=     1100036
+    UNAME_ENV+=     OSVERSION=${OSVERSION}
+    UNAME_ENV+=     UNAME_s=FreeBSD
+    UNAME_ENV+=     UNAME_r=11.0-CURRENT
+    UNAME_ENV+=     UNAME_v="${UNAME_s} ${UNAME_r}"
+    .MAKEFLAGS:     ${UNAME_ENV}
+    MAKE_ENV+=      ${UNAME_ENV}
+    CONFIGURE_ENV+= ${UNAME_ENV}
+    SCRIPTS_ENV+=   ${UNAME_ENV}
+
+20140922:
+AUTHOR: bapt@FreeBSD.org
+
+  pkg(8) now handles the directories under PREFIX automatically,
+  and will automatically remove them as needed.
+  A new @dir keyword has been introduced to handle directories specially:
+  - directories with special owner, group, or permissions (access mode)
+  - empty directories
+  - directories out of PREFIX
+  As a consequence @dirrm and @dirrmtry are now considered deprecated.
+
+  Credentials can now be passed in arguments to keywords
+  (the empty keyword means "regular file"):
+  @(user,group,mode) file1
+  @dir(user,group,mode) directory_with_special_owner_or_mode
+
+  PLIST_DIRSTRY is now considered deprecated, use PLIST_DIRS instead.
+
+20140917:
+AUTHOR: tijl@FreeBSD.org
+
+  Support for USE_AUTOTOOLS=libtool, USE_GNOME=ltasneededhack,
+  USE_GNOME=lthack and USE_GNOME=ltverhack has been removed.
+  Ports should use USES=libtool instead.
+
+  Support for USE_AUTOTOOLS=libltdl has been removed.
+  Ports should use LIB_DEPENDS=libltdl.so:${PORTSDIR}/devel/libltdl
+
+20140916:
+AUTHOR: tijl@FreeBSD.org
+
+  The installation of *.la files without some form of USES=libtool in the
+  port Makefile will now result in a stage-qa error.
+  Previously this would only cause a warning.
+
+  The :keepla argument to USES=libtool is no longer special.  It is now
+  only needed if a port uses *.la files at run time and no longer to fix
+  link problems in other ports.
+
+20140901:
+AUTHOR: bapt@FreeBSD.org
+
+  Support for pkg_install has been removed.
+  Note that WITH_PKGNG is now called WITH_PKG (still used to define 'devel')
+  WITH_PKGNG remains for compatibility
+  @stopdaemon support has gone, pkg(8) has a generic mechanism to
+  provide the same function, see HANDLE_RC_SCRIPTS in pkg.conf(5).
+
+20140901:
+AUTHOR: bapt@FreeBSD.org
+
+  Support for NO_STAGE has been removed.
+
+20140825:
+AUTHOR: antoine@FreeBSD.org
+
+  Support for NOPORTDATA has been removed.
+
+20140809:
+AUTHOR: mva@FreeBSD.org
+
+  The Python language bits of the ports framework have been converted
+  to USES. Instead of USE_PYTHON, please use USES=python instead.
+
+    USE_PYTHON=yes becomes USES=python
+    USE_PYTHON=2.7+ becomes USES=python:2.7+
+    USE_PYTHON_BUILD=3.3 becomes USES=python:3.3,build
+    ...
+
+  Additionally, several Python specific features have been converted
+  to USES-inspired USE_PYTHON=<featureA>,<featureB>.
+
+    USE_PYDISTUTILS becomes USE_PYTHON=distutils
+    PYDISTUTILS_AUTOPLIST becomes USE_PYTHON=autoplist
+    ...
+
+  Please read the header comments of Uses/python.mk for more details
+  about the new and changed bits and pieces. You will find a list of
+  deprecated variables and how to replace them in your own ports at
+  the end of the header comment.
+
+20140715:
+AUTHOR: bapt@FreeBSD.org
+
+  LIB_DEPENDS only supports one form: lib*.so
+
+20140708:
+AUTHOR: mva@FreeBSD.org
+
+  Support for installations based on the easy_install setup.py target has
+  been removed from the Ports framework for Python software. The
+  PYEASYINSTALL_* knobs and support for USE_PYDISTUTILS=easy_install have
+  been removed.
+
+20140623:
+AUTHOR: bapt@FreeBSD.org
+
+  IGNOREFILES is not supported anymore, it was an unsafe feature allowing to
+  use unchecked files downloaded from untrusted places to be used in the ports
+  tree.
+
+20140607:
+AUTHOR: mva@FreeBSD.org
+
+  New PYTHON_CONCURRENT_INSTALL knob to support the parallel installation
+  of ports for different python versions.
+
+  If set to yes, the knob indicates that the port can be installed for
+  different python versions at the same time. The port will use a unique
+  prefix for certain directories using USES=uniquefiles:dirs (see the
+  uniquefiles.mk Uses for details about the directories). Binaries
+  receive an additional suffix, based on ${PYTHON_VER}.
+
+  The values for the uniquefiles USES are set as follows:
+
+    UNIQUE_PREFIX=  ${PYTHON_PKGNAMEPREFIX}
+    UNIQUE_SUFFIX=  -${PYTHON_VER}
+
+  If the port is installed for the current default python version, scripts and
+  binaries in
+
+    ${PREFIX}/bin
+    ${PREFIX}/sbin
+    ${PREFIX}/libexec
+
+  are linked from the prefixed version to the prefix-less original name,
+  e.g. bin/foo-2.7 --> bin/foo.
+
+20140529:
+AUTHOR: miwi@FreeBSD.org
+
+  USE_GMAKE is no longer supported, please use USES=gmake instead
+
+20140526:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_DOS2UNIX is no longer supported, USES=dos2unix should be used instead
+
+20140525:
+AUTHOR: mat@FreeBSD.org
+
+  Add a USE_PERL5=fixpacklist to account for ports creating a .packlist file
+  referencing ${STAGEDIR} when not using USE_PERL5=configure or
+  USE_PERL5=modbuildtiny.
+
+20140505:
+AUTHOR: bapt@FreeBSD.org
+
+  :U and :L syntax is not supported anymore in the ports tree, :tu and :tl
+  should be used instead
+
+  This makes the ports tree incompatible with make(1) version that does not
+  support :tu and :tl (aka FreeBSD 8.3 and earlier)
+
+20140428:
+AUTHOR: bapt@FreeBSD.org
+
+  EXTRA_PATCHES has been extended to support a new syntax:
+
+  EXTRA_PATCHES=	file:-pX
+
+  Where X is the pathname strip count passed to patch(1)
+
+20140423:
+AUTHOR: tijl@FreeBSD.org
+
+  The semantics of USES=libtool have changed.  It now deletes .la libraries
+  from the staging area to reduce overlinking.  USES=libtool:keepla can be
+  used in case they need to be kept.  This form still modifies .la libraries
+  to remove references to other libraries to reduce overlinking.
+
+  Note that .la libraries have to kept around as long as there are .la
+  libraries from other ports that refer to them.  Those ports need to use
+  some form of USES=libtool first such that those references are removed.
+
+20140419:
+AUTHOR: bdrewery@FreeBSD.org
+
+  check-orphans has been renamed to check-plist. It now checks:
+    A. Files in STAGEDIR that are missing from plist.
+       To make check-plist ignore a file *as an orphan* do one of the
+       following:
+        1. Install it
+        2. post-install: ${RM} ${STAGEDIR}file
+        3. Put the file behind an OPTION with a PLIST_SUB: %%OPTION%%file
+        4. Add to plist as a @comment
+           @comment file
+           @comment @dirrmtry dir
+    B. Files in plist missing from STAGEDIR
+    C. Files in plist which are owned by dependencies/MTREEs
+
+20140416:
+AUTHOR: bdrewery@FreeBSD.org
+
+  The default target for 'make' now runs 'make stage' if the port supports
+  it, otherwise 'make build' as before.
+
+20140411:
+AUTHOR: bdrewery@FreeBSD.org
+
+  A new plist keyword has been added, @sample. It accepts a file (must end in
+  .sample):
+
+    @sample file.conf.sample
+
+  This will install file.conf.sample and copy it to file.conf. The file.conf
+  will be removed if it matches file.conf.sample on deinstall.
+
+  This replaces older patterns of:
+
+    @unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
+    etc/pkgtools.conf.sample
+    @exec [ -f %B/pkgtools.conf ] || cp %B/%f %B/pkgtools.conf
+
+20140312:
+AUTHOR: bapt@FreeBSD.org
+
+  Two new USES were added to finish handling distfiles formats a consistent way:
+
+  USES=tar[:[xz|bzip2|Z|tgz]] handles distributions files in format:
+  - plain tar
+  - tar.xz
+  - tar.bz2
+  - tar.Z
+  - tgz
+
+  USES=lha handles distributions files info LHA format
+
+20140307:
+AUTHOR: rene@FreeBSD.org
+
+  Two new USES were added by bapt@FreeBSD.org :
+
+  USES=zip handles distribution files in Zip format. InfoZip files
+  need USES=zip:infozip
+
+  USES=makeself handles distribution files in makeself format.
+
+20140303:
+AUTHOR: kde@FreeBSD.org
+
+  Add support for Qt 5 via USE_QT5. USE_QT5 is analogous to USE_QT4,
+  the only difference is the list of available components
+  (see Mk/bsd.qt.mk for details). USES=qmake supports Qt 5 as well.
+
+20140224:
+AUTHOR: bapt@FreeBSD.org
+
+  Deprecate support for KNOBS, the new option framework allows to express a
+  more consistent, user friendly and visible way the same feature.
+
+20140127:
+AUTHOR: mat@FreeBSD.org
+
+  Add two new options helpers:
+
+  ${OPT}_${TYPE}_DEPENDS_OFF=<something> will automatically add:
+  ${TYPE_DEPENDS}+=<something> in case OPT is 'off'
+
+  ${OPT}_${FLAG}_OFF=<something> will automatically add:
+  ${FLAG}+=<something> in case OPT is 'off'
+
+20140111:
+AUTHOR: mva@FreeBSD.org
+
+  New USES=uniquefiles to make files or directories unique
+  by adding a prefix or suffix to them.
+
+  Files listed in UNIQUE_PREFIX_FILES will receive the prefix
+  set via UNIQUE_PREFIX. The same applies to UNIQUE_SUFFIX_FILES,
+  but with the chosen UNIQUE_SUFFIX. UNIQUE_PREFIX and
+  UNIQUE_SUFFIX are set to PKGNAMEPREFIX and PKGNAMESUFFIX by
+  default.
+  The uniquefiles USES enables ports to name files in special
+  ways, e.g. by outlining that the port does not support X11
+  (-nox11). A binary named bin/foo thus can be easily renamed
+  to bin/foo-featureA via
+
+  USES=			uniquefiles
+  UNIQUE_SUFFIX=	-featureA
+  UNIQUE_SUFFIX_FILES=	bin/foo
+
+  The uniquefiles USES automatically adjusts the plist at
+  installation time. There is no need to consider the prefix
+  or suffix in the pkg-plist file itself. If the original name
+  of the renamed file is bin/foo, this exact name should be put
+  into pkg-plist.
+
+  The dirs argument to USES=uniquefiles will cause certain
+  standard directories, such as DOCSDIR or EXAMPLESDIR to be
+  prepended with the UNIQUE_PREFIX. The change to the directories
+  will hapen prior to configuring or building the port, so that
+  the port Makefile as well as the port's build logic are aware
+  of the changed name.
+
+  Since the uniquefiles USES effectively manipulates the port's
+  installation and file layout, it will only be available for
+  stagedir-aware ports. Ports with NO_STAGE=yes will be unable
+  to use the uniquefiles USES.
+
+20131218:
+AUTHOR: mva@FreeBSD.org
+
+  lang/python (and as such the 'python' binary and accomplices)
+  has been removed as default dependency for the USE_PYTHON,
+  USE_PYTHON_BUILD and USE_PYTHON_RUN knobs.
+
+  Ports need to use a designated (default) python interpreter
+  to build and install and in most cases for execution in the user
+  environment. Ports that install python scripts, which are not
+  limited to a certain python version (or version range), can
+  include lang/python as build and/or run dependency.
+
+  USE_PYTHON=yes and similar knobs will only pull in the
+  default python version (e.g. lang/python27), but none
+  of the meta ports or lang/python itself.
+
+  Please use lang/python as build or run-time dependency only,
+  if there is no other way to get a port working properly, since
+  the usage of lang/python complicates package builds for different
+  python versions.
+
+20131213:
+AUTHOR: tijl@FreeBSD.org
+
+  New USES=fortran to replace USE_FORTRAN.
+
+  USE_FORTRAN=yes can be replaced with USES=fortran or USES=fortran:gcc.
+  USE_FORTRAN=ifort can be replaced with USES=fortran:ifort.
+  USE_FORTRAN=f77 is deprecated and the version of gcc it depends
+  on (lang/gcc34) is scheduled to be removed.
+
+  Note that USE_FORTRAN=yes also makes GCC the C/C++ compiler while
+  USES=fortran only sets the Fortran compiler and can be used together
+  with Clang as C/C++ compiler.
+
+20131208:
+AUTHOR: mva@FreeBSD.org
+
+  New USES=twisted, to replace the old USE_TWISTED knob.
+
+  twisted can be configured with the arguments run or build to replace
+  the previous USE_TWISTED_RUN and USE_TWISTED_BUILD knobs. The twisted
+  components can be added as comma-separated arguments. If you previously
+  wrote
+    USE_TWISTED=	yes
+    USE_TWISTED=	conch names
+    USE_TWISTED_RUN=	yes
+  you now would write
+    USES=	twisted
+    USES=	twisted:conch,names
+    USES=	twisted:run
+
+20131119:
+AUTHOR: kwm@FreeBSD.org
+
+  The USE_GNOME component ltverhack no longer has a hard dependancy on
+  libtool.
+
+  If USE_AUTOTOOLS=libtool isn't defined it will try to patch ltmain.sh
+  and or libtool in ${WRKSRC}. If those files are located somewhere else
+  in ${WRKSRC} then it is possible to overwrite ltverhack_PATCH_FILES
+  with there new locations. configure script --distable-static will work also
+  after using the "new" ltverhack.
+
+  Please keep in mind that USE_AUTOTOOLS implies GNU_CONFIGURE so you might
+  need to add that back for the port to work.
+
+20131031:
+AUTHOR: rene@FreeBSD.org
+
+  Add a new USES for kernel module ports.
+
+  USES=kmod takes no arguments and:
+  - adds kld to CATEGORIES
+  - sets SSP_UNSAFE
+  - sets IGNORE if the kernel sources are not found
+  - defines KMODDIR to /boot/modules by default, add it to
+    PLIST_SUB and MAKE_ENV, and create it upon installation
+  - handles cross-referencing kernel modules upon installation and
+    deinstallation
+
+20131021:
+AUTHOR: amdmi3@FreeBSD.org
+
+  share/applications directory was added to the mtree, meaning that
+  you no longer need to create or remove it in your ports.
+
+20131008:
+AUTHOR: bapt@FreeBSD.org
+
+  New "compiler" USES to be able to select the compiler based on the
+  features it provides.
+  Supported arguments are:
+  - c++11-lang: the port needs a c++11 aware compiler what ever standard
+  library it uses, implies features
+  - c++11-lib: the port needs a c++11 standard library, implies features
+  - c11: the ports needs a c11 aware compiler implies features
+  - features: this will create a COMPILER_FEATURES variable which contains
+  the list of features ${CC} do support, implies env.
+  - env: the COMPILER_TYPE will be set to either gcc or clang.
+
+  By default the uses will try to use clang33 from ports when nothing in
+  base is relevant except if the user explicitly defines
+  FAVORITE_COMPILER=gcc in his make.conf
+
+20131008:
+AUTHOR: makc@FreeBSD.org
+
+  New USES: qmake, configure tool widely used among Qt based projects.
+  New framework is stage-friendly. To convert existing ports remove
+  custom configure target, adjust QMAKE_ENV, QMAKE_ARGS, QMAKE_PRO if
+  required (see Mk/Uses/qmake.mk for details).
+
+20131005:
+AUTHOR: bdrewery@FreeBSD.org
+
+  PATCHFILES now support an optional :-pX flag that notes which patch strip
+  level to use. This allows multiple patches in 1 port to use different
+  PATCH_DIST_STRIP values without changing PATCH_DIST_STRIP.
+
+  Syntax: PATCHFILES= patch[:-pX][:distgroup]
+
+20131003:
+AUTHOR: bapt@FreeBSD.org
+
+  New USES: scons, to handle properly the scons building system, this
+  this also gives the scons packages user the ability to respect MAKE_JOBS.
+
+20130924:
+AUTHOR: bapt@FreeBSD.org
+
+  Stage aware ports can now create package without the requirement from
+  being root.
+  If a port really needs root anyway it should add NEED_ROOT in its
+  Makefile.
+
+  For a port that needs special credential on files DO NOT RELY on
+  chown in post-install section but rely on @own, @group in pkg-plist
+  Be careful about rights on directories as pkg_install cannot store them
+  they needs to be done via @exec chown.
+
+20130923:
+AUTHOR: bapt@FreeBSD.org
+
+  The ports tree is now staged by default. With pkgng the sequence hasn't
+  changed, the main difference is that creating package is now independent
+  from installing it. With pkg_install, the package is now created first
+  and make install, do install the package.
+
+  New macros:
+  - STAGEDIR: PATH to the directory where the port will be staged.
+  - NO_STAGE: Keep the old behaviour of the ports tree (aka no staging area)
+
+  Unsupported macro if NO_STAGE is not set:
+  - MAN* with staging man page compression and handling of hardlinks and
+  symlinks is automatically done in the stage. the manpages becomes then a
+  "normal" plist files and should be tracked in pkg-plist.
+  - MANCOMPRESSED the compress-man target is able to only compress when it
+  needed.
+
+  New target:
+  - stage: this installs everything into the stage directory
+  - makeplist: this will create a pkg-plist and print it to stdout. This is
+  a sample plist and it should always be _reviewed_ not directly used.
+
+  NOTE: with staging only what is in the plist will be installed, nothing more,
+  meaning a port staged cannot have leftovers except directories left. It is
+  really important to double check the pkg-plist to make sure all the files
+  the maintainer wants to package are in! make makeplist can help in that area.
+
+20130923:
+AUTHOR: mva@FreeBSD.org
+
+  * New USES: zope
+
+  This replaces the previous USE_ZOPE knob. All other zope related knobs
+  for port Makefiles still exist. See Mk/Uses/zope.mk for details.
+
+20130920:
+AUTHOR: bdrewery@FreeBSD.org
+
+  SSP support has been added to ports with WITH_SSP_PORTS for i386 and amd64
+  on FreeBSD 10, and amd64 on earlier versions.
+
+  SSP_UNSAFE is added to disable in a port if it fails to build, but
+  this should only be used in rare circumstances such as kernel modules.
+  Otherwise, the port may just be failing due to lack of respecting
+  LDFLAGS.
+
+  On FreeBSD 10, this uses an ldscript in /usr/lib/libc.so to pull in
+  libssp_nonshared.a to address issues linking on i386 [1].
+
+  On earlier FreeBSD versions the WITH_SSP_PORTS knob will add -lssp_nonshared
+  to LDFLAGS on i386. This is not needed on amd64. However, several hundred
+  ports do not currently respect LDFLAGS, so this support is disabled currently
+  as it causes build failures if a dependency is looking for the stack_chk
+  symbols.
+
+  [1] http://svnweb.freebsd.org/base/head/lib/libc/libc.ldscript?revision=251668&view=markup
+
+20130919:
+AUTHOR: gahr@FreeBSD.org
+
+  * New USES: tcl, tk
+
+  This uses replaces all the previous USE_TCL, USE_TCL_BUILD, USE_TCL_RUN,
+  USE_TCL_WRAPPER, USE_TK, USE_TK_BUILD, USE_TK_RUN and USE_TK_WRAPPER macros.
+
+  See the Mk/Uses/tcl.mk and the commit message of r327607 for details.
+
+  Moreover, the default Tcl/Tk version is now specified in terms of
+  bsd.default-versions.mk. It is now possible to specify one's preferred Tcl/Tk
+  version using DEFAULT_VERSIONS+= tcltk=x.y in make.conf.
+
+20130918:
+AUTHOR: bapt@FreeBSD.org
+
+  The perl framework is not included unconditionally and the old framework
+  is not recognized anymore, the following MACROS has been removed:
+
+  * PERL_CONFIGURE
+  * USE_PERL5_RUN
+  * USE_PERL5_BUILD
+  * PERL_MODBUILD
+
+20130904:
+AUTHOR: madpilot@FreeBSD.org
+
+  To allow ports to work with the iconv implementation in 10-CURRENT after
+  commit r254273 the USES=iconv options now conditionally adds a dependency
+  depending on the FreeBSD version. It also defines a few utility variables
+  which can be used in the ports:
+
+  ICONV_CMD:	location of the iconv binary.
+		after r254273: /usr/bin/iconv
+		before: ${LOCALBASE}/bin/iconv
+
+  ICONV_LIB:	ld(1) flags to get the iconv DSO.
+		after r254273: empty
+		before: -liconv
+
+  ICONV_CONFIGURE_ARG:  String that can be passed to configure
+  			scripts to hint the location of the libiconv library.
+			after r254273: empty
+			before: --with-libiconv-prefix=${LOCALBASE}
+
+20130902:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_GNOME=pkgconfig is not supported anymore by the ports tree, please
+  uses: USES=pkgconfig
+
+20130831:
+AUTHOR: bdrewery@FreeBSD.org
+
+  crees has added USE_PACKAGE_DEPENDS_ONLY which works like
+  USE_PACKAGE_DEPENDS but will not fallback on source if a
+  package is missing.
+
+20130731:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES: perl5
+
+  This uses replaces all the previous perl macros. Here is how to migrate:
+
+  Always include perl5:
+  USES= perl5
+
+  If USE_PERL5 is undefined then perl5 will be a build and run dependency
+  Migrating to new USE_PERL5:
+
+  =======================================================
+  | BEFORE                 | AFTER                      |
+  =======================================================
+  | PERL_CONFIGURE=yes     | USE_PERL5= configure       |
+  -------------------------------------------------------
+  | USE_PERL5_RUN=yes      | USE_PERL5=run              |
+  -------------------------------------------------------
+  | USE_PERL5_BUILD=yes    | USE_PERL5=build            |
+  -------------------------------------------------------
+  | PERL_MODBUILD=yes      | USE_PERL5=modbuild         |
+  -------------------------------------------------------
+  | USE_PERL5=yes          |                            |
+  -------------------------------------------------------
+  | USE_PERL5=5.14+        | USE_PERL5= 5.14+           |
+  -------------------------------------------------------
+  | PERL_CONFIGURE= 5.14+  | USE_PERL5=5.14+ configure  |
+  -------------------------------------------------------
+  | PERL_MODBUILD= 5.14+   | USE_PERL5=5.14+ modbuild   |
+  -------------------------------------------------------
+
+20130726:
+AUTHOR: rene@FreeBSD.org
+
+ * With the removal of QT 3/KDE 3, the following are no longer recognized:
+   - USE_KDEBASE_VER
+   - USE_KDELIBS_VER
+   - USE_QT_VER
+
+  Mk/bsd.kde.mk has been removed, it was only used for QT 3/KDE 3.
+
+20130628:
+AUTHOR: bapt@FreeBSD.org
+
+ * New USES: imake
+
+ This uses replaces USE_IMAKE, it handles dependency on imake. Its only argument
+ is 'env', which prevent from defining the do-configure target.
+
+ * New LATE_INSTALL_TARGET
+
+ This content of this new macro is appended to INSTALL_TARGET
+
+20130620:
+AUTHOR: bapt@FreeBSD.org
+
+ * New USES: fmake
+
+  This uses will allow to build ports using the legacy FreeBSD make, for ports
+  not compatible with bmake
+
+20130614:
+AUTHOR: bapt@FreeBSD.org
+
+  * New macros to help dealing with ports that have options:
+
+  OPTIONS_SUB=yes when set in a port, all the option names are automatically
+  added to the PLIST_SUB with "@comment " value in case the option is off and
+  empty value in case the options is on.
+
+  ${OPT}_CONFIGURE_ENABLE=<aname> will automatically add:
+  CONFIGURE_ARGS+=--enable-<aname> in case OPT is activated
+  CONFIGURE_ARGS+=--disable-<aname> in case OPT is deactivated
+
+  ${OPT}_CONFIGURE_ON=<something> will automatically add:
+  CONFIGURE_ARGS+=<something> in case OPT is activated
+
+  ${OPT}_CONFIGURE_OFF=<something> will automatically add:
+  CONFIGURE_ARGS+=<something> in case OPT is deactivated
+
+  ${OPT}_CFLAGS will append the specified new flags to CFLAGS if OPT is 'on'
+  ${OPT}_CXXFLAGS will append the specified new flags to CXXFLAGS if OPT is 'on'
+  ${OPT}_LDFLAGS will append the specified new flags to LDFLAGS if OPT is 'on'
+
+  ${OPT}_CONFIGURE_ENV will append the specified variables to CONFIGURE_ENV if
+  OPT is 'on'
+  ${OPT}_MAKE_ENV will append the specified variables to MAKE_ENV if OPT is 'on'
+
+  ${OPT}_USES will append the speficied uses to USES if OPT is 'on'
+
+  ${OPT}_DISTFILES will append the specified distiles to DISTFILES if OPT in 'on'
+
+  ${OPT}_CMAKE_ON=<something> will automatically add:
+  CMAKE_ARGS+=<something> in case OPT is activated
+
+  ${OPT}_CMAKE_OFF=<something> will automatically add:
+  CMAKE_ARGS+=<something> in case OPT is deactivated
+
+  ${OPT}_${TYPE}_DEPENDS=<something> will automatically add:
+  ${TYPE_DEPENDS}+=<something> in case OPT is 'on'
+
+20130614:
+AUTHOR: bapt@FreeBSD.org
+
+  * New 'display' USES macro to handle building ports that may require a
+    a display to build.
+
+  USES= display[:install] will start Xvfb and set the DISPLAY environment
+  variable before the installation phase and stop it at the end. (install is
+  the implicit value)
+
+  USES= display:build will start Xvfb and set the DISPLAY environment variable
+  before the build phase and stop it at the end.
+
+20130607:
+AUTHOR: bdrewery@FreeBSD.org
+
+  * Checks were added to block GH_TAGNAME=master as this is not a valid
+    setup. A known hash or tag should be used for GH_TAGNAME instead of
+    a branch name. As soon as a branch is updated, the known checksum
+    in the distinfo would then be invalid.
+
+20130606:
+AUTHOR: bdrewery@FreeBSD.org
+
+  * WRKSRC_SUBDIR has been added to simplify overriding WRKSRC
+    to use a subdirectory:
+
+  WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+  Becomes:
+
+  WRKSRC_SUBDIR=	src
+
+20130606:
+AUTHOR: bapt@FreeBSD.org
+
+  The OPTIONS macro is no longer recognized, please use the new options
+  framework.
+
+20130509:
+AUTHOR: kwm@FreeBSD.org
+
+  * Two new USES macros to handle mime data of ports.
+
+  USES= desktop-file-utils
+	Handles MimeType in .desktop files that are installed in
+	share/applications.
+  USES= shared-mime-info
+	For supporting mime xml files installed in
+	share/mime/packages.
+
+  The desktop-file-utils USES is only needed if the .desktop files
+  installed by the port has a MimeType field.
+  USE_GNOME=desktopfileutils is deprecated.
+
+  The shared-mime-info USES handles mime types xml files.
+  Please note that only the packages/${NAME}.xml file should be listed in
+  the plist. The shared-mime-info port will clean up the share/mime/*
+  directories and generated files.
+
+  Both USES have there own post-install and code that adds @exec/@unexec
+  lines to the pkg-plist. This means that when a port switches to the
+  USES macro, the related post-install command  and @exec/@unexec
+  lines can be removed from the prot.
+
+20130507:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle setting correct shebang to scripts
+
+  By default it will fix bash, perl, php, ruby and python on all files specified
+  in the SHEBANG_FILES macro (glob pattern relative to ${WRKSRC})
+
+  Paths can be customized, and number of languages supported can be extended.
+
+  * USE_GETTEXT, USE_NCURSES, USE_READLINE are no longer recognized
+
+20130506:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle linking on ncurses and on readline
+
+  USES= ncurses will set env and make the port link to base version of ncurses
+  if no port version is installed otherwise it will link against port version
+  USES= ncurses:port will for the port to link against the ports version of
+  ncurses
+  USES= ncurses:base will force to link against base version of ncurses.
+
+  USES= readline will make the port link against base version of readline except
+  on 10+ where it will force dependency on the port version of readline
+  USES= readline:port will anyway force dependency on the port version of
+  readline.
+
+20130426:
+AUTHOR: mva@FreeBSD.org
+
+  * USE_ICONV has been deprecated and converted into the iconv USE
+    feature
+
+    USES= iconv
+
+20130425:
+AUTHOR: bapt@FreeBSD.org
+
+  * USE_CDRTOOLS is no longer recognized
+  * USE_FREETYPE is no longer recognized
+
+20130423:
+AUTHOR: jgh@FreeBSD.org
+
+  * New USES macro to handle support for gettext dependency:
+
+    USES= gettext:build will add gettext into BUILD_DEPENDS
+    USES= gettext:run will add gettext into RUN_DEPENDS
+    USES= gettext:lib will add gettext into LIB_DEPENDS
+
+    It deprecates USE_GETTEXT which will be removed as soon as it is not
+    used anymore
+
+20130422:
+AUTHOR: bdrewery@FreeBSD.org
+
+  * The entry for 20120830 to change CCACHE_DIR was not fully supported
+    by all ports. There is now a CCACHE_DIR variable that can be used
+    in /etc/make.conf for more complete coverage:
+
+    CCACHE_DIR=/var/cache/ccache
+
+20130422:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle support for pkgconf (pkg-config) dependency:
+
+    USES= pkgconfig[:build] will add pkgconf into BUILD_DEPENDS
+    USES= pkgconfig:run will add pkgconf into RUN_DEPENDS
+    USES= pkgconfig:both will add pkgconf into both RUN and BUILD DEPENDS
+
+    It deprecates USE_PKGCONFIG which will be removed as soon as it is not
+    used anymore
+
+20130320:
+AUTHOR: jgh@FreeBSD.org
+
+  * New USES macro to handle support for Zenoss ports and Zenpacks:
+
+    USES= zenoss
+
+20130319:
+AUTHOR: makc@FreeBSD.org
+
+ * New USES macro should be used instead of deprecated USE_CMAKE and
+   CMAKE_OUTSOURCE:
+
+   USES= cmake:outsource
+   to perform out-of-source build (equivalent to former pair usage of
+   USE_CMAKE/CMAKE_OUTSOURCE)
+
+   USES= cmake
+   In-source build (equivalent to plain USE_CMAKE=yes) can be used if
+   project doesn't support out-of-source build.
+
+20130319:
+AUTHOR: bapt@FreeBSD.org
+
+ * The options framework now uses ports-mgmt/dialog4ports contributed by
+   Ilya A. Arkhipov. It boostraps it if not present when one calls
+   make config.
+
+   dialog4ports provides a new UI able to represent all the features
+   provided by the new options framework.
+
+20130315:
+AUTHOR: bdrewery@FreeBSD.org
+
+ * USE_QMAIL_RUN, USE_QMAIL_BUILD and WANT_QMAIL have been removed
+   and converted into the qmail USE feature
+
+   USES= qmail:run will add qmail into RUN_DEPENDS
+   USES= qmail:build will add qmail into BUILD_DEPENDS
+   USES= qmail[:both] will add qmail into both RUN and BUILD DEPENDS
+   USES= qmail:vars will set QMAIL_PREFIX
+
+20130315:
+AUTHOR: bapt@FreeBSD.org
+
+  * Add new Keywords directory and first info.yaml keyword (@info).
+  Keywords directory will contain all the custom plist keywords allowing to
+  extend pkg-plist with new keywords. Only works with pkgng.
+
+20130307:
+AUTHOR: bapt@FreeBSD.org
+
+  * New USES macro to handle on demand features, 2 examples has been added to
+    the ports tree:
+
+    pathfix: to replace USE_GNOME= gnomehack
+    fuse: to replace USE_FUSE= yes
+
+20130207:
+AUTHOR: gahr@FreeBSD.org
+
+  * Use of PTHREAD_CFLAGS and PTHREAD_LIBS is unsupported. The former
+    expands to the empty string, while the second is simply -pthread.
+    Please use -pthread directly in your LDFLAGS, if needed.
+
+20121214:
+AUTHOR: flo@FreeBSD.org
+
+  * Add a USE_FUSE macro to handle fuse dependencies. It makes
+    sure sysutils/fusefs-libs gets installed and depending on
+    fuse being in base or not it installs sysutils/fusefs-kmod.
+
+20121210:
+AUTHOR: bapt@FreeBSD.org
+  * OPTIONS has been extended 2 new macros are available:
+
+    OPTIONS_RADIO - allows only 0 or 1 options to be selected
+    OPTIONS_GROUP - allows 0 or N options among to be selected
+
+20121010:
+AUTHOR: bapt@FreeBSD.org
+
+  * IPV6 option is now activated by default for the whole ports tree
+
+20121010:
+AUTHOR: bapt@FreeBSD.org
+
+  * The ports tree is now using pkgng as the default package manager
+    for HEAD.  This only affects users of CURRENT -- users of other
+    branches need not take any action.
+
+    To keep pkg_install as the default package manager, use the new
+    WITHOUT_PKGNG knob in make.conf
+
+20120830:
+AUTHOR: beat@FreeBSD.org
+
+  * CCACHE support for building ports has been added (depends on
+    devel/ccache). Therefore new user settable variables are available:
+
+    WITH_CCACHE_BUILD - Enable CCACHE support (Default off)
+
+    NO_CCACHE         - Disable CCACHE support for example for certain
+                        ports if CCACHE is enabled.
+
+    By default CCACHE uses $HOME/.ccache as cache directory. To use
+    a non-default cache directory this could be overwritten like:
+
+    MAKE_ENV+= CCACHE_DIR=/var/cache/ccache
+
+20120820:
+AUTHOR: gahr@FreeBSD.org
+
+  * GitHub support has been integrated into bsd.sites.mk. In order to
+    fetch distfiles from GitHub, a port must define USE_GITHUB along
+    with the following variables:
+
+    GH_ACCOUNT  - account name of the GitHub user hosting the project
+                  default: not set, mandatory
+
+    GH_PROJECT  - name of the project on GitHub
+                  default: ${PORTNAME}
+
+    GH_TAGNAME  - name of the tag to download (master, 2.0.1, ...)
+                  default: ${DISTVERSION}
+
+    GH_COMMIT   - first 7 digits of the commit that generated GH_TAGNAME
+                  (man git-describe(1))
+                  default: not set, mandatory
+
+    The port www/tivoka is an example how to use this mechanism.
+
+20120726:
+AUTHOR: bapt@FreeBSD.org
+
+  * new macro USE_PKGCONFIG has been introduce in place of
+    USE_GNOME= pkgconfig
+
+    USE_PKGCONFIG= yes and USE_PKGCONFIG= build
+    for build only dependency
+
+    USE_PKGCONFIG= run
+    for run only dependency
+
+    USE_PKGCONFIG= both
+    for both build and run dependency
+
+20120715:
+AUTHOR: beat@FreeBSD.org
+
+  * The ports tree moved from CVS to Subversion. A Subversion to
+    CVS exporter is in place to continue the support of CVSup but
+    do not commit to pcvs directly.
+
+    All commits have to be done in the new port Subversion repository
+    on svn.FreeBSD.org. You will find more information about
+    Subversion in the Ports Subversion Primer in the FreeBSD wiki,
+    in the "Committer's Guide" and the "Porter's Handbook".
+
+    If you are in doubt or unsure about a Subversion operation
+    please contact ports@FreeBSD.org.
+
+20120529:
+AUTHOR: crees@FreeBSD.org
+
+  * OPTIONS has been updated with many changes and improvements.
+
+    Old-style OPTIONS declarations will continue to work for a while,
+    but do not introduce any into existing or new ports.
+
+    For further information, see the Porter's Handbook section on
+    Makefile Options.
+
+20110923:
+AUTHOR: amdmi3@FreeBSD.org
+
+  * LDFLAGS is now passed to both the configure and make environments,
+    and should be handled just like CPPFLAGS (see previous entry).
+
+    Summarizing both LDFLAGS and CPPFLAGS changes, where you would
+    have used
+      CONFIGURE_ENV=    CPPFLAGS="-I${LOCALBASE}/include" \
+                        LDFLAGS="-L${LOCALBASE}/lib"
+      MAKE_ENV=         CPPFLAGS="-I${LOCALBASE}/include" \
+                        LDFLAGS="-L${LOCALBASE}/lib"
+    now just use
+      CPPFLAGS+=        "-I${LOCALBASE}/include"
+      LDFLAGS+=         "-L${LOCALBASE}/lib"
+
+    Note that it's advised to append these variables (+=) instead
+    of overriding (=) to allow customization by user.
+
+20110320:
+AUTHOR: gerald@FreeBSD.org
+
+  * CPPFLAGS is now passed to both the configure and make environments,
+    so this no longer needs to happen in individual ports by adding this
+    to CONFIGURE_ENV or MAKE_ENV.  Rather, just set CPPFLAGS in the port
+    Makefile (if necessary).
+
+    For example, where you would have used
+      CONFIGURE_ENV=    CPPFLAGS="-I${LOCALBASE}/include"
+      MAKE_ENV=         SOMETHING=foo CPPFLAGS="-I${LOCALBASE}/include"
+    now just use
+      CPPFLAGS=         "-I${LOCALBASE}/include"
+      MAKE_ENV          SOMETHING=foo
+
+20100831:
+AUTHOR: autotools@FreeBSD.org
+
+  * USE_GETTEXT has been cleaned up.
+    	'build'		BUILD time dependency only
+	'run'		RUN time dependency only
+	'yes'		LIBRARY dependency
+
+20100606:
+AUTHOR: gerald@FreeBSD.org
+
+  * USE_GCC=4.3 is deprecated (and no port uses it anymore). USE_GCC=4.3+
+    is transparently rewritten to USE_GCC=4.4+ and lang/gcc43 will be
+    disconnected from the USE_GCC infrastructure soon.
+
+20100524:
+AUTHOR: alepulver@FreeBSD.org
+
+  * The license support files (bsd.licenses.mk and bsd.licenses.db.mk) from
+    GSoc 2008/2009 have been committed. A new PH entry will be available
+    soon, but for the moment look at:
+    http://wiki.freebsd.org/PortsLicenseInfrastructure
+    Or, alternatively, the comments at the beginning of the mentioned files.
+
+20090906:
+AUTHOR: flz@FreeBSD.org
+
+  * There is now a unified way to create users and groups
+    in your ports. First, make sure they are added to both
+    ports/GIDs and ports/UIDs, then add the following in
+    your port:
+
+    USERS=	foo
+    GROUPS=	foo
+
+    ... if you want your port to create the foo user and
+    group.
+
+20090812:
+AUTHOR: portmgr@FreeBSD.org
+
+  * sourceforge.net has changed their URL layout to be more
+    flexible for their users.  A new bsd.sites.mk macro SFP
+    has been added for projects that moved from
+    http://${mirror}/sourceforge/%SUBDIR%/
+    to
+    http://${mirror}/project/%SUBDIR%/
+    Note that %SUBDIR% is now highly individual for each
+    project and might need changing as well.
+
+20090521:
+AUTHOR: portmgr@FreeBSD.org
+
+  * bsd.port.options.mk is now clear to be widely used.
+
+20090516:
+AUTHOR: pgollucci@FreeBSD.org
+
+  * APACHE_COMPAT is dead!
+
+  * USE_APACHE=yes is dead!
+
+  * WITH_APACHE13, WITH_APACHE2, WITH_APACHE20, and WITH_APACHE22 are dead
+
+    You should set USE_APACHE=13|20|22+.  WITH_APACHE option can
+    be used to conditional include support for ANY version of
+    Apache based on APACHE_PORT.  Currently www/apache13
+
+20090207:
+AUTHOR: pgollucci@FreeBSD.org
+
+  * devel/libslang dropped in favor of devel/libslang2
+
+  * WITH_SLANG2 has been removed.  WITH_SLANG now implies
+    devel/libslang2.
+
+20080905:
+AUTHOR: hrs@FreeBSD.org
+
+  * print/ghostscript-* and related ports have been renamed in the
+    following way:
+
+	print/ghostscript-gnu -> print/ghostscript7
+	print/ghostscript-gnu-nox11 -> print/ghostscript7-nox11
+	print/ghostscript-gnu-commfont -> print/ghostscript7-commfont
+	print/ghostscript-gpl -> print/ghostscript8
+	print/ghostscript-gpl-nox11 -> print/ghostscript8-nox11
+	japanese/ghostscript-gnu-jpnfont -> print/ghostscript7-jpnfont
+	korean/ghostscript-gnu-korfont -> print/ghostscript7-korfont
+
+  * USE_GHOSTSCRIPT now supports a version number which the port
+    requires.  The valid value is "7" or "8".  If other value is
+    specified, value of WITH_GHOSTSCRIPT_VER is used.
+
+  * WITH_GHOSTSCRIPT_GNU has been removed in favor of
+    WITH_GHOSTSCRIPT_VER.  The valid value of WITH_GHOSTSCRIPT_VER is
+    "7" or "8", and the default value is "8".
+
+20080821:
+AUTHOR: rafan@FreeBSD.org
+
+   * CONFIGURE_ARGS is updated to use correct syntax for newer autoconf
+     on the configure target. Individual ports no longer need to change
+     CONFIGURE_TARGET to have the '--build=' prefix.
+
+20080721:
+AUTHOR: pav@FreeBSD.org
+
+  * Default OpenLDAP version was changed from 2.3 to 2.4.
+
+  * USE_GTK and USE_XPM variables are no longer recognized.
+
+20080523:
+AUTHOR: flz@FreeBSD.org
+
+  * By default, ports-mgmt/pkg_install now sets up a wrapper to use ports
+    pkg_install (when installed) instead of base when the former is more
+    recent. This can be disabled in the options menu, or with the
+    WITHOUT_WRAPPER knob.
+
+20080414:
+AUTHOR: pav@FreeBSD.org
+
+  * @rmtry is now supported in pkg-plist.
+
+  * USE_DISPLAY made more powerful, see comments in bsd.port.mk for details.
+
+  * ${PW} is now defined.
+
+  * LIB_DEPENDS can now be used with libraries with + sign in their name
+    without the need for escaping.
+
+20080312:
+AUTHOR: pav@FreeBSD.org
+
+  * USE_XPM no longer implies USE_XLIB.
+
+  * USE_LDCONFIG can now be used to Linux binary ports that install shared
+    libraries instead of INSTALLS_SHLIB.
+
+20070908:
+AUTHOR:	gabor@FreeBSD.org, linimon@FreeBSD.org
+
+  * The Perl-related code parts have been extracted from bsd.port.mk to
+    bsd.perl.mk.  This includes the user-settable knobs (e.g. USE_PERL5)
+    and infrastructure parts of the code, like default targets.  The new
+    code is designed to be conditionally included based on either
+    USE_PERL5_*, PERL_CONFIGURE, or PERL_MODBUILD being set.  However,
+    some of the default settings remain in bsd.port.mk while we make
+    sure that all ports comply with this.
+
+  * A convenient version handling has been implemented for Perl-related
+    knobs.  With this new feature one can require a minimal, a maximal or an
+    exact version, that the given port needs.  For the full description and
+    some examples, please see the documentation in bsd.perl.mk.
+
+20070804:
+AUTHOR: gabor@FreeBSD.org
+The following functional changes were made to bsd.*.mk and to
+Tools/scripts/security-check.awk:
+
+  * The variable definitions that cover command line tools, e.g. MKDIR, were
+    extracted from bsd.port.mk into bsd.commands.mk, so that we can
+    reuse them within the infrastructure later.
+
+  * The old DESTDIR implementation was removed both from the infrastructure,
+    and from the individual ports.  Variables like TARGETDIR should not longer
+    be used.
+
+  * A new DESTDIR implementation has been added, implemented in bsd.destdir.mk.
+    The new implementation puts no requirements on the individual ports.
+
+20070730:
+AUTHOR: python@FreeBSD.org
+
+  * The default Python version has been changed from 2.4.x to 2.5.x.
+
+  * A number of variables have been added to bsd.python.mk to support
+    the more integrated support for Python eggs, including:
+    PYDISTUTILS_PKGNAME, PYDISTUTILS_PKGVERSION, PYEASYINSTALL_EGG,
+    PYDISTUTILS_NOEGGINFO, PYDISTUTILS_EGGINFO, PYEASYINSTALL_ARCHDEP
+
+  * More detailed descriptions of the variables can be found in the comments
+    in bsd.python.mk.
+
+20070723:
+AUTHOR: rafan@FreeBSD.org
+
+  * The default CONFIGURE_ARGS when GNU_CONFIGURE is set now contains
+    --mandir and --infodir if configure script supports them.
+
+20070712:
+AUTHOR: maho@FreeBSD.org
+
+  * Add knob USE_FORTRAN for ports which uses FORTRAN. All ports uses
+    FORTRAN compiler should use this knob. Usages are: USE_FORTRAN=yes
+    (default;gfortran42), USE_FORTRAN=ifc (Intel FORTRAN compiler)
+    and USE_FORTRAN=g77 (/usr/bin/f77 or g77-34).
+
+20070701:
+AUTHOR: portmgr@FreeBSD.org
+The following change was made to the ports infrastructure:
+
+  * Virtual category 'kld' was added.  If the port installs kernel loadable
+    modules, it should be included in this category.
+
+20070524:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * The 'make-deinstall-all' target now checks for moved ports.
+
+  * The installation directories PORTEXAMPLES and PORTDATA are now defined.
+
+  * The USE_MAKESELF knob is added for ports that use the makeself archiver.
+
+  * The description of fetch-list was updated.  The targets fetch-required-list,
+    fetch-url-list, and fetch-urlall-list were added.
+
+  * 'make search' will also now search in ports/MOVED.
+
+  * The default method for 'make update' is now portsnap.  Previously,
+    you had to manually select one of 3 methods: SUP_UPDATE, CVS_UPDATE,
+    or PORTSNAP_UPDATE.  The latter is now obsolete.
+
+  * Several Makevar definitions have been moved to the pre-makefile section:
+    DATADIR, DOCSDIR, ETCDIR, EXAMPLESDIR, WWWDIR.
+
+20070403:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * The default dependency of USE_GHOSTSCRIPT has been changed from
+    ghostscript-gnu to ghostscript-gpl.  The WITH_GHOSTSCRIPT_GPL variable is
+    now no-op.  New WITH_GHOSTSCRIPT_GNU variable was added.
+
+  * bsd.tcl.mk was overhauled.  Most importantly, the semantics of USE_TCL* and
+    USE_TK* variables was changed.  USE_TCL and USE_TK now implies both build
+    and run dependencies, USE_TCL_RUN and USE_TK_BUILD variables were
+    introduced. Existing ports in the tree were modified.
+
+  * Unused category 'tcl81' was removed, and new categories 'tcl' and 'tk'
+    were added.
+
+20070324:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * Default LIBTOOLFILES value was changed from literal `configure'
+    to ${CONFIGURE_SCRIPT}.
+
+  * bsd.efl.mk was moved to ports/Mk.  USE_EFL family of macros is now
+    generally available to all ports.
+
+  * New macros COPYTREE_BIN and COPYTREE_SHARE were added, to allow
+    for easy installation of a tree hierarchy, either with executable (bin)
+    or read-only (share) permissions on files.
+
+  * A new variable WWWDIR was added, with default value of
+    ${PREFIX}/www/${PORTNAME}.
+
+  * Variables DOCSDIR_REL, DATADIR_REL, EXAMPLESDIR_REL and WWWDIR_REL were
+    added for porter's convenience.  They contain the values of their
+    respective non-REL variables, except relative to installation PREFIX.
+
+20070313:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * bsd.ocaml.mk and bsd.xfce.mk were added.
+
+  * The FETCH_CMD was refactored so that ports can override the command,
+    the arguments, or both.
+
+20070306:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * The remaining vestiges of FreeBSD 4.X support were removed.  Any
+    remaining users of 4.X should have stayed with the RELEASE_4_EOL tag.
+
+  * It is now possible to include USE_PHP after bsd.port.pre.mk.
+
+  * 'make search' should now work with non-default ${PORTSDIR}.
+
+20070130:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * DEPENDS variable was removed, please use other *_DEPENDS variables instead.
+
+  * A new pkg-plist keyword is available, @stopdaemon.  It will call forcestop
+    on all rc.subr scripts installed by the port on deinstall, effectively
+    stopping services on deinstall/upgrade.
+
+  * rc.subr script suffix is now available in Makefile as RC_SUBR_SUFFIX.
+
+  * New variable USE_CDRTOOLS was introduced.  It replaced direct dependencies
+    on sysutils/cdrtools port.  It now automatically support switching to
+    cdrtools-cjk port when user specified WITH_CJK.  All ports were converted.
+
+  * USE_DOS2UNIX, infrastructure for converting DOS to UNIX line feeds, was
+    enhanced by a new variable DOS2UNIX_REGEX.  It allows to specify a find
+    -iregex parameter to limit touched files by file extensions.
+
+  * Support for partially translated manpages was added.  For examples of
+    usage, please refer to Porter's Handbook.
+
+  * USE_TCL/USE_TK variables were changed to provide runtime dependency.  New
+    variables USE_TCL_BUILD and USE_TK_BUILD were added.  All unintuitive
+    quirks of these variables were fixed.
+
+  * USE_LDCONFIG was fixed to work properly for ports, that specify @cwd in the
+    pkg-plists.
+
+  * Old bsd.java.mk version 1.0 macros were removed.
+
+  * New category: ports-mgmt
+
+  * New virtual category: gnustep
+
+  * Unused 'picobsd' category was removed.
+
+20070118:
+AUTHOR: maho@FreeBSD.org
+We'd like to ask all ports maintainers, who are using Fortran77 (f77 in base),
+to switch to Fortran90/95 (gfortran42, lang/gcc42). Please refer to
+http://people.freebsd.org/~maho/gfortran/gfortran.html
+for details.
+
+20061014:
+AUTHOR: gnome@FreeBSD.org
+The following changes have been introduced to the GNOME porting process
+during the GNOME 2.16 update:
+
+* GNOME is now installed into LOCALBASE.  Any port which makes use of the
+  gnomeprefix component will have its PREFIX forced to LOCALBASE
+
+20060930:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * The bsd.port.mk pre and post includes have been split into 3 pieces
+    instead of 2, to allow OPTIONS to be able to influence dependencies.
+    This is still experimental and not yet enabled by any port.  This adds
+    the file 'bsd.port.options.mk'.
+
+  * bsd.gcc.mk has been updated to understand gfortran.
+
+  * emulators/linux_base is now removed.  linux_base-fc4 has been the default
+    for some time.
+
+  * The USE_FIREBIRD macro was added to bsd.database.mk.
+
+20060914:
+AUTHOR: portmgr@FreeBSD.org
+ The following functional changes were made to bsd.port.mk:
+
+  * PKGVERSION was introduced as an intermediate variable refactored out of
+    PKGNAME.
+
+  * bsd.lua.mk was added to support lua-related ports.
+
+  * DESTDIR was removed from bsd.scons.mk because it was problematic.
+
+  * Some quotes were added to the 'missing' target to improve handling of
+    duplicate origins.
+
+20060903:
+AUTHOR:	sat@FreeBSD.org
+The following functional changes were made to bsd.sites.mk:
+
+  * MASTER_SITES variable can now look like MACRO1/subdir1 MACRO2/subdir2, and
+    be expanded in a way that you expect it to, that is apply different subdirs
+    to different sites. You can safely replace ${M_S_FOO:S/%SUBDIR%/bar/} with
+    FOO/bar.
+
+  * If M_S_SUBDIR is unset, a macro in M_S won't set it anymore, but rather
+    substitute %SUBDIR% all by itself. Now it's possible to use macros with
+    different default subdirs and they will expand in a proper way.
+
+20060805:
+AUTHOR:	sat@FreeBSD.org
+The following functional changes were made to bsd.sites.mk:
+
+  * MASTER_SITES variable can now contain special macros which are expanded into
+    traditional URL[:group] syntax and cause some convenient effects, e.g. set a
+    default M_S_SUBDIR.
+
+  * A macro is any space-delimited word in MASTER_SITES without a forward slash.
+
+  * If MASTER_SITE_<macro> is defined, then the macro is expanded to its value.
+
+  * Abbreviated macros are provided for extremely popular locations, e.g. CPAN
+    and SF. To avoid further obfuscation their unabbreviated equivalents should
+    be avoided.
+
+  * Popular macros can trigger M_S_SUBDIR to default to a predefined value, e.g.
+    ${PORTNAME:L} for SF and ${PORTNAME:C/-.*//} for CPAN.
+
+  * Abbreviations and M_S_SUBDIR defaults are defined by MASTER_SITES_ABBREVS
+    and MASTER_SITES_SUBDIRS, both set in bsd.sites.mk.
+
+  * If a macro belongs to a group (e.g. SF:source1), all the sites it expands
+    into also belong to the same group.
+
+  * Macros and traditional URL's can be mixed safely, their order stays intact.
+
+20060804:
+AUTHOR:	gabor@FreeBSD.org
+The following functional changes were made to bsd.*.mk and to
+Tools/scripts/security-check.awk:
+
+  * Add DESTDIR support to let one install ports into a jail from outside.
+    A package is installed under ${DESTDIR}${PREFIX} now and registered under
+    ${DESTDIR}/var/db/pkg.
+
+  * TARGETDIR variable has been added for referencing ${DESTDIR}${PREFIX}.
+
+  * LOCALBASE, LINUXBASE and X11BASE variables point to the final destination
+    now, LOCALBASE_REL, LINUXBASE_REL and X11BASE_REL can be used for the
+    old behavior.  The behavior has not been changed in PLIST_SUB.
+    Note, that the three variables are still overridable with a hack, so this
+    change doesn't affect POLA, but necessary for DESTDIR support.
+
+  * OSVERSION is now determined from the userland, not from the kernel.
+    Cross-compiling between releases is still not supported, but this
+    behavior is more correct for jails with differing userland from
+    the kernel version.
+
+  * Add some sanity check for PREFIX and DESTDIR.  This can be skipped by
+    defining IGNORE_PATH_CHECKS, but very discouraged.
+
+  * Deinstalling from DESTDIR, determining if a port is already installed in
+    DESTDIR, etc. are implemented by chrooting those specific commands.
+
+  * Text changes to reflect that we are installing to DESTDIR, removing from
+    DESTDIR, etc.
+
+Note, that this change implements only the infrastructure support.  Ports should
+also be implemented to respect DESTDIR.
+
+20060717:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * Introduces IA32_BINARY_PORT for certain cases where a given port fetches
+    and installs compiled i386 binaries.
+
+  * Adds some infrastructure for support of 32-bit i386 apps on amd64.
+
+  * Again fix USE_LDCONFIG logic to make it work with non-default PREFIX to
+    fix bug introduced in previous revision.
+
+20060705:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * Change all bogus uses of BROKEN to IGNORE.  (Note: the BROKEN_WITH_*
+    forms are retained for compatibility but deprecated.)  Internally,
+    these variables all had already set IGNORE, not BROKEN, so they
+    were really misnomers.
+
+  * Fix USE_LDCONFIG with non-default PREFIX.
+
+  * Fix DESKTOP_ENTRIES processing on 4.x.
+
+  * Add 'make missing' to show missing dependencies.
+
+  * Add bsd.scons.mk and bsd.wx.mk.
+
+20060616:
+AUTHOR: portmgr@FreeBSD.org
+  The patch in ports/95841 to get rid of remnants of FORCE_PKG_REGISTER
+  was backed out because it broke kdelibs3*.
+
+20060616:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * Update default MySQL version from 4.1 to 5.0 [1]
+
+  * Update default PHP version from 4 to 5 [2]
+
+  * Update default LDAP version from 2.2 to 2.3 [3]
+
+  * Add support for LDAP version 2.4 [4]
+
+  * Update default linux_base from '8' (Redhat 8) to 'fc4' (Fedora Core 4) [5]
+
+  * Switch default Linux X implementation from XFree86 to X.org to track the
+    above [5]
+
+  * Deprecate INSTALLS_SHLIB and replace it by USE_LDCONFIG.  If set to "yes",
+    the old behavior is preserved.  Otherwise, it can be set to a list of
+    directories to be added to ${PREFIX}/libdata/ldconfig/${UNIQUENAME}.
+    Note that this directory is used by ldconfig startup script, it is meant
+    to replace ldconfig scripts installed by some ports as (sometimes
+    000.${UNQUENAME}.sh) [6]
+
+  * Adds USE_LDCONFIG32 which is like USE_LDCONFIG but the target file is
+    ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.  (Note: this should
+    only be used on 64-bit architectures) [6]
+
+  * Set the default LANG for tr to be C to avoid some build problems [7]
+
+  * Include bsd.java.mk in both pre and post sections [8]
+
+  * Get rid of remnants of FORCE_PKG_REGISTER [9]
+
+  * Always print options with make showconfig [10]
+
+  PR:	92805 [1], 92806 [2], 96793 [3], 97515 [4], 96849 [5],
+	91933 [6], 91381 [7], 97020 [8], 95841 [9], 97133 [10]
+
+20060523:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * include bsd.emacs.mk only when USE_EMACS is set [5]
+
+  * Correct the implementation of pretty-print-run-depends-list [8]
+
+  * Use a consistent name for the cookies file when PKGNAMEPREFIX/SUFFIX
+    are set after bsd.port.pre.mk. [9]
+
+  * Include bsd.tcl.mk if USE_TCL_BUILD is defined [10]
+
+  * Set PERL_MM_USE_DEFAULT in BATCH mode [11]
+
+  * Add the {ONLY,NOT}_FOR_ARCH_REASON and
+    {ONLY,NOT}_FOR_ARCH_REASON_${ARCH} variables to allow better
+    customization of the error string reported to users when they
+    attempt a build on an unsupported architecture. [12]
+
+  * Avoid errors from duplicated targets when parsing MLINKS on ports
+    without a default value set. [13]
+
+  * Fix handling of MLINKS when invalid entries are listed [14]
+
+  * Enforce sanity of DESKTOP_ENTRIES.  If the Categories field is
+    omitted, try to map ports categories to their freedesktop.org
+    counterpart [15]
+
+  PR:     95238 [5], 94164 [8], 94219 [9], 92355 [10],
+          95579 [11], 94675 [12], 66109 [13], 66110 [14], 95603 [15]
+
+20060121:
+AUTHOR: portmgr@FreeBSD.org
+The following changes affecting ports developers were introduced:
+
+  * Gamin is a default FAM system
+
+  * New virtual categories: hamradio and rubygems
+
+  * Virtual category 'offix' was removed
+
+  * New USE_DOS2UNIX variable for converting DOS linefeeds to UNIX
+
+  * Variables like BROKEN and FORBIDDEN should no longer be quoted
+
+  * New NOFETCHFILES variable to prevent downloading from MASTER_SITES
+    while still allowing MASTER_SITE_OVERRIDE
+
+  * New plist macro @dirrmtry with functionality of @unexec rmdir || true
+
+  * USE_REINPLACE no longer needs to be defined, REINPLACE_CMD is always
+    available
+
+Detailed documentation of new features is available in Porter's Handbook.
+
+20051108:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were introduced:
+  * Add bsd.database.mk
+    - move out from bsd.port.mk USE_MYSQL and USE_PGSQL.
+    - add support for Berkeley DB and SQLite (via USE_BDB and USE_SQLITE
+      knobs).
+
+  * Escape '+' in make search
+
+  * Add "makepatch" target to simplify creation of patches during porting
+
+  * Replace deprecated MACHINE_ARCH with ARCH
+
+  * Remove support of OpenLDAP 2.1
+
+  * Add bsd.tcl.mk
+    It introduces USE_TCL/USE_TCL_BUILD knobs to support various
+    version of tcl (8.0 -> 8.4)
+
+  * Fix cosmetic bugs in security-check target
+
+  * Add support for INDEX-7 and above (up to INDEX-9 actually)
+
+  * Add "package-recursive" to bsd.port.subdir.mk
+
+  * Remove check for FreeBSD version < 460101
+
+  * New category: net-im
+
+  * Add .desktop file facilities
+    It introduces DESKTOPDIR and DESKTOP_ENTRIES knobs
+
+  * Add SHA256 support to "*checksum" targets
+
+  * Fix USE_PYTHON with OPTIONS
+
+  * Force NO_LINT to MAKE_ENV to avoid library breaks
+
+  * Fix typo: s/RC_ORDER/USE_RCORDER/g
+
+  * Add support for PostgreSQL 8.1
+
+  * Add bsd.apache.mk
+    USE_APACHE knob enhancements
+
+20051105:
+AUTHOR: gnome@FreeBSD.org
+  GNOME has been upgraded from 2.10.2 to 2.12.1.  This update brings with
+  it many important porting changes:
+
+  - gtk20's pkg-config file no longer contains the X11 pango modules.
+    Therefore, if your port requires these modules, you may have to
+    manually patch them in to your port's Makefiles.  Contact
+    gnome@FreeBSD.org if you have questions on this.
+
+  - A new USE_GNOME component, ltverhack, has been added.  This
+    pseudo-component hacks libtool so that shared library versions are
+    more consistent with other operating systems.  Using this component
+    can prevent unnecessary shared library version changes.
+
+  - A new macro, INSTALLS_ICONS, has been added.  If your port installs
+    Freedesktop-style icons to ${LOCALBASE}/share/icons or
+    ${X11BASE}/share/icons, then you should use this macro.  NOTE:
+    use of this macro requires your port to set either USE_GNOME or
+    WANT_GNOME.
+
+20050618:
+AUTHOR: netchild@FreeBSD.org
+  - USE_LINUX now implies NO_FILTER_SHLIBS=yes. It also doesn't use FreeBSD
+    tools to strip binaries anymore, so it's not necessary anymore to override
+    STRIP and STRIP_CMD.
+  - USE_LINUX_PREFIX implies NO_MTREE now.
+  - In the USE_LINUX case, USE_XLIB now depends upon the Linux X11 libraries
+    instead upon the native FreeBSD libraries.
+  - The variable LINUX_BASE_PORT contains a string which is suitable as an
+    item in *_DEPENDS, so if a port BATCH_DEPENDS or FETCH_DEPENDS upon the
+    default (or overridden) Linux base, ${LINUX_BASE_PORT} should be used
+    instead of a hardcoded reference.
+  - If USE_LINUX or OVERRIDE_LINUX_BASE doesn't point to an existing linux_base
+    port and if USE_LINUX isn't set to "yes" (case insensitive), the port will
+    be marked as IGNORE.
+
+20050609:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were introduced:
+
+  * Improve documentation of CONFLICTS.
+
+  * Fix add-plist-docs target to work correctly with wildcards.
+
+  * Fix USE_MYSQL and USE_PGSQL knobs to work in partial ports
+    tree.
+
+  * Introduce 2 new variables: USE_FAM and WANT_FAM_SYSTEM.
+
+  * Suppress "Vulnerability check disabled" message if
+    DISABLE_VULNERABILITIES is defined.
+
+  * Switch default MySQL version to 4.1
+
+  * Add support for OpenLDAP v.23
+
+  * Fix add-plist-info and add-plist-post targets to avoid warnings
+    from ports which redefine them.
+
+  * Fix add-plist-docs target to handle NOPORTDOCS knob properly.
+
+  * Use INSTALLDIRS="site" in configure for perl ports.
+
+  * Fix NO_(CHECKSUM|BUILD|INSTALL|PACKAGE) knobs if OPTIONS are
+    defined.
+
+  * Add an ability to depend on versioned installed package.
+    Example:
+
+          BUILD_DEPENDS=p5-Tree-Simple>=1.12:${PORTSDIR}/devel/p5-Tree-Simple
+
+    Please note, it's experimental feature, work is currently in
+    progress.
+
+20050325:
+AUTHOR: jdp@FreeBSD.org
+  The CVSup port has been upgraded with a patch to correct the
+  handling of the "refuse" file for files that are in the CVS Attic.
+  This solves a problem some people were having, where CVSup would
+  delete their ports/INDEX* files even though the files were listed
+  in the "refuse" file.  The bug fix is in the cvsupd server, so
+  mirror sites  must upgrade their servers in order for this fix to
+  help.  Meanwhile, adding "ports/Attic/INDEX*" to the refuse file
+  serves as a work-around.
+
+20050321:
+AUTHOR: kwm@FreeBSD.org
+  The gstreamer-plugins gconf dependency moved to its own port in devel.
+  When your application needs gstreamer-plug-gconf, just add
+  USE_GSTREAMER=gconf to you Makefile
+
+20050319:
+AUTHOR: gnome@FreeBSD.org
+  New GNOME components have been added to bsd.gnome.mk.  See
+  http://www.FreeBSD.org/gnome/docs/gnome2_porting.html for the complete
+  list of available GNOME 2 components.
+
+  Py-gnome2 lost many of its GNOME dependencies to a new port,
+  py-gnome-extras.  Therefore, ports that used to depend on
+  the pygnome2 component for modules such as gtkhtml2, gnomepanel, etc.
+  should replace the pygnome2 dependency with pygnomeextras.
+
+20050314:
+AUTHOR: edwin@FreeBSD.org
+  New variable for in /etc/make.conf: IGNORE_MASTER_SITE_xxx
+
+  If you prefer a certain mastersite for a collection of master-sites,
+  set this in your /etc/make.conf:
+
+	MASTER_SITE_xxx=http://z.x.y/%SUBDIR%/
+
+  If you insist on only using the ones you specify, set this in
+  your /etc/make.conf:
+
+	IGNORE_MASTER_SITE_xxx=yes
+	MASTER_SITE_xxx=http://z.x.y/%SUBDIR%/
+
+  Use "make -V MASTER_SITES" to see the differences.
+
+20050313:
+AUTHOR: ahze@FreeBSD.org, kwm@FreeBSD.org
+  The following changes were committed:
+
+ * USE_GNOME=gstreamerplugins has been deprecated.
+     The new method which uses bsd.gstreamer.mk is:
+       USE_GSTREAMER=plugin-name
+
+    Example:
+     USE_GSTREAMER= dvd
+
+     or
+
+     WANT_GSTREAMER= yes
+     .include <bsd.port.pre.mk>
+     .if defined(WITH_DVD)
+     USE_GSTREAMER= dvd
+     .endif
+
+  * misc/gnomehier now creates a mtree file and each port
+    using USE_GNOME=gnomehier or gnomeprefix now use the
+    BSD.gnome-x11.dist mtree file to help "keep" directories
+    and not accidentally add gnome directories to a port.
+
+20050207:
+AUTHOR: portmgr@FreeBSD.org
+  The following changes were committed:
+
+  * Change bento to pointyhat names in comments.
+
+  * Document DISABLE_VULNERABILITIES variable.
+
+  * Add WWW: line for 'search' target.
+
+  * Speedup check-vulnerable invocation, if portaudit is installed.
+
+  * Run install-info for all .info files.
+
+  * Run add-plist-docs more strictly and prevent some situations
+    with leftover files in the future.
+
+  * Introduce two new variables: MASTER_PORT and SLAVE_PORT.
+    The results from these variables is only used as information for
+    users.
+
+  * Honor OPTIONS if PACKAGE_BUILDING or BATCH are defined.
+
+  * Move all USE_GCC entries to new file - bsd.gcc.mk.  'test-gcc'
+    target allows users to check gcc version if USE_GCC is used.
+    Give maintainers opportunity to add '+' character to USE_GCC version
+    for using specified and higher versions.
+
+    Example:
+
+    USE_GCC=3.3+
+
+    builds ports with gcc version 3.3 and higher (3.4, 4.0).
+
+  * Install startup scripts with the help of USE_RC_SUBR variable.
+
+  * Add three new targets: config-recursive, rmconfig-recursive and
+    config-conditional.  You can set or delete OPTIONS for all
+    dependencies before every build.  config-conditional target is
+    used to skip configuring ports which have already been
+    configured.
+
+  * Fix using of WANT_PGSQL_VER variable if PostgreSQL is already
+    installed.
+
+20041231:
+AUTHOR: netchild@FreeBSD.org
+  USE_LINUX_PREFIX doesn't implies USE_LINUX anymore.
+
+20041209:
+AUTHOR: portmgr@FreeBSD.org
+  The following changes were committed:
+
+  * Define new macros: DATE, FMT, MKTEMP, OBJDUMP, and use
+    command macro SORT.
+
+  * Change layout of comments to 4 column tabs, remove lots
+    of spaces and eight-column-tabs.
+
+  * Introduce 2 new variables: SUB_FILES and SUB_LIST:
+
+    Example:
+
+    SUB_FILES=	pkg-message pkg-install
+    SUB_LIST+=	"VERSION=${VERSION}"
+
+    This looks for ${FILESDIR}/pkg-message.in and ${FILESDIR}/pkg-install.in
+    Substitutions in SUB_LIST are applied to these files and the
+    output is redirected to ${WRKDIR}.
+
+    PKGMESSAGE will be set to ${WRKDIR}/pkg-message.
+    PKGINSTALL will be set to ${WRKDIR}/pkg-install.
+
+  * Document DEPRECATED and EXPIRATION_DATE variables.
+
+  * Sanitize the intermittent output by the build infrastructure
+    so that cutting and pasting from it no longer interferes
+    with GNATS-tags.
+
+  * Honor configure arguments for USE_XLIB if USE/WITH_LIBTOOL_ is
+    used.
+
+  * Properly document 'describe' target.
+
+  * Properly remove directories at deinstallation time if ports sets
+    a non-standard PREFIX.
+
+  * Defaults INDEXFILE to INDEX-6 on 6-CURRENT.
+
+20041119:
+AUTHOR: portmgr@FreeBSD.org
+  The following changes were committed:
+
+  * Fix INDEX build if MAINTAINER is not defined.
+
+  * Remove USE_QT2 option, since qt2 is obsolete.
+
+  * Better define and explain ARCH option.
+
+  * Add new script Tools/make_readmes, to speedup 'readmes'
+    target. Avoid recursing into individual port directories and run
+    it at top level, after the category README.html files have been
+    created.
+
+  * Fix 'search' target and enable a case-insensitive search on 5-x.
+
+  * Extend 'search' target and enable search by categories.
+
+  * Remove 'tk42' and 'tcl76' categories since they're obsolete.
+
+  * Introduce DISTVERSION variable, that can be set instead of
+    PORTVERSION and is automatically converted in a conforming PORTVERSION.
+
+    Example:
+
+    DISTVERSION=	10Alpha3
+
+    extends 10Alpha3 to 10.a3
+
+    DISTVERSION=	3Beta7-pre2
+
+    extends 3Beta7-pre2 to 3.b7.p2
+
+  * Use --suffix option instead of -b for patch(1), to make it
+    compatible with BSD patch(1).
+
+  * Fix {WANT,WITH}_MYSQL_VER behavior, to deal with conflicting
+    versions.
+
+20041116:
+AUTHOR: gnome@FreeBSD.org
+  The way OMF files are handled has been changed to use the new INSTALLS_OMF
+  macro (similar to INSTALLS_SHLIB).  Details about the new macro can be found
+  at http://www.FreeBSD.org/gnome/docs/porting.html and bsd.gnome.mk.
+
+20041113:
+AUTHOR: portmgr@FreeBSD.org
+  Since INDEX version in CVS is always too old, portmgr decided to
+  remove it.  You will still be able to build your own INDEX or use
+  'fetchindex' target in /usr/ports/.
+
+20041109:
+AUTHOR: gnome@FreeBSD.org
+  The way GConf schema files are handled has been changed to use the new
+  GCONF_SCHEMAS macro (similar to MAN).  Details about the new macro can be
+  found at http://www.FreeBSD.org/gnome/docs/porting.html and bsd.gnome.mk.
+
+20040803:
+AUTHOR:	ade@FreeBSD.org
+  As part of the ongoing autotools cleanup, devel/autoconf has been
+  replaced with devel/autoconf253, and devel/automake with devel/automake15.
+  Consumers of the various autotools knobs from bsd.autotools.mk should not
+  notice any differences.  This update completes the transition of autotools
+  to true versioned packages (cf: tcl/tk)
+
+20040723:
+AUTHOR: anholt@FreeBSD.org
+  The XFREE86_VERSION variable is replaced by the X_WINDOW_SYSTEM variable.
+  XFREE86_VERSION may no longer be used by ports Makefiles.  X_WINDOW_SYSTEM may
+  currently be set to xorg, xfree86-4, and xfree86-3 (please use :L in checking
+  it).  Several X_*_PORT variables are provided by bsd.port.mk which map to the
+  appropriate port for the X_WINDOW_SYSTEM chosen.
+
+20040719:
+AUTHOR: ale@FreeBSD.org
+  There has been a big update to PHP ports and bsd.php.mk to add more
+  flexibility and new features.
+  Now a port may depend on a specific set of PHP extensions.  To do so,
+  simply replace:
+
+  USE_PHP=	yes
+
+  with:
+
+  USE_PHP=	ext1 ext2 ext3 ...
+
+  in the port Makefile. A list of all PHP extensions is included in bsd.php.mk.
+  If the requirement is a build dependency too, the port should also define:
+
+  USE_PHP_BUILD=yes
+
+  Moreover, the new knob WANT_PHP_SCR has been added to indicate that the port
+  requires the 'php' binary to run.
+  Last but not least, many common operations to build/install/register a
+  PHP extension can now be omitted from the port Makefile if it defines:
+
+  USE_PHPEXT=	yes
+
+  For more information on this point and on additional variables, see
+  bsd.php.mk.
+
+20040717:
+AUTHOR: eik@FreeBSD.org
+  OpenLDAP version 2.2 is now the default.
+  When your port links against the openldap client libraries use
+    USE_OPENLDAP=	yes
+  and do not depend on a particular version. A user (or package
+  building cluster) can select the desired flavor with
+  WANT_OPENLDAP_VER and WANT_OPENLDAP_SASL, but these must not
+  be used in ports Makefiles.
+
+20040709:
+AUTHOR: portmgr@FreeBSD.org
+  USE_LIBTOOL_VER now configures a port to use the ports version of libtool
+  instead of its included version.  This was put in place to reduce the
+  number of ad hoc patches to individual ports' libtools to prevent .la
+  file installation as well as fix various threading problems.
+
+  To restore the previous libtool behavior, use the new macro,
+  USE_INC_LIBTOOL_VER.  It works the exact same way as USE_LIBTOOL_VER
+  in that it takes a libtool version as its argument.
+
+  For example, to use the included version of libtool with extra hacks
+  provided by libtool-1.5, add the following to your Makefile:
+
+  USE_INC_LIBTOOL_VER=	15
+
+  To use the ports version of libtool-1.5, add the following to
+  your Makefile:
+
+  USE_LIBTOOL_VER=	15
+
+  Note: these macros are mutually exclusive.  Your port should only include
+  one or the other if it needs to make use of libtool.
+
+20040707:
+AUTHOR: gnome@FreeBSD.org
+  The way GConf schema files are installed has changed to support the upcoming
+  GNOME 2.8 GConf.  Details about the change can be found at
+  http://www.FreeBSD.org/gnome/docs/porting.html.  All existing ports have
+  been converted to the new style, and portlint has been updated to flag
+  old-style GConf schema installation.
+
+20040610:
+AUTHOR:	portmgr@FreeBSD.org
+  The following behavioral or feature changes were committed:
+
+  * Support verbose index builds with INDEX_VERBOSE
+
+  * Support glob expressions in USE_GETTEXT to allow more flexibility
+    in the face of future gratuitous library version bumps by the gettext
+    developers:
+
+    USE_GETTEXT=yEs   # Works as before (case-insensitive)
+    USE_GETTEXT=[5-7] # Accepts any of those libintl.so.x versions
+                      # in the LIB_DEPENDS
+
+  * Extend 'make search' support to allow much more flexible searching
+    From the PR:
+
+    Besides the good old key and name variables, this patch adds
+    support for path, info, maint, cat, bdeps, and rdeps, which match
+    on the appropriate fields, plus their exclusion counterparts: xkey,
+    xname, etc.
+
+    Examples:
+
+    Find all ports whose names contain "pear-" but not "html" or "http":
+
+      make search name=pear- xname='ht(tp|ml)'
+
+    Find ports whose names contain "pear-" and which don't have apache
+    listed in build-time dependencies:
+
+      make search name=pear- xbdeps=apache
+
+    The positive variables (name, key, maint, etc) are AND-ed, their
+    negative versions are OR-ed; in other words, matching any x-
+    variable will cause the port to be skipped, mismatch on any non-x-
+    variable will cause it to be skipped.
+
+    Examples:
+
+    Find ports that are both in the 'www' category and maintained by
+    Thierry Thomas:
+
+      make search maint=thierry@ path=/www/
+
+    Find ports in the 'archivers' category that are either not orphaned
+    or don't have "zip" in their names (contrived):
+
+      make search cat=archivers xmaint=ports@freebsd xname=zip
+
+    It is possible to select fields to display.
+
+    Example:
+
+    Find PEAR ports that don't build-depend on apache, displaying only
+    Port:, Path:, and Info: lines:
+
+      make search name=pear- xbdeps=apache display=name,path,info
+
+    Case-sensitivity can now be turned of with icase=1.
+
+    Example:
+
+    Find ports with @freebsd.org maintainer addresses without the
+    "proper" capitalization (@FreeBSD.org), display their paths and
+    maintainer addresses:
+
+      make search maint=@freebsd\\.org icase=0 display=maint,path
+
+    The key and xkey variables can be limited in scope to displayed fields
+    by setting keylim to 1.
+
+    Example:
+
+    Find ports that contain "apache" in either of the name, path, info
+    fields, ignore the rest of the record (dependencies, maintainer
+    address, etc):
+
+      make search key=apache display=name,path,info keylim=1
+
+    The following variables can be set e.g. in /etc/make.conf to
+    control default search behavior:
+
+      PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps
+      PORTSEARCH_KEYLIM?=0
+      PORTSEARCH_XKEYLIM?=0
+      PORTSEARCH_IGNORECASE?=1
+
+  * Extend USE_PERL5_BUILD and USE_PERL5 to add EXTRACT and PATCH
+    dependencies
+
+  * While building index, treat non-existent dependencies as fatal.
+    Previously the error was being hidden by the stderr
+    redirection.
+
+  * Don't always retry BROKEN ports when package building (it is taking
+    too much time to continually rebuild ports that are usually going
+    to really be broken).  Set TRYBROKEN if you want to attempt a
+    build of a BROKEN port.
+
+20040604:
+AUTHOR:	ade@FreeBSD.org
+	Over the past few weeks, we have been testing the next
+	incarnation of ports/Mk/bsd.autotools.mk on the road to bringing
+	at least some semblance of sanity back to this corner of the
+	ports collection.
+
+	By far and away the easiest way to see the changes will be to
+	view the new file once committed, but here is a summary of the
+	changes:
+
+	1. USE_LIBTOOL, USE_AUTOCONF, USE_AUTOHEADER, USE_AUTOMAKE have
+	been fully deprecated.  Ports attempting to use these variables
+	after the commit will error out, and most obviously break INDEX
+	generation, with a helpful error message.  Instead, ports must
+	now specifically choose the version of any of these tools that
+	they need with the corresponding USE_*_VER variables.  Note that
+	these variables understand any and all versions of autotools ports
+	in the tree, there is no longer a need to have specific version
+	numbers hardcoded in the infrastructure of bsd.autotools.mk
+	(as there is now).  In particular, this will immediately open up
+	automake18 and autoconf259 for general use and beating.
+
+	2. Similarly for WANT_LIBTOOL, WANT_AUTOCONF, and WANT_AUTOMAKE.
+	Again, these have been fully deprecated, and the equivalent
+	WANT_*_VER versions should be used.
+
+	In order to preserve existing behavior for these variables, please
+	note the 20040314 entry in ports/CHANGES for the appropriate
+	version numbers to use for any ports in the GNATS queue.
+
+	Both WANT_* and USE_* bring in the relevant tool as a build
+	dependency, and set up a reasonably large number of variables
+	pointing to the right programs to be using in the port.  The
+	only difference at the moment, is that USE_* will run an extra
+	autotools-related configuration step, whereas WANT_* merely
+	requests the environment.
+
+	3. The helper knob USE_LIBLTDL has been added which currently
+	simply adds a LIB dependency on the libltdl port.
+
+	4. Three new variables have been introduced,
+	WANT_{LIBTOOL,AUTOCONF,AUTOMAKE}_RUN=yes.  These variables will
+	do nothing by themselves (a Work-In-Progress), but if the
+	appropriate autotool version is defined (either through
+	WANT_*_VER or USE_*_VER), this will add the relevant dependency
+	to RUN_DEPENDS.
+
+	Steps 3 and 4 now essentially negate the need for any kind of
+	direct dependency within a non-autotools port Makefile on
+	devel/autoconf*, devel/automake*, devel/libtool*, and devel/libltdl.
+
+20040416:
+AUTHOR:	java@FreeBSD.org
+	There has been a couple of bsd.java.mk tweaks and fixes.
+
+	. Features from Stage 2 has been removed.  A port can no
+	  longer use the JDK dependency features by setting JAVA_HOME.
+	  Use JAVA_PREFERRED_PORT instead (see below).
+
+	. The default JDK port now depends on OS version:
+	  java/diablo-jdk13 for 4.x, and java/jdk14 for 5.x
+
+	. It is now possible for the user (and the porters) to
+	  define a list of preferred JDK ports to build and run ports.
+	  The port will use the first JDK port from the list that
+	  matches the requirements specified in the Makefile.
+	  JAVA_PREFERRED_PORT contains a list of suitable JDK ports
+	  (sorted by preference).  Names for JDKs may be found in
+	  bsd.java.mk, listed in ${_JAVA_PORTS_ALL} (e.g.
+	  "JAVA_PORT_NATIVE_BSDJAVA_1_4").
+
+	. JAVA_PORT_VERSION is now set to the full version number
+	  of the chosen JDK (e.g. "1.4.2").  Porters will find hints
+	  regarding how to obtain the same behavior as before in the
+	  header of bsd.java.mk.
+
+20040414:
+AUTHOR:	gnome@FreeBSD.org
+	When writing a port that uses GTK+ 2.X, you can now list the dependency
+	with "USE_GNOME=gtk20" which is preferable to LIB_DEPENDS because the
+	GTK+ library version only needs to be changed in bsd.gnome.mk.
+
+	Please see http://www.FreeBSD.org/gnome/docs/porting.html for all
+	the available GNOME components as well as detailed instructions on
+	creating ports that use the GNOME infrastructure.
+
+20040404:
+AUTHOR:	gnome@FreeBSD.org
+	The glib20 and gtk20 ports were updated to 2.4.0.  This new version
+	is completely source and binary compatible with the previous 2.2.x
+	series.  However, certain API calls have been deprecated.  If your
+	port defines the following macros, they may refuse to build with
+	the new versions of glib20 and gtk20:
+
+GTK_DISABLE_DEPRECATED
+GDK_DISABLE_DEPRECATED
+G_DISABLE_DEPRECATED
+
+	The temporary solution is to either patch your port's Makefiles to,
+	or use an in-place regular expression to remove these macros.  The
+	more permanent solution is to wait until the port's authors update
+	their code to use current API calls.
+
+20040402:
+AUTHOR:	java@FreeBSD.org
+	There has been a big update to bsd.java.mk.  However, this update
+	is mostly backwards compatible, so it shouldn't affect most java
+	port maintainers.  There is some new functionality and minor
+	changes worth documenting here though.
+
+	bsd.java.mk now provides a new set of macros to be used by ports that
+	require a JDK. When USE_JAVA is set, the following variables may be set
+	in order to give to precision regarding the requirements of the port:
+
+	. JAVA_VERSION
+	  A list of space-separated suitable java versions for the
+	  port. An optional "+" allows you to specify a range of versions.
+	  (allowed values: 1.1[+] 1.2[+] 1.3[+] 1.4[+])
+	  (NOTE: Used to be set by bsd.java.mk)
+	. JAVA_OS
+	  A list of space-separated suitable JDK port operating systems
+	  for the port. (allowed values: native linux)
+	  (NOTE: Used to be set by bsd.java.mk)
+	. JAVA_VENDOR
+	  A list of space-separated suitable JDK port vendors for
+	  the port. (allowed values: freebsd bsdjava sun ibm blackdown)
+	  (NOTE: Used to be set by bsd.java.mk)
+	. JAVA_BUILD
+	  When set, it means that the selected JDK port should be
+	  added to build dependencies for the port.
+	. JAVA_RUN
+	  This variable works exactly the same as JAVA_BUILD but
+	  regarding run dependencies.
+
+	Here are some of the macros defined after setting USE_JAVA:
+
+	. JAVA_PORT
+	  The name of the JDK port (e.g. java/jdk14)
+	. JAVA_HOME
+	  The home of the JDK port in the local base
+	. JAVA_PORT_VERSION
+	  The version of the JDK port.
+	  (NOTE: Used to be JAVA_VERSION, see above)
+	. JAVA_PORT_OS
+	  The operating system used by the JDK port.
+	  (NOTE: Used to be JAVA_OS, see above)
+	. JAVA_PORT_VENDOR
+	  The vendor of the JDK port.
+	  (NOTE: Used to be JAVA_VENDOR, see above)
+
+	Plus many macros for the commonly used java executables:
+
+		APPLETVIEWER, JAR, JAVA, JAVAC, JAVADOC, JAVAH,
+		JAVAP, JAVA_KEYTOOL, JAVA_N2A, JAVA_POLICYTOOL,
+		JAVA_SERIALVER, RMIC, RMID and RMIREGISTRY.
+
+	bsd.java.mk 2.0 is mostly backward compatible with the previous
+	version, save for the notes above and changed internal variables.
+	Using the new features is strongly encouraged, since the old
+	bsd.java.mk 1.0 features will be deprecated and may be removed in
+	the future.
+
+	You will find more detailed info (as well as a quick tutorial) at:
+	http://www.esil.univ-mrs.fr/~hquiroz/freebsd/bsd.java.mk-2.0.html
+
+20040316:
+AUTHOR:	gnome@FreeBSD.org
+	The print/freetype2 port has been updated to 2.1.7.  This update
+	changes some of the internal FreeType API.  Applications may need
+	to be patched to support this new API.  If a source files includes
+	freetype/freetype.h, make sure ft2build.h is included before
+	freetype/freetype.h.  The proper way to do this is:
+
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
+	However, the following will work as well, but is deprecated:
+
+#include <ft2build.h>
+#include <freetype/freetype.h>
+
+20040314:
+AUTHOR:	ade@FreeBSD.org
+	USE_LIBTOOL, USE_AUTOCONF, and USE_AUTOMAKE are now considered
+	deprecated, and will be removed on or around June 1st 2004.
+	All ports should now choose the specific version of the tool,
+	using USE_LIBTOOL_VER, USE_AUTOCONF_VER, and USE_AUTOMAKE_VER.
+	The old "system default" behavior can be written as follows:
+
+	Old			New
+	USE_LIBTOOL=yes		USE_LIBTOOL_VER=13
+	USE_AUTOCONF=yes	USE_AUTOCONF_VER=213
+	USE_AUTOMAKE=yes	USE_AUTOMAKE_VER=14
+
+20040304:
+AUTHOR:	eik@FreeBSD.org
+	New variable MASTER_SITE_SOURCEFORGE_EXTENDED. It has the
+	ten official sourceforge.net download mirrors, whereas
+	MASTER_SITE_SOURCEFORGE only has five. To check if your
+	port is mirrored there, go to
+	<http://prdownloads.sourceforge.net/${MASTER_SITE_SUBDIR}/>
+	click on ${DISTFILES} and you'll see five or ten mirrors,
+	corresponding to the variables above.
+
+20040226:
+AUTHOR:	knu@FreeBSD.org
+	The default version of Ruby is now 1.8 on all platforms
+	including the i386.
+
+	Users on the i386 platform need to follow the instructions
+	described in the UPDATING file to cope with this upgrade.
+
+	Next time ruby is major upgraded, you won't need to do this
+	kind of messy work because some subtle changes have been made
+	to the ruby port infrastructure to make it easier to handle
+	multiple versions of ruby.
+
+20040217:
+AUTHOR:	gnome@FreeBSD.org
+	Mozilla will now default to using GTK2, and will only compile
+	against Gtk+-1.2 if explicitly requested.  This is in exact
+	opposite to the old behavior.
+
+	The valid values of WITH_MOZILLA are now:
+		mozilla			(www/mozilla, GTK2)
+		mozilla-devel		(www/mozilla-devel, GTK2)
+		mozilla-gtk1		(www/mozilla-gtk1, GTK1)
+		mozilla-devel-gtk1	(www/mozilla-devel-gtk1, GTK1)
+
+	As before, WITH_MOZILLA can be set in /etc/make.conf, but doing
+	so is not advised unless you desire the development versions.
+	GTK2 browsers will automatically compile against GTK2 mozilla,
+	and GTK1 browsers (galeon1, galeon1, and galeon1) will
+	automatically compile against GTK1.
+
+	Again, the only people who will need to take action are those
+	who desire development versions (which are inactive at this time
+	anyway).  Those who want GTK1 mozilla-devel must set
+	WITH_MOZILLA=mozilla-devel-gtk1 or they will be pleasantly
+	surprised with their very own GTK2 installation on the next
+	update.
+
+	WITH_MOZILLA=mozilla-gtk2 and WITH_MOZILLA=mozilla-devel-gtk2
+	are still honored for the time being, but their use is
+	now deprecated.  Any new ports are not required to consider
+	their values, and so eventually WITH_MOZILLA _will_ have to
+	be changed.
+
+	Hopefully galeon2 can catch up to peoples' expectations from
+	galeon1 soon, and we can remove the GTK1 ports altogether.
+
+20040204:
+AUTHOR:	portmgr@FreeBSD.org
+	The bsd.php.mk file has been moved out of the lang/php4 port
+	into the Mk directory.  This will make it much easier to include
+	PHP support in PHP-dependent ports.  Instead of including
+	bsd.php.mk directly, a port can simply set USE_PHP=yes, and the
+	ports system with Do the Right Thing.
+
+	All trailing whitespace has been removed from bsd.port.mk.
+
+	Enhance the new OPTIONS code by only including saved options if
+	the port defines OPTIONS, attempt to use LATEST_LINK as the
+	unique name for a port (fall back to ${PKGNAMEPREFIX}${PORTNAME}
+	otherwise), bring the ===> messages in line with the existing
+	ones by using PKGNAME instead of PORTNAME, use PKGNAME in the
+	dialog, use ECHO_CMD instead of ECHO_MSG to write the
+	OPTIONSFILE, display a message during compilation indicating
+	that user-specified options have been found, and make the output
+	of the showconfig target a little more user-friendly.
+
+	A new USE_ICONV macro has been added that takes the place of an
+	explicit LIB_DEPENDS on converters/libiconv.  This will help
+	with future shared lib version bumps.
+
+	A new USE_GETTEXT macro has been added that takes the place of
+	an explicit LIB_DEPENDS on devel/gettext.  This will help with
+	future shared lib version bumps.
+
+	Module::Build is a system for building, testing, and installing
+	Perl modules.  It will eventually replace the obsoleted
+	ExtUtils::MakeMaker.  Many new Perl modules have already
+	switched to using Build.PL instead of Makefile.PL.  To
+	facilitate building those modules, a new PERL_MODBUILD macro has
+	been added.  Use that in place of PERL_CONFIGURE when porting
+	Perl modules that make use of the Module::Build framework.
+
+	Certain ports want to check for the availability of SDL
+	libraries before including them.  This change adds a new
+	WANT_SDL macro similar to WANT_GNOME.  By setting this, the
+	porter indicates that her port can optional use SDL if present
+	on the system.  WANT_SDL should be defined _before_
+	bsd.port.pre.mk is included.  After including bsd.port.pre.mk,
+	the list of available SDL components will be returned in the
+	HAVE_SDL macro.  For details on how to process this component
+	list, refer to bsd.sdl.mk.
+
+	The OpenBSD and NetBSD projects diverged from the FreeBSD ports
+	tree years ago, and it no longer make sense to include obsolete
+	references to incorrect paths in the FreeBSD ports system.  This
+	change removes the NetBSD and OpenBSD PORTSDIR compatibility
+	bits from bsd.port.mk.
+
+	The comment for PKGDIR read, ``A direction containing any
+	package creating file.''  The word ``direction'' should be
+	``directory.''  This has been fixed.
+
+	A new DIRNAME macro has been added that points to
+	/usr/bin/dirname.  All direct use of dirname in ports can be
+	switched to this macro.
+
+	Direct use of commands dirname, id, and rm have been corrected
+	to use their macro equivalents instead.  Some useless ${HEAD}
+	-n 1 statements have been removed.  A strange comment in the
+	do-install target and an out of place ``fi'' have been fixed as
+	well.
+
+	On 5-CURRENT after the 5.2-RELEASE split, the default Perl
+	version has been updated from 5.6.1 to 5.8.2.  As well, some
+	Perl definitions in bsd.port.mk have been moved to their correct
+	locations which corrects the PERL_LEVEL definition.
+
+	The following optimizations have been added to the ports system
+	to speed up recursive operations such as make describe, make
+	index, make ignorelist, etc.  bsd.gnome.mk is now only included
+	if a port defines USE_GNOME, WANT_GNOME, and/or USE_GTK.  More
+	variables are cached and passed down through bsd.port.subdir.mk.
+	Perl is no longer invoked when a simple ``echo'' will do.  More
+	subshell variable assignments have been hidden behind
+	conditionals so that the commands are not spawned every time.
+	Finally, dependency lists are only constructed if ports actually
+	declare dependencies.  These optimizations give make index
+	approximately a 43% speedup.
+
+	If CPUFLAGS is not defined (this _CPUCFLAGS is empty), trying
+	to remove _CPUCFLAGS from CFLAGS will result in an error.  This
+	change fixes that.
+
+	On recent versions of 5.X, /etc/rc.subr exists, and there is no
+	reason to install another copy in ${LOCALBASE}/etc.  The reason
+	this was ever done was to workaround some build issues on bento.
+	However, testing OSVERSION seems to work in spite of those build
+	issues.
+
+	The ports system now supports MySQL 3.23, 4.0, 4.1, and 5.0.
+	Also, the ability to scale to newer versions was also but in
+	place.
+
+	An .endif comment indicated that the .if block checked
+	WANT_MYSQL when, in fact, it was checking WANT_MYSQL_VER.  This
+	has been corrected.
+
+	The PTHREAD{CFLAGS,LIBS} macros have been made overridable on
+	all versions of FreeBSD to allow for alternate threading
+	implementations (e.g. -lc_r, -lthr, -mt, etc.).  The default
+	threading library has been changed to -lpthread from -lc_r on
+	-CURRENT.
+
+	The new SIZE support broke distfiles fetching on FreeBSD < 4.8.
+	On those versions of FreeBSD, the SIZE distfile attribute is now
+	ignored.  Also, defining DISABLE_SIZE in, for example,
+	/etc/make.conf, will ignore the SIZE attribute on all versions
+	of FreeBSD.  This is useful with alternate values for FETCH_CMD.
+
+	A new vulnerabilities database has been added to the ports
+	system in order to keep more accurate, up-to-date, track of
+	security vulnerabilities.  The ports system now knows how to
+	query that database and dynamically prevents the installation
+	of vulnerable ports.
+
+	In order to allow for more rapid development of the package
+	tools, the ports system will prefer to use pkg_* tools found in
+	${LOCALBASE} over those in the base system.  However, all PKG_*
+	macros are still overridable.
+
+	A new physical category, net-mgmt, has been created to house
+	network management ports.
+
+	The /var/db/port.mkversion file never really took off, and is
+	now very obsolete.  Replace the code used to generate and check
+	this file with a simple OSVERSION check.  The ports system now
+	requires FreeBSD 4.3 or higher.
+
+	The last round of bsd.*.mk changes broke ports that had
+	duplicate distinfo entries (e.g. linux_base).  This is now
+	fixed.  Along with this fix, only distfiles with a bad checksum
+	will be refetched, where as distfiles missing from distinfo will
+	not be refetched.
+
+	The PLIST_{DIRS,FILES} macros were passed to the final package
+	list unchanged by PLIST_SUB.  This is not always desirable.
+	Now, those macros are passed through PLIST_SUB.
+
+	The previous OPTIONS code assumed users would be running port
+	build as root.  If this was not the case, OPTIONS configuration
+	would fail.  Now, the bits of the config and rmconfig targets
+	that require write access to system directories are run under
+	SU_CMD.
+
+	The makesum target will now add a SIZE attribute for each
+	distfile by default.  This can be overridden by defining NO_SIZE
+	in a port's Makefile.  Note: this could probably be expanded to
+	omit SIZE attributes for specific distfiles in the future.
+
+20040129:
+AUTHOR:	trevor@FreeBSD.org
+	SIZE lines in distinfo files:  if you set USE_SIZE when you do "make
+	makesum", the byte sizes of the distfiles will be listed in the
+	distinfo file. Then, if a distfile is replaced on its master site with
+	one of a different size than that listed, "make fetch" will fail with a
+	"size mismatch" error before downloading the file and the user will be
+	asked to fetch the file by hand. Also, a user will know the size of
+	the distfiles before fetching and decide to fetch later.
+
+20040129:
+AUTHOR:	erwin@FreeBSD.org
+	Start of CHANGES file.
+
+FORMAT:
+
+This file contains a list, in reverse chronological order, of major
+breakages or added features in tracking ports.  Not all things will be
+listed here, and it only starts on January 29, 2004.
+
+Copyright information:
+
+Copyright 2004-2020 FreeBSD Foundation All Rights Reserved.
+
+Redistribution, publication, translation and use, with or without
+modification, in full or in part, in any form or format of this
+document are permitted without further permission from the author.
+
+THIS DOCUMENT IS PROVIDED BY FREEBSD FOUNDATION ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED.  IN NO EVENT SHALL WARNER LOSH BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+Contact portmgr@FreeBSD.org if you have any questions about your use of
+this document.

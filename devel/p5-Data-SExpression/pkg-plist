@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Data/SExpression.pm
+%%SITE_PERL%%/Data/SExpression/Cons.pm
+%%SITE_PERL%%/Data/SExpression/Parser.pm
+%%SITE_PERL%%/Data/SExpression/Parser.yp
+%%SITE_PERL%%/Data/SExpression/Symbol.pm
+%%PERL5_MAN3%%/Data::SExpression.3.gz
+%%PERL5_MAN3%%/Data::SExpression::Cons.3.gz
+%%PERL5_MAN3%%/Data::SExpression::Symbol.3.gz

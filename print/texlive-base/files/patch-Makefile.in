@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-01-15 22:51:19 UTC
++++ Makefile.in
+@@ -503,7 +503,7 @@ NEVER_NAMES_LT = -o -name .libs -o -name '*.lo'
+ NEVER_NAMES_LT = -o -name .libs -o -name '*.lo'
+ 
+ # Files not to be distributed
+-SUBDIRS = . doc $(MAKE_SUBDIRS) libs utils texk
++SUBDIRS = . doc $(MAKE_SUBDIRS) utils texk
+ DIST_SUBDIRS = auxdir/auxsub doc $(CONF_SUBDIRS) libs utils texk
+ recurse_this = 
+ recurse_top = 

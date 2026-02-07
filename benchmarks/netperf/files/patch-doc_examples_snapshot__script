@@ -1,0 +1,11 @@
+--- doc/examples/snapshot_script.orig	2011-02-10 17:04:20 UTC
++++ doc/examples/snapshot_script
+@@ -37,7 +37,7 @@
+ #
+ # where is netperf installed, there are a few possible places:
+ 
+-NETPERF_CMD=${NETPERF_CMD:=/opt/netperf/netperf}
++NETPERF_CMD=${NETPERF_CMD:=%%PREFIX%%/bin/netperf}
+ 
+ 
+ # there should be no more than two parms passed

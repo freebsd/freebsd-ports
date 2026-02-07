@@ -1,0 +1,15 @@
+bin/dfc
+etc/xdg/dfc/dfcrc
+%%NLS%%etc/xdg/dfc/fr/dfcrc
+%%NLS%%etc/xdg/dfc/nl/dfcrc
+%%NLS%%share/man/fr/man1/dfc.1.gz
+%%NLS%%share/man/nl/man1/dfc.1.gz
+share/man/man1/dfc.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/HACKING.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS.md
+%%NLS%%share/locale/fr/LC_MESSAGES/dfc.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/dfc.mo

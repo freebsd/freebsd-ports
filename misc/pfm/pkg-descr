@@ -1,0 +1,20 @@
+pfm is a terminal (curses)-based file manager written in Perl, based on the
+PFM.COM for MS-DOS (originally by Paul Culley and Henk de Heer). Permission
+to use the original name was kindly granted by the original authors.
+
+Some of its features:
+
+    * Commands are invoked with only one or two keypresses
+    * Colored filenames according to extension or type
+    * Support for executing user-defined commands (including wildcards)
+      with only two keystrokes
+    * A single-file and multiple-file mode
+    * Multilevel sorting
+    * Use of oldmarks and newmarks for executing multiple commands on
+      the same group of files
+    * Supports bookmarks for directories
+    * Highly configurable through its config file
+    * Supports commandline history and completion through use of the
+      GNU readline library
+    * Integration with versioning tools like Subversion, CVS, Bazaar,
+      Mercurial, and Git

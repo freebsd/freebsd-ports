@@ -1,0 +1,22 @@
+Index: cmd/Kinput2.ad
+===================================================================
+RCS file: /home/cvs/private/hrs/kinput2/cmd/Kinput2.ad,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+--- cmd/Kinput2.ad.orig	2002-10-03 09:35:26 UTC
++++ cmd/Kinput2.ad
+@@ -32,9 +32,12 @@ Kinput2.height: 1
+ !!
+ !!	Wnn setup
+ !!
+-!*CcWnn.Jserver:	"primary-jserver-host"
++*CcWnn.Jserver:	unix
+ !*CcWnn.jserver2nd:	"secondary-jserver-host-if-any"
+-*CcWnn.ccdef:		ccdef.kinput2
++!!! Uncomment below if you like legacy key bindings
++!*CcWnn.ccdef:		ccdef.kinput2
++!!! Anc comment below if you like legacy key bindings
++*CcWnn.ccdef:		ccdef.kinput2.egg
+ !*CcWnn.wnnEnvrc4:	"wnenvrc-file-for-Wnn4"
+ !*CcWnn.wnnEnvrc6:	"wnenvrc-file-for-Wnn6"
+ !!

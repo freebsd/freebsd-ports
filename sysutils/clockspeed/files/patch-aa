@@ -1,0 +1,66 @@
+--- Makefile.orig	Tue Oct 13 15:37:28 1998
++++ Makefile	Sat Dec 21 14:50:57 2002
+@@ -74,6 +74,7 @@
+ 
+ clockspeed.o: \
+ compile clockspeed.c readwrite.h exit.h select.h scan.h fmt.h str.h \
++hasclock_gettime.h \
+ fifo.h open.h error.h auto_home.h timing.h hasrdtsc.h hasgethr.h
+ 	./compile clockspeed.c
+ 
+@@ -137,6 +138,13 @@
+ 	./makelib fs.a fmt_str.o fmt_uint.o fmt_uint0.o \
+ 	fmt_ulong.o scan_ulong.o
+ 
++hasclock_gettime.h: \
++tryclock_gettime.c compile load
++	( ( ./compile tryclock_gettime.c && ./load tryclock_gettime ) >/dev/null \
++	2>&1 \
++	&& echo \#define HASCLOCK_GETTIME 1 || exit 0 ) > hasclock_gettime.h
++	rm -f tryclock_gettime.o
++
+ hasgethr.h: \
+ trygethr.c compile load
+ 	( ( ./compile trygethr.c && ./load trygethr ) >/dev/null \
+@@ -293,10 +301,10 @@
+ 	chmod 400 shar
+ 
+ sntpclock: \
+-load sntpclock.o ip.o libtai.a strerr.a substdio.a error.a str.a fs.a \
++load sntpclock.o ip.o strerr.a substdio.a error.a str.a fs.a \
+ socket.lib
+-	./load sntpclock ip.o libtai.a strerr.a substdio.a error.a \
+-	str.a fs.a  `cat socket.lib`
++	./load sntpclock ip.o strerr.a substdio.a error.a \
++	str.a fs.a  `cat socket.lib` -ltai
+ 
+ sntpclock.0: \
+ sntpclock.1
+@@ -406,10 +414,10 @@
+ 	./compile taia_unpack.c
+ 
+ taiclock: \
+-load taiclock.o ip.o libtai.a strerr.a substdio.a error.a str.a fs.a \
++load taiclock.o ip.o strerr.a substdio.a error.a str.a fs.a \
+ socket.lib
+-	./load taiclock ip.o libtai.a strerr.a substdio.a error.a \
+-	str.a fs.a  `cat socket.lib`
++	./load taiclock ip.o strerr.a substdio.a error.a \
++	str.a fs.a  `cat socket.lib` -ltai
+ 
+ taiclock.0: \
+ taiclock.1
+@@ -421,10 +429,10 @@
+ 	./compile taiclock.c
+ 
+ taiclockd: \
+-load taiclockd.o libtai.a strerr.a substdio.a error.a str.a \
++load taiclockd.o strerr.a substdio.a error.a str.a \
+ socket.lib
+-	./load taiclockd libtai.a strerr.a substdio.a error.a \
+-	str.a  `cat socket.lib`
++	./load taiclockd strerr.a substdio.a error.a \
++	str.a  `cat socket.lib` -ltai
+ 
+ taiclockd.0: \
+ taiclockd.1

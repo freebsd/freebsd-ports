@@ -1,0 +1,24 @@
+--- scripts/xdg-su.in.orig	2024-02-06 01:55:07 UTC
++++ scripts/xdg-su.in
+@@ -36,6 +36,7 @@ su_kde()
+     if [ x"$KDE_SESSION_VERSION" = x"4" ]; then
+         KDESU=`kde4-config --locate kdesu --path exe 2>/dev/null`
+     else
++        export PATH=%%LOCALBASE%%/lib/libexec/kf$KDE_SESSION_VERSION:$PATH
+         KDESU=`command -v kdesu`
+     fi
+     if [ $? -eq 0 ] ; then
+@@ -84,7 +85,12 @@ su_lxqt()
+     if [ $? -eq 0 ] ; then
+         if [ -z "$user" ] ; then
+              # -s option runs as su rather then sudo
+-             $LXQTSU -s $cmd
++             # the "echo $cmd | xargs echo" construct is for
++             # unquoting -- lxqt-sudo expects to be called
++             # as lxqt-sudo command argument argument ...
++             # rather than (like the other related tools)
++             # kdesu -c 'command argument argument'
++             $LXQTSU -s $(echo $cmd | xargs echo)
+         else
+              # lxqt-sudo does not support specifying a user
+              su_generic

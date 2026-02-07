@@ -1,0 +1,5 @@
+%%PORTDOCS%%%%DOCSDIR%%/SIL Unicode Keyboard Chart for Africa using deadkeys.pdf
+%%PORTDOCS%%%%DOCSDIR%%/SIL Unicode Keyboard Chart for Africa using shiftkeys.pdf
+share/kmfl/AfricaDeadKey.kmn
+share/kmfl/AfricaUS.kmn
+share/kmfl/icons/AFR.bmp

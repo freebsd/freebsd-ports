@@ -1,0 +1,23 @@
+--- configure.ac.orig	2024-09-06 00:08:41 UTC
++++ configure.ac
+@@ -56,19 +56,7 @@ fi
+ 	exec_prefix="$prefix"
+ fi
+ 
+-if test "x$WGET" = "x"; then
+-	if test "x$CURL" = "x"; then
+-		AC_MSG_WARN([** Neither wget nor curl could be found.])
+-		AC_MSG_WARN([** IANA PEN database will not be installed by `make install` !])
+-	else
+-		DOWNLOAD="$CURL --location --progress-bar"
+-		AM_CONDITIONAL([DOWNLOAD], [true])
+-	fi
+-else
+-	DOWNLOAD="$WGET -c -nd -O -"
+-	AM_CONDITIONAL([DOWNLOAD], [true])
+-fi
+-
++AM_CONDITIONAL([DOWNLOAD], [false])
+ AC_MSG_WARN([** Download is:])
+ AC_MSG_WARN($DOWNLOAD)
+ AC_SUBST(DOWNLOAD, $DOWNLOAD)

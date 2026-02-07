@@ -1,0 +1,13 @@
+meson.build:19:6: ERROR: Dependency "pam" not found, tried pkgconfig
+
+--- meson.build.orig	2024-04-18 18:31:22 UTC
++++ meson.build
+@@ -16,7 +16,7 @@ gmodule_export = dependency('gmodule-export-2.0')
+ gtk = dependency('gtk+-3.0')
+ gtk_session_lock = dependency('gtk-session-lock-0')
+ gmodule_export = dependency('gmodule-export-2.0')
+-pam = dependency('pam')
++pam = meson.get_compiler('c').find_library('pam')
+ 
+ dependencies = [
+   gtk,

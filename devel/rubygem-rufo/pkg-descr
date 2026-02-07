@@ -1,0 +1,10 @@
+Rufo is as an opinionated ruby formatter, intended to be used via the command
+line as a text-editor plugin, to autoformat files on save or on demand.
+
+Unlike the best known Ruby formatter RuboCop, Rufo offers little in the way of
+configuration. Like other language formatters such as gofmt, prettier, and
+autopep8, we strive to find a "one true format" for Ruby code, and make sure
+your code adheres to it, with zero config where possible.
+
+RuboCop does much more than just format code though, so feel free to run them
+both!

@@ -1,0 +1,11 @@
+--- build.xml.orig	2025-12-11 07:41:36 UTC
++++ build.xml
+@@ -466,7 +466,7 @@
+ 
+ 		<!-- compile Starter.java for Java 1.6. So we will be able to
+ 		 display a dialogbox if running on an old Java Version -->
+-		<javac srcdir="${src}" destdir="${build_client}" debug="${javac.debug}" debuglevel="${javac.debuglevel}" source="1.6" target="1.6" deprecation="${javac.deprecation}" includeantruntime="false">
++		<javac srcdir="${src}" destdir="${build_client}" debug="${javac.debug}" debuglevel="${javac.debuglevel}" source="1.8" target="1.8" deprecation="${javac.deprecation}" includeantruntime="false">
+ 			<include name="games/stendhal/client/update/Starter.java"/>
+ 
+ 			<compilerarg value="-encoding"/>

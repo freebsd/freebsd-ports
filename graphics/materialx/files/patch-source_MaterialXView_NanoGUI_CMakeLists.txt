@@ -1,0 +1,14 @@
+--- source/MaterialXView/NanoGUI/CMakeLists.txt.orig	2024-12-05 21:12:44 UTC
++++ source/MaterialXView/NanoGUI/CMakeLists.txt
+@@ -303,9 +303,9 @@ elseif (CMAKE_SYSTEM MATCHES "Linux" OR CMAKE_SYSTEM_N
+   list(APPEND NANOGUI_EXTRA src/darwin.mm src/autorelease.mm)
+   set_property(SOURCE src/autorelease.mm PROPERTY COMPILE_FLAGS -fno-objc-arc)
+ elseif (CMAKE_SYSTEM MATCHES "Linux" OR CMAKE_SYSTEM_NAME MATCHES "BSD")
+-  list(APPEND NANOGUI_LIBS X11 pthread)
++  list(APPEND NANOGUI_LIBS pthread)
+   if (NANOGUI_BACKEND STREQUAL "OpenGL")
+-    list(APPEND NANOGUI_LIBS GL)
++    list(APPEND NANOGUI_LIBS)
+   elseif (NANOGUI_BACKEND STREQUAL "GLES 2")
+     list(APPEND NANOGUI_LIBS GLESv2)
+   elseif (NANOGUI_BACKEND STREQUAL "GLES 3")

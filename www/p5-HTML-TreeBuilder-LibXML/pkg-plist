@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/HTML::TreeBuilder::LibXML.3.gz
+%%PERL5_MAN3%%/HTML::TreeBuilder::LibXML::Node.3.gz
+%%SITE_PERL%%/HTML/TreeBuilder/LibXML.pm
+%%SITE_PERL%%/HTML/TreeBuilder/LibXML/Node.pm

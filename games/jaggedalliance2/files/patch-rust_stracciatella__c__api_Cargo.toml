@@ -1,0 +1,11 @@
+--- rust/stracciatella_c_api/Cargo.toml.orig	2025-10-05 09:24:39 UTC
++++ rust/stracciatella_c_api/Cargo.toml
+@@ -18,8 +18,5 @@ serde_json = { version = "1", features = ["preserve_or
+ serde = { version = "1", features = ["derive"] }
+ serde_json = { version = "1", features = ["preserve_order"] }
+ 
+-[target.'cfg(target_os = "android")'.dependencies.jni]
+-version = "0.14"
+-
+ [build-dependencies]
+ cbindgen = "0.20"

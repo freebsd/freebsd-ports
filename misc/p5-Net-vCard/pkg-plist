@@ -1,0 +1,6 @@
+bin/vCard2label
+%%SITE_PERL%%/Net/vCard.pm
+%%SITE_PERL%%/Net/vCard/ADR.pm
+%%SITE_PERL%%/Net/vFile.pm
+%%PERL5_MAN3%%/Net::vFile.3.gz
+%%PERL5_MAN3%%/Net::vCard.3.gz

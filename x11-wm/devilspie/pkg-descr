@@ -1,0 +1,11 @@
+A window-matching utility, inspired by Sawfish's "Matched Windows"
+option and the lack of the functionality in Metacity. Metacity lacking
+window matching is not a bad thing -- Metacity is a lean window
+manager, and window manipulation does not have to be a window manager
+task.
+
+Devil's Pie can be configured to detect windows as they are created,
+and match the window to a set of rules. If the window matches the
+rules, it can perform a series of actions on that window. For example,
+I make all windows created by X-Chat appear on all workspaces, and the
+main Gkrellm1 window does not appear in the pager or task list.

@@ -1,0 +1,11 @@
+--- configure.orig	2018-02-21 17:07:41 UTC
++++ configure
+@@ -3973,7 +3973,7 @@ done
+ IFS=$ac_save_IFS
+ 
+ 
+-for ac_func in ftime \
++for ac_func in gettimeofday \
+                getaddrinfo \
+                getnameinfo \
+                gethostname \

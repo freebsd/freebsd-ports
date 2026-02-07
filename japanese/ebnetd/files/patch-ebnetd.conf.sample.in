@@ -1,0 +1,16 @@
+--- ebnetd.conf.sample.in.orig	2003-06-15 11:39:55 UTC
++++ ebnetd.conf.sample.in
+@@ -17,11 +17,11 @@
+ 
+ ### Owner of the server process.
+ ### (default: none)
+-user			ndtpuser
++user			%%EBNETD_USER%%
+ 
+ ### Group of the server process.
+ ### (default: none)
+-group			ndtpgrp
++group			%%EBNETD_GROUP%%
+ 
+ ### How many clients can be connected to the server at the same time.
+ ### (default: 1)

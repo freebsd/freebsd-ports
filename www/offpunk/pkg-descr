@@ -1,0 +1,5 @@
+A command-line and offline-first smolnet browser/feed reader for Gemini, Gopher,
+Spartan and Web.
+
+The goal of Offpunk is to be able to synchronise your content once (a day, a
+week, a month) and then browse/organise it while staying disconnected.

@@ -1,0 +1,11 @@
+--- lib/dot_draw/Makefile.orig	2019-08-11 08:09:47 UTC
++++ lib/dot_draw/Makefile
+@@ -63,7 +63,7 @@ install:	$(PLUGIN_FULLNAME)
+ 		$(INSTALL_LIB)
+ ifneq ($(DOCDIR_OLSRD),)
+ 		mkdir -p "$(DOCDIR_OLSRD)"
+-		cp -t "$(DOCDIR_OLSRD)" "README_DOT_DRAW" "olsr-topology-view.pl"
++		cp "README_DOT_DRAW" "olsr-topology-view.pl" "$(DOCDIR_OLSRD)"
+ endif
+ 
+ uninstall:

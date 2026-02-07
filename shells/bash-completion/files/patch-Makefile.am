@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2025-10-31 14:03:32 UTC
++++ Makefile.am
+@@ -6,7 +6,7 @@ compat_DATA = bash_completion.d/000_bash_completion_co
+ compatdir = $(sysconfdir)/bash_completion.d
+ compat_DATA = bash_completion.d/000_bash_completion_compat.bash
+ 
+-profiledir = $(sysconfdir)/profile.d
++profiledir = $(prefix)/share/bash-completion
+ profile_DATA = bash_completion.sh
+ 
+ pkgconfigdir = $(datadir)/pkgconfig

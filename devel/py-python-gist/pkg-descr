@@ -1,0 +1,5 @@
+gist is a command line interface for working with GitHub gists. It provides
+several methods for inspecting a users gists, and the ability to easily
+create them.
+
+See also: https://github.com/jdowner/gist

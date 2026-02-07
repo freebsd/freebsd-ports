@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+Tiny Tiny RSS is now installed, but it requires some additional setup.
+
+You now need to create a database, a database user, configure the
+web server, and configure tt-rss.  Sample apache24 configs located
+at %%DATADIR%%/httpd-tt-rss.conf.
+
+Configure tt-rss (https://tt-rss.org/wiki/GlobalConfig) :
+    %%WWWDIR%%/config.php
+
+If your database is on another server:
+    # sysrc ttrssd_local_db=NO
+
+Enable the ttrssd daemon:
+    # sysrc ttrssd_enable=YES
+    # service ttrssd start
+
+Goto config.php's TTRSS_SELF_URL_PATH in a web browser.
+Default user is "admin", with the password "password".
+
+After an upgrade, you might need to update your database schema.
+Perform one of the following:
+- Login as an admin user via the web ui, tt-rss will ask you to update.
+- Restart the ttrssd service and view /var/log/ttrssd.log for shema updates.
+- Temporally enable SINGLE_USER_MODE in config.php and open web ui.
+EOM
+}
+]

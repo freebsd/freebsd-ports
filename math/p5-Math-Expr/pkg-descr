@@ -1,0 +1,7 @@
+Math::Expr parses mathematical expressions into a tree structure.
+The expressions may contain integers, real numbers, alphanumeric
+variable names, alphanumeric function names and most other characters
+might be used as operators. The operators can consist of multiple
+characters.  The only limitation is that a variable or function
+name may not start on a digit, and not all chars are accepted in
+operation names.

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/accessors/cpants.pl
+%%SITE_PERL%%/accessors/fast.pm
+%%SITE_PERL%%/accessors/fast/tie.pm
+%%PERL5_MAN3%%/accessors::fast.3.gz

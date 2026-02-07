@@ -1,0 +1,89 @@
+--- Makefile.in.orig	Tue Jan 15 12:53:17 2002
++++ Makefile.in	Sun Mar 14 23:56:38 2004
+@@ -33,6 +33,11 @@
+ 		regexp.o safemalloc.o selfdiag.o \
+ 		sleep.o socket.o timer.o trace.o xprop.o xwrap.o
+ 
++LIB_SHOBJS=	ashash.So aslist.So asvector.So audit.So \
++		fs.So layout.So mystring.So os.So output.So parse.So \
++		regexp.So safemalloc.So selfdiag.So \
++		sleep.So socket.So timer.So trace.So xprop.So xwrap.So
++
+ # end specifics
+ ################################################################
+ # generic makefile stuff :
+@@ -54,7 +59,7 @@
+ MV		= @MV@
+ RM		= @RM@
+ RMF		= @RM@ -f
+-MKDIR		= @MKDIR@
++MKDIR		= @MKDIR@ -p
+ FIND		= @FIND@
+ XARGS		= @XARGS@
+ LDCONFIG	= @LDCONFIG@
+@@ -65,11 +70,11 @@
+ LEXFLAGS	=
+ 
+ INSTALL		= @INSTALL@
+-INSTALL_PROGRAM	= @INSTALL@ -s -m 755
+-INSTALL_DATA	= @INSTALL@ -m 644
+-INSTALL_HEADER	= @INSTALL@ -m 644
+-INSTALL_LIB	= @INSTALL@ -m 755
+-INSTALL_SCRIPT	= @INSTALL@ -m 755
++INSTALL_PROGRAM	= @INSTALL_PROGRAM@
++INSTALL_DATA	= @INSTALL_DATA@
++INSTALL_HEADER	= @INSTALL_DATA@
++INSTALL_LIB	= @INSTALL_DATA@
++INSTALL_SCRIPT	= @INSTALL_SCRIPT@
+ 
+ INCS_X		= @X_CFLAGS@
+ INCLUDES	= $(INCS_X) $(INCS_PRIVATE)
+@@ -113,9 +118,8 @@
+ install.script:
+ 
+ install.dyn:
+-		$(INSTALL_LIB) $(LIB_SHARED).$(LIBVER) $(LIBDIR)
+-		-@/bin/rm -f $(LIBDIR)/$(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED)
+-		ln -sf $(LIB_SHARED).$(LIBVER) $(LIBDIR)/$(LIB_SHARED).$(LIBVERMAJOR)
++		$(INSTALL_LIB) $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)
++		-@/bin/rm -f $(LIBDIR)/$(LIB_SHARED)
+ 		ln -sf $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED)
+ 		@( \
+ 		 if test `uname` = "Linux"; then \
+@@ -225,15 +229,19 @@
+ 		done; \
+ 		echo "" >> .shared ;
+ 
+-
+ $(LIB_STATIC):	$(LIB_OBJS) $(LIB_INCS)
+ 		$(RMF) $(LIB_STATIC)
+ 		$(AR) $(LIB_STATIC) $(LIB_OBJS)
+ 		$(RANLIB) $(LIB_STATIC)
+ 
++.SUFFIXES: .s .o .So
++
+ .c.o:
+ 		$(CC) $(CCFLAGS) $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -c $*.c
+ 
++.c.So:
++		$(CC) $(CCFLAGS) -fPIC $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -c $*.c -o $*.So
++
+ .c.s:
+ 		$(CC) $(CCFLAGS) $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -S $*.c
+ 
+@@ -249,12 +257,9 @@
+ $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
+ 	ln -sf $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
+ 
+-$(LIB_SHARED).$(LIBVERMAJOR): $(LIB_SHARED).$(LIBVER)
+-	ln -sf $(LIB_SHARED).$(LIBVER) $(LIB_SHARED).$(LIBVERMAJOR)
+-
+-$(LIB_SHARED).$(LIBVER): $(LIB_OBJS) $(LIB_INCS)
+-	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVER) \
+-	 $(LIB_OBJS)
++$(LIB_SHARED).$(LIBVERMAJOR): $(LIB_SHOBJS) $(LIB_INCS)
++	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVERMAJOR) \
++	 $(LIB_SHOBJS)
+ 
+ install:	install.lib
+ 

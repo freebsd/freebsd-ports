@@ -1,0 +1,27 @@
+--- snapshot.8.orig	Thu Sep  8 21:28:06 2005
++++ snapshot.8	Thu Sep  8 21:29:26 2005
+@@ -219,12 +219,12 @@
+ By using an
+ .Xr amd 8
+ map
+-.Pa /etc/amd.map.snap
++.Pa %%PREFIX%%/etc/amd.map.snap
+ containing
+ .Bd -literal -offset indent
+ /defaults type:=program
+-*         mount:="/usr/sbin/snapshot snapshot mount /${key} ${fs}";\\
+-          unmount:="/usr/sbin/snapshot snapshot umount ${fs}"
++*         mount:="%%PREFIX%%/sbin/snapshot snapshot mount /${key} ${fs}";\\
++          unmount:="%%PREFIX%%/sbin/snapshot snapshot umount ${fs}"
+ .Ed
+ .Pp
+ and a
+@@ -232,7 +232,7 @@
+ configuration of
+ .Bd -literal -offset indent
+ amd_enable="YES"
+-amd_flags="-a /.am -c 1800 -w 60 -l syslog /snap /etc/amd.map.snap"
++amd_flags="-a /.am -c 1800 -w 60 -l syslog /snap %%PREFIX%%/etc/amd.map.snap"
+ .Ed
+ .Pp
+ even non-privileged users can access arbitrary snapshots

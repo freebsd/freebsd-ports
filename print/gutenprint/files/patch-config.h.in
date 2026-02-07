@@ -1,0 +1,10 @@
+--- config.h.in.orig	2023-03-05 17:09:22.768898000 +0100
++++ config.h.in	2023-03-05 17:32:21.267867000 +0100
+@@ -1,5 +1,7 @@
+ /* config.h.in.  Generated from configure.ac by autoheader.  */
+ 
++#define __BSD_VISIBLE 1
++
+ /* CUPS data directory. */
+ #undef CUPS_DATADIR
+ 

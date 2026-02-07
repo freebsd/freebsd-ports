@@ -1,0 +1,55 @@
+--- makefile.bsd.orig	1998-11-07 02:10:50 UTC
++++ makefile.bsd
+@@ -10,21 +10,21 @@ default : all
+ #
+ # C/C++ compiler
+ #
+-CC?= gcc
+-CXX?= g++
++CC?= cc
++CXX?= c++
+ 
+ #
+ # C/C++ flags
+ #
+-CFLAGS?= -O5 -g -Wall -c
+-CXXFLAGS?= -O5 -g -Wall -c
++CFLAGS?= -Wall -c
++CXXFLAGS= -Wall -c -std=c++98
+ #CFLAGS= -fno-exceptions -O5 -g -Wall -c
+ #CXXFLAGS= -fno-exceptions -O5 -g -Wall -c
+ 
+ #
+ # X Window System directory
+ #
+-X11BASE?= /usr/X11R6
++X11BASE?= /usr/local
+ 
+ #
+ # Local packages directory
+@@ -94,7 +94,7 @@ LIB_OBJS =      $(LIB_SRCS:.c=.o)
+ 		$(CXX) $(CXXFLAGS) $(DEFINES) $(INCLUDES) -o $@ -c $<
+ 
+ .c.o : 
+-		$(CC) $(CXXFLAGS) $(DEFINES) $(INCLUDES) -o $@ -c $<
++		$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) -o $@ -c $<
+ 
+ #
+ # Custom targets.
+@@ -106,7 +106,6 @@ $(OBJS) : $(INCS)
+ parser.cxx parser.h : parser.y 
+ 		$(YACC) parser.y 
+ 		mv parser.tab.c parser.cxx
+-		mv parser.tab.h parser.h
+ 
+ lex.cxx : lex.l 
+ 		$(LEX) lex.l
+@@ -131,7 +130,7 @@ ptoc : $(OBJS)
+ 	$(LD) $(LDFLAGS) -o $@ $(OBJS)
+ 
+ libXbgi.a: 
+-	(cd Xbgi; make)
++	(cd Xbgi; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" X11BASE="$(LOCALBASE)")
+ 
+ all : $(BINS) $(LIBS) 
+ 

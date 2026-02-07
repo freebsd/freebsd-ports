@@ -1,0 +1,37 @@
+PORTNAME=	pp3
+PORTVERSION=	1.3.3
+PORTREVISION=	6
+CATEGORIES=	astro
+MASTER_SITES=	SF/${PORTNAME}/PP3/${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Creates celestial charts
+WWW=		https://pp3.sourceforge.net/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:bzip2 tex
+USE_TEX=	latex
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-build:
+	(cd ${WRKSRC} \
+		&& ${CXX} ${CXXFLAGS} -DPP3DATA=\"${DATADIR}\" pp3.cc -o pp3)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pp3 ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.dat ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

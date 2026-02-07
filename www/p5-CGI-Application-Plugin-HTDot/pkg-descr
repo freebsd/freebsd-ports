@@ -1,0 +1,3 @@
+CGI::Application::Plugin::HTDot - Enable "magic dot" notation in
+CGI::Application-derived applications that use HTML::Template for their
+templating mechanism.

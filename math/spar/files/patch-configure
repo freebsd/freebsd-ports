@@ -1,0 +1,10 @@
+--- configure.orig	2001-06-26 12:46:47 UTC
++++ configure
+@@ -1580,7 +1580,6 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtoo
+ exec 5>>./config.log
+ 
+ 
+-CFLAGS="-Wall -O2"
+ if test "$CC" = "gcc"; then
+   CFLAGS="$CFLAGS -pipe"
+ fi

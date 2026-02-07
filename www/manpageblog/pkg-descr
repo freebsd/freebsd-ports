@@ -1,0 +1,15 @@
+manpageblog is a small, lightweight blog engine written in Python and
+offers several advantages. Firstly, it provides simplicity and ease
+of use, making it accessible even for users with limited technical
+knowledge. The lightweight nature ensures quick installation and minimal
+resource consumption, making it suitable for various hosting environments.
+No database is needed at all.
+
+The blog engine is highly customizable, see the examples director for a
+complete set of configuration and template files and some sample content..
+
+After installation, you can create a "blog.conf" file based on the one
+in the examples directory of this port with "base_path" adjusted to the
+document root of your blog and then start a simple HTTP server using the
+command "manpageblog -m http.server". The server URL can be changed in
+"blog.conf", too. The default value is: "http://localhost:8000".

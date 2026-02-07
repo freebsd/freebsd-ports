@@ -1,0 +1,4 @@
+A fast, customizable application launcher built with GTK4 and Rust,
+designed for Linux desktop environments. Walker provides a clean,
+modern interface for launching applications, running commands,
+performing calculations, and more.

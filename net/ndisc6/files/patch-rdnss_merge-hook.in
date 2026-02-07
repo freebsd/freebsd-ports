@@ -1,0 +1,11 @@
+--- rdnss/merge-hook.in.orig	2022-01-27 20:23:33 UTC
++++ rdnss/merge-hook.in
+@@ -19,7 +19,7 @@ set -e
+ 
+ set -e
+ 
+-PATH=/sbin:/bin
++PATH=/sbin:/bin:/usr/bin
+ 
+ # Max number of nameserver options taken into account. Should be as
+ # defined in <resolv.h>

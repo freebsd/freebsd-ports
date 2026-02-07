@@ -1,0 +1,2 @@
+The pg_store_plans module provides a means for tracking execution
+plan statistics of all SQL statements executed by a server.

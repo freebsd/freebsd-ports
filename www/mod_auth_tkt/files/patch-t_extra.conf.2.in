@@ -1,0 +1,29 @@
+diff --git a/t/extra.conf.2.in b/t/extra.conf.2.in
+index d2e5c03..d0e2770 100644
+--- a/t/extra.conf.2.in
++++ b/t/extra.conf.2.in
+@@ -346,6 +346,24 @@ TKTAuthDigestType "MD5"
+   TKTAuthGuestFallback on
+ </Location>
+ 
++# secret_back_explicit - explicit TKTAuthBackArgName
++<Location /secret_back_explicit>
++  AuthType None
++  require valid-user
++  TKTAuthLoginURL http://localhost/pub/login.cgi
++  TKTAuthBackArgName redirect_to
++  TKTAuthDebug 2
++</Location>
++
++# secret_back_none - null TKTAuthBackArgName
++<Location /secret_back_none>
++  AuthType None
++  require valid-user
++  TKTAuthLoginURL http://localhost/pub/login.cgi
++  TKTAuthBackArgName None
++  TKTAuthDebug 2
++</Location>
++
+ # virtual host testing - with per-host secret
+ <VirtualHost VHostLocalSecret>
+   DocumentRoot @documentroot@/vhost_local_secret

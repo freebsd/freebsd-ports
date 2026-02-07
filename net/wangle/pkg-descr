@@ -1,0 +1,4 @@
+Wangle is a library that makes it easy to build protocols, application clients,
+and application servers.
+
+It's like Netty + Finagle smooshed together, but in C++.

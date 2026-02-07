@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTML/Toc.pm
+%%SITE_PERL%%/HTML/Toc.pod
+%%SITE_PERL%%/HTML/TocGenerator.pm
+%%SITE_PERL%%/HTML/TocInsertor.pm
+%%SITE_PERL%%/HTML/TocUpdator.pm

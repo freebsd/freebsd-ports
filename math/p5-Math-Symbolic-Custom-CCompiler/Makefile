@@ -1,0 +1,23 @@
+PORTNAME=	Math-Symbolic-Custom-CCompiler
+PORTVERSION=	1.04
+PORTREVISION=	2
+CATEGORIES=	math perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Compile Math::Symbolic trees to C
+WWW=		https://metacpan.org/release/Math-Symbolic-Custom-CCompiler
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-Symbolic>=0.509:math/p5-Math-Symbolic \
+		p5-Inline>=0.44:devel/p5-Inline \
+		p5-Inline-C>=0.44:devel/p5-Inline-C
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

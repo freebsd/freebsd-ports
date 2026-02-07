@@ -1,0 +1,23 @@
+--- configure.orig	2014-09-12 22:03:04 UTC
++++ configure
+@@ -4261,20 +4261,7 @@ $as_echo "#define AC_APPLE_UNIVERSAL_BUILD 1" >>confde
+  esac
+ 
+     if test "${TEA_PLATFORM}" = "unix" ; then
+-
+-    #--------------------------------------------------------------------
+-    # On a few very rare systems, all of the libm.a stuff is
+-    # already in libc.a.  Set compiler flags accordingly.
+-    # Also, Linux requires the "ieee" library for math to work
+-    # right (and it must appear before "-lm").
+-    #--------------------------------------------------------------------
+-
+     ac_fn_c_check_func "$LINENO" "sin" "ac_cv_func_sin"
+-if test "x$ac_cv_func_sin" = xyes; then :
+-  MATH_LIBS=""
+-else
+-  MATH_LIBS="-lm"
+-fi
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lieee" >&5
+ $as_echo_n "checking for main in -lieee... " >&6; }

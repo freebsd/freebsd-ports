@@ -1,0 +1,12 @@
+--- Makefile.orig	2023-11-28 19:03:10.851119000 +0200
++++ Makefile	2023-11-28 19:03:30.393321000 +0200
+@@ -9,8 +9,7 @@
+ OBJ = $(BIN:=.o) ui_$(UI).o io_$(IO).o
+ 
+ GETVER = $$(git rev-parse --is-inside-work-tree >/dev/null 2>&1 \
+-	&& git describe --tags \
+-	|| echo $(DEFVERSION))
++	&& echo $(DEFVERSION))
+ 
+ all: $(BIN)
+ 

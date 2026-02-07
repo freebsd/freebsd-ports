@@ -1,0 +1,11 @@
+pwdsafety is a command-line tool that checks how safe a password is by
+calculating its entropy and providing a safety score. It helps users
+understand password strength without storing any password information.
+
+Features:
+
+- Password strength analysis through entropy calculation
+- Safety scoring system
+- Generates strong random passwords for weak inputs
+- Command-line interface for easy integration
+- Zero storage of password data

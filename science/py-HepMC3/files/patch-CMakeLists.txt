@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2024-06-02 16:17:02 UTC
++++ CMakeLists.txt
+@@ -6,6 +6,8 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
+ endif()
+ set(CMAKE_VERBOSE_MAKEFILE ON)
+ 
++include(CheckCXXCompilerFlag)
++
+ option(USE_INSTALLED_HEPMC3 "Use HepMC3 bindings as a standalone package" OFF)
+ option(RERUN_BINDER "Rerun binder" OFF)
+ if (RERUN_BINDER)
+@@ -206,7 +208,7 @@ if (${ver} STREQUAL 3)
+   unset(Python3_FOUND CACHE)
+   unset(Python3_VERSION CACHE)
+   unset(Python3_Interpreter_FOUND CACHE)
+-  unset(Python3_EXECUTABLE CACHE)
++  #unset(Python3_EXECUTABLE CACHE)
+   unset(Python3_INCLUDE_DIR CACHE)
+   unset(Python3_INCLUDE_DIRS CACHE)
+   unset(Python3_LIBRARIES CACHE)

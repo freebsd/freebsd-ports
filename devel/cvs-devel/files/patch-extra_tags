@@ -1,0 +1,29 @@
+#
+# Add extra tag keyword expansion options
+#
+# Patch by Steve McIntyre <steve@einval.com>
+diff -Nur src/logmsg.c src/logmsg.c
+--- src/logmsg.c	2006-02-26 22:54:52.000000000 +0800
++++ src/logmsg.c	2006-02-26 22:56:36.000000000 +0800
+@@ -642,7 +642,11 @@
+ 		break;
+ 	    case 'T':
+ 		li = p->data;
+-		arg = li->tag ? li->tag : "";
++		arg = li->tag ? li->tag : "TRUNK";
++		break;
++	    case 'S':
++		arg = xmalloc(strlen(p->key) + 5);
++		sprintf(arg, "\\\"%s\\\"", p->key);
+ 		break;
+ 	    case 'V':
+ 		li = p->data;
+@@ -814,7 +818,7 @@
+ #endif /* SERVER_SUPPORT */
+ 	                      "p", "s", srepos,
+ 	                      "r", "s", current_parsed_root->directory,
+-	                      "sVv", ",", changes,
++	                      "SsTVv", ",", changes,
+ 			      logmsg_list_to_args_proc, (void *) NULL,
+ 	                      (char *) NULL);
+     if (!cmdline || !strlen (cmdline))

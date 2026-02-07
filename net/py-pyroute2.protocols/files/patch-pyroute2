@@ -1,0 +1,43 @@
+Obtained from:	https://github.com/svinota/pyroute2/commit/4baca6ab3fc9945dc15730aed9f87bbb70e4df7e
+
+--- pr2modules/arp.py.orig	2022-06-21 20:53:02 UTC
++++ pr2modules/arp.py
+@@ -1,4 +1,4 @@
+-from pr2modules.common import map_namespace
++from pyroute2.common import map_namespace
+ 
+ # ARP protocol HARDWARE identifiers.
+ ARPHRD_NETROM = 0  # from KA9Q: NET/ROM pseudo
+--- pr2modules/dhcp/__init__.py.orig	2022-06-21 20:53:02 UTC
++++ pr2modules/dhcp/__init__.py
+@@ -102,7 +102,7 @@ import struct
+ import sys
+ from array import array
+ 
+-from pr2modules.common import basestring
++from pyroute2.common import basestring
+ from pr2modules.protocols import msg
+ 
+ BOOTREQUEST = 1
+--- pr2modules/dhcp/dhcp4socket.py.orig	2022-06-21 20:53:02 UTC
++++ pr2modules/dhcp/dhcp4socket.py
+@@ -3,7 +3,7 @@ IPv4 DHCP socket
+ ================
+ 
+ '''
+-from pr2modules.common import AddrPool
++from pyroute2.common import AddrPool
+ from pr2modules.dhcp.dhcp4msg import dhcp4msg
+ from pr2modules.ext.rawsocket import RawSocket
+ from pr2modules.protocols import ethmsg, ip4msg, udp4_pseudo_header, udpmsg
+--- setup.cfg.orig	2022-06-23 21:11:54 UTC
++++ setup.cfg
+@@ -32,7 +32,7 @@ classifiers = 
+ packages = find:
+ namespace_packages = pr2modules
+ install_requires = 
+-	pyroute2.core
++	pyroute2
+ 
+ [options.entry_points]
+ pr2modules = 

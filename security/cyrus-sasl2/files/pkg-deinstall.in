@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# Created by: hetzels@westbend.net
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+SASLDB_DIR=%%SASLDB_DIR%%
+SASLDB_NAME=%%SASLDB_NAME%%
+SASLDB_NAME=${SASLDB_NAME:+%%SASLDB_DIR%%/%%SASLDB_NAME%%}
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
+
+# delete sasldb database
+delete_sasldb() {
+	if [ -f ${SASLDB_NAME} ] ; then
+		result=$(${PKG_PREFIX}/sbin/sasldblistusers2)
+		if [ $? -eq 0 -a -z "${result}" ]; then
+			rm ${SASLDB_NAME}
+			if [ -f ${SASLDB_NAME}-lock ] ; then
+				rm ${SASLDB_NAME}-lock
+			fi
+			if [ ${SASLDB_DIR} = '/var/db/sasl2' ]; then
+				rmdir ${SASLDB_DIR}
+			fi
+		else
+			echo "WARNING: Users SASL passwords are in ${SASLDB_NAME}, keeping this file"
+		fi
+	fi
+}
+
+delete_user() {
+	if pw usershow ${CYRUS_USER} 2>/dev/null 1>&2; then
+		echo "To delete Cyrus user permanently, use 'pw userdel ${CYRUS_USER}'"
+	fi
+	if pw groupshow ${CYRUS_GROUP} 2>/dev/null 1>&2; then
+		echo "To delete Cyrus group permanently, use 'pw groupdel ${CYRUS_GROUP}'"
+	fi
+
+}
+
+case $2 in
+	DEINSTALL)
+		if [ -n "${SASLDB_NAME}" ]; then
+			delete_sasldb
+		fi
+		;;
+	POST-DEINSTALL)
+		delete_user
+		;;
+esac

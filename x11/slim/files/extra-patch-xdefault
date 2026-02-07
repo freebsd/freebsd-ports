@@ -1,0 +1,23 @@
+--- cfg.orig	2019-02-25 15:10:23.454289000 +0100
++++ cfg.cpp	2019-02-25 15:10:52.700402000 +0100
+@@ -293,6 +293,9 @@
+ 
+ 	sessions.clear();
+ 
++	pair<string,string> session("","default");
++	sessions.push_back(session);
++
+ 	if( !strSessionDir.empty() ) {
+ 		DIR *pDir = opendir(strSessionDir.c_str());
+ 
+@@ -335,11 +338,6 @@
+ 			}
+ 			closedir(pDir);
+ 		}
+-	}
+-
+-	if (sessions.empty()){
+-        pair<string,string> session("","");
+-        sessions.push_back(session);
+ 	}
+ }

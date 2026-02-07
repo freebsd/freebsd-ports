@@ -1,0 +1,11 @@
+--- configure.orig	2022-03-01 14:06:45 UTC
++++ configure
+@@ -20915,7 +20915,7 @@ else
+ fi
+ 
+ elif expr x"$target_cpu" : 'xpowerpc' > /dev/null; then
+-	CFLAGS="-faltivec $CFLAGS"
++	CFLAGS="-maltivec $CFLAGS"
+ 	cat >>confdefs.h <<\_ACEOF
+ #define ARCH_POWERPC 1
+ _ACEOF

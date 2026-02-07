@@ -1,0 +1,19 @@
+This is Msgcat, a small Perl modules for systems which support the XPG4
+message catalog functions : catopen(3), catgets(3) and catclose(4).
+
+You need perl 5.004 or later to use this library.
+
+You install the library by running these commands:
+
+  perl Makefile.PL
+  make
+  make test
+  make install
+
+Please report any bugs/suggestions to Christophe Wolfhugel <wolf@pasteur.fr>.
+
+All files contained in this installation are Copyright (C) 1997 C. Wolfhugel
+unless otherwise specified. All rights reserved.
+
+This library is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.

@@ -1,0 +1,13 @@
+bin/wwplot
+%%PYTHON_SITELIBDIR%%/WWplot/__init__.py
+%%PYTHON_SITELIBDIR%%/WWplot/application_window.py
+%%PYTHON_SITELIBDIR%%/WWplot/fit.py
+%%PYTHON_SITELIBDIR%%/WWplot/model.py
+%%PYTHON_SITELIBDIR%%/WWplot/plot.py
+%%PYTHON_SITELIBDIR%%/WWplot/table.py
+%%PYTHON_SITELIBDIR%%/WWplot/ui/application_window.ui
+%%PYTHON_SITELIBDIR%%/WWplot/ui/custom.css
+%%PYTHON_SITELIBDIR%%/WWplot/ui/table.ui
+share/applications/com.github.wwmm.wwplot.desktop
+share/icons/hicolor/scalable/apps/wwplot.svg
+share/locale/pt_BR/LC_MESSAGES/wwplot.mo

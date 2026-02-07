@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Apache users should create a racktables.conf file under their apache
+Includes directory with the following contents:
+<Directory %%WWWDIR%%/wwwroot>
+	Order allow,deny
+	Allow from all
+</Directory>
+Alias /racktables %%WWWDIR%%/wwwroot
+
+You will need to make sure you have a MySQL server available, or
+you must install one from the ports tree if you wish to run one
+locally.
+
+Then, visit http://your.system/racktables/ and follow the
+instructions to complete the setup.
+EOM
+}
+]

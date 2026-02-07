@@ -1,0 +1,4 @@
+Statsite is a metrics aggregation server.
+
+Statsite is based on Etsy's StatsD, https://github.com/etsy/statsd,
+wire compatible and implemented in C.

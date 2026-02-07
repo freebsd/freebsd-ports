@@ -1,0 +1,13 @@
+TIMESTAMP = 1689619889
+SHA256 (CTSRD-CHERI-qemu-0.d20230628-7d0b88cfb982267676573a4dce6565c7518964ca_GH0.tar.gz) = 19fe20230fcc6fcc4872a126a010b63dc945470dc0917dd86586b231df2ac720
+SIZE (CTSRD-CHERI-qemu-0.d20230628-7d0b88cfb982267676573a4dce6565c7518964ca_GH0.tar.gz) = 30672863
+SHA256 (qemu-dtc-85e5d83_GH0.tar.gz) = 3507d8e96d1942493128591b518c522cfd56d7779ce53283b2cf33661b809479
+SIZE (qemu-dtc-85e5d83_GH0.tar.gz) = 200566
+SHA256 (qemu-libslirp-487f4bf4_GH0.tar.gz) = 92b459875d1113db42a1cb1406f26c191b7c4af4d4ef7eed70eae2b4e55fc1ab
+SIZE (qemu-libslirp-487f4bf4_GH0.tar.gz) = 131446
+SHA256 (qemu-berkeley-softfloat-3-b64af41_GH0.tar.gz) = f22bf52cc980b122c663f2e22f8098fa60d8e468e0095f1da58231235a6b324e
+SIZE (qemu-berkeley-softfloat-3-b64af41_GH0.tar.gz) = 148768
+SHA256 (qemu-berkeley-testfloat-3-ca9fa2b_GH0.tar.gz) = 6df3f2dee4a1b50521d7270c89392fa4ba8ca80f6dbaba92816e03e517269562
+SIZE (qemu-berkeley-testfloat-3-ca9fa2b_GH0.tar.gz) = 138959
+SHA256 (qemu-keycodemapdb-6b3d716_GH0.tar.gz) = c9d3412510aac999865d01aaa14b1fa8dc0385db55c5cf6c4d95d160bd0eaee9
+SIZE (qemu-keycodemapdb-6b3d716_GH0.tar.gz) = 47905

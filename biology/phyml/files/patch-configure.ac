@@ -1,0 +1,11 @@
+--- configure.ac.orig	2022-01-02 16:39:46 UTC
++++ configure.ac
+@@ -67,7 +67,7 @@ dnl AC_PROG_LIBTOOL
+ 
+ 
+ dnl DEFAULT_C_FLAG="-fno-inline-functions -fno-inline-functions-called-once -fno-optimize-sibling-calls -O2 -fno-omit-frame-pointer -g ${VECTOR_FLAG}"
+-DEFAULT_C_FLAG="-std=c99 -O3 -fomit-frame-pointer -funroll-loops -Wall -Winline -finline ${VECTOR_FLAG}"
++DEFAULT_C_FLAG="-std=c99 -O3 -fomit-frame-pointer -funroll-loops -msse3 -Wall -Winline -finline ${VECTOR_FLAG}"
+ dnl DEFAULT_C_FLAG="-O2 ${VECTOR_FLAG}"
+ dnl DEFAULT_C_FLAG="${VECTOR_FLAG}"
+ dnl DEFAULT_C_FLAG="-pthread  -O3 -g -ffunction-sections -fdata-sections"

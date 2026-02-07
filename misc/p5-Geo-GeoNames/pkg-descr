@@ -1,0 +1,15 @@
+Geo::GeoNames provides a perl interface to the webservices found at [1]. That
+is, given a given placename or postalcode, the module will look it up and return
+more information (longitude, lattitude, etc) for the given placename or
+postalcode. Wikipedia lookups are also supported. If more than one match is
+found, a list of locations will be returned.
+
+Before you start, get a free GeoNames account and enable it for access to the
+free web service:
+- Get an account [2]
+- Respond to the email
+- Login and enable your account for free access [3]
+
+[1] http://api.geonames.org/
+[2] http://www.geonames.org/login
+[3] http://www.geonames.org/enablefreewebservice

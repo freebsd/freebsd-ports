@@ -1,0 +1,30 @@
+--- Makefile.orig	2003-09-20 15:17:34 UTC
++++ Makefile
+@@ -2,14 +2,9 @@
+ # - TODO: MAKE NEATER ONE 
+ # This makefile should work under most POSIX OSes (at least FreeBSD)
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man
+-
+-
+-CFLAGS = -O2 -pipe -Wall
+-
++all: fnteditfs
+ fnteditfs: fnteditfs.o font.o stack.o
+-	gcc -o fnteditfs fnteditfs.o font.o stack.o -lcurses
++	${CC} -o fnteditfs fnteditfs.o font.o stack.o ${LDFLAGS} -lncurses
+ 	strip fnteditfs
+ 
+ fnteditfs.o: fnteditfs.c font.h stack.h
+@@ -17,8 +12,8 @@ font.o:	font.c font.h
+ stack.o: stack.c stack.h
+ 
+ install: fnteditfs fnteditfs.1
+-	cp fnteditfs $(BINDIR)
+-	gzip < fnteditfs.1 > $(MANDIR)/man1/fnteditfs.1.gz
++	__INSTALL_SCRIPT__ fnteditfs __PREFIX__/bin
++	__INSTALL_MAN__ fnteditfs.1 __PREFIX__/share/man/man1
+ 
+ clean:
+ 	rm -f *.o fnteditfs

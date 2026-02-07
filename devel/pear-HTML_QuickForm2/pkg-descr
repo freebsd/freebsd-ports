@@ -1,0 +1,8 @@
+This package provides methods to create, validate and render HTML forms.
+
+Features:
+- Supports all form elements defined by HTML standard, provides several custom
+  elements
+- Server-side and client-side validation, several common rules provided
+- Multipage forms (tabbed forms and wizards)
+- Pluggable elements, rules, renderers and renderer plugins

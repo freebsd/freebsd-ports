@@ -1,0 +1,15 @@
+bt is a flexible backtesting framework for Python used to test quantitative
+trading strategies. Backtesting is the process of testing a strategy over a
+given data set. This framework allows you to easily create strategies that mix
+and match different Algos. It aims to foster the creation of easily testable,
+re-usable and flexible blocks of strategy logic to facilitate the rapid
+development of complex trading strategies.
+
+The goal: to save quants from re-inventing the wheel and let them focus on the
+important part of the job - strategy development.
+
+bt is coded in Python and joins a vibrant and rich ecosystem for data analysis.
+Numerous libraries exist for machine learning, signal processing and statistics
+and can be leveraged to avoid re-inventing the wheel - something that happens
+all too often when using other languages that don't have the same wealth of
+high-quality, open-source projects.

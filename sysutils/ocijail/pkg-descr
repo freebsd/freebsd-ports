@@ -1,0 +1,3 @@
+Experimental, proof-of-concept OCI-compatible runtime for jails. This
+is used by container engines such as Buildah or Podman to manage the
+container lifecycle

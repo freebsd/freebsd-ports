@@ -1,0 +1,35 @@
+#!/bin/sh
+if [ "$2" = "POST-DEINSTALL" ] ; then exit ; fi
+if ! [ -e "${PKG_PREFIX}"/share/koi8r-ps/fontmap.path ] ; then
+	cat << END_WARNING
+	The file "${PKG_PREFIX}"/share/koi8r-ps/fontmap.path does not exist.
+	Unable to patch the GhostScript's Fontmap to stop using the
+	Cyrillic fonts, which you are removing, yb default.
+END_WARNING
+	exit
+fi
+
+
+FONTMAP=`cat "${PKG_PREFIX}"/share/koi8r-ps/fontmap.path`
+if [ -e "$FONTMAP" ] ; then
+	cat << EXPLANATION
+	Patching the file
+		$FONTMAP
+	to tell GhostScript to stop looking for the fonts in this package.
+EXPLANATION
+	env SIMPLE_BACKUP_SUFFIX=.CyrPS VERSION_CONTROL= \
+		patch -l -N -R "$FONTMAP" "${PKG_PREFIX}/share/koi8r-ps/Fontmap.diff" \
+			&& rm -f "$FONTMAP".CyrPS
+else
+	if [ "$FONTMAP" != "/nicht/" ] ; then
+		cat << END_WARNING
+
+	The file
+		$FONTMAP
+	is recorded as  the one patched during the  isntallation of this
+	package. However,  the file does  not exist  now, so we  can not
+	reverse the patch. You _may_ have problem using GhostScript now.
+
+END_WARNING
+	fi
+fi

@@ -1,0 +1,94 @@
+--- fsdiff.c.orig
++++ fsdiff.c
+@@ -33,6 +33,7 @@ int		dotfd;
+ int		lastpercent = -1;
+ int		case_sensitive = 1;
+ int		tran_format = -1; 
++int		ignore_timestamps = 0;
+ extern int	exclude_warnings;
+ const EVP_MD    *md;
+ 
+@@ -266,7 +267,7 @@ main( int argc, char **argv )
+     cksum = 0;
+     outtran = stdout;
+ 
+-    while (( c = getopt( argc, argv, "%1ACc:IK:o:VvW" )) != EOF ) {
++    while (( c = getopt( argc, argv, "%1ACc:IK:o:tVvW" )) != EOF ) {
+ 	switch( c ) {
+ 	case '%':
+ 	case 'v':
+@@ -320,6 +321,10 @@ main( int argc, char **argv )
+ 	    exclude_warnings = 1;
+ 	    break;
+ 
++	case 't':		/* ignore files for which only the time has changed */
++	    ignore_timestamps = 1;
++	break;
++
+ 	case '?':
+ 	    printf( "bad %c\n", c );
+ 	    errflag++;
+
+--- man/fsdiff.1.orig
++++ man/fsdiff.1
+@@ -11,7 +11,7 @@
+ |
+ .B -1
+ } [
+-.BI -IVW
++.BI -IVWt
+ ] [
+ .BI \-K\  command
+ ] [
+@@ -312,6 +312,9 @@ order of preference and then exits.
+ prints a warning to the standard error when encountering an object
+ matching an exclude pattern.
+ .sp
++.TP 19
++.B \-t
++ignores files where only the timestamp has changed.
+ .SH FILES
+ .TP 19
+ .B _RADMIND_COMMANDFILE
+
+--- transcript.c.orig
++++ transcript.c
+@@ -38,6 +38,7 @@ static struct transcript	*prev_tran = NULL;
+ extern int			edit_path;
+ extern int			case_sensitive;
+ extern int			tran_format;
++extern int			ignore_timestamps;
+ static char			*kdir;
+ static struct list		*kfile_list;
+ struct list			*special_list;
+@@ -45,6 +46,7 @@ struct list			*exclude_list;
+ 
+ char				*path_prefix = NULL;
+ int				edit_path;
++int				ignore_timestamps;
+ int				skip;
+ int				cksum;
+ int				fs_minus;
+@@ -544,14 +546,16 @@ t_compare( struct pathinfo *fs, struct transcript *tran )
+ 		    t_print( fs, tran, PR_DOWNLOAD );
+ 		    break;
+ 		}
+-	    } else if ( fs->pi_stat.st_mtime != tran->t_pinfo.pi_stat.st_mtime ) {
+-		t_print( fs, tran, PR_DOWNLOAD );
+-		break;
++	    } else if ( ignore_timestamps == 0 &&
++			fs->pi_stat.st_mtime != tran->t_pinfo.pi_stat.st_mtime) {
++		    t_print( fs, tran, PR_DOWNLOAD );
++		    break;
+ 	    }
+ 
+-	    if ( fs->pi_stat.st_mtime != tran->t_pinfo.pi_stat.st_mtime ) {
+-		t_print( fs, tran, PR_STATUS );
+-		break;
++	    if ( ignore_timestamps == 0 &&
++		 fs->pi_stat.st_mtime != tran->t_pinfo.pi_stat.st_mtime ) {
++		    t_print( fs, tran, PR_STATUS );
++		    break;
+ 	    }
+ 	}
+ 

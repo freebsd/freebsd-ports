@@ -1,0 +1,8 @@
+--- Makefile.in.orig	2008-08-24 19:57:05 UTC
++++ Makefile.in
+@@ -1,5 +1,3 @@
+-CC = {CC}
+-CFLAGS = -Wall -O2 -g
+ LDFLAGS =
+ MODULES = main.o decrunch.o ppdepack.o mmcmp.o s404_dec.o unsqsh.o compat.o {EXTRAMODULES}
+ RELDIR = amigadepacker-{VERSION}

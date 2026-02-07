@@ -1,0 +1,8 @@
+Get weather forecast and alerts anywhere on the earth easy.
+KWeatherCore provides you a highly abstracted library for things related to
+weather.
+
+Features:
+  - Get local weather forecast.
+  - Get weather of a location by name or coordinate.
+  - Weather alerts of a country (ToDo)

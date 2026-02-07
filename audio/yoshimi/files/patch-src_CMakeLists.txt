@@ -1,0 +1,20 @@
+- disable override of port-defined CMAKE_BUILD_TYPE and CXXFLAGS
+
+--- src/CMakeLists.txt.orig	2022-09-11 04:00:10 UTC
++++ src/CMakeLists.txt
+@@ -263,6 +263,7 @@ else()
+ endif ()
+ set (CMAKE_CXX_FLAGS "${OurCxxFlags} ${CMAKE_CXX_FLAGS}")
+ 
++if (FALSE)
+ if (BuildForDebug)
+     set (CMAKE_BUILD_TYPE "Debug")
+     set (CMAKE_CXX_FLAGS_DEBUG ${BuildOptionsDebug})
+@@ -271,6 +272,7 @@ else()
+     set (CMAKE_BUILD_TYPE "Release")
+     set (CMAKE_CXX_FLAGS_RELEASE ${BuildOptionsRelease})
+     message (STATUS "RELEASE Build, flags: ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_RELEASE}")
++endif ()
+ endif ()
+ 
+ configure_file(

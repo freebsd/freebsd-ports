@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Shell/Source.pm
+%%SITE_PERL%%/Shell/t/Basic.pm
+%%PERL5_MAN3%%/Shell::Source.3.gz

@@ -1,0 +1,23 @@
+bin/fd
+bin/fd-cat.C
+bin/fd-cat.ja
+@shell bin/fdsh
+bin/fd-dict.tbl
+bin/fd-unicd.tbl
+etc/fd2rc.dist
+@sample etc/fd2rc.sample
+share/man/ja/man1/fd.1.gz
+share/man/ja/man1/fdsh.1.gz
+share/man/man1/fd.1.gz
+share/man/man1/fdsh.1.gz
+%%PORTDOCS%%share/doc/ja/fd/FAQ
+%%PORTDOCS%%share/doc/ja/fd/HISTORY
+%%PORTDOCS%%share/doc/ja/fd/LICENSES
+%%PORTDOCS%%share/doc/ja/fd/README
+%%PORTDOCS%%share/doc/ja/fd/TECHKNOW
+%%PORTDOCS%%share/doc/ja/fd/ToAdmin
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.eng
+%%PORTDOCS%%%%DOCSDIR%%/LICENSES.eng
+%%PORTDOCS%%%%DOCSDIR%%/README.eng
+%%PORTDOCS%%%%DOCSDIR%%/TECHKNOW.eng
+%%PORTDOCS%%%%DOCSDIR%%/ToAdmin.eng

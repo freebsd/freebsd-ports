@@ -1,0 +1,8 @@
+bin/catrw
+bin/follow
+bin/powwow
+bin/powwow-movieplay
+bin/powwow-muc
+share/man/man6/powwow.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/powwow.doc
+%%PORTDOCS%%%%DOCSDIR%%/powwow.help

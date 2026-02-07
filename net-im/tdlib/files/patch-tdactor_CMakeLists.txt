@@ -1,0 +1,11 @@
+--- tdactor/CMakeLists.txt.orig	2025-05-09 16:50:48 UTC
++++ tdactor/CMakeLists.txt
+@@ -44,7 +44,7 @@ set(TDACTOR_TEST_SOURCE
+   PARENT_SCOPE
+ )
+ 
+-add_library(tdactor STATIC ${TDACTOR_SOURCE})
++add_library(tdactor ${TDACTOR_SOURCE})
+ target_include_directories(tdactor PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
+ target_link_libraries(tdactor PUBLIC tdutils)
+ 

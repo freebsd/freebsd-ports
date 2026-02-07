@@ -1,0 +1,3 @@
+ThriftPy2 is a pure python implementation of Apache Thrift in a pythonic way.
+
+ThriftPy has been deprecated, ThriftPy2 aims to provide long term support.

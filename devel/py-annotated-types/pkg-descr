@@ -1,0 +1,9 @@
+PEP-593 added typing.Annotated as a way of adding context-specific metadata to
+existing types, and specifies that Annotated[T, x] should be treated as T by any
+tool or library without special logic for x.
+
+annotated-types provides metadata objects which can be used to represent common
+constraints such as upper and lower bounds on scalar values and collection
+sizes, a Predicate marker for runtime checks, and descriptions of how we intend
+these metadata to be interpreted. In some cases, we also note alternative
+representations which do not require this package.

@@ -1,0 +1,4 @@
+The libmacaroons library provides an implementation of macaroons, which are
+flexible authorization tokens that work great in distributed systems.
+Like cookies, macaroons are bearer tokens that enable applications to ascertain
+whether their holders' actions are authorized.

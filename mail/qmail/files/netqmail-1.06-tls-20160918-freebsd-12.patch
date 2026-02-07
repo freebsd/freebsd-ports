@@ -1,0 +1,49 @@
+--- qmail-remote.c	2019-01-31 00:13:55.812794000 +0100
++++ qmail-remote.c	2019-01-31 00:21:01.440755000 +0100
+@@ -266,8 +266,8 @@
+ {
+ #ifdef TLS
+   /* shouldn't talk to the client unless in an appropriate state */
+-  int state = ssl ? ssl->state : SSL_ST_BEFORE;
+-  if (state & SSL_ST_OK || (!smtps && state & SSL_ST_BEFORE))
++  OSSL_HANDSHAKE_STATE state = ssl ? SSL_get_state(ssl) : TLS_ST_BEFORE;
++  if (state & TLS_ST_OK || (!smtps && state & TLS_ST_BEFORE))
+ #endif
+   substdio_putsflush(&smtpto,"QUIT\r\n");
+   /* waiting for remote side is just too ridiculous */
+@@ -502,7 +502,7 @@
+       X509_NAME *subj = X509_get_subject_name(peercert);
+       i = X509_NAME_get_index_by_NID(subj, NID_commonName, -1);
+       if (i >= 0) {
+-        const ASN1_STRING *s = X509_NAME_get_entry(subj, i)->value;
++        const ASN1_STRING *s = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(subj, i));
+         if (s) { peer.len = s->length; peer.s = s->data; }
+       }
+       if (peer.len <= 0) {
+
+--- qmail-smtpd.c	2019-01-31 00:13:55.815359000 +0100
++++ qmail-smtpd.c	2019-01-31 00:21:01.443177000 +0100
+@@ -557,7 +557,7 @@
+     subj = X509_get_subject_name(peercert);
+     n = X509_NAME_get_index_by_NID(subj, NID_pkcs9_emailAddress, -1);
+     if (n >= 0) {
+-      const ASN1_STRING *s = X509_NAME_get_entry(subj, n)->value;
++      const ASN1_STRING *s = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(subj, n));
+       if (s) { email.len = s->length; email.s = s->data; }
+     }
+
+--- ssl_timeoutio.c	2019-01-31 00:13:55.830214000 +0100
++++ ssl_timeoutio.c	2019-01-31 00:21:01.456993000 +0100
+@@ -74,10 +74,10 @@
+ 
+   SSL_renegotiate(ssl);
+   r = ssl_timeoutio(SSL_do_handshake, t, rfd, wfd, ssl, NULL, 0);
+-  if (r <= 0 || ssl->type == SSL_ST_CONNECT) return r;
++  if (r <= 0) return r;
+ 
+   /* this is for the server only */
+-  ssl->state = SSL_ST_ACCEPT;
++  SSL_set_accept_state(ssl);
+   return ssl_timeoutio(SSL_do_handshake, t, rfd, wfd, ssl, NULL, 0);
+ }
+ 

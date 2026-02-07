@@ -1,0 +1,15 @@
+--- ndmp-src/Makefile.in.orig	2017-12-01 13:26:55 UTC
++++ ndmp-src/Makefile.in
+@@ -1691,9 +1691,9 @@ AM_CFLAGS = -DNDMOS_CONST_NDMJOBLIB_REVISION='"amanda-
+ # Divide the library up into the library side and down (libndmlib.la),
+ # and the full set of rules, agents, and so on required to build ndmjob
+ # (libndmjob.la).
+-amlib_LTLIBRARIES = \
+-	libndmlib.la \
+-	libndmjob.la
++@WANT_CLIENT_TRUE@amlib_LTLIBRARIES = \
++@WANT_CLIENT_TRUE@	libndmlib.la \
++@WANT_CLIENT_TRUE@	libndmjob.la
+ 
+ libndmjla = \
+ 	ndma_comm_job.c \

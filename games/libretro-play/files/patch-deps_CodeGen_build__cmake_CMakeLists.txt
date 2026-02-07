@@ -1,0 +1,13 @@
+--- deps/CodeGen/build_cmake/CMakeLists.txt.orig	2020-08-29 23:00:18 UTC
++++ deps/CodeGen/build_cmake/CMakeLists.txt
+@@ -15,8 +15,8 @@ endif()
+ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
+ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
+ 
+-set(CMAKE_CXX_STANDARD 17)
+-set(CMAKE_CXX_STANDARD_REQUIRED ON)
++
++
+ 
+ if (NOT TARGET Framework)
+ 	add_subdirectory(

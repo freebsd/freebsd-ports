@@ -1,0 +1,2 @@
+Cobble is a Python library that allows easy creation of data objects,
+including implementations of common methods such as `__eq__' and `__repr__'.

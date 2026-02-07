@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+In order to use pulled pork, adjust the config files located in
+%%ETCDIR%%
+
+
+Important Note:
+
+Snort changed the way rules are published. Since June 2010 Snort
+stop offering rules in the "snortrules-snapshot-CURRENT" format.
+
+Instead, rules will be released for specific Snort versions.
+You will be responsible for downloading the correct rules release
+for your version of Snort.
+
+The new versioning mechanism will require a four digit version in the
+file name. To get the new download naming schema visit snort.org,
+and look at 'My Account' -> 'Subscriptions and Oinkcodes'
+EOM
+}
+{
+  type: upgrade
+  message: <<EOM
+In release 0.7.4 blacklist was renamed to blocklist.
+
+Please compare existing files under %%ETCDIR%%
+with the new *.sample files adjust them if required.
+EOM
+}
+]

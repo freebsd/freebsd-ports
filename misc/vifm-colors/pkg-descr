@@ -1,0 +1,5 @@
+A collection of various color schemes for the vifm file manager.
+
+Note that color schemes are affected by 16-color palette used by the terminal
+and may not be displayed as intended by their authors or look differently on
+your machine.

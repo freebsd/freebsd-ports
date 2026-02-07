@@ -1,0 +1,1 @@
+add Config::YAML support to CGI::Application

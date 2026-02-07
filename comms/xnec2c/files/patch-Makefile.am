@@ -1,0 +1,25 @@
+--- Makefile.am.orig	2024-04-08 20:35:29 UTC
++++ Makefile.am
+@@ -73,22 +73,6 @@ SUFFIXES += .1.in .1
+ 	@$(MKDIR_P) $(@D)
+ 	$(SED) $(SED_CMDS) < $< > $@
+ 
+-dist_doc_DATA  =
+-dist_doc_DATA += doc/NEC2-bug.txt
+-dist_doc_DATA += doc/NearFieldCalcs.txt
+-dist_doc_DATA += doc/nec2c.txt
+-dist_doc_DATA += doc/xnec2c.html
+-
+-docimagesdir = $(docdir)/images
+-dist_docimages_DATA  =
+-dist_docimages_DATA += doc/images/currents.png
+-dist_docimages_DATA += doc/images/excitation.png
+-dist_docimages_DATA += doc/images/freq_plots.png
+-dist_docimages_DATA += doc/images/nec2_edit.png
+-dist_docimages_DATA += doc/images/radiation.png
+-dist_docimages_DATA += doc/images/web-heading.png
+-dist_docimages_DATA += doc/images/web-heading.xcf
+-dist_docimages_DATA += doc/images/wire.png
+ 
+ 
+ ########################################################################

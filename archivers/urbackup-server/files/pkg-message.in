@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+archivers/urbackup-server includes an RC script:
+%%PREFIX%%/etc/rc.d/urbackup_server
+
+TO START URBACKUP SERVER ON BOOT:
+sysrc urbackup_server_enable=YES
+
+TO START MANUALLY:
+service urbackup_server start
+
+The server daemon's configuration file is located at:
+%%PREFIX%%/etc/urbackup/urbackupsrv.conf
+
+Log rotation can be configured at:
+%%PREFIX%%/etc/newsyslog.conf.d/urbackupsrv.conf
+
+Once started, configure backup settings and manage backups at:
+http://localhost:55414
+
+SECURITY WARNING:
+This port sets the SUID/SGID bits on the following files:
+%%PREFIX%%/bin/urbackup_mount_helper
+%%PREFIX%%/bin/urbackup_snapshot_helper
+
+For details, see:
+https://www.urbackup.org/administration_manual.html
+EOM
+}
+]

@@ -1,0 +1,27 @@
+Index: cWnn/jlib/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/jlib/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- cWnn/jlib/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/jlib/Makefile.in	2 Jan 2009 21:09:34 -0000	1.2
+@@ -57,6 +57,8 @@ SRC7= $(CWNNETCSRC)/strings.c
+ OBJ7= strings.o
+ SRC8= $(CWNNETCSRC)/bcopy.c
+ OBJ8= bcopy.o
++SRC9= $(CWNNETCSRC)/fake-rfc2553.c
++OBJ9= fake-rfc2553.o
+ 
+ LOCAL_RKSRCS= $(CWNNROMKANSRC)/rk_bltinfn.c 	$(CWNNROMKANSRC)/rk_main.c 	$(CWNNROMKANSRC)/rk_modread.c 	$(CWNNROMKANSRC)/rk_read.c 	$(CWNNROMKANSRC)/rk_vars.c
+ 
+@@ -152,6 +154,9 @@ $(OBJ7) : $(SRC7)
+ $(OBJ8) : $(SRC8)
+ 	$(LT_CC) -c $(CFLAGS)  $(CWNNETCSRC)/`basename $@ .o`.c
+ 
++$(OBJ9) : $(SRC9)
++	$(LT_CC) -c $(CFLAGS)  $(CWNNETCSRC)/`basename $@ .o`.c
++
+ mkdir.o : $(WNNETCSRC)/mkdir.c
+ 	$(LT_CC) -c $(CFLAGS) $@
+ 

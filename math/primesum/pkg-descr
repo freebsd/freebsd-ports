@@ -1,0 +1,3 @@
+primesum is a command-line program that computes the sum of the primes below an
+integer x <= 1031 as quickly as possible using a modified version of the
+combinatorial prime counting function algorithm.

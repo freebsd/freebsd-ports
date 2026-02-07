@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/List::Compare.3.gz
+%%PERL5_MAN3%%/List::Compare::Base::_Auxiliary.3.gz
+%%PERL5_MAN3%%/List::Compare::Base::_Engine.3.gz
+%%PERL5_MAN3%%/List::Compare::Functional.3.gz
+%%SITE_PERL%%/List/Compare.pm
+%%SITE_PERL%%/List/Compare/Functional.pm
+%%SITE_PERL%%/List/Compare/Base/_Auxiliary.pm
+%%SITE_PERL%%/List/Compare/Base/_Engine.pm

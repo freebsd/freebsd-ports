@@ -1,0 +1,2 @@
+Data::Object::Role::Immutable provides a mechanism for making any derived object
+immutable.

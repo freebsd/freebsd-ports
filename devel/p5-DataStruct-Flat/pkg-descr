@@ -1,0 +1,2 @@
+DataStruct::Flat converts a nested Perl data structure into a one level hash of
+keys and values apt for human consumption.

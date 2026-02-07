@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Data/Compare.pm
+%%SITE_PERL%%/Data/Compare/Plugins.pod
+%%SITE_PERL%%/Data/Compare/Plugins/Scalar/Properties.pm
+%%PERL5_MAN3%%/Data::Compare.3.gz
+%%PERL5_MAN3%%/Data::Compare::Plugins.3.gz
+%%PERL5_MAN3%%/Data::Compare::Plugins::Scalar::Properties.3.gz

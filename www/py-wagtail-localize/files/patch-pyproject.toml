@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-05-07 07:54:51 UTC
++++ pyproject.toml
+@@ -8,8 +8,7 @@ readme = "README.md"
+ maintainers = [{name = "Dan Braghis", email="dan.braghis@torchbox.com"}]
+ description = "Translation plugin for Wagtail CMS"
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = [ "LICENSE" ]
++license = { file = "LICENSE" }
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Intended Audience :: Developers",

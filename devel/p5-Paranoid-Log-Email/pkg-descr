@@ -1,0 +1,2 @@
+Paranoid::Log::Email provides SMTP support from within the Paranoid::Log
+framework.

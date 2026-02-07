@@ -1,0 +1,6 @@
+This is the extension PHP extension for lz4, an extremely fast lossless
+compression algorithm providing high compression speed and multi-core
+scalability.
+
+This extension can also transparently compress objects stored in
+APCu cache. Just set apc.serializer=lz4 in your php.ini.

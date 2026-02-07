@@ -1,0 +1,8 @@
+--- src/main/native/pdhmm/CMakeLists.txt.orig	2024-08-04 17:58:05 UTC
++++ src/main/native/pdhmm/CMakeLists.txt
+@@ -23,4 +23,4 @@ endif()
+   set_target_properties(${TARGET} PROPERTIES COMPILE_OPTIONS ${OpenMP_CXX_FLAGS})
+   target_link_libraries(${TARGET} ${OpenMP_CXX_FLAGS})
+ endif()
+-install(TARGETS ${TARGET} DESTINATION ${CMAKE_BINARY_DIR})
++install(TARGETS ${TARGET} DESTINATION lib)

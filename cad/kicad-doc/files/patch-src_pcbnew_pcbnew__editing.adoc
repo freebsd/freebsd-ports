@@ -1,0 +1,11 @@
+--- src/pcbnew/pcbnew_editing.adoc.orig	2025-02-08 20:06:56.840295000 +0100
++++ src/pcbnew/pcbnew_editing.adoc	2025-02-08 20:07:09.456694000 +0100
+@@ -1764,7 +1764,7 @@
+ Finally, text supports markup for superscripts, subscripts, overbars, evaluating project
+ variables, and accessing symbol field values.
+ 
+-[options="header",cols="30%,40%,40%"]
++[options="header",cols="30%,30%,40%"]
+ |====
+ | Feature | Markup Syntax | Result
+ | Superscript

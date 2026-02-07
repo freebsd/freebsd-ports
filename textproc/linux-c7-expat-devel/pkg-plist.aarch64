@@ -1,0 +1,13 @@
+usr/include/expat.h
+usr/include/expat_external.h
+usr/lib64/libexpat.so
+usr/lib64/pkgconfig/expat.pc
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/doc/expat.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/style.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/valid-xhtml10.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/xmlwf.1
+%%PORTDOCS%%%%DOCSDIR%%/doc/xmlwf.sgml
+%%PORTDOCS%%%%DOCSDIR%%/examples/elements.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/outline.c

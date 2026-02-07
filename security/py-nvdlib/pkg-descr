@@ -1,0 +1,3 @@
+NVDlib is a Python library that allows you to interface with the
+NIST National Vulnerability Database (NVD), pull vulnerabilities (CVEs),
+and Common Platform Enumeration (CPEs) into easily accessible objects.

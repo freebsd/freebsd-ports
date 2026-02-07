@@ -1,0 +1,119 @@
+#!/bin/sh
+
+#
+# PROVIDE: openhab
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# openhab_enable (bool):	Set to NO by default.
+#				Set it to YES to enable openhab.
+# openhab_user (username):	Set to openhab by default.
+# openhab_group (groupname):	Set to openhab by default.
+# openhab_http_port (port):	Set to 8080 by default.
+# openhab_https_port (port):	Set to 8443 by default.
+# openhab_listen_address (IP):	Set to 0.0.0.0 for http/https by default.
+# openhab_backup_dir (path):	Set to /var/db/openhab/backups by default.
+# openhab_java_opts (string):	Empty by default. You can add additional java
+#				options like -Duser.timezone=Europe/Berlin and/or
+#				-Dgnu.io.rxtx.SerialPorts=/dev/cuau0
+#				-Dsun.nio.fs.watchservice=polling
+# openhab_home_dir (path):	Set to %%PREFIX%%/libexec/openhab by default.
+# openhab_conf_dir (path):	Set to %%PREFIX%%/etc/openhab by default.
+# openhab_runtime_dir (path):	Set to %%PREFIX%%/libexec/openhab/runtime by default.
+# openhab_userdata_dir (path):	Set to /var/db/openhab/userdata by default.
+# openhab_log_dir (path):	Set to /var/log/openhab by default.
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+        # during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+        # so get the name of the script from $_file
+        name=$_file
+        ;;
+*)
+        name=$0
+        ;;
+esac
+
+name=${name##*/}
+rcvar=${name}_enable
+
+load_rc_config "${name}"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "${name}_svcj_options=\${${name}_svcj_options:-'net_basic'}"
+eval "_openhab_user=\${${name}_user:-'openhab'}"
+eval "_openhab_group=\${${name}_group:-'openhab'}"
+
+eval "_openhab_http_port=\${${name}_http_port:-'8080'}"
+eval "_openhab_https_port=\${${name}_https_port:-'8443'}"
+eval "_openhab_listen_address=\${${name}_listen_address:-'0.0.0.0'}"
+
+eval "_openhab_backup_dir=\${${name}_backup_dir:-'/var/db/openhab/backups'}"
+eval "_openhab_home_dir=\${${name}_home_dir:-'%%PREFIX%%/libexec/openhab'}"
+eval "_openhab_conf_dir=\${${name}_conf_dir:-'%%PREFIX%%/etc/openhab'}"
+eval "_openhab_runtime_dir=\${${name}_runtime_dir:-'%%PREFIX%%/libexec/openhab/runtime'}"
+eval "_openhab_userdata_dir=\${${name}_userdata_dir:-'/var/db/openhab/userdata'}"
+eval "_openhab_log_dir=\${${name}_log_dir:-'/var/log/openhab'}"
+eval "_openhab_piddir=\${${name}_piddir:-/var/run/${name}}"
+
+eval "_openhab_java_opts=\${${name}_java_opts:-''}"
+
+export OPENHAB_USER="${_openhab_user}"
+export OPENHAB_GROUP="${_openhab_group}"
+export OPENHAB_HTTP_PORT="${_openhab_http_port}"
+export OPENHAB_HTTPS_PORT="${_openhab_https_port}"
+export OPENHAB_HTTP_ADDRESS="${_openhab_listen_address}"
+export OPENHAB_BACKUPS="${openhab_backup_dir}"
+export EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/cuau0 -Dsun.nio.fs.watchservice=polling ${_openhab_java_opts}"
+export OPENHAB_HOME="${_openhab_home_dir}"
+export OPENHAB_CONF="${_openhab_conf_dir}"
+export OPENHAB_RUNTIME="${_openhab_runtime_dir}"
+export OPENHAB_USERDATA="${_openhab_userdata_dir}"
+export OPENHAB_LOGDIR="${_openhab_log_dir}"
+# for UTF-8 encoding, language can be set inside openhab:
+export LC_ALL=en_US.UTF-8
+export JAVA_VERSION=17
+
+pidfile=${_openhab_piddir}/${name}.pid
+
+start_precmd="openhab_prestart"
+
+command=/usr/sbin/daemon
+command_args="-u ${_openhab_user} -p ${pidfile} -c -t openhab ${OPENHAB_HOME}/start.sh server"
+
+openhab_prestart() {
+    # Make sure we have our RUNDIR, even if it's on a tmpfs
+    install -d -o ${_openhab_user} -g ${_openhab_group} -m 0755 "${_openhab_piddir}"
+    
+    install -d -o ${_openhab_user} -g ${_openhab_group} -m 0755 "${_openhab_log_dir}"
+}
+
+
+openhab_stop() {
+	su -m ${_openhab_user} -c "${OPENHAB_RUNTIME}/bin/stop"
+	if [ -e ${pidfile} ]; then
+		wait_for_pids $(cat ${pidfile})
+	fi
+}
+
+openhab_status() {
+	case "$(${OPENHAB_RUNTIME}/bin/status 2>&1)" in
+		"Not Running ...")
+			echo ${name} is not running,
+			;;
+		"Running ...")
+			echo ${name} is running.
+			;;
+	esac
+}
+
+stop_cmd="openhab_stop"
+status_cmd="openhab_status"
+
+
+run_rc_command "$1"

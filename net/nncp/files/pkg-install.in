@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ "$2" = "POST-INSTALL" ] || exit 0
+
+[ -e /var/spool/nncp ] || exec mkdir -p /var/spool/nncp

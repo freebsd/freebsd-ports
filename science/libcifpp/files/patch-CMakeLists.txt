@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2024-09-13 05:26:00 UTC
++++ CMakeLists.txt
+@@ -395,7 +395,7 @@ if(CIFPP_DOWNLOAD_CCD)
+ 
+ 		if(WIN32 OR GUNZIP STREQUAL "GUNZIP-NOTFOUND")
+ 			file(
+-				DOWNLOAD https://files.wwpdb.org/pub/pdb/data/monomers/components.cif
++				DOWNLOAD file://${DISTDIR_FULL}/components.cif.gz
+ 				${COMPONENTS_CIF}
+ 				SHOW_PROGRESS
+ 				STATUS CCD_FETCH_STATUS)
+@@ -403,7 +403,7 @@ if(CIFPP_DOWNLOAD_CCD)
+ 			if(NOT EXISTS "${COMPONENTS_CIF}.gz")
+ 				file(
+ 					DOWNLOAD
+-					https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz
++					file://${DISTDIR_FULL}/components.cif.gz
+ 					${COMPONENTS_CIF}.gz
+ 					SHOW_PROGRESS
+ 					STATUS CCD_FETCH_STATUS)
+@@ -556,7 +556,7 @@ if(CIFPP_INSTALL_UPDATE_SCRIPT)
+ 
+ 	# a config file, to make it complete
+ 	# install(DIRECTORY DESTINATION "${CMAKE_INSTALL_LOCALSTATEDIR}/libcifpp")
+-	if(NOT EXISTS "${CMAKE_INSTALL_SYSCONFDIR}/libcifpp.conf")
++	if(TRUE OR NOT EXISTS "${CMAKE_INSTALL_SYSCONFDIR}/libcifpp.conf")
+ 		file(
+ 			WRITE ${CMAKE_CURRENT_BINARY_DIR}/libcifpp.conf
+ 			[[# Uncomment the next line to enable automatic updates

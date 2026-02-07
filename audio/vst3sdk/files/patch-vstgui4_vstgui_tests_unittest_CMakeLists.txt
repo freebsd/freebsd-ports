@@ -1,0 +1,11 @@
+--- vstgui4/vstgui/tests/unittest/CMakeLists.txt.orig	2021-12-07 16:20:00 UTC
++++ vstgui4/vstgui/tests/unittest/CMakeLists.txt
+@@ -118,7 +118,7 @@ if(UNIX AND NOT CMAKE_HOST_APPLE)
+ 	)
+ 	set(${target}_PLATFORM_LIBS
+ 		${LINUX_LIBRARIES}
+-		stdc++fs
++		#stdc++fs
+ 		pthread
+ 		dl
+ 	)

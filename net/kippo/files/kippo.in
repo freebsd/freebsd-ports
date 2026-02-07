@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: kippo
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable kippo:
+#
+# kippo_enable (bool):		Set to NO by default.
+#				Set it to YES to enable kipppo
+# kippo_logfile (path):		Set to /tmp/kippo.log by default.
+# kippo_pidfile (path):         Set to /tmp/kippo.pid by default.
+
+. /etc/rc.subr
+
+name=kippo
+rcvar=kippo_enable
+
+load_rc_config $name
+: ${kippo_enable:=no}
+: ${kippo_logfile="/tmp/kippo.log"}
+: ${kippo_pidfile="/tmp/kippo.pid"}
+
+kippo_user="kippo"
+kippo_chdir="%%DATADIR%%"
+pidfile=$kippo_pidfile
+command="%%LOCALBASE%%/bin/twistd"
+command_args="-y %%DATADIR%%/kippo.tac --pidfile $pidfile --logfile $kippo_logfile"
+command_interpreter="%%PYTHON%%"
+
+run_rc_command "$1"

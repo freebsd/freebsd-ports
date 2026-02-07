@@ -1,0 +1,6 @@
+%%SITE_PERL%%/BER.pm
+%%SITE_PERL%%/SNMP_Session.pm
+%%SITE_PERL%%/SNMP_util.pm
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.SNMP_util
+%%PORTDOCS%%%%DOCSDIR%%/index.html

@@ -1,0 +1,9 @@
+Backdown helps you safely and ergonomically remove duplicate files.
+
+Its design is based upon the authors observation of frequent patterns
+regarding build-up of duplicates with time, especially images and other
+media files.
+
+Finding duplicates is easy. Cleaning the disk when there are thousands
+of them is the hard part. What Backdown brings is the easy way to select
+and remove the duplicates you don't want to keep.

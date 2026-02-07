@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Jan 13 16:23:10 2004
++++ Makefile.in	Tue Feb  3 23:03:59 2004
+@@ -210,7 +210,7 @@
+ target_alias = @target_alias@
+ 
+ # Data files
+-SUBDIRS = data doc
++SUBDIRS = data
+ 
+ # Source in order of C, C++, derived C++
+ # Removed arlib.c
+@@ -709,7 +709,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA
++install-data-am:
+ 
+ install-exec-am: install-binPROGRAMS install-exec-local
+ 

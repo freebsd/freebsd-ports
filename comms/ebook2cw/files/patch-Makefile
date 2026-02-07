@@ -1,0 +1,38 @@
+--- Makefile.orig	2023-08-16 18:54:49 UTC
++++ Makefile
+@@ -1,30 +1,16 @@ VERSION=0.8.5
+ # ebook2cw Makefile -- Fabian Kurz, DJ5CW -- http://fkurz.net/ham/ebook2cw.html
+ 
+ VERSION=0.8.5
+-DESTDIR ?= /usr
++DESTDIR ?= %%PREFIX%%
++CC	?= gcc
+ 
+-# Set to NO to compile without Lame/Ogg-vorbis support
+-USE_LAME?=YES
+-USE_OGG?=YES
+-
+ CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\"
++CFLAGS+= -I%%LOCALBASE%%/include -D LAME -D OGGV
++LDFLAGS+= -L%%LOCALBASE%%/lib -lintl -lmp3lame -lvorbis -lvorbisenc -logg
+ 
+-ifeq ($(USE_LAME), YES)
+-		CFLAGS:=$(CFLAGS) -D LAME
+-		LDFLAGS:=$(LDFLAGS) -lmp3lame 
+-endif
+-ifeq ($(USE_OGG), YES)
+-		CFLAGS:=$(CFLAGS) -D OGGV
+-		LDFLAGS:=$(LDFLAGS) -lvorbis -lvorbisenc -logg
+-endif
+-
+ UNAME := $(shell uname)
+ 
+-ifeq ($(UNAME), Darwin)
+-	LDFLAGS += -lintl
+-endif
+-
+-all: ebook2cw
++all: ebook2cw cgi
+ 
+ ebook2cw: ebook2cw.c codetables.h
+ 	$(CC) ebook2cw.c -pedantic -Wall -Wno-format-truncation -lm $(LDFLAGS) $(CFLAGS) -o ebook2cw

@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/Petal::CodePerl.3.gz
+%%PERL5_MAN3%%/Petal::CodePerl::Expr.3.gz
+%%PERL5_MAN3%%/Petal::CodePerl::Modifiers.3.gz
+%%SITE_PERL%%/Petal/CodePerl.pm
+%%SITE_PERL%%/Petal/CodePerl/CodeGenerator.pm
+%%SITE_PERL%%/Petal/CodePerl/Compiler.pm
+%%SITE_PERL%%/Petal/CodePerl/Expr.pm
+%%SITE_PERL%%/Petal/CodePerl/Expr/Alternate.pm
+%%SITE_PERL%%/Petal/CodePerl/Expr/DerefTAL.pm
+%%SITE_PERL%%/Petal/CodePerl/Expr/PathExists.pm
+%%SITE_PERL%%/Petal/CodePerl/Expr/PerlSprintf.pm
+%%SITE_PERL%%/Petal/CodePerl/GrammarLoader.pm
+%%SITE_PERL%%/Petal/CodePerl/Modifiers.pm
+%%SITE_PERL%%/Petal/CodePerl/Parser.pm

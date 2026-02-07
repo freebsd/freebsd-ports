@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Sub/Name.pm
+%%SITE_ARCH%%/auto/Sub/Name/Name.so
+%%PERL5_MAN3%%/Sub::Name.3.gz

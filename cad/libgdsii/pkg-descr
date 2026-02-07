@@ -1,0 +1,3 @@
+libGDSII is a C++ library for working with GDSII binary data files, intended
+primarily for use with the computational electromagnetism codes scuff-em and
+meep but sufficiently general-purpose to allow other uses as well.

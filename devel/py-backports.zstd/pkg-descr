@@ -1,0 +1,2 @@
+backports.zstd provides backport of PEP-784 "adding Zstandard to the standard
+library".

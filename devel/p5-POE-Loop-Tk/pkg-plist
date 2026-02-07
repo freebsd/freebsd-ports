@@ -1,0 +1,6 @@
+%%SITE_PERL%%/POE/Loop/Tk.pm
+%%SITE_PERL%%/POE/Loop/TkActiveState.pm
+%%SITE_PERL%%/POE/Loop/TkCommon.pm
+%%PERL5_MAN3%%/POE::Loop::Tk.3.gz
+%%PERL5_MAN3%%/POE::Loop::TkActiveState.3.gz
+%%PERL5_MAN3%%/POE::Loop::TkCommon.3.gz

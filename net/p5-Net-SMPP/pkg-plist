@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Net/SMPP.pm
+%%SITE_PERL%%/Net/bind-hammer.pl
+%%SITE_PERL%%/Net/esme-hammer.pl
+%%SITE_PERL%%/Net/esme-rec.pl
+%%SITE_PERL%%/Net/esme.pl
+%%SITE_PERL%%/Net/sendmessage.pl
+%%SITE_PERL%%/Net/smsc.pl
+%%PERL5_MAN3%%/Net::SMPP.3.gz

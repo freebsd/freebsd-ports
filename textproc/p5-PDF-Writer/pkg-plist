@@ -1,0 +1,7 @@
+%%SITE_PERL%%/PDF/Writer.pm
+%%SITE_PERL%%/PDF/Writer/mock.pm
+%%SITE_PERL%%/PDF/Writer/pdfapi2.pm
+%%SITE_PERL%%/PDF/Writer/pdflib.pm
+%%PERL5_MAN3%%/PDF::Writer.3.gz
+%%PERL5_MAN3%%/PDF::Writer::pdfapi2.3.gz
+%%PERL5_MAN3%%/PDF::Writer::pdflib.3.gz

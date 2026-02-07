@@ -1,0 +1,11 @@
+[
+{
+  type: install
+  message: <<EOM
+  The exporter works with Percona Server for MongoDB and MongoDB Community
+  or Enterprise Edition versions 4.4 and newer.
+
+  Older versions might also work but are not tested anymore.
+EOM
+}
+]

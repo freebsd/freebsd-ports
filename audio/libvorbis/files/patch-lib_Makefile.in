@@ -1,0 +1,13 @@
+The included libtool is broken and loses the -lm dependency_lib.
+
+--- lib/Makefile.in.orig	2020-07-11 16:57:29 UTC
++++ lib/Makefile.in
+@@ -461,7 +461,7 @@ libvorbis_la_LDFLAGS = -no-undefined -version-info @V_
+ libvorbis_la_LIBADD = @VORBIS_LIBS@ @OGG_LIBS@
+ libvorbisfile_la_SOURCES = vorbisfile.c
+ libvorbisfile_la_LDFLAGS = -no-undefined -version-info @VF_LIB_CURRENT@:@VF_LIB_REVISION@:@VF_LIB_AGE@
+-libvorbisfile_la_LIBADD = libvorbis.la @OGG_LIBS@
++libvorbisfile_la_LIBADD = libvorbis.la @OGG_LIBS@ -lm
+ libvorbisenc_la_SOURCES = vorbisenc.c 
+ libvorbisenc_la_LDFLAGS = -no-undefined -version-info @VE_LIB_CURRENT@:@VE_LIB_REVISION@:@VE_LIB_AGE@
+ libvorbisenc_la_LIBADD = libvorbis.la @OGG_LIBS@

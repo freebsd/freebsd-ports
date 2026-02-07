@@ -1,0 +1,11 @@
+--- configure.ac.orig	2023-05-05 08:11:07 UTC
++++ configure.ac
+@@ -46,8 +46,6 @@ AC_CONFIG_HEADER(config.h)
+ AC_CHECK_HEADERS([stdatomic.h],,AC_MSG_ERROR([C11 atomic types are not supported]))
+ AC_CONFIG_HEADER(config.h)
+ 
+-AC_CHECK_TYPES([errno_t], [], [], [[#include <errno.h>]])
+-
+ m4_include([src/build_macros.m4])
+ BUILD_WITH_SHARED_BUILD_DIR
+ 

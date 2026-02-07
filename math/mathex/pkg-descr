@@ -1,0 +1,4 @@
+MathEx is a C++ library to parse/evaluate mathematical expressions.
+
+It is part of the SSCILIB (Small Scientific Library), a collection of small
+library packages to help development of scientific applications.

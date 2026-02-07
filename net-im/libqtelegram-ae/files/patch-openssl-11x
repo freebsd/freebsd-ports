@@ -1,0 +1,328 @@
+From 2b31ce1780e8fdcc7cf55cb9ac17e9bae48eb2b0 Mon Sep 17 00:00:00 2001
+From: Bardia Daneshvar <realbardiax@gmail.com>
+Date: Sun, 25 Mar 2018 00:46:01 +0430
+Subject: [PATCH] Compatible with openssl 1.1.x
+
+---
+ core/dcauth.cpp      | 40 ++++++++++++++++++
+ libqtelegram-ae.pri  |  2 +-
+ util/cryptoutils.cpp | 98 +++++++++++++++++++++++++++++++++++++++++---
+ util/cryptoutils.h   |  4 ++
+ util/utils.cpp       | 12 +++++-
+ util/utils.h         |  2 +-
+ 6 files changed, 150 insertions(+), 8 deletions(-)
+
+index 4a7c81b..dd5904d 100644
+--- core/dcauth.cpp
++++ core/dcauth.cpp
+@@ -213,6 +213,7 @@ void DCAuth::processDHAnswer(InboundPkt &inboundPkt) {
+     inboundPkt.setInPtr(decryptBuffer + 15);
+     inboundPkt.setInEnd(decryptBuffer + (l >> 2));
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     BIGNUM dh_prime, dh_g, g_a, auth_key_num;
+     BN_init(&dh_prime);
+     BN_init (&g_a);
+@@ -223,6 +224,19 @@ void DCAuth::processDHAnswer(InboundPkt &inboundPkt) {
+     qint32 serverTime = inboundPkt.fetchInt();
+     mAsserter.check(inboundPkt.inPtr() <= inboundPkt.inEnd());
+     mAsserter.check(mCrypto->checkDHParams (&dh_prime, g) >= 0);
++#else
++    BIGNUM *dh_prime = BN_new();
++    BIGNUM *dh_g = BN_new();
++    BIGNUM *g_a = BN_new();
++    BIGNUM *auth_key_num = BN_new();
++    mAsserter.check(inboundPkt.fetchBignum(dh_prime) > 0);
++    mAsserter.check(inboundPkt.fetchBignum(g_a) > 0);
++    mAsserter.check(Utils::check_g_bn(dh_prime, g_a) >= 0);
++
++    qint32 serverTime = inboundPkt.fetchInt();
++    mAsserter.check(inboundPkt.inPtr() <= inboundPkt.inEnd());
++    mAsserter.check(mCrypto->checkDHParams (dh_prime, g) >= 0);
++#endif
+ 
+     static char sha1Buffer[20];
+     SHA1 ((uchar *) decryptBuffer + 20, (inboundPkt.inPtr() - decryptBuffer - 5) * 4, (uchar *) sha1Buffer);
+@@ -242,6 +256,7 @@ void DCAuth::processDHAnswer(InboundPkt &inboundPkt) {
+     outboundPkt.appendInts((qint32 *)m_serverNonce, 4);
+     outboundPkt.appendLong(0LL);
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     BN_init (&dh_g);
+     Utils::ensure (BN_set_word (&dh_g, g));
+     char s_power [256];
+@@ -267,6 +282,31 @@ void DCAuth::processDHAnswer(InboundPkt &inboundPkt) {
+     BN_free (&dh_g);
+     BN_free (&g_a);
+     BN_free (&dh_prime);
++#else
++    Utils::ensure (BN_set_word (dh_g, g));
++    char s_power [256];
++    Utils::randomBytes(s_power, 256);
++    BIGNUM *dh_power = BN_bin2bn ((uchar *)s_power, 256, 0);
++    Utils::ensurePtr(dh_power);
++
++    BIGNUM *y = BN_new ();
++    Utils::ensurePtr(y);
++    Utils::ensure(mCrypto->BNModExp(y, dh_g, dh_power, dh_prime));
++    outboundPkt.appendBignum(y);
++    BN_free (y);
++
++    Utils::ensure(mCrypto->BNModExp(auth_key_num, g_a, dh_power, dh_prime));
++    l = BN_num_bytes (auth_key_num);
++
++    mAsserter.check(l >= 250 && l <= 256);
++    mAsserter.check(BN_bn2bin (auth_key_num, (uchar *)m_dc->authKey()));
++    Utils::secureZeroMemory (m_dc->authKey() + l, 0, 256 - l);
++    BN_free (dh_power);
++    BN_free (auth_key_num);
++    BN_free (dh_g);
++    BN_free (g_a);
++    BN_free (dh_prime);
++#endif
+ 
+     SHA1 ((uchar *) (outboundPkt.buffer() + 5), (outboundPkt.length() - 5) * 4, (uchar *) outboundPkt.buffer());
+     qint32 encryptBuffer[DECRYPT_BUFFER_INTS];
+index 73f9e47..a030e19 100644
+--- libqtelegram-ae.pri
++++ libqtelegram-ae.pri
+@@ -33,7 +33,7 @@ win32 {
+         LIBS += -L$${OPENSSL_LIB_DIR} -lssl -lcrypto -lz
+     }
+ 
+-    INCLUDEPATH += $${OPENSSL_INCLUDE_PATH}
++#    INCLUDEPATH += $${OPENSSL_INCLUDE_PATH}
+ }
+ 
+ include(telegram/telegram.pri)
+index 83ea85d..d88a2d6 100644
+--- util/cryptoutils.cpp
++++ util/cryptoutils.cpp
+@@ -40,7 +40,15 @@ CryptoUtils::~CryptoUtils() {
+ 
+ qint32 CryptoUtils::encryptPacketBuffer(OutboundPkt &p, void *encryptBuffer) {
+     RSA *pubKey = mSettings->pubKey();
+-    return padRsaEncrypt((char *) p.buffer(), p.length() * 4, (char *) encryptBuffer, ENCRYPT_BUFFER_INTS * 4, pubKey->n, pubKey->e);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++    BIGNUM *key_e = pubKey->e;
++    BIGNUM *key_n = pubKey->n;
++#else
++    const BIGNUM *key_e;
++    const BIGNUM *key_n;
++    RSA_get0_key(pubKey, &key_n, &key_e, NULL);
++#endif
++    return padRsaEncrypt((char *) p.buffer(), p.length() * 4, (char *) encryptBuffer, ENCRYPT_BUFFER_INTS * 4, key_n, key_e);
+ }
+ 
+ qint32 CryptoUtils::encryptPacketBufferAESUnAuth(const char serverNonce[16], const char hiddenClientNonce[32], OutboundPkt &p, void *encryptBuffer) {
+@@ -48,7 +56,11 @@ qint32 CryptoUtils::encryptPacketBufferAESUnAuth(const char serverNonce[16], con
+   return padAESEncrypt ((char *) p.buffer(), p.length() * 4, (char *) encryptBuffer, ENCRYPT_BUFFER_INTS * 4);
+ }
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ qint32 CryptoUtils::padRsaEncrypt (char *from, qint32 from_len, char *to, qint32 size, BIGNUM *N, BIGNUM *E) {
++#else
++qint32 CryptoUtils::padRsaEncrypt (char *from, qint32 from_len, char *to, qint32 size, const BIGNUM *N, const BIGNUM *E) {
++#endif
+     qint32 pad = (255000 - from_len - 32) % 255 + 32;
+     qint32 chunks = (from_len + pad) / 255;
+     qint32 bits = BN_num_bits (N);
+@@ -61,6 +73,7 @@ qint32 CryptoUtils::padRsaEncrypt (char *from, qint32 from_len, char *to, qint32
+     Q_UNUSED(isSupported);
+     Q_ASSERT(isSupported >= 0);
+     qint32 i;
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     BIGNUM x, y;
+     BN_init (&x);
+     BN_init (&y);
+@@ -77,6 +90,23 @@ qint32 CryptoUtils::padRsaEncrypt (char *from, qint32 from_len, char *to, qint32
+     }
+     BN_free (&x);
+     BN_free (&y);
++#else
++    BIGNUM *x = BN_new(),
++           *y = BN_new();
++    for (i = 0; i < chunks; i++) {
++        BN_bin2bn ((uchar *) from, 255, x);
++        qint32 success = BN_mod_exp (y, x, E, N, BN_ctx);
++        Q_UNUSED(success);
++        Q_ASSERT(success == 1);
++        unsigned l = 256 - BN_num_bytes (y);
++        Q_ASSERT(l <= 256);
++        memset (to, 0, l);
++        BN_bn2bin (y, (uchar *) to + l);
++        to += 256;
++    }
++    BN_free (x);
++    BN_free (y);
++#endif
+     return chunks * 256;
+ }
+ 
+@@ -173,18 +203,26 @@ qint32 CryptoUtils::checkPrime (BIGNUM *p) {
+ 
+ qint32 CryptoUtils::checkDHParams (BIGNUM *p, qint32 g) {
+     if (g < 2 || g > 7) { return -1; }
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     BIGNUM t;
+     BN_init (&t);
+-
+     BIGNUM dh_g;
+     BN_init (&dh_g);
+-    Utils::ensure (BN_set_word (&dh_g, 4 * g));
+ 
++    Utils::ensure (BN_set_word (&dh_g, 4 * g));
+     Utils::ensure (BN_mod (&t, p, &dh_g, BN_ctx));
+     qint32 x = BN_get_word (&t);
+-    Q_ASSERT(x >= 0 && x < 4 * g);
+-
+     BN_free (&dh_g);
++#else
++    BIGNUM *t = BN_new();
++    BIGNUM *dh_g = BN_new();
++
++    Utils::ensure (BN_set_word (dh_g, 4 * g));
++    Utils::ensure (BN_mod (t, p, dh_g, BN_ctx));
++    qint32 x = BN_get_word (t);
++    BN_free (dh_g);
++#endif
++    Q_ASSERT(x >= 0 && x < 4 * g);
+ 
+     switch (g) {
+     case 2:
+@@ -208,6 +246,7 @@ qint32 CryptoUtils::checkDHParams (BIGNUM *p, qint32 g) {
+ 
+     if (!checkPrime (p)) { return -1; }
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     BIGNUM b;
+     BN_init (&b);
+     Utils::ensure (BN_set_word (&b, 2));
+@@ -215,6 +254,14 @@ qint32 CryptoUtils::checkDHParams (BIGNUM *p, qint32 g) {
+     if (!checkPrime (&t)) { return -1; }
+     BN_free (&b);
+     BN_free (&t);
++#else
++    BIGNUM *b = BN_new();
++    Utils::ensure (BN_set_word (b, 2));
++    Utils::ensure (BN_div (t, 0, p, b, BN_ctx));
++    if (!checkPrime (t)) { return -1; }
++    BN_free (b);
++    BN_free (t);
++#endif
+     return 0;
+ }
+ 
+@@ -229,6 +276,7 @@ qint32 CryptoUtils::checkCalculatedParams(const BIGNUM *gAOrB, const BIGNUM *g,
+     ASSERT(p);
+ 
+     // 1) gAOrB and g greater than one and smaller than p-1
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     BIGNUM one;
+     BN_init(&one);
+     Utils::ensure(BN_one(&one));
+@@ -272,6 +320,46 @@ qint32 CryptoUtils::checkCalculatedParams(const BIGNUM *gAOrB, const BIGNUM *g,
+     BN_free(&exp);
+     BN_free(&lowLimit);
+     BN_free(&highLimit);
++#else
++    BIGNUM *one = BN_new();
++    Utils::ensure(BN_one(one));
++
++    BIGNUM *pMinusOne = BN_dup(p);
++    Utils::ensure(BN_sub_word(pMinusOne, 1));
++
++    // check params greater than one
++    if (BN_cmp(gAOrB, one) <= 0) return -1;
++    if (BN_cmp(g, one) <= 0) return -1;
++
++    // check params <= p-1
++    if (BN_cmp(gAOrB, pMinusOne) >= 0) return -1;
++    if (BN_cmp(g, pMinusOne) >= 0) return -1;
++
++    // 2) gAOrB between 2^{2048-64} and p - 2^{2048-64}
++    quint64 expWord = 2048 - 64;
++    BIGNUM *exp = BN_new();
++    Utils::ensure(BN_set_word(exp, expWord));
++
++    BIGNUM *base = BN_new();
++    Utils::ensure(BN_set_word(base, 2));
++
++    // lowLimit = base ^ exp
++    BIGNUM *lowLimit = BN_new();
++    Utils::ensure(BN_exp(lowLimit, base, exp, BN_ctx));
++
++    // highLimit = p - lowLimit
++    BIGNUM *highLimit = BN_new();
++    BN_sub(highLimit, p, lowLimit);
++
++    if (BN_cmp(gAOrB, lowLimit) < 0) return -1;
++    if (BN_cmp(gAOrB, highLimit) > 0) return -1;
++
++    BN_free(one);
++    BN_free(pMinusOne);
++    BN_free(exp);
++    BN_free(lowLimit);
++    BN_free(highLimit);
++#endif
+ 
+     return 0;
+ }
+index 3eb9fde..bb0df13 100644
+--- util/cryptoutils.h
++++ util/cryptoutils.h
+@@ -39,7 +39,11 @@ class CryptoUtils : public QObject
+ 
+     qint32 encryptPacketBuffer(OutboundPkt &p, void *encryptBuffer);
+     qint32 encryptPacketBufferAESUnAuth(const char serverNonce[16], const char hiddenClientNonce[32], OutboundPkt &p, void *encryptBuffer);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     qint32 padRsaEncrypt(char *from, qint32 from_len, char *to, qint32 size, BIGNUM *N, BIGNUM *E);
++#else
++    qint32 padRsaEncrypt(char *from, qint32 from_len, char *to, qint32 size, const BIGNUM *N, const BIGNUM *E);
++#endif
+ 
+     void initAESAuth (char authKey[192], char msgKey[16], qint32 encrypt);
+     void initAESUnAuth(const char serverNonce[16], const char hiddenClientNonce[32], qint32 encrypt);
+index f12a3b0..8b12b3b 100644
+--- util/utils.cpp
++++ util/utils.cpp
+@@ -152,7 +152,7 @@ QByteArray Utils::generateRandomBytes() {
+     return randomBytes;
+ }
+ 
+-qint32 Utils::serializeBignum(BIGNUM *b, char *buffer, qint32 maxlen) {
++qint32 Utils::serializeBignum(const BIGNUM *b, char *buffer, qint32 maxlen) {
+     qint32 itslen = BN_num_bytes (b);
+     qint32 reqlen;
+     if (itslen < 254) {
+@@ -300,10 +300,20 @@ RSA *Utils::rsaLoadPublicKey(const QString &publicKeyName) {
+ qint64 Utils::computeRSAFingerprint(RSA *key) {
+     static char tempbuff[4096];
+     static uchar sha[20];
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     Q_ASSERT(key->n && key->e);
+     qint32 l1 = serializeBignum (key->n, tempbuff, 4096);
+     Q_ASSERT(l1 > 0);
+     qint32 l2 = serializeBignum (key->e, tempbuff + l1, 4096 - l1);
++#else
++    const BIGNUM *key_e;
++    const BIGNUM *key_n;
++    RSA_get0_key(key, &key_n, &key_e, NULL);
++    Q_ASSERT(key_n && key_e);
++    qint32 l1 = serializeBignum (key_n, tempbuff, 4096);
++    Q_ASSERT(l1 > 0);
++    qint32 l2 = serializeBignum (key_e, tempbuff + l1, 4096 - l1);
++#endif
+     Q_ASSERT(l2 > 0 && l1 + l2 <= 4096);
+     SHA1 ((uchar *)tempbuff, l1 + l2, sha);
+     return *(qint64 *)(sha + 12);
+index 8afcebd..1297e3a 100644
+--- util/utils.h
++++ util/utils.h
+@@ -39,5 +39,5 @@ class LIBQTELEGRAMSHARED_EXPORT Utils : public QObject
+     static qint32 randomBytes(void *buffer, qint32 count);
+-    static qint32 serializeBignum(BIGNUM *b, char *buffer, qint32 maxlen);
++    static qint32 serializeBignum(const BIGNUM *b, char *buffer, qint32 maxlen);
+     static double getUTime(qint32 clockId);
+     static quint64 gcd (quint64 a, quint64 b);
+ 

@@ -1,0 +1,14 @@
+bin/sisc
+bin/srfi-22.sh
+bin/scheme-r4rs
+bin/scheme-r5rs
+bin/scheme-srfi-0
+bin/scheme-srfi-7
+bin/scheme-ieee-1178-1900
+%%DATADIR%%/build-heapjar.scm
+%%DATADIR%%/optional-args.scm
+%%DATADIR%%/sisc-lib.jar
+%%DATADIR%%/sisc-opt.jar
+%%DATADIR%%/sisc.jar
+%%DATADIR%%/sisc.shp
+%%DATADIR%%/slib.scm

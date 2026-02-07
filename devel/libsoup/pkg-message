@@ -1,0 +1,10 @@
+[
+{
+  type: install
+  message: <<EOM
+libsoup can use NTLM authentication if it is compiled
+with the SMB option. To use it, you must install a
+port that provides NTLM, like net/samba412 or net/samba413.
+EOM
+}
+]

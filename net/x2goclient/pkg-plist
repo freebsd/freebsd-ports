@@ -1,0 +1,12 @@
+bin/x2goclient
+share/man/man1/x2goclient.1.gz
+share/applications/x2goclient.desktop
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO.GPGCARD
+share/icons/hicolor/128x128/apps/x2goclient.png
+share/icons/hicolor/16x16/apps/x2goclient.png
+share/icons/hicolor/32x32/apps/x2goclient.png
+share/icons/hicolor/48x48/apps/x2goclient.png
+share/icons/hicolor/64x64/apps/x2goclient.png
+%%DATADIR%%/icons/x2goclient.xpm
+%%DATADIR%%/icons/x2goclient.png
+%%DATADIR%%/icons/x2gosession.png

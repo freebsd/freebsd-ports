@@ -1,0 +1,21 @@
+Fix the SSE2-specific code for clang -- it differs from GCC in this. 
+--- sha384.c	2009-06-18 05:14:35.000000000 -0400
++++ sha384.c	2014-04-27 17:15:13.000000000 -0400
+@@ -131,6 +131,6 @@
+ 	#ifdef OPTIMIZE_SSE2 
+ 	
+-	# if defined(_MSC_VER) || defined (__INTEL_COMPILER)
+-	static const __m64 MASK = { 0x00FF00FF00FF00FF00 };
++	# if defined(_MSC_VER) || defined (__INTEL_COMPILER) || defined(__clang__)
++	static const __m64 MASK = { 0x00FF00FF00FF00FF };
+ 	# elif defined(__GNUC__)
+ 	static const __m64 MASK = { 0x00FF00FF, 0x00FF00FF };
+--- sha512.c	2009-06-18 05:15:57.000000000 -0400
++++ sha512.c	2014-04-27 17:15:47.000000000 -0400
+@@ -131,5 +131,5 @@
+ {
+ 	#ifdef OPTIMIZE_SSE2
+-	# if defined(_MSC_VER) || defined(__INTEL_COMPILER)
++	# if defined(_MSC_VER) || defined(__INTEL_COMPILER) || defined(__clang__)
+ 	static const __m64 MASK = { 0x00FF00FF00FF00FF };
+ 	# elif defined(__GNUC__)

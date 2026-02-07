@@ -1,0 +1,38 @@
+getPeer() has been obsolete for a while and is removed in JDK-23...
+
+	-mi
+
+--- src/free/jin/ui/AbstractUiProvider.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/ui/AbstractUiProvider.java	2025-12-15 14:54:53.050790000 -0500
+@@ -266,5 +266,5 @@
+     // Bugfix for Java bug 4464714 - setExtendedState only works once the
+     // the window is realized.
+-    if (frame.getPeer() == null)
++    if (!frame.isDisplayable())
+       frame.addNotify();
+    
+--- src/free/jin/ui/AbstractPluginUIContainer.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/jin/ui/AbstractPluginUIContainer.java	2025-12-15 14:54:45.330812000 -0500
+@@ -246,5 +246,5 @@
+     // This makes the insets of the frame known, which is important for 
+     // determining its real preferred size
+-    if ((container instanceof Frame) && (container.getPeer() == null))
++    if (container instanceof Frame && !container.isDisplayable())
+       ((Frame)container).pack();
+ 
+--- src/free/jin/console/Console.java	2007-03-04 19:54:59.000000000 -0500
++++ src/free/jin/console/Console.java	2025-12-15 15:06:29.671569000 -0500
+@@ -686,5 +686,5 @@
+     if (scrollToBottom && didScrollToBottom){
+       // This may be false if the frame containing us (for example), is iconified
+-      if (getPeer() != null){
++      if (isDisplayable()) {
+         didScrollToBottom = false;
+         SwingUtilities.invokeLater(new BottomScroller(numAddToOutputCalls));
+@@ -977,5 +977,5 @@
+ 
+     String fontFamily = (String)prefs.lookup("font-family." + textType, "Monospaced");
+-    Integer fontSize = (Integer)prefs.lookup("font-size." + textType, new Integer(14));
++    Integer fontSize = (Integer)prefs.lookup("font-size." + textType, 14);
+     Boolean bold = (Boolean)prefs.lookup("font-bold." + textType, Boolean.FALSE);
+     Boolean italic = (Boolean)prefs.lookup("font-italic." + textType, Boolean.FALSE);

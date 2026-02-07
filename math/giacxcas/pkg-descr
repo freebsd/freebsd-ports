@@ -1,0 +1,16 @@
+General purpose computer algebra system released under GPLv3. French
+documentation by Renee De Graeve is for non-commercial use only. The
+package consists of:
+
+ - C++ library (libgiac). It is build on C and C++ libraries: PARI,
+   NTL (arithmetic), CoCoA (Groebner basis), GSL (numerics), GMP
+   (big integers), MPFR (bigfloats) and provides algorithms for basic
+   polynomial operations (product, GCD) and symbolic computations
+   (simplifications, limits/series, symbolic integration, summation,
+   ...). The library can be configured to accept Maple or TI syntax
+   to ease the transition for users of these systems.
+ - Command line interpreter (icas or giac). It can be called from
+   texmacs.
+ - FLTK-based GUI (xcas). It is a GUI for symbolic computation with
+   several modules added: 2-d and 3-d graphics, dynamic 2-d and 3-d
+   geometry (exact or numeric), spreadsheet, programming environment.

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# PROVIDE: symon
+# REQUIRE: NETWORKING SERVERS
+
+. /etc/rc.subr
+
+name="symon"
+rcvar=symon_enable
+command="%%PREFIX%%/bin/symon"
+
+symon_enable=${symon_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"
+

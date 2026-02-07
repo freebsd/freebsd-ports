@@ -1,0 +1,42 @@
+--- configure.ac.orig	2015-08-03 16:39:24 UTC
++++ configure.ac
+@@ -1371,8 +1371,8 @@ unset ac_cv_header_ft2build_h
+ 
+ if test x"$grub_mkfont_excuse" = x ; then
+   # Check for freetype libraries.
+-  freetype_cflags=`$FREETYPE --cflags`
+-  freetype_libs=`$FREETYPE --libs`
++  freetype_cflags=`pkg-config freetype2 --cflags`
++  freetype_libs=`pkg-config freetype2 --libs`
+   SAVED_CPPFLAGS="$CPPFLAGS"
+   SAVED_LIBS="$LIBS"
+   CPPFLAGS="$CPPFLAGS $freetype_cflags"
+@@ -1432,8 +1432,8 @@ fi
+ 
+ if test x"$grub_build_mkfont_excuse" = x ; then
+   # Check for freetype libraries.
+-  build_freetype_cflags=`$BUILD_FREETYPE --cflags`
+-  build_freetype_libs=`$BUILD_FREETYPE --libs`
++  build_freetype_cflags=`pkg-config freetype2 --cflags`
++  build_freetype_libs=`pkg-config freetype2 --libs`
+   SAVED_CPPFLAGS_2="$CPPFLAGS"
+   SAVED_LIBS="$LIBS"
+   CPPFLAGS="$CPPFLAGS $build_freetype_cflags"
+@@ -1488,7 +1488,7 @@ fi
+ 
+ if test x"$starfield_excuse" = x; then
+    for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
+-     for dir in . /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/truetype/ttf-dejavu /usr/share/fonts/dejavu /usr/share/fonts/truetype; do
++     for dir in . /usr/src /usr/local/lib/X11/fonts/dejavu /usr/share/fonts/truetype/ttf-dejavu /usr/local/share/fonts/dejavu /usr/share/fonts/truetype; do
+         if test -f "$dir/DejaVuSans.$ext"; then
+           DJVU_FONT_SOURCE="$dir/DejaVuSans.$ext"
+           break 2
+@@ -1510,7 +1510,7 @@ AC_SUBST([DJVU_FONT_SOURCE])
+ FONT_SOURCE=
+ 
+ for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
+-  for dir in . /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/unifont /usr/share/fonts/uni /usr/share/fonts/truetype/unifont /usr/share/fonts/misc; do
++  for dir in . /usr/src /usr/local/lib/X11/fonts/local /usr/local/share/fonts/unifont /usr/local/share/fonts/gnu-unifont /usr/share/fonts/truetype/unifont /usr/share/fonts/misc; do
+     if test -f "$dir/unifont.$ext"; then
+       md5="$(md5sum "$dir/unifont.$ext"|awk '{ print $1; }')"
+       # PCF and BDF from version 6.3 isn't hanled properly by libfreetype.

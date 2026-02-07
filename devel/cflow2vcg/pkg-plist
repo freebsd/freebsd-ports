@@ -1,0 +1,16 @@
+bin/cflow2dot
+bin/cflow2vcg
+%%PORTDOCS%%%%DOCSDIR%%/cflow2dot.refentry.sgm
+%%PORTDOCS%%%%DOCSDIR%%/cflow2dot_man.sgm
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.cflow
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.dsl
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.html
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.refentry.sgm
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.rtf
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.sgm
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.txt
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg.vcg
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg_ext.jpg
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg_int.jpg
+%%PORTDOCS%%%%DOCSDIR%%/cflow2vcg_man.sgm

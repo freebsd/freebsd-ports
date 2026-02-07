@@ -1,0 +1,17 @@
+PORTNAME=	wmi-lite
+PORTVERSION=	1.0.5
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	renchap@cocoa-x.com
+COMMENT=	Lightweight utility over win32ole for accessing basic WMI
+WWW=		https://github.com/opscode/wmi-lite
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
+
+USES=		gem
+
+.include <bsd.port.mk>

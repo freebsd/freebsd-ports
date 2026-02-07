@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Tenebrae has been installed.
+
+If you're having sound problems, try running it with parameter "-sndspeed
+<speed>", where <speed> can be 22050 or 44100, for example.
+
+If you're having water rendering problems, try setting variable "r_novis"
+to "1" (one).
+EOM
+}
+]

@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2017-02-03 19:42:43 UTC
++++ CMakeLists.txt
+@@ -45,7 +45,7 @@ if (NOT SZIP_INSTALL_DATA_DIR)
+       set (SZIP_INSTALL_FWRK_DIR ${CMAKE_INSTALL_FRAMEWORK_PREFIX})
+     endif ()
+     set (SZIP_INSTALL_DATA_DIR share)
+-    set (SZIP_INSTALL_CMAKE_DIR share/cmake)
++    set (SZIP_INSTALL_CMAKE_DIR lib/cmake/szip)
+   else ()
+     set (SZIP_INSTALL_DATA_DIR ".")
+     set (SZIP_INSTALL_CMAKE_DIR cmake)
+@@ -326,7 +326,7 @@ endif ()
+ #-----------------------------------------------------------------------------
+ # Add Document File(s) to CMake Install
+ #-----------------------------------------------------------------------------
+-if (NOT SZIP_EXTERNALLY_CONFIGURED)
++if (FALSE AND NOT SZIP_EXTERNALLY_CONFIGURED)
+   install (
+       FILES
+           ${SZIP_SOURCE_DIR}/COPYING

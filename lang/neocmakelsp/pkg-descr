@@ -1,0 +1,3 @@
+neocmakelsp is a language server protocol implementation for cmake.
+
+It allows cmake-specific editing in your editor or EDI.

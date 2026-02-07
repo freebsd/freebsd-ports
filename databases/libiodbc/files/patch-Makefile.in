@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2024-09-09 22:32:56 UTC
++++ Makefile.in
+@@ -412,7 +412,7 @@ AUTOMAKE_OPTIONS = gnu dist-zip 1.9.6
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = gnu dist-zip 1.9.6
+-SUBDIRS = admin bin etc man include iodbcinst iodbc iodbcadm drvproxy samples
++SUBDIRS = admin bin etc man include iodbcinst iodbc iodbcadm drvproxy
+ ACLOCAL_AMFLAGS = -I admin
+ EXTRA_DIST = \
+ 	$(srcdir)/IAFA-PACKAGE \

@@ -1,0 +1,11 @@
+%%ETCDIR%%/config_ndpmon.xml-dist
+sbin/ndpmon
+share/man/man8/ndpmon.8.gz
+%%DATADIR%%/config_ndpmon.dtd
+%%DATADIR%%/demopipeprogram.pl.sample
+%%DATADIR%%/neighbor_list.dtd
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/make-manuf
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/manuf.tmpl
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/wka.tmpl
+%%MACRESOLV%%%%DATADIR%%/plugins/mac_resolv/manuf
+var/ndpmon/neighbor_list.xml

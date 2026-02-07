@@ -1,0 +1,4 @@
+mkr is a command-line interface tool for the Mackerel API written in
+Go. mkr helps to automate tedious daily server operations to best
+leverage Mackerel's and Unix's tools. mkr output format is JSON, so it
+can be filtered with a JSON processor such as jq.

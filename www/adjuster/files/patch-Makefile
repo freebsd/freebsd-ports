@@ -1,0 +1,15 @@
+--- Makefile.orig	2024-02-23 13:59:10 UTC
++++ Makefile
+@@ -4,9 +4,9 @@ install:
+ 	$(INSTALL_SCRIPT) adjuster.py $(DESTDIR)/$(PREFIX)/bin/adjuster
+ 	$(INSTALL_SCRIPT) annogen.py $(DESTDIR)/$(PREFIX)/bin/annogen
+ 	$(INSTALL_SCRIPT) termlayout.py $(DESTDIR)/$(PREFIX)/bin/termlayout
+-	$(INSTALL_MAN) man/adjuster.1 $(DESTDIR)/$(PREFIX)/man/man1/
+-	$(INSTALL_MAN) man/annogen.1 $(DESTDIR)/$(PREFIX)/man/man1/
+-	$(INSTALL_MAN) man/termlayout.1 $(DESTDIR)/$(PREFIX)/man/man1/
++	$(INSTALL_MAN) man/adjuster.1 $(DESTDIR)/$(PREFIX)/share/man/man1/
++	$(INSTALL_MAN) man/annogen.1 $(DESTDIR)/$(PREFIX)/share/man/man1/
++	$(INSTALL_MAN) man/termlayout.1 $(DESTDIR)/$(PREFIX)/share/man/man1/
+ INSTALL_SCRIPT ?= cp
+ INSTALL_MAN ?= cp
+ DESTDIR ?= /usr

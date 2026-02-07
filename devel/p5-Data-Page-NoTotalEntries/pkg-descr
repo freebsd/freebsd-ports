@@ -1,0 +1,3 @@
+Data::Page::NoTotalEntries is a generic pager object, so it's very
+similar with Data::Page.  But so Data::Page::NoTotalEntries doesn't
+support $pager->total_entries and other some methods.

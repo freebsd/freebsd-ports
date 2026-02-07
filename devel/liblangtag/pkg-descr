@@ -1,0 +1,2 @@
+liblangtag is an interface library to access/deal with tags for identifying
+languages, which is described in RFC 5646.

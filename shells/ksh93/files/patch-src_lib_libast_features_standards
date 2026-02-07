@@ -1,0 +1,23 @@
+--- src/lib/libast/features/standards.orig	2020-02-08 10:39:38.000000000 -0800
++++ src/lib/libast/features/standards	2020-02-08 21:58:23.687268000 -0800
+@@ -1,5 +1,19 @@
+ set stdio
+-if tst note{ _ALL_SOURCE & _POSIX_SOURCE & _POSIX_C_SOURCE & _XOPEN_SOURCE & __EXTENSIONS__ works }end compile{
++# In FreeBSD, definitions like _POSIX_SOURCE and such are used to *limit*
++# functionality to known API; they don't enable anything. The general intent in
++# BSD is to enable everything by default (effectively, providing the
++# _KITCHEN_SINK_SOURCE mentioned below). So we look for that here, but stay
++# careful that we don't get fooled by presence of FreeBSD that underpins some
++# subsystems in Mac OS X; there are other Apple-specific portability hacks
++# elsewhere we should not interfere with.
++if tst note{ FreeBSD }end compile{
++		#include <sys/param.h>
++		#if !defined(__FreeBSD__) || defined(APPLE)
++		#error not a FreeBSD system
++		#endif
++	}end {
++	}
++elif tst note{ _ALL_SOURCE & _POSIX_SOURCE & _POSIX_C_SOURCE & _XOPEN_SOURCE & __EXTENSIONS__ works }end compile{
+ 		#define _ALL_SOURCE	1
+ 		#define _POSIX_SOURCE	1
+ 		#define _POSIX_C_SOURCE	21000101L

@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: e2guardian
+# REQUIRE: NETWORKING SERVERS squid clamav_clamd
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable e2guardian:
+# e2guardian_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable e2guardian.
+# e2guardian_flags (text):	Set e2guardian extra flags
+
+. /etc/rc.subr
+
+name=e2guardian
+rcvar=e2guardian_enable
+desc="e2guardian startup script"
+
+load_rc_config $name
+
+: ${e2guardian_enable:=NO}
+: ${e2guardian_config="%%PREFIX%%/etc/${name}/${name}.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+stop_postcmd="e2guardian_stop_postcmd"
+reload_cmd="e2guardian_reload_cmd"
+extra_commands="reload"
+
+command_args="-p $pidfile -f $e2guardian_config $e2guardian_flags"
+
+e2guardian_reload_cmd() {
+	if [ -f "${pidfile}" ]; then
+		${command} -g ${command_args}
+		echo "Reloading ${name}."
+	fi
+}
+
+e2guardian_stop_postcmd() {
+	rm ${pidfile}
+}
+
+run_rc_command "$1"

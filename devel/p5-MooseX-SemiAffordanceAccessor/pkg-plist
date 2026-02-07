@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/MooseX::SemiAffordanceAccessor.3.gz
+%%PERL5_MAN3%%/MooseX::SemiAffordanceAccessor::Role::Attribute.3.gz
+%%SITE_PERL%%/MooseX/SemiAffordanceAccessor.pm
+%%SITE_PERL%%/MooseX/SemiAffordanceAccessor/Role/Attribute.pm

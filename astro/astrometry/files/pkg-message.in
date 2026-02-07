@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Astrometry was successfully installed.
+
+You'll find this distribution under %%PREFIX%%.
+Examples are found under %%EXAMPLESDIR%%.
+See %%DOCSDIR%% for some info, more detailed at
+http://astrometry.net/use.html and http://astrometry.net/doc/readme.html.
+
+Although the code is released under a GPL license, you will also need
+to download some data files, and these are distributed under different
+licenses. Data files (indexes) should be stored under
+%%DATADIR%%/
+EOM
+}
+]

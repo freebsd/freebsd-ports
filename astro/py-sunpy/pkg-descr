@@ -1,0 +1,3 @@
+Sunpy is a Python software package that provides fundamental tools for
+accessing, loading and interacting with solar physics data in Python.
+It is the core library of the SunPy Project.

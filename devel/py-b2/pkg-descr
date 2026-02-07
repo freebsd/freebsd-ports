@@ -1,0 +1,6 @@
+B2 Cloud Storage is a cloud service for storing files in the cloud.
+Files are available for download at any time, either through the API
+or through a browser-compatible URL.
+
+This package provides Backblaze's official command line tool for
+accessing all of the capabilities of B2 Cloud Storage.

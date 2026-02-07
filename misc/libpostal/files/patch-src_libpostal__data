@@ -1,0 +1,13 @@
+--- src/libpostal_data.orig	2018-03-11 07:55:53 UTC
++++ src/libpostal_data
+@@ -83,9 +83,9 @@ download_multipart() {
+         else
+             max=$size;
+         fi;
+-        printf "%s\0%s\0%s\0%s\0%s\0" "$i" "$offset" "$max" "$url" "$part_filename"
++        printf "%s\0%s\0%s\0%s\0%s\0%s\0%s\0" "x" "$i" "$offset" "$max" "$url" "$part_filename"
+         offset=$((offset+CHUNK_SIZE))
+-    done | xargs -0 -n 5 -P $NUM_WORKERS sh -c "$DOWNLOAD_PART" --
++    done | xargs -0 -n 6 -P $NUM_WORKERS sh -c "$DOWNLOAD_PART" --
+ 
+     > $local_path

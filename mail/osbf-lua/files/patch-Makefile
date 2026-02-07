@@ -1,0 +1,24 @@
+--- Makefile.orig	2007-01-15 02:57:19.000000000 +0800
++++ Makefile	2014-08-27 10:57:44.239551223 +0800
+@@ -19,15 +19,15 @@ $(LIBNAME): $(OBJS)
+ 	$(CC) $(CFLAGS) $(LIB_OPTION) -o $(LIBNAME) $(OBJS) $(LIBS)
+ 
+ install: $(LIBNAME)
+-	mkdir -p $(LUA_LIBDIR)
++	mkdir -p $(DESTDIR)$(LUA_LIBDIR)
+ 	strip $(LIBNAME)
+-	cp $(LIBNAME) $(LUA_LIBDIR)
+-	(cd $(LUA_LIBDIR) ; rm -f $T$(LIB_EXT) ; ln -fs $(LIBNAME) $T$(LIB_EXT))
++	cp $(LIBNAME) $(DESTDIR)$(LUA_LIBDIR)
++	(cd $(DESTDIR)$(LUA_LIBDIR) ; rm -f $T$(LIB_EXT) ; ln -fs $(LIBNAME) $T$(LIB_EXT))
+ 
+ install_spamfilter:
+-	mkdir -p $(SPAMFILTER_DIR)
+-	cp spamfilter/* $(SPAMFILTER_DIR)
+-	chmod 755 $(SPAMFILTER_DIR)/*.lua
++	mkdir -p $(DESTDIR)$(SPAMFILTER_DIR)
++	cp spamfilter/* $(DESTDIR)$(SPAMFILTER_DIR)
++	chmod 755 $(DESTDIR)$(SPAMFILTER_DIR)/*.lua
+ 
+ clean:
+ 	rm -f $L $(LIBNAME) $(OBJS) *.so *~ spamfilter/*~

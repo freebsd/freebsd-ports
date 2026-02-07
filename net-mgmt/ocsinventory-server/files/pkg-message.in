@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+ocsinventory-ng server is installed
+
+You still need to (pick one):
+* edit files in %%ETCDIR%% and link them to apache's
+  Includes/ directory
+EOM
+}
+]

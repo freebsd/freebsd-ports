@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: rekor
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# rekor_enable (bool):	Set it to YES to enable rekor.
+#			Default is "NO".
+# rekor_user (user):	Set user to run rekor.
+#			Default is "rekor".
+# rekor_group (group):	Set group to run rekor.
+#			Default is "rekor".
+# rekor_config (file):	Set rekor config file.
+#			Default is "%%PREFIX%%/etc/rekor/rekor-server.yaml".
+
+. /etc/rc.subr
+
+name=rekor-server
+rcvar=rekor_enable
+
+load_rc_config $name
+
+: ${rekor_enable:="NO"}
+: ${rekor_user:="rekor"}
+: ${rekor_group:="rekor"}
+: ${rekor_config:="%%PREFIX%%/etc/rekor/rekor-server.yaml"}
+
+pidfile=/var/run/rekor.pid
+procname="%%PREFIX%%/bin/rekor-server"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -p ${pidfile} ${procname} server -config=${rekor_config}"
+
+start_precmd=rekor_startprecmd
+required_files="$rekor_config"
+
+rekor_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${rekor_user} -g ${rekor_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"

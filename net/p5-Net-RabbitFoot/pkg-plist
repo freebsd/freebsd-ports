@@ -1,0 +1,15 @@
+bin/rabbit_foot
+%%PERL5_MAN3%%/Net::RabbitFoot.3.gz
+%%SITE_PERL%%/Net/RabbitFoot.pm
+%%SITE_PERL%%/Net/RabbitFoot/Channel.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Command/bind_queue.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Command/declare_exchange.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Command/declare_queue.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Command/delete_exchange.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Command/delete_queue.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Command/purge_queue.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Command/unbind_queue.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Role/Command.pm
+%%SITE_PERL%%/Net/RabbitFoot/Cmd/Role/Config.pm
+%%SITE_PERL%%/auto/share/dist/Net-RabbitFoot/fixed_amqp0-8.xml

@@ -1,0 +1,64 @@
+@comment include/EGL/egl.h
+@comment include/EGL/eglext_angle.h
+@comment include/EGL/eglext.h
+@comment include/EGL/eglmesaext.h
+@comment include/EGL/eglplatform.h
+include/GL/internal/dri_interface.h
+@comment include/GL/gl.h
+@comment include/GL/glcorearb.h
+@comment include/GL/glext.h
+@comment include/GLES/egl.h
+@comment include/GLES/gl.h
+@comment include/GLES/glext.h
+@comment include/GLES/glplatform.h
+@comment include/GLES2/gl2.h
+@comment include/GLES2/gl2ext.h
+@comment include/GLES2/gl2platform.h
+@comment include/GLES3/gl3.h
+@comment include/GLES3/gl31.h
+@comment include/GLES3/gl32.h
+@comment include/GLES3/gl3ext.h
+@comment include/GLES3/gl3platform.h
+@comment include/KHR/khrplatform.h
+@comment include/gbm.h
+%%crocus%%lib/dri/crocus_dri.so
+%%i915%%lib/dri/i915_dri.so
+%%iris%%lib/dri/iris_dri.so
+%%panfrost%%lib/dri/panfrost_dri.so
+%%panfrost%%lib/dri/rockchip_dri.so
+%%r300%%lib/dri/r300_dri.so
+%%r600%%lib/dri/r600_dri.so
+%%radeonsi%%lib/dri/radeonsi_dri.so
+%%svga%%lib/dri/vmwgfx_dri.so
+%%swrast%%lib/dri/kms_swrast_dri.so
+%%swrast%%lib/dri/swrast_dri.so
+%%zink%%lib/dri/zink_dri.so
+@comment lib/libEGL.so
+@comment lib/libEGL.so.1
+@comment lib/libEGL.so.1.0.0
+@comment lib/libgbm.so
+@comment lib/libgbm.so.1
+@comment lib/libgbm.so.1.0.0
+@comment lib/libglapi.so
+@comment lib/libglapi.so.0
+@comment lib/libglapi.so.0.0.0
+@comment lib/libGLESv1_CM.so
+@comment lib/libGLESv1_CM.so.1
+@comment lib/libGLESv1_CM.so.1.1.0
+@comment lib/libGLESv2.so
+@comment lib/libGLESv2.so.2
+@comment lib/libGLESv2.so.2.0.0
+%%anv%%lib/libvulkan_intel.so
+%%radv%%lib/libvulkan_radeon.so
+%%swrast_vk%%lib/libvulkan_lvp.so
+libdata/pkgconfig/dri.pc
+@comment libdata/pkgconfig/egl.pc
+@comment libdata/pkgconfig/gbm.pc
+@comment libdata/pkgconfig/glesv1_cm.pc
+@comment libdata/pkgconfig/glesv2.pc
+share/drirc.d/00-mesa-defaults.conf
+%%radv%%share/drirc.d/00-radv-defaults.conf
+share/drirc.d/01-freebsd.conf
+%%anv%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
+%%radv%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
+%%swrast_vk%%share/vulkan/icd.d/lvp_icd.%%ARCH%%.json

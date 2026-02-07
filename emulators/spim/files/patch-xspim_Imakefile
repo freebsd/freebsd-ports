@@ -1,0 +1,37 @@
+--- xspim/Imakefile.orig	2010-01-09 14:22:58.000000000 +0900
++++ xspim/Imakefile	2010-01-17 01:47:48.000000000 +0900
+@@ -43,13 +43,13 @@
+ #
+ 
+ # Full path for the directory that will hold the executable files:
+-BIN_DIR = /usr/local/bin
++BIN_DIR = ${PREFIX}/bin
+ 
+ # Full path for the directory that will hold the exception handler:
+-EXCEPTION_DIR = /usr/local/lib/spim
++EXCEPTION_DIR = ${PREFIX}/share/spim
+ 
+ # Full path for the directory that will hold the man files:
+-MAN_DIR = /usr/local/man/en
++MAN_DIR = ${MANPREFIX}/man/man1
+ 
+ 
+ # If you have flex, use it instead of lex.  If you use flex, define this
+@@ -101,7 +101,7 @@
+ DEPLIBS = XawClientDepLibs
+ LOCALLIBS = XawClientLibs
+ 
+-CDEBUGFLAGS = -g
++#CDEBUGFLAGS = -g
+ 
+ INCLUDES = -I. -I$(CPU_DIR)
+ 
+@@ -123,7 +123,7 @@
+ 	./Configure
+ 
+ InstallProgram(xspim,$(BIN_DIR))
+-InstallNonExec($(CPU_DIR)/exceptions.s,$(EXCEPTION_DIR)/exceptions.s)
++#InstallNonExec($(CPU_DIR)/exceptions.s,$(EXCEPTION_DIR)/exceptions.s)
+ #InstallManPage($(DOC_DIR)/xspim,$(MAN_DIR))
+ 
+ 

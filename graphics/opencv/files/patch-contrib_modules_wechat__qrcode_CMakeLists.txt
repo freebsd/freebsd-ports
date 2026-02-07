@@ -1,0 +1,26 @@
+--- contrib/modules/wechat_qrcode/CMakeLists.txt.orig	2021-07-18 07:59:28 UTC
++++ contrib/modules/wechat_qrcode/CMakeLists.txt
+@@ -23,17 +23,12 @@ set(model_names detect sr)
+ 
+ foreach(model_name ${model_names})
+     foreach(model_type ${model_types})
+-        ocv_download(FILENAME ${model_name}.${model_type}
+-                        HASH ${hash_${model_name}_${model_type}}
+-                        URL
+-                        "${OPENCV_WECHAT_QRCODE_URL}"
+-                        "$ENV{OPENCV_WECHAT_QRCODE_URL}"
+-                        "https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/${wechat_qrcode_commit_hash}/"
+-                        DESTINATION_DIR "${CMAKE_BINARY_DIR}/downloads/wechat_qrcode"
+-                        ID "wechat_qrcode"
+-                        RELATIVE_URL
+-                        STATUS res)
+-        if(NOT res)
++        set(DESTINATION_DIR "${CMAKE_BINARY_DIR}/downloads/wechat_qrcode")
++        set(FILENAME ${DESTINATION_DIR}/${model_name}.${model_type})
++        if(EXISTS ${FILENAME})
++            message("++ WeChatQRCode: Using prefetched ${model_name}.${model_type}")
++        else()
++            message(WARNING "++ WeChatQRCode: Could not find ${name_${id}} in ${FILENAME}")
+             message(WARNING "WeChatQRCode: Can't get ${model_name} ${model_type} file for wechat qrcode.")
+         endif()
+     endforeach()

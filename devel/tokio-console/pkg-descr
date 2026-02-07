@@ -1,0 +1,9 @@
+tokio-console is an implementation of TurboWish/tokio-console, a diagnostics
+and debugging tool for asynchronous Rust programs. the diagnostic toolkit
+consists of multiple components:
+* a wire protocol for streaming diagnostic data from instrumented applications
+  to diagnostic tools
+* instrumentation for collecting diagnostic data from a process and exposing it
+  over the wire format
+* tools for displaying and exploring diagnostic data, implemented as gRPC
+  clients using the console wire protocol

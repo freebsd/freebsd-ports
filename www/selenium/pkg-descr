@@ -1,0 +1,7 @@
+Selenium Standalone Server allows browser testing. It automates browsers.
+
+Selenium tests run directly in a browsers, just as real users do.
+
+What you do with that power is entirely up to you.
+Primarily, it is for automating web applications for testing purposes,
+but is certainly not limited to just that.

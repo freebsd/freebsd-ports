@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	2023-03-07 18:02:02 UTC
++++ etc/Makefile.in
+@@ -1358,7 +1358,7 @@ tex = @tex@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-ogonkifydir = $(datadir)/ogonkify
++ogonkifydir = $(datadir)/a2ps/ogonkify
+ libpath = $(pkgdatadir)/sheets:$(pkgdatadir)/ps:$(pkgdatadir)/encoding:$(pkgdatadir)/afm:$(ogonkifydir)/afm:$(pkgdatadir)/ppd:$(pkgdatadir)/fonts:$(ogonkifydir)/fonts:$(pkgdatadir)
+ pkgdata_DATA = README
+ dsysconf = $(DESTDIR)$(sysconfdir)

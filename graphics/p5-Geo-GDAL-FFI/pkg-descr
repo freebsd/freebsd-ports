@@ -1,0 +1,2 @@
+Geo::GDAL::FFI is a foreign function interface to the GDAL geospatial data
+access library.

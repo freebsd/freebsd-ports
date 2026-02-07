@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-07-08 00:20:16 UTC
++++ CMakeLists.txt
+@@ -76,7 +76,7 @@ if(EXISTS ${CMAKE_SOURCE_DIR}/doc/CMakeLists.txt)
+ endif()
+ 
+ if(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)
+-  set(DEAL_II_HAVE_TESTS_DIRECTORY TRUE)
++  set(DEAL_II_HAVE_TESTS_DIRECTORY ${FREEBSD_ENABLE_TESTS})
+ endif()
+ 
+ #

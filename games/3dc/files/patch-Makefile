@@ -1,0 +1,35 @@
+--- Makefile.orig	Thu Apr 11 16:23:53 1996
++++ Makefile	Fri Jan 26 23:23:12 2007
+@@ -13,7 +13,7 @@
+ # If your system doesn't have a unique define already, define one here.
+ 
+ # Linux
+-CONFIGS=-DHAVE_UNISTD_H -DHAVE_ULIMIT_H
++CONFIGS=-DHAVE_UNISTD_H
+ # OSF/Digital Unix/HPUX
+ #CONFIGS=-fPIC -DHAVE_UNISTD_H -DHAVE_ULIMIT_H
+ # Sun
+@@ -27,19 +27,19 @@
+ #   can send me opinions at mailto:paulh@euristix.ie
+ PREFS=-DUNDO_ANY_MOVE
+ 
+-CC=gcc
++#CC=gcc
+ #DEBUG=-g -Wall -DDEBUG
+ DEBUG=
+-COPTIONS=-O2 -fstrength-reduce -fpcc-struct-return -DVERSION=\"${VERSION}\"
++COPTIONS=-DVERSION=\"${VERSION}\"
+ 
+-CFLAGS=${COPTIONS} ${DEBUG} ${CONFIGS} ${PREFS} -I../include
++CFLAGS+=${COPTIONS} ${DEBUG} ${CONFIGS} ${PREFS} -I../include -I${LOCALBASE}/include
+ LDOPTIONS=
+ 
+ # LDLIBS should include the name of your X library path if not /usr/lib;
+ # and I definitely recommend getting Xaw3d.  The extra appearance doesn't
+ # appear much but it looks much better when it does.
+ # Linux
+-LDLIBS=-L/usr/X11R6/lib -lXpm -lXaw3d -lXmu -lXext -lXt -lX11
++LDLIBS=-L${LOCALBASE}/lib -lXpm -lXaw3d -lXmu -lXext -lXt -lX11 -Wl,-rpath,${LOCALBASE}/lib
+ # Sun
+ #LDLIBS=-lXpm -lXaw -lXmu -lXext -lXt -lX11 -lm
+ 

@@ -1,0 +1,30 @@
+--- vncviewer/Imakefile.orig	2003-03-12 16:20:34 UTC
++++ vncviewer/Imakefile
+@@ -10,17 +10,12 @@ XCOMM seems to cause problems on Digital Unix.
+ DEFINES = -DMITSHM
+ #endif
+ 
+-ZLIB_INC = -I/usr/local/include
+-JPEG_INC = -I/usr/local/include
++ZLIB_INC = -I%%LOCALBASE%%/include
++JPEG_INC = -I%%LOCALBASE%%/include
+ INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/include
+ VNCAUTH_LIB = ../libvncauth/libvncauth.a
+-ZLIB_LIB = -L/usr/local/lib -lz
+-#ifdef OSF1Architecture
+-XCOMM Avoid linking with different libjpeg in /usr/shlib under Tru64.
+-JPEG_LIB = /usr/local/lib/libjpeg.a
+-#else
+-JPEG_LIB = -L/usr/local/lib -ljpeg
+-#endif
++ZLIB_LIB = -L%%LOCALBASE%%/lib -lz
++JPEG_LIB = -L%%LOCALBASE%%/lib -ljpeg
+ 
+ DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB)
+ LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
+@@ -45,4 +40,4 @@ SRCS = \
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+-ComplexProgramTarget(vncviewer)
++ComplexProgramTargetNoMan(vncviewer)

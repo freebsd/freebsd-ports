@@ -1,0 +1,10 @@
+bin/svm-predict
+bin/svm-scale
+bin/svm-train
+include/svm.h
+lib/libsvm.so
+lib/libsvm.so.2
+%%DATADIR%%/checkdata.py
+%%DATADIR%%/easy.py
+%%DATADIR%%/grid.py
+%%DATADIR%%/subset.py

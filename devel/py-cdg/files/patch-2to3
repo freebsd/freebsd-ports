@@ -1,0 +1,16 @@
+--- cdg/__init__.py.orig	2017-07-20 18:17:28 UTC
++++ cdg/__init__.py
+@@ -31,11 +31,11 @@ def load(stream, filename):
+         cg = yaml.load(stream, Loader=Loader)
+ 
+     else:
+-        raise ValueError, 'Unhandled file type: %s' % filename
++        raise ValueError('Unhandled file type: %s' % filename)
+ 
+     graph = networkx.DiGraph(comment='Callgraph of %s' % filename)
+ 
+-    for (name, props) in cg['functions'].items():
++    for (name, props) in list(cg['functions'].items()):
+         graph.add_node(name)
+ 
+         for (k, v) in props['attributes'] if 'attributes' in props else []:

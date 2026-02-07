@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: htpdate
+# REQUIRE: NETWORKING syslogd
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable htpdate:
+#
+#  htpdate_enable="YES"
+
+
+. /etc/rc.subr
+
+name=htpdate
+desc="HTTP Time Protocol daemon"
+rcvar=htpdate_enable
+
+load_rc_config htpdate
+
+: ${htpdate_enable:="NO"}
+: ${htpdate_servers:="www.example.com"}
+: ${htpdate_flags:="-l -s -D"}
+
+start_precmd=htpdate_prestart
+command="%%PREFIX%%/bin/htpdate"
+command_args="${htpdate_servers}"
+
+htpdate_prestart()
+{
+	local _pidfile="/var/run/htpdate.pid"
+
+	if [ -z "$(check_process "${command}")" ]; then
+		rm -f -- "${_pidfile}"
+	fi
+}
+
+run_rc_command "$1"

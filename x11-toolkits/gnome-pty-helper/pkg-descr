@@ -1,0 +1,2 @@
+Gnome-pty-helper is a backend executable that provides access to the utmp
+and wtmp files for vte-based terminal applications such as gnome-terminal.

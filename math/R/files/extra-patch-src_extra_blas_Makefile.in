@@ -1,0 +1,29 @@
+--- src/extra/blas/Makefile.in.orig	2024-05-01 15:06:18 UTC
++++ src/extra/blas/Makefile.in
+@@ -25,7 +25,7 @@ Rblas_la = libRblas$(R_DYLIB_EXT)
+ Rblas_la = libRblas$(R_DYLIB_EXT)
+ ## @RBLAS_LDFLAGS@ is used on macOS
+ ## first for internal BLAS
+-Rblas_la_LIBADD = @RBLAS_LDFLAGS@ $(FLIBS_IN_SO)
++Rblas_la_LIBADD = @RBLAS_LDFLAGS@ -Wl,-soname,libRblas.so.%%MAJORVER%% $(FLIBS_IN_SO)
+ ## then external one
+ Rblas_la_LIBADD0 = @RBLAS_LDFLAGS@
+ 
+@@ -66,6 +66,8 @@ Rblas_install: $(Rblas_la)
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
+ 	@$(SHELL) $(top_srcdir)/tools/copy-if-change $(Rblas_la) \
+ 	  "$(DESTDIR)$(Rexeclibdir)/$(Rblas_la)"
++	@cd $(DESTDIR)$(Rexeclibdir) && ln -s $(Rblas_la) libRblas.so.%%MAJORVER%%
++	@cd $(DESTDIR)$(Rexeclibdir) && ln -s $(Rblas_la) libRblas.so.%%FULLVER%%
+ 
+ Rblas_install-strip: $(Rblas_la)
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
+@@ -73,6 +75,8 @@ Rblas_install-strip: $(Rblas_la)
+ 	@if test -n "$(STRIP_SHARED_LIB)"; then \
+ 	  $(STRIP_SHARED_LIB) "$(DESTDIR)$(Rexeclibdir)/$(Rblas_la)" ;\
+ 	fi
++	@cd $(DESTDIR)$(Rexeclibdir) && ln -s $(Rblas_la) libRblas.so.%%MAJORVER%%
++	@cd $(DESTDIR)$(Rexeclibdir) && ln -s $(Rblas_la) libRblas.so.%%FULLVER%%
+ 
+ mostlyclean: clean
+ clean:

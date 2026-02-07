@@ -1,0 +1,7 @@
+Statistics::OLS computes the estimated slope and intercept of the
+regression line, their T-statistics, R squared, standard error of the
+regression and the Durbin-Watson statistic. It can also return the
+residuals.
+
+-Anton
+<tobez@FreeBSD.org>

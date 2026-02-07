@@ -1,0 +1,3 @@
+@dir(%%USER%%,%%GROUP%%) etc/dnscrypt-proxy
+@sample %%ETCDIR%%/dnscrypt-proxy.toml.sample
+sbin/dnscrypt-proxy

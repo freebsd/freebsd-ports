@@ -1,0 +1,11 @@
+TIMESTAMP = 1765878495
+SHA256 (akb825-ModularShaderLanguage-v1.8.2_GH0.tar.gz) = 997b4d7ebdfaea9e9d5ffeb528dfcd0fc00497f60dcba9d51cf09db2b22e4779
+SIZE (akb825-ModularShaderLanguage-v1.8.2_GH0.tar.gz) = 256321
+SHA256 (akb825-glslang-3d95218_GH0.tar.gz) = 9be259fe800bf0793b815cdc36285d4169252d79e4a0038e52a67547dc69369a
+SIZE (akb825-glslang-3d95218_GH0.tar.gz) = 4244665
+SHA256 (KhronosGroup-SPIRV-Cross-b8bd9d5_GH0.tar.gz) = 05c9d3ccfca81beca4615273a5d1b8b33812b5083949421b1ddc2a2bf87e59a6
+SIZE (KhronosGroup-SPIRV-Cross-b8bd9d5_GH0.tar.gz) = 1959934
+SHA256 (akb825-SPIRV-Tools-89d2296_GH0.tar.gz) = cad8ab0d8d5e5f0c0e9074872de417c8e7523dbdafcd14622f73bedaa952aa48
+SIZE (akb825-SPIRV-Tools-89d2296_GH0.tar.gz) = 3390266
+SHA256 (KhronosGroup-SPIRV-Headers-b824a46_GH0.tar.gz) = f5a32d535a3aef30ea080a98097cb8fc6b3c842ae79bb4fb1abe46afdb74d3f4
+SIZE (KhronosGroup-SPIRV-Headers-b824a46_GH0.tar.gz) = 558317

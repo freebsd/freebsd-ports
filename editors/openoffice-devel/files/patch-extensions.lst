@@ -1,0 +1,21 @@
+--- extensions.lst.orig	2019-02-19 00:04:48 UTC
++++ extensions.lst
+@@ -38,6 +38,18 @@
+ #[ language=all && ENABLE_XXX ]
+ #	file://XXX.oxt
+ 
++# PDF Import extension
++[ language=all && ENABLE_PDFIMPORT=YES ]
++    file://pdfimport/pdfimport.oxt
++
++# Report Builder extension
++[ language=all && ENABLE_REPORTBUILDER=YES ]
++    file://reportbuilder/reportbuilder.oxt
++
++# Wiki Publisher extension
++[ language=all && ENABLE_MEDIAWIKI=YES ]
++    file://swext/wiki-publisher.oxt
++
+ # Asturian dictionary
+ [ language=ast ]
+ 	5d27b496b3e194f01f0afae82c226b64 https://sourceforge.net/projects/aoo-extensions/files/3932/3/ort_ast_20190216_1129.oxt/download "dict-ast.oxt"

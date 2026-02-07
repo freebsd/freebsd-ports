@@ -1,0 +1,7 @@
+lib/libev.so
+lib/libev.so.4
+lib/libev.so.4.0.0
+libdata/pkgconfig/libev.pc
+include/ev.h
+include/ev++.h
+share/man/man3/ev.3.gz

@@ -1,0 +1,5 @@
+bin/xcurses-config
+include/xcurses/curses.h
+include/xcurses/panel.h
+lib/libXCurses.a
+lib/libXCurses.so

@@ -1,0 +1,13 @@
+GNUstep/System/Applications/batmon.app/Resources/BatMon_icon.tif
+GNUstep/System/Applications/batmon.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/batmon.app/Resources/LICENSE
+GNUstep/System/Applications/batmon.app/Resources/README
+GNUstep/System/Applications/batmon.app/Resources/batmon.desktop
+GNUstep/System/Applications/batmon.app/Resources/batmon.gorm/data.classes
+GNUstep/System/Applications/batmon.app/Resources/batmon.gorm/data.info
+GNUstep/System/Applications/batmon.app/Resources/batmon.gorm/objects.gorm
+GNUstep/System/Applications/batmon.app/Resources/small_battery.tif
+GNUstep/System/Applications/batmon.app/Resources/small_plug.tif
+GNUstep/System/Applications/batmon.app/batmon
+GNUstep/System/Applications/batmon.app/stamp.make
+GNUstep/System/Tools/batmon

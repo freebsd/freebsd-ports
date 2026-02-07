@@ -1,0 +1,12 @@
+--- ../docbook-utils-0.6.14.orig/doc/HTML/Makefile.in	Wed Feb 11 14:16:07 2004
++++ doc/HTML/Makefile.in	Mon May  3 20:12:37 2004
+@@ -297,7 +297,7 @@
+ 		$(top_srcdir)/doc/refentry/docbook2texi-spec.pl.sgml \
+ 		$(top_srcdir)/doc/refentry/frontend-spec.sgml \
+ 		$(top_srcdir)/doc/refentry/sgmldiff.sgml
+-	SGML_CATALOG_FILES=/etc/sgml/catalog \
++	SGML_CATALOG_FILES=$(prefix)/share/sgml/catalog \
+ 	SGML_SEARCH_PATH=$(top_srcdir):$(top_srcdir)/doc:.. \
+ 		jade -t sgml -i html -d $(top_srcdir)/docbook-utils.dsl\#html \
+ 			-V '%use-id-as-filename%' $<
+diff -uNr ../docbook-utils-0.6.14.orig/doc/man/Makefile.am ./doc/man/Makefile.am

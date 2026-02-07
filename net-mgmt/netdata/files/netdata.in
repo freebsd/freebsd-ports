@@ -1,0 +1,97 @@
+#!/bin/sh
+
+# PROVIDE: netdata
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable netdata:
+# netdata_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable netdata.
+# netdata_args (str):		Custom additional arguments to be passed
+#				to netdata (default empty).
+# netdata_conf (str):		Custom configuration file for netdata
+#				(default: %%ETCDIR%%/netdata.conf)
+# netdata_user (str):		Custom user to run netdata as
+#				(default: read from netdata_conf if
+#				 it is set there, or "netdata")
+# netdata_stop_maxwait (int):	Maximum time to wait for termination on stop
+#				before resorting to SIGKILL to stop netdata.
+#
+
+# Written 2017 - 2019 Mahdi Mokhtari (mmokhi@)
+# Written 2020 Matthias Andree (mandree@) with support by Dries Michiels
+
+. /etc/rc.subr
+
+name="netdata"
+rcvar=netdata_enable
+SED=/usr/bin/sed
+TR=/usr/bin/tr
+
+load_rc_config $name
+
+: ${netdata_enable="NO"}
+: ${netdata_conf="%%ETCDIR%%/${name}.conf"}
+: ${netdata_pid="%%NETDATA_PERST%%/${name}.pid"}
+: ${netdata_stop_maxwait=30}
+
+# this is more or less a copy of /etc/rc.subr from 12.1-RELEASE
+# around Early April 2020, but with a timeout, killing children,
+# and SIGKILL added because sometimes netdata hangs.
+stop_cmd() {
+	rc_pid=$(check_pidfile "${netdata_pid}" "${procname}")
+	if [ -z "$rc_pid" ] ; then
+		[ -n "$fc_fast" ] && return 0
+		_run_rc_notrunning
+		return 1
+	fi
+	_prefix=
+	echo "Stopping ${name}."
+	_list="$rc_pid $(pgrep -P $rc_pid)"
+	kill -TERM $_list
+	pwait -t 3 $_list 2>/dev/null
+	wtim=3
+	while :; do
+		_nlist=
+		for _j in $_list ; do
+			if kill -0 $_j 2>/dev/null ; then
+				_nlist="$_nlist${_nlist:+" "}$_j"
+			fi
+		done
+		if [ -z "$_nlist" ] ; then
+			break
+		fi
+		_list=$_nlist
+		echo -n ${_prefix:-"Waiting for PIDS: "}$_list
+		_prefix=", "
+		sleep 1
+		pwait -t 2 $_list 2>/dev/null
+		if [ $? -eq 124 ] ; then
+			wtim=$(($wtim + 3))
+			if [ $wtim -ge ${netdata_stop_maxwait} ] ; then
+				[ -n "$_prefix" ] && echo .
+				_prefix=
+				warn "${procname} has not terminated in ${netdata_stop_maxwait} s. Using SIGKILL $_list."
+				kill -KILL $_list
+				break
+			fi
+		fi
+	done
+	[ -n "$_prefix" ] && echo .
+}
+
+stop_postcmd() {
+	rm -f "${netdata_pid}"
+}
+
+procname="%%PREFIX%%/sbin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -f \"${procname}\" -P \"${netdata_pid}\" ${netdata_args}"
+
+required_files="${netdata_conf}"
+
+stop_cmd=stop_cmd
+stop_postcmd=stop_postcmd	# netdata always leaves its pid file behind.
+
+run_rc_command "$1"

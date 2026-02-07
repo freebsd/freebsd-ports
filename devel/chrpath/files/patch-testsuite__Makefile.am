@@ -1,0 +1,11 @@
+--- ./testsuite/Makefile.am.orig	2025-02-21 17:33:44 UTC
++++ ./testsuite/Makefile.am
+@@ -12,7 +12,7 @@
+ EXTRA_DIST = runtest.sh
+ 
+ prog: prog.c
+-	$(CC) $(RPATH) -o $@ $<
++	$(CC) -Wl,$(RPATH) -o $@ $<
+ 
+ check: $(CHRPATH)
+ 	$(srcdir)/runtest.sh

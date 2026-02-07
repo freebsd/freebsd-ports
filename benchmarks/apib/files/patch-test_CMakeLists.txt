@@ -1,0 +1,39 @@
+--- test/CMakeLists.txt.orig	2020-04-15 05:06:21 UTC
++++ test/CMakeLists.txt
+@@ -3,14 +3,14 @@ add_library(
+   test_server.cc
+   test_server.h
+ )
+-target_link_libraries(testserver_lib PUBLIC common -lev -lssl.1.1 -lcrypto.1.1 -lhttp_parser)
++target_link_libraries(testserver_lib PUBLIC common -lev -lpthread -lssl -lcrypto -lhttp_parser)
+ 
+ add_library(
+   keygen_lib OBJECT
+   test_keygen.cc
+   test_keygen.h
+ )
+-target_link_libraries(keygen_lib PUBLIC common -lssl.1.1 -lcrypto.1.1)
++target_link_libraries(keygen_lib PUBLIC common -lssl -lcrypto)
+ 
+ add_executable(
+   testserver
+@@ -22,7 +22,6 @@ add_executable(
+   iotest
+   io_test.cc
+ )
+-add_dependencies(iotest gtest)
+ target_link_libraries(iotest testserver_lib io cpu common base64 -lgtest)
+ add_test(iotest iotest)
+ 
+@@ -30,6 +29,10 @@ add_executable(
+   tlstest
+   tls_test.cc
+ )
+-add_dependencies(tlstest gtest)
+ target_link_libraries(tlstest testserver_lib io cpu common keygen_lib base64 -lgtest)
+ add_test(tlstest tlstest)
++
++install(TARGETS
++  testserver
++  DESTINATION bin
++)

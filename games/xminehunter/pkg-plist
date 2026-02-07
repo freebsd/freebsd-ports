@@ -1,0 +1,3 @@
+bin/xminehunter
+share/pixmaps/xminehunter.xpm
+@dir(,,333) lib/X11/xminehunter

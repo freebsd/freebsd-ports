@@ -1,0 +1,3 @@
+geomman is a text-based disk management tool for FreeBSD,
+built on top of bsddialog(3).  It provides a simple TUI
+for working with partitions, filesystems, and GEOM labels.

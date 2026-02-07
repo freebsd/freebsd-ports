@@ -1,0 +1,4 @@
+Mark Adler, maintainer of popular zlib library has released a multicore
+capable Parallel Implementation of GZip, nicknamed PIGZ. Version 1.5
+implements nearly all of gzip's functionality, including decompression
+of .gz and .Z (Unix compress) files.

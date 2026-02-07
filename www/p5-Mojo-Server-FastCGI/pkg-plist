@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Mojo/Server/FastCGI.pm
+%%SITE_PERL%%/Mojolicious/Command/fastcgi.pm
+%%PERL5_MAN3%%/Mojolicious::Command::fastcgi.3.gz
+%%PERL5_MAN3%%/Mojo::Server::FastCGI.3.gz

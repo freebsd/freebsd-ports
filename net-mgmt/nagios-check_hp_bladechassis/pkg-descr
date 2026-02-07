@@ -1,0 +1,4 @@
+check_hp_bladechassis is a plugin for the Nagios monitoring software which
+checks the hardware health of HP blade enclosures via SNMP.
+
+The plugin is only tested with the c7000 enclosure.

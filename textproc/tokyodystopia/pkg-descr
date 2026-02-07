@@ -1,0 +1,14 @@
+Tokyo Dystopia is a full-text search system. You can search lots of records
+for some records including specified patterns. The characteristic of
+Tokyo Dystopia is the following.
+
+  * High performance of search
+  * High scalability of target documents
+  * Perfect recall ratio by character N-gram method
+  * Phrase matching, prefix matching, suffix matching, and token matching
+  * Multilingualism with Unicode
+  * Layered Architecture of APIs
+
+Tokyo Dystopia is available on platforms which have API conforming to C99 and
+POSIX. Tokyo Dystopia is a free software licensed under the GNU Lesser General
+Public License.

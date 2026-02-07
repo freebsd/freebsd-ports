@@ -1,0 +1,11 @@
+--- src/Makefile.orig
++++ src/Makefile
+@@ -20,7 +20,7 @@
+   override LDFLAGS += --shared -Wl,-soname=$(SHARED_LIB_VERSIONED) -fPIC
+   LDLIBS := -lpthread
+ else
+-ifeq ($(OS), GNU/kFreeBSD)
++ifeq ($(OS), $(filter $(OS),GNU/kFreeBSD FreeBSD))
+   SHARED_LIB_BASE := libloki.so
+   SHARED_LIB_VERSIONED := libloki.so.$(VERSION)
+   override LDFLAGS += --shared -Wl,-soname=$(SHARED_LIB_VERSIONED) -fPIC

@@ -1,0 +1,19 @@
+--- ecal/core/CMakeLists.txt.orig	2024-09-08 02:28:28 UTC
++++ ecal/core/CMakeLists.txt
+@@ -40,7 +40,7 @@ project(core)
+ 
+ find_package(asio             REQUIRED)
+ find_package(Threads          REQUIRED)
+-find_package(ecaludp          REQUIRED)
++#find_package(ecaludp          REQUIRED)
+ 
+ if (ECAL_CORE_CONFIGURATION)
+   find_package(yaml-cpp       REQUIRED)
+@@ -54,7 +54,7 @@ endif()
+ 
+ if (ECAL_CORE_TRANSPORT_TCP)
+-  find_package(tcp_pubsub 2   REQUIRED)
++  #find_package(tcp_pubsub 2   REQUIRED)
+ endif()
+ 
+ if (ECAL_CORE_TRANSPORT_SHM)

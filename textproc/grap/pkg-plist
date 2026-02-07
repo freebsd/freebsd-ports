@@ -1,0 +1,4 @@
+bin/grap
+share/man/man1/grap.1.gz
+%%DATADIR%%/grap.defines
+%%DATADIR%%/grap.tex.defines

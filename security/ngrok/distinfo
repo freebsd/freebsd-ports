@@ -1,0 +1,5 @@
+TIMESTAMP = 1519967965
+SHA256 (ngrok/2.2.8/ngrok-2.2.8-freebsd-amd64.tar.gz) = 9cf95d318161b60693a8b5a5fec49a6c9ebef545feda95e9484c7357959906b6
+SIZE (ngrok/2.2.8/ngrok-2.2.8-freebsd-amd64.tar.gz) = 5254233
+SHA256 (ngrok/2.2.8/ngrok-2.2.8-freebsd-386.tar.gz) = c57998ec5dbd93061baabc3f0b7816a5f0cff197134835fe243f3b884722af25
+SIZE (ngrok/2.2.8/ngrok-2.2.8-freebsd-386.tar.gz) = 5046479

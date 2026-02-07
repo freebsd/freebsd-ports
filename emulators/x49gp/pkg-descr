@@ -1,0 +1,9 @@
+An emulator for the HP 49g+/50g calculator series. This is an ARM-based
+emulator (unlike emu48 / debug4x), so it is possible to run hpgcc
+binaries within the emulator.
+
+Skins for both variants of the calculator are included.
+
+Known limitations:
+	- Cannot write to port 2. Libraries will eat up your RAM.
+	- HPGCC2/3 SD I/O is unstable.

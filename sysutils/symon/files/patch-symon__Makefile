@@ -1,0 +1,23 @@
+--- symon/Makefile.orig	2012-02-21 20:46:14 UTC
++++ symon/Makefile
+@@ -30,14 +30,12 @@
+ 	rm -f conf.h symon symon.cat8 symon.core ${OBJS}
+ 
+ install: symon symon.8 symon.conf
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${BINDIR}
+-	${INSTALL} -c -m 555 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symon      ${PREFIX}/${BINDIR}/
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${MANDIR}/man8
+-	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symon.8 ${PREFIX}/${MANDIR}/man8/symon.8
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${SHRDIR}
+-	${INSTALL} -c -m 555 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} c_config.sh ${PREFIX}/${SHRDIR}/
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${EXADIR}
+-	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symon.conf ${PREFIX}/${EXADIR}/
++	${INSTALL} -c -m 555 symon      ${PREFIX}/${BINDIR}/
++	${INSTALL} -c -m 444 symon.8 ${PREFIX}/${MANDIR}/man8/symon.8
++	${INSTALL} -d -m 755 ${PREFIX}/${SHRDIR}
++	${INSTALL} -c -m 555 c_config.sh ${PREFIX}/${SHRDIR}/
++	${INSTALL} -d -m 755 ${PREFIX}/${EXADIR}
++	${INSTALL} -c -m 444 symon.conf ${PREFIX}/${EXADIR}/
+ 
+ conf.h:  Makefile ../Makefile.inc
+ 	@echo Generating $@ on ${OS}

@@ -1,0 +1,6 @@
+cmake/libicdConfig.cmake
+cmake/libicdConfigVersion.cmake
+cmake/libicdTargets-%%CMAKE_BUILD_TYPE%%.cmake
+cmake/libicdTargets.cmake
+include/icd_codecs.h
+lib/libicd.so

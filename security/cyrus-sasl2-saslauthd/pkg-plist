@@ -1,0 +1,6 @@
+share/man/man8/saslauthd.8.gz
+share/man/man8/testsaslauthd.8.gz
+sbin/saslauthd
+sbin/saslcache
+sbin/testsaslauthd
+%%RUNPATH%%@dir(cyrus,mail,750) /var/run/saslauthd

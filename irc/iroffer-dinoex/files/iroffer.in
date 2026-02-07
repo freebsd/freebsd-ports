@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: iroffer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# iroffer_enable="YES"
+# iroffer_flags="<set as needed>"
+# iroffer_user="<set to username>"
+# iroffer_bin="<change for language specific version>"
+# iroffer_dir="<chdir to this>"
+# iroffer_config="<name of the config file>"
+#
+# See iroffer(1) for iroffer_flags
+#
+
+. /etc/rc.subr
+
+name="iroffer"
+desc="Iroffer IRC Bot"
+rcvar="iroffer_enable"
+
+load_rc_config "$name"
+
+: ${iroffer_enable:="NO"}
+: ${iroffer_user:="bot"}
+: ${iroffer_bin:="iroffer"}
+: ${iroffer_dir:="/home/bot/iroffer/"}
+: ${iroffer_config:="${iroffer_dir}mybot.config"}
+
+start_precmd="iroffer_checkdisk"
+restart_precmd="iroffer_checkdisk"
+required_files="${iroffer_config}"
+command="${iroffer_dir}/${iroffer_bin}"
+if [ -n "${iroffer_dir}" ]; then
+	command_args="${command_args} -w ${iroffer_dir}"
+fi
+command_args="${command_args} -u ${iroffer_user}"
+command_args="${command_args} -b ${iroffer_config}"
+pidfile="${iroffer_dir}/mybot.pid"
+
+iroffer_checkdisk()
+{
+	cd "${iroffer_dir}"
+	if [ -n "${iroffer_dir}" ]; then
+		freespace=`df -k . | tail -1 | awk {'print $4'}`
+		if [ "${freespace}" -lt 10 ]; then
+			echo "Filesystem Full!" >&2
+			exit
+		fi
+	fi
+}
+
+run_rc_command "$1"

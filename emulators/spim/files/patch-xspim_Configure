@@ -1,0 +1,8 @@
+--- ./xspim/Configure.orig	Mon Aug 29 02:28:15 2005
++++ ./xspim/Configure	Mon Jul 17 09:32:01 2006
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # Shell script to configure SPIM.
+ #

@@ -1,0 +1,219 @@
+PORTNAME=	mcfly
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.4
+PORTREVISION=	1
+CATEGORIES=	sysutils
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Fly through your shell history
+WWW=		https://github.com/cantino/mcfly
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	cantino
+
+CARGO_CRATES=	adler32-1.2.0 \
+		aho-corasick-1.1.4 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.21 \
+		anstyle-1.0.13 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		autocfg-1.5.0 \
+		autopilot-0.4.1 \
+		bitflags-1.3.2 \
+		bitflags-2.10.0 \
+		block-0.1.6 \
+		bumpalo-3.19.1 \
+		byteorder-1.5.0 \
+		cc-1.2.50 \
+		cfg-if-1.0.4 \
+		chrono-0.4.42 \
+		chrono-systemd-time-0.3.0 \
+		clap-4.5.53 \
+		clap_builder-4.5.53 \
+		clap_derive-4.5.49 \
+		clap_lex-0.7.6 \
+		cocoa-0.20.2 \
+		color_quant-1.1.0 \
+		colorchoice-1.0.4 \
+		config-0.15.19 \
+		core-foundation-0.7.0 \
+		core-foundation-sys-0.7.0 \
+		core-foundation-sys-0.8.7 \
+		core-graphics-0.19.2 \
+		crc32fast-1.5.0 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
+		crossterm-0.28.1 \
+		crossterm_winapi-0.9.1 \
+		csv-1.4.0 \
+		csv-core-0.1.13 \
+		deflate-0.7.20 \
+		directories-next-2.0.0 \
+		dirs-6.0.0 \
+		dirs-sys-0.5.0 \
+		dirs-sys-next-0.1.2 \
+		either-1.15.0 \
+		errno-0.3.14 \
+		fallible-iterator-0.3.0 \
+		fallible-streaming-iterator-0.1.9 \
+		filedescriptor-0.8.3 \
+		find-msvc-tools-0.1.5 \
+		foldhash-0.2.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		getrandom-0.1.16 \
+		getrandom-0.2.16 \
+		getrandom-0.3.4 \
+		gif-0.10.3 \
+		hashbrown-0.16.1 \
+		hashlink-0.11.0 \
+		heck-0.5.0 \
+		humantime-2.3.0 \
+		iana-time-zone-0.1.64 \
+		iana-time-zone-haiku-0.1.2 \
+		image-0.22.5 \
+		inflate-0.4.5 \
+		is_terminal_polyfill-1.70.2 \
+		itertools-0.14.0 \
+		itoa-1.0.16 \
+		jpeg-decoder-0.1.22 \
+		js-sys-0.3.83 \
+		libc-0.2.178 \
+		libredox-0.1.11 \
+		libsqlite3-sys-0.36.0 \
+		linux-raw-sys-0.4.15 \
+		lock_api-0.4.14 \
+		log-0.4.29 \
+		lzw-0.10.0 \
+		malloc_buf-0.0.6 \
+		memchr-2.7.6 \
+		mio-1.1.1 \
+		num-derive-0.2.5 \
+		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-rational-0.2.4 \
+		num-traits-0.2.19 \
+		objc-0.2.7 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.2 \
+		option-ext-0.2.0 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
+		path-absolutize-3.1.1 \
+		path-dedot-3.1.1 \
+		pathdiff-0.2.3 \
+		pkg-config-0.3.32 \
+		png-0.15.3 \
+		ppv-lite86-0.2.21 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.103 \
+		quote-0.6.13 \
+		quote-1.0.42 \
+		r-efi-5.3.0 \
+		rand-0.7.3 \
+		rand-0.9.2 \
+		rand_chacha-0.2.2 \
+		rand_chacha-0.9.0 \
+		rand_core-0.5.1 \
+		rand_core-0.9.3 \
+		rand_hc-0.2.0 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
+		redox_syscall-0.5.18 \
+		redox_users-0.4.6 \
+		redox_users-0.5.2 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
+		regex-syntax-0.8.8 \
+		rusqlite-0.38.0 \
+		rustix-0.38.44 \
+		rustversion-1.0.22 \
+		ryu-1.0.21 \
+		scoped_threadpool-0.1.9 \
+		scopeguard-1.2.0 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.147 \
+		serde_spanned-1.0.4 \
+		shellexpand-3.1.1 \
+		shlex-1.3.0 \
+		signal-hook-0.3.18 \
+		signal-hook-mio-0.2.5 \
+		signal-hook-registry-1.4.7 \
+		smallvec-1.15.1 \
+		sqlite-wasm-rs-0.5.1 \
+		strsim-0.11.1 \
+		syn-0.15.44 \
+		syn-2.0.111 \
+		thiserror-1.0.69 \
+		thiserror-2.0.17 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.17 \
+		tiff-0.3.1 \
+		toml-0.9.10+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
+		unicode-ident-1.0.22 \
+		unicode-segmentation-1.12.0 \
+		unicode-xid-0.1.0 \
+		utf8parse-0.2.2 \
+		vcpkg-0.2.15 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.1+wasi-0.2.4 \
+		wasm-bindgen-0.2.106 \
+		wasm-bindgen-macro-0.2.106 \
+		wasm-bindgen-macro-support-0.2.106 \
+		wasm-bindgen-shared-0.2.106 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.62.2 \
+		windows-implement-0.60.2 \
+		windows-interface-0.59.3 \
+		windows-link-0.2.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
+		windows-sys-0.59.0 \
+		windows-sys-0.61.2 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		winnow-0.7.14 \
+		wit-bindgen-0.46.0 \
+		x11-2.21.0 \
+		zerocopy-0.8.31 \
+		zerocopy-derive-0.8.31 \
+		zmij-0.1.8
+PLIST_FILES=	bin/${PORTNAME} \
+		etc/bash_completion.d/${PORTNAME}.bash \
+		share/fish/vendor_completions.d/${PORTNAME}.fish \
+		share/zsh/site-functions/_${PORTNAME}
+
+post-install: # install shell completion files
+	# bash
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.bash ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	# fish
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	# zsh
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.zsh ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+
+.include <bsd.port.mk>

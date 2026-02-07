@@ -1,0 +1,26 @@
+--- utils/sendsms.orig	2011-12-02 14:53:04 UTC
++++ utils/sendsms
+@@ -1,4 +1,4 @@
+-#!/bin/bash 
++#!/bin/sh
+ ###############################################################################
+ #	SENDSMS   --  Script to send sms by 'gnokii'
+ #   Author : Gabriele Zappi - Rimini <gzappi@inwind.it>
+@@ -342,7 +342,7 @@ parse_stdin $*
+ # 	help
+ # fi
+ 
+-if ! type -all "dialog" >/dev/null 2>&1 ; then
++if ! type "dialog" >/dev/null 2>&1 ; then
+ echo
+ echo "${PROGNAME}: error:"
+ echo "Can't find 'dialog', i can't run without 'dialog' on your system."
+@@ -354,7 +354,7 @@ if [ $SW_SKIPGNOKITST = no ] ; then
+ fi
+ 
+ if [ $SW_SKIPGNOKITST = no ] ; then
+-	if ! type -all "$GNOKII" >/dev/null 2>&1 ; then
++	if ! type "$GNOKII" >/dev/null 2>&1 ; then
+ 	echo
+ 	echo "${PROGNAME}: error:"
+ 	echo "Can't find 'gnokii'. This script needs 'gnokii' in order to work."

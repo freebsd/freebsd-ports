@@ -1,0 +1,5 @@
+Gaupol is an editor for text-based subtitle files. It supports multiple
+subtitle file formats and provides convenient means of correcting texts
+and timing subtitles to match video. The user interface is designed with
+attention to batch processing of multiple documents and convenience of
+translating.

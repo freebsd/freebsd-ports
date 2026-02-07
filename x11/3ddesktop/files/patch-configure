@@ -1,0 +1,41 @@
+Add minimal support to `pkg-config imlib2`; imlib2-config has been
+dropped since imlib2-1.7.5.
+
+--- configure.orig	2005-06-26 14:22:29 UTC
++++ configure
+@@ -8112,22 +8112,20 @@ fi
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-if test "$IMLIB2_CONFIG_IN_PATH" != yes; then
+-    echo "------- ERROR -------"
+-    echo "The imlib2-config development script was not found in your execute path."
+-    echo "You may have imlib2 installed somewhere not covered by your path."
+-    echo ""
+-    echo "If this is the case make sure you have the packages installed, AND"
+-    echo "that the imlib2-config script is in your execute path (see your"
+-    echo "shell's manual page on setting the \$PATH environment variable)."
+-    echo "---------------------"
+-    { { echo "$as_me:$LINENO: error: Fatal Error: no imlib2-config detected." >&5
+-echo "$as_me: error: Fatal Error: no imlib2-config detected." >&2;}
+-   { (exit 1); exit 1; }; }
+-    exit;
++if test "$IMLIB2_CONFIG_IN_PATH" = yes; then
++    imlib2_cflags=`imlib2-config --cflags`
++    imlib2_libs=`imlib2-config --libs`
++else
++    if pkg-config imlib2; then
++        imlib2_cflags=`pkg-config imlib2 --cflags`
++        imlib2_libs=`pkg-config imlib2 --libs`
++    else
++	{ { echo "$as_me:$LINENO: error: Fatal Error: no imlib2 detected." >&5
++	echo "$as_me: error: Fatal Error: no imlib2 detected." >&2;}
++	{ (exit 1); exit 1; }; }
++	exit;
++    fi
+ fi
+-imlib2_cflags=`imlib2-config --cflags`
+-imlib2_libs=`imlib2-config --libs`
+ 
+ 
+ 

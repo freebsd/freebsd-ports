@@ -1,0 +1,14 @@
+This is a collection of modules that formats text from HTML syntax
+trees. Bug reports and discussions about these modules can be sent
+to the <libwww@perl.org> mailing list.
+
+The modules present in this package are:
+
+  HTML::Formatter - Base class for various formatters.  Formatters
+	traverse a syntax tree and produce some textual output.
+	None of the current formatters handle tables or forms yet.
+
+  HTML::FormatText - Formatter that converts a syntax tree to plain
+	readable text.
+
+  HTML::FormatPS - Formatter that outputs PostScript code.

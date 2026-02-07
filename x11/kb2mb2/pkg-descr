@@ -1,0 +1,3 @@
+kb2mb2 redirects events caused by a key to second mouse button.
+It uses right windows button by default.
+See kb2mb2 -h for details.

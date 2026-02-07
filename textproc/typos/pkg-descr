@@ -1,0 +1,3 @@
+typos finds and corrects spelling mistakes among source code:
+- Fast enough to run on monorepos
+- Low false positives so you can run on PRs

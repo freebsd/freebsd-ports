@@ -1,0 +1,149 @@
+--- proxycheck.1.orig	Sun May 11 10:47:38 2003
++++ proxycheck.1	Mon Jun 30 03:23:58 2003
+@@ -2,12 +2,13 @@
+ .\" manpage for proxycheck
+ .\" Michael Tokarev <mjt@corpit.ru>
+-
+ .TH proxycheck 1
+ 
+ .SH NAME
++
+ proxycheck \- open proxy server checker
+ 
+ .SH SYNOPSYS
++
+ \fBproxycheck\fR \fIoptions\fR \fIhost\fR[:\fIproto_port_spec\fR]...
+ 
+ .SH DESCRIPTION
+@@ -39,15 +40,12 @@
+ 
+ .IP \fB\-h\fR
+ print a short help and exit.
+-
+ .IP \fB\-v\fR
+ increase the verbosity level.  All debugging messages will
+ go to standard error stream.
+-
+ .IP "\fB\-d\fR \fIdeshost\fR:\fIdestport\fR (required)"
+ try to establish a proxied connection to the given \fIdsthost\fR,
+ port \fIdstport\fR.  This option is required.
+-
+ .IP "\fB\-c\fR \fIcheck\fR[:\fIparams\fR] (required)"
+ the "method" \fBproxycheck\fR will use when talking to a destination
+ system to determine if a proxy is open or not.  Interpretation of
+@@ -72,54 +70,45 @@
+ (username, password, recipient address, cookie server, ...) are
+ expected to be found in environment variables.  Run \fBproxycheck\fR
+ with \fB\-h\fR option to see a list of recognized variables and
+-their default values.  By default, \fBproxycheck\fR will anonimously
++their default values.  By default, \fBproxycheck\fR will anonymously
+ submit all found proxies to unconfirmed.dsbl.org (which isn't very
+ useful).  For trusted DSBL user, at least DSBL_USER and DSBL_PASS
+ variables should be set properly.
+ .RE
+-
+ .IP "\fB\-p\fR \fIproto_port_spec\fR"
+ specifies protocol and ports to connect to.  If not given, \fBproxycheck\fR
+ will try it's built-in default list.  This option may be specified more
+ than once.   See below for \fIproto_port_spec\fR.  If \fIproto_port_spec\fR
+ is specified for a single host to check, it applies to that host only,
+ and no protocols/ports in default list will be checked for that host.
+-
+ .IP \fB\-D\fR
+ do not reset default port list when using \fB\-p\fR option, but prepend
+ new ports to it instead.
+-
+ .IP \fB\-a\fR
+ use more "advanced" ports/protocols.  The more \fB\-a\fR's given, the more
+ ports/protocols will be probed.  For a complete list of all ports and protocols
+ and their level, execute \fBproxycheck\fR with \fB\-h\fR option.
+-
+ .IP "\fB\-t\fR \fItimeout\fR"
+ a timeout, in secounds, for every operation.  Default value is 30 secounds.
+ The timer starts at the connection attempt to the proxy itself, after
+ sending the "connect" command to the proxy and so on.
+-
+ .IP "\fB\-m\fR \fImaxconn\fR"
+ Do not attempt to make more than \fImaxconn\fR parallel connections.
+ By default, maximum number of parallel connections limited by the
+ operating system and on most systems it is around 1000.
+-
+ .IP "\fB\-M\fR \fImaxhconn\fR"
+ Do not make more than \fImaxhconn\fR parallel connections to the
+ same host (default is unlimited).  This may be useful for overloaded
+ proxies which can't handle many parallel connections using different
+ ports/protocols, but may significantly slow down the whole process.
+-
+ .IP \fB\-s\fR
+ when an open proxy is found on a given IP, stop probing for other
+ ports/protocols for this IP.  Best used when many IPs are tested,
+ and/or with \fB\-M\fR option.  This is because currently, \fBproxycheck\fR
+ will not make any \fInew\fR connections to such host, but will wait
+ for already active connections to complete.
+-
+ .IP "\fB\-b\fR \fIbindaddr\fR"
+ use \fIbindaddr\fR as a source address for all outgoing connections.
+-
+ .IP \fB\-n\fR
+ write a line about definitely closed proxies to stdout in additional
+ to writing about open proxies, in a form
+@@ -127,7 +116,6 @@
+ .nf
+    127.0.0.1 http:8080 closed
+ .fi
+-
+ .IP \fB\-x\fR
+ print extended proxy information (proxy-agent and the like) if available.
+ This will be on the same "open" (or "closed" with -n) line, last, enclosed
+@@ -236,6 +224,51 @@
+ proxy server was found.  In case of incorrect usage, it will exit
+ with code 1.  If no open proxies where found, \fBproxycheck\fR
+ will return 0.
++
++.SH EXAMPLES
++In the simplest case, specify:
++
++.nf
++  proxycheck -vv -ddsthost:dstport -c chat::"waitstr" \fIlist-of-IPs\fR
++.fi
++
++where
++\fBdsthost\fR is the host and \fBdstport\fR is the port number of the
++destination system, and \fBwaitstr\fR is a string to look for from the remote
++system. If you decide to connect to your own mailserver (which is quite
++logical, since most proxy abuse nowadays is to send spam to your mailserver),
++connect to it first using telnet and see which SMTP greeting string it prints
++out upon connection, and use this string as \fBwaitstr\fR.  For example, if
++your mailserver is \fImail.example.com\fR, the following may apply:
++
++.nf
++  $ \fBtelnet mail.example.com 25\fR
++  Telnet: trying 127.0.0.1... connected.
++  250 mail.example.com ESMTP welcome
++  \fBQUIT\fR
++.fi
++
++In this case, \fBproxycheck\fR's command line may look as follows:
++
++.nf
++  proxycheck -vv -d mail.example.com:25 \\
++   -c chat::"250 mail.example.com ESMTP welcome" \fIlist-of-IPs\fR
++.fi
++
++Another usage scenario is to automatically submit all open proxies to
++DSBL.org-style blocklists.  For this, specify \fB-c dsbl\fR and set up
++environment variables for dsbl client.  The variables \fBDSBL_USER\fR and
++\fBDSBL_PASS\fR are required for non-anonymous DSBL submissions, for anonymous
++submissions to the \fIunconfirmed.dsbl.org\fR defaults are sufficient. To
++submit a proxy to DSBL.org, set destination to the mail exchanger of
++\fIlistme.dsbl.org\fR domain, currently \fImx.listme.dsbl.org\fR.  For example:
++
++.nf
++  DSBL_USER=username DSBL_PASS=password ./proxycheck -vv \\
++   -dmx.listme.dsbl.org:25 -cdsbl \fIproxyhost\fR
++.fi
++
++Additional and updated information may be found at the URL below.
+ 
+ .SH LICENSE
+ This program is free software.  It may be used and distributed

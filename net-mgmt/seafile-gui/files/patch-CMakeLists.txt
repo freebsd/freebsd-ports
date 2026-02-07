@@ -1,0 +1,38 @@
+--- CMakeLists.txt.orig	2022-04-25 04:00:03 UTC
++++ CMakeLists.txt
+@@ -171,7 +171,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+     ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
+ ENDIF()
+ 
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+     SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
+ ENDIF()
+ 
+@@ -383,7 +383,7 @@ PKG_CHECK_MODULES(JANSSON REQUIRED jansson>=2.0)
+ 
+ PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
+ 
+-PKG_CHECK_MODULES(OPENSSL REQUIRED openssl>=0.98)
++#PKG_CHECK_MODULES(OPENSSL REQUIRED openssl>=0.98)
+ 
+ PKG_CHECK_MODULES(LIBSEAFILE REQUIRED libseafile>=1.7)
+ 
+@@ -601,7 +601,7 @@ LIST(APPEND utils_sources
+     src/utils/stl.cpp
+     src/utils/seafile-error.cpp
+     )
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+     LIST(APPEND utils_sources
+         src/utils/process-linux.cpp
+         )
+@@ -797,7 +797,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+ ENDIF()
+ 
+ ## QtBus
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+   IF(QT_VERSION_MAJOR EQUAL 6)
+     target_link_libraries(seafile-applet Qt6::DBus)
+   ELSE()

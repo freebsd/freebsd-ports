@@ -1,0 +1,17 @@
+%%SITE_ARCH%%/PerlIO/Util.pm
+%%SITE_ARCH%%/PerlIO/Util/JA.pod
+%%SITE_ARCH%%/PerlIO/creat.pm
+%%SITE_ARCH%%/PerlIO/dir.pm
+%%SITE_ARCH%%/PerlIO/excl.pm
+%%SITE_ARCH%%/PerlIO/flock.pm
+%%SITE_ARCH%%/PerlIO/reverse.pm
+%%SITE_ARCH%%/PerlIO/tee.pm
+%%SITE_ARCH%%/auto/PerlIO/Util/Util.so
+%%PERL5_MAN3%%/PerlIO::Util.3.gz
+%%PERL5_MAN3%%/PerlIO::Util::JA.3.gz
+%%PERL5_MAN3%%/PerlIO::creat.3.gz
+%%PERL5_MAN3%%/PerlIO::dir.3.gz
+%%PERL5_MAN3%%/PerlIO::excl.3.gz
+%%PERL5_MAN3%%/PerlIO::flock.3.gz
+%%PERL5_MAN3%%/PerlIO::reverse.3.gz
+%%PERL5_MAN3%%/PerlIO::tee.3.gz

@@ -1,0 +1,10 @@
+A toolkit to interact with the virtualization capabilities of recent versions of
+Linux, and other OSes.
+
+libvirt provides:
+* Remote management using TLS encryption and x509 certificates
+* Remote management authenticating with Kerberos and SASL
+* Local access control using PolicyKit
+* Zero-conf discovery using Avahi multicast-DNS
+* Management of virtual machines, virtual networks and storage
+* Portable client API for Linux, Solaris and Windows

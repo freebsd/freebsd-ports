@@ -1,0 +1,30 @@
+--- bin/cypher-shell.orig	2022-05-11 06:09:41 UTC
++++ bin/cypher-shell
+@@ -47,6 +47,8 @@ _find_java_cmd() {
+ detect_os() {
+   if uname -s | grep -q Darwin; then
+     DIST_OS="macosx"
++  elif uname -s | grep -q FreeBSD; then
++    DIST_OS="freebsd"
+   elif [[ -e /etc/gentoo-release ]]; then
+     DIST_OS="gentoo"
+   else
+@@ -58,6 +60,9 @@ _find_java_home() {
+   [[ "${JAVA_HOME:-}" ]] && return
+ 
+   case "${DIST_OS}" in
++    "freebsd")
++      JAVA_HOME="%%JAVA_HOME%%"
++      ;;
+     "macosx")
+       JAVA_HOME="$(/usr/libexec/java_home -v 1.8+)"
+       ;;
+@@ -78,7 +83,7 @@ build_classpath() {
+ 
+   # Then try installation directory (prefix/bin and prefix/share/cypher-shell/lib)
+   if [[ -z "${JARPATH}" ]]; then
+-    APP_HOME="${APP_HOME}/../share/cypher-shell"
++    APP_HOME="${APP_HOME}/../neo4j"
+     JARPATH="$(find "${APP_HOME}" -name "cypher-shell.jar" )"
+   fi
+ }

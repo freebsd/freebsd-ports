@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet.pm
+%%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet/AIM.pm
+%%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet/AIM/ErrorCodes.pm
+%%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet/ARB.pm
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet.3.gz
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet::AIM.3.gz
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet::AIM::ErrorCodes.3.gz
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet::ARB.3.gz

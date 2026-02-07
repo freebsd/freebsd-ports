@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+To finish installation please follow these steps:
+
+1. Edit %%ETCDIR%%/mimedefang-filter
+
+2. Reconfigure sendmail to use MIMEDefang, for example add this lines to
+   your sendmail.mc:
+
+   MAIL_FILTER(`mimedefang', `S=local:/var/spool/MIMEDefang/mimedefang.sock, F=T, T=C:15m;S:4m;R:4m;E:10m')dnl
+   define(`confINPUT_MAIL_FILTERS', `mimedefang')dnl
+
+   rebuild sendmail.cf and install it.
+
+Also, you can install some anti-virus software to check your mail, for example:
+
+   security/clamav
+      Open source AV package with automatic virus definition updates
+   security/f-prot
+      F-Prot Antivirus for BSD Workstations
+EOM
+}
+]

@@ -1,0 +1,11 @@
+--- ruby-fogbugz.gemspec.orig	2024-02-21 18:01:29 UTC
++++ ruby-fogbugz.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<crack>.freeze, ["~> 0.4".freeze])
++  s.add_runtime_dependency(%q<crack>.freeze, [">= 0.4".freeze])
+   s.add_runtime_dependency(%q<multipart-post>.freeze, ["~> 2.0".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["< 11.0".freeze])
+   s.add_development_dependency(%q<webmock>.freeze, ["~> 1.21".freeze])

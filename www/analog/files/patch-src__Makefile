@@ -1,0 +1,41 @@
+--- src/Makefile.orig	2004-12-19 13:51:30 UTC
++++ src/Makefile
+@@ -2,16 +2,23 @@
+ # Please read docs/Readme.html, or http://www.analog.cx/
+ # This is a general Unix-like Makefile: Makefiles for other OS's can be found
+ #   in the "build" directory.
+-CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
++CC ?= gcc           # which compiler to use: eg cc, acc, gcc. NB Different
+ #                    compilers need different CFLAGS, e.g., -O instead of -O2.
+ MAKE = make        # which "make" to use
+-CFLAGS = -O2    # options, e.g. for optimisation or ANSI compilation.
++CFLAGS += -I${LOCALBASE}/include -I${LOCALBASE}/include/gd
++#CFLAGS = -O2    # options, e.g. for optimisation or ANSI compilation.
+ #                 Some OS's need -D_FILE_OFFSET_BITS=64 to support files > 2MB.
+ #                 HP/UX cc needs CFLAGS = -Aa (HP/UX 9) or -Ae (HP/UX 10)
+ #                 BeOS needs CFLAGS = -O2 -Wl,-L/boot/home/config/lib
+ #                 BS2000/OSD needs CFLAGS = -XLLML -XLLMK
+ #                 NeXTSTEP needs CFLAGS = -O2 -pipe -no-precomp 
+ DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
++DEFS = -DLOGFILE=\"/var/log/httpd-access.log\" \
++       -DIMAGEDIR=\"/images/\" \
++       -DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\" \
++       -DLANGDIR=\"${PREFIX}/share/analog/lang/\" \
++       -DCONFIGDIR=\"$(PREFIX)/share/analog/\" \
++       -DHAVE_ZLIB
+ #                 ... -DNOOPEN -DNOFOLLOW -DNOALARM -DNOGRAPHICS -DNOGMTIME ...
+ #                 ... -DEBCDIC -DUSE_PLAIN_SETJMP ...
+ #                 ... -DHAVE_GD -DHAVE_ZLIB -DHAVE_BZLIB -DHAVE_PCRE ...
+@@ -31,6 +38,12 @@ DEFS =          # any combination of -DN
+ OS = UNIX         # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS
+ #                   RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400, OS390
+ LIBS = -lm  # extra libraries needed; most platforms (but not OS X or BeOS)
++
++.if !defined(WITHOUT_GD)
++DEFS+= -DHAVE_GD
++LIBS+=  -L${LOCALBASE}/lib -lgd -lpng -ljpeg -lz
++.endif
++
+ #               need -lm LAST
+ #             if you defined HAVE_GD above you also need -lgd -lpng -ljpeg -lz
+ #             if you defined HAVE_ZLIB above you also need -lz

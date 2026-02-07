@@ -1,0 +1,2 @@
+This package is called flufl.lock. It is an NFS-safe file-based lock with
+timeouts for POSIX systems.

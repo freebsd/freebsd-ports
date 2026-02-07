@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2026-01-15 13:51:14 UTC
++++ pyproject.toml
+@@ -34,13 +34,6 @@ pyradio-client = "pyradio.main:run_client"
+ "Homepage" = "https://github.com/coderholic/pyradio"
+ "Bug Tracker" = "https://github.com/coderholic/pyradio/issues"
+ 
+-[tool.setuptools]
+-include-package-data = true
+-
+-[tool.setuptools_scm]
+-version_scheme = "no-guess-dev"
+-local_scheme = "no-local-version"
+-
+ [tool.setuptools.packages.find]
+ include = [
+     "pyradio",

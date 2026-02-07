@@ -1,0 +1,169 @@
+--- CMakeLists.txt.orig	2024-08-09 17:15:35 UTC
++++ CMakeLists.txt
+@@ -39,9 +39,9 @@ if(USE_SYSTEM_PROTOBUF)
+   set(_absl_package_args 20230125)
+ endif()
+ if(USE_SYSTEM_PROTOBUF)
+-  set(_protobuf_package_args 4.23.3 REQUIRED)
++  set(_protobuf_package_args REQUIRED)
+ else()
+-  set(_protobuf_package_args 4.23.3)
++  set(_protobuf_package_args)
+ endif()
+ if(USE_SYSTEM_PYBIND)
+   set(_pybind11_package_args 2.11.1 REQUIRED)
+@@ -52,32 +52,11 @@ set(ABSL_ENABLE_INSTALL ON)
+ set(ABSL_PROPAGATE_CXX_STD ON)
+ set(ABSL_ENABLE_INSTALL ON)
+ 
+-include(FetchContent)
+-FetchContent_Declare(
+-  absl
+-  GIT_REPOSITORY "https://github.com/abseil/abseil-cpp.git"
+-  GIT_TAG 20230125.3
+-  FIND_PACKAGE_ARGS ${_absl_package_args} NAMES absl)
+-
+-# cmake-format: off
+-FetchContent_Declare(
+-  Protobuf
+-  GIT_REPOSITORY "https://github.com/protocolbuffers/protobuf.git"
+-  GIT_TAG v23.3
+-  GIT_SUBMODULES ""
+-  FIND_PACKAGE_ARGS ${_protobuf_package_args} NAMES protobuf)
+-set(protobuf_BUILD_TESTS OFF CACHE INTERNAL "")
+-# cmake-format: on
+-
+-FetchContent_Declare(
+-  pybind11
+-  GIT_REPOSITORY "https://github.com/pybind/pybind11.git"
+-  GIT_TAG v2.11.1
+-  FIND_PACKAGE_ARGS ${_pybind11_package_args} NAMES pybind11)
+-
+ message(CHECK_START "Checking for external dependencies")
++find_package(absl ${_absl_package_args})
++find_package(protobuf ${_protobuf_package_args})
++find_package(pybind11 ${_pybind11_package_args})
+ list(APPEND CMAKE_MESSAGE_INDENT "  ")
+-FetchContent_MakeAvailable(absl Protobuf pybind11)
+ list(POP_BACK CMAKE_MESSAGE_INDENT)
+ 
+ # ============================================================================
+@@ -97,7 +76,7 @@ add_library(
+ # ============================================================================
+ # pybind11_native_proto_caster shared library
+ add_library(
+-  pybind11_native_proto_caster STATIC
++  pybind11_native_proto_caster SHARED
+   # bazel: pybind_library: native_proto_caster
+   pybind11_protobuf/native_proto_caster.h
+   # bazel: pybind_library: enum_type_caster
+@@ -106,6 +85,16 @@ add_library(
+   pybind11_protobuf/proto_cast_util.cc
+   pybind11_protobuf/proto_cast_util.h
+   pybind11_protobuf/proto_caster_impl.h)
++add_library(
++  pybind11_native_proto_caster_static STATIC
++  # bazel: pybind_library: native_proto_caster
++  pybind11_protobuf/native_proto_caster.h
++  # bazel: pybind_library: enum_type_caster
++  pybind11_protobuf/enum_type_caster.h
++  # bazel: pybind_library: proto_cast_util
++  pybind11_protobuf/proto_cast_util.cc
++  pybind11_protobuf/proto_cast_util.h
++  pybind11_protobuf/proto_caster_impl.h)
+ 
+ target_link_libraries(
+   pybind11_native_proto_caster
+@@ -117,22 +106,45 @@ target_link_libraries(
+   protobuf::libprotobuf
+   pybind11::pybind11
+   ${Python_LIBRARIES})
++target_link_libraries(
++  pybind11_native_proto_caster_static
++  absl::flat_hash_map
++  absl::flat_hash_set
++  absl::hash
++  absl::strings
++  absl::optional
++  protobuf::libprotobuf
++  pybind11::pybind11
++  ${Python_LIBRARIES})
+ 
+ target_include_directories(
+   pybind11_native_proto_caster
+   PRIVATE ${PROJECT_SOURCE_DIR} ${protobuf_INCLUDE_DIRS} ${protobuf_SOURCE_DIR}
+           ${pybind11_INCLUDE_DIRS})
++target_include_directories(
++  pybind11_native_proto_caster_static
++  PRIVATE ${PROJECT_SOURCE_DIR} ${protobuf_INCLUDE_DIRS} ${protobuf_SOURCE_DIR}
++          ${pybind11_INCLUDE_DIRS})
++set_target_properties(pybind11_native_proto_caster_static PROPERTIES OUTPUT_NAME pybind11_native_proto_caster)
+ 
+ # ============================================================================
+ # pybind11_wrapped_proto_caster shared library
+ add_library(
+-  pybind11_wrapped_proto_caster STATIC
++  pybind11_wrapped_proto_caster SHARED
+   # bazel: pybind_library: wrapped_proto_caster
+   pybind11_protobuf/wrapped_proto_caster.h
+   # bazel: pybind_library: proto_cast_util
+   pybind11_protobuf/proto_cast_util.cc
+   pybind11_protobuf/proto_cast_util.h
+   pybind11_protobuf/proto_caster_impl.h)
++add_library(
++  pybind11_wrapped_proto_caster_static STATIC
++  # bazel: pybind_library: wrapped_proto_caster
++  pybind11_protobuf/wrapped_proto_caster.h
++  # bazel: pybind_library: proto_cast_util
++  pybind11_protobuf/proto_cast_util.cc
++  pybind11_protobuf/proto_cast_util.h
++  pybind11_protobuf/proto_caster_impl.h)
+ 
+ target_link_libraries(
+   pybind11_wrapped_proto_caster
+@@ -144,11 +156,26 @@ target_link_libraries(
+   protobuf::libprotobuf
+   pybind11::pybind11
+   ${Python_LIBRARIES})
++target_link_libraries(
++  pybind11_wrapped_proto_caster_static
++  absl::flat_hash_map
++  absl::flat_hash_set
++  absl::hash
++  absl::strings
++  absl::optional
++  protobuf::libprotobuf
++  pybind11::pybind11
++  ${Python_LIBRARIES})
+ 
+ target_include_directories(
+   pybind11_wrapped_proto_caster
+   PRIVATE ${PROJECT_SOURCE_DIR} ${protobuf_INCLUDE_DIRS} ${protobuf_SOURCE_DIR}
+           ${pybind11_INCLUDE_DIRS})
++target_include_directories(
++  pybind11_wrapped_proto_caster_static
++  PRIVATE ${PROJECT_SOURCE_DIR} ${protobuf_INCLUDE_DIRS} ${protobuf_SOURCE_DIR}
++          ${pybind11_INCLUDE_DIRS})
++set_target_properties(pybind11_wrapped_proto_caster_static PROPERTIES OUTPUT_NAME pybind11_wrapped_proto_caster)
+ 
+ if(BUILD_TESTING)
+   add_subdirectory(pybind11_protobuf/tests)
+@@ -171,3 +198,18 @@ endif()
+ #
+ # proto_cast_util
+ #
++
++install(
++  TARGETS pybind11_native_proto_caster pybind11_native_proto_caster_static pybind11_wrapped_proto_caster pybind11_wrapped_proto_caster_static
++  EXPORT pybind11_protobufTargets
++  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++  RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}
++)
++install(
++  TARGETS pybind11_proto_utils
++  EXPORT pybind11_protobufTargets
++  LIBRARY DESTINATION ${CMAKE_INSTALL_PYDIR}
++  ARCHIVE DESTINATION ${CMAKE_INSTALL_PYDIR}
++  RUNTIME DESTINATION ${CMAKE_INSTALL_PYDIR}
++)

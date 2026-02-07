@@ -1,0 +1,5 @@
+The RCurl package is an R-interface to the libcurl library that
+provides HTTP facilities. This allows us to download files from Web
+servers, post forms, use HTTPS (the secure HTTP), use persistent
+connections, upload files, use binary content, handle redirects,
+password authentication, etc.

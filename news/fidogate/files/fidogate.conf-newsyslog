@@ -1,0 +1,6 @@
+/var/log/fido/gate/afixlog	news:news	644  4	1000	@T23	X
+/var/log/fido/gate/binkd2.log	news:news	644  4	1000	@T23	X
+/var/log/fido/gate/log		news:news	644  4	1000	@T23	X
+/var/log/fido/gate/log-in	news:news	644  4	1000	@T23	X
+/var/log/fido/gate/log-news	news:news	644  4	1000	@T23	X
+/var/log/fido/gate/send-fidogate.log	news:news	660  4	1000	@T23	X

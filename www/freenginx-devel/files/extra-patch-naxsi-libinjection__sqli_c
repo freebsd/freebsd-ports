@@ -1,0 +1,13 @@
+--- ../libinjection-b9fcaaf/src/libinjection_sqli.c.orig	2025-02-04 16:00:34.056724000 -0500
++++ ../libinjection-b9fcaaf/src/libinjection_sqli.c	2025-02-04 16:01:22.692905000 -0500
+@@ -305,8 +305,8 @@
+ static void st_assign(stoken_t * st, const char stype,
+                       size_t pos, size_t len, const char* value)
+ {
+-    const size_t MSIZE = LIBINJECTION_SQLI_TOKEN_SIZE;
+-    size_t last = len < MSIZE ? len : (MSIZE - 1);
++    const size_t NAXSI_MSIZE = LIBINJECTION_SQLI_TOKEN_SIZE;
++    size_t last = len < NAXSI_MSIZE ? len : (NAXSI_MSIZE - 1);
+     st->type = (char) stype;
+     st->pos = pos;
+     st->len = last;

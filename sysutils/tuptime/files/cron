@@ -1,0 +1,1 @@
+*/5	*	*	*	*	_tuptime	(/usr/sbin/service tuptime enabled) && /usr/local/bin/tuptime -q

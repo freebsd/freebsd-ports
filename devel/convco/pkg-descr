@@ -1,0 +1,7 @@
+convco is a Conventional commit cli.
+
+It provides the following commands:
+* convco changelog: Create a changelog file.
+* convco check: Checks if a range of commits is following the convention.
+* convco commit: Helps to make conventional commits.
+* convco version: Finds out the current or next version.

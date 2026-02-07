@@ -1,0 +1,39 @@
+From: Andreas Oberritter <obi@saftware.de>
+Date: Tue, 11 May 2021 13:05:10 +0200
+Subject: Fix reading service banners from TLS-1.3-enabled hosts
+
+Bug-Debian: https://bugs.debian.org/930532
+Forwarded: https://lists.xymon.com/archive/2024-February/048290.html
+Last-Update: 2021-05-11
+
+
+Related discussion:
+https://lists.xymon.com/archive/2019-July/046585.html
+https://lists.xymon.com/archive/2019-November/046893.html
+https://lists.xymon.com/archive/2020-February/046986.html
+https://lists.xymon.com/archive/2020-March/046987.html
+https://sourceforge.net/p/xymon/discussion/435278/thread/c0359f08e7/
+---
+ xymonnet/contest.c | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+--- xymonnet/contest.c
++++ xymonnet/contest.c
+@@ -1347,13 +1347,12 @@ restartselect:
+ 							}
+ 						}
+ 
+-						if ((item->svcinfo->flags & TCP_HTTP) && 
+-						    ((res > 0) || item->sslagain)     &&
+-						    (!datadone) ) {
++						if (((item->svcinfo->flags & TCP_HTTP) && res > 0) || item->sslagain) {
+ 							/*
+-							 * HTTP : Grab the entire response.
++							 * Grab the entire HTTP response or wait for
++							 * TLS handshake to complete.
+ 							 */
+-							wantmoredata = 1;
++							wantmoredata = !datadone;
+ 						}
+ 
+ 						if (!wantmoredata) {

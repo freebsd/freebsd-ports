@@ -1,0 +1,11 @@
+--- util/Makefile.am.orig	2023-12-09 03:14:08 UTC
++++ util/Makefile.am
+@@ -122,7 +122,7 @@ endif
+ 	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-rebuild scrollkeeper-rebuilddb
+ 	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-install scrollkeeper-uninstall
+ 	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-update scrollkeeper-update
+-	@mkdir -p $(DESTDIR)/$(localstatedir)/lib/rarian
++	@mkdir -p $(DESTDIR)/$(localstatedir)/db/rarian
+ if ENABLE_SKDB_UPDATE
+ 	@echo "Translating current database"
+ 	@$(DESTDIR)$(bindir)/rarian-sk-update

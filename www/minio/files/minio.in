@@ -1,0 +1,125 @@
+#!/bin/sh
+
+# PROVIDE: minio
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable minio:
+#
+# minio_enable (bool):          Set to "NO" by default.
+#                               Set it to "YES" to enable minio
+# minio_config (path):          Set to "%%ETCDIR%%" by default
+#                               Set to directory to store minio config (deprecated)
+# minio_certs (path):           Set to "%%ETCDIR%%/certs" by default
+#                               Set to directory to certs dir
+# minio_disks (path):           Set to "/var/db/minio" by default.
+#                               Set it to directory to store minio data
+# minio_address (str):          Set to ":9000" by default.
+#                               Set it to address for minio to listen on
+# minio_console_address (str):  Not set by default
+#                               Set it to address for minio to listen on for console
+# minio_user (str):             Set to "minio" by default.
+#                               Set it to user to run minio under
+# minio_group (str):            Set to "minio" by default.
+#                               Set it to group to run minio under
+# minio_root_user (str):        Set to "minioadmin" by default.
+#                               Set root username
+# minio_root_password (str):    Set to "minioadmin" by default.
+#                               Set root's password
+# minio_root_access (str):      Set to "on" by default.
+#                               Set to "off" to disable root access
+# minio_logfile (str):          Set to "/var/log/minio.log" by default.
+#                               Set it to file where stdout/stderr are logged.
+# minio_syslog_enable (bool):   Set to YES by default
+#                               Set it to NO to disable syslog output
+# minio_syslog_tag (str):       Set to "minio" by default.
+#                               Set syslog tag if syslog enabled
+# minio_syslog_priority (str):  Set to "info" by default.
+#                               Set syslog priority if syslog enabled
+# minio_syslog_facility (str):  Set to "daemon" by default.
+#                               Set syslog facility if syslog enabled
+#
+
+. /etc/rc.subr
+
+name=minio
+rcvar=minio_enable
+
+load_rc_config ${name}
+
+: ${minio_enable:="NO"}
+: ${minio_certs="%%ETCDIR%%/certs"}
+: ${minio_disks="%%DBDIR%%"}
+: ${minio_address=":9000"}
+: ${minio_console_address=""}
+: ${minio_user:="%%USER%%"}
+: ${minio_group:="%%GROUP%%"}
+: ${minio_root_user:="minioadmin"}
+: ${minio_root_password:="minioadmin"}
+: ${minio_root_access:="on"}
+: ${minio_syslog_enable:="YES"}
+: ${minio_logfile:="/var/log/minio.log"}
+
+export MINIO_ROOT_USER="${minio_root_user}"
+export MINIO_ROOT_PASSWORD="${minio_root_password}"
+export MINIO_API_ROOT_ACCESS="${minio_root_access}"
+
+start_precmd="minio_start_precmd"
+
+if checkyesno minio_syslog_enable; then
+    if [ -n "${minio_syslog_tag}" ]; then
+        minio_syslog_output_flags="-T ${minio_syslog_tag}"
+    else
+        minio_syslog_output_flags="-T ${name}"
+    fi
+    if [ -n "${minio_syslog_priority}" ]; then
+        minio_syslog_output_flags="${minio_syslog_output_flags} -s ${minio_syslog_priority}"
+    fi
+    if [ -n "${minio_syslog_facility}" ]; then
+        minio_syslog_output_flags="${minio_syslog_output_flags} -l ${minio_syslog_facility}"
+    fi
+else
+    minio_syslog_output_flags="-o ${minio_logfile}"
+fi
+
+# legacy compatibility
+if [ -n "${minio_config}" ]; then
+    minio_config_flag="-C \"${minio_config}\""
+fi
+
+if [ ! -z "${minio_console_address}" ]; then
+    minio_console_address_arg="--console-address \"${minio_console_address}\""
+else
+    minio_console_address_arg=""
+fi
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/minio"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${minio_syslog_output_flags} -p ${pidfile} /usr/bin/env ${minio_env} ${procname} ${minio_config_flag} -S \"${minio_certs}\" --quiet server --address=\"${minio_address}\" ${minio_console_address_arg} ${minio_disks} ${minio_args}"
+
+minio_start_precmd()
+{
+    if [ ! -e "${pidfile}" ]; then
+        install -m 0600 -o "${minio_user}" -g "${minio_group}" /dev/null "${pidfile}"
+    fi
+
+    if echo "${minio_disks}" | egrep -q -v '^[^/]|\.{3}'; then
+        for disk in "${minio_disks}"; do
+            if [ ! -d "${disk}" ]; then
+                install -d -m 0750 -o "${minio_user}" -g "${minio_group}" "${disk}"
+            fi
+        done
+    fi
+
+    if [ -n "${minio_config}" -a ! -d "${minio_config}" ]; then
+        install -d -m 0750 -o "${minio_user}" -g "${minio_group}" "${minio_config}"
+    fi
+
+    if ! checkyesno minio_syslog_enable && [ ! -e "${minio_logfile}" ]; then
+        install -m 0640 -o "${minio_user}" -g "${minio_group}" /dev/null "${minio_logfile}"
+    fi
+}
+
+run_rc_command "$1"

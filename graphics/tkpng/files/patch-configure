@@ -1,0 +1,20 @@
+--- configure.orig	2008-03-26 01:36:50.000000000 +0000
++++ configure
+@@ -8714,7 +8714,7 @@ fi
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+ 	    TCL_LIB_VERSIONS_OK=nodots
+ 	    ;;
+-	NetBSD-*|FreeBSD-*)
++	NetBSD-*|DragonFly-*|FreeBSD-*)
+ 	    # FreeBSD 3.* and greater have ELF.
+ 	    # NetBSD 2.* has ELF and can use 'cc -shared' to build shared libs
+ 	    SHLIB_CFLAGS="-fPIC"
+@@ -9622,7 +9622,7 @@ fi
+ 	    AIX-*) ;;
+ 	    BSD/OS*) ;;
+ 	    IRIX*) ;;
+-	    NetBSD-*|FreeBSD-*) ;;
++	    NetBSD-*|DragonFly|FreeBSD-*) ;;
+ 	    Darwin-*) ;;
+ 	    SCO_SV-3.2*) ;;
+ 	    *) SHLIB_CFLAGS="-fPIC" ;;

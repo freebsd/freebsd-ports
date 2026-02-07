@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/OpenSSL/AES.pm
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/AES/AES.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::AES.3.gz

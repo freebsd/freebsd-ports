@@ -1,0 +1,56 @@
+--- configure.orig	2010-01-06 15:31:47.000000000 +0900
++++ configure	2010-01-06 15:34:50.000000000 +0900
+@@ -3784,7 +3784,7 @@
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS="$CFLAGS"
+   else
+     CFLAGS=
+   fi
+@@ -5002,7 +5002,7 @@
+ 
+ 
+ if test "x$GCC" = xyes; then
+-	CFLAGS="-O2"
++	CFLAGS="$CFLAGS"
+ fi
+ # Check whether --enable-debug was given.
+ if test "${enable_debug+set}" = set; then :
+@@ -5259,7 +5259,7 @@
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS="$CXXFLAGS"
+   else
+     CXXFLAGS=
+   fi
+@@ -5399,7 +5399,7 @@
+ 
+ 
+ if test "x$GXX" = xyes; then
+-	CXXFLAGS="-O2"
++	CXXFLAGS="$CXXFLAGS"
+ fi
+ # Check whether --enable-debug was given.
+ if test "${enable_debug+set}" = set; then :
+@@ -8211,7 +8211,7 @@
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS="$CXXFLAGS"
+   else
+     CXXFLAGS=
+   fi
+@@ -15920,7 +15920,7 @@
+ fi
+ 
+ 
+-if test "x${ac_cv_have_x:0:10}" != "xhave_x=yes"; then
++if test "x${ac_cv_have_x+set}" = set; then
+ 	as_fn_error "X11 is missing but required." "$LINENO" 5
+ fi
+ 

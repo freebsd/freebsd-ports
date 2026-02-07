@@ -1,0 +1,8 @@
+bin/bitparse
+bin/detectchain
+bin/jedecparse
+bin/readdna
+bin/srecparse
+bin/xc2c_warp
+bin/xc3sprog
+share/man/man1/xc3sprog.1.gz

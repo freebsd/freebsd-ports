@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+If Wine does not appear to start up properly, consider moving away the
+configuration directory ~/.wine and try again.
+
+Some ZFS tuning guides recommend setting KVA_PAGES=512 in your kernel
+configuration.  This is incompatible with Wine.  The maximum possible
+is KVA_PAGES=500, which should still be enough for ZFS.
+
+The port also installs some of Wine's documentation which describes
+additional programs that are not in the manual pages under
+  %%PREFIX%%/share/doc/wine
+
+To enable Wayland run the following two commands:
+$ cat > wayland.reg  <<EOF
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Wine\Drivers]
+"Graphics"="x11,wayland"
+EOF
+$ wine64 regedit wayland.reg
+EOM
+}
+]

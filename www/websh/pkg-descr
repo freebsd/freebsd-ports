@@ -1,0 +1,8 @@
+Web|sh is a TCL module for Apache. It is currently the most
+advanced and the best supported of the several such modules
+listed at
+
+	http://tcl.apache.org/
+
+Works with both Apache-1.3.x and 2.x and has an interesting development
+paradigm.

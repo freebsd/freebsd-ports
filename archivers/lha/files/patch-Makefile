@@ -1,0 +1,52 @@
+--- Makefile.orig	2000-12-15 12:13:16 UTC
++++ Makefile
+@@ -10,28 +10,36 @@
+ #	SWITCHES macro definitions ... see config.eng or config.jpn.
+ #-----------------------------------------------------------------------
+ 
+-SHELL=/bin/sh
+-MAKE = make
++#SHELL=/bin/sh
++#MAKE = make
+ 
+ #CC			= cc
+-CC			= gcc
+-SWITCHES	= -DNEED_INCREMENTAL_INDICATOR \
+- -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
++#CC                      = gcc
++#SWITCHES        = -DNEED_INCREMENTAL_INDICATOR \
++# -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
++SWITCHES        = -DNEED_INCREMENTAL_INDICATOR
+ 
+ #MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
+ #MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DHAVE_TM_ZONE -DSYSV_SYSTEM_DIR
+-MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DMKTIME
++#MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DMKTIME
++MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DTIMELOCAL -DUSESTRCASECMP
+ 
+ #OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
+-OPTIMIZE	= -O2 -DSUPPORT_LH7 -DMKSTEMP
++#OPTIMIZE        = -O2 -DSUPPORT_LH7 -DMKSTEMP
++# mkstemp() usage is wrong
++OPTIMIZE        = ${CFLAGS} -DSUPPORT_LH7
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man
+-MANSECT = n
++#BINDIR = /usr/local/bin
++#MANDIR = /usr/local/man
++#MANSECT = n
++PREFIX ?= /usr/local
++BINDIR = ${PREFIX}/bin
++MANDIR = ${PREFIX}/share/man/ja
++MANSECT = 1
+ 
+-INSTALL = install
+-INSTALLBIN = -s -m 755
+-INSTALLMAN = -m 644
++INSTALL =
++INSTALLBIN = ${BSD_INSTALL_PROGRAM}
++INSTALLMAN = ${BSD_INSTALL_MAN}
+ 
+ SUBDIRS = src man
+ 

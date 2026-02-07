@@ -1,0 +1,5 @@
+lib/scim-1.0/1.4.0/IMEngine/kmfl.a
+lib/scim-1.0/1.4.0/IMEngine/kmfl.so
+lib/scim-1.0/1.4.0/SetupUI/kmfl_imengine_setup.a
+lib/scim-1.0/1.4.0/SetupUI/kmfl_imengine_setup.so
+share/scim/kmfl/icons/default.png

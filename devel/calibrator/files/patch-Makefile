@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Oct 13 11:14:02 2003
++++ Makefile	Mon Oct 13 11:16:20 2003
+@@ -0,0 +1,8 @@
++PROG=	calibrator
++SRCS=	calibrator.c
++MAN=
++
++CFLAGS+=	-D_ANSI_SOURCE
++LDADD+=	-lm
++
++.include <bsd.prog.mk>

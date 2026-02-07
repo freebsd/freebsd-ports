@@ -1,0 +1,8 @@
+--- doc/Makefile.am.orig	2020-12-07 11:27:30 UTC
++++ doc/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = dbus libconsolekit
++SUBDIRS = dbus
+ 
+ manpagedir = $(mandir)/man1
+ manpage_DATA =            \

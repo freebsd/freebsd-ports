@@ -1,0 +1,1 @@
+Make Email::Address->parse() loose.

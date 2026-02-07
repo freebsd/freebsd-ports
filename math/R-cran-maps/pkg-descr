@@ -1,0 +1,2 @@
+Display of maps. Projection code and larger maps are in separate packages
+('mapproj' and 'mapdata').

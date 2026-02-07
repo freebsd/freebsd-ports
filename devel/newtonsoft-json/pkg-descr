@@ -1,0 +1,11 @@
+Popular high-performance JSON framework for .NET
+* Flexible JSON serializer for converting between .NET objects and JSON
+* LINQ to JSON for manually reading and writing JSON
+* High performance, faster than .NET's built-in JSON serializers
+* Write indented, easy to read JSON
+* Convert JSON to and from XML
+* Supports .NET 2, .NET 3.5, .NET 4, .NET 4.5, Silverlight, Windows Phone and
+  Windows 8 Store
+
+The JSON serializer in Json.NET is a good choice when the JSON you are reading
+or writing maps closely to a .NET class.

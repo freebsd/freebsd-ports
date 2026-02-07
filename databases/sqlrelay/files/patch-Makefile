@@ -1,0 +1,20 @@
+--- Makefile.orig	2020-06-14 14:27:43 UTC
++++ Makefile
+@@ -31,9 +31,6 @@ install-doc:
+ 	cd doc $(AND) $(MAKE) install
+ 
+ install-license:
+-	$(MKINSTALLDIRS) $(licensedir)
+-	$(CP) COPYING $(licensedir)
+-	$(CHMOD) 0644 $(licensedir)/COPYING
+ 
+ install-pkgconfig:
+ 	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
+@@ -64,7 +61,6 @@ uninstall-doc:
+ 	cd doc $(AND) $(MAKE) uninstall
+ 
+ uninstall-license:
+-	$(RMTREE) $(licensedir)
+ 
+ uninstall-pkgconfig:
+ 	$(RM) $(prefix)/libdata/pkgconfig/$(SQLRELAY)-c.pc \

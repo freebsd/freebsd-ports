@@ -1,0 +1,6 @@
+HTTP::CookieJar implements a minimalist HTTP user agent cookie jar in
+conformance with RFC 6265.
+
+Unlike the commonly used HTTP::Cookies module, this module does not require use
+of HTTP::Request and HTTP::Response objects. An LWP-compatible adapter is
+available as HTTP::CookieJar::LWP.

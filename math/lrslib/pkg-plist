@@ -1,0 +1,11 @@
+bin/lrs
+bin/lrsnash
+include/lrslib/lrsdriver.h
+include/lrslib/lrsgmp.h
+include/lrslib/lrslib.h
+include/lrslib/lrslong.h
+include/lrslib/lrsmp.h
+include/lrslib/lrsrestart.h
+lib/liblrs.so
+lib/liblrs.so.1
+lib/liblrs.so.1.0.0

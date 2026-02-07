@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: fwupd
+# REQUIRE: LOGIN dbus
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable fwupd daemon:
+#
+# fwupd_enable="YES"
+#
+
+. /etc/rc.subr
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+name="fwupd"
+rcvar=fwupd_enable
+
+load_rc_config ${name}
+
+: ${fwupd_enable:="NO"}
+
+command="/usr/sbin/daemon"
+procname="/usr/local/libexec/fwupd/${name}"
+pidfile="/var/run/${name}.pid"
+command_args="-S -p ${pidfile} ${procname}"
+
+run_rc_command "$1"

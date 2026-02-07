@@ -1,0 +1,25 @@
+--- Makefile.in.orig	2004-01-06 07:22:17 UTC
++++ Makefile.in
+@@ -9,11 +9,11 @@ VERSION= 451
+ srcdir=	@srcdir@
+ VPATH=	@srcdir@
+ 
+-prefix=	@prefix@
++prefix=	${DESTDIR}@prefix@
+ exec_prefix=	@exec_prefix@
+ bindir=	@bindir@
+ libdir=	@libdir@
+-mandir=	@mandir@
++mandir=	${DESTDIR}@mandir@
+ 
+ lvlibdir=	$(libdir)/lv
+ distdir = lv$(VERSION)
+@@ -41,7 +41,7 @@ UNIOBJS=	utf.o unimap.o unirev.o
+ all:	lv
+ 
+ lv:	$(OBJS) $(UNIOBJS)
+-	$(PURIFY) $(CC) $(LDFLAGS) -o $@ $(OBJS) $(UNIOBJS) $(LIBS)
++	$(PURIFY) $(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(UNIOBJS) $(LIBS)
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $<

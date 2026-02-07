@@ -1,0 +1,19 @@
+--- make.defaults.orig	2021-04-11 19:03:51 UTC
++++ make.defaults
+@@ -73,8 +73,6 @@ FEATURES += TTF                 # Add ability to use T
+ 
+ 
+ 
+-PLATFORM=-march=native
+-XDIR=-L/usr/X11R6/lib
+ CWARN=-Wall -Wdeclaration-after-statement -W -Wno-unused-parameter -Wno-sign-compare
+ # -Wno-pointer-sign -Wno-sign-compare -Werror
+ CXXWARN=-std=c++11 -Wall -W -Wno-unused-parameter -Wno-sign-compare -Wno-cast-function-type
+@@ -90,7 +88,3 @@ CXXWARN=-std=c++11 -Wall -W -Wno-unused-parameter -Wno
+ #EXTRA_INCLUDES=-IC:\\Programme\\Dev-Cpp\\Include
+ #EXTRA_LIBS=-lz
+ #EXTRA_STATICLIBS=libs/zlib.a
+-
+-CC=gcc
+-CXX=g++
+-LINK=gcc

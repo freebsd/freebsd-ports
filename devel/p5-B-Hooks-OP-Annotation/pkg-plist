@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/B/Hooks/OP/Annotation.pm
+%%SITE_ARCH%%/B/Hooks/OP/Annotation/Install/Files.pm
+%%SITE_ARCH%%/B/Hooks/OP/Annotation/Install/hook_op_annotation.h
+%%SITE_ARCH%%/auto/B/Hooks/OP/Annotation/Annotation.so
+%%PERL5_MAN3%%/B::Hooks::OP::Annotation.3.gz

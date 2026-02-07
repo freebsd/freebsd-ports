@@ -1,0 +1,7 @@
+%%LIBRETRO%%lib/libretro/mesen_libretro.so
+%%MONO%%bin/mesen
+%%MONO%%libexec/mesen/Mesen.exe
+%%MONO%%libexec/mesen/libMesenCore.dll
+%%MONO%%share/icons/hicolor/16x16/apps/mesen.png
+%%MONO%%share/icons/hicolor/32x32/apps/mesen.png
+%%MONO%%share/icons/hicolor/64x64/apps/mesen.png

@@ -1,0 +1,12 @@
+bin/pt_agent
+bin/pt_sflow
+bin/pt_netflow
+bin/pt_thmon
+@sample etc/packter.conf.sample
+%%PACKTERTC%%%%DATADIR%%/packter_tc/IPTB.pm
+%%PACKTERTC%%%%DATADIR%%/packter_tc/InterTrackMessage.xsd
+%%PACKTERTC%%%%DATADIR%%/packter_tc/btm.conf
+%%PACKTERTC%%%%DATADIR%%/packter_tc/dp.conf
+%%PACKTERTC%%%%DATADIR%%/packter_tc/itm.conf
+%%PACKTERTC%%%%DATADIR%%/packter_tc/packter_tc.pl
+%%PACKTERTC%%%%DATADIR%%/packter_tc/xsd.pl

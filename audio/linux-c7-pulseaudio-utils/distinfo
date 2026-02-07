@@ -1,0 +1,9 @@
+TIMESTAMP = 1627157130
+SHA256 (centos/pulseaudio-utils-10.0-6.el7_9.aarch64.rpm) = e16ff269608953e65f2a5a3b5ed255d59c2d68a280538e51a7d2b3f3a6098cb5
+SIZE (centos/pulseaudio-utils-10.0-6.el7_9.aarch64.rpm) = 75452
+SHA256 (centos/pulseaudio-utils-10.0-6.el7_9.i686.rpm) = 3b5357fcea009c7567132140bb872fbbf73c78a0625cbf39ef6002178b898413
+SIZE (centos/pulseaudio-utils-10.0-6.el7_9.i686.rpm) = 76020
+SHA256 (centos/pulseaudio-utils-10.0-6.el7_9.x86_64.rpm) = 192e0475321fe56db4e9593f45ee8e350eefc332f30d7e62d1412741c38ef09b
+SIZE (centos/pulseaudio-utils-10.0-6.el7_9.x86_64.rpm) = 78400
+SHA256 (centos/pulseaudio-10.0-6.el7_9.src.rpm) = c3f78c9d68d54b7182449f5d24d142e166ff6188e5d567efec3408214b3bd59b
+SIZE (centos/pulseaudio-10.0-6.el7_9.src.rpm) = 1660006

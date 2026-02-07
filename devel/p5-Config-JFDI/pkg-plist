@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Config::JFDI.3.gz
+%%SITE_PERL%%/Config/JFDI.pm
+%%SITE_PERL%%/Config/JFDI/Carp.pm
+%%SITE_PERL%%/Config/JFDI/Source/Loader.pm

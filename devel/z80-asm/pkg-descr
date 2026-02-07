@@ -1,0 +1,3 @@
+Z80-asm is a C-source code available package which contains a 2-pass
+Z80 assembler and a sophisticated Z80 monitor. This monitor can be used
+as debugger, disassembler, emulator and more for a Z80-CPU.

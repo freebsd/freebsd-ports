@@ -1,0 +1,3 @@
+This base class implements the common needs between various types
+of SOAP daemons. As daemon type, you can use any kind of Net::Server
+implementation.

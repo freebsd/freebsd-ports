@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Lexical/Alias.pm
+%%SITE_ARCH%%/auto/Lexical/Alias/Alias.so
+%%PERL5_MAN3%%/Lexical::Alias.3.gz

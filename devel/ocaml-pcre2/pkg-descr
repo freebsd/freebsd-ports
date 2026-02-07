@@ -1,0 +1,2 @@
+OCaml binding to the libpcre2, the Perl compatible regular expressions
+library.

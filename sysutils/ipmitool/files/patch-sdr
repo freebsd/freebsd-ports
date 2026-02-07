@@ -1,0 +1,75 @@
+From 202f7427e0a4d1f319fc4b914676cc2f08da6c6c Mon Sep 17 00:00:00 2001
+From: Alexander Amelkin <alexander@amelkin.msk.ru>
+Date: Tue, 17 Sep 2024 15:15:45 +0300
+Subject: [PATCH] sdr: Refix 6e037d6bfbbb93b349c8ca331ebde03a (#41)
+
+A bug was introduced by commit 6e037d6bfbbb93b349c8ca331ebde03a837f76bf
+due to which the command `ipmitool sdr type` stopped accepting raw
+hex values for the type and would only accept strings.
+
+Fix that by partially reverting the troublesome commit.
+
+Additionally, apply the logic of that commit to calls of
+`strcasecmp()` in ipmi_sdr.c.
+
+Resolves https://codeberg.org/IPMITool/ipmitool/issues/41
+
+Signed-off-by: Alexander Amelkin <alexander@amelkin.msk.ru>
+---
+ lib/ipmi_sdr.c | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+diff --git lib/ipmi_sdr.c lib/ipmi_sdr.c
+index abd4ee1..4732762 100644
+--- lib/ipmi_sdr.c
++++ lib/ipmi_sdr.c
+@@ -4570,8 +4570,9 @@ ipmi_sdr_print_type(struct ipmi_intf *intf, char *type)
+ 	uint8_t sensor_type = 0;
+ 
+ 	if (!type ||
+-	    strcasecmp(type, "help") == 0 ||
+-	    strcasecmp(type, "list") == 0) {
++	    !strcasecmp(type, "help") ||
++	    !strcasecmp(type, "list"))
++	{
+ 		printf("Sensor Types:\n");
+ 		for (x = 1; x < SENSOR_TYPE_MAX; x += 2) {
+ 			printf("\t%-25s (0x%02x)   %-25s (0x%02x)\n",
+@@ -4581,7 +4582,7 @@ ipmi_sdr_print_type(struct ipmi_intf *intf, char *type)
+ 		return 0;
+ 	}
+ 
+-	if (!strcmp(type, "0x")) {
++	if (!strncmp(type, "0x", 2)) {
+ 		/* begins with 0x so let it be entered as raw hex value */
+ 		if (str2uchar(type, &sensor_type) != 0) {
+ 			lprintf(LOG_ERR,
+@@ -4591,7 +4592,7 @@ ipmi_sdr_print_type(struct ipmi_intf *intf, char *type)
+ 		}
+ 	} else {
+ 		for (x = 1; x < SENSOR_TYPE_MAX; x++) {
+-			if (strcasecmp(sensor_type_desc[x], type) == 0) {
++			if (!strcasecmp(sensor_type_desc[x], type)) {
+ 				sensor_type = x;
+ 				break;
+ 			}
+@@ -4638,8 +4639,8 @@ ipmi_sdr_print_entity(struct ipmi_intf *intf, char *entitystr)
+ 	int rc = 0;
+ 
+ 	if (!entitystr ||
+-	    strcasecmp(entitystr, "help") == 0 ||
+-	    strcasecmp(entitystr, "list") == 0) {
++	    !strcasecmp(entitystr, "help") ||
++	    !strcasecmp(entitystr, "list")) {
+ 		print_valstr_2col(entity_id_vals, "Entity IDs", -1);
+ 		return 0;
+ 	}
+@@ -4654,7 +4655,7 @@ ipmi_sdr_print_entity(struct ipmi_intf *intf, char *entitystr)
+ 
+ 			/* now try string input */
+ 			for (i = 0; entity_id_vals[i].str; i++) {
+-				if (strcasecmp(entitystr, entity_id_vals[i].str) == 0) {
++				if (!strcasecmp(entitystr, entity_id_vals[i].str)) {
+ 					entity.id = entity_id_vals[i].val;
+ 					entity.instance = 0x7f;
+ 					j=1;

@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-02-04 21:28:15 UTC
++++ pyproject.toml
+@@ -33,7 +33,7 @@ dependencies = [
+     "defcon",
+     "dehinter >= 3.1.0",  # 3.1.0 added dehinter.font.hint function
+     "fontTools[ufo] >= 4.47.0",  # varLib.interpolatableHelpers.InterpolatableProblem
+-    "freetype-py < 2.4.0",  # see: https://github.com/fonttools/fontbakery/issues/4143
++    "freetype-py",  # see: https://github.com/fonttools/fontbakery/issues/4143
+     "Jinja2 >= 3.0.0",  # issue #4717
+     "munkres",
+     "opentypespec",
+@@ -108,7 +108,7 @@ googlefonts = [
+     "fonttools[lxml,unicode]",
+     # (see https://github.com/googlefonts/gflanguages/pull/7)
+ 
+-    "protobuf >= 3.7.0, < 4",
++    "protobuf >= 3.7.0",
+     # 3.7.0 fixed a bug on parsing some METADATA.pb files.
+     # We cannot use v4 because our protobuf files have been compiled with v3.
+     # (see https://github.com/fonttools/fontbakery/issues/2200)

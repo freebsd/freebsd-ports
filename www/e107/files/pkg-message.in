@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+1) Create a user and a database for e107 to store all
+   its tables in (or choose an existing database).
+
+2) Add the following to your Apache configuration, and
+   restart the server:
+
+   Alias /e107 %%PREFIX%%/%%E107DIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%E107DIR%%/>
+      AllowOverride None
+      Require all granted
+   </Directory>
+
+3) Visit your e107 site with a browser (i.e.,
+   http://your.server.com/e107/), and you should
+   be taken to the install.php script, which will lead
+   you through creating a config.php file and then
+   setting up e107, creating an admin account, etc.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   http://wiki.e107.org/?title=HOWTO:Install_e107
+   http://wiki.e107.org/?title=HOWTO:Install_troubleshoot
+EOM
+}
+]

@@ -1,0 +1,8 @@
+--- cmake/libwebsockets-config-version.cmake.in.orig	1970-01-01 00:00:00 UTC
++++ cmake/libwebsockets-config-version.cmake.in
+@@ -1,4 +1,4 @@
+-set(PACKAGE_VERSION "@CPACK_PACKAGE_VERSION@")
++set(PACKAGE_VERSION "@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@.@CPACK_PACKAGE_VERSION_PATCH_NUMBER@")
+ 
+ # Check whether the requested PACKAGE_FIND_VERSION is compatible
+ if("${PACKAGE_VERSION}" VERSION_LESS "${PACKAGE_FIND_VERSION}")

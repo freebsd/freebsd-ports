@@ -1,0 +1,12 @@
+# pure-ftpd
+pure-ftpd	auth	required	pam_nologin.so
+#pure-ftpd	auth	sufficient	pam_kerberosIV.so
+#pure-ftpd	auth	sufficient	pam_krb5.so
+#pure-ftpd	auth	required	pam_opie.so
+pure-ftpd	auth	required	pam_unix.so		try_first_pass
+#pure-ftpd	account	required	pam_kerberosIV.so
+#pure-ftpd	account	required	pam_krb5.so
+pure-ftpd	account	required	pam_permit.so
+pure-ftpd	session	required	pam_permit.so
+#pure-ftpd	session	required	pam_kerberosIV.so
+#pure-ftpd	session	required	pam_krb5.so

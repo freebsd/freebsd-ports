@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: vdradmind
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable vdradmin_am:
+#
+# vdradmind_enable="YES"
+
+. /etc/rc.subr
+
+name=vdradmind
+rcvar=vdradmind_enable
+
+command="%%PREFIX%%/bin/vdradmind"
+pidfile="/var/run/vdradmin-am/${name}.pid"
+
+load_rc_config ${name}
+: ${vdradmind_enable="NO"}
+: ${vdradmind_user="vdr"}
+
+run_rc_command "$1"

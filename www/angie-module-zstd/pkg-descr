@@ -1,0 +1,4 @@
+The module adds support for Zstandard compression of responses, both
+dynamic (on-the-fly) and static (precompressed files). Compared to gzip,
+zstd offers higher compression and decompression speeds at comparable
+or better compression ratios.

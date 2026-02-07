@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# $FreeBSD$
+# PROVIDE: mastodon_streaming
+# REQUIRE: DAEMON postgresql
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="mastodon_streaming"
+desc="Mastodon Streaming Service"
+rcvar="mastodon_streaming_enable"
+
+load_rc_config ${name}
+
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+
+mastodon_streaming_user="mastodon"
+mastodon_streaming_chdir="%%WWWDIR%%"
+mastodon_streaming_env="NODE_ENV=production \
+PORT=4000 \
+STREAMING_CLUSTER_NUM=1 \
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin:~/bin"
+pidfile="/var/run/mastodon/${name##mastodon_}.pid"
+ppidfile="/var/run/mastodon/${name##mastodon_}_supervisor.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/node"
+procname_args="./streaming"
+command_args="-f -T ${name} -P ${ppidfile} -p ${pidfile} -S -r ${procname} ${procname_args}"
+
+mastodon_streaming_prestart()
+{
+	if [ ! -d "/var/run/mastodon" ]; then
+		install -d -o "${mastodon_streaming_user}" -g "${mastodon_streaming_user}" -m 750 "/var/run/mastodon"
+	fi
+}
+
+mastodon_streaming_stop()
+{
+	/bin/kill -9 `cat ${ppidfile}`
+	/bin/kill -15 `cat ${pidfile}`
+}
+
+run_rc_command "$1"

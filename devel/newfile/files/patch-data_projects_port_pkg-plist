@@ -1,0 +1,5 @@
+--- data/projects/port@pkg-plist.orig	2014-10-09 03:43:37 UTC
++++ data/projects/port@pkg-plist
+@@ -1 +1 @@
+-@comment $FreeBSD$
++/you/have/to/check/what/port/create/gives/you

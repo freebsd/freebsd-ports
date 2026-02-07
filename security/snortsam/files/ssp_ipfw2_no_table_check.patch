@@ -1,0 +1,18 @@
+--- src/ssp_ipfw2.c.orig	2008-04-26 21:53:21.000000000 +0200
++++ src/ssp_ipfw2.c	2009-11-14 22:03:41.000000000 +0100
+@@ -91,6 +91,7 @@
+ 				}
+ 			}
+ 		}
++#if defined(ENABLE_IPFW_TABLE_CHECK)
+ 		/* Check if inbound table exists */
+ 		snprintf(chk,sizeof(chk)-1,"/sbin/ipfw show | grep -q \"deny ip from any to table(%u) via %s\"",ipfw2p->in_table,ipfw2p->interface);
+ 		if(system(chk))
+@@ -110,6 +111,7 @@
+ 			}
+ 		}
+ 				
++#endif	/* ENABLE_IPFW_TABLE_CHECK */
+ #ifdef FWSAMDEBUG
+ 		if(plugindatalist->data)
+ 			printf("Debug: [ipfw2] Adding IPFW2: i/f '%s', tables %u (in) and %u (out)\n", ipfw2p->interface, ipfw2p->in_table,ipfw2p->out_table);

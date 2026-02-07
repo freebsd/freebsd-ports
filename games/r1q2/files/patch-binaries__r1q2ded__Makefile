@@ -1,0 +1,11 @@
+--- ./binaries/r1q2ded/Makefile.orig	Mon Oct 30 15:26:12 2006
++++ ./binaries/r1q2ded/Makefile	Sat Dec 16 17:28:37 2006
+@@ -15,7 +15,7 @@
+ 
+ default: r1q2ded
+ 
+-LDFLAGS=-lm -lz
++LDFLAGS+=-lm -lz
+ 
+ ifeq ($(shell uname),Linux)
+ LDFLAGS+=-ldl

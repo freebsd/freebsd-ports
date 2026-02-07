@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# PROVIDE: atheme_services
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# atheme_services_enable (bool):	Set to NO by default.
+#					Set it to YES to enable atheme_services.
+# atheme_services_config (path):	Set to %%PREFIX%%/etc/atheme/atheme.conf
+#					by default.
+# atheme_services_datadir (path):	Set to /var/lib/atheme by default.
+# atheme_services_logfile (path):	Set to /var/log/atheme/atheme.log
+#					by default.
+# atheme_services_user (login):		Set to ircservices by default.
+
+. /etc/rc.subr
+
+name=atheme_services
+rcvar=atheme_services_enable
+
+load_rc_config $name
+
+: ${atheme_services_enable:="NO"}
+: ${atheme_services_config="%%PREFIX%%/etc/atheme/atheme.conf"}
+: ${atheme_services_datadir="/var/lib/atheme"}
+: ${atheme_services_logfile="/var/log/atheme/atheme.log"}
+: ${atheme_services_user="ircservices"}
+
+command=%%PREFIX%%/bin/atheme-services
+pidfile=/var/run/atheme/atheme-services.pid
+
+command_args="-p ${pidfile} -c ${atheme_services_config} -l ${atheme_services_logfile} -D ${atheme_services_datadir} >/dev/null 2>&1"
+
+required_files="${atheme_services_config}"
+
+start_precmd="atheme_services_precmd"
+
+extra_commands="reload"
+
+atheme_services_precmd()
+{
+	if [ ! -d ${atheme_services_datadir} ]; then
+		install -d -o ${atheme_services_user} -m 700 \
+			${atheme_services_datadir}
+	fi
+	if [ ! -d ${atheme_services_logfile%/*} ]; then
+		install -d -o ${atheme_services_user} -m 700 \
+			${atheme_services_logfile%/*}
+	fi
+	if [ ! -d /var/run/atheme ]; then
+		install -d -o ${atheme_services_user} /var/run/atheme
+	fi
+}
+
+run_rc_command "$1"

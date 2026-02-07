@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# PROVIDE: dropbear
+# REQUIRE: LOGIN cleanvar
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dropbear_enable (bool):   Set to NO by default.
+#               Set it to YES to enable dropbear.
+#
+
+. /etc/rc.subr
+
+name="dropbear"
+rcvar=dropbear_enable
+command="%%PREFIX%%/sbin/${name}"
+keygen_cmd="dropbear_keygen"
+start_precmd="dropbear_precmd"
+pidfile="/var/run/${name}.pid"
+extra_commands="keygen"
+
+etcdir="%%PREFIX%%/etc/${name}"
+
+dropbear_keygen()
+{
+	(
+	umask 022
+
+	if [ -f ${etcdir}/dropbear_rsa_host_key ]; then
+		echo "You already have an RSA host key" \
+		    "in ${etcdir}/dropbear_rsa_host_key"
+		echo "Skipping protocol version 2 RSA Key Generation"
+	else
+		%%PREFIX%%/bin/dropbearkey -t rsa -f ${etcdir}/dropbear_rsa_host_key
+	fi
+
+	if [ -f ${etcdir}/dropbear_ed25519_host_key ]; then
+		echo "You already have an ed25519 host key" \
+		    "in ${etcdir}/dropbear_ed25519_host_key"
+		echo "Skipping protocol version 2 ed25519 Key Generation"
+	else
+		%%PREFIX%%/bin/dropbearkey -t ed25519 -f ${etcdir}/dropbear_ed25519_host_key
+	fi
+	)
+}
+
+dropbear_precmd()
+{
+	if [ ! -f ${etcdir}/dropbear_rsa_host_key -o \
+		! -f ${etcdir}/dropbear_ed25519_host_key ]; then
+		run_rc_command keygen
+	fi
+}
+
+load_rc_config $name
+
+: ${dropbear_enable="NO"}
+: ${dropbear_args:=""}
+
+command_args="-P $pidfile $dropbear_args"
+
+run_rc_command "$1"

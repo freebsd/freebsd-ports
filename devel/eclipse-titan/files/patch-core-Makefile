@@ -1,0 +1,31 @@
+--- core/Makefile.orig	2024-11-14 11:50:43 UTC
++++ core/Makefile
+@@ -320,6 +320,13 @@ endif
+ 	$(STRIP) $(SHAREDLIB) $(PARALLEL_SHAREDLIB)
+   endif
+ endif
++ifneq ($(ASN1ENC_RUNTIME), yes)
++  ifneq ($(FUNCTION_TEST_RUNTIME), yes)
++    ifeq ($(DEBUG), no)
++	$(STRIP) $(PROGRAMS)
++    endif
++  endif
++endif
+ 	mkdir -p $(LIBDIR)
+ 	cp $(TARGETS) $(LIBDIR)
+ ifneq ($(ASN1ENC_RUNTIME), yes)
+@@ -335,10 +342,10 @@ endif
+ 	(cd $(OPENSSL_DIR)/$(OPENSSL_LIB_DIR) && tar -cf - libcrypto.so*) |\
+ 	(cd $(LIBDIR) && tar -xf -)
+ endif
+-ifneq ($(XMLDIR), default)
+-	(cd $(XMLDIR)/lib && tar -cf - libxml2.so*) |\
+-	(cd $(LIBDIR) && tar -xf -)
+-endif
++#ifneq ($(XMLDIR), default)
++#	(cd $(XMLDIR)/lib && tar -cf - libxml2.so*) |\
++#	(cd $(LIBDIR) && tar -xf -)
++#endif
+ endif
+ endif
+ 	mkdir -p $(INCDIR)/$(APIDIR)

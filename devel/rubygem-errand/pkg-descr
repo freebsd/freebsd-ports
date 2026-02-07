@@ -1,0 +1,2 @@
+Errand provides Ruby bindings for RRD functions (via librrd), and a concise DSL
+for interacting with RRDs.

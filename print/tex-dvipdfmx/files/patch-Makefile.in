@@ -1,0 +1,38 @@
+--- Makefile.in.orig	2025-02-02 08:57:07 UTC
++++ Makefile.in
+@@ -124,7 +124,7 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(b
+ CONFIG_CLEAN_VPATH_FILES =
+ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
+ 	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(cmapdatadir)" \
+-	"$(DESTDIR)$(configdatadir)" "$(DESTDIR)$(glyphlistdatadir)" \
++	"$(DESTDIR)$(configdatadir)" \
+ 	"$(DESTDIR)$(mapdatadir)"
+ PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
+ nodist_call_xdvipdfmx_OBJECTS = call_xdvipdfmx-callexe.$(OBJEXT)
+@@ -274,7 +274,7 @@ DATA = $(dist_cmapdata_DATA) $(dist_configdata_DATA) \
+ NROFF = nroff
+ MANS = $(dist_man1_MANS)
+ DATA = $(dist_cmapdata_DATA) $(dist_configdata_DATA) \
+-	$(dist_glyphlistdata_DATA) $(dist_mapdata_DATA)
++	$(dist_mapdata_DATA)
+ am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP) \
+ 	config.h.in
+ # Read a list of newline-separated strings from the standard input,
+@@ -1697,7 +1697,7 @@ installdirs:
+ all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h \
+ 		all-local
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(cmapdatadir)" "$(DESTDIR)$(configdatadir)" "$(DESTDIR)$(glyphlistdatadir)" "$(DESTDIR)$(mapdatadir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(cmapdatadir)" "$(DESTDIR)$(configdatadir)" "$(DESTDIR)$(mapdatadir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -1831,7 +1831,7 @@ install-data-am: install-dist_cmapdataDATA install-dis
+ info-am:
+
+ install-data-am: install-dist_cmapdataDATA install-dist_configdataDATA \
+-	install-dist_glyphlistdataDATA install-dist_mapdataDATA \
++	install-dist_mapdataDATA \
+ 	install-man
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook

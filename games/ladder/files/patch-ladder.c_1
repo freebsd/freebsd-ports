@@ -1,0 +1,11 @@
+--- ladder.c.org	Wed Feb 18 19:26:47 1998
++++ ladder.c	Wed Feb 18 19:33:09 1998
+@@ -82,7 +82,7 @@
+     mvaddstr(r,LM,"Version:    n/a");
+     mvaddstr(r,RM0,"Up = k|8  Down = j|2  Left = h|4  Right = l|6");
+     r++;
+-    mvprintw(r,LM,"Terminal:   %s",termname());
++    mvprintw(r,LM,"Terminal:   %s",getenv("TERM"));
+     mvaddstr(r,RM0,"Jump = Space   Stop = Other");
+     r++;
+     mvprintw(r,LM,"Play Speed: %d",speed + 1);

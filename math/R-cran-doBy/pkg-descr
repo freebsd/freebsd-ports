@@ -1,0 +1,6 @@
+Utility package containing:
+1) Facilities for working with grouped data: 'do' something to data
+   stratified 'by' some variables.
+2) LSmeans (least-squares means), general linear estimates.
+3) Restrict functions to a smaller domain.
+4) Miscellaneous other utilities.

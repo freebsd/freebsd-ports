@@ -1,0 +1,39 @@
+--- server/serverrc.orig	2008-10-27 00:08:48.000000000 +0900
++++ server/serverrc	2008-10-27 00:10:49.000000000 +0900
+@@ -75,24 +75,29 @@
+ ##
+ #forkflag	off
+ 
++## servername:
++##  listen address
++## Default: localhost
++#servername	localhost
++
+ ##
+ ## portname:
+-##  binding address
+-## Default: localhost
++##  binding port in name
++## Default: defined PortName in "include/Const.h"
+ ##
+-#portname	0.0.0.0
++#portname	sj3
+ 
+ ##
+ ## portnumber:
+-##  binding portnumber
+-## Default: defined PortNumber at "include/Const.h"
++##  binding port in number used when portname is not valid
++## Default: defined PortNumber in "include/Const.h"
+ ##
+-#portnumber	3000
++#portnumber	3086
+ 
+ ##
+ ## socketname:
+ ##  binding filename of unix domain socket
+-## Default: defined SocketName at "include/Paths.h"
++## Default: defined SocketName in "include/Paths.h"
+ ##
+ #socketname	/var/run/sj3/socket
+ 

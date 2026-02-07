@@ -1,0 +1,38 @@
+--- lib/core/include/optional.orig	2024-09-24 09:32:47 UTC
++++ lib/core/include/optional
+@@ -7,6 +7,8 @@
+ // Moreover, older clangs produce strange errors even in combination with libstdc++.
+ // For this configuration, we include a minimal implementation just covering our needs.
+ 
++#if __cplusplus < 201703L
++
+ #if defined(__clang__) && (defined(_LIBCPP_STD_VER) || __clang_major__ < 4)
+ 
+ #include "polymake/internal/type_union.h"
+@@ -76,8 +78,6 @@ using pm::make_optional;
+ 
+ #else // GCC or clang >= 4
+ 
+-#if __cplusplus < 201703L
+-
+ # include <experimental/optional>
+ 
+ namespace polymake {
+@@ -91,6 +91,8 @@ using std::experimental::make_optional;
+ using std::experimental::make_optional;
+ }
+ 
++#endif
++
+ #else
+ 
+ #include <optional>
+@@ -105,8 +107,6 @@ using std::make_optional;
+ using std::nullopt;
+ using std::make_optional;
+ }
+-
+-#endif
+ 
+ #endif
+ 

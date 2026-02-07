@@ -1,0 +1,29 @@
+@comment === EXECUTABLES ===
+%%SERVER%%bin/q2ded
+%%CLIENT%%bin/quake2
+%%SDLCLIENT%%bin/quake2-sdl
+@comment === RENDERERS ===
+%%GAME%%%%LIBDIR%%/baseq2/game.so
+%%CTF%%%%LIBDIR%%/ctf/game.so
+%%GLX%%%%LIBDIR%%/ref_glx.so
+%%SDLGL%%%%LIBDIR%%/ref_sdlgl.so
+%%SVGA%%%%LIBDIR%%/ref_soft.so
+%%AA%%%%LIBDIR%%/ref_softaa.so
+%%SOFTSDL%%%%LIBDIR%%/ref_softsdl.so
+%%X11%%%%LIBDIR%%/ref_softx.so
+@comment === DOCS ===
+%%PORTDOCS%%%%DOCSDIR%%/3.15_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.16_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.17_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.19_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.20_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.21_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.320
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/joystick.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+@comment === DATA ===
+%%QMAX%%%%LIBDIR%%/baseq2/maxpak.pak
+@comment === CLEANUP ===
+@dir %%LIBDIR%%/baseq2

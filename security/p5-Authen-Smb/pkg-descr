@@ -1,0 +1,2 @@
+Authen::Smb allows you to authenticate users against an NT server.  See
+Smb.pm POD documentation for details.

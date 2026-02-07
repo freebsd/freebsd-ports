@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+If you want to visualize your currently played back audio then be aware that the
+audio backends OSS and sndio can't feed the outgoing audio directly into CAVA
+without further setup:
+
+* For OSS you need to use audio/virtual_oss in order to create a loopback
+  audio device.
+* For sndio you need to start a sndio server and create a monitoring
+  sub-device.
+
+Please see %%DOCSDIR%%/README.md for additional help and instructions.
+EOM
+}
+]

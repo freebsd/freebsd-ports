@@ -1,0 +1,28 @@
+--- Makefile.orig	2000-04-21 05:15:07.000000000 +0800
++++ Makefile	2013-11-09 19:38:12.000000000 +0800
+@@ -1,10 +1,10 @@
+-CC=gcc
+-CFLAGS=-O3
++CC?=gcc
++CFLAGS?=-O3
+ #CFLAGS=-O3 -Wall -Wtraditional -Wstrict-prototypes -Wmissing-prototypes -pedantic -ansi
+ #CFLAGS=-g -Wall -Wtraditional -Wstrict-prototypes -Wmissing-prototypes -pedantic -ansi
+ TARGET=fortunelock
+ LIBS=-lncurses
+-PREFIXDIR=/usr/local
++PREFIX?=/usr/local
+ 
+ all: $(TARGET)
+ 
+@@ -19,8 +19,8 @@ fortunelock.o: fortunelock.c fortunelock
+ 
+ install: 
+ 	strip fortunelock
+-	install -m 755 fortunelock $(PREFIXDIR)/bin
+-	install -m 644 fortunelock.1 $(PREFIXDIR)/man/man1
++	install -c -m 755 fortunelock $(DESTDIR)$(PREFIX)/bin
++	install -c -m 644 fortunelock.1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 
+ uninstall:
+-	rm -rf $(PREFIXDIR)/bin/fortunelock
++	rm -rf $(PREFIX)/bin/fortunelock

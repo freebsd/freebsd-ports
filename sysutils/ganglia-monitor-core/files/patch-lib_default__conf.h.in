@@ -1,0 +1,11 @@
+--- lib/default_conf.h.in.orig	2015-07-01 19:49:35 UTC
++++ lib/default_conf.h.in
+@@ -393,7 +393,7 @@ collection_group {\n\
+   }\n\
+ }\n\
+ \n\
+-include (\"" SYSCONFDIR "/conf.d/*.conf\")\n\
++include (\"" SYSCONFDIR "/gmond.conf.d/*.conf\")\n\
+ \n\
+ "
+ 

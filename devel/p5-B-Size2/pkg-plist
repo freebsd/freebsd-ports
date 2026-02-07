@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/auto/B/Size2/Size2.so
+%%SITE_ARCH%%/B/Size2.pm
+%%SITE_ARCH%%/B/Size2/Terse.pm
+%%PERL5_MAN3%%/B::Size2.3.gz
+%%PERL5_MAN3%%/B::Size2::Terse.3.gz

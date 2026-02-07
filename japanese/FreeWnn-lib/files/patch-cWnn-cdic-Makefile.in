@@ -1,0 +1,30 @@
+--- ./cWnn/cdic/Makefile.in.orig	2004-04-25 03:56:40.000000000 +0900
++++ ./cWnn/cdic/Makefile.in	2014-09-11 16:26:55.000000000 +0900
+@@ -31,7 +31,6 @@
+ CWNNJUTILOBJ = $(top_builddir)/cWnn/jutil
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+         ATOD = $(CWNNJUTILOBJ)/catod
+         ATOF = $(CWNNJUTILOBJ)/catof
+@@ -85,8 +84,7 @@
+ install::
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac;
+ 	@for i in $(CWNNDICDIR); do if [ -d $(DESTDIR)$$i ]; then \
+-	set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i; \
+-	chown $(WNNOWNER) $(DESTDIR)$$i); fi \
++	set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i); fi \
+ 	done
+ 
+ install:: $(ALLTGT)
+@@ -96,8 +94,7 @@
+ 	@for i in $(ALLTGT); do if [ -f $(DESTDIR)$(CWNNSYSDICDIR)/$$i ]; then \
+ 	set +x; \
+ 	else (set -x; \
+-	$(INSTALL) $(INSTLIBFLAGS) $(LOCAL_INSTFLAGS) $$i $(DESTDIR)$(CWNNSYSDICDIR); \
+-	$(WNNTOUCH) $(DESTDIR)$(CWNNSYSDICDIR)/$$i); fi \
++	$(INSTALL) $(INSTLIBFLAGS) $$i $(DESTDIR)$(CWNNSYSDICDIR)); fi \
+ 	done
+ 
+ depend::

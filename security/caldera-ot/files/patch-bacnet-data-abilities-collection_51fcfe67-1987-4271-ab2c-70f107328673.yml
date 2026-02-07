@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/collection/51fcfe67-1987-4271-ab2c-70f107328673.yml	2024-12-21 01:00:57.519482000 -0800
++++ bacnet/data/abilities/collection/51fcfe67-1987-4271-ab2c-70f107328673.yml	2024-12-21 01:02:09.639502000 -0800
+@@ -14,6 +14,11 @@
+     name: Automated Collection
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacscov #{bacnet.device.instance} #{bacnet.obj.type} #{bacnet.obj.instance} #{bacnet.scov.process_id}  #{bacnet.scov.confirm_status}
+     linux:
+       sh:
+         timeout: 360
+@@ -27,4 +32,4 @@
+         command: |
+           .\bacscov.exe #{bacnet.device.instance} #{bacnet.obj.type} #{bacnet.obj.instance} #{bacnet.scov.process_id}  #{bacnet.scov.confirm_status}
+         payloads:
+-          - bacscov.exe
+\ No newline at end of file
++          - bacscov.exe

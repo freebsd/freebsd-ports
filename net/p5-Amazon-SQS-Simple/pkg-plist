@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Amazon/SQS/Simple.pm
+%%SITE_PERL%%/Amazon/SQS/Simple/Base.pm
+%%SITE_PERL%%/Amazon/SQS/Simple/Message.pm
+%%SITE_PERL%%/Amazon/SQS/Simple/Queue.pm
+%%SITE_PERL%%/Amazon/SQS/Simple/SendResponse.pm
+%%PERL5_MAN3%%/Amazon::SQS::Simple.3.gz
+%%PERL5_MAN3%%/Amazon::SQS::Simple::Base.3.gz
+%%PERL5_MAN3%%/Amazon::SQS::Simple::Message.3.gz
+%%PERL5_MAN3%%/Amazon::SQS::Simple::Queue.3.gz
+%%PERL5_MAN3%%/Amazon::SQS::Simple::SendResponse.3.gz

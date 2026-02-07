@@ -1,0 +1,37 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       Run haplohseq example
+#
+#   https://sites.google.com/site/integrativecancergenomics/software/haplohseq
+#       
+#   History:
+#   Date        Name        Modification
+#   2019-11-13  Jason Bacon Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 directory\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 1 ]; then
+    usage
+fi
+
+dir="$1"
+
+if [ -e "$dir" ]; then
+    printf "'$dir' already exists.  Please remove it or specify another.\n"
+    exit 1
+fi
+cp -R %%EXAMPLESDIR%% "$dir"
+cd "$dir/example"
+sh ./example_run.sh

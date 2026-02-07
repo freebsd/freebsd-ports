@@ -1,0 +1,39 @@
+Container networking relies on NAT to allow container network packets
+out to the host's network. This requires a PF firewall to perform the
+translation. A simple example is included - to use it:
+
+# cp /usr/local/etc/containers/pf.conf.sample /etc/pf.conf
+...
+Edit /etc/pf.conf and set v4egress_if, v6egress_if to your network interface(s)
+...
+# sysrc pf_enable=YES
+# service pf start
+
+The sample PF configuration includes support for port redirections. These are
+implemented as redirect rules in anchors nested under cni-rdr.
+
+Support for redirecting connections from the container host to services running
+inside a container is included for FreeBSD 13.3 and later. To enable this, first
+load the pf kernel module, by adding pf_load="YES" to /boot/loader.conf and
+enable PF support for these redirections using sysctl:
+
+# kldload pf
+# sysctl net.pf.filter_local=1
+# service pf restart
+
+Redirect rules will work if the destination address is localhost (e.g. 127.0.0.1
+or ::1) - to enable this, the following line must be included in your
+/etc/pf.conf:
+
+nat-anchor "cni-rdr/*"
+
+if upgrading from an older version, this needs to be added to /etc/pf.conf.
+
+For example if host port 1234 is redirected to an http service running in a
+container, you could connect to it using:
+
+# fetch -o- http://$(hostname):1234
+
+or
+
+# fetch -o- http://localhost:1234

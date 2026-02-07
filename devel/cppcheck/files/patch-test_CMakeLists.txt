@@ -1,0 +1,11 @@
+--- test/CMakeLists.txt.orig	2025-12-21 12:48:14 UTC
++++ test/CMakeLists.txt
+@@ -7,7 +7,7 @@ if (BUILD_TESTS)
+     list(APPEND testrunner_SOURCES ${hdrs} ${srcs})
+ 
+     add_executable(testrunner ${testrunner_SOURCES})
+-    target_link_libraries(testrunner cppcheck-core tinyxml2 picojson simplecpp frontend cli)
++    target_link_libraries(testrunner cppcheck-core tinyxml2 picojson simplecpp execinfo frontend cli)
+     if (WIN32 AND NOT BORLAND)
+         if(NOT MINGW)
+             target_link_libraries(testrunner Shlwapi.lib)

@@ -1,0 +1,5 @@
+This release includes the 10 gigabit FreeBSD Base Driver for Intel(R) Network
+Connection.
+
+- ixgbe driver supports all 82599 and 82598EB-based 10 gigabit
+  network connections.

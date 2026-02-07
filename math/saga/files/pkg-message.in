@@ -1,0 +1,35 @@
+[
+{ type: upgrade
+  message: <<EOM
+Your SAGA GIS installation now resides under
+  %%PREFIX%%/lib/saga
+
+Besides the graphical user interface saga_gui, saga_cmd is of
+particular importance for processing geodata. The latter can
+be used in scripts or directly in the shell.
+
+All extra material like helpers and templates are at
+  %%DATADIR%%/
+
+Predefined ToolChains in xml format are located under
+  %%DATADIR%%/toolchains/
+  
+A ToolChains manual and cheatsheet can be found at
+  %%DATADIR%%/docs
+
+Using the SAGA Python package PySAGA, the majority of all
+SAGA tools and functions, including the Grid Calculator,
+can be used directly in Python. The PySAGA package is
+located in the following directory
+  %%PREFIX%%/lib/python%%PYTHON_VER%%/site-packages/PySAGA
+
+Python scripts with examples, utilities, and test data
+are located at:
+  %%DATADIR%%/python/
+
+A good starting point is the script saga_python_example.py.
+Another good example can be found at
+  https://sourceforge.net/p/saga-gis/news/2023/10/saga-920-released/
+EOM
+}
+]

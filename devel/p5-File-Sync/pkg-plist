@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/File/Sync.pm
+%%SITE_ARCH%%/auto/File/Sync/autosplit.ix
+%%SITE_ARCH%%/auto/File/Sync/Sync.so
+%%PERL5_MAN3%%/File::Sync.3.gz

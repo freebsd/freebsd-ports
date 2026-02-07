@@ -1,0 +1,2 @@
+This plugin inserts headers containing some download information: UIDL,
+Claws Mail's account name, POP server, user ID and retrieval time.

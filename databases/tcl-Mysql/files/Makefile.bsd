@@ -1,0 +1,12 @@
+TCL_VERSION?=	tcl8.4
+TCL_NODOT?=	${TCL_VERSION:S/.//}
+SHLIB_NAME?=	libTclMySQL.so.1
+
+CC	=	${CXX}	# a hack to force linking with c++
+SRCS	=	sql-mysql.cc sql.cc sql-manager.cc
+CXXFLAGS+=	-I${LOCALBASE}/include/${TCL_VERSION}
+CXXFLAGS+=	-I${LOCALBASE}/include/mysql
+LDADD  +=	-L${LOCALBASE}/lib -l${TCL_NODOT}
+LDADD  +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
+
+.include <bsd.lib.mk>

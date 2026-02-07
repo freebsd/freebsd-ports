@@ -1,0 +1,2 @@
+Access the RStudio API (if available) and provide informative error
+messages when it's not.

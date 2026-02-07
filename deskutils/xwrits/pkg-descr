@@ -1,0 +1,10 @@
+Xwrits reminds you to take wrist breaks for prevention or management of
+repetitive stress injuries. When you should take a break, it pops up an
+X window, the warning window. You click on the warning  window, then
+take a break. The window changes appearance while you take the break.
+it changes again when your break is over. Then you just resume typing.
+Xwrits hides itself until you should take another break.
+
+The typetime option changes the amount of time between breaks, and the
+breaktime option changes the length of a break. The defaults are 55
+minutes and 5 minutes, respectively.

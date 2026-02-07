@@ -1,0 +1,13 @@
+tosha reads CD-DA (digital audio) and CD-XA (digital video)
+tracks and writes them to the hard disk.  Several audio formats
+are supported:  raw PCM (little-endian and big-endian byte
+order), WAV / RIFF, AIFF and Sun AU.
+
+You can also pipe the data directly into an audio or video
+player.  A simple audio player is included ("pcmplay").  To
+playback VideoCD data, you need a third-party product, for
+example MpegTV (see http://www.mpegtv.com/).
+
+tosha reads the digital audio / video data through the SCSI
+bus; therefore it does not work with IDE/ATAPI CD-ROM drives
+nor with proprietary interfaces.

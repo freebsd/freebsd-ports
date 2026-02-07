@@ -1,0 +1,325 @@
+#!/bin/sh
+#
+#	pre-configure script for Trn 4.0 port to FreeBSD
+
+PortsDir=$1
+  CurDir=$2
+  WrkSrc=$3
+
+echo ""
+echo "Trn comes with a nice Configure script to help you get things setup."
+echo "Some of the things this script asks you may be a little misleading."
+echo "I (the porter) configured Trn to be as generic as possible."
+echo "It assumes a few things."
+echo "1. You are accessing news via NNTP, and you set the NNTPSERVER"
+echo "   environment variable to the name of your news server"
+echo "2. You have access to the threads databases (either xover or xthread)"
+echo ""
+
+echo ""
+echo "You now have three possible choices:"
+echo ""
+echo " 1) use my configuration as default, run Configure on top of it (recommended)."
+echo " 2) run Configure from scratch, using trn defaults."
+echo " 3) use my defaults and don't do any manual configuration (non-interactive)."
+echo ""
+echo "Due to a check done iside the Trn Configure script, I cannot run"
+echo "it automagically.  If you want to pick up the default configura-"
+echo "tion, simply press ENTER each time the script asks you anything,"
+echo "EXPECT QUESTION ABOUT USING OLD CONFIG.SH"
+echo ""
+echo "With either choice, you will want to the the organization to match"
+echo "your site.  Also you will want to set your distribution codes"
+echo ""
+echo -n "Your choice [1]: "
+read foo
+
+if [ ! ${foo} ] ; then
+	foo=1
+fi
+
+if [ ${foo} -eq 1 -o ${foo} -eq 3 ] ; then
+	if [ ${foo} -eq 1 ] ; then
+		ConfigArgs='-f config.sh'
+	else
+		ConfigArgs='-der -f config.sh'
+	fi
+	#DON'T ALTER INDENTATION
+	cat > ${WrkSrc}/config.sh << 'EOF'
+#
+# This file was produced by running the Configure script. It holds all the
+# definitions figured out by Configure. Should you modify one of these values,
+# do not forget to propagate your changes by running "Configure -der". You may
+# instead choose to run each of the .SH files by yourself, or "Configure -S".
+#
+
+# Package name      : trn
+# Source directory  : .
+# Configuration time: Fri May  1 13:32:29 EDT 1998
+# Configured by     : mph
+# Target system     : freebsd mph124.rh.psu.edu 2.2.6-stable freebsd 2.2.6-stable #3: thu apr 9 10:28:54 edt 1998 mph@mph124.rh.psu.edu:usrsrcsyscompilewopr i386 
+
+Id=''
+Log=''
+Mcc='Mcc'
+active='remote'
+acttimes='remote'
+aphostcmd='/bin/hostname'
+archobjs=''
+awk='/usr/bin/awk'
+basename='/usr/bin/basename'
+bash=''
+bin='/PREFIX/bin'
+binexp='/PREFIX/bin'
+byacc='/usr/bin/byacc'
+c=''
+cat='/bin/cat'
+cc='__CC__'
+ccflags='__CFLAGS__ -I/PREFIX/include'
+cf_by='mph'
+cf_time='Fri May  1 13:32:29 EDT 1998'
+citydist='none'
+cntrydist='none'
+comm='/usr/bin/comm'
+contains='grep'
+contdist='none'
+cp='/bin/cp'
+cpp='/usr/bin/cpp'
+cppflags='-I/PREFIX/include'
+cpplast='-'
+cppminus='-'
+cpprun='__CC__ -E'
+cppstdin='__CC__ -E'
+csh='/bin/csh'
+d_acttimes='define'
+d_attribut='define'
+d_berknames='define'
+d_bsd='define'
+d_dirnamlen=''
+d_eunice='undef'
+d_ftime='undef'
+d_genauth='define'
+d_getcwd='define'
+d_getdname='undef'
+d_gethname='define'
+d_getpwent='define'
+d_gettimeod='define'
+d_getwd='define'
+d_gnulibc='undef'
+d_havetlib='define'
+d_ignoreorg='undef'
+d_inews='define'
+d_internet='define'
+d_libndir='undef'
+d_local='undef'
+d_memcmp='define'
+d_memcpy='define'
+d_memset='define'
+d_mkdir='define'
+d_msdos='undef'
+d_newsadm='define'
+d_nntp='define'
+d_nolnbuf='undef'
+d_normsig='define'
+d_novoid='undef'
+d_passnames='define'
+d_phostcmd='define'
+d_portable='undef'
+d_rdchk='undef'
+d_rename='define'
+d_resinit='define'
+d_sigblock='define'
+d_sighold='undef'
+d_sizet='undef'
+d_strccmp='define'
+d_strchr='define'
+d_strftime='define'
+d_strstr='define'
+d_uname='undef'
+d_usendir='undef'
+d_usgnames='undef'
+d_uwait3='undef'
+d_uwait='undef'
+d_vfork='define'
+d_voidsig='define'
+d_voidtty=''
+d_wifstat='define'
+d_xenix='undef'
+d_xthread='define'
+date='/bin/date'
+defeditor='/usr/bin/vi'
+diff='/usr/bin/diff'
+direntrytype='struct dirent'
+echo='/bin/echo'
+ed='/bin/ed'
+egrep='/usr/bin/egrep'
+eunicefix=':'
+exe_ext=''
+expr='/bin/expr'
+extrainews=''
+filexp='/PREFIX/lib/trn/filexp'
+find=''
+firstmakefile=''
+gccversion='4.2.1'
+glibpth='/shlib /usr/shlib /lib/pa1.1 /usr/lib/large /lib /usr/lib /usr/lib/386 /lib/386 /lib/large /usr/lib/small /lib/small /usr/ccs/lib /usr/ucblib /usr/local/lib'
+grep='/usr/bin/grep'
+groupdesc=''
+hint='recommended'
+hostbits='2'
+i_bsdioctl=''
+i_dirent='define'
+i_ptem='undef'
+i_sgtty='undef'
+i_stdlib='define'
+i_string='define'
+i_sysdir='define'
+i_sysfilio='define'
+i_sysioctl='define'
+i_sysndir='undef'
+i_syssockio=''
+i_systime='define'
+i_syswait='define'
+i_termio='undef'
+i_termios='define'
+i_time='undef'
+i_unistd='define'
+i_utime='define'
+i_vfork='undef'
+incpath=''
+inews='/PREFIX/inews'
+installbin='/PREFIX/bin'
+installinews='/PREFIX/bin'
+installmansrc='/PREFIX/share/man/man1'
+installprivlib='/PREFIX/lib/trn'
+ispell=''
+ispell_options=''
+ispell_prg=''
+jobslib=''
+ksh=''
+ldflags=''
+less='/usr/bin/less'
+lib_ext='.a'
+libc='/usr/lib/libc.a'
+libndir=''
+libpth='/usr/lib /PREFIX/lib'
+libs=' '
+libswanted='malloc resolv socket net hdb bbn str nls nsl intl x ucb'
+lint=''
+lns='/bin/ln -s'
+locdist='none'
+locincpth='/usr/local/include /opt/local/include /usr/gnu/include /opt/gnu/include /usr/GNU/include /opt/GNU/include'
+loclibpth='/usr/local/lib /opt/local/lib /usr/gnu/lib /opt/gnu/lib /usr/GNU/lib /opt/GNU/lib'
+mail='/usr/bin/mail'
+mailer='/usr/sbin/sendmail'
+mailfile='/var/mail/%L'
+manext='1'
+mansrc='/PREFIX/share/man/man1'
+mansrcexp='/PREFIX/share/man/man1'
+mboxchar='F'
+mimecap='/PREFIX/etc/mimecap'
+mips=''
+mips_type=''
+mkdir='/bin/mkdir'
+more='/usr/bin/more'
+multistatedist='none'
+mv='/bin/mv'
+myactive='.falseactive'
+myuname='freebsd mph124.rh.psu.edu 2.2.6-stable freebsd 2.2.6-stable #3: thu apr 9 10:28:54 edt 1998 mph@mph124.rh.psu.edu:usrsrcsyscompilewopr i386 '
+n='-n'
+nametype='bsd'
+ndirc=''
+ndiro=''
+newsadmin='news'
+newslib='/tmp'
+newslibexp='/tmp'
+newsspool='none'
+nm='/usr/bin/nm'
+nm_opt=''
+nm_so_opt=''
+nroff='/usr/bin/nroff'
+obj_ext='.o'
+optimize=' '
+orgdist='none'
+orgname='/etc/organization'
+osname='freebsd'
+osvers='2.2.6-stable'
+overviewdir='remote'
+overviewfmt='none'
+package='trn'
+pager='/usr/bin/more'
+path_sep=':'
+perl='/usr/bin/perl'
+perlpath='/usr/bin/perl'
+pg='pg'
+pgp=''
+phost='.'
+phostcmd='hostname'
+plibpth=''
+prefix='/PREFIX'
+prefixexp='/PREFIX'
+prefshell='/bin/csh'
+privlib='/PREFIX/lib/trn'
+privlibexp='/PREFIX/lib/trn'
+rm='/bin/rm'
+rmail='/bin/rmail'
+rootid='0'
+runnm='true'
+sed='/usr/bin/sed'
+sendmail='/usr/sbin/sendmail'
+servername='no default'
+sharpbang='#!'
+shsharp='true'
+signal_t='void'
+smail='smail'
+so='so'
+sort='/usr/bin/sort'
+spackage='Trn'
+spell='spell'
+spitshell='cat'
+src='.'
+startsh='#!/bin/sh'
+statedist='none'
+strftimec=''
+strftimeo=''
+strings='/usr/include/string.h'
+strn='define'
+subscriptions=''
+sysman='/usr/share/man/man1'
+tail='/usr/bin/tail'
+tee=''
+termlib='-lncurses'
+test='/bin/test'
+threaddir='remote'
+tk='undef'
+tkinc=''
+tklibs=''
+tr='/usr/bin/tr'
+trn_init='FALSE'
+trn_select='TRUE'
+trnl='\n'
+uname='/usr/bin/uname'
+uniq='/usr/bin/uniq'
+useinews='/PREFIX/bin/inews'
+usenm='true'
+usevfork='true'
+usrinc='/usr/include'
+uuname='/usr/bin/uuname'
+vi='/usr/bin/vi'
+void=''
+vspell=''
+who='/usr/bin/who'
+xlibpth='/usr/lib/386 /lib/386'
+yacc='/usr/bin/byacc'
+yaccflags=''
+PATCHLEVEL="4.0-test77 (Sep 1, 2010)"
+CONFIG=true
+EOF
+
+fi	# choice = 1
+
+cd ${WrkSrc}
+sh Configure ${ConfigArgs}
+cd ${CurDir}
+
+exit 0
+# END

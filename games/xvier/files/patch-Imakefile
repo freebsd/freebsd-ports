@@ -1,0 +1,11 @@
+--- ./Imakefile.orig	1992-07-29 02:07:09.000000000 +0200
++++ ./Imakefile	2014-03-30 13:17:18.829823790 +0200
+@@ -13,7 +13,7 @@
+ #NO_GETDTABSIZE = -DNO_GETDTABSIZE
+ 
+ #PROGNAME	= $(LIBDIR)$(PATHSEP)xvier_prog
+-PROGNAME	= /usr/games/lib/xvier_prog
++PROGNAME	= $(PREFIX)/libexec/xvier_prog
+ DEFINES		= $(XVIER_ASPECT) $(NO_FD_SET) $(NO_SELECT) \
+ 			$(NO_GETDTABSIZE) -DPROGNAME=\"$(PROGNAME)\"
+ 

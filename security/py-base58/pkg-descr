@@ -1,0 +1,2 @@
+Base58 and Base58Check implementation compatible with what is used by
+the bitcoin network.

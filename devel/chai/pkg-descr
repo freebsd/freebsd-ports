@@ -1,0 +1,3 @@
+CHAI is a C++ library that provides a copy-hiding array abstraction
+to automatically migrate data between different memory spaces, such as
+between CPU and GPU memory.

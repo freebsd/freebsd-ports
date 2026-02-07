@@ -1,0 +1,7 @@
+--- src/libproxy/test.map.orig	2025-11-17 14:48:23 UTC
++++ src/libproxy/test.map
+@@ -1,2 +1,2 @@
+ #
+-TEST { local: *; };
+\ No newline at end of file
++TEST { global: environ; __progname; local: *; };

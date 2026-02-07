@@ -1,0 +1,4 @@
+Provides a function tidy_source() to format R source code. Spaces
+and indent will be added to the code automatically, and comments
+will be preserved under certain conditions, so that R code will be
+more human-readable and tidy.

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Net/SSH/Expect.pm
+%%SITE_PERL%%/Net/SSH/Expect.pod
+%%PERL5_MAN3%%/Net::SSH::Expect.3.gz

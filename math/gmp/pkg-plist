@@ -1,0 +1,12 @@
+include/gmp.h
+include/gmpxx.h
+lib/libgmp.a
+lib/libgmp.so
+lib/libgmp.so.10
+lib/libgmp.so.10.5.0
+lib/libgmpxx.a
+lib/libgmpxx.so
+lib/libgmpxx.so.4
+lib/libgmpxx.so.4.7.0
+libdata/pkgconfig/gmp.pc
+libdata/pkgconfig/gmpxx.pc

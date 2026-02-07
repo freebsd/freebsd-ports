@@ -1,0 +1,2 @@
+Wrappers on 'regexpr' and 'gregexpr' to return the match results in tidy data
+frames.

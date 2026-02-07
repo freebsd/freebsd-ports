@@ -1,0 +1,4 @@
+astroterm is a terminal-based star map written in C. It displays the real-time
+positions of stars, planets, constellations, and more, all within your terminal
+and no telescope required! Configure sky views by date, time, and location with
+precise ASCII-rendered visuals.

@@ -1,0 +1,95 @@
+--- src/baseq2/g_local.h.orig	2007-01-13 06:07:33.000000000 +0600
++++ src/baseq2/g_local.h	2007-09-07 12:51:49.000000000 +0700
+@@ -500,10 +500,11 @@
+ 
+ extern	edict_t *g_edicts;
+ 
+-#define FOFS(x)(int)&(((edict_t *)0)->x)
+-#define STOFS(x)(int)&(((spawn_temp_t *)0)->x)
+-#define LLOFS(x)(int)&(((level_locals_t *)0)->x)
+-#define CLOFS(x)(int)&(((gclient_t *)0)->x)
++#include <inttypes.h>
++#define FOFS(x)(intptr_t)&(((edict_t *)0)->x)
++#define STOFS(x)(intptr_t)&(((spawn_temp_t *)0)->x)
++#define LLOFS(x)(intptr_t)&(((level_locals_t *)0)->x)
++#define CLOFS(x)(intptr_t)&(((gclient_t *)0)->x)
+ 
+ #define random()	((rand() & 0x7fff) /((float)0x7fff))
+ #define crandom()	(2.0 *(random() - 0.5))
+--- src/ctf/g_local.h.orig	2007-01-13 06:07:33.000000000 +0600
++++ src/ctf/g_local.h	2007-09-07 13:03:31.000000000 +0700
+@@ -509,10 +509,11 @@
+ 
+ extern	edict_t *g_edicts;
+ 
+-#define FOFS(x)(int)&(((edict_t *)0)->x)
+-#define STOFS(x)(int)&(((spawn_temp_t *)0)->x)
+-#define LLOFS(x)(int)&(((level_locals_t *)0)->x)
+-#define CLOFS(x)(int)&(((gclient_t *)0)->x)
++#include <inttypes.h>
++#define FOFS(x)(intptr_t)&(((edict_t *)0)->x)
++#define STOFS(x)(intptr_t)&(((spawn_temp_t *)0)->x)
++#define LLOFS(x)(intptr_t)&(((level_locals_t *)0)->x)
++#define CLOFS(x)(intptr_t)&(((gclient_t *)0)->x)
+ 
+ #define random()	((rand() & 0x7fff) /((float)0x7fff))
+ #define crandom()	(2.0 *(random() - 0.5))
+--- src/qmass/g_local.h.orig	2007-01-13 06:07:31.000000000 +0600
++++ src/qmass/g_local.h	2007-09-07 13:02:58.000000000 +0700
+@@ -486,10 +486,11 @@
+ 
+ extern edict_t *g_edicts;
+ 
+-#define FOFS(x)(int)&(((edict_t *)0)->x)
+-#define STOFS(x)(int)&(((spawn_temp_t *)0)->x)
+-#define LLOFS(x)(int)&(((level_locals_t *)0)->x)
+-#define CLOFS(x)(int)&(((gclient_t *)0)->x)
++#include <inttypes.h>
++#define FOFS(x)(intptr_t)&(((edict_t *)0)->x)
++#define STOFS(x)(intptr_t)&(((spawn_temp_t *)0)->x)
++#define LLOFS(x)(intptr_t)&(((level_locals_t *)0)->x)
++#define CLOFS(x)(intptr_t)&(((gclient_t *)0)->x)
+ 
+ #define random() ((rand() & 0x7fff) / ((float)0x7fff))
+ #define crandom() (2.0 * (random() - 0.5))
+--- src/sv_world.c.orig	2007-01-13 06:07:33.000000000 +0600
++++ src/sv_world.c	2007-09-07 12:35:05.000000000 +0700
+@@ -35,7 +35,8 @@
+ //(type *)STRUCT_FROM_LINK(link_t *link, type, member)
+ // ent = STRUCT_FROM_LINK(link,entity_t,order)
+ // FIXME: remove this mess!
+-#define STRUCT_FROM_LINK(l,t,m)((t *)((byte *)l -(int)&(((t *)0)->m)))
++#include <inttypes.h>
++#define STRUCT_FROM_LINK(l,t,m)((t *)((byte *)l -(intptr_t)&(((t *)0)->m)))
+ 
+ #define EDICT_FROM_AREA(l) STRUCT_FROM_LINK(l,edict_t,area)
+ 
+--- src/vanctf/g_local.h.orig	2007-09-07 13:15:50.000000000 +0700
++++ src/vanctf/g_local.h	2007-09-07 12:51:22.000000000 +0700
+@@ -512,10 +512,11 @@
+ 
+ extern	edict_t			*g_edicts;
+ 
+-#define	FOFS(x) (int)&(((edict_t *)0)->x)
+-#define	STOFS(x) (int)&(((spawn_temp_t *)0)->x)
+-#define	LLOFS(x) (int)&(((level_locals_t *)0)->x)
+-#define	CLOFS(x) (int)&(((gclient_t *)0)->x)
++#include <inttypes.h>
++#define	FOFS(x) (intptr_t)&(((edict_t *)0)->x)
++#define	STOFS(x) (intptr_t)&(((spawn_temp_t *)0)->x)
++#define	LLOFS(x) (intptr_t)&(((level_locals_t *)0)->x)
++#define	CLOFS(x) (intptr_t)&(((gclient_t *)0)->x)
+ 
+ #define random()	((rand () & 0x7fff) / ((float)0x7fff))
+ #define crandom()	(2.0 * (random() - 0.5))
+--- src/vanctf/p_client.c.orig	2007-01-13 06:07:32.000000000 +0600
++++ src/vanctf/p_client.c	2007-09-07 13:07:22.000000000 +0700
+@@ -1727,7 +1727,7 @@
+ 		if(level.time - ent->client->resp.lastmovetime > antiidle->value*60){
+ 			char buff[256];
+ 			gi.cprintf(ent, PRINT_HIGH, "You were removed for remaining idle too long\n");
+-			sprintf(buff, "kick %d\n", (ent - g_edicts) - 1);
++			sprintf(buff, "kick %ld\n", (long int)(ent - g_edicts) - 1);
+ 			gi.AddCommandString(buff);
+ 		} else if(fabs(level.time - ent->client->resp.lastmovetime - (antiidle->value - 1) * 60) < 0.025){
+ 			gi.centerprintf(ent, "You can't remain idle on this server.\n\nYou have 1 minute before\nyou will be kicked!\n");

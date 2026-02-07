@@ -1,0 +1,3 @@
+This simple test module checks the subroutines provided by a module. This is
+useful for confirming a planned API in testing and ensuring that other
+functions aren't unintentionally included via import.

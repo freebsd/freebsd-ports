@@ -1,0 +1,4 @@
+bin/flickr_upload
+%%SITE_PERL%%/Flickr/Upload.pm
+%%PERL5_MAN1%%/flickr_upload.1.gz
+%%PERL5_MAN3%%/Flickr::Upload.3.gz

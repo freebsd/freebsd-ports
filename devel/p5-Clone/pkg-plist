@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Clone.pm
+%%SITE_ARCH%%/auto/Clone/Clone.so
+%%SITE_ARCH%%/auto/Clone/autosplit.ix
+%%PERL5_MAN3%%/Clone.3.gz

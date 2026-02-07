@@ -1,0 +1,64 @@
+#!/bin/sh
+# %%PORTNAME%%
+
+name=$(basename $0)
+
+if [ ! -t 1 ]
+then
+    tmp_output="$(mktemp /tmp/$name.XXXXXXXXXX)"
+    exec 3>&1 4>&2
+    exec > $tmp_output 2>&1
+fi
+
+clean_exit() {
+    local rc=$1
+
+    if [ ! -t 1 ]
+    then
+        exec 1>&3 3>&-
+        exec 2>&4 4>&-
+        if [ $rc -ne 0 ]
+        then
+            [ -s $tmp_output ] && cat $tmp_output
+            cp /dev/null $tmp_output
+            rm -f $tmp_output
+            exit $rc
+        fi
+        cp /dev/null $tmp_output
+        rm -f $tmp_output
+        exit $rc
+    else
+        exit $rc
+    fi
+}
+
+export KRB5CCNAME=/tmp/krb5cc_$name
+KRB5_CLIENT_PRINCIPAL="$(hostname -s)\$"
+
+%%GSSAPIBASE%%/bin/kinit -k $KRB5_CLIENT_PRINCIPAL
+rc=$?
+if [ $rc -ne 0 ]
+then
+    KRB5_CLIENT_PRINCIPAL="$(hostname -s | tr \"[:lower:]\" \"[:upper:]\")\$"
+    >&2 echo "$name: retrying with $KRB5_CLIENT_PRINCIPAL"
+    %%GSSAPIBASE%%/bin/kinit -k $KRB5_CLIENT_PRINCIPAL
+    rc=$?
+    if [ $rc -ne 0 ]
+    then
+        >&2 echo "$name: kinit failed"
+        rc=1
+    fi
+fi
+
+[ $rc -ne 0 ] && clean_exit $rc
+
+%%LOCALBASE%%/bin/nsupdate -g %%LOCALBASE%%/etc/$name.nsupdate
+rc=$?
+if [ $rc -ne 0 ]
+then
+    >&2 echo "$name: nsupdate failed"
+    rc=2
+fi
+
+clean_exit $rc
+

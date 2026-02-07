@@ -1,0 +1,11 @@
+--- scripts/Makefile.orig	2011-09-18 15:22:35 UTC
++++ scripts/Makefile
+@@ -12,7 +12,7 @@
+ install-%.sh : SCRIPT_TARGET=$(<:.sh=)
+ install-%: %
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(SCRIPTDIR)
+-	$(INSTALL) -m $(SCRIPT_MODE) -o root -g $(SCRIPT_GROUP) $< $(DESTDIR)$(SCRIPTDIR)/$(SCRIPT_TARGET)
++	$(BSD_INSTALL_SCRIPT) $< $(DESTDIR)$(SCRIPTDIR)/$(SCRIPT_TARGET)
+ 
+ .PHONY: clean
+ clean:

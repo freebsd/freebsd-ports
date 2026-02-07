@@ -1,0 +1,3 @@
+Implementation of elliptic curve cryptography using the Montgomery
+and Edwards curves Curve25519, Ed25519, Ed448-Goldilocks and
+Curve448, using the Decaf / Ristretto encoding.

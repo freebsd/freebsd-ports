@@ -1,0 +1,37 @@
+bin/gnubiff
+share/applications/gnubiff.desktop
+%%NLS%%share/locale/cs/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/fr_CA/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gnubiff.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gnubiff.mo
+share/gnubiff/applet-gtk.glade
+share/gnubiff/authentication.glade
+share/gnubiff/certificate.glade
+share/gnubiff/coin.wav
+share/gnubiff/envelopes.png
+share/gnubiff/gnubiff.png
+share/gnubiff/mail.wav
+share/gnubiff/popup.glade
+share/gnubiff/preferences.glade
+share/gnubiff/properties.glade
+share/gnubiff/tux-awake.png
+share/gnubiff/tux-big.png
+share/gnubiff/tux-jump(64x64).png
+share/gnubiff/tux-sleep(64x64).png
+share/gnubiff/tux-sleep.png
+share/man/man1/gnubiff.1.gz
+share/pixmaps/gnubiff.png
+@comment @dir lib/bonobo/servers
+@comment @dir share/gnome-2.0/ui

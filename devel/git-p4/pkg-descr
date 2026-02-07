@@ -1,0 +1,3 @@
+Import from and submit to Perforce repositories
+
+This command provides a way to interact with p4 repositories using Git.

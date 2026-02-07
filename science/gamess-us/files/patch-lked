@@ -1,0 +1,45 @@
+--- lked.orig	2018-10-01 03:45:26 UTC
++++ lked
+@@ -672,12 +672,12 @@ if ($TARGET == linux64) then
+       #          ln -s liblapack_atlas.so.3.0 liblapack.so
+       #          ln -s liblapack.so.3.0       liblapack.so
+       #     It is strange the RPM's don't do these soft links for us.
+-      if (-e $GMS_MATHLIB_PATH/libf77blas.a) then
+-         set MATHLIBS="$GMS_MATHLIB_PATH/libf77blas.a"
+-         set MATHLIBS="$MATHLIBS $GMS_MATHLIB_PATH/libatlas.a"
+-      else
++      #if (-e $GMS_MATHLIB_PATH/libf77blas.a) then
++      #   set MATHLIBS="$GMS_MATHLIB_PATH/libf77blas.a"
++      #   set MATHLIBS="$MATHLIBS $GMS_MATHLIB_PATH/libatlas.a"
++      #else
+          set MATHLIBS="-L$GMS_MATHLIB_PATH -lf77blas -latlas"
+-      endif
++      #endif
+       if ($CCHEM == true) then
+         set MATHLIBS="-L$GMS_MATHLIB_PATH -Wl,--start-group -lf77blas -latlas -lcblas -llapack -Wl,--end-group"
+       endif
+@@ -697,11 +697,11 @@ if ($TARGET == linux64) then
+       breaksw
+ 
+    case openblas:
+-      if (-e $GMS_MATHLIB_PATH/libopenblas.a) then
+-         set MATHLIBS="$GMS_MATHLIB_PATH/libopenblas.a"
+-      else
++      #if (-e $GMS_MATHLIB_PATH/libopenblas.a) then
++      #   set MATHLIBS="$GMS_MATHLIB_PATH/libopenblas.a"
++      #else
+          set MATHLIBS="-L$GMS_MATHLIB_PATH -lopenblas"
+-      endif
++      #endif
+       set BLAS=' '
+       breaksw   
+ 
+@@ -1556,7 +1556,7 @@ if (($TARGET == win32) || ($TARGET == wi
+ endif
+ chdir $GMS_BUILD_DIR/object
+ #
+-$LDR  $EXTRA_LINK_FLAGS:q -o $GMS_BUILD_DIR/$EXE.$VERNO.x $LDOPTS \
++$LDR  $EXTRA_LINK_FLAGS:q $LDFLAGS -o $GMS_BUILD_DIR/$EXE.$VERNO.x $LDOPTS \
+       -I$GMS_BUILD_DIR/object \
+       gamess.o unport.o $BLAS $LAPACK $VECTOR $QUICHE \
+       $STANDARD_GAMESS_OBJ1 \

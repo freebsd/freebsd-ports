@@ -1,0 +1,3 @@
+This module provides perl bindings for the portable
+NaCL implementation libsodium, a library for network
+communication, encryption, decryption and signatures.

@@ -1,0 +1,33 @@
+Disable non-POSIX scheduling policies if not supported
+
+samples/sample_common/src/vm/thread_linux.cpp:257:16: error: use of undeclared identifier 'SCHED_BATCH'
+        type = SCHED_BATCH;
+               ^
+samples/sample_common/src/vm/thread_linux.cpp:260:16: error: use of undeclared identifier 'SCHED_IDLE'
+        type = SCHED_IDLE;
+               ^
+
+--- samples/sample_common/src/vm/thread_linux.cpp.orig	2019-10-30 19:56:10 UTC
++++ samples/sample_common/src/vm/thread_linux.cpp
+@@ -253,15 +253,21 @@ mfxStatus msdk_thread_get_schedtype(const msdk_char* s
+     else if (!msdk_strcmp(str, MSDK_STRING("other"))) {
+         type = SCHED_OTHER;
+     }
++#ifdef SCHED_BATCH
+     else if (!msdk_strcmp(str, MSDK_STRING("batch"))) {
+         type = SCHED_BATCH;
+     }
++#endif
++#ifdef SCHED_IDLE
+     else if (!msdk_strcmp(str, MSDK_STRING("idle"))) {
+         type = SCHED_IDLE;
+     }
++#endif
++//#ifdef SCHED_DEADLINE
+ //    else if (!msdk_strcmp(str, MSDK_STRING("deadline"))) {
+ //        type = SCHED_DEADLINE;
+ //    }
++//#endif
+     else {
+         return MFX_ERR_UNSUPPORTED;
+     }

@@ -1,0 +1,3 @@
+Sphinx Sitemap Generator Extension is a Sphinx extension to generate
+multiversion and multilanguage sitemaps.org compliant sitemaps for the HTML
+version of your Sphinx documentation.

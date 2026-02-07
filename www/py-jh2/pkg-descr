@@ -1,0 +1,14 @@
+jh2, HTTP/2 Protocol Stack, is a fork of the well known hyper/h2 package. We
+want to provide a cleaner and faster HTTP/2 state machine while keeping a pure
+Python implementation. We decided to embed the leaf dependencies as we want a
+neater dependency tree and along with that a easier maintenance burden. We
+believe it was a mistake to ship three packages (h2, hpack, and hyperframe).
+
+Analysis shown that h2 spend a lot of time doing hpack encode and decode
+operations, this is why we decided to offer a complementary optimized build. The
+pure Python version will still be available.
+
+This repository contains a pure-Python implementation of a HTTP/2 protocol
+stack. It's written from the ground up to be embeddable in whatever program you
+choose to use, ensuring that you can speak HTTP/2 regardless of your programming
+paradigm.

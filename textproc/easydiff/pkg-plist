@@ -1,0 +1,10 @@
+GNUstep/System/Applications/EasyDiff.app/EasyDiff
+GNUstep/System/Applications/EasyDiff.app/Resources/EasyDiff.desktop
+GNUstep/System/Applications/EasyDiff.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/EasyDiff.app/Resources/main.gorm/data.classes
+GNUstep/System/Applications/EasyDiff.app/Resources/main.gorm/data.info
+GNUstep/System/Applications/EasyDiff.app/Resources/main.gorm/objects.gorm
+GNUstep/System/Applications/EasyDiff.app/Resources/window.gorm/data.classes
+GNUstep/System/Applications/EasyDiff.app/Resources/window.gorm/objects.gorm
+GNUstep/System/Applications/EasyDiff.app/stamp.make
+GNUstep/System/Tools/EasyDiff

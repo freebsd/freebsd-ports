@@ -1,0 +1,5 @@
+TIMESTAMP = 1757683702
+SHA256 (gnome/gedit-48.2.tar.bz2) = 5fe99e60600c704feb51774ffdc015c16ce455475e51f773e848bc76d4b04bf0
+SIZE (gnome/gedit-48.2.tar.bz2) = 3368562
+SHA256 (gnome/libgd-3cccf992.tar.bz2) = 7c19b7c13b5b20e11a5c07d911f9e258ecbde878e56b2e771cf73bc91b4ee72f
+SIZE (gnome/libgd-3cccf992.tar.bz2) = 44899

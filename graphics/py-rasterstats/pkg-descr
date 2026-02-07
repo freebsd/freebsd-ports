@@ -1,0 +1,4 @@
+rasterstats is a Python module for summarizing geospatial raster datasets based
+on vector geometries. It includes functions for zonal statistics and
+interpolated point queries. The command-line interface allows for easy
+interoperability with other GeoJSON tools.

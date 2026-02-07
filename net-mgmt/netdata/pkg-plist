@@ -1,0 +1,1388 @@
+etc/logrotate.d/netdata
+%%ETCDIR%%/.install-type
+%%ETCDIR%%/.opt-out-from-anonymous-statistics
+%%ETCDIR%%/edit-config
+@sample(netdata,netdata,0640) %%ETCDIR%%/netdata.conf.sample
+@sample %%ETCDIR%%/netdata.newsyslog.conf.sample etc/newsyslog.conf.d/netdata.conf
+@sample etc/rc.d/netdata_required.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/apps_groups.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/example.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/libreswan.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/opensips.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/exporting.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/activemq.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/adaptec_raid.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/ap.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/apache.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/apcupsd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/beanstalk.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/bind.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/boinc.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/cassandra.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/ceph.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/chrony.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/clickhouse.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/cockroachdb.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/consul.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/coredns.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/couchbase.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/couchdb.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dmcache.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dns_query.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsdist.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsmasq.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsmasq_dhcp.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/docker.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/docker_engine.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dockerhub.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dovecot.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/elasticsearch.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/envoy.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/ethtool.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/exim.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/fail2ban.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/filecheck.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/fluentd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/freeradius.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/gearman.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/geth.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/haproxy.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/hddtemp.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/hdfs.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/hpssa.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/httpcheck.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/icecast.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/intelgpu.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/ipfs.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/isc_dhcpd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/k8s_kubelet.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/k8s_kubeproxy.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/k8s_state.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/lighttpd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/litespeed.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/logind.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/logstash.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/lvm.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/maxscale.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/megacli.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/memcached.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/mongodb.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/monit.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/mysql.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nats.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nginx.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nginxplus.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nginxunit.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nginxvts.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nsd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/ntpd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nvidia_smi.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/nvme.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/openldap.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/openvpn.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/openvpn_status_log.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/oracledb.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pgbouncer.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/phpdaemon.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/phpfpm.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pihole.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pika.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/ping.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/portcheck.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/postfix.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/postgres.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/powerdns.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/powerdns_recursor.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/prometheus.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/proxysql.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pulsar.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/puppet.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/rabbitmq.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/redis.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/rethinkdb.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/riakkv.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/rspamd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/samba.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/scaleio.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/sd/docker.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/sd/net_listeners.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/sd/snmp.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/sensors.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/smartctl.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/snmp.conf.sample
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/3com-huawei.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/3com.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_apc-metadata.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_apc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_arista-metadata.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_arista-queue.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_arista.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_aruba-base.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_aruba-switch-cpu-memory.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_avaya-utilization-management-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-asa.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-base.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-catalyst.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-cpu-memory.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-ipsec-flow-monitor.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-metadata.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-voice.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-wlc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_dell-rac.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_dell.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_f5-big-ip-cpu-memory.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_fortinet-fortigate-vpn-tunnel.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_hp-base.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_hp-compaq-health.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_hp-driver-stats.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_hp.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_huawei.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_intel-lan-adapters.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper-cos.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper-dcu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper-firewall.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper-junos-generic.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper-scu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper-userfirewall.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper-virtualchassis.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_opengear.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_palo-alto.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-bgp4-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-entity-sensor-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-host-resources-mib-feat-base.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-host-resources-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-if-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ip-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ospf-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-rtp-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-sip-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-tcp-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ucd-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-udp-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ups-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_system-base.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_ubiquiti.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_vertiv.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/a10-thunder.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/a10.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/alcatel-lucent-ent.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/alcatel-lucent-ind.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/alcatel-lucent-omni-access-wlc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/alcatel-lucent.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/anue.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc-netbotz.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc-pdu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc-ups.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/arista-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/arista.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba-access-point.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba-clearpass.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba-cx-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba-mobility-controller.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba-wireless-controller.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/audiocodes-mediant-sbc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avaya-aura-media-server.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avaya-cajun-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avaya-media-gateway.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avaya-nortel-ethernet-routing-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avaya.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avocent-acs.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avtech-roomalert-32s.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avtech-roomalert-3e.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avtech-roomalert-3s.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/avtech.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/barracuda-cloudgen.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/barracuda.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/bluecat-server.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/brocade-fc-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/brocade.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/brother-net-printer.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/brother.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/chatsworth-pdu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/checkpoint.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/chrysalis-luna-hsm.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/chrysalis.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-3850.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-access-point.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-asa.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-asr.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-catalyst-wlc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-catalyst.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-csr1000v.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-firepower-asa.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-firepower.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-icm.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-ironport-email.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-ise.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-isr-4431.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-isr.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-legacy-wlc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-load-balancer.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-nexus.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-sb.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-uc-virtual-machine.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-ucs.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-wan-optimizer.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/citrix-netscaler-sdx.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/citrix-netscaler.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/citrix.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cradlepoint.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cyberpower-pdu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dell-emc-data-domain.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dell-force10.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dell-os10.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dell-powerconnect.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dell-poweredge.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dell-sonicwall.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dell.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dialogic-media-gateway.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dlink-dgs-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/dlink.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/eaton-epdu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/exagrid.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/extreme-switching.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/f5-big-ip.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/fireeye.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/fortinet-appliance.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/fortinet-fortigate.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/fortinet-fortiswitch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/fortinet.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/generic-device.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/generic-ups.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/gigamon.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hp-h3c-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hp-icf-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hp-ilo.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hp-ilo4.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hpe-bladesystem-enclosure.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hpe-msa.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hpe-nimble.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hpe-proliant.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/huawei-access-controllers.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/huawei-routers.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/huawei-switches.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/huawei.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ibm-datapower-gateway.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ibm-lenovo-server.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ibm.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/idrac.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/infinera-coriant-groove.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/infoblox-ipam.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/isilon.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ixsystems-truenas.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/juniper-ex.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/juniper-mx.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/juniper-pulse-secure.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/juniper-qfx.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/juniper-srx.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/juniper.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/kyocera-printer.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/linksys.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/mcafee-web-gateway.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/meraki-cloud-controller.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/meraki.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/mikrotik-router.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/nasuni-filer.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/nec-univerge.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/net-snmp.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/netapp.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/netgear-access-point.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/netgear-readynas.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/netgear-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/netgear.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/nvidia-cumulus-linux-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/nvidia-mellanox-switchx.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/nvidia.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/omron-cj-ethernet-ip.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/opengear-console-manager.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/opengear-infrastructure-manager.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/palo-alto-cloudgenix.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/palo-alto.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/peplink.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/pf-sense.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/raritan-dominion.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/riverbed-interceptor.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/riverbed-steelhead.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/riverbed.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ruckus-unleashed.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ruckus-wap.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ruckus.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/server-iron-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/servertech-pdu3.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/servertech-pdu4.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/servertech.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/silverpeak-edgeconnect.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/sinetica-eagle-i.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/sophos-xgs-firewall.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/synology-disk-station.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/tp-link.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/tripplite-pdu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/tripplite-ups.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/tripplite.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ubiquiti-unifi-security-gateway.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/ubiquiti-unifi.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/velocloud-edge.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/vertiv-liebert-ac.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/vertiv-watchdog.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/vmware-esx.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/watchguard.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/western-digital-mycloud-ex2-ultra.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/zebra-printer.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/zyxel-switch.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/3com.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/allied.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/alteon.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/apc.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/arista.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/aruba.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/avaya.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/brocade.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/cacheflow.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/checkpoint.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/cisco.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/dell.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/dlink.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/enterasys.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/extreme.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/f5.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/fortinet.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/fujifilm.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/fujitsu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/h3c.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/hp.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/huawei.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/ibm.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/infoblox.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/juniper.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/konica.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/lexmark.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/meraki.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/nec.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/netgear.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/netscout.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/nokia.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/other.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/paloalto.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/ruijie.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/sharp.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/synoptics.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/tec.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/terracom.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/tplink.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/watchguard.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/xerox.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/yamaha.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/zte.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/metadata/zyxel.yaml
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/spigotmc.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/squid.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/squidlog.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/storcli.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/supervisord.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/systemdunits.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/tengine.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/tomcat.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/tor.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/traefik.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/typesense.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/unbound.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/upsd.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/uwsgi.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/varnish.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vcsa.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vernemq.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vsphere.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/w1sensor.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/web_log.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/whoisquery.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/wireguard.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/x509check.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/yugabytedb.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/zfspool.conf.sample
+%%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/zookeeper.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/as400.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/bcache.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/beanstalkd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/boinc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/btrfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ceph.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cgroups.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/clickhouse.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cockroachdb.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/consul.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cpu.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/db2.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dbengine.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dns_query.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dnsmasq_dhcp.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/docker.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/elasticsearch.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/entropy.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/exporting.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/file_descriptors.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/gearman.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/geth.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/go.d.plugin.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/hdfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/httpcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ioping.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ipc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ipfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ipmi.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/isc_dhcpd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/k8sstate.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/kubelet.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/load.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/lvm.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mdstat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/megacli.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/memcached.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/memory.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ml.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mq.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mysql.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/net.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/netfilter.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nvme.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/pihole.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ping.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/plugin.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/postgres.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/power_supply_capacity.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/processes.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/python.d.plugin.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/qos.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/rabbitmq.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ram.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/reboot.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/redis.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/riakkv.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/scaleio.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/softnet.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/storcli.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/streaming.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/swap.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/synchronization.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/systemdunits.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_conn.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_listen.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_mem.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_orphans.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_resets.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/timex.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/udp_errors.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/unbound.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/upsd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vcsa.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vernemq.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vsphere.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/websphere_jmx.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/websphere_mp.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/websphere_pmi.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/whoisquery.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/x509check.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health_email_recipients.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/ioping.conf.sample
+lib/netdata/conf.d/log2journal.d/default.yaml
+lib/netdata/conf.d/log2journal.d/nginx-combined.yaml
+lib/netdata/conf.d/log2journal.d/nginx-json.yaml
+@sample(netdata,netdata,0640) lib/netdata/conf.d/netdata.conf.sample
+%%OPENTELEMETRY%%lib/netdata/conf.d/otel.d/v1/metrics/hostmetrics-receiver.yml
+%%OPENTELEMETRY%%lib/netdata/conf.d/otel.yml
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/am2320.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/go_expvar.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/pandas.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/traefik.conf.sample
+lib/netdata/conf.d/schema.d/health%3Aalert%3Aprototype.json
+lib/netdata/conf.d/schema.d/systemd-journal%3Amonitored-directories.json
+@sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/asterisk.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/k6.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/vnodes/vnodes.conf.sample
+libexec/netdata/charts.d/example.chart.sh
+libexec/netdata/charts.d/libreswan.chart.sh
+libexec/netdata/charts.d/opensips.chart.sh
+libexec/netdata/install-service.sh
+libexec/netdata/plugins.d/alarm-notify.sh
+libexec/netdata/plugins.d/anonymous-statistics.sh
+@(root,netdata,4750) libexec/netdata/plugins.d/apps.plugin
+libexec/netdata/plugins.d/cgroup-name.sh
+libexec/netdata/plugins.d/cgroup-network-helper.sh
+libexec/netdata/plugins.d/charts.d.dryrun-helper.sh
+libexec/netdata/plugins.d/charts.d.plugin
+%%CUPS%%libexec/netdata/plugins.d/cups.plugin
+%%FREEIPMI%%@(root,netdata,4750) libexec/netdata/plugins.d/freeipmi.plugin
+libexec/netdata/plugins.d/get-kubernetes-labels.sh
+%%GOPLUGIN%%@(root,netdata,4750) libexec/netdata/plugins.d/go.d.plugin
+libexec/netdata/plugins.d/ioping.plugin
+libexec/netdata/plugins.d/loopsleepms.sh.inc
+%%GOPLUGIN%%@(root,netdata,4750) libexec/netdata/plugins.d/ndsudo
+%%OPENTELEMETRY%%libexec/netdata/plugins.d/otel-plugin
+libexec/netdata/plugins.d/python.d.plugin
+libexec/netdata/plugins.d/system-info.sh
+libexec/netdata/python.d/am2320.chart.py
+libexec/netdata/python.d/go_expvar.chart.py
+libexec/netdata/python.d/haproxy.chart.py
+libexec/netdata/python.d/pandas.chart.py
+libexec/netdata/python.d/python_modules/__init__.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/ExecutableService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/LogService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/MySQLService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/SimpleService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/SocketService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/UrlService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/__init__.py
+libexec/netdata/python.d/python_modules/bases/__init__.py
+libexec/netdata/python.d/python_modules/bases/charts.py
+libexec/netdata/python.d/python_modules/bases/collection.py
+libexec/netdata/python.d/python_modules/bases/loaders.py
+libexec/netdata/python.d/python_modules/bases/loggers.py
+libexec/netdata/python.d/python_modules/third_party/__init__.py
+libexec/netdata/python.d/python_modules/third_party/filelock.py
+libexec/netdata/python.d/python_modules/third_party/monotonic.py
+libexec/netdata/python.d/python_modules/third_party/ordereddict.py
+libexec/netdata/python.d/traefik.chart.py
+sbin/log2journal
+sbin/nd-run
+sbin/netdata
+sbin/netdata-claim.sh
+sbin/netdatacli
+sbin/systemd-cat-native
+%%DATADIR%%/build-info-cmake-cache.gz
+%%DATADIR%%/web/netdata-swagger.json
+%%DATADIR%%/web/netdata-swagger.yaml
+%%DASHBOARD%%%%DATADIR%%/web/index.html
+%%DASHBOARD%%%%DATADIR%%/web/registry-access.html
+%%DASHBOARD%%%%DATADIR%%/web/registry-alert-redirect.html
+%%DASHBOARD%%%%DATADIR%%/web/registry-hello.html
+%%DASHBOARD%%%%DATADIR%%/web/static/splash.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/.well-known/assetlinks.json
+%%DASHBOARD%%%%DATADIR%%/web/v3/1658.2f080b1a9af608c2faa0.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/180.3b7a8b3b1f061b7b55d2.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1910.93600acbb2ea1849ef25.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1975.02d9a4a39141b5d36a0d.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1975.02d9a4a39141b5d36a0d.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/2003.ada92ac7888bb6ef559a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2108.15fb1c09e585a04f40b3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2117.5f48a3ee6d25d7b87b49.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2143.09560536f3053c718844.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2201.0f7d25db249b7a2a8eb6.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2248.1588743ffdebc13cbbdb.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2327.dde9c107376c40487854.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2370.06420342dd7d6e637378.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2436.305aa1fd752a4e798a73.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2439.a24ca9cc77b986abd23c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2558.35ec22e8714b1401fb59.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2573.ea17f07a97aca2bfdccc.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2576.eaad527ad5b2c56e97a0.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/2576.f63af71bf6f8952bc5a8.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2599.00668a296ecb4af85b34.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2599.00668a296ecb4af85b34.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/2623.bd6bc607ff3bba5c9a76.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2634.26fcebda5701edd25aaa.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/271.3205eb6b7de5684bdcb5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2792.1d750aa8a15a3c7e982c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2860.b8c92880b70a254f980a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2948.6a91e56689700aeaddd5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3185.770a7949d8a2e4b091f5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3304.2c3a3a32ed44521e5691.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3304.2c3a3a32ed44521e5691.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/3304.d489f3f6dbbebd1b75d7.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/3439.3e01fe83d7e019b8ecd6.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3457.847d6f32030869374859.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/35.c3801f9838fc033286e4.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3600.a0404776992d30475166.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3630.9608a0bba2f6b22db392.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3675.3fc06540f5280ab493b6.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3718.21d1fc100a821a00d0c8.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3808.a30faedfbe641b863a13.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3864.791d7f3faa1c33cf3b93.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/399.4fc226cc3a83921ac268.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3D_PARTY_LICENSES.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/4209.f33f9ceffc87bdf6e77a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4211.432293be67a114dab4e9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4265.995f99f781f0bc17a8a1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4277.c5f4730355b4d383dada.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4424.591c197a0b814d52a544.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4484.b9088696074e81594c26.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4582.9847ac5cfb486d7783e7.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5030.68a65d15635ef93b8507.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5178.710efd4264df3e0e4748.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5187.322aa36caac05d72e535.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5295.b79bee70fe93c9b888ef.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5297.a0dcd59300fc221fb49c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5302.ebd26cc36f061e9ad79d.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5388.5be912216624db1b590b.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5388.5be912216624db1b590b.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/5465.8b36c3030c5ce6c2a9e4.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5476.7b9adc43644b0c89a995.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5638.cc97b0979f1116abbb5e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5638.cc97b0979f1116abbb5e.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/5704.9f0de1db9872c5649fa5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5997.fcea6eb91075a3fc2852.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6025.fd00a8a5123ab0797211.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6026.d73c5be8ac72a8bee09e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6141.2e5acfb5e6b1b2b5d45e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/623.072fa8ad240cd2d0160d.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/623.072fa8ad240cd2d0160d.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/6333.2af5dead684cde79f477.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6394.5d4db3fac19a4e08132f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6400.1c4cc87fc74c47b5fb05.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6497.61272c7e4195ca3a7643.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6601.03ebc44fbcab5f4a811b.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/687.ab11917d1d0c33491c7e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/687.ab11917d1d0c33491c7e.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/7044.81c67036b4ec4b0f5a04.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7214.63bd4ce4ee72dab4ff25.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7281.29113f2a5b7b4ff32bd6.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7316.4ac7be218a72fad35660.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7434.cb2c357a8c352beb2247.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7434.cb2c357a8c352beb2247.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/7530.98bbe7e988fbdbdda6c8.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7543.d13fe55805f0606861fb.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7791.4a9b7b1bdd78e457ac2f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7799.1bddc16ecc5f6cf11201.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7877.545f8db51e33b296ee31.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7931.ee4fee93221b6f46a0d3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8009.1083baeb24ae714749d0.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8399.aa73162e47dcff8dacdd.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8643.14c83d0862cfcac0190b.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8791.e314c2c6909764d21783.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8800.91edb11fabb08e74f56f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/884.68338c760606935cdaac.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9022.6b883b5978d426795868.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9244.8765176d0b700160487c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9418.73278fe81e35edcb1aa1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9418.73278fe81e35edcb1aa1.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/9462.9ef1219ba5b5bd1c7bf5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/953.24a71e59aa88c0bab57e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9856.461b86893d9147775054.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9883.ee28ea90553844a838df.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9961.5108ad947963f8487ad8.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/LICENSE.md
+%%DASHBOARD%%%%DATADIR%%/web/v3/LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/agent.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.84.2.json
+%%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.json
+%%DASHBOARD%%%%DATADIR%%/web/v3/app.4da0883c6ce016bf3d81.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/app.8ffd16c672359ee35cae.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/apple-app-site-association
+%%DASHBOARD%%%%DATADIR%%/web/v3/bundlesManifest.7.json
+%%DASHBOARD%%%%DATADIR%%/web/v3/favicon.ico
+%%DASHBOARD%%%%DATADIR%%/web/v3/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/local-agent.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.184ec4bdb6b700942281.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.184ec4bdb6b700942281.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.b181431c648c5ad4f424.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.b181431c648c5ad4f424.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.135b68dfa259c2885959.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.135b68dfa259c2885959.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/registry-access.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/registry-alert-redirect.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/registry-hello.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/runtime.8d649ad3497601b65453.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/.well-known/assetlinks.json
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/apple-app-site-association
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/clea_badge.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/clea_siren.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/community_icon.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/configure_icon.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/crit_badge.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/crit_siren.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/flood_siren.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/full_logo.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/header.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/isotype_600.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/label_critical.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/label_recovered.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/label_warning.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/reachability_siren.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/warn_badge.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/warn_siren.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/list-style-image.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/netdata.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/2n.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/3com.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/4rf.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/a10.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/abb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/accedian.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/adtran.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/adva.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/advantech.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/aerohive.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/airconsole.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/aix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/akcp.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/alcatellucent.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/alcoma-almp.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/algcom.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/alliedtelesis.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/allworx.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/almalinux.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/alpha.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/alpine.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/alpineoe.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/alvarion.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/amazon.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/apc.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/apple.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/arbor.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/arch.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/areca.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/arista.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/arraynetworks.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/arris.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/aruba.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ascom.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/asuswrt-merlin.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/atal.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/aten.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ats.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/audiocodes.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/avaya.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/aviat.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/avocent.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/avtech.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/axis.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/baicells.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/barco.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/barracuda.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bats.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bcn.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bdcom.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/beagleboard.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/benuos.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bintec.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bison.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bitstream.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bke.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bktel.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bladeshelterpdu.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bluecoat.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bnt.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/broadcom.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/broadworks.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/brocade.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/brother.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/bti.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/buffalo.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/calix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cambium.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/canon.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/carel.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ccpower.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cdata.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/centos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ceragon.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cet.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/chatsworth.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/checkpoint.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/christie.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ciena.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cirpack.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cisco-old.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cisco.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/citrix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/comet.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/comtrol.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/conexant.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/coreos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/corero.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/coriant.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cradlepoint.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ctcu.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ctm.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cts.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cumulus.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cxr-networks.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cyberoam.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/cyberpower.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dahua.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dantel.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dantherm.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dasan.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/datacom.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dcn.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dd-wrt.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ddn.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/debian.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/deliberant.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dell.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/delta.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/develop.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/devuan.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dhcpatriot.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/digipower.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dkt.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dlink.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/docker.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dpstelecom.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dragonfly.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/dragonwave.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/draytek.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/eaton.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/edge-core.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/edgecore.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/edgeos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/eds.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/eip.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ekinops.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/eltek.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/eltex.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/emc.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/emerson.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/endian.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/endrun.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/engenius.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/enlogic.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/enterasys.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/epson.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ericsson.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/esphome.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/etherwan.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/eurostor.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/exagrid.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/exalt.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/exinda.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/exterity.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/extrahop.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/extreme.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/extremeboss.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/extremevoss.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/f5.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fedora.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fiberhome.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fibernet.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fibrolan.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/firebrick.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/force10.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/forcepoint.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fortinet.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/foundry.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/freebsd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/freenas.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fs.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fujifilm.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/fujitsu.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/gamatronicups.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/gandi.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ge.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/geist.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/generex-ups.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/generic.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/gentoo.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/gigamon.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/glassway.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/gos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/grandstream.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/greenpacket.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/gude.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/gwd.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/halon.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hanwhatechwin.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/haproxy.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hatteras.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hds.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hikvision.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hillstone.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/himoinsa.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hirschmann.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hp.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hpe.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/huawei.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hwg-poseidon.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hwg.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/hytera.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ibmos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/icotera.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ict.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ifotec.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ignitenet.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/illustra.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/imco.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/infinera.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/infoblox.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/infortrend.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ingrasys.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/innovaphone.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/inteno.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ionodes.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ipinfusion.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/istars.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ixia.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/jacarta.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/janitza.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/junos.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/keeneticos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/kemp.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/konica.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/kti.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/kubernetes.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/kyocera.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/lambdatrail.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/lancom.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/lancom.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/lanier.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/lantronix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/lenovo.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/lexmark.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ligowave.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/linksys.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/linux-small.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/linux.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/linuxmint.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/loadbalancer.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/logmaster.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/loop-telecom.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/macos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/maipu.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mandrake.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/manjaro.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/marathonups.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mcafee.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mcafeewebgateway.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/meinberg.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mellanox.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/meraki.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mge.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/microsemi.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mikrotik.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mimosa.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/minkelsrms.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mirth.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mitsubishi.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mni.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mobileiron.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/monowall.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/montclair.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/morningstar.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/motorola-cm.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/moxa.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mpb.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/mrv.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/msl.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/nec.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netagent2.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netapp.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netbotz.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netbsd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netelastic.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netgear.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netmodule.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netonix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netopia.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netping.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/netvision.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/nexans.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/nimble.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/nokia.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/novell.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/nrg.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/nti.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/nutanix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/oki.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/omnitron.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/oneaccess.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/open-e.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/openaccess.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/openbsd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/opengear.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/openindiana.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/opensolaris.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/openstack.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/opensuse.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/openwrt.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/opnsense.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/oracle.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/orolia.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/orvaldi.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/osag.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/osmc.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/packetflux.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/packetlight.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/panasonic.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/panduit.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/panos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/papouch-tme.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/paradyne.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/parks.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/pbi.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/pbn.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/pegasus.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/peplink.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/perle.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/pfsense.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/phybridge.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/picos.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ping.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/placeholder.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/planet.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/polycom.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/positron-access.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/powercode.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/powerwalker.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/primekey.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/procera.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/protelevision.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/proxim.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/proxmox.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/pulse.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/qnap.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/qtech.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/quanta.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/quantastor.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/quantum.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/radlan.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/radware.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/radwin.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/raisecom.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/rajant.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/raritan.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/raspberry-pi.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/raspbian.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ray.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/redhat.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/redlion.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ribbon.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ricoh.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/riedo.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/riello.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/rittal.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/riverbed.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/rockstor.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/rocky.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/roku.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/rs.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/rubrik.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ruckus.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ruijie.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/saf.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sagemcom.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/samlex.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/samsungprinter.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sangoma.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/savin.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/schleifenbauer.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/schneider.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/scientific.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/screenos.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/seagate.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/seh.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sensatronics.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/serverscheck.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/servertech.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sharp.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/siae.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/siemens.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/siklu.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/silverpeak.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/siteboss.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sixnet.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/skyhigh.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/slackware.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/smartoptics.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/snr.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/socomecpdu.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/solaris.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/solidoptics.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sonicwall.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sonus.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sophos-xg.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sophos.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/speedtouch.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/stormshield.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/stulz.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sub10.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/sumavision.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/supermicro.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/suse.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/suse.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/symbol.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/synology.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tachyon.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tait.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tandberg.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/technicolor.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tegile.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/telco-systems.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/teldat.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/teleste.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/teltonika.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/teracom.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/teradici.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/terra.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/thomson-cm.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tomato.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/toshiba.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tplink.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/trango.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/transition.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tranzeo.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/trellix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/trendnet.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tripplite.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/truenas-scale.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/truenas.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tsc.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/tyconsystems.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ubiquiti.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ubuntu.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ucopia.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/uhp.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/ulaf.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/uniflair.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/unitrends.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/utax.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vanguard.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/velocloud.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/venturi.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vertiv.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vigintos.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/viprinux.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vivotek.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vmware.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/volius.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/voswall.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vpp.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vsolution.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vubiq.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vutlan.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vyatta.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/vyos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/watchguard.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/waystream.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/westermo.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/westmountainradio.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/windows.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/wis.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/wisi.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/wti.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/wut.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/wxgoos.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/xcp-ng.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/xerox.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/xirrus.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/zebra.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/zhone.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/zte.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/os/zyxel.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/access-point.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/activemq.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/adaptec.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/alerta.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/apache.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/apc.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/aws-sns.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/aws.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/beanstalkd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/boinc.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/btrfs.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/ceph.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/chrony.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/cloud.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/concul.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/consul.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/container.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/couchdb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/cups.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/data-encryption.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/ddos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/discord.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/dns.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/docker.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/dovecot.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/elasticsearch.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/email.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/exim.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/fail2ban.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/flock.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/fluentd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/fping.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/freeradius.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/fronius.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/gnu-freeipmi.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/golang.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/grafana.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/graphite.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/haproxy.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/hub.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/icecast.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/influxdb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/ipfs.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/irc.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/isc.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/kafka.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/kairosdb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/kavenegar.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/key-file.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/kubernetes.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/libreswan.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/libvirt.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/lighthttpd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/linux.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/litespeed.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/lm-sensors.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/load-balancer.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/log-file.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/logstash.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/lxd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/mariadb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/memcached.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/messagebird.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/mongodb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/monit.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/monitoring.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/mysql.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/netfilter.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/network-protocol.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/network.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/nfs.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/nginx-plus.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/nginx.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/notification-bell.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/nsd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/ntpd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/nut.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/nvidia.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/openldap.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/opensips.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/opentsdb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/openvpn.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/openzfs.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/oracle.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/pagerduty.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/php-fpm.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/placeholder.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/postfix.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/postgresql.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/powerdns.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/processor.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/prometheus.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/prowl.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/proxysql.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/puppet.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/pushbullet.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/pushover.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/qos.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/rabbitmq.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/raspberry-pi.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/redis.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/rethinkdb.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/retroshare.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/rocketchat.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/samba.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/server-connection.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/slack.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/sma.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/smstools3.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/solr.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/spigot.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/springboot.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/squid.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/statsd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/stiebel.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/systemd.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/telegram.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/temperature.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/tomcat.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/tor.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/traefik.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/twilio.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/unbound.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/uwsgi.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/varnish.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/veritas.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/logos/services/xen.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/hourglass-0.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/hourglass-1.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/hourglass-7.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/isotype.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/isotype.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/logo.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/logotype.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/mail/logotype.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/new-dashboard.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/no-filter-results.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/no-nodes-room.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/onboarding/dockerpulls.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/onboarding/node-heatmap-1.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/onboarding/node-heatmap-2.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/onboarding/noise-light.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/onboarding/noise.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/onboarding/onprem.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/rack.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/application.jpg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/infrastructure-monitoring.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/infrastructure.jpg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/logs.jpg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/metrics.png
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/network.jpg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/peer-insights.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/img/referral/synthetic.jpg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-404/error-404.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-404/error-404.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-404/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-500/error-500.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-500/error-500.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-500/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-501/error-501.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-501/error-501.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-501/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-502/error-502.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-502/error-502.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-502/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-503/error-503.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-503/error-503.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-503/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-504/error-504.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-504/error-504.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-504/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-5xx/error-5xx.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-5xx/error-5xx.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/error-5xx/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/holding-page-503/holding-page-503.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/holding-page-503/holding-page-503.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/holding-page-503/index.html
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/holding-page-503/multiple-logos-group.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/holding-page-503/netdata-logo-white.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/site/pages/holding-page-503/reset.svg
+%%DASHBOARD%%%%DATADIR%%/web/v3/static/splash.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/sw.js
+@mode
+@owner
+@group
+@dir etc/newsyslog.conf.d
+@dir(netdata,netdata,0750) %%ETCDIR%%/charts.d
+@dir(netdata,netdata,0750) %%ETCDIR%%/custom-plugins.d
+%%GOPLUGIN%%@dir(netdata,netdata,0750) %%ETCDIR%%/go.d
+@dir(netdata,netdata,0750) %%ETCDIR%%/health.d
+%%OPENTELEMETRY%%@dir(netdata,netdata,0750) %%ETCDIR%%/otel.d/v1/metrics
+@dir(netdata,netdata,0750) %%ETCDIR%%/python.d
+@dir(netdata,netdata,0750) %%ETCDIR%%/ssl
+@dir(netdata,netdata,0750) %%ETCDIR%%/statsd.d
+@dir(netdata,netdata,0750) %%NETDATA_CACHE%%
+@dir(netdata,netdata,0750) %%NETDATA_PERST%%/cloud.d
+@dir(netdata,netdata,0750) %%NETDATA_PERST%%/registery
+@dir(netdata,netdata,0750) %%NETDATA_PERST%%
+@dir(netdata,netdata,0750) %%NETDATA_LOG%%
+@dir(netdata,netdata,0750) %%NETDATA_RUN%%

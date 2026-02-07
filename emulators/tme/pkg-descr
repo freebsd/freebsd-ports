@@ -1,0 +1,3 @@
+The Machine Emulator provides a general-purpose framework
+for computer emulation.  Right now it can emulate Sun 2/120,
+3/150 and SPARCstation 2 (4/75).

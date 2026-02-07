@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Date/Doomsday.pm
+%%SITE_PERL%%/Date/DayOfWeek.pm
+%%SITE_PERL%%/Date/DayOfWeek/Birthday.pm
+%%SITE_PERL%%/Date/DayOfWeek/Nails.pm
+%%SITE_PERL%%/Date/DayOfWeek/Sneeze.pm
+%%PERL5_MAN3%%/Date::DayOfWeek.3.gz
+%%PERL5_MAN3%%/Date::DayOfWeek::Birthday.3.gz
+%%PERL5_MAN3%%/Date::DayOfWeek::Nails.3.gz
+%%PERL5_MAN3%%/Date::DayOfWeek::Sneeze.3.gz
+%%PERL5_MAN3%%/Date::Doomsday.3.gz

@@ -1,0 +1,2 @@
+Authoritative dns server that can forward other requests to configured
+resolvers.

@@ -1,0 +1,10 @@
+GTK based Gnutella client which supports the standard Gnutella
+operations.
+
+Search, download, file sharing, bandwidth limiting, host caching, as
+well as some basic statistics. Now with enhanced features, such as PARQ
+queueing, PFSP, DHT, push-proxies, UPnP, NAT-PMP and others, making it a
+stable and fully functional graphical gnutella client for *nix systems.
+
+An excellent way to find that hidden file on the internet that you know
+exists but standard search engines do not seem to carry.

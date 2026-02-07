@@ -1,0 +1,8 @@
+bin/bbpager
+%%DOCS%%%%DOCSDIR%%/AUTHORS
+%%DOCS%%%%DOCSDIR%%/BUGS
+%%DOCS%%%%DOCSDIR%%/ChangeLog
+%%DOCS%%%%DOCSDIR%%/README
+%%DOCS%%%%DOCSDIR%%/TODO
+%%EXAMPLES%%%%EXAMPLESDIR%%/README.bbpager
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbpager.rc

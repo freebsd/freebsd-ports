@@ -1,0 +1,47 @@
+@(root,games,2755) bin/lbreakout
+share/lbreakout/ball.bmp
+share/lbreakout/bkgnd0.bmp
+share/lbreakout/bkgnd1.bmp
+share/lbreakout/bkgnd2.bmp
+share/lbreakout/bricks.bmp
+share/lbreakout/click.wav
+share/lbreakout/club.bmp
+share/lbreakout/damn.wav
+share/lbreakout/damnit.wav
+share/lbreakout/excellent.wav
+share/lbreakout/exp.wav
+share/lbreakout/expand.wav
+share/lbreakout/extras.bmp
+share/lbreakout/f_white.bmp
+share/lbreakout/f_yellow.bmp
+share/lbreakout/font_s.sdlfnt
+share/lbreakout/fr_l.bmp
+share/lbreakout/fr_luc.bmp
+share/lbreakout/fr_r.bmp
+share/lbreakout/fr_rlc.bmp
+share/lbreakout/fr_ruc.bmp
+share/lbreakout/fr_t.bmp
+share/lbreakout/freeze.wav
+share/lbreakout/gainlife.wav
+share/lbreakout/life.bmp
+share/lbreakout/logo.bmp
+share/lbreakout/looselife.wav
+share/lbreakout/metal.wav
+share/lbreakout/numbers.bmp
+share/lbreakout/reflect.wav
+share/lbreakout/score.wav
+share/lbreakout/shine2.bmp
+share/lbreakout/shot.bmp
+share/lbreakout/shot.wav
+share/lbreakout/shrink.wav
+share/lbreakout/slime.wav
+share/lbreakout/speeddown.wav
+share/lbreakout/speedup.wav
+share/lbreakout/title.bmp
+share/lbreakout/verygood.wav
+share/lbreakout/wall.wav
+share/lbreakout/weapon.bmp
+share/lbreakout/weapon.wav
+share/lbreakout/wontgiveup.wav
+@sample(root,games,664) /var/games/lbreakout/lbreakout.hscr.sample
+@dir /var/games/lbreakout

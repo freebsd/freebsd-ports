@@ -1,0 +1,3 @@
+dfc displays file system space usage using graphs and colors. In some ways,
+it is a modernized version of df as it is able to use colors, draw graphs
+and export its output to different formats such as CSV or HTML.

@@ -1,0 +1,34 @@
+diff -up ffms2-5.0/configure.ac.orig ffms2-5.0/configure.ac
+--- configure.ac.orig	2024-05-28 16:52:48.000000000 +0200
++++ configure.ac	2024-09-20 12:13:11.134979566 +0200
+@@ -118,6 +118,10 @@ if test "$FFMPEG_WORKS" = no; then
+ AC_MSG_FAILURE([cannot link with FFmpeg])
+ fi
+ 
++PKG_CHECK_MODULES(VAPOURSYNTH, [vapoursynth])
++
++AC_SUBST([VAPOURSYNTH_CFLAGS])
++
+ src_core_libffms2_la_LDFLAGS=""
+ AC_MSG_CHECKING([whether -Wl,-Bsymbolic is needed])
+ if test "$enable_shared" = yes; then
+diff -up ffms2-5.0/Makefile.am.orig ffms2-5.0/Makefile.am
+--- Makefile.am.orig	2024-09-20 12:12:14.272194649 +0200
++++ Makefile.am	2024-09-20 12:13:00.781018729 +0200
+@@ -14,6 +14,7 @@ AM_CPPFLAGS = \
+ 	-DFFMS_EXPORTS \
+ 	-D__STDC_CONSTANT_MACROS \
+ 	@FFMPEG_CFLAGS@ \
++	@VAPOURSYNTH_CFLAGS@ \
+ 	@ZLIB_CPPFLAGS@ \
+ 	-include config.h
+ AM_CXXFLAGS = -fvisibility=hidden
+@@ -39,8 +40,6 @@ src_core_libffms2_la_SOURCES = \
+ 	src/core/videoutils.h \
+ 	src/core/zipfile.cpp \
+ 	src/core/zipfile.h \
+-	src/vapoursynth/VapourSynth4.h \
+-	src/vapoursynth/VSHelper4.h \
+ 	src/vapoursynth/vapoursource4.cpp \
+ 	src/vapoursynth/vapoursource4.h \
+ 	src/vapoursynth/vapoursynth4.cpp

@@ -1,0 +1,5 @@
+The cpansite script is used to create your own CPAN server.
+The logic is implemented in CPAN::Site::Index which you may
+use directly.
+
+You only need to install this module on one server in your network.

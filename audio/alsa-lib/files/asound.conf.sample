@@ -1,0 +1,27 @@
+#
+# FreeBSD/OSS
+#
+pcm.!sysdefault pcm.plug:oss
+ctl.!sysdefault ctl.oss
+pcm.!default pcm.sysdefault
+ctl.!default ctl.sysdefault
+
+#
+# Pulseaudio
+#
+# pcm.!default pcm.pulse
+# ctl.!default ctl.pulse
+
+#
+# Remap all possible surround stuffs.
+#
+pcm.!front pcm.default
+pcm.!rear pcm.default
+pcm.!center_lfe pcm.default
+pcm.!side pcm.default
+pcm.!surround21 pcm.default
+pcm.!surround40 pcm.default
+pcm.!surround41 pcm.default
+pcm.!surround50 pcm.default
+pcm.!surround51 pcm.default
+pcm.!surround71 pcm.default

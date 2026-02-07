@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# PROVIDE: sndiod
+# REQUIRE: NETWORKING sysctl
+# BEFORE:  DAEMON virtual_oss
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=sndiod
+rcvar=sndiod_enable
+
+load_rc_config $name
+
+: ${sndiod_enable="NO"}
+
+command="%%PREFIX%%/bin/sndiod"
+
+run_rc_command "$1"

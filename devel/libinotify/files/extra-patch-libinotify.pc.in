@@ -1,0 +1,8 @@
+--- libinotify.pc.in.orig	2019-03-06 22:25:31 UTC
++++ libinotify.pc.in
+@@ -6,5 +6,3 @@ Version: @PACKAGE_VERSION@
+ Name: @PACKAGE_NAME@
+ Description: Kqueue based inotify shim library
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -linotify
+-Cflags: -I${includedir}

@@ -1,0 +1,2 @@
+Allow inclusion of the pre built jquery themes in the asset pipeline without
+having to edit the files each time.

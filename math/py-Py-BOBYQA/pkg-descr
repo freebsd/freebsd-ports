@@ -1,0 +1,5 @@
+Py-BOBYQA is a flexible package for finding local solutions to nonlinear,
+nonconvex minimization problems (with optional bound constraints), without
+requiring any derivatives of the objective. Py-BOBYQA is a Python implementation
+of the BOBYQA solver by Powell (documentation here). It is particularly useful
+when evaluations of the objective function are expensive and/or noisy.

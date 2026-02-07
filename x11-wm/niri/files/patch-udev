@@ -1,0 +1,28 @@
+https://github.com/YaLTeR/niri/issues/3013
+
+--- src/backend/tty.rs.orig	2025-11-29 07:05:44 UTC
++++ src/backend/tty.rs
+@@ -725,6 +725,7 @@ impl Tty {
+ 
+         // Only consider primary node on udev event
+         // https://gitlab.freedesktop.org/wlroots/wlroots/-/commit/768fbaad54027f8dd027e7e015e8eeb93cb38c52
++        #[cfg(not(target_os = "freebsd"))]
+         if node.ty() != NodeType::Primary {
+             debug!("not a primary node, skipping");
+             return Ok(());
+@@ -911,6 +912,7 @@ impl Tty {
+             return;
+         };
+ 
++        #[cfg(not(target_os = "freebsd"))]
+         if node.ty() != NodeType::Primary {
+             debug!("not a primary node, skipping");
+             return;
+@@ -1074,6 +1076,7 @@ impl Tty {
+             return;
+         };
+ 
++        #[cfg(not(target_os = "freebsd"))]
+         if node.ty() != NodeType::Primary {
+             debug!("not a primary node, skipping");
+             return;

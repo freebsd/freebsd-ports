@@ -1,0 +1,19 @@
+--- login_duo/Makefile.in.orig	2015-03-02 13:12:34 UTC
++++ login_duo/Makefile.in
+@@ -714,16 +714,6 @@ install-exec-hook:
+ 	 chmod 4755 $(DESTDIR)$(sbindir)/login_duo
+ 
+ install-data-local:
+-	$(MKDIR_P) $(DESTDIR)$(sysconfdir)
+-	-@if [ ! -f $(DESTDIR)$(sysconfdir)/login_duo.conf ]; then \
+-	  cp login_duo.conf $(DESTDIR)$(sysconfdir)/login_duo.conf; \
+-	  echo "Created ${DESTDIR}$(sysconfdir)/login_duo.conf"; \
+-	  echo "Please edit it to add your Duo integration and secret keys"; \
+-	else \
+-	  echo "Found existing ${DESTDIR}$(sysconfdir)/login_duo.conf - updating permissions"; \
+-	fi
+-	-chown $(DUO_PRIVSEP_USER) $(DESTDIR)$(sysconfdir)/login_duo.conf
+-	-chmod 600 $(DESTDIR)$(sysconfdir)/login_duo.conf
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,41 @@
+--- Examples/scalegds.orig	2016-05-16 17:46:24 UTC
++++ Examples/scalegds
+@@ -72,18 +72,14 @@ unless ($color)
+ 
+ my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+ $mon++; $year += 1900;
+-# help find gds2gdt
+-my $uname_s = `/bin/uname -s`; # OS name
+-chomp $uname_s;
+-$ENV{'PATH'} = "/bin:/usr/bin:/user/ic/gnu/$uname_s/bin:".$ENV{'PATH'};
+ 
+-my $gds2gdt = which("gds2gdt");
++my $gds2gdt = '%%PREFIX%%/bin/gds2gdt';
+ unless ($gds2gdt)
+ {
+     die $REVERSE_RED.ERROR."$COLOR_RESET unable to find gds2gdt in \$PATH";
+ }
+ 
+-my $gdt2gds = which("gdt2gds");
++my $gdt2gds = '%%PREFIX%%/bin/gdt2gds';
+ unless ($gdt2gds)
+ {
+     die $REVERSE_RED.ERROR."$COLOR_RESET unable to find gdt2gds in \$PATH";
+@@ -135,7 +131,7 @@ my $fhJunk = new FileHandle; # not using
+ 
+ if ($inputFile =~ m/\.(gz|Z)$/)
+ {
+-    my $zcat = which("zcat");
++    my $zcat = '/usr/bin/zcat';
+     unless ($zcat)
+     {
+         die $REVERSE_RED.ERROR."$COLOR_RESET unable to find zcat in \$PATH";
+@@ -145,7 +141,7 @@ if ($inputFile =~ m/\.(gz|Z)$/)
+ }
+ elsif ($inputFile =~ m/\.bz2$/)
+ {
+-    my $bzcat = which("bzcat");
++    my $bzcat = '/usr/bin/bzcat';
+     unless ($bzcat)
+     {
+         die $REVERSE_RED.ERROR."$COLOR_RESET unable to find bzcat in \$PATH";

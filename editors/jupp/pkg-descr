@@ -1,0 +1,9 @@
+Jupp is the portable version of Joe's Own Editor.  This version has been
+enhanced by several functions intended for programmers or other professional
+users, and has a lot of bugs fixed.  It is based upon an older version of
+joe because these behave better overall.
+
+Jupp also does come with the editor flavours known from joe, specifically,
+jmacs, joe, jpico, jstar, and rjoe.  Not all features of jupp are available
+for these though (but all the bugfixes, and syntax highlighting is still
+enabled by default for these, while it is not auto-enabled in jupp).

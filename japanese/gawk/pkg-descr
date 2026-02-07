@@ -1,0 +1,5 @@
+This package is multi-byte extented GNU AWK.
+Supported multi-byte codes are EUC-JP/Shift_JIS/UTF-8 code.
+
+Multi-byte code by WILLs(Katsuyuki Okabe, hgc02147@nifty.ne.jp)
+and t^2(Takahiro Tanimoto, NBC02362@niftyserve.or.jp).

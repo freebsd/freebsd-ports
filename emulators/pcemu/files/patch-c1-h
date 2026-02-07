@@ -1,0 +1,262 @@
+diff -ru ../work/pcemu1.01alpha/bios.c ./bios.c
+--- ../work/pcemu1.01alpha/bios.c	Wed Feb 18 11:09:11 1998
++++ ./bios.c	Wed Feb 18 11:04:52 1998
+@@ -204,7 +204,7 @@
+ 
+ static void int_serial(void)
+ {
+-    D(printf("In serial. Function = 0x%02X\n", *bregs[AH]););
++    D(printf("In serial. Function = %02Xh\n", *bregs[AH]););
+ 
+     CalcAll();
+     switch(*bregs[AH])
+@@ -219,7 +219,7 @@
+ 
+ static void int_printer(void)
+ {
+-    D(printf("In printer. Function = 0x%02X\n", *bregs[AH]););
++    D(printf("In printer. Function = %02Xh\n", *bregs[AH]););
+ 
+     CalcAll();
+     switch(*bregs[AH])
+@@ -366,7 +366,7 @@
+     }
+     else
+     {
+-        D(printf("Writing ascii %02X scan %02X\n",ascii,scan););
++        D(printf("Writing ascii %02Xh scan %02Xh\n",ascii,scan););
+         PutMemB(data_segment, tmp, ascii);
+         PutMemB(data_segment, tmp+1, scan);
+         SetCurKeyBufEnd(cend);
+@@ -385,7 +385,7 @@
+ 
+     *bregs[AH] = 0;
+ 
+-    D(printf("Read: %02X\n", code););
++    D(printf("Read: %02Xh\n", code););
+     state = code & 0x80;
+     
+     if ((code & 0xe0) == 0xe0)
+@@ -487,7 +487,7 @@
+ 
+             raw_to_BIOS(code, e0_code, &ascii, &scan);
+ 
+-            D(printf("%02X/%02X\n", ascii, scan););
++            D(printf("%02Xh/%02Xh\n", ascii, scan););
+             if (ascii != 0 || scan != 0)
+             {
+                 if (!(KB_1 & ALT) && ascii == 0 && e0_code)
+@@ -539,7 +539,7 @@
+             
+             SetCurKeyBufStart(cstart);
+             
+-            D(printf("Cleared key %02X\n", *bregs[AL]););
++            D(printf("Cleared key %02Xh\n", *bregs[AL]););
+ 
+             *bregs[CL] = 1;
+             break;
+@@ -567,7 +567,7 @@
+                         *bregs[AL] = 0x00;
+             
+             ZF = 0;
+-            D(printf("Returning key %02X from INT 16 1/11\n", *bregs[AL]););
++            D(printf("Returning key %02Xh from INT 16 1/11\n", *bregs[AL]););
+         }
+ 
+         break;
+@@ -615,7 +615,7 @@
+                       (!(!(KB_2 & SYSREQ)) << 7));
+         break;
+     default:
+-        D(printf("Warning: unimplemented INT 16 function %02X\n",func););
++        D(printf("Warning: unimplemented INT 16 function %02Xh\n",func););
+         CF = 1;
+         break;
+     }
+@@ -624,7 +624,7 @@
+ 
+ static void int_extended(void)
+ {
+-    D(printf("In INT 0x15. Function = 0x%02X\n", *bregs[AH]););
++    D(printf("In INT 0x15. Function = %02Xh\n", *bregs[AH]););
+ 
+     CalcAll();
+     CF = 1;
+@@ -635,8 +635,10 @@
+     case 0x85:
+         CF = 0;
+         break;
+-    case 0x10:
+     case 0x41:
++        *bregs[AH] = 0x86;
++        break;
++    case 0x10:
+     case 0x64:
+     case 0xc0:
+     case 0xc1:
+@@ -656,7 +658,7 @@
+         *bregs[AH] = 1;
+         break;
+     default:
+-        printf("unimplement INT 15h function %02X\n",*bregs[AH]);
++        printf("unimplemented INT 15h function %02Xh\n",*bregs[AH]);
+ #ifdef PANIC
+         loc();
+         exit_emu();
+@@ -721,7 +723,7 @@
+     time_t curtime;
+     struct tm *local;
+ 
+-    D(printf("In time. Function = 0x%02X\n", *bregs[AH]););
++    D(printf("In time. Function = %02Xh\n", *bregs[AH]););
+ 
+     CalcAll();
+     switch(*bregs[AH])
+@@ -737,7 +739,7 @@
+ 
+         CF = 0;
+ 
+-/*        D(printf("Returning %02X%02X%02X%02X\n", *bregs[CL], *bregs[CH],
++/*        D(printf("Returning %02X%02X%02X%02Xh\n", *bregs[CL], *bregs[CH],
+                  *bregs[DH], *bregs[DL]);); */
+         break;
+     case 1:     /* Set ticks */
+@@ -789,7 +791,7 @@
+         CF = 1;
+         break;
+     default:
+-        printf("unimplemented INT 1Ah function %02X\n", *bregs[AH]);
++        printf("unimplemented INT 1Ah function %02Xh\n", *bregs[AH]);
+ #ifdef PANIC
+         loc();
+         exit_emu();
+@@ -843,7 +845,7 @@
+     switch(*bregs[AH])
+     {
+     case 0:
+-        D(printf("Initialise disk 0x%02X\n",*bregs[DL]););
++        D(printf("Initialize disk %02Xh\n",*bregs[DL]););
+         CF = 0;
+         break;
+     case 1:  /* Get last error */
+@@ -890,10 +892,10 @@
+             break;
+         }
+         head = *bregs[DH];
+-        cylinder = *bregs[CH] + ((*bregs[CL] & 0xc0) << 8);
++        cylinder = *bregs[CH] + ((*bregs[CL] & 0xc0) << 2);
+         sector = (*bregs[CL] & 0x3f) -1;
+         buffer = &c_es[ChangeE(wregs[BX])];
+-        D(printf("DISK 0x%02X (%s) read [h%d,s%d,t%d](%d)->%04X:%04X\n",
++        D(printf("DISK %02Xh (%s) read [h%d,s%d,t%d](%d)->%04X:%04X\n",
+                  *bregs[DL], disk->name, head, sector, cylinder, *bregs[AL],
+                  sregs[ES], ChangeE(wregs[BX])););
+         if (disk_seek(disk, cylinder, head, sector))
+@@ -912,7 +914,7 @@
+         CF = 0;
+         break;
+     case 4: /* Test disk */
+-        D(printf("Testing disk 0x%02X\n",*bregs[DL]););
++        D(printf("Testing disk %02Xh\n",*bregs[DL]););
+         disk = get_disk_tab(*bregs[DL]);
+         if (!disk)
+         {
+@@ -932,7 +934,7 @@
+         CF = 0;
+         break;
+     case 8: /* Get disk params */
+-        D(printf("Get disk params 0x%02X\n",*bregs[DL]););
++        D(printf("Get disk params %02Xh\n",*bregs[DL]););
+         disk = get_disk_tab(*bregs[DL]);
+         if (disk)
+         {
+@@ -966,7 +968,7 @@
+         }
+         break;
+     case 0x15:  /* Get disk type */
+-        D(printf("Get disk type 0x%02X\n",*bregs[DL]););
++        D(printf("Get disk type %02Xh\n",*bregs[DL]););
+         disk = get_disk_tab(*bregs[DL]);
+         if (disk)
+         {
+@@ -990,7 +992,7 @@
+         }
+         break;
+     default:
+-        printf("Unimplemented INT 13h function %02X\n",*bregs[AH]);
++        printf("Unimplemented INT 13h function %02Xh\n",*bregs[AH]);
+ #ifdef PANIC
+         loc();
+         exit_emu();
+@@ -1070,7 +1072,7 @@
+ {
+     unsigned tmp,tmp2;
+ 
+-    D(printf("In INT 0xe8 AH = 0x%02X  AL = 0x%02X\n",*bregs[AH],*bregs[AL]););
++    D(printf("In INT 0xe8 AH = %02Xh  AL = %02Xh\n",*bregs[AH],*bregs[AL]););
+ 
+     CalcAll();
+     switch(*bregs[AH])
+diff -ru ../work/pcemu1.01alpha/cpu.c ./cpu.c
+--- ../work/pcemu1.01alpha/cpu.c	Wed Feb 18 11:09:10 1998
++++ ./cpu.c	Wed Feb 18 11:04:52 1998
+@@ -537,7 +537,7 @@
+ #ifdef DEBUGGER
+     call_debugger(D_INT);
+ #endif
+-    D2(printf("Interrupt 0x%02X\n", int_pending););
++    D2(printf("Interrupt %02Xh\n", int_pending););
+     interrupt(int_pending);
+     int_pending = 0;
+ 
+@@ -4163,7 +4163,7 @@
+ 
+ static INLINE2 void i_notdone(void)
+ {
+-    fprintf(stderr,"Error: Unimplemented opcode %02X at cs:ip = %04X:%04X\n",
++    fprintf(stderr,"Error: Unimplemented opcode %02Xh at cs:ip = %04X:%04X\n",
+ 		    c_cs[ip-1],sregs[CS],ip-1);
+ /*    exit(1); */
+ }
+diff -ru ../work/pcemu1.01alpha/vga.c ./vga.c
+--- ../work/pcemu1.01alpha/vga.c	Wed Feb 18 11:09:11 1998
++++ ./vga.c	Wed Feb 18 11:04:52 1998
+@@ -559,7 +559,7 @@
+             }
+             break;
+         default:
+-            printf("Unimplemented int 0x10 function 0x11 sub-function %02X\n",*bregs[AL]);
++            printf("Unimplemented int 0x10 function 0x11 sub-function %02Xh\n",*bregs[AL]);
+ #if PANIC
+             loc();
+             exit_emu();
+@@ -583,7 +583,7 @@
+             *bregs[AL] = 0x12;
+             break;
+         default:
+-            printf("Unimplemented int 10 function 0x12 sub-function 0x%02X\n",*bregs[BL]);
++            printf("Unimplemented int 10 function 0x12 sub-function %02Xh\n",*bregs[BL]);
+ #ifdef PANIC
+             loc();
+             exit_emu();
+diff -ru ../work/pcemu1.01alpha/xstuff.c ./xstuff.c
+--- ../work/pcemu1.01alpha/xstuff.c	Wed Feb 18 11:09:10 1998
++++ ./xstuff.c	Wed Feb 18 11:04:52 1998
+@@ -523,7 +523,7 @@
+ 
+             if (key == XK_Pause)
+             {
+-                D(printf("Pause pressed. State = %02X\n", event.xkey.state););
++                D(printf("Pause pressed. State = %02Xh\n", event.xkey.state););
+                 if (event.xkey.state & ControlMask)
+                     scan = 0xc6e046e0;
+                 else
+@@ -531,7 +531,7 @@
+             }                   /* XK_F22 is sun type 4 PrtScr */
+             else if (key == XK_Print || key == XK_F22)
+             {
+-                D(printf("Print pressed. State = %02X\n", event.xkey.state););
++                D(printf("Print pressed. State = %02Xh\n", event.xkey.state););
+                 if (event.xkey.state & Mod1Mask)
+                     scan = 0x54;
+                 else

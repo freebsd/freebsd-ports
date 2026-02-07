@@ -1,0 +1,2 @@
+inotify_simple is a simple Python wrapper around inotify.
+No fancy bells and whistles, just a literal wrapper with ctypes.

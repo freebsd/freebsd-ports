@@ -1,0 +1,22 @@
+@(,,555) bin/slashem
+@owner games
+@group games
+%%DATADIR%%/license
+@(games,games,664) %%DATADIR%%/logfile
+%%DATADIR%%/nhshare
+%%DATADIR%%/nhushare
+%%DATADIR%%/perm
+@(games,games,664) %%DATADIR%%/record
+@(games,games,2755) %%DATADIR%%/recover
+@(games,games,2755) %%DATADIR%%/slashem
+@owner
+@group
+share/man/man6/dgn_comp.6.gz
+share/man/man6/dlb.6.gz
+share/man/man6/lev_comp.6.gz
+share/man/man6/recover.6.gz
+share/man/man6/slashem.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample.slashemrc
+%%PORTDOCS%%%%DOCSDIR%%/slamfaq.txt
+@dir(games,games,775) %%DATADIR%%/save

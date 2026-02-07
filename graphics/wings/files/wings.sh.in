@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec %%PREFIX%%/bin/erl -pa %%LOCALBASE%%/lib/erlang/lib/esdl/ebin +S 1 -run wings_start start_halt "$@"

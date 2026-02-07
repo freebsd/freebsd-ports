@@ -1,0 +1,15 @@
+bin/pcmanx
+share/man/man1/pcmanx.1.gz
+share/applications/pcmanx.desktop
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanx.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo
+%%DATADIR%%/emoticons
+%%DATADIR%%/nancy_bot/default.conf
+%%DATADIR%%/nancy_bot/default_msg.data
+%%DATADIR%%/nancy_bot/default_usages.data
+%%DATADIR%%/nancy_bot/example.conf
+%%DATADIR%%/nancy_bot/example_msg.data
+%%DATADIR%%/nancy_bot/example_usages.data
+%%DATADIR%%/sitelist
+share/pixmaps/pcmanx.svg
+@dir %%DATADIR%%/script

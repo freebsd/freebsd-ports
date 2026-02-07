@@ -1,0 +1,30 @@
+--- configure.orig	2021-11-04 04:43:06 UTC
++++ configure
+@@ -9821,7 +9821,7 @@ $as_echo_n "checking whether the $compiler linker ($LD
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -13070,7 +13070,7 @@ module_expsym_cmds_CXX=
+ inherit_rpath_CXX=no
+ module_cmds_CXX=
+ module_expsym_cmds_CXX=
+-link_all_deplibs_CXX=unknown
++link_all_deplibs_CXX=no
+ old_archive_cmds_CXX=$old_archive_cmds
+ reload_flag_CXX=$reload_flag
+ reload_cmds_CXX=$reload_cmds
+@@ -16722,6 +16722,9 @@ export LD_LIBRARY_PATH
+ 			WERROR=""
+ 			;;
+ 		*mingw32* )
++			WERROR=""
++			;;
++		freebsd* )
+ 			WERROR=""
+ 			;;
+ 		*)

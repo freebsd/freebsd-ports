@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+ Please test your scalapack installation
+ Example programs are located at %%EXAMPLESDIR%%
+
+ Test programs are located at %%DATADIR%%/TESTING
+
+ Example:
+  % cd %%DATADIR%%/TESTING
+  % %%LOCALBASE%%/bin/mpirun -np 4 ./xcbrd
+  % %%LOCALBASE%%/bin/mpirun -np 4 ./xcdblu
+   etc., etc. ...
+
+  to perform all the tests,
+  % cd %%DATADIR%%/TESTING
+  % csh
+  % foreach i (x*)
+  ? %%LOCALBASE%%/bin/mpirun -np 4 ./$i >& ~/$i.log
+  ? end
+  % %%LOCALBASE%%/bin/mpdallexit
+
+ If you're using OpenMPI, use this instead:
+  % cd %%DATADIR%%/TESTING
+  % LD_LIBRARY_PATH=%%LOCALBASE%%/mpi/openmpi/lib/ export LD_LIBRARY_PATH
+  % PATH=$PATH:%%LOCALBASE%%/mpi/openmpi/bin/ export PATH
+  % mpirun -np 4 ./xcbrd
+  % mpirun -np 4 ./xcdblu
+   etc., etc. ...
+
+You can change -np 4 to any number to meet your environment.
+See files at %%DOCSDIR%% for detail.
+EOM
+}
+]

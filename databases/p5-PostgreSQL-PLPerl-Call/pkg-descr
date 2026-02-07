@@ -1,0 +1,2 @@
+PostgreSQL::PLPerl::Call is a simple interface for calling SQL functions
+from PostgreSQL PL/Perl.

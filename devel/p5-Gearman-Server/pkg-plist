@@ -1,0 +1,8 @@
+bin/gearmand
+%%PERL5_MAN1%%/gearmand.1.gz
+%%SITE_PERL%%/Gearman/Server/Job.pm
+%%SITE_PERL%%/Gearman/Server/Client.pm
+%%SITE_PERL%%/Gearman/Server/Listener.pm
+%%SITE_PERL%%/Gearman/Server.pm
+%%PERL5_MAN3%%/Gearman::Server.3.gz
+%%PERL5_MAN3%%/Gearman::Server::Client.3.gz

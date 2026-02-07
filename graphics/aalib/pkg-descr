@@ -1,0 +1,7 @@
+AA-lib is a low-level graphics library similar to many other libraries
+except for the fact that AA-lib does not require a graphics device!  In
+fact, no "graphical" output is possible.  AA-lib uses a modern, high-tech
+ascii-art renderer in place of outmoded and cumbersome graphical output.
+
+The AA-lib API is designed to be similar to that of other graphics
+libraries so learning its API should be simple.

@@ -1,0 +1,23 @@
+PORTNAME=	xcruiser
+PORTVERSION=	0.30
+PORTREVISION=	4
+CATEGORIES=	x11-fm
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Navigate through a three-dimensional view of a file system
+WWW=		https://xcruiser.sourceforge.net/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		imake xorg
+USE_XORG=	ice sm x11 xaw xext xmu xpm xt
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

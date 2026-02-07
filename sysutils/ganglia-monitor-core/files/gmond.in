@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: gmond
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	bname=`basename $_file`
+	;;
+*)
+	bname=`basename $0`
+	;;
+esac
+
+name=`echo "${bname}" | tr ".-" "__"`
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/gmond"
+
+load_rc_config ganglia
+
+load_rc_config $bname
+
+eval "${name}_enable=\${${name}_enable-NO}"
+eval "conffile=\${${name}_conf-%%PREFIX%%/etc/${bname}.conf}"
+
+pidfile="/var/run/${bname}.pid"
+command_args="-c ${conffile} -p ${pidfile}"
+required_files=${conffile}
+
+run_rc_command $*

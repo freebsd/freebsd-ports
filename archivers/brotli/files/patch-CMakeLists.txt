@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-10-27 13:07:48 UTC
++++ CMakeLists.txt
+@@ -153,6 +153,8 @@ foreach(lib ${BROTLI_SHARED_LIBRARIES} ${BROTLI_STATIC
+ foreach(lib ${BROTLI_SHARED_LIBRARIES} ${BROTLI_STATIC_LIBRARIES})
+   target_link_libraries(${lib} ${LIBM_LIBRARY})
+   set_property(TARGET ${lib} APPEND PROPERTY INCLUDE_DIRECTORIES ${BROTLI_INCLUDE_DIRS})
++  string(REGEX REPLACE "-static$" "" lib_base "${lib}")
++  set_property(TARGET ${lib} PROPERTY OUTPUT_NAME ${lib_base})
+   set_target_properties(${lib} PROPERTIES
+     VERSION "${BROTLI_ABI_COMPATIBILITY}.${BROTLI_ABI_AGE}.${BROTLI_ABI_REVISION}"
+     SOVERSION "${BROTLI_ABI_COMPATIBILITY}")

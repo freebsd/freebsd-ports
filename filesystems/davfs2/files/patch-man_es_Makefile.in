@@ -1,0 +1,15 @@
+--- man/es/Makefile.in.orig	2025-08-26 15:45:45 UTC
++++ man/es/Makefile.in
+@@ -365,9 +365,9 @@ install-manual5DATA: $(manual5_DATA)
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(manual5dir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(manual5dir)" || exit $$?; \
++	$(am__xargs_n) 1 | while read manpage; do \
++	  echo " $(edit) $$manpage > $(DESTDIR)$(manual5dir)/$$manpage"; \
++	  $(edit) $$manpage > "$(DESTDIR)$(manual5dir)/$$manpage" || exit $$?; \
+ 	done
+ 
+ uninstall-manual5DATA:

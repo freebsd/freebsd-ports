@@ -1,0 +1,69 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       Test bowtie2 on examples provided
+#       http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
+#       
+#   History:
+#   Date        Name        Modification
+#   2019-03-17  Jason Bacon Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 \n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 0 ]; then
+    usage
+fi
+
+##########################################################################
+#   Function description:
+#       Pause until user presses return
+##########################################################################
+
+pause()
+{
+    local junk
+    
+    printf "Press return to continue..."
+    read junk
+}
+
+cat << EOM
+
+This script follows the bowtie2 "Getting Started" section of the manual:
+
+http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
+
+EOM
+pause
+
+examples_dir=%%EXAMPLESDIR%%
+bowtie2-build $examples_dir/reference/lambda_virus.fa \
+    lambda_virus
+printf "Done indexing...\n"
+pause
+
+bowtie2 -x lambda_virus -U $examples_dir/reads/reads_1.fq -S eg1.sam
+printf "Done with alignment.\n"
+pause
+more eg1.sam
+
+bowtie2 -x lambda_virus -1 $examples_dir/reads/reads_1.fq -2 $examples_dir/reads/reads_2.fq -S eg2.sam
+printf "Done with paired end example.\n"
+pause
+more eg2.sam
+
+bowtie2 --local -x lambda_virus -U $examples_dir/reads/longreads.fq -S eg3.sam
+printf "Done with local alignment example.\n"
+pause
+more eg3.sam

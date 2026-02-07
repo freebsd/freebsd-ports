@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2000-11-11 11:11:11 UTC
++++ pyproject.toml
+@@ -10,8 +10,7 @@ readme = "README.md"
+ description = "asyncio nostr client"
+ keywords = ["nostr", "asyncio"]
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-3-Clause" }
+ requires-python = ">=3.10"
+ dependencies = [
+     "electrum_ecc",

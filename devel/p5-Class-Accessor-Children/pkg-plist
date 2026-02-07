@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Class/Accessor/Children.pm
+%%SITE_PERL%%/Class/Accessor/Children/Fast.pm
+%%PERL5_MAN3%%/Class::Accessor::Children.3.gz
+%%PERL5_MAN3%%/Class::Accessor::Children::Fast.3.gz

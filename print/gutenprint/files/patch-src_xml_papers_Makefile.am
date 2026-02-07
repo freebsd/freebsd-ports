@@ -1,0 +1,12 @@
+--- src/xml/papers/Makefile.am.orig	2019-05-25 15:08:51 UTC
++++ src/xml/papers/Makefile.am
+@@ -25,7 +25,8 @@ pkgxmldatadir = $(pkgdatadir)/@GUTENPRINT_MAJOR_VERSIO
+ 
+ pkgxmldata_DATA =				\
+ 	standard.xml				\
+-	labels.xml
++	labels.xml				\
++	freebsd-addons.xml
+ 
+ 
+ xml-stamp: $(pkgxmldata_DATA) Makefile.am

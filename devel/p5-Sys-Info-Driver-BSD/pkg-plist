@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Sys/Info/Driver/BSD.pm
+%%SITE_PERL%%/Sys/Info/Driver/BSD/Device.pm
+%%SITE_PERL%%/Sys/Info/Driver/BSD/Device/CPU.pm
+%%SITE_PERL%%/Sys/Info/Driver/BSD/OS.pm
+%%PERL5_MAN3%%/Sys::Info::Driver::BSD.3.gz
+%%PERL5_MAN3%%/Sys::Info::Driver::BSD::Device.3.gz
+%%PERL5_MAN3%%/Sys::Info::Driver::BSD::Device::CPU.3.gz
+%%PERL5_MAN3%%/Sys::Info::Driver::BSD::OS.3.gz

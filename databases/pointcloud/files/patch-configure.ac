@@ -1,0 +1,11 @@
+--- configure.ac.orig	2019-04-12 20:36:11 UTC
++++ configure.ac
+@@ -274,7 +274,7 @@ fi
+ 
+ 
+ dnl Extract the linker and include flags
+-XML2_LDFLAGS=`$XML2CONFIG --libs`
++XML2_LDFLAGS=`$XML2CONFIG --libs | sed 's|-L/usr/lib||g'`
+ XML2_CPPFLAGS=`$XML2CONFIG --cflags`
+ 
+ dnl Extract the version

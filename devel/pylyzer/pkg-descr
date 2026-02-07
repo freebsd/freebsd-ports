@@ -1,0 +1,3 @@
+pylyzer is a static code analyzer / language server for Python, written in Rust.
+
+It allows to check types of Python variables and more.

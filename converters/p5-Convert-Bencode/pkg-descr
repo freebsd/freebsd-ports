@@ -1,0 +1,2 @@
+This module provides two functions, bencode and bdecode,
+which encode and decode bencoded strings respectivly.

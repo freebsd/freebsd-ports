@@ -1,0 +1,60 @@
+--- Wnn/jlib/Imakefile.orig	Fri Sep  1 18:58:55 2000
++++ Wnn/jlib/Imakefile	Tue Oct 29 08:32:34 2002
+@@ -4,7 +4,7 @@
+ 
+ #ifdef NEED_DEFINE_LIB
+ #define DoNormalLib YES
+-#define DoSharedLib NO
++#define DoSharedLib YES
+ #define DoDebugLib NO
+ #define DoProfileLib NO
+ #endif
+@@ -56,14 +56,27 @@
+ 	$(WNNROMKANSRC)/rk_multi.o
+ 
+ 
++UNSHARED_LOCAL_RKOBJS= $(WNNROMKANSRC)/unshared/rk_bltinfn.o \
++	$(WNNROMKANSRC)/unshared/rk_main.o \
++	$(WNNROMKANSRC)/unshared/rk_modread.o \
++	$(WNNROMKANSRC)/unshared/rk_read.o \
++	$(WNNROMKANSRC)/unshared/rk_vars.o \
++	$(WNNROMKANSRC)/unshared/rk_multi.o
++
+ LOCAL_ETCSRCS = $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)
+ LOCAL_ETCOBJS = $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8)
+ SRCS= $(SRC1) $(LOCAL_ETCSRCS)
+ OBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
++UNSHAREDOBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(UNSHARED_LOCAL_RKOBJS)
+ 
++SOWNN6LIBREV=2.0
+ 
+ LibraryObjectRule()
++#if DoSharedLib
++AllTarget($(OBJS) libwnn6_fromsrc.a libwnn6.so.$(SOWNN6LIBREV))
++#else
+ AllTarget($(OBJS) libwnn6_fromsrc.a)
++#endif
+ 
+ 
+ js.o : js.c \
+@@ -74,10 +87,19 @@
+ 
+ SingleProgramTarget(kankana,kankana.o,$(WNNJLIB),)
+ 
+-NormalLibraryTarget(wnn6_fromsrc,$(OBJS))
++
++#if DoSharedLib
++SharedLibraryTarget(wnn6,$(SOWNN6LIBREV),$(OBJS),.,.)
++#endif
++
++UnsharedLibraryTarget(wnn6_fromsrc,$(UNSHAREDOBJS),unshared,..)
+ LintLibraryTarget(wnn6_fromsrc,$(SRCS))
+ 
+ instlib:: install
++
++#if DoSharedLib
++InstallSharedLibrary(wnn6,$(SOWNN6LIBREV),$(WNNLIBDIR))
++#endif
+ 
+ 
+ InstallLibrary(wnn6_fromsrc,$(WNNLIBDIR))

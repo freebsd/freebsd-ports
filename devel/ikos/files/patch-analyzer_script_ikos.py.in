@@ -1,0 +1,12 @@
+--- analyzer/script/ikos.py.in.orig	2025-01-09 06:36:15 UTC
++++ analyzer/script/ikos.py.in
+@@ -43,6 +43,9 @@ import sys
+ import os.path
+ import sys
+ 
++# add local python module to sys.path
++sys.path.append('%%PREFIX%%/share/ikos/python')
++
+ if __name__ == '__main__':
+     try:
+         import ikos.analyzer

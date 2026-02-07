@@ -1,0 +1,46 @@
+--- htmllintenv.orig	2007-05-19 08:36:51 UTC
++++ htmllintenv
+@@ -5,15 +5,15 @@
+ #   アクセス権をうまく工夫して、他人から見えないようにしてください。
+ 
+ # CGI 用ディレクトリ (絶対パスかCGI相対パスで指定、なるべく絶対パスにしてください)
+-$RULEDIR  = './';        # 規則ファイルの場所
+-#$LOGSDIR = './logs/';   # ログファイルの場所 (不要ならコメントアウト)
++$RULEDIR  = '%%DATADIR%%/rule/';        # 規則ファイルの場所
++#$LOGSDIR = '/var/logs/another-htmllint/';   # ログファイルの場所 (不要ならコメントアウト)
+ $TMPDIR   = '/tmp/';     # テンポラリファイルの場所
+-$IMGDIR   = './';        # イメージファイルの場所
++$IMGDIR   = '%%DATADIR%%/html/';        # イメージファイルの場所
+ $TAGSLIST = '';          # タグ一覧キャッシュ用の場所 (空ならキャッシュしない)
+                          # 設定するときはアクセス権を適当に与えておくこと
+ 
+ # HTML 用ディレクトリ (CGI が出力する HTML 中で使う)
+-$HTMLDIR    = './';                     # HTMLファイルの場所
++$HTMLDIR    = '';                     # HTMLファイルの場所
+ $GATEWAYURL = $HTMLDIR.'htmllint.html'; # ゲイトウェイサーヴィス HTML
+ $EXPLAIN    = $HTMLDIR.'explain.html';  # 解説用 HTML (HTML用)
+ $CGIROOT    = $HTMLDIR;                 # CGIの場所
+@@ -80,12 +80,12 @@ $MAXHTMLSIZE = 512;
+ #$KANJICODE = 'JIS';    # JIS/EUC/SJIS/UTF8 のいずれか
+ 
+ # Lynx (不要あるいは未実装ならコメントアウト)
+-#$LYNX = '/usr/local/bin/lynx -dump -nolist -force_html';
++#$LYNX = '%%PREFIX%%/bin/lynx -dump -nolist -force_html';
+ 
+ # w3m (不要あるいは未実装ならコメントアウト)
+ #   カラー機能のない場合 -M の指定は不可
+ #   -e は EUC、Shift JIS なら -s
+-#$W3M = '/usr/local/bin/w3m -dump -T text/html -M -e';
++#$W3M = '%%PREFIX%%/bin/w3m -dump -T text/html -M -e';
+ 
+ # 得点記録用ログファイル (不要ならコメントアウト)
+ #   # の部分は年月に置き換わります
+@@ -100,7 +100,7 @@ $MAXHTMLSIZE = 512;
+ #@EXCEPTSCORES = qw(uso800.ac.jp);
+ 
+ # Muquit's Access Counter CGI (不要あるいは未実装ならコメントアウト)
+-#$COUNTER = '/usr/local/www/cgi-bin/Count.cgi';
++#$COUNTER = '%%PREFIX%%/www/cgi-bin/Count.cgi';
+ 
+ # ビジーチェック関数
+ # sub BusyCheck {

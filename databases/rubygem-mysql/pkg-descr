@@ -1,0 +1,2 @@
+This is the MySQL API module for Ruby. It provides the same functions for Ruby
+programs that the MySQL C API provides for C programs.

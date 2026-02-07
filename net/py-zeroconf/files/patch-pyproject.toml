@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2024-04-13 00:41:48 UTC
++++ pyproject.toml
+@@ -59,7 +59,7 @@ cython = "^3.0.5"
+ pytest-cov = "^4.0.0"
+ pytest-asyncio = "^0.20.3"
+ cython = "^3.0.5"
+-setuptools = "^65.6.3"
++setuptools = "^63.1.0"
+ pytest-timeout = "^2.1.0"
+ 
+ [tool.black]
+@@ -151,7 +151,7 @@ ignore_errors = true
+ 
+ [build-system]
+ # 1.5.2 required for https://github.com/python-poetry/poetry/issues/7505
+-requires = ['setuptools>=65.4.1', 'wheel', 'Cython>=3.0.8', "poetry-core>=1.5.2"]
++requires = ['setuptools>=63.1.0', 'wheel', 'cython>=3.0.8', "poetry-core>=1.5.2"]
+ build-backend = "poetry.core.masonry.api"
+ 
+ [tool.codespell]

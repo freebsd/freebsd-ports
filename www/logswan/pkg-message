@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+logswan uses libmaxminddb (GeoIP2) library to perform geolocation-based
+lookups.
+
+Install port net/geoipupdate to fetch and update the GeoIP database(s).
+EOM
+}
+]

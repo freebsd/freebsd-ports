@@ -1,0 +1,10 @@
+--- src/lib/libast/features/vmalloc.orig	2016-02-28 17:09:23 UTC
++++ src/lib/libast/features/vmalloc
+@@ -217,7 +217,4 @@ cat{
+ 	#if _mmap_anon
+ 	#define _mem_mmap_anon	1
+ 	#endif
+-	#if _mmap_devzero
+-	#define _mem_mmap_zero	1
+-	#endif
+ }end

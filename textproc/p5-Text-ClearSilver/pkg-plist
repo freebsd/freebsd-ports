@@ -1,0 +1,11 @@
+%%PERL5_MAN3%%/Text::ClearSilver.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::Compat.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::FunctionSet.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::FunctionSet::html.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::FunctionSet::string.3.gz
+%%SITE_ARCH%%/auto/Text/ClearSilver/ClearSilver.so
+%%SITE_ARCH%%/Text/ClearSilver.pm
+%%SITE_ARCH%%/Text/ClearSilver/Compat.pm
+%%SITE_ARCH%%/Text/ClearSilver/FunctionSet.pm
+%%SITE_ARCH%%/Text/ClearSilver/FunctionSet/html.pm
+%%SITE_ARCH%%/Text/ClearSilver/FunctionSet/string.pm

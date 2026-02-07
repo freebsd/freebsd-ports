@@ -1,0 +1,8 @@
+%%SITE_PERL%%/AnyEvent/RPC/Enc.pm
+%%SITE_PERL%%/AnyEvent/RPC/UA.pm
+%%SITE_PERL%%/AnyEvent/RPC/Enc/REST.pm
+%%SITE_PERL%%/AnyEvent/RPC/Enc/YAML.pm
+%%SITE_PERL%%/AnyEvent/RPC.pm
+%%PERL5_MAN3%%/AnyEvent::RPC.3.gz
+%%PERL5_MAN3%%/AnyEvent::RPC::Enc::YAML.3.gz
+%%PERL5_MAN3%%/AnyEvent::RPC::Enc::REST.3.gz

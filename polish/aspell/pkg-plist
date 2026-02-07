@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/pl.dat
+lib/aspell-%%VER%%/pl_affix.dat
+share/aspell/pl.multi
+share/aspell/pl.rws
+share/aspell/polish.alias

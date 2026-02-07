@@ -1,0 +1,6 @@
+bin/xawmidi
+lib/X11/app-defaults/TiMidity
+lib/X11/%%EUCJP_LOCALE%%/app-defaults/TiMidity
+%%TIMID_LIBDIR%%/if_xaw.so
+%%PORTDOCS%%%%DOCSDIR%%/README.xaw
+%%PORTDOCS%%share/doc/ja/timidity++/README.xaw

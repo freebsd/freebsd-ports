@@ -1,0 +1,3 @@
+iterable-io is a small Python library that provides an adapter so that
+it's possible to read from iterable objects in the same way as file-like
+objects.

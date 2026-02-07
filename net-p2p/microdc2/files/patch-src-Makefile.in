@@ -1,0 +1,31 @@
+--- src/Makefile.in.orig	2006-12-25 02:44:47 +0800
++++ src/Makefile.in
+@@ -97,7 +97,7 @@ am_microdc2_OBJECTS = command.$(OBJEXT) 
+ 	charsets.$(OBJEXT)
+ microdc2_OBJECTS = $(am_microdc2_OBJECTS)
+ am__DEPENDENCIES_1 =
+-microdc2_DEPENDENCIES = common/libcommon.a bzip2/libbzip2.a \
++microdc2_DEPENDENCIES = common/libcommon.a \
+ 	tth/libtth.a ../lib/libgnu.a $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+@@ -246,7 +246,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = common bzip2 tth
++SUBDIRS = common tth
+ AM_CFLAGS = \
+   -Wall \
+   $(LIBXML2_CFLAGS)
+@@ -288,9 +288,9 @@ tthsum_SOURCES = \
+ #  microdc_tth.c
+ microdc2_LDADD = \
+   common/libcommon.a \
+-  bzip2/libbzip2.a \
+   tth/libtth.a \
+   ../lib/libgnu.a \
++  -lbz2 \
+   $(READLINE_LIBS) \
+   $(LIBINTL) \
+   $(LIBICONV) \

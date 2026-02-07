@@ -1,0 +1,21 @@
+PORTNAME=	tinyatom
+PORTVERSION=	0.3.6
+PORTREVISION=	2
+CATEGORIES=	www rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Small and easy to use ruby Atom feed generator
+WWW=		https://github.com/mmb/tinyatom
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
+		rubygem-public_suffix>=0:dns/rubygem-public_suffix
+
+USES=		gem
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

@@ -1,0 +1,3 @@
+This is a collection of add-on policies for Perl::Critic. They're under a
+"pulp" theme plus other themes according to their purpose (see "POLICY THEMES"
+in Perl::Critic).

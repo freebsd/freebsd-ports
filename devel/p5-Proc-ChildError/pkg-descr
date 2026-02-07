@@ -1,0 +1,4 @@
+Proc::ChildError produces a string description of an error number. $child_error
+defaults to $? if not specified. $os_error defaults to $! if not specified.
+
+The algorithm is taken from perldoc -f system.

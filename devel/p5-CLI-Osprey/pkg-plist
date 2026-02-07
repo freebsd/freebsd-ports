@@ -1,0 +1,10 @@
+%%SITE_PERL%%/CLI/Osprey.pm
+%%SITE_PERL%%/CLI/Osprey/Descriptive.pm
+%%SITE_PERL%%/CLI/Osprey/Descriptive/Usage.pm
+%%SITE_PERL%%/CLI/Osprey/InlineSubcommand.pm
+%%SITE_PERL%%/CLI/Osprey/Role.pm
+%%PERL5_MAN3%%/CLI::Osprey.3.gz
+%%PERL5_MAN3%%/CLI::Osprey::Descriptive.3.gz
+%%PERL5_MAN3%%/CLI::Osprey::Descriptive::Usage.3.gz
+%%PERL5_MAN3%%/CLI::Osprey::InlineSubcommand.3.gz
+%%PERL5_MAN3%%/CLI::Osprey::Role.3.gz

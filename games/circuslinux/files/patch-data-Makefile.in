@@ -1,0 +1,17 @@
+--- data/Makefile.in.orig	2001-04-29 06:53:32 UTC
++++ data/Makefile.in
+@@ -172,10 +172,10 @@ mostlyclean distclean maintainer-clean
+ 
+ 
+ install:
+-	$(SHELL) ./../mkinstalldirs $(pkgdatadir)
+-	$(SHELL) ./../mkinstalldirs $(pkgdatadir)/data
+-	cp -r images music sounds $(pkgdatadir)/data/
+-	chmod -R 755 $(pkgdatadir)
++	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(pkgdatadir)
++	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(pkgdatadir)/data
++	cp -r images music sounds $(DESTDIR)$(pkgdatadir)/data/
++	chmod -R 755 $(DESTDIR)$(pkgdatadir)
+ 
+ # Directories in EXTRA_DIST doen't work?
+ dist-hook:

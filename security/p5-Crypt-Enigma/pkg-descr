@@ -1,0 +1,7 @@
+This module is a complete working Perl implementation of the Enigma Machine
+used during World War II. The cipher calculations are based on actual Enigma
+values and the resulting ciphered values are as would be expected from an
+Enigma Machine.
+The implementation allows for all of the Rotors and Reflectors available to the
+real world Enigma to be used. A Steckerboard has also been implemented,
+allowing letter substitutions to be made.

@@ -1,0 +1,23 @@
+--- ./src/Makefile.in.orig	Thu Oct 19 00:38:42 2006
++++ ./src/Makefile.in	Sun Sep 30 21:02:31 2007
+@@ -38,8 +38,7 @@
+ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+-pkgdata_PROGRAMS = snipe2d.@CPU_IS@.dynamic$(EXEEXT) \
+-	snipe2d.@CPU_IS@.static$(EXEEXT)
++pkgdata_PROGRAMS = snipe2d-bin$(EXEEXT)
+ subdir = src
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(srcdir)/snipe2d.in
+@@ -275,8 +274,8 @@
+ 
+ clean-pkgdataPROGRAMS:
+ 	-test -z "$(pkgdata_PROGRAMS)" || rm -f $(pkgdata_PROGRAMS)
+-snipe2d.@CPU_IS@.dynamic$(EXEEXT): $(snipe2d_@CPU_IS@_dynamic_OBJECTS) $(snipe2d_@CPU_IS@_dynamic_DEPENDENCIES) 
+-	@rm -f snipe2d.@CPU_IS@.dynamic$(EXEEXT)
++snipe2d-bin$(EXEEXT): $(snipe2d_@CPU_IS@_dynamic_OBJECTS) $(snipe2d_@CPU_IS@_dynamic_DEPENDENCIES) 
++	@rm -f snipe2d-bin$(EXEEXT)
+ 	$(CXXLINK) $(snipe2d_@CPU_IS@_dynamic_LDFLAGS) $(snipe2d_@CPU_IS@_dynamic_OBJECTS) $(snipe2d_@CPU_IS@_dynamic_LDADD) $(LIBS)
+ install-binSCRIPTS: $(bin_SCRIPTS)
+ 	@$(NORMAL_INSTALL)

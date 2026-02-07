@@ -1,0 +1,2 @@
+HTTP::Accept provides a robust set of parsers for dealing with HTTP Accept,
+Accept-Language, Accept-Encoding, Accept-Charset headers.

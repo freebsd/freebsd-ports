@@ -1,0 +1,8 @@
+sigopt is an open source version of SigOpt API, performing hyperparameter
+optimization and visualization.
+
+Sigopt-server is an open-source tool for managing adaptive experiments,
+especially for hyperparameter optimization. It uses algorithms to determine
+the best spots in parameter space for metric optimization, and includes web
+visualizations so you can improve your models. For more information you can
+read about our service offering. Our documentation is here.

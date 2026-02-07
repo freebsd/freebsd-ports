@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# PROVIDE: simplomon
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# simplomon_enable (bool):      Set to NO by default.
+#                               Set it to YES to enable simplomon.
+# simplomon_acct (user):        Set user to run simplomon as.
+#                               Default is "www".
+# simplomon_config (path):      Set to /usr/local/etc/simplomon.conf
+#                               by default.
+#
+
+. /etc/rc.subr
+
+name=simplomon
+rcvar=simplomon_enable
+
+load_rc_config $name
+
+: ${simplomon_enable:="NO"}
+: ${simplomon_acct:="www"}
+: ${simplomon_config:="%%PREFIX%%/etc/simplomon.conf"}
+
+pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
+required_files="${simplomon_config}"
+procname="%%PREFIX%%/bin/simplomon"
+
+command="/usr/sbin/daemon"
+command_args="-c -r -R 15 -f -t ${name} -T ${name} \
+	-p ${pidfile} \
+	-P ${daemon_pidfile} \
+	-u ${simplomon_acct} \
+	${procname} ${simplomon_config}"
+
+start_precmd=simplomon_precmd
+
+simplomon_precmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${simplomon_acct} -g wheel -m 644 /dev/null ${pidfile}
+    fi
+
+    if [ ! -e ${daemon_pidfile} ]; then
+        install -o ${simplomon_acct} -g wheel -m 644 /dev/null ${daemon_pidfile}
+    fi
+}
+
+run_rc_command "$1"

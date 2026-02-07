@@ -1,0 +1,16 @@
+name:          xmonad-config
+version:       0.0
+synopsis:      XMonad Config File
+homepage:      http://xmonad.org
+license:       BSD2
+license-file:  LICENSE
+author:        Peter Jones <pjones@devalot.com>
+maintainer:    Peter Jones <pjones@devalot.com>
+copyright:     Copyright (c) 2016,2017 Peter J. Jones
+category:      Graphics
+build-type:    Simple
+cabal-version: >=1.8
+
+executable xmonad-config
+  main-is: config.hs
+  build-depends: base, xmonad, xmonad-contrib

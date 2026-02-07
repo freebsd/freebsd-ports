@@ -1,0 +1,4 @@
+This perl routine will take a prompt, a default response and a list
+of possible responses and deal with the user interface, (and the
+user!), by displaying the prompt, showing the default, and checking
+to be sure that the response is one of the legal choices.

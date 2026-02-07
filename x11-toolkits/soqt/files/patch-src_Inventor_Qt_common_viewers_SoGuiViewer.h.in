@@ -1,0 +1,11 @@
+--- src/Inventor/Qt/common/viewers/SoGuiViewer.h.in.orig	2023-11-20 23:42:54.863005000 +0100
++++ src/Inventor/Qt/common/viewers/SoGuiViewer.h.in	2023-11-20 23:43:09.606863000 +0100
+@@ -49,7 +49,7 @@
+ // Include this first, as a workaround for building on top of SGI and
+ // TGS Inventor on some Linux distributions. (The bug is in SGI/TGS
+ // Inventor.)
+-#include <cmath>
++// #include <cmath>
+ 
+ #include <Inventor/SbTime.h>
+ #include <Inventor/SoType.h>

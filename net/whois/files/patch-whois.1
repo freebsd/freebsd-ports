@@ -1,0 +1,73 @@
+--- whois.1.orig	2019-12-31 02:05:47 UTC
++++ whois.1
+@@ -1,8 +1,8 @@
+-.TH "WHOIS" "1" "2019-12-30" "Marco d'Itri" "Debian GNU/Linux"
++.TH "%%MWHOIST%%" "1" "2019-12-30" "Marco d'Itri" "Debian GNU/Linux"
+ .SH NAME
+-whois \- client for the whois directory service
++%%MWHOIS%% \- client for the whois directory service
+ .SH SYNOPSIS
+-.B whois
++.B %%MWHOIS%%
+ [
+ .RB {\~ \-h \~|\~ \-\-host \~}
+ .I HOST
+@@ -25,25 +25,25 @@ whois \- client for the whois directory service
+ .RB [\~ \-\-verbose \~]
+ .I OBJECT
+ 
+-.B whois
++.B %%MWHOIS%%
+ .B \-q
+ .I KEYWORD
+ 
+-.B whois
++.B %%MWHOIS%%
+ .B \-t
+ .I TYPE
+ 
+-.B whois
++.B %%MWHOIS%%
+ .B \-v
+ .I TYPE
+ 
+-.B whois \-\-help
++.B %%MWHOIS%% \-\-help
+ 
+-.B whois \-\-version
++.B %%MWHOIS%% \-\-version
+ 
+ .PP
+ .SH DESCRIPTION
+-.B whois
++.B %%MWHOIS%%
+ searches for an object in a
+ .I RFC 3912
+ database.
+@@ -243,7 +243,7 @@ which are not to be interpreted by the client must fol
+ separator (which marks the beginning of the query string).
+ .P
+ If the
+-.I /etc/whois.conf
++.I %%MWHOISCONF%%
+ configuration file exists, it will be consulted
+ to find a server before applying the normal rules. Each line of the
+ file should contain a regular expression to be matched against the query
+@@ -259,7 +259,7 @@ by the current system locale.
+ Command line arguments will always be interpreted accordingly to the
+ current system locale and converted to the IDN ASCII Compatible Encoding.
+ .SH "FILES"
+-/etc/whois.conf
++%%MWHOISCONF%%
+ .SH "ENVIRONMENT"
+ .IP LANG
+ When querying
+@@ -280,7 +280,7 @@ of objects are located. If the variable does not exist
+ .I whois.arin.net
+ will be queried.
+ .SH "SEE ALSO"
+-.IR whois.conf (5).
++.IR %%MWHOIS%%.conf (5).
+ .P
+ .IR "RFC 3912" :
+ WHOIS Protocol Specification.

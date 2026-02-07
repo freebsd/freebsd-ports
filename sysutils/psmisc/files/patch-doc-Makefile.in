@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2012-02-08 23:32:11 UTC
++++ doc/Makefile.in
+@@ -197,7 +197,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-man_MANS = fuser.1 killall.1 peekfd.1 prtstat.1 pstree.1
++man_MANS = killall.1 pstree.1
+ EXTRA_DIST = $(man_MANS)
+ all: all-am
+ 

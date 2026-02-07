@@ -1,0 +1,4 @@
+courierpasswd is an authentication and password changing utility
+that uses the courier-authlib authentication library to find user credentials.
+
+Its interface follows that of Daniel J. Bernstein's checkpassword program.

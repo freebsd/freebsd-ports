@@ -1,0 +1,18 @@
+--- gnome-vfs.applications.orig	Mon Dec 22 19:56:33 2003
++++ gnome-vfs.applications	Thu Apr  8 19:50:18 2004
+@@ -1,5 +1,5 @@
+ abiword
+-	command=AbiWord-2.0
++	command=abiword
+ 	name=AbiWord
+ 	can_open_multiple_files=true
+ 	expects_uris=false
+@@ -55,7 +55,7 @@
+ 	mime_types=application/x-deb
+ 
+ electric_eyes
+-	command=ee
++	command=ElectricEyes
+ 	name=Electric Eyes
+ 	can_open_multiple_files=true
+ 	expects_uris=false

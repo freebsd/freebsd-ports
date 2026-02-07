@@ -1,0 +1,21 @@
+Hints:
+
+  - only a subset from the selected modules are activated by default in
+    httpd.conf.
+
+  - by default apache24 builds mpm_prefork, mpm_event and mpm_worker
+    as dynamically loadable module.  Even mpm_event is the preferred
+    MPM, mpm_prefork will be activated to keep compatibility with 
+    pre-build php/perl/python/... modules (used by apache22/apache24).
+
+
+Note:
+
+  To build the develop/example modules specify additional the parameter
+    -DIAMADEVELOPER (I am a developer)
+
+  For detailed module description visit
+    http://httpd.apache.org/docs/2.4/mod/
+
+  and for the develop/example modules
+    http://httpd.apache.org/docs/2.2/programs/configure.html#developermodules

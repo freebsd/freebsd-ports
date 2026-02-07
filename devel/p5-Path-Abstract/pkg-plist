@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Path/Abstract/Fast.pm
+%%SITE_PERL%%/Path/Abstract/Underload.pm
+%%SITE_PERL%%/Path/Abstract.pm
+%%PERL5_MAN3%%/Path::Abstract.3.gz
+%%PERL5_MAN3%%/Path::Abstract::Underload.3.gz

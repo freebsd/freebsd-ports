@@ -1,0 +1,31 @@
+PORTNAME=	nanum
+DISTVERSION?=	20220210
+CATEGORIES=	korean x11-fonts
+MASTER_SITES=	https://hangeul.naver.com/hangeul_static/webfont/zips/ \
+		LOCAL/jkim
+PKGNAMESUFFIX=	-${NANUM_FONTNAME}
+DISTNAME?=	${PORTNAME}-${NANUM_FONTNAME}
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
+
+MAINTAINER=	jkim@FreeBSD.org
+COMMENT=	${NANUM_FONTDESC} Hangul fonts (${FLAVOR:tu})
+
+LICENSE=	OFL11
+LICENSE_FILE=	${FILESDIR}/LICENSE
+
+FLAVORS=	ttf otf
+otf_PKGNAMESUFFIX=	-${NANUM_FONTNAME}-${FLAVOR}
+
+DESCR=		${.CURDIR}/../../korean/nanumfonts/pkg-descr
+FILESDIR=	${.CURDIR}/../../korean/nanumfonts/files
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+USES=		fonts zip
+
+do-install:
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.${FLAVOR} ${STAGEDIR}${FONTSDIR}
+	@${FIND} ${STAGEDIR}${FONTSDIR} -not -type d | ${SORT} | \
+	    ${SED} -e 's|^${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
+
+.include <bsd.port.mk>

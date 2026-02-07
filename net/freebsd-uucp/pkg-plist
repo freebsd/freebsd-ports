@@ -1,0 +1,65 @@
+bin/uulog
+bin/uupick
+bin/uusched
+bin/uuto
+etc/mtree/uucp-var.mtree
+etc/mtree/uucp-local.mtree
+etc/periodic/daily/340.uucp
+etc/periodic/daily/410.status-uucp
+etc/periodic/weekly/300.uucp
+@dir(uucp,uucp,750) etc/uucp
+etc/uucp/call.sample
+etc/uucp/config.sample
+etc/uucp/dial.sample
+etc/uucp/dialcode.sample
+etc/uucp/passwd.sample
+etc/uucp/port.sample
+etc/uucp/sys1.sample
+etc/uucp/sys2.sample
+libexec/uucpd
+sbin/uuchk
+sbin/uuconv
+share/man/man1/cu.1.gz
+share/man/man1/uuconv.1.gz
+share/man/man1/uucp.1.gz
+share/man/man1/uulog.1.gz
+share/man/man1/uuname.1.gz
+share/man/man1/uupick.1.gz
+share/man/man1/uustat.1.gz
+share/man/man1/uuto.1.gz
+share/man/man1/uux.1.gz
+share/man/man8/uuchk.8.gz
+share/man/man8/uucico.8.gz
+share/man/man8/uusched.8.gz
+share/man/man8/uuxqt.8.gz
+share/man/man8/uucpd.8.gz
+@owner uucp
+@mode 04555
+bin/uucp
+bin/uuname
+bin/uux
+@group uucp
+@mode 06550
+libexec/uucp/uuxqt
+@group dialer
+@mode 06555
+bin/cu
+bin/uustat
+libexec/uucp/uucico
+@mode
+@owner
+@group
+@postexec pw usermod uucp -s %D/libexec/uucp/uucico
+@postexec mtree -deU -f %D/etc/mtree/uucp-var.mtree -p /var
+@postexec mtree -deU -f %D/etc/mtree/uucp-local.mtree -p %D
+@postexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
+@postunexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ) > /etc/services
+%%VAR_LOG%%@dir(uucp,uucp,775) /var/log/uucp
+@dir(uucp,uucp,775) /var/spool/uucp/.Preserve
+@dir(uucp,uucp,775) /var/spool/uucp/.Sequence
+@dir(uucp,uucp,775) /var/spool/uucp/.Status
+@dir(uucp,uucp,775) /var/spool/uucp/.Temp
+@dir(uucp,uucp,775) /var/spool/uucp/.Xqtdir
+@dir(uucp,uucp,775) /var/spool/uucp
+@dir(uucp,uucp,777) /var/spool/uucppublic
+@dir info

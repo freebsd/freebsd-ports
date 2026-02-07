@@ -1,0 +1,15 @@
+share/man/man8/userneu.8.gz
+share/man/man8/userquick.8.gz
+sbin/userneu.pl
+sbin/userquick.pl
+sbin/smbrepair.pl
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/REQUIREMENTS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/userneu.pod
+%%PORTDOCS%%%%DOCSDIR%%/userquick.pod
+%%EXAMPLESDIR%%/list-sample

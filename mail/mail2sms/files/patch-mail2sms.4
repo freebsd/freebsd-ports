@@ -1,0 +1,28 @@
+--- mail2sms.4.orig	2000-01-20 19:16:05 UTC
++++ mail2sms.4
+@@ -1,12 +1,12 @@
+ .\" You can view this file with:
+-.\" nroff -man mail2sms.4
++.\" nroff -man mail2sms.5
+ .\" Written by Daniel Stenberg
+ .\"
+-.TH mail2sms 4 "11 October 1999"
++.TH mail2sms 5 "11 October 1999"
+ .SH NAME
+ mail2sms \- reads a (MIME) mail and converts it to a short message.
+ .SH SYNOPSIS
+-.B /etc/mail/sms/mail2sms.conf
++.B %%PREFIX%%/etc/mail2sms.conf
+ .br
+ .B ~/.mail2sms
+ .SH DESCRIPTION
+@@ -67,7 +67,7 @@ mail2sms from.
+ http://www.contactor.se/~dast/mail2sms/
+ .SH "SEE ALSO"
+ .BR mail2sms (1),
+-.BR sendmail (1M),
++.BR sendmail (8),
+ .BR procmail (1),
+-.BR aliases (4)
++.BR aliases (5)
+ 

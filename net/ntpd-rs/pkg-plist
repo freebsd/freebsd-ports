@@ -1,0 +1,5 @@
+bin/ntp-ctl
+bin/ntp-daemon
+bin/ntp-metrics-exporter
+@sample %%ETCDIR%%/ntp.server.toml.sample
+@sample %%ETCDIR%%/ntp.toml.sample

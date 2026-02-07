@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Convert/ASN1.pm
+%%SITE_PERL%%/Convert/ASN1.pod
+%%SITE_PERL%%/Convert/ASN1/Debug.pm
+%%SITE_PERL%%/Convert/ASN1/IO.pm
+%%SITE_PERL%%/Convert/ASN1/_decode.pm
+%%SITE_PERL%%/Convert/ASN1/_encode.pm
+%%SITE_PERL%%/Convert/ASN1/parser.pm
+%%PERL5_MAN3%%/Convert::ASN1.3.gz

@@ -1,0 +1,20 @@
+[
+{type: [install, upgrade], message=<<EOD
+LENSFUN INFORMATION:
+
+This package uses lensfun to correct lens aberrations. In case
+your camera or lens seem unsupported, try running
+lensfun-update-data - this will download new lensfun databases.
+
+DISK SPACE WARNING:
+
+Note that RawTherapee uses version-dependent cache and configuration
+directories.  Please be advised that cache directories can grow large,
+so be sure to check all users' $HOME/.cache/RawTherapee* and have them
+remove older cache directories.
+
+Also, after configurations have been moved to the new version's
+directory, older $HOME/.config/RawTherapee* directories may be removed.
+EOD
+},
+]

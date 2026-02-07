@@ -1,0 +1,2 @@
+BIND exporter is a Prometheus exporter for statistics from a BIND DNS server.
+It uses the statistics channel support in BIND to collect the statistics.

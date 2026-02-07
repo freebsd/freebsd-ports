@@ -1,0 +1,17 @@
+--- src/Makefile.FreeBSD-i386.orig	2008-04-06 14:24:46.000000000 +0800
++++ src/Makefile.FreeBSD-i386	2008-04-06 14:25:19.000000000 +0800
+@@ -4,11 +4,11 @@
+ #
+ 
+ # name of the compiler for C and C++ language
+-CC=gcc
+-CXX=g++
++CC?=gcc
++CXX?=g++
+ 
+ # C++ compiler flags
+-CXXFLAGS = -Wall -std=c++98 -fPIC
++CXXFLAGS ?= -Wall -std=c++98 -fPIC
+ CXXFLAGS += -O2  # with optimization
+ CXXFLAGS += -g   # with debug info
+ #CXXFLAGS += -pg # with profile support

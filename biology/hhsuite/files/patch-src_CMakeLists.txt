@@ -1,0 +1,32 @@
+- remove -mcpu=native based on fallout messages from armv7
+
+--- src/CMakeLists.txt.orig	2022-08-04 16:05:31 UTC
++++ src/CMakeLists.txt
+@@ -53,17 +53,17 @@ if (NATIVE_ARCH AND (ARCH_FLAGS STREQUAL ""))
+             message(WARNING "At least SSE4.1 is needed for best performance")
+         endif ()
+         # clang has a problem with march=native on travis
+-        if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS "4.0.0")
+-            set(ARCH_FLAGS "${SSE_FLAGS}")
+-        else()
+-            set(ARCH_FLAGS "-march=native")
+-        endif()
++	#if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS "4.0.0")
++	#    set(ARCH_FLAGS "${SSE_FLAGS}")
++	#else()
++	#    set(ARCH_FLAGS "-march=native")
++	#endif()
+     else ()
+-        if (PPC64)
+-            set(ARCH_FLAGS "-mcpu=native")
+-        else ()
+-            set(ARCH_FLAGS "-march=native")
+-        endif ()
++	#if (PPC64)
++	#    set(ARCH_FLAGS "-mcpu=native")
++	#else ()
++	#    set(ARCH_FLAGS "-march=native")
++	#endif ()
+     endif ()
+ endif ()
+ 

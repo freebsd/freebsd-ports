@@ -1,0 +1,10 @@
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .phps
+DirectoryIndex index.php index.html
+
+Alias /codeigniter %%WWWDIR%%
+
+<Location /codeigniter>
+    Order deny,allow
+    Allow from all
+</Location>

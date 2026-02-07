@@ -1,0 +1,11 @@
+--- ./autoconf/config.h.in.orig	2013-01-04 19:40:08.000000000 +0800
++++ ./autoconf/config.h.in	2013-01-04 20:41:33.000000000 +0800
+@@ -132,6 +132,8 @@
+ /* Disable the secondary screen (Esc(47h) / Esc(47l)) */
+ #undef NO_SECONDARY_SCREEN
+ 
++#undef USE_XIM
++
+ /* Define is setlocale (defined to Xsetlocale) doesn't work */
+ #undef NO_SETLOCALE
+ 

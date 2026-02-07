@@ -1,0 +1,35 @@
+--- src/logcheck-test.orig	2017-01-25 21:08:04 UTC
++++ src/logcheck-test
+@@ -38,7 +38,7 @@ usage() {
+ usage: logcheck-test
+ -h|--help                   : Show usage information
+ -a|--auth.log               : Parse /var/log/auth.log
+--s|--syslog                 : Parse /var/log/syslog
++-m|--messages               : Parse /var/log/messages
+ -l|--log-file LOGFILE       : Parse LOGFILE
+ -i|--invert-match           : Show lines that don't match the RULE or RULEFILE
+ -q|--quiet                  : Suppress rule summary
+@@ -103,11 +103,11 @@ while [ -n "${1:-}" ]; do
+                 warn "option -a ignored"
+             fi
+         ;;
+-        -s|--syslog)
++        -m|--messages)
+             if [ -z "$FILE" ] ; then
+-                FILE="/var/log/syslog"
++                FILE="/var/log/messages"
+             else
+-                warn "option -s ignored"
++                warn "option -m ignored"
+             fi
+         ;;
+         -q|--quiet)
+@@ -169,7 +169,7 @@ while [ -n "${1:-}" ]; do
+ done
+ 
+ if [ -z "$FILE" ] ; then
+-    err "no log file specified, please choose -a or -s or -l LOGFILE"
++    err "no log file specified, please choose -a or -m or -l LOGFILE"
+     exit 2
+ elif ! [ -r "$FILE" ] ; then
+     err "'$FILE' permission denied"

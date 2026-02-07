@@ -1,0 +1,10 @@
+include/libmsym/msym.h
+include/libmsym/msym_EXPORTS.h
+include/libmsym/msym_error.h
+lib/cmake/libmsym/libmsymConfig.cmake
+lib/cmake/libmsym/libmsymConfigVersion.cmake
+lib/cmake/libmsym/libmsymTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libmsym/libmsymTargets.cmake
+lib/libmsym.so
+lib/libmsym.so.0.2
+lib/libmsym.so.0.2.4

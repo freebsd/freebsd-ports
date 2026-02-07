@@ -1,0 +1,11 @@
+--- make_test.orig	2018-11-21 18:55:35 UTC
++++ make_test
+@@ -18,7 +18,7 @@ work=./TEST
+ #  For QE < 5.0 
+ #. $PWDIR/example/environment_variables
+ #
+-. $PWDIR/environment_variables
++#. $PWDIR/environment_variables
+ BIN_DIR=$PWDIR/bin
+ 
+ mkdir $work >& /dev/null

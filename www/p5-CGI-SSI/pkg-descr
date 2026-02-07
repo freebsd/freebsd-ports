@@ -1,0 +1,6 @@
+CGI::SSI is meant to be used as an easy way to filter shtml through CGI
+scripts in a loose imitation of Apache's mod_include. If you're using
+Apache, you may want to use either mod_include or the Apache::SSI module
+instead of CGI::SSI. Limitations in a CGI script's knowledge of how the
+server behaves make some SSI directives impossible to imitate from a CGI
+script.

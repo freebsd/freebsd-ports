@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/exfiltration/300157e5-f4ad-4569-b533-9d1fa0e74d74.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/300157e5-f4ad-4569-b533-9d1fa0e74d74.yml
+@@ -17,7 +17,7 @@
+         parsers:
+           plugins.stockpile.app.parsers.basic:
+             - source: host.dir.compress
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           tar -P -zcf #{host.dir.staged}.tar.gz #{host.dir.staged} && echo #{host.dir.staged}.tar.gz
+@@ -38,4 +38,4 @@
+             - source: host.dir.compress
+   requirements:
+     - plugins.stockpile.app.requirements.paw_provenance:
+-      - source: host.dir.staged
+\ No newline at end of file
++      - source: host.dir.staged

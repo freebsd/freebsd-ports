@@ -1,0 +1,17 @@
+--- Makefile.orig	1992-05-09 23:23:46 UTC
++++ Makefile
+@@ -1,8 +1,12 @@
+-CCOPT= -O3
++CCOPT= ${CFLAGS}
++.ifdef PREFIX
++CCOPT+= -DPREFIX=\"${PREFIX}\"
++.endif
++
+ OBJECTS= sok.o readscreen.o showscreen.o play.o save.o score.o
+ 
+ sokoban: $(OBJECTS)
+-	cc $(CCOPT) -static -o sokoban $(OBJECTS) -lcurses -ltermcap
++	cc $(CCOPT) -o sokoban $(OBJECTS) $(LDFLAGS) -lncurses
+ sok.o: sok.c sokoban.h
+ 	cc $(CCOPT) -c sok.c
+ 

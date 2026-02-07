@@ -1,0 +1,17 @@
+bin/list_cpu_features
+include/cpu_features/cpu_features_cache_info.h
+include/cpu_features/cpu_features_macros.h
+include/cpu_features/cpuinfo_aarch64.h
+include/cpu_features/cpuinfo_arm.h
+include/cpu_features/cpuinfo_loongarch.h
+include/cpu_features/cpuinfo_mips.h
+include/cpu_features/cpuinfo_ppc.h
+include/cpu_features/cpuinfo_riscv.h
+include/cpu_features/cpuinfo_s390x.h
+include/cpu_features/cpuinfo_x86.h
+include/cpu_features/internal/hwcaps.h
+lib/cmake/CpuFeatures/CpuFeaturesConfig.cmake
+lib/cmake/CpuFeatures/CpuFeaturesConfigVersion.cmake
+lib/cmake/CpuFeatures/CpuFeaturesTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CpuFeatures/CpuFeaturesTargets.cmake
+lib/libcpu_features.so

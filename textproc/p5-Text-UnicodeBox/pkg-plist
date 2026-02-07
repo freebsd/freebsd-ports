@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Text/UnicodeBox.pm
+%%SITE_PERL%%/Text/UnicodeBox/Control.pm
+%%SITE_PERL%%/Text/UnicodeBox/Table.pm
+%%SITE_PERL%%/Text/UnicodeBox/Text.pm
+%%SITE_PERL%%/Text/UnicodeBox/Utility.pm
+%%PERL5_MAN3%%/Text::UnicodeBox.3.gz
+%%PERL5_MAN3%%/Text::UnicodeBox::Control.3.gz
+%%PERL5_MAN3%%/Text::UnicodeBox::Table.3.gz
+%%PERL5_MAN3%%/Text::UnicodeBox::Text.3.gz
+%%PERL5_MAN3%%/Text::UnicodeBox::Utility.3.gz

@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2016-10-17 02:07:14 UTC
++++ CMakeLists.txt
+@@ -20,9 +20,9 @@ set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX
+ # NOTE TO PACKAGERS: The embedded git commit hash is critical for rapid bug triage when the builds
+ # can come from a variety of sources. If you are mirroring the sources or otherwise build when
+ # the .git directory is not present, please comment the following line:
+-include(GetGitCommitHash)
++#include(GetGitCommitHash)
+ # and instead uncomment the following, adding the complete git hash of the checkout you are using:
+-# set(GIT_COMMIT_HASH 0000000000000000000000000000000000000000)
++set(GIT_COMMIT_HASH c4ad073d1b3d3fcd81b34cbe5f2352547b14213f)
+ 
+ project(solvespace)
+ set(solvespace_VERSION_MAJOR 2)

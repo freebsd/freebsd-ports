@@ -1,0 +1,15 @@
+This are Text utilities for use with the GD drawing package. This
+package provides three modules:
+
+GD::Text:
+    Provides information about a font, irrespective of whether the font
+    is a TTF or builtin font.
+
+GD::Text::Align
+    Align a string around a coordinate, left, right, center, top, bottom
+    or center.
+
+GD::Text::Wrap
+    Wrap a long string between a right and left margin, starting at a
+    certain y coordinate. Layout the text flush left, flush right,
+    center, or justified.

@@ -1,0 +1,14 @@
+#!%%PERL%%
+#
+# $Id$
+#
+
+#use strict;
+use lib '%%DATADIR%%';
+use lib '%%DATADIR%%/rule';
+
+$RULEDIR = '%%DATADIR%%/rule/';
+
+require 'htmllint.pm';
+
+exit(&htmllint::HTMLlint(@ARGV));

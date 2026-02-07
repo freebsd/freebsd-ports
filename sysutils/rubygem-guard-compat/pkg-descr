@@ -1,0 +1,2 @@
+Guard::Compat provides only a test helper for testing custom Guard plugins
+currently.

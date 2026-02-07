@@ -1,0 +1,13 @@
+--- src/configure.orig	2025-01-19 16:02:37 UTC
++++ src/configure
+@@ -46,8 +46,8 @@ echo "Checking for OpenSSL... " 1>& 5
+ echo -n "Checking for OpenSSL... "
+ echo "Checking for OpenSSL... " 1>& 5
+ 
+-OPENSSL_INCLUDE="$(${PKG_CONFIG} 'openssl >= 1.1.0' --cflags 2>& 5 || true)"
+-OPENSSL_LIBS="$(${PKG_CONFIG} 'openssl >= 1.1.0' --libs 2>& 5 || true)"
++OPENSSL_INCLUDE="-I${OPENSSLINC}"
++OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+ if [ -z "$OPENSSL_LIBS" ]
+ then
+ 	echo "OpenSSL not found via pkg-config, using hardcoded library names" 1>& 5

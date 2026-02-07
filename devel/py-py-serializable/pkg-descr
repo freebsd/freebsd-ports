@@ -1,0 +1,4 @@
+This Pythonic library provides a framework for serializing/deserializing Python
+classes to and from JSON and XML.
+
+It relies upon the use of Python Properties in your Python classes.

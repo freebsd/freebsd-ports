@@ -1,0 +1,26 @@
+--- pkg_tree.pod.orig	2001-12-12 11:44:40 UTC
++++ pkg_tree.pod
+@@ -8,7 +8,7 @@ B<pkg_tree> - Generate a graphical tree of packages an
+ 
+ =head1 SYNOPSIS
+ 
+-B<pkg_tree> [B<-v>] [I<package-prefix ...>]
++B<pkg_tree> [B<-bqrtv>] [I<package-prefix ...>]
+ 
+ =head1 DESCRIPTION
+ 
+@@ -52,6 +52,14 @@ E<32>[~] edwin@k7E<gt>B<pkg_tree -v linux-netscape>
+  |\__ imake-4.1.0 (unknown)
+  |\__ freetype2-2.0.5
+   \__ XFree86-libraries-4.1.0 (unknown)
++
++Use the B<-t> parameter to show only top level packages,
++and B<-b> to show only bottom level packages. And B<-t> B<-q>
++together will give the list of top level packages without their
++dependencies, installing only these packages should install all
++currently installed packages.
++
++Use the B<-r> parameter to show requirements relation.
+ 
+ =head1 RETURN VALUES
+ 

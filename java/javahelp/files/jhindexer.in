@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec java -cp %%JAVALIBDIR%%/jhall.jar com.sun.java.help.search.Indexer "$@"

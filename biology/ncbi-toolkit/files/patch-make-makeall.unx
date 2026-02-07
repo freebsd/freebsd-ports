@@ -1,0 +1,13 @@
+--- make/makeall.unx.orig    2011-04-13 20:40:11.451542049 +0400
++++ make/makeall.unx 2011-04-13 20:41:03.081658892 +0400
+@@ -64,8 +64,8 @@
+ CC = cc
+ RAN = ls -l
+ AR=ar
+-OTHERLIBS = -lm
+-VIBLIBS = 
++OTHERLIBS = -lm %%ICONV_LIB%%
++VIBLIBS = -lXft -lpng -ljpeg
+ VIBFLAG =
+ LIBCOPY = cp -p
+ SRCCOPY = ./ln-if-absent

@@ -1,0 +1,17 @@
+A fast, minimalist directory tree viewer, written in Rust. Inspired by the
+command line program tree, with a powerful interactive mode.
+
+Features:
+- Classic and interactive modes: Use lstr for a classic tree-like view, or
+  launch lstr interactive for a fully interactive TUI.
+- Theme-aware coloring: Respects your system's LS_COLORS environment variable
+  for fully customizable file and directory colors.
+- Rich information display (optional):
+  - Display file-specific icons with --icons (requires a Nerd Font).
+  - Show file permissions with -p.
+  - Show file sizes with -s.
+  - Git Integration: Show file statuses (Modified, New, Untracked, etc.)
+    directly in the tree with the -G flag.
+- Smart filtering:
+  - Respects your .gitignore files with the -g flag.
+  - Control recursion depth (-L) or show only directories (-d).

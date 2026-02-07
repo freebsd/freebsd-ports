@@ -1,0 +1,2 @@
+Compare two perl data structures recursively. Returns 0 if the
+structures differ, else returns 1.

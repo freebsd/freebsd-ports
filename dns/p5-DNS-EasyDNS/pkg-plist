@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/DNS::EasyDNS.3.gz
+%%SITE_PERL%%/DNS/EasyDNS.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/easydns-by-interface
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/easydns-from-router
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/easydns-simple

@@ -1,0 +1,10 @@
+--- MDAnalysis.egg-info/requires.txt.orig	2023-12-26 20:46:12 UTC
++++ MDAnalysis.egg-info/requires.txt
+@@ -5,7 +5,6 @@ tqdm>=4.43.0
+ scipy>=1.5.0
+ matplotlib>=1.5.1
+ tqdm>=4.43.0
+-threadpoolctl
+ packaging
+ fasteners
+ mda-xdrlib

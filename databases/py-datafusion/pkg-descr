@@ -1,0 +1,12 @@
+This is a Python library that binds to Apache Arrow in-memory query engine
+DataFusion.
+
+DataFusion's Python bindings can be used as a foundation for building new data
+systems in Python. Here are some examples:
+- Dask SQL uses DataFusion's Python bindings for SQL parsing, query planning,
+  and logical plan optimizations, and then transpiles the logical plan to Dask
+  operations for execution.
+- DataFusion Ballista is a distributed SQL query engine that extends
+  DataFusion's Python bindings for distributed use cases.
+- DataFusion Ray is another distributed query engine that uses DataFusion's
+  Python bindings.

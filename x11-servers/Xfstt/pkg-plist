@@ -1,0 +1,5 @@
+bin/xfstt
+share/man/man1/xfstt.1x.gz
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+@dir share/fonts/TrueType

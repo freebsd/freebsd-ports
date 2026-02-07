@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-05-10 13:32:40 UTC
++++ pyproject.toml
+@@ -1,15 +1,14 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ 
+-requires = [ "setuptools>=77" ]
++requires = [ "setuptools>=62.6" ]
+ 
+ [project]
+ name = "astroid"
+ description = "An abstract syntax tree for Python with inference support."
+ readme = "README.rst"
+ keywords = [ "abstract syntax tree", "python", "static code analysis" ]
+-license = "LGPL-2.1-or-later"
+-license-files = [ "LICENSE", "CONTRIBUTORS.txt" ]
++license = { text = "LGPL-2.1-or-later" }
+ 
+ requires-python = ">=3.9.0"
+ classifiers = [

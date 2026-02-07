@@ -1,0 +1,23 @@
+--- autoconf/configure.in.orig	2024-03-22 09:48:41 UTC
++++ autoconf/configure.in
+@@ -982,8 +982,10 @@ if test x"${error}" == "x"; then
+ 
+ if test x"${error}" == "x"; then
+    support_curl=yes
+-fi 
++fi
+ 
++unset error
++
+ AC_MSG_RESULT([$support_curl])
+ if test "$support_curl" = "yes"; then
+    AC_DEFINE(HAVE_CURL, 1, [Define if CURL library is available])
+@@ -1042,6 +1044,8 @@ fi
+     ZSTD_LIBS=""
+     ZSTD_INC=""
+ fi
++
++unset error
+ 
+ AC_MSG_RESULT([$support_zstd])
+ if test "$support_zstd" = "yes"; then

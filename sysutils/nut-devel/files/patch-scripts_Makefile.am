@@ -1,0 +1,11 @@
+--- scripts/Makefile.am.orig	2025-11-17 05:13:21.000000000 -0800
++++ scripts/Makefile.am	2025-11-17 07:46:55.934951000 -0800
+@@ -30,7 +30,7 @@
+     valgrind/valgrind.sh.in \
+     Windows/halt.c
+ 
+-SUBDIRS = augeas devd hotplug installer obs python systemd udev ufw Solaris Windows upsdrvsvcctl external_apis
++SUBDIRS = augeas devd hotplug installer obs python udev ufw Solaris Windows upsdrvsvcctl external_apis
+ 
+ SPELLCHECK_SRC = README.adoc RedHat/README.adoc usb_resetter/README.adoc valgrind/README.adoc obs/README.adoc
+ 

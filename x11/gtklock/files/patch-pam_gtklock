@@ -1,0 +1,11 @@
+"login" has "auth sufficient pam_self.so" but a screen locker is
+supposed to ask for password regardless.
+
+pam_unix(8) requires root priveleges to access master.passwd(5),
+so try authenticating via setuid helper first.
+
+--- pam/gtklock.orig	2023-05-06 13:44:22 UTC
++++ pam/gtklock
+@@ -1 +1 @@
+-auth include login
++auth include unix-selfauth

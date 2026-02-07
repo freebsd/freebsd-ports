@@ -1,0 +1,11 @@
+bkt (pronounced bucket) is a subprocess caching utility written in Rust,
+inspired by bash-cache.
+Wrapping expensive process invocations with bkt allows callers to reuse recent
+invocations without complicating their application logic. This can be useful in
+shell prompts, interactive applications such as fzf, and long-running programs
+that poll other processes.
+
+When bkt is passed a command it hasn't seen before (or recently) it executes
+the command synchronously and caches its stdout, stderr, and exit code.
+Calling bkt again with the same command reads the data from the cache and
+outputs it as if the command had been run again.

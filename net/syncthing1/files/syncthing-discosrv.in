@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: syncthingdiscosrv
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# syncthingdiscosrv_enable (bool):      Set to NO by default.
+#                                       Set it to YES to enable syncthing-discosrv.
+# syncthingdiscosrv_user (user):        Set user to run syncthing-discosrv.
+#                                       Default is "syncthing".
+# syncthingdiscosrv_group (group):      Set group to run syncthing-discosrv.
+#                                       Default is "syncthing".
+# syncthingdiscosrv_dir (dir):          Set dir to run syncthing-discosrv in.
+#                                       Default is "/var/db/syncthing-discosrv".
+# syncthingdiscosrv_log_file (path):    Syncthing log file
+#                                       Default: /var/log/syncthing-discosrv.log
+# syncthingdiscosrv_key (file):         Set key file to use
+#                                       Default is "${syncthingdiscosrv_dir}/syncthing.key".
+# syncthingdiscosrv_cert (file):        Set cert file to use
+#                                       Default is "${syncthingdiscosrv_dir}/syncthing.cert".
+# syncthingdiscosrv_args (string):      Extra args to pass to syncthing-discosrv
+#                                       Default is ""
+
+. /etc/rc.subr
+
+name=syncthingdiscosrv
+rcvar=syncthingdiscosrv_enable
+
+load_rc_config $name
+
+: ${syncthingdiscosrv_enable:="NO"}
+: ${syncthingdiscosrv_user:="syncthing"}
+: ${syncthingdiscosrv_group:="syncthing"}
+: ${syncthingdiscosrv_dir:="/var/db/syncthing-discosrv"}
+: ${syncthingdiscosrv_log_file=/var/log/syncthing-discosrv.log}
+: ${syncthingdiscosrv_key:="${syncthingdiscosrv_dir}/syncthing.key"}
+: ${syncthingdiscosrv_cert:="${syncthingdiscosrv_dir}/syncthing.cert"}
+
+export STNORESTART=true
+
+pidfile=/var/run/syncthingdiscosrv.pid
+procname="%%PREFIX%%/bin/stdiscosrv"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} ${procname} --key ${syncthingdiscosrv_key} --cert ${syncthingdiscosrv_cert} ${syncthingdiscosrv_args} >> ${syncthingdiscosrv_log_file}"
+syncthingdiscosrv_chdir=${syncthingdiscosrv_dir}
+
+start_precmd=syncthingdiscosrv_startprecmd
+
+syncthingdiscosrv_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${syncthingdiscosrv_user} -g ${syncthingdiscosrv_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${syncthingdiscosrv_dir} ]; then
+                install -d -o ${syncthingdiscosrv_user} -g ${syncthingdiscosrv_group} ${syncthingdiscosrv_dir}
+        fi
+        if [ ! -e ${syncthingdiscosrv_log_file} ]; then
+                install -o ${syncthingdiscosrv_user} -g ${syncthingdiscosrv_group} /dev/null ${syncthingdiscosrv_log_file};
+        fi
+}
+
+run_rc_command "$1"

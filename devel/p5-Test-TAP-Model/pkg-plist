@@ -1,0 +1,10 @@
+%%PERL5_MAN3%%/Test::TAP::Model.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Consolidated.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::File.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::File::Consolidated.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Subtest.3.gz
+%%SITE_PERL%%/Test/TAP/Model.pm
+%%SITE_PERL%%/Test/TAP/Model/Consolidated.pm
+%%SITE_PERL%%/Test/TAP/Model/File.pm
+%%SITE_PERL%%/Test/TAP/Model/File/Consolidated.pm
+%%SITE_PERL%%/Test/TAP/Model/Subtest.pm

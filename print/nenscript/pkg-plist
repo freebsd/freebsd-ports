@@ -1,0 +1,3 @@
+bin/nenscript
+share/man/man1/nenscript.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/readme

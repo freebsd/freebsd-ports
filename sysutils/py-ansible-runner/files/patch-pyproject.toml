@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2025-04-05 21:21:18 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=45, <=70.0.0", "setuptools-scm[toml]>=6.2, <=8.1.0"]  # pin max versions of build deps and update as needed
++requires = ["setuptools>=45", "setuptools-scm[toml]>=6.2, <=8.1.0"]  # pin max versions of build deps and update as needed
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]

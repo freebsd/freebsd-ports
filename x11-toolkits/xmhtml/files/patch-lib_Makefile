@@ -1,0 +1,33 @@
+--- lib/Makefile.orig	2015-10-26 10:22:55 UTC
++++ lib/Makefile
+@@ -25,7 +25,7 @@
+ # Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.         #
+ ##############################################################################
+ #
+-LIBRARY=libXmHTML.a
++LIBRARY=libXmHTML.la
+ SHAREDLIB=libXmHTML.so.$(ARCHIVE)
+ 
+ # Targets to make
+@@ -36,7 +36,7 @@ TARGET_SHARED=$(SHAREDLIB)
+ SUBDIRS= common $(TOOLKIT)
+ 
+ # Target rules
+-all:: $(TARGET_STATIC) $(TARGET_SHARED)
++all:: $(TARGET_STATIC)
+ 
+ # Separate rules for all targets 
+ $(TOOLKIT):: 
+@@ -46,9 +46,9 @@ common::
+ 	@(set -x; cd common; $(MAKE) all $(pass_flags) )
+ 
+ $(TARGET_STATIC):: common $(TOOLKIT) 
+-	$(RM) $@ \ 
+-	$(AR) $@ common/*.o $(TOOLKIT)/*.o
+-	$(RANLIB) $@
++	$(RM) $@
++	$(LIBTOOL) --mode=link $(CC) -o $@ common/*.lo $(TOOLKIT)/*.lo \
++		-rpath ${PREFIX}/lib -version-info 1:2
+ 
+ $(TARGET_SHARED):: common $(TOOLKIT) 
+ 	$(RM) $@ ; \

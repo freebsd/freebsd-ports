@@ -1,0 +1,6 @@
+From the libelf README file:
+
+  This is the public release of libelf, a free ELF object
+  file access library. If you have problems with applications
+  that use libelf and work with the commercial (SVR4, Solaris)
+  version but not with this one, please contact me.

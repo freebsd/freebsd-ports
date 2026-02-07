@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: arpcounterattack
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these arpcounterattack_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/arpcounterattack
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+arpcounterattack_enable="${arpcounterattack_enable-NO}"
+arpcounterattack_pidfile="/var/run/arpCounterattack.pid"
+
+. /etc/rc.subr
+
+name="arpcounterattack"
+rcvar=arpcounterattack_enable
+command="%%PREFIX%%/sbin/arpCounterattack"
+
+load_rc_config $name
+
+: ${arpcounterattack_config="%%PREFIX%%/etc/arpCounterattack/arpCounterattack.conf"}
+: ${arpcounterattack_flags="-c ${arpcounterattack_config}"}
+
+pidfile="${arpcounterattack_pidfile}"
+required_files="${arpcounterattack_config}"
+
+case "${arpcounterattack_flags}" in
+*-p\ *)
+	echo "ERROR: \$arpcounterattack_flags includes -p option." \
+		"Please use \$arpcounterattack_pidfile instead."
+	exit 1
+	;;
+*)
+	arpcounterattack_flags="-p ${pidfile} ${arpcounterattack_flags}"
+	;;
+esac
+
+run_rc_command "$1"

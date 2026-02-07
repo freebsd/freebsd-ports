@@ -1,0 +1,2 @@
+POE::Component::IRC::Plugin::Blowfish is a POE::Component::IRC plugin
+that provides blowfish encryption.

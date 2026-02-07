@@ -1,0 +1,9 @@
+--- Imakefile.orig	2024-09-12 10:01:24 UTC
++++ Imakefile
+@@ -1,5 +1,5 @@
+  EXTRA_INCLUDES = -I./fishmaps
+-LOCAL_LIBRARIES = $(XLIB)
++LOCAL_LIBRARIES = $(XLIB) -L /usr/local/lib
+         DEPLIBS = $(DEPXLIB)
+   SYS_LIBRARIES = -lImlib2 -lm
+    MANSRCSUFFIX = 1x

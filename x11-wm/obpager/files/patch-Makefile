@@ -1,0 +1,31 @@
+--- Makefile.orig	2004-09-01 14:23:44 UTC
++++ Makefile
+@@ -11,14 +11,13 @@ INSTALLDIR = /usr/local/bin
+ 
+ 
+ # Set the compilation flags and such
+-CXX = g++
+-CDEFS = -D_REENTRANT
+-CPPFLAGS = -ggdb -Wall
+-#CPPFLAGS = -ggdb -Wall -O2
+-INCLUDES = -I/usr/X11R6/include/X11 -I/usr/X11R6/include/X11/extensions -I./src
++CXX ?= g++
++CDEFS = $(CXXFLAGS)
++CPPFLAGS = -D_REENTRANT
++INCLUDES = -I$(LOCALBASE)/include -I$(LOCALBASE)/include/X11 -I$(LOCALBASE)/include/X11/extensions
+ COMPILE = $(CXX) $(CDEFS) $(INCLUDES) $(CPPFLAGS)
+ LINK = $(CXX) $(LDFLAGS) $(LDLIBS)
+-LDLIBS = -L/usr/X11R6/lib  -lX11 -lXext
++LDLIBS = -L$(LOCALBASE)/lib -lX11 -lXext
+ 
+ 
+ 
+@@ -89,7 +88,7 @@ $(OBJDIR)/%.o : %.cc
+ 	mkdir $(DEPDIR) 2>/dev/null ; mkdir $(DEPDIR)/src 2>/dev/null ; \
+ 	$(COMPILE) -MMD -o $@ -c $< ; \
+ 	cp $(OBJDIR)/$*.d $(DEPDIR)/$*.d ; \
+-	sed -s -e 's/^[^:]\+: *//' -e 's/ *\\$$//' -e 's/^ *//' -e 's/ \+/ :\n/g' -e 's/$$/ :/' < $(OBJDIR)/$*.d >> $(DEPDIR)/$*.d ; \
++	sed -E -e 's/^[^:]+: *//' -e 's/ *\\$$//' -e 's/^ *//' -e 's/ +/ :\n/g' -e 's/$$/ :/' < $(OBJDIR)/$*.d >> $(DEPDIR)/$*.d ; \
+ 	rm -f $(OBJDIR)/$*.d
+ 	
+ 

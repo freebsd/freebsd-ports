@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -33,7 +33,6 @@ instruments = [
+ [project.optional-dependencies]
+ instruments = [
+   "psycopg2 >= 2.7.3.1",
+-  "psycopg2-binary >= 2.7.3.1",
+ ]
+ 
+ [project.entry-points.opentelemetry_instrumentor]

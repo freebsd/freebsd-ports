@@ -1,0 +1,41 @@
+[
+{ type: install
+  message: <<EOM
+You installed BSDstats: script reporting statistics about your machine.
+
+To enable monthly reporting, add this line to /etc/periodic.conf:
+	monthly_statistics_enable="YES"
+
+To disable parts of reporting, add these lines to /etc/periodic.conf:
+	monthly_statistics_report_devices="NO"
+	monthly_statistics_report_ports="NO"
+
+To limit which ports are being submitted:
+	create %%PREFIX%%/etc/bsdstats.conf and list ports to report in
+	the form ${category}/${portname}, one entry per line. It is also
+	possible to use the special self explanatory keyword "all-ports".
+Example:
+	sysutils/bsdstats
+	ports-mgmt/pkg
+
+To enable reporting on bootup, add this line to /etc/rc.conf:
+	bsdstats_enable="YES"
+
+To run it manually any time:
+	bsdstats-send
+
+To view current statistics, go to:
+	http://www.bsdstats.org/
+
+@@TOR_MESSAGE@@
+EOM
+}
+{ type: upgrade
+  maximum_version: "7.0"
+  message: <<EOM
+BSDstats is now disabled by default, to enable monthly reporting, add
+this line to /etc/periodic.conf:
+	monthly_statistics_enable="YES"
+EOM
+}
+]

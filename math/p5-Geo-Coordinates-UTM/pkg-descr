@@ -1,0 +1,2 @@
+This module will translate latitude/longitude coordinates to Universal
+Transverse Mercator(UTM) coordinates and vice versa.

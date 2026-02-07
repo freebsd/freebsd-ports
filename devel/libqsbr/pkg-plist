@@ -1,0 +1,7 @@
+include/qsbr/ebr.h
+include/qsbr/gc.h
+include/qsbr/qsbr.h
+lib/libqsbr.a
+lib/libqsbr.so
+lib/libqsbr.so.1
+lib/libqsbr.so.1.0.0

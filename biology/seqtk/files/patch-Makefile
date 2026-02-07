@@ -1,0 +1,42 @@
+--- Makefile.orig	2025-06-01 19:24:24 UTC
++++ Makefile
+@@ -1,14 +1,30 @@
+-CC=gcc
+-CFLAGS=-g -Wall -O2 -Wno-unused-function -Wno-format
+-BINDIR=/usr/local/bin
++# Respect user's build environment by using ?= to set defaults for variables
++# not set in the env or make arguments.  Use += to add essential args.
++ 
++CC	?= gcc
++CFLAGS	?= -g -Wall -O2
++CFLAGS	+= -Wno-unused-function -Wno-format
++LDFLAGS	+= -lz -lm
++PREFIX	?= /usr/local
++STRIP	?= strip
++BINDIR=	$(PREFIX)/bin
+ 
+-all:seqtk
++MKDIR	?= mkdir
++INSTALL	?= install
+ 
+-seqtk:seqtk.c khash.h kseq.h
+-		$(CC) $(CFLAGS) seqtk.c -o $@ -lz -lm
++all: seqtk
+ 
+-install:all
+-		install seqtk $(BINDIR)
++seqtk: seqtk.c khash.h kseq.h
++	$(CC) $(CFLAGS) seqtk.c -o $@ $(LDFLAGS)
+ 
++# Add DESTDIR staged install support
++# DESTDIR is empty by default to install straight to PREFIX
++install: all
++	$(MKDIR) -p $(DESTDIR)$(BINDIR)
++	$(INSTALL) -c -m 0755 seqtk $(DESTDIR)$(BINDIR)
++
++install-strip: install
++	$(STRIP) $(DESTDIR)$(BINDIR)/seqtk
++
+ clean:
+-		rm -fr gmon.out *.o ext/*.o a.out seqtk trimadap *~ *.a *.dSYM session*
++	rm -fr gmon.out *.o ext/*.o a.out seqtk trimadap *~ *.a *.dSYM session*

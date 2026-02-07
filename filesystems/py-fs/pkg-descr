@@ -1,0 +1,8 @@
+Pyfilesystem is a Python module that provides a simplified common interface to
+many types of filesystem. Filesystems exposed via Pyfilesystem can also be
+served over the network, or 'mounted' on the native filesystem.
+
+Pyfilesystem simplifies working directories and paths, even if you only intend
+to work with local files. Differences in path formats between platforms are
+abstracted away, and you can write code that sand-boxes any changes to a given
+directory.

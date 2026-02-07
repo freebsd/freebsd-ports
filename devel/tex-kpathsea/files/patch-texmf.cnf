@@ -1,0 +1,57 @@
+--- texmf.cnf.orig	2024-02-23 16:44:23 UTC
++++ texmf.cnf
+@@ -59,7 +59,7 @@
+ % SELFAUTOPARENT (its grandparent = /usr/local/texlive/YYYY), and
+ % SELFAUTOGRANDPARENT (its great-grandparent = /usr/local/texlive).
+ % Sorry for the off-by-one-generation names.
+-TEXMFROOT = $SELFAUTOPARENT
++TEXMFROOT = $SELFAUTODIR/share
+ 
+ % The various texmf trees used by TeX Live, follow.
+ % They must must all have the TDS directory structure (https://tug.org/tds).
+@@ -72,7 +72,7 @@ TEXMFMAIN = $TEXMFDIST
+ TEXMFMAIN = $TEXMFDIST
+ 
+ % Local additions to the distribution trees.
+-TEXMFLOCAL = $SELFAUTOGRANDPARENT/texmf-local
++TEXMFLOCAL = $TEXMFROOT/texmf-local
+ 
+ % TEXMFSYSVAR, where *-sys store cached runtime data.
+ TEXMFSYSVAR = $TEXMFROOT/texmf-var
+@@ -583,6 +583,7 @@ $SELFAUTOLOC/texmf/web2c,\
+ $SELFAUTOLOC/texmf-dist/web2c,\
+ $SELFAUTOLOC/texmf/web2c,\
+ \
++/var/db/tlpkg,\
+ $SELFAUTODIR,\
+ $SELFAUTODIR/share/texmf-local/web2c,\
+ $SELFAUTODIR/share/texmf-dist/web2c,\
+@@ -832,7 +833,7 @@ pool_size = 6250000
+ pool_size = 6250000
+ % Minimum pool space after TeX's own strings; must be at least
+ % 25000 less than pool_size, but doesn't need to be nearly that large.
+-string_vacancies = 90000
++string_vacancies = 150000
+ % Maximum number of strings.
+ max_strings = 500000
+ % Min pool space left after loading .fmt.
+@@ -844,7 +845,7 @@ strings_free = 100
+ % expansion works by writing material into the buffer and reparsing the
+ % line.  As a consequence, certain constructs require the buffer to be
+ % very large, even though most documents can be handled with a small value.
+-buf_size = 200000
++buf_size = 300000
+ 
+ % Hyphenation trie.  The maximum possible is 4194303 (ssup_trie_size in
+ % the sources), but we don't need that much.  The value here suffices
+@@ -856,8 +857,8 @@ hyph_size = 8191        % prime number of hyphenation
+ hyph_size = 8191        % prime number of hyphenation exceptions, >610, <65535
+                         % http://primes.utm.edu/curios/page.php/8191.html
+                         % dynamically increased as necessary, so not important.
+-nest_size = 1000        % simultaneous semantic levels (e.g., groups)
+-max_in_open = 15        % simultaneous input files and error insertions, 
++nest_size = 2500        % simultaneous semantic levels (e.g., groups)
++max_in_open = 15        % simultaneous input files and error insertions,
+                         % also applies to MetaPost
+ param_size = 20000      % simultaneous macro parameters, also applies to MP
+ save_size  = 200000     % for saving values outside current group

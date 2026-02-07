@@ -1,0 +1,2 @@
+Simple migration engine and tools for SQL using Peewee with automatic field
+detection.

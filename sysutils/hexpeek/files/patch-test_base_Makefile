@@ -1,0 +1,11 @@
+--- test/base/Makefile.orig	2020-08-04 05:58:52 UTC
++++ test/base/Makefile
+@@ -28,7 +28,7 @@ SRCDIR  := src
+ BINDIR  := bin
+ EXEC    := $(BINDIR)/server $(BINDIR)/client
+ CC      ?= clang
+-CFLAGS  := -O3 -Wall #-fPIC
++CFLAGS  ?= -O3 -Wall #-fPIC
+ 
+ all: $(EXEC)
+ 

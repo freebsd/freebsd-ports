@@ -1,0 +1,20 @@
+--- unix/Makefile.orig	2008-05-07 06:33:56 UTC
++++ unix/Makefile
+@@ -22,7 +22,6 @@ SHELL = /bin/sh
+ LN = ln -s
+ 
+ # (to use the GNU compiler, change cc to gcc in CC)
+-CC = cc
+ BIND = $(CC)
+ AS = $(CC) -c
+ CPP = /lib/cpp
+@@ -57,8 +56,7 @@ IZ_OUR_BZIP2_DIR = bzip2
+ #   CFLAGS    flags for C compile
+ #   LFLAGS1   flags after output file spec, before obj file list
+ #   LFLAGS2   flags after obj file list (libraries, etc)
+-CFLAGS_NOOPT = -I. -DUNIX $(LOCAL_ZIP)
+-CFLAGS = -O2 $(CFLAGS_NOOPT)
++CFLAGS_NOOPT = $(CFLAGS) -I. -DUNIX $(LOCAL_ZIP)
+ LFLAGS1 =
+ LFLAGS2 = -s
+ 

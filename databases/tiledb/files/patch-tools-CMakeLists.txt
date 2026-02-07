@@ -1,0 +1,26 @@
+--- tools/CMakeLists.txt.orig	2024-09-10 19:34:18 UTC
++++ tools/CMakeLists.txt
+@@ -25,8 +25,6 @@
+ # THE SOFTWARE.
+ #
+ 
+-find_package(Clipp CONFIG REQUIRED)
+-
+ add_executable(tiledb-cli EXCLUDE_FROM_ALL
+   src/commands/help_command.cc
+   src/commands/info_command.cc
+@@ -45,7 +43,6 @@ foreach(TOOL ${TILEDB_TOOLS})
+   target_link_libraries(${TOOL} PRIVATE
+     TILEDB_CORE_OBJECTS_ILIB
+     TILEDB_CORE_OBJECTS
+-    clipp::clipp
+   )
+   target_include_directories(${TOOL} PRIVATE
+     ${CMAKE_CURRENT_SOURCE_DIR}/..
+@@ -54,4 +51,4 @@ endforeach()
+ endforeach()
+ 
+ # Add custom target 'tools' to build all tools.
+-add_custom_target(tools ALL DEPENDS ${TILEDB_TOOLS})
+\ No newline at end of file
++add_custom_target(tools ALL DEPENDS ${TILEDB_TOOLS})

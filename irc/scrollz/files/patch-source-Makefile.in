@@ -1,0 +1,47 @@
+--- source/Makefile.in.orig	2021-05-06 08:04:55 UTC
++++ source/Makefile.in
+@@ -47,7 +47,7 @@ IRCFLUSH_OBJECTS = ircflush.o ircsig.o
+ INCLUDES = -I../include
+ 
+ default:
+-	(cd ..;make)
++	$(MAKE) -C ..
+ 
+ all: scrollz
+ 
+@@ -63,7 +63,7 @@ clean::
+ 	$(RM) scrollz $(OBJECTS)
+ 
+ install: scrollz
+-	cd ..; $(MAKE) install
++	$(MAKE) -C .. install
+ 
+ # .o files needing special compilation flags
+ 
+@@ -86,7 +86,7 @@ translat.o: Makefile ../Makefile
+ 	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DTRANSLATION_PATH=\"$(TRANS_DIR)/\" -c translat.c
+ 
+ screen.o: Makefile ../Makefile
+-	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DWSERV_PATH=\"$(INSTALL_WSERV)\" -c screen.c
++	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DWSERV_PATH=\"$(INSTALL_WSERVZ)\" -c screen.c
+ 
+ # auxiliary programs
+ 
+@@ -96,7 +96,7 @@ ircflush: $(IRCFLUSH_OBJECTS)
+ ircio: $(IRCIO_OBJECTS)
+ 	$(CC) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $(DEFS) $(PPS_DEFS) -o $@ $(IRCIO_OBJECTS) $(LIBS)
+ 
+-wserv: $(WSERV_OBJECTS)
++wservz: $(WSERV_OBJECTS)
+ 	$(CC) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $(DEFS) -o $@ $(WSERV_OBJECTS) $(LIBS)
+ 
+ clean::
+@@ -106,7 +106,7 @@ clean::
+ 	$(RM) ircio ircio.o newio.o
+ 
+ clean::
+-	$(RM) wserv wserv.o wterm.o wterm.c
++	$(RM) wservz wserv.o wterm.o wterm.c
+ 
+ # extra junk
+ 

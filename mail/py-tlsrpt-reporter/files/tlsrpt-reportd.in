@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# PROVIDE: tlsrpt-reportd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable tlsrpt_reportd:
+#
+# tlsrpt_reportd_enable="YES"
+#
+# Other rc.conf variables:
+#
+# tlsrpt_reportd_conffile="%%CFGFILE%%"
+#                            -- path to config file
+# tlsrpt_reportd_user="%%USER%%"
+#                            -- user to run tlsrpt_reportd as
+# tlsrpt_reportd_group="%%GROUP%%"
+#                            -- group to run tlsrpt_reportd as
+# tlsrpt_reportd_dbdir="%%DBDIR%%"
+#                            -- location of directory containing
+#                               working database.  Must match
+#                               setting in %%CFGFILE%%
+# tlsrpt_reportd_logdir="%%LOGDIR%%"
+#                            -- location of tlsrpt_reportd logfile
+# tlsrpt_reportd_flags=""
+#                            -- additional flags for tlsrpt_reportd
+
+. /etc/rc.subr
+
+name="tlsrpt_reportd"
+rcvar=tlsrpt_reportd_enable
+
+load_rc_config $name
+
+: ${tlsrpt_reportd_enable:="NO"}
+: ${tlsrpt_reportd_conffile="%%CFGFILE%%"}
+: ${tlsrpt_reportd_user="%%USER%%"}
+: ${tlsrpt_reportd_group="%%GROUP%%"}
+: ${tlsrpt_reportd_dbdir="%%DBDIR%%"}
+: ${tlsrpt_reportd_logdir="%%LOGDIR%%"}
+: ${tlsrpt_reportd_flags=""}
+
+start_precmd=${name}_startprecmd
+start_cmd=${name}_start
+
+command=%%PYTHON_CMD%%
+pidfile=%%RUNDIR%%/tlsrpt-reportd.pid
+
+tlsrpt_reportd_startprecmd()
+{
+    local piddir=$(dirname ${pidfile})
+
+    for d in ${piddir} ${tlsrpt_reportd_dbdir} ${tlsrpt_reportd_logdir};
+    do
+	mkdir -m 0755 -p ${d}
+	chown -R ${tlsrpt_reportd_user}:${tlsrpt_reportd_group} ${d}
+    done
+}
+
+tlsrpt_reportd_start()
+{
+    case "${tlsrpt_reportd_flags}" in
+	*--config_file\ *)
+	    echo "Warning: \$tlsrpt_reportd_flags includes --config_file" \
+		 "option. Please use \$tlsrpt_reportd_conffile instead."
+	    ;;
+	*)
+	    options="--config_file ${tlsrpt_reportd_conffile} ${tlsrpt_reportd_flags}"
+	    ;;
+    esac
+
+    /usr/sbin/daemon -c -f -u ${tlsrpt_reportd_user} \
+		     tlsrpt-reportd ${options}
+}
+
+run_rc_command "$1"
+

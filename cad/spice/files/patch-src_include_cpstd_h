@@ -1,0 +1,12 @@
+--- src/include/cpstd.h.orig	2005-12-17 13:10:09.000000000 +0000
++++ src/include/cpstd.h
+@@ -50,7 +50,9 @@ extern char *tildexpand();
+ extern char *printnum();
+ extern int cp_numdgt;
+ extern void fatal();
++#ifndef _STDLIB_H_
+ extern void setenv();
++#endif
+ extern void cp_printword();
+ 
+ /* Externs from wlist.c */

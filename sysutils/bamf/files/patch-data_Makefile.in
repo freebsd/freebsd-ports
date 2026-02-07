@@ -1,0 +1,198 @@
+--- data/Makefile.in.orig	2016-08-25 15:25:55 UTC
++++ data/Makefile.in
+@@ -131,9 +131,8 @@ am__uninstall_files_from_dir = { \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+ am__installdirs = "$(DESTDIR)$(bamfdaemondbusrunnerdir)" \
+-	"$(DESTDIR)$(servicedir)" "$(DESTDIR)$(systemddir)" \
+-	"$(DESTDIR)$(upstartdir)"
+-SCRIPTS = $(bamfdaemondbusrunner_SCRIPTS)
++	"$(DESTDIR)$(servicedir)"
++SCRIPTS = 
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+ am__v_P_0 = false
+@@ -153,7 +152,7 @@ am__can_run_installinfo = \
+     n|no|NO) false;; \
+     *) (install-info --version) >/dev/null 2>&1;; \
+   esac
+-DATA = $(service_DATA) $(systemd_DATA) $(upstart_DATA)
++DATA = $(service_DATA)
+ am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
+ am__DIST_COMMON = $(srcdir)/Makefile.in
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -327,21 +326,9 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ servicedir = @datarootdir@/dbus-1/services
+ service_DATA = org.ayatana.bamf.service
+-upstartdir = @datarootdir@/upstart/sessions
+-upstart_DATA = bamfdaemon.conf
+-systemddir = /usr/lib/systemd/user
+-systemd_DATA = bamfdaemon.service
+-bamfdaemondbusrunnerdir = $(pkglibexecdir)
+-bamfdaemondbusrunner_SCRIPTS = bamfdaemon-dbus-runner
+-EXTRA_DIST = org.ayatana.bamf.service.in \
+-             bamfdaemon.conf.in \
+-             bamfdaemon.service.in \
+-             bamfdaemon-dbus-runner.in
++EXTRA_DIST = org.ayatana.bamf.service.in
+ 
+-CLEANFILES = org.ayatana.bamf.service \
+-             bamfdaemon.conf \
+-             bamfdaemon.service \
+-             bamfdaemon-dbus-runner
++CLEANFILES = org.ayatana.bamf.service
+ 
+ all: all-am
+ 
+@@ -375,41 +362,6 @@ $(top_srcdir)/configure: @MAINTAINER_MOD
+ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ $(am__aclocal_m4_deps):
+-install-bamfdaemondbusrunnerSCRIPTS: $(bamfdaemondbusrunner_SCRIPTS)
+-	@$(NORMAL_INSTALL)
+-	@list='$(bamfdaemondbusrunner_SCRIPTS)'; test -n "$(bamfdaemondbusrunnerdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(bamfdaemondbusrunnerdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(bamfdaemondbusrunnerdir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  if test -f "$$d$$p"; then echo "$$d$$p"; echo "$$p"; else :; fi; \
+-	done | \
+-	sed -e 'p;s,.*/,,;n' \
+-	    -e 'h;s|.*|.|' \
+-	    -e 'p;x;s,.*/,,;$(transform)' | sed 'N;N;N;s,\n, ,g' | \
+-	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1; } \
+-	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
+-	    if ($$2 == $$4) { files[d] = files[d] " " $$1; \
+-	      if (++n[d] == $(am__install_max)) { \
+-		print "f", d, files[d]; n[d] = 0; files[d] = "" } } \
+-	    else { print "f", d "/" $$4, $$1 } } \
+-	  END { for (d in files) print "f", d, files[d] }' | \
+-	while read type dir files; do \
+-	     if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
+-	     test -z "$$files" || { \
+-	       echo " $(INSTALL_SCRIPT) $$files '$(DESTDIR)$(bamfdaemondbusrunnerdir)$$dir'"; \
+-	       $(INSTALL_SCRIPT) $$files "$(DESTDIR)$(bamfdaemondbusrunnerdir)$$dir" || exit $$?; \
+-	     } \
+-	; done
+-
+-uninstall-bamfdaemondbusrunnerSCRIPTS:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(bamfdaemondbusrunner_SCRIPTS)'; test -n "$(bamfdaemondbusrunnerdir)" || exit 0; \
+-	files=`for p in $$list; do echo "$$p"; done | \
+-	       sed -e 's,.*/,,;$(transform)'`; \
+-	dir='$(DESTDIR)$(bamfdaemondbusrunnerdir)'; $(am__uninstall_files_from_dir)
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+@@ -437,48 +389,6 @@ uninstall-serviceDATA:
+ 	@list='$(service_DATA)'; test -n "$(servicedir)" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	dir='$(DESTDIR)$(servicedir)'; $(am__uninstall_files_from_dir)
+-install-systemdDATA: $(systemd_DATA)
+-	@$(NORMAL_INSTALL)
+-	@list='$(systemd_DATA)'; test -n "$(systemddir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(systemddir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(systemddir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(systemddir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(systemddir)" || exit $$?; \
+-	done
+-
+-uninstall-systemdDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(systemd_DATA)'; test -n "$(systemddir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(systemddir)'; $(am__uninstall_files_from_dir)
+-install-upstartDATA: $(upstart_DATA)
+-	@$(NORMAL_INSTALL)
+-	@list='$(upstart_DATA)'; test -n "$(upstartdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(upstartdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(upstartdir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(upstartdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(upstartdir)" || exit $$?; \
+-	done
+-
+-uninstall-upstartDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(upstart_DATA)'; test -n "$(upstartdir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(upstartdir)'; $(am__uninstall_files_from_dir)
+ tags TAGS:
+ 
+ ctags CTAGS:
+@@ -520,7 +430,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(SCRIPTS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(bamfdaemondbusrunnerdir)" "$(DESTDIR)$(servicedir)" "$(DESTDIR)$(systemddir)" "$(DESTDIR)$(upstartdir)"; do \
++	for dir in "$(DESTDIR)$(bamfdaemondbusrunnerdir)" "$(DESTDIR)$(servicedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -575,7 +485,7 @@ info: info-am
+ info-am:
+ 
+ install-data-am: install-bamfdaemondbusrunnerSCRIPTS \
+-	install-serviceDATA install-systemdDATA install-upstartDATA
++	install-serviceDATA
+ 
+ install-dvi: install-dvi-am
+ 
+@@ -620,8 +530,7 @@ ps: ps-am
+ ps-am:
+ 
+ uninstall-am: uninstall-bamfdaemondbusrunnerSCRIPTS \
+-	uninstall-serviceDATA uninstall-systemdDATA \
+-	uninstall-upstartDATA
++	uninstall-serviceDATA
+ 
+ .MAKE: install-am install-strip
+ 
+@@ -633,13 +542,12 @@ uninstall-am: uninstall-bamfdaemondbusru
+ 	install-exec install-exec-am install-html install-html-am \
+ 	install-info install-info-am install-man install-pdf \
+ 	install-pdf-am install-ps install-ps-am install-serviceDATA \
+-	install-strip install-systemdDATA install-upstartDATA \
++	install-strip \
+ 	installcheck installcheck-am installdirs maintainer-clean \
+ 	maintainer-clean-generic mostlyclean mostlyclean-generic \
+ 	mostlyclean-libtool pdf pdf-am ps ps-am tags-am uninstall \
+ 	uninstall-am uninstall-bamfdaemondbusrunnerSCRIPTS \
+-	uninstall-serviceDATA uninstall-systemdDATA \
+-	uninstall-upstartDATA
++	uninstall-serviceDATA
+ 
+ .PRECIOUS: Makefile
+ 
+@@ -647,15 +555,6 @@ uninstall-am: uninstall-bamfdaemondbusru
+ org.ayatana.bamf.service: org.ayatana.bamf.service.in
+ 	$(AM_V_GEN)sed "s,@PKGLIBEXECDIR@,$(pkglibexecdir)," $< > $@
+ 
+-bamfdaemon.conf: bamfdaemon.conf.in
+-	$(AM_V_GEN)sed "s,@PKGLIBEXECDIR@,$(pkglibexecdir)," $< > $@
+-
+-bamfdaemon.service: bamfdaemon.service.in
+-	$(AM_V_GEN)sed "s,@PKGLIBEXECDIR@,$(pkglibexecdir)," $< > $@
+-
+-bamfdaemon-dbus-runner: bamfdaemon-dbus-runner.in
+-	$(AM_V_GEN)sed "s,@PKGLIBEXECDIR@,$(pkglibexecdir)," $< > $@
+-
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

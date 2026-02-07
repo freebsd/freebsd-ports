@@ -1,0 +1,6 @@
+MPlayer is a multimedia player and encoder suite which runs on many
+platforms. It plays a terrific number of different file formats
+and codecs including popular DivX, XviD, H.264 streams as well as
+DVD and SVCDs along with many popular audio codecs.
+On the i386 platform it also supports some Windows DLL codec
+families which allow playing of e.g. QuickTime movies.

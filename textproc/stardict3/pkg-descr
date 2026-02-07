@@ -1,0 +1,3 @@
+StarDict is a Cross-Platform and international dictionary written in Gtk2.
+It has powerful features such as "Glob-style pattern matching," "Scan
+selection word," "Fuzzy query," etc.

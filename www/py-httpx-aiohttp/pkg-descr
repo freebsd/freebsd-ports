@@ -1,0 +1,4 @@
+httpx-aiohttp provides transports for httpx to work on top of aiohttp,
+handling all high-level features like authentication, retries, and
+cookies through httpx, while delegating low-level socket-level HTTP
+messaging to aiohttp.

@@ -1,0 +1,3 @@
+Count traffic from users with dynamic ip addresses. Uses information from
+application level (Samba, pppd, etc.) to operate on network level (modify
+ipfw or another firewall rules for traffic counting).

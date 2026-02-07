@@ -1,0 +1,19 @@
+--- configure.in.orig	2015-04-18 16:58:56 UTC
++++ configure.in
+@@ -4,7 +4,6 @@ AC_INIT(gigabase.h)
+ AC_CANONICAL_SYSTEM
+ AC_AIX
+ GB_VERSION=`$srcdir/mkversion`
+-AM_INIT_AUTOMAKE(gigabase, $GB_VERSION)
+ 
+ AC_ARG_ENABLE(pthreads, [
+   --disable-pthreads  use this for single-threaded libs],
+@@ -84,7 +83,7 @@ AC_FUNC_STRFTIME
+ AC_CACHE_CHECK(for compiler option for pthreads, ac_cv_pthreads,
+ [SAVE_CXXFLAGS="$CXXFLAGS"
+ SAVE_CFLAGS="$CFLAGS"
+-for i in "" -pthread -pthreads -mthreads -mt; do
++for i in -lpthread -pthreads -mthreads -mt; do
+ CXXFLAGS="$SAVE_CXXFLAGS $i"
+ CFLAGS="$SAVE_CFLAGS $i"
+ AC_LANG_CPLUSPLUS

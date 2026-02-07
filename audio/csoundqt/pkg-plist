@@ -1,0 +1,13 @@
+bin/CsoundQt-d-cs6
+bin/csoundqt
+share/applications/csoundqt.desktop
+%%DATADIR%%/templates/csound+html-template.csd
+%%DATADIR%%/templates/csoundqt-or-webcsound-template.html
+%%DATADIR%%/templates/simple.csd
+share/icons/hicolor/128x128/mimetypes/csound.png
+share/icons/hicolor/scalable/apps/csoundqt.svg
+share/mime/packages/x-csound-csd.xml
+share/mime/packages/x-csound-inc.xml
+share/mime/packages/x-csound-orc.xml
+share/mime/packages/x-csound-sco.xml
+share/mime/packages/x-csound-udo.xml

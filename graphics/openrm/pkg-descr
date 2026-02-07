@@ -1,0 +1,18 @@
+OpenRM Scene Graph is set of tools and utilities that implement a
+high performance, flexible and extendible scene graph API. Underneath
+OpenRM, OpenGL(tm) is used as the graphics platform for rendering,
+so OpenRM is highly portable and can deliver blazing rendering speeds.
+OpenRM can be used on any platform that has OpenGL, and has been
+built and tested on:
+   x86 Linux (s/w via Mesa, h/w using vendor drivers, e.g., nVidia)
+   Irix
+   Solaris
+   FreeBSD
+   Win32 (95/98/NT/2K/ME).
+
+OpenRM is a derivative work of RM Scene Graph (tm), a commercial
+scene graph product from R3vis Corporation. Late in 1999, R3vis announced
+the release of OpenRM into the Open Source community, with the
+OpenRM debut occuring on 1 March 2000. R3vis continues to maintain
+and develop RM Scene Graph, which contains additional features not
+present in OpenRM.

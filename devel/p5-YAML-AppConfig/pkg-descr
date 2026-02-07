@@ -1,0 +1,7 @@
+YAML::AppConfig extends the work done in Config::YAML and
+YAML::ConfigFile to allow more flexiable configuration files.
+
+Your configuration is stored in YAML and then parsed and presented to
+you via YAML::AppConfig. Settings can be referenced using get and set
+methods and settings can refer to one another by using variables of
+the form $foo, much in the style of AppConfig.

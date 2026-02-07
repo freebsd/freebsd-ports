@@ -1,0 +1,8 @@
+pam_unix(8) requires root priveleges to access master.passwd(5),
+so try authenticating via setuid helper first.
+
+--- etc/pam.d/hikari-unlocker.FreeBSD.orig	2020-03-05 21:52:17 UTC
++++ etc/pam.d/hikari-unlocker.FreeBSD
+@@ -1 +1 @@
+-auth include passwd
++auth include unix-selfauth

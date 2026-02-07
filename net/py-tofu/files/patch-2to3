@@ -1,0 +1,300 @@
+--- __init__.py.orig	2006-05-25 20:37:11 UTC
++++ __init__.py
+@@ -208,7 +208,7 @@ You should provide your own Idler (Soya 3D includes a 
+     global IDLER
+     IDLER = self
+     
+-    print "* Tofu * IDLER created !"
++    print("* Tofu * IDLER created !")
+     
+   def stop(self, *return_values):
+     """Idler.stop()
+@@ -290,7 +290,7 @@ This static method returns the object of the given UID
+     """Unique.hasuid(uid) -> bool
+ 
+ This static method returns true if an object with the given UID exists."""
+-    return Unique._alls.has_key(uid)
++    return uid in Unique._alls
+   hasuid = staticmethod(hasuid)
+   
+   def loaded(self):
+@@ -395,7 +395,7 @@ Delete a SavedInAPath's file."""
+     Unique.discard(self)
+     
+     filename = filename or os.path.join(path[0], self.DIRNAME, self.filename.replace("/", os.sep)) + ".data"
+-    print "* Tofu * Deleting %s %s (file %s) !" % (self.__class__.__name__, self.filename, filename)
++    print("* Tofu * Deleting %s %s (file %s) !" % (self.__class__.__name__, self.filename, filename))
+     os.remove(filename)
+     
+   def get_filename(self): return self._filename
+@@ -417,13 +417,13 @@ all Players)."""
+     for p in path:
+       for filename in dircache.listdir(os.path.join(p, klass.DIRNAME)):
+         if filename.endswith(".data"): filenames[filename[:-5]] = 1
+-    filenames = filenames.keys()
++    filenames = list(filenames.keys())
+     filenames.sort()
+     return filenames
+   availables = classmethod(availables)
+   
+   def discard(self):
+-    print "* Tofu * Discard %s %s %s..." % (self.__class__.__name__.lower(), self.filename, self.uid)
++    print("* Tofu * Discard %s %s %s..." % (self.__class__.__name__.lower(), self.filename, self.uid))
+     del self._alls2[self.filename]
+     Unique.discard(self)
+     
+@@ -487,7 +487,7 @@ store some data on the client side. Default implementa
+     
+     SavedInAPath.__init__(self)
+     
+-    print "* Tofu * Creating new player %s..." % filename
++    print("* Tofu * Creating new player %s..." % filename)
+     
+     self.filename = filename
+     self.password = password
+@@ -516,7 +516,7 @@ Login the Player.
+ CLIENT_SIDE_DATA contains additional data given by the client; you can use them to
+ store some data on the client side. Default implementation ignore them."""
+     if self.address: raise ValueError("Player %s is already logged !" % self.filename)
+-    print "* Tofu * Player %s login !" % self.filename
++    print("* Tofu * Player %s login !" % self.filename)
+     
+     for mobile in self.mobiles:
+       if not mobile in mobile.level.mobiles: mobile.level.add_mobile(mobile)
+@@ -535,7 +535,7 @@ store some data on the client side. Default implementa
+ 
+ Logout the Player."""
+     if self.address:
+-      print "* Tofu * Player %s logout !" % self.filename
++      print("* Tofu * Player %s logout !" % self.filename)
+       try: self.notifier.transport.loseConnection()
+       except: pass
+       self.notifier = None
+@@ -617,8 +617,8 @@ You should not call this method directly; the level ac
+ determined by the Mobile of the Level.
+ You may want to override this method, e.g. to display an active level."""
+     if active != self.active:
+-      if active: print "* Tofu * Level %s %s activated !"  % (self.filename, self.uid)
+-      else:      print "* Tofu * Level %s %s inactivated." % (self.filename, self.uid)
++      if active: print("* Tofu * Level %s %s activated !"  % (self.filename, self.uid))
++      else:      print("* Tofu * Level %s %s inactivated." % (self.filename, self.uid))
+       if self.active: IDLER.remove_level(self)
+       self.active = active
+       if self.active: IDLER.add_level(self)
+@@ -658,7 +658,7 @@ You may override this method; the default implementati
+ 
+ This class method discards ALL non-active levels.
+ It is called by the Idler each begin_round."""
+-    for level in clazz._alls2.values():
++    for level in list(clazz._alls2.values()):
+       if not level.active: level.discard()
+   discard_inactives = classmethod(discard_inactives)
+   
+@@ -977,7 +977,7 @@ IF YOU USE CPICKLE OVER NETWORK, YOU ASSUME YOU TRUST 
+ E.g. to use cPickle for local file only, do:
+   enable_pickle(1, 0)
+ """
+-  import cPickle as pickle
++  import pickle as pickle
+   global local_serializer, network_serializer
+   if local  : local_serializer   = pickle
+   if network: network_serializer = pickle
+--- client.py.orig	2006-05-21 15:57:53 UTC
++++ client.py
+@@ -36,7 +36,7 @@ import tofu
+ try: set
+ except: from sets import Set as set
+ 
+-class ClientServerError(StandardError): pass
++class ClientServerError(Exception): pass
+ 
+ 
+ class UDP(DatagramProtocol):
+@@ -44,8 +44,9 @@ class UDP(DatagramProtocol):
+     a = "hello"
+     self.transport.write(a, ("127.0.0.1", 9999))
+     
+-  def datagramReceived(self, data, (host, port)):
+-    print "UDP received %r from %s:%d" % (data, host, port)
++  def datagramReceived(self, data, xxx_todo_changeme):
++    (host, port) = xxx_todo_changeme
++    print("UDP received %r from %s:%d" % (data, host, port))
+     
+ PLANNED_ARRIVAL_UIDS = set()
+ 
+@@ -117,7 +118,7 @@ class Notifier(NetstringReceiver, tofu.Notifier):
+       
+     elif code == tofu.CODE_OWN_CONTROL:
+       uid = struct.unpack("!i", data[1:])[0]
+-      print "* Tofu * Owning mobile %s..." % uid
++      print("* Tofu * Owning mobile %s..." % uid)
+       #def own_control(mobile):
+       #  print "own_control", mobile.level
+       #  tofu.IDLER.next_round_tasks.append(mobile.control_owned)
+@@ -130,7 +131,7 @@ class Notifier(NetstringReceiver, tofu.Notifier):
+       
+     elif code == tofu.CODE_REMOVE_MOBILE:
+       uid = struct.unpack("!i", data[1:])[0]
+-      print "* Tofu * Removing mobile %s..." % uid
++      print("* Tofu * Removing mobile %s..." % uid)
+       def remove_mobile(mobile):
+         mobile.level.remove_mobile(mobile)
+         mobile.discard()
+@@ -147,7 +148,7 @@ class Notifier(NetstringReceiver, tofu.Notifier):
+     elif code == tofu.CODE_ADD_MOBILE:
+       mobile_uid = struct.unpack("!i", data[1:5])[0]
+       level_uid  = struct.unpack("!i", data[5:9])[0]
+-      print "* Tofu * Adding mobile %s in level %s..." % (mobile_uid, level_uid)
++      print("* Tofu * Adding mobile %s in level %s..." % (mobile_uid, level_uid))
+       def add_mobile(*args):
+         mobile = tofu.Unique.getbyuid(mobile_uid)
+         level  = tofu.Unique.getbyuid(level_uid )
+@@ -158,15 +159,15 @@ class Notifier(NetstringReceiver, tofu.Notifier):
+       waiter.start()
+       
+     elif code == tofu.CODE_DATA_UNIQUE:
+-      print "* Tofu * Receiving unique..."
++      print("* Tofu * Receiving unique...")
+       unique = tofu.Unique.undump(data[1:])
+       unique.received()
+-      assert (not hasattr(unique, "level")) or (not unique.level) or (unique.level in unique.level._alls2.values()), "Level sent with non-level unique !"
++      assert (not hasattr(unique, "level")) or (not unique.level) or (unique.level in list(unique.level._alls2.values())), "Level sent with non-level unique !"
+       self.arrived(unique)
+       
+     elif code == tofu.CODE_ENTER_LEVEL:
+       uid = struct.unpack("!i", data[1:])[0]
+-      print "* Tofu * Entering level %s..." % uid
++      print("* Tofu * Entering level %s..." % uid)
+       #self.uids_arrival_planned.add(uid) # The server will send it
+       # Previous level is outdated => drop it
+       if tofu.Unique.hasuid(uid): tofu.Unique.getbyuid(uid).set_active(0)
+@@ -175,12 +176,12 @@ class Notifier(NetstringReceiver, tofu.Notifier):
+       waiter.start()
+       
+     elif code == tofu.CODE_ERROR:
+-      print "* Tofu * Server error: %s" % data[1:]
++      print("* Tofu * Server error: %s" % data[1:])
+       #self.errors.append(data[1:])
+       raise ClientServerError(data[1:])
+       
+   def arrived(self, unique):
+-    print "* Tofu * Received unique %s %s." % (unique.uid, unique)
++    print("* Tofu * Received unique %s %s." % (unique.uid, unique))
+     
+     waiters = WAITERS.get(unique.uid)
+     if waiters:
+@@ -192,7 +193,7 @@ class Notifier(NetstringReceiver, tofu.Notifier):
+     self.uids_arrival_planned.discard(unique.uid)
+       
+   def ask_unique(self, uid):
+-    print "* Tofu * Ask for UID %s..." % uid
++    print("* Tofu * Ask for UID %s..." % uid)
+     self.uids_arrival_planned.add(uid)
+     self.sendString(tofu.CODE_ASK_UNIQUE + struct.pack("!i", uid))
+     
+@@ -222,12 +223,12 @@ class TCPFactory(ClientFactory):
+   
+   def clientConnectionFailed(self, connector, reason):
+     m = reason.getErrorMessage()
+-    print "* Tofu * Connection failed:", m
++    print("* Tofu * Connection failed:", m)
+     tofu.GAME_INTERFACE.network_error(m)
+     
+   def clientConnectionLost(self, connector, reason):
+     m = reason.getErrorMessage()
+-    print "* Tofu * Connection lost:", m
++    print("* Tofu * Connection lost:", m)
+     tofu.GAME_INTERFACE.network_error(m)
+     
+       
+--- server.py.orig	2006-05-21 15:58:53 UTC
++++ server.py
+@@ -30,14 +30,15 @@ import sys, struct
+ import tofu
+ 
+ class UDP(DatagramProtocol):
+-  def datagramReceived(self, data, (host, port)):
+-    print "UDP received %r from %s:%d" % (data, host, port)
++  def datagramReceived(self, data, xxx_todo_changeme):
++    (host, port) = xxx_todo_changeme
++    print("UDP received %r from %s:%d" % (data, host, port))
+     self.transport.write(data, (host, port))
+         
+ #reactor.listenUDP(6900, UDP())
+ 
+ 
+-class SecurityError(StandardError):
++class SecurityError(Exception):
+   pass
+ 
+ 
+@@ -78,8 +79,8 @@ class PlayerNotifier(NetstringReceiver):
+         if data[1:] != tofu.VERSION: raise ValueError("Server and client use incompatible version (server: %s, client %s)" % (VERSION, data[1:]))
+         self.version_checked = 1
+         
+-    except StandardError, e:
+-      print "* Tofu * Error occured:"
++    except Exception as e:
++      print("* Tofu * Error occured:")
+       sys.excepthook(*sys.exc_info())
+       self.sendString(tofu.CODE_ERROR + "%s: %s" % (e.__class__.__name__, str(e)))
+       
+@@ -97,11 +98,11 @@ class PlayerNotifier(NetstringReceiver):
+   def connectionLost(self, reason):
+     Protocol.connectionLost(self, reason)
+     if self.player:
+-      print "* Tofu * Connection lost with player %s:" % self.player.filename, reason.getErrorMessage()
++      print("* Tofu * Connection lost with player %s:" % self.player.filename, reason.getErrorMessage())
+       self.logout_player()
+       
+   def send_unique(self, unique):
+-    print "* Tofu * Sending unique %s..." % unique.uid
++    print("* Tofu * Sending unique %s..." % unique.uid)
+     self.sendString(tofu.CODE_DATA_UNIQUE + unique.dump())
+     
+   def notify_state(self, mobile, state):
+@@ -128,7 +129,7 @@ class Notifier(tofu.Notifier):
+     pass
+   
+   def notify_state(self, mobile, state):
+-    for player in tofu.YourPlayer._alls2.values(): # XXX optimize this (maintain a list of player for each level)
++    for player in list(tofu.YourPlayer._alls2.values()): # XXX optimize this (maintain a list of player for each level)
+       if player.notifier:
+         for m in player.mobiles:
+           if m.level is mobile.level:
+@@ -136,7 +137,7 @@ class Notifier(tofu.Notifier):
+             break
+           
+   def notify_add_mobile(self, mobile):
+-    for player in tofu.YourPlayer._alls2.values(): # XXX optimize this
++    for player in list(tofu.YourPlayer._alls2.values()): # XXX optimize this
+       if player.notifier:
+         for m in player.mobiles:
+           if (not m is mobile) and (m.level is mobile.level):
+@@ -163,7 +164,7 @@ class Notifier(tofu.Notifier):
+             player.notifier.notify_enter_level(mobile.level)
+             
+   def notify_remove_mobile(self, mobile):
+-    for player in tofu.YourPlayer._alls2.values(): # XXX optimize this
++    for player in list(tofu.YourPlayer._alls2.values()): # XXX optimize this
+       if player.notifier:
+         for m in player.mobiles:
+           if m.level is mobile.level:
+@@ -184,7 +185,7 @@ class Notifier(tofu.Notifier):
+     if isinstance(unique, tofu.SavedInAPath): unique.save()
+     
+   def game_ended(self):
+-    for player in tofu.Player._alls2.values():
++    for player in list(tofu.Player._alls2.values()):
+       if player.notifier:
+         player.notifier.logout_player()
+         
+@@ -199,7 +200,7 @@ Starts a game server on TCP port PORT."""
+   f.protocol = PlayerNotifier
+   reactor.listenTCP(6900, f)
+   
+-  print "* Tofu * Server ready !"
++  print("* Tofu * Server ready !")
+   try:
+     tofu.IDLER.idle()
+     

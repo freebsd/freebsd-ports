@@ -1,0 +1,9 @@
+TIMESTAMP = 1711367633
+SHA256 (centos/cups-libs-1.6.3-52.el7_9.aarch64.rpm) = dcaafad6e4af3c977e8129a8d2015811848754648d94d023f0f911be7ef4b1f7
+SIZE (centos/cups-libs-1.6.3-52.el7_9.aarch64.rpm) = 353204
+SHA256 (centos/cups-libs-1.6.3-52.el7_9.i686.rpm) = a9a856900d5a29d9cf94b7fdac8c07e41ad87194e1b959095cdaa6019f30d4c6
+SIZE (centos/cups-libs-1.6.3-52.el7_9.i686.rpm) = 369736
+SHA256 (centos/cups-libs-1.6.3-52.el7_9.x86_64.rpm) = fa6421de2c15921a2e6fedbf4185a77ea6ccb46658a05d2002f389b7e2a8b60e
+SIZE (centos/cups-libs-1.6.3-52.el7_9.x86_64.rpm) = 367740
+SHA256 (centos/cups-1.6.3-52.el7_9.src.rpm) = 3c4755c1fecee191ad39e39684394517d6313a8b1cb480504c842f7b4c89038a
+SIZE (centos/cups-1.6.3-52.el7_9.src.rpm) = 8516888

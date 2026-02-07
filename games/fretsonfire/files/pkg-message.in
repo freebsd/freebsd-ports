@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+The Frets On Fire was installed
+
+1) You can read the documentation about FretsOnFire at:
+
+   %%DOCSDIR%%
+
+2) The default resolution of FretsOnFire is 640x480x16 on window mode, but you
+   can to change it.
+
+3) Run The Frets On Fire using:
+
+   # FretsOnFire
+
+4) Enjoy it ;)
+EOM
+}
+]

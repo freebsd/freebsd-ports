@@ -1,0 +1,16 @@
+bin/xql.pl
+%%PERL5_MAN3%%/XML::XQL.3.gz
+%%PERL5_MAN3%%/XML::XQL::DOM.3.gz
+%%PERL5_MAN3%%/XML::XQL::Date.3.gz
+%%PERL5_MAN3%%/XML::XQL::Query.3.gz
+%%PERL5_MAN3%%/XML::XQL::Tutorial.3.gz
+%%SITE_PERL%%/XML/XQL.pm
+%%SITE_PERL%%/XML/XQL/DOM.pm
+%%SITE_PERL%%/XML/XQL/Date.pm
+%%SITE_PERL%%/XML/XQL/Debug.pm
+%%SITE_PERL%%/XML/XQL/DirXQL.pm
+%%SITE_PERL%%/XML/XQL/Parser.pm
+%%SITE_PERL%%/XML/XQL/Plus.pm
+%%SITE_PERL%%/XML/XQL/Query.pod
+%%SITE_PERL%%/XML/XQL/Strict.pm
+%%SITE_PERL%%/XML/XQL/Tutorial.pod

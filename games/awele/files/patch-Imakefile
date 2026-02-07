@@ -1,0 +1,43 @@
+--- Imakefile.orig	Sat Dec  9 00:35:38 1995
++++ Imakefile	Wed Nov  1 06:58:15 2000
+@@ -2,31 +2,31 @@
+ 
+ 
+ XCOMM install directory
+-    AWELE_DIR		= /user/berroir/src/awele/install
++    AWELE_DIR		= $(BINDIR)
+ XCOMM tcl/tk script
+     AWELE_SCRIPT	= xawele
+ XCOMM libs, includes
+ XCOMM TK_LIB AND TK_INCLUDE stand for tk and tcl
+-    TK_LIB		= -L/usr/local/lib -ltk -ltcl
++    TK_LIB		= -L%%LOCALBASE%%/lib -ltk%%TK_VER%% -ltcl%%TCL_VER%%
+ XCOMM    TK_LIB		= -L/usr/local/lib -ltk4.0 -ltcl7.4
+-    TK_INCLUDE 		= -I/usr/local/include
++    TK_INCLUDE 		= -I%%TK_INCLUDEDIR%% -I%%TCL_INCLUDEDIR%%
+     DEFINES = $(TK_INCLUDE) 
+     LOCAL_LIBRARIES = $(TK_LIB) -lX11 -lm
+ XCOMM ANSI-C compiler
+-    CC = gcc
++XCOMM    CC = gcc
+ 
+ XCOMM Please don't change anything below this point 
+ 
+     DEPLIBS = $(DEPXLIB)
+ 
+-    SRCS1 = 	tkAppInit.c awelewish.c alphabeta.c move.c util.c
+-    OBJS1 = 	tkAppInit.o awelewish.o alphabeta.o move.o util.o
++    SRCS = 	tkAppInit.c awelewish.c alphabeta.c move.c util.c
++    OBJS = 	tkAppInit.o awelewish.o alphabeta.o move.o util.o
+ 
+     PROGRAMS = awelewish
++    MANSUFFIX = 6
+ 
+-all::	$(PROGRAMS)
+-
+-ComplexProgramTarget_1($(PROGRAMS), $(LOCAL_LIBRARIES), )
++ComplexProgramTargetNoMan($(PROGRAMS))
++InstallManPage(xawele,$(MANDIR))
+ 
+ install:: $(PROGRAMS) $(AWELE_SCRIPT)
+ 	@echo "AWELE directory is " $(AWELE_DIR) 

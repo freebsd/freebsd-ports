@@ -1,0 +1,9 @@
+The Update Framework (TUF) is a framework for secure content delivery
+and updates. It protects against various types of supply chain attacks
+and provides resilience to compromise.
+
+The Update Framework (TUF) design helps developers maintain the security
+of a software update system, even against attackers that compromise the
+repository or signing keys. TUF provides a flexible specification
+defining functionality that developers can use in any software update
+system or re-implement to fit their needs.

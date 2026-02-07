@@ -1,0 +1,306 @@
+--- pycallgraph/config.py.orig	2013-09-17 08:41:50 UTC
++++ pycallgraph/config.py
+@@ -34,7 +34,7 @@ class Config(object):
+         self.did_init = True
+ 
+         # Update the defaults with anything from kwargs
+-        [setattr(self, k, v) for k, v in kwargs.iteritems()]
++        [setattr(self, k, v) for k, v in kwargs.items()]
+ 
+         self.create_parser()
+ 
+@@ -51,7 +51,7 @@ class Config(object):
+             help='OUTPUT_TYPE', dest='output')
+         parent_parser = self.create_parent_parser()
+ 
+-        for name, cls in outputters.items():
++        for name, cls in list(outputters.items()):
+             cls.add_arguments(subparsers, parent_parser, usage)
+ 
+     def get_output(self):
+--- pycallgraph/memory_profiler.py.orig	2013-09-17 08:41:50 UTC
++++ pycallgraph/memory_profiler.py
+@@ -345,8 +345,8 @@ def show_results(prof, stream=None, precision=3):
+             continue
+         all_lines = linecache.getlines(filename)
+         sub_lines = inspect.getblock(all_lines[code.co_firstlineno - 1:])
+-        linenos = range(code.co_firstlineno, code.co_firstlineno +
+-                        len(sub_lines))
++        linenos = list(range(code.co_firstlineno, code.co_firstlineno +
++                        len(sub_lines)))
+         lines_normalized = {}
+ 
+         header = template.format('Line #', 'Mem usage', 'Increment',
+@@ -417,7 +417,7 @@ def magic_mprun(self, parameter_s=''):
+     -r: return the LineProfiler object after it has completed profiling.
+     """
+     try:
+-        from StringIO import StringIO
++        from io import StringIO
+     except ImportError: # Python 3.x
+         from io import StringIO
+ 
+@@ -459,7 +459,7 @@ def magic_mprun(self, parameter_s=''):
+     try:
+         import builtins
+     except ImportError:  # Python 3x
+-        import __builtin__ as builtins
++        import builtins as builtins
+ 
+     if 'profile' in builtins.__dict__:
+         had_profile = True
+@@ -492,14 +492,14 @@ def magic_mprun(self, parameter_s=''):
+         page(output, screen_lines=self.shell.rc.screen_length)
+     else:
+         page(output)
+-    print(message,)
++    print((message,))
+ 
+     text_file = opts.T[0]
+     if text_file:
+         with open(text_file, 'w') as pfile:
+             pfile.write(output)
+-        print('\n*** Profile printout saved to text file %s. %s' % (text_file,
+-                                                                    message))
++        print(('\n*** Profile printout saved to text file %s. %s' % (text_file,
++                                                                    message)))
+ 
+     return_value = None
+     if 'r' in opts:
+@@ -564,7 +564,7 @@ def magic_memit(self, line=''):
+         mem_usage.extend(tmp)
+ 
+     if mem_usage:
+-        print('maximum of %d: %f MB per loop' % (repeat, max(mem_usage)))
++        print(('maximum of %d: %f MB per loop' % (repeat, max(mem_usage))))
+     else:
+         print('ERROR: could not read memory usage, try with a lower interval or more iterations')
+ 
+@@ -608,11 +608,11 @@ if __name__ == '__main__':
+     __file__ = _find_script(args[0])
+     try:
+         if sys.version_info[0] < 3:
+-            import __builtin__
+-            __builtin__.__dict__['profile'] = prof
++            import builtins
++            builtins.__dict__['profile'] = prof
+             ns = locals()
+             ns['profile'] = prof # shadow the profile decorator defined above
+-            execfile(__file__, ns, ns)
++            exec(compile(open(__file__, "rb").read(), __file__, 'exec'), ns, ns)
+         else:
+             import builtins
+             builtins.__dict__['profile'] = prof
+--- pycallgraph/output/gephi.py.orig	2013-09-17 08:41:50 UTC
++++ pycallgraph/output/gephi.py
+@@ -25,7 +25,7 @@ class GephiOutput(Output):
+     def generate(self):
+         '''Returns a string with the contents of a GDF file.'''
+ 
+-        return u'\n'.join([
++        return '\n'.join([
+             self.generate_nodes(),
+             self.generate_edges(),
+         ]) + '\n'
+@@ -33,21 +33,21 @@ class GephiOutput(Output):
+     def generate_nodes(self):
+         output = []
+ 
+-        fields = u', '.join([
+-            u'name VARCHAR',
+-            u'label VARCHAR',
+-            u'group VARCHAR',
+-            u'calls INTEGER',
+-            u'time DOUBLE',
+-            u'memory_in INTEGER',
+-            u'memory_out INTEGER',
+-            u'color VARCHAR',
+-            u'width DOUBLE',
++        fields = ', '.join([
++            'name VARCHAR',
++            'label VARCHAR',
++            'group VARCHAR',
++            'calls INTEGER',
++            'time DOUBLE',
++            'memory_in INTEGER',
++            'memory_out INTEGER',
++            'color VARCHAR',
++            'width DOUBLE',
+         ])
+-        output.append(u'nodedef> {}'.format(fields))
++        output.append('nodedef> {}'.format(fields))
+ 
+         for node in self.processor.nodes():
+-            fields = u','.join([str(a) for a in [
++            fields = ','.join([str(a) for a in [
+                 node.name,
+                 node.name,
+                 node.group,
+@@ -55,7 +55,7 @@ class GephiOutput(Output):
+                 node.time.value,
+                 node.memory_in.value,
+                 node.memory_out.value,
+-                u"'{}'".format(self.node_color_func(node).rgb_csv()),
++                "'{}'".format(self.node_color_func(node).rgb_csv()),
+                 self.node_size(node),
+             ]])
+             output.append(fields)
+@@ -68,25 +68,25 @@ class GephiOutput(Output):
+     def generate_edges(self):
+         output = []
+ 
+-        fields = u', '.join([
+-            u'node1 VARCHAR',
+-            u'node2 VARCHAR',
+-            u'label VARCHAR',
+-            u'labelvisible VARCHAR',
+-            u'directed BOOLEAN',
+-            u'color VARCHAR',
+-            u'width DOUBLE',
++        fields = ', '.join([
++            'node1 VARCHAR',
++            'node2 VARCHAR',
++            'label VARCHAR',
++            'labelvisible VARCHAR',
++            'directed BOOLEAN',
++            'color VARCHAR',
++            'width DOUBLE',
+         ])
+-        output.append(u'edgedef> {}'.format(fields))
++        output.append('edgedef> {}'.format(fields))
+ 
+         for edge in self.processor.edges():
+-            fields = u','.join([str(a) for a in [
++            fields = ','.join([str(a) for a in [
+                 edge.src_func,
+                 edge.dst_func,
+                 self.edge_label(edge),
+                 'true',
+                 'true',
+-                u"'{}'".format(self.edge_color_func(edge).rgb_csv()),
++                "'{}'".format(self.edge_color_func(edge).rgb_csv()),
+                 edge.calls.fraction * 2,
+             ]])
+             output.append(fields)
+--- pycallgraph/output/graphviz.py.orig	2013-09-17 08:41:50 UTC
++++ pycallgraph/output/graphviz.py
+@@ -1,5 +1,5 @@
+-from __future__ import division
+ 
++
+ import tempfile
+ import os
+ import textwrap
+@@ -148,7 +148,7 @@ class GraphvizOutput(Output):
+ 
+     def attrs_from_dict(self, d):
+         output = []
+-        for attr, val in d.iteritems():
++        for attr, val in d.items():
+             output.append('%s = "%s"' % (attr, val))
+         return ', '.join(output)
+ 
+@@ -164,7 +164,7 @@ class GraphvizOutput(Output):
+ 
+     def generate_attributes(self):
+         output = []
+-        for section, attrs in self.graph_attributes.iteritems():
++        for section, attrs in self.graph_attributes.items():
+             output.append('{} [ {} ];'.format(
+                 section, self.attrs_from_dict(attrs),
+             ))
+--- pycallgraph/output/output.py.orig	2013-09-17 10:23:04 UTC
++++ pycallgraph/output/output.py
+@@ -16,14 +16,14 @@ class Output(object):
+         self.edge_label_func = self.edge_label
+ 
+         # Update the defaults with anything from kwargs
+-        [setattr(self, k, v) for k, v in kwargs.iteritems()]
++        [setattr(self, k, v) for k, v in kwargs.items()]
+ 
+     def set_config(self, config):
+         '''
+         This is a quick hack to move the config variables set in Config into
+         the output module config variables.
+         '''
+-        for k, v in config.__dict__.iteritems():
++        for k, v in config.__dict__.items():
+             if hasattr(self, k) and callable(getattr(self, k)):
+                 continue
+             setattr(self, k, v)
+--- pycallgraph/output/pickle.py.orig	2013-09-17 08:41:50 UTC
++++ pycallgraph/output/pickle.py
+@@ -1,7 +1,7 @@
+ try:
+-    import cPickle as pickle
++    import pickle as pickle
+ except ImportError:
+-    import pickle
++    from . import pickle
+ 
+ from .output import Output
+ 
+--- pycallgraph/output/ubigraph.py.orig	2013-09-17 08:41:50 UTC
++++ pycallgraph/output/ubigraph.py
+@@ -1,5 +1,5 @@
+ try:
+-    from xmlrpclib import Server
++    from xmlrpc.client import Server
+ except ImportError:
+     from xmlrpc.client import Server
+ 
+--- pycallgraph/tracer.py.orig	2013-09-17 08:41:50 UTC
++++ pycallgraph/tracer.py
+@@ -1,5 +1,5 @@
+-from __future__ import division
+ 
++
+ import inspect
+ import sys
+ import os
+@@ -8,7 +8,7 @@ from distutils import sysconfig
+ from collections import defaultdict
+ from threading import Thread
+ try:
+-    from Queue import Queue, Empty
++    from queue import Queue, Empty
+ except ImportError:
+     from queue import Queue, Empty
+ 
+@@ -297,7 +297,7 @@ class TraceProcessor(Thread):
+         grp = defaultdict(list)
+         for node in self.nodes():
+             grp[self.group(node.name)].append(node)
+-        for g in grp.iteritems():
++        for g in grp.items():
+             yield g
+ 
+     def stat_group_from_func(self, func, calls):
+@@ -315,14 +315,14 @@ class TraceProcessor(Thread):
+         return stat_group
+ 
+     def nodes(self):
+-        for func, calls in self.func_count.iteritems():
++        for func, calls in self.func_count.items():
+             yield self.stat_group_from_func(func, calls)
+ 
+     def edges(self):
+-        for src_func, dests in self.call_dict.iteritems():
++        for src_func, dests in self.call_dict.items():
+             if not src_func:
+                 continue
+-            for dst_func, calls in dests.iteritems():
++            for dst_func, calls in dests.items():
+                 edge = self.stat_group_from_func(dst_func, calls)
+                 edge.src_func = src_func
+                 edge.dst_func = dst_func
+--- setup.py.orig	2013-09-17 08:41:50 UTC
++++ setup.py
+@@ -42,7 +42,6 @@ setup(
+     packages=['pycallgraph', 'pycallgraph.output'],
+     scripts=['scripts/pycallgraph'],
+     data_files=data_files,
+-    use_2to3=True,
+ 
+     # TODO: Update download_url
+     download_url =

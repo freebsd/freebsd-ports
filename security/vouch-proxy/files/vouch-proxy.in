@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# PROVIDE: vouchproxy
+# REQUIRE: NETWORKING
+
+. /etc/rc.subr
+
+name="vouchproxy"
+rcvar="vouchproxy_enable"
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f -o /var/log/${name}.log %%PREFIX%%/bin/vouch-proxy"
+
+load_rc_config $name
+: ${vouchproxy_enable:=NO}
+: ${vouchproxy_env:="VOUCH_CONFIG=%%PREFIX%%/etc/vouch-proxy/config.yml"}
+
+run_rc_command "$1"

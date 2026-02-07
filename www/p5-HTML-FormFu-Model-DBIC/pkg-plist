@@ -1,0 +1,4 @@
+%%SITE_PERL%%/HTML/FormFu/Constraint/DBIC/Unique.pm
+%%SITE_PERL%%/HTML/FormFu/Model/DBIC.pm
+%%PERL5_MAN3%%/HTML::FormFu::Constraint::DBIC::Unique.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Model::DBIC.3.gz

@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Automatic installation of database files
+
+Since v0.4 phpipam can automatically install database files for you.
+Point browser to phpipam directory and set MySQL login details (root
+username and password).
+
+Finished! Launch browser, go to website and if something is missing / not
+configured properly the error will appear.
+
+In case your URL for phpipam is not root please set the following variables
+(example for /phpipam/):
+        1.) Set BASE in config.php to /phpipam/
+        2.) RewriteBase /phpipam/ in .htaccess
+
+%%DISTNAME%% has been installed into:
+
+    %%WWWDIR%%
+
+config.php is where site configuration and database details are configured.
+
+Default user/password is Admin/ipamadmin
+
+v1.4.1 update:
+ipaddresses table in phpipam database is likely to contain incorrect datetime
+values which prevent successful upgrade.  Make sure to create backup of phpipam
+database.  Before starting upgrade wizard in web interface run the following
+SQL query on phpipam database:
+
+UPDATE ipaddresses SET lastSeen='1970-01-01 00:00:01' WHERE lastSeen < '0000-01-01 00:00:00';
+EOM
+}
+]

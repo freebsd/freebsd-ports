@@ -1,0 +1,30 @@
+PORTNAME=	nmealib
+PORTVERSION=	0.5.3
+CATEGORIES=	comms
+MASTER_SITES=	SF/nmea/NmeaLib/nmea-0.5.x
+
+MAINTAINER=	skreuzer@FreeBSD.org
+COMMENT=	Library for working with the NMEA protocol
+WWW=		https://nmea.sourceforge.net/
+
+LICENSE=	LGPL21
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USES=		cpe gmake zip
+
+CPE_VENDOR=	nmealib_project
+
+INCLUDES=	config.h context.h generate.h generator.h gmath.h info.h nmea.h \
+		parse.h parser.h sentence.h time.h tok.h units.h
+
+MAKE_JOBS_UNSAFE=	yes
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/lib/libnmea.a ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/nmea
+.for i in ${INCLUDES}
+	${INSTALL_DATA} ${WRKSRC}/include/nmea/${i} ${STAGEDIR}${PREFIX}/include/nmea
+.endfor
+
+.include <bsd.port.mk>

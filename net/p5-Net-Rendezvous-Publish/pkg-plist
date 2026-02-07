@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Net/Rendezvous/Publish/Backend/Null.pm
+%%SITE_PERL%%/Net/Rendezvous/Publish/Service.pm
+%%SITE_PERL%%/Net/Rendezvous/Publish.pm
+%%PERL5_MAN3%%/Net::Rendezvous::Publish.3.gz
+%%PERL5_MAN3%%/Net::Rendezvous::Publish::Service.3.gz

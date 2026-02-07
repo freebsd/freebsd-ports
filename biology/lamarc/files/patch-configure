@@ -1,0 +1,11 @@
+--- configure.orig	2012-05-24 23:43:17 UTC
++++ configure
+@@ -2612,7 +2612,7 @@ case "$target_os" in
+             LAMARC_CODE_OSTYPE=LAMARC_COMPILE_MACOSX
+         fi
+         ;;
+-    freebsd*|linux*)
++    dragonfly*|freebsd*|linux*)
+         if test "X${lamCONV}" = "Xyes" ; then
+             if test "X${lamGUI}" = "Xyes" ; then
+                 if test "X${GUI_TOOLKIT}" = "X" ; then

@@ -1,0 +1,7 @@
+bin/dustrac-editor
+bin/dustrac-game
+share/applications/dustrac-editor.desktop
+share/applications/dustrac-game.desktop
+share/icons/hicolor/64x64/apps/dustrac-editor.png
+share/icons/hicolor/64x64/apps/dustrac-game.png
+share/metainfo/dustrac.appdata.xml

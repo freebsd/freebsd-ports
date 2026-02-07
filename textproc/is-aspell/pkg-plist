@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/is_phonet.dat
+lib/aspell-%%VER%%/is.dat
+share/aspell/icelandic.alias
+share/aspell/is.multi
+share/aspell/is.rws
+share/aspell/íslenska.alias

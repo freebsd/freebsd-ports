@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Mon Jul 26 08:08:50 1999
++++ Makefile.in	Sat Jan  8 00:17:56 2000
+@@ -7,7 +7,7 @@
+ srcdir		= @srcdir@
+ VPATH		= @srcdir@
+ 
+-install_prefix	=
++install_prefix	= ${DESTDIR}
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ sbindir		= @sbindir@
+@@ -22,10 +22,10 @@
+ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+ INSTALL_DATA	= @INSTALL_DATA@
+ 
+-PCAPDIR		= $(srcdir)/libpcap-0.4
+-PCAPINCS	= -I$(PCAPDIR)
+-PCAPLIBS	= -L$(PCAPDIR) -lpcap
+-PCAPDEP		= $(PCAPDIR)/pcap.h $(PCAPDIR)/libpcap.a
++PCAPDIR		= 
++PCAPINCS	= 
++PCAPLIBS	= -lpcap
++PCAPDEP		= 
+ 
+ LNETDIR		= $(srcdir)/Libnet-0.99b
+ LNETINCS	= -I$(LNETDIR)/include

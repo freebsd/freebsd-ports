@@ -1,0 +1,8 @@
+lib/aspell-%%VER%%/ro.dat
+share/aspell/ro-classic-only.rws
+share/aspell/ro-classic.multi
+share/aspell/ro-common.rws
+share/aspell/ro-only.rws
+share/aspell/ro.multi
+share/aspell/romanian-classic.alias
+share/aspell/romanian.alias

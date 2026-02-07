@@ -1,0 +1,10 @@
+--- tensorflow/python/util/BUILD.orig	2023-09-12 16:46:28 UTC
++++ tensorflow/python/util/BUILD
+@@ -442,6 +442,7 @@ cc_library(
+         "//tensorflow/python/lib/core:safe_pyobject_ptr",
+         "//third_party/python_runtime:headers",  # buildcleaner: keep
+         "@com_google_absl//absl/container:flat_hash_set",
++        "@com_google_absl//absl/strings",
+         "@com_google_absl//absl/types:span",
+     ],
+ )

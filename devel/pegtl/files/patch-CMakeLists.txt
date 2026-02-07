@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2019-11-30 03:55:12 UTC
++++ CMakeLists.txt
+@@ -78,4 +78,4 @@ install(EXPORT pegtl-targets
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pegtl-config-version.cmake DESTINATION ${PEGTL_INSTALL_CMAKE_DIR})
+ install(DIRECTORY include/ DESTINATION ${PEGTL_INSTALL_INCLUDE_DIR})
+-install(FILES LICENSE DESTINATION ${PEGTL_INSTALL_DOC_DIR})
++#install(FILES LICENSE DESTINATION ${PEGTL_INSTALL_DOC_DIR})

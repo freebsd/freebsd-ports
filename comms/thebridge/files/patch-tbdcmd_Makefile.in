@@ -1,0 +1,11 @@
+--- tbdcmd/Makefile.in.orig	2012-12-10 06:00:44 UTC
++++ tbdcmd/Makefile.in
+@@ -530,7 +530,7 @@ uninstall-am: uninstall-binPROGRAMS
+ @LINK_BOX_FALSE@	if test -f $(DESTDIR)$(bindir)/tbdchat; then \
+ @LINK_BOX_FALSE@		rm $(DESTDIR)$(bindir)/tbdchat; \
+ @LINK_BOX_FALSE@	fi
+-@LINK_BOX_FALSE@	ln -s $(DESTDIR)$(bindir)/tbdcmd $(DESTDIR)$(bindir)/tbdchat
++@LINK_BOX_FALSE@	ln -s tbdcmd $(DESTDIR)$(bindir)/tbdchat
+ 
+ @LINK_BOX_FALSE@uninstall-hook:
+ @LINK_BOX_FALSE@	rm $(DESTDIR)$(bindir)/tbdchat

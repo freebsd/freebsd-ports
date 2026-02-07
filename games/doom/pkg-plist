@@ -1,0 +1,3 @@
+bin/doom
+libexec/doom/sndserver
+libexec/doom/xdoom

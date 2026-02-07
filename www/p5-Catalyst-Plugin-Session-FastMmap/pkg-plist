@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Catalyst/Plugin/Session/FastMmap.pm
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::FastMmap.3.gz

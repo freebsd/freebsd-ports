@@ -1,0 +1,8 @@
+--- examples/Makefile.orig	2009-04-14 14:47:16 UTC
++++ examples/Makefile
+@@ -1,4 +1,4 @@
+-CC	=	gcc
++CC	?=	gcc
+ CFLAGS	=	-ansi -pedantic
+ 
+ FSLIO_INCS	=	-I../include

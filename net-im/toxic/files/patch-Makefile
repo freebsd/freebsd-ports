@@ -1,0 +1,13 @@
+--- Makefile.orig	2025-01-09 14:41:43 UTC
++++ Makefile
+@@ -38,6 +38,10 @@ endif
+ ifeq ($(UNAME_S), Linux)
+ LDFLAGS += -ldl -lrt
+ endif
++ifeq ($(UNAME_S), FreeBSD)
++LIBS := $(filter-out ncursesw, $(LIBS))
++LDFLAGS += -lncursesw
++endif
+ ifeq ($(UNAME_S), OpenBSD)
+ LIBS := $(filter-out ncursesw, $(LIBS))
+ LDFLAGS += -lncursesw

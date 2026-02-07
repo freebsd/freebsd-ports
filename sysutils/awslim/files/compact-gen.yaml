@@ -1,0 +1,23 @@
+services:
+  cloudformation:
+  cloudfront:
+  cloudfrontkeyvaluestore:
+  cloudwatch:
+  cloudwatchevents:
+  cloudwatchlogs:
+  ebs:
+  ec2:
+  ecs:
+  eventbridge:
+  iam:
+  kms:
+  lambda:
+  rds:
+  route53:
+  s3:
+  secretsmanager:
+  servicequotas:
+  ssm:
+  sso:
+  ssoadmin:
+  sts:

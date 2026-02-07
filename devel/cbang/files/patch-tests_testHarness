@@ -1,0 +1,9 @@
+--- tests/testHarness.orig	2022-09-17 22:00:36 UTC
++++ tests/testHarness
+@@ -1,4 +1,5 @@
+-#!/usr/bin/env python3
++#! %%PYTHON_CMD%%
++# Note: the following code is not compatible with Python-3.x
+ # -*- mode: python -*-
+ #
+ #  This software is available as Open-Source software under the

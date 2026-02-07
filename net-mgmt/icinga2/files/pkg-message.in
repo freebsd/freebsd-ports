@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+To rotate Icinga 2's logfiles, you can copy %%EXAMPLESDIR%%/newsyslog/icinga2.conf
+to %%LOCALBASE%%/etc/newsyslog.conf.d/
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+If you do a major upgrade of Icinga 2 and use a database, please see
+https://icinga.com/docs/icinga-2/latest/doc/16-upgrading-icinga-2/
+how to upgrade the database.
+
+Please remove the rc.conf variable 'icinga2_mkvar'. All needed directories are
+now created as needed. 
+EOM
+}
+]

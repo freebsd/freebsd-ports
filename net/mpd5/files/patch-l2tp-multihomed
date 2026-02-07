@@ -1,0 +1,161 @@
+Index: src/util.c
+===================================================================
+--- src/util.c	(revision 2436)
++++ src/util.c	(working copy)
+@@ -16,8 +16,9 @@
+ #include <netdb.h>
+ #include <tcpd.h>
+ #include <sys/limits.h>
+-#include <sys/wait.h>
++#include <sys/socket.h>
+ #include <sys/sysctl.h>
++#include <sys/wait.h>
+ #include <net/route.h>
+ #include <netinet/if_ether.h>
+ #include <net/ethernet.h>
+@@ -1545,4 +1546,52 @@ IfaceSetFlag(const char *ifname, int value)
+ 	}
+ 	close(s);
+ 	return (0);
++}
++
++/*
++ * Obtain some data, peer (source) and destination addresses of SOCK_DGRAM IPv4 UDP request.
++ */
++ssize_t GetDataAddrs(int sock, void *dbuf, size_t dbufsize,
++			  struct sockaddr_storage *peer, socklen_t peer_len,
++			  struct u_addr *addr)
++{
++	struct {
++		struct  msghdr msg;
++		struct	iovec iov;
++	} b;
++	union {	/* ensure correct alignment for space */
++		struct cmsghdr cm;
++		char space[CMSG_SPACE(sizeof(struct in_addr))];
++	} buf;
++
++	struct	cmsghdr *p;
++	ssize_t	size;
++
++	/* Sanity check */
++	if (addr->family != AF_INET) {
++		errno = EAFNOSUPPORT;
++		return (-1);
++	}
++
++	b.msg.msg_name = peer;
++	b.msg.msg_namelen = peer_len;
++	b.msg.msg_iov = &b.iov;
++	b.msg.msg_iovlen = 1;
++	b.msg.msg_control = &buf;
++	b.msg.msg_controllen = sizeof(buf);
++	b.msg.msg_flags = 0;
++
++	b.iov.iov_base = dbuf;
++	b.iov.iov_len = dbufsize;
++
++	if ((size = recvmsg(sock, &b.msg, 0)) < 0) {
++		Perror("%s: recvmsg: %s", __FUNCTION__, strerror(errno));
++		return (size);
++	}
++
++	p = CMSG_FIRSTHDR(&b.msg);
++	if (p && p->cmsg_level == IPPROTO_IP && p->cmsg_type == IP_RECVDSTADDR)
++		memcpy(&addr->u.ip4, CMSG_DATA(p), sizeof(addr->u.ip4));
++
++	return (size);
+ }
+Index: src/util.h
+===================================================================
+--- src/util.h	(revision 2436)
++++ src/util.h	(working copy)
+@@ -101,6 +101,10 @@ extern int GetPeerEther(struct u_addr *addr, struct so
+ extern void ppp_util_ascify(char *buf, size_t max, const char *bytes, size_t len);
+ extern int IfaceSetFlag(const char *ifname, int value);
+ 
++ssize_t GetDataAddrs(int sock, void *dbuf, size_t dbufsize,
++			  struct sockaddr_storage *peer, socklen_t peer_len,
++			  struct u_addr *addr);
++
+ #ifndef	HAVE_NTOA_R
+ extern char *ether_ntoa_r(const struct ether_addr *n, char *a);
+ #endif
+Index: src/l2tp.c
+===================================================================
+--- src/l2tp.c	(revision 2436)
++++ src/l2tp.c	(working copy)
+@@ -1374,6 +1374,7 @@ L2tpServerEvent(int type, void *arg)
+ 	struct ngm_mkpeer mkpeer;
+ 	struct sockaddr_storage peer_sas;
+ 	struct sockaddr_storage sas;
++	struct u_addr server_addr;
+ 	const size_t bufsize = 8192;
+ 	u_int16_t *buf = NULL;
+ 	char hook[NG_HOOKSIZ];
+@@ -1393,9 +1394,18 @@ L2tpServerEvent(int type, void *arg)
+ 	/* Allocate buffer */
+ 	buf = Malloc(MB_PHYS, bufsize);
+ 
++	u_addrcopy(&s->self_addr, &server_addr);
++	
+ 	/* Read packet */
+ 	sas_len = sizeof(peer_sas);
+-	if ((len = recvfrom(s->sock, buf, bufsize, 0,
++
++	if (u_addrempty(&s->self_addr)) {
++	    if ((len = GetDataAddrs(s->sock, buf, bufsize,
++	    		&peer_sas, sas_len, &server_addr)) == -1) {
++		Perror("L2TP: GetDataAddrs");
++	    	goto fail;
++	    }
++	} else if ((len = recvfrom(s->sock, buf, bufsize, 0,
+ 	    (struct sockaddr *)&peer_sas, &sas_len)) == -1) {
+ 		Perror("L2TP: recvfrom");
+ 		goto fail;
+@@ -1415,9 +1425,23 @@ L2tpServerEvent(int type, void *arg)
+ 	tun->self_port = s->self_port;
+ 	tun->alive = 1;
+ 
+-	Log(LG_PHYS, ("Incoming L2TP packet from %s %d", 
+-		u_addrtoa(&tun->peer_addr, namebuf, sizeof(namebuf)), tun->peer_port));
++	if (u_addrempty(&tun->self_addr))
++		u_addrcopy(&server_addr, &tun->self_addr);
+ 
++	if (u_addrempty(&tun->self_addr))
++		Log(LG_PHYS, ("Incoming L2TP packet from %s %d",
++		    u_addrtoa(&tun->peer_addr, namebuf, sizeof(namebuf)),
++		    tun->peer_port));
++	else {
++	    char buf3[INET_ADDRSTRLEN];
++
++	    Log(LG_PHYS, ("Incoming L2TP packet from %s %d to %s %d",
++		u_addrtoa(&tun->peer_addr, namebuf, sizeof(namebuf)),
++		tun->peer_port,
++		u_addrtoa(&tun->self_addr, buf3, sizeof(buf3)),
++		tun->self_port));
++	}
++
+ 	/* Examine all L2TP links to get best possible fit tunnel parameters. */
+ 	for (k = 0; k < gNumLinks; k++) {
+ 		Link l2;
+@@ -1552,7 +1576,7 @@ L2tpServerEvent(int type, void *arg)
+ 	}
+ 
+ 	/* Bind socket to a new port */
+-	u_addrtosockaddr(&s->self_addr,s->self_port,&sas);
++	u_addrtosockaddr(&tun->self_addr,tun->self_port,&sas);
+ 	if (NgSendMsg(csock, namebuf, NGM_KSOCKET_COOKIE,
+ 	    NGM_KSOCKET_BIND, &sas, sas.ss_len) == -1) {
+ 		Perror("L2TP: bind");
+@@ -1649,6 +1673,10 @@ L2tpListen(Link l)
+ 	    SO_REUSEPORT, &one, sizeof(one)) == -1) {
+ 		Perror("L2TP: setsockopt");
+ 		goto fail;
++	}
++	if (u_addrempty(&s->self_addr)) {
++		int on = 1;
++		setsockopt(s->sock, IPPROTO_IP, IP_RECVDSTADDR, &on, sizeof(on));
+ 	}
+ 	u_addrtosockaddr(&s->self_addr, s->self_port, &sa);
+ 	if (bind(s->sock, (struct sockaddr *)&sa, sa.ss_len) == -1) {

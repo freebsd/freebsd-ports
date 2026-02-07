@@ -1,0 +1,2 @@
+MouseX::Foreign provides an ability for Mouse classes to extend any classes,
+including non-Mouse classes, including Moose classes.

@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2022-05-23 12:07:02 UTC
++++ Makefile.am
+@@ -6,7 +6,7 @@ SUBDIRS = \
+ 	po \
+ 	src
+ 
+-# ACLOCAL_AMFLAGS = -I m4
++ACLOCAL_AMFLAGS = -I m4
+ 
+ EXTRA_DIST = \
+ 	autogen.sh

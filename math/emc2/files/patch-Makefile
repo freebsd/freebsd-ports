@@ -1,0 +1,15 @@
+--- Makefile.orig	2003-02-10 08:17:51 UTC
++++ Makefile
+@@ -8,9 +8,9 @@
+ # for IBM RS6000
+ #CC=xlc
+ #CFLAGS=-O
+-BIN=/usr/local/bin
+-X11INCLUDEDIR=/usr/include/X11R6
+-X11LIBDIR=/usr/lib/X11R6
++BIN=$(PREFIX)/bin
++X11INCLUDEDIR=$(LOCALBASE)/include
++X11LIBDIR=$(LOCALBASE)/lib
+ X11LIB= -L$(X11LIBDIR)  -lX11
+ MATHLIB=  -lm
+ 

@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	2023-07-19 21:08:48 UTC
++++ src/Makefile.in
+@@ -1793,7 +1793,8 @@ AM_CFLAGS = $(WARN_CFLAGS) $(WERROR_CFLAGS)
+ tar_LDADD = $(LIBS) ../lib/libtar.a ../gnu/libgnu.a\
+  $(LIB_ACL) $(LIB_CLOCK_GETTIME) $(LIB_EACCESS)\
+  $(LIB_GETRANDOM) $(LIB_HARD_LOCALE) $(FILE_HAS_ACL_LIB) $(LIB_MBRTOWC)\
+- $(LIB_SELINUX) $(LIB_SETLOCALE_NULL)
++ $(LIB_SELINUX) $(LIB_SETLOCALE_NULL) \
++ $(LIBINTL) $(LIBICONV)
+ 
+ all: all-am
+ 

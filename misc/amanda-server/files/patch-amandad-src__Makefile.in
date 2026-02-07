@@ -1,0 +1,11 @@
+--- amandad-src/Makefile.in.orig	2017-12-01 13:26:53 UTC
++++ amandad-src/Makefile.in
+@@ -1573,7 +1573,7 @@ AM_CFLAGS = $(AMANDA_WARNING_CFLAGS) $(AMANDA_FILE_CFL
+ AM_LDFLAGS = $(AMANDA_STATIC_LDFLAGS) $(AS_NEEDED_FLAGS)
+ LINT = $(AMLINT)
+ LINTFLAGS = $(AMLINTFLAGS)
+-amlib_LTLIBRARIES = libamandad.la
++@WANT_CLIENT_TRUE@amlib_LTLIBRARIES = libamandad.la
+ libamandad_la_SOURCES = amandad_util.c
+ libamandad_la_LDFLAGS = -release $(VERSION) $(AS_NEEDED_FLAGS)
+ libamandad_la_LIBADD = ../common-src/libamanda.la

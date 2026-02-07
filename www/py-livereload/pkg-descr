@@ -1,0 +1,4 @@
+LiveReload is designed for web developers who know Python. It offers a server
+that provides a WSGI application to watch changes on web files in realtime.
+
+It offers APIs for the Django, Flask and Bottle frameworks.

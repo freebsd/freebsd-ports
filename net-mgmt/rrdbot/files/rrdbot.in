@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: rrdbot
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable rrdbot:
+# rrdbot_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to start rrdbotd.
+# rrdbot_pidfile (str):	pidfile location for rrdbotd.
+#			Defaults to "/var/run/rrdbotd.pid".
+# rrdbot_flags (str):	Custom command-line flags to be passed
+#			to rrdbotd (default: none).
+#
+
+. /etc/rc.subr
+
+name="rrdbot"
+rcvar=rrdbot_enable
+
+load_rc_config $name
+
+: ${rrdbot_enable="NO"}
+: ${rrdbot_pidfile="/var/run/rrdbotd.pid"}
+
+pidfile="${rrdbot_pidfile}"
+
+command="%%PREFIX%%/sbin/rrdbotd"
+command_args="-p ${rrdbot_pidfile}"
+
+run_rc_command "$1"

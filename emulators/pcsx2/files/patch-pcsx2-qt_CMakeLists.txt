@@ -1,0 +1,14 @@
+Back port [1] to fix build with Qt 6.10.
+
+[1] https://github.com/PCSX2/pcsx2/commit/8dffc857079e942ca77b091486c20c3c6530e4ed
+
+--- pcsx2-qt/CMakeLists.txt.orig	2025-06-29 19:47:12 UTC
++++ pcsx2-qt/CMakeLists.txt
+@@ -265,6 +265,7 @@ target_link_libraries(pcsx2-qt PRIVATE
+ 	PCSX2
+ 	Qt6::Core
+ 	Qt6::Gui
++	Qt6::GuiPrivate
+ 	Qt6::Widgets
+ 	KDAB::kddockwidgets
+ )

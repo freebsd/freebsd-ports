@@ -1,0 +1,9 @@
+More Opcodes information from opnames.h and opcode.h
+
+The canonical list of operator names is the contents of the array
+PL_op_name, defined and initialised in file opcode.h of the Perl
+source distribution (and installed into the perl library).
+
+Each operator has both a terse name (its opname) and a more verbose or
+recognisable descriptive name. The opdesc function can be used to
+return a description for an OP.

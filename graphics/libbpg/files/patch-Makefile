@@ -1,0 +1,121 @@
+--- Makefile.orig	2018-04-21 09:42:55 UTC
++++ Makefile
+@@ -17,7 +17,7 @@ USE_BPGVIEW=y
+ # Enable for compilation on MacOS X
+ #CONFIG_APPLE=y
+ # Installation prefix
+-prefix=/usr/local
++prefix=${DESTDIR}${PREFIX}
+ 
+ 
+ #################################
+@@ -31,19 +31,20 @@ CROSS_PREFIX:=
+ EXE:=
+ endif
+ 
+-CC=$(CROSS_PREFIX)gcc
+-CXX=$(CROSS_PREFIX)g++
+-AR=$(CROSS_PREFIX)ar
++CC?=$(CROSS_PREFIX)gcc
++CXX?=$(CROSS_PREFIX)g++
++AR?=$(CROSS_PREFIX)ar
++LD?=$(CROSS_PREFIX)ld
+ EMCC=emcc
+ 
+ PWD:=$(shell pwd)
+ 
+-CFLAGS:=-Os -Wall -MMD -fno-asynchronous-unwind-tables -fdata-sections -ffunction-sections -fno-math-errno -fno-signed-zeros -fno-tree-vectorize -fomit-frame-pointer
+-CFLAGS+=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT
+-CFLAGS+=-I.
+-CFLAGS+=-DCONFIG_BPG_VERSION=\"$(shell cat VERSION)\"
++CFLAGS_DIST:=-Os -Wall -MMD -fno-asynchronous-unwind-tables -fdata-sections -ffunction-sections -fno-math-errno -fno-signed-zeros -fno-tree-vectorize -fomit-frame-pointer 
++CFLAGS_DIST+=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_REENTRANT
++CFLAGS_DIST+=-I.
++CFLAGS_DIST+=-DCONFIG_BPG_VERSION=\"$(shell cat VERSION)\"
+ ifdef USE_JCTVC_HIGH_BIT_DEPTH
+-CFLAGS+=-DRExt__HIGH_BIT_DEPTH_SUPPORT
++CFLAGS_DIST+=-DRExt__HIGH_BIT_DEPTH_SUPPORT
+ endif
+ 
+ # Emscriptem config
+@@ -54,15 +55,18 @@ EMLDFLAGS+=-s NO_FILESYSTEM=1 -s NO_BROWSER=1
+ EMLDFLAGS+=-O3 --memory-init-file 0 --closure 0 --pre-js pre.js --post-js post.js
+ EMCFLAGS:=$(CFLAGS)
+ 
+-LDFLAGS=-g
++LDFLAGS_DIST=-g
+ ifdef CONFIG_APPLE
+-LDFLAGS+=-Wl,-dead_strip
++LDFLAGS_DIST+=-Wl,-dead_strip
+ else
+-LDFLAGS+=-Wl,--gc-sections
++LDFLAGS_DIST+=-Wl,--gc-sections
+ endif
+-CFLAGS+=-g
+-CXXFLAGS=$(CFLAGS)
++CFLAGS_DIST+=-g
+ 
++CFLAGS:=${CFLAGS_DIST} ${CFLAGS}
++LDFLAGS:=${LDFLAGS_DIST} ${LDFLAGS}
++CXXFLAGS=${CFLAGS}
++
+ PROGS=bpgdec$(EXE) bpgenc$(EXE)
+ ifdef USE_BPGVIEW
+ PROGS+=bpgview$(EXE)
+@@ -71,7 +75,7 @@ ifdef USE_EMCC
+ PROGS+=bpgdec.js bpgdec8.js bpgdec8a.js
+ endif
+ 
+-all: $(PROGS)
++all: libbpg.a libbpg.so $(PROGS)
+ 
+ LIBBPG_OBJS:=$(addprefix libavcodec/, \
+ hevc_cabac.o  hevc_filter.o  hevc.o         hevcpred.o  hevc_refs.o\
+@@ -99,36 +103,13 @@ BPGENC_LIBS:=
+ 
+ ifdef USE_X265
+ 
+-X265_LIBS:=./x265.out/8bit/libx265.a ./x265.out/10bit/libx265.a ./x265.out/12bit/libx265.a
+ BPGENC_OBJS+=x265_glue.o $(X265_LIBS)
++BPGENC_LIBS+=$(X265_LIBS)
+ 
+ bpgenc.o: CFLAGS+=-DUSE_X265
+-x265_glue.o: CFLAGS+=-I./x265/source -I./x265.out/8bit
+-x265_glue.o: $(X265_LIBS)
+ 
+-ifdef CONFIG_WIN32
+-CMAKE_OPTS:=-DCMAKE_TOOLCHAIN_FILE=../../x265/build/msys/toolchain-x86_64-w64-mingw32.cmake
+-else
+-CMAKE_OPTS:=
+-endif
+-
+-x265.out:
+-	mkdir -p x265.out/8bit x265.out/10bit x265.out/12bit
+-	cd x265.out/12bit && cmake ../../x265/source $(CMAKE_OPTS) -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DMAIN12=ON
+-	cd x265.out/10bit && cmake ../../x265/source $(CMAKE_OPTS) -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DENABLE_SHARED=OFF -DENABLE_CLI=OFF -DMAIN10=ON
+-	cd x265.out/8bit && cmake ../../x265/source $(CMAKE_OPTS) -DLINKED_10BIT=ON -DLINKED_12BIT=ON -DENABLE_SHARED=OFF -DENABLE_CLI=OFF
+-
+-# use this target to manually rebuild x265
+-x265_make: | x265.out
+-	$(MAKE) -C x265.out/12bit
+-	$(MAKE) -C x265.out/10bit
+-	$(MAKE) -C x265.out/8bit
+-
+ x265_clean:
+-	rm -rf x265.out
+ 
+-$(X265_LIBS): x265_make
+-
+ else
+ 
+ x265_clean:
+@@ -189,6 +170,9 @@ bpgenc.o: CFLAGS+=-Wno-unused-but-set-variable
+ 
+ libbpg.a: $(LIBBPG_OBJS) 
+ 	$(AR) rcs $@ $^
++
++libbpg.so: $(LIBBPG_OBJS) 
++	$(CC) $(LDFLAGS) -Wl,--soname=$(shell cat VERSION | cut -f1,2 -d .) -shared -o $@ $^
+ 
+ bpgdec$(EXE): bpgdec.o libbpg.a
+ 	$(CC) $(LDFLAGS) -o $@ $^ $(BPGDEC_LIBS)

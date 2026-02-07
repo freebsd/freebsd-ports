@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+
+To enable mod_tls, uncomment the LoadModule line in
+apache24/modules.d/001-mod_tls.conf
+
+    LoadModule tls_module  ${modDir}/mod_tls.so
+
+This module can co-exist with mod_ssl, it is your configuration that
+uses one or the other.
+
+To switch from mod_ssl, check the documentation on
+https://github.com/icing/mod_tls#configuration.
+
+EOM
+}
+]

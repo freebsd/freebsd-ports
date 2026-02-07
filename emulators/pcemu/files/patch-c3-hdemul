@@ -1,0 +1,273 @@
+diff -ru orig.bios.c bios.c
+--- orig.bios.c	Wed Feb 18 11:11:30 1998
++++ bios.c	Wed Feb 18 11:14:45 1998
+@@ -109,6 +109,12 @@
+ { "/dev/fd0", 18, 80, 2 }
+ };
+ 
++DiskTab hdisk[MAXHDISKS] =
++{
++{ "/dev/wd0", 63, 407, 64 },
++{ "/some/file", 32, 120, 64 },
++};
++
+ int bootdisk = 0x0;
+ static unsigned pos = INT_ROUTINE_START;
+ 
+@@ -803,13 +809,13 @@
+ 
+ static DiskTab *get_disk_tab(int num)
+ {
+-    if (num < NUMFDISKS)
++    if (num >= 0    && num < NUMFDISKS)
+         return &fdisk[num];
+-    
++    if (num >= 0x80 && num < 0x80 + NUMHDISKS)
++	return &hdisk[num&0x7f];
+     return NULL;
+ }
+ 
+-
+ static int disk_seek(DiskTab *disk, int cylinder, int head, int sector)
+ {
+     unsigned pos;
+@@ -817,6 +823,9 @@
+     if (head > disk->heads || cylinder > disk->cylinders ||
+         sector > disk->sectors)
+     {
++        D(printf("error h%d>%d or c%d>%d or s%d>%d\n",*bregs[DL],
++		head, disk->heads, cylinder, disk->cylinders,
++		sector, disk->sectors););
+         CF = 1;
+         *bregs[AH] = diskerror = 0x4;  /* Sector not found */
+         return -1;
+@@ -853,7 +862,8 @@
+         *bregs[AH] = 0;
+         *bregs[AL] = diskerror;
+         break;
+-    case 2:  /* Write sector */
++    case 2:  /* Read sector */
++        D(printf("Read sector drive %02Xh\n", *bregs[DL]););
+         disk = get_disk_tab(*bregs[DL]);
+         if (!disk)
+         {
+@@ -865,7 +875,7 @@
+         cylinder = *bregs[CH] + ((*bregs[CL] & 0xc0) << 2);
+         sector = (*bregs[CL] & 0x3f) -1;
+         buffer = &c_es[ChangeE(wregs[BX])];
+-        D(printf("DISK 0x%02X (%s) read [h%d,s%d,t%d](%d)->%04X:%04X\n",
++        D(printf("DISK %02Xh (%s) read [h%d,s%d,c%d](%d)->%04X:%04X\n",
+                  *bregs[DL], disk->name, head, sector, cylinder, *bregs[AL],
+                  sregs[ES], ChangeE(wregs[BX])););
+         if (disk_seek(disk, cylinder, head, sector))
+@@ -884,6 +894,7 @@
+         CF = 0;
+         break;
+     case 3:  /* Write sector */
++        D(printf("write sector drive %02Xh\n", *bregs[DL]););
+         disk = get_disk_tab(*bregs[DL]);
+         if (!disk)
+         {
+@@ -895,7 +906,7 @@
+         cylinder = *bregs[CH] + ((*bregs[CL] & 0xc0) << 2);
+         sector = (*bregs[CL] & 0x3f) -1;
+         buffer = &c_es[ChangeE(wregs[BX])];
+-        D(printf("DISK %02Xh (%s) read [h%d,s%d,t%d](%d)->%04X:%04X\n",
++        D(printf("DISK %02Xh (%s) read [h%d,s%d,c%d](%d)->%04X:%04X\n",
+                  *bregs[DL], disk->name, head, sector, cylinder, *bregs[AL],
+                  sregs[ES], ChangeE(wregs[BX])););
+         if (disk_seek(disk, cylinder, head, sector))
+@@ -923,8 +934,9 @@
+             break;
+         }
+         head = *bregs[DH];
+-        cylinder = *bregs[CH] + ((*bregs[CL] & 0xc0) << 8);
++        cylinder = *bregs[CH] + ((*bregs[CL] & 0xc0) << 2);
+         sector = (*bregs[CL] & 0x3f) -1;
++        D(printf("h%d c%d s%d\n",head, cylinder, sector););
+         buffer = &c_es[ChangeE(wregs[BX])];
+         if (disk_seek(disk, cylinder, head, sector))
+             break;
+@@ -949,12 +961,15 @@
+             case 18:
+                 *bregs[BL] = 4;
+                 break;
++	    default:
++                *bregs[BL] = 0;
+             }
+ 
+             *bregs[CH] = (disk->cylinders - 1) & 0xff;
+-            *bregs[CL] = (disk->sectors - 1) | (((disk->cylinders - 1)
++            *bregs[CL] = disk->sectors | (((disk->cylinders - 1)
+                                                  & 0x300) >> 2);
+-            *bregs[DH] = disk->heads -1;
++            *bregs[DH] = (disk->heads -1) | (((disk->cylinders - 1)
++					     & 0xc00)>> 4);
+             *bregs[DL] = *bregs[DL]  < 0x80 ? NUMFDISKS : NUMHDISKS;
+             *bregs[AL] = 0;
+             CF = 0;
+@@ -966,6 +981,19 @@
+             wregs[DX] = 0;
+             wregs[CX] = 0;
+         }
++        D(printf("Ret CH=%02Xh, CL=%02Xh, DH=%02Xh, DL=%02Xh\n",
++		*bregs[CH], *bregs[CL], *bregs[DH], *bregs[DL]););
++        break;
++    case 0x12:
++        D(printf("Disk controller ram diag\n"););
++        disk = get_disk_tab(*bregs[DL]);
++	if (disk) {
++            CF = 0;
++            *bregs[AH] = diskerror = 0;
++        } else {
++            CF = 1;
++            *bregs[AH] = diskerror = 0x20;
++	}
+         break;
+     case 0x15:  /* Get disk type */
+         D(printf("Get disk type %02Xh\n",*bregs[DL]););
+@@ -991,6 +1019,38 @@
+             *bregs[AH] = 0;
+         }
+         break;
++    case 0x18:
++	D(printf("Set media type for format drive %02Xh\n", *bregs[DL]););
++	D(printf("sectors %d\n", (*bregs[CL] & 0x3f)));
++	D(printf("cylinders %d+%d\n",*bregs[CH], ((*bregs[CL] & 0xc0) << 2)));
++
++        disk = get_disk_tab(*bregs[DL]);
++	if (disk) {
++	    if (disk->sectors - 1 != (*bregs[CL] & 0x3f)) {
++        	printf("INT 13h/18h: sectors %d != %d\n",
++			disk->sectors, (*bregs[CL] & 0x3f));
++		CF = 1;
++		*bregs[AH] = diskerror = 0x0c;
++	    }
++	    if (disk->cylinders - 1
++			!= (*bregs[CH] | ((*bregs[CL] & 0xc0) << 2))) {
++        	printf("INT 13h/18h: cylinders %d != %d\n",
++			disk->cylinders,
++			(*bregs[CH] | ((*bregs[CL] & 0xc0) << 2)));
++		CF = 1;
++		*bregs[AH] = diskerror = 0x0c;
++	    }
++	    /* make 11-byte param table at F000h:E401h ? point ES:DI at it? */
++            *bregs[AH] = diskerror = 0;
++            CF = 0;
++        } else {
++            CF = 1;
++            *bregs[AH] = diskerror = 0x80;
++	}
++        CF = 1;
++        *bregs[AH] = diskerror = 0x01;
++        break;
++
+     default:
+         printf("Unimplemented INT 13h function %02Xh\n",*bregs[AH]);
+ #ifdef PANIC
+@@ -998,9 +1058,9 @@
+         exit_emu();
+ #endif
+         break;
+-        }
++    }
+ 
+-    D(if (CF) printf("Operation failed\n"););
++    D(if (CF) printf("Operation failed\n"); else printf("OK\n"););
+ }
+ 
+ 
+@@ -1186,24 +1246,25 @@
+     memcpy(BIOS_base+0xe000,BIOSCOPYRIGHT, sizeof BIOSCOPYRIGHT);
+ }
+ 
++static unsigned char diskparamhd[16];
+ 
+ void init_bios(void)
+ {
+     int i;
++    DiskTab *hd;
+ #ifdef BOOT
+     DiskTab *boot;
+ #endif
+-/*
+-*   for (i = 0; i < NUMHDISKS; i++)
+-*   {
+-*       if ((hdisk[i].fd = open(hdisk[i].name,O_RDWR)) < 0)
+-*       {
+-*           fprintf(stderr, "Cannot open hard disk %s :",hdisk[i].name);
+-*           perror(NULL);
+-*           exit(1);
+-*       }
+-*   }
+-*/
++
++    for (i = 0; i < NUMHDISKS; i++)
++    {
++        if ((hdisk[i].fd = open(hdisk[i].name,O_RDWR)) < 0)
++        {
++            fprintf(stderr, "Cannot open hard disk %s :",hdisk[i].name);
++            perror(NULL);
++            exit(1);
++        }
++    }
+     for (i = 0; i < NUMFDISKS; i++)
+     {
+         if ((fdisk[i].fd = open(fdisk[i].name,O_RDWR)) < 0)
+@@ -1236,6 +1297,29 @@
+     IF = 1;
+ #endif
+ 
++#ifdef MK_HD_PARAMS
++    hd = get_disk_tab(0x80);
++    if (hd) {
++	diskparamhd[0] = (hd->cylinders) & 0xff;
++	diskparamhd[1] = (hd->cylinders) >> 8;
++	diskparamhd[2] = (hd->heads);
++	diskparamhd[3] = 0;
++	diskparamhd[4] = 0;
++	diskparamhd[5] = 0xff;
++	diskparamhd[6] = 0xff;
++	diskparamhd[7] = 0;
++	diskparamhd[8] = 8;
++	diskparamhd[9] = 0;
++	diskparamhd[10] = 0;
++	diskparamhd[11] = 0;
++	diskparamhd[12] = (hd->cylinders) & 0xff;
++	diskparamhd[13] = (hd->cylinders) >> 8;
++	diskparamhd[14] = (hd->sectors);
++	diskparamhd[15] = 0;
++	set_int(0x41, diskparamhd, sizeof(diskparamhd), 0, 0, 0);
++    }
++#endif
++
+ #ifdef DEBUGGER
+     signal(SIGINT, (void *)debug_breakin);
+ #else
+@@ -1257,6 +1341,11 @@
+ }
+ 
+ 
++char *set_hd(char *file, int hd)
++{
++}
++
++
+ char *set_boot_type(int type)
+ {
+     fdisk[0].heads = 2;
+@@ -1289,10 +1378,8 @@
+ 
+ void bios_off(void)
+ {
+-/*  int i;
+-*    
+-*   for (i = 0; i < NUMHDISKS; i++)
+-*       close(hdisk[i].fd);
+-*/
++  int i;
++    
++   for (i = 0; i < NUMHDISKS; i++)
++       close(hdisk[i].fd);
+ }
+-

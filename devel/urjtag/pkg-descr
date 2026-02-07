@@ -1,0 +1,3 @@
+UrJTAG aims to create an enhanced, modern tool for communicating over JTAG
+interface with flash chips, CPUs, and many more.  It takes on well proven
+openwince JTAG tools code.

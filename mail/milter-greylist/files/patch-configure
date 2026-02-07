@@ -1,0 +1,12 @@
+Index: configure
+--- configure.orig	2016-07-12 03:09:29 UTC
++++ configure
+@@ -6083,7 +6083,7 @@ if test "${ac_cv_lib_pthread_pthread_cre
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++true; #LIBS="-lpthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

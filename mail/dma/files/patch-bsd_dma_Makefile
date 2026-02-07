@@ -1,0 +1,25 @@
+--- bsd/dma/Makefile.orig	2016-02-07 12:41:49 UTC
++++ bsd/dma/Makefile
+@@ -11,6 +11,8 @@ CFLAGS+= -DCONF_PATH='"${CONFDIR}"'
+ DPADD=  ${LIBSSL} ${LIBCRYPTO}
+ LDADD=  -lssl -lcrypto
+ 
++YFLAGS+=	-i
++
+ PROG=	dma
+ .PATH: ${.CURDIR}/../..
+ SRCS=	aliases_parse.y aliases_scan.l base64.c conf.c crypto.c
+@@ -21,9 +23,10 @@ PREFIX?=	/usr/local
+ LIBEXEC?=	${PREFIX}/libexec
+ CONFDIR?=	${PREFIX}/etc/dma
+ 
+-BINOWN= root
+-BINGRP= mail
+-BINMODE=2555
++BINDIR=	${LIBEXEC}
++#BINOWN= root
++#BINGRP= mail
++#BINMODE=2555
+ WARNS?=	5
+ 
+ .include <bsd.prog.mk>

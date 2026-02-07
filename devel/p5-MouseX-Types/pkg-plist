@@ -1,0 +1,7 @@
+%%SITE_PERL%%/MouseX/Types/Moose.pm
+%%SITE_PERL%%/MouseX/Types/TypeDecorator.pm
+%%SITE_PERL%%/MouseX/Types/Mouse.pm
+%%SITE_PERL%%/MouseX/Types.pm
+%%PERL5_MAN3%%/MouseX::Types.3.gz
+%%PERL5_MAN3%%/MouseX::Types::Moose.3.gz
+%%PERL5_MAN3%%/MouseX::Types::Mouse.3.gz

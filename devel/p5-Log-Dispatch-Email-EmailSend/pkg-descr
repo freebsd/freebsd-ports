@@ -1,0 +1,2 @@
+This is a subclass of Log::Dispatch::Email that implements the
+send_email method using the Email::Send module.

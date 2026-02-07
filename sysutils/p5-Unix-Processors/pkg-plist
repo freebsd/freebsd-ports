@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Unix/Processors.pm
+%%SITE_ARCH%%/Unix/Processors/Info.pm
+%%SITE_ARCH%%/auto/Unix/Processors/Processors.so
+%%PERL5_MAN3%%/Unix::Processors.3.gz
+%%PERL5_MAN3%%/Unix::Processors::Info.3.gz

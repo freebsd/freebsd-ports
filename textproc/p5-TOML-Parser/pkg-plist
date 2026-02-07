@@ -1,0 +1,5 @@
+%%SITE_PERL%%/TOML/Parser.pm
+%%SITE_PERL%%/TOML/Parser/Tokenizer.pm
+%%SITE_PERL%%/TOML/Parser/Tokenizer/Strict.pm
+%%SITE_PERL%%/TOML/Parser/Util.pm
+%%PERL5_MAN3%%/TOML::Parser.3.gz

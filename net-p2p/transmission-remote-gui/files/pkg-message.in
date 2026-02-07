@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+1) You can run it using:
+
+   # transgui
+
+2) Don't forget that you need a transmission-daemon program configured and
+   running before use of transgui.
+
+3) Run "transmission-daemon --help" for more configuration options
+
+4) Enjoy it ;)
+EOM
+}
+]

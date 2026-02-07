@@ -1,0 +1,14 @@
+--- make/compiler_flags.orig	2021-08-28 03:13:59 UTC
++++ make/compiler_flags
+@@ -274,9 +274,9 @@ LDLIBS_TBB ?= $(LDFLAGS_TBB)
+ 
+ endif
+ 
+-ifdef TBB_INTERFACE_NEW
++#ifdef TBB_INTERFACE_NEW
+ CPPFLAGS_TBB ?= -DTBB_INTERFACE_NEW
+-endif
++#endif
+ 
+ ################################################################################
+ # Setup STAN_THREADS

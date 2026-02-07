@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Class/Delegation.pm
+%%PERL5_MAN3%%/Class::Delegation.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_adapt_interface.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_change_semantics.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_facade.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_handle.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_inheritance.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_pseudo.pl

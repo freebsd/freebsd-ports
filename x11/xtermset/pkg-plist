@@ -1,0 +1,4 @@
+bin/xtermset
+share/man/man1/xtermset.1.gz
+share/man/man5/terms.5.gz
+%%DATADIR%%/terms

@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2023-08-16 20:12:55 UTC
++++ CMakeLists.txt
+@@ -484,6 +484,7 @@ IF(LCB_INSTALL_HEADERS)
+ ENDIF()
+ 
+ IF(NOT LCB_NO_TOOLS)
++    set(CMAKE_INSTALL_MANDIR "share/man")
+     INSTALL(DIRECTORY doc/man/ DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 FILES_MATCHING PATTERN *.1)
+     INSTALL(DIRECTORY doc/man/ DESTINATION ${CMAKE_INSTALL_MANDIR}/man4  FILES_MATCHING PATTERN *.4)
+ ENDIF()
+@@ -503,7 +504,7 @@ SET(_lcb_manifest "${LCB_GENINFODIR}/MANIFEST")
+ # pkg-config stuff goes with installation
+ IF(NOT WIN32 AND LCB_INSTALL_PKGCONFIG)
+     CONFIGURE_FILE(packaging/libcouchbase.pc.in packaging/libcouchbase.pc @ONLY)
+-    INSTALL(FILES ${PROJECT_BINARY_DIR}/packaging/libcouchbase.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++    INSTALL(FILES ${PROJECT_BINARY_DIR}/packaging/libcouchbase.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}data/pkgconfig)
+ ENDIF()
+ 
+ 

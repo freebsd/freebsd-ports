@@ -1,0 +1,74 @@
+diff --git src/DBus/sayonara-ctl src/DBus/sayonara-ctl
+index 2fe80d48..3a5660a8 100755
+--- src/DBus/sayonara-ctl
++++ src/DBus/sayonara-ctl
+@@ -4,11 +4,20 @@
+ import sys
+ import argparse
+ 
++# Either pydbus or dbus modules will do, and wrap their API
++# to get a bus-object with dbus_get_object()
+ try:
+     from pydbus import SessionBus
++    def dbus_get_object(bus, name, path):
++        return bus.get(name, path)
+ except ImportError as e:
+-    print("Cannot find pydbus module. Please install first")
+-    sys.exit(1)
++    try:
++        from dbus import SessionBus
++        def dbus_get_object(bus, name, path):
++            return bus.get_object(name, path)
++    except ImportError as e:
++        print("Cannot find pydbus or dbus module. Please install first")
++        sys.exit(1)
+ 
+ def sgn(num):
+     if num > 0:
+@@ -38,7 +47,8 @@ def main():
+     bus = SessionBus()
+     try:
+         global gSayonaraInstance
+-        gSayonaraInstance = bus.get(
++        gSayonaraInstance = dbus_get_object(
++            bus,
+             "org.mpris.MediaPlayer2.sayonara",  # Bus name
+             "/org/mpris/MediaPlayer2"           # Object path
+         )
+diff --git src/DBus/sayonara-query src/DBus/sayonara-query
+index f92a10e1..dcf7d735 100755
+--- src/DBus/sayonara-query
++++ src/DBus/sayonara-query
+@@ -3,11 +3,20 @@
+ import sys
+ import argparse
+ 
++# Either pydbus or dbus modules will do, and wrap their API
++# to get a bus-object with dbus_get_object()
+ try:
+     from pydbus import SessionBus
++    def dbus_get_object(bus, name, path):
++        return bus.get(name, path)
+ except ImportError as e:
+-    print("Cannot find pydbus module. Please install first")
+-    sys.exit(1)
++    try:
++        from dbus import SessionBus
++        def dbus_get_object(bus, name, path):
++            return bus.get_object(name, path)
++    except ImportError as e:
++        print("Cannot find pydbus or dbus module. Please install first")
++        sys.exit(1)
+ 
+ attributes = {
+     'album':         'xesam:album',
+@@ -77,7 +86,8 @@ def main():
+     bus = SessionBus()
+ 
+     try:
+-        sayonara = bus.get(
++        sayonara = dbus_get_object(
++            bus,
+             'org.mpris.MediaPlayer2.sayonara',  # Bus name
+             '/org/mpris/MediaPlayer2'           # Object path
+         )

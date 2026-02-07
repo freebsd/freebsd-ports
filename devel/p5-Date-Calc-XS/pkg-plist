@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/auto/Date/Calc/XS/XS.so
+%%SITE_ARCH%%/Date/Calc/XS.pm
+%%SITE_ARCH%%/Date/Calc/XS.pod
+%%PERL5_MAN3%%/Date::Calc::XS.3.gz

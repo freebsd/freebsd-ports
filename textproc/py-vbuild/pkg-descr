@@ -1,0 +1,3 @@
+Compile your VueJS (vuejs2 only) components (*.vue) to standalone
+HTML/JS/CSS using Python only, no need of NodeJS. And you can use
+python components with vbuild in your vue/sfc files.

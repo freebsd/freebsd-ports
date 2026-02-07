@@ -1,0 +1,10 @@
+--- docs/Makefile.am.orig	2018-06-03 18:30:38 UTC
++++ docs/Makefile.am
+@@ -21,7 +21,6 @@ install install-data-local: $(USE_TARGETS) $(INSTALL_T
+ if GIVARO_DOXYGEN_FOUND
+ 
+ docs:
+-	sed -i 's/^\\version.*/\\version\ $(VERSION)/' mainpage.doxy
+ 	if test -d givaro-html ; then echo exists; else mkdir givaro-html ; fi
+ 	if test -d givaro-dev-html ; then echo exists; else mkdir givaro-dev-html ; fi
+ 	cp ../INSTALL givaro-html/

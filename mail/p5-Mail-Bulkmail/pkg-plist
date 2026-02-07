@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Mail/Bulkmail.pm
+%%SITE_PERL%%/Mail/Bulkmail/Dynamic.pm
+%%SITE_PERL%%/Mail/Bulkmail/Object.pm
+%%SITE_PERL%%/Mail/Bulkmail/Server.pm
+%%SITE_PERL%%/Mail/Bulkmail/DummyServer.pm
+%%PERL5_MAN3%%/Mail::Bulkmail.3.gz
+%%PERL5_MAN3%%/Mail::Bulkmail::DummyServer.3.gz
+%%PERL5_MAN3%%/Mail::Bulkmail::Dynamic.3.gz
+%%PERL5_MAN3%%/Mail::Bulkmail::Object.3.gz
+%%PERL5_MAN3%%/Mail::Bulkmail::Server.3.gz

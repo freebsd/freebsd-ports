@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# you may override these options in ~/.virtual-jay-peak/config
+Fullscreen="1"		# enable fullscreen
+OGLModeIndex="9"	# use 1280x1024x32 video mode
+
+[ -f ~/.virtual-jay-peak/config ] && . ~/.virtual-jay-peak/config
+
+# The executable needs to be run from its data directory, and needs to
+# store configuration in it. We therefore mirror the data directory
+# hierarchy in ~/.virtual-jay-peak, and create symlinks to the data
+# files.
+
+cd %%DATADIR%% || exit 1
+find * -type d -exec mkdir -p ~/.virtual-jay-peak/{} \; || exit 1
+find * -type f -exec ln -sf %%DATADIR%%/{} ~/.virtual-jay-peak/{} \; || exit 1
+
+cd ~/.virtual-jay-peak || exit 1
+exec %%PREFIX%%/libexec/soulride-static DefaultMountain=Jay_Peak Fullscreen=$Fullscreen OGLModeIndex=$OGLModeIndex "$@"

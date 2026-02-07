@@ -1,0 +1,8 @@
+Congratulations, you have installed %%PORTNAME%%!
+
+ o To enable Conduit, you need to add the following string to your /etc/rc.conf:
+
+      conduit_enable="YES"
+
+ o Configuration file is located at %%PREFIX%%/etc/conduit.toml - please edit the
+   file before running %%PORTNAME%%.

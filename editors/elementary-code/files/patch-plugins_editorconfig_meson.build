@@ -1,0 +1,15 @@
+--- plugins/editorconfig/meson.build.orig	2022-05-31 04:56:45 UTC
++++ plugins/editorconfig/meson.build
+@@ -7,7 +7,11 @@ module_files = [
+ 
+ module_deps = [
+     codecore_dep,
+-    meson.get_compiler('c').find_library('editorconfig')
++    meson.get_compiler('c')
++        .find_library('editorconfig', dirs: [
++            '/usr/local/lib'
++        ]
++    )
+ ]
+ 
+ shared_module(

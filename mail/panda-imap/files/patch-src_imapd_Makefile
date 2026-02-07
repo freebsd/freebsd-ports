@@ -1,0 +1,46 @@
+--- src/imapd/Makefile.orig	2022-04-17 00:12:02 UTC
++++ src/imapd/Makefile
+@@ -26,11 +26,11 @@
+ #     http://www.apache.org/licenses/LICENSE-2.0
+ 
+ 
+-ALERT=/etc/imapd.alert
++ALERT=$(PREFIX)/etc/imapd.alert
+ USERALERT=.imapalert
+-SHUTDOWN=/etc/nologin
+-ANO=/etc/anonymous.newsgroups
+-NNTP=/etc/imapd.nntp
++SHUTDOWN=$(PREFIX)/etc/nologin
++ANO=$(PREFIX)/etc/anonymous.newsgroups
++NNTP=$(PREFIX)//etc/imapd.nntp
+ SHELL= /bin/sh
+ 
+ 
+@@ -46,23 +46,17 @@ SHELL= /bin/sh
+ 
+ # Get local definitions from c-client directory
+ 
+-C = ../c-client
+-CCLIENTLIB = $C/c-client.a
+-CC = `cat $C/CCTYPE`
+-CFLAGS = -I$C `cat $C/CFLAGS` $(NSBD) $(ESEARCH) -DANOFILE=\"$(ANO)\" \
++CFLAGS = -DNFSKLUDGE -I$(LOCALBASE)/include/c-client $(NSBD) \
++	-DANOFILE=\"$(ANO)\" \
+ 	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
+ 	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client
+ 
+ all:	imapd
+ 
+-imapd: $(CCLIENTLIB) imapd.o
++imapd: imapd.o
+ 	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
+ 
+-imapd.o: $C/mail.h $C/misc.h $C/osdep.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
+ 
+ clean:
+ 	rm -f *.o imapd || true

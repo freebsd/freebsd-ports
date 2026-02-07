@@ -1,0 +1,3 @@
+Tagutil is a CLI tool to display and modify tags stored in music
+files.  It aims to provide both an easy-to-script and an interactive
+interface.  It fully supports Vorbis Comments (unlimited set of tags).

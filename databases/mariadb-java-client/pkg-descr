@@ -1,0 +1,4 @@
+The MariaDB java connector is a JDBC 4.2 compatible driver, used to
+connect applications developed in Java to MariaDB and MySQL databases.
+
+This port uses a precompiled .jar.

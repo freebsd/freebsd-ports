@@ -1,0 +1,7 @@
+{
+  "log": {
+    "access": "/var/log/xray-core/access.log",
+    "error": "/var/log/xray-core/error.log",
+    "loglevel": "warning"
+  }
+}

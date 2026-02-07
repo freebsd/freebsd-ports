@@ -1,0 +1,8 @@
+%%LUA_MODSHAREDIR%%/lunit.lua
+%%LUA_MODSHAREDIR%%/lunit/console.lua
+%%LUA_MODSHAREDIR%%/lunitx.lua
+%%LUA_MODSHAREDIR%%/lunitx/atexit.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/both.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/down.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/up.lua

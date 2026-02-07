@@ -1,0 +1,3 @@
+Libint is a library for evaluating ERI (electron replusion integral)
+over Cartesian Gaussian fuctions for modern atomic and molecular theory;
+esp. for science/mpqc and science/psi3.

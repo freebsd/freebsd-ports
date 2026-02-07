@@ -1,0 +1,7 @@
+An alternative Git GUI with an emphasis on graphical
+representation of data and actions. It can:
+
+ * Browse revision history
+ * Commit changes
+ * Show colorized diff of changes in revisions
+ * Handles extremely large projects very well

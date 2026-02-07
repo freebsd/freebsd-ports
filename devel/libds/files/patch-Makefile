@@ -1,0 +1,59 @@
+--- Makefile.orig	Fri Oct 25 09:21:06 2002
++++ Makefile	Mon Mar 22 13:55:27 2004
+@@ -5,8 +5,8 @@
+ # Makefile for LibDS 2.0
+ #
+ 
+-CC		=  cc
+-CCOPTFLAGS	= -O2
++CC		?=  cc
++CCOPTFLAGS	= $(CFLAGS)
+ 
+ CCEXTRAFLAGS	= -DStandAlone
+ 
+@@ -15,13 +15,14 @@
+ 
+ INCLUDEFLAGS    = -I$(INCLUDEDIR) -I. -I..
+ 
+-.SUFFIXES:	.e .o
++.SUFFIXES:	.e .o .So
+ 
+ 
+ LIBTARGET 	= libds
+ LIBHEADER 	= ds.h
+ HEADERS 	= 
+ OBJ 		=  avltree.o hashtbl.o heap.o parray.o queue.o stack.o set.o
++SH_OBJ		=  avltree.So hashtbl.So heap.So parray.So queue.So stack.So set.So
+ 
+ LINC	= -I../include -I../../include
+ ARLIB	= $(LIBTARGET).a
+@@ -42,7 +43,7 @@
+ 	$(TARGET)
+ 
+ gcc:
+-	@-$(MAKE) CC="gcc -pipe" CCWARNFLAGS="-Wall -W -Wshadow \
++	@-$(MAKE) CC=$(CC) CCWARNFLAGS="-Wall -W -Wshadow \
+ 	-Wnested-externs -Wwrite-strings -Wpointer-arith \
+ 	-Wmissing-declarations -Wredundant-decls -Winline \
+ 	-Wstrict-prototypes" SHARED="-shared" release
+@@ -52,9 +53,9 @@
+ unix:
+ 	@-$(MAKE) CCOPTFLAGS="-O" release
+ 
+-$(ARLIB):   $(OBJ)
++$(ARLIB):   $(OBJ) $(SH_OBJ)
+ 	ar r $(ARLIB) $(OBJ); ranlib $(ARLIB);\
+-	ld $(SHARED) -o $(SOLIB) $(OBJ) -lc 
++	ld $(SHARED) -o $(SOLIB) $(SH_OBJ) -lc 
+ 
+ install-dummy:
+ 	install -m 664 -D libds.so /usr/local/lib/libds.so.2.0; \
+@@ -66,6 +67,8 @@
+ 	$(CC) $(INCLUDEFLAGS) $(LINC) $(CPPFLAGS) $(CCFLAGS) -c $*.c
+ .c.e:
+ 	$(CC) -E $(INCLUDEFLAGS) $(LINC) $(CPPFLAGS) $(CCFLAGS) $*.c > $@
++.c.So:
++	$(CC) $(INCLUDEFLAGS) $(LINC) $(CPPFLAGS) $(CCFLAGS) -fPIC -c $*.c -o $*.So
+ 
+ .PHONY: clean
+ 

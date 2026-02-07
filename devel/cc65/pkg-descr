@@ -1,0 +1,19 @@
+cc65 is a complete cross development package for 65(C)02 systems,
+including a powerful macro assembler, a C compiler, linker, librarian
+and several other tools.
+
+Direct library support (that is, startup/initialization code) and
+support libraries for other features are available for...
+
+ - the Commodore C64
+ - the GEOS operating system for the Commodore C64
+ - the Commodore C128
+ - the Commodore C16, C116 and Plus/4
+ - the Commodore P500
+ - the Commodore 600/700 family of computers
+ - the Apple ][
+ - the Atari 8bit machines
+ - the Oric Atmos
+ - the Nintendo Entertainment System (NES)
+ - the Supervision Game Console
+ - the Atari Lynx Console

@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
++ toxic is set for IPv6 by default; if you have no IPv6 connectivity, try
+	toxic -4
+
++ if your screen is unreadable, try to set
+	native_colors=true;
+  in your ~/.config/tox/toxic.conf
+
+  (more parameters available - see %%DATADIR%%/toxic.conf.example )
+
+  or try to define another TERM, e.g.:
+	TERM=vt100 toxic
+EOM
+}
+]

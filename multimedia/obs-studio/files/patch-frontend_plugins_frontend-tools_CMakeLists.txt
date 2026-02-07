@@ -1,0 +1,14 @@
+Fix configure with Qt 6.10. Private targets are no longer implied.
+
+--- frontend/plugins/frontend-tools/CMakeLists.txt.orig	2025-10-23 13:05:44 UTC
++++ frontend/plugins/frontend-tools/CMakeLists.txt
+@@ -4,6 +4,9 @@ if(OS_LINUX OR OS_FREEBSD OR OS_OPENBSD)
+ 
+ if(OS_LINUX OR OS_FREEBSD OR OS_OPENBSD)
+   find_package(Qt6 REQUIRED Gui)
++  if(Qt6_VERSION VERSION_GREATER_EQUAL 6.10.0)
++    find_package(Qt6 REQUIRED GuiPrivate)
++  endif()
+   find_package(X11 REQUIRED)
+ endif()
+ 

@@ -1,0 +1,3 @@
+NEXT.pm adds a pseudoclass named NEXT to any program that uses it. If a method
+m calls $self-NEXT::m()>, the call to m is redispatched as if the calling
+method had not originally been found.

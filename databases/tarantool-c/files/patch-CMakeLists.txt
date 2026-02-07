@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-11-26 15:16:51 UTC
++++ CMakeLists.txt
+@@ -46,7 +46,7 @@ if (NOT ENABLE_BUNDLED_MSGPUCK)
+     set (MSGPUCK_REQUIRED ON)
+     include (cmake/FindMsgPuck.cmake)
+     include_directories(${MSGPUCK_INCLUDE_DIR})
+-elseif (NOT EXISTS "${PROJECT_SOURCE_DIR}/third_party/msgpuck/msgpuck.h")
++elseif (NOT EXISTS "${PROJECT_SOURCE_DIR}/third_party/msgpuck.h")
+     message(FATAL_ERROR "Could not find msgpuck development files")
+ else (NOT ENABLE_BUNDLED_MSGPUCK)
+     set (MSGPUCK_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party")

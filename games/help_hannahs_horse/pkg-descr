@@ -1,0 +1,17 @@
+An arcade game best described as a cross between pacman and fastfood.
+Collect the pills and carrots while avoiding the ghosts! Cute and colourful!
+
+Basically, it's pacman with a fast food twist. You have to get the pills,
+pacman style, while also collecting the carrots that move around the mazes.
+There are also different styles of gates to make things trickier. These are:
+
+* Red and White - only the ghosts can cross them
+* Blue and White - only hannah can cross them
+* Wooden gates - both hannah and the ghosts can cross, but only passing from
+   below to above
+* Red prison door things - need hannah to get the red key to open
+
+There are some command line switches you can use:
+
+-fullscreen will put the game in fullscreen mode
+-map X will start the game on level X

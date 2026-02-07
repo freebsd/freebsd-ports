@@ -1,0 +1,5 @@
+Pikchr (pronounced "picture") is a PIC-like markup language for diagrams in
+technical documentation.
+
+Pikchr is designed to be embedded in fenced code blocks of Markdown or similar
+mechanisms of other documentation markup languages.

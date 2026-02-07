@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# PROVIDE: choria_broker
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run the choria broker:
+#
+# choria_broker_enable (bool):	Set it to "YES" to enable the choria broker.
+#				Default is "NO".
+# choria_broker_options:	Options to pass to the choria broker
+#
+
+. /etc/rc.subr
+
+name="choria_broker"
+rcvar=`set_rcvar`
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+: ${choria_broker_enable="NO"}
+: ${choria_broker_options="--config=%%PREFIX%%/etc/choria/broker.conf"}
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/choria
+command_args="-p ${pidfile} ${procname} broker run ${choria_broker_options}"
+
+PATH="${PATH}:%%PREFIX%%/bin"
+export GODEBUG=x509ignoreCN=0
+
+run_rc_command "$1"

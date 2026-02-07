@@ -1,0 +1,21 @@
+--- gst-libs/gst/gl/meson.build.orig	2025-03-11 20:14:44 UTC
++++ gst-libs/gst/gl/meson.build
+@@ -176,6 +176,9 @@ endif
+   error ('Found unfindable dependency')
+ endif
+ 
++allocators_dep = dependency('gstreamer-allocators-1.0')
++video_dep = dependency('gstreamer-video-1.0')
++
+ # OpenGL/GLES2 libraries
+ gl_lib_deps = []
+ # GL platform - EGL, GLX, CGL, WGL, etc
+@@ -1140,7 +1143,7 @@ if build_gstgl
+   library_def = {'lib': gstgl}
+   pkg_name = 'gstreamer-gl-1.0'
+   pkgconfig.generate(gstgl,
+-    libraries : [gstvideo, gst_base_dep, gst_dep],
++    libraries : [library('gstvideo-@0@'.format(api_version)), gst_base_dep, gst_dep],
+     variables : pkgconfig_variables + pkgconfig_gl_variables,
+     uninstalled_variables : pkgconfig_gl_variables,
+     subdirs : pkgconfig_subdirs,

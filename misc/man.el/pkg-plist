@@ -1,0 +1,5 @@
+share/emacs/site-lisp/i18n-man-de.el
+share/emacs/site-lisp/i18n-man-en.el
+share/emacs/site-lisp/i18n-man-ja.el
+share/emacs/site-lisp/i18n-man.el
+share/doc/i18n-man/byte-compile

@@ -1,0 +1,11 @@
+--- doc/meson.build.orig	2021-05-20 03:38:45 UTC
++++ doc/meson.build
+@@ -101,7 +101,7 @@ foreach page: manpages + sitepages
+ endforeach
+ 
+ run_target('html',
+-           command : ['/bin/true'],
++           command : ['/usr/bin/true'],
+            depends : html_targets)
+ 
+ custom_target(

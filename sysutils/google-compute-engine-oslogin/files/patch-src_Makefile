@@ -1,0 +1,29 @@
+--- src/Makefile.orig	2019-10-23 08:18:46 UTC
++++ src/Makefile
+@@ -70,17 +70,21 @@ install: all
+ 	install -d $(DESTDIR)$(PAMDIR)
+ 	install -d $(DESTDIR)$(BINDIR)
+ 	install -d $(DESTDIR)$(MANDIR)/man8
+-	install -m 0644 -t $(DESTDIR)$(LIBDIR) $(NSS_OSLOGIN) $(NSS_CACHE_OSLOGIN)
++	install -m 0644 $(NSS_CACHE_OSLOGIN) $(DESTDIR)$(LIBDIR)
++	install -m 0644 $(NSS_OSLOGIN) $(DESTDIR)$(LIBDIR)
+ 	ln -sf $(NSS_OSLOGIN)         $(DESTDIR)$(LIBDIR)/$(NSS_OSLOGIN_SONAME)
+ 	ln -sf $(NSS_CACHE_OSLOGIN)   $(DESTDIR)$(LIBDIR)/$(NSS_CACHE_OSLOGIN_SONAME)
+-	install -m 0644 -t $(DESTDIR)$(PAMDIR) $(PAM_ADMIN) $(PAM_LOGIN)
+-	install -m 0755 -t $(DESTDIR)$(BINDIR) $(BINARIES) $(TOPDIR)/google_oslogin_control
+-	install -m 0644 -t $(DESTDIR)$(MANDIR)/man8 $(TOPDIR)/man/nss-oslogin.8 $(TOPDIR)/man/nss-cache-oslogin.8
++	install -m 0644 $(PAM_LOGIN) $(DESTDIR)$(PAMDIR)
++	install -m 0644 $(PAM_ADMIN) $(DESTDIR)$(PAMDIR)
++	install -m 0755 $(TOPDIR)/google_oslogin_control $(DESTDIR)$(BINDIR)
++	install -m 0755 $(BINARIES) $(DESTDIR)$(BINDIR)
++	install -m 0644 $(TOPDIR)/man/nss-cache-oslogin.8 $(DESTDIR)$(MANDIR)/man8
++	install -m 0644 $(TOPDIR)/man/nss-oslogin.8 $(DESTDIR)$(MANDIR)/man8
+ 	gzip -9 $(DESTDIR)$(MANDIR)/man8/nss-oslogin.8
+ 	gzip -9 $(DESTDIR)$(MANDIR)/man8/nss-cache-oslogin.8
+ 	ln -sf nss-oslogin.8.gz       $(DESTDIR)$(MANDIR)/man8/$(NSS_OSLOGIN_SONAME).8.gz
+ 	ln -sf nss-cache-oslogin.8.gz $(DESTDIR)$(MANDIR)/man8/$(NSS_CACHE_OSLOGIN_SONAME).8.gz
+ ifdef INSTALL_SELINUX
+ 	install -d $(DESTDIR)/usr/share/selinux/packages
+-	install -m 0644 -t $(DESTDIR)/usr/share/selinux/packages $(TOPDIR)/selinux/oslogin.pp
++	install -m 0644 $(TOPDIR)/selinux/oslogin.pp $(DESTDIR)/usr/share/selinux/packages
+ endif

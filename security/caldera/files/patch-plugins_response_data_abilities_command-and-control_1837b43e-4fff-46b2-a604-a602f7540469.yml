@@ -1,0 +1,15 @@
+--- plugins/response/data/abilities/command-and-control/1837b43e-4fff-46b2-a604-a602f7540469.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/command-and-control/1837b43e-4fff-46b2-a604-a602f7540469.yml
+@@ -24,3 +24,12 @@
+           python elasticat.py --server=$server --es-host="http://127.0.0.1:9200" --group=blue --minutes-since=60
+         cleanup: |
+           pkill -f elasticat
++    freebsd:
++      sh:
++        command: |
++          server="#{app.contact.http}";
++          curl -s -X POST -H "file:elasticat.py" -H "platform:freebsd" $server/file/download > elasticat.py;
++          pip install requests;
++          python elasticat.py --server=$server --es-host="http://127.0.0.1:9200" --group=blue --minutes-since=60
++        cleanup: |
++          pkill -f elasticat

@@ -1,0 +1,12 @@
+Clapper is a GNOME media player built using GJS with GTK4 toolkit.
+The media player is using GStreamer as a media backend and renders
+everything via OpenGL. Player works natively on both Xorg and Wayland.
+It also supports hardware acceleration through VA-API on AMD/Intel GPUs,
+NVDEC on Nvidia and V4L2 on mobile devices.
+
+The media player has an adaptive GUI. When viewing videos in "Windowed Mode",
+Clapper will use mostly unmodified GTK widgets to match your OS look nicely.
+When player enters "Fullscreen Mode" all GUI elements will become darker,
+bigger and semi-transparent for your viewing comfort. It also has a
+"Floating Mode" which displays only video on top of all other windows for a
+PiP-like viewing experience. Mobile friendly transitions are also supported.

@@ -1,0 +1,16 @@
+%%TWDIR%%/data/TWiki/SlideShowPlugin.txt
+%%TWDIR%%/data/TWiki/VarSLIDESHOWEND.txt
+%%TWDIR%%/data/TWiki/VarSLIDESHOWSTART.txt
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/SlideShow.pm
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/build.pl
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/clearpixel.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/endpres.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/first.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/last.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/logo.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/next.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/prev.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/startpres.gif

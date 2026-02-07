@@ -1,0 +1,9 @@
+Movie files can be viewed with subtitles, which are currently
+very popular as text files.  Subtitles provides means for
+simple loading, re-timing, and storing these subtitle files.
+A command-line tool subs for the same purpose and using Subtitles
+interface is included in the distribution.
+
+The module supports srt, sub, smi subtitle formats.
+
+Time values are floats, in seconds with millisecond precision.

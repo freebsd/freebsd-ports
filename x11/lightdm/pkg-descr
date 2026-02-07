@@ -1,0 +1,6 @@
+LightDM is a display manager that:
+
+* Is cross-desktop - supports different desktops
+* Supports different display technologies
+* Is lightweight - low memory usage and fast performance
+* Has a comprehensive test suite

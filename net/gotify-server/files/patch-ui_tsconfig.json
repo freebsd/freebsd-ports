@@ -1,0 +1,12 @@
+--- ui/tsconfig.json.orig	1979-11-29 23:00:00 UTC
++++ ui/tsconfig.json
+@@ -32,7 +32,8 @@
+     "acceptance-tests",
+     "webpack",
+     "jest",
+-    "src/setupTests.ts"
++    "src/setupTests.ts",
++    "**/test/*.ts"
+   ],
+   "include": [
+     "src"

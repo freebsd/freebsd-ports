@@ -1,0 +1,23 @@
+--- ui5/scandialog.py.orig	2022-02-23 07:41:05 UTC
++++ ui5/scandialog.py
+@@ -242,17 +242,17 @@ class Ui_HpScan(object):
+         self.label_Flatbed = QtWidgets.QLabel(self.dockWidgetContents)
+         self.label_Flatbed.setGeometry(QtCore.QRect(10, 150, 51, 41))
+         self.label_Flatbed.setText("")
+-        self.label_Flatbed.setPixmap(QtGui.QPixmap("/usr/share/hplip/data/images/other/flat1.png"))
++        self.label_Flatbed.setPixmap(QtGui.QPixmap("/usr/local/share/hplip/data/images/other/flat1.png"))
+         self.label_Flatbed.setObjectName("label_Flatbed")
+         self.label_Color = QtWidgets.QLabel(self.dockWidgetContents)
+         self.label_Color.setGeometry(QtCore.QRect(20, 210, 61, 41))
+         self.label_Color.setText("")
+-        self.label_Color.setPixmap(QtGui.QPixmap("/usr/share/hplip/data/images/other/viewer.png"))
++        self.label_Color.setPixmap(QtGui.QPixmap("/usr/local/share/hplip/data/images/other/viewer.png"))
+         self.label_Color.setObjectName("label_Color")
+         self.label_Resolution = QtWidgets.QLabel(self.dockWidgetContents)
+         self.label_Resolution.setGeometry(QtCore.QRect(20, 270, 51, 51))
+         self.label_Resolution.setText("")
+-        self.label_Resolution.setPixmap(QtGui.QPixmap("/usr/share/hplip/data/images/other/resolution.png"))
++        self.label_Resolution.setPixmap(QtGui.QPixmap("/usr/local/share/hplip/data/images/other/resolution.png"))
+         self.label_Resolution.setObjectName("label_Resolution")
+         self.auto_orient = QtWidgets.QCheckBox(self.dockWidgetContents)
+         self.auto_orient.setGeometry(QtCore.QRect(300,70,117, 22))

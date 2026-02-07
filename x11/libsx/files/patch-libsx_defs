@@ -1,0 +1,38 @@
+--- libsx_defs.orig	Mon Feb 28 10:04:26 1994
++++ libsx_defs	Sat Sep 26 20:55:27 1998
+@@ -9,7 +9,7 @@
+ # you have it).  Using cc seems to also work on the RS/6000 (though
+ # you may need the -xansi or -ansi flag). 
+ #CC     = gcc
+-CC     = cc
++#CC     = cc
+ 
+ 
+ # Using gcc it's nice to be real strict and compile with -Wall, for
+@@ -46,15 +46,15 @@
+ # If you're daring, and you have OpenGL, try:
+ #  CFLAGS = -g -D_POSIX_SOURCE -DOPENGL_SUPPORT
+ #
+-CFLAGS = -g -D_POSIX_SOURCE 
++CFLAGS += -O -D_POSIX_SOURCE -I$(LOCALBASE)/include
+ 
+ #
+ # if you are on a System V (like the SGI) machine, just define RANLIB
+ # to be something innocuous like `echo'. On a Sun or other BSD machine
+ # (like a DECstation, AIX) we need to run the ranlib program.
+ #
+-#RANLIB=ranlib
+-RANLIB=echo
++RANLIB=ranlib
++#RANLIB=echo
+ 
+ #
+ # libraries we need to link with...
+@@ -83,5 +83,5 @@
+ #
+ LIBSX  = ../src/libsx.a
+ #LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11
+-LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11
+-
++LIBS   =  $(LIBSX) -lXaw3d -lXmu -lXt -lX11 -lm -lXext -L$(LOCALBASE)/lib
++LIBS+=	-Wl,-rpath,${LOCALBASE}/lib

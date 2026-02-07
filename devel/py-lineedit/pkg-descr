@@ -1,0 +1,2 @@
+lineedit provides some subclasses inherited from prompt_toolkit to mimic Julia
+LineEdit.jl with multiple modal support.

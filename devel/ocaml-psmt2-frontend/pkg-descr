@@ -1,0 +1,3 @@
+Psmt2-frontend provides the parser for the SMT-LIB 2 syntax extended
+with prenex polymoprhisme which is used by the Alt-Ergo Theorem
+Prover.

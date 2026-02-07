@@ -1,0 +1,191 @@
+#!/bin/sh
+
+# PROVIDE: ng_ipacct
+# REQUIRE: LOGIN abi
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+#
+# Define these ng_ipacct_* variables in one of these files:
+#
+#   /etc/rc.conf
+#   /etc/rc.conf.local
+#   /etc/rc.conf.d/ng_ipacct
+#   %%PREFIX%%/etc/ng_ipacct.conf
+#
+# Add the following line to enable `ng_ipacct':
+#
+# ng_ipacct_enable="YES"
+# ng_ipacct_flags="<set as needed>"
+#
+# See %%PREFIX%%/etc/ng_ipacct.conf for futher reference.
+
+. /etc/rc.subr
+
+name="ng_ipacct"
+rcvar=ng_ipacct_enable
+
+# for debugging purpose you can append flag "-d" to these cmds
+# or even use dumb stubs.
+ngctl="/usr/sbin/ngctl"
+ngctl_batch="/usr/sbin/ngctl -f-"
+#ngctl_batch="cat"
+ipacctctl="%%PREFIX%%/sbin/ipacctctl"
+#ipacctctl="echo %%PREFIX%%/sbin/ipacctctl"
+sed="/usr/bin/sed"
+
+extra_commands="checkpoint"
+start_cmd="start_cmd"
+stop_cmd="stop_cmd"
+checkpoint_cmd="checkpoint_cmd"
+
+bool2int()
+{
+	eval _value=\$${1}
+	case $_value in
+		#	"yes", "true", "on", or "1"
+	[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+		eval $1=1
+		;;
+		#	"no", "false", "off", or "0"
+	[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+		eval $1=0
+		;;
+	*)
+		echo "\$${1} is not set properly - see rc.conf(5)."
+		exit 1
+		;;
+	esac
+}
+
+start_cmd()
+{
+   if checkyesno ng_ipacct_modules_load; then
+	debug "Load kld modules '${ng_ipacct_modules_list}'"
+	local module
+	for module in ${ng_ipacct_modules_list}; do
+	    if ! /sbin/kldstat -n ${module} >/dev/null 2>&1; then
+		if ! /sbin/kldload ${module} >/dev/null; then
+		    warn "can not load kld module ${module}"
+		fi
+	    fi
+	done
+   fi
+
+   local iface
+
+   for iface in ${ng_ipacct_interfaces}; do
+	debug "start ng_ipacct interface ${iface}"
+	local dlt threshold verbose saveuid savetime start_script
+
+	eval dlt=\$ng_ipacct_${iface}_dlt
+	if [ -z "$dlt" ]; then
+		echo " you must define 'ng_ipacct_${iface}_dlt'"
+		exit 1
+	fi
+
+	eval start_script=\$ng_ipacct_${iface}_start
+	if [ -z "$start_script" ]; then
+		echo " you must define 'ng_ipacct_${iface}_start'"
+		exit 1
+	fi
+
+	eval threshold=\${ng_ipacct_${iface}_threshold:-"5000"}
+
+	eval verbose=\${ng_ipacct_${iface}_verbose:-"yes"}
+	bool2int verbose
+
+	eval saveuid=\${ng_ipacct_${iface}_saveuid:-"no"}
+	bool2int saveuid
+
+	eval savetime=\${ng_ipacct_${iface}_savetime:-"no"}
+	bool2int savetime
+
+	${sed} "s!%%iface%%!${iface}!g" <<-EOF | ${ngctl_batch}
+$start_script
+EOF
+	if ! ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
+		warn "netgraph node '${iface}_ip_acct' did not created!"
+	else
+		${ipacctctl} ${iface}_ip_acct:${iface} dlt ${dlt}
+		${ipacctctl} ${iface}_ip_acct:${iface} threshold ${threshold}
+		${ipacctctl} ${iface}_ip_acct:${iface} verbose ${verbose}
+		${ipacctctl} ${iface}_ip_acct:${iface} saveuid ${saveuid}
+		${ipacctctl} ${iface}_ip_acct:${iface} savetime ${savetime}
+
+		eval afterstart_script=\$ng_ipacct_${iface}_afterstart_script
+		if [ -n "${afterstart_script}" ]; then
+		    (set -T
+		    trap 'exit 1' 2
+		    ${afterstart_script} ${iface})
+		fi
+	fi
+   done
+}
+
+checkpoint_cmd()
+{
+   local iface
+
+   for iface in ${ng_ipacct_interfaces}; do
+	debug "checlpoint ng_ipacct interface ${iface}"
+	eval checkpoint_script=\$ng_ipacct_${iface}_checkpoint_script
+
+	if [ -n "${checkpoint_script}" ]; then
+		(set -T
+		trap 'exit 1' 2
+		${checkpoint_script})
+	fi
+   done
+}
+
+stop_cmd()
+{
+   local iface
+
+   for iface in ${ng_ipacct_interfaces}; do
+	debug "stop ng_ipacct interface ${iface}"
+
+	local stop_script
+	eval stop_script=\$ng_ipacct_${iface}_stop
+	eval checkpoint_script=\$ng_ipacct_${iface}_checkpoint_script
+
+	if ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
+	    if [ -n "${checkpoint_script}" ]; then
+		(set -T
+		trap 'exit 1' 2
+		${checkpoint_script})
+	    fi
+
+	    ${sed} "s!%%iface%%!${iface}!g" <<-EOF | ${ngctl_batch}
+$stop_script
+EOF
+
+	    if ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
+		warn "netgraph node '${iface}_ip_acct' did not destroyed!"
+	    fi
+	fi
+   done
+
+   if checkyesno ng_ipacct_modules_load; then
+	debug "Unload kld module 'ng_ipacct'"
+	local module
+	for module in ng_ipacct; do
+	    if /sbin/kldstat -n ${module} >/dev/null 2>&1; then
+		/sbin/kldunload ${module}
+	    fi
+	done
+   fi
+}
+
+# read settings, set default values
+if [ -f %%PREFIX%%/etc/${name}.conf ]; then
+	debug "Sourcing %%PREFIX%%/etc/${name}.conf"
+	. %%PREFIX%%/etc/${name}.conf
+fi
+
+load_rc_config $name
+
+: ${ng_ipacct_enable="NO"}
+
+run_rc_command "$1"

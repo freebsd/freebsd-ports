@@ -1,0 +1,12 @@
+--- doc/examples/arr_script.orig	2011-02-10 17:04:20 UTC
++++ doc/examples/arr_script
+@@ -12,8 +12,7 @@ init_parms() {
+   TOLERANCE=15
+   MAX_RETRIES=3
+ 
+-  NETPERF="/usr/local/netperf/netperf"
+-  NETPERF="./netperf"
++  NETPERF="%%PREFIX%%/bin/netperf"
+ 
+   NPROC_LIST=""
+   RR_SIZES=""

@@ -1,0 +1,73 @@
+--- f2c/files/patch-libf2c+lwrite.c.orig	2020-12-05 22:19:12 UTC
++++ f2c/files/patch-libf2c+lwrite.c
+@@ -0,0 +1,24 @@
++--- libf2c/lwrite.c.orig	2008-07-29 13:57:49.000000000 -0500
+++++ libf2c/lwrite.c
++@@ -107,10 +107,10 @@
++ 		absn = -absn;
++ 	fmt = LLOW <= absn && absn < LHIGH ? LFFMT : LEFMT;
++ #ifdef USE_STRLEN
++-	sprintf(buf, fmt, n);
+++	snprintf(buf, sizeof(buf), fmt, n);
++ 	return strlen(buf);
++ #else
++-	return sprintf(buf, fmt, n);
+++	return snprintf(buf, sizeof(buf), fmt, n);
++ #endif
++ 
++ #else
++@@ -134,7 +134,7 @@
++ 		*b = 0;
++ 		goto f__ret;
++ 		}
++-	sprintf(b, LGFMT, n);
+++	snprintf(b, sizeof(b), LGFMT, n);
++ 	switch(*b) {
++ #ifndef WANT_LEAD_0
++ 		case '0':
+--- f2c/files/patch-libf2c+open.c.orig	2020-12-05 22:19:12 UTC
++++ f2c/files/patch-libf2c+open.c
+@@ -0,0 +1,29 @@
++--- libf2c/open.c.orig	2008-07-29 13:58:04.000000000 -0500
+++++ libf2c/open.c
++@@ -12,7 +12,7 @@
++ #ifdef KR_headers
++ extern char *malloc();
++ #ifdef NON_ANSI_STDIO
++-extern char *mktemp();
+++extern int mkstemp();
++ #endif
++ extern integer f_clos();
++ #else
++@@ -187,7 +187,7 @@
++ 			opnerr(a->oerr,107,"open")
++ 		}
++ 	else
++-		sprintf(buf, "fort.%ld", (long)a->ounit);
+++		snprintf(buf, sizeof(buf), "fort.%ld", (long)a->ounit);
++ 	b->uscrtch = 0;
++ 	b->uend=0;
++ 	b->uwrt = 0;
++@@ -211,7 +211,7 @@
++ 		b->uscrtch=1;
++ #ifdef NON_ANSI_STDIO
++ 		(void) strcpy(buf,"tmp.FXXXXXX");
++-		(void) mktemp(buf);
+++		(void) mkstemp(buf);
++ 		goto replace;
++ #else
++ 		if (!(b->ufd = tmpfile()))
+--- f2c/files/patch-libf2c+rawio.h.orig	2020-12-05 22:19:12 UTC
++++ f2c/files/patch-libf2c+rawio.h
+@@ -0,0 +1,11 @@
++--- libf2c/rawio.h.orig	2008-07-29 14:07:02.000000000 -0500
+++++ libf2c/rawio.h
++@@ -26,7 +26,7 @@
++ #endif
++ #endif /*KR_HEADERS*/
++ 
++-extern char *mktemp(char*);
+++extern int mkstemp(char*);
++ 
++ #ifdef __cplusplus
++ 	}

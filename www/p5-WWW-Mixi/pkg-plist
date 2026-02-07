@@ -1,0 +1,6 @@
+%%SITE_PERL%%/WWW/Mixi.pm
+%%SITE_PERL%%/WWW/Mixi/Cookbook.pod
+%%SITE_PERL%%/WWW/Mixi/Mixi.pod
+%%PERL5_MAN3%%/WWW::Mixi.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Cookbook.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Mixi.3.gz

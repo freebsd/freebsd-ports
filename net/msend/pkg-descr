@@ -1,0 +1,3 @@
+Msend is an implementation of the RFC1312 message protocol. It can be
+used as a network aware replacement for write and wall. This package
+contains the client "msend" and the server "mesgd".

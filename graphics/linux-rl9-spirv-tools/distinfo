@@ -1,0 +1,13 @@
+TIMESTAMP = 1765199327
+SHA256 (rocky/s/spirv-tools-2025.2-1.el9.aarch64.rpm) = 35dfc0503db2dea37df9536a28382c357f6a8b376a1a7dfaee9c48678a66667b
+SIZE (rocky/s/spirv-tools-2025.2-1.el9.aarch64.rpm) = 252875
+SHA256 (rocky/s/spirv-tools-2025.2-1.el9.x86_64.rpm) = 1aafc557523da20a3b30d3ed4e352f7a1f5bf5c7256b8e036b2199ded822ff4e
+SIZE (rocky/s/spirv-tools-2025.2-1.el9.x86_64.rpm) = 265122
+SHA256 (rocky/s/spirv-tools-libs-2025.2-1.el9.aarch64.rpm) = fafcf8b5be18ae4676df37cb640f9ba58bdb9324dc58f8d4cc86482dc0f674c6
+SIZE (rocky/s/spirv-tools-libs-2025.2-1.el9.aarch64.rpm) = 1515967
+SHA256 (rocky/s/spirv-tools-libs-2025.2-1.el9.i686.rpm) = 60db3ea4da12e84d3b053adc6b30d0f4c0be270853e16a6c2f2ba9f8620baa58
+SIZE (rocky/s/spirv-tools-libs-2025.2-1.el9.i686.rpm) = 1726593
+SHA256 (rocky/s/spirv-tools-libs-2025.2-1.el9.x86_64.rpm) = f80f22ada0715d3d2db2b0f6f2f4748bcda673cc7c0c9a0227cf659c34474c2a
+SIZE (rocky/s/spirv-tools-libs-2025.2-1.el9.x86_64.rpm) = 1547435
+SHA256 (rocky/s/spirv-tools-2025.2-1.el9.src.rpm) = 697c76e1b8b47b1573bd0e11115b94ce5256325918ade7f7affaead1fdc684e7
+SIZE (rocky/s/spirv-tools-2025.2-1.el9.src.rpm) = 3289457

@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+IMPORTANT - READ CAREFULLY: Code2000 is *NOT* free software!
+It is offered as a shareware demo. If you like it and use it after a
+reasonable evaluation period, you are obliged to register the
+font by sending $5 (Five U.S. Dollars, or equivalent in any currency)
+to the author. See %%FONTSDIR%%/code2000.html.
+You can start using the font by following these instructions:
+
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of your X11 / x.org configuration file:
+
+	Load "freetype"
+
+Add the following line to the "Files" section of XF86Config:
+
+	FontPath "%%FONTSDIR%%/"
+EOM
+}
+]

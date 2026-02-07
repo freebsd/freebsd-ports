@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-05-17 03:39:59 UTC
++++ pyproject.toml
+@@ -65,7 +65,7 @@ dev = [
+ ]
+ 
+ [build-system]
+-requires = ["setuptools>=64.0", "setuptools-scm>=8"]
++requires = ["setuptools>=61.0", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
+@@ -132,4 +132,4 @@ addopts = "--capture=sys --showlocals -rxs"
+ [tool.pytest.ini_options]
+ minversion = "6.0"
+ addopts = "--capture=sys --showlocals -rxs"
+-testpaths = ["tests"]
+\ No newline at end of file
++testpaths = ["tests"]

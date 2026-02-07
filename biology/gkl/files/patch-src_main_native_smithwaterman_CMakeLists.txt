@@ -1,0 +1,9 @@
+--- src/main/native/smithwaterman/CMakeLists.txt.orig	2024-08-04 17:53:57 UTC
++++ src/main/native/smithwaterman/CMakeLists.txt
+@@ -23,5 +23,5 @@ add_library(${TARGET} SHARED
+ add_library(${TARGET} SHARED
+     IntelSmithWaterman.cc avx2_impl.cc avx512_impl.cc smithwaterman_common.cc)
+ 
+-install(TARGETS ${TARGET} DESTINATION ${CMAKE_BINARY_DIR})
++install(TARGETS ${TARGET} DESTINATION lib)
+ 

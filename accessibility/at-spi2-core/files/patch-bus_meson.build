@@ -1,0 +1,10 @@
+--- bus/meson.build.orig	2023-09-02 13:40:51 UTC
++++ bus/meson.build
+@@ -32,6 +32,7 @@ configure_file(input: 'at-spi-dbus-bus.service.in',
+ configure_file(input: 'at-spi-dbus-bus.service.in',
+                output: 'at-spi-dbus-bus.service',
+                configuration: libexec_conf,
++               install: get_option('use_systemd'),
+                install_dir: systemd_user_dir)
+ 
+ if x11_dep.found()

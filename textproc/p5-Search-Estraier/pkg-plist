@@ -1,0 +1,9 @@
+bin/cpanest
+bin/dbi-indexer.pl
+bin/est-spider
+bin/estcp-mt.pl
+bin/estcp.pl
+bin/example_indexer.pl
+bin/example_searcher.pl
+%%PERL5_MAN3%%/Search::Estraier.3.gz
+%%SITE_PERL%%/Search/Estraier.pm

@@ -1,0 +1,5 @@
+TIMESTAMP = 1765121685
+SHA256 (go/www_codeberg-pages-server/codeberg-pages-server-v6.4/v6.4.zip) = 30228ad112feeb8d16127b4f551d1f7c79e5f921c0646342f4bc4f7bb244f12f
+SIZE (go/www_codeberg-pages-server/codeberg-pages-server-v6.4/v6.4.zip) = 191433
+SHA256 (go/www_codeberg-pages-server/codeberg-pages-server-v6.4/go.mod) = 79216608ff9160dfe0ec49a2567c6b1cf03066463c97fa34aec27bd812789cfb
+SIZE (go/www_codeberg-pages-server/codeberg-pages-server-v6.4/go.mod) = 12213

@@ -1,0 +1,48 @@
+CC ?= cc
+
+STD_BOTS   = 8ball \
+             audit-log \
+             ban \
+             cache \
+             channel \
+             components \
+             copycat \
+             embed \
+             emoji \
+             fetch-messages \
+             guild-template \
+             guild \
+             invite \
+             manual-dm \
+             pin \
+             ping-pong \
+             presence \
+             reaction \
+             shell \
+             slash-commands \
+             slash-commands2 \
+             spam \
+             webhook \
+             timers
+VOICE_BOTS = voice-join
+
+BOTS += $(STD_BOTS)
+
+CFLAGS  += -O0 -g -pthread -Wall -I/usr/local/include
+LDFLAGS  = -L/usr/local/lib
+LDLIBS   = -ldiscord -lcurl
+
+all: $(BOTS)
+
+voice:
+	@ CFLAGS=-DCCORD_VOICE BOTS=$(VOICE_BOTS) $(MAKE)
+
+echo:
+	@ echo -e 'CC: $(CC)\n'
+	@ echo -e 'STD_BOTS: $(STD_BOTS)\n'
+	@ echo -e 'VOICE_BOTS: $(VOICE_BOTS)\n'
+
+clean:
+	@ rm -f $(STD_BOTS) $(VOICE_BOTS)
+
+.PHONY: all echo clean

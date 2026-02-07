@@ -1,0 +1,3 @@
+Mozilla::CA provides a copy of Mozilla's bundle of Certificate
+Authority certificates in a form that can be consumed by modules and
+libraries based on OpenSSL.

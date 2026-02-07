@@ -1,0 +1,4 @@
+EFI executable for fwupd
+
+This is part of fwupd and provides a UEFI binary for installing updates using
+the UpdateCapsule runtime service.

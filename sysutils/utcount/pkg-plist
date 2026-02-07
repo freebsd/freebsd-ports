@@ -1,0 +1,9 @@
+bin/count_client
+bin/count_gate
+bin/count_ipa
+bin/count_ipfw
+bin/count_pppd
+bin/count_samba
+bin/count_user
+etc/rc.d/utcount.sh.default
+@sample etc/utcount.conf.sample

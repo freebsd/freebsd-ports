@@ -1,0 +1,16 @@
+This release includes the iavf FreeBSD Base Driver for Intel(R) Ethernet
+Network Connections.
+
+The iavf driver supports devices based on the following controllers:
+* Intel Ethernet Controller E810-C
+* Intel Ethernet Controller E810-XXV
+* Intel Ethernet Connection E822-C
+* Intel Ethernet Connection E822-L
+* Intel Ethernet Connection E823-C
+* Intel Ethernet Connection E823-L
+* Intel Ethernet Controller I710
+* Intel Ethernet Controller X710
+* Intel Ethernet Controller XL710
+* Intel Ethernet Network Connection X722
+* Intel Ethernet Controller XXV710
+* Intel Ethernet Controller V710

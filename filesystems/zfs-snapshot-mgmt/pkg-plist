@@ -1,0 +1,3 @@
+bin/zfs-snapshot-mgmt
+@sample etc/zfs-snapshot-mgmt.conf.sample
+share/man/man8/zfs-snapshot-mgmt.8.gz

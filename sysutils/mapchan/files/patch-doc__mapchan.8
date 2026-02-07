@@ -1,0 +1,72 @@
+--- doc/mapchan.8.orig Sat Dec 23 09:47:26 2000
++++ doc/mapchan.8 Sun Aug 31 12:41:32 2003
+@@ -1,13 +1,13 @@
+
+
+- mapchan(F)                    06 January 1993                     mapchan(F)
++ mapchan(8)                    06 January 1993                     mapchan(8)
+
+
+- _N_a_m_e
++ _N_A_M_E
+
+     mapchan - format of tty device mapping files
+
+- _D_e_s_c_r_i_p_t_i_o_n
++ _D_E_S_C_R_I_P_T_I_O_N
+
+     mmaappcchhaann configures the mapping of information input and output.
+
+@@ -143,7 +143,7 @@
+                   character.  This can be used to enter Space, Tab, or Hash
+                   characters.
+
+- _D_i_a_g_n_o_s_t_i_c_s
++ _D_I_A_G_N_O_S_T_I_C_S
+
+     mmaappcchhaann performs these error checks when processing the mapfile:
+
+@@ -170,7 +170,7 @@
+     device display character set. _d_e_a_d and _c_o_m_p_o_s_e sequences are _i_n_p_u_t map-
+     ping and should be going to 8859.
+
+- _W_a_r_n_i_n_g
++ _W_A_R_N_I_N_G
+
+     Use of mapping files that specify a different ``internal'' character set
+     per-channel, or a set other than the 8-bit ISO 8859 set supplied by
+@@ -185,7 +185,7 @@
+     Do not set IISSTTRRIIPP (see ssttttyy(C)) on channels that have mapping that
+     includes 8-bit characters.
+
+- _L_i_m_i_t_a_t_i_o_n_s
++ _L_I_M_I_T_A_T_I_O_N_S
+
+     Some non-U.S. keyboards and display devices do not support characters
+     commonly used by UNIX command shells and the C programming language. Do
+@@ -195,19 +195,16 @@
+     represented using this utility. Refer to the device's hardware manual for
+     information on the capabilities of the peripheral device.
+
+- _F_i_l_e_s
++ _F_I_L_E_S
+
+-    /_e_t_c/_d_e_f_a_u_l_t/_m_a_p_c_h_a_n
+-    /_u_s_r/_l_i_b/_m_a_p_c_h_a_n/*
++    /_u_s_r/_l_o_c_a_l/_e_t_c/_m_a_p_c_h_a_n/_d_e_f_a_u_l_t
++    /_u_s_r/_l_o_c_a_l/_e_t_c/_m_a_p_c_h_a_n/*._m_a_p
+
+- _S_e_e _a_l_s_o
++ _S_E_E _A_L_S_O
+
+-    aasscciiii(M), kkeeyybbooaarrdd(HW), llpp(C), llppaaddmmiinn(ADM), mmaappcchhaann(M), mmaappkkeeyy(M),
+-    ppaarraalllleell(HW), ssccrreeeenn(HW), sseerriiaall(HW), sseettkkeeyy(C), ttrrcchhaann(M), ttttyy(M)
++    aasscciiii(7), kkeeyybbooaarrdd(4), llpp(1), ssccrreeeenn(4), ttttyy(1)
+
+- _S_t_a_n_d_a_r_d_s _c_o_n_f_o_r_m_a_n_c_e
++ _S_T_A_N_D_A_R_D_S
+
+     mmaappcchhaann is not part of any currently supported standard; it is an exten-
+     sion of AT&T System V provided by The Santa Cruz Operation, Inc.
+-
+-

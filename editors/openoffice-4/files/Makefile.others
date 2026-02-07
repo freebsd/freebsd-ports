@@ -1,0 +1,34 @@
+# Makefile for other stuffs
+# Whom:         Maho Nakata <maho@FreeBSD.org>
+
+#other stuffs which are not directly related to making ports
+#solver: solver
+#languagepack: language pack
+
+solver:
+	@${ECHO_MSG} "===>   Make Solver of Apache OpenOffice"
+	@cd ${WRKSRC} ; ${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}-solver_${PACKAGE_MIDDLE}.tar.bz2 solver
+
+languagepack:
+	@${ECHO_MSG} "===>   Make languagepack of Apache OpenOffice"
+.if defined (ALL_LOCALIZED_LANGS)
+	@cd ${WRKSRC} ; ${BASH} -c 'source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ; dmake ooolanguagepack'
+.else
+	@cd ${WRKSRC} ; ${BASH} -c 'source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ; dmake ooolanguagepack_${LOCALIZED_LANG}'
+.endif
+.if !defined (ALL_LOCALIZED_LANGS)
+	@${RM} -fr ${WRKDIR}/langpack_tmp
+	@${MKDIR} ${WRKDIR}/langpack_tmp
+.if defined (LOCALIZED_LANG)
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd*.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG} ; ls Apache_OpenOffice*tar.* > ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK
+	@cd ${WRKDIR}/langpack_tmp ; \
+	for i in `${CAT} ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK`; do \
+                ${ECHO_CMD} "extracting $$i" ; \
+                cd ${WRKDIR}/langpack_tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd*.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG}/$$i ; \
+        done
+	@cd ${WRKDIR}/langpack_tmp/Apache_OpenOffice*/ ; \
+		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
+		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_PREFIX}_${PACKAGE_MIDDLE}_langpack_${LOCALIZED_LANG}.tbz ${INSTALLATION_BASEDIR}
+.endif
+.endif

@@ -1,0 +1,18 @@
+- Add WEBRTC_BSD as it's closer to WEBRTC_LINUX than WEBRTC_MAC
+
+--- configure.ac.orig	2018-07-23 14:02:57 UTC
++++ configure.ac
+@@ -63,6 +63,13 @@ AS_CASE(["${host}"],
+          OS_LDFLAGS="-lrt -lpthread"
+          HAVE_POSIX=1
+         ],
++    [*-*dragonfly*|*-*bsd*],
++        [
++         OS_CFLAGS="-DWEBRTC_BSD -DWEBRTC_THREAD_RR"
++         PLATFORM_CFLAGS="-DWEBRTC_POSIX"
++         OS_LDFLAGS="-lpthread"
++         HAVE_POSIX=1
++        ],
+     [*-*darwin*],
+         [
+          OS_CFLAGS="-DWEBRTC_MAC -DWEBRTC_THREAD_RR -DWEBRTC_CLOCK_TYPE_REALTIME"

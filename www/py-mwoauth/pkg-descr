@@ -1,0 +1,3 @@
+mwoauth is an open licensed (MIT) library designed to provide a simple means
+to performing an OAuth handshake with a MediaWiki installation with the OAuth
+Extension installed.

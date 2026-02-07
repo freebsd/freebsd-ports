@@ -1,0 +1,15 @@
+bin/soundstretch
+include/soundtouch/BPMDetect.h
+include/soundtouch/FIFOSampleBuffer.h
+include/soundtouch/FIFOSamplePipe.h
+include/soundtouch/STTypes.h
+include/soundtouch/SoundTouch.h
+include/soundtouch/soundtouch_config.h
+lib/cmake/SoundTouch/SoundTouchConfig.cmake
+lib/cmake/SoundTouch/SoundTouchConfigVersion.cmake
+lib/cmake/SoundTouch/SoundTouchTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SoundTouch/SoundTouchTargets.cmake
+lib/libSoundTouch.so
+lib/libSoundTouch.so.2
+lib/libSoundTouch.so.2.3.3
+libdata/pkgconfig/soundtouch.pc

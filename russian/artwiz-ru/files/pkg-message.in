@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+You'll have to add LOCALBASE/share/fonts/artwiz-ru
+to your X font path by either:
+
+$ xset fp+ LOCALBASE/share/fonts/artwiz-ru
+$ xset fp rehash
+
+or by adding it to your X-server configuration file and
+restarting the X-server.
+EOM
+}
+]

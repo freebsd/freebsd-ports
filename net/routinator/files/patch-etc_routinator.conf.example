@@ -1,0 +1,20 @@
+--- etc/routinator.conf.example.orig	2022-11-10 12:01:55 UTC
++++ etc/routinator.conf.example
+@@ -19,7 +19,7 @@
+ #
+ # This setting is mandatory.
+ #
+-repository-dir = "..."
++repository-dir = "/var/routinator"
+ 
+ # Do not use bundled RIR TALs.
+ #no-rir-tals = false
+@@ -35,7 +35,7 @@ repository-dir = "..."
+ # A relative path is interpreted with respect to the directory this config
+ # lives in.
+ #
+-#extra-tals-dir = "..."
++#extra-tals-dir = "tals"
+ 
+ # Local exceptions files
+ #

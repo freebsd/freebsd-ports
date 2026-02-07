@@ -1,0 +1,4 @@
+Provides utilities for working with Google APIs
+<https://developers.google.com/apis-explorer>.
+This includes functions and classes for handling common credential types and for
+preparing, executing, and processing HTTP requests.

@@ -1,0 +1,16 @@
+--- dist/toppler.desktop.in.orig	2022-02-06 08:35:59 UTC
++++ dist/toppler.desktop.in
+@@ -2,11 +2,11 @@
+ Encoding=UTF-8
+ Categories=Application;Game;ArcadeGame;
+ X-Desktop-File-Install-Version=0.2
+-Name=@FULLNAME@
++Name=Tower Toppler
+ Comment=A clone of the 'Nebulus' game on old 8 and 16 bit machines.
+ Comment[de]=Klon des alten Spiels 'Nebulus'
+ Comment[cs]=Klon hry 'Nebulus' z dob 8 a 16 bitovÃœch poÄÃ­taÄÅ¯.
+-Icon=@prefix@/pixmaps/@PACKAGE@.xpm
++Icon=@prefix@/share/pixmaps/toppler.xpm
+ Exec=@prefix@/bin/toppler
+ Terminal=0
+ Type=Application

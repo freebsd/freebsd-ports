@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-11-14 01:58:17 UTC
++++ Makefile
+@@ -2,7 +2,7 @@ PROG= snort2pfcd
+ SRCS= main.c parser.c kevent.c spfc.c tools.c
+ MAN= ${PROG}.8
+ CFLAGS+= -Wall -Wextra -pipe -fno-strict-aliasing -pedantic -pthread -Wno-unused-parameter \
+--Wno-long-long -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wstring-conversion \
++-Wno-long-long -Wimplicit-fallthrough -Wno-noexcept-type \
+ -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -D_REENTRANT -D_THREAD_SAFE -D_VERSION="${1}" -I${LOCALBASE}/include
+ 
+ LDFLAGS+=-lutil -L${LOCALBASE}/lib -lcidr

@@ -1,0 +1,13 @@
+--- vera.texi.orig	Tue Mar  9 23:29:09 1999
++++ vera.texi	Tue Mar  9 23:34:16 1999
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename vera.info
+ @settitle V.E.R.A@. --- Virtual Entity of Relevant Acronyms
++@dircategory Miscellaneous
++@direntry
++* VERA: (vera).		A list dealing with computational acronyms.
++@end direntry
+ @setchapternewpage on
+ @c %**end of header
+ 

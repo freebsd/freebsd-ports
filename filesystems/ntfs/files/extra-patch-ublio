@@ -1,0 +1,27 @@
+--- ./libntfs-3g/Makefile.in.orig	2012-08-29 19:51:35.000000000 -0500
++++ ./libntfs-3g/Makefile.in	2012-08-29 20:00:20.000000000 -0500
+@@ -251,6 +251,7 @@
+ @INSTALL_LIBRARY_FALSE@noinst_LTLIBRARIES = libntfs-3g.la
+ libntfs_3g_la_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
+ libntfs_3g_la_LDFLAGS = -version-info $(LIBNTFS_3G_VERSION) -no-undefined
++libntfs_3g_la_LIBADD = -lublio
+ libntfs_3g_la_SOURCES = acls.c attrib.c attrlist.c bitmap.c bootsect.c \
+ 	cache.c collate.c compat.c compress.c debug.c device.c dir.c \
+ 	efs.c index.c inode.c lcnalloc.c logfile.c logging.c mft.c \
+--- src/ntfs-3g.c.orig	2011-04-10 20:04:41.000000000 +0200
++++ src/ntfs-3g.c	2011-04-25 18:56:07.000000000 +0200
+@@ -3262,9 +3262,13 @@
+ #else
+ 	.utime		= ntfs_fuse_utime,
+ #endif
++#ifndef __FreeBSD__
++ 	.bmap		= ntfs_fuse_bmap,
++#else
++	.bmap		= NULL,
++#endif
+ 	.fsync		= ntfs_fuse_fsync,
+ 	.fsyncdir	= ntfs_fuse_fsync,
+-	.bmap		= ntfs_fuse_bmap,
+ 	.destroy        = ntfs_fuse_destroy2,
+ #if !KERNELPERMS | (POSIXACLS & !KERNELACLS)
+ 	.access		= ntfs_fuse_access,

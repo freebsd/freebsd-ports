@@ -1,0 +1,28 @@
+[
+{ type: install
+  message: <<EOM
+
+crowdsec is installed.
+
+Note: If you are using OPNsense or pfSense, ignore the following instructions and use the settings page of the
+CrowdSec plugin.
+
+-----
+
+You need to check/edit the following files in %%ETCDIR%% as described in https://doc.crowdsec.net/docs/configuration/crowdsec_configuration
+
+ - config.yaml: main configuration
+ - acquis.yaml, acquis.d: datasource configuration (this port does not include automatic discovery of the running services)
+ - profiles.yaml: remediation policies (ban, duration, etc)
+
+Then you can enable the service and run it.
+
+----------
+# service crowdsec enable
+crowdsec enabled in /etc/rc.conf
+# service crowdsec start
+----------
+
+EOM
+}
+]

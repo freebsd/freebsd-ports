@@ -1,0 +1,7 @@
+%%SITE_ARCH%%/Search/Odeum.pm
+%%SITE_ARCH%%/Search/Odeum/Document.pm
+%%SITE_ARCH%%/Search/Odeum/Result.pm
+%%SITE_ARCH%%/auto/Search/Odeum/Odeum.so
+%%PERL5_MAN3%%/Search::Odeum.3.gz
+%%PERL5_MAN3%%/Search::Odeum::Document.3.gz
+%%PERL5_MAN3%%/Search::Odeum::Result.3.gz

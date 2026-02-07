@@ -1,0 +1,2 @@
+Paranoid::Log::Syslog provides syslog support from within the Paranoid::Log
+framework.

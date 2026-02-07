@@ -1,0 +1,19 @@
+[
+{ type: install
+message: <<EOM
+In order to set the en_DK.UTF-8 locale for the login shell of an single
+user add the following configuration to ~/.login_conf:
+
+me:\
+        :charset=UTF-8:\
+        :lang=en_DK.UTF-8:\
+        :setenv=PATH_LOCALE=%%PREFIX%%/share/locale:
+
+More information about the process of configuring login class methods in
+available in the handbook.
+
+More information about the PATH_LOCALE environment variable is available in the
+locale(1) manual page.
+EOM
+}
+]

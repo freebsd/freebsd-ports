@@ -1,0 +1,7 @@
+Text::Wrap::wrap() is a very simple paragraph formatter.  It formats a single
+paragraph at a time by breaking lines at word boundaries.  Indentation is
+controlled for the first line ($initial_tab) and all subsequent lines
+($subsequent_tab) independently.
+
+This is a later version (from CPAN) than the one that comes with the base
+system's perl 5.00503.

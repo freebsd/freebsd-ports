@@ -1,0 +1,54 @@
+#
+# colorgcc configuration file
+#
+# $Id: colorgccrc,v 1.1.1.1 1999/04/25 15:24:03 jamoyers Exp $
+#
+# This file should be named $HOME/.colorgccrc
+#
+#
+# The following groups of attributes may be combined for a given color:
+#
+# clear         black      on_black   
+# reset	        red        on_red     
+# bold	        green      on_green   
+# underline     yellow     on_yellow  
+# underscore    blue       on_blue    
+# blink	        magenta    on_magenta 
+# reverse       cyan       on_cyan    
+# concealed     white      on_white   
+#
+# For example, srcColor: bold cyan on_yellow
+#
+
+# Define the paths to the actual location of the various compilers.
+# (Currently, colorgcc only understands these: g++ gcc c++ cc)
+g++: /usr/bin/g++
+gcc: /usr/bin/gcc
+c++: /usr/bin/c++
+cc:  /usr/bin/cc
+
+# Don't do color if our terminal type ($TERM) is one of these.
+# (List all terminal types on one line, seperated by whitespace.)
+nocolor: dumb
+
+# Text between ` and ' is usually source code.
+srcColor: bold cyan
+
+# Text other than a warning or error.
+introColor: reset
+
+# Warnings and errors both have similar formats:
+#    filename:999:Message
+# Each field may be assigned a different color.
+
+# Warnings
+warningFileNameColor: reset
+warningNumberColor:   white
+warningMessageColor:  yellow
+
+# Errors
+errorFileNameColor: reset
+errorNumberColor:   white
+errorMessageColor:  bold red
+
+

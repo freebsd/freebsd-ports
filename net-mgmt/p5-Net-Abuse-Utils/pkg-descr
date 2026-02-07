@@ -1,0 +1,3 @@
+Net::Abuse::Utils provides serveral functions useful for determining
+information about an IP address including contact/reporting addresses,
+ASN/network info, reverse dns, and DNSBL listing status.

@@ -1,0 +1,74 @@
+--- ddclient.in.orig	2026-01-25 18:18:45 UTC
++++ ddclient.in
+@@ -21,6 +21,7 @@ use Sys::Hostname;
+ use File::Temp;
+ use Getopt::Long;
+ use Sys::Hostname;
++use POSIX 'setsid';
+ 
+ # Declare the ddclient version number.
+ #
+@@ -132,8 +133,8 @@ sub subst_var {
+     return $subst;
+ }
+ 
+-my $etc = subst_var('@confdir@', '/etc/ddclient');
+-my $cachedir = subst_var('@localstatedir@', '/var') . '/cache/ddclient';
++my $etc = subst_var('@confdir@', '%%ETCDIR%%');
++my $cachedir = subst_var('@localstatedir@', '/var') . '/tmp';
+ our @curl = (subst_var('@CURL@', 'curl'));
+ 
+ our $emailbody = '';
+@@ -147,7 +148,7 @@ our $_l = ddclient::Logger->new();
+ #    local _l = pushlogctx('additional context goes here');
+ our $_l = ddclient::Logger->new();
+ 
+-$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:/usr/sbin:/bin:/usr/bin:/etc:/usr/lib:";
++$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:%%LOCALBASE%%/sbin:/bin:";
+ 
+ our %globals;
+ our %config;
+@@ -1469,16 +1470,18 @@ sub main {
+         ;
+     } elsif (opt('daemon')) {
+         $SIG{'CHLD'} = 'IGNORE';
++        chdir '/';
++        open(STDIN,  "</dev/null");
++        open(STDOUT, ">/dev/null");
+         my $pid = fork;
+         if ($pid < 0) {
+             fatal("failed to fork: %s", $!);
+         } elsif ($pid) {
+             exit 0;
+         }
++        setsid;
+         $SIG{'CHLD'} = 'DEFAULT';
+-        open(STDOUT, ">/dev/null");
+-        open(STDERR, ">/dev/null");
+-        open(STDIN,  "</dev/null");
++        open(STDERR, "&STDOUT");
+         write_pid();
+     }
+ 
+@@ -2374,17 +2377,17 @@ sub pipecmd {
+     ## execute the command.
+     local *FD;
+     if (!open(FD, $cmd)) {
+-        warning('cannot execute command');
++        warning("$program: cannot execute command %s.", $cmd);
+ 
+     } elsif ($stdin && (!print FD "$stdin\n")) {
+-        warning('failed writing to stdin');
++        warning("$program: failed writing to stdin %s.", $cmd);
+         close(FD);
+ 
+     } elsif (!close(FD)) {
+-        warning("failed closing stdin: $@");
++        warning("$program: failed closing stdin: %s. ($@)", $cmd);
+ 
+     } elsif (opt('exec') && $?) {
+-        warning("failed: $@");
++        warning("$program: failed: %s. ($@)", $cmd);
+ 
+     } else {
+         $ok = 1;

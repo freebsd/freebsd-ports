@@ -1,0 +1,21 @@
+Description: Provide the missing definitions for the ELF magic bytes.
+Forwarded: no
+Author: Vasil Dimov <vd@datamax.bg>
+Last-Update: 2009-11-20
+
+--- lib/sys_elf.h.in.orig
++++ lib/sys_elf.h.in
+@@ -80,6 +80,13 @@
+  */
+ #ifdef __LIBELF_HEADER_ELF_H
+ 
++#ifndef ELFMAG
++#define ELFMAG		"\177ELF"
++#endif /* ELFMAG */
++#ifndef SELFMAG
++#define SELFMAG		4
++#endif /* SELFMAG */
++
+ # ifndef ELF32_FSZ_ADDR
+ #  define ELF32_FSZ_ADDR	4
+ #  define ELF32_FSZ_HALF	2

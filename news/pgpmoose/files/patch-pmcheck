@@ -1,0 +1,73 @@
+--- pmcheck.orig	Fri Nov 27 00:03:49 1998
++++ pmcheck	Wed Oct 10 08:52:07 2001
+@@ -54,7 +54,7 @@
+ 
+ # Find all the authentication headers we can handle
+ grep -i '^X-Auth.*:  *PGPMoose ' $FILE | \
+-    sed -e 's/.* //' >$TF.g
++    sed -e 's/X-Auth.*:  *PGPMoose V[0-9]*[.][0-9]* [A-Z]* //' >$TF.g
+ 
+ # For the time being, simply avoid cancel messages.
+ # Note that pmdaemon authenticates them, but you probably don't
+@@ -77,10 +77,10 @@
+ 
+ # Make the document we are going to check signatures on.
+ pmcanon $FILE >$TF.m
+-    
++
+ # Loop checking all X-Auth: lines required
+ echo 0 >$TF.b
+-while read GROUP; do
++while read GROUP ARMOR; do
+     # Check whether this is an interesting X-Auth: line.
+     # This is determined by the existence of the $ACCEPT file.
+     # If it exists, only the groups/individuals mentioned are
+@@ -96,7 +96,7 @@
+     fi
+     # $1      $2       $3   $4  $5
+     # X-Auth: PGPMoose V1.1 PGP sci.crypt.research
+-    set -- `grep -i "^X-Auth.*:  *PGPMoose .* $GROUP\$" $FILE`
++    set -- `grep -i "^X-Auth.*:  *PGPMoose .* $GROUP" $FILE`
+ 
+     # Check for version mismatch, but at the moment we just warn.
+     # It is pretty hard to know just what to do in this case.
+@@ -110,11 +110,21 @@
+ 	Version: 2.6
+ 
+ 	END_OF_SIG
+-    sed -n -e "1,/^[Xx]-[Aa][Uu][Tt][Hh].*:  *PGPMoose .* $GROUP\$/d" \
++    if [ "x$ARMOR" != "x" ]; then
++	for WORD in $ARMOR
++	do
++		echo $WORD >>$TF.s
++	done
++    fi
++    for WORD in `
++    sed -n -e "1,/^[Xx]-[Aa][Uu][Tt][Hh].*:  *PGPMoose .* $GROUP/d" \
+ 	-e '/^ *$/,$d' \
+ 	-e '/^[^ 	]/,$d' \
+ 	-e 's/^[ 	]*//p' \
+-	$FILE >>$TF.s
++	$FILE`
++	do
++		echo $WORD >>$TF.s
++	done
+     cat <<-END_OF_SIG >>$TF.s
+ 	-----END PGP MESSAGE-----
+ 	END_OF_SIG
+@@ -146,6 +156,7 @@
+ 	if [ "$VERBOSE" = true ]; then
+ 	    echo "No public key for signature $GROUP"
+ 	fi
++	echo 2 >$TF.b
+ 	continue
+ 	;;
+     30)
+@@ -160,6 +171,7 @@
+ 	    echo "Unknown PGP error, status = $STATUS"
+ 	    cat $TF.e
+ 	fi
++	echo 2 >$TF.b
+ 	continue
+ 	;;
+     esac

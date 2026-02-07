@@ -1,0 +1,8 @@
+The W3C Reference Library is a general code base that can be used to build
+clients and servers. It contains code for accessing HTTP, FTP, Gopher, News,
+WAIS, Telnet servers, and the local file system. Furthermore it provides
+modules for parsing, managing and presenting hypertext objects to the user
+and a wide spectra of generic programming utilities. The Library is the
+basis for many World-Wide Web applications and all the W3C software is build
+on top of it. The Library is a required part of all other W3C applications
+in this distribution.

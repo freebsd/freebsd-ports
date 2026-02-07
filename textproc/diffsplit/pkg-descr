@@ -1,0 +1,2 @@
+This script splits up a unified diff into separate patch files,
+each of which patches one source file.

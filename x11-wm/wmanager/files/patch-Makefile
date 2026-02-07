@@ -1,0 +1,67 @@
+--- Makefile.orig	2023-12-17 12:04:10 UTC
++++ Makefile
+@@ -22,16 +22,16 @@ MAKEFLAGS = --print-directory
+ # make settings
+ SHELL     = /bin/sh
+ MAKEFLAGS = --print-directory
+-PREFIX    ?= /usr
+-X11BASE   ?= /usr
++PREFIX    ?= /usr/local
++LOCALBASE ?= /usr/local
++X11BASE   ?= /usr/local
+ 
+ # base settings
+ bindir	= ${PREFIX}/bin
+ mandir	= ${PREFIX}/share/man/man
+ incdir	= ./inc
+ srcdir	= ./src
+-fltkinc	= ${X11BASE}/include
+-x11lib	= ${X11BASE}/lib
++x11lib	= ${LOCALBASE}/lib
+ 
+ FLTK_CONFIG	?= fltk-config --use-gl
+ FLTK_CXX	:= $(shell ${FLTK_CONFIG} --cxx)
+@@ -44,12 +44,13 @@ CXXFLAGS_DBG	?=
+ CXXFLAGS_OPT	?= -O2 -fno-strict-aliasing -pipe
+ #CXXFLAGS_DBG	?= -g -DDEBUG
+ CXXFLAGS_DBG	?=
+-CXXFLAGS	?= ${CXXFLAGS_DBG} ${CXXFLAGS_OPT}
+-CXXFLAGS	+= ${CXXFLAGS_WARN} -I${incdir} ${FLTK_CXXFLAGS}
++CXXFLAGS	?= ${CXXFLAGS_WARN} ${CXXFLAGS_DBG} ${CXXFLAGS_OPT}
++CXXFLAGS	+= ${CXXFLAGS_WARN} -I${incdir} ${FLTK_CXXFLAGS} ${PTHREAD_CFLAGS}
+ 
+ # linker settings
+ LD        = ${CXX}
+-LDFLAGS   ?= ${FLTK_LDFLAGS}
++LDFLAGS   += ${FLTK_LDFLAGS} -lGL
++LDDIRS    = -L$(x11lib)
+ 
+ # install settings
+ BINOWN		?= root
+@@ -84,7 +85,7 @@ MISC = HISTORY README COPYING INSTALL TAGS FAQ LICENSE
+ SRC  = Interface.cc WManager.cc wmanager.cc
+ MISC = HISTORY README COPYING INSTALL TAGS FAQ LICENSE NEWS TODO Makefile \
+ 	.wmanagerrc .xinitrc
+-OBJ  = $(patsubst %.cc,%.o,$(SRC)) 
++OBJ  = $(patsubst %.cc,%.o,$(SRC))
+ PROG = wmanager
+ MAN1 = ${srcdir}/${PROG}.1
+ MAN1Z = ${MAN1}.gz
+@@ -103,7 +104,7 @@ ${PROG}:	${OBJ}
+ all:	${PROG} ${MAN1Z} ${LOOP1Z} ${UPD1Z}
+ 
+ ${PROG}:	${OBJ}
+-	${LD} -o $@ $^ ${LDFLAGS} 
++	${LD} -o $@ $^ ${LDFLAGS}
+ 
+ ${MAN1Z}:	${MAN1}
+ 	${GZIP} ${GZIP_N} ${GZIP_C} ${MAN1} > $@ || (${RM} $@; false)
+@@ -125,7 +126,7 @@ install: all
+ 	${MKDIR} ${DESTDIR}${bindir}
+ 	${INSTALL_PROGRAM} ${PROG} ${DESTDIR}${bindir}/
+ 	${INSTALL_SCRIPT} ${LOOP} ${UPD} ${DESTDIR}${bindir}/
+-	
++
+ 	${MKDIR} ${DESTDIR}${mandir}1
+ 	${INSTALL_DATA} ${MAN1Z} ${LOOP1Z} ${UPD1Z} ${DESTDIR}${mandir}1/
+ 

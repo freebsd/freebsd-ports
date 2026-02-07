@@ -1,0 +1,9 @@
+libexec/tangd
+share/man/man1/tangd-rotate-keys.1.gz
+share/man/man1/tang-show-keys.1.gz
+share/man/man8/tang.8.gz
+libexec/tangd-keygen
+libexec/tangd-rotate-keys
+bin/tang-show-keys
+etc/rc.d/tangd
+@dir /var/db/tang

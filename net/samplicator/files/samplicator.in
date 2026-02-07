@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# PROVIDE: samplicator
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable samplicator:
+#
+#  samplicator_enable="YES"
+#  # optional
+#  samplicator_flags="-S -p 2055 -c %%PREFIX%%/etc/samplicator.conf"
+#  samplicator_runas="nobody"
+#
+# The default is to run samplicator as nobody, which will prevent you from
+# using the -S flag (maintain (spoof) source addresses).
+# If you want to maintain (spoof) source addresses, you will need to run as
+# root.
+# This can be accomplished by adding samplicator_runas="root" to /etc/rc.conf
+
+. /etc/rc.subr
+
+name=samplicator
+rcvar=samplicator_enable
+load_rc_config $name
+
+# Set defaults
+: ${samplicator_enable:=NO}
+: ${samplicator_flags="-p 2055 -c %%PREFIX%%/etc/samplicator.conf"}
+: ${samplicator_runas:=nobody}
+
+pidfile=/var/run/samplicator.pid
+procname="%%PREFIX%%/bin/samplicate"
+command=/usr/sbin/daemon
+command_args=" -cf -p ${pidfile} -u ${samplicator_runas} ${procname} ${samplicator_flags}"
+required_files=%%PREFIX%%/etc/samplicator.conf
+
+start_precmd=samplicator_precmd
+stop_postcmd="[ -f ${pidfile} ] && rm ${pidfile}"
+
+samplicator_precmd()
+{
+    # bypass rc_flags as we use samplicator_flags directly via daemon(8)
+    rc_flags=""
+
+    # create empty pidfile with correct permissions
+    install -o ${samplicator_runas} /dev/null ${pidfile}
+
+    # since we are using daemon(8) to drop privs, we cannot let samplicator fork
+    echo "${samplicator_flags}" | egrep -q "(^\-f| \-f)"
+    if [ $? -eq 0 ]; then
+        echo "Please remove parameter -f from samplicator_flags"
+        echo
+        return 1
+    fi
+
+    # root is required for -S, do a pre-launch sanity check
+    echo "${samplicator_flags}" | egrep -q "(^\-S| \-S)"
+    if [ $? -eq 0 ] && [ $(id -u ${samplicator_runas}) -ne 0 ]; then
+        echo "-S requires that samplicator_runas be set to root."
+        echo
+        return 1
+    fi
+}
+
+run_rc_command "$1"

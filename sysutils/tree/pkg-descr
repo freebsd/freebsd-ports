@@ -1,0 +1,3 @@
+Tree is a simple utility that displays a tree-view of directories
+and files. It has options to use ANSI color escape-sequences or ASCII
+graphic characters, and can also output in HTML format.

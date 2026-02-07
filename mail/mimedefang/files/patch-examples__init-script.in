@@ -1,0 +1,122 @@
+--- examples/init-script.in.orig	2017-09-07 17:52:24 UTC
++++ examples/init-script.in
+@@ -7,6 +7,14 @@
+ # BEFORE: mail
+ # KEYWORD: shutdown
+ 
++. /etc/rc.subr
++
++# read settings, set default values
++load_rc_config "$name"
++
++: ${mimedefang_mx_max_rss=100000}
++: ${mimedefang_mx_max_as=300000}
++
+ RETVAL=0
+ prog='mimedefang'
+ SPOOLDIR='@SPOOLDIR@'
+@@ -41,6 +49,12 @@ export LC_ALL
+ # The socket used by mimedefang to communicate with sendmail
+ # SOCKET=$SPOOLDIR/mimedefang.sock
+ 
++# Timeout while waiting for socket to appear
++# SOCKET_TIMEOUT=60
++
++# The value of socket file access mode
++# SOCKET_MODE=600
++
+ # Run the multiplexor and filters as this user, not root.  RECOMMENDED
+ MX_USER=@DEFANGUSER@
+ 
+@@ -138,11 +152,11 @@ MX_MAXIMUM=10
+ 
+ # Limit worker processes' resident-set size to this many kilobytes.  Default
+ # is unlimited.
+-# MX_MAX_RSS=10000
++MX_MAX_RSS=${mimedefang_mx_max_rss}
+ 
+ # Limit total size of worker processes' memory space to this many kilobytes.
+ # Default is unlimited.
+-# MX_MAX_AS=30000
++MX_MAX_AS=${mimedefang_mx_max_as}
+ 
+ # If you want to use the "notification" facility, set the appropriate port.
+ # See the mimedefang-notify man page for details.
+@@ -189,7 +203,7 @@ then
+     . /etc/rc.subr
+ 
+     name=$prog
+-    rcvar=`set_rcvar`
++    rcvar=${prog}_enable
+     # default to not enabled, enable in rc.conf
+     eval $rcvar=\${$rcvar:-NO}
+ 
+@@ -199,6 +213,7 @@ then
+     procname=$PROGDIR/$prog-multiplexor
+     start_cmd="start_it"
+     stop_cmd="stop_it"
++    restart_cmd="restart_it"
+     sig_reload="INT"
+     reread_cmd="reread_it"
+     # provide both "reload", the FreeBSD default, with a direct signal to
+@@ -209,6 +224,8 @@ fi
+ # Make sure required vars are set
+ SOCKET=${SOCKET:=$SPOOLDIR/$prog.sock}
+ MX_SOCKET=${MX_SOCKET:=$SPOOLDIR/$prog-multiplexor.sock}
++SOCKET_TIMEOUT=${SOCKET_TIMEOUT:=60}
++SOCKET_MODE=${SOCKET_MODE:=600}
+ 
+ start_it() {
+     if test -r $PID ; then
+@@ -294,6 +311,29 @@ start_it() {
+ 	kill `cat $MXPID`
+ 	return 1
+     fi
++
++    SOCKET_PREFIX=${SOCKET%:*}
++    # We can have inet or inet6, try to remove 6
++    SOCKET_PREFIX=${SOCKET_PREFIX%6}
++
++    if [ "x$SOCKET" != "x" -a "${SOCKET_PREFIX}" != "inet" ] ; then
++        printf "Waiting for $prog socket."
++        i=${SOCKET_TIMEOUT}
++        while [ $i -ne 0 ]
++        do
++            [ -S "$SOCKET" ] && break
++            printf "."
++            sleep 1
++            i=$(($i-1))
++        done
++        echo ""
++        if [ $i -eq 0 ] ; then
++            echo "There is no $prog socket (${SOCKET})!"
++            return 1
++        fi
++        %%CHMOD%% ${SOCKET_MODE} ${SOCKET} > /dev/null 2>&1
++    fi
++
+     return 0
+ }
+ 
+@@ -329,7 +369,7 @@ stop_it() {
+     rm -f $MX_SOCKET > /dev/null 2>&1
+     rm -f $SOCKET > /dev/null 2>&1
+ 
+-    if [ "$1" = "wait" ] ; then
++    if [ 1 ] ; then
+ 	printf "Waiting for daemons to exit."
+ 	WAITPID=""
+ 	test -f $PID && WAITPID=`cat $PID`
+@@ -379,6 +419,12 @@ reread_it() {
+ 		echo "Could not find process-ID of $prog-multiplexor"
+ 	    fi
+ 	fi
++}
++
++restart_it() {
++    stop_it wait
++    start_it
++    RETVAL=$?
+ }
+ 
+ if type run_rc_command > /dev/null 2>&1

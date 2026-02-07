@@ -1,0 +1,6 @@
+@owner www
+@group www
+%%WWWDIR%%/protovis.js
+%%WWWDIR%%/protovis.min.js
+@owner
+@group

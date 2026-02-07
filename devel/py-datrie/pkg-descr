@@ -1,0 +1,4 @@
+Python binding for libdatrie, a kind of digital search tree.
+
+Trie is an efficient indexing method. It is also a kind of deterministic finite
+automaton (DFA).

@@ -1,0 +1,11 @@
+--- ffi/CMakeLists.txt.orig	2025-12-08 17:44:54 UTC
++++ ffi/CMakeLists.txt
+@@ -18,7 +18,7 @@ set(CMAKE_C_VISIBILITY_PRESET "hidden")
+ set(CMAKE_CXX_VISIBILITY_PRESET "hidden")
+ set(CMAKE_C_VISIBILITY_PRESET "hidden")
+ 
+-find_package(LLVM REQUIRED CONFIG)
++find_package(LLVM REQUIRED CONFIG HINTS %%LLVM_PREFIX%%)
+ 
+ message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
+ message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")

@@ -1,0 +1,28 @@
+PORTNAME=	gnupg
+PORTVERSION=	2.3.3
+DISTVERSIONSUFFIX=	-4.el9
+PORTREVISION=	2
+CATEGORIES=	security linux
+PKGNAMESUFFIX=	2
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	GNU Transport Layer Security library (Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://gnutls.org/
+
+USES=		cpe linux:rl9
+CPE_VENDOR=	gnu
+USE_LINUX=	gnutls libassuan libgcrypt libgpg-error libksba npth openldap sqlite3
+USE_LINUX_RPM=	yes
+
+BIN_DISTNAMES=	${PORTNAME}2-${DISTVERSION}${DISTVERSIONSUFFIX}
+LIB_DISTNAMES=	${PORTNAME}2-smime-${DISTVERSION}${DISTVERSIONSUFFIX}
+SRC_DISTFILES=	${PORTNAME}2-${DISTVERSION}${DISTVERSIONSUFFIX}${SRC_SUFX}:SOURCE
+
+CONFLICTS=	linux-c7-${PORTNAME}
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+.include <bsd.port.mk>

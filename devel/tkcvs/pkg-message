@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+IMPORTANT
+
+There are new freatures and additions in this version.
+
+Please see /usr/local/share/doc/tkcvs/INSTALL
+for important configuration options.
+EOM
+}
+]

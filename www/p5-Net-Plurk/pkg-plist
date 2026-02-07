@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Net/Plurk.pm
+%%SITE_PERL%%/Net/Plurk/OAuth.pm
+%%SITE_PERL%%/Net/Plurk/Plurk.pm
+%%SITE_PERL%%/Net/Plurk/User.pm
+%%SITE_PERL%%/Net/Plurk/UserProfile.pm
+%%PERL5_MAN3%%/Net::Plurk.3.gz
+%%PERL5_MAN3%%/Net::Plurk::OAuth.3.gz
+%%PERL5_MAN3%%/Net::Plurk::Plurk.3.gz
+%%PERL5_MAN3%%/Net::Plurk::User.3.gz
+%%PERL5_MAN3%%/Net::Plurk::UserProfile.3.gz

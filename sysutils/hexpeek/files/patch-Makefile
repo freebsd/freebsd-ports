@@ -1,0 +1,31 @@
+--- Makefile.orig	2020-08-04 05:58:52 UTC
++++ Makefile
+@@ -26,15 +26,15 @@
+ 
+ # Note that libedit is optional. To build hexpeek without it, remove
+ # -DHEXPEEK_EDITABLE_CONSOLE and -ledit.
+-SRCDIR := src
+-BINDIR := bin
+-EXEC   := $(BINDIR)/hexpeek
+-CC     ?= clang
+-CFLAGS := -I$(SRCDIR) -O3 -Wall -fPIC
+-DFLAGS := -DHEXPEEK_EDITABLE_CONSOLE 
+-LIBS   := -ledit #-ltermcap
++SRCDIR	= src
++BINDIR	= bin
++EXEC	= $(BINDIR)/hexpeek
++LIBS	= -ledit
++DFLAGS	= -DHEXPEEK_EDITABLE_CONSOLE
+ 
+ all: $(EXEC)
++
++test:	test/simplediff
+ 	make -C test
+ 
+ clear:
+@@ -44,4 +44,4 @@ clear:
+ $(EXEC): $(SRCDIR)/*.c $(SRCDIR)/*.h
+ 	mkdir -p $(BINDIR)
+ 	$(CC) $(CFLAGS) $(DFLAGS) -o $(EXEC) $(SRCDIR)/*.c $(LIBS)
+-	cd $(BINDIR) ; ln -f -s hexpeek hexview ; ln -f -s hexpeek hexDump ; ln -f -s hexpeek hexpack ; ln -f -s hexpeek hexdiff ; cd ..
++	cd $(BINDIR) ; ln -f -s hexpeek hexview ; ln -f -s hexpeek hexDump ; ln -f -s hexpeek hexpack ; ln -f -s hexpeek hexdiff

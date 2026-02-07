@@ -1,0 +1,8 @@
+--- waf.engine.orig	2019-09-25 21:46:01.000000000 +0200
++++ waf.engine	2019-10-29 22:24:53.626260000 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#! %%PYTHON_CMD%%
+ # encoding: latin-1
+ # Thomas Nagy, 2005-2018
+ #

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue May 30 22:51:24 2006
++++ Makefile.in	Tue May 30 22:51:27 2006
+@@ -6,7 +6,7 @@
+ # These are the names of the installed programs, in case you wish to change
+ # them.
+ #
+-CTAGS_PROG = ctags
++CTAGS_PROG = exctags
+ ETAGS_PROG = etags
+ 
+ # Set this to the path to your shell (must run Bourne shell commands).

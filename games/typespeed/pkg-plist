@@ -1,0 +1,27 @@
+@(,games,2555) bin/typespeed
+bin/typespeed-hs-conv
+@sample etc/typespeedrc.sample
+share/man/man6/typespeed.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%NLS%%share/locale/de_DE/LC_MESSAGES/typespeed.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/typespeed.mo
+%%NLS%%share/locale/it/LC_MESSAGES/typespeed.mo
+%%DATADIR%%/rules/rule.classic
+%%DATADIR%%/rules/rule.training
+%%DATADIR%%/rules/template
+%%DATADIR%%/words/words.csharp
+%%DATADIR%%/words/words.csharp_with_operators
+%%DATADIR%%/words/words.dos
+%%DATADIR%%/words/words.dut
+%%DATADIR%%/words/words.eng
+%%DATADIR%%/words/words.esp
+%%DATADIR%%/words/words.fin
+%%DATADIR%%/words/words.fra
+%%DATADIR%%/words/words.ger
+%%DATADIR%%/words/words.ita
+%%DATADIR%%/words/words.por
+%%DATADIR%%/words/words.prog
+%%DATADIR%%/words/words.tha
+%%DATADIR%%/words/words.unix
+@sample(,games,664) /var/games/typespeed/typespeed.score.sample
+@dir(,games,775) /var/games/typespeed

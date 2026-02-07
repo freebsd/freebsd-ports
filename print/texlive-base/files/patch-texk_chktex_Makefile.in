@@ -1,0 +1,35 @@
+--- texk/chktex/Makefile.in.orig	2024-07-12 16:22:16 UTC
++++ texk/chktex/Makefile.in
+@@ -127,10 +127,8 @@ CONFIG_CLEAN_VPATH_FILES =
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES = ChkTeX.t deweb.pl
+ CONFIG_CLEAN_VPATH_FILES =
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
+-	"$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(texmfdir)" \
+-	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(configdir)" \
+-	"$(DESTDIR)$(pdfdocdir)"
++am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texmfdir) \
++	"$(DESTDIR)$(man1dir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ am__chktex_SOURCES_DIST = @CHKTEX_TREE@/ChkTeX.c \
+ 	@CHKTEX_TREE@/ChkTeX.h @CHKTEX_TREE@/FindErrs.c \
+@@ -1464,7 +1462,7 @@ installdirs:
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(configdir)" "$(DESTDIR)$(pdfdocdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -1536,9 +1534,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-configDATA install-man \
+-	install-nodist_texmfSCRIPTS install-pdfdocDATA \
+-	install-texmfSCRIPTS
++install-data-am: install-man
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-am

@@ -1,0 +1,83 @@
+#!/bin/sh
+
+# PROVIDE: dkfilter_out
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dkfilter.out:
+#
+# dkfilter_out_enable="YES"
+#
+# Before you enable dkfilter.out, you also need to make your domainkey to
+# set it to DNS and configurate dkfilter_flags.
+#
+
+. /etc/rc.subr
+
+name="dkfilter_out"
+rcvar=dkfilter_out_enable
+
+# set defaults
+
+: ${dkfilter_out_enable="NO"}
+: ${dkfilter_out_flags=" --header \
+	--keyfile=%%PREFIX%%/etc/dkfilter/private.key \
+	--selector=selector1 --domain=example.org --method=nofws \
+	127.0.0.1:10027 127.0.0.1:10028"}
+: ${dkfilter_out_pidfile="/var/run/dkfilter_out.pid"}
+: ${dkfilter_out_user="dkfilter"}
+
+start_cmd="dkfilter_out_start"
+stop_cmd="dkfilter_out_stop"
+
+dkfilter_out_start()
+{
+	if [ -f ${dkfilter_out_pidfile} ]; then
+		echo "${name} already running?"
+		exit 1
+	fi 
+	echo "Starting ${name}."
+	logger -t ${name} "Starting ${name}."
+	tmpfile=`mktemp /tmp/dkfilter.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+	touch ${dkfilter_out_pidfile}
+	chown ${dkfilter_out_user} ${dkfilter_out_pidfile}
+	su -m ${dkfilter_out_user} -c "daemon -p ${dkfilter_out_pidfile} \
+		%%PREFIX%%/bin/dkfilter.out ${dkfilter_out_flags}" \
+		> /dev/null 2> ${tmpfile}
+	# wait until dkfilter start.
+	while true
+	do
+		filesize=`ls -l $tmpfile|awk '{print $5}'`
+		if [ ${filesize} -gt 0 ]; then
+			break
+		fi
+	done
+
+	logger -t ${name} `cat ${tmpfile}`
+	err=`grep Error ${tmpfile}`
+	if [ "${err}" ]; then
+		echo "Failed to start ${name}."
+		echo "${err}"
+		rm -f ${dkfilter_out_pidfile}
+	else
+		# To prevent DoS attack by dkfilter_out_user.
+		chown root:wheel ${dkfilter_out_pidfile}
+	fi
+	rm -f ${tmpfile}
+}
+
+dkfilter_out_stop()
+{
+	if [ ! -f ${dkfilter_out_pidfile} ]; then
+		echo "${name} not running?"
+		exit 1
+	fi
+	kill `cat ${dkfilter_out_pidfile}`
+	rm -f ${dkfilter_out_pidfile}
+	echo "Stopping ${name}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

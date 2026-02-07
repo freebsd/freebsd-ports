@@ -1,0 +1,40 @@
+commit 73bb8d9d92f689863c94d48517e89d35dae0ebcf
+Author: Jonathan Peyton <jonathan.l.peyton@intel.com>
+Date:   Wed May 8 09:23:50 2024 -0500
+
+    [OpenMP] Fix child processes to use affinity_none (#91391)
+    
+    When a child process is forked with OpenMP already initialized, the
+    child process resets its affinity mask and sets proc-bind-var to false
+    so that the entire original affinity mask is used. This patch corrects
+    an issue with the affinity initialization code setting affinity to
+    compact instead of none for this special case of forked children.
+    
+    The test trying to catch this only testing explicit setting of
+    KMP_AFFINITY=none. Add test run for no KMP_AFFINITY setting.
+    
+    Fixes: #91098
+
+diff --git openmp/runtime/src/kmp_settings.cpp openmp/runtime/src/kmp_settings.cpp
+index b9c8289b5c51..8b6092cb1085 100644
+--- openmp/runtime/src/kmp_settings.cpp
++++ openmp/runtime/src/kmp_settings.cpp
+@@ -6420,6 +6420,8 @@ void __kmp_env_initialize(char const *string) {
+         }
+         if ((__kmp_nested_proc_bind.bind_types[0] != proc_bind_intel) &&
+             (__kmp_nested_proc_bind.bind_types[0] != proc_bind_default)) {
++          if (__kmp_nested_proc_bind.bind_types[0] == proc_bind_false)
++            __kmp_affinity.type = affinity_none;
+           if (__kmp_affinity.type == affinity_default) {
+             __kmp_affinity.type = affinity_compact;
+             __kmp_affinity.flags.dups = FALSE;
+diff --git openmp/runtime/test/affinity/redetect.c openmp/runtime/test/affinity/redetect.c
+index dba83b72cc42..4b96d1bd92ee 100644
+--- openmp/runtime/test/affinity/redetect.c
++++ openmp/runtime/test/affinity/redetect.c
+@@ -1,4 +1,5 @@
+ // RUN: %libomp-compile
++// RUN: %libomp-run
+ // RUN: env KMP_AFFINITY=none %libomp-run
+ // REQUIRES: linux
+ 

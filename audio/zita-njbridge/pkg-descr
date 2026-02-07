@@ -1,0 +1,9 @@
+Command line Jack clients to transmit full quality multichannel audio over a
+local IP network, with adaptive resampling by the receiver(s). Zita-njbridge can
+be used for a one-to-one connection (using UDP) or in a one-to-many system
+(using multicast). Sender and receiver(s) can each have their own sample rate
+and period size, and no word clock sync between them is assumed. Up 64 channels
+can be transmitted, receivers can select any combination of these. On a lightly
+loaded or dedicated network zita-njbridge can provide low latency (same as for
+an analog connection). Additional buffering can be specified in case there is
+significant network delay jitter. IPv6 is fully supported.

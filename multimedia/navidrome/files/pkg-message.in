@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+
+To run Navidrome at startup, enable it in your /etc/rc.conf:
+sysrc navidrome_enable="YES"
+
+To start Navidrome:
+service navidrome start
+
+To configure Navidrome edit:
+%%ETCDIR%%/config.toml
+
+Navidrome will listen on port 4533 and bind to 127.0.0.1.  
+This can be changed in the configuration file above or by passing extra flags 
+using "navidrome_flags" in /etc/rc.conf.
+
+navidrome_flags="--address 0.0.0.0 --port 80"
+
+Navidrome is configured to scan for music under "%%DATADIR%%/music".  
+This can be changed in the configuration file or by adding "--musicfolder <path>" 
+to "navidrome_flags".
+
+EOM
+}
+]
+

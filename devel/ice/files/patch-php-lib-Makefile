@@ -1,0 +1,12 @@
+--- php/lib/Makefile.orig	2019-08-12 19:54:18 UTC
++++ php/lib/Makefile
+@@ -164,7 +164,8 @@ install:: $(ALL_SRCS)
+ 	@echo "Installing generated code"
+ 	@for i in $(MODULES) ; \
+ 	do \
+-	    $(INSTALL_DATA) -r $$i $(DESTDIR)$(install_phpdir) ; \
++	    mkdir -p $(DESTDIR)$(install_phpdir)/$$i ; \
++	    $(INSTALL_DATA) $$i/*.php $(DESTDIR)$(install_phpdir)/$$i ; \
+ 	done
+ 	@for i in $(MODULE_SRCS) ; \
+ 	do \

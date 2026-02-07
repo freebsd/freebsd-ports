@@ -1,0 +1,15 @@
+viewglob is an utility designed to complement the Unix shell in
+graphical environments. It has two parts:
+
+  1. A tool that sits as a layer between the shell and X terminal,
+     keeping track of the user's current directory and command line.
+  2. A graphical display which shows the layouts of directories
+     referenced on the command line (including pwd).
+
+The display reveals the results of file globs and expansions as they
+are typed (hence the name), highlighting selected files and potential
+name completions.
+
+It can also be used as a surrogate terminal, where keystrokes typed in
+the display are passed to the shell. Files and directories can be
+double-clicked to insert their names and/or paths into the terminal.

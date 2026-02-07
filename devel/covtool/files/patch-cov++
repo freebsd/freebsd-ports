@@ -1,0 +1,69 @@
+--- ./cov++.orig	2009-08-01 23:03:23.000000000 +0400
++++ ./cov++	2012-12-06 17:44:10.000000000 +0400
+@@ -18,8 +18,10 @@
+ #
+ #set -x
+ 
+-TOOLDIR=`dirname $0`
+-
++BINDIR=%%PREFIX%%/bin
++CFGDIR=%%PREFIX%%/etc
++OBJDIR=%%PREFIX%%/libexec/%%PORTNAME%%
++DATDIR=%%PREFIX%%/share/%%PORTNAME%%
+ #
+ # The command invocations for your compiler and linker can be
+ # specified in environment variables: COVTOOL_CC, COVTOOL_LN.
+@@ -45,7 +47,7 @@
+      -o "$COVTOOL_TMP" = "" \
+    ]
+ then
+-  . $TOOLDIR/cov++.cfg
++  . $CFGDIR/cov++.cfg
+ fi
+ 
+ mode=""  # compile or link.  Either -c or not -c
+@@ -56,7 +58,7 @@
+ 
+ help()
+ {
+-  . $TOOLDIR/covtool_version
++  . $DATDIR/covtool_version
+ 
+   echo ""
+   echo "$covtool_version"
+@@ -67,7 +69,7 @@
+   echo "    cov++ [g++ options, -CBG, -VER, -KEEP, -EXT, -CMP, or -skip options] ..."
+   echo "  Only 1 .c file can be specified.  Use .c extension, not .c++"
+   echo "  -skip options let you skip some instrumentations."
+-  echo "    see $TOOLDIR/README"
++  echo "    see $DATDIR/README"
+   echo "  example usage:"
+   echo "    cov++ -o progname -Da=b -I. -I.. -O2 file.c"
+   echo "  Note:  instrumentation data collection is turned off by default."
+@@ -92,7 +94,7 @@
+ fi
+ 
+ keep_intermediate_file=""
+-helper="$TOOLDIR/covtoolhelper.o"
++helper="$OBJDIR/covtoolhelper.o"
+ diag=""
+ 
+ while [ $# != 0 ]
+@@ -144,7 +146,7 @@
+     "-c") mode="$option"
+ 	  ;;
+ 	
+-    "-CBG") helper="$TOOLDIR/covtoolhelper_debug.o"
++    "-CBG") helper="$OBJDIR/covtoolhelper_debug.o"
+ 	    ;;
+ 
+ 
+@@ -213,7 +215,7 @@
+       diag="$diag $tmpfile"
+     fi
+ 
+-    eval "$COVTOOL_CC -E $preprocessor_options $cfiles | $TOOLDIR/covtool.exe -instrument $diag $skips >$tmpfile"
++    eval "$COVTOOL_CC -E $preprocessor_options $cfiles | $BINDIR/covtool -instrument $diag $skips >$tmpfile"
+     eval "$COVTOOL_CC $mode $gpp_options -fpermissive $tmpfile"
+     errorlevel=$?
+     if [ "$keep_intermediate_file" = "" ] ; then rm $tmpfile ; fi

@@ -1,0 +1,4 @@
+A fixed size dict like container which evicts Least Recently Used (LRU)
+items once size limit is exceeded. There are many python implementations
+available which does similar things. This is a fast and efficient C
+implementation. LRU maximum capacity can be modified at run-time.

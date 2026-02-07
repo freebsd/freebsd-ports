@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2021-09-12 16:33:58 UTC
++++ CMakeLists.txt
+@@ -101,6 +101,7 @@ set_property(CACHE
+              PROPERTY
+              STRINGS "Debug" "RelWithDebInfo" "Release" "MinSizeRel")
+ 
++if (FALSE)
+ # Creating and documenting TARGET_ARCHITECTURE cmake property
+ set(TARGET_ARCHITECTURE "${TARGET_ARCHITECTURE}"
+     CACHE
+@@ -112,6 +113,7 @@ if (NOT TARGET_ARCHITECTURE)
+       STRING "Target architecture used for -march (default is native)"
+       FORCE)
+ endif (NOT TARGET_ARCHITECTURE)
++endif()
+ 
+ set(HELIB_SP_NBITS "0" 
+     CACHE 
+@@ -176,7 +178,7 @@ endif (NOT PACKAGE_BUILD)
+ 
+ # Setting flag lists to avoid polluting CMAKE_CXX_FLAGS.
+ # PUBLIC_HELIB_CXX_FLAGS will be exported to the installed target.
+-set(PRIVATE_HELIB_CXX_FLAGS "-march=${TARGET_ARCHITECTURE}")
++#set(PRIVATE_HELIB_CXX_FLAGS "-march=${TARGET_ARCHITECTURE}")
+ set(PUBLIC_HELIB_CXX_FLAGS "")
+ # Add extra checks during build
+ if (PEDANTIC_BUILD)

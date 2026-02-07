@@ -1,0 +1,11 @@
+bin/wavbreaker
+bin/wavcli
+share/man/man1/wavbreaker.1.gz
+share/man/man1/wavcli.1.gz
+share/applications/net.sourceforge.wavbreaker.desktop
+share/icons/hicolor/scalable/apps/net.sourceforge.wavbreaker.svg
+share/locale/de/LC_MESSAGES/wavbreaker.mo
+share/locale/es/LC_MESSAGES/wavbreaker.mo
+share/locale/fr/LC_MESSAGES/wavbreaker.mo
+share/locale/pt/LC_MESSAGES/wavbreaker.mo
+share/metainfo/net.sourceforge.wavbreaker.appdata.xml

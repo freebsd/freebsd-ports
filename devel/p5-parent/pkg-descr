@@ -1,0 +1,9 @@
+Allows you to both load one or more modules, while setting up inheritance
+from those modules at the same time. Mostly similar in effect to
+
+    package Baz;
+    BEGIN {
+        require Foo;
+        require Bar;
+        push @ISA, qw(Foo Bar);
+    }

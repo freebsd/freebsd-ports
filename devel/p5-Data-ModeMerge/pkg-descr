@@ -1,0 +1,20 @@
+There are already several modules on CPAN to do recursive data structure
+merging, like Data::Merger and Hash::Merge. Data::ModeMerge differs in that it
+offers merging "modes" and "options". It provides greater flexibility on what
+the result of a merge between two data should/can be. This module may or may not
+be what you need.
+
+One application of this module is in handling configuration. Often there are
+multiple levels of configuration, e.g. in your typical Unix command-line program
+there are system-wide config file in /etc, per-user config file under ~/, and
+command-line options. It's convenient programatically to load each of those in a
+hash and then merge system-wide hash with the per-user hash, and then merge the
+result with the command-line hash to get the a single hash as the final
+configuration. Your program can from there on deal with this just one hash
+instead of three.
+
+In a typical merging process between two hashes (left-side and right-side), when
+there is a conflicting key, then the right-side key will override the left-side.
+This is usually the desired behaviour in our said program as the system-wide
+config is there to provide defaults, and the per-user config (and the
+command-line arguments) allow a user to override those defaults.

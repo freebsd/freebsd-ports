@@ -1,0 +1,5 @@
+Hangul Input Module for GTK+ 2.0
+
+Input method of GTK+ 2.0 widget. To select this modules, click
+right button in gtk20 text widget and select "Input Methods" -
+"Hangul" (not KSC5601).

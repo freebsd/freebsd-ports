@@ -1,0 +1,3 @@
+Generates true random passwords using /dev/urandom, with the
+emphasis on security over pronounceability. It can also encrypt
+plaintext passwords given in a temporary file.

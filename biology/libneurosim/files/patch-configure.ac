@@ -1,0 +1,53 @@
+--- configure.ac.orig	2020-11-11 16:11:31 UTC
++++ configure.ac
+@@ -1,7 +1,8 @@ AC_INIT(libneurosim, 1.2.0, [https://github.com/INCF/l
+ dnl Process this file with autoconf to produce configure.
+ AC_INIT(libneurosim, 1.2.0, [https://github.com/INCF/libneurosim/issues])
+-AM_INIT_AUTOMAKE
+-AM_CONFIG_HEADER([config.h])
++AM_INIT_AUTOMAKE([subdir-objects])
++AC_CONFIG_HEADERS([config.h])
++AC_CONFIG_MACRO_DIRS([m4])
+ AM_MAINTAINER_MODE
+ 
+ # Obtain host system type
+@@ -203,21 +204,10 @@ LDFLAGS=
+ NS_SET_LDFLAGS
+ LDFLAGS=
+ 
+-LT_PATH_LD
+ LT_CONFIG_LTDL_DIR([libltdl])
+-_LTDL_CONVENIENCE                 ## put libltdl into a convenience library
+ LT_INIT([dlopen])                 ## use libtool
+-m4_pattern_allow([LT_LIBEXT])     ## supress false positive message by autoconf
++LTDL_INIT([recursive])
+ 
+-if test "x$BUILD_SHARED" != xno ; then
+-  if test "x$LIBLTDL" != x ; then
+-    AC_DEFINE(HAVE_LIBLTDL, 1, [Havel libltdl, can load dynamic modules])
+-  fi
+-fi
+-
+-AC_CONFIG_SUBDIRS(libltdl)        ## also configure subdir containing libltdl
+-AC_PROG_LIBTOOL
+-
+ #-- Set the language to C++
+ AC_LANG_CPLUSPLUS
+ 
+@@ -237,15 +227,13 @@ AC_SUBST(PYTHON_INCLUDE)
+ AC_SUBST(MPI_LIBS)
+ AC_SUBST(MPI_INCLUDE)
+ AC_SUBST(PYTHON_INCLUDE)
+-AC_SUBST(INCLTDL)
+-AC_SUBST(LIBLTDL)
+-AC_SUBST(HAVE_LIBLTDL)
+ AC_SUBST(HAVE_MPI)
+ AC_SUBST(NEUROSIM_HAVE_MPI)
+ AC_SUBST(LIBADD_DL)
+ 
+ AC_CONFIG_FILES([
+   Makefile
++  libltdl/Makefile
+   neurosim/Makefile
+   neurosim/config.h
+   neurosim/version.h

@@ -1,0 +1,10 @@
+--- Makefile.orig	2022-01-22 19:25:56 UTC
++++ Makefile
+@@ -72,7 +72,6 @@ ifneq (, $(findstring x86_64, $(ARCH)))
+ 
+ INSTALLDIRLIB = $(INSTALLPREFIX)/$(LIBDIR)
+ ifneq (, $(findstring x86_64, $(ARCH)))
+-INSTALLDIRLIB = $(INSTALLPREFIX)/lib64
+ endif
+ 
+ INSTALLDIRBIN = $(INSTALLPREFIX)/bin

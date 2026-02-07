@@ -1,0 +1,4 @@
+Cpuid dumps detailed information about the CPU(s) gathered from the
+CPUID instruction, and also determines the exact model of CPU(s).
+It supports Intel, AMD, and VIA CPUs, as well as older Transmeta,
+Cyrix, UMC, NexGen, Rise, and SiS CPUs.

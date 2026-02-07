@@ -1,0 +1,8 @@
+--- usr/lib/byobu/time_binary.orig	2013-08-28 03:50:01 UTC
++++ usr/lib/byobu/time_binary
+@@ -172,3 +172,5 @@ fi
+ color k w
+ printf "%s" "$display_time"
+ color --
++
++# vi: syntax=sh ts=4 noexpandtab

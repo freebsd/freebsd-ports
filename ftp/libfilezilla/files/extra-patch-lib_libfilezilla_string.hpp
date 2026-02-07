@@ -1,0 +1,42 @@
+--- lib/libfilezilla/string.hpp.orig	2024-10-15 12:59:21 UTC
++++ lib/libfilezilla/string.hpp
+@@ -11,6 +11,39 @@
+ #include <string_view>
+ #include <vector>
+ 
++template<class CharT, class BaseT>
++class traits_cloner
++{
++public:
++	using char_type = CharT;
++
++	using base_type = BaseT;
++	using base_traits = std::char_traits<base_type>;
++
++	static std::size_t length(char_type const* s) {
++		return base_traits::length(reinterpret_cast<base_type const*>(s));
++	}
++	static int compare(char_type const* s1, char_type const* s2, std::size_t count) {
++		return base_traits::compare(reinterpret_cast<base_type const*>(s1), reinterpret_cast<base_type const*>(s2), count);
++	}
++	static char_type* copy(char_type* dest, char_type const* src, std::size_t count) {
++		return reinterpret_cast<char_type*>(base_traits::copy(reinterpret_cast<base_type*>(dest), reinterpret_cast<base_type const*>(src), count));
++	}
++	static void assign( char_type& c1, char_type const& c2 ) noexcept {
++	c1 = c2;
++	}
++	static char_type const* find(char_type const* ptr, std::size_t count, char_type const& ch) {
++		return reinterpret_cast<char_type const*>(base_traits::find(reinterpret_cast<base_type const*>(ptr), count, reinterpret_cast<base_type const&>(ch)));
++	}
++	static bool eq(char_type a, char_type b) {
++		return base_traits::eq(static_cast<base_type>(a), static_cast<base_type>(b));
++	}
++};
++
++template<>
++class std::char_traits<uint8_t> : public traits_cloner<uint8_t, char>
++{};
++
+ /** \file
+  * \brief String types and assorted functions.
+  *

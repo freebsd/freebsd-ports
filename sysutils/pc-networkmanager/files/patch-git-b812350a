@@ -1,0 +1,16 @@
+diff --git src/backend/NetDevice.cpp src/backend/NetDevice.cpp
+index bb3a047..eb1f320 100644
+--- src/backend/NetDevice.cpp
++++ src/backend/NetDevice.cpp
+@@ -169,11 +169,6 @@ QString NetDevice::mediaStatusAsString(){
+    QString status;
+ 
+    switch (IFM_TYPE(ifm.ifm_active)){
+-      case IFM_FDDI:
+-      case IFM_TOKEN:
+-         if (ifm.ifm_status & IFM_ACTIVE) status = "inserted";
+-         else status = "no ring";
+-         break;
+       case IFM_IEEE80211:
+          if (ifm.ifm_status & IFM_ACTIVE) status = "associated";
+          else status = "no carrier";

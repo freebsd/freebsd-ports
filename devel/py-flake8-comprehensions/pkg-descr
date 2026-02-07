@@ -1,0 +1,2 @@
+flake8-comprehensions is a flake8 plugin that helps you write better
+list/set/dict comprehensions.

@@ -1,0 +1,21 @@
+--- Makefile.in.orig	2008-12-31 02:29:12 UTC
++++ Makefile.in
+@@ -619,13 +619,15 @@ $(CLASSES): $(javafiles) $(TOP)/Makefile
+ #  install librxtxSerial.so into the proper directory and copy $(JARTARGET) to its
+ #  proper location
+ install: all
++	@$(MKDIR_P) $(DESTDIR)$(RXTX_PATH)
+ 	@$(LIBTOOL_INST) \
+ 	`for i in $(TARGETLIB);do \
+ 		if [ -f $$i ];then \
+-			echo $$i; \
++			echo $(TOP)/$$i; \
+ 		fi; \
+-	done` $(RXTX_PATH)
+-	$(INSTALL_PROGRAM) $(JARTARGET) $(JHOME)/
++	done` $(DESTDIR)$(RXTX_PATH)
++	@$(MKDIR_P) $(DESTDIR)$(JHOME)
++	$(BSD_INSTALL_DATA) $(JARTARGET) $(DESTDIR)$(JHOME)/
+ 
+ clean-generic:
+ 	rm -rf $(DEST) $(TOP)/$(CLASSTOP)

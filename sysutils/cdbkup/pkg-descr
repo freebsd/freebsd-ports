@@ -1,0 +1,10 @@
+CDBKUP is a professional-grade open-source package for
+backing up filesystems onto CD-Rs or CD-RWs.
+
+Features:
+
+Supports full or incremental backups.
+Results are stored as GNU tarballs on ISO 9660 filesystems.
+Excellent support for multi-session CDs.
+Large backups can be split between multiple CDs.
+Supports gzip, bzip2 or no compression.

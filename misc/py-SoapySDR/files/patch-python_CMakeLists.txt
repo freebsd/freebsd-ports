@@ -1,0 +1,11 @@
+--- ../python/CMakeLists.txt.orig	2018-06-19 07:11:01 UTC
++++ ../python/CMakeLists.txt
+@@ -121,7 +121,7 @@ set(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS}
+ ########################################################################
+ include(FeatureSummary)
+ include(CMakeDependentOption)
+-cmake_dependent_option(ENABLE_PYTHON "Enable python bindings" ON "ENABLE_LIBRARY;SWIG_FOUND;PYTHONINTERP_FOUND;PYTHONLIBS_FOUND;PYTHON_DEBUG_OK;PYTHON_VERSION_MATCH" OFF)
++option(ENABLE_PYTHON "Enable python bindings" ON)
+ add_feature_info(Python ENABLE_PYTHON "python bindings v${PYTHON_VERSION_STRING}")
+ if (NOT ENABLE_PYTHON)
+     return()

@@ -1,0 +1,74 @@
+--- Makefile.in.orig	2024-11-30 22:51:34.482725000 +0100
++++ Makefile.in	2024-11-30 22:57:25.793611000 +0100
+@@ -36,7 +36,7 @@
+ LIBDIR =  @libdir@
+
+ # /lib/ejabberd/
+-EJABBERDDIR = @libdir@/ejabberd
++EJABBERDDIR = @libdir@/erlang/lib/ejabberd-$(PORTVERSION)
+
+ # /share/doc/ejabberd
+ PACKAGE_TARNAME = @PACKAGE_TARNAME@
+@@ -80,7 +80,7 @@
+ LUADIR = $(PRIVDIR)/lua
+
+ # /var/lib/ejabberd/
+-SPOOLDIR = @localstatedir@/lib/ejabberd
++SPOOLDIR = @localstatedir@/spool/ejabberd
+
+ # /var/log/ejabberd/
+ LOGDIR = @localstatedir@/log/ejabberd
+@@ -283,7 +283,7 @@
+ LIBIX:=$(shell expr "$(DEPIX)" + 2)
+
+ ELIXIR_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 5,1000,$(1))
+-DEPS_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 3,1000,$(1))
++DEPS_TO_DEST=$(LIBDIR)/ejabberd-$(PORTVERSION)/lib $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 3,1000,$(1))
+ MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)
+ TO_DEST_SINGLE=$(if $(subst X$(DEPSBASE)X,,X$(word 1,$(1))X),$(call MAIN_TO_DEST,$(1)),$(if $(subst XlibX,,X$(word $(LIBIX),$(1))X),$(call DEPS_TO_DEST,$(wordlist $(DEPIX),1000,$(1))),$(call ELIXIR_TO_DEST,$(wordlist $(DEPIX),1000,$(1)))))
+ TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(DESTDIR)$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))
+@@ -436,6 +436,7 @@
+ 		-e "s*ERTS_VSN*# ERTS_VSN*g" \
+ 		-e "s*{{iexpath}}*${IEX}*g" \
+ 		-e "s*{{erl}}*${ERL}*g" \
++		-e "s*lib/erlang/lib/ejabberd*lib/erlang/lib/ejabberd-$(PORTVERSION)*" \
+ 		-e "s*{{epmd}}*${EPMD}*g" ejabberdctl.template \
+ 		> ejabberdctl.example
+
+@@ -453,17 +454,13 @@
+ 	#
+ 	# Configuration files
+ 	$(INSTALL) -d -m 750 $(G_USER) $(DESTDIR)$(ETCDIR)
+-	[ -f $(DESTDIR)$(ETCDIR)/ejabberd.yml ] \
+-		&& $(INSTALL) -b -m 640 $(G_USER) ejabberd.yml.example $(DESTDIR)$(ETCDIR)/ejabberd.yml-new \
+-		|| $(INSTALL) -b -m 640 $(G_USER) ejabberd.yml.example $(DESTDIR)$(ETCDIR)/ejabberd.yml
+-	[ -f $(DESTDIR)$(ETCDIR)/ejabberdctl.cfg ] \
+-		&& $(INSTALL) -b -m 640 $(G_USER) ejabberdctl.cfg.example $(DESTDIR)$(ETCDIR)/ejabberdctl.cfg-new \
+-		|| $(INSTALL) -b -m 640 $(G_USER) ejabberdctl.cfg.example $(DESTDIR)$(ETCDIR)/ejabberdctl.cfg
+-	$(INSTALL) -b -m 644 $(G_USER) inetrc $(DESTDIR)$(ETCDIR)/inetrc
++	$(INSTALL) -m 640 $(G_USER) ejabberd.yml.example $(DESTDIR)$(ETCDIR)
++	$(INSTALL) -b -m 640 $(G_USER) ejabberdctl.cfg.example $(DESTDIR)$(ETCDIR)
++	$(INSTALL) -b -m 644 $(G_USER) inetrc $(DESTDIR)$(ETCDIR)/inetrc.example
+ 	#
+ 	# Administration script
+ 	[ -d $(DESTDIR)$(SBINDIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(SBINDIR)
+-	$(INSTALL) -m 550 $(G_USER) ejabberdctl.example $(DESTDIR)$(SBINDIR)/ejabberdctl
++	$(INSTALL) -m 555 $(G_USER) ejabberdctl.example $(DESTDIR)$(SBINDIR)/ejabberdctl
+ 	# Elixir binaries
+ 	[ -d $(DESTDIR)$(BINDIR) ] || $(INSTALL) -d -m 755 $(DESTDIR)$(BINDIR)
+ 	[ -f $(DEPSDIR)/elixir/bin/iex ] && $(INSTALL) -m 550 $(G_USER) $(DEPSDIR)/elixir/bin/iex $(DESTDIR)$(BINDIR)/iex || true
+@@ -481,12 +478,14 @@
+ 	chmod -R 750 $(DESTDIR)$(LOGDIR)
+ 	#
+ 	# Documentation
++ifndef NOPORTDOCS
+ 	$(INSTALL) -d $(DESTDIR)$(MANDIR)
+ 	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
+ 	[ -f man/ejabberd.yml.5 ] \
+ 		&& $(INSTALL) -m 644 man/ejabberd.yml.5 $(DESTDIR)$(MANDIR) \
+ 		|| echo "Man page not included in sources"
+ 	$(INSTALL) -m 644 COPYING $(DESTDIR)$(DOCDIR)
++endif
+
+ #.
+ #' uninstall

@@ -1,0 +1,2 @@
+The Python bindings for the Perforce Client API provide convenient classes
+within Python for communicating with Perforce SCM servers.

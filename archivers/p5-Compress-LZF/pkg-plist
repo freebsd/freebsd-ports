@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Compress/LZF.pm
+%%SITE_ARCH%%/auto/Compress/LZF/LZF.so
+%%PERL5_MAN3%%/Compress::LZF.3.gz

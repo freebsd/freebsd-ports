@@ -1,0 +1,12 @@
+Fast and multi-purpose DNS toolkit allow to run multiple DNS queries.
+
+Features
+ - Query DNS records
+ - Brute force
+ - Custom resolver
+ - Multiple resolver format
+   - TCP
+   - UDP
+   - DOH
+   - DOT
+ - Automatic wildcard handling

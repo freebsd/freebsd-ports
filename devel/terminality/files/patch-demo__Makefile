@@ -1,0 +1,44 @@
+--- demo/Makefile.orig	2002-07-26 11:54:10 UTC
++++ demo/Makefile
+@@ -8,33 +8,32 @@
+ # Description: Terminality demos Makefile (Unix/ncurses)
+ # Author: Emil Mikulic, Michal Safranek
+ 
+-CC = gcc
+-CPP = g++
+-CFLAGS = -g -I.. -Wall
+-LIBS = -lncurses ../libtn.a
++CFLAGS += -I..
++CXXFLAGS += -I..
++LIBS = -lm -lncurses ../libtn.a
+ 
+ .SUFFIXES: .c .cpp .h
+ 
+ all: demo demo3d demoansi
+ 
+ ../libtn.a:
+-	(cd .. && make libtn.a)
++	(cd .. && ${MAKE} libtn.a)
+ 
+ demo: demo.o ../libtn.a Makefile
+-	$(CC) -o demo demo.o $(CFLAGS) $(LIBS) -lstdc++
++	$(CXX) -o demo demo.o $(CXXFLAGS) $(LIBS)
+ 
+ demo3d:	demo3d.o ../libtn.a precalc.o Makefile
+-	$(CC) -o demo3d demo3d.o precalc.o $(CFLAGS) $(LIBS) -lstdc++
++	$(CXX) -o demo3d demo3d.o precalc.o $(CFLAGS) $(LIBS)
+ 
+ demoansi: demoansi.o ../libtn.a precalc.o Makefile
+-	$(CC) -o demoansi demoansi.o precalc.o $(CFLAGS) $(LIBS)
++	$(CXX) -o demoansi demoansi.o precalc.o $(CFLAGS) $(LIBS)
+ 	rm -f precalc.dat
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ .cpp.o:
+-	$(CPP) $(CFLAGS) -c $<
++	$(CXX) $(CXXFLAGS) -c $<
+ 
+ clean:
+ 	rm -f core *~ *.o demo demo3d demoansi precalc.dat

@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/Parallel/Pvm.pm
+%%SITE_ARCH%%/auto/Parallel/Pvm/Pvm.so
+%%SITE_ARCH%%/auto/Parallel/Pvm/autosplit.ix
+%%SITE_ARCH%%/auto/Parallel/Pvm/code2symbol.al
+%%SITE_ARCH%%/auto/Parallel/Pvm/code2text.al
+%%PERL5_MAN3%%/Parallel::Pvm.3.gz

@@ -1,0 +1,11 @@
+--- support/graphics/Makefile.orig	2019-02-21 03:00:16 UTC
++++ support/graphics/Makefile
+@@ -22,7 +22,7 @@ z88dk-z80svg$(EXESUFFIX):	$(OBJS)
+ 	$(CC) -o z88dk-z80svg$(EXESUFFIX) $(CFLAGS) $(OBJS) $(LIBS)
+ 
+ install: z88dk-z80svg$(EXESUFFIX)
+-	$(INSTALL) z88dk-z80svg$(EXESUFFIX) $(PREFIX)/bin/z88dk-z80svg$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-z80svg$(EXESUFFIX) $(PREFIX)/bin/z88dk-z80svg$(EXESUFFIX)
+ 
+ clean:
+ 	$(RM) z88dk-z80svg$(EXESUFFIX) z80svg.o getopt/*.o core

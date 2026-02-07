@@ -1,0 +1,3 @@
+pytest-doctestplus contains a plugin for the pytest framework that provides
+advanced doctest support and enables the testing of various text files, such as
+reStructuredText (".rst"), markdown (".md"), and TeX (".tex").

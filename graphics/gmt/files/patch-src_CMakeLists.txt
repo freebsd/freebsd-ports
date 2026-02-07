@@ -1,0 +1,50 @@
+--- src/CMakeLists.txt.orig	2020-08-29 13:06:57 UTC
++++ src/CMakeLists.txt
+@@ -79,7 +79,7 @@ else (GDAL_TRANSLATE)
+ endif (GDAL_TRANSLATE)
+ 
+ # Find executables needed by movie
+-find_program (GM gm)
++find_program (GM gm PATHS ${CMAKE_INSTALL_PREFIX}/bin)
+ if (GM)
+ 	execute_process(COMMAND gm help OUTPUT_VARIABLE answer OUTPUT_STRIP_TRAILING_WHITESPACE)
+ 	string (REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" answer "${answer}")
+@@ -91,7 +91,7 @@ else (GM)
+ 	set (GMT_CONFIG_GM_MESSAGE "no" CACHE INTERNAL "GM config message")
+ endif (GM)
+ 
+-find_program (FFMPEG ffmpeg)
++find_program (FFMPEG ffmpeg PATHS ${CMAKE_INSTALL_PREFIX}/bin)
+ if (FFMPEG)
+ 	execute_process(COMMAND ffmpeg -version OUTPUT_VARIABLE answer OUTPUT_STRIP_TRAILING_WHITESPACE)
+ 	string (REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" answer "${answer}")
+@@ -103,7 +103,7 @@ endif (FFMPEG)
+ 
+ # Find executable needed by docs
+ if (LINUX)
+-	find_program (XDGOPEN xdg-open)
++	find_program (XDGOPEN xdg-open PATHS ${CMAKE_INSTALL_PREFIX}/bin)
+ 	if (XDGOPEN)
+ 		set (GMT_CONFIG_OPEN_MESSAGE "yes" CACHE INTERNAL "OPEN config message")
+ 	else (XDGOPEN)
+@@ -118,7 +118,7 @@ endif (LINUX)
+ if (WIN32)
+ 	set (GMT_CONFIG_GS_MESSAGE "yes" CACHE INTERNAL "GS config message")
+ else (WIN32)
+-	find_program (GS gs)
++	find_program (GS gs PATHS ${CMAKE_INSTALL_PREFIX}/bin)
+ 	if (GS)
+ 		execute_process(COMMAND gs --version OUTPUT_VARIABLE answer OUTPUT_STRIP_TRAILING_WHITESPACE)
+ 		set (GMT_CONFIG_GS_MESSAGE "yes (${answer})" CACHE INTERNAL "GS config message")
+@@ -526,6 +526,11 @@ target_link_libraries (gmtlib
+ 	${NETCDF_LIBRARIES}
+ 	${GMT_OPTIONAL_LIBRARIES}
+ 	pslib)
++
++IF (UNIX)
++  find_library (EXECINFO_LIBRARY NAMES execinfo)
++  TARGET_LINK_LIBRARIES(gmtlib ${EXECINFO_LIBRARY})
++ENDIF (UNIX)
+ 
+ if (HAVE_M_LIBRARY)
+ 	# link the math library

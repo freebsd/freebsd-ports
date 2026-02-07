@@ -1,0 +1,20 @@
+Unix provides the standard du utility, which scans your disk and tells you which
+directories contain the largest amounts of data. That can help you narrow your
+search to the things most worth deleting.
+
+However, that only tells you what's big. What you really want to know is what's
+too big. By itself, du won't let you distinguish between data that's big because
+you're doing something that needs it to be big, and data that's big because you
+unpacked it once and forgot about it.
+
+Most Unix file systems, in their default mode, helpfully record when a file was
+last accessed. Not just when it was written or modified, but when it was even
+read. So if you generated a large amount of data years ago, forgot to clean it
+up, and have never used it since, then it ought in principle to be possible to
+use those last-access time stamps to tell the difference between that and a
+large amount of data you're still using regularly.
+
+agedu is a program which does this. It does basically the same sort of disk scan
+as du, but it also records the last-access times of everything it scans. Then it
+builds an index that lets it efficiently generate reports giving a summary of
+the results for each subdirectory, and then it produces those reports on demand.

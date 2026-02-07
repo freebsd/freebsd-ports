@@ -1,0 +1,53 @@
+--- rltiles/Makefile.orig	2021-08-20 10:45:00 UTC
++++ rltiles/Makefile
+@@ -11,7 +11,6 @@ endif
+ # is not supported.  If host=target, contribs are enough.
+ 
+ PKGCONFIG = pkg-config
+-CFLAGS := -O2 $(STDFLAG) -g -Wall -Wextra -Wno-parentheses -Wno-unused-parameter
+ 
+ ifdef ANDROID
+   CXXFLAGS :=
+@@ -28,10 +27,10 @@ ifdef TILES
+     PNG_LIB := ../contrib/install/$(ARCH)/lib/libpng.a ../contrib/install/$(ARCH)/lib/libz.a
+   endif
+ 
+-  CFLAGS += $(PNG_INCLUDE)
++  CXXFLAGS += $(PNG_INCLUDE)
+   LDFLAGS += $(PNG_LIB)
+ 
+-  CFLAGS += -DUSE_TILE
++  CXXFLAGS += -DUSE_TILE
+ endif
+ 
+ ifdef DEBUG
+@@ -50,14 +49,14 @@ endif
+ 
+ # Attempt to use a full compiler name, to make
+ # distcc builds work nicely.
+-LMACH := $(shell gcc -dumpmachine)-
++LMACH := $(shell $(CC) -dumpmachine)-
+ ifeq ($(LMACH),-)
+ LMACH :=
+ endif
+-ifeq ($(shell which $(LMACH)gcc > /dev/null 2> /dev/null && echo "Yes"),)
++ifeq ($(shell which $(LMACH)$(CC) > /dev/null 2> /dev/null && echo "Yes"),)
+ LMACH :=
+ endif
+-HOSTCXX ?= $(LMACH)g++
++HOSTCXX ?= $(LMACH)$(CXX)
+ 
+ DELETE = rm -f
+ 
+@@ -131,9 +130,9 @@ clean:
+ distclean: clean
+ 
+ %.o: %.cc .cflags
+-	$(QUIET_HOSTCXX)$(HOSTCXX) $(CFLAGS) -MMD -c $< -o $@
++	$(QUIET_HOSTCXX)$(HOSTCXX) $(CXXFLAGS) -MMD -c $< -o $@
+ 
+ $(TILEGEN): $(OBJECTS)
+-	$(QUIET_HOSTLINK)$(HOSTCXX) $(CFLAGS) $(OBJECTS) -o $@ $(LDFLAGS)
++	$(QUIET_HOSTLINK)$(HOSTCXX) $(CXXFLAGS) $(OBJECTS) -o $@ $(LDFLAGS)
+ 
+ .PHONY: all clean distclean

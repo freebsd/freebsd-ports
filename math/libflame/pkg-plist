@@ -1,0 +1,5 @@
+include/FLAME.h
+lib/libflame.a
+lib/libflame.so
+lib/libflame.so.1
+lib/libflame.so.1.0.0

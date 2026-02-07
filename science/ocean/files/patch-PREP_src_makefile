@@ -1,0 +1,11 @@
+--- PREP/src/makefile.orig	2022-10-30 02:22:15 UTC
++++ PREP/src/makefile
+@@ -43,7 +43,7 @@ ocean_prep.o: ../../Modules/ai_kinds.mod ../../Modules
+ 
+ 
+ ocean_prep.x: $(OBJS)
+-	$(MPIFORT) $(OPTIONS) -o ocean_prep.x $(OBJS) $(MODOBJS) $(FFTWL) $(BLAS) $(FFTWL)
++	$(MPIFORT) $(MPI_LDFLAGS) $(OPTIONS) -o ocean_prep.x $(OBJS) $(MODOBJS) $(FFTWL) $(BLAS) $(FFTWL)
+ 
+ 
+ clean:

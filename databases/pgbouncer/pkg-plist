@@ -1,0 +1,7 @@
+bin/pgbouncer
+share/man/man1/pgbouncer.1.gz
+share/man/man5/pgbouncer.5.gz
+@sample etc/pgbouncer.ini.sample
+@sample etc/pgbouncer.users.sample
+@dir(%%PGBOUNCER_USER%%,%%PGBOUNCER_GROUP%%,) %%PGBOUNCER_LOGDIR%%
+@dir(%%PGBOUNCER_USER%%,%%PGBOUNCER_GROUP%%,) %%PGBOUNCER_RUNDIR%%

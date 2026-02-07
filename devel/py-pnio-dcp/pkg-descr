@@ -1,0 +1,4 @@
+A simple Python library to send and receive messages with the Profinet
+Discovery and basic Configuration Protocol (DCP) protocol. It can send requests
+and parse the corresponding responses to identify devices over the network, get
+and set their parameters or reset them to factory settings.

@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+  Edit /etc/rc.conf(.local) to start Gerbera automatically at system
+  startup. Command line arguments can be set via gerbera_args.
+
+  A sample configuration file is installed at the follow location:
+  %%PREFIX%%/etc/gerbera-config.xml.sample
+EOM
+}
+]

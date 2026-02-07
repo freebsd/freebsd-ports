@@ -1,0 +1,33 @@
+--- src/main/native/compression/CMakeLists.txt.orig	2024-07-04 12:14:50 UTC
++++ src/main/native/compression/CMakeLists.txt
+@@ -30,21 +30,7 @@ endif()
+ endif()
+ 
+ 
+-ExternalProject_Add(
+-   isalExternal
+-   URL ${CMAKE_CURRENT_SOURCE_DIR}/isa-l-master
+-   UPDATE_COMMAND <SOURCE_DIR>/autogen.sh
+-   CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --with-pic=yes ${CONFIG_OPT}
+-   BUILD_COMMAND $(MAKE)
+-   INSTALL_COMMAND $(MAKE) install
+-)
+ 
+-add_library(isal STATIC IMPORTED GLOBAL)
+-set_target_properties(isal PROPERTIES IMPORTED_LOCATION
+-  ${CMAKE_CURRENT_BINARY_DIR}/isalExternal-prefix/lib/libisal.a
+-)
+-
+-
+ #---------------------------------------------------------------------
+ # gkl_compression
+ #---------------------------------------------------------------------
+@@ -56,6 +42,6 @@ add_library(${TARGET} SHARED 
+   IntelDeflater.cc
+   IntelInflater.cc
+   )
+-add_dependencies(${TARGET} isalExternal otc_zlibExternal)
++add_dependencies(${TARGET} otc_zlibExternal)
+ target_link_libraries(${TARGET} zlibstatic isal)
+-install(TARGETS ${TARGET} DESTINATION ${CMAKE_BINARY_DIR})
++install(TARGETS ${TARGET} DESTINATION lib)

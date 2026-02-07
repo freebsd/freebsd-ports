@@ -1,0 +1,6 @@
+PyMSSQL is a MS-SQL database adapter for the Python programming
+language. It was written from scratch using FreeTDS library.
+
+This is the version 2 release branch.
+
+See also: https://github.com/pymssql/pymssql

@@ -1,0 +1,5 @@
+bin/crude
+bin/grude
+bin/rude
+share/man/man8/crude.8.gz
+share/man/man8/rude.8.gz

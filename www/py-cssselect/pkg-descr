@@ -1,0 +1,6 @@
+*cssselect* parses `CSS3 Selectors`_ and translate them to `XPath 1.0`_
+expressions. Such expressions can be used in lxml_ or another XPath engine
+to find the matching elements in an XML or HTML document.
+
+This module used to live inside of lxml as ``lxml.cssselect`` before it was
+extracted as a stand-alone project.

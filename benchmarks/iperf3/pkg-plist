@@ -1,0 +1,8 @@
+bin/iperf3
+include/iperf_api.h
+%%STATIC%%lib/libiperf.a
+lib/libiperf.so
+lib/libiperf.so.0
+lib/libiperf.so.0.0.0
+share/man/man1/iperf3.1.gz
+share/man/man3/libiperf.3.gz

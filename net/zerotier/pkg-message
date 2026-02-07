@@ -1,0 +1,36 @@
+[
+{ type: install
+  message: <<EOM
+Note that ZeroTier 1.4.6+ has a *new* license prohibiting commercial SaaS
+style usage, as well as excluding government organisations. Read the
+license details carefully to ensure your compliance.
+
+First start the zerotier service:
+
+service zerotier start
+
+To connect to a zerotier network:
+
+zerotier-cli join <network>
+
+If you are running other daemons or require firewall rules to depend on
+zerotier interfaces being available at startup, you may need to enable
+the following sysctl in /etc/sysctl.conf:
+
+net.link.tap.up_on_open=1
+
+This avoids a race condition where zerotier interfaces are created, but
+not up, prior to firewalls and services trying to use them.
+
+You can place optional configuration in /var/db/zerotier-one/local.conf
+as required, see documentation at https://www.zerotier.com/manual.shtml
+
+If your system boots from DHCP (such as a laptop), there is a new rc.conf
+flag that will require that system startup will wait until the zerotier
+network is established before proceeding. Note that this flag *does not*
+work for systems configured with statically assigned IP addresses, and
+these will hang indefinitely due to an irreducible loop in rc(8) startup
+files. This flag is disabled by default.
+EOM
+}
+]

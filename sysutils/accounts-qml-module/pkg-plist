@@ -1,0 +1,25 @@
+bin/tst_plugin
+%%QT_QMLDIR%%/SSO/OnlineAccounts/libAccounts.so
+%%QT_QMLDIR%%/SSO/OnlineAccounts/plugin.qmltypes
+%%QT_QMLDIR%%/SSO/OnlineAccounts/qmldir
+%%DATADIR%%/doc/html/.gitignore
+%%DATADIR%%/doc/html/onlineaccounts-qml-api.index
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-account-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-account.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-accountservice-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-accountservice.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-accountservicemodel-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-accountservicemodel.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-application-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-application.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-applicationmodel-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-applicationmodel.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-credentials-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-credentials.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-manager-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-manager.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-providermodel-members.html
+%%DATADIR%%/doc/html/qml-sso-onlineaccounts-providermodel.html
+%%DATADIR%%/doc/html/sso-onlineaccounts-qmlmodule.html
+%%DATADIR%%/doc/html/style/qtquick.css
+@dir %%DATADIR%%/doc/html/images

@@ -1,0 +1,13 @@
+--- Imakefile.orig	2002-12-06 16:48:21 UTC
++++ Imakefile
+@@ -37,8 +37,8 @@ OBJS            = main.o
+ SRCS            = main.c
+ OBJS            = main.o
+ 
+-ComplexProgramTarget(skkinput)
+-InstallAppDefaults(Skkinput)
++ComplexProgramTargetNoMan(skkinput3)
++/* InstallAppDefaults(Skkinput) */
+ 
+ ELISP_FILES     = init.el skk.el skk-startup.el skk-trial.el
+ 

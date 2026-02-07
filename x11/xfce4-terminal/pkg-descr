@@ -1,0 +1,4 @@
+Terminal is a modern terminal emulator for the Unix/Linux desktop,
+primarily for the Xfce desktop environment. It's a lightweight emulator
+based on the VTE widget, easy to use and provides an optional drop-down
+window.

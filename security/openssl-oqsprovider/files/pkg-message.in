@@ -1,0 +1,11 @@
+[
+{ type:install
+  message: <<EOM
+To enable oqs-provider in OpenSSL, merge contents of the configuration file
+%%PREFIX%%/openssl/oqsprovider.cnf with %%PREFIX%%/openssl/openssl.cnf.
+
+Expect issues if you're using OpenSSL < 3.2
+See https://github.com/open-quantum-safe/oqs-provider/blob/main/README.md#building-and-testing
+EOM
+}
+]

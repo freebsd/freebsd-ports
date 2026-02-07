@@ -1,0 +1,10 @@
+%%SITE_PERL%%/DBD/Mock/Pool/db.pm
+%%SITE_PERL%%/DBD/Mock/StatementTrack/Iterator.pm
+%%SITE_PERL%%/DBD/Mock/db.pm
+%%SITE_PERL%%/DBD/Mock/StatementTrack.pm
+%%SITE_PERL%%/DBD/Mock/st.pm
+%%SITE_PERL%%/DBD/Mock/dr.pm
+%%SITE_PERL%%/DBD/Mock/Session.pm
+%%SITE_PERL%%/DBD/Mock/Pool.pm
+%%SITE_PERL%%/DBD/Mock.pm
+%%PERL5_MAN3%%/DBD::Mock.3.gz

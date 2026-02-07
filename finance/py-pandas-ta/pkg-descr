@@ -1,0 +1,7 @@
+Pandas Technical Analysis (Pandas TA) is an easy to use library that leverages
+the Pandas package with more than 130 Indicators and Utility functions and more
+than 60 TA Lib Candlestick Patterns. Many commonly used indicators are included,
+such as: Candle Pattern(cdl_pattern), Simple Moving Average (sma) Moving Average
+Convergence Divergence (macd), Hull Exponential Moving Average (hma), Bollinger
+Bands (bbands), On-Balance Volume (obv), Aroon & Aroon Oscillator (aroon),
+Squeeze (squeeze) and many more.

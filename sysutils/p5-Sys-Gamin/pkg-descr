@@ -1,0 +1,6 @@
+Perl interface to Gamin (File Access Monitor implementation)
+Provides a somewhat higher-level and friendlier interface to the Gamin File
+Access Monitor API. This allows one to monitor both local and remote
+(NFS-mounted) files and directories for common filesystem events. To do so, you
+must register "monitors" on specified pathnames and wait for events to arrive
+pertaining to them.

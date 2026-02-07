@@ -1,0 +1,3 @@
+bin/nologinmsg
+share/man/man8/nologinmsg.8.gz
+@dir etc/nologinmsgs

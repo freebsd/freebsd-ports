@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/WWW/Declare.pm
+%%SITE_PERL%%/Test/WWW/Declare/Tester.pm
+%%PERL5_MAN3%%/Test::WWW::Declare.3.gz

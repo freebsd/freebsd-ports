@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-06-03 13:35:03 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 77.0.0"]
++requires = ["setuptools >= 63.1.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,7 +7,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "Command line tool for PostgreSQL server activity monitoring."
+ readme = "README.md"
+-license = "PostgreSQL"
++license = { text = "PostgreSQL" }
+ requires-python = ">=3.9"
+ authors = [
+     { name = "Julien Tachoires", email = "julmon@gmail.com" },

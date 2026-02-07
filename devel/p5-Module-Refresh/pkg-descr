@@ -1,0 +1,6 @@
+p5-Module-Refresh
+=================
+
+This module is a generalization of the functionality provided by
+Apache::StatINC. It's designed to make it easy to do simple
+iterative development when working in a persistent environment.

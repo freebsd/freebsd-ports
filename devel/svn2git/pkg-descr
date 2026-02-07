@@ -1,0 +1,4 @@
+"Importer for one time conversion from svn to git."
+
+The svn to git converter as used by KDE.  For practical examples on writing
+rules for conversion, see: http://gitorious.org/svn2git/kde-ruleset

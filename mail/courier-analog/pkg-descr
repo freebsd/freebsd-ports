@@ -1,0 +1,4 @@
+The courier log analyzer. courier-analog generates log summaries
+for incomming and outgoing SMTP connections, and IMAP and POP3
+    activity. courier-analog can generate output in text or
+    HTML format.

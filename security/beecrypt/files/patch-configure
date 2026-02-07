@@ -1,0 +1,28 @@
+--- configure	Mon Nov 29 13:50:41 2004
++++ configure	2014-04-27 14:31:36.000000000 -0400
+@@ -3008,7 +3005,7 @@
+     sparc*)
+       bc_target_arch=sparc
+       ;;
+-    x86_64)
++    x86_64|amd64)
+       bc_target_arch=x86_64
+       ;;
+     esac
+@@ -3120,7 +3121,4 @@
+ # Check for expert mode
+ if test "$ac_enable_expert_mode" = yes; then
+-
+-  # try to get the architecture from CFLAGS
+-  bc_target_arch=`echo $CFLAGS | awk '{for (i=1; i<=NF; i++) if (substr($i,0,7)=="-march=") print substr($i,8)}'`
+   # examine the other flags
+   for flag in `echo $CFLAGS`
+@@ -24015,6 +24012,8 @@
+                 ac_cv_java_include="-I$java_include -I$java_include/osf" ;;
+               solaris*)
+                 ac_cv_java_include="-I$java_include -I$java_include/solaris" ;;
++              freebsd*)
++                ac_cv_java_include="-I$java_include -I$java_include/freebsd" ;;
+               *)
+                 { $as_echo "$as_me:$LINENO: WARNING: please add appropriate -I$java_include/<operating system> flag" >&5
+ $as_echo "$as_me: WARNING: please add appropriate -I$java_include/<operating system> flag" >&2;}

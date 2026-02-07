@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: postgrey
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable postgrey:
+#
+# postgrey_enable (bool)        Set to 'YES' to enable
+#                               Default: NO
+# postgrey_dbdir (path)         Location of postgrey database files.
+#                               Default: %%POSTGREY_DBDIR%%
+# postgrey_flags (extra args)   Additional command-line parameters.
+#                               Default: --inet=10023
+#
+# Note:
+#
+# postgrey_flags must include a --inet or --unix option or postgrey will
+# not run.  Change the --dbdir option with postgrey_dbdir.  Please see
+# the postgrey(1) man page or perldoc postgrey for more information.
+
+. /etc/rc.subr
+
+name=postgrey
+rcvar=postgrey_enable
+
+load_rc_config $name
+
+: ${postgrey_enable:=NO}
+: ${postgrey_dbdir:=%%POSTGREY_DBDIR%%}
+: ${postgrey_flags:=--inet=10023}
+
+command=%%PREFIX%%/sbin/postgrey
+extra_commands=reload
+pidfile=%%POSTGREY_RUNDIR%%/postgrey.pid
+required_dirs="${postgrey_dbdir} %%POSTGREY_RUNDIR%%"
+
+command_args="-d --pidfile=${pidfile} --dbdir=${postgrey_dbdir}"
+
+run_rc_command "$1"

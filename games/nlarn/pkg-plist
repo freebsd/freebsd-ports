@@ -1,0 +1,9 @@
+bin/nlarn
+%%DATADIR%%/FiraMono-Medium.otf
+%%DATADIR%%/README.md
+%%DATADIR%%/fortune
+%%DATADIR%%/maze
+%%DATADIR%%/maze_doc.txt
+%%DATADIR%%/nlarn-128.bmp
+%%DATADIR%%/nlarn.hlp
+%%DATADIR%%/nlarn.msg

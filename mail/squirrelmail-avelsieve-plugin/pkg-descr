@@ -1,0 +1,3 @@
+Sieve Mail Filters for Squirrelmail (avelsieve) is a plugin for
+creating server-side filtering scripts on RFC 3028 compliant servers
+including Cyrus IMAP, DBMail, Dovecote and Exim 4.x.

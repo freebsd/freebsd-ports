@@ -1,0 +1,20 @@
+--- Makefile.orig	Mon Aug  7 02:48:48 1995
++++ Makefile	Sat Aug 15 17:06:43 1998
+@@ -1,14 +1,14 @@
+ #
+ # where you can find ASCII Nihongo TeX jfm files: min10.tfm ...
+-JFM = /usr/local/lib/tex/jfonts/jfm
++JFM ?= %%JFM%%
+ #
+ # where you can find NTT JTeX tfm files: dmjsy10.tfm ...
+ SUBTFM = /usr/local/lib/tex/jfonts/tfm
+ #
+ # where you can find afm files: Ryumin-Light-H ...
+-AFM = afm
++AFM ?= %%AFM%%
+ # builtin kanji fonts 
+-bkfonts = ${t1} ${t2}
++bkfonts = ${t1} ${t2} ${t3} ${t4}
+ t1=rml:Ryumin-Light-H:min:monokan
+ t2=gbm:GothicBBB-Medium-H:goth:monokan
+ t3=rmlv:Ryumin-Light-V:tmin:monokan-v

@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Net/Google/Analytics.pm
+%%SITE_PERL%%/Net/Google/Analytics/OAuth2.pm
+%%SITE_PERL%%/Net/Google/Analytics/Request.pm
+%%SITE_PERL%%/Net/Google/Analytics/Response.pm
+%%SITE_PERL%%/Net/Google/Analytics/Row.pm
+%%PERL5_MAN3%%/Net::Google::Analytics.3.gz
+%%PERL5_MAN3%%/Net::Google::Analytics::OAuth2.3.gz
+%%PERL5_MAN3%%/Net::Google::Analytics::Request.3.gz
+%%PERL5_MAN3%%/Net::Google::Analytics::Response.3.gz
+%%PERL5_MAN3%%/Net::Google::Analytics::Row.3.gz

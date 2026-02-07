@@ -1,0 +1,11 @@
+[
+{
+  type: upgrade
+  maximum_version: "0.10"
+  message: <<EOM
+Starting from version 0.10 the command swww init, previously deprecated, has
+been properly deleted. The correct way of initializing the daemon is calling
+swww-daemon directly.
+EOM
+}
+]

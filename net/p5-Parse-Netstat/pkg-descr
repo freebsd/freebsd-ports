@@ -1,0 +1,1 @@
+Parses the output from netstat, returning a easy to use hash.

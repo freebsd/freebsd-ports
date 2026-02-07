@@ -1,0 +1,13 @@
+The Mesh-Oriented datABase (MOAB) is a component for representing and evaluating
+mesh data. MOAB can store structured and unstructured mesh, consisting of
+elements in the finite element zoo plus polygons and polyhedra. The functional
+interface to MOAB is simple yet powerful, allowing the representation of many
+types of metadata commonly found on the mesh. MOAB is optimized for efficiency
+in space and time, based on access to mesh in chunks rather than through
+individual entities, while also versatile enough to support individual entity
+access. The MOAB library can naturally represent finite element and other types
+of mesh data. Various types of meta-data are often used in conjunction with
+a mesh. Examples include boundary condition groupings, material types, and
+provenance information for the mesh. Because the data model used in MOAB is so
+abstract, conventions are useful for describing how meta-data is stored into
+that data model.

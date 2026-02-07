@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: atop
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Define these atop_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/atop
+#
+# Add the following lines to /etc/rc.conf to enable atop in daemon mode:
+# atop_enable (bool):         Set to "NO" by default.
+#                             Set it to "YES" to enable atop in daemon mode
+# atop_interval (str):        Set to 10 by default
+#                             Interval for data capture.
+# atop_logdir (str):          Set to "%%LOGDIR%%".
+#                             Directory to store atop binary logs
+# atop_keepdays (str):        Set to 30 by default.
+#                             Number of days to keep the logs when "rotate"
+#                             command is running.
+# atop_flags (str):           Set to "" by default.
+#                             Extra flags passed to start command.
+#
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+. /etc/rc.subr
+
+name="atop"
+rcvar=atop_enable
+
+load_rc_config $name
+
+: ${atop_enable:=NO}
+: ${atop_logdir="%%LOGDIR%%"}
+: ${atop_interval=10}
+: ${atop_keepdays=30}
+
+pidfile=${atop_pidfile:-'/var/run/atop.pid'}
+
+command="%%PREFIX%%/bin/atop"
+extra_commands="rotate"
+start_cmd="atop_start"
+rotate_cmd="atop_rotate"
+
+atop_start()
+{
+    if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+	echo 1>&2 "${name} already running? (pid=$rc_pid)."
+	return 1
+    fi
+    echo "Starting ${name}."
+    /usr/sbin/daemon -p $pidfile ${command} -w ${atop_logdir}/atop_`date '+%Y%m%d'` ${atop_flags} ${atop_interval}
+    _run_rc_postcmd
+}
+
+atop_rotate()
+{
+    echo "Rotating logfile (${name})."
+    # write final sample and stop
+    sig_stop=SIGUSR2
+    /usr/bin/find $atop_logdir/ -name atop_???????? -mtime +${atop_keepdays} -exec rm {} \;
+    run_rc_command "restart"
+}
+
+run_rc_command "$1"

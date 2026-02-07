@@ -1,0 +1,11 @@
+--- configure.in	Wed Feb 11 14:14:15 2004
++++ configure.in	Tue May  4 08:53:58 2004
+@@ -16,7 +16,7 @@
+ 
+ AM_INIT_AUTOMAKE(docbook-utils, 0.6.14)
+ 
+-docdir='$(prefix)/doc'
++docdir='$(prefix)/share/doc'
+ AC_SUBST(docdir)
+ 
+ dnl Checks for programs.

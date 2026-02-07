@@ -1,0 +1,32 @@
+--- Makefile.orig	2017-06-12 14:07:35 UTC
++++ Makefile
+@@ -1,4 +1,5 @@
+-CXXFLAGS=-g -Wall -Wextra -DNDEBUG $(OPTFLAGS)
++CXXFLAGS+=-Wall -Wextra -DNDEBUG $(OPTFLAGS)
++CPPFLAGS+=$(shell pkg-config --cflags libcryptopp)
+ LIBS=$(OPTLIBS)
+ PREFIX?=/usr/local
+ CC=g++
+@@ -19,11 +20,11 @@ gmd: $(OBJECTS) src/gmdedit/gmdedit.o
+ dev: all
+ 	
+ gmd: $(OBJECTS) src/gmdedit/gmdedit.o
+-	$(CC) src/gmdedit/gmdedit.o src/mixid.o src/mix_db_gamedb.o src/mix_db_gmd.o \
++	$(CXX) $(CXXFLAGS) src/gmdedit/gmdedit.o src/mixid.o src/mix_db_gamedb.o src/mix_db_gmd.o \
+ 	-o build/gmdedit
+ 
+ mixkey: src/mixkey/mixkey.o src/mixkey/mix_dexoder.o
+-	$(CC) src/mixkey/mixkey.o src/mixkey/mix_dexoder.o -o build/mixkey -lcryptopp
++	$(CXX) $(CXXFLAGS) src/mixkey/mixkey.o src/mixkey/mix_dexoder.o -o build/mixkey $(shell pkg-config --libs libcryptopp)
+ 
+ win32:
+ 	/usr/bin/make -f Makefile.win32 CC=i586-mingw32msvc-g++ \
+@@ -31,7 +32,7 @@ $(TARGET): build $(OBJECTS)
+ 
+ 	
+ $(TARGET): build $(OBJECTS)
+-	$(CC) $(OBJECTS) -o $(TARGET) -lcryptopp
++	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(TARGET) $(shell pkg-config --libs libcryptopp)
+ 
+ build:
+ 	@mkdir -p build

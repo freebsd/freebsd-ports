@@ -1,0 +1,2 @@
+@sample etc/traff.conf.sample
+sbin/traff

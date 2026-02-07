@@ -1,0 +1,25 @@
+--- configure~	2010-04-16 11:53:12.000000000 +0000
++++ configure	2014-06-15 18:00:10.000000000 +0400
+@@ -5078,8 +5078,7 @@
+       fi
+     fi
+ 
+-    if test "$gt_use_preinstalled_gnugettext" = "yes" \
+-       || test "$nls_cv_use_gnu_gettext" = "yes"; then
++	if test "$USE_NLS" = "yes"; then
+ 
+ $as_echo "#define ENABLE_NLS 1" >>confdefs.h
+ 
+@@ -5104,12 +5104,6 @@
+ fi
+ 
+ 
+-if test "x$HAVE_MSGFMT" != "xyes"; then
+-  echo "  Please install the program \"msgfmt\" in advance."
+-  echo "  It is usually included in the package \"gettext\"."
+-  exit 1;
+-else :
+-fi
+ 
+ # Checks for source data files.
+ 

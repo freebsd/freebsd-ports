@@ -1,0 +1,10 @@
+%%PERL5_MAN3%%/Algorithm::FloodControl.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend::Cache::FastMmap.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend::Cache::Memcached.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend::Cache::Memcached::Fast.3.gz
+%%SITE_PERL%%/Algorithm/FloodControl.pm
+%%SITE_PERL%%/Algorithm/FloodControl/Backend.pm
+%%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/FastMmap.pm
+%%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached.pm
+%%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached/Fast.pm

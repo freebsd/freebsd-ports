@@ -1,0 +1,25 @@
+PORTNAME=	Template-Plugin-Filter-Minify-JavaScript-XS
+PORTVERSION=	0.94
+PORTREVISION=	1
+CATEGORIES=	textproc www perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	JavaScript::Minifier::XS filter for Template Toolkit
+WWW=		https://metacpan.org/release/Template-Plugin-Filter-Minify-JavaScript-XS
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-JavaScript-Minifier-XS>=0:textproc/p5-JavaScript-Minifier-XS \
+		p5-Template-Toolkit>=2:www/p5-Template-Toolkit
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

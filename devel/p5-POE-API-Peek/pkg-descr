@@ -1,0 +1,3 @@
+POE::API::Peek extends the POE::Kernel interface to provide clean access
+to Kernel internals in a cross-version compatible manner.  Other
+calculated data is also available.

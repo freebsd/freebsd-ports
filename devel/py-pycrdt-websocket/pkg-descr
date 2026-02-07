@@ -1,0 +1,17 @@
+Pycrdt-websocket is a Python library for building WebSocket servers and clients
+that connect and synchronize shared documents. It can be used to create
+collaborative web applications.
+
+The following diagram illustrates a typical architecture. The goal is to share a
+document among several clients.
+
+Each client has an instance of a Doc, representing their view of a document. A
+shared document also lives in a room on the server side. Conceptually, a room
+can be seen as the place where clients collaborate on a document. The WebSocket
+to which a client connects points to the corresponding room through the endpoint
+path. In the example below, clients A and B connect to a WebSocket at path
+room-1, and thus both clients find themselves in a room called room-1. All the
+Doc synchronization logic is taken care of by the WebsocketProvider.
+
+Each update to a shared document can be persisted to disk using a store, which
+can be a file or a database.

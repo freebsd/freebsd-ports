@@ -1,0 +1,3 @@
+Nautilus-python is a set of python bindings for the Nautilus Extension
+Framework. With these bindings, you can write extensions for the Nautilus File
+Manager in python.

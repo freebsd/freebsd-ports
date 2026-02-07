@@ -1,0 +1,8 @@
+include/delay.h
+include/optimize.h
+include/simlib.h
+include/simlib2D.h
+include/simlib3D.h
+include/zdelay.h
+lib/libsimlib.a
+lib/libsimlib.so

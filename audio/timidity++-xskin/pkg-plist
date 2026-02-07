@@ -1,0 +1,4 @@
+bin/xskinmidi
+%%TIMID_LIBDIR%%/if_xskin.so
+%%PORTDOCS%%%%DOCSDIR%%/README.xskin
+%%PORTDOCS%%share/doc/ja/timidity++/README.xskin

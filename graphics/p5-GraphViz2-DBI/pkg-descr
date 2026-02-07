@@ -1,0 +1,1 @@
+GraphViz2::DBI takes a database handle, and graphs the schema.

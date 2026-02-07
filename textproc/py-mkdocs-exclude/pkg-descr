@@ -1,0 +1,2 @@
+Plugin for MkDocs that allows you to exclude files from your input using
+unix-style wildcards (globs) or regular expressions (regexps).

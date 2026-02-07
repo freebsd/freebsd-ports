@@ -1,0 +1,3 @@
+This module implements a DateTime::Format module
+that can read Japanese date notations and create a
+DateTime object, and vice versa.

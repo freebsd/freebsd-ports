@@ -1,0 +1,8 @@
+IO::Null
+========
+
+Calling a constructor of this class always succeeds, returning a new
+null filehandle. Writing to any object of this class is always a no-
+operation, and returns true. Reading from any object of this class is
+always nooperation, and returns empty-string or empty-list, as
+appropriate.

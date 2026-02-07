@@ -1,0 +1,2 @@
+XString provides the B string helpers in one isolated package. Right now only
+cstring and perlstring are available.

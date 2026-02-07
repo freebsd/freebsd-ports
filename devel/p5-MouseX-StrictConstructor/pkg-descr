@@ -1,0 +1,2 @@
+MouseX::StrictConstructor is a Perl module to make your object constructors
+blow up on unknown attributes.

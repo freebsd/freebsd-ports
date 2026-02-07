@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2024-08-04 05:15:09 UTC
++++ CMakeLists.txt
+@@ -20,7 +20,7 @@ include(ccache)
+ 
+ ## set install variables
+ # prefix for systemwide configuration, accompanies CMAKE_INSTALL_PREFIX
+-set(CMAKE_INSTALL_SYSCONF_PREFIX "/etc" CACHE PATH
++set(CMAKE_INSTALL_SYSCONF_PREFIX "${CMAKE_INSTALL_PREFIX}/etc" CACHE PATH
+     "Top-level install path for configuration files. May be given relative to CMAKE_INSTALL_PREFIX.")
+ 
+ set(CONFIGDIR "${CMAKE_INSTALL_SYSCONF_PREFIX}/xdg/herbstluftwm")
+@@ -34,7 +34,7 @@ set(ZSHCOMPLETIONDIR ${DATADIR}/zsh/site-functions
+     CACHE PATH "Install path for xsession file")
+ set(ZSHCOMPLETIONDIR ${DATADIR}/zsh/site-functions
+     CACHE PATH "Install path for zsh completions file")
+-set(FISHCOMPLETIONDIR ${DATADIR}/fish/vendor_completions.d
++set(FISHCOMPLETIONDIR ${DATADIR}/fish/completions
+     CACHE PATH "Install path for fish completions file")
+ set(BASHCOMPLETIONDIR ${DATADIR}/bash-completion/completions
+     CACHE PATH "Install path for bash completions file")
+@@ -47,7 +47,6 @@ install(FILES NEWS DESTINATION ${DOCDIR})
+ 
+ ## install everything that was not installed from subdirectories
+ install(FILES NEWS DESTINATION ${DOCDIR})
+-install(FILES LICENSE DESTINATION ${LICENSEDIR})
+ install(DIRECTORY scripts/ DESTINATION ${DOCDIR}/examples USE_SOURCE_PERMISSIONS)
+ 
+ # vim: et:ts=4:sw=4

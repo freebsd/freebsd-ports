@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Config/INI.pm
+%%SITE_PERL%%/Config/INI/Reader.pm
+%%SITE_PERL%%/Config/INI/Writer.pm
+%%PERL5_MAN3%%/Config::INI.3.gz
+%%PERL5_MAN3%%/Config::INI::Reader.3.gz
+%%PERL5_MAN3%%/Config::INI::Writer.3.gz

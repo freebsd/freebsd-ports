@@ -1,0 +1,11 @@
+--- Docs/man/Makefile.in.orig	2015-06-15 14:14:28 UTC
++++ Docs/man/Makefile.in
+@@ -282,7 +282,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-man_MANS = gnokii.1 sendsms.1 gnokiid.8 mgnokiidev.8 xgnokii.1x
++man_MANS = gnokii.1 sendsms.1 gnokiid.8 mgnokiidev.8 xgnokii.1
+ EXTRA_DIST = $(man_MANS)
+ all: all-am
+ 

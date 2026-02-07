@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/File/Map.pm
+%%SITE_ARCH%%/auto/File/Map/Map.so
+%%PERL5_MAN3%%/File::Map.3.gz

@@ -1,0 +1,2 @@
+DefaultGroup is a sub class of click.Group. But it invokes a default subcommand
+instead of showing a help message when a subcommand is not passed.

@@ -1,0 +1,14 @@
+bin/xldlas
+share/man/man1/xldlas.1.gz
+%%DATADIR%%/help/analysis.help
+%%DATADIR%%/help/data.help
+%%DATADIR%%/help/file.help
+%%DATADIR%%/help/general.help
+%%DATADIR%%/help/graph.help
+%%DATADIR%%/help/license.help
+%%DATADIR%%/help/log.help
+%%DATADIR%%/help/tutorial.help
+%%DATADIR%%/help/tutorial_data.lda
+%%DATADIR%%/help/test.help
+%%DATADIR%%/help/filter.help
+%%DATADIR%%/help/.directory

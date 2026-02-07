@@ -1,0 +1,5 @@
+Bvi stands for "Binary VIsual editor".  Bvi is a screen-oriented
+editor for binary files; its command set is based on that of the
+vi(1) text editor.  As a binary editor does not have the concept
+of "lines", there are differences from vi commands wherever the
+latter are line oriented.

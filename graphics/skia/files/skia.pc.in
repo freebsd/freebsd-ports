@@ -1,0 +1,11 @@
+prefix=%%LOCALBASE%%
+exec_prefix=\${prefix}
+libdir=\${exec_prefix}/lib
+includedir=\${prefix}/include/skia
+
+Name: skia
+Version: %%SKIA_VERSION%%
+Description: Library for computation using data flow graphs for scalable machine learning
+Requires:
+Libs: -L\${libdir} -lskia
+Cflags: -I\${includedir}

@@ -1,0 +1,4 @@
+Tinyauth is a simple authentication middleware that adds a simple
+login screen or OAuth with Google, Github and any provider to all
+of your docker apps. It supports all the popular proxies like
+Traefik, Nginx and Caddy.

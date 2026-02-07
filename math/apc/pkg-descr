@@ -1,0 +1,17 @@
+        the Auto Payment Calculator V1.0 Release
+	Copyright (C) 1997  Eric A. Griff
+
+Auto Payment Calculator is a simple, xforms based, application for
+use under the X-windows system, that calculates auto loan payments.
+
+It is pretty straight forward. You enter the Principal (Amount),
+Term (in months), and Rate, and then with either [RETURN]
+(or [enter] or whatever your keyboard equivelent is),  (ALT-C), or
+clicking the calculate button; you will have the payment in months,
+as well as number of weeks, and weekly payment.
+
+You may also [TAB] through the Amount, Term, and Rate, as well as
+hold down ALT and press the character in its Name that is underlined
+to go do that function. As long as all three are filled in, you may
+hit [ENTER] to Calculate right there. This makes it easy to cycle
+quickly through numerous terms, amounts, and rates.

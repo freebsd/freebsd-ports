@@ -1,0 +1,9 @@
+--- doc/Makefile.am.orig	2016-08-27 09:36:16 UTC
++++ doc/Makefile.am
+@@ -3,5 +3,5 @@
+ man_MANS = portfwd.8 portfwd.cfg.5
+ noinst_DATA = INSTALL.configure
+ 
+-docdir = $(prefix)/doc/portfwd
++docdir = $(prefix)/share/doc/portfwd
+ doc_DATA = FAQ conf.txt

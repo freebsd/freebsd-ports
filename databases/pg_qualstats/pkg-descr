@@ -1,0 +1,2 @@
+pg_qualstats is a PostgreSQL extension keeping statistics on predicates found
+in WHERE statements and JOIN clauses.

@@ -1,0 +1,30 @@
+Don't generate debuginfo as the binaries will be stripped
+
+--- Cargo.toml.orig	2025-10-15 13:35:33 UTC
++++ Cargo.toml
+@@ -96,25 +96,6 @@ panic = "abort"          # don't need unwinding so we 
+ lto = true
+ debug = false
+ panic = "abort"          # don't need unwinding so we can skip including the landing pads for that
+-# line tables so we can have useful backtraces for in-house crates
+-[profile.release.package."veloren-network"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-network-protocol"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-common"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-common-systems"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-client"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-server"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-server-cli"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-voxygen"]
+-debug = "line-tables-only"
+-[profile.release.package."veloren-world"]
+-debug = "line-tables-only"
+ 
+ [profile.release-thinlto]
+ inherits = 'release'

@@ -1,0 +1,6 @@
+A Pluggable Terraform Linter
+
+Features
+ - Find possible errors
+ - Warn about deprecated syntax, unused declarations
+ - Enforce best practices, naming conventions

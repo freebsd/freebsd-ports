@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2017-02-07 12:14:17 UTC
++++ CMakeLists.txt
+@@ -12,9 +12,12 @@ endif()
+ include(CheckCCompilerFlag)
+ check_c_compiler_flag("-mno-unaligned-access" CC_HAS_MNO_UNALIGNED_ACCESS)
+ 
+-add_library(msgpuck STATIC msgpuck.c hints.c)
+-set_target_properties(msgpuck PROPERTIES VERSION 1.0 SOVERSION 1)
+-set_target_properties(msgpuck PROPERTIES OUTPUT_NAME "msgpuck")
++add_library(msgpuck_shared SHARED msgpuck.c hints.c)
++set_target_properties(msgpuck_shared PROPERTIES VERSION 1.0 SOVERSION 1)
++set_target_properties(msgpuck_shared PROPERTIES OUTPUT_NAME "msgpuck")
++add_library(msgpuck_static STATIC msgpuck.c hints.c)
++set_target_properties(msgpuck_static PROPERTIES VERSION 1.0 SOVERSION 1)
++set_target_properties(msgpuck_static PROPERTIES OUTPUT_NAME "msgpuck")
+ 
+ if (NOT ${PROJECT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
+     # Embedded mode, skip tests, documentation and the install targets
+@@ -32,7 +35,11 @@ endif()
+ add_subdirectory(test)
+ 
+ include(GNUInstallDirs)
+-install(TARGETS msgpuck
++install(TARGETS msgpuck_shared
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    COMPONENT library)
++install(TARGETS msgpuck_static
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     COMPONENT library)

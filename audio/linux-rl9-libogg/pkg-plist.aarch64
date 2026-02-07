@@ -1,0 +1,6 @@
+usr/lib64/libogg.so.0
+usr/lib64/libogg.so.0.8.4
+%%PORTDOCS%%usr/share/doc/libogg/AUTHORS
+%%PORTDOCS%%usr/share/doc/libogg/CHANGES
+%%PORTDOCS%%usr/share/doc/libogg/COPYING
+%%PORTDOCS%%usr/share/doc/libogg/README.md

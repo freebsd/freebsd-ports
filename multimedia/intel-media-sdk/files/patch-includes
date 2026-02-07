@@ -1,0 +1,29 @@
+Adjust includes in various places.
+
+samples/sample_encode/src/sample_encode.cpp:1673:52: error: no member named 'ceil' in namespace 'std'
+        pParams->nBitRateMultiplier = (mfxU16)std::ceil(static_cast<double>(maxVal) / mfxU16Limit);
+                                              ~~~~~^
+samples/sample_multi_transcode/src/transcode_utils.cpp:3012:55: error: no member named 'ceil' in namespace 'std'
+        InputParams.nBitRateMultiplier = (mfxU16)std::ceil(static_cast<double>(maxVal) / mfxU16Limit);
+                                                 ~~~~~^
+
+--- samples/sample_encode/src/sample_encode.cpp.orig	2021-11-25 14:02:45 UTC
++++ samples/sample_encode/src/sample_encode.cpp
+@@ -19,6 +19,7 @@ or https://software.intel.com/en-us/media-client-solut
+ 
+ #include "mfx_samples_config.h"
+ 
++#include <cmath>
+ #include <memory>
+ #include "pipeline_encode.h"
+ #include "pipeline_user.h"
+--- samples/sample_multi_transcode/src/transcode_utils.cpp.orig	2021-11-25 14:02:45 UTC
++++ samples/sample_multi_transcode/src/transcode_utils.cpp
+@@ -36,6 +36,7 @@ or https://software.intel.com/en-us/media-client-solut
+ 
+ #include "version.h"
+ 
++#include <cmath>
+ #include <vector>
+ #include <fstream>
+ #include <sstream>

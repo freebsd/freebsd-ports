@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# Start or stop noattach
+
+# PROVIDE: noattach
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+# Define these noattach_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/noattach
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# noattach_flags Flags to noattach
+
+. /etc/rc.subr
+
+name="noattach"
+desc="Noattach Milter Daemon"
+rcvar="noattach_enable"
+
+load_rc_config $name
+
+: ${noattach_enable:="NO"}
+: ${noattach_pidfile:="/var/run/noattach.pid"}
+: ${noattach_socket:="/var/run/noattach"}
+command="%%PREFIX%%/libexec/${name}"
+required_files="%%PREFIX%%/etc/noattach.patterns"
+start_precmd="noattach_prestart"
+stop_postcmd="noattach_poststop"
+reload_cmd="noattach_reload"
+extra_commands="reload"
+pidfile="${noattach_pidfile}"
+command_args="-p local:${noattach_socket} ${noattach_flags}"
+
+noattach_prestart()
+{
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+noattach_poststop()
+{
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+noattach_reload()
+{
+	kill -USR1 `head -1 "${pidfile}"`
+}
+
+run_rc_command "$1"

@@ -1,0 +1,63 @@
+sbin/ntpa
+sbin/ntpac
+sbin/ntpag
+sbin/ntpav
+libexec/ntpa/MySql.Data.dll
+libexec/ntpa/Npgsql.dll
+libexec/ntpa/Ntp.Analyzer.dll
+libexec/ntpa/Ntp.Analyzer.Cli.exe
+libexec/ntpa/Ntp.Analyzer.Data.dll
+libexec/ntpa/Ntp.Analyzer.Import.dll
+libexec/ntpa/Ntp.Analyzer.Monitor.Client.dll
+libexec/ntpa/Ntp.Analyzer.Monitor.Cli.exe
+libexec/ntpa/Ntp.Analyzer.Monitor.Server.dll
+libexec/ntpa/Ntp.Analyzer.Objects.dll
+libexec/ntpa/Ntp.Analyzer.Process.dll
+libexec/ntpa/Ntp.Analyzer.Validate.Cli.exe
+libexec/ntpa/Ntp.Analyzer.Validate.Gui.exe
+libexec/ntpa/Ntp.Common.dll
+libexec/ntpa/Ntp.Data.dll
+libexec/ntpa/Ntp.Data.Provider.dll
+share/man/man1/ntpa.1.gz
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/DATABASE
+%%DOCSDIR%%/INSTALL
+@dir etc/newsyslog.conf.d
+@sample %%ETCDIR%%/ntpa.newsyslog etc/newsyslog.conf.d/ntpa.conf
+@sample(,ntpa,640) %%ETCDIR%%/ntpa.conf.sample
+@owner www
+@group www
+%%WEBFILES%%%%WWWDIR%%/index.html
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.css.map
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.min.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap.min.css.map
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.css.map
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.min.css
+%%WEBFILES%%%%WWWDIR%%/css/bootstrap-theme.min.css.map
+%%WEBFILES%%%%WWWDIR%%/css/graph.css
+%%WEBFILES%%%%WWWDIR%%/css/host.css
+%%WEBFILES%%%%WWWDIR%%/css/peer.css
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.eot
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.svg
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.ttf
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff
+%%WEBFILES%%%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff2
+%%WEBFILES%%%%WWWDIR%%/js/bootstrap.js
+%%WEBFILES%%%%WWWDIR%%/js/bootstrap.min.js
+%%WEBFILES%%%%WWWDIR%%/js/jquery.js
+%%WEBFILES%%%%WWWDIR%%/js/jquery.min.js
+%%WEBFILES%%%%WWWDIR%%/js/npm.js
+@owner
+@group
+%%EXAMPLESDIR%%/graph.conf
+%%EXAMPLESDIR%%/ntpd.conf
+%%EXAMPLESDIR%%/openntp.conf
+%%EXAMPLESDIR%%/small.conf
+%%WEBFILES%%@dir(www,ntpa,775) %%WWWDIR%%
+%%WEBFILES%%@dir(www,www,) %%WWWDIR%%/css
+%%WEBFILES%%@dir(www,www,) %%WWWDIR%%/fonts
+%%WEBFILES%%@dir(www,www,) %%WWWDIR%%/js
+@dir(ntpa,ntpa,750) /var/log/ntpa
+@dir(ntpa,ntpa,755) /var/run/ntpa

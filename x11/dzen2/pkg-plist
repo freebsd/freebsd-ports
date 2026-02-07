@@ -1,0 +1,13 @@
+bin/dzen2
+%%GADGETS%%bin/dbar
+%%GADGETS%%bin/gcpubar
+%%GADGETS%%bin/gdbar
+%%GADGETS%%bin/textwidth
+%%DOCSDIR%%/README.dzen
+%%GADGETS%%%%DOCSDIR%%/README.dbar
+%%GADGETS%%%%DOCSDIR%%/README.gcpubar
+%%GADGETS%%%%DOCSDIR%%/README.gdbar
+%%GADGETS%%%%DOCSDIR%%/README.kittscanner
+%%GADGETS%%%%DOCSDIR%%/README.textwidth
+%%EXAMPLES%%%%EXAMPLESDIR%%/kittscanner.sh
+%%EXAMPLES%%%%EXAMPLESDIR%%/noisyalert.sh

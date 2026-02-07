@@ -1,0 +1,11 @@
+--- dtruss.orig	2018-06-18 09:22:32 UTC
++++ dtruss
+@@ -270,7 +270,7 @@ syscall::sigprocmask:return
+ /* print 3 args, arg0 as a string */
+ syscall::access*:return,
+ syscall::stat*:return, 
+-syscall::lstat*:return, 
++syscall::*lstat*:return, 
+ syscall::readlink*:return,
+ syscall::open*:return
+ /self->start/

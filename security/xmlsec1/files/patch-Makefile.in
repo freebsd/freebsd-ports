@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2023-12-08 23:22:46 UTC
++++ Makefile.in
+@@ -504,7 +504,7 @@ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ bin_SCRIPTS = xmlsec1-config
+ pkgconfig_DATA = xmlsec1.pc @XMLSEC_CRYPTO_PC_FILES_LIST@
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = xmlsec1Conf.sh
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = xmlsec1.m4

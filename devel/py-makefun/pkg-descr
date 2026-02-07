@@ -1,0 +1,3 @@
+makefun helps you create functions dynamically, with the signature of your
+choice. It was largely inspired by decorator and functools, and created mainly
+to cover some of their limitations.

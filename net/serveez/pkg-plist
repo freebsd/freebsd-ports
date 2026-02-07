@@ -1,0 +1,17 @@
+bin/serveez
+bin/serveez-config
+include/libserveez.h
+lib/libserveez.a
+lib/libserveez.so
+lib/libserveez.so.1
+lib/libserveez.so.1.1.0
+share/man/man1/serveez.1.gz
+share/man/man1/serveez-config.1.gz
+share/aclocal/serveez.m4
+%%DATADIR%%/echo-server.scm
+%%DATADIR%%/eval-server.scm
+%%DATADIR%%/icecast-server.scm
+%%DATADIR%%/inetd.scm
+%%DATADIR%%/mandel-client.scm
+%%DATADIR%%/mandel-server.scm
+%%DATADIR%%/mandel-shared.scm

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Chemistry/File/SMILES.pm
+%%SITE_PERL%%/Chemistry/File/write.pl
+%%PERL5_MAN3%%/Chemistry::File::SMILES.3.gz

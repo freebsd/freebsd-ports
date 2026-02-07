@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2016-04-03 04:55:23 UTC
++++ src/Makefile.am
+@@ -81,7 +81,7 @@ endif
+ if OSS
+ if !WINDOWS
+ pd_CFLAGS += -DUSEAPI_OSS
+-pd_SOURCES += s_audio_oss.c s_midi_oss.c
++pd_SOURCES += s_audio_oss.c s_midi_oss_pm.c
+ endif
+ endif
+ 

@@ -1,0 +1,11 @@
+bin/nwg-look
+share/applications/nwg-look.desktop
+%%DATADIR%%/langs/cs_CZ.json
+%%DATADIR%%/langs/en_US.json
+%%DATADIR%%/langs/ja_JP.json
+%%DATADIR%%/langs/pl_PL.json
+%%DATADIR%%/langs/ru_RU.json
+%%DATADIR%%/langs/tr_TR.json
+%%DATADIR%%/langs/zh_CN.json
+%%DATADIR%%/main.glade
+share/pixmaps/nwg-look.svg

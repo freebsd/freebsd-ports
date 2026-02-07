@@ -1,0 +1,18 @@
+To run:
+
+Simply type xscrabble. This will bring up the setup box which will allow
+you to enter the names and displays and other info for the game to wish
+to play. Then click on the Start Game button, (or Load Previous if you're
+restarting a game). The main program, xscrab, will then be automatically
+called with the appropriate options.
+
+The game is saved after every turn (in "~/.xscrabble.save" of the
+person running it) and can be restarted by running xscrabble, entering
+exactly the same info, and hitting the Load Previous button.
+
+This was a student project, and there are not likely to be any future
+releases.
+
+Have fun,
+
+Matt Chapman.

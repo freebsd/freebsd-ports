@@ -1,0 +1,31 @@
+--- src/libprojection/ProjectionBonne.cpp.orig	2006-03-26 05:03:20 UTC
++++ src/libprojection/ProjectionBonne.cpp
+@@ -7,6 +7,8 @@
+   http://www.atnf.csiro.au/~mcalabre/WCS
+  */
+ 
++#include <stdio.h>
++
+ #include <cmath>
+ #include <cstdio>
+ #include <sstream>
+--- src/libprojection/ProjectionGnomonic.cpp.orig	2006-03-26 05:03:20 UTC
++++ src/libprojection/ProjectionGnomonic.cpp
+@@ -7,6 +7,8 @@
+   http://www.atnf.csiro.au/~mcalabre/WCS
+ */
+ 
++#include <stdio.h>
++
+ #include <cmath>
+ #include <cstdio>
+ #include <sstream>
+--- src/libprojection/ProjectionMercator.cpp.orig	2006-03-26 05:03:20 UTC
++++ src/libprojection/ProjectionMercator.cpp
+@@ -1,4 +1,6 @@
+ #include <cmath>
++#include <stdio.h>
++
+ #include <cstdio>
+ #include <sstream>
+ using namespace std;

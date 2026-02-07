@@ -1,0 +1,12 @@
+bin/make_database_yaml.pl
+bin/make_fixture_yaml.pl
+%%SITE_PERL%%/Test/Fixture/DBI.pm
+%%SITE_PERL%%/Test/Fixture/DBI/Util.pm
+%%SITE_PERL%%/Test/Fixture/DBI/Util/SQLite.pm
+%%SITE_PERL%%/Test/Fixture/DBI/Util/mysql.pm
+%%PERL5_MAN3%%/Test::Fixture::DBI.3.gz
+%%PERL5_MAN3%%/Test::Fixture::DBI::Util.3.gz
+%%PERL5_MAN3%%/Test::Fixture::DBI::Util::SQLite.3.gz
+%%PERL5_MAN3%%/Test::Fixture::DBI::Util::mysql.3.gz
+%%PERL5_MAN1%%/make_database_yaml.pl.1.gz
+%%PERL5_MAN1%%/make_fixture_yaml.pl.1.gz

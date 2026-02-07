@@ -1,0 +1,15 @@
+usr/lib64/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake
+usr/lib64/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake
+usr/lib64/libQt5Svg.so.5
+usr/lib64/libQt5Svg.so.5.15
+usr/lib64/libQt5Svg.so.5.15.9
+usr/lib64/qt5/plugins/iconengines/libqsvgicon.so
+usr/lib64/qt5/plugins/imageformats/libqsvg.so
+usr/share/licenses/qt5-qtsvg/LICENSE.FDL
+usr/share/licenses/qt5-qtsvg/LICENSE.GPL2
+usr/share/licenses/qt5-qtsvg/LICENSE.GPL3
+usr/share/licenses/qt5-qtsvg/LICENSE.GPL3-EXCEPT
+usr/share/licenses/qt5-qtsvg/LICENSE.GPLv3
+usr/share/licenses/qt5-qtsvg/LICENSE.LGPL3
+usr/share/licenses/qt5-qtsvg/LICENSE.LGPLv21
+usr/share/licenses/qt5-qtsvg/LICENSE.LGPLv3

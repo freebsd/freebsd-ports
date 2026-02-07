@@ -1,0 +1,7 @@
+phpWebFTP offers a way of connecting to you FTP server, even when you
+are behind a firewall or proxy not allowing traffic to FTP servers.
+This is very common in business networks. phpWebFTP overcomes this
+issue by making a FTP connection from your webserver to your FTP server
+and transfering the files from this web server to your webclient over
+the standard http protocol. phpWebFTP is free software and the source
+is available under GNU license.

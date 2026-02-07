@@ -1,0 +1,6 @@
+Cflow reads files as C program source and attempts to print a graph
+of the program's function call hierarchy to the standard output.
+Called functions are indented with respect to their calling functions,
+and printed only once, in the order they occur.
+
+This is version 2.0.

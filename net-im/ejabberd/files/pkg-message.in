@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+Congratulations, you have installed %%PORTNAME%%!
+
+  o To enable ejabberd you need to add following string to your /etc/rc.conf:
+
+	ejabberd_enable="YES"
+
+  o Config samples are located in %%PREFIX%%/etc/ejabberd - please, create
+    working ones before running %%PORTNAME%%.
+  o The home directory is /var/spool/ejabberd
+  o PLEASE NOTE! "ejabberd" user UID and GID have changed from version 2.0.3
+    of this port! Users are advised to check all configuration files and data
+    in /var/spool/ejabberd to ensure everything has the correct owner/group.
+  o To start using CAPTCHA functionality, please install ImageMagick port.
+EOM
+}
+{ type: upgrade,
+  maximum_version: "22.05",
+  message: <<EOM
+Please refer to the release notes[0] for required DB schema updates.
+
+[0] https://www.process-one.net/blog/ejabberd-22-05/
+EOM
+},
+{ type: remove
+  message: <<EOM
+If you wish to delete ejabberd data and log files, remove
+"/var/spool/ejabberd" and "/var/log/ejabberd" directories.
+EOM
+}
+]

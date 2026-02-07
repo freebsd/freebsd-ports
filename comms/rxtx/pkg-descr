@@ -1,0 +1,3 @@
+RXTX: serial and parallel I/O libraries supporting Sun's CommAPI. Open-source
+implementation of the Java Communications API. Native interface to serial ports
+in Java.

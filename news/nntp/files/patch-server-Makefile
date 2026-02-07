@@ -1,0 +1,11 @@
+--- server/Makefile.orig	1994-12-04 00:18:48 UTC
++++ server/Makefile
+@@ -31,6 +31,8 @@ SRCS	= ${SRVRSRC}
+ 
+ LIBS = $(DBLIBS) $(NETLIBS)
+ 
++CPPFLAGS+= -DALONE
++
+ # Where nntpd is going to live
+ #DESTDIR = /etc
+ 

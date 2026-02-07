@@ -1,0 +1,18 @@
+--- docs/spread.1	Thu Dec 13 02:03:19 2001
++++ docs/spread.1	Mon Dec  8 00:00:20 2003
+@@ -20,13 +20,11 @@
+ Use an alternate configuration file
+ .I config-file
+ instead of
+-.IR ./spread.conf .
++.IR /etc/spread.conf .
+ .SH FILES
+-.I ./spread.conf
++.I /etc/spread.conf
+ .RS
+ The default config file location. 
+-.I /etc/spread.conf 
+-is also searched if a local file is not found.
+ .SH DIAGNOSTICS
+ The daemon will output some startup information to stdout
+ and any severe errors will also be output to stdout. Redirecting

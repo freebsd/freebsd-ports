@@ -1,0 +1,11 @@
+Qt Creator is a cross-platform IDE (integrated development
+environment) tailored to the needs of Qt developers.
+It is part of the Qt Project.
+
+It includes:
+ * code editor with C++, QML and ECMAscript support;
+ * rapid code navigation tools;
+ * static code checking and style hints as you type;
+ * context sensitive help;
+ * visual debugger;
+ * integrated GUI layout and forms designer.

@@ -1,0 +1,4 @@
+Watchcat is a command-line tool that combines the functionalities of
+the 'watch' and 'cat' commands. It allows users to monitor the output
+of a command by executing it repeatedly at specified intervals or to
+watch a file for changes and display its contents when modified.

@@ -1,0 +1,44 @@
+[
+{ type: install
+  message: <<EOM
+A sample configuration file has been installed in
+%%PREFIX%%/etc/postgres_exporter.yml.sample.
+
+To use postgres_exporter, copy this config file to "postgres_exporter.yml"
+and edit as needed, then enable and start the service:
+
+# service postgres_exporter enable
+# service postgres_exporter start
+
+For rc(8) options which can be used to configure the service, refer to
+%%PREFIX%%/etc/rc.d/postgres_exporter.
+
+For example, to log output to the 'local5' syslog facility instead of the
+default 'daemon':
+
+# sysrc postgres_exporter_syslog_output_facility=local5
+
+By default, the exporter runs as the 'nobody' user and listens on
+localhost:9187.  These defaults can be changed via rc(8).
+
+For documentation on the configuration file format and how to integrate the
+exporter into Prometheus, refer to the documentation at:
+https://github.com/prometheus-community/postgres_exporter
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.16.0"
+  message: <<EOM
+BREAKING CHANGE: In postgres_exporter 0.16.0 and later, the log message format
+has changed.  From the upstream release notes:
+
+The logging system has been replaced with log/slog from the stdlib. This change
+is being made across the prometheus ecosystem. The logging output has changed,
+but the messages and levels remain the same. The ts label for the timestamp has
+been replaced with time, the accuracy is less, and the timezone is not forced
+to UTC. The caller field has been replaced by the source field, which now
+includes the full path to the source file. The level field now exposes the log
+level in capital letters.
+EOM
+}
+]

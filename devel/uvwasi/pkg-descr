@@ -1,0 +1,8 @@
+This project does not currently provide the comprehensive file system security
+properties provided by some WASI runtimes. Full support for secure file system
+sandboxing may or may not be implemented in future. In the mean time, do not
+rely on it to run untrusted code.
+
+uvwasi implements the WASI system call API, so that WebAssembly runtimes can
+easily implement WASI calls. Under the hood, uvwasi leverages libuv where
+possible for maximum portability.

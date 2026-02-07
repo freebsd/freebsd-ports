@@ -1,0 +1,6 @@
+--- dist/librenms-scheduler.cron.orig	2023-08-21 17:05:45 UTC
++++ dist/librenms-scheduler.cron
+@@ -1 +1,2 @@
+-* * * * * php /opt/librenms/artisan schedule:run --no-ansi --no-interaction > /dev/null 2>&1
++#minute	hour	mday	month	wday	who	command
++*       *       *       *       *       %%USER%% %%LOCALBASE%%/bin/php %%WWWDIR%%/artisan schedule:run --no-ansi --no-interaction > /dev/null 2>&1

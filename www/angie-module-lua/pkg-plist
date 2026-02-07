@@ -1,0 +1,6 @@
+%%DOCSDIR%%/README.lua-nginx-module.markdown
+%%DOCSDIR%%/README.stream-lua-nginx-module.md
+%%MODDIR%%/ngx_http_lua_module.so
+%%MODDIR%%/ngx_stream_lua_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_lua_module-debug.so
+%%DEBUG%%%%MODDIR%%/ngx_stream_lua_module-debug.so

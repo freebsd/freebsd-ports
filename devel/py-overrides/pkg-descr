@@ -1,0 +1,10 @@
+A decorator @override that verifies that a method that should override an
+inherited method actually does it.
+
+Copies the docstring of the inherited method to the overridden method.
+
+Since signature validation and docstring inheritance are performed on class
+creation and not on class instantiation, this library significantly improves the
+safety and experience of creating class hierarchies in Python without
+significantly impacting performance. See https://stackoverflow.com/q/1167617 for
+the initial inspiration for this library.

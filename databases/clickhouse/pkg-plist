@@ -1,0 +1,45 @@
+bin/ch
+bin/chc
+bin/chdig
+bin/chl
+bin/clickhouse
+bin/clickhouse-benchmark
+bin/clickhouse-chdig
+bin/clickhouse-check-marks
+bin/clickhouse-checksum-for-compressed-block
+bin/clickhouse-client
+bin/clickhouse-compressor
+bin/clickhouse-disks
+bin/clickhouse-extract-from-config
+bin/clickhouse-format
+bin/clickhouse-git-import
+bin/clickhouse-keeper-client
+bin/clickhouse-local
+bin/clickhouse-obfuscator
+bin/clickhouse-server
+bin/clickhouse-static-files-disk-uploader
+bin/clickhouse-su
+bin/clickhouse-zookeeper-dump-tree
+bin/clickhouse-zookeeper-remove-by-list
+%%ETCDIR%%-client/config.xml.sample
+%%ETCDIR%%-server/config.xml.sample
+%%ETCDIR%%-server/users.xml.sample
+%%DATADIR%%/protos/google/protobuf/any.proto
+%%DATADIR%%/protos/google/protobuf/api.proto
+%%DATADIR%%/protos/google/protobuf/descriptor.proto
+%%DATADIR%%/protos/google/protobuf/duration.proto
+%%DATADIR%%/protos/google/protobuf/empty.proto
+%%DATADIR%%/protos/google/protobuf/field_mask.proto
+%%DATADIR%%/protos/google/protobuf/source_context.proto
+%%DATADIR%%/protos/google/protobuf/struct.proto
+%%DATADIR%%/protos/google/protobuf/timestamp.proto
+%%DATADIR%%/protos/google/protobuf/type.proto
+%%DATADIR%%/protos/google/protobuf/wrappers.proto
+share/bash-completion/completions/clickhouse
+share/bash-completion/completions/clickhouse-benchmark
+share/bash-completion/completions/clickhouse-bootstrap
+share/bash-completion/completions/clickhouse-client
+share/bash-completion/completions/clickhouse-local
+@dir /var/db/clickhouse
+@dir /var/log/clickhouse
+@dir /var/run/clickhouse

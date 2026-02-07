@@ -1,0 +1,665 @@
+#!/bin/sh
+#
+# Manage LeoFS servers.
+#
+
+#-------------------------------------------------------------------------------
+# GLOBALS
+#-------------------------------------------------------------------------------
+LEOFS_SERVERS="
+  gateway
+  manager
+  manager_slave
+  storage
+"
+
+LEOFS_COMMANDS=
+LEOFS_COMMANDS_MINIHELP=
+
+PROGNAME=$(basename $0)
+PROGPATH=$(realpath $0)
+
+#-------------------------------------------------------------------------------
+# Functions
+#-------------------------------------------------------------------------------
+in_list()
+{
+    local needle=$1
+    local i
+
+    shift
+
+    for i
+    do
+        test "$i" = "$needle" && return 0
+    done
+
+    return 1
+}
+
+#-------------------------------------------------------------------------------
+usage()
+{
+    local servers
+
+    servers=$(echo $LEOFS_SERVERS | sed -e 's/ /|/g')
+
+    echo "usage: ${PROGNAME} [help | -h | --help]"
+    echo "       ${PROGNAME} ${servers} <command> [<args>]"
+    echo
+    echo "Commands:"
+    echo "$LEOFS_COMMANDS_MINIHELP"
+    echo
+    echo "See '${PROGNAME} help <command>' for more information on a specific command."
+}
+
+#-------------------------------------------------------------------------------
+# cmd utils
+#-------------------------------------------------------------------------------
+register_cmd()
+{
+    local cmd=$1
+
+    LEOFS_COMMANDS="${LEOFS_COMMANDS} ${cmd}"
+    LEOFS_COMMANDS_MINIHELP=$(printf "%s\n  %-16s%s" \
+        "${LEOFS_COMMANDS_MINIHELP}" "${cmd}" "$(cmd_${cmd} help_summary)")
+}
+
+#-------------------------------------------------------------------------------
+check_cmd()
+{
+    local cmd=$1
+
+    if ! in_list "$cmd" $LEOFS_COMMANDS
+    then
+        echo "unknown command: $1" >&2
+        echo  >&2
+        usage >&2
+        exit 1
+    fi
+}
+
+#-------------------------------------------------------------------------------
+run_cmd()
+{
+    local cmd=$1
+
+    check_cmd "${cmd}"
+
+    shift
+
+    "cmd_${cmd}" "$@"
+}
+
+#-------------------------------------------------------------------------------
+print_cmd_help()
+{
+    local cmd=$1
+    local desc
+
+    check_cmd "${cmd}"
+
+    echo "NAME"
+    echo "  ${cmd} - $(cmd_${cmd} help_summary)"
+    echo
+    echo "SYNOPSIS"
+    echo "  $(cmd_${cmd} help_synopsis)"
+
+    desc="$(cmd_${cmd} help_desc)"
+
+    if [ -n "${desc}" ]
+    then
+        echo
+        echo "DESCRIPTION"
+        echo -n "${desc}" | sed -e 's/^/  /'
+    fi
+
+    opts="$(cmd_${cmd} help_opts)"
+
+    if [ -n "${opts}" ]
+    then
+        echo
+        echo "OPTIONS"
+        echo -n "${opts}" | sed -e 's/^/  /'
+    fi
+
+    echo
+}
+
+#-------------------------------------------------------------------------------
+# make ENV
+#-------------------------------------------------------------------------------
+check_app()
+{
+    local app=$1
+
+    if ! in_list "${app}" $LEOFS_SERVERS
+    then
+        echo "unknown server: $1" >&2
+        echo  >&2
+        usage >&2
+        exit 1
+    fi
+}
+
+#-------------------------------------------------------------------------------
+setusercontext()
+{
+    local cmd
+
+    : ${LEOFS_USER=%%LEOFS_USER%%}
+
+    user=`whoami`
+
+    if [ ${user} = ${LEOFS_USER} ]
+    then
+        return
+    fi
+
+    if [ ${user} != root ]
+    then
+        echo "Must be run as ${LEOFS_USER} user or root (or set LEOFS_USER)" >&2
+        exit 1
+    fi
+
+    # Restart as LEOFS_USER
+   
+    cmd="${PROGPATH} $@"
+
+    exec /usr/bin/su -m ${LEOFS_USER} -c "${cmd}"
+}
+
+#-------------------------------------------------------------------------------
+gen_config()
+{
+    local args cfg_dir app_config vm_args res snmp_cfg dir
+
+    cfg_dir=${LEOFS_DBDIR}/etc
+
+    mkdir -p ${cfg_dir}
+
+    if [ ${LEOFS_ETCDIR}/${LEOFS_SERVER}.conf -ot ${cfg_dir}/app.config ]
+    then
+        return
+    fi
+
+    rm -f ${cfg_dir}/app.*.config ${cfg_dir}/vm.*.args
+
+    args=`PATH=${ERTS_PATH}:${PATH} \
+        ${LEOFS_BASEDIR}/bin/cuttlefish \
+        -i ${LEOFS_BASEDIR}/etc/${LEOFS_SERVER}.schema \
+        -c ${LEOFS_ETCDIR}/${LEOFS_SERVER}.conf \
+        -d ${cfg_dir}`
+
+    app_config=`echo ${args} | sed -nEe 's/^.*(app\.[0-9.]*\.config).*$/\1/p'`
+    vm_args=`echo ${args} | sed -nEe 's/^.*(vm\.[0-9.]*\.args).*$/\1/p'`
+
+    if [ -z "${app_config}" -o -z "${vm_args}" ]
+    then
+        echo "Failed to parse ${LEOFS_SERVER}.conf" >&2
+        exit 1
+    fi
+
+    # Sanity check the app.config file
+    res=`${ERTS_PATH}/escript \
+        ${ERTS_PATH}/nodetool chkconfig ${cfg_dir}/${app_config}`
+    if [ "${res}" != "ok" ]
+    then
+        echo "Error reading ${app_config}: ${res}" >&2 
+        exit 1
+    fi
+
+    mv ${cfg_dir}/$app_config ${cfg_dir}/app.config
+    mv ${cfg_dir}/$vm_args ${cfg_dir}/vm.args
+}
+
+
+#-------------------------------------------------------------------------------
+make_env()
+{
+    local app=${1#leo_} # Remove 'leo_' prefix in server name if present.
+    local user
+
+    check_app "${app}"
+
+    LEOFS_SERVER=leo_${app}
+
+    LEOFS_ETCDIR=%%LEOFS_ETCDIR%%
+    LEOFS_BASEDIR=%%LEOFS_BASEDIR%%
+    LEOFS_DBDIR=%%LEOFS_DBDIR%%/${LEOFS_SERVER}
+    LEOFS_RUNDIR=%%LEOFS_RUNDIR%%
+    LEOFS_PIPE=${LEOFS_RUNDIR}/${LEOFS_SERVER}.pipe
+    LEOFS_LOGDIR=%%LEOFS_LOGDIR%%/${LEOFS_SERVER}
+
+    START_ERL=`cat ${LEOFS_BASEDIR}/releases/${LEOFS_SERVER%_slave}/start_erl.data`
+    ERTS_VSN=${START_ERL% *}
+    APP_VSN=${START_ERL#* }
+    ERTS_PATH=${LEOFS_BASEDIR}/erts-${ERTS_VSN}/bin
+
+    : ${ERLEXEC_MODE=embedded}
+
+    LEOFS_BOOT=${LEOFS_BASEDIR}/releases/${LEOFS_SERVER%_slave}/${APP_VSN}/${LEOFS_SERVER%_slave}
+
+    HOME=%%LEOFS_DBDIR%%
+    cd ${HOME}
+
+    setusercontext "$@"
+
+    gen_config
+
+    snmp_cfg=`sed -nEe 's/^-config *(.*)$/\1.config/p' ${LEOFS_DBDIR}/etc/vm.args`
+
+    sed -nEe 's:^.*dir, *"((%%LEOFS_DBDIR%%|%%LEOFS_LOGDIR%%)[^"]*)".*$:\1:p' \
+        ${LEOFS_DBDIR}/etc/app.config ${snmp_cfg} | sort -u |
+    while read dir
+    do
+        mkdir -p "${dir}"
+    done
+}
+
+#-------------------------------------------------------------------------------
+# Erlang tools
+#-------------------------------------------------------------------------------
+nodetool()
+{
+    local cmd=$1 ; shift
+    local vmargs_path name_arg cookie_arg
+
+    vmargs_path=${LEOFS_DBDIR}/etc/vm.args
+
+    name_arg=`egrep '^-s?name' ${vmargs_path}`
+    if [ -z "${name_arg}" ]
+    then
+        echo "vm.args needs either -name or -sname parameter" >&2 
+        exit 1
+    fi
+
+    cookie_arg=`grep '^-setcookie' ${vmargs_path}`
+    if [ -z "${cookie_arg}" ]
+    then
+        echo "vm.args needs a -setcookie parameter" 2>&2
+        exit 1
+    fi
+
+    ${ERTS_PATH}/escript ${ERTS_PATH}/nodetool ${name_arg} ${cookie_arg} ${cmd}
+}
+
+#-------------------------------------------------------------------------------
+check_node()
+{
+    local expected_state=$1
+    local status
+
+    nodetool ping >/dev/null 2>&1
+    status=$?
+     
+    if [ "${expected_state}" = DOWN ]
+    then
+        if [ ${status} -eq 0 ]
+        then
+            echo "Node is already running" >&2
+            exit 1
+        fi
+    else
+        if [ ${status} -ne 0 ]
+        then
+            echo "Node is not running" >&2
+            exit 1
+        fi
+    fi
+}
+
+#-------------------------------------------------------------------------------
+remsh()
+{
+    local vmargs_path name_arg cookie_arg
+    local remsh_type remsh_name remsh_name_arg remsh_remsh_arg
+
+    vmargs_path=${LEOFS_DBDIR}/etc/vm.args
+
+    name_arg=`egrep '^-s?name' ${vmargs_path}`
+    if [ -z "${name_arg}" ]
+    then
+        echo "vm.args needs either -name or -sname parameter" >&2 
+        exit 1
+    fi
+
+    cookie_arg=`grep '^-setcookie' ${vmargs_path}`
+    if [ -z "${cookie_arg}" ]
+    then
+        echo "vm.args needs a -setcookie parameter" 2>&2
+        exit 1
+    fi
+
+    # Extract the name type and name from the name_arg for remsh
+    remsh_type=${name_arg% *}
+    remsh_name=${name_arg#* }
+
+    # `date +%s` is used to allow multiple remsh to the same node transparently
+    remsh_name_arg="${remsh_type} remsh$(date +%s)@${remsh_name#*@}"
+    remsh_remsh_arg="-remsh ${remsh_name}"
+
+    ${ERTS_PATH}/erl ${remsh_name_arg} ${remsh_remsh_arg} ${cookie_arg}
+}
+
+#-------------------------------------------------------------------------------
+# Commands
+#-------------------------------------------------------------------------------
+cmd_help()
+{
+    case "$1" in
+        help_summary)
+            echo "Display help information about ${PROGNAME}"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} help [<command>]"
+            exit
+            ;;
+        help_desc)
+            echo "With no command given, the synopsis of the ${PROGNAME} command"
+            echo "and a list of possible ${PROGNAME} commands are printed on the"
+            echo "standard output."
+            echo
+            echo "If a ${PROGNAME} command is named, a mini help for that command is"
+            echo "brought up."
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    if [ -n "$1" ]
+    then
+        print_cmd_help "$1"
+    else
+        usage
+    fi
+}
+
+register_cmd help
+
+#-------------------------------------------------------------------------------
+cmd_attach()
+{
+    case "$1" in
+        help_summary)
+            echo "Attach to the running node"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> attach"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    check_node UP
+
+    ${ERTS_PATH}/to_erl ${LEOFS_PIPE}
+}
+
+register_cmd attach
+
+#-------------------------------------------------------------------------------
+cmd_console()
+{
+    local config_path vmargs_path cmd
+
+    case "$1" in
+        help_summary)
+            echo "Start the server in console"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> console"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    export ROOTDIR=${LEOFS_BASEDIR}
+    export BINDIR=${ERTS_PATH}
+    export EMU=beam
+    export PROGNAME=${PROGNAME}
+
+    config_path=${LEOFS_DBDIR}/etc/app.config
+    vmargs_path=${LEOFS_DBDIR}/etc/vm.args
+
+    cmd="${BINDIR}/erlexec -boot ${LEOFS_BOOT} -mode ${ERLEXEC_MODE} \
+        -config ${config_path} -args_file ${vmargs_path} -- console $@"
+
+    # Dump environment info for logging purposes
+    echo Exec: ${cmd}
+    echo Root: ${ROOTDIR}
+
+    ${cmd}
+}
+
+register_cmd console
+
+#-------------------------------------------------------------------------------
+cmd_console_clean()
+{
+    case "$1" in
+        help_summary)
+            echo "Start the VM in console using start_clean.boot"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> cosole_clean"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    LEOFS_BOOT=$(dirname ${LEOFS_BOOT})/start_clean
+
+    cmd_console
+}
+
+register_cmd console_clean
+
+#-------------------------------------------------------------------------------
+cmd_ping()
+{
+    case "$1" in
+        help_summary)
+            echo "See if the VM is alive"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> ping"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    nodetool ping
+}
+
+register_cmd ping
+
+#-------------------------------------------------------------------------------
+cmd_reboot()
+{
+    case "$1" in
+        help_summary)
+            echo "Restart the VM completely (uses heart to restart it)"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> reboot"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    nodetool reboot
+}
+
+register_cmd reboot
+
+#-------------------------------------------------------------------------------
+cmd_remote_console()
+{
+    case "$1" in
+        help_summary)
+            echo "Run remote shell command to control node"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> remote_console"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    check_node UP
+
+    remsh "$@"
+}
+
+register_cmd remote_console
+
+#-------------------------------------------------------------------------------
+cmd_restart()
+{
+    case "$1" in
+        help_summary)
+            echo "Restart the VM without exiting the process"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> restart"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    nodetool restart
+}
+
+register_cmd restart
+
+#-------------------------------------------------------------------------------
+cmd_start()
+{
+    local i res
+
+    case "$1" in
+        help_summary)
+            echo "Launch the application"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> start"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    check_node DOWN
+
+    export HEART_COMMAND="${PROGPATH} ${LEOFS_SERVER} start"
+
+    ${ERTS_PATH}/run_erl -daemon ${LEOFS_PIPE} ${LEOFS_LOGDIR} \
+        "exec ${PROGPATH} ${LEOFS_SERVER} console $@" 2>&1
+    res=$?
+
+    if [ "${res}" -ne 0 ]
+    then
+        exit ${res}
+    fi
+
+    # Wait up to 1 minute for the node to start responding on ping.
+    for i in `jot 60`
+    do
+        nodetool ping >/dev/null 2>&1 || exit 0
+        sleep 1
+    done
+    exit 1
+}
+
+register_cmd start
+
+#-------------------------------------------------------------------------------
+cmd_stop()
+{
+    local pid res i
+
+    case "$1" in
+        help_summary)
+            echo "Stop the application"
+            exit
+            ;;
+        help_synopsis)
+            echo "${PROGNAME} <server> stop"
+            exit
+            ;;
+        help_*)
+            exit
+            ;;
+    esac
+
+    pid=`ps xww -o pid= -o command= |
+        grep "${LEOFS_BASEDIR}.*/[b]eam.*${LEOFS_SERVER}" |
+        awk '{print $1}'`
+
+    nodetool stop > /dev/null
+    res=$?
+
+    if [ "${res}" -ne 0 ]
+    then
+        if [ -z "${pid}" ]
+        then
+            echo "${LEOFS_SERVER} is not running"
+        else
+            echo "Failed to stop ${LEOFS_SERVER}"
+        fi
+        exit ${res}
+    fi
+
+    # Wait up to 1 minute for the process to terminate.
+    for i in `jot 60`
+    do
+        kill -0 ${pid} 2>/dev/null || exit 0
+        sleep 1
+    done
+    echo "Failed to terminate the ${LEOFS_SERVER} process (pid ${pid})"
+    exit 1
+}
+
+register_cmd stop
+
+#-------------------------------------------------------------------------------
+# Main
+#-------------------------------------------------------------------------------
+if in_list "$1" "" "help" "-h" "--help" || test -z "$2"
+then
+    cmd=help ; shift
+else
+    make_env "$@"
+
+    app="$1" ; shift
+    cmd="$1" ; shift
+fi
+
+run_cmd "${cmd}" "$@"

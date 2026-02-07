@@ -1,0 +1,7 @@
+gxkb is a little indicator applet which allows to quickly switch between
+different X11 keyboard layouts.  A flag corresponding to the country of
+the active layout is shown in the system tray area.
+
+The applet is written in C and uses just the GTK+ library, not any other
+GNOME components, and can maintain separate per-window, per-application,
+or global layout states.

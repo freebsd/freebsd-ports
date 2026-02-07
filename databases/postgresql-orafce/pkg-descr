@@ -1,0 +1,5 @@
+Orafce provides the functions and operators that emulate a subset of functions
+and packages from the Oracle RDBMS.
+
+The Orafce is supported in AWS Aurora with PostgreSQL Compatibility and also in
+Azure Database for PostgreSQL.

@@ -1,0 +1,3 @@
+bin/nats-streaming-server
+@sample etc/nats_streaming.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README.md

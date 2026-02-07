@@ -1,0 +1,16 @@
+PORTNAME=	HOP-Stream
+PORTVERSION=	0.03
+PORTREVISION=	1
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:OVID
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Higher Order Perl Streams
+WWW=		https://metacpan.org/release/HOP-Stream
+
+USES=		perl5
+USE_PERL5=	modbuild
+
+.include <bsd.port.mk>

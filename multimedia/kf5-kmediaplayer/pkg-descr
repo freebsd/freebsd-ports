@@ -1,0 +1,2 @@
+KMediaPlayer builds on the KParts framework to provide a common interface for
+KParts that can play media files.

@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To improve bgpq4 performance when expanding extra-large AS-SETs OS settings needs to be tuned to enlarge TCP send buffer.
+
+To enlarge TCP send buffer, run the following:
+
+# sysctl -w net.inet.tcp.sendbuf_max=2097152
+
+To make it persistent across reboots, add the following to /etc/sysctl.conf:
+
+net.inet.tcp.sendbuf_max=2097152
+
+EOM
+}
+]

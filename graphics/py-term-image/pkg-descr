@@ -1,0 +1,5 @@
+term-image is a Python utility that enables the display of images directly
+within the terminal, providing a unique and innovative way to view images
+without leaving the command line interface. It supports various image
+formats and can be used in a range of applications, from simple image
+viewing to more complex terminal-based projects.

@@ -1,0 +1,7 @@
+--- doc_ydskfiles.txt.orig	2022-09-09 21:56:29 UTC
++++ doc_ydskfiles.txt
+@@ -1,3 +1,4 @@
++bios3.ydsk
+ bios3-zsm4.ydsk
+ BOOT_UTILS.ydsk
+ CPM3_SYS.ydsk

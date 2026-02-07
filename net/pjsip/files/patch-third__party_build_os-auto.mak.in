@@ -1,0 +1,12 @@
+--- third_party/build/os-auto.mak.in.orig	2024-03-08 17:33:31 UTC
++++ third_party/build/os-auto.mak.in
+@@ -118,8 +118,7 @@ else # Generic fixed point
+ else # Generic fixed point
+     WEBRTC_SRC = \
+ 	      modules/audio_processing/aecm/aecm_core_c.o                \
+-	      modules/audio_processing/ns/nsx_core_c.o                   \
+-	      common_audio/signal_processing/complex_fft.o
++	      modules/audio_processing/ns/nsx_core_c.o
+ endif
+ endif
+ endif

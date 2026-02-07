@@ -1,0 +1,11 @@
+--- src/qmaptool/CMakeLists.txt.orig	2025-07-04 12:38:57 UTC
++++ src/qmaptool/CMakeLists.txt
+@@ -265,7 +265,7 @@ target_link_libraries(${APPLICATION_NAME}
+     Qt6::Network
+     Qt6::Help
+     ${GDAL_LIBRARIES}
+-    ${PROJ_LIBRARIES}
++    ${PROJ_LDFLAGS} ${PROJ_LIBRARIES}
+ )
+ 
+ if(APPLE)

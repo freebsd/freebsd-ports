@@ -1,0 +1,10 @@
+Tools for use with Fortran programs, formerly part of FreeBSD (inherited
+from 4.4BSD).
+
+Contains:
+
+fpr(1) -- a filter that transforms files formatted according to Fortran's
+carriage control conventions into files formatted according to UNIX line
+printer conventions
+
+fsplit(1) -- split a multi-routine Fortran file into individual files

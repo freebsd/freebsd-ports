@@ -1,0 +1,26 @@
+Fix linking without INDI
+
+ld: error: undefined symbol: pthread_create
+>>> referenced by __threading_support:378 (/usr/include/c++/v1/__threading_support:378)
+>>> supernovaecomponent.cpp.o:(std::__1::thread::thread<io::detail::AsynchronousReader::init(std::__1::unique_ptr<io::ByteSourceBase,
+std::__1::default_delete<io::ByteSourceBase>>)::'lambda'(), void>(io::detail::AsynchronousReader::init(std::__1::unique_ptr<io::ByteSourceBase,
+std::__1::default_delete<io::ByteSourceBase>>)::'lambda'()&&)) in archive lib/libKStarsLib.a
+
+--- kstars/CMakeLists.txt.orig	2025-08-10 17:18:25 UTC
++++ kstars/CMakeLists.txt
+@@ -1358,6 +1358,7 @@ IF (NOT ANDROID)
+         ${ZLIB_LIBRARIES}
+         Eigen3::Eigen
+         GSL::gsl
++        Threads::Threads
+     )
+     if (BUILD_QT5)
+         target_link_libraries(KStarsLib
+@@ -1458,7 +1459,6 @@ if(INDI_FOUND)
+     ## Linux + MacOS Lite: Requires INDI Qt5 Client
+     ## Android: Requires INDI Qt5 Client built for Android
+     if (NOT ANDROID)
+-        target_link_libraries(KStarsLib ${CMAKE_THREAD_LIBS_INIT})
+     endif ()
+ 
+     if(WIN32 OR ANDROID)

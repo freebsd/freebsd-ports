@@ -1,0 +1,9 @@
+The new isa operator in Perl 5.32 is pretty great, but if you need to support
+legacy versions of Perl, you can't use it yet. This module gives you isa-like
+functions you can use in Perl 5.6 and above.
+
+If you've got Type::Tiny::XS installed, you will probably find that this module
+is faster than the native isa operator!
+
+The functions exported respect inheritance and allow classes to override their
+isa method as you'd expect.

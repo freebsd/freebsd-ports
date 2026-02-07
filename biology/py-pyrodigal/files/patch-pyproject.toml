@@ -1,0 +1,12 @@
+- workaround for https://github.com/althonos/pyrodigal/issues/69
+
+--- pyproject.toml.orig	2025-03-03 20:52:28 UTC
++++ pyproject.toml
+@@ -12,7 +12,6 @@ authors = [
+ authors = [
+   { name = "Martin Larralde", email = "martin.larralde@embl.de" },
+ ]
+-platform = "any"
+ keywords = ["bioinformatics", "genome", "orf", "gene", "prodigal"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",

@@ -1,0 +1,14 @@
+bin/vlock
+share/man/man1/vlock.1.gz
+share/man/man5/vlock-plugins.5.gz
+share/man/man8/vlock-main.8.gz
+%%VLOCKSCRIPTS%%lib/vlock/scripts/amarok
+%%VLOCKSCRIPTS%%lib/vlock/scripts/example_script
+%%VLOCKSCRIPTS%%lib/vlock/scripts/mplayer
+lib/vlock/modules/all.so
+@mode 4711
+sbin/vlock-main
+@mode
+@group %%VLOCK_GRP%%
+lib/vlock/modules/new.so
+@group wheel

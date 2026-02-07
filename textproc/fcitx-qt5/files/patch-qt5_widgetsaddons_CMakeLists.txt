@@ -1,0 +1,11 @@
+--- qt5/widgetsaddons/CMakeLists.txt.orig	2016-07-26 08:42:38 UTC
++++ qt5/widgetsaddons/CMakeLists.txt
+@@ -59,7 +59,7 @@ set_target_properties(FcitxQt5WidgetsAdd
+                       AUTOMOC TRUE
+                       SOVERSION 1
+                       COMPILE_FLAGS "-fvisibility=hidden"
+-                      LINK_FLAGS "-Wl,--no-undefined"
++                      LINK_FLAGS "-Wl,--no-undefined -lintl"
+                       EXPORT_NAME WidgetsAddons
+ )
+ 

@@ -1,0 +1,1 @@
+Test that only expected DBIx::Class queries are run

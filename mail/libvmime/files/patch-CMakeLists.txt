@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2017-01-03 20:00:08 UTC
++++ CMakeLists.txt
+@@ -732,13 +732,8 @@ ENDIF(VMIME_HAVE_TLS_SUPPORT)
+ # Charset conversion library
+ 
+ INCLUDE(cmake/FindIconv.cmake)
+-INCLUDE(cmake/FindICU.cmake)
+ 
+-FIND_PACKAGE(ICU QUIET)
+-
+-IF(ICU_LIBRARIES)
+-	SET(VMIME_CHARSETCONV_LIB_DETECTED "icu")
+-ELSEIF(ICONV_FOUND)
++IF(ICONV_FOUND)
+ 	SET(VMIME_CHARSETCONV_LIB_DETECTED "iconv")
+ ELSEIF(WIN32)
+ 	SET(VMIME_CHARSETCONV_LIB_DETECTED "win")
+@@ -1120,7 +1115,7 @@ CONFIGURE_FILE(cmake/config.hpp.cmake ${CMAKE_BINARY_D
+ 
+ # PkgConfig post-configuration
+ CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/vmime.pc.in ${CMAKE_BINARY_DIR}/vmime.pc @ONLY)
+-INSTALL(FILES ${CMAKE_BINARY_DIR}/vmime.pc DESTINATION "${VMIME_INSTALL_LIBDIR}/pkgconfig" COMPONENT headers)
++INSTALL(FILES ${CMAKE_BINARY_DIR}/vmime.pc DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig" COMPONENT headers)
+ 
+ INCLUDE(CPack)
+ 

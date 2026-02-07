@@ -1,0 +1,76 @@
+[
+{ type: install
+  message: <<EOM
+The openhab user interface writes to /var/db/openhab
+(config) and to %%ETCDIR%% (when installing add-onds).
+The config in %%ETCDIR%% is evaluated additionally to
+/var/db/openhab.
+
+See %%PREFIX%%/etc/rc.d/openhab for environment variables you need
+to set by hand (all "export"-ones) if you want to execute some of
+the openhab commands from the shell directly.
+
+When the openhab docs talk about "userdata", look into /var/db/openhab.
+
+Serial ports do not work with FreeBSD, see:
+	https://github.com/openhab/openhab1-addons/wiki/FreeBSD
+
+By default openhab tries to use IPv6. As FreeBSD does not support
+mapping IPV4 multicast addresses inside IPv6 addresses you will get
+the following error message:
+	[ERROR] [org.jupnp.transport.Router] - Unable to initialize network router: org.jupnp.transport.spi.InitializationException: Could not initialize MulticastReceiverImpl: java.net.SocketException: Invalid argument
+
+A workaround is to use the following rc.conf setting which will
+prefer IPv4 over IPv6:
+	openhab_java_opts="-Djava.net.preferIPv4Stack=true"
+
+OpenHAB contains some files/directories ending in .core, if you have
+	daily_clean_disks_enable="YES"
+for periodic runs (this is the default setting in /etc/default/periodic.conf), you should
+remove "*.core" from the daily_clean_disks_files setting in periodic.conf. Example:
+	daily_clean_disks_files="[#,]* .#* a.out *.CKP .emacs_[0-9]*"
+
+
+If you upgrade from a pevious version, make a backup of
+	/var/db/openhab
+and read about the breaking changes in the release notes at
+	https://github.com/openhab/openhab-distro/releases/
+
+You may have to update the files in
+	/var/db/openhab/userdata/etc/
+from
+	%%DATADIR%%/etc/
+by hand.
+
+At the end you need to run
+	export JAVA_VERSION=17
+	export OPENHAB_USERDATA=/var/db/openhab/userdata
+	java -jar "%%LOCALBASE%%/libexec/openhab/runtime/bin/upgradetool.jar"
+
+You should also remove the cache and tmp and restart:
+	rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi /var/db/openhab/userdata/tmp/*
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+If you upgrade from a pevious version, make a backup of
+	/var/db/openhab
+and read about the breaking changes in the release notes at
+	https://github.com/openhab/openhab-distro/releases/
+
+You may have to update the files in
+	/var/db/openhab/userdata/etc/
+from
+	%%DATADIR%%/etc/
+by hand.
+
+At the end you need to run
+	export JAVA_VERSION=17
+	export OPENHAB_USERDATA=/var/db/openhab/userdata
+	java -jar "%%LOCALBASE%%/libexec/openhab/runtime/bin/upgradetool.jar"
+
+You should also remove the cache and tmp and restart:
+        rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi /var/db/openhab/userdata/tmp/*
+EOM
+}
+]

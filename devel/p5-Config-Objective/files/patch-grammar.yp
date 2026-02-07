@@ -1,0 +1,10 @@
+--- ./grammar.yp.orig	Tue Nov 15 14:09:30 2005
++++ ./grammar.yp	Tue Nov 15 14:09:51 2005
+@@ -251,6 +251,7 @@
+ 		### if a previous condition was true
+ 		return undef
+ 			if ($config->{'in_expr'}
++			    && @{$config->{'cond_stack'}}
+ 			    && $config->{'cond_stack'}->[-1] == CS_NO_EVAL);
+ 
+ 		### for statements, don't evaluate if we're inside a

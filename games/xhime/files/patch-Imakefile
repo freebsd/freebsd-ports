@@ -1,0 +1,22 @@
+--- Imakefile.orig	Tue Sep  8 22:57:48 1998
++++ Imakefile	Mon Mar  8 01:48:11 1999
+@@ -5,9 +5,9 @@
+ #define	SHAPE
+ #undef	NO_SIGACTION
+ 
+-MAILSPOOL_PATH	= /usr/spool/mail/
++MAILSPOOL_PATH	= /var/mail/
+ AUDIO_DEVICE	= /dev/audio
+-XHIMEDAT_PATH	= $(LIBDIR)/xhime
++XHIMEDAT_PATH	= ${PREFIX}/share/examples/xhime
+ 
+ /*-------------*/
+ /* SunOS 4.1.x */
+@@ -40,6 +40,7 @@
+         DEFINES = $(DEF_SHAPE) $(DEF_NOSIG) -DAUDIO_DEVICE=\"$(AUDIO_DEVICE)\"  -DMAILSPOOL_PATH=\"$(MAILSPOOL_PATH)\" -DXHIMEDAT_PATH=\"$(XHIMEDAT_PATH)\" Flags
+ 
+ SimpleProgramTarget(xhime)
++MANSUFFIX=6
+ 
+ /*-------------*/
+ XHIMEDATA = rh110.xhm

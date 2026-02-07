@@ -1,0 +1,76 @@
+--- src/CMakeLists.txt.orig	2021-01-28 22:43:22 UTC
++++ src/CMakeLists.txt
+@@ -120,6 +120,8 @@ target_link_libraries(Diamond
+    CopperSpice::CsNetwork
+ )
+ 
++set(install_resource_dir ${CMAKE_INSTALL_DATADIR}/copperspice/diamond)
++
+ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    set_target_properties(Diamond PROPERTIES OUTPUT_NAME diamond)
+ 
+@@ -160,7 +162,7 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    )
+ 
+ elseif(CMAKE_SYSTEM_NAME MATCHES "(Linux|OpenBSD|FreeBSD|NetBSD|DragonFly)")
+-   set_target_properties(Diamond PROPERTIES OUTPUT_NAME diamond)
++   set_target_properties(Diamond PROPERTIES OUTPUT_NAME diamond-cs)
+ 
+    find_package(PkgConfig)
+    pkg_check_modules(Hunspell IMPORTED_TARGET hunspell)
+@@ -169,8 +171,9 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "(Linux|OpenBSD|FreeB
+       PRIVATE
+       PkgConfig::Hunspell
+    )
++   target_compile_definitions(Diamond PRIVATE DIAMOND_SHARE_DIR="${CMAKE_INSTALL_PREFIX}/${install_resource_dir}")
+ 
+-   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/diamond.png  DESTINATION .)
++   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/diamond.png  DESTINATION ${install_resource_dir})
+ 
+ elseif(CMAKE_SYSTEM_NAME MATCHES "Windows")
+ 
+@@ -198,28 +201,21 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Windows")
+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../resources/diamond.ico  DESTINATION .)
+ endif()
+ 
+-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../source_extra/syntax/ DESTINATION syntax)
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../source_extra/syntax/ DESTINATION ${install_resource_dir}/syntax)
+ 
+ # installs English by default
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../source_extra/dictionary/en_US.aff DESTINATION dictionary)
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../source_extra/dictionary/en_US.dic DESTINATION dictionary)
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../source_extra/dictionary/en_US.aff DESTINATION ${install_resource_dir}/dictionary)
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../source_extra/dictionary/en_US.dic DESTINATION ${install_resource_dir}/dictionary)
+ 
+-# will not overwrite dictionary/userDict.txt
+-install(CODE "
+-   if (NOT EXISTS  \"${CMAKE_INSTALL_PREFIX}/dictionary/userDict.txt    \")
+-      file(INSTALL \"${CMAKE_CURRENT_SOURCE_DIR}/../source_extra/dictionary/userDict.txt\" DESTINATION  \"${CMAKE_INSTALL_PREFIX}/dictionary\")
+-   endif()
+-")
+-
+ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    install(TARGETS Diamond DESTINATION ../MacOS)
+ else()
+-   install(TARGETS Diamond DESTINATION .)
++   install(TARGETS Diamond)
+ endif()
+ 
+-cs_copy_library(CsCore)
+-cs_copy_library(CsGui)
+-cs_copy_library(CsNetwork)
++# cs_copy_library(CsCore)
++# cs_copy_library(CsGui)
++# cs_copy_library(CsNetwork)
+ 
+ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    # copy required plugins to the bundle
+@@ -227,6 +223,6 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    cs_copy_plugins(CsPrinterDriver ../plugins)
+ else()
+    # installs required plugins
+-   cs_copy_plugins(CsGui)
+-   cs_copy_plugins(CsPrinterDriver)
++   # cs_copy_plugins(CsGui)
++   # cs_copy_plugins(CsPrinterDriver)
+ endif()

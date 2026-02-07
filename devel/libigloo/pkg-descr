@@ -1,0 +1,2 @@
+Abstracts memory allocation, provides high level types (including support
+to define such types), and provides a library for common programming problems.

@@ -1,0 +1,43 @@
+From 260d0ee71b3e8339d159658bb02c2cb1e4ff8def Mon Sep 17 00:00:00 2001
+From: Andrettin <6322423+Andrettin@users.noreply.github.com>
+Date: Tue, 30 Aug 2022 18:31:42 +0200
+Subject: [PATCH] Fixed in-game game loading
+
+---
+ src/game/game.cpp          | 5 +++++
+ src/game/loadgame.cpp      | 2 +-
+ src/stratagus/mainloop.cpp | 5 -----
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/game/game.cpp b/src/game/game.cpp
+index 27184e5d1..d0adcdacf 100644
+--- src/game/game.cpp
++++ src/game/game.cpp
+@@ -866,6 +866,11 @@ boost::asio::awaitable<void> StartMap(const std::filesystem::path &filepath, con
+ 
+ 		Gui->setTop(oldTop);
+ 		vector::remove(Containers, container);
++
++		if (!load_game_file.empty()) {
++			engine_interface::get()->load_game_deferred(load_game_file);
++			load_game_file.clear();
++		}
+ 	} catch (...) {
+ 		std::throw_with_nested(std::runtime_error("Error running map \"" + path::to_string(filepath) + "\"."));
+ 	}
+diff --git a/src/stratagus/mainloop.cpp b/src/stratagus/mainloop.cpp
+index e356e46c8..0da8a174c 100644
+--- src/stratagus/mainloop.cpp
++++ src/stratagus/mainloop.cpp
+@@ -451,11 +451,6 @@ static boost::asio::awaitable<void> SingleGameLoop()
+ 		DisplayLoop();
+ 		co_await GameLogicLoop();
+ 	}
+-
+-	if (!load_game_file.empty()) {
+-		engine_interface::get()->load_game_deferred(load_game_file);
+-		load_game_file.clear();
+-	}
+ }
+ 
+ /**

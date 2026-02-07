@@ -1,0 +1,3 @@
+The e3 Project is a Python framework to ease the development of portable
+automated build systems (compilation, dependencies management, binary code
+packaging, and automated testing).

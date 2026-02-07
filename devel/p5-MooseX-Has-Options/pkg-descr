@@ -1,0 +1,2 @@
+This module provides a succinct syntax for declaring options for
+Moose attributes.

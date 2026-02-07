@@ -1,0 +1,33 @@
+--- Makefile.orig	2014-08-11 19:14:07 UTC
++++ Makefile
+@@ -1,17 +1,14 @@
+ # Makefile for phoon
+ 
+-BINDIR =	/usr/local/bin
+-MANDIR =	/usr/local/man/man1
++BINDIR =	$(DESTDIR)$(PREFIX)/bin
++MANDIR =	$(DESTDIR)$(PREFIX)/share/man/man1
+ 
+ DEFINES =	-DOS_BSD
+ #DEFINES =	-DOS_SYSV
+ 
+-CC =		cc
+-CFLAGS =	-O $(DEFINES) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
++CC ?=		cc
++CFLAGS +=	$(DEFINES) -ansi -pedantic -Wall -Wno-long-long -Wmissing-prototypes -Wstrict-prototypes
+ 
+-LDFLAGS =	-s
+-
+-
+ all:		phoon
+ 
+ phoon:		phoon.o date_parse.o astro.o
+@@ -24,7 +21,7 @@ install:	all
+ astro.o:	astro.h
+ 
+ install:	all
+-	rm -f $(BINDIR)/phoon
++	strip phoon
+ 	cp phoon $(BINDIR)
+ 	rm -f $(MANDIR)/phoon.1
+ 	cp phoon.1 $(MANDIR)

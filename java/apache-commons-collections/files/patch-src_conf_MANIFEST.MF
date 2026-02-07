@@ -1,0 +1,15 @@
+--- src/conf/MANIFEST.MF.orig	2020-06-28 13:06:28 UTC
++++ src/conf/MANIFEST.MF
+@@ -0,0 +1,12 @@
++Manifest-Version: 1.0
++Package: org.apache.commons.collections
++Extension-Name: commons-collections
++Specification-Version: @version@
++Specification-Vendor: Apache Software Foundation
++Specification-Title: Commons Collections
++Implementation-Version: @version@
++Implementation-Vendor: Apache Software Foundation
++Implementation-Title: Commons Collections
++Implementation-Vendor-Id: org.apache
++X-Compile-Source-JDK: 1.3
++X-Compile-Target-JDK: 1.3

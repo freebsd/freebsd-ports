@@ -1,0 +1,74 @@
+#!%%SH%%
+
+# Under a BSDL license. Copyright 2005. Mario S F Ferreira <lioux@FreeBSD.org>
+
+# PROVIDE: mlnet
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable mlnet:
+#
+# mlnet_enable="YES"
+# mlnet_user="user"
+# mlnet_logfile="file"
+# mlnet_flags	(Set as needed)
+
+. /etc/rc.subr
+
+name="mlnet"
+rcvar=mlnet_enable
+command="%%PREFIX%%/bin/${name}"
+procname="%%PREFIX%%/bin/${name}-real"
+
+load_rc_config "${name}"
+: ${mlnet_enable="NO"}
+: ${mlnet_user="$(whoami)"}
+
+pidfile="$(eval echo ~${mlnet_user}/.mldonkey/$(basename ${procname}).pid)"
+required_dirs="$(eval echo ~${mlnet_user})"
+
+mlnet_check_vars()
+{
+  if [ "x${mlnet_user}" = "xroot" ]; then
+    warn "You have to set mlnet_user to a non-root user for security reasons"
+    return 1
+  fi
+
+  return 0
+}
+
+start_precmd="mlnet_check_vars"
+start_cmd="start_cmd"
+start_cmd()
+{
+  if [ -z "${rc_fast}" -a -n "${rc_pid}" ]; then
+    echo 1>&2 "${name} already running? (pid=${rc_pid})."
+    return 1
+  fi
+
+  check_startmsgs && echo "Starting ${name}."
+
+  if [ -n "${mlnet_logfile}" ]; then
+    mlnet_logcommand="-log_file ${mlnet_logfile}"
+  else
+    mlnet_logfile="/dev/null"
+  fi
+
+  if [ "x${mlnet_user}" = "x$(whoami)" ]; then
+    eval "${command} \
+	${mlnet_logcommand} \
+	${mlnet_flags} \
+	>> ${mlnet_logfile} 2>&1 &"
+  else
+    su -l ${mlnet_user} -c "%%SH%% -c \
+	\"${command} \
+	${mlnet_logcommand} \
+	${mlnet_flags} \
+	>> ${mlnet_logfile} 2>&1 &\""
+  fi
+}
+
+stop_precmd="mlnet_check_vars"
+
+run_rc_command "$1"

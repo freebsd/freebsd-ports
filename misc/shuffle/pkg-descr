@@ -1,0 +1,3 @@
+The shuffle program prints a random permutation (or ``shuffle'') of
+its input lines. This can be useful in shell scripts for selecting a
+random order in which to do a set of tasks, view a set of files, etc.

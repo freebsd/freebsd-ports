@@ -1,0 +1,9 @@
+TIMESTAMP = 1731445329
+SHA256 (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.aarch64.rpm) = a9c9a440fc992393f95abea0c0b196efde79e5299195b99418d02efdee4b2c68
+SIZE (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.aarch64.rpm) = 104186
+SHA256 (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.i686.rpm) = 02c3d705d5aec940e77f61e158ee37ca554cf534df97c9feb6b0565b082e140c
+SIZE (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.i686.rpm) = 110875
+SHA256 (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.x86_64.rpm) = dbeff8322c01a0b552580a62d71e2d4e15e31360f82fdcbf2d5e47c646c1c09e
+SIZE (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.x86_64.rpm) = 103166
+SHA256 (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.src.rpm) = 8e1a6d836f72918d479c52082cfdc7a2beda841d6f7a87bad023b70a5a6b9b76
+SIZE (rocky/q/qt5-qtwebsockets-5.15.9-2.el9.src.rpm) = 272322

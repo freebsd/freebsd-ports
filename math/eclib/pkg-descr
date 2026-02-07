@@ -1,0 +1,4 @@
+mwrank and eclib: mwrank is a program written in C++ for computing Mordell-Weil
+groups of elliptic curves over Q via 2-descent.
+
+See also: https://github.com/JohnCremona/eclib

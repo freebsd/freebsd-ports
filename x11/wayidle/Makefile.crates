@@ -1,0 +1,15 @@
+CARGO_CRATES=	anyhow-1.0.71 \
+		lexopt-0.3.0 \
+		libc-0.2.155 \
+		memchr-2.5.0 \
+		proc-macro2-1.0.59 \
+		quick-xml-0.37.2 \
+		quote-1.0.28 \
+		syn-2.0.18 \
+		unicode-ident-1.0.9 \
+		wayrs-client-1.2.0 \
+		wayrs-core-1.0.4 \
+		wayrs-proto-parser-3.0.0 \
+		wayrs-protocols-0.14.5+1.39 \
+		wayrs-scanner-0.15.2 \
+		wayrs-utils-0.17.1

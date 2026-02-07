@@ -1,0 +1,8 @@
+zfSnap is a simple sh script for creating ZFS snapshots. When called from
+cron rolling snapshots can be created and deleted automatically. The main
+advantage of zfSnap is that it is written in 100% pure /bin/sh, does not
+require any additional software to run, and is simple to use.
+
+zfSnap keeps all information about snapshot in snapshot name. zfs snapshot
+names are in form: Timestamp--TTL where timestamp is date and time of
+snapshot creation and TTL is Time To Live in human readable form.

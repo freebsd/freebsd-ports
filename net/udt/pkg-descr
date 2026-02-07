@@ -1,0 +1,4 @@
+UDP-based Data Transfer
+
+The UDT software is a C++ library containing the UDT API implementation
+and programming examples.

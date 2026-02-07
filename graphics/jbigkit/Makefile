@@ -1,0 +1,45 @@
+PORTNAME=	jbigkit
+PORTVERSION=	2.1
+PORTREVISION=	3
+CATEGORIES=	graphics
+MASTER_SITES=	https://www.cl.cam.ac.uk/~mgk25/download/
+
+MAINTAINER=	ports@virtual-estates.net
+COMMENT=	Lossless compression for bi-level images such as scanned pages, faxes
+WWW=		https://www.cl.cam.ac.uk/~mgk25/jbigkit/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_LDCONFIG=	yes
+MANS=		jbgtopbm.1 pbmtojbg.1
+BINS=		jbgtopbm pbmtojbg jbgtopbm85 pbmtojbg85
+LIBA=		libjbig.a libjbig85.a
+LIBS=		libjbig.so.2 libjbig85.so.1
+DOCSDIR?=	${PREFIX}/share/doc/jbig
+
+TEST_ENV=	${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/libjbig
+TEST_TARGET=	test
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_PROGRAM}	\
+		${BINS:S|^|${WRKSRC}/pbmtools/|} ${STAGEDIR}${PREFIX}/bin
+
+	${INSTALL_MAN}	\
+		${MANS:S|^|${WRKSRC}/pbmtools/|} ${STAGEDIR}${PREFIX}/share/man/man1
+
+	${INSTALL_DATA} ${WRKSRC}/libjbig/*.h ${STAGEDIR}${PREFIX}/include
+
+	${INSTALL_DATA}	\
+		${LIBA:S|^|${WRKSRC}/libjbig/|} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB}	\
+		${LIBS:S|^|${WRKSRC}/libjbig/|} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libjbig.so.2 ${STAGEDIR}${PREFIX}/lib/libjbig.so
+	${LN} -sf libjbig85.so.1 ${STAGEDIR}${PREFIX}/lib/libjbig85.so
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.txt ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

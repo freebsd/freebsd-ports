@@ -1,0 +1,3 @@
+This package supports both conventional Roman algarisms (which range
+from *1* to *3999*) and Milhar Romans, a variation which uses a bar
+across the algarism to indicate multiplication by *1_000*.

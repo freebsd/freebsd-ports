@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2016-12-09 10:36:53 UTC
++++ src/CMakeLists.txt
+@@ -63,7 +63,6 @@ ELSE(HAVE_DL)
+   FIND_PATH(DL_INCLUDE_DIR dlfcn.h)
+   IF(DL_INCLUDE_DIR)
+     SET( HAVE_DL 1 )
+-    SET( EXTRA_LIBS ${EXTRA_LIBS} dl )
+   ENDIF(DL_INCLUDE_DIR)
+ ENDIF(HAVE_DL)
+ 

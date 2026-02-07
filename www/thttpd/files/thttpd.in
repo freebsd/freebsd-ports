@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: thttpd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable thttpd:
+#
+# thttpd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=thttpd
+rcvar=thttpd_enable
+
+command=%%PREFIX%%/sbin/thttpd
+
+thttpd_enable=${thttpd_enable:-"NO"}
+thttpd_flags=${thttpd_flags:-"-C %%PREFIX%%/etc/thttpd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

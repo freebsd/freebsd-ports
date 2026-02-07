@@ -1,0 +1,19 @@
+Jconvolver is a Convolution Engine for JACK, based on FFT convolution and using
+non-uniform partition sizes: small ones at the start of the IR and building up
+to the most efficient size further on. It can perform zero-delay processing with
+moderate CPU load. Jconvolver uses the convolution engine designed for Aella, a
+convolution application for reverberation processing (to be announced later).
+This distributes the calculation over up to five threads, one for each partition
+size, running at priorities just below the the one of JACK's processing thread.
+This engine is a separate library that will be documented as soon as I can find
+the time.
+
+Main features:
+* Any matrix of convolutions between up to up 64 inputs and 64 outputs, as long
+  as your CPU(s) can handle it.
+* Allows trading off CPU load to processing delay, and remains efficient even
+  when configured for zero delay.
+* Sparse and diagonal matrices are handled as efficiently as dense ones. No CPU
+  cycles or memory resources are wasted on empty cells in the matrix, nor on
+  empty partitions if IRs are of different length.
+`

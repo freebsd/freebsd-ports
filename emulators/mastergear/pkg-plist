@@ -1,0 +1,4 @@
+bin/mg
+%%DATADIR%%/CART.ROM
+%%DATADIR%%/SF7000.ROM
+%%PORTDOCS%%%%DOCSDIR%%/MG.html

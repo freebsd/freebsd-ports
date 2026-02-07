@@ -1,0 +1,44 @@
+# Fix handling of homedirectory for pserver, patch from
+#  Jim Studt <jim@federated.com>. Closes: Bug#51234
+diff -Nur src/filesubr.c src/filesubr.c
+--- src/filesubr.c	2005-09-28 23:25:59.000000000 +0800
++++ src/filesubr.c	2006-02-26 22:31:57.000000000 +0800
+@@ -795,6 +795,11 @@
+    The workaround is to put -f in inetd.conf which means that
+    get_homedir won't get called until after the switch in user ID.
+ 
++   NOTE: the above paragraph is not sufficient if the HOME environment
++   variable is set, it overrides the uid based password lookup, hence
++   the change_uid logic path that blocks the HOME environment variable
++   when the uid gets changed.
++
+    The whole concept of a "home directory" on the server is pretty
+    iffy, although I suppose some people probably are relying on it for
+    .cvsrc and such, in the cases where it works.  */
+@@ -802,15 +807,24 @@
+ get_homedir (void)
+ {
+     static char *home = NULL;
++    static uid_t home_uid = 0;
++    static int changed_uid = 0;
+     char *env;
++    uid_t uid = getuid();
+     struct passwd *pw;
+ 
++    if ( home && home_uid != uid) {
++        home = 0;
++        home_uid = uid;
++        changed_uid = 1;
++    }
++
+     if (home != NULL)
+ 	return home;
+ 
+-    if (!server_active && (env = getenv ("HOME")) != NULL)
++    if (!server_active && ((env = getenv ("HOME")) != NULL) && !changed_uid)
+ 	home = env;
+-    else if ((pw = (struct passwd *) getpwuid (getuid ()))
++    else if ((pw = (struct passwd *) getpwuid (uid))
+ 	     && pw->pw_dir)
+ 	home = xstrdup (pw->pw_dir);
+     else

@@ -1,0 +1,67 @@
+--- Makefile.in.orig	2025-02-02 08:06:22 UTC
++++ Makefile.in
+@@ -104,18 +104,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+ 	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
+ 	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
+ 	md5main$(EXEEXT)
+-bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_4) \
+-	ctie$(EXEEXT) cweave$(EXEEXT) ctwill$(EXEEXT) \
+-	ctwill-refsort$(EXEEXT) ctwill-twinx$(EXEEXT) tie$(EXEEXT) \
+-	$(am__EXEEXT_5) $(am__EXEEXT_6) $(am__EXEEXT_7) \
+-	$(am__EXEEXT_8) $(am__EXEEXT_9) $(am__EXEEXT_10) \
+-	$(am__EXEEXT_11) $(am__EXEEXT_12) $(am__EXEEXT_13) \
+-	$(am__EXEEXT_14) $(am__EXEEXT_15) $(am__EXEEXT_16) \
+-	$(am__EXEEXT_17) $(am__EXEEXT_18) $(am__EXEEXT_19) \
+-	$(am__EXEEXT_20) $(am__EXEEXT_21) $(am__EXEEXT_22) \
+-	$(am__EXEEXT_23) $(am__EXEEXT_24) $(am__EXEEXT_25) \
+-	$(am__EXEEXT_26) $(am__EXEEXT_27) $(am__EXEEXT_28) \
+-	$(am__EXEEXT_29) $(am__EXEEXT_30) $(am__EXEEXT_31)
++bin_PROGRAMS = xetex$(EXEEXT)
+ noinst_PROGRAMS = tangleboot$(EXEEXT) ctangleboot$(EXEEXT) \
+ 	$(am__EXEEXT_32) $(am__EXEEXT_33) $(am__EXEEXT_34) \
+ 	$(am__EXEEXT_35) $(am__EXEEXT_36) $(am__EXEEXT_37) \
+@@ -3039,7 +3028,8 @@ PPLIB_DEPEND = @PPLIB_DEPEND@
+ POTRACE_INCLUDES = @POTRACE_INCLUDES@
+ POTRACE_LIBS = @POTRACE_LIBS@
+ PPLIB_DEPEND = @PPLIB_DEPEND@
+-PPLIB_INCLUDES = @PPLIB_INCLUDES@
++PPLIB_INCLUDES = -I@top_srcdir@/../../libs/pplib/pplib-src/src/util \
++	-I@top_srcdir@/../../libs/pplib/pplib-src/src
+ PPLIB_LIBS = @PPLIB_LIBS@
+ PTEXENC_DEPEND = @PTEXENC_DEPEND@
+ PTEXENC_INCLUDES = @PTEXENC_INCLUDES@
+@@ -3146,7 +3136,7 @@ version = $(WEB2CVERSION)
+ AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
+ AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
+ version = $(WEB2CVERSION)
+-SUBDIRS = doc lib man web2c . window omegafonts otps
++SUBDIRS = .
+ proglib = lib/lib.a
+ 
+ #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
+@@ -3901,7 +3891,7 @@ nodist_twill_SOURCES = twill.c twill.h
+ nodist_vptovf_SOURCES = vptovf.c vptovf.h
+ nodist_weave_SOURCES = weave.c weave.h
+ nodist_twill_SOURCES = twill.c twill.h
+-dist_bin_SCRIPTS = cwebdir/ctwill-proofsort cwebdir/twill-refsort
++dist_bin_SCRIPTS =
+ nodist_ctie_SOURCES = ctie.c
+ nodist_cweave_SOURCES = cweave.c cweb.c
+ nodist_ctwill_SOURCES = ctwill.c cweb.c
+@@ -19693,7 +19683,7 @@ install-am: all-am
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-recursive
+ install-strip:
+@@ -20620,7 +20610,6 @@ install-exec-am: install-binPROGRAMS install-dist_binS
+ install-exec-am: install-binPROGRAMS install-dist_binSCRIPTS \
+ 	install-libLIBRARIES install-libLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ install-html: install-html-recursive
+ 
+ install-html-am:

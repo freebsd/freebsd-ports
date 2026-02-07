@@ -1,0 +1,59 @@
+--- configure.orig	2023-04-13 18:15:33 UTC
++++ configure
+@@ -2139,8 +2139,8 @@ MYPCFILES="kyotocabinet.pc"
+ MYPCFILES="kyotocabinet.pc"
+ 
+ # Building flags
+-MYCFLAGS="-Wall -ansi -pedantic -fPIC -fsigned-char -g0 -O2"
+-MYCXXFLAGS="-Wall -fPIC -fsigned-char -g0 -O2"
++MYCFLAGS="-Wall -ansi -pedantic -fPIC -fsigned-char"
++MYCXXFLAGS="-Wall -fPIC -fsigned-char"
+ MYCPPFLAGS="-I. -I\$(INCLUDEDIR) -I/usr/local/include"
+ MYCPPFLAGS="$MYCPPFLAGS -DNDEBUG -D_GNU_SOURCE=1"
+ MYCPPFLAGS="$MYCPPFLAGS -D_FILE_OFFSET_BITS=64 -D_REENTRANT -D__EXTENSIONS__"
+@@ -4007,10 +4007,10 @@ printf 'checking for 64-bit availability... '
+ 
+ # System-depending optimization
+ printf 'checking for 64-bit availability... '
+-if printf 'int main(void) {return 0;}' | $CC -xc -m64 -o config.tmp - >config.tmp 2>&1
++if printf 'int main(void) {return 0;}' | $CC -xc -o config.tmp - >config.tmp 2>&1
+ then
+-  MYCFLAGS="-m64 $MYCFLAGS"
+-  MYCXXFLAGS="-m64 $MYCXXFLAGS"
++  MYCFLAGS="$MYCFLAGS"
++  MYCXXFLAGS="$MYCXXFLAGS"
+   printf 'yes\n'
+ else
+   printf 'no\n'
+@@ -4018,10 +4018,10 @@ then
+ if test "$enable_opt" != "no"
+ then
+   printf 'checking for CPU optimization availability... '
+-  if printf 'int main(void) {return 0;}' | $CC -xc -march=native -o config.tmp - >config.tmp 2>&1
++  if printf 'int main(void) {return 0;}' | $CC -xc  -o config.tmp - >config.tmp 2>&1
+   then
+-    MYCFLAGS="-march=native $MYCFLAGS"
+-    MYCXXFLAGS="-march=native $MYCXXFLAGS"
++    MYCFLAGS="$MYCFLAGS"
++    MYCXXFLAGS="$MYCXXFLAGS"
+     printf 'yes\n'
+   else
+     printf 'no\n'
+@@ -4231,7 +4231,7 @@ else
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lstdc++  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4260,7 +4260,7 @@ _ACEOF
+ #define HAVE_LIBSTDC__ 1
+ _ACEOF
+ 
+-  LIBS="-lstdc++ $LIBS"
++  LIBS="$LIBS"
+ 
+ fi
+ 

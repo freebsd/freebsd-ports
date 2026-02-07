@@ -1,0 +1,57 @@
+--- bin/sbt.orig	2024-12-23 03:25:31 UTC
++++ bin/sbt
+@@ -100,7 +100,7 @@ declare -r sbt_bin_dir="$(dirname "$(realpathish "$0")
+ }
+ 
+ declare -r sbt_bin_dir="$(dirname "$(realpathish "$0")")"
+-declare -r sbt_home="$(dirname "$sbt_bin_dir")"
++declare -r sbt_home="$sbt_bin_dir"
+ 
+ echoerr () {
+   echo 1>&2 "$@"
+@@ -122,7 +122,7 @@ jar_file () {
+ }
+ 
+ jar_file () {
+-  echo "$(cygwinpath "${sbt_home}/bin/sbt-launch.jar")"
++  echo "$(cygwinpath "${sbt_home}/sbt-launch.jar")"
+ }
+ 
+ jar_url () {
+@@ -430,14 +430,14 @@ syncPreloaded() {
+ }
+ 
+ syncPreloaded() {
+-  local source_preloaded="$sbt_home/lib/local-preloaded/"
++  local source_preloaded="$sbt_home/local-preloaded/"
+   local target_preloaded="$(getPreloaded)"
+   if [[ "$init_sbt_version" == "" ]]; then
+     # FIXME: better $init_sbt_version detection
+     init_sbt_version="$(ls -1 "$source_preloaded/org/scala-sbt/sbt/")"
+   fi
+   [[ -f "$target_preloaded/org/scala-sbt/sbt/$init_sbt_version/" ]] || {
+-    # lib/local-preloaded exists (This is optional)
++    # local-preloaded exists (This is optional)
+     [[ -d "$source_preloaded" ]] && {
+       command -v rsync >/dev/null 2>&1 && {
+         mkdir -p "$target_preloaded"
+@@ -567,8 +567,8 @@ declare -r build_props_file="$(pwd)/project/build.prop
+ declare -ra noshare_opts=(-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy)
+ declare -r sbt_opts_file=".sbtopts"
+ declare -r build_props_file="$(pwd)/project/build.properties"
+-declare -r etc_sbt_opts_file="/etc/sbt/sbtopts"
+-# this allows /etc/sbt/sbtopts location to be changed
++declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbt/sbtopts"
++# this allows %%PREFIX%%/etc/sbt/sbtopts location to be changed
+ declare machine_sbt_opts_file="${etc_sbt_opts_file}"
+ declare config_home="${XDG_CONFIG_HOME:-$HOME/.config}/sbt"
+ [[ -f "${config_home}/sbtopts" ]] && machine_sbt_opts_file="${config_home}/sbtopts"
+@@ -621,7 +621,7 @@ Usage: `basename "$0"` [options]
+   SBT_OPTS            environment variable, if unset uses "$default_sbt_opts"
+   .sbtopts            if this file exists in the current directory, its contents
+                       are prepended to the runner args
+-  /etc/sbt/sbtopts    if this file exists, it is prepended to the runner args
++  %%PREFIX%%/etc/sbt/sbtopts    if this file exists, it is prepended to the runner args
+   -Dkey=val           pass -Dkey=val directly to the java runtime
+   -J-X                pass option -X directly to the java runtime
+                       (-J is stripped)

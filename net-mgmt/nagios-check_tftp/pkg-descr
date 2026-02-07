@@ -1,0 +1,2 @@
+Nagios plugin for checking tftp servers. This plugin can retrieve a file and
+compare the size with a given value.

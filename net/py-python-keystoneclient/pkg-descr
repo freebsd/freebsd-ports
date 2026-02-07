@@ -1,0 +1,3 @@
+This is a client for the OpenStack Identity API, implemented by the Keystone
+team; it contains a Python API (the keystoneclient module) for OpenStack's
+Identity Service. For command line interface support, use OpenStackClient.

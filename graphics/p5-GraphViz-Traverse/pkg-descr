@@ -1,0 +1,2 @@
+A GraphViz::Traverse object represents a base class for inheriting by
+other traversal modules.

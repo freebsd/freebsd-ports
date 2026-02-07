@@ -1,0 +1,4 @@
+Common C++ offers a highly portable C++ application development
+framework.  Common C++ provides	classes for threads, sockets, daemon
+management, system logging, object synchronization, realtime network
+development, persistent object management, and file access.

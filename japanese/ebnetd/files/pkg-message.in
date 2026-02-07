@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+You'll need manual configurations to actually activate EBNETD servers
+(ebhttpd/ebnetd/ndtpd).
+
+Step 0(optional):
+If you want to setup private syslog, edit /etc/syslog.conf.
+
+Step 1:
+Copy a sample configuration file `ebnetd.conf.sample' to `ebnetd.conf'
+in `%%PREFIX%%/etc' directory, and edit it. Consult the "Configuration
+File" section of info file.
+
+Step 2a:
+To start EBNETD servers as standalone daemons, add the following lines
+to /etc/rc.conf:
+ebhttpd_enable (bool): Set to "NO" by default.
+                       Set it to "YES" to enable ebhttpd.
+ebhttpd_flags (str):   Set to "" by default.
+                       Extra flags passed to start ebhttpd.
+ebnetd_enable (bool):  Set to "NO" by default.
+                       Set it to "YES" to enable ebnetd.
+ebnetd_flags (str):    Set to "" by default.
+                       Extra flags passed to start ebnetd.
+ndtpd_enable (bool):   Set to "NO" by default.
+                       Set it to "YES" to enable ndtpd.
+ndtpd_flags (str):     Set to "" by default.
+                       Extra flags passed to start ndtpd.
+
+Step 2b:
+To start EBNETD servers as child processes of 'inetd', edit
+/etc/inetd.conf. Consult the "Run `xxxx' as a child of `inetd'"
+sections of info file.
+EOM
+}
+]

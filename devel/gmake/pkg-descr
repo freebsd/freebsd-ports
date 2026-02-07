@@ -1,0 +1,3 @@
+GNU make is a tool that controls the generation of executables and other
+non-source files from source files.  Its purpose is the same as that
+of the utility make(1).

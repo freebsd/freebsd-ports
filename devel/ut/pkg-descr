@@ -1,0 +1,8 @@
+UT is a C++20 u(micro)/Unit Testing Framework.
+
+Testing is a very important part of the Software Development, however,
+C++ doesn't provide any good testing facilities out of the box, which often
+leads into a poor testing experience for develops and/or lack of tests/coverage
+in general.
+
+UT attempts to provide a uniform and easy way to run tests in C++.

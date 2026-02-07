@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: ircd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable ircd:
+# ircd_enable (bool):           Set to "NO" by default.
+#                               Set it to "YES" to enable ircd.
+#
+
+. /etc/rc.subr
+
+name="ircd"
+rcvar=ircd_enable
+
+load_rc_config $name
+
+: ${ircd_enable="NO"}
+
+pidfile="%%PREFIX%%/var/run/ircd.pid"
+command="%%PREFIX%%/sbin/ircd"
+
+run_rc_command "$1"
+

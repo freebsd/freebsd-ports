@@ -1,0 +1,29 @@
+--- src/VBox/Runtime/Makefile.kmk.orig	2025-08-28 22:09:24 UTC
++++ src/VBox/Runtime/Makefile.kmk
+@@ -233,6 +233,9 @@ $(IPRT_OUT_DIR)/oiddb.h.ts +| $(IPRT_OUT_DIR)/oiddb.h:
+ 	$(QUIET)$(oiddb2c_1_TARGET) "$@" $(filter %.cfg,$^)
+ 	$(QUIET)$(CP) --changed -fv "$@" "$(IPRT_OUT_DIR)/oiddb.h"
+ 
++# Set the defines that utf8-posix.cpp needs. It's used by several targets.
++#
++r3/posix/utf8-posix.cpp_DEFS.freebsd = $(VBOX_ICONV_DEFS)
+ 
+ #
+ # Unicode Specification reader used to regenerate unidata-*.cpp.
+@@ -1516,6 +1519,7 @@ RuntimeBaseR3_SOURCES.freebsd = \
+ 	generic/RTProcDaemonize-generic.cpp \
+ 	generic/RTProcIsRunningByName-generic.cpp \
+ 	generic/RTThreadGetNativeState-generic.cpp \
++	generic/system-page-size-generic.cpp \
+ 	r3/freebsd/fileaio-freebsd.cpp \
+ 	r3/freebsd/RTFileQuerySectorSize-freebsd.cpp \
+ 	r3/freebsd/mp-freebsd.cpp \
+@@ -3072,6 +3076,8 @@ VBoxRT_LDFLAGS.win             = /MANIFEST \
+ 	/delayload:ole32.dll \
+ 	/delayload:oleaut32.dll \
+ 	/delayload:advapi32.dll
++VBoxRT_LDFLAGS.freebsd          = \
++	-Wl,--allow-multiple-definition
+ 
+ if1of (VBoxRT, $(DLLS))
+  $(call VBOX_SET_VER_INFO_DLL,VBoxRT,VirtualBox Runtime)

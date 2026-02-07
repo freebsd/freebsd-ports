@@ -1,0 +1,10 @@
+bin/camera
+bin/gallery
+lib/Desktop/widget/camera.so
+share/applications/org.defora.camera.desktop
+share/applications/org.defora.gallery.desktop
+share/doc/Camera/COPYING
+%%NLS%%share/locale/es/LC_MESSAGES/Camera.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/Camera.mo
+%%PORTDOCS%%share/man/man1/camera.1.gz
+%%PORTDOCS%%share/man/man1/gallery.1.gz

@@ -1,0 +1,56 @@
+# This file lists the options to not bloat Makefile
+
+OPTIONS_MULTI=	DICT
+OPTIONS_MULTI_DICT=	AF_ZA BG CA HR CS DA NL EN_AU EN_CA \
+			EN_NZ EN_GB FR_FR FO GL DE_AT DE_DE DE_CH \
+			EL HE_IL HU IA GA IT LA LV_LV LT MS MI NB \
+			NN PL PT PT_BR RO RU ES_MX ES_ES SK SL SV UK \
+			CY_GB ZU_ZA
+
+ALL_DESC=	all dictionaries
+AF_ZA_DESC=	Afrikaans
+BG_DESC=	Bulgarian
+CA_DESC=	Catalan
+HR_DESC=	Croatian
+CS_DESC=	Czech
+DA_DESC=	Danish
+NL_DESC=	Dutch
+EN_AU_DESC=	English (Australia)
+EN_CA_DESC=	English (Canada)
+EN_NZ_DESC=	English (New Zealand)
+EN_GB_DESC=	English (United Kingdom)
+FR_FR_DESC=	French (France)
+FO_DESC=	Faroese
+GL_DESC=	Galician (Spain)
+DE_AT_DESC=	German (Austria)
+DE_DE_DESC=	German (Germany)
+DE_CH_DESC=	German (Switzerland)
+EL_DESC=	Greek
+HE_IL_DESC=	Hebrew
+HU_DESC=	Hungarian
+IA_DESC=	Interlingua
+GA_DESC=	Irish
+IT_DESC=	Italian
+LA_DESC=	Latin
+LV_LV_DESC=	Latvian
+LT_DESC=	Lithuanian
+MS_DESC=	Malay
+MI_DESC=	Maori
+NB_DESC=	Norwegian (Bokmal)
+NN_DESC=	Norwegian (Nynorsk)
+PL_DESC=	Polish
+PT_DESC=	Portuguese (Portugal)
+PT_BR_DESC=	Portuguese (Brasil)
+RO_DESC=	Romanian
+RU_DESC=	Russian
+ES_MX_DESC=	Spanish (Mexico)
+ES_ES_DESC=	Spanish (Spain)
+SK_DESC=	Slovak
+SL_DESC=	Slovenian
+SV_DESC=	Swedish
+UK_DESC=	Ukrainian
+CY_GB_DESC=	Welsh
+ZU_ZA_DESC=	Zulu (South Africa)
+
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_DICT}
+OPTIONS_SUB=		yes

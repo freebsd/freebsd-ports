@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: mpd5
+# REQUIRE: netif
+# BEFORE: routing
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable mpd5:
+# mpd_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable mpd5.
+# mpd_flags (string):	Set to "-b" by default.
+#			Extra flags passed to start command.
+#
+# See mpd5(8) for flags.
+
+. /etc/rc.subr
+
+name="mpd5"
+rcvar=mpd_enable
+
+load_rc_config ${name}
+
+: ${mpd_enable="NO"}
+: ${mpd_flags="-b"}
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+
+case "${mpd_flags}" in
+*-p\ *)
+        echo "ERROR: \$mpd_flags includes -p option." \
+                "PID file is already set to $pidfile."
+        exit 1
+        ;;
+*)
+        command_args="-p ${pidfile} ${mpd_flags}"
+        ;;
+esac
+
+run_rc_command "$1"

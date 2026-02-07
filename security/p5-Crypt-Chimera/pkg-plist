@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Crypt/Chimera.pm
+%%SITE_PERL%%/Crypt/Chimera/Cracker.pm
+%%SITE_PERL%%/Crypt/Chimera/Event.pm
+%%SITE_PERL%%/Crypt/Chimera/Object.pm
+%%SITE_PERL%%/Crypt/Chimera/User.pm
+%%SITE_PERL%%/Crypt/Chimera/World.pm
+%%PERL5_MAN3%%/Crypt::Chimera.3.gz

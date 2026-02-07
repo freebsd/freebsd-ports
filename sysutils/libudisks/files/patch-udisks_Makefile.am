@@ -1,0 +1,15 @@
+--- udisks/Makefile.am.orig	2023-06-28 15:13:57 UTC
++++ udisks/Makefile.am
+@@ -142,10 +142,10 @@ if HAVE_INTROSPECTION
+ 
+ INTROSPECTION_GIRS = UDisks-2.0.gir
+ 
+-girdir = $(INTROSPECTION_GIRDIR)
++girdir = $(datadir)/gir-1.0
+ gir_DATA = UDisks-2.0.gir
+ 
+-typelibsdir = $(INTROSPECTION_TYPELIBDIR)
++typelibsdir = $(libdir)/girepository-1.0
+ typelibs_DATA = UDisks-2.0.typelib
+ 
+ UDisks_2_0_gir_SCANNERFLAGS = 			\

@@ -1,0 +1,30 @@
+#! /bin/sh
+
+# PROVIDE: git_daemon
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable git_daemon:
+#
+#git_daemon_enable="YES"
+
+. /etc/rc.subr
+
+name="git_daemon"
+rcvar="git_daemon_enable"
+
+load_rc_config $name
+
+: ${git_daemon_user:=git_daemon}
+: ${git_daemon_group:=git_daemon}
+: ${git_daemon_enable:=NO}
+: ${git_daemon_directory:=%%PREFIX%%/git}
+: ${git_daemon_flags:=--syslog --reuseaddr --detach}
+
+command="%%PREFIX%%/libexec/git-core/git-daemon"
+command_args="${git_daemon_directory}"
+
+PATH="${PATH}:%%PREFIX%%/libexec/git-core"
+
+run_rc_command "$1"

@@ -1,0 +1,61 @@
+INN_LAYOUT?=		old
+
+.if !empty(INN_LAYOUT:tl:Mnew)
+#-----------------------------------------------------------------------
+# New-style layout. Keep database, spool, and other transient data under
+# /var, where it should be.
+#-----------------------------------------------------------------------
+INN_NEWSBASE=		${PREFIX}/news
+INN_CONFDIR=		${INN_NEWSBASE}/etc
+INN_SHAREDIR=		${INN_NEWSBASE}/share
+INN_RUNDIR=		${VARBASE}/run/news
+INN_LOGDIR=		${VARBASE}/log/news
+INN_DBDIR=		${VARBASE}/news/db
+INN_TMPDIR=		${VARBASE}/news/tmp
+INN_NEWSSPOOL=		${VARBASE}/news
+.elif !empty(INN_LAYOUT:tl:Mhier)
+#-----------------------------------------------------------------------
+# hier(7)-ish layout. As above, but try to use standard directories
+# under /var.
+#-----------------------------------------------------------------------
+INN_NEWSBASE=		${PREFIX}/news
+INN_CONFDIR=		${PREFIX}/etc/news
+INN_SHAREDIR=		${PREFIX}/share/inn
+INN_RUNDIR=		${VARBASE}/run/news
+INN_LOGDIR=		${VARBASE}/log/news
+INN_DBDIR=		${VARBASE}/db/news
+INN_TMPDIR=		${VARBASE}/tmp/news
+INN_NEWSSPOOL=		${VARBASE}/spool/news
+.else
+#-----------------------------------------------------------------------
+# Default layout ("old") - put everything in one place,
+# except for log files (and possible spool data)
+# Respect some legacy variables for backwards-compatibility.
+#-----------------------------------------------------------------------
+INN_NEWSBASE=		${PREFIX}/news
+.  if defined(WITH_STANDARD_ETC)
+INN_CONFDIR=		${PREFIX}/etc/inn
+.  else
+INN_CONFDIR?=		${INN_NEWSBASE}/etc
+.  endif
+INN_RUNDIR=		${INN_NEWSBASE}/run
+INN_NEWSLOG?=		${VARBASE}/log/news
+INN_LOGDIR?=		${INN_NEWSLOG}
+INN_DBDIR=		${INN_NEWSBASE}/db
+INN_TMPDIR=		${INN_NEWSBASE}/tmp
+INN_SHAREDIR=		${INN_NEWSBASE}/share
+.  if exists(${VARBASE}/news) && !defined(PACKAGE_BUILDING)
+INN_NEWSSPOOL?=		${VARBASE}/news
+.  elif exists(${VARBASE}/spool/news) && !defined(PACKAGE_BUILDING)
+INN_NEWSSPOOL?=		${VARBASE}/spool/news
+.  else
+INN_NEWSSPOOL?=		${PREFIX}/news/spool
+.  endif
+.endif
+
+.for sub in NEWSBASE CONFDIR RUNDIR LOGDIR DBDIR TMPDIR NEWSSPOOL SHAREDIR
+PLIST_SUB+=		${sub}="${INN_${sub}}"
+SUB_LIST+=		${sub}="${INN_${sub}}"
+.endfor
+
+PLIST_SUB+=		CWDNEWSBASE="@cwd ${INN_NEWSBASE}"

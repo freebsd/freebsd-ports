@@ -1,0 +1,14 @@
+Wallpaper Utility written in Rust
+
+Features:
+- Spans an input wallpaper across all monitors
+- Works alongside any wlroots based compositor f.E. Hyprland
+- Automatically re-splits when monitors are hotplugged
+- Color-Palette generation
+- Various wallpaper setter backends
+  - wpaperd
+  - swaybg
+  - hyprpaper
+- Configuration generation for lockers
+  - swaylock
+  - hyprlock

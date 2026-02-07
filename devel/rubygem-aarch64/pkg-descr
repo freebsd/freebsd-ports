@@ -1,0 +1,2 @@
+This is a pure Ruby ARM64 assembler.  Are you tired of writing Ruby in Ruby?
+Now you can write ARM64 assembly in Ruby with this gem!

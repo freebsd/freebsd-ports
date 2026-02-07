@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Mail/Ezmlm.pm
+%%SITE_PERL%%/Mail/Ezmlm/GpgEzmlm.pm
+%%SITE_PERL%%/Mail/Ezmlm/GpgKeyRing.pm
+%%PERL5_MAN3%%/Mail::Ezmlm.3.gz
+%%PERL5_MAN3%%/Mail::Ezmlm::GpgKeyRing.3.gz
+%%PERL5_MAN3%%/Mail::Ezmlm::GpgEzmlm.3.gz

@@ -1,0 +1,4 @@
+This is a nsswitch plugin from Apple's mDNSResponder code, adapted
+for FreeBSD's nsswitch and libc.
+
+See also: https://developer.apple.com/bonjour/

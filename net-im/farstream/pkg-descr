@@ -1,0 +1,5 @@
+The Farstream (formerly Farsight) project is an effort to create a framework
+to deal with all known audio/video conferencing protocols. On one side it
+offers a generic API that makes it possible to write plugins for different
+streaming protocols, on the other side it offers an API for clients to use
+those plugins.

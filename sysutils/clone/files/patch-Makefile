@@ -1,0 +1,10 @@
+--- Makefile.orig	2015-05-01 19:21:45 UTC
++++ Makefile
+@@ -60,5 +60,5 @@ clean:
+ update: clean all
+ 
+ install: $(TOOL)
+-	strip -x -o /usr/local/bin/$(TOOL) $(TOOL)
+-	cp $(TOOL).1 /usr/local/man/man1/$(TOOL).1
++	strip -x -o $(DESTDIR)$(PREFIX)/bin/$(TOOL) $(TOOL)
++	cp $(TOOL).1 $(DESTDIR)$(PREFIX)/share/man/man1/$(TOOL).1

@@ -1,0 +1,2 @@
+Nginx::ReadBody is a nginx web server embeded perl module to read
+and evaluate a request body.

@@ -1,0 +1,94 @@
+From 6e79023af14210a6435ab18ada8097253b8b16b6 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Mon, 31 May 2021 01:38:49 +0200
+Subject: [PATCH 25/28] From d9b748869a8f4018ebee302aae8246bf29f60309 Mon Sep
+ 17 00:00:00 2001 From: "Timur I. Bakeyev" <timur@iXsystems.com> Date: Fri, 1
+ Jun 2018 01:35:08 +0800 Subject: [PATCH] vfs_fruit: allow broken
+ AFP_Signature where the first byte is 0
+
+FreeBSD bug ... caused the first byte of the AFP_AfpInfo xattr to be 0
+instead of 'A'. This hack allows such broken AFP_AfpInfo blobs to be
+parsed by afpinfo_unpack().
+
+FreeBSD Bug: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=228462
+
+Signed-off-by: Ralph Boehme <slow@samba.org>
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source3/lib/adouble.c       |   19 +++++++++++++++----
+ source3/modules/vfs_fruit.c |   19 ++++++++++++++++++-
+ 2 files changed, 33 insertions(+), 5 deletions(-)
+
+diff -Naurp a/source3/lib/adouble.c b/source3/lib/adouble.c
+--- a/source3/lib/adouble.c	2024-02-02 04:33:51.172489400 -0500
++++ b/source3/lib/adouble.c	2024-08-05 13:53:43.952688000 -0400
+@@ -2821,6 +2821,8 @@ ssize_t afpinfo_pack(const AfpInfo *ai, char *buf)
+ 	return AFP_INFO_SIZE;
+ }
+ 
++#define BROKEN_FREEBSD_AFP_Signature 0x00465000
++
+ /**
+  * Unpack a buffer into a AfpInfo structure
+  *
+@@ -2841,11 +2843,20 @@ AfpInfo *afpinfo_unpack(TALLOC_CTX *ctx, const void *d
+ 	       sizeof(ai->afpi_FinderInfo));
+ 
+ 	if (validate) {
+-		if (ai->afpi_Signature != AFP_Signature
+-		    || ai->afpi_Version != AFP_Version)
+-		{
+-			DEBUG(1, ("Bad AfpInfo signature or version\n"));
++		if (ai->afpi_Signature != AFP_Signature) {
++			DBG_WARNING("Bad AFP signature [%x]\n", ai->afpi_Signature);
++
++			if (ai->afpi_Signature != BROKEN_FREEBSD_AFP_Signature) {
++				DBG_ERR("Bad AfpInfo signature\n");
++				TALLOC_FREE(ai);
++				return NULL;
++			}
++		}
++
++		if (ai->afpi_Version != AFP_Version) {
++			DBG_ERR("Bad AfpInfo version\n");
+ 			TALLOC_FREE(ai);
++			return NULL;
+ 		}
+ 	} else {
+ 		ai->afpi_Signature = AFP_Signature;
+diff -Naurp a/source3/modules/vfs_fruit.c b/source3/modules/vfs_fruit.c
+--- a/source3/modules/vfs_fruit.c	2024-02-02 04:33:51.228489600 -0500
++++ b/source3/modules/vfs_fruit.c	2024-08-05 13:12:29.220129000 -0400
+@@ -2305,6 +2305,7 @@ static ssize_t fruit_pread_meta_stream(vfs_handle_stru
+ 				       size_t n, off_t offset)
+ {
+ 	struct fio *fio = fruit_get_complete_fio(handle, fsp);
++	char *p = (char *)data;
+ 	ssize_t nread;
+ 	int ret;
+ 
+@@ -2313,7 +2314,23 @@ static ssize_t fruit_pread_meta_stream(vfs_handle_stru
+ 	}
+ 
+ 	nread = SMB_VFS_NEXT_PREAD(handle, fsp, data, n, offset);
+-	if (nread == -1 || nread == n) {
++	if (nread <= 0) {
++		/*
++		 * fruit_meta_open_stream() removes O_CREAT flag
++		 * from xattr open. This results in vfs_streams_xattr
++		 * not generating an FSP extension for the files_struct
++		 * and causes subsequent pread() of stream to return
++		 * nread=0 if pread() occurs before pwrite().
++		 */
++		return nread;
++	}
++
++	if (nread == n) {
++		if (offset == 0 && nread > 3 && p[0] == 0 && p[1] == 'F' && p[2] == 'P') {
++			DBG_NOTICE("Fixing AFP_Info of [%s]\n",
++				    fsp_str_dbg(fsp));
++			p[0] = 'A';
++		}
+ 		return nread;
+ 	}
+ 

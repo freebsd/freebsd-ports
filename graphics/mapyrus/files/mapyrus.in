@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ -z "${DISPLAY}" ]; then
+    JAVA_AWT_HEADLESS="-Djava.awt.headless=true"
+else
+    JAVA_AWT_HEADLESS=""
+fi
+if [ -z "$1" ]; then
+    MAPYRUS_ARGS="-h"
+else
+    MAPYRUS_ARGS="$@"
+fi
+exec "%%LOCALBASE%%/bin/java" ${JAVA_AWT_HEADLESS} -jar "%%DATADIR%%/mapyrus.jar" ${MAPYRUS_ARGS}

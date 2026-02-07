@@ -1,0 +1,4 @@
+%%SITE_PERL%%/DBD/PgLite.pm
+%%SITE_PERL%%/DBD/PgLite/MirrorPgToSQLite.pm
+%%PERL5_MAN3%%/DBD::PgLite.3.gz
+%%PERL5_MAN3%%/DBD::PgLite::MirrorPgToSQLite.3.gz

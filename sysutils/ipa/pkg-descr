@@ -1,0 +1,11 @@
+IPA -- Pluggable Accounting System
+
+Main features:
+
+- flexible general purpose accounting system;
+- supports static and dynamic rules;
+- supports limits, sublimits and thresholds;
+- works with external accounting modules;
+- works with external database modules;
+- works with external statistics modules;
+- accounting per specified period of a week.

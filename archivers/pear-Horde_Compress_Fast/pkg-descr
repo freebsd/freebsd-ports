@@ -1,0 +1,4 @@
+Horde_Compress_Fast - Fast Compression Library
+
+Provides compression suitable for packing strings on-the-fly in PHP code (as
+opposed to more resource-intensive compression algorithms such as DEFLATE).

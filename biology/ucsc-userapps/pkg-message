@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+
+ucsc-kentutils is installed in it's own directory in order to avoid install
+conflicts with other ports.  Run "ucsc-shell" to gain access to ucsc-kentutils
+commands in your PATH.
+
+This port installs only freely available components of the UCSC userApps
+distribution.  See http://genome.ucsc.edu/license/ for more information.
+
+EOM
+}
+]

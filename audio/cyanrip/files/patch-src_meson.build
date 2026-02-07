@@ -1,0 +1,11 @@
+--- src/meson.build.orig	2023-02-21 23:13:42 UTC
++++ src/meson.build
+@@ -46,7 +46,7 @@ sources = [
+     'accurip.c',
+ 
+     # Version
+-    vcs_tag(command: ['git', 'rev-parse', '--short', 'HEAD'],
++    vcs_tag(command: ['false'],
+                       input: 'version.c.in', output: 'version.c',
+                       fallback: 'release')
+ ]

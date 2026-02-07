@@ -1,0 +1,33 @@
+See:
+https://notabug.org/mcz/spm/commit/8c3120fd44df117e5947d2705ba0d87443be831c.diff
+--- spm.orig	2017-10-22 12:27:00 UTC
++++ spm
+@@ -21,6 +21,7 @@ umask u=rwx,go=
+ ## Variables
+ GPG_OPTS='--quiet --yes --batch'
+ STORE_DIR="${PASSWORD_STORE_DIR:-${HOME}/.spm}"
++STORE_KEY="${PASSWORD_STORE_KEY:-}"
+ 
+ ## Helper
+ usage() {
+@@ -41,10 +42,10 @@ check() {
+ }
+ 
+ gpg() {
+-	if [ -z "${PASSWORD_STORE_KEY}" ]; then
++	if [ -z "${STORE_KEY}" ]; then
+ 		gpg2 ${GPG_OPTS} --default-recipient-self "${@}"
+ 	else
+-		gpg2 ${GPG_OPTS} --recipient "${PASSWORD_STORE_KEY}" "${@}"
++		gpg2 ${GPG_OPTS} --recipient "${STORE_KEY}" "${@}"
+ 	fi
+ }
+ 
+@@ -53,6 +54,7 @@ readpw() {
+ 	IFS= read -r "${2}"
+ 	[ -t 0 ] && stty echo
+ 	[ -z "${2}" ] && usage 'empty password'
++	return 0
+ }
+ 
+ find() {

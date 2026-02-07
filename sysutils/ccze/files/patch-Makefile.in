@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Dec 15 11:06:49 2006
++++ src/Makefile.in	Fri Dec 15 11:07:04 2006
+@@ -22,7 +22,7 @@
+ 		-Wbad-function-cast -Wsign-compare -Wchar-subscripts \
+ 		-Wcomment -Wformat -Wformat-nonliteral -Wformat-security \
+ 		-Wimplicit -Wmain -Wmissing-braces -Wparentheses \
+-		-Wreturn-type -Wswitch -Wmulticharacter \
++		-Wreturn-type -Wswitch \
+ 		-Wmissing-noreturn -Wmissing-declarations @WFLAGS_3X@
+ WFLAGS_ICC	= -Wall -wd193,279,810,869,1418,1419
+ WFLAGS_3X	= -Wsequence-point -Wdiv-by-zero -W -Wunused \

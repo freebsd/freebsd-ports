@@ -1,0 +1,2 @@
+This tool generates Go language bindings of services in protobuf
+definition files for gRPC.

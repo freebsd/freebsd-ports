@@ -1,0 +1,12 @@
+bin/spectrwm
+%%ETCDIR%%.conf.sample
+lib/libswmhack.so
+%%EXAMPLESDIR%%/baraction.sh
+%%EXAMPLESDIR%%/screenshot.sh
+%%EXAMPLESDIR%%/spectrwm_cz.conf
+%%EXAMPLESDIR%%/spectrwm_es.conf
+%%EXAMPLESDIR%%/spectrwm_fr.conf
+%%EXAMPLESDIR%%/spectrwm_fr_ch.conf
+%%EXAMPLESDIR%%/spectrwm_se.conf
+%%EXAMPLESDIR%%/spectrwm_us.conf
+share/man/man1/spectrwm.1.gz

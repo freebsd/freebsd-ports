@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2017-04-03 12:21:50 UTC
++++ Makefile.in
+@@ -609,7 +609,7 @@ XGETTEXT_OPTIONS = \
+ GMOFILES = $(POFILES:.po=.gmo)
+ themedir = $(DESTDIR)$(datadir)/icons/hicolor
+ context = apps
+-sizes = 16 22 24 32 48
++sizes = 16 22 32 48
+ desktopdir = $(DESTDIR)$(datadir)/applications
+ INSTALL_DATA_HOOKS = install-icons install-desktop
+ UNINSTALL_DATA_HOOKS = uninstall-icons uninstall-desktop

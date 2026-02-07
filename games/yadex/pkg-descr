@@ -1,0 +1,9 @@
+Yadex is a Doom level (WAD) editor for Unix systems running X.  It supports
+Doom alpha, Doom beta, Doom, Ultimate Doom, Final Doom, Doom II, Heretic and
+also, in a more or less limited way, Hexen and Strife.
+
+Yadex is descended from DEU 5.21.  Therefore, as you might expect, it's a
+rather low-level editor that requires you to take care of a lot of detail
+but on the flip side allows you to control very precisely what you are
+doing.  In addition, it has many advanced functions that DEU didn't have,
+to make certain tedious tasks easy.

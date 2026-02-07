@@ -1,0 +1,7 @@
+TIMESTAMP = 1687461068
+SHA256 (rocky/t/tcl-8.6.10-7.el9.aarch64.rpm) = 7aa731ad574123c77e1fb4181e2b17bf041f56852aa804a531db7117d80e8756
+SIZE (rocky/t/tcl-8.6.10-7.el9.aarch64.rpm) = 1090491
+SHA256 (rocky/t/tcl-8.6.10-7.el9.x86_64.rpm) = 96838da95b0edda201675bfb1cc5be98ec20a21c294056297dcd904d21f6df65
+SIZE (rocky/t/tcl-8.6.10-7.el9.x86_64.rpm) = 1106233
+SHA256 (rocky/t/tcl-8.6.10-7.el9.src.rpm) = 656d37bc2286729d5fa153d86799db6f26027d9c3f1e60ec4fd0750b634ead75
+SIZE (rocky/t/tcl-8.6.10-7.el9.src.rpm) = 5997863

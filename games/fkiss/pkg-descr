@@ -1,0 +1,7 @@
+This software fkiss - French-KISS! is a sample implementation of
+KISekae Set system (KISS) for X Window System.
+KISS is a software for playing Paper-doll on any computers.
+"Kisekae" means "changing clothes".
+
+For example, type
+% fkiss /usr/local/share/examples/fkiss/frkismi4.lzh

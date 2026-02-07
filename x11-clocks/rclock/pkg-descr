@@ -1,0 +1,6 @@
+Rclock is an analog clock for X intended as an xclock(1) replacement that
+conserves memory and has extra features:  rclock enters reverse video if
+there is mail waiting; an appointment reminder is also builtin.
+
+The ~/.rclock file lists the messages to display and/or the programs
+to run at specified times and dates.

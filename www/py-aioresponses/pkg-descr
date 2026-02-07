@@ -1,0 +1,8 @@
+Aioresponses is a helper to mock/fake web requests in python aiohttp package.
+
+For requests module there are a lot of packages that help us with testing
+(eg. httpretty, responses, requests-mock).
+
+When it comes to testing asynchronous HTTP requests it is a bit harder
+(at least at the beginning). The purpose of this package is to provide an
+easy way to test asynchronous HTTP requests.

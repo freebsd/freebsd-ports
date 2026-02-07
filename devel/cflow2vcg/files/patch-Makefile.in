@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Feb  8 07:01:11 2002
++++ Makefile.in	Fri Jan 24 01:42:56 2003
+@@ -65,7 +65,7 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = src doc test
++SUBDIRS = src test
+ 
+ EXTRA_DIST = configure README_fr
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

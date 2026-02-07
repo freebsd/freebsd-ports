@@ -1,0 +1,2 @@
+This is a role which provides an alternate constructor for creating
+objects using parameters passed in from the command line.

@@ -1,0 +1,39 @@
+--- ../../doc/mod_websh/conf/websh.conf	Mon Nov 14 09:21:00 2005
++++ ../../doc/mod_websh/conf/websh.conf	Sat Feb  3 19:36:52 2007
+@@ -2,11 +2,5 @@
+ 
+ # root of websh files
+-if {[info sharedlibextension] == ".dll"} {
+-    # Windows
+-    set webshroot "C:/Program Files/Apache Group/Websh"
+-} else {
+-    # Unix (.so, .dylib ...)
+-    set webshroot /usr/share/websh3.6
+-}
++set webshroot /usr/local/websh
+ 
+ # Setup interpreter classes for mod_websh
+@@ -17,12 +17,12 @@
+     # special html content (html that contains snipplets only)
+     # same as below, but configured to use different markup syntax
+-    if {[string match */other.html $file]} {
+-	return "$webshroot/conf/otherhandler.ws3"
++    if {[string match */other.*html $file]} {
++	return "$webshroot/lib/websh/otherhandler.ws3"
+     }
+ 
+     # default html content (html that contains snipplets only)
+     # all requests for *.html files share interpreters
+-    if {[string match *.html $file]} {
+-	return "$webshroot/conf/htmlhandler.ws3"
++    if {[string match *.*html $file]} {
++	return "$webshroot/lib/websh/htmlhandler.ws3"
+     }
+ 
+@@ -35,5 +35,5 @@
+ 
+ # html handler interpreters live forever ...
+-web::interpclasscfg "$webshroot/conf/htmlhandler.ws3" maxrequests 0
++web::interpclasscfg "$webshroot/lib/websh/htmlhandler.ws3" maxrequests 0
+ # myApp handler interpreters live for 5 requests only
+ web::interpclasscfg "$webshroot/htdocs/myApp.ws3" maxrequests 5

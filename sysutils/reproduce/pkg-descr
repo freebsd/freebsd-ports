@@ -1,0 +1,4 @@
+AppJail Reproduce is a small open source BSD-3 licensed tool for
+automating the creation of images using Makejails, scripts and
+simple text files, providing a common workflow and simplifying many
+things.

@@ -1,0 +1,2 @@
+Zita-dpl1 is a look-ahead digital peak level limiter using some special
+algorithms to allow fast response without excessive LF distortion.

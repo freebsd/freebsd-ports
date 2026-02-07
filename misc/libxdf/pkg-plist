@@ -1,0 +1,4 @@
+include/xdf.h
+lib/libxdf.so
+%%DATADIR%%Config-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%Config.cmake

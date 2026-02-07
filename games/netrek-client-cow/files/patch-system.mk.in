@@ -1,0 +1,11 @@
+--- system.mk.in.orig	2020-05-16 16:32:14 UTC
++++ system.mk.in
+@@ -9,7 +9,7 @@ exec_prefix=@exec_prefix@
+ datarootdir=@datarootdir@
+ 
+ DESTDIR=
+-BINDIR=${prefix}/games
++BINDIR=${prefix}/bin
+ PIXMAPDIR=${datarootdir}/pixmaps/${PACKAGE}
+ APPDIR=${datarootdir}/applications
+ 

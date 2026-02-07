@@ -1,0 +1,7 @@
+--- Makefile.am.orig	2025-07-09 13:10:04 UTC
++++ Makefile.am
+@@ -41,4 +41,3 @@ EXTRA_DIST = README.md
+ dist-hook: ChangeLog INSTALL
+ 
+ EXTRA_DIST = README.md
+-ACLOCAL_AMFLAGS = -I m4

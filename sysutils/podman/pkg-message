@@ -1,0 +1,35 @@
+[
+{
+  type: install
+  message: <<EOM
+The FreeBSD port of the Podman container engine is experimental and should be
+used for evaluation and testing purposes only.
+
+$ sudo podman run --rm quay.io/dougrabson/hello
+
+Podman can restart containers after a host is rebooted. To enable this, use:
+
+$ sudo sysrc podman_enable=YES
+
+and start the container with a restart policy:
+
+$ sudo podman run -d --restart=always myimage
+
+It is possible to run many Linux container images using FreeBSD's Linux emulation:
+
+$ sudo sysrc linux_enable=YES
+$ sudo service linux start
+$ sudo podman run --rm --os=linux alpine cat /etc/os-release | head -1
+NAME="Alpine Linux"
+EOM
+}
+{
+  type: upgrade
+  maximum_version: 4.7.1
+  message: <<EOM
+In Podman-4.7.0 and later, registry authentication creds moved from
+/run/containers/0/auth.json to /root/.config/containers/auth.json. Either move
+the file to the new location or just re-authenticate to the required registries.
+EOM
+}
+]

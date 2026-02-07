@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: lldpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# lldpd_enable (bool):	Set to NO by default.
+#			Set it to YES to enable lldpd.
+# lldpd_flags (str):	Flags passed to lldpd on startup.
+#			Default is "".
+
+. /etc/rc.subr
+
+name=lldpd
+rcvar=lldpd_enable
+
+load_rc_config $name
+
+: ${lldpd_enable:="NO"}
+: ${lldpd_flags=""}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+run_rc_command "$1"

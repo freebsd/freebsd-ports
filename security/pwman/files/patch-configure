@@ -1,0 +1,28 @@
+--- configure.orig	2018-02-11 02:23:44 UTC
++++ configure
+@@ -4398,13 +4398,13 @@ if test "${with_curses+set}" = set; then
+ fi
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for initscr in -lcurses" >&5
+-$as_echo_n "checking for initscr in -lcurses... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for initscr in -lncurses" >&5
++$as_echo_n "checking for initscr in -lncurses... " >&6; }
+ if ${ac_cv_lib_curses_initscr+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcurses  $LIBS"
++LIBS="-lncurses  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4435,7 +4435,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_curses_initscr" >&5
+ $as_echo "$ac_cv_lib_curses_initscr" >&6; }
+ if test "x$ac_cv_lib_curses_initscr" = xyes; then :
+-  LIBS="$LIBS -lcurses"
++  LIBS="$LIBS -lncurses"
+         if test x$curses_loc = x/usr -a -d /usr/include/ncurses; then
+                 CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses"
+         fi

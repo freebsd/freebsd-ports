@@ -1,0 +1,22 @@
+bin/pgpsplit
+bin/pks-mail.sh
+bin/pks-queue-run.sh
+bin/pksclient
+sbin/pksd
+bin/pksdctl
+@sample etc/pksd.conf.sample
+%%DATADIR%%/mail_intro
+%%DATADIR%%/pks-commands.html
+%%DATADIR%%/pks-commands.php
+share/man/man5/pksd.conf.5.gz
+share/man/man8/pgpsplit.8.gz
+share/man/man8/pks-intro.8.gz
+share/man/man8/pks-mail.sh.8.gz
+share/man/man8/pks-queue-run.sh.8.gz
+share/man/man8/pksclient.8.gz
+share/man/man8/pksd.8.gz
+share/man/man8/pksdctl.8.gz
+/var/pks/index.html
+@dir /var/pks/db
+@dir /var/pks/incoming
+@dir /var/pks

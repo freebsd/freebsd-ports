@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-10-13 01:46:42 UTC
++++ Makefile
+@@ -36,6 +36,7 @@ install: fex
+ 
+ fex: fex.o
+ 	$(CC) $(CFLAGS) fex.o $(SNPRINTF_CC) -o $@
++	pod2man -c "" -r "" fex.pod > fex.1
+ 
+ fex.o: fex_version.h
+ 

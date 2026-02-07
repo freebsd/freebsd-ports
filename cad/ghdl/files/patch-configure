@@ -1,0 +1,19 @@
+--- configure.orig	2025-03-01 16:49:42 UTC
++++ configure
+@@ -140,8 +140,6 @@ for opt do
+     --enable-coverage)      build_mode="coverage";;
+     -h|-help|--help)        show_help=yes;;
+     *)
+-      echo "$0: unknown option $opt; try $0 --help"
+-      exit 1
+       ;;
+   esac
+ done
+@@ -437,6 +435,7 @@ if test $backend = mcode; then
+     *darwin*)  ortho_flags="Flags_Macosx${mcode64}" ;;
+     *mingw32*) ortho_flags="Flags_Windows${mcode64}" ;;
+     *linux*)   ortho_flags="Flags_Linux${mcode64}" ;;
++    *freebsd*)   ortho_flags="Flags_Linux${mcode64}" ;;
+     *openbsd*) ortho_flags="Flags_Macosx${mcode64}" ;;
+     *netbsd*)  ortho_flags="Flags_Macosx${mcode64}" ;;
+     *) echo "Unsupported $build build for mcode"; exit 1;;

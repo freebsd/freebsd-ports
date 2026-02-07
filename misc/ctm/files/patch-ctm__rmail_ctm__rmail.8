@@ -1,0 +1,30 @@
+--- ctm_rmail/ctm_rmail.8.orig	2018-10-27 15:56:22 UTC
++++ ctm_rmail/ctm_rmail.8
+@@ -7,7 +7,7 @@
+ .\"
+ .\" $FreeBSD$
+ .\"
+-.Dd January 24, 1995
++.Dd December 23, 2018
+ .Dt CTM_MAIL 8
+ .Os
+ .Sh NAME
+@@ -35,6 +35,7 @@ deltas via mail
+ .Op Fl p Ar piecedir
+ .Op Fl d Ar deltadir
+ .Op Fl b Ar basedir
++.Op Fl B Ar backup_dir
+ .Op Ar
+ .Sh DESCRIPTION
+ In conjunction with the
+@@ -191,6 +192,10 @@ file in
+ (or if
+ .Li .ctm_status
+ does not exist).
++.It Fl B Ar backup_dir
++Specify a backup directory for use by
++.Nm ctm
++.Fl B
+ .It Fl D
+ Delete deltas after successful application by
+ .Xr ctm .

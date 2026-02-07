@@ -1,0 +1,13 @@
+include/suitesparse/cs.h
+lib/cmake/CXSparse/CXSparseConfig.cmake
+lib/cmake/CXSparse/CXSparseConfigVersion.cmake
+lib/cmake/CXSparse/CXSparseTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CXSparse/CXSparseTargets.cmake
+lib/cmake/CXSparse/CXSparseTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CXSparse/CXSparseTargets_static.cmake
+lib/libcxsparse.a
+lib/libcxsparse.so
+lib/libcxsparse.so.4
+lib/libcxsparse.so.%%VER%%
+libdata/pkgconfig/CXSparse.pc
+%%PORTDOCS%%%%DOCSDIR%%/CXSparse_README.txt

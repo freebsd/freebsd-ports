@@ -1,0 +1,11 @@
+CSV/TSV formats are basic and ubiquitous file formats in both Bioinformatics
+and data science.
+
+People usually use spreadsheet software like MS Excel to process table data.
+However this is all by clicking and typing, which is not automated and is
+time-consuming to repeat, especially when you want to apply similar operations
+with different datasets or purposes.
+
+csvtk is convenient for rapid data investigation and also easy to integrate
+into analysis pipelines. It could save you lots of time in (not) writing
+Python/R scripts.

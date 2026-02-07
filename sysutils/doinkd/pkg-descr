@@ -1,0 +1,9 @@
+This is the  doinkd - user activity monitor  project ("idled")
+
+This project was registered on SourceForge.net on May 25, 2006, and is
+described by the project team as follows:
+
+The idle daemon (doinkd) monitors user activity and logs them off when
+predefined rules are met. These include session time, multiple logins,
+tty, idletime and group limits. Similar to the Unix idleout command,
+but much more configurable. Formerly idled.

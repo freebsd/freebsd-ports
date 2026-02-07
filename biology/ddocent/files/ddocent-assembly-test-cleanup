@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+if pwd | fgrep dDocent-test; then
+    rm -rf .*.bak Data ddocent-bin
+else
+    printf "$0 can only be run in a dDocent-test directory.\n"
+    exit 1
+fi

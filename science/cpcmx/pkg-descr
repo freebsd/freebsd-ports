@@ -1,0 +1,10 @@
+This is an fully Free Software solvation model, based on the original conductor
+like screening model for realistic solvation (COSMO-RS) model by Klamt et al. in
+combination with the universal solvation model based on solute electron density
+(SMD) by Marenich, Cramer and Truhlar.
+
+While there are also parameters in this repository, that are optimized for
+running this library with ORCA and TURBOMOLE, the published version of this
+model was built to be run with the semi-empirical GFN2-xTB method. However, the
+final goal of this project is to deliver a robust Free Software solvation
+framework, which can be reparametrized for the method of choice.

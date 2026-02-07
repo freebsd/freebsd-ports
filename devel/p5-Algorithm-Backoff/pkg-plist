@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Algorithm/Backoff.pm
+%%SITE_PERL%%/Algorithm/Backoff/Constant.pm
+%%SITE_PERL%%/Algorithm/Backoff/Exponential.pm
+%%SITE_PERL%%/Algorithm/Backoff/Fibonacci.pm
+%%SITE_PERL%%/Algorithm/Backoff/LILD.pm
+%%SITE_PERL%%/Algorithm/Backoff/LIMD.pm
+%%SITE_PERL%%/Algorithm/Backoff/MILD.pm
+%%SITE_PERL%%/Algorithm/Backoff/MIMD.pm
+%%PERL5_MAN3%%/Algorithm::Backoff.3.gz
+%%PERL5_MAN3%%/Algorithm::Backoff::Constant.3.gz
+%%PERL5_MAN3%%/Algorithm::Backoff::Exponential.3.gz
+%%PERL5_MAN3%%/Algorithm::Backoff::Fibonacci.3.gz
+%%PERL5_MAN3%%/Algorithm::Backoff::LILD.3.gz
+%%PERL5_MAN3%%/Algorithm::Backoff::LIMD.3.gz
+%%PERL5_MAN3%%/Algorithm::Backoff::MILD.3.gz
+%%PERL5_MAN3%%/Algorithm::Backoff::MIMD.3.gz

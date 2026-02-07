@@ -1,0 +1,10 @@
+bin/cbordump
+bin/json2cbor
+include/tinycbor/cbor.h
+include/tinycbor/cborjson.h
+include/tinycbor/tinycbor-version.h
+lib/libtinycbor.a
+lib/libtinycbor.so
+lib/libtinycbor.so.0
+lib/libtinycbor.so.%%PORTVERSION%%
+libdata/pkgconfig/tinycbor.pc

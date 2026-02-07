@@ -1,0 +1,11 @@
+--- exp/src/Makefile.am.orig	2014-08-02 23:38:00 UTC
++++ exp/src/Makefile.am
+@@ -2,7 +2,7 @@
+ 
+ bin_PROGRAMS = exp 
+ 
+-YACC = @YACC@ -d -v --debug
++YACC = @YACC@ -d -v -t
+ CFLAGS = @CFLAGS@ @ALLIANCE_CFLAGS@
+ exp_LDADD =
+ 

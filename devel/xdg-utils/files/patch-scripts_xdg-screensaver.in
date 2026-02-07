@@ -1,0 +1,23 @@
+--- scripts/xdg-screensaver.in.orig	2024-02-06 01:55:07 UTC
++++ scripts/xdg-screensaver.in
+@@ -27,7 +27,9 @@ _USAGE
+ #@xdg-utils-common@
+ 
+ # Check if we can use "mv -T"
+-if mv -T ... ... 2>&1 | grep '\.\.\.' > /dev/null ; then
++# FreeBSD mv doesn't support this, so supress scary messages in the terminal
++#if mv -T ... ... 2>&1 | grep '\.\.\.' > /dev/null ; then
++if false; then
+    # We can securely move files in /tmp with mv -T
+    DEBUG 1 "mv -T available"
+    MV="mv -T"
+@@ -363,7 +365,8 @@ xset_screensaver_timeout()
+ 
+ xset_screensaver_timeout()
+ {
+-  xset q | sed '/^Screen Saver:/,/^[^ ]/ { s/.*timeout: *\([0-9]*\).*/\1/; t }; d'
++  xset q | sed '/^Screen Saver:/,/^[^ ]/ { s/.*timeout: *\([0-9]*\).*/\1/; t
++  }; d'
+ }
+ 
+ screensaver_xserver()

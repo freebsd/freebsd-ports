@@ -1,0 +1,11 @@
+%%PERL5_MAN3%%/MIME::EcoEncode.3.gz
+%%PERL5_MAN3%%/MIME::EcoEncode::Fold.3.gz
+%%PERL5_MAN3%%/MIME::EcoEncode::Param.3.gz
+%%SITE_PERL%%/MIME/EcoEncode.pm
+%%SITE_PERL%%/MIME/EcoEncode.pod
+%%SITE_PERL%%/MIME/EcoEncode/Fold.pm
+%%SITE_PERL%%/MIME/EcoEncode/Fold.pod
+%%SITE_PERL%%/MIME/EcoEncode/JP_B.pm
+%%SITE_PERL%%/MIME/EcoEncode/JP_Q.pm
+%%SITE_PERL%%/MIME/EcoEncode/Param.pm
+%%SITE_PERL%%/MIME/EcoEncode/Param.pod

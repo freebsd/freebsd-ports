@@ -1,0 +1,2 @@
+This module parses range definitions and returns
+an array of individual numbers.

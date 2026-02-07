@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: cirrus_cli
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Options to configure cirrus-cli via /etc/rc.conf:
+#
+# cirrus_cli_enable (bool)	Enable service on boot
+#				Default: NO
+#
+# cirrus_cli_conf (str)	Config file to use
+#				Default: %%ETCDIR%%/cirrus-worker.yml
+#
+# cirrus_cli_uid (str)	User to run cirrus_cli as
+#				Default: cirrus
+
+. /etc/rc.subr
+
+name="cirrus"
+rcvar="cirrus_cli_enable"
+pidfile="/var/run/cirrus-cli.pid"
+procname="%%PREFIX%%/bin/cirrus"
+
+load_rc_config $name
+
+: ${cirrus_cli_enable:="NO"}
+: ${cirrus_cli_conf:="%%PREFIX%%/etc/cirrus-worker.yml"}
+: ${cirrus_cli_uid:="cirrus"}
+
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -u ${cirrus_cli_uid} ${procname} worker run -f ${cirrus_cli_conf}"
+
+run_rc_command "$1"

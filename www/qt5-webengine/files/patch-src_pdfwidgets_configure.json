@@ -1,0 +1,11 @@
+--- src/pdfwidgets/configure.json.orig	2023-09-13 10:52:34 UTC
++++ src/pdfwidgets/configure.json
+@@ -13,7 +13,7 @@
+        "pdf-widgets": {
+             "label": "Support Qt PDF Widgets",
+             "purpose": "Provides Qt PDF Widgets support.",
+-            "condition": "features.widgets",
++            "condition": "module.widgets",
+             "output": [ "privateFeature" ]
+         }
+     },

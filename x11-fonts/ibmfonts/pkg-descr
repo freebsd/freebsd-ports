@@ -1,0 +1,9 @@
+A collection of monospaced, bitmap fonts in BDF format that origin from IBM
+text mode and system fonts. They include extended latin, greek, cyrillic and
+hebrew scripts and several extra characters, for a total of 750 glyphs each.
+The fonts are in BDF 2.1 format and fully compatible with applications that
+make use of either Xft or XLFD.
+
+This is a format conversion of some of the bitmap fonts available from the
+x11-fonts/oldschool-pc-fonts package. The BDF (compiled to PCF) format might
+work better with applications that can use X Toolkit fonts, notably x11/xterm.

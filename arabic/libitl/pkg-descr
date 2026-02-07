@@ -1,0 +1,8 @@
+The Islamic Tools and Libraries (ITL) project provides a fully
+featured library for performing common Islamic calculations.
+
+ITL is currently composed of two library-modules:
+
+* prayertime: Geographically-aware prayer time and Qibla calculation
+  routines.
+* hijri: Hijri date generation/calculation and conversion routines.

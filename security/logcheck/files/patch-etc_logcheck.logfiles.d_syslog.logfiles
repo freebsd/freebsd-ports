@@ -1,0 +1,9 @@
+--- etc/logcheck.logfiles.d/syslog.logfiles.orig	2023-02-10 21:19:27 UTC
++++ etc/logcheck.logfiles.d/syslog.logfiles
+@@ -5,5 +5,5 @@
+ 
+ # (If your system does not use a syslog daemon you
+ # can comment these lines out)
+-/var/log/syslog
+ /var/log/auth.log
++/var/log/messages

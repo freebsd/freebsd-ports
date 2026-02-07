@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+The Coppermine Photo Gallery has been installed in the directory
+%%WWWDIR%%.
+
+You must add appropriate configuration directives to your
+apache configuration file (%%PREFIX%%/etc/apache/httpd.conf).
+A typical configuration would be:
+
+    Alias /coppermine/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%">
+	Options Indexes FollowSymlinks MultiViews
+	AllowOverride None
+	Order allow,deny
+	Allow from all
+    </Directory>
+EOM
+}
+]

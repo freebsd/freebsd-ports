@@ -1,0 +1,3 @@
+Clutter-GTK is a library providing facilities to integrate Clutter into GTK+
+applications. It provides a GTK+ widget, GtkClutterEmbed, for embedding the
+default ClutterStage into any GtkContainer.

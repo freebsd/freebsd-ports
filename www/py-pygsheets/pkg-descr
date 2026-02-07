@@ -1,0 +1,12 @@
+A simple, intuitive library for google sheets which gets your work done.
+
+Features:
+- Open, create, delete and share spreadsheets using title or key
+- Intuitive models - spreadsheet, worksheet, cell, datarange
+- Control permissions of spreadsheets.
+- Set cell format, text format, color, write notes
+- Named and Protected Ranges Support
+- Work with range of cells easily with DataRange and Gridrange
+- Data validation support. checkboxes, drop-downs etc.
+- Conditional formatting support
+- get multiple ranges with get_values_batch and update wit update_values_batch

@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/Bundle::PlRPC.3.gz
+%%PERL5_MAN3%%/RPC::PlClient.3.gz
+%%PERL5_MAN3%%/RPC::PlServer.3.gz
+%%SITE_PERL%%/Bundle/PlRPC.pm
+%%SITE_PERL%%/RPC/PlClient.pm
+%%SITE_PERL%%/RPC/PlClient/Comm.pm
+%%SITE_PERL%%/RPC/PlServer.pm
+%%SITE_PERL%%/RPC/PlServer/Comm.pm
+%%SITE_PERL%%/RPC/PlServer/Test.pm

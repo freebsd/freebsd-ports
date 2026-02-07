@@ -1,0 +1,4 @@
+A JSX lexer for Pygments. Supports:
+
+ * Sphinx
+ * mkdocs

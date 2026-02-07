@@ -1,0 +1,7 @@
+Doc is an automated tool for verifying (to an extent) that a
+domain is configured and functioning correctly.  It makes no
+attempt to validate the data inside a domain, only the structure.
+The only required parameter is the valid domain name of an existing
+domain.  Example:
+
+                doc isi.edu.

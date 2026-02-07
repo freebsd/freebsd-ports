@@ -1,0 +1,25 @@
+--- meson.build.orig	2023-12-19 20:01:52 UTC
++++ meson.build
+@@ -43,12 +43,21 @@ endif
+ if build_machine.system() == 'windows'
+     openssl_dep = dependency('openssl', modules : ['OpenSSL::SSL', 'OpenSSL::Crypto'], required : get_option('with-openssl'))
+ else
+-    openssl_dep = dependency('openssl', required : get_option('with-openssl'))
++    openssl_dep = dependency('openssl', required : false)
+ endif
+ if openssl_dep.found()
+     add_project_arguments('-DZCHUNK_OPENSSL', language : 'c')
+     if openssl_dep.version().version_compare('<3.0.0')
+         add_project_arguments('-DZCHUNK_OPENSSL_DEPRECATED', language : 'c')
++    endif
++else
++    openssl_dep = [
++        cc.find_library('ssl', required: get_option('with-openssl')),
++        cc.find_library('crypto', required: get_option('with-openssl'))
++    ]
++    openssl_dep = openssl_dep[0]
++    if openssl_dep.found()
++        add_project_arguments('-DZCHUNK_OPENSSL', language : 'c')
+     endif
+ endif
+ 

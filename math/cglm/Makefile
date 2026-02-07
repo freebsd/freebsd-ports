@@ -1,0 +1,28 @@
+PORTNAME=	cglm
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.6
+CATEGORIES=	math
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Highly optimized graphics math (glm) for C
+WWW=		https://github.com/recp/cglm
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		compiler:c11 meson # was cmake before
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	recp
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_testing ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dbuild_tests=true"; \
+		${TOUCH} ${WRKDIR}/.meson_build_testing; \
+	fi
+
+# tests as of 0.9.6: 1/1 cglm.tests        OK              0.10s
+
+.include <bsd.port.mk>

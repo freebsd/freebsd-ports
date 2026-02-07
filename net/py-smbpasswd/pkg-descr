@@ -1,0 +1,2 @@
+This Python module can generate both LANMAN and NT
+password hashes, suitable for use with Samba.

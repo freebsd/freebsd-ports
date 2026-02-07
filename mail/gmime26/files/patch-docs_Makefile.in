@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	2019-03-06 13:29:08 UTC
++++ docs/Makefile.in
+@@ -377,7 +377,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = reference tutorial
++SUBDIRS = 
+ EXTRA_DIST = gtkdocs_fix
+ all: all-recursive
+ 

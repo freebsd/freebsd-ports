@@ -1,0 +1,10 @@
+DQFUN: A double-quad precision package with special functions (approximately 66
+digit precision).
+
+This package permits one to perform floating-point computations (real and
+complex) to double-quad precision (approximately 65 digits), by making only
+relatively minor changes to existing Fortran programs. All basic arithmetic
+operations and transcendental functions are supported, together with numerous
+special functions. The package should run correctly on any Unix-based system
+supporting a Fortran-2008 compiler and IEEE 128-bit floating-point arithmetic
+(in hardware or software).

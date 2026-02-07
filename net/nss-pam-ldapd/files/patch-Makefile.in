@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-04-11 13:22:51 UTC
++++ Makefile.in
+@@ -883,7 +883,7 @@ install-nslcd_conf:
+ 	  echo "$(DESTDIR)$(NSLCD_CONF_PATH) already exists, install will not overwrite"; \
+ 	else \
+ 	  $(mkinstalldirs) `dirname $(DESTDIR)$(NSLCD_CONF_PATH)`; \
+-	  $(INSTALL) -m 600 $(srcdir)/nslcd.conf $(DESTDIR)$(NSLCD_CONF_PATH); \
++	  $(INSTALL) -m 600 $(srcdir)/nslcd.conf $(DESTDIR)$(NSLCD_CONF_PATH).sample; \
+ 	fi
+ uninstall-nslcd_conf:
+ 	-rm -f $(DESTDIR)$(NSLCD_CONF_PATH)

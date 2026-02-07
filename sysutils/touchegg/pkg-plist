@@ -1,0 +1,3 @@
+bin/touchegg
+@sample %%ETCDIR%%/touchegg.conf.sample
+etc/xdg/autostart/touchegg.desktop

@@ -1,0 +1,20 @@
+--- core/src/stored/CMakeLists.txt	2025-12-04 05:19:30.000000000 -0800
++++ core/src/stored/CMakeLists.txt	2025-12-17 23:32:58.159045000 -0800
+@@ -122,7 +122,7 @@
+ endif()
+ 
+ if(HAVE_NDMP)
+-  target_link_libraries(stored_objects PRIVATE bareosndmp)
++  target_link_libraries(stored_objects PRIVATE ${JANSSON_LIBRARIES} bareosndmp)
+ endif()
+ 
+ add_executable(bareos-sd stored.cc)
+@@ -133,7 +133,7 @@
+   target_link_libraries(bareos-sd PRIVATE comctl32)
+ endif()
+ target_link_libraries(
+-  bareos-sd PRIVATE Bareos::SD Bareos::Lib Bareos::LibSD Bareos::Findlib
++  bareos-sd PRIVATE ${JANSSON_LIBRARIES} Bareos::SD Bareos::Lib Bareos::LibSD Bareos::Findlib pthread
+                     CLI11::CLI11
+ )
+ 

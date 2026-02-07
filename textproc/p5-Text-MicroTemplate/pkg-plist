@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Text::MicroTemplate.3.gz
+%%PERL5_MAN3%%/Text::MicroTemplate::File.3.gz
+%%SITE_PERL%%/Text/MicroTemplate.pm
+%%SITE_PERL%%/Text/MicroTemplate/EncodedString.pm
+%%SITE_PERL%%/Text/MicroTemplate/File.pm

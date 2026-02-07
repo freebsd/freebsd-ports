@@ -1,0 +1,17 @@
+bin/gdome-config
+include/libgdome/gdome-events.h
+include/libgdome/gdome-libxml-util.h
+include/libgdome/gdome-private-list.h
+include/libgdome/gdome-refdebug.h
+include/libgdome/gdome-treegc.h
+include/libgdome/gdome-util.h
+include/libgdome/gdome-xpath.h
+include/libgdome/gdome.h
+lib/gdomeConf.sh
+lib/libgdome.a
+lib/libgdome.so
+lib/libgdome.so.0
+lib/libgdome.so.0.8.1
+libdata/pkgconfig/gdome2.pc
+share/man/man1/gdome-config.1.gz
+share/aclocal/gdome2.m4

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Crypt/SSSS.pm
+%%SITE_PERL%%/Crypt/SSSS/Message.pm
+%%PERL5_MAN3%%/Crypt::SSSS.3.gz

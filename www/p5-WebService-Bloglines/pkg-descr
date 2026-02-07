@@ -1,0 +1,2 @@
+WebService::Bloglines priovides you an Object Oriented interface for Bloglines
+Web Services (BWS). It currently supports Notifier API and Sync API.

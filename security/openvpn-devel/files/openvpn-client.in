@@ -1,0 +1,5 @@
+#!/bin/sh
+
+exec %%PREFIX%%/sbin/openvpn \
+    --dns-updown force \
+    --config "$@"

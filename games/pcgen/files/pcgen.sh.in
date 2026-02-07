@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ \! -d "${HOME}/.pcgen" ] && mkdir "${HOME}/.pcgen"
+cd "%%DATADIR%%"
+exec "%%LOCALBASE%%/bin/java" ${PCGEN_OPTS} -jar ./pcgen.jar "$@"

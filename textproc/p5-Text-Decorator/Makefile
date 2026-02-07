@@ -1,0 +1,23 @@
+PORTNAME=	Text-Decorator
+PORTVERSION=	1.65
+PORTREVISION=	1
+CATEGORIES=	textproc perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Apply a chain of filters to text
+WWW=		https://metacpan.org/release/Text-Decorator
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require \
+		p5-URI-Find>=0:textproc/p5-URI-Find
+
+USES=		perl5
+USE_PERL5=	modbuild
+
+.include <bsd.port.mk>

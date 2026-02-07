@@ -1,0 +1,11 @@
+--- vendor/ppx_inline_test-0.17.0/src/dune.orig	2024-05-07 18:46:09 UTC
++++ vendor/ppx_inline_test-0.17.0/src/dune
+@@ -13,7 +13,5 @@
+   (runner_libraries ppx_inline_test.runner.lib)
+   (generate_runner
+    (echo "let () = Ppx_inline_test_lib.exit ();;"))
+-  (list_partitions_flags "inline-test-runner" %{library-name}
+-    -list-partitions)
+-  (flags "inline-test-runner" %{library-name} -partition %{partition}
++  (flags "inline-test-runner" %{library-name}
+     -source-tree-root %{workspace_root} -diff-cmd -)))

@@ -1,0 +1,39 @@
+--- Makefile.orig	2016-07-26 16:04:42 UTC
++++ Makefile
+@@ -1,6 +1,5 @@
+ RM = rm -f
+-CC = g++
+-CFLAGS = -Wall
++CXX ?= $(CXX)
+ 
+ LZH = stsoundlib/lzh
+ STLIB = stsoundlib
+@@ -17,22 +16,22 @@ libs:
+ 	done
+ 
+ ymplayer: ymplayer.o sound.o ui.o
+-	$(CC) -o ymplayer $(INCLUDE) ymplayer.o sound.o ui.o -lasound -lym -llzh -lncurses
++	$(CXX) $(CXXFLAGS) -o ymplayer $(INCLUDE) ymplayer.o sound.o ui.o -lym -llzh -lncurses
+ 
+ ym2wav: ym2wav.o
+-	$(CC) -o ym2wav $(INCLUDE) ym2wav.o -lym -llzh	
++	$(CXX) $(CXXFLAGS) -o ym2wav $(INCLUDE) ym2wav.o -lym -llzh	
+ 
+ ymplayer.o: ymplayer.cpp $(STLIB)/StSoundLibrary.h ui.h sound.h
+-	$(CC) $(INLCUDE) -c ymplayer.cpp
++	$(CXX) $(CXXFLAGS) $(INLCUDE) -c ymplayer.cpp
+ 
+ ym2wav.o: ym2wav.cpp $(STLIB)/StSoundLibrary.h
+-	$(CC) $(INCLUDE) -c ym2wav.cpp
++	$(CXX) $(CXXFLAGS) $(INCLUDE) -c ym2wav.cpp
+ 
+ sound.o: sound.cpp sound.h
+-	$(CC) -c sound.cpp
++	$(CXX) $(CXXFLAGS) -c sound.cpp
+ 
+ ui.o: ui.c ui.h $(STLIB)/StSoundLibrary.h
+-	$(CC) -c ui.c
++	$(CXX) $(CXXFLAGS) -c ui.c
+ 
+ install: all
+ 	$(INSTALL) ymplayer /usr/bin

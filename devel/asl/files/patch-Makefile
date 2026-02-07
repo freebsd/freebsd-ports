@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-11-11 21:31:36 UTC
++++ Makefile
+@@ -18,7 +18,7 @@ binaries: $(ALLTARGETS)
+ 
+ binaries-das: $(DASLTARGET) $(DASMSGTARGETS)
+ 
+-all: binaries docs
++all: binaries
+ 
+ include makedefs.src
+ 

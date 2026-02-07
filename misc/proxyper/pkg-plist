@@ -1,0 +1,5 @@
+distributed.net/proxy/ChangeLog.txt
+distributed.net/proxy/manual.html
+distributed.net/proxy/proxyper
+@sample distributed.net/proxy/proxyper.ini.sample
+@dir(nobody,daemon,) distributed.net/proxy

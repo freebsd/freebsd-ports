@@ -1,0 +1,9 @@
+[
+{
+	message: <<EOD
+/!\ Neomutt no longer install binaries named "mutt" but "neomutt" /!\
+EOD,
+	type = upgrade,
+	maximum_version = "20171013"
+}
+]

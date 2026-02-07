@@ -1,0 +1,13 @@
+--- swift/unittests/ClangImporter/CMakeLists.txt.orig	2024-06-06 04:26:30 UTC
++++ swift/unittests/ClangImporter/CMakeLists.txt
+@@ -8,6 +8,10 @@ target_link_libraries(SwiftClangImporterTests
+ target_link_libraries(SwiftClangImporterTests
+     PRIVATE
+     swiftClangImporter
++    swiftFrontend
+     swiftParse
+     swiftAST
++    swiftSIL
++    swiftSILGen
++    swiftSILOptimizer
+ )

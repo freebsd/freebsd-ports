@@ -1,0 +1,12 @@
+CSFML is the official C bindings for the Simple and Fast Multimedia Library
+(SFML). SFML is a simple, fast, cross-platform, C++ object-oriented multimedia
+API. It abstracts windowing, graphics, audio, and networking.
+
+The CSFML API aims to create C style abstractions as close as possible, to the
+SFML C++ API. The follow-on effect of this enables building SFML bindings for
+other languages, either via the language's Foreign Function Interface
+mechanism, or by directly supporting C instead of C++.
+
+Due to the similarities between the two APIs, no tutorial is provided, however,
+users can follow the C++ tutorials available via the SFML website. Adapting
+those tutorials to the C API should take little effort.

@@ -1,0 +1,18 @@
+{
+  "name": "@bitwarden/components",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "storybook": "npm run docs:json && start-storybook -p 6006",
+    "build-storybook": "npm run docs:json && build-storybook",
+    "chromatic": "chromatic --exit-zero-on-changes"
+  },
+  "private": true
+}

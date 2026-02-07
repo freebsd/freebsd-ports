@@ -1,0 +1,37 @@
+--- base/runtime/objs/makefile.orig	2024-10-25 16:47:18 UTC
++++ base/runtime/objs/makefile
+@@ -7,10 +7,12 @@ MAKE =		make
+ 
+ SHELL =		/bin/sh
+ MAKE =		make
+-CC =		cc
+-CPP =		/lib/cpp
+-LD_LIBS =
+-AS =		as
++CC ?=		cc
++CFLAGS ?=
++CPP ?=		/lib/cpp
++LD_LIBS ?=
++AS ?=		as
++ASFLAGS ?=
+ AR =		ar
+ ARFLAGS =	rcv
+ RANLIB =	ranlib
+@@ -39,8 +41,6 @@ CONFIG_DIR =	$(ROOT_DIR)/config
+ CLIB_DIR =	$(ROOT_DIR)/c-libs
+ CONFIG_DIR =	$(ROOT_DIR)/config
+ 
+-CFLAGS =	-O
+-
+ INCLUDES =	-I$(OBJS_DIR) -I$(INC_DIR)
+ GC_INCLUDES =	$(INCLUDES) -I$(GC_DIR)
+ GEN_INCLUDES =	-I$(CONFIG_DIR) $(INCLUDES)
+@@ -277,7 +277,7 @@ prim.o:		$(MACH_DIR)/$(TARGET).prim.asm \
+ 		$(MACH_DIR)/x86-syntax.h \
+ 		mlstate-offsets.h
+ 	$(CPP) -D_ASM_ $(DEFS) $(INCLUDES) $(MACH_DIR)/$(TARGET).prim.asm > prim.s
+-	$(AS) -o prim.o prim.s
++	$(AS) $(ASFLAGS) -o prim.o prim.s
+ 
+ #
+ #

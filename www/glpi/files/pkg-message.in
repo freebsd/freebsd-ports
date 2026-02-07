@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+First time installation notes:
+
+Before using GLPI, you will need to configure your database.
+Full installation instructions are available here:
+
+	http://glpi-project.org/spip.php?article61
+
+If you are using MySQL, here's the short version of the instructions:
+
+  1. Create a new database:
+  $ mysqladmin -uroot create glpi
+
+  2. Grant access to the database:
+  $ mysql -uroot -e"GRANT ALL ON glpi.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" glpi
+  (choose your own values for USERNAME and PASSWORD)
+
+Make sure Apache supports PHP (www/mod_php5) and add a config file for
+GLPI in Includes/glpi.conf:
+
+    Alias /glpi %%PREFIX%%/%%GLPIDIR%%
+    <Directory %%PREFIX%%/%%GLPIDIR%%>
+        AllowOverride Options FileInfo Limit
+        Options Indexes FollowSymLinks
+        Require all granted
+        DirectoryIndex index.php
+    </Directory>
+
+Then reload Apache: 'apachectl graceful'
+
+Please visit 'http://{host.domain}/glpi/' in a
+web-browser and follow the configuration instructions.
+EOM
+}
+]

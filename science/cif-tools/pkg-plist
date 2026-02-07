@@ -1,0 +1,14 @@
+bin/cif-diff
+bin/cif-grep
+bin/cif-merge
+bin/cif-validate
+bin/cif2pdb
+bin/mmCQL
+bin/pdb2cif
+share/man/man1/cif-diff.1.gz
+share/man/man1/cif-grep.1.gz
+share/man/man1/cif-merge.1.gz
+share/man/man1/cif-validate.1.gz
+share/man/man1/cif2pdb.1.gz
+share/man/man1/mmCQL.1.gz
+share/man/man1/pdb2cif.1.gz

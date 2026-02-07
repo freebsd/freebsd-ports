@@ -1,0 +1,7 @@
+bin/fastahack
+include/fastahack/Fasta.h
+include/fastahack/LargeFileSupport.h
+include/fastahack/Region.h
+include/fastahack/disorder.h
+include/fastahack/split.h
+lib/libfastahack.a

@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2025-04-24 23:28:09 UTC
++++ CMakeLists.txt
+@@ -68,7 +68,7 @@ if (${CMAKE_BUILD_TYPE} MATCHES Release)
+ endif()
+ 
+ if (${CMAKE_BUILD_TYPE} MATCHES Release)
+-  set(EXTRA_FLAGS "-march=native -D_FILE_OFFSET_BITS=64")
++  set(EXTRA_FLAGS "-D_FILE_OFFSET_BITS=64")
+   # set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG") # reset CXX_FLAGS to replace -O3 with -Ofast
+ endif()
+ 
+@@ -590,9 +590,9 @@ install(TARGETS vcflib ARCHIVE DESTINATION ${CMAKE_INS
+ # ---- Install
+ 
+ install(TARGETS vcflib ARCHIVE DESTINATION ${CMAKE_INSTALL_BINDIR})
+-if(WFA_GITMODULE)
+-  install(TARGETS ${WFALIB} ARCHIVE DESTINATION ${CMAKE_INSTALL_BINDIR})
+-endif(WFA_GITMODULE)
++# if(WFA_GITMODULE)
++#   install(TARGETS ${WFALIB} ARCHIVE DESTINATION ${CMAKE_INSTALL_BINDIR})
++# endif(WFA_GITMODULE)
+ 
+ install(FILES ${INCLUDES} DESTINATION include/vcflib)
+ 

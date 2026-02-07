@@ -1,0 +1,11 @@
+--- Makefile.orig	2012-07-30 18:13:57 UTC
++++ Makefile
+@@ -14,7 +14,7 @@
+ 	$(CC) $(CFLAGS) -o $(PROGRAM) $(PROGRAM).c
+ 
+ install:
+-	install -m 755 -o root -g wheel $(PROGRAM) $(DESTDIR)/$(PROGRAM)
++	install -s -m 755 $(PROGRAM) $(DESTDIR)/$(PREFIX)/libexec/nagios
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)/$(PROGRAM)

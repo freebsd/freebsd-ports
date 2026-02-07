@@ -1,0 +1,2 @@
+Anysqlite provides an async/await interface to the standard sqlite3 library and
+supports both trio and asyncio backends using the power of Anyio.

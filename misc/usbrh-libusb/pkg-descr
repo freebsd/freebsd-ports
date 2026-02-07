@@ -1,0 +1,6 @@
+Yet Another usbrh reads temperatures and humidity from sensors of a "USB-RH",
+which is connected to a USB port of the computer.
+
+This program use libusb library and 8.0-RELEASE later.
+
+Strawberry Linux Co.,Ltd. USH-RH(Sensirion SHT-11)

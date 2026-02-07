@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Devel/Ditto.pm
+%%SITE_PERL%%/Devel/Ditto/Color.pm
+%%SITE_PERL%%/Devel/Ditto/Colour.pm
+%%PERL5_MAN3%%/Devel::Ditto.3.gz
+%%PERL5_MAN3%%/Devel::Ditto::Color.3.gz
+%%PERL5_MAN3%%/Devel::Ditto::Colour.3.gz

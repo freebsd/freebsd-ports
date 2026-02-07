@@ -1,0 +1,5 @@
+OpenSpades is a compatible client of Ace of Spades 0.75.
+
+* Can connect to a vanilla/pyspades/pysnip server.
+* Uses OpenGL/AL for better visuals.
+* Open source, and cross platform.

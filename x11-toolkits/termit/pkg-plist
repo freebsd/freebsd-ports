@@ -1,0 +1,20 @@
+bin/termit
+@sample etc/xdg/termit/colormaps.lua.sample
+@sample etc/xdg/termit/rc.lua.sample
+@sample etc/xdg/termit/utils.lua.sample
+share/man/man1/termit.1.gz
+share/applications/termit.desktop
+share/metainfo/termit.metainfo.xml
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/lua_api.txt
+%%PORTDOCS%%%%DOCSDIR%%/rc.lua.example
+%%NLS%%share/locale/de/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/es/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/termit.mo

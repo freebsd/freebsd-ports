@@ -1,0 +1,11 @@
+--- configure.ac.orig	2022-07-18 03:42:33 UTC
++++ configure.ac
+@@ -48,7 +48,7 @@ AC_CHECK_HEADERS(gcrypt.h, [], AC_MSG_ERROR(libgcrypt 
+ 
+ AC_CHECK_HEADERS(gcrypt.h, [], AC_MSG_ERROR(libgcrypt not found))
+ 
+-AC_CHECK_FUNCS(setresgid setresuid clearenv __getgroups_chk)
++AC_CHECK_FUNCS(setresgid setresuid setusercontext clearenv __getgroups_chk)
+ 
+ PKG_CHECK_MODULES(LIGHTDM, [
+     glib-2.0 >= 2.44

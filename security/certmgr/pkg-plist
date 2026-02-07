@@ -1,0 +1,5 @@
+bin/certmgr
+%%ETCDIR%%/certmgr.yaml.sample
+@dir %%ETCDIR%%.d
+%%DOCSDIR%%/README.md
+%%DOCSDIR%%/SPEC.rst

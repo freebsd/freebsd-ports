@@ -1,0 +1,3 @@
+MyThes is a simple thesaurus that uses a structured text data file and an index
+file with binary search to lookup words and phrases and return information on
+part of speech, meanings, and synonyms

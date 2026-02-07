@@ -1,0 +1,9 @@
+bin/autojump
+bin/autojump_argparse.py
+bin/autojump_data.py
+bin/autojump_match.py
+bin/autojump_utils.py
+share/autojump/autojump.bash
+share/autojump/autojump.fish
+share/autojump/autojump.zsh
+share/zsh/site-functions/_j

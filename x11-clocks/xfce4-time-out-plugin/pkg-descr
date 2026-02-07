@@ -1,0 +1,3 @@
+This plugin makes it possible to take periodical breaks from the computer every
+X minutes. During breaks it locks your screen. It optionally allows you to
+postpone breaks for a certain time.

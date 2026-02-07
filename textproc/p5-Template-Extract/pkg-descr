@@ -1,0 +1,4 @@
+This module adds template extraction functionality to the Template toolkit.
+It can take a rendered document and its template together, and get the
+original data structure back, effectively reversing the Template::process
+function.

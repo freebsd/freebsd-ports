@@ -1,0 +1,2 @@
+PDL::Minuit implements an interface to the Minuit minimization routines (part of
+the CERN Library).

@@ -1,0 +1,9 @@
+Tcpcrypt is a protocol that attempts to encrypt (almost) all of your
+network traffic. Unlike other security mechanisms, Tcpcrypt works out
+of the box: it requires no configuration, no changes to applications,
+and your network connections will continue to work even if the remote
+end does not support Tcpcrypt, in which case connections will
+gracefully fall back to standard clear-text TCP. Install Tcpcrypt and
+you'll feel no difference in your every day user experience, but yet
+your traffic will be more secure and you'll have made life much harder
+for hackers.

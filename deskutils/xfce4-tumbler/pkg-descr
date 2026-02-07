@@ -1,0 +1,3 @@
+Tumbler is a D-Bus service for applications to request thumbnails
+for various URI schemes and MIME types. It is an implementation of
+the thumbnail management D-Bus specification.

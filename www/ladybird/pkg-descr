@@ -1,0 +1,5 @@
+Ladybird is a web browser built on the LibWeb and LibJS engines from
+SerenityOS with a cross-platform GUI in Qt.
+
+See this blog post for some more background:
+https://awesomekling.github.io/Ladybird-a-new-cross-platform-browser-project/

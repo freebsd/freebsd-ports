@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Statistics/Distributions.pm
+%%SITE_PERL%%/auto/Statistics/Distributions/autosplit.ix
+%%PERL5_MAN3%%/Statistics::Distributions.3.gz

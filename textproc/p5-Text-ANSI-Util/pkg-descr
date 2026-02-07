@@ -1,0 +1,3 @@
+Text::ANSI::Util provides routines for dealing with text that contains ANSI
+color codes, e.g. for determining its length/width (excluding the color codes),
+stripping the color codes, extracting the color codes, and so on.

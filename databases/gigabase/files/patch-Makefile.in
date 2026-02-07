@@ -1,0 +1,43 @@
+--- Makefile.in.orig	2012-05-14 15:11:18.000000000 +0600
++++ Makefile.in 2012-05-14 15:14:15.000000000 +0600
+@@ -41,7 +42,7 @@
+ SUFF=@SUFF@
+ 
+ GB_LIB = libgigabase$(SUFF).${LIBEXT}
+-CLI_LIB = libcli$(SUFF).${LIBEXT}
++CLI_LIB = libcligb$(SUFF).${LIBEXT}
+ EXES = subsql
+ 
+ EXAMPLES = guess testdb testjoin testddl testperf testspat testperf2 testsync testiref testtrav testidx testidx2 clitest testblob testleak testsession testtimeseries testtl
+@@ -49,7 +50,7 @@
+ 
+ CXX = @CXX@
+ CC = @CC@
+-DEFS = @DEFS@
++DEFS = @DEFS@ @CPPFLAGS@
+ CXXFLAGS = @CXXFLAGS@ $(DEFS)
+ CFLAGS = @CFLAGS@ $(DEFS)
+ LD = $(CXX)
+@@ -154,15 +155,15 @@
+ 	$(LIBTOOL) --mode=link $(LD) $(LDFLAGS) -o testleak testleak.o $(GB_LIB) $(SLHACK)
+ 
+ install: subsql $(GB_LIB) $(CLI_LIB)
+-	mkdir -p $(includedir)
+-	cp $(INCS) $(CLI_INCS) $(includedir)
+-	mkdir -p $(libdir)
+-	$(LIBTOOL) --mode=install $(INSTALL) $(GB_LIB) $(CLI_LIB) $(libdir)
+-	mkdir -p $(bindir)
++	mkdir -p $(DESTDIR)$(includedir)
++	$(BSD_INSTALL_DATA) $(INCS) $(CLI_INCS) $(DESTDIR)$(includedir)
++	mkdir -p $(DESTDIR)$(libdir)
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) $(GB_LIB) $(CLI_LIB) $(DESTDIR)$(libdir)
++	mkdir -p $(DESTDIR)$(bindir)
+ 	if test -x .libs/subsql ; then \
+-		cp .libs/subsql $(bindir); \
++		$(BSD_INSTALL_PROGRAM) .libs/subsql $(DESTDIR)$(bindir)/subsql_gb; \
+ 	else \
+-		cp subsql $(bindir); \
++		$(BSD_INSTALL_PROGRAM) subsql $(DESTDIR)$(bindir)/subsql_gb; \
+ 	fi
+ #	strip $(bindir)/subsql
+ 

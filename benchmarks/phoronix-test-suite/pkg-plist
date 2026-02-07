@@ -1,0 +1,9 @@
+bin/phoronix-test-suite
+%%BASH_COMPLETIONS%%etc/bash_completion.d/phoronix-test-suite
+%%X11%%share/appdata/phoronix-test-suite.appdata.xml
+%%X11%%share/applications/phoronix-test-suite.desktop
+%%X11%%share/applications/phoronix-test-suite-launcher.desktop
+%%X11%%share/icons/hicolor/48x48/apps/phoronix-test-suite.png
+%%X11%%share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
+%%X11%%share/mime/packages/openbenchmarking-mime.xml
+share/man/man1/phoronix-test-suite.1.gz

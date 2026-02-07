@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+To use the port you need to perform the following steps:
+
+1) Place your image files into %%DATADIR%%.
+2) Add the following to /etc/rc.conf[.local] to enable it:
+
+   splash_changer_enable="YES"
+
+3) Enable the boot splash screen as described in splash(4) and set the
+   following in /boot/loader.conf[.local]:
+
+   bitmap_name="/boot/splash"
+
+Also, be careful if you already have a file "/boot/splash" because it will be
+replaced when the script is executed.
+EOM
+}
+]

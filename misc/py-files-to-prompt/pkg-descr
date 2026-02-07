@@ -1,0 +1,4 @@
+Concatenate a directory full of files into a single prompt for use with Large
+Language Models. For background on this project see:
+
+  https://simonwillison.net/2024/Apr/8/files-to-prompt

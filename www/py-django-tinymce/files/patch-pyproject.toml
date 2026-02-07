@@ -1,0 +1,17 @@
+* Enable build for older versions of py-setuptools
+
+--- pyproject.toml.orig	2025-10-25 09:36:33 UTC
++++ pyproject.toml
+@@ -16,11 +16,7 @@ maintainers = [
+   {name = "Rémy Hubscher", email = "hubscher.remy@gmail.com"},
+   {name = "Claude Paroz", email = "claude@2xlibre.net"},
+ ]
+-license = "MIT AND GPL-2.0-or-later"
+-license-files = [
+-  "LICENSE.txt",
+-  "tinymce/static/tinymce/license.md",
+-]
++license = { text = "MIT License" }
+ requires-python = ">=3.9"
+ dependencies = [
+   "django>=4.2",

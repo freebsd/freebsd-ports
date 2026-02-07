@@ -1,0 +1,11 @@
+--- server/build.xml-orig	2008-01-29 17:22:51.909302396 +1030
++++ server/build.xml	2008-01-29 17:22:36.780316170 +1030
+@@ -22,7 +22,7 @@
+ 
+   <property name="server" value="${basedir}" />
+   
+-  <property name="common" value="${server}/../common" />
++  <property name="common" value="${server}/../common/java" />
+   <property name="client" value="${server}/../client" />
+   
+   <property name="avis-root" value="${server}/../.." />

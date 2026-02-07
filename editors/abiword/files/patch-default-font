@@ -1,0 +1,732 @@
+diff -u -r user/wp/templates/normal.awt user/wp/templates/normal.awt
+--- user/wp/templates/normal.awt	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt	2008-07-21 19:20:42.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ 
+ <pagesize pagetype="Letter" orientation="portrait" width="8.500000" height="11.000000" units="in" page-scale="1.000000"/>
+diff -u -r user/wp/templates/normal.awt-am_ET user/wp/templates/normal.awt-am_ET
+--- user/wp/templates/normal.awt-am_ET	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-am_ET	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ar user/wp/templates/normal.awt-ar
+--- user/wp/templates/normal.awt-ar	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ar	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ar_EG user/wp/templates/normal.awt-ar_EG
+--- user/wp/templates/normal.awt-ar_EG	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ar_EG	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ar_SA user/wp/templates/normal.awt-ar_SA
+--- user/wp/templates/normal.awt-ar_SA	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ar_SA	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-bg_BG user/wp/templates/normal.awt-bg_BG
+--- user/wp/templates/normal.awt-bg_BG	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-bg_BG	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ca_ES user/wp/templates/normal.awt-ca_ES
+--- user/wp/templates/normal.awt-ca_ES	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ca_ES	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-cs_CZ user/wp/templates/normal.awt-cs_CZ
+--- user/wp/templates/normal.awt-cs_CZ	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-cs_CZ	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-da_DK user/wp/templates/normal.awt-da_DK
+--- user/wp/templates/normal.awt-da_DK	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-da_DK	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-de user/wp/templates/normal.awt-de
+--- user/wp/templates/normal.awt-de	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-de	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-de_AT user/wp/templates/normal.awt-de_AT
+--- user/wp/templates/normal.awt-de_AT	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-de_AT	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-de_CH user/wp/templates/normal.awt-de_CH
+--- user/wp/templates/normal.awt-de_CH	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-de_CH	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-de_DE user/wp/templates/normal.awt-de_DE
+--- user/wp/templates/normal.awt-de_DE	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-de_DE	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-div_MV user/wp/templates/normal.awt-div_MV
+--- user/wp/templates/normal.awt-div_MV	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-div_MV	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; lang:div-MV; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; lang:div-MV; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-el_GR user/wp/templates/normal.awt-el_GR
+--- user/wp/templates/normal.awt-el_GR	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-el_GR	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-en_AU user/wp/templates/normal.awt-en_AU
+--- user/wp/templates/normal.awt-en_AU	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-en_AU	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-en_CA user/wp/templates/normal.awt-en_CA
+--- user/wp/templates/normal.awt-en_CA	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-en_CA	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="Letter" orientation="portrait" width="216.000000" height="279.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-en_GB user/wp/templates/normal.awt-en_GB
+--- user/wp/templates/normal.awt-en_GB	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-en_GB	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-en_IE user/wp/templates/normal.awt-en_IE
+--- user/wp/templates/normal.awt-en_IE	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-en_IE	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-en_NZ user/wp/templates/normal.awt-en_NZ
+--- user/wp/templates/normal.awt-en_NZ	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-en_NZ	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-en_ZA user/wp/templates/normal.awt-en_ZA
+--- user/wp/templates/normal.awt-en_ZA	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-en_ZA	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-es user/wp/templates/normal.awt-es
+--- user/wp/templates/normal.awt-es	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-es	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-es_AR user/wp/templates/normal.awt-es_AR
+--- user/wp/templates/normal.awt-es_AR	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-es_AR	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-es_ES user/wp/templates/normal.awt-es_ES
+--- user/wp/templates/normal.awt-es_ES	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-es_ES	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-es_IR user/wp/templates/normal.awt-es_IR
+--- user/wp/templates/normal.awt-es_IR	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-es_IR	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-es_MX user/wp/templates/normal.awt-es_MX
+--- user/wp/templates/normal.awt-es_MX	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-es_MX	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-fa_IR user/wp/templates/normal.awt-fa_IR
+--- user/wp/templates/normal.awt-fa_IR	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-fa_IR	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-fi_FI user/wp/templates/normal.awt-fi_FI
+--- user/wp/templates/normal.awt-fi_FI	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-fi_FI	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-fr user/wp/templates/normal.awt-fr
+--- user/wp/templates/normal.awt-fr	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-fr	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-fr_BE user/wp/templates/normal.awt-fr_BE
+--- user/wp/templates/normal.awt-fr_BE	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-fr_BE	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-fr_CA user/wp/templates/normal.awt-fr_CA
+--- user/wp/templates/normal.awt-fr_CA	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-fr_CA	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="Letter" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-fr_CH user/wp/templates/normal.awt-fr_CH
+--- user/wp/templates/normal.awt-fr_CH	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-fr_CH	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-fr_FR user/wp/templates/normal.awt-fr_FR
+--- user/wp/templates/normal.awt-fr_FR	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-fr_FR	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-gl_ES user/wp/templates/normal.awt-gl_ES
+--- user/wp/templates/normal.awt-gl_ES	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-gl_ES	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-he user/wp/templates/normal.awt-he
+--- user/wp/templates/normal.awt-he	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-he	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-he_IL user/wp/templates/normal.awt-he_IL
+--- user/wp/templates/normal.awt-he_IL	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-he_IL	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-hu_HU user/wp/templates/normal.awt-hu_HU
+--- user/wp/templates/normal.awt-hu_HU	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-hu_HU	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-it_IT user/wp/templates/normal.awt-it_IT
+--- user/wp/templates/normal.awt-it_IT	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-it_IT	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ja_JP user/wp/templates/normal.awt-ja_JP
+--- user/wp/templates/normal.awt-ja_JP	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ja_JP	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-lt_LT user/wp/templates/normal.awt-lt_LT
+--- user/wp/templates/normal.awt-lt_LT	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-lt_LT	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-nb_NO user/wp/templates/normal.awt-nb_NO
+--- user/wp/templates/normal.awt-nb_NO	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-nb_NO	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-nl_NL user/wp/templates/normal.awt-nl_NL
+--- user/wp/templates/normal.awt-nl_NL	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-nl_NL	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-nn_NO user/wp/templates/normal.awt-nn_NO
+--- user/wp/templates/normal.awt-nn_NO	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-nn_NO	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-pl_PL user/wp/templates/normal.awt-pl_PL
+--- user/wp/templates/normal.awt-pl_PL	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-pl_PL	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ps user/wp/templates/normal.awt-ps
+--- user/wp/templates/normal.awt-ps	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ps	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-pt_BR user/wp/templates/normal.awt-pt_BR
+--- user/wp/templates/normal.awt-pt_BR	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-pt_BR	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-pt_PT user/wp/templates/normal.awt-pt_PT
+--- user/wp/templates/normal.awt-pt_PT	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-pt_PT	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ru user/wp/templates/normal.awt-ru
+--- user/wp/templates/normal.awt-ru	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ru	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ru_RU user/wp/templates/normal.awt-ru_RU
+--- user/wp/templates/normal.awt-ru_RU	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ru_RU	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-sk_SK user/wp/templates/normal.awt-sk_SK
+--- user/wp/templates/normal.awt-sk_SK	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-sk_SK	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-sl user/wp/templates/normal.awt-sl
+--- user/wp/templates/normal.awt-sl	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-sl	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-sv user/wp/templates/normal.awt-sv
+--- user/wp/templates/normal.awt-sv	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-sv	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-sv_SE user/wp/templates/normal.awt-sv_SE
+--- user/wp/templates/normal.awt-sv_SE	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-sv_SE	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-syr user/wp/templates/normal.awt-syr
+--- user/wp/templates/normal.awt-syr	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-syr	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; lang:syr; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; lang:syr; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-tr user/wp/templates/normal.awt-tr
+--- user/wp/templates/normal.awt-tr	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-tr	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-tr_TR user/wp/templates/normal.awt-tr_TR
+--- user/wp/templates/normal.awt-tr_TR	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-tr_TR	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-uk_UA user/wp/templates/normal.awt-uk_UA
+--- user/wp/templates/normal.awt-uk_UA	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-uk_UA	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-ur_PK user/wp/templates/normal.awt-ur_PK
+--- user/wp/templates/normal.awt-ur_PK	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-ur_PK	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-yi user/wp/templates/normal.awt-yi
+--- user/wp/templates/normal.awt-yi	2008-07-13 15:11:00.000000000 +0200
++++ user/wp/templates/normal.awt-yi	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-zh_CN user/wp/templates/normal.awt-zh_CN
+--- user/wp/templates/normal.awt-zh_CN	2008-07-13 15:10:59.000000000 +0200
++++ user/wp/templates/normal.awt-zh_CN	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+diff -u -r user/wp/templates/normal.awt-zh_TW user/wp/templates/normal.awt-zh_TW
+--- user/wp/templates/normal.awt-zh_TW	2008-07-13 15:11:01.000000000 +0200
++++ user/wp/templates/normal.awt-zh_TW	2008-07-21 19:20:43.000000000 +0200
+@@ -9,7 +9,7 @@
+ <!-- =====================================================================  -->
+ 
+ <styles>
+-<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
++<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:DejaVu Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+ </styles>
+ <pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+ <section props="page-margin-right:1.0000in; page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">

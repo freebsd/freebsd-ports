@@ -1,0 +1,6 @@
+bin/colortail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.daemon
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.kernel
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.messages
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.secure
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf.xferlog

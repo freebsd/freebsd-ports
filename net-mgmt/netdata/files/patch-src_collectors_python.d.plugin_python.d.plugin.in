@@ -1,0 +1,10 @@
+--- src/collectors/python.d.plugin/python.d.plugin.in.orig	2025-01-02 17:07:23 UTC
++++ src/collectors/python.d.plugin/python.d.plugin.in
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env bash
+ '''':;
+-pybinary=$(which python3 || which python || which python2)
++pybinary=$(which %%PYTHON_VERSION%% || which python || which python2)
+ filtered=()
+ for arg in "$@"
+ do

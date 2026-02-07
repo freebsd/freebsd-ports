@@ -1,0 +1,10 @@
+--- applets/brightness/Makefile.am.orig	2013-10-19 12:04:49.000000000 +0200
++++ applets/brightness/Makefile.am	2013-10-19 12:05:17.000000000 +0200
+@@ -34,6 +34,7 @@
+ 	gpm-common.h
+ 
+ mate_brightness_applet_LDADD =					\
++	$(EXECINFO_LIBS)					\
+ 	$(DBUS_LIBS)						\
+ 	$(MATE_LIBS)						\
+ 	$(PANEL_LIBS)

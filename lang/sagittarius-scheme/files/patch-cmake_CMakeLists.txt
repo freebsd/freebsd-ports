@@ -1,0 +1,10 @@
+--- cmake/CMakeLists.txt.orig	2017-09-23 20:35:38 UTC
++++ cmake/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ # Post install script
+ 
+ # running ldconfig
+-INSTALL(CODE "MESSAGE(STATUS \"Running ldconfig\")")
+-INSTALL(CODE "execute_process(COMMAND ldconfig)")
++#INSTALL(CODE "MESSAGE(STATUS \"Running ldconfig\")")
++#INSTALL(CODE "execute_process(COMMAND ldconfig)")

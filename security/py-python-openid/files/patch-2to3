@@ -1,0 +1,997 @@
+--- openid/consumer/consumer.py.orig	2010-06-18 17:08:20 UTC
++++ openid/consumer/consumer.py
+@@ -189,7 +189,7 @@ USING THIS LIBRARY
+ 
+ import cgi
+ import copy
+-from urlparse import urlparse, urldefrag
++from urllib.parse import urlparse, urldefrag
+ 
+ from openid import fetchers
+ 
+@@ -342,7 +342,7 @@ class Consumer(object):
+         disco = Discovery(self.session, user_url, self.session_key_prefix)
+         try:
+             service = disco.getNextService(self._discover)
+-        except fetchers.HTTPFetchingError, why:
++        except fetchers.HTTPFetchingError as why:
+             raise DiscoveryFailure(
+                 'Error fetching XRDS document: %s' % (why[0],), None)
+ 
+@@ -378,7 +378,7 @@ class Consumer(object):
+ 
+         try:
+             auth_req.setAnonymous(anonymous)
+-        except ValueError, why:
++        except ValueError as why:
+             raise ProtocolError(str(why))
+ 
+         return auth_req
+@@ -639,12 +639,12 @@ class GenericConsumer(object):
+     def _complete_id_res(self, message, endpoint, return_to):
+         try:
+             self._checkSetupNeeded(message)
+-        except SetupNeededError, why:
++        except SetupNeededError as why:
+             return SetupNeededResponse(endpoint, why.user_setup_url)
+         else:
+             try:
+                 return self._doIdRes(message, endpoint, return_to)
+-            except (ProtocolError, DiscoveryFailure), why:
++            except (ProtocolError, DiscoveryFailure) as why:
+                 return FailureResponse(endpoint, why[0])
+ 
+     def _completeInvalid(self, message, endpoint, _):
+@@ -661,7 +661,7 @@ class GenericConsumer(object):
+         # message.
+         try:
+             self._verifyReturnToArgs(message.toPostArgs())
+-        except ProtocolError, why:
++        except ProtocolError as why:
+             oidutil.log("Verifying return_to arguments: %s" % (why[0],))
+             return False
+ 
+@@ -768,7 +768,7 @@ class GenericConsumer(object):
+ 
+         try:
+             timestamp, salt = splitNonce(nonce)
+-        except ValueError, why:
++        except ValueError as why:
+             raise ProtocolError('Malformed nonce: %s' % (why[0],))
+ 
+         if (self.store is not None and
+@@ -867,7 +867,7 @@ class GenericConsumer(object):
+         # Make sure all non-OpenID arguments in the response are also
+         # in the signed return_to.
+         bare_args = message.getArgs(BARE_NS)
+-        for pair in bare_args.iteritems():
++        for pair in bare_args.items():
+             if pair not in parsed_args:
+                 raise ProtocolError("Parameter %s not in return_to URL" % (pair[0],))
+ 
+@@ -930,7 +930,7 @@ class GenericConsumer(object):
+             # case.
+             try:
+                 self._verifyDiscoverySingle(endpoint, to_match)
+-            except ProtocolError, e:
++            except ProtocolError as e:
+                 oidutil.log(
+                     "Error attempting to use stored discovery information: " +
+                     str(e))
+@@ -975,7 +975,7 @@ class GenericConsumer(object):
+                     self._verifyDiscoverySingle(endpoint, to_match)
+                 except TypeURIMismatch:
+                     self._verifyDiscoverySingle(endpoint, to_match_1_0)
+-            except ProtocolError, e:
++            except ProtocolError as e:
+                 oidutil.log("Error attempting to use stored discovery information: " +
+                             str(e))
+                 oidutil.log("Attempting discovery to verify endpoint")
+@@ -1068,7 +1068,7 @@ class GenericConsumer(object):
+                 try:
+                     self._verifyDiscoverySingle(
+                         endpoint, to_match_endpoint)
+-                except ProtocolError, why:
++                except ProtocolError as why:
+                     failure_messages.append(str(why))
+                 else:
+                     # It matches, so discover verification has
+@@ -1096,7 +1096,7 @@ class GenericConsumer(object):
+             return False
+         try:
+             response = self._makeKVPost(request, server_url)
+-        except (fetchers.HTTPFetchingError, ServerError), e:
++        except (fetchers.HTTPFetchingError, ServerError) as e:
+             oidutil.log('check_authentication failed: %s' % (e[0],))
+             return False
+         else:
+@@ -1178,7 +1178,7 @@ class GenericConsumer(object):
+         try:
+             assoc = self._requestAssociation(
+                 endpoint, assoc_type, session_type)
+-        except ServerError, why:
++        except ServerError as why:
+             supportedTypes = self._extractSupportedAssociationType(why,
+                                                                    endpoint,
+                                                                    assoc_type)
+@@ -1190,7 +1190,7 @@ class GenericConsumer(object):
+                 try:
+                     assoc = self._requestAssociation(
+                         endpoint, assoc_type, session_type)
+-                except ServerError, why:
++                except ServerError as why:
+                     # Do not keep trying, since it rejected the
+                     # association type that it told us to use.
+                     oidutil.log('Server %s refused its suggested association '
+@@ -1260,17 +1260,17 @@ class GenericConsumer(object):
+ 
+         try:
+             response = self._makeKVPost(args, endpoint.server_url)
+-        except fetchers.HTTPFetchingError, why:
++        except fetchers.HTTPFetchingError as why:
+             oidutil.log('openid.associate request failed: %s' % (why[0],))
+             return None
+ 
+         try:
+             assoc = self._extractAssociation(response, assoc_session)
+-        except KeyError, why:
++        except KeyError as why:
+             oidutil.log('Missing required parameter in response from %s: %s'
+                         % (endpoint.server_url, why[0]))
+             return None
+-        except ProtocolError, why:
++        except ProtocolError as why:
+             oidutil.log('Protocol error parsing response from %s: %s' % (
+                 endpoint.server_url, why[0]))
+             return None
+@@ -1393,7 +1393,7 @@ class GenericConsumer(object):
+             OPENID_NS, 'expires_in', no_default)
+         try:
+             expires_in = int(expires_in_str)
+-        except ValueError, why:
++        except ValueError as why:
+             raise ProtocolError('Invalid expires_in field: %s' % (why[0],))
+ 
+         # OpenID 1 has funny association session behaviour.
+@@ -1431,7 +1431,7 @@ class GenericConsumer(object):
+         # type.
+         try:
+             secret = assoc_session.extractSecret(assoc_response)
+-        except ValueError, why:
++        except ValueError as why:
+             fmt = 'Malformed response for %s session: %s'
+             raise ProtocolError(fmt % (assoc_session.session_type, why[0]))
+ 
+@@ -1777,7 +1777,7 @@ class SuccessResponse(Response):
+         """
+         msg_args = self.message.getArgs(ns_uri)
+ 
+-        for key in msg_args.iterkeys():
++        for key in msg_args.keys():
+             if not self.isSigned(ns_uri, key):
+                 oidutil.log("SuccessResponse.getSignedNS: (%s, %s) not signed."
+                             % (ns_uri, key))
+--- openid/consumer/discover.py.orig	2010-06-18 17:08:20 UTC
++++ openid/consumer/discover.py
+@@ -13,7 +13,7 @@ __all__ = [
+     'discover',
+     ]
+ 
+-import urlparse
++import urllib.parse
+ 
+ from openid import oidutil, fetchers, urinorm
+ 
+@@ -90,7 +90,7 @@ class OpenIDServiceEndpoint(object):
+         if self.claimed_id is None:
+             return None
+         else:
+-            return urlparse.urldefrag(self.claimed_id)[0]
++            return urllib.parse.urldefrag(self.claimed_id)[0]
+ 
+     def compatibilityMode(self):
+         return self.preferredNamespace() != OPENID_2_0_MESSAGE_NS
+@@ -304,10 +304,10 @@ def normalizeURL(url):
+     DiscoveryFailure"""
+     try:
+         normalized = urinorm.urinorm(url)
+-    except ValueError, why:
++    except ValueError as why:
+         raise DiscoveryFailure('Normalizing identifier: %s' % (why[0],), None)
+     else:
+-        return urlparse.urldefrag(normalized)[0]
++        return urllib.parse.urldefrag(normalized)[0]
+ 
+ def normalizeXRI(xri):
+     """Normalize an XRI, stripping its scheme if present"""
+@@ -324,7 +324,7 @@ def arrangeByType(service_list, preferred_types):
+         that element.
+ 
+         For Python 2.2 compatibility"""
+-        return zip(range(len(elts)), elts)
++        return list(zip(list(range(len(elts))), elts))
+ 
+     def bestMatchingService(service):
+         """Return the index of the first matching type, or something
+@@ -451,7 +451,7 @@ def discoverNoYadis(uri):
+     return claimed_id, openid_services
+ 
+ def discoverURI(uri):
+-    parsed = urlparse.urlparse(uri)
++    parsed = urllib.parse.urlparse(uri)
+     if parsed[0] and parsed[1]:
+         if parsed[0] not in ['http', 'https']:
+             raise DiscoveryFailure('URI scheme is not HTTP or HTTPS', None)
+--- openid/dh.py.orig	2010-06-18 17:08:20 UTC
++++ openid/dh.py
+@@ -5,11 +5,11 @@ def strxor(x, y):
+     if len(x) != len(y):
+         raise ValueError('Inputs to strxor must have the same length')
+ 
+-    xor = lambda (a, b): chr(ord(a) ^ ord(b))
+-    return "".join(map(xor, zip(x, y)))
++    xor = lambda a_b: chr(ord(a_b[0]) ^ ord(a_b[1]))
++    return "".join(map(xor, list(zip(x, y))))
+ 
+ class DiffieHellman(object):
+-    DEFAULT_MOD = 155172898181473697471232257763715539915724801966915404479707795314057629378541917580651227423698188993727816152646631438561595825688188889951272158842675419950341258706556549803580104870537681476726513255747040765857479291291572334510643245094715007229621094194349783925984760375594985848253359305585439638443L
++    DEFAULT_MOD = 155172898181473697471232257763715539915724801966915404479707795314057629378541917580651227423698188993727816152646631438561595825688188889951272158842675419950341258706556549803580104870537681476726513255747040765857479291291572334510643245094715007229621094194349783925984760375594985848253359305585439638443
+ 
+     DEFAULT_GEN = 2
+ 
+@@ -19,8 +19,8 @@ class DiffieHellman(object):
+     fromDefaults = classmethod(fromDefaults)
+ 
+     def __init__(self, modulus, generator):
+-        self.modulus = long(modulus)
+-        self.generator = long(generator)
++        self.modulus = int(modulus)
++        self.generator = int(generator)
+ 
+         self._setPrivate(cryptutil.randrange(1, modulus - 1))
+ 
+--- openid/extensions/ax.py.orig	2010-06-18 17:08:20 UTC
++++ openid/extensions/ax.py
+@@ -229,7 +229,7 @@ class FetchRequest(AXMessage):
+ 
+         ax_args = self._newArgs()
+ 
+-        for type_uri, attribute in self.requested_attributes.iteritems():
++        for type_uri, attribute in self.requested_attributes.items():
+             if attribute.alias is None:
+                 alias = aliases.add(type_uri)
+             else:
+@@ -275,7 +275,7 @@ class FetchRequest(AXMessage):
+         @rtype: [str]
+         """
+         required = []
+-        for type_uri, attribute in self.requested_attributes.iteritems():
++        for type_uri, attribute in self.requested_attributes.items():
+             if attribute.required:
+                 required.append(type_uri)
+ 
+@@ -304,7 +304,7 @@ class FetchRequest(AXMessage):
+         self = cls()
+         try:
+             self.parseExtensionArgs(ax_args)
+-        except NotAXMessage, err:
++        except NotAXMessage as err:
+             return None
+ 
+         if self.update_url:
+@@ -349,7 +349,7 @@ class FetchRequest(AXMessage):
+ 
+         aliases = NamespaceMap()
+ 
+-        for key, value in ax_args.iteritems():
++        for key, value in ax_args.items():
+             if key.startswith('type.'):
+                 alias = key[5:]
+                 type_uri = value
+@@ -392,7 +392,7 @@ class FetchRequest(AXMessage):
+         """Iterate over the AttrInfo objects that are
+         contained in this fetch_request.
+         """
+-        return self.requested_attributes.itervalues()
++        return iter(self.requested_attributes.values())
+ 
+     def __iter__(self):
+         """Iterate over the attribute type URIs in this fetch_request
+@@ -467,7 +467,7 @@ class AXKeyValueMessage(AXMessage):
+ 
+         ax_args = {}
+ 
+-        for type_uri, values in self.data.iteritems():
++        for type_uri, values in self.data.items():
+             alias = aliases.add(type_uri)
+ 
+             ax_args['type.' + alias] = type_uri
+@@ -499,20 +499,20 @@ class AXKeyValueMessage(AXMessage):
+ 
+         aliases = NamespaceMap()
+ 
+-        for key, value in ax_args.iteritems():
++        for key, value in ax_args.items():
+             if key.startswith('type.'):
+                 type_uri = value
+                 alias = key[5:]
+                 checkAlias(alias)
+                 aliases.addAlias(type_uri, alias)
+ 
+-        for type_uri, alias in aliases.iteritems():
++        for type_uri, alias in aliases.items():
+             try:
+                 count_s = ax_args['count.' + alias]
+             except KeyError:
+                 value = ax_args['value.' + alias]
+ 
+-                if value == u'':
++                if value == '':
+                     values = []
+                 else:
+                     values = [value]
+@@ -709,7 +709,7 @@ class FetchResponse(AXKeyValueMessage):
+ 
+         try:
+             self.parseExtensionArgs(ax_args)
+-        except NotAXMessage, err:
++        except NotAXMessage as err:
+             return None
+         else:
+             return self
+--- openid/extensions/sreg.py.orig	2010-06-18 17:08:20 UTC
++++ openid/extensions/sreg.py
+@@ -41,10 +41,10 @@ from openid.extension import Extension
+ from openid import oidutil
+ 
+ try:
+-    basestring #pylint:disable-msg=W0104
++    str #pylint:disable-msg=W0104
+ except NameError:
+     # For Python 2.2
+-    basestring = (str, unicode) #pylint:disable-msg=W0622
++    str = (str, str) #pylint:disable-msg=W0622
+ 
+ __all__ = [
+     'SRegRequest',
+@@ -94,7 +94,7 @@ ns_uri = ns_uri_1_1
+ 
+ try:
+     registerNamespaceAlias(ns_uri_1_1, 'sreg')
+-except NamespaceAliasRegistrationError, e:
++except NamespaceAliasRegistrationError as e:
+     oidutil.log('registerNamespaceAlias(%r, %r) failed: %s' % (ns_uri_1_1,
+                                                                'sreg', str(e),))
+ 
+@@ -156,7 +156,7 @@ def getSRegNS(message):
+         sreg_ns_uri = ns_uri_1_1
+         try:
+             message.namespaces.addAlias(ns_uri_1_1, 'sreg')
+-        except KeyError, why:
++        except KeyError as why:
+             # An alias for the string 'sreg' already exists, but it's
+             # defined for something other than simple registration
+             raise SRegNamespaceError(why[0])
+@@ -343,7 +343,7 @@ class SRegRequest(Extension):
+             registration field or strict is set and a field was
+             requested more than once
+         """
+-        if isinstance(field_names, basestring):
++        if isinstance(field_names, str):
+             raise TypeError('Fields should be passed as a list of '
+                             'strings (not %r)' % (type(field_names),))
+ 
+@@ -489,16 +489,16 @@ class SRegResponse(Extension):
+     def items(self):
+         """All of the data values in this simple registration response
+         """
+-        return self.data.items()
++        return list(self.data.items())
+ 
+     def iteritems(self):
+-        return self.data.iteritems()
++        return iter(self.data.items())
+ 
+     def keys(self):
+-        return self.data.keys()
++        return list(self.data.keys())
+ 
+     def iterkeys(self):
+-        return self.data.iterkeys()
++        return iter(self.data.keys())
+ 
+     def has_key(self, key):
+         return key in self
+@@ -514,5 +514,5 @@ class SRegResponse(Extension):
+         checkFieldName(field_name)
+         return self.data[field_name]
+ 
+-    def __nonzero__(self):
++    def __bool__(self):
+         return bool(self.data)
+--- openid/fetchers.py.orig	2010-06-18 17:08:20 UTC
++++ openid/fetchers.py
+@@ -7,9 +7,9 @@ __all__ = ['fetch', 'getDefaultFetcher', 'setDefaultFe
+            'HTTPFetcher', 'createHTTPFetcher', 'HTTPFetchingError',
+            'HTTPError']
+ 
+-import urllib2
++import urllib.request, urllib.error, urllib.parse
+ import time
+-import cStringIO
++import io
+ import sys
+ 
+ import openid
+@@ -186,7 +186,7 @@ class Urllib2Fetcher(HTTPFetcher):
+ 
+     # Parameterized for the benefit of testing frameworks, see
+     # http://trac.openidenabled.com/trac/ticket/85
+-    urlopen = staticmethod(urllib2.urlopen)
++    urlopen = staticmethod(urllib.request.urlopen)
+ 
+     def fetch(self, url, body=None, headers=None):
+         if not _allowedURL(url):
+@@ -199,14 +199,14 @@ class Urllib2Fetcher(HTTPFetcher):
+             'User-Agent',
+             "%s Python-urllib/%s" % (USER_AGENT, urllib2.__version__,))
+ 
+-        req = urllib2.Request(url, data=body, headers=headers)
++        req = urllib.request.Request(url, data=body, headers=headers)
+         try:
+             f = self.urlopen(req)
+             try:
+                 return self._makeResponse(f)
+             finally:
+                 f.close()
+-        except urllib2.HTTPError, why:
++        except urllib.error.HTTPError as why:
+             try:
+                 return self._makeResponse(why)
+             finally:
+@@ -216,7 +216,7 @@ class Urllib2Fetcher(HTTPFetcher):
+         resp = HTTPResponse()
+         resp.body = urllib2_response.read(MAX_RESPONSE_KB * 1024)
+         resp.final_url = urllib2_response.geturl()
+-        resp.headers = dict(urllib2_response.info().items())
++        resp.headers = dict(list(urllib2_response.info().items()))
+ 
+         if hasattr(urllib2_response, 'code'):
+             resp.status = urllib2_response.code
+@@ -294,7 +294,7 @@ class CurlHTTPFetcher(HTTPFetcher):
+ 
+         header_list = []
+         if headers is not None:
+-            for header_name, header_value in headers.iteritems():
++            for header_name, header_value in headers.items():
+                 header_list.append('%s: %s' % (header_name, header_value))
+ 
+         c = pycurl.Curl()
+@@ -313,14 +313,14 @@ class CurlHTTPFetcher(HTTPFetcher):
+                 if not self._checkURL(url):
+                     raise HTTPError("Fetching URL not allowed: %r" % (url,))
+ 
+-                data = cStringIO.StringIO()
++                data = io.StringIO()
+                 def write_data(chunk):
+                     if data.tell() > 1024*MAX_RESPONSE_KB:
+                         return 0
+                     else:
+                         return data.write(chunk)
+                     
+-                response_header_data = cStringIO.StringIO()
++                response_header_data = io.StringIO()
+                 c.setopt(pycurl.WRITEFUNCTION, write_data)
+                 c.setopt(pycurl.HEADERFUNCTION, response_header_data.write)
+                 c.setopt(pycurl.TIMEOUT, off)
+@@ -422,6 +422,6 @@ class HTTPLib2Fetcher(HTTPFetcher):
+         return HTTPResponse(
+             body=content,
+             final_url=final_url,
+-            headers=dict(httplib2_response.items()),
++            headers=dict(list(httplib2_response.items())),
+             status=httplib2_response.status,
+             )
+--- openid/message.py.orig	2010-06-18 17:08:20 UTC
++++ openid/message.py
+@@ -6,7 +6,7 @@ __all__ = ['Message', 'NamespaceMap', 'no_default', 'r
+ 
+ import copy
+ import warnings
+-import urllib
++import urllib.request, urllib.parse, urllib.error
+ 
+ from openid import oidutil
+ from openid import kvform
+@@ -100,13 +100,11 @@ def registerNamespaceAlias(namespace_uri, alias):
+     if registered_aliases.get(alias) == namespace_uri:
+         return
+ 
+-    if namespace_uri in registered_aliases.values():
+-        raise NamespaceAliasRegistrationError, \
+-              'Namespace uri %r already registered' % (namespace_uri,)
++    if namespace_uri in list(registered_aliases.values()):
++        raise NamespaceAliasRegistrationError('Namespace uri %r already registered' % (namespace_uri,))
+ 
+     if alias in registered_aliases:
+-        raise NamespaceAliasRegistrationError, \
+-              'Alias %r already registered' % (alias,)
++        raise NamespaceAliasRegistrationError('Alias %r already registered' % (alias,))
+ 
+     registered_aliases[alias] = namespace_uri
+ 
+@@ -148,7 +146,7 @@ class Message(object):
+ 
+         # Partition into "openid." args and bare args
+         openid_args = {}
+-        for key, value in args.items():
++        for key, value in list(args.items()):
+             if isinstance(value, list):
+                 raise TypeError("query dict must have one value for each key, "
+                                 "not lists of values.  Query is %r" % (args,))
+@@ -186,7 +184,7 @@ class Message(object):
+         ns_args = []
+ 
+         # Resolve namespaces
+-        for rest, value in openid_args.iteritems():
++        for rest, value in openid_args.items():
+             try:
+                 ns_alias, ns_key = rest.split('.', 1)
+             except ValueError:
+@@ -266,7 +264,7 @@ class Message(object):
+         args = {}
+ 
+         # Add namespace definitions to the output
+-        for ns_uri, alias in self.namespaces.iteritems():
++        for ns_uri, alias in self.namespaces.items():
+             if self.namespaces.isImplicit(ns_uri):
+                 continue
+             if alias == NULL_NAMESPACE:
+@@ -275,7 +273,7 @@ class Message(object):
+                 ns_key = 'openid.ns.' + alias
+             args[ns_key] = ns_uri
+ 
+-        for (ns_uri, ns_key), value in self.args.iteritems():
++        for (ns_uri, ns_key), value in self.args.items():
+             key = self.getKey(ns_uri, ns_key)
+             args[key] = value.encode('UTF-8')
+ 
+@@ -287,7 +285,7 @@ class Message(object):
+         # FIXME - undocumented exception
+         post_args = self.toPostArgs()
+         kvargs = {}
+-        for k, v in post_args.iteritems():
++        for k, v in post_args.items():
+             if not k.startswith('openid.'):
+                 raise ValueError(
+                     'This message can only be encoded as a POST, because it '
+@@ -327,7 +325,7 @@ class Message(object):
+         form = ElementTree.Element('form')
+ 
+         if form_tag_attrs:
+-            for name, attr in form_tag_attrs.iteritems():
++            for name, attr in form_tag_attrs.items():
+                 form.attrib[name] = attr
+ 
+         form.attrib['action'] = action_url
+@@ -335,7 +333,7 @@ class Message(object):
+         form.attrib['accept-charset'] = 'UTF-8'
+         form.attrib['enctype'] = 'application/x-www-form-urlencoded'
+ 
+-        for name, value in self.toPostArgs().iteritems():
++        for name, value in self.toPostArgs().items():
+             attrs = {'type': 'hidden',
+                      'name': name,
+                      'value': value}
+@@ -361,9 +359,9 @@ class Message(object):
+ 
+     def toURLEncoded(self):
+         """Generate an x-www-urlencoded string"""
+-        args = self.toPostArgs().items()
++        args = list(self.toPostArgs().items())
+         args.sort()
+-        return urllib.urlencode(args)
++        return urllib.parse.urlencode(args)
+ 
+     def _fixNS(self, namespace):
+         """Convert an input value into the internally used values of
+@@ -378,7 +376,7 @@ class Message(object):
+             else:
+                 namespace = self._openid_ns_uri
+ 
+-        if namespace != BARE_NS and type(namespace) not in [str, unicode]:
++        if namespace != BARE_NS and type(namespace) not in [str, str]:
+             raise TypeError(
+                 "Namespace must be BARE_NS, OPENID_NS or a string. got %r"
+                 % (namespace,))
+@@ -456,7 +454,7 @@ class Message(object):
+         return dict([
+             (ns_key, value)
+             for ((pair_ns, ns_key), value)
+-            in self.args.iteritems()
++            in self.args.items()
+             if pair_ns == namespace
+             ])
+ 
+@@ -467,7 +465,7 @@ class Message(object):
+         @type updates: {unicode:unicode}
+         """
+         namespace = self._fixNS(namespace)
+-        for k, v in updates.iteritems():
++        for k, v in updates.items():
+             self.setArg(namespace, k, v)
+ 
+     def setArg(self, namespace, key, value):
+@@ -551,7 +549,7 @@ class NamespaceMap(object):
+ 
+         @returns: iterator of (namespace_uri, alias)
+         """
+-        return self.namespace_to_alias.iteritems()
++        return iter(self.namespace_to_alias.items())
+ 
+     def addAlias(self, namespace_uri, desired_alias, implicit=False):
+         """Add an alias from this namespace URI to the desired alias
+@@ -563,7 +561,7 @@ class NamespaceMap(object):
+ 
+         # Check that desired_alias does not contain a period as per
+         # the spec.
+-        if type(desired_alias) in [str, unicode]:
++        if type(desired_alias) in [str, str]:
+             assert '.' not in desired_alias, \
+                    "%r must not contain a dot" % (desired_alias,)
+ 
+@@ -592,7 +590,7 @@ class NamespaceMap(object):
+             raise KeyError(fmt % (namespace_uri, desired_alias, alias))
+ 
+         assert (desired_alias == NULL_NAMESPACE or
+-                type(desired_alias) in [str, unicode]), repr(desired_alias)
++                type(desired_alias) in [str, str]), repr(desired_alias)
+         assert namespace_uri not in self.implicit_namespaces
+         self.alias_to_namespace[desired_alias] = namespace_uri
+         self.namespace_to_alias[namespace_uri] = desired_alias
+--- openid/oidutil.py.orig	2010-06-18 17:08:20 UTC
++++ openid/oidutil.py
+@@ -9,9 +9,9 @@ __all__ = ['log', 'appendArgs', 'toBase64', 'fromBase6
+ 
+ import binascii
+ import sys
+-import urlparse
++import urllib.parse
+ 
+-from urllib import urlencode
++from urllib.parse import urlencode
+ 
+ elementtree_modules = [
+     'lxml.etree',
+@@ -129,7 +129,7 @@ def appendArgs(url, args):
+     @rtype: str
+     """
+     if hasattr(args, 'items'):
+-        args = args.items()
++        args = list(args.items())
+         args.sort()
+     else:
+         args = list(args)
+@@ -164,7 +164,7 @@ def toBase64(s):
+ def fromBase64(s):
+     try:
+         return binascii.a2b_base64(s)
+-    except binascii.Error, why:
++    except binascii.Error as why:
+         # Convert to a common exception type
+         raise ValueError(why[0])
+ 
+--- openid/server/server.py.orig	2010-06-18 17:08:20 UTC
++++ openid/server/server.py
+@@ -438,7 +438,7 @@ class AssociateRequest(OpenIDRequest):
+ 
+         try:
+             session = session_class.fromMessage(message)
+-        except ValueError, why:
++        except ValueError as why:
+             raise ProtocolError(message, 'Error parsing %s session: %s' %
+                                 (session_class.session_type, why[0]))
+ 
+@@ -1177,7 +1177,7 @@ class Signatory(object):
+ 
+         try:
+             valid = assoc.checkMessageSignature(message)
+-        except ValueError, ex:
++        except ValueError as ex:
+             oidutil.log("Error in verifying %s with %s: %s" % (message,
+                                                                assoc,
+                                                                ex))
+@@ -1225,7 +1225,7 @@ class Signatory(object):
+ 
+         try:
+             signed_response.fields = assoc.signMessage(signed_response.fields)
+-        except kvform.KVFormError, err:
++        except kvform.KVFormError as err:
+             raise EncodingError(response, explanation=str(err))
+         return signed_response
+ 
+@@ -1425,7 +1425,7 @@ class Decoder(object):
+ 
+         try:
+             message = Message.fromPostArgs(query)
+-        except InvalidOpenIDNamespace, err:
++        except InvalidOpenIDNamespace as err:
+             # It's useful to have a Message attached to a ProtocolError, so we
+             # override the bad ns value to build a Message out of it.  Kinda
+             # kludgy, since it's made of lies, but the parts that aren't lies
+@@ -1647,7 +1647,7 @@ class ProtocolError(Exception):
+         self.openid_message = message
+         self.reference = reference
+         self.contact = contact
+-        assert type(message) not in [str, unicode]
++        assert type(message) not in [str, str]
+         Exception.__init__(self, text)
+ 
+ 
+--- openid/server/trustroot.py.orig	2010-06-18 17:08:20 UTC
++++ openid/server/trustroot.py
+@@ -21,7 +21,7 @@ from openid import oidutil
+ from openid import urinorm
+ from openid.yadis import services
+ 
+-from urlparse import urlparse, urlunparse
++from urllib.parse import urlparse, urlunparse
+ import re
+ 
+ ############################################
+@@ -442,7 +442,7 @@ def verifyReturnTo(realm_str, return_to, _vrfy=getAllo
+ 
+     try:
+         allowable_urls = _vrfy(realm.buildDiscoveryURL())
+-    except RealmVerificationRedirected, err:
++    except RealmVerificationRedirected as err:
+         oidutil.log(str(err))
+         return False
+ 
+--- openid/store/filestore.py.orig	2010-06-18 17:08:20 UTC
++++ openid/store/filestore.py
+@@ -24,8 +24,8 @@ except ImportError:
+         for _ in range(5):
+             name = os.tempnam(dir)
+             try:
+-                fd = os.open(name, os.O_CREAT | os.O_EXCL | os.O_RDWR, 0600)
+-            except OSError, why:
++                fd = os.open(name, os.O_CREAT | os.O_EXCL | os.O_RDWR, 0o600)
++            except OSError as why:
+                 if why.errno != EEXIST:
+                     raise
+             else:
+@@ -82,7 +82,7 @@ def _removeIfPresent(filename):
+     """
+     try:
+         os.unlink(filename)
+-    except OSError, why:
++    except OSError as why:
+         if why.errno == ENOENT:
+             # Someone beat us to it, but it's gone, so that's OK
+             return 0
+@@ -102,7 +102,7 @@ def _ensureDir(dir_name):
+     """
+     try:
+         os.makedirs(dir_name)
+-    except OSError, why:
++    except OSError as why:
+         if why.errno != EEXIST or not os.path.isdir(dir_name):
+             raise
+ 
+@@ -220,7 +220,7 @@ class FileOpenIDStore(OpenIDStore):
+ 
+             try:
+                 os.rename(tmp, filename)
+-            except OSError, why:
++            except OSError as why:
+                 if why.errno != EEXIST:
+                     raise
+ 
+@@ -229,7 +229,7 @@ class FileOpenIDStore(OpenIDStore):
+                 # file, but not in putting the temporary file in place.
+                 try:
+                     os.unlink(filename)
+-                except OSError, why:
++                except OSError as why:
+                     if why.errno == ENOENT:
+                         pass
+                     else:
+@@ -289,7 +289,7 @@ class FileOpenIDStore(OpenIDStore):
+     def _getAssociation(self, filename):
+         try:
+             assoc_file = file(filename, 'rb')
+-        except IOError, why:
++        except IOError as why:
+             if why.errno == ENOENT:
+                 # No association exists for that URL and handle
+                 return None
+@@ -350,8 +350,8 @@ class FileOpenIDStore(OpenIDStore):
+ 
+         filename = os.path.join(self.nonce_dir, filename)
+         try:
+-            fd = os.open(filename, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0200)
+-        except OSError, why:
++            fd = os.open(filename, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o200)
++        except OSError as why:
+             if why.errno == EEXIST:
+                 return False
+             else:
+@@ -363,13 +363,11 @@ class FileOpenIDStore(OpenIDStore):
+     def _allAssocs(self):
+         all_associations = []
+ 
+-        association_filenames = map(
+-            lambda filename: os.path.join(self.association_dir, filename),
+-            os.listdir(self.association_dir))
++        association_filenames = [os.path.join(self.association_dir, filename) for filename in os.listdir(self.association_dir)]
+         for association_filename in association_filenames:
+             try:
+                 association_file = file(association_filename, 'rb')
+-            except IOError, why:
++            except IOError as why:
+                 if why.errno == ENOENT:
+                     oidutil.log("%s disappeared during %s._allAssocs" % (
+                         association_filename, self.__class__.__name__))
+--- openid/store/sqlstore.py.orig	2010-06-18 17:08:20 UTC
++++ openid/store/sqlstore.py
+@@ -139,11 +139,11 @@ class SQLStore(OpenIDStore):
+         # Currently the strings in our tables just have ascii in them,
+         # so this ought to be safe.
+         def unicode_to_str(arg):
+-            if isinstance(arg, unicode):
++            if isinstance(arg, str):
+                 return str(arg)
+             else:
+                 return arg
+-        str_args = map(unicode_to_str, args)
++        str_args = list(map(unicode_to_str, args))
+         self.cur.execute(sql, str_args)
+ 
+     def __getattr__(self, attr):
+@@ -349,7 +349,7 @@ class SQLiteStore(SQLStore):
+         # message from the OperationalError.
+         try:
+             return super(SQLiteStore, self).useNonce(*args, **kwargs)
+-        except self.exceptions.OperationalError, why:
++        except self.exceptions.OperationalError as why:
+             if re.match('^columns .* are not unique$', why[0]):
+                 return False
+             else:
+--- openid/urinorm.py.orig	2010-06-18 17:08:20 UTC
++++ openid/urinorm.py
+@@ -22,7 +22,7 @@ pct_encoded_pattern = r'%([0-9A-Fa-f]{2})'
+ pct_encoded_re = re.compile(pct_encoded_pattern)
+ 
+ try:
+-    unichr(0x10000)
++    chr(0x10000)
+ except ValueError:
+     # narrow python build
+     UCSCHAR = [
+@@ -73,8 +73,7 @@ _unreserved[ord('~')] = True
+ 
+ 
+ _escapeme_re = re.compile('[%s]' % (''.join(
+-    map(lambda (m, n): u'%s-%s' % (unichr(m), unichr(n)),
+-        UCSCHAR + IPRIVATE)),))
++    ['%s-%s' % (chr(m_n[0]), chr(m_n[1])) for m_n in UCSCHAR + IPRIVATE]),))
+ 
+ 
+ def _pct_escape_unicode(char_match):
+@@ -137,7 +136,7 @@ def remove_dot_segments(path):
+ 
+ 
+ def urinorm(uri):
+-    if isinstance(uri, unicode):
++    if isinstance(uri, str):
+         uri = _escapeme_re.sub(_pct_escape_unicode, uri).encode('ascii')
+ 
+     illegal_mo = uri_illegal_char_re.search(uri)
+@@ -171,7 +170,7 @@ def urinorm(uri):
+     if '%' in host:
+         host = host.lower()
+         host = pct_encoded_re.sub(_pct_encoded_replace, host)
+-        host = unicode(host, 'utf-8').encode('idna')
++        host = str(host, 'utf-8').encode('idna')
+     else:
+         host = host.lower()
+ 
+--- openid/yadis/etxrd.py.orig	2010-06-18 17:08:20 UTC
++++ openid/yadis/etxrd.py
+@@ -67,7 +67,7 @@ def parseXRDS(text):
+     """
+     try:
+         element = ElementTree.XML(text)
+-    except XMLError, why:
++    except XMLError as why:
+         exc = XRDSError('Error parsing document as XML')
+         exc.reason = why
+         raise exc
+--- openid/yadis/parsehtml.py.orig	2010-06-18 17:08:20 UTC
++++ openid/yadis/parsehtml.py
+@@ -1,7 +1,7 @@
+ __all__ = ['findHTMLMeta', 'MetaNotFound']
+ 
+-from HTMLParser import HTMLParser, HTMLParseError
+-import htmlentitydefs
++from html.parser import HTMLParser, HTMLParseError
++import html.entities
+ import re
+ 
+ from openid.yadis.constants import YADIS_HEADER_NAME
+@@ -39,12 +39,12 @@ def substituteMO(mo):
+         codepoint = int(mo.group('dec'))
+     else:
+         assert mo.lastgroup == 'word'
+-        codepoint = htmlentitydefs.name2codepoint.get(mo.group('word'))
++        codepoint = html.entities.name2codepoint.get(mo.group('word'))
+ 
+     if codepoint is None:
+         return mo.group()
+     else:
+-        return unichr(codepoint)
++        return chr(codepoint)
+ 
+ def substituteEntities(s):
+     return ent_re.sub(substituteMO, s)
+@@ -180,11 +180,11 @@ def findHTMLMeta(stream):
+         chunks.append(chunk)
+         try:
+             parser.feed(chunk)
+-        except HTMLParseError, why:
++        except HTMLParseError as why:
+             # HTML parse error, so bail
+             chunks.append(stream.read())
+             break
+-        except ParseDone, why:
++        except ParseDone as why:
+             uri = why[0]
+             if uri is None:
+                 # Parse finished, but we may need the rest of the file
+--- openid/yadis/services.py.orig	2010-06-18 17:08:20 UTC
++++ openid/yadis/services.py
+@@ -26,7 +26,7 @@ def getServiceEndpoints(input_url, flt=None):
+     try:
+         endpoints = applyFilter(result.normalized_uri,
+                                 result.response_text, flt)
+-    except XRDSError, err:
++    except XRDSError as err:
+         raise DiscoveryFailure(str(err), None)
+     return (result.normalized_uri, endpoints)
+ 
+--- openid/yadis/xri.py.orig	2010-06-18 17:08:20 UTC
++++ openid/yadis/xri.py
+@@ -5,11 +5,12 @@
+ """
+ 
+ import re
++from functools import reduce
+ 
+ XRI_AUTHORITIES = ['!', '=', '@', '+', '$', '(']
+ 
+ try:
+-    unichr(0x10000)
++    chr(0x10000)
+ except ValueError:
+     # narrow python build
+     UCSCHAR = [
+@@ -50,8 +51,7 @@ else:
+ 
+ 
+ _escapeme_re = re.compile('[%s]' % (''.join(
+-    map(lambda (m, n): u'%s-%s' % (unichr(m), unichr(n)),
+-        UCSCHAR + IPRIVATE)),))
++    ['%s-%s' % (chr(m_n[0]), chr(m_n[1])) for m_n in UCSCHAR + IPRIVATE]),))
+ 
+ 
+ def identifierScheme(identifier):
+@@ -147,7 +147,7 @@ def rootAuthority(xri):
+         # IRI reference.  XXX: Can IRI authorities have segments?
+         segments = authority.split('!')
+         segments = reduce(list.__add__,
+-            map(lambda s: s.split('*'), segments))
++            [s.split('*') for s in segments])
+         root = segments[0]
+ 
+     return XRI(root)

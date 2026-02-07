@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Config/General.pm
+%%SITE_PERL%%/Config/General/Extended.pm
+%%SITE_PERL%%/Config/General/Interpolated.pm
+%%PERL5_MAN3%%/Config::General.3.gz
+%%PERL5_MAN3%%/Config::General::Extended.3.gz
+%%PERL5_MAN3%%/Config::General::Interpolated.3.gz

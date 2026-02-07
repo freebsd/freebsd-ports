@@ -1,0 +1,6 @@
+bin/cdpr
+%%DATADIR%%/cdprs.php
+%%DATADIR%%/cdprs.cgi
+%%DATADIR%%/cdpr.conf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.cdprs

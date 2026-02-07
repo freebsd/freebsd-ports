@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-04-07 19:46:51 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools_scm[toml]>=4", "cython", "cmake>=3.24.2,<3.28; python_version>='3.7'", "setuptools-rust<2"]
++requires = ["setuptools_scm[toml]>=4", "cython", "setuptools-rust<2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -30,7 +30,7 @@ dependencies = [
+     "bytecode>=0.15.0; python_version~='3.12.0'",
+     "bytecode>=0.14.0; python_version~='3.11.0'",
+     "bytecode>=0.13.0; python_version<'3.11'",
+-    "envier==0.5.2",
++    "envier>=0.5.2",
+     "importlib_metadata<=6.5.0; python_version<'3.8'",
+     "legacy-cgi>=2.0.0; python_version>='3.13.0'",
+     "opentelemetry-api>=1",

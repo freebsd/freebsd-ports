@@ -1,0 +1,4 @@
+POE::Component::Client::Traceroute is a non-blocking Traceroute
+client. It lets several other sessions traceroute through it in
+parallel, and it lets them continue doing other things while
+they wait for responses.

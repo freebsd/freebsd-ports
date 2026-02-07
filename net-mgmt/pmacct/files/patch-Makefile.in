@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2022-12-31 19:18:37 UTC
++++ Makefile.in
+@@ -433,7 +433,7 @@ pmacct_examples_custom_dir = $(pmacct_examples_arch_di
+ @USING_BGP_BINS_TRUE@pmacct_examples_lg_dir = $(pmacct_examples_dir)/lg
+ @USING_BGP_BINS_TRUE@pmacct_examples_lg_arch_dir = $(pmacct_examples_arch_dir)/lg
+ pmacct_examples_custom_dir = $(pmacct_examples_arch_dir)/custom
+-@USING_SQL_TRUE@pmacct_sql_dir = $(pmacct_data_dir)/sql
++@USING_SQL_TRUE@pmacct_sql_dir = $(pmacct_data_dir)
+ pmacct_data__DATA = CONFIG-KEYS FAQS QUICKSTART UPGRADE
+ pmacct_docs__DATA = docs/IPFIX docs/LOOKING_GLASS_FORMAT docs/SIGNALS \
+ 	docs/MSGLOG_DUMP_FORMATS docs/TRIGGER_VARS

@@ -1,0 +1,10 @@
+This module is useful if you manage data which has a lot of on/off attributes
+like active, inactive, deleted, important, etc. If you do not want to add an
+extra column for each of those attributes you can easily specify them in one
+integer column.
+
+A bit field is a way to store multiple bit values on one integer field.
+
+The main benefit from this module is that you can add additional attributes
+to your result class whithout the need to deploy or change the schema on the
+data base.

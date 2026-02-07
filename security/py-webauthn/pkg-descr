@@ -1,0 +1,2 @@
+PyWebAuthn is a Python module which can be used to handle WebAuthn registration
+and assertion. Currently, WebAuthn is supported in Firefox, Chrome, and Edge.

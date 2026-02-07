@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-11-19 16:10:15 UTC
++++ meson.build
+@@ -24,7 +24,7 @@ x11_dep = dependency('x11')
+ pixman_dep = dependency('pixman-1')
+ posix_dep = meson.get_compiler('vala').find_library('posix')
+ x11_dep = dependency('x11')
+-xext_dep = cc.find_library('Xext')
++xext_dep = cc.find_library('Xext', dirs: ['/usr/local/lib'])
+ 
+ config_data = configuration_data()
+ config_data.set_quoted('GETTEXT_PACKAGE', gettext_package)

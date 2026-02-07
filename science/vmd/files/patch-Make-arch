@@ -1,0 +1,35 @@
+--- ../plugins/Make-arch.orig	2016-10-21 23:34:39 UTC
++++ ../plugins/Make-arch
+@@ -272,10 +272,8 @@
+ 	"CC = gcc" \
+ 	"CXX = g++" \
+ 	"DEF = -D" \
+-	"CCFLAGS = -O2 -Wall -I/usr/local/include/tcl8.5" \
+-	"CXXFLAGS = -O2 -Wall" \
+-	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
+-	"NETCDFLDFLAGS = -lnetcdf " \
++	"CCFLAGS = ${CFLAGS} -Wall" \
++	"CXXFLAGS = ${CFLAGS} -Wall" \
+ 	"AR = ar" \
+ 	"NM = nm -p" \
+ 	"RANLIB = touch" \
+@@ -283,16 +281,14 @@
+ 
+ FREEBSDAMD64:
+ 	$(MAKE) dynlibs staticlibs bins \
+-	"ARCH = FREEBSD" \
++	"ARCH = FREEBSDAMD64" \
+ 	"COPTO = -fPIC -m64 -o " \
+ 	"LOPTO = -fPIC -m64 -o " \
+ 	"CC = gcc" \
+ 	"CXX = g++" \
+ 	"DEF = -D" \
+-	"CCFLAGS = -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
+-	"CXXFLAGS = -m64 -O2 -Wall" \
+-	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
+-	"NETCDFLDFLAGS = -lnetcdf " \
++	"CCFLAGS = ${CFLAGS} -Wall" \
++	"CXXFLAGS = ${CFLAGS} -Wall" \
+ 	"AR = ar" \
+ 	"NM = nm -p" \
+ 	"RANLIB = touch" \

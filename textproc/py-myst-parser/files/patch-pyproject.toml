@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-01-15 09:08:11 UTC
++++ pyproject.toml
+@@ -39,7 +39,7 @@ dependencies = [
+     "markdown-it-py~=4.0",
+     "mdit-py-plugins~=0.5",
+     "pyyaml",
+-    "sphinx>=8,<10",
++    "sphinx>=5,<10",
+ ]
+ 
+ [project.urls]

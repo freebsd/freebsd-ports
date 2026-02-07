@@ -1,0 +1,5 @@
+Classes and setuptools plugin for Mercurial repositories
+
+hgtools builds on the setuptools_hg plugin for setuptools.
+Provides classes for inspecting and working with repositories in the
+Mercurial version control system.

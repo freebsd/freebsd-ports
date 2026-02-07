@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2020-03-14 17:27:33 UTC
++++ CMakeLists.txt
+@@ -21,7 +21,9 @@ include(DuneMacros)
+ dune_project()
+ 
+ add_subdirectory("dune")
++if (FREEBSD_INSTALL_DOCS)
+ add_subdirectory("doc")
++endif()
+ add_subdirectory("lib")
+ 
+ # finalize the dune project, e.g. generating config.h etc.

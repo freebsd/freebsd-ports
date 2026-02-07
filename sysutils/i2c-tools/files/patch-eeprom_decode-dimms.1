@@ -1,0 +1,21 @@
+--- eeprom/decode-dimms.1.orig	2014-02-20 04:59:56.488360000 -0500
++++ eeprom/decode-dimms.1	2014-06-19 16:20:15.000000000 -0400
+@@ -21,7 +21,7 @@
+ decode-dimms \- decode the information found in memory module SPD EEPROMs
+ .SH SYNOPSIS
+ .B decode-dimms
+-[-c] [-f [-b]] [-x|-X file [files..]]
++[-c] [-f [-b]] [-d|-x|-X file [files..]]
+ .br
+ .B decode-dimms
+ -h
+@@ -53,6 +53,9 @@
+ .B \-c, --checksum
+ Decode completely even if checksum fails
+ .TP
++.B \-d
++Read data from the device
++.TP
+ .B \-x
+ Read data from hexdump files
+ .TP

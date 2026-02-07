@@ -1,0 +1,174 @@
+--- tests/meson.build.orig	2022-08-31 20:00:01 UTC
++++ tests/meson.build
+@@ -6,14 +6,14 @@ test_progs = [
+ 	'core_setmaster',
+ 	'core_setmaster_vs_auth',
+ 	'debugfs_test',
+-	'dmabuf',
+-	'dmabuf_sync_file',
++        #'dmabuf',
++        #'dmabuf_sync_file',
+ 	'device_reset',
+-	'drm_buddy',
++        #'drm_buddy',
+ 	'drm_import_export',
+-	'drm_mm',
++        #'drm_mm',
+ 	'drm_read',
+-	'fbdev',
++        #'fbdev',
+ 	'feature_discovery',
+ 	'kms_3d',
+ 	'kms_addfb_basic',
+@@ -54,7 +54,7 @@ test_progs = [
+ 	'kms_rmfb',
+ 	'kms_rotation_crc',
+ 	'kms_scaling_modes',
+-	'kms_selftest',
++        #'kms_selftest',
+ 	'kms_sequence',
+ 	'kms_setmode',
+ 	'kms_sysfs_edid_timing',
+@@ -222,7 +222,7 @@ i915_progs = [
+ 	'i915_pm_rps',
+ 	'i915_pm_sseu',
+ 	'i915_query',
+-	'i915_selftest',
++        #'i915_selftest',
+ 	'i915_suspend',
+ 	'kms_big_fb',
+ 	'kms_big_joiner' ,
+@@ -340,21 +340,21 @@ test_list += 'gem_create'
+ 	   install : true)
+ test_list += 'gem_create'
+ 
+-test_executables += executable('gem_ctx_freq',
+-	   join_paths('i915', 'gem_ctx_freq.c'),
+-	   dependencies : test_deps + [ lib_igt_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'gem_ctx_freq'
++#test_executables += executable('gem_ctx_freq',
++#	   join_paths('i915', 'gem_ctx_freq.c'),
++#	   dependencies : test_deps + [ lib_igt_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'gem_ctx_freq'
+ 
+-test_executables += executable('gem_ctx_sseu',
+-	   join_paths('i915', 'gem_ctx_sseu.c'),
+-	   dependencies : test_deps + [ lib_igt_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'gem_ctx_sseu'
++#test_executables += executable('gem_ctx_sseu',
++#	   join_paths('i915', 'gem_ctx_sseu.c'),
++#	   dependencies : test_deps + [ lib_igt_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'gem_ctx_sseu'
+ 
+ test_executables += executable('gem_eio',
+ 	   join_paths('i915', 'gem_eio.c'),
+@@ -364,12 +364,12 @@ test_list += 'gem_eio'
+ 	   install : true)
+ test_list += 'gem_eio'
+ 
+-test_executables += executable('gem_exec_balancer', 'i915/gem_exec_balancer.c',
+-	   dependencies : test_deps + [ lib_igt_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'gem_exec_balancer'
++#test_executables += executable('gem_exec_balancer', 'i915/gem_exec_balancer.c',
++#	   dependencies : test_deps + [ lib_igt_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'gem_exec_balancer'
+ 
+ test_executables += executable('gem_mmap_offset',
+ 	   join_paths('i915', 'gem_mmap_offset.c'),
+@@ -379,44 +379,44 @@ test_list += 'gem_mmap_offset'
+ 	   install : true)
+ test_list += 'gem_mmap_offset'
+ 
+-test_executables += executable('i915_pm_freq_mult',
+-	   join_paths('i915', 'i915_pm_freq_mult.c'),
+-	   dependencies : test_deps + [ lib_igt_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'i915_pm_freq_mult'
++#test_executables += executable('i915_pm_freq_mult',
++#	   join_paths('i915', 'i915_pm_freq_mult.c'),
++#	   dependencies : test_deps + [ lib_igt_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'i915_pm_freq_mult'
+ 
+-test_executables += executable('i915_pm_rc6_residency',
+-	   join_paths('i915', 'i915_pm_rc6_residency.c'),
+-	   dependencies : test_deps + [ lib_igt_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'i915_pm_rc6_residency'
++#test_executables += executable('i915_pm_rc6_residency',
++#	   join_paths('i915', 'i915_pm_rc6_residency.c'),
++#	   dependencies : test_deps + [ lib_igt_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'i915_pm_rc6_residency'
+ 
+-test_executables += executable('perf_pmu',
+-	   join_paths('i915', 'perf_pmu.c'),
+-	   dependencies : test_deps + [ lib_igt_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'perf_pmu'
++#test_executables += executable('perf_pmu',
++#	   join_paths('i915', 'perf_pmu.c'),
++#	   dependencies : test_deps + [ lib_igt_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'perf_pmu'
+ 
+-test_executables += executable('perf',
+-	   join_paths('i915', 'perf.c'),
+-	   dependencies : test_deps + [ lib_igt_i915_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'perf'
++#test_executables += executable('perf',
++#	   join_paths('i915', 'perf.c'),
++#	   dependencies : test_deps + [ lib_igt_i915_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'perf'
+ 
+-test_executables += executable('core_hotunplug', 'core_hotunplug.c',
+-	   dependencies : test_deps + [ lib_igt_i915_perf ],
+-	   install_dir : libexecdir,
+-	   install_rpath : libexecdir_rpathdir,
+-	   install : true)
+-test_list += 'core_hotunplug'
++#test_executables += executable('core_hotunplug', 'core_hotunplug.c',
++#	   dependencies : test_deps + [ lib_igt_i915_perf ],
++#	   install_dir : libexecdir,
++#	   install_rpath : libexecdir_rpathdir,
++#	   install : true)
++#test_list += 'core_hotunplug'
+ 
+ executable('testdisplay', ['testdisplay.c', 'testdisplay_hotplug.c'],
+ 	   dependencies : test_deps,

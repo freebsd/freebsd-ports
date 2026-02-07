@@ -1,0 +1,12 @@
+.PATH:		${.CURDIR}/../src
+
+PROG=		lpdump
+DPADD=		libpasori.a
+LDADD=		-L../lib -lpasori
+
+BINDIR=		${LOCALBASE}/bin
+MAN=
+
+CFLAGS+=	-Wall -W
+
+.include <bsd.prog.mk>

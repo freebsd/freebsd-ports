@@ -1,0 +1,2 @@
+A sender rate limit policy daemon for Postfix written in Perl.
+Customised to work with a modern Perl version on FreeBSD.

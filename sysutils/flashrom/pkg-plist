@@ -1,0 +1,9 @@
+include/libflashrom.h
+lib/libflashrom.a
+lib/libflashrom.so
+lib/libflashrom.so.1
+lib/libflashrom.so.1.0.0
+libdata/pkgconfig/flashrom.pc
+sbin/flashrom
+share/bash-completion/completions/flashrom.bash
+%%MANPAGES%%share/man/man8/flashrom.8.gz

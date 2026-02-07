@@ -1,0 +1,9 @@
+--- tpmd/CMakeLists.txt.orig	2011-12-20 18:30:06 UTC
++++ tpmd/CMakeLists.txt
+@@ -11,5 +11,5 @@ elseif(WIN32)
+ 
+ add_subdirectory(windows)
+ 
+-endif()
++endif(UNIX)
+ 

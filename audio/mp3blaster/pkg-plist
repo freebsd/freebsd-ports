@@ -1,0 +1,16 @@
+bin/mp3blaster
+bin/mp3tag
+bin/nmixer
+bin/splay
+share/man/man1/mp3blaster.1.gz
+share/man/man1/nmixer.1.gz
+share/man/man1/splay.1.gz
+%%DATADIR%%/charmap/README
+%%DATADIR%%/charmap/chargen.c
+%%DATADIR%%/charmap/koi8-r
+%%DATADIR%%/charmap/makefile.charmap
+%%DATADIR%%/charmap/maketbl.c
+%%DATADIR%%/charmap/win1251
+%%DATADIR%%/charmap/win2koi.tbl
+%%DATADIR%%/commands.txt
+%%DATADIR%%/sample.mp3blasterrc

@@ -1,0 +1,7 @@
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ldoc.css
+%%LUA_MODSHAREDIR%%/std/_debug/init.lua
+%%LUA_MODSHAREDIR%%/std/_debug/version.lua

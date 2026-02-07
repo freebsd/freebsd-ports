@@ -1,0 +1,13 @@
+After much time, effort, and with well received results,
+Alfred Reibenschuh is abandoning PDF::API2.
+
+However we have seen great progress in moving towards paperless methods.
+
+Furthermore the PDF specification is now an ISO standard.
+
+Now is the time to really push forward with the development of an even
+better perl pdf solution.
+
+This is a beginning toward that goal.
+
+This version starts with PDF::API2 0.73, creating a new one of PDF::API3.

@@ -1,0 +1,625 @@
+%ifdef JAPAN
+%%BeginProcSet: cmpfont.ps 1 2
+% composite fonts for ASCII-EUC mixed string
+% Version 1.2 1/31/1990
+% Author Ken'ichi HANDA (handa@etl.go.jp)
+% Modified Norio Katayama (katayama@rd.nacsis.ac.jp),1998% Anyone can freely copy, modify, distribute this program.
+/copyfont {	% font-dic extra-entry-count  copyfont  font-dic
+	1 index maxlength add dict begin
+	{	1 index /FID ne 2 index /UniqueID ne and
+		{def} {pop pop} ifelse
+	} forall
+	currentdict
+	end
+} bind def
+
+/compositefont {	% ASCIIFontName EUCFontName  compositefont  font'
+    userdict /fixeucfont_dict known not {
+	userdict begin
+	    /fixeucfont_dict 2 dict begin
+		/UpperByteEncoding [
+		    16#00 1 16#20 { pop 0 } for
+		    16#21 1 16#28 { 16#20 sub } for
+		    16#29 1 16#2F { pop 0 } for
+		    16#30 1 16#74 { 16#27 sub } for
+		    16#75 1 16#FF { pop 0 } for
+		] def
+	        /LowerByteEncoding [
+		    16#00 1 16#A0 { pop /.notdef } for
+		    16#A1 1 16#FE { 16#80 sub 16 2 string cvrs
+				    (cXX) dup 1 4 -1 roll
+				    putinterval cvn } for
+		    /.notdef
+		] def
+		currentdict
+	    end def
+	end
+    } if
+    findfont dup /FontType get 0 eq {
+	12 dict begin
+	    %
+	    % 7+8 bit EUC font
+	    %
+	    12 dict begin
+		/EUCFont exch def
+		/FontInfo (7+8 bit EUC font) readonly def
+		/PaintType 0 def
+		/FontType 0 def
+		/FontMatrix matrix def
+		% /FontName
+		/Encoding fixeucfont_dict /UpperByteEncoding get def
+		/FMapType 2 def
+		EUCFont /WMode known
+		{ EUCFont /WMode get /WMode exch def }
+		{ /WMode 0 def } ifelse
+		/FDepVector [
+		    EUCFont /FDepVector get 0 get
+		    [ 16#21 1 16#28 {} for 16#30 1 16#74 {} for ]
+		    {
+			13 dict begin
+			    /EUCFont EUCFont def
+			    /UpperByte exch 16#80 add def	
+			    % /FontName
+			    /FontInfo (EUC lower byte font) readonly def
+			    /PaintType 0 def
+			    /FontType 3 def
+			    /FontMatrix matrix def
+			    /FontBBox {0 0 0 0} def
+			    /Encoding
+				fixeucfont_dict /LowerByteEncoding get def
+			    % /UniqueID
+			    % /WMode
+			    /BuildChar {
+				gsave
+				exch dup /EUCFont get setfont
+				/UpperByte get
+				2 string
+				dup 0 4 -1 roll put
+				dup 1 4 -1 roll put
+				dup stringwidth setcharwidth
+				0 0 moveto show
+				grestore
+			    } bind def
+			    currentdict
+			end
+			/lowerbytefont exch definefont
+		    } forall
+		] def
+		currentdict
+	    end
+	    /eucfont exch definefont
+	    exch
+	    findfont 1 copyfont dup begin
+		/FontMatrix FontMatrix [1 0 0 1 0 0.05] matrix concatmatrix def
+	    end
+	    /asciifont exch definefont
+	    exch
+	    /FDepVector [ 4 2 roll ] def
+	    /FontType 0 def
+	    /WMode 0 def
+	    /FMapType 4 def
+	    /FontMatrix matrix def
+	    /Encoding [0 1] def
+	    /FontBBox {0 0 0 0} def
+	    currentdict
+	end
+    }{
+	pop findfont 0 copyfont
+    } ifelse
+} def	
+
+/slantfont {	% FontName slant-degree  slantfont  font'
+    exch findfont 1 copyfont begin
+    [ 1 0 4 -1 roll 1 0 0 ] FontMatrix exch matrix concatmatrix
+    /FontMatrix exch def
+    currentdict
+    end
+} def
+%%EndProcSet
+
+% reencodeISO was modified to deal with a composite font correctly.
+% Modifier: Shigeru Chiba (chiba@is.s.u-tokyo.ac.jp)
+%           Kazuhiro Kazama (kazama@expert-sun.ntt.jp)
+/reencodeISOa {		% CompFontName font reencodeISOb font' 
+dup length dict begin
+{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+/Encoding ISOLatin1Encoding def
+currentdict end definefont
+} def
+
+/reencodeISO {		% FontName reencodeISO font
+    dup dup findfont dup /FontType get 0 ne {
+    reencodeISOa
+}{
+    dup length dict begin {
+    1 index dup /FID eq {
+	pop pop pop
+    }{ /FDepVector eq {
+	dup length array copy
+	dup dup 0 get 4 index exch reencodeISOa	0 exch put def
+    }{
+	def
+    } ifelse } ifelse } forall
+    currentdict end definefont
+} ifelse } def
+
+/ISOLatin1Encoding [
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
+/parenleft/parenright/asterisk/plus/comma/minus/period/slash
+/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
+/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
+/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
+/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
+/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve
+/dotaccent/dieresis/.notdef/ring/cedilla/.notdef/hungarumlaut
+/ogonek/caron/space/exclamdown/cent/sterling/currency/yen/brokenbar
+/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
+/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
+/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
+/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
+/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
+/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
+/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
+/yacute/thorn/ydieresis
+] def
+
+%%BeginSetup
+/Times-Ryumin
+    /Times-Roman /Ryumin-Light-EUC-H compositefont definefont pop
+/Times-Ryumin reencodeISO def
+%%EndSetup
+%endif
+
+/DefNormFont /Helvetica         findfont
+	dup length dict begin {1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding ISOLatin1Encoding def currentdict end
+	/Helvetica-ISOLatin1 exch definefont
+	def
+/DefBoldFont /Helvetica-Bold    findfont
+        dup length dict begin {1 index /FID ne {def} {pop pop} ifelse} forall
+        /Encoding ISOLatin1Encoding def currentdict end
+        /Helvetica-Bold-ISOLatin1 exch definefont
+        def
+/DefItalFont /Helvetica-Oblique findfont
+	dup length dict begin {1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding ISOLatin1Encoding def currentdict end
+	/Helvetica-Oblique-ISOLatin1 exch definefont
+	def
+%ifdef JAPAN
+/DefEUCFont /Times-Ryumin findfont def
+%endif
+/TopMarginOfs    10 def
+/BottomMarginOfs 20 def
+/LeftMarginOfs   20 def
+/RightMarginOfs  20 def
+
+/Months [ ()
+  (January) (February) (March) (April)
+  (May) (June) (July) (August)
+  (September) (October) (November) (December)
+] def
+
+/WeekDays [ ()
+  (Sun) (Mon) (Tue) (Wed) (Thu) (Fri) (Sat) (Sun)
+] def
+
+/Days [ 0
+  31 28 31 30 31 30 31 31 30 31 30 31
+] def
+
+/Debug { pop } bind def
+/DebugValue { pop pop } bind def
+% /DebugBuf 256 string def
+% /Debug { print flush } bind def
+% /DebugValue { exch print DebugBuf cvs print (\n) print flush } def
+
+/PosDict 400 dict def
+/CalDicts 10 dict def
+
+/Register { % Name Size
+  dict
+  % Name dict
+  exch
+  % dict Name
+  CalDicts
+  % dict Name CalDicts
+  exch
+  % dict CalDicts Name
+  2 index put
+} def
+
+% Common Functions
+/_Mark {
+  gsave
+    36 dup scale
+    0.0 setlinewidth
+    -1 0 rmoveto 2 0 rlineto -1 -1 rmoveto 0 2 rlineto stroke
+  grestore
+} def
+/Mark {
+  gsave
+   _Mark
+   45 rotate 0.75 dup scale _Mark
+   22.5 rotate 0.75 dup scale _Mark 45 rotate _Mark
+  grestore
+} def
+/FontTopBot { % font -> TopYoffset BottomYoffset
+    dup /FontBBox get aload pop 5 -1 roll /FontMatrix get dup
+    4 1 roll dtransform exch pop 4 1 roll dtransform exch pop
+} def
+/box {
+    4 copy
+    moveto
+    exch 3 -1 roll lineto
+    4 -2 roll lineto lineto
+    closepath
+} def
+
+/rbox { % from currentpoint: Xsize Ysize
+    currentpoint
+    % Xsize Ysize X1 Y1
+    currentpoint 
+    % Xsize Ysize X1 Y1 x2 y2
+    exch 6 -1 roll
+    % Ysize X1 Y1 y2 x2 Xsize
+    add
+    % Ysize X1 Y1 y2 X2
+    exch 5 -1 roll
+    % X1 Y1 X2 y2 Ysize
+    add
+    % X1 Y1 X2 Y2
+    box
+} bind def
+
+/Landscape {
+  % Auto Rotate Page to Landscape
+  newpath clippath pathbbox % llx lly urx ury
+  pop exch pop exch % DevWidth
+  add 0 translate 90 rotate
+} bind def
+
+/SetMinMax {
+  % Set MinX, MaxX, MinY MaxY from clippath
+  newpath clippath pathbbox newpath % llx lly urx ury
+  transform round 1 add exch round 1 sub exch itransform
+  /MaxY exch def /MaxX exch def
+  transform round 1 sub exch round 1 add exch itransform
+  /MinY exch def /MinX exch def
+
+  % Fudge factor..
+  /MinX MinX 2 add LeftMarginOfs   add def
+  /MaxX MaxX 2 sub RightMarginOfs  sub def
+  /MinY MinY 2 add BottomMarginOfs add def
+  /MaxY MaxY 2 sub TopMarginOfs    sub def
+} def
+
+/CurY { currentpoint exch pop } bind def
+/CurX { currentpoint pop } bind def
+
+/CenterShow {
+  dup stringwidth pop -2 div 0 rmoveto show
+} bind def
+
+/AdjWeekDay {
+  SundayFirst not {
+    1 sub dup 0 lt { pop 6 } if
+  } if
+} bind def
+
+% Define 'Year' Print Functions
+/Year 50 Register begin
+  /MonthNameFont	DefItalFont	11 scalefont def
+  /MonthWeekDayFont	DefNormFont	 7 scalefont def
+  /MonthWeekNumFont	DefBoldFont	 7 scalefont def
+  /EntryFont		DefBoldFont	 3 scalefont def
+  /HolidayFont		DefItalFont	 3 scalefont def
+%ifdef JAPAN
+  /EntryJapanFont	DefEUCFont	 3 scalefont def
+  /HolidayJapanFont	DefEUCFont	 3 scalefont def
+%endif
+
+  /MonthXofs  9 def
+  /MonthYofs 12 def
+
+  /Init {
+    (Year: Init...\n) Debug
+    Landscape
+  } def
+
+  /Start {
+    % Put month dict onto stack under our own dict.
+    currentdict end CalDicts /Month get begin begin
+
+    (Year: Start...\n) Debug
+
+    % Somewhere we can paint junk...
+    MaxX MaxY moveto 8 dup rmoveto 
+    /undef PosDict exch [ currentpoint matrix currentmatrix 0 ] put
+
+    DefBoldFont 18 scalefont setfont
+    MinX MaxX MinX sub 2 div add MaxY moveto
+    0 currentfont FontTopBot sub neg rmoveto
+    Year 6 string cvs CenterShow
+    MinX currentpoint exch pop moveto
+
+    MonthXofs -9 rmoveto
+
+    /MonthWidth  MaxX MinX sub 5 MonthXofs mul sub 4 div def
+    /MonthHeight CurY MinY sub 3 MonthYofs mul sub 3 div def
+    /MonthRowHeight MonthHeight MonthYofs add def
+    /DayWidth  MonthWidth  7 div def
+
+    1 1 12 {
+      gsave
+	gsave 0 MonthRowHeight neg rmoveto currentpoint grestore translate
+	dup PaintMonth
+	/WeekDay WeekDay SundayFirst not { 1 add 7 mod } if def
+      grestore
+      MonthWidth MonthXofs add 0 rmoveto
+      4 mod 0 eq {
+	MinX currentpoint exch pop moveto
+	MonthXofs MonthRowHeight neg rmoveto
+      } if
+    } for
+  } def
+  /Finish {
+    (Year: Finish...\n) Debug
+    showpage
+  } def
+end
+
+% Define 'Month' Print Functions
+/Month 50 Register begin
+  /MonthNameFont	DefBoldFont 20 scalefont def
+  /MonthWeekDayFont	DefNormFont 12 scalefont def
+  /MonthWeekNumFont	DefBoldFont 16 scalefont def
+  /EntryFont		DefBoldFont  9 scalefont def
+  /HolidayFont		DefItalFont  9 scalefont def
+%ifdef JAPAN
+  /EntryJapanFont	DefEUCFont  9 scalefont def
+  /HolidayJapanFont	DefEUCFont  9 scalefont def
+%endif
+
+  /Init {
+    (Month: Init...\n) Debug
+    Landscape
+  } def
+  /Start {
+    (Month: Start...\n) Debug
+
+    % Somewhere we can paint junk...
+    MaxX MaxY moveto 8 dup rmoveto 
+    /undef PosDict exch [ currentpoint matrix currentmatrix 0 ] put
+
+    %
+    /MonthWidth MaxX MinX sub 4 sub def
+    MinX MinY translate
+    0 MaxY MinY sub moveto
+    Month PaintMonth
+    gsave
+  } def
+  /PaintMonth {
+    /CurMonth exch def
+    (PaintMonth: CurMonth = ) CurMonth DebugValue
+
+    MonthNameFont setfont
+   
+    Print_Mode (Month) ne {
+      0 currentfont FontTopBot sub neg rmoveto
+      Months CurMonth get show
+      0 -6 rmoveto
+    } {
+      MonthWidth 2 div currentfont FontTopBot sub neg rmoveto
+
+      Year 6 string cvs dup stringwidth pop -2 div 0 rmoveto
+        Months CurMonth get dup stringwidth pop -2 div 0 rmoveto
+        (  ) stringwidth pop -2 div 0 rmoveto
+        show (  ) show show
+
+      0 -9 rmoveto
+    } ifelse
+
+    0 currentpoint exch pop moveto
+
+    /MonthHeight CurY 2 sub def
+    /DayWidth MonthWidth 7 div def
+
+    gsave
+      0.48 setlinewidth
+
+      MonthWeekDayFont setfont
+      0 currentfont FontTopBot /YO exch def neg rmoveto
+      gsave
+	SundayFirst { /D 0 def } { /D 1 def } ifelse
+	7 {
+	  D 1 add WeekDays exch get
+	  gsave 3 2 rmoveto show grestore
+	  DayWidth 0 rmoveto
+	  /D D 1 add 7 mod def
+	} repeat
+      grestore
+      0 YO rmoveto
+
+      /DayHeight CurY 6 div def
+
+      MonthWeekNumFont setfont
+      /StartWeekDay WeekDay def
+      gsave
+	0 currentfont FontTopBot /YO exch def neg /YYO exch def YYO rmoveto
+	/YYMM Year 1900 sub 10000 mul CurMonth 100 mul add def
+	/CurWeek 0 def
+	/DayStr 2 string def
+	/WeekDay WeekDay AdjWeekDay def
+	2 WeekDay DayWidth mul add 0 rmoveto
+
+	/DayNumYofs YYO def
+
+	1 1
+	Days CurMonth get
+	  CurMonth 2 eq Year 4 mod 0 eq and { pop 29 } if
+	{
+	  /CurDay exch def
+
+	  CurDay DayStr cvs
+	  gsave
+	    CurX exch show CurX exch sub /DX exch def
+	  grestore
+
+	  % Save position info for later use...
+	  gsave
+	    -2 YYO neg rmoveto
+	    YYMM CurDay add 10 string cvs cvn
+	    PosDict exch [ currentpoint matrix currentmatrix DX ] put
+	  grestore
+
+	  /WeekDay WeekDay 1 add 7 mod def
+
+	  WeekDay 0 eq {
+	    /CurWeek CurWeek 1 add def
+	    0 2 add currentpoint exch pop DayHeight sub moveto
+	  } {
+	    DayWidth 0 rmoveto
+	  } ifelse
+	} for
+      grestore
+
+      % Paint Gray Squares
+      gsave
+	StartWeekDay AdjWeekDay {
+	  gsave
+	    0.98 setgray
+	    DayWidth DayHeight neg rbox fill
+	  grestore
+	  DayWidth 0 rmoveto
+	} repeat
+      grestore
+
+      /W WeekDay def
+      CurWeek 1 5 {
+	/CurWeek exch def
+	gsave
+	  W DayWidth mul CurWeek DayHeight mul neg rmoveto
+	  % Gray remaining boxes...
+	  7 W sub {
+	    gsave
+	      0.98 setgray
+	      DayWidth DayHeight neg rbox fill
+	    grestore
+	    DayWidth 0 rmoveto
+	  } repeat
+	grestore
+	/W 0 def
+      } for
+
+      % Paint Grid...
+      gsave
+	6 {
+	  DayWidth 0 rmoveto
+	  gsave CurX 0 lineto stroke grestore
+	} repeat
+      grestore
+      gsave
+	5 {
+	  0 DayHeight neg rmoveto
+	  gsave MonthWidth CurY lineto stroke grestore
+	} repeat
+      grestore
+
+      % Paint outside box
+      gsave
+	1.44 setlinewidth
+	MonthWidth CurY 0 0 box stroke
+      grestore
+    grestore
+  } def
+  /Finish {
+    (Month: Finish...\n) Debug
+    grestore
+    showpage
+  } def
+  /NewDay {
+    [ /CurJul /CurWeek /CurYear /CurDay /CurMonth ] { exch def } forall
+
+    grestore
+    gsave
+      CurYear 10000 mul CurMonth 100 mul add CurDay add 10 string cvs cvn
+      PosDict exch 2 copy known not { pop /undef } if
+      get aload pop /DayNumXofs exch def setmatrix moveto
+
+      EntryFont setfont
+      /YO currentfont FontTopBot sub neg def
+
+      currentpoint 
+        DayWidth 1 sub DayHeight 1 sub neg rbox clip
+      moveto
+
+      2 DayNumYofs rmoveto
+  } def
+  /PaintHolidays {
+    DayNumXofs 0 rmoveto
+    /Z DayNumXofs neg def
+    /F currentfont def
+    HolidayFont setfont
+    {
+%ifdef JAPAN
+      gsave (  ) show HolidayJapanFont setfont show grestore
+%endif
+      Z YO rmoveto
+      /Z 0 def
+    } forall
+    Z YO neg rmoveto
+    F setfont
+  } def
+  /PaintEntry {
+    [ /Entry_Message /Entry_Note /Entry_Time /Entry_Date ] { exch def } forall
+
+    0 YO rmoveto
+    gsave
+      % Entry_Date show ( ) show
+      Entry_Time () ne { Entry_Time show ( ) show } if
+%ifdef JAPAN
+      EntryJapanFont setfont
+%endif
+      Entry_Note show
+    grestore
+  } def
+  /PaintBGRect {
+    gsave
+      0 YO rmoveto
+%ifdef JAPAN
+      EntryJapanFont setfont
+%endif
+      CurX 1 sub CurY currentfont FontTopBot exch pop add newpath moveto
+      DayWidth currentfont FontTopBot sub rbox fill
+    grestore
+  } def
+end
+
+% Functions Common to all Calendars...
+/InitCal {
+  % Make "Current Print Mode" Functions availble on Dict Stack...
+  CalDicts Print_Mode cvn get begin
+
+  Init
+
+  SetMinMax
+
+  Start
+} def
+
+/FinishCal {
+  Finish
+  end
+} def

@@ -1,0 +1,4 @@
+Mojolicious::Plugin::BasicAuthPlus is a helper for basic HTTP authentication
+that supports multiple authentication schemes, including a callback, explicit
+username and password (plaintext or encrypted) without a callback, a passwd
+file, LDAP, and Active Directory.

@@ -1,0 +1,2 @@
+flynt is a CLI tool to convert a python project's %-formatted strings
+to f-strings.

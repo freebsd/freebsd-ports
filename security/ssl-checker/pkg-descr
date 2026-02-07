@@ -1,0 +1,8 @@
+ssl-checker is a fast and beautiful command-line tool designed to check SSL
+certificates for HTTPS endpoints. It allows users to quickly verify the SSL
+status of multiple domains, providing an efficient way to monitor certificate
+validity and security.
+
+The tool supports checking domains directly from the command line or from
+configuration files, making it suitable for both ad-hoc checks and automated
+monitoring workflows.

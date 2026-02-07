@@ -1,0 +1,11 @@
+IPA_CONV -- IPA accounting/database module for converting statistics
+
+Main features:
+
+- The module is designed for converting statistics;
+- Statistics is converted according to custom plans, several plans
+  can be used at the same time;
+- Each plan can have converting rules for months, days, week days and
+  time ranges;
+- Statistics of one static rule can be converted and sent to another
+  static rule.

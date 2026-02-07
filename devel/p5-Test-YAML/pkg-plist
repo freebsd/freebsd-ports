@@ -1,0 +1,4 @@
+bin/test-yaml
+%%SITE_PERL%%/Test/YAML.pm
+%%SITE_PERL%%/Test/YAML.pod
+%%PERL5_MAN3%%/Test::YAML.3.gz

@@ -1,0 +1,9 @@
+A collection of terminal games including, Jewels, Sudoku, Mines,
+Reversi, Checkers, Battleship, SOS,  Rabbithole, Pipes, Fifteen,
+Memoblocks, Fisher, Muncher, Miketron, Redsquare, Darrt, and Snakeduel.
+
+The difficulty and/or dimensions are adjustable through simple command
+line options, you can play a minesweeper game that take hours to
+complete, or exprience hexadecimal sudoku and 8x8 fifteen-like puzzles!
+
+Play on xterm for best experience.

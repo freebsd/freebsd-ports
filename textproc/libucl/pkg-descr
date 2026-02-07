@@ -1,0 +1,10 @@
+Libucl is a parser and C API to parse and generate ucl objects. Libucl
+consists of several groups of functions:
+
+ * Parser functions
+ * Emitting functions
+ * Conversion functions
+ * Generation functions
+ * Iteration functions
+ * Validation functions
+ * Utility functions

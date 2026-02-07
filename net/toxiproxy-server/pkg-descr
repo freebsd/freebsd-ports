@@ -1,0 +1,6 @@
+Toxiproxy is a framework for simulating network conditions. It's
+made specifically to work in testing, CI and development environments,
+supporting deterministic tampering with connections, but with support
+for randomized chaos and customization. Toxiproxy is the tool you
+need to prove with tests that your application doesn't have single
+points of failure.

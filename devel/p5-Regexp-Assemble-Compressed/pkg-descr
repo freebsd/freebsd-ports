@@ -1,0 +1,2 @@
+Regexp::Assemble::Compressed is a subclass of Regexp::Assemble.  It
+assembles more compressed regular expressions.

@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+MMseqs2 can benefit greatly from advanced CPU features such as AVX.
+Consider setting additional optimizations such as -march=native (e.g.
+in make.conf) and reinstalling from source via
+
+cd ${PORTSDIR}/biology/mmseqs2 && make install
+
+EOM
+}
+]

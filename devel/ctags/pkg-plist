@@ -1,0 +1,4 @@
+bin/exctags
+include/readtags.h
+lib/readtags.o
+share/man/man1/exctags.1.gz

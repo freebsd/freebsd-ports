@@ -1,0 +1,10 @@
+Intel(R) Media SDK provides a plain C API to access hardware-accelerated
+video decode, encode and filtering on Intel(R) Gen graphics hardware
+platforms. Implementation written in C++ 11 with parts in C-for-Metal (CM).
+
+Supported video encoders: HEVC, AVC, MPEG-2, JPEG, VP9
+
+Supported video decoders: HEVC, AVC, VP8, VP9, MPEG-2, VC1, JPEG, AV1
+
+Supported video pre-processing filters: Color Conversion, Deinterlace,
+Denoise, Resize, Rotate, Composition

@@ -1,0 +1,17 @@
+Index: Makefile
+diff -u Makefile.orig Makefile
+--- Makefile.orig	Sun Jun 23 14:28:15 2002
++++ Makefile	Mon Dec 12 11:21:21 2005
+@@ -1,8 +1,10 @@
+-
++all:radeontool
+ 
+ radeontool: radeontool.c
+-	gcc -Wall -O2 radeontool.c -o radeontool
++	${CC} -Wall ${CFLAGS} ${CPPFLAGS} radeontool.c -o radeontool ${LDFLAGS}
+ 
++install:
++	install -C -s radeontool ${PREFIX}/bin/
+ 
+ 
+ 

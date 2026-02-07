@@ -1,0 +1,13 @@
+--- dist/Makefile.in.orig	2020-05-29 17:58:22 UTC
++++ dist/Makefile.in
+@@ -1299,8 +1299,8 @@ uninstall_utilities:
+ 
+ # We install csharp docs even on UNIX so we don't have a 
+ # broken link on the landing page.
+-DOCLIST=api_reference articles bdb-sql collections csharp gsg \
+-	gsg_db_rep gsg_db_server gsg_txn index.html installation \
++DOCLIST=api_reference articles collections csharp gsg \
++	gsg_db_rep gsg_txn index.html installation \
+ 	java license porting programmer_reference upgrading
+ 
+ install_docs:

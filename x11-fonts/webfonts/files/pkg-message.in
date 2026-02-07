@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+IMPORTANT - READ CAREFULLY: You may not use these fonts if you do not agree to
+the terms of the Microsoft End-User License Agreement ("EULA").  You will find
+the EULA at %%DOCSDIR%%/LICENSE.
+EOM
+}
+]

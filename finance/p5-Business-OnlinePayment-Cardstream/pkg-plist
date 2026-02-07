@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Business/OnlinePayment/Cardstream.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/Cardstream/autosplit.ix
+%%PERL5_MAN3%%/Business::OnlinePayment::Cardstream.3.gz

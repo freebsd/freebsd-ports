@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Geo/Coordinates/Converter/Format/IArea.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/iArea.pm
+%%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/areacode2center.cdb
+%%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/areacode2name.cdb
+%%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/meshcode2areacode.cdb
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::Format::IArea.3.gz
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::iArea.3.gz

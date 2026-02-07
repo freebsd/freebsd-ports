@@ -1,0 +1,6 @@
+@owner games
+@group games
+bin/moon-buggy
+@owner
+@group
+share/man/man6/moon-buggy.6.gz

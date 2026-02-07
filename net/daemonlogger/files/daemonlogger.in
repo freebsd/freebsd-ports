@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: daemonlogger
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable daemonlogger:
+# daemonlogger_enable (bool):            Set to "NO" by default.
+#                                Set it to "YES" to enable daemonlogger 
+# daemonlogger_flags (string):           Set to "-d -l" by default.
+
+. /etc/rc.subr
+
+name="daemonlogger"
+rcvar=daemonlogger_enable
+
+load_rc_config $name
+
+: ${daemonlogger_enable:="NO"}
+: ${daemonlogger_flags:="-d -l /var/log"}
+
+command=%%PREFIX%%/bin/daemonlogger
+command_args=" > /dev/null 2>&1"
+
+
+run_rc_command "$1"

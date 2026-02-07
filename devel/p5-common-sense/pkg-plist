@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/common/sense.pm
+%%SITE_ARCH%%/common/sense.pod
+%%PERL5_MAN3%%/common::sense.3.gz

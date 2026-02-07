@@ -1,0 +1,3 @@
+bin/icegenerator
+@sample etc/icegenerator.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README

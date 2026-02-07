@@ -1,0 +1,28 @@
+--- configure.ac.orig	2022-09-28 17:04:28 UTC
++++ configure.ac
+@@ -103,7 +103,10 @@ for lib in "" "-lresolv"; do
+ 	saved_LIBS="$LIBS"
+ 	LIBS="$LIBS $lib"
+ 	AC_LINK_IFELSE([
+-		AC_LANG_PROGRAM([#include <resolv.h>],
++		AC_LANG_PROGRAM([[#include <sys/types.h>]
++		                 [#include <netinet/in.h>]
++		                 [#include <arpa/nameser.h>]
++		                 [#include <resolv.h>]],
+ 		                [res_query (0, 0, 0, 0, 0);
+ 		                 ns_get32 (NULL);
+ 		                 ns_get16 (NULL);])
+@@ -285,13 +288,6 @@ else
+ 	AC_MSG_ERROR([cat is not available])
+ else
+ 	AC_DEFINE_UNQUOTED(BIN_CAT, "$BIN_CAT", [path to cat, used in unit test])
+-fi
+-
+-AC_PATH_PROG(BIN_TAC, tac, no)
+-if test "$BIN_TAC" = "no" ; then
+-	AC_MSG_ERROR([tac is not available])
+-else
+-	AC_DEFINE_UNQUOTED(BIN_TAC, "$BIN_TAC", [path to tac, used in unit test])
+ fi
+ 
+ AC_PATH_PROG(BIN_REV, rev, no)

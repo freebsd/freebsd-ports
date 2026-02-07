@@ -1,0 +1,3 @@
+String type constraints that match valid and relaxed JSON. For the
+meaning of 'relaxed,' see JSON::XS. All the heavy lifting in the
+background is also done by JSON::XS.

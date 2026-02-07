@@ -1,0 +1,7 @@
+PDL::DateTime is a subclass of PDL piddle for storing date-time values (scalar
+piddles, vectors, matrices or generally ND-piddles):
+- its PDL type is always LongLong (64-bit signed integer)
+- stored values are microseconds since 1970-01-01T00:00:00.000000Z (can be both
+  positive or negative)
+- it is still a piddle so you can do all usual PDL arithmetic + PDL::DateTime
+  defines some new methods (see below)

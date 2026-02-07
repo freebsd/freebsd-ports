@@ -1,0 +1,12 @@
+mbuffer is a tool for buffering data streams. It is also a replacement
+for buffer with additional functionality:
+
+- multi-target network output
+- on the fly hash calculation
+- display of I/O speed
+- optional use of memory mapped I/O for huge buffers
+- multithreaded instead of sharedmemory ipc
+- multi volume support
+- autoloader support
+- networking support
+- command-line options compatible to buffer

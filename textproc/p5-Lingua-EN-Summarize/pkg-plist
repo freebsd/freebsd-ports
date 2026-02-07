@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Lingua::EN::Filters.3.gz
+%%PERL5_MAN3%%/Lingua::EN::Summarize.3.gz
+%%SITE_PERL%%/Lingua/EN/Summarize.pm
+%%SITE_PERL%%/Lingua/EN/Summarize/Filters.pm

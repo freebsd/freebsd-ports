@@ -1,0 +1,64 @@
+--- config/database.yml.postgresql.orig	2023-09-21 08:56:19 UTC
++++ config/database.yml.postgresql
+@@ -26,13 +26,6 @@ production:
+     username: git
+     password: "secure password"
+     host: localhost
+-  geo:
+-    adapter: postgresql
+-    encoding: unicode
+-    database: gitlabhq_geo_production
+-    username: git
+-    password: "secure password"
+-    host: localhost
+ 
+ #
+ # Development specific
+@@ -57,13 +50,6 @@ development:
+     host: localhost
+     variables:
+       statement_timeout: 15s
+-  geo:
+-    adapter: postgresql
+-    encoding: unicode
+-    database: gitlabhq_geo_development
+-    username: postgres
+-    password: "secure password"
+-    host: localhost
+ 
+ #
+ # Staging specific
+@@ -84,13 +70,6 @@ staging:
+     username: git
+     password: "secure password"
+     host: localhost
+-  geo:
+-    adapter: postgresql
+-    encoding: unicode
+-    database: gitlabhq_geo_staging
+-    username: git
+-    password: "secure password"
+-    host: localhost
+ 
+ # Warning: The database defined as "test" will be erased and
+ # re-generated from your development database when you run "rake".
+@@ -119,19 +98,3 @@ test: &test
+     reaping_frequency: nil
+     variables:
+       statement_timeout: 15s
+-  geo:
+-    adapter: postgresql
+-    encoding: unicode
+-    database: gitlabhq_geo_test
+-    username: postgres
+-    password:
+-    host: localhost
+-    reaping_frequency: nil
+-  embedding:
+-    adapter: postgresql
+-    encoding: unicode
+-    database: gitlabhq_embedding_test
+-    username: postgres
+-    password:
+-    host: localhost
+-    reaping_frequency: nil

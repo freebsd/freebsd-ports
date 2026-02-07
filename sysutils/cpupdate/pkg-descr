@@ -1,0 +1,3 @@
+x86 CPU microcode utility for BSD.
+
+At the moment, it is for Intel processors only.

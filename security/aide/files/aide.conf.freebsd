@@ -1,0 +1,156 @@
+# $Id: aide.conf.freebsd,v 1.3 1998/07/28 17:54:21 obrien Exp $
+#
+# tripwire.config
+# Generic version for FreeBSD based on Tripwire's tw.config
+#  Will need editing...see comments below
+#
+# This file contains a list of files and directories that System 
+# Preener will scan.  Information collected from these files will be 
+# stored in the tripwire.database file.
+#
+# Format: 			[!|=] entry [ignore-flags]
+#
+# where:	 '!' signifies the entry is to be pruned (inclusive) from
+#				the list of files to be scanned.
+#		 '=' signifies the entry is to be added, but if it is
+#				a directory, then all its contents are pruned
+#				(useful for /tmp).
+#
+# where:	entry is the absolute pathname of a file or a directory
+#
+# where ignore-flags are in the format:
+#		[template][ [+|-][pinugsam...] ... ]
+#
+# 	- :  ignore the following atributes
+#	+ :  do not ignore the following attributes
+#
+#	p :  permission and file mode bits 	a: access timestamp
+#	i :  inode number			m: modification timestamp
+#	n :  number of links (ref count)	c: inode creation timestamp
+#	u :  user id of owner		      md5: MD5 signature
+#	g :  group id of owner		    tiger: tiger signature
+#	s :  size of file		   rmd160: RMD160 signature
+#					     sha1: SHA1 signature
+#
+#
+# Ex:   The following entry will scan all the files in /etc, and report
+#	any changes in mode bits, inode number, reference count, uid,
+#	gid, modification and creation timestamp, and the signatures.
+#	However, it will ignore any changes in the access timestamp.
+#
+#	/etc	+p+i+n+u+g+s+m+md5+tiger+rmd160+sha1-a
+#
+# The following templates have been pre-defined to make these long ignore
+# mask descriptions unecessary.
+#
+# Templates: 
+# (default) R :  [R]ead-only (+p+i+n+u+g+s+m+md5+tiger+rmd160+sha1-a)
+#	L :  [L]og file (+p+i+n+u+g-s-a-m-md5-tiger-rmd160-sha1)
+#	N :  ignore [N]othing (+p+i+n+u+s+g+s+a+m+c+md5+tiger+rmd160+sha1)
+#	E :  ignore [E]verything (-p-i-n-u-s-g-s-a-m-c-md5-tiger-rmd160-sha1)
+#
+# By default, Tripwire uses the R template -- it ignores
+# only the access timestamp.
+#
+# You can use templates with modifiers, like:
+#	Ex:  /etc/lp	E+u+g
+#
+#	Example configuration file:
+#		/etc		R	# all system files
+#		!/etc/lp	R	# ...but not those logs
+#		=/tmp		N	# just the directory, not its files
+#
+# Note the difference between pruning (via "!") and ignoring everything
+# (via "E" template):  Ignoring everything in a directory still monitors
+# for added and deleted files.  Pruning a directory will prevent Tripwire
+# from even looking in the specified directory.
+#
+#
+# Tripwire running slowly?  Modify your tripwire.config entries to
+# ignore the (signature 2) attribute when this computationally-exorbitant
+# protection is not needed.  (See README and design document for further
+# details.)
+#
+
+database=file:///var/db/aide/databases/aide.db
+database_out=file:///var/db/aide/databases/aide.db.new
+
+
+#  First, root's traditional "home".  Note that FreeBSD's root's home (/root)
+#  is protected by R-tiger-rmd160-sha1 protections in the default config file.
+=/$		L
+/.rhosts	R
+/.profile	R
+/.cshrc		R
+/.login		R
+/.exrc		R
+/.logout	R
+/.forward	R
+
+# Unix itself
+/kernel		R
+
+# /bin
+/bin		R-tiger-rmd160-sha1
+
+# /dev
+/dev	 	L
+
+# /etc
+/etc			R-tiger-rmd160-sha1
+/etc/aliases	 	L
+/etc/dumpdates		L
+/etc/motd		L
+
+# my passwd database should be static at time of system build.  yours may
+# not be, if not, uncomment the lines below.
+
+# /etc/passwd		L
+# /etc/master.passwd	L
+# /etc/pwd.db		L
+# /etc/spwd.db		L
+
+# /home
+=/home$			L-c
+
+# /lkm
+/lkm			R-tiger-rmd160-sha1
+
+# /root
+/root			R-tiger-rmd160-sha1
+/root/.history		L
+
+# /sbin
+/sbin			R-tiger-rmd160-sha1
+
+# /stand
+/stand			R-tiger-rmd160-sha1
+
+# /usr/bin
+/usr/bin		R-tiger-rmd160-sha1
+
+/usr/include		R-tiger-rmd160-sha1
+
+/usr/lib		R-tiger-rmd160-sha1
+
+/usr/libdata		R-tiger-rmd160-sha1
+
+/usr/libexec		R-tiger-rmd160-sha1
+
+/usr/local/bin		R-tiger-rmd160-sha1
+
+/usr/local/etc		L
+
+/usr/local/lib		R-tiger-rmd160-sha1
+
+/usr/local/libexec	R-tiger-rmd160-sha1
+
+/usr/local/sbin		R-tiger-rmd160-sha1
+
+/usr/local/share	R-tiger-rmd160-sha1
+
+/usr/sbin		R-tiger-rmd160-sha1
+
+/usr/share		R-tiger-rmd160-sha1
+
+###########################################

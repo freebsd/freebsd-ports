@@ -1,0 +1,20 @@
+diff -rub Makefile.in Makefile.in
+--- Makefile.in	Wed Sep 22 23:33:17 2004
++++ Makefile.in	Thu Mar 30 21:19:07 2006
+@@ -349,11 +349,11 @@
+ 
+ install-exec-local: pam_require.so
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)/security
+-@EXTENSION_SO_TRUE@	$(INSTALL_PROGRAM) -o root -g root pam_require.so $(DESTDIR)$(libdir)/security/pam_require.so
+-@EXTENSION_SO_FALSE@@EXTENSION_1_TRUE@	$(INSTALL_PROGRAM) -o root -g root pam_require.so $(DESTDIR)$(libdir)/security/libpam_require.1
+-@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	$(INSTALL_PROGRAM) -o root -g root pam_require.so $(DESTDIR)$(libdir)/security/pam_require.so.1
+-@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	(cd $(DESTDIR)$(libdir)/security; rm -f pam_require.so; ln -s pam_require.so.1 pam_require.so)
++	$(mkinstalldirs) $(DESTDIR)$(libdir)
++@EXTENSION_SO_TRUE@	$(INSTALL_PROGRAM) pam_require.so $(DESTDIR)$(libdir)/pam_require.so
++@EXTENSION_SO_FALSE@@EXTENSION_1_TRUE@	$(INSTALL_PROGRAM) pam_require.so $(DESTDIR)$(libdir)/libpam_require.1
++@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	$(INSTALL_PROGRAM) pam_require.so $(DESTDIR)$(libdir)/pam_require.so.1
++@EXTENSION_SO_FALSE@@EXTENSION_1_FALSE@	(cd $(DESTDIR)$(libdir); rm -f pam_require.so; ln -s pam_require.so.1 pam_require.so)
+ 
+ uninstall-local:
+ 	@$(NORMAL_UNINSTALL)

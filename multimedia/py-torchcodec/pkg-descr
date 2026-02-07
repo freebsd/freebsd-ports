@@ -1,0 +1,7 @@
+Hardware-accelerated video and audio decoding for PyTorch.
+
+TorchCodec is a library that provides fast and easy-to-use tools for
+decoding video and audio directly into PyTorch tensors. It uses FFmpeg
+as a backend and is optimized for performance, with support for
+hardware acceleration. This makes it ideal for machine learning pipelines
+that process large amounts of video and audio data.

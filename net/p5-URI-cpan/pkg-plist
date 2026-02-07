@@ -1,0 +1,12 @@
+%%SITE_PERL%%/URI/cpan.pm
+%%SITE_PERL%%/URI/cpan/author.pm
+%%SITE_PERL%%/URI/cpan/dist.pm
+%%SITE_PERL%%/URI/cpan/distfile.pm
+%%SITE_PERL%%/URI/cpan/module.pm
+%%SITE_PERL%%/URI/cpan/package.pm
+%%PERL5_MAN3%%/URI::cpan.3.gz
+%%PERL5_MAN3%%/URI::cpan::author.3.gz
+%%PERL5_MAN3%%/URI::cpan::dist.3.gz
+%%PERL5_MAN3%%/URI::cpan::distfile.3.gz
+%%PERL5_MAN3%%/URI::cpan::module.3.gz
+%%PERL5_MAN3%%/URI::cpan::package.3.gz

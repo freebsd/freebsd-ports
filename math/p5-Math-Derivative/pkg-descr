@@ -1,0 +1,7 @@
+This Perl package exports functions for performing numerical first
+(Derivative1) and second Derivative2) order differentiation on vectors
+of data. They both take references to two arrays containing the x and y
+ordinates of the data and return an array of the 1st or 2nd derivative
+at the given x ordinates. Derivative2 may optionally be given values to
+use for the first dervivative at the start and end points of the data -
+otherwiswe 'natural' values are used.

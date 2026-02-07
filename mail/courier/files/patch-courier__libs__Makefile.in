@@ -1,0 +1,13 @@
+--- courier/libs/Makefile.in.orig	2023-06-08 14:44:27.714775000 +0200
++++ courier/libs/Makefile.in	2023-06-08 14:47:08.188863000 +0200
+@@ -1213,8 +1213,8 @@
+ .PRECIOUS: Makefile
+ 
+ 
+-courier_version.h: ../../version
+-	echo '#define COURIER_VERSION "'`cat ../../version`'"' >courier_version.h
++courier_version.h: ../../version.txt
++	echo '#define COURIER_VERSION "'`cat ../../version.txt`'"' >courier_version.h
+ 
+ #
+ # lcrwstatic.h is dynamically built to link with initialization functions

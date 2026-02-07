@@ -1,0 +1,2 @@
+The LWP::Protocol::connect module provides support for using https
+over a proxy via the HTTP/Connect method.

@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/Locale::Msgfmt.3.gz
+%%PERL5_MAN3%%/Locale::Msgfmt::Utils.3.gz
+%%PERL5_MAN3%%/Locale::Msgfmt::mo.3.gz
+%%PERL5_MAN3%%/Locale::Msgfmt::po.3.gz
+%%SITE_PERL%%/Locale/Msgfmt.pm
+%%SITE_PERL%%/Locale/Msgfmt/Utils.pm
+%%SITE_PERL%%/Locale/Msgfmt/mo.pm
+%%SITE_PERL%%/Locale/Msgfmt/po.pm
+%%SITE_PERL%%/Module/Install/Msgfmt.pm

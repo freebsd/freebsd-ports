@@ -1,0 +1,3 @@
+KService provides a plugin framework for handling desktop services. Services can
+be applications or libraries. They can be bound to MIME types or handled by
+application specific code.

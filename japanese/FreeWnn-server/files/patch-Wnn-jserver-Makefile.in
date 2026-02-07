@@ -1,0 +1,47 @@
+--- Wnn/jserver/Makefile.in.orig	2004-05-22 01:39:32.000000000 +0900
++++ Wnn/jserver/Makefile.in	2014-09-10 01:24:03.000000000 +0900
+@@ -36,7 +36,6 @@
+ top_builddir = @top_builddir@
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+  JSERVERDEFINES = -DJSERVER -DWRITE_CHECK
+        INCLUDES = -I$(WNNINCLUDESRC) -I$(top_builddir) -I$(srcdir)
+@@ -80,13 +79,15 @@
+ OBJ20= getopt.o
+ SRC21= $(WNNETCSRC)/getopt1.c
+ OBJ21= getopt1.o
++SRC22= $(WNNETCSRC)/fake-rfc2553.c
++OBJ22= fake-rfc2553.o
+ OBJSUPPORT = @JS_SUPPORTOBJS@
+ SRCS= $(SRC0) $(SRC1) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRCGETHINSI) \
+-    $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRC14) $(SRC20) $(SRC21)
++    $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRC14) $(SRC20) $(SRC21) $(SRC22)
+ 
+ OBJS= $(OBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJGETHINSI) \
+     $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14) $(OBJSUPPORT) \
+-    $(OBJ20) $(OBJ21)
++    $(OBJ20) $(OBJ21) $(OBJ22)
+ 
+ all:: jserver
+ 
+@@ -104,7 +105,7 @@
+ install:: jserver
+ 	@if [ -d $(DESTDIR)$(JWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(JWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) $(INSTUIDFLAGS) $(LOCAL_INSTFLAGS) jserver $(DESTDIR)$(JWNNBINDIR)/jserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) jserver $(DESTDIR)$(JWNNBINDIR)/jserver
+ 
+ $(OBJ0) : $(SRC0)
+ 	$(CC) -c $(CFLAGS) $(SERVERINITDEF) $(SOLINGERDEFS) $(srcdir)/`basename $@ .o`.c
+@@ -151,6 +152,9 @@
+ $(OBJ21) : $(SRC21) $(WNNINCLUDESRC)/getopt.h
+ 	$(CC) -c $(CFLAGS) $(WNNETCSRC)/`basename $@ .o`.c
+ 
++$(OBJ22) : $(SRC22)
++	$(CC) -c $(CFLAGS) $(WNNETCSRC)/`basename $@ .o`.c
++
+ vasprintf.o : $(WNNETCSRC)/vasprintf.c
+ 	$(CC) -c $(CFLAGS) $? 
+ 

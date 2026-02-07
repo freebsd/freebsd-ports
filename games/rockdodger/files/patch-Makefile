@@ -1,0 +1,69 @@
+--- Makefile.orig	2020-07-24 19:19:35 UTC
++++ Makefile
+@@ -25,7 +25,7 @@ PACKAGENAME=rockdodger
+ VERSION=$(VMAJOR).$(VMINOR).$(VRELEASE)
+ PACKAGENAME=rockdodger
+ 
+-prefix = $(DESTDIR)/usr/local
++prefix = ${PREFIX}
+ INSTALL=/usr/bin/install
+ TMP=/tmp
+ 
+@@ -35,13 +35,13 @@ mandir = $(datarootdir)/man
+ bindir = $(exec_prefix)/bin
+ docdir = $(datarootdir)/doc/$(PACKAGENAME)
+ mandir = $(datarootdir)/man
+-localstatedir = $(prefix)/var
++localstatedir = /var
+ gamesdir = $(localstatedir)/games
+ 
+ NEWD=$(PACKAGENAME)-$(VERSION)
+ COMPILEDATE=$(shell date --date=@$${SOURCE_DATE_EPOCH:-$$(date +%s)} '+%Y-%m-%d')
+ TARPKGNAME=$(NEWD).pkg.tgz
+-OPTIONS=-DVERSION=\"$(VERSION)\" -DCOMPILEDATE=\"$(COMPILEDATE)\" -Wall `$(SDL_CONFIG) --cflags`
++OPTIONS=-DVERSION=\"$(VERSION)\" -DCOMPILEDATE=\"earth\" -Wall `$(SDL_CONFIG) --cflags`
+ EXENAME=rockdodger
+ 
+ SOUNDLIBRARIES=-lSDL_mixer
+@@ -60,14 +60,9 @@ ifeq ($(debug),0)
+ 	OPTIONS+=-pg
+ endif
+ ifeq ($(debug),0)
+-	OPTIONS+=-O2 -DNDEBUG
+-	ifneq ($(profile),1)
+-		OPTIONS+=-fomit-frame-pointer
+-	endif
+ else
+-	OPTIONS+=-O1 -DDEBUG
+ endif
+-CFLAGS=-MMD -g $(OPTIONS) $(MOREOPTS)
++CFLAGS+=-MMD $(OPTIONS) $(CPPFLAGS)
+ 
+ all:	$(EXENAME) config.h
+ 
+@@ -98,16 +93,16 @@ install:	all
+ 	tar -C $$DTEMP -cvzf $(TARPKGNAME) . && rm -r $$DTEMP)
+ 
+ install:	all
+-	$(INSTALL) -d $(bindir) $(gamesdir)
+-	$(INSTALL) $(EXENAME) $(bindir)
+-	-chgrp games $(bindir)/$(EXENAME)
+-	chmod g+s $(bindir)/$(EXENAME)
++	$(INSTALL) -d ${DESTDIR}$(bindir) ${DESTDIR}$(gamesdir)
++	$(INSTALL) $(EXENAME) ${DESTDIR}$(bindir)
++#	-chgrp games $(bindir)/$(EXENAME)
++#	chmod g+s $(bindir)/$(EXENAME)
+ 	$(MAKE) -C data install
+-	touch $(gamesdir)/rockdodger.scores
+-	-chgrp games $(gamesdir)/rockdodger.scores
+-	chmod g+rw $(gamesdir)/rockdodger.scores
+-	mkdir -p $(mandir)/man6
+-	gzip -9n < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
++	touch ${DESTDIR}$(gamesdir)/rockdodger.scores
++#	-chgrp games $(gamesdir)/rockdodger.scores
++#	chmod g+rw $(gamesdir)/rockdodger.scores
++	mkdir -p ${DESTDIR}$(mandir)/man6
++	gzip -9n < $(MANPAGE) > ${DESTDIR}$(mandir)/man6/$(MANPAGE).gz
+ 
+ uninstall:
+ 	rm -f $(gamesdir)/rockdodger.scores

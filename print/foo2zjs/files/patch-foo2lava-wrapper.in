@@ -1,0 +1,46 @@
+--- foo2lava-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
++++ foo2lava-wrapper.in	2011-06-19 21:22:09.019758180 +0400
+@@ -42,13 +42,6 @@ PREFIX=/usr
+ SHARE=$PREFIX/share/foo2lava
+ PATH=$PATH:/sw/bin:/opt/local/bin
+ 
+-#
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger -o -x /bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- "foo2lava-wrapper $@" </dev/null
+-fi
+-
+ usage() {
+ 	cat <<EOF
+ Usage:
+@@ -155,8 +148,8 @@ nup() {
+ #
+ # N.B. := operator used here, when :- would be better, because "ash"
+ # doesn't have :-
+-if eval gs.foo -v >/dev/null 2>&1; then
+-        GSBIN=${GSBIN:-gs.foo}
++if eval gs -v >/dev/null 2>&1; then
++        GSBIN=${GSBIN:-gs}
+ else
+         GSBIN=${GSBIN:-gs}
+ fi
+@@ -733,18 +726,6 @@ $PREFILTER \
+ 	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
+ 
+ #
+-#	Log the command line, for debugging and problem reports
+-#
+-if [ -x /usr/bin/logger ]; then
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"$GSBIN $PAPERSIZE -g$DIM -r$RES $GSDEV $GSOPTS $GAMMAFILE"
+-    logger -t "$BASENAME" -p lpr.info -- \
+-	"foo2lava -r$RES -g$DIM -p$PAPER -m$MEDIA \
+--n$COPIES -d$DUPLEX -s$SOURCE -z$MODEL $COLOR $CLIP_UL $CLIP_LR $CLIP_LOG \
+-$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
+-fi
+-
+-#
+ #	Remove cruft
+ #
+ if [ $DEBUG -eq 0 ]; then

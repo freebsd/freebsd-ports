@@ -1,0 +1,6 @@
+To use the HTML feature or the PHP wrapper, copy the
+contents of %%DATADIR%%/html to a location
+accessible by your webserver.  For more information,
+see %%DOCSDIR%%/README.txt!
+
+See also %%EXAMPLESDIR%% for some hints...

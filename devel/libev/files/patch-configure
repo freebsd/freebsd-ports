@@ -1,0 +1,17 @@
+--- configure.orig	2020-03-18 12:27:26 UTC
++++ configure
+@@ -3954,14 +3954,6 @@ fi
+ fi
+ 
+ 
+-
+-if test -z "$orig_CFLAGS"; then
+-  if test x$GCC = xyes; then
+-    CFLAGS="-g -O3"
+-  fi
+-fi
+-
+-
+ case `pwd` in
+   *\ * | *\	*)
+     { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Libtool does not cope well with whitespace in \`pwd\`" >&5

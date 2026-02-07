@@ -1,0 +1,10 @@
+%%LUA_MODSHAREDIR%%/resty/aes.lua
+%%LUA_MODSHAREDIR%%/resty/md5.lua
+%%LUA_MODSHAREDIR%%/resty/random.lua
+%%LUA_MODSHAREDIR%%/resty/sha.lua
+%%LUA_MODSHAREDIR%%/resty/sha1.lua
+%%LUA_MODSHAREDIR%%/resty/sha224.lua
+%%LUA_MODSHAREDIR%%/resty/sha256.lua
+%%LUA_MODSHAREDIR%%/resty/sha384.lua
+%%LUA_MODSHAREDIR%%/resty/sha512.lua
+%%LUA_MODSHAREDIR%%/resty/string.lua

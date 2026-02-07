@@ -1,0 +1,18 @@
+Rainfrog is a lightweight, terminal-based tool for interacting with databases.
+
+Features:
+
+  - efficient navigation via vim-like keybindings and mouse controls
+  - query editor with keyword highlighting, session history, and favorites
+  - quickly copy data, filter tables, and switch between schemas
+  - shortcuts to view table metadata and properties
+  - cross-platform (Android via termux, FreeBSD, Linux, MacOS, Windows)
+
+Supported databases:
+
+  - Postgres
+  - MySQL
+  - Sqlite
+  - Redshift (via wire protocol of Postgres)
+  - DuckDB
+  - Oracle (requires additional runtime dependencies)

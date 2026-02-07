@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2020-08-12 19:00:53 UTC
++++ CMakeLists.txt
+@@ -27,14 +27,15 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cm
+ # log info
+ message( STATUS "-------- cpp2py version and git hash detection -------------")
+ 
+-find_package(Git)
++#find_package(Git)
+ 
+ # Get the Git Hash
+-execute_process(COMMAND ${GIT_EXECUTABLE} rev-parse HEAD
+- WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
+- OUTPUT_VARIABLE   CPP2PY_GIT_HASH
+- OUTPUT_STRIP_TRAILING_WHITESPACE
+-)
++#execute_process(COMMAND ${GIT_EXECUTABLE} rev-parse HEAD
++# WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
++# OUTPUT_VARIABLE   CPP2PY_GIT_HASH
++# OUTPUT_STRIP_TRAILING_WHITESPACE
++#)
++set(CPP2PY_GIT_HASH "00000000")
+ 
+ message(STATUS "Cpp2py version : ${CPP2PY_VERSION}")
+ message(STATUS "Git hash : ${CPP2PY_GIT_HASH}")

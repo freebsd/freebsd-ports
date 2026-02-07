@@ -1,0 +1,7 @@
+Statistics::LTU defines methods for creating, destroying, training and
+testing Linear Threshold Units.  A linear threshold unit is a 1-layer
+neural network, also called a perceptron.  LTU's are used to learn
+classifications from examples.
+
+-Anton
+<tobez@FreeBSD.org>

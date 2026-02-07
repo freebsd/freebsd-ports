@@ -1,0 +1,13 @@
+--- config.json.orig	2017-03-28 21:33:04 UTC
++++ config.json
+@@ -0,0 +1,10 @@
++{
++    "mysql": {
++        "host": "127.0.0.1:3306",
++        "user": "root",
++        "pass": "",
++        "name": "semaphore"
++    },
++    "session_db": "127.0.0.1:6379",
++    "port": ":3000"
++}

@@ -1,0 +1,31 @@
+--- configure.orig	Wed May 21 23:01:15 2003
++++ configure	Tue Oct 18 20:23:45 2005
+@@ -9,7 +9,7 @@
+ 
+ # Defaults:
+ ac_help=
+-ac_default_prefix=/usr/local
++ac_default_prefix=%%PREFIX%%
+ # Any additions from configure.in:
+ 
+ # Initialize some variables set by options.
+@@ -522,7 +522,7 @@
+ 
+ 
+ 
+-if [ x$sysconfdir == 'x${prefix}/etc' ]; then
++if [ x$sysconfdir = 'x${prefix}/etc' ]; then
+   sysconfdir=/etc
+ fi
+ 
+@@ -658,8 +658,8 @@
+ fi
+ 
+ 
+-BINSEARCHPATH=/usr/bin:/bin:/usr/local/bin
+-DATASEARCHPATH=/usr/share:/usr/local/share:/usr/lib:/usr/local/lib:/opt
++BINSEARCHPATH=/usr/bin:/bin:%%LOCALBASE%%/bin
++DATASEARCHPATH=/usr/share:%%LOCALBASE%%/share:/usr/lib:%%LOCALBASE%%/lib:/opt
+ 
+ for ac_prog in perl
+ do

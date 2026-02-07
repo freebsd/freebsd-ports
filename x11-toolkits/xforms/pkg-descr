@@ -1,0 +1,8 @@
+This is the source distribution of XForms, a graphical user interface
+toolkit for X Window Systems. It should work under X11 R4, R5 & R6.
+
+XForms features a rich set of objects, such as buttons, scrollbars,
+and menus etc. integrated into an easy and efficient object/event
+callback execution model that allows fast and easy construction of
+X-applications. In addition, the library is extensible and new objects
+can easily be created and added to the library.

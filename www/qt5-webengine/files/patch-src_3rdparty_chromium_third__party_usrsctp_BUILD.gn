@@ -1,0 +1,22 @@
+--- src/3rdparty/chromium/third_party/usrsctp/BUILD.gn.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/third_party/usrsctp/BUILD.gn
+@@ -127,7 +127,7 @@ static_library("usrsctp") {
+     "-UINET6",
+   ]
+ 
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux || is_chromeos || is_android) && !is_bsd) {
+     defines += [
+       "__Userspace_os_Linux",
+       "_GNU_SOURCE",
+@@ -137,6 +137,10 @@ static_library("usrsctp") {
+       "HAVE_SA_LEN",
+       "__APPLE_USE_RFC_2292",
+       "__Userspace_os_Darwin",
++    ]
++  } else if (is_bsd) {
++    defines += [
++      "__Userspace_os_FreeBSD",
+     ]
+   }
+ 

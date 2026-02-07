@@ -1,0 +1,7 @@
+The bareos-webui is a free software tool written in PHP, intended to monitor
+and manage Bareos over the web.
+
+The webui is based on Laminas Framework, an open source framework for developing
+web applications and services using PHP 7.4+..
+
+The bareos-webui is licensed under AGPL Version 3.

@@ -1,0 +1,103 @@
+[
+{ type: install
+  message: <<EOM
+======================
+ Apache configuration
+======================
+
+If you plan to use apache make sure that the mod_wsgi module is enabled and the
+correct ownership for static/local libraries for the openstack_dashboard are
+set:
+
+# chown -R horizon %%PYTHON_SITELIBDIR%%/openstack_dashboard/static
+# chown -R horizon %%PYTHON_SITELIBDIR%%/openstack_dashboard/local
+
+Use the following snippet as reference:
+
+### Start
+
+<VirtualHost *:80>
+        WSGIScriptAlias / %%PYTHON_SITELIBDIR%%/openstack_dashboard/wsgi/django.wsgi
+        WSGIDaemonProcess horizon user=horizon group=horizon processes=3 threads=10 display-name=%{GROUP}
+        WSGIProcessGroup horizon
+        WSGIApplicationGroup %{GLOBAL}
+
+        DocumentRoot /var/lib/horizon
+
+        Alias /static/horizon/lib/angular/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/angular/data/
+        Alias /static/horizon/lib/angular_bootstrap/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/angular_bootstrap/data/
+        Alias /static/horizon/lib/angular_fileupload/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/angular_fileupload/data/
+        Alias /static/horizon/lib/angular_gettext/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/angular_gettext/data/
+        Alias /static/horizon/lib/angular_lrdragndrop/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/angular_lrdragndrop/data/
+        Alias /static/horizon/lib/angular_schemaform/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/angular_schemaform/data/
+        Alias /static/horizon/lib/angular_smart_table/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/angular_smart_table/data/
+        Alias /static/horizon/lib/bootstrap_datepicker/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/bootstrap_datepicker/data/
+        Alias /static/horizon/lib/bootstrap_scss/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/bootstrap_scss/data/
+        Alias /static/horizon/lib/bootswatch/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/bootswatch/data/
+        Alias /static/horizon/lib/d3/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/d3/data/
+        Alias /static/horizon/lib/font_awesome/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/font_awesome/data/
+        Alias /static/horizon/lib/hogan/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/hogan/data/
+        Alias /static/horizon/lib/jasmine/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/jasmine/data/
+        Alias /static/horizon/lib/jquery_migrate/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/jquery_migrate/data/
+        Alias /static/horizon/lib/jquery_quicksearch/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/jquery_quicksearch/data/
+        Alias /static/horizon/lib/jquery_tablesorter/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/jquery_tablesorter/data/
+        Alias /static/horizon/lib/jsencrypt/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/jsencrypt/data/
+        Alias /static/horizon/lib/mdi/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/mdi/data/
+        Alias /static/horizon/lib/objectpath/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/objectpath/data/
+        Alias /static/horizon/lib/rickshaw/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/rickshaw/data/
+        Alias /static/horizon/lib/roboto_fontface/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/roboto_fontface/data/
+        Alias /static/horizon/lib/spin/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/spin/data/
+        Alias /static/horizon/lib/termjs/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/termjs/data/
+        Alias /static/horizon/lib/tv4/ %%PYTHON_SITELIBDIR%%/xstatic/pkg/tv4/data/
+        Alias /static/horizon %%PYTHON_SITELIBDIR%%/horizon/static/horizon
+        Alias /static %%PYTHON_SITELIBDIR%%/openstack_dashboard/static
+
+        <Directory />
+                AllowOverride None
+        </Directory>
+
+        <Directory %%PYTHON_SITELIBDIR%%/openstack_dashboard/wsgi>
+                Require all granted
+        </Directory>
+
+        <Directory %%PYTHON_SITELIBDIR%%/openstack_dashboard/static>
+                Require all granted
+        </Directory>
+
+        <Directory %%PYTHON_SITELIBDIR%%/horizon/static>
+                Require all granted
+        </Directory>
+
+        <Directory %%PYTHON_SITELIBDIR%%/xstatic/pkg/*/data>
+                Require all granted
+        </Directory>
+
+</VirtualHost>
+
+### End
+
+======================
+ Custom configuration
+======================
+
+Create the configuration:
+
+# cd %%PYTHON_SITELIBDIR%%/openstack_dashboard/local
+# cp local_settings.py.example local_settings.py
+
+Add one or more entries to the ALLOWED_HOSTS directive:
+
+ALLOWED_HOSTS = [ 'host1', '192.168.0.1' ]
+
+Horizon must be configured for at least one Keystone server to work properly:
+
+OPENSTACK_HOST = "127.0.0.1"
+OPENSTACK_KEYSTONE_URL = "http://%s:5000/v3" % OPENSTACK_HOST
+OPENSTACK_KEYSTONE_DEFAULT_ROLE = "_member_"
+
+To enable django-compressor add this option:
+
+STATIC_ROOT = '%%PYTHON_SITELIBDIR%%/openstack_dashboard/static'
+EOM
+}
+]

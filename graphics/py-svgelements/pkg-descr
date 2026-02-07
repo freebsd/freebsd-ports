@@ -1,0 +1,3 @@
+Svgelements does high fidelity SVG parsing and geometric rendering.
+The goal is to successfully and correctly process SVG for use with
+any scripts that may need or want to use SVG files as geometric data.

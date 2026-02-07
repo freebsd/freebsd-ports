@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/CBOR/XS.pm
+%%SITE_ARCH%%/auto/CBOR/XS/XS.so
+%%PERL5_MAN3%%/CBOR::XS.3.gz

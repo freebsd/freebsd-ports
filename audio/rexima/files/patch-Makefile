@@ -1,0 +1,40 @@
+--- Makefile.orig	2003-06-30 12:45:27 UTC
++++ Makefile
+@@ -1,15 +1,14 @@
+ # Makefile - makefile for rexima
+ 
+-CC=gcc
+-CFLAGS=-O -Wall
++CC?=cc
++CFLAGS?=-O -pipe
+ 
+ # Set BINDIR to directory for binary,
+ # MANDIR to directory for man page.
+ # Usually it will be simpler to just set PREFIX.
+ #
+-PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+-MANDIR=$(PREFIX)/man/man1
++MANDIR=$(PREFIX)/share/man/man1
+ 
+ # You shouldn't need to edit below this line.
+ #--------------------------------------------------------
+@@ -17,14 +16,14 @@ rexima: rexima.o
+ all: rexima
+ 
+ rexima: rexima.o
+-	$(CC) $(CFLAGS) -o rexima rexima.o -lncurses
++	$(CC) $(CFLAGS) -o rexima rexima.o $(LDFLAGS) -lncurses
+ 
+ installdirs:
+-	/bin/sh ./mkinstalldirs $(BINDIR) $(MANDIR)
++	/bin/sh ./mkinstalldirs $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)
+ 
+ install: rexima installdirs
+-	install -s -m 755 rexima $(BINDIR)
+-	install -m 644 rexima.1 $(MANDIR)
++	install -s -m 755 rexima $(DESTDIR)$(BINDIR)
++	install -m 644 rexima.1 $(DESTDIR)$(MANDIR)
+ 
+ uninstall:
+ 	$(RM) $(BINDIR)/rexima $(MANDIR)/rexima.1

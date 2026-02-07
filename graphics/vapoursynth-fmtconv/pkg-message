@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Vapoursynth-fmtconv requires AVX2 instruction set on amd64 and should be recompiled with CPUTYPE defined for best performance.
+If it fails to run (SIGILL, Illegal instruction) ensure your CPU supports AVX2 instructions.
+EOM
+}
+]

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Tree/Simple.pm
+%%SITE_PERL%%/Tree/Simple/Visitor.pm
+%%PERL5_MAN3%%/Tree::Simple.3.gz
+%%PERL5_MAN3%%/Tree::Simple::Visitor.3.gz

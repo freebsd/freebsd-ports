@@ -1,0 +1,5 @@
+olefile (formerly OleFileIO_PL) is a Python module to read/write Microsoft OLE2
+files (also called Structured Storage, Compound File Binary Format or Compound
+Document File Format), such as Microsoft Office 97-2003 documents, Image
+Composer and FlashPix files, Outlook messages, StickyNotes, several Microscopy
+file formats, McAfee antivirus quarantine files, etc.

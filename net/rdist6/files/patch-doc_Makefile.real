@@ -1,0 +1,11 @@
+--- doc/Makefile.real.orig	1998-11-10 05:40:06 UTC
++++ doc/Makefile.real
+@@ -10,7 +10,7 @@
+ 
+ CLIENT_DEST 	= ${MAN_1_DIR}/${CLIENT}.${MAN_1_SECT}
+ SERVER_DEST 	= ${MAN_8_DIR}/${SERVER}.${MAN_8_SECT}
+-INSTALL_ARGS	= -c -o ${MAN_OWNER} -g ${MAN_GROUP} -m ${MAN_MODE} 
++INSTALL_ARGS	= -c
+ 
+ all:
+ 

@@ -1,0 +1,4 @@
+dotenv-linter is a lightning-fast linter for .env files written in Rust.
+
+A .env file or 'dotenv' file is a simple text file containing all the
+environment variables of a project.

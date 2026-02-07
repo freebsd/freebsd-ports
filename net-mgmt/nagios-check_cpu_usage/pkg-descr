@@ -1,0 +1,4 @@
+check_cpu_usage is a plugin intended for use with the Nagios network
+monitoring system.  This plugin checks the current CPU load and
+compares the current state to given thresholds, returning the result.
+It is written as shell script.

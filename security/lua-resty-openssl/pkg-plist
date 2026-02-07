@@ -1,0 +1,84 @@
+share/lua/5.1/resty/openssl.lua
+share/lua/5.1/resty/openssl/asn1.lua
+share/lua/5.1/resty/openssl/auxiliary/bio.lua
+share/lua/5.1/resty/openssl/auxiliary/ctypes.lua
+share/lua/5.1/resty/openssl/auxiliary/ecdsa.lua
+share/lua/5.1/resty/openssl/auxiliary/jwk.lua
+share/lua/5.1/resty/openssl/auxiliary/nginx.lua
+share/lua/5.1/resty/openssl/auxiliary/nginx_c.lua
+share/lua/5.1/resty/openssl/bn.lua
+share/lua/5.1/resty/openssl/cipher.lua
+share/lua/5.1/resty/openssl/ctx.lua
+share/lua/5.1/resty/openssl/dh.lua
+share/lua/5.1/resty/openssl/digest.lua
+share/lua/5.1/resty/openssl/ec.lua
+share/lua/5.1/resty/openssl/ecx.lua
+share/lua/5.1/resty/openssl/err.lua
+share/lua/5.1/resty/openssl/hmac.lua
+share/lua/5.1/resty/openssl/include/asn1.lua
+share/lua/5.1/resty/openssl/include/bio.lua
+share/lua/5.1/resty/openssl/include/bn.lua
+share/lua/5.1/resty/openssl/include/conf.lua
+share/lua/5.1/resty/openssl/include/crypto.lua
+share/lua/5.1/resty/openssl/include/dh.lua
+share/lua/5.1/resty/openssl/include/ec.lua
+share/lua/5.1/resty/openssl/include/ecdsa.lua
+share/lua/5.1/resty/openssl/include/err.lua
+share/lua/5.1/resty/openssl/include/evp.lua
+share/lua/5.1/resty/openssl/include/evp/cipher.lua
+share/lua/5.1/resty/openssl/include/evp/kdf.lua
+share/lua/5.1/resty/openssl/include/evp/mac.lua
+share/lua/5.1/resty/openssl/include/evp/md.lua
+share/lua/5.1/resty/openssl/include/evp/pkey.lua
+share/lua/5.1/resty/openssl/include/hmac.lua
+share/lua/5.1/resty/openssl/include/objects.lua
+share/lua/5.1/resty/openssl/include/ossl_typ.lua
+share/lua/5.1/resty/openssl/include/param.lua
+share/lua/5.1/resty/openssl/include/pem.lua
+share/lua/5.1/resty/openssl/include/pkcs12.lua
+share/lua/5.1/resty/openssl/include/provider.lua
+share/lua/5.1/resty/openssl/include/rand.lua
+share/lua/5.1/resty/openssl/include/rsa.lua
+share/lua/5.1/resty/openssl/include/ssl.lua
+share/lua/5.1/resty/openssl/include/stack.lua
+share/lua/5.1/resty/openssl/include/x509/altname.lua
+share/lua/5.1/resty/openssl/include/x509/crl.lua
+share/lua/5.1/resty/openssl/include/x509/csr.lua
+share/lua/5.1/resty/openssl/include/x509/extension.lua
+share/lua/5.1/resty/openssl/include/x509/init.lua
+share/lua/5.1/resty/openssl/include/x509/name.lua
+share/lua/5.1/resty/openssl/include/x509/revoked.lua
+share/lua/5.1/resty/openssl/include/x509_vfy.lua
+share/lua/5.1/resty/openssl/include/x509v3.lua
+share/lua/5.1/resty/openssl/kdf.lua
+share/lua/5.1/resty/openssl/mac.lua
+share/lua/5.1/resty/openssl/objects.lua
+share/lua/5.1/resty/openssl/param.lua
+share/lua/5.1/resty/openssl/pkcs12.lua
+share/lua/5.1/resty/openssl/pkey.lua
+share/lua/5.1/resty/openssl/provider.lua
+share/lua/5.1/resty/openssl/rand.lua
+share/lua/5.1/resty/openssl/rsa.lua
+share/lua/5.1/resty/openssl/ssl.lua
+share/lua/5.1/resty/openssl/ssl_ctx.lua
+share/lua/5.1/resty/openssl/stack.lua
+share/lua/5.1/resty/openssl/version.lua
+share/lua/5.1/resty/openssl/x509/altname.lua
+share/lua/5.1/resty/openssl/x509/chain.lua
+share/lua/5.1/resty/openssl/x509/crl.lua
+share/lua/5.1/resty/openssl/x509/csr.lua
+share/lua/5.1/resty/openssl/x509/extension.lua
+share/lua/5.1/resty/openssl/x509/extension/dist_points.lua
+share/lua/5.1/resty/openssl/x509/extension/info_access.lua
+share/lua/5.1/resty/openssl/x509/extensions.lua
+share/lua/5.1/resty/openssl/x509/init.lua
+share/lua/5.1/resty/openssl/x509/name.lua
+share/lua/5.1/resty/openssl/x509/revoked.lua
+share/lua/5.1/resty/openssl/x509/store.lua
+@dir share/lua/5.1/resty/openssl/x509/extension
+@dir share/lua/5.1/resty/openssl/x509
+@dir share/lua/5.1/resty/openssl/include/x509
+@dir share/lua/5.1/resty/openssl/include/evp
+@dir share/lua/5.1/resty/openssl/include
+@dir share/lua/5.1/resty/openssl/auxiliary
+@dir share/lua/5.1/resty/openssl

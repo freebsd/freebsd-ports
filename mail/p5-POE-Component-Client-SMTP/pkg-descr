@@ -1,0 +1,3 @@
+POE::Component::Client::SMTP can be used to send asynchronous e-mail
+messages while your POE program still does something else in the
+meantime.

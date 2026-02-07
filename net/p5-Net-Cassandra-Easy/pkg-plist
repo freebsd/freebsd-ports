@@ -1,0 +1,17 @@
+bin/cassidy.pl
+%%PERL5_MAN3%%/Net::Cassandra::Easy.3.gz
+%%SITE_PERL%%/Net/Cassandra/Easy.pm
+%%SITE_PERL%%/Net/Cassandra/cassidy.pl
+%%SITE_PERL%%/Net/Cassandra/genthrift.pl
+%%SITE_PERL%%/Net/GenCassandra/Cassandra.pm
+%%SITE_PERL%%/Net/GenCassandra/Constants.pm
+%%SITE_PERL%%/Net/GenCassandra/Types.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/BinaryProtocol.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/BufferedTransport.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/FramedTransport.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/HttpClient.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/MemoryBuffer.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/Protocol.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/Socket.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/Transport.pm

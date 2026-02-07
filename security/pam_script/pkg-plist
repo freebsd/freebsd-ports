@@ -1,0 +1,12 @@
+@dir(root,wheel,0755) etc/pam-script.d
+@(root,wheel,0755) etc/pam_script
+@(root,wheel,0755) etc/pam-script.d/logscript
+@(root,wheel,0755) etc/pam-script.d/tally
+lib/pam_script.so
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README.pam_script
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.examples

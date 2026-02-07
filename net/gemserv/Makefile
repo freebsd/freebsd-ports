@@ -1,0 +1,54 @@
+PORTNAME=	gemserv
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.6
+PORTREVISION=	27
+CATEGORIES=	net
+MASTER_SITES=	https://git.sr.ht/~int80h/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	ea@uoga.net
+COMMENT=	Gemini server written in Rust
+WWW=		https://git.sr.ht/~int80h/gemserv
+
+LICENSE=	APACHE20 BSD3CLAUSE MIT MPL20
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
+
+USES=		cargo ssl
+USE_RC_SUBR=	gemserv
+
+CARGO_FEATURES=
+
+SUB_FILES=	config.toml.sample index.gmi.sample
+SUB_LIST=	GEMSERV_GROUP=${GEMSERV_GROUP} \
+		GEMSERV_USER=${GEMSERV_USER}
+
+USERS=		${GEMSERV_USER}
+GROUPS=		${GEMSERV_GROUP}
+
+PLIST_SUB=	GEMSERV_DATADIR=${PREFIX}/gemini/gemserv-dist
+
+OPTIONS_DEFINE=	STATICONLY
+OPTIONS_DEFAULT=
+
+STATICONLY_DESC=	Only serve static files, no additional features (CGI..)
+STATICONLY_VARS=	CARGO_FEATURES+=--no-default-features
+
+GEMSERV_GROUP?=	gemserv
+GEMSERV_USER?=	gemserv
+
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.toml ${STAGEDIR}${ETCDIR}/config.toml-dist
+	${INSTALL_DATA} ${WRKDIR}/config.toml.sample ${STAGEDIR}${ETCDIR}
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/UPDATING ${STAGEDIR}${DOCSDIR}
+
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/cgi-scripts && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+	${MKDIR} ${STAGEDIR}${PREFIX}/gemini/gemserv-dist
+	${INSTALL_DATA} ${WRKDIR}/index.gmi.sample ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

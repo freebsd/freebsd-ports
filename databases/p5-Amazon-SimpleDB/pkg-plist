@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Amazon/SimpleDB.pm
+%%SITE_PERL%%/Amazon/SimpleDB/Domain.pm
+%%SITE_PERL%%/Amazon/SimpleDB/ErrorResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/GetAttributesResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/Item.pm
+%%SITE_PERL%%/Amazon/SimpleDB/ListDomainsResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/QueryResponse.pm
+%%SITE_PERL%%/Amazon/SimpleDB/Response.pm
+%%PERL5_MAN3%%/Amazon::SimpleDB.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::Domain.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::ErrorResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::GetAttributesResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::Item.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::ListDomainsResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::QueryResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::Response.3.gz

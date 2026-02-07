@@ -1,0 +1,3 @@
+Provides a unified interface to the various serializing modules
+currently available.  Adds the functionality of both compression and
+encryption.

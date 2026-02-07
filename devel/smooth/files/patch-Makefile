@@ -1,0 +1,29 @@
+--- Makefile.orig	2020-11-01 17:03:01 UTC
++++ Makefile
+@@ -129,7 +129,7 @@ endif 
+ 
+ ### Output options ###
+ 
+-LIBS = -lstdc++
++LIBS += -lX11 -lm
+ 
+ ifeq ($(USE_BUNDLED_LIBBZ2),True)
+ 	LIBS += $(LIBDIR)/libbz2.a
+@@ -298,7 +298,7 @@ ifneq ($(BUILD_WIN32),True)
+ 	$(INSTALL) -d "$(DESTDIR)"$(libdir)
+ 
+ ifneq ($(BUILD_OSX),True)
+-	$(INSTALL_DATA) $(DLLNAME) "$(DESTDIR)"$(libdir)/libsmooth-$(VERSION)$(SHARED).$(REVISION)
++	$(BSD_INSTALL_LIB) $(DLLNAME) "$(DESTDIR)"$(libdir)/libsmooth-$(VERSION)$(SHARED).$(REVISION)
+ 	$(LINK) -fs libsmooth-$(VERSION)$(SHARED).$(REVISION) "$(DESTDIR)"$(libdir)/libsmooth-$(VERSION)$(SHARED)
+ 
+ ifeq ($(BUILD_V8),True)
+@@ -324,7 +324,7 @@ endif
+ endif
+ 
+ 	$(INSTALL) -d "$(DESTDIR)"$(bindir)
+-	$(INSTALL_PROGRAM) $(BINDIR)/translator "$(DESTDIR)"$(bindir)/smooth-translator
++	$(BSD_INSTALL_PROGRAM) $(BINDIR)/translator "$(DESTDIR)"$(bindir)/smooth-translator
+ 
+ 	$(INSTALL) -d "$(DESTDIR)"$(includedir)
+ 	$(COPY) -r "$(SRCDIR)"/include/smooth "$(DESTDIR)"$(includedir)

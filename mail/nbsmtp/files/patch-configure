@@ -1,0 +1,31 @@
+--- configure.orig	Mon May  2 20:19:27 2005
++++ configure	Tue Jul 12 11:47:51 2005
+@@ -4583,7 +4583,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcrypto  $LIBS"
++LIBS="-lcrypto -lssl $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4640,7 +4640,7 @@
+ #define HAVE_LIBCRYPTO 1
+ _ACEOF
+ 
+-  LIBS="-lcrypto $LIBS"
++  LIBS="-lcrypto -lssl $LIBS"
+ 
+ fi
+ 
+@@ -4948,8 +4948,8 @@
+ #define HAVE_DEBUG 1
+ _ACEOF
+ 
+-		CFLAGS=${CFLAGS/-O?/-ggdb -O0}
+-	CFLAGS=${CFLAGS/-fomit-frame-pointer/}
++		CFLAGS=`echo $CFLAGS | sed "s/-O[0-9]/-ggdb -O0/"`
++	CFLAGS=`echo $CFLAGS | sed "s/-fomit-frame-pointer//"`
+ fi
+ enableval=""
+ 

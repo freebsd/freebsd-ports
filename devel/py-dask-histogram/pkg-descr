@@ -1,0 +1,3 @@
+The boost-histogram library provides a performant object oriented API for
+histogramming in Python. Building on the foundation of boost-histogram,
+dask-histogram adds support for lazy calculations on Dask collections.

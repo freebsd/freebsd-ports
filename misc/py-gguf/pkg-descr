@@ -1,0 +1,3 @@
+gguf is a Python module for reading and writing ML models in GGUF for GGML.
+
+gguf is a spin-off of the llama-cpp project.

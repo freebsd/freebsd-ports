@@ -1,0 +1,2 @@
+Gearman::Client::Async - Asynchronous client module for Gearman for
+Danga::Socket applications

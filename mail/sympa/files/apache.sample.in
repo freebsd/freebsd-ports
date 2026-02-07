@@ -1,0 +1,18 @@
+DocumentRoot "%%DATADIR%%"
+AddDefaultCharset UTF-8
+DirectoryIndex wws
+Options +Indexes
+# you may replace 'fcgid' by 'fastcgi'
+LoadModule fcgid_module libexec/apache24/mod_fcgid.so
+
+<Location /wws>
+    SetHandler fcgid-script
+</Location>
+<Directory %%DATADIR%%>
+    Require all granted
+</Directory>
+<Directory %%PREFIX%%/libexec/sympa>
+    Require all granted
+</Directory>
+Alias /static-sympa %%DATADIR%%/static
+ScriptAlias /wws %%PREFIX%%/libexec/sympa/wwsympa-wrapper

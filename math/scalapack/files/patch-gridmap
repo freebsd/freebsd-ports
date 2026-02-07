@@ -1,0 +1,120 @@
+--- REDIST/SRC/pcgemr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pcgemr.c
+@@ -194,6 +194,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pctrmr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pctrmr.c
+@@ -209,6 +209,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pdgemr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pdgemr.c
+@@ -191,6 +191,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pdtrmr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pdtrmr.c
+@@ -206,6 +206,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pigemr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pigemr.c
+@@ -191,6 +191,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pitrmr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pitrmr.c
+@@ -206,6 +206,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/psgemr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/psgemr.c
+@@ -191,6 +191,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pstrmr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pstrmr.c
+@@ -206,6 +206,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pzgemr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pzgemr.c
+@@ -194,6 +194,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- REDIST/SRC/pztrmr.c.orig	2024-08-06 11:44:11 UTC
++++ REDIST/SRC/pztrmr.c
+@@ -209,6 +209,7 @@ extern void Cblacs_gridinit();
+ extern void Cblacs_pinfo();
+ extern void Cblacs_gridinfo();
+ extern void Cblacs_gridinit();
++extern void Cblacs_gridmap();
+ extern void Cblacs_exit();
+ extern void Cblacs_gridexit();
+ extern void Cblacs_setup();
+--- SRC/pcrot.c.orig	2024-08-06 11:44:11 UTC
++++ SRC/pcrot.c
+@@ -190,6 +190,7 @@ void pcrot_( Int *n, complex X[], Int *ix, Int *jx, In
+    F_INTG_FCT  pbctrnv_();
+    F_INTG_FCT  crot_();
+    F_INTG_FCT  ilcm_();
++   Int         numroc_( Int*, Int*, Int*, Int*, Int* );
+ /* ..
+ *  .. Executable Statements ..
+ *
+--- SRC/pzrot.c.orig	2024-08-06 11:44:11 UTC
++++ SRC/pzrot.c
+@@ -190,6 +190,7 @@ void pzrot_( Int *n, complex16 X[], Int *ix, Int *jx, 
+    F_INTG_FCT  pbztrnv_();
+    F_INTG_FCT  zrot_();
+    F_INTG_FCT  ilcm_();
++   Int         numroc_( Int*, Int*, Int*, Int*, Int* );
+ /* ..
+ *  .. Executable Statements ..
+ *

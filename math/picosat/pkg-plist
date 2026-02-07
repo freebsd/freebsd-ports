@@ -1,0 +1,7 @@
+bin/picogcnf
+bin/picomcs
+bin/picomus
+bin/picosat
+include/picosat.h
+lib/libpicosat.a
+lib/libpicosat.so

@@ -1,0 +1,11 @@
+--- configure.orig	2015-04-04 08:00:48 UTC
++++ configure
+@@ -2596,7 +2596,7 @@ fi
+ 
+ 
+ 
+-if test "x$ABIWORD" == "x"; then
++if test "x$ABIWORD" = "x"; then
+ 	as_fn_error 1 "abiword not found in PATH" "$LINENO" 5
+ fi
+ 

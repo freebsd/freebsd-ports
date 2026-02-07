@@ -1,0 +1,6 @@
+FreeBSD ports developers often encounter projects hosted on GitHub that
+make use of submodules. Manually creating the GH_TUPLE values for such
+projects can be time-consuming and error-prone, especially when dealing
+with recursive submodules. This script simplifies the process by
+automating the generation of these values, saving developers valuable
+time and effort.

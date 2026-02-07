@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: mumble_server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mumble_server_enable (bool):	Set to NO by default.
+#				Set it to YES to enable mumble_server.
+# mumble_server_flags (str):	Set to "" by default.
+#				Extra flags passed to start command.
+#
+
+. /etc/rc.subr
+
+name=mumble_server
+rcvar=mumble_server_enable
+load_rc_config $name
+
+# Set some defaults
+: ${mumble_server_enable:=NO}
+: ${mumble_server_user=%%USERS%%}
+
+command="%%PREFIX%%/bin/mumble-server"
+command_args="-ini %%PREFIX%%/etc/mumble/mumble-server.ini"
+pidfile=/var/run/mumble-server/mumble-server.pid
+start_precmd=mumble_server_prestart
+extra_commands="reload"
+sig_reload="USR1"
+
+mumble_server_prestart() {
+	for i in /var/log/mumble-server /var/run/mumble-server /var/db/mumble-server; do
+		if [ ! -d ${i} ]; then
+			install -d -o %%USERS%% -g %%GROUPS%% ${i}
+		fi
+	done
+}
+
+run_rc_command "$1"

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2022-10-16 09:53:52 UTC
++++ pyproject.toml
+@@ -65,7 +65,7 @@ dependencies = [
+     "sphinxcontrib-qthelp",
+     "Jinja2>=3.0",
+     "Pygments>=2.12",
+-    "docutils>=0.14,<0.20",
++    "docutils>=0.14,<0.22",
+     "snowballstemmer>=2.0",
+     "babel>=2.9",
+     "alabaster>=0.7,<0.8",

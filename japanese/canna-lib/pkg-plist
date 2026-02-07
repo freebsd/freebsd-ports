@@ -1,0 +1,64 @@
+include/canna/RK.h
+include/canna/jrkanji.h
+include/canna/keydef.h
+include/canna/mfdef.h
+include/canna/pubconf.h
+include/canna/sysdep.h
+lib/libRKC.a
+lib/libRKC.so
+lib/libRKC.so.1
+lib/libRKC16.a
+lib/libRKC16.so
+lib/libRKC16.so.1
+lib/libcanna.a
+lib/libcanna.so
+lib/libcanna.so.1
+lib/libcanna16.a
+lib/libcanna16.so
+lib/libcanna16.so.1
+%%DATADIR%%/default.canna
+@(bin,bin,) %%DATADIR%%/dic/default.cbp
+@(bin,bin,) %%DATADIR%%/dic/english.cbp
+@(bin,bin,) %%DATADIR%%/dic/jdaemon.cbp
+@(bin,bin,) %%DATADIR%%/dic/just.cbp
+@(bin,bin,) %%DATADIR%%/dic/kaisoku.cbp
+@(bin,bin,) %%DATADIR%%/dic/kana.cbp
+@(bin,bin,) %%DATADIR%%/dic/lan5.cbp
+@(bin,bin,) %%DATADIR%%/dic/matsu.cbp
+@(bin,bin,) %%DATADIR%%/dic/newjis.cbp
+@(bin,bin,) %%DATADIR%%/dic/romaji.cbp
+@(bin,bin,) %%DATADIR%%/dic/sokuon.cbp
+@(bin,bin,) %%DATADIR%%/dic/tut.cbp
+@(bin,bin,) %%DATADIR%%/dic/vje.cbp
+@(bin,bin,) %%DATADIR%%/dic/wx2+.cbp
+%%DATADIR%%/sample/1.1.canna
+%%DATADIR%%/sample/1.2.canna
+%%DATADIR%%/sample/fixer.canna
+%%DATADIR%%/sample/jdemon.canna
+%%DATADIR%%/sample/just.canna
+%%DATADIR%%/sample/lan5.canna
+%%DATADIR%%/sample/matsu.canna
+%%DATADIR%%/sample/modes.canna
+%%DATADIR%%/sample/sample.canna
+%%DATADIR%%/sample/skk.canna
+%%DATADIR%%/sample/src/default.ctd
+%%DATADIR%%/sample/src/english.ctd
+%%DATADIR%%/sample/src/is.c
+%%DATADIR%%/sample/src/jdaemon.ctd
+%%DATADIR%%/sample/src/just.ctd
+%%DATADIR%%/sample/src/kaisoku.ctd
+%%DATADIR%%/sample/src/kana.ctd
+%%DATADIR%%/sample/src/lan5.ctd
+%%DATADIR%%/sample/src/matsu.ctd
+%%DATADIR%%/sample/src/newjis.ctd
+%%DATADIR%%/sample/src/romaji.ctd
+%%DATADIR%%/sample/src/sokuon.ctd
+%%DATADIR%%/sample/src/tut.ctd
+%%DATADIR%%/sample/src/vje.ctd
+%%DATADIR%%/sample/src/wx2+.ctd
+%%DATADIR%%/sample/tut.canna
+%%DATADIR%%/sample/unix.canna
+%%DATADIR%%/sample/verbose.canna
+%%DATADIR%%/sample/vje.canna
+%%DATADIR%%/sample/wx2+.canna
+@dir(bin,bin,0775) %%DATADIR%%/dic

@@ -1,0 +1,18 @@
+--- src/lib/fte/where.c.orig	2010-02-09 15:32:23.000000000 +0000
++++ src/lib/fte/where.c	2010-02-09 15:35:36.000000000 +0000
+@@ -17,6 +17,15 @@
+ {
+ 	char	*msg;
+ 
++	/*CDHW typing where with no current circuit caused crashes CDHW*/
++	if (!ft_curckt) {
++		fprintf(cp_err, "There is no current circuit\n");
++		return;
++	}
++	else if (ft_curckt->ci_ckt != "") {
++		fprintf(cp_err, "No unconverged node found.\n");
++	  return;
++	}
+ 	msg = (*ft_sim->nonconvErr)((GENERIC *) (ft_curckt->ci_ckt), 0);
+ 
+ 	printf("%s", msg);

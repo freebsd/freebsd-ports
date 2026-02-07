@@ -1,0 +1,19 @@
+--- Makefile.orig	2020-03-03 01:38:48 UTC
++++ Makefile
+@@ -25,7 +25,7 @@ SHELL = /bin/sh
+ INSTALL = install
+ INSTALL_PROGRAM = ${INSTALL}
+ INSTALL_DATA = ${INSTALL} -m 644
+-INSTALL_INFO = ginstall-info
++INSTALL_INFO = install-info
+ 
+ CHPAT = $(HOME)/bin/chpat
+ MAKEDEV = $(MAKE) -f $(HOME)/makefile.dev
+@@ -196,7 +196,6 @@ install-script: jacal.sh installdirs
+ 	$(INSTALL_DATA) go-scm $(DESTDIR)$(jacallibdir)go.scm
+ 	rm go-scm
+ 	echo '#! /bin/sh'			   > jacal-script
+-	grep -h ^SCHEME_LIBRARY_PATH= `which slib`>> jacal-script
+ 	echo export SCHEME_LIBRARY_PATH		  >> jacal-script
+ 	echo JACALDIR=$(DESTDIR)$(jacallibdir)	  >> jacal-script
+ 	echo VERSION=$(VERSION)			  >> jacal-script

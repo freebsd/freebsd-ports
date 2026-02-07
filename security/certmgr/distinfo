@@ -1,0 +1,5 @@
+TIMESTAMP = 1676641196
+SHA256 (cloudflare-certmgr-v3.0.3_GH0.tar.gz) = 61c1b23cd11224eab8f1f11b96a3b5753019b515a5fc0a0ae668145a616129d8
+SIZE (cloudflare-certmgr-v3.0.3_GH0.tar.gz) = 2633953
+SHA256 (golang-sys-v0.5.0_GH0.tar.gz) = 810c8f1b7704674971ab6b2b614aba20a5a1765018fd2c639f528dbbcbf88b1f
+SIZE (golang-sys-v0.5.0_GH0.tar.gz) = 1429723

@@ -1,0 +1,24 @@
+PORTNAME=	cloud-nuke
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.46.0
+PORTREVISION=	2
+CATEGORIES=	sysutils
+
+MAINTAINER=	dutra@FreeBSD.org
+COMMENT=	Cleaning up your cloud accounts
+WWW=		https://github.com/gruntwork-io/cloud-nuke
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		cpe go:modules
+
+CPE_VENDOR=	gruntwork-io
+GO_MODULE=	github.com/gruntwork-io/cloud-nuke
+GO_BUILDFLAGS=	-ldflags "\
+		-s -w \
+		-X main.VERSION=${DISTVERSION}"
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

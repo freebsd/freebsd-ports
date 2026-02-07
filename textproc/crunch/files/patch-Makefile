@@ -1,0 +1,24 @@
+--- Makefile.orig	2014-05-03 17:04:11 UTC
++++ Makefile
+@@ -38,15 +38,18 @@ DOCDIR	    = $(PREFIX)/share/doc/$(PACKA
+ MANDIR	    = $(PREFIX)/share/man/man1
+ 
+ INSTALL	    = sudo $(shell which install)
+-CC	    = $(shell which gcc)
++CC	    ?= $(shell which gcc)
+ LIBFLAGS    = -lm
+ THREADFLAGS = -pthread
+ OPTFLAGS    = -g -o0
+ LINTFLAGS   = -Wall -pedantic
+ CFLAGS_STD  = $(THREADFLAGS) $(LINTFLAGS) -std=c99
+ VCFLAGS	    = $(CFLAGS_STD) $(OPTFLAGS)
+-LFS	    = $(shell getconf POSIX_V6_ILP32_OFFBIG_CFLAGS)
+-
++ifeq ($(UNAME_LOOKUP),!FreeBSD)
++  LFS	    = $(shell getconf POSIX_V6_ILP32_OFFBIG_CFLAGS)
++else
++  INSTALL_OPTIONS = -g wheel -o root
++endif
+ ifeq ($(UNAME_LOOKUP),Darwin)
+ #Darwin = OS X, and os x does not use root root as stated in email
+   INSTALL_OPTIONS = -g wheel -o root

@@ -1,0 +1,26 @@
+--- linuxdoom-1.10/Makefile.orig	Mon Dec 22 20:55:36 1997
++++ linuxdoom-1.10/Makefile	Fri Oct 28 12:44:09 2005
+@@ -4,11 +4,12 @@
+ #
+ # $Log:$
+ #
+-CC=  gcc  # gcc or g++
++CC?=  gcc  # gcc or g++
+ 
+-CFLAGS=-g -Wall -DNORMALUNIX -DLINUX # -DUSEASM 
+-LDFLAGS=-L/usr/X11R6/lib
+-LIBS=-lXext -lX11 -lnsl -lm
++CFLAGS?= -O
++CFLAGS+=-g -I%%LOCALBASE%%/include -Wall -DNORMALUNIX -DSNDSERV -DSNDSRV # -DUSEASM 
++LDFLAGS=-L%%LOCALBASE%%/lib
++LIBS=-lXext -lX11 -lm
+ 
+ # subdirectory for objects
+ O=linux
+@@ -92,4 +93,4 @@
+ 
+ #############################################################
+ #
+-#############################################################
+\ No newline at end of file
++#############################################################

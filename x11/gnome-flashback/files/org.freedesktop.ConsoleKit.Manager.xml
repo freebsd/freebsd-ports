@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.freedesktop.ConsoleKit.Manager">
+    <annotation name="org.gtk.GDBus.C.Name" value="ConsoleKitManagerGen" />
+
+    <method name="GetSessionForCookie">
+      <arg name="session_id" type="s" direction="in" />
+      <arg name="object_path" type="o" direction="out" />
+    </method>
+
+    <method name="Inhibit">
+      <annotation name="org.gtk.GDBus.C.UnixFD" value="true" />
+      <arg name="what" type="s" direction="in" />
+      <arg name="who" type="s" direction="in" />
+      <arg name="why" type="s" direction="in" />
+      <arg name="mode" type="s" direction="in" />
+      <arg name="pipe_fd" type="h" direction="out" />
+    </method>
+
+    <signal name="PrepareForSleep">
+      <arg name="start" type="b" direction="out" />
+    </signal>
+
+  </interface>
+</node>

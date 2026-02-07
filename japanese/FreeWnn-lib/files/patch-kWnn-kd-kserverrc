@@ -1,0 +1,18 @@
+Index: kWnn/kd/kserverrc
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/kWnn/kd/kserverrc,v
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -u -p -r1.1.1.1 -r1.3
+--- kWnn/kd/kserverrc	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ kWnn/kd/kserverrc	2 Jan 2009 21:56:38 -0000	1.3
+@@ -29,6 +29,9 @@
+ ; Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ ;
+ 
++listenaddr 127.0.0.1
++listenaddr ::1
++
+ max_client 64
+ 
+ jserver_dir	@LIBDIR/@LANG/dic

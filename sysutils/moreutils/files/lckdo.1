@@ -1,0 +1,97 @@
+'\" t
+.\"     Title: lckdo
+.\"    Author: Michael Tokarev
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 2007-08-15
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "LCKDO" "1" "2007\-08\-15" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+lckdo \- run a program with a lock held
+.SH "SYNOPSIS"
+.HP \w'\fBlckdo\fR\ 'u
+\fBlckdo\fR [options] {lockfile} {program} [arguments]
+.SH "DESCRIPTION"
+.PP
+\fBlckdo\fR
+runs a program with a lock held, in order to prevent multiple processes from running in parallel\&. Use just like
+\fBnice\fR
+or
+\fBnohup\fR\&.
+.PP
+Now that util\-linux contains a similar command named
+\fBflock\fR, lckdo is deprecated, and will be removed from some future version of moreutils\&.
+.SH "OPTIONS"
+.PP
+\fB\-w\fR
+.RS 4
+If the lock is already held by another process, wait for it to complete instead of failing immediately\&.
+.RE
+.PP
+\fB\-W {sec}\fR
+.RS 4
+The same as \-w but wait not more than sec seconds\&.
+.RE
+.PP
+\fB\-e\fR
+.RS 4
+Execute the program directly without forking and waiting (keeps an extra file descriptor open)\&.
+.RE
+.PP
+\fB\-E {nnn}\fR
+.RS 4
+Set the file descriptor number to keep open when exec()ing (implies \-e)\&.
+.RE
+.PP
+\fB\-n\fR
+.RS 4
+Do not create the lock file if it does not exist\&.
+.RE
+.PP
+\fB\-q\fR
+.RS 4
+Produce no output if lock is already held\&.
+.RE
+.PP
+\fB\-s\fR
+.RS 4
+Lock in shared (read) mode\&.
+.RE
+.PP
+\fB\-x\fR
+.RS 4
+Lock in exclusive (write) mode (default)\&.
+.RE
+.PP
+\fB\-t\fR
+.RS 4
+Test for lock existence\&.
+.RE
+.SH "EXIT STATUS"
+.PP
+If the lock was successfully acquired, the return value is that of the program invoked by
+\fBlckdo\fR\&. If the lock couldn\*(Aqt be acquired, EX_TEMPFAIL is returned\&. If there was a problem opening/creating or locking the lock file, EX_CANTCREAT or EX_OSERR will be returned\&.
+.SH "AUTHOR"
+.PP
+Michael Tokarev

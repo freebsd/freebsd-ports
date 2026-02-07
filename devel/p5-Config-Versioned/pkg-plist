@@ -1,0 +1,3 @@
+bin/cfgver
+%%PERL5_MAN3%%/Config::Versioned.3.gz
+%%SITE_PERL%%/Config/Versioned.pm

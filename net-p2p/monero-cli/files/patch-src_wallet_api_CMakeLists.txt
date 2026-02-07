@@ -1,0 +1,9 @@
+--- src/wallet/api/CMakeLists.txt.orig	2025-10-07 19:25:41 UTC
++++ src/wallet/api/CMakeLists.txt
+@@ -90,6 +90,3 @@ endif()
+ else()
+     set(lib_folder lib)
+ endif()
+-
+-install(FILES ${wallet_api_headers}
+-    DESTINATION include/wallet/api)

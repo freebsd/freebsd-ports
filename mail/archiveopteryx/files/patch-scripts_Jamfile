@@ -1,0 +1,11 @@
+--- scripts/Jamfile.orig
++++ scripts/Jamfile
+@@ -15,7 +15,7 @@
+ }
+ 
+ 
+-ShellScript archiveopteryx ;
++# ShellScript archiveopteryx ;
+ 
+ 
+ rule ContribScript {

@@ -1,0 +1,48 @@
+bin/bsqldb
+bin/datacopy
+bin/defncopy
+bin/fisql
+bin/freebcp
+bin/osql
+bin/tdspool
+bin/tsql
+@sample %%ETCDIR%%/freetds.conf.sample
+@sample %%ETCDIR%%/interfaces.sample
+@sample %%ETCDIR%%/locales.conf.sample
+@sample %%ETCDIR%%/pool.conf.sample
+include/bkpublic.h
+include/cspublic.h
+include/cstypes.h
+include/ctpublic.h
+include/sqldb.h
+include/sqlfront.h
+include/sybdb.h
+include/syberror.h
+include/sybfront.h
+include/tds_sysdep_public.h
+include/odbcss.h
+share/man/man1/datacopy.1.gz
+share/man/man1/freebcp.1.gz
+share/man/man1/tsql.1.gz
+share/man/man1/bsqldb.1.gz
+share/man/man1/bsqlodbc.1.gz
+share/man/man1/defncopy.1.gz
+share/man/man1/fisql.1.gz
+share/man/man1/osql.1.gz
+share/man/man5/freetds.conf.5.gz
+lib/libct.a
+lib/libct.la
+lib/libct.so
+lib/libct.so.4
+lib/libct.so.4.0.0
+lib/libsybdb.a
+lib/libsybdb.la
+lib/libsybdb.so
+lib/libsybdb.so.5
+lib/libsybdb.so.5.1.0
+%%ODBC%%lib/libtdsodbc.so.0.0.0
+%%ODBC%%lib/libtdsodbc.so.0
+%%ODBC%%lib/libtdsodbc.so
+%%ODBC%%lib/libtdsodbc.la
+%%ODBC%%lib/libtdsodbc.a
+%%ODBC%%bin/bsqlodbc

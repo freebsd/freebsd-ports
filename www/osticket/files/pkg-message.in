@@ -1,0 +1,31 @@
+[
+{ type: install,
+  message: <<EOM
+If you selected to build the docs, see also files in directory
+%%DOCSDIR%%
+
+You may also want to set up a cronjob for processing incoming
+e-mail messages.
+
+For detailed information on installation and configuration, see:
+https://docs.osticket.com/en/latest/Getting%20Started/Installation.html
+
+BEWARE: After osTicket setup, do not forget to remove write permissions
+from %%WWWDIR%%/include/ost-config.php
+EOM
+},
+{ type: upgrade,
+  message: <<EOM
+See https://github.com/osTicket/osTicket/releases for full changelog and
+release information.
+
+For detailed information on installation and configuration, see:
+https://docs.osticket.com/en/latest/Getting%20Started/Installation.html
+
+See also files in %%DOCSDIR%%
+
+BEWARE: After upgrade, the first access to the osTicket instance may
+trigger the upgrade wizard.
+EOM
+}
+]

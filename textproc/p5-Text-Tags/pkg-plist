@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Text/Tags.pm
+%%SITE_PERL%%/Text/Tags/Parser.pm
+%%PERL5_MAN3%%/Text::Tags.3.gz
+%%PERL5_MAN3%%/Text::Tags::Parser.3.gz

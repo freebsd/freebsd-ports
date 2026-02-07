@@ -1,0 +1,2 @@
+This class provides support for database URIs. They're inspired by
+JDBC URIs and PostgreSQL URIs, though they're a bit more formal.

@@ -1,0 +1,3 @@
+Library and utilities required to program and interact with a bladeRF platform,
+including firmware for the Cypress FX3 USB controller, HDL for the Altera
+Cyclone IV FPGA, and C code for the host side libraries, drivers, and utilities.

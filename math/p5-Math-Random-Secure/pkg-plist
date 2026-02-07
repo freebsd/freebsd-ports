@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Math/Random/Secure.pm
+%%SITE_PERL%%/Math/Random/Secure/RNG.pm
+%%PERL5_MAN3%%/Math::Random::Secure.3.gz
+%%PERL5_MAN3%%/Math::Random::Secure::RNG.3.gz

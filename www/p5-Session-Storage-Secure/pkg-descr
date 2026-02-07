@@ -1,0 +1,4 @@
+This module implements a secure way to encode session data.  It is
+primarily intended for storing session data in browser cookies, but
+could be used with other backend storage where security of stored
+session data is important.

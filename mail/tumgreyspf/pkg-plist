@@ -1,0 +1,11 @@
+bin/tumgreyspf
+bin/tumgreyspf-clean
+bin/tumgreyspf-configtest
+bin/tumgreyspf-gentest
+bin/tumgreyspf-stat
+@sample etc/tumgreyspf.conf.sample
+%%PYTHON_SITELIBDIR%%/tumgreyspfsupp.py
+@sample %%DATADIR%%/__default__.sample
+@dir(%%TUMGREYSPF_USER%%,%%TUMGREYSPF_GROUP%%,700) %%TUMGREYSPF_DIR%%/data
+@dir(,,755) %%TUMGREYSPF_DIR%%/config
+@dir(%%TUMGREYSPF_USER%%,%%TUMGREYSPF_GROUP%%,755) %%TUMGREYSPF_DIR%%

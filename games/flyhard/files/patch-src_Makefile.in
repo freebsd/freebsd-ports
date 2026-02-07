@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	2009-02-15 15:44:02 UTC
++++ src/Makefile.in
+@@ -597,9 +597,9 @@ uninstall-am: uninstall-binPROGRAMS unin
+ #since automake doesn't directly put anything in $(savedir), it may not exist
+ install-data-hook:
+ 	@echo "Creating blank hi-score file"
+-	mkdir -p $(savedir)
+-	touch $(savedir)/scores
+-	chmod a+rw $(savedir)/scores
++	mkdir -p $(DESTDIR)$(savedir)
++	touch $(DESTDIR)$(savedir)/scores
++	chmod a+rw $(DESTDIR)$(savedir)/scores
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

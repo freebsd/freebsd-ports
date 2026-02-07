@@ -1,0 +1,10 @@
+libexec/peda/lib/config.py
+libexec/peda/lib/nasm.py
+libexec/peda/lib/shellcode.py
+libexec/peda/lib/six.py
+libexec/peda/lib/skeleton.py
+libexec/peda/lib/utils.py
+libexec/peda/peda.py
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/python23-compatibility.md

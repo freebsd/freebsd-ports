@@ -1,0 +1,23 @@
+bin/gnarwl
+etc/gnarwl.cfg.sample
+share/man/man8/damnit.8.gz
+share/man/man8/gnarwl.8.gz
+sbin/damnit
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.gz
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY.gz
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/ISPEnv.schema
+%%PORTDOCS%%%%DOCSDIR%%/ISPEnv2.schema
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example.ldif
+var/lib/gnarwl/.forward
+var/lib/gnarwl/badheaders.db.sample
+var/lib/gnarwl/blacklist.db.sample
+var/lib/gnarwl/badheaders.txt.sample
+var/lib/gnarwl/blacklist.txt.sample
+var/lib/gnarwl/header.txt.sample
+var/lib/gnarwl/footer.txt.sample
+@dir var/lib/gnarwl/bin
+@dir var/lib/gnarwl/block

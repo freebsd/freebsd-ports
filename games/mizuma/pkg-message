@@ -1,0 +1,24 @@
+[
+{
+  message: <<EOM
+An application shortcut for the desktop will be not created by the port.
+
+To open the main gui type: Mizuma
+
+The following commandline tasks are currently available:
+
+Mizuma Install $APPNAME
+Mizuma Launch $APPNAME
+Mizuma Uninstall $APPNAME
+Mizuma Kill $APPNAME
+Mizuma Winetricks $APPNAME
+Mizuma List Library
+Mizuma List Installed
+
+For further possibly helpful information take a look at:
+https://codeberg.org/Alexander88207/Mizutamari
+
+Enjoy!
+EOM
+}
+]

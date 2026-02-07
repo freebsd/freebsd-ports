@@ -1,0 +1,2 @@
+ast2json is a Python module that allows to convert a python source code into
+json-dumpable syntax tree data (dict and lists with strings, ints, ...).

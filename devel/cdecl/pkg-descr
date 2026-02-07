@@ -1,0 +1,4 @@
+Cdecl composes compilable C declarations and typecasts from descriptive
+English phrases, and can also explain a complicated typecast or declaration.
+It handles ANSI C, C++, pre-ANSI C, and K&R C, and has TAB completion of
+keywords and line editing and history (provided by the GNU readline library).

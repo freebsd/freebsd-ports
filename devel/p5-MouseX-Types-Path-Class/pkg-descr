@@ -1,0 +1,3 @@
+MouseX::Types::Path::Class creates common Mouse types,
+coercions and option specifications useful for dealing with Path::Class
+objects as Mouse attributes.

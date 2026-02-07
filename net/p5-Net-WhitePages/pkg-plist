@@ -1,0 +1,3 @@
+bin/wpfind
+%%SITE_PERL%%/Net/WhitePages.pm
+%%PERL5_MAN3%%/Net::WhitePages.3.gz

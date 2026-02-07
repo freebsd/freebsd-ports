@@ -1,0 +1,5 @@
+A plugin which allows to compare results with canonical results,
+based on previous runs.
+
+Inspired by Yandex's canondata plugin, pytest-needle and
+pytest-regtest.

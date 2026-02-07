@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-05-05 19:00:49 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ readme = "README.rst"
+ ]
+ requires-python = ">=3.9"
+ readme = "README.rst"
+-license = "Apache-2.0"
++license = {file = "LICENSE"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Web Environment",
+@@ -43,7 +43,7 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.3",
++    "setuptools",
+     "setuptools-scm",
+     "wheel",
+ ]

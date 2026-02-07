@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2024-06-25 07:08:14 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ # https://peps.python.org/pep-0517/
+ [build-system]
+-requires = ["setuptools>=64"]
++requires = ["setuptools>=63"]
+ build-backend = "setuptools.build_meta"
+ 
+ # https://peps.python.org/pep-0621/

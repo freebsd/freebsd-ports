@@ -1,0 +1,11 @@
+%%JACK%%bin/sfizz_jack
+bin/sfizz_render
+include/sfizz.h
+include/sfizz.hpp
+include/sfizz_message.h
+lib/libsfizz.so
+lib/libsfizz.so.1
+lib/libsfizz.so.1.2.3
+libdata/pkgconfig/sfizz.pc
+share/man/man1/sfizz_jack.1.gz
+share/man/man1/sfizz_render.1.gz

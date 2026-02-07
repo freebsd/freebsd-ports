@@ -1,0 +1,11 @@
+--- configure.ac.orig	2024-04-18 23:56:19 UTC
++++ configure.ac
+@@ -27,7 +27,7 @@ if test "$GCC" = "yes"; then
+ 
+ if test "$GCC" = "yes"; then
+         WARNINGS="-Wall -Wdeclaration-after-statement -Wredundant-decls"
+-        CFLAGS="-O2 -g $WARNINGS $CFLAGS"
++        CFLAGS="$WARNINGS $CFLAGS"
+ fi
+ 
+ dnl network libraries; not all systems have the sockets API in their libc:

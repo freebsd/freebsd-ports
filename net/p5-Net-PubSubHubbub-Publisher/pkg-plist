@@ -1,0 +1,3 @@
+bin/pubsubhubbub-publish
+%%SITE_PERL%%/Net/PubSubHubbub/Publisher.pm
+%%PERL5_MAN3%%/Net::PubSubHubbub::Publisher.3.gz

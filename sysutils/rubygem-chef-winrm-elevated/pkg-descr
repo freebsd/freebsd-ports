@@ -1,0 +1,6 @@
+Runs PowerShell commands as elevated over Windows Remote Management (WinRM) via
+a scheduled task
+
+This gem allows you to break out of the magical WinRM constraints thus allowing
+to reach out to network shares and even install Windows updates, .NET, SQL
+Server etc.

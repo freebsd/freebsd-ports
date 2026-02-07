@@ -1,0 +1,9 @@
+PROG=	rblcheck
+MK_MAN=	no
+
+CFLAGS+=	-DPACKAGE='"${PORTNAME}"' -DVERSION='"${PORTVERSION}"'
+CFLAGS+=	-DSTDC_HEADERS
+
+WARNS=	2
+
+.include <bsd.prog.mk>

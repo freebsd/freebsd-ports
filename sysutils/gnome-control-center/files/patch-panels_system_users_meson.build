@@ -1,0 +1,11 @@
+--- panels/system/users/meson.build.orig	2025-02-04 21:56:28 UTC
++++ panels/system/users/meson.build
+@@ -110,7 +110,7 @@ sources += gnome.gdbus_codegen(
+ )
+ 
+ # Kerberos support
+-krb_dep = dependency('krb5', required: false)
++krb_dep = cc.find_library('krb5')
+ assert(krb_dep.found(), 'kerberos libraries not found in your path')
+ 
+ cflags += [

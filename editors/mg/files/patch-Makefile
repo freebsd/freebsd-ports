@@ -1,0 +1,12 @@
+--- Makefile.orig	2023-10-22 13:42:02 UTC
++++ Makefile
+@@ -29,9 +29,4 @@ SRCS+=	cmode.c cscope.c dired.c grep.c interpreter.c t
+ #
+ #SRCS+=	log.c
+ 
+-afterinstall:
+-	${INSTALL} -d -o root -g wheel ${DESTDIR}${DOCDIR}/mg
+-	${INSTALL} ${INSTALL_COPY} -o ${DOCOWN} -g ${DOCGRP} -m ${DOCMODE} \
+-	    ${.CURDIR}/tutorial ${DESTDIR}${DOCDIR}/mg
+-
+ .include <bsd.prog.mk>

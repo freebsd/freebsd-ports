@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/Object.pm
+%%SITE_PERL%%/Test/Object/Test.pm
+%%PERL5_MAN3%%/Test::Object.3.gz

@@ -1,0 +1,3 @@
+bin/checklink
+%%PERL5_MAN1%%/checklink.1.gz
+%%SITE_PERL%%/W3C/LinkChecker.pm

@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Only the tkinter standard extension module is included or supported;
+the previous ports now only support Python 3+.
+EOM
+}
+]

@@ -1,0 +1,12 @@
+There are several formats used to present geographic coordinates.
+
+Geo::Coordinates::Transform converts a list of provided latitude and longitude
+coordinates in any of the three formats above (mixed input is ok) and converts
+to the desired format. Note that special characters or non-numerical characters
+such as " will throw an warning and return NaN for that list item.
+
+In addition, the input does not interpert N,S,W,E designators but expects
+coordinates to be in positive or negative representation.
+
+Format of the output can be controlled via input arguments in the constructor.
+The arguments are expected to be in the form of a hash reference.

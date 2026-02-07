@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: dkimproxy_in
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dkimproxy.in:
+#
+# dkimproxy_in_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=dkimproxy_in
+rcvar=dkimproxy_in_enable
+
+# set defaults
+: ${dkimproxy_in_enable="NO"}
+
+command_interpreter=%%PERL%%
+command=%%PREFIX%%/bin/dkimproxy.in
+required_files=%%PREFIX%%/etc/${name}.conf
+dkimproxy_in_user=%%DKIMPROXYUSER%%
+command_args="--conf_file=${required_files} --user=${dkimproxy_in_user} --daemonize"
+
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+# dkimproxy_in/out return 0 even if startup failed
+start_postcmd(){
+	pid=$( check_process ${command} ${command_interpreter} )
+	if [ -n "${pid}" ]; then
+		echo "Starting ${name} done."
+		logger -t ${name} "Starting ${name}"
+	else
+		echo "Starting ${name} failed."
+		logger -t ${name} "Starting ${name} failed"
+	fi
+}
+
+stop_postcmd(){
+	logger -t ${name} "Stopped ${name}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

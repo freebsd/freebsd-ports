@@ -1,0 +1,4 @@
+bin/wgetpaste
+etc/wgetpaste.conf.sample
+etc/wgetpaste.d/zlin.conf
+share/zsh/site-functions/_wgetpaste

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Term/TermKey.pm
+%%SITE_ARCH%%/auto/Term/TermKey/TermKey.so
+%%PERL5_MAN3%%/Term::TermKey.3.gz

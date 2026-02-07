@@ -1,0 +1,11 @@
+A user-space utility for testing the memory subsystem for faults.  It is
+portable and should compile and work on any 32- or 64-bit Unix-like system.
+(Yes, even weird, proprietary Unices, and even Mac OS X.)  For hardware
+developers, memtester can be told to test memory starting at a particular
+physical address as of memtester version 4.1.0.
+
+The original source was by Simon Kirby <sim@stormix.com>.  The program has
+been rewritten by Charles Cazabon and many additional tests were added to
+help catch borderline memory.  He also rewrote the original tests (which
+catch mainly memory bits which are stuck permanently high or low) so that
+they run approximately an order of magnitude faster.

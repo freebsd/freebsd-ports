@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2021-01-28 21:06:02 UTC
++++ Makefile.in
+@@ -311,7 +311,7 @@ am__dirstamp = $(am__leading_dot)dirstamp
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+ am__dirstamp = $(am__leading_dot)dirstamp
+-INFO_DEPS = $(srcdir)/doc/autoconf.info $(srcdir)/doc/standards.info
++INFO_DEPS = $(srcdir)/doc/autoconf.info
+ am__TEXINFO_TEX_DIR = $(srcdir)/build-aux
+ DVIS = doc/autoconf.dvi doc/standards.dvi
+ PDFS = doc/autoconf.pdf doc/standards.pdf

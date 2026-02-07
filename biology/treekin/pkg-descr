@@ -1,0 +1,3 @@
+treekin  computes folding dynamics on coarse grained version of an energy
+landscape, where all conformations belonging to the same local minimum have
+been contracted into a single macro-state.

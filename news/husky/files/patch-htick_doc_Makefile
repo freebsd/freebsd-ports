@@ -1,0 +1,37 @@
+--- htick/doc/Makefile.orig	2020-01-16 21:50:04 UTC
++++ htick/doc/Makefile
+@@ -19,21 +19,21 @@ endif
+ all: html info dvi
+ 
+ ifdef HTMLDIR
+-html: htick.html htick.rus.html
++html: htick.html
+ else
+ html:
+ 	@echo
+ endif
+ 
+ ifdef DVIDIR
+-dvi: htick.dvi htick.rus.dvi
++dvi: htick.dvi
+ else
+ dvi:
+ 	@echo
+ endif
+ 
+ ifdef INFODIR
+-info: htick.info htick.rus.info
++info: htick.info
+ else
+ info:
+ 	@echo
+@@ -73,8 +73,7 @@ install: info html dvi
+ 	@echo .
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(INFODIR)
+-	$(INSTALL) $(IMOPT) htick.info htick.rus.info $(DESTDIR)$(INFODIR)
+-	-install-info --info-dir=$(DESTDIR)$(INFODIR)  $(DESTDIR)$(INFODIR)$(DIRSEP)htick.info
++	$(INSTALL) $(IMOPT) htick.info $(DESTDIR)$(INFODIR)
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(HTMLDIR)

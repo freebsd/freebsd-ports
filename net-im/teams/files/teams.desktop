@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=Microsoft Teams
+Comment=Unofficial Microsoft Teams client using Electron. It uses the Web App and wraps it as a standalone application using Electron.
+Icon=teams
+Exec=teams %U
+Categories=Chat;Network;Office;
+Terminal=false
+StartupWMClass=Microsoft Teams
+MimeType=x-scheme-handler/msteams;

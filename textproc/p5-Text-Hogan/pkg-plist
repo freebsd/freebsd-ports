@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Text/Hogan.pm
+%%SITE_PERL%%/Text/Hogan/Compiler.pm
+%%SITE_PERL%%/Text/Hogan/Template.pm
+%%PERL5_MAN3%%/Text::Hogan.3.gz
+%%PERL5_MAN3%%/Text::Hogan::Compiler.3.gz
+%%PERL5_MAN3%%/Text::Hogan::Template.3.gz

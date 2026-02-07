@@ -1,0 +1,5 @@
+include/parmetis/metis.h
+include/parmetis/parmetis.h
+%%STATIC%%lib/libparmetis.a
+%%NO_STATIC%%lib/libparmetis.so
+%%NO_STATIC%%lib/libparmetis.so.2

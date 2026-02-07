@@ -1,0 +1,3 @@
+The Python X Library is a complete X11R6 client-side implementation
+written in pure Python. It can be used to write low-level X client
+applications in Python.

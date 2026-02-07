@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-12-04 15:00:00 UTC
++++ Makefile.in
+@@ -209,7 +209,7 @@ install:
+ 	$(inst_file) desktop/azpainterb.png $(DESTDIR)$(datarootdir)/icons/hicolor/48x48/apps
+ 	$(inst_file) desktop/azpainterb.svg $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps
+ 
+-	$(inst_file) GPL3 AUTHORS ChangeLog ReadMe_en ReadMe_ja manual_ja.html $(DESTDIR)$(docdir)
++	$(inst_file) AUTHORS ChangeLog ReadMe_en ReadMe_ja manual_ja.html $(DESTDIR)$(docdir)
+ 
+ 	$(inst_file) data/brushlist.dat data/grad.dat data/sckey.conf \
+ 	 data/coltype.png data/icon.png data/texlib.dat \

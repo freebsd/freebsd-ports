@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-04-04 14:11:53 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ SDL_LIBS = `sdl2-config --libs` -lSDL2_mixer -lGL
+ 
+ DEFINES = -DBYPASS_PROTECTION
+ 
+-CXXFLAGS := -g -O -MMD -Wall $(SDL_CFLAGS) $(DEFINES)
++CXXFLAGS += -fPIC -MMD -Wall $(SDL_CFLAGS) $(DEFINES)
+ 
+ SRCS = aifcplayer.cpp bitmap.cpp file.cpp engine.cpp graphics_gl.cpp graphics_soft.cpp \
+ 	script.cpp mixer.cpp pak.cpp resource.cpp resource_mac.cpp resource_nth.cpp \

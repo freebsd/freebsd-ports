@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: snowflake
+# REQUIRE: cleanvar SERVERS
+#
+# Options to configure it via /etc/rc.conf:
+#
+# snowflake_enable (bool)	Enable service on boot. Default: NO
+# snowflake_broker (str)	Broker URL.		Default: https://snowflake-broker.torproject.net/
+# snowflake_capacity (int)	Clients capacity.	Default: 10
+# snowflake_relay (str)		Websocket relay URL.	Default: wss://snowflake.torproject.net/
+# snowflake_stun (str)		STUN URL.		Default: stun:stun.stunprotocol.org:3478
+
+. /etc/rc.subr
+
+name="snowflake"
+rcvar="${name}_enable"
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
+procname="%%PREFIX%%/bin/${name}-proxy"
+
+load_rc_config $name
+
+: ${snowflake_enable:="NO"}
+: ${snowflake_broker:="https://snowflake-broker.torproject.net/"}
+: ${snowflake_capacity:="10"}
+: ${snowflake_relay:="wss://snowflake.torproject.net/"}
+: ${snowflake_stun:="stun:stun.stunprotocol.org:3478"}
+
+command="/usr/sbin/daemon"
+snowflake_opts1="-broker ${snowflake_broker} -capacity ${snowflake_capacity}"
+snowflake_opts2="-relay ${snowflake_relay} -stun ${snowflake_stun}"
+command_args="-p ${pidfile} -u nobody -o ${logfile} -f ${procname} ${snowflake_opts1} ${snowflake_opts2}"
+
+run_rc_command "$1"

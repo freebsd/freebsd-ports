@@ -1,0 +1,24 @@
+--- ./Makefile.orig	2008-11-24 02:41:02.000000000 -0600
++++ ./Makefile	2010-07-22 17:20:57.000000000 -0500
+@@ -4,9 +4,9 @@
+ ## Author: Bob Jamison
+ #################################################
+ 
+-CC      = gcc
+-CFLAGS  = -O -arch i386 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.4
+-LDFLAGS = -static -arch ppc -isysroot /Developer/SDKs/MacOSX10.4u.sdk
++CC      ?= gcc
++CFLAGS  ?= -O
++LDFLAGS = -static
+ TAR     = tar
+ GZIP    = gzip
+ VERS    = byaccj1.15
+@@ -75,7 +75,7 @@
+ 	$(CC) -c $(CFLAGS) $(INC) $< -o $@
+ 
+ yacc: $(OBJ)
+-	$(CC) -o yacc -arch i386 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.4 $(OBJ)
++	$(CC) -o yacc ${OBJ}
+ 	@echo "done"
+ 
+ clean:

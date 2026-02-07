@@ -1,0 +1,46 @@
+--- Makefile.orig	2024-05-03 16:02:54 UTC
++++ Makefile
+@@ -314,29 +314,6 @@ $(BR)/.deps.ok:
+ 	@echo " DISABLED_PLUGINS  = $(DISABLED_PLUGINS)"
+ 
+ $(BR)/.deps.ok:
+-ifeq ($(findstring y,$(UNATTENDED)),y)
+-	$(MAKE) install-dep
+-endif
+-ifeq ($(filter ubuntu debian linuxmint,$(OS_ID)),$(OS_ID))
+-	@MISSING=$$(apt-get install -y -qq -s $(DEB_DEPENDS) | grep "^Inst ") ; \
+-	if [ -n "$$MISSING" ] ; then \
+-	  echo "\nPlease install missing packages: \n$$MISSING\n" ; \
+-	  echo "by executing \"make install-dep\"\n" ; \
+-	  exit 1 ; \
+-	fi ; \
+-	exit 0
+-else ifneq ("$(wildcard /etc/redhat-release)","")
+-	@for i in $(RPM_DEPENDS) ; do \
+-	    RPM=$$(basename -s .rpm "$${i##*/}" | cut -d- -f1,2,3,4)  ;	\
+-	    MISSING+=$$(rpm -q $$RPM | grep "^package")	   ;    \
+-	done							   ;	\
+-	if [ -n "$$MISSING" ] ; then \
+-	  echo "Please install missing RPMs: \n$$MISSING\n" ; \
+-	  echo "by executing \"make install-dep\"\n" ; \
+-	  exit 1 ; \
+-	fi ; \
+-	exit 0
+-endif
+ 	@touch $@
+ 
+ .PHONY: bootstrap
+@@ -696,13 +673,6 @@ pkg-srpm: dist
+ .PHONY: pkg-srpm
+ pkg-srpm: dist
+ 	$(MAKE) -C extras/rpm srpm
+-
+-.PHONY: install-ext-deps
+-install-ext-deps:
+-	$(MAKE) -C build/external install-$(PKG)
+-
+-.PHONY: install-ext-dep
+-install-ext-dep: install-ext-deps
+ 
+ .PHONY: json-api-files
+ json-api-files:

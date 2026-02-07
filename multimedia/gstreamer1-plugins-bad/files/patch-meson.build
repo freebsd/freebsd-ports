@@ -1,0 +1,18 @@
+--- meson.build.orig	2025-03-11 20:14:44 UTC
++++ meson.build
+@@ -567,6 +567,7 @@ pkgconfig_subdirs = ['gstreamer-1.0']
+ 
+ pkgconfig_subdirs = ['gstreamer-1.0']
+ 
++if get_option('pkgconfig').enabled()
+ pkgconfig.generate(
+   libraries : [gst_dep],
+   variables : pkgconfig_variables,
+@@ -574,6 +575,7 @@ pkgconfig.generate(
+   name : 'gstreamer-plugins-bad-1.0',
+   description : 'Streaming media framework, bad plugins libraries',
+ )
++endif
+ 
+ gpl_allowed = get_option('gpl').allowed()
+ 

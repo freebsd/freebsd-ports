@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2023-12-20 18:05:21 UTC
++++ Makefile.in
+@@ -817,7 +817,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f $${locs}; \
+ 	}
+ 
+-libshp.la: $(libshp_la_OBJECTS) $(libshp_la_DEPENDENCIES) $(EXTRA_libshp_la_DEPENDENCIES) 
++$(top_builddir)/libshp.la: $(libshp_la_OBJECTS) $(libshp_la_DEPENDENCIES) $(EXTRA_libshp_la_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(libshp_la_LINK) -rpath $(libdir) $(libshp_la_OBJECTS) $(libshp_la_LIBADD) $(LIBS)
+ 
+ dbfadd$(EXEEXT): $(dbfadd_OBJECTS) $(dbfadd_DEPENDENCIES) $(EXTRA_dbfadd_DEPENDENCIES) 

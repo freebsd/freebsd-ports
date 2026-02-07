@@ -1,0 +1,31 @@
+--- Makefile.orig	2025-08-31 09:07:10 UTC
++++ Makefile
+@@ -1,12 +1,13 @@
+-CC ?= cc
+-CFLAGS = -std=c89 -Wall -pedantic
++CC	?= cc
++CFLAGS	+= -std=c89 -Wall -pedantic
+ 
+-OBJ  = tocaia.o
+-EXEC = tocaia
++OBJ	= tocaia.o
++EXEC	= tocaia
+ 
+-PREFIX ?= /usr/local
+-BINDIR = $(PREFIX)/bin
+-INSTALL ?= install
++PREFIX	?= /usr/local
++BINDIR	= $(PREFIX)/bin
++INSTALL	?= install
++STRIP	?= strip
+ 
+ all: $(EXEC)
+ 
+@@ -24,6 +25,7 @@ install: $(EXEC)
+ install: $(EXEC)
+ 	mkdir -p $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 755 $(EXEC) $(DESTDIR)$(BINDIR)/$(EXEC)
++	$(STRIP) $(DESTDIR)$(BINDIR)/$(EXEC)
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(BINDIR)/$(EXEC)

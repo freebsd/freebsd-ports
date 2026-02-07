@@ -1,0 +1,16 @@
+Port scanning tool written in Go that allows you to enumerate valid
+ports for hosts in a fast and reliable manner. It is a really simple
+tool that does fast SYN/CONNECT/UDP scans on the host/list of hosts
+and lists all ports that return a reply.
+
+Features
+  - Fast And Simple SYN/CONNECT/UDP probe based scanning
+  - Optimized for ease of use and lightweight on resources
+  - DNS Port scan
+  - Automatic IP Deduplication for DNS port scan
+  - IPv4/IPv6 Port scan (experimental)
+  - Passive Port enumeration using Shodan Internetdb
+  - Host Discovery scan (experimental)
+  - NMAP integration for service discovery
+  - Multiple input support - STDIN/HOST/IP/CIDR/ASN
+  - Multiple output format support - JSON/TXT/STDOUT

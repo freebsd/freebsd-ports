@@ -1,0 +1,497 @@
+#!/bin/sh -e
+#
+# rmport - remove port(s) from the FreeBSD Ports Collection.
+#
+# Copyright 2006-2007 Vasil Dimov
+# Copyright 2012-2018 Chris Rees
+# Copyright 2016-2025 René Ladan
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# Authors:
+# Originally written by Vasil Dimov <vd@FreeBSD.org>
+# Others:
+# Chris Rees <crees@FreeBSD.org>
+# René Ladan <rene@FreeBSD.org>
+#
+# MAINTAINER=	crees@FreeBSD.org
+#
+
+EDITOR=${EDITOR:-/usr/bin/vi}
+PORTSDIR=${PORTSDIR:-/usr/ports}
+INDEX=${PORTSDIR}/$(make -C ${PORTSDIR} -V INDEXFILE)
+
+TODAY=$(date -u +%Y-%m-%d)
+
+SED="sed -i .orig -E"
+# use ~/.ssh/config to set up the desired username if different than $LOGNAME
+GITREPO=${GITREPO:-git@gitrepo.FreeBSD.org:ports.git}
+
+if [ -n "$(command -v git 2>/dev/null)" ]; then
+	GIT=git
+else
+	echo "git(1) not found.  Please install devel/git."
+	exit 66
+fi
+
+log()
+{
+	echo "==> $*" >&2
+}
+
+escape()
+{
+	# escape characters that may appear in ports' names and
+	# break regular expressions
+	echo "${1}" |sed -E 's/(\+|\.)/\\\1/g'
+}
+
+pkgname()
+{
+	make -C ${PORTSDIR}/${1} -V PKGNAME
+}
+
+ask()
+{
+	question=${1}
+
+	answer=x
+	while [ "${answer}" != "y" ] && [ "${answer}" != "n" ] ; do
+		read -p "${question}? [yn]" answer
+	done
+
+	echo ${answer}
+}
+
+# return category/port if arg is directly port's directory on the filesystem
+find_catport()
+{
+	arg=${1}
+
+	if [ -d "${PORTSDIR}/${arg}" ] ; then
+		# arg is category/port
+		echo ${arg}
+	elif [ -d "${arg}" ] ; then
+		# arg is the port's directory somewhere in the filesystem
+		# either absolute or relative
+
+		# get the full path
+		rp=$(realpath ${arg})
+
+		category=$(basename $(dirname ${rp}))
+		port=$(basename ${rp})
+		echo ${category}/${port}
+	else
+		echo "What do you mean by '${arg}'?" >&2
+		exit 64
+	fi
+}
+
+find_expired()
+{
+	for category in $(make -C ${PORTSDIR} -V SUBDIR); do
+		for port in $(make -C ${PORTSDIR}/${category} -V SUBDIR); do
+			DATE="$(make -C ${PORTSDIR}/${category}/${port} -V EXPIRATION_DATE)"
+			# shellcheck disable=SC2039
+			if [ -n "${DATE}" ] && [ ! "${DATE}" \> "${TODAY}" ] ; then
+				if [ "$1" = 1 ] ; then
+					echo -n "${DATE} ${category}/${port}: "
+					make -C ${PORTSDIR}/${category}/${port} -V DEPRECATED
+				else
+					echo "${category}/${port}"
+				fi
+			fi
+		done
+	done
+}
+
+# check if some ports depend on the given port
+# XXX Very Little Chance (tm) for breaking INDEX exists:
+# INDEX may be outdated and not contain recently added dependencies
+check_dep_core()
+{
+	catport=${1}
+	alltorm=${2}
+	pkgname=$(pkgname ${catport})
+
+	rmpkgs=""
+	rmcatports=""
+	for torm in ${alltorm} ; do
+		torm="$(echo ${torm} | sed 's/\/$//')"
+		rmpkgs="${rmpkgs:+${rmpkgs}|}$(pkgname ${torm})"
+		rmcatports="${rmcatports:+${rmcatports}|}${PORTSDIR}/${torm}/"
+	done
+
+	err=0
+
+	deps=$(grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :)
+	# Try to avoid false positives from INDEX when a port has just been
+	# removed but INDEX has not yet been updated.
+	# XXX this needs more work, we must look for the dependencies of catport in MOVED
+	in_MOVED=0
+	#MOVED_line="$(grep "${catport}" "${PORTSDIR}/MOVED")"
+	#if [ -z "${MOVED_line}" ] ; then
+	#	in_MOVED=2 # dependent port not found
+	#elif [ "${TODAY}" = "$(echo "${MOVED_line}" | cut -d \| -f 3)" ] ; then
+	#	in_MOVED=1 # dependent port just removed
+	#fi
+	if [ -n "${deps}" ] && [ ${in_MOVED} -eq 0 ] ; then
+		log "${catport}: some port(s) depend on ${pkgname}:"
+		# Skip dependencies in on-screen listing to avoid excessively
+		# long lines. Note that WWW should be field 13 according to
+		# Mk/bsd.port.mk:4492
+		echo "${deps}" | cut -d \| -f -7,10 >&2
+		err=1
+	fi
+
+	# check if some Makefiles mention the port to be deleted
+	portdir_grep="^[^#].*/$(basename ${catport})([[:space:]]|@|/|$)"
+	r="$(${GIT} grep '${portdir_grep}' -- '**Makefile*' 'Mk/' \
+		|grep -vE "^(${rmcatports})" || :)"
+	if [ -n "${r}" ] ; then
+		if [ ${err} -eq 1 ] ; then
+			echo >&2
+		fi
+		log "${catport}: some Makefiles mention ${portdir_grep}:"
+		echo "${r}" >&2
+		err=1
+	fi
+
+	return ${err}
+}
+
+check_dep()
+{
+	catport=${1}
+	persist=${2}
+	alltorm=${3}
+
+	log "${catport}: checking dependencies"
+
+	err=0
+
+	res="$(check_dep_core ${catport} "${alltorm}" 2>&1)" || err=1
+
+	if [ ${err} -eq 0 ] ; then
+		return 0
+	fi
+
+	echo "${res}" |${PAGER:-less}
+
+	if [ ${persist} -eq 0 ] ; then
+		return 0
+	fi
+
+	echo "" >&2
+	echo "you can skip ${catport} and continue with the rest or remove it anyway" >&2
+	answer=$(ask "do you want to skip ${catport}")
+	if [ "${answer}" = "y" ] ; then
+		return 1
+	else
+		return 0
+	fi
+}
+
+# query Bugzilla and return the result
+get_PRs()
+{
+	catport=${1}
+
+	log "${catport}: getting PRs having ${catport} in the synopsis"
+
+	url="https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=${catport}"
+
+	raw="$(fetch -q -T 20 -o - "${url}")"
+
+	if [ -z "${raw}" ] ; then
+		log "${catport}: empty result from URL: ${url}"
+		exit 67
+	fi
+
+	printf "%s" "${raw}" \
+	|sed -ne 's,^[[:space:]]*.a href="show_bug.cgi?id=\([0-9][0-9]*\)".\([^0-9][^<]*\).*,\1: \2,p' \
+	|sort
+}
+
+# check if any PRs exist that are related to the port
+check_PRs()
+{
+	catport=${1}
+
+	PRs="$(get_PRs ${catport})" || exit
+
+	if [ -n "${PRs}" ] ; then
+		log "${catport}: related PRs found:"
+		printf "%s\n" "${PRs}" >&2
+
+		echo "you can skip ${catport} and continue with the rest or remove it anyway" >&2
+		answer=$(ask "do you want to skip ${catport}")
+		if [ "${answer}" = "y" ] ; then
+			return 1
+		else
+			return 0
+		fi
+	fi
+
+	return 0
+}
+
+# add port's entry to ports/MOVED
+edit_MOVED()
+{
+	catport=${1}
+
+	DEPRECATED="$(make -C ${PORTSDIR}/${catport} -V DEPRECATED)"
+	DEPRECATED=${DEPRECATED:+: ${DEPRECATED%.}}
+	if [ -n "$(make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE)" ] ; then
+		REASON="Has expired${DEPRECATED}"
+	else
+		REASON="Removed${DEPRECATED}"
+	fi
+
+	log "${catport}: adding entry to ports/MOVED"
+
+	echo "${catport}||${TODAY}|${REASON}" >> MOVED
+	${GIT} add MOVED
+}
+
+# remove port from category/Makefile
+edit_Makefile()
+{
+	cat=${1}
+	port=${2}
+
+	log "${cat}/${port}: removing from ${cat}/Makefile"
+
+	portesc=$(escape ${port})
+
+	${SED} -e "/^[[:space:]]*SUBDIR[[:space:]]*\+=[[:space:]]*${portesc}([[:space:]]+#.*)?$/d" ${cat}/Makefile
+	${GIT} add ${cat}/Makefile
+}
+
+# remove port's files
+rm_port()
+{
+	catport=${1}
+
+	log "${catport}: scheduling port removal"
+
+	echo ${catport} >> ${gitrmlist}
+}
+
+append_Template()
+{
+	catport=${1}
+
+	msg=${catport}
+
+	EXPIRATION_DATE=$(make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE)
+	if [ -n "${EXPIRATION_DATE}" ] ; then
+		msg="${EXPIRATION_DATE} ${msg}"
+	fi
+
+	DEPRECATED="$(make -C ${PORTSDIR}/${catport} -V DEPRECATED)"
+	if [ -n "${DEPRECATED}" ] ; then
+		msg="${msg}: ${DEPRECATED}"
+	fi
+
+	log "${catport}: adding entry to commit message template"
+
+	echo "${msg}" >> ${gitlog}
+}
+
+# update, ask for confirmation and make a commit
+commit()
+{
+	${GIT} commit --file=${gitlog}
+	answer=$(ask "Do you want to tweak the commit message")
+	if [ "${answer}" = "y" ] ; then
+		${GIT} pull --ff-only --rebase 2>&1
+		${GIT} commit --amend # modify final commit message
+		echo "All done, check the result and push when everything is OK."
+	fi
+}
+
+cleanup()
+{
+	log "cleaning up"
+
+	rm -f ${gitlog} ${gitrmlist}
+}
+
+usage()
+{
+	echo "Usage:" >&2
+	echo "" >&2
+	echo "find expired ports:" >&2
+	echo "${0} -F" >&2
+	echo "" >&2
+	echo "remove port(s):" >&2
+	echo "${0} category1/port1 [ category2/port2 ... ]" >&2
+	echo "" >&2
+	echo "remove all expired ports (as returned by -F):" >&2
+	echo "${0} -a" >&2
+	echo "" >&2
+	echo "just check dependencies:" >&2
+	echo "${0} -d category/port" >&2
+	echo "" >&2
+	echo "just check if any related PRs exist:" >&2
+	echo "${0} -p synopsis" >&2
+
+	exit 64
+}
+
+# main
+
+trap cleanup 1 2 3 15
+
+if [ ! -r ${INDEX} ] ; then
+	echo "${INDEX} not readable, exiting" >&2
+	exit 66
+fi
+
+git_dir="$(${GIT} rev-parse --git-dir)"
+exitcode=$?
+if [ ${exitcode} -ne 0 ] ; then
+	echo "not at a git boundary" >&2
+	exit
+else
+	cd "${git_dir}/.." || exit 1
+fi
+if ! ${GIT} diff --exit-code remotes/origin/main ; then
+	echo "you have local commits or are behind origin/main, exiting" >&2
+	exit 65
+fi
+
+if [ ${#} -eq 0 ] || [ "${1}" = "-h" ] || [ "${1}" = "--help" ] ; then
+	usage
+fi
+
+if [ ${1} = "-d" ] ; then
+	if [ ${#} -ne 2 ] ; then
+		usage
+	fi
+	catport=$(find_catport ${2})
+	check_dep ${catport} 0 ${catport}
+	exit
+fi
+
+if [ ${1} = "-p" ] ; then
+	if [ ${#} -ne 2 ] ; then
+		usage
+	fi
+	get_PRs ${2}
+	exit
+fi
+
+if [ ${1} = "-F" ] ; then
+	if [ ${#} -ne 1 ] ; then
+		usage
+	fi
+	find_expired 1
+	exit
+fi
+
+if [ ${1} = "-a" ] ; then
+	if [ ${#} -ne 1 ] ; then
+		usage
+	fi
+	${0} $(find_expired 0)
+	exit
+fi
+
+gitlog=$(mktemp -t gitlog)
+gitrmlist=$(mktemp -t gitrmlist)
+
+if [ $# -eq 1 ] ; then
+	topic="${1%/}"
+	plural=""
+	colon=""
+else
+	log "/!\\ Removing multiple ports at once, commit topic will be generic /!\\"
+	topic="cleanup"
+	plural="s"
+	colon=":"
+fi
+
+echo "${topic}: Remove expired port${plural}${colon}" > ${gitlog}
+echo "" >> ${gitlog}
+
+for catport in $* ; do
+	# convert to category/port
+	catport=$(find_catport ${catport})
+	cat=$(dirname ${catport})
+	port=$(basename ${catport})
+	# remove any trailing slashes
+	catport="${cat}/${port}"
+	pkgname=$(pkgname ${catport})
+
+	if ! check_dep ${catport} 1 "${*}" ; then
+		continue
+	fi
+
+	if ! check_PRs ${catport} ; then
+		continue
+	fi
+
+	# everything seems ok, edit the files
+
+	if [ -z "${catport##www/node*}" ] ; then
+		node_version="${catport##www/node}"
+		if [ -n "${node_version}" ] ; then
+			echo "You are removing a node port, do not forget www/npm-node${node_version} and www/yarn-node${node_version}"
+		fi
+	fi
+
+	edit_MOVED ${catport}
+
+	edit_Makefile ${cat} ${port}
+
+	append_Template ${catport}
+
+	rm_port ${catport}
+done
+
+if [ -s ${gitrmlist} ] ; then
+	${GIT} rm -r $(cat ${gitrmlist})
+else
+	log "No port directories to remove"
+fi
+
+# give a chance to the committer to edit files by hand and recreate/review
+# the diff afterwards
+answer=y
+while [ "${answer}" = "y" ] ; do
+	${GIT} diff --staged --irreversible-delete
+
+	echo "" >&2
+	echo "you can now edit files by hand" >&2
+	answer=$(ask "do you want to recreate the diff")
+	if [ "${answer}" = "y" ] ; then
+		${GIT} add MOVED
+	fi
+done
+
+commit
+
+cleanup

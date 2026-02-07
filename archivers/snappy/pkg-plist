@@ -1,0 +1,12 @@
+include/snappy-c.h
+include/snappy-sinksource.h
+include/snappy-stubs-public.h
+include/snappy.h
+lib/cmake/Snappy/SnappyConfig.cmake
+lib/cmake/Snappy/SnappyConfigVersion.cmake
+lib/cmake/Snappy/SnappyTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Snappy/SnappyTargets.cmake
+lib/libsnappy.so
+lib/libsnappy.so.1
+lib/libsnappy.so.%%DISTVERSION%%
+libdata/pkgconfig/snappy.pc

@@ -1,0 +1,11 @@
+GNU barcode is a tool to convert text strings to printed bars. It
+supports a variety of standard codes to represent the textual strings
+and creates postscript output.
+
+Main features of GNU Barcode:
+
+* Available as both a library and an executable program
+* Supports UPC, EAN, ISBN, CODE39 and other encoding standards
+* Postscript and Encapsulated Postscript output
+* Accepts sizes and positions as inches, centimeters, millimeters
+* Can create tables of barcodes (to print labels on sticker pages)

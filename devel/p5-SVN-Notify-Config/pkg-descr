@@ -1,0 +1,2 @@
+This Perl module is a YAML-based configuration wrapper around the
+SVN::Notify module.

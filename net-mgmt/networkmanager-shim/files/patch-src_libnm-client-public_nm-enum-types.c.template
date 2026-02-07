@@ -1,0 +1,9 @@
+--- src/libnm-client-public/nm-enum-types.c.template.orig	2025-02-28 13:55:33 UTC
++++ src/libnm-client-public/nm-enum-types.c.template
+@@ -1,4 +1,6 @@
+ /*** BEGIN file-header ***/
++#include <sys/socket.h>
++
+ #include "libnm-client-impl/nm-default-libnm.h"
+ 
+ #include "nm-enum-types.h"

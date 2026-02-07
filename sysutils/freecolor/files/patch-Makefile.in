@@ -1,0 +1,17 @@
+--- ./Makefile.in.orig	2014-01-21 10:11:40.000000000 +0000
++++ ./Makefile.in	2014-05-10 02:49:19.171834039 +0100
+@@ -21,10 +21,10 @@
+ 
+ install:
+ 	strip free
+-	-$(INSTALL) -d $(bindir)
+-	-$(INSTALL) -d $(mandir)/man1
+-	$(INSTALL) -m 755 free $(bindir)/freecolor
+-	$(INSTALL) -m 644 freecolor.1 $(mandir)/man1/freecolor.1
++	-$(INSTALL) -d $(DESTDIR)$(bindir)
++	-$(INSTALL) -d $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -m 755 free $(DESTDIR)$(bindir)/freecolor
++	$(INSTALL) -m 644 freecolor.1 $(DESTDIR)$(mandir)/man1/freecolor.1
+ 
+ clean:
+ 	rm -f core free *~

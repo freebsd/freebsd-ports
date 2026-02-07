@@ -1,0 +1,10 @@
+OpenPMIx is an open source, non-copy-left licensed, and independent (i.e., not
+affiliated with any specific programming model code base) standalone library
+that supports application interactions with Resource Managers (RMs). It retains
+transparent compatibility with existing PMI-1 and PMI-2 definitions, and any
+future PMI releases.
+
+OpenPMIx also supports the Instant On initiative for rapid startup of
+applications at exascale and beyond, and works with the HPC community to define
+and implement new APIs that support evolving programming model requirements for
+application-RM interactions.

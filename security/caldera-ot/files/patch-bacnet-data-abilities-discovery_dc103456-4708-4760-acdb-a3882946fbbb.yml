@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/discovery/dc103456-4708-4760-acdb-a3882946fbbb.yml	2024-12-21 01:45:18.817141000 -0800
++++ bacnet/data/abilities/discovery/dc103456-4708-4760-acdb-a3882946fbbb.yml	2024-12-21 01:45:41.938645000 -0800
+@@ -15,6 +15,11 @@
+     name: Remote System Information Discovery
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacwh #{bacnet.device.min_instance} #{bacnet.device.max_instance} #{bacnet.obj.name}
+     linux:
+       sh:
+         timeout: 360
+@@ -28,4 +33,4 @@
+         command: |
+           .\bacwh.exe #{bacnet.device.min_instance} #{bacnet.device.max_instance} #{bacnet.obj.name}
+         payloads:
+-          - bacwh.exe 
+\ No newline at end of file
++          - bacwh.exe 

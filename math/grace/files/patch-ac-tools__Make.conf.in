@@ -1,0 +1,10 @@
+--- ac-tools/Make.conf.in.orig
++++ ac-tools/Make.conf.in
+@@ -87,6 +87,7 @@
+ # BSD install
+ INSTALL=@INSTALL@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_SCRIPT=@INSTALL_SCRIPT@
+ INSTALL_DATA=@INSTALL_DATA@
+ MKINSTALLDIRS=@MKINSTALLDIRS@
+ 

@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=mlterm
+Name[en]=mlterm
+Name[ja]=mlterm
+GenericName=Terminal
+GenericName[en]=Terminal
+GenericName[ja]=端末
+Comment=Multi-lingual Terminal Emulater
+Comment[en]=Multi-lingual Terminal Emulater
+Comment[ja]=多言語対応端末
+Categories=System;TerminalEmulator;
+Keywords=console;command line;execute;
+Keywords[en]=console;command line;execute;
+Keywords[ja]=コンソール;コマンドライン;実行;
+Exec=mlterm
+Icon=terminal

@@ -1,0 +1,3 @@
+Yet another open-source Spotify Connect compatible client, written in Go.
+go-librespot gives you the freedom to have a Spotify Connect device wherever
+you want.

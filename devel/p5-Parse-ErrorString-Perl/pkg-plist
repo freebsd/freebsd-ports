@@ -1,0 +1,8 @@
+bin/check_perldiag
+%%PERL5_MAN1%%/check_perldiag.1.gz
+%%SITE_PERL%%/Parse/ErrorString/Perl/ErrorItem.pm
+%%SITE_PERL%%/Parse/ErrorString/Perl/StackItem.pm
+%%SITE_PERL%%/Parse/ErrorString/Perl.pm
+%%PERL5_MAN3%%/Parse::ErrorString::Perl.3.gz
+%%PERL5_MAN3%%/Parse::ErrorString::Perl::ErrorItem.3.gz
+%%PERL5_MAN3%%/Parse::ErrorString::Perl::StackItem.3.gz

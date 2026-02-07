@@ -1,0 +1,14 @@
+--- libAfterImage/configure.orig	Thu Jun 22 21:27:08 2006
++++ libAfterImage/configure	Thu Jun 22 21:27:53 2006
+@@ -8443,9 +8443,9 @@
+     HAVE_AFTERBASE_FLAG=1
+ 	AFTERBASE_C=
+     if test "x$have_x" != "xyes" -a "x$have_gif" = "xyes"; then
+-    	AFTERIMAGE_LIBS="$AFTERIMAGE_LIBS -lAfterBase"
++    	AFTERIMAGE_LIBS="$AFTERIMAGE_LIBS -lAfterBase -lexecinfo"
+     else
+-    	AFTERIMAGE_LIBS="-lAfterBase $AFTERIMAGE_LIBS"
++    	AFTERIMAGE_LIBS="-lAfterBase -lexecinfo $AFTERIMAGE_LIBS"
+     fi
+     if test -r "../libAfterBase/astypes.h"; then
+     	AFTERIMAGE_APPS_LIBS="-L../ -L../../libAfterBase -lAfterImage $AFTERIMAGE_LIBS"

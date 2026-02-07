@@ -1,0 +1,23 @@
+Simulate the "old" mysql_connect() function -- the actual code
+is adapted from MySQL's libmysql.c.
+
+	-mi
+
+--- sql-mysql.cc	Wed Jan 12 20:50:03 2000
++++ sql-mysql.cc	Wed Nov 10 18:49:18 2004
+@@ -2,4 +2,15 @@
+ #include "sql-mysql.h"
+ 
++#if defined(HAVE_MYSQL_REAL_CONNECT) && !defined(USE_OLD_FUNCTIONS)
++static MYSQL * STDCALL
++mysql_connect(MYSQL *mysql,const char *host,
++	const char *user, const char *passwd)
++{
++
++	mysql=mysql_init(mysql);
++	return mysql_real_connect(mysql, host, user, passwd, NULL, 0, NULL, 0);
++}
++#endif
++
+ // -------------------------------------------------------------
+ Sql_mysql::Sql_mysql() {

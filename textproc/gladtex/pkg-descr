@@ -1,0 +1,2 @@
+Gladtex reads a 'htex' file (html with LaTeX maths embedded in <EQ></EQ>)
+and produces HTML with equations substituted by images.

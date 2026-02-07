@@ -1,0 +1,19 @@
+--- src/sshguard.in.orig	2021-06-06 14:54:07 UTC
++++ src/sshguard.in
+@@ -98,14 +98,8 @@ elif [ -z "$tailcmd" ]; then
+     exit 1
+ fi
+ 
+-if [ -n "$PID_FILE" ]; then
+-    if [ ! -e "$PID_FILE" ]; then
+-        echo "$$" > $PID_FILE
+-    else
+-        err "$PID_FILE already exists; is SSHGuard already running?"
+-        exit 1
+-    fi
+-fi
++# Already checked by rc(8)
++echo "$$" > $PID_FILE
+ 
+ # Select PARSER from configuration file or use default. Add POST_PARSER from
+ # configuration file if it exists.

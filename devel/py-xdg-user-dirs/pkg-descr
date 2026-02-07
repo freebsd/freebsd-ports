@@ -1,0 +1,2 @@
+xdg-base-dirs is a Python module that provides functions to return paths to the
+directories defined by the XDG Base Directory Specification.

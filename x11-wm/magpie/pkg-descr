@@ -1,0 +1,5 @@
+Magpie is a X11 window manager and compositor library.
+It is a soft-fork of GNOME's mutter at version 43 tailored to the requirements
+of the Budgie Desktop 10 series. Magpie allows mutter based desktops such as
+GNOME Shell to co-exist since the key-components such as libmagpie are
+separated by both name and file-system install location.

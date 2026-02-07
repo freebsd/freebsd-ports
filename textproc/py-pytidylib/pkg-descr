@@ -1,0 +1,11 @@
+PyTidyLib is a Python package that wraps the HTML Tidy library. This allows
+you, from Python code, to "fix" invalid (X)HTML markup. Some of the library's
+many capabilities include:
+
+  * Clean up unclosed tags and unescaped characters such as ampersands
+  * Output HTML 4 or XHTML, strict or transitional, and add missing doctypes
+  * Convert named entities to numeric entities, which can then be used in XML
+    documents without an HTML doctype.
+  * Clean up HTML from programs such as Word (to an extent)
+  * Indent the output, including proper (i.e. no) indenting for pre elements,
+    which some (X)HTML indenting code overlooks.

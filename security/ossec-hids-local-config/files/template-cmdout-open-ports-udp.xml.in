@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <localfile>
+    <log_format>full_command</log_format>
+    <command>%%OSSEC_HOME%%/bin/command/open-ports.sh 4 udp 1-65535</command>
+    <alias>freebsd-open-ports-udp4-all</alias>
+  </localfile>
+
+  <localfile>
+    <log_format>full_command</log_format>
+    <command>%%OSSEC_HOME%%/bin/command/open-ports.sh 4 udp</command>
+    <alias>freebsd-open-ports-udp4</alias>
+  </localfile>
+
+  <localfile>
+    <log_format>full_command</log_format>
+    <command>%%OSSEC_HOME%%/bin/command/open-ports.sh 6 udp 1-65535</command>
+    <alias>freebsd-open-ports-udp6-all</alias>
+  </localfile>
+
+  <localfile>
+    <log_format>full_command</log_format>
+    <command>%%OSSEC_HOME%%/bin/command/open-ports.sh 6 udp</command>
+    <alias>freebsd-open-ports-udp6</alias>
+  </localfile>
+
+</template_config>

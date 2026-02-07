@@ -1,0 +1,42 @@
+#!/bin/sh
+
+#
+# Create a fresh vuls report on a daily basis
+#
+# daily_vuls_enable		- enable nightly vuls reports
+# daily_vuls_results_dir	- modify results dir from the default /var/db/vuls/reports
+# daily_vuls_http_url		- send resports to a central repository running a vuls server
+# 				  for example. http://localhost:5155/vuls
+# daily_vuls_flags		- additionals flags for `vuls report'
+#
+# daily_vuls_user		- Set user to run vuls
+#				  Default is "%%USERS%%"
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+: ${daily_vuls_enable:=NO}
+: ${daily_vuls_results_dir:=/var/db/vuls/results}
+: ${daily_vuls_user:=%%USERS%%}
+
+case "${daily_vuls_enable}" in
+    [Yy][Ee][Ss])
+	mkdir -p /var/log/vuls
+	su -fm %%USERS%% \
+	    -c "/usr/bin/env HOME=/var/db/vuls %%PREFIX%%/bin/vuls scan -results-dir=${daily_vuls_results_dir}" \
+	    >> /var/log/vuls/vuls_scan.log 2>&1
+	if [ -n "${daily_vuls_http_url}" ]; then
+	    flags="-to-http"
+	else
+	    flags="-to-localfile"
+	fi
+	flags="${flags} ${daily_vuls_flags}"
+	su -fm ${daily_vuls_user} \
+	    -c "/usr/bin/env HOME=/var/db/vuls VULS_HTTP_URL=\"${daily_vuls_http_url}\" %%PREFIX%%/bin/vuls report -results-dir=${daily_vuls_results_dir} ${flags}" \
+	    >> /var/log/vuls/vuls_scan.log 2>&1
+esac

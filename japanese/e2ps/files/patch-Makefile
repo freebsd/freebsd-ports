@@ -1,0 +1,34 @@
+--- Makefile.orig	Mon May 20 11:41:41 2002
++++ Makefile	Mon Oct 25 23:21:09 2004
+@@ -6,7 +6,7 @@
+ 
+ 
+ # Directory to install e2ps
+-E2PS_INST_DIR = /usr/local/bin
++E2PS_INST_DIR = ${PREFIX}/bin
+ 
+ # Tab width
+ TABSTOP = 8
+@@ -52,15 +52,12 @@
+ 
+ 
+ # C and C args
+-CC = gcc
++# CC = gcc
+ CC_ARGS = -Wall
+ # CC_ARGS = -Wall -O2
+ CC_LIB = 
+ 
+-# strip command
+-STRIP = strip
+-
+-CFLAGS = $(CC_ARGS) $(DEFINES) $(CC_LIB)
++CFLAGS += $(CC_ARGS) $(DEFINES) $(CC_LIB)
+ 
+ SRC = e2ps.c ps-font.c wtkf.c
+ OBJ = e2ps.o ps-font.o wtkf.o
+@@ -81,4 +78,3 @@
+ 
+ e2ps:	$(OBJ)
+ 	$(CC) -o $@ $(OBJ) $(CFLAGS)
+-	$(STRIP) $@

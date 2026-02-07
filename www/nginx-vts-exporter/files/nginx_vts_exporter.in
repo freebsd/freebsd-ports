@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: nginx_vts_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nginx_vts_exporter_enable (bool):     Set to NO by default
+#                                       Set it to YES to enable nginx-vts-exporter
+# nginx_vts_exporter_user (string):     Set user to run nginx-vts-exporter
+#                                       Default is "nobody"
+# nginx_vts_exporter_group (string):    Set group to run nginx-vts-exporter
+#                                       Default is "nobody"
+# nginx_vts_exporter_args (string):     Set additional command line arguments
+#                                       Default is ""
+#
+
+. /etc/rc.subr
+
+name=nginx_vts_exporter
+rcvar=nginx_vts_exporter_enable
+
+load_rc_config $name
+
+: ${nginx_vts_exporter_enable:="NO"}
+: ${nginx_vts_exporter_user:="nobody"}
+: ${nginx_vts_exporter_group:="nobody"}
+: ${nginx_vts_exporter_args:=""}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/${name}"
+command_args="-p ${pidfile} -m 3 -T ${name} \
+                /usr/bin/env ${procname} \
+                ${nginx_vts_exporter_args}"
+
+start_precmd=nginx_vts_exporter_startprecmd
+
+nginx_vts_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${nginx_vts_exporter_user} \
+            -g ${nginx_vts_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

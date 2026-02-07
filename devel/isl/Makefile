@@ -1,0 +1,29 @@
+PORTNAME=	isl
+DISTVERSION=	0.27
+CATEGORIES=	devel math
+MASTER_SITES=	SOURCEFORGE/libisl
+
+MAINTAINER=	wen@FreeBSD.org
+COMMENT=	Integer Set Library
+WWW=		https://libisl.sourceforge.io/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libgmp.so:math/gmp
+
+USES=		libtool pkgconfig tar:xz
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--with-gmp-prefix=${LOCALBASE}
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=		OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
+
+OPTIMIZED_CFLAGS_CFLAGS=	-O3
+
+.include <bsd.port.mk>

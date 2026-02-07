@@ -1,0 +1,3 @@
+Perl has two pseudo-constants describing the current location in your source
+code, __FILE__ and __LINE__. This module adds __DIR__, which expands to the
+directory your source file is in, as an absolute pathname.

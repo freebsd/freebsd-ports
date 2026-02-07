@@ -1,0 +1,11 @@
+--- plugins/binary-template/Makefile.orig	2022-04-25 10:32:52 UTC
++++ plugins/binary-template/Makefile
+@@ -49,7 +49,7 @@ ifeq ($(BUSTED),)
+ 	endif
+ 	
+ 	ifeq ($(BUSTED),)
+-		X := $(error Neither busted or busted.bat found in PATH)
++		BUSTED := @echo busted not found in PATH, skipping checks ; true
+ 	endif
+ endif
+ 

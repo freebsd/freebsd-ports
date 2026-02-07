@@ -1,0 +1,2 @@
+http-parser gem is a Ruby FFI bindings to http-parser (http request/response
+parser for c).

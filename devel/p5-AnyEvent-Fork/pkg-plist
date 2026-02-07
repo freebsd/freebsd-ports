@@ -1,0 +1,7 @@
+%%SITE_PERL%%/AnyEvent/Fork.pm
+%%SITE_PERL%%/AnyEvent/Fork/Early.pm
+%%SITE_PERL%%/AnyEvent/Fork/Serve.pm
+%%SITE_PERL%%/AnyEvent/Fork/Template.pm
+%%PERL5_MAN3%%/AnyEvent::Fork.3.gz
+%%PERL5_MAN3%%/AnyEvent::Fork::Early.3.gz
+%%PERL5_MAN3%%/AnyEvent::Fork::Template.3.gz

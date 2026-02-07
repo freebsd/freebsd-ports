@@ -1,0 +1,4 @@
+include/tuntap.h
+%%CXX_WRPR%%include/tuntap++.hh
+lib/libtuntap.a
+%%CXX_WRPR%%lib/libtuntap++.a

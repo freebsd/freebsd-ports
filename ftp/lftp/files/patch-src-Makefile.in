@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2020-08-13 19:57:03 UTC
++++ src/Makefile.in
+@@ -2625,7 +2625,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-pkgdataSCRIPTS install-pkgverlibLTLIBRARIES
++install-data-am: install-pkgdataSCRIPTS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-am

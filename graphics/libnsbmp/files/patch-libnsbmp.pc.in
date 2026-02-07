@@ -1,0 +1,10 @@
+--- libnsbmp.pc.in.orig	2015-12-18 11:46:40 UTC
++++ libnsbmp.pc.in
+@@ -1,6 +1,6 @@
+ prefix=PREFIX
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/LIBDIR
++libdir=${exec_prefix}/lib
+ includedir=${prefix}/INCLUDEDIR
+ 
+ Name: libnsbmp

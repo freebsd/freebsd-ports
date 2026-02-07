@@ -1,0 +1,11 @@
+--- configure.orig
++++ configure
+@@ -95,7 +95,7 @@
+ 		echo "SRCS	+=	${f}"
+ 	done
+ 
+-	echo 'NO_MAN	=	not_yet'
++	echo 'MAN	='
+ 	echo 'LDADD	+=	-lm'
+ 	echo 'WARNS	?=	6'
+ 	echo '.include <bsd.prog.mk>'

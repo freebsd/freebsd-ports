@@ -1,0 +1,74 @@
+[
+{ type: install
+  message: <<EOM
+Apache OpenOffice Build %%AOOTAG%% Personal Install How-To
+
+Written by:	Martin Blapp <mbr@freebsd.org>
+		and Maho Nakata <maho@FreeBSD.org>
+
+Apache OpenOffice %%AOOTAG%% will soon be installed in
+%%PREFIX%%/%%EXECBASE%%
+
+1. Scanner interface
+--------------------
+To enable the scanner interface, install the sane-backends package.
+
+2. Spell checkers
+-----------------
+Dictionaries for various languages are available as packages.
+They are named LANG-hunspell, where LANG can be "en", "es", "it" etc.
+The corresponding ports are in the textproc category.
+
+3. User installation
+--------------------
+Just type "%%EXECBASE%%" after you have successfully installed
+the package.  If there is no installed .openoffice.org directory in your
+home directory, the setup installs the "%%AOOUDIR%%" folder.
+
+4. Starting Apache OpenOffice
+-----------------------------
+There are some wrappers installed for faster startup.  Add "%%PREFIX%%/bin/"
+to your PATH and you will be able to use them.
+
+%%PREFIX%%/bin/%%EXECBASE%%
+%%PREFIX%%/bin/%%EXECBASE%%-printeradmin
+%%PREFIX%%/bin/%%EXECBASE%%-sbase
+%%PREFIX%%/bin/%%EXECBASE%%-scalc
+%%PREFIX%%/bin/%%EXECBASE%%-sdraw
+%%PREFIX%%/bin/%%EXECBASE%%-simpress
+%%PREFIX%%/bin/%%EXECBASE%%-smath
+%%PREFIX%%/bin/%%EXECBASE%%-swriter
+
+OpenOffice does need $LANG to be set to a suitable value.
+
+5. If you run into problems
+---------------------------
+If you somehow run into problems, please remove the already installed
+"%%AOOUDIR%%" directory in your home directory, then redo the
+user installation and the problems should go away.
+EOM
+}
+{ type: upgrade
+  maximum_version: "%%AOOVERSION%%"
+  message: <<EOM
+In general, it is always a good idea to do a backup of important
+and personal data, so we recommend to always back up your OpenOffice
+user profile before doing an upgrade to a newer release.
+
+Users can back up their profile by copying this directory:
+  /home/<user name>/.openoffice
+EOM
+}
+{ type: upgrade
+  maximum_version: "1678061694"
+  message: <<EOM
+It is recommended to make a backup of the Apache OpenOffice users
+profile before upgrading. It is especially essential for users who
+use the Master Password functionality and may decide to use an older
+version later. There is a change in the encoding of stored passwords
+between the 4.1.2 and  4.1.13 releases (and in a similar timeframe
+for the -devel port) that may make your user profile unusable for
+previous versions.
+EOM
+}
+]

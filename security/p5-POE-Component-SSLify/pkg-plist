@@ -1,0 +1,6 @@
+%%SITE_PERL%%/POE/Component/SSLify.pm
+%%SITE_PERL%%/POE/Component/SSLify/ClientHandle.pm
+%%SITE_PERL%%/POE/Component/SSLify/ServerHandle.pm
+%%PERL5_MAN3%%/POE::Component::SSLify.3.gz
+%%PERL5_MAN3%%/POE::Component::SSLify::ClientHandle.3.gz
+%%PERL5_MAN3%%/POE::Component::SSLify::ServerHandle.3.gz

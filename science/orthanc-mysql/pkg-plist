@@ -1,0 +1,4 @@
+share/orthanc/plugins/libOrthancMySQLIndex.so
+share/orthanc/plugins/libOrthancMySQLIndex.so.%%DISTVERSION%%
+share/orthanc/plugins/libOrthancMySQLStorage.so
+share/orthanc/plugins/libOrthancMySQLStorage.so.%%DISTVERSION%%

@@ -1,0 +1,17 @@
+microdc is a command-line based Direct Connect client written in C by Oskar
+Liljeblad and designed to build and run on modern POSIX compatible systems.
+It uses GNU Readline library for user interaction.  Despite the command-line
+user interface, microdc is quite user friendly and simple to use.
+
+microdc2 is a future improvement (fork) of the microdc based on Oskar's code
+version 0.11.0.  After version 0.12.0 the project was renamed to microdc2 on
+Oskar's request.
+
+Features of microdc2 include:
+
+  - Nearly full support of the original Direct Connect protocol
+  - GNU Readline support for command line editing and history
+  - Sensible tab-completion of commands, user names, local files, remote
+    files, speed names, and connection names
+  - One process per connection for optimal transfer rates
+  - Small memory footprint

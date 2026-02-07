@@ -1,0 +1,93 @@
+#!/bin/sh
+
+# PROVIDE: deluge_web
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# MANDATORY:
+#
+# deluge_web_enable (bool):	Set to NO by default.
+#				Set it to YES to enable deluge_web.
+#
+# deluge_web_user (str):	The UNPRIVILEGED user to run as
+#
+# OPTIONAL:
+#
+# deluge_web_flags (str):	Set as needed
+#				See deluge-web(1) for more information
+#
+# deluge_web_confdir (path):	Set to /home/$deluge_web_user/.config/deluge
+#				by default
+#
+# deluge_web_loglevel (str):	Set to "error" by default
+#
+# deluge_web_logfile (path):	Set to /var/tmp/deluge_web.log by default
+
+. /etc/rc.subr
+
+name="deluge_web"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/deluge-web
+command_interpreter=%%PYTHON_CMD%%
+
+pidfile=/var/run/${name}/pid
+
+start_precmd=${name}_prestart
+stop_postcmd=${name}_poststop
+
+
+deluge_web_prestart()
+{
+	if [ "$deluge_web_user" = 'asjklasdfjklasdf' ]; then
+		err 1 "You must set deluge_web_user to a real, unprivileged user"
+	fi
+
+	if [ -z ${deluge_web_home} ]; then
+		err 1 "deluge_web_user does not have a valid home directory."
+	fi
+
+	if [ ! -d "/var/run/${name}" ]; then
+		if [ -e "/var/run/${name}" ]; then
+			unlink /var/run/${name}
+		fi
+		mkdir -p /var/run/${name}
+	fi
+
+	if [ ! -d "${deluge_web_home}/.python-eggs" ]; then
+		mkdir ${deluge_web_home}/.python-eggs
+		chown -R $deluge_web_user ${deluge_web_home}/.python-eggs
+	fi
+
+	chmod 0755 /var/run/${name}
+	chown -R $deluge_web_user /var/run/${name}
+	export PYTHON_EGG_CACHE="${deluge_web_home}/.python-eggs"
+}
+
+deluge_web_poststop()
+{
+	[ -e "$pidfile" ] && unlink $pidfile
+	[ -d "${pidfile%/pid}" ] && rmdir ${pidfile%/pid}
+
+	[ -e "$deluge_web_logfile" -a ! -s "$deluge_web_logfile" ] &&
+		unlink $deluge_web_logfile
+}
+
+load_rc_config $name
+
+: ${deluge_web_enable:="NO"}
+: ${deluge_web_user:="asjklasdfjklasdf"}
+
+deluge_web_home=$(pw user show ${deluge_web_user} | cut -d : -f 9)
+
+: ${deluge_web_confdir:="${deluge_web_home}/.config/deluge"}
+: ${deluge_web_loglevel:="error"}
+: ${deluge_web_logfile:="/var/tmp/${name}.log"}
+
+required_dirs="$deluge_web_confdir"
+command_args="--config=$deluge_web_confdir --loglevel=$deluge_web_loglevel --logfile=$deluge_web_logfile --pidfile=$pidfile"
+
+run_rc_command "$1"

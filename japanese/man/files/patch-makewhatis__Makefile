@@ -1,0 +1,58 @@
+--- makewhatis/Makefile.orig	1999-09-03 22:58:03.000000000 +0900
++++ makewhatis/Makefile	2014-08-26 12:08:52.000000000 +0900
+@@ -24,7 +24,7 @@
+ TARG2=  ${.CURDIR}/jmakewhatis.local
+ .endif
+ 
+-MLINKS= jmakewhatis.local.8 jcatman.local.8
++#MLINKS= jmakewhatis.local.8 jcatman.local.8
+ 
+ MANDEPEND=	${MAN1} ${MAN8}
+ 
+@@ -70,32 +70,28 @@
+ 		${.CURDIR}/jmakewhatis.local.man.eng | \
+ 	${compress} > ${.TARGET}
+ 
+-install: ${TARG} ${TARG2} maninstall after_maninstall
+-	${INSTALL} -c -o bin -g bin -m 555 ${TARG} ${DESTDIR}${BINDIR}
+-	${INSTALL} -c -o bin -g bin -m 555 ${TARG2} ${DESTDIR}${libexecdir}
+-	ln -f ${DESTDIR}${libexecdir}/jmakewhatis.local \
+-	    ${DESTDIR}${libexecdir}/jcatman.local
++install: ${TARG} ${TARG2} man_install after_maninstall
++	${INSTALL} -m 555 ${TARG} ${DESTDIR}${BINDIR}
++	${INSTALL} -m 555 ${TARG2} ${DESTDIR}${libexecdir}
++	ln -sf jmakewhatis.local ${DESTDIR}${libexecdir}/jcatman.local
++
++.if !defined(NO_MAN)
++man_install: ${MAN1} ${MAN8}
++	${INSTALL} -m 444 ${MAN1} ${DESTDIR}${MANDIR}1
++	${INSTALL} -m 444 ${MAN8} ${DESTDIR}${MANDIR}8
++	ln -sf jmakewhatis.local.8.gz ${DESTDIR}${MANDIR}8/jcatman.local.8.gz
+ 
+-.if !defined(NOMAN)
+ after_maninstall: ${EMAN1} ${EMAN8}
+-	${INSTALL} -c -o bin -g bin -m 444 ${EMAN1} \
++	${INSTALL} -m 444 ${EMAN1} \
+ 	    ${DESTDIR}${EMANDIR}1/jmakewhatis.1.gz
+-	${INSTALL} -c -o bin -g bin -m 444 ${EMAN8} \
++	${INSTALL} -m 444 ${EMAN8} \
+ 	    ${DESTDIR}${EMANDIR}8/jmakewhatis.local.8.gz
+-	ln -f ${DESTDIR}${EMANDIR}8/jmakewhatis.local.8.gz \
+-	    ${DESTDIR}${EMANDIR}8/jcatman.local.8.gz
++	ln -sf jmakewhatis.local.8.gz ${DESTDIR}${EMANDIR}8/jcatman.local.8.gz
+ .else
++man_install:
+ after_maninstall:
+ .endif
+ 
+ .include "../Makefile.inc"
+ 
+-.if make(maninstall) || make(install)
+-.if !defined(NOMAN)
+-.include <bsd.man.mk>
+-.elif !target(maninstall)
+-maninstall:
+-.endif
+-.endif
+-
+ .include <bsd.prog.mk>

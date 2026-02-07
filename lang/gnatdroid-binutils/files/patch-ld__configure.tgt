@@ -1,0 +1,13 @@
+--- ld/configure.tgt.orig	2014-10-14 07:32:04 UTC
++++ ld/configure.tgt
+@@ -72,6 +72,10 @@ alpha*-*-*vms*)		targ_emul=alphavms
+ 			;;
+ arc-*-elf*)		targ_emul=arcelf
+ 			;;
++arm*-android-eabi*)	targ_emul=armelf_linux_eabi
++			targ_extra_emuls=armelfb_linux_eabi
++			targ_extra_libpath=$targ_extra_emuls
++			;;
+ arm-epoc-pe)		targ_emul=arm_epoc_pe ;	targ_extra_ofiles="deffilep.o pe-dll.o" ;;
+ arm*-*-cegcc*)		targ_emul=arm_wince_pe ; targ_extra_ofiles="deffilep.o pe-dll.o"
+ 			LIB_PATH='${tooldir}/lib/w32api' ;;

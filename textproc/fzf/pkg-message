@@ -1,0 +1,62 @@
+[
+{ type: install
+  message: <<EOM
+Various shell key bindings and completion files are embedded in fzf, to use
+these include them in your shell configuration.
+
+    bash
+
+    # Set up fzf key bindings and fuzzy completion
+    eval "$(fzf --bash)"
+
+    zsh
+
+    # Set up fzf key bindings and fuzzy completion
+    eval "$(fzf --zsh)"
+
+    fish
+
+    # Set up fzf key bindings
+    fzf --fish | source
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.48.0"
+  message: <<EOM
+Shell integration scripts are now embedded in the fzf binary. This simplifies
+the distribution, and the users are less likely to have problems caused by using
+incompatible scripts and binaries.
+
+    bash
+
+    # Set up fzf key bindings and fuzzy completion
+    eval "$(fzf --bash)"
+
+    zsh
+
+    # Set up fzf key bindings and fuzzy completion
+    eval "$(fzf --zsh)"
+
+    fish
+
+    # Set up fzf key bindings
+    fzf --fish | source
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.53.0"
+  message: <<EOM
+The --tmux option has been added to replace the fzf-tmux script.
+
+    # --tmux [center|top|bottom|left|right][,SIZE[%]][,SIZE[%]]
+    # Center, 100% width and 70% height
+    fzf --tmux 100%,70% --border horizontal --padding 1,2
+
+    # Left, 30% width
+    fzf --tmux left,30%
+
+    # Bottom, 50% height
+    fzf --tmux bottom,50%
+EOM
+}
+]

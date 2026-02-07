@@ -1,0 +1,13 @@
+--- doc/gnushogi.texi.orig	2014-02-17 20:26:59 UTC
++++ doc/gnushogi.texi
+@@ -3,6 +3,10 @@
+ @c % **  Start of header.
+ @setfilename gnushogi.info
+ @settitle GNU Shogi manual
++@dircategory
++@direntry Games
++* GNUShogi: (gnushogi).		GNU Shogi.
++@end direntry
+ @c % **  End of header.
+ 
+ @dircategory Games

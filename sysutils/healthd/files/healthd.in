@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $Id: healthd.sh,v 1.1.2.7 2004/06/23 14:11:57 housley Exp $
+
+# PROVIDE: healthd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable healthd:
+#
+#healthd_enable="YES"
+#
+# For IPv4 only operation add the following line to /etc/rc.conf:
+#
+#healthd_flags="-6"
+#
+# Other options are listed in healthd(8)
+#
+
+. /etc/rc.subr
+
+name=healthd
+rcvar=healthd_enable
+
+extra_commands="reload"
+command=%%PREFIX%%/sbin/healthd
+required_files=%%PREFIX%%/etc/${name}.conf
+
+load_rc_config ${name}
+
+healthd_enable=${healthd_enable:-"NO"}
+
+run_rc_command "$1"

@@ -1,0 +1,2 @@
+This is sqlite3-pcre, an extension for sqlite3 that uses libpcre to provide
+a regexp() function to use with the REGEXP operator.

@@ -1,0 +1,13 @@
+--- man_ru/Makefile.orig	2024-03-14 12:52:55 UTC
++++ man_ru/Makefile
+@@ -1,8 +1,8 @@ PREFIX?=	/usr/local
+ PREFIX?=	/usr/local
+-MANDIR=		${PREFIX}/man/ru.KOI8-R/man
++MANDIR=		${PREFIX}/share/man/ru.KOI8-R/man
+ MAN8=		ipacctd.8
+ 
+ beforeinstall:
+-	mkdir -p ${MANDIR}8
++	mkdir -p ${DESTDIR}${MANDIR}8
+ 
+ .include <bsd.prog.mk>

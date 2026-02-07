@@ -1,0 +1,18 @@
+Skrooge is a personal finances manager powered by KDE. It allows you to
+keep track of your expenses and incomes, categorize them, and build
+reports of them.
+
+Here is the list of main features of Skrooge:
+ * QIF, CSV, SKROOGE, KMYMONEY import/export
+ * OFX, QFX, GNUCASH, GRISBI, HOMEBANK import
+ * Advanced Graphical Reports
+ * Several tabs to help you organize your work
+ * Infinite undo/redo (even after the file was closed !)
+ * Instant filtering on operations and reports
+ * Infinite categories levels
+ * Mass update of operations
+ * Scheduled operations
+ * Track refund of your expenses
+ * Automatically process operations based on search conditions
+ * Multiple currencies
+ * Dashboard

@@ -1,0 +1,7 @@
+lib/postgresql/prefix.so
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TESTS.md
+share/postgresql/extension/prefix--1.1--1.2.0.sql
+share/postgresql/extension/prefix--1.2.0.sql
+share/postgresql/extension/prefix--unpackaged--1.2.0.sql
+share/postgresql/extension/prefix.control

@@ -1,0 +1,2 @@
+Test::Future::IO::Impl contains a collection of acceptance tests for
+implementations of Future::IO.

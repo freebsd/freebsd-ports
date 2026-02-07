@@ -1,0 +1,6 @@
+This is the meta port of the following bindings:
+- databases/lua-xapian: Lua binding
+- databases/p5-Xapian: Perl binding
+- databases/php-xapian: PHP binding
+- databases/py-xapian: Python binding
+- databases/ruby-xapian: Ruby binding

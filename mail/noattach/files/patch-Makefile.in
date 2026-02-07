@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Feb  2 12:34:03 2005
++++ Makefile.in	Sun Apr 17 23:02:08 2005
+@@ -77,7 +77,7 @@
+ 	rfc2231.$(OBJEXT)
+ noattach_OBJECTS = $(am_noattach_OBJECTS)
+ noattach_LDADD = $(LDADD)
+-DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
++DEFAULT_INCLUDES = $(MILTER_INCLUDES) -I. -I$(srcdir) -I.
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \

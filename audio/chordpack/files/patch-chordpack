@@ -1,0 +1,11 @@
+--- chordpack.orig	2001-07-23 13:47:11 UTC
++++ chordpack
+@@ -1598,7 +1598,7 @@ if ($task eq "ascii") {
+ 
+         # {{{  Comment (programmer's kind of)
+         if (/^\x23/) {    # \x23 is  hash
+-            next LINE; }
++            next; }
+         # }}}
+         # {{{  Chord instructions
+         if (/\[[^:]/) {

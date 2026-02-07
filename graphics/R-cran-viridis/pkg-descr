@@ -1,0 +1,8 @@
+Color maps designed to improve graph readability for readers with
+common forms of color blindness and/or color vision deficiency. The
+color maps are also perceptually-uniform, both in regular form and
+also when converted to black-and-white for printing. This package
+also contains 'ggplot2' bindings for discrete and continuous color
+and fill scales. A lean version of the package called 'viridisLite'
+that does not include the 'ggplot2' bindings can be found at
+<https://cran.r-project.org/package=viridisLite>.

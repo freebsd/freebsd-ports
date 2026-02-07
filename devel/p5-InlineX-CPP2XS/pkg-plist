@@ -1,0 +1,5 @@
+bin/cpp2xs
+%%PERL5_MAN3%%/InlineX::CPP2XS-Cookbook.3.gz
+%%PERL5_MAN3%%/InlineX::CPP2XS.3.gz
+%%SITE_PERL%%/InlineX/CPP2XS-Cookbook.pod
+%%SITE_PERL%%/InlineX/CPP2XS.pm

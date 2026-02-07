@@ -1,0 +1,11 @@
+--- src/bin/keactrl/keactrl.in.orig	2025-06-20 09:28:47.000000000 -0700
++++ src/bin/keactrl/keactrl.in	2025-07-10 07:23:07.452981000 -0700
+@@ -127,7 +127,7 @@
+ 
+     # Default the directory to --localstatedir / run
+     local pid_file_dir
+-    pid_file_dir="@runstatedir@/@PACKAGE@"
++    pid_file_dir="/var/run/kea"
+ 
+     # Use directory override if set (primarily for testing only)
+     if test -n "${KEA_PIDFILE_DIR+x}"; then

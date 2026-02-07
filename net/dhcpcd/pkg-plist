@@ -1,0 +1,15 @@
+libexec/dhcpcd-hooks/01-test
+libexec/dhcpcd-hooks/20-resolv.conf
+libexec/dhcpcd-hooks/30-hostname
+libexec/dhcpcd-hooks/50-ntp.conf
+libexec/dhcpcd-run-hooks
+sbin/dhcpcd
+%%EXAMPLESDIR%%/hooks/10-wpa_supplicant
+%%EXAMPLESDIR%%/hooks/15-timezone
+%%EXAMPLESDIR%%/hooks/29-lookup-hostname
+%%EXAMPLESDIR%%/hooks/50-ypbind
+share/man/man5/dhcpcd.conf.5.gz
+share/man/man8/dhcpcd-run-hooks.8.gz
+share/man/man8/dhcpcd.8.gz
+@sample etc/dhcpcd.conf.sample
+@dir(_dhcp,_dhcp,) /var/db/dhcpcd

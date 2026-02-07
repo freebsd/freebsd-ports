@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+## Quick start
+
+You need a configured indentity provider and a wild-card TLS certificate
+before proceeding (if Pomerium will be terminating TLS connections).
+Please note that the default installation runs Pomerium with unprivileged
+"www" user, and therefore will not be able to bind on 443 unless
+net.inet.ip.portrange.reservedhigh is lowered.
+
+Please consult the official website https://www.pomerium.io/docs/ for
+additional configuration information.
+
+EOM
+}
+]

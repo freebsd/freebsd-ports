@@ -1,0 +1,5 @@
+AppWrapper is a GNUstep application meant to aid in the creation of
+non GNUstep application wrappers for use by GWorkspace and other tools
+that open GNUstep applications.
+
+LICENSE: GPL2

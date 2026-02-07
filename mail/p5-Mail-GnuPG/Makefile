@@ -1,0 +1,20 @@
+PORTNAME=	Mail-GnuPG
+PORTVERSION=	0.23
+CATEGORIES=	mail security perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl5 interface to process and/or create PGP email
+WWW=		https://metacpan.org/release/Mail-GnuPG
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GnuPG-Interface>=0:security/p5-GnuPG-Interface \
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		p5-Mail-Tools>=0:mail/p5-Mail-Tools
+
+NO_ARCH=	yes
+USES=		perl5
+USE_PERL5=	modbuild
+
+.include <bsd.port.mk>

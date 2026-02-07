@@ -1,0 +1,3 @@
+bin/chooser
+%%SITE_PERL%%/Chooser.pm
+%%PERL5_MAN3%%/Chooser.3.gz

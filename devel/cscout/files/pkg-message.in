@@ -1,0 +1,4 @@
+The include files cscout needs in its installation directory (e.g. ~/.cscout/)
+can be found in %%PREFIX%%/include/cscout/.
+For an example, go to %%EXAMPLESDIR%% and try "cscout awk.cs".
+

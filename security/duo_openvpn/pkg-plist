@@ -1,0 +1,6 @@
+%%DATADIR%%/ca_certs.pem
+%%PERL%%%%DATADIR%%/duo_openvpn.pl
+%%PYTHON%%%%DATADIR%%/duo_openvpn.py
+%%PYTHON%%%%DATADIR%%/https_wrapper.py
+%%PYTHON%%%%DATADIR%%/six.py
+%%DATADIR%%/duo_openvpn.so

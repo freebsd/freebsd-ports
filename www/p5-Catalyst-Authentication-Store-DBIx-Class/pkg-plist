@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Catalyst/Authentication/Realm/SimpleDB.pm
+%%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class.pm
+%%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class/User.pm
+%%PERL5_MAN3%%/Catalyst::Authentication::Realm::SimpleDB.3.gz
+%%PERL5_MAN3%%/Catalyst::Authentication::Store::DBIx::Class.3.gz
+%%PERL5_MAN3%%/Catalyst::Authentication::Store::DBIx::Class::User.3.gz

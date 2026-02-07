@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/String/Compare/ConstantTime.pm
+%%SITE_ARCH%%/auto/String/Compare/ConstantTime/ConstantTime.so
+%%PERL5_MAN3%%/String::Compare::ConstantTime.3.gz

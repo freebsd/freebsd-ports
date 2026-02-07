@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: change_splash
+# REQUIRE: mountcritremote
+#
+# Boot Splash Image Changer * martinko [09-feb-2006]
+#
+# Add the following to /etc/rc.conf[.local] to enable this service:
+#
+# splash_changer_enable="YES"
+# splash_changer_dir (string):		Defaults to "%%DATADIR%%".
+#					Splash image file is randomly picked up from this directory.
+# splash_changer_file (string):		Defaults to "/boot/splash".
+#					This is where the image file is copied to.
+
+. /etc/rc.subr
+
+name=change_splash
+rcvar=splash_changer_enable
+
+load_rc_config $name
+
+: ${splash_changer_enable="NO"}
+: ${splash_changer_file="/boot/splash"}
+: ${splash_changer_dir="%%DATADIR%%"}
+
+start_cmd=${name}_start
+
+change_splash_start()
+{
+	echo "Changing splash image."
+
+	local splash_file splash_dir
+	local fcount random choice select filename
+
+	splash_file="${splash_changer_file-"/boot/splash"}"
+	splash_dir="${splash_changer_dir-"%%DATADIR%%"}"
+
+	[ -f "$splash_file" -o ! -e "$splash_file" ] || err 1 "$splash_file is not a file"
+	[ -d "$splash_dir" ] || err 2 "$splash_dir is not a directory"
+
+	if [ "$splash_dir" = "${splash_file%/*}" ]
+	then
+		fcount="`ls -1 "$splash_dir" | grep -v "^${splash_file##*/}$" | wc -l`"
+	else
+		fcount="`ls -1 "$splash_dir" | wc -l`"
+	fi
+	random="`od -A n -D -N 1 < /dev/random`"
+	choice="`expr $random % $fcount`"
+	select=0
+
+	[ -z "$choice" ] && err 3 "choice failed"
+
+	for filename in "$splash_dir"/*
+	do
+		if [ $select -eq $choice ]
+		then
+			cp -f "$filename" "$splash_file"
+			break
+		fi
+		select="`expr $select + 1`"
+	done
+
+	debug "Boot splash image changed to $filename"
+}
+
+run_rc_command "$1"

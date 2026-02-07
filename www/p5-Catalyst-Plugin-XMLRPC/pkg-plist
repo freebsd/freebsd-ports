@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Catalyst/Action/XMLRPC.pm
+%%SITE_PERL%%/Catalyst/Plugin/XMLRPC.pm
+%%SITE_PERL%%/Catalyst/Plugin/XMLRPC/DispatchType/XMLRPC.pm
+%%PERL5_MAN3%%/Catalyst::Plugin::XMLRPC.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::XMLRPC::DispatchType::XMLRPC.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::XMLRPC.3.gz

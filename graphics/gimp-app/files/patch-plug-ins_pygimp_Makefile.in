@@ -1,0 +1,106 @@
+--- plug-ins/pygimp/Makefile.in.orig	2023-11-05 23:51:28 UTC
++++ plug-ins/pygimp/Makefile.in
+@@ -139,7 +139,7 @@ am__DEPENDENCIES_1 =
+ 	"$(DESTDIR)$(pygimpdir)"
+ LTLIBRARIES = $(pygimp_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-_gimpenums_la_DEPENDENCIES = $(libgimp) $(libgimpcolor) $(libgimpbase) \
++_gimpenums_la_DEPENDENCIES = \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am__gimpenums_la_OBJECTS = gimpenumsmodule.lo
+@@ -151,17 +151,16 @@ _gimpenums_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(
+ _gimpenums_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(_gimpenums_la_LDFLAGS) $(LDFLAGS) -o $@
+-_gimpui_la_DEPENDENCIES = $(libgimpui) $(libgimpwidgets) \
+-	$(libgimpconfig) $(libgimpmath) $(libgimp) $(libgimpcolor) \
+-	$(libgimpbase) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
++_gimpui_la_DEPENDENCIES = \
++	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ am__gimpui_la_OBJECTS = gimpuimodule.lo gimpui.lo
+ _gimpui_la_OBJECTS = $(am__gimpui_la_OBJECTS)
+ _gimpui_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(_gimpui_la_LDFLAGS) $(LDFLAGS) -o $@
+-gimp_la_DEPENDENCIES = $(libgimp) $(libgimpcolor) $(libgimpbase) \
+-	$(libgimpui) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
++gimp_la_DEPENDENCIES = \
++	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ am_gimp_la_OBJECTS = gimpmodule.lo pygimp-item.lo pygimp-display.lo \
+ 	pygimp-drawable.lo pygimp-image.lo pygimp-parasite.lo \
+@@ -170,14 +169,14 @@ gimp_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIB
+ gimp_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(gimp_la_LDFLAGS) $(LDFLAGS) -o $@
+-gimpcolor_la_DEPENDENCIES = $(libgimpcolor) $(am__DEPENDENCIES_1) \
++gimpcolor_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am_gimpcolor_la_OBJECTS = gimpcolormodule.lo pygimp-colors.lo
+ gimpcolor_la_OBJECTS = $(am_gimpcolor_la_OBJECTS)
+ gimpcolor_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(gimpcolor_la_LDFLAGS) $(LDFLAGS) -o $@
+-gimpthumb_la_DEPENDENCIES = $(libgimpthumb) $(am__DEPENDENCIES_1) \
++gimpthumb_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am_gimpthumb_la_OBJECTS = gimpthumbmodule.lo gimpthumb.lo
+ gimpthumb_la_OBJECTS = $(am_gimpthumb_la_OBJECTS)
+@@ -772,10 +771,7 @@ gimp_la_LIBADD = \
+ 	-export-symbols-regex initgimp
+ 
+ gimp_la_LIBADD = \
+-	$(libgimp)		\
+-	$(libgimpcolor)		\
+-	$(libgimpbase)		\
+-	$(libgimpui)		\
++		\
+ 	$(GLIB_LIBS)		\
+ 	$(GEGL_LIBS)		\
+ 	$(PYLINK_LIBS)		\
+@@ -788,9 +784,7 @@ _gimpenums_la_LIBADD = \
+ 	-export-symbols-regex init_gimpenums
+ 
+ _gimpenums_la_LIBADD = \
+-	$(libgimp)		\
+-	$(libgimpcolor)		\
+-	$(libgimpbase)		\
++			\
+ 	$(GLIB_LIBS)		\
+ 	$(PYLINK_LIBS)		\
+ 	$(RT_LIBS)
+@@ -805,7 +799,7 @@ gimpcolor_la_LIBADD = \
+ 	-export-symbols-regex initgimpcolor
+ 
+ gimpcolor_la_LIBADD = \
+-	$(libgimpcolor)		\
++			\
+ 	$(GLIB_LIBS)		\
+ 	$(PYLINK_LIBS)
+ 
+@@ -817,13 +811,7 @@ _gimpui_la_LIBADD = \
+ 	-export-symbols-regex init_gimpui
+ 
+ _gimpui_la_LIBADD = \
+-	$(libgimpui)		\
+-	$(libgimpwidgets)	\
+-	$(libgimpconfig)	\
+-	$(libgimpmath)		\
+-	$(libgimp)		\
+-	$(libgimpcolor)		\
+-	$(libgimpbase)		\
++		\
+ 	$(GTK_LIBS)		\
+ 	$(PYLINK_LIBS)		\
+ 	$(RT_LIBS)		\
+@@ -837,7 +825,7 @@ gimpthumb_la_LIBADD = \
+ 	-export-symbols-regex initgimpthumb
+ 
+ gimpthumb_la_LIBADD = \
+-	$(libgimpthumb)		\
++		\
+ 	$(GDK_PIXBUF_LIBS)	\
+ 	$(PYLINK_LIBS)
+ 

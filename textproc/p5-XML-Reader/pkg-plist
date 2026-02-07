@@ -1,0 +1,8 @@
+%%SITE_PERL%%/XML/Reader.pm
+%%SITE_PERL%%/XML/Reader/Testcases.pm
+%%SITE_PERL%%/XML/Reader_de.pod
+%%SITE_PERL%%/XML/Reader_fr.pod
+%%PERL5_MAN3%%/XML::Reader.3.gz
+%%PERL5_MAN3%%/XML::Reader::Testcases.3.gz
+%%PERL5_MAN3%%/XML::Reader_de.3.gz
+%%PERL5_MAN3%%/XML::Reader_fr.3.gz

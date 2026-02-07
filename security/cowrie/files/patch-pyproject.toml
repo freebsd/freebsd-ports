@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2025-11-28 09:45:07 UTC
++++ pyproject.toml
+@@ -1,13 +1,11 @@
+ [build-system]
+-requires = ["setuptools>=80", "setuptools-scm>=8"]
++requires = ["setuptools", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "cowrie"
+ dynamic = ["version"]
+ description="Cowrie SSH/Telnet Honeypot."
+-license="BSD-3-Clause"
+-license-files = [ "LICENSE.rst" ]
+ authors = [ {name = "Michel Oosterhof", email="michel@oosterhof.net"}, ]
+ maintainers = [ {name = "Michel Oosterhof", email="michel@oosterhof.net"}, ]
+ keywords=["ssh", "telnet", "honeypot"]

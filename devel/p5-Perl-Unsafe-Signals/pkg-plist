@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/Perl/Unsafe/Signals/Signals.so
+%%SITE_ARCH%%/Perl/Unsafe/Signals.pm
+%%PERL5_MAN3%%/Perl::Unsafe::Signals.3.gz

@@ -1,0 +1,6 @@
+include/zn_poly/wide_arith.h
+include/zn_poly/zn_poly.h
+lib/libzn_poly-0.9.2.so.0.0.0
+lib/libzn_poly-0.9.so
+lib/libzn_poly-0.9.so.0
+lib/libzn_poly.a

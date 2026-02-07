@@ -1,0 +1,12 @@
+--- ext/gl/meson.build.orig	2025-03-11 20:14:44 UTC
++++ ext/gl/meson.build
+@@ -100,6 +100,9 @@ gl_objc_args = []
+ optional_deps = []
+ gl_objc_args = []
+ 
++allocators_dep = dependency('gstreamer-allocators-1.0')
++video_dep = dependency('gstreamer-video-1.0')
++
+ if gl_dep.found() # have desktop GL
+   opengl_sources += [
+     'gstglfilterglass.c',

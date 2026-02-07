@@ -1,0 +1,10 @@
+bin/tarantool
+include/tarantool/lauxlib.h
+include/tarantool/lmisclib.h
+include/tarantool/lua.h
+include/tarantool/lua.hpp
+include/tarantool/luaconf.h
+include/tarantool/luajit.h
+include/tarantool/lualib.h
+include/tarantool/module.h
+share/man/man1/tarantool.1.gz

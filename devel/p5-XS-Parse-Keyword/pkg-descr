@@ -1,0 +1,6 @@
+XS::Parse::Keyword provides some XS functions to assist in writing syntax
+modules that provide new perl-visible syntax, primarily for authors of keyword
+plugins using the PL_keyword_plugin hook mechanism. It is unlikely to be of much
+use to anyone else; and highly unlikely to be any use when writing perl code
+using these. Unless you are writing a keyword plugin using XS, this module is
+not for you.

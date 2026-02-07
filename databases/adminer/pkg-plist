@@ -1,0 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@mode 0644
+%%WWWDIR%%/index.php
+%%WWWDIR%%/adminer-plugins-example.php

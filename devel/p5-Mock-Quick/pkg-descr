@@ -1,0 +1,12 @@
+Mock-Object provides a declarative mocking interface that results in a
+very concise, but clear syntax. There are separate facilities for
+mocking object instances, and classes. You can quickly create an
+instance of an object with custom attributes and methods. You can also
+quickly create an anonymous class, optionally inheriting from another,
+with whatever methods you desire.
+
+Mock-Object also provides a tool that provides an OO interface to
+overriding methods in existing classes. This tool also allows for the
+restoration of the original class methods. Best of all this is a
+localized tool, when your control object falls out of scope the original
+class is restored.

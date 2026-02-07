@@ -1,0 +1,23 @@
+--- symux/Makefile.orig	2012-02-18 20:23:56 UTC
++++ symux/Makefile
+@@ -19,14 +19,12 @@
+ 	rm -f conf.h symux symux.cat8 symux.core ${OBJS}
+ 
+ install: symux symux.8 c_smrrds.sh symux.conf
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${BINDIR}
+-	${INSTALL} -c -m 555 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symux	   ${PREFIX}/${BINDIR}/
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${MANDIR}/man8
+-	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symux.8	   ${PREFIX}/${MANDIR}/man8/symux.8
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${SHRDIR}
+-	${INSTALL} -c -m 544 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} c_smrrds.sh  ${PREFIX}/${SHRDIR}/
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${EXADIR}
+-	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symux.conf   ${PREFIX}/${EXADIR}/
++	${INSTALL} -c -m 555 symux	   ${PREFIX}/${BINDIR}/
++	${INSTALL} -c -m 444 symux.8	   ${PREFIX}/${MANDIR}/man8/symux.8
++	${INSTALL} -d -m 755 ${PREFIX}/${SHRDIR}
++	${INSTALL} -c -m 544 c_smrrds.sh  ${PREFIX}/${SHRDIR}/
++	${INSTALL} -d -m 755 ${PREFIX}/${EXADIR}
++	${INSTALL} -c -m 444 symux.conf   ${PREFIX}/${EXADIR}/
+ 
+ cleanipc:
+ 	ipcs | egrep "^m" | awk '{print $$2}' | xargs -n1 ipcrm -m &

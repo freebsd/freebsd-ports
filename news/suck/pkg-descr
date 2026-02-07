@@ -1,0 +1,8 @@
+suck feeds news to local INN or CNEWS server without the remote NNTP feeding.
+This is useful, if you get news from NNTP server with dialup connection.
+
+Suck is a program used to grab news from a remote NNTP news server and
+bring it to your local machine, without the remote server doing
+anything special. If you have read permission on the server, you can
+use suck. Suck does NOT use the NEWNEWS command, hated by many
+administrators.

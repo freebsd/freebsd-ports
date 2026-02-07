@@ -1,0 +1,7 @@
+A glm-like formula language to define dynamic generalized
+linear models (state space models).
+
+Includes functions for Kalman filtering and smoothing.
+
+Estimation of variance matrices can be performed using
+the EM algorithm in case of Gaussian models.

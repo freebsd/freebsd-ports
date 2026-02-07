@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Ztrack
+GenericName=Ztrack game
+Comment=Simple ncurses based pseudo-3D driving game
+Icon=ztrack
+Exec=ztrack
+Categories=Game;SportsGame;
+Terminal=true

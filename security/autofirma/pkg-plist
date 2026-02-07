@@ -1,0 +1,5 @@
+bin/autofirma
+share/applications/afirma.desktop
+%%DATADIR%%/Autofirma.js
+%%DATADIR%%/Autofirma.png
+%%JAVAJARDIR%%/autofirma.jar

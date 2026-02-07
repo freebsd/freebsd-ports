@@ -1,0 +1,16 @@
+<IfModule !php7_module>
+LoadModule php7_module		%%APACHEMODDIR%%/libphp7.so
+</IfModule>
+
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+<VirtualHost :80>
+        ServerAdmin root@example.org
+        ServerName samdrucker.int.example.org
+        ErrorLog  "/var/log/apache/samdrucker-error.log"
+        CustomLog "/var/log/apache/samdrucker-access.log" common
+
+        DocumentRoot "%%WWWDIR%%"
+</VirtualHost>

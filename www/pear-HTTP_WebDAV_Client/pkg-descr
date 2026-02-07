@@ -1,0 +1,3 @@
+HTTP_WebDAV_Client is a RFC2518 compliant stream wrapper
+that allows to use WebDAV server resources like a regular
+file system from within PHP.

@@ -1,0 +1,5 @@
+Pydantic-core provides the core functionality for pydantic validation and
+serialization.
+
+Pydantic-core is currently around 17x faster than pydantic v1. See
+tests/benchmarks/ for details.

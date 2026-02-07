@@ -1,0 +1,1169 @@
+Index: presage-0.9.1/bindings/python/Makefile.am
+===================================================================
+--- bindings/python/Makefile.am.orig
++++ bindings/python/Makefile.am
+@@ -81,7 +81,7 @@ clean-local:
+ 	rm -rf build
+ 
+ presage_wrap.cpp presage_wrap.h presage.py:	$(SWIG_INTERFACE) $(PRESAGE_INTERFACE)
+-	$(SWIG) -c++ -python -I$(top_srcdir)/src/lib -o presage_wrap.cpp -outdir . $(srcdir)/$(SWIG_INTERFACE)
++	$(SWIG) -c++ -python -py3 -I$(top_srcdir)/src/lib -o presage_wrap.cpp -outdir . $(srcdir)/$(SWIG_INTERFACE)
+ 
+ if HAVE_HELP2MAN
+ presage_python_demo.1:	presage_python_demo.in $(top_srcdir)/configure.ac
+Index: presage-0.9.1/bindings/python/presage_python_demo.in
+===================================================================
+--- bindings/python/presage_python_demo.in.orig
++++ bindings/python/presage_python_demo.in
+@@ -25,11 +25,12 @@ import getopt
+ 
+ PROGRAM_NAME = 'presage_python_demo'
+ 
+-config = None
+-suggestions = None
++CONFIG = None
++SUGGESTIONS = None
++
+ 
+ def disclaimer():
+-	print """
++    print("""
+ Presage python demo
+ -----------------------
+ 
+@@ -42,19 +43,21 @@ Its intent is NOT to provide a predictiv
+ 
+ Think of Presage as the predictive backend that sits behind a shiny
+ user interface and does all the predictive heavy lifting.
+-"""
++""")
++
+ 
+ def print_version():
+-	print """
++    print("""
+ %s (%s) version %s
+ Copyright (C) 2004 Matteo Vescovi.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
+ to the extent permitted by law.
+-""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@')
++""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@'))
++
+ 
+ def print_usage():
+-	print """
++    print("""
+ Usage: %s [OPTION]...
+ 
+ At the prompt, type in some text. Hit enter to generate a prediction.
+@@ -66,40 +69,41 @@ Any text input is valid, including no te
+   -v, --version        output version information and exit
+ 
+ Direct your bug reports to: %s
+-""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@')
++""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@'))
++
+ 
+ def parse_cmd_line_args():
+-	global config
+-	global suggestions
++    global CONFIG
++    global SUGGESTIONS
++
++    short_options = "c:s:hv"
++    long_options = ["config=", "suggestions=", "help", "version"]
+ 
+-	short_options = "c:s:hv"
+-	long_options  = ["config=", "suggestions=", "help", "version"]
+-	
+-	try:
+-		opts, args = getopt.getopt(sys.argv[1:], short_options, long_options)
+-	except getopt.GetoptError, err:
+-		print str(err)
+-		sys.exit(1)
+-
+-	for opt, arg in opts:
+-		if opt in ('-v', '--version'):
+-			print_version()
+-			sys.exit()
+-		elif opt in ('-h', '--help'):
+-			print_usage()
+-			sys.exit()
+-		elif opt in ('-c', '--config'):
+-			config = arg
+-		elif opt in ('-s', '--suggestions'):
+-			suggestions = arg
++    try:
++        opts, _ = getopt.getopt(sys.argv[1:], short_options, long_options)
++    except getopt.GetoptError as err:
++        print(str(err))
++        sys.exit(1)
++
++    for opt, arg in opts:
++        if opt in ('-v', '--version'):
++            print_version()
++            sys.exit()
++        elif opt in ('-h', '--help'):
++            print_usage()
++            sys.exit()
++        elif opt in ('-c', '--config'):
++            CONFIG = arg
++        elif opt in ('-s', '--suggestions'):
++            SUGGESTIONS = arg
+ 
+ 
+ def main():
+-        try:
+-	        import presage
++    try:
++        import presage
+ 
+-        except ImportError, e:
+-                print '''
++    except ImportError as err:
++        print('''
+ Error: failed to import module presage.
+ 
+ Check that presage python binding is properly installed (if
+@@ -109,53 +113,53 @@ accordingly).
+ Check that presage library is properly installed (if installed in a
+ non-standard location, please set LD_LIBRARY_PATH (PATH, LIBPATH)
+ accordingly).
+-'''
+-		print e
+-                sys.exit(1)
+-
+-	try:
+-		# Define and create PresageCallback object
+-		class DemoCallback(presage.PresageCallback):
+-			def __init__(self):
+-				presage.PresageCallback.__init__(self)
+-				self.buffer = ''
+-
+-			def get_past_stream(self):
+-				return self.buffer
+-			
+-			def get_future_stream(self):
+-				return ''
+-
+-		# Presage owns callback, so we create it and disown it
+-		callback = DemoCallback().__disown__()
+-
+-		# Create Presage object
+-		if config:
+-			prsg = presage.Presage(callback, config)
+-		else:
+-			prsg = presage.Presage(callback)
+-		
+-		if suggestions:
+-			prsg.config('Presage.Selector.SUGGESTIONS', suggestions)
+-
+-		print "Enter text at the prompt (press enter on empty line to exit):"
+-		str = None
+-		while str != "":
+-			str = raw_input(">  ")
+-			callback.buffer += str
+-			print prsg.predict()
+-		
+-	        # Destroy Presage object
+-		del prsg
+-
+-	except presage.PresageException,ex:
+-		print ex.what()
+-		sys.exit(1)
++''')
++        print(err)
++        sys.exit(1)
++
++    try:
++        # Define and create PresageCallback object
++        class DemoCallback(presage.PresageCallback):
++            def __init__(self):
++                presage.PresageCallback.__init__(self)
++                self.buffer = ''
++
++            def get_past_stream(self):
++                return self.buffer
++
++            def get_future_stream(self):
++                return ''
++
++        # Presage owns callback, so we create it and disown it
++        callback = DemoCallback().__disown__()
++
++        # Create Presage object
++        if CONFIG:
++            prsg = presage.Presage(callback, CONFIG)
++        else:
++            prsg = presage.Presage(callback)
++
++        if SUGGESTIONS:
++            prsg.config('Presage.Selector.SUGGESTIONS', SUGGESTIONS)
++
++        print("Enter text at the prompt (press enter on empty line to exit):")
++        strs = None
++        while strs != "":
++            strs = input(">  ")
++            callback.buffer += strs
++            print(prsg.predict())
++
++        # Destroy Presage object
++        del prsg
++
++    except presage.PresageException as ex:
++        print(ex.what())
++        sys.exit(1)
+ 
+-	print "Goodbye"
++    print("Goodbye")
+ 
+ 
+ if __name__ == '__main__':
+-	parse_cmd_line_args()
+-	disclaimer()
+-	main()
++    parse_cmd_line_args()
++    disclaimer()
++    main()
+Index: presage-0.9.1/configure.ac
+===================================================================
+--- configure.ac.orig
++++ configure.ac
+@@ -233,7 +233,7 @@ AM_PATH_PYTHON([2.0],
+                [AC_MSG_WARN([Python not found. Python is required to build presage python binding. Python can be obtained from http://www.python.org])])
+ if test "$PYTHON" != :
+ then
+-    python_include_path=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_python_inc();"`
++    python_include_path=`$PYTHON -c "import sysconfig; print(sysconfig.get_path('include'));"`
+     AC_CHECK_HEADERS([${python_include_path}/Python.h],
+                      [have_python_header=true],
+                      [AC_MSG_WARN([Python.h header file not found. Python development files are required to build presage python binding. Python can be obtained from http://www.python.org])],
+@@ -295,7 +295,7 @@ then
+     AC_MSG_RESULT($have_pyatspi)
+     
+     AC_MSG_CHECKING(for python gtk module)
+-    $PYTHON -c "import gtk" 2&>/dev/null
++    $PYTHON -c "import gi; gi.require_version('Gtk', '3.0'); from gi.repository import Gtk" 2&>/dev/null
+     if test $? -eq 0;
+     then
+     	have_python_gtk=yes
+@@ -305,7 +305,7 @@ then
+     AC_MSG_RESULT($have_python_gtk)
+     
+     AC_MSG_CHECKING(for python pango module)
+-    $PYTHON -c "import pango" 2&>/dev/null
++    $PYTHON -c "import gi; from gi.repository import Pango" 2&>/dev/null
+     if test $? -eq 0;
+     then
+     	have_python_pango=yes
+Index: presage-0.9.1/apps/python/pyprompter.in
+===================================================================
+--- apps/python/pyprompter.in.orig
++++ apps/python/pyprompter.in
+@@ -25,20 +25,22 @@ import getopt
+ import os
+ 
+ PROGRAM_NAME = 'pyprompter'
+-config = None
+-suggestions = None
++CONFIG = None
++SUGGESTIONS = None
++
+ 
+ def print_version():
+-   print """
++    print("""
+ %s (%s) version %s
+ Copyright (C) 2004 Matteo Vescovi.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
+ to the extent permitted by law.
+-""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@')
++""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@'))
++
+ 
+ def print_usage():
+-   print """
++    print("""
+ Usage: %s [options]
+ 
+ Options:
+@@ -55,60 +57,62 @@ clicking on it or by highlighting it wit
+ pressing ENTER; the desired text will be automatically entered.
+ 
+ Direct your bug reports to: %s
+-""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@')
++""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@'))
++
+ 
+ def parse_cmd_line_args():
+-   short_options = "c:s:hv"
+-   long_options  = ["config=", "suggestions=", "help", "version"]
+-   
+-   try:
+-      opts, args = getopt.getopt(sys.argv[1:], short_options, long_options)
+-   except getopt.GetoptError, err:
+-      print str(err)
+-      sys.exit(1)
+-   
+-   for opt, arg in opts:
+-      if opt in ('-v', '--version'):
+-         print_version()
+-         sys.exit()
+-      elif opt in ('-h', '--help'):
+-         print_usage()
+-         sys.exit()
+-      elif opt in ('-c', '--config'):
+-         global config
+-         config = arg
+-      elif opt in ('-s', '--suggestions'):
+-         global suggestions
+-         suggestions = arg
++    short_options = "c:s:hv"
++    long_options = ["config=", "suggestions=", "help", "version"]
++
++    try:
++        opts, _ = getopt.getopt(sys.argv[1:], short_options, long_options)
++    except getopt.GetoptError as err:
++        print(str(err))
++        sys.exit(1)
++
++    for opt, arg in opts:
++        if opt in ('-v', '--version'):
++            print_version()
++            sys.exit()
++        elif opt in ('-h', '--help'):
++            print_usage()
++            sys.exit()
++        elif opt in ('-c', '--config'):
++            global CONFIG
++            CONFIG = arg
++        elif opt in ('-s', '--suggestions'):
++            global SUGGESTIONS
++            SUGGESTIONS = arg
+ 
+ 
+ if __name__ == "__main__":
+-   parse_cmd_line_args()
++    parse_cmd_line_args()
+ 
+-   try:
+-      import prompter.prompter
+-   except ImportError, e:
+-      print '''
++    try:
++        import prompter.prompter
++    except ImportError as err:
++        print('''
+ Error: failed to import module prompter.
+ 
+ Check that prompter is properly installed (if installed in a
+ non-standard location, please set PYTHONPATH accordingly).
+-'''
+-      print e
+-   else:
+-      if not config:
+-         # try to locate presage.xml config file
+-         scriptdir = os.path.dirname(sys.argv[0])
+-         # in scriptdir/etc
+-         conffile = os.path.join(scriptdir, 'etc', 'presage.xml')
+-         if os.path.isfile(conffile):
+-            config = conffile
+-         else:
+-            # in scriptdir/../etc
+-            conffile = os.path.join(scriptdir, '..', 'etc', 'presage.xml')
+-            if os.path.isfile(conffile):
+-               config = conffile
+-         print 'Configuration file: ' + str(config)
+-
+-      app = prompter.prompter.Prompter("@PACKAGE_VERSION@", config, suggestions)
+-      app.MainLoop()
++''')
++        print(err)
++    else:
++        if not CONFIG:
++            # try to locate presage.xml config file
++            SCRIPTDIR = os.path.dirname(sys.argv[0])
++            # in scriptdir/etc
++            CONFFILE = os.path.join(SCRIPTDIR, 'etc', 'presage.xml')
++            if os.path.isfile(CONFFILE):
++                CONFIG = CONFFILE
++            else:
++                # in scriptdir/../etc
++                CONFFILE = os.path.join(SCRIPTDIR, '..', 'etc', 'presage.xml')
++                if os.path.isfile(CONFFILE):
++                    CONFIG = CONFFILE
++            print('Configuration file: ' + str(CONFIG))
++
++        APP = prompter.prompter.Prompter(
++            "@PACKAGE_VERSION@", CONFIG, SUGGESTIONS)
++        APP.MainLoop()
+Index: presage-0.9.1/apps/python/prompter/prompter.py
+===================================================================
+--- apps/python/prompter/prompter.py.orig
++++ apps/python/prompter/prompter.py
+@@ -23,21 +23,22 @@ import sys
+ try:
+    import wx
+    import wx.stc
+-except ImportError, ex:
+-   print '''
++   import wx.adv
++except ImportError as ex:
++   print('''
+ Error: failed to import module wxPython.
+ 
+ wxPython is a Python binding for the wxWidgets toolkit.
+ 
+ Check that wxPython is properly installed.
+-'''
+-   print ex
++''')
++   print(ex)
+    sys.exit(1)
+ 
+ try:
+    import presage
+-except ImportError, ex:
+-   print '''
++except ImportError as ex:
++   print('''
+ Error: failed to import module presage.
+ 
+ Check that presage python binding is properly installed (if
+@@ -47,8 +48,8 @@ accordingly).
+ Check that presage library is properly installed (if installed in a
+ non-standard location, please set LD_LIBRARY_PATH (PATH, LIBPATH)
+ accordingly).
+-'''
+-   print ex
++''')
++   print(ex)
+    sys.exit(1)
+ 
+ ##########
+@@ -238,7 +239,7 @@ class PrompterFrame(wx.Frame):
+       self.fileMenu.Enable(wx.ID_SAVEAS, False)
+ 
+    def OnFileMenuOpen(self, event):
+-      print "Opening a file.."
++      print("Opening a file..")
+ 
+       # Create the dialog. In this case the current directory is forced as the starting
+       # directory for the dialog, and no default file name is forced. This can easilly
+@@ -249,7 +250,7 @@ class PrompterFrame(wx.Frame):
+       # dialog is set up to change the current working directory to the path chosen.
+       dlg = wx.FileDialog(
+           self, message="Choose a file", defaultDir="", 
+-          defaultFile="", wildcard=self.wildcard, style=wx.OPEN | wx.CHANGE_DIR
++          defaultFile="", wildcard=self.wildcard, style=wx.FD_OPEN | wx.FD_CHANGE_DIR
+           )
+       
+       # Show the dialog and retrieve the user response. If it is the OK response, 
+@@ -279,7 +280,7 @@ class PrompterFrame(wx.Frame):
+       dlg.Destroy()
+ 
+    def OnFileMenuSave(self, event):
+-      print "Save file"
++      print("Save file")
+       if self.editor.file == None:
+          self.OnFileMenuSaveAs(event)
+       else:
+@@ -287,7 +288,7 @@ class PrompterFrame(wx.Frame):
+          self.fileMenu.Enable(wx.ID_SAVE, False)
+ 
+    def OnFileMenuSaveAs(self, event):
+-      print "Save file as"
++      print("Save file as")
+ 
+       # Create the dialog. In this case the current directory is forced as the starting
+       # directory for the dialog, and no default file name is forced. This can easilly
+@@ -298,12 +299,12 @@ class PrompterFrame(wx.Frame):
+       # directory than the one initially set.
+       dlg = wx.FileDialog(
+           self, message="Save file as ...", defaultDir="", 
+-          defaultFile="", wildcard=self.wildcard, style=wx.SAVE
++          defaultFile="", wildcard=self.wildcard, style=wx.FD_SAVE
+           )
+ 
+       # This sets the default filter that the user will initially see. Otherwise,
+       # the first filter in the list will be used by default.
+-      dlg.SetFilterIndex(2)
++      dlg.SetFilterIndex(1)
+ 
+       # Show the dialog and retrieve the user response. If it is the OK response, 
+       # process the data.
+@@ -321,31 +322,31 @@ class PrompterFrame(wx.Frame):
+       self.OnFileMenuNew(event)        # this will do for now
+    
+    def OnFileMenuQuit(self, event):
+-      print "This should first check that changes have been saved..."
++      print("This should first check that changes have been saved...")
+       self.Close(True)
+    
+    def OnEditMenuUndo(self, event):
+       if self.editor.CanUndo():
+          self.editor.Undo()
+-         print "Undo last action"
++         print("Undo last action")
+ 
+    def OnEditMenuRedo(self, event):
+       if self.editor.CanRedo():
+          self.editor.Redo()
+-         print "Redo last action"
++         print("Redo last action")
+ 
+    def OnEditMenuCut(self, event):
+       self.clip = self.editor.GetSelectedText()
+       self.editor.ReplaceSelection('')
+-      print "Cut selected text: " + self.clip
++      print("Cut selected text: " + self.clip)
+    
+    def OnEditMenuCopy(self, event):
+       self.clip = self.editor.GetSelectedText()
+-      print "Stored selected text into clip: " + self.clip
++      print("Stored selected text into clip: " + self.clip)
+    
+    def OnEditMenuPaste(self, event):
+       self.editor.ReplaceSelection(self.clip)
+-      print "Replace selection with: " + self.clip
++      print("Replace selection with: " + self.clip)
+ 
+    def OnEditMenuSelectAll(self, event):
+       self.editor.SelectAll()
+@@ -360,7 +361,7 @@ class PrompterFrame(wx.Frame):
+       self.editor.DecreaseTextSize()
+ 
+    def OnViewMenuShowToolbar(self, event):
+-      if event.Checked():
++      if event.IsChecked():
+          self.toolbar.Show()
+       else:
+          self.toolbar.Hide()
+@@ -370,10 +371,10 @@ class PrompterFrame(wx.Frame):
+       self.editor.ShowPrediction()
+ 
+    def OnPresageMenuToggleFunctionMode(self, event):
+-      self.editor.function_keys_enabled = event.Checked()
++      self.editor.function_keys_enabled = event.IsChecked()
+ 
+    def OnPresageMenuToggleAutopunctuationMode(self, event):
+-      self.editor.autopunctuation = event.Checked()
++      self.editor.autopunctuation = event.IsChecked()
+ 
+    def OnHelpMenuContents(self, event):
+       message = "Sorry, help not written yet."
+@@ -412,7 +413,7 @@ with this program; if not, write to the
+       # AboutBox and AboutDialogInfo were introduced in wxPython 2.7.1.1
+       if wx.VERSION > (2, 7, 1, 1):
+          # build about dialog information
+-         info = wx.AboutDialogInfo()
++         info = wx.adv.AboutDialogInfo()
+          info.SetName(name)
+          info.SetVersion(version)
+          info.SetCopyright(copyright)
+@@ -426,7 +427,7 @@ with this program; if not, write to the
+          #info.SetIcon()
+          
+          # show about dialog box
+-         wx.AboutBox(info)
++         wx.adv.AboutBox(info)
+ 
+       else:
+          message = name + ' ' + version + '\n' \
+@@ -517,7 +518,7 @@ class PrompterEditor(wx.stc.StyledTextCt
+       wx.CallAfter(self.SetSTCFocus, 1)
+ 
+    def OnChar(self, event):
+-      print "------------ OnChar() handler"
++      print("------------ OnChar() handler")
+ 
+       if event.HasModifiers():
+          if self.AutoCompActive():
+@@ -535,7 +536,7 @@ class PrompterEditor(wx.stc.StyledTextCt
+             self.__HandleFunctionKey(keycode)
+ 
+          else:
+-            key = unichr(key)
++            key = chr(key)
+ 
+             self.parent.fileMenu.Enable(wx.ID_SAVE, True)
+             self.parent.fileMenu.Enable(wx.ID_SAVEAS, True)
+@@ -553,7 +554,7 @@ class PrompterEditor(wx.stc.StyledTextCt
+       self.__ShowPrediction(string)
+ 
+    def __ShowPrediction(self, string = ''):
+-      print "------------ __ShowPrediction()"
++      print("------------ __ShowPrediction()")
+       try:
+          prefix = self.prsg.prefix()
+          context = self.prsg.context()
+@@ -565,18 +566,18 @@ class PrompterEditor(wx.stc.StyledTextCt
+             self.prediction = self.__PrependFunctionLabel(self.prediction)
+          self.suggestions = self.separator.join(self.prediction);
+ 
+-      except presage.PresageException, ex:
+-         print 'Caught exception %s' % (ex)
+-         print '  code: %d' % (ex.code())
+-         print '  what: %s' % (ex.what())
++      except presage.PresageException as ex:
++         print('Caught exception %s' % (ex))
++         print('  code: %d' % (ex.code()))
++         print('  what: %s' % (ex.what()))
+          
+ 
+-      print "String:         " + string
+-      print "Prefix:         " + prefix
+-      print "Prefix len:     " + str(len(prefix))
+-      print "Context:        " + context
+-      print "Context change: " + str(context_change)
+-      print "Prediction:     " + self.suggestions
++      print("String:         " + string)
++      print("Prefix:         " + prefix)
++      print("Prefix len:     " + str(len(prefix)))
++      print("Context:        " + context)
++      print("Context change: " + str(context_change))
++      print("Prediction:     " + self.suggestions)
+ 
+       if self.AutoCompActive():
+          self.AutoCompCancel()
+@@ -622,11 +623,11 @@ class PrompterEditor(wx.stc.StyledTextCt
+       return result
+ 
+    def __HandleFunctionKey(self, key):
+-      print "Got function key " + str(key)
++      print("Got function key " + str(key))
+ 
+       try:
+          idx = self.function_keys.index(key)
+-         print self.prediction[idx]
++         print(self.prediction[idx])
+          if self.AutoCompActive():
+             self.AutoCompCancel()
+ 
+@@ -634,7 +635,7 @@ class PrompterEditor(wx.stc.StyledTextCt
+          self.AutoCompSelect(self.prediction[idx])
+          self.AutoCompComplete()
+       except IndexError:
+-         print 'Key not in prediction completion list'
++         print('Key not in prediction completion list')
+    
+    def __PrependFunctionLabel(self, prediction):
+       return ['F' + str(i + 1) + ' ' + prediction[i] for i in range(len(prediction))]
+@@ -646,15 +647,15 @@ class PrompterEditor(wx.stc.StyledTextCt
+       return completion
+ 
+    def OnUserListSelection(self, event):
+-      completion = unicode(event.GetText())
++      completion = str(event.GetText())
+       if self.function_keys_enabled:
+          completion = self.__RemoveFunctionLabel(completion)
+-      prefix_length = len(unicode(self.prsg.prefix()))
++      prefix_length = len(str(self.prsg.prefix()))
+       
+-      print "----------- OnUserListSelection() handler"
+-      print "Completion:    " + completion
+-      print "Prefix length: " + str(prefix_length)
+-      print "To be added:   " + completion[prefix_length:]
++      print("----------- OnUserListSelection() handler")
++      print("Completion:    " + completion)
++      print("Prefix length: " + str(prefix_length))
++      print("To be added:   " + completion[prefix_length:])
+ 
+       # no need to call complete, using callbacks
+       #self.prsg.complete(completion.encode('utf-8'))
+Index: presage-0.9.1/apps/dbus/presage_dbus_python_demo.in
+===================================================================
+--- apps/dbus/presage_dbus_python_demo.in.orig
++++ apps/dbus/presage_dbus_python_demo.in
+@@ -32,13 +32,13 @@ PROGRAM_NAME = 'presage_dbus_python_demo
+ 
+ config = None
+ 
+-presage_service_name      = 'org.gnome.presage.beta'
+-presage_service_path      = '/org/gnome/presage/beta'
++presage_service_name = 'org.gnome.presage.beta'
++presage_service_path = '/org/gnome/presage/beta'
+ presage_service_interface = 'org.gnome.presage.beta'
+ 
+ 
+ def disclaimer():
+-	print """
++    print("""
+ Presage dbus python demo
+ ------------------------
+ 
+@@ -51,19 +51,21 @@ Its intent is NOT to provide a predictiv
+ 
+ Think of Presage as the predictive backend that sits behind a shiny
+ user interface and does all the predictive heavy lifting.
+-"""
++""")
++
+ 
+ def print_version():
+-	print """
++    print("""
+ %s (%s) version %s
+ Copyright (C) 2010 Matteo Vescovi.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
+ to the extent permitted by law.
+-""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@')
++""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@'))
++
+ 
+ def print_usage():
+-	print """
++    print("""
+ Usage: %s [OPTION]...
+ 
+ At the prompt, type in some text. Hit enter to generate a prediction.
+@@ -74,29 +76,30 @@ Any text input is valid, including no te
+   -v, --version        output version information and exit
+ 
+ Direct your bug reports to: %s
+-""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@')
++""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@'))
++
+ 
+ def parse_cmd_line_args():
+-	global config
++    global config
++
++    short_options = "c:s:hv"
++    long_options = ["config=", "suggestions=", "help", "version"]
++
++    try:
++        opts, _ = getopt.getopt(sys.argv[1:], short_options, long_options)
++    except getopt.GetoptError as err:
++        print(str(err))
++        sys.exit(1)
+ 
+-	short_options = "c:s:hv"
+-	long_options  = ["config=", "suggestions=", "help", "version"]
+-	
+-	try:
+-		opts, args = getopt.getopt(sys.argv[1:], short_options, long_options)
+-	except getopt.GetoptError, err:
+-		print str(err)
+-		sys.exit(1)
+-
+-	for opt, arg in opts:
+-		if opt in ('-v', '--version'):
+-			print_version()
+-			sys.exit()
+-		elif opt in ('-h', '--help'):
+-			print_usage()
+-			sys.exit()
+-		elif opt in ('-c', '--config'):
+-			config = arg
++    for opt, arg in opts:
++        if opt in ('-v', '--version'):
++            print_version()
++            sys.exit()
++        elif opt in ('-h', '--help'):
++            print_usage()
++            sys.exit()
++        elif opt in ('-c', '--config'):
++            config = arg
+ 
+ 
+ def main():
+@@ -107,32 +110,38 @@ def main():
+     try:
+         bus = dbus.SessionBus(gloop)
+         if config:
+-            presage_object_path = bus.get_object(presage_service_name, presage_service_path).get_presage_object_path(config)
++            presage_object_path = bus.get_object(
++                presage_service_name,
++                presage_service_path).get_presage_object_path(config)
+         else:
+-            presage_object_path = bus.get_object(presage_service_name, presage_service_path).get_presage_object_path()
++            presage_object_path = bus.get_object(
++                presage_service_name, presage_service_path).get_presage_object_path()
+         # Get the Presage object
+-        presage_object = bus.get_object(presage_service_name, presage_object_path)
++        presage_object = bus.get_object(
++            presage_service_name, presage_object_path)
+ 
+-        print 'D-BUS connection to presage object %s created' % presage_object_path
++        print(
++            'D-BUS connection to presage object %s created' %
++            presage_object_path)
+ 
+-    except Exception, e:
+-        print e
++    except Exception as err:
++        print(err)
+         sys.exit(1)
+ 
+-    print "Enter text at the prompt (press enter on empty line to exit):"
++    print("Enter text at the prompt (press enter on empty line to exit):")
+     string = None
+     buffer = ""
+     while string != "":
+-        string = raw_input("> ")
++        string = input("> ")
+         buffer += string
+         results = presage_object.get_prediction(buffer, '')
+         for result in results:
+-            print str(result)
++            print(str(result))
+     presage_object.destroy()
+-    print "Goodbye"
++    print("Goodbye")
+ 
+ 
+ if __name__ == '__main__':
+-	parse_cmd_line_args()
+-	disclaimer()
+-	main()
++    parse_cmd_line_args()
++    disclaimer()
++    main()
+Index: presage-0.9.1/apps/dbus/presage_dbus_service.py
+===================================================================
+--- apps/dbus/presage_dbus_service.py.orig
++++ apps/dbus/presage_dbus_service.py
+@@ -72,7 +72,7 @@ class PresageObject(dbus.service.Object)
+         self.callback = DbusPresageCallback().__disown__()
+         self.prsg = presage.Presage(self.callback, config)
+         dbus.service.Object.__init__(self, name, self.path)
+-        print 'Created presage object %s' % self.path
++        print('Created presage object %s' % self.path)
+ 
+ #    def __del__( self ):
+ #        print 'PresageObject destroyed: ', self 
+@@ -88,7 +88,7 @@ class PresageObject(dbus.service.Object)
+     @dbus.service.method(dbus_interface = presage_service_interface)
+     def destroy(self):
+         self.remove_from_connection()
+-        print 'Removed presage object ' + self.path
++        print('Removed presage object ' + self.path)
+ 
+ 
+ class PresageService(dbus.service.Object):
+@@ -98,7 +98,7 @@ class PresageService(dbus.service.Object
+         self.path = presage_service_path
+         self.loop = loop
+         dbus.service.Object.__init__(self, self.name, self.path)
+-        print 'Service %s created, pid %d' % (presage_service_name, os.getpid())
++        print('Service %s created, pid %d' % (presage_service_name, os.getpid()))
+ 
+     @dbus.service.method(dbus_interface = presage_service_interface,
+                          in_signature = 's',
+@@ -112,11 +112,11 @@ class PresageService(dbus.service.Object
+                          out_signature = '')
+     def shutdown(self):
+         self.loop.quit()
+-        print 'Service %s shutdown' % presage_service_name
++        print('Service %s shutdown' % presage_service_name)
+ 
+ 
+ def start():
+-    print 'Starting ' + presage_service_name + '...'
++    print('Starting ' + presage_service_name + '...')
+ 
+     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+     loop = gobject.MainLoop()
+@@ -124,16 +124,16 @@ def start():
+     loop.run()
+ 
+ def stop():
+-    print 'Stopping ' + presage_service_name + '...'
++    print('Stopping ' + presage_service_name + '...')
+     try:
+         dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+         bus = dbus.SessionBus()
+         presage_service_object = bus.get_object(presage_service_name, presage_service_path)
+         presage_service_object.shutdown()
+ 
+-    except Exception, e:
+-        print 'Caught exception while attempting to stop ' + presage_service_name
+-        print e
++    except Exception as err:
++        print('Caught exception while attempting to stop ' + presage_service_name)
++        print(err)
+         
+ if __name__ == '__main__':
+     start()
+Index: presage-0.9.1/apps/python/presagemate/presagemate.py
+===================================================================
+--- apps/python/presagemate/presagemate.py.orig
++++ apps/python/presagemate/presagemate.py
+@@ -24,8 +24,8 @@ import string
+ 
+ try:
+    import presage
+-except ImportError, ex:
+-   print '''
++except ImportError as ex:
++   print('''
+ Error: failed to import module presage.
+ 
+ Check that presage python binding is properly installed (if
+@@ -35,11 +35,11 @@ accordingly).
+ Check that presage library is properly installed (if installed in a
+ non-standard location, please set LD_LIBRARY_PATH (PATH, LIBPATH)
+ accordingly).
+-'''
++''')
+ try:
+     import pyatspi
+-except ImportError, ex:
+-   print '''
++except ImportError as ex:
++   print('''
+ Error: failed to import module pyatspi.
+ 
+ Check that pyatspi python binding is properly installed (if
+@@ -49,12 +49,14 @@ accordingly).
+ Check that pyatspi library is properly installed (if installed in a
+ non-standard location, please set LD_LIBRARY_PATH (PATH, LIBPATH)
+ accordingly).
+-'''
++''')
+    
+ try:
+-    import gtk
+-except ImportError, ex:
+-   print '''
++    import gi
++    gi.require_version('Gtk', '3.0')
++    from gi.repository import Gtk as gtk, Gdk as gdk
++except ImportError as ex:
++   print('''
+ Error: failed to import module gtk.
+ 
+ Check that gtk python binding is properly installed (if
+@@ -64,12 +66,12 @@ accordingly).
+ Check that gtk library is properly installed (if installed in a
+ non-standard location, please set LD_LIBRARY_PATH (PATH, LIBPATH)
+ accordingly).
+-'''
++''')
+ 
+ 
+-import ConfigParser
++import configparser
+ import os
+-import pango
++from gi.repository import Pango as pango
+ import atexit
+ import Xlib
+ import Xlib.display
+@@ -129,11 +131,11 @@ def process_event(event):
+            
+            completion = prsg.completion(predicted_word)
+            
+-           print 'Prediction: ' + predicted_word
+-           print 'Completion: ' + completion
++           print('Prediction: ' + predicted_word)
++           print('Completion: ' + completion)
+            
+            for ch in completion:
+-              keyval = gtk.gdk.unicode_to_keyval(ord(ch))
++              keyval = gdk.unicode_to_keyval(ord(ch))
+               reg.generateKeyboardEvent(keyval, None, pyatspi.KEY_SYM)
+            
+            callback.buffer += completion
+@@ -173,7 +175,7 @@ def delete_event(widget, event, data=Non
+ 
+ def frame_event(window, event, data=None):
+    state = event.new_window_state
+-   if state & gtk.gdk.WINDOW_STATE_ICONIFIED:
++   if state & gdk.WindowState.ICONIFIED:
+       # re-map F1-10 to F1-10 when the window is iconified
+       remap_keys(False)
+    else:
+@@ -182,7 +184,7 @@ def frame_event(window, event, data=None
+ 
+ def get_config():
+    writeconfig_flag = False
+-   config = ConfigParser.SafeConfigParser()
++   config = configparser.ConfigParser()
+    config.read(os.path.expanduser('~/.pypresagematerc'))
+ 
+    if config.has_section('Config') == False:
+@@ -207,7 +209,7 @@ def get_config():
+       writeconfig_flag = True
+    
+    if writeconfig_flag == True:
+-      configfile = open(os.path.expanduser('~/.pypresagematerc'), 'wb')
++      configfile = open(os.path.expanduser('~/.pypresagematerc'), 'w')
+       try:
+          config.write(configfile)
+       finally:
+@@ -216,11 +218,11 @@ def get_config():
+    return config
+ 
+ def set_position_config(x, y):
+-   config = ConfigParser.SafeConfigParser()
++   config = configparser.ConfigParser()
+    config.read(os.path.expanduser('~/.pypresagematerc'))
+    config.set('Config', 'window_position_x', str(x))
+    config.set('Config', 'window_position_y', str(y))
+-   configfile = open(os.path.expanduser('~/.pypresagematerc'), 'wb')
++   configfile = open(os.path.expanduser('~/.pypresagematerc'), 'w')
+    try:
+       config.write(configfile)
+    finally:
+@@ -279,15 +281,15 @@ def remap_keys(remap):
+ 
+ def popup_menu(widget, event):
+    if event.button == 3:
+-      menu.popup(None, None, None, event.button, event.time) 
++      menu.popup(None, None, None, None, event.button, event.time) 
+       return True
+    return False
+ 
+ def apply_preferences(widget):
+-   print "apply"
++   print("apply")
+   
+ def close_preferences(widget):
+-   print "close"
++   print("close")
+ 
+ def update_no_selections(widget):
+    global number_of_suggestions
+@@ -297,14 +299,14 @@ def update_no_selections(widget):
+    remap_keys(True)
+ 
+ def preferences(widget):
+-   preferences = gtk.Window(gtk.WINDOW_TOPLEVEL)
++   preferences = gtk.Window(gtk.WindowType.TOPLEVEL)
+    preferences.set_title("pypresagemate preferences")
+-   preferences.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_DIALOG)
++   preferences.set_type_hint(gdk.WindowTypeHint.DIALOG)
+   
+    preferences_box = gtk.VBox()
+    
+    notebook = gtk.Notebook()
+-   notebook.set_tab_pos(gtk.POS_TOP)
++   notebook.set_tab_pos(gtk.PositionType.TOP)
+    
+    appearance_frame = gtk.Frame()
+    appearance_tab = gtk.Label("Appearance")
+@@ -319,7 +321,8 @@ def preferences(widget):
+    
+    presage_placeholder = gtk.Label("\n\nPresage library configuration\n\n")
+    adj = gtk.Adjustment(float(number_of_suggestions), 3, 10, 1, 0, 0)
+-   no_of_selections = gtk.SpinButton(adj, 0, 0)
++   no_of_selections = gtk.SpinButton()
++   no_of_selections.configure(adj, 0, 0)
+    no_of_selections.connect("output", update_no_selections)
+    presage_frame.add(no_of_selections)
+    
+@@ -366,7 +369,7 @@ with this program; if not, write to the
+    about.set_website("http://presage.sourceforge.net/")
+    about.set_comments(comments)
+    if os.path.isfile("/usr/local/share/presage/presage.png"):
+-      about.set_logo(gtk.gdk.pixbuf_new_from_file("/usr/local/share/presage/presage.png"))
++      about.set_logo(gdk.pixbuf_new_from_file("/usr/local/share/presage/presage.png"))
+    about.run()
+    about.destroy()
+ 
+@@ -410,7 +413,7 @@ prediction = prsg.predict()
+ 
+ reg.registerKeystrokeListener(process_event, mask=pyatspi.allModifiers())
+ 
+-window = gtk.Window(gtk.WINDOW_TOPLEVEL)
++window = gtk.Window(gtk.WindowType.TOPLEVEL)
+ window.connect("delete-event", delete_event)
+ window.connect("window-state-event", frame_event)
+ 
+@@ -419,17 +422,17 @@ window.set_keep_above(True)
+ 
+ window.move(window_position_x, window_position_y)
+ 
+-window.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse("#c0c0ff"))
++window.modify_bg(gtk.StateType.NORMAL, gdk.color_parse("#c0c0ff"))
+ 
+ label = gtk.Label("pypresagemate")
+-label.set_justify(gtk.JUSTIFY_LEFT)
++label.set_justify(gtk.Justification.LEFT)
+ label.set_width_chars(20)
+ 
+ font_desc = pango.FontDescription(pangofont)
+ label.modify_font(font_desc)
+ 
+ window.connect("button-press-event", popup_menu)
+-window.add_events(gtk.gdk.BUTTON_PRESS_MASK)
++window.add_events(gdk.EventMask.BUTTON_PRESS_MASK)
+ 
+ menu = gtk.Menu()
+ menu_item1 = gtk.MenuItem('About')
+Index: presage-0.9.1/apps/python/pypresagemate.in
+===================================================================
+--- apps/python/pypresagemate.in.orig
++++ apps/python/pypresagemate.in
+@@ -27,17 +27,17 @@ import os
+ PROGRAM_NAME = 'pypresagemate'
+ 
+ def print_version():
+-   print """
++   print("""
+ %s (%s) version %s
+ Copyright (C) 2010 Matteo Vescovi.
+ Copyright (C) 2010 John Hills.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
+ to the extent permitted by law.
+-""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@')
++""" % (PROGRAM_NAME, '@PACKAGE_NAME@', '@PACKAGE_VERSION@'))
+ 
+ def print_usage():
+-   print """
++   print("""
+ Usage: %s [options]
+ 
+ Options:
+@@ -54,16 +54,16 @@ keystrokes are typed and displaying pred
+ prediction is selected, text is sent to the active application.
+ 
+ Direct your bug reports to: %s
+-""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@')
++""" % (PROGRAM_NAME, '@PACKAGE_BUGREPORT@'))
+ 
+ def parse_cmd_line_args():
+    short_options = "hv"
+    long_options  = ["help", "version"]
+    
+    try:
+-      opts, args = getopt.getopt(sys.argv[1:], short_options, long_options)
+-   except getopt.GetoptError, err:
+-      print str(err)
++      opts, _ = getopt.getopt(sys.argv[1:], short_options, long_options)
++   except getopt.GetoptError as err:
++      print(str(err))
+       sys.exit(1)
+    
+    for opt, arg in opts:
+@@ -80,14 +80,14 @@ if __name__ == "__main__":
+ 
+    try:
+       import presagemate.presagemate
+-   except ImportError, e:
+-      print '''
++   except ImportError as err:
++      print('''
+ Error: failed to import module presagemate.
+ 
+ Check that prompter is properly installed (if installed in a
+ non-standard location, please set PYTHONPATH accordingly).
+-'''
+-      print e
++''')
++      print(err)
+    else:
+       if not config:
+          # try to locate presage.xml config file
+@@ -101,4 +101,4 @@ non-standard location, please set PYTHON
+             conffile = os.path.join(scriptdir, '..', 'etc', 'presage.xml')
+             if os.path.isfile(conffile):
+                config = conffile
+-         print 'Configuration file: ' + str(config)
++         print('Configuration file: ' + str(config))

@@ -1,0 +1,17 @@
+bin/trafdump
+bin/traflog
+bin/trafsave
+bin/trafstart
+bin/trafstat
+bin/trafstop
+etc/rc.d/trafd.sh
+etc/traflog.format
+sbin/trafd
+sbin/trafstatd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WhatsNew
+share/man/man1/traflog.1.gz
+share/man/man1/trafstat.1.gz
+share/man/man8/trafd.8.gz
+share/man/man8/trafstatd.8.gz
+@dir var/bpft

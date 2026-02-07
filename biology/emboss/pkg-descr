@@ -1,0 +1,16 @@
+The European Molecular Biology Open Software Suite (EMBOSS) is a
+comprehensive set (about 100) of open source tools for genetic sequence
+analysis.  EMBOSS is produced by the European Molecular Biology Network
+(EMBnet - http://www.embnet.org/).
+
+All EMBOSS tools are all built around the same set of core libraries - AJAX
+and NUCLEUS - and therefore share a unified user interface, have similar
+"look and feel", and implement a uniform sequence addressing methodology.
+
+The various components of EMBOSS are distributed under the GPL, except the
+core libraries which are under the LGPL.
+
+EMBASSY packages are third party applications which have been integrated with
+the EMBOSS suite, but which are not included in the base EMBOSS distribution
+for licensing or other reasons. The EMBASSY packages live in the
+biology/embassy port.

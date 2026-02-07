@@ -1,0 +1,51 @@
+--- demo/Makefile.in.orig	2003-12-27 14:27:04.000000000 +0100
++++ demo/Makefile.in	2008-02-20 10:09:07.000000000 +0100
+@@ -111,20 +111,20 @@
+ xmVer = @xmVer@
+ 
+ SUBDIRS = mindsrc
+-bin_PROGRAMS = ezdrawtest Scrollingtest histbar Rottest Spectrtest
++bin_PROGRAMS = ezdrawtest Scrollingtest histbar Rottest
+ 
+ ezdrawtest_SOURCES = ezdrawtest.c
+-ezdrawtest_LDADD = -L$(top_builddir)/src -lmovingmotif 			-L$(top_builddir)/demo/mindsrc -lmindsrc
++ezdrawtest_LDADD = $(top_builddir)/src/libmovingmotif.la 			$(top_builddir)/demo/mindsrc/libmindsrc.la
+ 
+-LIBS = $(MOTIF_LIBS) $(X_LIBS) -lXm -lXpm -lXt -lX11 -lc -lm
++LIBS = $(MOTIF_LIBS) $(X_LIBS) -lXm -lXpm -lXt -lX11 -lm
+ INCLUDES = $(MOTIF_CFLAGS) $(X_CFLAGS) 			-I$(top_srcdir)/demo/mindsrc -I$(top_srcdir)/src
+ 
+-LDADD = -L$(top_builddir)/src -lmovingmotif 			-L$(top_builddir)/demo/mindsrc -lmindsrc
++LDADD = $(top_builddir)/src/libmovingmotif.la 			$(top_builddir)/demo/mindsrc/libmindsrc.la
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ bin_PROGRAMS =  ezdrawtest$(EXEEXT) Scrollingtest$(EXEEXT) \
+-histbar$(EXEEXT) Rottest$(EXEEXT) Spectrtest$(EXEEXT)
++histbar$(EXEEXT) Rottest$(EXEEXT)
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+@@ -153,11 +153,6 @@
+ Rottest_LDADD = $(LDADD)
+ Rottest_DEPENDENCIES = 
+ Rottest_LDFLAGS = 
+-Spectrtest_SOURCES = histspectrtest.c
+-Spectrtest_OBJECTS = histspectrtest.$(OBJEXT)
+-Spectrtest_LDADD = $(LDADD)
+-Spectrtest_DEPENDENCIES = 
+-Spectrtest_LDFLAGS = 
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+@@ -268,10 +263,6 @@
+ 	@rm -f Rottest$(EXEEXT)
+ 	$(LINK) $(Rottest_LDFLAGS) $(Rottest_OBJECTS) $(Rottest_LDADD) $(LIBS)
+ 
+-Spectrtest$(EXEEXT): $(Spectrtest_OBJECTS) $(Spectrtest_DEPENDENCIES)
+-	@rm -f Spectrtest$(EXEEXT)
+-	$(LINK) $(Spectrtest_LDFLAGS) $(Spectrtest_OBJECTS) $(Spectrtest_LDADD) $(LIBS)
+-
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
+ # To change the values of `make' variables: instead of editing Makefiles,

@@ -1,0 +1,250 @@
+##
+##  MAca-bundle.pl -- Regenerate ca-root-nss.crt from the Mozilla certdata.txt
+##
+##  Rewritten in September 2011 by Matthias Andree to heed untrust
+##
+
+##  Copyright (c) 2011, 2013 Matthias Andree <mandree@FreeBSD.org>
+##  All rights reserved.
+##
+##  Redistribution and use in source and binary forms, with or without
+##  modification, are permitted provided that the following conditions are
+##  met:
+##
+##  * Redistributions of source code must retain the above copyright
+##  notice, this list of conditions and the following disclaimer.
+##
+##  * Redistributions in binary form must reproduce the above copyright
+##  notice, this list of conditions and the following disclaimer in the
+##  documentation and/or other materials provided with the distribution.
+##
+##  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+##  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+##  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+##  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+##  COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+##  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+##  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+##  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+##  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+##  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+##  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+##  POSSIBILITY OF SUCH DAMAGE.
+
+use strict;
+use Carp;
+use MIME::Base64;
+
+#   configuration
+print <<EOH;
+##
+##  ca-root-nss.crt -- Bundle of CA Root Certificates
+##
+##  This is a bundle of X.509 certificates of public Certificate
+##  Authorities (CA). These were automatically extracted from Mozilla's
+##  root CA list (the file `certdata.txt').
+##
+##  It contains certificates trusted for server authentication.
+##
+##  Extracted from nss-%%VERSION_NSS%%
+##
+EOH
+my $debug = 0;
+$debug++
+    if defined $ENV{'WITH_DEBUG'}
+	and $ENV{'WITH_DEBUG'} !~ m/(?i)^(no|0|false|)$/;
+
+my %certs;
+my %trusts;
+
+# returns a string like YYMMDDhhmmssZ of current time in GMT zone
+sub timenow()
+{
+	my ($sec,$min,$hour,$mday,$mon,$year,undef,undef,undef) = gmtime(time);
+	return sprintf "%02d%02d%02d%02d%02d%02dZ", $year-100, $mon+1, $mday, $hour, $min, $sec;
+}
+
+sub printcert_plain($$)
+{
+    my ($label, $certdata) = @_;
+    print "=== $label ===\n" if $label;
+    print
+	"-----BEGIN CERTIFICATE-----\n",
+	MIME::Base64::encode_base64($certdata),
+	"-----END CERTIFICATE-----\n\n";
+}
+
+sub printcert_info($$)
+{
+    my (undef, $certdata) = @_;
+    return unless $certdata;
+    open(OUT, "|openssl x509 -text -inform DER -fingerprint")
+            || die "could not pipe to openssl x509";
+    print OUT $certdata;
+    close(OUT) or die "openssl x509 failed with exit code $?";
+}
+
+sub printcert($$) {
+    my ($a, $b) = @_;
+    printcert_info($a, $b);
+}
+
+# converts a datastream that is to be \177-style octal constants
+# from <> to a (binary) string and returns it
+sub graboct()
+{
+    my $data;
+
+    while (<>) {
+	last if /^END/;
+	my (undef,@oct) = split /\\/;
+	my @bin = map(chr(oct), @oct);
+	$data .= join('', @bin);
+    }
+
+    return $data;
+}
+
+sub grabcert()
+{
+    my $certdata;
+    my $cka_label = '';
+    my $serial = 0;
+    my $distrust = 0;
+
+    while (<>) {
+	chomp;
+	last if ($_ eq '');
+
+	if (/^CKA_LABEL UTF8 "([^"]+)"/) {
+	    $cka_label = $1;
+	}
+
+	if (/^CKA_VALUE MULTILINE_OCTAL/) {
+	    $certdata = graboct();
+	}
+
+	if (/^CKA_SERIAL_NUMBER MULTILINE_OCTAL/) {
+	    $serial = graboct();
+	}
+
+	if (/^CKA_NSS_SERVER_DISTRUST_AFTER MULTILINE_OCTAL/)
+	{
+	    my $distrust_after = graboct();
+	    my $time_now = timenow();
+	    if ($time_now >= $distrust_after) { $distrust = 1; }
+	    if ($debug) {
+		printf STDERR "line $.: $cka_label ser #%d: distrust after %s, now: %s -> distrust $distrust\n", $serial, $distrust_after, timenow();
+	    }
+	    if ($distrust) {
+		return undef;
+	    }
+	}
+    }
+    return ($serial, $cka_label, $certdata);
+}
+
+sub grabtrust() {
+    my $cka_label;
+    my $serial;
+    my $maytrust = 0;
+    my $distrust = 0;
+
+    while (<>) {
+	chomp;
+	last if ($_ eq '');
+
+	if (/^CKA_LABEL UTF8 "([^"]+)"/) {
+	    $cka_label = $1;
+	}
+
+	if (/^CKA_SERIAL_NUMBER MULTILINE_OCTAL/) {
+	    $serial = graboct();
+	}
+
+	if (/^CKA_TRUST_SERVER_AUTH CK_TRUST (\S+)$/)
+	{
+	    if ($1 eq      'CKT_NSS_NOT_TRUSTED') {
+		$distrust = 1;
+	    } elsif ($1 eq 'CKT_NSS_TRUSTED_DELEGATOR') {
+		$maytrust = 1;
+	    } elsif ($1 ne 'CKT_NSS_MUST_VERIFY_TRUST') {
+		confess "Unknown trust setting on line $.:\n"
+		. "$_\n"
+		. "Script must be updated:";
+	    }
+	}
+    }
+
+    if (!$maytrust && !$distrust && $debug) {
+	print STDERR "line $.: no explicit trust/distrust found for $cka_label\n";
+    }
+
+    my $trust = ($maytrust and not $distrust);
+    return ($serial, $cka_label, $trust);
+}
+
+my $untrusted = 0;
+
+while (<>) {
+    if (/^CKA_CLASS CK_OBJECT_CLASS CKO_CERTIFICATE/) {
+	my ($serial, $label, $certdata) = grabcert();
+	if (defined $certs{$label."\0".$serial}) {
+	    warn "Certificate $label duplicated!\n";
+	}
+	if (defined $certdata) {
+	    $certs{$label."\0".$serial} = $certdata;
+	} else { # $certdata undefined? distrust_after in effect
+	    $untrusted ++;
+	}
+    } elsif (/^CKA_CLASS CK_OBJECT_CLASS CKO_NSS_TRUST/) {
+	my ($serial, $label, $trust) = grabtrust();
+	if (defined $trusts{$label."\0".$serial}) {
+	    warn "Trust for $label duplicated!\n";
+	}
+	$trusts{$label."\0".$serial} = $trust;
+    } elsif (/^CVS_ID.*Revision: ([^ ]*).*/) {
+        print "##  Source: \"certdata.txt\" CVS revision $1\n##\n\n";
+    }
+}
+
+sub printlabel(@) {
+    my @res = @_;
+    map { s/\0.*//; s/[^[:print:]]/_/g; "\"$_\""; } @res;
+    return wantarray ? @res : $res[0];
+}
+
+# weed out untrusted certificates
+foreach my $it (keys %trusts) {
+    if (!$trusts{$it}) {
+	if (!exists($certs{$it})) {
+	    warn "Found trust for nonexistent certificate ".printlabel($it)."\n" if $debug;
+	} else {
+	    delete $certs{$it};
+	    warn "Skipping untrusted ".printlabel($it)."\n" if $debug;
+	    $untrusted++;
+	}
+    }
+}
+
+print		"##  Untrusted certificates omitted from this bundle: $untrusted\n\n";
+print STDERR	"##  Untrusted certificates omitted from this bundle: $untrusted\n";
+
+my $certcount = 0;
+foreach my $it (sort {uc($a) cmp uc($b)} keys %certs) {
+    if (!exists($trusts{$it})) {
+	die "Found certificate without trust block,\naborting";
+    }
+    printcert("", $certs{$it});
+    print "\n\n\n";
+    $certcount++;
+    print STDERR "Trusting $certcount: ".printlabel($it)."\n" if $debug;
+}
+
+if ($certcount < 25) {
+    die "Certificate count of $certcount is implausibly low.\nAbort";
+}
+
+print		"##  Number of certificates: $certcount\n";
+print STDERR	"##  Number of certificates: $certcount\n";
+print "##  End of file.\n";

@@ -1,0 +1,49 @@
+--- Makefile.orig	2017-09-28 13:44:12 UTC
++++ Makefile
+@@ -110,13 +110,13 @@ MKDIR=mkdir -p
+ PREFIX =
+ SHELL       = /bin/sh
+ #ARCH        = LINUX
+-CC          = $(PREFIX)gcc
++CC          ?= $(PREFIX)gcc
+ CLINKER     = $(CC)
+-CXX         = $(PREFIX)g++
++CXX         ?= $(PREFIX)g++
+ CCLINKER    = $(CXX)
+ #OPTFLAGS    = -O2 -DGMPRATIONAL -DNDEBUG
+ # Note that gcc produces wrong code with -O3
+-OPTFLAGS    =  -DGMPRATIONAL -Wuninitialized -fno-omit-frame-pointer -O2	 #-O3 -fno-guess-branch-probability #-DNDEBUG
++#OPTFLAGS    =  -DGMPRATIONAL -Wuninitialized -fno-omit-frame-pointer -O2	 #-O3 -fno-guess-branch-probability #-DNDEBUG
+ #OPTFLAGS    =  -DGMPRATIONAL -Wuninitialized -fno-omit-frame-pointer -O3 -mavx -msse2  -finline-limit=1000 -ffast-math -Wuninitialized # -fno-guess-branch-probability #-DNDEBUG -ftree-vectorizer-verbose=2
+ #OPTFLAGS    =  -DGMPRATIONAL -Wuninitialized -fno-omit-frame-pointer -O1             -fno-guess-branch-probability
+  #-DNDEBUG
+@@ -125,9 +125,9 @@ OPTFLAGS    =  -DGMPRATIONAL -Wuninitialized -fno-omit
+ #OPTFLAGS    =  -DGMPRATIONAL -Wuninitialized -fno-omit-frame-pointer -O3 -msse2 -ftree-vectorizer-verbose=2 -ffast-math #-DNDEBUG
+ #OPTFLAGS    =  -DGMPRATIONAL -Wuninitialized -fno-omit-frame-pointer -O3 -mavx -msse2 -ftree-vectorizer-verbose=2 -ffast-math #-DNDEBUG
+ 
+-CFLAGS	  = $(OPTFLAGS) $(GPROFFLAG) $(STACTDUMP_OPTIONS) $(ADDITIONALINCLUDEOPTIONS) -std=c++0x -g $(CDDDEFINE_PREFIX) #-pedantic
++CFLAGS	  += $(OPTFLAGS) $(GPROFFLAG) $(STACTDUMP_OPTIONS) $(ADDITIONALINCLUDEOPTIONS) -std=c++0x -g $(CDDDEFINE_PREFIX) #-pedantic
+ #CFLAGS	  = $(OPTFLAGS) $(GPROFFLAG) $(STACTDUMP_OPTIONS) $(ADDITIONALINCLUDEOPTIONS) -D_GLIBCXX_DEBUG -std=c++0x -g $(CDDDEFINE_PREFIX) #-pedantic
+-CCFLAGS	  = $(CFLAGS)
++CCFLAGS	  += $(CFLAGS)
+ FFLAGS	  = $(OPTFLAGS)
+ 
+ CATSOBJECTS =	lp_cdd.o \
+@@ -394,7 +394,7 @@ EXECS	  = $(MAIN)
+ # (compiling with gcc version 4.7.2 and running gfan _tropicaltraverse on a starting cone for Grassmann3_7)
+ # Either this is a bug in the code or in the compiler. The bug disappears by compiling with -fno-guess-branch-probability
+ src/symmetrictraversal.o: src/symmetrictraversal.cpp
+-	$(CXX) $(CFLAGS) -fno-guess-branch-probability  -c src/symmetrictraversal.cpp -o src/symmetrictraversal.o
++	$(CXX) $(CFLAGS) -c src/symmetrictraversal.cpp -o src/symmetrictraversal.o
+ # If compiling with clang, use the line below instead:
+ #	$(CXX) $(CFLAGS) -c src/symmetrictraversal.cpp -o src/symmetrictraversal.o
+ 
+@@ -420,7 +420,7 @@ default: $(OBJECTS) $(ADDITIONALOBJECTS) $(EXECS)
+ 
+ $(MAIN): $(OBJECTS)
+ #	$(CCLINKER) $(OBJECTS) $(ADDITIONALLINKOPTIONS) $(GPROFFLAG) -lpthread  -o $(MAIN)
+-	$(CCLINKER) $(OBJECTS) $(ADDITIONALLINKOPTIONS) $(GPROFFLAG) -lpthread -rdynamic -o $(MAIN)
++	$(CCLINKER) $(OBJECTS) $(LDFLAGS) $(ADDITIONALLINKOPTIONS) $(GPROFFLAG) -lpthread -rdynamic -o $(MAIN)
+ 
+ release:
+ 	rm -f -r $(RELEASEDIR)/*

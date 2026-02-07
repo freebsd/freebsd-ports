@@ -1,0 +1,5 @@
+bin/pongix
+%%DATADIR%%/fondo_juego.jpg
+%%DATADIR%%/fuente.bmp
+%%DATADIR%%/paleta.bmp
+%%DATADIR%%/pelota.bmp

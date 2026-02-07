@@ -1,0 +1,130 @@
+bin/bnbot
+bin/bncdb
+bin/bnchat
+bin/bnftp
+bin/bni2tga
+bin/bnibuild
+bin/bniextract
+bin/bnilist
+bin/bnpass
+bin/bnstat
+bin/tgainfo
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.unix
+%%PORTDOCS%%%%DOCSDIR%%/PORTS
+%%PORTDOCS%%%%DOCSDIR%%/README.fdwatch
+%%PORTDOCS%%%%DOCSDIR%%/README.storage
+%%PORTDOCS%%%%DOCSDIR%%/bnmotd.txt
+etc/pvpgn/ad.conf-sample
+etc/pvpgn/address_translation.conf-sample
+etc/pvpgn/anongame_infos.conf-sample
+etc/pvpgn/autoupdate.conf-sample
+etc/pvpgn/bnalias.conf-sample
+etc/pvpgn/bnban.conf-sample
+etc/pvpgn/bnetd.conf-sample
+etc/pvpgn/bnetd_default_user.cdb-sample
+etc/pvpgn/bnetd_default_user.plain-sample
+etc/pvpgn/bnhelp.conf-sample
+etc/pvpgn/bnissue.txt-sample
+etc/pvpgn/bnmaps.conf-sample
+etc/pvpgn/bnmotd.txt-sample
+etc/pvpgn/bnxpcalc.conf-sample
+etc/pvpgn/bnxplevel.conf-sample
+etc/pvpgn/channel.conf-sample
+etc/pvpgn/command_groups.conf-sample
+%%D2%%etc/pvpgn/d2cs.conf-sample
+%%D2%%etc/pvpgn/d2dbs.conf-sample
+%%D2%%etc/pvpgn/d2server.ini-sample
+etc/pvpgn/news.txt-sample
+etc/pvpgn/realm.conf-sample
+etc/pvpgn/sql_DB_layout.conf-sample
+etc/pvpgn/sql_DB_layout2.conf-sample
+etc/pvpgn/supportfile.conf-sample
+etc/pvpgn/topics.conf-sample
+etc/pvpgn/tournament.conf-sample
+etc/pvpgn/versioncheck.conf-sample
+share/man/man1/bnbot.1.gz
+share/man/man1/bnchat.1.gz
+share/man/man1/bnetd.1.gz
+share/man/man1/bnftp.1.gz
+share/man/man1/bni2tga.1.gz
+share/man/man1/bnibuild.1.gz
+share/man/man1/bniextract.1.gz
+share/man/man1/bnilist.1.gz
+share/man/man1/bnpass.1.gz
+share/man/man1/bnstat.1.gz
+share/man/man1/bntrackd.1.gz
+share/man/man1/tgainfo.1.gz
+share/man/man5/bnetd.conf.5.gz
+share/man/man5/bntext.5.gz
+sbin/bnetd
+sbin/bntrackd
+%%D2%%sbin/d2cs
+%%D2%%sbin/d2dbs
+%%DATADIR%%/files/IX86ver1.mpq
+%%DATADIR%%/files/PMACver1.mpq
+%%DATADIR%%/files/XMACver1.mpq
+%%DATADIR%%/files/bnserver-D2DV.ini
+%%DATADIR%%/files/bnserver-D2XP.ini
+%%DATADIR%%/files/bnserver-WAR3.ini
+%%DATADIR%%/files/bnserver.ini
+%%DATADIR%%/files/icons-WAR3.bni
+%%DATADIR%%/files/icons.bni
+%%DATADIR%%/files/icons_STAR.bni
+%%DATADIR%%/files/ver-ix86-1.mpq
+%%DATADIR%%/files/ad000001.mng
+%%DATADIR%%/files/ad000001.smk
+%%DATADIR%%/files/ad000004.mng
+%%DATADIR%%/files/chathelp-war3-default.txt
+%%DATADIR%%/files/chathelp-war3-enUS.txt
+%%DATADIR%%/files/chathelp-war3-frFR.txt
+%%DATADIR%%/files/chathelp-war3-ruRU.txt
+%%DATADIR%%/files/chathelp-war3-zhCN.txt
+%%DATADIR%%/files/newaccount-default.txt
+%%DATADIR%%/files/newaccount-enUS.txt
+%%DATADIR%%/files/newbie.save
+%%DATADIR%%/files/termsofservice-default.txt
+%%DATADIR%%/files/termsofservice-enUS.txt
+%%DATADIR%%/files/tos-unicode_BRA.txt
+%%DATADIR%%/files/tos-unicode_CHI.txt
+%%DATADIR%%/files/tos-unicode_DEU.txt
+%%DATADIR%%/files/tos-unicode_ENU.txt
+%%DATADIR%%/files/tos-unicode_ESP.txt
+%%DATADIR%%/files/tos-unicode_FRA.txt
+%%DATADIR%%/files/tos-unicode_HAN.txt
+%%DATADIR%%/files/tos-unicode_ITA.txt
+%%DATADIR%%/files/tos-unicode_JPN.txt
+%%DATADIR%%/files/tos-unicode_KOR.txt
+%%DATADIR%%/files/tos-unicode_POL.txt
+%%DATADIR%%/files/tos-unicode_POR.txt
+%%DATADIR%%/files/tos-unicode_RUS.txt
+%%DATADIR%%/files/tos-unicode_SIN.txt
+%%DATADIR%%/files/tos-unicode_USA.txt
+%%DATADIR%%/files/tos.txt
+%%DATADIR%%/files/tos_BRA.txt
+%%DATADIR%%/files/tos_CHI.txt
+%%DATADIR%%/files/tos_DEU.txt
+%%DATADIR%%/files/tos_ENU.txt
+%%DATADIR%%/files/tos_ESP.txt
+%%DATADIR%%/files/tos_FRA.txt
+%%DATADIR%%/files/tos_HAN.txt
+%%DATADIR%%/files/tos_ITA.txt
+%%DATADIR%%/files/tos_JPN.txt
+%%DATADIR%%/files/tos_KOR.txt
+%%DATADIR%%/files/tos_POL.txt
+%%DATADIR%%/files/tos_POR.txt
+%%DATADIR%%/files/tos_RUS.txt
+%%DATADIR%%/files/tos_SIN.txt
+%%DATADIR%%/files/tos_USA.txt
+@dir %%DATADIR%%/userscdb
+@dir %%DATADIR%%/users
+@dir %%DATADIR%%/teams
+@dir %%DATADIR%%/status
+@dir %%DATADIR%%/reports
+@dir %%DATADIR%%/ladders
+@dir %%DATADIR%%/clans
+@dir %%DATADIR%%/charsave
+@dir %%DATADIR%%/charinfo
+@dir %%DATADIR%%/chanlogs
+@dir %%DATADIR%%/bnmail
+@dir %%DATADIR%%/bak/charsave
+@dir %%DATADIR%%/bak/charinfo

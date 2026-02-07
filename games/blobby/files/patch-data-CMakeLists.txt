@@ -1,0 +1,12 @@
+--- data/CMakeLists.txt.orig	2023-08-05 17:58:00 UTC
++++ data/CMakeLists.txt
+@@ -41,7 +41,7 @@ set(install_files
+ if (WIN32 OR SWITCH)
+ 	install(FILES ${install_files} DESTINATION data)
+ elseif (UNIX AND NOT APPLE)
+-	install(FILES ${install_files} DESTINATION share/blobby)
++	install(FILES ${install_files} DESTINATION ${DATADIR})
+ endif (WIN32 OR SWITCH)
+ 
+ set(data_files ${install_files} PARENT_SCOPE)
+\ No newline at end of file

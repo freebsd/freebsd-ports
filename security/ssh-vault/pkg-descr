@@ -1,0 +1,4 @@
+Encrypt/decrypt using ssh keys
+
+A command line tool (cli) for creating encrypted files "vaults"
+using ssh rsa keys for encrypt/decrypt.

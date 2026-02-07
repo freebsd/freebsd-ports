@@ -1,0 +1,6 @@
+C-Kermit is a combined network and serial communication software package
+offering a consistent, transport-independent, cross-platform approach to
+connection establishment, terminal sessions, file transfer, file management,
+character-set translation, numeric and alphanumeric paging, and automation
+of file transfer, dialogs, and communication tasks through its built-in
+scripting language.

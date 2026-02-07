@@ -1,0 +1,12 @@
+include/coin/OsiCone.hpp
+include/coin/OsiConicConfig.h
+include/coin/OsiConicCut.hpp
+include/coin/OsiConicCuts.hpp
+include/coin/OsiConicSolverInterface.hpp
+include/coin/OsiLorentzCone.hpp
+include/coin/OsiScaledCone.hpp
+lib/libOsiConic.so
+lib/libOsiConic.so.0
+lib/libOsiConic.so.0.0.0
+libdata/pkgconfig/osiconic.pc
+share/coin/doc/OsiConic/osiconic_addlibs.txt

@@ -1,0 +1,7 @@
+PKGNAMESUFFIX=	-perl
+
+MASTERDIR=	${.CURDIR}/../pdflib
+
+OPTIONS_DEFAULT=PERL
+
+.include "${MASTERDIR}/Makefile"

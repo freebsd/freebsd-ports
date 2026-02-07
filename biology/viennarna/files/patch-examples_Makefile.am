@@ -1,0 +1,8 @@
+--- examples/Makefile.am.orig	2019-06-24 18:49:57 UTC
++++ examples/Makefile.am
+@@ -1,4 +1,4 @@
+-pkgexampledir = $(pkgdatadir)/examples
++pkgexampledir = $(prefix)/share/examples/ViennaRNA
+ pkgexampledatadir = $(pkgexampledir)/data
+ pkgperlexampledir = $(pkgexampledir)/perl5
+ pkgpythonexampledir = $(pkgexampledir)/python

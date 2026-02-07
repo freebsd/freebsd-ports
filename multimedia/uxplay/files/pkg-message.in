@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Please make sure you have a Bonjour/zeroconf DNS-SD server running.
+
+For instance add the following configuration in
+%%LOCALBASE%%/etc/avahi/avahi-daemon.conf
+
+[reflector]
+reflect-filters=_airplay._tcp.local,_raop._tcp.local
+EOM
+}
+]

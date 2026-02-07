@@ -1,0 +1,10 @@
+--- cjose.pc.in.orig	2017-09-13 01:19:02 UTC
++++ cjose.pc.in
+@@ -11,6 +11,6 @@ Name: cjose
+ URL: https://github.com/cisco/cjose
+ Description: JOSE implementation for C
+ Version: @VERSION@
+-Requires: jansson >= 2.3, libcrypto >= 1.0.1
++Requires: jansson >= 2.3
+ Cflags: -I${includedir}
+ Libs: -L${libdir} -lcjose

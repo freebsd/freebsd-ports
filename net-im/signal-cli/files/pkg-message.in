@@ -1,0 +1,53 @@
+[
+{ type: install
+  message: <<EOM
+Quick start
+===========
+
+1. Generate a QR code to link this signal-cli to the other user device like a
+   phone or tablet with a Signal app (this step requires qrencode(1), which is
+   an additional utility provided by the graphics/libqrencode port):
+
+       signal-cli link -n DEVICENAME | xargs -n 1 qrencode -t ANSI256
+
+2. Scan the generated QR code with an app.
+
+3. Send a test message to yourself:
+
+       signal-cli -u NUMBER send -m "This is a test" NUMBER
+
+See the signal-cli wiki for more details:
+https://github.com/AsamK/signal-cli/wiki
+
+Running a signal-cli daemon (using D-Bus user bus)
+==================================================
+
+The DBUS_SESSION_BUS_ADDRESS environment variable should be present for
+signal-cli to function properly when run as a daemon (`signal-cli daemon`).
+
+The easiest way is to run the graphical session with dbus-run-session(1), e.g.:
+
+    dbus-run-session -- startx
+
+signal_cli service (using D-Bus system bus)
+===========================================
+
+There is an rc(8) script available for signal-cli if it's desired to use
+signal-cli in a daemon mode with the D-Bus system bus.
+
+First, configure the service in rc.conf(5):
+
+    sysrc signal_cli_enable="YES"
+    sysrc signal_cli_phone_number="+48123456789"
+
+Before starting the service, it is needed to either register a new Signal
+account or to link this machine with an existing account. It is possible to
+create a linking URL this way:
+
+    service signal_cli runcli link -n DEVICENAME
+
+See the signal-cli wiki for more details:
+https://github.com/AsamK/signal-cli/wiki
+EOM
+}
+]

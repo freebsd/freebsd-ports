@@ -1,0 +1,17 @@
+--- pdsdp/ScaLAPACK/Makefile.orig	2018-10-29 04:57:01 UTC
++++ pdsdp/ScaLAPACK/Makefile
+@@ -31,12 +31,12 @@ FLINKER = mpicc
+ 
+ OBJS	= readsdpa.o pdsdpscalapack.o
+ dsdpsdpa: ${OBJS}
+-	${FLINKER} -o pdsdp5 ${OBJS} ${ALLLIBS}
++	${FLINKER} $(LDFLAGS) -o pdsdp5 ${OBJS} ${ALLLIBS}
+ 	${RM} ${OBJS}
+ 
+ OBJS2	= maxcut.o pdsdpscalapack.o
+ maxcut: ${OBJS2}
+-	${CLINKER} -o pmaxcut ${OBJS2} ${ALLLIBS}
++	${CLINKER} $(LDFLAGS) -o pmaxcut ${OBJS2} ${ALLLIBS}
+ 	${RM} ${OBJS2}
+ 
+ info2:

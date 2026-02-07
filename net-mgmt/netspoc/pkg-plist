@@ -1,0 +1,7 @@
+bin/cut-netspoc
+bin/netspoc
+bin/print-group
+%%PERL5_MAN3%%/Netspoc.3.gz
+%%SITE_PERL%%/Netspoc.pm
+%%PERL5_MAN1%%/netspoc.1.gz
+%%PERL5_MAN1%%/print-group.1.gz

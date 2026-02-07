@@ -1,0 +1,5 @@
+RC5 is a fast block cipher designed by Ronald Rivest for RSA Data
+Security (now RSA Security) in 1994.  It is a parameterized algorithm
+with a variable block size, a variable key size, and a variable number
+of rounds.  This particular implementation is 32 bit.  As such, it is
+suggested that a minimum of 12 rounds be performed.

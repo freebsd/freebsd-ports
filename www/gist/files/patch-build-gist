@@ -1,0 +1,12 @@
+--- build/gist.orig	2020-02-05 20:01:45 UTC
++++ build/gist
+@@ -1713,7 +1713,8 @@ module Gist
+                  end
+     if uri.scheme == "https"
+       connection.use_ssl = true
+-      connection.verify_mode = OpenSSL::SSL::VERIFY_NONE
++      connection.verify_mode = OpenSSL::SSL::VERIFY_PEER
++      connection.ca_file = "%%LOCALBASE%%/share/certs/ca-root-nss.crt"
+     end
+     connection.open_timeout = 10
+     connection.read_timeout = 10

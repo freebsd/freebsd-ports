@@ -1,0 +1,47 @@
+--- src/appleseed.python/CMakeLists.txt.orig	2019-08-31 15:49:01 UTC
++++ src/appleseed.python/CMakeLists.txt
+@@ -163,11 +163,16 @@ if (WITH_PYTHON2_BINDINGS)
+ endif ()
+ 
+ if (WITH_PYTHON3_BINDINGS)
+-    add_library (appleseed.python3 MODULE
++    add_library (appleseed.py3.obj OBJECT
+         ${appleseed.python_sources}
+         ${blender_python_sources}
+     )
+ 
++    add_library (appleseed.python3 MODULE
++        $<TARGET_OBJECTS:appleseed.py3.obj>
++    )
++
++    set_target_properties (appleseed.py3.obj PROPERTIES FOLDER "Python Bindings")
+     set_target_properties (appleseed.python3 PROPERTIES FOLDER "Python Bindings")
+ 
+     set_target_properties (appleseed.python3 PROPERTIES
+@@ -182,7 +187,7 @@ if (WITH_PYTHON3_BINDINGS)
+     endif ()
+ 
+     target_link_libraries (appleseed.python3
+-        ${OPENGL_LIBRARY}
++        ${OPENGL_gl_LIBRARY}
+     )
+ endif ()
+ 
+@@ -201,7 +206,7 @@ if (WITH_PYTHON2_BINDINGS)
+ endif ()
+ 
+ if (WITH_PYTHON3_BINDINGS)
+-    target_include_directories (appleseed.python3 PRIVATE ${PYTHON3_INCLUDE_DIRS})
++    target_include_directories (appleseed.py3.obj PRIVATE ${PYTHON3_INCLUDE_DIRS})
+ endif ()
+ 
+ 
+@@ -288,7 +293,7 @@ endif ()
+ # Installation.
+ #--------------------------------------------------------------------------------------------------
+ 
+-set (py_module_dst "lib/python${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}/appleseed")
++set (py_module_dst "../lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages/appleseed")
+ 
+ install (FILES __init__.py DESTINATION ${py_module_dst})
+ install (FILES logtarget.py DESTINATION ${py_module_dst})

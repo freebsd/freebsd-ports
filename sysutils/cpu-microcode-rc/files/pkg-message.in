@@ -1,0 +1,53 @@
+[
+{ type: install
+  message: <<EOM
+This port includes an RC script, which is one of two methods to update
+the CPU microcode on a FreeBSD system.
+
+1. Early loading.
+   This method does not use the RC script included here.
+   This is the preferred method, because it ensures that any CPU features
+   added or removed by a microcode update are visible to the kernel by
+   applying the update before the kernel performs CPU feature detection.
+
+   To enable updates using early loading, add the following lines to
+   /boot/loader.conf:
+
+   cpu_microcode_load="YES"
+
+   and the appropriate one of these lines:
+
+   cpu_microcode_name="/boot/firmware/intel-ucode.bin"
+   cpu_microcode_name="/boot/firmware/amd-ucode.bin"
+
+   The microcode update will be loaded when the system is rebooted.
+
+   AMD systems running FreeBSD prior to 2024-02-22 snapshot
+   34467bd76 only support late loading.
+
+
+2. Late loading.
+   This method, which does use the RC script included here, is enabled by
+   adding the following line to /etc/rc.conf:
+
+   microcode_update_enable="YES"
+
+   The microcode update is then applied upon reboot or when the microcode
+   update service is run via:
+
+   # service microcode_update start
+
+   If the CPU requires a microcode update, a console message such as the
+   following will appear:
+
+   Updating CPU Microcode...
+   %%DATADIR%%/m32306c3_00000022.fw: updating cpu /dev/cpuctl0 from rev 0x17 to rev 0x22... done.
+   %%DATADIR%%/m32306c3_00000022.fw: updating cpu /dev/cpuctl2 from rev 0x17 to rev 0x22... done.
+   %%DATADIR%%/m32306c3_00000022.fw: updating cpu /dev/cpuctl4 from rev 0x17 to rev 0x22... done.
+   %%DATADIR%%/m32306c3_00000022.fw: updating cpu /dev/cpuctl6 from rev 0x17 to rev 0x22... done.
+   Done.
+
+It is safe to enable both methods.
+EOM
+}
+]

@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: unbound_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# unbound_exporter_enable (bool):	Set to YES to enable unbound_exporter, default is NO
+# unbound_exporter_user (string):	Set user to run as, default is "%%USERS%%"
+# unbound_exporter_log_file (string):	Set log file location, default is no log file
+# unbound_exporter_syslog (bool):	Set to YES to use syslog, default is NO
+# unbound_exporter_daemon (string):     Set additional arguments for "daemon", default is none
+#
+# Use the following variables to override unbound_exporter's defaults:
+#
+# unbound_exporter_ca (string):		Set unbound ca filename
+# unbound_exporter_cert (string):	Set unbound control cert filename
+# unbound_exporter_key (string):	Set unbound control key filename
+# unbound_exporter_host (string): 	Set Unix or TCP address of unbound control socket
+# unbound_exporter_bind (string): 	Set address to listen on
+# unbound_exporter_path (string): 	Set metrics path
+# unbound_exporter_args (string):	Set additional command line arguments
+
+. /etc/rc.subr
+
+name=unbound_exporter
+rcvar=unbound_exporter_enable
+
+load_rc_config $name
+
+: ${unbound_exporter_enable:=NO}
+: ${unbound_exporter_user:=%%USERS%%}
+
+pidfile=/var/run/unbound_exporter.pid
+command=/usr/sbin/daemon
+command_args="-c -f -P ${pidfile} -u ${unbound_exporter_user} \
+	${unbound_exporter_log_file:+-H -o $unbound_exporter_log_file} \
+	${unbound_exporter_syslog:+-S} \
+	${unbound_exporter_daemon} \
+	%%PREFIX%%/bin/unbound_exporter \
+	${unbound_exporter_ca:+-unbound.ca $unbound_exporter_ca} \
+	${unbound_exporter_cert:+-unbound.cert $unbound_exporter_cert} \
+	${unbound_exporter_host:+-unbound.host $unbound_exporter_host} \
+	${unbound_exporter_key:+-unbound.key $unbound_exporter_key} \
+	${unbound_exporter_bind:+-web.listen-address $unbound_exporter_bind} \
+	${unbound_exporter_path:+-web.telemetry-path $unbound_exporter_path} \
+	${unbound_exporter_args}"
+
+# these were used in the past, but now "daemon" takes care of everything and must run as root
+unset unbound_exporter_user
+unset unbound_exporter_group
+
+run_rc_command "$1"

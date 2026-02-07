@@ -1,0 +1,81 @@
+--- cmdwatch.1.orig	2000-11-07 14:59:25.000000000 +0100
++++ cmdwatch.1	2008-08-10 18:32:33.000000000 +0200
+@@ -1,11 +1,11 @@
+-.TH WATCH 1 "1999 Apr 3" " " "Linux User's Manual"
++.TH CMDWATCH 1 "1999 Apr 3" " " " "
+ .SH NAME
+-watch \- execute a program periodically, showing output fullscreen
++cmdwatch \- execute a program periodically, showing output fullscreen
+ .SH SYNOPSIS
+-.B watch
++.B cmdwatch
+ .I [\-dhv] [\-n <seconds>] [\-\-differences[=cumulative]] [\-\-help] [\-\-interval=<seconds>] [\-\-version] <command>
+ .SH DESCRIPTION
+-.BR watch
++.BR cmdwatch
+ runs
+ .I command
+ repeatedly, displaying its output (the first screenfull).  This allows you to
+@@ -17,11 +17,11 @@
+ The 
+ .I -d or --differences
+ flag will highlight the differences between successive updates.  The 
+-.I --cumulative
++.I --differences=cumulative
+ option makes highlighting "sticky", presenting a running display of all
+ positions that have ever changed.
+ .PP
+-.BR watch
++.BR cmdwatch
+ will run until interrupted.
+ .SH NOTE
+ Note that
+@@ -33,33 +33,33 @@
+ the first non-option argument).  This means that flags after
+ .I command
+ don't get interpreted by
+-.BR watch
++.BR cmdwatch
+ itself.
+ .SH EXAMPLES
+ .PP
+ To watch for mail, you might do
+ .IP
+-watch \-n 60 from
++cmdwatch \-n 60 from
+ .PP
+ To watch the contents of a directory change, you could use
+ .IP
+-watch \-d ls \-l
++cmdwatch \-d ls \-l
+ .PP
+ If you're only interested in files owned by user joe, you might use 
+ .IP
+-watch \-d 'ls \-l | fgrep joe'
++cmdwatch \-d 'ls \-l | fgrep joe'
+ .PP
+ To see the effects of quoting, try these out
+ .IP
+-watch echo $$
++cmdwatch echo $$
+ .IP
+-watch echo '$$'
++cmdwatch echo '$$'
+ .IP
+-watch echo "'"'$$'"'"
++cmdwatch echo "'"'$$'"'"
+ .PP
+ You can watch for your administrator to install the latest kernel with
+ .IP
+-watch uname -r
++cmdwatch uname -r
+ .PP
+ (Just kidding.)
+ .SH BUGS
+@@ -75,4 +75,5 @@
+ .B watch
+ was written by Tony Rems <rembo@unisoft.com> in 1991, with mods and
+ corrections by Francois Pinard.  It was reworked and new features added by
+-Mike Coleman <mkc@acm.org> in 1999.
++Mike Coleman <mkc@acm.org> in 1999. This man page based on the watch man
++page of the Linux User's Manual.

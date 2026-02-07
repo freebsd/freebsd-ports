@@ -1,0 +1,7 @@
+Missey POP3 Server is a secure, small codes and high performance POP3 server.
+It's extremely fast and memory footprint is very low.
+
+Currently Missey supports system user (virtual user support will be added
+in the future) and Maildir format only.
+
+Source code released under a traditional 4-clause BSD License.

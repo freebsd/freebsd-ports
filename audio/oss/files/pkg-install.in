@@ -1,0 +1,11 @@
+#! /bin/sh
+
+case $2 in
+POST-INSTALL)
+	if ! test -f %%PREFIX%%/lib/oss/etc/installed_drivers; then
+		%%PREFIX%%/sbin/ossdetect -v
+	fi
+	if ! test -f %%PREFIX%%/lib/oss/etc/userdefs; then
+		echo "autosave_mixer yes" > %%PREFIX%%/lib/oss/etc/userdefs
+	fi
+esac

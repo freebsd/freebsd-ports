@@ -1,0 +1,6 @@
+This daemon is responsible of making the volume up/down and mute keys of
+the keyboard work automatically. It uses PulseAudio for chosing which
+card/sink/track to act on.
+
+This is a fork of the original xfce4-volumed to drop GStreamer support
+and use PulseAudio instead.

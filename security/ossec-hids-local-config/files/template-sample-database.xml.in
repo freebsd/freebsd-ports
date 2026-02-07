@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+  <!-- Run "%%OSSEC_HOME%%/bin/ossec-control enable database" to enable ossec-dbd. -->
+  <database_output>
+    <hostname>localhost</hostname>
+    <username>ossec</username>
+    <password>secret</password>
+    <database>ossec</database>
+    <type>%%DB_TYPE%%</type>
+  </database_output>
+
+</template_config>

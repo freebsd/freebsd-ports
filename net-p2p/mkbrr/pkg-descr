@@ -1,0 +1,10 @@
+Commmand-line utility to create, modify and inspect torrent files written in Go
+
+A simple yet powerful tool for:
+
+* Creating torrent files
+* Inspecting torrent files
+* Modifying torrent metadata
+* Supports tracker-specific requirements automatically
+
+

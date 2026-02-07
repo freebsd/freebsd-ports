@@ -1,0 +1,10 @@
+--- ../test/makefile.orig	Sat May 10 21:32:30 2003
++++ ../test/makefile	Sat May 10 21:32:44 2003
+@@ -1,6 +1,6 @@
+ default: small
+ 
+-TN="../src/tochnog"
++TN="tochnog"
+ 
+ all: small large very_large 
+ 

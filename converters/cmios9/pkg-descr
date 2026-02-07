@@ -1,0 +1,12 @@
+This is a port of cmios9, which provides ftp-like access to
+Fairlight OS9 + MDR-DOS + QDOS floppy/hard disk image files and devices.
+
+Fairlight system  Filesystem(s)   Machine type
+---------------------------------------------------------------------------
+CMI Series I      QDOS            Sampler
+CMI Series II     QDOS            Sampler
+CMI Series IIx    QDOS            Sampler
+CMI Series III    OS9             Sampler
+MFX1              OS9             Sampler + Hard disk recorder
+MFX2              OS9 + MDR-DOS   Sampler + Hard disk recorder
+---------------------------------------------------------------------------

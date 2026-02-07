@@ -1,0 +1,6 @@
+The Quick Charts module provides a set of charts that can be used from QtQuick
+applications. They are intended to be used for both simple display of data as
+well as continuous display of high-volume data (often referred to as plotters).
+The charts use a system called distance fields for their accelerated rendering,
+which provides ways of using the GPU for rendering 2D shapes without loss of
+quality.

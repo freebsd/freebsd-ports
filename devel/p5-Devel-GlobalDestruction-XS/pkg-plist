@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/GlobalDestruction/XS.pm
+%%SITE_ARCH%%/auto/Devel/GlobalDestruction/XS/XS.so
+%%PERL5_MAN3%%/Devel::GlobalDestruction::XS.3.gz

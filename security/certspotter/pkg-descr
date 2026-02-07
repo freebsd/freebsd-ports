@@ -1,0 +1,2 @@
+Cert Spotter is a Certificate Transparency log monitor from SSLMate that
+alerts you when an SSL/TLS certificate is issued for one of your domains.

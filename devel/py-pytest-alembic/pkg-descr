@@ -1,0 +1,2 @@
+pytest-alembic is a pytest plugin to test alembic migrations (with default
+tests) and which enables you to write tests specific to your migrations.

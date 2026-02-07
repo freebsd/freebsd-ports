@@ -1,0 +1,57 @@
+--- Makefile.in.orig	2000-12-12 18:11:11 UTC
++++ Makefile.in
+@@ -62,7 +62,7 @@ catdir		= $(prefix)/man/cat$(manext)
+ prefix		= @prefix@
+ bindir		= $(prefix)/bin
+ catdir		= $(prefix)/man/cat$(manext)
+-mandir		= $(prefix)/man/man$(manext)
++mandir		= $(prefix)/share/man/man$(manext)
+ manext		= 1
+ shrlibdir	= $(shrlibtop)/$(PROGNAME)-$(VERSION)
+ shrlibtop       = $(prefix)/share/lib/$(PROGNAME)
+@@ -191,9 +191,9 @@ DEFINES		= -DVERSION='"@VERSION@"' -DDATE='"@DATE@"' $
+ 
+ DEFINES		= -DVERSION='"@VERSION@"' -DDATE='"@DATE@"' $(XDEFINES)
+ 
+-INCLUDES	= -I. -I$(prefix)/include $(XINCLUDES)
++INCLUDES	?= -I. $(XINCLUDES)
+ 
+-LDFLAGS		= @LDFLAGS@ -L$(prefix)/lib $(XLDFLAGS)
++LDFLAGS		?= @LDFLAGS@ $(XLDFLAGS)
+ 
+ LIBS		= @LIBS@ $(XLIBS)
+ 
+@@ -602,14 +602,12 @@ install-exe:	uninstall-exe
+ 	if test -f $(PROGNAME) ; \
+ 	then \
+ 		$(CP) $(PROGNAME) $(bindir)/$(PROGNAME) ; \
+-		$(LN) $(bindir)/$(PROGNAME) $(bindir)/$(PROGNAME)-$(VERSION) ; \
+ 	else \
+ 		for f in $(SHFILES) ; \
+ 		do \
+ 			g=`basename $$f .sh` ; \
+ 			$(SEDCMD) $$f | $(CHECKSUM) > $(bindir)/$$g ; \
+-			$(LN) $(bindir)/$$g $(bindir)/$$g-$(VERSION) ; \
+-			$(CHMOD) 775 $(bindir)/$$g $(bindir)/$$g-$(VERSION) ; \
++			$(CHMOD) 755 $(bindir)/$$g ; \
+ 		done ; \
+ 	fi
+ 
+@@ -635,7 +633,7 @@ install-show:
+ install-show:
+ 	@echo ''
+ 	@echo Installed files...
+-	@$(LS) -l $(bindir)/$(PROGNAME) $(bindir)/$(PROGNAME)-$(VERSION)
++	@$(LS) -l $(bindir)/$(PROGNAME)
+ 	@$(LS) -l $(mandir)/$(PROGNAME).$(manext)
+ 	@if test -d $(shrlibdir) ; then $(LS) -lR $(shrlibdir)/* ; fi
+ 	@echo ''
+@@ -703,7 +701,7 @@ uninstall-exe:
+ uninstall-exe:
+ 	-for f in $(PROGRAMS) ; \
+ 	do \
+-		$(RM) $(bindir)/$$f $(bindir)/$$f-$(VERSION) 2>/dev/null; \
++		$(RM) $(bindir)/$$f 2>/dev/null; \
+ 	done
+ 
+ uninstall-man:

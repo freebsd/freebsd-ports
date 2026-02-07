@@ -1,0 +1,11 @@
+--- ext/openmpt/meson.build.orig	2025-03-11 20:14:44 UTC
++++ ext/openmpt/meson.build
+@@ -23,7 +23,7 @@ if openmpt_dep.found()
+     openmpt_sources,
+     c_args: gst_plugins_bad_args,
+     include_directories: [configinc],
+-    dependencies: [gstbadaudio_dep, gstaudio_dep, openmpt_dep],
++    dependencies: [dependency('gstreamer-bad-audio-1.0'), dependency('gstreamer-audio-1.0'), openmpt_dep],
+     install: true,
+     install_dir: plugins_install_dir,
+   )

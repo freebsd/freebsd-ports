@@ -1,0 +1,2 @@
+This is a DataSource driver for Structures_DataGrid using arrays. It is a
+base package for some other DataSource drivers like CSV or XML.

@@ -1,0 +1,5 @@
+include/convolve.h
+lib/libconvolve.so.0.0.8
+lib/libconvolve.so.0
+lib/libconvolve.so
+lib/libconvolve.a

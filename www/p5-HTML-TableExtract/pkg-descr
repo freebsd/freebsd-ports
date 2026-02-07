@@ -1,0 +1,6 @@
+HTML::TableExtract is a module that simplifies the extraction
+of information contained in tables within HTML documents.
+
+Tables of note may be specified using Headers, Depth, Count,
+or some combination of the three. See the module documentation
+for details.

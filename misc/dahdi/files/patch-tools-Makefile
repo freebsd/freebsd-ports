@@ -1,0 +1,24 @@
+--- tools/Makefile.orig	2010-04-01 22:45:47.000000000 +0700
++++ tools/Makefile	2010-06-01 17:18:37.000000000 +0700
+@@ -27,7 +27,7 @@
+ endif
+ 
+ SUBDIRS_UTILS_ALL:= ppp
+-SUBDIRS_UTILS := xpp
++#SUBDIRS_UTILS := xpp
+ 
+ OPTFLAGS=-O2
+ CFLAGS+=-I. $(OPTFLAGS) -g -fPIC -Wall -DBUILDING_TONEZONE #-DTONEZONE_DRIVER
+@@ -229,10 +229,8 @@
+ 	install -d $(DESTDIR)$(MAN_DIR)
+ 	install -m 644 $(MAN_PAGES) $(DESTDIR)$(MAN_DIR)/
+ endif
+-ifeq (,$(wildcard $(DESTDIR)$(CONFIG_FILE)))
+-	$(INSTALL) -d $(DESTDIR)$(CONFIG_DIR)
+-	$(INSTALL) -m 644 system.conf.sample $(DESTDIR)$(CONFIG_FILE)
+-endif
++	$(INSTALL) -d -m 755 $(DESTDIR)$(CONFIG_DIR)
++	$(INSTALL) -m 644 system.conf.sample $(DESTDIR)$(CONFIG_FILE).sample
+ 
+ install-libs: libs
+ 	$(INSTALL) -d -m 755 $(DESTDIR)/$(LIB_DIR)

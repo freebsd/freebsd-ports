@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: inadyn
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# inadyn_enable (bool):		Set it to "YES" to enable inadyn
+#				Default is "NO"
+# inadyn_config (str):		Set full path to configuration file.
+#				Default is "%%PREFIX%%/etc/inadyn.conf"
+# inadyn_pidfile (str):		Set full path to pid file.
+#				Default is "/var/run/inadyn/inadyn.pid"
+# inadyn_flags (str):		Additional flags to pss to the daemon
+#				Default is ""
+#
+
+. /etc/rc.subr
+
+name="inadyn"
+rcvar=inadyn_enable
+
+start_precmd="inadyn_checkconfig"
+restart_precmd="inadyn_checkconfig"
+configtest_precmd="inadyn_checkconfig"
+extra_commands="configtest"
+
+load_rc_config $name
+
+: ${inadyn_enable:="NO"}
+: ${inadyn_config:="%%PREFIX%%/etc/inadyn.conf"}
+: ${inadyn_pidfile:="/var/run/inadyn/inadyn.pid"}
+: ${inadyn_flags:=""}
+
+command=%%PREFIX%%/sbin/inadyn
+command_args="-p inadyn:inadyn -f ${inadyn_config} -P ${inadyn_pidfile} ${inadyn_flags}"
+pidfile=${inadyn_pidfile}
+required_files=${inadyn_config}
+
+inadyn_checkconfig()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval ${command} ${command_args} --check-config
+	piddir="$(dirname ${pidfile})"
+	if [ ! -d "${piddir}" ] && id inadyn >/dev/null 2>&1 ; then
+		mkdir -p "${piddir}"
+		chown inadyn:inadyn "${piddir}"
+	fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,7 @@
+bin/datum_gateway
+%%ETCDIR%%_config.json.sample
+share/doc/DATUM/README.md
+share/doc/DATUM/doc/DATUM_recommended_setup-network_diagram.svg
+share/doc/DATUM/example_datum_gateway_config.json
+share/doc/DATUM/usernames.md
+@dir(nobody,nogroup) /var/run/datum_gateway

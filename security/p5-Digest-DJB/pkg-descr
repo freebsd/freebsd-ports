@@ -1,0 +1,3 @@
+Digest::DJB is an implementation of D. J. Bernstein's hash which returns a
+32-bit unsigned value for any variable-length input string. An equivalent pure
+Perl version is also available: Digest::DJB::PurePerl.

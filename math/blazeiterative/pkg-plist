@@ -1,0 +1,13 @@
+include/BlazeIterative/BlazeIterative.hpp
+include/BlazeIterative/IterativeCommon.hpp
+include/BlazeIterative/IterativeTag.hpp
+include/BlazeIterative/TerminationStatus.hpp
+include/BlazeIterative/solve.hpp
+include/BlazeIterative/solvers/BiCGSTAB.hpp
+include/BlazeIterative/solvers/BiCGSTABL.hpp
+include/BlazeIterative/solvers/BiCGSTABLTag.hpp
+include/BlazeIterative/solvers/BiCGSTABTag.hpp
+include/BlazeIterative/solvers/ConjugateGradient.hpp
+include/BlazeIterative/solvers/ConjugateGradientTag.hpp
+include/BlazeIterative/solvers/solvers.hpp
+share/BlazeIterative/cmake/BlazeIterativeConfig.cmake

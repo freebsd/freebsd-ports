@@ -1,0 +1,7 @@
+TIMESTAMP = 1659015544
+SHA256 (nihui-realsr-ncnn-vulkan-20220728_GH0.tar.gz) = 2f3207aff7e86d9ab11fa536d04da09cc76865821585f23f5f3a06b3a43286b1
+SIZE (nihui-realsr-ncnn-vulkan-20220728_GH0.tar.gz) = 64753763
+SHA256 (KhronosGroup-glslang-11.9.0-19-g86ff4bca_GH0.tar.gz) = f7a19b57af200feeba77a5cc010fc031ba47c32287cb1438440ad32628fb798a
+SIZE (KhronosGroup-glslang-11.9.0-19-g86ff4bca_GH0.tar.gz) = 3535721
+SHA256 (Tencent-ncnn-20220721-10-gb4ba207c_GH0.tar.gz) = 30cf8c702d4805bbefc990d622293d3a93d36c8328977c2e28d6cc1846786396
+SIZE (Tencent-ncnn-20220721-10-gb4ba207c_GH0.tar.gz) = 12236168

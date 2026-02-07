@@ -1,0 +1,56 @@
+--- zetaback.in.orig	2020-05-02 21:18:03 UTC
++++ zetaback.in
+@@ -769,7 +769,11 @@ sub zfs_remove_snap($$$) {
+   }
+   return unless($snap);
+   print "Dropping $snap on $fs\n" if($DEBUG);
+-  `ssh $ssh_config $host $agent -z $fs -d $snap`;
++  if ($host eq "localhost") {
++      `$agent -z $fs -d $snap`;
++  } else {
++      `ssh $ssh_config $host $agent -z $fs -d $snap`;
++  }
+ }
+ 
+ # Lots of args.. internally called.
+@@ -832,7 +836,12 @@ sub zfs_do_backup($$$$$$;$) {
+       die "Child exit value: $ev" if ($ev);
+     }
+     else {
+-      my @cmd = ('ssh', split(/ /, $ssh_config), $host, $agent, '-z', $fs);
++      my @cmd;
++      if ($host eq "localhost") {
++         @cmd = ($agent, '-z', $fs);
++      } else  {
++         @cmd = ('ssh', split(/ /, $ssh_config), $host, $agent, '-z', $fs);
++      }
+       if ($type eq "i" || ($type eq "s" && $base)) {
+         push @cmd, ("-i", $base);
+       }
+@@ -1346,7 +1359,11 @@ sub zfs_restore_part($$$$;$) {
+       open(DUMP, "__ZFS__ send $dataset |");
+     }
+     eval {
+-      open(RECEIVER, "| ssh $ssh_config $host $command");
++      if ($host eq "localhost") {
++	  open(RECEIVER, "| $command");
++      } else {
++	  open(RECEIVER, "| ssh $ssh_config $host $command");
++      }
+       my $buffer;
+       while(my $len = sysread(DUMP, $buffer, $BLOCKSIZE)) {
+         if(syswrite(RECEIVER, $buffer, $len) != $len) {
+@@ -1573,7 +1590,12 @@ sub plan_and_run($$) {
+     # Get list of zfs filesystems from the agent
+     open(SILENT, ">&", \*STDERR);
+     close(STDERR);
+-    my $rv = open(ZFSLIST, "ssh $ssh_config $host $agent -l |");
++    my $rv;
++    if ($host eq "localhost") {
++      $rv = open(ZFSLIST, "$agent -l |");
++    } else {
++      $rv = open(ZFSLIST, "ssh $ssh_config $host $agent -l |");
++    }
+     open(STDERR, ">&", \*SILENT);
+     close(SILENT);
+     next unless $rv;

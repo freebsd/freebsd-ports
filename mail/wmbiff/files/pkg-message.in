@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Sample configuration file was installed at:
+	%%DATADIR%%/sample.wmbiffrc
+
+Modify it to suit your needs and copy to ~/.wmbiffrc
+EOM
+}
+]

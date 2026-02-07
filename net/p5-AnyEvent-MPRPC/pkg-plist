@@ -1,0 +1,9 @@
+%%SITE_PERL%%/AnyEvent/MPRPC.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/Client.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/CondVar.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/Constant.pm
+%%SITE_PERL%%/AnyEvent/MPRPC/Server.pm
+%%PERL5_MAN3%%/AnyEvent::MPRPC.3.gz
+%%PERL5_MAN3%%/AnyEvent::MPRPC::Client.3.gz
+%%PERL5_MAN3%%/AnyEvent::MPRPC::CondVar.3.gz
+%%PERL5_MAN3%%/AnyEvent::MPRPC::Server.3.gz

@@ -1,0 +1,14 @@
+Trillian is an implementation of the concepts described in the
+Verifiable Data Structures white paper, which in turn is an extension
+and generalisation of the ideas which underpin Certificate Transparency.
+
+Trillian implements a Merkle tree whose contents are served from a data
+storage layer, to allow scalability to extremely large trees. On top of
+this Merkle tree, Trillian provides the following:
+
+- An append-only Log mode, analogous to the original Certificate
+  Transparency logs. In this mode, the Merkle tree is effectively filled
+  up from the left, giving a dense Merkle tree.
+
+Note that Trillian requires particular applications to provide their own
+personalities on top of the core transparent data store functionality.

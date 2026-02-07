@@ -1,0 +1,10 @@
+include/qrcodegen/qrcodegen.h
+include/qrcodegen/qrcodegen.hpp
+lib/libqrcodegen.a
+lib/libqrcodegen.so
+lib/libqrcodegen.so.1
+lib/libqrcodegen.so.%%VERSION%%
+lib/libqrcodegencpp.a
+lib/libqrcodegencpp.so
+lib/libqrcodegencpp.so.1
+lib/libqrcodegencpp.so.%%VERSION%%

@@ -1,0 +1,3 @@
+gtklock is a lockscreen based on gtkgreet. It uses the wlr-layer-shell
+and wlr-input-inhibitor Wayland protocols. Works on sway and other
+wlroots-based compositors.

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: goaccess
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# To enable the goaccess daemon, add `goaccess_enable="YES"`' to
+# your /etc/rc.conf or /etc/rc.conf.local
+#
+# Optional settings:
+# goaccess_html (path):   Output file (/var/run/goaccess/goaccess.html)
+# goaccess_log (path):    Input log   (/var/log/httpd-access.log)
+# goaccess_config (path): Default: %%ETCDIR%%/goaccess.conf
+
+. /etc/rc.subr
+
+name=goaccess
+rcvar=goaccess_enable
+
+load_rc_config $name
+
+: ${goaccess_enable:=NO}
+: ${goaccess_html:=/var/run/goaccess/goaccess.html}
+: ${goaccess_log:=/var/log/httpd-access.log}
+: ${goaccess_config:=%%ETCDIR%%/goaccess.conf}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+start_precmd=start_precmd
+start_precmd()
+{
+    htmldir=$(dirname "$goaccess_html")
+    if ! [ -d "$htmldir" ]; then
+        echo "Creating HTML output dir $htmldir."
+        mkdir "$htmldir"
+    fi
+}
+
+command_args="--daemonize --real-time-html --pid-file='$pidfile' -p '$goaccess_config' -o '$goaccess_html'"
+run_rc_command "$1"

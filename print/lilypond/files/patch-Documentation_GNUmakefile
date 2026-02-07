@@ -1,0 +1,23 @@
+--- Documentation/GNUmakefile.orig	2022-03-26 15:12:51 UTC
++++ Documentation/GNUmakefile
+@@ -188,6 +188,7 @@ INFO_DOCS = \
+   lilypond-internals \
+   lilypond-learning \
+   lilypond-notation \
++  lilypond-snippets \
+   lilypond-usage \
+   music-glossary
+ # Some info files should only be processed if `$(out)` is equal to `www`, but we
+@@ -196,11 +197,9 @@ INFO_DOCS = \
+ # older LilyPond versions inserted more entries that are no longer present.
+ ALL_INFO_DOCS = \
+   $(INFO_DOCS) \
+-  lilypond-snippets \
+   lilypond-web
+ ifeq ($(out),www)
+-  INFO_DOCS += lilypond-snippets \
+-               lilypond-web
++  INFO_DOCS += lilypond-web
+ endif
+ INFO_FILES = $(INFO_DOCS:%=$(outdir)/%.info)
+ ALL_INFO_FILES = $(ALL_INFO_DOCS:%=$(outdir)/%.info)

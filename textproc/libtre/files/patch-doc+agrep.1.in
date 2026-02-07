@@ -1,0 +1,21 @@
+--- doc/agrep.1.in.orig	2008-08-05 10:13:28.469606821 -0400
++++ doc/agrep.1.in	2008-08-05 10:14:43.470753615 -0400
+@@ -1,14 +1,14 @@
+-.TH agrep 1 "November 21, 2004" "TRE agrep @PACKAGE_VERSION@"
++.TH tre_agrep 1 "November 21, 2004" "TRE tre_agrep @PACKAGE_VERSION@"
+ .SH NAME
+-agrep \- print lines approximately matching a pattern
++tre_agrep \- print lines approximately matching a pattern
+ .SH SYNOPSIS
+-.B agrep
++.B tre_agrep
+ .RI [ OPTION ]...
+ .I PATTERN
+ .RI [ FILE ]...
+ .SH DESCRIPTION
+ Searches for approximate matches of PATTERN in each FILE or standard
+-input.   Example: `agrep \-2 optimize foo.txt' outputs all lines in
++input.   Example: `tre_agrep \-2 optimize foo.txt' outputs all lines in
+ file `foo.txt' that match "optimize" within two errors.  E.g. lines
+ which contain "optimise", "optmise", and "opitmize" all match.
+ .SH OPTIONS

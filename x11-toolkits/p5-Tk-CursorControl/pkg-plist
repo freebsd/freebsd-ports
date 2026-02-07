@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Tk/CursorControl.pm
+%%SITE_ARCH%%/Tk/demos/widtrib/cursorcontrol.pl
+%%SITE_ARCH%%/Tk/trans_cur.mask
+%%SITE_ARCH%%/Tk/trans_cur.xbm
+%%PERL5_MAN3%%/Tk::CursorControl.3.gz

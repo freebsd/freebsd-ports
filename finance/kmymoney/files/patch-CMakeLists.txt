@@ -1,0 +1,22 @@
+Adapt to API changes since kidentitymanagement 24.02.0.
+
+--- CMakeLists.txt.orig	2025-08-04 11:03:25 UTC
++++ CMakeLists.txt
+@@ -224,7 +224,7 @@ if (DEFINED AKONADI_MIN_VERSION)
+     # for config-kmymoney.h.cmake
+     set(ADDRESSBOOK_VERSION ${${PIMPREFIX}Akonadi_VERSION})
+   endif()
+-  find_package(${PIMPREFIX}IdentityManagement ${AKONADI_MIN_VERSION} QUIET)
++  find_package(${PIMPREFIX}IdentityManagementCore ${AKONADI_MIN_VERSION} QUIET)
+ endif()
+ 
+ find_package(Qt${QT_MAJOR_VERSION}Keychain CONFIG REQUIRED)
+@@ -318,7 +318,7 @@ cmake_dependent_option(ENABLE_ADDRESSBOOK "Enable addr
+ endif()
+ 
+ cmake_dependent_option(ENABLE_ADDRESSBOOK "Enable addressbook support." ON
+-                       "${PIMPREFIX}IdentityManagement_FOUND;${PIMPREFIX}Akonadi_FOUND;KF${QT_MAJOR_VERSION}Contacts_FOUND" OFF)
++                       "${PIMPREFIX}IdentityManagementCore_FOUND;${PIMPREFIX}Akonadi_FOUND;KF${QT_MAJOR_VERSION}Contacts_FOUND" OFF)
+ 
+ add_feature_info("Address book" ENABLE_ADDRESSBOOK "Allows fetching payee information from KDE PIM system.")
+ 

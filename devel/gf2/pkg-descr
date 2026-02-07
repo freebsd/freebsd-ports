@@ -1,0 +1,4 @@
+gf (or gf2) is a lightweight graphical debugger frontend to GDB. It
+offers a user-friendly interface with features like source code
+viewing, watch expressions, and a stack window. Users can customize
+keyboard shortcuts, the user interface layout, and themes.

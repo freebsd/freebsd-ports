@@ -1,0 +1,8 @@
+AnyEvent::CouchDB is a non-blocking CouchDB client implemented on top of the
+AnyEvent framework. Using this library will give you the ability to run many
+CouchDB requests asynchronously, and it was intended to be used within a
+Coro+AnyEvent environment. However, it can also be used synchronously if you
+want.
+
+Its API is based on jquery.couch.js, but we've adapted the API slightly so that
+it makes sense in an asynchronous Perl environment.

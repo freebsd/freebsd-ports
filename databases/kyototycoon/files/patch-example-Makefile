@@ -1,0 +1,11 @@
+--- example/Makefile.orig	2010-10-21 15:38:49 UTC
++++ example/Makefile
+@@ -19,7 +19,7 @@ LDFLAGS =
+ CFLAGS = -I. -I.. -Wall -ansi -pedantic -fsigned-char -O2
+ CXXFLAGS = -I. -I.. -Wall -fsigned-char -O2
+ LDFLAGS =
+-LIBS = -L. -L.. -lkyototycoon -lkyotocabinet -lstdc++ -lz -lrt -lpthread -lm -lc
++LIBS = -L. -L.. -lkyototycoon -lkyotocabinet -lz -lrt -lpthread -lm -lc
+ LDENV = LD_RUN_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:.:..
+ RUNENV = LD_LIBRARY_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:.:..
+ 

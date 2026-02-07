@@ -1,0 +1,13 @@
+bin/syncterm
+share/applications/syncterm.desktop
+share/icons/hicolor/16x16/apps/syncterm.png
+share/icons/hicolor/22x22/apps/syncterm.png
+share/icons/hicolor/24x24/apps/syncterm.png
+share/icons/hicolor/32x32/apps/syncterm.png
+share/icons/hicolor/36x36/apps/syncterm.png
+share/icons/hicolor/48x48/apps/syncterm.png
+share/icons/hicolor/64x64/apps/syncterm.png
+share/icons/hicolor/256x256/apps/syncterm.png
+share/icons/hicolor/scalable/apps/syncterm.svg
+share/icons/hicolor/scalable/apps/syncterm-mini.svg
+share/man/man1/syncterm.1.gz

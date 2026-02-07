@@ -1,0 +1,20 @@
+--- ngs/ngs-sdk/examples/CMakeLists.txt.orig	2024-11-18 12:15:33 UTC
++++ ngs/ngs-sdk/examples/CMakeLists.txt
+@@ -62,14 +62,14 @@ if ( SINGLE_CONFIG )
+     install(
+         FILES FragTest.cpp AlignTest.cpp AlignSliceTest.cpp PileupTest.cpp RefTest.cpp DumpReferenceFASTA.cpp
+               expected.txt
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/sra-tools
+     )
+     install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Makefile.install
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/sra-tools
+         RENAME Makefile
+     )
+     install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/README.install
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/sra-tools
+         RENAME README.txt
+     )
+ endif()

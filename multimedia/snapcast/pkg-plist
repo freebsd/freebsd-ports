@@ -1,0 +1,14 @@
+%%CLIENT%%bin/snapclient
+bin/snapserver
+etc/snapserver.conf
+%%CLIENT%%share/man/man1/snapclient.1.gz
+share/man/man1/snapserver.1.gz
+%%CLIENT%%share/pixmaps/snapcast.svg
+share/snapserver/index.html
+share/snapserver/plug-ins/meta_go-librespot.py
+share/snapserver/plug-ins/meta_librespot-java.py
+share/snapserver/plug-ins/meta_mopidy.py
+share/snapserver/plug-ins/meta_mpd.py
+share/snapserver/snapweb/index.html
+@dir etc/snapserver/certs
+@dir share/snapserver/sandbox

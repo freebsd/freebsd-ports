@@ -1,0 +1,5 @@
+OpenScop is an open specification that defines a file format and a set of
+data structures to represent a static control part (SCoP for short),
+i.e., a program part that can be represented in the polyhedral model.
+The goal of OpenScop is to provide a common interface to various
+polyhedral compilation tools in order to simplify their interaction.

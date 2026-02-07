@@ -1,0 +1,4 @@
+FilePizza eliminates the initial upload step required by other
+web-based file sharing services using WebRTC. Because data is never
+stored in an intermediary server, the transfer is fast, private,
+and secure.

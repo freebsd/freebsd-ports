@@ -1,0 +1,43 @@
+bin/mservdetect
+@sample(mailnull,mail,) %%ETCDIR%%/localnet.route.sample
+@sample(mailnull,mail,) %%ETCDIR%%/masqmail.conf.sample
+@sample(mailnull,mail,) %%ETCDIR%%/masqmail.route.sample
+@sample(mailnull,mail,) %%ETCDIR%%/openssl.route.sample
+share/man/man1/mservdetect.1.gz
+share/man/man5/masqmail.aliases.5.gz
+share/man/man5/masqmail.conf.5.gz
+share/man/man5/masqmail.route.5.gz
+share/man/man8/masqmail.8.gz
+share/man/man8/rmail.8.gz
+sbin/masqmail
+sbin/rmail
+%%DATADIR%%/tpl/failmsg.tpl
+%%DATADIR%%/tpl/failmsg.tpl.de
+%%DATADIR%%/tpl/failmsg.tpl.fr
+%%DATADIR%%/tpl/failmsg.tpl.it
+%%DATADIR%%/tpl/warnmsg.tpl
+%%DATADIR%%/tpl/warnmsg.tpl.de
+%%DATADIR%%/tpl/warnmsg.tpl.fr
+%%DATADIR%%/tpl/warnmsg.tpl.it
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/docs/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.agenda
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.ipaq
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.linux
+%%PORTDOCS%%%%DOCSDIR%%/docs/README
+%%PORTDOCS%%%%DOCSDIR%%/docs/agenda-config.site
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-release
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-report-bugs
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-static-linking
+%%PORTDOCS%%%%DOCSDIR%%/docs/oem-option
+%%PORTDOCS%%%%DOCSDIR%%/docs/ppp-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/simple-local-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/simple-relay-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/uucp-setup

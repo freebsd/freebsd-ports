@@ -1,0 +1,74 @@
+--- Makefile.orig	2013-11-15 10:28:02 UTC
++++ Makefile
+@@ -13,11 +13,11 @@ REDIRECTOR_OBJ= pass.o raw_change.o load_cache.o pcre.
+ MAKE-CACHE_OBJ= load_urls.o prune_urls.o write_cache.o need_cache_update.o ${COMMON_OBJ}
+ 
+ .c.o: vars.h
+-	${CC} ${INCLUDE} -c $<
++	${CC} ${CFLAGS} ${INCLUDE} -c $<
+ 
+ all: clean ${REDIRECTOR_OBJ} ${MAKE-CACHE_OBJ}
+-	${CC} ${INCLUDE} -o redirector redirector.c ${REDIRECTOR_OBJ} ${LIBS}
+-	${CC} ${INCLUDE} -o make-cache make-cache.c ${MAKE-CACHE_OBJ} ${LIBS}
++	${CC} ${LDFLAGS} ${INCLUDE} -o redirector redirector.c ${REDIRECTOR_OBJ} ${LIBS}
++	${CC} ${LDFLAGS} ${INCLUDE} -o make-cache make-cache.c ${MAKE-CACHE_OBJ} ${LIBS}
+ 
+ clean:
+ 	rm -f ${REDIRECTOR_OBJ} ${MAKE-CACHE_OBJ} redirector make-cache OUT rejik3.zip rejik3/*
+@@ -40,36 +40,35 @@ cygwin: clean cygwin_vars ${REDIRECTOR_OBJ} ${MAKE-CAC
+ 
+ install:
+ # Make dirs
+-	mkdir -p ${INSTALL_PATH}/tools
++	mkdir -p ${DESTDIR}${INSTALL_PATH}/tools
+ 
+ # Install redirector
+-	cp make-cache ${INSTALL_PATH}
+-	cp redirector ${INSTALL_PATH}
+-	cp redirector.conf.dist ${INSTALL_PATH}
++	${BSD_INSTALL_PROGRAM} make-cache ${DESTDIR}${INSTALL_PATH}
++	${BSD_INSTALL_PROGRAM} redirector ${DESTDIR}${INSTALL_PATH}
++	cp redirector.conf.dist ${DESTDIR}${INSTALL_PATH}
+ 
+ # Install tools	
+-	echo "#!/bin/sh" > ${INSTALL_PATH}/tools/check-redirector
+-	echo 'su ${SQUID_USER} -c "echo \"http://sex.ru 127.0.0.1/- - GET\" | ${INSTALL_PATH}/redirector ${INSTALL_PATH}/redirector.conf;"' >> ${INSTALL_PATH}/tools/check-redirector
+-	chmod 755  ${INSTALL_PATH}/tools/check-redirector
++	echo "#!/bin/sh" > ${DESTDIR}${INSTALL_PATH}/tools/check-redirector
++	echo 'su ${SQUID_USER} -c "echo \"http://sex.ru 127.0.0.1/- - GET\" | ${INSTALL_PATH}/redirector ${INSTALL_PATH}/redirector.conf;"' >> ${DESTDIR}${INSTALL_PATH}/tools/check-redirector
++	chmod 755  ${DESTDIR}${INSTALL_PATH}/tools/check-redirector
+ 
+-	echo "#!/bin/sh" > ${INSTALL_PATH}/tools/set-permissions
+-	echo 'chown -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}' >> ${INSTALL_PATH}/tools/set-permissions
+-	chmod 755  ${INSTALL_PATH}/tools/set-permissions
++	echo "#!/bin/sh" > ${DESTDIR}${INSTALL_PATH}/tools/set-permissions
++	echo 'chown -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}' >> ${DESTDIR}${INSTALL_PATH}/tools/set-permissions
++	chmod 755  ${DESTDIR}${INSTALL_PATH}/tools/set-permissions
+ 
+ 
+-	cp tools/kill-cache ${INSTALL_PATH}/tools
+-	chmod 755  ${INSTALL_PATH}/tools/kill-cache
++	cp tools/kill-cache ${DESTDIR}${INSTALL_PATH}/tools
++	chmod 755  ${DESTDIR}${INSTALL_PATH}/tools/kill-cache
+ 
+-	cp tools/benchmark ${INSTALL_PATH}/tools	
+-	chmod 755  ${INSTALL_PATH}/tools/benchmark
++	cp tools/benchmark ${DESTDIR}${INSTALL_PATH}/tools	
++	chmod 755  ${DESTDIR}${INSTALL_PATH}/tools/benchmark
+ 
+-	cp tools/IN.gz ${INSTALL_PATH}/tools
+-	chmod 644 ${INSTALL_PATH}/tools/IN.gz
++	cp tools/IN.gz ${DESTDIR}${INSTALL_PATH}/tools
++	chmod 644 ${DESTDIR}${INSTALL_PATH}/tools/IN.gz
+ 
+ # Set permissions
+-	chown -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}
+-	chmod 770 ${INSTALL_PATH}
+-	chmod 644 ${INSTALL_PATH}/redirector.conf.dist 
+-	chmod 755 ${INSTALL_PATH}/redirector 
+-	chmod 755 ${INSTALL_PATH}/make-cache
++	chmod 770 ${DESTDIR}${INSTALL_PATH}
++	chmod 644 ${DESTDIR}${INSTALL_PATH}/redirector.conf.dist 
++	chmod 755 ${DESTDIR}${INSTALL_PATH}/redirector 
++	chmod 755 ${DESTDIR}${INSTALL_PATH}/make-cache
+ 

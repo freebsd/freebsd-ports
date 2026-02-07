@@ -1,0 +1,6 @@
+sbin/fiche
+@owner fiche
+@group fiche
+@dir %%WWWDIR%%
+@owner
+@group

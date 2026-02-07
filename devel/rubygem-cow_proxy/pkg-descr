@@ -1,0 +1,17 @@
+This is a copy-on-write proxy for frozen Ruby objects, so duplicating frozen
+object is delayed until a method tries to change frozen object.
+
+CowProxy classes for array, hash, string and struct are provided. Objects from
+other classes will be proxied without copy-on-write, you have to create a
+CowProxy class for them to enable copy-on-write. Also you have to create
+CowProxy class for each object which have any getter method with arguments,
+because default CowProxy won't wrap returned value. Immutable classes such as
+Integer or TrueClass doesn't need copy-on-write proxy because they can't be
+changed.
+
+You can wrap every object in a proxy. Proxy will always send method calls to
+wrapped object, and wrap returned value with a CowProxy class if method has no
+argument, so a proxy will always return proxy objects for getters without
+arguments. When a method tries to change a frozen object, if proxy has
+copy-on-write enabled, it will duplicate frozen object and will send next method
+calls to duplicated object, in other case an exception is raised.

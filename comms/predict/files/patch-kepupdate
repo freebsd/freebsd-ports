@@ -1,0 +1,28 @@
+--- kepupdate.orig	2024-03-27 16:31:40 UTC
++++ kepupdate
+@@ -1,20 +1,19 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Invoke as kepupdate -q in crontab scripts to keep the update "quiet".
+ #
+  
+ dir=$HOME/.predict
+ 
+-wget -qr https://www.amsat.org/tle/current/nasabare.txt -O $dir/amateur.txt
+-wget -qr https://celestrak.org/NORAD/elements/visual.txt -O $dir/visual.txt
+-wget -qr https://celestrak.org/NORAD/elements/weather.txt -O $dir/weather.txt
++fetch https://www.amsat.org/tle/current/nasabare.txt -o $dir/amateur.txt
++fetch https://celestrak.org/NORAD/elements/visual.txt -o $dir/visual.txt
++fetch https://celestrak.org/NORAD/elements/weather.txt -o $dir/weather.txt
+ 
+ cat $dir/amateur.txt $dir/visual.txt $dir/weather.txt > $dir/keps.tle
+ 
+ if [ -e $dir/keps.tle ]; then
+ 	predict -u $dir/keps.tle
+-
+-	if [[ $1 != "-q" ]] && [[ $1 != "-quiet" ]] && [[ $1 != "--quiet" ]]; then
++	if [ $1 ] && [ $1 != "-q" ] && [ $1 != "-quiet" ] && [ $1 != "--quiet" ]; then
+ 		echo "PREDICT's Keps have been updated!"
+ 	fi
+ fi

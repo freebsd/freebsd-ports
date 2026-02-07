@@ -1,0 +1,24 @@
+default {
+	default {
+		allow spoof
+		deny spoof_all
+		deny spoof_privport
+		allow random_numeric
+		allow numeric
+		allow hide
+	}
+}
+
+user root {
+	default {
+		force reply "UNKNOWN"
+	}
+}
+
+#user eggdrop {
+#	default {
+#		allow spoof
+#		allow spoof_all
+#		allow spoof_privport
+#	}
+#}

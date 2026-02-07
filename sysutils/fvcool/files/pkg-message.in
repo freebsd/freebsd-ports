@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+    If you want to invoke %%PORTNAME%% automatically on system startup,
+    add the following line to /etc/rc.conf:
+
+        fvcool_enable="YES"
+
+    See %%PREFIX%%/etc/rc.d/%%PORTNAME%%.sh for more details.
+
+===> WARNING
+
+    This software can have a negative impact on system stability. In
+    particular while doing heavy duty work such as encoding music,
+    under certain conditions the system can freeze.
+
+    Don't use this software in production or mission-critical
+    environments!
+
+    Also note that this software is supposed to be used with AMD
+    Athlon (XP) an AMD Duron processors only.
+
+EOM
+}
+]

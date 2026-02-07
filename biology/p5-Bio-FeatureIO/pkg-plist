@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Bio/FeatureIO.pm
+%%SITE_PERL%%/Bio/FeatureIO/bed.pm
+%%SITE_PERL%%/Bio/FeatureIO/gff.pm
+%%SITE_PERL%%/Bio/FeatureIO/gtf.pm
+%%SITE_PERL%%/Bio/FeatureIO/interpro.pm
+%%SITE_PERL%%/Bio/FeatureIO/ptt.pm
+%%SITE_PERL%%/Bio/FeatureIO/vecscreen_simple.pm
+%%SITE_PERL%%/Bio/SeqFeature/Annotated.pm
+%%PERL5_MAN3%%/Bio::FeatureIO.3.gz
+%%PERL5_MAN3%%/Bio::FeatureIO::bed.3.gz
+%%PERL5_MAN3%%/Bio::FeatureIO::gff.3.gz
+%%PERL5_MAN3%%/Bio::FeatureIO::gtf.3.gz
+%%PERL5_MAN3%%/Bio::FeatureIO::interpro.3.gz
+%%PERL5_MAN3%%/Bio::FeatureIO::ptt.3.gz
+%%PERL5_MAN3%%/Bio::FeatureIO::vecscreen_simple.3.gz
+%%PERL5_MAN3%%/Bio::SeqFeature::Annotated.3.gz

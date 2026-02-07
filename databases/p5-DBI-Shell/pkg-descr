@@ -1,0 +1,10 @@
+DBI::Shell
+==========
+
+The DBI::Shell module (and dbish command, if installed) provide a
+simple but effective command line interface for the Perl DBI
+module.
+
+Please note: DBI::Shell is very new, very experimental and very
+subject to change. Your mileage will vary. Interfaces will change
+with each release.

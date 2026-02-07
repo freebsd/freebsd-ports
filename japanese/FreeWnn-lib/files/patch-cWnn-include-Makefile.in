@@ -1,0 +1,33 @@
+Index: cWnn/include/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/include/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- cWnn/include/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/include/Makefile.in	2 Jan 2009 21:09:34 -0000	1.2
+@@ -36,7 +36,8 @@ INSTALL      = @INSTALL@ $(INSTALLFLAGS)
+ 
+ HEADERS = commonhd.h jllib.h jslib.h msg.h rk_spclval.h wnnerror.h cplib.h
+ LINKS = wnn_config.h copyright.h demcom.h hinsi_file.h jd_sock.h  \
+-        jdata.h jh.h jlib.h wnn_string.h wnn_os.h hinsi.h ansidecl.h
++        jdata.h jh.h jlib.h wnn_string.h wnn_os.h hinsi.h ansidecl.h \
++	fake-rfc2553.h
+ LINKS2 = getopt.h
+ 
+ 
+@@ -204,6 +205,14 @@ includes:: getopt.h
+ 
+ depend:: getopt.h
+ 
++fake-rfc2553.h: $(WNNINCLUDESRC)/fake-rfc2553.h
++	$(RM) $@
++	$(LN) $? $@
++
++includes:: fake-rfc2553.h
++
++depend:: fake-rfc2553.h
++
+ # 'clean' entry is not added because last 
+ # 'clean' entry (action = '$(RM) $(LINKS)') does same thing. (aono)
+ 

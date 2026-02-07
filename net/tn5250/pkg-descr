@@ -1,0 +1,3 @@
+tn5250 is an implementation of the 5250 Telnet protocol.
+It provides 5250 library and 5250 terminal emulation.
+(usually used to connect to IBM AS/400 Midrange systems)

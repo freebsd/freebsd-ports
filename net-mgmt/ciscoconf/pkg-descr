@@ -1,0 +1,7 @@
+Ciscoconf automagically fetches configuration from Cisco routers whenever
+syslog indicates that a change has been made, and stores them under RCS.
+
+MORE INFORMATION
+
+For more information, or to foward comments or details of problems, please
+contact Joe Abley <jabley@automagic.org>.

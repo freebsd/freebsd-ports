@@ -1,0 +1,8 @@
+Mail::Spool is a "pure perl" implementation of mail spooling, unspooling
+and sending. It is intended to be used with daemons such as
+Net::Server::SMTP (to be released soon), but it also contains its own
+daemon (based off of Net::Server::Fork) that can be used if necessary.
+
+It is also intended to be used as a quick spooling mechanism for perl
+scripts. As it can write straight to the queue without opening another
+process.

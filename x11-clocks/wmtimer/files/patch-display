@@ -1,0 +1,21 @@
+--- ../wmgeneral/wmgeneral.h.orig	2020-09-14 21:36:07.239508000 +0200
++++ ../wmgeneral/wmgeneral.h	2020-09-14 21:36:21.104761000 +0200
+@@ -40,7 +40,7 @@
+  /* Global variable */
+ /*******************/
+ 
+-Display *display;
++extern Display *display;
+ 
+ /***********************/
+  /* Function Prototypes */
+--- ../wmgeneral/wmgeneral.c.orig	2020-09-14 21:36:11.135626000 +0200
++++ ../wmgeneral/wmgeneral.c	2020-09-14 21:36:21.107677000 +0200
+@@ -55,6 +55,7 @@
+  /* X11 Variables */
+ /*****************/
+ 
++Display *display;
+ Window Root;
+ int screen;
+ int x_fd;

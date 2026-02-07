@@ -1,0 +1,4 @@
+The Uranium framework consists of several parts, divided over several modules.
+These modules are Core, Backend, Math, Mesh, Scene, Settings and View.
+In addition, there are two toolkit-specific modules that implement a lot
+of UI bits for the applications.

@@ -1,0 +1,52 @@
+.Dd April 23, 2005
+.Dt CVSCHK 1
+.Os
+.Sh NAME
+.Nm cvschk
+.Nd Quick offline CVS status checker
+.Sh SYNOPSIS
+.Nm
+.Op Fl adhlrtV
+.Op Fl Ar -all
+.Op Fl Ar -debug
+.Op Fl Ar -help
+.Op Fl Ar -local
+.Op Fl Ar -restrict
+.Op Fl Ar -tabular
+.Op Fl Ar -version
+.Sh DESCRIPTION
+The
+.Nm
+utility is a perl program which checks the status of the CVS controlled files
+and gives an ASCII table sorted after the status of files. It works offline,
+without access to the CVS repository.
+.Pp
+The options are:
+.Bl -tag -width Ds
+.It Fl a , -all
+Show all statistics, including the names of files that are up to date, used tags, ignored patterns and more.
+.It Fl d , -debug
+Show debug information.
+.It Fl h , -help
+Print a short usage help.
+.It Fl l , -local
+Do not descend into sub-directories.
+.It Fl r , -restrict
+Do not show the names of unknown files (useful in directories with lots of
+temporary files).
+.It Fl t , -tabular
+Show one file per line, preceded with a status word, sorted by filename.
+.It Fl V , -version
+Print the version and exit.
+.El
+
+.Sh AUTHOR
+This manual page was written by
+.An "Matthias Andree" Aq matthias.andree@gmx.de .
+.Pp
+.Nm cvschk
+was written by:
+.An "Peter Toft" Aq pto@sslug.dk ,
+.An "Ole Tange" Aq ole@tange.dk
+and
+.An "Lars G. T. Joergensen" Aq larsj@diku.dk

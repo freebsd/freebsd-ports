@@ -1,0 +1,48 @@
+Description: Adapt the configure script to FreeBSD.
+ - use the elf.h header;
+ - shorten the library .so file name;
+ - honor LDFLAGS when linking;
+ - do not link against or depend on libc.
+Forwarded: not-needed
+Author: Kevin Van Maren <vanmaren@fast.cs.utah.edu>,
+	Maxim Sobolev <sobomax@FreeBSD.org>,
+	Peter Pentchev <roam@FreeBSD.org>
+	Ying-Chieh Liao <ijliao@FreeBSD.org>
+Last-Update: 2009-11-20
+
+--- configure.orig
++++ configure
+@@ -1146,7 +1146,7 @@
+ 
+ fi
+ 
+-for ac_hdr in unistd.h stdint.h fcntl.h
++for ac_hdr in unistd.h stdint.h fcntl.h elf.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -3281,7 +3281,7 @@
+ fi
+ 
+     case "$host" in
+-      *-linux*|*-gnu*)
++      *-linux*|*-gnu*|*-freebsd*)
+ 	if test "$GCC" = yes; then
+ 	  
+   
+@@ -3336,13 +3336,12 @@
+ 	    PICFLAGS='-fPIC -DPIC'
+ 	    if test "$mr_enable_gnu_names" = yes
+ 	    then SHLIB_SFX='-$(VERSION).so'
+-	    else SHLIB_SFX='.so.$(VERSION)'
++	    else SHLIB_SFX='.so.$(MAJOR)'
+ 	    fi
+ 	    SHLINK_SFX='.so'
+ 	    SONAME_SFX='.so.$(MAJOR)'
+-	    LINK_SHLIB='$(CC) -shared -Wl,-soname,$(SONAME)'
++	    LINK_SHLIB='$(CC) -shared -Wl,-soname,$(SONAME) $(LDFLAGS)'
+ 	    INSTALL_SHLIB='$(INSTALL_PROGRAM)'
+-	    DEPSHLIBS='-lc'
+ 	  else
+ 	    echo "configure: warning: shared libraries not supported for $host" 1>&2
+ 	    mr_enable_shared=no

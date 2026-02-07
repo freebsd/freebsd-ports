@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Cache/Memcached/Fast.pm
+%%SITE_ARCH%%/auto/Cache/Memcached/Fast/Fast.so
+%%PERL5_MAN3%%/Cache::Memcached::Fast.3.gz

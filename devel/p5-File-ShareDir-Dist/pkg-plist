@@ -1,0 +1,8 @@
+%%SITE_PERL%%/App/Prove/Plugin/ShareDirDist.pm
+%%SITE_PERL%%/App/Yath/Plugin/ShareDirDist.pm
+%%SITE_PERL%%/File/ShareDir/Dist.pm
+%%SITE_PERL%%/File/ShareDir/Dist/Install.pm
+%%PERL5_MAN3%%/App::Prove::Plugin::ShareDirDist.3.gz
+%%PERL5_MAN3%%/App::Yath::Plugin::ShareDirDist.3.gz
+%%PERL5_MAN3%%/File::ShareDir::Dist.3.gz
+%%PERL5_MAN3%%/File::ShareDir::Dist::Install.3.gz

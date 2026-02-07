@@ -1,0 +1,2 @@
+This gem provides the functionality behind the OpenVox Server CA interactions.
+The actual CLI executable lives within the OpenVox Server project.

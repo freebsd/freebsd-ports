@@ -1,0 +1,22 @@
+--- makefiles/Makefile.freebsd.orig	2017-02-04 17:45:50 UTC
++++ makefiles/Makefile.freebsd
+@@ -1,6 +1,6 @@
+ # $Id: Makefile.freebsd,v 1.6 2003/11/22 13:03:39 edg Exp $
+-CC=cc
+-AR=ar
++CC?=cc
++AR?=ar
+ 
+ # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
+ #
+@@ -10,8 +10,8 @@ AR=ar
+ # To test if the Motif library exports the runtime version
+ # add -DHAVE__XMVERSIONSTRING to CFLAGS
+ #
+-CFLAGS=-O -I${PREFIX}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD -DUSE_XMIM
+-LIBS= ${MOTIFLIB} -L${PREFIX}/lib -lm -lXpm -lXext -lXt -lSM -lICE -lX11
++CFLAGS+=-O -I${LOCALBASE}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD -DUSE_XMIM -DBUILD_UNTESTED_NEDIT
++LIBS+= ${MOTIFLIB} -L${LOCALBASE}/lib -lm -lXpm -lXext -lXt -lSM -lICE -lX11
+ 
+ include Makefile.common
+ 

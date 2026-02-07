@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Net/OpenSSH/Parallel.pm
+%%SITE_PERL%%/Net/OpenSSH/Parallel/Constants.pm
+%%PERL5_MAN3%%/Net::OpenSSH::Parallel.3.gz
+%%PERL5_MAN3%%/Net::OpenSSH::Parallel::Constants.3.gz

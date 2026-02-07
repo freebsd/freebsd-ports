@@ -1,0 +1,11 @@
+--- google-cloud-firestore.gemspec.orig	2025-12-29 04:31:37 UTC
++++ google-cloud-firestore.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<bigdecimal>.freeze, ["~> 3.0".freeze])
++  s.add_runtime_dependency(%q<bigdecimal>.freeze, [">= 3.0".freeze, "< 5".freeze])
+   s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<google-cloud-core>.freeze, ["~> 1.7".freeze])
+   s.add_runtime_dependency(%q<google-cloud-firestore-v1>.freeze, ["~> 2.0".freeze])

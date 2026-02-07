@@ -1,0 +1,5 @@
+TIMESTAMP = 1768891503
+SHA256 (go/benchmarks_ali/ali-v0.8.0/v0.8.0.mod) = ab1c3e4553de3c092778eab0fdf8caef063f4bc33704716f4f3a1e1f3c629223
+SIZE (go/benchmarks_ali/ali-v0.8.0/v0.8.0.mod) = 1144
+SHA256 (go/benchmarks_ali/ali-v0.8.0/v0.8.0.zip) = c68651383c898543cdb3212803864cb937428c765bf3a661f4b82bc79a466559
+SIZE (go/benchmarks_ali/ali-v0.8.0/v0.8.0.zip) = 6890588

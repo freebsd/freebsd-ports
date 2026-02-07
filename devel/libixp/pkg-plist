@@ -1,0 +1,8 @@
+bin/ixpc
+include/ixp.h
+include/ixp_srvutil.h
+lib/libixp.so
+lib/libixp.so.1
+lib/libixp_pthread.so
+lib/libixp_pthread.so.1
+share/man/man1/ixpc.1.gz

@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+You need to create a PostgreSQL database for your logs:
+
+  # su - postgres
+  $ createdb pglogd
+  $ psql pglogd < %%PREFIX%%/share/pglogd/pglogd_tables.sql
+  $ exit
+
+and copy %%PREFIX%%/share/pglogd/pglogd.conf
+to %%PREFIX%%/etc/pglogd.conf
+
+pglogd can then be started with:
+
+  # %%PREFIX%%/etc/rc.d/020.pglogd.sh start
+
+Read the complete documentation on configuring pglogd
+and apache at http://www.digitalstratum.com/pglogd/
+EOM
+}
+]

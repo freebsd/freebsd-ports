@@ -1,0 +1,13 @@
+# MAINTAINER:   portmgr@FreeBSD.org
+
+actions: []
+post-install: <<EOD
+   fmtutil-sys --missing >/dev/null
+EOD
+post-deinstall: <<EOD
+   set -- %@
+   for f in $@; do
+        rm -f $f
+        rmdir -p ${f%/*} 2>/dev/null
+   done
+EOD

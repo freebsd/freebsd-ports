@@ -1,0 +1,26 @@
+#!/bin/sh -e
+
+emboss_bin=%%PREFIX%%/bin
+cat << EOM
+
+Prefixing \$PATH with $emboss_bin.
+
+Emboss contains commands that conflict with other tools, including at least
+"charge", "cons", "garnier", "prophet", and "tcode".
+
+The other commands with these names may serve entirely different functions
+and will not be accessible while running this shell unless you refer to them
+by their absolute path name (e.g. %%LOCALBASE%%/bin/garnier), which is not
+portable, BTW, so don't hard-code such paths into your scripts.
+
+Type "exit" or "Ctrl+D" to return to your normal shell.
+
+EOM
+
+export PATH=${emboss_bin}:$PATH
+
+# Invoke the user's chosen shell
+if echo $SHELL | egrep -q '/t?csh'; then
+    args='-f'
+fi
+exec $SHELL $args

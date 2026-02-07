@@ -1,0 +1,64 @@
+Rename the xsd binary to xsdcxx, as lang/mono already installs an executable
+called `xsd'.
+
+--- doc/pregenerated/xsd.1.orig	2023-09-28 07:36:28 UTC
++++ doc/pregenerated/xsd.1
+@@ -1,7 +1,7 @@
+ .\" Process this file with
+ .\" groff -man -Tascii xsd.1
+ .\"
+-.TH XSD 1 "January 2023" "XSD 4.2.0"
++.TH XSDCXX 1 "January 2023" "XSDCXX 4.2.0"
+ .SH NAME
+ xsd \- W3C XML Schema to C++ Compiler
+ .\"
+@@ -10,7 +10,7 @@ xsd \- W3C XML Schema to C++ Compiler
+ .\"--------------------------------------------------------------------
+ .SH SYNOPSIS
+ .\"--------------------------------------------------------------------
+-.B xsd
++.B xsdcxx
+ .I command
+ .B [
+ .I options
+@@ -20,19 +20,19 @@ xsd \- W3C XML Schema to C++ Compiler
+ .I file
+ .B ...]
+ .in
+-.B xsd help
++.B xsdcxx help
+ .B [
+ .I command
+ .B ]
+ .in
+-.B xsd version
++.B xsdcxx version
+ .\"
+ .\"
+ .\"
+ .\"--------------------------------------------------------------------
+ .SH DESCRIPTION
+ .\"--------------------------------------------------------------------
+-.B xsd
++.B xsdcxx
+ generates vocabulary-specific, statically-typed C++ mapping from W3C XML
+ Schema definitions. Particular mapping to produce is selected by a
+ .IR command .
+@@ -96,7 +96,7 @@ Print usage information and exit. Use
+ .PP
+ .RS
+ .RS 3
+-.B xsd help
++.B xsdcxx help
+ .I command
+ .RE
+ .PP
+@@ -1484,7 +1484,7 @@ If the input file is not a valid W3C XML Schema defini
+ .\"
+ .SH DIAGNOSTICS
+ If the input file is not a valid W3C XML Schema definition,
+-.B xsd
++.B xsdcxx
+ will issue diagnostic messages to
+ .B STDERR
+ and exit with non-zero exit code.

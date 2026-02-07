@@ -1,0 +1,2 @@
+Prusa Block & Binary G-code reader/writer/converter.
+libbgcode provides three API: core, binarize and convert.

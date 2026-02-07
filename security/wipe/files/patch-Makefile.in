@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2009-11-01 21:11:30 UTC
++++ Makefile.in
+@@ -60,13 +60,7 @@ install: $(BIN_OUT)
+ 	$(INSTALL_BIN) -d $(bindir)
+ 	$(INSTALL_BIN) -s $(BIN_OUT) $(bindir)
+ 	$(INSTALL) -d $(mandir)/man1
+-	$(INSTALL) -o root -m 0644 wipe.1 $(mandir)/man1/
+-	rm -rf $(datadir)/doc/wipe*
+-	$(INSTALL) -d $(datadir)/doc/wipe
+-
+-	for file in $(DOCS); do \
+-		$(INSTALL) -o root -m 0644 $$file $(datadir)/doc/wipe/; \
+-	done
++	$(INSTALL) -o root -g wheel -m 0444 wipe.1 $(mandir)/man1/
+ 
+ install_home: $(BIN_OUT)
+ 	strip $(BIN_OUT)

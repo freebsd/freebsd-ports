@@ -1,0 +1,4 @@
+bin/ppi2html
+%%PERL5_MAN3%%/PPI::HTML.3.gz
+%%SITE_PERL%%/PPI/HTML.pm
+%%SITE_PERL%%/PPI/HTML/Fragment.pm

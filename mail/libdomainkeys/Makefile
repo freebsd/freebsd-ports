@@ -1,0 +1,23 @@
+PORTNAME=	libdomainkeys
+PORTVERSION=	0.69
+PORTREVISION=	1
+CATEGORIES=	mail
+MASTER_SITES=	SF/domainkeys/${PORTNAME}/${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	DomainKeys library
+WWW=		https://domainkeys.sourceforge.net/
+
+USES=		uidfix ssl
+USE_LDCONFIG=	yes
+SHLIB_MAJOR=	3
+PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+MAKEFILE=	${FILESDIR}/Makefile
+TEST_TARGET=	check
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/dknewkey ${STAGEDIR}${DATADIR}
+
+.include <bsd.port.mk>

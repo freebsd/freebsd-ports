@@ -1,0 +1,22 @@
+--- src/opengl/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/opengl/CMakeLists.txt
+@@ -130,7 +130,7 @@ function_variable_fixup("${EXTRA_OPENGL_LDFLAGS}"  EXT
+ 
+ target_include_directories(CsOpenGL
+    PUBLIC
+-   $<INSTALL_INTERFACE:include/QtOpenGL>
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtOpenGL
+ )
+ 
+ target_link_libraries(CsOpenGL
+@@ -159,8 +159,8 @@ install(
+    TARGETS CsOpenGL
+    EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(

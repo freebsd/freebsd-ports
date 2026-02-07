@@ -1,0 +1,13 @@
+--- Makefile.orig	2016-02-16 10:52:18 UTC
++++ Makefile
+@@ -145,8 +145,8 @@ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):$
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):$(Is)/html_iframe_element.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):$(Is)/html_isindex_element.h
+ 
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
+ 
+ ifeq ($(WITH_LIBXML_BINDING),yes)
+   REQUIRED_PKGS := $(REQUIRED_PKGS) libxml-2.0

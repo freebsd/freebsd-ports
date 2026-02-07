@@ -1,0 +1,12 @@
+This collection of modules provides perl5 access methods related to MIME.
+It includes the following modules:
+
+MIME::Body MIME::Decoder MIME::Decoder::Base64 MIME::Decoder::BinHex
+MIME::Decoder::Binary MIME::Decoder::Gzip64 MIME::Decoder::NBit
+MIME::Decoder::QuotedPrint MIME::Decoder::UU MIME::Entity
+MIME::Field::ConTraEnc MIME::Field::ContDisp MIME::Field::ContType
+MIME::Field::ParamVal MIME::Head MIME::IO MIME::Latin1 MIME::Parser
+MIME::ParserBase MIME::ToolUtils MIME::Tools MIME::Words
+
+Warning: This module is _very_ slow for (at least some) large mails,
+is derived from Mail-Tools, and has at least some mail-specific parts.

@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Some features require adjusting termcap(5) e.g.,
+
+  # To test run: wezterm --config term=\"wezterm\"
+  $ cat >>/etc/termcap
+  wezterm|Wez's terminal emulator:\
+  	:it#8:\
+  	:IC=\E[%d@:SF=\E[%dS:SR=\E[%dT:bt=\E[Z:ec=\E[%dX:kb=\177:\
+  	:mb=\E[5m:me=\E[0m:mh=\E[2m:mm=\E[?1034h:mo=\E[?1034l:nw@:\
+  	:te=\E[?1049l\E[23;0;0t:ti=\E[?1049h\E[22;0;0t:\
+  	:vb=\E[?5h\E[?5l:tc=xterm-256color:
+EOM
+}
+]

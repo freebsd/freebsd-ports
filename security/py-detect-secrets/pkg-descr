@@ -1,0 +1,20 @@
+detect-secrets is an aptly named module for (surprise, surprise) detecting
+secrets within a code base.
+
+However, unlike other similar packages that solely focus on finding secrets,
+this package is designed with the enterprise client in mind: providing a
+backwards compatible, systematic means of:
+ 1. Preventing new secrets from entering the code base,
+ 2. Detecting if such preventions are explicitly bypassed, and
+ 3. Providing a checklist of secrets to roll, and migrate off to a more secure
+    storage.
+
+This way, you create a separation of concern: accepting that there may currently
+be secrets hiding in your large repository (this is what we refer to as a
+baseline), but preventing this issue from getting any larger, without dealing
+with the potentially gargantuan effort of moving existing secrets away.
+
+It does this by running periodic diff outputs against heuristically crafted
+regex statements, to identify whether any new secret has been committed. This
+way, it avoids the overhead of digging through all git history, as well as the
+need to scan the entire repository every time.

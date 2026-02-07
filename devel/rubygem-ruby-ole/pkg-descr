@@ -1,0 +1,3 @@
+The ruby-ole library provides a variety of functions primarily for
+working with OLE2 structured storage files, such as those produced by
+Microsoft Office - eg *.doc, *.msg etc.

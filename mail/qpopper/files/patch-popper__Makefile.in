@@ -1,0 +1,12 @@
+--- popper/Makefile.in.orig	2011-06-08 23:45:12.000000000 -0700
++++ popper/Makefile.in	2011-06-08 23:45:40.000000000 -0700
+@@ -213,7 +213,7 @@
+ 	        ${LIBS} ${LDFLAGS}
+ 
+ popauth: ${POPAUTHOBJS} ${MISSING_OBJS}
+-	${CC}  -o popauth ${POPAUTHOBJS} ${NETWORK_LIBS} \
++	${CC}  -o popauth ${POPAUTHOBJS} ${NETWORK_LIBS} ${LIBS}\
+ 	       ${DBM_LIBS} ${MISSING_OBJS} \
+ 		${common_dir}/libcommon.a
+ 
+

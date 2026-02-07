@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+To enable LPRng, put the following lines in /etc/rc.conf
+
+lpd_enable="NO"
+lprng_enable="YES"
+
+LPRng uses the printcap, lpd.conf, and lpd.perms configuration files
+
+For further information, see the LPRng Documentation:
+  %%DOCSDIR%%
+
+The LPRng Web Site is http://www.lprng.com
+
+Commercial support is available from Astart Technologies:
+
+Patrick Powell                 Astart Technologies
+papowell@astart.com            6741 Convoy Court
+Network and System             San Diego, CA 92111
+  Consulting                   858-874-6543 FAX 858-751-2435
+LPRng - Print Spooler (http://www.lprng.com)
+EOM
+}
+]

@@ -1,0 +1,2 @@
+Deeptools_intervals is an interval tree backend designed to interface
+with deepTools, supporting metadata associated with each interval.

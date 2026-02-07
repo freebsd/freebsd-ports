@@ -1,0 +1,12 @@
+--- doc/global.sqshrc	Tue Oct 23 22:31:06 2001
++++ doc/global.sqshrc	Tue Oct 15 13:06:20 2002
+@@ -5,3 +5,8 @@
+ #          resource file for all users of sqsh.
+-#
++
++#	DO NOT EDIT -- the changes will be lost if you reinstall
++#	or upgrade sqsh port/package. Instead, create your own
++#		%%PREFIX%%/etc/sqshrc
++#	if you wish to make system-wide customizations.
++#	User-specific customizations can be made in ~/.sqshrc files.
+ 

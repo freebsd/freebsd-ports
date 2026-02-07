@@ -1,0 +1,11 @@
+--- Samba/source/pidl/pidl.orig	2008-07-30 19:44:55 UTC
++++ Samba/source/pidl/pidl
+@@ -580,7 +580,7 @@ sub process_file($)
+ 		require Parse::Pidl::IDL;
+ 
+ 		$pidl = Parse::Pidl::IDL::parse_file($idl_file, \@opt_incdirs);
+-		defined @$pidl || die "Failed to parse $idl_file";
++		@$pidl || die "Failed to parse $idl_file";
+ 		require Parse::Pidl::Typelist;
+ 		Parse::Pidl::Typelist::LoadIdl($pidl);
+ 	}

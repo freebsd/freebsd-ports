@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Markapl.3.gz
+%%PERL5_MAN3%%/Markapl::Helpers.3.gz
+%%PERL5_MAN3%%/Markapl::Tags.3.gz
+%%SITE_PERL%%/Markapl.pm
+%%SITE_PERL%%/Markapl/Helpers.pm
+%%SITE_PERL%%/Markapl/TagHandlers.pm
+%%SITE_PERL%%/Markapl/Tags.pm

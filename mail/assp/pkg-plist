@@ -1,0 +1,113 @@
+etc/periodic/daily/510.assp
+sbin/assp
+sbin/assplog
+%%DATADIR%%/assp.pl
+@owner %%ASSP_USER%%
+@group %%ASSP_GROUP%%
+%%DATADIR%%/files/URIBLCCTLDS.txt
+%%DATADIR%%/files/blackaddresses.txt
+%%DATADIR%%/files/blackdomains.txt
+%%DATADIR%%/files/blackre.txt
+%%DATADIR%%/files/blacksenderbase.txt
+%%DATADIR%%/files/blockreportlist.txt
+%%DATADIR%%/files/bombdatare.txt
+%%DATADIR%%/files/bombheaderre.txt
+%%DATADIR%%/files/bombre.txt
+%%DATADIR%%/files/bombsenderre.txt
+%%DATADIR%%/files/bombsubjectre.txt
+%%DATADIR%%/files/charsets.txt
+%%DATADIR%%/files/checkdomains.txt
+%%DATADIR%%/files/deny.txt
+%%DATADIR%%/files/denyalways.txt
+%%DATADIR%%/files/dnsbls.txt
+%%DATADIR%%/files/dnsrws.txt
+%%DATADIR%%/files/droplist.txt
+%%DATADIR%%/files/groups.txt
+%%DATADIR%%/files/invalidhelo.txt
+%%DATADIR%%/files/invalidptr.txt
+%%DATADIR%%/files/ipnp.txt
+%%DATADIR%%/files/ipnpexclude.txt
+%%DATADIR%%/files/noblocking.txt
+%%DATADIR%%/files/nodelay.txt
+%%DATADIR%%/files/nodelayhelosre.txt
+%%DATADIR%%/files/nogrip.txt
+%%DATADIR%%/files/nookcaching.txt
+%%DATADIR%%/files/nopbwhite.txt
+%%DATADIR%%/files/notls.txt
+%%DATADIR%%/files/nowhite.txt
+%%DATADIR%%/files/npre.txt
+%%DATADIR%%/files/preheaderre.txt
+%%DATADIR%%/files/rcptreplrules.txt
+%%DATADIR%%/files/redre.txt
+%%DATADIR%%/files/samesubjectskip.txt
+%%DATADIR%%/files/strictspf.txt
+%%DATADIR%%/files/subjectre.txt
+%%DATADIR%%/files/suspiciousre.txt
+%%DATADIR%%/files/suspiciousvirus.txt
+%%DATADIR%%/files/tlds-alpha-by-domain.txt
+%%DATADIR%%/files/uriblserviceprovider.txt
+%%DATADIR%%/files/uriblwhite.txt
+%%DATADIR%%/files/validhelo.txt
+%%DATADIR%%/files/validptr.txt
+%%DATADIR%%/files/whiteptr.txt
+%%DATADIR%%/files/whitesenderbase.txt
+@owner
+@group
+%%DATADIR%%/images/assp.css
+%%DATADIR%%/images/blockreport.css
+%%DATADIR%%/images/blockreport.gif
+%%DATADIR%%/images/blockreporticon.gif
+%%DATADIR%%/images/dropShadow.gif
+%%DATADIR%%/images/editor.css
+%%DATADIR%%/images/favicon.ico
+%%DATADIR%%/images/info.png
+%%DATADIR%%/images/loading.gif
+%%DATADIR%%/images/logo.gif
+%%DATADIR%%/images/logo1.jpg
+%%DATADIR%%/images/minusIcon.png
+%%DATADIR%%/images/noIcon.png
+%%DATADIR%%/images/opensource-logo.gif
+%%DATADIR%%/images/plusIcon.png
+%%DATADIR%%/images/shutdown.css
+%%DATADIR%%/images/sourceforge-logo.gif
+%%DATADIR%%/images/valid-xhtml10.gif
+%%DATADIR%%/images/village.gif
+%%DATADIR%%/images/xml-pill.gif
+%%DATADIR%%/rebuildspamdb.pl
+%%DATADIR%%/reports/analyzereport.txt
+%%DATADIR%%/reports/blackremovereport.txt
+%%DATADIR%%/reports/blackreport.txt
+%%DATADIR%%/reports/blockreport_html.txt
+%%DATADIR%%/reports/blockreport_sub.txt
+%%DATADIR%%/reports/blockreport_text.txt
+%%DATADIR%%/reports/blockreportfile.txt
+%%DATADIR%%/reports/denied.txt
+%%DATADIR%%/reports/helpreport.txt
+%%DATADIR%%/reports/notspamreport.txt
+%%DATADIR%%/reports/npremovereport.txt
+%%DATADIR%%/reports/npreport.txt
+%%DATADIR%%/reports/persblackreport.txt
+%%DATADIR%%/reports/redremovereport.txt
+%%DATADIR%%/reports/redreport.txt
+%%DATADIR%%/reports/slremovereport.txt
+%%DATADIR%%/reports/slreport.txt
+%%DATADIR%%/reports/spamreport.txt
+%%DATADIR%%/reports/virusreport.txt
+%%DATADIR%%/reports/whiteremovereport.txt
+%%DATADIR%%/reports/whitereport.txt
+%%DATADIR%%/stat.pl
+%%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
+%%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
+share/man/man8/assp.8.gz
+share/man/man8/assplog.8.gz
+%%ASSP_HOME%%/files
+%%ASSP_HOME%%/images
+%%ASSP_HOME%%/rebuildspamdb.pl
+%%ASSP_HOME%%/reports
+%%ASSP_HOME%%/logs
+@dir %%DATADIR%%/logs
+@dir(%%ASSP_USER%%,%%ASSP_GROUP%%,750) %%ASSP_LOG%%
+@dir(%%ASSP_USER%%,%%ASSP_GROUP%%,750) %%ASSP_HOME%%
+@postunexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
+@postunexec if [ -d %%ASSP_LOG%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_LOG%% directory."; fi
+@postunexec echo "If you are deinstalling ASSP completely, delete the ASSP user and group."

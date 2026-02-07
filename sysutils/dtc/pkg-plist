@@ -1,0 +1,14 @@
+bin/convert-dtsv0
+bin/dtc
+bin/dtdiff
+bin/fdtdump
+bin/fdtget
+bin/fdtoverlay
+bin/fdtput
+include/fdt.h
+include/libfdt.h
+include/libfdt_env.h
+lib/libfdt.so
+lib/libfdt.so.1
+lib/libfdt.so.1.7.1
+libdata/pkgconfig/libfdt.pc

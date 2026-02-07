@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <!-- OpenDesktop Truetype Font -->
+    <alias>
+      <family>MingLiU</family>
+      <accept><family>AR PL New Sung Mono</family></accept>
+    </alias>
+    <alias>
+      <family>PMingLiU</family>
+      <accept><family>AR PL New Sung Mono</family></accept>
+    </alias>
+    <alias>
+      <family>SimSun</family>
+      <accept><family>AR PL New Sung Mono</family></accept>
+    </alias>
+
+<!--
+        <match target="font">
+                <test name="family">
+                  <string>AR PL New Sung</string>
+                </test>
+                <edit name="antialias"><bool>true</bool></edit>
+                <edit name="hinting"><bool>true</bool></edit>
+                <edit name="autohint"><bool>false</bool></edit>
+        </match>
+
+        <match target="font">
+                <test name="family">
+                  <string>AR PL New Sung</string>
+                  <string>AR PL New Sung Mono</string>
+                </test>
+                <test name="size" compare="less_eq"><int>16</int></test>
+                <test name="size" compare="more_eq"><int>12</int></test>
+                <edit name="antialias" mode="assign"><bool>false</bool></edit>
+                <edit name="hinting" mode="assign"><bool>true</bool></edit>
+                <edit mode="assign" name="embolden"><bool>false</bool></edit>
+        </match>
+
+        <match target="font">
+                <test name="family">
+                  <string>AR PL New Sung</string>
+                  <string>AR PL New Sung Mono</string>
+                </test>
+                <test name="size" compare="less_eq"><int>12</int></test>
+                <edit name="antialias" mode="assign"><bool>false</bool></edit>
+                <edit name="hinting" mode="assign"><bool>true</bool></edit>
+                <edit mode="assign" name="embolden"><bool>true</bool></edit>
+        </match>
+-->
+        <match target="font" >
+                <test name="family" compare="contains" >
+                        <string>Song</string>
+                        <string>Sun</string>
+                        <string>Kai</string>
+                        <string>Ming</string>
+                </test> 
+                <!-- check to see if the font is just regular -->
+                <test name="weight" compare="less_eq">
+                        <int>100</int>
+                </test>
+                <test compare="more_eq" target="pattern" name="weight" >
+                        <int>180</int>
+                </test>
+                <edit mode="assign" name="embolden" >
+                        <bool>true</bool>
+                </edit>
+        </match>
+
+  <match target="font" >
+    <test name="family" compare="contains" >
+      <string>Song</string>
+      <string>Sung</string>
+      <string>Ming</string>
+    </test> 
+    <edit name="globaladvance"><bool>false</bool></edit>
+    <edit name="spacing"><int>0</int></edit>
+    <edit name="hinting"><bool>true</bool></edit>
+    <edit name="autohint"><bool>false</bool></edit>
+<!--    <edit name="antialias" mode="assign"><bool>true</bool></edit> -->
+    <test name="size" compare="less_eq"><int>16</int></test>
+    <edit name="antialias" mode="assign"><bool>false</bool></edit>
+    
+  </match>
+  
+  <match target="font">
+    <test name="family"><string>AR PL New Sung</string></test>
+    <edit name="globaladvance"><bool>false</bool></edit>
+  </match>
+  <!-- end OpenDesktop Truetype Font -->
+
+
+  <!-- x11-fonts/bitstream-vera -->
+  <alias>
+    <family>serif</family>
+    <prefer>
+      <family>Bitstream Vera Serif</family>
+      <family>AR PL New Sung</family>
+      <family>AR PL New Kai</family>
+    </prefer>
+  </alias>
+  
+  <alias>
+    <family>sans-serif</family>
+    <prefer>
+      <family>Bitstream Vera Sans</family>
+      <family>AR PL New Sung</family>
+      <family>AR PL New Kai</family>
+    </prefer>
+  </alias>
+  
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>Bitstream Vera Sans Mono</family>
+      <family>AR PL New Sung Mono</family>
+    </prefer>
+  </alias>
+</fontconfig>

@@ -1,0 +1,11 @@
+--- c++/jackbridge/Makefile.orig	2017-07-07 18:23:41 UTC
++++ c++/jackbridge/Makefile
+@@ -27,7 +27,7 @@ WIN_LINK_FLAGS   = $(LINK_FLAGS)
+ WINE_BUILD_FLAGS = $(BUILD_CXX_FLAGS) -fPIC
+ WINE_32BIT_FLAGS = $(32BIT_FLAGS) -L/usr/lib32/wine -L/usr/lib/i386-linux-gnu/wine
+ WINE_64BIT_FLAGS = $(64BIT_FLAGS) -L/usr/lib64/wine -L/usr/lib/x86_64-linux-gnu/wine
+-WINE_LINK_FLAGS  = $(LINK_FLAGS) -ldl -lrt -lpthread
++WINE_LINK_FLAGS  = $(LINK_FLAGS) -lrt -lpthread
+ 
+ OBJS    = JackBridge1.cpp   JackBridge2.cpp
+ OBJSw32 = JackBridge1.w32.o JackBridge2.w32.o

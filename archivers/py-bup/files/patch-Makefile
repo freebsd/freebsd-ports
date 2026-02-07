@@ -1,0 +1,11 @@
+--- Makefile.orig	2021-01-09 22:11:10 UTC
++++ Makefile
+@@ -28,7 +28,7 @@ current_sampledata := test/sampledata/var/rev/v$(sampl
+ os := $(shell ($(pf); uname | sed 's/[-_].*//') $(isok))
+ os := $(call shout,$(os),Unable to determine OS)
+ 
+-CFLAGS := -O2 -Wall -Werror -Wformat=2 $(CFLAGS)
++CFLAGS := -Wall $(CFLAGS)
+ CFLAGS := -Wno-unknown-pragmas -Wsign-compare $(CFLAGS)
+ CFLAGS := -D_FILE_OFFSET_BITS=64 $(PYINCLUDE) $(CFLAGS)
+ SOEXT:=.so

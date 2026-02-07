@@ -1,0 +1,2 @@
+The socketmap table addon for OpenSMTPD allows querying information through the
+socketmap protocol.

@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: milterenma
+# REQUIRE: DAEMON
+# BEFORE: mail localpkg
+# KEYWORD: shutdown
+
+# Define these milterenma_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/milterenma
+#
+# milterenma_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to enable enma
+# milterenma_cfgfile (str):   Configuration file.
+# milterenma_pid (str):       Set pid file path.
+# milterenma_uid (str):       Set username to run milter.
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+milterenma_enable=${milterenma_enable:-"NO"}
+milterenma_cfgfile=${milterenma_cfgfile:-"%%PREFIX%%/etc/enma.conf"}
+milterenma_pid=${milterenma_pid:-"/var/run/milterenma/enma.pid"}
+milterenma_uid=${milterenma_uid:-"mailnull"}
+
+. /etc/rc.subr
+
+name="milterenma"
+rcvar=milterenma_enable
+
+load_rc_config $name
+
+pidfile=${milterenma_pid}
+required_files=${milterenma_cfgfile}
+command="%%PREFIX%%/libexec/enma"
+command_args="-c ${milterenma_cfgfile}"
+start_precmd="enma_precmd"
+stop_postcmd="enma_postcmd"
+_piddir=$(dirname ${pidfile})
+
+enma_precmd ()
+{
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
+    fi
+    if [ -n "${milterenma_uid}" ] ; then
+	chown ${milterenma_uid} ${_piddir}
+    fi
+}
+
+enma_postcmd()
+{
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+run_rc_command "$1"

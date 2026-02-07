@@ -1,0 +1,11 @@
+--- setup.py.orig	2023-04-25 17:06:45.072477000 -0500
++++ setup.py	2023-04-25 17:07:34.543067000 -0500
+@@ -21,7 +21,7 @@
+     python_requires=">=3.7",
+     long_description=readme,
+     long_description_content_type="text/markdown",
+-    packages=setuptools.find_packages(exclude=['tests']),
++    packages=setuptools.find_packages(exclude=['tests','tests_negative','tests_xdist']),
+     include_package_data=True,
+     version='3.8.6',
+     description='Library provides the way to automatically manage drivers for different browsers',

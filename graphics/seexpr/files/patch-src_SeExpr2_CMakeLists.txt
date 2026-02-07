@@ -1,0 +1,13 @@
+--- src/SeExpr2/CMakeLists.txt.orig	2019-10-03 17:15:38 UTC
++++ src/SeExpr2/CMakeLists.txt
+@@ -19,6 +19,10 @@ file(GLOB to_remove "ExprLLVMCodeGeneration.cpp")
+ list(REMOVE_ITEM io_cpp ${to_remove})
+ 
+ set_source_files_properties("ExprBuiltins.cpp" PROPERTIES COMPILE_DEFINITIONS "__STDC_LIMIT_MACROS")
++# XXX: avoid undefref to llvm::cfg::Update<llvm::BasicBlock*>::dump() const
++set_source_files_properties(
++    Expression.cpp ExprLLVMCodeGeneration.cpp
++    PROPERTIES COMPILE_DEFINITIONS NDEBUG)
+ 
+ # Uncomment below to print debug messages / performance stats
+ #add_definitions(-DSEEXPR_DEBUG)

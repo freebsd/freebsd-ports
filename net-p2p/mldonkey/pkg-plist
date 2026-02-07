@@ -1,0 +1,8 @@
+%%CORE%%bin/mld_hash
+%%CORE%%bin/mlnet
+%%CORE%%bin/mlnet-real
+%%CORE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kill_mldonkey
+%%GUICORE%%bin/mlguistarter
+%%GUICORE%%bin/mldonkey_previewer
+%%GUICORE%%bin/mlnet+gui
+%%GUI%%bin/mlgui

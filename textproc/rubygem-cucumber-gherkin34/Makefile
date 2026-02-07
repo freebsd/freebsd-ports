@@ -1,0 +1,25 @@
+PORTNAME=	cucumber-gherkin
+PORTVERSION=	34.0.0
+CATEGORIES=	textproc rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	34
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Fast Gherkin lexer/parser based on the Ragel State Machine Compiler
+WWW=		https://github.com/cucumber/gherkin
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-cucumber-messages28>=25<29:devel/rubygem-cucumber-messages28
+
+USES=		gem
+
+NO_ARCH=	yes
+
+PORTSCOUT=	limit:^34\.
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/gherkin ${STAGEDIR}${PREFIX}/bin/gherkin-ruby
+
+.include <bsd.port.mk>

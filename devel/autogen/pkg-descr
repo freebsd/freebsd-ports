@@ -1,0 +1,14 @@
+AutoGen is a tool designed to simplify the creation and maintenance of programs
+that contain large amounts of repetitious text. It is especially valuable in
+programs that have several blocks of text that must be kept synchronized.
+
+AutoGen will accept either its own definition format, or XML files as definition
+input, in addition to CGI data (for producing dynamic HTML) and traditional
+AutoGen definitions.
+
+A common example where this would be useful is in creating and maintaining the
+code required for processing program options. Processing options requires
+multiple constructs to be maintained in parallel in different places in your
+program. Options maintenance needs to be done countless times. So, AutoGen comes
+with an add-on package named AutoOpts that simplifies the maintenance and
+documentation of program options.

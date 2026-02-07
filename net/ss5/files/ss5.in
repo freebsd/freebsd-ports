@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: ss5
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# ss5_enable (bool):   Set to NO by default.
+#               Set it to YES to enable ss5.
+#
+
+. /etc/rc.subr
+
+name="ss5"
+rcvar=ss5_enable
+pidfile="/var/run/ss5/ss5.pid"
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${ss5_enable="NO"}
+: ${ss5_flags="-t"}
+
+run_rc_command "$1"

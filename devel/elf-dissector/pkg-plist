@@ -1,0 +1,11 @@
+bin/elf-deadcodefinder
+bin/elf-depcheck
+bin/elf-dissector
+bin/elf-optimizer
+bin/elf-packcheck
+bin/elf-rtticheck
+bin/ldbenchmark-runner
+share/applications/org.kde.elf-dissector.desktop
+share/icons/hicolor/16x16/apps/elf-dissector.svg
+share/icons/hicolor/32x32/apps/elf-dissector.svg
+share/metainfo/org.kde.elf-dissector.appdata.xml

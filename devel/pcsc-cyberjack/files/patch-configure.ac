@@ -1,0 +1,10 @@
+--- configure.ac.orig	2021-11-03 13:00:16 UTC
++++ configure.ac
+@@ -221,6 +221,7 @@ fi
+ AM_CONDITIONAL(IS_WINDOWS, [test "$OS_TYPE" = "windows"])
+ AM_CONDITIONAL(IS_OSX, [test "$OSYSTEM" = "osx"])
+ AM_CONDITIONAL(IS_LINUX, [test "$OSYSTEM" = "linux"])
++AM_CONDITIONAL(IS_FREEBSD, [test "$OSYSTEM" = "freebsd"])
+ 
+ AC_SUBST(cyberjack_sys_is_windows)
+ AC_SUBST(cyberjack_config_file)

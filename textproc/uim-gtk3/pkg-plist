@@ -1,0 +1,8 @@
+bin/uim-im-switcher-gtk3
+bin/uim-input-pad-ja-gtk3
+bin/uim-pref-gtk3
+bin/uim-toolbar-gtk3
+bin/uim-toolbar-gtk3-systray
+lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.so
+@postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
+@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true

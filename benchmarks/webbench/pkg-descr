@@ -1,0 +1,10 @@
+webbench is very simple HTTP benchmarking tool, which can benchmark
+both WWW and proxy servers. webbench uses fork() for simulating
+multiple clients and supports benchmarking by HTTP/0.9-HTTP/1.1
+requests (without Keep-Alive). This benchmark is not very realistic,
+but can test if your HTTPD can really handle many clients at once (try
+to run some CGIs) without taking your machine down. I am using this
+program for setting maximum number of Apaches. Webbench displays
+results in pages/min and bytes/sec.
+
+Radim Kolar

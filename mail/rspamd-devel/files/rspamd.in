@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# PROVIDE: rspamd
+# REQUIRE: LOGIN redis
+# BEFORE:  mail
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable rspamd:
+#
+# rspamd_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable rspamd.
+#
+# rspamd_worker_user (str):	Default to "rspamd".
+#
+# rspamd_worker_group (str):	Default to "rspamd".
+#
+# rspamd_flags (str):		Default to "-c %%PREFIX%%/etc/rspamd.conf".
+
+. /etc/rc.subr
+
+name=rspamd
+rcvar=rspamd_enable
+
+load_rc_config $name
+
+: ${rspamd_enable:="NO"}
+: ${rspamd_worker_user="rspamd"}
+: ${rspamd_worker_group="rspamd"}
+: ${rspamd_flags="-c %%PREFIX%%/etc/rspamd/rspamd.conf"}
+
+pidfile=${rspamd_pidfile:-"/var/run/rspamd/rspamd.pid"}
+
+command=%%PREFIX%%/bin/rspamd
+command_adm=%%PREFIX%%/bin/rspamadm
+restart_precmd="rspamd_checkconfig"
+reload_precmd="rspamd_checkconfig"
+configtest_cmd="rspamd_checkconfig"
+reopenlog_cmd="reopenlog_cmd"
+
+required_files=%%PREFIX%%/etc/rspamd/rspamd.conf
+command_args="-u ${rspamd_worker_user} -g ${rspamd_worker_group}"
+extra_commands="reload configtest reopenlog"
+stop_postcmd="rm -f $pidfile"
+sig_reload="HUP"
+
+rspamd_checkconfig()
+{
+	echo "Performing sanity check on rspamd configuration:"
+	eval ${command_adm} configtest ${rspamd_flags}
+}
+
+reopenlog_cmd()
+{
+	pkill -USR1 -F $pidfile
+}
+
+run_rc_command "$1"

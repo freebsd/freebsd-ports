@@ -1,0 +1,26 @@
+--- font/Makefile.FreeBSD.orig	1997-01-25 10:08:44.000000000 +0000
++++ font/Makefile.FreeBSD	2019-11-22 22:25:17.725974000 +0000
+@@ -4,13 +4,12 @@
+ CFLAGS+=	-I${.CURDIR}/../include
+ CLEANFILES=	Makefile
+ 
+-NOMAN=	YES
+-
+ .if exists(${.CURDIR}/../.config)
+ .include "${.CURDIR}/../.config"
+ .endif
+ 
+ PROG=	fld
++MAN=
+ 
+ .if exists(${.OBJDIR}/../lib)
+ LIBOBJ=	-L${.OBJDIR}/../lib
+@@ -19,5 +18,8 @@
+ .endif
+ 
+ LDADD=	${LIBOBJ} -lgon
++
++install: ${PROG}
++	/usr/bin/install -s ${PROG} ${BINDIR}
+ 
+ .include <bsd.prog.mk>

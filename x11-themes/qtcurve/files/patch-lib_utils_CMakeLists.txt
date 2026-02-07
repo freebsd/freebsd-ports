@@ -1,0 +1,11 @@
+--- lib/utils/CMakeLists.txt.orig	2017-06-04 19:20:38 UTC
++++ lib/utils/CMakeLists.txt
+@@ -20,7 +20,7 @@ set(qtcurve_utils_SRCS
+ set(qtcurve_utils_LINKS ${LIBEXECINFO_LIBRARIES} pthread)
+ 
+ if(NOT APPLE)
+-  set(qtcurve_utils_LINKS ${qtcurve_utils_LINKS} m rt dl)
++  set(qtcurve_utils_LINKS ${qtcurve_utils_LINKS} m rt)
+ endif()
+ 
+ include_directories("${CMAKE_CURRENT_BINARY_DIR}") 

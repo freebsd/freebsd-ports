@@ -1,0 +1,40 @@
+--- deps/hiredis/Makefile.orig	2023-10-25 15:54:51 UTC
++++ deps/hiredis/Makefile
+@@ -21,7 +21,7 @@ HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | a
+ HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
+ 
+ # Installation related variables and target
+-PREFIX?=/usr/local
++PREFIX?=${PREFIX}
+ INCLUDE_PATH?=include/hiredis
+ LIBRARY_PATH?=lib
+ PKGCONF_PATH?=pkgconfig
+@@ -44,10 +44,9 @@ export REDIS_TEST_CONFIG
+ # Fallback to gcc when $CC is not in $PATH.
+ CC:=$(shell sh -c 'type $${CC%% *} >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
+ CXX:=$(shell sh -c 'type $${CXX%% *} >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
+-OPTIMIZATION?=-O3
+ WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers
+ DEBUG_FLAGS?= -g -ggdb
+-REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CPPFLAGS) $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS)
++REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS)
+ REAL_LDFLAGS=$(LDFLAGS)
+ 
+ DYLIBSUFFIX=so
+@@ -106,6 +105,16 @@ ifeq ($(uname_S),Darwin)
+   DYLIB_MAKE_CMD=$(CC) -dynamiclib -Wl,-install_name,$(PREFIX)/$(LIBRARY_PATH)/$(DYLIB_MINOR_NAME) -o $(DYLIBNAME) $(LDFLAGS)
+   SSL_DYLIB_MAKE_CMD=$(CC) -dynamiclib -Wl,-install_name,$(PREFIX)/$(LIBRARY_PATH)/$(SSL_DYLIB_MINOR_NAME) -o $(SSL_DYLIBNAME) $(LDFLAGS) $(SSL_LDFLAGS)
+   DYLIB_PLUGIN=-Wl,-undefined -Wl,dynamic_lookup
++endif
++ifeq ($(uname_S),FreeBSD)
++  CFLAGS?=$(CFLAGS)
++  CCLINK?=pthread
++  LDFLAGS?=-L. -Wl,-rpath,.
++  DYLIBNAME?=libhiredis.so
++  DYLIB_MAKE_CMD?=$(CC) -o ${DYLIBNAME} ${OBJ}
++  STLIBNAME?=libhiredis.a
++  STLIB_MAKE_CMD?=ar rcs ${STLIBNAME} ${OBJ}
++  SSL_LDFLAGS+=${OPENSSL_LDFLAGS}
+ endif
+ 
+ all: $(DYLIBNAME) $(STLIBNAME) hiredis-test $(PKGCONFNAME)

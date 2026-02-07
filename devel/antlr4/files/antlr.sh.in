@@ -1,0 +1,4 @@
+#! /bin/sh
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -classpath "%%JAVAJARDIR%%/%%INSTALL_JAR%%" -jar %%JAVAJARDIR%%/%%INSTALL_JAR%% "$@"
+

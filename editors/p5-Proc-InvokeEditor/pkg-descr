@@ -1,0 +1,2 @@
+This module provides a simple API to calling an external text editor
+from within your perl program.

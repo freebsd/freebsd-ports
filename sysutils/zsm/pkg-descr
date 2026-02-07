@@ -1,0 +1,5 @@
+A console program that manages ZFS snapshots.
+
+- Manage multiple sets of rolling snapshots.
+- Configure a custom schedule via the config file.
+- Run in background by adding it to crontab.

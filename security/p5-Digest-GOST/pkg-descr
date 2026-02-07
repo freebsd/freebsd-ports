@@ -1,0 +1,2 @@
+Digest::GOST provides an interface to the GOST R 34.11-94
+message digest algorithm, also defined in RFC 5831.

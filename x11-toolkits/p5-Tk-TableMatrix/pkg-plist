@@ -1,0 +1,13 @@
+%%SITE_ARCH%%/Tk/TableMatrix.pm
+%%SITE_ARCH%%/Tk/TableMatrix.pod
+%%SITE_ARCH%%/Tk/TableMatrix/Spreadsheet.pm
+%%SITE_ARCH%%/Tk/TableMatrix/SpreadsheetHideRows.pm
+%%SITE_ARCH%%/Tk/pTk/mm.h
+%%SITE_ARCH%%/Tk/pTk/tkTable.h
+%%SITE_ARCH%%/Tk/pTk/tkTableversion.h
+%%SITE_ARCH%%/Tk/pTk/version.h
+%%SITE_ARCH%%/auto/Tk/TableMatrix/TableMatrix.so
+%%SITE_ARCH%%/auto/Tk/TableMatrix/autosplit.ix
+%%PERL5_MAN3%%/Tk::TableMatrix.3.gz
+%%PERL5_MAN3%%/Tk::TableMatrix::Spreadsheet.3.gz
+%%PERL5_MAN3%%/Tk::TableMatrix::SpreadsheetHideRows.3.gz

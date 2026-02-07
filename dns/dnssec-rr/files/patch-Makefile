@@ -1,0 +1,10 @@
+--- Makefile.orig	2025-06-21 08:07:07 UTC
++++ Makefile
+@@ -1,7 +1,5 @@
+ .PHONY: all install clean
+ 
+--include config.mk
+-
+ PREFIX?=/usr/local
+ BINDIR?=$(PREFIX)/bin
+ MANDIR?=$(PREFIX)/share/man

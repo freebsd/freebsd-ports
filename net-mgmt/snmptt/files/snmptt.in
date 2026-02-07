@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: snmptt
+# REQUIRE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf to enable snmptt:
+#
+# snmptt_enable:    Set to NO by default. Set it to YES to enable it.
+# snmptt_user:      The user account snmptt runs as what
+#                   you want it to be. It uses 'snmptt' user by
+#                   default.
+# snmptt_flags:     See snmptt documentation for flags.
+#
+
+. /etc/rc.subr
+
+name=snmptt
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+command_args="--daemon > /dev/null 2>&1"
+command_interpreter=%%PERL%%
+
+load_rc_config ${name}
+
+: ${snmptt_enable:="NO"}
+: ${snmptt_user:="snmptt"}
+
+required_files=%%PREFIX%%/etc/snmp/${name}.ini
+
+run_rc_command "$1"

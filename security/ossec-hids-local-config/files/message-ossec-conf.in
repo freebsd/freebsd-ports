@@ -1,0 +1,3 @@
+The "ossec.conf" must no longer be used for configuration. It will be
+overwritten by merged "*.conf" files from the configuration directory:
+%%OSSEC_HOME%%/etc/ossec.conf.d

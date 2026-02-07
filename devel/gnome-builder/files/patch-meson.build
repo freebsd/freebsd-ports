@@ -1,0 +1,18 @@
+--- meson.build.orig	2024-10-18 21:04:32 UTC
++++ meson.build
+@@ -165,7 +165,6 @@ test_c_args = [
+   '-Wcast-align',
+   '-Wdeclaration-after-statement',
+   '-Werror=address',
+-  '-Werror=array-bounds',
+   '-Werror=empty-body',
+   '-Werror=implicit',
+   '-Werror=implicit-function-declaration',
+@@ -185,7 +184,6 @@ test_c_args = [
+   '-Werror=redundant-decls',
+   '-Werror=return-type',
+   '-Werror=sequence-point',
+-  '-Werror=shadow',
+   '-Werror=trigraphs',
+   '-Werror=undef',
+   '-Werror=write-strings',

@@ -1,0 +1,2 @@
+DBIx::TransactionManager is a simple transaction manager.  Like
+DBIx::Class::Storage::TxnScopeGuard.

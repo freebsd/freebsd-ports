@@ -1,0 +1,71 @@
+Index: src/l2tp_ctrl.c
+===================================================================
+--- src/l2tp_ctrl.c	(revision 2409)
++++ src/l2tp_ctrl.c	(revision 2411)
+@@ -244,7 +244,8 @@ Notes
+ ************************************************************************/
+ 
+ static int	ppp_l2tp_ctrl_setup_1(struct ppp_l2tp_ctrl *ctrl,
+-			struct ppp_l2tp_avp_ptrs *ptrs);
++			struct ppp_l2tp_avp_ptrs *ptrs,
++			struct ppp_l2tp_avp_list *avps);
+ static int	ppp_l2tp_ctrl_setup_2(struct ppp_l2tp_ctrl *ctrl,
+ 			struct ppp_l2tp_avp_ptrs *ptrs);
+ static void	ppp_l2tp_ctrl_send(struct ppp_l2tp_ctrl *ctrl,
+@@ -1031,7 +1032,8 @@ ppp_l2tp_sess_hooked(struct ppp_l2tp_sess *sess) {
+  */
+ static int
+ ppp_l2tp_ctrl_setup_1(struct ppp_l2tp_ctrl *ctrl,
+-	struct ppp_l2tp_avp_ptrs *ptrs)
++	struct ppp_l2tp_avp_ptrs *ptrs,
++	struct ppp_l2tp_avp_list *avps)
+ {
+ 	/* Log */
+ 	Log(LOG_INFO, ("L2TP: connected to \"%s\", version=%u.%u",
+@@ -1092,7 +1094,7 @@ ppp_l2tp_ctrl_setup_1(struct ppp_l2tp_ctrl *ctrl,
+ 		MD5_Update(&md5ctx, &ptrs->challenge->value, ptrs->challenge->length);
+ 		MD5_Final(hash, &md5ctx);
+ 
+-		if (ppp_l2tp_avp_list_append(ctrl->avps, 0,
++		if (ppp_l2tp_avp_list_append(avps, 0,
+ 		    0, AVP_CHALLENGE_RESPONSE, hash, sizeof(hash)) == -1)
+ 		return (0);
+ 	}
+@@ -2085,7 +2087,7 @@ ppp_l2tp_handle_SCCRQ(struct ppp_l2tp_ctrl *ctrl,
+ 
+ ok:
+ 	/* Do control connection setup */
+-	if (ppp_l2tp_ctrl_setup_1(ctrl, ptrs) == -1)
++	if (ppp_l2tp_ctrl_setup_1(ctrl, ptrs, ctrl->avps) == -1)
+ 		return (-1);
+ 
+ 	/* Send response and update state */
+@@ -2098,18 +2100,24 @@ static int
+ ppp_l2tp_handle_SCCRP(struct ppp_l2tp_ctrl *ctrl,
+ 	const struct ppp_l2tp_avp_list *avps, struct ppp_l2tp_avp_ptrs *ptrs)
+ {
++	struct ppp_l2tp_avp_list *avps0;
++
+ 	(void)avps;
++	avps0 = ppp_l2tp_avp_list_create();
++
+ 	/* Do control connection setup */
+-	if (ppp_l2tp_ctrl_setup_1(ctrl, ptrs) == -1)
++	if ((ppp_l2tp_ctrl_setup_1(ctrl, ptrs, avps0) == -1) ||
++	    (ppp_l2tp_ctrl_setup_2(ctrl, ptrs) == -1)) {
++		ppp_l2tp_avp_list_destroy(&avps0);
+ 		return (-1);
+-	if (ppp_l2tp_ctrl_setup_2(ctrl, ptrs) == -1)
+-		return (-1);
++	}
+ 
+ 	/* Send response and update state */
+ 	ctrl->state = CS_ESTABLISHED;
+-	ppp_l2tp_ctrl_send(ctrl, 0, SCCCN, ctrl->avps);
++	ppp_l2tp_ctrl_send(ctrl, 0, SCCCN, avps0);
+ 	if (*ctrl->cb->ctrl_connected != NULL)
+ 	    (*ctrl->cb->ctrl_connected)(ctrl);
++	ppp_l2tp_avp_list_destroy(&avps0);
+ 	return (0);
+ }
+ 

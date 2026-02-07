@@ -1,0 +1,17 @@
+RiCal is a new Ruby Library for parsing, generating, and using iCalendar
+(RFC 2445) format data.
+
+RiCal distinguishes itself from existing Ruby libraries in providing
+support for
+
+Timezone components in Calendars. This means that RiCal parses VTIMEZONE
+data and instantiates timezone objects which can be used to convert
+times in the calendar to and from UTC time.  In addition, RiCal allows
+created calendars and components to use time zones understood by TZInfo gem
+(from either the TZInfo gem or from Rails ActiveSupport => 2.2).
+When a calendar with TZInfo time zones is exported, RFC 2445 conforming
+VTIMEZONE components will be included, allowing other programs to process
+the result.
+Enumeration of recurring occurrences. For example, if an Event has one
+or more recurrence rules, then the occurrences of the event can be enumerated
+as a series of Event occurrences.

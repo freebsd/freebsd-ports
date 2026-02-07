@@ -1,0 +1,8 @@
+Rustup-init is the official installer for the Rust programming language.
+It is used to install and manage Rust toolchains, including the Rust
+compiler (rustc), the package manager (cargo), and other related tools.
+Rustup itself is a toolchain multiplexer, meaning it allows you to easily
+switch between different versions of Rust (e.g., stable, beta, nightly) and
+manage cross-compilation targets. Rustup-init is the recommended way to install
+Rust, as it provides a consistent and flexible way to manage Rust installations
+across different platforms.

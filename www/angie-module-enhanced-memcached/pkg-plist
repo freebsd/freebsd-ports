@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.markdown
+%%MODDIR%%/ngx_http_enhanced_memcached_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_enhanced_memcached_module-debug.so

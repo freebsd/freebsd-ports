@@ -1,0 +1,5 @@
+TIMESTAMP = 1574004786
+SHA256 (makepasswd_1.10.orig.tar.gz) = 41491f361d810f9bb3e08b40df3c3034faec306d434dab15534e19023f91a75c
+SIZE (makepasswd_1.10.orig.tar.gz) = 12382
+SHA256 (makepasswd_1.10-12.diff.gz) = e72d5f45de382fc70b108d692ca4fc2f66fcc280d693a54982ec2ae0ef1d712c
+SIZE (makepasswd_1.10-12.diff.gz) = 8160

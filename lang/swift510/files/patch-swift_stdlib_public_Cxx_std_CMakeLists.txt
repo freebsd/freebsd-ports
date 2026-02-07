@@ -1,0 +1,11 @@
+--- swift/stdlib/public/Cxx/std/CMakeLists.txt.orig	2024-06-06 04:26:30 UTC
++++ swift/stdlib/public/Cxx/std/CMakeLists.txt
+@@ -52,7 +52,7 @@ add_swift_target_library(swiftCxxStdlib STATIC NO_LINK
+     DEPLOYMENT_VERSION_OSX ${COMPATIBILITY_MINIMUM_DEPLOYMENT_VERSION_OSX}
+ 
+     LINK_FLAGS "${SWIFT_RUNTIME_SWIFT_LINK_FLAGS}"
+-    TARGET_SDKS ALL_APPLE_PLATFORMS LINUX WINDOWS
++    TARGET_SDKS ALL_APPLE_PLATFORMS LINUX FREEBSD WINDOWS
+     INSTALL_IN_COMPONENT compiler
+     INSTALL_WITH_SHARED
+     DEPENDS libstdcxx-modulemap libcxxshim_modulemap CxxStdlib-apinotes)

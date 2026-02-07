@@ -1,0 +1,4 @@
+bin/dehex
+bin/enhex
+include/hexcode.h
+lib/libhexcode.so

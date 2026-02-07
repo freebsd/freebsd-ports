@@ -1,0 +1,3 @@
+%%SITE_PERL%%/auto/LWP/Authen/Negotiate/autosplit.ix
+%%SITE_PERL%%/LWP/Authen/Negotiate.pm
+%%PERL5_MAN3%%/LWP::Authen::Negotiate.3.gz

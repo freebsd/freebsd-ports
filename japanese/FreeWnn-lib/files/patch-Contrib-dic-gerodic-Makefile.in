@@ -1,0 +1,20 @@
+--- Contrib/dic/gerodic/Makefile.in.orig	2001-08-14 22:43:20.000000000 +0900
++++ Contrib/dic/gerodic/Makefile.in	2014-09-10 01:41:30.000000000 +0900
+@@ -43,7 +43,6 @@
+ 
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o ${WNNOWNER}
+ 
+ #ATOD=${JWNNBINDIR}/atod
+ ATOD=${WNNJUTILSRC}/atod
+@@ -67,9 +66,7 @@
+ install:: ${OBJ}
+ 	@if [ -d $(DESTDIR)$(GERODIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(GERODIR)); fi
+-	chown ${WNNOWNER} $(DESTDIR)$(GERODIR)
+ 	$(INSTALL) $(INSTDATFLAGS) $(LOCAL_INSTFLAGS) ${OBJ} $(DESTDIR)$(GERODIR)
+-	${WNNTOUCH} $(DESTDIR)$(GERODIR)/${OBJ}
+ 
+ clean::
+ 	$(RM) ${OBJ}

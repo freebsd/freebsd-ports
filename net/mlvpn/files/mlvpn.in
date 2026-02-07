@@ -1,0 +1,155 @@
+#!/bin/sh
+#
+# mlvpn - load tun/tap driver and start mlvpn daemon
+#
+# (C) Copyright 2005 - 2008, 2010 by Matthias Andree
+# (C) Copyright 2015 Laurent COUSTET (mlvpn modifications)
+# (C) Copyright 2016 Olivier Cochard-Labbe (updating rc script)
+
+# based on suggestions by Matthias Grimm and Dirk Gouders
+# with multi-instance contribution from Denis Shaposhnikov, Gleb Kozyrev
+# and Vasil Dimov
+# softrestart feature suggested by Nick Hibma
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+# details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+# PROVIDE: mlvpn
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# -----------------------------------------------------------------------------
+#
+# This script supports running multiple instances of mlvpn
+# To run additional instances link this script to something like
+# % ln -s mlvpn mlvpn_foo
+# and define additional mlvpn_foo_* variables in one of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/mlvpn_foo
+#
+# Below NAME should be substituted with the name of this script. By default
+# it is mlvpn, so read as mlvpn_enable. If you linked the script to
+# mlvpn_foo, then read as mlvpn_foo_enable etc.
+#
+# The following variables are supported (defaults are shown).
+# You can place them in any of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/NAME
+#
+# NAME_enable="NO"	# set to YES to enable mlvpn
+# NAME_if=		# driver(s) to load, set to "tun", "tap" or "tun tap"
+#			# it is OK to specify the if_ prefix.
+#
+# # optional:
+# NAME_flags=				# additional command line arguments
+# NAME_configfile="/usr/local/etc/mlvpn/NAME.conf"	# --config file
+#
+# Note that we deliberately refrain from unloading drivers.
+#
+# For further documentation, please see http://www.mlvpn.fr/
+#
+
+. /etc/rc.subr
+
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name="$_file"
+	;;
+*)
+	name="$0"
+	;;
+esac
+
+name="${name##*/}"
+rcvar=${name}_enable
+
+mlvpn_stop()
+{
+	if [ -f ${pidfile} ]; then
+		rc_pid=$(check_pidfile $pidfile ${name})
+		kill -TERM $rc_pid
+		wait_for_pids $rc_pid
+	fi
+}
+
+stop_postcmd()
+{
+	rm -f "$pidfile" || warn "Could not remove $pidfile."
+}
+
+mlvpn_softrestart()
+{
+	rc_pid=$(check_pidfile $pidfile ${name})
+	local status
+
+	if ! status=`run_rc_command status 2>&1`; then
+		echo $status
+		return 1
+	fi
+	echo 'Softrestarting mlvpn.'
+	kill -USR1 $rc_pid
+}
+
+mlvpn_status()
+{
+	rc_pid=$(check_pidfile $pidfile ${name})
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		if [ -n "$pidfile" ]; then
+			echo "${name} not running? (check $pidfile)."
+		else
+			echo "${name} not running?"
+		fi
+		return 1
+	fi
+	echo "${name} is running as pid ${rc_pid}"
+}
+
+# reload: support SIGHUP to reparse configuration file
+# softrestart: support SIGUSR1 to reconnect without superuser privileges
+extra_commands="reload softrestart"
+softrestart_cmd="mlvpn_softrestart"
+
+# pidfile
+pidfile="/var/run/${name}.pid"
+rc_pid=$(check_pidfile $pidfile ame)
+
+# command and arguments
+procname="%%PREFIX%%/sbin/mlvpn"
+command="/usr/sbin/daemon"
+
+# run this last
+stop_cmd="mlvpn_stop"
+stop_postcmd="stop_postcmd"
+status_cmd="mlvpn_status"
+
+load_rc_config ${name}
+
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_configfile:=\"/usr/local/etc/mlvpn/${name}.conf\"}"
+
+configfile="$(eval echo \${${name}_configfile})"
+interfaces="$(eval echo \${${name}_if})"
+
+required_modules=
+for i in $interfaces ; do
+    required_modules="$required_modules${required_modules:+" "}if_${i#if_}"
+done
+
+required_files=${configfile}
+
+command_args="-f -p ${pidfile} ${procname} --name ${name} --config ${configfile} --user mlvpn"
+
+run_rc_command "$1"

@@ -1,0 +1,12 @@
+Weird CMake macro error coming from that
+
+--- CMakeLists.txt.orig	2023-09-04 14:43:10 UTC
++++ CMakeLists.txt
+@@ -459,7 +459,6 @@ find_package(
+         Test
+         WebEngineWidgets
+         Widgets
+-        WaylandCompositor
+ )
+ if(ANDROID)
+     find_package(Qt${QT_VERSION_MAJOR} NO_MODULE REQUIRED COMPONENTS AndroidExtras)

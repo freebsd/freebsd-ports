@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/es.dat
+lib/aspell-%%VER%%/es_affix.dat
+share/aspell/castellano.alias
+share/aspell/es.multi
+share/aspell/es.rws
+share/aspell/espanol.alias
+share/aspell/spanish.alias

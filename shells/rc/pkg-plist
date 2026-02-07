@@ -1,0 +1,7 @@
+bin/rc
+bin/-
+bin/--
+bin/-p
+bin/--p
+share/man/man1/history.1.gz
+share/man/man1/rc.1.gz

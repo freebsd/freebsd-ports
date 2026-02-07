@@ -1,0 +1,23 @@
+Masquerade as Linux to enable certain build options.
+Always use pthread even if feature detection is disabled.
+
+--- GNUmakefile.orig	2022-08-07 19:52:03 UTC
++++ GNUmakefile
+@@ -70,7 +70,7 @@ endif
+   SYSTEMX := $(shell uname -s 2>/dev/null)
+ endif
+ 
+-IS_LINUX := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "Linux")
++IS_LINUX := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c -E "Linux|FreeBSD")
+ IS_HURD := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c -E "GNU|Hurd")
+ IS_MINGW := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "MinGW")
+ IS_CYGWIN := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "Cygwin")
+@@ -848,7 +848,7 @@ endif
+ 
+ # Use -pthread whenever it is available. See http://www.hpl.hp.com/techreports/2004/HPL-2004-209.pdf
+ #   http://stackoverflow.com/questions/2127797/gcc-significance-of-pthread-flag-when-compiling
+-ifeq ($(DETECT_FEATURES),1)
++ifeq (1,1)
+  ifeq ($(XLC_COMPILER),1)
+   ifeq ($(findstring -qthreaded,$(CXXFLAGS)),)
+    TPROG = TestPrograms/test_pthreads.cpp

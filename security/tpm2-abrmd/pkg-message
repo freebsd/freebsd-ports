@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Please add the following lines to /etc/devfs.conf as tpm2-abrmd needs /dev/tpm0
+to be mode 0660 and group _tss:
+perm	tpm0	0660
+own	tpm0	root:_tss
+EOM
+}
+]

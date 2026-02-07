@@ -1,0 +1,9 @@
+[
+{ type: upgrade
+  maximum_version: "2.2"
+  message: <<EOM
+If you upgrade from 1.0, be warned that many fonts had changed names,
+e.g. 'PxPlus IBM VGA' can now be 'PxPlus IBM VGA 9x16' or 'PxPlus IBM VGA 8x16'.
+EOM
+}
+]

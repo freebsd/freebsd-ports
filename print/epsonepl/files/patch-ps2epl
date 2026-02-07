@@ -1,0 +1,190 @@
+--- ps2epl.orig	Wed Jan 29 11:19:06 2003
++++ ps2epl	Fri Feb 14 23:33:46 2003
+@@ -1,11 +1,105 @@
+ #!/bin/sh
+ 
++parse() {
++if [ ! -r "$1" ]; then
++	echo "${BASENAME}: Can't read config file '$1'!" >&2
++	exit 1
++fi
++sed -e 's/#.*//;
++	/^[[:space:]]*$/d;
++	s/^[[:space:]]*//;
++	s/[[:space:]]*$//;
++	s/^\([^[:space:]=]*\)[[:space:]=]*\(.*\)/\1 \2/' "$1" |
++while read var value
++do
++	case `echo ${var} | tr '[[:upper:]]' '[[:lower:]]'` in
++	model)
++		case "${value}" in
++		EPL5[789]00L)
++			echo "MODEL='${value}'"
++			;;
++		*)
++			echo "${BASENAME}: Unknown model '${value}'!" >&2
++			exit 1
++			;;
++		esac
++		;;
++	papersize)
++		echo "PAPERSIZE='${value}'"
++		;;
++	dpi)
++		case "${value}" in
++		300|Class600|600|Class1200)
++			echo "DPI='${value}'"
++			;;
++		*)
++			echo "${BASENAME}: Unknown resolution '${value}'!" >&2
++			exit 1
++			;;
++		esac
++		;;
++	ritech)
++		case "${value}" in
++		on|off)
++			echo "RITECH='${value}'"
++			;;
++		*)
++			echo "${BASENAME}: Unknown ritech setting '${value}'!" >&2
++			exit 1
++			;;
++		esac
++		;;
++	density)
++		case "${value}" in
++		[12345])
++			echo "DENSITY='${value}'"
++			;;
++		*)
++			echo "${BASENAME}: Unknown density setting '${value}'!" >&2
++			exit 1
++			;;
++		esac
++		;;
++	tonersave)
++		case "${value}" in
++		on|off)
++			echo "TONERSAVE='${value}'"
++			;;
++		*)
++			echo "${BASENAME}: Unknown tonersave setting '${value}'!" >&2
++			exit 1
++			;;
++		esac
++		;;
++	*)
++		echo "${BASENAME}: Unknown setting '${var}=${value}'!" >&2
++		exit 1
++		;;
++	esac
++done
++}
++
++BASENAME=`basename $0`
++PREFIX=`dirname $0`
++PREFIX=${PREFIX%/bin}
++CONFIGFILE=${PREFIX}/etc/epsonepl.conf
++
++case "$1" in
++-f?*)
++	CONFIGFILE=${1#-f}
++	;;
++esac
++
++settings=`parse "${CONFIGFILE}"` || exit 1
++eval "${settings}"
+ 
+ IJSPARMS=""
+ 
+-# Start of printer selection part #########################################
++if [ -z "${MODEL}" ]; then
++	echo "${BASENAME}: You must specify a model!" >&2
++	exit 1
++fi
+ 
+-MODEL=EPL5700L
+   # possible values: EPL5700L, EPL5800L, EPL5900L
+   # default: none, you have to specify a printer!
+ 
+@@ -14,7 +108,10 @@
+ 
+ # Start of paper size selection part ######################################
+ 
+-PAPERSIZE=a4
++if [ -z "${PAPERSIZE}" ]; then
++	echo "${BASENAME}: You must specify a papersize!" >&2
++	exit 1
++fi
+   # possible values: a4, letter, legal ...
+   #                  The full list is available in the Use.htm file of
+   #                  the ghostscript documentation (see appendix).
+@@ -25,25 +122,29 @@
+ 
+ # Start of options part ###################################################
+ 
+-DPI=600
++if [ -n "${DPI}" ]; then
+   # possible values: 300, Class600, 600, Class1200
+   # default: 600
+   IJSPARMS="EplDpi=$DPI"
++fi
+ 
+-RITECH=on
++if [ -n "${RITECH}" ]; then
+   # possible values: on, off
+   # default: on
+-  IJSPARMS="$IJSPARMS,EplRitech=$RITECH"
++  IJSPARMS="$IJSPARMS${IJSPARMS:+,}EplRitech=$RITECH"
++fi
+ 
+-DENSITY=3
++if [ -n "${DENSITY}" ]; then
+   # possible values: 1, 2, 3, 4, 5
+   # default: 3
+-  IJSPARMS="$IJSPARMS,EplDensity=$DENSITY"
++  IJSPARMS="$IJSPARMS${IJSPARMS:+,}EplDensity=$DENSITY"
++fi
+ 
+-TONERSAVE=off
++if [ -n "${TONERSAVE}" ]; then
+   # possible values: on, off
+   # default: off
+-  IJSPARMS="$IJSPARMS,EplTonerSave=$TONERSAVE"
++  IJSPARMS="$IJSPARMS${IJSPARMS:+,}EplTonerSave=$TONERSAVE"
++fi
+ 
+ ##################################################### End of options part #
+ 
+@@ -63,7 +164,7 @@
+ done
+ 
+ if [ $# -lt 1 -o $# -gt 2 ]; then
+-	echo "Usage: `basename $0` [options...] (input.[e]ps|-) [output.epl|-]" 1>&2
++	echo "Usage: ${BASENAME} [-f<config>] [options...] (input.[e]ps|-) [output.epl|-]" 1>&2
+ 	exit 1
+ fi
+ 
+@@ -81,19 +182,11 @@
+ 	outfile="$2"
+ fi
+ 
+-echo
+-echo -e "***** Printer: \"$MODEL\" *****"
+-echo
+-echo -e "***** Paper Size: \"$PAPERSIZE\" *****"
+-echo
+-echo -e "***** using parameters: \"$IJSPARMS\" *****"
+-echo
+-
+ exec gs -sPAPERSIZE=$PAPERSIZE -dFIXEDMEDIA \
+ -sProcessColorModel=DeviceGray -dBitsPerSample=1 \
+ -sDEVICE=ijs -sIjsServer=ijs_server_epsonepl \
+ -sDeviceManufacturer=Epson -sDeviceModel=$MODEL \
+ -sIjsParams="$IJSPARMS" \
+ -dIjsUseOutputFD \
+--dNOPAUSE -dSAFER -dBATCH \
+--sOutputFile=$outfile $infile
++-dQUIET -dNOPAUSE -dSAFER -dBATCH \
++-sOutputFile="$outfile" "$infile"

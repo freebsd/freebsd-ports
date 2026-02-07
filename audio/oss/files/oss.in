@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: oss
+# REQUIRE: DAEMON
+# BEFORE: mixer
+# KEYWORD: nojail shutdown
+
+. /etc/rc.subr
+
+name=oss
+rcvar=oss_enable
+desc="Load Open Sound System kernel modules"
+
+load_rc_config $name
+
+: ${oss_enable:=NO}
+
+stop_cmd=oss_stop
+start_cmd=oss_start
+
+oss_start()
+{
+	echo "Starting Open Sound System"
+	%%PREFIX%%/sbin/soundon
+}
+
+oss_stop()
+{
+	echo "Stopping Open Sound System"
+	%%PREFIX%%/sbin/soundoff
+}
+
+run_rc_command "$1"
+

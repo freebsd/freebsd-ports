@@ -1,0 +1,11 @@
+--- test/CMakeLists.txt.orig	2019-10-27 17:34:35 UTC
++++ test/CMakeLists.txt
+@@ -82,7 +82,7 @@ add_executable(rapidcheck_tests
+ 
+ target_link_libraries(rapidcheck_tests
+   rapidcheck
+-  Catch2::Catch2
++  #Catch2::Catch2
+   rapidcheck_catch
+   rapidcheck_test_utils)
+ target_include_directories(rapidcheck_tests PRIVATE

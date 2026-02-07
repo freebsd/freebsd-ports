@@ -1,0 +1,107 @@
+PORTNAME=	cantata
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.1
+PORTREVISION=	1
+CATEGORIES=	audio kde
+
+PATCH_SITES=	https://github.com/nullobsi/cantata/commit/
+PATCHFILES+=	52bf771a115b102a00fa09b48c867b6954474a51.patch:-p1 # Fix build with Qt 6.10
+PATCHFILES+=	82ee16e720e6901e7191e64a4e0c0db94c6a10ae.patch:-p1 # Fix build with Qt 6.10
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Graphical client for MPD using Qt
+WWW=		https://github.com/nullobsi/cantata
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake compiler:c++17-lang cpe gl pkgconfig qt:6 shebangfix
+CPE_VENDOR=	craig_drummond
+USE_GITHUB=	yes
+GH_ACCOUNT=	nullobsi
+USE_GL=		opengl
+USE_QT=		base sqldriver-sqlite:run svg
+
+SHEBANG_FILES=	playlists/cantata-dynamic.cmake cantata-remote.cmake
+
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_UDev
+CMAKE_OFF=	ENABLE_CDDB
+
+DATADIR=	${PREFIX}/share/Cantata
+
+OPTIONS_DEFINE=		AVAHI MTP NLS PROXY TAGLIB
+OPTIONS_DEFAULT=	AVAHI FFMPEG MPG123 MTP QTMULTIMEDIA TAGLIB
+OPTIONS_GROUP=		AUDIOCD REPLAYGAIN
+OPTIONS_GROUP_AUDIOCD=	CDPARANOIA MUSICBRAINZ
+OPTIONS_GROUP_REPLAYGAIN=	FFMPEG MPG123
+OPTIONS_RADIO=		HSP
+OPTIONS_RADIO_HSP=	QTMULTIMEDIA VLC
+OPTIONS_SUB=		yes
+
+AUDIOCD_DESC=		AudioCD support
+AVAHI_DESC=		Automatic MPD Discovery
+FFMPEG_DESC=		ReplayGain calculation support via FFmpeg
+HSP_DESC=		MPD HTTP stream playback
+MPG123_DESC=		ReplayGain calculation support via mpg123
+MUSICBRAINZ_DESC=	CD info retrieval via MusicBrainz
+PROXY_DESC=		Proxy configuration in settings dialog
+QTMULTIMEDIA_DESC=	HTTP streams support via QtMultimedia
+REPLAYGAIN_DESC=	Replaygain calculation support
+TAGLIB_DESC=		Reading and editing Meta-Data of audio files
+VLC_DESC=		HTTP streams support via libVLC
+
+AVAHI_LIB_DEPENDS=	libavahi-common.so:net/avahi-app
+AVAHI_CMAKE_BOOL=	ENABLE_AVAHI
+
+CDPARANOIA_IMPLIES=	TAGLIB
+CDPARANOIA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
+CDPARANOIA_CMAKE_BOOL=	ENABLE_CDIOPARANOIA
+
+FFMPEG_IMPLIES=		TAGLIB
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CMAKE_BOOL=	ENABLE_FFMPEG
+
+MPG123_IMPLIES=		TAGLIB
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
+MPG123_CMAKE_BOOL=	ENABLE_MPG123
+
+MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
+MTP_CMAKE_BOOL=		ENABLE_MTP
+
+MUSICBRAINZ_IMPLIES=	CDPARANOIA
+MUSICBRAINZ_LIB_DEPENDS=libmusicbrainz5cc.so:audio/libmusicbrainz5
+MUSICBRAINZ_CMAKE_BOOL=	ENABLE_MUSICBRAINZ
+
+NLS_USE=		QT=tools:build
+NLS_CMAKE_ON=		-DLCONVERT_EXECUTABLE:STRING=${QT_BINDIR}/lconvert \
+			-DLRELEASE_EXECUTABLE:STRING=${QT_BINDIR}/lrelease
+NLS_CMAKE_OFF=		-DLCONVERT_EXECUTABLE:BOOL=FALSE \
+			-DLRELEASE_EXECUTABLE:BOOL=FALSE
+
+PROXY_CMAKE_BOOL=	ENABLE_PROXY_CONFIG
+
+QTMULTIMEDIA_USE=	QT=multimedia
+
+TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
+TAGLIB_USES=		localbase
+TAGLIB_CMAKE_BOOL=	ENABLE_TAGLIB
+
+VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
+VLC_CMAKE_BOOL=		ENABLE_LIBVLC
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFFMPEG} || ${PORT_OPTIONS:MMPG123}
+USES+=			ebur128
+PLIST_SUB+=		REPLAYGAIN=""
+.else
+PLIST_SUB+=		REPLAYGAIN="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MQTMULTIMEDIA} || ${PORT_OPTIONS:MVLC}
+CMAKE_ARGS+=		-DENABLE_HTTP_STREAM_PLAYBACK:BOOL=TRUE
+.else
+CMAKE_ARGS+=		-DENABLE_HTTP_STREAM_PLAYBACK:BOOL=FALSE
+.endif
+
+.include <bsd.port.mk>

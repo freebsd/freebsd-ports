@@ -1,0 +1,74 @@
+# Non-helper handling of option variables and build environment.
+# Include after bsd.port.pre.mk
+#
+# Almost all of mplayer's build-time configuration is controlled via the
+# OPTIONS framework. Exceptions are listed below. These variables must be
+# set via make.conf or by passing the variable to make during build, e.g.
+# make WITH_DVD_DEVICE=/dev/cd0
+#
+# WITH_DVD_DEVICE=/path/to/desired/device
+# default: /dev/cd0
+# This option changes the default device where mplayer looks by default
+# for a DVD medium
+#
+# WITH_CDROM_DEVICE=/path/to/desired/device
+# default: /dev/cd0
+# This option changes the default cdrom device, maybe useful for VCDs
+
+# Non-OPTIONS knob handling
+# =========================
+
+.if defined(WITH_DVD_DEVICE)
+DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
+.else
+DEFAULT_DVD_DEVICE=/dev/cd0
+.endif
+
+.if defined(WITH_CDROM_DEVICE)
+DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
+.else
+DEFAULT_CDROM_DEVICE=/dev/cd0
+.endif
+
+.if defined(WITH_KERN_HZ)
+DEFAULT_KERN_HZ=${WITH_KERN_HZ}
+.else
+DEFAULT_KERN_HZ=1024
+.endif
+
+# Build system handling (including OPTIONS)
+# =========================================
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
+# Turn off incompatible function pointer check for clang16+
+CFLAGS+=	-Wno-incompatible-function-pointer-types
+# Require 16 byte stack realignment on i386 to interface
+# properly with hand crafted assembler code in ffmpeg
+CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
+.endif # ${CHOSEN_COMPILER_TYPE} == clang
+
+.if ${ARCH:Marmv?}
+BUILD_DEPENDS+=	as:devel/binutils@native
+CFLAGS+=	-no-integrated-as
+.endif
+
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Maltivec}
+CONFIGURE_ARGS+=	--enable-altivec
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug=3
+.endif
+
+LDFLAGS_i386+=	-Wl,-z,notext
+
+# Win32 DLL codecs support on i386, mostly superseded by ffmpeg
+# =============================================================
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--codecsdir=${LOCALBASE}/lib/win32
+.else
+CONFIGURE_ARGS+=	--disable-win32dll \
+			--disable-qtx
+.endif

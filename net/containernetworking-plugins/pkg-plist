@@ -1,0 +1,8 @@
+etc/containers/pf.conf.sample
+libexec/cni/bridge
+libexec/cni/firewall
+libexec/cni/host-local
+libexec/cni/loopback
+libexec/cni/portmap
+libexec/cni/static
+libexec/cni/tuning

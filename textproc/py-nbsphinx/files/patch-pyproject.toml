@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-11-28 17:40:20 UTC
++++ pyproject.toml
+@@ -4,7 +4,7 @@ name = "nbsphinx"
+ 
+ [project]
+ name = "nbsphinx"
+-license = "MIT"
++license = {text = "MIT"}
+ dynamic = ["version"]
+ description = "Jupyter Notebook Tools for Sphinx"
+ readme = "README.rst"

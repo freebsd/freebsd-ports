@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+To complete your installation of TomeNET, you should create a
+configuration file to suit your needs:
+
+	cp %%ETCDIR%%/tomenetrc ~/.tomenetrc
+	$EDITOR ~/.tomenetrc
+
+and then you can start playing the game.
+If installed, extensive documentation can be found in
+
+%%DOCSDIR%%/TomeNET-Guide.txt
+
+otherwise the guide is available online at:
+
+http://www.tomenet.eu/guide.php
+EOM
+}
+]

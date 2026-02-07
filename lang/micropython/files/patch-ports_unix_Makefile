@@ -1,0 +1,13 @@
+* Avoid making warnings into errors
+
+--- ports/unix/Makefile.orig	2021-09-04 05:19:26 UTC
++++ ports/unix/Makefile
+@@ -38,7 +38,7 @@ INC +=  -I$(TOP)
+ INC += -I$(BUILD)
+ 
+ # compiler settings
+-CWARN = -Wall -Werror
++CWARN = -Wall
+ CWARN += -Wextra -Wno-unused-parameter -Wpointer-arith -Wdouble-promotion -Wfloat-conversion
+ CFLAGS += $(INC) $(CWARN) -std=gnu99 -DUNIX $(CFLAGS_MOD) $(COPT) -I$(VARIANT_DIR) $(CFLAGS_EXTRA)
+ 

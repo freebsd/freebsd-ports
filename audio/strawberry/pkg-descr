@@ -1,0 +1,11 @@
+Strawberry is a music player and music collection organizer forked
+from Clementine in 2018. It is aimed at music collectors and
+audiophiles.
+
+Features include:
+* Smart and dynamic playlists
+* Tag editing
+* Streaming support
+* Audio CD playback
+* Song lyrics
+* Scrobbler with support for Last.fm, Libre.fm and ListenBrainz

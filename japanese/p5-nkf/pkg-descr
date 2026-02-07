@@ -1,0 +1,9 @@
+This is a Perl extension module to use NKF (Network Kanji Filter).
+It converts the kanji code given as input (which encoding is
+automatically recognized) to designated kanji code such as ISO-2022-JP,
+Shift_JIS, EUC-JP, UTF-8, UTF-16 or UTF-32.
+
+The syntax is as follows:
+
+	use NKF;
+	$output = nkf (@flags, $input)

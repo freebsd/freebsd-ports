@@ -1,0 +1,14 @@
+PORTNAME=	Net_POP3
+PORTVERSION=	1.3.8
+CATEGORIES=	net pear
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Provides a POP3 class to access POP3 server
+WWW=		https://pear.php.net/package/Net_POP3
+
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket@${PHP_FLAVOR}
+
+USES=		pear
+
+.include <bsd.port.mk>

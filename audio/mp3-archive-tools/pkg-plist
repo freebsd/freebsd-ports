@@ -1,0 +1,17 @@
+bin/cddbtofilename
+bin/filenametoid3
+bin/freedbtofilename
+bin/id3tofilename
+bin/movemusic
+bin/mp3id
+bin/pmv
+bin/update-music-symlinks
+%%PERL5_MAN1%%/cddbtofilename.1.gz
+%%PERL5_MAN1%%/filenametoid3.1.gz
+%%PERL5_MAN1%%/freedbtofilename.1.gz
+%%PERL5_MAN1%%/id3tofilename.1.gz
+%%PERL5_MAN1%%/movemusic.1.gz
+%%PERL5_MAN1%%/mp3-archive-tools.1.gz
+%%PERL5_MAN1%%/mp3id.1.gz
+%%PERL5_MAN1%%/pmv.1.gz
+%%PERL5_MAN1%%/update-music-symlinks.1.gz

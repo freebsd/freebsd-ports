@@ -1,0 +1,34 @@
+PORTNAME=	SLICOT
+PORTVERSION=	5.9.1
+DISTVERSIONPREFIX=	v
+CATEGORIES=	math
+
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	Fortran subroutines library for systems and control
+WWW=		https://slicot.org/
+
+LICENSE=	BSD3CLAUSE
+
+USE_GITHUB=	yes
+GH_PROJECT=	SLICOT-Reference
+
+USES=		blaslapack:openblas cmake:testing fortran
+
+USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=		DOCS EXAMPLES
+EXAMPLES_CMAKE_ON=	SLICOT_TESTING
+PORTDOCS=		*
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples &&	\
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/* ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

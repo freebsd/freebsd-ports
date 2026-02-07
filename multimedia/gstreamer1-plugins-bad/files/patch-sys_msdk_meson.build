@@ -1,0 +1,25 @@
+--- sys/msdk/meson.build.orig	2025-03-11 20:14:44 UTC
++++ sys/msdk/meson.build
+@@ -253,7 +253,7 @@ else
+   libdl_dep = cc.find_library('dl', required: get_option('msdk'))
+   libgudev_dep = dependency('gudev-1.0', required: get_option('msdk'), allow_fallback: true)
+   msdk_deps = declare_dependency(dependencies: [gstva_dep, libdl_dep, libgudev_dep, libdrm_dep])
+-  msdk_deps_found = gstva_dep.found() and libdl_dep.found() and libgudev_dep.found() and libdrm_dep.found()
++  msdk_deps_found = gstva_dep.found() and libdl_dep.found() and libgudev_dep.found()
+ endif
+ 
+ if msdk_deps_found
+@@ -269,7 +269,12 @@ if msdk_deps_found
+     msdk_sources,
+     c_args : gst_plugins_bad_args + extra_args + onevpl_extra_args,
+     include_directories : [configinc, mfx_inc],
+-    dependencies : [gstbase_dep, gstvideo_dep, gstpbutils_dep, gstallocators_dep, gstcodecparsers_dep, mfx_dep, msdk_deps],
++    dependencies : [gstbase_dep,
++      dependency('gstreamer-video-1.0', required : true),
++      dependency('gstreamer-pbutils-1.0', required : true),
++      dependency('gstreamer-allocators-1.0', required : true),
++      dependency('gstreamer-codecparsers-1.0', required : true),
++      mfx_dep, msdk_deps],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

@@ -1,0 +1,42 @@
+--- makefile.orig	2012-08-04 20:53:21 UTC
++++ makefile
+@@ -320,13 +320,13 @@ IS_INTERACTIVE= yes
+ #ifdef VMS
+ CC = cc 
+ #else
+-CC = gcc
++CC ?= gcc
+ #endif
+ 
+ #ifdef DEVELOPER
+-CC_OPTIONS = -c -g 
++CC_OPTIONS = -c -g ${CFLAGS}
+ #else
+-CC_OPTIONS = -c -g 
++CC_OPTIONS = -c -g ${CFLAGS}
+ #endif
+ 
+ 
+@@ -340,11 +340,11 @@ DISTNAME = [system]
+ LIBS = -lcursesX -o epte
+ #endif
+ # Use ncurses library for linux & FreeBSD
+-#if defined(linux) || defined(__FreeBSD__)
++#if defined(linux) || defined(__FreeBSD__) || defined(__DragonFly__)
+ LIBS = -lncurses -o epte
+ #endif
+ 
+-DISTNAME=/usr/bin
++DISTNAME=${PREFIX}
+ 
+ MAIN = ask_user.o bell.o bold.o blink.o draw_blocks.o draw_table.o endprog.o listcommand.o epte.o make_coordinates.o reverse.o setaudio.o setinput.o table_key.o ttflush.o ttinp.o
+ 
+@@ -354,7 +354,7 @@ DOES = do_bondeng.o do_attributes.o do_c
+ 
+ 
+ epte : $(MAIN) $(FILLS) $(DOES) 
+-	$(CC) $(MAIN) $(FILLS) $(DOES) $(LIBS)
++	$(CC) $(MAIN) $(FILLS) $(DOES) $(LDFLAGS) $(LIBS)
+ 
+ clean: 
+ 	rm -f *.o

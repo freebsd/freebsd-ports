@@ -1,0 +1,11 @@
+--- configure.orig	2010-08-20 07:16:17 UTC
++++ configure
+@@ -226,7 +226,7 @@ fi
+ 
+ 
+ printf '%s' "Checking for g++... "
+-if which $CXX >/dev/null 2>/dev/null && $CXX --version | grep g++ >/dev/null 2>/dev/null
++if which $CXX >/dev/null 2>/dev/null
+ then
+ 	echo "Found"
+ else

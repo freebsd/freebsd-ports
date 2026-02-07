@@ -1,0 +1,10 @@
+--- bsmtp.c.in.orig	Wed Feb  7 20:36:42 2001
++++ bsmtp.c.in	Wed Feb  7 20:36:58 2001
+@@ -36,6 +36,7 @@
+ #include <grp.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ 
+ /* From .../sendmail/src/sysexits.h */

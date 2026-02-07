@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2009-10-30 18:51:39 UTC
++++ Makefile.in
+@@ -615,15 +615,6 @@ uninstall-am:
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(default_config_dir)
+-	@echo
+-	@echo "*** PLEASE READ ***"
+-	@echo
+-	@echo "Lurker config files have not been installed (for your protection)"
+-	@echo "If you would like the default config files installed, run:"
+-	@echo "  make install-config"
+-	@echo
+-	@echo "*** PLEASE READ ***"
+-	@echo
+ 
+ install-config:
+ 	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/lib/$(PACKAGE)

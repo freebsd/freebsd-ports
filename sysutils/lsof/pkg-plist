@@ -1,0 +1,20 @@
+share/man/man8/lsof.8.gz
+@group kmem
+@mode 2755
+sbin/lsof
+@group wheel
+@mode 0444
+%%DATADIR%%/00MANIFEST
+%%DATADIR%%/00README
+@mode
+%%DATADIR%%/big_brother.pl
+%%DATADIR%%/count_pf.pl
+%%DATADIR%%/identd.pl
+%%DATADIR%%/idrlogin.pl
+%%DATADIR%%/list_NULf.pl
+%%DATADIR%%/list_fields.awk
+%%DATADIR%%/list_fields.pl
+%%DATADIR%%/shared.pl
+%%DATADIR%%/sort_res.pl
+%%DATADIR%%/watch_a_file.pl
+%%DATADIR%%/xusers.awk

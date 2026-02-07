@@ -1,0 +1,13 @@
+--- src/epoll.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/epoll.cpp	2012-01-27 11:56:49.000000000 -0500
+@@ -108,5 +108,9 @@
+ }
+ 
+-int CEPoll::add_ssock(const int eid, const SYSSOCKET& s, const int* events)
++int CEPoll::add_ssock(const int eid, const SYSSOCKET& s, const int*
++#ifdef LINUX
++events /* XXX Only on Linux are we using this parameter currently */
++#endif
++)
+ {
+    CGuard pg(m_EPollLock);

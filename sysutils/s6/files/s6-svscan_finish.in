@@ -1,0 +1,2 @@
+#!%%LOCALBASE%%/bin/execlineb -P
+foreground { echo "\ns6 is clear" }

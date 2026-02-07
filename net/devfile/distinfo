@@ -1,0 +1,5 @@
+TIMESTAMP = 1753796004
+SHA256 (go/net_devfile/devfile-v2.3.0/v2.3.0.mod) = c9410a407e269531a90bedf64b071d7b300ef54ccad783c9ddaef514e3e1af93
+SIZE (go/net_devfile/devfile-v2.3.0/v2.3.0.mod) = 6499
+SHA256 (go/net_devfile/devfile-v2.3.0/v2.3.0.zip) = afd53a88326cefa3d754ef466d8391b3522a08e7cc55bdec3f2ac44e35e2f600
+SIZE (go/net_devfile/devfile-v2.3.0/v2.3.0.zip) = 365596

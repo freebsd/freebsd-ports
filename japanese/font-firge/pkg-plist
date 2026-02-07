@@ -1,0 +1,12 @@
+etc/fonts/conf.avail/20-unhint-firge.conf
+etc/fonts/conf.avail/62-fonts-firge.conf
+etc/fonts/conf.d/20-unhint-firge.conf
+etc/fonts/conf.d/62-fonts-firge.conf
+%%FIRGE%%%%FONTSDIR%%/Firge-Regular.ttf
+%%FIRGE%%%%FONTSDIR%%/Firge-Bold.ttf
+%%FIRGE_CONS%%%%FONTSDIR%%/FirgeConsole-Regular.ttf
+%%FIRGE_CONS%%%%FONTSDIR%%/FirgeConsole-Bold.ttf
+%%FIRGE35%%%%FONTSDIR%%/Firge35-Regular.ttf
+%%FIRGE35%%%%FONTSDIR%%/Firge35-Bold.ttf
+%%FIRGE35_CONS%%%%FONTSDIR%%/Firge35Console-Regular.ttf
+%%FIRGE35_CONS%%%%FONTSDIR%%/Firge35Console-Bold.ttf

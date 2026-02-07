@@ -1,0 +1,7 @@
+korean-lunar-calendar is a library to convert Korean lunar-calendar to Gregorian
+calendar.
+
+Korean calendar and Chinese calendar is same lunar calendar but they have
+different dates.
+
+This package follows the KARI (Korea Astronomy and Space Science Institute).

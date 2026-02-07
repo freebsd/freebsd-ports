@@ -1,0 +1,2 @@
+LRU cache for python. Provides a dictionary-like object as well
+ as a method decorator.

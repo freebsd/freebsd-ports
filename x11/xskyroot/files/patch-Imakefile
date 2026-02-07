@@ -1,0 +1,8 @@
+--- Imakefile.orig	2023-06-03 14:41:54 UTC
++++ Imakefile
+@@ -4,4 +4,4 @@ SYS_LIBRARIES = -lX11 -lm
+ SRCS = xskyroot.c draw.c colorname.c astro.c
+ OBJS = xskyroot.o draw.o colorname.o astro.o
+ 
+-ComplexProgramTarget(xskyroot)
++ComplexProgramTargetNoMan(xskyroot)

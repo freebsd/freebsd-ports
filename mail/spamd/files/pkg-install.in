@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# ex:ts=4:sw=4:noet
+#-*- mode: makefile; tab-width: 4; -*-
+
+SPAMDUSER=%%SPAMDUSER%%
+SPAMDGROUP=%%SPAMDGROUP%%
+
+check_db() {
+	DB=/var/db/spamd
+	if [ -f ${DB} ]; then
+		OWN=$(stat -f "%Su" ${DB})
+		GRP=$(stat -f "%Sg" ${DB})
+		if [ "x${OWN}" != "x${SPAMDUSER}" ]; then
+			echo "==> chown ${SPAMDUSER} ${DB} (previous ${OWN})"
+				chown ${SPAMDUSER} ${DB}
+		fi
+		if [ "x${GRP}" != "x${SPAMDGROUP}" ]; then
+			echo "==> chgrp ${SPAMDGROUP} ${DB} (previous ${GRP})"
+			chgrp ${SPAMDGROUP} ${DB}
+		fi
+	fi
+}
+
+if [ "$2" = "POST-INSTALL" ]; then
+	check_db
+fi

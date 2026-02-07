@@ -1,0 +1,2 @@
+This module allows you to use File::Find::Rule file finding semantics to
+Filesys::Virtual derived filesystems.

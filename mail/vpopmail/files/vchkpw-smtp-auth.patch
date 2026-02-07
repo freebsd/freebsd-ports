@@ -1,0 +1,18 @@
+Description: Use the correct order of arguments for the SMTP auth calculations.
+ Only applied if requested at port build time.
+Forwarded: not-needed
+Author: Nikolay Georgiev <niki@techlab.office1.bg>
+Last-Update: 2009-11-26
+
+--- a/vchkpw.c
++++ b/vchkpw.c
+@@ -441,7 +441,8 @@
+     /* Check CRAM-MD5 auth */
+     if(ConnType == SMTP_CONN) {
+       /* printf("vchkpw: smtp auth\n"); */
+-      cramaccepted = authcram(ThePass,TheChallenge,vpw->pw_clear_passwd);
++      /* cramaccepted = authcram(ThePass,TheChallenge,vpw->pw_clear_passwd); */
++      cramaccepted = authcram(TheChallenge,ThePass,vpw->pw_clear_passwd);
+       if(cramaccepted == 0) strcpy(AuthType, "CRAM-MD5");
+     }
+ 

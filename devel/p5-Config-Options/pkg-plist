@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Config/Options.pm
+%%SITE_PERL%%/Config/Options/Threaded.pm
+%%PERL5_MAN3%%/Config::Options.3.gz
+%%PERL5_MAN3%%/Config::Options::Threaded.3.gz

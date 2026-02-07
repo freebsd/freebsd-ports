@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/OpenSSL/RSA.pm
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::RSA.3.gz

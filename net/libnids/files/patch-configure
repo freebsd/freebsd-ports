@@ -1,0 +1,21 @@
+Do not attempt to put -lgthread-2.0 before its -L clause!
+
+--- configure.orig
++++ configure
+@@ -4288,7 +4288,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgthread-2.0 $GTHREAD_LIBS $LIBS"
++LIBS="$GTHREAD_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4350,7 +4350,6 @@
+ #define HAVE_LIBGTHREAD_2_0 1
+ _ACEOF
+ 
+-  LIBS="-lgthread-2.0 $LIBS"
+ 
+ fi
+ 

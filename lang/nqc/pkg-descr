@@ -1,0 +1,10 @@
+A compiler for a simple language for programming the LEGO RCX or CyberMaster
+controllers. The language itself is "Not Quite C" and includes preprocessor
+and control structures very similar to the C language, but with restrictions
+imposed by the limitations of the RCX hardware/firmware itself.
+
+Besides compiling, nqc also provides functions for downloading the RCX
+firmware as well as uploading programs to and downloading from the RCX.
+
+The NQC home page includes documentation for the language itself including
+examples.

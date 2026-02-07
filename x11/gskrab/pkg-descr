@@ -1,0 +1,7 @@
+GS Krab is a framework and a daemon to enable GNUstep applications to
+handle the special keys on multimedia keyboards. Since this would require
+special hacks to work on different platform, and since those differents
+platforms work differently, I thought putting those hacks together in a
+centralized daemon would be the correct and clean way to do things.
+
+LICENSE: GPL2 or later

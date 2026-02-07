@@ -1,0 +1,6 @@
+OCamlbuild is a generic build tool, that has built-in rules for building
+OCaml library and programs.
+
+In recent years, the OCaml community has converged towards a more recent
+and faster build tool: Dune.  It is available as `devel/ocaml-dune' port.
+When choosing a build system, one should probably use Dune instead.

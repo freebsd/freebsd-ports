@@ -1,0 +1,13 @@
+befuse - Be File System (BeFS) FUSE module for userspace
+
+A module that provides a userspace implementation of the BeFS.
+
+Key Features:
+- Mount BeFS partitions on FreeBSD.
+- Supports reading and writing to BeFS-formatted partitions.
+- Compatible with x86_64 systems.
+- Easy installation and use via FUSE.
+
+Dependencies:
+- FUSE (Filesystem in Userspace) library.
+- BeFS-formatted partition or disk image.

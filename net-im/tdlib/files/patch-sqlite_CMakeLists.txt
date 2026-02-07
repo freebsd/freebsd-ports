@@ -1,0 +1,11 @@
+--- sqlite/CMakeLists.txt.orig	2025-05-09 16:44:31 UTC
++++ sqlite/CMakeLists.txt
+@@ -23,7 +23,7 @@ set(SQLITE_SOURCE
+ 
+ # all SQLite functions are moved to namespace tdsqlite3 by `sed -Ebi 's/sqlite3([^.]|$)/td&/g' *`
+ 
+-add_library(tdsqlite STATIC ${SQLITE_SOURCE})
++add_library(tdsqlite ${SQLITE_SOURCE})
+ target_include_directories(tdsqlite PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
+ target_include_directories(tdsqlite SYSTEM PRIVATE ${OPENSSL_INCLUDE_DIR})
+ target_link_libraries(tdsqlite PRIVATE ${OPENSSL_CRYPTO_LIBRARY} ${CMAKE_DL_LIBS} ${ZLIB_LIBRARIES})

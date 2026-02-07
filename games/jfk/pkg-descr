@@ -1,0 +1,3 @@
+Jfk is a 2d shooting game.  It consists of a server and a client which uses SDL
+for displaying graphics.  Your goal is to get a high score by shooting your
+enemies.

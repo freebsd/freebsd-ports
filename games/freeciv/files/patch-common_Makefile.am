@@ -1,0 +1,11 @@
+--- common/Makefile.am.orig	2019-06-16 16:23:58 UTC
++++ common/Makefile.am
+@@ -141,7 +141,7 @@ libfreeciv_la_LIBADD = \
+ 	$(top_builddir)/utility/libcivutility.la \
+ 	$(top_builddir)/common/aicore/libaicore.la \
+ 	$(top_builddir)/common/scriptcore/libscriptcore.la \
+-	$(COMMON_LIBS)
++	$(COMMON_LIBS) $(LIBICONV)
+ 
+ BUILT_SOURCES = packets_gen.c packets_gen.h
+ 

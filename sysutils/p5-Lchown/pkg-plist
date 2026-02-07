@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Lchown.pm
+%%SITE_ARCH%%/auto/Lchown/Lchown.so
+%%PERL5_MAN3%%/Lchown.3.gz

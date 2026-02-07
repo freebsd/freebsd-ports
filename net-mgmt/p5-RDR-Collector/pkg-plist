@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/RDR::Collector.3.gz
+%%PERL5_MAN3%%/RDR::Processor.3.gz
+%%SITE_PERL%%/RDR/Collector.pm
+%%SITE_PERL%%/RDR/Processor.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_process_raw.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_rdr_collect_only.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_rdr_collect_only_realtime.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_rdr_collect_only_realtime_db.pl

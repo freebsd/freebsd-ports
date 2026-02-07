@@ -1,0 +1,67 @@
+- this patch performs 2 functions:
+- 1. remove java/ from the PROJECT_SOURCE_DIR path
+- 2. add librocksdbjni-freebsd64.so symlink needed to run some dependencies
+
+--- CMakeLists.txt.orig	2024-08-27 20:39:35 UTC
++++ CMakeLists.txt
+@@ -542,9 +542,9 @@ include_directories(${JNI_INCLUDE_DIRS})
+ find_package(JNI)
+ 
+ include_directories(${JNI_INCLUDE_DIRS})
+-include_directories(${PROJECT_SOURCE_DIR}/java)
++include_directories(${PROJECT_SOURCE_DIR})
+ 
+-set(JAVA_TEST_LIBDIR ${PROJECT_SOURCE_DIR}/java/test-libs)
++set(JAVA_TEST_LIBDIR ${PROJECT_SOURCE_DIR}/test-libs)
+ set(JAVA_TMP_JAR ${JAVA_TEST_LIBDIR}/tmp.jar)
+ set(JAVA_JUNIT_JAR ${JAVA_TEST_LIBDIR}/junit-${JAVA_JUNIT_VERSION}.jar)
+ set(JAVA_HAMCR_JAR ${JAVA_TEST_LIBDIR}/hamcrest-${JAVA_HAMCR_VERSION}.jar)
+@@ -561,7 +561,7 @@ endif()
+   set(JAVA_RUN_TESTCLASSPATH ${JAVA_JUNIT_JAR}:${JAVA_HAMCR_JAR}:${JAVA_MOCKITO_JAR}:${JAVA_CGLIB_JAR}:${JAVA_ASSERTJ_JAR})
+ endif()
+ 
+-set(JNI_OUTPUT_DIR ${PROJECT_SOURCE_DIR}/java/include)
++set(JNI_OUTPUT_DIR ${PROJECT_SOURCE_DIR}/include)
+ file(MAKE_DIRECTORY ${JNI_OUTPUT_DIR})
+ 
+ if(${Java_VERSION_MINOR} VERSION_LESS_EQUAL "7" AND ${Java_VERSION_MAJOR} STREQUAL "1")
+@@ -602,8 +602,8 @@ add_jar(
+     GENERATE_NATIVE_HEADERS rocksdbjni_test_headers DESTINATION ${JNI_OUTPUT_DIR}
+ )
+ 
+-if(NOT EXISTS ${PROJECT_SOURCE_DIR}/java/classes)
+-  file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/java/classes)
++if(NOT EXISTS ${PROJECT_SOURCE_DIR}/classes)
++  file(MAKE_DIRECTORY ${PROJECT_SOURCE_DIR}/classes)
+ endif()
+ 
+ if(NOT EXISTS ${JAVA_TEST_LIBDIR})
+@@ -817,7 +817,7 @@ create_javadoc(rocksdb
+ set(ROCKSDB_JAVADOC_JAR rocksdbjni-${CMAKE_PROJECT_VERSION}-javadoc.jar)
+ create_javadoc(rocksdb
+         PACKAGES org.rocksdb org.rocksdb.util
+-        SOURCEPATH "${PROJECT_SOURCE_DIR}/java/src/main/java"
++        SOURCEPATH "${PROJECT_SOURCE_DIR}/src/main/java"
+         WINDOWTITLE "RocksDB Java API JavaDoc"
+         AUTHOR FALSE
+         USE FALSE
+@@ -833,7 +833,7 @@ add_custom_target(rocksdb_sources_jar ALL
+ # Sources Jar
+ set(ROCKSDB_SOURCES_JAR rocksdbjni-${CMAKE_PROJECT_VERSION}-sources.jar)
+ add_custom_target(rocksdb_sources_jar ALL
+-        ${Java_JAR_EXECUTABLE} cvf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_SOURCES_JAR} -C ${PROJECT_SOURCE_DIR}/java/src/main/java/ .
++        ${Java_JAR_EXECUTABLE} cvf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_SOURCES_JAR} -C ${PROJECT_SOURCE_DIR}/src/main/java/ .
+         BYPRODUCTS ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_SOURCES_JAR}
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+ )
+@@ -877,8 +877,10 @@ add_custom_target(rocksdbjava ALL
+ 
+ add_custom_target(rocksdbjava ALL
+         COMMAND ${CMAKE_COMMAND} -E copy ${ROCKS_JAR_FILE} ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR}
++	COMMAND ln -s librocksdbjni.so librocksdbjni-freebsd64.so
+         COMMAND ${Java_JAR_EXECUTABLE} -uf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR} -C $<TARGET_FILE_DIR:${ROCKSDBJNI_STATIC_LIB}> $<TARGET_FILE_NAME:${ROCKSDBJNI_STATIC_LIB}>
+         COMMAND ${Java_JAR_EXECUTABLE} -uf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR} -C ${CMAKE_CURRENT_SOURCE_DIR} HISTORY-JAVA.md
++        COMMAND ${Java_JAR_EXECUTABLE} -uf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR} -C $<TARGET_FILE_DIR:${ROCKSDBJNI_STATIC_LIB}> librocksdbjni-freebsd64.so
+         DEPENDS ${ROCKSDBJNI_STATIC_LIB} rocksdbjni_classes
+         BYPRODUCTS ${ROCKSDB_JAR}
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}

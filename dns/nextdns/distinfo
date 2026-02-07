@@ -1,0 +1,17 @@
+TIMESTAMP = 1707164420
+SHA256 (nextdns-nextdns-v1.42.0_GH0.tar.gz) = 893692bea9015116d6ce610c94dccf744f3aa29aeb716a15cca17dd6e6b837c1
+SIZE (nextdns-nextdns-v1.42.0_GH0.tar.gz) = 200786
+SHA256 (cespare-xxhash-v1.1.0_GH0.tar.gz) = 9418be390574092f0ca989b9ae2f5450270ead8125a635a100850b28c8c9c495
+SIZE (cespare-xxhash-v1.1.0_GH0.tar.gz) = 8200
+SHA256 (denisbrodbeck-machineid-v1.0.1_GH0.tar.gz) = 0a01d2b131419cb2b9f7d910a2c90b824449bd91005b47efb235dc707665337a
+SIZE (denisbrodbeck-machineid-v1.0.1_GH0.tar.gz) = 27807
+SHA256 (golang-net-v0.8.0_GH0.tar.gz) = f9e2128a2d6861db0595428c7cce62fe5a131348a6c7651b6efa8b03d0b10831
+SIZE (golang-net-v0.8.0_GH0.tar.gz) = 1244302
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+SHA256 (hashicorp-golang-lru-v0.5.4_GH0.tar.gz) = d50c188af0cc8b22e7e4b79e9071694fa06428a9964b22d68dc997fa787a177a
+SIZE (hashicorp-golang-lru-v0.5.4_GH0.tar.gz) = 13428
+SHA256 (vishvananda-netlink-v1.1.0_GH0.tar.gz) = c72754916ac1551cea4e1f801d5b2c26c1476f11bd3130382a4a890822eb5929
+SIZE (vishvananda-netlink-v1.1.0_GH0.tar.gz) = 147026
+SHA256 (vishvananda-netns-2eb08e3e575f_GH0.tar.gz) = 049a592025d3b7011acb83f2c6074a75143d3d95f842526d10f0589155283f0c
+SIZE (vishvananda-netns-2eb08e3e575f_GH0.tar.gz) = 8579

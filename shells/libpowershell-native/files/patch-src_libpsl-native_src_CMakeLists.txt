@@ -1,0 +1,11 @@
+--- src/libpsl-native/src/CMakeLists.txt.orig	2024-03-30 21:53:03 UTC
++++ src/libpsl-native/src/CMakeLists.txt
+@@ -34,7 +34,7 @@ add_library(psl-native SHARED
+ check_function_exists(sysconf HAVE_SYSCONF)
+ 
+ check_include_files(
+-    "sys/sysctl.h"
++    "stddef.h;sys/sysctl.h"
+     HAVE_SYS_SYSCTL_H)
+ 
+ configure_file(

@@ -1,0 +1,7 @@
+bin/scraper
+%%SITE_PERL%%/Web/Scraper.pm
+%%SITE_PERL%%/Web/Scraper/Filter.pm
+%%SITE_PERL%%/Web/Scraper/LibXML.pm
+%%PERL5_MAN3%%/Web::Scraper.3.gz
+%%PERL5_MAN3%%/Web::Scraper::Filter.3.gz
+%%PERL5_MAN3%%/Web::Scraper::LibXML.3.gz

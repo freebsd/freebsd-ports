@@ -1,0 +1,20 @@
+use Module::Versions::Report;
+
+...and any code you want...
+
+This will run all your code normally, but then as the Perl interpreter
+is about to exit, it will print something like:
+
+Perl v5.6.1 under MSWin32.
+Modules in memory:
+attributes;
+AutoLoader v5.58;
+Carp;
+Config;
+DynaLoader v1.04;
+Exporter v5.562;
+Module::Versions::Report v1.01;
+HTML::Entities v1.22;
+HTML::HeadParser v2.15;
+HTML::Parser v3.25;
+[... and whatever other modules were loaded that session...]

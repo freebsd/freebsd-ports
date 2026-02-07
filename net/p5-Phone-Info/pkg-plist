@@ -1,0 +1,3 @@
+bin/phoneinfo
+%%SITE_PERL%%/Phone/Info.pm
+%%PERL5_MAN3%%/Phone::Info.3.gz

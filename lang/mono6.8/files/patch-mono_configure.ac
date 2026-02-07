@@ -1,0 +1,121 @@
+--- configure.ac.orig	2020-05-11 11:05:34.000000000 -0700
++++ configure.ac	2021-12-09 11:17:20.499137000 -0800
+@@ -2279,7 +2279,8 @@
+ 	dnl *** won't always indicate the interface sched_affinity has.  ***
+ 	dnl ****************************************************************
+ 	AC_MSG_CHECKING(for sched_setaffinity from glibc < 2.3.4)
+-	AC_TRY_COMPILE([#include <sched.h>], [
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
+             int mask = 1; 
+             sched_setaffinity(0, &mask);
+ 	], [
+@@ -2290,8 +2291,9 @@
+ 		# We have the new, three-parameter version
+ 		AC_MSG_RESULT(no)
+ 	])
+-	AC_TRY_COMPILE([#include <sched.h>], [
+-	     CPU_COUNT((void *) 0);
++	AC_TRY_COMPILE([#define _WITH_CPU_SET_T
++#include <sched.h>], [
++	     CPU_COUNT((cpuset_t *) 0);
+ 	], [
+ 		AC_MSG_RESULT(yes)
+ 		AC_DEFINE(GLIBC_HAS_CPU_COUNT, 1, [GLIBC has CPU_COUNT macro in sched.h])
+@@ -2346,14 +2348,6 @@
+ 	dnl *****************************
+ 	AC_CHECK_LIB(socket, socket, LIBS="$LIBS -lsocket")
+ 
+-	case "$host" in
+-		*-*-*freebsd*)
+-			dnl *****************************
+-			dnl *** Checks for libinotify ***
+-			dnl *****************************
+-			AC_CHECK_LIB(inotify, inotify_init, LIBS="$LIBS -linotify")
+-	esac
+-
+ 	dnl *******************************
+ 	dnl *** Checks for MSG_NOSIGNAL ***
+ 	dnl *******************************
+@@ -3619,6 +3613,37 @@
+ 	], [
+ 		AC_MSG_RESULT(no)
+ 	])
++	
++	case "$host" in
++		*-*-*freebsd*)
++			dnl *****************************
++			dnl *** Checks for libinotify ***
++			dnl *****************************
++			AC_CHECK_LIB(inotify, inotify_init, LIBS="$LIBS -linotify")
++			AC_MSG_CHECKING(for METADATA_CFLAGS)
++			if test "x$ac_cv_lib_inotify_inotify_init" = "xyes" ; then
++				AC_DEFINE(HAVE_LIBINOTIFY, 1, [FreeBSD libinotify kqueue shim])
++				dnl Needs to be done this way to avoid collision with various
++				dnl ports includign glib and llvm*
++				METADATA_CFLAGS="-I/usr/local/include"
++				AC_SUBST(METADATA_CFLAGS)
++			fi
++			dnl Workaround due to inotify_rm_watch check failing without -I
++			AC_MSG_CHECKING(for inotify_rm_watch with unsigned wd in libinotify)
++			AC_TRY_LINK([
++				#include </usr/local/include/sys/inotify.h>
++			], [
++				intptr_t fd;
++				uint32_t wd;
++				int result = inotify_rm_watch(fd, wd);
++			],[
++			   AC_MSG_RESULT(yes)
++			   AC_DEFINE(INOTIFY_RM_WATCH_WD_UNSIGNED, 1, [inotify_rm_watch with unsigned wd])
++			], [
++				AC_MSG_RESULT(no)
++			])
++			;;
++	esac
+ 
+ 	CFLAGS="$ORIG_CFLAGS"
+ 
+@@ -4465,13 +4490,27 @@
+ 		;;
+ 	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
+         powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* | \
+-        powerpc-*-freebsd* | powerpc*-*-aix* | powerpc*-*-os400* )
++        powerpc*-*-freebsd* | powerpc*-*-aix* | powerpc*-*-os400* )
+ 		if test "x$ac_cv_sizeof_void_p" = "x8"; then
+ 			TARGET=POWERPC64;
+ 			CPPFLAGS="$CPPFLAGS -D__mono_ppc__ -D__mono_ppc64__"
+-			if ! (echo $CC | grep -q -- 'clang'); then
+-				CFLAGS="$CFLAGS -mminimal-toc"
+-			fi
++			AC_MSG_NOTICE([Checking for PowerPC ISA -mminimal-toc support])
++			AX_CHECK_COMPILE_FLAG(
++				[-mminimal-toc],
++				[CFLAGS="$CFLAGS -mminimal-toc"],
++				[CFLAGS="$CFLAGS"]
++			)
++			case "$host" in
++				powerpc*-*-freebsd*)
++					# We need to be aware if we are ELFv1 or v2 here
++					AC_MSG_NOTICE([Checking FreeBSD ELF version])
++					if ! ( echo | cc -dM -E - | awk '/_CALL_ELF/ {print $NF}'); then
++						AC_DEFINE([POWERPC_ELF], 1, [PowerPC ELFv1])
++					else
++						AC_DEFINE([POWERPC_ELFV2], 1, [PowerPC ELFv2])
++					fi
++					;;
++			esac
+ 		else
+ 			TARGET=POWERPC;
+ 			CPPFLAGS="$CPPFLAGS -D__mono_ppc__"
+@@ -6488,9 +6527,9 @@
+ 	mono_native_text="FreeBSD"
+ 	MONO_NATIVE_CC=$CC
+ 	MONO_NATIVE_CXX=$CXX
+-	MONO_NATIVE_CPPFLAGS=$CPPFLAGS
++	MONO_NATIVE_CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ 	MONO_NATIVE_CXXFLAGS=$CXXFLAGS
+-	MONO_NATIVE_CFLAGS=$CFLAGS
++	MONO_NATIVE_CFLAGS="$CFLAGS -I/usr/local/include"
+ 	MONO_NATIVE_LDFLAGS=$LDFLAGS
+ 
+ 	mono_native=yes

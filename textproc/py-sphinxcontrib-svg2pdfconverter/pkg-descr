@@ -1,0 +1,5 @@
+This extension converts SVG images to PDF in case the builder does not support
+SVG images natively (e.g. LaTeX).
+
+Internally, either Inkscape, rsvg-convert from libRSVG or CairoSVG as
+progressively more lightweight alternatives are used to convert images.

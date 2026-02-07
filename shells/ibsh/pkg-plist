@@ -1,0 +1,5 @@
+bin/ibsh
+etc/ibsh/globals.cmds
+etc/ibsh/globals.xtns
+@dir etc/ibsh/cmds
+@dir etc/ibsh/xtns

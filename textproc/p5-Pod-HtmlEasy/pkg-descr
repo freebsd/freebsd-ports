@@ -1,0 +1,3 @@
+Pod::HtmlEasy is a perl module to generate HTML data from POD in a easy and
+personalized mode. By default the HTML generated is similar to the CPAN site
+style for module documentation.

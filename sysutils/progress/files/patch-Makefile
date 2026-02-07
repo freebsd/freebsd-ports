@@ -1,0 +1,11 @@
+--- Makefile.orig	2025-09-22 08:19:02 UTC
++++ Makefile
+@@ -40,7 +40,7 @@ install : $(OBJ)
+ 	@install -pm0644 $(OBJ).1 $(DESTDIR)$(MANDIR)/ || \
+ 	echo "Failed. Try "make PREFIX=~ install" ?"
+ 	@echo "Installing zsh completion to $(DESTDIR)$(ZSHDIR) ..."
+-	@install -Dpm0644 _$(OBJ) -t $(DESTDIR)$(ZSHDIR)/ || \
++	@install -Dpm0644 _$(OBJ) $(DESTDIR)$(ZSHDIR)/ || \
+ 	echo "Failed. Try "make PREFIX=~ install" ?"
+ uninstall :
+ 	@rm -f $(DESTDIR)$(BINDIR)/$(OBJ)

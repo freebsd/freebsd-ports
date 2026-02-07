@@ -1,0 +1,10 @@
+%%SITE_ARCH%%/TokyoCabinet.pm
+%%SITE_ARCH%%/TokyoCabinet.pod
+%%SITE_ARCH%%/auto/TokyoCabinet/TokyoCabinet.so
+%%SITE_ARCH%%/memsize.pl
+%%SITE_ARCH%%/tcatest.pl
+%%SITE_ARCH%%/tcbtest.pl
+%%SITE_ARCH%%/tcftest.pl
+%%SITE_ARCH%%/tchtest.pl
+%%SITE_ARCH%%/tcttest.pl
+%%PERL5_MAN3%%/TokyoCabinet.3.gz

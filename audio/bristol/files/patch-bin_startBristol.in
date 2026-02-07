@@ -1,0 +1,44 @@
+--- bin/startBristol.in.orig	2012-04-27 11:07:18 UTC
++++ bin/startBristol.in
+@@ -39,14 +39,19 @@ FREQ=0
+ #PORT=5028
+ # Randomise the port numbers, can be overridden by -port which would be a
+ # requirement for multitimbral
+-PORT=`date +%N`
+-PORT=`expr $PORT % 65536` >/dev/null 2>&1
+-if [ -z $PORT ]; then
+-	PORT=`date +%s`
++UNAME=`uname`
++if [ "${UNAME}x" = "FreeBSDx" ]; then
++	PORT=`jot -r 1 1025 65536`
++else
++	PORT=`date +%N`
+ 	PORT=`expr $PORT % 65536` >/dev/null 2>&1
+-fi
+-if [ $PORT -lt 1024 ]; then
+-	PORT=`expr $PORT + 5028`
++	if [ -z $PORT ]; then
++		PORT=`date +%s`
++		PORT=`expr $PORT % 65536` >/dev/null 2>&1
++	fi
++	if [ $PORT -lt 1024 ]; then
++		PORT=`expr $PORT + 5028`
++	fi
+ fi
+ 
+ valgrind=0
+@@ -497,12 +502,12 @@ if [ $engine = 1 ]; then
+ 		fi
+ 	else
+ 		echo checking availability of TCP port $PORT
+-		netstat -taln | awk '{print $4}' | grep $PORT > /dev/null
++		netstat -a -f inet -p tcp -ln | grep $PORT > /dev/null
+ 		while [ $? -eq 0 ]; do
+ 			echo -n "port looked busy, trying "
+ 			PORT=`expr $PORT + 1`
+ 			echo $PORT
+-			netstat -taln | grep $PORT > /dev/null
++			netstat -a -f inet -p tcp -ln | grep $PORT > /dev/null
+ 		done
+ 		if [ ${PORT} -lt 1024 -a ${USER} != "root" ]; then
+ 				echo you may not have permissions for ports less than 1024

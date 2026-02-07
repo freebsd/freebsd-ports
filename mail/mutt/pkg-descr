@@ -1,0 +1,7 @@
+Mutt -- "The Mongrel of Mail User Agents" (part Elm, part Pine, part mh,
+part slrn, part everything else) is an interactive screen-oriented mailer
+program that supersedes Elm, Pine, mail and mailx.
+
+Features include color support, message threading, MIME support (including
+RFC1522 support for encoded headers), customizable key bindings, POP3,
+Delivery Status Notification (DSN) support, and PGP/MIME.

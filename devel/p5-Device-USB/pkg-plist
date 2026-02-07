@@ -1,0 +1,17 @@
+%%SITE_ARCH%%/Device/USB.pm
+%%SITE_ARCH%%/Device/USB/Bus.pm
+%%SITE_ARCH%%/Device/USB/DevConfig.pm
+%%SITE_ARCH%%/Device/USB/DevEndpoint.pm
+%%SITE_ARCH%%/Device/USB/DevInterface.pm
+%%SITE_ARCH%%/Device/USB/Device.pm
+%%SITE_ARCH%%/Device/USB/FAQ.pod
+%%SITE_ARCH%%/Device/dump_usb.pl
+%%SITE_ARCH%%/auto/Device/USB/USB.so
+%%PERL5_MAN3%%/Device::USB.3.gz
+%%PERL5_MAN3%%/Device::USB::Bus.3.gz
+%%PERL5_MAN3%%/Device::USB::DevConfig.3.gz
+%%PERL5_MAN3%%/Device::USB::DevEndpoint.3.gz
+%%PERL5_MAN3%%/Device::USB::DevInterface.3.gz
+%%PERL5_MAN3%%/Device::USB::Device.3.gz
+%%PERL5_MAN3%%/Device::USB::FAQ.3.gz
+%%PERL5_MAN3%%/Device::dump_usb.3.gz

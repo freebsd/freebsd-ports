@@ -1,0 +1,8 @@
+include/libayatana-appindicator3-0.1/libayatana-appindicator/app-indicator-enum-types.h
+include/libayatana-appindicator3-0.1/libayatana-appindicator/app-indicator.h
+lib/girepository-1.0/AyatanaAppIndicator3-0.1.typelib
+lib/libayatana-appindicator3.so
+lib/libayatana-appindicator3.so.1
+lib/libayatana-appindicator3.so.1.0.0
+libdata/pkgconfig/ayatana-appindicator3-0.1.pc
+share/gir-1.0/AyatanaAppIndicator3-0.1.gir

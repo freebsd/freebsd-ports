@@ -1,0 +1,11 @@
+Gambit is a library of game theory software and tools for the construction
+and analysis of finite extensive and normal form games. Gambit is designed
+to be portable across platforms.
+
+Gambit includes:
+   - A graphical user interface, based upon the wxWindows library, providing
+     a common look-and-feel across platforms.
+   - The Gambit Command Language, a scripting language with built-in
+     primitives for constructing and analyzing games.
+   - A library of C++ source code for representing games, suitable for use
+     in other applications.

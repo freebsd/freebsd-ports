@@ -1,0 +1,11 @@
+--- src/%%NVSRC%%/nv-misc.h.orig	2017-09-14 20:46:30 UTC
++++ src/%%NVSRC%%/nv-misc.h
+@@ -11,6 +11,8 @@
+ #ifndef _NV_MISC_H_
+ #define _NV_MISC_H_
+ 
++#include "opt_global.h"
++
+ #include "nvtypes.h"
+ #include "rmretval.h"
+ 

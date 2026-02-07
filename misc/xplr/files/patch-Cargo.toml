@@ -1,0 +1,9 @@
+--- Cargo.toml.orig	2024-06-03 20:09:13 UTC
++++ Cargo.toml
+@@ -90,5 +90,5 @@ strip = true
+ strip = true
+ 
+ [features]
+-default = ["vendored-lua"]
++default = []
+ vendored-lua = ["mlua/vendored"]

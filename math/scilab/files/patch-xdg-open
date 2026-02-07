@@ -1,0 +1,28 @@
+--- modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java.orig	2020-02-25 09:59:55 UTC
++++ modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java
+@@ -101,14 +101,14 @@ public final class WebBrowser implements XConfiguratio
+                     // We have <pierre.marechal@scilab.org>
+                     String mail = "mailto:" + url.substring(1, url.length() - 1);
+                     if (webprefs.defaultMailer) {
+-                        Desktop.getDesktop().mail(new URI(mail));
++                        Runtime.getRuntime().exec("xdg-email " + new URI(mail).toString());
+                     } else {
+                         Runtime.getRuntime().exec(webprefs.cmdMailer + " " + new URI(mail).toString());
+                     }
+                 }
+             } else if (protocol.equals("mailto")) {
+                 if (webprefs.defaultMailer) {
+-                    Desktop.getDesktop().mail(new URI(url));
++                    Runtime.getRuntime().exec("xdg-open " + new URI(url).toString());
+                 } else {
+                     Runtime.getRuntime().exec(webprefs.cmdMailer + " " + new URI(url).toString());
+                 }
+@@ -116,7 +116,7 @@ public final class WebBrowser implements XConfiguratio
+                 if (webprefs.defaultBrowser) {
+                     // Under Windows, ShellExecute is called with the URI and under Linux it is gnome_url_show.
+                     // So to handle different protocol in URI, user must config its OS to handle them.
+-                    Desktop.getDesktop().browse(new URI(url));
++                    Runtime.getRuntime().exec("xdg-open " + new URI(url).toString());
+                 } else {
+                     Runtime.getRuntime().exec(webprefs.cmdBrowser + " " + new URI(url).toString());
+                 }

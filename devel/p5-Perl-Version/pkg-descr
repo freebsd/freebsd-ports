@@ -1,0 +1,2 @@
+Perl::Version provides a simple interface for parsing, manipulating
+and formatting Perl version strings.

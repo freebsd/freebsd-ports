@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Now that GEF is installed it can be used with gdb(1).
+
+Run the following command in the gdb prompt to load the plugin:
+
+```
+source %%DATADIR%%/%%UTILITY_NAME%%
+```
+
+In order to load GEF automatically on gdb(1) launch add the line mentioned
+above to ~/.gdbinit:
+
+```
+echo "source %%DATADIR%%/%%UTILITY_NAME%%" >> ~/.gdbinit
+```
+EOM
+}
+]

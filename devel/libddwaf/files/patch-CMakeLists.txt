@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2025-05-28 14:15:10 UTC
++++ CMakeLists.txt
+@@ -99,7 +99,6 @@ add_subdirectory(third_party EXCLUDE_FROM_ALL)
+ 
+ add_subdirectory(third_party EXCLUDE_FROM_ALL)
+ 
+-set(LIBDDWAF_PRIVATE_LIBRARIES lib_rapidjson)
+ if(NOT MSVC AND LIBDDWAF_TESTING AND LIBDDWAF_TEST_COVERAGE)
+     list(APPEND LIBDDWAF_PRIVATE_LIBRARIES gcov)
+ endif()

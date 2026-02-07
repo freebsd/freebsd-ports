@@ -1,0 +1,10 @@
+Excerpted from the README file:
+
+Term::Query.pm is a Perl 5 module, which performs generalized queries on
+various kinds of values.  Validation and normalization of input, based
+on the type, is automated, as is error reporting and re-solicitation of
+input.
+
+Input of '?', unless configured otherwise, provides useful, helpful
+information, based on the expected input type, even in the absence of a
+programmer-supplied help string.

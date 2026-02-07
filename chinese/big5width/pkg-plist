@@ -1,0 +1,3 @@
+share/locale/%%LOCALE%%/LC_CTYPE
+@unexec ln -fs ../UTF-8/LC_CTYPE %%BASELOCALEDIR%%/%%LOCALE%%/LC_CTYPE
+@exec ln -fs %D/share/locale/%%LOCALE%%/LC_CTYPE %%BASELOCALEDIR%%/%%LOCALE%%/LC_CTYPE

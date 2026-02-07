@@ -1,0 +1,8 @@
+Chart::Math::Axis implements in a generic way an algorithm for finding a
+set of ideal values for an axis.  That is, for any given set of data,
+what should the top and bottom of the axis scale be, and what should the
+interval between the ticks be.
+
+The terms top and bottom are used throughout this module, as it's
+primary use is for determining the Y axis.  For calculating the X axis,
+you should think of 'top' as 'right', and 'bottom' as 'left'.

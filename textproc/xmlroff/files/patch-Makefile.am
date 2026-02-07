@@ -1,0 +1,31 @@
+--- Makefile.am.orig	2009-03-11 21:08:57 UTC
++++ Makefile.am
+@@ -6,26 +6,14 @@ if ENABLE_CUNIT
+ CUNIT_DIRS = cunit
+ endif
+ 
+-SUBDIRS = libfo xmlroff . examples docs $(CUNIT_DIRS)
++SUBDIRS = xmlroff examples docs $(CUNIT_DIRS)
+ 
+ if PLATFORM_WIN32
+ no_undefined = -no-undefined
+ endif
+ 
+ INCLUDES = \
+-	-DG_LOG_DOMAIN=\"libfo\"	\
+-	$(LIBXSLT_CFLAGS)	\
+-	$(GLIB_CFLAGS)		\
+-	-Ilibfo
+-
+-
+-pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = libfo-0.6.pc
+-
+-xmldir = $(datadir)/xml/libfo-@VERSION@
+-xml_DATA = \
+-	catalog.xml		\
+-	libfo-compat.xsl
++	-DG_LOG_DOMAIN=\"libfo\"
+ 
+ EXTRA_DIST = \
+ 	catalog.xml.in		\

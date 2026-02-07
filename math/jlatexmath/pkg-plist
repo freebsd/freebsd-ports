@@ -1,0 +1,4 @@
+%%JAVAJARDIR%%/jlatexmath-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/jlatexmath-fop-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/jlatexmath-fop.jar
+%%JAVAJARDIR%%/jlatexmath.jar

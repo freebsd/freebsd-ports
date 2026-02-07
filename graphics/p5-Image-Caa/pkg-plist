@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Image/Caa.pm
+%%SITE_PERL%%/Image/Caa/DitherNone.pm
+%%SITE_PERL%%/Image/Caa/DitherOrdered2.pm
+%%SITE_PERL%%/Image/Caa/DitherOrdered4.pm
+%%SITE_PERL%%/Image/Caa/DitherOrdered8.pm
+%%SITE_PERL%%/Image/Caa/DitherRandom.pm
+%%SITE_PERL%%/Image/Caa/DriverANSI.pm
+%%SITE_PERL%%/Image/Caa/DriverCurses.pm
+%%SITE_PERL%%/Image/Caa/DriverTest.pm
+%%PERL5_MAN3%%/Image::Caa.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curses.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitten.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitten.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/portrait.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/portrait.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sunset.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sunset.pl

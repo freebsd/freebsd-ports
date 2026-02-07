@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: repeater
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable repeater:
+#
+# repeater_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=repeater
+rcvar=repeater_enable
+
+load_rc_config $name
+
+repeater_enable=${repeater_enable:-"NO"}
+repeater_log=${repeater_log:-"/var/log/repeater.log"}
+command=%%PREFIX%%/sbin/repeater
+start_precmd="echo Starting ${name}."
+start_cmd="daemon ${command} %%PREFIX%%/etc/uvncrepeater.ini > ${repeater_log} 2>&1"
+
+run_rc_command "$1"

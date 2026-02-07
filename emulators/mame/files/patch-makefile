@@ -1,0 +1,51 @@
+ Remove redefinitions of toolchain, and hardcoded optimisations. Replace GENie
+ build target with devel/genie binary. Add Clang ARM64 support.
+
+--- makefile.orig	2025-09-24 14:56:11 UTC
++++ makefile
+@@ -430,9 +430,9 @@ ifneq ($(TARGETOS),asmjs)
+ endif
+ 
+ ifneq ($(TARGETOS),asmjs)
+-CC := $(SILENT)gcc
+-LD := $(SILENT)g++
+-CXX:= $(SILENT)g++
++CC ?= $(SILENT)gcc
++LD ?= $(SILENT)g++
++CXX ?= $(SILENT)g++
+ endif
+ 
+ #-------------------------------------------------
+@@ -578,11 +578,6 @@ endif
+ SYMBOLS = 1
+ endif
+ 
+-# specify a default optimization level if none explicitly stated
+-ifndef OPTIMIZE
+-OPTIMIZE = 3
+-endif
+-
+ # set the symbols level
+ ifdef SYMBOLS
+ PARAMS += --SYMBOLS='$(SYMBOLS)'
+@@ -1042,7 +1037,7 @@ endif
+ NEW_GIT_VERSION := unknown
+ endif
+ 
+-GENIE := 3rdparty/genie/bin/$(GENIEOS)/genie$(EXE)
++GENIE := %%GENIE_PREFIX%%genie
+ 
+ ifeq ($(TARGET),$(SUBTARGET_FULL))
+ FULLTARGET := $(TARGET)
+@@ -1376,6 +1371,11 @@ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: make
+ 
+ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: makefile $(SCRIPTS) $(GENIE)
+ 	$(SILENT) $(GENIE) $(PARAMS) $(TARGET_PARAMS) --gcc=freebsd-clang --gcc_version=$(CLANG_VERSION) $(MAKETYPE)
++
++.PHONY: freebsd_arm64_clang
++freebsd_arm64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile
++	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64 precompile
++	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64
+ 
+ .PHONY: freebsd_x64_clang
+ freebsd_x64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile

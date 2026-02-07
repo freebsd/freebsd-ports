@@ -1,0 +1,20 @@
+[
+{ type: upgrade
+  maximum_version: 0.18.1_4
+  message: <<EOM
+SDDM user's home directory have been moved to /var/lib/sddm. It is advised to run
+following commands as root:
+# pw usermod -n sddm -d /var/lib/sddm
+# pwd_mkdb /etc/master.passwd
+# mv /usr/local/etc/sddm/home/state.conf /var/lib/sddm/state.conf
+# rm -rf /usr/local/etc/sddm/home
+EOM
+}
+{ type: install
+  message: <<EOM
+SDDM lists a "user session" which needs either an .xinitrc in the user's
+home directory, or as a fallback, xterm. In order to use the "user session"
+feature, a ~/.xinitrc is recommended.
+EOM
+}
+]

@@ -1,0 +1,11 @@
+--- third_party/kineto/libkineto/CMakeLists.txt.orig	2024-04-24 18:15:39 UTC
++++ third_party/kineto/libkineto/CMakeLists.txt
+@@ -111,7 +111,7 @@ target_compile_options(kineto_api PRIVATE "${KINETO_CO
+ target_compile_options(kineto_base PRIVATE "${KINETO_COMPILE_OPTIONS}")
+ target_compile_options(kineto_api PRIVATE "${KINETO_COMPILE_OPTIONS}")
+ 
+-if(NOT TARGET fmt)
++if(NOT TARGET fmt::fmt)
+   if(NOT FMT_SOURCE_DIR)
+     set(FMT_SOURCE_DIR "${LIBKINETO_THIRDPARTY_DIR}/fmt"
+       CACHE STRING "fmt source directory from submodules")

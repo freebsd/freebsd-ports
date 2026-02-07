@@ -1,0 +1,4 @@
+LuaSocket is a Lua extension library composed of two parts:
+- a set of C modules that provide support for the TCP and UDP transport layers
+- a set of Lua modules that provide functions commonly needed by applications
+  that deal with the Internet.

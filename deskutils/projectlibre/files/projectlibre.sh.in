@@ -1,0 +1,6 @@
+#!/bin/sh
+
+PROJECTLIBRE_HOME="%%DATADIR%%"
+export PROJECTLIBRE_HOME
+cd "%%DATADIR%%"
+exec "%%JAVA%%" -jar "$PROJECTLIBRE_HOME/projectlibre.jar" "$@"

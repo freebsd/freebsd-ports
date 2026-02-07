@@ -1,0 +1,76 @@
+#!/bin/sh
+set -eu
+
+PKGNAME="$1"
+MODE="$2" # PRE-INSTALL, POST-INSTALL, DEINSTALL, POST-DEINSTALL
+
+case "$MODE" in
+POST-INSTALL)
+	#
+	# install configuration file and update config files from
+	# old "ext4dev" to current "ext4" name.
+	#
+	if test -s ${PKG_PREFIX}/etc/mke2fs.conf; then
+		if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+				${PKG_PREFIX}/etc/mke2fs.conf; then
+			true
+		else
+			rc=0
+			grep -q ext4dev ${PKG_PREFIX}/etc/mke2fs.conf || rc=$?
+			# !!! the echo messages below deliberately contain spacing errors
+			# so that the file names can be double-clicked in a typical console
+			# window for copying and pasting without keen targeting with the mouse.
+			case $rc in
+			1) # ext4dev not found (old name)
+				cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+					${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-new
+				echo "==========================================================================="
+				echo "Warning: installing mke2fs.conf in ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-new"
+				echo "Check to see if you need to update your ${PKG_PREFIX}/etc/mke2fs.conf ."
+				echo "==========================================================================="
+				;;
+			0) # ext4dev found (old name)
+				mv ${PKG_PREFIX}/etc/mke2fs.conf \
+					 ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old
+				cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+					${PKG_PREFIX}/etc/mke2fs.conf
+				echo "==========================================================================="
+				echo "Your mke2fs.conf is too old.  Backing up old version in"
+				echo "${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old .  Please check to see"
+				echo "if you have any local customizations that you wish to preserve."
+				echo "==========================================================================="
+				;;
+			*) # grep failed
+				exit $rc
+				;;
+			esac
+		fi
+	else
+		# missing -> install
+		cp -p   ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+			${PKG_PREFIX}/etc/mke2fs.conf
+	fi
+
+	;;
+DEINSTALL)
+	# !!! the echo messages below deliberately contain spacing errors
+	# so that the file names can be double-clicked in a typical console
+	# window for copying and pasting without keen targeting with the mouse.
+	if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf \
+		${PKG_PREFIX}/etc/mke2fs.conf.dist
+	then
+		rm -f ${PKG_PREFIX}/etc/mke2fs.conf
+	elif [ "_${PKG_UPGRADE-upgrade}" = _upgrade ] ; then
+		echo "If and only if you are deleting e2fsprogs forever,"
+		echo "remember to delete ${PKG_PREFIX}/etc/mke2fs.conf ."
+	fi
+	# e2fsck.conf is no longer part of the distribution, but still supported,
+	# => no pkg-list @sample line possible
+	#    and no reference e2fsck.conf.sample or e2fsck.conf.dist is available 
+	if test -f ${PKG_PREFIX}/etc/e2fsck.conf -a "_${PKG_UPGRADE-upgrade}" = _upgrade
+	then
+		echo "If and only if you are deleting e2fsprogs forever,"
+		echo "remember to delete ${PKG_PREFIX}/etc/e2fsck.conf ."
+	fi
+	;;
+esac

@@ -1,0 +1,17 @@
+PSSH provides parallel versions of OpenSSH and related tools, including:
+
+ - Parallel ssh (pssh)
+ - Parallel scp (pscp)
+ - Parallel rsync (prsync)
+ - Parallel nuke (pnuke)
+ - Parallel slurp (pslurp)
+
+The project includes psshlib which can be used within custom applications.
+The source code is written in Python 3.5+.
+
+The original PSSH project was written and maintained by Brent N. Chun.
+Due to his busy schedule, Brent handed over maintenance to Andrew McNabb
+in October 2009. PSSH hasn't got any updates since 2014.
+
+This package is a fork by 'lilydjwg' github user.
+It seems the most live fork that has been accumulating fixes past years.

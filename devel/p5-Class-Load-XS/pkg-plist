@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Class/Load/XS.pm
+%%SITE_ARCH%%/auto/Class/Load/XS/XS.so
+%%PERL5_MAN3%%/Class::Load::XS.3.gz

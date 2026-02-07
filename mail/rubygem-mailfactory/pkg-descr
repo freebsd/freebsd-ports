@@ -1,0 +1,2 @@
+A ruby module that allows for the simple creation of MIME email messages
+with multiple body parts and attachments

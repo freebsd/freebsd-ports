@@ -1,0 +1,9 @@
+Config::Tiny is a perl class to read and write .ini style configuration
+files with as little code as possible, reducing load time and memory
+overhead.  Memory usage is normally scoffed at in Perl, but in my
+opinion should be at least kept in mind.
+
+This module is primarily for reading human written files, and anything
+we write shouldn't need to have documentation/comments.  If you need
+something with more power, move up to Config::Simple, Config::General or
+one of the many other Config:: modules.

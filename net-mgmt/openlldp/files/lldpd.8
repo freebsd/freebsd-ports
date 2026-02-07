@@ -1,0 +1,62 @@
+.Dd May 27, 2007
+.Dt lldpd 8
+.Sh NAME
+.Nm lldpd
+.Nd Send Link Layer Discovery Protocol packets over ethernet.
+.Sh SYNOPSIS
+.Nm lldpd
+.Op Fl c
+.Op Fl i Ar interface
+.Op Fl d 
+.Op Fl f 
+.Op Fl s 
+.Sh DESCRIPTION
+The 
+.Nm
+utiliy used to generate Link Layer Discovery Protocol packets and
+send them over ethernet.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl c 
+Use the config file <path> instead of the default.
+.It Fl i Ar interface
+set interface, over that packets will be sent
+.It Fl d 
+Set debug verbosity
+
+<debug_level> can be any of : 
+       A : Enable ALL debug flags.
+       c : Enable CONFIG debug flag.
+       s : Enable STATE debug flag.
+       t : Enable TLV debug flag.
+       i : Enable INT debug flag.
+       n : Enable SNMP debug flag.
+       x : Enable EXCESSIVE debug flag.
+.It Fl f
+Run in forground mode
+.It Fl s
+Remove the existing control socket if found (Should only be used in system init scripts!)
+.El
+.Sh DIAGNOSTICS
+When everything is ok, 
+and 
+.Nm
+program is started with (default) daemon mode, it justs
+daemonises with return code 0. 
+In case of errors they are printed to stderr and program exists
+with non-zero status. Most errors caused by the fact that
+the 
+.Nm
+needs access to /dev/bpf*, so it must be started by root, and
+Berkeley Packet Filter must be enabled in kernel (by adding 
+.Sy pseudo-device bpf
+into kernel configuration).
+.Sh SEE ALSO
+.Sy http://www.lldp.org/
+for information about Link Layer Discovery Protocol.
+.Sy http://www.tcpdump.org/
+- tcpdump home page.
+.Sh AUTHOR
+OpenLLDP
+http://openlldp.sourceforge.net/

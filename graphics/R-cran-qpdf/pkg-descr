@@ -1,0 +1,7 @@
+Content-preserving transformations of PDF files such as split, combine, and
+compress.
+This package interfaces directly to the 'qpdf' C++ library
+<https://qpdf.sourceforge.io/> and does not require any command line
+utilities.
+Note that 'qpdf' does not read actual content from PDF files: to extract text
+and data you need the 'pdftools' package.

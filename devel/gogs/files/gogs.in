@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd %%PREFIX%%/libexec/%%PORTNAME%% &&
+USER=%%GOGS_USER%% \
+HOME=$(echo ~%%GOGS_USER%%) \
+su -m %%GOGS_USER%% -c './%%PORTNAME%% web --config %%ETCDIR%%/conf/app.ini'

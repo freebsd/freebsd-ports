@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-11-08 08:05:45 UTC
++++ Makefile
+@@ -22,7 +22,7 @@ RW ?= robtk/
+ ###############################################################################
+ 
+ MACHINE=$(shell uname -m)
+-ifneq (,$(findstring x64,$(MACHINE)))
++ifneq (,$(findstring amd64,$(MACHINE)))
+   HAVE_SSE=yes
+ endif
+ ifneq (,$(findstring 86,$(MACHINE)))

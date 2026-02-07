@@ -1,0 +1,6 @@
+usr/lib64/libshaderc_shared.so.1
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+usr/share/licenses/libshaderc/LICENSE

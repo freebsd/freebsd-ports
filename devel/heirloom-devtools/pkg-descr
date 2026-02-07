@@ -1,0 +1,5 @@
+The Heirloom Development Tools package provides yacc, lex, m4, make,
+and SCCS as portable derivatives of the utilities released by Sun
+as part of OpenSolaris.  The OpenSolaris utilities were in turn
+derived from the original Unix versions, and are assumed be conforming
+implementations of the POSIX standard.

@@ -1,0 +1,15 @@
+hp2xx reads HPGL ASCII source files, interprets them, and
+converts them into either another vector-oriented format
+or one of several rasterfile formats. Currently, its HPGL
+parser recognizes a subset of the HP 7550A command set.
+Some high-level functions like filled polygons are missing
+Also, only the basic fixed character set 0 is supported
+Besides these limitations, hp2xx has proven to work with
+many HP-GL sources without any trouble.
+
+It allows conversion from HPGL to:
+
+	mf (MetaFont), eps (PostScript), pcl (HP-PCL Level3),
+	pre(view), pcx (PaintBrush-Format), img (GEM),
+        pic (ATARI bitmap), pbm (Portable Bitmap),
+	png (Portable Network Graphics), ...

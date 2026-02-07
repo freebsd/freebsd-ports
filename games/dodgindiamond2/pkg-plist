@@ -1,0 +1,20 @@
+@(,games,2755) bin/dd2
+@sample(,games,664) /var/games/dd2-hiscore.sample
+@sample etc/dd2.cfg.sample
+%%DATADIR%%/bgm1.xm
+%%DATADIR%%/bgm2.xm
+%%DATADIR%%/efx1.wav
+%%DATADIR%%/efx2.wav
+%%DATADIR%%/efx3.wav
+%%DATADIR%%/efx4.wav
+%%DATADIR%%/efx5.wav
+%%DATADIR%%/efx6.wav
+%%DATADIR%%/efx7.wav
+%%DATADIR%%/efx8.wav
+%%DATADIR%%/game.act
+%%DATADIR%%/gfx.bmp
+%%PORTDOCS%%share/doc/dd2/AUTHORS
+%%PORTDOCS%%share/doc/dd2/ChangeLog
+%%PORTDOCS%%share/doc/dd2/NEWS
+%%PORTDOCS%%share/doc/dd2/README
+%%PORTDOCS%%share/doc/dd2/TODO

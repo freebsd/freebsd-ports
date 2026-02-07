@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2019-12-04 04:46:17 UTC
++++ src/CMakeLists.txt
+@@ -195,7 +195,7 @@ target_link_libraries(btorimc boolector)
+ #-----------------------------------------------------------------------------#
+ # Static binaries
+ 
+-if(NOT BUILD_SHARED_LIBS AND NOT APPLE)
++if(NOT BUILD_SHARED_LIBS AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+   set(BTOR_STATIC_FLAGS "-static")
+   set(STATIC_TARGETS boolector-bin btormc btoruntrace btorimc)
+ 

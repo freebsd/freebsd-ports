@@ -1,0 +1,2 @@
+Elasticsearch::Persistence is the persistence layer for Ruby domain objects in
+Elasticsearch, using the Repository pattern.

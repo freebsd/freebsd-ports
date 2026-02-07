@@ -1,0 +1,15 @@
+bin/ppower4
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/leveldemo.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.5
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.6
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.7
+%%JAR_DIR%%/pp4p.jar
+%%STY_DIR%%/pause.sty
+%%STY_DIR%%/background.sty
+%%STY_DIR%%/pp4link.sty
+%%STY_DIR%%/mpmulti.sty

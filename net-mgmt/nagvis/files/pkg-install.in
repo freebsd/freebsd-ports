@@ -1,0 +1,89 @@
+#!/bin/sh
+#-*- mode: makefile; tab-width: 4; -*-
+# ex:ts=4
+
+# Set strict file and directory permissions.
+# Idea taken from nagvis install.sh
+# 2010-12-30 olli hauer
+
+OWNER=%%WWW_OWNER%%:%%WWW_GROUP%%
+DIRMODE=%%DIRMODE%%
+FILEMODE=%%FILEMODE%%
+
+set_perm() {
+	# create missing directories
+	[ "${2#${2%?}}" != '*' ] && /bin/mkdir -p ${2}
+
+	if [ -d "$2" -o -f "$2" -o "${2#${2%?}}" = '*' ]; then
+		# Don't do anything when called with globbing and directory is empty
+		if [ "${2#${2%?}}" = '*' -a -z "$(/bin/ls "${2%/*}/")" ]; then
+			return 0
+		else
+			if [ -z $3 ]; then
+#				echo "chown -R $OWNER $2"
+				chown -R $OWNER $2
+			else
+#			    echo "chown $OWNER $2"
+			    chown $OWNER $2
+
+			fi
+#			echo "chmod $1 $2"
+			chmod $1 $2
+		fi
+	fi
+}
+
+# handle single files
+set_file_perm() {
+#	echo "chown $OWNER $2"
+	chown $OWNER $2
+
+#	echo "chmod $1 $2"
+	chmod $1 $2
+}
+
+# fix directory owner if installed via package
+if [ "$2" = "POST-INSTALL" ]; then
+
+	# honor PREFIX if installed from package
+	if [ ! -z $PKG_PREFIX ]; then
+		NAGVIS_PATH=${PKG_PREFIX%/}/www/nagvis
+	else
+		NAGVIS_PATH=%%WWWDIR%%
+	fi
+
+	echo "==========================================================="
+	echo "Set access rights on ${NAGVIS_PATH} ..."
+
+	# Set more strict access rights for save keeping. There is no need
+	# to grant WWW_OWNER:WWW_GROUP general ownership and write permission.
+	chown root:%%WWW_GROUP%% "$NAGVIS_PATH"
+	chmod $DIRMODE "$NAGVIS_PATH"
+
+	# from nagvis source install.sh (with some modifications)
+	set_perm $DIRMODE  "$NAGVIS_PATH/etc" non_recursive
+	set_perm $DIRMODE  "$NAGVIS_PATH/etc/automaps"
+	set_perm $FILEMODE "$NAGVIS_PATH/etc/automaps/*"
+	set_perm $DIRMODE  "$NAGVIS_PATH/etc/geomap"
+	set_perm $FILEMODE "$NAGVIS_PATH/etc/geomap/*"
+	set_perm $DIRMODE  "$NAGVIS_PATH/etc/maps"
+	set_perm $FILEMODE "$NAGVIS_PATH/etc/maps/*"
+
+	set_perm $DIRMODE  "$NAGVIS_PATH/share/userfiles/images/maps"
+	set_perm $FILEMODE "$NAGVIS_PATH/share/userfiles/images/maps/*"
+	set_perm $DIRMODE  "$NAGVIS_PATH/share/userfiles/images/shapes"
+	set_perm $FILEMODE "$NAGVIS_PATH/share/userfiles/images/shapes/*"
+	set_perm $DIRMODE  "$NAGVIS_PATH/var"
+	set_perm $FILEMODE "$NAGVIS_PATH/var/*"
+	set_perm $DIRMODE  "$NAGVIS_PATH/var/tmpl"
+	set_perm $DIRMODE  "$NAGVIS_PATH/var/tmpl/cache"
+	set_perm $DIRMODE  "$NAGVIS_PATH/var/tmpl/compile"
+	set_perm $DIRMODE  "$NAGVIS_PATH/share/var"
+	set_perm $FILEMODE "$NAGVIS_PATH/share/var/*"
+
+	# some additional file permission adjustments
+	set_file_perm $FILEMODE "$NAGVIS_PATH/etc/nagvis.ini.*"
+	[ -f "$NAGVIS_PATH/etc/auth.db" ] && set_file_perm $FILEMODE "$NAGVIS_PATH/etc/auth.db"
+
+	echo "==========================================================="
+fi

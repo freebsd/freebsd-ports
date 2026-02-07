@@ -1,0 +1,3 @@
+starfetch is a tool that prints out a scheme of a given constellation
+and some information about it: its quadrant, its right ascension,
+its declination, its area and its main stars number.

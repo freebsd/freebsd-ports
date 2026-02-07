@@ -1,0 +1,37 @@
+# Ignore leading whitespace in .cvsrc files. Closes: #212415. Thanks
+# to James R. Van Zandt for the patch.
+diff -Nur src/cvsrc.c src/cvsrc.c
+--- src/cvsrc.c	2005-03-16 23:52:14.000000000 +0800
++++ src/cvsrc.c	2006-02-26 18:25:18.000000000 +0800
+@@ -41,6 +41,7 @@
+     size_t line_chars_allocated;
+ 
+     char *optstart;
++    int white_len;
+ 
+     int command_len;
+     int found = 0;
+@@ -96,9 +97,12 @@
+ 	if (line[0] == '#')
+ 	    continue;
+ 
++    for (white_len=0; isspace(line[white_len]); white_len++)
++        ;
++
+ 	/* stop if we match the current command */
+-	if (!strncmp (line, cmdname, command_len)
+-	    && isspace ((unsigned char) *(line + command_len)))
++	if (!strncmp (line + white_len, cmdname, command_len)
++	    && isspace ((unsigned char) *(line + white_len + command_len)))
+ 	{
+ 	    found = 1;
+ 	    break;
+@@ -120,7 +124,7 @@
+     if (found)
+     {
+ 	/* skip over command in the options line */
+-	for (optstart = strtok (line + command_len, "\t \n");
++	for (optstart = strtok (line + white_len + command_len, "\t \n");
+ 	     optstart;
+ 	     optstart = strtok (NULL, "\t \n"))
+ 	{

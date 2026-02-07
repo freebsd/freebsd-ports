@@ -1,0 +1,34 @@
+--- CMakeLists.txt.orig	2021-06-06 05:46:00 UTC
++++ CMakeLists.txt
+@@ -9,7 +9,8 @@ endif()
+ PROJECT(osm2pgrouting)
+ 
+ LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+-SET(SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/osm2pgrouting")
++SET(DOC_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/osm2pgrouting")
++SET(ETC_DIR "${CMAKE_INSTALL_PREFIX}/etc/osm2pgrouting")
+ 
+ find_package(PostgreSQL REQUIRED)
+ find_package(PQXX REQUIRED)
+@@ -92,14 +93,15 @@ if(WIN32)
+ endif()
+ 
+ INSTALL(FILES
+-    "${CMAKE_SOURCE_DIR}/COPYING"
+     "${CMAKE_SOURCE_DIR}/README.md"
+-    "${CMAKE_SOURCE_DIR}/mapconfig.xml"
+-    "${CMAKE_SOURCE_DIR}/mapconfig_for_cars.xml"
+-    "${CMAKE_SOURCE_DIR}/mapconfig_for_bicycles.xml"
+-    "${CMAKE_SOURCE_DIR}/mapconfig_for_pedestrian.xml"
+-    DESTINATION "${SHARE_DIR}")
++    DESTINATION "${DOC_DIR}")
+ 
++FOREACH(i mapconfig.xml mapconfig_for_cars.xml mapconfig_for_bicycles.xml mapconfig_for_pedestrian.xml)
++    INSTALL(FILES
++        "${CMAKE_SOURCE_DIR}/${i}"
++        RENAME ${i}.sample
++        DESTINATION "${ETC_DIR}")
++ENDFOREACH()
+ 
+ #INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+ #TARGET_LINK_LIBRARIES( osm2pgrouting ${Boost_LIBRARIES} )

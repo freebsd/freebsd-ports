@@ -1,0 +1,11 @@
+--- metamail/Makefile.orig	1993-08-01 21:04:53 UTC
++++ metamail/Makefile
+@@ -45,7 +45,7 @@ mmencode: mmencode.o codes.o
+ 
+ mailto: mailto.o codes.o shared.o
+ 	rm -f mailto
+-	$(CC) $(LOCALCFLAGS) -o mailto  mailto.o  codes.o shared.o -ltermcap $(LDLIBS)
++	$(CC) $(LOCALCFLAGS) -o mailto  mailto.o  codes.o shared.o -lncurses $(LDLIBS)
+ 
+ splitmail: splitmail.o shared.o
+ 	rm -f splitmail

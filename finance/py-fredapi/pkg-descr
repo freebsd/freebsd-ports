@@ -1,0 +1,4 @@
+fredapi is a Python API for the FRED data provided by the Federal Reserve Bank
+of St. Louis. fredapi provides a wrapper in python to the FRED web service,
+and also provides several convenient methods for parsing and analyzing
+point-in-time data (i.e. historic data revisions) from ALFRED.

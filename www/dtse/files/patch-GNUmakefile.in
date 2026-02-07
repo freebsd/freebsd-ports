@@ -1,0 +1,26 @@
+--- ./GNUmakefile.in.orig	2013-11-24 15:43:48.000000000 -0800
++++ ./GNUmakefile.in	2013-11-24 15:43:56.000000000 -0800
+@@ -40,16 +40,16 @@
+ -include ${cxxdep}
+ 
+ install: installdirs
+-	${INSTALL_DATA} LICENSE LICENSE.html ${prefix}
+-	${INSTALL_DATA} README README.html osi-certified-90x75.png ${prefix}
+-	${INSTALL_PROGRAM} ${exe} ${bindir}
+-	${INSTALL_SCRIPT} search.cgi ${prefix}/http
+-	${INSTALL_DATA} dtse_pb.png ${prefix}/http
++	${INSTALL_DATA} LICENSE LICENSE.html ${DESTDIR}${prefix}
++	${INSTALL_DATA} README README.html osi-certified-90x75.png ${DESTDIR}${prefix}
++	${INSTALL_PROGRAM} ${exe} ${DESTDIR}${bindir}
++	${INSTALL_SCRIPT} search.cgi ${DESTDIR}${prefix}/http
++	${INSTALL_DATA} dtse_pb.png ${DESTDIR}${prefix}/http
+ 	${INSTALL_DATA} header.html body.html footer.html notfound.html \
+-		pages.html ${prefix}/data
++		pages.html ${DESTDIR}${prefix}/data
+ 
+ installdirs: mkinstalldirs
+-	./mkinstalldirs ${bindir} ${prefix}/http ${prefix}/data
++	./mkinstalldirs ${DESTDIR}${bindir} ${DESTDIR}${prefix}/http ${DESTDIR}${prefix}/data
+ 
+ clean:
+ 	-rm -rf object ${exe} core $(patsubst %, %.core, ${exe}) $(patsubst %, \

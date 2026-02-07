@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/collection/90c2efaa-8205-480d-8bb6-61d90dbaf81b.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/90c2efaa-8205-480d-8bb6-61d90dbaf81b.yml
+@@ -27,7 +27,7 @@
+             - source: host.file.path
+               edge: has_extension
+               target: file.sensitive.extension
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           find / -name '*.#{file.sensitive.extension}' -type f -not -path '*/\.*' -size -500k 2>/dev/null | head -5

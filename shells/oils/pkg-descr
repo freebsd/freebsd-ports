@@ -1,0 +1,4 @@
+Oils is our upgrade path from bash to a better language and runtime.
+
+* OSH runs your existing shell scripts.
+* YSH is for Python and JavaScript users who avoid shell.

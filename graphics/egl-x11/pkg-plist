@@ -1,0 +1,8 @@
+lib/libnvidia-egl-xcb.so
+lib/libnvidia-egl-xcb.so.1
+lib/libnvidia-egl-xcb.so.%%SHLIB_VERSION%%
+lib/libnvidia-egl-xlib.so
+lib/libnvidia-egl-xlib.so.1
+lib/libnvidia-egl-xlib.so.%%SHLIB_VERSION%%
+share/egl/egl_external_platform.d/20_nvidia_xcb.json
+share/egl/egl_external_platform.d/20_nvidia_xlib.json

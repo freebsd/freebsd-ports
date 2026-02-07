@@ -1,0 +1,2 @@
+Provides File::Find::Rule methods for finding various Perl-related
+files.

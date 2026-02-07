@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/match/simple/XS/XS.so
+%%SITE_ARCH%%/match/simple/XS.pm
+%%PERL5_MAN3%%/match::simple::XS.3.gz

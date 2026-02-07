@@ -1,0 +1,11 @@
+--- blitz/generate/Makefile.in.orig	2017-10-02 16:04:43 UTC
++++ blitz/generate/Makefile.in
+@@ -619,7 +619,7 @@ uninstall-am:
+ 
+ 
+ $(top_srcdir)/blitz/array/stencil-classes.cc: genstencils.py
+-	python $< $@
++	$(FREEBSD_PYTHON_CMD) $< $@
+ 
+ generate-headers: $(top_srcdir)/blitz/array/stencil-classes.cc
+ 

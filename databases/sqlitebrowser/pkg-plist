@@ -1,0 +1,5 @@
+bin/sqlitebrowser
+share/applications/sqlitebrowser.desktop
+share/icons/hicolor/256x256/apps/sqlitebrowser.png
+share/icons/hicolor/scalable/apps/sqlitebrowser.svg
+share/metainfo/sqlitebrowser.desktop.appdata.xml

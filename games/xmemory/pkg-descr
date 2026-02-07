@@ -1,0 +1,6 @@
+XMemory is a multi player memory game. It can be played simultaneously on
+several X Displays, which have to be listed on the command-line. Like in
+the traditional memory game, the players have to find similar tiles on the
+table to get the tiles. The main difference to this game is, that the
+players really play simultaneous and therefor the whole game gets
+some kind of an action game.

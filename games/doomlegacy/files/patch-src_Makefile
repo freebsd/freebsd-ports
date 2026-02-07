@@ -1,0 +1,38 @@
+--- src/Makefile.orig	2023-12-28 23:33:46 UTC
++++ src/Makefile
+@@ -613,8 +613,10 @@ endif
+ OPTINC:=
+ INSTALL_SUPPL:=
+ 
+-CFLAGS:=
++#CFLAGS:=
+ # Machine architecture.
++# (Ab)using ARCH is very bad idea and can easily break things!
++override undefine ARCH
+ ifdef ARCH
+   # if does not have leading -march, -mcpu, -mtune, or similar.
+   ifeq ($(filter -march% -mcpu% -mtune% -m%, $(strip $(ARCH))),)
+@@ -1260,8 +1262,7 @@ ifdef CDMUS
+ endif
+ 
+ # LIBZIP
+-# For now, Linux only.
+-ifeq ($(OS), LINUX)
++ifneq ($(filter LINUX FREEBSD,$(OS)),)
+   ifdef HAVE_DLOPEN
+     LIBS+=-ldl
+     OPTS+=-DHAVE_DLOPEN
+@@ -1317,11 +1318,11 @@ ifdef DEBUG
+ else
+ # build a normal optimized version
+   #CFLAGS+=-O3
+-  CFLAGS+=$(OPTLEV) -fomit-frame-pointer
++  #CFLAGS+=$(OPTLEV) -fomit-frame-pointer
+ endif
+ endif
+ 
+-CFLAGS+=-ffast-math -fno-strict-aliasing
++#CFLAGS+=-ffast-math -fno-strict-aliasing
+ # WIN98 linking needs LCFLAGS without -D flags and does not need includes
+ LCFLAGS:=$(CFLAGS)
+ CFLAGS+=$(OPTS) $(OPTINC)

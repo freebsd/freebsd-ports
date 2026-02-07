@@ -1,0 +1,15 @@
+bin/srt-ffplay
+bin/srt-file-transmit
+bin/srt-live-transmit
+bin/srt-tunnel
+include/srt/access_control.h
+include/srt/logging_api.h
+include/srt/platform_sys.h
+include/srt/srt.h
+include/srt/udt.h
+include/srt/version.h
+lib/libsrt.so
+lib/libsrt.so.1.5
+lib/libsrt.so.1.5.4
+libdata/pkgconfig/haisrt.pc
+libdata/pkgconfig/srt.pc

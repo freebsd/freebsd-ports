@@ -1,0 +1,4 @@
+Qt Quick 3D Physics provides a high-level API for physics simulation. It
+supports simulating interactive rigid bodies as well as static meshes and
+non-colliding bodies used for detecting overlaps. Every simulated body
+can have its own physical properties like mass, density and friction.

@@ -1,0 +1,14 @@
+bin/aprsd
+bin/aprspass
+etc/aprsd/INIT.TNC.samp
+etc/aprsd/RESTORE.TNC.samp
+etc/aprsd/aprsd.conf.samp
+etc/aprsd/user.deny.samp
+etc/aprsd/welcome.txt.samp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkaprsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp_example
+%%PORTDOCS%%%%DOCSDIR%%/aprsddoc.html
+%%PORTDOCS%%%%DOCSDIR%%/ports.html
+%%PORTDOCS%%%%DOCSDIR%%/q.html
+%%PORTDOCS%%%%DOCSDIR%%/qalgorithm.html
+@dir /var/log/aprsd

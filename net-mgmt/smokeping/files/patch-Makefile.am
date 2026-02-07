@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2019-01-30 16:17:01 UTC
++++ Makefile.am
+@@ -16,6 +16,6 @@
+ 
+ AUTOMAKE_OPTIONS =  foreign
+ 
+-SUBDIRS = lib thirdparty bin doc etc htdocs
++SUBDIRS = doc etc htdocs lib bin
+ 
+ EXTRA_DIST = COPYRIGHT CHANGES CONTRIBUTORS LICENSE PERL_MODULES

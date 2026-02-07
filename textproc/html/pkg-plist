@@ -1,0 +1,24 @@
+share/sgml/html/2.0/html.decl
+share/sgml/html/2.0/html.dtd
+share/sgml/html/2.0/html-1.dtd
+share/sgml/html/2.0/html-s.dtd
+share/sgml/html/2.0/html-1s.dtd
+share/sgml/html/2.0/ISOlat1.sgml
+share/sgml/html/3.2/HTML32.decl
+share/sgml/html/3.2/HTML32.dtd
+share/sgml/html/3.2/ISOlat1.ent
+share/sgml/html/4.0/HTML4.decl
+share/sgml/html/4.0/HTMLlat1.ent
+share/sgml/html/4.0/HTMLspecial.ent
+share/sgml/html/4.0/HTMLsymbol.ent
+share/sgml/html/4.0/frameset.dtd
+share/sgml/html/4.0/loose.dtd
+share/sgml/html/4.0/strict.dtd
+share/sgml/html/4.01/HTML4.decl
+share/sgml/html/4.01/HTMLlat1.ent
+share/sgml/html/4.01/HTMLspecial.ent
+share/sgml/html/4.01/HTMLsymbol.ent
+share/sgml/html/4.01/frameset.dtd
+share/sgml/html/4.01/loose.dtd
+share/sgml/html/4.01/strict.dtd
+@xmlcatmgr share/sgml/html/catalog

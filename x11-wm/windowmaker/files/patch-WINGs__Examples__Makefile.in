@@ -1,0 +1,19 @@
+--- WINGs/Examples/Makefile.in.orig	2020-08-13 06:26:57 UTC
++++ WINGs/Examples/Makefile.in
+@@ -359,14 +359,14 @@ top_srcdir = @top_srcdir@
+ wprefs_bindir = @wprefs_bindir@
+ wprefs_datadir = @wprefs_datadir@
+ AUTOMAKE_OPTIONS = 
+-LDADD = $(top_builddir)/WINGs/libWINGs.la $(top_builddir)/wrlib/libwraster.la \
++LDADD = $(top_builddir)/WINGs/libWINGs.la -lwraster \
+ 	$(top_builddir)/WINGs/libWUtil.la \
+ 	@XFT_LIBS@ @INTLIBS@ @XLIBS@
+ 
+ colorpick_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la
+ fontl_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la
+ puzzle_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la
+-AM_CPPFLAGS = -I$(top_srcdir)/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src \
++AM_CPPFLAGS = -I$(top_srcdir)/WINGs -I$(top_srcdir)/src \
+ 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@
+ 
+ all: all-am

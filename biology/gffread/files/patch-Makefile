@@ -1,0 +1,68 @@
+--- Makefile.orig	2021-07-23 14:21:36 UTC
++++ Makefile
+@@ -1,11 +1,11 @@
+-GCLDIR := $(if $(GCLDIR),$(GCLDIR),../gclib)
++GCLDIR := $(if $(GCLDIR),$(GCLDIR),gclib)
+ 
+ SEARCHDIRS := -I. -I${GCLDIR}
+ 
+ SYSTYPE :=     $(shell uname)
+ 
+ CXX   := $(if $(CXX),$(CXX),g++)
+-LINKER  := $(if $(LINKER),$(LINKER),g++)
++LINKER  := $(if $(LINKER),$(LINKER),${CXX})
+ 
+ LDFLAGS := $(if $(LDFLAGS),$(LDFLAGS),-g)
+ 
+@@ -15,7 +15,7 @@ BASEFLAGS  := -Wall -Wextra -std=c++11 ${SEARCHDIRS} -
+ 
+ GCCV8 := $(shell expr `${CXX} -dumpversion | cut -f1 -d.` \>= 8)
+ ifeq "$(GCCV8)" "1"
+- BASEFLAGS += -Wno-class-memaccess
++ # BASEFLAGS += -Wno-class-memaccess
+ endif
+ 
+ CXXFLAGS := $(if $(CXXFLAGS),$(BASEFLAGS) $(CXXFLAGS),$(BASEFLAGS))
+@@ -33,7 +33,7 @@ else #debug builds
+     LDFLAGS += -pg
+   else
+     #CXXFLAGS += -g -O0 -DNDEBUG
+-    CXXFLAGS += -g -O0 -DDEBUG -D_DEBUG -DGDEBUG
++    #CXXFLAGS += -g -O0 -DDEBUG -D_DEBUG -DGDEBUG
+   endif
+   ifneq (,$(filter %memcheck %memdebug, $(MAKECMDGOALS)))
+      #use sanitizer in gcc 4.9+
+@@ -79,11 +79,8 @@ OBJS := ${GCLDIR}/GBase.o ${GCLDIR}/GArgs.o ${GCLDIR}/
+  
+ .PHONY : all
+ 
+-all static release debug memcheck memdebug profile gprof prof: ../gclib gffread
++all static release debug memcheck memdebug profile gprof prof: ${GCLDIR} gffread
+ 
+-../gclib:
+-	git clone https://github.com/gpertea/gclib.git ../gclib
+-
+ $(OBJS) : $(GCLDIR)/GBase.h $(GCLDIR)/gff.h
+ gffread.o : gff_utils.h $(GCLDIR)/GBase.h $(GCLDIR)/gff.h
+ gff_utils.o : gff_utils.h $(GCLDIR)/gff.h
+@@ -97,9 +94,19 @@ gffread: $(OBJS) gffread.o
+ 
+ # target for removing all object files
+ 
+-.PHONY : clean
++.PHONY : clean install install-strip
++
+ clean:
+ 	@${RM} gffread gffread.o* gffread.exe $(OBJS)
+ 	@${RM} core.*
+ 
++INSTALL	?= install
++STRIP	?= strip
++PREFIX	?= /usr/local
++DESTDIR	?= .
+ 
++install:
++	${INSTALL} -c gffread ${DESTDIR}${PREFIX}/bin
++
++install-strip: install
++	${STRIP} ${DESTDIR}${PREFIX}/bin/gffread

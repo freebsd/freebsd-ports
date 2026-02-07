@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Dec 14 18:00:19 2003
++++ Makefile.in	Tue Dec 16 00:00:11 2003
+@@ -84,7 +84,7 @@
+ 
+ gltron_SOURCES = @top_srcdir@/src/gltron.c
+ 
+-gltron_LINK = $(CXX) -o $@
++gltron_LINK = $(CXX) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ gltron_LDADD = \
+ 	src/game/libgame.a \
+ 	src/input/libinput.a \

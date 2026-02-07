@@ -1,0 +1,10 @@
+A tool to control certain aspects of USB-connected headsets.
+
+Currently, support is provided for
+
+- Adjusting sidetone
+- Getting battery state
+- Controlling LEDs
+- Setting the inactive time.
+
+See the link below for which headset supports which feature.

@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# PROVIDE: couriergraph
+# REQUIRE: DAEMON
+# BEFORE: mail
+#
+# Add the following line to /etc/rc.conf to enable mailgraph:
+#
+# couriergraph_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=couriergraph
+rcvar=couriergraph_enable
+
+command=%%PREFIX%%/sbin/couriergraph.pl
+command_args='> /dev/null 2>&1'
+command_interpreter="%%PREFIX%%/bin/perl"
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+	rm -f $pidfile
+}
+
+couriergraph_enable=${couriergraph_enable:-"NO"}
+couriergraph_pidfile=${couriergraph_pidfile:-"%%DATADIR%%/couriergraph.pid"}
+couriergraph_flags=${couriergraph_flags:-"--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --daemon --daemon-pid=${couriergraph_pidfile}"}
+couriergraph_user=${couriergraph_user:-"%%COURIERGRAPH_USER%%"}
+couriergraph_group=${couriergraph_group:-"%%COURIERGRAPH_GROUP%%"}
+couriergraph_chdir=${couriergraph_chdir:-"%%DATADIR%%"}
+
+load_rc_config $name
+
+pidfile=${couriergraph_pidfile}
+
+run_rc_command "$1"

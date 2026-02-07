@@ -1,0 +1,2 @@
+Data::Object::Role::Pluggable provides a mechanism for dispatching to plugin
+classes.

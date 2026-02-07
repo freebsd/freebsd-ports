@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+Tinyauth is installed
+
+1) Configure it in %%PREFIX%%/etc/tinyauth.env
+
+2) Enable it with
+
+     sysrc tinyauth_enable=YES
+
+3) Start it with
+
+     service tinyauth start
+EOM
+}
+{ type: upgrade
+  maximum_version: "4.0.0"
+  message: <<EOM
+Since version 4.0.0, Tinyauth is a stateful application, which means you must set
+DATABASE_PATH to /var/db/tinyauth/tinyauth.db if you want sessions to persist even
+after restarting.
+
+Please refer to the current documentation for any changes you
+need to make to your configuration file:
+
+  https://tinyauth.app/docs/breaking-updates/3-to-4/
+EOM
+}
+]

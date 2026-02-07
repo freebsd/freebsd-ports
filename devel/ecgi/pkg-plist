@@ -1,0 +1,6 @@
+bin/html2h
+lib/libecgi.a
+lib/libecgi.so
+include/ecgi/ecgi.h
+include/ecgi/ecgitk.h
+include/ecgi/memfile.h

@@ -1,0 +1,3 @@
+syslogger is a software that send file into syslog (local or remote). This
+can be used for example to send a pipe like for example apache log into a
+remote system.

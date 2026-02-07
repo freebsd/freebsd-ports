@@ -1,0 +1,30 @@
+See bug-report:
+
+	https://core.tcl-lang.org/tcltls/tktview/539d25f105
+
+--- tls.c	2020-10-12 16:39:22.000000000 -0400
++++ tls.c	2023-11-19 21:30:03.357601000 -0500
+@@ -62,5 +62,5 @@
+ 			Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[]);
+ 
+-static SSL_CTX *CTX_Init(State *statePtr, int isServer, int proto, char *key,
++static SSL_CTX *CTX_Init(State *statePtr, int proto, char *key,
+ 			char *certfile, unsigned char *key_asn1, unsigned char *cert_asn1,
+ 			int key_asn1_len, int cert_asn1_len, char *CAdir, char *CAfile,
+@@ -897,5 +897,5 @@
+ 	ctx = ((State *)Tcl_GetChannelInstanceData(chan))->ctx;
+     } else {
+-	if ((ctx = CTX_Init(statePtr, server, proto, keyfile, certfile, key,
++	if ((ctx = CTX_Init(statePtr, proto, keyfile, certfile, key,
+     cert, key_len, cert_len, CAdir, CAfile, ciphers,
+     DHparams)) == (SSL_CTX*)0) {
+@@ -1067,8 +1067,7 @@
+ 
+ static SSL_CTX *
+-CTX_Init(statePtr, isServer, proto, keyfile, certfile, key, cert,
++CTX_Init(statePtr, proto, keyfile, certfile, key, cert,
+          key_len, cert_len, CAdir, CAfile, ciphers, DHparams)
+     State *statePtr;
+-    int isServer;
+     int proto;
+     char *keyfile;

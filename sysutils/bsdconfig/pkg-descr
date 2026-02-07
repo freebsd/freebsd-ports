@@ -1,0 +1,9 @@
+bsdconfig is a robust utility for configuring/managing various aspects of the
+FreeBSD Operating System. Feature-highlights include (but are not limited to):
+  - Modular, stable, efficient and i18n-compatible.
+  - Easily maintained/extendable sh(1) source/syntax.
+  - Works with both dialog(1) in base and Xdialog(1) from ports (x11/xdialog).
+  - Package management module loosely based on sysinstall but much improved.
+  - rc.conf(5) configuration/management based on sysutils/sysrc.
+  - Timezone configuration based on sysutils/tzdialog.
+  - Networking management based on sysutils/host-setup.

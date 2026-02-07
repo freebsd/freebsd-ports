@@ -1,0 +1,46 @@
+--- Makefile.OCaml.orig	2021-12-18 15:04:56 UTC
++++ Makefile.OCaml
+@@ -34,7 +34,11 @@ ifeq ($(shell uname),NetBSD)
+ else
+ ifeq ($(shell uname),NetBSD)
+   OSARCH=NetBSD
++else
++ifeq ($(shell uname),FreeBSD)
++  OSARCH=FreeBSD
+ endif
++endif
+ ifeq ($(shell uname),Linux)
+   OSARCH=Linux
+ endif
+@@ -301,6 +305,11 @@ endif
+ INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
+ endif
+ 
++ifeq ($(OSARCH),FreeBSD)
++-include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
++INCLFLAGS+=-I fsmonitor -I fsmonitor/linux
++endif
++
+ ifeq ($(OSARCH),solaris)
+ -include fsmonitor/solaris/Makefile src/fsmonitor/solaris/Makefile
+ INCLFLAGS+=-I fsmonitor -I fsmonitor/solaris
+@@ -427,6 +436,10 @@ win32rc/unison.res.lib: win32rc/unison.res
+ 	-$(RM) $@
+ 	ocamllex $<
+ 
++compat%.cmi: compat%.mli
++	@echo "$(CAMLC): $< ---> $@"
++	$(CAMLC) $(CAMLFLAGS) $(COMPATCAMLFLAGS) -c $(CWD)/$<
++
+ %.cmi : %.mli
+ 	@echo "$(CAMLC): $< ---> $@"
+ 	$(CAMLC) $(CAMLFLAGS) $(COMPATCAMLFLAGS) -c $(CWD)/$<
+@@ -451,7 +464,7 @@ compat%.cmx: compat%.ml
+ 
+ %.o %.obj: %.c
+ 	@echo "$(CAMLC): $< ---> $@"
+-	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CWD)/$<
++	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CFLAGS) $(CWD)/$<
+ 
+ $(NAME)$(EXEC_EXT): $(CAMLOBJS) $(COBJS)
+ 	@echo Linking $@

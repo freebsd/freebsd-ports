@@ -1,0 +1,45 @@
+--- data/Makefile.in	2011-11-13 11:20:00.000000000 +0300
++++ data/Makefile.in	2012-01-13 01:01:26.000000000 +0300
+@@ -340,7 +340,7 @@
+ INPUT_PAD_SOURCE_FILES = base.pad.in	\
+ 			  keyboard.pad.in	\
+ 			  japanese.pad.in	\
+-			  chinese.pad,in	\
++			  chinese.pad.in	\
+ 			  korean.pad.in		\
+ 			  arabian.pad.in	\
+ 			  ethiopic.pad.in	\
+@@ -358,7 +358,7 @@
+ 			  india_sinhala.pad.in	\
+ 			  india_syloti_nagri.pad.in	\
+ 			  india_tamil.pad.in	\
+-			  india_telugu.in	\
++			  india_telugu.pad.in	\
+ 			  armenian.pad.in	\
+ 			  balinese.pad.in	\
+ 			  buginese.pad.in	\
+@@ -380,6 +380,16 @@
+ 			  tai_le.pad.in		\
+ 			  thai.pad.in		\
+ 			  tibet.pad.in
++INPUT_PAD_DEST_FILES = base.pad keyboard.pad japanese.pad chinese.pad \
++	korean.pad arabian.pad ethiopic.pad india_bengali.pad india_chiki.pad \
++	india_devanagari.pad india_gujarati.pad india_gurmukhi.pad \
++	india_kannada.pad india_lepcha.pad india_limbu.pad india_malayalam.pad \
++	india_oriya.pad	india_saurashtra.pad india_sinhala.pad \
++	india_syloti_nagri.pad india_tamil.pad india_telugu.pad	armenian.pad \
++	balinese.pad buginese.pad cham.pad georgian.pad	hebrew.pad kaya.pad \
++	khmer.pad lao.pad myanmar.pad mongolian.pad philipine_buhid.pad	\
++	philipine_hanunoo.pad philipine_tagalog.pad russian.pad	tai_lue.pad \
++	rejang.pad sundanese.pad tai_le.pad thai.pad tibet.pad
+ 
+ scim_input_pad_datadir = @SCIM_INPUT_PAD_DATADIR@
+ scim_input_pad_data_DATA = $(INPUT_PAD_DEST_FILES)
+@@ -741,7 +751,6 @@
+ 	uninstall-scim_input_pad_dataDATA
+ 
+ 
+-*.pad:	*.pad.in	$(INTLTOOL_MERGE) $(top_srcdir)/po/*.po ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< ($)@'
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

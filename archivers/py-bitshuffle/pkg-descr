@@ -1,0 +1,23 @@
+Bitshuffle is an algorithm that rearranges typed, binary data for improving
+compression, as well as a python/C package that implements this algorithm within
+the Numpy framework.
+
+The library can be used along side HDF5 to compress and decompress datasets and
+is integrated through the dynamically loaded filters framework. Bitshuffle is
+HDF5 filter number 32008.
+
+Algorithmically, Bitshuffle is closely related to HDF5's Shuffle filter except
+it operates at the bit level instead of the byte level. Arranging a typed data
+array in to a matrix with the elements as the rows and the bits within the
+elements as the columns, Bitshuffle "transposes" the matrix, such that all the
+least-significant-bits are in a row, etc.
+
+This does not in itself compress data, only rearranges it for more efficient
+compression. To perform the actual compression you will need a compression
+library. Bitshuffle has been designed to be well matched to Marc Lehmann's LZF
+as well as LZ4 and ZSTD. Note that because Bitshuffle modifies the data at the
+bit level, sophisticated entropy reducing compression libraries such as GZIP and
+BZIP are unlikely to achieve significantly better compression than simpler and
+faster duplicate-string-elimination algorithms such as LZF, LZ4 and ZSTD.
+Bitshuffle thus includes routines (and HDF5 filter options) to apply LZ4 and
+ZSTD compression to each block after shuffling.

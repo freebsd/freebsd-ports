@@ -1,0 +1,4 @@
+%%SITE_PERL%%/IO/Async/SSL.pm
+%%SITE_PERL%%/IO/Async/SSLStream.pm
+%%PERL5_MAN3%%/IO::Async::SSL.3.gz
+%%PERL5_MAN3%%/IO::Async::SSLStream.3.gz

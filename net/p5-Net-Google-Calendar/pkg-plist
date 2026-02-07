@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Net/Google/Calendar.pm
+%%SITE_PERL%%/Net/Google/Calendar/Base.pm
+%%SITE_PERL%%/Net/Google/Calendar/Calendar.pm
+%%SITE_PERL%%/Net/Google/Calendar/Comments.pm
+%%SITE_PERL%%/Net/Google/Calendar/Entry.pm
+%%SITE_PERL%%/Net/Google/Calendar/FeedLink.pm
+%%SITE_PERL%%/Net/Google/Calendar/Person.pm
+%%SITE_PERL%%/Net/Google/Calendar/WebContent.pm
+%%PERL5_MAN3%%/Net::Google::Calendar.3.gz
+%%PERL5_MAN3%%/Net::Google::Calendar::Base.3.gz
+%%PERL5_MAN3%%/Net::Google::Calendar::Calendar.3.gz
+%%PERL5_MAN3%%/Net::Google::Calendar::Comments.3.gz
+%%PERL5_MAN3%%/Net::Google::Calendar::Entry.3.gz
+%%PERL5_MAN3%%/Net::Google::Calendar::FeedLink.3.gz
+%%PERL5_MAN3%%/Net::Google::Calendar::Person.3.gz
+%%PERL5_MAN3%%/Net::Google::Calendar::WebContent.3.gz

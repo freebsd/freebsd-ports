@@ -1,0 +1,3 @@
+ltablex modifies the tabularx environment to combine the features of the
+tabularx package (auto-sized columns in a fixed width table) with those
+of the longtable package (multi-page tables).

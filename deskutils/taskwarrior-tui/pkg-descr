@@ -1,0 +1,6 @@
+Taskwarrior-tui is an interactive interface in the terminal to use
+taskwarrior (an excellent CI task manager) more easily.
+
+Features include vim-like navigation; live filter updates; ability to
+add, delete, complete, log tasks; multiple selection; tab completion;
+and colors based on taskwarrior.

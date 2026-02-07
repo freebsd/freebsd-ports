@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-01-09 16:41:07 UTC
++++ pyproject.toml
+@@ -8,8 +8,7 @@ description = "Python 3 module for accessing LDAP dire
+ [project]
+ name = "bonsai"
+ description = "Python 3 module for accessing LDAP directory servers."
+-license = "MIT"
+-license-files = ["LICENSE"] 
++license = { file = "LICENSE" }
+ dynamic = ["version"]
+ authors = [{name = "noirello", email = "noirello@gmail.com"}]
+ requires-python = '>=3.9,<4.0'

@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2025-07-14 13:08:30 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=68", "cython>=0.28.4,<4", "toml"]
++requires = ["setuptools>=61", "cython>=0.28.4,<4", "toml"]
+ 
+ [project]
+ name = "thriftpy2"

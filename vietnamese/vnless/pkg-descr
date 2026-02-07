@@ -1,0 +1,12 @@
+A paginator similar to "more" or "pg", but much more powerful and speaks
+Vietnamese.
+
+VNless is a port of a very old version of GNU's less that suports the display
+of files written in the Vietnamese language using the VISCII (VIetnamese
+Standard Code for Information Interchange) encoding, RFC 1456.
+
+VNless should be run w/in a VNterm or simular terminal emulator supporting
+Vietnamese language encodings.
+
+David O'Brien
+obrien@cs.ucdavis.edu

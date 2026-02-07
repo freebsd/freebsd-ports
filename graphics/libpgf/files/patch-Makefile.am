@@ -1,0 +1,15 @@
+--- Makefile.am.orig	2015-08-06 23:49:54 UTC
++++ Makefile.am
+@@ -1,9 +1,9 @@
+ 
+ SUBDIRS = src include
+ 
+-if HAS_DOXYGEN
+-SUBDIRS += doc
+-endif
++#if HAS_DOXYGEN
++#SUBDIRS += doc
++#endif
+ 
+ PACKAGE		= @PACKAGE@
+ VERSION		= @VERSION@

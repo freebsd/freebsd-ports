@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+Kleene is a new tool and should be used for
+testing and experimentation purposes only.
+
+To use Kleened, enable it in rc.conf using
+
+  sysrc kleened_enable=YES
+
+Kleened requires certain services and kernel modules to be configured in order
+to work properly. Run
+
+  service kleened init
+
+to make Kleened automatically try and configure the host for you.
+Alternatively, run
+
+  service kleened dryinit
+
+to get an overview of what needs to be configured, without actually changing
+the host.
+
+NB. The %%ETCDIR%%/config.yaml file should be edited before running
+    'service kleened init' since some of the parameters are used during host
+    initialization.
+
+You can then start Kleened by running:
+
+  service kleened start
+EOM
+}
+]

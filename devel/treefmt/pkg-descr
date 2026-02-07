@@ -1,0 +1,12 @@
+treefmt - one CLI to format the code tree.
+
+When working on large code trees, it's common to have multiple code formatters
+run against it. And have one script that loops over all of them. treefmt makes
+that nicer.
+
+Features:
+* A unified CLI and output
+* Run all the formatters in parallel.
+* Cache which files have changed for super fast re-formatting.
+
+Just type treefmt in any folder and it reformats the whole code tree.

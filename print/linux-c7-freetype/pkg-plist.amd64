@@ -1,0 +1,8 @@
+usr/lib/libfreetype.so.6
+usr/lib/libfreetype.so.6.14.0
+usr/lib64/libfreetype.so.6
+usr/lib64/libfreetype.so.6.14.0
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/freetype-2.8/FTL.TXT
+usr/share/licenses/freetype-2.8/GPLv2.TXT
+usr/share/licenses/freetype-2.8/LICENSE.TXT

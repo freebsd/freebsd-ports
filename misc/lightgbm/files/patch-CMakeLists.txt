@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-12-29 04:59:34 UTC
++++ CMakeLists.txt
+@@ -507,7 +507,7 @@ endif(__BUILD_FOR_R)
+ 
+ #-- Google C++ tests
+ if(BUILD_CPP_TEST)
+-  find_package(GTest CONFIG)
++  find_package(GTest)
+   if(NOT GTEST_FOUND)
+     message(STATUS "Did not find Google Test in the system root. Fetching Google Test now...")
+     include(FetchContent)

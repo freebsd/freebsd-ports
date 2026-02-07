@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/Mail::DomainKeys.3.gz
+%%SITE_PERL%%/Mail/DomainKeys.pm
+%%SITE_PERL%%/Mail/DomainKeys/Header.pm
+%%SITE_PERL%%/Mail/DomainKeys/Key.pm
+%%SITE_PERL%%/Mail/DomainKeys/Key/Private.pm
+%%SITE_PERL%%/Mail/DomainKeys/Key/Public.pm
+%%SITE_PERL%%/Mail/DomainKeys/Message.pm
+%%SITE_PERL%%/Mail/DomainKeys/Policy.pm
+%%SITE_PERL%%/Mail/DomainKeys/Signature.pm

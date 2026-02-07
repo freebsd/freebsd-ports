@@ -1,0 +1,16 @@
+--- icons/blobwars.desktop.orig	2015-11-21 23:18:19.000000000 +0100
++++ icons/blobwars.desktop	2015-12-01 19:01:43.549184133 +0100
+@@ -1,9 +1,11 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+-Categories=Game;ActionGame;
+ Name=Blob Wars : Metal Blob Solid
++GenericName=Blob Wars
+ Comment=Mission and Objective based 2D Platform Game
+ Icon=blobwars
+ Exec=blobwars
+-Terminal=false
+ Type=Application
++Categories=Game;ArcadeGame;
++Terminal=false
++StartupNotify=false

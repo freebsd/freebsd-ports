@@ -1,0 +1,4 @@
+bin/csp
+%%SITE_PERL%%/CSP.pm
+%%SITE_PERL%%/auto/CSP/autosplit.ix
+%%PERL5_MAN3%%/CSP.3.gz

@@ -1,0 +1,11 @@
+--- ./kterm.h.orig	Fri Jul 12 14:01:37 1996
++++ ./kterm.h	Thu Aug 16 01:34:54 2001
+@@ -35,7 +35,7 @@
+ #define KTERM_XIM	/* XIM protocol */
+ #define KTERM_KINPUT2	/* Kinput2 protocol */
+ #define KTERM_COLOR	/* color sequence */
+-#define KTERM_NOTEK	/* disables Tektronix emulation */
++#undef  KTERM_NOTEK	/* disables Tektronix emulation */
+ #undef  KTERM_XAW3D	/* Xaw3d -DARROW_SCROLLBAR support */
+ 
+ #endif /* !_KTERM_H_ */

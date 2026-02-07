@@ -1,0 +1,16 @@
+%%SITE_PERL%%/ResourcePool/Command/DBI/Common.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pod
+%%SITE_PERL%%/ResourcePool/Factory/DBI.pm
+%%SITE_PERL%%/ResourcePool/Factory/DBI.pod
+%%SITE_PERL%%/ResourcePool/Resource/DBI.pm
+%%SITE_PERL%%/ResourcePool/Resource/DBI.pod
+%%PERL5_MAN3%%/ResourcePool::Command::DBI::Execute.3.gz
+%%PERL5_MAN3%%/ResourcePool::Command::DBI::Select.3.gz
+%%PERL5_MAN3%%/ResourcePool::Command::DBI::SelectRow.3.gz
+%%PERL5_MAN3%%/ResourcePool::Factory::DBI.3.gz
+%%PERL5_MAN3%%/ResourcePool::Resource::DBI.3.gz

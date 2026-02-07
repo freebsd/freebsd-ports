@@ -1,0 +1,77 @@
+PORTNAME=	eiskaltdcpp
+PORTVERSION=	2.2.10
+DISTVERSIONPREFIX=	v
+PORTREVISION?=	36
+CATEGORIES=	net-p2p
+PKGNAMESUFFIX?=	-lib
+
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	EiskaltDC++ shared library and header files
+WWW=		https://github.com/eiskaltdcpp/eiskaltdcpp
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+GENTOO_PATCHES_PREFIX=	${FILESDIR}/gentoo/${PORTNAME}-${PORTVERSION}
+EXTRA_PATCHES=	${GENTOO_PATCHES_PREFIX}-ipv6_upnp.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-miniupnpc1.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-miniupnpc2.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-openssl-1.1.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-tray-close.patch:-p1
+
+USE_GITHUB=	yes
+
+.if !defined (MASTERDIR)
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+
+USES=		cmake gettext compiler:c++11-lib ssl
+USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	LUA PCRE IDN DHT MINIUPNP
+OPTIONS_DEFAULT=	IDN DHT
+DHT_DESC=	DHT support
+MINIUPNP_DESC=	UPnP support
+
+CMAKE_ARGS+=	-DBUILD_LIB:BOOL=ON
+CMAKE_ARGS+=	-DWITH_DEV_FILES:BOOL=ON
+CMAKE_ARGS+=	-DUSE_QT:BOOL=OFF
+CMAKE_ARGS+=	-DUSE_GTK:BOOL=OFF
+CMAKE_ARGS+=	-DUSE_GTK3:BOOL=OFF
+CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=OFF
+
+LUA_USES=	lua:51
+LUA_CMAKE_ON=	-DLUA_SCRIPT:BOOL=ON
+LUA_CMAKE_OFF=	-DLUA_SCRIPT:BOOL=OFF
+
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CMAKE_ON=	-DPERL_REGEX:BOOL=ON
+PCRE_CMAKE_OFF=	-DPERL_REGEX:BOOL=OFF
+
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
+IDN_CMAKE_ON=	-DUSE_IDNA:BOOL=ON
+IDN_CMAKE_OFF=	-DUSE_IDNA:BOOL=OFF
+
+DHT_CMAKE_ON=	-DWITH_DHT:BOOL=ON
+DHT_CMAKE_OFF=	-DWITH_DHT:BOOL=OFF
+
+#MINIUPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
+MINIUPNP_CMAKE_ON=	-DUSE_MINIUPNP:BOOL=ON -DLOCAL_MINIUPNP:BOOL=ON
+MINIUPNP_CMAKE_OFF=	-DUSE_MINIUPNP:BOOL=OFF
+.endif
+
+USES+=		tar:xz
+PLIST=		${.CURDIR}/pkg-plist
+
+.if defined (MASTERDIR) && !defined (NO_BUILD)
+CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
+CMAKE_ARGS+=	-DEISKALTDCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/eiskaltdcpp"
+CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib"
+# these slave ports options have to be in sync with master library
+CMAKE_ARGS+=	-DUSE_IDNA:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^IDN ' | ${CUT} -f 2 -d ' '`
+CMAKE_ARGS+=	-DWITH_DHT:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^DHT ' | ${CUT} -f 2 -d ' '`
+CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^LUA ' | ${CUT} -f 2 -d ' '`
+CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^MINIUPNP ' | ${CUT} -f 2 -d ' '`
+CMAKE_ARGS+=	-DLOCAL_MINIUPNP:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^MINIUPNP ' | ${CUT} -f 2 -d ' '`
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,46 @@
+--- configure.orig	2021-05-14 13:50:48 UTC
++++ configure
+@@ -4886,43 +4886,6 @@ if test "$ac_prog_cxx_stdcxx" != cxx11; then
+ fi
+ 
+ LINKER="$CXX"
+-if test x$GCC = xyes && test x$GXX = xyes; then
+-      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for working libsupc++" >&5
+-printf %s "checking for working libsupc++... " >&6; }
+-   save_CXX="$CXX"
+-   save_LIBS="$LIBS"
+-   CXX="$CC"
+-   LIBS="$LIBS -lsupc++"
+-
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-struct test { }; void f() try { throw new test; } catch (...) { throw; }
+-int
+-main (void)
+-{
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_cxx_try_link "$LINENO"
+-then :
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: ok" >&5
+-printf "%s\n" "ok" >&6; }
+-       LINKER="$CC"
+-else $as_nop
+-
+-         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no, making everything bigger and slower" >&5
+-printf "%s\n" "no, making everything bigger and slower" >&6; }
+-         LIBS="$save_LIBS"
+-
+-
+-fi
+-rm -f core conftest.err conftest.$ac_objext conftest.beam \
+-    conftest$ac_exeext conftest.$ac_ext
+-   CXX="$save_CXX"
+-fi
+-LINKER=$LINKER
+ 
+ 
+ if test -z "$orig_CXXFLAGS"; then

@@ -1,0 +1,4 @@
+@sample etc/clamsmtpd.conf.sample
+share/man/man5/clamsmtpd.conf.5.gz
+share/man/man8/clamsmtpd.8.gz
+sbin/clamsmtpd

@@ -1,0 +1,7 @@
+DAQP is a dual active-set solver that solves convex quadratic programs
+of the form:
+
+minimize        0.5 x' H x + f' x
+
+subject to      l  <=  x  <= u
+		bl <=  Ax <= bu.

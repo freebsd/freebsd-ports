@@ -1,0 +1,5 @@
+Maps are ordered hashes that are ordered, string/symbol indifferent, and have
+recursive conversion, more robust implementation than
+HashWithIndifferentAccess, support for struct like (map.foo) access, and
+support for option/keyword access which avoids several nasty classes of errors
+in many ruby libraries

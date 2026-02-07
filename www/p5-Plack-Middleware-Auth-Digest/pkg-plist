@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Plack/Middleware/Auth/Digest.pm
+%%PERL5_MAN3%%/Plack::Middleware::Auth::Digest.3.gz

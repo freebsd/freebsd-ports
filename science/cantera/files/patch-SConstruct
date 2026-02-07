@@ -1,0 +1,39 @@
+- the first part is fixing the configure failure, see https://github.com/Cantera/cantera/issues/1536
+
+--- SConstruct.orig	2024-12-16 23:22:11 UTC
++++ SConstruct
+@@ -902,6 +902,9 @@ if os.name == "nt":
+     for key,val in env["ENV"].items():
+         env["ENV"][key] = str(val)
+ 
++elif "cc" in env.subst("$CC"):
++    config.select("clang")
++
+ else:
+     env["INSTALL_MANPAGES"] = True
+ 
+@@ -933,6 +936,9 @@ elif "clang" in env.subst("$CC"):
+ elif "clang" in env.subst("$CC"):
+     config.select("clang")
+ 
++elif "cc" in env.subst("$CC"):
++    config.select("clang")
++
+ else:
+     # Assume a GCC compatible compiler if nothing else
+     logger.warning(f"Unrecognized C compiler {env['CC']!r}")
+@@ -991,10 +997,10 @@ if 'sphinx' in COMMAND_LINE_TARGETS:
+     env['doxygen_docs'] = True
+ if 'sphinx' in COMMAND_LINE_TARGETS:
+     env['sphinx_docs'] = True
+-for arg in ARGUMENTS:
+-    if arg not in config:
+-        logger.error(f"Encountered unexpected command line option: {arg!r}")
+-        sys.exit(1)
++#for arg in ARGUMENTS:
++#    if arg not in config:
++#        logger.error(f"Encountered unexpected command line option: {arg!r}")
++#        sys.exit(1)
+ 
+ # Store full config for doc build
+ if env['sphinx_docs']:

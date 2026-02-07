@@ -1,0 +1,11 @@
+--- doc/spex.html.orig	2012-05-24 11:32:01 UTC
++++ doc/spex.html
+@@ -257,7 +257,7 @@
+ <p>Kyoto Cabinet provides API of the C++ language and it is available by programs conforming to the C++03 standard.  As the header files of Kyoto Cabinet are provided as `<code>kcutil.h</code>', `<code>kchashdb.h</code>', and so on, applications should include one or more of them accordingly to use the API.  As the library is provided as `<code>libkyotocabinet.a</code>' and `<code>libkyotocabinet.so</code>' and they depends on `<code>libz.so</code>', `<code>libstdc++.so</code>', `<code>librt.so</code>', `<code>libpthread.so</code>', `<code>libm.so</code>', and `<code>libc.so</code>', linker options corresponding to them are required by the build command.  The typical build command is the following.</p>
+ 
+ <pre>$ g++ -I/usr/local/include example.cc -o example \
+-  -L/usr/local/lib -lkyotocabinet -lz -lstdc++ -lrt -lpthread -lm -lc
++  -L/usr/local/lib -lkyotocabinet -lz -lrt -lpthread -lm -lc
+ </pre>
+ 
+ <h3 id="installation_windows">For Windows</h3>

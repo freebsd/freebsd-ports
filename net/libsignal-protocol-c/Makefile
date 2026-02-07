@@ -1,0 +1,22 @@
+PORTNAME=	libsignal-protocol-c
+PORTVERSION=	2.3.3
+DISTVERSIONPREFIX=	v
+CATEGORIES=	net
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Signal Protocol C Library
+WWW=		https://github.com/signalapp/libsignal-protocol-c
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake
+
+CMAKE_ON=	BUILD_SHARED_LIBS BUILD_STATIC_LIBS
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+GH_ACCOUNT=	signalapp
+USE_GITHUB=	yes
+
+.include <bsd.port.mk>

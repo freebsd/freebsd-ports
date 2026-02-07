@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/template_syntax.3.gz
+%%PERL5_MAN3%%/Text::Tmpl.3.gz
+%%PERL5_MAN3%%/template_extend.3.gz
+%%SITE_ARCH%%/auto/Text/Tmpl/Tmpl.so
+%%SITE_ARCH%%/auto/Text/Tmpl/autosplit.ix
+%%SITE_ARCH%%/Text/template_syntax.pod
+%%SITE_ARCH%%/Text/libtmpl.pod
+%%SITE_ARCH%%/Text/template_extend.pod
+%%SITE_ARCH%%/Text/Tmpl.pm

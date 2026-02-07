@@ -1,0 +1,9 @@
+--- src/Makefile.in	Fri Jul  9 01:37:12 2004
++++ src/Makefile.in	Sun Jul 11 04:08:28 2004
+@@ -120,5 +120,5 @@
+ 
+ localedir = $(datadir)/locale
+-LDFLAGS = -L../lib
++LDFLAGS = -L../lib @LDFLAGS@
+ LDADD = @INTLLIBS@ ../lib/librlpr.a
+ INCLUDES = -I$(top_srcdir)/intl -I$(top_srcdir)/lib \

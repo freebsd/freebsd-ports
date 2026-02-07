@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To work with Common Lisp ports, create ~/.ccl-init.lisp with this line:
+(load "/usr/local/etc/cl-freebsd-asdf-init.lisp")
+EOM
+}
+]

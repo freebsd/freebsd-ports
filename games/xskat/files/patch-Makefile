@@ -1,0 +1,20 @@
+--- Makefile.orig	2000-03-08 20:31:24.000000000 +0100
++++ Makefile	2014-02-01 13:26:41.616864659 +0100
+@@ -16,8 +16,6 @@
+ #        where x.y is the version of the original program
+ #        and z is an arbitrary suffix.
+ 
+-CFLAGS	=
+-LDFLAGS	= -L/usr/X11R6/lib -lX11
+ # perhaps you need one of: -lsocket -lnsl
+ 
+ #DEFL    = -DDEFAULT_LANGUAGE=\"german\"
+@@ -28,6 +26,8 @@
+ SHELL   = /bin/sh
+ OBJECTS	= skat.o ramsch.o null.o bitmaps.o xio.o xdial.o irc.o text.o
+ 
++all: xskat
++
+ xskat: $(OBJECTS)
+ 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+ 

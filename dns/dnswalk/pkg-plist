@@ -1,0 +1,7 @@
+bin/dnswalk
+share/man/man1/dnswalk.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/do-dnswalk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/makereports
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendreports
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dnswalk.errors

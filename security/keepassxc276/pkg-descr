@@ -1,0 +1,22 @@
+KeePassXC is a community fork of KeePassX, a native cross-platform port of
+KeePass Password Safe, with the goal to extend and improve it with new features
+and bugfixes to provide a feature-rich, fully cross-platform and modern
+open-source password manager.
+
+Main Features
+
+  * Secure storage with AES, Twofish or ChaCha20 encryption
+  * File format compatibility with KeePass2, KeePassX, MacPass, KeeWeb and many
+    others (KDBX 3.1 and 4.0)
+  * SSH Agent integration
+  * Passwords synchronization using KeeShare
+  * Auto-Type for automagically filling in login forms
+  * Key file and YubiKey challenge-response support for additional security
+  * TOTP generation (including Steam Guard)
+  * CSV import from other password managers (e.g., LastPass)
+  * Command line interface
+  * Custom icons for database entries and download of website favicons
+  * Database merge functionality
+  * Automatic reload when the database was changed externally
+  * Browser integration with KeePassXC-Browser for Google Chrome, Chromium,
+    Vivaldi, and Mozilla Firefox.

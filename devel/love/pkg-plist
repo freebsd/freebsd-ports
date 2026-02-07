@@ -1,0 +1,8 @@
+bin/love
+lib/liblove-11.5.so
+lib/liblove.so
+share/man/man1/love.1.gz
+share/applications/love.desktop
+share/icons/hicolor/scalable/mimetypes/application-x-love-game.svg
+share/mime/packages/love.xml
+share/pixmaps/love.svg

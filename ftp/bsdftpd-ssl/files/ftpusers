@@ -1,0 +1,31 @@
+##
+## This is the example "/etc/ftpusers" file for the bsdftpd-ssl FTP server.
+## The syntax of this file is described in the ftpd-ssl(8) man page.
+##
+
+## Deny various system users.
+root
+toor
+daemon
+operator
+bin
+tty
+kmem
+games
+news
+man
+sshd
+bind
+proxy
+_pflogd
+uucp
+pop
+www
+nobody
+mailnull
+smmsp
+
+## Deny members of the "noftp" group.
+# @noftp
+
+## All other users are allowed.

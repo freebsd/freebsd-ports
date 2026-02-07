@@ -1,0 +1,5 @@
+Muttprint pretty-prints mail messages for any mail client which can output
+plain text with the mail headers included.
+
+It uses the typesetting system LaTeX, which is normally installed on a
+Unix/Linux system.

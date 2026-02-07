@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Business/OnlinePayment/eSec.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/eSec/autosplit.ix
+%%PERL5_MAN3%%/Business::OnlinePayment::eSec.3.gz

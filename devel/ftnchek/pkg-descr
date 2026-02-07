@@ -1,0 +1,12 @@
+ftnchek (short for Fortran checker) is designed to detect certain errors
+in a Fortran 77 program that a compiler usually does not.  ftnchek is not
+primarily intended to detect syntax errors.  Its purpose is to assist the
+user in finding semantic errors.  Semantic errors are legal in the Fortran
+77 language but are wasteful or may cause incorrect operation.  For example,
+variables which are never used may indicate some omission in the program;
+uninitialized variables contain garbage which may cause incorrect results
+to be calculated; and variables which are not declared may not have the
+intended type.  ftnchek is intended to assist users in the debugging of
+their Fortran 77 program.  It is not intended to catch all syntax errors.
+This is the function of the compiler.  Prior to using ftnchek, the user
+should verify that the program compiles correctly.

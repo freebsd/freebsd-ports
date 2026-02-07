@@ -1,0 +1,3 @@
+A custom Model Field that uses the Hashids library to obfuscate an IntegerField
+or AutoField. It can be used in new models or dropped in place of an existing
+IntegerField, explicit AutoField, or an automatically generated AutoField.

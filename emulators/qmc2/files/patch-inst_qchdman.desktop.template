@@ -1,0 +1,10 @@
+--- inst/qchdman.desktop.template.orig	2023-11-25 02:40:40 UTC
++++ inst/qchdman.desktop.template
+@@ -5,6 +5,6 @@ Exec=qchdman
+ Comment=Qt CHDMAN GUI
+ Comment[de]=Qt CHDMAN GUI
+ Exec=qchdman
+-Icon=DATADIR/qmc2/img/qchdman.png
++Icon=%%DATADIR%%/qmc2/img/qchdman.png
+ Terminal=false
+ Categories=Game;Emulator;

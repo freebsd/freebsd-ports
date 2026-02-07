@@ -1,0 +1,14 @@
+--- gcc/jit/Make-lang.in.orig	2024-02-25 22:32:31 UTC
++++ gcc/jit/Make-lang.in
+@@ -360,9 +360,9 @@ jit.install-headers: installdirs
+ # Install hooks:
+ jit.install-headers: installdirs
+ 	$(INSTALL_DATA) $(srcdir)/jit/libgccjit.h \
+-	  $(DESTDIR)$(includedir)/libgccjit.h
++	  $(DESTDIR)$(libsubincludedir)/libgccjit.h
+ 	$(INSTALL_DATA) $(srcdir)/jit/libgccjit++.h \
+-	  $(DESTDIR)$(includedir)/libgccjit++.h
++	  $(DESTDIR)$(libsubincludedir)/libgccjit++.h
+ 
+ ifneq (,$(findstring mingw,$(target)))
+ jit.install-common: installdirs jit.install-headers

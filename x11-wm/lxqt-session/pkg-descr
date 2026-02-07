@@ -1,0 +1,3 @@
+LXQt session handling and configuration.
+Contains the startlxqt script and lxqt-leave
+binary to respectively start and stop a LXQt DE session.

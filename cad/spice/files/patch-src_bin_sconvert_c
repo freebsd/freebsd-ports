@@ -1,0 +1,35 @@
+--- src/bin/sconvert.c.orig	1992-09-15 01:30:41.000000000 +0000
++++ src/bin/sconvert.c	2011-06-24 19:05:59.000000000 +0000
+@@ -36,7 +36,7 @@
+ static struct plot *oldread();
+ static char *fixdate();
+ 
+-void
++int
+ main(ac, av)
+     char **av;
+ {
+@@ -80,19 +80,19 @@
+ 
+         case 1: printf("Input file: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             sf = copy(buf);
+             printf("Input type: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             f = buf[0];
+             printf("Output file: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             af = copy(buf);
+             printf("Output type: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             t = buf[0];
+             break;
+         default:

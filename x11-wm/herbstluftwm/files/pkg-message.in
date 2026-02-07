@@ -1,0 +1,12 @@
+[
+{
+  message: <<EOM
+You need to place your own autostart file in this path:
+$XDG_CONFIG_HOME/herbstluftwm if you don't use the default
+(%%PREFIX%%/etc/xdg/herbstluftwm/autostart).
+
+Keep in mind that most of the scripts are written in bash syntax.
+EOM
+  type: install
+}
+]

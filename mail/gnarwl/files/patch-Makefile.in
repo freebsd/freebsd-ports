@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2008-06-24 22:31:33.000000000 +0200
++++ Makefile.in	2009-07-27 13:47:35.000000000 +0200
+@@ -10,7 +10,7 @@
+ BIN=gnarwl
+ SBIN=damnit
+ MAN_SEC=8
+-VER=$(shell basename `pwd` | sed s\\$(BIN)-\\\\)
++VER=$(shell basename `pwd` | sed s,$(BIN)-,,)
+ 
+ ##
+ # Path settings (no trailing slashes!)
+@@ -39,8 +39,8 @@
+ ##
+ 
+ CC=@CC@
+-CFLAGS=-DLDAP_DEPRECATED -DBLOCKDIR=\"$(BLOCKDIR)\" -DCFGFILE=\"$(CONFDIR)/gnarwl.cfg\" -DVERSION=\"$(VER)\" -g -Wall -O2 -I..
+-LFLAGS=-lldap -lgdbm -ldl -lresolv
++CFLAGS=@CFLAGS@ -DLDAP_DEPRECATED -DBLOCKDIR=\"$(BLOCKDIR)\" -DCFGFILE=\"$(CONFDIR)/gnarwl.cfg\" -DVERSION=\"$(VER)\" -fcommon -Wall -I.. @CPPFLAGS@
++LFLAGS=@LDFLAGS@ @LIBS@
+ 
+ ##
+ ## No serviceable parts below

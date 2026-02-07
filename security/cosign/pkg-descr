@@ -1,0 +1,9 @@
+Cosign aims to make signatures invisible infrastructure.
+
+Cosign supports:
+- "Keyless signing" with the Sigstore public good Fulcio certificate
+   authority and Rekor transparency log (default)
+- Hardware and KMS signing
+- Signing with a cosign generated encrypted private/public keypair
+- Container Signing, Verification and Storage in an OCI registry.
+- Bring-your-own PKI

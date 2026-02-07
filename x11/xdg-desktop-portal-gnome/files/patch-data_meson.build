@@ -1,0 +1,11 @@
+--- data/meson.build.orig	2024-05-25 18:46:09 UTC
++++ data/meson.build
+@@ -41,7 +41,7 @@ configure_file(
+ )
+ 
+ # systemd unit
+-if systemduserunitdir != ''
++if systemduserunitdir != 'no'
+   configure_file(
+     input: 'xdg-desktop-portal-gnome.service.in',
+     output: 'xdg-desktop-portal-gnome.service',

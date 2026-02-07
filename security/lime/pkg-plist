@@ -1,0 +1,8 @@
+include/lime/lime.hpp
+lib/liblime.so
+lib/liblime.so.0
+share/Lime/cmake/FindSoci.cmake
+share/Lime/cmake/LimeConfig.cmake
+share/Lime/cmake/LimeConfigVersion.cmake
+share/Lime/cmake/LimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/Lime/cmake/LimeTargets.cmake

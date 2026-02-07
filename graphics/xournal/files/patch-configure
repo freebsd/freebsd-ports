@@ -1,0 +1,11 @@
+--- configure.orig	2017-07-20 18:30:25 UTC
++++ configure
+@@ -5605,6 +5605,8 @@ fi
+ case "$host" in
+  *-*-linux*)
+    os_linux=yes;;
++ *-*-freebsd*)
++   os_linux=yes;;
+  *)
+    os_linux=no;;
+ esac

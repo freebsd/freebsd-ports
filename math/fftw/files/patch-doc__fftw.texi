@@ -1,0 +1,27 @@
+--- ./doc/fftw.texi.orig	2003-03-16 23:43:18.000000000 +0000
++++ ./doc/fftw.texi	2014-06-26 19:46:33.000000000 +0000
+@@ -3,6 +3,10 @@
+ @c %**start of header
+ @setfilename fftw.info
+ @settitle FFTW
++@dircategory Libraries
++@direntry
++* FFTW: (fftw).		Fast fourier transform library
++@end direntry
+ @c %**end of header
+ 
+ @include version.texi
+@@ -46,10 +50,10 @@
+ @titlepage
+ @sp 10
+ @comment The title is printed in a large font.
+-@title{FFTW User's Manual}
++@title FFTW User's Manual
+ @subtitle For version @value{VERSION}, @value{UPDATED}
+-@author{Matteo Frigo}
+-@author{Steven G. Johnson}
++@author Matteo Frigo
++@author Steven G. Johnson
+ 
+ @c The following two commands start the copyright page.
+ @page

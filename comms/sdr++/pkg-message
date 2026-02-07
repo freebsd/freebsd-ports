@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+This port requires audio/rtaudio built with PULSEAUDIO option.
+audio/rtaudio currently doesn't work with PCM devices directly.
+EOM
+}
+]

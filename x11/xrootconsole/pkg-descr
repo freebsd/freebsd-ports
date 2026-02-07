@@ -1,0 +1,5 @@
+xrootconsole is a small utility which displays its input in a transparent
+text box on X's root window.  It will read from any file listed on the
+command line or, by default, from stdin.  It is most useful when it reads
+from a FIFO; this allows you to redirect multiple commands to the FIFO
+and monitor their output.

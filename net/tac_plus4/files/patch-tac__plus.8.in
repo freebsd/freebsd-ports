@@ -1,0 +1,14 @@
+--- tac_plus.8.in.orig	2024-08-26 12:52:38 UTC
++++ tac_plus.8.in
+@@ -206,8 +206,10 @@ in addition to logging to syslogd. Useful for debuggin
+ /dev/console 
+ in addition to logging to syslogd. Useful for debugging.
+ .\"
+-.TP \-U <setuid username>
++.TP
++.B \-U <setuid username>
+ Specify the username or UID to
++.B
+ .IR setuid(2).
+ If the daemon was compiled with a specific UID, this option overrides that
+ value.

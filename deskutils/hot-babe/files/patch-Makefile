@@ -1,0 +1,33 @@
+--- Makefile.orig	Mon Dec 27 20:37:39 2004
++++ Makefile	Mon Dec 27 20:43:35 2004
+@@ -1,12 +1,12 @@
+ # where to install this program
+-PREFIX := /usr/local
++PREFIX ?= /usr/local
+ VERSION := 0.2.2
+ 
+ # optimization cflags
+-CFLAGS += -O2 -Wall -g `pkg-config gdk-2.0 gdk-pixbuf-2.0  --cflags` -DPREFIX=\"$(PREFIX)\" -DVERSION=\"$(VERSION)\"
++CFLAGS += -Wall `pkg-config gdk-2.0 gdk-pixbuf-2.0  --cflags` -DPREFIX=\"$(PREFIX)\" -DVERSION=\"$(VERSION)\"
+ 
+ OBJS = hot-babe.o loader.o
+-CC = gcc
++CC ?= gcc
+ LIBS = `pkg-config gdk-2.0 gdk-pixbuf-2.0  --libs`
+ 
+ DOC = ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright config.example
+@@ -24,10 +24,10 @@
+ 	install -m 0755 hot-babe $(DESTDIR)$(PREFIX)/bin
+ 	install -d $(DESTDIR)$(PREFIX)/share/hot-babe/hb01
+ 	install -m 0644 hb01/* $(DESTDIR)$(PREFIX)/share/hot-babe/hb01
+-	install -d $(DESTDIR)$(PREFIX)/share/doc/hot-babe
+-	install -m 0644 $(DOC) $(DESTDIR)$(PREFIX)/share/doc/hot-babe
+-	install -d $(DESTDIR)$(PREFIX)/share/man/man1
+-	install -m 0644 hot-babe.1 $(DESTDIR)$(PREFIX)/share/man/man1
++#	install -d $(DESTDIR)$(PREFIX)/share/doc/hot-babe
++#	install -m 0644 $(DOC) $(DESTDIR)$(PREFIX)/share/doc/hot-babe
++#	install -d $(DESTDIR)$(PREFIX)/share/man/man1
++#	install -m 0644 hot-babe.1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 	install -d $(DESTDIR)$(PREFIX)/share/pixmaps
+ 	install -m 0644 hot-babe.xpm $(DESTDIR)$(PREFIX)/share/pixmaps
+ 

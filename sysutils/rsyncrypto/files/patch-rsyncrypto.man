@@ -1,0 +1,17 @@
+--- rsyncrypto.man.orig	2008-10-22 11:34:49 UTC
++++ rsyncrypto.man
+@@ -236,10 +236,10 @@ it. In order not to become rsync unfriendly due to the
+ it. In order not to become rsync unfriendly due to the compression,
+ \fBrsyncrypto\fP will search the path for an instance of
+ .BR gzip (1)
+-that supports the \fB\-\-rsyncable\fP option. If the system's default gzip does
+-not support this option (all Debian and derivatives, as well as some others, support it), use
+-this option to tell \fBrsyncrypto\fP to use a different instance of gzip. The
+-tests directory of rsyncrypto's source has a file called "gzip", that does NULL
++that supports the \fB\-\-rsyncable\fP option. FreeBSD base system's default gzip doesn't
++support this option, so this port builds with archivers/gzip from ports tree, which does.
++You still can use this option to tell \fBrsyncrypto\fP to use a different instance of gzip.
++The tests directory of rsyncrypto's source has a file called "gzip", that does NULL
+ compression by redirecting the input and output to
+ .BR cat (1).
+ .TP

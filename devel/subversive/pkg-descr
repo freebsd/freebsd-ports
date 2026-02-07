@@ -1,0 +1,14 @@
+The Subversive project is a brand new Eclipse plug-in that provides
+Subversion support.  From a user point of view, Subversive provides
+Subversion support similar to CVS support, which is already part of
+the standard Eclipse platform.
+
+The main use cases, which are familiar to CVS users, are:
+    * Connection to the repository using different connection types
+    * Repository browsing
+    * Check-out
+    * Synchronization
+    * Committing
+    * Update
+    * Resolving conflicts
+    * Adding to the list of ignored resources

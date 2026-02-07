@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Mail/Graph.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/convert.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index/dummy.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.tpl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/output/w3c.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/output/spam.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/archive/sample.txt.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/archive/sample2.txt.gz
+%%PERL5_MAN3%%/Mail::Graph.3.gz

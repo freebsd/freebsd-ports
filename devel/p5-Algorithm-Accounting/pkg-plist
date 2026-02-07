@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Algorithm/Accounting.pm
+%%SITE_PERL%%/Algorithm/Accounting/Report.pm
+%%SITE_PERL%%/Algorithm/Accounting/Report/Imager.pm
+%%SITE_PERL%%/Algorithm/Accounting/Report/Text.pm
+%%SITE_PERL%%/Algorithm/Accounting/Report/GDGraph.pm
+%%PERL5_MAN3%%/Algorithm::Accounting.3.gz
+%%PERL5_MAN3%%/Algorithm::Accounting::Report.3.gz
+%%PERL5_MAN3%%/Algorithm::Accounting::Report::Imager.3.gz
+%%PERL5_MAN3%%/Algorithm::Accounting::Report::GDGraph.3.gz
+%%PERL5_MAN3%%/Algorithm::Accounting::Report::Text.3.gz

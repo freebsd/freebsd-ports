@@ -1,0 +1,2 @@
+MooseX::MethodAttributes allows code attributes of methods to be
+introspected using Moose meta method objects.

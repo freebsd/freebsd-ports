@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "This example maps you can use:"
+echo ""
+
+ls -x %%DATADIR%%/maps
+echo ""
+
+echo "This example robots you can use:"
+echo ""
+
+ls -x %%DATADIR%%/scheme
+echo ""
+echo ""

@@ -1,0 +1,4 @@
+libexec/acme-dns
+@dir /var/db/acme-dns
+@dir /var/run/acme-dns
+@sample etc/acme-dns/config.cfg.sample

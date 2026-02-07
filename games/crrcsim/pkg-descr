@@ -1,0 +1,9 @@
+Crrcsim is a model-airplane flight simulation program. Using it,
+you can learn how to fly model aircraft, test new aircraft designs,
+and improve your skills by practicing on your computer.
+
+It rules! The flight model is very realistic. The flight model
+parameters are calculated based on a 3D representation of the
+aircraft. Stalls are properly modelled as well. Model control is
+possible with your own rc transmitter, or any input device such as
+joystick, mouse, keyboard.

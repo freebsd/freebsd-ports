@@ -1,0 +1,5 @@
+ipp-usb daemon enables driver-less printing and scanning on USB-only
+AirPrint-compatible printers and MFPs.  It works by connecting to the device by
+USB using IPP-over-USB protocol, and exposing the device to the network,
+including DNS-SD (ZeroConf) advertising.  IPP printing, eSCL scanning and web
+console are fully supported.

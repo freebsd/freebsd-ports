@@ -1,0 +1,3 @@
+The Chimera key exchange protocol generates a shared key between two parties.
+The protocol was shown to be INSECURE. This module is therefore released for
+purely academic curiosity.

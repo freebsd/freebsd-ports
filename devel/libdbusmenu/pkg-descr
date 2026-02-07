@@ -1,0 +1,3 @@
+Library that provides GLib and Gtk implementation of the DBusMenu protocol.
+The DBusMenu protocol make it possible for applications to export and import
+their menus over DBus.

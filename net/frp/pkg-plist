@@ -1,0 +1,4 @@
+bin/frpc
+bin/frps
+@sample etc/frpc.toml.sample
+@sample etc/frps.toml.sample

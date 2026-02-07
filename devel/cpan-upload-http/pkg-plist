@@ -1,0 +1,2 @@
+bin/cpan-upload-http
+%%PERL5_MAN1%%/cpan-upload-http.1.gz

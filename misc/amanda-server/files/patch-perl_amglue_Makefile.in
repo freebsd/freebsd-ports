@@ -1,0 +1,10 @@
+--- perl/amglue/Makefile.in.orig	2017-12-01 13:26:55 UTC
++++ perl/amglue/Makefile.in
+@@ -1618,6 +1618,7 @@ install-amlibLTLIBRARIES: $(amlib_LTLIBRARIES)
+ 	    list2="$$list2 $$p"; \
+ 	  else :; fi; \
+ 	done; \
++@WANT_CLIENT_FALSE@	list2=; \
+ 	test -z "$$list2" || { \
+ 	  echo " $(MKDIR_P) '$(DESTDIR)$(amlibdir)'"; \
+ 	  $(MKDIR_P) "$(DESTDIR)$(amlibdir)" || exit 1; \

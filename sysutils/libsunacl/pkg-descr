@@ -1,0 +1,4 @@
+Libsunacl is a wrapper around FreeBSD NFSv4 ACL API (acl_get_file(3) etc),
+providing SunOS-compatible acl(3)/facl(3) functions. Its main purpose
+is to make it easier to port software such as Samba, which already supports
+SunOS ACL API.

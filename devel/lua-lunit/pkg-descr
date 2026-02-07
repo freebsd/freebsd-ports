@@ -1,0 +1,3 @@
+Lunit is a unit testing framework for lua, written in lua. It provides currently
+27 assert functions, 8 type checking functions and a few miscellaneous functions
+for usage as an easy unit testing framework.

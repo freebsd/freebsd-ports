@@ -1,0 +1,32 @@
+--- src/Makefile.in.orig	2024-03-21 13:58:11 UTC
++++ src/Makefile.in
+@@ -237,7 +237,7 @@ install.bin: ufdbGenTable ufdbAnalyse ufdbhttpd create
+ 	$(INSTALL_PROGRAM) ufdb_top_urls.pl $(DESTDIR)$(bindir)/ufdb_top_urls
+ 	$(INSTALL_PROGRAM) ufdb_top_users.pl $(DESTDIR)$(bindir)/ufdb_top_users
+ 	@if [ -f ufdbpeek ] ; then $(INSTALL_PROGRAM) ufdbpeek $(DESTDIR)$(bindir)/ufdbpeek ; fi
+-	@if [ -f $(DESTDIR)$(cfgdir)/ufdbGuard.conf ] ; then echo "$(DESTDIR)$(cfgdir)/ufdbGuard.conf already exists." ; else $(INSTALL_DATA) ufdbGuard.conf $(DESTDIR)$(cfgdir)/ufdbGuard.conf ; fi
++	@if [ -f $(DESTDIR)$(cfgdir)/ufdbGuard.conf ] ; then echo "$(DESTDIR)$(cfgdir)/ufdbGuard.conf already exists." ; else $(INSTALL_DATA) ufdbGuard.conf $(DESTDIR)$(cfgdir)/ufdbGuard.conf.sample ; fi
+ 
+ install.pid::
+ 	if [ $(piddir) != /var/tmp ] ; then $(INSTALL) -d $(DESTDIR)$(piddir) ; fi
+@@ -249,10 +249,10 @@ install.update::
+ 
+ install.security::
+ 	echo "Installing SSL root certificates"
+-	$(INSTALL_DATA) security/cacerts  $(DESTDIR)$(dbhome)/security/cacerts
++	$(INSTALL_DATA) security/cacerts  $(DESTDIR)$(dbhome)/security/cacerts.sample
+ 
+ install.etc::
+-	sh ./install_etcfiles.sh $(DESTDIR)$(cfgdir) $(DESTDIR)$(bindir) $(DESTDIR)$(syscfgfile)
++	sh ./install_etcfiles.sh $(DESTDIR)$(cfgdir) $(DESTDIR)$(bindir)
+ 
+ install.debug::
+ 	-if [ -x /usr/bin/debuginfo-install ] ; then /usr/bin/debuginfo-install glibc ; fi
+@@ -269,7 +269,6 @@ install.log::
+ 
+ createdirs::
+ 	echo "Creating directories ..."
+-	$(INSTALL) -d $(DESTDIR)/usr/lib/systemd/system
+ 	$(INSTALL) -d $(DESTDIR)$(bindir) 
+ 	$(INSTALL) -o $(RUNAS) -d $(DESTDIR)$(logdir) 
+ 	$(INSTALL) -d $(DESTDIR)$(cfgdir)

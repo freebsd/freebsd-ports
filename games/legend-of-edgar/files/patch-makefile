@@ -1,0 +1,81 @@
+- Properly stage things to make sure the binary does not refer to
+  the stage directory and that the game can actually find its assets
+  at runtime
+
+--- makefile.orig	2024-01-01 08:30:47 UTC
++++ makefile
+@@ -22,7 +22,7 @@ PO_PROG   = po_creator
+ TILE_PROG = tile_creator
+ endif
+ 
+-PREFIX = $(DESTDIR)/usr
++PREFIX = /usr
+ BIN_DIR = $(PREFIX)/games/
+ DOC_DIR = $(PREFIX)/share/doc/$(PROG)/
+ ICON_DIR = $(PREFIX)/share/icons/hicolor/
+@@ -150,39 +150,39 @@ install: all buildpak
+ ifeq ($(DEV),1)
+ 	echo Cannot install if DEV is set to 1!
+ else
+-	mkdir -p $(BIN_DIR)
+-	mkdir -p $(DATA_DIR)
+-	mkdir -p $(DOC_DIR)
+-	mkdir -p $(ICON_DIR)16x16/apps
+-	mkdir -p $(ICON_DIR)32x32/apps
+-	mkdir -p $(ICON_DIR)48x48/apps
+-	mkdir -p $(ICON_DIR)64x64/apps
+-	mkdir -p $(ICON_DIR)128x128/apps
+-	mkdir -p $(DESKTOP_DIR)
+-	mkdir -p $(APPDATA_DIR)
+-	mkdir -p $(MAN_DIR)
++	mkdir -p $(DESTDIR)$(BIN_DIR)
++	mkdir -p $(DESTDIR)$(DATA_DIR)
++	mkdir -p $(DESTDIR)$(DOC_DIR)
++	mkdir -p $(DESTDIR)$(ICON_DIR)16x16/apps
++	mkdir -p $(DESTDIR)$(ICON_DIR)32x32/apps
++	mkdir -p $(DESTDIR)$(ICON_DIR)48x48/apps
++	mkdir -p $(DESTDIR)$(ICON_DIR)64x64/apps
++	mkdir -p $(DESTDIR)$(ICON_DIR)128x128/apps
++	mkdir -p $(DESTDIR)$(DESKTOP_DIR)
++	mkdir -p $(DESTDIR)$(APPDATA_DIR)
++	mkdir -p $(DESTDIR)$(MAN_DIR)
+ 
+-	cp $(PROG) $(BIN_DIR)$(PROG)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(BIN_DIR)$(PROG)
+ ifndef NO_PAK
+-	cp $(PAK_FILE) $(DATA_DIR)$(PAK_FILE)
++	$(BSD_INSTALL_DATA) $(PAK_FILE) $(DESTDIR)$(DATA_DIR)$(PAK_FILE)
+ else
+-	cp -a data gfx music sound font $(DATA_DIR)
++	cp -a data gfx music sound font $(DESTDIR)$(DATA_DIR)
+ endif
+-	cp $(DOCS) $(DOC_DIR)
+-	cp $(ICONS)16x16.png $(ICON_DIR)16x16/apps/$(PROG).png
+-	cp $(ICONS)32x32.png $(ICON_DIR)32x32/apps/$(PROG).png
+-	cp $(ICONS)48x48.png $(ICON_DIR)48x48/apps/$(PROG).png
+-	cp $(ICONS)64x64.png $(ICON_DIR)64x64/apps/$(PROG).png
+-	cp $(ICONS)128x128.png $(ICON_DIR)128x128/apps/$(PROG).png
+-	cp $(ICONS)$(PROG).desktop $(DESKTOP_DIR)
+-	cp $(ICONS)$(PROG).appdata.xml $(APPDATA_DIR)
+-	install -m 0644 $(MAN)$(PROG).6 $(MAN_DIR)
++	$(BSD_INSTALL_DATA) $(DOCS) $(DESTDIR)$(DOC_DIR)
++	$(BSD_INSTALL_DATA) $(ICONS)16x16.png $(DESTDIR)$(ICON_DIR)16x16/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)32x32.png $(DESTDIR)$(ICON_DIR)32x32/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)48x48.png $(DESTDIR)$(ICON_DIR)48x48/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)64x64.png $(DESTDIR)$(ICON_DIR)64x64/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)128x128.png $(DESTDIR)$(ICON_DIR)128x128/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).desktop $(DESTDIR)$(DESKTOP_DIR)
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).appdata.xml $(DESTDIR)$(APPDATA_DIR)
++	$(BSD_INSTALL_MAN) $(MAN)$(PROG).6 $(DESTDIR)$(MAN_DIR)
+ 
+ 	@for f in $(LOCALE_MO); do \
+ 		lang=`echo $$f | sed -e 's/^locale\///;s/\.mo$$//'`; \
+-		mkdir -p $(LOCALE_DIR)$$lang/LC_MESSAGES; \
+-		echo "cp $$f $(LOCALE_DIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
+-		cp $$f $(LOCALE_DIR)$$lang/LC_MESSAGES/$(PROG).mo; \
++		mkdir -p $(DESTDIR)$(LOCALE_DIR)$$lang/LC_MESSAGES; \
++		echo "cp $$f $(DESTDIR)$(LOCALE_DIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
++		cp $$f $(DESTDIR)$(LOCALE_DIR)$$lang/LC_MESSAGES/$(PROG).mo; \
+ 	done
+ endif
+ 

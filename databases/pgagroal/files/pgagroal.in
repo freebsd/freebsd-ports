@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: pgagroal
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable pgagroal:
+#
+# pgagroal_enable (bool):      Set to "YES" to enable pgagroal
+#                               Default is "NO".
+# pgagroal_conf (path):        Set full path to configuration file.
+#                               Default is "%%PREFIX%%/etc/pgagroal.conf".
+# pgagroal_flags (string):     Additional flags passed to pgagroal.
+#                               Default is "".
+
+. /etc/rc.subr
+
+name="pgagroal"
+rcvar=pgagroal_enable
+
+load_rc_config "$name"
+: ${pgagroal_enable="NO"}
+: ${pgagroal_user="pgagroal"}
+: ${pgagroal_conf="%%PREFIX%%/etc/$name/$name.conf"}
+: ${pgagroal_hba_conf="%%PREFIX%%/etc/$name/pgagroal_hba.conf"}
+
+extra_commands="reload"
+
+command="%%PREFIX%%/bin/pgagroal"
+pidfile="%%PGAGROAL_RUNDIR%%/$name.pid"
+required_files="${pgagroal_conf} ${pgagroal_hba_conf}"
+command_args="-d -c ${pgagroal_conf} -a ${pgagroal_hba_conf}"
+
+run_rc_command "$1"

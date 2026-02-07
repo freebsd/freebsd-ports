@@ -1,0 +1,4 @@
+Python build backend (PEP-517) for Meson projects.
+
+It enables Python package authors to use Meson as the build backend
+for their packages.

@@ -1,0 +1,10 @@
+%%SITE_PERL%%/MooseX/MetaDescription.pm
+%%SITE_PERL%%/MooseX/MetaDescription/Description.pm
+%%SITE_PERL%%/MooseX/MetaDescription/Meta/Attribute.pm
+%%SITE_PERL%%/MooseX/MetaDescription/Meta/Class.pm
+%%SITE_PERL%%/MooseX/MetaDescription/Meta/Trait.pm
+%%PERL5_MAN3%%/MooseX::MetaDescription.3.gz
+%%PERL5_MAN3%%/MooseX::MetaDescription::Description.3.gz
+%%PERL5_MAN3%%/MooseX::MetaDescription::Meta::Attribute.3.gz
+%%PERL5_MAN3%%/MooseX::MetaDescription::Meta::Class.3.gz
+%%PERL5_MAN3%%/MooseX::MetaDescription::Meta::Trait.3.gz

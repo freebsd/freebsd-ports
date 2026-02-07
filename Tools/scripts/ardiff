@@ -1,0 +1,97 @@
+#!/bin/sh
+
+#
+# ardiff tries to make it easy for you to compare two archives. It makes no
+# claims about originality, correctness or usefulness, but it saved a lot of
+# time for at least one port maintainer.
+#
+# DEPS: vim, p7zip
+# TODO: word-by-word, more intelligent diffs
+#
+
+usage () {
+	if [ "$#" -gt 0 ]; then
+		echo "Error: $*" >&2
+	fi
+	echo "Usage: $0 <archive1> <archive2>" >&2
+	exit 0
+}
+
+debug () {
+	echo "Debug: $*" >&2
+}
+
+die () {
+	echo "Fatal: $*" >&2
+	exit 2
+}
+
+extract () {
+	if [ "$#" != 2 ]; then
+		die "extract () miscalled" >&2
+	fi
+	cd $2
+	if tar tf $1 >&-; then
+		debug "file $1 looks like a good tar archive"
+		tar xf $1 && debug "file $1 untar'ed successfully" || die "file $1 failed to untar"
+	elif 7z t $1 >&-; then
+		debug "file $1 looks like a good non-tar archive"
+		7z x $1 >&- && debug "file $1 un7z'ed successfully" || die "file $1 failed to un7z"
+	else
+		die "file $1 was not recognized"
+	fi
+}
+
+if [ "$#" != "2" ]; then
+	usage
+fi
+
+ar1=`realpath $1`
+ar2=`realpath $2`
+
+for i in $ar1 $ar2;do if [ ! -r $i ]; then
+	usage "file \"$i\" unreadable"
+fi;done
+
+for i in tar 7z;do if [ ! -x `which $i` ]; then
+	die "missing a decompressor, please make sure tar and 7z are available"
+fi;done
+if [ ! -x `which vim` ]; then
+	die "missing vim, please install it"
+fi
+
+art1=`mktemp -d -t /tmp` && debug "created tmp dir $art1" || usage "could not create a tmp dir"
+art2=`mktemp -d -t /tmp` && debug "created tmp dir $art2" || usage "could not create a tmp dir"
+
+extract $ar1 $art1
+extract $ar2 $art2
+
+if [ "`ls $art1|wc -l`" -eq 1 ]; then
+	dart1=$art1/`ls $art1|head -n1`
+else
+	dart1=$art1
+fi
+if [ "`ls $art2|wc -l`" -eq 1 ]; then
+	dart2=$art2/`ls $art2|head -n1`
+else
+	dart2=$art2
+fi
+#if [ "`ls $art1|wc -l`" -eq 1 ]&&[ "`ls $art2|wc -l`" -eq 1 ]; then
+#	dart1=$art1/`ls $art1|head -n1`
+#	dart2=$art2/`ls $art2|head -n1`
+#else
+#	dart1=$art1
+#	dart2=$art2
+#fi
+
+{
+	echo "====== Appeared and disappeared ======"
+	diff -urq $dart1 $dart2|sed -e "s|$art1|OLD|;s|$art2|NEW|"|grep '^Only'
+	echo "====== Modified ======"
+	diff -urq $dart1 $dart2|sed -e "s|$art1|OLD|;s|$art2|NEW|"|grep -v '^Only'
+	echo "====== Modifications ======"
+	diff -ur $dart1 $dart2|sed -e "s|$art1|OLD|;s|$art2|NEW|"
+}|vim -R -c "syntax on" -c "set syntax=diff" -c "set nowrap" \
+	-c 'let @/="^--- "' -c "set so=20" -
+
+rm -rf $art1 $art2 && debug "removed tmp dirs"

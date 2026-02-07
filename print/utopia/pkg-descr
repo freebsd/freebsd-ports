@@ -1,0 +1,4 @@
+This port provides the PostScript Type 1 version of Adobe Utopia for use
+with GNU Troff, as it is configured in a FreeBSD basic install.
+
+For details on usage, invoke:  man utopia_font.

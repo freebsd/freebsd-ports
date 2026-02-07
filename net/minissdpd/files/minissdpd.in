@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: minissdpd
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# BEFORE: miniupnpd
+
+. /etc/rc.subr
+
+# Add the following line to /etc/rc.conf to enable minissdpd
+# minissdpd_enable="YES"
+# minissdpd_flags="-i listen_addr"
+
+name=minissdpd
+rcvar=minissdpd_enable
+load_rc_config $name
+
+minissdpd_enable=${minissdpd_enable:-"NO"}
+
+command="%%PREFIX%%/sbin/minissdpd"
+pidfile="/var/run/${name}.pid"
+sockfile="/var/run/${name}.sock"
+command_args="-s ${sockfile} -p ${pidfile}"
+
+run_rc_command "$1"

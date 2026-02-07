@@ -1,0 +1,3 @@
+DILL provides instruction-level code generation, register allocation and simple
+optimizations for generating executable code directly into memory regions for
+immediate use.

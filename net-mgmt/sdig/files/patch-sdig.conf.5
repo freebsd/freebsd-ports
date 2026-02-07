@@ -1,0 +1,20 @@
+--- sdig.conf.5.orig	2010-07-27 06:55:33 UTC
++++ sdig.conf.5
+@@ -109,7 +109,7 @@ Specify the path to Samba's nmblookup binary.  This mi
+ This program is optional, and is provided to augment DNS lookups in
+ environments laden with Windows machines.
+ 
+-	NMBLOOKUP /usr/local/samba/bin/nmblookup
++	NMBLOOKUP %%PREFIX%%/bin/nmblookup
+ 
+ .IP "MACTABLE \fIpath\fR"
+ 
+@@ -122,7 +122,7 @@ This file is rather large and rarely changes, so it's 
+ source distribution.  You can get it on the main sdig web site -
+ http://www.exploits.org/sdig/
+ 
+-	MACTABLE /etc/mactable
++	MACTABLE %%PREFIX%%/etc/mactable
+ 
+ .IP "HOSTINFO \fIpath\fR"
+  

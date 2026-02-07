@@ -1,0 +1,22 @@
+--- src/Makefile.orig	2016-07-26 15:10:03 UTC
++++ src/Makefile
+@@ -11,7 +11,7 @@ OBJECTS=$(SOURCES:.cpp=.o)
+ .PHONY: all clean cleandeps cleanobjs cleanlib libnoise libnoise.so libnoise.so.0
+ 
+ # hooks for future makefiles being able to make multiple SOs, or older SOs
+-libnoise: libnoise.so libnoise.a libnoise.la
++libnoise: libnoise.la
+ libnoise.so: libnoise.so.0
+ libnoise.so.0: libnoise.so.0.3
+ 
+@@ -21,8 +21,8 @@ libnoise.so.0.3: $(OBJECTS)
+ 
+ libnoise.a: $(OBJECTS)
+ 	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -o $@ $(OBJECTS)
+-libnoise.la: $(OBJECTS)
+-	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -o $@ $(OBJECTS:.o=.lo)
++libnoise.la: $(OBJECTS:.o=.lo)
++	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -rpath $(PREFIX)/lib -o $@ $(OBJECTS:.o=.lo)
+ 
+ clean:	cleandeps cleanobjs cleanlib
+ cleandeps:

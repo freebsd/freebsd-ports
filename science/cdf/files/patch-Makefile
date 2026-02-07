@@ -1,0 +1,44 @@
+--- Makefile.orig	2024-09-25 15:55:00 UTC
++++ Makefile
+@@ -52,7 +52,7 @@
+ 
+ .SILENT:
+ 
+-SHELL=/bin/bash
++SHELL=${LOCALBASE}/bin/bash
+ NULL=true
+ PART=all
+ TARGET=
+@@ -121,6 +121,9 @@ endif
+     endif
+   endif
+ endif
++ifeq ("$(OS)","freebsd")
++  MAKE=gmake
++endif
+ RANLIB=ranlib
+ 
+ WHICHOS=$(shell uname)
+@@ -874,15 +877,15 @@ CURSES_freebsd_gnu=yes
+ JNIEXT_freebsd=so
+ 
+ CURSES_freebsd_gnu=yes
+-CC_freebsd_gnu=gcc
+-LD_freebsd_gnu=gcc
+-LDOPTIONS_freebsd_gnu=-shared 
++CC_freebsd_gnu=${CC}
++LD_freebsd_gnu=${CC}
++LDOPTIONS_freebsd_gnu=-shared -Wl,-soname,libcdf.so.0
+ PIC_freebsd_gnu=-fPIC
+-COPTIONS_freebsd_gnu=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DMALLOC_CHECK_=0
++COPTIONS_freebsd_gnu=${CFLAGS} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DMALLOC_CHECK_=0
+ COPTIONSZlib_freebsd_gnu=-DHAVE_STDARG_H -DHAVE_UNISTD_H
+-COPTIONSld_freebsd_gnu=
+-FOPTIONS_freebsd_gnu=
+-FOPTIONSld_freebsd_gnu=
++COPTIONSld_freebsd_gnu=${LDFLAGS}
++FOPTIONS_freebsd_gnu=${FFLAGS}
++FOPTIONSld_freebsd_gnu=${LDFLAGS}
+ CURSESLIB_freebsd_gnu=-lncurses
+ SYSLIBSexe_freebsd_gnu=-lm -lc
+ SYSLIBSshr_freebsd_gnu=-lm -lc

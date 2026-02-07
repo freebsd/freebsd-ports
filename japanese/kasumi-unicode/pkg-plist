@@ -1,0 +1,6 @@
+bin/kasumi
+share/applications/kasumi.desktop
+%%NLS%%share/locale/it/LC_MESSAGES/kasumi-unicode.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/kasumi-unicode.mo
+share/man/man1/kasumi.1.gz
+share/pixmaps/kasumi.png

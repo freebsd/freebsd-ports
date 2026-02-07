@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: valkey
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `valkey':
+#
+#valkey_enable="YES"
+#
+# Define profiles here to run separate valkey instances:
+#
+#valkey_profiles="foo bar" #  Script uses %%PREFIX%%/etc/valkey-NAME.conf respectively.
+#			     For correct script working please update pidfile entries in
+#			     valkey-NAME.conf files.
+
+. /etc/rc.subr
+
+name="valkey"
+rcvar="${name}_enable"
+
+extra_commands="reload"
+
+command="%%PREFIX%%/bin/valkey-server"
+pidfile="%%VALKEY_RUNDIR%%/$name.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${valkey_enable="NO"}
+: ${valkey_user="%%VALKEY_USER%%"}
+: ${valkey_config="%%PREFIX%%/etc/$name.conf"}
+
+command_args="${valkey_config}"
+required_files="${valkey_config}"
+
+_profile_exists() {
+	for _p in ${valkey_profiles}; do
+		[ "${_p}" = "$1" ] && return 1;
+	done
+	return 0
+}
+
+if [ $# -eq 2 ]; then
+	_profile=$2
+	_profile_exists $_profile
+	_exists=$?
+	[ ${_exists} -ne 1 ] && {
+		echo "`basename %%PREFIX%%/etc/rc.d/valkey`: no '$2' in 'valkey_profiles'"
+		exit 1
+	};
+	echo "-- Profile: ${_profile} --"
+	config_file="%%PREFIX%%/etc/${name}-${_profile}.conf"
+	command_args="${config_file}"
+	pidfile="%%VALKEY_RUNDIR%%/${_profile}.pid"
+	required_files="${config_file}"
+elif [ -n "${valkey_profiles}" ]; then
+	_swap=$*; shift; _profiles=$*
+	_profiles=${_profiles:-${valkey_profiles}}
+	set -- ${_swap}
+	for _profile in ${_profiles}; do
+		%%PREFIX%%/etc/rc.d/valkey $1 ${_profile}
+	done
+	exit 0
+fi
+
+run_rc_command "$1"

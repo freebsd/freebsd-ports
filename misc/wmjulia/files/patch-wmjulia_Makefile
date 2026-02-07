@@ -1,0 +1,36 @@
+--- wmjulia/Makefile.orig	1999-04-19 21:52:15 UTC
++++ wmjulia/Makefile
+@@ -1,21 +1,20 @@
+-INCDIR	=	-I/usr/X11R6/include
+-LIBDIR	=	-L/usr/X11R6/lib
+-LIBS	=	-lXpm -lXext -lX11 -lm
+-OBJS	=	wmjulia.o ../wmgeneral/wmgeneral.o 
++CC ?= gcc
++CFLAGS += -c -Wall
++INCDIR = -I${LOCALBASE}/include
++LIBDIR = -L${LOCALBASE}/lib
++LIBS   = -lXpm -lXext -lX11 -lm
++OBJS =  wmjulia.o ../wmgeneral/wmgeneral.o
+ 
+ .c.o:
+-	cc -c -g -O2 -Wall -D$(shell echo `uname -s`) $< -o $*.o $(INCDIR)
++	${CC} ${CFLAGS} ${INCDIR} -D${shell echo `uname -s`} $< -o $*.o
+ 
+-all: wmjulia
+-
+ wmjulia: $(OBJS)
+-	cc -o wmjulia $^ $(LIBDIR) $(LIBS)
++	${CC} -o wmjulia $^ ${LIBDIR} ${LIBS}
+ 
++all: wmjulia
++
+ clean:
+-	for i in $(OBJS) ; do \
++	for i in ${OBJS}; do \
+ 		rm -f $$i; \
+ 	done
+-	rm -f wmjulia
+-
+-install:
+-	mv wmjulia /usr/local/bin
++	rm -f wmjulia core

@@ -1,0 +1,61 @@
+--- src/core/CMakeLists.txt.orig	2025-08-15 18:30:00 UTC
++++ src/core/CMakeLists.txt
+@@ -21,7 +21,7 @@ add_subdirectory(tools/qwebengine_convert_dict)
+ #   TOOLCHAIN SETUP
+ ##
+ 
+-if(LINUX OR WIN32)
++if(LINUX OR WIN32 OR FREEBSD)
+     setup_toolchains()
+ endif()
+ 
+@@ -212,7 +212,7 @@ foreach(arch ${archs})
+                 accessibility_activation_observer.cpp accessibility_activation_observer.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX
++        extend_gn_target(${buildGn} CONDITION LINUX OR FREEBSD
+             SOURCES
+                 ozone/gl_ozone_qt.cpp ozone/gl_ozone_qt.h
+                 ozone/ozone_util_qt.cpp ozone/ozone_util_qt.h
+@@ -220,17 +220,17 @@ foreach(arch ${archs})
+                 ozone/surface_factory_qt.cpp ozone/surface_factory_qt.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl
++        extend_gn_target(${buildGn} CONDITION (LINUX OR FREEBSD) AND QT_FEATURE_opengl
+             SOURCES
+                 ozone/gl_helper.cpp ozone/gl_helper.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl AND QT_FEATURE_webengine_ozone_x11 AND QT_FEATURE_xcb_glx_plugin
++        extend_gn_target(${buildGn} CONDITION (LINUX OR FREEBSD) AND QT_FEATURE_opengl AND QT_FEATURE_webengine_ozone_x11 AND QT_FEATURE_xcb_glx_plugin
+             SOURCES
+                 ozone/glx_helper.cpp ozone/glx_helper.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl AND QT_FEATURE_egl
++        extend_gn_target(${buildGn} CONDITION (LINUX OR FREEBSD) AND QT_FEATURE_opengl AND QT_FEATURE_egl
+             SOURCES
+                 ozone/egl_helper.cpp ozone/egl_helper.h
+         )
+@@ -462,7 +462,7 @@ foreach(arch ${archs})
+             CONDITION QT_FEATURE_webenginedriver
+         )
+ 
+-        if(LINUX)
++        if(LINUX OR FREEBSD)
+             list(APPEND gnArgArg
+                 angle_enable_gl=true
+                 use_gtk=false # GTK toolkit bindings
+@@ -529,6 +529,10 @@ foreach(arch ${archs})
+             extend_gn_list(gnArgArg
+                 ARGS use_pulseaudio
+                 CONDITION QT_FEATURE_webengine_system_pulseaudio
++            )
++            extend_gn_list(gnArgArg
++                ARGS use_sndio
++                CONDITION QT_FEATURE_webengine_system_sndio
+             )
+             extend_gn_list(gnArgArg
+                 ARGS use_system_minigbm

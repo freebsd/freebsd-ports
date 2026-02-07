@@ -1,0 +1,5 @@
+TIMESTAMP = 1713810375
+SHA256 (Wikinaut-agrep-3.41.5-7b7f350_GH0.tar.gz) = d3d5bfd631359056d47ed2c8c37dc5f661c31074ae525a5386d9a0f455136123
+SIZE (Wikinaut-agrep-3.41.5-7b7f350_GH0.tar.gz) = 3652802
+SHA256 (agrep-patch-ansi1) = a6161b483c144f3791ba66e9fa25c92423570d9d11c576e22e3f221f02d13ce7
+SIZE (agrep-patch-ansi1) = 22304

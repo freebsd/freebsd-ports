@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/HTTP::HeaderParser::XS.3.gz
+%%SITE_ARCH%%/HTTP/HeaderParser/XS.pm
+%%SITE_ARCH%%/auto/HTTP/HeaderParser/XS/XS.so
+%%SITE_ARCH%%/auto/HTTP/HeaderParser/XS/autosplit.ix

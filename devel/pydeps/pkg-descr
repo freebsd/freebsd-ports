@@ -1,0 +1,4 @@
+pydeps is a Python module dependency visualizer.
+
+It is primarly intended to be used from the command line through the pydeps
+command.

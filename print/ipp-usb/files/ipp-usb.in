@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: ipp_usb
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# ipp_usb_enable (bool):	Set to NO by default.
+#				Set it to YES to enable ipp-usb.
+
+. /etc/rc.subr
+
+name=ipp_usb
+rcvar=ipp_usb_enable
+
+load_rc_config $name
+
+: ${ipp_usb_enable:="NO"}
+
+command=%%PREFIX%%/sbin/ipp-usb
+command_args="standalone -bg"
+
+run_rc_command "$1"

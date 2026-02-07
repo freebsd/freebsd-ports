@@ -1,0 +1,2 @@
+CGI::Application::Plugin::Authorization adds the ability to
+authorize users for specific tasks.

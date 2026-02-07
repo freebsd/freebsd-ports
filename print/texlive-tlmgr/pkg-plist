@@ -1,0 +1,25 @@
+bin/tlmgr
+%%SITE_PERL%%/TeXLive/TLConfFile.pm
+%%SITE_PERL%%/TeXLive/TLConfig.pm
+%%SITE_PERL%%/TeXLive/TLCrypto.pm
+%%SITE_PERL%%/TeXLive/TLDownload.pm
+%%SITE_PERL%%/TeXLive/TLPDB.pm
+%%SITE_PERL%%/TeXLive/TLPOBJ.pm
+%%SITE_PERL%%/TeXLive/TLPSRC.pm
+%%SITE_PERL%%/TeXLive/TLPaper.pm
+%%SITE_PERL%%/TeXLive/TLTREE.pm
+%%SITE_PERL%%/TeXLive/TLUtils.pm
+%%SITE_PERL%%/TeXLive/TLWinGoo.pm
+%%SITE_PERL%%/TeXLive/TeXCatalogue.pm
+%%SITE_PERL%%/TeXLive/trans.pl
+%%TEXMFDISTDIR%%/.texlive-tlmgr
+%%TEXMFDISTDIR%%/scripts/texlive/tlmgr.pl
+share/tlpkg
+/var/db/tlpkg/installer/config.guess
+/var/db/tlpkg/texlive.tlpdb
+/var/db/tlpkg/texmf.cnf
+/var/db/tlpkg/tlmgr.log
+@dir /var/db/tlpkg/backups
+@dir /var/db/tlpkg/installer
+@dir /var/db/tlpkg/tlpobj
+@dir /var/db/tlpkg

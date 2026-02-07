@@ -1,0 +1,34 @@
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/images.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/option-patches/history_upgrade_prepare.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/images.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/option-patches/history_upgrade_prepare.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/with-compression/history_upgrade.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/with-compression/history_upgrade_log.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/with-compression/history_upgrade_prepare.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/with-compression/history_upgrade_str.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/with-compression/history_upgrade_text.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/with-compression/history_upgrade_uint.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/with-compression/trends_upgrade.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/history_upgrade.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/history_upgrade_log.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/history_upgrade_prepare.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/history_upgrade_str.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/history_upgrade_text.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/history_upgrade_uint.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/trends_upgrade.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/schema.sql
+@sample %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
+%%PROXY%%bin/zabbix_proxy_js
+%%PROXY%%@dir %%ETCDIR%%/zabbix_proxy.conf.d
+%%SERVER%%bin/zabbix_js
+%%SERVER%%@dir %%ETCDIR%%/zabbix_server.conf.d
+%%SERVER%%@dir %%ETCDIR%%/zabbix/alertscripts
+share/man/man8/zabbix_%%ZABBIX_BUILD%%.8.gz
+sbin/zabbix_%%ZABBIX_BUILD%%
+@dir %%ETCDIR%%/zabbix/externalscripts
+@dir lib/modules

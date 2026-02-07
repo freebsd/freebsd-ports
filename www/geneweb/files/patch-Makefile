@@ -1,0 +1,65 @@
+--- ./Makefile.orig	2013-03-01 03:06:49.000000000 UTC
++++ ./Makefile	2014-05-14 06:57:05.000000000 
+@@ -1,8 +1,7 @@
+ # $Id: Makefile,v 5.7 2009-03-11 10:53:30 ddr Exp $
+ 
+-PREFIX=/usr
+-LANGDIR=$(PREFIX)/share/geneweb
+-MANDIR=$(PREFIX)/man/man1
++LANGDIR=$(STAGEDIR)$(PREFIX)/share/geneweb
++MANDIR=$(STAGEDIR)$(PREFIX)/share/man/man1
+ DESTDIR=distribution
+ MANPAGES=ged2gwb.1 gwb2ged.1 gwc.1 gwc2.1 gwu.1 gwd.1 consang.1 gwsetup.1
+ 
+@@ -29,16 +28,16 @@
+ 	cd gwtp; $(MAKE) opt
+ 
+ install:
+-	mkdir -p $(PREFIX)/bin
+-	cp src/gwc $(PREFIX)/bin/gwc$(EXE)
+-	cp src/gwc1 $(PREFIX)/bin/gwc1$(EXE)
+-	cp src/gwc2 $(PREFIX)/bin/gwc2$(EXE)
+-	cp src/consang $(PREFIX)/bin/consang$(EXE)
+-	cp src/gwd $(PREFIX)/bin/gwd$(EXE)
+-	cp src/gwu $(PREFIX)/bin/gwu$(EXE)
+-	cp ged2gwb/ged2gwb $(PREFIX)/bin/ged2gwb$(EXE)
+-	cp ged2gwb/ged2gwb2 $(PREFIX)/bin/ged2gwb2$(EXE)
+-	cp gwb2ged/gwb2ged $(PREFIX)/bin/gwb2ged$(EXE)
++	mkdir -p $(STAGEDIR)$(PREFIX)/bin
++	cp src/gwc $(STAGEDIR)$(PREFIX)/bin/gwc$(EXE)
++	cp src/gwc1 $(STAGEDIR)$(PREFIX)/bin/gwc1$(EXE)
++	cp src/gwc2 $(STAGEDIR)$(PREFIX)/bin/gwc2$(EXE)
++	cp src/consang $(STAGEDIR)$(PREFIX)/bin/consang$(EXE)
++	cp src/gwd $(STAGEDIR)$(PREFIX)/bin/gwd$(EXE)
++	cp src/gwu $(STAGEDIR)$(PREFIX)/bin/gwu$(EXE)
++	cp ged2gwb/ged2gwb $(STAGEDIR)$(PREFIX)/bin/ged2gwb$(EXE)
++	cp ged2gwb/ged2gwb2 $(STAGEDIR)$(PREFIX)/bin/ged2gwb2$(EXE)
++	cp gwb2ged/gwb2ged $(STAGEDIR)$(PREFIX)/bin/gwb2ged$(EXE)
+ 	mkdir -p $(LANGDIR)/lang
+ 	cp hd/lang/*.txt $(LANGDIR)/lang/.
+ 	mkdir -p $(LANGDIR)/images
+@@ -52,15 +51,15 @@
+ 	cd man; cp $(MANPAGES) $(MANDIR)/.
+ 
+ uninstall:
+-	rm -f $(PREFIX)/bin/gwc$(EXE)
+-	rm -f $(PREFIX)/bin/gwc1$(EXE)
+-	rm -f $(PREFIX)/bin/gwc2$(EXE)
+-	rm -f $(PREFIX)/bin/consang$(EXE)
+-	rm -f $(PREFIX)/bin/gwd$(EXE)
+-	rm -f $(PREFIX)/bin/gwu$(EXE)
+-	rm -f $(PREFIX)/bin/ged2gwb$(EXE)
+-	rm -f $(PREFIX)/bin/gwb2ged$(EXE)
+-	rm -rf $(PREFIX)/share/geneweb
++	rm -f $(STAGEDIR)$(PREFIX)/bin/gwc$(EXE)
++	rm -f $(STAGEDIR)$(PREFIX)/bin/gwc1$(EXE)
++	rm -f $(STAGEDIR)$(PREFIX)/bin/gwc2$(EXE)
++	rm -f $(STAGEDIR)$(PREFIX)/bin/consang$(EXE)
++	rm -f $(STAGEDIR)$(PREFIX)/bin/gwd$(EXE)
++	rm -f $(STAGEDIR)$(PREFIX)/bin/gwu$(EXE)
++	rm -f $(STAGEDIR)$(PREFIX)/bin/ged2gwb$(EXE)
++	rm -f $(STAGEDIR)$(PREFIX)/bin/gwb2ged$(EXE)
++	rm -rf $(STAGEDIR)$(PREFIX)/share/geneweb
+ 	cd $(MANDIR); rm -f $(MANPAGES)
+ 
+ distrib: new_distrib wrappers

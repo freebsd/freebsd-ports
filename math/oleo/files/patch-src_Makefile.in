@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	2001-03-10 14:32:46 UTC
++++ src/Makefile.in
+@@ -161,7 +161,7 @@ oleo_SOURCES = parse.y byte-compile.c ev
+ @UseMotif_TRUE@MYCFL = ${X_CFLAGS}
+ @UseMotif_FALSE@MYCFL = ${X_CFLAGS}
+ 
+-oleo_LDADD = ${X_PRE_LIBS} ${MYLD} @INTLLIBS@ ../lib/liboleo.a ../intl/libintl.a ${X_LIBS}
++oleo_LDADD = ${X_PRE_LIBS} ${MYLD} @INTLLIBS@ ../lib/liboleo.a ${X_LIBS}
+ INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I../intl ${MYINC}
+ CFLAGS = @CFLAGS@ -DLOCALEDIR=\"$(localedir)\" ${MYCFL} 	-DBUILD_PREFIX='"'${BUILD_PREFIX}'"'
+ 
+@@ -254,8 +254,8 @@ ANSI2KNR = ../lib/ansi2knr
+ @UseMotif_FALSE@@HaveXbase_FALSE@postscript$U.o pcl$U.o epson$U.o \
+ @UseMotif_FALSE@@HaveXbase_FALSE@prtext$U.o afm$U.o mdi$U.o gsl$U.o \
+ @UseMotif_FALSE@@HaveXbase_FALSE@plotter$U.o legend$U.o
+-@UseMotif_TRUE@oleo_DEPENDENCIES =  ../lib/liboleo.a ../intl/libintl.a
+-@UseMotif_FALSE@oleo_DEPENDENCIES =  ../lib/liboleo.a ../intl/libintl.a
++@UseMotif_TRUE@oleo_DEPENDENCIES =  ../lib/liboleo.a @INTLDEPS@
++@UseMotif_FALSE@oleo_DEPENDENCIES =  ../lib/liboleo.a @INTLDEPS@
+ oleo_LDFLAGS = 
+ CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)

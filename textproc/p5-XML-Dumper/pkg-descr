@@ -1,0 +1,10 @@
+XML::Dumper dumps Perl data to a structured XML format.  XML::Dumper can
+also read XML data that was previously dumped by the module and convert
+it back to Perl.
+
+This might be useful for dumping Perl objects to files using an XML
+format that can be reloaded or accessed by other programs. Maybe even
+other languages.
+
+-Anton
+<tobez@FreeBSD.org>

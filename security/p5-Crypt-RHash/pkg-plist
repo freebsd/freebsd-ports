@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/Rhash.pm
+%%SITE_ARCH%%/auto/Crypt/Rhash/Rhash.so
+%%PERL5_MAN3%%/Crypt::Rhash.3.gz

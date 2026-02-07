@@ -1,0 +1,11 @@
+--- Makefile.orig	2022-11-03 00:19:12 UTC
++++ Makefile
+@@ -13,7 +13,7 @@ OPTIMIZE=-O3
+ #OPTIMIZE=-O0 -g
+ 
+ COMPILEFLAGS=$(CFLAGS) $(OPTIMIZE) -DVERSION=\"$(VERSION)\" -Wall -Wextra -Wno-unused
+-LINKFLAGS=$(LDFLAGS) -ljack -lsndfile -lm -lpthread -latomic
++LINKFLAGS=$(LDFLAGS) -ljack -lsndfile -lm -lpthread
+ 
+ OS := $(shell uname)
+ ifneq ($(OS),Darwin)

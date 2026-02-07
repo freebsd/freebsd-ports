@@ -1,0 +1,21 @@
+bin/ump
+@sample etc/ump.conf.sample
+%%DATADIR%%/ump-files/Black.ump
+%%DATADIR%%/ump-files/Blue.ump
+%%DATADIR%%/ump-files/Gray.ump
+%%DATADIR%%/ump-files/Green.ump
+%%DATADIR%%/ump-files/Orange.ump
+%%DATADIR%%/ump-files/Pink.ump
+%%DATADIR%%/ump-files/Purple.ump
+%%DATADIR%%/ump-files/Red.ump
+%%DATADIR%%/ump-files/White.ump
+%%DATADIR%%/ump-files/Yellow.ump
+%%DATADIR%%/ump-files/factorize.ump
+%%DATADIR%%/ump-files/fibonacci.ump
+%%DATADIR%%/ump-files/gcd.ump
+%%DATADIR%%/ump-files/identity.ump
+%%DATADIR%%/ump-files/isMersenne.ump
+%%DATADIR%%/ump-files/isPrime.ump
+%%DATADIR%%/ump-files/lcm.ump
+%%DATADIR%%/ump-files/sign.ump
+%%DATADIR%%/ump-files/trans.ump

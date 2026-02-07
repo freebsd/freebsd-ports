@@ -1,0 +1,946 @@
+# Please keep this file sorted by GID!
+# Please pick an empty slot when available and also consider base values from
+# /usr/src/etc/group
+daemon:*:1:
+operator:*:5:amanda
+mail:*:6:postfix,clamav
+ftp:*:14:
+smmsp:*:25:
+video:*:44:lightdm
+bind:*:53:
+rdfdb:*:55:
+spamd:*:58:
+unbound:*:59:
+cyrus:*:60:
+proxy:*:62:
+authpf:*:63:
+uucp:*:66:
+xten:*:67:
+dialer:*:68:aprsd
+network:*:69:
+pgsql:*:70:
+ircd:*:72:
+ircservices:*:73:
+simscan:*:74:
+hybserv:*:76:
+audit:*:77:
+virtuoso:*:79:
+www:*:80:
+qnofiles:*:81:
+qmail:*:82:
+mysql:*:88:
+vchkpw:*:89:
+firebird:*:90:
+mailman:*:91:
+gdm:*:92:
+jabber:*:93:
+p4admin:*:94:
+interch:*:95:
+squeuer:*:96:
+mud:*:97:
+msql:*:98:
+rscsi:*:99:
+squid:*:100:
+quagga:*:101:
+ganglia:*:102:
+sgeadmin:*:103:
+slimserv:*:104:
+dnetc:*:105:
+clamav:*:106:
+cacti:*:107:
+webkit:*:108:
+quickml:*:109:
+vscan:*:110:
+fido:*:111:
+dcc:*:112:
+amavis:*:113:
+dhis:*:114:
+_symon:*:115:
+u2f:*:116:
+smokeping:*:117:
+ircproxyd:*:118:
+mythtv:*:119:
+pdns:*:120:
+otrs:*:121:
+zabbix:*:122:
+ntpd:*:123:
+fetchmail:*:124:
+postfix:*:125:
+maildrop:*:126:
+nav:*:127:
+sd-agent:*:128:
+vlock:*:129:
+_bgpd:*:130:
+_ospfd:*:131:
+_spamd:*:132:
+freeradius:*:133:
+undernet:*:134:
+rabbitmq:*:135:
+dhcpd:*:136:
+mpd:*:137:
+wolfpack:*:138:
+shellinabox:*:139:
+amanda:*:140:
+synapse:*:141:
+ladvd:*:142:
+dovecot:*:143:
+dovenull:*:144:
+webcamd:*:145:
+ventrilo:*:146:
+kdm:*:147:
+ipv6mon:*:148:
+avenger:*:149:
+cbsd:*:150:
+nixbld:*:151:
+frrvty:*:152:frr
+rbldns:*:153:
+trircd:*:154:
+xorp:*:155:
+monetdb:*:156:
+barman:*:157:
+pootle:*:158:
+nocat:*:159:
+_ypldap:*:160:
+solr:*:161:
+octoprint:*:162:
+_iked:*:163:
+lightdm:*:164:
+uwsgi:*:165:
+yule:*:166:
+ceph:*:167:
+frr:*:168:
+acme:*:169:
+tile38:*:170:
+sfs:*:171:
+agk:*:172:
+polipo:*:173:
+flowtools:*:174:
+twms:*:175:
+mlvpn:*:176:
+_mdnsd:*:177:
+otpw:*:178:
+gdnsd:*:179:
+rt:*:180:
+nagios:*:181:
+noc:*:182:
+icinga:*:183:
+dnscache:*:184:
+tinydns:*:185:
+dnslog:*:186:
+swift:*:187:
+netxms:*:188:
+leofs:*:189:
+keystone:*:190:
+glance:*:191:
+moinmoin:*:192:
+cups:*:193:
+saned:*:194:
+radns:*:195:
+nova:*:196:
+dq:*:197:
+horizon:*:198:
+mcserver:*:199:
+sympa:*:200:
+privoxy:*:201:
+dspam:*:202:
+cinder:*:203:
+yate:*:204:
+gnugk:*:205:
+gini:*:206:
+_mixminion:*:207:
+_dnsdist:*:208:
+gotosocial:*:209:
+shoutcast:*:210:
+git:*:211:
+hg:*:212:
+drizzle:*:213:
+kyototycoon:*:214:
+opendnssec:*:215:
+nsd:*:216:
+anvil:*:217:
+zap:*:218:
+sddm:*:219:
+bs:*:220:
+opensips:*:221:
+rtpproxy:*:222:
+mqttwarn:*:223:
+payara:*:224:
+postgrey:*:225:
+sqlgrey:*:226:
+_hfm:*:227:
+osrm:*:228:
+kismet:*:229:
+carbon:*:230:
+foundationdb:*:231:
+archiva:*:232:
+_ntp:*:233:
+kafka:*:234:
+openhab:*:235:
+rspamd:*:236:
+paperless:*:237:
+sonic:*:238:
+restserver:*:239:
+aprsd:*:240:
+tnc:*:241:
+prosody:*:242:
+ot-recorder:*:243:
+mastodon:*:244:
+routinator:*:245:
+fahclient:*:246:fahclient
+fcron:*:247:
+signal-cli:*:248:
+sonarqube:*:249:
+sems:*:250:
+irrd:*:251:
+gonic:*:252:
+_adsuck:*:253:
+imds:*:254:
+_i2pd:*:255:
+_tor:*:256:
+_smtpd:*:257:
+_smtpq:*:258:
+spiped:*:259:
+meta1s:*:260:
+meta1q:*:261:
+meta1c:*:262:meta1s
+meta1m:*:263:meta1s,meta1q
+meta1:*:264:
+sshout:*:265:
+step:*:266:
+odoo:*:267:
+tenshi:*:268:tenshi
+dendrite:*:269:
+_rpki-client:*:270:
+signaling:*:271:
+gvm:*:272:
+seaweedfs:*:273:
+usbmuxd:*:274:
+haclient:*:275:
+frontbase:*:276:
+unifi-poller:*:277:
+rtg:*:278:
+mrtg:*:279:
+xymon:*:280:
+prelude:*:281:
+spread:*:282:
+devmon:*:283:
+vnstat:*:284:
+exaddos:*:285:exaddos
+rancid:*:286:
+webdis:*:287:
+ntopng:*:288:
+victoria-metrics:*:289:
+_gmid:*:290:
+pydio:*:291:
+sftpgo:*:292:
+biboumi:*:293:
+krill:*:294:
+jottad:*:295:
+writefreely:*:296:
+conduit:*:297:
+neolink:*:298:
+owncast:*:299:
+backuppc:*:300:
+openvpn:*:301:
+netdata:*:302:
+onlyoffice:*:303:www
+glewlwyd:*:304:
+nats:*:305:
+jitsi:*:306:
+jicofo:*:307:jitsi
+jvb:*:308:jitsi
+wazuh:*:309:
+cardano:*:310:
+_arti:*:311:
+_sphinx:*:312:
+_fastdfs:*:313:
+promscale:*:314:
+lavinmq:*:315:
+nut:*:316:
+hedgedoc:*:317:
+# free: 318, UID used by icingadirector
+rustdesk:*:319:
+teleirc:*:320:
+caldera:*:321:
+tlsc:*:322:
+soju:*:323:
+dkimpy-milter:*:324:
+dkfilter:*:325:
+smfs:*:326:
+_reticulum:*:327:
+galene:*:328:
+certspotter:*:329:
+orthanc:*:330:
+svxlink:*:331:
+keycloak:*:332:
+honeytrap:*:333:
+percona:*:334:
+benthos:*:335:
+snac:*:336:
+daapd:*:337:
+murmur:*:338:
+mumble-server:*:339:
+wildfire:*:340:
+stunnel:*:341:
+openfire:*:342:
+gunicorn:*:343:
+snmpd:*:344:
+_metronome:*:345:
+ngircd:*:346:
+eturnal:*:347:
+davfs2:*:348:
+tempo:*:349:
+_sabnzbd:*:350:
+sonarr:*:351:
+radarr:*:352:
+_iodined:*:353:
+jackett:*:354:
+nzbhydra2:*:355:
+lidarr:*:356:
+bazarr:*:357:
+autoscan:*:358:
+prowlarr:*:359:
+v2ray:*:360:
+httptunnel:*:361:
+readarr:*:362:
+victoria-logs:*:363:
+elog:*:364:
+gotify:*:365:
+opengist:*:366:
+velbustcpd:*:367:
+sshesame:*:368:
+neo4j:*:369:
+_wsdd:*:370:
+reposilite:*:371:
+beam:*:372:
+mautrix-whatsapp:*:373:
+traccar:*:374:
+unpackerr:*:375:
+athens:*:376:
+hostd:*:377:
+walletd:*:378:
+renterd:*:379:
+spoofdpi:*:380:
+hydroxide:*:381:
+_tlsrpt:*:382:
+cascade:*:383:
+omada:*:384:
+mtail:*:385:
+# free: 386
+# free: 387
+autopulse:*:388:
+ldap:*:389:
+# free: 390
+# free: 391
+# free: 392
+# free: 393
+# free: 394
+# free: 395
+# free: 396
+rtorrent:*:397:
+tiarra:*:398:
+# free: 399
+# free: 400
+# free: 401
+# free: 402
+# free: 403
+# free: 404
+# free: 405
+# free: 406
+# free: 407
+# free: 408
+# free: 409
+# free: 410
+uhub:*:411:
+# free: 412
+# free: 413
+# free: 414
+# free: 415
+# free: 416
+# free: 417
+# free: 418
+# free: 419
+oxidized:*:420:
+# free: 421
+# free: 422
+# free: 423
+# free: 424
+# free: 425
+drweb:*:426:
+# free: 427
+# free: 428
+varnish:*:429:
+# free: 430
+# free: 431
+# free: 432
+# free: 433
+# free: 434
+# free: 435
+# free: 436
+# free: 437
+# free: 438
+# free: 439
+# free: 440
+# free: 441
+quasselcore:*:442:
+# free: 443
+callweaver:*:444:
+# free: 445
+# free: 446
+# free: 447
+# free: 448
+# free: 449
+ecartis:*:450:
+# free: 451
+# free: 452
+yadifa:*:453:
+# free: 454
+inadyn:*:455:
+# free: 456
+# free: 457
+# free: 458
+# free: 459
+# free: 460
+# free: 461
+# free: 462
+# free: 463
+lpjs:*:464:
+courier:*:465:
+condor:*:466:
+netmon:*:467:
+slurm:*:468:
+consul:*:469:
+serf:*:470:
+vault:*:471:
+nomad:*:472:
+minio:*:473:
+gitlab-runner:*:474:
+traefik:*:475:
+gitlab-pages:*:476:
+fiche:*:477:
+prometheus:*:478:
+alertmanager:*:479:
+datadog:*:480:
+promxy:*:481:
+openbao:*:482:
+# free: 483
+stalwart:*:484:
+# free: 485
+# free: 486
+# free: 487
+# free: 488
+# free: 489
+# free: 490
+# free: 491
+# free: 492
+# free: 493
+# free: 494
+# free: 495
+# free: 496
+# free: 497
+rustypaste:*:498:
+# free: 499
+qw:*:500:
+qwfwd:*:501:
+birdvty:*:502:
+# free: 503
+# free: 504
+_bbstored:*:505:
+radmind:*:506:
+skkserv:*:507:
+# free: 508
+# free: 509
+# free: 510
+# free: 511
+pwhois:*:512:
+# free: 513
+# free: 514
+# free: 515
+# free: 516
+# free: 517
+# free: 518
+# free: 519
+libvirtdbus:*:520:
+davmail:*:521:
+nullmail:*:522:
+freevo:*:523:
+# free: 524
+dkimproxy:*:525:
+# free: 526
+# free: 527
+# free: 528
+# free: 529
+_bgplgd:*:530:
+# free: 531
+# free: 532
+# free: 533
+pgbouncer:*:534:
+redis:*:535:
+keydb:*:536:
+valkey:*:537:
+# free: 538
+# free: 539
+# free: 540
+ipfixcol2:*:541:
+_flowd:*:542:
+ejabberd:*:543:
+# free: 544
+# free: 545
+# free: 546
+# free: 547
+# free: 548
+# free: 549
+# free: 550
+# free: 551
+kresd:*:552:
+knot:*:553:
+qtss:*:554:
+ircdru:*:555:
+messagebus:*:556:
+pulse-rt:*:557:
+avahi:*:558:
+tacacs:*:559:
+# Unused since hald has been removed from the ports tree
+# haldaemon:*:560:
+distcc:*:561:
+polkit:*:562:
+pulse:*:563:
+pulse-access:*:564:
+polkitd:*:565:
+# free: 566
+# free: 567
+# free: 568
+# free: 569
+# free: 570
+# free: 571
+# free: 572
+# free: 573
+# free: 574
+nexus:*:575:
+# free: 576
+# free: 577
+# free: 578
+# free: 579
+# free: 580
+# free: 581
+# free: 582
+# free: 583
+# free: 584
+# free: 585
+# free: 586
+assp:*:587:
+avahi-autoipd:*:588:
+# free: 589
+# free: 590
+# free: 591
+# free: 592
+# free: 593
+# free: 594
+# free: 595
+# free: 596
+# free: 597
+# free: 598
+# free: 599
+_xsi:*:600:
+_tss:*:601:
+_pkcs11:*:602:
+_acme:*:603:
+_lego:*:604:
+_hockeypuck:*:605:
+# free: 606
+# free: 607
+# free: 608
+# free: 609
+freeswitch:*:610:
+# free: 611
+# free: 612
+# free: 613
+# free: 614
+ntpa:*:615:
+taskd:*:616:
+# free: 617
+# free: 618
+# free: 619
+# free: 620
+# free: 621
+# free: 622
+# free: 623
+# free: 624
+xapsd:*:625:
+# free: 626
+# free: 627
+# free: 628
+# free: 629
+# free: 630
+# free: 631
+# free: 632
+# free: 633
+# free: 634
+# free: 635
+# free: 636
+# free: 637
+# free: 638
+caldavd:*:639:
+# free: 640
+monkeysphere:*:641:
+# free: 642
+# free: 643
+# free: 644
+# free: 645
+# free: 646
+# free: 647
+_xrdp:*:648:
+# free: 649
+# free: 650
+# free: 651
+# free: 652
+# free: 653
+# free: 654
+tinc:*:655:
+# free: 656
+# free: 657
+# free: 658
+# free: 659
+# free: 660
+# free: 661
+# free: 662
+# free: 663
+# free: 664
+# free: 665
+aox:*:666:
+riak:*:667:
+# free: 668
+# free: 669
+# free: 670
+# free: 671
+# free: 672
+# free: 673
+# free: 674
+# free: 675
+# free: 676
+# free: 677
+# free: 678
+# free: 679
+# free: 680
+# free: 681
+# free: 682
+# free: 683
+# free: 684
+# free: 685
+# free: 686
+# free: 687
+darkhttpd:*:688:
+# free: 689
+# free: 690
+# free: 691
+# free: 692
+# free: 693
+# free: 694
+# free: 695
+# free: 696
+# free: 697
+# free: 698
+# free: 699
+bnetd:*:700:
+fastnetmon:*:701:
+_sndio:*:702:
+# free: 703
+# free: 704
+# free: 705
+# free: 706
+# free: 707
+# free: 708
+# free: 709
+# free: 710
+# free: 711
+# free: 712
+# free: 713
+# free: 714
+# free: 715
+# free: 716
+bopm:*:717:
+# free: 718
+# free: 719
+# free: 720
+# free: 721
+# free: 722
+# free: 723
+# free: 724
+# free: 725
+# free: 726
+# free: 727
+# free: 728
+# free: 729
+# free: 730
+# free: 731
+# free: 732
+# free: 733
+# free: 734
+c-lightning:*:735:
+zonemaster:*:736:
+# free: 737
+# free: 738
+# free: 739
+# free: 740
+# free: 741
+# free: 742
+# free: 743
+# free: 744
+# free: 745
+# free: 746
+# free: 747
+# free: 748
+# free: 749
+# free: 750
+supysonic:*:751:
+# free: 752
+# free: 753
+# free: 754
+# free: 755
+# free: 756
+sopel:*:757:
+# free: 758
+# free: 759
+# free: 760
+# free: 761
+# free: 762
+# free: 763
+# free: 764
+# free: 765
+# free: 766
+# free: 767
+# free: 768
+# free: 769
+postgres:*:770:
+cockroach:*:771:
+postgrest:*:772:
+# free: 773
+# free: 774
+# free: 775
+namecoin:*:776:
+openxpki:*:777:
+litecoin:*:778:
+bitcoin:*:779:
+zetacoin:*:780:
+monero:*:781:
+zeek:*:782:
+# free: 783
+# free: 784
+stirlingpdf:*:785:
+# free: 786
+# free: 787
+# free: 788
+# free: 789
+healthchecks:*:790:
+# free: 791
+# free: 792
+# free: 793
+# free: 794
+# free: 795
+# free: 796
+# free: 797
+# free: 798
+# free: 799
+clickhouse:*:800:
+# free: 801
+# free: 802
+# free: 803
+# free: 804
+# free: 805
+act_runner:*:806:
+bosun:*:807:
+clixon:*:808:
+# free: 809
+# free: 810
+calibreweb:*:811:
+foreman_proxy:*:812:
+hitch:*:813:
+puppet:*:814:
+uchiwa:*:815:
+# free: 816
+rslsync:*:817:
+jenkins:*:818:
+rundeck:*:819:
+openacs:*:820:
+dotlrn:*:821:
+# free: 822
+# free: 823
+selenium:*:824:
+polw:*:825:
+statsd:*:826:
+_tuptime:*:827:
+cirrus:*:828:
+# free: 829
+# free: 830
+# free: 831
+beehive:*:832:
+# free: 833
+pocket-id:*:834:
+filebrowser:*:835:
+tinyauth:*:836:
+homebox:*:837:
+opksshuser:*:838:
+shiori:*:839:
+netdisco:*:840:
+tcpcryptd:*:841:
+munin:*:842:
+dahdi:*:843:asterisk
+subsonic:*:844:
+# free: 845
+sogod:*:846:
+domoticz:*:847:
+graylog:*:848:
+chronyd:*:849:
+qbittorrent:*:850:
+cassandra:*:851:
+p0f:*:852:
+_geodns:*:853:
+ebusd:*:854:
+opensearch:*:855:
+# free: 856
+kanidmd:*:857:
+umurmur:*:858:
+kanidm:*:859:
+plocate:*:860:
+rekor:*:861:
+timestamp-authority:*:862:
+trillian:*:863:
+mediamtx:*:864:
+z2m:*:865:
+vglusers:*:866:
+sqlpage:*:867:
+jellyfin:*:868:
+keyd:*:869:
+buildbot:*:870:
+# free: 871
+bitmark:*:872:
+bitmark-recorder:*:873:
+librespeed:*:874:
+cfssl:*:875:
+_lms:*:876:
+gemserv:*:877:
+gerbera:*:878:
+_encrypted-dns:*:879:
+pyspf-milter:*:880:
+ultimaker:*:881:
+midpoint:*:882:
+kubo-go:*:883:
+telegraf:*:884:
+tcpdump:*:885:
+miniflux:*:886:
+pdagent:*:887:
+vuls:*:888:
+mattermost:*:889:
+matterircd:*:890:
+urbackup:*:891:
+tautulli:*:892:
+logstash:*:893:
+arangodb:*:894:
+snmptt:*:895:
+istat:*:896:
+znc:*:897:
+ufdb:*:898:
+guacamole:*:899:
+seafile:*:900:
+fossy:*:901:www
+scanlogd:*:902:
+_ocserv:*:903:
+grafana:*:904:
+artifactory:*:905:
+opentsdb:*:906:
+influxd:*:907:
+riemann:*:908:
+proxysql:*:909:
+bacula:*:910:
+iserv:*:911:
+_sj3:*:912:
+_relayd:*:913:
+bitlbee:*:914:
+logcheck:*:915:
+ssmtp:*:916:
+prayer:*:917:
+nefu:*:918:
+couchdb:*:919:
+vboxusers:*:920:
+transmission:*:921:
+mongodb:*:922:
+liquidsoap:*:923:
+postpals:*:924:
+mfs:*:925:
+minbif:*:926:
+kumofs:*:927:
+nslcd:*:928:
+activemq:*:929:
+ifgraph:*:930:
+asterisk:*:931:
+sancp:*:932:
+dlna:*:933:
+torrus:*:934:www
+erlyvideo:*:935:
+crtmpserver:*:936:
+get_iplayer:*:937:
+vdr:*:938:
+noip:*:939:
+_tcpproxy:*:940:
+cego:*:941:
+teamspeak:*:942:
+dnetfold:*:943:
+bbs:*:944:
+dbxml:*:945:
+pgagroal:*:946:
+gnokii:*:947:
+dnrd:*:948:
+_lldpd:*:949:
+conquest:*:950:
+openerpd:*:951:
+bitten-slave:*:952:
+_neubot:*:953:
+couchpotato:*:954:
+hadoop:*:955:
+pandora:*:956:
+razorback:*:957:
+gnunet:*:958:
+c_icap:*:959:
+trytond:*:960:
+gearmand:*:961:
+zookeeper:*:962:
+fluentd:*:963:
+git_daemon:*:964:
+elasticsearch:*:965:
+ossec:*:966:
+loki:*:967:
+promtail:*:968:
+kippo:*:969:
+colord:*:970:
+shibd:*:971:
+plex:*:972:
+boinc:*:973:
+radicale:*:974:
+unifi:*:975:
+minetest:*:976:
+tests:*:977:
+_dnscrypt-proxy:*:978:
+ums:*:979:
+hbase:*:980:
+uvncrep:*:981:
+bro:*:982:
+syncthing:*:983:
+tvheadend:*:984:
+puppetdb:*:985:
+kamailio:*:986:
+spark:*:987:
+pot:*:988:
+emby:*:989:
+oozie:*:990:
+sguil:*:991:
+hive:*:992:
+kannel:*:993:
+rcynic:*:994:
+rpkirtr:*:995:
+tarantool:*:996:
+bareos:*:997:
+_rmilter:*:998:
+ebnetd:*:999:
+# DO NOT USE: 1000-65532
+nogroup:*:65533:
+nobody:*:65534:

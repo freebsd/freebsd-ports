@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <active-response>
+    <!-- Restart OSSEC if "ossec.conf" or "agent.conf" changes. -->
+    <command>restart-ossec</command>
+    <location>local</location>
+    <rules_id>56002,56004,56022,56024</rules_id>
+  </active-response>
+
+</template_config>

@@ -1,0 +1,36 @@
+--- src/core/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/core/CMakeLists.txt
+@@ -128,9 +128,10 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
+ 
+ elseif(CMAKE_SYSTEM_NAME MATCHES "(OpenBSD|FreeBSD|NetBSD|DragonFly)")
+    target_link_libraries(CsCore
+-      PRIVATE
++      PUBLIC
+       ${CMAKE_THREAD_LIBS_INIT}
+    )
++   target_link_options(CsCore PUBLIC -pthread)
+    include_directories(${CMAKE_SOURCE_DIR}/src/3rdparty/forkfd)
+ 
+ elseif(CMAKE_SYSTEM_NAME MATCHES "Windows")
+@@ -154,8 +155,8 @@ target_sources(CsCore
+ 
+ target_include_directories(CsCore
+    PUBLIC
+-   $<INSTALL_INTERFACE:include>
+-   $<INSTALL_INTERFACE:include/QtCore>
++   ${CMAKE_INSTALL_INCLUDEDIR}
++   ${CMAKE_INSTALL_INCLUDEDIR}/QtCore
+ )
+ 
+ if(MSVC)
+@@ -196,8 +197,8 @@ install(
+    TARGETS CsCore
+    EXPORT CopperSpiceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+-   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+-   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
++   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}${CS_NAMESPACE_DIRECTORY}
+ )
+ 
+ install(

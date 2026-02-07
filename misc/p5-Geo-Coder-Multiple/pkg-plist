@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Geo/Coder/Multiple.pm
+%%SITE_PERL%%/Geo/Coder/Multiple/Bing.pm
+%%SITE_PERL%%/Geo/Coder/Multiple/Generic.pm
+%%SITE_PERL%%/Geo/Coder/Multiple/Google.pm
+%%SITE_PERL%%/Geo/Coder/Multiple/Yahoo.pm
+%%SITE_PERL%%/Geo/Coder/Multiple/Response.pm
+%%SITE_PERL%%/Geo/Coder/Multiple/Multimap.pm
+%%PERL5_MAN3%%/Geo::Coder::Multiple.3.gz

@@ -1,0 +1,10 @@
+--- configure.ac.orig	2025-07-09 13:13:09 UTC
++++ configure.ac
+@@ -28,7 +28,6 @@ AC_CONFIG_HEADERS([config.h])
+         [xf86-input-synaptics])
+ AC_CONFIG_SRCDIR([Makefile.am])
+ AC_CONFIG_HEADERS([config.h])
+-AC_CONFIG_MACRO_DIRS([m4])
+ AC_CONFIG_AUX_DIR(.)
+ 
+ # Initialize Automake

@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: dkimpy_milter
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORKD: shutdown
+
+# Define these dkimpy_milter_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/dkimpy_milter
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+
+. /etc/rc.subr
+
+name="dkimpy_milter"
+desc="DKIM Milter Daemon"
+rcvar="dkimpy_milter_enable"
+
+load_rc_config $name
+
+: ${dkimpy_milter_enable:="NO"}
+: ${dkimpy_milter_pidfile:="/var/run/dkimpy-milter/dkimpy-milter.pid"}
+: ${dkimpy_milter_conffile:="%%PREFIX%%/etc/dkimpy-milter/dkimpy-milter.conf"}
+
+command=/usr/sbin/daemon
+command_interpreter=%%PYTHON_CMD%%
+procname=%%PREFIX%%/bin/dkimpy-milter
+command_args="-c -f ${procname} ${dkimpy_milter_conffile}"
+
+start_precmd=dkimpy_milter_precmd
+stop_postcmd=dkimpy_milter_postcmd
+
+dkimpy_milter_precmd()
+{
+    /bin/rm -f "${dkimpy_milter_pidfile}"
+}
+
+dkimpy_milter_postcmd()
+{
+    /bin/rm -f "${dkimpy_milter_pidfile}"
+}
+
+run_rc_command "$1"

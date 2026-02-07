@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Note this is a port of alpha-grade software. In local testing it has shown
+to be solid already, but not all functionality works as expected on
+FreeBSD yet, or may not work correctly at all. The port comes with an rc
+daemon, expecting a config file in %%ETCDIR%%/simplomon.conf .
+See the README.md for detailed configuration and setup.
+
+Please report any issues on the upstream PR:
+
+    https://github.com/berthubert/simplomon/pull/58
+
+EOM
+}
+]

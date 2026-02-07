@@ -1,0 +1,35 @@
+--- fidoconf/doc/Makefile.orig	2020-01-16 23:01:53 UTC
++++ fidoconf/doc/Makefile
+@@ -12,21 +12,21 @@ endif
+ all: html info dvi
+ 
+ ifdef HTMLDIR
+-html: fidoconfig.html fidoconfig.ru.html
++html: fidoconfig.html
+ else
+ html:
+ 	@echo
+ endif
+ 
+ ifdef DVIDIR
+-dvi: fidoconfig.dvi fidoconfig.ru.dvi
++dvi: fidoconfig.dvi
+ else
+ dvi:
+ 	@echo
+ endif
+ 
+ ifdef INFODIR
+-info: fidoconfig.info fidoconfig.ru.info
++info: fidoconfig.info
+ else
+ info:
+ 	@echo
+@@ -85,7 +85,6 @@ install: info html dvi
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(INFODIR)
+ 	$(INSTALL) $(IMOPT) fidoconfig.info $(DESTDIR)$(INFODIR)
+-	-install-info --info-dir=$(INFODIR)  $(DESTDIR)$(INFODIR)$(DIRSEP)fidoconfig.info
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(HTMLDIR)

@@ -1,0 +1,12 @@
+--- sj3.tmpl.orig	2008-09-07 16:44:07.000000000 +0900
++++ sj3.tmpl	2008-09-07 16:47:04.000000000 +0900
+@@ -64,8 +64,7 @@
+  */
+ #if defined(FreeBSDArchitecture)
+ 
+-CODE_LIBS	= -lxpg4
+-
++#include "sj3_freebsd.tmpl"
+ #endif
+ 
+ #if SystemV4 || SystemV

@@ -1,0 +1,3 @@
+Scalar::Does has long been noted that Perl would benefit from a does() built-in.
+A check that ref($thing) eq 'ARRAY' doesn't allow you to accept an object that
+uses overloading to provide an array-like interface.

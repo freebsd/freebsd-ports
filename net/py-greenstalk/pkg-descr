@@ -1,0 +1,3 @@
+Greenstalk is a small and unopinionated Python client library for
+communicating with the beanstalkd work queue. The API provided
+mostly maps one-to-one with commands in the protocol.

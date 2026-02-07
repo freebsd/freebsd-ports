@@ -1,0 +1,8 @@
+--- completion/javaws.bash.in.orig	2021-05-17 09:24:37 UTC
++++ completion/javaws.bash.in
+@@ -28,4 +28,4 @@ _javaws()
+       return 0
+     fi
+ }
+-complete -F _javaws javaws
++complete -F _javaws itweb-javaws

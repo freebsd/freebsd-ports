@@ -1,0 +1,14 @@
+--- man/Makefile.am.orig	2018-03-27 20:11:33 UTC
++++ man/Makefile.am
+@@ -16,11 +16,6 @@ EXTRA_DIST	= kronosnetd.8 knet-keygen.8
+ # Avoid Automake warnings about overriding these user variables.
+ # Programs in this directory are used during the build only.
+ AUTOMAKE_OPTIONS = -Wno-gnu
+-EXEEXT=$(BUILD_EXEEXT)
+-CC=$(CC_FOR_BUILD)
+-CFLAGS=$(CFLAGS_FOR_BUILD)
+-CPPFLAGS=$(CPPFLAGS_FOR_BUILD)
+-LDFLAGS=$(LDFLAGS_FOR_BUILD)
+ 
+ if BUILD_MAN
+ 

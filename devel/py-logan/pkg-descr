@@ -1,0 +1,3 @@
+Logan is a toolkit for running standalone Django applications. It provides you
+with tools to create a CLI runner, manage settings, and the ability to bootstrap
+the process.

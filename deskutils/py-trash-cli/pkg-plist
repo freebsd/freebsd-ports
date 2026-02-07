@@ -1,0 +1,10 @@
+share/bash-completion/completions/trash
+share/bash-completion/completions/trash-empty
+share/bash-completion/completions/trash-list
+share/bash-completion/completions/trash-put
+share/bash-completion/completions/trash-restore
+share/zsh/site-functions/_trash
+share/zsh/site-functions/_trash-empty
+share/zsh/site-functions/_trash-list
+share/zsh/site-functions/_trash-put
+share/zsh/site-functions/_trash-restore

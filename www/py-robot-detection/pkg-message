@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+You can download a new version of the Robot Database from https://www.robotstxt.org/db/all.txt.
+
+Download the database dump, and run the file robot_detection.py with the file as first argument.
+
+	$ fetch https://www.robotstxt.org/db/all.txt
+	$ python robot_detection.py all.txt
+
+If the database has changed, it'll print out the new version of robot_useragents variable that you need to put into the source code.
+EOM
+}
+]

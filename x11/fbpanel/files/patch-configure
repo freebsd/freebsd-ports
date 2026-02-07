@@ -1,0 +1,274 @@
+--- ./configure.orig	2010-04-04 17:02:40.000000000 +0800
++++ ./configure	2012-09-28 22:42:14.000000000 +0800
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ PID=$$
+ 
+ # NLS nuisances.
+@@ -19,15 +19,15 @@
+ #########################
+ ## Help                ##
+ #########################
+-function check_help ()
++check_help ()
+ {
+-    [ "$1" == "--help" ] && usage 0
++    [ "$1" = "--help" ] && usage 0
+     return 1
+ }
+ 
+ 
+ 
+-function usage ()
++usage ()
+ {
+     echo "\`configure\' configures this package to adapt to many kinds of systems."
+     echo "Usage: ./configure [variables] [features]"
+@@ -55,17 +55,17 @@
+     exit $1
+ }
+ 
+-function error ()
++error ()
+ {
+     echo "error: $@"
+     exit 1
+ }
+ 
+-function check_name ()
++check_name ()
+ {
+     local s=""
+     for i in `eval echo \\$$2`; do
+-        [ "$1" == "$i" ] && s=1 && break
++        [ "$1" = "$i" ] && s=1 && break
+     done
+     [ -z "$s" ] && return 0
+     error "Cam't add '$1' to $2: such name already exists."
+@@ -80,7 +80,7 @@
+ # $1 - variable's name, shoud survive 'declare $1'
+ # $2 - help string, description
+ # $3 - default value, any bash code suitable for 'eval var=$default'
+-function add_var ()
++add_var ()
+ {
+     check_name "$1" vars
+     vars="$vars $1" # to know var creation order, it's important
+@@ -88,23 +88,23 @@
+     eval hlp_$1="\"$2\""
+ }
+ 
+-function check_var ()
++check_var ()
+ {
+     local var val A
+ 
+-    [ "$(sed -e 's/--[^=]\+=[^=]*/AA/' <<< $1)" != AA ] && return 1
++    [ "$(echo $1 | sed -E 's/--[^=]+=[^=]*/AA/')" != AA ] && return 1
+ 
+-    A=${1:2}
++    A=${1#--}
+     var=${A%%=*}
+-    var=$(tr "[:upper:]-" "[:lower:]_"  <<< $var)
++    var=$(echo $var | tr "[:upper:]-" "[:lower:]_")
+     val=${A#*=}
+-    [ "$vars" == "${vars/$var/}" ] && error "$var - unknown variable"
++    echo "$vars" | grep -qw "$var" || error "$var - unknown variable"
+     eval $var="\"${val}\""
+ 
+     return 0
+ }
+ 
+-function update_vars ()
++update_vars ()
+ {
+     local val
+     for i in $vars; do
+@@ -118,7 +118,7 @@
+     done
+ }
+ 
+-function display_vars ()
++display_vars ()
+ {
+     local i
+     for i in $vars; do
+@@ -126,25 +126,25 @@
+     done
+ }
+ 
+-function dump_vars_h ()
++dump_vars_h ()
+ {
+     local i
+     if true; then
+         for i in $vars; do
+             eval val=\$$i
+-            echo "#define  $(tr "[:lower:]-" "[:upper:]_"  <<< $i)  \"${val}\""
++            echo "#define $(echo $i | tr "[:lower:]-" "[:upper:]_") \"${val}\""
+         done
+     fi
+ 
+ }
+ 
+-function dump_vars_mk ()
++dump_vars_mk ()
+ {
+     local i
+     if true; then
+         for i in $vars; do
+             eval val=\$$i
+-            echo "$(tr "[:lower:]-" "[:upper:]_"  <<< $i) = $val"
++            echo "$(echo $i | tr "[:lower:]-" "[:upper:]_") = $val"
+         done
+     fi
+ 
+@@ -157,7 +157,7 @@
+ # $1 - feature's name, shoud survive 'declare $1'
+ # $2 - help string, description
+ # $3 - "enabled" or "disabled" string
+-function add_feature ()
++add_feature ()
+ {
+     check_name "$1" features
+     features="$features $1"
+@@ -165,21 +165,21 @@
+     eval $1="'$3'"
+ }
+ 
+-function check_feature ()
++check_feature ()
+ {
+-    [ "$(sed  -e 's/--\(enable\|disable\)-.\+/AA/' <<< $1)" != AA ] && return 1
+-    A=${1:2}
++    [ "$(echo $1 | sed -E 's/--(enable|disable)-.+/AA/')" != AA ] && return 1
++    A=${1#--}
+     var=${A#*-}
+     val=${A%%-*}
+     #echo "feat=$feat status=$status"
+     [ "$val" != "enable" ] && [ "$val" != "disable" ] && return 1
+-    [ "$features" == "${features/$var/}" ] && error "$var - unknown feature"
++    [ "$features" = "${features/$var/}" ] && error "$var - unknown feature"
+     eval $var="$val"d
+ 
+     return 0
+ }
+ 
+-function display_features ()
++display_features ()
+ {
+     local i
+     for i in $features; do
+@@ -187,13 +187,13 @@
+     done
+ }
+ 
+-function update_features ()
++update_features ()
+ {
+     local val
+     for i in $features; do
+         eval val="\$$i"
+         if eval $i="\"$val\"" 2>/dev/null ; then
+-            eval [ "\$$i" == "enabled" -o "\$$i" == "disabled" ] && continue
++            eval [ "\$$i" = "enabled" -o "\$$i" = "disabled" ] && continue
+         fi
+         echo "Default value of '$i' couldn't be set from '$val'"
+         echo "Set it explicitly with '--$i=value'"
+@@ -202,25 +202,25 @@
+     done
+ }
+ 
+-function dump_features_h ()
++dump_features_h ()
+ {
+     local i
+     if true; then
+         for i in $features; do
+             str='#undef'
+-            eval [ "\$$i" == "enabled" ] && str='#define'
+-            echo "$str $(tr "[:lower:]-" "[:upper:]_"  <<< $i)"
++            eval [ "\$$i" = "enabled" ] && str='#define'
++            echo "$str $(echo $i | tr "[:lower:]-" "[:upper:]_")"
+         done
+     fi
+ }
+ 
+-function dump_features_mk ()
++dump_features_mk ()
+ {
+     local i
+     if true; then
+         for i in $features; do
+-            eval [ "\$$i" == "enabled" ] && str='#define'
+-            eval echo "$(tr "[:lower:]-" "[:upper:]_"  <<< $i):=\$$i"
++            eval [ "\$$i" = "enabled" ] && str='#define'
++            eval echo "$(echo $i | tr "[:lower:]-" "[:upper:]_"):=\$$i"
+         done
+     fi
+ }
+@@ -231,7 +231,7 @@
+ ## Engine              ##
+ #########################
+ 
+-function parse_args ()
++parse_args ()
+ {
+     # parse command line variables
+     while [ $# -gt 0 ]; do
+@@ -246,15 +246,15 @@
+ 
+ 
+ 
+-function bslash ()
++bslash ()
+ {
+     p1="%%$1%%"
+     t=`eval echo \\${$1}`
+-    p2=`sed -e 's/\//\\\\\//g' <<< $t`
++    p2=`echo $t | sed -e 's/\//\\\\\//g'`
+     echo "s/$p1/$p2/g"
+ }
+ 
+-function substitute ()
++substitute ()
+ {
+ 
+     if true; then
+@@ -271,7 +271,7 @@
+     done
+ }
+ 
+-function dump_config_h ()
++dump_config_h ()
+ {
+     echo "Creating config.h"
+     if true; then
+@@ -287,7 +287,7 @@
+     fi > config.h
+ }
+ 
+-function dump_config_mk ()
++dump_config_mk ()
+ {
+     echo "Creating config.mk"
+     if true; then
+@@ -301,7 +301,7 @@
+     fi > config.mk
+ }
+ 
+-function main ()
++main ()
+ {
+     parse_args "$@"
+     update_vars
+@@ -343,7 +343,7 @@
+ #########################
+ ## User settings here  ##
+ #########################
+-source scripts/custom.sh
++. scripts/custom.sh
+ 
+ #########################
+ ## Run It All          ##

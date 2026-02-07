@@ -1,0 +1,13 @@
+Tool to compile and run C programs like a shell script.
+
+First of all, this is not the same as tcc. TCC is a compiler. TCC will perform
+its own set of optimizations, just as GCC will perform its own and Clang will
+perform its own. The purpose of this script is to give a simple front-end to a
+compiler.
+
+Whether it's GCC, Clang, or something else entirely, one can get to choose
+their compiler. It's simply satisfying to type c hello.c and see it run
+instantly.
+
+C is fast. Being able to write a small, fast, and portable C "script" is great.
+One can pass around a C "script" just like s/he would a BASH script.

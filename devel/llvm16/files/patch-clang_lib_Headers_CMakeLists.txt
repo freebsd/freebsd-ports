@@ -1,0 +1,22 @@
+--- clang/lib/Headers/CMakeLists.txt.orig
++++ clang/lib/Headers/CMakeLists.txt
+@@ -6,19 +6,10 @@
+   float.h
+   inttypes.h
+   iso646.h
+-  limits.h
+   module.modulemap
+-  stdalign.h
+-  stdarg.h
+-  stdatomic.h
+-  stdbool.h
+-  stddef.h
+   __stddef_max_align_t.h
+-  stdint.h
+-  stdnoreturn.h
+   tgmath.h
+   unwind.h
+-  varargs.h
+   )
+ 
+ set(arm_common_files

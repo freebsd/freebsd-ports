@@ -1,0 +1,10 @@
+--- icmake/manual.orig	2014-12-30 21:34:00 UTC
++++ icmake/manual
+@@ -32,6 +32,7 @@ void _manual(string conversion, int useP
+ 
+     if (conversion == "latex")
+     {
++        run("cp " + g_wip + "/macros/xlatin1.tex " + g_install + DOCDOC);
+         chdir(g_install + DOCDOC);
+ 
+         runP(P_NOCHECK, "latex yodl.latex");

@@ -1,0 +1,13 @@
+--- build.xml.orig	2015-09-21 01:20:25 UTC
++++ build.xml
+@@ -5,8 +5,9 @@
+ 
+    <condition property="x86_or_x86_64" value="x86" else="x86_64"> <or><os arch="x86" /><os arch="i386"/></or> </condition>
+    <condition property="dist" value="dist_windows_${x86_or_x86_64}"><os family="windows" /></condition>
+-   <condition property="dist" value="dist_linux_${x86_or_x86_64}"><and><not><os family="mac"/></not><os family="unix" /></and></condition>	
++   <condition property="dist" value="dist_linux_${x86_or_x86_64}"><and><not><os family="mac"/></not><not><os name="FreeBSD"/></not><os family="unix" /></and></condition>	
+    <condition property="dist" value="dist_mac_${x86_or_x86_64}"><os family="mac" /></condition>
++   <condition property="dist" value="dist_freebsd"><os name="FreeBSD" /></condition>
+ 		
+    <target name="help">
+       <echo message="Available targets are:-"/> 

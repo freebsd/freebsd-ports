@@ -1,0 +1,168 @@
+--- statfs.c	2014-03-25 04:10:42.000000000 -0400
++++ statfs.c	2021-02-18 18:56:33.147163000 -0500
+@@ -4,9 +4,15 @@
+ 
+ #include <stdio.h>
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <sys/mount.h>
++#ifndef BSD
+ #include <sys/fs_types.h>
++#endif
+ #include <fstab.h>
+ #include "siod.h"
+ 
++#ifndef BSD
+ #define MNT_NUMTYPES	128
+ /*
+@@ -14,16 +20,98 @@
+  */
+ extern char *mnt_names[];
++#endif
+ 
+-LISP lstatfs(LISP path)
++#ifdef BSD
++static LISP decode_fstat_flags(uint64_t flags)
++{
++#define FLAGCODE(name) { #name, MNT_ ## name }
++	struct {
++		const char	*name;
++		uint64_t	 flag;
++	} flagcodes[] = {
++	/* Flags listed in statfs(2). Keep sorted for consistency */
++		FLAGCODE(ACLS),
++		FLAGCODE(ASYNC),
++		FLAGCODE(DEFEXPORTED),
++		FLAGCODE(EXKERB),
++		FLAGCODE(EXPORTANON),
++		FLAGCODE(EXPORTED),
++		FLAGCODE(EXPUBLIC),
++		FLAGCODE(EXRDONLY),
++		FLAGCODE(GJOURNAL),
++		FLAGCODE(LOCAL),
++		FLAGCODE(MULTILABEL),
++		FLAGCODE(NOATIME),
++		FLAGCODE(NOCLUSTERR),
++		FLAGCODE(NOCLUSTERW),
++		FLAGCODE(NOEXEC),
++		FLAGCODE(NOSUID),
++		FLAGCODE(NOSYMFOLLOW),
++		FLAGCODE(QUOTA),
++		FLAGCODE(RDONLY),
++		FLAGCODE(ROOTFS),
++		FLAGCODE(SOFTDEP),
++		FLAGCODE(SUIDDIR),
++		FLAGCODE(SYNCHRONOUS),
++		FLAGCODE(UNION),
++		FLAGCODE(USER)
++	};
++#undef FLAGCODE
++	unsigned u;
++	LISP result = NULL, val, l;
++
++	for (u = 0; u < sizeof(flagcodes) / sizeof(flagcodes[0]); u++) {
++		if (!(flags & flagcodes[u].flag))
++			continue;
++		val = cintern(flagcodes[u].name);
++		if (result == NULL) {
++			l = result = cons(val, NULL);
++			continue;
++		}
++		CDR(l) = cons(val, NULL);
++		l = CDR(l);
++	}
++	return result;
++}
++#endif /* BSD */
++	
++
++static LISP lstatfs(LISP path)
+ {long iflag;
+  struct statfs s;
++#ifdef BSD
++ LISP lfsid;
++#endif
+  iflag = no_interrupt(1);
+- if (statfs(get_c_string(path),&s,sizeof(s)))
++ if (TYPE(path) == tc_c_file) {
++   int fd = fileno(path->storage_as.c_file.f);
++   if (fstatfs(fd, &s))
++     return(err("fstatfs", llast_c_errmsg(-1)));
++ } else if (statfs(get_c_string(path), &s
++#if !defined(BSD) && !defined(linux)
++    ,sizeof(s)
++#endif
++   ))
+    return(err("statfs",llast_c_errmsg(-1)));
++
+  no_interrupt(iflag);
+- return(symalist("type",(((s.f_type >= 0) && (s.f_type < MNT_NUMTYPES) &&
++ if (s.f_fsid.val[0] != 0 || s.f_fsid.val[1] != 0) {
++   lfsid = strcons(sizeof(s.f_fsid) * 2, NULL);
++   unsigned u;
++   char *p = get_string_data(lfsid);
++   for (u = 0; u < sizeof(s.f_fsid); u++, p += 2)
++     sprintf(p, "%02x", ((u_char *)&s.f_fsid)[u]);
++ } else
++   lfsid = NULL;
++ return(symalist("type",
++#ifdef BSD
++		 s.f_fstypename[0] != '\0'
++		 	 ? rintern(s.f_fstypename)
++#else
++		 ((s.f_type >= 0) && (s.f_type < MNT_NUMTYPES) &&
+ 			  mnt_names[s.f_type])
+ 			 ? rintern(mnt_names[s.f_type])
+-			 : flocons(s.f_type)),
++#endif
++			 : flocons(s.f_type),
+ 		 "bsize",flocons(s.f_bsize),
+ 		 "blocks",flocons(s.f_blocks),
+@@ -34,8 +122,17 @@
+ 		 "mntonname",strcons(-1,s.f_mntonname),
+ 		 "mntfromname",strcons(-1,s.f_mntfromname),
++#ifdef BSD
++		 "syncwrites", flocons(s.f_syncwrites),
++		 "asyncwrites", flocons(s.f_asyncwrites),
++		 "syncreads", flocons(s.f_syncreads),
++		 "asyncreads", flocons(s.f_asyncreads),
++		 "namemax", flocons(s.f_namemax),
++		 "flags", decode_fstat_flags(s.f_flags),
++		 lfsid == NULL ? NULL : "fsid", lfsid,
++#endif
+ 		 NULL));}
+ 
+ 
+-static LISP decode_fstab(struct fstab *p)
++static LISP decode_fstab(const struct fstab *p)
+ {if (p)
+    return(symalist("spec",strcons(-1,p->fs_spec),
+@@ -50,5 +147,5 @@
+    return(NIL);}
+ 
+-LISP lgetfsent(void)
++static LISP lgetfsent(void)
+ {long iflag;
+  LISP result;
+@@ -58,5 +155,5 @@
+  return(result);}
+ 
+-LISP lsetfsent(void)
++static LISP lsetfsent(void)
+ {long iflag;
+  LISP result;
+@@ -66,5 +163,5 @@
+  return(result);}
+ 
+-LISP lendfsent(void)
++static LISP lendfsent(void)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -73,4 +170,6 @@
+  return(NIL);}
+ 
++void init_statfs(void); /* The sole symbol exported from a SIOD-module */
++
+ void init_statfs(void)
+ {init_subr_1("statfs",lstatfs);

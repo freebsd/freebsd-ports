@@ -1,0 +1,2 @@
+dfu-programmer is a Device Firmware Update based USB programmer
+for Atmel chips with a USB bootloader.

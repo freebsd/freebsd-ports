@@ -1,0 +1,14 @@
+%%LUA_MODLIBDIR%%/lsqlite3.so
+%%LUA_MODLIBDIR%%/lsqlite3complete.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/lsqlite3.wiki
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aggregate.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/function.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks_advanced.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/order.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smart.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/statement.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tracing.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/update_hook.lua

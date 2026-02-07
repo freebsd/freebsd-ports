@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-03-04 16:20:12 UTC
++++ CMakeLists.txt
+@@ -641,7 +641,7 @@ if(ENABLE_CTL)
+ endif()
+ 
+ if(ENABLE_CTL)
+-    find_path(CTL_INCLUDE_DIR NAMES "CtlInterpeter.h" PATH_SUFFIXES "CTL")
++    find_path(CTL_INCLUDE_DIR NAMES "CtlVersion.h" PATH_SUFFIXES "CTL")
+     pkg_check_modules(OPENEXR OpenEXR>=3)
+     #find_path(_openexr_half OpenEXR/half.h)
+     if(CTL_LIBRARY_DIR)

@@ -1,0 +1,15 @@
+GraphicsMagick is the swiss army knife of image processing. Comprised of 267K
+physical lines (according to David A. Wheeler's SLOCCount) of source code in the
+base package (or 1,225K including 3rd party libraries) it provides a robust and
+efficient collection of tools and libraries which support reading, writing, and
+manipulating an image in over 88 major formats including important formats like
+DPX, GIF, JPEG, JPEG-2000, PNG, PDF, PNM, and TIFF.
+
+GraphicsMagick supports huge images and has been tested with gigapixel-size
+images. GraphicsMagick can create new images on the fly, making it suitable for
+building dynamic Web applications. GraphicsMagick may be used to resize, rotate,
+sharpen, color reduce, or add special effects to an image and save the result in
+the same or different image format. Image processing operations are available
+from the command line, as well as through C, C++, Lua, Perl, PHP, Python, Tcl,
+Ruby, Windows .NET, or Windows COM programming interfaces. With some
+modification, language extensions for ImageMagick may be used.

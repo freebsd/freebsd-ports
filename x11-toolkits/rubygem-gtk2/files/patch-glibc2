@@ -1,0 +1,142 @@
+diff --git a/ext/gtk2/rbgtkcontainer.c ext/gtk2/rbgtkcontainer.c
+--- a/ext/gtk2/rbgtkcontainer.c
++++ ext/gtk2/rbgtkcontainer.c
+@@ -496,6 +496,114 @@ static VALUE proc_mod_eval;
+ static GQuark q_ruby_setter;
+ static GQuark q_ruby_getter;
+ 
++struct param_setup_arg {
++    GObjectClass* gclass;
++    GParameter* params;
++    guint param_size;
++    VALUE params_hash;
++    guint index;
++};
++
++static VALUE
++_params_setup(VALUE arg,
++              VALUE rb_param_setup_arg,
++              G_GNUC_UNUSED int argc,
++              G_GNUC_UNUSED const VALUE *argv,
++              G_GNUC_UNUSED VALUE block)
++{
++    struct param_setup_arg *param_setup_arg =
++        (struct param_setup_arg *)rb_param_setup_arg;
++    guint index;
++    VALUE name, val;
++    GParamSpec* pspec;
++
++    index = param_setup_arg->index;
++    if (index >= param_setup_arg->param_size)
++       rb_raise(rb_eArgError, "too many parameters");
++
++    name = rb_ary_entry(arg, 0);
++    val  = rb_ary_entry(arg, 1);
++
++    if (SYMBOL_P(name))
++        param_setup_arg->params[index].name = rb_id2name(SYM2ID(name));
++    else
++        param_setup_arg->params[index].name = StringValuePtr(name);
++
++    pspec = g_object_class_find_property(
++        param_setup_arg->gclass,
++        param_setup_arg->params[index].name);
++    if (!pspec)
++        rb_raise(rb_eArgError, "No such property: %s",
++                 param_setup_arg->params[index].name);
++
++    g_value_init(&(param_setup_arg->params[index].value),
++                 G_PARAM_SPEC_VALUE_TYPE(pspec));
++    rbgobj_rvalue_to_gvalue(val, &(param_setup_arg->params[index].value));
++
++    param_setup_arg->index++;
++
++    return Qnil;
++}
++
++static VALUE
++gobj_new_body(VALUE rb_arg)
++{
++    struct param_setup_arg *arg = (struct param_setup_arg *)rb_arg;
++    ID id_each;
++    CONST_ID(id_each, "each");
++    rb_block_call(arg->params_hash, id_each, 0, NULL, _params_setup, (VALUE)arg);
++    return (VALUE)g_object_newv(G_TYPE_FROM_CLASS(arg->gclass),
++                                arg->param_size, arg->params);
++}
++
++static VALUE
++gobj_new_ensure(VALUE rb_arg)
++{
++    struct param_setup_arg *arg = (struct param_setup_arg *)rb_arg;
++    guint i;
++    g_type_class_unref(arg->gclass);
++    for (i = 0; i < arg->param_size; i++) {
++        if (G_IS_VALUE(&arg->params[i].value))
++            g_value_unset(&arg->params[i].value);
++    }
++    return Qnil;
++}
++
++static GObject*
++rbgobj_gobject_new_glib_425(GType gtype, VALUE params_hash)
++{
++    GObject* result;
++
++    if (!g_type_is_a(gtype, G_TYPE_OBJECT))
++        rb_raise(rb_eArgError,
++                 "type \"%s\" is not descendant of GObject",
++                 g_type_name(gtype));
++
++    if (NIL_P(params_hash)) {
++        result = g_object_newv(gtype, 0, NULL);
++    } else {
++        guint param_size;
++        struct param_setup_arg arg;
++
++        param_size = NUM2UINT(rb_funcall(params_hash, rb_intern("length"), 0));
++
++        arg.param_size = param_size;
++        arg.gclass = G_OBJECT_CLASS(g_type_class_ref(gtype));
++        arg.params = ALLOCA_N(GParameter, param_size);
++        memset(arg.params, 0, sizeof(GParameter) * param_size);
++        arg.params_hash = params_hash;
++        arg.index = 0;
++
++        result = (GObject*)rb_ensure(&gobj_new_body, (VALUE)&arg,
++                                     &gobj_new_ensure, (VALUE)&arg);
++    }
++
++    if (!result)
++        rb_raise(rb_eRuntimeError, "g_object_newv failed");
++
++    return result;
++}
++
+ static VALUE
+ cont_initialize(int argc, VALUE *argv, VALUE self)
+ {
+@@ -507,7 +615,7 @@ cont_initialize(int argc, VALUE *argv, VALUE self)
+     if (!NIL_P(params_hash))
+         Check_Type(params_hash, T_HASH);
+ 
+-    gobj = rbgobj_gobject_new(RVAL2GTYPE(self), params_hash);
++    gobj = rbgobj_gobject_new_glib_425(RVAL2GTYPE(self), params_hash);
+ 
+     RBGTK_INITIALIZE(self, gobj);
+     return Qnil;
+diff --git a/ext/gtk2/rbgtkobject.c ext/gtk2/rbgtkobject.c
+--- a/ext/gtk2/rbgtkobject.c
++++ ext/gtk2/rbgtkobject.c
+@@ -51,8 +51,9 @@ rg_s_type_register(int argc, VALUE *argv, VALUE klass)
+     {
+         VALUE initialize_module;
+         initialize_module = rb_define_module_under(klass, "WidgetHook");
+-        rbg_define_method(initialize_module,
+-                          "initialize", rg_initialize, -1);
++#undef RG_TARGET_NAMESPACE
++#define RG_TARGET_NAMESPACE initialize_module
++        RG_DEF_METHOD(initialize, -1);
+         rb_include_module(klass, initialize_module);
+     }
+ 

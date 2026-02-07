@@ -1,0 +1,7 @@
+include/zimg++.hpp
+include/zimg.h
+lib/libzimg.a
+lib/libzimg.so
+lib/libzimg.so.2
+lib/libzimg.so.2.0.0
+libdata/pkgconfig/zimg.pc

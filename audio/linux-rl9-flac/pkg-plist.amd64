@@ -1,0 +1,14 @@
+usr/lib/libFLAC++.so.6
+usr/lib/libFLAC++.so.6.3.0
+usr/lib/libFLAC.so.8
+usr/lib/libFLAC.so.8.3.0
+usr/lib64/libFLAC++.so.6
+usr/lib64/libFLAC++.so.6.3.0
+usr/lib64/libFLAC.so.8
+usr/lib64/libFLAC.so.8.3.0
+%%PORTDOCS%%usr/share/doc/flac-libs/AUTHORS
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.FDL
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.GPL
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.LGPL
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.Xiph
+%%PORTDOCS%%usr/share/doc/flac-libs/README

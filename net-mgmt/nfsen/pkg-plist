@@ -1,0 +1,86 @@
+bin/testPlugin
+bin/nfsend
+bin/nfsen
+bin/RebuildHierarchy.pl
+@sample etc/nfsen-dist.conf etc/nfsen.conf
+libexec/%%PORTNAME%%/plugins/smily.jpg
+libexec/%%PORTNAME%%/plugins/demoplugin.pm
+libexec/%%PORTNAME%%/RRDconvertv1.pm
+libexec/%%PORTNAME%%/Notification.pm
+libexec/%%PORTNAME%%/Nfsync.pm
+libexec/%%PORTNAME%%/Nfsources.pm
+libexec/%%PORTNAME%%/Nfcomm.pm
+libexec/%%PORTNAME%%/NfSenSim.pm
+libexec/%%PORTNAME%%/NfSenRRD.pm
+libexec/%%PORTNAME%%/NfSenRC.pm
+libexec/%%PORTNAME%%/NfSen.pm
+libexec/%%PORTNAME%%/NfProfile.pm
+libexec/%%PORTNAME%%/NfConf.pm
+libexec/%%PORTNAME%%/NfAlert.pm
+libexec/%%PORTNAME%%/Lookup.pm
+libexec/%%PORTNAME%%/Log.pm
+libexec/%%PORTNAME%%/CopyRecursive.pm
+libexec/%%PORTNAME%%/AbuseWhois.pm
+%%WWWDIR%%/rrdgraph.php
+%%WWWDIR%%/profileadmin.php
+%%WWWDIR%%/process.php
+%%WWWDIR%%/plugins/demoplugin.php
+%%WWWDIR%%/pic.php
+%%WWWDIR%%/overview.php
+%%WWWDIR%%/nfsenutil.php
+%%WWWDIR%%/nfsen.php
+%%WWWDIR%%/navigator.php
+%%WWWDIR%%/lookup.php
+%%WWWDIR%%/js/profileadmin.js
+%%WWWDIR%%/js/menu.js
+%%WWWDIR%%/js/global.js
+%%WWWDIR%%/js/detail.js
+%%WWWDIR%%/js/alerting.js
+%%WWWDIR%%/js/ColorPicker2.js
+%%WWWDIR%%/icons/trigger.png
+%%WWWDIR%%/icons/trash.png
+%%WWWDIR%%/icons/spyglas.png
+%%WWWDIR%%/icons/space.png
+%%WWWDIR%%/icons/shadeactive.png
+%%WWWDIR%%/icons/shade.png
+%%WWWDIR%%/icons/shade.gif
+%%WWWDIR%%/icons/save.png
+%%WWWDIR%%/icons/progress.png
+%%WWWDIR%%/icons/plus.png
+%%WWWDIR%%/icons/ok.png
+%%WWWDIR%%/icons/minus.png
+%%WWWDIR%%/icons/invisible.png
+%%WWWDIR%%/icons/help.png
+%%WWWDIR%%/icons/edit.png
+%%WWWDIR%%/icons/cursor-stop.png
+%%WWWDIR%%/icons/cursor-start.png
+%%WWWDIR%%/icons/cursor-line.png
+%%WWWDIR%%/icons/close.png
+%%WWWDIR%%/icons/cancel.png
+%%WWWDIR%%/icons/arrow.yellow.right.png
+%%WWWDIR%%/icons/arrow.yellow.down.png
+%%WWWDIR%%/icons/arrow.blue.right.png
+%%WWWDIR%%/icons/arrow.blue.down.png
+%%WWWDIR%%/icons/ErrorGraph.png
+%%WWWDIR%%/icons/Error.png
+%%WWWDIR%%/icons/EmptyGraph.png
+%%WWWDIR%%/details.php
+%%WWWDIR%%/css/profileadmin.css
+%%WWWDIR%%/css/nfsen.css
+%%WWWDIR%%/css/lookup.css
+%%WWWDIR%%/css/detail.css
+%%WWWDIR%%/css/alerting.css
+%%WWWDIR%%/conf.php
+%%WWWDIR%%/colour_picker.html
+%%WWWDIR%%/colour_palette.html
+%%WWWDIR%%/alerting.php
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/run
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-stat/live
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-stat
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-data/live
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles-data
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles/live
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/profiles
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%/filters
+@dir(%%NFSENOWN%%,,) var/%%PORTNAME%%
+@dir var

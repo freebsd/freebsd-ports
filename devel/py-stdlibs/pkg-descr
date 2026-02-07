@@ -1,0 +1,12 @@
+stdlibs provides a static listing of all known modules in the Python standard
+library, with separate lists available for each major release dating back to
+Python 2.3. It also includes combined lists of all module names that were ever
+available in any 3.x release, any 2.x release, or both.
+
+Note: On Python versions 3.10 or newer, a list of module names for the active
+runtime is available sys.stdlib_module_names. This package exists to provide an
+historical record for use with static analysis and other tooling.
+
+This package only includes listings for CPython releases. If other runtimes
+would be useful, open an issue and start a discussion on how best that can be
+accomodated.

@@ -1,0 +1,86 @@
+$OpenBSD: patch-common_filecmp_rcs_c,v 1.1 2014/06/25 17:54:07 naddy Exp $
+--- common/filecmp_rcs.c.orig	Mon Jul 18 16:32:56 2005
++++ common/filecmp_rcs.c	Wed Jun 25 16:00:27 2014
+@@ -1808,7 +1808,13 @@ filecmp_rcs_delta_add(struct filecmp_args *fca, struct
+ 		return (false);
+ 
+ 	len = rev->num.n_len + rev->date.rd_num.n_len + rev->author.i_len;
+-	len += rev->state.i_len + rev->next.n_len + hashops->length + 11;
++	len += rev->state.i_len + rev->next.n_len;
++
++	if (fca->fca_proto >= CVSYNC_PROTO(0, 25))
++		len += rev->commitid.i_len + 1;
++
++	len += hashops->length + 11; /* XXX magic? */
++
+ 	for (i = 0 ; i < branches->rb_count ; i++)
+ 		len += branches->rb_num[i].n_len + 1;
+ 	if (len > fca->fca_cmdmax) {
+@@ -1895,6 +1901,21 @@ filecmp_rcs_delta_add(struct filecmp_args *fca, struct
+ 				   rev->next.n_len);
+ 	}
+ 
++	/* commitid */
++	if (fca->fca_proto >= CVSYNC_PROTO(0, 25)) {
++		cmd[0] = rev->commitid.i_len;
++		if (!mux_send(fca->fca_mux, MUX_UPDATER, cmd, 1))
++			return (false);
++		if (rev->commitid.i_len > 0) {
++			if (!mux_send(fca->fca_mux, MUX_UPDATER, rev->commitid.i_id,
++				rev->commitid.i_len)) {
++				return (false);
++			}
++			(*hashops->update)(fca->fca_hash_ctx, rev->commitid.i_id,
++			    rev->commitid.i_len);
++		}
++	}
++
+ 	(*hashops->final)(fca->fca_hash_ctx, cmd);
+ 	if (!mux_send(fca->fca_mux, MUX_UPDATER, cmd, hashops->length))
+ 		return (false);
+@@ -1958,13 +1979,24 @@ filecmp_rcs_delta_update(struct filecmp_args *fca, str
+ 				   rev->next.n_len);
+ 	}
+ 
++	/* commitid */
++	if (rev->commitid.i_len > 0 && fca->fca_proto >= CVSYNC_PROTO(0, 25))
++		(*hashops->update)(fca->fca_hash_ctx, rev->commitid.i_id,
++		    rev->commitid.i_len);
++
+ 	(*hashops->final)(fca->fca_hash_ctx, fca->fca_hash);
+ 
+ 	if (memcmp(hash, fca->fca_hash, hashops->length) == 0)
+ 		return (true);
+ 
+ 	len = rev->num.n_len + rev->date.rd_num.n_len + rev->author.i_len;
+-	len += rev->state.i_len + rev->next.n_len + hashops->length + 11;
++	len += rev->state.i_len + rev->next.n_len;
++
++	if (fca->fca_proto >= CVSYNC_PROTO(0, 25))
++		len += rev->commitid.i_len + 1;
++
++	len += hashops->length + 11; /* XXX magic? */
++
+ 	for (i = 0 ; i < branches->rb_count ; i++)
+ 		len += branches->rb_num[i].n_len + 1;
+ 	if (len > fca->fca_cmdmax)
+@@ -2037,6 +2069,19 @@ filecmp_rcs_delta_update(struct filecmp_args *fca, str
+ 		if (!mux_send(fca->fca_mux, MUX_UPDATER, rev->next.n_str,
+ 			      rev->next.n_len)) {
+ 			return (false);
++		}
++	}
++
++	/* commitid */
++	if (fca->fca_proto >= CVSYNC_PROTO(0, 25)) {
++		cmd[0] = rev->commitid.i_len;
++		if (!mux_send(fca->fca_mux, MUX_UPDATER, cmd, 1))
++			return (false);
++		if (rev->commitid.i_len > 0) {
++			if (!mux_send(fca->fca_mux, MUX_UPDATER, rev->commitid.i_id,
++				rev->commitid.i_len)) {
++				return (false);
++			}
+ 		}
+ 	}
+ 

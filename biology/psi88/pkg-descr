@@ -1,0 +1,14 @@
+PSI/88 Version 1.0  by W. L. Jorgensen & D. L. Severance
+
+To plot wavefunctions in three dimensions from
+semi-empirical and most popular ab initio basis sets.
+Valence semi-empirical, STO-3G, 3-21++G(*) and
+6-31++G(d,p) basis sets are implemented for atoms
+H-Ar.
+
+On-line manual is available at this web site.
+
+You can also download the source code of psi88 from
+the above site as a ``psi88.tar.gz''.  When you do ungzip and
+untar this archive, you will obtain some documents and
+the ``psi88.tar.Z'' file which is required at this port.

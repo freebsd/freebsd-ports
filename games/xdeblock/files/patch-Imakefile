@@ -1,0 +1,33 @@
+--- Imakefile.orig	1996-11-16 04:06:36 UTC
++++ Imakefile
+@@ -10,7 +10,7 @@ XCOMM ==================================
+ XCOMM    Set xdeblock working directory.
+ XCOMM =====================================================================
+ 
+-    XDEBLO_DIR = .
++    XDEBLO_DIR = $(LIBDIR)/xdeblock
+ 
+ XCOMM =====================================================================
+ XCOMM    Set xpm.
+@@ -20,8 +20,8 @@ XCOMM    ex. 
+ XCOMM         abc% find /usr -name xpm.h -print
+ XCOMM =====================================================================
+  
+-    XPM_INC 			= -I/usr/include/X11
+-    XPMLIB_DIR 			= -L/usr/lib
++    XPM_INC 			= -I$(INCDIR)/X11
++    XPMLIB_DIR 			= -L$(USRLIBDIR)
+ 
+ XCOMM =====================================================================
+ 
+@@ -46,8 +46,8 @@ OBJS = main.o misc.o file.o dialog.o \
+ 
+ PROGRAMS = xdeblo
+ 
+-CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)\
+-         $(XPM_INC) $(DEBUG_D) $(ALLINCLUDES)
++CFLAGS += $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)\
++          $(XPM_INC) $(DEBUG_D) $(ALLINCLUDES)
+ 
+ all:: $(PROGRAMS)
+ 

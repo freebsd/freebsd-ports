@@ -1,0 +1,10 @@
+--- twitter-text.gemspec.orig	2024-12-29 15:45:50 UTC
++++ twitter-text.gemspec
+@@ -27,6 +27,6 @@ Gem::Specification.new do |s|
+   s.add_development_dependency(%q<rdoc>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 2.14.0".freeze])
+   s.add_development_dependency(%q<simplecov>.freeze, ["~> 0.8.0".freeze])
+-  s.add_runtime_dependency(%q<unf>.freeze, ["~> 0.1.0".freeze])
++  s.add_runtime_dependency(%q<unf>.freeze, [">= 0.1.0".freeze])
+ end
+ 

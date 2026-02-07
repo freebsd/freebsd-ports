@@ -1,0 +1,13 @@
+--- configure.orig	2018-08-26 17:44:54 UTC
++++ configure
+@@ -18923,8 +18923,8 @@ fi
+ 
+ WARN_CFLAGS=
+ test "X${GCC}" = Xyes && {
+-  CFLAGS="$CFLAGS -Wno-format-contains-nul -fno-strict-aliasing"
+-  WARN_CFLAGS="$CFLAGS "`echo -Wall -Werror -Wcast-align -Wmissing-prototypes \
++  CFLAGS="$CFLAGS -fno-strict-aliasing"
++  WARN_CFLAGS="$CFLAGS "`echo -Wall -Wcast-align -Wmissing-prototypes \
+ 	-Wpointer-arith -Wshadow -Wstrict-prototypes -Wwrite-strings \
+ 	-Wstrict-aliasing=3 -Wextra -Wno-cast-qual`
+ }

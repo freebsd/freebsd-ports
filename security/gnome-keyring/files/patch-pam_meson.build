@@ -1,0 +1,11 @@
+--- pam/meson.build.orig	2025-03-18 08:38:44 UTC
++++ pam/meson.build
+@@ -33,7 +33,7 @@ libpam_gkr = shared_library('pam_gnome_keyring',
+   link_depends: pam_gkr_symbolmap,
+   include_directories: config_h_inc,
+   install: true,
+-  install_dir: get_option('libdir') / 'security',
++  install_dir: get_option('libdir'),
+ )
+ 
+ libpam_gkr_dep = declare_dependency(

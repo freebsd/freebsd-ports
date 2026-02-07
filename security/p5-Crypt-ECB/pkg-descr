@@ -1,0 +1,12 @@
+This module is a Perl-only implementation of the ECB mode.  In
+combination with a block cipher such as DES, IDEA or Blowfish, you can
+encrypt and decrypt messages of arbitrarily long length.  Though for
+security reasons other modes than ECB such as CBC should be preferred.
+See textbooks on cryptography if you want to know why.
+
+The functionality of the module can be accessed via OO methods or via
+standard function calls.  Remember that some crypting module like for
+example Blowfish has to be installed.  The syntax follows that of
+Crypt::CBC meaning you can access Crypt::ECB exactly like Crypt::CBC,
+though Crypt::ECB is more flexible.  For example you can change the key
+or the cipher without having to create a new crypt object.

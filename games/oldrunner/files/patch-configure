@@ -1,0 +1,20 @@
+--- configure.orig	2010-07-17 17:30:32 UTC
++++ configure
+@@ -43,7 +43,7 @@ EOF
+ 
+ case $OLDRUNNER_PLATFORM in
+ # ------------------------------------------------------------------------------
+-    OpenBSD|FreeBSD)
++    OpenBSD|FreeBSD|DragonFly)
+ 	cat <<EOF >>$CONFIG_H
+ #define HAVE_CURSES_H
+ #define HAVE_BZERO
+@@ -52,7 +52,7 @@ case $OLDRUNNER_PLATFORM in
+ #define HAVE_STRTONUM
+ EOF
+ 	cat <<EOF >>$CONFIG_MK
+-LIBS+= -lcurses
++LIBS+= -lncurses
+ EOF
+ 	;;
+ # ------------------------------------------------------------------------------

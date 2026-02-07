@@ -1,0 +1,17 @@
+--- kdc/Makefile.am.orig	2016-12-20 14:23:06 UTC
++++ kdc/Makefile.am
+@@ -47,10 +47,13 @@ libkdc_la_SOURCES = 		\
+ 	pkinit-ec.c		\
+ 	log.c			\
+ 	misc.c			\
+-	kx509.c			\
++	$(libkdc_pkinit)	\
+ 	process.c		\
+ 	windc.c			\
+ 	rx.h
++if KX509
++libkdc_pkinit = kx509.c
++endif
+ 
+ KDC_PROTOS = $(srcdir)/kdc-protos.h $(srcdir)/kdc-private.h
+ 

@@ -1,0 +1,2 @@
+setenv AFNI_PLUGINPATH %%PREFIX%%/lib/afni:%%DATADIR%%
+setenv AFNI_GLOBAL_SESSION %%DATADIR%%

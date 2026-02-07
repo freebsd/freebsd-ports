@@ -1,0 +1,11 @@
+bin/convert-geoip
+bin/convert-ranges
+bin/update-countries.sh
+etc/0W-httpd/countries
+etc/0W-httpd/countries.ips
+etc/0W-httpd/countries.rus
+@sample etc/0W-httpd/httpd.conf.sample
+@(%%WWWOWN%%,%%WWWGRP%%,6755) sbin/0W-httpd
+@dir(%%WWWOWN%%,%%WWWGRP%%,) 0W-httpd/pids
+@dir(%%WWWOWN%%,%%WWWGRP%%,) 0W-httpd/data
+@dir(%%WWWOWN%%,%%WWWGRP%%,) 0W-httpd/logs

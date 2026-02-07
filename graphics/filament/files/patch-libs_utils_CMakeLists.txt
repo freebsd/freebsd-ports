@@ -1,0 +1,15 @@
+--- libs/utils/CMakeLists.txt.orig	2025-07-14 23:11:31 UTC
++++ libs/utils/CMakeLists.txt
+@@ -90,8 +90,10 @@ if (LINUX OR ANDROID)
+     list(APPEND SRCS src/android/Tracing.cpp)
+ endif()
+ if (LINUX OR ANDROID)
+-    list(APPEND SRCS src/linux/Condition.cpp)
+-    list(APPEND SRCS src/linux/Mutex.cpp)
++    if (NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++        list(APPEND SRCS src/linux/Condition.cpp)
++        list(APPEND SRCS src/linux/Mutex.cpp)
++    endif()
+     list(APPEND SRCS src/linux/Path.cpp)
+ endif()
+ if (APPLE)

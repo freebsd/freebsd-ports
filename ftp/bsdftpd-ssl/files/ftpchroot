@@ -1,0 +1,15 @@
+##
+## This is the example "/etc/ftpchroot" file for the bsdftpd-ssl FTP server.
+## The syntax of this file is described in the ftpchroot-ssl(8) man page.
+##
+
+## "Pseudo-chroot" for system administrators.
+@wheel	/
+
+## Chroot webmasters to the location of the web site, and chroot web users to
+## their respective ~/public_html.
+# @webmasters	/var/www/
+# @webusers	public_html
+
+## Chroot all other users to their home directories.
+@

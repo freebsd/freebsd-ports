@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# PROVIDE: gpsd
+# REQUIRE: NETWORKING DAEMON cleanvar devfs
+# BEFORE:  ntpd
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable gpsd:
+#
+# gpsd_enable (bool):   Set to "NO" by default.
+#                       Set it to "YES" to enable gpsd.
+#
+# gpsd_flags (str):     Set to "" by default.
+#                       See gpsd(8) for flags.
+#
+# gpsd_devices (str):   Set to "" by default.
+#                       Example: "/dev/cuaU0" for a USB serial GPS.
+#
+
+. /etc/rc.subr
+
+name=gpsd
+rcvar=gpsd_enable
+
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+start_postcmd()
+{
+	if ! checkyesno gpxlogger_enable; then
+		return;
+	fi
+
+	cd ${gpxlogger_logdir};
+	gpx=$(date +"${gpxlogger_format}")
+	touch "${pidfile_logger}" "${gpx}"
+	chown nobody:nobody "${pidfile_logger}" "${gpx}"
+	/usr/sbin/daemon -u nobody -p "${pidfile_logger}"	\
+		${gpxlogger} ${gpxlogger_flags} > ${gpx}
+}
+
+stop_postcmd()
+{
+	if ! checkyesno gpxlogger_enable; then
+		return;
+	fi
+
+	/bin/kill $(/bin/cat "${pidfile_logger}")
+}
+
+load_rc_config $name
+
+# Set defaults
+: ${gpsd_enable:="NO"}
+: ${gpxlogger_enable:="NO"}
+: ${gpxlogger_flags:="-i 600"}
+: ${gpxlogger_logdir:="/var/log"}
+: ${gpxlogger_format:="%d %B %Y - %H:%M.gpx"}
+
+pidfile=/var/run/$name.pid
+command=%%PREFIX%%/sbin/$name
+command_args="-P $pidfile $gpsd_devices"
+
+gpxlogger=/usr/local/bin/gpxlogger
+pidfile_logger=/var/run/gpxlogger.pid
+
+run_rc_command "$1"

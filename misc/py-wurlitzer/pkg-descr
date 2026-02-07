@@ -1,0 +1,1 @@
+Wurlitzer captures C-level stdout/stderr pipes in Python via os.dup2.

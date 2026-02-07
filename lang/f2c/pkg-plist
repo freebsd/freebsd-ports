@@ -1,0 +1,7 @@
+bin/f2c
+%%FC%%bin/%%FCNAME%%
+include/f2c.h
+lib/libf2c.a
+lib/libf2c.so
+lib/libf2c.so.%%LIBVER%%
+share/man/man1/f2c.1.gz

@@ -1,0 +1,5 @@
+TIMESTAMP = 1685777390
+SHA256 (go/textproc_csvq/csvq-v1.18.1/v1.18.1.mod) = a5553577a4a4c290865510f48fc85d6d7bd0e5b0b85b5064ae21006d3e7958b6
+SIZE (go/textproc_csvq/csvq-v1.18.1/v1.18.1.mod) = 603
+SHA256 (go/textproc_csvq/csvq-v1.18.1/v1.18.1.zip) = bf2721c0fc7f215abd05a606d3a31fd73ec18bf9399cc5548a562dc2f77dde3b
+SIZE (go/textproc_csvq/csvq-v1.18.1/v1.18.1.zip) = 1555305

@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Use the following sql script to create PL/v8js
+
+	psql -c 'CREATE EXTENSION plv8'
+EOM
+}
+]

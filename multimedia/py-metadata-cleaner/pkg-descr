@@ -1,0 +1,10 @@
+Metadata within a file can tell a lot about you. Cameras record data
+about when a picture was taken and what camera was used. Office
+applications automatically add author and company information to
+documents and spreadsheets. Maybe you don't want to disclose those
+pieces of information.
+
+This tool allows you to view metadata in your files and to get rid of
+them, as much as possible.
+
+Under the hood, it relies on mat2 to parse and remove the metadata.

@@ -1,0 +1,4 @@
+include/dkim.h
+lib/libdkim.a
+lib/libdkim.so
+lib/libdkim.so.%%SHLIB_MAJOR%%

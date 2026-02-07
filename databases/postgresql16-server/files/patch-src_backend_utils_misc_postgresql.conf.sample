@@ -1,0 +1,10 @@
+--- src/backend/utils/misc/postgresql.conf.sample.orig	2016-10-24 20:08:51 UTC
++++ src/backend/utils/misc/postgresql.conf.sample
+@@ -330,6 +330,7 @@
+ 
+ # - Where to Log -
+ 
++log_destination = 'syslog'
+ #log_destination = 'stderr'		# Valid values are combinations of
+ 					# stderr, csvlog, syslog, and eventlog,
+ 					# depending on platform.  csvlog

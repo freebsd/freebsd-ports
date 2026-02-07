@@ -1,0 +1,53 @@
+[
+{ type: install
+  message: <<EOM
+SETUP BEFORE FIRST USE:
+- Create the log file /var/log/zrepl.log:
+  # service newsyslog restart
+- Modify the %%PREFIX%%/etc/zrepl/zrepl.yml configuration file
+- Create ZFS datasets like:
+  # zfs create -o mountpoint=none -o readonly=on zdisk/zrepl
+  # zfs create zdisk/zrepl/localhost
+- Enable the zrepl daemon to start automatically at boot:
+  # sysrc zrepl_enable="YES"
+- Start the zrepl daemon:
+  # service zrepl start
+
+Documentation: https://github.com/dsh2dsh/zrepl?tab=readme-ov-file#changes-from-upstream
+               https://zrepl.github.io/
+Changelog:     https://zrepl.github.io/master/changelog.html
+
+DANGER - SNAPSHOT PRUNING REQUIRES EXPLICIT KEEP RULES:
+For any ZFS snapshot that you want to keep, at least one rule must match.
+This also applies to snapshots taken by means other than zrepl
+(e.g. snapshots taken manually or via boot environment tools).
+
+For monitoring zrepl daemon health and snapshots add this line to
+/etc/periodic.conf:
+
+    daily_zrepl_enable="YES"
+
+In order to automatically warn the operator of impending certificate
+expiration, add this line to /etc/periodic.conf:
+
+    weekly_zrepl_enable="YES"
+
+More config details in the zrepl periodic script:
+
+    %%LOCALBASE%%/etc/periodic/weekly/500.zrepl
+
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "0.9.0"
+  message: <<EOM
+Upgrading from before 0.9.0 need to modify configuration file:
+
+  %%PREFIX%%/etc/zrepl/zrepl.yml
+
+Please read more about this change here:
+https://github.com/dsh2dsh/zrepl?tab=readme-ov-file#breaking-changes
+EOM
+}
+]

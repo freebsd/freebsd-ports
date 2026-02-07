@@ -1,0 +1,94 @@
+#!/bin/sh
+
+# PROVIDE: versitygw
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# versitygw_enable (bool):	Set it to YES to enable versitygw.
+#				Default is "NO".
+# versitygw_user (user):	Set user to run versitygw.
+#				Default is "versitygw".
+# versitygw_group (group):	Set group to run versitygw.
+#				Default is "versitygw".
+# versitygw_options (string):	Provide additional runtime options.
+#				Default is "".
+# versitygw_readonly (file):	Disallow writes.
+#				Default is "yes".
+# versitygw_access_log (file):	Path for access logs.
+#				Default is "/var/log/versitgw/access.log".
+# versitygw_admin_log (file):	Path for admin logs.
+#				Default is "/var/log/versitgw/admin.log".
+# versitygw_listen (file):	IP:port to listen on.
+#				Default is "localhost:7070".
+
+. /etc/rc.subr
+
+name=versitygw
+rcvar=versitygw_enable
+
+load_rc_config $name
+
+: ${versitygw_enable:="NO"}
+: ${versitygw_user:="www"}
+: ${versitygw_group:="www"}
+: ${versitygw_access_log:="/var/log/versitygw/access.log"}
+: ${versitygw_admin_log:="/var/log/versitygw/admin.log"}
+: ${versitygw_access_key:=""}
+: ${versitygw_secret_key:=""}
+: ${versitygw_directory:=""}
+: ${versitygw_listen:="localhost:7070"}
+: ${versitygw_options:=""}
+: ${versitygw_readonly:="yes"}
+
+if checkyesno versitygw_readonly; then
+    versitygw_is_readonly="--readonly"
+else
+    versitygw_is_readonly=""
+fi
+
+pidfile=/var/run/versitygw.pid
+procname="%%PREFIX%%/bin/versitygw"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} \
+	/usr/bin/env ${versitygw_env} ${procname} \
+	--access ${versitygw_access_key} \
+	--secret ${versitygw_secret_key} \
+	--access-log ${versitygw_access_log} \
+	--admin-access-log ${versitygw_admin_log} \
+	${versitygw_is_readonly} \
+	--port ${versitygw_listen} \
+	posix ${versitygw_directory}"
+
+monitor_cmd=versitygw_monitor
+start_precmd=versitygw_startprecmd
+required_dirs="$versitygw_directory"
+
+versitygw_monitor()
+{
+	sig_reload=USR1
+	run_rc_command "reload"
+}
+
+versitygw_startprecmd()
+{
+        if [ ! -e ${versitygw_access_log} ]; then
+                install -m 0640 -o ${versitygw_user} -g ${versitygw_group} /dev/null ${versitygw_access_log};
+        fi
+
+        if [ ! -e ${versitygw_admin_log} ]; then
+                install -m 0640 -o ${versitygw_user} -g ${versitygw_group} /dev/null ${versitygw_admin_log};
+        fi
+
+        if [ ! -e ${pidfile} ]; then
+                install -o ${versitygw_user} -g ${versitygw_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${versitygw_dir} ]; then
+                install -d -o ${versitygw_user} -g ${versitygw_group} ${versitygw_dir}
+        fi
+}
+
+run_rc_command "$1"

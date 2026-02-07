@@ -1,0 +1,5 @@
+TIMESTAMP = 1594435125
+SHA256 (gwsocket-0.3.tar.gz) = b2a46bbbc99faaf2dd99095d81bc29128fe54298ba6f4f9203ec3d2e4cc4c528
+SIZE (gwsocket-0.3.tar.gz) = 146851
+SHA256 (3d4e1d1585e5aa54e9500f58efede57feeed7d3d.patch) = c9b34acbf596de86488aedb725be847c4478bb57eab62899d381c63966515235
+SIZE (3d4e1d1585e5aa54e9500f58efede57feeed7d3d.patch) = 1518

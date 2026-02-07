@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2019-07-23 16:38:02 UTC
++++ Makefile.am
+@@ -23,7 +23,7 @@ SUBDIRS = src resource batch config desktop
+ 
+ # special tasks to do if we're building the master server
+ if BUILDMASTER
+-masterInstallTasks=	cd  $(DESTDIR)$(bindir); mv armagetronad_main_master$(EXEEXT) @prognamebase@-master$(executable_suffix)
++masterInstallTasks=	cd  $(DESTDIR)$(bindir); mv -f armagetronad_main_master$(EXEEXT) @prognamebase@-master$(executable_suffix)
+ masterUninstallTasks=rm -f $(DESTDIR)$(bindir)/@prognamebase@-master$(executable_suffix)
+ else
+ masterInstallTasks=echo 'No tasks for the master server'
+@@ -107,7 +107,7 @@ endif
+ install-exec-hook: install-uninstall
+ #	rename executable to armagetronad-VERSION and link to armagetronad
+ if BUILDMAIN
+-	cd  $(DESTDIR)${bindir}; mv armagetronad_main$(EXEEXT) @progname@$(executable_suffix)
++	cd  $(DESTDIR)${bindir}; mv -f armagetronad_main$(EXEEXT) @progname@$(executable_suffix)
+ endif
+ 
+ #	delegate to special tasks

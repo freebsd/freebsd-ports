@@ -1,0 +1,60 @@
+--- paperless.conf.example.orig	2025-08-17 20:46:35 UTC
++++ paperless.conf.example
+@@ -13,17 +13,29 @@
+ 
+ # Paths and folders
+ 
+-#PAPERLESS_CONSUMPTION_DIR=../consume
+-#PAPERLESS_DATA_DIR=../data
++PAPERLESS_CONSUMPTION_DIR=/var/db/paperless/consume/input
++PAPERLESS_DATA_DIR=/var/db/paperless/data
+ #PAPERLESS_EMPTY_TRASH_DIR=
+-#PAPERLESS_MEDIA_ROOT=../media
+-#PAPERLESS_STATICDIR=../static
++PAPERLESS_MEDIA_ROOT=/var/db/paperless/media
++
++# Paperless should run behind a proxy that servers static files
++# (see `man 7 paperless`)
++# For experimental deployments, set PAPERLESS_STATICDIR
++# to `%%WWWDIR%%/static`
++PAPERLESS_STATICDIR=/var/empty
+ #PAPERLESS_FILENAME_FORMAT=
+ #PAPERLESS_FILENAME_FORMAT_REMOVE_NONE=
+ 
+ # Security and hosting
+ 
++# The paperless-webui rc script automatically generates
++# PAPERLESS_SECRET_KEY and places it in the environment, so this
++# actually can stay commented out. If set, it overrides
++# what is set by the rc script. See
++# https://docs.paperless-ngx.com/configuration/#PAPERLESS_SECRET_KEY
++# for more information.
+ #PAPERLESS_SECRET_KEY=change-me
++
+ #PAPERLESS_URL=https://example.com
+ #PAPERLESS_CSRF_TRUSTED_ORIGINS=https://example.com # can be set using PAPERLESS_URL
+ #PAPERLESS_ALLOWED_HOSTS=example.com,www.example.com # can be set using PAPERLESS_URL
+@@ -36,6 +48,7 @@
+ 
+ # OCR settings
+ 
++# example: deu+eng
+ #PAPERLESS_OCR_LANGUAGE=eng
+ #PAPERLESS_OCR_MODE=skip
+ #PAPERLESS_OCR_SKIP_ARCHIVE_FILE=never
+@@ -52,6 +65,7 @@
+ 
+ # Software tweaks
+ 
++PAPERLESS_CONSUMER_INOTIFY_DELAY=3
+ #PAPERLESS_TASK_WORKERS=1
+ #PAPERLESS_THREADS_PER_WORKER=1
+ #PAPERLESS_TIME_ZONE=UTC
+@@ -88,3 +102,7 @@
+ 
+ #PAPERLESS_CONVERT_BINARY=/usr/bin/convert
+ #PAPERLESS_GS_BINARY=/usr/bin/gs
++
++# NLTK settings - see `man 7 paperless-ngx`
++PAPERLESS_NLTK_DIR=/var/db/paperless/nltkdata
++PAPERLESS_ENABLE_NLTK=yes

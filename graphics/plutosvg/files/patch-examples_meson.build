@@ -1,0 +1,9 @@
+--- examples/meson.build.orig	2025-02-18 19:56:04 UTC
++++ examples/meson.build
+@@ -4,5 +4,5 @@ if freetype_dep.found()
+ executable('camera2png', 'camera2png.c', dependencies: plutosvg_dep)
+ executable('svg2png', 'svg2png.c', dependencies: plutosvg_dep)
+ if freetype_dep.found()
+-    executable('emoji2png', 'emoji2png.c', dependencies: [plutosvg_dep, freetype_dep])
++    executable('emoji2png', 'emoji2png.c', dependencies: [plutosvg_dep, freetype_dep, math_dep])
+ endif

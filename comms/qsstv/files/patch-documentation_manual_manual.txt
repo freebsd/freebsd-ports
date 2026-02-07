@@ -1,0 +1,11 @@
+--- documentation/manual/manual.txt.orig	2021-08-03 16:19:15 UTC
++++ documentation/manual/manual.txt
+@@ -410,7 +410,7 @@ The following tabs are available
+ - Templates: directory where the template files are stored
+ - Audio Records: directory for audio files (where you save/read recorded audio files)
+ - Save TX images in TX SSTV or TX DRM directory: if selected the TX image will be saved
+-- Documentation: URL of the user manual (if you copied the manual locally then you can point to it with e.g. file:///usr/share/doc/qsstv/manual
++- Documentation: URL of the user manual (if you copied the manual locally then you can point to it with e.g. file://%%DOCSDIR%%/manual
+ <br><br>
+ 
+ \li Gui

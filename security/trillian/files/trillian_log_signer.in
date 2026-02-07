@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: trillian_log_signer
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# trillian_log_signer_enable (bool):	Set it to YES to enable trillian_log_signer.
+#			Default is "NO".
+# trillian_log_signer_user (user):	Set user to run trillian_log_signer.
+#			Default is "trillian".
+# trillian_log_signer_group (group):	Set group to run trillian_log_signer.
+#			Default is "trillian".
+# trillian_log_signer_config (file):	Set trillian_log_signer config file.
+#			Default is "%%PREFIX%%/etc/trillian/trillian_log_signer.conf".
+
+. /etc/rc.subr
+
+name=trillian_log_signer
+rcvar=trillian_log_signer_enable
+
+load_rc_config $name
+
+: ${trillian_log_signer_enable:="NO"}
+: ${trillian_log_signer_user:="trillian"}
+: ${trillian_log_signer_group:="trillian"}
+: ${trillian_log_signer_config:="%%PREFIX%%/etc/trillian/trillian_log_signer.conf"}
+
+pidfile=/var/run/trillian_log_signer.pid
+procname="%%PREFIX%%/bin/trillian_log_signer"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -p ${pidfile} ${procname} signer -config=${trillian_log_signer_config}"
+
+start_precmd=trillian_log_signer_startprecmd
+required_files="$trillian_log_signer_config"
+
+trillian_log_signer_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${trillian_log_signer_user} -g ${trillian_log_signer_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"

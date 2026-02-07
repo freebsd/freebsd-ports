@@ -1,0 +1,2 @@
+Object::Container is a object container interface which supports both OO
+interface and Singleton interface.

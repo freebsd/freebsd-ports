@@ -1,0 +1,10 @@
+--- GNUmakefile.am.orig	2023-12-21 08:30:51 UTC
++++ GNUmakefile.am
+@@ -1,6 +1,6 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4 -I script
+ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I m4 -I script
+ 
+-AM_COPT = -Wall -O2
++AM_COPT = -Wall
+ AM_COVLDFLAGS =
+ 
+ if ENABLE_COVERAGE

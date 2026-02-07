@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: prosody
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# prosody_enable (bool):   Set to NO by default.
+#                Set it to YES to enable Prosody
+
+. /etc/rc.subr
+
+name="prosody"
+rcvar="prosody_enable"
+command="%%PREFIX%%/bin/prosody"
+command_args="-D"
+command_interpreter="%%LUA_PREFIX%%/bin/%%LUA_CMD%%"
+extra_commands="reload"
+prosody_user="%%USERS%%"
+prosody_group="%%GROUPS%%"
+
+load_rc_config $name
+
+prosody_enable=${prosody_enable:-"NO"}
+pidfile=${prosody_pidfile:+$prosody_pidfile}
+
+run_rc_command "$1"

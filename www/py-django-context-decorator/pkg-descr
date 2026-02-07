@@ -1,0 +1,2 @@
+Python package for Django removing the need to call
+super().get_context_data(**kwargs) in nearly every Django view.

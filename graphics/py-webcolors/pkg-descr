@@ -1,0 +1,11 @@
+webcolors is a module for working with HTML/CSS color definitions.
+
+Support is included for normalizing and converting between the
+following formats (RGB colorspace only; conversion to/from HSL can
+be handled by the colorsys module in the Python standard library):
+
+* Specification-defined color names
+* Six-digit hexadecimal
+* Three-digit hexadecimal
+* Integer rgb() triplet
+* Percentage rgb() triplet

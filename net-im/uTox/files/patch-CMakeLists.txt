@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2019-09-21 02:09:21 UTC
++++ CMakeLists.txt
+@@ -178,8 +178,7 @@ add_cflag("-fPIC")
+ # Fix GNU stack
+ if(CMAKE_C_COMPILER_ID MATCHES "GNU")
+     # Have ld strip the symbols from Release and MinSizeRel build types.
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Os -s")
++    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -s")
+ 
+     if(LINUX)
+         # enable Link Time Optimization on gcc (linux only currently)
+@@ -214,8 +213,7 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "Clang")
+     endif()
+ 
+     # Have ld strip the symbols from Release and MinSizeRel build types. (-Oz is clang specific)
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Oz -s")
++    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -s")
+ 
+     if(FREEBSD)
+         set(LIBRARIES ${LIBRARIES} "cxxrt")

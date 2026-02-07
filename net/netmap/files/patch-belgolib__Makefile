@@ -1,0 +1,21 @@
+--- belgolib/Makefile.orig	Fri Jun  7 00:11:38 2002
++++ belgolib/Makefile	Fri Jun  7 00:12:18 2002
+@@ -1,8 +1,7 @@
+ CFILES   = files.c dirs.c dirs_core.c search.c
+ OFILES   = $(CFILES:.c=.o)
+ 
+-CFLAGS = -O -Wall
+-CC = g++
++CC = ${CXX}
+ 
+ CPP_HEADERS = /usr/include/g++-3/
+ 
+@@ -17,7 +16,7 @@
+ 	-/bin/rm -f $(OFILES)
+ 
+ depend: 
+-	makedepend -I$(CPP_HEADERS)  -D__make_dep__ -- $(CFLAGS) -- $(CFILES)
++	makedepend -I$(CPP_HEADERS)  -D__make_dep__ -- $(CXXFLAGS) -- $(CFILES)
+ 
+ 
+ 

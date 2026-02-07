@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/IPC/MMA.pm
+%%SITE_ARCH%%/IPC/MMA.pod
+%%SITE_ARCH%%/auto/IPC/MMA/MMA.so
+%%PERL5_MAN3%%/IPC::MMA.3.gz

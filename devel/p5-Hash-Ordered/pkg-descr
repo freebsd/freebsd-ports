@@ -1,0 +1,8 @@
+Hash::Ordered implements an ordered hash, meaning that it associates keys with
+values like a Perl hash, but keeps the keys in a consistent order. Because it is
+implemented as an object and manipulated with method calls, it is much slower
+than a Perl hash. This is the cost of keeping order.
+
+However, compared to other ordered hash implementations, Hash::Ordered is
+optimized for getting and setting individual elements and is generally faster at
+most other tasks as well. For specific details, see Hash::Ordered::Benchmarks.

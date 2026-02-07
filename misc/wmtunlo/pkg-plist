@@ -1,0 +1,10 @@
+bin/wmtunlo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example5
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example6
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.original

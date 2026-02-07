@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+#  @(#)xbmsize48 1.3 91/11/19
+#
+#  Copyright (c) Steve Kinzler - April 1991.
+#
+#  Permission is given to distribute these sources, as long as the
+#  copyright messages are not removed, and no monies are exchanged.
+#
+#  No responsibility is taken for any errors on inaccuracies inherent
+#  either to the comments or the code of this program, but if reported
+#  to me, then an attempt will be made to fix them.
+
+PATH=$PATH:/usr/bin/X11; export PATH
+
+size=48
+
+# xbmsize48 - size an X11 bitmap to 48x48
+#
+# If the bitmaps exceeds 48 pixels in either dimension it is scaled down
+# to 48 pixels.  Then, the bitmap is pasted into the upper left corner of
+# a 48x48 blank bitmap.
+#
+# A stdin/stdout filter.
+# Requires filters from the pbmplus package.
+#
+# Steve Kinzler, kinzler@cs.indiana.edu, March 1991
+
+tmp=/tmp/xbmsize48.$$
+tmp2=/tmp/xbmsize48.2.$$
+trap "rm -f $tmp $tmp2; exit" 0 1 2 13 15
+
+cat > $tmp || exit
+
+eval `sed -n 's/^#define.*_width[ 	]*\([0-9]*\).*$/w=\1/p
+	      s/^#define.*_height[ 	]*\([0-9]*\).*$/h=\1/p
+	      /{/q' $tmp`
+
+if test $w -gt $size -o $h -gt $size
+then
+	if test $w -ge $h
+	then	dim=xsize
+	else	dim=ysize
+	fi
+
+	xbmtopbm < $tmp | ppmscale -$dim $size |
+	ppmtopgm | pgmtopbm | pbmtoxbm > $tmp2
+	mv $tmp2 $tmp
+fi
+
+xbmtopbm < $tmp > $tmp2
+pbmmake $size $size | pnmpaste $tmp2 0 0 | pbmtoxbm

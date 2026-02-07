@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	2015-08-11 01:51:59 UTC
++++ doc/Makefile.in
+@@ -289,8 +289,8 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-fontdir = $(datadir)/fonts/truetype
+-cachedir = $(localstatedir)/cache/xfstt
++fontdir = %%TTFONTDIR%%
++cachedir = %%TTFONTDIR%%
+ pidfile = $(localstatedir)/run/xfstt.pid
+ man_MANS = xfstt.1x
+ EXTRA_DIST = xfstt.1x.in FAQ examples

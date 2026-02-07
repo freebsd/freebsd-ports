@@ -1,0 +1,9 @@
+TIMESTAMP = 1672001624
+SHA256 (centos/nettle-2.7.1-9.el7_9.aarch64.rpm) = 3efe67ea3561fa0d0d6d3bd5a9695996f5cac4a275c0d60752706165c9f62922
+SIZE (centos/nettle-2.7.1-9.el7_9.aarch64.rpm) = 334904
+SHA256 (centos/nettle-2.7.1-9.el7_9.i686.rpm) = 11d3ad095a9838e98b8360b005aa07fa292cf9a71c4265bdf7c5adda14d463b3
+SIZE (centos/nettle-2.7.1-9.el7_9.i686.rpm) = 338156
+SHA256 (centos/nettle-2.7.1-9.el7_9.x86_64.rpm) = a8f566d686a31517c6e1f0981aa8a7650ec4c8d5cea01c3500ae51e847966eee
+SIZE (centos/nettle-2.7.1-9.el7_9.x86_64.rpm) = 335464
+SHA256 (centos/nettle-2.7.1-9.el7_9.src.rpm) = 1f330271bdc651bc0996f2cb86292e6afe40bd1afe6d94735a4ee8f2a1ba5cc8
+SIZE (centos/nettle-2.7.1-9.el7_9.src.rpm) = 1842080

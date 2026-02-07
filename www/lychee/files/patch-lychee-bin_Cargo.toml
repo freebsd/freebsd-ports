@@ -1,0 +1,12 @@
+--- lychee-bin/Cargo.toml.orig	2025-02-01 14:19:56 UTC
++++ lychee-bin/Cargo.toml
+@@ -72,9 +72,6 @@ wiremock = "0.6.2"
+ 
+ [features]
+ 
+-# Compile and statically link a copy of OpenSSL.
+-vendored-openssl = ["openssl-sys/vendored"]
+-
+ # Allow checking example domains such as example.com.
+ check_example_domains = ["lychee-lib/check_example_domains"]
+ 

@@ -1,0 +1,9 @@
+libultrahdr is an image compression library that uses gain map technology to
+store and distribute HDR images. Conceptually on the encoding side, the library
+accepts SDR and HDR rendition of an image and from these a Gain Map (quotient
+between the two renditions) is computed. The library then uses backward
+compatible means to store the base image (SDR), gain map image and some
+associated metadata. Legacy readers that do not support handling the gain map
+image and/or metadata, will display the base image. Readers that support the
+format combine the base image with the gain map and render a high dynamic range
+image on compatible displays.

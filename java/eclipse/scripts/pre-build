@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cd ${WRKSRC}
+
+# Create dummy repo for jgit
+if [ ! -d .git ]; then
+	mkdir ${WRKDIR}/githome
+	(
+		export HOME=${WRKDIR}/githome
+		git config --global user.email "eclipse@freebsd.org"
+		git config --global user.name "Eclipse"
+		git init
+		git add .
+		git commit -q --message="java/eclipse" --author="Eclipse <eclipse@freebsd.org>"
+	)
+fi

@@ -1,0 +1,8 @@
+--- fail2ban/config.orig	2015-03-13 23:52:35 UTC
++++ fail2ban/config
+@@ -1,4 +1,4 @@
+-config_dir=/etc/fail2ban
++config_dir=/usr/local/etc/fail2ban
+ client_cmd=fail2ban-client
+ server_cmd=fail2ban-server
+ init_script=fail2ban

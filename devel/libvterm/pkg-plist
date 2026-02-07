@@ -1,0 +1,10 @@
+bin/unterm
+bin/vterm-ctrl
+bin/vterm-dump
+include/vterm.h
+include/vterm_keycodes.h
+lib/libvterm.a
+lib/libvterm.so
+lib/libvterm.so.0
+lib/libvterm.so.0.0.0
+libdata/pkgconfig/vterm.pc

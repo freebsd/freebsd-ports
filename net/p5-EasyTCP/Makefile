@@ -1,0 +1,19 @@
+PORTNAME=	EasyTCP
+PORTVERSION=	0.26
+PORTREVISION=	2
+CATEGORIES=	net perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:MNAGUIB
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Easily create TCP/IP clients and servers
+WWW=		https://metacpan.org/release/EasyTCP
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-RSA>=0:security/p5-Crypt-RSA
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

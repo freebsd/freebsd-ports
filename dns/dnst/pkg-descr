@@ -1,0 +1,10 @@
+dnst :: Domain Name System Tools - a toolset to assist DNS operators
+ with zone and nameserver maintenance.
+
+dnst is intended to offer both:
+
+- a supported drop-in replacement and upgrade path for a subset of the
+  popular NLnet Labs LDNS example tools, re-implemented in the Rust
+  programming language powered by the NLnet Labs domain Rust library
+- an evolving toolbox of commands to aid DNS operators in the
+  maintenance and operation of their zones and nameservers.

@@ -1,0 +1,5 @@
+An S3 class with methods for totally ordered indexed observations.
+It is particularly aimed at irregular time series of numeric
+vectors/matrices and factors. zoo's key design goals are independence
+of a particular index/date/time class and consistency with ts and
+base R by providing methods to extend standard generics.

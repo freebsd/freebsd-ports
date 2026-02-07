@@ -1,0 +1,9 @@
+Tuckr is a dotfile manager inspired by Stow and Git. Tuckr aims to make dotfile
+management less painful. It follows the same model as Stow, symlinking files
+onto $HOME. It works on all the major OSes (Linux, Windows, BSDs and MacOS).
+
+Tuckr aims to bring the simplicity of Stow to a dotfile manager with a very
+small learning curve. To achieve that goal Tuckr tries to only cover what is
+directly needed to manage dotfiles and nothing else. We won't wrap git, rm, cp
+or reimplement the functionality that are perfeclty covered by other utilities
+in the system unless it greatly impacts usability.

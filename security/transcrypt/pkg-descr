@@ -1,0 +1,11 @@
+A script to configure transparent encryption of sensitive files stored in a Git
+repository. Files that you choose will be automatically encrypted when you
+commit them, and automatically decrypted when you check them out. The process
+will degrade gracefully, so even people without your encryption password can
+safely commit changes to the repository's non-encrypted files.
+
+Transcrypt protects your data when it's pushed to remotes that you may not
+directly control (e.g., GitHub, Dropbox clones, etc.), while still allowing you
+to work normally on your local working copy. You can conveniently store things
+like passwords and private keys within your repository and not have to share
+them with your entire team or complicate your workflow.

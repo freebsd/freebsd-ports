@@ -1,0 +1,24 @@
+Bottom (btm) is a terminal process/system visualization and management
+tool. Features include:
+
+    Graphical visualization widgets for:
+        CPU usage over time, at an average and per-core level
+        RAM and swap usage over time
+        Network I/O usage over time
+    with support for zooming in/out the current time interval displayed.
+
+    Widgets for displaying info about:
+        Disk capacity/usage
+        Temperature sensors
+        Battery usage
+
+    A process widget for displaying, sorting, and searching info about
+    processes, as well as support for:
+        Kill signals
+        Tree mode
+
+    Custom and pre-built colour themes
+    Changing the default behaviour of some widgets
+    Changing the layout of widgets
+    Filtering out entries in disk and temperature widgets
+    An htop-inspired basic mode (btm -b)

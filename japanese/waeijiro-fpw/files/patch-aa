@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Jun  8 22:30:55 2003
++++ Makefile	Sun Nov 13 20:03:33 2005
+@@ -1,4 +1,7 @@
+-SRC_DICT=/home/tf/tmp/WAEIJI52.TXT
++ifeq (,${SRC_DICT})
++SRC_DICT = waeiji52.txt
++endif
++#SRC_DICT=/home/tf/tmp/WAEIJI52.TXT
+ INSTALLDIR=/home/dict
+ DIR=WAEIJIRO
+ # Define Kanji-code on the terminal (jis/euc/sjis)

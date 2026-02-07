@@ -1,0 +1,15 @@
+include/suitesparse/umfpack.h
+lib/cmake/UMFPACK/UMFPACKConfig.cmake
+lib/cmake/UMFPACK/UMFPACKConfigVersion.cmake
+lib/cmake/UMFPACK/UMFPACKTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/UMFPACK/UMFPACKTargets.cmake
+lib/cmake/UMFPACK/UMFPACKTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/UMFPACK/UMFPACKTargets_static.cmake
+lib/libumfpack.a
+lib/libumfpack.so
+lib/libumfpack.so.6
+lib/libumfpack.so.%%VER%%
+libdata/pkgconfig/UMFPACK.pc
+%%PORTDOCS%%%%DOCSDIR%%/UMFPACK_QuickStart.pdf
+%%PORTDOCS%%%%DOCSDIR%%/UMFPACK_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/UMFPACK_UserGuide.pdf

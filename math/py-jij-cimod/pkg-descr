@@ -1,0 +1,7 @@
+jij-cimod provides Python bindings for cimod, a C++ library
+that provides functionalities for handling binary quadratic
+models (BQM) and polynomial quadratic models (PQM).
+
+It allows Python developers to leverage its high-performance
+C++ core for mathematical optimization problems, particularly
+in fields like quantum annealing and combinatorial optimization.

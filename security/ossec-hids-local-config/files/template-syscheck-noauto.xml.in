@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config os="FreeBSD">
+
+  <syscheck>
+    <auto_ignore>no</auto_ignore>
+  </syscheck>
+
+</template_config>
+
+<template_config os="Linux">
+
+  <syscheck>
+    <auto_ignore>no</auto_ignore>
+  </syscheck>
+
+</template_config>

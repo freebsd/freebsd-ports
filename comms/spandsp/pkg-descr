@@ -1,0 +1,2 @@
+Spandsp is a library of many DSP functions for telephony. These range from
+simple modules, such as DTMF detection, to a complete software FAX machine.

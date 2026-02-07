@@ -1,0 +1,14 @@
+--- src/njs.pc.in.orig	2024-06-25 17:40:20 UTC
++++ src/njs.pc.in
+@@ -1,8 +1,8 @@
+-prefix=@PREFIX@
+-libdir=@LIBDIR@
++prefix=%%LOCALBASE%%
++libdir=${prefix}/lib
+ 
+ Name: njs
+ Description: library to embed njs scripting language
+ Version: @VERSION@
+ Libs: -L${libdir} -lnjs @EXTRA_LIBS@
+-Cflags: @CFLAGS@
++Cflags: -I${prefix}/include

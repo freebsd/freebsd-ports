@@ -1,0 +1,85 @@
+#!/bin/sh
+
+# PROVIDE: consul
+# REQUIRE: NETWORKING FILESYSTEMS defaultroute netwait resolv
+# KEYWORD: shutdown
+#
+# Add consul_enable="YES" to /etc/rc.conf to enable Consul
+#
+# Additional variables you can define are:
+#
+# consul_user (string):                Set user to run consul.
+#                                      Default is "%%USER%%".
+# consul_group (string):               Set group to run consul.
+#                                      Default is "%%GROUP%%".
+# consul_pidfile (string):             Set full path to pid file
+#                                      Default is "/var/run/consul.pid"
+# consul_datadir (dir):                Set dir to run consul in.
+#                                      Default is "%%CONSUL_DBDIR%%"
+# consul_syslog_output_enable (bool):  Set to YES to enable syslog output
+#                                      Default is "NO". See daemon(8).
+# consul_syslog_output_tag (str):      Set syslog tag if syslog enabled.
+#                                      Default is "consul". See daemon(8).
+# consul_syslog_output_priority (str): Set syslog priority if syslog enabled.
+#                                      Default is "notice". See daemon(8).
+# consul_syslog_output_facility (str): Set to YES to enable syslog output
+#                                      Default is "daemon". See daemon(8).
+#
+# see rc.subr(8) for additional variables and options
+#
+
+. /etc/rc.subr
+
+name=consul
+rcvar=consul_enable
+
+load_rc_config $name
+
+: ${consul_enable:="NO"}
+: ${consul_syslog_output_enable:="NO"}
+: ${consul_user:="%%USER%%"}
+: ${consul_group:="%%GROUP%%"}
+: ${consul_pidfile:="/var/run/${name}.pid"}
+: ${consul_datadir:="%%CONSUL_DBDIR%%"}
+
+start_precmd="consul_start_precmd"
+extra_commands="reload"
+
+# backwards compatibility
+if [ -n "${consul_dir}" ]; then
+	consul_datadir=${consul_dir}
+fi
+
+if checkyesno consul_syslog_output_enable; then
+	if [ -n "${consul_syslog_output_tag}" ]; then
+		consul_syslog_output_flags="-T ${consul_syslog_output_tag}"
+	else
+		consul_syslog_output_flags="-T ${name}"
+	fi
+	if [ -n "${consul_syslog_output_priority}" ]; then
+		consul_syslog_output_flags="${consul_syslog_output_flags} -s ${consul_syslog_output_priority}"
+	fi
+	if [ -n "${consul_syslog_output_facility}" ]; then
+		consul_syslog_output_flags="${consul_syslog_output_flags} -l ${consul_syslog_output_facility}"
+	fi
+fi
+
+pidfile="${consul_pidfile}"
+procname="%%PREFIX%%/bin/consul"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${consul_syslog_output_flags} -p ${pidfile} /usr/bin/env ${consul_env} ${procname} agent -data-dir=${consul_datadir} -config-dir=%%ETCDIR%% ${consul_args}"
+
+consul_start_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o ${consul_user} -g ${consul_group} /dev/null "${pidfile}"
+	fi
+	if [ ! -d "${consul_datadir}" ]; then
+		install -d -m 0750 -o ${consul_user} -g ${consul_group} "${consul_datadir}"
+	fi
+	if [ ! -d "%%ETCDIR%%" ]; then
+		install -d -m 0750 -o ${consul_user} -g ${consul_group} "%%ETCDIR%%"
+	fi
+}
+
+run_rc_command "$1"

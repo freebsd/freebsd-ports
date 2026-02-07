@@ -1,0 +1,6 @@
+This module is a simple wrapper around Locale::Maketext::Lexicon,
+designed to alleviate the need of creating Language Classes for module
+authors.
+
+If Locale::Maketext::Lexicon is not present, it implements a minimal
+localization function, so the program can function normally.

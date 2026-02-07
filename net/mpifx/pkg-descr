@@ -1,0 +1,3 @@
+MpiFx provides modern Fortran (Fortran 2003) wrappers around routines
+of the MPI library to make their use as simple as possible. Currently
+several data distribution routines are covered.

@@ -1,0 +1,20 @@
+--- doc/en/examples/example_full_mararc.orig	2023-05-03 00:53:39 UTC
++++ doc/en/examples/example_full_mararc
+@@ -16,9 +16,9 @@ ipv4_bind_addresses = "127.0.0.1"
+ # The directory with all of the zone files
+ chroot_dir = "/etc/maradns"
+ # The numeric UID MaraDNS will run as
+-maradns_uid = 99
++maradns_uid = 53
+ # The (optional) numeric GID MaraDNS will run as
+-# maradns_gid = 99
++# maradns_gid = 53
+ 
+ # Normally, MaraDNS has some MaraDNS-specific features, such as DDIP
+ # synthesizing, a special DNS query ("erre-con-erre-cigarro.maradns.org." 
+@@ -62,3 +62,5 @@ verbose_level = 1
+ # by the "zoneserver" program.
+ #zone_transfer_acl = "10.1.1.1/24, 10.100.100.100/255.255.255.224"
+ 
++max_mem = 0
++hide_disclaimer = "YES"

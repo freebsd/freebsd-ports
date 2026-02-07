@@ -1,0 +1,10 @@
+--- configure.ac.orig	2025-02-03 22:52:23 UTC
++++ configure.ac
+@@ -28,7 +28,6 @@ AM_PO_SUBDIRS
+ AM_INIT_AUTOMAKE([foreign -Wall -Werror 1.9 tar-pax])
+ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+ AM_PO_SUBDIRS
+-GETTEXT_MACRO_VERSION=0.19
+ 
+ AC_PREFIX_DEFAULT(/home/sympa)
+ 

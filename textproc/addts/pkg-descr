@@ -1,0 +1,4 @@
+A small filter that prints its input prefixing each line with the current
+timestamp.  Typical usage is for Apache forensic log:
+
+    ForensicLog "|/usr/bin/addts -a /var/log/httpd/forensic.log"

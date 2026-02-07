@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Compress/Raw/Zlib.pm
+%%SITE_ARCH%%/auto/Compress/Raw/Zlib/Zlib.so
+%%PERL5_MAN3%%/Compress::Raw::Zlib.3.gz

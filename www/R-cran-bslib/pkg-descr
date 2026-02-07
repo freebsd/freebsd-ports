@@ -1,0 +1,4 @@
+Simplifies custom 'CSS' styling of both 'shiny' and 'rmarkdown' via
+'Bootstrap' 'Sass'. Supports both 'Bootstrap' 3 and 4 as well as
+their various 'Bootswatch' themes. An interactive widget is also
+provided for previewing themes in real time.

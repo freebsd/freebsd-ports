@@ -1,0 +1,3 @@
+Perl module which generates a three-dimensional molecular structure from a
+connection table, such as that obtained by a 2D representation of the
+molecule or from a SMILES string.

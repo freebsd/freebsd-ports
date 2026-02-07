@@ -1,0 +1,17 @@
+Netrek is a multiplayer (up to 16 players) network space battle/conquest
+game, with a Star Trek theme.  Players can command one of several ship
+types (Federation/Romulan/Klingon/Orion) and can band up in teams.  The
+object of the game is, basically, to control the Universe, by capturing
+enemy planets, killing the enemy, etc.
+
+NOTE: This is the "BRMH" client.  It is optimized for speed, and so is
+well suited to you if you have a slowish system.  However, you don't get
+any of the fancy extras, like colors, sound, etc.
+
+NOTE 2: This client is distributed in binary form, because it is a
+"Blessed" client, meaning that it has been approved by the "Gods of Netrek"
+and has had an RSA key embedded in it.  You can, of course, compile your
+own client if you wish, but keep in mind that, if you do so, your client
+will be "Un-Blessed" and will probably be kicked out of the official
+servers.  This is to prevent some unscrupulous player from hacking his/her
+client to give him/her superhuman powers ("cyborgs", or "borgs").

@@ -1,0 +1,3 @@
+py7zr is a library and utility to support 7zip archive
+compression, decompression, encryption and decryption
+written by Python programming language.

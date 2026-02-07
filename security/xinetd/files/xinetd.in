@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: xinetd
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable xinetd:
+#
+# xinetd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=xinetd
+rcvar=xinetd_enable
+
+command=%%PREFIX%%/sbin/xinetd
+command_args='> /dev/null 2>&1'
+pidfile=/var/run/xinetd.pid
+
+xinetd_enable=${xinetd_enable:-"NO"}
+xinetd_flags=${xinetd_flags:-"-f %%PREFIX%%/etc/xinetd.conf -pidfile ${pidfile}"}
+
+load_rc_config $name
+run_rc_command "$1"

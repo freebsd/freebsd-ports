@@ -1,0 +1,15 @@
+TIMESTAMP = 1678291360
+SHA256 (centos/p11-kit-0.23.5-3.el7.aarch64.rpm) = eb5bd186fe148b1d86a6cabe462fa0abe70d2856dcb21e25b74ff8597420a585
+SIZE (centos/p11-kit-0.23.5-3.el7.aarch64.rpm) = 227732
+SHA256 (centos/p11-kit-0.23.5-3.el7.i686.rpm) = 2effb681d341ace4f1221e567a3ff0b28f26f345175bb4c4fb6dda7ed54f7798
+SIZE (centos/p11-kit-0.23.5-3.el7.i686.rpm) = 247076
+SHA256 (centos/p11-kit-0.23.5-3.el7.x86_64.rpm) = 8a15990e66c12cfe913f738c87ce772e2e86e67ca27f36ccb43e07eb171c201f
+SIZE (centos/p11-kit-0.23.5-3.el7.x86_64.rpm) = 257620
+SHA256 (centos/p11-kit-trust-0.23.5-3.el7.aarch64.rpm) = de5e0b87ee6d8d13852c2ffb7f03cdb60d4c37e40502156030516f8a0bbd6dea
+SIZE (centos/p11-kit-trust-0.23.5-3.el7.aarch64.rpm) = 126128
+SHA256 (centos/p11-kit-trust-0.23.5-3.el7.i686.rpm) = fc087579fbb0106eee067694586d72ef65309542ee41a2e5c8590bc06b274e4e
+SIZE (centos/p11-kit-trust-0.23.5-3.el7.i686.rpm) = 131504
+SHA256 (centos/p11-kit-trust-0.23.5-3.el7.x86_64.rpm) = 7e5ce466ca45170eceb8acff500515db49ce24ffd786f1550a4a60b4a271c1cf
+SIZE (centos/p11-kit-trust-0.23.5-3.el7.x86_64.rpm) = 131984
+SHA256 (centos/p11-kit-0.23.5-3.el7.src.rpm) = 285f7f81b15d312e32e8bd6b8bd339b586214971272d26c4204a319d318110ba
+SIZE (centos/p11-kit-0.23.5-3.el7.src.rpm) = 1087252

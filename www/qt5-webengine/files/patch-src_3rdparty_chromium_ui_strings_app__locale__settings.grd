@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/ui/strings/app_locale_settings.grd.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/ui/strings/app_locale_settings.grd
+@@ -217,7 +217,7 @@
+           75%
+         </message>
+       </if>
+-      <if expr="(is_linux or is_android or is_bsd) and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <!-- The font used in Web UI (e.g. History). Note that these are only
+              backups. We try to use the system font if possible. -->
+         <message name="IDS_WEB_FONT_FAMILY" use_name_for_id="true">

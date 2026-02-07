@@ -1,0 +1,3 @@
+C Markdown parser. Fast.
+SAX-like interface. Compliant to CommonMark specification.
+Also allows converting from Markdown to HTML via md2html.

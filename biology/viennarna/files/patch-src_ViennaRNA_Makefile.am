@@ -1,0 +1,22 @@
+# Use system dlib instead of bundled version
+# - Remove bundled dlib source compilation
+# - Link concentrations library with system dlib
+# - Avoid compiling ../@DLIB_DIR@/dlib/all/source.cpp
+--- src/ViennaRNA/Makefile.am.orig	2024-10-19 20:19:42 UTC
++++ src/ViennaRNA/Makefile.am
+@@ -76,6 +76,7 @@ libRNA_concentrations_la_CPPFLAGS = $(AM_CPPFLAGS) $(D
+ libRNA_la_LDFLAGS = -avoid-version -static $(LTO_LDFLAGS) $(PTHREAD_LIBS)
+ 
+ libRNA_concentrations_la_CPPFLAGS = $(AM_CPPFLAGS) $(DLIB_CPPFLAGS)
++libRNA_concentrations_la_LIBADD = $(DLIB_LIBS)
+ 
+ libRNA_conv_la_LIBADD = \
+     libRNA_backtrack.la \
+@@ -493,7 +494,6 @@ libRNA_concentrations_la_SOURCES = \
+ 
+ libRNA_concentrations_la_SOURCES = \
+     concentrations.c \
+-    ../@DLIB_DIR@/dlib/all/source.cpp \
+     wrap_dlib.cpp
+ 
+ 

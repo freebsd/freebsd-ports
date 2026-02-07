@@ -1,0 +1,19 @@
+--- examples/plplot_configure.cmake_installed_examples.in.orig	2019-06-01 23:24:33 UTC
++++ examples/plplot_configure.cmake_installed_examples.in
+@@ -1,6 +1,7 @@
+ # -*- mode: cmake -*-
+ # This file used to configure CMake variables that are used to build the
+ # installed examples.
++# Patch borrowed from https://sourceforge.net/p/plplot/plplot/ci/52479b8830ee02900b41fe3ec947aed6b1841a48/
+ # Identify that this is the build system for the installed examples.
+ set(BUILD_TEST ON)
+ set(CORE_BUILD OFF)
+@@ -172,6 +173,8 @@ if(ENABLE_qt)
+   endif(PLPLOT_USE_QT5)
+   set(PLPLOT_AUTOMOC_MOC_OPTIONS @PLPLOT_AUTOMOC_MOC_OPTIONS@)
+ endif(ENABLE_qt)
++
++set(PL_HAVE_QHULL @PL_HAVE_QHULL@)
+ 
+ set(ENABLE_DYNDRIVERS @ENABLE_DYNDRIVERS@)
+ 

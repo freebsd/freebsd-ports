@@ -1,0 +1,20 @@
+--- ssmtp.conf.5.orig	2020-10-22 09:43:05 UTC
++++ ssmtp.conf.5
+@@ -13,7 +13,7 @@
+ .Sh DESCRIPTION
+ .Nm ssmtp
+ reads configuration data from
+-.Pa /etc/ssmtp/ssmtp.conf
++.Pa %%ETCDIR%%/ssmtp.conf
+ The file contains keyword-argument pairs, one per line.
+ Lines starting with
+ .Ql #
+@@ -69,7 +69,7 @@ May also be set to
+ .Dq cram-md5 .
+ .Sh FILES
+ .Bl -tag -width Ds
+-.It Pa /etc/ssmtp/ssmtp.conf
++.It Pa %%ETCDIR%%/ssmtp.conf
+ Contains configuration data for
+ .Nm ssmtp .
+ .El

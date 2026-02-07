@@ -1,0 +1,11 @@
+bin/pbm2hp
+bin/pbmrot90
+bin/pbmshift
+bin/vcgdemomaker
+bin/xvcg
+share/man/manl/pbm2hp.l.gz
+share/man/manl/pbmrot90.l.gz
+share/man/manl/pbmshift.l.gz
+share/man/manl/vcg.l.gz
+share/man/manl/vcgdemomaker.l.gz
+share/man/manl/xvcg.l.gz

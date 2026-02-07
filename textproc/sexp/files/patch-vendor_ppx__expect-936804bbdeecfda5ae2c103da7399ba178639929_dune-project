@@ -1,0 +1,5 @@
+--- vendor/ppx_expect-936804bbdeecfda5ae2c103da7399ba178639929/dune-project.orig	2024-10-08 19:31:01 UTC
++++ vendor/ppx_expect-936804bbdeecfda5ae2c103da7399ba178639929/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

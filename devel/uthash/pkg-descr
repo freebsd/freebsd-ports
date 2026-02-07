@@ -1,0 +1,4 @@
+This is a hash table, implemented in C, supporting constant-time
+add/find/remove of C structures. Any structure having a unique,
+arbitrarily-typed key member can be hashed by adding a UT_hash_handle
+member to the structure and calling these macros.

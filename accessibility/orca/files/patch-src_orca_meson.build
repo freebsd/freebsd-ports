@@ -1,0 +1,26 @@
+--- src/orca/meson.build.orig	2024-06-25 12:03:30 UTC
++++ src/orca/meson.build
+@@ -23,14 +23,6 @@ orca_i18n_py = configure_file(
+   }
+ )
+ 
+-git = find_program('git', required: false)
+-if git.found()
+-  r = run_command('git', 'rev-parse', '--short', 'HEAD', check: false)
+-  revision = r.stdout().strip()
+-else
+-  revision = ''
+-endif
+-
+ r = run_command('pkg-config', '--variable=tablesdir', 'liblouis', check: false)
+ louis_tables_dir = r.stdout().strip()
+ 
+@@ -42,7 +34,7 @@ orca_platform_py = configure_file(
+     'prefix': get_option('prefix'),
+     'PACKAGE': meson.project_name(),
+     'VERSION': meson.project_version(),
+-    'REVISION': revision,
++    'REVISION': '',
+     'LOUIS_TABLE_DIR': louis_tables_dir,
+   }
+ )

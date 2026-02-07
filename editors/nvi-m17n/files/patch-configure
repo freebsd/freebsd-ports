@@ -1,0 +1,24 @@
+--- configure.orig	2016-01-31 11:55:44 UTC
++++ configure	2017-11-28 18:37:14.184568000 +0900
+@@ -1805,10 +1805,8 @@
+ 		case "$host_os" in
+ 		bsdi2.1)
+ 			vi_cannapath="/usr/contrib/canna";;
+-		freebsd2.2*|freebsd3*)
+-			vi_cannapath="/usr/local";;
+-		freebsd2*)
+-			vi_cannapath="/usr/local/canna";;
++		freebsd*|dragonfly*)
++			vi_cannapath="${prefix}";;
+ 		*)
+ 			vi_cannapath="/usr/local/canna";;
+ 		esac
+@@ -2161,7 +2159,7 @@
+ 	CPPFLAGS="-I\$(srcdir)/curses $CPPFLAGS"
+ 	cobjs="\$(COBJS)";;
+ "other curses")
+-	LIBS="-lcurses $LIBS";;
++	LIBS="-lncursesw $LIBS";;
+ esac
+ 
+ echo $ac_n "checking for sys/mman.h""... $ac_c" 1>&6

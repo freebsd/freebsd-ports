@@ -1,0 +1,10 @@
+FLAC is an Open Source lossless audio codec.
+
+FLAC is comprised of
+* libFLAC, a library which implements reference encoders and
+  decoders for native FLAC and Ogg FLAC, and a metadata interface
+* libFLAC++, a C++ object wrapper library around libFLAC
+* flac, a command-line program for encoding and decoding files
+* metaflac, a command-line program for viewing and editing FLAC
+  metadata
+* user and API documentation

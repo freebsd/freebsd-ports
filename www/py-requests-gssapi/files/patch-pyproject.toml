@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-10-16 04:05:19 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 77.0.0", # Support for SPDX license expressions
++    "setuptools >= 63", # Support for SPDX license expressions
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -9,7 +9,7 @@ requires-python = ">=3.8"
+ description = "A GSSAPI authentication handler for python-requests"
+ readme = "README.rst"
+ requires-python = ">=3.8"
+-license = "ISC"
++license = { text = "ISC" }
+ authors = [
+     { name = "Robbie Harwood", email = "rharwood@redhat.com" },
+     { name = "Ian Cordasco" },

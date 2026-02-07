@@ -1,0 +1,11 @@
+--- examples/Makefile.orig	2024-09-22 09:38:52 UTC
++++ examples/Makefile
+@@ -36,7 +36,7 @@ CFLAGS  += -O0 -g -pthread -Wall \
+ 
+ CFLAGS  += -O0 -g -pthread -Wall \
+            -I$(INCLUDE_DIR) -I$(CORE_DIR) -I$(GENCODECS_DIR)
+-LDFLAGS  = -L$(TOP)/lib
++LDFLAGS += -L$(TOP)/lib
+ LDLIBS   = -ldiscord -lcurl
+ 
+ all: $(BOTS)

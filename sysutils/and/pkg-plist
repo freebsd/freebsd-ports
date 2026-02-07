@@ -1,0 +1,6 @@
+etc/and.conf
+etc/and.priorities
+share/man/man5/and.conf.5.gz
+share/man/man5/and.priorities.5.gz
+share/man/man8/and.8.gz
+sbin/and

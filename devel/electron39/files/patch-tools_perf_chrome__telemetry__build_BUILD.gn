@@ -1,0 +1,20 @@
+--- tools/perf/chrome_telemetry_build/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ tools/perf/chrome_telemetry_build/BUILD.gn
+@@ -56,7 +56,7 @@ group("telemetry_chrome_test") {
+     data_deps += [ "//chrome:reorder_imports" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     data_deps += [ "//third_party/breakpad:dump_syms" ]
+ 
+     # CrOS currently has issues with the locally compiled version of
+@@ -210,7 +210,7 @@ group("telemetry_chrome_test_without_chrome") {
+   ]
+ 
+   # Cr-Fuchsia doesn't support breakpad.
+-  if (!is_win && !is_fuchsia) {
++  if (!is_win && !is_fuchsia && !is_bsd) {
+     data_deps += [
+       # This is defined for Windows, but is unused by Telemetry on
+       # Windows, and including it can have issues when cross-compiling

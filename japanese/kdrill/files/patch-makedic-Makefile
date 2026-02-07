@@ -1,0 +1,18 @@
+--- makedic/Makefile.orig	2000-08-02 21:18:48 UTC
++++ makedic/Makefile
+@@ -5,13 +5,13 @@
+ all:	makeedict makedic
+ 
+ makeedict:	makeedict.c
+-	gcc -o $@ makeedict.c
++	$(CC) $(CFLAGS) -o $@ makeedict.c
+ 
+ #This old version is just kept here for posterity's sake
+ #It's doubtful you will want to make a new kanjidic entry.
+ #but if you do, it's here
+ makedic:	makedic.c
+-	gcc -o $@ makedic.c
++	$(CC) $(CFLAGS) -o $@ makedic.c
+ 
+ DICTS=hira.edic hiraplus.edic kata.edic kataplus.edic fullkatahira.edic
+ 

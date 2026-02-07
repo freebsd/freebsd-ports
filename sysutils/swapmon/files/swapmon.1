@@ -1,0 +1,88 @@
+.\"Modified from man(1) of FreeBSD, the NetBSD mdoc.template, and mdoc.samples.
+.\"See Also:
+.\"man mdoc.samples for a complete listing of options
+.\"man mdoc for the short list of editing options
+.\"/usr/share/misc/mdoc.template
+.Dd Wed Jul 20 2010               \" DATE 
+.Dt swapmon 1      \" Program name and manual section number 
+.Os FreeBSD
+.Sh NAME                 \" Section Header - required - don't modify 
+.Nm swapmon
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line. 
+.Nd monitor swapusage, add swapspace as needed
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+.Op Ar start|stop|-F
+add/remove swapspace automatically as needed
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+.Nm
+will check the current swapusage and if more than SWAP_HIGH percent of swapspace is in use it will create a new swapfile with a size of size of SWAP_STEP percent of the current swapspace and activate it.
+If less than SWAP_LOW percent of swapspace is in use it will deactivate a previously added swapspace file and remove it.
+.Pp                      \" Inserts a space
+If called with
+.Ar start
+it will fork into the background and run as a daemon. It will check and then sleep for DELAY seconds before checking again. Messages about the operation will be piped to LOGGER. The pid of the daemon will be written to PIDFILE.
+.Pp                      \" Inserts a space
+If called with
+.Ar stop
+it stop a previously forked swapmon daemon.
+.Pp                      \" Inserts a space
+If called with
+.Ar -F
+it will run as a daemon but not detach from the terminal. Messages will still be piped to LOGGGER and not to the terminal by default. You may specify "/bin/cat" as LOGGER to get the messages on the terminal.
+.Pp                      \" Inserts a space
+Default values:
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It SWAP_HIGH               \" Each item preceded by .It macro
+75
+.It SWAP_LOW               \" Each item preceded by .It macro
+45
+.It SWAP_STEP               \" Each item preceded by .It macro
+100-SWAP_HIGH (=25)
+.It SM_HOME
+"/usr/.swap/"
+.It DELAY               \" Each item preceded by .It macro
+30
+.It LOGGER             \" Each item preceded by .It macro
+/usr/bin/logger
+.It PIDFILE               \" Each item preceded by .It macro
+/var/run/swapmon.pid
+.El                      \" Ends the list
+.Pp
+swapmon can be called via cron(5). In that case you would receive messages about the swapspace being adjusted via e-mail. To use it that way add a crontab entry to the root crontab similar to this:
+.Bl -tag -width -indent  \" Differs from above in tag removed 
+.It * *  * * *  /usr/local/sbin/swapmon
+.El                      \" Ends the list
+.Pp
+.\" .Sh ENVIRONMENT      \" May not be needed
+.\" .Bl -tag -width "ENV_VAR_1" -indent \" ENV_VAR_1 is width of the string ENV_VAR_1
+.\" .It Ev ENV_VAR_1
+.\" Description of ENV_VAR_1
+.\" .It Ev ENV_VAR_2
+.\" Description of ENV_VAR_2
+.\" .El                      
+.Sh FILES                \" File used or created by the topic of the man page
+.Bl -tag -width "/usr/local/etc/swapmonrc" -compact
+.It Pa /usr/local/etc/swapmonrc
+optional configuration file for overwriting the defaults above
+.It Pa $SM_HOME
+The "homedirectory" of swapmon. In here the swapfiles as well as a lockfile and the swapfile list will be created.
+.\" .Sh DIAGNOSTICS       \" May not be needed
+.\" .Bl -diag
+.\" .It Diagnostic Tag
+.\" Diagnostic informtion here.
+.\" .It Diagnostic Tag
+.\" Diagnostic informtion here.
+.\" .El
+.Sh SEE ALSO 
+.\" List links in ascending order by section, alphabetically within a section.
+.\" Please do not reference files that do not exist without filing a bug report
+.Xr swapctl 8 , 
+.Xr mdconfig 8 ,
+.Xr truncate 8 ,
+.Xr logger 1 ,
+.Xr crontab 5
+.\" .Sh BUGS              \" Document known, unremedied bugs 
+.\" .Sh HISTORY           \" Document history if command behaves in a unique manner 
+

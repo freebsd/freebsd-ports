@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/POSIX/strptime.pm
+%%SITE_ARCH%%/auto/POSIX/strptime/strptime.so
+%%PERL5_MAN3%%/POSIX::strptime.3.gz

@@ -1,0 +1,210 @@
+PORTNAME=	qh3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.9
+PORTREVISION=	13
+CATEGORIES=	www python
+#MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Lightway and fast implementation of QUIC and HTTP/3
+WWW=		https://qh3.readthedocs.io/en/latest/
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.2:devel/py-maturin@${PY_FLAVOR} \
+		bash:shells/bash \
+		cmake:devel/cmake-core
+
+USES=		cargo llvm:build python shebangfix
+USE_PYTHON=	pep517 autoplist pytest # tests fail to run because they can't find qh3._hazmat for some reason
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jawah
+GH_TUPLE=	litespeedtech:ls-qpack:8ff2bf6:ls_qpack/../ls-qpack-rs-86a836850b45593a1635e757439e291214573828/ls-qpack-sys/deps/ls-qpack # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279865
+
+SHEBANG_GLOB=	*.sh
+
+CARGO_CRATES=	aead-0.5.2 \
+		aes-0.8.4 \
+		aho-corasick-1.1.3 \
+		asn1-rs-0.6.2 \
+		asn1-rs-derive-0.5.1 \
+		asn1-rs-impl-0.2.0 \
+		autocfg-1.3.0 \
+		aws-lc-fips-sys-0.12.11 \
+		aws-lc-rs-1.8.1 \
+		aws-lc-sys-0.20.1 \
+		base64-0.22.1 \
+		base64ct-1.6.0 \
+		bindgen-0.66.1 \
+		bindgen-0.69.5 \
+		bitflags-2.6.0 \
+		block-buffer-0.10.4 \
+		block-padding-0.3.3 \
+		byteorder-1.5.0 \
+		cbc-0.1.2 \
+		cc-1.1.10 \
+		cexpr-0.6.0 \
+		cfg-if-1.0.0 \
+		chacha20-0.9.1 \
+		chacha20poly1305-0.10.1 \
+		cipher-0.4.4 \
+		clang-sys-1.8.1 \
+		cmake-0.1.50 \
+		const-oid-0.9.6 \
+		cpufeatures-0.2.13 \
+		crypto-common-0.1.6 \
+		curve25519-dalek-4.1.3 \
+		curve25519-dalek-derive-0.1.1 \
+		data-encoding-2.6.0 \
+		der-0.7.9 \
+		der-parser-9.0.0 \
+		der_derive-0.7.3 \
+		deranged-0.3.11 \
+		digest-0.10.7 \
+		displaydoc-0.2.5 \
+		dsa-0.6.3 \
+		dunce-1.0.5 \
+		ed25519-2.2.3 \
+		ed25519-dalek-2.1.1 \
+		either-1.13.0 \
+		errno-0.3.9 \
+		fiat-crypto-0.2.9 \
+		flagset-0.4.6 \
+		fs_extra-1.3.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.15 \
+		glob-0.3.1 \
+		heck-0.4.1 \
+		hmac-0.12.1 \
+		home-0.5.9 \
+		indoc-2.0.5 \
+		inout-0.1.3 \
+		itertools-0.12.1 \
+		itoa-1.0.11 \
+		jobserver-0.1.32 \
+		lazy_static-1.5.0 \
+		lazycell-1.3.0 \
+		libc-0.2.155 \
+		libloading-0.8.5 \
+		libm-0.2.8 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.4.12 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		memoffset-0.9.1 \
+		minimal-lexical-0.2.1 \
+		mirai-annotations-1.12.0 \
+		nom-7.1.3 \
+		num-bigint-0.4.6 \
+		num-bigint-dig-0.8.4 \
+		num-conv-0.1.0 \
+		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-traits-0.2.19 \
+		oid-registry-0.7.0 \
+		once_cell-1.19.0 \
+		opaque-debug-0.3.1 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		paste-1.0.15 \
+		pbkdf2-0.12.2 \
+		peeking_take_while-0.1.2 \
+		pem-rfc7468-0.7.0 \
+		pkcs1-0.7.5 \
+		pkcs5-0.7.1 \
+		pkcs8-0.10.2 \
+		poly1305-0.8.0 \
+		portable-atomic-1.7.0 \
+		powerfmt-0.2.0 \
+		ppv-lite86-0.2.20 \
+		prettyplease-0.2.20 \
+		proc-macro2-1.0.86 \
+		pyo3-0.20.3 \
+		pyo3-build-config-0.20.3 \
+		pyo3-ffi-0.20.3 \
+		pyo3-macros-0.20.3 \
+		pyo3-macros-backend-0.20.3 \
+		python3-dll-a-0.2.10 \
+		quote-1.0.36 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.5.3 \
+		regex-1.10.6 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
+		rfc6979-0.4.0 \
+		ring-0.17.8 \
+		rsa-0.9.6 \
+		rustc-hash-1.1.0 \
+		rustc_version-0.4.0 \
+		rusticata-macros-4.1.0 \
+		rustix-0.38.34 \
+		rustls-0.23.12 \
+		rustls-pemfile-2.1.3 \
+		rustls-pki-types-1.8.0 \
+		rustls-webpki-0.102.6 \
+		salsa20-0.10.2 \
+		scopeguard-1.2.0 \
+		scrypt-0.11.0 \
+		semver-1.0.23 \
+		serde-1.0.207 \
+		serde_derive-1.0.207 \
+		sha1-0.10.6 \
+		sha2-0.10.8 \
+		shlex-1.3.0 \
+		signature-2.2.0 \
+		smallvec-1.13.2 \
+		spin-0.9.8 \
+		spki-0.7.3 \
+		subtle-2.6.1 \
+		syn-2.0.74 \
+		synstructure-0.13.1 \
+		target-lexicon-0.12.16 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
+		time-0.3.36 \
+		time-core-0.1.2 \
+		time-macros-0.2.18 \
+		tls_codec-0.4.1 \
+		tls_codec_derive-0.4.1 \
+		typenum-1.17.0 \
+		unicode-ident-1.0.12 \
+		unindent-0.2.3 \
+		universal-hash-0.5.1 \
+		untrusted-0.9.0 \
+		version_check-0.9.5 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		which-4.4.2 \
+		windows-sys-0.52.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		x509-cert-0.2.5 \
+		x509-ocsp-0.2.1 \
+		x509-parser-0.16.0 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
+		zeroize-1.8.1 \
+		zeroize_derive-1.4.2 \
+		ls-qpack,ls-qpack-sys@git+https://github.com/Ousret/ls-qpack-rs.git\#86a836850b45593a1635e757439e291214573828
+CARGO_CRATES+=	python3-dll-a-0.2.9
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+CARGO_TARGET_DIR=	${WRKSRC}/target
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
+
+.include <bsd.port.mk>

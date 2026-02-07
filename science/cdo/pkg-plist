@@ -1,0 +1,14 @@
+bin/cdi
+bin/cdo
+include/calendar.h
+include/cdi.h
+include/cdi.inc
+include/cdi_datetime.h
+include/julian_date.h
+lib/cmake/cdi/cdi-config-version.cmake
+lib/cmake/cdi/cdi-config.cmake
+lib/libcdi.a
+lib/libcdi.so
+lib/libcdi.so.0
+lib/libcdi.so.0.0.0
+libdata/pkgconfig/cdi.pc

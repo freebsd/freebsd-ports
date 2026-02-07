@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+
+===================================
+Run the following to configure zkg:
+
+zkg autoconfig
+===================================
+EOM
+}
+]

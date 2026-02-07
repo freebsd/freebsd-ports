@@ -1,0 +1,4 @@
+Command line pastebin for sharing terminal output.
+
+Note: fiche requires a separate web-server to serve the pastebin
+content.

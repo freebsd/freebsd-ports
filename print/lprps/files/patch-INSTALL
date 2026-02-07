@@ -1,0 +1,64 @@
+--- INSTALL.orig	Mon Feb 22 04:46:07 1993
++++ INSTALL	Sat May 24 21:46:37 1997
+@@ -8,23 +8,23 @@
+ You need to add an entry in /etc/printcap.  Here's the entry I use:
+ 
+ lp|ps:\
+-	:br#38400:lp=/dev/ttya:mx#0:sf:sh:rw:sb:\
++	:br#38400:lp=/dev/ttyd0:mx#0:sf:sh:rw:sb:\
+ 	:fc#0177777:fs#003:ms=-isig,igncr,cstopb,-echok:\
+-	:af=/usr/adm/psacct:lf=/usr/adm/pslog:sd=/usr/spool/pslpd:\
+-	:if=/usr/local/lib/psif:
++	:af=/var/log/psacct:lf=/var/log/pslog:sd=/var/spool/output/pslpd:\
++	:if=/usr/local/libexec/psif:
+ 
+-This entry would be appropriate if you were using /dev/ttya and a baud
++This entry would be appropriate if you were using /dev/ttyd0 and a baud
+ rate of 38400.  Note that the `sf', `rw' and `sb' capabilities are
+-essential.  You need to create the spool directory (/usr/spool/pslpd),
+-the accounting file (/usr/adm/psacct), and the log file
+-(/usr/adm/pslog).  The spool directory and the accounting file should
++essential.  You need to create the spool directory (/var/spool/output/pslpd),
++the accounting file (/var/log/psacct), and the log file
++(/var/log/pslog).  The spool directory and the accounting file should
+ be owned by daemon, the log file by root. You can use other names if
+ you want.  The `ms' capabability is a Sun extension.  If you decide to
+ make use of the patches in lpr.diff, you should also add the `ex'
+ boolean capability (the patches also add the `ms' capability.)
+ 
+ If you wish to have banner printing, then you should add
+-`of=/usr/local/lib/psof', and remove the `sh' capability.  You will
++`of=/usr/local/libexec/psof', and remove the `sh' capability.  You will
+ probably also wnat to modify the banner printing code in banner.ps.
+ As distributed, it provides a fairly minimalist banner page.  Note
+ that psof requires the `sb' capability.  If your printer stacks face
+@@ -35,12 +35,12 @@
+ You can add easily add other filters. For example, suppose you want to
+ add a filter for dvi files. Then add an entry to /etc/printcap:
+ 
+-  :df=/usr/local/lib/psdf:
++  :df=/usr/local/libexec/psdf:
+ 
+-Then create a shell script /usr/local/lib/psdf
++Then create a shell script /usr/local/libexec/psdf
+ 
+ #!/bin/sh
+-/usr/local/bin/dvitops | /usr/local/lib/lprps "$@"
++/usr/local/bin/dvitops | /usr/local/libexec/lprps "$@"
+ 
+ Replace `/usr/local/bin/dvitops' by the name of your favourite dvi to
+ ps program (it must be able to read from the standard input). Then you
+@@ -49,11 +49,11 @@
+ You must also set the printer's communication parameters. Make sure
+ you have an entry like this in /etc/remote:
+ 
+-  ttya:dv=/dev/ttya:br#1200:el=^D:
++  ttyd0:dv=/dev/ttyd0:br#1200:el=^D:
+ 
+ Set the switch on your printer to position labelled 1200 or 0. Then 
+ 
+-  tip ttya
++  tip ttyd0
+ 
+ (*)Now carefully type
+ 

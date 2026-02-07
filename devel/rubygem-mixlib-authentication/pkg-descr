@@ -1,0 +1,2 @@
+Mixlib::Authentication provides a class-based header signing authentication
+object, like the one used in Chef.

@@ -1,0 +1,5 @@
+bin/graphite_client
+%%SITE_PERL%%/AnyEvent/Graphite/SNMPAgent.pm
+%%SITE_PERL%%/AnyEvent/Graphite.pm
+%%PERL5_MAN3%%/AnyEvent::Graphite.3.gz
+%%PERL5_MAN3%%/AnyEvent::Graphite::SNMPAgent.3.gz

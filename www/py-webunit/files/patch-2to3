@@ -1,0 +1,548 @@
+--- webunit/cookie.py.orig	2010-05-05 05:21:19 UTC
++++ webunit/cookie.py
+@@ -1,4 +1,4 @@
+-import re, urlparse, Cookie
++import re, urllib.parse, http.cookies
+ 
+ class Error:
+     '''Handles a specific cookie error.
+@@ -33,7 +33,7 @@ def parse_cookie(text, qparmre=re.compile(
+             # We'll simply bail without raising an error
+             # if the cookie is invalid.
+             return result
+-        if not result.has_key(name):
++        if name not in result:
+             result[name]=value
+     return result
+ 
+@@ -45,13 +45,12 @@ def decodeCookies(url, server, headers, cookies):
+     http://www.ietf.org/rfc/rfc2965.txt
+     '''
+     # the path of the request URL up to, but not including, the right-most /
+-    request_path = urlparse.urlparse(url)[2]
++    request_path = urllib.parse.urlparse(url)[2]
+     if len(request_path) > 1 and request_path[-1] == '/':
+         request_path = request_path[:-1]
+ 
+-    hdrcookies = Cookie.SimpleCookie("\n".join(map(lambda x: x.strip(), 
+-        headers.getallmatchingheaders('set-cookie'))))
+-    for cookie in hdrcookies.values():
++    hdrcookies = http.cookies.SimpleCookie("\n".join([x.strip() for x in headers.getallmatchingheaders('set-cookie')]))
++    for cookie in list(hdrcookies.values()):
+         # XXX: there doesn't seem to be a way to determine if the
+         # cookie was set or defaulted to an empty string :(
+         if cookie['domain']:
+@@ -60,7 +59,7 @@ def decodeCookies(url, server, headers, cookies):
+             # reject if The value for the Domain attribute contains no
+             # embedded dots or does not start with a dot.
+             if '.' not in domain:
+-                raise Error, 'Cookie domain "%s" has no "."'%domain
++                raise Error('Cookie domain "%s" has no "."'%domain)
+             if domain[0] != '.':
+                 # per RFC2965 cookie domains with no leading '.' will have
+                 # one added
+@@ -73,16 +72,16 @@ def decodeCookies(url, server, headers, cookies):
+             # but not:
+             #  - someexample.com
+             if not server.endswith(domain) and domain[1:] != server:
+-                raise Error, 'Cookie domain "%s" doesn\'t match '\
+-                    'request host "%s"'%(domain, server)
++                raise Error('Cookie domain "%s" doesn\'t match '\
++                    'request host "%s"'%(domain, server))
+             # reject if the request-host is a FQDN (not IP address) and
+             # has the form HD, where D is the value of the Domain
+             # attribute, and H is a string that contains one or more dots.
+             if re.search(r'[a-zA-Z]', server):
+                 H = server[:-len(domain)]
+                 if '.' in H:
+-                    raise Error, 'Cookie domain "%s" too short '\
+-                    'for request host "%s"'%(domain, server)
++                    raise Error('Cookie domain "%s" too short '\
++                    'for request host "%s"'%(domain, server))
+         else:
+             domain = server
+ 
+@@ -92,8 +91,8 @@ def decodeCookies(url, server, headers, cookies):
+         # (noting that empty request path and '/' are often synonymous, yay)
+         if not (request_path.startswith(path) or (request_path == '' and
+                 cookie['path'] == '/')):
+-            raise Error, 'Cookie path "%s" doesn\'t match '\
+-                'request url "%s"'%(path, request_path)
++            raise Error('Cookie path "%s" doesn\'t match '\
++                'request url "%s"'%(path, request_path))
+ 
+         bydom = cookies.setdefault(domain, {})
+         bypath = bydom.setdefault(path, {})
+--- webunit/HTMLParser.py.orig	2009-06-05 16:30:44 UTC
++++ webunit/HTMLParser.py
+@@ -183,7 +183,7 @@ class HTMLParser:
+                 else:
+                     if i < n-1:
+                         raise HTMLParseError(
+-                            "invalid '<' construct: %s" % `rawdata[i:i+2]`,
++                            "invalid '<' construct: %s" % repr(rawdata[i:i+2]),
+                             self.getpos())
+                     k = -1
+                 if k < 0:
+@@ -274,7 +274,7 @@ class HTMLParser:
+                 j = m.end()
+             else:
+                 raise HTMLParseError(
+-                    "unexpected char in declaration: %s" % `rawdata[j]`,
++                    "unexpected char in declaration: %s" % repr(rawdata[j]),
+                     self.getpos())
+         return -1 # incomplete
+ 
+@@ -330,7 +330,7 @@ class HTMLParser:
+             else:
+                 offset = offset + len(self.__starttag_text)
+             raise HTMLParseError("junk characters in start tag: %s"
+-                                 % `rawdata[k:endpos][:20]`,
++                                 % repr(rawdata[k:endpos][:20]),
+                                  (lineno, offset))
+         if end[-2:] == '/>':
+             # XHTML-style empty tag: <span attr="value" />
+@@ -384,7 +384,7 @@ class HTMLParser:
+         j = match.end()
+         match = endtagfind.match(rawdata, i) # </ + tag + >
+         if not match:
+-            raise HTMLParseError("bad end tag: %s" % `rawdata[i:j]`,
++            raise HTMLParseError("bad end tag: %s" % repr(rawdata[i:j]),
+                                  self.getpos())
+         tag = match.group(1)
+         self.handle_endtag(string.lower(tag))
+--- webunit/SimpleDOM.py.orig	2009-06-05 16:30:44 UTC
++++ webunit/SimpleDOM.py
+@@ -35,8 +35,8 @@ Simple usage:
+ import sys, string
+ 
+ # NOTE this is using a modified HTMLParser
+-from HTMLParser import HTMLParser, HTMLParseError
+-from utility import Upload
++from .HTMLParser import HTMLParser, HTMLParseError
++from .utility import Upload
+ 
+ BOOLEAN_HTML_ATTRS = [
+     # List of Boolean attributes in HTML that may be given in
+@@ -139,7 +139,7 @@ class SimpleDOMNode:
+         for entry in l:
+             if hasattr(entry, 'id') and entry.id == id:
+                 return entry
+-        raise ValueError, 'No %r with id %r'%(name, id)
++        raise ValueError('No %r with id %r'%(name, id))
+ 
+     def getByNameFlat(self, name):
+         '''Return all nodes of type "name" from the contents of this node.
+@@ -182,21 +182,21 @@ class SimpleDOMNode:
+         return self.getContents()[item]
+ 
+     def hasattr(self, attr):
+-        return self.__dict__['__attributes'].has_key(attr)
++        return attr in self.__dict__['__attributes']
+ 
+     def getattr(self, attr, default=_marker):
+-        if self.__dict__['__attributes'].has_key(attr):
++        if attr in self.__dict__['__attributes']:
+             return self.__dict__['__attributes'][attr]
+         if default is _marker:
+-            raise AttributeError, attr
++            raise AttributeError(attr)
+         return default
+ 
+     def __getattr__(self, attr):
+-        if self.__dict__['__attributes'].has_key(attr):
++        if attr in self.__dict__['__attributes']:
+             return self.__dict__['__attributes'][attr]
+-        if self.__dict__.has_key(attr):
++        if attr in self.__dict__:
+             return self.__dict__[attr]
+-        raise AttributeError, attr
++        raise AttributeError(attr)
+     
+     def __len__(self):
+         return len(self.getContents())
+@@ -209,7 +209,7 @@ class SimpleDOMNode:
+ 
+     def __str__(self):
+         attrs = []
+-        for attr in self.__dict__['__attributes'].items():
++        for attr in list(self.__dict__['__attributes'].items()):
+             if attr[0] in BOOLEAN_HTML_ATTRS:
+                 attrs.append(attr[0])
+             else:
+@@ -339,8 +339,8 @@ class SimpleDOMParser(HTMLParser):
+ 
+     def handle_starttag(self, tag, attrs):
+         if self.__debug:
+-            print '\n>handle_starttag', tag
+-            print self.tagstack
++            print('\n>handle_starttag', tag)
++            print(self.tagstack)
+         self.close_para_tags(tag)
+         self.tagstack.append(tag)
+         d = {}
+@@ -352,8 +352,8 @@ class SimpleDOMParser(HTMLParser):
+ 
+     def handle_startendtag(self, tag, attrs):
+         if self.__debug:
+-            print '><handle_startendtag', tag
+-            print self.tagstack
++            print('><handle_startendtag', tag)
++            print(self.tagstack)
+         self.close_para_tags(tag)
+         d = {}
+         for k, v in attrs:
+@@ -362,8 +362,8 @@ class SimpleDOMParser(HTMLParser):
+ 
+     def handle_endtag(self, tag):
+         if self.__debug:
+-            print '<handle_endtag', tag
+-            print self.tagstack
++            print('<handle_endtag', tag)
++            print(self.tagstack)
+         if tag in EMPTY_HTML_TAGS:
+             # </img> etc. in the source is an error
+             raise EmptyTagError(tag, self.getpos())
+@@ -375,7 +375,7 @@ class SimpleDOMParser(HTMLParser):
+         if tag in EMPTY_HTML_TAGS:
+             return
+         close_to = -1
+-        if BLOCK_CLOSING_TAG_MAP.has_key(tag):
++        if tag in BLOCK_CLOSING_TAG_MAP:
+             blocks_to_close = BLOCK_CLOSING_TAG_MAP[tag]
+             for i in range(len(self.tagstack)):
+                 t = self.tagstack[i]
+@@ -404,8 +404,8 @@ class SimpleDOMParser(HTMLParser):
+ 
+     def implied_endtag(self, tag, implied):
+         if self.__debug:
+-            print '<implied_endtag', tag, implied
+-            print self.tagstack
++            print('<implied_endtag', tag, implied)
++            print(self.tagstack)
+         assert tag == self.tagstack[-1]
+         assert implied in (-1, 1, 2)
+         isend = (implied < 0)
+@@ -432,18 +432,18 @@ class SimpleDOMParser(HTMLParser):
+ 
+     def emitStartTag(self, name, attrlist, isend=0):
+         if isend:
+-            if self.__debug: print '*** content'
++            if self.__debug: print('*** content')
+             self.content.append(SimpleDOMNode(name, attrlist, []))
+         else:
+             # generate a new scope and push the current one on the stack
+-            if self.__debug: print '*** push'
++            if self.__debug: print('*** push')
+             newcontent = []
+             self.stack.append(self.content)
+             self.content.append(SimpleDOMNode(name, attrlist, newcontent))
+             self.content = newcontent
+ 
+     def emitEndTag(self, name):
+-        if self.__debug: print '*** pop'
++        if self.__debug: print('*** pop')
+         self.content = self.stack.pop()
+ 
+     def emitText(self, text):
+--- webunit/webunittest.py.orig	2009-06-05 16:30:44 UTC
++++ webunit/webunittest.py
+@@ -7,18 +7,18 @@
+ # 
+ # $Id: webunittest.py,v 1.13 2004/08/26 02:50:19 richard Exp $
+ 
+-import os, base64, urllib, urlparse, unittest, cStringIO, time, re, sys
+-import httplib
++import os, base64, urllib.request, urllib.parse, urllib.error, urllib.parse, unittest, io, time, re, sys
++import http.client
+ 
+ #try:
+ #    from M2Crypto import httpslib
+ #except ImportError:
+ #    httpslib = None
+ 
+-from SimpleDOM import SimpleDOMParser
+-from IMGSucker import IMGSucker
+-from utility import Upload, mimeEncode, boundary, log
+-import cookie
++from .SimpleDOM import SimpleDOMParser
++from .IMGSucker import IMGSucker
++from .utility import Upload, mimeEncode, boundary, log
++from . import cookie
+ 
+ VERBOSE = os.environ.get('VERBOSE', '')
+ 
+@@ -155,9 +155,9 @@ class WebFetcher:
+         WebTestCase.result_count = WebTestCase.result_count + 1
+         try:
+             response = self.fetch(url, params, ok_codes=code, **kw)
+-        except HTTPError, error:
+-            self.log('post'+`(url, params)`, error.response.body)
+-            raise self.failureException, str(error.response)
++        except HTTPError as error:
++            self.log('post'+repr((url, params)), error.response.body)
++            raise self.failureException(str(error.response))
+         return response
+ 
+     def postAssertCode(self, url, params, code=None, **kw):
+@@ -170,10 +170,10 @@ class WebFetcher:
+             code = [code]
+         try:
+             response = self.fetch(url, params, ok_codes = code, **kw)
+-        except HTTPError, error:
+-            self.log('postAssertCode'+`(url, params, code)`,
++        except HTTPError as error:
++            self.log('postAssertCode'+repr((url, params, code)),
+                 error.response.body)
+-            raise self.failureException, str(error.response)
++            raise self.failureException(str(error.response))
+         return response
+ 
+     def postAssertContent(self, url, params, content, code=None, **kw):
+@@ -186,14 +186,14 @@ class WebFetcher:
+             code = [code]
+         try:
+             response = self.fetch(url, params, ok_codes = code, **kw)
+-        except HTTPError, error:
+-            self.log('postAssertContent'+`(url, params, code)`,
++        except HTTPError as error:
++            self.log('postAssertContent'+repr((url, params, code)),
+                 error.response.body)
+-            raise self.failureException, str(error)
++            raise self.failureException(str(error))
+         if response.body.find(content) == -1:
+-            self.log('postAssertContent'+`(url, params, content)`,
++            self.log('postAssertContent'+repr((url, params, content)),
+                 response.body)
+-            raise self.failureException, 'Expected content not in response'
++            raise self.failureException('Expected content not in response')
+         return response
+ 
+     def postAssertNotContent(self, url, params, content, code=None, **kw):
+@@ -206,14 +206,14 @@ class WebFetcher:
+             code = [code]
+         try:
+             response = self.fetch(url, params, ok_codes = code, **kw)
+-        except HTTPError, error:
+-            self.log('postAssertNotContent'+`(url, params, code)`,
++        except HTTPError as error:
++            self.log('postAssertNotContent'+repr((url, params, code)),
+                 error.response.body)
+-            raise self.failureException, str(error)
++            raise self.failureException(str(error))
+         if response.body.find(content) != -1:
+-            self.log('postAssertNotContent'+`(url, params, content)`,
++            self.log('postAssertNotContent'+repr((url, params, content)),
+                 response.body)
+-            raise self.failureException, 'Expected content was in response'
++            raise self.failureException('Expected content was in response')
+         return response
+ 
+     def postPage(self, url, params, code=None, **kw):
+@@ -225,20 +225,20 @@ class WebFetcher:
+         WebTestCase.result_count = WebTestCase.result_count + 1
+         try:
+             response = self.fetch(url, params, ok_codes=code, **kw)
+-        except HTTPError, error:
++        except HTTPError as error:
+             self.log('postPage %r'%((url, params),), error.response.body)
+-            raise self.failureException, str(error)
++            raise self.failureException(str(error))
+ 
+         # Check return code for redirect
+         while response.code in (301, 302):
+             try:
+                 # Figure the location - which may be relative
+                 newurl = response.headers['Location']
+-                url = urlparse.urljoin(url, newurl)
++                url = urllib.parse.urljoin(url, newurl)
+                 response = self.fetch(url, ok_codes=code)
+-            except HTTPError, error:
++            except HTTPError as error:
+                 self.log('postPage %r'%url, error.response.body)
+-                raise self.failureException, str(error)
++                raise self.failureException(str(error))
+ 
+         # read and parse the content
+         page = response.body
+@@ -246,8 +246,8 @@ class WebFetcher:
+             self.writeResult(url, page)
+         try:
+             self.pageImages(url, page)
+-        except HTTPError, error:
+-            raise self.failureException, str(error)
++        except HTTPError as error:
++            raise self.failureException(str(error))
+         return response
+ 
+     #
+@@ -310,7 +310,7 @@ class WebFetcher:
+         Returns a HTTPReponse object wrapping the response from the server.
+         '''
+         # see if the url is fully-qualified (not just a path)
+-        t_protocol, t_server, t_url, x, t_args, x = urlparse.urlparse(url)
++        t_protocol, t_server, t_url, x, t_args, x = urllib.parse.urlparse(url)
+         if t_server:
+             protocol = t_protocol
+             if ':' in t_server:
+@@ -332,13 +332,13 @@ class WebFetcher:
+             # see if there's a base URL to use.
+             base = self.get_base_url()
+             if base:
+-                t_protocol, t_server, t_url, x, x, x = urlparse.urlparse(base)
++                t_protocol, t_server, t_url, x, x, x = urllib.parse.urlparse(base)
+                 if t_protocol:
+                     protocol = t_protocol
+                 if t_server:
+                     server = t_server
+                 if t_url:
+-                    url = urlparse.urljoin(t_url, url)
++                    url = urllib.parse.urljoin(t_url, url)
+ 
+         # TODO: allow override of the server and port from the URL!
+         if server is None: server = self.server
+@@ -347,7 +347,7 @@ class WebFetcher:
+         if ok_codes is None: ok_codes = self.expect_codes
+ 
+         if protocol == 'http':
+-            h = httplib.HTTP(server, int(port))
++            h = http.client.HTTP(server, int(port))
+             if int(port) == 80:
+                host_header = server
+             else: 
+@@ -355,21 +355,21 @@ class WebFetcher:
+         elif protocol == 'https':
+             #if httpslib is None:
+                 #raise ValueError, "Can't fetch HTTPS: M2Crypto not installed"
+-            h = httplib.HTTPS(server, int(port))
++            h = http.client.HTTPS(server, int(port))
+             if int(port) == 443:
+                host_header = server
+             else: 
+                host_header = '%s:%s'%(server, port)
+         else:
+-            raise ValueError, protocol
++            raise ValueError(protocol)
+ 
+         headers = []
+         params = None
+         if postdata:
+-            for field,value in postdata.items():
++            for field,value in list(postdata.items()):
+                 if type(value) == type({}):
+                     postdata[field] = []
+-                    for k,selected in value.items():
++                    for k,selected in list(value.items()):
+                         if selected: postdata[field].append(k)
+ 
+             # Do a post with the data file
+@@ -392,17 +392,17 @@ class WebFetcher:
+         #    (http://www.ietf.org/rfc/rfc2109.txt)
+         cookies_used = []
+         cookie_list = []
+-        for domain, cookies in self.cookies.items():
++        for domain, cookies in list(self.cookies.items()):
+             # check cookie domain
+             if not server.endswith(domain):
+                 continue
+-            for path, cookies in cookies.items():
++            for path, cookies in list(cookies.items()):
+                 # check that the path matches
+-                urlpath = urlparse.urlparse(url)[2]
++                urlpath = urllib.parse.urlparse(url)[2]
+                 if not urlpath.startswith(path) and not (path == '/' and
+                         urlpath == ''):
+                     continue
+-                for sendcookie in cookies.values():
++                for sendcookie in list(cookies.values()):
+                     # and that the cookie is or isn't secure
+                     if sendcookie['secure'] and protocol != 'https':
+                         continue
+@@ -436,7 +436,7 @@ class WebFetcher:
+ 
+         # get the body and save it
+         f = h.getfile()
+-        g = cStringIO.StringIO()
++        g = io.StringIO()
+         d = f.read()
+         while d:
+             g.write(d)
+@@ -467,15 +467,15 @@ class WebFetcher:
+             data = response.body
+             for content in self.error_content:
+                 if data.find(content) != -1:
+-                    url = urlparse.urlunparse((protocol, server, url, '','',''))
++                    url = urllib.parse.urlunparse((protocol, server, url, '','',''))
+                     msg = "URL %r matched error: %s"%(url, content)
+                     if hasattr(self, 'results') and self.results:
+                         self.writeError(url, msg)
+-                    self.log('Matched error'+`(url, content)`, data)
++                    self.log('Matched error'+repr((url, content)), data)
+                     if VERBOSE:
+                         sys.stdout.write('c')
+                         sys.stdout.flush()
+-                    raise self.failureException, msg
++                    raise self.failureException(msg)
+ 
+         if VERBOSE:
+             sys.stdout.write('_')
+@@ -541,8 +541,8 @@ class HTTPResponse(WebFetcher, unittest.TestCase):
+             try:
+                 parser.parseString(self.body)
+             except:
+-                log('HTTPResponse.getDOM'+`(self.url, self.code, self.message,
+-                    self.headers)`, self.body)
++                log('HTTPResponse.getDOM'+repr((self.url, self.code, self.message,
++                    self.headers)), self.body)
+                 raise
+             self.dom = parser.getDOM()
+         return self.dom
+@@ -589,14 +589,14 @@ class HTTPResponse(WebFetcher, unittest.TestCase):
+ 
+         # whack on the url params
+         l = []
+-        for k, v in formData.items():
++        for k, v in list(formData.items()):
+             if isinstance(v, type([])):
+                 for item in v:
+-                    l.append('%s=%s'%(urllib.quote(k), 
+-                        urllib.quote_plus(item, safe='')))
++                    l.append('%s=%s'%(urllib.parse.quote(k), 
++                        urllib.parse.quote_plus(item, safe='')))
+             else:
+-                l.append('%s=%s'%(urllib.quote(k),
+-                    urllib.quote_plus(v, safe='')))
++                l.append('%s=%s'%(urllib.parse.quote(k),
++                    urllib.parse.quote_plus(v, safe='')))
+         if l:
+             url = url + '?' + '&'.join(l)
+ 
+@@ -645,16 +645,16 @@ class HTTPResponse(WebFetcher, unittest.TestCase):
+ #            assert formData.has_key(k), (formData, k)
+ 
+         formData.update(postargs)
+-        for k,v in postargs.items():
++        for k,v in list(postargs.items()):
+             if v is None:
+                 del formData[k]
+ 
+         # transmogrify select/checkbox/radio select options from dicts
+         # (key:'selected') to lists of values
+-        for k,v in formData.items():
++        for k,v in list(formData.items()):
+             if isinstance(v, type({})):
+                 l = []
+-                for kk,vv in v.items():
++                for kk,vv in list(v.items()):
+                     if vv in ('selected', 'checked'):
+                         l.append(kk)
+                 formData[k] = l
+@@ -673,7 +673,7 @@ class HTTPResponse(WebFetcher, unittest.TestCase):
+                     url = '/%s/' % '/'.join(self.url.split('/')[:-1])
+ 
+             elif not (url.startswith('/') or url.startswith('http')):
+-                url = urlparse.urljoin(base, url)
++                url = urllib.parse.urljoin(base, url)
+         else:
+             url = self.url
+ 

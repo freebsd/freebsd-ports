@@ -1,0 +1,30 @@
+#! /bin/sh
+
+# PROVIDE: ipguard
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable ipguard:
+#
+# ipguard_enable="YES"
+# ipguard_interface="iface"
+# ipguard_flags="-u 300 -xz"
+
+. /etc/rc.subr
+
+name=ipguard
+rcvar=ipguard_enable
+start_precmd=ipguard_precmd
+command=%%PREFIX%%/sbin/${name}
+
+ipguard_enable=${ipguard_enable:-"NO"}
+ipguard_interface=${ipguard_interface:-"fxp0"}
+ipguard_flags=${ipguard_flags:-"-u 300 -xz"}
+
+ipguard_precmd() {
+    command_args="$command_args ${ipguard_interface}"
+    pidfile="/var/run/${name}_${ipguard_interface}.pid"
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

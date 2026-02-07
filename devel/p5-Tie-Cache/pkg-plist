@@ -1,0 +1,3 @@
+%%PERL5_MAN3%%/Tie::Cache.3.gz
+%%SITE_PERL%%/Tie/Cache.pm
+%%SITE_PERL%%/Tie/tie-cache-bench.pl

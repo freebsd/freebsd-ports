@@ -1,0 +1,11 @@
+--- config/logstash.yml.orig	2018-03-09 15:21:48 UTC
++++ config/logstash.yml
+@@ -61,7 +61,7 @@
+ #
+ # Where to fetch the pipeline configuration for the main pipeline
+ #
+-# path.config:
++path.config: %%ETCDIR%%/logstash.conf
+ #
+ # Pipeline configuration string for the main pipeline
+ #

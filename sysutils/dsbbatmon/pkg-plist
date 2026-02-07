@@ -1,0 +1,3 @@
+bin/dsbbatmon
+share/applications/dsbbatmon.desktop
+%%DATADIR%%/dsbbatmon_de.qm

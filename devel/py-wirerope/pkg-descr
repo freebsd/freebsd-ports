@@ -1,0 +1,3 @@
+The class wirerope.rope.WireRope is the wrapper for callables. By wrapping
+a function with WireRope with a custom subclass of the wirerope.wire.Wire class,
+the wire object will be created by each function or bound method.

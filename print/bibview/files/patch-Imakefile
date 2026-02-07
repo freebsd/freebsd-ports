@@ -1,0 +1,20 @@
+--- Imakefile.orig	Mon Feb 27 08:41:19 1995
++++ Imakefile	Sun Apr 19 13:51:51 1998
+@@ -9,7 +9,7 @@
+ 
+ 
+ /* nothing needs to be modified below this point */
+-CFLAGS = $(STD_CPP_DEFINES)
++/* CFLAGS = $(STD_CPP_DEFINES) */
+ #ifdef NeXTArchitecture
+ 
+ SYS_LIBRARIES = XawClientLibs -lm -lsys_s
+@@ -33,7 +33,7 @@
+ 
+ #else /* Others */              /* END SGIArchitecture */
+ 
+-CC = gcc -fstrength-reduce -fpcc-struct-return
++/* CC = gcc -fstrength-reduce -fpcc-struct-return */
+ 
+ #endif                         
+ #endif 

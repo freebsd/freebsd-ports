@@ -1,0 +1,6 @@
+include/lunasvg/lunasvg.h
+%%STATIC%%lib/liblunasvg.a
+lib/liblunasvg.so
+lib/liblunasvg.so.3
+lib/liblunasvg.so.%%SOVERSION%%
+libdata/pkgconfig/lunasvg.pc

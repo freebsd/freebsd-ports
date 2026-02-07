@@ -1,0 +1,5 @@
+Intermodal is a user-friendly and featureful command-line BitTorrent metainfo
+utility. The binary is called `imdl` and runs on Linux, Windows, and macOS.
+
+At the moment, creation, viewing, and verification of `.torrent` files is
+supported.

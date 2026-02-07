@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Acme/6502.pm
+%%SITE_PERL%%/Acme/6502/Tube.pm
+%%PERL5_MAN3%%/Acme::6502.3.gz
+%%PERL5_MAN3%%/Acme::6502::Tube.3.gz

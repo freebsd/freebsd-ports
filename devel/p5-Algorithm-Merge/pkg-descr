@@ -1,0 +1,2 @@
+This module complements Algorithm::Diff by providing three-way merge
+and diff functions.

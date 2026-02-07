@@ -1,0 +1,11 @@
+--- gnome-tweaks.orig	2024-04-26 06:06:48 UTC
++++ gnome-tweaks
+@@ -76,7 +76,7 @@ if __name__ == '__main__':
+     parser = optparse.OptionParser(version=VERSION)
+     parser.add_option("-p", "--prefix",
+                       help="Installation prefix (for gsettings schema, themes, etc)",
+-                      metavar="[/, /usr]")
++                      metavar="[%%LOCALBASE%%]")
+     parser.add_option("-v", "--verbose", action="store_true",
+                       help="Print the names of settings modified")
+     parser.add_option("-d", "--debug", action="store_true",

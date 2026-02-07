@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2013-12-16 00:13:47.000000000 +0100
++++ Makefile.in	2013-12-16 00:14:26.000000000 +0100
+@@ -1092,7 +1092,6 @@
+ @INTLTOOL_XML_NOMERGE_RULE@
+ 
+ install-data-hook: install-update-icon-cache
+-	$(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
+ #$(gsettingsupdateschemacache) $(gsettingsschemadir)
+ 
+ uninstall-hook: uninstall-update-icon-cache

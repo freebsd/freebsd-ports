@@ -1,0 +1,11 @@
+--- create-lw-file.orig	2020-11-10 14:34:22 UTC
++++ create-lw-file
+@@ -19,7 +19,7 @@ if [ "x$tmpdir" != "x" ]; then
+   done
+   #we want to use --clamp-mtime but it is too new. (requires GNU tar version 1.29)
+   #we want to use --sort=name but it is too new.
+-  tar -cvf $tarball $tmpfiles --mtime="@${SOURCE_DATE_EPOCH:-$(date +%s)}" --mode=go=rX,u+rw,a-s --owner=root --group=root --numeric-owner
++  tar -cvf $tarball $tmpfiles
+   if [ "$?" != "0" ]; then
+     exitstatus="1";
+   fi

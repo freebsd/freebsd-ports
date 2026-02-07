@@ -1,0 +1,2 @@
+Yar (Yet another RPC framework) is a light, concurrent RPC framework,
+supports multi package protocols (json, msgpack)

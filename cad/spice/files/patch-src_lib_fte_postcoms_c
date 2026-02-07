@@ -1,0 +1,11 @@
+--- src/lib/fte/postcoms.c.orig	Sat Jul 17 19:28:05 1999
++++ src/lib/fte/postcoms.c	Thu Jul 17 10:23:13 2003
+@@ -135,7 +145,7 @@
+     }
+     t = ft_evaluate(nn);
+     if (!t) {
+-	/* XXX error message */
++	fprintf(cp_err, "Error: Can't evaluate %s\n", rhs);
+         tfree(p);
+         return;
+     }

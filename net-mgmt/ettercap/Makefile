@@ -1,0 +1,68 @@
+PORTNAME=	ettercap
+PORTVERSION=	0.8.3.1
+PORTREVISION=	3
+PORTEPOCH=	1
+CATEGORIES=	net-mgmt security
+MASTER_SITES=	https://github.com/Ettercap/ettercap/releases/download/v${PORTVERSION}/
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Network sniffer/interceptor/injector/logger for switched LANs
+WWW=		https://www.ettercap-project.org/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libnet.so:net/libnet
+
+USES=		bison cmake cpe iconv localbase:ldflags pkgconfig
+
+CMAKE_ARGS=	-DHAVE_PCAP=${LIBDIR} \
+		-DHAVE_RESOLV=${LIBDIR} \
+		-DINSTALL_SYSCONFDIR=${PREFIX}/etc
+CMAKE_OFF=	BUNDLED_LIBS ENABLE_GEOIP ENABLE_LUA ENABLE_PDF_DOCS ENABLE_TESTS LIBRARY_BUILD
+CMAKE_ON=	HAVE_DLOPEN
+LDFLAGS+=	${ICONV_LIB} -lnet -lpcap
+MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
+
+DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
+		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
+		doc/capture doc/decoders doc/dissectors doc/plugins doc/threads
+
+CPE_VENDOR=	ettercap-project
+
+OPTIONS_DEFINE=	DESKTOP DOCS GTK3 IPV6 NCURSES PCRE PLUGINS SSL UTF8
+OPTIONS_DEFAULT=GTK3 NCURSES PCRE PLUGINS SSL UTF8
+OPTIONS_SUB=	yes
+DESKTOP_DESC=	Install ettercap.desktop
+NCURSES_DESC=	Ncurses interface
+PCRE_DESC=	Use PCRE in filters
+SSL_DESC=	SSH1 and SSL decryption support
+
+DESKTOP_CMAKE_BOOL=	INSTALL_DESKTOP
+DESKTOP_USES=		desktop-file-utils
+NCURSES_CMAKE_BOOL=	ENABLE_CURSES
+NCURSES_USES=		ncurses
+GTK3_CMAKE_BOOL=	ENABLE_GTK
+GTK3_USE=		GNOME=gtk30
+GTK3_USES=		gnome
+IPV6_CMAKE_BOOL=	ENABLE_IPV6
+PCRE_CMAKE_BOOL=	HAVE_PCRE
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PLUGINS_BUILD_DEPENDS=	curl>=7.26.0:ftp/curl
+PLUGINS_CMAKE_BOOL=	ENABLE_PLUGINS
+PLUGINS_LIB_DEPENDS=	libcurl.so:ftp/curl
+SSL_CMAKE_BOOL=		ENABLE_SSL
+SSL_USES=		ssl
+UTF8_CMAKE_BOOL=	HAVE_UTF8
+UTF8_CMAKE_ON=		-DHAVE_ICONV=${ICONV_PREFIX}
+UTF8_USES=		iconv
+
+post-install:
+	${INSTALL_DATA} ${STAGEDIR}${ETCDIR}/etter.conf ${STAGEDIR}${PREFIX}/etc/etter.conf.sample
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.mk>

@@ -1,0 +1,5 @@
+This is a fork of amqplib which was originally written by Barry Pederson. It
+is maintained by the Celery project, and used by kombu as a pure python
+alternative when librabbitmq is not available.
+
+This library should be API compatible with librabbitmq.

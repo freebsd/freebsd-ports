@@ -1,0 +1,8 @@
+%%TWDIR%%/data/TWiki/PreferencesPlugin.txt
+%%TWDIR%%/data/TWiki/TWikiPreferencesForm.txt
+%%TWDIR%%/lib/TWiki/Plugins/PreferencesPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/PreferencesPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/PreferencesPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/PreferencesPlugin/build.pl
+%%TWDIR%%/test/unit/PreferencesPlugin/PreferencesPluginSuite.pm
+%%TWDIR%%/test/unit/PreferencesPlugin/PreferencesPluginTests.pm

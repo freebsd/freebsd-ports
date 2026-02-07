@@ -1,0 +1,14 @@
+Composes and mails a complaint about inappropriate commercial use of
+usenet/e-mail.  Sends complaint his/her provider by default, but
+destination is configurable.  Can be used with as few as three keystrokes.
+
+A third-party forwarding service called Abuse.net is used for
+complaints to the offender's provider.  This ensures that the best
+known complaint address is used.  The first time you use Abuse.net,
+you will receive a message asking you to register.  See www.abuse.net.
+
+This was created in the belief that a single, concise message is the
+most appropriate way to complain. Mail bombing (e-mailing megabytes
+of useless data) and public flaming (replying on usenet, causing your
+complaint to be duplicated on every machine in the network) are
+discouraged.

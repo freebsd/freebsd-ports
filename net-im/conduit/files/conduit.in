@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: conduit
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# conduit_enable (bool):	Set to NO by default.
+#				Set it to YES to enable conduit.
+# conduit_config (path):	Set to %%PREFIX%%/etc/conduit.toml
+#				by default.
+
+. /etc/rc.subr
+
+name=conduit
+rcvar=conduit_enable
+desc="Conduit server"
+
+load_rc_config $name
+
+: ${conduit_enable:=NO}
+: ${conduit_config:="%%PREFIX%%/etc/conduit.toml"}
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/conduit
+pidfile=/var/run/${name}.pid
+
+conduit_env="CONDUIT_CONFIG=${conduit_config}"
+command_args="-P /var/run/daemon_${name}.pid -p $pidfile -u %%USERS%% -H -c -o /var/log/conduit.log $procname"
+
+run_rc_command "$1"

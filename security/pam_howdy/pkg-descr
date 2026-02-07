@@ -1,0 +1,3 @@
+Howdy PAM is an authentication tool that allows you to unlock your desktop
+session using your webcam. It uses facial recognition to authenticate and
+unlock the session. This package provides PAM module for Howdy.

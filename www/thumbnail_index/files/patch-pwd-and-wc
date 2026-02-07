@@ -1,0 +1,20 @@
+--- thumbnail_index.orig	Tue Aug 11 03:51:55 1998
++++ thumbnail_index	Tue Jun 10 13:04:55 2003
+@@ -99,7 +99,7 @@
+ subdir=.thumbnails
+ nindexname=/tmp/tinind.$$
+ stamp='This file produced by thumbnail_index - do not edit.'
+-cwd=`pwd`
++cwd=`/bin/pwd -L`
+ makefile=/tmp/timake.$$
+ infoscript=/tmp/tiinsc.$$
+ rm -f $nindexname $makefile $infoscript
+@@ -248,7 +248,7 @@
+ EOF
+ 			)
+ 		    fi
+-		    kb=`ls -l "$file" | awk '{print int(($4+1023)/1024)}'`
++		    kb=`wc -c < "$file" | awk '{print int(($1+1023)/1024)}'`
+ 		    echo "<TD ALIGN=CENTER><TABLE><TR><TD ALIGN=CENTER><A HREF=\"$file\"><IMG BORDER=0 WIDTH=20 HEIGHT=22 SRC=\"$subdir/.file.gif\"></A></TD></TR><TR><TD ALIGN=CENTER><SMALL><A HREF=\"$file\">$file</A></SMALL></TD></TR><TR><TD ALIGN=CENTER><SMALL>${kb}K</SMALL></TD></TR></TABLE></TD>"
+ 		fi
+ 	    ;;

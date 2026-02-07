@@ -1,0 +1,91 @@
+#!/bin/sh
+
+# PROVIDE: nslcd
+# REQUIRE: NETWORKING slapd ldconfig resolv kstart
+# BEFORE: syslogd
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable the nslcd daemon:
+#
+# nslcd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=nslcd
+rcvar=nslcd_enable
+
+load_rc_config ${name}
+
+: ${nslcd_enable:=NO}
+: ${nslcd_supervisor=NO}
+
+command="/usr/sbin/daemon";
+pidfile="%%NSLCD_PIDFILE%%"
+start_precmd=nslcd_prestart
+start_cmd=nslcd_start
+status_cmd=nslcd_status
+stop_cmd=nslcd_stop
+
+nslcd_prestart()
+{
+	if checkyesno nslcd_supervisor ; then
+	    	notsupported=$(${command} -r 3>&1 1>&2 2>&3 | grep -c illegal)
+		if [ ${notsupported} -eq 0 ]; then
+			command_args="-f -r %%PREFIX%%/sbin/nslcd -n"
+		else
+		    	echo "Your FreeBSD version's daemon(8) does not support supervision.";
+			echo "${name} was not started.";
+			exit 1
+		fi
+	else
+		command_args="-f %%PREFIX%%/sbin/nslcd"
+	fi
+	install -d -o %%USERS%% -g %%GROUPS%% %%NSLCD_VARDIR%%
+}
+
+nslcd_start()
+{
+	nslcd_findpid
+	if [ ! ${mypid} = '' ]; then
+		echo "${name} is running with PID ${mypid}.";
+	else
+		echo "Starting ${name}."
+		${command} ${command_args}
+	fi
+}
+
+nslcd_status()
+{
+	nslcd_findpid
+	if [ ! ${mypid} = '' ]; then
+		echo "${name} is running with PID ${mypid}.";
+	else
+		echo "${name} not running?";
+		return 1
+	fi
+}
+
+nslcd_stop()
+{
+	nslcd_findpid
+	if [ ! ${mypid} = '' ]; then
+		echo "Stopping ${name}.";
+		kill -TERM ${mypid};
+		wait_for_pids ${mypid};
+	else
+		echo "${name} not running?";
+	fi
+}
+
+nslcd_findpid()
+{
+	if %%PREFIX%%/sbin/nslcd -c && pgrep -q -F %%NSLCD_PIDFILE%%; then
+		mypid=$(cat %%NSLCD_PIDFILE%%) 
+		if checkyesno nslcd_supervisor; then
+			mypid=$(pgrep -f "daemon: %%PREFIX%%/sbin/nslcd\[${mypid}\]")
+		fi
+	fi
+}
+
+run_rc_command "$1"

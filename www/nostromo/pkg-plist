@@ -1,0 +1,11 @@
+sbin/crypt
+sbin/nhttpd
+share/man/man8/nhttpd.8.gz
+%%NOSTROMODIR%%/conf/mimes
+@sample %%NOSTROMODIR%%/conf/nhttpd.conf.sample
+%%NOSTROMODIR%%/htdocs/index.html
+%%NOSTROMODIR%%/htdocs/nostromo.gif
+%%NOSTROMODIR%%/htdocs/cgi-bin/printenv
+%%NOSTROMODIR%%/icons/dir.gif
+%%NOSTROMODIR%%/icons/file.gif
+@dir(,,775) %%NOSTROMOLOGDIR%%

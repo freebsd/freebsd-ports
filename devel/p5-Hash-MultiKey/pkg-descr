@@ -1,0 +1,1 @@
+Hash::MultiKey provides hashes that accept arrayrefs of strings as keys.

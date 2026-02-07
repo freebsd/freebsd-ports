@@ -1,0 +1,9 @@
+GeneWeb is a genealogy software program with a Web interface
+originally developed by Daniel de Rauglaudre, but currently
+maintained by fabien@geneanet.org. It can be used off-line
+or in a Web environment. It uses very efficient techniques
+of relationship and consanguinity computing, developed in
+collaboration with Didier Remy, research Director at INRIA.
+
+Feel free to enable option GTK2 to try the new GUI. It's
+only disabled by default to avoid accidental GTK2 dependencies.

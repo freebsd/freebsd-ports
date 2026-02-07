@@ -1,0 +1,5 @@
+TIMESTAMP = 1766094257
+SHA256 (go/net_dataplaneapi/haproxytech-dataplaneapi-v3.2.7_GH0/go.mod) = 2afb65bfd9de920e067ad61a7d567211d19aa98829a1b6d8553dab782d3be8f9
+SIZE (go/net_dataplaneapi/haproxytech-dataplaneapi-v3.2.7_GH0/go.mod) = 4875
+SHA256 (go/net_dataplaneapi/haproxytech-dataplaneapi-v3.2.7_GH0/haproxytech-dataplaneapi-v3.2.7_GH0.tar.gz) = cf66af10a46f47cdcf326da72932112afca96c0d7133b1a8060cfa591d595ea1
+SIZE (go/net_dataplaneapi/haproxytech-dataplaneapi-v3.2.7_GH0/haproxytech-dataplaneapi-v3.2.7_GH0.tar.gz) = 1086874

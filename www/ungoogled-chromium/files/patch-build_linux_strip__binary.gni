@@ -1,0 +1,13 @@
+--- build/linux/strip_binary.gni.orig	2025-11-21 17:02:17 UTC
++++ build/linux/strip_binary.gni
+@@ -21,8 +21,8 @@ template("strip_binary") {
+                            "testonly",
+                          ])
+   action("${target_name}") {
+-    llvm_strip_binary = "${clang_base_path}/bin/llvm-strip"
+-    llvm_objcopy_binary = "${clang_base_path}/bin/llvm-objcopy"
++    llvm_strip_binary = "${LOCALBASE}/llvm${MODCLANG_VERSION}/bin/llvm-strip"
++    llvm_objcopy_binary = "${LOCALBASE}/llvm${MODCLANG_VERSION}/bin/llvm-objcopy"
+     script = "//build/linux/strip_binary.py"
+ 
+     if (defined(invoker.stripped_binary_output)) {

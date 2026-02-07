@@ -1,0 +1,12 @@
+--- data/meson.build.orig	2024-03-16 19:12:56 UTC
++++ data/meson.build
+@@ -25,8 +25,7 @@ desktop_files += i18n.merge_file(
+        output: 'gnome-system-monitor-kde.desktop',
+          type: 'desktop',
+        po_dir: '../po',
+-      install: true,
+-  install_dir: join_paths(get_option('datadir'), 'applications')
++      install: false
+ )
+ 
+ appdata_file = i18n.merge_file(

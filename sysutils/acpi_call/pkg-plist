@@ -1,0 +1,2 @@
+sbin/acpi_call
+/%%KMODDIR%%/acpi_call.ko

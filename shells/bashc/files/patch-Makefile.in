@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2021-02-19 17:35:54 UTC
++++ Makefile.in
+@@ -774,8 +774,8 @@ pathnames.h:		Makefile $(srcdir)/pathnames.h.in
+ 	@${RM} pathnames.tmp
+ 
+ # comment out for distribution
+-#$(srcdir)/configure:	$(srcdir)/configure.ac $(srcdir)/aclocal.m4 $(srcdir)/config.h.in
+-#	cd $(srcdir) && autoconf
++$(srcdir)/configure:	$(srcdir)/configure.ac $(srcdir)/aclocal.m4 $(srcdir)/config.h.in
++	cd $(srcdir) && autoconf
+ 
+ # for chet
+ reconfig: force

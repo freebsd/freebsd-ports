@@ -1,0 +1,3 @@
+ObConf-Qt is a Qt port of ObConf, a configuration editor for OpenBox.
+It allows you to edit and choose theme, and to edit window manager preferences
+such as mouse focus behaviour, font-settings and number of virtual desktops.

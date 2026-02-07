@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Net/LimeLight/Purge.pm
+%%SITE_PERL%%/Net/LimeLight/Purge/Request.pm
+%%SITE_PERL%%/Net/LimeLight/Purge/StatusResponse.pm
+%%PERL5_MAN3%%/Net::LimeLight::Purge.3.gz
+%%PERL5_MAN3%%/Net::LimeLight::Purge::Request.3.gz
+%%PERL5_MAN3%%/Net::LimeLight::Purge::StatusResponse.3.gz

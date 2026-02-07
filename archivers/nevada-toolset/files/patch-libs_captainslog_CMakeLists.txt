@@ -1,0 +1,16 @@
+--- libs/captainslog/CMakeLists.txt.orig	2020-02-14 15:15:30 UTC
++++ libs/captainslog/CMakeLists.txt
+@@ -31,13 +31,6 @@ elseif("${CMAKE_SYSTEM}" MATCHES "Darwin")
+     list(APPEND CAPTN_SRC src/captnmessage_win32.c)
+ elseif("${CMAKE_SYSTEM}" MATCHES "Darwin")
+     list(APPEND CAPTN_SRC src/captnmessage_macos.m)
+-else()
+-    # TODO make a null version so builds can be done without any dependencies.
+-    find_package(GTK3 REQUIRED gtk)
+-    if(GTK3_FOUND)
+-        message("Building GTK3 version.")
+-        list(APPEND CAPTN_SRC src/captnmessage_gtk.c)
+-    endif()
+ endif()
+ 
+ add_library(captnlog STATIC ${CAPTN_SRC} src/captainslog.h)

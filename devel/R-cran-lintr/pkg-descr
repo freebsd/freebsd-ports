@@ -1,0 +1,3 @@
+Checks adherence to a given style, syntax errors and possible semantic issues.
+Supports on the fly checking of R code edited with 'RStudio IDE', 'Emacs',
+'Vim', 'Sublime Text', 'Atom' and 'Visual Studio Code'.

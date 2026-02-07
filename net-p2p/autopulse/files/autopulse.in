@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# Author: Michiel van Baak <michiel@vanbaak.eu>
+#
+# PROVIDE: autopulse
+# REQUIRE: LOGIN network
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable autopulse:
+# autopulse_enable:   Set to NO by default. Set it to YES to enable it.
+# autopulse_user:     The user account autopulse daemon runs as what
+#                    you want it to be. Default: autopulse
+# autopulse_group:    The user group autopulse daemon runs as what
+#                    you want it to be. Default: autopulse
+# autopulse_config:   Configuration file for autopulse.
+#                    Default: /usr/local/etc/autopulse.yml
+# autopulse_datadir:  Directory where autopulse user data lives.
+#                    Default: /var/db/autopulse
+# autopulse_log:      File to write logrecords to
+#                    Default: /var/log/autopulse.log
+
+. /etc/rc.subr
+
+name=autopulse
+rcvar=autopulse_enable
+
+load_rc_config ${name}
+
+: ${autopulse_enable:=NO}
+: ${autopulse_user:=%%USERS%%}
+: ${autopulse_group:=%%GROUPS%%}
+: ${autopulse_config:="%%PREFIX%%/etc/autopulse.yml"}
+: ${autopulse_log:="/var/log/autopulse.log"}
+: ${autopulse_datadir:="/var/db/autopulse"}
+
+pidfile="/var/run/${name}/${name}.pid"
+
+autopulse_command="%%PREFIX%%/bin/autopulse"
+autopulse_args="-c ${autopulse_config}"
+
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f -o ${autopulse_log} ${autopulse_command} ${autopulse_args}"
+start_precmd=autopulse_precmd
+
+autopulse_precmd()
+{
+    if [ ! -d "/var/run/${name}" ]; then
+        install -d -m 0750 -o ${autopulse_user} -g ${autopulse_group} "/var/run/${name}"
+    fi
+
+    if [ ! -d "${autopulse_datadir}" ]; then
+        install -d -m 0750 -o ${autopulse_user} -g ${autopulse_group} "${autopulse_datadir}"
+    fi
+
+    if [ ! -f "${autopulse_log}" ]; then
+        install -m 644 -o ${autopulse_user} -g ${autopulse_group} /dev/null "${autopulse_log}"
+    fi
+}
+
+run_rc_command "$1"

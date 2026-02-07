@@ -1,0 +1,8 @@
+FrikQCC was started few months before the Quake engine source was released.
+Originally based off of FastQCC, it was widely (well, among the people at
+MDQNet) enjoyed for a few months.  After J. P. Grossman released QCCX, back
+in March 2000, many of its features and ideas found their way into FrikQCC.
+The result was FrikQCC 2.0, which has been updated many times since then.
+
+It currently supports: goto, labels, static variables, new optimizations,
+compiler warnings, and many other features.

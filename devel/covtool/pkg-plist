@@ -1,0 +1,17 @@
+bin/covtool
+bin/covmerge
+bin/covannotate
+bin/cov++
+bin/gen_html
+@sample etc/cov++.cfg.sample
+libexec/covtool/covtoolhelper.o
+libexec/covtool/covtoolhelper_debug.o
+libexec/covtool/covtoolhelper.c
+share/man/man1/cov++.1.gz
+share/man/man1/covannotate.1.gz
+share/man/man1/covmerge.1.gz
+share/man/man1/covtool.1.gz
+share/man/man1/gen_html.1.gz
+%%DATADIR%%/README
+%%DATADIR%%/COPYRIGHT
+%%DATADIR%%/covtool_version

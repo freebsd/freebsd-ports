@@ -1,0 +1,21 @@
+electrs is an efficient re-implementation of Electrum Server, inspired by
+ElectrumX, Electrum Personal Server and bitcoincore-indexd.
+
+The motivation behind this project is to enable a user to self host an Electrum
+server, with required hardware resources not much beyond those of a full node.
+The server indexes the entire Bitcoin blockchain, and the resulting index
+enables fast queries for any given user wallet, allowing the user to keep
+real-time track of balances and transaction history using the Electrum wallet.
+Since it runs on the user's own machine, there is no need for the wallet to
+communicate with external Electrum servers, thus preserving the privacy of the
+user's addresses and balances.
+
+Features:
+* Supports Electrum protocol v1.4
+* Maintains an index over transaction inputs and outputs
+* Fast synchronization of the Bitcoin blockchain using HDD storage
+* Low index storage overhead (~10%), relying on a local full node
+* Efficient mempool tracker allowing better fee estimation
+* Low CPU & memory usage (after initial indexing)
+* txindex is not required for the Bitcoin node
+* Uses a single RocksDB database, for better consistency and crash recovery

@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/DP.pm
+%%SITE_ARCH%%/Data/Peek.pm
+%%SITE_ARCH%%/auto/Data/Peek/Peek.so
+%%PERL5_MAN3%%/Data::DP.3.gz
+%%PERL5_MAN3%%/Data::Peek.3.gz

@@ -1,0 +1,233 @@
+--- configure.orig	2025-09-28 09:53:08 UTC
++++ configure
+@@ -21416,7 +21416,7 @@ pkg_failed=no
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ " >&5
+ printf %s "checking for
+@@ -21425,7 +21425,7 @@ printf %s "checking for
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ ... " >&6; }
+ 
+@@ -21439,7 +21439,7 @@ if test -n "$DESKTOP_CFLAGS"; then
+   gio-unix-2.0 >= \$GLIB_REQUIRED
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+@@ -21448,7 +21448,7 @@ if test -n "$DESKTOP_CFLAGS"; then
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ ") 2>&5
+   ac_status=$?
+@@ -21460,7 +21460,7 @@ if test -n "$DESKTOP_CFLAGS"; then
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -21480,7 +21480,7 @@ if test -n "$DESKTOP_LIBS"; then
+   gio-unix-2.0 >= \$GLIB_REQUIRED
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+@@ -21489,7 +21489,7 @@ if test -n "$DESKTOP_LIBS"; then
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ ") 2>&5
+   ac_status=$?
+@@ -21501,7 +21501,7 @@ if test -n "$DESKTOP_LIBS"; then
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -21530,7 +21530,7 @@ fi
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ " 2>&1`
+         else
+@@ -21540,7 +21540,7 @@ fi
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ " 2>&1`
+         fi
+@@ -21553,7 +21553,7 @@ fi
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   x11
+ ) were not met:
+ 
+@@ -22908,7 +22908,7 @@ pkg_failed=no
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ " >&5
+ printf %s "checking for
+@@ -22917,7 +22917,7 @@ printf %s "checking for
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ ... " >&6; }
+ 
+@@ -22927,11 +22927,12 @@ if test -n "$SCREENSAVER_CFLAGS"; then
+     if test -n "$PKG_CONFIG" && \
+     { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"
+   gdm
++  gio-2.0 >= \$GLIB_REQUIRED
+   gio-unix-2.0 >= \$GLIB_REQUIRED
+   glib-2.0 >= \$GLIB_REQUIRED
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= \$XXF86VM_REQUIRED
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+@@ -22940,7 +22941,7 @@ if test -n "$SCREENSAVER_CFLAGS"; then
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ ") 2>&5
+   ac_status=$?
+@@ -22948,11 +22949,12 @@ if test -n "$SCREENSAVER_CFLAGS"; then
+   test $ac_status = 0; }; then
+   pkg_cv_SCREENSAVER_CFLAGS=`$PKG_CONFIG --cflags "
+   gdm
++  gio-2.0 >= $GLIB_REQUIRED
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -22968,11 +22970,12 @@ if test -n "$SCREENSAVER_LIBS"; then
+     if test -n "$PKG_CONFIG" && \
+     { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"
+   gdm
++  gio-2.0 >= \$GLIB_REQUIRED
+   gio-unix-2.0 >= \$GLIB_REQUIRED
+   glib-2.0 >= \$GLIB_REQUIRED
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= \$XXF86VM_REQUIRED
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+@@ -22981,7 +22984,7 @@ if test -n "$SCREENSAVER_LIBS"; then
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ ") 2>&5
+   ac_status=$?
+@@ -22989,11 +22992,12 @@ if test -n "$SCREENSAVER_LIBS"; then
+   test $ac_status = 0; }; then
+   pkg_cv_SCREENSAVER_LIBS=`$PKG_CONFIG --libs "
+   gdm
++  gio-2.0 >= $GLIB_REQUIRED
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -23018,21 +23022,23 @@ fi
+         if test $_pkg_short_errors_supported = yes; then
+                 SCREENSAVER_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "
+   gdm
++  gio-2.0 >= $GLIB_REQUIRED
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ " 2>&1`
+         else
+                 SCREENSAVER_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
+   gdm
++  gio-2.0 >= $GLIB_REQUIRED
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ " 2>&1`
+         fi
+@@ -23041,11 +23047,12 @@ fi
+ 
+         as_fn_error $? "Package requirements (
+   gdm
++  gio-2.0 >= $GLIB_REQUIRED
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   glib-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+-  libsystemd
++  libconsolekit
+   xxf86vm >= $XXF86VM_REQUIRED
+ ) were not met:
+ 

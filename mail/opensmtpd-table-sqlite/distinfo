@@ -1,0 +1,5 @@
+TIMESTAMP = 1737289442
+SHA256 (opensmtpd-table-sqlite-1.0.1_GH0.tar.gz) = 74f40788aec40087235cb82391ad21ed4aeb6d79dd7a0e89571f398825b653b0
+SIZE (opensmtpd-table-sqlite-1.0.1_GH0.tar.gz) = 21718
+SHA256 (f3c46da1cbbb2a9d32cd9b4cf31e9fdb5b941a16.patch) = 0256ee0d826543e4ae4263f05c6ddedc635f72a713f34592663e4dbdd40e6d6c
+SIZE (f3c46da1cbbb2a9d32cd9b4cf31e9fdb5b941a16.patch) = 1552

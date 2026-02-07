@@ -1,0 +1,20 @@
+--- configure.orig	2008-12-17 11:09:36 UTC
++++ configure
+@@ -36624,7 +36624,7 @@ if test "${ra_cv_lib_mysqlclient+set}" =
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-   for path in /usr/local/lib/mysql /usr/lib/mysql
++   for path in ${PREFIX}/lib/mysql /usr/local/lib/mysql /usr/lib/mysql
+    do
+       LIBS="$save_LIBS -lm -L$path -lmysqlclient"
+       cat >conftest.$ac_ext <<_ACEOF
+@@ -36742,7 +36742,7 @@ if test "${ra_cv_lib_pq+set}" = set; the
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-   for path in /usr/local/pgsql/lib /usr/pgsql/lib
++   for path in ${PREFIX}/lib /usr/local/lib /usr/lib
+    do
+       LIBS="$save_LIBS  -L$path -lpq"
+       cat >conftest.$ac_ext <<_ACEOF

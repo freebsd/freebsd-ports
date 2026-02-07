@@ -1,0 +1,11 @@
+--- configure.orig	2018-11-02 22:07:01 UTC
++++ configure
+@@ -24218,7 +24218,7 @@ $CXXCPP $cxxcpp_flags\
+ 	-DREVISION="\"$REVISION\""\
+ 	$dash_d_visibility\
+ 	$srcdir/include/xapian/version_h.cc|\
+-	${SED-sed} '0,/const char \* dummy/d;/"/!d;s/^ *//;/^#/d;s/ *$//;s/" *,//;s/"//g;s/@@/"/g;s/  */ /g;s/ *,\r$//;s/ *,$//;s/____/ /g;s/\\\\$/\\/'\
++	${SED-sed} '0,/const char \* dummy/d;/"/!d;s/^ *//;/^#/d;s/ *$//;s/" *,//;s/"//g;s/@@/"/g;s/  */ /g;s/ *,$//;s/____/ /g;s/\\\\$/\\/'\
+ 	> include/xapian/version.h.tmp
+ touch include/xapian/version.h.timestamp
+ if cmp include/xapian/version.h.tmp include/xapian/version.h >/dev/null 2>&1

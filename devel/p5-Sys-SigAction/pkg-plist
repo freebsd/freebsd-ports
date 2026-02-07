@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Sys/SigAction.pm
+%%SITE_PERL%%/Sys/SigAction/Alarm.pm
+%%PERL5_MAN3%%/Sys::SigAction.3.gz

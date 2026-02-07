@@ -1,0 +1,12 @@
+se is a screen oriented version of the classic UNIX text editor ed.
+se has a long history dating back to the early 1980s.
+
+Features
+- command syntax that is very familiar to users who already know ed.
+- full visual interface allowing you to see the text you're editing.
+- built-in help system which describes many of the available commands.
+- many configurable options which can be loaded from a .serc file.
+- can be run interactively or in a script via the included scriptse utility.
+- portable across many platforms.
+- will notify you if you have new/unread e-mail.
+- optional usage logging.

@@ -1,0 +1,11 @@
+--- lib/smartdc/set-root-authorized-keys.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/set-root-authorized-keys
+@@ -7,7 +7,7 @@
+ # By default this script is called on each boot
+ 
+ # load common functions and vars
+-. /lib/smartdc/common.lib
++. %%PREFIX%%/lib/smartdc/common.lib
+ 
+ if [[ ! -f /root/.ssh/authorized_keys ]]; then
+     authorized_keys=$($MDATA_GET root_authorized_keys | awk '{ sub(/(ssh-rsa )/,"\n&"); print }' | awk '{ sub(/(ssh-dss )/,"\n&"); print }' 2>>/dev/console)

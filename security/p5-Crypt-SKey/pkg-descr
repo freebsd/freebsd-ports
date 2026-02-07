@@ -1,0 +1,10 @@
+This module contains a simple S/Key calculator (as described in RFC
+1760) implemented in Perl. It exports the function `key' by default, and
+may optionally export the function `compute'.
+`compute_md4', `compute_md5', `key_md4', and `key_md5' are provided as
+convenience functions for selecting either MD4 or MD5 hashes. The
+default is MD4; this may be changed with with the `$Crypt::SKey::HASH'
+variable, assigning it the value of `MD4' or `MD5'. You can access any
+of these functions by exporting them in the same manner as `compute' in
+the above example.
+Most S/Key systems use MD4 hashing, but a few (notably OPIE) use MD5.

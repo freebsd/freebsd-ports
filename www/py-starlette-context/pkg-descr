@@ -1,0 +1,3 @@
+starlette-context is a middleware for Starlette that allows you to store and
+access the context data of a request. Can be used with logging so logs
+automatically use request headers such as x-request-id or x-correlation-id.

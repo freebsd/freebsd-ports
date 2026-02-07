@@ -1,0 +1,3 @@
+This plugin extends XML/HTML tag autocompletion provided by Geany.
+It automatically inserts a matching snippet after you type an opening
+tag.

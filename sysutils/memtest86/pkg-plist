@@ -1,0 +1,3 @@
+%%CD-ROM%%%%DATADIR%%/memtest86-cdrom.iso
+%%FLOPPY%%%%DATADIR%%/memtest86-floppy.img
+%%USB%%%%DATADIR%%/memtest86-usb.img

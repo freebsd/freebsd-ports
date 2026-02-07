@@ -1,0 +1,51 @@
+--- config/Make.common.rules.orig	2019-08-12 19:54:18 UTC
++++ config/Make.common.rules
+@@ -19,7 +19,8 @@ VERSION         = 3.6.5
+ SHORT_VERSION   = 3.6
+ SOVERSION	= 36
+ 
+-INSTALL		= cp -fp
++override DESTDIR	=
++INSTALL		= %%INSTALL_PROGRAM%%
+ INSTALL_PROGRAM	= ${INSTALL}
+ INSTALL_LIBRARY	= ${INSTALL}
+ INSTALL_DATA	= ${INSTALL}
+@@ -53,14 +54,14 @@ endif
+ #
+ # usr_dir_install means we want to install with a /usr style layout.
+ #
+-ifeq ($(prefix), /usr)
+-    usr_dir_install = 1
+-endif
++#ifeq ($(prefix), /usr)
++#    usr_dir_install = 1
++#endif
++#
++#ifeq ($(prefix), /usr/local)
++#    usr_dir_install = 1
++#endif
+ 
+-ifeq ($(prefix), /usr/local)
+-    usr_dir_install = 1
+-endif
+-
+ #
+ # A /usr style layout can be forced by setting USR_DIR_INSTALL=yes.
+ #
+@@ -507,12 +508,12 @@ install-common::
+ 		fi ; \
+ 	fi
+ 
+-	@if test ! -f $(DESTDIR)$(install_docdir)/ICE_LICENSE$(TEXT_EXTENSION) ; \
++	@if test ! -f $(DESTDIR)$(install_slicedir)/ICE_LICENSE$(TEXT_EXTENSION) ; \
+ 	then \
+-		$(call installdata,$(top_srcdir)/../ICE_LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_docdir)) ; \
++		$(call installdata,$(top_srcdir)/../ICE_LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_slicedir)) ; \
+ 	fi
+ 
+-	@if test ! -f $(DESTDIR)$(install_docdir)/LICENSE$(TEXT_EXTENSION) ; \
++	@if test ! -f $(DESTDIR)$(install_slicedir)/LICENSE$(TEXT_EXTENSION) ; \
+ 	then \
+-		$(call installdata,$(top_srcdir)/../LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_docdir)) ; \
++		$(call installdata,$(top_srcdir)/../LICENSE$(TEXT_EXTENSION),$(DESTDIR)$(install_slicedir)) ; \
+ 	fi

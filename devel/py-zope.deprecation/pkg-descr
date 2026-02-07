@@ -1,0 +1,7 @@
+The hardest part of the Python development process was to ensure
+backward-compatibility and correctly mark deprecated modules,
+classes, functions, methods and properties.
+
+zope.deprecation provides a simple function called
+'deprecated(names, reason)' to deprecate the previously mentioned
+Python objects.

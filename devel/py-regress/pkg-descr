@@ -1,0 +1,6 @@
+regress is a backtracking regular expression engine implemented in Rust, which
+targets JavaScript regular expression syntax.
+
+It's fast, Unicode-aware, has few dependencies, and has a big test suite. It
+makes fewer guarantees than the regex crate but it enables more syntactic
+features, such as backreferences and lookaround assertions.

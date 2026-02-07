@@ -1,0 +1,3 @@
+Automatic IP address when connecting a Remarkable Tablet to USB. This
+makes it possible to access your Remarkable tablet via ssh or its USB
+web interface when it's enabled.

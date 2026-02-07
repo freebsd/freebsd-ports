@@ -1,0 +1,7 @@
+--- plugins/Imakefile.old	Sat Aug 12 23:36:44 2000
++++ plugins/Imakefile	Tue Apr 10 08:59:54 2001
+@@ -1,3 +1,4 @@
++#include <Library.tmpl>
+ #include "../config.tmpl"
+ XCOMM CFLAGS+= $(CDEBUGFLAGS) -DDEBUG
+ CFLAGS+= -Wall $(CDEBUGFLAGS) -DDEBUG

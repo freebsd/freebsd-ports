@@ -1,0 +1,126 @@
+#!/bin/sh
+#
+# PROVIDE: cbsdd
+# REQUIRE: LOGIN FILESYSTEMS cleanvar sshd
+# KEYWORD: shutdown
+#
+# cbsdd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=cbsdd
+rcvar=cbsdd_enable
+load_rc_config $name
+
+: ${cbsdd_enable="NO"}
+
+export workdir="${cbsd_workdir}"
+export NO_CBSD_HISTORY=yes
+# disable interactive question
+export NOINTER=1
+# always answer 'no'
+export ALWAYS_NO=1
+
+globalconf=${cbsd_globalconf:-"%%PREFIX%%/cbsd/cbsd.conf"}
+
+if [ ! -f ${globalconf} ]; then
+	echo "cbsd: no such ${globalconf}";
+	exit 1
+fi
+
+if [ ! -f ${mdtools} ]; then
+	echo "cbsd: no such ${mdtools}";
+	exit 1
+fi
+
+if [ ! -f ${subr} ]; then
+	echo "cbsd: no such ${subr}";
+	exit 1
+fi
+
+if [ ! -f ${localcbsdconf} ]; then
+	echo "cbsd: no such ${localcbsdconf}";
+	exit 1
+fi
+
+. ${globalconf}
+. ${mdtools}
+. ${subrdir}/nc.subr
+
+. ${localcbsdconf}
+
+start_precmd=${name}_prestart
+stop_precmd=${name}_prestop
+stop_cmd=${name}_stop
+status_cmd="${name}_status"
+restart_cmd=${name}_restart
+extra_commands="restart"
+
+command="${toolsdir}/cbsdd"
+pidfile="${cbsd_workdir}/var/run/$name.pid"
+command_args="&"
+
+cbsdd_prestart() {
+	%%PREFIX%%/bin/cbsd task mode=flushall > /dev/null 2>&1
+	. ${subrdir}/initenv.subr
+	. ${inventory}
+
+	%%PREFIX%%/bin/cbsd sysinv mode=update
+	%%PREFIX%%/bin/cbsd netinv
+	update_netinfo
+	${miscdir}/sqlcli ${dbdir}/local.sqlite "UPDATE jails SET status='0' WHERE status='3'"
+	[ -n "${nat_enable}" ] && %%PREFIX%%/bin/cbsd naton
+	/usr/sbin/daemon -f ${rcddir}/jails-astart start
+}
+
+cbsdd_prestop()
+{
+	${rcddir}/jails-astart stop
+	[ -n "${nat_enable}" ] && %%PREFIX%%/bin/cbsd natoff
+}
+
+cbsdd_stop()
+{
+	if [ -f "${pidfile}" ]; then
+		pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		if [ ${_err} -eq  0 ]; then
+			kill -9 ${pids} && /bin/rm -f ${pidfile}
+		else
+			echo "pgrep: ${pids}"
+			return ${_err}
+		fi
+	fi
+}
+
+cbsdd_restart()
+{
+	if [ -f "${pidfile}" ]; then
+		pkill -9 -F ${pidfile} > /dev/null 2>&1
+		/bin/rm -f ${pidfile}
+	fi
+	run_rc_command "start"
+	exit 0
+}
+
+cbsdd_status()
+{
+	local _err
+
+	if [ -f "${pidfile}" ]; then
+		pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		if [ ${_err} -eq  0 ]; then
+			echo "${name} is running as pid ${pids}."
+		else
+			echo "pgrep: ${pids}"
+			return ${_err}
+		fi
+	else
+		echo "${name} is not running."
+		return 1
+	fi
+}
+
+run_rc_command "$1"

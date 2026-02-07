@@ -1,0 +1,5 @@
+SoX (also known as Sound eXchange) translates sound samples between
+different file formats, and optionally applies various sound effects.
+SoX is intended as the Swiss Army knife of sound processing tools.
+It doesn't do anything very well, but sooner or later it comes in
+very handy.

@@ -1,0 +1,2 @@
+@shell bin/vshnu
+%%SITE_PERL%%/vshnucfg.pl

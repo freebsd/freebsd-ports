@@ -1,0 +1,15 @@
+bin/twolame
+include/twolame.h
+lib/libtwolame.a
+lib/libtwolame.so
+lib/libtwolame.so.0
+lib/libtwolame.so.0.0.0
+libdata/pkgconfig/twolame.pc
+share/man/man1/twolame.1.gz
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/api.txt
+%%DOCSDIR%%/psycho.txt
+%%DOCSDIR%%/vbr.txt

@@ -1,0 +1,13 @@
+Exchangelib is a Python client for Microsoft Exchange Web Services (EWS).
+It allows to access and manage mailbox items such as email, calendar, contacts,
+and tasks.
+
+With exchangelib, you can:
+* Search, create, update, and delete items in your mailbox.
+* Send and receive email messages.
+* Manage calendar events and appointments.
+* Access and modify contacts and distribution lists.
+* Work with tasks and other mailbox items.
+
+Exchangelib is compatible with Exchange Server 2007 and later, as well
+as Office 365.

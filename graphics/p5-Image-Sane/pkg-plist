@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Image/Sane.pm
+%%SITE_ARCH%%/Image/Sane/Device.pm
+%%SITE_ARCH%%/auto/Image/Sane/Sane.so
+%%PERL5_MAN3%%/Image::Sane.3.gz

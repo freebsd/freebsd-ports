@@ -1,0 +1,2 @@
+Git Post-Receive hook for Flowdock. Gem requirements patched for use with
+Gitlab.

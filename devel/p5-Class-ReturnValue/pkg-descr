@@ -1,0 +1,4 @@
+Class::ReturnValue is a "clever" return value object that can allow
+code calling your routine to expect:
+    a boolean value (did it fail)
+or  a list (what are the return values)

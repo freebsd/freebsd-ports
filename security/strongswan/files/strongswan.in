@@ -1,0 +1,97 @@
+#!/bin/sh
+# Start or stop strongswan
+
+# PROVIDE: strongswan
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# strongswan_enable (bool):
+#	Set it to "YES" to enable strongswan
+#	Default is "NO"
+# strongswan_interface (string):
+#	Set the control interface to use.
+#	Valid options are:
+#	"stroke" for the old ipsec/startr interface
+#	"vici" for the newer swanctl intrface
+#	Default is "%%INTERFACE%%"
+
+. /etc/rc.subr
+
+name=strongswan
+desc="Strongswan IPsec startup script"
+required_modules="ipsec"
+rcvar=strongswan_enable
+
+load_rc_config $name
+
+: ${strongswan_enable:=NO}
+: ${strongswan_interface:="%%INTERFACE%%"}
+
+extra_commands="reload statusall"
+
+charon_command=%%PREFIX%%/libexec/ipsec/charon
+charon_pidfile=/var/run/charon.pid
+swanctl_command=%%PREFIX%%/sbin/swanctl
+
+case $strongswan_interface in
+[Ss][Tt][Rr][Oo][Kk][Ee])
+	# "stroke"
+	command="%%PREFIX%%/sbin/ipsec"
+	start_precmd=command_args=start
+	stop_cmd="${command} stop"
+	status_cmd="${command} status"
+	reload_cmd="${command} reload"
+	statusall_cmd="${command} statusall"
+	;;
+
+[Vv][Ii][Cc][Ii])
+	# "vici"
+	command=/usr/sbin/daemon
+	pidfile=/var/run/daemon-charon.pid
+	command_args="-S -P ${pidfile} ${charon_command} --use-syslog"
+
+	required_files=${charon_command}
+	extra_commands="reload statusall"
+
+	start_postcmd=${name}_swanctl_poststart
+	status_cmd="${swanctl_command} --stats"
+	reload_cmd=${name}_swanctl_reload
+	statusall_cmd=${name}_swanctl_statusall
+	;;
+
+	*)
+	# "default"
+	warn "\$strongswan_interface setting is invalid - options supported are \"stroke\" or \"vici\"."
+	exit 1
+	;;
+esac
+
+strongswan_swanctl_poststart()
+{
+	local _waitmax=5
+
+	# Need to wait for charon to finish startup,
+	# else vici socket is unreadable
+	while [ ! -f ${charon_pidfile} ] && [ ${_waitmax} -gt 0 ]; do
+		sleep 1
+		_waitmax=$((_waitmax - 1))
+	done
+
+	${swanctl_command} --load-all --noprompt
+}
+
+strongswan_swanctl_reload()
+{
+	${swanctl_command} --reload-settings
+	${swanctl_command} --load-all --noprompt
+}
+
+strongswan_swanctl_statusall()
+{
+	${swanctl_command} --stats
+	${swanctl_command} --list-conns
+	${swanctl_command} --list-sas
+}
+
+run_rc_command "$1"

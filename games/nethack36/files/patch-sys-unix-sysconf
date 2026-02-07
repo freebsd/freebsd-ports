@@ -1,0 +1,11 @@
+--- sys/unix/sysconf.orig	2019-05-09 08:15:39.750365000 -0700
++++ sys/unix/sysconf	2019-05-09 08:16:22.900472000 -0700
+@@ -98,7 +98,7 @@
+ #   %D current time, YYYYMMDDhhmmss format
+ #   %n player name
+ #   %N first character of player name
+-#DUMPLOGFILE=/tmp/nethack.%n.%d.log
++#DUMPLOGFILE=/tmp/nethack..%v.%u.%n.%D.log
+ 
+ # Number of bones file pools.
+ # The pool you belong to is determined at game start. You will

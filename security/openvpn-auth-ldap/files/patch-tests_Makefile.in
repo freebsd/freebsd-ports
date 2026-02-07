@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	2012-03-04 04:55:05 UTC
++++ tests/Makefile.in
+@@ -35,7 +35,7 @@ TEST_OBJS=	tests.o \
+ CFLAGS+=	-DTEST_DATA=\"${srcdir}/data\"
+ OBJCFLAGS+=	-DTEST_DATA=\"${srcdir}/data\"
+ 
+-LIBS+=		-L${top_builddir}/src -lauth-ldap \
++LIBS+=		-L${top_builddir}/src -lauth-ldap -lcheck \
+ 		$(OBJC_LIBS) $(LDAP_LIBS)
+ 
+ LDFLAGS+=	 $(LIBS)

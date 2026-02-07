@@ -1,0 +1,13 @@
+--- Makefile.orig	2016-11-19 10:09:21 UTC
++++ Makefile
+@@ -44,8 +44,8 @@ include $(NSBUILD)/Makefile.top
+ # Extra installation rules
+ I := /$(INCLUDEDIR)
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/nspsl.h
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
+ 
+ # obtain public suffix list database from upstream
+ public_suffix_list.dat:

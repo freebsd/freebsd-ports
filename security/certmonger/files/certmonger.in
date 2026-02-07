@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# PROVIDE: certmonger
+# REQUIRE: dbus
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable Certmonger
+#
+# dbus_enable=yes
+# certmonger_enable=yes
+#
+
+. /etc/rc.subr
+
+name=certmonger
+rcvar=certmonger_enable
+desc="Certificate monitor and PKI enrolment client"
+load_rc_config $name
+
+: ${certmonger_enable:=no}
+
+command="%%PREFIX%%/sbin/certmonger"
+pidfile=/var/run/certmonger.pid
+command_args="-p $pidfile"
+
+run_rc_command $*

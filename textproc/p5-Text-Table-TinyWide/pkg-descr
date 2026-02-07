@@ -1,0 +1,4 @@
+Text::Table::TinyWide is like Text::Table::Tiny with added support for wide
+characters. With this module, text with wide characters will still line up.
+
+Interface, options, and format variables are the same as in Text::Table::Tiny.

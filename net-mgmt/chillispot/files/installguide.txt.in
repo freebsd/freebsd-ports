@@ -1,0 +1,453 @@
+			Installing Chillispot on FreeBSD
+				By Sevan Janiyan
+				www.geeklan.co.uk
+				venture37@geeklan.co.uk 
+
+
+This guide will cover how to get a basic Chillispot installation going with Apache 1.3 + mod_ssl, mySQL 4.1, freeRADIUS & OpenBSD's Packet Filter PF
+
+1) Update your ports tree!!!!
+Instructions on how to do so are included in the HandBook under the Using CVSup section:
+http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/cvsup.html
+
+2) Once the update is complete goto {PORTSDIR}/net-mgmt/chillispot & run make install, you'll be presented with a menu, select:
+MATURE  Stable Releases of Apache with mod_ssl &  mySQL 
+&
+FREE    freeRADIUS
+& choose Ok
+
+During the build process you'll be asked what flavour of freeRADIUS you'd like to build, 
+choose MYSQL         With MySQL user database 
+
+3) When the build & install process is complete go back to the apache directory, 
+regenerate & install some new certs & optionally remove the preinstalled snakeoil test ones. 
+goto {PORTSDIR}/www/apache13-modssl
+& run make certificate TYPE=custom
+Answer the questions in each step & when you're finished you'll be given a summary of files & their functions
+Now copy those files from the summary by going to work/apache_1.X.XX/conf & copy the certs to your apache config directory 
+(replace X.XX with the relevant version number)
+cp work/apache_1.X.XX/conf/ssl.key/ca.key %%PREFIX%%/etc/apache/ssl.key/
+cp work/apache_1.XXX/conf/ssl.key/server.key %%PREFIX%%/etc/apache/ssl.key/
+cp work/apache_1.XXX/conf/ssl.crt/ca.crt %%PREFIX%%/etc/apache/ssl.crt/
+cp work/apache_1.XXX/conf/ssl.crt/server.crt %%PREFIX%%/etc/apache/ssl.crt/
+chmod 400 %%PREFIX%%/etc/apache/ssl.key/ca.key
+chmod 400 %%PREFIX%%/etc/apache/ssl.crt/ca.crt
+
+Optional:
+rm %%PREFIX%%/etc/apache/ssl.key/snakeoil-*
+rm %%PREFIX%%/etc/apache/ssl.crt/snakeoil-*
+then goto  %%PREFIX%%/etc/apache/ssl.crt/ & delete the bunch of alphanumeric filenamed symbolic links
+
+4) Put Chillispots files into place:
+copy hotspotlogin.cgi from %%PREFIX%%/share/chillispot/ to %%PREFIX%%/www/cgi/
+& make it executable:
+chmod 555 %%PREFIX%%/www/cgi-bin/hotspotlogin.cgi
+
+put chillispot.conf file into place
+cp %%PREFIX%%/share/chillispot/chilli.conf.sample %%PREFIX%%/etc/chilli.conf
+
+freeRADIUS related files
+cp %%PREFIX%%/share/chillispot/dictionary.chillispot  %%PREFIX%%/etc/raddb/
+cp %%PREFIX%%/share/chillispot/freeradius.users  %%PREFIX%%/etc/raddb/
+
+PF Config file
+cp %%PREFIX%%/share/chillispot/pf.conf.sample /etc/pf.conf
+
+5) Setup MySQL
+run ./mysql_install_db
+& follow the onscreen instructions provided to set a new root password
+
+6) Create a Database for freeRADIUS
+at the mysql prompt issue the following:
+create database mydbname;
+grant all privileges on mydbname.* to 'dbusername'@'localhost' identified by 'mypass';
+flush privileges;
+quit;
+
+7) Import the freeRADIUS MySQL DB Schema
+by running the following:
+mysql -u dbusrname -p mydbname < %%PREFIX%%/share/doc/freeradius/examples/mysql.sql
+
+8) Configure freeRADIUS
+goto %%PREFIX%%/etc/raddb
+trim .sample from the end of the filenames off the following files:
+acct_users
+certs 
+clients.conf 
+dictionary  , then edit if & add $INCLUDE dictionary.chillispot
+
+eap.conf 
+hints
+huntgroups 
+preproxy_users
+proxy.conf 
+radiusd.conf
+snmp.conf
+sql.conf
+users
+
+9)  Before going ahead & configuring freeRADIUS to use MySQL 
+setup a basic account using the existing flatfiles to make sure everything is working so far
+edit %%PREFIX%%/etc/raddb/clients.conf
+& change the secret entry e.g:
+secret = s3cr3t
+
+then add the sample chillispot user by copying the contents of freeradius.users to users
+
+then run adduser to create a user which radiusd will run under
+#adduser
+Username: radiusd
+Full name: freeRADIUS
+Uid (Leave empty for default): 
+Login group [radiusd]: 
+Login group is radiusd. Invite radiusd into other groups? []: 
+Login class [default]: 
+Shell (sh csh tcsh nologin) [sh]: nologin
+Home directory [/home/radiusd]: /nonexistent 
+Use password-based authentication? [yes]: 
+Use an empty password? (yes/no) [no]: 
+Use a random password? (yes/no) [no]: y
+Lock out the account after creation? [no]: y
+Username   : radiusd
+Password   : <random>
+Full Name  : freeRADIUS
+Uid        : 1002
+Class      : 
+Groups     : radiusd 
+Home       : /nonexistent
+Shell      : /usr/sbin/nologin
+Locked     : yes
+OK? (yes/no): y
+adduser: INFO: Successfully added (radiusd) to the user database.
+adduser: INFO: Password for (radiusd) is: blablabla123
+adduser: INFO: Account (radiusd) is locked.
+
+now edit  %%PREFIX%%/etc/raddb/radiusd.conf
+uncomment & change the user & group entries from
+#user = nobody to user = radiusd
+#group = nobody to group = radiusd
+ & change
+proxy_requests  = yes to no
+
+now create the log files freeRADIUS will use in /var/log
+mkdir /var/log/radacct
+touch /var/log/radius.log
+touch /var/log/radutmp
+touch /var/log/radwtmp
+
+assign them right permissions
+chmod 700 /var/log/radacct
+chmod 644 /var/log/radius.log
+chmod 600 /var/log/radutmp
+chmod 644 /var/log/radwtmp
+
+then change their ownership
+chown radiusd:radiusd /var/log/radacct
+chown radiusd:radiusd /var/log/radius.log
+chown radiusd:radiusd /var/log/radutmp
+chown radiusd:radiusd /var/log/radwtmp
+
+10) Now fireup freeRADIUS in debug mode 
+ by issuing %%PREFIX%%/sbin/radiusd -X
+& using the radtest tool query freeRADIUS
+radtest steve testing localhost 1812 s3cr3t
+
+you should get the following output back:
+Sending Access-Request of id 57 to 127.0.0.1 port 1812
+        User-Name = "steve"
+        User-Password = "testing"
+        NAS-IP-Address = 255.255.255.255
+        NAS-Port = 1812
+rad_recv: Access-Accept packet from host 127.0.0.1:1812, id=57, length=74
+        Class = 0x30373032333435363738
+        Session-Timeout = 3600
+        Idle-Timeout = 600
+        Acct-Interim-Interval = 60
+        WISPr-Bandwidth-Max-Up = 128000
+        WISPr-Bandwidth-Max-Down = 512000
+
+if you're not sure if freeRADIUS is listening on port 1812/udp or 1645/udp check your /etc/services file
+$ cat /etc/services | grep radius
+# IMPORTANT NOTE: Ports 1645/1646 are the traditional radius ports used by
+#radius         1645/udp   #RADIUS authentication protocol (old)
+radius          1812/udp   #RADIUS authentication protocol (IANA sanctioned)
+
+If everything went along ok without any errors edit users & remove the entries you added from chillispots freeradius.users files.
+
+11) Configuring freeRADIUS to use MySQL instead of flat files
+edit %%PREFIX%%/etc/raddb/sql.conf &
+change the login, password & radius_db entries to those used in step 6
+then uncomment
+ #sql_user_name = "%{Stripped-User-Name:-%{User-Name:-DEFAULT}}"
+& comment out sql_user_name = "%{User-Name}" 
+if you'd like to use shortames (username minus realm) aswell as user@realm.f00 & :-DEFAULT
+then uncomment simul_count_query
+
+edit %%PREFIX%%/etc/raddb/radiusd.conf
+then uncomment sql in the Authorize {
+comment out unix in Authenticate {
+comment out files in preacct {
+uncomment sql in accounting {
+comment radutmp  & uncomment sql in session {
+
+freeRADIUS is now setup to use MySQL.
+
+12)  You now need to setup some users for your wireless clients to use 
+12.1: login to the mysql console:
+mysql -u dbusername -p
+
+12.2: choose the database you created for freeRADIUS to work on
+mysql> use mydbname;
+
+12.3: lets see what in here:
+mysql> show tables;
++----------------------+
+| Tables_in_mydbname   |
++----------------------+
+| nas                  |
+| radacct              |
+| radcheck             |
+| radgroupcheck        |
+| radgroupreply        |
+| radpostauth          |
+| radreply             |
+| usergroup            |
++----------------------+
+8 rows in set (0.00 sec)
+
+12.4: to see what fields you need to fill in isse:  
+mysql> show columns from radcheck;
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| id        | int(11) unsigned |      | PRI | NULL    | auto_increment |
+| UserName  | varchar(64)      |      | MUL |         |                |
+| Attribute | varchar(32)      |      |     |         |                |
+| op        | char(2)          |      |     | ==      |                |
+| Value     | varchar(253)     |      |     |         |                |
++-----------+------------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+12.5: lets add our first username:
+mysql> insert into radcheck (Username, Attribute, Value) VALUES ('fry', 'Password', 'walkingonsunshine');
+Query OK, 1 row affected (0.00 sec)
+
+12.6: is it there?
+mysql> select * from radcheck;
++----+----------+-----------+----+-------------------+
+| id | UserName | Attribute | op | Value             |
++----+----------+-----------+----+-------------------+
+|  1 | fry      | Password  | == | walkingonsunshine |
++----+----------+-----------+----+-------------------+
+1 row in set (0.00 sec)
+
+12.7: assign the user to a group:
+mysql> show columns from usergroup;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| UserName  | varchar(64) |      | MUL |         |       |
+| GroupName | varchar(64) |      |     |         |       |
+| priority  | int(11)     |      |     | 1       |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into usergroup (UserName, GroupName, Priority) VALUES ('fry', 'dynamic', 1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from usergroup;
++----------+-----------+----------+
+| UserName | GroupName | priority |
++----------+-----------+----------+
+| fry      | dynamic   |        1 |
++----------+-----------+----------+
+1 row in set (0.01 sec)
+
+12.8) Authorization Type:
+mysql> show columns from radgroupcheck;
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| id        | int(11) unsigned |      | PRI | NULL    | auto_increment |
+| GroupName | varchar(64)      |      | MUL |         |                |
+| Attribute | varchar(32)      |      |     |         |                |
+| op        | char(2)          |      |     | ==      |                |
+| Value     | varchar(253)     |      |     |         |                |
++-----------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into radgroupcheck (GroupName, Attribute, Value) VALUES ('dynamic', 'Auth-Type', 'Local');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from radgroupcheck;
++----+-----------+-----------+----+-------+
+| id | GroupName | Attribute | op | Value |
++----+-----------+-----------+----+-------+
+|  1 | dynamic   | Auth-Type | == | Local |
++----+-----------+-----------+----+-------+
+1 row in set (0.00 sec)
+
+
+mysql> show columns from radgroupcheck;
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| id        | int(11) unsigned |      | PRI | NULL    | auto_increment |
+| GroupName | varchar(64)      |      | MUL |         |                |
+| Attribute | varchar(32)      |      |     |         |                |
+| op        | char(2)          |      |     | ==      |                |
+| Value     | varchar(253)     |      |     |         |                |
++-----------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+12.9) User & Group Attribute settings
+User specific attributes:
+mysql> show columns from radreply;
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| id        | int(11) unsigned |      | PRI | NULL    | auto_increment |
+| UserName  | varchar(64)      |      | MUL |         |                |
+| Attribute | varchar(32)      |      |     |         |                |
+| op        | char(2)          |      |     | =       |                |
+| Value     | varchar(253)     |      |     |         |                |
++-----------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into radreply (UserName, Attribute, Value) VALUES ('fry', 'Class', '0702345678');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from radreply;
++----+----------+-----------+----+------------+
+| id | UserName | Attribute | op | Value      |
++----+----------+-----------+----+------------+
+|  1 | fry      | Class     | =  | 0702345678 |
++----+----------+-----------+----+------------+
+1 row in set (0.00 sec)
+
+Group specific settings:
+mysql> show columns from radgroupreply;
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| id        | int(11) unsigned |      | PRI | NULL    | auto_increment |
+| GroupName | varchar(64)      |      | MUL |         |                |
+| Attribute | varchar(32)      |      |     |         |                |
+| op        | char(2)          |      |     | =       |                |
+| Value     | varchar(253)     |      |     |         |                |
++-----------+------------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into radgroupreply (GroupName, Attribute, Value) VALUES ('dynamic', 'Session-Timeout', '3600');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into radgroupreply (GroupName, Attribute, Value) VALUES ('dynamic', 'Idle-Timeout', '600');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into radgroupreply (GroupName, Attribute, Value) VALUES ('dynamic', 'Acct-Interim-Interval', '60');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into radgroupreply (GroupName, Attribute, Value) VALUES ('dynamic', 'WISPr-Redirection-URL', 'http://www.geeklan.co.uk');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into radgroupreply (GroupName, Attribute, Value) VALUES ('dynamic', 'WISPr-Bandwidth-Max-Up', '128000');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into radgroupreply (GroupName, Attribute, Value) VALUES ('dynamic', 'WISPr-Bandwidth-Max-Down', '512000');
+Query OK, 1 row affected (0.01 sec)
+ 
+mysql> select * from radgroupreply;
++----+-----------+--------------------------+----+--------------------------+
+| id | GroupName | Attribute                | op | Value                    |
++----+-----------+--------------------------+----+--------------------------+
+|  1 | dynamic   | Session-Timeout          | =  | 3600                     |
+|  2 | dynamic   | Idle-Timeout             | =  | 600                      |
+|  3 | dynamic   | Acct-Interim-Interval    | =  | 60                       |
+|  4 | dynamic   | WISPr-Redirection-URL    | =  | http://www.geeklan.co.uk |
+|  5 | dynamic   | WISPr-Bandwidth-Max-Up   | =  | 128000                   |
+|  6 | dynamic   | WISPr-Bandwidth-Max-Down | =  | 512000                   |
++----+-----------+--------------------------+----+--------------------------+
+6 rows in set (0.00 sec)
+
+Test:
+%%PREFIX%%/bin/radtest fry walkingonsunshine localhost 1812 s3cr3t
+Sending Access-Request of id 250 to 127.0.0.1 port 1812
+        User-Name = "fry"
+        User-Password = "walkingonsunshine"
+        NAS-IP-Address = 255.255.255.255
+        NAS-Port = 1812
+rad_recv: Access-Accept packet from host 127.0.0.1:1812, id=250, length=106
+        Class = 0x30373032333435363738
+        Session-Timeout = 3600
+        Idle-Timeout = 600
+        Acct-Interim-Interval = 60
+        WISPr-Redirection-URL = "http://www.geeklan.co.uk"
+        WISPr-Bandwidth-Max-Up = 128000
+        WISPr-Bandwidth-Max-Down = 512000
+
+13) Nearly There
+edit %%PREFIX%%/etc/chilli.conf 
+& change the dns1 & dns2 entries to your dns servers 
+(note, if you're not running a dns server locally you'll need to uncomment uamanydns)
+change radiusserver1 & radiusserver2 to localhost
+set radiussecret to whatever you selected in step 9
+e.g s3cr3t
+set dhcpif to your wifi card e.g ral0
+change uamserver to https://192.168.182.1/cgi-bin/hotspotlogin.cgi 
+(if you're not running a dns server locally, if you are use the fqdn)
+change the uamsecret to another value, then edit  %%PREFIX%%/www/cgi-bin/hotspotlogin.cgi & add the same value to $uamsecret
+
+14) Finishing Stage 
+Edit /etc/pf.conf & make sure the $ext_if & $int_if are correct
+Edit /etc/rc.conf & add the following:
+chillispot_enable="YES"
+apache_enable="YES"
+radiusd_enale="YES"
+mysql_enable="YES"
+pf_enable="YES"                 # Enable PF (load module if required)
+pf_rules="/etc/pf.conf"         # rules definition file for pf
+pf_flags=""                     # additional flags for pfctl startup
+pflog_enable="YES"              # start pflogd(8)
+pflog_logfile="/var/log/pflog"  # where pflogd should store the logfile
+pflog_flags=""                  # additional flags for pflogd startup
+gateway_enable="YES"
+
+& remove any IP addresses assigned to your wifi card
+this is enough for chilli to work:
+ifconfig_ral0="ssid chilli mediaopt hostap mode 11b"
+
+save & reboot or quit to back to the shell & run the following to get everything started
+%%PREFIX%%/etc/rc.d/chillispot start
+%%PREFIX%%/etc/rc.d/apache.sh start you'll be asked for the password that you assigned whilst generating the certs in the step 3
+%%PREFIX%%/etc/rc.d/mysql-server start
+%%PREFIX%%/etc/rc.d/radiusd start
+pfctl -e
+pfctl -f /etc/pf.conf
+
+
+
+THE END!!!
+
+
+
+Original Sources for info:
+OpenBSD PF FAQ
+http://www.openbsd.org/faq/
+
+The FreeBSD HandBook
+http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/index.html
+
+SB's very rough notes to FreeRadius and MySQL 
+http://www.frontios.com/freeradius.html
+
+ONLamp Getting Started with FreeRADIUS
+http://www.onlamp.com/pub/a/onlamp/excerpt/radius_5/index1.html?page=1
+
+
+TAASC MySQL Basics
+http://www.analysisandsolutions.com/code/mybasic.htm
+
+This work is licensed under the Creative Commons Attribution-Share Alike 2.5 License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California,
+94105, USA.
+

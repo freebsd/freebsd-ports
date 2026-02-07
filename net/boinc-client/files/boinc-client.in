@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: boinc-client
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the BOINC client:
+#
+# boinc_client_enable (boolean)		Set to "YES" to enable boinc_client
+#					(default is "NO").
+# boinc_client_flags (string)		Additional flags for boinc_client.
+
+. /etc/rc.subr
+
+name="boinc_client"
+rcvar=boinc_client_enable
+
+: ${boinc_client_svcj_options="net_basic"}
+
+load_rc_config ${name}
+: ${boinc_client_enable="NO"}
+
+command="%%PREFIX%%/bin/boinc_client"
+pidfile="/var/run/${name}.pid"
+
+boinc_client_user=%%BOINC_CLIENT_USER%%
+command_args="--redirectio %%OPTION_NO_GUI_RPC%% %%OPTION_NO_NET_INFO%% --dir %%BOINC_CLIENT_HOME%%"
+
+start_cmd=boinc_client_start
+stop_postcmd=boinc_client_poststop
+
+boinc_client_start()
+{
+	local pid
+
+	pid=$(check_pidfile "${pidfile}" "${command}")
+	if [ -n "${pid}" ]; then
+		echo 1>&2 "${name} already running? (pid=${pid})."
+		return 1
+	fi
+	echo "Starting ${name}."
+	idprio 30 daemon -u ${boinc_client_user} -p ${pidfile} -f ${command} ${boinc_client_flags} ${command_args} || return 1
+}
+
+boinc_client_poststop()
+{
+	rm -f "${pidfile}"
+}
+
+run_rc_command "$1"

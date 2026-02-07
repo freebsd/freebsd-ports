@@ -1,0 +1,18 @@
+--- configure.orig	2026-01-14 16:37:00 UTC
++++ configure
+@@ -7379,7 +7379,6 @@ printf "%s\n" "#define DEFAULT_NAGIOS_GROUP \"$nagios_
+ 
+ printf "%s\n" "#define DEFAULT_NAGIOS_GROUP \"$nagios_grp\"" >>confdefs.h
+ 
+-INSTALL_OPTS="-o $nagios_user -g $nagios_grp"
+ 
+ 
+ 
+@@ -7410,7 +7409,6 @@ fi
+ 
+ 
+ 
+-COMMAND_OPTS="-o $command_user -g $command_grp"
+ 
+ 
+ MAIL_PROG=no

@@ -1,0 +1,2 @@
+libmpd is an abstraction around libmpdclient. It provides
+an easy and reliable callback based interface to mpd.

@@ -1,0 +1,11 @@
+--- test/runtests.orig	2022-11-25 08:51:12 UTC
++++ test/runtests
+@@ -10,7 +10,7 @@ timed()
+ 	if [ -f /proc/cpuinfo ]; then
+ 		CORES=$(awk '/cpu cores/ { print $4; exit }' /proc/cpuinfo)
+ 	else
+-		CORES=$(sysctl -n hw.physicalcpu)
++		CORES=$(sysctl -n hw.ncpu)
+ 	fi
+ 
+ 

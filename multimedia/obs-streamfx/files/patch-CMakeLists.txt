@@ -1,0 +1,70 @@
+--- CMakeLists.txt.orig	2023-05-20 18:52:40 UTC
++++ CMakeLists.txt
+@@ -71,6 +71,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 	set(D_PLATFORM_OS "linux")
+ 	set(D_PLATFORM_LINUX 1)
++elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	set(D_PLATFORM_OS "freebsd")
++	set(D_PLATFORM_FREEBSD 1)
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+ 	set(D_PLATFORM_OS "macos")
+ 	set(D_PLATFORM_MAC 1)
+@@ -345,7 +348,7 @@ endif()
+ # Installation / Packaging
+ if(STANDALONE)
+ 	set(STRUCTURE_UNIFIED CACHE BOOL "Install for use in a Plugin Manager")
+-	if(D_PLATFORM_LINUX)
++	if(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 		set(STRUCTURE_PACKAGEMANAGER CACHE BOOL "Install for use in a Package Manager (system-wide installation)")
+ 	elseif(D_PLATFORM_MAC)
+ 		set(STRUCTURE_BUNDLE ON CACHE BOOL "Install as a Loadable Bundle (.plugin)")
+@@ -930,7 +933,7 @@ if(TRUE) # OpenGL
+ 				PRIVATE
+ 				"${PROJECT_SOURCE_DIR}/third-party/khronos/glad/src/wgl.c"
+ 			)
+-		elseif(D_PLATFORM_LINUX)
++		elseif(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 			target_sources(khronos_glad
+ 				PRIVATE
+ 				"${PROJECT_SOURCE_DIR}/third-party/khronos/glad/src/glx.c"
+@@ -1601,9 +1604,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
+ 	OR (CMAKE_C_COMPILER_ID STREQUAL "Clang")
+ 	OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
+ 	if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
+-		list(APPEND PROJECT_LIBRARIES
+-			"stdc++fs"
+-		)
++		#list(APPEND PROJECT_LIBRARIES
++		#	"stdc++fs"
++		#)
+ 	endif()
+ endif()
+ 
+@@ -1791,7 +1794,7 @@ if(D_PLATFORM_WINDOWS AND ((CMAKE_CXX_COMPILER_ID STRE
+ 	foreach(FLAG ${FLAGS})
+ 		target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release,RelWithDebInfo,MinSizeRel>:${FLAG}>")
+ 	endforeach()
+-elseif(D_PLATFORM_LINUX AND ((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")))
++elseif((D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD) AND ((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")))
+ 	# GCC/Clang
+ 	message(STATUS "Applying custom flags for GCC/Clang style build.")
+ 
+@@ -2067,7 +2070,7 @@ if(STANDALONE)
+ 					DESTINATION "data/" COMPONENT StreamFX
+ 				)
+ 			endif()
+-		elseif(D_PLATFORM_LINUX)
++		elseif(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 			install(
+ 				TARGETS ${PROJECT_NAME}
+ 				RUNTIME DESTINATION "bin/linux-${D_PLATFORM_INSTR}-${D_PLATFORM_BITS}/" COMPONENT StreamFX
+@@ -2118,7 +2121,7 @@ if(STANDALONE)
+ 				DESTINATION "data/obs-plugins/${PROJECT_NAME}/" COMPONENT StreamFX
+ 			)
+ 		endif()
+-	elseif(D_PLATFORM_LINUX)
++	elseif(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 		if(STRUCTURE_PACKAGEMANAGER)
+ 			install(
+ 				TARGETS ${PROJECT_NAME}

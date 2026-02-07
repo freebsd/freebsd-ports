@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: tbd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable tbd:
+#
+# tbd_enable="YES"
+# tbd_flags="<set as needed>"
+#
+
+tbd_enable=${tbd_enable-"NO"}
+
+. /etc/rc.subr
+
+name="tbd"
+rcvar=tbd_enable
+command="%%PREFIX%%/libexec/tbd"
+
+load_rc_config $name
+run_rc_command "$1"

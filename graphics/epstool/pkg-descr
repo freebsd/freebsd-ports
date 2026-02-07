@@ -1,0 +1,10 @@
+Epstool is a utility to create or extract preview images in EPS files,
+fix bounding boxes and convert to bitmaps.
+
+Features:
+- Add EPSI or DOS EPS previews.
+- Extract postscript from DOS EPS files.
+- Uses Ghostscript to create preview bitmaps.
+- Scan a bitmap created by Ghostscript to find bounding box.
+- Create TIFF or Interchange from part of a bitmap created
+  by Ghostscript.

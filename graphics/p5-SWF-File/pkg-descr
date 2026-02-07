@@ -1,0 +1,7 @@
+SWF modules are manipulating Macromedia Flash movie (SWF) files.
+This package contains:
+
+SWF::Element	- representing each SWF tag and other sub element
+SWF::File	- making SWF file
+SWF::Parser	- parsing and splitting SWF files into header and tags
+SWF::BinStream	- binary stream class for SWF

@@ -1,0 +1,301 @@
+--- src/VBox/Runtime/common/log/logcom.cpp
++++ src/VBox/Runtime/common/log/logcom.cpp
+@@ -121,6 +121,6 @@ 
+     for (pu8 = (const uint8_t *)pach; cb-- > 0; pu8++)
+     {
+-        register unsigned cMaxWait;
+-        register uint8_t  u8;
++        unsigned cMaxWait;
++        uint8_t  u8;
+ 
+         /* expand \n -> \r\n */
+--- src/VBox/Runtime/common/table/avl_Range.cpp.h
++++ src/VBox/Runtime/common/table/avl_Range.cpp.h
+@@ -36,7 +36,7 @@ 
+  * @param     Key     The Key to find matching range for.
+  */
+-KAVL_DECL(PKAVLNODECORE) KAVL_FN(RangeGet)(PPKAVLNODECORE ppTree, register KAVLKEY Key)
++KAVL_DECL(PKAVLNODECORE) KAVL_FN(RangeGet)(PPKAVLNODECORE ppTree, KAVLKEY Key)
+ {
+-    register PKAVLNODECORE  pNode = KAVL_GET_POINTER_NULL(ppTree);
++    PKAVLNODECORE  pNode = KAVL_GET_POINTER_NULL(ppTree);
+     if (pNode)
+     {
+--- src/VBox/Runtime/common/table/avl_GetBestFit.cpp.h
++++ src/VBox/Runtime/common/table/avl_GetBestFit.cpp.h
+@@ -44,5 +44,5 @@ 
+ KAVL_DECL(PKAVLNODECORE) KAVL_FN(GetBestFit)(PPKAVLNODECORE ppTree, KAVLKEY Key, bool fAbove)
+ {
+-    register PKAVLNODECORE  pNode = KAVL_GET_POINTER_NULL(ppTree);
++    PKAVLNODECORE  pNode = KAVL_GET_POINTER_NULL(ppTree);
+     if (pNode)
+     {
+--- src/VBox/Runtime/common/table/avl_Get.cpp.h
++++ src/VBox/Runtime/common/table/avl_Get.cpp.h
+@@ -38,5 +38,5 @@ 
+ KAVL_DECL(PKAVLNODECORE) KAVL_FN(Get)(PPKAVLNODECORE ppTree, KAVLKEY Key)
+ {
+-    register PKAVLNODECORE  pNode = KAVL_GET_POINTER_NULL(ppTree);
++    PKAVLNODECORE  pNode = KAVL_GET_POINTER_NULL(ppTree);
+ 
+     if (pNode)
+--- src/VBox/Runtime/common/table/avl_Base.cpp.h
++++ src/VBox/Runtime/common/table/avl_Base.cpp.h
+@@ -267,5 +267,5 @@ 
+         else
+         {
+-            register unsigned char uchHeight = (unsigned char)(KMAX(uchLeftHeight, uchRightHeight) + 1);
++            unsigned char uchHeight = (unsigned char)(KMAX(uchLeftHeight, uchRightHeight) + 1);
+             if (uchHeight == pNode->uchHeight)
+                 break;
+@@ -301,8 +301,8 @@ 
+     KAVLSTACK               AVLStack;
+     PPKAVLNODECORE          ppCurNode = ppTree;
+-    register PKAVLNODECORE  pCurNode;
+-    register KAVLKEY        Key = pNode->Key; NOREF(Key);
++    PKAVLNODECORE  pCurNode;
++    KAVLKEY        Key = pNode->Key; NOREF(Key);
+ #ifdef KAVL_RANGE
+-    register KAVLKEY        KeyLast = pNode->KeyLast; NOREF(KeyLast);
++    KAVLKEY        KeyLast = pNode->KeyLast; NOREF(KeyLast);
+ #endif
+ 
+@@ -401,5 +401,5 @@ 
+     KAVLSTACK                AVLStack;
+     PPKAVLNODECORE           ppDeleteNode = ppTree;
+-    register PKAVLNODECORE   pDeleteNode;
++    PKAVLNODECORE   pDeleteNode;
+ 
+     AVLStack.cEntries = 0;
+@@ -428,5 +428,5 @@ 
+         const unsigned          iStackEntry = AVLStack.cEntries;
+         PPKAVLNODECORE          ppLeftLeast = &pDeleteNode->pLeft;
+-        register PKAVLNODECORE  pLeftLeast = KAVL_GET_POINTER(ppLeftLeast);
++        PKAVLNODECORE  pLeftLeast = KAVL_GET_POINTER(ppLeftLeast);
+ 
+         while (pLeftLeast->pRight != KAVL_NULL)
+--- src/VBox/Runtime/common/string/utf-16.cpp
++++ src/VBox/Runtime/common/string/utf-16.cpp
+@@ -195,5 +195,5 @@ 
+ 
+ 
+-RTDECL(int) RTUtf16Cmp(register PCRTUTF16 pwsz1, register PCRTUTF16 pwsz2)
++RTDECL(int) RTUtf16Cmp(PCRTUTF16 pwsz1, PCRTUTF16 pwsz2)
+ {
+     if (pwsz1 == pwsz2)
+@@ -206,6 +206,6 @@ 
+     for (;;)
+     {
+-        register RTUTF16  wcs = *pwsz1;
+-        register int     iDiff = wcs - *pwsz2;
++        RTUTF16  wcs = *pwsz1;
++        int     iDiff = wcs - *pwsz2;
+         if (iDiff || !wcs)
+             return iDiff;
+--- src/VBox/Runtime/common/string/utf-16-case.cpp
++++ src/VBox/Runtime/common/string/utf-16-case.cpp
+@@ -40,5 +40,5 @@ 
+ 
+ 
+-RTDECL(int) RTUtf16ICmp(register PCRTUTF16 pwsz1, register PCRTUTF16 pwsz2)
++RTDECL(int) RTUtf16ICmp(PCRTUTF16 pwsz1, PCRTUTF16 pwsz2)
+ {
+     if (pwsz1 == pwsz2)
+@@ -52,7 +52,7 @@ 
+     for (;;)
+     {
+-        register RTUTF16  wc1 = *pwsz1;
+-        register RTUTF16  wc2 = *pwsz2;
+-        register int     iDiff = wc1 - wc2;
++        RTUTF16  wc1 = *pwsz1;
++        RTUTF16  wc2 = *pwsz2;
++        int     iDiff = wc1 - wc2;
+         if (iDiff)
+         {
+@@ -107,5 +107,5 @@ 
+ 
+ 
+-RTDECL(int) RTUtf16BigICmp(register PCRTUTF16 pwsz1, register PCRTUTF16 pwsz2)
++RTDECL(int) RTUtf16BigICmp(PCRTUTF16 pwsz1, PCRTUTF16 pwsz2)
+ {
+     if (pwsz1 == pwsz2)
+@@ -119,7 +119,7 @@ 
+     for (;;)
+     {
+-        register RTUTF16  wc1 = *pwsz1;
+-        register RTUTF16  wc2 = *pwsz2;
+-        register int     iDiff = wc1 - wc2;
++        RTUTF16  wc1 = *pwsz1;
++        RTUTF16  wc2 = *pwsz2;
++        int     iDiff = wc1 - wc2;
+         if (iDiff)
+         {
+@@ -217,5 +217,5 @@ 
+ 
+ 
+-RTDECL(int) RTUtf16NICmp(register PCRTUTF16 pwsz1, register PCRTUTF16 pwsz2, size_t cwcMax)
++RTDECL(int) RTUtf16NICmp(PCRTUTF16 pwsz1, PCRTUTF16 pwsz2, size_t cwcMax)
+ {
+     if (pwsz1 == pwsz2)
+@@ -229,7 +229,7 @@ 
+     while (cwcMax-- > 0)
+     {
+-        register RTUTF16  wc1 = *pwsz1;
+-        register RTUTF16  wc2 = *pwsz2;
+-        register int     iDiff = wc1 - wc2;
++        RTUTF16  wc1 = *pwsz1;
++        RTUTF16  wc2 = *pwsz2;
++        int     iDiff = wc1 - wc2;
+         if (iDiff)
+         {
+@@ -290,5 +290,5 @@ 
+ 
+ 
+-RTDECL(int) RTUtf16BigNICmp(register PCRTUTF16 pwsz1, register PCRTUTF16 pwsz2, size_t cwcMax)
++RTDECL(int) RTUtf16BigNICmp(PCRTUTF16 pwsz1, PCRTUTF16 pwsz2, size_t cwcMax)
+ {
+     if (pwsz1 == pwsz2)
+@@ -302,7 +302,7 @@ 
+     while (cwcMax-- > 0)
+     {
+-        register RTUTF16  wc1 = *pwsz1;
+-        register RTUTF16  wc2 = *pwsz2;
+-        register int     iDiff = wc1 - wc2;
++        RTUTF16  wc1 = *pwsz1;
++        RTUTF16  wc2 = *pwsz2;
++        int     iDiff = wc1 - wc2;
+         if (iDiff)
+         {
+--- src/VBox/HostDrivers/VBoxUSB/USBLib.cpp.orig
++++ src/VBox/HostDrivers/VBoxUSB/USBLib.cpp
+@@ -45,11 +45,11 @@ USBLIB_DECL(uint64_t) USBLibHashSerial(const char *psz
+     if (!pszSerial)
+         pszSerial = "";
+ 
+-    register const uint8_t *pu8 = (const uint8_t *)pszSerial;
+-    register uint64_t u64 = UINT64_C(14695981039346656037);
++    const uint8_t *pu8 = (const uint8_t *)pszSerial;
++    uint64_t u64 = UINT64_C(14695981039346656037);
+     for (;;)
+     {
+-        register uint8_t u8 = *pu8;
++        uint8_t u8 = *pu8;
+         if (!u8)
+             break;
+         u64 = (u64 * UINT64_C(1099511628211)) ^ u8;
+--- src/VBox/Runtime/common/checksum/crc32-zlib.cpp.orig
++++ src/VBox/Runtime/common/checksum/crc32-zlib.cpp
+@@ -51,7 +51,7 @@ static uint32_t rtCrc32ProcessTooBig(uint32_t uCRC32, 
+     return uCRC32;
+ }
+ 
+-RTDECL(uint32_t) RTCrc32(const void *pv, register size_t cb)
++RTDECL(uint32_t) RTCrc32(const void *pv, size_t cb)
+ {
+     uint32_t uCrc = crc32(0, NULL, 0);
+     if (RT_UNLIKELY((uInt)cb == cb))
+--- src/VBox/Devices/Network/DevPCNet.cpp.orig
++++ src/VBox/Devices/Network/DevPCNet.cpp
+@@ -1242,8 +1242,8 @@ static void pcnetSoftReset(PPCNETSTATE pThis)
+  */
+ static void pcnetUpdateIrq(PPCNETSTATE pThis)
+ {
+-    register int      iISR = 0;
+-    register uint16_t csr0 = pThis->aCSR[0];
++    int      iISR = 0;
++    uint16_t csr0 = pThis->aCSR[0];
+ 
+     csr0 &= ~0x0080; /* clear INTR */
+ 
+--- src/VBox/VMM/VMMAll/PGMAllGst.h.orig
++++ src/VBox/VMM/VMMAll/PGMAllGst.h
+@@ -92,7 +92,7 @@ DECLINLINE(int) PGM_GST_NAME(Walk)(PVMCPU pVCpu, RTGCP
+         return PGM_GST_NAME(WalkReturnNotPresent)(pVCpu, pWalk, 8);
+ # endif
+ 
+-    uint32_t register fEffective = X86_PTE_RW | X86_PTE_US | X86_PTE_PWT | X86_PTE_PCD | X86_PTE_A | 1;
++    uint32_t fEffective = X86_PTE_RW | X86_PTE_US | X86_PTE_PWT | X86_PTE_PCD | X86_PTE_A | 1;
+     {
+ # if PGM_GST_TYPE == PGM_TYPE_AMD64
+         /*
+@@ -102,9 +102,9 @@ DECLINLINE(int) PGM_GST_NAME(Walk)(PVMCPU pVCpu, RTGCP
+         if (RT_SUCCESS(rc)) { /* probable */ }
+         else return PGM_GST_NAME(WalkReturnBadPhysAddr)(pVCpu, pWalk, 4, rc);
+ 
+-        PX86PML4E register  pPml4e;
++        PX86PML4E pPml4e;
+         pWalk->pPml4e  = pPml4e  = &pWalk->pPml4->a[(GCPtr >> X86_PML4_SHIFT) & X86_PML4_MASK];
+-        X86PML4E  register  Pml4e;
++        X86PML4E  Pml4e;
+         pWalk->Pml4e.u = Pml4e.u = pPml4e->u;
+ 
+         if (Pml4e.n.u1Present) { /* probable */ }
+@@ -131,9 +131,9 @@ DECLINLINE(int) PGM_GST_NAME(Walk)(PVMCPU pVCpu, RTGCP
+     }
+     {
+ # if PGM_GST_TYPE == PGM_TYPE_AMD64 || PGM_GST_TYPE == PGM_TYPE_PAE
+-        PX86PDPE register   pPdpe;
++        PX86PDPE pPdpe;
+         pWalk->pPdpe  = pPdpe  = &pWalk->pPdpt->a[(GCPtr >> GST_PDPT_SHIFT) & GST_PDPT_MASK];
+-        X86PDPE  register   Pdpe;
++        X86PDPE  Pdpe;
+         pWalk->Pdpe.u = Pdpe.u = pPdpe->u;
+ 
+         if (Pdpe.n.u1Present) { /* probable */ }
+@@ -164,7 +164,7 @@ DECLINLINE(int) PGM_GST_NAME(Walk)(PVMCPU pVCpu, RTGCP
+ # endif
+     }
+     {
+-        PGSTPDE register    pPde;
++        PGSTPDE pPde;
+         pWalk->pPde  = pPde  = &pWalk->pPd->a[(GCPtr >> GST_PD_SHIFT) & GST_PD_MASK];
+         GSTPDE              Pde;
+         pWalk->Pde.u = Pde.u = pPde->u;
+@@ -221,9 +221,9 @@ DECLINLINE(int) PGM_GST_NAME(Walk)(PVMCPU pVCpu, RTGCP
+         else return PGM_GST_NAME(WalkReturnBadPhysAddr)(pVCpu, pWalk, 1, rc);
+     }
+     {
+-        PGSTPTE register    pPte;
++        PGSTPTE pPte;
+         pWalk->pPte  = pPte  = &pWalk->pPt->a[(GCPtr >> GST_PT_SHIFT) & GST_PT_MASK];
+-        GSTPTE  register    Pte;
++        GSTPTE  Pte;
+         pWalk->Pte.u = Pte.u = pPte->u;
+ 
+         if (Pte.n.u1Present) { /* probable */ }
+--- include/VBox/HostServices/Service.h.orig
++++ include/VBox/HostServices/Service.h
+@@ -358,11 +358,11 @@ class AbstractService: public RTCNonCopyable (public)
+             else
+             {
+                 RT_GCC_NO_WARN_DEPRECATED_BEGIN
+-                std::auto_ptr<AbstractService> apService;
++                std::unique_ptr<AbstractService> apService;
+                 /* No exceptions may propagate outside. */
+                 try
+                 {
+-                    apService = std::auto_ptr<AbstractService>(new T(pTable->pHelpers));
++                    apService = std::unique_ptr<AbstractService>(new T(pTable->pHelpers));
+                 } catch (int rcThrown)
+                 {
+                     rc = rcThrown;
+--- src/VBox/Main/src-server/PerformanceImpl.cpp.orig
++++ src/VBox/Main/src-server/PerformanceImpl.cpp
+@@ -699,7 +699,7 @@ void PerformanceCollector::samplerCallback(uint64_t iT
+      * Those should be destroyed now.
+      */
+     Log7Func(("{%p}: before remove_if: toBeCollected.size()=%d\n", this, toBeCollected.size()));
+-    toBeCollected.remove_if(std::mem_fun(&pm::BaseMetric::isUnregistered));
++    toBeCollected.remove_if(std::mem_fn(&pm::BaseMetric::isUnregistered));
+     Log7Func(("{%p}: after remove_if: toBeCollected.size()=%d\n", this, toBeCollected.size()));
+     Log7Func(("{%p}: before remove_if: m.baseMetrics.size()=%d\n", this, m.baseMetrics.size()));
+     for (it = m.baseMetrics.begin(); it != m.baseMetrics.end();)
+@@ -720,7 +720,7 @@ void PerformanceCollector::samplerCallback(uint64_t iT
+ 
+     /* Finally, collect the data */
+     std::for_each(toBeCollected.begin(), toBeCollected.end(),
+-                  std::mem_fun(&pm::BaseMetric::collect));
++                  std::mem_fn(&pm::BaseMetric::collect));
+     Log4Func(("{%p}: LEAVE\n", this));
+ }
+ 

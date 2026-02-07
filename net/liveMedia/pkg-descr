@@ -1,0 +1,12 @@
+This code forms a set of C++ libraries for multimedia streaming,
+using open standard protocols (RTP/RTCP and RTSP). These libraries
+- which can be compiled for Unix (including Linux and Mac OS X),
+Windows, and QNX(and other POSIX-compliant systems) - can be used
+to build streaming applications. The libraries are already being
+used to implement applications such as "liveCaster" and "playRTPMPEG"
+(for streaming MP3 audio using RTP/RTCP). The libraries can also
+be used to stream, receive, and process MPEG video, and can easily be
+extended to support additional (audio and/or video) codecs. They can
+also be used to build basic RTSP clients and servers, and have been
+used to add streaming support to existing media player applications,
+such as "mplayer".

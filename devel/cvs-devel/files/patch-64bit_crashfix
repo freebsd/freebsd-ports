@@ -1,0 +1,15 @@
+# Fix a 64-bit crash in the entries_time() function and another bug in
+# the diff code. Thanks to Gabor Gombas for the patch. Closes:
+# #329127.
+diff -Nur diff/util.c diff/util.c
+--- diff/util.c	2003-02-03 03:52:38.000000000 +0800
++++ diff/util.c	2006-02-26 21:32:22.000000000 +0800
+@@ -235,7 +235,7 @@
+ 	      close (pipes[0]);
+ 	    }
+ 
+-	  execl (PR_PROGRAM, PR_PROGRAM, "-f", "-h", name, 0);
++	  execl (PR_PROGRAM, PR_PROGRAM, "-f", "-h", name, NULL);
+ 	  pfatal_with_name (PR_PROGRAM);
+ 	}
+       else

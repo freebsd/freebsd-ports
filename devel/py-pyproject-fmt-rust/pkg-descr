@@ -1,0 +1,2 @@
+pyproject-fmt-rust provides the core functionality for pyproject-fmt to apply a
+consistent format to the pyproject.toml files.

@@ -1,0 +1,16 @@
+PORTNAME=	Pid-File-Flock
+PORTVERSION=	0.08
+PORTREVISION=	1
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:LONERR
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	oleg@mamontov.net
+COMMENT=	PID file operations
+WWW=		https://metacpan.org/release/Pid-File-Flock
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

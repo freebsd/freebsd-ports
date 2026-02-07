@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+To play the game you need to copy files from the original game (a
+Steam version will do) to %%DATADIR%%.
+Enjoy!
+EOM
+}
+]

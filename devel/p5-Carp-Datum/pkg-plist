@@ -1,0 +1,17 @@
+bin/datum_strip
+%%SITE_PERL%%/Carp/Datum.pm
+%%SITE_PERL%%/Carp/Datum/Assert.pm
+%%SITE_PERL%%/Carp/Datum/Cfg.pm
+%%SITE_PERL%%/Carp/Datum/Flags.pm
+%%SITE_PERL%%/Carp/Datum/MakeMaker.pm
+%%SITE_PERL%%/Carp/Datum/Makefile
+%%SITE_PERL%%/Carp/Datum/Parser.pm
+%%SITE_PERL%%/Carp/Datum/Parser.y
+%%SITE_PERL%%/Carp/Datum/Strip.pm
+%%PERL5_MAN3%%/Carp::Datum.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Assert.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Cfg.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Flags.3.gz
+%%PERL5_MAN3%%/Carp::Datum::MakeMaker.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Strip.3.gz
+%%PERL5_MAN1%%/datum_strip.1.gz

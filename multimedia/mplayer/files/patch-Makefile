@@ -1,0 +1,45 @@
+--- Makefile.orig	2024-04-28 19:35:10 UTC
++++ Makefile
+@@ -752,7 +752,7 @@ codec-cfg$(EXESUF) codec-cfg-test$(EXESUF) codecs2html
+ codec-cfg-test$(EXESUF): HOSTCFLAGS := $(HOSTCFLAGS) -DTESTING
+ codec-cfg$(EXESUF) codecs2html$(EXESUF):  HOSTCFLAGS := $(HOSTCFLAGS) -DCODECS2HTML
+ codec-cfg$(EXESUF) codec-cfg-test$(EXESUF) codecs2html$(EXESUF): codec-cfg.c codec-cfg.h help_mp.h
+-	$(HOST_CC) $(HOSTCFLAGS) -o $@ $<
++	$(HOST_CC) $(HOSTCFLAGS) -I%%LOCALBASE%%/include -o $@ $<
+ 
+ codecs.conf.h: codec-cfg$(EXESUF) etc/codecs.conf
+ 	./$^ > $@
+@@ -866,19 +866,16 @@ install-dirs:
+ install-dirs:
+ 	$(INSTALL) -d $(BINDIR) $(CONFDIR) $(LIBDIR)
+ 
+-install-%: %$(EXESUF) install-dirs
+-	$(INSTALL) -m 755 $(INSTALLSTRIP) $< $(BINDIR)
++install-mplayer: mplayer$(EXESUF)
++	@${BSD_INSTALL_PROGRAM} mplayer$(EXESUF) $(BINDIR)
+ 
+-install-gui: install-mplayer install-gui-icons install-gui-msg
+-	-ln -sf mplayer$(EXESUF) $(BINDIR)/gmplayer$(EXESUF)
+-	$(INSTALL) -d $(DATADIR)/skins $(prefix)/share/applications
+-	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/
++install-gui: install-mplayer
+ 
+ install-gui-icons:    $(foreach size,$(GUI_ICONSIZES),install-gui-icon-$(size))
+ install-gui-man:      $(foreach lang,$(MAN_LANGS),install-gui-man-$(lang))
+ install-gui-msg:      $(foreach lang,$(filter-out $(firstword $(MSG_LANGS)),$(MSG_LANGS)),install-gui-msg-$(lang))
+ install-mencoder-man: $(foreach lang,$(MAN_LANGS),install-mencoder-man-$(lang))
+-install-mplayer-man:  $(foreach lang,$(MAN_LANGS),install-mplayer-man-$(lang))
++install-mplayer-man: install-mplayer-man-en
+ 
+ install-gui-man-en: install-mplayer-man-en
+ 	cd $(MANDIR)/man1/ && ln -sf mplayer.1 gmplayer.1
+@@ -887,8 +884,7 @@ install-mplayer-man-en:
+ 	cd $(MANDIR)/man1 && ln -sf mplayer.1 mencoder.1
+ 
+ install-mplayer-man-en:
+-	$(INSTALL) -d $(MANDIR)/man1
+-	$(INSTALL) -m 644 DOCS/man/en/mplayer.1 $(MANDIR)/man1/
++	@${BSD_INSTALL_MAN} DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1
+ 
+ define GUI_ICON_RULE
+ install-gui-icon-$(size):

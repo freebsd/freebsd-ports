@@ -1,0 +1,6 @@
+GNU Which by Carlo Wood (Run of ircu fame)
+
+The main difference with version 1.0 by Paul Vixie is that this
+version will not return directory names as being executables
+and that by default it will expand a leading "./" and "~/" to
+its full path on output.

@@ -1,0 +1,58 @@
+Copyright / Warranty / License
+==============================
+
+Products are Copyright 1994-2014 by Jsoftware Inc. All rights reserved.
+
+Warranty and License Agreement
+------------------------------
+
+Jsoftware Inc. ("Licensor") is willing to license the enclosed software to you
+only if you accept all of the terms in this license agreement. Please read the
+terms carefully before you install this package, because by installing the
+package you are agreeing to be bound by the terms of this agreement. If you do
+not agree to these terms, licensor will not license this software to you, and in
+that case you should delete the software and return any/all related written
+materials promptly, for a refund.
+
+Ownership of the Software
+-------------------------
+
+The software program, J ("Software") and the accompanying written materials are
+owned by Licensor [or its suppliers] and are protected by United States
+copyright laws, by laws of other nations, and by international treaties.
+
+You may not reverse engineer, decompile, or disassemble the Software.
+
+Limited Warranty
+----------------
+
+Licensor warrants that the Software will perform substantially in accordance
+with the accompanying written materials for a period of 90 days from the date of
+your receipt of the Software. Any implied warranties on the Software are limited
+to 90 days. Some States do not allow limitations on duration of an implied
+warranty, so the above limitation may not apply to you.
+
+Licensor disclaims all other warranties, either express or implied, including
+but not limited to implied warranties of merchantability, fitness for a
+particular purpose, and non-infringement, with respect to the software and the
+accompanying written materials. Licensor's entire liability and your exclusive
+remedy shall be, at licensor's choice, either (a) return of the price paid or
+(b) replacement of the software that does not meet licensor's limited warranty
+and which is returned to licensor with a copy of your receipt. Any replacement
+software will be warranted for the remainder of the original warranty period or
+30 days, whichever is longer. These remedies are not available outside the
+United States of America.
+
+This limited warranty is void if failure of the software has resulted from
+modification, accident, abuse, or misapplication. In no event will licensor be
+liable to you for damages, including any loss of profits, lost savings, or other
+incidental or consequential damages arising out of your use or inability to use
+the software. If you have any questions concerning this agreement or wish to
+contact licensor for any reason, please email: info@jsoftware.com.
+
+U.S. Government Restricted Rights. The Software and documentation are provided
+with Restricted Rights. Use, duplication, or disclosure by the Government is
+subject to restrictions set forth in subparagraph (c)(1)(ii) of The Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c)(1) and (2) of Commercial Computer Software - Restricted Rights
+at 48 CFR 52.227-19, as applicable. Supplier is Jsoftware Inc.

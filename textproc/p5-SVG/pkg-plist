@@ -1,0 +1,10 @@
+%%SITE_PERL%%/SVG.pm
+%%SITE_PERL%%/SVG/DOM.pm
+%%SITE_PERL%%/SVG/Element.pm
+%%SITE_PERL%%/SVG/Extension.pm
+%%SITE_PERL%%/SVG/XML.pm
+%%PERL5_MAN3%%/SVG.3.gz
+%%PERL5_MAN3%%/SVG::DOM.3.gz
+%%PERL5_MAN3%%/SVG::Element.3.gz
+%%PERL5_MAN3%%/SVG::Extension.3.gz
+%%PERL5_MAN3%%/SVG::XML.3.gz

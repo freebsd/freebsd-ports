@@ -1,0 +1,2 @@
+Games::Bingo - a bingo game Perl implementation. This is a simple game
+of bingo. The program can randomly call out the numbers.

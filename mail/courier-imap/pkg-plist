@@ -1,0 +1,66 @@
+bin/couriertls
+bin/deliverquota
+bin/imapd
+bin/maildiracl
+bin/maildirkw
+bin/maildirmake
+bin/makedat
+bin/makeimapaccess
+bin/pop3d
+@preunexec if cmp -s %D/%%CONFDIR%%/imapd-ssl.dist %D/%%CONFDIR%%/imapd-ssl; then rm -f %D/%%CONFDIR%%/imapd-ssl; fi
+%%CONFDIR%%/imapd-ssl.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/imapd-ssl.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/imapd.cnf.dist %D/%%CONFDIR%%/imapd.cnf; then rm -f %D/%%CONFDIR%%/imapd.cnf; fi
+%%CONFDIR%%/imapd.cnf.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/imapd.dist %D/%%CONFDIR%%/imapd; then rm -f %D/%%CONFDIR%%/imapd; fi
+%%CONFDIR%%/imapd.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/imapd.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/pop3d-ssl.dist %D/%%CONFDIR%%/pop3d-ssl; then rm -f %D/%%CONFDIR%%/pop3d-ssl; fi
+%%CONFDIR%%/pop3d-ssl.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/pop3d-ssl.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/pop3d.cnf.dist %D/%%CONFDIR%%/pop3d.cnf; then rm -f %D/%%CONFDIR%%/pop3d.cnf; fi
+%%CONFDIR%%/pop3d.cnf.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/pop3d.dist %D/%%CONFDIR%%/pop3d; then rm -f %D/%%CONFDIR%%/pop3d; fi
+%%CONFDIR%%/pop3d.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/pop3d.dist
+%%CONFDIR%%/quotawarnmsg.example
+%%LIBEXECDIR%%/couriertcpd
+%%LIBEXECDIR%%/imapd-ssl.rc
+%%LIBEXECDIR%%/imapd.rc
+%%LIBEXECDIR%%/makedatprog
+%%LIBEXECDIR%%/pop3d-ssl.rc
+%%LIBEXECDIR%%/pop3d.rc
+share/man/man1/couriertcpd.1.gz
+share/man/man1/maildiracl.1.gz
+share/man/man1/maildirkw.1.gz
+share/man/man1/maildirmake.1.gz
+share/man/man8/deliverquota.8.gz
+share/man/man8/imapd.8.gz
+share/man/man8/mkdhparams.8.gz
+share/man/man8/mkimapdcert.8.gz
+share/man/man8/makeimapaccess.8.gz
+share/man/man8/mkpop3dcert.8.gz
+sbin/imaplogin
+sbin/mkdhparams
+sbin/mkimapdcert
+sbin/mkpop3dcert
+sbin/pop3login
+sbin/sharedindexinstall
+sbin/sharedindexsplit
+share/courier-imap/mkdhparams
+share/courier-imap/mkimapdcert
+share/courier-imap/mkpop3dcert
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README.proxy
+%%PORTDOCS%%%%DOCSDIR%%/README.imapkeywords.html
+%%PORTDOCS%%%%DOCSDIR%%/README.maildirfilter.html
+%%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.couriertls
+@dir %%ETCDIR%%/imapaccess
+@dir var
+@dir %%CONFDIR%%/shared
+@dir %%CONFDIR%%/shared.tmp

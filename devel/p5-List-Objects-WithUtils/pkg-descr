@@ -1,0 +1,3 @@
+A set of roles and classes defining an object-oriented interface to Perl hashes
+and arrays with useful utility methods, junctions, type-checking ability, and
+optional autoboxing. Originally derived from Data::Perl.

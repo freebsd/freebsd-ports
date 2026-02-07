@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Email/Send.pm
+%%SITE_PERL%%/Email/Send/NNTP.pm
+%%SITE_PERL%%/Email/Send/Qmail.pm
+%%SITE_PERL%%/Email/Send/SMTP.pm
+%%SITE_PERL%%/Email/Send/Sendmail.pm
+%%SITE_PERL%%/Email/Send/Test.pm
+%%PERL5_MAN3%%/Email::Send.3.gz
+%%PERL5_MAN3%%/Email::Send::NNTP.3.gz
+%%PERL5_MAN3%%/Email::Send::Qmail.3.gz
+%%PERL5_MAN3%%/Email::Send::SMTP.3.gz
+%%PERL5_MAN3%%/Email::Send::Sendmail.3.gz
+%%PERL5_MAN3%%/Email::Send::Test.3.gz

@@ -1,0 +1,84 @@
+NOTE: These scripts need work and are *NOT* safe to use unless you know
+      what they do.  Use at your own risk.  Patches would be great, but
+      it is preferred they pass through the maintainer of each particular
+      script.
+
+MOVEDlint.awk - checks MOVED for common errors
+ardiff	- compare two archives easily
+bad-pkgdescrs.sh - locate identical pkg descriptions
+bump_revision.pl - Small script to bump the PORTREVISION variable of ports
+                   which are depending on a port with a changed shared lib
+                   version.
+checkcats.py - verify that master categories in all ports are correct and
+               report any problems. Beware that the full check takes quite
+			   some time.
+checknewver.sh - checks for availability for a newest version of distfiles on
+               MASTER_SITES (ftp only).
+checksum.sh  - allows checking of ports to see if their checksums
+			match, and if they don't, give a diff against the older version to
+			help discover why the checksum didn't match.
+chkorigin.sh - checks all ports in the tree for a wrong PKGORIGIN.
+               Run this tool after every repocopy.
+doportlint - run portlint on every port and return the results
+distclean.sh - compare sha256 sums of distfiles in ports/distfiles with currently
+            installed ports collection in ports/* and prompt to remove
+            unmatched entries
+getpatch - downloads patch attachments from a Bug Tracking Systems
+getpatch.sh - downloads patch attachments from a Bug Tracking Systems (plain shell script)
+mark_safe.pl - utility to set subsets of ports to MAKE_JOBS_(UN)SAFE=yes
+neededlibs.sh - Extract direct library dependencies from binaries.
+port_conflicts_check.lua - Verify that files installed by more than 1 port are covered
+               in CONFLICTS or CONFLICTS_INSTALL entries (and generate portedit commands
+	       to fix those issues)x
+portsearch - A utility for searching the ports tree. It allows more detailed
+             search criteria than ``make search key=<string>'' and accepts
+             all perl(1) regular expressions.
+search_lib_depends_and_bump.sh - Give it a port that has changed and it will bump
+				 all ports having a LIB_DEPENDS on this port
+splitpatch.pl - A small script to convert multi-file patches to several
+                appropriately named single-file patches.
+tindex - script used to build INDEXes for supported FreeBSD branches, which
+         are the source of the 'make fetchindex' INDEXes, and the build
+         failure reports on ports@FreeBSD.org
+update_crates - script used to generate an updated Makefile using make cargo-crates
+                output
+
+----------------------------------------------------------------------
+
+portsearch - A utility for searching the ports tree.
+
+     portsearch is a utility to for searching of the ports tree. It permits
+     much more detailed searches to be performed than ``make search
+     key=<string>'' by allowing you to specify which field(s) to search. It
+     also supports all valid perl(1) regular expressions for pattern matching.
+
+     portsearch displays matching ports in the same format as ``make search''
+     and also displays the number of matching ports found.
+
+     The following command line options are supported:
+
+	   -h	      Prints a multi-line help message and exits
+
+	   -n name    Search for name in the name field
+
+	   -p path    Search for path in the path field
+
+	   -i info    Search for info in the comments field
+
+	   -m maint   Search for maint in the Maintainer field
+
+	   -x index   Search for index in the category field
+
+	   -b b_deps  Search for b_deps in the build-depends field
+
+	   -r r_deps  Search for r_deps in the run-depends field
+
+	   -d deps    Search for deps in the both the build and run dependency
+		      fields. This option behaves differently to the other op-
+		      tions, see the EXAMPLES section
+
+	   -f file    Use the index file instead of /usr/ports/INDEX
+
+     All searches are case-insensitive
+
+See the file README.portsearch for further information.

@@ -1,0 +1,16 @@
+Regressed by https://github.com/KhronosGroup/EGL-Registry/commit/64aa561f1971
+
+main.cpp:13:14: error: cannot initialize a variable of type 'Display *' (aka '_XDisplay *') with an rvalue of type 'EGLNativeDisplayType' (aka 'void *')
+    Display *dpy = EGL_DEFAULT_DISPLAY;
+             ^     ~~~~~~~~~~~~~~~~~~~
+
+--- src/gui/configure.json.orig	2024-08-30 14:45:12 UTC
++++ src/gui/configure.json
+@@ -837,6 +837,7 @@
+                     "// plugin would expect.",
+                     "#define USE_X11"
+                 ],
++                "head": [ "#define USE_X11" ],
+                 "include": [ "EGL/egl.h", "X11/Xlib.h" ],
+                 "main": [
+                     "Display *dpy = EGL_DEFAULT_DISPLAY;",

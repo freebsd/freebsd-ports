@@ -1,0 +1,11 @@
+Project Center is GNUstep's graphical integrated development environment
+(IDE). It helps you to create all different kinds of projects like
+Applications, Tools, Libraries and Bundles.
+
+Project Center allows you to easily add and remove, edit and search files;
+writes the project makefiles accordingly and supports you in the actual
+process of building and debugging your project.
+
+Even the management of a big project keeps being easy as Project Center's
+file browser lets you always have a well sorted and categorized overview
+over all the files in your project.

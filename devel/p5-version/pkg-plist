@@ -1,0 +1,9 @@
+%%SITE_ARCH%%/auto/version/vxs/vxs.so
+%%SITE_ARCH%%/version.pm
+%%SITE_ARCH%%/version.pod
+%%SITE_ARCH%%/version/Internals.pod
+%%SITE_ARCH%%/version/regex.pm
+%%SITE_ARCH%%/version/vpp.pm
+%%SITE_ARCH%%/version/vxs.pm
+%%PERL5_MAN3%%/version.3.gz
+%%PERL5_MAN3%%/version::Internals.3.gz

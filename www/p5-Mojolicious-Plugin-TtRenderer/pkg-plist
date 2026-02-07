@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Mojolicious/Plugin/TtRenderer.pm
+%%SITE_PERL%%/Mojolicious/Plugin/TtRenderer/Engine.pm
+%%PERL5_MAN3%%/Mojolicious::Plugin::TtRenderer.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::TtRenderer::Engine.3.gz

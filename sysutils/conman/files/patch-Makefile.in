@@ -1,0 +1,39 @@
+--- Makefile.in.orig	2018-09-15 15:51:34 UTC
++++ Makefile.in
+@@ -90,13 +90,13 @@ install: $(PROGS)
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(sbindir)
+ 	$(INSTALL) -m 755 conmand $(DESTDIR)$(sbindir)/
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(sysconfdir)
+-	@ test ! -f $(DESTDIR)$(sysconfdir)/conman.conf \
+-	    || cmp etc/conman.conf $(DESTDIR)$(sysconfdir)/conman.conf \
++	@ test ! -f $(DESTDIR)$(sysconfdir)/conman.conf.sample \
++	    || cmp etc/conman.conf $(DESTDIR)$(sysconfdir)/conman.conf.sample \
+ 	    1>/dev/null 2>&1 || new=".new"; \
+ 	  echo $(INSTALL) -m 600 etc/conman.conf \
+-	    $(DESTDIR)$(sysconfdir)/conman.conf$${new}; \
++	    $(DESTDIR)$(sysconfdir)/conman.conf$${new}.sample; \
+ 	  $(INSTALL) -m 600 etc/conman.conf \
+-	    $(DESTDIR)$(sysconfdir)/conman.conf$${new}
++	    $(DESTDIR)$(sysconfdir)/conman.conf$${new}.sample
+ 	@ if test -d $(prefix)/lib/systemd/system; then \
+ 	  echo $(INSTALL) -m 755 -d $(DESTDIR)$(prefix)/lib/systemd/system; \
+ 	  $(INSTALL) -m 755 -d $(DESTDIR)$(prefix)/lib/systemd/system; \
+@@ -114,14 +114,14 @@ install: $(PROGS)
+ 	  $(INSTALL) -m 755 etc/conman.init \
+ 	    $(DESTDIR)$(sysconfdir)/init.d/conman$${new}
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(sysconfdir)/logrotate.d
+-	@ test ! -f $(DESTDIR)$(sysconfdir)/logrotate.d/conman \
++	@ test ! -f $(DESTDIR)$(sysconfdir)/logrotate.d/conman.sample \
+ 	    || cmp etc/conman.logrotate \
+-	    $(DESTDIR)$(sysconfdir)/logrotate.d/conman \
++	    $(DESTDIR)$(sysconfdir)/logrotate.d/conman.sample \
+ 	    1>/dev/null 2>&1 || new=".new"; \
+ 	  echo $(INSTALL) -m 644 etc/conman.logrotate \
+-	    $(DESTDIR)$(sysconfdir)/logrotate.d/conman$${new}; \
++	    $(DESTDIR)$(sysconfdir)/logrotate.d/conman$${new}.sample; \
+ 	  $(INSTALL) -m 644 etc/conman.logrotate \
+-	    $(DESTDIR)$(sysconfdir)/logrotate.d/conman$${new}
++	    $(DESTDIR)$(sysconfdir)/logrotate.d/conman$${new}.sample
+ 	@ test -d /etc/sysconfig && d=sysconfig || d=default; \
+ 	  echo $(INSTALL) -m 755 -d $(DESTDIR)$(sysconfdir)/$$d; \
+ 	  $(INSTALL) -m 755 -d $(DESTDIR)$(sysconfdir)/$$d; \

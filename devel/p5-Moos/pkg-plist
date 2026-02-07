@@ -1,0 +1,11 @@
+bin/remoos
+%%SITE_PERL%%/Moos.pm
+%%SITE_PERL%%/Moos.pod
+%%SITE_PERL%%/Moos/Role.pm
+%%SITE_PERL%%/Moos/Role.pod
+%%SITE_PERL%%/oos.pm
+%%SITE_PERL%%/oos.pod
+%%PERL5_MAN1%%/remoos.1.gz
+%%PERL5_MAN3%%/Moos.3.gz
+%%PERL5_MAN3%%/Moos::Role.3.gz
+%%PERL5_MAN3%%/oos.3.gz

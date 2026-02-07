@@ -1,0 +1,2 @@
+Tree::Simple::VisitorFactory is a collection of visitor objects used to
+traverse Tree::Simple hierarchies.

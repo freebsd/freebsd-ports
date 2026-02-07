@@ -1,0 +1,10 @@
+bin/pwm
+etc/pwm/buttons-default.conf
+etc/pwm/keys-default.conf
+etc/pwm/look-beoslike.conf
+etc/pwm/look-brownsteel.conf
+etc/pwm/menus-default.conf
+@sample etc/pwm/pwm.conf.sample
+share/man/man1/pwm.1x.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/config.txt

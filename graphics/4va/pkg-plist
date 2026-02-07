@@ -1,0 +1,15 @@
+bin/4va
+bin/4vdmake
+bin/ctorus
+bin/cutctorus
+share/man/man1/4va.1.gz
+share/4va/16cell.4vd
+share/4va/24cell.4vd
+share/4va/5cell.4vd
+share/4va/600cell.4vd
+share/4va/ctor.4vd
+share/4va/ctor2.4vd
+share/4va/hcube.4vd
+share/4va/hsph.4vd
+share/4va/sin.4vd
+share/4va/tripris.4vd

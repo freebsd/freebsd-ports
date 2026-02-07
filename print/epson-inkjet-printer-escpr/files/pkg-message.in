@@ -1,0 +1,56 @@
+[
+{ type: install
+  message: <<EOM
+# Example to add printer
+This is an example of how to set up EP-803AW (white color EP-803A).
+
+1.  start cupsd
+
+        service cupsd start
+
+2.  find the PPD file for the printer
+
+        lpinfo --make-and-model 'EPSON EP-803A' -m
+
+    Use the first column.
+
+3.  find the device-uri for the printer
+
+        lpinfo -v
+
+    USB printer (using result returned by lpinfo)
+
+        usb://EPSON/EP-803A?serial=XXXXXXXXXXXXXXXXXX&interface=1
+
+    USB printer (using device node directly)
+
+        usb:/dev/ulpt0
+
+      If printer cannot handle the reset on open, use /dev/unlpt0 instead.
+
+    Network printer (using LPD Port)
+
+        lpd://192.0.2.100:515/PASSTHRU
+
+    Network printer (using PDL Data Streaming Port)
+
+        socket://192.0.2.100:9100
+
+4.  add the printer
+
+    The following is an example of a command to use LPD port.
+
+        lpadmin -p EPSON_EP-803AW \
+          -m epson-inkjet-printer-escpr/Epson-EP-803A-epson-escpr-en.ppd \
+          -v lpd://192.0.2.100:515/PASSTHRU \
+          -D 'EPSON EP-803AW be careful of ink dripping :)'
+
+    Specify the name of the printer in option -p.  
+    Using the result of 2. for option -m.  
+    Using the result of 3. for option -v.  
+    Option -D is description of the printer.
+
+* * *
+EOM
+}
+]

@@ -1,0 +1,2 @@
+The Horde_LoginTasks library provides a set of methods for dealing with tasks
+run upon login to Horde applications.

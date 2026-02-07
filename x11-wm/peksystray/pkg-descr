@@ -1,0 +1,16 @@
+Peksystray is a small system tray (also called notification tray) designed
+for all lightweight window managers that support docking.  As more and more
+applications use a small icon in the system tray to provide some additional
+functionality and information, it becomes useful for everyone to have common
+access to them.  While "heavy" window managers (Gnome, KDE...) come with a
+system tray embedded in the rest of the desktop, lighter window managers
+(Window Maker, Fluxbox ...) do not have this feature.  Peksystray is a very
+simple and light implementation of a system tray for any window manager
+supporting docking, conforming to the System Tray freedesktop.org standard.
+
+Peksystray provides a window where icons will automatically add up depending
+on the requests from the applications.  Both the size of the window and the
+size of the icons can be selected by the user.  If the window is full, it
+can automatically display another window in order to display more icons.
+
+Peksystray has been named after PekWM.

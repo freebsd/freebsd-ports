@@ -1,0 +1,7 @@
+GOST 28147-89 is a 64-bit symmetric block cipher with a 256-bit
+key developed in the former Soviet Union. Some information on it
+is available at http://vipul.net/gost/ .
+This module implements GOST encryption. It supports the Crypt::CBC
+interface, with the functions described below. It also provides
+an interface that is backwards- compatible with Crypt::GOST 0.41,
+but its use in new code is discouraged.

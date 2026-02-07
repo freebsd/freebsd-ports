@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# Run ASSP's nightly housekeeping script, rebuildspamdb.pl
+# Delete old ASSP log files
+
+cd %%ASSP_HOME%%
+
+if [ ! -f %%DATADIR%%/rebuildspamdb.pl ]
+then
+	echo "%%DATADIR%%/rebuildspamdb.pl does not exist"
+	rc_spamdb=2
+else
+	echo ""
+	echo "Running ASSP rebuildspamdb.pl:"
+	%%PERL%% %%DATADIR%%/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
+	chown -R %%ASSP_USER%%:%%ASSP_GROUP%% %%ASSP_HOME%%
+fi
+
+. /etc/rc.subr
+name=assp
+rcvar=assp_enable
+load_rc_config $name
+: ${assp_logexpire="45"}
+
+echo ""
+echo "Removing old ASSP log files:"
+find -L . -name '*.maillog.txt' -mtime +$assp_logexpire -exec ls -l {} \; -exec rm {} \;
+
+exit $rc_spamdb

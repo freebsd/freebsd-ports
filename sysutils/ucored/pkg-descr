@@ -1,0 +1,7 @@
+u(ser)cored applies policy to user cores being produced on the system
+
+This utility allows configurable actions to be enacted on user coredumps
+produced on the system.  ucored(8) brings functionality to FreeBSD that is
+similar to the coredump piping that Linux offers, but with the flexibility to
+be scripted with Lua or made conditional on various properties of the coredump
+itself.

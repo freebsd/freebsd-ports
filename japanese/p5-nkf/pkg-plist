@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/NKF.pm
+%%SITE_ARCH%%/auto/NKF/NKF.so
+%%PERL5_MAN3%%/NKF.3.gz

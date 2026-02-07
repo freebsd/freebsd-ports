@@ -1,0 +1,3 @@
+A collection of utility functions/methods for examining the data members of
+a class. It provides a nice, high-level interface that should stand the test
+of time and Perl upgrades nicely.

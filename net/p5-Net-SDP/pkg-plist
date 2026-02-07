@@ -1,0 +1,8 @@
+bin/sdp2rat
+%%PERL5_MAN3%%/Net::SDP.3.gz
+%%PERL5_MAN3%%/Net::SDP::Media.3.gz
+%%PERL5_MAN3%%/Net::SDP::Time.3.gz
+%%SITE_PERL%%/Net/SDP.pm
+%%SITE_PERL%%/Net/SDP/Media.pm
+%%SITE_PERL%%/Net/SDP/Time.pm
+%%PERL5_MAN1%%/sdp2rat.1.gz

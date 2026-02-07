@@ -1,0 +1,18 @@
+--- src/%%NVSRC%%/Makefile.orig	2017-09-14 20:46:30 UTC
++++ src/%%NVSRC%%/Makefile
+@@ -30,6 +30,15 @@ NOOBJ=		true
+ stdarg.h:
+ 	@ln -s machine/stdarg.h stdarg.h
+ 
++SRCS+=		opt_global.h
++.if ${MACHINE_ARCH} == "i386" && !defined(KERNBUILDDIR)
++PAE!=		sed -n '/define NV_SUPPORT_PAE/p' nv-freebsd.h
++.if !empty(PAE)
++opt_global.h:
++		echo "#define PAE 1" > ${.TARGET}
++.endif
++.endif
++
+ *.c: stdarg.h
+ 
+ beforeinstall:	${KMOD}.ko

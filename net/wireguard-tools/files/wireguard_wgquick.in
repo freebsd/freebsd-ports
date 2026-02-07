@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# PROVIDE: wireguard
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# wireguard_enable (bool):    Set to "YES" to enable wireguard.
+#                             (default: "NO")
+#
+# wireguard_interfaces (str): List of interfaces to bring up/down
+#                             on start/stop. (eg: "wg0 wg1")
+#                             (default: "")
+# wireguard_env (str):        Environment variables for the userspace
+#                             implementation. (eg: "LOG_LEVEL=debug")
+
+. /etc/rc.subr
+
+name=wireguard
+rcvar=wireguard_enable
+extra_commands="reload status"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+reload_cmd="${name}_reload"
+status_cmd="${name}_status"
+
+wireguard_start()
+{
+	${wireguard_env:+eval export $wireguard_env}
+
+	for interface in ${wireguard_interfaces}; do
+		%%PREFIX%%/bin/wg-quick up ${interface}
+	done
+}
+
+wireguard_stop()
+{
+	for interface in ${wireguard_interfaces}; do
+		%%PREFIX%%/bin/wg-quick down ${interface}
+	done
+}
+
+wireguard_reload()
+{
+	${wireguard_env:+eval export $wireguard_env}
+
+	for interface in ${wireguard_interfaces}; do
+		tmpfile="`mktemp`"
+		%%PREFIX%%/bin/wg-quick strip ${interface} > ${tmpfile}
+		%%PREFIX%%/bin/wg syncconf ${interface} ${tmpfile}
+		rm -f ${tmpfile}
+	done
+}
+
+wireguard_status()
+{
+	${wireguard_env:+eval export $wireguard_env}
+	wireguard_status="0"
+
+	for interface in ${wireguard_interfaces}; do
+		%%PREFIX%%/bin/wg show ${interface} || wireguard_status="1"
+	done
+
+	return ${wireguard_status}
+}
+
+load_rc_config $name
+
+: ${wireguard_enable="NO"}
+: ${wireguard_interfaces=""}
+: ${wireguard_env=""}
+
+run_rc_command "$1"

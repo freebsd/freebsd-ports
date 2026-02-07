@@ -1,0 +1,2 @@
+Implementation of mathematical expression parsing in Ruby including
+support for reverse polish notation (RPN).

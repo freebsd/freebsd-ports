@@ -1,0 +1,15 @@
+--- Imakefile.orig	1997-03-07 06:54:29 UTC
++++ Imakefile
+@@ -7,10 +7,10 @@ SRCS = xbatt.c
+ OBJS = xbatt.o
+ 
+ #ifdef FreeBSDArchitecture
+-INSTALLFLAGS=-c -g operator -m 2755
++#INSTALLFLAGS=-c -g operator -m 2755
+ #endif
+ #ifdef LinuxArchitecture
+ INSTALLFLAGS=-c -m 2755
+ #endif
+ 
+-ComplexProgramTarget(xbatt)
++ComplexProgramTargetNoMan(xbatt)

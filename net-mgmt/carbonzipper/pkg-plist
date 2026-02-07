@@ -1,0 +1,4 @@
+bin/carbonzipper
+%%ETCDIR%%/example.conf
+@dir(carbon,carbon,0755) %%ETCDIR%%
+@dir(carbon,carbon,0755) /var/log/carbonzipper

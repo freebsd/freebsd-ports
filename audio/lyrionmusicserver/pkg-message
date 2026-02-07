@@ -1,0 +1,36 @@
+[
+{ type: install
+  message: <<EOM
+Note on security settings:
+
+The slimserver service is wide open, and by default there is no password.
+You can control access to your music collection by pointing your web
+browser to http://localhost:9000/, and then choosing:
+
+Server Settings -> Security
+
+Note on upgrade to 8.2:
+
+Older slim devices have a bug where they will not see 8.2 as newer than 7.9
+and will prompt you to update, there is a patch for this that must be
+installed BEFORE upgrading the logitechmediaserver to 8.x.
+
+To install the patch:
+1. Go to Settings/Advanced/Applet Instlaler and UNCHECK Recommended Applets Only
+2. Go to Settings/Advanced/Applet Installer and install "PatchInstaller"
+3. Go to Settings/Advanced/Patch Installer and install "Version Comparison Fix"
+
+Additionally, after installation you can install the plugin
+"Community Firmware for Touch/Radio/Controller" on LMS and get newer firmware
+for your devices!
+
+Upgrading from Logitech Media Server 8.5.x
+
+By default Lyrion Music Server expects to find its information in
+/var/db/lyrionmusicserver (not /var/db/logitechmediasever). If you
+wish to continue to use the same configuration, you can rebuild the
+port with setting the SLIMDBDIR variable.
+
+EOM
+}
+]

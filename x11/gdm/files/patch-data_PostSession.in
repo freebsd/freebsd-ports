@@ -1,0 +1,10 @@
+--- data/PostSession.in.orig	2022-03-27 19:50:55 UTC
++++ data/PostSession.in
+@@ -1,3 +1,7 @@
+ #!/bin/sh
+ 
++# XXX: I hate this "solution", but we need to manually restart gdm here
++# otherwise we reach the console when we logout
++/usr/sbin/service gdm restart
++
+ exit 0

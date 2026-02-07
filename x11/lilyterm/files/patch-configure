@@ -1,0 +1,20 @@
+--- configure.orig	2013-02-27 09:04:56 UTC
++++ configure
+@@ -365,7 +365,7 @@ if [ $BSD -eq 1 ]; then
+ $ECHO "  GTK       = $GTK"
+ $ECHO "  VTE       = $VTE"
+ if [ $BSD -eq 1 ]; then
+-  IMPORTANT "  MANDIR       = \$(PREFIX)/man/man1\n"
++  IMPORTANT "  MANDIR       = \$(PREFIX)/share/man/man1\n"
+   IMPORTANT "  EXAMPLES_DIR = \$(DATADIR)/examples/\$(BINARY)\n"
+ fi
+ if [ "$GNOME_CONTROL_CENTER" = 'Y' ]; then
+@@ -386,7 +386,7 @@ if [ $BSD -eq 1 ]; then
+ $ECHO "PREFIX = $PREFIX" >> .config
+ $ECHO "ETCDIR = $ETCDIR" >> .config
+ if [ $BSD -eq 1 ]; then
+-	$ECHO "MANDIR = \$(PREFIX)/man/man1" >> .config
++	$ECHO "MANDIR = \$(PREFIX)/share/man/man1" >> .config
+ 	$ECHO "EXAMPLES_DIR = \$(DATADIR)/examples/\$(BINARY)" >> .config
+ fi
+ $ECHO "NLS = $NLS" >> .config

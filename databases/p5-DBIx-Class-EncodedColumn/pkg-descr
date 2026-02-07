@@ -1,0 +1,2 @@
+This DBIx::Class component can be used to automatically encode a
+column's contents whenever the value of that column is set.

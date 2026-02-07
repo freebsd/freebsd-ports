@@ -1,0 +1,25 @@
+PORTNAME=	Net-Nessus-XMLRPC
+PORTVERSION=	0.30
+PORTREVISION=	2
+CATEGORIES=	net perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:KOST
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Perl5 interface for communication with Nessus scanner over XMLRPC
+WWW=		https://metacpan.org/release/Net-Nessus-XMLRPC
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-libwww>=0:www/p5-libwww
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

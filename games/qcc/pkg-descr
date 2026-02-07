@@ -1,0 +1,7 @@
+QCC is the original QuakeC compiler created by John Carmack of id Software,
+used to generate `progs.dat' file that essentially holds game logic behind
+the graphic engine.  It is used primarily to create modifications for Quake
+and QuakeWorld.
+
+Note that more feature-rich, optimizing QuakeC compilers are available in
+the Ports Collection.

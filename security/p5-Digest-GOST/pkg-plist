@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Digest/GOST.pm
+%%SITE_ARCH%%/Digest/GOST/CryptoPro.pm
+%%SITE_ARCH%%/auto/Digest/GOST/GOST.so
+%%PERL5_MAN3%%/Digest::GOST.3.gz
+%%PERL5_MAN3%%/Digest::GOST::CryptoPro.3.gz

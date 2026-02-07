@@ -1,0 +1,9 @@
+PAR2
+
+Disable if you have trouble compiling the par2 module.
+
+PYTHON
+
+This option install python 3.8+ alongside nzbget. Python is only used
+when running nzbget extensions.  See
+https://nzbget.net/extension-scripts for more details.

@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: nut
+# REQUIRE: NETWORKING devfs devd syslogd
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these nut_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/nut
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+nut_enable=${nut_enable:-"NO"}
+nut_prefix=${nut_prefix:-"%%PREFIX%%"}
+nut_upsshut=${nut_upsshut:-"NO"}
+
+. /etc/rc.subr
+
+name="nut"
+rcvar=nut_enable
+
+load_rc_config $name
+
+required_dirs="%%STATEDIR%%"
+required_files="${nut_prefix}/etc/nut/ups.conf ${nut_prefix}/etc/nut/upsd.conf ${nut_prefix}/etc/nut/upsd.users"
+command="${nut_prefix}/sbin/upsd"
+pidfile="%%STATEDIR%%/upsd.pid"
+
+start_precmd="nut_prestart"
+stop_postcmd="nut_poststop"
+
+nut_file_fixup=${nut_file_fixup:-"YES"}
+
+nut_prestart() {
+	#
+	# As of PR/268960 UID/GID uucp is no longer used by nut.
+	# Instead UID/GID nut is used. Make sure preexisting nut files
+	# and directories are owned by nut instead of uucp.
+	#
+	if [ "${nut_file_fixup}" == "YES" ]; then
+		find ${nut_prefix}/etc/nut -user uucp -exec chown %%NUT_USER%% {} \;
+		find ${nut_prefix}/etc/nut -group uucp -exec chgrp %%NUT_GROUP%% {} \;
+		find %%STATEDIR%% -user uucp -exec chown %%NUT_USER%% {} \;
+		find %%STATEDIR%% -group uucp -exec chgrp %%NUT_GROUP%% {} \;
+	fi
+
+	${nut_prefix}/sbin/upsdrvctl start
+}
+
+nut_poststop() {
+	if ${nut_prefix}/sbin/upsdrvctl stop && checkyesno nut_upsshut; then
+		if ${nut_prefix}/sbin/upsmon -K; then
+			${nut_prefix}/sbin/upsdrvctl shutdown
+		fi
+	fi
+
+}
+
+extra_commands=reload
+reload()
+{
+ kill -HUP `cat $pidfile`
+}
+
+run_rc_command "$1"

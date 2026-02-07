@@ -1,0 +1,9 @@
+--- third_party/easyexif/CMakeLists.txt.orig	2021-10-20 20:39:31 UTC
++++ third_party/easyexif/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ 
+-add_library(openMVG_easyexif STATIC exif.h exif.cpp)
++add_library(openMVG_easyexif SHARED exif.h exif.cpp)
+ set_property(TARGET openMVG_easyexif PROPERTY FOLDER OpenMVG/3rdParty)
+ 
+ install(TARGETS openMVG_easyexif DESTINATION lib EXPORT openMVG-targets)

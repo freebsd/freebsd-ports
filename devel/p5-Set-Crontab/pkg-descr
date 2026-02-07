@@ -1,0 +1,2 @@
+Set::Crontab parses crontab-style lists of integers and defines some utility
+functions to make it easier to deal with them.

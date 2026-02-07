@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/auto/Data/Structure/Util/autosplit.ix
+%%SITE_ARCH%%/auto/Data/Structure/Util/Util.so
+%%SITE_ARCH%%/Data/Structure/Util.pm
+%%PERL5_MAN3%%/Data::Structure::Util.3.gz

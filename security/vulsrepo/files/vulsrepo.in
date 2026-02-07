@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# vulsrepo_enable (bool):r	Set to NO by default
+#				Set it to YES to enable the CVE server
+# vulsrepo_user (string):	Set user to run vuls
+#				Default is "%%USERS%%"
+# vulsrepo_group (string):	Set group to run vuls
+#				Default is "%%GROUPS%%"
+# vulsrepo_log_file (string):	Set file that vuls will log to
+#				Default is "/var/log/vuls/vulsrepo.log"
+# vulsrepo_flags (string):	Set additional command line arguments
+#				Default is ""
+#
+# Set up vulsrepo using the config file: %%PREFIX%%/etc/vulsrepo-config.toml
+#
+
+. /etc/rc.subr
+
+name=vulsrepo
+rcvar=vulsrepo_enable
+
+load_rc_config $name
+
+: ${vulsrepo_enable:="NO"}
+: ${vulsrepo_user:="%%USERS%%"}
+: ${vulsrepo_group:="%%GROUPS%%"}
+: ${vulsrepo_log_file:="/var/log/vuls/vulsrepo.log"}
+
+pidfile=/var/run/${name}.pid
+pidfile_daemon=/var/run/${name}_daemon.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/%%PORTNAME%%"
+
+command_args="-p ${pidfile} -P ${pidfile_daemon} -t ${name} -Ho ${vulsrepo_log_file} ${procname}"
+
+start_precmd=vulsrepo_startprecmd
+
+vulsrepo_startprecmd()
+{
+	/usr/bin/install -o ${vulsrepo_user} -g ${vulsrepo_group} -m 640 /dev/null ${pidfile}
+	/usr/bin/install -o ${vulsrepo_user} -g ${vulsrepo_group} -m 640 /dev/null ${pidfile_daemon}
+}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,20 @@
+Contents of p5-Filter
+=====================
+Filter::sh
+       use Filter::sh 'command' ;
+
+       This filter pipes the current source file through the
+       program which corresponds to the command parameter using
+       the Bourne shell.
+
+Filter::exec
+       use Filter::exec qw(command parameters) ;
+
+       This filter pipes the current source file through the
+       program which corresponds to the command parameter.
+
+Filter::cpp
+       use Filter::cpp ;
+
+       This source filter pipes the current source file through
+       the C pre-processor (cpp) if it is available.

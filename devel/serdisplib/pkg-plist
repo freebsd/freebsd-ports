@@ -1,0 +1,14 @@
+bin/l4m132c_tool
+bin/testserdisp
+include/serdisplib/serdisp.h
+include/serdisplib/serdisp_colour.h
+include/serdisplib/serdisp_connect.h
+include/serdisplib/serdisp_control.h
+include/serdisplib/serdisp_messages.h
+include/serdisplib/serdisp_parport.h
+include/serdisplib/serdisp_tools.h
+lib/libserdisp.a
+lib/libserdisp.so
+lib/libserdisp.so.1
+lib/libserdisp.so.1.97
+lib/libserdisp.so.1.97.9

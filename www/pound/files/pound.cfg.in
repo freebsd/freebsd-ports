@@ -1,0 +1,50 @@
+#User "pound"
+#Group "pound"
+RootJail "/var/empty/pound"
+Control "/var/run/pound/ctl_socket"
+
+# Main listening ports
+ListenHTTP
+    Address 0.0.0.0
+    Port    81
+    xHTTP   1
+End
+ListenHTTPS
+    Address 0.0.0.0
+    Port    444
+    Cert    "%%PREFIX%%/share/certs/pound.pem"
+    Disable SSLv3
+    Ciphers "ALL:!ADH:!EXPORT:!SSLv2:RC4+RSA:+HIGH:+MEDIUM:-LOW"
+    xHTTP   1
+End
+
+# Images server(s)
+Service
+    URL ".*.(jpg|gif)"
+    BackEnd
+        Address 127.0.0.1
+        Port    80
+    End
+End
+
+# Redirect all requests for /forbidden
+Service
+    Url         "/forbidden.*"
+    Redirect    "https://localhost/"
+End
+
+# Catch-all server(s)
+Service
+    BackEnd
+        Address 127.0.0.1
+        Port    80
+    End
+    BackEnd
+        Address 127.0.0.1
+        Port    80
+    End
+    Session
+        Type    BASIC
+        TTL     300
+    End
+End

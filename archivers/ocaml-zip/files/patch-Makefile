@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-12-12 18:30:13 UTC
++++ Makefile
+@@ -64,7 +64,7 @@ libcamlzip$(EXT_LIB): $(C_OBJS)
+ .ml.cmx:
+ 	$(OCAMLOPT) -c $<
+ .c.o:
+-	$(OCAMLC) -c -ccopt -g $(ZLIB_I_OPT) $<
++	$(OCAMLC) -c -ccopt "$(CFLAGS)" $(ZLIB_I_OPT) $<
+ 
+ clean:
+ 	rm -f *.cm*

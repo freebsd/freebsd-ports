@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ readme = "README.rst"
+ dynamic = ["version"]
+ description = "OpenTelemetry Collector Protobuf over gRPC Exporter"
+ readme = "README.rst"
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ requires-python = ">=3.9"
+ authors = [
+   { name = "OpenTelemetry Authors", email = "cncf-opentelemetry-contributors@lists.cncf.io" },

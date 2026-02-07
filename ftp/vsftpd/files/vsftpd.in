@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: vsftpd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# To enable 'vsftpd' in standalone mode, you need to edit two files.
+# 1. add the following line(s) to /etc/rc.conf to enable `vsftpd':
+#
+# vsftpd_enable="YES"
+# vsftpd_flags="-ooption=value" # Not required
+# vsftpd_config="/some/path/conf.file" # Not required
+#
+# 2. tell vsftpd about standalone mode
+# Edit %%PREFIX%%/etc/vsftpd.conf (or /some/path/conf.file) to contain
+#
+# listen=YES
+# background=YES
+#
+# Samples are provided at the end of the configuration file.
+
+. /etc/rc.subr
+
+name="vsftpd"
+desc="Vsftpd FTP Server"
+rcvar="vsftpd_enable"
+
+load_rc_config "$name"
+
+: ${vsftpd_enable:="NO"}
+: ${vsftpd_config:="%%PREFIX%%/etc/$name.conf"}
+command="%%PREFIX%%/libexec/$name"
+required_files="${vsftpd_config}"
+start_precmd="vsftpd_check"
+extra_commands="reload"
+
+vsftpd_check()
+{
+	if grep -q "^ftp[ 	]" /etc/inetd.conf
+	then
+		err 1 "ftp is already activated in /etc/inetd.conf"
+	fi
+	if ! egrep -q -i -E "^listen.*=.*YES$" ${vsftpd_config}
+	then
+		err 1 'vsftpd script need "listen=YES" in config file'
+	fi
+	if ! egrep -q -i -E "^background.*=.*YES$" ${vsftpd_config}
+	then
+		err 1 'vsftpd script need "background=YES" in config file'
+	fi
+}
+
+run_rc_command "$1"

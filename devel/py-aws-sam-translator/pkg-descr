@@ -1,0 +1,4 @@
+AWS SAM Translator is a library that transform SAM templates into AWS
+CloudFormation templates.
+
+You can use SAM to define serverless applications in simple and clean syntax.

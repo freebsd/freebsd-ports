@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2025-10-22 06:42:42 UTC
++++ pyproject.toml
+@@ -6,8 +6,8 @@ authors = [
+ authors = [
+     { name="Jeff Whitaker", email="whitaker.jeffrey@gmail.com"}
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text="MIT"}
++#license-files = ["LICENSE"]
+ classifiers = [
+     'Development Status :: 5 - Production/Stable',
+     'Operating System :: MacOS :: MacOS X',

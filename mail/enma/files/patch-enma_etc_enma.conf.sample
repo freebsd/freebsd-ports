@@ -1,0 +1,13 @@
+--- ./enma/etc/enma.conf.sample.orig	2008-08-08 14:57:14.000000000 +0900
++++ ./enma/etc/enma.conf.sample	2008-09-07 01:09:31.000000000 +0900
+@@ -6,8 +6,8 @@
+ 
+ ## Milter ##
+ milter.socket:  inet:10025@127.0.0.1
+-milter.user:    daemon
+-milter.pidfile: /var/run/enma/enma.pid
++milter.user:    mailnull
++milter.pidfile: /var/run/milterenma/enma.pid
+ milter.chdir:   /var/tmp
+ milter.timeout: 7210
+ milter.loglevel:   0

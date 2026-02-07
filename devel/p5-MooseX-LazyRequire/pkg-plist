@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/MooseX::LazyRequire.3.gz
+%%PERL5_MAN3%%/MooseX::LazyRequire::Meta::Attribute::Trait::LazyRequire.3.gz
+%%SITE_PERL%%/MooseX/LazyRequire.pm
+%%SITE_PERL%%/MooseX/LazyRequire/Meta/Attribute/Trait/LazyRequire.pm

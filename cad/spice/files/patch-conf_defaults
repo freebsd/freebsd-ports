@@ -1,0 +1,27 @@
+--- conf/defaults.orig	1993-07-30 06:33:56.000000000 +0900
++++ conf/defaults	2014-08-22 10:49:42.000000000 +0900
+@@ -65,7 +65,7 @@
+ #	the following definition:
+ #		SYS_DIR		= $(DIST_DIR)
+ 
+-SYS_DIR		= $(TOP1)/$(SYSTEM)
++SYS_DIR		= $(TOP0)/$(SYSTEM)
+ 
+ #	OBJ_TOP is the directory in which intermidiate files reside
+ #	These are ".o" files, synthesized ".c" files, ".a" files,
+@@ -105,12 +105,12 @@
+ #	identified as and SYSTEM is the name of the per-system definitions
+ #	file listed on the "build" command line.
+ 
+-SPICE_DIR	= $(TOP1)/$(SYSTEM)
+-SPICE_LIB_DIR	= $(SPICE_DIR)/lib
++SPICE_DIR	= ${PREFIX}
++SPICE_LIB_DIR	= $(SPICE_DIR)/share/spice
+ SPICE_EXEC_DIR	= $(SPICE_DIR)/bin
+ 
+ S_SPICE_DIR	= $(SPICE_DIR)
+-S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/lib
++S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/share/spice
+ S_SPICE_EXEC_DIR= $(S_SPICE_DIR)/bin
+ 
+ #	INSTALL_DIRS lists the directories that need to be created before

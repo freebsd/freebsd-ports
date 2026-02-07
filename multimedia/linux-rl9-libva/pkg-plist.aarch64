@@ -1,0 +1,12 @@
+usr/lib64/libva-drm.so.2
+usr/lib64/libva-drm.so.%%LIBVERSION%%
+usr/lib64/libva-glx.so.2
+usr/lib64/libva-glx.so.%%LIBVERSION%%
+usr/lib64/libva-wayland.so.2
+usr/lib64/libva-wayland.so.%%LIBVERSION%%
+usr/lib64/libva-x11.so.2
+usr/lib64/libva-x11.so.%%LIBVERSION%%
+usr/lib64/libva.so.2
+usr/lib64/libva.so.%%LIBVERSION%%
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+usr/share/licenses/libva/COPYING

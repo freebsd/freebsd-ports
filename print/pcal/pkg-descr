@@ -1,0 +1,4 @@
+"Pcal" is a program to print PostScript calendars for any month and
+year.  By default, it looks for a file in the home directory named
+"calendar" for entries with leading dates matching dates on the
+calendar, and prints any following text under the appropriate day.

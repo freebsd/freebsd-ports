@@ -1,0 +1,4 @@
+VuXML (the Vulnerability and eXposure Markup Language) is an XML
+application for documenting security bugs and corrections within
+a software package collection such as the FreeBSD Ports Collection.
+This port installs the DTDs required for validating VuXML documents.

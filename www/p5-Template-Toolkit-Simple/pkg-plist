@@ -1,0 +1,4 @@
+bin/tt-render
+%%SITE_PERL%%/Template/Toolkit/Simple.pm
+%%SITE_PERL%%/Template/Toolkit/Simple.pod
+%%PERL5_MAN3%%/Template::Toolkit::Simple.3.gz

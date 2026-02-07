@@ -1,0 +1,12 @@
+# Order is important: place local paths ahead of system paths.
+
+import sys
+
+customCPPPATH = [ '%%LOCALBASE%%/include', '%%PYTHON_INCLUDEDIR%%' ]
+customCCFLAGS = [  ]
+customCXXFLAGS = [ ]
+customLIBS = [ 'intl' ]
+customLIBPATH = [ '%%PORTAUDIO_L%%', '%%LOCALBASE%%/lib' ]
+customSHLINKFLAGS = [ '%%PORTAUDIO_R%%', '%%PTHREAD_LIBS%%' ]
+customSWIGFLAGS = []
+platform = 'linux'

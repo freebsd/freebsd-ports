@@ -1,0 +1,21 @@
+EXPERIMENTAL kernel module for Realtek 8125/8126/8127 PCI Express
+2.5Gb/5Gb/10Gb Ethernet devices.
+
+The rge driver was written by Kevin Lo <kevlo@openbsd.org>.
+Ported from OpenBSD by Adrian Chadd (erikarn@).
+This driver is planned to be added to FreeBSD.
+
+The rge driver provides support for NICs based on the Realtek RTL8125,
+RTL8126 and RTL8127 PCI Express Ethernet controllers, including the
+following:
+
+  * IOCrest IO-PCE8126-GLAN Adapter (5000baseT)
+  * Realtek 8125/8125B 2.5GbE Adapter (2500baseT)
+  * Rivet Networks Killer E3000 Adapter (2500baseT)
+  * TP-LINK TL-NG421 Adapter (2500baseT)
+
+NICs based on the RTL8125 are capable of 10, 100, 1000 and 2500Mbps
+operation.  NICs based on the RTL8126 are capable of 10, 100, 1000, 2500
+and 5000Mbps operation.  The RTL8127 supports 10Gbps speed.
+
+The rge driver additionally supports Wake on LAN (WoL).

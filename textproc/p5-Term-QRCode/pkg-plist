@@ -1,0 +1,3 @@
+bin/term-qrcode
+%%PERL5_MAN3%%/Term::QRCode.3.gz
+%%SITE_PERL%%/Term/QRCode.pm

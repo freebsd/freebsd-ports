@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Mail/IMAPClient.pm
+%%SITE_PERL%%/Mail/IMAPClient.pod
+%%SITE_PERL%%/Mail/IMAPClient/BodyStructure.pm
+%%SITE_PERL%%/Mail/IMAPClient/BodyStructure/Parse.grammar
+%%SITE_PERL%%/Mail/IMAPClient/BodyStructure/Parse.pm
+%%SITE_PERL%%/Mail/IMAPClient/BodyStructure/Parse.pod
+%%SITE_PERL%%/Mail/IMAPClient/MessageSet.pm
+%%SITE_PERL%%/Mail/IMAPClient/Thread.grammar
+%%SITE_PERL%%/Mail/IMAPClient/Thread.pm
+%%SITE_PERL%%/Mail/IMAPClient/Thread.pod
+%%PERL5_MAN3%%/Mail::IMAPClient.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::BodyStructure.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::BodyStructure::Parse.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::MessageSet.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::Thread.3.gz

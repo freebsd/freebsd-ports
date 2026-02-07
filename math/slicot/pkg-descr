@@ -1,0 +1,12 @@
+SLICOT - Subroutine Library In COntrol Theory - is a general purpose basic
+mathematical library for control theoretical computations. The library provides
+tools to perform essential system analysis and synthesis tasks. The main
+emphasis in SLICOT is on numerical reliability of implemented algorithms and the
+numerical robustness and efficiency of routines. Providing algorithmic
+flexibility and the use of rigorous implementation and documentation standards
+are other SLICOT features.
+
+The SLICOT Library is available as standard Fortran 77 code in double precision.
+Each user-callable subroutine for control computations is accompanied by an
+example program which illustrates the use of the subroutine and can act as a
+template for the user's own routines.

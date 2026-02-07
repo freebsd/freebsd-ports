@@ -1,0 +1,11 @@
+--- src/qmt_map2jnx/CMakeLists.txt.orig	2025-07-04 12:38:57 UTC
++++ src/qmt_map2jnx/CMakeLists.txt
+@@ -53,7 +53,7 @@ TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
+     Qt6::Core
+     Qt6::Gui
+     ${GDAL_LIBRARIES}
+-    ${PROJ_LIBRARIES}
++    ${PROJ_LDFLAGS} ${PROJ_LIBRARIES}
+     ${JPEG_LIBRARIES})
+ 
+ install(

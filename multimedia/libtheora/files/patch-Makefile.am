@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2026-01-07 15:22:12 UTC
++++ Makefile.am
+@@ -9,7 +9,7 @@ endif
+ EXAMPLES_DIR =
+ endif
+ 
+-SUBDIRS = lib include doc tests m4 $(EXAMPLES_DIR)
++SUBDIRS = lib include tests m4
+ 
+ EXTRA_DIST = \
+ 	README.md CHANGES COPYING LICENSE \

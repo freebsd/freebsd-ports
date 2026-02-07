@@ -1,0 +1,7 @@
+%%SITE_ARCH%%/Time/Moment.pm
+%%SITE_ARCH%%/Time/Moment.pod
+%%SITE_ARCH%%/Time/Moment/Adjusters.pm
+%%SITE_ARCH%%/Time/Moment/Adjusters.pod
+%%SITE_ARCH%%/auto/Time/Moment/Moment.so
+%%PERL5_MAN3%%/Time::Moment.3.gz
+%%PERL5_MAN3%%/Time::Moment::Adjusters.3.gz

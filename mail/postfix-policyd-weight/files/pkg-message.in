@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+* Start with:
+
+# %%PREFIX%%/bin/policyd-weight start
+
+* To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf
+
+smtpd_recipient_restrictions =
+	...
+	permit_mynetworks
+	...
+	reject_unauth_destination
+	reject_unauth_pipelining
+	check_policy_service inet:127.0.0.1:12525
+	...
+
+* NOTE:
+*   specify check_policy_service AFTER reject_unauth_destination
+*   else your system can become an open relay.
+*
+* CONFIGURATION:
+*
+*   edit %%PREFIX%%/etc/policyd-weight.conf
+*   An example is provided in %%PREFIX%%/etc/policyd-weight.conf.sample
+*
+* Please compare existing configuration with the provided sample
+* and remove deprecated DNSBL/RHSBL lists
+EOM
+}
+]

@@ -1,0 +1,2 @@
+This package is a loadable module for mailfromd which adds Perl-
+compatible regular expressions to the mail filtering language (MFL).

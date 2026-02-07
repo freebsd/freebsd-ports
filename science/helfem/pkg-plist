@@ -1,0 +1,17 @@
+bin/atomic
+bin/diatomic
+bin/diatomic_cbasis
+bin/diatomic_cpl
+bin/gensap
+include/FiniteElementBasis.h
+include/GaussianNucleus.h
+include/HollowNucleus.h
+include/ModelPotential.h
+include/PointNucleus.h
+include/PolynomialBasis.h
+include/RadialBasis.h
+include/RegularizedNucleus.h
+include/SphericalNucleus.h
+lib/libhelfem-common.so
+lib/libhelfem.so
+lib/liblegendre.so

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2016-10-20 15:08:36 UTC
++++ src/Makefile.in
+@@ -297,7 +297,7 @@ am__leading_dot = @am__leading_dot@
+ am__quote = @am__quote@
+ am__tar = @am__tar@
+ am__untar = @am__untar@
+-bindir = @bindir@
++bindir = $(pkglibdir)
+ build_alias = @build_alias@
+ builddir = @builddir@
+ datadir = @datadir@

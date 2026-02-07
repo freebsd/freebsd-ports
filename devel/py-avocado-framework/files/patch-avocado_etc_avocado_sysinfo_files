@@ -1,0 +1,16 @@
+--- avocado/etc/avocado/sysinfo/files.orig	2025-06-01 04:14:50 UTC
++++ avocado/etc/avocado/sysinfo/files
+@@ -1,13 +0,0 @@
+-/proc/cmdline
+-/proc/mounts
+-/proc/pci
+-/proc/meminfo
+-/proc/slabinfo
+-/proc/version
+-/proc/cpuinfo
+-/proc/modules
+-/proc/interrupts
+-/proc/partitions
+-/sys/kernel/debug/sched_features
+-/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+-/sys/devices/system/clocksource/clocksource0/current_clocksource

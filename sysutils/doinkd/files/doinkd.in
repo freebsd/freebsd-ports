@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: idled
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable idled:
+#
+# doinkd_enable="YES"
+# doinkd_flags="<set as needed>"
+#
+# See doinkd(8) for flags
+#
+
+. /etc/rc.subr
+
+name=doinkd
+rcvar=doinkd_enable
+
+command=%%PREFIX%%/sbin/doinkd
+required_files=%%PREFIX%%/etc/doinkd/doinkd.cf
+
+# set defaults
+
+doinkd_enable=${doinkd_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"

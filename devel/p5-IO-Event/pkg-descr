@@ -1,0 +1,17 @@
+IO::Event provides an object-based callback system for handling nonblocking IO.
+The design goal is to provide a system that just does the right thing without
+the user needing to think about it much.
+
+All APIs are kept as simple as possible yet at the same time, all functionality
+is accesible if needed. Simple things are easy. Hard things are possible.
+
+Most of the time file handling syntax will work fine: <$filehandle> and print
+$filehandle 'stuff'.
+
+IO::Event provides automatic buffering of output (with a callback to throttle).
+It provides automatic line-at-a-time input.
+
+After initial setup, call IO::Event::loop().
+
+IO::Event was originally written to use Event. IO::Event still defaults to using
+Event but it can now use AnyEvent or its own event loop.

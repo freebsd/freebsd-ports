@@ -1,0 +1,22 @@
+--- configure.orig	Tue May 13 16:54:09 2003
++++ configure	Tue May 13 16:54:55 2003
+@@ -1643,8 +1643,8 @@
+ test "x$prefix" = "xNONE" && prefix=/usr/local
+ test "x$exec_prefix" = "xNONE" && exec_prefix=$prefix
+ test "x$sysconfdir" = 'x${prefix}/etc' && sysconfdir=${prefix}/etc
+-test "x$datadir" = 'x${prefix}/share' && datadir=${prefix}/share/games/openglad
+-test "x$bindir" = 'x${exec_prefix}/bin' && bindir=${exec_prefix}/games
++test "x$datadir" = 'x${prefix}/share' && datadir=${prefix}/share/openglad
++test "x$bindir" = 'x${exec_prefix}/bin' && bindir=${exec_prefix}/bin
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -1653,7 +1653,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define DATADIR "$datadir/"
++#define DATADIR "$datadir"
+ _ACEOF
+ 
+ 

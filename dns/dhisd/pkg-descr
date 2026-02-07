@@ -1,0 +1,7 @@
+DHIS is a client-server based system architecture primarily meant for
+ updating DNS for hosts that have dynamic IP addresses. With DHIS you
+ can have your computer always recognised and available on the Internet
+ with the same unique name, even if its IP address changes frequently.
+
+It supports both IPv4 and IPv6. For more information on the services,
+ you should look at the official DHIS website.

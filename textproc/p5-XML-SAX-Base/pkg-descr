@@ -1,0 +1,10 @@
+XML::SAX::Base has a very simple task - to be a base class for PerlSAX drivers
+and filters. It's default behaviour is to pass the input directly to the output
+unchanged. It can be useful to use this module as a base class so you don't have
+to, for example, implement the characters() callback.
+
+The main advantages that it provides are easy dispatching of events the right
+way (ie it takes care for you of checking that the handler has implemented that
+method, or has defined an AUTOLOAD), and the guarantee that filters will pass
+along events that they aren't implementing to handlers downstream that might
+nevertheless be interested in them.

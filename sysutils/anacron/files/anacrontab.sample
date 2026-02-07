@@ -1,0 +1,12 @@
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+# days		make sure the command is executed at least every 'days' days
+# delay		delay in minutes, before a command starts
+# id		unique id of a command
+
+# days	delay	id		command
+1	5	daily		periodic daily
+7	15	weekly		periodic weekly
+30	60	monthly		periodic monthly
+

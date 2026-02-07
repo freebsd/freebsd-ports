@@ -1,0 +1,23 @@
+--- LAGraph/experimental/CMakeLists.txt.orig	2025-01-20 03:05:28 UTC
++++ LAGraph/experimental/CMakeLists.txt
+@@ -38,7 +38,7 @@ if ( BUILD_SHARED_LIBS )
+         set_target_properties ( LAGraphX PROPERTIES EXPORT_NO_SYSTEM ON )
+     endif ( )
+ 
+-    target_link_libraries ( LAGraphX PRIVATE LAGraph GraphBLAS::GraphBLAS )
++    target_link_libraries ( LAGraphX PRIVATE LAGraph GraphBLAS::GraphBLAS -lm )
+ 
+     target_include_directories ( LAGraphX PUBLIC
+         $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+@@ -71,9 +71,9 @@ if ( BUILD_STATIC_LIBS )
+     endif ( )
+ 
+     if ( TARGET GraphBLAS::GraphBLAS_static )
+-        target_link_libraries ( LAGraphX_static PRIVATE GraphBLAS::GraphBLAS_static )
++        target_link_libraries ( LAGraphX_static PRIVATE GraphBLAS::GraphBLAS_static -lm )
+     else ( )
+-        target_link_libraries ( LAGraphX_static PRIVATE GraphBLAS::GraphBLAS )
++        target_link_libraries ( LAGraphX_static PRIVATE GraphBLAS::GraphBLAS -lm )
+     endif ( )
+ 
+     target_include_directories ( LAGraphX_static PUBLIC

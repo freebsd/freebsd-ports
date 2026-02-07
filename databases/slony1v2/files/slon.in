@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+# Modified by Brian A. Seklecki <bseklecki@collaborativefusion.com>
+#                               <lavalamp@spiritual-machines.org>
+
+# sed -e 's/%%PREFIX%%/\/usr\/local/g' < slon.sh.in > slon
+
+# PROVIDE: slon
+# REQUIRE: postgresql
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="slon"
+rcvar=slon_enable
+
+load_rc_config "$name"
+_pidprefix="/var/run/${name}"
+pidfile="${_pidprefix}.pid" # Used as fall-through in event of no profiles
+procname="%%PREFIX%%/bin/slon"
+
+# From global rc.conf(5); if unset, set them here
+[ -z "$slon_enable" ]   && slon_enable="NO"
+
+configfile_path="%%PREFIX%%/etc/${name}.conf"
+command_args="-f ${configfile_path}"
+required_files="${configfile_path}"
+
+isProfile () {
+    local profile
+
+    for profile in $slon_profiles; do
+        if [ "$profile" = "$1" ]; then
+            return 0
+        fi
+    done
+
+    return 1
+}
+
+if [ -n "$2" ]; then
+    if [ "x${slon_profiles}" = "x" ]; then # This checks that profiles are indeed defined
+        echo "$0: extra profile argument ignored, no profiles defined"
+        exit 1
+    fi
+
+    profile="$2" # A profile argument has been given (presumably)
+
+    # Now let's check to make sure that both the profile, the profile's
+    # config path variable, config file exists
+
+    if ! isProfile $profile; then
+        echo "$0: no such profile defined in slon_profiles."
+        exit 1
+    fi
+
+    configfile_default_path="%%PREFIX%%/etc/${name}-${profile}.conf"
+
+    # Basic string substitution gets variable name
+    configfile_varname="${name}_${profile}_configfile"
+
+    eval configfile_path=\${$configfile_varname:-${configfile_default_path}}
+
+    if [ ! -r "$configfile_path" ]; then
+        echo "$0: unable to read configuration file."
+        exit 1
+    fi
+
+    required_files="${configfile_path}"
+    
+    pidfile_default="${_pidprefix}-${profile}.pid"
+    eval pidfile=\${${name}_${profile}_pidfile:-${pidfile_default}}
+
+    command_args="-f ${configfile_path}"
+    eval command_args=\${${name}_${profile}_flags:-${command_args}}
+else
+    # We get to here if $2 is not defined at command line, but we do have profiles
+    # so apply $1 command to all profiles!
+    # This block uses recursion to call ourself with each-profile defined as $2.
+
+    if [ "x${slon_profiles}" != "x" -a "x$1" != "x" ]; then
+        for profile in ${slon_profiles}; do
+            echo "Processing ${name} profile: ${profile}"
+            %%PREFIX%%/etc/rc.d/${name} $1 ${profile}
+        done
+        exit 0
+    fi
+# else = no profile argument given
+fi
+
+slon_start () {
+    echo "Starting ${name}."
+    /usr/sbin/daemon -cf -p ${pidfile} %%PREFIX%%/bin/slon ${command_args}
+}
+
+start_cmd=slon_start
+
+run_rc_command "$1"

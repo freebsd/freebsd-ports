@@ -1,0 +1,6 @@
+rbllookup is a small perl script which allow you to check given IP/host
+name.
+
+In this version you have statically inserted RBL servers, but code is based
+on GPL source, so you can easy add more/replace/delete RBL servers by
+editing rbllookup.conf file.

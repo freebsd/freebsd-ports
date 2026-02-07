@@ -1,0 +1,21 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX:-%%PREFIX%%}
+DCCDATA=%%DCCDATA%%
+DCCUSER=%%DCCUSER%%
+
+if [ "$2" = "POST-INSTALL" ]; then
+
+	/bin/sh $PREFIX/libexec/fix-map \
+	-n .nopasswd \
+	-I $DCCDATA/ids.nopasswd -i $DCCHOME/ids \
+	-T $DCCDATA/map.txt.nopasswd -t $DCCHOME/map.txt \
+	-m $DCCDATA/map
+
+        for file in ids map map.txt ; do
+                /bin/cp -p $DCCDATA/$file $DCCDATA/${file}.nopasswd
+		/usr/sbin/chown $DCCUSER $DCCDATA/${file} $DCCDATA/${file}.nopasswd
+        done
+fi
+
+exit 0

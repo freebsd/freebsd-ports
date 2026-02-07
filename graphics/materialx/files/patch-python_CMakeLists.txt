@@ -1,0 +1,11 @@
+--- python/CMakeLists.txt.orig	2025-11-25 20:08:57 UTC
++++ python/CMakeLists.txt
+@@ -12,7 +12,7 @@ if(MATERIALX_INSTALL_PYTHON AND PYTHON_EXECUTABLE AND 
+ endif()
+ 
+ if(MATERIALX_INSTALL_PYTHON AND PYTHON_EXECUTABLE AND NOT SKBUILD)
+-  set(SETUP_PY "${CMAKE_INSTALL_PREFIX}/python/setup.py")
++  set(SETUP_PY "${CMAKE_CURRENT_BINARY_DIR}/python/setup.py")
+   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/setup.py.in" "${SETUP_PY}")
+   install(CODE "execute_process(COMMAND ${PYTHON_EXECUTABLE} -m pip install . WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/python)")
+ endif()

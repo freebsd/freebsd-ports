@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+Amend /boot/loader.conf as follows to use this module:
+
+- change zfs_load="YES" to NO
+- change opensolaris_load="YES" to NO
+- add openzfs_load="YES"
+- (for ARM64) add cryptodev_load="YES"
+EOM
+}
+]

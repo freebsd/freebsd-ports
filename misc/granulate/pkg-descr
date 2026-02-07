@@ -1,0 +1,6 @@
+Granulate is a program for splitting files in place. The program
+serves a purpose similar to the standard UNIX split, but differs in
+one important way. For split to operate on a 40MB file, you must have
+more than 40MB of free space on the disk. On the other hand,
+granulate only needs one chunk of free space on the hard drive, where
+a chunk is the requested size for the output files.

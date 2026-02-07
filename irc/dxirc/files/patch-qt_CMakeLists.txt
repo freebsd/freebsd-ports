@@ -1,0 +1,63 @@
+--- qt/CMakeLists.txt.orig
++++ qt/CMakeLists.txt
+@@ -5,11 +5,11 @@
+ option(QT6 "Compile with Qt6" FALSE)
+ 
+ if(UNIX)
+-    if(BSD)
++    if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+         set(CMAKE_THREAD_LIBS -pthread)
+         set(CMAKE_USE_PTHREADS ON)
+         set(CMAKE_EXE_LINKER_FLAGS -pthread)
+-    endif(BSD)
++    endif(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+ endif(UNIX)
+ 
+ SET(DXIRCQT_LIBS "")
+@@ -30,22 +30,22 @@
+ if(NOT APPLE)
+     if(USE_ENCHANT)
+         if(PKG_CONFIG_FOUND)
+-            pkg_check_modules(ENCHANT enchant-2)
+-            list(APPEND DXIRCQT_LIBS ${ENCHANT_LIBRARIES})
+-            list(APPEND DXIRCQT_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIRS})
+-            set(HAVE_ENCHANT TRUE)
+-            if(${ENCHANT_VERSION} VERSION_GREATER "1.6")
+-                set(HAVE_ENCHANT2 TRUE)
+-            endif()
+-            if(NOT ENCHANT_FOUND)
+-                pkg_check_modules(ENCHANT enchant)
+-                list(APPEND DXIRCQT_LIBS ${ENCHANT_LIBRARIES})
+-                list(APPEND DXIRCQT_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIRS})
+-                set(HAVE_ENCHANT TRUE)
+-                if(${ENCHANT_VERSION} VERSION_GREATER "1.6")
+-                    set(HAVE_ENCHANT2 TRUE)
+-                endif()
+-            endif()
++         pkg_check_modules(ENCHANT enchant)
++         find_path(ENCHANT_INCLUDE_DIR enchant++.h
++         PATHS
++         ${ENCHANT_INCLUDE_DIRS}
++         /usr/include
++         /usr/local/include)
++         find_library(ENCHANT_LIBRARY enchant
++         ${ENCHANT_LIBRARY_DIRS}
++         /usr/lib
++         /usr/local/lib)
++         list(APPEND DXIRCQT_LIBS ${ENCHANT_LIBRARY})
++         list(APPEND DXIRCQT_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIR})
++         set(HAVE_ENCHANT TRUE)
++         if(${ENCHANT_VERSION} VERSION_GREATER "1.6")
++             set(HAVE_ENCHANT2 TRUE)
++          endif()
+         endif(PKG_CONFIG_FOUND)
+         if(NOT ENCHANT_FOUND)
+             set(ENCHANT_INCLUDE_DIR "" CACHE PATH "Path to enchant include dir")
+@@ -122,6 +122,7 @@
+ dialogs/dccsenddialog.h
+ dialogs/configdialog.h
+ dialogs/keydialog.h
++dialogs/listdialog.h
+ engine/dxsocket.h
+ engine/ircengine.h
+ engine/dccengine.h

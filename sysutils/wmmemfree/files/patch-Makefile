@@ -1,0 +1,24 @@
+--- Makefile.orig	2003-03-21 20:59:07 UTC
++++ Makefile
+@@ -1,18 +1,18 @@
+ #Makefile
+ 
+ PROG=wmmemfree
+-OBJS=dockapp.o draw.o mem_linux.o options.o wmmemfree.o
++OBJS=dockapp.o draw.o mem_freebsd.o options.o wmmemfree.o
+ 
+ PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+ MANUALDIR=$(PREFIX)/share/man/man1
+-CC=gcc
++CC?=gcc
+ STRIP=strip
+ FLAGS=-Wall -O2
+ RM=rm -f
+ INST=install
+ MANUAL=$(PROG).1
+-LIBS=-L/usr/X11R6/lib -lX11 -lXext -lXpm
++LIBS+=-lX11 -lXext -lXpm
+ 
+ all: $(PROG)
+ 

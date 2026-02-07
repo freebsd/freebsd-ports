@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: wnn
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=wnn
+rcvar=wnn_enable
+command=%%PREFIX%%/bin/Wnn4/jserver
+procname=%%PREFIX%%/bin/Wnn4/jserver
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+WTCMD=%%PREFIX%%/bin/Wnn4/wnntouch
+
+: ${wnn_enable:=NO}
+
+start_precmd()
+{
+	rm -f /tmp/jd_sockV4
+	install -d -o wnn -m 755 %%PREFIX%%/lib/wnn/ja_JP/dic/usr
+	${WTCMD} %%PREFIX%%/lib/wnn/ja_JP/dic/pubdic/* \
+	    %%PREFIX%%/lib/wnn/ja_JP/dic/wnncons/* \
+	    %%PREFIX%%/lib/wnn/ja_JP/dic/gerodic/*
+}
+
+stop_postcmd()
+{
+	rm -f /tmp/jd_sockV4
+}
+
+load_rc_config $name
+run_rc_command $1

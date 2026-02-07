@@ -1,0 +1,5 @@
+TIMESTAMP = 1518104502
+SHA256 (slim-freebsd-beastie.tar.gz) = 90de1b178817a681a74b8584c6d913309f7b678adad038831e8ca2f0b792ec53
+SIZE (slim-freebsd-beastie.tar.gz) = 129981
+SHA256 (slim-freebsd-simple.tar.gz) = 019e3e96ac31ecac5e295a9c239838064b569c133231bd4e44d6a6ab792b18d3
+SIZE (slim-freebsd-simple.tar.gz) = 63190

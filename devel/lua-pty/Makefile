@@ -1,0 +1,40 @@
+PORTNAME=	pty
+DISTVERSION=	1.26
+CATEGORIES=	devel
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
+
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Pty (pseudo-terminal) bindings for Lua 5+
+WWW=		https://gitlab.com/ports1/lua-pty/
+
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		lua:51,module
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	ports1
+GL_PROJECT=	lua-pty
+GL_TAGNAME=	1c36a8b40688c6a38c188000bba59ce20ab616ce
+
+MAKEFILE=	${FILESDIR}/Makefile
+
+DOCSDIR=	${PREFIX}/share/doc/lua-${PORTNAME}
+DOCFILES=	README README.md CHANGELOG
+PLIST_FILES=	${LUA_MODSHAREDIR}/pty.lua \
+		${LUA_MODLIBDIR}/lpty.so \
+		${DOCSDIR}/README \
+		${DOCSDIR}/README.md \
+		${DOCSDIR}/CHANGELOG
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lpty.so ${STAGEDIR}${LUA_MODLIBDIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/pty.lua ${STAGEDIR}${LUA_MODSHAREDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${DOCFILES}
+	${CP} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+.include <bsd.port.mk>

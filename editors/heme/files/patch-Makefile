@@ -1,0 +1,26 @@
+--- Makefile.orig	2006-11-22 22:24:17 UTC
++++ Makefile
+@@ -1,18 +1,18 @@
+ INSTALL_PREFIX = /usr/local
+-CFLAGS = -Wall -DHAVE_MMAP	# remove -DHAVE_MMAP if you don't have mmap
+-LDFLAGS = -lcurses
++CFLAGS += -Wall -DHAVE_MMAP
++LDFLAGS += -lcurses
+ OBJECTS = heme.o xmalloc.o error.o pconfig.o pgetopt.o
+ TARGET = heme
+ 
+ $(TARGET): $(OBJECTS)
+-	$(CC) $(OBJECTS) -o $(TARGET) $(LDFLAGS) 
++	$(CC) $(CFLAGS) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ install: $(TARGET)
+-	install -s -m 0755 $(TARGET) $(INSTALL_PREFIX)/bin
+-	install -m 0644 heme.1 $(INSTALL_PREFIX)/man/man1
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_DATA) heme.1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 
+ uninstall:
+ 	rm -f $(INSTALL_PREFIX)/bin/$(TARGET)

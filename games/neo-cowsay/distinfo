@@ -1,0 +1,7 @@
+TIMESTAMP = 1679515500
+SHA256 (go/games_neo-cowsay/neo-cowsay-v2.0.4/v2.0.4.mod) = ba6dcf06f216832cbc41c1d07154d3cb498a89159c43e2b52fead061a695eaed
+SIZE (go/games_neo-cowsay/neo-cowsay-v2.0.4/v2.0.4.mod) = 393
+SHA256 (go/games_neo-cowsay/neo-cowsay-v2.0.4/v2.0.4.zip) = dc64392f992730452d0d2006ada0baec106a3173afaa6a5abc93c5f98759d23a
+SIZE (go/games_neo-cowsay/neo-cowsay-v2.0.4/v2.0.4.zip) = 24115
+SHA256 (go/games_neo-cowsay/neo-cowsay-v2.0.4/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/games_neo-cowsay/neo-cowsay-v2.0.4/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

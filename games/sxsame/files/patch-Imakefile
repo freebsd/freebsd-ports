@@ -1,0 +1,43 @@
+--- Imakefile.orig	Sun May  5 04:10:27 1996
++++ Imakefile	Wed Nov  1 08:05:31 2000
+@@ -3,7 +3,7 @@
+ # * Copyleft  (c) 1994-1996  Software Research Academy         *
+ # **************************************************************
+ #
+-SAMEDIR = /usr/local/games/sxsame
++SAMEDIR = $(LIBDIR)/sxsame
+ 
+ #BINDIR = /usr/local/bin
+ #MANDIR = /usr/local/man/man1
+@@ -11,6 +11,7 @@
+ #XPMLIB = -L/usr/local/lib/X11 -lXpm
+ #EXTRA_DEFINES = -DLOCAL_XPM_H -I/usr/local/include/X11
+ 
++INSTPGMFLAGS=-s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+ 
+ XPMLIB = -lXpm
+ LOCAL_LIBRARIES = $(XPMLIB) -lX11
+@@ -19,16 +20,19 @@
+ DEFINES = -DSAME_DIR=\"$(SAMEDIR)\"
+ 
+ #CDEBUGFLAGS = -O2 -Wall
+-CDEBUGFLAGS = -g -Wall
++#CDEBUGFLAGS = -g -Wall
+ #CDEBUGFLAGS = -O2
+-ComplexProgramTarget(sxsame)
+-InstallManPage(sxsame,$(MANDIR))
++ComplexProgramTargetNoMan(sxsame)
+ 
+ #sxsame.o:: sxsame.c config.h sxsame.h hiscore.h defdata.h
+ #hiscore.o:: hiscore.c config.h hiscore.h
+ #defdata.o:: defdata.c defdata.h
+ install.dir::
+ 	$(MKDIRHIER) $(SAMEDIR)
+-	chmod 777 $(SAMEDIR)
++	chmod 2775 $(SAMEDIR)
++	chown ${BINOWN}:${BINGRP} $(SAMEDIR)
+ 	/bin/cp -pr contrib/?* $(SAMEDIR)
++	touch $(SAMEDIR)/hiscore
++	chmod 664 $(SAMEDIR)/hiscore
++	chown ${BINOWN}:${BINGRP} $(SAMEDIR)/hiscore
+ 

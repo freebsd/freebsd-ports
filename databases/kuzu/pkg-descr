@@ -1,0 +1,4 @@
+Kuzu is an embedded graph database built for query speed and scalability.
+It is optimized for handling complex analytical workloads on very large
+databases and provides a set of retrieval features, such as a full text
+search and vector indices.

@@ -1,0 +1,23 @@
+--- Makefile.orig
++++ Makefile
+@@ -1,9 +1,9 @@
+ CC ?= gcc
+ PREFIX = /usr/local
+-INCLUDES = `pkg-config --cflags gtk+-2.0` -I. -Ifoodock
++INCLUDES = `pkg-config --cflags gtk+-2.0 x11` -I. -Ifoodock
+ 
+ # for normal use
+-CFLAGS += -Wall -ansi -pedantic $(INCLUDES)
++CFLAGS += $(INCLUDES)
+ DEBUG = 
+ 
+ # for debuggind purposes
+@@ -12,7 +12,7 @@ DEBUG = 
+ #CFLAGS += -Wall -g -ansi $(INCLUDES) -DFNCALL_DEBUG
+ #DEBUG = debug.o
+ 
+-LIBS = `pkg-config --libs gtk+-2.0`
++LIBS = `pkg-config --libs gtk+-2.0 x11`
+ 
+ OBJECTS = wmcliphist.o clipboard.o gui.o rcconfig.o history.o hotkeys.o utils.o $(DEBUG)
+ TARGET = wmcliphist

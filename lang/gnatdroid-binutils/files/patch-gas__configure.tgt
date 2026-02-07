@@ -1,0 +1,10 @@
+--- gas/configure.tgt.orig	2015-07-21 08:20:58 UTC
++++ gas/configure.tgt
+@@ -130,6 +130,7 @@ case ${generic_target} in
+ 
+   arc-*-elf*)				fmt=elf ;;
+ 
++  arm-android-eabi*)			fmt=elf em=armlinuxeabi ;;
+   arm-*-aout)				fmt=aout ;;
+   arm-*-coff)				fmt=coff ;;
+   arm-*-rtems*)				fmt=elf ;;

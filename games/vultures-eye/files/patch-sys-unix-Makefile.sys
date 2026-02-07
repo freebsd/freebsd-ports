@@ -1,0 +1,39 @@
+--- sys/unix/Makefile.src.orig	Tue Jun  6 23:23:32 2006
++++ sys/unix/Makefile.src	Tue Sep 12 18:31:34 2006
+@@ -36,7 +36,7 @@
+ # SHELL=E:/GEMINI2/MUPFEL.TTP
+ 
+ # Normally, the C compiler driver is used for linking:
+-LINK=$(CC)
++LINK=$(CXX)
+ 
+ # Pick the SYSSRC and SYSOBJ lines corresponding to your desired operating
+ # system.
+@@ -154,21 +154,21 @@
+ # VULTURECFLAGS will be passed to the sub-makefile for vulture
+ OS = $(shell uname -s)
+ ifeq ($(OS),FreeBSD)
+-	SDL_CONFIG = sdl11-config
+-	SDLMAIN = -lSDLmain-1.1
++	SDL_CONFIG = sdl-config
++	SDLMAIN = -lSDLmain
+ else
+ 	SDL_CONFIG = sdl-config
+ 	SDLMAIN = -lSDLmain
+ endif
+-VULTURECFLAGS = -Wall -g -I /opt/local/include
+-CFLAGS = -g -I../include -I ../win/vulture $(shell $(SDL_CONFIG) --cflags)
++VULTURECFLAGS = -Wall
++CFLAGS += -I../include -I ../win/vulture $(shell $(SDL_CONFIG) --cflags)
+ LFLAGS = 
+ 
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
+ # the C++ libraries linked in.
+-CXXFLAGS = $(CFLAGS) -I. -I$(QTDIR)/include
+-CXX=g++
++CXXFLAGS += $(CFLAGS) -I. -I$(QTDIR)/include
++CXX?=g++
+ #LINK=g++
+ #	For cross-compiling, eg. with gcc on Linux (see also CC further up):
+ #CXX=arm-linux-g++

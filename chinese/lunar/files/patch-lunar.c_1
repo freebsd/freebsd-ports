@@ -1,0 +1,22 @@
+--- lunar.c.orig	Mon Aug 10 21:14:48 1992
++++ lunar.c	Tue Feb  4 01:04:18 1997
+@@ -60,6 +60,10 @@
+ #define	GanBM	4
+ #define	ZhiBM	14
+ 
++#ifndef BITMAPFILE
++#define BITMAPFILE "lunar.bitmap"
++#endif
++
+ typedef struct {
+ int year, month, day, hour, weekday;
+ int leap;	/* the lunar month is a leap month */
+@@ -124,7 +128,7 @@
+ 
+ int	showHZ = 0;			/* output in hanzi */
+ int	showBM = 0;			/* output in bitmap */
+-char	BMfile[] = "lunar.bitmap";	/* bit map file */
++char	BMfile[] = BITMAPFILE;	/* bit map file */
+ char	GZBM[NBM][BMRow][BMCol];	/* the bitmap array */
+ char	*progname;
+ 

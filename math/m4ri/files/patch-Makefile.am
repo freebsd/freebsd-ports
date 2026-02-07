@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2020-01-25 04:35:59 UTC
++++ Makefile.am
+@@ -57,7 +57,7 @@ EXTRA_DIST=m4ri/Doxyfile
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = m4ri.pc
+ 
+-libm4ri_la_LDFLAGS = -release 0.0.$(RELEASE) -no-undefined
++libm4ri_la_LDFLAGS = -no-undefined
+ libm4ri_la_LIBADD = $(LIBPNG_LIBADD) $(LIBM)
+ 
+ SUBDIRS = . tests

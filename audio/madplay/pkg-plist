@@ -1,0 +1,10 @@
+bin/abxtest
+bin/madplay
+bin/madtime
+share/man/man1/abxtest.1.gz
+share/man/man1/madplay.1.gz
+%%NLS%%share/locale/en/LC_MESSAGES/madplay.mo
+%%NLS%%share/locale/es/LC_MESSAGES/madplay.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/madplay.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/madplay.mo
+%%NLS%%share/locale/no/LC_MESSAGES/madplay.mo

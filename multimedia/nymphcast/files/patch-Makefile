@@ -1,0 +1,57 @@
+--- Makefile.orig	2022-03-15 23:26:07 UTC
++++ Makefile
+@@ -9,15 +9,15 @@ TARGET := $(PLATFORM)
+ CROSSC := 1
+ else
+ # Get the compiler's (GCC or Clang) target triplet and use that as platform.
+-TARGET := $(shell g++ -dumpmachine)
++# TARGET := $(shell g++ -dumpmachine)
+ endif
+ 
+ ifdef TOOLCHAIN
+ #include Makefile.$(TARGET)
+ include toolchain/$(TOOLCHAIN).mk
+ else
+-GPP = g++
+-GCC = gcc
++GPP = c++
++GCC = cc
+ STRIP = strip
+ MAKEDIR = mkdir -p
+ RM = rm
+@@ -56,7 +56,7 @@ endif
+ LIB := -lnymphrpc -lPocoUtil -lPocoNet -lPocoNetSSL -lPocoJSON -lPocoData -lPocoDataSQLite \
+ 		-lPocoFoundation -lswscale -lavcodec -lavdevice -lavformat -lavutil -lpostproc \
+ 		-lswresample -lavfilter -lSDL2_image -Langelscript/angelscript/lib-$(TARGET) -langelscript \
+-		-lstdc++fs -lfreetype \
++		-lfreetype \
+ 			 -lcurl -lfreeimage \
+ 			-lnymphcast -lPocoNet -lPocoUtil -lPocoFoundation
+ 			# -lvlc
+@@ -95,7 +95,7 @@ ifdef OS
+ 	LDFLAGS += -lws2_32 -lopengl32 -lwinmm -lole32
+ 	OUTPUT := $(OUTPUT).exe
+ else
+-	LDFLAGS += -pthread -latomic -lGL -lasound
++	LDFLAGS += -pthread -lGL -lasound
+ endif
+ 
+ # Check which version of OpenGL or OpenGL ES to use.
+@@ -178,7 +178,7 @@ makedir:
+ 	$(MAKEDIR) bin/$(TARGET)
+ 	
+ angelscript:
+-	make -C angelscript/angelscript/projects/gnuc/ static
++	$(MAKE) -C angelscript/angelscript/projects/gnuc/ static
+ 	
+ gui: $(GUI_OBJECTS)
+ 
+@@ -199,7 +199,7 @@ clean-objects:
+ 	$(RM) $(OBJECTS) $(C_OBJECTS)
+ 	
+ clean-angelscript:
+-	make -C angelscript/angelscript/projects/gnuc/ clean
++	$(MAKE) -C angelscript/angelscript/projects/gnuc/ clean
+ 	
+ clean-gui:
+ 	$(RM) $(GUI_OBJECTS)

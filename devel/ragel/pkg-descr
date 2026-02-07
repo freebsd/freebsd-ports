@@ -1,0 +1,11 @@
+Ragel compiles finite state machines from regular languages into runnable C
+code. Ragel state machines can not only recognize byte sequences as regular
+expression machines do, but can also execute code at arbitrary points in the
+recognition of a regular language.
+
+When you wish to write down a regular language you start with some simple
+regular language and build a bigger one using the regular language operators
+union, concatenation, kleene star, intersection and subtraction. This is
+precisely the way you describe to Ragel how to compile your finite state
+machines. Ragel also understands operators that insert function calls into
+machines and operators that control any non-determinism in machines.

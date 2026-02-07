@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Lingua/Han/PinYin.pm
+%%SITE_PERL%%/Lingua/Han/PinYin/Mandarin.dat
+%%PERL5_MAN3%%/Lingua::Han::PinYin.3.gz

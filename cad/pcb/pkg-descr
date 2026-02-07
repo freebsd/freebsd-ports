@@ -1,0 +1,6 @@
+PCB is an interactive printed circuit board editor for the X11 window
+system.  PCB includes a rats nest feature, design rule checking, and
+can provide industry standard RS-274-X (Gerber), NC drill, and
+centroid data (X-Y data) output for use in the board fabrication and
+assembly process.  PCB offers high end features such as an autorouter
+and trace optimizer which can tremendously reduce layout time.

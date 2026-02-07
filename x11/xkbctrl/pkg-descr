@@ -1,0 +1,12 @@
+Display and manipulate XKB keyboard controls from the commandline
+
+You can set keyboard delay and repeat rates with XKB/X enviroment:
+
+% xkbctrl +repeat 200 20
+
+command help:
+
+% xkbctrl -help
+
+MIHIRA Yoshiro
+<sanpei@sanpei.org>

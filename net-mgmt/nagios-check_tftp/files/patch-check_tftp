@@ -1,0 +1,54 @@
+--- ./check_tftp.orig	2011-08-13 12:15:04.000000000 +0200
++++ ./check_tftp	2011-08-13 12:22:28.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ #
+ # check_tftp
+ #
+@@ -317,6 +317,7 @@
+ STATE_UNKNOWN=3
+ STATE_DEPENDENT=4
+ 
++TFTP="%%LOCALBASE%%/bin/tftp -v"
+ 
+ function print_version () {
+     cat <<EOF
+@@ -412,7 +413,7 @@
+         echo "Cannot create temporary directory in /tmp"
+         exit $STATE_UNKNOWN
+     }
+-    RESULT="$(echo get NaGiOs_ChEcK_FiLe | tftp $HOST 2>&1 | head -n 1)"
++    RESULT="$(echo get NaGiOs_ChEcK_FiLe | ${TFTP} $HOST 2>&1 | tail -n 2 | head -n 1)"
+     cd ..
+     rm -f "$TMPDIR/NaGiOs_ChEcK_FiLe"
+     rmdir "$TMPDIR"
+@@ -440,16 +441,15 @@
+ 	echo "Cannot create temporary directory in /tmp"
+ 	exit $STATE_UNKNOWN
+     }
+-    RESULT="$(echo get $FILENAME | tftp $HOST 2>&1 | head -n 1)"
++    RESULT="$(echo get $FILENAME | ${TFTP} $HOST 2>&1 | tail -n 2 | head -n 1)"
+     if [ -f "$FILENAME" ] ; then
+-	ACTSIZE="$(wc "$FILENAME" --bytes | awk '{print $1;}')"
++	ACTSIZE="$(wc -c "$FILENAME" | awk '{print $1;}')"
+     else
+ 	ACTSIZE=0
+     fi
+ 
+-    rm -f "$FILENAME"
+     cd ..
+-    rmdir "$TMPDIR"
++    rm -r "$TMPDIR"
+ 
+     check_principal_errors "$RESULT"
+     case "$RESULT" in
+@@ -457,7 +457,7 @@
+ 	    echo "Server answered: file $FILE not found"
+ 	    exit $STATE_CRITICAL
+ 	;;
+-	*"Received "*" bytes in "*" seconds")
++	*"Received "*" bytes in "*" seconds "*)
+ 	    if [ "$SIZE" -ge "$ACTSIZE" -a "$SIZE" -le "$ACTSIZE" ] ; then
+ 		echo "OK - ${RESULT#*tftp> }"
+ 		exit $STATE_OK

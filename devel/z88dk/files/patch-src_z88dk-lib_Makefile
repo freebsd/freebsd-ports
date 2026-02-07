@@ -1,0 +1,11 @@
+--- src/z88dk-lib/Makefile.orig	2019-02-21 03:00:16 UTC
++++ src/z88dk-lib/Makefile
+@@ -17,7 +17,7 @@ z88dk-lib$(EXESUFFIX):	$(OBJS)
+ 	$(CC) -o z88dk-lib$(EXESUFFIX) $(LDFLAGS) $(OBJS)
+ 
+ install: z88dk-lib$(EXESUFFIX)
+-	$(INSTALL) z88dk-lib$(EXESUFFIX) $(PREFIX)/bin/z88dk-lib$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-lib$(EXESUFFIX) $(PREFIX)/bin/z88dk-lib$(EXESUFFIX)
+ 
+ clean:
+ 	$(RM) z88dk-lib$(EXESUFFIX) z88dk-lib.o core$(EXESUFFIX)

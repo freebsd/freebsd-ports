@@ -1,0 +1,17 @@
+--- doc/Makefile.in.orig	2020-08-08 02:10:49 UTC
++++ doc/Makefile.in
+@@ -395,11 +395,11 @@ EXTRA_DIST = $(example_docs) \
+ 
+ 
+ # install money example
+-exampledir = $(docdir)/example
++exampledir = $(datadir)/examples/check
+ example_DATA = $(example_docs)
+-examplesrcdir = $(docdir)/example/src
++examplesrcdir = $(exampledir)/src
+ examplesrc_DATA = $(example_src_docs)
+-exampletestsdir = $(docdir)/example/tests
++exampletestsdir = $(exampledir)/tests
+ exampletests_DATA = $(example_tests_docs)
+ all: all-am
+ 

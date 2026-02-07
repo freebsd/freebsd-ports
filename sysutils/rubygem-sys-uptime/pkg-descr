@@ -1,0 +1,2 @@
+The sys-uptime library is a simple interface for gathering uptime information.
+You can retrieve data in seconds, minutes, days, hours, or all of the above.

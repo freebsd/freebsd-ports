@@ -1,0 +1,2 @@
+HTTP(S) benchmarking tool, written in Golang. It uses excellent fasthttp
+instead of Go's default net/http due to its lightning fast performance.

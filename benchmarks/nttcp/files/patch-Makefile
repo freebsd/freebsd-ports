@@ -1,0 +1,13 @@
+--- Makefile.orig	2000-12-18 10:17:20 UTC
++++ Makefile
+@@ -111,8 +111,8 @@
+ # For FreeBSD
+ ARCH=	-DFreeBSD
+ LIB=
+-OPT=	-O2
+-CC=	cc
++#OPT=	-O2
++#CC=	cc
+ DBG=	
+ INC=	
+ 

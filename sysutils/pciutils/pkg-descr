@@ -1,0 +1,8 @@
+The PCI Utilities are a collection of programs for inspecting and manipulating
+configuration of PCI devices, all based on a common portable library libpci.
+
+The utilities include:
+- lspci: displays detailed information about all PCI buses and devices in the
+  system
+- setpci: allows reading from and writing to PCI device configuration registers.
+  For example, you can adjust the latency timers with it.

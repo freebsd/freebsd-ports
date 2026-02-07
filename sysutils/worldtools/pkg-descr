@@ -1,0 +1,14 @@
+worldtools consists of 3 simple scripts:
+
+- whereintheworld displays the great lines behind the build logs of a
+buildworld. It shows at which step the build is at, and which module
+is currently being built.
+
+- buildit runs a command, time(1)s it, logs the output and optionally
+sends a notification to the user by email when finished.
+
+- upgrade is a wrapper for buildit, whereintheworld, cvsup and make
+buildworld. It is a convenient series of shell commands that will
+upgrade your FreeBSD system.
+
+See the README file for more details.

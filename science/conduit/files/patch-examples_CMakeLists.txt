@@ -1,0 +1,8 @@
+--- examples/CMakeLists.txt.orig	2021-05-19 20:03:05 UTC
++++ examples/CMakeLists.txt
+@@ -16,4 +16,4 @@ install(DIRECTORY using-with-cmake
+                   using-with-make
+                   python
+                   cpp_fort_and_py
+-        DESTINATION examples/conduit)
++        DESTINATION ${FREEBSD_EXAMPLESDIR})

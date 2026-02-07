@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2024-12-29 03:52:10 UTC
++++ CMakeLists.txt
+@@ -927,6 +927,8 @@ set(PLATFORM_LIBS)
+ # Libraries that we always need to link against on this platform.
+ set(PLATFORM_LIBS)
+ 
++list(APPEND PLATFORM_LIBS inotify)
++
+ if(ALLEGRO_UNIX) # not MACOSX
+     list(APPEND LIBRARY_SOURCES ${ALLEGRO_SRC_UNIX_FILES})
+     list(APPEND PLATFORM_LIBS m ${CMAKE_THREAD_LIBS_INIT})
+@@ -1227,7 +1229,7 @@ if(INSTALL_PKG_CONFIG_FILES)
+                 @ONLY
+                 )
+             install(FILES ${LIBRARY_OUTPUT_PATH}/pkgconfig/${outname}
+-                DESTINATION "lib${LIB_SUFFIX}/pkgconfig"
++                DESTINATION "libdata/pkgconfig"
+                 )
+         endforeach(name)
+     endforeach(versuffix)

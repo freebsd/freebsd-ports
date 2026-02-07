@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: softether_server
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable softether_server:
+# softether_server_enable (bool):  Set to "NO" by default.
+#                                  Set it to "YES" to enable
+#
+. /etc/rc.subr
+
+name=softether_server
+rcvar=softether_server_enable
+load_rc_config ${name}
+
+: ${softether_server_enable:=NO}
+
+command="%%PREFIX%%/libexec/softether/vpnserver/vpnserver"
+
+datadir="%%SE_DBDIR%%"
+
+start_precmd="${name}_precmd"
+start_cmd="${command} start"
+stop_cmd="${command} stop"
+
+softether_server_precmd()
+{
+	if [ ! -d "${datadir}" ]; then
+	    mkdir -p ${datadir}
+	fi
+}
+
+run_rc_command "$1"

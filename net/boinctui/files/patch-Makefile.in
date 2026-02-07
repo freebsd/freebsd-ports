@@ -1,0 +1,30 @@
+Use INSTALL_DATA (mode 0644) to install changelog and man files
+
+--- Makefile.in.orig	2023-12-14 18:14:23 UTC
++++ Makefile.in
+@@ -2,6 +2,7 @@ CPP	= @CXX@
+ 
+ DEFS	+= -DVERSION=$(VERSION) @DEFS@
+ CPP	= @CXX@
++INSTALL_DATA = install -m 0644
+ INSTALL_PROGRAM = install
+ 
+ SRCS	= ncolorstring.cpp nhline.cpp nvline.cpp nscrollview.cpp nselectlist.cpp nview.cpp \
+@@ -48,7 +49,7 @@ install: installman
+ 	$(INSTALL_PROGRAM) -d $(DESTDIR)$(BINDIR)
+ 	$(INSTALL_PROGRAM) $(PACKAGE_TARNAME) $(DESTDIR)$(BINDIR)
+ 	$(INSTALL_PROGRAM) -d $(DESTDIR)$(DOCDIR)
+-	$(INSTALL_PROGRAM) changelog $(DESTDIR)$(DOCDIR)
++	$(INSTALL_DATA) changelog $(DESTDIR)$(DOCDIR)
+ 
+ createobj:
+ 	@if ! [ -d "$(ODIR)" ] ; then echo "create $(ODIR)";  mkdir $(ODIR); fi
+@@ -56,7 +57,7 @@ installman:
+ installman:
+ 	@echo "install man (boinctui.1) to " $(DESTDIR)@mandir@/man1 " directory"
+ 	mkdir -p $(DESTDIR)@mandir@/man1
+-	install -m 0644 boinctui.1 $(DESTDIR)@mandir@/man1
++	$(INSTALL_DATA) boinctui.1 $(DESTDIR)@mandir@/man1
+ 
+ #srctgz: clean
+ #	@if ! [ -d "../$(PACKAGE_TARNAME)-$(VERSION)" ] ; then echo "create symlink ../$(PACKAGE_TARNAME)-$(VERSION)->$(notdir $(CURDIR))";  ln -n -s $(notdir $(CURDIR)) ../$(PACKAGE_TARNAME)-$(VERSION); fi

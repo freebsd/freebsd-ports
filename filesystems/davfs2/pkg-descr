@@ -1,0 +1,13 @@
+Web Distributed Authoring and Versioning (WebDAV), an extension to the
+HTTP-protocol, allows authoring of resources on a remote web server.
+davfs2 provides the ability to access such resources like a typical
+filesystem, allowing for use by standard applications with no built-in
+support for WebDAV.
+
+davfs2 is designed to fully integrate into the filesystem semantics of
+Unix-like systems and makes mounting by unprivileged users as easy and
+secure as possible.
+
+davfs2 does extensive caching to make the file system responsive, to
+avoid unnecessary network traffic, to prevent data loss, and to cope
+for slow or unreliable connections.

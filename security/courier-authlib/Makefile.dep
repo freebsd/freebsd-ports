@@ -1,0 +1,31 @@
+# To depend on courier-authlib you might consider using this file by specifying 
+#
+#.if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
+#.include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
+#.endif
+#
+# in your Makefile *before* any 
+#.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MAUTH_LDAP}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:net/courier-authlib-ldap
+.endif
+.if ${PORT_OPTIONS:MAUTH_MYSQL}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthmysql.so:databases/courier-authlib-mysql
+.endif
+.if ${PORT_OPTIONS:MAUTH_PGSQL}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthpgsql.so:databases/courier-authlib-pgsql
+.endif
+.if ${PORT_OPTIONS:MAUTH_SQLITE}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthsqlite.so:databases/courier-authlib-sqlite
+.endif
+.if ${PORT_OPTIONS:MAUTH_USERDB}
+.if ${PORT_OPTIONS:MGDBM}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthuserdb.so:databases/courier-authlib-usergdbm
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthuserdb.so:databases/courier-authlib-userdb
+.endif
+.endif
+.if ${PORT_OPTIONS:MAUTH_VCHKPW}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthvchkpw.so:mail/courier-authlib-vchkpw
+.endif

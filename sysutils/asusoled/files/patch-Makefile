@@ -1,0 +1,25 @@
+--- Makefile.orig	2008-09-13 03:00:29.000000000 -0400
++++ Makefile	2008-10-21 14:27:18.000000000 -0400
+@@ -5,12 +5,20 @@
+ HDRS=		asusoled.h asusoled_hw.h
+ 
+ PREFIX?=	/usr/local
++SDL_CONFIG?=	${PREFIX}/bin/sdl-config
+ 
+ INCS=		-I${.CURDIR} -I${PREFIX}/include
+-LIBS=		-L${PREFIX}/lib -lSDL_image -lSDL_ttf -lusb -lutil
++.if exists(${SDL_CONFIG})
++LIBS+=		`${SDL_CONFIG} --libs`
++.else
++LIBS+=		-lSDL -pthread
++.endif
++LIBS+=		-L${PREFIX}/lib -lSDL_image -lSDL_ttf -lusb -lutil
+ 
+ CFLAGS?=	-Wall -O2
+-
++.if exists(${SDL_CONFIG})
++CFLAGS+=	`${SDL_CONFIG} --cflags`
++.endif
+ .if defined(TTF_FONT)
+ CFLAGS+=	-DDEFAULT_FONT=\"${TTF_FONT}\"
+ .endif

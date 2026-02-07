@@ -1,0 +1,13 @@
+bin/lottie2gif
+include/rlottie.h
+include/rlottie_capi.h
+include/rlottiecommon.h
+lib/cmake/rlottie/rlottieConfig.cmake
+lib/cmake/rlottie/rlottieConfigVersion.cmake
+lib/cmake/rlottie/rlottieTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/rlottie/rlottieTargets.cmake
+lib/librlottie-image-loader.so
+lib/librlottie.so
+lib/librlottie.so.0
+lib/librlottie.so.0.2
+libdata/pkgconfig/rlottie.pc

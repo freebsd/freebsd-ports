@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Mknod.pm
+%%SITE_ARCH%%/auto/Mknod/Mknod.so
+%%PERL5_MAN3%%/Mknod.3.gz

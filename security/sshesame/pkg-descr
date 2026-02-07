@@ -1,0 +1,3 @@
+sshesame accepts and logs SSH connections and activity (channels, requests),
+without doing anything on the host (e.g. executing commands, making network
+requests).

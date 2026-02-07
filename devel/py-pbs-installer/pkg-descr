@@ -1,0 +1,4 @@
+pbs-installer is an installer for indygreg's python-build-standalone [1]. The
+list of python versions are kept sync with the upstream automatically
+
+[1] https://github.com/indygreg/python-build-standalone

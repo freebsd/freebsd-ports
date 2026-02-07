@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+A sample configuration file is installed at the following location:
+%%PREFIX%%/etc/blocky-config.yml.sample
+
+Default location for configuration file when using rc.d script:
+%%PREFIX%%/etc/blocky-config.yml
+
+With the default configuration, blocky listens on port 53 (TCP and UDP).
+If running as a non-root user, use a different port in blocky configuration,
+such as `port: 5053`, or use mac_portacl(4) to allow binding to port 53.
+
+Example setup for mac_portacl(4):
+
+In /boot/loader.conf:
+
+	mac_portacl_load="YES"
+
+In /etc/sysctl.conf (where <ID> is the UID of your user):
+
+	net.inet.ip.portrange.reservedhigh=0
+	security.mac.portacl.rules=uid:<ID>:tcp:53,uid:<ID>:udp:53
+
+Please refer to the documentation located at
+https://0xerr0r.github.io/blocky/ for further information.
+EOM
+}
+]

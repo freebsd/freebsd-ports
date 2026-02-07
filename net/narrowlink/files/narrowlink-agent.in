@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: narrowlink_agent
+# REQUIRE: NETWORKING SERVERS
+
+. /etc/rc.subr
+
+name="narrowlink_agent"
+rcvar="narrowlink_agent_enable"
+
+narrowlink_gateway_enable=${narrowlink_agent_enable:-"NO"}
+narrowlink_gateway_args=${narrowlink_agent_args:-""}
+
+pidfile=/var/run/${name}.pid
+logfile=/var/log/${name}.log
+procname=%%PREFIX%%/bin/narrowlink-agent
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -o ${logfile} ${procname} ${narrowlink_agent_args}"
+
+mkdir -p /var/run/narrowlink
+cd /var/run/narrowlink
+
+load_rc_config $name
+run_rc_command "$1"

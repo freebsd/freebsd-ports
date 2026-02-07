@@ -1,0 +1,11 @@
+--- mfhdf/libsrc/Makefile.in.orig	2024-02-29 16:34:10 UTC
++++ mfhdf/libsrc/Makefile.in
+@@ -371,7 +371,7 @@ LD = @LD@
+ JNIFLAGS = @JNIFLAGS@
+ JUNIT = @JUNIT@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -version-number 3
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@

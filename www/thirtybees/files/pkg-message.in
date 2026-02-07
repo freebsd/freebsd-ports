@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+thirtybees was installed
+
+1) You can install Apache or nginx as webserver
+
+2) MySQL and MariaDB databases are supported
+
+3) Look for more installation instructions at:
+
+   https://docs.thirtybees.com/installation/
+EOM
+}
+]

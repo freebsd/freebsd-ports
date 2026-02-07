@@ -1,0 +1,13 @@
+- https://github.com/scipopt/zimpl/issues/1
+
+--- CMakeLists.txt.orig	2024-11-09 04:34:10 UTC
++++ CMakeLists.txt
+@@ -47,8 +47,6 @@ set(CMAKE_C_STANDARD 99)
+ 
+ # use C99 standard
+ set(CMAKE_C_STANDARD 99)
+-set(CMAKE_C_VISIBILITY_PRESET hidden)
+-set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
+ 
+ option(ZLIB "use ZLIB" ON)
+ option(SANITIZE_ADDRESS "should the address sanitizer be enabled in debug mode if available" OFF)

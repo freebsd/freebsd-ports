@@ -1,0 +1,7 @@
+Binary runtime library for Polars.
+
+Polars is a DataFrame interface on top of an OLAP Query Engine implemented
+in Rust using Apache Arrow Columnar Format as the memory model.
+
+This port is not to be used by or depended on by any other port
+except for the main py-polars port.

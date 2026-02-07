@@ -1,0 +1,187 @@
+--- sys/unix/Makefile.src.orig	2025-03-15 15:02:36 UTC
++++ sys/unix/Makefile.src
+@@ -184,9 +184,17 @@ SYSOBJ = $(TARGETPFX)ioctl.o $(TARGETPFX)unixmain.o $(
+ 
+ # flags for debugging:
+ # CFLAGS = -g -I../include
++CFLAGS += -I../include -I${LUA_INCDIR}
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS -I${LOCALBASE}/include
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
+ 
+ #CFLAGS = -O -I../include
+-#LFLAGS =
++LFLAGS += -L${LUA_LIBDIR}
++LINK ?= $(CC)
+ 
+ AR = ar
+ ARFLAGS = rcs
+@@ -194,7 +202,7 @@ ARFLAGS = rcs
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
+ # the C++ libraries linked in.
+-CXXFLAGS = $(CCXXFLAGS) -I. -I$(QTDIR)/include $(QTCXXFLAGS)
++CXXFLAGS += $(CCXXFLAGS) -I. -I../include -I$(QTDIR)/include -I${LUA_INCDIR} $(QTCXXFLAGS)
+ CXX ?= g++
+ MOC ?= moc
+ MOCPATH ?= $(QTDIR)/bin/$(MOC)
+@@ -267,7 +275,7 @@ WINX11OBJ = $(TARGETPFX)Window.o $(TARGETPFX)dialogs.o
+ WINX11OBJ = $(TARGETPFX)Window.o $(TARGETPFX)dialogs.o $(TARGETPFX)winX.o \
+ 	$(TARGETPFX)winmap.o $(TARGETPFX)winmenu.o $(TARGETPFX)winmesg.o \
+ 	$(TARGETPFX)winmisc.o $(TARGETPFX)winstat.o $(TARGETPFX)wintext.o \
+-	$(TARGETPFX)winval.o #$(TARGETPFX)tile.o
++	$(TARGETPFX)winval.o $(TARGETPFX)tile.o
+ #
+ # Files for a Qt 3 interface (renamed since nethack 3.6.x)
+ #
+@@ -303,7 +311,7 @@ WINQTOBJ = $(TARGETPFX)qt_bind.o $(TARGETPFX)qt_click.
+ 	$(TARGETPFX)qt_msg.o $(TARGETPFX)qt_plsel.o $(TARGETPFX)qt_rip.o \
+ 	$(TARGETPFX)qt_set.o $(TARGETPFX)qt_stat.o $(TARGETPFX)qt_str.o \
+ 	$(TARGETPFX)qt_streq.o $(TARGETPFX)qt_svsel.o $(TARGETPFX)qt_win.o \
+-	$(TARGETPFX)qt_xcmd.o $(TARGETPFX)qt_yndlg.o #$(TARGETPFX)tile.o
++	$(TARGETPFX)qt_xcmd.o $(TARGETPFX)qt_yndlg.o $(TARGETPFX)tile.o
+ 
+ # Files for Shim windowing interface for libnh -- doesn't do anything,
+ # just passes along the API calls to the library
+@@ -328,6 +336,29 @@ WINBEOBJ =
+ # Curses - Karl Garrison, Tangles
+ #WINSRC = $(WINCURSESSRC)
+ #WINOBJ = $(WINCURSESOBJ)
++
++WINSRC = $(WINTTYSRC) $(WINCURSESSRC)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINSRC += $(WINX11SRC)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINSRC += $(WINQTSRC)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINSRC += $(WINGNOMESRC)
++endif
++
++WINOBJ = $(WINTTYOBJ) $(WINCURSESOBJ)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINOBJ += $(WINX11OBJ)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINOBJ += $(WINQTOBJ)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINOBJ += $(WINGNOMEOBJ)
++endif
++
+ #
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -344,6 +375,7 @@ WINBEOBJ =
+ # WINTTYLIB = -lcurses16
+ # WINTTYLIB = -lncurses
+ #WINTTYLIB = -ltermlib
++WINTTYLIB = -lncurses -L${LOCALBASE}/lib
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+@@ -351,16 +383,19 @@ WINBEOBJ =
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
+ #
+ #
+ # libraries for Qt 3
+-WINQT3LIB = -L$(QTDIR)/lib -lqt
++#WINQTLIB = -L$(QTDIR)/lib -lqt
++#WINQT3LIB = ${QTCFGLIBS} ${LIBQT}
++#WINQTLIB = ${QTCFGLIBS} ${LIBQT}
+ #
+ # libraries for Qt 4
+ WINQT4LIB = `pkg-config QtGui --libs`
+ #
+ # libraries for Qt 5 (use with WINQTSRC and WINQTOBJ)
+-WINQT5LIB = `pkg-config Qt5Gui Qt5Widgets Qt5Multimedia --libs`
++WINQTLIB = `pkg-config Qt5Gui Qt5Widgets Qt5Multimedia --libs`
+ #
+ # libraries for KDE (with Qt)
+ WINKDELIB = -lkdecore -lkdeui -lXext
+@@ -370,7 +405,7 @@ WINBELIB = -lbe
+ #
+ # libraries for curses port
+ # link with ncurses
+-WINCURSESLIB = -lncurses
++WINCURSESLIB = -lncurses -L${LOCALBASE}/lib
+ # link with pdcurses for SDL, installed in a separate directory
+ #WINCURSESLIB = -L/usr/local/lib/pdcurses -lpdcurses -lSDL
+ # same as above, for XCurses
+@@ -380,6 +415,18 @@ WINCURSESLIB = -lncurses
+ #
+ # For Curses
+ #WINLIB = $(WINCURSESLIB)
++
++WINLIB = $(WINTTYLIB)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINLIB += $(WINX11LIB)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINLIB += $(WINQTLIB)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINLIB += $(WINGNOMELIB)
++endif
++
+ #
+ # some platforms need to build the support libraries
+ # BUILDMORE = $(TARGETPFX)pdcurses.a
+@@ -435,7 +482,7 @@ AWK	= awk
+ # skip it--if nethack's sources don't reside in a git repository than
+ # the script which creates that file will fail benignly and 'makedefs -v'
+ # will proceed without it
+-GITINFO=1
++GITINFO=0
+ 
+ # if you change this to 1, feedback while building will omit -Dthis -Wthat
+ # -Isomewhere so that each file being compiled is listed on one short line;
+@@ -443,7 +490,7 @@ GITINFO=1
+ # (rather than just in suffix default rule), such as is implemented by
+ # gnu make and others which have picked up its extensions;
+ # allowed values are 0, 1, and empty (which behaves like 0)
+-QUIETCC=1
++QUIETCC=0
+ 
+ # ----------------------------------------
+ #
+@@ -505,7 +552,7 @@ LUALIB = ../lib/lua/$(LUABASE)
+ LUA_VERSION ?=5.4.6
+ LUABASE = liblua-$(LUA_VERSION).a
+ LUALIB = ../lib/lua/$(LUABASE)
+-LUALIBS = $(LUALIB) -lm $(DLLIB)
++LUALIBS = -llua-${LUA_VER} -lm $(DLLIB)
+ LUAHEADERS = lib/lua-$(LUA_VERSION)/src
+ 
+ # timestamp files to reduce `make' overhead and shorten .o dependency lists
+@@ -644,7 +691,7 @@ pregame:
+ pregame:
+ 	$(PREGAME)
+ 
+-$(GAME):	pregame $(MAKEDEFS) $(LUALIB) $(WAVS) $(SYSTEM)
++$(GAME):	pregame $(MAKEDEFS) $(WAVS) $(SYSTEM)
+ 	@echo "$(GAME) is up to date."
+ 
+ Sysunix: $(HOSTOBJ) $(HOBJ) $(TARGET_HACKLIB) $(DATE_O) $(BUILDMORE) Makefile
+@@ -730,11 +777,11 @@ qt3_kde0.moc: ../win/Qt3/qt3_kde0.h
+ 
+ # outdated Qt 3 windowport meta-object-compiler output
+ qt3_kde0.moc: ../win/Qt3/qt3_kde0.h
+-	$(QTDIR)/bin/moc -o qt3kde0.moc ../win/Qt3/qt3_kde0.h
++	${MOC} -o qt3kde0.moc ../win/Qt3/qt3_kde0.h
+ qt3_win.moc: ../win/Qt3/qt3_win.h
+-	$(QTDIR)/bin/moc -o qt3win.moc ../win/Qt3/qt3_win.h
++	${MOC} -o qt3win.moc ../win/Qt3/qt3_win.h
+ qt3tableview.moc: ../win/Qt3/qt3tableview.h
+-	$(QTDIR)/bin/moc -o qt3tableview.moc ../win/Qt3/qt3tableview.h
++	${MOC} -o qt3tableview.moc ../win/Qt3/qt3tableview.h
+ 
+ #	build monst.o and objects.o before executing '$(MAKE) makedefs'
+ $(MAKEDEFS): $(FIRSTOBJ) \

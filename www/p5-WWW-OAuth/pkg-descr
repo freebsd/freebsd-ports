@@ -1,0 +1,6 @@
+WWW::OAuth implements OAuth 1.0 request authentication according to RFC 5849
+(sometimes referred to as OAuth 1.0A). It does not implement the user agent
+requests needed for the complete OAuth 1.0 authorization flow; it only
+prepares and signs requests, leaving the rest up to your application. It can
+authenticate requests for LWP::UserAgent, Mojo::UserAgent, HTTP::Tiny, and
+can be extended to operate on other types of requests.

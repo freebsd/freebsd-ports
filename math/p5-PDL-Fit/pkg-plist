@@ -1,0 +1,11 @@
+%%SITE_ARCH%%/PDL/Fit.pm
+%%SITE_ARCH%%/PDL/Fit/Gaussian.pm
+%%SITE_ARCH%%/PDL/Fit/LM.pm
+%%SITE_ARCH%%/PDL/Fit/Linfit.pm
+%%SITE_ARCH%%/PDL/Fit/Polynomial.pm
+%%SITE_ARCH%%/auto/PDL/Fit/Gaussian/Gaussian.so
+%%PERL5_MAN3%%/PDL::Fit.3.gz
+%%PERL5_MAN3%%/PDL::Fit::Gaussian.3.gz
+%%PERL5_MAN3%%/PDL::LM.3.gz
+%%PERL5_MAN3%%/PDL::Linfit.3.gz
+%%PERL5_MAN3%%/PDL::Polynomial.3.gz

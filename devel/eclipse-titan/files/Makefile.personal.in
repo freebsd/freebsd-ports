@@ -1,0 +1,11 @@
+TTCN3_DIR := %%STAGEDIR%%%%PREFIX%%/%%TTCN3_DIR%%
+OPENSSL_DIR := %%OPENSSLBASE%%
+#JDKDIR := /usr/lib/jvm/java-7-openjdk-amd64
+XMLDIR := %%LOCALBASE%%
+JNI := no
+GEN_PDF := no
+OLD_LIBEDIT := no
+CXX := %%CXX%%
+CC := %%CC%%
+
+DEMODIR := %%STAGEDIR%%%%EXAMPLESDIR%%

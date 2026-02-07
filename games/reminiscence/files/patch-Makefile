@@ -1,0 +1,22 @@
+--- Makefile.orig	2023-03-31 13:13:09 UTC
++++ Makefile
+@@ -2,13 +2,15 @@
+ SDL_CFLAGS   := `sdl2-config --cflags`
+ SDL_LIBS     := `sdl2-config --libs`
+ 
+-MODPLUG_LIBS := -lmodplug
+-TREMOR_LIBS  := #-lvorbisidec -logg
+-ZLIB_LIBS    := -lz
++MODPLUG_CFLAGS := `pkg-config --cflags libmodplug`
++MODPLUG_LIBS   := `pkg-config --libs libmodplug`
++TREMOR_CFLAGS  := #`pkg-config --cflags vorbisidec`
++TREMOR_LIBS    := #`pkg-config --libs vorbisidec`
++ZLIB_LIBS      := -lz
+ 
+ LIBS = $(SDL_LIBS) $(MODPLUG_LIBS) $(TREMOR_LIBS) $(ZLIB_LIBS)
+ 
+-CXXFLAGS += -Wall -Wextra -Wno-unused-parameter -Wpedantic -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
++CXXFLAGS += -Wall -Wextra -Wno-unused-parameter -Wpedantic -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) $(TREMOR_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
+ 
+ SRCS = collision.cpp cpc_player.cpp cutscene.cpp decode_mac.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp \
+ 	menu.cpp midi_parser.cpp mixer.cpp mod_player.cpp ogg_player.cpp \

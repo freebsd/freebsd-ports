@@ -1,0 +1,2 @@
+%%QT_PLUGINDIR%%/platformthemes/libqgnomeplatform.so
+%%QT_PLUGINDIR%%/wayland-decoration-client/libqgnomeplatformdecoration.so

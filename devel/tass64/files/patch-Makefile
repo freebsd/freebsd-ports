@@ -1,0 +1,20 @@
+--- Makefile.orig	2021-04-25 14:14:20 UTC
++++ Makefile
+@@ -24,8 +24,6 @@ mandir = $(datarootdir)/man
+ man1dir = $(mandir)/man1
+ docdir = $(datarootdir)/doc/$(TARGET)
+ 
+-.SILENT:
+-
+ $(TARGET): $(OBJS)
+ 	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
+ 
+@@ -215,6 +213,8 @@ wchar.o: wchar.c wchar.h inttypes.h
+ wctype.o: wctype.c wctype.h
+ 
+ .PHONY: all clean distclean install install-strip uninstall install-man install-doc
++
++all: $(TARGET)
+ 
+ clean:
+ 	-$(RM) $(OBJS)

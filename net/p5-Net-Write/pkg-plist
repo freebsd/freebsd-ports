@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Net/Write.pm
+%%SITE_PERL%%/Net/Write/Layer.pm
+%%SITE_PERL%%/Net/Write/Layer2.pm
+%%SITE_PERL%%/Net/Write/Layer3.pm
+%%SITE_PERL%%/Net/Write/Layer4.pm
+%%PERL5_MAN3%%/Net::Write.3.gz
+%%PERL5_MAN3%%/Net::Write::Layer.3.gz
+%%PERL5_MAN3%%/Net::Write::Layer2.3.gz
+%%PERL5_MAN3%%/Net::Write::Layer3.3.gz
+%%PERL5_MAN3%%/Net::Write::Layer4.3.gz

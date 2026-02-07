@@ -1,0 +1,20 @@
+--- configure.orig	Mon Jul 26 08:08:51 1999
++++ configure	Sat Jan  8 00:17:56 2000
+@@ -1375,7 +1375,7 @@
+ done
+ 
+ 
+-subdirs="libpcap-0.4 Libnet-0.99b"
++subdirs="Libnet-0.99b"
+ 
+ 
+ trap '' 1 2 15
+@@ -1762,7 +1762,7 @@
+     esac
+   done
+ 
+-  for ac_config_dir in libpcap-0.4 Libnet-0.99b; do
++  for ac_config_dir in Libnet-0.99b; do
+ 
+     # Do not complain, so a configure script can configure whichever
+     # parts of a large source tree are present.

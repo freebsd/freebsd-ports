@@ -1,0 +1,28 @@
+Link against freetype
+
+CMakeFiles/opensurge.dir/src/main.c.o CMakeFiles/opensurge.dir/src/misc/iconlin.c.o -o opensurge  -Wl,-rpath,/usr/local/lib:  -lm  /usr/local/lib/libalure.so  /usr/local/lib/libopenal.so  -lvorbisfile  -lvorbis  -logg  -lstdc++  -lpthread  -ljpgalleg  -lloadpng  -lpng  -lz  -lalfont  -lalleg && :
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Done_Face
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Done_FreeType
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Done_Glyph
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Get_Char_Index
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Get_Glyph
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Glyph_Copy
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Glyph_To_Bitmap
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Init_FreeType
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Load_Glyph
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_New_Face
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_New_Memory_Face
+ld: error: /usr/local/lib/libalfont.so: undefined reference to FT_Set_Pixel_Sizes
+cc: error: linker command failed with exit code 1 (use -v to see invocation)
+
+--- CMakeLists.txt.orig	2021-08-06 13:40:36 UTC
++++ CMakeLists.txt
+@@ -366,7 +366,7 @@ IF(UNIX)
+   SET(GAME_SRCS ${GAME_SRCS} src/misc/iconlin.c)
+   ADD_EXECUTABLE(${GAME_UNIXNAME} ${GAME_SRCS})
+   SET_TARGET_PROPERTIES(${GAME_UNIXNAME} PROPERTIES LINK_FLAGS ${ALLEGRO_UNIX_LIBS})
+-  TARGET_LINK_LIBRARIES(${GAME_UNIXNAME} m ${AUDIO_LIBS} jpgalleg loadpng png z alfont alleg)
++  TARGET_LINK_LIBRARIES(${GAME_UNIXNAME} m ${AUDIO_LIBS} jpgalleg loadpng png z alfont alleg freetype)
+   SET_TARGET_PROPERTIES(${GAME_UNIXNAME} PROPERTIES COMPILE_FLAGS "-Wall -O2 ${CFLAGS} ${CFLAGS_EXTRA}")
+ ENDIF(UNIX)
+ 

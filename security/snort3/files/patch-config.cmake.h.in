@@ -1,0 +1,11 @@
+--- config.cmake.h.in.orig	2024-02-20 18:54:47 UTC
++++ config.cmake.h.in
+@@ -178,5 +178,8 @@
+ /* Define if `thread_local` keyword should be used */
+ #cmakedefine USE_THREAD_LOCAL 1
+ 
++/* Define to 1 if you have the GNU form of the `sighandler_t' function. */
++#cmakedefine HAVE_SIGHANDLER_T 1
++
+ #endif
+ 

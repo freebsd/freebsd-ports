@@ -1,0 +1,17 @@
+#
+# guacd.conf example
+#
+
+[daemon]
+# Possible log_level variables are:
+# trace, debug, info, warning, and error
+# Default is info
+log_level = info
+
+[server]
+bind_host = localhost
+bind_port = 4822
+
+[ssl]
+#server_certificate = /usr/local/etc/ssl/certs/guacd.crt
+#server_key = /usr/local/etc/ssl/private/guacd.key

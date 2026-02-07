@@ -1,0 +1,8 @@
+JIRA is a proprietary bug tracking system from Atlassian
+(http://www.atlassian.com/software/jira/).
+
+This module implements an Object Oriented wrapper around JIRA's
+REST API.
+
+Moreover, it implements some other methods to make it easier to do
+some common operations.

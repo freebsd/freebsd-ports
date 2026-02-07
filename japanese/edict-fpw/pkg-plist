@@ -1,0 +1,4 @@
+share/dict/edict-fpw/catalogs
+share/dict/edict-fpw/edict/data/honmon
+%%PORTDOCS%%%%DOCSDIR%%/edict.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.pkg

@@ -1,0 +1,10 @@
+bin/pdf2pdfa
+bin/pdf2ruby
+bin/pdfcop
+bin/pdfdecompress
+bin/pdfdecrypt
+bin/pdfencrypt
+bin/pdfexplode
+bin/pdfextract
+bin/pdfmetadata
+bin/pdfsh

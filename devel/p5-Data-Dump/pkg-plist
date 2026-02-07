@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Data::Dump.3.gz
+%%PERL5_MAN3%%/Data::Dump::Filtered.3.gz
+%%PERL5_MAN3%%/Data::Dump::Trace.3.gz
+%%SITE_PERL%%/Data/Dump.pm
+%%SITE_PERL%%/Data/Dump/FilterContext.pm
+%%SITE_PERL%%/Data/Dump/Filtered.pm
+%%SITE_PERL%%/Data/Dump/Trace.pm

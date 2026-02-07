@@ -1,0 +1,6 @@
+Tie::DxHash implements a hash which preserves insertion order and allows
+duplicate keys.  It was written to facilitate the use of more complex
+mod_rewrite rules in Apache configuration files written with Perl Sections.
+See the module's POD for details.
+
+Seamus Venasse <svenasse@polaris.ca>

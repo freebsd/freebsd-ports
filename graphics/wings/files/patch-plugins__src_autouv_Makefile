@@ -1,0 +1,11 @@
+--- plugins_src/autouv/Makefile.orig	2020-05-04 17:01:46 UTC
++++ plugins_src/autouv/Makefile
+@@ -19,7 +19,7 @@ include ../../erl.mk
+ ESRC=.
+ WINGS_INTL=../../intl_tools
+ EBIN=../../plugins/autouv
+-WINGS_TOP=../../..
++WINGS_TOP=../..
+ 
+ ifeq ($(TYPE),debug)
+ TYPE_FLAGS=-DDEBUG

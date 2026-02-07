@@ -1,0 +1,12 @@
+--- crude/Makefile.in.orig	2002-06-13 12:15:20 UTC
++++ crude/Makefile.in
+@@ -50,7 +50,7 @@
+ 
+ install: crude
+ 	@if [ ! -d $(bindir) ]; then mkdir -m 0755 $(bindir); fi;
+-	$(INSTALL) crude $(bindir)
++	$(BSD_INSTALL_PROGRAM) crude $(DESTDIR)$(bindir)
+ 	@if [ ! -d $(mandir) ]; then mkdir -m 0755 $(mandir); fi;
+-	$(INSTALL) crude.8 $(mandir)
++	$(BSD_INSTALL_MAN) crude.8 $(DESTDIR)$(mandir)
+ ##############################################################################

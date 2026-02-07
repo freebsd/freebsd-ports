@@ -1,0 +1,7 @@
+bin/couchdb-view-server.pl
+%%SITE_PERL%%/CouchDB/View.pm
+%%SITE_PERL%%/CouchDB/View/Document.pm
+%%SITE_PERL%%/CouchDB/View/Server.pm
+%%PERL5_MAN3%%/CouchDB::View.3.gz
+%%PERL5_MAN3%%/CouchDB::View::Document.3.gz
+%%PERL5_MAN3%%/CouchDB::View::Server.3.gz

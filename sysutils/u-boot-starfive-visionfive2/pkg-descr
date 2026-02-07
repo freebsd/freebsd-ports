@@ -1,0 +1,15 @@
+U-Boot loader and related files for the StarFive VisionFive v2 (JH7110).
+
+The SD card must be formatted with a GPT partition scheme, and expects two
+specific GUID partition types for the SPL and FIT image.
+
+Assuming an SD card device in /dev/da2, execute:
+# gpart create -s gpt da2
+# gpart add -l spl -t \!2E54B353-1271-4842-806F-E436D6AF6985 -b 2m -s 2m da2
+# gpart add -l uboot -t \!BC13C2FF-59E6-4262-A352-B275FD6F7172 -b 4m -s 4m da2
+
+Now, copy the u-boot files to the SD card with dd(1).
+dd if=/usr/local/share/u-boot/u-boot-starfive-visionfive2/u-boot-spl.bin.normal.out \
+    of=/dev/da2p1 conv=sync
+dd if=/usr/local/share/u-boot/u-boot-starfive-visionfive2/u-boot.itb \
+    of=/dev/da2p2 conv=sync

@@ -1,0 +1,15 @@
+A 3D program for creating voxel volumes, a bit similar to Minecraft.
+
+By restricting the volume along a 3D grid, just like pixels do in two
+dimensions, voxels make 3D editing as intuitive as drawing in 2D.
+Voxel art is used in many video games, and also by artists as a
+standalone style.
+
+Make your scene as large as you want.  Goxel uses sparse matrices
+internally so there is not restrictions on how big a model can be.
+
+Use layers to separate parts of the scene into independently editable
+3D models.
+
+Goxel can export to many formats, including: Magica Voxel, Qubicle,
+glTF2, obj, ply, build engine.

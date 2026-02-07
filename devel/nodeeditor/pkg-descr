@@ -1,0 +1,13 @@
+QtNodes is conceived as a general-purpose Qt-based library aimed at
+developing Node Editors for various applications. The library could be
+used for simple graph visualization and editing or extended further for
+using the Dataflow paradigm.
+
+The library is written using the Model-View approach. The whole graph
+structure is defined by a class derived from AbstractGraphModel. It is
+possible to create or add Nodes and Connections. The underlying data
+structures could be of any arbitrary type or representation.
+
+An instance of AbstractGraphModel could or could not be attached to
+specialized QGraphicsScene and QGraphicsView objects. I.e. the so-called
+"headless" modus operandi is possible.

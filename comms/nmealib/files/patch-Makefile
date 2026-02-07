@@ -1,0 +1,8 @@
+--- Makefile.orig	2015-07-16 13:27:40 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CC = gcc 
++CC?= gcc 
+  
+ BIN = lib/libnmea.a 
+ MODULES = generate generator parse parser tok context time info gmath sentence  

@@ -1,0 +1,9 @@
+Terminal based MP3 search, playback and download.
+
+ - Search and stream music
+ - Create playlists
+ - Download music
+ - Works with Python 2.7 and 3.x
+ - Works with Windows, Linux and Mac OS X
+ - No Python dependencies
+ - Requires mplayer or mpv

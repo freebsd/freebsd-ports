@@ -1,0 +1,6 @@
+bin/grutatxt
+bin/pod2grutatxt
+%%SITE_PERL%%/Grutatxt.pm
+%%PERL5_MAN3%%/Grutatxt.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/grutatxt_apache_handlers.txt
+%%PORTDOCS%%%%DOCSDIR%%/grutatxt_markup.txt

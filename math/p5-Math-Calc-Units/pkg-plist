@@ -1,0 +1,17 @@
+bin/ucalc
+%%PERL5_MAN3%%/Math::Calc::Units.3.gz
+%%SITE_PERL%%/Math/Calc/Units.pm
+%%SITE_PERL%%/Math/Calc/Units/Compute.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Base.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Base2Metric.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Byte.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Combo.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Date.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Distance.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Metric.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Multi.pm
+%%SITE_PERL%%/Math/Calc/Units/Convert/Time.pm
+%%SITE_PERL%%/Math/Calc/Units/Grammar.pm
+%%SITE_PERL%%/Math/Calc/Units/Grammar.y
+%%SITE_PERL%%/Math/Calc/Units/Rank.pm

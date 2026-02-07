@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# PROVIDE: keyboard_daemon
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# keyboard_daemon_enable:	Set to no by default; set to yes to enable it.
+# keyboard_daemon_device:	Set to the name of your keyboard device, such
+#				as /dev/ukbd0
+#				CARE-- this will disconnect your keyboard from
+#				the kbdmux, do not use on your only keyboard!
+#
+# Optional:
+#
+# keyboard_daemon_conf:		Defaults to %%PREFIX%%/etc/keyboard-daemon.conf
+
+. /etc/rc.subr
+
+name=keyboard_daemon
+rcvar=keyboard_daemon_enable
+
+load_rc_config keyboard_daemon
+
+: ${keyboard_daemon_enable:=no}
+
+pidfile=/var/run/keyboard-daemon.pid
+required_files=${keyboard_daemon_conf}
+command=%%PREFIX%%/bin/keyboard-daemon
+command_args="-d -p $pidfile ${keyboard_daemon_conf+-f keyboard_daemon_conf} /dev/ukbd0"
+
+start_precmd=keyboard_daemon_prestart
+stop_postcmd="kbdcontrol -a ${keyboard_daemon_device} < /dev/console"
+
+keyboard_daemon_prestart()
+{
+	: ${keyboard_daemon_device:?keyboard_daemon_device must be set in rc.conf}
+	kbdcontrol -A ${keyboard_daemon_device##*/} < /dev/console
+}
+
+run_rc_command $1

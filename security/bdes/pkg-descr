@@ -1,0 +1,9 @@
+The DES cipher should no longer be considered secure. Please consider
+using a more modern alternative.
+
+The bdes utility implements all DES modes of operation described in FIPS
+PUB 81, including alternative cipher feedback mode and both authentica-
+tion modes. The bdes utility reads from the standard input and writes to
+the standard output. By default, the input is encrypted using cipher
+block chaining (CBC) mode. Using the same key for encryption and decryp-
+tion preserves plain text.

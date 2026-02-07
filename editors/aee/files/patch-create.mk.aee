@@ -1,0 +1,20 @@
+--- create.mk.aee.orig	2010-07-18 00:58:19 UTC
++++ create.mk.aee
+@@ -184,7 +184,7 @@ fi
+ # make decisions about use of new_curse.c (use of new_curse is recommended 
+ # rather than local curses)
+ 
+-if [ -n "$terminfo_exists" -a -z "$termcap_exists" ]
++if false
+ then
+ 	echo "Neither terminfo or termcap are on this system!  "
+ 	if [ -f /usr/include/curses.h ]
+@@ -291,7 +291,7 @@ OBJS = aee.o control.o format.o localize
+ 	\$(CC) \$(DEFINES) -c \$*.c \$(CFLAGS)
+ 
+ curses :	\$(OBJS)
+-	\$(CC) -o aee \$(OBJS) \$(CFLAGS) -lcurses 
++	\$(CC) -o aee \$(OBJS) \$(CFLAGS) \$(LDFLAGS) -lncurses 
+ 
+ aee :	\$(OBJS) new_curse.o
+ 	\$(CC) -o aee \$(OBJS) new_curse.o \$(CFLAGS) 

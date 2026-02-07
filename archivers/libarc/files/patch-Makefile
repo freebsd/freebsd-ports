@@ -1,0 +1,41 @@
+--- Makefile.orig	2000-06-13 04:21:19 UTC
++++ Makefile
+@@ -14,23 +14,33 @@ OBJS = inflate.o url.o url_file.o url_in
+        url_hqxdecode.o url_qsdecode.o url_news.o url_newsgroup.o url_cgiesc.o \
+        arc_mime.o
+ 
++SOOBJS = $(OBJS:S/.o/.so/g)
++
+ # readdir_win.o (for Windows)
+ 
+ LIB=libarc.a
+ 
+-
+-all:: $(LIB)
++all:: $(LIB) $(SOLIB) arccat
+ 
+ $(LIB): $(OBJS)
+ 	$(AR) $@ $(OBJS)
+ 	$(RANLIB) $@
+ 
+-arccat: arccat.o $(LIB)
+-	$(CC) -o $@ arccat.o $(LIB)
++$(SOLIB): $(SOOBJS)
++	$(CC) -shared -Wl,-soname -Wl,$@.$(SOVERSION) -o $@.$(SOVERSION) $(SOOBJS)
++	$(LN) $@.$(SOVERSION) $@
++
++arccat: arccat.o $(SOLIB)
++	$(CC) $(CFLAGS) -o $@ arccat.o -L. -larc
+ 
+ clean::
+-	$(RM) $(LIB) *.o arccat *~ libarc/*~
++	$(RM) $(LIB) $(SOLIB).$(SOVERSION) *.o *.so arccat *~ libarc/*~
+ 
++
++.SUFFIXES: .so .c
++
++.c.so:
++	$(CC) $(CFLAGS) -fPIC -fpic -DPIC -c $(.IMPSRC) -o $(.TARGET)
+ install::
+ 	test -d $(PREFIX)/lib || mkdir -p $(PREFIX)/lib
+ 	$(INSTALL) -m 444 $(LIB) $(PREFIX)/lib

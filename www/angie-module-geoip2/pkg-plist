@@ -1,0 +1,5 @@
+%%DOCSDIR%%/README.md
+%%MODDIR%%/ngx_http_geoip2_module.so
+%%MODDIR%%/ngx_stream_geoip2_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_geoip2_module-debug.so
+%%DEBUG%%%%MODDIR%%/ngx_stream_geoip2_module-debug.so

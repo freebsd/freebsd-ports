@@ -1,0 +1,4 @@
+Tes stands for Tool for Elasticsearch. Tes is a command-line tool
+based on python elasticsearch APIs. Following are the various
+subtools under tes which can be used to invoke different kinds of
+elasticsearch APIs.

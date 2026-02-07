@@ -1,0 +1,6 @@
+gobang is a cross-platform TUI database management tool written in Rust.
+
+Features:
+* Cross-platform support (macOS, Windows, Linux)
+* Multiple Database support (MySQL, PostgreSQL, SQLite)
+* Intuitive keyboard only control

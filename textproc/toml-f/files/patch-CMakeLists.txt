@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-04-13 04:01:25 UTC
++++ CMakeLists.txt
+@@ -89,6 +89,8 @@ install(
+ )
+ 
+ # add the testsuite
++if (FREEBSD_BUILD_TESTS)
+ enable_testing()
+ set(fpm-toml "${PROJECT_SOURCE_DIR}/fpm.toml")
+ add_subdirectory("test")
++endif()

@@ -1,0 +1,20 @@
+--- python3/Makefile.in.orig	2024-03-07 22:58:53 UTC
++++ python3/Makefile.in
+@@ -1094,7 +1094,7 @@ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-TESTS
+ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-am
+-all-am: Makefile $(LTLIBRARIES) $(DATA) all-local
++all-am: Makefile $(LTLIBRARIES) $(DATA)
+ installdirs:
+ 	for dir in "$(DESTDIR)$(pkgpylibdir)" "$(DESTDIR)$(exampledatadir)" "$(DESTDIR)$(pkgpylibdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+@@ -1160,7 +1160,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-dist_exampledataDATA \
++install-data-am: \
+ 	install-pkgpylibDATA install-pkgpylibLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook

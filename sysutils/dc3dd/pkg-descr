@@ -1,0 +1,16 @@
+dc3dd is a patched version of GNU dd to include a number of features useful
+for computer forensics. Many of these features were inspired by dcfldd, but
+were rewritten for dc3dd.
+
+- Pattern writes. The program can write a single hexadecimal value or a text
+  string to the output device for wiping purposes.
+- Piecewise and overall hashing with multiple algorithms. Supports MD5, SHA-1,
+  SHA-256, and SHA-512.
+- Progress meter with automatic input/output file size probing.
+- Combined log for hashes and errors.
+- Error grouping. Produces one error message for identical sequential errors.
+- Verify mode. Able to hash output files and compare hashes to the acquisition
+  hash.
+- Ability to split the output into chunks with numerical or alphabetic
+  extensions.
+- Ability to write multiple output files simultaneuously.

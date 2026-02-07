@@ -1,0 +1,18 @@
+usr/bin/xsltproc
+usr/lib/libexslt.so.0
+usr/lib/libexslt.so.0.8.17
+usr/lib/libxslt.so.1
+usr/lib/libxslt.so.1.1.28
+usr/lib64/libexslt.so.0
+usr/lib64/libexslt.so.0.8.17
+usr/lib64/libxslt.so.1
+usr/lib64/libxslt.so.1.1.28
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.gz
+%%PORTDOCS%%%%DOCSDIR%%/Copyright
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/man/man1/xsltproc.1.gz
+@dir usr/lib/libxslt-plugins
+@dir usr/lib64/libxslt-plugins

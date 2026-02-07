@@ -1,0 +1,8 @@
+Runas is a tool for running commands as another user.  It is an
+alternative to "sudo", which has a history of serious security issues,
+and "su", which is inconvenient for anything but running a shell.
+
+The runas command is a simple wrapper around "su" to streamline its
+use.  It differs from "sudo" in that it requires the password of the
+target user rather than the calling user, and it requires no SUID
+permissions or configuration.

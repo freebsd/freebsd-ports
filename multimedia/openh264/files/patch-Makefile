@@ -1,0 +1,13 @@
+# Force gmp plugin to link dynamically against libopenh264
+
+--- Makefile.orig	2017-06-16 04:20:14 UTC
++++ Makefile
+@@ -263,7 +263,7 @@ endif
+ echo-plugin-name:
+ 	@echo $(MODULE)
+ 
+-$(LIBPREFIX)$(MODULE_NAME).$(SHAREDLIBSUFFIXFULLVER): $(MODULE_OBJS) $(ENCODER_OBJS) $(DECODER_OBJS) $(PROCESSING_OBJS) $(COMMON_OBJS)
++$(LIBPREFIX)$(MODULE_NAME).$(SHAREDLIBSUFFIXFULLVER): $(MODULE_OBJS) $(LIBPREFIX)$(PROJECT_NAME).$(SHAREDLIBSUFFIX)
+ 	$(QUIET)rm -f $@
+ 	$(QUIET_CXX)$(CXX) $(SHARED) $(CXX_LINK_O) $+ $(LDFLAGS) $(SHLDFLAGS) $(MODULE_LDFLAGS)
+ ifeq (True, $(PROCESS_FILES))

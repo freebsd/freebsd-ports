@@ -1,0 +1,12 @@
+# Created by Brian Feldman <green@FreeBSD.org>
+# Updated for content by Robert Watson <rwatson@FreeBSD.org>
+#
+$the_cow = "";
+$the_cow .= "        $thoughts\n";
+$the_cow .= "         $thoughts\n";
+$the_cow .= "     .----------------------.\n";
+$the_cow .= "    / \\                     |\\\n";
+$the_cow .= "     \\ \\____________________|_\\\n";
+$the_cow .= "     \\\\/\\______________________\\\n";
+$the_cow .= "      \\| BOX O' STUPID PEOPLE |\n";
+$the_cow .= "       `----------------------'\n";

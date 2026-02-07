@@ -1,0 +1,55 @@
+--- src/memcache_ascii_protocol.c.orig	2023-04-30 11:27:52 UTC
++++ src/memcache_ascii_protocol.c
+@@ -24,7 +24,7 @@
+ #endif
+ 
+ #include "memcache_pool.h"
+-#include "ext/standard/php_smart_string.h"
++#include "Zend/zend_smart_string.h"
+ 
+ typedef struct mmc_ascii_request {
+ 	mmc_request_t	base;							/* enable cast to mmc_request_t */
+--- src/memcache_binary_protocol.c.orig	2023-04-30 11:27:52 UTC
++++ src/memcache_binary_protocol.c
+@@ -34,7 +34,7 @@
+ #include <netinet/in.h>
+ #endif
+ #include "memcache_pool.h"
+-#include "ext/standard/php_smart_string.h"
++#include "Zend/zend_smart_string.h"
+ 
+ #ifdef htonll
+ #undef htonll
+--- src/memcache_pool.c.orig	2023-04-30 11:27:52 UTC
++++ src/memcache_pool.c
+@@ -35,7 +35,7 @@
+ #include "ext/standard/crc32.h"
+ #include "ext/standard/php_var.h"
+ #include "ext/standard/php_string.h"
+-#include "ext/standard/php_smart_string.h"
++#include "Zend/zend_smart_string.h"
+ #include "zend_smart_str.h"
+ #include "memcache_pool.h"
+ 
+--- src/memcache_pool.h.orig	2023-04-30 11:27:52 UTC
++++ src/memcache_pool.h
+@@ -42,7 +42,7 @@
+ #include <string.h>
+ 
+ #include "php.h"
+-#include "ext/standard/php_smart_string_public.h"
++#include "Zend/zend_smart_string_public.h"
+ #include "memcache_queue.h"
+ 
+ /*
+--- src/memcache_session.c.orig	2023-04-30 11:27:52 UTC
++++ src/memcache_session.c
+@@ -29,7 +29,7 @@
+ #include "php_variables.h"
+ 
+ #include "SAPI.h"
+-#include "ext/standard/php_smart_string.h"
++#include "Zend/zend_smart_string.h"
+ #include "ext/standard/url.h"
+ #include "ext/session/php_session.h"
+ #ifdef PHP_WIN32

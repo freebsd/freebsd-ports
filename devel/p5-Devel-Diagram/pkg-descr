@@ -1,0 +1,6 @@
+Devel::Diagram scans the given Perl modules attempting to discover the
+class structure.  It produces a hash table that can be converted to XML
+(or other formats) via Render().
+
+An XSL stylesheet is included that converts the XML class diagram into
+HTML.

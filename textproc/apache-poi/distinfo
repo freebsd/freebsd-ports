@@ -1,0 +1,15 @@
+TIMESTAMP = 1746260871
+SHA256 (poi-5.4.1.jar) = da5abf42da4604c5a7bca38956af6e9d6f196d9b6d4cb7eabee4f480b580d505
+SIZE (poi-5.4.1.jar) = 2996461
+SHA256 (poi-examples-5.4.1.jar) = dafa9640080e206f646ddd8a85c931ffec29353e62436eb41666c47f9dbee783
+SIZE (poi-examples-5.4.1.jar) = 389746
+SHA256 (poi-excelant-5.4.1.jar) = 57211f58a96d6975ae21202ba4ba712218fb5babbb54fa26ac114d967632f74b
+SIZE (poi-excelant-5.4.1.jar) = 28568
+SHA256 (poi-ooxml-5.4.1.jar) = fd200c9e6f74d704160a97e9d52041995ed87439454530001edd920688f19f53
+SIZE (poi-ooxml-5.4.1.jar) = 2037787
+SHA256 (poi-ooxml-full-5.4.1.jar) = c51b051655d58d74d5eb89e7d3736c7052c2574f43c79db0c8a83ad216f6dd37
+SIZE (poi-ooxml-full-5.4.1.jar) = 14246567
+SHA256 (poi-ooxml-lite-5.4.1.jar) = dc590461efdfcd4f27e2a892737979ab5e30b4132a7adfc7c9e56447b71a45b0
+SIZE (poi-ooxml-lite-5.4.1.jar) = 5996003
+SHA256 (poi-scratchpad-5.4.1.jar) = 6497ba15c1cba7062aa71661a8d776d321b1f998bb2bfa19b57d7e35606381f1
+SIZE (poi-scratchpad-5.4.1.jar) = 1909132

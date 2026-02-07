@@ -1,0 +1,5 @@
+vhostcname synchronizes DNS with server names and aliases from Apache
+virtual host configuration.
+
+It is part of dnstools, a set of utilities for DNS management and related
+tasks.

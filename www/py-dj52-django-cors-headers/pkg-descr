@@ -1,0 +1,2 @@
+A Django App that adds CORS (Cross-Origin Resource Sharing) headers to
+responses.

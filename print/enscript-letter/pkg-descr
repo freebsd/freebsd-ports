@@ -1,0 +1,5 @@
+This is a filter that converts text files to PostScript, RTF, or HTML
+and then spools generated output to a printer or dumps it to a file.
+Input files in a number of programming languages, including C, Perl,
+Tcl, and more, can optionally be pretty-printed instead of printed as
+plain-text.  Many printing options are available.

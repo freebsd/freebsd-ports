@@ -1,0 +1,34 @@
+Scilab is a scientific software package for numerical computations in a
+user-friendly environment.
+
+Main features
+    * Hundreds of mathematical functions
+    * High level programming language
+    * 2-D and 3-D graphics
+    * Advanced data structures and user defined data types
+    * Xcos: hybrid dynamic systems modeler and simulator
+2-D and 3-D visualization
+    * Lines
+    * Pie charts
+    * Histograms
+    * Surfaces
+    * Animations
+    * Graphics export in many formats: GIF, BMP, JPEG, SVG, PDF...
+Numerical computation
+    * Linear algebra
+    * Sparse matrices
+    * Polynomials and rational functions
+    * Simulation: explicit and implicit systems of differential
+      equations solvers
+    * Classic and robust control
+    * Differentiable and non-differentiable optimization
+Data analysis
+    * Interpolation, approximation
+    * Signal Processing
+    * Statistics
+Extended features
+    * Graphs and Networks
+    * Interface with Fortran, C, C++, Java
+    * Functions for calling Scilab from C, C++, Fortran and Java
+    * LabVIEW Gateway
+    * A large number of modules available via ATOMS

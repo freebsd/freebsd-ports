@@ -1,0 +1,12 @@
+Katana is a fast crawler focused on execution in automation pipelines
+offering both headless and non-headless crawling.
+
+Features:
+ - Fast And fully configurable web crawling
+ - Standard and Headless mode
+ - JavaScript parsing / crawling
+ - Customizable automatic form filling
+ - Scope control - Preconfigured field / Regex
+ - Customizable output - Preconfigured fields
+ - INPUT - STDIN, URL and LIST
+ - OUTPUT - STDOUT, FILE and JSON

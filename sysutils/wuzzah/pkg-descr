@@ -1,0 +1,3 @@
+Wuzzah is a command-line utility that selectively scans a systems utmpx records
+keeping an eye out for your friends logging in and out. Wuzzah is small, fast,
+efficient and written in C.

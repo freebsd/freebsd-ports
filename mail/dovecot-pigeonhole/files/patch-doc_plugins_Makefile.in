@@ -1,0 +1,10 @@
+--- doc/plugins/Makefile.in.orig	2018-06-29 19:01:40 UTC
++++ doc/plugins/Makefile.in
+@@ -333,6 +333,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ docfiles = \
+ 	imapsieve.txt \
++	imap_filter_sieve.txt \
+ 	sieve_extprograms.txt
+ 
+ @BUILD_DOCS_TRUE@plugins_docdir = $(sieve_docdir)/plugins

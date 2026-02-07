@@ -1,0 +1,9 @@
+#!/bin/sh
+
+FILE="/var/games/nighthawk.scores"
+[ "$2" != "POST-INSTALL" -o -f "$FILE" ] && exit 0
+
+echo "===>   Creating initial high score file $FILE"
+touch $FILE
+chown root:games $FILE
+chmod 664 $FILE

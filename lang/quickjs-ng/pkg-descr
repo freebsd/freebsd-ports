@@ -1,0 +1,6 @@
+QuickJS is a small and embeddable JavaScript engine. It aims to support
+the latest ECMAScript specification.
+
+This project is a fork of the original QuickJS project by Fabrice
+Bellard and Charlie Gordon, after it went dormant, with the intent of
+reigniting its development.

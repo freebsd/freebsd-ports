@@ -1,0 +1,22 @@
+#! /bin/sh -
+
+set -eu
+
+if [ -z "$1" ] || ! expr -- "$1" : "[0-9][0-9]*" >/dev/null; then
+	echo "Usage: $0 NUMBER" 2>/dev/null
+	exit 1
+fi
+
+if [ "$1" -lt 1 ]; then
+	echo "ERROR: NUMBER should be at least 1" 2>/dev/null
+	exit 1
+fi
+
+for n in $(seq 1 "$1"); do
+	user="nixbld${n}"
+	if pw usershow "$user" >/dev/null 2>&1; then
+		continue
+	fi
+	pw useradd "$user" -c "Nix build user $n" -d /var/empty -G nixbld \
+		-g nixbld -s /usr/sbin/nologin
+done

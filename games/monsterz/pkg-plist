@@ -1,0 +1,26 @@
+@(,games,2555) bin/monsterz
+share/man/man6/monsterz.6.gz
+%%DATADIR%%/__pycache__/monsterz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/__pycache__/monsterz.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/applications/monsterz.desktop
+%%DATADIR%%/graphics/background.png
+%%DATADIR%%/graphics/bigtiles.png
+%%DATADIR%%/graphics/board.png
+%%DATADIR%%/graphics/graphics.svg
+%%DATADIR%%/graphics/icon.png
+%%DATADIR%%/graphics/logo.png
+%%DATADIR%%/graphics/pattern.png
+%%DATADIR%%/graphics/tiles.png
+%%DATADIR%%/monsterz.py
+%%DATADIR%%/sound/applause.wav
+%%DATADIR%%/sound/boing.wav
+%%DATADIR%%/sound/click.wav
+%%DATADIR%%/sound/ding.wav
+%%DATADIR%%/sound/duh.wav
+%%DATADIR%%/sound/grunt.wav
+%%DATADIR%%/sound/laugh.wav
+%%DATADIR%%/sound/music.s3m
+%%DATADIR%%/sound/pop.wav
+%%DATADIR%%/sound/warning.wav
+%%DATADIR%%/sound/whip.wav
+@sample(games,games,664) %%SCOREDIR%%/monsterz.sample

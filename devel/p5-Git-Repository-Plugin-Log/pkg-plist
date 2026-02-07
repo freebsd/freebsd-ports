@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Git/Repository/Log.pm
+%%SITE_PERL%%/Git/Repository/Log/Iterator.pm
+%%SITE_PERL%%/Git/Repository/Plugin/Log.pm
+%%PERL5_MAN3%%/Git::Repository::Log.3.gz
+%%PERL5_MAN3%%/Git::Repository::Log::Iterator.3.gz
+%%PERL5_MAN3%%/Git::Repository::Plugin::Log.3.gz

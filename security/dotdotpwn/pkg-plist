@@ -1,0 +1,16 @@
+bin/dotdotpwn
+%%SITE_PERL%%/DotDotPwn/BisectionAlgorithm.pm
+%%SITE_PERL%%/DotDotPwn/FTP.pm
+%%SITE_PERL%%/DotDotPwn/File.pm
+%%SITE_PERL%%/DotDotPwn/Fingerprint.pm
+%%SITE_PERL%%/DotDotPwn/HTTP.pm
+%%SITE_PERL%%/DotDotPwn/HTTP_Url.pm
+%%SITE_PERL%%/DotDotPwn/Payload.pm
+%%SITE_PERL%%/DotDotPwn/STDOUT.pm
+%%SITE_PERL%%/DotDotPwn/TFTP.pm
+%%SITE_PERL%%/DotDotPwn/TraversalEngine.pm
+%%DATADIR%%/User-Agents.txt
+%%DATADIR%%/payload_sample_1.txt
+%%DATADIR%%/payload_sample_2.txt
+%%SITE_PERL%%/DotDotPwn/User-Agents.txt
+@dir %%DATADIR%%/DotDotPwn

@@ -1,0 +1,11 @@
+--- scripts/config-run.orig	2006-11-26 20:11:04 UTC
++++ scripts/config-run
+@@ -176,7 +176,7 @@ then
+ 	fi
+ fi
+ if [ X$MB = X ]
+-then	$ECHON "Probing system for available memory: $ECHOC"
++then	echo $ECHON "Probing system for available memory: $ECHOC"
+ 	MB=`../bin/$OS/memsize 4096`
+ fi
+ TOTAL_MEM=$MB

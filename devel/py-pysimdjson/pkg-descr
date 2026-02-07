@@ -1,0 +1,5 @@
+Python bindings for the simdjson project, a SIMD-accelerated JSON parser. If
+SIMD instructions are unavailable a fallback parser is used, making pysimdjson
+safe to use anywhere.
+
+See also: https://github.com/TkTech/pysimdjson

@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/GD::Text.3.gz
+%%PERL5_MAN3%%/GD::Text::Align.3.gz
+%%PERL5_MAN3%%/GD::Text::Wrap.3.gz
+%%SITE_PERL%%/GD/Text.pm
+%%SITE_PERL%%/GD/Text/Align.pm
+%%SITE_PERL%%/GD/Text/Wrap.pm

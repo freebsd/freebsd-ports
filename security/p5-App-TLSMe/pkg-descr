@@ -1,0 +1,2 @@
+TLS/SSL proxy in front of the application creates a transparent
+encryption tunnel.

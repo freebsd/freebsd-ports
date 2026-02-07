@@ -1,0 +1,8 @@
+--- src/gentables.orig	2015-04-11 18:18:26 UTC
++++ src/gentables
+@@ -1,4 +1,4 @@
+-#!/opt/bin/perl
++#!/usr/bin/env perl
+ 
+ # the generated tables mostly have NOT been checked so far!
+ 

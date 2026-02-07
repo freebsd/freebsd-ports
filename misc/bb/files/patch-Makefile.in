@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Mar 27 19:09:08 2002
++++ Makefile.in	Wed Mar 27 19:08:58 2002
+@@ -87,7 +87,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I.
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ $(LIBMIKMOD_LDADD)
+ bb_OBJECTS =  autopilo.o backconv.o bb.o credits.o credits2.o ctrl87.o \
+ fk1.o fk2.o fk3.o fk4.o formulas.o hh1.o hh2.o hh3.o hh4.o image.o \
+ julia.o kt1.o kt2.o kt3.o kt4.o main.o messager.o minilzo.o ms1.o ms2.o \

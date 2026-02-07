@@ -1,0 +1,4 @@
+Crypt::LibSCEP implements an easy-to-use interface between LibSCEP and Perl
+programs. Its goal is to provide Perl programs with the capability of
+generating and reading messages for the Simple Certificate Enrollment Protocol
+(SCEP).

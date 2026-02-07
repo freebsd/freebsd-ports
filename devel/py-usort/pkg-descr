@@ -1,0 +1,5 @@
+usort is a safe, minimal import sorter. Its primary goal is to make no
+"dangerous" changes to code. This is achieved by detecting distinct "blocks" of
+imports that are the most likely to be safely interchangeable, and only
+reordering imports within these blocks without altering formatting. Code style
+is left as an exercise for linters and formatters.

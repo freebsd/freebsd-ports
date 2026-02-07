@@ -1,0 +1,19 @@
+Vorbis is a general purpose audio and music encoding format
+contemporary to MPEG-4's AAC and TwinVQ, the next generation beyond
+MPEG audio layer 3.  Unlike the MPEG sponsored formats (and other
+proprietary formats such as RealAudio G2 and Windows' flavor of the
+month), the Vorbis CODEC specification belongs to the public domain.
+All the technical details are published and documented, and any
+software entity may make full use of the format without royalty or
+patent concerns.
+
+This package contains:
+
+- libvorbis, a BSD-license software implementation of the Vorbis
+  specification by the Xiphophorus company.
+
+- libvorbisfile, a BSD-license convenience library built on Vorbis
+  designed to simplify common uses.
+
+- libvorbisenc, a BSD-license library that provides a simple,
+  programmatic encoding setup interface.

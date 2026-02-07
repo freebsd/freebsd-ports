@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-06-18 04:45:59 UTC
++++ CMakeLists.txt
+@@ -76,7 +76,7 @@ add_subdirectory(src)
+ 
+ ### DIPjavaio
+ 
+-find_package(Java COMPONENTS Development)
++#find_package(Java COMPONENTS Development)
+ unset(DIP_JAVAIO_INTERFACES)
+ if(JAVA_FOUND)
+    # Set JAVA_HOME so that the JNI found is from the same JDK as the Java package

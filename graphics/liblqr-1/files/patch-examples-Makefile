@@ -1,0 +1,24 @@
+--- examples/Makefile.orig	2009-05-09 16:41:30 UTC
++++ examples/Makefile
+@@ -63,17 +63,17 @@ all: $(tt1out) $(tt2out)
+ 
+ # linking
+ $(tt1out) : $(tt1obj)
+-	g++ $(LINKING_FLAGS) -o $(tt1out) $(tt1obj)
++	$(CXX) $(LINKING_FLAGS) -o $(tt1out) $(tt1obj)
+ 
+ $(tt2out) : $(tt2obj)
+-	g++ $(LINKING_FLAGS) -o $(tt2out) $(tt2obj)
++	$(CXX) $(LINKING_FLAGS) -o $(tt2out) $(tt2obj)
+ 
+ # object building
+ $(tt1).o : $(tt1).cpp $(tt1).h
+-	g++ -c $(OBJ_BUILD_FLAGS) $(tt1).cpp
++	$(CXX) -c $(OBJ_BUILD_FLAGS) $(tt1).cpp
+ 
+ $(tt2).o : $(tt2).cpp
+-	g++ -c $(OBJ_BUILD_FLAGS) $(tt2).cpp
++	$(CXX) -c $(OBJ_BUILD_FLAGS) $(tt2).cpp
+ 
+ #cleanup
+ clean:

@@ -1,0 +1,3 @@
+nEMU is a ncurses-based user interface for QEMU virtualizer. It allows to
+perform installation, cloning, deletion and many other operations using console
+text UI.

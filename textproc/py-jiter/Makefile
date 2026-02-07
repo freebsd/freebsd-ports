@@ -1,0 +1,35 @@
+PORTNAME=	jiter
+DISTVERSION=	0.13.0
+CATEGORIES=	textproc python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	tagattie@FreeBSD.org
+COMMENT=	Fast iterable JSON parser
+WWW=		https://github.com/pydantic/jiter
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/crates/jiter/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.9.4<2.0:devel/py-maturin@${PY_FLAVOR}
+
+USES=		cargo python
+USE_PYTHON=	autoplist pep517
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+
+MAKE_ENV=	${CARGO_ENV}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

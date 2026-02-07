@@ -1,0 +1,15 @@
+Versatile Commodore 8-bit Emulator
+VICE, the multi-platform C64, C128, VIC20, PET and CBM-II emulator.
+
+The following programs are included:
+  - x64, a C64 emulator;
+  - x128, a C128 emulator;
+  - xvic, a VIC20 emulator;
+  - xpet, a PET emulator;
+  - xcbm2, a CBM=II emulator;
+  - c1541, a stand-alone disk image maintenance utility;
+  - petcat, a CBM BASIC de-tokenizer;
+
+LICENSE: GPL2 or later
+
+The ROM files are Copyright by Commodore Business Machines.

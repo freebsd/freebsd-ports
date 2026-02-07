@@ -1,0 +1,7 @@
+TIMESTAMP = 1750640836
+SHA256 (rocky/s/strace-6.12-1.el9.aarch64.rpm) = fd121702060e101505e6cec78f182c0477bacb257bbfe9b23721d9028d30fc59
+SIZE (rocky/s/strace-6.12-1.el9.aarch64.rpm) = 1490213
+SHA256 (rocky/s/strace-6.12-1.el9.x86_64.rpm) = d8742200d9c2bfb4c77eebd4783f163af7b5a6c7809353d3268890f209c08507
+SIZE (rocky/s/strace-6.12-1.el9.x86_64.rpm) = 1568070
+SHA256 (rocky/s/strace-6.12-1.el9.src.rpm) = 8ec35a115005836b9ba3278481ac9a185a4c255c0665c5115d82a182ed14c007
+SIZE (rocky/s/strace-6.12-1.el9.src.rpm) = 2650546

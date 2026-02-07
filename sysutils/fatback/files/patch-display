@@ -1,0 +1,125 @@
+--- Makefile.in	2001-05-30 10:49:02.000000000 -0400
++++ Makefile.in	2010-04-09 22:15:58.000000000 -0400
+@@ -71,3 +71,3 @@
+ 
+-CFLAGS = -g -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
++CFLAGS += -Wformat -Werror
+ bin_PROGRAMS = fatback
+--- output.h	2001-05-30 11:47:04.000000000 -0400
++++ output.h	2010-04-09 21:41:03.000000000 -0400
+@@ -13,5 +13,9 @@
+ 
+ int audit_init(char *, char **);
+-int display(displaylevel_t, char *, ...);
++#ifndef __GNUC__
++#	define __attribute__(x)
++#endif
++int display(displaylevel_t, const char *, ...)
++    __attribute__((format(printf, 2, 3)));
+ void ticmarker(void);
+ void audit_close(void);
+--- output.c	2001-05-30 11:47:04.000000000 -0400
++++ output.c	2010-04-09 21:41:57.000000000 -0400
+@@ -45,7 +45,8 @@
+  * Display arguments to the screen/audit log
+  */
+-int display(displaylevel_t level, char *format, ...)
++int
++display(displaylevel_t level, const char *format, ...)
+ {
+-     va_list arg_list;
++     va_list arg_list, arg_copy;
+      fbvar_t *verbose_var;
+      unsigned verbose;
+@@ -54,6 +55,6 @@
+      /* get the verbosity level from the fatback symbol table */
+      if (!(verbose_var = get_fbvar("verbose"))) {
+-          printf("Error reading variable\n");
+-          return;
++          fprintf(stderr, "Error reading variable named `verbose'.\n");
++          return -1;
+      } else {
+           verbose = verbose_var->val.ival;
+@@ -63,9 +64,10 @@
+      /* print the rest of the arguments in standard printf style */
+      va_start(arg_list, format);
++     if ((level < VERBOSE) || (verbose && level == VERBOSE))
++          va_copy(arg_copy, arg_list);
+      retval = vfprintf(Audit_log, format, arg_list);
+      if ((level < VERBOSE) || (verbose && level == VERBOSE))
+-          vfprintf(ostream, format, arg_list);
++          vfprintf(ostream, format, arg_copy);
+      va_end(arg_list);
+-
+      return retval;
+ }
+@@ -76,10 +78,10 @@
+ void ticmarker(void)
+ {
+-     char *tics = "|/-\\|/-\\";
++     const char *tics = "|/-\\|/-\\";
+      const int numtics = 8;
+      static int currtic;
+ 
+      printf("\r%c", tics[currtic]);
+-     currtic = ++currtic % numtics;
++     currtic = (currtic + 1) % numtics;
+ }
+ 
+--- interface.c	2001-05-30 11:47:03.000000000 -0400
++++ interface.c	2010-04-09 21:39:43.000000000 -0400
+@@ -69,5 +69,5 @@
+           display(NORMAL, "\n");
+           choice = readline(">");
+-          display(LOGONLY, "%s\n");
++          display(LOGONLY, "\n");
+           part = atoi(choice);
+           free(choice);
+--- vbr.c	2001-05-30 11:47:04.000000000 -0400
++++ vbr.c	2010-04-09 20:42:55.000000000 -0400
+@@ -156,5 +156,6 @@
+      /* run the VBR through a quick sanity check */
+      if (!scheck_vbr(vbr, signature)) {
+-          display(NORMAL, "No valid VBR found at offset %d\n", offset);
++          display(NORMAL, "No valid VBR found at offset %lld\n",
++              (long long)offset);
+           return NULL;
+      }
+@@ -281,5 +282,5 @@
+      display(VERBOSE, "total_sects_s: %u\n", vbr->total_sects_s);
+      display(VERBOSE, "media_descriptor: %x\n", vbr->media_descriptor);
+-     display(VERBOSE, "sects_per_fat: %u\n", vbr->sects_per_fat);
++     display(VERBOSE, "sects_per_fat: %lu\n", vbr->sects_per_fat);
+      display(VERBOSE, "sects_per_track: %u\n", vbr->sects_per_track);
+      display(VERBOSE, "num_heads: %u\n", vbr->num_heads);
+--- fatback.c	2001-05-30 11:44:10.000000000 -0400
++++ fatback.c	2010-04-14 13:05:29.000000000 -0400
+@@ -238,5 +238,6 @@
+      }
+      myvbr->fat_entries = num_fat_entries;
+-     display(VERBOSE, "Rood dir location: %lu\n", rdir_loc); 
++     display(VERBOSE, "Rood dir location: %llu\n",
++         (unsigned long long)rdir_loc); 
+      if (!clusts) {
+           display(VERBOSE, "Unable to read FAT in partition\n");
+--- dirtree.c	2001-05-30 11:47:03.000000000 -0400
++++ dirtree.c	2010-04-14 13:07:55.000000000 -0400
+@@ -158,5 +158,7 @@
+                           * point can only be garbage. */
+                          if (lastlogged_clust != clust) {
+-                              display(VERBOSE, "Unrecognized directory information in cluster at offset %lu\n", clust->loc);
++                              display(VERBOSE, "Unrecognized directory "
++                                  "information in cluster at offset %llu\n",
++                                  (unsigned long long)clust->loc);
+                               lastlogged_clust = clust;
+                          }
+--- fat.c	2001-05-30 11:47:03.000000000 -0400
++++ fat.c	2010-04-14 13:09:06.000000000 -0400
+@@ -63,5 +63,6 @@
+      }
+      if (!(clust_array = (*read_fat)(entries, offset, fat_size))) {
+-          display(NORMAL, "Unable to read fat filesystem at offset %l\n", offset);
++          display(NORMAL, "Unable to read fat filesystem at offset %lld\n",
++              (long long)offset);
+           return NULL;
+      }

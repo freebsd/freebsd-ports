@@ -1,0 +1,17 @@
+LZO is a data compression library which is suitable for data
+de-/compression in real-time. This means it favours speed over
+compression ratio.
+
+LZO implements a number of algorithms with the following features:
+   + Decompression is simple and *very* fast.
+   + Requires no memory for decompression.
+   + Compression is pretty fast.
+   + Requires 64 kB of memory for compression.
+   + Allows you to dial up extra compression at a speed cost in the
+     compressor. The speed of the decompressor is not reduced.
+   + Includes compression levels for generating pre-compressed data
+     which achieve a quite competitive compression ratio.
+   + There is also a compression level which needs only 8 kB for
+     compression.
+   + Algorithm is thread safe.
+   + Algorithm is lossless.

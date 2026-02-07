@@ -1,0 +1,12 @@
+--- ext/hls/meson.build.orig	2025-03-11 20:14:44 UTC
++++ ext/hls/meson.build
+@@ -78,7 +78,8 @@ gsthls = library('gsthls',
+   link_args : noseh_link_args,
+   include_directories : [configinc],
+   dependencies : [gstpbutils_dep, gsttag_dep, gstvideo_dep,
+-                  gstadaptivedemux_dep, gsturidownloader_dep,
++                  cc.find_library('gstadaptivedemux-1.0', required: true),
++                  cc.find_library('gsturidownloader-1.0', required: true),
+                   hls_crypto_dep, gio_dep, libm],
+   install : true,
+   install_dir : plugins_install_dir,

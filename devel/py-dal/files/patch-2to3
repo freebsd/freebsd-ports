@@ -1,0 +1,604 @@
+--- dal/dbapi/db_row.py.orig	2008-07-25 06:05:12 UTC
++++ dal/dbapi/db_row.py
+@@ -275,11 +275,11 @@ class MetaFields(type):
+ 
+     for f in fields:
+       if type(f) is not str:
+-        raise TypeError, 'Field names must be ASCII strings'
++        raise TypeError('Field names must be ASCII strings')
+       if not f:
+-        raise ValueError, 'Field names cannot be empty'
++        raise ValueError('Field names cannot be empty')
+       if f in field_names:
+-        raise ValueError, 'Field names must be unique: %s' % f
++        raise ValueError('Field names must be unique: %s' % f)
+ 
+       slots.append(f)
+       field_names[f] = 1
+@@ -313,7 +313,7 @@ class IMetaFields(MetaFields):
+     try:
+       ifields = tuple( [ f.lower() for f in fields ] )
+     except AttributeError:
+-      raise TypeError, 'Field names must be ASCII strings'
++      raise TypeError('Field names must be ASCII strings')
+ 
+     super(IMetaFields,cls).build_properties(cls, ifields, field_dict)
+     field_dict['__fields__'] = tuple(fields)
+@@ -459,7 +459,7 @@ except ImportError:
+       super(IFieldsBase, self).__setattr__(key.lower(),None)
+ 
+ 
+-class Fields(FieldsBase):
++class Fields(FieldsBase, metaclass=MetaFields):
+   '''Fields:
+ 
+      A tuple-like base-class that gains properties to allow access to
+@@ -469,12 +469,10 @@ class Fields(FieldsBase):
+      is case-sensitive, though case-insensitive objects may be created by
+      inheriting from the IFields base-class.
+   '''
+-
+-  __metaclass__ = MetaFields
+   __slots__ = ()
+ 
+ 
+-class IFields(IFieldsBase):
++class IFields(IFieldsBase, metaclass=IMetaFields):
+   '''IFields:
+ 
+      A tuple-like base-class that gains properties to allow access to
+@@ -484,8 +482,6 @@ class IFields(IFieldsBase):
+      is case-insensitive, though case-sensitive objects may be created by
+      inheriting from the Fields base-class.
+   '''
+-
+-  __metaclass__ = IMetaFields
+   __slots__ = ()
+ 
+ 
+@@ -513,7 +509,7 @@ except ImportError:
+         try:
+           return getattr(self.fields,key)
+         except AttributeError:
+-          raise KeyError,key
++          raise KeyError(key)
+       return self.fields.__getitem__(key)
+ 
+     def __setitem__(self, key, value):
+@@ -521,7 +517,7 @@ except ImportError:
+         try:
+           setattr(self.fields,key,value)
+         except AttributeError:
+-          raise KeyError,key
++          raise KeyError(key)
+       else:
+         self.fields.__setitem__(key,value)
+ 
+@@ -530,7 +526,7 @@ except ImportError:
+         try:
+           delattr(self.fields,key)
+         except AttributeError:
+-          raise KeyError,key
++          raise KeyError(key)
+       else:
+         self.fields.__delitem__(key)
+ 
+@@ -544,7 +540,7 @@ except ImportError:
+       self.fields.__delslice__(i, j)
+ 
+     def __hash__(self):
+-      raise NotImplementedError,'Row objects are not hashable'
++      raise NotImplementedError('Row objects are not hashable')
+ 
+     def __len__(self):
+       return len(self.fields)
+@@ -622,7 +618,7 @@ class Row(RowBase):
+ 
+   def items(self):
+     '''r.items() -> tuple of r's (field, value) pairs, as 2-tuples'''
+-    return zip(self.keys(),self.fields)
++    return list(zip(list(self.keys()),self.fields))
+ 
+   def get(self, key, default=None):
+     if not isinstance(key, str):
+@@ -638,14 +634,14 @@ class Row(RowBase):
+ 
+   def dict(self):
+     '''r.dict() -> dictionary mapping r's fields to its values'''
+-    return dict(self.items())
++    return dict(list(self.items()))
+ 
+   def copy(self):
+     '''r.copy() -> a shallow copy of r'''
+     return type(self)(self)
+ 
+   def __hash__(self):
+-    raise NotImplementedError,'Row objects are not hashable'
++    raise NotImplementedError('Row objects are not hashable')
+ 
+ 
+ class IRow(Row):
+@@ -662,7 +658,7 @@ class IRow(Row):
+   def has_key(self, key):
+     if isinstance(key, str):
+       key = key.lower()
+-    return super(IRow, self).has_key(key)
++    return key in super(IRow, self)
+ 
+ 
+ class MetaRowBase(type):
+@@ -789,7 +785,7 @@ class NullRow(type(Nothing)):
+     return 0
+   def __ne__(self, other):
+     return 1
+-  def __nonzero__(self):
++  def __bool__(self):
+     return 0
+ 
+ 
+@@ -802,21 +798,21 @@ def test(cls):
+   assert d['c']==d[2]==d.fields.c==d.fields[2]==3
+ 
+   assert len(d) == 3
+-  assert d.has_key('a')
+-  assert d.has_key('B')
+-  assert d.has_key('c')
++  assert 'a' in d
++  assert 'B' in d
++  assert 'c' in d
+   assert 'd' not in d
+   assert 1 in d
+   assert 2 in d
+   assert 3 in d
+   assert 4 not in d
+-  assert not d.has_key(4)
+-  assert not d.has_key('d')
++  assert 4 not in d
++  assert 'd' not in d
+   assert d[-1] == 3
+   assert d[1:3] == (2,3)
+ 
+-  assert d.keys() == ('a','B','c')
+-  assert d.items() == [('a', 1), ('B', 2), ('c', 3)]
++  assert list(d.keys()) == ('a','B','c')
++  assert list(d.items()) == [('a', 1), ('B', 2), ('c', 3)]
+   assert d.dict()  == {'a': 1, 'c': 3, 'B': 2}
+   assert d.copy() == d
+   assert d == d.copy()
+@@ -849,19 +845,19 @@ def test(cls):
+ 
+   try:
+     d[4]
+-    raise AssertionError, 'Illegal index not caught'
++    raise AssertionError('Illegal index not caught')
+   except IndexError:
+     pass
+ 
+   try:
+     d['f']
+-    raise AssertionError, 'Illegal key not caught'
++    raise AssertionError('Illegal key not caught')
+   except KeyError:
+     pass
+ 
+   try:
+     d.fields.f
+-    raise AssertionError, 'Illegal attribute not caught'
++    raise AssertionError('Illegal attribute not caught')
+   except AttributeError:
+     pass
+ 
+@@ -874,14 +870,14 @@ def test_insensitive(cls):
+   assert d['b']==d['B']==d[1]==d.fields.B==d.fields.b==d.fields[1]==2
+   assert d['c']==d['C']==d[2]==d.fields.C==d.fields.c==d.fields[2]==3
+ 
+-  assert d.has_key('a')
+-  assert d.has_key('A')
+-  assert d.has_key('b')
+-  assert d.has_key('B')
+-  assert d.has_key('c')
+-  assert d.has_key('C')
+-  assert not d.has_key('d')
+-  assert not d.has_key('D')
++  assert 'a' in d
++  assert 'A' in d
++  assert 'b' in d
++  assert 'B' in d
++  assert 'c' in d
++  assert 'C' in d
++  assert 'd' not in d
++  assert 'D' not in d
+ 
+   assert 1 in d
+   assert 2 in d
+@@ -975,37 +971,37 @@ def test_rw(cls):
+ 
+   try:
+     d['g'] = 'illegal'
+-    raise AssertionError,'Illegal setitem'
++    raise AssertionError('Illegal setitem')
+   except KeyError:
+     pass
+ 
+   try:
+     del d['g']
+-    raise AssertionError,'Illegal delitem'
++    raise AssertionError('Illegal delitem')
+   except KeyError:
+     pass
+ 
+   try:
+     d[5] = 'illegal'
+-    raise AssertionError,'Illegal setitem'
++    raise AssertionError('Illegal setitem')
+   except IndexError:
+     pass
+ 
+   try:
+     del d[5]
+-    raise AssertionError,'Illegal delitem'
++    raise AssertionError('Illegal delitem')
+   except IndexError:
+     pass
+ 
+   try:
+     d.fields.g = 'illegal'
+-    raise AssertionError,'Illegal setattr'
++    raise AssertionError('Illegal setattr')
+   except AttributeError:
+     pass
+ 
+   try:
+     del d.fields.g
+-    raise AssertionError,'Illegal delattr'
++    raise AssertionError('Illegal delattr')
+   except AttributeError:
+     pass
+ 
+@@ -1066,25 +1062,25 @@ def test_incomplete(cls):
+ 
+   try:
+     d['B']
+-    raise AssertionError,'Illegal getitem: "%s"' % d['B']
++    raise AssertionError('Illegal getitem: "%s"' % d['B'])
+   except KeyError:
+     pass
+ 
+   try:
+     d['c']
+-    raise AssertionError,'Illegal getitem'
++    raise AssertionError('Illegal getitem')
+   except KeyError:
+     pass
+ 
+   try:
+     d.fields.b
+-    raise AssertionError,'Illegal getattr'
++    raise AssertionError('Illegal getattr')
+   except AttributeError:
+     pass
+ 
+   try:
+     d.fields.c
+-    raise AssertionError,'Illegal getattr'
++    raise AssertionError('Illegal getattr')
+   except AttributeError:
+     pass
+ 
+@@ -1121,12 +1117,12 @@ if __name__ == '__main__':
+   gc.collect()
+   new_objects = len(gc.get_objects()) - orig_objects
+   if new_objects >= N:
+-    print "WARNING: Detected memory leak of %d objects." % new_objects
++    print("WARNING: Detected memory leak of %d objects." % new_objects)
+     if sys.version_info >= (2,2,2):
+-      print "         Please notify jacobs@theopalgroup.com immediately."
++      print("         Please notify jacobs@theopalgroup.com immediately.")
+     else:
+-      print "         You are running a Python older than 2.2.1 or older.  Several"
+-      print "         memory leaks in the core interepreter were fixed in version"
+-      print "         2.2.2, so we strongly recommend upgrading."
++      print("         You are running a Python older than 2.2.1 or older.  Several")
++      print("         memory leaks in the core interepreter were fixed in version")
++      print("         2.2.2, so we strongly recommend upgrading.")
+ 
+-  print 'Tests passed'
++  print('Tests passed')
+--- dal/dbapi/dbapi.py.orig	2008-10-16 05:52:44 UTC
++++ dal/dbapi/dbapi.py
+@@ -83,9 +83,9 @@ print cs.fetchone()[0]
+ 
+ __revision__ = 0.1
+ 
+-import dbtime
+-import dbexceptions
+-import paramstyles
++from . import dbtime
++from . import dbexceptions
++from . import paramstyles
+ 
+ class MWrapper(object):
+     """Wraps DBAPI2 driver."""
+@@ -149,10 +149,10 @@ class MWrapper(object):
+         assert dtmodname in ('py', 'mx', 'native')
+         if dtmodname == 'py':
+             if not dbtime.have_datetime:
+-                raise Exception, 'datetime module not available.'
++                raise Exception('datetime module not available.')
+         elif dtmodname == 'mx':
+             if not dbtime.have_mxDateTime:
+-                raise Exception, 'mx.DateTime module not available.'
++                raise Exception('mx.DateTime module not available.')
+         self.__dtmod = dtmodname
+ 
+     dtmod = property(__getDtMod, __setDtMod)
+@@ -162,7 +162,7 @@ class MWrapper(object):
+ 
+     def __setUseDbRow(self, use_db_row):
+         if use_db_row:
+-            import db_row
++            from . import db_row
+             globals()['db_row'] = db_row
+         self.__use_db_row = use_db_row
+ 
+@@ -265,7 +265,7 @@ class Cursor(object):
+     def __setDbRow(self, use_db_row):
+         """Set value of use_db_row for cursor."""
+         if use_db_row:
+-            import db_row
++            from . import db_row
+             globals()['db_row'] = db_row
+         self.__use_db_row = use_db_row
+ 
+@@ -406,7 +406,7 @@ class Cursor(object):
+                 elif self._mwrapper._convert_bool and typelist[i] == self._driver.BOOLEAN:
+                     boolpos.append(i)
+         # loop through data to make changes
+-        for i in xrange(len(results)):
++        for i in range(len(results)):
+             set = results[i]
+             # make datetime objects
+             if len(datepos) > 0 or len(boolpos) > 0:
+--- dal/dbapi/dbtime.py.orig	2008-10-03 11:24:17 UTC
++++ dal/dbapi/dbtime.py
+@@ -98,7 +98,7 @@ def mx2pydt(mxdt):
+         else:   
+             return mx2pydtdelta(mxdt)
+     else:
+-        raise Exception, 'Not a mx datetime type.'
++        raise Exception('Not a mx datetime type.')
+ 
+ # Python datetime to mx.DateTime conversion functions
+ 
+@@ -148,7 +148,7 @@ def py2mxdt(pydt):
+     elif type(pydt) == datetime.timedelta:
+         return py2mxdtdelta(pydt)
+     else:
+-        raise Exception, 'Not a Python datetime type.'
++        raise Exception('Not a Python datetime type.')
+ 
+ # Date and Time constructors
+ 
+@@ -160,7 +160,7 @@ def construct_date(dtpref, year, month, day):
+         return mx.DateTime.Date(year, month, day)
+     else:
+         # what exception should be raised here?
+-        raise Exception, 'Improper DATETIME set.'
++        raise Exception('Improper DATETIME set.')
+ 
+ def construct_time(dtpref, hour, minute, second):
+     """Creates time object for preferred type."""
+@@ -170,7 +170,7 @@ def construct_time(dtpref, hour, minute, second):
+         return mx.DateTime.Time(hour, minute, second)
+     else:
+         # what exception should be raised here?
+-        raise Exception, 'Improper DATETIME set.'
++        raise Exception('Improper DATETIME set.')
+ 
+ def construct_timestamp(dtpref, year, month, day, hour, minute, second):
+     """Creates timestamp object for preferred type."""
+@@ -180,7 +180,7 @@ def construct_timestamp(dtpref, year, month, day, hour
+         return mx.DateTime.DateTime(year, month, day, hour, minute, second)
+     else:
+         # what exception should be raised here?
+-        raise Exception, 'Improper DATETIME set.'
++        raise Exception('Improper DATETIME set.')
+ 
+ def construct_datefromticks(dtpref, ticks):
+     """Creates date object for preferred type and ticks."""
+@@ -190,7 +190,7 @@ def construct_datefromticks(dtpref, ticks):
+         return mx.DateTime.DateFromTicks(ticks)
+     else:
+         # what exception should be raised here?
+-        raise Exception, 'Improper DATETIME set.'
++        raise Exception('Improper DATETIME set.')
+ 
+ def construct_timefromticks(dtpref, ticks):
+     """Creates time object for preferred type and ticks."""
+@@ -200,7 +200,7 @@ def construct_timefromticks(dtpref, ticks):
+         return mx.DateTime.TimeFromTicks(ticks)
+     else:
+         # what exception should be raised here?
+-        raise Exception, 'Improper DATETIME set.'
++        raise Exception('Improper DATETIME set.')
+ 
+ def construct_timestampfromticks(dtpref, ticks):
+     """Creates timestamp object for preferred type and ticks."""
+@@ -210,7 +210,7 @@ def construct_timestampfromticks(dtpref, ticks):
+         return mx.DateTime.localtime(ticks)
+     else:
+         # what exception should be raised here?
+-        raise Exception, 'Improper DATETIME set.'
++        raise Exception('Improper DATETIME set.')
+ 
+ # Other functions
+ 
+@@ -250,25 +250,25 @@ def dtsubnative(dtpref, dbmod, params):
+                 # not a datetime field
+                 pass
+         else:
+-            raise ValueError, 'dbpref value not known.'
++            raise ValueError('dbpref value not known.')
+         return nparam
+ 
+     def convert_dparams(dparams):
+         # Convert dictionary of parameters.
+-        for key, value in dparams.items():
++        for key, value in list(dparams.items()):
+             dparams[key] = convertdt(value)
+         return dparams
+ 
+     if type(params) == dict:
+         params = convert_dparams(params)
+     elif type(params) == list:
+-        for key in xrange(len(params)):
++        for key in range(len(params)):
+             if type(params[key]) == dict:
+                 params[key] = convert_dparams(params[key])
+             else:
+                 params[key] = convertdt(params[key])
+     else:
+-        raise ValueError, 'params should be list or dict.'
++        raise ValueError('params should be list or dict.')
+     return params
+ 
+ def native2pref(nativedt, pref, dt_type=None, conv_func=None):
+@@ -283,7 +283,7 @@ def native2pref(nativedt, pref, dt_type=None, conv_fun
+         elif dto_class == 'mx' and pref == 'py':
+             return mx2pydt(dto)
+         else:
+-            raise Exception, 'unknown dto_class/pref combination'
++            raise Exception('unknown dto_class/pref combination')
+     if isinstance(nativedt, datetime.datetime) and nativedt.tzinfo == None and server_tzinfo != None and local_tzinfo != None:
+         nativedt = datetime.datetime(nativedt.year, nativedt.month, nativedt.day, nativedt.hour, nativedt.minute, nativedt.second, nativedt.microsecond, server_tzinfo).astimezone(local_tzinfo)
+     # what type of object is this?
+@@ -428,5 +428,5 @@ def main():
+     assert pydtd.microseconds == mxdtd_msec
+ 
+ if __name__ == '__main__':
+-    for i in xrange(1000):
++    for i in range(1000):
+         main()
+--- dal/dbapi/dtuple.py.orig	2008-07-25 06:05:12 UTC
++++ dal/dbapi/dtuple.py
+@@ -48,7 +48,7 @@ class TupleDescriptor:
+     """
+     self.desc = tuple(desc)
+     ### validate the names?
+-    self.names = map(lambda x: x[0], desc)
++    self.names = [x[0] for x in desc]
+     self.namemap = { }
+     for i in range(len(self.names)):
+       self.namemap[self.names[i]] = i
+@@ -145,7 +145,7 @@ class DatabaseTuple:
+   def __setattr__(self, name, value):
+     'Simulate attribute-access via column names'
+     ### need to redirect into a db update
+-    raise TypeError, "can't assign to this subscripted object"
++    raise TypeError("can't assign to this subscripted object")
+ 
+   def __getitem__(self, key):
+     'Simulate indexed (tuple/list) and mapping-style access'
+@@ -157,9 +157,9 @@ class DatabaseTuple:
+     'Simulate indexed (tuple/list) and mapping-style access'
+     if type(key) == type(1):
+       ### need to redirect into a db update of elem #key
+-      raise TypeError, "can't assign to this subscripted object"
++      raise TypeError("can't assign to this subscripted object")
+     ### need to redirect into a db update of elem named key
+-    raise TypeError, "can't assign to this subscripted object"
++    raise TypeError("can't assign to this subscripted object")
+   
+   def __len__(self):
+     return len(self._data_)
+@@ -171,7 +171,7 @@ class DatabaseTuple:
+   def __setslice__(self, i, j, list):
+     'Simulate list/tuple slicing access'
+     ### need to redirect into a db update of elems
+-    raise TypeError, "can't assign to this subscripted object"
++    raise TypeError("can't assign to this subscripted object")
+   
+   def _keys_(self):
+     "Simulate mapping's methods"
+@@ -183,7 +183,7 @@ class DatabaseTuple:
+   
+   def _items_(self):
+     "Simulate mapping's methods"
+-    return self.asMapping().items()
++    return list(self.asMapping().items())
+   
+   def _count_(self, item):
+     "Simulate list's methods"
+@@ -214,7 +214,7 @@ class DatabaseTuple:
+   def asMapping(self):
+     'Return the "tuple" as a real mapping'
+     value = { }
+-    for name, idx in self._desc_.namemap.items():
++    for name, idx in list(self._desc_.namemap.items()):
+       value[name] = self._data_[idx]
+     return value
+     
+@@ -224,4 +224,4 @@ class DatabaseTuple:
+ 
+   def asList(self):
+     'Return the "list" as a real mapping'
+-    return map(None, self._data_)
++    return list(self._data_)
+--- dal/dbapi/paramstyles.py.orig	2008-07-25 06:05:12 UTC
++++ dal/dbapi/paramstyles.py
+@@ -256,7 +256,7 @@ def segmentize( string ):
+     if current_segment != '':
+         segments.append(current_segment)
+     if quoted:
+-        raise SegmentizeError, 'Unmatched quotes in string'
++        raise SegmentizeError('Unmatched quotes in string')
+ 
+     return segments
+ 
+@@ -334,7 +334,7 @@ def convert( from_paramstyle, to_paramstyle, query, pa
+     try:
+         convert_function = CONVERSION_MATRIX[from_paramstyle][to_paramstyle]
+     except KeyError:
+-        raise NotImplementedError, 'Unsupported paramstyle conversion: %s to %s' % (from_paramstyle, to_paramstyle)
++        raise NotImplementedError('Unsupported paramstyle conversion: %s to %s' % (from_paramstyle, to_paramstyle))
+ 
+     new_query, new_params = convert_function(query, params)
+ 
+@@ -362,25 +362,25 @@ if __name__ == '__main__':
+     }
+     indent = 4
+     width = 16
+-    print ''
+-    print '[ PARAMSTYLE TRANSLATIONS ]'
+-    print ''
++    print('')
++    print('[ PARAMSTYLE TRANSLATIONS ]')
++    print('')
+     for from_paramstyle in PARAMSTYLES['all']:
+         query  = tests[from_paramstyle][0]
+         params = tests[from_paramstyle][1]
+-        print ''
+-        print '%s[ %s ]' % (' ' * indent, from_paramstyle.upper())
+-        print ''
++        print('')
++        print('%s[ %s ]' % (' ' * indent, from_paramstyle.upper()))
++        print('')
+         label = 'query'
+-        print '%s%s%s: %s' % (' ' * indent, label, '.' * (width + indent - len(label)), query)
++        print('%s%s%s: %s' % (' ' * indent, label, '.' * (width + indent - len(label)), query))
+         label = 'paramstyle'
+-        print '%s%s%s: %s' % (' ' * indent, label, '.' * (width + indent - len(label)), from_paramstyle)
+-        print ''
++        print('%s%s%s: %s' % (' ' * indent, label, '.' * (width + indent - len(label)), from_paramstyle))
++        print('')
+         for to_paramstyle in PARAMSTYLES['all']:
+             converted_query, converted_params = convert(from_paramstyle, to_paramstyle, query, params)
+             label = '%s_query' % (to_paramstyle)
+-            print '%s%s%s: %s' % (' ' * indent * 2, label, '.' * (width - len(label)), converted_query)
++            print('%s%s%s: %s' % (' ' * indent * 2, label, '.' * (width - len(label)), converted_query))
+             label = '%s_params' % (to_paramstyle)
+-            print '%s%s%s: %s' % (' ' * indent * 2, label, '.' * (width - len(label)), converted_params)
+-        print ''
++            print('%s%s%s: %s' % (' ' * indent * 2, label, '.' * (width - len(label)), converted_params))
++        print('')
+ 

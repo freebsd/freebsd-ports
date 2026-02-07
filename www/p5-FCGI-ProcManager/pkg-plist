@@ -1,0 +1,4 @@
+%%SITE_PERL%%/FCGI/ProcManager.pm
+%%SITE_PERL%%/FCGI/ProcManager/Constrained.pm
+%%PERL5_MAN3%%/FCGI::ProcManager.3.gz
+%%PERL5_MAN3%%/FCGI::ProcManager::Constrained.3.gz

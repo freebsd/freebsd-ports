@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/DBD/InterBase.pm
+%%SITE_ARCH%%/DBD/InterBase/GetInfo.pm
+%%SITE_ARCH%%/DBD/InterBase/TypeInfo.pm
+%%SITE_ARCH%%/auto/DBD/InterBase/InterBase.so
+%%PERL5_MAN3%%/DBD::InterBase.3.gz

@@ -1,0 +1,58 @@
+- AC_PATH_PROG(SH,bash sh)
+  this only checks whether bash exists in ${PATH}, not sh
+  AC_PATH_PROGS() is suppose to check for each program in the blank-separated list,
+  and there is no bash in the FreeBSD base system.
+
+- AC_CHECK_TARGET_TOOLS(OBJDUMP,gobjdump objdump)
+  /usr/bin/objdump (the GNU version) was removed from the FreeBSD base system
+  https://cgit.freebsd.org/src/commit/?id=0ad202f312f6da4f2774ecb7a3f3c2a05b3dde5f
+  add llvm-objdump to the list for ${OBJDUMP}.
+
+- AC_SEARCH_LIBS(MD5Init,md,AC_DEFINE([HAVE_LIBMD5], [1], [Define to 1 if you have the md5 library]),)
+  PR 273735: fails to build if www/libwww installed
+  Remove md5 and only searches for md here to avoid linking with lib/libmd5.*
+  installed by www/libwww.
+
+- CFLAGS="-O0" was introduced since mbuffer-20250429, this overrides the PIE_CFLAGS
+  if the port is built with WITH_PIE, while LDFLAGS=-pie is passed to the compiler,
+  and it results in this error message:
+  ld: error: relocation R_X86_64_64 cannot be used against local symbol; recompile with -fPIC
+
+--- configure.in.orig	2025-04-29 23:11:07 UTC
++++ configure.in
+@@ -104,7 +104,7 @@ AC_PROG_INSTALL
+ AC_SUBST(CFLAGS)
+ 
+ AC_PROG_INSTALL
+-AC_PATH_PROG(SH,bash sh)
++AC_PATH_PROG(SH,sh)
+ AC_PATH_PROG(RM,rm)
+ AC_PATH_PROG(CP,cp)
+ AC_PATH_PROG(MT,mt,AC_MSG_WARN(could not find the program mt - you might need this if you want autoloader support))
+@@ -113,7 +113,7 @@ AC_STRUCT_ST_BLKSIZE
+ AC_SYS_LARGEFILE
+ AC_STRUCT_ST_BLKSIZE
+ 
+-AC_CHECK_TARGET_TOOLS(OBJDUMP,gobjdump objdump)
++AC_CHECK_TARGET_TOOLS(OBJDUMP,gobjdump objdump llvm-objdump)
+ 
+ AC_HEADER_ASSERT
+ AC_CHECK_LIB(pthread, pthread_mutex_init)
+@@ -145,7 +145,7 @@ if test x$enable_md5 != xno ; then
+ 	,enable_md5=auto
+ 	)
+ if test x$enable_md5 != xno ; then
+-	AC_SEARCH_LIBS(MD5Init,md5 md,AC_DEFINE([HAVE_LIBMD5], [1], [Define to 1 if you have the md5 library]),)
++	AC_SEARCH_LIBS(MD5Init,md,AC_DEFINE([HAVE_LIBMD5], [1], [Define to 1 if you have the md5 library]),)
+ 	AC_CHECK_HEADER(md5.h,AC_DEFINE([HAVE_MD5_H],[1],[found md5.h]),)
+ 	AC_SEARCH_LIBS(MD5_Init,crypto,AC_DEFINE([HAVE_LIBCRYPTO], [1], [Define to 1 if you have the OpenSSL crypto library]),)
+ fi
+@@ -156,7 +156,7 @@ else
+ 	AC_MSG_WARN([unable to find objdump, which is needed to run tests])
+ else
+ 	cflags_tmp="${CFLAGS}"
+-	CFLAGS="-O0"
++	CFLAGS="${CFLAGS} -O0"
+ 	AC_MSG_CHECKING([linking open() and write() to detect libc names])
+ 	AC_LINK_IFELSE([
+ 	AC_LANG_SOURCE([[

@@ -1,0 +1,4 @@
+bin/carbon-relay-ng
+@sample %%ETCDIR%%/carbon-relay-ng.ini.sample
+@dir(carbon,carbon,0755) /var/run/carbon-relay-ng/spool
+@dir(carbon,carbon,0755) /var/run/carbon-relay-ng

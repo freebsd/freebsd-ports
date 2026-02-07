@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2016-08-27 09:36:16 UTC
++++ Makefile.am
+@@ -1,4 +1,4 @@
+ SUBDIRS = getopt src tools doc
+ 
+-docdir = $(prefix)/doc/portfwd
++docdir = $(prefix)/share/doc/portfwd
+ doc_DATA = COPYING README CREDITS TODO

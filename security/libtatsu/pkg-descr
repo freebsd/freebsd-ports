@@ -1,0 +1,6 @@
+Library handling the communication with Apple's Tatsu Signing Server
+(TSS).
+
+This library is part of the libimobiledevice project and its main
+purpose is to create TSS request payloads, send them to Apple's TSS
+server, and ultimately retrieve and process the response.

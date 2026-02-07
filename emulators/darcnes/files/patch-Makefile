@@ -1,0 +1,51 @@
+--- Makefile.orig	2001-03-28 00:51:41 UTC
++++ Makefile
+@@ -11,16 +11,16 @@ TARGET?=Linux_X
+ 
+ #C_ONLY=-DC_ONLY
+ 
+-MACH_TYPES=-DMACH_TYPES=\"types-i386.h\"
++#MACH_TYPES=-DMACH_TYPES=\"types-i386.h\"
+ 
+ #BYTE_ORDER=-DMSB_FIRST
+-BYTE_ORDER=-DLSB_FIRST
++#BYTE_ORDER=-DLSB_FIRST
+ 
+-DEBUG=-g
++#DEBUG=-g
+ 
+-OPTFLAGS=-O2 -fomit-frame-pointer
++#OPTFLAGS=-O2 -fomit-frame-pointer
+ 
+-BASE_CFLAGS=-Wall $(DEBUG) $(OPTFLAGS) $(C_ONLY) $(BYTE_ORDER) $(MACH_TYPES)
++BASE_CFLAGS=-Wall $(DEBUG) $(OPTFLAGS) $(C_ONLY) $(MACH_TYPES)
+ BASE_SFLAGS=-Wall $(DEBUG) $(OPTFLAGS)
+ BASE_LDFLAGS=
+ 
+@@ -33,8 +33,12 @@ endif
+ #
+ ifeq ($(TARGET),Linux_svgalib)
+ CONFFLAGS=-DPCE_CD_SUPPORT -DSOUND
++LOCALBASE?=/usr/local
++LDFLAGS+=-L${LOCALBASE}/lib
++CFLAGS+=-I${LOCALBASE}/include
++SFLAGS+=-I${LOCALBASE}/include
+ SYSTEMSRCS=video_svga.c ui_svga.c snd_unix.c cd_unix.c
+-BINFILE=sdarcnes
++BINFILE=darcnes
+ LIBS=-lvgagl -lvga
+ endif
+ 
+@@ -43,9 +47,9 @@ endif
+ #
+ ifeq ($(TARGET),Linux_X)
+ CONFFLAGS=-DPCE_CD_SUPPORT -DSOUND
+-LDFLAGS+=-L/usr/X11R6/lib
+-CFLAGS+=-I/usr/X11R6/include
+-SFLAGS+=-I/usr/X11R6/include
++LDFLAGS+=-L${LOCALBASE}/lib
++CFLAGS+=-I${LOCALBASE}/include
++SFLAGS+=-I${LOCALBASE}/include
+ SYSTEMSRCS=video_x.c ui_x.c snd_unix.c keyboard_x.c cd_unix.c
+ BINFILE=darcnes
+ LIBS=-lXext -lXaw -lXmu -lXt -lX11

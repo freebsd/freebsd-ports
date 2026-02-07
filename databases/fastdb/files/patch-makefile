@@ -1,0 +1,91 @@
+--- makefile.orig	2014-12-28 21:25:00.000000000 +0200
++++ makefile	2014-12-28 21:33:28.000000000 +0200
+@@ -8,13 +8,13 @@ DEBUG?=1
+ PREFIX ?= /usr/local
+ 
+ # Place where to copy FastDB header files
+-INCSPATH=$(PREFIX)/include/fastdb
++INCSPATH=$(DESTDIR)$(PREFIX)/include/fastdb
+ 
+ #Place where to copy Fastdb library
+-LIBSPATH=$(PREFIX)/lib
++LIBSPATH=$(DESTDIR)$(PREFIX)/lib
+ 
+ #Place where to copy Fastdb subsql utility
+-BINSPATH=$(PREFIX)/bin
++BINSPATH=$(DESTDIR)$(PREFIX)/bin
+ 
+ ifdef NO_PTHREADS
+ OBJS = class.o compiler.o database.o xml.o hashtab.o file.o symtab.o ttree.o rtree.o container.o \
+@@ -38,8 +38,8 @@ TFLAGS=-DNO_PTHREADS
+ THRLIBS=
+ SUFF=
+ else
+-TFLAGS=-pthread
+-THRLIBS=-pthread
++TFLAGS=-D_REENTRANT
++THRLIBS=-lpthread
+ SUFF=_r
+ endif
+ 
+@@ -65,23 +65,23 @@ EXAMPLES = guess testdb testleak testfra
+ 
+ WEB_EXAMPLES = cgistub bugdb clidb
+ 
+-CC = g++
++CC = ${CXX}
+ 
+ # DEFS macro is deprecatred, edit config.h file instead
+ DEFS = -Wno-invalid-offsetof -Wno-write-strings
+ 
+ ifeq ($(DEBUG), 1)
+-CFLAGS = -c -Iinc -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
++CFLAGS = -c -Iinc ${CXXFLAGS} -fPIC $(DEFS) $(TFLAGS)
+ else
+ CFLAGS = -c -Iinc -Wall -O5 -g -fPIC $(DEFS) $(TFLAGS)
+ endif
+ 
+-#SHFLAGS=-shared -Wl,-soname,$@
+-SHFLAGS=-shared
++SHFLAGS=-shared -Wl,-soname,$@
++#SHFLAGS=-shared
+ 
+ 
+ LD = $(CC)
+-LDFLAGS = -g $(TFLAGS)
++LDFLAGS = $(TFLAGS)
+ 
+ AR = ar
+ ARFLAGS = -cru
+@@ -439,17 +439,15 @@ examples/TestIndex.class: examples/TestI
+ 
+ install: subsql cleanupsem inspectsem installlib
+ 	mkdir -p $(BINSPATH)
+-	cp subsql $(BINSPATH)
+-	strip $(BINSPATH)/subsql
+-	cp cleanupsem $(BINSPATH)
+-	cp inspectsem $(BINSPATH)
+-
++	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
++	${BSD_INSTALL_PROGRAM} cleanupsem $(BINSPATH)
++	${BSD_INSTALL_PROGRAM} inspectsem $(BINSPATH)
+ 
+ installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
+ 	mkdir -p $(INCSPATH)
+-	cp $(INCS) $(INCSPATH)
++	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
+ 	mkdir -p $(LIBSPATH)
+-	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
++	${BSD_INSTALL_LIB} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+ 	(cd $(LIBSPATH) && ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so \
+ 	 && ln -f -s $(CLI_SHARED) libcli$(SUFF).so)
+ 	if [ -f $(JNI_LIB) ]; then cp $(JNI_LIB) $(LIBSPATH); \
+@@ -457,7 +455,7 @@ installlib: $(FASTDB_LIB) $(CLI_LIB) $(F
+ 
+ uninstall:
+ 	rm -fr $(INCSPATH)
+-	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(JNI_LIB) libfastdb$(SUFF).so libjnicli.so libcli$(SUFF).so
++	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) libfastdb$(SUFF).so libcli$(SUFF).so
+ 	rm $(BINSPATH)/subsql
+ 
+ cleanobj:

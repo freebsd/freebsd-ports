@@ -1,0 +1,139 @@
+--- tests/syntax.test.orig	2013-05-13 17:26:43.000000000 +0200
++++ tests/syntax.test	2013-05-13 17:26:27.000000000 +0200
+@@ -15,20 +15,20 @@
+     namespace import ::tcltest::*
+ }
+ 
+-package require shape
++package require Shape
+ 
+ # top-level error messages
+ test syntax-1.1 {Shape needs subcommand} {
+     list [catch {
+ 	shape
+     } msg] $msg
+-} {1 "wrong # args: should be \"shape subcommand ?window arg ...?\""}
++} {1 {wrong # args: should be "shape subcommand ?window arg ...?"}}
+ test syntax-1.2 {Shape subcommand list} {
+     list [catch {
+ 	shape Dummy
+     } msg] $msg
+-} {1 "bad subcommand \"Dummy\": must be\
+-	bounds, get, offset, set, update, or version"}
++} {1 {bad subcommand "Dummy": must be\
++	bounds, get, offset, set, update, or version}}
+ test syntax-1.3 {Variables were created} {
+     list [info exist shape_version] [info exist shape_patchLevel]
+ } {1 1}
+@@ -38,7 +38,7 @@
+     list [catch {
+ 	shape version Dummy
+     } msg] $msg
+-} {1 " wrong # args: should be \"shape version\""}
++} {1 {wrong # args: should be "shape version"}}
+ test syntax-2.2 {Shape version: result format} {
+     string is double -strict [shape version]
+ } {1}
+@@ -48,84 +48,84 @@
+     list [catch {
+ 	shape set
+     } msg] $msg
+-} {1 "wrong # args: should be \"shape set pathName ?options?\""}
++} {1 {wrong # args: should be "shape set pathName ?options?"}}
+ test syntax-3.2 {Shape set: needs window pathname} {
+     list [catch {
+ 	shape set not-a-window
+     } msg] $msg
+-} {1 "bad window path name \"not-a-window\""}
++} {1 {bad window path name "not-a-window"}}
+ 
+ # get subcommand
+ test syntax-4.1 {Shape get: command format} {
+     list [catch {
+ 	shape get
+     } msg] $msg
+-} {1 "wrong # args: should be \"shape get pathName ?-bounding/-clip?\""}
++} {1 {wrong # args: should be "shape get pathName ?-bounding/-clip?"}}
+ test syntax-4.2 {Shape get: command format} {
+     list [catch {
+ 	shape get ? ? ?
+     } msg] $msg
+-} {1 "wrong # args: should be \"shape get pathName ?-bounding/-clip?\""}
++} {1 {wrong # args: should be "shape get pathName ?-bounding/-clip?"}}
+ test syntax-4.3 {Shape get: needs window pathname} {
+     list [catch {
+ 	shape get not-a-window
+     } msg] $msg
+-} {1 "bad window path name \"not-a-window\""}
++} {1 {bad window path name "not-a-window"}}
+ 
+ # update subcommand
+ test syntax-5.1 {Shape update: command format} {
+     list [catch {
+ 	shape update
+     } msg] $msg
+-} {1 "wrong # args: should be \"shape update pathName operation ?options?\""}
++} {1 {wrong # args: should be "shape update pathName operation ?options?"}}
+ 
+ # offset subcommand
+ test syntax-6.1 {Shape offset: command format} {
+     list [catch {
+ 	shape offset
+     } msg] $msg
+-} {1 "wrong # args: should be\
+-	\"shape offset pathName ?-bounding/-clip/-both? x y\""}
++} {1 {wrong # args: should be\
++	"shape offset pathName ?-bounding/-clip/-both? x y"}}
+ test syntax-6.2 {Shape offset: command format} {
+     list [catch {
+ 	shape offset ?
+     } msg] $msg
+-} {1 "wrong # args: should be\
+-	\"shape offset pathName ?-bounding/-clip/-both? x y\""}
++} {1 {wrong # args: should be\
++	"shape offset pathName ?-bounding/-clip/-both? x y"}}
+ test syntax-6.3 {Shape offset: command format} {
+     list [catch {
+ 	shape offset ? ?
+     } msg] $msg
+-} {1 "wrong # args: should be\
+-	\"shape offset pathName ?-bounding/-clip/-both? x y\""}
++} {1 {wrong # args: should be\
++	"shape offset pathName ?-bounding/-clip/-both? x y"}}
+ test syntax-6.4 {Shape offset: command format} {
+     list [catch {
+ 	shape offset ? ? ? ? ?
+     } msg] $msg
+-} {1 "wrong # args: should be\
+-	\"shape offset pathName ?-bounding/-clip/-both? x y\""}
++} {1 {wrong # args: should be\
++	"shape offset pathName ?-bounding/-clip/-both? x y"}}
+ test syntax-6.5 {Shape offset: needs window pathname} {
+     list [catch {
+ 	shape offset not-a-window 0 0
+     } msg] $msg
+-} {1 "bad window path name \"not-a-window\""}
++} {1 {bad window path name "not-a-window"}}
+ 
+ # bounds subcommand
+ test syntax-7.1 {Shape bounds: command format} {
+     list [catch {
+ 	shape bounds
+     } msg] $msg
+-} {1 "wrong # args: should be \"shape bounds pathName ?-bounding/-clip?\""}
++} {1 {wrong # args: should be "shape bounds pathName ?-bounding/-clip?"}}
+ test syntax-7.2 {Shape bounds: command format} {
+     list [catch {
+ 	shape bounds ? ? ?
+     } msg] $msg
+-} {1 "wrong # args: should be \"shape bounds pathName ?-bounding/-clip?\""}
++} {1 {wrong # args: should be "shape bounds pathName ?-bounding/-clip?"}}
+ test syntax-7.3 {Shape bounds: needs window pathname} {
+     list [catch {
+ 	shape bounds not-a-window
+     } msg] $msg
+-} {1 "bad window path name \"not-a-window\""}
++} {1 {bad window path name "not-a-window"}}
+ 
+ # cleanup
+ ::tcltest::cleanupTests

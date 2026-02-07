@@ -1,0 +1,2 @@
+This Perl module implements a Subversion property to control
+SVN::Notify commit message subscriptions.

@@ -1,0 +1,188 @@
+--- src/dekl.c.orig	2005-09-03 04:14:27 UTC
++++ src/dekl.c
+@@ -526,6 +526,7 @@ subordinate (rda, rdb)
+ 
+ /* Kalles fra  syntakssjekkeren hver gang en ny blokk entres */
+ 
++void
+ beginBlock (kind)
+      char kind;
+ {
+@@ -654,6 +655,7 @@ beginBlock (kind)
+ /* Kalles  fra  syntakssjekkeren hver gang en blokk terminerer */
+ 
+ /*VARARGS0 */
++void
+ endBlock (rtname, codeclass)
+      char *rtname;
+      char codeclass;
+@@ -692,6 +694,7 @@ endBlock (rtname, codeclass)
+ /* RegDecl kalles fra syntakssjekkeren
+  * hver gang  vi leser  en deklarasjon */
+ 
++void
+ regDecl (ident, type, kind, categ)
+      char *ident, type, kind, categ;
+ {
+@@ -1263,6 +1266,7 @@ setqualprefchain (rd, param)
+  * Prefikskjeden og kvalifikasjoner settes ved kall på setqualprefchain 
+  * den sjekker også konsistensen for type kind og categ */
+ 
++void
+ static sjekkdekl (rb)
+      struct BLOCK *rb;
+ {
+--- src/dekl.h.orig	1999-12-05 14:16:13 UTC
++++ src/dekl.h
+@@ -189,9 +189,9 @@ struct BLOCK
+ #define CCCPROC      8		/* Ekstern C-prosedyre */
+ 
+ 
+-extern beginBlock ();
+-extern endBlock ();
+-extern regDecl ();
++extern void beginBlock ();
++extern void endBlock ();
++extern void regDecl ();
+ extern regInner ();
+ extern struct DECL *newDecl ();
+ extern struct BLOCK *firstclass ();
+--- src/error.c.orig	1998-12-08 11:41:38 UTC
++++ src/error.c
+@@ -42,6 +42,7 @@ int anterror;
+ 
+ /******************************************************************************
+                                                                   STARTERROR */
++void
+ static starterror (line)
+      long line;
+ {
+@@ -57,6 +58,7 @@ static starterror (line)
+ 
+ /* Feil som oppdages av LEX */
+ 
++void
+ lerror (errcode)
+      int errcode;
+ {
+@@ -460,6 +462,7 @@ textnumber (i)
+ /* Feil som oppdages av SJEKKEREN */
+ 
+ /*VARARGS1 */
++void
+ serror (errcode, name, ant)
+      int errcode,
+        ant;
+@@ -684,6 +687,7 @@ gerror (errcode, name)
+ /* Feil som oppdages under innlesing av eksterne moduler */
+ 
+ /*VARARGS1 */
++void
+ merror (errcode, name)
+      int errcode;
+      char *name;
+--- src/expbuilder.c.orig	2005-09-03 04:14:39 UTC
++++ src/expbuilder.c
+@@ -199,6 +199,7 @@ struct EXP *elook()
+ 
+ /* Bygger opp et uttrykstree, Alle operatorene leses postfix */
+ 
++void
+ ebuild ()
+ {
+   struct EXP *re;
+--- src/expchecker.c.orig	2000-08-27 01:36:20 UTC
++++ src/expchecker.c
+@@ -237,6 +237,7 @@ static sametype (rel, rer)
+ /******************************************************************************
+                                                                ARGUMENTERROR */
+ 
++void
+ static argumenterror (melding, re)
+      int melding;
+      struct EXP *re;
+--- src/extspec.c.orig	2000-05-29 09:51:25 UTC
++++ src/extspec.c
+@@ -476,6 +476,7 @@ found:
+ /******************************************************************************
+                                                         LESINN_EXTERNAL_SPEC */
+ 
++void
+ lesinn_external_spec (ident, filename, kind)
+      char *ident;
+      char *filename;
+@@ -565,6 +566,7 @@ static write_text_mif (f, s) FILE *f; un
+ /******************************************************************************
+                                                               WRITE_DECL_MIF */
+ 
++void
+ static write_decl_mif (f, rd, level)
+        FILE *f; struct DECL *rd; int level;
+ {
+--- src/extspec.h.orig	1998-09-12 14:59:34 UTC
++++ src/extspec.h
+@@ -28,7 +28,7 @@ void gettimestamp ();
+ void initExtspec ();
+ extern char *directive_timestamp;
+ extern char *timestamp;
+-extern lesinn_external_spec ();
++extern void lesinn_external_spec ();
+ extern more_modules ();
+ extern struct stamp *first_stamp;
+ extern skrivut_external_spec ();
+--- src/gen.h.orig	1998-10-19 14:18:17 UTC
++++ src/gen.h
+@@ -68,11 +68,11 @@ extern gentype ();
+ extern genmodulemark();
+ extern gen_adr_prot();
+ 
+-extern genvalue();
++extern void genvalue();
+ 
+ /* genpar.c */
+ extern genprocparam ();
+-extern genpredefproccall ();
++extern void genpredefproccall ();
+ extern gencproccall ();
+ extern gen_thunk_simple_address ();
+ extern gen_thunk_simple_value ();
+--- src/genexp.c.orig	2000-05-29 09:22:29 UTC
++++ src/genexp.c
+@@ -196,6 +196,7 @@ genmodulemark(maintimestamp) char *maint
+ /******************************************************************************
+                                                                 GENVALUE     */
+ 
++void
+ genvalue (re)
+      struct EXP *re;
+ {
+--- src/genpar.c.orig	1999-12-09 17:55:29 UTC
++++ src/genpar.c
+@@ -1112,6 +1112,7 @@ genprocparam (re)
+ /******************************************************************************
+                                                       GENPREDEFPROCCALL      */
+ 
++void
+ genpredefproccall (re)
+      struct EXP *re;
+ {
+--- src/genstr.c.orig	2000-02-05 19:16:21 UTC
++++ src/genstr.c
+@@ -258,6 +258,7 @@ static blockmainstructure (rb, output_re
+ /******************************************************************************
+                                                         BLOCKSTRUCTURE       */
+ 
++void
+ static blockstructure (rb)
+      struct BLOCK *rb;
+ {
+--- src/lex.c.orig	2005-09-03 04:56:56 UTC
++++ src/lex.c
+@@ -730,6 +730,7 @@ static scanDirflags ()
+ /******************************************************************************
+                                                                    DIRLINE   */
+ 
++void
+ static scanDirline ()
+ {
+   FILE *file;

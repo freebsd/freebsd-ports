@@ -1,0 +1,7 @@
+condense-json is a Python library that provides functionality for condensing
+JSON data using replacement strings. It helps reduce the size of JSON output
+by replacing repeated patterns with shorter representations.
+
+This is useful for generating more compact JSON output while maintaining
+the ability to expand it back to its original form when needed, for example
+when interacting with large language models.

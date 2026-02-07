@@ -1,0 +1,69 @@
+--- GNUmakefile.orig	Sun Dec 28 23:23:56 2003
++++ GNUmakefile	Mon Mar 21 16:31:11 2005
+@@ -67,8 +67,8 @@ else
+     X11LIBDIR     = /usr/openwin/lib
+     X11INCLUDEDIR = /usr/openwin/include
+   else
+-    X11LIBDIR     = /usr/X11R6/lib
+-    X11INCLUDEDIR = /usr/X11R6/include
++    X11LIBDIR     = $(LOCALBASE)/lib
++    X11INCLUDEDIR = $(LOCALBASE)/include
+   endif
+ endif
+ 
+@@ -79,13 +79,13 @@ endif
+ #CXX =
+ 
+ # Options used when compiling Atclib.
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ # Options used when compiling and linking Yadex.
+ # ld is invoked through the C++ compiler so
+ # LDFLAGS should not contain options that mean
+ # something to the C++ compiler.
+-CXXFLAGS = -O
++#CXXFLAGS = -O
+ #CXXFLAGS += -DWHITE_BACKGROUND
+ #LDFLAGS  =
+ 
+@@ -390,19 +390,18 @@ test:
+ 
+ .PHONY: install
+ install: $(OBJDIR)/install
+-	@scripts/mkinstalldirs $(BINDIR)
+-	@scripts/mkinstalldirs $(ETCDIR)
+-	@scripts/mkinstalldirs $(MANDIR)
+-	@scripts/mkinstalldirs $(MANDIR)/man6
+-	@scripts/mkinstalldirs $(SHAREDIR)
+-	$(OBJDIR)/install -m 755 $(OBJDIR)/yadex $(BINDIR)/yadex-$(VERSION)
+-	rm -f $(BINDIR)/yadex
+-	ln -s yadex-$(VERSION) $(BINDIR)/yadex
+-	$(OBJDIR)/install -m 644 doc/yadex.6 $(MANDIR)/man6/yadex-$(VERSION).6
+-	rm -f $(MANDIR)/man6/yadex.6
+-	ln -s yadex-$(VERSION).6 $(MANDIR)/man6/yadex.6
+-	$(OBJDIR)/install -m 644 -d $(SHAREDIR) $(YGD)
+-	$(OBJDIR)/install -m 644 -d $(ETCDIR) yadex.cfg
++	@scripts/mkinstalldirs $(DESTDIR)$(BINDIR)
++	@scripts/mkinstalldirs $(DESTDIR)$(ETCDIR)
++	@scripts/mkinstalldirs $(DESTDIR)$(MANDIR)
++	@scripts/mkinstalldirs $(DESTDIR)$(MANDIR)/man6
++	@scripts/mkinstalldirs $(DESTDIR)$(SHAREDIR)
++	rm -f $(DESTDIR)$(BINDIR)/yadex
++	$(BSD_INSTALL_PROGRAM) $(OBJDIR)/yadex $(DESTDIR)$(BINDIR)
++	rm -f $(DESTDIR)$(MANDIR)/man6/yadex.6*
++	$(BSD_INSTALL_MAN) doc/yadex.6 $(DESTDIR)$(MANDIR)/man6
++	$(BSD_INSTALL_DATA) $(YGD) $(DESTDIR)$(SHAREDIR)
++	$(BSD_INSTALL_DATA) yadex.cfg $(DESTDIR)$(ETCDIR)
++ifndef DESTDIR
+ 	@echo "---------------------------------------------------------------"
+ 	@echo "  Yadex is now installed."
+ 	@echo
+@@ -413,6 +412,7 @@ install: $(OBJDIR)/install
+ 	@echo
+ 	@echo "  Happy editing !"
+ 	@echo "---------------------------------------------------------------"
++endif
+ 
+ .PHONY: clean
+ clean:

@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# PROVIDE: ladvd
+# REQUIRE: DAEMON
+
+#
+# Add the following lines to /etc/rc.conf to enable ladvd:
+#
+#ladvd_enable="YES"
+#
+# See ladvd(8) for flags.
+#
+
+. /etc/rc.subr
+
+name=ladvd
+rcvar=ladvd_enable
+
+command=%%PREFIX%%/sbin/ladvd
+load_rc_config ${name}
+
+# set defaults
+ladvd_enable=${ladvd_enable:-"NO"}
+ladvd_flags=${ladvd_flags:-"-a"}
+
+start_precmd="ladvd_check"
+stop_postcmd="ladvd_cleanup"
+
+ladvd_check()
+{
+	if [ -z "${ladvd_flags}" ]
+	then
+		err 1 "ladvd_flags should be set"
+	fi
+}
+
+ladvd_cleanup()
+{
+	if [ -f "$pidfile" ]; then
+		kill -0 `cat $pidfile` 2> /dev/null
+		if [ $? -ne 0 ]; then
+			rm $pidfile
+		fi
+	fi
+}
+
+run_rc_command "$1"

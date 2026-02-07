@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Test::Lazy.3.gz
+%%PERL5_MAN3%%/Test::Lazy::Template.3.gz
+%%PERL5_MAN3%%/Test::Lazy::Tester.3.gz
+%%SITE_PERL%%/Test/Lazy.pm
+%%SITE_PERL%%/Test/Lazy/Template.pm
+%%SITE_PERL%%/Test/Lazy/Tester.pm

@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2020-03-29 03:40:33 UTC
++++ CMakeLists.txt
+@@ -85,8 +85,8 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+   set (OB_FLAGS_DEBUG "-g -Og -rdynamic -Wpedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused")
+   set (DEBUG_LINK_FLAGS "-fprofile-arcs -ftest-coverage")
+ 
+-  set (OB_FLAGS_RELEASE "-O3 -flto")
+-  set (OB_LINKER_FLAGS_RELEASE "-O3 -flto -s")
++  #set (OB_FLAGS_RELEASE "-O3 -flto")
++  #set (OB_LINKER_FLAGS_RELEASE "-O3 -flto -s")
+ elseif ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+   if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+     if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS "${OB_COMPILER_VERSION_CLANG}")
+@@ -106,8 +106,8 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+   set (OB_FLAGS_DEBUG "-g -Og -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -Wno-disabled-macro-expansion -Wno-exit-time-destructors -Wno-global-constructors -Wno-weak-vtables -Wno-return-std-move-in-c++11 -Wno-c++11-narrowing")
+   set (OB_LINKER_FLAGS_DEBUG "-fprofile-arcs -ftest-coverage")
+ 
+-  set (OB_FLAGS_RELEASE "-O3 -flto")
+-  set (OB_LINKER_FLAGS_RELEASE "-O3 -flto -s")
++  #set (OB_FLAGS_RELEASE "-O3 -flto")
++  #set (OB_LINKER_FLAGS_RELEASE "-O3 -flto -s")
+ else ()
+   message (FATAL_ERROR ">> The ${CMAKE_CXX_COMPILER_ID} compiler is unsupported")
+ endif ()

@@ -1,0 +1,2 @@
+File::Find::Object::Rule is a friendlier interface to File::Find::Object . It
+allows you to build rules which specify the desired files and directories.

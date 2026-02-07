@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2018-01-01 11:17:18 UTC
++++ Makefile.in
+@@ -66,8 +66,8 @@ bwbasic:	$(OFILES)
+ 		$(CC) $(OFILES) -lm -o $@ $(LDFLAGS)
+ 
+ # Added by JBV
+-renum:
+-	$(CC) renum.c -o renum
++renum:		renum.o
++	$(CC)	renum.o -o $@ $(LDFLAGS) 
+ 
+ $(OFILES):      $(HFILES)
+ 
+@@ -75,7 +75,8 @@ $(OFILES):      $(HFILES)
+ 	$(CC) -c $(CPPFLAGS) -I$(srcdir) $(DEFS) $(CFLAGS) $<
+ 
+ install: all
+-	$(INSTALL_PROGRAM) bwbasic $(bindir)/bwbasic
++	$(INSTALL_PROGRAM) bwbasic $(DESTDIR)$(bindir)/bwbasic
++	$(INSTALL_PROGRAM) renum $(DESTDIR)$(bindir)/renum
+ 
+ uninstall:
+ 	rm -f $(bindir)/bwbasic

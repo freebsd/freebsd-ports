@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+WARNING:
+
+You need write permissions on the USB device to make it work properly.
+Consider adding your user to the operator group:
+
+% pw groupmod operator -m jerry
+
+and adding a rule in /etc/devfs.rules like this one:
+
+[system=10]
+add path 'ttyU*' mode 0660 group operator
+
+To load this new rule add the following to /etc/rc.conf:
+
+devfs_system_ruleset="system"
+
+Then restart devfs to load the new rule:
+
+% service devfs restart
+EOM
+}
+]

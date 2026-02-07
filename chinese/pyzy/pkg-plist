@@ -1,0 +1,10 @@
+include/pyzy-1.0/PyZy/Const.h
+include/pyzy-1.0/PyZy/InputContext.h
+include/pyzy-1.0/PyZy/Variant.h
+lib/libpyzy-1.0.so
+lib/libpyzy-1.0.so.0
+lib/libpyzy-1.0.so.0.100.0
+libdata/pkgconfig/pyzy-1.0.pc
+%%DATADIR%%/db/android.db
+%%DATADIR%%/db/create_index.sql
+%%DATADIR%%/phrases.txt

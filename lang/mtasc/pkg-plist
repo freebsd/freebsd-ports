@@ -1,0 +1,7 @@
+bin/mtasc
+share/man/man1/mtasc.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/Future.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld.as

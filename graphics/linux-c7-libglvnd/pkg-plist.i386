@@ -1,0 +1,27 @@
+@comment Handle some links with postexec so nvidia-driver can overwrite them.
+@postexec [ -e %D/usr/lib/libEGL.so.1 ] || ln -sf libEGL.so.1.1.0 %D/usr/lib/libEGL.so.1
+@postunexec [ -e %D/usr/lib/libEGL.so.1 ] || rm -f %D/usr/lib/libEGL.so.1
+usr/lib/libEGL.so.1.1.0
+@postexec [ -e %D/usr/lib/libGL.so.1 ] || ln -sf libGL.so.1.7.0 %D/usr/lib/libGL.so.1
+@postunexec [ -e %D/usr/lib/libGL.so.1 ] || rm -f %D/usr/lib/libGL.so.1
+usr/lib/libGL.so.1.7.0
+@postexec [ -e %D/usr/lib/libGLESv1_CM.so.1 ] || ln -sf libGLESv1_CM.so.1.2.0 %D/usr/lib/libGLESv1_CM.so.1
+@postunexec [ -e %D/usr/lib/libGLESv1_CM.so.1 ] || rm -f %D/usr/lib/libGLESv1_CM.so.1
+usr/lib/libGLESv1_CM.so.1.2.0
+@postexec [ -e %D/usr/lib/libGLESv2.so.2 ] || ln -sf libGLESv2.so.2.1.0 %D/usr/lib/libGLESv2.so.2
+@postunexec [ -e %D/usr/lib/libGLESv2.so.2 ] || rm -f %D/usr/lib/libGLESv2.so.2
+usr/lib/libGLESv2.so.2.1.0
+@postexec [ -e %D/usr/lib/libGLX.so.0 ] || ln -sf libGLX.so.0.0.0 %D/usr/lib/libGLX.so.0
+@postunexec [ -e %D/usr/lib/libGLX.so.0 ] || rm -f %D/usr/lib/libGLX.so.0
+usr/lib/libGLX.so.0.0.0
+@postexec [ -e %D/usr/lib/libGLdispatch.so.0 ] || ln -sf libGLdispatch.so.0.0.0 %D/usr/lib/libGLdispatch.so.0
+@postunexec [ -e %D/usr/lib/libGLdispatch.so.0 ] || rm -f %D/usr/lib/libGLdispatch.so.0
+usr/lib/libGLdispatch.so.0.0.0
+@postexec [ -e %D/usr/lib/libOpenGL.so.0 ] || ln -sf libOpenGL.so.0.0.0 %D/usr/lib/libOpenGL.so.0
+@postunexec [ -e %D/usr/lib/libOpenGL.so.0 ] || rm -f %D/usr/lib/libOpenGL.so.0
+usr/lib/libOpenGL.so.0.0.0
+%%PORTDOCS%%usr/share/doc/libglvnd-1.0.1/README.md
+@dir etc/egl/egl_external_platform.d
+@dir etc/glvnd/egl_vendor.d
+@dir usr/share/egl/egl_external_platform.d
+@dir usr/share/glvnd/egl_vendor.d

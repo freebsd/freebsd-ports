@@ -1,0 +1,59 @@
+Chase ABI from multimedia/pipewire/files/patch-src_pipewire_pipewire_init
+
+https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+
+error[E0425]: cannot find function `pw_init` in crate `pw_sys`
+   --> cargo-crates/pipewire-0.4.1/src/lib.rs:156:49
+    |
+156 |     INITIALIZED.get_or_init(|| unsafe { pw_sys::pw_init(ptr::null_mut(), ptr::null_mut()) });
+    |                                                 ^^^^^^^ not found in `pw_sys`
+
+error[E0425]: cannot find function `pw_deinit` in crate `pw_sys`
+   --> cargo-crates/pipewire-0.4.1/src/lib.rs:165:13
+    |
+165 |     pw_sys::pw_deinit()
+    |             ^^^^^^^^^ not found in `pw_sys`
+
+--- cargo-crates/pipewire-0.7.2/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/pipewire-0.7.2/src/lib.rs
+@@ -152,7 +152,7 @@ pub fn init() {
+ pub fn init() {
+     use once_cell::sync::OnceCell;
+     static INITIALIZED: OnceCell<()> = OnceCell::new();
+-    INITIALIZED.get_or_init(|| unsafe { pw_sys::pw_init(ptr::null_mut(), ptr::null_mut()) });
++    INITIALIZED.get_or_init(|| unsafe { pw_sys::pipewire_init(ptr::null_mut(), ptr::null_mut()) });
+ }
+ 
+ /// Deinitialize PipeWire
+@@ -161,7 +161,7 @@ pub unsafe fn deinit() {
+ /// This must only be called once during the lifetime of the process, once no PipeWire threads
+ /// are running anymore and all PipeWire resources are released.
+ pub unsafe fn deinit() {
+-    pw_sys::pw_deinit()
++    pw_sys::pipewire_deinit()
+ }
+ 
+ #[cfg(test)]
+--- cargo-crates/pipewire-sys-0.7.2/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/pipewire-sys-0.7.2/build.rs
+@@ -19,6 +19,7 @@ fn main() {
+         // included header files changed.
+         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+         .size_t_is_usize(true)
++        .allowlist_function("pipewire_.*")
+         .allowlist_function("pw_.*")
+         .allowlist_type("pw_.*")
+         .allowlist_var("pw_.*")
+--- cargo-crates/pipewire-sys-0.7.2/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/pipewire-sys-0.7.2/src/lib.rs
+@@ -20,8 +20,8 @@ mod tests {
+     #[test]
+     fn init() {
+         unsafe {
+-            pw_init(std::ptr::null_mut(), std::ptr::null_mut());
+-            pw_deinit();
++            pipewire_init(std::ptr::null_mut(), std::ptr::null_mut());
++            pipewire_deinit();
+         }
+     }
+ }

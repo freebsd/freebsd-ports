@@ -1,0 +1,5 @@
+#!/bin/sh
+
+${PKG_PREFIX}/sbin/nextdns uninstall >/dev/null 2>/dev/null
+
+exit 0

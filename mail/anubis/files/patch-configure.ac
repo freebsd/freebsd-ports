@@ -1,0 +1,52 @@
+--- configure.ac.orig	2024-01-05 16:09:47 UTC
++++ configure.ac
+@@ -96,7 +96,6 @@ AC_CHECK_LIB(socket, socket)
+ AC_CHECK_FUNCS(daemon putenv)
+ 
+ AC_CHECK_LIB(socket, socket)
+-AC_CHECK_LIB(nsl, gethostbyaddr)
+ 
+ AM_PATH_LIBGCRYPT([1.7.0], [status_gcrypt=yes], [status_gcrypt=no])
+ AM_CONDITIONAL([GCRYPT_COND], [test "$status_gcrypt" = yes])
+@@ -198,11 +197,21 @@ MU_CHECK_GSASL(0.2.3, [
+     ANUBIS_SBIN_ADM='$(adm_sbin_programs)'
+     ANUBIS_BIN_ADM='$(adm_bin_programs)'
+ 
++    AC_ARG_WITH(gdbm,
++        AC_HELP_STRING([--with-gdbm],
++        [Configure to work with GDBM]),
++        [with_gdbm=${withval}],
++        [with_gdbm=no])
++    if test "$with_gdbm" = "yes"; then
+     AC_CHECK_LIB(gdbm, gdbm_open,
+                  [WITH_GDBM=yes
+                   LIBS="$LIBS -lgdbm"
+                   AC_DEFINE(HAVE_LIBGDBM,1,[Define if you have libgdbm])],
+-                 [AC_MSG_RESULT([Disabling GDBM support...])])
++                  with_gdbm=no)
++    fi
++    if test "$with_gdbm" = "yes"; then
++      AC_MSG_RESULT([Enabling GDBM support...])
++    fi
+ 
+     AC_ARG_WITH(mysql,
+ 	AS_HELP_STRING([--with-mysql],[Configure to work with MySQL]),
+@@ -301,8 +310,8 @@ if test "$with_pam" = "yes"; then
+ 	[with_pam=no])
+ if test "$with_pam" = "yes"; then
+  AC_CHECK_LIB(pam, main,, with_pam=no)
+- AC_CHECK_LIB(pam_misc, main,, with_pam=no)
+- AC_CHECK_HEADERS(security/pam_appl.h security/pam_misc.h,, with_pam=no)
++ AC_CHECK_HEADER(security/pam_appl.h,, with_pam=no)
++ AC_CHECK_HEADER(security/openpam.h,, with_pam=no, [ #include <security/pam_appl.h> ])
+ fi
+ if test "$with_pam" = "yes"; then
+  AC_MSG_RESULT([Enabling PAM support...])
+@@ -315,7 +324,6 @@ if test "$with_tcp_wrappers" = "yes"; then
+ 	[with_tcp_wrappers=no])
+ if test "$with_tcp_wrappers" = "yes"; then
+  AC_CHECK_LIB(wrap, main,, with_tcp_wrappers=no)
+- AC_CHECK_LIB(nsl, main,, with_tcp_wrappers=no)
+  AC_CHECK_HEADERS(tcpd.h,, with_tcp_wrappers=no)
+ fi
+ if test "$with_tcp_wrappers" = "yes"; then

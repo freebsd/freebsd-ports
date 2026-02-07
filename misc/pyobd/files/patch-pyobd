@@ -1,0 +1,47 @@
+--- pyobd.orig	2015-04-21 10:02:41 UTC
++++ pyobd
+@@ -356,7 +356,7 @@ class MyApp(wx.App):
+         else:
+           self.configfilepath=os.environ['HOME']+'/.pyobdrc'
+         if self.config.read(self.configfilepath)==[]:
+-          self.COMPORT="/dev/ttyACM0"
++          self.COMPORT="/dev/ttyU0"
+           self.RECONNATTEMPTS=5
+           self.SERTIMEOUT=2
+         else:
+@@ -592,34 +592,7 @@ the Free Software Foundation, Inc., 59 T
+     def scanSerial(self):
+         """scan for available ports. return a list of serial names"""
+         available = []
+-        for i in range(256):
+-          try: #scan standart ttyS*
+-            s = serial.Serial(i)
+-            available.append(s.portstr)
+-            s.close()   # explicit close 'cause of delayed GC in java
+-          except serial.SerialException:
+-            pass
+-        for i in range(256):
+-          try: #scan USB ttyACM
+-            s = serial.Serial("/dev/ttyACM"+str(i))
+-            available.append(s.portstr)
+-            s.close()   # explicit close 'cause of delayed GC in java
+-          except serial.SerialException:
+-            pass
+-        for i in range(256):
+-          try:
+-            s = serial.Serial("/dev/ttyUSB"+str(i))
+-            available.append(s.portstr)
+-            s.close()   # explicit close 'cause of delayed GC in java
+-          except serial.SerialException:
+-            pass
+-        for i in range(256):
+-          try:
+-            s = serial.Serial("/dev/ttyd"+str(i))
+-            available.append(s.portstr)
+-            s.close()   # explicit close 'cause of delayed GC in java
+-          except serial.SerialException:
+-            pass
++        available.append("/dev/ttyU0")
+             
+         # ELM-USB shows up as /dev/tty.usbmodemXXXX, where XXXX is a changing hex string
+         # on connection; so we have to search through all 64K options

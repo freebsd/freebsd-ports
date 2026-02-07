@@ -1,0 +1,103 @@
+--- lesskey.nro.orig	Sun Sep 15 23:00:54 1996
++++ lesskey.nro	Sun Sep 15 23:03:28 1996
+@@ -1,22 +1,22 @@
+ .TH LESSKEY 1
+ .SH NAME
+-lesskey \- specify key bindings for less
++clesskey \- specify key bindings for cless
+ .SH SYNOPSIS
+-.B "lesskey [-o output] [input]"
++.B "clesskey [-o output] [input]"
+ .br
+-.B "lesskey -V"
++.B "clesskey -V"
+ .SH DESCRIPTION
+ .I Lesskey
+ is used to specify a set of key bindings to be used by 
+-.I less.
++.I cless.
+ The input file is a text file which describes the key bindings,
+ If the input file is "-", standard input is read.
+-If no input file is specified, $HOME/.lesskey is read.
++If no input file is specified, $HOME/.clesskey is read.
+ The output file is a binary file which is used by 
+-.I less.
+-If no output file is specified, $HOME/.less is written.
++.I cless.
++If no output file is specified, $HOME/.cless is written.
+ If the output file already exists,
+-.I lesskey
++.I clesskey
+ will overwrite it.
+ .PP
+ The input file consists of lines of the form:
+@@ -26,7 +26,7 @@
+ Whitespace is any sequence of one or more spaces and/or tabs.
+ The \fIstring\fP is the command key(s) which invoke the action.
+ The \fIstring\fP may be a single command key, or a sequence of up to 15 keys.
+-The \fIaction\fP is the name of the less action, from the list below.
++The \fIaction\fP is the name of the cless action, from the list below.
+ The characters in the \fIstring\fP may appear literally, or be
+ prefixed by a caret to indicate a control key.
+ A backslash followed by one to three octal digits may be used to
+@@ -41,22 +41,22 @@
+ .PP
+ An action may be followed by an "extra" string.
+ When such a command is entered while running
+-.I less,
++.I cless,
+ the action is performed, and then the extra
+ string is parsed, just as if it were typed in to
+-.I less.
++.I cless.
+ This feature can be used in certain cases to extend
+ the functionality of a command.
+ For example, see the "{" and ":t" commands in the example below.
+ .PP
+ The -V flag causes
+-.I lesskey
++.I clesskey
+ to print its version number and immediately exit.  
+ Other flags and arguments are ignored.
+ 
+ .SH EXAMPLE
+ The following input file describes the set of
+-default command keys used by less:
++default command keys used by cless:
+ .sp
+ .nf
+ 	\er		forw-line 
+@@ -147,14 +147,14 @@
+ .sp
+ .SH PRECEDENCE
+ Commands specified by
+-.I lesskey
++.I clesskey
+ take precedence over the default commands.
+ A default command key may be disabled by including it in the
+ input file with the action "invalid".
+ Alternatively, a key may be defined 
+ to do nothing by using the action "noaction".
+ "noaction" is similar to "invalid", but 
+-.I less
++.I cless
+ will give an error beep for an "invalid" command, 
+ but not for a "noaction" command.
+ In addition, ALL default commands may be disabled by 
+@@ -185,7 +185,7 @@
+ 
+ .SH EXAMPLE
+ The following input file describes the set of
+-default line-editing keys used by less:
++default line-editing keys used by cless:
+ .sp
+ .nf
+ 	#line-edit
+@@ -210,6 +210,7 @@
+ .sp
+ 
+ .SH "SEE ALSO"
++cless(1)
+ less(1)
+ 
+ .SH COPYRIGHT

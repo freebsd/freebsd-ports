@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Object/Container.pm
+%%SITE_PERL%%/Object/Container/ja.pod
+%%PERL5_MAN3%%/Object::Container.3.gz
+%%PERL5_MAN3%%/Object::Container::ja.3.gz

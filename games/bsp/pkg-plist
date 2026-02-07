@@ -1,0 +1,3 @@
+bin/bsp
+share/man/man6/bsp.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/README

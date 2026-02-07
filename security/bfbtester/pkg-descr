@@ -1,0 +1,4 @@
+BFBTester will perform checks of single and multiple argument command
+line overflows and environment variable overflows. BFBTester will also
+watch for tempfile creation activity to alert the user of any programs
+using unsafe tempfile names.

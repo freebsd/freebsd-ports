@@ -1,0 +1,3 @@
+Open Drug Discovery Toolkit (ODDT) is modular and comprehensive toolkit for use
+in cheminformatics, molecular modeling etc. ODDT is written in Python, and make
+extensive use of numpy/scipy.

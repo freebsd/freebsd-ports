@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/serpico-0.1.1.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/serpico-0.1.1.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/serpico-0.1.1.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/serpico-0.1.1.dist-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/serpico-0.1.1.dist-info/licenses/LICENSE
+%%PYTHON_SITELIBDIR%%/serpico/__init__.py
+%%PYTHON_SITELIBDIR%%/serpico/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/serpico/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wazuh/FreeBSD_VD_Dashboard.ndjson
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wazuh/local_rules.xml
+share/man/man1/serpico.1.gz
+bin/serpico

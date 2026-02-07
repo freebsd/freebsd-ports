@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+In order to use Nitrokey FIDO U2F user will need to install security/u2f-devd
+EOM
+}
+]

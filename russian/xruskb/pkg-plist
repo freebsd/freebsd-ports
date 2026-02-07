@@ -1,0 +1,4 @@
+bin/xrus
+bin/xrusmodmap
+lib/X11/app-defaults/Xrus
+share/man/man1/xrus.1.gz

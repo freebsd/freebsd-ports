@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/MeCab.pm
+%%SITE_ARCH%%/auto/MeCab/MeCab.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.pl

@@ -1,0 +1,10 @@
+bin/zinnia
+bin/zinnia_convert
+bin/zinnia_learn
+include/zinnia.h
+include/zinnia/zinnia.h
+lib/libzinnia.a
+lib/libzinnia.so
+lib/libzinnia.so.0
+lib/libzinnia.so.0.0.0
+libdata/pkgconfig/zinnia.pc

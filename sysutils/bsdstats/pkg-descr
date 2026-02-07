@@ -1,0 +1,13 @@
+BSDstats is an attempt to produce reasonably accurate statistics on
+deployments of BSD operating systems.  This is useful for marketing,
+project advocacy, hardware vendors and purchasers, device driver
+maintainers, and port maintainers.
+
+The major problem that we are trying to address is vendors who do not
+feel that BSD operating systems present enough of a market to bother
+supporting.
+
+Meant to be run monthly or during bootup, this script submits
+statistics anonymously to a central server (http://bsdstats.org).
+Potentially sensitive details like IP addresses and hostnames are not
+stored by or relayed through the BSDstats server.

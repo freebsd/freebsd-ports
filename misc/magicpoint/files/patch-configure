@@ -1,0 +1,11 @@
+--- configure.orig	2007-12-28 20:31:26 UTC
++++ configure
+@@ -5106,6 +5106,8 @@ echo $ECHO_N "checking for freetype1 lib
+  		fi
+  		if test -d $dir/include -a -f $dir/include/freetype.h; then
+  			ac_cv_ft_include="$dir/include"
++ 		elif test -d $dir/include/freetype1/freetype -a -f $dir/include/freetype1/freetype/freetype.h; then
++ 			ac_cv_ft_include="$dir/include/freetype1/freetype"
+  		elif test -d $dir/include/freetype -a -f $dir/include/freetype/freetype.h; then
+  			ac_cv_ft_include="$dir/include/freetype"
+ 		fi

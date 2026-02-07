@@ -1,0 +1,3 @@
+datadog-ruby_core_source is a fork of debase-ruby_core_source that uses included
+Ruby headers (*.h and *.inc) instead of downloading them. Used by dd-trace-rb.
+Only Ruby 2.5, 3.3, and 3.4 versions are supported.

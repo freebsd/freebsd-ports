@@ -1,0 +1,78 @@
+From ce5ca630697a069ffbd81169663e5dbeb554179a Mon Sep 17 00:00:00 2001
+From: Willy Tarreau <w@1wt.eu>
+Date: Wed, 6 Oct 2021 11:23:32 +0200
+Subject: CLEANUP: servers: do not include openssl-compat
+
+This is exactly the same as for listeners, servers only include
+openssl-compat to provide the SSL_CTX type to use as two pointers to
+contexts, and to detect if NPN, ALPN, and cipher suites are supported,
+and save up to 5 pointers in the ssl_ctx struct if not supported. This
+is pointless, as these ones have all been supported for about a decade,
+and including this file comes with a long dependency chain that impacts
+lots of other files. The ctx was made a void*.
+
+Now the build time was significantly reduced, from 9.2 to 8.1 seconds,
+thanks to opensslconf.h being included "only" 456 times instead of 2424
+previously!
+
+The total number of lines of code compiled was reduced by 15%.
+
+(cherry picked from commit 340ef2502eae2a37781e460d3590982c0e437fbd)
+[wt: this is backported to get rid of the painful #ifdef around SSL
+ fields that regularly break backports]
+Signed-off-by: Willy Tarreau <w@1wt.eu>
+---
+ include/haproxy/server-t.h | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+
+diff --git a/include/haproxy/server-t.h b/include/haproxy/server-t.h
+index 429195388..32b649bf3 100644
+--- include/haproxy/server-t.h
++++ include/haproxy/server-t.h
+@@ -35,9 +35,7 @@
+ #include <haproxy/freq_ctr-t.h>
+ #include <haproxy/listener-t.h>
+ #include <haproxy/obj_type-t.h>
+-#include <haproxy/openssl-compat.h>
+ #include <haproxy/resolvers-t.h>
+-#include <haproxy/ssl_sock-t.h>
+ #include <haproxy/stats-t.h>
+ #include <haproxy/task-t.h>
+ #include <haproxy/thread-t.h>
+@@ -341,7 +339,7 @@ struct server {
+ #ifdef USE_OPENSSL
+ 	char *sni_expr;             /* Temporary variable to store a sample expression for SNI */
+ 	struct {
+-		SSL_CTX *ctx;
++		void *ctx;
+ 		struct {
+ 			unsigned char *ptr;
+ 			int size;
+@@ -353,9 +351,7 @@ struct server {
+ 		__decl_thread(HA_RWLOCK_T lock); /* lock the cache and SSL_CTX during commit operations */
+ 
+ 		char *ciphers;			/* cipher suite to use if non-null */
+-#ifdef HAVE_SSL_CTX_SET_CIPHERSUITES
+ 		char *ciphersuites;			/* TLS 1.3 cipher suite to use if non-null */
+-#endif
+ 		int options;			/* ssl options */
+ 		int verify;			/* verify method (set of SSL_VERIFY_* flags) */
+ 		struct tls_version_filter methods;	/* ssl methods */
+@@ -363,14 +359,10 @@ struct server {
+ 		char *ca_file;			/* CAfile to use on verify */
+ 		char *crl_file;			/* CRLfile to use on verify */
+ 		struct sample_expr *sni;        /* sample expression for SNI */
+-#ifdef OPENSSL_NPN_NEGOTIATED
+ 		char *npn_str;                  /* NPN protocol string */
+ 		int npn_len;                    /* NPN protocol string length */
+-#endif
+-#ifdef TLSEXT_TYPE_application_layer_protocol_negotiation
+ 		char *alpn_str;                 /* ALPN protocol string */
+ 		int alpn_len;                   /* ALPN protocol string length */
+-#endif
+ 	} ssl_ctx;
+ #ifdef USE_QUIC
+ 	struct quic_transport_params quic_params; /* QUIC transport parameters */
+-- 
+2.28.0
+

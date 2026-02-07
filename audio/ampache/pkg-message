@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+It is recommended to run the garbage collection daily:
+
+# echo daily_ampache_gc_enable=yes >> /etc/periodic.conf
+EOM
+}
+]

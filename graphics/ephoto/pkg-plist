@@ -1,0 +1,9 @@
+bin/ephoto
+lib/ephoto/ephoto_thumbnail
+share/applications/ephoto.desktop
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/images/ephoto.png
+%%DATADIR%%/images/grid.png
+%%DATADIR%%/images/single.png
+%%DATADIR%%/themes/ephoto.edj
+share/icons/ephoto.png

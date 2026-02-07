@@ -1,0 +1,2 @@
+Using this module instead of, or in addition to Time::Piece adds a few
+MySQL-specific date/time methods to Time::Piece objects.

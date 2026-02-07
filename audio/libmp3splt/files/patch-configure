@@ -1,0 +1,11 @@
+--- configure.orig	2014-11-09 16:48:20 UTC
++++ configure
+@@ -15614,7 +15614,7 @@ elif test "x$prefix" != "xNONE"; then
+   ID3_LIBS="-L$prefix/lib"
+ fi
+ 
+-ID3_LIBS="$ID3_LIBS -lid3tag"
++ID3_LIBS="$ID3_LIBS -lid3tag -lz"
+ 
+ if test "x$id3_includes" != "x"; then
+   ID3_CFLAGS="-I$id3_includes"

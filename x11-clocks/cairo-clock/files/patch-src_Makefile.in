@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2020-09-12 17:31:13 UTC
++++ src/Makefile.in
+@@ -226,7 +226,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-cairo_clock_LDFLAGS = -Wl, --export-dynamic
++cairo_clock_LDFLAGS = -Wl,--export-dynamic
+ cairo_clock_LDADD = \
+ 	$(GLIB_LIBS)	\
+ 	$(GTK_LIBS)	\

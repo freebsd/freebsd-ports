@@ -1,0 +1,2 @@
+REST::Google::Apps::Provisioning provides a Perl interface to Google's
+RESTful Apps API.

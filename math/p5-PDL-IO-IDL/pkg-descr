@@ -1,0 +1,7 @@
+PDL::IO::IDL allows you to read and write IDL(tm) data files.
+
+Currently, only reading is implemented. Scalars, arrays, and structures are all
+supported. Heap pointers, compiled code, and objects are not supported. Of those
+three, only heap pointers are likely to be supported in the future.
+
+This code was not developed by RSI, makers of IDL.

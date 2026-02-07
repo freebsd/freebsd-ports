@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: usermin
+# REQUIRE: LOGIN
+#
+# Add the following line to /etc/rc.conf to enable usermin:
+#
+# usermin_enable="YES"
+#
+
+usermin_enable=${usermin_enable:-"NO"}
+
+. /etc/rc.subr
+
+name=usermin
+rcvar=usermin_enable
+
+required_files=%%PREFIX%%/etc/usermin/var-path
+usermin_var_path=`cat %%PREFIX%%/etc/usermin/var-path`
+
+procname=%%PERL%%
+pidfile=${usermin_var_path}/miniserv.pid
+required_dirs=%%PREFIX%%/etc/usermin
+command=%%PREFIX%%/etc/usermin/start
+
+load_rc_config ${name}
+run_rc_command "$1"

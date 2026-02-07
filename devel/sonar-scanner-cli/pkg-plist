@@ -1,0 +1,5 @@
+@sample libexec/sonar-scanner-cli/conf/sonar-scanner.properties.sample
+bin/sonar-scanner
+libexec/sonar-scanner-cli/bin/sonar-scanner
+libexec/sonar-scanner-cli/bin/sonar-scanner-debug
+libexec/sonar-scanner-cli/lib/sonar-scanner-cli-%%JAR_VERSION%%.jar

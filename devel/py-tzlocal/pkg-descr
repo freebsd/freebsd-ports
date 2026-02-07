@@ -1,0 +1,8 @@
+This Python module returns a tzinfo object with the local timezone
+information under Unix and Win-32. It requires pytz, and returns pytz
+tzinfo objects.
+
+This module attempts to fix a glaring hole in pytz, that there is no way
+to get the local timezone information, unless you know the zoneinfo
+name, and under several Linux distros that's hard or impossible to
+figure out.

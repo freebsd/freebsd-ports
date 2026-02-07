@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/da_phonet.dat
+lib/aspell-%%VER%%/da.dat
+share/aspell/da.multi
+share/aspell/da.rws
+share/aspell/danish.alias
+share/aspell/dansk.alias

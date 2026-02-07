@@ -1,0 +1,49 @@
+--- cgi-src/Makefile.in.orig	Tue Apr 24 19:44:12 2001
++++ cgi-src/Makefile.in	Tue Apr 24 19:44:25 2001
+@@ -31,7 +31,7 @@
+ MANDIR =	@mandir@
+ 
+ CC =		@CC@
+-CCOPT =		@V_CCOPT@
++CCOPT =		@CFLAGS@
+ DEFS =		@DEFS@
+ INCLS =		-I..
+ CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
+@@ -46,7 +46,7 @@
+ 
+ .c.o:
+ 	@rm -f $@
+-	$(CC) $(CFLAGS) -c $*.c
++	$(CC) $(CFLAGS) -o $@ -c $<
+ 
+ all:		redirect ssi phf
+ 
+@@ -67,17 +67,17 @@
+ 	cd .. ; $(MAKE) $(MFLAGS) strerror.o
+ 
+ install:	all
+-	-mkdir -p $(CGIBINDIR)
+-	rm -f $(CGIBINDIR)/redirect
+-	cp redirect $(CGIBINDIR)/redirect
+-	rm -f $(MANDIR)/man8/redirect.8
+-	cp redirect.8 $(MANDIR)/man8/redirect.8
+-	rm -f $(CGIBINDIR)/ssi
+-	cp ssi $(CGIBINDIR)/ssi
+-	rm -f $(MANDIR)/man8/ssi.8
+-	cp ssi.8 $(MANDIR)/man8/ssi.8
+-	rm -f $(CGIBINDIR)/phf
+-	cp phf $(CGIBINDIR)/phf
++	-mkdir -p $(DESTDIR)$(CGIBINDIR)
++	rm -f $(DESTDIR)$(CGIBINDIR)/redirect
++	$(INSTALL) -s -m 555 redirect $(DESTDIR)$(CGIBINDIR)/redirect
++	rm -f $(DESTDIR)$(MANDIR)/man8/redirect.8
++	$(INSTALL) -m 444 redirect.8 $(DESTDIR)$(MANDIR)/man8/redirect.8
++	rm -f $(DESTDIR)$(CGIBINDIR)/ssi
++	$(INSTALL) -s -m 555 ssi $(DESTDIR)$(CGIBINDIR)/ssi
++	rm -f $(DESTDIR)$(MANDIR)/man8/ssi.8
++	$(INSTALL) -m 444 ssi.8 $(DESTDIR)$(MANDIR)/man8/ssi.8
++	rm -f $(DESTDIR)$(CGIBINDIR)/phf
++	$(INSTALL) -s -m 555 phf $(DESTDIR)$(CGIBINDIR)/phf
+ 
+ clean:
+ 	rm -f $(CLEANFILES)

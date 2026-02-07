@@ -1,0 +1,11 @@
+bin/gmixvm
+bin/mixasm
+bin/mixguile
+bin/mixvm
+share/locale/de/LC_MESSAGES/mdk.mo
+%%DATADIR%%/mixal-mode.el
+%%DATADIR%%/mixgtk.glade
+%%DATADIR%%/mixguile-commands.scm
+%%DATADIR%%/mixguile-vm-stat.scm
+%%DATADIR%%/mixguile.scm
+%%DATADIR%%/mixvm.el

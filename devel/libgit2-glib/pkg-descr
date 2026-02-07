@@ -1,0 +1,5 @@
+libgit2-glib is a glib wrapper library around the libgit2 git access library.
+
+libgit2 only implements the core plumbing functions, not really the higher
+level porcelain stuff. For a primer on Git Internals that you will need to know
+to work with Git at this level, check out [Chapter 9][pg] of the Pro Git book.

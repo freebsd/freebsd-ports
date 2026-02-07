@@ -1,0 +1,11 @@
+--- Makefile.orig	2011-05-11 00:58:23 UTC
++++ Makefile
+@@ -68,7 +68,7 @@ TARBALL_CONTENTS = 	\
+ 	wrapper.sh	\
+ 	README
+ 
+-default $(ALL) run cstyle lint tattle: $(BINS)
++all $(ALL) run cstyle lint tattle: $(BINS)
+ 	@cp bench.sh bench
+ 	@cp multiview.sh multiview
+ 	@cp wrapper.sh wrapper

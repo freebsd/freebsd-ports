@@ -1,0 +1,2 @@
+Tk::HistEntry implements an entry widget with history. You may use the up
+and down keys to select older entries (or use the associated listbox).

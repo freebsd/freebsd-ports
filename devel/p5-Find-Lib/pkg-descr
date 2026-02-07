@@ -1,0 +1,2 @@
+Find::Lib is a perl helper to smartly find libs to use in the
+filesystem tree.

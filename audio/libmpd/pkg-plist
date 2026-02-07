@@ -1,0 +1,16 @@
+include/libmpd/debug_printf.h
+include/libmpd/libmpd-database.h
+include/libmpd/libmpd-internal.h
+include/libmpd/libmpd-player.h
+include/libmpd/libmpd-playlist.h
+include/libmpd/libmpd-status.h
+include/libmpd/libmpd-sticker.h
+include/libmpd/libmpd-strfsong.h
+include/libmpd/libmpd-version.h
+include/libmpd/libmpd.h
+include/libmpd/libmpdclient.h
+lib/libmpd.a
+lib/libmpd.so
+lib/libmpd.so.1
+lib/libmpd.so.1.3.0
+libdata/pkgconfig/libmpd.pc

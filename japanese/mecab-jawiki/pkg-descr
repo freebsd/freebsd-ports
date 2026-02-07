@@ -1,0 +1,5 @@
+MeCab is open source Japanese dependency structure analyzer developed
+through the joint research project between Graduate School of Informatics
+Kyoto University and NTT (Nippon Telegraph and Telephone)
+Communication Science Laboratories.
+This package provides dictionary from Wikipedia (Japanese edition).

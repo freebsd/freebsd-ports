@@ -1,0 +1,4 @@
+bin/prefix
+bin/prefixadmin
+%%PERL5_MAN3%%/App::Options.3.gz
+%%SITE_PERL%%/App/Options.pm

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: canna
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these canna_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/canna
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+canna_enable=${canna_enable:-"NO"}		# Enable canna
+#canna_program="@PREFIX@/sbin/cannaserver"	# Location of canna
+canna_flags=${canna_flags:-"-u bin"}		# Flags to canna program
+# Put the following into /etc/rc.conf if you want to use a TCP
+# connection instead of a UNIX domain socket.
+#canna_flags="-u bin -inet"
+
+. /etc/rc.subr
+
+name="canna"
+rcvar=canna_enable
+command="%%PREFIX%%/sbin/cannaserver"
+start_precmd="canna_start_precmd"
+stop_cmd="canna_stop_cmd"
+
+canna_start_precmd() {
+	rm -f /tmp/.iroha_unix/IROHA*
+	rmdir /tmp/.iroha_unix > /dev/null 2>&1 || true
+	touch /var/log/CANNA0msgs
+	mkdir -p -m 0775 \
+		%%PREFIX%%/share/canna/dic/user/user \
+		%%PREFIX%%/share/canna/dic/group
+	chown bin:bin /var/log/CANNA0msgs \
+		%%PREFIX%%/share/canna/dic/user/user \
+		%%PREFIX%%/share/canna/dic/user \
+		%%PREFIX%%/share/canna/dic/group
+}
+
+canna_stop_cmd() {
+	echo "Stopping ${name}."
+	if %%PREFIX%%/sbin/cannakill; then
+		rm -f /tmp/.iroha_unix/IROHA*
+		rmdir /tmp/.iroha_unix > /dev/null 2>&1 || true
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,10 @@
+--- avahi-glib.pc.in.orig	2011-12-30 21:26:44 UTC
++++ avahi-glib.pc.in
+@@ -7,5 +7,5 @@ Name: avahi-glib
+ Description: Avahi Multicast DNS Responder (GLib Support)
+ Version: @PACKAGE_VERSION@
+ Requires: glib-2.0
+-Libs: -L${libdir} -lavahi-glib
+-Cflags: -D_REENTRANT -I${includedir}
++Libs: -L${libdir} -lavahi-glib @PTHREAD_LIBS@
++Cflags: -D_REENTRANT @PTHREAD_CFLAGS@ -I${includedir}

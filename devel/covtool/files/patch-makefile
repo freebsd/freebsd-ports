@@ -1,0 +1,42 @@
+--- ./makefile.orig	2009-08-02 01:51:16.000000000 +0400
++++ ./makefile	2012-12-06 17:38:24.000000000 +0400
+@@ -28,31 +28,14 @@
+ 	
+ 
+ install:
+-	@mkdir -p $(INSTALL_DIR)
+-	if [ -w $(INSTALL_DIR)/. ] ; \
+-	 then \
+-	     for f in $(INSTALLABLES) ;\
+-	     do \
+-	       echo "installing $$f" ;\
+-	       cp $$f $(INSTALL_DIR) ;\
+-	     done ;\
+-	     cp -r man $(INSTALL_DIR) ;\
+-	 else \
+-	     echo "Error:  can't create $(INSTALL_DIR)" ; \
+-	     exit 1; \
+-	 fi
+-	@echo ""
+-	@echo ""
+-	@echo ""
+-	@echo "Installation complete"
+-	@echo "Add $(INSTALL_DIR) to your path"
+-	@echo ""
+-	@echo "Then run make install_tests (but not as ROOT!)"
+-	@echo ""
+-	@echo ""
+-	@echo "Also, add $(INSTALL_DIR) to your MANPATH."
+-	@echo ""
+-	
++	mkdir -p $(INSTALL_DIR)/bin $(INSTALL_DIR)/share/covtool $(INSTALL_DIR)/libexec/covtool
++	for f in covtool.exe covmerge.exe covannotate.exe; do \
++		mv $${f} $${f%.*} ;\
++		$(INSTALL_PROGRAM) $${f%.*} $(INSTALL_DIR)/bin ;\
++	done
++	$(INSTALL_DATA) covtoolhelper.o covtoolhelper_debug.o covtoolhelper.c $(INSTALL_DIR)/libexec/covtool
++	$(INSTALL_DATA) README COPYRIGHT covtool_version $(INSTALL_DIR)/share/covtool
++	$(INSTALL_SCRIPT) cov++ gen_html $(INSTALL_DIR)/bin
+ 	
+ install_tests:
+ 	cd install_test ; $(MAKE) all ; $(MAKE) tests

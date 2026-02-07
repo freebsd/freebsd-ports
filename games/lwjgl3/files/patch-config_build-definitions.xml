@@ -1,0 +1,12 @@
+--- config/build-definitions.xml.orig	2025-01-04 19:11:17 UTC
++++ config/build-definitions.xml
+@@ -121,7 +121,8 @@ -->
+ 
+     <property name="lib" location="bin/libs" relative="true"/>
+ 
+-    <property name="kotlinc" location="${lib}/kotlinc" relative="true"/>
++    <property name="kotlinc" location="${lib}/kotlinc" relative="true" unless:set="local.kotlin"/>
++    <property name="kotlinc" location="${local.kotlin}" relative="false" if:set="local.kotlin"/>
+ 
+     <property name="module.lwjgl" location="modules/lwjgl" relative="true"/>
+ 

@@ -1,0 +1,68 @@
+Revert https://gitlab.gnome.org/GNOME/gtk/-/commit/ed8203e700aa
+NetBSD pkgsrc patch
+
+--- gtk/a11y/gtkaccessibility.c.orig	2023-05-22 02:22:08 UTC
++++ gtk/a11y/gtkaccessibility.c
+@@ -38,8 +38,10 @@
+ #include <gtk/gtkaccessible.h>
+ 
+ #ifdef GDK_WINDOWING_X11
++#ifdef HAVE_ATK_BRIDGE
+ #include <atk-bridge.h>
+ #endif
++#endif
+ 
+ static gboolean gail_focus_watcher      (GSignalInvocationHint *ihint,
+                                          guint                  n_param_values,
+@@ -989,7 +991,9 @@ _gtk_accessibility_init (void)
+   do_window_event_initialization ();
+ 
+ #ifdef GDK_WINDOWING_X11
++#ifdef HAVE_ATK_BRIDGE
+   atk_bridge_adaptor_init (NULL, NULL);
++#endif
+ #endif
+ 
+   atk_misc_instance = g_object_new (GTK_TYPE_MISC_IMPL, NULL);
+--- meson.build.orig	2023-05-22 02:22:08 UTC
++++ meson.build
+@@ -137,6 +137,7 @@ win32_enabled          = get_option('win32_backend')
+ broadway_enabled       = get_option('broadway_backend')
+ quartz_enabled         = get_option('quartz_backend')
+ win32_enabled          = get_option('win32_backend')
++atkbridge_enabled      = get_option('atk_bridge')
+ 
+ os_unix   = false
+ os_linux  = false
+@@ -564,7 +565,10 @@ if x11_enabled
+   xfixes_dep     = dependency('xfixes', required: false)
+   xcomposite_dep = dependency('xcomposite', required: false)
+   fontconfig_dep = dependency('fontconfig', fallback: ['fontconfig', 'fontconfig_dep'])
++  if atkbridge_enabled
+   atkbridge_dep  = dependency('atk-bridge-2.0', version: at_spi2_atk_req)
++  cdata.set('HAVE_ATK_BRIDGE', 1)
++  endif
+ 
+   backend_immodules += ['xim']
+ 
+@@ -583,7 +587,9 @@ if x11_enabled
+     x11_pkgs += ['xdamage']
+   endif
+ 
++  if atkbridge_enabled
+   atk_pkgs += ['atk-bridge-2.0']
++  endif
+ 
+   cdata.set('HAVE_XDAMAGE', xdamage_dep.found() ? 1 : false)
+   cdata.set('HAVE_XCURSOR', xcursor_dep.found() ? 1 : false)
+--- meson_options.txt.orig	2023-05-22 02:22:08 UTC
++++ meson_options.txt
+@@ -9,6 +9,8 @@ option('quartz_backend', type: 'boolean', value: true,
+   description : 'Enable the Windows gdk backend (only when building on Windows)')
+ option('quartz_backend', type: 'boolean', value: true,
+   description : 'Enable the macOS gdk backend (only when building on macOS)')
++option('atk_bridge', type: 'boolean', value: true,
++  description : 'Enable Atk bridge')
+ 
+ # Optional dependencies
+ option('xinerama', type: 'combo', choices : ['yes', 'no', 'auto'], value : 'auto',

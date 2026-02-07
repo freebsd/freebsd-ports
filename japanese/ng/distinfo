@@ -1,0 +1,4 @@
+SHA256 (ng-1.4.4.tar.gz) = 6d7c5f8abcc7485c3599a3c811fe338c2ac4829d3b1617af6512df87cbb84980
+SIZE (ng-1.4.4.tar.gz) = 587018
+SHA256 (ng-1.4.4-replace_bug.patch) = a4526bb8702586bd1fd3273de6dfa87c073651163faed453f975d085dff41736
+SIZE (ng-1.4.4-replace_bug.patch) = 3956

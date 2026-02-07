@@ -1,0 +1,18 @@
+U-Boot loader for SolidRun Cubox-i and Hummingboard.
+
+Install the u-boot.imx file onto the boot disk using:
+
+  dd if=u-boot.imx of=/dev/whatever bs=1k oseek=1 conv=sync
+
+The U-Boot built by this port expects the first 1MB of the boot media to
+be reserved for the U-Boot executable and saved environment.  The u-boot.imx
+file begins at an offset of 1K from the start of the boot disk.  The U-Boot
+environment area begins at an offset of 512K.
+
+This version is patched so that:
+ * ELF and API features are enabled to support ubldr.
+
+The sources for this port were originally obtained from commit e4bc4c3ebe
+at https://github.com/SolidRun/u-boot-imx6 which appears to be a highly
+modified fork of the stock U-Boot 2013.10 release.  As of this writing,
+the changes in this fork have not been rolled back into upstream U-Boot.

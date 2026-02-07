@@ -1,0 +1,21 @@
+    CTWM is an extension to twm, that support multiple virtual screens,
+and a lot of other goodies.
+
+    You can use and manage up to  32 virtual screens called workspaces.
+You swap  from one workspace to another by  clicking on a button  in an
+optionnal panel of buttons (the workspace manager) or by invoking a function.
+
+    You can custom  each workspace by choosing  different colors, names
+and pixmaps for the buttons and background root windows.
+
+    Main features are :
+
+        - Optional 3D window titles and border (ala Motif).
+        - Shaped, colored icons.
+        - Multiple icons for clients based on the icon name.
+        - Windows can belong to several workspaces.
+        - A map of your workspaces to move quickly windows between
+          different workspaces.
+        - Animations : icons, root backgrounds and buttons can be animated.
+        - Pinnable and sticky menus.
+        - etc...

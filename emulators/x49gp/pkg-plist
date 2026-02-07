@@ -1,0 +1,13 @@
+bin/hp49g+
+bin/hp50g
+bin/x49gp-bin
+%%DATADIR%%/config-hp50g
+%%DATADIR%%/config-hp49g+
+%%DATADIR%%/flash-49g+
+%%DATADIR%%/flash-50g
+%%DATADIR%%/hp49g+.png
+%%DATADIR%%/hp50g.png
+%%DATADIR%%/hp50g-hack.png
+%%DATADIR%%/s3c2410-sram
+%%DATADIR%%/sdcard64.tar.gz
+%%DATADIR%%/sram

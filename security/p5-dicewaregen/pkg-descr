@@ -1,0 +1,8 @@
+Dicewaregen is simple perl script that generates Diceware dictionaries, that
+can be used to create passphrases.
+
+Dicewaregen relies on aspell, to make wordlist. Once you have wordlist you can
+create Diceware dictionary. You can make few wordlists using different
+languages, merge them and then make Diceware dictionary.
+
+More info about Diceware: http://world.std.com/~reinhold/diceware.html

@@ -1,0 +1,7 @@
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tortoisehg/util/__pycache__/config.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tortoisehg/util/__pycache__/config.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/config.py
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/tortoisehg/util/config.pyc
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/tortoisehg/util/config.pyo
+share/applications/thg.desktop
+%%DATADIR%%/mergetools.rc

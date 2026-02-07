@@ -1,0 +1,43 @@
+;; startup elisp for YaTeX
+;;
+(setq auto-mode-alist
+     (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
+(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+(cond
+  ((string= current-language-environment "Japanese")
+   (progn
+     (setq YaTeX-help-file "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/yatex/help/YATEXHLP.jp")
+     (setq tex-command "platex")
+   ))
+  (t
+   (progn
+     (setq YaTeX-help-file "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/yatex/help/YATEXHLP.eng")
+     (setq tex-command "latex")
+   ))
+)
+(setq YaTeX-use-font-lock t)
+(setq YaTeX-dvipdf-command "dvipdfmx")
+(setq tex-pdfview-command "mupdf")
+
+;;
+;(setq dvi2-command "xdvi -geo +0+0 -s 3")
+;; If you use dvipsk as default, you should use the following three lines.
+;(setq dviprint-from-format "-p %b")
+;(setq dviprint-to-format "-l %b")
+;(setq dviprint-command-format "dvips %f %t %s | lpr")
+;; specifying a Kanji code for Mule
+;;   (1=Shift JIS, 2=JIS, 3=EUC)
+;(setq YaTeX-kanji-code 3)
+
+;;;;;;;; Yahtml (another html-mode) ;;;;;;
+;(setq auto-mode-alist
+;      (cons (cons "\\.html$" 'yahtml-mode) auto-mode-alist))
+;(autoload 'yahtml-mode "yahtml" "Yet Another HTML mode" t)
+;; Write your favorite browser.  But netscape is advantageous.
+;(setq yahtml-www-browser "netscape")
+;; Write correspondence alist from ABSOLUTE unix path name to URL path.
+;(setq yahtml-path-url-alist
+;      '(("/home/yuuji/public_html" . "http://www.mynet/~yuuji")
+;	("/home/staff/yuuji/html" . "http://www.othernet/~yuuji")))
+
+(provide 'yatex-startup)

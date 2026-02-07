@@ -1,0 +1,13 @@
+- https://github.com/parthenon-hpc-lab/parthenon/issues/1169
+
+--- CMakeLists.txt.orig	2024-09-07 18:42:31 UTC
++++ CMakeLists.txt
+@@ -367,7 +367,7 @@ if (PARTHENON_ENABLE_ASCENT)
+ endif()
+ 
+ if (PARTHENON_ENABLE_ASCENT)
+-  find_package(Ascent REQUIRED NO_DEFAULT_PATH)
++  find_package(Ascent REQUIRED)
+ endif()
+ 
+ # Installation configuration

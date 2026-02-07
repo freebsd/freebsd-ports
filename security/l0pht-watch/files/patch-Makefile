@@ -1,0 +1,28 @@
+--- Makefile.orig	1999-09-23 17:18:18 UTC
++++ Makefile
+@@ -9,12 +9,13 @@
+ # debugging
+ # DFLAGS = -DTEST -DDEBUG
+ DFLAGS = -DREGEX
+-CFLAGS =-O -Wall
++CFLAGS ?=-O -Wall
+ XFLAGS =        # xtra cflags, set by systype targets
+ XLIBS =         # xtra libs if necessary?
+ # -Bstatic for sunos,  -static for gcc, etc.  You want this, trust me.
+ STATIC =
+-CC = cc $(CFLAGS)
++CC ?= cc
++CC += $(CFLAGS)
+ LD = $(CC) -s   # linker; defaults to stripped executables
+ o = o           # object extension
+ CKTEMP_OBJS=check_tmp.o daemon.o list_utils.o usage.o
+@@ -60,7 +61,8 @@ solaris25:
+ 
+ OpenBSD:
+ 	make -e $(ALL) $(MFLAGS) \
+-	XFLAGS='-DBSD -DREGEX -DREGCOMP_3C' CC="gcc $(CFLAGS)" STATIC=-static
++	XFLAGS='-DREGEX -DREGCOMP_3C' CC="$(CC) $(CFLAGS)" \
++	STATIC=-static
+ 
+ generic:
+ 	make -e $(ALL) $(MFLAGS) \

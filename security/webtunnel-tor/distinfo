@@ -1,0 +1,5 @@
+TIMESTAMP = 1687620500
+SHA256 (anti-censorship/pluggable-transports-webtunnel-38eb55054a5c3c072acc1d8f9a9afa36e3a5c9b7_GL0.tar.gz) = ed742a89bdacf5431b4464b76822393a002d0e4711c377dee9d243c58718c9e1
+SIZE (anti-censorship/pluggable-transports-webtunnel-38eb55054a5c3c072acc1d8f9a9afa36e3a5c9b7_GL0.tar.gz) = 10960
+SHA256 (anti-censorship-pluggable-transports/goptlib-24b2b145d7afc66b66e58c702cf988c00f694b70_GL0.tar.gz) = d41286afbbf942f5385831487fc2e06be885c06800412e3bd1fbd72e70ebbaf5
+SIZE (anti-censorship-pluggable-transports/goptlib-24b2b145d7afc66b66e58c702cf988c00f694b70_GL0.tar.gz) = 29730

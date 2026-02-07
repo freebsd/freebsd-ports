@@ -1,0 +1,13 @@
+The OpenJPEG library is an open-source JPEG 2000 library developed in order to
+promote the use of JPEG 2000.
+
+The main part of the project consists in a JPEG 2000 codec compliant with the
+Part 1 of the standard (Class-1 Profile-1 compliance).
+
+Besides this main codec, OpenJPEG integrates several other modules:
+- JP2 (JPEG 2000 standard Part 2 - Handling of JP2 boxes and extended multiple
+  component transforms for multispectral and hyperspectral imagery)
+- MJ2 (JPEG 2000 standard Part 3)
+- JPWL (JPEG 2000 standard Part 11)
+- JPIP (JPEG 2000 standard Part 9)
+- OPJViewer, a GUI viewer for J2K, JP2, JPWL and MJ2 files

@@ -1,0 +1,53 @@
+--- liquibase.orig	2019-11-06 04:45:57 UTC
++++ liquibase
+@@ -1,28 +1,6 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+-if [ ! -n "${LIQUIBASE_HOME+x}" ]; then
+-  # echo "LIQUIBASE_HOME is not set."
+-
+-  ## resolve links - $0 may be a symlink
+-  PRG="$0"
+-  while [ -h "$PRG" ] ; do
+-    ls=`ls -ld "$PRG"`
+-    link=`expr "$ls" : '.*-> \(.*\)$'`
+-    if expr "$link" : '/.*' > /dev/null; then
+-    PRG="$link"
+-    else
+-    PRG=`dirname "$PRG"`"/$link"
+-    fi
+-  done
+-
+-
+-  LIQUIBASE_HOME=`dirname "$PRG"`
+-
+-  # make it fully qualified
+-  LIQUIBASE_HOME=`cd "$LIQUIBASE_HOME" && pwd`
+-  # echo "Liquibase Home: $LIQUIBASE_HOME"
+-fi
+-
++LIQUIBASE_HOME=`readlink -f "$(dirname "$0")/../share/liquibase"`
+  
+ # build classpath from all jars in lib
+ if [ -f /usr/bin/cygpath ]; then
+@@ -36,17 +14,13 @@ if [ -f /usr/bin/cygpath ]; then
+     CP="$CP;$i"
+   done
+ else
+-  if [[ $(uname) = MINGW* ]]; then
++  if [ $(uname) = Msys ]; then
+     CP_SEPARATOR=";"
+   else
+     CP_SEPARATOR=":"
+   fi
+   CP=.
+-  for i in "$LIQUIBASE_HOME"/liquibase*.jar; do
+-    CP="$CP""$CP_SEPARATOR""$i"
+-  done
+-  CP="$CP""$CP_SEPARATOR""$LIQUIBASE_HOME/lib/"
+-  for i in "$LIQUIBASE_HOME"/lib/*.jar; do
++  for i in "$LIQUIBASE_HOME"/*.jar; do
+     CP="$CP""$CP_SEPARATOR""$i"
+   done
+ fi

@@ -1,0 +1,85 @@
+memalign is Linux-specific, so use C11 aligned_alloc instead.
+
+In file included from _studio/shared/asc/src/tree.cpp:20:
+In file included from _studio/shared/asc/src/../include/tree.h:23:
+In file included from _studio/shared/asc/include/asc_structures.h:34:
+In file included from _studio/shared/asc/../../mfx_lib/cmrt_cross_platform/include/cmrt_cross_platform.h:151:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+In file included from _studio/shared/asc/src/tree.cpp:20:
+In file included from _studio/shared/asc/src/../include/tree.h:23:
+In file included from _studio/shared/asc/include/asc_structures.h:34:
+_studio/shared/asc/../../mfx_lib/cmrt_cross_platform/include/cmrt_cross_platform.h:264:12: error: use of undeclared identifier 'memalign'
+    return memalign(alignment, size);
+           ^
+
+--- _studio/mfx_lib/cmrt_cross_platform/include/cmrt_cross_platform.h.orig	2019-10-30 19:56:10 UTC
++++ _studio/mfx_lib/cmrt_cross_platform/include/cmrt_cross_platform.h
+@@ -148,7 +148,6 @@ struct ID3D11Device;
+ #include <stdlib.h>
+ #include <stdint.h>
+ #include <math.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <sys/time.h>
+ #include <pthread.h>
+@@ -261,7 +260,7 @@ template<> inline const char * CM_TYPE_NAME_UNMANGLED<
+ 
+ inline void * CM_ALIGNED_MALLOC(size_t size, size_t alignment)
+ {
+-    return memalign(alignment, size);
++    return aligned_alloc(alignment, size);
+ }
+ 
+ inline void CM_ALIGNED_FREE(void * memory)
+--- _studio/shared/asc/src/asc.cpp.orig	2019-10-30 19:56:10 UTC
++++ _studio/shared/asc/src/asc.cpp
+@@ -103,12 +103,12 @@ mfxStatus ASCimageData::InitFrame(ASCImDetails *pDetai
+     Image.U = NULL;
+     Image.V = NULL;
+     //Memory Allocation
+-    Image.data = (mfxU8*)memalign(0x1000, imageSpaceSize);
+-    SAD = (mfxU16 *)memalign(0x1000, sizeof(mfxU16) * mvSpaceSize);
+-    Rs = (mfxU16 *)memalign(0x1000, sizeof(mfxU16) * texSpaceSize);
+-    Cs = (mfxU16 *)memalign(0x1000, sizeof(mfxU16) * texSpaceSize);
+-    RsCs = (mfxU16 *)memalign(0x1000, sizeof(mfxU16) * texSpaceSize);
+-    pInteger = (ASCMVector *)memalign(0x1000, sizeof(ASCMVector)  * mvSpaceSize);
++    Image.data = (mfxU8*)aligned_alloc(0x1000, imageSpaceSize);
++    SAD = (mfxU16 *)aligned_alloc(0x1000, sizeof(mfxU16) * mvSpaceSize);
++    Rs = (mfxU16 *)aligned_alloc(0x1000, sizeof(mfxU16) * texSpaceSize);
++    Cs = (mfxU16 *)aligned_alloc(0x1000, sizeof(mfxU16) * texSpaceSize);
++    RsCs = (mfxU16 *)aligned_alloc(0x1000, sizeof(mfxU16) * texSpaceSize);
++    pInteger = (ASCMVector *)aligned_alloc(0x1000, sizeof(ASCMVector)  * mvSpaceSize);
+     if (Image.data == NULL)
+         return MFX_ERR_MEMORY_ALLOC;
+     //Pointer conf.
+@@ -145,7 +145,7 @@ mfxStatus ASCimageData::InitAuxFrame(ASCImDetails *pDe
+     Image.U = NULL;
+     Image.V = NULL;
+     //Memory Allocation
+-    Image.data = (mfxU8*)memalign(0x1000, imageSpaceSize);
++    Image.data = (mfxU8*)aligned_alloc(0x1000, imageSpaceSize);
+     if (Image.data == NULL)
+         return MFX_ERR_MEMORY_ALLOC;
+     //Pointer conf.
+@@ -415,7 +415,7 @@ mfxStatus ASC::VidSample_Alloc() {
+         res = m_device->GetSurface2DInfo(m_gpuwidth, m_gpuheight, CM_SURFACE_FORMAT_NV12, m_gpuImPitch, physicalSize);
+         SCD_CHECK_CM_ERR(res, MFX_ERR_DEVICE_FAILED);
+         m_frameBkp = nullptr;
+-        m_frameBkp = (mfxU8*)memalign(0x1000, physicalSize);
++        m_frameBkp = (mfxU8*)aligned_alloc(0x1000, physicalSize);
+         if (m_frameBkp == nullptr)
+             return MFX_ERR_MEMORY_ALLOC;
+         memset(m_frameBkp, 0, physicalSize);
+--- tutorials/common/ocl_process.cpp.orig	2019-10-30 19:56:10 UTC
++++ tutorials/common/ocl_process.cpp
+@@ -21,7 +21,7 @@
+ #include "ocl_process.h"
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ #include <CL/opencl.h>
+ #include <CL/cl_dx9_media_sharing.h>

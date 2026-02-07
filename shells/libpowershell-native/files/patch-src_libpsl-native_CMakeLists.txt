@@ -1,0 +1,11 @@
+--- src/libpsl-native/CMakeLists.txt.orig	2023-10-31 22:12:48 UTC
++++ src/libpsl-native/CMakeLists.txt
+@@ -18,8 +18,5 @@ else ()
+     add_subdirectory(src)
+ else ()
+     # test in BUILD_DIR
+-    message(STATUS "Tests enabled")
+-    enable_testing()
+     add_subdirectory(src)
+-    add_subdirectory(test)
+ endif ()

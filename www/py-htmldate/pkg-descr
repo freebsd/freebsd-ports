@@ -1,0 +1,3 @@
+htmldate finds original and updated publication dates of any web page. From the
+command-line or within Python, all the steps needed from web page download to
+HTML parsing, scraping, and text analysis are included.

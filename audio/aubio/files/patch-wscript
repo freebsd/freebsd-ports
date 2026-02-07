@@ -1,0 +1,84 @@
+Hunks 1 & 2: Enable manpages, doxygen, and sphinx documentation separately
+Hunks 3 & 4: Install docs in more standard locations
+
+--- wscript.orig	2019-01-09 22:40:04 UTC
++++ wscript
+@@ -97,9 +97,15 @@ def options(ctx):
+             help_str = 'compile with source_wavwrite (default)',
+             help_disable_str = 'do not compile source_wavwrite')
+ 
+-    add_option_enable_disable(ctx, 'docs', default = None,
+-            help_str = 'build documentation (auto)',
+-            help_disable_str = 'do not build documentation')
++    add_option_enable_disable(ctx, 'manpages', default = None,
++            help_str = 'build manpages (auto)',
++            help_disable_str = 'do not build manpages')
++    add_option_enable_disable(ctx, 'doxygen', default = None,
++            help_str = 'build API documentation (auto)',
++            help_disable_str = 'do not build API documentation')
++    add_option_enable_disable(ctx, 'sphinx', default = None,
++            help_str = 'build general documentation (auto)',
++            help_disable_str = 'do not build general documentation')
+ 
+     add_option_enable_disable(ctx, 'tests', default = True,
+             help_str = 'build tests (true)',
+@@ -475,19 +481,21 @@ def configure(ctx):
+     if (ctx.options.enable_double == True):
+         ctx.define('HAVE_AUBIO_DOUBLE', 1)
+ 
+-    if (ctx.options.enable_docs != False):
++    if (ctx.options.enable_manpages != False):
+         # check if txt2man is installed, optional
+         try:
+           ctx.find_program('txt2man', var='TXT2MAN')
+         except ctx.errors.ConfigurationError:
+           ctx.to_log('txt2man was not found (ignoring)')
+ 
++    if (ctx.options.enable_doxygen != False):
+         # check if doxygen is installed, optional
+         try:
+           ctx.find_program('doxygen', var='DOXYGEN')
+         except ctx.errors.ConfigurationError:
+           ctx.to_log('doxygen was not found (ignoring)')
+ 
++    if (ctx.options.enable_sphinx != False):
+         # check if sphinx-build is installed, optional
+         try:
+           ctx.find_program('sphinx-build', var='SPHINX')
+@@ -557,24 +565,17 @@ def doxygen(bld):
+                 target = bld.path.find_or_declare('api/index.html'),
+                 cwd = bld.path.find_dir('doc'))
+         # evaluate nodes lazily to prevent build directory traversal warnings
+-        bld.install_files('${DATAROOTDIR}/doc/libaubio-doc/api',
++        bld.install_files('${DATAROOTDIR}/doc/aubio/api',
+                 bld.path.find_or_declare('api').ant_glob('**/*',
+                     generator=True), cwd=bld.path.find_or_declare('api'),
+                 relative_trick=True)
+ 
+ def sphinx(bld):
+     # build documentation from source files using sphinx-build
+-    try:
+-        import aubio
+-        has_aubio = True
+-    except ImportError:
+-        from waflib import Logs
+-        Logs.pprint('YELLOW', "Sphinx manual: install aubio first")
+-        has_aubio = False
+-    if bld.env['SPHINX'] and has_aubio:
++    if bld.env['SPHINX']:
+         bld.env.VERSION = VERSION
+         rule = '${SPHINX} -b html -D release=${VERSION}' \
+-                ' -D version=${VERSION} -W -a -q' \
++                ' -D version=${VERSION} -a -q' \
+                 ' -d %s ' % os.path.join(os.path.abspath(out), 'doctrees')
+         rule += ' . %s' % os.path.join(os.path.abspath(out), 'manual')
+         bld( name = 'sphinx', rule = rule,
+@@ -582,7 +583,7 @@ def sphinx(bld):
+                 source = bld.path.find_dir('doc').ant_glob('*.rst'),
+                 target = bld.path.find_or_declare('manual/index.html'))
+         # evaluate nodes lazily to prevent build directory traversal warnings
+-        bld.install_files('${DATAROOTDIR}/doc/libaubio-doc/manual',
++        bld.install_files('${DATAROOTDIR}/doc/aubio/manual',
+                 bld.path.find_or_declare('manual').ant_glob('**/*',
+                     generator=True), cwd=bld.path.find_or_declare('manual'),
+                 relative_trick=True)

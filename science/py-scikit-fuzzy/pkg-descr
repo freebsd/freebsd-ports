@@ -1,0 +1,8 @@
+Fuzzy logic toolkit for SciPy.
+
+The goals of scikit-fuzzy are:
+
+* To provide the community with a robust toolkit of independently developed
+  and implemented fuzzy logic algorithms
+* To increase the attractiveness of scientific Python as a valid alternative
+  to closed-source options.

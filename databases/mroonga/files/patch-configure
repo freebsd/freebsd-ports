@@ -1,0 +1,37 @@
+--- configure.orig	2025-05-14 02:45:47 UTC
++++ configure
+@@ -20724,28 +20724,6 @@ printf "%s\n" "$check_cxxflag" >&6; }
+     ;;
+   esac
+ 
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libmysqlservices.a directory" >&5
+-printf %s "checking for libmysqlservices.a directory... " >&6; }
+-  pkglibdir="$($ac_mysql_config --variable=pkglibdir)"
+-  mysql_build_archive_output_dir="${MYSQL_BUILD_DIR}/archive_output_directory"
+-  mysql_build_libservices_dir="${MYSQL_BUILD_DIR}/libservices"
+-  if test -f "${mysql_build_archive_output_dir}/libmysqlservices.a"; then
+-    mysql_services_lib_dir="${mysql_build_archive_output_dir}"
+-  elif test -f "${mysql_build_libservices_dir}/libmysqlservices.a"; then
+-    mysql_services_lib_dir="${mysql_build_libservices_dir}"
+-  else
+-    if test -f "${pkglibdir}/libmysqlservices.a"; then
+-      mysql_services_lib_dir="${pkglibdir}"
+-    elif test -f "${pkglibdir}/mysql/libmysqlservices.a"; then
+-      mysql_services_lib_dir="${pkglibdir}/mysql"
+-    else
+-      as_fn_error $? "libmysqlservices.a is not found in <${pkglibdir}/> and <${pkglibdir}/mysql/>" "$LINENO" 5
+-    fi
+-  fi
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $mysql_services_lib_dir" >&5
+-printf "%s\n" "$mysql_services_lib_dir" >&6; }
+-  MYSQL_LIBS="$MYSQL_LIBS \"$mysql_services_lib_dir/libmysqlservices.a\""
+-
+   case "$MYSQL_MAJOR_MINOR_VERSION" in
+   10.4)
+     :
+@@ -23991,5 +23969,3 @@ fi
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-

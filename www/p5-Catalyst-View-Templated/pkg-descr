@@ -1,0 +1,2 @@
+View::Templated makes all (template-based) Catalyst views work
+the same way.

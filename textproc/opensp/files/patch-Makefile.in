@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2005-12-23 14:16:01 UTC
++++ Makefile.in
+@@ -247,9 +247,9 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = check-news
+-SUBDIRS = pubtext unicode doc \
++SUBDIRS = pubtext unicode \
+ 	include generic \
+-	intl po \
++	po \
+ 	lib nsgmls spent spam sgmlnorm sx spcat \
+ 	tests @DOCSRC@
+ 
+@@ -709,7 +709,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-pkgdocDATA install-pkgincludeHEADERS
++install-data-am: install-pkgincludeHEADERS
+ 
+ install-exec-am:
+ 

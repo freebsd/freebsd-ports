@@ -1,0 +1,4 @@
+lib/compat/libffi.so
+lib/compat/libffi.so.7
+lib/compat/libffi.so.7.1.0
+@comment libdata/pkgconfig/libffi.pc

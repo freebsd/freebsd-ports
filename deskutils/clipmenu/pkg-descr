@@ -1,0 +1,2 @@
+clipmenu is a simple clipboard manager using dmenu (or rofi with
+CM_LAUNCHER=rofi) and xsel.

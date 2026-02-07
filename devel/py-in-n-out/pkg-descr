@@ -1,0 +1,5 @@
+Python dependency injection you can taste.
+
+A lightweight dependency injection and result processing framework for Python
+using type hints. Emphasis is on simplicity, ease of use, and minimal impact
+on source code.

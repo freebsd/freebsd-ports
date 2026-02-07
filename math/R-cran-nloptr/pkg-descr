@@ -1,0 +1,4 @@
+nloptr is an R interface to NLopt. NLopt is a free/open-source
+library for nonlinear optimization, providing a common interface
+for a number of different free optimization routines available
+online as well as original implementations of various other algorithms.

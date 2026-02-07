@@ -1,0 +1,2 @@
+Data::Object::Role::Dumpable provides methods for dumping the object and
+underlying value.

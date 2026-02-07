@@ -1,0 +1,19 @@
+diff -ru orig.vga.c vga.c
+--- orig.vga.c	Wed Feb 18 11:11:30 1998
++++ vga.c	Mon Feb 16 18:08:24 1998
+@@ -558,6 +558,15 @@
+                 wregs[BP] = ChangeE(0);
+             }
+             break;
++	case 0x14:	/* Load rom 8x16 font */
++	    if (height != 25) {
++		height = 25;
++		SetHeight(height);
++		SetSize((width+1) * (height+1) * 2);
++		new_screen(width+1, height+1, screen_mem);
++		clearscr(0,0,width, height, 0x07);
++	    }
++            break;
+         default:
+             printf("Unimplemented int 0x10 function 0x11 sub-function %02Xh\n",*bregs[AL]);
+ #if PANIC

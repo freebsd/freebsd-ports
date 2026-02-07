@@ -1,0 +1,11 @@
+from __future__ import absolute_import
+import os
+
+# Uncomment to enable logging
+# import logging
+# logging.basicConfig(filename='/var/log/puppetboard/puppetboard.log', level=logging.INFO)
+
+# Indicate where to find the configuration file
+os.environ['PUPPETBOARD_SETTINGS'] = '%%ETCDIR%%/settings.py'
+
+from puppetboard.app import app as application

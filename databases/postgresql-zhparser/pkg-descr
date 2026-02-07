@@ -1,0 +1,5 @@
+Zhparser is a PostgreSQL extension for full-text search of Chinese.
+It uses Simple Chinese Word Segmentation (SCWS) as driver and is
+highly configurable and easy to use. The default dictionary of
+Zhparser is for Simplified Chinese. If you use Traditional Chinese,
+you can download the dictionary from the SCWS official site.

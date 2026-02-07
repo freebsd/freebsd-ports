@@ -1,0 +1,35 @@
+
+	This port engages in a long, computationally-demanding tuning process.
+	Builds can take a day or more on older hardware, and can temporarily
+	occupy several hundred megabytes of disk space.  You are advised to
+	disable all forms of power management or CPU throttling during the
+	build, and to set operating parameters to static values at which you
+	ultimately intend to use the software.  You should also avoid placing
+	heavy loads on the system during the build, and temporarily disable
+	any automatons that may do so.  If you fail to follow these guidelines,
+	you may prolong the build and obtain libraries with sub-optimal
+	performance.
+
+	Occasionally the auto-configuration may fail for certain platforms,
+	and you may have to override the architecture, compiler flags, assembly
+	language dialect, or pointer bit-width by issuing additional configure
+	arguments.  Consult the FAQ, installation guide, and errata page at
+	the project website for help if this is necessary, and notify the
+	port maintainer.  Note that in most cases the port intentionally
+	overrides user-selected compiler flags.
+
+	If your machine will be solely dedicated to building atlas during the
+	lengthy optimization process, and not subjected to other loads, you
+	may enable the more accurate wall timer (instead of the default
+	CPU-time timer) with the WALL_TIMER option.
+
+	If you want to override the architecture auto-detection, and use a
+	specific architectural default, then set WITH_ARCHDEF and define
+	ARCHDEF to be either the full path to a gzipped architectural default
+	tarball with suffix .tgz, or the basename of such a tarball in the
+	distribution CONFIG/ARCHS sub-directory.  If you want to ignore all
+	architectural defaults, set WITH_ARCHDEF and define ARCHDEF=NONE.
+	Note that the use of versioned compiler names in Ports may prevent
+	the use of architectural default tarballs constructed on other systems
+	without some changes to their directory structure.
+

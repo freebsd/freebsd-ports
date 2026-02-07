@@ -1,0 +1,71 @@
+--- src/dspam.conf.in.orig	2012-04-11 18:48:33 UTC
++++ src/dspam.conf.in
+@@ -56,6 +56,7 @@ TrustedDeliveryAgent "@delivery_agent@"
+ # necessary if you plan on allowing untrusted processing.
+ #
+ #UntrustedDeliveryAgent "/usr/bin/procmail -d %u"
++#UntrustedDeliveryAgent "@delivery_agent@"
+ 
+ #
+ # SMTP or LMTP Delivery: Alternatively, you may wish to use SMTP or LMTP
+@@ -350,7 +351,7 @@ AllowOverride notifications
+ # Storage driver settings: Specific to a particular storage driver. Uncomment
+ # the configuration specific to your installation, if applicable.
+ #
+-#MySQLServer		/var/lib/mysql/mysql.sock
++#MySQLServer		/tmp/mysql.sock
+ #MySQLPort		
+ #MySQLUser		dspam
+ #MySQLPass		changeme
+@@ -361,7 +362,7 @@ AllowOverride notifications
+ # If you are using replication for clustering, you can also specify a separate
+ # server to perform all writes to.
+ #
+-#MySQLWriteServer	/var/lib/mysql/mysql.sock
++#MySQLWriteServer	/tmp/mysql.sock
+ #MySQLWritePort		
+ #MySQLWriteUser		dspam
+ #MySQLWritePass		changeme
+@@ -406,7 +407,7 @@ AllowOverride notifications
+ # in /var/run/postgresql/.s.PGSQL.5432 specify just the path where the socket
+ # resits (without .s.PGSQL.5432).
+ 
+-#PgSQLServer		/var/run/postgresql/
++#PgSQLServer		/tmp/
+ #PgSQLPort		
+ #PgSQLUser		dspam
+ #PgSQLPass		changeme
+@@ -807,9 +808,9 @@ Opt out
+ # interfaces.
+ #
+ #ServerHost		127.0.0.1
+-#ServerPort		24
++#ServerPort		2424
+ #ServerQueueSize	32
+-#ServerPID		/var/run/dspam.pid
++#ServerPID		/var/run/dspam/dspam.pid
+ 
+ #
+ # ServerMode specifies the type of LMTP server to start. This can be one of:
+@@ -845,18 +846,18 @@ Opt out
+ # you are running the client and server on the same machine, as it eliminates
+ # much of the bandwidth overhead.
+ #
+-#ServerDomainSocketPath	"/tmp/dspam.sock"
++#ServerDomainSocketPath	"/var/run/dspam/dspam.sock"
+ 
+ #
+ # Client Mode: If you are running DSPAM in client/server mode, uncomment and
+ # set these variables. A ClientHost beginning with a / will be treated as
+ # a domain socket.
+ #
+-#ClientHost	/tmp/dspam.sock
++#ClientHost	/var/run/dspam/dspam.sock
+ #ClientIdent	"secret@Relay1"
+ #
+ #ClientHost	127.0.0.1
+-#ClientPort	24
++#ClientPort	2424
+ #ClientIdent	"secret@Relay1"
+ 
+ # --- RABL ---

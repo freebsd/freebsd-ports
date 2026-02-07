@@ -1,0 +1,39 @@
+PORTNAME=	gpstk
+PORTVERSION=	8.0.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	astro devel
+
+MAINTAINER=	lbartoletti@FreeBSD.org
+COMMENT=	Toolkit for developing GPS applications
+WWW=		https://github.com/SGL-UT/GPSTk
+
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
+
+USES=		cmake compiler:c++11-lang
+USE_CXXSTD=	c++14
+USE_GITHUB=	yes
+GH_ACCOUNT=	SGL-UT
+GH_PROJECT=	GPSTk
+USE_LDCONFIG=	yes
+
+MAKE_ENV=	CXXFLAGS="${CXXFLAGS}"
+
+DOCS=		*.md
+EXAMPLES=	*
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION} \
+		SHLIB_VER=${PORTVERSION:R}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_SUB=	yes
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

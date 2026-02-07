@@ -1,0 +1,18 @@
+--- tools/meson.build.orig	2024-09-19 12:36:55 UTC
++++ tools/meson.build
+@@ -2,9 +2,14 @@ programs = [
+ 
+ programs = [
+   # name, deps, cflags, install_dir
+-  ['gnome-session-ctl', session_bin_deps, cflags, session_libexecdir],
+   ['gnome-session-inhibit', session_deps, cflags, session_bindir],
+ ]
++
++if enable_systemd_session
++  programs += [
++    ['gnome-session-ctl', session_bin_deps, cflags, session_libexecdir],
++  ]
++endif
+ 
+ if have_x11
+   deps = session_deps + [

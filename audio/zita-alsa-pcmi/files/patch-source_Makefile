@@ -1,0 +1,41 @@
+- patch out ldcondig: the author believes that users mostly install manually
+- and not through packages, and refuses to fix the bug that it fails to install
+- into a stage directory. Do not contact the author about this.
+
+--- source/Makefile.orig	2018-08-24 18:41:30 UTC
++++ source/Makefile
+@@ -20,7 +20,7 @@
+ 
+ # Modify as required.
+ #
+-SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
++#SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
+ PREFIX ?= /usr/local
+ INCDIR ?= $(PREFIX)/include
+ LIBDIR ?= $(PREFIX)/lib$(SUFFIX)
+@@ -31,7 +31,7 @@ VERSION = $(MAJVERS).$(MINVERS)
+ 
+ CPPFLAGS += -DVERSION=\"$(VERSION)\" -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+ CXXFLAGS += -O2 -Wall -fPIC
+-CXXFLAGS += -march=native
++CXXFLAGS += $(FREEBSD_CXXFLAGS_SIMD)
+ LDLFAGS +=
+ LDLIBS +=
+ 
+@@ -46,14 +46,14 @@ ZITA-ALSA-PCMI_H = zita-alsa-pcmi.h
+ 
+ $(ZITA-ALSA-PCMI_MIN): $(ZITA-ALSA-PCMI_O)
+ 	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(ZITA-ALSA-PCMI_MAJ) -o $(ZITA-ALSA-PCMI_MIN) $(ZITA-ALSA-PCMI_O) $(ZITA-ALSA-PCMI_DEP)
++	ln -s $(ZITA-ALSA-PCMI_MIN) $(ZITA-ALSA-PCMI_SO)
+ 
+-
+ install:	$(ZITA-ALSA-PCMI_MIN)
+ 	install -d $(DESTDIR)$(INCDIR)
+ 	install -d $(DESTDIR)$(LIBDIR)
+ 	install -m 644 $(ZITA-ALSA-PCMI_H) $(DESTDIR)$(INCDIR)
+ 	install -m 755 $(ZITA-ALSA-PCMI_MIN) $(DESTDIR)$(LIBDIR)
+-	ldconfig
++	#ldconfig
+ 	ln -sf $(ZITA-ALSA-PCMI_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-ALSA-PCMI_SO)
+ 
+ uninstall:

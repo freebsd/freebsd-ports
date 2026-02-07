@@ -1,0 +1,9 @@
+bin/pgxwin_server
+bin/pgdisp
+include/cpgplot.h
+lib/libcpgplot.a
+lib/libcpgplot.so
+lib/libcpgplot.so.5
+lib/libpgplot.a
+lib/libpgplot.so
+lib/libpgplot.so.5

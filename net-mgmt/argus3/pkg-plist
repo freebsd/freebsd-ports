@@ -1,0 +1,15 @@
+@sample etc/argus.conf.sample
+bin/argus-lsof
+bin/argus-snmp
+bin/argus-vmstat
+bin/argusbug
+sbin/argus
+share/man/man5/argus.conf.5.gz
+share/man/man8/argus.8.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Archive/argusarchive
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Config/argus.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Deployment/sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Startup/argus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Startup/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/System/crontab
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/System/magic

@@ -1,0 +1,19 @@
+PREFIX?=	/usr/X11R6
+SHLIB_VER?=	1
+
+LIB=	shhcards
+LIBDIR=	${PREFIX}/lib
+SHLIB_MAJOR=	${SHLIB_VER}
+SHLIB_MINOR=	0
+MK_PROFILE=	no
+NOOBJ=	yes
+
+INCS=	shhcards.h
+INCSDIR=${PREFIX}/include
+INCDIR=	${INCSDIR}			# for pre-bsd.incs.mk API
+
+CFLAGS+=	-I${LOCALBASE}/include
+
+SRCS=	shhcards.c
+
+.include <bsd.lib.mk>

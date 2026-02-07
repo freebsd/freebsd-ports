@@ -1,0 +1,2 @@
+This plug-in add Debug support to CGI::Application. This plug-in like
+Catalyst debug mode.

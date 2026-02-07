@@ -1,0 +1,10 @@
+OCEAN is BSE code for core spectroscopy.
+
+OCEAN is a code for calculating near-edge x-ray spectra using the Bethe-Salpeter
+equation (BSE) is briefly reviewed. The code is capable of calculating UV/Vis,
+near-edge x-ray absorption or non-resonant scattering, and resonant inelastic
+x-ray scattering, requiring only the structure of the material as input.
+Improved default behavior and reduced input requirements are detailed as well as
+new capabilities, such as incorporation of final-state-dependent broadening,
+finite-temperature dependence, and flexibility in the density-functional theory
+exchange-correlation potentials.

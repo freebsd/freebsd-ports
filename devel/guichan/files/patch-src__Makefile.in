@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2009-10-05 18:37:12 UTC
++++ src/Makefile.in
+@@ -273,7 +273,7 @@ SUBDIRS = widgets @GUICHAN_EXTRADIRS@ hge openlayer co
+ INCLUDES = -I$(top_srcdir)/include
+ lib_LTLIBRARIES = libguichan.la
+ libguichan_la_LIBADD = widgets/libguichan_widgets.la
+-libguichan_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
++libguichan_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
+ libguichan_la_DEPENDENCIES = \
+ 	widgets/libguichan_widgets.la
+ 

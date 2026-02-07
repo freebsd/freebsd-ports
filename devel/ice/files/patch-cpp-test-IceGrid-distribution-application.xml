@@ -1,0 +1,11 @@
+--- cpp/test/IceGrid/distribution/application.xml.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/IceGrid/distribution/application.xml
+@@ -1,7 +1,7 @@
+ <icegrid>
+ 
+   <application name="Test">
+-    <variable name="icepatch.directory" value="${test.dir}/data/original"/>
++    <variable name="icepatch.directory" value="${test.dir}/db/data/original"/>
+ 
+     <server-template id="IcePatch2">
+ 

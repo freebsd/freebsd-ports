@@ -1,0 +1,2 @@
+@(,games,2555) bin/ladder
+@rmtry /var/games/ladder.scores

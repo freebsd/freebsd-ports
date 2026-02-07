@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: sj3
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these sj3_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/sj3
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${sj3_enable:=NO}				# Enable sj3
+: ${sj3_program:="%%PREFIX%%/sbin/sj3serv"}	# Location of sj3
+
+. /etc/rc.subr
+
+name=sj3
+rcvar=sj3_enable
+start_precmd=sj3serv_precmd
+
+sj3serv_precmd()
+{
+	mkdir -p -m 0755 /var/run/sj3
+	chown _sj3:_sj3 /var/run/sj3
+}
+
+load_rc_config $name
+run_rc_command "$1"

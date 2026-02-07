@@ -1,0 +1,9 @@
+TIMESTAMP = 1716867477
+SHA256 (dftbplus-dftbplus-24.1_GH0.tar.gz) = 776d83779666e06bf2930c3b1665cdb8e7409b8003e33e0178fbae8b47f5e0b1
+SIZE (dftbplus-dftbplus-24.1_GH0.tar.gz) = 5902651
+SHA256 (aradi-fytest-94e05ac_GH0.tar.gz) = f29e91bb0a002ded95108091d4b2d20d99a6c4e465e068b1ec24252e1b4e4141
+SIZE (aradi-fytest-94e05ac_GH0.tar.gz) = 16503
+SHA256 (dftbplus-testparams-cd7536f_GH0.tar.gz) = 73bfe7b631afa5fbedeb534228afe0f210cb44fdf48d916b66c7ba40d6327ca3
+SIZE (dftbplus-testparams-cd7536f_GH0.tar.gz) = 24900261
+SHA256 (dftd4-dftd4-056491b_GH0.tar.gz) = 49f2c03a6bf2ad524cf452ba5d210aef86307dd3750a5aa5ee9d2dab8c5f05d8
+SIZE (dftd4-dftd4-056491b_GH0.tar.gz) = 355267

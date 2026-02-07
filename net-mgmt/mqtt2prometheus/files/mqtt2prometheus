@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# PROVIDE: mqtt2prometheus
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# This script supports running multiple instances of mqtt2prometheus.
+# To run additional instances link this script to something like
+# % ln -s mqtt2prometheus mqtt2prometheus_foo
+# and define additional mqtt2prometheus_foo_* variables in one of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/mqtt2prometheus_foo
+
+. /etc/rc.subr
+
+name="${file}"
+
+case "$0" in
+/etc/rc*)
+        name="$_file"
+        ;;
+*/service)
+        ;;
+*)
+        name="$0"
+        ;;
+esac
+
+name="${name:-mqtt2prometheus}" ;
+name="${name##*/}"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_user:=\"nobody\"}"
+eval ": \${${name}_group:=\"nobody\"}"
+eval ": \${${name}_config:=\"/usr/local/etc/mqtt2prometheus.yaml\"}"
+eval ": \${${name}_pidfile:=\"/var/run/mqtt2prometheus.pid\"}"
+eval ": \${${name}_listen_address:=\"0.0.0.0\"}"
+eval ": \${${name}_listen_port:=\"9641\"}"
+eval ": \${${name}_loglevel:=\"info\"}"
+eval ": \${${name}_logformat:=\"console\"}"
+eval ": \${${name}_logfile:=\"/var/log/mqtt2prometheus.log\"}"
+
+pidfile="$(eval echo \${${name}_pidfile})"
+required_files="$(eval echo \${${name}_config})"
+m2p_user="$(eval echo \${${name}_user})"
+m2p_group="$(eval echo \${${name}_group})"
+m2p_config="$(eval echo \${${name}_config})"
+m2p_listen_address="$(eval echo \${${name}_listen_address})"
+m2p_listen_port="$(eval echo \${${name}_listen_port})"
+m2p_loglevel="$(eval echo \${${name}_loglevel})"
+m2p_logformat="$(eval echo \${${name}_logformat})"
+m2p_logfile="$(eval echo \${${name}_logfile})"
+
+procname="/usr/local/bin/mqtt2prometheus"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -t ${name} -o ${m2p_logfile} \
+        /usr/bin/env ${mqtt2prometheus_env} ${procname} \
+        -config ${m2p_config} \
+	-listen-address ${m2p_listen_address} \
+	-listen-port ${m2p_listen_port} \
+        --log-level ${m2p_loglevel} \
+        --log-format ${m2p_logformat} \
+	${mqtt2prometheus_args}"
+
+start_precmd="mqtt2prometheus_start_precmd"
+
+mqtt2prometheus_start_precmd()
+{
+        if [ ! -e "${pidfile}" ]; then
+                install -m 0600 -o ${m2p_user} -g ${m2p_group} /dev/null "${pidfile}"
+        fi
+
+	if [ ! -e "${mqtt2prometheus_logfile}" ]; then
+                install -m 0600 -o ${m2p_user} -g ${m2p_group} /dev/null "${m2p_logfile}"
+        fi
+}
+
+run_rc_command "$1"

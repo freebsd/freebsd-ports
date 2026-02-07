@@ -1,0 +1,120 @@
+--- lunar.c.orig	Tue Feb 26 20:54:23 2002
++++ lunar.c	Tue Feb 26 21:01:38 2002
+@@ -118,6 +118,26 @@
+     "四", "五", "六"
+ };
+ 
++static	char	*GanBIG5[] = {
++    "ヒ", "", "", "", "コ",
++    "", "┌", "ǒ", "ば", ""
++};
++
++static	char	*ZhiBIG5[] = {
++    "", "ぁ", "盙", "", "ò", "",
++    "と", "ゼ", "ビ", "ɑ", "Ζ", "ヨ"
++};
++
++static	char   *ShengXiaoBIG5[] = {
++    "公", "", "", "ㄟ", "纒", "矰",
++    "皑", "ο", "礥", "蔓", "", "睫"
++};
++
++static char *weekdayBIG5[] = {
++    "ら", "", "", "",
++    "", "き", "せ"
++};
++
+ 
+ Date solar, lunar, gan, zhi, gan2, zhi2, lunar2;
+ 
+@@ -127,6 +147,7 @@
+ int jieAlert;		/* if there is uncertainty in JieQi calculation */
+ 
+ int	showHZ = 0;			/* output in hanzi */
++int	showB5 = 0;			/* output in big5 */
+ int	showBM = 0;			/* output in bitmap */
+ char	BMfile[] = BITMAPFILE;	/* bit map file */
+ char	GZBM[NBM][BMRow][BMCol];	/* the bitmap array */
+@@ -139,7 +160,7 @@
+ void	CalGZ();
+ int	JieDate(), JieDate();
+ void    readBM(), display3();
+-void	Report(), ReportE(), ReportBM(), ReportGB();
++void	Report(), ReportE(), ReportBM(), ReportGB(), ReportBIG5();
+ void	usage(), Error();
+ 
+ 
+@@ -162,6 +183,7 @@
+ 	    case 'l': if (inverse) leap=1; else usage(); break;
+ 	    case 'h': showHZ = 1; break;
+ 	    case 'b': showBM = 1; break;
++	    case '5': showB5 = 1; break;
+ 	    default:  usage(); break;
+ 	}
+     }
+@@ -213,13 +235,14 @@
+ void usage()
+ {
+     printf("Usage:\n\n");
+-    printf("Solar->Lunar:\t%s [-h] [-b] year month day [hour]\n", progname);
++    printf("Solar->Lunar:\t%s [-h] [-5] [-b] year month day [hour]\n", progname);
+     printf("\t\t(in Solar Calendar, 24 hour clock)\n\n");
+-    printf("Lunar->Solar:\t%s [-h] [-b] -i [-l] year month day [hour]\n",
++    printf("Lunar->Solar:\t%s [-h] [-5] [-b] -i [-l] year month day [hour]\n",
+ 	   progname);
+     printf("\t\t(in Lunar Calendar, 24 hour clock)\n");
+     printf("\t\t-l means the month is a leap month (\"run4 yue4\")\n\n");
+     printf("\t\t-h means output in hanzi (GB)\n");
++    printf("\t\t-5 means output in traditional chinese(BIG5)\n");
+     printf("\t\t-b means output in \"bitmap\"\n\n");
+     printf("Date range: about %d years from the Solar Date %d.%d.%d\n", Nyear,
+ 	   SolarFirstDate.year, SolarFirstDate.month, SolarFirstDate.day);
+@@ -578,6 +601,8 @@
+ {
+     if (showHZ)
+ 	ReportGB();
++    else if (showB5)
++	ReportBIG5();
+     else if (showBM)
+ 	ReportBM();
+     else
+@@ -614,6 +639,39 @@
+ 	if (lunar2.month==1)
+ 	    printf("* %s\n", "年柱亦可能要修改");
+ 	printf("* %s\n", "请查有节气时间之万年历");
++    }
++}
++
++
++void ReportBIG5()
++{
++    printf("%s%d%s%2d%s%2d%s%2d%s%s%s\n", "锭菌",
++	   solar.year, "", solar.month, "る", solar.day,
++	   "ら", solar.hour, "",
++	   "琍戳", weekdayBIG5[solar.weekday]); 
++    printf("%s%d%s%s%2d%s%2d%s%s%s%s%s\n", "潮菌",
++	   lunar.year, "", (lunar.leap? "秥":""),
++	   lunar.month, "る", lunar.day, "ら", 
++	   ZhiBIG5[zhi.hour], "",
++	   "ネ╲妮", ShengXiaoBIG5[zhi.year]);
++    printf("%s%s%s%s%s%s%s%s%s%s%s%s%s\n", "や",
++	   GanBIG5[gan.year], ZhiBIG5[zhi.year], "",
++	   GanBIG5[gan.month], ZhiBIG5[zhi.month], "る",
++	   GanBIG5[gan.day], ZhiBIG5[zhi.day], "ら",
++	   GanBIG5[gan.hour], ZhiBIG5[zhi.hour], "");
++    printf("%s%s%s%s%s%s%s%s%s%s%s%s%s\n",
++	   "ノ琖衡崩衡ぇò",
++	   GanBIG5[gan2.year], ZhiBIG5[zhi2.year], "",
++	   GanBIG5[gan2.month], ZhiBIG5[zhi2.month], "る",
++	   GanBIG5[gan2.day], ZhiBIG5[zhi2.day], "ら",
++	   GanBIG5[gan2.hour], ZhiBIG5[zhi2.hour], "");
++    if (jieAlert)
++    {
++	printf("* %s, %s\n", "琌ら竊",
++	       "る琖璶э");
++	if (lunar2.month==1)
++	    printf("* %s\n", "琖ョ璶э");
++	printf("* %s\n", "叫琩Τ竊丁ぇ窾菌");
+     }
+ }
+ 

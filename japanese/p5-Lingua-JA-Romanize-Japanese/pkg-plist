@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Lingua/JA/Romanize/Base.pm
+%%SITE_PERL%%/Lingua/JA/Romanize/DictJA.pm
+%%SITE_PERL%%/Lingua/JA/Romanize/Japanese.bdb
+%%SITE_PERL%%/Lingua/JA/Romanize/Japanese.pm
+%%SITE_PERL%%/Lingua/JA/Romanize/Juman.pm
+%%SITE_PERL%%/Lingua/JA/Romanize/Kana.pm
+%%SITE_PERL%%/Lingua/JA/Romanize/Kana/Hepburn.pm
+%%SITE_PERL%%/Lingua/JA/Romanize/MeCab.pm
+%%PERL5_MAN3%%/Lingua::JA::Romanize::Base.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Romanize::DictJA.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Romanize::Japanese.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Romanize::Juman.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Romanize::Kana.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Romanize::Kana::Hepburn.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Romanize::MeCab.3.gz

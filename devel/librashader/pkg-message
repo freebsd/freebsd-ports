@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+The calling code has to define the following preprocessor constants in order to
+make the requested runtimes accessable:
+
+    LIBRA_RUNTIME_OPENGL  or
+    LIBRA_RUNTIME_VULKAN
+EOM
+}
+]

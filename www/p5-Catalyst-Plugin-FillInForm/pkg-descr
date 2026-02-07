@@ -1,0 +1,2 @@
+Catalyst-Plugin-FillInForm is a Catalyst plugin that automatically fills in
+forms if the last form has missing or invalid fields.

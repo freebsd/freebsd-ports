@@ -1,0 +1,10 @@
+Vimpager uses the power of Vim to provide a powerful pager.
+It runs Vim (or NeoVim, or even GVim) and acts as a frontend,
+allowing for full Vim syntax highlighting, navigation, and
+configurability.
+
+To make Vimpager look for anything other than `vim', set
+VIMPAGER_VIM=nvim or VIMPAGER_VIM=gvim.
+
+To set Vimpager as your default pager, export PAGER=vimpager
+in your shell.

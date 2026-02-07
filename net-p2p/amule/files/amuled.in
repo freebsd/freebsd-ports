@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: amuled
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable amuled at startup
+# amuled (bool): Set to "NO" by default.
+#                Set it to "YES" to enable amuled
+# amuled_user (str): Set to user running amuled
+#                    (default 'aMule')
+# amuled_config (str): Set to home directory of user running amuled
+#                      (default /home/${amuled_user})
+
+. /etc/rc.subr
+
+name="amuled"
+rcvar=amuled_enable
+
+load_rc_config $name
+
+: ${amuled_enable="NO"}
+: ${amuled_user:="aMule"}
+: ${amuled_config:="/home/${amuled_user}/.aMule"}
+
+pidfile="${amuled_config}/amuled.pid"
+procname="/usr/local/bin/amuled"
+required_files="${amuled_config}/amule.conf"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} --config-dir=${amuled_config}"
+
+run_rc_command "$1"

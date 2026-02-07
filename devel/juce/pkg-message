@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+You installed JUCE: C++ application framework.
+
+The main application that you probably need is Projucer. It allows you
+to develop, manage and deploy cross-platform applications.
+
+Projucer currently can't create makefiles on Linux/BSD platforms because
+this feature has not yet been made available by JUCE developers on these
+platforms.
+
+EOM
+}
+]

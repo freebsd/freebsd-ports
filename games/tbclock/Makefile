@@ -1,0 +1,23 @@
+PORTNAME=	tbclock
+PORTVERSION=	1.10
+PORTREVISION=	1
+CATEGORIES=	games
+MASTER_SITES=	http://tamentis.com/projects/tbclock/files/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Binary clock in curses
+WWW=		https://tamentis.com/projects/tbclock/
+
+USES=		ncurses
+HAS_CONFIGURE=	yes
+MAKE_ARGS=	LIBFLAGS="${LDFLAGS} -lncurses"
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/tbclock.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC/d;/^CFLAGS/d' ${WRKSRC}/configure
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/tbclock.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+
+.include <bsd.port.mk>

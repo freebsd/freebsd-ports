@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Crypt/OpenSSL/EC.pm
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/EC/EC.so
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/EC/autosplit.ix
+%%PERL5_MAN3%%/Crypt::OpenSSL::EC.3.gz

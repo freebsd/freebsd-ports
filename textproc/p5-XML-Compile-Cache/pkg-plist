@@ -1,0 +1,3 @@
+%%SITE_PERL%%/XML/Compile/Cache.pm
+%%SITE_PERL%%/XML/Compile/Cache.pod
+%%PERL5_MAN3%%/XML::Compile::Cache.3.gz

@@ -1,0 +1,2 @@
+This program lets you render shaders as a wall paper. It works on
+Wayland compositors that support wlr-layer-shell.

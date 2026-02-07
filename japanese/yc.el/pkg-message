@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Quick Setup:
+
+(1) Add the following two lines in your $HOME/.emacs file;
+
+  (load "yc")
+  (global-yc-mode 1) ;; if you need ANK-conversion-mode in all buffers
+
+(2) Set the following environment variables;
+
+  CANNAHOST	hostname of cannaserver
+  CANNALIBDIR	a full path of the directory containing 'default.canna'
+
+  These values are also configurable in .emacs by setting variables
+  'yc-server-host' and 'yc-canna-lib-path'.
+
+Note:
+  If you want to use UNIX-domain socket for communication with cannaserver
+  in emacs21 or former version of emacsen, define WITH_ICANNA to add
+  dependency to ports ja-icanna.
+EOM
+}
+]

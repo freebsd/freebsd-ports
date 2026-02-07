@@ -1,0 +1,11 @@
+--- configure.ac.orig	2021-02-12 23:45:58 UTC
++++ configure.ac
+@@ -6,7 +6,7 @@ AC_INIT([apricots], [0.2.7], [moggers87+git@moggers87.
+ AC_CONFIG_SRCDIR([apricots/game.cpp])
+ AC_CONFIG_HEADERS([config.h])
+ AC_CONFIG_MACRO_DIR([m4])
+-AM_INIT_AUTOMAKE([-Wall -Werror subdir-objects])
++AM_INIT_AUTOMAKE([-Wall subdir-objects])
+ AX_IS_RELEASE([git-directory])
+ AX_CHECK_ENABLE_DEBUG()
+ AX_GENERATE_CHANGELOG

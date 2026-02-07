@@ -1,0 +1,13 @@
+include/smapi/api_jam.h
+include/smapi/api_jamp.h
+include/smapi/api_sdm.h
+include/smapi/api_sdmp.h
+include/smapi/api_sq.h
+include/smapi/api_sqp.h
+include/smapi/apidebug.h
+include/smapi/msgapi.h
+include/smapi/old_msg.h
+lib/libsmapi.a
+lib/libsmapi.so
+lib/libsmapi.so.2.5
+lib/libsmapi.so.2.5.0

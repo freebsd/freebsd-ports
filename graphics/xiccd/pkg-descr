@@ -1,0 +1,8 @@
+The primary goal of xiccd is providing color profile support for desktop
+environments other than Gnome and KDE (Xfce, LXDE, and probably others)
+that don't support native color management yet.
+
+It does basically the same as the "gnome-settings-daemon" color plugin or
+"colord-kde" but doesn't depend on any particular desktop. It doesn't even
+depend on GTK so it doesn't create a unnecessary GTK3 dependency if the
+desktop environment is GTK2-based or vice versa.

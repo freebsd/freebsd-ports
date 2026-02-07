@@ -1,0 +1,15 @@
+--- xmixer.man.orig	2000-11-16 08:32:10 UTC
++++ xmixer.man
+@@ -4,9 +4,10 @@
+ .\"
+ .TH XMIXER 1 "Aug 1999" "GNU" "Version 0.9"
+ .SH NAME
+-xmixer - Xaw-based soundcard mixer program for Linux/X11
++.Sh NAME
++.Nm xmixer, xgmixer
++.Nd Xaw- and GTK+-based soundcard mixer program for X11
+ .br
+-xgmixer - Gtk+-based soundcard mixer program for Linux/X11
+ .SH SYNOPSIS
+ .BI "xmixer [-h?qnVD] [-m "<device> "] [-d "<display> "]
+ .br

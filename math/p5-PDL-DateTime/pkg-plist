@@ -1,0 +1,3 @@
+%%SITE_PERL%%/PDL/DateTime.pm
+%%SITE_PERL%%/PDL/DateTime.pod
+%%PERL5_MAN3%%/PDL::DateTime.3.gz

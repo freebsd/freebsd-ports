@@ -1,0 +1,1117 @@
+--- application/configuration/__init__.py.orig	2019-08-02 13:55:47 UTC
++++ application/configuration/__init__.py
+@@ -3,7 +3,7 @@
+ 
+ import os
+ 
+-from ConfigParser import SafeConfigParser, NoSectionError
++from configparser import SafeConfigParser, NoSectionError
+ from inspect import isclass
+ from itertools import chain
+ from types import BuiltinFunctionType
+@@ -106,7 +106,7 @@ class SaveState(object):
+         return self.__state__[item]
+ 
+     def __iter__(self):
+-        return self.__state__.iteritems()
++        return iter(self.__state__.items())
+ 
+     def __len__(self):
+         return len(self.__state__)
+@@ -143,10 +143,10 @@ class ConfigSectionType(type):
+     def __new__(mcls, name, bases, dictionary):
+         settings = {}
+         # copy all settings defined by parents unless also defined in the class being constructed
+-        for name, setting in chain(*(cls.__settings__.iteritems() for cls in bases if isinstance(cls, ConfigSectionType))):
++        for name, setting in chain(*(iter(cls.__settings__.items()) for cls in bases if isinstance(cls, ConfigSectionType))):
+             if name not in dictionary and name not in settings:
+                 settings[name] = ConfigSetting(type=setting.type, value=setting.value)
+-        for attr, value in dictionary.iteritems():
++        for attr, value in dictionary.items():
+             if isinstance(value, ConfigSetting):
+                 settings[attr] = value
+             elif attr.startswith('__') or isdescriptor(value) or type(value) is BuiltinFunctionType:
+@@ -174,7 +174,7 @@ class ConfigSectionType(type):
+         return '%s:\n%s' % (cls.__name__, '\n'.join('  %s = %r' % (name, value) for name, value in cls) or '  pass')
+ 
+     def __iter__(cls):
+-        return ((name, descriptor.__get__(cls, cls.__class__)) for name, descriptor in cls.__settings__.iteritems())
++        return ((name, descriptor.__get__(cls, cls.__class__)) for name, descriptor in cls.__settings__.items())
+ 
+     def __setattr__(cls, name, value):
+         if name == '__settings__' or name not in cls.__settings__:  # need to check for __settings__ as it is set first and the second part of the test depends on it being available
+@@ -198,7 +198,7 @@ class ConfigSectionType(type):
+             config_file = cfgfile
+         else:
+             config_file = cls.__cfgtype__(cfgfile)
+-        if isinstance(section, basestring):
++        if isinstance(section, str):
+             section_list = (section,)
+         else:
+             section_list = section
+@@ -214,7 +214,7 @@ class ConfigSectionType(type):
+         if not set(kw).issubset(cls.__settings__):
+             raise TypeError('Got unexpected keyword argument %r' % set(kw).difference(cls.__settings__).pop())
+         with AtomicUpdate(cls):
+-            for name, value in kw.iteritems():
++            for name, value in kw.items():
+                 setattr(cls, name, value)
+ 
+     def reset(cls, state=None):
+@@ -224,11 +224,11 @@ class ConfigSectionType(type):
+             raise TypeError('state should be a SaveState instance')
+         if state.__owner__ is not cls:
+             raise ValueError('save state does not belong to this config section')
+-        for name, descriptor in cls.__settings__.iteritems():
++        for name, descriptor in cls.__settings__.items():
+             descriptor.__set__(cls, state[name], convert=False)
+ 
+ 
+-class ConfigSection(object):
++class ConfigSection(object, metaclass=ConfigSectionType):
+     """
+     Defines a section in the configuration file
+ 
+@@ -245,8 +245,6 @@ class ConfigSection(object):
+                     for reading multiple sections (they will be read in
+                     the order the iterable returns them)
+     """
+-
+-    __metaclass__ = ConfigSectionType
+ 
+     __cfgtype__ = ConfigFile
+     __cfgfile__ = None
+--- application/configuration/datatypes.py.orig	2019-07-30 19:01:31 UTC
++++ application/configuration/datatypes.py
+@@ -19,7 +19,7 @@ class Boolean(object):
+                     '0': False, 'no': False, 'false': False, 'off': False}
+ 
+     def __new__(cls, value):
+-        if isinstance(value, (int, long, float)):
++        if isinstance(value, (int, float)):
+             return bool(value)
+         elif not hasattr(value, 'lower'):
+             raise TypeError('value must be a string, number or boolean')
+@@ -33,9 +33,9 @@ class LogLevel(object):
+     """A log level indicated by a non-negative integer or one of the named attributes of log.level"""
+ 
+     def __new__(cls, value):
+-        if isinstance(value, basestring):
++        if isinstance(value, str):
+             value = value.upper()
+-        elif not isinstance(value, (int, long)):
++        elif not isinstance(value, int):
+             raise TypeError('value must be a string or number')
+         named_levels = {level.name: level for level in log.level.named_levels}
+         if value in named_levels:
+@@ -52,7 +52,7 @@ class StringList(object):
+     def __new__(cls, value):
+         if isinstance(value, (tuple, list)):
+             return [str(x) for x in value]
+-        elif isinstance(value, basestring):
++        elif isinstance(value, str):
+             if value.lower() in ('none', ''):
+                 return []
+             return re.split(r'\s*,\s*', value)
+@@ -77,7 +77,7 @@ class Hostname(str):
+     """A Hostname or an IP address. The keyword `any' stands for '0.0.0.0'"""
+ 
+     def __new__(cls, value):
+-        if not isinstance(value, basestring):
++        if not isinstance(value, str):
+             raise TypeError('value must be a string')
+         if value.lower() == 'any':
+             return '0.0.0.0'
+@@ -90,7 +90,7 @@ class HostnameList(object):
+     def __new__(cls, description):
+         if isinstance(description, (list, tuple)):
+             return [Hostname(x) for x in description]
+-        elif not isinstance(description, basestring):
++        elif not isinstance(description, str):
+             raise TypeError('value must be a string, list or tuple')
+         if description.lower() == 'none':
+             return []
+@@ -130,14 +130,14 @@ class NetworkRange(object):
+     """
+ 
+     def __new__(cls, description):
+-        if isinstance(description, tuple) and len(description) == 2 and all(isinstance(item, (int, long)) and 0 <= item < 2**32 for item in description):
++        if isinstance(description, tuple) and len(description) == 2 and all(isinstance(item, int) and 0 <= item < 2**32 for item in description):
+             return description
+-        elif not isinstance(description, basestring):
++        elif not isinstance(description, str):
+             raise TypeError('value must be a string, or a tuple with 2 32-bit unsigned integers')
+         if not description or description.lower() == 'none':
+-            return 0L, 0xFFFFFFFFL
++            return 0, 0xFFFFFFFF
+         if description.lower() == 'any':
+-            return 0L, 0L  # This is the any address 0.0.0.0
++            return 0, 0  # This is the any address 0.0.0.0
+         match = re.search(r'^(?P<address>.+?)/(?P<bits>\d+)$', description)
+         if match:
+             ip_address = match.group('address')
+@@ -154,7 +154,7 @@ class NetworkRange(object):
+             network_address = socket.inet_aton(ip_address)
+         except Exception:
+             raise ValueError('invalid IP address: %r' % ip_address)
+-        network_mask = (0xFFFFFFFFL << 32-mask_bits) & 0xFFFFFFFFL
++        network_mask = (0xFFFFFFFF << 32-mask_bits) & 0xFFFFFFFF
+         base_address = struct.unpack('!L', network_address)[0] & network_mask
+         return base_address, network_mask
+ 
+@@ -167,7 +167,7 @@ class NetworkRangeList(object):
+             return description
+         elif isinstance(description, (list, tuple)):
+             return [NetworkRange(x) for x in description] or None
+-        elif not isinstance(description, basestring):
++        elif not isinstance(description, str):
+             raise TypeError('value must be a string, list, tuple or None')
+         if description.lower() == 'none':
+             return None
+@@ -206,9 +206,9 @@ class NetworkAddress(object):
+     def __new__(cls, value):
+         if value is None:
+             return value
+-        elif isinstance(value, tuple) and len(value) == 2 and isinstance(value[1], (int, long)):
++        elif isinstance(value, tuple) and len(value) == 2 and isinstance(value[1], int):
+             return Hostname(value[0]), value[1]
+-        elif not isinstance(value, basestring):
++        elif not isinstance(value, str):
+             raise TypeError('value must be a string, a (host, port) tuple or None')
+         if value.lower() == 'none':
+             return None
+--- application/debug/memory.py.orig	2019-07-30 18:59:31 UTC
++++ application/debug/memory.py
+@@ -67,7 +67,7 @@ class Cycle(tuple):
+                 priority = 2
+             elif type(obj).__module__ in ('__builtin__', 'builtins'):
+                 priority = 1
+-            elif isinstance(obj, (tuple, list, dict, set, frozenset, str, unicode)):
++            elif isinstance(obj, (tuple, list, dict, set, frozenset, str)):
+                 priority = 3
+             else:
+                 priority = 4
+@@ -84,9 +84,9 @@ class Cycle(tuple):
+                 d = cycle.popleft()
+                 try:
+                     if cycle:
+-                        string += ' .%s' % (key for key, value in d.iteritems() if value is cycle[0]).next()
++                        string += ' .%s' % next((key for key, value in d.items() if value is cycle[0]))
+                     else:
+-                        string += ' .%s' % (key for key, value in d.iteritems() if value is first_obj).next()
++                        string += ' .%s' % next((key for key, value in d.items() if value is first_obj))
+                 except StopIteration:
+                     string += ' .__dict__ -> %s' % repr(d)
+             string += ' -> '
+@@ -96,7 +96,7 @@ class Cycle(tuple):
+ 
+ 
+ def memory_dump(show_cycles=True, show_objects=False):
+-    print '\nGARBAGE:'
++    print('\nGARBAGE:')
+     gc.collect()
+     garbage = gc.garbage[:]
+ 
+@@ -109,7 +109,7 @@ def memory_dump(show_cycles=True, show_objects=False):
+         cycles = set()
+         remaining_nodes = nodes.copy()
+         while remaining_nodes:
+-            path = [next(remaining_nodes.itervalues())]
++            path = [next(iter(remaining_nodes.values()))]
+             while path:
+                 node = path[-1]
+                 remaining_nodes.pop(id(node.object), None)
+@@ -123,16 +123,16 @@ def memory_dump(show_cycles=True, show_objects=False):
+                     node.visitable_successors = deque(node.successors)
+                     path.pop(-1)
+ 
+-        for node in nodes.itervalues():
++        for node in nodes.values():
+             node.successors = node.visitable_successors = None
+ 
+-        print '\nCOLLECTABLE CYCLES:'
++        print('\nCOLLECTABLE CYCLES:')
+         for cycle in (c for c in cycles if c.collectable):
+-            print cycle
++            print(cycle)
+ 
+-        print '\nUNCOLLECTABLE CYCLES:'
++        print('\nUNCOLLECTABLE CYCLES:')
+         for cycle in (c for c in cycles if not c.collectable):
+-            print cycle
++            print(cycle)
+ 
+     if show_objects:
+         try:
+@@ -141,12 +141,12 @@ def memory_dump(show_cycles=True, show_objects=False):
+         except Exception:
+             console_width = 80
+ 
+-        print '\nGARBAGE OBJECTS:'
++        print('\nGARBAGE OBJECTS:')
+         for x in garbage:
+             s = str(x)
+             if len(s) > console_width-2:
+                 s = s[:console_width-5] + '...'
+-            print '%s\n  %s' % (type(x), s)
++            print('%s\n  %s' % (type(x), s))
+ 
+ 
+ gc.enable()
+--- application/debug/timing.py.orig	2019-07-30 18:55:18 UTC
++++ application/debug/timing.py
+@@ -27,7 +27,7 @@ import struct
+ import sys
+ 
+ from collections import deque
+-from itertools import chain, izip, takewhile
++from itertools import chain, takewhile
+ from time import clock, time
+ 
+ from application.python.decorator import decorator, preserve_signature
+@@ -37,8 +37,8 @@ from application.python.types import MarkerType
+ __all__ = 'Timer', 'TimeProbe', 'timer', 'time_probe', 'measure_time'
+ 
+ 
+-class Automatic(object):
+-    __metaclass__ = MarkerType
++class Automatic(object, metaclass=MarkerType):
++    pass
+ 
+ 
+ class Autodetect(int):
+@@ -121,11 +121,11 @@ class Timer(object):
+                     normalized_time, time_unit = normalize_time(statement_time)
+ 
+                     if self.description is not None:
+-                        format_string = u'{} loops, best of {}: {:.{precision}g} {} per loop ({:.{rate_precision}f} operations/sec); {description}'
++                        format_string = '{} loops, best of {}: {:.{precision}g} {} per loop ({:.{rate_precision}f} operations/sec); {description}'
+                     else:
+-                        format_string = u'{} loops, best of {}: {:.{precision}g} {} per loop ({:.{rate_precision}f} operations/sec)'
++                        format_string = '{} loops, best of {}: {:.{precision}g} {} per loop ({:.{rate_precision}f} operations/sec)'
+                     rate_precision = 2 if statement_rate < 10 else 1 if statement_rate < 100 else 0
+-                    print format_string.format(loops, self.repeat, normalized_time, time_unit, statement_rate, description=self.description, precision=3, rate_precision=rate_precision)
++                    print(format_string.format(loops, self.repeat, normalized_time, time_unit, statement_rate, description=self.description, precision=3, rate_precision=rate_precision))
+                 finally:
+                     del parent
+         finally:
+@@ -245,7 +245,7 @@ class Timer(object):
+         byte_increments.appendleft(len(loop_header))
+         line_increments.appendleft(1)
+ 
+-        line_numbers_table = bytes(bytearray(chain.from_iterable(takewhile(WithinCodeRange(len(loop_header + code_bytes)), izip(byte_increments, line_increments)))))
++        line_numbers_table = bytes(bytearray(chain.from_iterable(takewhile(WithinCodeRange(len(loop_header + code_bytes)), zip(byte_increments, line_increments)))))
+ 
+         return code(o_code.co_argcount, o_code.co_nlocals, o_code.co_stacksize, o_code.co_flags, new_code_bytes, code_constants, names, o_code.co_varnames,
+                     o_code.co_filename, o_code.co_name, o_code.co_firstlineno + line_offset - 1, line_numbers_table, o_code.co_freevars, o_code.co_cellvars)
+@@ -312,10 +312,10 @@ class TimeProbe(object):
+                 error_string = ''
+             if self.description is not None:
+                 # format_string = u'{:.{precision}g} {}{}; {description}'
+-                format_string = u'{description}: {:.{precision}g} {}{}'
++                format_string = '{description}: {:.{precision}g} {}{}'
+             else:
+-                format_string = u'{:.{precision}g} {}{}'
+-            print format_string.format(normalized_time, time_unit, error_string, description=self.description, precision=3)
++                format_string = '{:.{precision}g} {}{}'
++            print(format_string.format(normalized_time, time_unit, error_string, description=self.description, precision=3))
+         del self._start_time
+ 
+ time_probe = TimeProbe
+@@ -357,7 +357,7 @@ class _MeasurementProbe(object):
+         gc_enabled = gc.isenabled()
+         gc.disable()
+         try:
+-            return _MeasurementSamples(self.get_sample() for _ in xrange(iterations))
++            return _MeasurementSamples(self.get_sample() for _ in range(iterations))
+         finally:
+             if gc_enabled:
+                 gc.enable()
+--- application/log/__init__.py.orig	2020-03-02 11:53:05 UTC
++++ application/log/__init__.py
+@@ -145,9 +145,7 @@ logging.Logger.exception = Logger.exception.__func__
+ logging.exception = exception
+ 
+ 
+-class ContextualLogger(object):
+-    __metaclass__ = abc.ABCMeta
+-
++class ContextualLogger(object, metaclass=abc.ABCMeta):
+     def __init__(self, logger, **context):
+         self.logger = logger
+         self.__dict__.update(context)
+@@ -239,7 +237,7 @@ class LevelHandler(object):
+ 
+     @property
+     def named_levels(self):
+-        return {self.NOTSET, self.DEBUG, self.INFO, self.WARNING, self.ERROR, self.CRITICAL} | {item for item in self.__dict__.values() if isinstance(item, NamedLevel)}
++        return {self.NOTSET, self.DEBUG, self.INFO, self.WARNING, self.ERROR, self.CRITICAL} | {item for item in list(self.__dict__.values()) if isinstance(item, NamedLevel)}
+ 
+     def __setattr__(self, name, value):
+         if isinstance(value, NamedLevel) and value not in self.named_levels:
+@@ -273,7 +271,7 @@ class SyslogHandler(logging.Handler):
+         try:
+             priority = self.priority_map.get(record.levelno, syslog.LOG_INFO)
+             message = self.format(record)
+-            if isinstance(message, unicode):
++            if isinstance(message, str):
+                 message = message.encode('UTF-8')
+             for line in message.rstrip().replace('\0', '#000').split('\n'):  # syslog.syslog() raises TypeError if null bytes are present in the message
+                 syslog.syslog(priority, line)
+@@ -322,7 +320,7 @@ class StandardIOLogger(io.IOBase):
+ 
+     def write(self, string):
+         self._checkClosed()
+-        if isinstance(string, unicode):
++        if isinstance(string, str):
+             string = string.encode(self._encoding)
+         lines = (self._buffer + string).split('\n')
+         self._buffer = lines[-1]
+@@ -332,7 +330,7 @@ class StandardIOLogger(io.IOBase):
+     def writelines(self, lines):
+         self._checkClosed()
+         for line in lines:
+-            if isinstance(line, unicode):
++            if isinstance(line, str):
+                 line = line.encode(self._encoding)
+             self._logger(line)
+ 
+@@ -340,7 +338,7 @@ class StandardIOLogger(io.IOBase):
+ class WhenNotInteractive(object):
+     """True when running under a non-interactive interpreter and False otherwise"""
+ 
+-    def __nonzero__(self):
++    def __bool__(self):
+         return hasattr(__main__, '__file__') or getattr(sys, 'frozen', False)
+ 
+     def __repr__(self):
+--- application/log/extensions/twisted/__init__.py.orig	2017-06-25 16:08:39 UTC
++++ application/log/extensions/twisted/__init__.py
+@@ -1,5 +1,5 @@
+ 
+-from __future__ import absolute_import
++
+ 
+ import os
+ import sys
+--- application/log/extensions/twisted/twisted.py.orig	2017-06-24 11:41:15 UTC
++++ application/log/extensions/twisted/twisted.py
+@@ -1,5 +1,5 @@
+ 
+-from __future__ import absolute_import
++
+ 
+ import os
+ import sys
+--- application/notification.py.orig	2019-07-30 18:57:40 UTC
++++ application/notification.py
+@@ -17,14 +17,12 @@ from application.python.weakref import weakobjectmap
+ __all__ = 'Any', 'UnknownSender', 'IObserver', 'NotificationData', 'Notification', 'NotificationCenter', 'ObserverWeakrefProxy'
+ 
+ 
+-class Any(object):
++class Any(object, metaclass=MarkerType):
+     """Any sender or notification name"""
+-    __metaclass__ = MarkerType
+ 
+ 
+-class UnknownSender(object):
++class UnknownSender(object, metaclass=MarkerType):
+     """A special sender used for anonymous notifications"""
+-    __metaclass__ = MarkerType
+ 
+ 
+ class IObserver(Interface):
+@@ -61,7 +59,7 @@ class ObserverWeakrefProxy(object):
+     # noinspection PyUnusedLocal
+     def cleanup(self, ref):
+         # remove all observer's remaining registrations (the ones that the observer didn't remove itself)
+-        for notification_center in NotificationCenter.__instances__.itervalues():
++        for notification_center in NotificationCenter.__instances__.values():
+             notification_center.purge_observer(self)
+ 
+     def handle_notification(self, notification):
+@@ -77,7 +75,7 @@ class NotificationData(object):
+         self.__dict__.update(kwargs)
+ 
+     def __repr__(self):
+-        return '%s(%s)' % (self.__class__.__name__, ', '.join('%s=%r' % (name, value) for name, value in self.__dict__.iteritems()))
++        return '%s(%s)' % (self.__class__.__name__, ', '.join('%s=%r' % (name, value) for name, value in self.__dict__.items()))
+ 
+ 
+ class Notification(object):
+@@ -103,15 +101,13 @@ class Notification(object):
+         return '%s(%r, %r, %r)' % (self.__class__.__name__, self.name, self.sender, self.data)
+ 
+ 
+-class NotificationCenter(object):
++class NotificationCenter(object, metaclass=Singleton):
+     """
+     A NotificationCenter allows observers to subscribe to receive notifications
+     identified by name and sender and will distribute the posted notifications
+     according to those subscriptions.
+     """
+ 
+-    __metaclass__ = Singleton
+-
+     queue = ThreadLocal(deque)
+ 
+     def __init__(self, name='default'):
+@@ -178,7 +174,7 @@ class NotificationCenter(object):
+     def purge_observer(self, observer):
+         """Remove all the observer's subscriptions."""
+         with self.lock:
+-            subscriptions = [(key, observer_set) for key, observer_set in self.observers.iteritems() if observer in observer_set]
++            subscriptions = [(key, observer_set) for key, observer_set in self.observers.items() if observer in observer_set]
+             for key, observer_set in subscriptions:
+                 observer_set.remove(observer)
+                 if not observer_set:
+--- application/process.py.orig	2019-08-20 09:13:31 UTC
++++ application/process.py
+@@ -126,11 +126,9 @@ class RuntimeSettings(object):
+             raise ProcessError('lacking permissions to access the runtime directory at %s' % directory)
+ 
+ 
+-class Process(object):
++class Process(object, metaclass=Singleton):
+     """Control how the current process runs and interacts with the operating system"""
+ 
+-    __metaclass__ = Singleton
+-
+     def __init__(self):
+         self._daemon = False
+         self._pidfile = None
+@@ -290,10 +288,8 @@ class Process(object):
+             raise RuntimeError('Network is not available after waiting for {} seconds'.format(wait_time))
+ 
+ 
+-class Signals(object):
++class Signals(object, metaclass=Singleton):
+     """Interface to the system signals"""
+-
+-    __metaclass__ = Singleton
+     
+     def __init__(self):
+         self._handlers = {}
+--- application/python/__init__.py.orig	2019-06-03 16:59:08 UTC
++++ application/python/__init__.py
+@@ -1,7 +1,7 @@
+ 
+ """Python language extensions"""
+ 
+-from __builtin__ import min as minimum, max as maximum
++from builtins import min as minimum, max as maximum
+ from application.python.types import NullType
+ 
+ 
+--- application/python/decorator.py.orig	2020-03-12 00:03:13 UTC
++++ application/python/decorator.py
+@@ -20,7 +20,7 @@ def preserve_signature(func):
+     def fix_signature(wrapper):
+         exec_scope = {}
+         parameters = formatargspec(*getargspec(func), formatvalue=lambda value: '')
+-        exec 'def {0}{1}: return wrapper{1}'.format(func.__name__, parameters) in {'wrapper': wrapper}, exec_scope  # can't use tuple form here (see https://bugs.python.org/issue21591)
++        exec('def {0}{1}: return wrapper{1}'.format(func.__name__, parameters), {'wrapper': wrapper}, exec_scope)  # can't use tuple form here (see https://bugs.python.org/issue21591)
+         new_wrapper = exec_scope.pop(func.__name__)
+         new_wrapper.__name__ = func.__name__
+         new_wrapper.__doc__ = func.__doc__
+@@ -50,12 +50,12 @@ def execute_once(func):
+         def __call__(self, *args, **kw):
+             with self.im_func_wrapper.lock:
+                 method = self.__method__
+-                check_arguments.__get__(method.im_self, method.im_class)(*args, **kw)
+-                instance = method.im_self if method.im_self is not None else args[0]
++                check_arguments.__get__(method.__self__, method.__self__.__class__)(*args, **kw)
++                instance = method.__self__ if method.__self__ is not None else args[0]
+                 if self.im_func_wrapper.__callmap__.get(instance, False):
+                     return
+                 self.im_func_wrapper.__callmap__[instance] = True
+-                self.im_func_wrapper.__callmap__[method.im_class] = True
++                self.im_func_wrapper.__callmap__[method.__self__.__class__] = True
+                 return method.__call__(*args, **kw)
+ 
+         def __dir__(self):
+@@ -85,7 +85,7 @@ def execute_once(func):
+ 
+         @property
+         def called(self):
+-            return self.im_func_wrapper.__callmap__.get(self.__method__.im_self if self.__method__.im_self is not None else self.__method__.im_class, False)
++            return self.im_func_wrapper.__callmap__.get(self.__method__.__self__ if self.__method__.__self__ is not None else self.__method__.__self__.__class__, False)
+ 
+         @property
+         def lock(self):
+--- application/python/queue.py.orig	2019-07-30 10:38:20 UTC
++++ application/python/queue.py
+@@ -1,7 +1,7 @@
+ 
+ """Event processing queues, that process the events in a distinct thread"""
+ 
+-import Queue
++import queue
+ from threading import Thread, Event, Lock
+ 
+ from application import log
+@@ -13,9 +13,9 @@ __all__ = 'EventQueue', 'CumulativeEventQueue'
+ 
+ # Special events that control the queue operation (for internal use)
+ 
+-class StopProcessing: __metaclass__ = MarkerType
+-class ProcessEvents:  __metaclass__ = MarkerType
+-class DiscardEvents:  __metaclass__ = MarkerType
++class StopProcessing(metaclass=MarkerType): pass
++class ProcessEvents(metaclass=MarkerType):  pass
++class DiscardEvents(metaclass=MarkerType):  pass
+ 
+ 
+ class EventQueue(Thread):
+@@ -31,7 +31,7 @@ class EventQueue(Thread):
+         self._pause_counter = 0
+         self._pause_lock = Lock()
+         self._accepting_events = True
+-        self.queue = Queue.Queue()
++        self.queue = queue.Queue()
+         self.handle = handler
+         self.load(preload)
+         self._active.set()
+@@ -106,7 +106,7 @@ class EventQueue(Thread):
+         try:
+             while True:
+                 self.queue.get_nowait()
+-        except Queue.Empty:
++        except queue.Empty:
+             pass
+         self.unpause()
+ 
+@@ -120,7 +120,7 @@ class EventQueue(Thread):
+                 event = self.queue.get_nowait()
+                 if event is not StopProcessing:
+                     unhandled.append(event)
+-        except Queue.Empty:
++        except queue.Empty:
+             pass
+         return unhandled
+ 
+--- application/python/threadpool.py.orig	2019-07-30 10:28:55 UTC
++++ application/python/threadpool.py
+@@ -1,7 +1,7 @@
+ 
+ """A generic, resizable thread pool"""
+ 
+-from Queue import Queue
++from queue import Queue
+ from itertools import count
+ from threading import Lock, Thread, current_thread
+ 
+--- application/python/types.py.orig	2017-06-27 15:56:11 UTC
++++ application/python/types.py
+@@ -1,8 +1,8 @@
+ 
+ """Types and meta classes"""
+ 
+-from __future__ import absolute_import
+ 
++
+ from types import FunctionType, UnboundMethodType
+ from application.python.decorator import preserve_signature
+ 
+@@ -26,7 +26,7 @@ class Singleton(type):
+         # noinspection PyShadowingNames
+         @preserve_signature(initializer)
+         def instance_creator(cls, *args, **kw):
+-            key = (args, tuple(sorted(kw.iteritems())))
++            key = (args, tuple(sorted(kw.items())))
+             try:
+                 hash(key)
+             except TypeError:
+@@ -53,10 +53,8 @@ class NullTypeMeta(type):
+         return cls.__instance__
+ 
+ 
+-class NullType(object):
++class NullType(object, metaclass=NullTypeMeta):
+     """Instances of this class always and reliably "do nothing"."""
+-
+-    __metaclass__ = NullTypeMeta
+     __name__ = 'Null'
+ 
+     def __init__(self, *args, **kw):
+@@ -77,7 +75,7 @@ class NullType(object):
+     def __len__(self):
+         return 0
+ 
+-    def __nonzero__(self):
++    def __bool__(self):
+         return False
+ 
+     def __eq__(self, other):
+@@ -125,7 +123,7 @@ class NullType(object):
+     def __iter__(self):
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         raise StopIteration
+ 
+ 
+@@ -140,5 +138,5 @@ class MarkerType(type):
+     def __repr__(cls):
+         return cls.__name__
+ 
+-    def __nonzero__(cls):
++    def __bool__(cls):
+         return cls.__boolean__
+--- application/python/weakref.py.orig	2017-06-27 16:26:38 UTC
++++ application/python/weakref.py
+@@ -1,6 +1,6 @@
+ 
+-from __future__ import absolute_import
+ 
++
+ import weakref
+ 
+ from collections import MutableMapping, deque
+@@ -21,7 +21,7 @@ class objectref(weakref.ref):
+ 
+ class weakobjectid(long):
+     def __new__(cls, object, discard_callback):
+-        instance = long.__new__(cls, id(object))
++        instance = int.__new__(cls, id(object))
+         instance.ref = objectref(object, discard_callback)
+         return instance
+ 
+@@ -72,7 +72,7 @@ class weakobjectmap(MutableMapping):
+         return id(key) in self.__data__
+ 
+     def __iter__(self):
+-        return self.iterkeys()
++        return iter(self.keys())
+ 
+     def __len__(self):
+         return len(self.__data__)
+@@ -84,14 +84,14 @@ class weakobjectmap(MutableMapping):
+         return self.__class__(self)
+ 
+     def __deepcopy__(self, memo):
+-        return self.__class__((key, deepcopy(value, memo)) for key, value in self.iteritems())
++        return self.__class__((key, deepcopy(value, memo)) for key, value in self.items())
+ 
+     def __repr__(self):
+         with _ReprGuard(self) as guard:
+             if guard.successive_run:
+                 return '%s({...})' % self.__class__.__name__
+             else:
+-                return '%s({%s})' % (self.__class__.__name__, ', '.join(('%r: %r' % (key, value) for key, value in self.iteritems())))
++                return '%s({%s})' % (self.__class__.__name__, ', '.join(('%r: %r' % (key, value) for key, value in self.items())))
+ 
+     @classmethod
+     def fromkeys(cls, iterable, value=None):
+@@ -107,22 +107,22 @@ class weakobjectmap(MutableMapping):
+         return self.__class__(self)
+ 
+     def iterkeys(self):
+-        return (key for key in (key.ref() for key in self.__data__.keys()) if key is not None)
++        return (key for key in (key.ref() for key in list(self.__data__.keys())) if key is not None)
+ 
+     def itervalues(self):
+-        return (value for key, value in ((key.ref(), value) for key, value in self.__data__.items()) if key is not None)
++        return (value for key, value in ((key.ref(), value) for key, value in list(self.__data__.items())) if key is not None)
+ 
+     def iteritems(self):
+-        return ((key, value) for key, value in ((key.ref(), value) for key, value in self.__data__.items()) if key is not None)
++        return ((key, value) for key, value in ((key.ref(), value) for key, value in list(self.__data__.items())) if key is not None)
+ 
+     def keys(self):
+-        return [key for key in (key.ref() for key in self.__data__.keys()) if key is not None]
++        return [key for key in (key.ref() for key in list(self.__data__.keys())) if key is not None]
+ 
+     def values(self):
+-        return [value for key, value in ((key.ref(), value) for key, value in self.__data__.items()) if key is not None]
++        return [value for key, value in ((key.ref(), value) for key, value in list(self.__data__.items())) if key is not None]
+ 
+     def items(self):
+-        return [(key, value) for key, value in ((key.ref(), value) for key, value in self.__data__.items()) if key is not None]
++        return [(key, value) for key, value in ((key.ref(), value) for key, value in list(self.__data__.items())) if key is not None]
+ 
+     def has_key(self, key):
+         return key in self
+--- application/system.py.orig	2019-08-14 12:54:53 UTC
++++ application/system.py
+@@ -13,11 +13,9 @@ __all__ = 'host', 'makedirs', 'openfile', 'unlink', 'F
+ 
+ # System properties and attributes
+ 
+-class HostProperties(object):
++class HostProperties(object, metaclass=Singleton):
+     """Host specific properties"""
+ 
+-    __metaclass__ = Singleton
+-
+     @staticmethod
+     def outgoing_ip_for(destination):
+         try:
+@@ -67,7 +65,7 @@ def makedirs(path, mode=0o777):
+     """Create a directory recursively and ignore error if it already exists"""
+     try:
+         os.makedirs(path, mode)
+-    except OSError, e:
++    except OSError as e:
+         if e.errno == errno.EEXIST and os.path.isdir(path) and os.access(path, os.R_OK | os.W_OK | os.X_OK):
+             return
+         raise
+--- application/version.py.orig	2019-07-30 18:58:01 UTC
++++ application/version.py
+@@ -23,10 +23,10 @@ class Version(str):
+         if extraversion is None:
+             instance = str.__new__(cls, '%d.%d.%d' % (major, minor, micro))
+             weight = 0
+-        elif isinstance(extraversion, (int, long)):
++        elif isinstance(extraversion, int):
+             instance = str.__new__(cls, '%d.%d.%d-%d' % (major, minor, micro, extraversion))
+             weight = 0
+-        elif isinstance(extraversion, basestring):
++        elif isinstance(extraversion, str):
+             instance = str.__new__(cls, '%d.%d.%d%s' % (major, minor, micro, extraversion))
+             match = re.match(r'^[-.]?(?P<name>(pre|rc|alpha|beta|))(?P<number>\d+)$', extraversion)
+             if match:
+@@ -48,7 +48,7 @@ class Version(str):
+     def parse(cls, value):
+         if isinstance(value, Version):
+             return value
+-        elif not isinstance(value, basestring):
++        elif not isinstance(value, str):
+             raise TypeError('value should be a string')
+         if value == 'undefined':
+             return cls(None, None, None)
+@@ -83,7 +83,7 @@ class Version(str):
+     def __cmp__(self, other):
+         if isinstance(other, Version):
+             return cmp(self._version_info, other._version_info)
+-        elif isinstance(other, basestring):
++        elif isinstance(other, str):
+             return cmp(str(self), other)
+         else:
+             return NotImplemented
+--- examples/config.py.orig	2020-02-07 16:34:27 UTC
++++ examples/config.py
+@@ -10,9 +10,9 @@ from application.system import host
+ class Priority(int):
+     """A numeric priority level. The keywords High, Normal and Low map to certain numeric values."""
+     def __new__(cls, value):
+-        if isinstance(value, (int, long)):
++        if isinstance(value, int):
+             return int(value)
+-        elif isinstance(value, basestring):
++        elif isinstance(value, str):
+             priority_map = {'high': 10, 'normal': 50, 'low': 100}
+             try:
+                 return priority_map.get(value.lower()) or int(value)
+@@ -49,11 +49,11 @@ class StorageConfig(ConfigSection):
+ 
+ 
+ # Dump the default hardcoded values of the options defined above
+-print "Settings before reading the configuration file (default hardcoded values)\n"
+-print NetworkConfig
+-print
+-print StorageConfig
+-print
++print("Settings before reading the configuration file (default hardcoded values)\n")
++print(NetworkConfig)
++print()
++print(StorageConfig)
++print()
+ 
+ # Read the settings from the configuration file into the attributes of our
+ # configuration classes. The read function takes a configuration file name
+@@ -86,11 +86,11 @@ NetworkConfig.read('config.ini', 'Network')
+ StorageConfig.read('config.ini', 'Storage')
+ 
+ # Dump the values of the options after they were loaded from the config file
+-print "\nSettings after reading the configuration file(s)\n"
+-print NetworkConfig
+-print
+-print StorageConfig
+-print
++print("\nSettings after reading the configuration file(s)\n")
++print(NetworkConfig)
++print()
++print(StorageConfig)
++print()
+ 
+ # Configuration options can be accessed as class attributes
+ ip = NetworkConfig.ip
+@@ -102,8 +102,8 @@ ip = NetworkConfig.ip
+ 
+ # Here is an example of such a class that will be automatically loaded
+ 
+-print "\n------------------------------------\n"
+-print "Using __cfgfile__ and __section__ to automatically load sections\n"
++print("\n------------------------------------\n")
++print("Using __cfgfile__ and __section__ to automatically load sections\n")
+ 
+ 
+ class AutoNetworkConfig(ConfigSection):
+@@ -126,12 +126,12 @@ class AutoStorageConfig(ConfigSection):
+ 
+ 
+ # Dump the values of the options after they were loaded from the config file
+-print "Settings in the automatically loaded sections\n"
+-print
+-print AutoNetworkConfig
+-print
+-print AutoStorageConfig
+-print
++print("Settings in the automatically loaded sections\n")
++print()
++print(AutoNetworkConfig)
++print()
++print(AutoStorageConfig)
++print()
+ 
+ # We can also get individual settings from a given section.
+ #
+@@ -141,10 +141,10 @@ print
+ # above with the ConfigSection.read() method) apply here as well.
+ #
+ 
+-print "\n------------------------------------\n"
+-print "Reading individual settings from sections without using ConfigSection"
++print("\n------------------------------------\n")
++print("Reading individual settings from sections without using ConfigSection")
+ 
+ configuration = ConfigFile('config.ini')
+ 
+ dburi = configuration.get_setting('Storage', 'dburi', type=str, default='undefined')
+-print "\nGot dburi directly from Storage section as `%s'\n" % dburi
++print("\nGot dburi directly from Storage section as `%s'\n" % dburi)
+--- examples/debug.py.orig	2020-02-07 16:34:01 UTC
++++ examples/debug.py
+@@ -10,10 +10,10 @@ s1 = 'abcdef'
+ s2 = 'ghijkl'
+ s3 = 'mnopqr'
+ 
+-print ""
+-print "Timing different methods of adding strings"
+-print "------------------------------------------"
+-print ""
++print("")
++print("Timing different methods of adding strings")
++print("------------------------------------------")
++print("")
+ 
+ # the loop count can be explicitly specified, but it's easier to let the
+ # timer automatically detect the loop count that will keep the total runtime
+@@ -44,15 +44,15 @@ class C2(object):
+ 
+ from application.debug.memory import *
+ 
+-print ""
+-print "Debugging memory leaks"
+-print "----------------------"
+-print ""
++print("")
++print("Debugging memory leaks")
++print("----------------------")
++print("")
+ 
+ a = C1()
+ del a
+ 
+-print "This will reveal no memory references"
++print("This will reveal no memory references")
+ memory_dump()
+ 
+ a = C1()
+@@ -61,7 +61,7 @@ a.b = b
+ b.a = a
+ del a, b
+ 
+-print "\n\nThis will reveal a collectable circular reference"
++print("\n\nThis will reveal a collectable circular reference")
+ memory_dump()
+ 
+ a = C2()
+@@ -70,5 +70,5 @@ a.b = b
+ b.a = a
+ del a, b
+ 
+-print "\n\nThis will reveal an uncollectable circular reference (mem leak)"
++print("\n\nThis will reveal an uncollectable circular reference (mem leak)")
+ memory_dump()
+--- examples/notification.py.orig	2020-02-07 16:34:21 UTC
++++ examples/notification.py
+@@ -8,11 +8,11 @@ from application.notification import IObserver, Notifi
+ class Sender(object):
+     def publish(self):
+         center = NotificationCenter()
+-        print "Sending notification with name 'simple':"
+-        print "Expecting CatchAllObserver, SimpleObserver, ObjectObserver and VolatileAllObserver to receive notifications"
++        print("Sending notification with name 'simple':")
++        print("Expecting CatchAllObserver, SimpleObserver, ObjectObserver and VolatileAllObserver to receive notifications")
+         center.post_notification(name='simple', sender=self)
+-        print "\nSending notification with name 'complex':"
+-        print "Expecting CatchAllObserver, ObjectObserver and VolatileAllObserver to receive notifications"
++        print("\nSending notification with name 'complex':")
++        print("Expecting CatchAllObserver, ObjectObserver and VolatileAllObserver to receive notifications")
+         center.post_notification(name='complex', sender=self, data=NotificationData(timestamp=time(), complex_attribute='complex_value'))
+ 
+     def __repr__(self):
+@@ -22,11 +22,11 @@ class Sender(object):
+ class AnonymousSender(Sender):
+     def publish(self):
+         center = NotificationCenter()
+-        print "Sending notification with name 'simple':"
+-        print "Expecting SimpleObserver to receive notifications (CatchAllObserver and VolatileAllObserver have been unregistered)"
++        print("Sending notification with name 'simple':")
++        print("Expecting SimpleObserver to receive notifications (CatchAllObserver and VolatileAllObserver have been unregistered)")
+         center.post_notification(name='simple')
+-        print "\nSending notification with name 'empty':"
+-        print "Expecting no observer to receive notifications (CatchAllObserver and VolatileAllObserver have been unregistered)"
++        print("\nSending notification with name 'empty':")
++        print("Expecting no observer to receive notifications (CatchAllObserver and VolatileAllObserver have been unregistered)")
+         center.post_notification(name='empty', data=None)
+ 
+ 
+@@ -35,15 +35,15 @@ class CatchAllObserver(object):
+     implements(IObserver)
+     
+     def register(self):
+-        print "Registering CatchAllObserver to receive all notifications"
++        print("Registering CatchAllObserver to receive all notifications")
+         NotificationCenter().add_observer(self)
+     
+     def unregister(self):
+-        print "Unregistering CatchAllObserver from receiving all notifications"
++        print("Unregistering CatchAllObserver from receiving all notifications")
+         NotificationCenter().remove_observer(self)
+     
+     def handle_notification(self, notification):
+-        print "In CatchAllObserver got %r" % (notification,)
++        print("In CatchAllObserver got %r" % (notification,))
+ 
+ 
+ class SimpleObserver(object):
+@@ -51,15 +51,15 @@ class SimpleObserver(object):
+     implements(IObserver)
+     
+     def register(self):
+-        print "Registering SimpleObserver to receive notifications with name 'simple' from any sender"
++        print("Registering SimpleObserver to receive notifications with name 'simple' from any sender")
+         NotificationCenter().add_observer(self, name='simple')
+     
+     def unregister(self):
+-        print "Unregistering SimpleObserver from receiving notifications with name 'simple' from any sender"
++        print("Unregistering SimpleObserver from receiving notifications with name 'simple' from any sender")
+         NotificationCenter().remove_observer(self, name='simple')
+     
+     def handle_notification(self, notification):
+-        print "In SimpleObserver got %r" % (notification,)
++        print("In SimpleObserver got %r" % (notification,))
+ 
+ 
+ class ObjectObserver(object):
+@@ -70,15 +70,15 @@ class ObjectObserver(object):
+         self.sender = sender
+     
+     def register(self):
+-        print "Registering ObjectObserver to receive notifications with any name from sender %r" % (self.sender,)
++        print("Registering ObjectObserver to receive notifications with any name from sender %r" % (self.sender,))
+         NotificationCenter().add_observer(self, sender=self.sender)
+     
+     def unregister(self):
+-        print "Unregistering ObjectObserver from receiving notifications with any name from sender %r" % (self.sender,)
++        print("Unregistering ObjectObserver from receiving notifications with any name from sender %r" % (self.sender,))
+         NotificationCenter().remove_observer(self, sender=self.sender)
+     
+     def handle_notification(self, notification):
+-        print "In ObjectObserver got %r" % (notification,)
++        print("In ObjectObserver got %r" % (notification,))
+ 
+ 
+ class VolatileAllObserver(object):
+@@ -86,11 +86,11 @@ class VolatileAllObserver(object):
+     implements(IObserver)
+     
+     def __init__(self):
+-        print "Registering VolatileAllObserver to receive all notifications"
++        print("Registering VolatileAllObserver to receive all notifications")
+         NotificationCenter().add_observer(ObserverWeakrefProxy(self))
+     
+     def handle_notification(self, notification):
+-        print "In VolatileAllObserver got %r" % (notification,)
++        print("In VolatileAllObserver got %r" % (notification,))
+ 
+ 
+ # instantiate senders
+@@ -98,7 +98,7 @@ sender = Sender()
+ anonymous = AnonymousSender()
+ 
+ # instantiate the observers and register them
+-print "Creating and registering observers:"
++print("Creating and registering observers:")
+ catchall_observer = CatchAllObserver()
+ catchall_observer.register()
+ simple_observer = SimpleObserver()
+@@ -108,15 +108,15 @@ object_observer.register()
+ volatile_observer = VolatileAllObserver()
+ 
+ # send notifications
+-print "\nSending notifications from Sender:"
+-print "----------------------------------"
++print("\nSending notifications from Sender:")
++print("----------------------------------")
+ sender.publish()
+ 
+-print "\nUnregistering some observers:"
++print("\nUnregistering some observers:")
+ catchall_observer.unregister()
+-print "Deleting VolatileAllObserver which will automatically unregister it from receiving all notifications"
++print("Deleting VolatileAllObserver which will automatically unregister it from receiving all notifications")
+ del volatile_observer
+ 
+-print "\nSending notifications from AnonymousSender:"
+-print "-------------------------------------------"
++print("\nSending notifications from AnonymousSender:")
++print("-------------------------------------------")
+ anonymous.publish()
+--- examples/singleton.py.orig	2020-02-07 16:34:14 UTC
++++ examples/singleton.py
+@@ -3,14 +3,12 @@
+ from application.python.types import Singleton
+ 
+ 
+-class Unique(object):
++class Unique(object, metaclass=Singleton):
+     """This class has only one instance"""
+-    __metaclass__ = Singleton
+ 
+ 
+-class CustomUnique(object):
++class CustomUnique(object, metaclass=Singleton):
+     """This class has one instance per __init__ arguments combination"""
+-    __metaclass__ = Singleton
+ 
+     def __init__(self, name='default', value=1):
+         self.name = name
+@@ -20,7 +18,7 @@ class CustomUnique(object):
+ o1 = Unique()
+ o2 = Unique()
+ 
+-print "o1 is o2 (expect True):", o1 is o2
++print("o1 is o2 (expect True):", o1 is o2)
+ 
+ co1 = CustomUnique()
+ co2 = CustomUnique()
+@@ -29,8 +27,8 @@ co4 = CustomUnique(name='my name')
+ co5 = CustomUnique(name='my name', value=2)
+ co6 = CustomUnique(name='my other name')
+ 
+-print "co1 is co2 (expect True):", co1 is co2
+-print "co3 is co4 (expect True):", co3 is co4
+-print "co1 is co3 (expect False):", co1 is co3
+-print "co4 is co5 (expect False):", co4 is co5
+-print "co4 is co6 (expect False):", co4 is co6
++print("co1 is co2 (expect True):", co1 is co2)
++print("co3 is co4 (expect True):", co3 is co4)
++print("co1 is co3 (expect False):", co1 is co3)
++print("co4 is co5 (expect False):", co4 is co5)
++print("co4 is co6 (expect False):", co4 is co6)

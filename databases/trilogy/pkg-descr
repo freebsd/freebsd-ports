@@ -1,0 +1,17 @@
+Trilogy is a client library for MySQL-compatible database servers, designed for
+performance, flexibility, and ease of embedding.
+
+It's currently in production use on github.com.
+
+Features:
+- Supports the most frequently used parts of the text protocol
+  - Handshake
+  - Password authentication
+  - Query, ping, and quit commands
+- Support prepared statements (binary protocol)
+- Low-level protocol API completely decoupled from IO
+- Non-blocking client API wrapping the protocol API
+- Blocking client API wrapping the non-blocking API
+- No dependencies outside of POSIX, the C standard library & OpenSSL
+- Minimal dynamic allocation
+- MIT licensed

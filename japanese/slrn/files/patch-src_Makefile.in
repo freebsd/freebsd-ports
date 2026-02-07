@@ -1,0 +1,19 @@
+*** src/Makefile.in.orig	Thu Jul 15 16:27:24 1999
+--- src/Makefile.in   Wed Oct  6 13:56:10 1999
+***************
+*** 61,67 ****
+  prefix = @prefix@
+  exec_prefix = @exec_prefix@
+  BINDIR = @bindir@
+! DOCDIR = $(prefix)/doc/slrn
+  MANDIR = @mandir@
+  MACRODIR = @datadir@/slrn
+  
+--- 61,67 ----
+  prefix = @prefix@
+  exec_prefix = @exec_prefix@
+  BINDIR = @bindir@
+! DOCDIR = $(prefix)/share/doc/slrn
+  MANDIR = @mandir@
+  MACRODIR = @datadir@/slrn
+  

@@ -1,0 +1,3 @@
+Hikari is a stacking Wayland compositor with additional tiling capabilities, it
+is heavily inspired by the Calm Window manager (cwm(1)). Its core concepts are
+views, groups, sheets and the workspace.

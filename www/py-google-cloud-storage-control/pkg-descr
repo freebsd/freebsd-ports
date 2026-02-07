@@ -1,0 +1,4 @@
+Storage Control API: Lets you perform metadata-specific, control plane, and
+long-running operations apart from the Storage API. Separating these operations
+from the Storage API improves API standardization and lets you run faster
+releases.

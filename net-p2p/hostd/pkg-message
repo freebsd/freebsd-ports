@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+The program hostd has been installed. To enable it at boot time,
+add it to /etc/rc.conf with the following command:
+sysrc hostd_enable="YES"
+EOM
+}
+]

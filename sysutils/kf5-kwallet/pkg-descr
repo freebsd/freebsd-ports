@@ -1,0 +1,4 @@
+This framework contains two main components:
+	* Interface to KWallet, the safe desktop-wide storage for passwords
+	  on KDE work spaces.
+	* The kwalletd used to safely store the passwords on KDE work spaces.

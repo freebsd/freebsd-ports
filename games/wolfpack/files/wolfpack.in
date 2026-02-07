@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: wolfpack
+#
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable the wolfpack game server:
+# wolfpack_enable="YES"
+#
+# Please read the documentation in %%DATADIR%%/README
+# about configuring the server and creating a world first.
+#
+
+. /etc/rc.subr
+
+name=wolfpack
+rcvar=wolfpack_enable
+
+load_rc_config $name
+
+: ${wolfpack_enable="NO"}
+: ${wolfpack_user="wolfpack"}
+
+pidfile="/var/wolfpack/server.pid"
+command="%%PREFIX%%/lib/wolfpack/emp_server"
+
+run_rc_command "$1"
+

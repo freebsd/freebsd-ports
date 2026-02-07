@@ -1,0 +1,21 @@
+The Data Encryption Standard (DES), also known as Data
+Encryption Algorithm (DEA) is a semi-strong encryption and
+decryption algorithm.
+The module is 100 % compatible to Crypt::DES but is implemented
+entirely in Perl. That means that you do not need a C compiler
+to build and install this extension.
+The module implements the Crypt::CBC interface. You are
+encouraged to read the documentation for Crypt::CBC if you
+intend to use this module for Cipher Block Chaining.
+The minimum (and maximum) key size is 8 bytes. Shorter keys will
+cause an exception, longer keys will get silently truncated.
+Data is encrypted and decrypted in blocks of 8 bytes.
+The module implements the Ultra-Fast-Crypt (UFC) algorithm as
+found for example in the GNU libc. On the Perl side a lot has
+been done in order to make the module as fast as possible
+(function inlining, use integer, ...).
+Note: For performance issues the source code for the module is
+first preprocessed by m4. That means that you need an m4 macro
+processor in order to hack on the sources. This is of no concern
+for you if you only want to use the module, the preprocessed
+output is always included in the distribution.

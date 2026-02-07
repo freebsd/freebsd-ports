@@ -1,0 +1,8 @@
+--- src/Makefile.orig	2021-08-17 12:47:08 UTC
++++ src/Makefile
+@@ -71,4 +71,4 @@ ${DESTDIR}${PREFIX}/bin/wifimgr:	wifimgr
+ 		${INSTALL} -s $? $@
+ 
+ ${DESTDIR}${PREFIX}/libexec/wifimgrsu:	wifimgrsu
+-		${INSTALL} -s -o root -g wheel -m 4511 $? $@
++		${INSTALL} -s -m 511 $? $@

@@ -1,0 +1,3 @@
+Overlord is a fast, distributed orchestrator for FreeBSD jails
+oriented to GitOps. You define a file with the service intended to
+run on your cluster and deployment takes seconds to minutes.

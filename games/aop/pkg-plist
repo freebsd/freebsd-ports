@@ -1,0 +1,14 @@
+bin/aop
+%%DATADIR%%/aop-level-01.txt
+%%DATADIR%%/aop-level-02.txt
+%%DATADIR%%/aop-level-03.txt
+%%DATADIR%%/aop-level-04.txt
+%%DATADIR%%/aop-level-05.txt
+%%DATADIR%%/aop-level-06.txt
+%%DATADIR%%/aop-level-07.txt
+%%DATADIR%%/aop-level-08.txt
+%%DATADIR%%/aop-level-09.txt
+%%DATADIR%%/aop-level-10.txt
+%%DATADIR%%/aop-level-11.txt
+share/applications/aop.desktop
+share/pixmaps/aop.png

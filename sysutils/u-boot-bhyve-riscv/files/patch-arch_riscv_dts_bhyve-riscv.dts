@@ -1,0 +1,14 @@
+--- arch/riscv/dts/bhyve-riscv.dts
++++ arch/riscv/dts/bhyve-riscv.dts
+@@ -0,0 +1,11 @@
++// SPDX-License-Identifier: GPL-2.0+ OR MIT
++/*
++ * Empty device tree for bhyve_riscv
++
++ * Copyright 2021 Google LLC
++ */
++
++/dts-v1/;
++
++/ {
++};

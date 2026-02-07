@@ -1,0 +1,6 @@
+This is a powerful and easy-to-use tcl/tk-based program
+which can de/en-code BinHex, uuencoded, xxencoded, Base64,
+and yEnc formats.
+
+Xdeview uses tcl/tk 8.3, but the port can be configured to
+use other tcl/tk versions (see the port Makefile).

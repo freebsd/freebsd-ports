@@ -1,0 +1,20 @@
+xed is a GTK-based text editor. Its features include:
+
+	* Complete integration with any GTK environment
+	* Global Search and Replace
+	* Dynamically loaded fonts
+	* Splitscreen Mode
+	* Printing support
+	* Configurable Plugins system
+	* Unlimited Undo/Redo
+
+Although new features are always under development, currently xed has:
+
+  * Complete support for UTF-8 text
+  * Syntax highlighting for many languages
+  * Support for editing remote files
+  * Search and replace
+  * Printing and print previewing support
+  * File revert
+  * Complete preferences interface
+  * Configurable Python-based plugin system

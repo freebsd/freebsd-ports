@@ -1,0 +1,20 @@
+--- source/CMakeLists.txt.orig	2016-03-16 16:43:57 UTC
++++ source/CMakeLists.txt
+@@ -790,7 +790,7 @@ if (MAIN_COMPILE_FLAGS)
+ 	set_target_properties(vavoom PROPERTIES COMPILE_FLAGS ${MAIN_COMPILE_FLAGS})
+ endif (MAIN_COMPILE_FLAGS)
+ target_link_libraries(vavoom ${MAIN_LIBS})
+-add_dependencies(vavoom core timidity glbsp libglvis)
++add_dependencies(vavoom core timidity glbsp libglvis revision_check)
+ 
+ install(TARGETS vavoom DESTINATION ${BINDIR})
+ 
+@@ -845,7 +845,7 @@ else(ENABLE_WRAPPERS)
+ endif(ENABLE_WRAPPERS)
+ set_target_properties(vavoom-dedicated PROPERTIES COMPILE_FLAGS -DSERVER)
+ target_link_libraries(vavoom-dedicated glbsp core ${ZLIB_LIBRARY} ${NET_LIBRARIES})
+-add_dependencies(vavoom-dedicated core glbsp)
++add_dependencies(vavoom-dedicated core glbsp revision_check)
+ 
+ install(TARGETS vavoom-dedicated DESTINATION ${BINDIR})
+ 

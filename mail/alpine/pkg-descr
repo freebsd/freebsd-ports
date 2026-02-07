@@ -1,0 +1,19 @@
+Alpine is a screen-oriented message-handling tool for news, and POP, IMAP,
+and local e-mail.  In its default configuration it offers a limited set of
+functions geared toward the novice user, but it also has a large list of
+optional "power-user" and personal-preference features.
+
+Alpine's basic feature set includes:
+	* View, Save, Export, Delete, Print, Reply and Forward messages.
+	    Compose messages in a simple editor with word-wrap and a
+	    spelling checker.  Messages may be postponed for later completion.
+	* Selection and management of message folders.
+	* Address book to keep a list of long or frequently-used
+	    addresses.  Personal distribution lists may be defined.
+	    Addresses may be taken into the address book from incoming mail
+	    without retyping them.
+	* New mail checking/notification occurs automatically (configurable).
+	* On-line, context-sensitive help screens.
+
+Alpine supports MIME (Multipurpose Internet Mail Extensions), an Internet
+Standard for representing multipart and multimedia data in email.

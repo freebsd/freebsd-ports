@@ -1,0 +1,146 @@
+# This file can be included in the RC script by adding following line:
+# . %%LOCALBASE%%/share/rc-subr-jail/rc.subr.jail
+
+# The behavior of routines defined in this file are affected by the following
+# global variables, which can be used in the same manner as Makefile knobs:
+
+# jail_copy_resolv_conf
+# set this to "yes" to copy /etc/resolv.conf file into the jail being created
+
+# jail_copy_services
+# set this to "yes" to copy /etc/services file into the jail being created
+
+# jail_copy_programs
+# set this to a list of binaries, which should be copied into /bin directory
+# of the jail. Dynamic libraries required by each program will be placed into
+# the /lib directory of the jail
+
+# jail_mount_devfs
+# set this to "yes" to mount a devfs filesystem under the /dev directory of the
+# jail
+
+# jail_ip_inherit
+# set this to "yes" to make "ip4=inherit" and "ip6=inherit" arguments to be
+# passed to the jail
+
+# jail_prepare_inside_cmds
+# set this to the shell command that will be run before starting the jail
+# commands are run after changing directory into the jail's root
+
+# jail_nullfs_mounts
+# set this to a list of triplets of "src_dir dst_dir opts" that will be passed
+# to mount_nullfs
+# make sure to pass either "ro" or "rw" as "opts" value
+
+
+# prepare_jail jroot
+# sets $jail_prepared_args that can be used in jail(4) invocation
+# intended to be run during "start" command
+prepare_jail()
+{
+    local jroot jargs
+    jroot="$1"
+    jargs="-c path=${jroot} "
+
+    destroy_jail "$jroot" 2> /dev/null
+
+    mkdir -p "$jroot"
+
+    if [ "$jail_copy_resolv_conf" = "yes" ]; then
+        mkdir -p "$jroot/etc"
+        cp /etc/resolv.conf "$jroot/etc"
+    fi
+    if [ "$jail_copy_services" = "yes" ]; then
+        mkdir -p "$jroot/etc"
+        cp /etc/services "$jroot/etc"
+    fi
+
+    local  _prog _interp
+    for _prog in $jail_copy_programs; do
+        mkdir -p "$jroot/bin"
+        mkdir -p "$jroot/lib"
+
+        cp "$_prog" "$jroot/bin"
+        ldd "$_prog" 2> /dev/null | cut -s -d " " -f 3 | grep -E '^(/lib|/usr)' | sort -u | xargs -I % cp % "${jroot}/lib/"
+
+        _interp=$(file "$_prog" | grep -o '/libexec/ld-elf.so[0-9\.]*')
+        if [ "$_interp" ]; then
+            mkdir -p "$jroot/libexec"
+            cp "$_interp" "$jroot/libexec/"
+        fi
+    done
+
+    if [ "$jail_mount_devfs" = "yes" ]; then
+        mkdir -p "$jroot/dev"
+        jargs="$jargs mount.devfs "
+    fi
+    if [ "$jail_ip_inherit" = "yes" ]; then
+
+        if check_kern_features inet; then
+            jargs="$jargs ip4=inherit "
+        fi
+        if check_kern_features inet6; then
+            jargs="$jargs ip6=inherit "
+        fi
+    fi
+
+    if [ "$jail_nullfs_mounts" ]; then
+        local _mnt_line
+        echo "$jail_nullfs_mounts" | xargs -n 3 | while read -r _mnt_line; do
+            local _src _dst _opts
+            _src=$(echo "$_mnt_line" | awk '{print $1}')
+            _dst=$(echo "$_mnt_line" | awk '{print $2}')
+            _opts=$(echo "$_mnt_line" | awk '{print $3}')
+            /bin/sh -c "cd \"$jroot\" && mkdir -p \"$_dst\""
+            /bin/sh -c "cd \"$jroot\" && mount_nullfs  -o \"$_opts\" \"$_src\" \"$_dst\""
+        done
+    fi
+
+    if [ "$jail_prepare_inside_cmds" ]; then
+        /bin/sh -c "cd \"$jroot\" && $jail_prepare_inside_cmds"
+    fi
+
+    jail_prepared_args=$jargs
+}
+
+# destroy_jail jail_root
+# cleans up the jail, unmounts all filesystems and finally removes jail_root
+# intended to be run during both "stop" and "start" commands
+destroy_jail()
+{
+    local jroot
+    jroot="$1"
+
+    if [ "$jail_mount_devfs" = "yes" ]; then
+        rmdir "$jroot/dev"
+    fi
+
+    if [ "$jail_nullfs_mounts" ]; then
+        local _mnt_line
+        echo "$jail_nullfs_mounts" | xargs -n 3 | while read -r _mnt_line; do
+            local _dst
+            _dst=$(echo "$_mnt_line" | awk '{print $2}')
+            /bin/sh -c "cd \"$jroot\" && umount \"$_dst\"" 2> /dev/null
+            /bin/sh -c "cd \"$jroot\" && rmdir \"$_dst\"" 2> /dev/null
+        done
+    fi
+
+    rm -rf "$jroot"
+}
+
+# kill_jail pid signal jail_enable_var
+# Works like kill if passed a variable containing "no", but calls
+# killall -j ${name}_jail otherwise
+kill_jail()
+{
+    local _pid _varname
+    _pid="$1"
+    _signal="$2"
+    _varname="$3"
+
+    if checkyesno "$_varname"; then
+        killall -j ${name}_jail ${_signal}
+    else
+        kill ${_signal} "$_pid"
+    fi
+}

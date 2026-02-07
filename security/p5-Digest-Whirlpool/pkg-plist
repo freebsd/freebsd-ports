@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Digest/Whirlpool.pm
+%%SITE_ARCH%%/auto/Digest/Whirlpool/Whirlpool.so
+bin/whirlpoolsum
+%%PERL5_MAN3%%/Digest::Whirlpool.3.gz
+%%PERL5_MAN1%%/whirlpoolsum.1.gz

@@ -1,0 +1,21 @@
+LIB=	udt
+SHLIB_MAJOR=4
+SHLIB_MINOR=10
+MK_PROFILE=	no	# Ports don't install profile-libraries
+LIBDIR=	${PREFIX}/lib
+INCLUDEDIR=	${PREFIX}/include
+INCS=	udt.h
+
+LDADD=	-lmd -pthread
+
+SRCS=	common.cpp window.cpp list.cpp buffer.cpp packet.cpp channel.cpp \
+	queue.cpp ccc.cpp cache.cpp core.cpp epoll.cpp api.cpp
+
+CXXFLAGS+=	-D${MACHINE_ARCH:tu:S/I386/IA32/:S/SPARC64/SPARC/} -DBSD
+CXXFLAGS+=	-Wno-system-headers -Wall -W	\
+	-Wpointer-arith -Wreturn-type	\
+	-Wwrite-strings -Wswitch -Wno-cast-align	\
+	-Wunused-parameter -Werror \
+	-Wno-vla-cxx-extension
+
+.include <bsd.lib.mk>

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Text/WikiFormat.pm
+%%SITE_PERL%%/Text/WikiFormat/Blocks.pm
+%%PERL5_MAN3%%/Text::WikiFormat.3.gz
+%%PERL5_MAN3%%/Text::WikiFormat::Blocks.3.gz

@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# PROVIDE: gdnsd
+# REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gdnsd_enable (bool):	Set to NO by default.
+#				Set it to YES to enable gdnsd.
+# gdnsd_flags (str):		Set to "" by default
+#				Extra command line argument flags
+
+. /etc/rc.subr
+
+name="gdnsd"
+rcvar=gdnsd_enable
+
+# set defaults
+load_rc_config $name
+: ${gdnsd_enable:="NO"}
+: ${gdnsd_user:="gdnsd"}
+: ${gdnsd_group:="gdnsd"}
+: ${gdnsd_flags:=""}
+
+command="%%PREFIX%%/sbin/gdnsd"
+command_args="daemonize"
+procname=${command}
+start_precmd="gdnsd_prestart"
+restart_precmd="gdnsd_checkconf"
+restart_cmd="gdnsd_restart"
+reload_cmd="gdnsd_reload"
+reload_precmd="gdnsd_checkconf"
+stats_cmd="gdnsd_stats"
+configtest_cmd="gdnsd_checkconf"
+extra_commands="stats reload configtest"
+
+gdnsd_prestart()
+{
+  if ! kldstat -q -m mac_portacl; then
+    warn "mac_portacl module not loaded, please review pkg-message"
+  fi
+
+  install -d -o ${gdnsd_user} -g ${gdnsd_group} -m 700 /var/run/gdnsd
+}
+
+gdnsd_reload()
+{
+  %%PREFIX%%/bin/gdnsdctl reload-zones
+}
+
+gdnsd_restart()
+{
+  %%PREFIX%%/bin/gdnsdctl replace
+}
+
+gdnsd_checkconf()
+{
+  ${command} ${gdnsd_flags} checkconf
+}
+
+gdnsd_stats()
+{
+  %%PREFIX%%/bin/gdnsdctl stats
+}
+
+run_rc_command "$1"

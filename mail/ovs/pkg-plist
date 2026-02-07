@@ -1,0 +1,6 @@
+%%CGIDIR%%/ovs.cgi
+%%WWWROOT%%/ovs/ovs.css
+sbin/ovs.pl
+@owner %%OVS_USER%%
+@group %%OVS_GROUP%%
+@dir %%DATADIR%%

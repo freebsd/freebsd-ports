@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: remotetrx
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# svxreflector_enable (bool):	Set to NO by default.
+#				Set it to YES to enable svxreflector.
+# svxreflector_config (path):	Set to %%PREFIX%%/etc/svxlink/svxreflector.conf
+#				by default.
+
+. /etc/rc.subr
+
+name=svxreflector
+rcvar=svxreflector_enable
+
+load_rc_config $name
+
+: ${svxreflector_enable:="NO"}
+: ${svxreflector_config="%%PREFIX%%/etc/svxlink/svxreflector.conf"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+command_args="--config $svxreflector_config --daemon --runasuser svxlink --pidfile ${pidfile}"
+
+run_rc_command "$1"

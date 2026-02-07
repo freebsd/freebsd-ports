@@ -1,0 +1,42 @@
+This file removes the getopt* and the outputs of Lex and Yacc
+bundled by the author in favor of
+
+	* getopt available from FreeBSD
+	* sources regenarated by modern flex and yacc on FreeBSD
+
+--- Makefile.in	2001-05-30 10:49:02.000000000 -0400
++++ Makefile.in	2010-04-14 13:20:45.000000000 -0400
+@@ -73,4 +73,4 @@
+ bin_PROGRAMS = fatback
+-fatback_SOURCES = fatback.c mbr.c vbr.c util.c sig.c output.c input.c recovery.c dirtree.c lfn.c fat.c interface.c interface_data.c vars.c cmd_chain.c cmd_cp.c cmd_sh.c cmd_misc.c cmd_ls.c cmd_stat.c cmd_lostchains.c cmd_set.c sety.y setl.l getopt.c getopt1.c cmd_cpchain.c fatback.h mbr.h vbr.h util.h sig.h output.h input.h dirtree.h recovery.h lfn.h fat.h interface.h interface_data.h vars.h getopt.h sety.h
++fatback_SOURCES = fatback.c mbr.c vbr.c util.c sig.c output.c input.c recovery.c dirtree.c lfn.c fat.c interface.c interface_data.c vars.c cmd_chain.c cmd_cp.c cmd_sh.c cmd_misc.c cmd_ls.c cmd_stat.c cmd_lostchains.c cmd_set.c sety.y setl.l cmd_cpchain.c fatback.h mbr.h vbr.h util.h sig.h output.h input.h dirtree.h recovery.h lfn.h fat.h interface.h interface_data.h vars.h
+ 
+ fatback_LDADD = @LEXLIB@
+@@ -95,5 +95,5 @@
+ recovery.o dirtree.o lfn.o fat.o interface.o interface_data.o vars.o \
+ cmd_chain.o cmd_cp.o cmd_sh.o cmd_misc.o cmd_ls.o cmd_stat.o \
+-cmd_lostchains.o cmd_set.o sety.o setl.o getopt.o getopt1.o \
++cmd_lostchains.o cmd_set.o sety.o setl.o \
+ cmd_cpchain.o
+ fatback_DEPENDENCIES = 
+@@ -114,5 +114,5 @@
+ DIST_COMMON =  README AUTHORS COPYING ChangeLog INSTALL Makefile.am \
+ Makefile.in NEWS aclocal.m4 configure configure.in install-sh missing \
+-mkinstalldirs setl.c sety.c texinfo.tex
++mkinstalldirs texinfo.tex
+ 
+ 
+@@ -439,5 +439,5 @@
+ cmd_chain.o: cmd_chain.c interface.h dirtree.h lfn.h fat.h vbr.h \
+ 	fatback.h mbr.h interface_data.h output.h
+-cmd_cp.o: cmd_cp.c getopt.h interface_data.h interface.h dirtree.h lfn.h \
++cmd_cp.o: cmd_cp.c interface_data.h interface.h dirtree.h lfn.h \
+ 	fat.h vbr.h fatback.h mbr.h recovery.h output.h
+ cmd_cpchain.o: cmd_cpchain.c interface.h dirtree.h lfn.h fat.h vbr.h \
+@@ -458,5 +458,5 @@
+ 	dirtree.h lfn.h vars.h
+ fat.o: fat.c vbr.h fatback.h mbr.h output.h util.h input.h fat.h
+-fatback.o: fatback.c getopt.h input.h output.h mbr.h util.h vbr.h \
++fatback.o: fatback.c input.h output.h mbr.h util.h vbr.h \
+ 	fatback.h fat.h dirtree.h lfn.h interface.h vars.h
+ getopt.o: getopt.c getopt.h

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Data/TreeDumper/Renderer/GTK.pm
+%%SITE_PERL%%/Data/TreeDumper/Renderer/gtk_test.pl
+%%SITE_PERL%%/auto/Data/TreeDumper/Renderer/GTK/autosplit.ix
+%%PERL5_MAN3%%/Data::TreeDumper::Renderer::GTK.3.gz

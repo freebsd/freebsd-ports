@@ -1,0 +1,8 @@
+--- src/CMakeLists.txt.orig	2025-04-18 15:18:32 UTC
++++ src/CMakeLists.txt
+@@ -48,4 +48,4 @@ target_link_libraries(${PROJECT_NAME}
+                       ${LIBRT}
+                       ${CRYPTO_LIBRARIES})
+ 
+-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "sbin")
++install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

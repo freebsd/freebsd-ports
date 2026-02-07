@@ -1,0 +1,12 @@
+SwaySettings is a GUI for configuring your Sway desktop.
+
+Features:
+- Set and remove auto start apps
+- Change default apps
+- Change GTK theme settings (GTK theme is set per GTK4 color-scheme,
+  ie dark and light mode)
+- Mouse and trackpad settings
+- Keyboard layout settings
+- Switch Wallpaper (selected wallpaper will be located at .cache/wallpaper)
+- Configure Sway Notification Center (package: swaync)
+- sway-wallpaper (a swaybg replacement) which includes a slick fade transition

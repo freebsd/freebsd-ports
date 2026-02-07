@@ -1,0 +1,10 @@
+Simple, lightweight and extensible Tree data structure.
+
+Supports:
+
+  * Tree Iteration & Rendering
+  * Searching & Cached Searching
+  * Node Resolution
+  * Dictionary, JSON Importers
+  * Dictionary, JSON and Dot Exporters
+  * Multi-Dimensional Trees & Weighted Edges

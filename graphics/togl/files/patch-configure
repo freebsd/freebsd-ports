@@ -1,0 +1,11 @@
+--- configure.orig	2025-03-18 12:11:20 UTC
++++ configure
+@@ -11473,7 +11473,7 @@ fi
+ 	MAKE_STUB_LIB="\${STLIB_LD} -out:\$@ \$(PKG_STUB_OBJECTS)"
+     else
+ 	MAKE_STATIC_LIB="\${STLIB_LD} \$@ \$(PKG_OBJECTS)"
+-	MAKE_SHARED_LIB="\${SHLIB_LD} -o \$@ \$(PKG_OBJECTS) \${SHLIB_LD_LIBS}"
++	MAKE_SHARED_LIB="\${SHLIB_LD} -o \$@ -Wl,-soname,\$@ \$(PKG_OBJECTS) \${SHLIB_LD_LIBS}"
+ 	MAKE_STUB_LIB="\${STLIB_LD} \$@ \$(PKG_STUB_OBJECTS)"
+     fi
+ 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<group name="ossec,">
+
+  <rule id="56001" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>%%OSSEC_HOME%%/etc/ossec.conf.d</match>
+    <description>ossec.conf.d has been modified</description>
+  </rule>
+
+  <rule id="56002" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>%%OSSEC_HOME%%/etc/ossec.conf</match>
+    <description>ossec.conf has been modified</description>
+  </rule>
+
+  <rule id="56003" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>/var/ossec/etc/ossec.conf.d</match>
+    <description>ossec.conf.d has been modified</description>
+  </rule>
+
+  <rule id="56004" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>/var/ossec/etc/ossec.conf</match>
+    <description>ossec.conf has been modified</description>
+  </rule>
+
+  <rule id="56021" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>%%OSSEC_HOME%%/etc/agent.conf.d</match>
+    <description>agent.conf.d has been modified</description>
+  </rule>
+
+  <rule id="56022" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>%%OSSEC_HOME%%/etc/shared/agent.conf</match>
+    <description>agent.conf has been modified</description>
+  </rule>
+
+  <rule id="56023" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>/var/ossec/etc/agent.conf.d</match>
+    <description>agent.conf.d has been modified</description>
+  </rule>
+
+  <rule id="56024" level="10" ignore="10">
+    <if_group>syscheck</if_group>
+    <match>/var/ossec/etc/shared/agent.conf</match>
+    <description>agent.conf has been modified</description>
+  </rule>
+
+</group>

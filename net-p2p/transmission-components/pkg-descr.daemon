@@ -1,0 +1,4 @@
+The transmission-daemon is a daemon-based Transmission session that can be
+controlled via RPC by transmission-remote (see transmission-utils) and
+other Transmission BiTtorrent client such as GTK+ and CLI interface.
+The daemon may also be controlled by installing the web interface.

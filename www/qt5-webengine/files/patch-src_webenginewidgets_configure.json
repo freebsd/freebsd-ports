@@ -1,0 +1,11 @@
+--- src/webenginewidgets/configure.json.orig	2023-09-13 10:51:59 UTC
++++ src/webenginewidgets/configure.json
+@@ -13,7 +13,7 @@
+        "webengine-widgets": {
+             "label": "Support Qt WebEngine Widgets",
+             "purpose": "Provides WebEngine Widgets support.",
+-            "condition": "features.widgets",
++            "condition": "module.widgets",
+             "output": [ "privateFeature" ]
+         }
+     },

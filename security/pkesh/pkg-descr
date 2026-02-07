@@ -1,0 +1,3 @@
+pkesh is a Public Key Encryption SHell script.  Think GPG with 99.9% less
+code and without the web-of-trust mechanism: pkesh encrypts data to a key,
+and it's up to you to make sure it's the correct key.

@@ -1,0 +1,73 @@
+.TH assplog 8 "May 16, 2005" "" "ASSP"
+.SH NAME
+assplog \- ASSP log pretty-printer
+.SH SYNOPSIS
+assplog
+.SH DESCRIPTION
+.I assplog
+uses
+.B "tail -f"
+to monitor the ASSP Anti-Spam SMTP Proxy log and then displays
+logged messages using ANSI color sequences and reformatted to
+a consistent layout for easy reading.
+.PP
+.I assplog
+works best on terminal windows of around 120 columns or wider.
+It also assumes a black background as whitelisted messages are
+displayed colored white.  If you normally use a white background,
+use Ctrl-MiddleButton and select Enable Reverse Video.
+.PP
+The colors have the following meaning:
+.PP
+1. Messages that were delivered
+.RS
+.TP
+White
+Sender was on whitelist (or was added to whitelist)
+.TP
+Green
+Message passed all checks and was delivered
+.RE
+.PP
+2. Messages that were blocked
+.RS
+.TP
+Cyan
+Message was delayed (sending MTA should retry later)
+.TP
+Blue
+Recipient unknown (failed flat list or LDAP check)
+.TP
+Magenta
+Message failed any of the other checks
+.TP
+Red
+Message failed Bayesian spam check
+.RE
+.PP
+3. Administrative messages
+.RS
+.TP
+Yellow
+Admin change from web interface
+.TP
+Grey
+Messages about ASSP's operation, including messages to
+assp{notspam,spam,white}@ address
+.RE
+.SH BUGS
+Note that
+.I assplog
+suppresses some of the message lines from the in actual log (those that report
+penalty scoring and some socket level information, for example).
+Unknown/new log messages are not colorized.
+FOR A COMPLETE AND ACCURATE VIEW OF
+THE LOG, USE
+.B "tail -f"
+DIRECTLY ON THE LOG FILE.
+.SH FILES
+.IP %%ASSP_HOME%%/maillog.txt
+location of ASSP log file
+.SH "SEE ALSO"
+.IR assp (8),
+.IR tail (1)

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: qpopper
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# qpopper_enable (bool):	Set to NO by default.
+#				Set it to YES to enable qpopper.
+# qpopper_flags (str):		Set to "-f %%PREFIX%%/etc/qpopper.config" by default.
+
+. /etc/rc.subr
+
+name=qpopper
+rcvar=qpopper_enable
+
+load_rc_config ${name}
+: ${qpopper_enable:="NO"}
+: ${qpopper_flags:="110 -S -f %%PREFIX%%/etc/${name}.config"}
+
+command="%%PREFIX%%/libexec/${name}"
+run_rc_command "$1"

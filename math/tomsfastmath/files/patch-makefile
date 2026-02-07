@@ -1,0 +1,41 @@
+--- makefile.orig	2017-04-04 10:24:49 UTC
++++ makefile
+@@ -10,12 +10,9 @@ ifndef PREFIX
+   PREFIX=
+ endif
+ 
+-ifeq ($(CC),cc)
+-  CC = $(PREFIX)gcc
+-endif
+-LD=$(PREFIX)ld
+-AR=$(PREFIX)ar
+-RANLIB=$(PREFIX)ranlib
++LD=ld
++AR=ar
++RANLIB=ranlib
+ 
+ ifndef MAKE
+    MAKE=make
+@@ -39,7 +36,7 @@ CFLAGS += -g3
+ else
+ ifndef IGNORE_SPEED
+ 
+-CFLAGS += -O3 -funroll-loops
++CFLAGS += -funroll-loops
+ 
+ #profiling
+ #PROF=-pg -g
+@@ -83,11 +80,11 @@ HEADERS=src/headers/tfm_private.h $(HEAD
+ #END_INS
+ 
+ ifndef LIBPATH
+-   LIBPATH=/usr/lib
++   LIBPATH=${PREFIX}/lib
+ endif
+ 
+ ifndef INCPATH
+-   INCPATH=/usr/include
++   INCPATH=${PREFIX}/include
+ endif
+ 
+ ifndef INSTALL_GROUP

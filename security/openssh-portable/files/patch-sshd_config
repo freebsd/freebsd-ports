@@ -1,0 +1,33 @@
+--- sshd_config.orig	2024-11-09 12:22:03.414050000 -0800
++++ sshd_config	2024-11-09 12:25:59.964286000 -0800
+@@ -10,6 +10,11 @@
+ # possible, but leave them commented.  Uncommented options override the
+ # default value.
+ 
++# Note that some of FreeBSD's defaults differ from OpenBSD's, and
++# FreeBSD has a few additional options.
++
++Include sshd_config.d/*.conf
++
+ #Port 22
+ #AddressFamily any
+ #ListenAddress 0.0.0.0
+@@ -37,8 +42,7 @@
+ #PubkeyAuthentication yes
+ 
+ # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+-# but this is overridden so installations will only check .ssh/authorized_keys
+-AuthorizedKeysFile	.ssh/authorized_keys
++#AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2
+ 
+ #AuthorizedPrincipalsFile none
+ 
+@@ -84,7 +88,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
+ #AllowAgentForwarding yes
+ #AllowTcpForwarding yes
+ #GatewayPorts no
+-#X11Forwarding no
++#X11Forwarding yes
+ #X11DisplayOffset 10
+ #X11UseLocalhost yes
+ #PermitTTY yes

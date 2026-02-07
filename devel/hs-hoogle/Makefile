@@ -1,0 +1,170 @@
+PORTNAME=	hoogle
+PORTVERSION=	5.0.18.4
+PORTREVISION=	1
+CATEGORIES=	devel haskell
+
+MAINTAINER=	haskell@FreeBSD.org
+COMMENT=	Haskell API Search
+WWW=		https://www.haskell.org/hoogle/
+
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+
+USES=		cabal
+
+CABAL_REVISION=	1
+USE_CABAL=	ListLike-4.7.8.4 \
+		OneTuple-0.4.2_1 \
+		QuickCheck-2.16.0.0 \
+		StateVar-1.2.2 \
+		aeson-2.2.3.0_4 \
+		ansi-terminal-1.1.5 \
+		ansi-terminal-types-1.1.3 \
+		appar-0.1.8 \
+		asn1-encoding-0.9.6_2 \
+		asn1-parse-0.9.5 \
+		asn1-types-0.3.4 \
+		assoc-1.1.1_1 \
+		async-2.2.5_3 \
+		atomic-counter-0.1.2.4 \
+		attoparsec-0.14.4_6 \
+		attoparsec-aeson-2.2.2.0 \
+		auto-update-0.2.6 \
+		base-orphans-0.9.3 \
+		base16-bytestring-1.0.2.0_1 \
+		base64-bytestring-1.2.1.0_1 \
+		basement-0.0.16 \
+		bifunctors-5.6.2_2 \
+		bitvec-1.1.5.0_3 \
+		blaze-builder-0.4.4.1 \
+		blaze-html-0.9.2.0_1 \
+		blaze-markup-0.8.3.0_2 \
+		bsb-http-chunked-0.0.0.4_4 \
+		byteorder-1.0.4 \
+		case-insensitive-1.2.1.0 \
+		cborg-0.2.10.0_3 \
+		cereal-0.5.8.3 \
+		character-ps-0.1 \
+		clock-0.8.4 \
+		cmdargs-0.10.22 \
+		colour-2.3.6 \
+		comonad-5.0.9_1 \
+		conduit-1.3.6.1 \
+		conduit-extra-1.3.8_1 \
+		contravariant-1.5.5 \
+		cookie-0.5.1 \
+		crypto-token-0.1.2 \
+		crypton-1.0.4 \
+		crypton-connection-0.3.2_1 \
+		crypton-x509-1.7.7 \
+		crypton-x509-store-1.6.12_1 \
+		crypton-x509-system-1.6.7 \
+		crypton-x509-validation-1.6.14 \
+		data-default-0.8.0.1 \
+		data-default-class-0.2.0.0 \
+		data-fix-0.3.4_1 \
+		directory-ospath-streaming-0.3_1 \
+		distributive-0.6.2.1_1 \
+		dlist-1.0_2 \
+		easy-file-0.2.5 \
+		extra-1.8.1 \
+		fast-logger-3.2.6 \
+		file-io-0.1.5 \
+		fmlist-0.9.4 \
+		foundation-0.0.30 \
+		generic-deriving-1.14.6_1 \
+		generically-0.1.1_4 \
+		half-0.3.3_1 \
+		happy-2.1.7 \
+		happy-lib-2.1.7 \
+		hashable-1.5.0.0_1 \
+		haskell-src-exts-1.23.1 \
+		hourglass-0.2.12_1 \
+		hsc2hs-0.68.10_4 \
+		http-client-0.7.19 \
+		http-client-tls-0.3.6.4_2 \
+		http-conduit-2.3.9.1 \
+		http-date-0.0.11 \
+		http-semantics-0.4.0 \
+		http-types-0.12.4 \
+		http2-5.4.0 \
+		indexed-traversable-0.1.4_1 \
+		indexed-traversable-instances-0.1.2_1 \
+		integer-conversion-0.1.1_1 \
+		integer-logarithms-1.0.4 \
+		iproute-1.7.15 \
+		js-flot-0.8.3 \
+		js-jquery-3.7.1 \
+		memory-0.18.0_1 \
+		mime-types-0.1.2.0 \
+		mmap-0.5.9 \
+		mono-traversable-1.0.21.0 \
+		network-3.2.8.0 \
+		network-byte-order-0.1.7 \
+		network-control-0.1.7 \
+		network-uri-2.6.4.2_1 \
+		old-locale-1.0.0.7_2 \
+		old-time-1.1.0.4 \
+		optparse-applicative-0.19.0.0 \
+		pem-0.2.4 \
+		prettyprinter-1.7.1 \
+		prettyprinter-ansi-terminal-1.1.3 \
+		primitive-0.9.1.0 \
+		process-extras-0.7.4_1 \
+		psqueues-0.2.8.2 \
+		random-1.3.1 \
+		recv-0.1.1 \
+		resourcet-1.3.0 \
+		safe-0.3.21_1 \
+		safe-exceptions-0.1.7.4_1 \
+		scientific-0.3.8.0_2 \
+		semialign-1.3.1_2 \
+		semigroupoids-6.0.1_2 \
+		semigroups-0.20 \
+		serialise-0.2.6.1_5 \
+		simple-sendfile-0.2.32 \
+		socks-0.6.1 \
+		split-0.2.5 \
+		splitmix-0.1.3.1 \
+		storable-record-0.0.7 \
+		storable-tuple-0.1 \
+		streaming-commons-0.2.3.1 \
+		strict-0.5.1_1 \
+		syb-0.7.3 \
+		tagged-0.8.10 \
+		tar-0.7.0.0_2 \
+		tasty-1.5.3_2 \
+		text-iso8601-0.1.1_2 \
+		text-short-0.1.6_3 \
+		th-abstraction-0.7.1.0_1 \
+		th-compat-0.1.6 \
+		these-1.2.1_2 \
+		time-compat-1.9.8 \
+		time-manager-0.2.4 \
+		tls-2.0.6_1 \
+		tls-session-manager-0.0.8 \
+		transformers-compat-0.7.2 \
+		typed-process-0.2.13.0 \
+		uniplate-1.6.13_1 \
+		unix-compat-0.7.4.1 \
+		unix-time-0.4.17 \
+		unliftio-0.2.25.1 \
+		unliftio-core-0.2.1.0_4 \
+		unordered-containers-0.2.21_1 \
+		utf8-string-1.0.2 \
+		utility-ht-0.0.17.2 \
+		uuid-types-1.0.6_3 \
+		vault-0.3.1.6 \
+		vector-0.13.2.0_2 \
+		vector-algorithms-0.9.1.0 \
+		vector-stream-0.1.0.1_4 \
+		wai-3.2.4 \
+		wai-logger-2.5.0 \
+		warp-3.4.11 \
+		warp-tls-3.4.9 \
+		witherable-0.5_1 \
+		word8-0.1.3 \
+		zlib-0.7.1.1
+
+.include <bsd.port.mk>

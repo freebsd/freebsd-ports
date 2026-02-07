@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+================================================================================
+Step Client requires additional configuration:
+
+Ensure to set the STEPPATH environment variable. This makes using the
+commands much simpler.
+================================================================================
+EOM
+}
+]

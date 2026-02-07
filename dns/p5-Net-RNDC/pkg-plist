@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Net/RNDC.pm
+%%SITE_PERL%%/Net/RNDC/Exception.pm
+%%SITE_PERL%%/Net/RNDC/Packet.pm
+%%SITE_PERL%%/Net/RNDC/Session.pm
+%%PERL5_MAN3%%/Net::RNDC.3.gz
+%%PERL5_MAN3%%/Net::RNDC::Exception.3.gz
+%%PERL5_MAN3%%/Net::RNDC::Packet.3.gz
+%%PERL5_MAN3%%/Net::RNDC::Session.3.gz

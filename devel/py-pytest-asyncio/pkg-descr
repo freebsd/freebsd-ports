@@ -1,0 +1,5 @@
+pytest-asyncio is a pytest plugin. It facilitates testing of code that uses the
+asyncio library.
+
+Specifically, pytest-asyncio provides support for coroutines as test functions.
+This allows users to await code inside their tests.

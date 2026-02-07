@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-29 10:04:46 UTC
++++ pyproject.toml
+@@ -24,7 +24,7 @@ readme = "README.rst"
+ ]
+ requires-python = ">=3.10"
+ readme = "README.rst"
+-license = "GPL-3.0-or-later"
++license = {text = "GPL-3.0-or-later"}
+ keywords = ["Mathematica", "Wolfram", "Interpreter", "Shell", "Math", "CAS"]
+ maintainers = [
+     {name = "Mathics3 Group"},

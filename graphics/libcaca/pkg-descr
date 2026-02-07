@@ -1,0 +1,7 @@
+libcaca is a graphics library that outputs text instead of pixels,
+so that it can work on older video cards or text terminals.  It is
+not unlike the famous AAlib library, with the following improvements:
+ * Unicode support
+ * 2048 available colours (some devices can only handle 16)
+ * dithering of colour images
+ * advanced text canvas operations (blitting, rotations)

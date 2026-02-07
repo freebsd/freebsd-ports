@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/REST::Application.3.gz
+%%PERL5_MAN3%%/REST::Application::Routes.3.gz
+%%SITE_PERL%%/REST/Application.pm
+%%SITE_PERL%%/REST/Application/Routes.pm

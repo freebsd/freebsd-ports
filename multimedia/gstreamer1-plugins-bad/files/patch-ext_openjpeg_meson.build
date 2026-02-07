@@ -1,0 +1,11 @@
+--- ext/openjpeg/meson.build.orig	2025-03-11 20:14:44 UTC
++++ ext/openjpeg/meson.build
+@@ -33,7 +33,7 @@ if openjpeg_dep.found()
+     link_args : noseh_link_args,
+     include_directories : [configinc],
+     dependencies : [gst_dep, gstvideo_dep, openjpeg_dep,
+-		    gstcodecparsers_dep, libm],
++		    dependency('gstreamer-codecparsers-1.0'), libm],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

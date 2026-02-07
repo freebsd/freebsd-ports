@@ -1,0 +1,40 @@
+* Add support for FreeBSD
+* Add detection for PowerPC64
+
+--- mkspecs/features/functions.prf.orig	2024-03-27 11:26:34 UTC
++++ mkspecs/features/functions.prf
+@@ -89,6 +89,10 @@ defineReplace(gnWebEngineArgs) {
+         include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
+         include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)
+     }
++    freebsd {
++        include($$QTWEBENGINE_ROOT/src/buildtools/config/freebsd.pri)
++        include($$QTWEBENGINE_ROOT/src/core/config/linux.pri)
++    }
+     isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
+     return($$gn_args)
+ }
+@@ -98,6 +102,7 @@ defineReplace(gnPdfArgs) {
+     macos: include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
+     ios: include($$QTWEBENGINE_ROOT/src/pdf/config/ios.pri)
+     win32: include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
++    freebsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/freebsd.pri)
+     include($$QTWEBENGINE_ROOT/src/pdf/config/common.pri)
+     isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
+     return($$gn_args)
+@@ -112,6 +117,7 @@ defineReplace(gnArch) {
+     contains(qtArch, "mips"): return(mipsel)
+     contains(qtArch, "mips64"): return(mips64el)
+     contains(qtArch, "mips64el"): return(mips64el)
++    contains(qtArch, "power64"): return(ppc64)
+     return(unknown)
+ }
+ 
+@@ -119,6 +125,7 @@ defineReplace(gnOS) {
+     macos: return(mac)
+     win32: return(win)
+     linux: return(linux)
++    freebsd: return(freebsd)
+     error(Unsupported platform)
+     return(unknown)
+ }

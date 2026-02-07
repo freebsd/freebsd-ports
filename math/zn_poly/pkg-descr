@@ -1,0 +1,4 @@
+zn_poly is a C library for polynomial arithmetic in Z/nZ[x], where n is any
+modulus that fits into an unsigned long.
+
+See also: https://gitlab.com/sagemath/zn_poly/

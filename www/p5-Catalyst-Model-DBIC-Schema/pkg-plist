@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Catalyst/Helper/Model/DBIC/Schema.pm
+%%SITE_PERL%%/Catalyst/Model/DBIC/Schema.pm
+%%SITE_PERL%%/Catalyst/Model/DBIC/Schema/Types.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/Caching.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/PerRequestSchema.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/Replicated.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/SchemaProxy.pm
+%%PERL5_MAN3%%/Catalyst::Helper::Model::DBIC::Schema.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::DBIC::Schema.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::Caching.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::PerRequestSchema.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::SchemaProxy.3.gz

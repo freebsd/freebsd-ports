@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Role/HasMessage.pm
+%%SITE_PERL%%/Role/HasMessage/Errf.pm
+%%PERL5_MAN3%%/Role::HasMessage.3.gz
+%%PERL5_MAN3%%/Role::HasMessage::Errf.3.gz

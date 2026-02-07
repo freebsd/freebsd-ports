@@ -1,0 +1,14 @@
+%%OCAML_SITELIBDIR%%/pcre/META
+%%OCAML_SITELIBDIR%%/pcre/dllpcre_stubs.so
+%%OCAML_SITELIBDIR%%/pcre/libpcre_stubs.a
+%%OCAML_SITELIBDIR%%/pcre/pcre.a
+%%OCAML_SITELIBDIR%%/pcre/pcre.annot
+%%OCAML_SITELIBDIR%%/pcre/pcre.cma
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmi
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmt
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmti
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmx
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmxa
+%%OCAML_SITELIBDIR%%/pcre/pcre.cmxs
+%%OCAML_SITELIBDIR%%/pcre/pcre.mli
+%%OCAML_SITELIBDIR%%/pcre/pcre_compat.cmx

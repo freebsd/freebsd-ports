@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Runs every hook in pre-commit.d/ until the first failure
+#
+
+hook_directory=$(realpath $(dirname $0))
+
+for hook in ${hook_directory}/pre-commit.d/* ; do
+	if [ -x "${hook}" ] ; then
+		${hook}
+		if [ $? -ne 0 ] ; then
+			exit 1
+		fi
+	fi
+done

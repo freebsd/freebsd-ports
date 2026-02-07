@@ -1,0 +1,9 @@
+libtrace is a library for capturing and processing network traffic, similar to
+libpcap. Libtrace supports multiple trace formats for both input and output
+including live device capture, DAG hardware capture and off-line trace files
+(both compressed and uncompressed).
+
+More information about libtrace can be found on the libtrace webpage.
+
+Original port created by Matt Peterson <matt at peterson.org>
+Updated for FreeBSD 9.0 by Shane Alcock <salcock at waikato.ac.nz>

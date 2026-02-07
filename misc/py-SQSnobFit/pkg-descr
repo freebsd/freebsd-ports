@@ -1,0 +1,4 @@
+SnobFit is intended for optimizing on derivative-free, noisy, blackbox
+functions. This modified version has preset defaults as intended for hybrid
+quantum-classical algorithms run on Noisy Intermediate Scale Quantum (NISQ)
+computers.

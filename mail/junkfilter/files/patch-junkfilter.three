@@ -1,0 +1,11 @@
+--- junkfilter.three.orig	2002-06-11 15:41:26 UTC
++++ junkfilter.three
+@@ -56,7 +56,7 @@ JFSEC=3
+ * ! $ ^Date:$JFWS((Sun|Mon|Tue|Wed|Thu|Fri|Sat),$JFWS)?\
+     (0?[1-9]|[12][0-9]|3[01])$JFWS\
+     (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$JFWS\
+-    ((19)?[789][0-9]|(20)?[01][0-9])$JFWS\
++    ((19)?[789][0-9]|(20)?[012][0-9])$JFWS\
+     (0?[0-9]|1[0-9]|2[0-3]):(0?|[1-5])[0-9](:(0?|[1-5])[0-9])?$JFWS\
+     (([+-][0-1][0-4]([03]0|45))|("?\(?(UT|GMT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|[A-I]|[K-Z])\)?"?))?
+ { JFMATCH="$JFSEC: Bad Date line" INCLUDERC=$JFDIR/junkfilter.match }

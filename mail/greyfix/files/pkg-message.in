@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+Edit Postfix's master configuration file, master.cf, and add the following:
+
+    greyfix    unix  -       n       n       -       -       spawn
+      user=nobody argv=%%PREFIX%%/sbin/greyfix -/ 24
+
+(The -/ argument specifies how much of the IP address to consider significant,
+in this case the first 24 bits.)
+
+Edit Postfix's main configuration file, main.cf and add the following:
+
+    smtpd_recipient_restrictions = permit_mynetworks,
+      reject_unauth_destination,
+      check_policy_service unix:private/greyfix
+
+If there is already a smtpd_recipient_restrictions configuration line you
+should edit it rather than add a new one. The important part for Greyfix is
+that you should add check_policy_service unix:private/greyfix to it.
+
+Finally have postfix reload its configuration with:
+
+    %%PREFIX%%/etc/rc.d/postfix reload
+EOM
+}
+]

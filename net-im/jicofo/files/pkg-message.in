@@ -1,0 +1,28 @@
+[
+{ type: install
+  message: <<EOM
+Jitsi Conference Focus was installed
+
+1) Edit the configuration file located at:
+
+   %%ETCDIR%%/jicofo.conf
+
+2) Enable the service:
+
+   # service jicofo enable
+
+3) For use of jicofo with net-im/prosody, you need to import prosody's
+   auth.jitsi.example.com TLS certificate into a Java truststore.
+   You should also install net-im/jitsi-prosody-plugins.
+   The startup rcfile will pass this filename to jicofo:
+   %%ETCDIR%%/truststore.jks - for example:
+
+   # prosodyctl cert generate jitsi.example.com
+   # prosodyctl cert generate auth.jitsi.example.com
+   # keytool -noprompt -keystore %%ETCDIR%%/truststore.jks -importcert \
+	-alias prosody -file /path/to/prosody/auth.jitsi.example.com.crt
+
+4) Enjoy it
+EOM
+}
+]

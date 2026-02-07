@@ -1,0 +1,57 @@
+@mode 0755
+bin/crowdsec
+bin/cscli
+bin/crowdsec-cli
+libexec/crowdsec/upgrade-hub
+@mode 0600
+@sample %%ETCDIR%%/config.yaml.sample
+@sample %%ETCDIR%%/local_api_credentials.yaml.sample
+@sample %%ETCDIR%%/online_api_credentials.yaml.sample
+@sample %%ETCDIR%%/notifications/email.yaml.sample
+@sample %%ETCDIR%%/notifications/file.yaml.sample
+@sample %%ETCDIR%%/notifications/http.yaml.sample
+@sample %%ETCDIR%%/notifications/sentinel.yaml.sample
+@sample %%ETCDIR%%/notifications/slack.yaml.sample
+@sample %%ETCDIR%%/notifications/splunk.yaml.sample
+@mode 0644
+@sample %%ETCDIR%%/acquis.yaml.sample
+@sample %%ETCDIR%%/console.yaml.sample
+@sample %%ETCDIR%%/profiles.yaml.sample
+@sample %%ETCDIR%%/simulation.yaml.sample
+%%ETCDIR%%/patterns/aws
+%%ETCDIR%%/patterns/bacula
+%%ETCDIR%%/patterns/bro
+%%ETCDIR%%/patterns/cowrie_honeypot
+%%ETCDIR%%/patterns/exim
+%%ETCDIR%%/patterns/firewalls
+%%ETCDIR%%/patterns/haproxy
+%%ETCDIR%%/patterns/java
+%%ETCDIR%%/patterns/junos
+%%ETCDIR%%/patterns/linux-syslog
+%%ETCDIR%%/patterns/mcollective
+%%ETCDIR%%/patterns/modsecurity
+%%ETCDIR%%/patterns/mongodb
+%%ETCDIR%%/patterns/mysql
+%%ETCDIR%%/patterns/nagios
+%%ETCDIR%%/patterns/nginx
+%%ETCDIR%%/patterns/paths
+%%ETCDIR%%/patterns/postgresql
+%%ETCDIR%%/patterns/rails
+%%ETCDIR%%/patterns/redis
+%%ETCDIR%%/patterns/ruby
+%%ETCDIR%%/patterns/smb
+%%ETCDIR%%/patterns/ssh
+%%ETCDIR%%/patterns/tcpdump
+etc/cron.d/crowdsec
+@mode 0755
+lib/crowdsec/plugins/notification-email
+lib/crowdsec/plugins/notification-file
+lib/crowdsec/plugins/notification-http
+lib/crowdsec/plugins/notification-sentinel
+lib/crowdsec/plugins/notification-slack
+lib/crowdsec/plugins/notification-splunk
+@dir %%ETCDIR%%/hub
+@dir %%ETCDIR%%/acquis.d
+@dir /var/db/crowdsec
+@dir /var/db/crowdsec/data
+@dir /var/db/crowdsec/data/trace

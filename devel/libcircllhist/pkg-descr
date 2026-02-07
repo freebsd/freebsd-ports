@@ -1,0 +1,2 @@
+This package includes Circonus log-linear histogram C implementation
+(simple program, header, and library) and Lua v5.1 bindings to it.

@@ -1,0 +1,17 @@
+--- CMake/Includes/ProjectSettings.cmake.orig	2021-02-18 00:06:43 UTC
++++ CMake/Includes/ProjectSettings.cmake
+@@ -1,13 +1,5 @@
+ option(PROJ_GNUTLS_DEBUG "Enable GnuTLS debug mode" OFF)
+-if(MINGW)
+-    option(PROJ_UAC_ON "Enable UAC (don't turn it off in production)" ON)
+-
+-    set(DEFAULT_VPNC_SCRIPT "vpnc-script.js")
+-elseif(APPLE)
+-    set(DEFAULT_VPNC_SCRIPT "../Resources/vpnc-script")
+-else()
+-    set(DEFAULT_VPNC_SCRIPT "/etc/vpnc/vpnc-script")
+-endif()
++set(DEFAULT_VPNC_SCRIPT "../sbin/vpnc-script")
+ option(PROJ_PKCS11 "Enable PKCS11" ON)
+ option(PROJ_INI_SETTINGS "Store the settings in INI files." OFF)
+ 

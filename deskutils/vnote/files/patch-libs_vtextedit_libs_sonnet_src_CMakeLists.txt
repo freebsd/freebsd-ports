@@ -1,0 +1,7 @@
+--- libs/vtextedit/libs/sonnet/src/CMakeLists.txt.orig	2024-04-30 07:11:17 UTC
++++ libs/vtextedit/libs/sonnet/src/CMakeLists.txt
+@@ -1,4 +1,3 @@
+ # Just to make it work with VTextEdit.
+-add_subdirectory(../../hunspell ../../hunspell)
+ add_subdirectory(core)
+ add_subdirectory(plugins/hunspell)

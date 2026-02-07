@@ -1,0 +1,5 @@
+On the fly conversion of Python docstrings to markdown.
+
+- Currently can recognise reStructuredText and convert multiple
+  of its features to Markdown
+- In the future will be able to convert Google docstrings too

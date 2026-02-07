@@ -1,0 +1,21 @@
+--- Makefile.orig	2025-09-12 00:49:22 UTC
++++ Makefile
+@@ -13,7 +13,8 @@
+ .PHONY: clean clobber help hclibs
+ 
+ # build flags common to all options and architectures
+-CXXFLAGS = -IArduinoLib -IwsServer/include -Izlib-hc -I. -g -O2 -Wall -pthread -std=c++17
++CXXFLAGS ?= -g -O2 -Wall
++CXXFLAGS += -IArduinoLib -IwsServer/include -Izlib-hc -I. -std=c++17
+ # CXXFLAGS += -Wextra -pedantic -Werror -Wno-attributes -Wno-unknown-pragmas
+ 
+ # add explicit framebuffer depth as _FB_DEPTH if defined
+@@ -28,7 +29,7 @@ LIBS = -lpthread -larduino -lzlib-hc -lws
+ 
+ LDXXFLAGS = -LArduinoLib -LwsServer -Lzlib-hc -g -pthread
+ LIBS = -lpthread -larduino -lzlib-hc -lws
+-CXX = g++
++CXX ?= g++
+ 
+ # macOS does not have X11 by default; this assumes XQuartz or macports xorg has been installed
+ ifeq ($(shell uname -s), Darwin)

@@ -1,0 +1,35 @@
+--- Makefile.orig	2013-10-06 18:44:14 UTC
++++ Makefile
+@@ -24,12 +24,16 @@
+ 
+ VERSION = 1.2.3
+ 
+-TCLVERSION = 8.4
++TCLVERSION ?= 8.4
++TCLLVERSION = $(TCLVERSION:S/.//)
+ 
+-INSTALLDIR = /usr/lib/tcl$(TCLVERSION)
++INSTALLDIR = ${DESTDIR}${PREFIX}/lib/tcl$(TCLVERSION)/gpsmanshp-$(VERSION)
+ 
+-CFLAGS = -Wall -fPIC -c -I/usr/include/tcl$(TCLVERSION)
+-LINKOPT = -lshp -ltcl$(TCLVERSION)
++CFLAGS += -Wall -fPIC -c -I${LOCALBASE}/include/tcl$(TCLVERSION)
++CFLAGS += -I${LOCALBASE}/include
++LINKOPT = -L${LOCALBASE}/lib -lshp -ltcl$(TCLLVERSION)
++
++all:	pkgIndex.tcl
+ 
+ gpsmanshp.so: gpsmanshp.o
+ 	$(CC) -shared -o gpsmanshp.so $(LINKOPT) gpsmanshp.o
+@@ -42,8 +46,9 @@ pkgIndex.tcl: gpsmanshp.so
+ 	chmod 644 gpsmanshp.so pkgIndex.tcl
+ 
+ install: pkgIndex.tcl
+-	-mkdir $(INSTALLDIR)
+-	cp gpsmanshp.so pkgIndex.tcl $(INSTALLDIR)
++	-mkdir -p $(INSTALLDIR)
++	$(BSD_INSTALL_LIB) gpsmanshp.so $(INSTALLDIR)/
++	$(BSD_INSTALL_SCRIPT) pkgIndex.tcl $(INSTALLDIR)/
+ 
+ clean:
+ 	rm -f gpsmanshp.o gpsmanshp.so pkgIndex.tcl G*.aux G*.log

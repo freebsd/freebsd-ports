@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+Please execute the following commands to prep this system to run delve:
+
+echo "# required for delve" >>/etc/sysctl.conf.local
+echo "security.bsd.unprivileged_proc_debug=1" >>/etc/sysctl.conf.local
+
+Then, either reboot or run the following commands to implement the above
+changes:
+
+service sysctl reload
+EOM
+}
+]

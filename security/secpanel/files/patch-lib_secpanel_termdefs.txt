@@ -1,0 +1,20 @@
+--- lib/secpanel/termdefs.txt.orig	2019-08-20 12:50:45 UTC
++++ lib/secpanel/termdefs.txt
+@@ -56,10 +56,16 @@ set termtype(XFCE-Terminal_titlepar) "--
+ set termtype(XFCE-Terminal_quotepar) ""
+ set termtype(XFCE-Terminal_iconpar) ""
+ set termtype(XFCE-Terminal_execpar) "-x"
+-set termtype(XFCE-Terminal_path) "Terminal"
++set termtype(XFCE-Terminal_path) "xfce4-terminal"
+ 
+ set termtype(Putty's-Terminal_titlepar) "-title"
+ set termtype(Putty's-Terminal_quotepar) ""
+ set termtype(Putty's-Terminal_iconpar) ""
+ set termtype(Putty's-Terminal_execpar) "-e"
+ set termtype(Putty's-Terminal_path) "pterm"
++
++set termtype(MATE-Terminal_titlepar) "--title"
++set termtype(MATE-Terminal_quotepar) ""
++set termtype(MATE-Terminal_iconpar) ""
++set termtype(MATE-Terminal_execpar) "-e"
++set termtype(MATE-Terminal_path) "mate-terminal"

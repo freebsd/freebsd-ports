@@ -1,0 +1,2 @@
+WebTunnel is a pluggable transport for Tor that attempts to imitate web
+browsing activities based on HTTPT, a Probe-Resistant Proxy.

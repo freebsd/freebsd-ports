@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Term::VT102.3.gz
+%%SITE_PERL%%/Term/VT102.pm
+%%SITE_PERL%%/Term/VT102/examples/sanitize-dump.pl
+%%SITE_PERL%%/Term/VT102/examples/ssh-usage.pl
+%%SITE_PERL%%/Term/VT102/examples/telnet-usage.pl

@@ -1,0 +1,13 @@
+bin/bitwuzla
+include/bitwuzla/c/bitwuzla.h
+include/bitwuzla/c/parser.h
+include/bitwuzla/cpp/bitwuzla.h
+include/bitwuzla/cpp/parser.h
+include/bitwuzla/enums.h
+include/bitwuzla/option.h
+lib/libbitwuzla.so
+lib/libbitwuzla.so.0
+lib/libbitwuzlabb.so
+lib/libbitwuzlabv.so
+lib/libbitwuzlals.so
+libdata/pkgconfig/bitwuzla.pc

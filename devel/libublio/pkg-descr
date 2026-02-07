@@ -1,0 +1,8 @@
+This is a user space caching library, currently used by FreeBSD and Mac OS X
+to improve performance of NTFS-3G (filesystems/ntfs port), because these
+systems don't have a block device cache, giving a very slow read/write rate.
+
+Note that libublio is _not_ thread safe.
+
+defunct WWW: http://mercurial.creo.hu/repos/libublio
+copy of code:https://github.com/0x09/hfsfuse/blob/master/lib/ublio/

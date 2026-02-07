@@ -1,0 +1,78 @@
+#! /bin/sh
+
+# PROVIDE: eturnal
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these eturnal_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/eturnal
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+eturnal_enable=${eturnal_enable-"NO"}
+eturnal_epmd_address=${eturnal_epmd_address-"127.0.0.1"}
+eturnal_log_dir=${eturnal_log_dir-"/var/log/eturnal"}
+
+. /etc/rc.subr
+
+name="eturnal"
+rcvar=eturnal_enable
+
+reload_cmd="eturnal_reload"
+restart_cmd="eturnal_reload"
+start_cmd="eturnal_start"
+status_cmd="eturnal_status"
+stop_cmd="eturnal_stop"
+
+extra_commands="reload status"
+
+ETURNALCTL=%%PREFIX%%/sbin/eturnalctl
+ETURNALUSER=eturnal
+
+eturnal_status()
+{
+    if eturnal_checkstatus; then
+        echo "$name is running."
+    else
+        echo "$name is not running."
+        return 1
+    fi
+}
+
+eturnal_checkstatus()
+{
+    su $ETURNALUSER -c "env ERL_EPMD_ADDRESS=\"${eturnal_epmd_address}\" RUNNER_LOG_DIR=\"${eturnal_log_dir}\" $ETURNALCTL status > /dev/null"
+}
+
+eturnal_start()
+{
+    echo "Starting $name."
+    su $ETURNALUSER -c "env ERL_EPMD_ADDRESS=\"${eturnal_epmd_address}\" RUNNER_LOG_DIR=\"${eturnal_log_dir}\" $ETURNALCTL daemon"
+}
+
+eturnal_stop()
+{
+    echo "Stopping $name."
+    if su $ETURNALUSER -c "env ERL_EPMD_ADDRESS=\"${eturnal_epmd_address}\" RUNNER_LOG_DIR=\"${eturnal_log_dir}\" $ETURNALCTL stop"; then
+#        sleep 2
+#        killall -u eturnal -kill
+    else
+        _run_rc_notrunning
+    fi
+}
+
+eturnal_reload()
+{
+    echo "Restarting $name."
+    if eturnal_checkstatus; then
+        su $ETURNALUSER -c "env ERL_EPMD_ADDRESS=\"${eturnal_epmd_address}\" RUNNER_LOG_DIR=\"${eturnal_log_dir}\" $ETURNALCTL reload"
+    else
+        eturnal_start
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

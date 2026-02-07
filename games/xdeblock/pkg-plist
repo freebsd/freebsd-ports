@@ -1,0 +1,7 @@
+bin/xdeblo
+lib/X11/xdeblock/mapf/hadoer.mapf.txt
+lib/X11/xdeblock/mapf/hard.mapf.txt
+lib/X11/xdeblock/mapf/middle.mapf.txt
+lib/X11/xdeblock/mapf/odo.mapf.txt
+lib/X11/xdeblock/mapf/standard.mapf.txt
+@dir(,,777) lib/X11/xdeblock/mapf

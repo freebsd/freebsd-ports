@@ -1,0 +1,57 @@
+--- sshconnect2.c.orig	2019-07-19 11:53:14.918867000 -0700
++++ sshconnect2.c	2019-07-19 11:53:16.911086000 -0700
+@@ -159,11 +159,6 @@ ssh_kex2(struct ssh *ssh, char *host, struct sockaddr 
+ 	char *s, *all_key;
+ 	int r;
+ 
+-#if defined(GSSAPI) && defined(WITH_OPENSSL)
+-	char *orig = NULL, *gss = NULL;
+-	char *gss_host = NULL;
+-#endif
+-
+ 	xxx_host = host;
+ 	xxx_hostaddr = hostaddr;
+ 
+@@ -197,6 +192,9 @@ ssh_kex2(struct ssh *ssh, char *host, struct sockaddr 
+ 	}
+ 
+ #if defined(GSSAPI) && defined(WITH_OPENSSL)
++	char *orig = NULL, *gss = NULL;
++	char *gss_host = NULL;
++
+ 	if (options.gss_keyex) {
+ 		/* Add the GSSAPI mechanisms currently supported on this
+ 		 * client to the key exchange algorithm proposal */
+--- readconf.c.orig	2025-10-08 15:36:47.220504000 -0700
++++ readconf.c	2025-10-08 15:38:09.729314000 -0700
+@@ -60,11 +60,11 @@
+ #include "readconf.h"
+ #include "match.h"
+ #include "kex.h"
++#include "ssh-gss.h"
+ #include "mac.h"
+ #include "uidswap.h"
+ #include "myproposal.h"
+ #include "digest.h"
+-#include "ssh-gss.h"
+ #include "version.h"
+ 
+ /* Format of the configuration file:
+--- servconf.c.orig	2025-10-08 15:36:47.223017000 -0700
++++ servconf.c	2025-10-08 15:38:32.182178000 -0700
+@@ -56,6 +56,7 @@
+ #include "sshkey.h"
+ #include "kex.h"
+ #include "mac.h"
++#include "ssh-gss.h"
+ #include "match.h"
+ #include "channels.h"
+ #include "groupaccess.h"
+@@ -66,7 +67,6 @@
+ #include "auth.h"
+ #include "myproposal.h"
+ #include "digest.h"
+-#include "ssh-gss.h"
+ #include "version.h"
+ 
+ #if !defined(SSHD_PAM_SERVICE)

@@ -1,0 +1,4 @@
+The requests-ntlm library adds support for NTLM authentication to the popular
+requests HTTP library for Python. This enables applications to seamlessly
+authenticate with web services that require Microsoft's NTLM protocol, which
+is common in corporate environments.

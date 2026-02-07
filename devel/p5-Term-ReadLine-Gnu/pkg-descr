@@ -1,0 +1,8 @@
+Perl 5 ships with a module called Term::ReadLine which is an interface
+to command line editing and recall.  The version that ships with Perl
+is only a stub, and offers little functionality.
+
+This module supplements Term::ReadLine so that it uses GNU readline,
+which comes with FreeBSD.  Applications that use Term::ReadLine do
+not need to be modified to gain the benefits of this package; it will
+happen transparently upon installation.

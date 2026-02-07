@@ -1,0 +1,10 @@
+bin/gmic
+include/gmic.h
+include/gmic_libc.h
+lib/libgmic.so
+lib/libgmic.so.3
+lib/libgmic.so.316
+libexec/gimp/2.2/plug-ins/gmic_cluts.gmz
+libexec/gimp/2.2/plug-ins/gmic_denoise_cnn.gmz
+share/man/fr/man1/gmic.1.gz
+share/man/man1/gmic.1.gz

@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Catalyst/Plugin/Session.pm
+%%SITE_PERL%%/Catalyst/Plugin/Session/State.pm
+%%SITE_PERL%%/Catalyst/Plugin/Session/Store.pm
+%%SITE_PERL%%/Catalyst/Plugin/Session/Store/Dummy.pm
+%%SITE_PERL%%/Catalyst/Plugin/Session/Test/Store.pm
+%%SITE_PERL%%/Catalyst/Plugin/Session/Tutorial.pod
+%%PERL5_MAN3%%/Catalyst::Plugin::Session.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::State.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store::Dummy.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Test::Store.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Tutorial.3.gz

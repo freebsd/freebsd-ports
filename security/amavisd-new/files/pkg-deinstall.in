@@ -1,0 +1,17 @@
+#!/bin/sh
+
+USER=%%AMAVISUSER%%
+GROUP=%%AMAVISGROUP%%
+DIR=%%AMAVISDIR%%
+QUARANTINE=%%AMAVISQUARANTINE%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+
+    if [ -e ${DIR} ]; then
+	echo "You should manually remove the \"${DIR}\" directory."
+    fi
+    
+    if [ -e ${QUARANTINE} ]; then
+      echo "You should manually remove the \"${QUARANTINE}\" directory."
+    fi
+fi

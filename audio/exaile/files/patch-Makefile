@@ -1,0 +1,19 @@
+--- Makefile.orig	2025-12-08 18:00:20 UTC
++++ Makefile
+@@ -29,6 +29,7 @@ EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
+ EXAILESHAREDIR = $(DESTDIR)$(DATADIR)/exaile
+ EXAILECONFDIR  = $(DESTDIR)$(XDGCONFDIR)/exaile
+ EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
++BASHCOMPDIR    = $(ETCDIR)/bash_completion.d
+ 
+ .PHONY: all all_no_locale builddir compile make-install-dirs uninstall \
+ 	install install_no_locale install-target locale install-locale \
+@@ -192,7 +193,7 @@ pot:
+ #   dash (Debian's /bin/sh) doesn't support it and exits immediately, so we test it in a subshell.
+ # The "export LC_ALL=C" disables any locale-dependent sort behavior.
+ pot:
+-	( ( set -o pipefail 2> /dev/null ) && set -o pipefail ; \
++	( \
+ 	  export LC_ALL=C && cd po && \
+ 	  { find ../xl ../xlgui -name "*.py" | sort && \
+ 	    find ../data/ui -name "*.ui" | sort && \

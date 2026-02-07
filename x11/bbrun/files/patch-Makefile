@@ -1,0 +1,22 @@
+--- Makefile.orig	2004-02-11 05:57:17.000000000 +0100
++++ Makefile	2012-05-30 22:23:41.000000000 +0200
+@@ -1,7 +1,6 @@
+-CC     = gcc
+-LIBDIR = -L/usr/lib -L/usr/X11R6/lib
+-LIBS   = -lXpm `pkg-config --libs gtk+-2.0`
+-CFLAGS = `pkg-config --cflags gtk+-2.0`
++LIBDIR =
++LIBS   = ${LDFLAGS} `pkg-config --libs gtk+-2.0 x11 xext xpm`
++CFLAGS += `pkg-config --cflags gtk+-2.0 x11 xext xpm`
+ 
+ OBJS   = bbrun.o \
+          ../wmgeneral/wmgeneral.o \
+@@ -11,7 +10,7 @@ OBJS   = bbrun.o \
+ all: bbrun
+ 
+ .c.o:
+-	$(CC) -g -c -O2 -Wall $< -o $*.o $(CFLAGS)
++	$(CC) -g -c -Wall $< -o $*.o $(CFLAGS)
+ 
+ bbrun: $(OBJS)
+ 	$(CC) -Wall -g -o bbrun $^ $(LIBDIR) $(LIBS)

@@ -1,0 +1,7 @@
+A small tool to recompress JPEG, PNG, and GIF images.
+repng2jpeg is a single binary, which makes it readily available, and simple
+for use in scripts, and other utilities. Some of the possibilities include
+
+ - mass recompression of entire directory/ies
+ - scripted via Perl, as an online utility
+ - your-creative-usage-here...

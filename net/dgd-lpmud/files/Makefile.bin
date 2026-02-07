@@ -1,0 +1,7 @@
+all: oconv hname
+
+oconv: oconv.c
+	cc -o oconv oconv.c
+
+hname: hname.c
+	cc -o hname hname.c

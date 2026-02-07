@@ -1,0 +1,3 @@
+bin/xfs
+@sample etc/X11/fs/config.sample
+share/man/man1/xfs.1.gz

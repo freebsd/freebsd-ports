@@ -1,0 +1,11 @@
+--- git-annex.cabal.orig	2001-09-09 01:46:40 UTC
++++ git-annex.cabal
+@@ -479,7 +479,7 @@ Executable git-annex
+             Other-Modules: Utility.DirWatcher.Kqueue
+   
+   if flag(Dbus)
+-    if (os(linux))
++    if (os(linux) || os(freebsd))
+       Build-Depends: dbus (>= 0.10.7), fdo-notify (>= 0.3)
+       CPP-Options: -DWITH_DBUS -DWITH_DESKTOP_NOTIFY -DWITH_DBUS_NOTIFICATIONS
+       Other-Modules: Utility.DBus

@@ -1,0 +1,2 @@
+ast-comments is an extension to the built-in ast module. Finds comments in
+source code and adds them to the parsed tree.

@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/PDL/Demos/PLplot.pm
+%%SITE_ARCH%%/PDL/Graphics/PLplot.pm
+%%SITE_ARCH%%/auto/PDL/Graphics/PLplot/PLplot.so
+%%PERL5_MAN3%%/PDL::Graphics::PLplot.3.gz

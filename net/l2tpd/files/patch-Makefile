@@ -1,0 +1,43 @@
+--- Makefile.orig	Sat Aug 10 03:42:22 2002
++++ Makefile	Fri Apr 11 19:12:26 2003
+@@ -27,11 +27,11 @@
+ # become runtime options) debugging flags
+ #
+ #DFLAGS= -g -O2 -DDEBUG_PPPD
+-DFLAGS= -g -O2 -DDEBUG_PPPD -DDEBUG_CONTROL -DDEBUG_ENTROPY
++DFLAGS= -DDEBUG_PPPD -DDEBUG_CONTROL -DDEBUG_ENTROPY
+ #
+ # Uncomment the next line for Linux
+ #
+-OSFLAGS= -DLINUX -I/usr/include
++#OSFLAGS= -DLINUX -I/usr/include
+ #
+ # Uncomment the following to use the kernel interface under Linux
+ #
+@@ -39,7 +39,7 @@
+ #
+ # Uncomment the next line for FreeBSD
+ #
+-#OSFLAGS= -DFREEBSD
++OSFLAGS= -DFREEBSD -DPREFIX=\"$(PREFIX)\"
+ #
+ # Uncomment the next line for Solaris. For solaris, at least,
+ # we don't want to specify -I/usr/include because it is in
+@@ -54,9 +54,9 @@
+ # Comment the following line to disable l2tpd maintaining IP address
+ # pools to pass to pppd to control IP address allocation
+ 
+-FFLAGS= -DIP_ALLOCATION 
++#FFLAGS= -DIP_ALLOCATION 
+ 
+-CFLAGS= $(DFLAGS) -Wall -DSANITY $(OSFLAGS) $(FFLAGS)
++CFLAGS+= $(DFLAGS) -Wall -DSANITY $(OSFLAGS) $(FFLAGS)
+ HDRS=l2tp.h avp.h misc.h control.h call.h scheduler.h file.h aaa.h md5.h
+ OBJS=l2tpd.o pty.o misc.o control.o avp.o call.o network.o avpsend.o scheduler.o file.o aaa.o md5.o
+ LIBS= $(OSLIB) # -lefence # efence for malloc checking
+@@ -70,4 +70,4 @@
+ 	rm -f $(OBJS) $(BIN)
+ 
+ $(BIN): $(OBJS) $(HDRS) 
+-	$(CC) -o $(BIN) $(DFLAGS) $(OBJS) $(LIBS)
++	$(CC) -o $(BIN) $(CFLAGS) $(DFLAGS) $(OBJS) $(LIBS)

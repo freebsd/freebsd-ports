@@ -1,0 +1,3 @@
+The ItemAdapter class is a wrapper for data container objects, providing a
+common interface to handle objects of different types in an uniform manner,
+regardless of their underlying implementation.

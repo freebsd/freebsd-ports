@@ -1,0 +1,10 @@
+bin/limine
+%%DATADIR%%/BOOTAA64.EFI
+%%DATADIR%%/BOOTIA32.EFI
+%%DATADIR%%/BOOTRISCV64.EFI
+%%DATADIR%%/BOOTX64.EFI
+%%DATADIR%%/limine-bios-cd.bin
+%%DATADIR%%/limine-bios-pxe.bin
+%%DATADIR%%/limine-bios.sys
+%%DATADIR%%/limine-uefi-cd.bin
+share/man/man1/limine.1.gz

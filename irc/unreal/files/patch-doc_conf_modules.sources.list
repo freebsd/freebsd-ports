@@ -1,0 +1,13 @@
+--- doc/conf/modules.sources.list.orig	2024-10-24 06:41:55 UTC
++++ doc/conf/modules.sources.list
+@@ -14,7 +14,9 @@
+ # as well, then read the rules and procedure at:
+ # https://www.unrealircd.org/docs/Rules_for_3rd_party_modules_in_unrealircd-contrib
+ #
+-https://modules.unrealircd.org/modules.list
++# disable, FreeBSD ports are not allowed network activity while building
++# (BZ 251357)
++# https://modules.unrealircd.org/modules.list
+ 
+ # You can add more repositories here. However, do note that all
+ # URLs MUST start with https://

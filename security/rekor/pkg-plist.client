@@ -1,0 +1,2 @@
+bin/rekor-cli
+@sample etc/rekor/rekor.yaml.sample

@@ -1,0 +1,5 @@
+TIMESTAMP = 1679412432
+SHA256 (go-graphite-carbonapi-0.14.1_GH0.tar.gz) = 5f33a3aa8c9f8edfce8a26b358b6edf8c455f4156cf25e2a2399712d67282379
+SIZE (go-graphite-carbonapi-0.14.1_GH0.tar.gz) = 3485133
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

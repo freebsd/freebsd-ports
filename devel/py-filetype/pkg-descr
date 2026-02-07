@@ -1,0 +1,4 @@
+Small and dependency free Python package to infer file type and MIME type
+checking the magic numbers signature of a file or buffer.
+
+This is a Python port from filetype Go package.

@@ -1,0 +1,16 @@
+Speedtest CLI brings the trusted technology and global server network behind
+Speedtest to the command line. Built for software developers, system
+administrators and computer enthusiasts alike, Speedtest CLI is the first
+official Linux-native Speedtest application backed by Ookla.
+
+With Speedtest CLI, you can easily:
+- Measure internet connection performance metrics like download, upload, latency
+  and packet loss natively without relying on a web browser
+- Test the internet connection of your Linux desktop, a remote server or even
+  lower-powered devices such as the Raspberry Pi with the Speedtest Server
+  Network
+- Set up automated scripts to collect connection performance data, including
+  trends over time
+- Use Speedtest in your programs by wrapping it in the programming language of
+  your choice
+- View test results via CSV, JSONL or JSON

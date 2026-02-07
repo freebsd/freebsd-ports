@@ -1,0 +1,24 @@
+Knews is a threaded newsreader with an X Window interface that uses NNTP
+to get news. Threads are displayed in a graphical tree. Full support for
+reading MIME articles, except message/partial.
+  o Background threading of newsgroups
+  o Doesn't have to read the active file or group descriptions on startup
+  o A mechansim for reading the spool directory
+  o Kill file support with color blobs
+  o Regular expression searching in articles and the newsgroup list
+  o XPAT searching
+  o Can use different fonts and colors for quoted text and headers in articles
+  o Lots of action procedures that can be tied to keys.
+  o Supports multiple nntp servers
+  o Tagging of articles and saving or piping them in order
+  o Uudecode function. Not perfect, but handles most cases
+  o article text widget is able to display wide-character fonts
+  o article tree has a 'vertical' layout by popular demand
+  o experimental: Decoding of 16 bit encoded charsets
+  o Mailcap file support
+  o save thread data between sessions
+  o article prefetch cache and 'trailing' cache
+  o Less restrictive locking of the interface
+  o Message-id lookup of articles
+
+LICENSE: GLP2 or later

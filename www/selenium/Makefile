@@ -1,0 +1,39 @@
+PORTNAME=	selenium
+DISTVERSION=	4.35.0
+CATEGORIES=	www devel java
+MASTER_SITES=	https://github.com/SeleniumHQ/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
+DISTNAME=	${PORTNAME}-server-${DISTVERSION}
+EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
+
+MAINTAINER=	daniel@blodan.se
+COMMENT=	Selenium Standalone Server, allows browser testing
+WWW=		https://www.seleniumhq.org
+
+LICENSE=	APACHE20
+
+USES=		cpe java
+CPE_VENDOR=	jenkins
+JAVA_VERSION=	17+
+
+USE_RC_SUBR=	${PORTNAME}
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
+		SELENIUM_VERSION=${DISTVERSION}
+
+SELENIUM_HOME=	${PREFIX}/${PORTNAME}
+
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
+
+PLIST_FILES=	"@dir(${USERS:[1]},${GROUPS:[1]},) ${PORTNAME}" \
+		${DATADIR}/${DISTNAME}${EXTRACT_SUFX}
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${SELENIUM_HOME}
+	${INSTALL_DATA} ${DISTDIR}${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		${STAGEDIR}${DATADIR}
+
+.include <bsd.port.mk>

@@ -1,0 +1,30 @@
+--- iprintf/makefile.orig	2016-07-26 13:07:24 UTC
++++ iprintf/makefile
+@@ -3,11 +3,11 @@
+ # 
+ 
+ # MSDOS
+-CC = cl
+-CFLAGS = -Ox -AS -DANSI -W4
++#CC = cl
++#CFLAGS = -Ox -AS -DANSI -W4
+ # UNIX
+-#CC = cc
+-#CFLAGS = -O -DUNIX
++CC ?= cc
++CFLAGS += -DUNIX
+ 
+ #
+ # All modules
+@@ -15,9 +15,9 @@ CFLAGS = -Ox -AS -DANSI -W4
+ SRCS = iansilib.c idoprnt.c iprintf.c isprintf.c
+ 
+ # MSDOS
+-OBJS = iansilib.obj idoprnt.obj iprintf.obj isprintf.obj
++#OBJS = iansilib.obj idoprnt.obj iprintf.obj isprintf.obj
+ # UNIX
+-#OBJS = iansilib.o idoprnt.o iprintf.o isprintf.o
++OBJS = iansilib.o idoprnt.o iprintf.o isprintf.o
+ 
+ HDRS = iansilib.h iprint.h
+ #

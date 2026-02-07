@@ -1,0 +1,13 @@
+An mpeg 1/2/2.5 audio layer 1,2,3 frame level editor. Allows for cutting,
+copying, pasting of individual frames, correction of common (correctable)
+errors, removal of bad frames and more. Quite useful program for maintaining any
+mp3 collection.
+
+Feature:
+- Removing bad frames and blips
+- Correcting certain errors in the stream
+- Working with individual frames, like one would with individual samples in a
+  wave editor
+- Removing or adding of empty frames (for id3v2)
+- Setting header flags, gain values
+- ...

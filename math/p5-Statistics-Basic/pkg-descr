@@ -1,0 +1,4 @@
+The Statistics::Basic Perl module provides a number of very basic
+statistical parameters, including the mean, the median, the standard
+deviation etc.  It is reportedly faster than a similar module,
+Statistics::Descriptive.

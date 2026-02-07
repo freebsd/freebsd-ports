@@ -1,0 +1,1 @@
+Test::RequiresInternet tests network connectivity before functional tests.

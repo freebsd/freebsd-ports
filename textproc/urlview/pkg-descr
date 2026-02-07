@@ -1,0 +1,6 @@
+urlview is a screen oriented program for extracting URLs from
+text files and displaying a menu from which you may launch a
+command to view a specific item.
+
+urlview uses a regular expression to extract URLs from the
+specified text files.

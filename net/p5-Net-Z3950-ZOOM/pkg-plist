@@ -1,0 +1,10 @@
+bin/zoom-delete-records
+bin/zoomdump
+bin/zselect
+%%SITE_ARCH%%/Net/Z3950.pm
+%%SITE_ARCH%%/Net/Z3950/ZOOM.pm
+%%SITE_ARCH%%/ZOOM.pm
+%%SITE_ARCH%%/ZOOM.pod
+%%SITE_ARCH%%/auto/Net/Z3950/ZOOM/ZOOM.so
+%%PERL5_MAN3%%/Net::Z3950::ZOOM.3.gz
+%%PERL5_MAN3%%/ZOOM.3.gz

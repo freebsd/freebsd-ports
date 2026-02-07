@@ -1,0 +1,76 @@
+--- configure.orig	2016-04-18 20:26:31 UTC
++++ configure
+@@ -7470,7 +7470,7 @@
+ $as_echo_n "checking for libwrap... " >&6; }
+          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+- #include <tcpd.h>
++ #include "tcpd.h"
+               int deny_severity = 0;
+               int allow_severity = 0;
+               struct request_info *req;
+@@ -7493,7 +7493,7 @@
+    LIBS="$saved_LIBS -lwrap -lnsl"
+               cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+- #include <tcpd.h>
++ ##include "tcpd.h"
+                    int deny_severity = 0;
+                    int allow_severity = 0;
+                    struct request_info *req;
+@@ -8548,55 +8548,6 @@
+    ;;
+ esac
+ 
+-if test -n "$GCC"; then
+-   # Starting with GCC 3.0, you must link C++ programs against either
+-   # libstdc++ (shared by default), or libsupc++ (always static).  If
+-   # you care about binary portability between Linux distributions,
+-   # you need to either 1) build your own GCC with static C++ libraries
+-   # or 2) link using gcc and libsupc++.  We choose the latter since
+-   # CUPS doesn't (currently) use any of the stdc++ library.
+-   #
+-   # Previous versions of GCC do not have the reliance on the stdc++
+-   # or g++ libraries, so the extra supc++ library is not needed.
+-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if libsupc++ is required" >&5
+-$as_echo_n "checking if libsupc++ is required... " >&6; }
+-
+-   SUPC="`$CXX -print-file-name=libsupc++.a 2>/dev/null`"
+-   case "$SUPC" in
+-   libsupc++.a*)
+-      # Library not found, so this is an older GCC...
+-      LD="$CXX"
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-      ;;
+-   *)
+-      # This is gcc 3.x, and it knows of libsupc++, so we need it
+-      LIBS="$LIBS -lsupc++"
+-      LD="$CC"
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-      # See if this system has a broken libsupc++ that requires
+-      # a workaround (FreeBSD 5.x, 6.x)
+-      case $host in
+-         *-*-freebsd*)
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: checking if libsupc++ is missing __terminate_handler" >&5
+-$as_echo_n "checking if libsupc++ is missing __terminate_handler... " >&6; }
+-            nm -C --defined-only "$SUPC" 2>/dev/null | grep __terminate_handler > /dev/null
+-            if test $? -eq 0 ; then
+-               { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-            else
+-               { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes -- will attempt workaround" >&5
+-$as_echo "yes -- will attempt workaround" >&6; }
+-               LIBEXTRAOBJ="$LIBEXTRAOBJ libsupc++fix.cpp"
+-            fi
+-            ;;
+-      esac
+-      ;;
+-   esac
+-fi
+-
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -fno-exceptions" >&5
+ $as_echo_n "checking whether C compiler accepts -fno-exceptions... " >&6; }
+ if ${ax_cv_check_cflags___fno_exceptions+:} false; then :

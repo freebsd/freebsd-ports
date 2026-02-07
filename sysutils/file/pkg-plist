@@ -1,0 +1,10 @@
+bin/file
+include/magic.h
+lib/libmagic.so
+lib/libmagic.so.1
+lib/libmagic.so.1.0.0
+libdata/pkgconfig/libmagic.pc
+share/man/man1/file.1.gz
+share/man/man3/libmagic.3.gz
+share/man/man5/magic.5.gz
+%%DATADIR%%/magic.mgc

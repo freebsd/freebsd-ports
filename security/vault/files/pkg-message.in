@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+The vault user created by the vault package is now a member of the daemon
+class, which will allow it to use mlock() when started by the rc script. This
+will not be reflected in systems where the user already exists. Please add the
+vault user to the daemon class manually by running:
+
+pw usermod -L daemon -n vault
+
+or delete the user and reinstall the package.
+
+You may also need to increase memorylocked for the daemon class in
+/etc/rc.conf to more than 1024M (the default) or more:
+
+vault_limits_mlock="2048M"
+
+Or to disable mlock, add:
+
+disable_mlock = 1
+
+to %%PREFIX%%/etc/vault.hcl
+EOM
+}
+]

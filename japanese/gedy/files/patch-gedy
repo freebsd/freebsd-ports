@@ -1,0 +1,11 @@
+--- gedy.orig	2017-01-05 05:52:52 UTC
++++ gedy
+@@ -1341,7 +1341,7 @@ unless (FileTest.exist?(APP_PATH))
+   Dir::mkdir(APP_PATH)
+ end
+ 
+-Icon = Gdk::Pixbuf.new($GEDY_XPM)
++Icon = GdkPixbuf::Pixbuf.new(:xpm => $GEDY_XPM)
+ 
+ edy = Edy.new
+ 

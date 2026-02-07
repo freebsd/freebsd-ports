@@ -1,0 +1,10 @@
+share/xml/dtd/xhtml/xhtml-lat1.ent
+share/xml/dtd/xhtml/xhtml-special.ent
+share/xml/dtd/xhtml/xhtml-symbol.ent
+share/xml/dtd/xhtml/xhtml.soc
+@xmlcatmgr share/xml/dtd/xhtml/xhtml-dcl.soc
+@xmlcatmgr share/xml/dtd/xhtml/catalog.xml
+share/xml/dtd/xhtml/xhtml1-frameset.dtd
+share/xml/dtd/xhtml/xhtml1-strict.dtd
+share/xml/dtd/xhtml/xhtml1-transitional.dtd
+share/xml/dtd/xhtml/xhtml1.dcl

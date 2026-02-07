@@ -1,0 +1,6 @@
+include/pystring/pystring.h
+include/pystring/unittest.h
+lib/libpystring.a
+lib/libpystring.so
+lib/libpystring.so.0
+lib/libpystring.so.0.0.0

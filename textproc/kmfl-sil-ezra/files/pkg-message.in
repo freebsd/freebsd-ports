@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+  You should now have the new keyboard in the section
+  "Hebrew" in your SCIM/IBus menu. If you don't see it,
+  restart X.
+
+  The documentation is installed into:
+  %%DOCSDIR%%
+  Please note that some documentation files are
+  officially released in proprietary formats only and
+  that they are installed as such.
+EOM
+}
+]

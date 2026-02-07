@@ -1,0 +1,15 @@
+- use pffft from the package, see https://github.com/DISTRHO/Cardinal/issues/130
+
+--- src/Makefile.orig	2023-10-24 08:52:03 UTC
++++ src/Makefile
+@@ -48,8 +48,8 @@ RACK_FILES += override/Scene.cpp
+ RACK_FILES += override/OpenGlWidget.cpp
+ RACK_FILES += override/Scene.cpp
+ 
+-RACK_FILES += Rack/dep/pffft/pffft.c
+-RACK_FILES += Rack/dep/pffft/fftpack.c
++#RACK_FILES += Rack/dep/pffft/pffft.c
++#RACK_FILES += Rack/dep/pffft/fftpack.c
+ RACK_FILES += Rack/dep/osdialog/osdialog.c
+ 
+ IGNORED_FILES  = Rack/src/asset.cpp

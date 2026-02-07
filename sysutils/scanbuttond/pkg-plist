@@ -1,0 +1,28 @@
+bin/scanbuttond
+@sample etc/scanbuttond/buttonpressed.sh.sample
+@sample etc/scanbuttond/initscanner.sh.sample
+@sample etc/scanbuttond/meta.conf.sample
+lib/libscanbtnd-backend_epson.so
+lib/libscanbtnd-backend_epson.so.1
+lib/libscanbtnd-backend_epson.so.1.0.0
+lib/libscanbtnd-backend_meta.so
+lib/libscanbtnd-backend_meta.so.1
+lib/libscanbtnd-backend_meta.so.1.0.0
+lib/libscanbtnd-backend_mustek.so
+lib/libscanbtnd-backend_mustek.so.1
+lib/libscanbtnd-backend_mustek.so.1.0.0
+lib/libscanbtnd-backend_niash.so
+lib/libscanbtnd-backend_niash.so.1
+lib/libscanbtnd-backend_niash.so.1.0.0
+lib/libscanbtnd-backend_plustek.so
+lib/libscanbtnd-backend_plustek.so.1
+lib/libscanbtnd-backend_plustek.so.1.0.0
+lib/libscanbtnd-backend_plustek_umax.so
+lib/libscanbtnd-backend_plustek_umax.so.1
+lib/libscanbtnd-backend_plustek_umax.so.1.0.0
+lib/libscanbtnd-backend_snapscan.so
+lib/libscanbtnd-backend_snapscan.so.1
+lib/libscanbtnd-backend_snapscan.so.1.0.0
+lib/libscanbtnd-interface_usb.so
+lib/libscanbtnd-interface_usb.so.1
+lib/libscanbtnd-interface_usb.so.1.0.0

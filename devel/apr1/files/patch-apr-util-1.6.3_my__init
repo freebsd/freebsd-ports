@@ -1,0 +1,11 @@
+--- apr-util-1.6.3/dbd/apr_dbd_mysql.c	2023-01-27 13:32:52.000000000 +0000
++++ apr-util-1.6.3/dbd/apr_dbd_mysql.c	2023-07-09 00:09:40.664437000 +0100
+@@ -1262,7 +1262,7 @@
+ 
+ static void dbd_mysql_init(apr_pool_t *pool)
+ {
+-#if MYSQL_VERSION_ID < 100000
++#if MYSQL_VERSION_ID < 80002
+     my_init();
+ #endif
+     mysql_thread_init();

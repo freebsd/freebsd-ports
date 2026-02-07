@@ -1,0 +1,150 @@
+#!/bin/sh
+
+# PROVIDE: vncreflector
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+_etcdir="%%PREFIX%%/etc/vncreflector"
+
+# Define these vncreflector_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/vncreflector
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+vncreflector_enable=${vncreflector_enable-"NO"}
+vncreflector_hostinfofile=${vncreflector_hostinfofile-"${_etcdir}/hostinfo"}
+vncreflector_passwdfile=${vncreflector_passwdfile-"${_etcdir}/passwd"}
+vncreflector_ports=${vncreflector_ports-"5999"}
+vncreflector_requirepasswdfile=${vncreflector_requirepasswdfile-"YES"}
+vncreflector_flags=${vncreflector_flags-"-q"}
+vncreflector_pidfile=${vncreflector_pidfile-"/var/run/vncreflector.pid"}
+vncreflector_logfile=${vncreflector_logfile-"/var/log/vncreflector.log"}
+vncreflector_activefile=${vncreflector_logfile-"/var/log/vncreflector.log"}
+vncreflector_addr=${vncreflector_addr-""}
+#vncreflector_addr_5999=
+
+. /etc/rc.subr
+
+name="vncreflector"
+rcvar=vncreflector_enable
+start_cmd="vncreflector_start"
+stop_cmd="vncreflector_stop"
+command="%%PREFIX%%/bin/${name}"
+# Disconnect from host, reread host file, reconnect.
+sig_reload=USR2
+
+vncreflector_start()
+{
+	_started=0
+
+	echo -n "starting ${name}:"
+
+	rc_flags=${vncreflector_flags}
+
+	for _port in ${vncreflector_ports}; do
+		echo -n " ${_port}"
+		pidfile="${vncreflector_pidfile}.${_port}"
+		rc_pid=$(check_pidfile $pidfile $command)
+		if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+			echo -n "!"
+			continue
+		fi
+
+		_hostinfofile=""
+		_passwdfile=""
+		# if we only have one port, try the bare hostinfo
+		# before appending the port number.
+		if [ "${vncreflector_ports}" = "${_port}" -a \
+		    -r "${vncreflector_hostinfofile}" ]; then
+			_hostinfofile=${vncreflector_hostinfofile}
+			# if we found a bare hostinfo file, we'll also
+			# look for a bare passwd file
+			if [ -r "${vncreflector_passwdfile}" ]; then
+				_passwdfile=${vncreflector_passwdfile}
+			fi
+		fi
+		if [ -z "${_hostinfofile}" ]; then
+			_hostinfofile="${vncreflector_hostinfofile}.${_port}"
+		fi
+		if [ ! -r "${_hostinfofile}" ]; then
+			echo -n "!hostfile"
+			continue
+		fi
+		# if we don't have a passwdfile yet, try to use a
+		# port-specific one and fall back to trying a global one
+		if [ -z "${_passwdfile}" ]; then
+			_passwdfile=${vncreflector_passwdfile}
+			if [ -r ${_passwdfile}.${_port} ]; then
+				_passwdfile="${_passwdfile}.${_port}"
+			fi
+		fi
+		if [ -r "${_passwdfile}" ]; then
+			_passwdarg="-p${_passwdfile}"
+		else
+			if checkyesno vncreflector_requirepasswdfile; then
+				if [ -z "$rc_force" ]; then
+					warn "missing passwd file for ${_port}."
+					return 1
+				else 
+					echo -n "!passwdfile"
+					continue
+				fi
+			fi
+			_passwdarg=""
+		fi
+		if [ -z "${vncreflector_logfile}" ]; then
+			_logfile="/dev/null"
+		else
+			_logfile="${vncreflector_logfile}.${_port}"
+		fi
+		eval _addr=\$vncreflector_addr_${port}
+		if [ -z "${_addr}" ]; then
+			_addr=${vncreflector_addr}
+		fi
+		if [ -z "${_addr}" ]; then
+			unset _addr
+		fi
+
+		_doit="\
+${command} ${rc_flags} \
+-i ${vncreflector_pidfile} \
+-l ${_port} \
+-g ${_logfile} \
+${_addr+-l $_addr }${_passwdfile+-p $_passwdfile } \
+${_hostinfofile}"
+		debug "vncreflector_start: _doit: $_doit"
+		eval $_doit
+		_started=`expr 1 + ${_started}`
+	done
+	if [ $_started -lt 1 ]; then
+		return 1
+	fi
+	echo "."
+}
+
+vncreflector_stop()
+{
+	echo -n "stopping ${name}: "
+
+	_pids=""
+
+	for _port in ${vncreflector_ports}; do
+		echo -n " ${_port}"
+		pidfile="${vncreflector_pidfile}.${_port}"
+		rc_pid=$(check_pidfile $pidfile $command)
+		if [ -n "$rc_pid" ]; then
+			kill $sig_stop $rc_pid
+			_pids="${_pids} ${rc_pid}"
+		else
+			warn "no server for port ${_port}"
+		fi
+	done
+	echo "."
+	wait_for_pids $_pids
+}
+
+load_rc_config $name
+run_rc_command $*

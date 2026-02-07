@@ -1,0 +1,12 @@
+bin/wmii
+bin/wmii9menu
+bin/wmii9rc
+bin/wmiiloop
+bin/wmiir
+bin/wmiistartrc
+etc/wmii-3.5/rc.wmii
+etc/wmii-3.5/welcome
+etc/wmii-3.5/wmiirc
+share/man/man1/wmii.1.gz
+share/man/man1/wmiiloop.1.gz
+share/man/man1/wmiir.1.gz

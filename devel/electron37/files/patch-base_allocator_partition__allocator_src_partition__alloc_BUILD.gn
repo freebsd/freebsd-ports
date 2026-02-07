@@ -1,0 +1,11 @@
+--- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2025-06-30 07:04:30 UTC
++++ base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
+@@ -892,7 +892,7 @@ if (is_clang_or_gcc) {
+         configs -= [ partition_alloc_enable_arc_config ]
+       }
+     }
+-    if (is_chromeos || is_linux) {
++    if ((is_chromeos || is_linux) && !is_bsd) {
+       shim_headers += [
+         "shim/allocator_shim_override_cpp_symbols.h",
+         "shim/allocator_shim_override_glibc_weak_symbols.h",

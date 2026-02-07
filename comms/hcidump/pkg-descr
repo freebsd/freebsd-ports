@@ -1,0 +1,5 @@
+HCIdump reads raw HCI data coming from and going to a Bluetooth device and
+prints commands, events, and data in a human-readable form.
+
+Optionally, the dump can be written to a file rather than parsed, so that
+dump file can be parsed later.

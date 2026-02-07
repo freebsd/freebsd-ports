@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+To enable gitlab-runner:
+
+  sysrc gitlab_runner_enable=yes
+
+To start gitlab-runner:
+
+  service gitlab_runner start
+
+To register with GitLab:
+
+  service gitlab_runner register
+
+To list status of GitLab:
+
+  service gitlab_runner list
+EOM
+}
+]

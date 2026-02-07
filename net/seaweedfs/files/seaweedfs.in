@@ -1,0 +1,89 @@
+#!/bin/sh
+
+# PROVIDE: seaweedfs
+# REQUIRE: DAEMON LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# seaweedfs_enable (bool):			Set it to YES to enable seaweedfs.
+#						Default is "NO".
+# seaweedfs_user (user):			Set user to run seaweedfs.
+#						Default is "seaweedfs".
+# seaweedfs_group (group):			Set group to run seaweedfs.
+#						Default is "seaweedfs".
+# seaweedfs_dir (directory):			Set directory to store database files.
+#						Default is "/var/db/seaweedfs".
+# seaweedfs_options (string):			Set default parameters.
+#						Default is "server -dir=/var/db/seaweedfs".
+# seaweedfs_syslog_output_enable (bool):	Set to enable syslog output.
+#						Default is "NO". See daemon(8).
+# seaweedfs_syslog_output_tag (str):		Set syslog tag if syslog enabled.
+#						Default: "seaweedfs".
+# seaweedfs_syslog_output_priority (str):	Set syslog priority if syslog enabled.
+#						Default is "notice". See daemon(8).
+# seaweedfs_syslog_output_facility (str):	Set syslog facility if syslog enabled.
+#						Default is "daemon". See daemon(8).
+
+. /etc/rc.subr
+
+name=seaweedfs
+rcvar=seaweedfs_enable
+
+load_rc_config $name
+
+: ${seaweedfs_enable:="NO"}
+: ${seaweedfs_user:="%%USER%%"}
+: ${seaweedfs_group:="%%GROUP%%"}
+: ${seaweedfs_dir:="%%SEAWEEDFS_DIR%%"}
+: ${seaweedfs_options:="server -dir=${seaweedfs_dir}"}
+: ${seaweedfs_pidfile:=/var/run/seaweedfs.pid}
+: ${seaweedfs_syslog_output_enable:="NO"}
+
+# backwards compatibility
+if [ -d "${seaweedfs_dir}/data" -a \( "${seaweedfs_options}" = "server -dir=${seaweedfs_dir}" \) ]; then
+	seaweedfs_dir="${seaweedfs_dir}/data"
+	seaweedfs_options="server -dir=${seaweedfs_dir}"
+fi
+if [ -n "${seaweedfs_syslog_enable}" ]; then
+	seaweedfs_syslog_output_enable="YES"
+	seaweedfs_syslog_output_priority="${seaweedfs_syslog_priority}"
+	seaweedfs_syslog_output_facility="${seaweedfs_syslog_facility}"
+fi
+
+if checkyesno seaweedfs_syslog_output_enable; then
+	if [ -n "${seaweedfs_syslog_output_tag}" ]; then
+		seaweedfs_syslog_output_flags="-T ${seaweedfs_syslog_output_tag}"
+	else
+		seaweedfs_syslog_output_flags="-T ${name}"
+	fi
+
+	if [ -n "${seaweedfs_syslog_output_priority}" ]; then
+		seaweedfs_syslog_output_flags="${seaweedfs_syslog_output_flags} -s ${seaweedfs_syslog_output_priority}"
+	fi
+
+	if [ -n "${seaweedfs_syslog_output_facility}" ]; then
+		seaweedfs_syslog_output_flags="${seaweedfs_syslog_output_flags} -l ${seaweedfs_syslog_output_facility}"
+	fi
+fi
+
+pidfile=${seaweedfs_pidfile}
+procname="%%PREFIX%%/bin/weed"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${seaweedfs_syslog_output_flags} -p ${pidfile} ${procname} ${seaweedfs_options}"
+
+start_precmd=seaweedfs_startprecmd
+
+seaweedfs_startprecmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o "${seaweedfs_user}" -g "${seaweedfs_group}" /dev/null "${pidfile}";
+	fi
+
+	if [ ! -d "${seaweedfs_dir}" ]; then
+		install -d -m 0750 -o "${seaweedfs_user}" -g "${seaweedfs_group}" "${seaweedfs_dir}"
+	fi
+}
+
+run_rc_command "$1"

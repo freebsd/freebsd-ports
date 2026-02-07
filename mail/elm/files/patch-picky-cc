@@ -1,0 +1,105 @@
+--- src/alias.c	2005-08-18 08:49:24.000000000 -0400
++++ src/alias.c	2014-11-18 16:44:56.000000000 -0500
+@@ -706,4 +706,5 @@
+ }
+ 
++void
+ alias()
+ {
+--- src/a_sort.c	2005-08-18 08:49:24.000000000 -0400
++++ src/a_sort.c	2014-11-18 17:01:12.000000000 -0500
+@@ -35,5 +35,6 @@
+ #include "s_aliases.h"
+ 
+-char *alias_sort_name();
++char *alias_sort_name(int longname);
++static void alias_old_current(long iindex);
+ 
+ sort_aliases(entries, visible, are_in_aliases)
+@@ -180,4 +181,5 @@
+ }
+ 
++static void
+ alias_old_current(iindex)
+ long iindex;
+--- src/calendar.c	2005-08-18 08:49:24.000000000 -0400
++++ src/calendar.c	2014-11-18 17:06:11.000000000 -0500
+@@ -46,4 +46,5 @@
+ #include "s_error.h"
+ 
++void
+ scan_calendar()
+ {
+--- src/elm.c	2005-08-18 08:49:24.000000000 -0400
++++ src/elm.c	2014-11-18 17:10:28.000000000 -0500
+@@ -66,4 +66,5 @@
+ long bytes();
+ char *format_long(), *parse_arguments();
++static void debug_message(void);
+ 
+ main(argc, argv)
+@@ -594,5 +595,5 @@
+ }
+ 
+-
++static void
+ debug_message()
+ {
+--- src/fileio.c	2005-08-18 08:49:24.000000000 -0400
++++ src/fileio.c	2014-11-18 17:13:06.000000000 -0500
+@@ -66,5 +66,5 @@
+ }
+ 
+-
++void
+ copy_message(dest_file, msgnum, cm_options)
+ FILE *dest_file;
+--- src/read_rc.c	2005-08-18 08:49:24.000000000 -0400
++++ src/read_rc.c	2014-11-18 17:15:13.000000000 -0500
+@@ -68,4 +68,5 @@
+ 
+ extern opts_menu *find_cfg_opts();
++static void do_rc(FILE *file, int lcl);
+ 
+ #define metachar(c)	(c == '+' || c == '%' || c == '=')
+@@ -323,5 +324,5 @@
+ }
+ 
+-
++static void
+ do_rc(file, lcl)
+ FILE *file;
+--- src/screen.c	2005-08-18 08:49:24.000000000 -0400
++++ src/screen.c	2014-11-18 17:16:50.000000000 -0500
+@@ -253,4 +253,5 @@
+ }
+ 
++void
+ show_current()
+ {
+--- src/strings.c	2005-08-18 08:49:24.000000000 -0400
++++ src/strings.c	2014-11-18 17:18:56.000000000 -0500
+@@ -166,4 +166,5 @@
+ }
+ 
++void
+ split_word(buffer, first, rest)
+ char *buffer, *first, *rest;
+--- utils/answer.c	2005-08-18 08:49:24.000000000 -0400
++++ utils/answer.c	2014-11-18 17:21:52.000000000 -0500
+@@ -52,6 +52,7 @@
+ 
+ char *get_alias_address(), *get_token(), *strip_parens(), *shift_lower();
++static void open_alias_file(void);
+ 
+-static char *quit_word, *exit_word, *done_word, *bye_word;
++static const char *quit_word, *exit_word, *done_word, *bye_word;
+ 
+ main(argc, argv)
+@@ -272,5 +273,5 @@
+ }
+ 
+-	    
++static void   
+ open_alias_file()
+ {

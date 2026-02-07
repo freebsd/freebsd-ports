@@ -1,0 +1,12 @@
+This package contains the data files for the m17n library. m17n-lib
+currently supports input of more than 60 languages with more than 150
+language specific input methods.
+
+m17n-db now incorporates a set of user-contributed input methods,
+formerly known as m17n-contrib.
+
+The package also provides the tbl2mim.awk script for conversion of keyboard
+files used by table based IMEngines of SCIM/IBus into m17n-lib's .mim
+format.
+
+The documentation is available through devel/m17n-docs.

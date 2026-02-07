@@ -1,0 +1,6 @@
+The runs Python library provides enhanced versions of the subprocess
+module's functions, such as call(), check_call(), check_output(), and
+run(). It allows users to execute blocks of text as a sequence of
+subprocess calls, handling multiple commands, line continuations, and
+comments. The library also offers features like optional logging,
+error handling and lazy evaluation.

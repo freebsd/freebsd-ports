@@ -1,0 +1,192 @@
+From 631b375f3dbb150c3f37430a0a45f237ffac8153 Mon Sep 17 00:00:00 2001
+From: blaze <blaze@discord>
+Date: Tue, 30 Jul 2024 22:49:02 -0700
+Subject: [PATCH] socd detection
+
+---
+ .gitignore           |  3 +++
+ include/progs.h      | 11 ++++++++
+ src/client.c         | 61 ++++++++++++++++++++++++++++++++++++++++++++
+ src/commands.c       | 32 +++++++++++++++++++++--
+ src/stats.c          |  8 ++++++
+ src/world.c          |  2 ++
+ tools/vs/ktx.vcxproj | 34 ++++++++++++++++++------
+ 7 files changed, 141 insertions(+), 10 deletions(-)
+
+--- include/progs.h.orig
++++ include/progs.h
+@@ -944,6 +944,17 @@ typedef struct gedict_s
+ 	float fIllegalFPSWarnings;
+ // ILLEGALFPS]
+ 
++// SOCD detectioin
++	float fStrafeChangeCount;
++	float fFramePerfectStrafeChangeCount;
++	int   socdDetected;
++	int   socdChecksCount;
++	float fLastSideMoveSpeed;
++	int   matchStrafeChangeCount;
++	int   matchPerfectStrafeCount;
++	int   nullStrafeCount;
++// SOCD
++
+ 	float shownick_time;					// used to force centerprint is off at desired time
+ 	clientType_t ct;						// client type for client edicts
+ // { timing
+--- src/client.c.orig
++++ src/client.c
+@@ -1658,6 +1658,16 @@ void ClientConnect()
+ 		SendIntermissionToClient();
+ 	}
+ 
++// SOCD
++	self->socdChecksCount = 0;
++	self->socdDetected = 0;
++	self->fStrafeChangeCount = 0;
++	self->fFramePerfectStrafeChangeCount = 0;
++	self->fLastSideMoveSpeed = 0;
++	self->matchStrafeChangeCount = 0;
++	self->matchPerfectStrafeCount = 0;
++	self->nullStrafeCount = 0;
++
+ // ILLEGALFPS[
+ 
+ 	// Zibbo's frametime checking code
+@@ -3520,6 +3530,57 @@ void PlayerPreThink()
+ 	}
+ #endif
+ 
++// SOCD detection
++	{
++		float fSideMoveSpeed = self->movement[1];
++
++		if ((fSideMoveSpeed != 0) && (fSideMoveSpeed != self->fLastSideMoveSpeed) && (self->nullStrafeCount < 3)) //strafechange
++		{
++			self->fStrafeChangeCount += 1;
++			if (match_in_progress)
++				self->matchStrafeChangeCount += 1;
++
++			if ((fSideMoveSpeed != 0) && (self->fLastSideMoveSpeed != 0))
++			{
++				self->fFramePerfectStrafeChangeCount += 1;
++				if (match_in_progress)
++					self->matchPerfectStrafeCount += 1;
++			}
++
++			self->nullStrafeCount = 0;
++		}
++		else
++		{
++			if (0 == fSideMoveSpeed)
++				self->nullStrafeCount += 1;
++			else
++				self->nullStrafeCount = 0;
++		}
++
++		self->fLastSideMoveSpeed = fSideMoveSpeed;
++
++		if (self->fStrafeChangeCount >= 16)
++		{
++			if (self->fFramePerfectStrafeChangeCount / self->fStrafeChangeCount >= 0.75)
++			{
++				int k_allow_socd_warning = cvar("k_allow_socd_warning");
++
++				self->socdDetected += 1;
++
++				if ((!match_in_progress) && (!self->isBot) && k_allow_socd_warning)
++				{
++					G_bprint(PRINT_HIGH,
++						"Warning! %s: SOCD movement assistance detected. Please disable iDrive or keyboard SOCD features.\n",
++						self->netname);
++				}
++			}
++
++			self->socdChecksCount += 1;
++			self->fStrafeChangeCount = 0;
++			self->fFramePerfectStrafeChangeCount = 0;
++		}
++	}
++
+ // ILLEGALFPS[
+ 
+ 	self->fAverageFrameTime += g_globalvars.frametime;
+--- src/commands.c.orig
++++ src/commands.c
+@@ -8114,16 +8114,47 @@ void fcheck()
+ 
+ 	if (!is_real_adm(self))
+ 	{
+-		if (strneq(arg_x, "f_version") && strneq(arg_x, "f_modified") && strneq(arg_x, "f_server"))
++		if (strneq(arg_x, "f_version") && strneq(arg_x, "f_modified") && strneq(arg_x, "f_server") && strneq(arg_x, "f_movement"))
+ 		{
+ 			G_sprint(self, 2, "You are not allowed to check \020%s\021\n"
+-						"available checks are: f_version, f_modified and f_server\n",
++						"available checks are: f_version, f_modified, f_server and f_movement\n",
+ 						arg_x);
+ 
+ 			return;
+ 		}
+ 	}
+ 
++	if (streq(arg_x, "f_movement"))
++	{
++		G_bprint(2, "%s is checking \020%s\021\n", self->netname, arg_x);
++
++		for (i = 1; i <= MAX_CLIENTS; i++)
++		{
++			if (!strnull(g_edicts[i].netname))
++			{
++				if (g_edicts[i].socdDetected > 0)
++				{
++					G_bprint(2, "%s: SOCD movement assistance detected!\n", g_edicts[i].netname);
++				}
++				else
++				{
++					if (g_edicts[i].socdChecksCount >= 2)
++					{
++						G_bprint(2, "%s: no assistance detected.\n", g_edicts[i].netname);
++					}
++					else
++					{
++						G_bprint(2, "%s: not enough movement to run SOCD detection. Please move around a map.\n", g_edicts[i].netname);
++					}
++				}
++				G_bprint(2, "%s: %s:%d/%d %s:%d/%d\n", redtext("Movement"), redtext("Perfect strafes"),
++					g_edicts[i].matchPerfectStrafeCount, g_edicts[i].matchStrafeChangeCount,
++					redtext("SOCD detections"), g_edicts[i].socdDetected, g_edicts[i].socdChecksCount);
++			}
++		}
++		return;
++	}
++
+ 	for (i = 1; i <= MAX_CLIENTS; i++)
+ 	{
+ 		if (g_edicts[i].f_checkbuf)
+--- src/stats.c.orig
++++ src/stats.c
+@@ -763,6 +763,14 @@ void OnePlayerStats(gedict_t *p, int tp)
+ 					p->ps.vel_frames > 0 ? p->ps.velocity_sum / p->ps.vel_frames : 0.);
+ 	}
+ 
++	if (!p->isBot)
++	{
++		G_bprint(2, "%s: %s:%d/%d %s:%d/%d\n", redtext("Movement"), redtext("Perfect strafes"),
++			p->matchPerfectStrafeCount, p->matchStrafeChangeCount, redtext("SOCD detections"),
++			p->socdDetected, p->socdChecksCount);
++	}
++
++
+ 	// armors + megahealths
+ 	if (!lgc_enabled())
+ 	{
+--- src/world.c.orig
++++ src/world.c
+@@ -1000,6 +1000,8 @@ void FirstFrame()
+ 
+ 	RegisterCvar("k_teamoverlay"); // q3 like team overlay
+ 
++	RegisterCvar("k_allow_socd_warning"); // socd
++
+ // { SP
+ 	RegisterCvarEx("k_monster_spawn_time", "20");
+ // }

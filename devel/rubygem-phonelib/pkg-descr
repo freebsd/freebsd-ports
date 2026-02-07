@@ -1,0 +1,4 @@
+Phonelib is a gem allowing you to validate phone number. All validations are
+based on Google libphonenumber. Currently it can make basic validations and
+formatting to e164 international number format and national number format with
+prefix. But it still doesn't include all Google's library functionality.

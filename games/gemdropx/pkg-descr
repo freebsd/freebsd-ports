@@ -1,0 +1,16 @@
+"Gem Drop X" is an interesting one-player puzzle game using the
+Simple DirectMedia Layer (SDL) libraries.
+
+It is a direct port of "Gem Drop," an Atari 8-bit game written in Action!
+(a very fast C- and Pascal-like compiled language for the Atari).
+
+It was originally ported to X11, using SDL for sound and music.
+Eventually, the Xlib graphics calls were removed and replaced with
+SDL calls.
+
+The concept of the game "Gem Drop" is based on an arcade game for the
+NeoGeo system called "Magical Drop III" by SNK.
+
+If you're familiar with games like Jewels, Klax, Bust-A-Move or Tetris,
+this game is similar to them all.  I consider it closest to Klax.
+Some people have compared it to "Tetris meets Space Invaders."

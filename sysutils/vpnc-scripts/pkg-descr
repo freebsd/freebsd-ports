@@ -1,0 +1,4 @@
+A collection of scripts that do route modification and other changes to
+a system after establishing a VPN connection to a remote network.
+
+These are typically used with openconnect or Cisco's VPN client.

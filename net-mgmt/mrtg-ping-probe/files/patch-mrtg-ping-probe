@@ -1,0 +1,11 @@
+--- mrtg-ping-probe.orig	2003-09-13 18:20:24 UTC
++++ mrtg-ping-probe
+@@ -284,7 +284,7 @@ sub ext_ping {
+ 
+ 	# try to find packet loss
+ 	# ToDo: only if requested?)
+-	if ($ping_output =~ m@(\d+)% (?:packet )?loss(?:$|,)@m) {
++	if ($ping_output =~ m@(\d+(?:\.\d+)?)% (?:packet )?loss(?:$|,)@m) {
+ 		# Unix
+ 		$pt{loss} = $1;
+ 		}

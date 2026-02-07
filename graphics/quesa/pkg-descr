@@ -1,0 +1,8 @@
+Quesa is a high level 3D graphics library, released as Open Source under
+the LGPL, which offers binary and source level compatibility with Apple's
+QuickDraw(TM) 3D API. Quesa does not contain any Apple source code, and was
+developed without access to Apple's QD3D implementation.
+
+QD3D supports both retained and immediate mode rendering, an extensible file
+format, plug-in renderers, a wide range of high level geometries, hierarchical
+models, and a consistent and object-orientated API.

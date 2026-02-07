@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2000-04-19 07:32:36 UTC
++++ src/Makefile.in
+@@ -41,7 +41,7 @@ TARS = $(SRCS) Makefile.in config.h.in n
+ all: $(PROG)
+ 
+ $(PROG): $(OBJS) ../lib/libele.a
+-	$(CC) -L../lib -o $@ $(OBJS) $(LIBS)
++	$(CC) -L../lib -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
+ 
+ .c.o:
+ 	@echo $(CC) $(CFLAGS) -c $<

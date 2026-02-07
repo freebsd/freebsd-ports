@@ -1,0 +1,4 @@
+The ntfs-3g driver is an open-source, freely available read/write NTFS
+driver which provides safe and fast handling of the Windows NTFS file
+systems.  Almost the full POSIX filesystem functionality is supported,
+the major exceptions are changing file ownership and the access rights.

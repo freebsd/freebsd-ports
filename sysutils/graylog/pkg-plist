@@ -1,0 +1,10 @@
+%%DATADIR%%/graylog.jar
+%%DATADIR%%/plugin/%%PORTNAME%%-storage-elasticsearch7-%%DISTVERSION%%.jar
+%%DATADIR%%/plugin/%%PORTNAME%%-storage-opensearch2-%%DISTVERSION%%.jar
+@dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%ETCDIR%%/server
+@dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_DATA_DIR%%
+@dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_DATA_DIR%%/journal
+@dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_LOGS_DIR%%
+@sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/graylog.conf.sample
+@sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/log4j2.xml.sample
+

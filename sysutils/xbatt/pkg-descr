@@ -1,0 +1,7 @@
+`xbatt' is an X11 client which displays a battery status of your
+notebook computer equiped with APM (Advanced Power Management) BIOS.
+The status displayed consists remaining battery life, an AC line
+status, and a charging status.
+
+NOTE: You need APM driver in your kernel. And enable it to edit
+      file /etc/sysconfig at `apm_enable=NO' to `YES'.

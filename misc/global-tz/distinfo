@@ -1,0 +1,5 @@
+TIMESTAMP = 1743740958
+SHA256 (tzdata2025bgtz/tzdata2025bgtz.tar.gz) = dac024fdd34c85f2f74f1a4f2c45c21baa94ec60787de14c4808ce87b5011115
+SIZE (tzdata2025bgtz/tzdata2025bgtz.tar.gz) = 463989
+SHA256 (tzdata2025bgtz/zone1970.tab) = 57194e43b001b8f832987b21b82953d997aeeaebeb53a8520140bc12d7d8cfcc
+SIZE (tzdata2025bgtz/zone1970.tab) = 17597

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-10-12 10:05:05.000000000 +0800
++++ Makefile.in	2008-11-11 11:27:40.000000000 +0800
+@@ -42,7 +42,7 @@
+ @UTF8PROCOK_TRUE@am__append_3 = -DUSEUTF8PROC
+ @UTF8PROCOK_FALSE@am__append_4 = -licutu
+ @NOCOMPARISONCNT_TRUE@am__append_5 = -DNOCOMPARISONCNT
+-@UNINUMOK_TRUE@am__append_6 = -DUSEUNINUMOK
++@UNINUMOK_TRUE@am__append_6 = -DUSEUNINUMOK -lintl
+ subdir = .
+ DIST_COMMON = README $(am__configure_deps) $(dist_man_MANS) \
+ 	$(noinst_HEADERS) $(srcdir)/Makefile.am $(srcdir)/Makefile.in \

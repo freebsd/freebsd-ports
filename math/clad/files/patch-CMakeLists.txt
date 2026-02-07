@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2024-07-17 20:27:26 UTC
++++ CMakeLists.txt
+@@ -321,8 +321,10 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
+     include(GoogleBenchmark)
+   endif(CLAD_ENABLE_BENCHMARKS)
+ 
++  if (FREEBSD_BUILD_DEMOS)
+   add_subdirectory(demos/ErrorEstimation/CustomModel)
+   add_subdirectory(demos/ErrorEstimation/PrintModel)
++  endif()
+ 
+   if (NOT CLAD_DISABLE_TESTS OR CLAD_ENABLE_BENCHMARKS)
+     # Change the default compiler to the clang which we run clad upon. Our unittests
+@@ -337,7 +339,7 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
+     string(REPLACE "-Wno-class-memaccess" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   endif()
+ 
+-  if (NOT CLAD_DISABLE_TESTS)
++  if (FREEBSD_BUILD_TESTS)
+     add_subdirectory(unittests)
+     add_subdirectory(test)
+   endif()

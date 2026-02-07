@@ -1,0 +1,9 @@
+Shared namespace for py-azure-* ports
+
+py-azure-cli-base provides common files that are shared among all py-azure-*
+ports:
+  azure/__init__.py
+  azure/cli/__init__.py
+  azure/cli/command_modules/__init__.py
+  azure/mgmt/__init__.py
+  azure/mgmt/datalake/__init__.py

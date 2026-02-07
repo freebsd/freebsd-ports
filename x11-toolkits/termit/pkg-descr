@@ -1,0 +1,2 @@
+Small terminal emulator. The only dependencies are Vte and Gtk2 libs.
+Termit supports tabs, bookmarks, encoding switching and sessions.

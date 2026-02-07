@@ -1,0 +1,5 @@
+This package contains a collection of metadata source files that collectively
+form the Google Fonts Axis Registry.
+
+The live Axis Registry is at fonts.google.com/variablefonts, and axis
+definitions are only final when they appear on that page.

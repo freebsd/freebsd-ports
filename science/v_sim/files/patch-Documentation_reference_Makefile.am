@@ -1,0 +1,34 @@
+--- Documentation/reference/Makefile.am.orig	2020-07-07 14:26:13 UTC
++++ Documentation/reference/Makefile.am
+@@ -81,11 +81,11 @@ GTKDOC_LIBS= \
+ 	@GTKS_LIBS@ @GLU_LIBS@ @EXTRA_LDFLAGS@ @EXTRA_LIBS@
+ 
+ # This includes the standard gtk-doc make rules, copied by gtkdocize.
+-include $(srcdir)/gtk-doc.make
++#include $(srcdir)/gtk-doc.make
+ 
+ # Other files to distribute
+ # e.g. EXTRA_DIST += version.xml.in
+-EXTRA_DIST += version.in
++EXTRA_DIST = version.in
+ 
+ # Files not to distribute
+ # for --rebuild-types in $(SCAN_OPTIONS), e.g. $(DOC_MODULE).types
+@@ -93,11 +93,11 @@ EXTRA_DIST += version.in
+ DISTCLEANFILES = $(DOC_MODULE).types $(DOC_MODULE)-sections.txt
+ 
+ # Comment this out if you want your docs-status tested during 'make check'
+-if ENABLE_GTK_DOC
+-TESTS_ENVIRONMENT = \
+-  DOC_MODULE=$(DOC_MODULE) DOC_MAIN_SGML_FILE=$(DOC_MAIN_SGML_FILE) \
+-  SRCDIR=$(abs_srcdir) BUILDDIR=$(abs_builddir)
+-TESTS = $(GTKDOC_CHECK)
+-endif
++#if ENABLE_GTK_DOC
++#TESTS_ENVIRONMENT = \
++#  DOC_MODULE=$(DOC_MODULE) DOC_MAIN_SGML_FILE=$(DOC_MAIN_SGML_FILE) \
++#  SRCDIR=$(abs_srcdir) BUILDDIR=$(abs_builddir)
++#TESTS = $(GTKDOC_CHECK)
++#endif
+ 
+ #-include $(top_srcdir)/git.mk

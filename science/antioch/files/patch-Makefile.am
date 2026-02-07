@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2018-04-18 06:06:18 UTC
++++ Makefile.am
+@@ -4,7 +4,7 @@ include $(top_srcdir)/doxygen/aminclude.
+ AUTOMAKE_OPTIONS = foreign
+ ACLOCAL_AMFLAGS  = -I m4 -I m4/common
+ 
+-SUBDIRS          = src test doxygen share examples
++SUBDIRS          = src test doxygen share
+ EXTRA_DIST       = CHANGES LICENSE COPYING share
+ 
+ # Eliminate .svn directories in dist tarball

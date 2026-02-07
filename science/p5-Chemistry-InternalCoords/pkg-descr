@@ -1,0 +1,3 @@
+Perl module implements an object class for representing internal
+coordinates and provides methods for converting them to Cartesian
+coordinates.

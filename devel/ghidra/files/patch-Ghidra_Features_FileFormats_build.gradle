@@ -1,0 +1,11 @@
+--- Ghidra/Features/FileFormats/build.gradle.orig	2025-02-19 07:23:46 UTC
++++ Ghidra/Features/FileFormats/build.gradle
+@@ -63,6 +63,8 @@ model {
+ 				if (b.targetPlatform.operatingSystem.linux) {
+ 					b.cCompiler.define "LINUX"
+ 					b.cCompiler.define "_LINUX"
++				} else if (b.targetPlatform.operatingSystem.FreeBSD) {
++					b.cCompiler.args "-D__XSI_VISIBLE=1"
+ 				}
+ 			}
+ 		 	else if (b.toolChain in VisualCpp) {

@@ -1,0 +1,34 @@
+PORTNAME=	bingrep
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.12.1
+PORTREVISION=	1
+CATEGORIES=	devel
+
+MAINTAINER=	eduardo@FreeBSD.org
+COMMENT=	Grep through binaries
+WWW=		https://github.com/m4b/bingrep
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo cpe
+CPE_VENDOR=	bingrep_project
+USE_GITHUB=	yes
+GH_ACCOUNT=	m4b
+
+PLIST_FILES=	bin/bingrep
+
+PORTDOCS=	README.md
+PORTEXAMPLES=	*.png
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+.include <bsd.port.mk>

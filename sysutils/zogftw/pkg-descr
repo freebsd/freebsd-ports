@@ -1,0 +1,12 @@
+zogftw makes using multiple geli-encrypted single-vdev ZFS pools
+for backups more convenient, mainly by automating creation, import
+and export of such pools and by synchronizing datasets without the
+user having to manually specify the names of the snapshots that
+should be sent.
+
+geli passphrases can be stored gpg-encrypted which allows importing
+several pools in a row without having to specify each passphrase
+manually.
+
+zogftw is extendable in shell. It can be sourced from other shell
+scripts or interactive shells.

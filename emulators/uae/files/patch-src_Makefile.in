@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	2025-05-05 16:21:46 UTC
++++ src/Makefile.in
+@@ -9,7 +9,8 @@ CFLAGS    = @CFLAGS@ -D__inline__=@ac_cv_c_inline@ \
+ LDFLAGS   = @LDFLAGS@
+ CFLAGS    = @CFLAGS@ -D__inline__=@ac_cv_c_inline@ \
+ 		-DSYSTEM_ROMDIR=\"$(datadir)/uae/roms\" \
+-		-DSYSTEM_CFGDIR=\"$(datadir)/uae/configs\"
++		-DSYSTEM_CFGDIR=\"$(datadir)/uae/configs\" \
++		-Wno-error=incompatible-function-pointer-types
+ X_CFLAGS  = @X_CFLAGS@ @GTK_CFLAGS@ -DSHM_SUPPORT_LINKS=@SHM_SUPPORT_LINKS@
+ TARGET    = @TARGET@
+ LIBRARIES = @LIBRARIES@ @LIBS@ @GTK_LIBS@
+@@ -112,7 +113,7 @@ tools/build68k:
+ tools/genblitter:
+ 	$(MAKE) -C tools genblitter
+ tools/build68k:
+-	$(MAKE) -C tools build68kc
++	$(MAKE) -C tools build68k
+ tools/gencpu: 
+ 	$(MAKE) -C tools gencpu
+ 

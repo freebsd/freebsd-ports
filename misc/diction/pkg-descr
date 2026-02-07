@@ -1,0 +1,7 @@
+This is the GNU diction and style, free implementations of old standard
+Unix commands.  For some reason, many modern systems lack them.  Diction
+prints wordy and commonly misused phrases.  Style analyses surface
+characteristics of a document, e.g. sentence length and various
+readability measures.
+
+Both commands support English and German documents.

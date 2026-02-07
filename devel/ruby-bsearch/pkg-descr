@@ -1,0 +1,3 @@
+Ruby/Bsearch is a binary search library for Ruby.  It can search the
+FIRST or LAST occurrence in an array with a condition given by a
+block.

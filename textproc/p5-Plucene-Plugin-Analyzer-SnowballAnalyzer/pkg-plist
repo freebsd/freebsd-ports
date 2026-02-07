@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Plucene::Plugin::Analyzer::SnowballAnalyzer.3.gz
+%%PERL5_MAN3%%/Plucene::Plugin::Analyzer::SnowballFilter.3.gz
+%%SITE_PERL%%/Plucene/Plugin/Analyzer/SnowballAnalyzer.pm
+%%SITE_PERL%%/Plucene/Plugin/Analyzer/SnowballFilter.pm

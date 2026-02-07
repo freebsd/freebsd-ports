@@ -1,0 +1,5 @@
+TIMESTAMP = 1639622030
+SHA256 (libappindicator_12.10.1+20.10.20200706.1.orig.tar.gz) = 94e7096a49c400628ecddcafe313d63bf917d95a90ab994930909de724604e0a
+SIZE (libappindicator_12.10.1+20.10.20200706.1.orig.tar.gz) = 75204
+SHA256 (libappindicator_12.10.1+20.10.20200706.1-0ubuntu1.diff.gz) = a7e722af8a6cf3927a4002bf4efb9953415be7e0386cbf2c779b7e97b1b839ab
+SIZE (libappindicator_12.10.1+20.10.20200706.1-0ubuntu1.diff.gz) = 13429

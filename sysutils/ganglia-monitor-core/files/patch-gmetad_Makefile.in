@@ -1,0 +1,11 @@
+--- gmetad/Makefile.in.orig	2015-07-01 19:49:35 UTC
++++ gmetad/Makefile.in
+@@ -713,8 +713,6 @@ gmetad.service:	gmetad.service.in $(FIXCONFIG)
+ 	$(FIXCONFIG) gmetad.service.in
+ 
+ install-data-hook:	gmetad.conf
+-	mkdir -p $(DESTDIR)$(sysconfdir) && \
+-	  $(INSTALL_DATA) gmetad.conf $(DESTDIR)$(sysconfdir)/gmetad.conf
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

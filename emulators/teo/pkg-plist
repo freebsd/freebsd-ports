@@ -1,0 +1,11 @@
+bin/teo
+%%DATADIR%%/icons/leave.ico
+%%DATADIR%%/icons/run.ico
+%%DATADIR%%/icons/step.ico
+%%DATADIR%%/icons/stepover.ico
+%%DATADIR%%/rom/basic1.rom
+%%DATADIR%%/rom/basic512.rom
+%%DATADIR%%/rom/expl.rom
+%%DATADIR%%/rom/extramon.rom
+%%DATADIR%%/rom/monitor1.rom
+%%DATADIR%%/rom/monitor2.rom

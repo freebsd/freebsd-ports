@@ -1,0 +1,6 @@
+Tool for copy partitions to another HDD. FreeBSD stores its data on
+partitions, which are encapsulated in slices. Soft, such as Partition
+Magic, Acronis, etc. detect only slice, not real partitions on that
+slice. CloneHDD correctly understand size difference between two HDD
+and change size of each partition proportionally for filling entire
+HDD.

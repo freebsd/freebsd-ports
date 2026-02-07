@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Selenium.3.gz
+%%PERL5_MAN3%%/Test::WWW::Selenium.3.gz
+%%PERL5_MAN3%%/WWW::Selenium.3.gz
+%%PERL5_MAN3%%/WWW::Selenium::Util.3.gz
+%%SITE_PERL%%/Devel/REPL/Plugin/Selenium.pm
+%%SITE_PERL%%/Test/WWW/Selenium.pm
+%%SITE_PERL%%/Test/WWW/mypod2html.pl
+%%SITE_PERL%%/WWW/Selenium.pm
+%%SITE_PERL%%/WWW/Selenium/Util.pm

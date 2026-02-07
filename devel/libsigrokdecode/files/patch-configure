@@ -1,0 +1,44 @@
+--- configure.orig	2019-12-11 21:37:52 UTC
++++ configure
+@@ -13200,6 +13200,30 @@ sr_pkg_check_summary_append() {
+ # first, since usually only that variant will add "-lpython3.8".
+ # https://docs.python.org/3/whatsnew/3.8.html#debug-build-uses-the-same-abi-as-release-build
+ if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"python-3.9-embed\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "python-3.9-embed") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  	sr_have_python3=yes
++	SRD_PKGLIBS=${SRD_PKGLIBS}${SRD_PKGLIBS:+' '}"python-3.9-embed"
++	sr_python3_version=`$PKG_CONFIG --modversion "python-3.9-embed" 2>&5`
++	sr_pkg_check_summary_append "python-3.9-embed" "$sr_python3_version"
++else
++  	sr_pkg_check_summary_append "python-3.9-embed" no
++	if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"python-3.9 >= 3.9\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "python-3.9 >= 3.9") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  	sr_have_python3=yes
++	SRD_PKGLIBS=${SRD_PKGLIBS}${SRD_PKGLIBS:+' '}"python-3.9 >= 3.9"
++	sr_python3_version=`$PKG_CONFIG --modversion "python-3.9 >= 3.9" 2>&5`
++	sr_pkg_check_summary_append "python-3.9 >= 3.9" "$sr_python3_version"
++else
++  	sr_pkg_check_summary_append "python-3.9 >= 3.8" no
++	if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"python-3.8-embed\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "python-3.8-embed") 2>&5
+   ac_status=$?
+@@ -13308,6 +13332,10 @@ else
+ else
+   	sr_pkg_check_summary_append "python3 >= 3.2" no
+ 	sr_have_python3=no sr_python3_version=
++fi
++
++fi
++
+ fi
+ 
+ fi

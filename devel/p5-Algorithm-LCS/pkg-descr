@@ -1,0 +1,2 @@
+Algorithm::LCS reimplements Algorithm::Diff's core loop in XS,
+and provides a simple OO interface to it.

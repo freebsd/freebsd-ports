@@ -1,0 +1,3 @@
+detex takes as input a TeX source file and strips the TeX commands.
+The result is output to stdout.  This is useful if you need a pure ASCII
+version of a TeX/LaTeX file.

@@ -1,0 +1,65 @@
+--- getweb.in.orig	2013-12-26 01:00:11.000000000 +0400
++++ getweb.in	2014-03-31 13:16:43.001753482 +0400
+@@ -11,7 +11,7 @@
+ 
+ VERSION='$Id: getweb.in,v 1.112 2013/12/25 21:00:11 rick Exp $'
+ 
+-WGETOPTS="--passive-ftp -q"
++FETCHOPTS="-p -m"
+ 
+ usage() {
+ cat <<EOF
+@@ -123,7 +123,7 @@ getexe() {
+     exefile="$2"
+     shift; shift
+     
+-    wget $WGETOPTS -O $exefile "$url/$exefile" ||
++    fetch $FETCHOPTS -o $exefile "$url/$exefile" ||
+ 	error "Couldn't download $url/$exefile"
+     unzip -oj $exefile "$@"
+     rm $exefile
+@@ -137,7 +137,7 @@ gettgz() {
+     file="$2"
+     what="$3"
+     
+-    wget $WGETOPTS -O $file "$url/$file" ||
++    fetch $FETCHOPTS -o $file "$url/$file" ||
+ 	error "Couldn't download $url/$file"
+     gunzip <$file | tar xvf - $what
+     rm $file
+@@ -241,7 +241,7 @@ getone() {
+ 	BASE="$BASE/openmind/technic/swfw/mswprtdl.nsf/logdwl"
+ 	FILE="MC2300DL_v255.zip"
+ 	URL="$BASE?openagent&4CE486C20839C75AC1256D9E001EBD1F/\$File/$FILE"
+-	wget $WGETOPTS "$URL" || error "Couldn't download $URL"
++	fetch $FETCHOPTS "$URL" || error "Couldn't download $URL"
+ 	echo "*** Now use a windows box to unzip and install $FILE ***"
+ 	;;
+     cpwl|pageworks)
+@@ -257,7 +257,7 @@ getone() {
+ 	    do
+ 		base=`basename $i .IC_`
+ 		mv $base.IC_ $base.ic_
+-		./msexpand $base.ic_
++		msexpand $base.ic_
+ 		rm -f $base.ic_
+ 	    done
+ 	fi
+@@ -400,7 +400,7 @@ getone() {
+ 	    URL="$URL?driver=$driver&printer=$printer"
+ 	    URL="$URL&.submit=Generate+PPD+file"
+ 	    URL="$URL&show=1&.cgifields=shortgui&.cgifields=show"
+-	    wget $WGETOPTS -O PPD/$printer.ppd "$URL" ||
++	    fetch $FETCHOPTS -o PPD/$printer.ppd "$URL" ||
+ 		error "Couldn't dowload $URL"
+ 	done
+ 	;;
+@@ -438,7 +438,7 @@ getone() {
+     update)
+ 	url=${URLZJS}
+ 	file=foo2zjs.tar.gz
+-	wget $WGETOPTS -O $file $url/$file ||
++	fetch $FETCHOPTS -o $file $url/$file ||
+ 		error "Couldn't download $url/$exefile"
+ 	mv getweb getweb.old
+ 	HERE=`pwd`

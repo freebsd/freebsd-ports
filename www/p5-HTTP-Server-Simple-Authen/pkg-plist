@@ -1,0 +1,3 @@
+%%SITE_PERL%%/HTTP/Server/Simple/Authen.pm
+%%SITE_PERL%%/HTTP/Server/Simple/server.pl
+%%PERL5_MAN3%%/HTTP::Server::Simple::Authen.3.gz

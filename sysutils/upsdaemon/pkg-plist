@@ -1,0 +1,4 @@
+sbin/upsdaemon
+libexec/upsdaemon/upsdaemon-alerts
+libexec/upsdaemon/upsdaemon.sh
+share/man/man8/upsdaemon.8.gz

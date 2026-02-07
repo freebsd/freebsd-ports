@@ -1,0 +1,10 @@
+@(squid,squid,) rejik3/make-cache
+@(squid,squid,) rejik3/redirector
+@(squid,squid,) rejik3/redirector.conf.dist
+@(squid,squid,) rejik3/tools/IN.gz
+@(squid,squid,) rejik3/tools/benchmark
+@(squid,squid,) rejik3/tools/check-redirector
+@(squid,squid,) rejik3/tools/kill-cache
+@(squid,squid,) rejik3/tools/set-permissions
+@dir(squid,squid,) rejik3/tools
+@dir(squid,squid,) rejik3

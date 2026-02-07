@@ -1,0 +1,2 @@
+libqxp is a library that parses the file format of QuarkXPress documents.
+Currently it only understands documents created by QuarkXPress 3.1 to 4.1.

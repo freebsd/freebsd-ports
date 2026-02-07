@@ -1,0 +1,13 @@
+usr/lib64/libQt5SerialBus.so.5
+usr/lib64/libQt5SerialBus.so.5.15
+usr/lib64/libQt5SerialBus.so.5.15.9
+usr/lib64/qt5/bin/canbusutil
+usr/lib64/qt5/plugins/canbus/libqtpassthrucanbus.so
+usr/lib64/qt5/plugins/canbus/libqtpeakcanbus.so
+usr/lib64/qt5/plugins/canbus/libqtsocketcanbus.so
+usr/lib64/qt5/plugins/canbus/libqttinycanbus.so
+usr/lib64/qt5/plugins/canbus/libqtvirtualcanbus.so
+usr/share/licenses/qt5-qtserialbus/LICENSE.FDL
+usr/share/licenses/qt5-qtserialbus/LICENSE.GPLv2
+usr/share/licenses/qt5-qtserialbus/LICENSE.GPLv3
+usr/share/licenses/qt5-qtserialbus/LICENSE.LGPLv3

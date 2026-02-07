@@ -1,0 +1,11 @@
+--- services/device/serial/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ services/device/serial/BUILD.gn
+@@ -4,7 +4,7 @@ import("//build/config/features.gni")
+ 
+ import("//build/config/features.gni")
+ 
+-if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac || is_android) {
++if (is_win || ((!is_bsd && is_linux || is_chromeos) && use_udev) || is_mac || is_android) {
+   config("platform_support") {
+     visibility = [ ":serial" ]
+     if (is_win) {

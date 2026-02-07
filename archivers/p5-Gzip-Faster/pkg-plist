@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Gzip/Faster.pm
+%%SITE_ARCH%%/Gzip/Faster.pod
+%%SITE_ARCH%%/auto/Gzip/Faster/Faster.so
+%%PERL5_MAN3%%/Gzip::Faster.3.gz

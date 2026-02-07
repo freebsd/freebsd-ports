@@ -1,0 +1,5 @@
+This utility can be used to test performance of storage devices.
+
+It works by generating a test file which contains I/O requests with
+random size and random offset.  It then spawns parallel processes
+which send requests to the given device based on the test file data.

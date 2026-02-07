@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2024-04-10 17:45:30 UTC
++++ pyproject.toml
+@@ -9,13 +9,13 @@ requires = [
+     # Note that building against numpy 1.x works fine too - users and
+     # redistributors can do this by installing the numpy version they like and
+     # disabling build isolation.
+-    "numpy>=2.0.0rc1",
++    "numpy",
+     "setuptools_scm >= 7.0.0",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Cartopy"
++name = "cartopy"
+ authors = [
+     {name = "UK Met Office"},
+ ]

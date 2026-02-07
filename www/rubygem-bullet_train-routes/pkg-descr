@@ -1,0 +1,4 @@
+Bullet Train Routes provides a vastly simplified method for defining shallow,
+nested resource routes in Rails applications when modules and namespaces are
+involved. We do this by introducing a model method to the Rails routing DSL,
+which serves as an interchangable substitute for the resources method.

@@ -1,0 +1,27 @@
+--- Imakefile.orig	1995-06-19 22:20:55 UTC
++++ Imakefile
+@@ -8,6 +8,7 @@ DEFGDB =
+ #endif
+ 
+ #CC = gcc
++CCOPTIONS=-O0
+ 
+ #if mc68000			/* for SUN 3 */
+ CCOPTIONS=-m68881
+@@ -79,11 +80,15 @@ DEFINES = -DOLDSUNOS $(DEFGDB) -DNEXTOS_
+ # Add to open all windows at startup
+ #DEFINES+=-DOPEN_ALL_WINDOWS
+ 
++#ifdef FreeBSDArchitecture
++DEFINES = $(DEFGDB)
++#endif
++
+ mallocc = #malloc.c
+ malloco = #malloc.o
+ 
+         DEPLIBS = $(DEPXAWLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
+-LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
++LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) -lutil
+ 
+            SRCS = calldbx.c command.c dbx.c dialog.c datadpy.c filemenu.c \
+ 		  handler.c parser.c regex.c signs.c signals.c source.c \

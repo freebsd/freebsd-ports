@@ -1,0 +1,30 @@
+--- docs/Makefile.in.orig	2017-11-06 10:23:52.000000000 -0800
++++ docs/Makefile.in	2017-11-23 12:14:18.710252000 -0800
+@@ -907,7 +907,7 @@
+ $(GNUPLOT_EXE):
+ 	( cd ../src ; $(MAKE) gnuplot$(EXEEXT) )
+ @BUILD_LUA_TRUE@$(LUA_HELP): $(top_srcdir)/term/lua/gnuplot-tikz.lua
+-@BUILD_LUA_TRUE@	$(AM_V_GEN) $(LUA) $< termhelp > $@
++@BUILD_LUA_TRUE@	$(AM_V_GEN) $(LUA) $(top_srcdir)/term/lua/gnuplot-tikz.lua termhelp > $@
+ 
+ allterm.h: $(CORETERM) $(LUA_HELP)
+ 	$(AM_V_GEN) for e in `egrep "^[ 	]*START_HELP" $(CORETERM) |\
+@@ -933,15 +933,15 @@
+ 
+ grotxt: gnuplot.txt
+ gnuplot.txt: gnuplot.ms $(srcdir)/titlepag.ms
+-	$(AM_V_GEN) groff -s -p -t -e -ms -Tlatin1 $< > $@
++	$(AM_V_GEN) groff -s -p -t -e -ms -Tlatin1 gnuplot.ms > $@
+ 
+ grodvi: gnuplot-groff.dvi
+ gnuplot-groff.dvi: gnuplot.ms $(srcdir)/titlepag.ms
+-	$(AM_V_GEN) groff -s -p -t -e -ms -Tdvi $< > $@
++	$(AM_V_GEN) groff -s -p -t -e -ms -Tdvi gnuplot.ms > gnuplot.dvi
+ 
+ grops: gnuplot-groff.ps
+ gnuplot-groff.ps: gnuplot.ms $(srcdir)/titlepag.ms
+-	$(AM_V_GEN) groff -s -p -t -e -ms -Tps $< > $@ 
++	$(AM_V_GEN) groff -s -p -t -e -ms -Tps gnuplot.ms > gnuplot.ps
+ 
+ ### doc2xxx dependencies
+ gnuplot.ms: doc2ms$(EXEEXT) $(srcdir)/gnuplot.doc

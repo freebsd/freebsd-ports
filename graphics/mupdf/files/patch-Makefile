@@ -1,0 +1,11 @@
+--- Makefile.orig	2025-07-13 20:35:02 UTC
++++ Makefile
+@@ -116,7 +116,7 @@ $(OUT)/generated/%.o : generated/%.c
+ 	$(CC_CMD) $(LIB_CFLAGS) $(WARNING_CFLAGS) $(THIRD_CFLAGS) $(THREADING_CFLAGS)
+ 
+ $(OUT)/generated/%.o : generated/%.c
+-	$(CC_CMD) $(WARNING_CFLAGS) $(LIB_CFLAGS) -O0
++	$(CC_CMD) $(WARNING_CFLAGS) $(LIB_CFLAGS)
+ 
+ $(OUT)/platform/x11/%.o : platform/x11/%.c
+ 	$(CC_CMD) $(WARNING_CFLAGS) $(X11_CFLAGS)

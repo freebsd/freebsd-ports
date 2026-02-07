@@ -1,0 +1,4 @@
+lib/aspell-%%VER%%/mi.dat
+share/aspell/maori.alias
+share/aspell/mi.multi
+share/aspell/mi.rws

@@ -1,0 +1,13 @@
+bin/fyre
+share/applications/fyre.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/about-box.fa
+%%DATADIR%%/animation-render.glade
+%%DATADIR%%/explorer.glade
+%%DATADIR%%/metadata-emblem.png
+share/icons/hicolor/16x16/apps/fyre.png
+share/icons/hicolor/22x22/apps/fyre.png
+share/icons/hicolor/24x24/apps/fyre.png
+share/icons/hicolor/48x48/mimetypes/application-x-fyre-animation.png
+share/icons/hicolor/scalable/apps/fyre.svg
+share/mime/packages/fyre.xml

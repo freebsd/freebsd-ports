@@ -1,0 +1,3 @@
+share/man/man5/pam_ldap.5.gz
+@sample etc/ldap.conf.sample
+lib/pam_ldap.so

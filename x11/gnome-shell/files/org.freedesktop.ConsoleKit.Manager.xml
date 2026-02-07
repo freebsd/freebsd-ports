@@ -1,0 +1,26 @@
+<node>
+  <interface name="org.freedesktop.ConsoleKit.Manager">
+    <method name="Suspend">
+      <arg type="b" direction="in"/>
+    </method>
+    <method name="CanSuspend">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="Inhibit">
+      <arg type="s" direction="in"/>
+      <arg type="s" direction="in"/>
+      <arg type="s" direction="in"/>
+      <arg type="s" direction="in"/>
+      <arg type="h" direction="out"/>
+    </method>
+    <method name="GetCurrentSession">
+      <arg type="o" direction="out"/>
+    </method>
+    <method name="ListSessions">
+      <arg name="sessions" type="a(susso)" direction="out"/>
+    </method>
+    <signal name="PrepareForSleep">
+      <arg type="b" direction="out"/>
+    </signal>
+  </interface>
+</node>

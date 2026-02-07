@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+
+Sample files and scripts are installed in %%ETCDIR%%.
+
+Some examples of devices:
+ /dev/ttyU0    /dev/ttyUSB.nobreak
+ /dev/ttyUSB0  /dev/ttyUSB1  /dev/ttyUSB2
+ /dev/ttyACM0  /dev/ttyACM1  /dev/ttyACM2
+
+Add apcctrl_enable=YES to your /etc/rc.conf[.local] to have apcctrl
+starting up at boot time.
+
+For default, apcctrl starts with `--kill-on-powerfail` parameter.
+Please, read its man page, and if this is not the intended behavior you want,
+change it accordingly.
+
+In some systems where the shutdown can take a while (like in bhyve environment),
+you may want to change this behavior as follows:
+
+Set apcctrl_flags="--term-on-powerfail" on your /etc/rc.conf[.local].
+
+Add this to /etc/rc.shutdown, after the "Insert other shutdown procedures here"
+line:
+  test -f /var/run/powerfail && /usr/local/sbin/apcctrl --hibernate
+  or
+  test -f /var/run/powerfail && /usr/local/sbin/apcctrl --power-off
+
+EOM
+}
+]

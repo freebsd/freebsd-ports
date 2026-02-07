@@ -1,0 +1,10 @@
+p5-libapreq2 - Perl elements for the Generic Apache2 Request Library
+
+This package contains the Perl elements of the Generic Apache2
+Request Library.
+
+ - parsing of application/x-www-form-urlencoded data
+ - parsing of multipart/form-data
+ - parsing of HTTP Cookies
+
+See also: https://httpd.apache.org/apreq/

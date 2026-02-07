@@ -1,0 +1,30 @@
+bin/i2pd
+@sample %%ETCDIR%%/i2pd.conf.sample
+@sample %%ETCDIR%%/tunnels.conf.sample
+@sample etc/newsyslog.conf.d/i2pd.conf.sample
+lib/libi2pd.a
+lib/libi2pdclient.a
+lib/libi2pdlang.a
+share/man/man1/i2pd.1.gz
+%%DATADIR%%/certificates/family/gostcoin.crt
+%%DATADIR%%/certificates/family/i2p-dev.crt
+%%DATADIR%%/certificates/family/i2pd-dev.crt
+%%DATADIR%%/certificates/family/mca2-i2p.crt
+%%DATADIR%%/certificates/family/stormycloud.crt
+%%DATADIR%%/certificates/family/volatile.crt
+%%DATADIR%%/certificates/reseed/acetone_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/admin_at_stormycloud.org.crt
+%%DATADIR%%/certificates/reseed/creativecowpat_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/echelon3_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/hankhill19580_at_gmail.com.crt
+%%DATADIR%%/certificates/reseed/i2p-reseed_at_mk16.de.crt
+%%DATADIR%%/certificates/reseed/igor_at_novg.net.crt
+%%DATADIR%%/certificates/reseed/lazygravy_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/orignal_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/rambler_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/reseed_at_diva.exchange.crt
+@dir %%ETCDIR%%/tunnels.d
+@dir(%%USER%%,%%GROUP%%,755) /var/db/i2pd
+@dir(%%USER%%,%%GROUP%%,755) /var/log/i2pd
+@dir(%%USER%%,%%GROUP%%,755) /var/run/i2pd

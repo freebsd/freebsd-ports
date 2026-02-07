@@ -1,0 +1,3 @@
+0W-httpd is lightweight http server, that supports different
+enchancements, such as kqueue and sendfile for operations.
+0W-httpd runs as a single process.

@@ -1,0 +1,6 @@
+%%SITE_PERL%%/DNS/Zone.pm
+%%SITE_PERL%%/DNS/Zone/File.pm
+%%SITE_PERL%%/DNS/Zone/File/Default.pm
+%%SITE_PERL%%/DNS/Zone/Label.pm
+%%SITE_PERL%%/DNS/Zone/Record.pm
+%%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Math::Complex.3.gz
+%%PERL5_MAN3%%/Math::Trig.3.gz
+%%SITE_PERL%%/Math/Complex.pm
+%%SITE_PERL%%/Math/Trig.pm

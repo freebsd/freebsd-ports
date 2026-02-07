@@ -1,0 +1,4 @@
+Vortex is a near real time IDS and network surveillance engine for TCP stream
+data. Vortex decouples packet capture, stream reassembly, and real time
+constraints from analysis. Vortex is used to provide TCP stream data to a
+separate analyzer program.

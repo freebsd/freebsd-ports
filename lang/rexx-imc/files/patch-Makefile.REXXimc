@@ -1,0 +1,46 @@
+--- Makefile.REXXimc.orig	1999-02-11 15:05:44 UTC
++++ Makefile.REXXimc
+@@ -1,7 +1,7 @@
+ #Makefile for REXX/imc
+ 
+ SO = librexx.so
+-SONAME= $(SO).$(VER)
++SONAME= $(SO).2
+ 
+ DATE = -DDAY=$(RXDAY) -DMONTH=$(RXMONTH) -DYEAR=$(RXYEAR)
+ 
+@@ -35,11 +35,13 @@ install-pgm: all
+ 
+ install-fn: $(MATH)
+ 	$(VERBOSE) "install-fn:"
+-	test -f rxmathfn.rxfn && cp -p rxmathfn.rxfn $(SRC)/rxmathfn.rxlib $(REXXLIBDIR) \
+-	|| cp -p $(SRC)/rxmathfn.rexx $(SRC)/rxmathfn.rxlib $(REXXLIBDIR)
++	test -f rxmathfn.rxfn  && \
++	cp -p rxmathfn.rxfn $(SRC)/rxmathfn.rxlib $(PREFIX)/lib || \
++	cp -p $(SRC)/rxmathfn.rexx $(SRC)/rxmathfn.rxlib $(PREFIX)/lib
+ 
+ install-man: rexx.1
+ 	$(VERBOSE) "install-man:"
++	mkdir -p $(MANDIR)
+ 	cp -p rexx.1 $(SRC)/rxque.1 $(SRC)/rxstack.1 $(MANDIR)
+ 
+ uninstall: uninstall-pgm uninstall-fn uninstall-man
+@@ -69,8 +71,7 @@ $(LIBDIR)/$(SONAME): $(LIBFILES)
+ 
+ $(LIBDIR)/$(SO): $(LIBDIR)/$(SONAME)
+ 	$(VERBOSE) "$(LIBDIR)/$(SO):"
+-	rm -f $(LIBDIR)/$(SO)
+-	ln -s $(SONAME) $(LIBDIR)/$(SO)
++	ln -sf $(SONAME) $(LIBDIR)/$(SO)
+ 
+ $(LIBDIR)/librexx.a: $(LIBFILES)
+ 	$(VERBOSE) "$(LIBDIR)/librexx.a:"
+@@ -143,7 +144,7 @@ interface.o: $(SRC)/interface.c $(HFILES)
+ rxmathfn.rxfn: $(SRC)/rxmathfn.c $(SRC)/const.h $(SRC)/functions.h
+ 	$(VERBOSE) "rxmathfn.rxfn:"
+ 	$(CC) $(OPTFLAG) $(CCFLAG) -c $(PIC) -I$(SRC) $(SRC)/rxmathfn.c
+-	$(LD) $(SOFLAG) -o rxmathfn.rxfn rxmathfn.o -lm
++	$(LD) $(SOFLAG) -o rxmathfn.rxfn rxmathfn.o -L/usr/lib -lm
+ 	@rm rxmathfn.o
+ 
+ # If the source is in the current directory, this rule can be used.

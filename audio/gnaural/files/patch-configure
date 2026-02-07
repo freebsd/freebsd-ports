@@ -1,0 +1,11 @@
+--- configure.orig	2011-05-25 22:38:21 UTC
++++ configure
+@@ -7642,7 +7642,7 @@ case $host in
+ esac
+ 
+ #do pkgconfig stuff:
+-pkg_modules="gtk+-2.0 >= 2.0.0 gthread-2.0 sndfile >= 1.0.2 portaudio-2.0 >= 19"
++pkg_modules="portaudio-2.0 >= 19 gtk+-2.0 >= 2.0.0 gthread-2.0 sndfile >= 1.0.2"
+ 
+ 
+ 

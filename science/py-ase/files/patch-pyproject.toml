@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-09-06 00:22:04 UTC
++++ pyproject.toml
+@@ -7,8 +7,6 @@ readme = 'README.rst'
+ description='Atomic Simulation Environment'
+ dynamic = ['version']
+ readme = 'README.rst'
+-license = 'LGPL-2.1-or-later'
+-license-files = ['LICENSE']
+ maintainers = [{ name = 'ASE Community', email = 'ase-users@listserv.fysik.dtu.dk' }]
+ classifiers = [
+     'Development Status :: 6 - Mature',

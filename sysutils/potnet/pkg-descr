@@ -1,0 +1,5 @@
+potnet provides several features to manage the public-bridge and the
+private-bridge network types, like IPs allocation, network segmentation, IP
+validation and so on.
+
+potcpu provides features to manage the cpuset based CPU allocation.

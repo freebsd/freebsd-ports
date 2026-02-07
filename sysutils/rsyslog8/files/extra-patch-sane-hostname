@@ -1,0 +1,40 @@
+--- ./tools/syslogd.c.orig	2010-05-04 19:02:05.548362478 -0400
++++ ./tools/syslogd.c	2010-05-04 19:02:27.452450741 -0400
+@@ -2611,37 +2611,6 @@
+ 	net.getLocalHostname(&LocalFQDNName);
+ 	CHKmalloc(LocalHostName = (uchar*) strdup((char*)LocalFQDNName));
+ 	glbl.SetLocalFQDNName(LocalFQDNName); /* set the FQDN before we modify it */
+-	if((p = (uchar*)strchr((char*)LocalHostName, '.'))) {
+-		*p++ = '\0';
+-		LocalDomain = p;
+-	} else {
+-		LocalDomain = (uchar*)"";
+-
+-		/* It's not clearly defined whether gethostname()
+-		 * should return the simple hostname or the fqdn. A
+-		 * good piece of software should be aware of both and
+-		 * we want to distribute good software.  Joey
+-		 *
+-		 * Good software also always checks its return values...
+-		 * If syslogd starts up before DNS is up & /etc/hosts
+-		 * doesn't have LocalHostName listed, gethostbyname will
+-		 * return NULL. 
+-		 */
+-		/* TODO: gethostbyname() is not thread-safe, but replacing it is
+-		 * not urgent as we do not run on multiple threads here. rgerhards, 2007-09-25
+-		 */
+-		hent = gethostbyname((char*)LocalHostName);
+-		if(hent) {
+-			free(LocalHostName);
+-			CHKmalloc(LocalHostName = (uchar*)strdup(hent->h_name));
+-				
+-			if((p = (uchar*)strchr((char*)LocalHostName, '.')))
+-			{
+-				*p++ = '\0';
+-				LocalDomain = p;
+-			}
+-		}
+-	}
+ 
+ 	/* Convert to lower case to recognize the correct domain laterly */
+ 	for(p = LocalDomain ; *p ; p++)

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/GOST.pm
+%%SITE_ARCH%%/auto/Crypt/GOST/GOST.so
+%%PERL5_MAN3%%/Crypt::GOST.3.gz

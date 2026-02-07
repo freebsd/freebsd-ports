@@ -1,0 +1,15 @@
+Many JavaScript implementations do not warn against questionable coding
+practices. Yes, that's nice for the site that "works best with Internet
+Explorer" (designed with templates, scripted with snippets copied from
+forums). But it's a nightmare when you actually want to write quality,
+maintainable code.
+
+That's where JavaScript Lint comes in. With JavaScript Lint, you can
+check all your JavaScript source code for common mistakes without actually
+running the script or opening the web page.
+
+JavaScript Lint holds an advantage over competing lints because it is
+based on the JavaScript engine for the Firefox browser. This provides
+a robust framework that can not only check JavaScript syntax but also
+examine the coding techniques used in the script and warn against
+questionable practices.

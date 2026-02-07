@@ -1,0 +1,4 @@
+%%SITE_PERL%%/What.pm
+%%SITE_PERL%%/What/MTA.pm
+%%PERL5_MAN3%%/What.3.gz
+%%PERL5_MAN3%%/What::MTA.3.gz

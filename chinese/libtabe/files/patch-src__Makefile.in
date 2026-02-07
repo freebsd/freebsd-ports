@@ -1,0 +1,16 @@
+--- ./src/Makefile.in.orig	2014-05-19 15:26:42.836106845 +0800
++++ ./src/Makefile.in	2014-05-19 15:27:25.010111107 +0800
+@@ -98,9 +98,9 @@
+ 	for i in @build_supports@; do cd supports/$$i; $(MAKE) distclean; done
+ 
+ install: all
+-	if [ ! -d $(libdir) ]; then $(INSTALL) -d $(libdir); fi
+-	if [ ! -d $(includedir) ]; then $(INSTALL) -d $(includedir); fi
+-	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIBNAME) $(libdir)
+-	$(INSTALL_DATA) $(INCLUDES) $(includedir)
++	if [ ! -d $(DESTDIR)$(libdir) ]; then $(INSTALL) -d $(DESTDIR)$(libdir); fi
++	if [ ! -d $(DESTDIR)$(includedir) ]; then $(INSTALL) -d $(DESTDIR)$(includedir); fi
++	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIBNAME) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(INCLUDES) $(DESTDIR)$(includedir)
+ 	for i in @build_supports@; do cd supports/$$i; $(MAKE) install; done
+ 

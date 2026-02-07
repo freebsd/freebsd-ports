@@ -1,0 +1,12 @@
+--- loggerplugins/TSTLogger/Makefile.orig	2024-11-14 11:50:43 UTC
++++ loggerplugins/TSTLogger/Makefile
+@@ -96,6 +96,9 @@ install: $(SHARED_LIB) $(SHARED_LIB_RT2) $(SHARED_LIB_
+ 	@echo Doing nothing...
+ 
+ install: $(SHARED_LIB) $(SHARED_LIB_RT2) $(SHARED_LIB_PARALLEL) $(SHARED_LIB_PARALLEL_RT2)
++ifeq ($(DEBUG), no)
++	$(STRIP) $(SHARED_LIB)* $(SHARED_LIB_RT2)* $(SHARED_LIB_PARALLEL)* $(SHARED_LIB_PARALLEL_RT2)*
++endif
+ 	mkdir -p $(LIB_DIR)
+ 	cp $(SHARED_LIB)* $(SHARED_LIB_RT2)* $(SHARED_LIB_PARALLEL)* $(SHARED_LIB_PARALLEL_RT2)* $(LIB_DIR)
+ 

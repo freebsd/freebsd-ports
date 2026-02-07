@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: freeswitch
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# freeswitch_enable (bool):	Set to NO by default.
+#				Set it to YES to enable freeswitch.
+
+. /etc/rc.subr
+
+name=freeswitch
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${freeswitch_enable:="NO"}
+: ${freeswitch_username:=freeswitch}
+: ${freeswitch_groupname:=freeswitch}
+
+command=%%PREFIX%%/bin/freeswitch
+
+command_args="-nc -u ${freeswitch_username} -g ${freeswitch_groupname}"
+
+run_rc_command "$1"

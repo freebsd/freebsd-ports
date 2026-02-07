@@ -1,0 +1,32 @@
+--- vm/Makefile.orig	2003-08-21 01:23:17 UTC
++++ vm/Makefile
+@@ -19,8 +19,8 @@
+ #LDASMOPT		= -lasm
+ 
+ # Uncommant that to use libreadline
+-#READLNOPT		= -DUSE_READLN
+-#LDREADLNOPT		= -lreadline -ltermcap
++READLNOPT		= -DUSE_READLN
++LDREADLNOPT		= -lreadline -lncurses
+ 
+ 
+ # End of configurable Makefile
+@@ -36,15 +36,15 @@ SRC			= grammar.c disasm.c dyn.c hdr.c m
+ OBJ			= $(SRC:.c=.o)
+ SRC_DYN			= elfsh_etdyn.c
+ OBJ_DYN			= $(SRC_DYN:.c=.o)
+-CC			= gcc
++CC			?= gcc
+ RM			= rm -f
+ NAME			= elfsh
+ 
+-CFLAGS			= -rdynamic -fPIC -g3 -O2 -Wall -Iinclude \
++CFLAGS			+= -rdynamic -fPIC -g3 -Wall -Iinclude \
+ 			-I../libhash/include/ -I../libelfsh/include/ \
+ 			-DELFSH_INTERN $(DLOPT) $(ASMOPT) $(READLNOPT)
+ 
+-LDFLAGS			= -L../libelfsh/ -lelfsh -L../libhash/ -lhashelfsh \
++LDFLAGS			+= -L../libelfsh/ -lelfsh -L../libhash/ -lhashelfsh \
+ 			-rdynamic -g3 $(LDASMOPT) $(LDREADLNOPT) $(DLOPT)\
+ 			$(EXTRAOPT)
+ 

@@ -1,0 +1,24 @@
+https://gitlab.com/entangle/entangle/-/commit/54795d275a93
+
+src/meson.build:42:5: ERROR: Function does not take positional arguments.
+
+--- src/meson.build.orig	2017-10-10 21:07:59 UTC
++++ src/meson.build
+@@ -40,7 +40,7 @@ entangle = executable(
+ desktop = 'entangle.desktop'
+ 
+ i18n.merge_file (
+-  desktop,
++  data_dirs: desktop,
+   type: 'desktop',
+   input: desktop + '.in',
+   output: desktop,
+@@ -52,7 +52,7 @@ i18n.merge_file (
+ appdata = 'entangle.appdata.xml'
+ 
+ i18n.merge_file(
+-  appdata,
++  data_dirs: appdata,
+   input: appdata + '.in',
+   output: appdata,
+   install: true,

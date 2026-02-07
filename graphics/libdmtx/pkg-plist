@@ -1,0 +1,7 @@
+include/dmtx.h
+lib/libdmtx.a
+lib/libdmtx.so
+lib/libdmtx.so.0
+lib/libdmtx.so.0.0.0
+libdata/pkgconfig/libdmtx.pc
+share/man/man3/libdmtx.3.gz

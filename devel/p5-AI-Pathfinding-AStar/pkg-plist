@@ -1,0 +1,3 @@
+%%PERL5_MAN3%%/AI::Pathfinding::AStar.3.gz
+%%SITE_PERL%%/AI/Pathfinding/AStar.pm
+%%SITE_PERL%%/AI/Pathfinding/AStar/AStarNode.pm

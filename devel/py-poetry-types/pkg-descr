@@ -1,0 +1,5 @@
+poetry-types is a plugin to poetry for the poetry plugin feature. It
+installs/removes/updates typing stubs via following commands:
+- poetry types add <package names>
+- poetry types remove <package names>
+- poetry types update <package names>

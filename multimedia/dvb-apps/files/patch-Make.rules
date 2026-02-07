@@ -1,0 +1,20 @@
+--- Make.rules.orig	2014-03-21 19:26:36 UTC
++++ Make.rules
+@@ -46,7 +46,7 @@ ifeq ($(V),1)
+ %: %.c
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -MMD $(LDFLAGS) -o $@ $< $(filter-out %.h %.c,$^) $(LOADLIBES) $(LDLIBS)
+ %.so:
+-	$(CC) -shared -o $@ $^
++	$(CC) -shared -Wl,-soname,$@ -o $@ $^
+ %.a:
+ 	$(AR) rcs $@ $^
+ clean::
+@@ -76,7 +76,7 @@ else
+ 	@$(CC) $(CPPFLAGS) $(CFLAGS) -MMD $(LDFLAGS) -o $@ $< $(filter-out %.h %.c,$^) $(LOADLIBES) $(LDLIBS)
+ %.so:
+ 	@echo CC $@
+-	@$(CC) -shared -o $@ $^
++	@$(CC) -shared -Wl,-soname,$@ -o $@ $^
+ %.a:
+ 	@echo AR $@
+ 	@$(AR) rcs $@ $^

@@ -1,0 +1,278 @@
+##
+## GLOBAL OPTIONS
+##
+
+# listen-address: address[:port][(domain)|/regex/][;tls-options] ...
+# most basic syntax; listen on every interface on default port:
+listen-address: 0.0.0.0
+# or perhaps you want to enable SSL using
+# the certificate /usr/local/etc/tpop3d-cert:
+#listen-address: 0.0.0.0;tls=stls,/usr/local/etc/tpop3d-cert
+
+# maximum number of connections to serve at any given time [default: 16]
+#max-children: 16
+
+# append-domain: (yes|true)
+# Fall back onto authenticating with username@domain if required, where
+# domain is the domain name associated with the address on which the
+# connection was received [default: no]
+#append-domain: true
+
+# strip-domain: (yes|true)
+# Fall back onto authenticating with username only if username@domain is
+# supplied and fails to authenticate. [default: no]
+#strip-domain: true
+
+# apop-only: (yes|true)
+# Disconnect  any client which sends a USER command: [default: no]
+#apop-only: true
+
+# timeout-seconds: number
+# Number of seconds for which a connection may be idle before it is closed.
+# The RFC requires 600. [default: 30]
+timeout-seconds: 600
+
+# log-facility: facility
+# The  `facility'  as which tpop3d emits system log messages.
+#log-facility: mail
+
+# log-stderr: (yes|true)
+# Send  log  messages to standard error as well as the system log.
+#log-stderr: true
+
+# no-detach: (yes|true)
+# Do  not  detach  from  controlling terminal.
+#no-detach: true
+
+# mailbox: [mailbox-driver:]path-spec ...
+# Selects the location, and optionally the type, of the mailbox to use when
+# a user is authenticated.
+mailbox: bsd:/var/mail/$(user)
+
+# mailspool-index: path-spec
+# Selects the location of metadata cache files for BSD mailspools
+# tpop3d needs to be able to create files in your mailspool path for this;
+# alternatively change the path specified. [default: no index]
+#mailspool-index: $(name).tpop3d-index
+
+# maildir-exclusive-lock: (yes|true)
+# Indicates that tpop3d should attempt to lock maildirs for exclusive access
+# [default: no]
+#maildir-exclusive-lock: true
+
+# tcp-wrappers-name: name
+# Selects the `daemon name' used by tpop3d with TCP Wrappers [default: tpop3d]
+#tcp-wrappers-name: tpop3d
+
+# whoson-enable: (yes|true)
+# Enable notification of successful logins to a WHOSON server as defined
+# in /etc/whoson.conf. [default: no]
+#whoson-enable: true
+
+# tls-no-bug-workarounds: (yes|true)
+# Disable workarounds for various bugs in client TLS implementations
+#tls-no-bug-workarounds: true
+
+
+##
+## AUTHENTICATOR OPTIONS
+##
+
+## GLOBAL AUTHENTICATOR OPTIONS
+# permit-empty-password: (yes|true)
+# Users may log in with an empty password. [default: no]
+#permit-empty-password: true
+
+# onlogin-child-wait: (yes|true)
+# If the authenticator offers an `onlogin' action, the user's mailbox won't
+# be opened until after the onlogin action completes. See manpage for info.
+#onlogin-child-wait: true
+
+
+## PAM authentication options
+# auth-pam-enable: (yes|true)
+# nable authentication using Pluggable Authentication Modules.
+auth-pam-enable: yes
+
+# auth-pam-facility: facility
+# Sets the PAM facility name used by tpop3d [default: tpop3d]
+#auth-pam-facility: tpop3d
+
+# auth-pam-mail-group: (group-name | gid)
+# The  group  name or gid under which access to the mailspool will take
+# place. [default: gid of authenticated user]
+auth-pam-mail-group: mail
+
+# auth-pam-mail-user:  (user-name | uid)
+# Names a local user whose credentials are used for users without local accounts
+#auth-pam-mail-user: mailnull
+
+
+## Password authentication options
+# auth-passwd-enable: (yes|true)
+# Enable authentication using /etc/passwd.
+#auth-passwd-enable: true
+
+# auth-passwd-mail-group: (group-name | gid)
+# The group name or gid under which access to the mailspool will take place.
+#auth-passwd-mail-group: mail
+
+
+## MySQL authentication options
+# auth-mysql-enable: (yes | true)
+# Enable MySQL authentication.
+#auth-mysql-enable: true
+
+# auth-mysql-mail-group: (group-name | gid)
+# The group name or gid under which access to the mailspool will take place.
+# [default: group of user associated with virtualdomain]
+#auth-mysql-mail-group: mail
+
+# auth-mysql-hostname: hostname [[hostname] hostname] ..
+# Host on which to connect to MySQL. Tried in order until a working host is
+# found. [default: localhost]
+#auth-mysql-hostname: localhost
+
+# auth-mysql-database: database
+# MySQL database to use for authentication.
+#auth-mysql-database: mail
+
+# auth-mysql-username: username
+# MySQL username used to access the database.
+#auth-mysql-username: mail
+
+# auth-mysql-password: password
+# Password of MySQL user
+# auth-mysql-password: s3cr3t
+
+# auth-mysql-pass-query: substitution string
+# Query template to use for USER/PASS authentication.
+# Return mailpath, password, userid, mailspool type
+#auth-mysql-pass-query: SELECT mailpath, password, userid, spooltype...
+
+# auth-mysql-apop-query: substitution string
+# Query template to use for APOP authentication.
+# See auth-mysql-pass-query
+
+# auth-mysql-onlogin-query: substitution string
+# Query template to use for POP-before-SMTP operation.
+# See manpage.
+
+
+## Postgres authentication options
+# auth-pgsql-enable: (yes | true)
+# Enable Postgres authentication.
+#auth-pgsql-enable: true
+
+# These options are exactly the same as their MySQL counterparts.
+#auth-pgsql-username:
+#auth-pgsql-password:
+#auth-pgsql-database:
+#auth-pgsql-hostname:
+#auth-pgsql-pass-query:
+#auth-pgsql-apop-query:
+#auth-pgsql-onlogin-query:
+#auth-pgsql-mail-group:
+
+
+## LDAP authentication options
+## Please read the manpage for thorough details of these.
+# auth-ldap-enable: (yes | true)
+# Enable LDAP authentication.
+#auth-ldap-enable: true
+
+# auth-ldap-url: LDAP URL
+# LDAP URL indicating server against which to make authentication requests.
+#auth-ldap-url:
+
+# auth-ldap-searchdn: LDAP server username
+# DN to use when binding to LDAP server to search for a user.
+#auth-ldap-searchdn:
+
+# auth-ldap-password: LDAP server password
+# Password of search user.
+#auth-ldap-password:
+
+# auth-ldap-filter: substitution string
+# Filter template to use when searching for a user's account.
+#auth-ldap-filter:
+
+# auth-ldap-scope: (subtree|base|onelevel)
+# Scope of LDAP searches. If not specified, the default is `sub-tree'
+#auth-ldap-scope:
+
+# auth-ldap-mailbox: [mailbox-driver:]path-spec ...
+#  User mailbox location, as described above.
+
+# auth-ldap-mailbox-attr: attribute name
+# auth-ldap-mboxtype-attr: attribute name
+# LDAP attributes which contains the name of a user's mailbox, and its type
+
+# auth-ldap-mail-user: (user-name | uid)
+# auth-ldap-mail-group: (group-name | gid)
+# User and group under which access to the mailbox will take place
+
+# auth-ldap-mail-user-attr: attribute name
+# auth-ldap-mail-group-attr: attribute name
+
+
+## Flat file authentication options
+# auth-flatfile-enable: (yes | true)
+# Enable flat file authentication.
+#auth-flatfile-enable: yes
+
+# auth-flatfile-passwd-file: substitution string
+# Specify the file in which tpop3d will search for a user's password
+#auth-flatfile-passwd-file: /usr/local/etc/tpop3d/passwd
+
+# auth-flatfile-mail-user: (user-name | uid)
+# auth-flatfile-mail-group: (group-name | gid)
+# User and group under which  access to the mailbox will take place
+
+## External program (`other') authentication options
+# auth-other-enable: (yes | true)
+# Enable external program authentication.
+#auth-other-enable: true
+
+# auth-other-program: path
+# Program to use for external authentication
+#auth-other-program: /usr/local/sbin/..
+
+# auth-other-user: (user-name | uid)
+# auth-other-group: (group-name | gid)
+# The user and group under which to run the authentication program
+
+# auth-other-timeout: time
+# The timeout in seconds for authentication [default: 0.75]
+#auth-other-timeout: 0.75
+
+
+## Perl authentication options
+# auth-perl-enable: (yes | true)
+# Enable authentication via an embedded perl interpreter.
+#auth-perl-enable: true
+
+# auth-perl-start: perl code
+# Specify a line of perl code to be executed at startup
+#auth-perl-start: do '/usr/local/etc/tpop3d/tpop3d.pl'
+
+# auth-perl-finish: perl code
+# Specify a line of perl code to be executed when the authentication driver
+# is shut down
+#auth-perl-finish:
+
+# auth-perl-apop: subroutine name
+# Specify  the name of a perl subroutine which will be called when
+# a request for APOP authentication is received.
+#auth-perl-apop:
+
+# auth-perl-pass: subroutine name
+# Specify the name of a perl subroutine which will be called when
+# a request for USER/PASS authentication is received.
+#auth-perl-pass:
+
+# auth-perl-onlogin: subroutine name
+# Specify the name of a perl subroutine which will be called after
+# a successful login for POP-before-SMTP operation.
+#auth-perl-onlogin:
+

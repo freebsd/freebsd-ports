@@ -1,0 +1,23 @@
+https://github.com/gnunn1/tilix/pull/2074
+https://github.com/gnunn1/tilix/pull/2081
+
+--- data/meson.build.orig	2023-04-22 01:48:27 UTC
++++ data/meson.build
+@@ -32,7 +32,8 @@ endif
+ 
+ # Merge release information into MetaInfo file
+ tilix_metainfo_name = '@0@.appdata.xml'.format(project_id)
+-appstreamcli = find_program('appstreamcli')
++appstreamcli = find_program('appstreamcli', required: false)
++if appstreamcli.found()
+ metainfo_with_releases = custom_target('metainfo-news-merge',
+     input : ['../NEWS', 'metainfo/@0@.in'.format(tilix_metainfo_name)],
+     output : ['untranslated-@0@.appdata.xml'.format(project_id)],
+@@ -49,7 +50,6 @@ metainfo_file = i18n.merge_file(
+ )
+ 
+ # Validate MetaInfo file
+-if appstreamcli.found()
+   test (
+     'Validate metainfo file',
+     appstreamcli,

@@ -1,0 +1,37 @@
+#
+# This is parsed as a key=value file
+#
+
+#Port for FastCGI requests
+FASTCGI_PORT=55413
+
+#Enable internal HTTP server
+HTTP_SERVER="true"
+
+#Port for the web interface
+#(if internal HTTP server is enabled)
+HTTP_PORT=55414
+
+#Log file name
+#If you change the LOGFILE, you should also change the "logfilename" in %%PREFIX%%/etc/newsyslog.conf.d/urbackupsrv.conf 
+LOGFILE="/var/log/urbackup.log"
+
+#Either debug,warn,info or error
+LOGLEVEL="warn"
+
+#Temporary file directory
+# -- this may get very large depending on the advanced settings
+DAEMON_TMPDIR="/tmp"
+
+#Tmp file directory for sqlite temporary tables.
+#You might want to put the databases on another filesystem than the other temporary files.
+#Default is the same as DAEMON_TMPDIR
+SQLITE_TMPDIR=""
+
+#Interfaces from which to send broadcasts. (Default: all).
+#Comma separated -- e.g. "eth0,eth1"
+BROADCAST_INTERFACES=""
+
+#User the urbackupsrv process runs as
+#If you change the USER, you should also change the "[owner:group]" in %%PREFIX%%/etc/newsyslog.conf.d/urbackupsrv.conf
+USER="urbackup"

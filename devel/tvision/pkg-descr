@@ -1,0 +1,7 @@
+A modern port of Turbo Vision 2.0, the classical framework
+for text-based user interfaces. Now cross-platform and with
+Unicode support.
+
+Note that this project has no stable releases for the time
+being. If you are a developer, try to stick to the latest
+commit and report any issues you find while upgrading.

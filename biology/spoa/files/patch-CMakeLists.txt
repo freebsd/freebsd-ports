@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2025-11-05 03:44:04 UTC
++++ CMakeLists.txt
+@@ -32,13 +32,6 @@ option(spoa_generate_dispatch "Use SIMDe to generate x
+ option(spoa_use_simde_openmp "Use SIMDe support for OpenMP SIMD" OFF)
+ option(spoa_generate_dispatch "Use SIMDe to generate x86 dispatch" OFF)
+ 
+-if (NOT spoa_generate_dispatch)
+-  if (spoa_optimize_for_portability)
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4.1")
+-  elseif (spoa_optimize_for_native)
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+-  endif ()
+-endif ()
+ if (spoa_use_simde OR
+     spoa_use_simde_nonvec OR
+     spoa_use_simde_openmp OR

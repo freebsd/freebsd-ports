@@ -1,0 +1,16 @@
+--- lib/Makefile.am.orig	2021-11-02 19:21:38 UTC
++++ lib/Makefile.am
+@@ -11,11 +11,11 @@ include_HEADERS = paper.h
+ EXTRA_DIST = paperspecs
+ 
+ paperspecs.h: paperspecs Makefile
+-	echo '    /* This file has been automaticaly generated.' >$@
++	echo '    /* This file has been automatically generated.' >$@
+ 	echo '       Edit paperspecs to make changes to the papers specifications. */' >>$@
+ 	echo >>$@
+ 	env LANG=C LC_ALL=C awk '{ factor = 1.0; \
+ 	       if ($$4 == "mm") factor = 72.0 / 25.4; \
+ 	       if ($$4 == "in") factor = 72.0; \
+ 	       printf("    { \"%s\", %5f, %5f },\n", \
+-		      $$1, $$2 * factor, $$3 * factor); }' < $< >> $@
++		      $$1, $$2 * factor, $$3 * factor); }' < paperspecs >> $@

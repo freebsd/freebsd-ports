@@ -1,0 +1,11 @@
+Snd is a sound editor modeled loosely after Emacs and an old, sorely-missed
+PDP-10 sound editor named Dpysnd.  It can accommodate any number of sounds,
+each with any number of channels, and can be customized and extended using
+Guile, Ruby or Forth.
+
+Included with it are some command-line utilities:
+- snd-info (note:  renamed from sndinfo, for this FreeBSD port) prints a
+  description of a sound file.
+- sndplay plays a sound file.
+- sndrecord records sound from a microphone.
+- audinfo describes the current state of the audio hardware.

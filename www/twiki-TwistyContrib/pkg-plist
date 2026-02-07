@@ -1,0 +1,10 @@
+%%TWDIR%%/data/TWiki/TwistyContrib.txt
+%%TWDIR%%/lib/TWiki/Contrib/TwistyContrib.pm
+%%TWDIR%%/lib/TWiki/Contrib/TwistyContrib/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/TwistyContrib/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/TwistyContrib/build.pl
+%%TWDIR%%/pub/TWiki/TwistyContrib/twist.compressed.js
+%%TWDIR%%/pub/TWiki/TwistyContrib/twist.compressed_src.js
+%%TWDIR%%/pub/TWiki/TwistyContrib/twist.css
+%%TWDIR%%/pub/TWiki/TwistyContrib/twist.js
+%%TWDIR%%/pub/TWiki/TwistyContrib/twist_src.js

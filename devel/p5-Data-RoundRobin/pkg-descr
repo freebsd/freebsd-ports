@@ -1,0 +1,4 @@
+This module provides a round robin object implementation. It is similar
+to an iterator, only the internal counter is reset to the beginning
+whenever it reaches the end. It might also be considered as a circular
+iterator.

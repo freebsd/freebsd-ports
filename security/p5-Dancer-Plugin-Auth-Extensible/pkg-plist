@@ -1,0 +1,13 @@
+bin/generate-crypted-password
+%%PERL5_MAN3%%/Dancer::Plugin::Auth::Extensible.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Auth::Extensible::Provider::Base.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Auth::Extensible::Provider::Config.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Auth::Extensible::Provider::Database.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Auth::Extensible::Provider::Example.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Auth::Extensible::Provider::Unix.3.gz
+%%SITE_PERL%%/Dancer/Plugin/Auth/Extensible.pm
+%%SITE_PERL%%/Dancer/Plugin/Auth/Extensible/Provider/Base.pm
+%%SITE_PERL%%/Dancer/Plugin/Auth/Extensible/Provider/Config.pm
+%%SITE_PERL%%/Dancer/Plugin/Auth/Extensible/Provider/Database.pm
+%%SITE_PERL%%/Dancer/Plugin/Auth/Extensible/Provider/Example.pm
+%%SITE_PERL%%/Dancer/Plugin/Auth/Extensible/Provider/Unix.pm

@@ -1,0 +1,21 @@
+--- toplevel/Makefile.orig	2020-11-09 16:22:09 UTC
++++ toplevel/Makefile
+@@ -1,6 +1,8 @@
+ OCAMLC=ocamlc
+ OCAMLDEP=ocamldep
+ OCAMLFIND=ocamlfind
++INSTALL_DATA=install -m 644
++INSTALL_DIR=install -d
+ 
+ CAMLCFLAGS=-I ../src -I +compiler-libs \
+            -w +a-4-9-41-42-44-45-48 -warn-error A \
+@@ -25,7 +27,8 @@ VERSION=$(shell sed -ne 's/^ *version *: *"\([^"]*\)".
+ 
+ install:
+ 	sed -e 's/%%VERSION%%/$(VERSION)/g' META.in > META
+-	$(OCAMLFIND) install num-top META $(TOINSTALL)
++	$(INSTALL_DIR) $(OCAMLFIND_DESTDIR)/num-top
++	$(INSTALL_DATA) META $(TOINSTALL) $(OCAMLFIND_DESTDIR)/num-top
+ 	rm -f META
+ 
+ uninstall:

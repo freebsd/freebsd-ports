@@ -1,0 +1,9 @@
+PROG=	dht-example
+MAN=
+
+LDADD=	-L. -ldht -lcrypt -lmd
+BINDIR=	${STAGEDIR}${PREFIX}/bin
+
+WARNS=	3
+
+.include <bsd.prog.mk>

@@ -1,0 +1,4 @@
+YeahConsole is a terminal wrapper for creating drop-down consoles, similar
+to those found in games like Quake.
+
+By default, YeahConsole is activated and hidden with Ctrl+Alt+Y.

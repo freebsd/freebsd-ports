@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/HTTPD/Bench/ApacheBench.pm
+%%SITE_ARCH%%/HTTPD/Bench/ApacheBench/Regression.pm
+%%SITE_ARCH%%/HTTPD/Bench/ApacheBench/Run.pm
+%%SITE_ARCH%%/auto/HTTPD/Bench/ApacheBench/ApacheBench.so
+%%PERL5_MAN3%%/HTTPD::Bench::ApacheBench.3.gz

@@ -1,0 +1,14 @@
+--- client/Makefile.orig	2009-06-28 18:40:28 UTC
++++ client/Makefile
+@@ -8,7 +8,7 @@
+ 	rm -f SymuxClient.cat3p
+ 
+ install: SymuxClient.pm SymuxClient.cat3p getsymonitem.pl
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${CLIENTDIR}
+-	${INSTALL} -c -m 555 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} getsymonitem.pl      ${PREFIX}/${CLIENTDIR}/
+-	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} SymuxClient.pm       ${PREFIX}/${CLIENTDIR}/
+-	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} SymuxClient.cat3p    ${PREFIX}/${CLIENTDIR}/SymuxClient.0
++	${INSTALL} -d -m 755 ${PREFIX}/${CLIENTDIR}
++	${INSTALL} -c -m 555 getsymonitem.pl      ${PREFIX}/${CLIENTDIR}/
++	${INSTALL} -c -m 444 SymuxClient.pm       ${PREFIX}/${CLIENTDIR}/
++	${INSTALL} -c -m 444 SymuxClient.cat3p    ${PREFIX}/${CLIENTDIR}/SymuxClient.0

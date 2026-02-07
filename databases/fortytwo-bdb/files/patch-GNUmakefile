@@ -1,0 +1,22 @@
+--- GNUmakefile.orig	Wed Aug 30 13:05:48 2006
++++ GNUmakefile	Wed Nov 29 11:44:31 2006
+@@ -6,15 +6,15 @@
+ 
+ # if this line fails then copy config.properties.template to config.properties
+ # and modify the copied version appropriately
+-include config.properties
++#include config.properties
+ 
+ FRAMEWORK_NAME=BDB
+ VERSION=0.1
+ 
+-ADDITIONAL_INCLUDE_DIRS=\
+-  -I$(DBROOT)/include
++#ADDITIONAL_INCLUDE_DIRS=\
++#  -I$(DBROOT)/include
+ 
+-ADDITIONAL_LIB_DIRS=-L$(DBROOT)/lib
++#ADDITIONAL_LIB_DIRS=-L$(DBROOT)/lib
+ 
+ #BDB_OBJC_LIBS +=Encore 
+ 

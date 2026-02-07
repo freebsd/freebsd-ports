@@ -1,0 +1,3 @@
+The haystack-experimental package provides Haystack users with access to
+experimental features without immediately committing to their official release.
+The main goal is to gather user feedback and iterate on new features quickly.

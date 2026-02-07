@@ -1,0 +1,11 @@
+--- doc/reference/Makefile.in.orig	2021-11-13 05:59:58 UTC
++++ doc/reference/Makefile.in
+@@ -1840,7 +1840,7 @@ html-build.stamp: sgml.stamp $(DOC_MAIN_SGML_FILE) $(c
+ 	  test -f $(abs_builddir)/$$file && cp $(abs_builddir)/$$file $(abs_builddir)/html; \
+ 	  test -f $$file && cp $$file $(abs_builddir)/html; \
+ 	done;
+-	$(GTK_DOC_V_XREF)gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html --html-dir=$(HTML_DIR) $(FIXXREF_OPTIONS)
++	cd "$(abs_srcdir)" && $(GTK_DOC_V_XREF)gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html --html-dir=$(HTML_DIR) $(FIXXREF_OPTIONS)
+ 	$(AM_V_at)touch html-build.stamp
+ 
+ pdf-build.stamp: sgml.stamp $(DOC_MAIN_SGML_FILE) $(content_files) $(expand_content_files)

@@ -1,0 +1,6 @@
+It takes an array of data as input and pages it according to various parameters.
+
+It also builds links within a specified range, and allows complete customization
+of the output (it even works with front controllers and mod_rewrite).
+
+Two operating modes available: "Jumping" and "Sliding" window style.

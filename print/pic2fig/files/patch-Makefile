@@ -1,0 +1,21 @@
+--- Makefile.orig	Mon Apr 29 10:11:02 1991
++++ Makefile	Wed Apr  3 10:27:14 2002
+@@ -1,7 +1,7 @@
+ BINDIR	=	/usr/local/bin
+-CFLAGS	=	-O4 -s $(CROSS)
++#CFLAGS	=	-O4 -s $(CROSS)
+ #LDFLAGS=	-zs
+-LDFLAGS=	-z $(CROSS)
++#LDFLAGS=	-z $(CROSS)
+ YFLAGS	=	-d
+ 
+ MOFILES = main.o boxgen.o print.o misc.o symtab.o blockgen.o circgen.o  \
+@@ -29,7 +29,7 @@
+ 	-@echo ""
+ 
+ pic2fig: picy.o picl.o $(OFILES)
+-	cc $(LDFLAGS) -o $@ picy.o picl.o $(OFILES) -lm
++	$(CC) $(LDFLAGS) -o $@ picy.o picl.o $(OFILES) -lm
+ 
+ # The following .o files depend of picy.c, since they really need picy.h
+ picl.o:		picl.c pic.h picy.c

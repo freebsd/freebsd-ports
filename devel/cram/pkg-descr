@@ -1,0 +1,3 @@
+Cram is a functional testing framework for command line applications. Cram
+tests look like snippets of interactive shell sessions. Cram runs each command
+and compares the command output in the test with the command's actual output.

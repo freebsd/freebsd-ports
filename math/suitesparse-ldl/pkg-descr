@@ -1,0 +1,10 @@
+This port installs the module LDL of SuiteSparse.
+
+LDL is a sparse LDL' factorization and solve package.
+
+These routines are not terrifically fast (they do not use dense matrix kernels),
+but the code is very short and concise. The purpose is to illustrate the
+algorithms in a very concise and readable manner, primarily for educational
+purposes. Although the code is very concise, this package is slightly faster
+than the built-in sparse Cholesky factorization in MATLAB 6.5 (chol), when
+using the same input permutation.

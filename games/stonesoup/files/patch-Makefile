@@ -1,0 +1,40 @@
+--- Makefile.orig	2025-05-02 16:11:38 UTC
++++ Makefile
+@@ -131,7 +131,7 @@ STDFLAG = -std=c++11
+ # Which C++ standard to support
+ STDFLAG = -std=c++11
+ 
+-CFOTHERS := -pipe $(EXTERNAL_FLAGS)
++CFOTHERS := $(EXTERNAL_FLAGS)
+ # Build with FORCE_SSE=y to get better seed stability on 32 bit x86 builds. It
+ # is not recommended to do this unless you are building with contrib lua.
+ # On any 64bit  builds where the arch supports it, (at least) sse2 is implied.
+@@ -156,10 +156,6 @@ DEFINES := $(EXTERNAL_DEFINES)
+ 
+ DEFINES := $(EXTERNAL_DEFINES)
+ 
+-ifndef ANDROID
+-LDFLAGS :=
+-endif
+-
+ #
+ # The GCC and GXX variables are set later.
+ #
+@@ -511,7 +507,7 @@ endif
+ 
+ # Attempt to use a full compiler name, to make
+ # distcc builds work nicely.
+-LMACH := $(shell gcc -dumpmachine)-
++LMACH := $(shell $(FORCE_CC) -dumpmachine)-
+ ifeq ($(LMACH),-)
+ LMACH :=
+ endif
+@@ -882,7 +878,7 @@ ifdef NO_OPTIMIZE
+ DEFINES += -DWIZARD
+ endif
+ ifdef NO_OPTIMIZE
+-CFOPTIMIZE  := -O0
++CFOPTIMIZE  :=
+ endif
+ 
+ ifdef PCH

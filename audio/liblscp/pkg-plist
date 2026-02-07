@@ -1,0 +1,10 @@
+include/lscp/client.h
+include/lscp/device.h
+include/lscp/event.h
+include/lscp/socket.h
+include/lscp/thread.h
+include/lscp/version.h
+lib/liblscp.so
+lib/liblscp.so.6
+lib/liblscp.so.6.0.6
+libdata/pkgconfig/lscp.pc

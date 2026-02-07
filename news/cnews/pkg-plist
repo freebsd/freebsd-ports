@@ -1,0 +1,177 @@
+bin/checknews
+bin/cnewsdo
+bin/inews
+bin/injnews
+bin/postnews
+bin/readnews
+include/dbz.h
+lib/libcnews.a
+share/man/man1/checknews.1cn.gz
+share/man/man1/inews.1cn.gz
+share/man/man1/postnews.1cn.gz
+share/man/man1/readnews.1cn.gz
+share/man/man5/controlperm.5.gz
+share/man/man5/news.5.gz
+share/man/man5/newsctl.5.gz
+share/man/man5/newsdb.5.gz
+share/man/man5/newsoverview.5.gz
+share/man/man5/newssys.5.gz
+share/man/man8/cnewsdo.8cn.gz
+share/man/man8/expire.8cn.gz
+share/man/man8/explode.8cn.gz
+share/man/man8/mergeactive.8.gz
+share/man/man8/mkhistory.8cn.gz
+share/man/man8/newsaux.8cn.gz
+share/man/man8/newsbatch.8cn.gz
+share/man/man8/newsmail.8cn.gz
+share/man/man8/newsmaint.8cn.gz
+share/man/man8/newsoverview.8.gz
+share/man/man8/relaynews.8cn.gz
+share/man/man8/report.8cn.gz
+share/man/man8/rnews.8cn.gz
+%%NEWSBIN%%/batch/batchcheck
+%%NEWSBIN%%/batch/batcher
+%%NEWSBIN%%/batch/batchih
+%%NEWSBIN%%/batch/batchra
+%%NEWSBIN%%/batch/batchsm
+%%NEWSBIN%%/batch/batchsplit
+%%NEWSBIN%%/batch/batchsplitter
+%%NEWSBIN%%/batch/bencode
+%%NEWSBIN%%/batch/bpfind
+%%NEWSBIN%%/batch/c7encode
+%%NEWSBIN%%/batch/compcun
+%%NEWSBIN%%/batch/nencode
+%%NEWSBIN%%/batch/sendbatches
+%%NEWSBIN%%/batch/usenntpxmit
+%%NEWSBIN%%/batch/viainews
+%%NEWSBIN%%/batch/viamail
+%%NEWSBIN%%/batch/viarsh
+%%NEWSBIN%%/batch/viauux
+%%NEWSBIN%%/canonhdr
+%%NEWSBIN%%/canonsys.awk
+%%NEWSBIN%%/ctime
+%%NEWSBIN%%/ctl/checkgroups
+%%NEWSBIN%%/ctl/newgroup
+%%NEWSBIN%%/ctl/rmgroup
+%%NEWSBIN%%/ctl/sendsys
+%%NEWSBIN%%/ctl/version
+%%NEWSBIN%%/dbz
+%%NEWSBIN%%/dbzinfo
+%%NEWSBIN%%/decompressors/bdecode
+%%NEWSBIN%%/decompressors/bunzip2
+%%NEWSBIN%%/decompressors/c7decode
+%%NEWSBIN%%/decompressors/gunzip
+%%NEWSBIN%%/dospacefor
+%%NEWSBIN%%/expire/doexpire
+%%NEWSBIN%%/expire/expire
+%%NEWSBIN%%/expire/expireiflow
+%%NEWSBIN%%/expire/upact
+%%NEWSBIN%%/getabsdate
+%%NEWSBIN%%/gngp
+%%NEWSBIN%%/inject/actflag
+%%NEWSBIN%%/inject/defaults
+%%NEWSBIN%%/inject/defhdrs.awk
+%%NEWSBIN%%/inject/inews
+%%NEWSBIN%%/inject/injnews
+%%NEWSBIN%%/inject/lines
+%%NEWSBIN%%/inject/modroute
+%%NEWSBIN%%/inject/pnews
+%%NEWSBIN%%/inject/postnews
+%%NEWSBIN%%/inject/tear
+%%NEWSBIN%%/input/bdecode
+%%NEWSBIN%%/input/bunzip2
+%%NEWSBIN%%/input/c7decode
+%%NEWSBIN%%/input/cunbatch
+%%NEWSBIN%%/input/newsrun
+%%NEWSBIN%%/input/newsrunning
+@(news,news,6555) %%NEWSBIN%%/input/newsspool
+%%NEWSBIN%%/input/recenews
+%%NEWSBIN%%/input/recpnews
+%%NEWSBIN%%/input/rnews
+%%NEWSBIN%%/lock
+%%NEWSBIN%%/maint/act.to.times
+%%NEWSBIN%%/maint/adddirs
+%%NEWSBIN%%/maint/addgroup
+%%NEWSBIN%%/maint/addmissing
+%%NEWSBIN%%/maint/badexpiry
+%%NEWSBIN%%/maint/checkactive
+%%NEWSBIN%%/maint/delgroup
+%%NEWSBIN%%/maint/histdups
+%%NEWSBIN%%/maint/histfrom
+%%NEWSBIN%%/maint/histinfo
+%%NEWSBIN%%/maint/locknews
+%%NEWSBIN%%/maint/logroll
+%%NEWSBIN%%/maint/mergeactive
+%%NEWSBIN%%/maint/mkhistory
+%%NEWSBIN%%/maint/newsboot
+%%NEWSBIN%%/maint/newsdaily
+%%NEWSBIN%%/maint/newsflag
+%%NEWSBIN%%/maint/newsfrom
+%%NEWSBIN%%/maint/newshist
+%%NEWSBIN%%/maint/newswatch
+%%NEWSBIN%%/maint/spaceshort
+%%NEWSBIN%%/mkpdir
+%%NEWSBIN%%/namecheck.awk
+%%NEWSBIN%%/newshostname
+%%NEWSBIN%%/newslock
+%%NEWSBIN%%/nov/domkov
+%%NEWSBIN%%/nov/expov
+%%NEWSBIN%%/nov/expovguts
+%%NEWSBIN%%/nov/initov
+%%NEWSBIN%%/nov/mkov
+%%NEWSBIN%%/nov/ovsplit
+%%NEWSBIN%%/now
+%%NEWSBIN%%/queuelen
+%%NEWSBIN%%/relay/delsendsys
+%%NEWSBIN%%/relay/delversion
+%%NEWSBIN%%/relay/dodelayed
+%%NEWSBIN%%/relay/doexplode
+%%NEWSBIN%%/relay/explode
+%%NEWSBIN%%/relay/newsreply
+%%NEWSBIN%%/relay/relaynews
+%%NEWSBIN%%/relay/relayrun
+%%NEWSBIN%%/report
+%%NEWSBIN%%/sizeof
+%%NEWSBIN%%/spacefor
+%%NEWSBIN%%/staleness
+%%NEWSBIN%%/touchlock
+%%NEWSBIN%%/unlock
+%%NEWSBIN%%/pgpverify
+%%NEWSBIN%%/config
+@owner news
+@group news
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/active %%VARBASE%%/%%NEWSCTL%%/active
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/active.times %%VARBASE%%/%%NEWSCTL%%/active.times
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/batchparms %%VARBASE%%/%%NEWSCTL%%/batchparms
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/controlperm %%VARBASE%%/%%NEWSCTL%%/controlperm
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/explist %%VARBASE%%/%%NEWSCTL%%/explist
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/history %%VARBASE%%/%%NEWSCTL%%/history
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/history.dir %%VARBASE%%/%%NEWSCTL%%/history.dir
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/history.pag %%VARBASE%%/%%NEWSCTL%%/history.pag
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/inews %%VARBASE%%/%%NEWSCTL%%/inews
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/mailname %%VARBASE%%/%%NEWSCTL%%/mailname
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/mailpaths %%VARBASE%%/%%NEWSCTL%%/mailpaths
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/organization %%VARBASE%%/%%NEWSCTL%%/organization
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/postdefltgroup %%VARBASE%%/%%NEWSCTL%%/postdefltgroup
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/readnews.ctl %%VARBASE%%/%%NEWSCTL%%/readnews.ctl
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/readnews.help %%VARBASE%%/%%NEWSCTL%%/readnews.help
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/report.ctl %%VARBASE%%/%%NEWSCTL%%/report.ctl
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/sys %%VARBASE%%/%%NEWSCTL%%/sys
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/versionname %%VARBASE%%/%%NEWSCTL%%/versionname
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/whoami %%VARBASE%%/%%NEWSCTL%%/whoami
+@dir %%VARBASE%%/%%NEWSARTS%%/out.nntp
+@dir %%VARBASE%%/%%NEWSARTS%%/out.master
+@dir %%VARBASE%%/%%NEWSARTS%%/out.going
+@dir %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
+@dir %%VARBASE%%/%%NEWSARTS%%/news/announce
+@dir %%VARBASE%%/%%NEWSARTS%%/news
+@dir %%VARBASE%%/%%NEWSARTS%%/junk
+@dir %%VARBASE%%/%%NEWSARTS%%/in.coming/bad
+@dir(,,775) %%VARBASE%%/%%NEWSARTS%%/in.coming
+@dir %%VARBASE%%/%%NEWSARTS%%/control
+@dir %%VARBASE%%/%%NEWSARTS%%
+@dir %%VARBASE%%/%%NEWSOV%%
+@dir %%VARBASE%%/%%NEWSCTL%%
+@owner
+@group
+@dir %%VARBASE%%/%%NEWSCTLBASE%%

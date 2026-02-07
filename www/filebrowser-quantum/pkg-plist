@@ -1,0 +1,4 @@
+@dir(%%USER%%,%%GROUP%%,0700) /var/db/filebrowser-quantum
+@dir(%%USER%%,%%GROUP%%,0700) %%WWWDIR%%
+@sample(,%%GROUP%%,0640) etc/filebrowser-quantum.yaml.sample
+bin/filebrowser-quantum

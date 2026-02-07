@@ -1,0 +1,12 @@
+PEFS is a kernel level stacked cryptographic filesystem for FreeBSD.
+
+Key features:
+* Transparently runs on top of existing file systems
+* Random per file tweak value for encryption
+* Stores metadata only in encrypted file name
+* Arbitrary number of keys per file system, mixing keys in same
+  directory and key chains
+* Modern cryptographic algorithms: AES and Camellia in XTS mode,
+  PKCS#5v2 and HKDF for key generation.
+
+See also: https://github.com/freebsd-pefs/pefs

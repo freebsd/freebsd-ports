@@ -1,0 +1,9 @@
+# logfilename			[owner:group]	mode	count	size	when	flags	[/pid_file]			[sig_num]
+/var/log/netdata/access.log	netdata:netdata	644	7	100	*	-	/var/db/netdata/netdata.pid
+/var/log/netdata/collector.log	netdata:netdata	644	7	100	*	-	/var/db/netdata/netdata.pid
+/var/log/netdata/daemon.log	netdata:netdata	644	7	100	*	-	/var/db/netdata/netdata.pid
+/var/log/netdata/debug.log	netdata:netdata	644	7	100	*	-	/var/db/netdata/netdata.pid
+/var/log/netdata/error.log	netdata:netdata	644	7	100	*	-	/var/db/netdata/netdata.pid
+/var/log/netdata/health.log	netdata:netdata	644	7	100	*	-	/var/db/netdata/netdata.pid
+
+# EOF

@@ -1,0 +1,8 @@
+--- pixmaps/flags/Makefile.am.orig	2025-12-31 17:02:12 UTC
++++ pixmaps/flags/Makefile.am
+@@ -1,4 +1,4 @@
+-grisbi_pixmaps_flagsdir = $(datadir)/pixmaps/$(PACKAGE)/flags
++grisbi_pixmaps_flagsdir = $(pkgdatadir)/pixmaps/flags
+ 
+ grisbi_pixmaps_flags_DATA = ADP.png AED.png AFN.png ALL.png AMD.png	\
+ ANG.png ARS.png ATS.png AUD.png AWG.png AZM.png BAM.png BBD.png		\

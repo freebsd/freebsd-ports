@@ -1,0 +1,18 @@
+# Permissions
+
+A normal user has to be member of the _lldpd group in order to run lldpcli.
+
+## Notes on lldpd_flags
+
+Though lldpd_flags is not required to launch lldpd, remember that without 
+a specified "-I" option lldpd will be listening on _all_ physical interfaces.
+
+Short examples:
+
+  * Listen only on em0 and enable CDP:
+	lldpd_flags="-I em0 -c"
+  * Listen on all interfaces, except em0:
+	lldpd_flags="-I *,!em0"
+
+An allowlisted interface beats a blocklisted interface which beats a simple
+matched interface. See lldpd(8), which contains the complete documentation.

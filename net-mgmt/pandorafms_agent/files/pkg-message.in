@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Pandora FMS agent has been installed
+
+To setup Pandora FMS agent, you may have to edit
+%%ETCDIR%%/pandora_agent.conf
+to suit your needs.
+
+To start Pandora FMS agent at boot time, put following
+line in your /etc/rc.conf or /etc/rc.conf.local:
+
+  pandora_agent_enable="YES"
+EOM
+}
+]

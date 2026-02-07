@@ -1,0 +1,2 @@
+Rose::DB::Object is a base class for objects that encapsulate a single row in a
+database table.

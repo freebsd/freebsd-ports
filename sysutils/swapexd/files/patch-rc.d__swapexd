@@ -1,0 +1,46 @@
+--- ./rc.d/swapexd.orig	2011-04-26 18:37:13.000000000 +0200
++++ ./rc.d/swapexd	2011-04-27 12:49:43.900653110 +0200
+@@ -7,37 +7,16 @@
+ . /etc/rc.subr
+ 
+ name="swapexd"
+-	rcvar=`set_rcvar`
+-
+-stop_cmd="swapexd_stop"
+-start_cmd="swapexd_start"
+-
+-load_rc_config $name
++rcvar=swapexd_enable
+ 
+ : ${swapexd_enable=NO}
+ 
+-swapexd_start()
+-{
+-        if [ -e "/var/run/swapexd.pid" ]
+-        then
+-          echo "swapexd already running?"
+-          swapexd_stop
+-        fi
+-
+-        echo "Starting swapexd..."
+-        (/usr/local/sbin/swapexd -d -p >/dev/null 2>/dev/null) &
+-}
++procname="%%PREFIX%%/sbin/swapexd"
++command="/usr/sbin/daemon"
++pidfile="/var/run/swapexd.pid"
++command_args="-f -p ${pidfile} ${procname} -d -p"
+ 
+-swapexd_stop()
+-{
+-        echo "Stoping swapexd..."
+-        if [ -e "/var/run/swapexd.pid" ]
+-        then
+-          PID=`cat /var/run/swapexd.pid`
+-          kill -9 $PID
+-          rm /var/run/swapexd.pid
+-        fi        
+-}
++load_rc_config $name
+ 
+ run_rc_command "$1"
+ 

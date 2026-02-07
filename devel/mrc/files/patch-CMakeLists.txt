@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-05-26 08:12:33 UTC
++++ CMakeLists.txt
+@@ -100,7 +100,7 @@ endif()
+ 	endif()
+ endif()
+ 
+-install(TARGETS mrc)
++#install(DIRECTORY example DESTINATION share/examples/mrc)
+ 
+ if(WIN32)
+ 	install(FILES cmake/mrc-config.cmake DESTINATION cmake)

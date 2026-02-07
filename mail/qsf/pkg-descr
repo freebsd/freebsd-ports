@@ -1,0 +1,4 @@
+Quick Spam Filter (qsf) is a small, fast spam filter that works by learning
+to recognise the words that are more likely to appear in spam than non-spam.
+It is intended to be used in a procmail recipe to mark email as being
+possible spam.

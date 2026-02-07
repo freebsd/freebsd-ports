@@ -1,0 +1,3 @@
+CAF is an open source implementation of the actor model for C++ featuring
+lightweight & fast actor implementations, pattern matching for messages,
+network transparent messaging, and more.

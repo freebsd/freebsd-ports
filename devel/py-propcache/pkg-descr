@@ -1,0 +1,6 @@
+propcache provides a fast implementation of cached properties for Python.
+
+The API is designed to be nearly identical to the built-in
+functools.cached_property class, except for the additional under_cached_property
+class which uses self._cache instead of self.__dict__ to store the cached values
+and prevents __set__ from being called.

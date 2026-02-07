@@ -1,0 +1,15 @@
+--- doc/macchanger.texi	2014-01-01 19:10:25.000000000 +0200
++++ doc/macchanger.texi	2014-10-26 02:00:01.000000000 +0300
+@@ -138,12 +138,6 @@
+ @cindex @code{--random}
+ Set fully random MAC address: Any kind and any vendor.
+ 
+-@item -p
+-@cindex @code{-p}
+-@itemx --permanent
+-@cindex @code{--permanent}
+-Reset MAC address to its original, permanent hardware value.
+-
+ @item -l
+ @cindex @code{-l}
+ @itemx --list[=@var{keyword}]

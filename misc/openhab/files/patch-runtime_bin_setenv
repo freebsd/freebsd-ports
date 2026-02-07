@@ -1,0 +1,12 @@
+--- runtime/bin/setenv.orig	2018-12-17 01:24:37 UTC
++++ runtime/bin/setenv
+@@ -139,6 +139,9 @@ locateJava() {
+     if [ "x${JAVA}" = "x" ] && [ -r /etc/gentoo-release ] ; then
+         JAVA_HOME=$(java-config --jre-home)
+     fi
++    if [ "x$JAVA_HOME" = "x" ]; then
++        eval $(env JAVAVM_DRYRUN=true %%LOCALBASE%%/bin/java | grep JAVA_HOME)
++    fi
+     if [ "x${JAVA}" = "x" ]; then
+         if [ "x${JAVA_HOME}" != "x" ]; then
+             if [ ! -d "${JAVA_HOME}" ]; then

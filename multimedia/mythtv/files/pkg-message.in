@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+MythTV has now been installed, but it still needs to be configured.
+
+1.  To create the database, use the following command:
+
+	mysql -uroot -p < %%DATADIR%%/database/mc.sql
+
+2.  Next, run mythtv-setup.
+
+See https://www.mythtv.org/docs/ for more information.
+
+MythTV requires tuner drivers supporting the V4L standard.
+MythTV works with HDHomeRun and V4L DVB Compatibility:
+see https://wiki.freebsd.org/WebcamCompat for more information.
+EOM
+}
+]

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: bnetd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable bnetd:
+#
+# bnetd_enable="YES"
+# bnetd_flags="<set as needed>"
+#
+# See bnetd(1) for flags
+#
+
+. /etc/rc.subr
+
+name=bnetd
+rcvar=bnetd_enable
+
+command=%%PREFIX%%/sbin/bnetd
+pidfile=/var/run/pvpgn/bnetd.pid
+required_files=%%PREFIX%%/etc/pvpgn/bnetd.conf
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+load_rc_config $name
+
+: ${bnetd_enable="NO"}
+
+run_rc_command "$1"

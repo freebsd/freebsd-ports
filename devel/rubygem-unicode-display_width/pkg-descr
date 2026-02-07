@@ -1,0 +1,3 @@
+An early draft of a way to determine the size of the characters using
+EastAsianWidth.txt, based on the very early draft of a Ruby interface to
+UnicodeData.txt by runpaint.

@@ -1,0 +1,93 @@
+[
+{ type: install
+  message: <<EOM
+Wazuh Manager was installed
+
+1) Copy /etc/locatime to /var/ossec/etc directory
+
+   # cp /etc/localtime /var/ossec/etc
+
+2) You must edit /var/ossec/etc/ossec.conf.sample for your setup and rename/copy
+   it to ossec.conf.
+
+   Take a look wazuh manager configuration at the following url:
+
+   https://documentation.wazuh.com/current/user-manual/manager/index.html
+
+3) Move /var/ossec/etc/client.keys.sample to /var/ossec/etc/client.keys. This
+   file is used to store all agents credentials connected to wazuh-manager
+
+   # mv /var/ossec/etc/client.keys.sample /var/ossec/etc/client.keys
+
+4) You can find additional useful files installed at
+
+  # /var/ossec/packages_files/manager_installation_scripts
+
+5) Do not forget generate auth certificate
+
+  # openssl req -x509 -batch -nodes -days 365 -newkey rsa:2048 \
+	-subj "/C=US/ST=California/CN=Wazuh/" \
+	-keyout /var/ossec/etc/sslmanager.key -out /var/ossec/etc/sslmanager.cert
+  # chmod 640 /var/ossec/etc/sslmanager.key
+  # chmod 640 /var/ossec/etc/sslmanager.cert
+
+6) FreeBSD rules, decoders and SCA files are installed by default. For more
+   information about updates take a look at:
+
+   https://github.com/alonsobsd/wazuh-freebsd
+ 
+   Decoders and rules are used to extract some /var/log/userlog and 
+   /var/log/messages entries from FreeBSD agents. It is necessary add a localfile
+   entry to /var/ossec/etc/ossec.conf
+
+  <localfile>
+    <log_format>syslog</log_format>
+    <location>/var/log/userlog</location>
+  </localfile>
+
+7) Vulnerability detector and Indexer connector are disabled by default. If you
+   want to use them, don't forget to configure and enable them from 
+   /var/ossec/etc/ossec.conf file. Also, you will need download vd database file
+   to Wazuh tmp directory.
+
+  # cd /var/ossec/tmp && fetch http://packages.wazuh.com/deps/vulnerability_model_database/vd_1.0.0_vd_4.13.0.tar.xz
+  # chmod 640 /var/ossec/tmp/vd_1.0.0_vd_4.13.0.tar.xz
+  # chown wazuh:wazuh /var/ossec/tmp/vd_1.0.0_vd_4.13.0.tar.xz
+
+  Take on mind, a valid certificate is necessary to connect Indexer connector
+  (Wazuh manager) to Wazuh indexer (OpenSearch).
+
+8) Save Wazuh indexer username and password into the Wazuh keystore.
+
+  # export WAZUH_HOME=/var/ossec
+  # echo '<INDEXER_USERNAME>' | /var/ossec/bin/wazuh-keystore -f indexer -k username
+  # echo '<INDEXER_PASSWORD>' | /var/ossec/bin/wazuh-keystore -f indexer -k password
+
+  By default, INDEXER_USERNAME and INDEXER_PASSWORD are admin and admin.
+
+9) Use a certificate generated previously. For example, you can use logstash 
+   certificates. Otherwise, you can use a simplified certificates generator
+   script for this task. Download it from the following url:
+
+   https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz
+
+10) The sysctl 'kern.hostuuid' is used as a serial number. If you are in a jail,
+    you should have at least started the 'hostid' rc script to uniquely identify
+    this device.
+  
+11) Add Wazuh manager to /etc/rc.conf
+
+  # sysrc wazuh_manager_enable="YES"
+
+  or
+  
+  # service wazuh-manager enable
+
+12) Start Wazuh manager
+
+  # service wazuh-manager start
+
+13) Enjoy it ;)
+EOM
+}
+]

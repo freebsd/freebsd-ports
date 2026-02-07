@@ -1,0 +1,8 @@
+%%SITE_PERL%%/DBIx/DataSource.pm
+%%SITE_PERL%%/DBIx/DataSource/Driver.pm
+%%SITE_PERL%%/DBIx/DataSource/mysql.pm
+%%SITE_PERL%%/DBIx/DataSource/Pg.pm
+%%PERL5_MAN3%%/DBIx::DataSource.3.gz
+%%PERL5_MAN3%%/DBIx::DataSource::Driver.3.gz
+%%PERL5_MAN3%%/DBIx::DataSource::mysql.3.gz
+%%PERL5_MAN3%%/DBIx::DataSource::Pg.3.gz

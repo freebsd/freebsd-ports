@@ -1,0 +1,6 @@
+include/tap.h
+lib/libtap.so
+lib/libtap.so.0
+lib/libtap.so.0.0.0
+libdata/pkgconfig/libtap.pc
+share/man/man3/tap.3.gz

@@ -1,0 +1,68 @@
+--- Makefile.orig	2005-03-18 16:20:31 UTC
++++ Makefile
+@@ -8,16 +8,20 @@ PROGRAMS=$(patsubst %.c,%$(EXT),$(wildcard *.c))
+ endif
+ 
+ PROGRAMS=$(patsubst %.c,%$(EXT),$(wildcard *.c))
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/share/man/man1
++LIBS=lnphost.a
+ 
+-all: $(PROGRAMS)
++BINDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/share/man/man1
++LIBDIR=${PREFIX}/lib
++INCDIR=${PREFIX}/include
+ 
++all: $(PROGRAMS) $(LIBS)
++
+ clean:
+-	make -C Docs clean
+-	rm -f *~ */*~
+-	rm -f $(patsubst %.c,%.o,$(wildcard Modules/*.c))
+-	rm -f $(patsubst %.c,%$(EXT),$(wildcard *.c))
++	${MAKE} -C Docs clean
++	${RM} -f *~ */*~
++	${RM} -f $(patsubst %.c,%.o,$(wildcard Modules/*.c))
++	${RM} -f $(patsubst %.c,%$(EXT),$(wildcard *.c))
+ 
+ needroot:
+ 	@if [ ! $$UID -eq 0 ]; then \
+@@ -25,22 +29,28 @@ needroot:
+ 	  exit 1; \
+ 	fi
+ 
+-install: all needroot
+-	make -C Docs all
+-	install -g root -o root -m 644 Docs/lnpdump.1.gz $(MANDIR)
+-	install -g root -o root -m 755 lnpdump$(EXT) $(BINDIR)
++install: all
++	${MAKE} -C Docs all
++	$(BSD_INSTALL_MAN) Docs/lnpdump.1 $(MANDIR)
++	$(BSD_INSTALL_PROGRAM) lnpdump$(EXT) $(BINDIR)
++	$(BSD_INSTALL_DATA) lnphost.a $(LIBDIR)
++	$(BSD_INSTALL_DATA) Include/lnphost.h $(INCDIR)
+ 
+-remove: needroot
+-	rm -f $(MANDIR)/lnpdump.1.gz
+-	rm -f $(BINDIR)/lnpdump$(EXT)
++remove:
++	${RM} -f $(MANDIR)/lnpdump.1.gz
++	${RM} -f $(BINDIR)/lnpdump$(EXT)
++	${RM} -f $(LIBDIR)/lnphost.a
++	${RM} -f $(INCDIR)/lnphost.h
+ 
+-lnpdump$(EXT): lnpdump.c Modules/getopt.o Modules/lnphost.o
++lnpdump$(EXT): lnpdump.c Modules/lnphost.o
+ 	$(CC) $(CFLAGS) -Wall -IInclude -o $@ $+ -lpthread
+ 
+ Modules/%.o: Modules/%.c Include/%.h
+ 	$(CC) $(CFLAGS) -Wall -IInclude -c -o $@ $<
+ 
+ 
+-posrecv$(EXT): posrecv.c Modules/getopt.o Modules/lnphost.o
++posrecv$(EXT): posrecv.c Modules/lnphost.o
+ 	$(CC) $(CFLAGS) -Wall -IInclude -o $@ $+ -lpthread
+ 
++lnphost.a: Modules/lnphost.o
++	$(AR) r lnphost.a Modules/lnphost.o

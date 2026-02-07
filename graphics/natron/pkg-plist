@@ -1,0 +1,8 @@
+bin/Natron
+bin/NatronRenderer
+bin/natron-python
+share/applications/fr.natron.Natron.desktop
+share/metainfo/fr.natron.Natron.appdata.xml
+share/mime/x-natron.xml
+share/pixmaps/natronIcon256_linux.png
+share/pixmaps/natronProjectIcon_linux.png

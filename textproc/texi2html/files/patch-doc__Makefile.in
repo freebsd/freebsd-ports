@@ -1,0 +1,15 @@
+Install into the proper directories.
+
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -162,8 +162,8 @@
+ #CLEANFILES = texi2html.ps texi2html.pdf texi2html.html \
+ #             texi2html.ascii
+ #
+-texinfodata = $(datadir)/texinfo
+-texinfohtmldir = $(texinfodata)/html
++texinfodata = $(datadir)/doc/texi2html
++texinfohtmldir = $(texinfodata)
+ texinfohtml_DATA = texi2html.html
+ 
+ # use the script out of the distribution NOT

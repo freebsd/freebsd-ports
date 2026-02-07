@@ -1,0 +1,121 @@
+bin/cBlorb
+bin/dumb-frotz
+bin/dumb-git
+bin/dumb-glulxe
+bin/i7
+bin/inform6
+bin/ni
+share/man/man6/i7.6.gz
+%%DATADIR%%/Internal/Templates/Vorple/zvm.min.js
+%%DATADIR%%/Internal/Templates/Vorple/vorple.parchment.min.js
+%%DATADIR%%/Internal/Templates/Vorple/vorple.css
+%%DATADIR%%/Internal/Templates/Vorple/soundmanager2.swf
+%%DATADIR%%/Internal/Templates/Vorple/(manifest).txt
+%%DATADIR%%/Internal/Templates/Standard/index.html
+%%DATADIR%%/Internal/Templates/Standard/source.html
+%%DATADIR%%/Internal/Templates/Standard/play.html
+%%DATADIR%%/Internal/Templates/Standard/style.css
+%%DATADIR%%/Internal/Templates/Classic/index.html
+%%DATADIR%%/Internal/Templates/Classic/source.html
+%%DATADIR%%/Internal/Templates/Quixe/quixe.min.js
+%%DATADIR%%/Internal/Templates/Quixe/glkote.css
+%%DATADIR%%/Internal/Templates/Quixe/waiting.gif
+%%DATADIR%%/Internal/Templates/Quixe/dialog.css
+%%DATADIR%%/Internal/Templates/Quixe/glkote.min.js
+%%DATADIR%%/Internal/Templates/Quixe/(manifest).txt
+%%DATADIR%%/Internal/Templates/Parchment/jquery.min.js
+%%DATADIR%%/Internal/Templates/Parchment/parchment.min.js
+%%DATADIR%%/Internal/Templates/Parchment/parchment.min.css
+%%DATADIR%%/Internal/Templates/Parchment/zvm.min.js
+%%DATADIR%%/Internal/Templates/Parchment/(manifest).txt
+%%DATADIR%%/Internal/Miscellany/definitions.html
+%%DATADIR%%/Internal/Miscellany/WinExtensionsModel.html
+%%DATADIR%%/Internal/Miscellany/WinExtensionFileModel.html
+%%DATADIR%%/Internal/Miscellany/Small Cover.jpg
+%%DATADIR%%/Internal/Miscellany/Postcard.pdf
+%%DATADIR%%/Internal/Miscellany/IntroductionToIF.pdf
+%%DATADIR%%/Internal/Miscellany/ExtensionsModel.html
+%%DATADIR%%/Internal/Miscellany/ExtensionFileModel.html
+%%DATADIR%%/Internal/Miscellany/DefaultCover.jpg
+%%DATADIR%%/Internal/Miscellany/Cover.jpg
+%%DATADIR%%/Internal/Miscellany/CblorbModel.html
+%%DATADIR%%/Internal/Languages/Swedish/flag.png
+%%DATADIR%%/Internal/Languages/Swedish/about.txt
+%%DATADIR%%/Internal/Languages/Spanish/flag.png
+%%DATADIR%%/Internal/Languages/Spanish/about.txt
+%%DATADIR%%/Internal/Languages/Italian/flag.png
+%%DATADIR%%/Internal/Languages/Italian/about.txt
+%%DATADIR%%/Internal/Languages/German/flag.png
+%%DATADIR%%/Internal/Languages/German/about.txt
+%%DATADIR%%/Internal/Languages/French/flag.png
+%%DATADIR%%/Internal/Languages/French/about.txt
+%%DATADIR%%/Internal/Languages/English/Syntax.preform
+%%DATADIR%%/Internal/Languages/English/flag.png
+%%DATADIR%%/Internal/Languages/English/about.txt
+%%DATADIR%%/Internal/I6T/ZMachine.i6t
+%%DATADIR%%/Internal/I6T/WorldModel.i6t
+%%DATADIR%%/Internal/I6T/Utilities.i6t
+%%DATADIR%%/Internal/I6T/UnicodeData.i6t
+%%DATADIR%%/Internal/I6T/Time.i6t
+%%DATADIR%%/Internal/I6T/Text.i6t
+%%DATADIR%%/Internal/I6T/Tests.i6t
+%%DATADIR%%/Internal/I6T/Tables.i6t
+%%DATADIR%%/Internal/I6T/StoredAction.i6t
+%%DATADIR%%/Internal/I6T/Sort.i6t
+%%DATADIR%%/Internal/I6T/Rulebooks.i6t
+%%DATADIR%%/Internal/I6T/Relations.i6t
+%%DATADIR%%/Internal/I6T/RelationKind.i6t
+%%DATADIR%%/Internal/I6T/RegExp.i6t
+%%DATADIR%%/Internal/I6T/RealNumber.i6t
+%%DATADIR%%/Internal/I6T/RTP.i6t
+%%DATADIR%%/Internal/I6T/Printing.i6t
+%%DATADIR%%/Internal/I6T/Parser.i6t
+%%DATADIR%%/Internal/I6T/Output.i6t
+%%DATADIR%%/Internal/I6T/OutOfWorld.i6t
+%%DATADIR%%/Internal/I6T/OrderOfPlay.i6t
+%%DATADIR%%/Internal/I6T/Number.i6t
+%%DATADIR%%/Internal/I6T/Main.i6t
+%%DATADIR%%/Internal/I6T/MStack.i6t
+%%DATADIR%%/Internal/I6T/Load-Times.i6t
+%%DATADIR%%/Internal/I6T/Load-Sounds.i6t
+%%DATADIR%%/Internal/I6T/Load-Scenes.i6t
+%%DATADIR%%/Internal/I6T/Load-Files.i6t
+%%DATADIR%%/Internal/I6T/Load-Figures.i6t
+%%DATADIR%%/Internal/I6T/Load-Core.i6t
+%%DATADIR%%/Internal/I6T/Load-Actions.i6t
+%%DATADIR%%/Internal/I6T/Lists.i6t
+%%DATADIR%%/Internal/I6T/ListWriter.i6t
+%%DATADIR%%/Internal/I6T/Light.i6t
+%%DATADIR%%/Internal/I6T/Language.i6t
+%%DATADIR%%/Internal/I6T/Introduction.i6t
+%%DATADIR%%/Internal/I6T/Glulx.i6t
+%%DATADIR%%/Internal/I6T/Flex.i6t
+%%DATADIR%%/Internal/I6T/FileIO.i6t
+%%DATADIR%%/Internal/I6T/Figures.i6t
+%%DATADIR%%/Internal/I6T/Definitions.i6t
+%%DATADIR%%/Internal/I6T/Combinations.i6t
+%%DATADIR%%/Internal/I6T/Chronology.i6t
+%%DATADIR%%/Internal/I6T/Char.i6t
+%%DATADIR%%/Internal/I6T/BlockValues.i6t
+%%DATADIR%%/Internal/I6T/Activities.i6t
+%%DATADIR%%/Internal/I6T/Actions.i6t
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Unicode Full Character Names.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Unicode Character Names.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Standard Rules.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Rideable Vehicles.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Metric Units.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/English Language.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Approximate Metric Units.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Skeleton Keys.i7x
+%%DATADIR%%/Internal/Extensions/Eric Eve/Epistemology.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Punctuation Removal.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Menus.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Locksmith.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Inanimate Listeners.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Glulx Text Effects.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Glulx Entry Points.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Complex Listing.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Glulx Image Centering.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Basic Help Menu.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Basic Screen Effects.i7x
+@dir %%DATADIR%%/Internal/Extensions/Reserved

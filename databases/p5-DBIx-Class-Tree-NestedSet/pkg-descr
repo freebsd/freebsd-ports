@@ -1,0 +1,5 @@
+This module provides methods for working with nested set trees.  The
+nested tree model is a way of representing hierarchical information in
+a database.  This takes a different approach to the Adjacency List
+implementation.  (see DBIx::Class::Tree::AdjacencyList which uses
+parent relationships in a recursive manner).

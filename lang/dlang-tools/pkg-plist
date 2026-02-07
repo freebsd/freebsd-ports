@@ -1,0 +1,11 @@
+bin/catdoc
+bin/changed
+bin/checkwhitespace
+bin/contributors
+bin/ddemangle
+bin/detab
+bin/dget
+bin/dustmite
+bin/rdmd
+bin/tolf
+share/man/man1/rdmd.1.gz

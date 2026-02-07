@@ -1,0 +1,11 @@
+--- bin/sun2mime.orig	1993-11-13 14:54:05 UTC
++++ bin/sun2mime
+@@ -11,7 +11,7 @@ if [ x$METAMAIL_TMPDIR = x ]; then
+ fi
+ TMPFILE=${METAMAIL_TMPDIR}/suntomime.$$
+ 
+-/bin/nawk '
++/usr/bin/awk '
+   BEGIN { printf("Content-type: multipart/mixed; boundary=--------\n\n")
+           RS=""; FS="\n"; mode="HEADER" }
+   mode == "HEADER" {

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Math/Prime/Util/GMP.pm
+%%SITE_ARCH%%/auto/Math/Prime/Util/GMP/GMP.so
+%%PERL5_MAN3%%/Math::Prime::Util::GMP.3.gz

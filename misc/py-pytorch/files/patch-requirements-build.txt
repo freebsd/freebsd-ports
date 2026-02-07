@@ -1,0 +1,15 @@
+--- requirements-build.txt.orig	2026-01-24 08:31:03 UTC
++++ requirements-build.txt
+@@ -1,7 +1,9 @@
+ # Build System requirements
+-setuptools>=70.1.0
+-cmake>=3.27
+-ninja
++# FreeBSD: patched to work with setuptools-63.1.0
++setuptools>=63.1.0
++# FreeBSD: cmake and ninja are provided as BUILD_DEPENDS
++# cmake>=3.27
++# ninja
+ numpy
+ packaging
+ pyyaml

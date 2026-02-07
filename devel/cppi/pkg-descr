@@ -1,0 +1,3 @@
+A tool to indent the C preprocessor directives to reflect their
+nesting and ensure that there is exactly one space character between
+each #if, #elif, #define directive and the following token.

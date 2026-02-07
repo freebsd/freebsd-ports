@@ -1,0 +1,7 @@
+bin/bip
+bin/bipmkpw
+share/man/man1/bip.1.gz
+share/man/man1/bipmkpw.1.gz
+share/man/man5/bip.conf.5.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bip.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bip.vim

@@ -1,0 +1,9 @@
+--- Cargo.toml.orig	2021-08-19 14:48:10 UTC
++++ Cargo.toml
+@@ -36,5 +36,5 @@ version = "0.9.0"
+ features = [ "v3_22" ]
+ 
+ [dependencies.gio]
+-version = ""
++version = "0.9.1"
+ features = [ "v2_44" ]

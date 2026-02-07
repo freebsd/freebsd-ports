@@ -1,0 +1,40 @@
+--- vendor/CMakeLists.txt.orig	2025-10-12 17:41:59 UTC
++++ vendor/CMakeLists.txt
+@@ -36,28 +36,31 @@ message(STATUS "==> concurrentqueue")
+ # concurrentqueue - https://github.com/cameron314/concurrentqueue
+ # - Not available as a vcpkg port
+ message(STATUS "==> concurrentqueue")
+-add_subdirectory(concurrentqueue EXCLUDE_FROM_ALL)
++find_package(concurrentqueue REQUIRED GLOBAL)
++add_library(concurrentqueue ALIAS concurrentqueue::concurrentqueue)
+ 
+ # dear ImGui - https://github.com/ocornut/imgui
+ # - Using the docking branch
+ message(STATUS "==> dear ImGui")
+-add_subdirectory(imgui EXCLUDE_FROM_ALL)
++find_package(imgui REQUIRED GLOBAL)
+ 
+ # xxHash - https://github.com/Cyan4973/xxHash
+ # - Unable to configure AVX2 support
+ message(STATUS "==> xxHash")
+-add_subdirectory(xxHash EXCLUDE_FROM_ALL)
++pkg_check_modules(libxxhash REQUIRED IMPORTED_TARGET GLOBAL libxxhash)
++add_library(xxHash::xxHash ALIAS PkgConfig::libxxhash)
+ 
+ # lz4 - https://github.com/lz4/lz4
+ # - Unable to configure AVX2 support
+ message(STATUS "==> lz4")
+-add_subdirectory(lz4 EXCLUDE_FROM_ALL)
++pkg_check_modules(liblz4 REQUIRED IMPORTED_TARGET GLOBAL liblz4)
++add_library(lz4::lz4 ALIAS PkgConfig::liblz4)
+ 
+ # libchdr - https://github.com/rtissera/libchdr
+ # - Not available as a vcpkg port
+ message(STATUS "==> libchdr")
+-set(BUILD_FUZZER OFF)
+-add_subdirectory(libchdr)
++pkg_check_modules(libchdr REQUIRED IMPORTED_TARGET GLOBAL libchdr)
++add_library(chdr-static ALIAS PkgConfig::libchdr)
+ 
+ # Place vendored library projects under a Vendored folder in Visual Studio solutions
+ if (MSVC)

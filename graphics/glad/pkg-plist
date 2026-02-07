@@ -1,0 +1,7 @@
+include/KHR/khrplatform.h
+include/glad/glad.h
+lib/cmake/glad/gladConfig.cmake
+lib/cmake/glad/gladConfigVersion.cmake
+lib/cmake/glad/gladTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/glad/gladTargets.cmake
+lib/libglad.so

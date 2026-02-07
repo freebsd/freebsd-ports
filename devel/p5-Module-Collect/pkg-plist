@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Module/Collect/Package.pm
+%%SITE_PERL%%/Module/Collect.pm
+%%PERL5_MAN3%%/Module::Collect.3.gz
+%%PERL5_MAN3%%/Module::Collect::Package.3.gz

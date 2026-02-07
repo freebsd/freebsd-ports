@@ -1,0 +1,16 @@
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__init__.py
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/builtins.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/builtins.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/lexer.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/lexer.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/style.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/style.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathics_pygments/builtins.py
+%%PYTHON_SITELIBDIR%%/mathics_pygments/data/mma-tables.json
+%%PYTHON_SITELIBDIR%%/mathics_pygments/lexer.py
+%%PYTHON_SITELIBDIR%%/mathics_pygments/style.py
+%%PYTHON_SITELIBDIR%%/mathics_pygments/version.py

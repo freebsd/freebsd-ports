@@ -1,0 +1,7 @@
+bin/oleo
+%%NLS%%share/locale/en/LC_MESSAGES/oleo.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/oleo.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/oleo.mo
+%%DATADIR%%/Oleo
+%%DATADIR%%/fr/Oleo
+%%DATADIR%%/nl/Oleo

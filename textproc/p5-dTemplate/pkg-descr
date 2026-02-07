@@ -1,0 +1,7 @@
+This module wants to be the most powerful general purpose
+templating system. It has a very clear and easy to learn
+syntax with the styling capabilities.
+
+All you need to use this: put $TEMPLATE_VARIABLE$ into
+your dTemplates, define them, and parse them. (You can
+write $ signs as $$).

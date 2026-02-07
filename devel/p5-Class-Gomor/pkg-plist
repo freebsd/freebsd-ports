@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Class/Gomor.pm
+%%SITE_PERL%%/Class/Gomor/Array.pm
+%%SITE_PERL%%/Class/Gomor/Hash.pm
+%%PERL5_MAN3%%/Class::Gomor.3.gz
+%%PERL5_MAN3%%/Class::Gomor::Hash.3.gz
+%%PERL5_MAN3%%/Class::Gomor::Array.3.gz

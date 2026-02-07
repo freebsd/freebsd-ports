@@ -1,0 +1,9 @@
+include/gwenhywfar5/gwen-gui-qt6/qt5_gui.hpp
+include/gwenhywfar5/gwen-gui-qt6/qt5_gui_dialog.hpp
+include/gwenhywfar5/gwen-gui-qt6/qt5dialogbox.hpp
+lib/cmake/gwengui-qt6-%%GWEN_MAJ_MIN_VER%%/gwengui-qt6-config-version.cmake
+lib/cmake/gwengui-qt6-%%GWEN_MAJ_MIN_VER%%/gwengui-qt6-config.cmake
+lib/libgwengui-qt6.so
+lib/libgwengui-qt6.so.%%GWEN_SHLIB_VER%%
+lib/libgwengui-qt6.so.%%GWEN_SHLIB_VER%%.%%GWEN_MIN_PATCH_VER%%
+libdata/pkgconfig/gwengui-qt6.pc

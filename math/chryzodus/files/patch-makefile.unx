@@ -1,0 +1,15 @@
+--- ./makefile.unx.orig	2004-06-29 17:16:38.000000000 +0200
++++ ./makefile.unx	2013-11-10 15:12:37.000000000 +0100
+@@ -5,9 +5,9 @@
+ # windows MinGW makefile               #
+ #--------------------------------------#
+ 
+-CXX = g++
+-CFLAGS = -Wall
+-LDFLAGS = -s -lstdc++ `allegro-config --libs`
++CXX ?= g++
++CFLAGS += -Wall `allegro-config --cflags`
++LDFLAGS += -s -lstdc++ `allegro-config --libs`
+ 
+ OBJECTS = main.o gui.o compute.o
+ 

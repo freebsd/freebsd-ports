@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/OpenSSL/PKCS10.pm
+%%SITE_ARCH%%/auto/Crypt/OpenSSL/PKCS10/PKCS10.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::PKCS10.3.gz

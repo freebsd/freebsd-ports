@@ -1,0 +1,10 @@
+--- tools/parse_flowfile/src/Makefile.old	Fri May 23 00:01:06 2003
++++ tools/parse_flowfile/src/Makefile	Fri May 23 00:01:20 2003
+@@ -16,4 +16,7 @@
+ all: $(TARGET) $(OBJS)
+ 
++install: $(TARGET) $(OBJS)
++	cp $(TARGET) $(PREFIX)/bin
++
+ clean:
+ 	rm -f *.o

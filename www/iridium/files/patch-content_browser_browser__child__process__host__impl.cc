@@ -1,0 +1,20 @@
+--- content/browser/browser_child_process_host_impl.cc.orig	2025-12-10 15:04:57 UTC
++++ content/browser/browser_child_process_host_impl.cc
+@@ -291,6 +291,8 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
+       switches::kIPCConnectionTimeout,
+       switches::kLogBestEffortTasks,
+       switches::kPerfettoDisableInterning,
++      switches::kDisableUnveil,
++      switches::kTrk,
+   };
+   cmd_line->CopySwitchesFrom(browser_command_line, kForwardSwitches);
+ 
+@@ -648,7 +650,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
+           ->child_process());
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   child_thread_type_switcher_.SetPid(process.Pid());
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+ 

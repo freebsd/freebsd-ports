@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+Notes:
+- picom(1) can use mac_priority(4) to avoid stutter during high load
+}
+]

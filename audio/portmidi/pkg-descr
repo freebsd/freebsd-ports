@@ -1,0 +1,4 @@
+PortMIDI is a cross platform (Windows, macOS, Linux, and BSDs which support
+alsalib) library for interfacing with operating systems' MIDI I/O APIs. It was
+started by Ross Bencina and Phil Burk, then maintained by Roger B. Dannenberg,
+and now maintained by the Mixxx DJ Software team.

@@ -1,0 +1,2 @@
+sdmon program reads out the health data of some industrial grade SD Cards and
+outputs the result in JSON format.

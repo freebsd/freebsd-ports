@@ -1,0 +1,18 @@
+--- build.xml.orig	2007-10-28 09:00:18.000000000 +0100
++++ build.xml	2007-10-28 09:00:37.000000000 +0100
+@@ -184,13 +184,13 @@
+            optimize    ="${compile.optimize}">
+       <classpath refid="compile.classpath"/>
+     </javac>
+-    <javac srcdir      ="${source.home}/examples"
++    <!--javac srcdir      ="${source.home}/examples"
+            destdir     ="${build.home}/examples"
+            debug       ="${compile.debug}"
+            deprecation ="${compile.deprecation}"
+            optimize    ="${compile.optimize}">
+       <classpath refid="compile.classpath"/>
+-    </javac>
++    </javac-->
+   </target>
+ 
+   <target name="compile.tests" depends="compile"

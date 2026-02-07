@@ -1,0 +1,13 @@
+bin/igal
+bin/igal2
+bin/igal2.sh
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/COPYING
+%%DATADIR%%/directoryline2.html
+%%DATADIR%%/igal2.css
+%%DATADIR%%/indextemplate2.html
+%%DATADIR%%/README
+%%DATADIR%%/slidemovtemplate2.html
+%%DATADIR%%/slidetemplate2.html
+%%DATADIR%%/tile.png
+share/man/man1/igal2.1.gz

@@ -1,0 +1,25 @@
+--- Makefile.orig	2004-01-05 00:30:50 UTC
++++ Makefile
+@@ -1,7 +1,6 @@
+-CC     = gcc
+-LIBDIR = -L/usr/X11R6/lib -L/usr/lib
++LIBDIR = -L${LOCALBASE}/lib
+ LIBS   = -lXpm -lXext -lX11 -lpthread `pkg-config --libs gtk+-2.0`
+-CFLAGS = `pkg-config --cflags gtk+-2.0`
++CFLAGS += `pkg-config --cflags gtk+-2.0`
+ 
+ OBJS =	wmtimer.o \
+ 	../wmgeneral/wmgeneral.o \
+@@ -10,10 +9,10 @@ OBJS =	wmtimer.o \
+ 
+ all: wmtimer
+ .c.o:
+-	$(CC) -g -c -O2 -Wall $< -o $*.o $(CFLAGS)
++	$(CC) -c $< -o $*.o $(CFLAGS)
+ 
+ wmtimer: $(OBJS)
+-	$(CC) -Wall -g -o wmtimer $^ $(LIBDIR) $(LIBS)
++	$(CC) -o wmtimer $^ $(LIBDIR) $(LIBS)
+ 
+ install:
+ 	cp wmtimer /usr/local/bin/

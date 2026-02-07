@@ -1,0 +1,9 @@
+--- src/LYCharSets.c	Sun Dec 18 17:52:30 2005
++++ src/LYCharSets.c	Mon Jul  2 16:10:40 2007
+@@ -871,5 +871,5 @@
+ UCode_t HTMLGetEntityUCValue(const char *name)
+ {
+-#include <entities.h>
++#include "chrtrans/entities.h"
+ 
+     UCode_t value = 0;

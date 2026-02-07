@@ -1,0 +1,2 @@
+This library provides a simple API for encoding and decoding dataclasses to and
+from JSON.

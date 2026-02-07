@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2016-11-22 17:45:10 UTC
++++ src/CMakeLists.txt
+@@ -54,6 +54,8 @@ qt5_add_resources(qcomicbook_res ../data/qcomicbook.qr
+ qt5_wrap_cpp(qcomicbook_moc_src ${qcomicbook_moc_hdrs})
+ qt5_wrap_ui(qcomicbook_ui_src ${qcomicbook_ui})
+ 
++link_directories(${POPPLER_LIBDIR})
++
+ ADD_EXECUTABLE(qcomicbook ${qcomicbook_src} ${qcomicbook_moc_src} ${qcomicbook_ui_src} ${qcomicbook_res})
+ ADD_DEPENDENCIES(qcomicbook translations)
+ TARGET_LINK_LIBRARIES(qcomicbook Qt5::Widgets Qt5::PrintSupport Qt5::X11Extras)

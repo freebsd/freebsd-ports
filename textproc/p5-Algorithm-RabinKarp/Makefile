@@ -1,0 +1,21 @@
+PORTNAME=	Algorithm-RabinKarp
+PORTVERSION=	0.41
+DISTVERSIONSUFFIX=	_1
+PORTREVISION=	2
+CATEGORIES=	textproc perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:NNUNLEY
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Rabin-Karp streaming hash
+WWW=		https://metacpan.org/release/Algorithm-RabinKarp
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

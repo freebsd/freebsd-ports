@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+    zathura uses a plugin based system for supported document types. Plugins
+    are provided as graphics/zathura-* ports. For instance, to view PDF
+    documents, graphics/zathura-pdf-poppler and graphics/zathura-pdf-mupdf
+    are available.
+EOM
+}
+]

@@ -1,0 +1,3 @@
+Web2c, a system which converts TeX, Metafont, and other related WEB programs
+to C.  By itself, it is not a complete, ready-to-run, TeX distribution, nor
+is it a general-purpose Pascal-to-C or WEB-to-C translator.

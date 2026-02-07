@@ -1,0 +1,11 @@
+--- src/gtk-2.0/gtkrc.orig	2016-09-22 03:11:27 UTC
++++ src/gtk-2.0/gtkrc
+@@ -536,7 +536,7 @@ style "xfdesktop-icon-view" {
+ style "xfwm-tabwin" {
+ 	Xfwm4TabwinWidget::border-width = 1
+         Xfwm4TabwinWidget::border-alpha = 1.0
+-	Xfwm4TabwinWidget::icon-size = 64
++	#Xfwm4TabwinWidget::icon-size = 64
+         Xfwm4TabwinWidget::alpha = 1.0
+         Xfwm4TabwinWidget::border-radius = 2
+ 

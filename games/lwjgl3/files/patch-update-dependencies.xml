@@ -1,0 +1,20 @@
+--- update-dependencies.xml.orig	2023-12-18 14:22:59 UTC
++++ update-dependencies.xml
+@@ -27,7 +27,7 @@
+     <target name="check-dependencies" description="Updates LWJGL dependencies, if required" unless="${build.offline}">
+         <!-- Checks if the Kotlin compiler must be updated -->
+         <local name="kotlinc-build-current"/>
+-        <loadfile property="kotlinc-build-current" srcfile="${kotlinc}/build.txt" quiet="true" taskname="kotlinc"/>
++        <loadfile property="kotlinc-build-current" srcfile="${kotlinc}/build.txt" quiet="true" taskname="kotlinc" unless:set="local.kotlin"/>
+         <condition property="kotlinc-uptodate">
+             <and>
+                 <isset property="kotlinc-build-current"/>
+@@ -54,7 +54,7 @@
+         <mkdir dir="${lib}"/>
+         <mkdir dir="${lib}/java"/>
+         <antcall target="-lib-download"/>
+-        <antcall target="-kotlinc-download"/>
++        <antcall target="-kotlinc-download" unless:set="local.kotlin"/>
+     </target>
+ 
+     <!-- Downloads and extracts the Kotlin compiler. -->

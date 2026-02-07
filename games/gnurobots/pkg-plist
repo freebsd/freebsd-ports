@@ -1,0 +1,11 @@
+bin/gnurobots
+%%DATADIR%%/maps/maze.map
+%%DATADIR%%/maps/pattern.map
+%%DATADIR%%/maps/small.map
+%%DATADIR%%/scheme/beep.scm
+%%DATADIR%%/scheme/greedy.scm
+%%DATADIR%%/scheme/mapper.scm
+%%DATADIR%%/scheme/simple.scm
+%%DATADIR%%/scheme/stop.scm
+%%DATADIR%%/scheme/zap.scm
+share/pixmaps/gnurobots.xpm

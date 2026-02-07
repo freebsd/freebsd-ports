@@ -1,0 +1,2 @@
+This module uses whatever interface is available to procure cryptographically
+random data from the system.

@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Catalyst::Engine::HTTP::Prefork.3.gz
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Prefork.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Prefork/Handler.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Prefork/Restarter.pm

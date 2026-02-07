@@ -1,0 +1,510 @@
+[
+{ type: install
+  message: <<EOD
+Please note that NetBox requires a PostgreSQL database server, which uses its
+built-in network address datatypes. Thus NetBox won't work with other RDBMS's,
+e.g. MySQL, MariaDB, etc.
+
+For installation instructions please refer to the related wiki page:
+
+- https://wiki.freebsd.org/Ports/net-mgmt/netbox
+EOD
+}
+{ type: upgrade
+  message: <<EOD
+As always it is strongly encouraged to make a backup of the database before the
+database migrations will be executed.
+
+The following steps are required to finish the upgrade: 
+
+1. Run database migrations, trace any missing cable paths, build the embedded
+   documentation, collect static files, remove stale content files, delete any
+   expired user sessions and clear the cache.
+
+# cd %%DATADIR%%
+# python%%PYTHON_VER%% manage.py migrate
+# python%%PYTHON_VER%% manage.py trace_paths --no-input
+# mkdocs build
+# python%%PYTHON_VER%% manage.py collectstatic --no-input
+# python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
+# python%%PYTHON_VER%% manage.py reindex --lazy
+# python%%PYTHON_VER%% manage.py clearsessions
+
+2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.2.4
+  message: <<EOD
+/!\ WARNING /!\
+
+The NetBox 3.2 release contains major changes, so at least items 1.), 2.) and
+3.) must be checked before proceeding with the upgrade!
+
+/!\ WARNING /!\
+
+1. This release includes a database migration that will remove the "asn",
+   "contact_name", "contact_phone", and "contact_email" fields from the site
+   model.  (These fields have been superseded by the ASN and contact models
+   introduced in NetBox v3.1.)
+
+   To protect against the accidental destruction of data, the upgrade process
+   will fail if any sites still have data in any of these fields.  To bypass
+   this safeguard, set the NETBOX_DELETE_LEGACY_DATA environment variable when
+   running the upgrade script, which will permit the destruction of legacy
+   data.
+
+   A set of migration scripts is available to assist with the migration of
+   legacy site data:
+
+   https://github.com/netbox-community/migration-scripts
+
+
+2. NetBox v3.2 requires Python 3.8 or later.
+
+
+3. If the NetBox Plugin "net-mgmt/py-netbox-plugin-extension" is used, please
+   disable it before the migrations are applied.  This can be done by removing
+   the entry "netbox_plugin_extensions" from the "PLUGINS" section in the
+   NetBox configuration.
+
+   Once the upgrade is done, this port/package can be safely removed as it's no
+   longer required.
+
+
+4. Following items should be checked as well:
+
+    * The embedded documentation now needs to be built locally as the procedure
+      requires a running instance of NetBox:
+
+      # cd %%DATADIR%%
+      # mkdocs build
+
+      Please also refer to the general updating instructions as this needs to
+      be done with every future update of NetBox.
+
+    * Automatic redirection of legacy slug-based URL paths has been removed.
+      URL-based slugs were changed to use numeric IDs in v2.11.0.
+
+    * The "asn" query filter for sites now matches against the AS number of
+      assigned ASN objects.
+
+    * The "created" field of all change-logged models now conveys a full
+      datetime object, rather than only a date.  (Previous date-only values
+      will receive a timestamp of 00:00.)  While this change is largely
+      unconcerning, strictly-typed API consumers may need to be updated.
+
+    * A "pre_run()" method has been added to the base Report class.  Although
+      unlikely to affect most installations, you may need to alter any reports
+      which already use this name for a method.
+
+    * Webhook URLs now support Jinja2 templating.  Although this is unlikely to
+      introduce any issues, it's possible that an unusual URL might trigger a
+      Jinja2 rendering error, in which case the URL would need to be properly
+      escaped.
+
+    * Several changes to the REST API were made as well.  Please check the
+      changelogs for further details.
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.2.5
+  message: <<EOD
+Please note that the general update instructions got another command that needs
+to be issued after each update:
+
+# python%%PYTHON_VER%% manage.py clearcache
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.3.4
+  message: <<EOD
+The NetBox 3.3 release contains some breaking API changes, so please check the
+following items before running the database migrations:
+
+* Device position, device type height, and rack unit values are now reported
+  as decimals (e.g. 1.0 or 1.5) to support modeling half-height rack units.
+
+* The "nat_outside" relation on the IP address model now returns a list of zero
+  or more related IP addresses, rather than a single instance (or None).
+
+* Several fields on the cable API serializers have been altered or removed to
+  support multiple-object cable terminations:
+
++------------------------------+------+-------------------------------+------+
+| Old Name                     | Type | New Name                      | Type |
++------------------------------+------+-------------------------------+------+
+| termination_a_type           | str  | Removed                       | -    |
+| termination_b_type           | str  | Removed                       | -    |
+| termination_a_id             | int  | Removed                       | -    |
+| termination_b_id             | int  | Removed                       | -    |
+| termination_a                | obj  | a_terminations                | list |
+| termination_b                | obj  | b_terminations                | list |
++------------------------------+------+-------------------------------+------+
+
+* As with the cable model, several API fields on all objects to which cables
+  can be connected (interfaces, circuit terminations, etc.) have been changed:
+
++------------------------------+------+-------------------------------+------+
+| Old Name                     | Type | New Name                      | Type |
++------------------------------+------+-------------------------------+------+
+| link_peer                    | obj  | link_peers                    | list |
+| link_peer_type               | str  | link_peers_type               | str  |
+| connected_endpoint           | obj  | connected_endpoints           | list |
+| connected_endpoint_type      | str  | connected_endpoints_type      | str  |
+| connected_endpoint_reachable | bool | connected_endpoints_reachable | bool |
++------------------------------+------+-------------------------------+------+
+
+* The cable path serialization returned by the "/paths/" endpoint for
+  pass-through ports has been simplified, and the following fields removed:
+
+  "origin_type", "origin", "destination_type", "destination". (Additionally,
+  "is_complete" has been added.)
+
+* Several changes to the REST API were made as well.  Please check the
+  changelogs for further details.
+
+* The netbox sample rc script got a new "upgrade" directive that also
+  simplifies the upgrade process (database migrations, building the embedded
+  documentation, etc.).
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.4.5
+  message: <<EOD
+1. Please make sure that the PostgreSQL server for the NetBox instance is
+   running version 11 or higher.  This is because PostgreSQL 10 is End-of-Life
+   since November 2022 and Django 4.1 requires PostgreSQL 11 as a minimum.
+
+2. The NetBox 3.4 release contains some breaking changes, so the following
+   items should be checked as well:
+
+   * Device and virtual machine names are no longer case-sensitive.  Attempting
+     to create e.g. "device1" and "DEVICE1" within the same site will raise a
+     validation error.
+
+   * The "asn", "noc_contact", "admin_contact", and "portal_url" fields have
+     been removed from the provider model.  Please replicate any data remaining
+     in these fields to the ASN and contact models introduced in NetBox v3.1
+     prior to upgrading.
+
+   * The "content_type" fields on the CustomLink and ExportTemplate models have
+     been renamed to "content_types" and now support the assignment of multiple
+     content types per object.
+
+   * Within the Python API, the "cf" property on an object with custom fields
+     now returns deserialized values.  For example, a custom field referencing
+     an object will return the object instance rather than its numeric ID.
+
+     To access the raw serialized values, reference the object's
+     "custom_field_data" attribute instead.
+
+   * The "NetBoxModelCSVForm" class has been renamed to
+     "NetBoxModelImportForm".  Backward compatability with the previous name
+     has been retained for this release, but will be dropped in NetBox v3.5.
+
+
+3. Please note that the general update instructions got another command that
+   needs to be issued after each update:
+
+# python%%PYTHON_VER%% manage.py reindex --lazy
+
+   The netbox sample rc script has also been adapted accordingly for this
+   purpose.
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.5.2
+  message: <<EOD
+1. If the plugin security/py-netbox-secretstore is used, which is no longer
+   maintained by upstream, the following steps must be done before upgrading to
+   NetBox 3.5:
+
+   * Migrate from security/py-netbox-secretstore (= 1.4.2_2) to
+     security/py-netbox-secrets (= 1.7.6) with a NetBox 3.4.x instance.
+
+     It is very important that the versions of py-netbox-secretstore and
+     py-netbox-secrets match as specified otherwise the migration will not
+     be successful.
+
+     The reason for this is that py-netbox-secrets 1.8.x is not backwards
+     compatible with Netbox 3.4.  For further details please see the updating
+     instructions of py-netbox-secretstore or the UPDATING entry of 2023-05-11.
+
+2. The NetBox 3.5 release contains some breaking changes, so the following
+   items should be checked as well:
+
+   * The "account: field has been removed from the provider model.
+     This information is now tracked using the new provider account model.
+     Multiple accounts can be assigned per provider.
+
+   * A minimum length of 50 characters is now enforced for the SECRET_KEY
+     configuration parameter.
+
+   * The JobResult model has been moved from the "extras" app to "core" and
+     renamed to Job. Accordingly, its REST API endpoint has been moved from
+     "/api/extras/job-results/" to "/api/core/jobs/".
+
+   * The "obj_type" field on the Job model (previously JobResult) has been
+     renamed to "object_type" for consistency with other models.
+
+   * The JOBRESULT_RETENTION configuration parameter has been renamed
+     to JOB_RETENTION.
+
+   * The "obj" context variable is no longer passed when rendering custom
+     links: Use "object" instead.
+
+   * The REST API schema is now generated using the OpenAPI 3.0 spec
+
+   * The URLs for the REST API schema documentation have changed:
+       - "/api/docs/" is now "/api/schema/swagger-ui/"
+       - "/api/redoc/" is now "/api/schema/redoc/"
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.5.4
+  message: <<EOD
+If a separate configuration file is used that does not have an ".py" extension,
+the following message may appear when the netbox rc script is started:
+
+!!!
+!!! WARNING: configuration file should have a valid Python extension.
+!!!
+
+In this case, the existing configuration file should be provided with a ".py"
+extension and if set, the rc variable "netbox_config" should also point to the
+configuration file with the new file extension.
+
+The netbox sample rc script, which is provided via the EXAMPLES option, has
+been adjusted accordingly.  This also includes a fix for the default path of
+the configuration if the rc variable "netbox_config" is not set.
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.6.1
+  message: <<EOD
+1. The NetBox 3.6 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * PostgreSQL 11 is no longer supported (dropped in Django 4.2). NetBox v3.6
+     requires PostgreSQL 12 or later.
+
+   * The "device_role" field on the Device model has been renamed to "role".
+     The "device_role" field has been temporarily retained on the REST API
+     serializer for devices for backward compatibility, but is read-only.
+
+   * The "choices" array field has been removed from the CustomField model.
+     Any defined choices are automatically migrated to CustomFieldChoiceSets,
+     accessible via the new "choice_set" field on the CustomField model.
+
+   * The "napalm_driver" and "napalm_args" fields (which were deprecated in v3.5)
+     have been removed from the Platform model.
+
+   * The "device" and "device_id" filter for interfaces will no longer include
+     interfaces from virtual chassis peers. Two new filters,
+     "virtual_chassis_member" and "virtual_chassis_member_id", have been
+     introduced to match all interfaces belonging to the specified device's
+     virtual chassis (if any).
+
+   * Reports and scripts are now returned within a "results" list when fetched via
+     the REST API, consistent with other models.
+
+   * Superusers can no longer retrieve API token keys via the web UI if
+     ALLOW_TOKEN_RETRIEVAL is disabled. (The admin view has been removed
+     per #13044.)
+
+2. The following dependencies are now optional and have therefore been moved to
+   corresponding options. An exception is the LDAP option, which has been added
+   for the sake of completeness, because this backend has been around for a
+   good while:
+
+   * devel/py-dulwich			-> non-default GIT option
+   * www/py-dj42-django-auth-ldap	-> non-default LDAP option
+   * www/py-boto3			-> non-default S3 option
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.7.0
+  message: <<EOD
+1. The NetBox 3.7 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * The following fields have been removed from the Webhook model:
+
+     "content_types", "type_create", "type_update", "type_delete",
+     "type_job_start", "type_job_end", "enabled", and "conditions".
+
+     Webhooks are now tied to events via event rules. New event rules will be
+     created for any existing webhooks automatically upon upgrade.
+
+   * The "ui_visibility" field on the custom field model has been replaced with
+     two new fields: "ui_visible" and "ui_editable".
+
+     These new fields will have their values mapped from the original field
+     automatically upon upgrade.
+
+   * The "FeatureQuery" class used internally for querying content types by
+     model feature has been removed. It has been replaced by the new
+     "with_feature()" manager method on NetBox's proxy model for ContentType
+     ("core.models.ContentType").
+
+   * The internal ConfigRevision model has moved from "extras" to "core".
+     Configuration history will be retained throughout the upgrade process.
+
+   * The L2VPN and L2VPNTermination models have moved from the "ipam" app to
+     the new "vpn" app. All object data will be retained, however please note
+     that the relevant API endpoints have likewise moved to "/api/vpn/".
+
+   * The "CustomFieldsMixin", "SavedFiltersMixin", and "TagsMixin" classes
+     have moved from the "extras.forms.mixins" module to
+     "netbox.forms.mixins".
+
+   * The "netbox.models.features.WebhooksMixin" class has been renamed
+     to "EventRulesMixin".
+
+2. The following dependency is now optional and has therefore been converted
+   to a corresponding SENTRY option:
+
+   * devel/py-sentry-sdk	-> non-default SENTRY option
+
+3. Please note that the command "python%%PYTHON_VER%% manage.py clearcache" has
+   been removed.
+
+   The general update instructions in this pkg-message and the netbox sample rc
+   script (available via the EXAMPLES option) have also been updated
+   accordingly.
+EOD
+}
+{ type: upgrade
+  maximum_version: 4.0.5
+  message: <<EOD
+The NetBox 4.0 release contains major changes, so at least items 1.) and 2.)
+must be checked before proceeding with the upgrade.
+
+1. NetBox v4.0 requires Python 3.10 or later.
+
+2. Following items should be checked as well:
+
+    * The format for GraphQL query filters has changed.  Please see the
+      GraphQL documentation for details and examples.
+
+    * The deprecated "device_role" & "device_role_id" filters for devices have
+      been removed.  (Use "role" and "role_id" instead.)
+
+    * The obsolete "device_role" field has been removed from the REST API
+      serializer for devices.  (Use "role" instead.)
+
+    * The legacy reports functionality has been dropped. Reports will be
+      automatically converted to custom scripts on upgrade.
+
+    * The "parent" and "parent_id" filters for locations now return only
+      immediate children of the specified location.  (Use "ancestor" and
+      "ancestor_id" to return all descendants.)
+
+    * The "object_type" field on the "CustomField" model has been renamed to
+      "related_object_type".
+
+    * The "utilities.utils module" has been removed and its resources
+      reorganized into separate modules organized by function.
+
+    * The obsolete "NullableCharField" class has been removed.  (Use Django's
+      stock "CharField" class with "null=True" instead.)
+
+    * The "annotated_date" template filter and "annotated_now" template tag
+      have been removed.
+EOD
+}
+{ type: upgrade
+  maximum_version: 4.1.6
+  message: <<EOD
+1. The NetBox 4.1 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * Several filters deprecated in v4.0 have been removed.
+
+   * The unit size for "VirtualMachine.disk" and "VirtualDisk.size" has been
+     changed from 1 gigabyte to 1 megabyte. Existing values will be adjusted
+     automatically during the upgrade process.
+
+   * The "min_vid" and "max_vid" fields on the VLAN group model have been
+     replaced with "vid_ranges", an array of starting and ending VLAN ID pairs.
+
+   * The five individual event type fields on the "EventRule" model have been
+     replaced by a single "event_types" array field, which lists applicable
+     event types by name.
+
+   * All UI views & API endpoints associated with change records have been
+     moved from "/extras" to "/core".
+
+   * The "validate()" method on "CustomValidator" subclasses now must accept
+     the request argument.
+EOD
+}
+{ type: upgrade
+  maximum_version: 4.2.3
+  message: <<EOD
+1. The NetBox 4.2 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * Support for the Django admin UI has been completely removed.  (The Django
+     admin UI was disabled by default in NetBox v4.0.)
+
+   * This release drops support for PostgreSQL 12.  PostgreSQL 13 or later is
+     required to run this release.
+
+   * NetBox has adopted collation-based natural ordering for many models.  This
+     may alter the order in which some objects are listed by default.
+
+   * Automatic redirects from pre-v4.1 UI views for virtual disks have been
+     removed.
+
+   * The site and provider_network foreign key fields on
+     "circuits.CircuitTermination" have been replaced by the "termination"
+     generic foreign key.
+
+   * The "site" foreign key field on "ipam.Prefix" has been replaced by the
+     "scope" generic foreign key.
+
+   * The "site" foreign key field on "virtualization.Cluster" has been replaced
+     by the "scope" generic foreign key.
+
+   * The "circuit" foreign key field on "circuits.CircuitGroupAssignment" has
+     been replaced by the "member" generic foreign key.
+
+   * Obsolete nested REST API serializers have been removed.  These were
+     deprecated in NetBox v4.1 under #17143.
+EOD
+}
+{ type: upgrade
+  maximum_version: 4.3.2
+  message: <<EOD
+1. The NetBox 4.3 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * This release drops support for PostgreSQL 13.  PostgreSQL 14 or later is
+     required to run this release.
+
+2. Following items should be checked as well:
+
+   * The GraphQL API now uses an advanced syntax for filtering, to enable e.g.
+     logical AND/OR filtering and custom field lookups.
+
+   * The ALLOW_TOKEN_RETRIEVAL configuration parameter now defaults to False.
+
+   * The "device" and "virtual_machine" foreign keys on the "Service" model
+     have been replaced with a generic parent relationship to support the
+     assignment of services to FHRP groups as well.
+
+   * The group foreign key on the "Contact" model has been replaced with a
+     many-to-many groups field.
+
+   * "django-storages" is now a required dependency.  (It will be installed
+     automatically on upgrade via www/py-dj52-django-storages.)
+
+   * "PluginTemplateExtension" no longer supports registration via the singular
+     model attribute (use models instead).
+
+   * The legacy staged changes functionality has been removed.
+EOD
+}
+]

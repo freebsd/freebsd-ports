@@ -1,0 +1,20 @@
+--- configure.orig	2017-10-21 14:01:07 UTC
++++ configure
+@@ -4213,7 +4213,7 @@ fi
+ 
+ if test "$shared" = true; then
+    case "$target_os" in
+-	linux*|k*bsd*-gnu|gnu*)
++	linux*|k*bsd*-gnu|gnu*|*bsd*)
+ 		SHFLAGS="-fPIC"
+         ;;
+ 	solaris*)
+@@ -4413,7 +4413,7 @@ if test "x$AUDIODEFS" = x; then
+ 	    AUDIODEFS=-DCST_AUDIO_PULSEAUDIO
+             AUDIOLIBS='-lpulse-simple -lpulse'
+ 	    ;;
+-	*bsd)
++	*bsd*)
+ 	    AUDIODRIVER=oss
+ 	    AUDIODEFS=-DCST_AUDIO_FREEBSD
+ 	    ;;

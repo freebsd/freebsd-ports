@@ -1,0 +1,28 @@
+Thruster is an HTTP/2 proxy for simple production-ready deployments of Rails
+applications. It runs alongside the Puma webserver to provide a few additional
+features that help your app run efficiently and safely on the open Internet:
+- HTTP/2 support
+- Automatic TLS certificate management with Let's Encrypt
+- Basic HTTP caching of public assets
+- X-Sendfile support and compression, to efficiently serve static files
+
+Thruster aims to be as zero-config as possible. It has no configuration file,
+and most features are automatically enabled with sensible defaults. The goal is
+that simply running your Puma server with Thruster should be enough to get a
+production-ready setup.
+
+The only exception to this is TLS provisioning: in order for Thruster to
+provision TLS certificates, it needs to know which domain those certificates
+should be for. So to use TLS, you need to set the TLS_DOMAIN environment
+variable. If you don't set this variable, Thruster will run in HTTP-only mode.
+
+Thruster also wraps the Puma process so that you can use it without managing
+multiple processes yourself. This is particularly useful when running in a
+containerized environment, where you typically won't have a process manager
+available to coordinate the processes. Instead you can use Thruster as your CMD,
+and it will manage Puma for you.
+
+Thruster was originally created for the ONCE project, where we wanted a no-fuss
+way to serve a Rails application from a single container, directly on the open
+Internet. We've since found it useful for simple deployments of other Rails
+applications.

@@ -1,0 +1,2 @@
+beadm is an Illumos/Solaris-like utility for FreeBSD to manage
+Boot Environments on ZFS filesystems.

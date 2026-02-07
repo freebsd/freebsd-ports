@@ -1,0 +1,23 @@
+--- src/Makefile.in
++++ src/Makefile.in
+@@ -131,9 +131,9 @@ L_SURFACES =
+ 
+ librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c iconv.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c $(C_STEPS)
+ 
+-librecode_la_LDFLAGS = -version-info 0:0:0
++librecode_la_LDFLAGS = -version-info 3:6:0
+ 
+-INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I$(top_srcdir)/libiconv
++INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I$(prefix)/include
+ DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
+ 
+ ETAGS_ARGS = $(L_STEPS)
+@@ -157,7 +157,7 @@ LTLIBRARIES =  $(lib_LTLIBRARIES)
+ ANSI2KNR = @ANSI2KNR@
+ librecode_la_LIBADD = 
+ librecode_la_OBJECTS =  argmatch$U.lo charname$U.lo combine$U.lo \
+-fr-charname$U.lo hash$U.lo iconv$U.lo libiconv$U.lo localcharset$U.lo \
++fr-charname$U.lo hash$U.lo error$U.lo libiconv$U.lo localcharset$U.lo \
+ merged$U.lo names$U.lo outer$U.lo quotearg$U.lo recode$U.lo \
+ request$U.lo strip-pool$U.lo task$U.lo xmalloc$U.lo african$U.lo \
+ afrtran$U.lo applemac$U.lo atarist$U.lo bangbang$U.lo cdcnos$U.lo \

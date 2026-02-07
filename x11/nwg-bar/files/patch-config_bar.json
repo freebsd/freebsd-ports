@@ -1,0 +1,18 @@
+--- config/bar.json.orig	2021-06-30 23:32:08 UTC
++++ config/bar.json
+@@ -11,12 +11,12 @@
+   },
+   {
+     "label": "Reboot",
+-    "exec": "systemctl reboot",
++    "exec": "shutdown -r now",
+     "icon": "/usr/share/nwg-bar/images/system-reboot.svg"
+   },
+   {
+     "label": "Shutdown",
+-    "exec": "systemctl -i poweroff",
++    "exec": "shutdown -p now",
+     "icon": "/usr/share/nwg-bar/images/system-shutdown.svg"
+   }
+ ]
+\ No newline at end of file

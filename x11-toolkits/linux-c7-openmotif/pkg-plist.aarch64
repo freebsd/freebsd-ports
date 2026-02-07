@@ -1,0 +1,10 @@
+usr/lib64/libMrm.so.4
+usr/lib64/libMrm.so.4.0.4
+usr/lib64/libUil.so.4
+usr/lib64/libUil.so.4.0.4
+usr/lib64/libXm.so.4
+usr/lib64/libXm.so.4.0.4
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES

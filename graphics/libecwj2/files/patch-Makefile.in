@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-08-03 12:31:26.000000000 +0400
++++ Makefile.in	2010-08-03 12:31:32.000000000 +0400
+@@ -270,8 +270,6 @@
+ 	Source/include/gdt_pub.h \
+ 	Source/include/gdt_stat.h \
+ 	Source/include/pcs_erm.h \
+-	Source/C/NCSEcw/lcms/include/lcms.h \
+-	Source/C/NCSEcw/lcms/include/icc34.h \
+ 	Source/NCSBuildGnu/NCSGnuConfig.h 
+ 
+ subdir = .

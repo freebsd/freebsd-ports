@@ -1,0 +1,40 @@
+PORTNAME=	seqan-apps
+DISTVERSIONPREFIX=	seqan-v
+DISTVERSION=	2.4.0
+PORTREVISION=	11
+CATEGORIES=	biology
+
+MAINTAINER=	h2+fbsdports@fsfe.org
+COMMENT=	Official bioinformatic applications based on the SeqAn library
+WWW=		https://www.seqan.de/
+
+LICENSE=	BSD3CLAUSE LGPL3 GPLv3
+LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
+
+USES=		cmake compiler:c++14-lang
+USE_CXXSTD=	c++14
+USE_GITHUB=	yes
+GH_ACCOUNT=	seqan
+GH_PROJECT=	seqan
+CMAKE_ARGS=	-DSEQAN_BUILD_SYSTEM="SEQAN_RELEASE_APPS"
+
+OPTIONS_RADIO=		ARCH
+OPTIONS_RADIO_ARCH=	SSE4 AVX2 NATIVE
+SSE4_DESC=		Use SSE4 and POPCNT instructions
+SSE4_CMAKE_ON=		-DSEQAN_ARCH_SSE4:BOOL=TRUE
+AVX2_DESC=		Use SSE4, AVX2 and POPCNT instructions
+AVX2_CMAKE_ON=		-DSEQAN_ARCH_AVX2:BOOL=TRUE
+NATIVE_DESC=		Use all available instruction sets (-march=native)
+NATIVE_CMAKE_ON=	-DSEQAN_ARCH_NATIVE:BOOL=TRUE
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "armv7" || ${ARCH} == "i386" || ${ARCH} == "powerpc"
+PLIST_SUB+=	RM_I386="@comment "
+.else
+PLIST_SUB+=	RM_I386=""
+.endif
+
+.include <bsd.port.post.mk>

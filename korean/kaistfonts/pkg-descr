@@ -1,0 +1,10 @@
+KAIST Font(KSC)
+---------------
+
+Korean KS C 5601-1987 fonts collection.
+(ksc5601.1987-0 encoding)
+
+ - Iyagi, Philgi fonts are recomposed from hanterm johab fonts.
+ - newmj fonts are recomposed from HLaTeX-0.97 Myeongjo font.
+
+Font collection by Hong Hunsoo <hunsoo@sensor.kaist.ac.kr>

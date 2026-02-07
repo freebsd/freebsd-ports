@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: ptpd2
+# REQUIRE: NETWORKING DAEMON
+# KEYWORD: nojail
+#
+# Add the following lines to /etc/rc.conf to enable ptpd
+#
+# ptpd2_enable (bool):	Set to "NO" by default
+#			Set it to "YES" to enable ptpd
+# ptp2_configfile (str): Set to "/usr/local/etc/ptpd2/ptpd2.conf" by default
+
+. /etc/rc.subr
+
+name=ptpd2
+rcvar=ptpd2_enable
+
+load_rc_config "${name}"
+
+: ${ptpd2_enable:=NO}
+: ${ptpd2_configfile:=/usr/local/etc/ptpd2/ptpd2.conf}
+
+required_files="${ptpd2_configfile}"
+
+command="/usr/local/sbin/${name}"
+command_args="-c ${ptpd2_configfile}"
+
+run_rc_command "$1"

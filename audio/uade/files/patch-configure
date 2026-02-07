@@ -1,0 +1,11 @@
+--- configure.orig	2023-09-11 11:01:56 UTC
++++ configure
+@@ -414,7 +414,7 @@ fi
+     exit 1
+ fi
+ 
+-VASM=$(which vasm.vasmm68k-mot)
++VASM=$(which vasmm68k_mot)
+ if [[ -n ${VASM} ]] ; then
+     usescore="yes"
+ fi

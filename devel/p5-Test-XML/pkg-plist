@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Test/XML.pm
+%%SITE_PERL%%/Test/XML/SAX.pm
+%%SITE_PERL%%/Test/XML/Twig.pm
+%%SITE_PERL%%/Test/XML/XPath.pm
+%%PERL5_MAN3%%/Test::XML.3.gz
+%%PERL5_MAN3%%/Test::XML::SAX.3.gz
+%%PERL5_MAN3%%/Test::XML::Twig.3.gz
+%%PERL5_MAN3%%/Test::XML::XPath.3.gz

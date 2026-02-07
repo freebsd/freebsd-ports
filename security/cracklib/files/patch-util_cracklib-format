@@ -1,0 +1,11 @@
+--- util/cracklib-format.orig	2019-02-14 01:54:41 UTC
++++ util/cracklib-format
+@@ -4,7 +4,7 @@
+ # into cracklib-packer
+ #
+ gzip -cdf "$@" |
+-    grep -v '^\(#\|$\)' |
++    grep -a -v '^\(#\|$\)' |
+     tr '[A-Z]' '[a-z]' |
+     tr -cd '\012[a-z][0-9]' |
+     env LC_ALL=C sort -u

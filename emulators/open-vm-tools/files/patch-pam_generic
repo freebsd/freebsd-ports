@@ -1,0 +1,14 @@
+--- pam/generic.orig	2025-06-19 04:05:18 UTC
++++ pam/generic
+@@ -1,9 +1,5 @@
+ # This is a generic pam config file for open-vm-tools
+ # See https://knowledge.broadcom.com/external/article?legacyId=78251 for advice to use
+ # common authentication mechanisms.
+-auth       required         pam_shells.so
+-auth       sufficient       pam_unix.so shadow
+-auth       required         pam_unix_auth.so shadow
+-account    required         pam_shells.so
+-account    sufficient       pam_unix.so
+-account    required         pam_unix_acct.so
++auth       include          system
++account    include          system

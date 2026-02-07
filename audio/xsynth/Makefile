@@ -1,0 +1,278 @@
+PORTNAME=	xsynth
+DISTVERSION=	0.3.3
+CATEGORIES=	audio
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Black MIDI synthesizer, playing 8,000 voices or more in real-time
+WWW=		https://github.com/BlackMIDIDevs/xsynth
+
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly # because features are needed
+LIB_DEPENDS=	libasound.so:audio/alsa-lib
+
+USES=		cargo pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	BlackMIDIDevs
+
+CARGO_BUILDDEP=	no
+CARGO_CRATES=	aho-corasick-1.0.1 \
+		alsa-0.9.0 \
+		alsa-sys-0.3.1 \
+		anes-0.1.6 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
+		anstyle-wincon-3.0.4 \
+		arrayvec-0.7.2 \
+		atomic_float-1.0.0 \
+		atomic_refcell-0.1.13 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bindgen-0.64.0 \
+		biquad-0.4.2 \
+		bitflags-1.3.2 \
+		bitflags-2.6.0 \
+		bumpalo-3.12.1 \
+		bytemuck-1.16.3 \
+		bytes-1.4.0 \
+		cast-0.3.0 \
+		cbindgen-0.26.0 \
+		cc-1.0.79 \
+		cesu8-1.1.0 \
+		cexpr-0.6.0 \
+		cfg-if-1.0.0 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
+		clang-sys-1.6.1 \
+		clap-3.2.23 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_lex-0.2.4 \
+		clap_lex-0.7.2 \
+		colorchoice-1.0.2 \
+		combine-4.6.6 \
+		convert_case-0.4.0 \
+		core-foundation-sys-0.8.4 \
+		coreaudio-rs-0.11.3 \
+		coreaudio-sys-0.2.12 \
+		cpal-0.15.3 \
+		criterion-0.5.1 \
+		criterion-plot-0.5.0 \
+		crossbeam-0.8.4 \
+		crossbeam-channel-0.5.13 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-queue-0.3.11 \
+		crossbeam-utils-0.8.20 \
+		dasp_sample-0.11.0 \
+		directories-5.0.1 \
+		dirs-sys-0.4.1 \
+		either-1.8.1 \
+		encoding_rs-0.8.34 \
+		encoding_rs_io-0.1.7 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
+		extended-0.1.0 \
+		fastrand-1.9.0 \
+		file-id-0.1.0 \
+		filetime-0.2.24 \
+		fsevent-sys-4.1.0 \
+		getrandom-0.2.9 \
+		glob-0.3.1 \
+		half-1.8.2 \
+		hashbrown-0.12.3 \
+		heck-0.4.1 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.1 \
+		hotwatch-0.5.0 \
+		hound-3.5.1 \
+		indexmap-1.9.3 \
+		inotify-0.9.6 \
+		inotify-sys-0.1.5 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.10 \
+		is-terminal-0.4.12 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.10.5 \
+		itoa-1.0.6 \
+		jni-0.21.1 \
+		jni-sys-0.3.0 \
+		jobserver-0.1.26 \
+		js-sys-0.3.64 \
+		kqueue-1.0.8 \
+		kqueue-sys-1.0.4 \
+		lazy-regex-3.2.0 \
+		lazy-regex-proc_macros-3.2.0 \
+		lazy_static-1.5.0 \
+		lazycell-1.3.0 \
+		libc-0.2.149 \
+		libloading-0.7.4 \
+		libm-0.1.4 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.3.3 \
+		lock_api-0.4.12 \
+		log-0.4.17 \
+		mach2-0.4.1 \
+		memchr-2.6.4 \
+		midi-toolkit-rs-0.1.0 \
+		midi-toolkit-rs-derive-0.1.0 \
+		minimal-lexical-0.2.1 \
+		mio-0.8.11 \
+		ndk-0.8.0 \
+		ndk-context-0.1.1 \
+		ndk-sys-0.5.0+25.2.9519653 \
+		nom-7.1.3 \
+		notify-6.1.1 \
+		notify-debouncer-full-0.1.0 \
+		num-complex-0.4.5 \
+		num-derive-0.4.2 \
+		num-integer-0.1.46 \
+		num-traits-0.2.15 \
+		num_enum-0.7.3 \
+		num_enum_derive-0.7.3 \
+		oboe-0.6.1 \
+		oboe-sys-0.6.1 \
+		once_cell-1.17.1 \
+		oorandom-11.1.3 \
+		option-ext-0.2.0 \
+		os_str_bytes-6.5.0 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		paste-1.0.12 \
+		peeking_take_while-0.1.2 \
+		pkg-config-0.3.26 \
+		pkg-version-1.0.0 \
+		pkg-version-impl-0.1.1 \
+		plotters-0.3.4 \
+		plotters-backend-0.3.4 \
+		plotters-svg-0.3.3 \
+		ppv-lite86-0.2.17 \
+		primal-check-0.3.3 \
+		proc-macro-crate-1.3.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.86 \
+		quote-1.0.36 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		realfft-3.3.0 \
+		redox_syscall-0.3.5 \
+		redox_syscall-0.5.3 \
+		redox_users-0.4.6 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-bnf-0.1.2 \
+		regex-bnf-macro-0.1.1 \
+		regex-syntax-0.8.2 \
+		riff-1.0.1 \
+		rubato-0.15.0 \
+		rustc-hash-1.1.0 \
+		rustfft-6.2.0 \
+		rustix-0.37.13 \
+		ryu-1.0.13 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
+		shlex-1.1.0 \
+		simdeez-2.0.0-dev3 \
+		smallvec-1.13.2 \
+		soundfont-0.1.0 \
+		spin_sleep-1.2.1 \
+		strength_reduce-0.2.4 \
+		strsim-0.10.0 \
+		strsim-0.11.1 \
+		symphonia-0.5.4 \
+		symphonia-bundle-flac-0.5.4 \
+		symphonia-codec-adpcm-0.5.4 \
+		symphonia-codec-pcm-0.5.4 \
+		symphonia-codec-vorbis-0.5.4 \
+		symphonia-core-0.5.4 \
+		symphonia-format-mkv-0.5.4 \
+		symphonia-format-ogg-0.5.4 \
+		symphonia-format-riff-0.5.4 \
+		symphonia-metadata-0.5.4 \
+		symphonia-utils-xiph-0.5.4 \
+		syn-1.0.109 \
+		syn-2.0.72 \
+		tempfile-3.5.0 \
+		termcolor-1.2.0 \
+		textwrap-0.16.0 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
+		tinytemplate-1.2.1 \
+		to_vec-0.1.0 \
+		toml-0.5.11 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.8 \
+		transpose-0.2.3 \
+		unicode-ident-1.0.8 \
+		utf8parse-0.2.2 \
+		version_check-0.9.4 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-futures-0.4.37 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		wav-1.0.1 \
+		web-sys-0.3.61 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.54.0 \
+		windows-core-0.54.0 \
+		windows-result-0.1.2 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
+		windows_x86_64_msvc-0.52.6 \
+		winnow-0.4.1
+
+PLIST_FILES=	bin/xsynth-render
+
+do-install:
+	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/release/xsynth-render \
+		${STAGEDIR}${PREFIX}/bin/xsynth-render
+
+.include <bsd.port.mk>

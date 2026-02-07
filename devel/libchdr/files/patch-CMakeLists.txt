@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-12-30 08:57:04 UTC
++++ CMakeLists.txt
+@@ -83,7 +83,7 @@ if (INSTALL_STATIC_LIBS)
+ endif()
+ 
+ if (INSTALL_STATIC_LIBS)
+-  install(TARGETS chdr-static ${CHDR_LIBS}
++  install(TARGETS chdr-static
+     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   )
+ endif()

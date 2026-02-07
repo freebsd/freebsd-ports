@@ -1,0 +1,7 @@
+This is Picprog, pic16c84 programmer software for the serial port device.
+To program a pic16c84 chip:
+
+	picprog --burn --input something.hex --pic /dev/cuaa1
+
+Remember: this is not a production quality programmer!  See PIC16C84
+data sheet for more information.

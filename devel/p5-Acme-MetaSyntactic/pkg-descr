@@ -1,0 +1,2 @@
+Acme::MetaSyntactic produces a sequence of meta-syntactic names (not
+unlike 'foo' and 'bar') using a number of schemes.

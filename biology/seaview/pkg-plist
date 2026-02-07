@@ -1,0 +1,4 @@
+bin/seaview
+share/man/man1/seaview.1.gz
+%%DATADIR%%/seaview.html
+share/pixmaps/seaview.xpm

@@ -1,0 +1,7 @@
+In miscom you must defend cities from missile attack. You do this by
+launching missiles of your own (in a point-and-blast fashion) to
+destroy the enemy missiles before they land.
+
+Miscom is a curses-based game, so it should work on any terminal.
+(You'll need 9600 baud or better for it to be playable.) It supports
+colour and sound.

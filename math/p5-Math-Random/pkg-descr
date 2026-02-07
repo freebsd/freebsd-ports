@@ -1,0 +1,2 @@
+Math::Random is a Perl port of the C version of randlib, which is a
+suite of routines for generating random deviates.

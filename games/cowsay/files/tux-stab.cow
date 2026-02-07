@@ -1,0 +1,26 @@
+##
+## TuX and the Daemon
+## (c) pborys@p-soft.silesia.linux.org.pl 
+## (c) Marshall Kirk McKusick
+##
+$the_cow = <<EOC;
+   $thoughts                     ,        ,
+    $thoughts                   /(        )`
+     $thoughts                  \\ \\___   / |
+     $thoughts                  /- _  `-/  '
+     $thoughts                 (/\\/ \\ \\   /\\
+     $thoughts                 / /   | `    \\
+     $thoughts                 O O   ) /    |
+    $thoughts                  `-^--'`<     '
+     .--.             (_.)  _  )   /
+    |o_o |             `.___/`    /
+    |:_/ |              `-----' /
+   //<- \\ \\----.     __ / __   \\
+  (|  <- | )---|====O)))==) \\) /====
+ /'\\ <- _/`\\---'    `--' `.__,' \\
+ \\___)=(___/            |        |
+                          \\       /
+                    ______( (_  / \\______
+                  ,'  ,-----'   |        \\
+                  `--{__________)        \\/
+EOC

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $2 in
+	DEINSTALL)
+		echo "==> If you are uninstalling Emby Server permanently,"
+		echo "    and you do *NOT* want to retain the database, logs"
+		echo "    configuration and media metadata, you should"
+		echo "    manually delete directory /var/db/emby-server"
+		;;
+esac

@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Apache2::Profiler.3.gz
+%%PERL5_MAN3%%/Apache::Profiler.3.gz
+%%SITE_PERL%%/Apache/Profiler.pm
+%%SITE_PERL%%/Apache2/Profiler.pm

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-01-22 02:01:14 UTC
++++ Makefile.in
+@@ -2829,7 +2829,7 @@ LD_BASIC_ADD = lib/libcyrus.la lib/libcyrus_min.la ${L
+ # MD5 algorithms, without needing SSL.  Currently we have no way of
+ # minimally linking such code.
+ LD_BASIC_ADD = lib/libcyrus.la lib/libcyrus_min.la ${LIBS} \
+-    ${LIB_SASL} $(SSL_LIBS) $(GCOV_LIBS)
++    ${LIB_SASL} $(SSL_LIBS) $(GCOV_LIBS) -lm
+ 
+ 
+ # UTILITY is the libraries that utility programs which use Cyrus'

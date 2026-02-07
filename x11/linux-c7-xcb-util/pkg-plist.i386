@@ -1,0 +1,4 @@
+usr/lib/libxcb-util.so.1
+usr/lib/libxcb-util.so.1.0.0
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README

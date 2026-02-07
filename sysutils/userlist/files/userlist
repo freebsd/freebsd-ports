@@ -1,0 +1,6 @@
+#!/bin/sh
+# Lists all users on the system with a UID greater than 100
+# Awk example courtesy of Sendmail Inc.
+# Ported to FreeBSD by Jamie Heckford <jamie@jamiesdomain.org.uk>
+
+awk -F: '$3 > 100 { print $1 }' /etc/passwd

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/POSIX/Socket.pm
+%%SITE_ARCH%%/auto/POSIX/Socket/Socket.so
+%%PERL5_MAN3%%/POSIX::Socket.3.gz

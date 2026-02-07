@@ -1,0 +1,3 @@
+XFrisk is a multi-player Risk game that supports network play.  It
+includes a server, "friskserver", and a client, "xfrisk".  Note
+that the client supports only 8bpp and 24bpp visuals.

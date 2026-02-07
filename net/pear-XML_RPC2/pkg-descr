@@ -1,0 +1,9 @@
+XML_RPC2 is a pear package providing XML_RPC client and server
+services.XML-RPC is a simple remote procedure call protocol built
+using HTTP as transport and XML as encoding.
+
+As a client library, XML_RPC2 is capable of creating a proxy
+class which exposes the methods exported by the server. As a
+server library, XML_RPC2 is capable of exposing methods from
+a class or object instance, seamlessly exporting local methods
+as remotely callable procedures.

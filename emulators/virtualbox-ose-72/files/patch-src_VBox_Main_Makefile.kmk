@@ -1,0 +1,10 @@
+--- src/VBox/Main/Makefile.kmk.orig	2025-08-13 19:51:19 UTC
++++ src/VBox/Main/Makefile.kmk
+@@ -771,6 +771,7 @@ if !defined(VBOX_ONLY_SDK) && !defined(VBOX_ONLY_EXTPA
+ 
+  VBoxSVC_SOURCES.freebsd = \
+  	src-server/freebsd/HostHardwareFreeBSD.cpp \
++	$(if $(VBOX_WITH_DBUS),src-server/linux/HostPowerLinux.cpp) \
+  	src-server/HostDnsServiceResolvConf.cpp
+ 
+  VBoxSVC_LDFLAGS.freebsd += -lcam

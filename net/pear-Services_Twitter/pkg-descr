@@ -1,0 +1,2 @@
+An interface for communicating with Twitter's public API.
+Send status updates, fetch information, add friends, etc.

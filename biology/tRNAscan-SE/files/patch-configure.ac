@@ -1,0 +1,21 @@
+--- configure.ac.orig	2017-04-27 20:18:19 UTC
++++ configure.ac
+@@ -4,7 +4,7 @@
+ ## Settings for generating a configure file 
+ 
+ AC_PREREQ([2.69])
+-AC_INIT([tRNAscan-SE],[2.0.0],[pchan@soe.ucsc.edu])
++AC_INIT([tRNAscan-SE],[2.0.0],[pchan@soe.ucsc.edu],[tRNAscan-SE])
+ AC_CONFIG_HEADERS([config.h])
+ 
+ # Checks for programs.
+@@ -33,7 +33,8 @@ AC_TYPE_SIZE_T
+ # Checks for library functions.
+ AC_FUNC_MALLOC
+ AC_FUNC_REALLOC
+-AC_CHECK_FUNCS([bzero memset re_comp regcomp sqrt strcasecmp strchr strstr])
++AC_CHECK_FUNCS([bzero memset re_comp regcomp strcasecmp strchr strstr])
++AC_SEARCH_LIBS([sqrt],[m])
+ 
+ # use automake
+ AM_INIT_AUTOMAKE([foreign])

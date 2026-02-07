@@ -1,0 +1,16 @@
+bin/riemann-client
+include/riemann/attribute.h
+include/riemann/client.h
+include/riemann/communicate.h
+include/riemann/event.h
+include/riemann/message.h
+include/riemann/proto/riemann.pb-c.h
+include/riemann/query.h
+include/riemann/riemann-client.h
+include/riemann/simple.h
+lib/libriemann-client-gnutls.a
+lib/libriemann-client-gnutls.so
+lib/libriemann-client-gnutls.so.11
+lib/libriemann-client-gnutls.so.11.1.2
+libdata/pkgconfig/riemann-client.pc
+share/man/man1/riemann-client.1.gz

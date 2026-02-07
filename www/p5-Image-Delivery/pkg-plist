@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Image/Delivery.pm
+%%SITE_PERL%%/Image/Delivery/Provider.pm
+%%SITE_PERL%%/Image/Delivery/Provider/IOHandle.pm
+%%SITE_PERL%%/Image/Delivery/Provider/Scalar.pm
+%%SITE_PERL%%/Image/Delivery/Provider/File.pm
+%%PERL5_MAN3%%/Image::Delivery.3.gz
+%%PERL5_MAN3%%/Image::Delivery::Provider.3.gz

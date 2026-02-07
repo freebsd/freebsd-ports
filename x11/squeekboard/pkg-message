@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+To unhide the keyboard after launch run
+
+$ gsettings set \
+    org.gnome.desktop.a11y.applications \
+    screen-keyboard-enabled \
+    true
+$ gdbus call --session \
+    --dest=sm.puri.OSK0 \
+    --object-path=/sm/puri/OSK0 \
+    --method=sm.puri.OSK0.SetVisible \
+    true
+EOM
+}
+]

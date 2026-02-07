@@ -1,0 +1,10 @@
+bin/anyevent-mqtt-monitor
+bin/anyevent-mqtt-pub
+bin/anyevent-mqtt-sub
+%%SITE_PERL%%/AnyEvent/MQTT.pm
+%%PERL5_MAN3%%/AnyEvent::MQTT.3.gz
+%%PERL5_MAN1%%/anyevent-mqtt-monitor.1.gz
+%%PERL5_MAN1%%/anyevent-mqtt-pub.1.gz
+%%PERL5_MAN1%%/anyevent-mqtt-sub.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/README

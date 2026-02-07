@@ -1,0 +1,13 @@
+--- icons/Makefile.orig	2019-05-28 10:09:57 UTC
++++ icons/Makefile
+@@ -37,8 +37,8 @@ PS_ICONS=$(patsubst %,bluecube/%,$(notdir $(GEN_PS_ICO
+ # ----------------------------------------------------
+ # FLAGS
+ # ----------------------------------------------------
+-ERL_FLAGS += -pa ../../wings/ebin
+-ERL_COMPILE_FLAGS += -I ../.. -Werror +debug_info
++ERL_FLAGS += -pa ../ebin
++ERL_COMPILE_FLAGS += -I .. -Werror +debug_info
+ 
+ # ----------------------------------------------------
+ # Targets

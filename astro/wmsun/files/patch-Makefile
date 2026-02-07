@@ -1,0 +1,19 @@
+--- Makefile.orig	2024-10-17 21:56:44 UTC
++++ Makefile
+@@ -21,14 +21,14 @@
+ 
+ .c.o:
+ 	$(CC) $(CPPFLAGS) -DWMSUN_VERSION=\"$(WMSUN_VERSION)\" $(CFLAGS) -c $< \
+-		-o $*.o
++		-o $@ $(INCDIR)
+ 
+ all:	wmsun.o wmsun
+ 
+ wmsun.o: wmSun_master.xpm wmSun_mask.xbm
+ 
+ wmsun:	$(OBJS)
+-	$(CC) $(LDFLAGS) -o wmsun $^ $(LIBS)
++	$(CC) $(LDFLAGS) -o wmsun $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \

@@ -1,0 +1,142 @@
+--- libexec/kx-td1232.lib.orig	Sun Mar  4 17:48:54 2007
++++ libexec/kx-td1232.lib	Tue Mar 20 20:08:42 2007
+@@ -10,70 +10,81 @@
+ # TESTLOG: Panasonic KX-TDA600.txt
+ #
+ sub parsecurcalls() {
+-    while ($str=<PBX_DATA>)
+-    {
+-        $stringnumber++;
+-        if ($str =~ /(\d{2})\/(\d{2})\/(\d{2}) (\d{2})\:(\d{2})(.{2}) (.{5}) (\d{2}) (.{25}).{5} (\d{2}):(\d{2})\'(\d{2}) (.{10}) (.{2})/){
+-	    unitecurcalls();
+-        }else{
+-	    if ($vars{debug} =~ /yes/i){
+-		if ($str !~ /^\s*$/){
+-		    print $str;
++	while ($str=<PBX_DATA>)
++	{
++		$stringnumber++;
++		if ($str =~ /(\d{2})\/(\d{2})\/(\d{2}) (\d{2})\:(\d{2})(.{2}) (.{5}) (\d{2}) (.{25}).{5} (\d{2}):(\d{2})\'(\d{2}) (.{10}) (.{2})/){
++			unitecurcalls();
++		}else{
++			if ($vars{debug} =~ /yes/i){
++				if ($str !~ /^\s*$/){
++					print $str;
++				};
++			};
+ 		};
+-	    };
+-        };
+-    };
++	};
+ };
+ 
+ sub unitecurcalls() {
+-
+-    my $Month = $1;
+-    my $Day=$2;
+-    my $Year=$3+2000;
+-    my $code=$13;
+-
+-    my $CallHour=&AmPmTo24($4,$6);
+-    
+-    if($14 eq 'FW' or $14 eq 'TR'){
+-	$forwarded =1;
+-    }else{
+-        $forwarded =0;
+-    };
+-
+-    $CallMinute=$5;
+-
+-    $internally=$7;
+-
+-    $co=$8;
+-    
+-    $duration = (($10*60*60)+($11*60)+$12);
+-    $forIncoming=$9;
+-
+-    $earlyIncoming=$10;
+-
+-    $timeofcall = "$Year-$Month-$Day $CallHour\:$CallMinute\:00";
+-
+-    if($forIncoming =~ /<I(NCOMING)?>\s*/i){
+-	$way='1';
+-	if ($forIncoming=~/(\d+)/) 
+-	{
+-		$number=$1;
++	my $Day='';my $Month='';
++	# TDA600 has dd/mm/yy format
++	if($vars{model} eq 'KX-TDA600'){
++		$Day=$1;
++		$Month = $2;
+ 	}
+-	else {
+-		$number=0;
++	else { # 1232 has mm/dd/yy format
++		$Month = $1;
++		$Day=$2;
+ 	}
+-    }else{
+-	$way='2';
+-	$number=$forIncoming;
+-	$forIncoming =~ s/\D+//;
+-	$number = substr($forIncoming,0,100);
+-    };
+-
+-    if ($timeofcall ne ""){
+-	$callsCount++;
+-    }
+-    #print("$stringnumber $timeofcall $forwarded $internally $co $way $number $duration\n");
+-    WriteRecord($timeofcall, $forwarded, $internally, $co, $way, $number, $duration);
++	my $Year=$3+2000;
++	
++	my $code=$13;
++	
++	my $CallHour=&AmPmTo24($4,$6);
++	
++	if($14 eq 'FW' or $14 eq 'TR'){
++		$forwarded =1;
++	}else{
++		$forwarded =0;
++	};
++	
++	$CallMinute=$5;
++	
++	$internally=$7;
++	
++	$co=$8;
++	
++	$duration = (($10*60*60)+($11*60)+$12);
++	$forIncoming=$9;
++	
++	$earlyIncoming=$10;
++	
++	$timeofcall = "$Year-$Month-$Day $CallHour\:$CallMinute\:00";
++	
++	if($forIncoming =~ /<I(NCOMING)?>\s*/i){
++		$way='1';
++		if ($forIncoming=~/(\d+)/) 
++		{
++			$number=$1;
++		}
++		else {
++			$number=0;
++		}
++	}else{
++		$way='2';
++		$number=$forIncoming;
++		if ($forIncoming=~/([\d*#P]+)/) 
++		{
++			$number=$1;
++		}
++		
++	};
++	
++	if ($timeofcall ne ""){
++		$callsCount++;
++	}
++	#print("$stringnumber $timeofcall $forwarded $internally $co $way $number $duration\n");
++	WriteRecord($timeofcall, $forwarded, $internally, $co, $way, $number, $duration);
+ }
+ 
+ 1;

@@ -1,0 +1,22 @@
+(listen 24680)
+(defaults
+	(effector
+		(system "logger 'shell script for " (name) " switching to address " (addr) "'")
+		(zone /etc/namedb/master/example.com)
+		(kill HUP /var/run/named/pid))
+	(flags allow-unsafe)
+	(interval 70 10)
+	(timeout 900))
+(account
+	(name host-1)
+	(key #  0123456789ABCDEF 0123456789ABCDEF
+		0123456789ABCDEF 0123456789ABCDEF
+		0123456789ABCDEF 0123456789ABCDEF
+		0123456789ABCDEF 0123456789ABCDEF  #))
+(account
+	(name ntpless-host-2)
+	(key #  FEDCBA9876543210 FEDCBA9876543210
+		FEDCBA9876543210 FEDCBA9876543210
+		FEDCBA9876543210 FEDCBA9876543210
+		FEDCBA9876543210 FEDCBA9876543210  #)
+	(interval 86400))

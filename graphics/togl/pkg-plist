@@ -1,0 +1,7 @@
+include/togl.h
+include/toglDecls.h
+include/togl_ws.h
+lib/Togl2.0/LICENSE
+lib/Togl2.0/libTogl2.0.so
+lib/Togl2.0/pkgIndex.tcl
+lib/libToglstub2.0.a

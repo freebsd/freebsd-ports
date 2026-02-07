@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/File::Flock.3.gz
+%%PERL5_MAN3%%/File::Flock::Forking.3.gz
+%%PERL5_MAN3%%/File::Flock::Subprocess.3.gz
+%%SITE_PERL%%/File/Flock.pm
+%%SITE_PERL%%/File/Flock/Forking.pm
+%%SITE_PERL%%/File/Flock/Subprocess.pm

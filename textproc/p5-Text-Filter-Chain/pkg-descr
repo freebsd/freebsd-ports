@@ -1,0 +1,6 @@
+Text::Filter::Chain - object for chaining Text::Filter objects and
+running them sequentially, feeding the output of each filter to the
+input of the next one.
+
+-Anton
+<tobez@FreeBSD.org>

@@ -1,0 +1,33 @@
+--- ./Makefile.orig	2002-10-25 19:55:50.000000000 -0400
++++ ./Makefile	2014-06-23 22:15:04.000000000 -0400
+@@ -18,7 +18,7 @@
+ #CC	= cl
+ 
+ # K&R cc
+-CC	= cc
++#CC	= cc
+ 
+ #---( Operating system )---
+ 
+@@ -40,8 +40,8 @@
+ #---( Files, directories, etc.)---
+ 
+ SRC	= l2a.tex Makefile l2a.l l2a.1 yywrap.c file_id.diz manifest.txt
+-BINDIR	= /local/bin
+-MANDIR	= /local/man
++BINDIR	= ${PREFIX}/bin
++MANDIR	= ${PREFIX}/share/man
+ 
+ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ #                         END OF  CUSTOMIZATION SECTION
+@@ -61,8 +61,8 @@
+ #---( housekeeping )----------------------------------------------------------
+ 
+ install:
+-	cp $(EXE) $(BINDIR)/$(EXE)
+-	cp l2a.1 $(MANDIR)/man1/l2a.1
++	${BSD_INSTALL_PROGRAM} $(EXE) $(DESTDIR)$(BINDIR)/$(EXE)
++	${BSD_INSTALL_MAN} l2a.1 $(DESTDIR)$(MANDIR)/man1/l2a.1
+ 
+ tidy:
+ 	rm -f $(OBJ) $(EXE) l2a.zip l2a.txt lex.yy.c l2a.aux l2a.log fn.tmp

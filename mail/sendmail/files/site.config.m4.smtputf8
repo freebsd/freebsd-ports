@@ -1,0 +1,3 @@
+APPENDDEF(`confENVDEF',`-DUSE_EAI')
+APPENDDEF(`confINCDIRS', `-I%%LOCALBASE%%/include')
+APPENDDEF(`confLIBS', `-licuuc')

@@ -1,0 +1,11 @@
+--- cmake/install_layout.cmake.orig	2024-08-08 10:30:27 UTC
++++ cmake/install_layout.cmake
+@@ -160,7 +160,7 @@ SET(INSTALL_MYSQLSHAREDIR_STANDALONE    "share")
+ #
+ SET(INSTALL_SHAREDIR_STANDALONE         "share")
+ SET(INSTALL_MYSQLSHAREDIR_STANDALONE    "share")
+-SET(INSTALL_MYSQLTESTDIR_STANDALONE     "xtrabackup-test")
++# SET(INSTALL_MYSQLTESTDIR_STANDALONE     "xtrabackup-test")
+ SET(INSTALL_SUPPORTFILESDIR_STANDALONE  "support-files")
+ #
+ SET(INSTALL_MYSQLDATADIR_STANDALONE     "data")

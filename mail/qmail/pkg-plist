@@ -1,0 +1,218 @@
+@unexec for alias in postmaster root mailer-daemon; do if [ -f %D/alias/.qmail-${alias} ] && [ $(stat -f '%%z' %D/alias/.qmail-${alias}) -eq 0 ]; then rm -f %D/alias/.qmail-${alias}; fi; done
+@exec for alias in postmaster root mailer-daemon; do if ! [ -f %D/alias/.qmail-${alias} ]; then :> %D/alias/.qmail-${alias}; fi; done
+%%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmailsmtpd
+%%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmailsend
+%%RCDLINK%%@exec /bin/ln -fs %D/boot/qmailsmtpd %%LOCALBASE%%/etc/rc.d/qmailsmtpd
+%%RCDLINK%%@exec /bin/ln -fs %D/boot/qmailsend %%LOCALBASE%%/etc/rc.d/qmailsend
+%%RCDLINK%%@exec echo; echo "A %%LOCALBASE%%/etc/rc.d/qmailsmtpd and a %%LOCALBASE%%/etc/rc.d/qmailsend symlink were created." | /usr/bin/fmt; echo
+%%LDAP%%bin/auth_dovecot
+%%LDAP%%bin/auth_imap
+%%LDAP%%bin/auth_pop
+%%LDAP%%bin/auth_smtp
+bin/bouncesaying
+bin/condredirect
+%%LDAP%%bin/condwrite
+bin/datemail
+%%LDAP%%bin/digest
+bin/elq
+bin/except
+bin/forward
+%%SPAMCONTROL%%bin/ipmeprint
+bin/maildir2mbox
+bin/maildirmake
+bin/maildirwatch
+bin/mailsubj
+%%LDAP%%bin/pbsadd
+%%LDAP%%bin/pbscheck
+%%LDAP%%bin/pbsdbd
+bin/pinq
+bin/predate
+bin/preline
+bin/qail
+bin/qbiff
+%%SPAMCONTROL%%bin/qmail-badloadertypes
+%%SPAMCONTROL%%bin/qmail-badmimetypes
+%%LDAP%%bin/qmail-cdb
+bin/qmail-clean
+%%LDAP%%bin/qmail-forward
+bin/qmail-getpw
+%%LDAP%%bin/qmail-group
+bin/qmail-inject
+%%LDAP%%bin/qmail-ldaplookup
+bin/qmail-local
+bin/qmail-lspawn
+%%SPAMCONTROL%%bin/qmail-mfrules
+bin/qmail-newmrh
+bin/qmail-newu
+bin/qmail-pop3d
+bin/qmail-popup
+bin/qmail-pw2u
+bin/qmail-qmqpc
+bin/qmail-qmqpd
+bin/qmail-qmtpd
+bin/qmail-qread
+bin/qmail-qstat
+@mode 04711
+@owner qmailq
+bin/qmail-queue
+@mode
+@owner
+%%LDAP%%bin/qmail-quotawarn
+%%SPAMCONTROL%%bin/qmail-recipients
+bin/qmail-remote
+%%LDAP%%bin/qmail-reply
+bin/qmail-rspawn
+%%LDAP%%bin/qmail-secretary
+bin/qmail-send
+bin/qmail-showctl
+%%SPAMCONTROL%%bin/qmail-smtpam
+bin/qmail-smtpd
+bin/qmail-start
+bin/qmail-tcpok
+bin/qmail-tcpto
+%%EXTTODO%%bin/qmail-todo
+%%LDAP%%%%EXTERNAL_TODO%%bin/qmail-todo
+%%LDAP%%bin/qmail-verify
+bin/qreceipt
+bin/qsmhook
+bin/sendmail
+bin/splogger
+%%TLS%%bin/update_tmprsadh
+bin/tcp-env
+%%NO_LDAP%%boot/binm1
+%%NO_LDAP%%boot/binm1+df
+%%NO_LDAP%%boot/binm2
+%%NO_LDAP%%boot/binm2+df
+%%NO_LDAP%%boot/binm3
+%%NO_LDAP%%boot/binm3+df
+%%NO_LDAP%%boot/home
+%%NO_LDAP%%boot/home+df
+%%NO_LDAP%%boot/maildir
+%%NO_LDAP%%boot/proc
+%%NO_LDAP%%boot/proc+df
+%%NO_LDAP%%boot/qmailsmtpd
+%%NO_LDAP%%boot/qmailsend
+%%LDAP%%boot/qmail/log/run
+%%LDAP%%boot/qmail/run
+%%LDAP%%boot/qmail-smtpd/log/run
+%%LDAP%%boot/qmail-smtpd/run
+%%LDAP%%boot/qmail-qmqpd/log/run
+%%LDAP%%boot/qmail-qmqpd/run
+%%LDAP%%boot/qmail-pop3d/log/run
+%%LDAP%%boot/qmail-pop3d/run
+%%LDAP%%boot/qmail-imapd/log/run
+%%LDAP%%boot/qmail-imapd/run
+%%LDAP%%boot/qmail-pop3d-ssl/log/run
+%%LDAP%%boot/qmail-pop3d-ssl/run
+%%LDAP%%boot/qmail-imapd-ssl/log/run
+%%LDAP%%boot/qmail-imapd-ssl/run
+%%LDAP%%boot/qmail-pbsdbd/log/run
+%%LDAP%%boot/qmail-pbsdbd/run
+@comment This port installs the following manually (ie. not through qmail-hier)
+configure/config
+configure/config-fast
+configure/dnsfq
+configure/dnsip
+configure/dnsptr
+configure/hostname
+configure/install
+configure/ipmeprint
+%%LDAP%%control/Makefile
+%%LDAP%%@sample control/qmail-imapd.rules.sample
+%%LDAP%%@sample control/qmail-pop3d.rules.sample
+%%LDAP%%@sample control/qmail-qmqpd.rules.sample
+%%LDAP%%@sample control/qmail-smtpd.rules.sample
+%%LDAP%%@sample control/signatures.sample
+share/man/man1/bouncesaying.1.gz
+share/man/man1/condredirect.1.gz
+share/man/man1/except.1.gz
+share/man/man1/forward.1.gz
+share/man/man1/maildir2mbox.1.gz
+share/man/man1/maildirmake.1.gz
+share/man/man1/maildirwatch.1.gz
+share/man/man1/mailsubj.1.gz
+share/man/man1/preline.1.gz
+share/man/man1/qbiff.1.gz
+share/man/man1/qreceipt.1.gz
+share/man/man1/tcp-env.1.gz
+share/man/man5/addresses.5.gz
+share/man/man5/dot-qmail.5.gz
+share/man/man5/envelopes.5.gz
+share/man/man5/maildir.5.gz
+share/man/man5/mbox.5.gz
+share/man/man5/qmail-control.5.gz
+share/man/man5/qmail-header.5.gz
+share/man/man5/qmail-log.5.gz
+share/man/man5/qmail-users.5.gz
+share/man/man5/tcp-environ.5.gz
+share/man/man7/forgeries.7.gz
+share/man/man7/qmail-limits.7.gz
+share/man/man7/qmail.7.gz
+share/man/man8/qmail-clean.8.gz
+share/man/man8/qmail-command.8.gz
+share/man/man8/qmail-getpw.8.gz
+share/man/man8/qmail-inject.8.gz
+share/man/man8/qmail-local.8.gz
+share/man/man8/qmail-lspawn.8.gz
+share/man/man8/qmail-newmrh.8.gz
+share/man/man8/qmail-newu.8.gz
+share/man/man8/qmail-pop3d.8.gz
+share/man/man8/qmail-popup.8.gz
+share/man/man8/qmail-pw2u.8.gz
+share/man/man8/qmail-qmqpc.8.gz
+share/man/man8/qmail-qmqpd.8.gz
+share/man/man8/qmail-qmtpd.8.gz
+share/man/man8/qmail-qread.8.gz
+share/man/man8/qmail-qstat.8.gz
+share/man/man8/qmail-queue.8.gz
+share/man/man8/qmail-remote.8.gz
+share/man/man8/qmail-rspawn.8.gz
+share/man/man8/qmail-send.8.gz
+share/man/man8/qmail-showctl.8.gz
+share/man/man8/qmail-smtpd.8.gz
+share/man/man8/qmail-start.8.gz
+share/man/man8/qmail-tcpok.8.gz
+share/man/man8/qmail-tcpto.8.gz
+share/man/man8/splogger.8.gz
+%%SPAMCONTROL%%share/man/man8/qmail-smtpam.8.gz
+%%SPAMCONTROL%%share/man/man8/qmail-badloadertypes.8.gz
+%%SPAMCONTROL%%share/man/man8/qmail-badmimetypes.8.gz
+%%SPAMCONTROL%%share/man/man8/qmail-mfrules.8.gz
+%%SPAMCONTROL%%share/man/man8/qmail-recipients.8.gz
+scripts/enable-qmail
+scripts/mkaliasdir
+%%SPAMCONTROL%%scripts/qmail-alias2recipients
+%%SPAMCONTROL%%scripts/qmail-pwd2recipients
+%%SPAMCONTROL%%scripts/qmail-users2recipients
+%%SPAMCONTROL%%scripts/qmail-vpopmail2recipients
+@comment Setup non-bin/ dirs (can be removed once pkg_install is EOL)
+@exec %D/configure/install x
+@comment Do initial config setup if not already done
+@exec if ! [ -e %D/control/me ]; then (cd %D/configure && ./config); fi
+%%LDAP%%@dir boot/qmail/env
+%%LDAP%%@dir boot/qmail-imapd/env
+%%LDAP%%@dir boot/qmail-imapd-ssl/env
+%%LDAP%%@dir boot/qmail-pbsdbd/env
+%%LDAP%%@dir boot/qmail-pop3d/env
+%%LDAP%%@dir boot/qmail-pop3d-ssl/env
+%%LDAP%%@dir boot/qmail-qmqpd/env
+%%LDAP%%@dir boot/qmail-smtpd/env
+%%LDAP%%@dir log/qmail
+%%LDAP%%@dir log/qmail-imapd
+%%LDAP%%@dir log/qmail-imapd-ssl
+%%LDAP%%@dir log/qmail-pbsdbd
+%%LDAP%%@dir log/qmail-pop3d
+%%LDAP%%@dir log/qmail-pop3d-ssl
+%%LDAP%%@dir log/qmail-qmqpd
+%%LDAP%%@dir log/qmail-smtpd
+@dir alias
+@dir control
+@dir users
+@unexec echo "1) If you are permanently removing qmail, you should also 'rm -rf ${PKG_PREFIX}' and remove the qmail users/groups." | /usr/bin/fmt
+@unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
+@unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. You can do it just executing 'echo sendmail_enable=\"YES\"' >> /etc/rc.conf" | /usr/bin/fmt
+@cwd %%LOCALBASE%%
+@dir etc/man.d
+etc/man.d/qmail.conf
+%%RCDLINK%%@dir etc/rc.d
+@cwd %%QMAIL_PREFIX%%

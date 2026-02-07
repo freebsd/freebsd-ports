@@ -1,0 +1,11 @@
+--- src/Makefile.2.orig	2019-02-27 14:28:29 UTC
++++ src/Makefile.2
+@@ -69,7 +69,7 @@ libs:     $(LIBRARY)
+ dynlibs: $(DYNLIBRARY)
+ 
+ $(LIBRARY): $(OBJS) $(OBJSLIB) 
+-	$(AR) $(ARFLAGS) $(LIBRARY) $(OBJSLIB) $(OBJS)
++	$(CC) $(LDFLAGS) -shared -o libwannier.so -Wl,-soname,libwannier.so $(OBJSLIB) $(OBJS)
+ 
+ $(DYNLIBRARY): $(OBJS) $(OBJSLIB)
+ 	echo $(COMPILER)

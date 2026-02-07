@@ -1,0 +1,14 @@
+bin/cvscan
+bin/cvsup2cvsync
+bin/cvsync
+bin/cvsync2cvsup
+bin/cvsyncd
+bin/rcscan
+bin/rcscmp
+share/man/man1/cvscan.1.gz
+share/man/man1/cvsup2cvsync.1.gz
+share/man/man1/cvsync.1.gz
+share/man/man1/cvsync2cvsup.1.gz
+share/man/man1/cvsyncd.1.gz
+share/man/man1/rcscan.1.gz
+share/man/man1/rcscmp.1.gz

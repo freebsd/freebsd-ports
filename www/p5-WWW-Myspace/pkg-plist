@@ -1,0 +1,16 @@
+bin/approve_friends
+bin/comment_myspace
+bin/message_group
+%%PERL5_MAN3%%/WWW::Myspace.3.gz
+%%PERL5_MAN3%%/WWW::Myspace::Comment.3.gz
+%%PERL5_MAN3%%/WWW::Myspace::FriendChanges.3.gz
+%%PERL5_MAN3%%/WWW::Myspace::Message.3.gz
+%%PERL5_MAN3%%/WWW::Myspace::MyBase.3.gz
+%%SITE_PERL%%/WWW/Myspace.pm
+%%SITE_PERL%%/WWW/Myspace/Comment.pm
+%%SITE_PERL%%/WWW/Myspace/FriendChanges.pm
+%%SITE_PERL%%/WWW/Myspace/Message.pm
+%%SITE_PERL%%/WWW/Myspace/MyBase.pm
+%%PERL5_MAN1%%/approve_friends.1.gz
+%%PERL5_MAN1%%/comment_myspace.1.gz
+%%PERL5_MAN1%%/message_group.1.gz

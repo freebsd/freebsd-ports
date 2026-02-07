@@ -1,0 +1,23 @@
+--- src/Makefile.in.orig	Sun Feb  6 04:35:02 2005
++++ src/Makefile.in	Wed May  4 14:16:28 2005
+@@ -26,6 +26,9 @@
+ # The installation program.
+ 
+ INSTALL=@INSTALL@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_SCRIPT=@INSTALL_SCRIPT@
++INSTALL_DATA=@INSTALL_DATA@
+ 
+ # The C compiler and linker
+ 
+@@ -69,8 +72,8 @@
+ 
+ install : programs
+ 	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)
+-	$(INSTALL) -m 755 cxref-inst $(bindir)/cxref
+-	$(INSTALL) -m 755 $(srcdir)/cxref-cc $(bindir)
++	$(INSTALL_PROGRAM) cxref-inst $(bindir)/cxref
++	$(INSTALL_SCRIPT) $(srcdir)/cxref-cc $(bindir)
+ 
+ install-win32 : programs
+ 	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)

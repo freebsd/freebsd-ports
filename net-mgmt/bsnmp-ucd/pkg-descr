@@ -1,0 +1,3 @@
+bsnmp-ucd is a module for bsnmpd which allows you to get memory, load
+average, cpu utilization and other system statistics. It implements parts
+of UCD-SNMP-MIB for this.

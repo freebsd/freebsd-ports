@@ -1,0 +1,16 @@
+rabbitmqadmin is a command-line tool for managing RabbitMQ via its HTTP API.
+It allows administrators to declare, list, and delete RabbitMQ objects such as
+queues, exchanges, bindings, users, virtual hosts, and more.
+
+This is version 2 of rabbitmqadmin, a complete rewrite of the original Python
+tool. It provides a modern CLI interface with improved validation, better error
+handling, and is distributed as a standalone binary rather than as part of the
+RabbitMQ management plugin.
+
+Key features include:
+- Managing virtual hosts, queues, exchanges, bindings, and users
+- Purging queues and publishing/retrieving messages
+- Working with policies, shovels, and federation
+- Exporting and importing definitions
+- Health checks and monitoring
+- Support for TOML-based configuration files

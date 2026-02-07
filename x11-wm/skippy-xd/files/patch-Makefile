@@ -1,0 +1,30 @@
+--- Makefile.orig	2015-02-24 13:35:00 UTC
++++ Makefile
+@@ -1,5 +1,6 @@
+ PREFIX ?= /usr
+ BINDIR ?= ${PREFIX}/bin
++XDGDIR ?= ${PREFIX}/etc/xdg
+ 
+ CC ?= gcc
+ 
+@@ -61,6 +62,8 @@ OBJS = $(foreach name,$(SRCS_RAW),$(name).o)
+ %.o: src/%.c ${HDRS}
+ 	${CC} ${INCS} ${CFLAGS} ${CPPFLAGS} -c src/$*.c
+ 
++all: skippy-xd${EXESUFFIX}
++
+ skippy-xd${EXESUFFIX}: ${OBJS}
+ 	${CC} ${LDFLAGS} -o skippy-xd${EXESUFFIX} ${OBJS} ${LIBS}
+ 
+@@ -68,9 +71,9 @@ clean:
+ 	rm -f ${BINS} ${OBJS} src/.clang_complete
+ 
+ install: ${BINS} skippy-xd.sample.rc
+-	install -d "${DESTDIR}${BINDIR}/" "${DESTDIR}/etc/xdg/"
++	install -d "${DESTDIR}${BINDIR}/" "${DESTDIR}${XDGDIR}/"
+ 	install -m 755 ${BINS} "${DESTDIR}${BINDIR}/"
+-	install -m 644 skippy-xd.sample.rc "${DESTDIR}/etc/xdg/skippy-xd.rc"
++	install -m 644 skippy-xd.sample.rc "${DESTDIR}${XDGDIR}/skippy-xd.rc.sample"
+ 
+ uninstall:
+ 	# Should configuration file be removed?

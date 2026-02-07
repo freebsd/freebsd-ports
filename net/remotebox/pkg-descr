@@ -1,0 +1,3 @@
+RemoteBox is a graphical (GTK) VirtualBox client, which lets you administer
+guests or virtual machines which reside on a remote server or even your
+local machine if desired.

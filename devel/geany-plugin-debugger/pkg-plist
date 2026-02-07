@@ -1,0 +1,15 @@
+lib/geany/debugger.so
+%%DOCSDIR%%/debugger/AUTHORS
+%%DOCSDIR%%/debugger/COPYING
+%%DOCSDIR%%/debugger/ChangeLog
+%%DOCSDIR%%/debugger/NEWS
+%%DOCSDIR%%/debugger/README
+%%DATADIR%%/debugger/continue.png
+%%DATADIR%%/debugger/restart.gif
+%%DATADIR%%/debugger/run.gif
+%%DATADIR%%/debugger/run_to_cursor.gif
+%%DATADIR%%/debugger/step_in.png
+%%DATADIR%%/debugger/step_out.gif
+%%DATADIR%%/debugger/step_over.gif
+%%DATADIR%%/debugger/stop.gif
+%%DATADIR%%/debugger/tabs.gif

@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: mailman
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable or configure mailman:
+#
+# mailman_enable (bool):        Set it to "YES" to enable mailman.
+#                               Default is "NO".
+#
+# mailman_fix_perms (bool):     Set it to "NO" to disable running
+#                               check_perms on start or post-install.
+#                               Default is "YES", but this is unsuitable
+#                               for slow machines with many lists.
+#
+# mailman_run_localhost (bool):	Set to "YES" to enable running mailman
+#                               with unchanged DEFAULT_URL_HOST and
+#                               DEFAULT_EMAIL_HOST. Default is "NO".
+
+. /etc/rc.subr
+
+name="mailman"
+rcvar="mailman_enable"
+command_interpreter="%%PYTHON_CMD%%"
+command="%%MAILMANDIR%%/bin/mailmanctl"
+command_args="start"
+pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
+
+load_rc_config $name
+
+: ${mailman_enable:="NO"}
+: ${mailman_fix_perms:="YES"}
+: ${mailman_flags:="-s -q"}
+: ${mailman_run_localhost:="NO"}
+
+start_precmd=${name}_prestart
+extra_commands="reload status reopen"
+reopen_cmd="${command} reopen"
+
+mailman_prestart() {
+	### check/fix permissions if desired
+	if checkyesno mailman_fix_perms ; then 
+		check_startmsgs && echo "Fixing ${name} permissions:"
+		env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f ${rc_debug:+-v}
+	fi
+
+	### check if site list is created
+	if test ! -d "%%MAILMANDIR%%/lists/mailman" ; then
+		err 78 $'The site-wide "mailman" mailing list has not been created.\n\
+  Please review %%DOCSDIR%%/FreeBSD-post-install-notes,\n\
+  and section 4 onward of %%DOCSDIR%%/mailman-install.txt.'
+	fi
+
+	### check if the default configuration is plausible
+	vhosts=$(PYTHONPATH="%%MAILMANDIR%%/bin" "%%PYTHON_CMD%%" -c 'import paths;from Mailman import mm_cfg;_x=dict(mm_cfg.VIRTUAL_HOSTS);print repr(_x);')
+	if [ "${vhosts}" = "{'localhost': 'localhost'}" ] ; then
+		warn 'No DEFAULT or virtual hosts configured.'
+		warn 'Review %%DOCSDIR%%/FreeBSD-post-install-notes #1 for instructions.'
+		if ! checkyesno mailman_run_localhost ; then
+			err 78 "Start of mailman refused due to insufficient configuration."
+		fi
+	fi
+}
+
+run_rc_command "$1"

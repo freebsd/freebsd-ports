@@ -1,0 +1,14 @@
+--- meson.build.orig	2020-07-09 18:29:47 UTC
++++ meson.build
+@@ -23,7 +23,10 @@ endif
+ root_dir = include_directories ('.')
+ 
+ subdir('libsignon-glib')
+-subdir('docs')
++
++if get_option('docs')
++   subdir('docs')
++endif
+ 
+ if get_option('python')
+     subdir('pygobject')

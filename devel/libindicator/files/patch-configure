@@ -1,0 +1,11 @@
+--- configure.orig	2012-09-19 15:40:08 UTC
++++ configure
+@@ -12141,7 +12141,7 @@ fi
+ esac
+ 
+ 
+-LIBINDICATOR_LIBS+="$LIBM"
++LIBINDICATOR_LIBS="$LIBINDICATOR_LIBS $LIBM"
+ 
+ ##############################
+ # Custom Junk

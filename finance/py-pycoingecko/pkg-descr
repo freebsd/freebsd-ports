@@ -1,0 +1,4 @@
+pycoingecko is Pi ython wrapper for the CoinGecko API.
+
+CoinGecko provides information about cryptocurrency prices, excghange rates,
+market caps, etc.

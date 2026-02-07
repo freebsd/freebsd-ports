@@ -1,0 +1,2 @@
+This a PERL script that converts ChordPro files (.chopro) to a more
+readable output format, including HTML, ASCII, and TeX.

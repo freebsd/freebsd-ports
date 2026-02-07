@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: dnsproxy
+# REQUIRE: NETWORKING SERVERS
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+#
+# Define these dnsproxy_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# dnsproxy_enable="YES"		# Run the dnsproxy(1) daemon (YES/NO).
+# dnsproxy_flags=""		# Extra flags for dnsproxy(1) (if enabled).
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+dnsproxy_enable=${dnsproxy_enable:-"NO"}
+: ${dnsproxy_svcj_options:="net_basic"}
+command_args=${dnsproxy_flags:-"-c %%ETCDIR%%/dnsproxy.conf -d"}
+
+. /etc/rc.subr
+
+name="dnsproxy"
+rcvar=dnsproxy_enable
+
+command="%%PREFIX%%/sbin/dnsproxy"
+
+load_rc_config $name
+run_rc_command "$1"

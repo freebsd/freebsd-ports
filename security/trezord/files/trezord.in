@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: trezord
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# trezord_enable (bool):	Set to NO by default.
+#				Set it to YES to enable trezord.
+
+. /etc/rc.subr
+
+name=trezord
+rcvar=trezord_enable
+
+load_rc_config $name
+
+: ${trezord_enable:="NO"}
+
+command="%%PREFIX%%/bin/trezord-go"
+command_args="-l /var/log/trezord.log"
+daemon_command="/usr/sbin/daemon"
+pidfile="/var/run/trezord.pid"
+start_cmd="${name}_start"
+
+trezord_start()
+{
+    if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+        echo 1>&2 "${name} already running? (pid=$rc_pid)."
+        return 1
+    fi
+    echo "Starting ${name}."
+    /usr/sbin/daemon -p $pidfile ${command} ${command_args}
+    _run_rc_postcmd
+}
+
+run_rc_command "$1"

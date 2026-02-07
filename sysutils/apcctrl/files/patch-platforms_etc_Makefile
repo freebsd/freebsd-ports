@@ -1,0 +1,21 @@
+--- platforms/etc/Makefile.orig	2014-04-09 22:15:34 UTC
++++ platforms/etc/Makefile
+@@ -8,12 +8,12 @@ all-uninstall: uninstall-etc
+ 
+ install-etc:
+ 	$(call MKDIR,$(sysconfdir))
+-	$(call INSTNEW,644,apcctrl.conf,$(sysconfdir))
+-	$(call INSTORIG,744,changeme,$(sysconfdir))
+-	$(call INSTORIG,744,commfailure,$(sysconfdir))
+-	$(call INSTORIG,744,commok,$(sysconfdir))
+-	$(call INSTORIG,744,offbattery,$(sysconfdir))
+-	$(call INSTORIG,744,onbattery,$(sysconfdir))
++	$(call INSTDATA,644,apcctrl.conf,$(sysconfdir)/apcctrl.conf.sample)
++	$(call INSTDATA,744,changeme,$(sysconfdir)/changeme.sample)
++	$(call INSTDATA,744,commfailure,$(sysconfdir)/commfailure.sample)
++	$(call INSTDATA,744,commok,$(sysconfdir)/commok.sample)
++	$(call INSTDATA,744,offbattery,$(sysconfdir)/offbattery.sample)
++	$(call INSTDATA,744,onbattery,$(sysconfdir)/onbattery.sample)
+ 
+ uninstall-etc:
+ 

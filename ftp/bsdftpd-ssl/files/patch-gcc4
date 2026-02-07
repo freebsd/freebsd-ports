@@ -1,0 +1,128 @@
+--- contrib/ls/print.c.orig	2005-01-11 10:04:34 UTC
++++ contrib/ls/print.c
+@@ -681,12 +681,12 @@ printsize(size_t width, off_t bytes)
+ 		unit = unit_adjust(&dbytes);
+ 
+ 		if (dbytes == 0)
+-			(void)printf("%*s ", width, "0B");
++			(void)printf("%*s ", (int)width, "0B");
+ 		else
+-			(void)printf("%*.*f%c ", width - 1, dbytes > 10 ? 0 : 1,
++			(void)printf("%*.*f%c ", (int)(width - 1), dbytes > 10 ? 0 : 1,
+ 			    dbytes, "BKMGTPE"[unit]);
+ 	} else
+-		(void)printf("%*jd ", width, (intmax_t)bytes);
++		(void)printf("%*jd ", (int)width, (intmax_t)bytes);
+ }
+ 
+ /*
+--- ftp/extern.h.orig	2004-05-30 22:24:47 UTC
++++ ftp/extern.h
+@@ -170,7 +170,7 @@ int	togglevar __P((int, char **, int *, 
+ void	usage __P((void));
+ void	user __P((int, char **));
+ 
+-extern struct	cmd cmdtab[];
++/*extern struct	cmd cmdtab[];*/
+ extern FILE    *cout;
+ extern int	data;
+ extern char    *home;
+--- ftp/ftp_var.h.orig	2004-12-19 18:44:39 UTC
++++ ftp/ftp_var.h
+@@ -201,6 +201,8 @@ int macnum;			/* number of defined macro
+ struct macel macros[16];
+ char macbuf[4096];
+ 
++extern struct	cmd cmdtab[];
++
+ #include "sslapp.h"
+ #include "ssl_port_ftps.h"
+ 
+--- ftp/ftp.c.orig	2004-12-19 18:17:07 UTC
++++ ftp/ftp.c
+@@ -132,7 +132,8 @@ hookup(host0, port)
+ 	const char *host0;
+ 	char *port;
+ {
+-	int s, len, tos, error;
++	socklen_t len;
++	int s, tos, error;
+ 	struct addrinfo hints, *res, *res0;
+ 	static char hostnamebuf[MAXHOSTNAMELEN];
+ 	static char hostaddrbuf[NI_MAXHOST];
+@@ -1346,7 +1347,8 @@ int
+ initconn()
+ {
+ 	char *p, *a;
+-	int result, len, tmpno = 0;
++	socklen_t len;
++	int result, tmpno = 0;
+ 	int on = 1;
+ 	int error, ports;
+ 	u_int af;
+@@ -1774,7 +1776,8 @@ dataconn(lmode)
+ 	const char *lmode;
+ {
+ 	union sockunion from;
+-	int s, fromlen, tos;
++	socklen_t fromlen;
++	int s, tos;
+ #ifdef USE_SSL
+ 	int ret;
+ 	char *ssl_version;
+--- ftp/main.c.orig	2004-12-19 18:44:39 UTC
++++ ftp/main.c
+@@ -102,15 +102,15 @@ bio_dump_cb(bio, cmd, argp, argi, argl, 
+ 	if (out == NULL) return(ret);
+ 
+ 	if (cmd == (BIO_CB_READ | BIO_CB_RETURN)) {
+-		BIO_printf(out, "read from %08X (%d bytes => %ld (%X))\n",
+-			  bio, argi, ret, ret);
++/*		BIO_printf(out, "read from %08X (%d bytes => %ld (%X))\n",
++			  bio, argi, ret, ret);*/
+ 		BIO_dump(out,argp,(int)ret);
+-		BIO_flush(out);
++		(void)BIO_flush(out);
+ 	} else if (cmd == (BIO_CB_WRITE | BIO_CB_RETURN)) {
+-		BIO_printf(out, "write to %08X (%d bytes => %ld (%X))\n",
+-			  bio, argi, ret, ret);
++/*		BIO_printf(out, "write to %08X (%d bytes => %ld (%X))\n",
++			  bio, argi, ret, ret);*/
+ 		BIO_dump(out, argp, (int)ret);
+-		BIO_flush(out);
++		(void)BIO_flush(out);
+ 	}
+ 	return((cmd & BIO_CB_RETURN) ? ret : 1);
+ }
+@@ -121,7 +121,7 @@ set_ssl_trace(SSL *con) 
+ 	if (con != NULL) {
+ 		if (ssl_debug_flag) {
+ 			BIO_set_callback(SSL_get_rbio(con), bio_dump_cb);
+-			BIO_set_callback_arg(SSL_get_rbio(con), bio_err);
++			BIO_set_callback_arg(SSL_get_rbio(con), (char *)bio_err);
+ 		}
+ 	}
+ 	return 0;
+--- ftpd/ftpd.c.orig	2016-08-01 06:24:00 UTC
++++ ftpd/ftpd.c
+@@ -3783,7 +3783,7 @@ myoob(void)
+ 	tv.tv_usec=0;
+ 	if (select(fileno(stdin)+1, &mask, NULL, NULL, &tv)) {
+ #endif /*USE_SSL*/
+-	if (getline(cp, 7, stdin) == NULL) {
++	if (get_line(cp, 7, stdin) == NULL) {
+ 		reply(221, "You could at least say goodbye.");
+ 		dologout(0);
+ 	}
+--- port/bsd_prog.mk.orig	2003-04-05 09:42:20 UTC
++++ port/bsd_prog.mk
+@@ -43,7 +43,8 @@ OBJS+=  ${SRCS:N*.h:R:S/$/.o/g}
+ ${PROG}: ${OBJS}
+ 	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${OBJS} ${LDDESTDIR} ${LDADD}
+ 
+-.else !defined(SRCS)
++.else
++#!defined(SRCS)
+ 
+ .if !target(${PROG})
+ SRCS=	${PROG}.c

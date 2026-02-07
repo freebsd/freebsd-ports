@@ -1,0 +1,5 @@
+Maintain a folder which has its messages stored on a remote server. The
+communication between the client application and the server is implemented using
+the POP3 protocol. This class uses Mail::Transport::POP3 to hide the transport
+of information, and focusses solely on the correct handling of messages within a
+POP3 folder.

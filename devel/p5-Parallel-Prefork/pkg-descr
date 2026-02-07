@@ -1,0 +1,2 @@
+devel/p5-Parallel-Prefork is much like devel/p5-Parallel-ForkManager,
+but supports graceful shutdown and run-time reconfiguration.

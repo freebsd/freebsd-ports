@@ -1,0 +1,139 @@
+--- dbus/Makefile.in.orig	2023-08-12 06:58:52 UTC
++++ dbus/Makefile.in
+@@ -133,8 +133,8 @@ am__objects_2 = libdbus_la-gf-accounts-gen.lo \
+ 	libdbus_la-gf-file-manager-gen.lo \
+ 	libdbus_la-gf-gtk-notifications-gen.lo \
+ 	libdbus_la-gf-input-sources-gen.lo \
+-	libdbus_la-gf-login-manager-gen.lo \
+-	libdbus_la-gf-login-session-gen.lo \
++	libdbus_la-gf-consolekit-manager-gen.lo \
++	libdbus_la-gf-consolekit-session-gen.lo \
+ 	libdbus_la-gf-nautilus2-gen.lo \
+ 	libdbus_la-gf-upower-device-gen.lo \
+ 	libdbus_la-gf-screencast-gen.lo \
+@@ -181,8 +181,8 @@ am__depfiles_remade = ./$(DEPDIR)/libdbus_la-gf-accoun
+ 	./$(DEPDIR)/libdbus_la-gf-file-manager-gen.Plo \
+ 	./$(DEPDIR)/libdbus_la-gf-gtk-notifications-gen.Plo \
+ 	./$(DEPDIR)/libdbus_la-gf-input-sources-gen.Plo \
+-	./$(DEPDIR)/libdbus_la-gf-login-manager-gen.Plo \
+-	./$(DEPDIR)/libdbus_la-gf-login-session-gen.Plo \
++	./$(DEPDIR)/libdbus_la-gf-consolekit-manager-gen.Plo \
++	./$(DEPDIR)/libdbus_la-gf-consolekit-session-gen.Plo \
+ 	./$(DEPDIR)/libdbus_la-gf-nautilus2-gen.Plo \
+ 	./$(DEPDIR)/libdbus_la-gf-screencast-gen.Plo \
+ 	./$(DEPDIR)/libdbus_la-gf-screensaver-gen.Plo \
+@@ -503,10 +503,10 @@ BUILT_SOURCES = \
+ 	gf-gtk-notifications-gen.h \
+ 	gf-input-sources-gen.c \
+ 	gf-input-sources-gen.h \
+-	gf-login-manager-gen.c \
+-	gf-login-manager-gen.h \
+-	gf-login-session-gen.c \
+-	gf-login-session-gen.h \
++	gf-consolekit-manager-gen.c \
++	gf-consolekit-manager-gen.h \
++	gf-consolekit-session-gen.c \
++	gf-consolekit-session-gen.h \
+ 	gf-nautilus2-gen.c \
+ 	gf-nautilus2-gen.h \
+ 	gf-upower-device-gen.c \
+@@ -540,8 +540,8 @@ EXTRA_DIST = \
+ 	org.freedesktop.DBus.xml \
+ 	org.freedesktop.DisplayManager.Seat.xml \
+ 	org.freedesktop.FileManager1.xml \
+-	org.freedesktop.login1.Manager.xml \
+-	org.freedesktop.login1.Session.xml \
++	org.freedesktop.ConsoleKit.Manager.xml \
++	org.freedesktop.ConsoleKit.Session.xml \
+ 	org.freedesktop.Notifications.xml \
+ 	org.freedesktop.UPower.Device.xml \
+ 	org.gnome.Flashback.InputSources.xml \
+@@ -631,8 +631,8 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-file-manager-gen.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-gtk-notifications-gen.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-input-sources-gen.Plo@am__quote@ # am--include-marker
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-login-manager-gen.Plo@am__quote@ # am--include-marker
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-login-session-gen.Plo@am__quote@ # am--include-marker
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-consolekit-manager-gen.Plo@am__quote@ # am--include-marker
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-consolekit-session-gen.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-nautilus2-gen.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-screencast-gen.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdbus_la-gf-screensaver-gen.Plo@am__quote@ # am--include-marker
+@@ -753,19 +753,19 @@ libdbus_la-gf-input-sources-gen.lo: gf-input-sources-g
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -c -o libdbus_la-gf-input-sources-gen.lo `test -f 'gf-input-sources-gen.c' || echo '$(srcdir)/'`gf-input-sources-gen.c
+ 
+-libdbus_la-gf-login-manager-gen.lo: gf-login-manager-gen.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -MT libdbus_la-gf-login-manager-gen.lo -MD -MP -MF $(DEPDIR)/libdbus_la-gf-login-manager-gen.Tpo -c -o libdbus_la-gf-login-manager-gen.lo `test -f 'gf-login-manager-gen.c' || echo '$(srcdir)/'`gf-login-manager-gen.c
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdbus_la-gf-login-manager-gen.Tpo $(DEPDIR)/libdbus_la-gf-login-manager-gen.Plo
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gf-login-manager-gen.c' object='libdbus_la-gf-login-manager-gen.lo' libtool=yes @AMDEPBACKSLASH@
++libdbus_la-gf-consolekit-manager-gen.lo: gf-consolekit-manager-gen.c
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -MT libdbus_la-gf-consolekit-manager-gen.lo -MD -MP -MF $(DEPDIR)/libdbus_la-gf-consolekit-manager-gen.Tpo -c -o libdbus_la-gf-consolekit-manager-gen.lo `test -f 'gf-consolekit-manager-gen.c' || echo '$(srcdir)/'`gf-consolekit-manager-gen.c
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdbus_la-gf-consolekit-manager-gen.Tpo $(DEPDIR)/libdbus_la-gf-consolekit-manager-gen.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gf-consolekit-manager-gen.c' object='libdbus_la-gf-consolekit-manager-gen.lo' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -c -o libdbus_la-gf-login-manager-gen.lo `test -f 'gf-login-manager-gen.c' || echo '$(srcdir)/'`gf-login-manager-gen.c
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -c -o libdbus_la-gf-consolekit-manager-gen.lo `test -f 'gf-consolekit-manager-gen.c' || echo '$(srcdir)/'`gf-consolekit-manager-gen.c
+ 
+-libdbus_la-gf-login-session-gen.lo: gf-login-session-gen.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -MT libdbus_la-gf-login-session-gen.lo -MD -MP -MF $(DEPDIR)/libdbus_la-gf-login-session-gen.Tpo -c -o libdbus_la-gf-login-session-gen.lo `test -f 'gf-login-session-gen.c' || echo '$(srcdir)/'`gf-login-session-gen.c
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdbus_la-gf-login-session-gen.Tpo $(DEPDIR)/libdbus_la-gf-login-session-gen.Plo
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gf-login-session-gen.c' object='libdbus_la-gf-login-session-gen.lo' libtool=yes @AMDEPBACKSLASH@
++libdbus_la-gf-consolekit-session-gen.lo: gf-consolekit-session-gen.c
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -MT libdbus_la-gf-consolekit-session-gen.lo -MD -MP -MF $(DEPDIR)/libdbus_la-gf-consolekit-session-gen.Tpo -c -o libdbus_la-gf-consolekit-session-gen.lo `test -f 'gf-consolekit-session-gen.c' || echo '$(srcdir)/'`gf-consolekit-session-gen.c
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdbus_la-gf-consolekit-session-gen.Tpo $(DEPDIR)/libdbus_la-gf-consolekit-session-gen.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gf-consolekit-session-gen.c' object='libdbus_la-gf-consolekit-session-gen.lo' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -c -o libdbus_la-gf-login-session-gen.lo `test -f 'gf-login-session-gen.c' || echo '$(srcdir)/'`gf-login-session-gen.c
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -c -o libdbus_la-gf-consolekit-session-gen.lo `test -f 'gf-consolekit-session-gen.c' || echo '$(srcdir)/'`gf-consolekit-session-gen.c
+ 
+ libdbus_la-gf-nautilus2-gen.lo: gf-nautilus2-gen.c
+ @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libdbus_la_CPPFLAGS) $(CPPFLAGS) $(libdbus_la_CFLAGS) $(CFLAGS) -MT libdbus_la-gf-nautilus2-gen.lo -MD -MP -MF $(DEPDIR)/libdbus_la-gf-nautilus2-gen.Tpo -c -o libdbus_la-gf-nautilus2-gen.lo `test -f 'gf-nautilus2-gen.c' || echo '$(srcdir)/'`gf-nautilus2-gen.c
+@@ -997,8 +997,8 @@ distclean: distclean-am
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-file-manager-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-gtk-notifications-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-input-sources-gen.Plo
+-	-rm -f ./$(DEPDIR)/libdbus_la-gf-login-manager-gen.Plo
+-	-rm -f ./$(DEPDIR)/libdbus_la-gf-login-session-gen.Plo
++	-rm -f ./$(DEPDIR)/libdbus_la-gf-consolekit-manager-gen.Plo
++	-rm -f ./$(DEPDIR)/libdbus_la-gf-consolekit-session-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-nautilus2-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-screencast-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-screensaver-gen.Plo
+@@ -1067,8 +1067,8 @@ maintainer-clean: maintainer-clean-am
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-file-manager-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-gtk-notifications-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-input-sources-gen.Plo
+-	-rm -f ./$(DEPDIR)/libdbus_la-gf-login-manager-gen.Plo
+-	-rm -f ./$(DEPDIR)/libdbus_la-gf-login-session-gen.Plo
++	-rm -f ./$(DEPDIR)/libdbus_la-gf-consolekit-manager-gen.Plo
++	-rm -f ./$(DEPDIR)/libdbus_la-gf-consolekit-session-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-nautilus2-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-screencast-gen.Plo
+ 	-rm -f ./$(DEPDIR)/libdbus_la-gf-screensaver-gen.Plo
+@@ -1184,17 +1184,17 @@ gf-input-sources-gen.c: org.gnome.Flashback.InputSourc
+ 		--generate-c-code gf-input-sources-gen \
+ 		$(srcdir)/org.gnome.Flashback.InputSources.xml
+ 
+-gf-login-manager-gen.h:
+-gf-login-manager-gen.c: org.freedesktop.login1.Manager.xml
++gf-consolekit-manager-gen.h:
++gf-consolekit-manager-gen.c: org.freedesktop.ConsoleKit.Manager.xml
+ 	$(AM_V_GEN) $(GDBUS_CODEGEN) --c-namespace Gf \
+-		--generate-c-code gf-login-manager-gen \
+-		$(srcdir)/org.freedesktop.login1.Manager.xml
++		--generate-c-code gf-consolekit-manager-gen \
++		$(srcdir)/org.freedesktop.ConsoleKit.Manager.xml
+ 
+-gf-login-session-gen.h:
+-gf-login-session-gen.c: org.freedesktop.login1.Session.xml
++gf-consolekit-session-gen.h:
++gf-consolekit-session-gen.c: org.freedesktop.ConsoleKit.Session.xml
+ 	$(AM_V_GEN) $(GDBUS_CODEGEN) --c-namespace Gf \
+-		--generate-c-code gf-login-session-gen \
+-		$(srcdir)/org.freedesktop.login1.Session.xml
++		--generate-c-code gf-consolekit-session-gen \
++		$(srcdir)/org.freedesktop.ConsoleKit.Session.xml
+ 
+ gf-nautilus2-gen.h:
+ gf-nautilus2-gen.c: org.gnome.Nautilus.FileOperations2.xml

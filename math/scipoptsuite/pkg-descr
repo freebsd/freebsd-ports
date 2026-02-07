@@ -1,0 +1,7 @@
+The SCIP Optimization Suite consists of the following six software tools:
+* ZIMPL - the Zuse Institute Mathematical Programming language
+* SoPlex - the Sequential Object Oriented Simplex
+* SCIP - Solving Constraint Integer Programs
+* GCG - Generic Column Generation
+* UG - Ubiquity Generator Framework
+* PaPILO - Parallel Presolve for Integer and Linear Optimization

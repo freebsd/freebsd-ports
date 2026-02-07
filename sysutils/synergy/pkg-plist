@@ -1,0 +1,6 @@
+%%LEGACY%%bin/synergy
+bin/synergyc
+%%LEGACY%%bin/synergyd
+bin/synergys
+bin/syntool
+@sample etc/synergy.conf.sample

@@ -1,0 +1,8 @@
+#!/bin/sh
+case "$2" in DEINSTALL)
+	if cmp -s "$PKG_PREFIX/etc/cone" "$PKG_PREFIX/etc/cone.dist" ; then
+		rm -f "$PKG_PREFIX/etc/cone"
+	else
+		echo "Modified $PKG_PREFIX/etc/cone left in place."
+	fi
+esac

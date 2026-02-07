@@ -1,0 +1,10 @@
+Diffusers is the go-to library for state-of-the-art pretrained diffusion models
+for generating images, audio, and even 3D structures of molecules.
+
+Diffusers offers three core components:
+* State-of-the-art diffusion pipelines that can be run in inference with just a
+  few lines of code.
+* Interchangeable noise schedulers for different diffusion speeds and output
+  quality.
+* Pretrained models that can be used as building blocks, and combined with
+  schedulers, for creating your own end-to-end diffusion systems.

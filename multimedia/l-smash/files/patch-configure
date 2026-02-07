@@ -1,0 +1,19 @@
+--- configure.orig	2023-07-30 19:24:45 UTC
++++ configure
+@@ -282,7 +282,7 @@ if test -n "$DEBUG"; then
+     CFLAGS="$CFLAGS -g3 -O0"
+     STRIP=""
+ else
+-    CFLAGS="-Os -ffast-math $CFLAGS"
++    CFLAGS="$CFLAGS"
+ fi
+ 
+ 
+@@ -430,6 +430,7 @@ sed -i -e '/lsmash_win32_fopen/d' \
+ # Get rid of non-public symbols for the cli tools from local.
+ sed -i -e '/lsmash_win32_fopen/d' \
+     -e '/lsmash_string_from_wchar/d' \
++    -e '/lsmash_string_to_wchar/d' \
+     -e '/lsmash_importer_open/d' \
+     -e '/lsmash_importer_close/d' \
+     -e '/lsmash_importer_get_access_unit/d' \

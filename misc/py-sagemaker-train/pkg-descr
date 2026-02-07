@@ -1,0 +1,6 @@
+sagemaker-train is an Amazon SageMaker Training Toolkit.
+
+This library allows you to write a script to train a model in Amazon
+SageMaker. It provides functionality for your training script to communicate
+with the SageMaker training environment, including writing metrics, saving
+models, and accessing hyperparameters and other configuration.

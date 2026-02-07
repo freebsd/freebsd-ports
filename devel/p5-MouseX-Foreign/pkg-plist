@@ -1,0 +1,13 @@
+%%SITE_PERL%%/MouseX/Foreign.pm
+%%SITE_PERL%%/MouseX/Foreign/Meta/Role/Class.pm
+%%SITE_PERL%%/MouseX/Foreign/Meta/Role/Method/Constructor.pm
+%%SITE_PERL%%/MouseX/Foreign/Meta/Role/Method/Destructor.pm
+%%SITE_PERL%%/MouseX/NonMoose.pm
+%%SITE_PERL%%/MouseX/NonMoose/Meta/Role/Class.pm
+%%SITE_PERL%%/MouseX/NonMoose/Meta/Role/Method/Constructor.pm
+%%SITE_PERL%%/MouseX/NonMoose/Meta/Role/Method/Destructor.pm
+%%PERL5_MAN3%%/MouseX::Foreign.3.gz
+%%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Class.3.gz
+%%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Method::Constructor.3.gz
+%%PERL5_MAN3%%/MouseX::Foreign::Meta::Role::Method::Destructor.3.gz
+%%PERL5_MAN3%%/MouseX::NonMoose.3.gz

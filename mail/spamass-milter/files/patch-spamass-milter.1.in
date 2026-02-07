@@ -1,0 +1,30 @@
+From 97b2369ea24f1370bbf3359a0fbcdc6670a54da0 Mon Sep 17 00:00:00 2001
+From: Andy Balholm <andy@balholm.com>
+Date: Tue, 22 Mar 2016 14:51:34 -0700
+Subject: [PATCH] Document the -a option.
+
+---
+ spamass-milter.1.in | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/spamass-milter.1.in b/spamass-milter.1.in
+index 3caccfa..41d0f15 100644
+--- spamass-milter.1.in
++++ spamass-milter.1.in
+@@ -8,6 +8,7 @@
+ .Sh SYNOPSIS
+ .Nm
+ .Fl p Ar socket
++.Op Fl a
+ .Op Fl b Ns | Ns Fl B Ar spamaddress
+ .Op Fl C rejectcode
+ .Op Fl d Ar debugflags
+@@ -41,6 +42,8 @@ will not be able to access the milter.
+ This may cause messages to bounce, queue, or be passed through
+ unmiltered, depending on the parameters in
+ .Nm sendmail Ns 's .cf file.
++.It Fl a
++Skips messages received on an authenticated connection.
+ .It Fl b Ar spamaddress
+ Redirects tagged spam to the specified email address.
+ All envelope recipients are removed, and inserted into the message as

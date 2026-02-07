@@ -1,0 +1,34 @@
+--- package.json.orig	2025-05-28 20:17:57 UTC
++++ package.json
+@@ -398,7 +398,9 @@
+       "zod@3.23.8": "patches/zod+3.23.8.patch",
+       "app-builder-lib": "patches/app-builder-lib.patch",
+       "dmg-builder": "patches/dmg-builder.patch",
+-      "eslint-plugin-better-tailwindcss": "patches/eslint-plugin-better-tailwindcss.patch"
++      "eslint-plugin-better-tailwindcss": "patches/eslint-plugin-better-tailwindcss.patch",
++      "electron-builder": "patches/electron-builder.patch",
++      "@signalapp/ringrtc": "patches/signalapp-ringrtc.patch"
+     },
+     "onlyBuiltDependencies": [
+       "@indutny/mac-screen-share",
+@@ -504,20 +506,6 @@
+       "asarUnpack": [
+         "build/icons/win/icon.ico"
+       ]
+-    },
+-    "nsis": {
+-      "deleteAppDataOnUninstall": true,
+-      "differentialPackage": true,
+-      "customNsisBinary": {
+-        "url": "https://updates.signal.org/desktop/nsis/nsis-3.0.4.1.7z",
+-        "version": "3.0.4.1-signal",
+-        "checksum": "D6XH03F8A4Vzfjpq6zS9eZYXGXktdoaeQh5QgxAZ01pdts3KaDfMilem0x+HUzn9FpzfpgZrD8MVTcFlcPfcWg=="
+-      },
+-      "customNsisResources": {
+-        "url": "https://updates.signal.org/desktop/nsis/nsis-resources-3.4.1.7z",
+-        "version": "3.4.1-signal",
+-        "checksum": "KmySC53iz92XNYVgEy5gc0/cpXiyWsxxOX5UETBAt889TIvsNlUx7uKBxkQVf3D2Ycex0D2IPGjRdGYr1bftrw=="
+-      }
+     },
+     "linux": {
+       "category": "Network;InstantMessaging;Chat",

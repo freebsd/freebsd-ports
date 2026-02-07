@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/impact/7888f6a0-454e-11eb-b378-0242ac130002.yml	2023-10-25 16:39:44.749679000 -0500
++++ bacnet/data/abilities/impact/7888f6a0-454e-11eb-b378-0242ac130002.yml	2023-10-25 16:40:15.061949000 -0500
+@@ -9,6 +9,11 @@
+     attack_id: T0831
+     name: Manipulation of Control
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacawf #{bacnet.device.instance} #{bacnet.file.instance} #{bacnet.write.local_name} #{bacnet.write.octet_offset}
+     linux:
+       sh:
+         timeout: 360
+@@ -22,4 +27,4 @@
+         command: |
+           .\bacawf.exe #{bacnet.device.instance} #{bacnet.file.instance} #{bacnet.write.local_name} #{bacnet.write.octet_offset}
+         payloads:
+-          - bacawf.exe
+\ No newline at end of file
++          - bacawf.exe

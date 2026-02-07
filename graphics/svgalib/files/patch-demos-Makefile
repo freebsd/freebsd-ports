@@ -1,0 +1,11 @@
+--- demos/Makefile.orig	Fri Aug 25 06:09:33 2000
++++ demos/Makefile	Fri Aug 25 06:09:50 2000
+@@ -29,7 +29,7 @@
+ 
+ # Determine what library (static or shared) we will be linking programs with
+ ifdef INSTALLSHAREDLIB
+-  LIBS = -lvgagl -lvga
++  LIBS = -L../sharedlib -lvgagl -lvga
+ endif
+ ifndef LIBS
+   LIBS    = ../staticlib/libvgagl.a ../staticlib/libvga.a -lm

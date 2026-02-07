@@ -1,0 +1,10 @@
+--- src/lib/mfb/mfbgnc.c.orig	2011-07-24 22:09:03.000000000 +0000
++++ src/lib/mfb/mfbgnc.c	2011-07-24 22:12:08.000000000 +0000
+@@ -100,6 +100,7 @@
+  * all other characters are ``self-inserting''.
+  */
+ 
++void
+ MFBGenCode(PM)
+     char *PM;
+     {

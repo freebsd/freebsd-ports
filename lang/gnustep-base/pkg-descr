@@ -1,0 +1,8 @@
+The GNUstep Base library implements the Foundation portion of the OpenStep
+specification, jointly developed by NeXT and Sun.  It aims to provide
+compatibility with extensions added by Apple's implementation of this standard:
+Cocoa.  The Foundation framework provides the standard library for Objective-C,
+including collections, operating system interfaces, and so on.
+
+Please contact the GNUstep maintainers at <discuss-gnustep@gnu.org> in
+case of questions and offers of help.

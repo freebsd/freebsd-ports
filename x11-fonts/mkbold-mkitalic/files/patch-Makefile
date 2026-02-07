@@ -1,0 +1,39 @@
+--- Makefile.orig	Thu Nov  4 21:44:01 2004
++++ Makefile	Tue Dec 28 13:00:11 2004
+@@ -1,11 +1,11 @@
+ # $Id$
+ #
+-MAKE	= make
+-CC      = gcc
+-CFLAGS	= -g -Wall -pedantic $(DEFS)
+-LDFLAGS	= -g -Wall -pedantic
++MAKE	?= make
++CC      ?= gcc
++CFLAGS	+= -g -Wall -pedantic $(DEFS)
++LDFLAGS	+= -g -Wall -pedantic
+ DEFS    = -DSTDC_HEADERS -DHAVE_LIMITS_H # -DDEBUG
+-RM	= rm -f
++RM	?= rm -f
+ INSTALL	= install
+ TARGETS	= mkbold mkitalic mkbolditalic
+ COMMON_OBJS		= utils.o
+@@ -16,8 +16,8 @@
+ PACKAGE	= mkbold-mkitalic
+ VERSION	= 0.11
+ DESTDIR	=
+-prefix	= /usr/local
+-bindir	= ${prefix}/bin
++PREFIX	?= /usr/local
++bindir	= ${PREFIX}/bin
+ distdir = $(PACKAGE)-$(VERSION)
+ 
+ .c.o:
+@@ -36,7 +36,7 @@
+ 
+ install: all
+ 	$(INSTALL) -d -m 0755 $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 0755 $(TARGETS) $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_PROGRAM) $(TARGETS) $(DESTDIR)$(bindir)
+ 
+ dist:
+ 	tar chf - $(distdir) | bzip2 -c > $(distdir).tar.bz2

@@ -1,0 +1,5 @@
+TIMESTAMP = 1706920724
+SHA256 (go/net_nsq/nsq-v1.3.0/v1.3.0.mod) = d5abe00dff78a9e073594967c5699eefb9703b54ac0c69f8d9503ff159c017da
+SIZE (go/net_nsq/nsq-v1.3.0/v1.3.0.mod) = 695
+SHA256 (go/net_nsq/nsq-v1.3.0/v1.3.0.zip) = 7c94effc69b357b97703f48046964db0d966d35f846d1210549bcb33519c7bf9
+SIZE (go/net_nsq/nsq-v1.3.0/v1.3.0.zip) = 880217

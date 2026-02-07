@@ -1,0 +1,10 @@
+cgen offers a simple abstract syntax tree for C and related languages
+(C++/CUDA/OpenCL) to allow structured code generation from Python.
+
+cgen can be used to generate C code programmatically, which is useful for:
+- Code generators
+- Domain-specific language compilers
+- High-performance computing applications
+- GPU kernel generation (CUDA/OpenCL)
+
+To represent mathematical expressions, cgen can be used with pymbolic.

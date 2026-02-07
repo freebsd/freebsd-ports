@@ -1,0 +1,15 @@
+--- doc/imv.1.txt.orig	2023-01-18 22:20:52 UTC
++++ doc/imv.1.txt
+@@ -265,10 +265,9 @@ - $HOME/.imv/config
+ - $HOME/.config/imv/config
+ - $HOME/.imv_config
+ - $HOME/.imv/config
+-- /usr/local/etc/imv_config
+-- /etc/imv_config
++- @PREFIX@/etc/imv_config
+ 
+-A default config file is shipped with imv into /etc/imv_config
++A default config file is shipped with imv into @PREFIX@/etc/imv_config
+ 
+ For documentation on the config file format, see **imv**(5).
+ 

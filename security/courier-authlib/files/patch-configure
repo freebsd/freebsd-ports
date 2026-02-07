@@ -1,0 +1,368 @@
+--- configure.orig	2025-04-06 14:25:31 UTC
++++ configure
+@@ -662,6 +662,10 @@ LTLIBOBJS
+ am__EXEEXT_FALSE
+ am__EXEEXT_TRUE
+ LTLIBOBJS
++HAVE_BASE_TRUE
++HAVE_BASE_FALSE
++HAVE_USERDB_TRUE
++HAVE_USERDB_FALSE
+ LIBOBJS
+ DATEFULL
+ DATE
+@@ -705,6 +709,9 @@ authpgsqlrc
+ PGSQL_LIBS
+ PG_CONFIG
+ authpgsqlrc
++vpopmail_home
++VPOPMAILLIBS
++LIBAUTHVCHKPW
+ LIBAUTHPWD
+ LIBAUTHSHADOW
+ SHADOWLIBS
+@@ -1605,6 +1612,7 @@ Optional Packages:
+  --with-authldaprc=filename         Expect to find authldaprc here
+  --without-authpwd                  Do not include the authpwd module
+  --without-authshadow               Do not include the authshadow module
++ --without-authvchkpw               Do not include the authvchkpw module
+  --with-authpgsqlrc=filename        Expect to find authpgsql here
+  --without-authpgsql               Do not include the authpgsql module
+  --with-pgsql-libs=DIR		Look for pgsql libs in this dir
+@@ -3523,7 +3531,7 @@ fi
+ fi
+ 
+ fi
+-INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
++INSTALL_STRIP_PROGRAM="${INSTALL_PROGRAM} -s"
+ 
+ 
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for a race-free mkdir -p" >&5
+@@ -19748,8 +19756,12 @@ then
+ 
+ if test "$doauthuserdb" = "no"
+ then
++	HAVE_USERDB_TRUE='#'
++	HAVE_USERDB_FALSE=
+ 	AUTHUSERDB=""
+ else
++	HAVE_USERDB_TRUE=
++	HAVE_USERDB_FALSE='#'
+ 	AUTHUSERDB="authuserdb"
+ 	LIBAUTHUSERDB="libauthuserdb.la"
+ 
+@@ -20236,7 +20248,21 @@ fi
+ fi
+ 
+ 
++if test "${with_base+set}" = set; then
++	withval="$with_base"
++	dobase="$withval"
++else
++	dobase="yes"
++fi;
+ 
++if test "$dobase" = "no"; then
++	HAVE_BASE_TRUE='#'
++	HAVE_BASE_FALSE=
++else
++	HAVE_BASE_TRUE=
++	HAVE_BASE_FALSE='#'
++fi
++
+  if test "$HAVE_LDAP" = 1; then
+   HAVE_LDAP_TRUE=
+   HAVE_LDAP_FALSE='#'
+@@ -20460,6 +20486,256 @@ fi
+ 
+ 
+ 
++
++vpopmail_home=`$PERL -e '@a=getpwnam("vpopmail"); print "$a[7]";'`
++
++
++
++
++# Check whether --with-authvchkpw was given.
++if test "${with_authvchkpw+set}" = set; then
++  withval=$with_authvchkpw; doauthvchkpw="$withval"
++else
++  doauthvchkpw=no
++	if test "$vpopmail_home" != ""
++	then
++		doauthvchkpw=yes
++	fi
++fi
++
++
++if test "$doauthvchkpw" = "no"
++then
++	HAVE_VCHKPW=0
++	vpopmail_home=.
++else
++	HAVE_VCHKPW=1
++
++
++	cat  <<EOF
++----------------------------------------------------
++                     NOTE
++
++
++All questions regarding ANY vpopmail-related problems,
++such as compiling/building failures, or login errors
++should be referred to the vpopmail mailing list.
++Vpopmail questions sent to the Courier mailing lists
++will be IGNORED.
++----------------------------------------------------
++
++EOF
++	sleep 5
++
++	if test -f ${vpopmail_home}/etc/lib_deps
++	then
++		CFLAGS="`cat ${vpopmail_home}/etc/inc_deps` $CFLAGS"
++		VPOPMAILLIBS="`cat ${vpopmail_home}/etc/lib_deps`"
++	else
++		{ { echo "$as_me:$LINENO: error: ${vpopmail_home}/etc/lib_deps does not exist - upgrade vpopmail to the current version or fix the permissions on this file" >&5
++echo "$as_me: error: ${vpopmail_home}/etc/lib_deps does not exist - upgrade vpopmail to the current version or fix the permissions on this file" >&2;}
++   { (exit 1); exit 1; }; }
++	fi
++fi
++
++
++
++LIBAUTHVCHKPW=""
++if test "$HAVE_VCHKPW" = 1
++then
++	LIBAUTHVCHKPW="libauthvchkpw.la"
++	HAVE_VCHKPW="1"
++
++
++	_SAVE_LIBS=$LIBS
++	LIBS="$VPOPMAILLIBS $CRYPTLIBS $LIBS"
++	{ echo "$as_me:$LINENO: checking for open_smtp_relay" >&5
++echo $ECHO_N "checking for open_smtp_relay... $ECHO_C" >&6; }
++if test "${ac_cv_func_open_smtp_relay+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++/* Define open_smtp_relay to an innocuous variant, in case <limits.h> declares open_smtp_relay.
++   For example, HP-UX 11i <limits.h> declares gettimeofday.  */
++#define open_smtp_relay innocuous_open_smtp_relay
++
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char open_smtp_relay (); below.
++    Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
++    <limits.h> exists even on freestanding compilers.  */
++
++#ifdef __STDC__
++# include <limits.h>
++#else
++# include <assert.h>
++#endif
++
++#undef open_smtp_relay
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char open_smtp_relay ();
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined __stub_open_smtp_relay || defined __stub___open_smtp_relay
++choke me
++#endif
++
++int
++main ()
++{
++return open_smtp_relay ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (ac_try="$ac_link"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
++  (eval "$ac_link") 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } && {
++	 test -z "$ac_c_werror_flag" ||
++	 test ! -s conftest.err
++       } && test -s conftest$ac_exeext &&
++       $as_test_x conftest$ac_exeext; then
++  ac_cv_func_open_smtp_relay=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++	ac_cv_func_open_smtp_relay=no
++fi
++
++rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
++      conftest$ac_exeext conftest.$ac_ext
++fi
++{ echo "$as_me:$LINENO: result: $ac_cv_func_open_smtp_relay" >&5
++echo "${ECHO_T}$ac_cv_func_open_smtp_relay" >&6; }
++if test $ac_cv_func_open_smtp_relay = yes; then
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_OPEN_SMTP_RELAY 1
++_ACEOF
++
++fi
++
++	{ echo "$as_me:$LINENO: checking for vset_lastauth" >&5
++echo $ECHO_N "checking for vset_lastauth... $ECHO_C" >&6; }
++if test "${ac_cv_func_vset_lastauth+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++/* Define vset_lastauth to an innocuous variant, in case <limits.h> declares vset_lastauth.
++   For example, HP-UX 11i <limits.h> declares gettimeofday.  */
++#define vset_lastauth innocuous_vset_lastauth
++
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char vset_lastauth (); below.
++    Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
++    <limits.h> exists even on freestanding compilers.  */
++
++#ifdef __STDC__
++# include <limits.h>
++#else
++# include <assert.h>
++#endif
++
++#undef vset_lastauth
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char vset_lastauth ();
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined __stub_vset_lastauth || defined __stub___vset_lastauth
++choke me
++#endif
++
++int
++main ()
++{
++return vset_lastauth ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (ac_try="$ac_link"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
++  (eval "$ac_link") 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } && {
++	 test -z "$ac_c_werror_flag" ||
++	 test ! -s conftest.err
++       } && test -s conftest$ac_exeext &&
++       $as_test_x conftest$ac_exeext; then
++  ac_cv_func_vset_lastauth=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++	ac_cv_func_vset_lastauth=no
++fi
++
++rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
++      conftest$ac_exeext conftest.$ac_ext
++fi
++{ echo "$as_me:$LINENO: result: $ac_cv_func_vset_lastauth" >&5
++echo "${ECHO_T}$ac_cv_func_vset_lastauth" >&6; }
++if test $ac_cv_func_vset_lastauth = yes; then
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_VSET_LASTAUTH 1
++_ACEOF
++
++fi
++
++	LIBS=$_SAVE_LIBS
++fi
++
++
++
++
++
++
++
+ # Check whether --with-authpgsqlrc was given.
+ if test ${with_authpgsqlrc+y}
+ then :
+@@ -20823,8 +21099,8 @@ then
+ 	SQLITE_LIBS="`pkg-config --libs sqlite3 2>/dev/null`"
+         saveLIBS="$LIBS"
+ 	LIBS="$SQLITE_LIBS $LIBS"
+-	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
+-if test "x$ac_cv_func_sqlite3_version" = xyes
++#	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
++if test -n $SQLITE_LIBS;
+ then :
+   doauthsqlite="yes"
+ 
+@@ -20842,15 +21118,15 @@ else
+ else
+ 	saveLIBS="$LIBS"
+ 	LIBS="$SQLITE_LIBS $LIBS"
+-	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
+-if test "x$ac_cv_func_sqlite3_version" = xyes
+-then :
+-   :
+-else case e in #(
+-  e)  as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
+-		 ;;
+-esac
+-fi
++#	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
++#if test "x$ac_cv_func_sqlite3_version" = xyes
++#then :
++#   :
++#else case e in #(
++#  e)  as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
++#		 ;;
++#esac
++#fi
+ 
+ 	LIBS="$saveLIBS"
+ 	HAVE_AUTHSQLITE=1

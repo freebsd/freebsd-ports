@@ -1,0 +1,29 @@
+--- src/VBox/Devices/PC/ipxe/Makefile.kmk.orig	2025-08-13 19:48:06 UTC
++++ src/VBox/Devices/PC/ipxe/Makefile.kmk
+@@ -45,7 +45,7 @@ iPxeBiosBin_CLEAN    = \
+ iPxeBiosBin_CLEAN    = \
+ 	$(iPxeBiosBin_0_OUTDIR)/iPxeBiosBin.c \
+ 
+-if1of ($(KBUILD_TARGET).$(KBUILD_TARGET_ARCH), darwin.amd64 darwin.arm64 linux.arm64 os2.x86 solaris.amd64 win.amd64 win.arm64)
++if1of ($(KBUILD_TARGET).$(KBUILD_TARGET_ARCH), darwin.amd64 darwin.arm64 linux.arm64 os2.x86 solaris.amd64 win.amd64 win.arm64 linux.amd64 freebsd.amd64)
+  $$(iPxeBiosBin_0_OUTDIR)/iPxeBiosBin.c: $(PATH_SUB_CURRENT)/iPxeBiosBin.rom $(VBOX_BIN2C) | $$(dir $$@)
+ 	$(call MSG_TOOL,bin2c,iPxeBiosBin,$<,$@)
+ 	$(QUIET)$(VBOX_BIN2C) -min 32 -max 56 -mask 0x1ff -export NetBiosBinary $< $@
+@@ -131,7 +131,7 @@ endif
+ 	-falign-loops=1 \
+ 	-Os \
+ 	-falign-functions=1 \
+-	-mpreferred-stack-boundary=2 \
++	-mstack-alignment=2 \
+ 	-mregparm=3 \
+ 	-mrtd \
+ 	-freg-struct-return \
+@@ -154,7 +154,7 @@ endif
+ 	-falign-jumps=1 \
+ 	-falign-loops=1 \
+ 	-falign-functions=1 \
+-	-mpreferred-stack-boundary=2 \
++	-mstack-alignment=2 \
+ 	-mregparm=3 \
+ 	-mrtd \
+ 	-freg-struct-return \

@@ -1,0 +1,17 @@
+$OpenBSD: patch-common_filescan_rcs_c,v 1.2 2014/06/25 17:54:07 naddy Exp $
+--- common/filescan_rcs.c.orig	Mon Jul 18 16:32:57 2005
++++ common/filescan_rcs.c	Wed Jun 25 16:01:04 2014
+@@ -931,6 +931,13 @@ filescan_rcs_update_rcs_delta(struct filescan_args *fs
+ 					   rev->next.n_len);
+ 		}
+ 
++		/* commitid */
++		if (fsa->fsa_proto >= CVSYNC_PROTO(0, 25)) {
++			if (rev->commitid.i_len > 0)
++				(*hashops->update)(fsa->fsa_hash_ctx, rev->commitid.i_id,
++				    rev->commitid.i_len);
++		}
++
+ 		(*hashops->final)(fsa->fsa_hash_ctx, cmd);
+ 
+ 		if (!mux_send(fsa->fsa_mux, MUX_FILECMP, cmd, hashops->length))

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: monit
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable monit:
+# monit_enable (bool):        Set to "NO" by default.
+#                             Set it to "YES" to enable monit
+# monit_flags (str):          Flags passed to monit on startup.
+#                             Default is "".
+#
+. /etc/rc.subr
+
+name=monit
+rcvar=monit_enable
+load_rc_config ${name}
+
+: ${monit_enable:=NO}
+
+extra_commands=reload
+restart_precmd=monit_checkconfig
+reload_precmd=monit_checkconfig
+
+default_config=%%PREFIX%%/etc/monitrc
+required_files=${default_config}
+command="%%PREFIX%%/bin/monit"
+command_args="-c ${default_config}"
+pidfile=/var/run/monit.pid
+
+monit_checkconfig()
+{
+	echo "Performing sanity check on monit configuration:"
+	${command} ${command_args} -t
+}
+
+run_rc_command "$1"

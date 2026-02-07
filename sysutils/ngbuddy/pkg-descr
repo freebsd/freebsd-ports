@@ -1,0 +1,2 @@
+Netgraph Buddy is an rc.d script for simplified management of netgraph
+networks in mixed VM and jail environments.

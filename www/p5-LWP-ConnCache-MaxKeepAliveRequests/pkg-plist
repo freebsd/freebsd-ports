@@ -1,0 +1,2 @@
+%%SITE_PERL%%/LWP/ConnCache/MaxKeepAliveRequests.pm
+%%PERL5_MAN3%%/LWP::ConnCache::MaxKeepAliveRequests.3.gz

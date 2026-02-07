@@ -1,0 +1,7 @@
+Mknod is an interface to the mknod(2) system call.
+
+
+Copyright (C) 2003 Raoul Zwart
+
+This library is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.

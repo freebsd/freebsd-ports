@@ -1,0 +1,8 @@
+Net::OAuth::Simple is a simple wrapper around the OAuth protocol.
+
+OAuth is:
+
+An open protocol to allow secure API authentication in a simple and standard
+method from desktop and web applications.
+
+See also: https://oauth.net/

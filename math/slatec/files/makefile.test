@@ -1,0 +1,80 @@
+.SUFFIXES:	.dynamic .f .o .static
+
+TEST_SRCS=	test01.f test02.f test03.f test04.f test05.f test06.f \
+		test07.f test08.f test09.f test10.f test11.f test12.f test13.f \
+		test14.f test15.f test16.f test17.f test18.f test19.f test20.f \
+		test21.f test22.f test23.f test24.f test25.f test26.f test27.f \
+		test28.f test29.f test30.f test31.f test32.f test33.f test34.f \
+		test35.f test36.f test37.f test38.f test39.f test40.f test41.f \
+		test42.f test43.f test44.f test45.f test46.f test47.f test48.f \
+		test49.f test50.f test51.f test52.f test53.f test54.f
+
+COMMON_SRCS=	avntst.f bikck.f bjyck.f blachk.f bspck.f cbeg.f cblat2.f \
+	cblat3.f cchk12.f cchk13.f cchk22.f cchk23.f cchk32.f cchk33.f \
+	cchk42.f cchk43.f cchk52.f cchk53.f cchk62.f cchke2.f cchke3.f cchqc.f \
+	cdf.f cdqag.f cdqagi.f cdqagp.f cdqags.f cdqawc.f cdqawf.f cdqawo.f \
+	cdqaws.f cdqck.f cdqng.f cfnck.f cgbqc.f cgeck.f cgeqc.f cgtqc.f \
+	check0.f check1.f check2.f chiqc.f chkxer.f chpqc.f cmake2.f cmake3.f \
+	cmmch.f cmpare.f cmvch.f comp.f cpbqc.f cpoqc.f cppqc.f cprin.f \
+	cprpqx.f cptqc.f cqag.f cqagi.f cqagp.f cqags.f cqawc.f cqawf.f \
+	cqawo.f cqaws.f cqcai.f cqcbh.f cqcbi.f cqcbj.f cqcbk.f cqcby.f cqck.f \
+	cqng.f cqrqc.f cqrtst.f csiqc.f cspqc.f csvqc.f ctrqc.f davnts.f \
+	dbeg.f dbikck.f dbjyck.f dblat2.f dblat3.f dbocqx.f dbspck.f dchk12.f \
+	dchk13.f dchk22.f dchk23.f dchk32.f dchk33.f dchk42.f dchk43.f \
+	dchk52.f dchk53.f dchk62.f dchke2.f dchke3.f dcmpar.f ddasqc.f ddf.f \
+	ddjac1.f ddjac2.f ddqck.f ddres1.f ddres2.f dedit2.f deg8ck.f devchk.f \
+	deverk.f devpck.f df0c.f df0f.f df0o.f df0s.f df0ws.f df1c.f df1f.f \
+	df1g.f df1n.f df1o.f df1p.f df1s.f df1ws.f df2g.f df2n.f df2o.f df2p.f \
+	df2s.f df3g.f df3p.f df3s.f df4p.f df4s.f df5s.f dfb.f dfcn1.f dfcn2.f \
+	dfcn3.f dfcqx.f dfdeqc.f dfdtru.f dfein.f dfill.f dfnck.f dfqd1.f \
+	dfqd2.f dfztst.f dgeqc.f djac.f dlapqc.f dlseit.f dmake2.f dmake3.f \
+	dmmch.f dmvch.f dnls1q.f dnsqqk.f dpchq1.f dpchq2.f dpchq3.f dpchq4.f \
+	dpchq5.f dpfitt.f dplpqx.f dpntck.f dprin.f dqc36j.f dqcgls.f dqck.f \
+	dqckin.f dqcpsi.f dqfcn2.f dqg8ts.f dqjac2.f dqn79q.f drmgen.f \
+	dsosfn.f dsosqx.f dsrtqc.f dt0.f dt1.f dt2.f dt3.f dt4.f dt5.f dtest.f \
+	duterr.f dxcsrt.f edit2.f eg8ck.f eisqx1.f eisqx2.f evchck.f everck.f \
+	evpcck.f f0c.f f0f.f f0o.f f0s.f f0ws.f f1c.f f1f.f f1g.f f1n.f f1o.f \
+	f1p.f f1s.f f1ws.f f2g.f f2n.f f2o.f f2p.f f2s.f f3g.f f3p.f f3s.f \
+	f4p.f f4s.f f5s.f fb.f fcn1.f fcn2.f fcn3.f fcnqx1.f fcnqx2.f fcqx.f \
+	fdeqc.f fdtrue.f fein.f fftqx.f fqd1.f fqd2.f fztest.f header.f \
+	hsrtqc.f ismpl.f isrtqc.f itest.f jac.f lce.f lceres.f lde.f lderes.f \
+	lse.f lseiqx.f lseres.f outerr.f pass.f pchqk1.f pchqk2.f pchqk3.f \
+	pchqk4.f pchqk5.f pfitqx.f pntchk.f qc36j.f qc6a.f qcdrc.f qcdrd.f \
+	qcdrf.f qcdrj.f qcglss.f qckin.f qcpsi.f qcrc.f qcrd.f qcrf.f qcrj.f \
+	qg8tst.f qn79qx.f qxabm.f qxbdf.f qxblkt.f qxbvsp.f qxcrt.f qxcsp.f \
+	qxcyl.f qxdabm.f qxdbdf.f qxdbvs.f qxdrkf.f qxgbun.f qxplr.f qxrkf.f \
+	qxssp.f rqrtst.f sbeg.f sblat2.f sblat3.f sbocqx.f schk12.f schk13.f \
+	schk22.f schk23.f schk32.f schk33.f schk42.f schk43.f schk52.f \
+	schk53.f schk62.f schke2.f schke3.f sdasqc.f sdf.f sdjac1.f sdjac2.f \
+	sdqck.f sdres1.f sdres2.f sfnck.f sgeqc.f slapqc.f smake2.f smake3.f \
+	smmch.f smvch.f snls1q.f snsqqk.f sosfnc.f sosnqx.f splpqx.f sqck.f \
+	sqfcn2.f sqjac2.f srmgen.f ssrtqc.f stest.f t0.f t1.f t2.f t3.f t4.f \
+	t5.f vfill.f xcsrt.f zqcai.f zqcbh.f zqcbi.f zqcbj.f zqcbk.f zqcby.f
+
+EXTRA_OBJS=	src/dfmat.o src/dgvec.o src/duivp.o src/duvec.o src/fmat.o \
+		src/gvec.o src/uivp.o src/uvec.o
+
+test-dynamic: ${TEST_SRCS:.f=.dynamic}
+	@${TEST_SRCS:S#^#echo ${TEST_VERBOSITY} | ./#:S#.f$#.dynamic - ; #}
+
+test-static: ${TEST_SRCS:.f=.static}
+	@${TEST_SRCS:S#^#echo ${TEST_VERBOSITY} | ./#:S#.f$#.static - ; #}
+
+.o.dynamic: ${COMMON_SRCS:.f=.o} ${EXTRA_OBJS} src/libslatec.so
+	${FC} ${FFLAGS} ${LDFLAGS} -o ${.TARGET} ${.IMPSRC} \
+	${COMMON_SRCS:.f=.o} ${EXTRA_OBJS} -L./src -lslatec -Wl,-rpath,./src
+
+.o.static: ${COMMON_SRCS:.f=.o} ${EXTRA_OBJS} src/libslatec.a
+	${FC} ${FFLAGS} ${LDFLAGS} -o ${.TARGET} ${.IMPSRC} \
+	${COMMON_SRCS:.f=.o} ${EXTRA_OBJS} src/libslatec.a
+
+.f.o:
+	${FC} ${FFLAGS} -c ${.IMPSRC}
+
+clean: clean-objects clean-tests
+
+clean-objects:
+	@rm -f *.o
+
+clean-tests:
+	@rm -f *.static *.dynamic

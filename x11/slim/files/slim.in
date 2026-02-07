@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# PROVIDE: slim
+# REQUIRE: LOGIN dbus
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable slim:
+# slim_enable="YES"
+#
+# Alternatively, edit /etc/ttys and change the line below
+#   ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   off secure
+# to this:
+#   ttyv8   "%%PREFIX%%/bin/slim"   xterm   on secure
+
+. /etc/rc.subr
+
+name="slim"
+rcvar=slim_enable
+
+load_rc_config slim
+
+: ${slim_enable:="NO"}
+
+command=%%PREFIX%%/bin/slim
+command_args="-d"
+start_precmd=${name}_rmfile
+stop_precmd=${name}_prestop
+stop_postcmd=${name}_rmfile
+
+find_pidfile()
+{
+	if get_pidfile_from_conf lockfile %%PREFIX%%/etc/${name}.conf; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile="/var/run/${name}.pid"
+	fi
+}
+
+slim_rmfile()
+{
+	local file
+
+	[ -z "$pidfile" ] && find_pidfile
+
+	for file in $pidfile /var/run/slim.auth; do
+		[ -e "$file" ] && unlink $file
+	done
+	
+	# Needed if neither file exists
+	return 0
+}
+
+slim_prestop()
+{
+	local xpid
+
+	find_pidfile
+
+	xpid=`pgrep -f 'Xorg .* -auth /var/run/slim.auth'`
+	[ -n "$xpid" ] && kill $xpid
+}
+
+run_rc_command "$1"

@@ -1,0 +1,30 @@
+--- cargo-crates/sequoia-net-0.30.0/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/sequoia-net-0.30.0/Cargo.toml
+@@ -81,6 +81,12 @@ version = "0.12"
+ 
+ [dependencies.reqwest]
+ version = "0.12"
++default-features = false
++features = [
++    "rustls-tls",
++    "charset",
++    "http2",
++]
+ 
+ [dependencies.sequoia-openpgp]
+ version = "2"
+@@ -120,7 +126,13 @@ version = "0.12"
+ 
+ [dev-dependencies.reqwest]
+ version = "0.12"
+-features = ["socks"]
++default-features = false
++features = [
++    "rustls-tls",
++    "charset",
++    "http2",
++    "socks",
++]
+ 
+ [dev-dependencies.tempfile]
+ version = "3.1"

@@ -1,0 +1,3 @@
+since is a Unix utility similar to tail. Unlike tail, since only shows the
+lines appended since the last time. It is useful to monitor growing log
+files.

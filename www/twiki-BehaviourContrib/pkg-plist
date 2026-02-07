@@ -1,0 +1,16 @@
+%%TWDIR%%/data/TWiki/BehaviourContrib.txt
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib.pm
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/build.pl
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.compressed.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.compressed_src.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour_src.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/cssQuery-p.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery-level2.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery-level3.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery-standard.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/test.html
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/test.html

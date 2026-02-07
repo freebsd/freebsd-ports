@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Class/Prototyped.pm
+%%SITE_PERL%%/Class/Prototyped/Graph.pm
+%%SITE_PERL%%/Class/Prototyped/why.pod
+%%PERL5_MAN3%%/Class::Prototyped.3.gz
+%%PERL5_MAN3%%/Class::Prototyped::why.3.gz

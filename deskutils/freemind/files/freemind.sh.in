@@ -1,0 +1,7 @@
+#!/bin/sh
+
+CLASSPATH="${ADD_JARS}:${CLASSPATH}:`find "%%DATADIR%%/lib" -name \*.jar | tr "\n" ":"`"
+FILE="lib/freemind.jar"
+
+cd "%%DATADIR%%"
+"%%LOCALBASE%%/bin/java" -cp "${CLASSPATH}" -jar "${FILE}"

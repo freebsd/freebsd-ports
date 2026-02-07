@@ -1,0 +1,3 @@
+bin/vsound
+lib/vsound/libvsound.so
+%%PORTDOCS%%%%DOCSDIR%%/README

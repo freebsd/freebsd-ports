@@ -1,0 +1,6 @@
+ODF::lpOD_Helper enables transparent Unicode support, provides
+higher-level multi-segment text search & replace methods, and
+works around ODF::lpOD bugs and limitations.
+
+Styles may be specified with a high-level notation and the necessary
+span and style objects are automatically created and fonts registered.

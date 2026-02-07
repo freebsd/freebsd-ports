@@ -1,0 +1,14 @@
+PROG=	%%PROG%%
+
+WARNS=	7
+
+BINDIR=	${PREFIX}/bin
+MANDIR=	${PREFIX}/man/man
+LDADD=	-L${.CURDIR:H}/lib -lsiod
+MK_MAN=	no
+
+.if "%%PROG%%" == "sample"
+INTERNALPROG=	yes	# We want it built -- as proof -- but not installed
+.endif
+
+.include <bsd.prog.mk>

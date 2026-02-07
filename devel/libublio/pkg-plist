@@ -1,0 +1,6 @@
+include/ublio.h
+lib/libublio.a
+lib/libublio.so
+lib/libublio.so.1
+libdata/pkgconfig/libublio.pc
+%%PORTDOCS%%%%DOCSDIR%%/README

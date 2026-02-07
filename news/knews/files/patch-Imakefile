@@ -1,0 +1,12 @@
+--- src/Imakefile.orig	1998-11-21 16:31:37.000000000 +0100
++++ src/Imakefile	2012-05-06 18:07:58.000000000 +0200
+@@ -35,7 +35,8 @@
+ COMPFACE_LIB	=
+ #endif
+ 
+-INCLUDES	= -I../Widgets $(REGEXP_INCLUDES) $(KNEWS_INCLUDES)
++INCLUDES	= -I../Widgets $(REGEXP_INCLUDES) $(KNEWS_INCLUDES) -I${LOCALBASE}/include
++
+ 
+ LOCAL_LIBRARIES	= \
+ 	-L../Widgets -lWidgets $(REGEXP_LIB) $(JPEG_LIB) $(PNG_LIB) \

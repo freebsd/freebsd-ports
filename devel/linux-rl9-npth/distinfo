@@ -1,0 +1,9 @@
+TIMESTAMP = 1732664027
+SHA256 (rocky/n/npth-1.6-8.el9.aarch64.rpm) = 1a3f38d6ef2504ee73cbb25e4f97cf6942b2fbce6229566f9bfb0400d4079310
+SIZE (rocky/n/npth-1.6-8.el9.aarch64.rpm) = 24290
+SHA256 (rocky/n/npth-1.6-8.el9.i686.rpm) = 086399c3f3cc6bd65d7a1ce8d90d14d2c08e4f7aa0a0b0b660d744863dd4f99a
+SIZE (rocky/n/npth-1.6-8.el9.i686.rpm) = 25079
+SHA256 (rocky/n/npth-1.6-8.el9.x86_64.rpm) = a96a4af76f58645fe34c526c684a45a5a97642c1836bfb3a91ef29520cb21324
+SIZE (rocky/n/npth-1.6-8.el9.x86_64.rpm) = 25003
+SHA256 (rocky/n/npth-1.6-8.el9.src.rpm) = 2d3b226b5b2967b0416e50ba1daf3c4b8635eb6aa5d0813f041c9f6817aa138a
+SIZE (rocky/n/npth-1.6-8.el9.src.rpm) = 312882

@@ -1,0 +1,27 @@
+--- meson.build.orig	2017-10-10 21:07:59 UTC
++++ meson.build
+@@ -18,7 +18,6 @@ glib_min_version = '>= 2.36.0'
+ gdk_pixbuf_min_version = '>= 2.12.0'
+ gtk_min_version = '>= 3.12.0'
+ gphoto2_min_version = '>= 2.5.0'
+-gudev_min_version = '>= 145'
+ gobject_introspection_min_version = '>= 0.9.3'
+ lcms2_min_version = '>= 2.0'
+ libpeas_min_version = '>= 1.2.0'
+@@ -34,15 +33,13 @@ gmodule_dep = dependency('gmodule-2.0', version: glib_
+ gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0', version: gdk_pixbuf_min_version)
+ gtk_dep = dependency('gtk+-3.0', version: gtk_min_version)
+ gphoto2_dep = dependency('libgphoto2', version: gphoto2_min_version)
+-gudev_dep = dependency('gudev-1.0', version: gudev_min_version)
+ gobject_introspection_dep = dependency('gobject-introspection-1.0', version: gobject_introspection_min_version)
+ lcms2_dep = dependency('lcms2', version: lcms2_min_version)
+ libpeas_dep = dependency('libpeas-1.0', version: libpeas_min_version)
+ libpeas_gtk_dep = dependency('libpeas-gtk-1.0', version: libpeas_min_version)
+ gexiv2_dep = dependency('gexiv2', version: gexiv2_min_version)
+ xext_dep = dependency('xext', version: xext_min_version)
+-#libraw_dep = dependency('libraw_r', version: libraw_min_version)
+-libraw_dep = cc.find_library('libraw_r')
++libraw_dep = dependency('libraw_r', version: libraw_min_version)
+ gst_dep = dependency('gstreamer-1.0', version: gst_min_version)
+ gst_video_dep = dependency('gstreamer-video-1.0', version: gst_min_version)
+ 

@@ -1,0 +1,15 @@
+bin/wbar
+%%WBARCONFIG%%bin/wbar-config
+etc/bash_completion.d/wbar
+etc/wbar.d/wbar.cfg
+%%WBARCONFIG%%share/man/es/man1/wbar-config.1.gz
+share/man/es/man1/wbar.1.gz
+%%WBARCONFIG%%share/man/man1/wbar-config.1.gz
+share/man/man1/wbar.1.gz
+%%DESKTOPDIR%%/wbar.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/wbar.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wbar.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/wbar.mo
+share/pixmaps/wbar/dock.png
+share/pixmaps/wbar/wbar.png
+%%DATADIR%%/glade/wbar.glade

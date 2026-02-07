@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Proc/Wait3.pm
+%%SITE_ARCH%%/auto/Proc/Wait3/Wait3.so
+%%PERL5_MAN3%%/Proc::Wait3.3.gz

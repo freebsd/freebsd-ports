@@ -1,0 +1,14 @@
+include/libconfig.h
+include/libconfig.h++
+lib/cmake/libconfig++/libconfig++Config.cmake
+lib/cmake/libconfig/libconfigConfig.cmake
+lib/libconfig++.a
+lib/libconfig++.so
+lib/libconfig++.so.15
+lib/libconfig++.so.15.0.0
+lib/libconfig.a
+lib/libconfig.so
+lib/libconfig.so.15
+lib/libconfig.so.15.0.0
+libdata/pkgconfig/libconfig++.pc
+libdata/pkgconfig/libconfig.pc

@@ -1,0 +1,122 @@
+--- vendor/modules.txt.orig	2023-03-08 18:42:41 UTC
++++ vendor/modules.txt
+@@ -2,15 +2,19 @@
+ ## explicit
+ github.com/cheynewallace/tabby
+ # github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e
++## explicit
+ github.com/chzyer/readline
+ # github.com/davecgh/go-spew v1.1.1
++## explicit
+ github.com/davecgh/go-spew/spew
+ # github.com/fatih/color v1.9.0
+-## explicit
++## explicit; go 1.13
+ github.com/fatih/color
+ # github.com/fsnotify/fsnotify v1.4.7
++## explicit
+ github.com/fsnotify/fsnotify
+ # github.com/hashicorp/hcl v1.0.0
++## explicit
+ github.com/hashicorp/hcl
+ github.com/hashicorp/hcl/hcl/ast
+ github.com/hashicorp/hcl/hcl/parser
+@@ -22,73 +26,92 @@ github.com/hashicorp/hcl/json/parser
+ github.com/hashicorp/hcl/json/scanner
+ github.com/hashicorp/hcl/json/token
+ # github.com/inconshreveable/mousetrap v1.0.0
++## explicit
+ github.com/inconshreveable/mousetrap
+ # github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a
+ ## explicit
+ github.com/jinzhu/copier
+ # github.com/juju/ansiterm v0.0.0-20180109212912-720a0952cc2a
++## explicit
+ github.com/juju/ansiterm
+ github.com/juju/ansiterm/tabwriter
+ # github.com/julienschmidt/httprouter v1.3.0
+-## explicit
++## explicit; go 1.7
+ github.com/julienschmidt/httprouter
+ # github.com/lunixbochs/vtclean v0.0.0-20180621232353-2d01aacdc34a
++## explicit
+ github.com/lunixbochs/vtclean
+ # github.com/magiconair/properties v1.8.1
++## explicit
+ github.com/magiconair/properties
+ # github.com/manifoldco/promptui v0.7.0
+-## explicit
++## explicit; go 1.12
+ github.com/manifoldco/promptui
+ github.com/manifoldco/promptui/list
+ github.com/manifoldco/promptui/screenbuf
+ # github.com/mattn/go-colorable v0.1.4
++## explicit
+ github.com/mattn/go-colorable
+ # github.com/mattn/go-isatty v0.0.11
++## explicit; go 1.12
+ github.com/mattn/go-isatty
+ # github.com/mitchellh/mapstructure v1.1.2
++## explicit
+ github.com/mitchellh/mapstructure
+ # github.com/myesui/uuid v1.0.0
+ ## explicit
+ # github.com/pelletier/go-toml v1.2.0
++## explicit
+ github.com/pelletier/go-toml
+ # github.com/pmezard/go-difflib v1.0.0
++## explicit
+ github.com/pmezard/go-difflib/difflib
+ # github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
+ ## explicit
+ github.com/skratchdot/open-golang/open
+ # github.com/spf13/afero v1.1.2
++## explicit
+ github.com/spf13/afero
+ github.com/spf13/afero/mem
+ # github.com/spf13/cast v1.3.0
++## explicit
+ github.com/spf13/cast
+ # github.com/spf13/cobra v1.0.0
+-## explicit
++## explicit; go 1.12
+ github.com/spf13/cobra
+ # github.com/spf13/jwalterweatherman v1.0.0
++## explicit
+ github.com/spf13/jwalterweatherman
+ # github.com/spf13/pflag v1.0.3
++## explicit
+ github.com/spf13/pflag
+ # github.com/spf13/viper v1.7.0
+-## explicit
++## explicit; go 1.12
+ github.com/spf13/viper
+ # github.com/stretchr/testify v1.6.1
+-## explicit
++## explicit; go 1.13
+ github.com/stretchr/testify/assert
+ # github.com/subosito/gotenv v1.2.0
++## explicit
+ github.com/subosito/gotenv
+ # github.com/twinj/uuid v1.0.0
+ ## explicit
+ github.com/twinj/uuid
+-# golang.org/x/sys v0.0.0-20191026070338-33540a1f6037
++# golang.org/x/sys v0.5.0
++## explicit; go 1.17
+ golang.org/x/sys/unix
+ # golang.org/x/text v0.3.2
++## explicit
+ golang.org/x/text/transform
+ golang.org/x/text/unicode/norm
+ # gopkg.in/ini.v1 v1.51.0
++## explicit
+ gopkg.in/ini.v1
+ # gopkg.in/stretchr/testify.v1 v1.2.2
+ ## explicit
+ # gopkg.in/yaml.v2 v2.2.4
++## explicit
+ gopkg.in/yaml.v2
+ # gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
++## explicit
+ gopkg.in/yaml.v3

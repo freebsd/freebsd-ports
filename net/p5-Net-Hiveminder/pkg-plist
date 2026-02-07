@@ -1,0 +1,8 @@
+bin/hm
+bin/hm-braindump
+bin/hm-create
+bin/hm-done
+bin/hm-sync
+bin/hm-todo
+%%PERL5_MAN3%%/Net::Hiveminder.3.gz
+%%SITE_PERL%%/Net/Hiveminder.pm

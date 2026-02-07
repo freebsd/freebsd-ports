@@ -1,0 +1,9 @@
+File::LoadLines provides an easy way to load the contents of a text file into an
+array of lines. It is intended for relatively small files like config files that
+are often produced by weird tools (and users).
+
+It automatically handles ASCII, Latin-1 and UTF-8 text. When the file has a BOM,
+it handles UTF-8, UTF-16 LE and BE, and UTF-32 LE and BE.
+
+Recognized line terminators are NL (Unix, Linux), CRLF (DOS, Windows) and CR
+(Mac)

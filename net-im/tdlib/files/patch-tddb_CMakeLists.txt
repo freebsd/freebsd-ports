@@ -1,0 +1,11 @@
+--- tddb/CMakeLists.txt.orig	2025-05-09 16:50:17 UTC
++++ tddb/CMakeLists.txt
+@@ -48,7 +48,7 @@ set(TDDB_SOURCE
+   td/db/detail/RawSqliteDb.h
+ )
+ 
+-add_library(tddb STATIC ${TDDB_SOURCE})
++add_library(tddb ${TDDB_SOURCE})
+ target_include_directories(tddb PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
+ target_link_libraries(tddb PUBLIC tdactor tdutils PRIVATE tdsqlite)
+ 

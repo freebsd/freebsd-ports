@@ -1,0 +1,20 @@
+--- build.xml.orig	2023-08-24 16:44:05 UTC
++++ build.xml
+@@ -3,7 +3,7 @@
+ <project basedir="." default="all" name="HFSExplorer">
+   <property environment="env"/>
+   <property name="debuglevel" value="source,lines,vars"/>
+-  <condition property="java.target.level" value="1.5">
++  <condition property="java.target.level" value="6">
+     <or>
+       <equals arg1="${ant.java.version}" arg2="1.5"/>
+       <equals arg1="${ant.java.version}" arg2="1.6"/>
+@@ -12,7 +12,7 @@
+     </or>
+   </condition>
+   <property name="java.target.level" value="${ant.java.version}"/>
+-  <condition property="java.source.level" value="1.5">
++  <condition property="java.source.level" value="6">
+     <or>
+       <equals arg1="${ant.java.version}" arg2="1.5"/>
+       <equals arg1="${ant.java.version}" arg2="1.6"/>

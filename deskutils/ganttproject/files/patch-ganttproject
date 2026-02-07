@@ -1,0 +1,70 @@
+--- ganttproject.orig	2023-10-26 16:28:31 UTC
++++ ganttproject
+@@ -64,7 +64,7 @@ fi
+ 
+ USE_BUNDLED_RUNTIME=1
+ DEBUG_ARGS=""
+-APP_ARGS=()
++APP_ARGS=""
+ 
+ while true; do
+   case "$1" in
+@@ -99,7 +99,7 @@ while true; do
+       break;
+       ;;
+     *)
+-      APP_ARGS+=("$1")
++      APP_ARGS="$APP_ARG $1"
+       shift 1
+       ;;
+   esac
+@@ -139,15 +139,29 @@ check_java() {
+     return 1
+   fi
+ 
+-  VERSION="$( $JAVA_COMMAND -version 2>&1 | grep version | head -n 1)"
++  VERSION="$( $JAVA_COMMAND -version 2>&1 | grep version | head -n 1 | grep -Eo '\".*\"' | cut -c 2-4 )"
+   log "...found $VERSION"
+-  [[ "$VERSION" =~ 11\.? ]] && return 0;
+-  [[ "$VERSION" =~ 12\.? ]] && return 0;
+-  [[ "$VERSION" =~ 13\.? ]] && return 0;
+-  [[ "$VERSION" =~ 14\.? ]] && return 0;
+-  [[ "$VERSION" =~ 15\.? ]] && return 0;
+-  [[ "$VERSION" =~ 16\.? ]] && return 0;
+-  [[ "$VERSION" =~ 17\.? ]] && return 0;
++  if [ "$VERSION" == "11." ]; then
++	return 0;
++  fi
++  if [ "$VERSION" == "12." ]; then
++	return 0;
++  fi
++  if [ "$VERSION" == "13." ]; then
++	return 0;
++  fi
++  if [ "$VERSION" == "14." ]; then
++	return 0;
++  fi
++  if [ "$VERSION" == "15." ]; then
++	return 0;
++  fi
++  if [ "$VERSION" == "16." ]; then
++	return 0;
++  fi
++  if [ "$VERSION" == "17." ]; then
++	return 0;
++  fi
+   log "...this seems to be an old Java Runtime";
+   JAVA_COMMAND=""
+   return 1
+@@ -214,7 +228,9 @@ JAVA_EXPORTS="--add-exports javafx.controls/com.sun.ja
+   --add-exports javafx.graphics/com.sun.javafx.util=ALL-UNNAMED\
+   --add-opens java.desktop/sun.swing=ALL-UNNAMED\
+   --add-opens java.desktop/sun.awt.X11=ALL-UNNAMED"
+-"$JAVA_COMMAND" -Xmx1024m $JAVA_EXPORTS -Duser.dir="$(pwd)" $DEBUG_ARGS $BOOT_CLASS \
++"$JAVA_COMMAND" \
++  --module-path=/usr/local/openjfx14/lib --add-modules=javafx.swing,javafx.web,javafx.graphics,javafx.controls \
++  -Xmx1024m $JAVA_EXPORTS -Duser.dir="$(pwd)" $DEBUG_ARGS $BOOT_CLASS \
+   --app net.sourceforge.ganttproject.GanttProject \
+   --version-dirs "$GP_HOME"/plugins:~/.ganttproject.d/updates \
+-  -log true -log_file "$LOG_FILE" "${APP_ARGS[@]}"
++  -log true -log_file "$LOG_FILE" "$APP_ARGS"

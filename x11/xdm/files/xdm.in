@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: xdm
+# REQUIRE: LOGIN
+# KEYWORD: nojail shutdown
+#
+# Add the following line to /etc/rc.conf to enable xdm:
+# xdm_enable="YES"
+#
+# Optionally, you can set the vty that it appears on
+# (only useful in the unlikely event that you already have
+#  them allocated in /etc/ttys)
+# xdm_tty=ttyv8
+#
+# Alternatively, edit /etc/ttys and change the line below
+#   ttyv8   "%%PREFIX%%/bin/xdm -nodaemon"  xterm   off secure
+# to this:
+#   ttyv8   "%%PREFIX%%/bin/xdm -nodaemon"  xterm   on secure
+
+. /etc/rc.subr
+
+name="xdm"
+rcvar=xdm_enable
+desc="X.org X display manager"
+
+load_rc_config $name
+
+: ${xdm_enable:=NO}
+: ${xdm_tty:=default}
+
+command=%%PREFIX%%/bin/$name
+pidfile=/var/run/$name.pid
+if [ "${xdm_tty%%[0-9]*}" = "ttyv" ]; then
+	start_precmd=xdm_set_vty
+fi
+
+xdm_set_vty()
+{
+	# X views vt as starting at 01, not ttyv0
+	vtarg=`printf vt%02d $((${xdm_tty#ttyv} + 1))`
+	xserver_args=$(grep '^:0' %%LOCALBASE%%/etc/X11/xdm/Xservers)
+	if [ $? -ne 0 ]; then
+		xserver_args=":0 local %%LOCALBASE%%/bin/X :0"
+	fi
+	command_args="-server \"$xserver_args $vtarg\""
+}
+
+run_rc_command $1

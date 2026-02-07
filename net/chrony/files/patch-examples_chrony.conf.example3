@@ -1,0 +1,42 @@
+--- examples/chrony.conf.example3.orig	2020-09-16 10:09:52 UTC
++++ examples/chrony.conf.example3
+@@ -1,7 +1,7 @@
+ #######################################################################
+ #
+ # This is an example chrony configuration file.  You should copy it to
+-# /etc/chrony.conf after uncommenting and editing the options that you
++# %%PREFIX%%/etc/chrony.conf after uncommenting and editing the options that you
+ # want to enable.  The more obscure options are not included.  Refer
+ # to the documentation for these.
+ #
+@@ -31,7 +31,9 @@
+ ! server bar.example.net iburst
+ ! server baz.example.net iburst
+ 
+-! pool pool.ntp.org iburst
++# This is a reasonable default setting to have on in typical cases for
++# a workstation with a full-time internet connection:
++pool 0.freebsd.pool.ntp.org iburst
+  
+ #######################################################################
+ ### AVOIDING POTENTIALLY BOGUS CHANGES TO YOUR CLOCK
+@@ -84,7 +86,7 @@ driftfile /var/lib/chrony/drift
+ # If you want to enable NTP authentication with symmetric keys, you will need
+ # to uncomment the following line and edit the file to set up the keys.
+ 
+-! keyfile /etc/chrony.keys
++! keyfile %%PREFIX%%/etc/chrony.keys
+ 
+ # If you specify an NTP server with the nts option to enable authentication
+ # with the Network Time Security (NTS) mechanism, or enable server NTS with
+@@ -164,6 +166,10 @@ ntsdumpdir /var/lib/chrony
+ # only need this if you really enjoy looking at the logs, you want to
+ # produce some graphs of your system's timekeeping performance, or you
+ # need help in debugging a problem.
++#
++# If you enable logging, you may want to add an entry to a log rotation
++# utility's configuration (e.g., newsyslog(8)).  'chronyc cyclelogs'
++# should be used to signal chronyd that a log file has been renamed.
+ 
+ ! logdir /var/log/chrony
+ ! log measurements statistics tracking

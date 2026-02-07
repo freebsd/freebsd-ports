@@ -1,0 +1,2 @@
+aioitertools provides implementation of itertools, builtins, and more for
+AsyncIO and mixed-type iterables.

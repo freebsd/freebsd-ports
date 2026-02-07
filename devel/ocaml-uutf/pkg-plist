@@ -1,0 +1,14 @@
+bin/utftrip
+%%OCAML_SITELIBDIR%%/uutf/META
+%%OCAML_SITELIBDIR%%/uutf/opam
+%%OCAML_SITELIBDIR%%/uutf/uutf.a
+%%OCAML_SITELIBDIR%%/uutf/uutf.cma
+%%OCAML_SITELIBDIR%%/uutf/uutf.cmi
+%%OCAML_SITELIBDIR%%/uutf/uutf.cmti
+%%OCAML_SITELIBDIR%%/uutf/uutf.cmx
+%%OCAML_SITELIBDIR%%/uutf/uutf.cmxa
+%%OCAML_SITELIBDIR%%/uutf/uutf.cmxs
+%%OCAML_SITELIBDIR%%/uutf/uutf.mli
+%%PORTDOCS%%share/doc/ocaml/uutf/CHANGES.md
+%%PORTDOCS%%share/doc/ocaml/uutf/LICENSE.md
+%%PORTDOCS%%share/doc/ocaml/uutf/README.md

@@ -1,0 +1,9 @@
+cpdup-FreeBSD is a FreeBSD fork of cpdup, a powerful filesystem mirroring
+and backup utility which also has file integrity testing features, supports
+incremental backups, and remote mirroring via ssh.
+
+This fork supports copy_file_range(2) and allows choosing checksum
+algorithm.
+
+Note: This port does not copy (or mirror) any FreeBSD supported ACL
+types and Extended Attributes nor MAC labels.

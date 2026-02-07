@@ -1,0 +1,20 @@
+--- src/tohtml/Makefile.in.orig	2015-07-06 18:26:48 UTC
++++ src/tohtml/Makefile.in
+@@ -6,7 +6,7 @@ INSTALL_DATA    = @INSTALL_DATA@
+ include ../../Makerules
+ top_srcdir=@top_srcdir@
+ srcdir=@srcdir@
+-datarootdir     = @datarootdir@
++datadir     = @datadir@
+ @VPATH@
+ 
+ LIBS      =  ../../lib/libsowing.a
+@@ -39,7 +39,7 @@ distclean: clean
+ 
+ install:
+ 	$(INSTALL_PROGRAM) tohtml @bindir@/tohtml
+-	$(INSTALL_DATA) ../../share/basedefs.txt @datarootdir@/basedefs.txt
++	$(INSTALL_DATA) ../../share/basedefs.txt @datadir@/basedefs.txt
+ 
+ # We no longer need this program, which is good because X11 is getting
+ # harder to find

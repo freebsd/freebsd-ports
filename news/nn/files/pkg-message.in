@@ -1,0 +1,13 @@
+[
+{
+type: install
+message: <<EOM
+Please set your NNTP server address or hostname in the file:
+%%PREFIX%%/etc/nntp_server
+
+If desired, please set your domain name for From: addresses when
+posting in the file (default is to use your hostname):
+%%PREFIX%%/etc/nntp_domain
+EOM
+}
+]

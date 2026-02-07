@@ -1,0 +1,44 @@
+[
+{ type: install
+  message: <<EOM
+ To use amavisd-new, you need to install at least one virus scanner.
+ The following virus scanners are available in the FreeBSD ports
+ collection:
+
+ /usr/ports/security/clamav	Clam Antivirus
+ /usr/ports/security/f-prot	F-Prot Antivirus
+
+ Enable amavisd-new in /etc/rc.conf with the following line:
+
+    amavisd_enable="YES"
+
+ You can set the pidfile, if you do not use the default path:
+
+    amavisd_pidfile="/var/amavis/amavisd.pid"
+
+ Optionally enable amavisd tmp ram disk with:
+
+    amavisd_ram="512m"
+
+ If you have installed and want to use the amavis sendmail milter interface,
+ you need the following additional line in /etc/rc.conf:
+
+    amavis_milter_enable="YES"
+
+ If you have installed and want to use the p0fanalyzer interface,
+ you need the following additional lines in /etc/rc.conf
+ (with modifications according to your needs):
+
+    amavis_p0fanalyzer_enable="YES"
+    amavis_p0fanalyzer_p0f_filter="tcp dst port 25"
+
+ You can pass another command line options to p0f daemon by setting
+ amavis_p0f_daemon_flags and to p0f-analyzer.pl by setting
+ amavis_p0fanalyzer_flags.
+
+ Configuration templates are available in %%PREFIX%%/etc
+ as amavisd.conf.sample, amavisd.conf-default and amavisd-custom.conf.sample
+ Documentation is available in %%DOCSDIR%%.
+EOM
+}
+]

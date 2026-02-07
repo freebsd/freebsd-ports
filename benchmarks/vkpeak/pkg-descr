@@ -1,0 +1,4 @@
+vkpeak is a synthetic benchmarking tool to measure peak capabilities
+of Vulkan devices. It only measures the peak metrics that can be
+achieved using vector operations and does not represent a real-world
+use case.

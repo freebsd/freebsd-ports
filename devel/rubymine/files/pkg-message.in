@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+The  native (faster) file watching support backed by kqueue is enabled
+by default.  If you encounter problems  problems with watching large
+trees, you disable it by appending the following property into
+%%DATADIR%%/bin/rubymine.properties:
+
+	idea.filewatcher.disabled=true
+EOM
+}
+]

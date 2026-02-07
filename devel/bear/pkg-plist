@@ -1,0 +1,9 @@
+bin/bear
+lib/bear/libexec.so
+lib/bear/wrapper
+%%PORTDOCS%%%%DOCSDIR%%/AGENTS.md
+%%PORTDOCS%%%%DOCSDIR%%/CODE_OF_CONDUCT.md
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/man/man1/bear.1.gz

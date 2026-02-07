@@ -1,0 +1,2 @@
+N-queens benchmark written in C.  Includes base version and (optinal)
+distributed MPI version.

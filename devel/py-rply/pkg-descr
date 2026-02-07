@@ -1,0 +1,3 @@
+rply is a pure python parser generator, that also works with RPython. It is a
+more-or-less direct port of David Beazley's awesome PLY, with a new public
+API, and RPython support.

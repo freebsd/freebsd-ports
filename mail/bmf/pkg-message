@@ -1,0 +1,65 @@
+[
+{ type: install
+  message: <<EOM
+=== How to integrate bmf ===
+
+For maildrop(1), use only one of the following examples.  The first
+sample invokes bmf in its normal mode of operation and the second
+invokes bmf as a filter:
+
+	### Sample One
+	# Invoke bmf and use return code to filter spam in one step
+	exception {
+		`bmf`
+		if ( $RETURNCODE == 0 )
+			to $MAILDIR/spam
+	}
+
+	### Sample Two
+	# Invoke bmf as a filter
+	exception {
+		xfilter "bmf -p"
+		if (/^X-Spam-Status: Yes/)
+			to $MAILDIR/spam
+	}
+
+
+For procmail(1), use only one of the following samples.  SPAM will be
+filtered into $MAILDIR/spam.  The first sample invokes bmf in its
+normal mode of operation and the second invokes bmf as a filter.
+
+	### begin sample one ###
+	# Invoke bmf and use return code to filter spam in one step
+	:0HB
+	* ? bmf
+	| formail -A"X-Spam-Status: Yes, tests=bmf" >>$MAILDIR/spam
+
+	### begin sample two ###
+	# Invoke bmf as a filter
+	:0 fw
+	| bmf -p
+
+	# Filter spam
+	:0:
+	^X-Spam-Status: Yes
+	$MAILDIR/spam
+
+If you put bmf in your maildrop or procmail scripts as suggested
+above, it will always register an email as either spam or non-spam.
+To reverse this registration and train bmf, the following mutt macros
+may be useful:
+
+  macro index \ed "<enter-command>unset wait_key\n<pipe-entry>bmf -S\n<enter-command>set wait_key\n<save-message>=spam\n" "Tags a given message as SPAM"
+  macro index \et "<pipe-entry>bmf -t\n<enter-command>set wait_key\n" "Tests a given message to see if it is SPAM"
+  macro index \eu "<pipe-entry>bmf -N\n<enter-command>set wait_key\n<save-message>=inbox\n" "Untags a given message as SPAM"
+
+These will override these commands:
+
+  <Esc>d = de-register as non-spam, register as spam, and move to spam folder.
+  <Esc>t = test for spamicity.
+  <Esc>u = de-register as spam, register as non-spam, and move to inbox folder.
+
+Please see the ${PREFIX}/share/bmf/README for further details.
+EOM
+}
+]

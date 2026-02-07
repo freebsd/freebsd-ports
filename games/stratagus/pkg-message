@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+NOTE: This is the engine only. If you would like to play a game that uses the
+Stratagus engine, you must install supporting games of the engine.
+
+wartool, available in 'games/wargus' allows the user to extract game data
+from legitimate copies of Warcraft 2, for use by Stratagus.
+
+For more information, visit the following URL:
+
+https://stratagus.com/
+
+Enjoy!
+EOM
+}
+]

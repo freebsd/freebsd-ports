@@ -1,0 +1,8 @@
+bin/qman
+etc/xdg/qman/qman.conf
+etc/xdg/qman/themes/adwaita-light.conf
+etc/xdg/qman/themes/adwaita.conf
+etc/xdg/qman/themes/catppuccin_latte.conf
+etc/xdg/qman/themes/modernity-light.conf
+etc/xdg/qman/themes/modernity.conf
+%%MANPAGES%%share/man/man1/qman.1.gz

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Text/CharWidth.pm
+%%SITE_ARCH%%/auto/Text/CharWidth/CharWidth.so
+%%PERL5_MAN3%%/Text::CharWidth.3.gz

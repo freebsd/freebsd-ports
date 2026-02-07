@@ -1,0 +1,11 @@
+An automated scanning tool that bridges media organizers
+such as Sonarr and Radarr with media servers
+such as Plex and Jellyfin.
+
+The goal is to provide a simple, efficient, and reliable way to update
+your media library reducing full library scans.
+
+A key feature is the ability to provide a hash of the file to the API,
+which will then wait for the file to match that hash before updating targets.
+
+Another benefit over autoscan is support for PostgreSQL as backend.

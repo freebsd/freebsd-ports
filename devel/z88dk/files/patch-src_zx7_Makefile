@@ -1,0 +1,13 @@
+--- src/zx7/Makefile.orig	2019-02-21 03:00:16 UTC
++++ src/zx7/Makefile
+@@ -20,8 +20,8 @@ z88dk-dzx7$(EXESUFFIX):	dzx7.c
+ 	$(CC) -o z88dk-dzx7$(EXESUFFIX) $(LDFLAGS) dzx7.c
+ 
+ install: z88dk-zx7$(EXESUFFIX) z88dk-dzx7$(EXESUFFIX)
+-	$(INSTALL) z88dk-zx7$(EXESUFFIX) $(PREFIX)/bin/z88dk-zx7$(EXESUFFIX)
+-	$(INSTALL) z88dk-dzx7$(EXESUFFIX) $(PREFIX)/bin/z88dk-dzx7$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-zx7$(EXESUFFIX) $(PREFIX)/bin/z88dk-zx7$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-dzx7$(EXESUFFIX) $(PREFIX)/bin/z88dk-dzx7$(EXESUFFIX)
+ 
+ clean:
+ 	$(RM) z88dk-zx7$(EXESUFFIX) zx7.o core$(EXESUFFIX)

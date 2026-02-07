@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Convert/Cyrillic.pm
+%%SITE_PERL%%/Convert/Cyrillic/Utils.pm
+%%SITE_PERL%%/Lingua/DetectCharset.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatKoi.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatKoi8r.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatKoi8u.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatUtf8.pm
+%%SITE_PERL%%/Lingua/DetectCharset/StatWin.pm
+%%PERL5_MAN3%%/Convert::Cyrillic.3.gz
+%%PERL5_MAN3%%/Lingua::DetectCharset.3.gz

@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Note: You must define a fallback-admin manually in the configuration file
+at %%ETCDIR%%/config.toml to be able to login the first time.
+
+Edit the configuration for the fallback-admin:
+
+[authentication.fallback-admin]
+user = "admin"
+secret = "yourplaintextpasswordhere"
+
+The secret will be replaced with a hash if you change the fallback
+admin's password in the web admin panel. The secret value can also be a
+password hash documented here: https://stalw.art/docs/auth/authentication/password/
+}
+]

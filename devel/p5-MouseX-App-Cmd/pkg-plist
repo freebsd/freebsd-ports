@@ -1,0 +1,4 @@
+%%SITE_PERL%%/MouseX/App/Cmd.pm
+%%SITE_PERL%%/MouseX/App/Cmd/Command.pm
+%%PERL5_MAN3%%/MouseX::App::Cmd.3.gz
+%%PERL5_MAN3%%/MouseX::App::Cmd::Command.3.gz

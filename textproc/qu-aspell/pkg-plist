@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/qu.dat
+lib/aspell-%%VER%%/qu_affix.dat
+share/aspell/qu.multi
+share/aspell/qu.rws
+share/aspell/quechua.alias

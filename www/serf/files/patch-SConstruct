@@ -1,0 +1,40 @@
+--- SConstruct.orig	2023-05-18 09:33:55 UTC
++++ SConstruct
+@@ -74,6 +74,9 @@ else:
+ 
+ opts = Variables(files=[SAVED_CONFIG])
+ opts.AddVariables(
++  RawListVariable('DESTDIR',
++               'Required *dummy*, without scons will stop with "Unknown variables: DESTDIR"',
++                None),
+   PathVariable('PREFIX',
+                'Directory to install under',
+                default_prefix,
+@@ -217,6 +220,7 @@ opts.Save(SAVED_CONFIG, env)
+ thisdir = os.getcwd()
+ libdir = '$LIBDIR'
+ incdir = '$PREFIX/include/serf-$MAJOR'
++pkgconfdir = '$PREFIX/libdata'
+ 
+ # This version string is used in the dynamic library name, and for Mac OS X also
+ # for the current_version and compatibility_version options in the .dylib
+@@ -386,8 +390,8 @@ else:
+   ### there is probably a better way to run/capture output.
+   ### env.ParseConfig() may be handy for getting this stuff into the build
+   if CALLOUT_OKAY:
+-    apr_libs = os.popen(env.subst('$APR --link-libtool --libs')).read().strip()
+-    apu_libs = os.popen(env.subst('$APU --link-libtool --libs')).read().strip()
++    apr_libs = os.popen(env.subst('$APR --libs')).read().strip()
++    apu_libs = os.popen(env.subst('$APU --libs')).read().strip()
+   else:
+     apr_libs = ''
+     apu_libs = ''
+@@ -459,7 +463,7 @@ if sys.platform == 'darwin':
+ env.Alias('install-lib', [install_static, install_shared,
+                           ])
+ env.Alias('install-inc', env.Install(incdir, HEADER_FILES))
+-env.Alias('install-pc', env.Install(os.path.join(libdir, 'pkgconfig'),
++env.Alias('install-pc', env.Install(os.path.join(pkgconfdir, 'pkgconfig'),
+                                     pkgconfig))
+ env.Alias('install', ['install-lib', 'install-inc', 'install-pc', ])
+ 

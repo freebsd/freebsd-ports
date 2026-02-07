@@ -1,0 +1,3 @@
+lib/postgresql/plpgsql_check.so
+share/postgresql/extension/plpgsql_check--%%PORTVERSION%%.sql
+share/postgresql/extension/plpgsql_check.control

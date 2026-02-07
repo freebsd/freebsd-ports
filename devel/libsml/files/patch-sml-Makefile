@@ -1,0 +1,13 @@
+--- sml/Makefile.orig	2018-01-25 17:04:21 UTC
++++ sml/Makefile
+@@ -4,10 +4,6 @@ CFLAGS += -I./include/ -fPIC -fno-stack-protector -g -
+ # Available Flags:
+ # SML_NO_UUID_LIB - compile without uuid lib
+ 
+-ifneq ($(UNAME), Darwin)
+-LIBS=-luuid
+-endif
+-
+ NAME=libsml
+ SOVERSION=1
+ ifeq ($(UNAME), Darwin)

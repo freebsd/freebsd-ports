@@ -1,0 +1,22 @@
+--- etc/Makefile.orig	2020-06-14 14:27:43 UTC
++++ etc/Makefile
+@@ -3,12 +3,14 @@ top_builddir = ..
+ include ../config.mk
+ 
+ install:
+-	$(MKINSTALLDIRS) $(sysconfdir)/$(SQLRELAY).conf.d
+-	$(CP) sqlrelay.xsd $(sysconfdir)/$(SQLRELAY).xsd
+-	$(CHMOD) 644 $(sysconfdir)/$(SQLRELAY).xsd
++	$(MKINSTALLDIRS) $(sysconfdir)/$(SQLRELAY)
+ 	$(MKINSTALLDIRS) $(EXAMPLEDIR)
+-	$(CP) sqlrelay.conf $(EXAMPLEDIR)/$(SQLRELAY).conf
+-	$(CHMOD) 644 $(EXAMPLEDIR)/$(SQLRELAY).conf
++	$(CP) sqlrelay.conf $(sysconfdir)/$(SQLRELAY)/conf.sample
++	$(CHMOD) 644 $(sysconfdir)/$(SQLRELAY)/conf.sample
++	$(CP) sqlrelay.xsd $(sysconfdir)/$(SQLRELAY)/
++	$(CHMOD) 644 $(sysconfdir)/$(SQLRELAY)/sqlrelay.xsd
++	$(CP) sqlrelay.conf $(EXAMPLEDIR)/sqlrelay.conf
++	$(CHMOD) 644 $(EXAMPLEDIR)/sqlrelay.conf
+ 
+ uninstall:
+ 	$(RM) $(EXAMPLEDIR)/$(SQLRELAY).conf \

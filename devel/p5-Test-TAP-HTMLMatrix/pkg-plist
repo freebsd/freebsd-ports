@@ -1,0 +1,13 @@
+%%PERL5_MAN3%%/Test::TAP::HTMLMatrix.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Colorful.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::File::Visual.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Subtest::Visual.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Visual.3.gz
+%%SITE_PERL%%/Test/TAP/HTMLMatrix.pm
+%%SITE_PERL%%/Test/TAP/HTMLMatrix/detailed_view.html
+%%SITE_PERL%%/Test/TAP/HTMLMatrix/htmlmatrix.css
+%%SITE_PERL%%/Test/TAP/HTMLMatrix/summary_view.html
+%%SITE_PERL%%/Test/TAP/Model/Colorful.pm
+%%SITE_PERL%%/Test/TAP/Model/File/Visual.pm
+%%SITE_PERL%%/Test/TAP/Model/Subtest/Visual.pm
+%%SITE_PERL%%/Test/TAP/Model/Visual.pm

@@ -1,0 +1,32 @@
+Obtained from:	https://github.com/scipy/scipy/commit/3c89445b6439f3ce7bffc4cf11c6407c39faedc5
+		https://github.com/scipy/scipy/commit/217748476403a1e5726a921cedb674e7ffbc952e
+
+--- scipy/_lib/_ccallback_c.pyx.orig	1970-01-01 00:00:00 UTC
++++ scipy/_lib/_ccallback_c.pyx
+@@ -58,7 +58,7 @@ def get_raw_capsule(func_obj, name_obj, context_obj):
+     elif context_obj is None:
+         context = NULL
+     else:
+-        context = PyLong_AsVoidPtr(long(context_obj))
++        context = PyLong_AsVoidPtr(int(context_obj))
+ 
+     if PyCapsule_CheckExact(func_obj):
+         capsule_name = PyCapsule_GetName(func_obj)
+@@ -70,7 +70,7 @@ def get_raw_capsule(func_obj, name_obj, context_obj):
+         if name == NULL:
+             name = capsule_name
+     else:
+-        func = PyLong_AsVoidPtr(long(func_obj))
++        func = PyLong_AsVoidPtr(int(func_obj))
+ 
+     if name == NULL:
+         name_copy = name
+--- scipy/optimize/cython_optimize.pxd.orig	1970-01-01 00:00:00 UTC
++++ scipy/optimize/cython_optimize.pxd
+@@ -7,5 +7,5 @@
+ # support. Changing it causes an ABI forward-compatibility break
+ # (gh-11793), so we currently leave it as is (no further cimport
+ # statements should be used in this file).
+-from .cython_optimize._zeros cimport (
++from scipy.optimize.cython_optimize._zeros cimport (
+     brentq, brenth, ridder, bisect, zeros_full_output)

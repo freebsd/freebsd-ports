@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: powa-collector
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable fluent-bit:
+#
+# powa_collector_enable (bool):	Set to YES to enable fluent-bit
+# 				Default: NO
+# powa_collector_config (str):	config files to use
+#				Default: %%ETCDIR%%/fluent-bit.conf
+# powa_collector_flags (str):	Extra flags passed to fluent-bit
+
+. /etc/rc.subr
+
+name="powa_collector"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${powa_collector_enable:="NO"}
+: ${powa_collector_user:="nobody"}
+: ${powa_collector_group:="nogroup"}
+
+pidfile=/var/run/${name}.pid
+procname="%%PREFIX%%/bin/powa-collector.py"
+command="/usr/sbin/daemon"
+command_args="-H -p ${pidfile} -o /var/log/${name}/${name}.log ${procname}"
+
+start_precmd=powa_collector_startprecmd
+
+powa_collector_startprecmd()
+{
+	install -o ${powa_collector_user} -g ${powa_collector_group} -d /var/log/${name}
+	if [ ! -e ${pidfile} ]; then
+		install -o ${powa_collector_user} -g ${powa_collector_group} /dev/null ${pidfile};
+	fi
+}
+
+run_rc_command "$1"

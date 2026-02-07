@@ -1,0 +1,4 @@
+Wagtail-bakery is built on top of Django bakery. Please read their documentation
+for detailed configuration and how to build default Django flat files. Yes.
+Wagtail-bakery is not limited to build Wagtail pages specifically, mixed content
+is possible!

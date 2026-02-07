@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-12-03 18:56:16 UTC
++++ Makefile
+@@ -24,7 +24,7 @@ DEFS=		-DVERSION=${VERSION}
+ all:		${PROG}
+ 
+ ${PROG}:	${OBJS}
+-	${CC} ${CXXFLAGS} -o ${.TARGET} ${OBJS} ${LDADD}
++	${CC} ${CXXFLAGS} -o ${.TARGET} ${OBJS} ${LDFLAGS} ${LDADD}
+ 
+ .cc.o:
+ 	${CC} ${CXXFLAGS} ${CPPFLAGS} ${DEFS} -c ${.IMPSRC}

@@ -1,0 +1,22 @@
+Crypt::RSA is a pure-perl, cleanroom implementation of the RSA public-key
+cryptosystem. It uses Math::Pari(3), a perl interface to the blazingly fast
+PARI library, for big integer arithmetic and number theoretic computations.
+
+Crypt::RSA provides arbitrary size key-pair generation, plaintext-aware
+encryption (OAEP) and digital signatures with appendix (PSS). For compatibility
+with SSLv3, RSAREF2, PGP and other applications that follow the PKCS #1 v1.5
+standard, it also provides PKCS #1 v1.5 encryption and signatures.
+
+Crypt::RSA is structured as bundle of modules that encapsulate different parts
+of the RSA cryptosystem. The RSA algorithm is implemented in
+Crypt::RSA::Primitives(3). Encryption schemes, located under Crypt::RSA::ES,
+and signature schemes, located under Crypt::RSA::SS, use the RSA algorithm to
+build encryption/signature schemes that employ secure padding. (See the note on
+Security of Padding Schemes.)
+
+The key generation engine and other functions that work on both components of
+the key-pair are encapsulated in Crypt::RSA::Key(3). Crypt::RSA::Key::Public(3)
+& Crypt::RSA::Key::Private(3) provide mechanisms for storage & retrival of keys
+from disk, decoding & encoding of keys in certain formats, and secure
+representation of keys in memory. Finally, the Crypt::RSA module provides a
+convenient, DWIM wrapper around the rest of the modules in the bundle.

@@ -1,0 +1,7 @@
+SeqAn is an open source C++ library of efficient algorithms
+and data structures for the analysis of sequences with the
+focus on biological data. The library is licensed under the
+3-clause BSD license except the applications which are GPL.
+
+This port only contains the header library and API documentation.
+The apps are installed by biology/seqan-apps.

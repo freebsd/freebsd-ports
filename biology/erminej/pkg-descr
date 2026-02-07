@@ -1,0 +1,6 @@
+ErmineJ performs analyses of gene sets in high-throughput genomics data such as
+gene expression profiling studies. A typical goal is to determine whether
+particular biological pathways are "doing something interesting" in an
+experiment that generates long lists of candidates. The software is designed to
+be used by biologists with little or no informatics background (but if you do,
+you might be interested in the CLI or the R support).

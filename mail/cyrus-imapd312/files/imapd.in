@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Start or stop cyrus-imapd
+
+# PROVIDE: cyrus_imapd imap
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable Cyrus IMAP:
+#
+#  cyrus_imapd_enable="YES"
+
+. /etc/rc.subr
+
+: ${cyrus_imapd_enable="NO"}
+
+name="cyrus_imapd"
+rcvar=cyrus_imapd_enable
+pidfile="/var/run/cyrus-master.pid"
+command="%%PREFIX%%/cyrus/libexec/master"
+command_args="-d -p ${pidfile}"
+required_files="%%PREFIX%%/etc/cyrus.conf %%PREFIX%%/etc/imapd.conf"
+stop_postcmd="cyrus_imapd_poststop"
+extra_commands="reload"
+
+cyrus_imapd_poststop() {
+	/bin/rm -f ${pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"

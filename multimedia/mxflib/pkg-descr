@@ -1,0 +1,8 @@
+A C++ library for MXF file I/O.
+
+Utilities included:
+
+* mxfsplit, mxfwrap and simplewrap, to create and access MXF files;
+
+* mxfdump and mxf2dot, to dump the MXF in text or graphical (graphviz)
+  format.

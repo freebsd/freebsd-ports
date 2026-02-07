@@ -1,0 +1,48 @@
+--- source/shared_lib/sources/xml/xml_parser.cpp.orig	2022-12-31 03:15:04 UTC
++++ source/shared_lib/sources/xml/xml_parser.cpp
+@@ -87,10 +87,17 @@ XmlNode *XmlIo::load(const string &path){
+ 	
+ 	try{
+ 		ErrorHandler errorHandler;
+-		DOMBuilder *parser= (static_cast<DOMImplementationLS*>(implementation))->createDOMBuilder(DOMImplementationLS::MODE_SYNCHRONOUS, 0);
+-		parser->setErrorHandler(&errorHandler);
+-		parser->setFeature(XMLUni::fgXercesSchemaFullChecking, true);
+-		parser->setFeature(XMLUni::fgDOMValidation, true);
++#if XERCES_VERSION_MAJOR < 3		
++ 		DOMBuilder *parser= (static_cast<DOMImplementationLS*>(implementation))->createDOMBuilder(DOMImplementationLS::MODE_SYNCHRONOUS, 0);
++ 		parser->setErrorHandler(&errorHandler);
++ 		parser->setFeature(XMLUni::fgXercesSchemaFullChecking, true);
++ 		parser->setFeature(XMLUni::fgDOMValidation, true);
++#else		
++		DOMLSParser *parser = (static_cast<DOMImplementationLS*>(implementation))->createLSParser(DOMImplementationLS::MODE_SYNCHRONOUS, 0);
++ 		DOMConfiguration  *config = parser->getDomConfig();
++		config->setParameter(XMLUni::fgXercesSchemaFullChecking, true);
++		config->setParameter(XMLUni::fgDOMValidate, true);
++#endif		
+ 		DOMDocument *document= parser->parseURI(path.c_str());
+ 		
+ 		if(document==NULL){
+@@ -119,9 +126,20 @@ void XmlIo::save(const string &path, const XmlNode *no
+ 		}
+ 		
+ 		LocalFileFormatTarget file(path.c_str());
+-		DOMWriter* writer = implementation->createDOMWriter();
+-		writer->setFeature(XMLUni::fgDOMWRTFormatPrettyPrint, true);
+-		writer->writeNode(&file, *document);
++#if XERCES_VERSION_MAJOR < 3		
++ 		DOMWriter* writer = implementation->createDOMWriter();
++ 		writer->setFeature(XMLUni::fgDOMWRTFormatPrettyPrint, true);
++ 		writer->writeNode(&file, *document);
++#else		
++		DOMLSSerializer *serializer = implementation->createLSSerializer();
++		DOMLSOutput* output=implementation->createLSOutput();
++		DOMConfiguration* config=serializer->getDomConfig();
++		config->setParameter(XMLUni::fgDOMWRTFormatPrettyPrint,true);
++		output->setByteStream(&file);
++		serializer->write(document,output);
++		output->release();
++		serializer->release();
++#endif
+ 		document->release();
+ 	}
+ 	catch(const DOMException &e){

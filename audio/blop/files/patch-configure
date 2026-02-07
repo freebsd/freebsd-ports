@@ -1,0 +1,12 @@
+--- configure.orig	2004-06-15 09:11:25 UTC
++++ configure
+@@ -4533,8 +4533,7 @@ if test "${enable_debug+set}" = set; the
+   enableval="$enable_debug"
+   CFLAGS="-pipe -Wall -O0 -g"
+ else
+-  CFLAGS="-pipe -Wall -O3 -Wno-unused -DNO_DEBUG -DPIC -fPIC \
+-            -ffast-math -fomit-frame-pointer -funroll-loops"
++  CFLAGS="$CFLAGS -DNO_DEBUG -DPIC -fPIC"
+ 
+ fi;
+ 

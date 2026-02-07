@@ -1,0 +1,11 @@
+--- sample-config/nagios.cfg.in.orig	2019-01-15 14:58:00 UTC
++++ sample-config/nagios.cfg.in
+@@ -31,7 +31,7 @@ cfg_file=@sysconfdir@/objects/contacts.cfg
+ cfg_file=@sysconfdir@/objects/timeperiods.cfg
+ cfg_file=@sysconfdir@/objects/templates.cfg
+ 
+-# Definitions for monitoring the local (Linux) host
++# Definitions for monitoring the local (FreeBSD) host
+ cfg_file=@sysconfdir@/objects/localhost.cfg
+ 
+ # Definitions for monitoring a Windows machine

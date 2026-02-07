@@ -1,0 +1,19 @@
+--- wmdrawerrc.example.orig	Tue Apr  8 04:00:08 2003
++++ wmdrawerrc.example	Fri May  2 00:41:14 2003
+@@ -1,7 +1,7 @@
+ # Config file example for wmdrawer
+ [general]
+ # Dock's icon [optional]
+-#dock_icon	panel-drawer.png
++dock_icon	beastie.png
+ 
+ # Drawer's opening direction [required]
+ # Top to bottom = 0
+@@ -75,6 +75,7 @@
+ [images_paths]
+ /usr/share/pixmaps
+ /usr/local/share/pixmaps/
++%%DATADIR%%
+ 
+ # A first column with 5 buttons
+ # Each button must be defined with this syntax:

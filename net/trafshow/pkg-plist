@@ -1,0 +1,3 @@
+bin/trafshow
+@sample etc/trafshow.dist etc/trafshow
+share/man/man1/trafshow.1.gz

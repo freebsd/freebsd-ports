@@ -1,0 +1,12 @@
+This project includes GdkPixbuf loaders for niche and seldom used image
+formats:
+
+- ANI
+- BMP
+- ICO
+- ICNS
+- PNM
+- QTIF
+- TGA
+- XBM
+- XPM

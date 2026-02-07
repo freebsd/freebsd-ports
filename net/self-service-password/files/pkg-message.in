@@ -1,0 +1,42 @@
+[
+{ type: install
+  message: <<EOM
+%%PKGNAME%% has been installed into:
+
+    %%WWWDIR%%
+
+Please edit config.inc.php or create config.inc.local.php to suit your needs.
+
+To make Self Service Password available through your web site, I suggest that
+you add something like the following to httpd.conf:
+
+    Alias /ssp/ "%%WWWDIR%%/htdocs/"
+
+    <Directory "%%WWWDIR%%/htdocs">
+        Options none
+        AllowOverride none
+
+        Order Deny,Allow
+        Deny from all
+        Allow from 127.0.0.1 .example.com
+    </Directory>
+
+
+To make Self Service Password available through your web site, I suggest that
+you add something like the following to nginx.conf:
+
+location /ssp/ {
+    alias %%WWWDIR%%/htdocs/;
+    index index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass   unix:/var/run/php-fpm-www.socket;
+        fastcgi_param  HTTPS on;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME $request_filename;
+        include        fastcgi_params;
+    }
+}
+EOM
+}
+]

@@ -1,0 +1,4 @@
+FFI::Platypus::Type::Enum is a helper for making enumerated types. It makes the
+most sense to use this when you have an enumerated type with a small number of
+possible values. For a large set of enumerated values or constants, see
+FFI::Platypus::Constant.

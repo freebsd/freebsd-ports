@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# PROVIDE: webdis
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# webdis_enable (bool):	Set to NO by default.
+#			Set it to YES to enable webdis.
+# webdis_config (path):	Set to %%PREFIX%%/etc/webdis.conf
+#			by default.
+# webdis_user (user):	Set to 'webdis'	by default.
+# webdis_group (group):	Set to 'webdis'	by default.
+
+. /etc/rc.subr
+
+name=webdis
+rcvar=webdis_enable
+
+load_rc_config $name
+
+: ${webdis_enable:=NO}
+: ${webdis_config:=%%PREFIX%%/etc/webdis.conf}
+: ${webdis_user:=webdis}
+: ${webdis_group:=webdis}
+
+start_precmd=webdis_start_precmd
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+command=/usr/sbin/daemon
+command_args="-r -f -c -P ${pidfile} ${procname} ${webdis_config}"
+
+webdis_start_precmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${webdis_user} -g ${webdis_group} /dev/null ${pidfile}
+    fi
+}
+
+run_rc_command "$1"

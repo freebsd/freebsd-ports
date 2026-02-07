@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/or.dat
+lib/aspell-%%VER%%/u-orya.cmap
+lib/aspell-%%VER%%/u-orya.cset
+share/aspell/or.multi
+share/aspell/or.rws
+share/aspell/oriya.alias

@@ -1,0 +1,10 @@
+The format routine will format under all circumstances even if the width
+isn't enough to contain the longest words. Text::Wrap will die under
+these circumstances, although I am told this is fixed. If columns is set
+to a small number and words are longer than that and the leading
+'whitespace' than there will be a single word on each line. This will
+let you make a simple word list which could be indented or right
+aligned.
+
+-Anton
+<tobez@FreeBSD.org>

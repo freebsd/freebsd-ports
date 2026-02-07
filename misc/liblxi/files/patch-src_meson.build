@@ -1,0 +1,21 @@
+--- src/meson.build.orig	2022-02-03 05:25:05 UTC
++++ src/meson.build
+@@ -18,10 +18,6 @@ endif
+   add_project_arguments('-DHAVE_AVAHI', language: 'c')
+ endif
+ 
+-tirpc_dep = dependency('libtirpc', required: true)
+-tirpc_incpath = join_paths(tirpc_dep.get_variable(pkgconfig: 'includedir'), 'tirpc')
+-tirpc_incdir = include_directories(tirpc_incpath)
+-
+ liblxi_c_args = [
+   '-Wno-unused-variable',
+   '-Wno-unused-parameter',
+@@ -36,7 +32,6 @@ liblxi = shared_library(
+   dependencies: liblxi_deps,
+   install: true,
+   c_args: liblxi_c_args,
+-  include_directories: tirpc_incdir,
+   link_args: ['-fvisibility=hidden', '-Wl,-init,init'],
+   version: '1.0.0',
+ )

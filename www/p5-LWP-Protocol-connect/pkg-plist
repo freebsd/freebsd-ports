@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/LWP::Protocol::connect.3.gz
+%%SITE_PERL%%/LWP/Protocol/connect.pm
+%%SITE_PERL%%/LWP/Protocol/connect/Socket/Base.pm
+%%SITE_PERL%%/LWP/Protocol/http/connect.pm
+%%SITE_PERL%%/LWP/Protocol/http/connect/Socket.pm
+%%SITE_PERL%%/LWP/Protocol/https/connect.pm
+%%SITE_PERL%%/LWP/Protocol/https/connect/Socket.pm
+%%SITE_PERL%%/URI/connect.pm

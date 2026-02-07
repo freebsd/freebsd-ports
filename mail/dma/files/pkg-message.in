@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+
+Please note that dma is now also available in FreeBSD's base, currently under 
+/usr/libexec/dma, and with config files in /etc/mail/dma.
+
+These may not track the same version of dma.  Users are encouraged to check
+releases notes to see which best suits their needs.
+
+===
+
+To enable dma please edit /etc/mail/mailer.conf to replace all lines
+referring to another MTA with the following:
+
+sendmail	%%PREFIX%%/libexec/dma
+send-mail	%%PREFIX%%/libexec/dma
+mailq		%%PREFIX%%/libexec/dma
+
+If you do not need sendmail anymore, please add in your rc.conf:
+
+sendmail_enable="NONE"
+
+or, for more granular control:
+
+sendmail_enable="NO"
+sendmail_submit_enable="NO"
+sendmail_outbound_enable="NO"
+sendmail_msp_queue_enable="NO"
+
+if you want anything in your queue to be flushed at on boot or before
+shutdown, add the following to rc.conf as well:
+
+dma_flushq_enable="YES"
+
+A crontab configuration to flush every 30 minutes was added to
+%%PREFIX%%/etc/cron.d/dma.
+
+And you can disable some sendmail specific daily maintenance routines in your
+/etc/periodic.conf file:
+
+daily_clean_hoststat_enable="NO"
+daily_status_mail_rejects_enable="NO"
+daily_status_include_submit_mailq="NO"
+daily_submit_queuerun="NO"
+EOM
+}
+]

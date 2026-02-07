@@ -1,0 +1,15 @@
+--- micropython-1.12/xcas/Makefile.orig	2022-04-11 07:52:40 UTC
++++ micropython-1.12/xcas/Makefile
+@@ -3,9 +3,9 @@ -include mpconfigport.mk
+ -include mpconfigport.mk
+ 
+ #PREFIX=/usr/bin/
+-CC = $(PREFIX)gcc # gcc-4.7 works if gcc is gcc-4.4 
+-CXX = $(PREFIX)g++
+-LD = $(PREFIX)ld 
++#CC = $(PREFIX)gcc # gcc-4.7 works if gcc is gcc-4.4 
++#CXX = $(PREFIX)g++
++#LD = $(PREFIX)ld 
+ 
+ # define main target
+ PROG = libmicropython.a

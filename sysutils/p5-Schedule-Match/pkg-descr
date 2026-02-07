@@ -1,0 +1,11 @@
+This library allows you to manage schedule which has structure similar
+to crontab(5) format. It offers methods to detect clash between
+schedules (with or without duration considered), and can also tell when,
+and how often they clash.
+
+From the viewpoint of data structure, one major difference compared to
+crontab(5) is a concept of duration. Each schedule has its own duration,
+and clash detection can be done upon that.
+
+-Anton
+<tobez@FreeBSD.org>

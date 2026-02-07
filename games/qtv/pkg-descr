@@ -1,0 +1,8 @@
+QTV is a QuakeWorld match broadcasting tool.
+
+The maximum number of players and spectators in QuakeWorld is 32. QTV allows
+hundreds and even thousands of spectators to watch the game at the same time.
+Also, a delay of about 10 seconds has been added so that spectators cannot
+prompt players with information about opponents during the game via voice chats.
+In such a dynamic game as QuakeWorld, a lot can change in a few seconds and the
+information will be out of date.

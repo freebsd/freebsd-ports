@@ -1,0 +1,3 @@
+Default Terminal Execution Specification standardizes the way how graphical
+terminal applications are launched. This package provides a proposed
+implementation of the spec.

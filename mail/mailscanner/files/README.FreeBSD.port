@@ -1,0 +1,39 @@
+The MailScanner port is using the original MailScanner tarball from 
+www.mailscanner.info. Unfortunately the tarball consists of MailScanner
+and perl modules etc, MailScanner depends on. The port is not using
+Julian's install.sh or the provided modules. All modules that MailScanner
+depends on are installed via ports as well.
+
+In order to make the installation FreeBSD compliant the port installs files
+in the following directories:
+
+/usr/local/sbin			MailScanner binary
+/usr/local/libexec/MailScanner	virus wrapper/autoupdate, cron-scripts etc.
+/usr/local/lib/MailScanner	MailScanner Perl libraries
+/usr/local/share/MailScanner	MailScanner report templates
+/usr/local/share/doc/MailScanner	Documentation
+/usr/local/etc/MailScanner	MailScanner config files / rules
+/usr/local/etc/rc.d		start/stop scripts
+
+The port installs two start/stop scripts in /usr/local/etc/rc.d:
+
+mailscanner
+mta
+
+My suggestion is to use mta instead of the usual FreeBSD MTA startup
+process. This of course means that you will have to disable MTA startup 
+in rc.conf completely. Put this in your rc.conf:
+
+sendmail_enable="NONE"
+
+Please have a look at the provided start scripts for settings you have to
+make in rc.conf.
+
+When upgrading the port it will try to look for new options/variables in
+MailScanner.conf using Julians upgrade_MailScanner_conf script. If it finds
+changes it will create a newly merged MailScanner.conf and copy it to
+/usr/local/etc/MailScanner/MailScanner.conf.new.PORTVERSION. Moreover the 
+port will try to update all your languages conf files.
+
+
+If you have suggestions for this port please contact the port maintainer.

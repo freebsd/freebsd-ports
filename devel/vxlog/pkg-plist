@@ -1,0 +1,15 @@
+include/vxlog/console-outputter-inl.h
+include/vxlog/console-outputter.h
+include/vxlog/file-outputter.h
+include/vxlog/format-string.h
+include/vxlog/level.h
+include/vxlog/logger-macros.h
+include/vxlog/logger.h
+include/vxlog/macros.h
+include/vxlog/outputter-holder.h
+include/vxlog/outputter-interface.h
+include/vxlog/syslog-outputter.h
+include/vxlog/type-to-string.h
+lib/libvxlog.so
+lib/libvxlog.so.1
+lib/libvxlog.so.1.0

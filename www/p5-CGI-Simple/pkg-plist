@@ -1,0 +1,8 @@
+%%SITE_PERL%%/CGI/Simple.pm
+%%SITE_PERL%%/CGI/Simple/Cookie.pm
+%%SITE_PERL%%/CGI/Simple/Standard.pm
+%%SITE_PERL%%/CGI/Simple/Util.pm
+%%PERL5_MAN3%%/CGI::Simple.3.gz
+%%PERL5_MAN3%%/CGI::Simple::Cookie.3.gz
+%%PERL5_MAN3%%/CGI::Simple::Standard.3.gz
+%%PERL5_MAN3%%/CGI::Simple::Util.3.gz

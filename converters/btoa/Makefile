@@ -1,0 +1,15 @@
+PORTNAME=	btoa
+PORTVERSION=	5.2
+PORTREVISION=	2
+PORTEPOCH=	1
+CATEGORIES=	converters
+MASTER_SITES=	LOCAL/pgollucci
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Encode/decode binary to printable ASCII
+
+DESTDIRNAME=	IGNOREME
+MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
+MAKEFILE=	Makefile.sun
+
+.include <bsd.port.mk>

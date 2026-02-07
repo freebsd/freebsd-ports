@@ -1,0 +1,23 @@
+--- Imakefile.orig	2008-09-07 16:20:03.000000000 +0900
++++ Imakefile	2008-09-07 16:20:51.000000000 +0900
+@@ -42,7 +42,7 @@
+  * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/10
+  */
+ 
+-SUBDIRS = sjcompat dict doc kanakan server sj3rkcv sj3lib sj3 sj3dic sj3stat demo
++SUBDIRS = sjcompat sj3lib
+ 
+ AllTarget(includes)
+ MakeSubdirs($(SUBDIRS))
+@@ -62,11 +62,6 @@
+ 	echo "#define DEFKEYFILE	\"$(SJ3CONFDIR)/cvtkey.\"") \	@@\
+ 	>> include/Paths.h
+ 
+-install::
+-	$(MKDIRHIER) $(SJ3VARRUNDIR)
+-	chown $(SJ3OWNER) $(SJ3VARRUNDIR)
+-	chgrp $(SJ3GROUP) $(SJ3VARRUNDIR)
+-
+ clean::
+ 	rm -f include/Paths.h
+ 

@@ -1,0 +1,29 @@
+--- Imake.tmpl.orig	2023-02-22 02:28:43 UTC
++++ Imake.tmpl
+@@ -890,7 +890,7 @@ TCLIBDIR = TclLibDir
+ #endif
+ #ifndef ManDirectoryRoot
+ #ifdef ProjectRoot
+-#define ManDirectoryRoot Concat(ProjectRoot,/man)
++#define ManDirectoryRoot Concat(ProjectRoot,/share/man)
+ #else
+ #define ManDirectoryRoot SystemManDirectory
+ #endif
+@@ -1823,7 +1823,7 @@ CXXEXTRA_INCLUDES = CplusplusExtraIncludes
+        CXXOPTIONS = CplusplusOptions
+       CXXINCLUDES = $(INCLUDES) $(TOP_INCLUDES) $(CXXEXTRA_INCLUDES)
+        CXXDEFINES = $(CXXINCLUDES) $(CXXSTD_DEFINES) $(THREADS_CXXDEFINES) $(DEFINES) $(CXXEXTRA_DEFINES)
+-         CXXFLAGS = $(CXXDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
++         CXXFLAGS += $(CXXDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
+ #endif
+          COMPRESS = CompressCmd
+           GZIPCMD = GzipCmd
+@@ -2073,7 +2073,7 @@ MODLDCOMBINEFLAGS = ModuleLdCombineFlags
+  */
+       ALLINCLUDES = $(INCLUDES) $(EXTRA_INCLUDES) $(TOP_INCLUDES) $(INSTALLED_INCLUDES) $(STD_INCLUDES)
+        ALLDEFINES = $(ALLINCLUDES) $(STD_DEFINES) $(PROTO_DEFINES) $(THREADS_DEFINES) $(MODULE_DEFINES) $(DEFINES) $(EXTRA_DEFINES)
+-           CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(MODULE_CFLAGS) $(ALLDEFINES)
++           CFLAGS += $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(MODULE_CFLAGS) $(ALLDEFINES)
+         LINTFLAGS = $(LINTOPTS) -DLINT $(ALLDEFINES) $(DEPEND_DEFINES)
+          LDPRELIB = LdPreLib $(INSTALLED_LIBS)
+         LDPOSTLIB = LdPostLib

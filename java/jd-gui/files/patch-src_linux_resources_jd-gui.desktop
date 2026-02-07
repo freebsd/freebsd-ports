@@ -1,0 +1,10 @@
+--- src/linux/resources/jd-gui.desktop.orig	2016-01-18 23:32:17 UTC
++++ src/linux/resources/jd-gui.desktop
+@@ -2,6 +2,6 @@
+ Comment=Java Decompiler JD-GUI
+ Terminal=false
+ Name=JD-GUI
+-Exec=java -jar /opt/jd-gui/jd-gui.jar
++Exec=jd-gui
+ Type=Application
+ Icon=jd-gui

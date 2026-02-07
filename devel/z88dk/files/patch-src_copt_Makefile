@@ -1,0 +1,11 @@
+--- src/copt/Makefile.orig	2020-06-03 03:00:16 UTC
++++ src/copt/Makefile
+@@ -27,7 +27,7 @@ z88dk-copt$(EXESUFFIX):	$(OBJS)
+ 	$(CC) -c -o $@ $(CFLAGS) $(LOCAL_CFLAGS) $(INCLUDES) $^
+ 
+ install: z88dk-copt$(EXESUFFIX)
+-	$(INSTALL) z88dk-copt$(EXESUFFIX) $(PREFIX)/bin/z88dk-copt$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) z88dk-copt$(EXESUFFIX) $(PREFIX)/bin/z88dk-copt$(EXESUFFIX)
+ 
+ clean:
+ 	$(RM) z88dk-copt$(EXESUFFIX) copt.o core$(EXESUFFIX) regex/*.o

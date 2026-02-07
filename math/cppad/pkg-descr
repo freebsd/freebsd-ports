@@ -1,0 +1,2 @@
+CppAD (C++ algorithmic differentiation package) computes derivative values from
+an algorithm that computes function values.

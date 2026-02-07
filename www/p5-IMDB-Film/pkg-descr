@@ -1,0 +1,2 @@
+IMDB::Film is an object-oriented interface to the IMDB. You can use
+that module to retrieve information about film: title, year, plot etc.

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Ambassador of Pain
+GenericName=Ambassador of Pain game
+Comment=Ncurses based arcade game with only 64 lines of code
+Icon=aop
+Exec=aop
+Categories=Game;LogicGame;
+Terminal=true

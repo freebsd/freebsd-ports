@@ -1,0 +1,11 @@
+--- gui/CMakeLists.txt.orig	2022-08-28 12:43:18 UTC
++++ gui/CMakeLists.txt
+@@ -49,7 +49,7 @@ if (BUILD_GUI)
+     endif()
+ 
+     install(TARGETS cppcheck-gui RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR} COMPONENT applications)
+-    install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_FULL_BINDIR} COMPONENT applications)
++    install(FILES ${qms} DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/${PROJECT_NAME}/lang COMPONENT applications)
+ 
+     install(FILES cppcheck-gui.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+ 

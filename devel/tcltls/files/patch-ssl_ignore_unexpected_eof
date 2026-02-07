@@ -1,0 +1,14 @@
+See bug-report:
+
+	https://core.tcl-lang.org/tcltls/tktview/88c0c84969
+
+--- tls.c	2020-10-12 16:39:22.000000000 -0400
++++ tls.c	2023-11-19 21:44:39.676318000 -0500
+@@ -1215,4 +1214,7 @@
+     SSL_CTX_set_options( ctx, SSL_OP_ALL);	/* all SSL bug workarounds */
+     SSL_CTX_set_options( ctx, off);	/* all SSL bug workarounds */
++#ifdef SSL_OP_IGNORE_UNEXPECTED_EOF
++    SSL_CTX_set_options( ctx, SSL_OP_IGNORE_UNEXPECTED_EOF);
++#endif
+     SSL_CTX_sess_set_cache_size( ctx, 128);
+ 

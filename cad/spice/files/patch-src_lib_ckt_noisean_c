@@ -1,0 +1,25 @@
+--- src/lib/ckt/noisean.c.orig	2010-02-10 00:07:14.000000000 +0000
++++ src/lib/ckt/noisean.c	2010-02-10 00:11:12.000000000 +0000
+@@ -2,6 +2,9 @@
+ Copyright 1990 Regents of the University of California.  All rights reserved.
+ Author: 1987 Gary W. Ng
+ **********/
++/* Patch to noisean.c by Richard D. McRoberts.
++ *
++ */
+ 
+ #include "spice.h"
+ #include <stdio.h>
+@@ -107,8 +110,12 @@
+ 	error = CKTop(ckt, (ckt->CKTmode & MODEUIC) | MODEDCOP | MODEINITJCT,
+ 		(ckt->CKTmode & MODEUIC) | MODEDCOP | MODEINITFLOAT,
+ 		ckt->CKTdcMaxIter);
++	if (error) return(error);
+ 
++	ckt->CKTmode = (ckt->CKTmode & MODEUIC) | MODEDCOP | MODEINITSMSIG;
++	error = CKTload(ckt);
+ 	if (error) return(error);
++
+         data = (Ndata*)MALLOC(sizeof(Ndata));
+ 	step = 0;
+ 	data->freq = job->NstartFreq;

@@ -1,0 +1,15 @@
+This was originally one distribution for UUdeview, but I have broken
+it up into ``uulib', ``uudeview'', and ``xdeview'', hopefully making
+it cleaner and more useful.
+
+The source itself is quite portable and required no patching, although
+I have added support for compilation as a shared library.
+
+The package is covered under the GNU license.
+
+The author has also written patches to the popular newsreaders `nn'
+and `elm' to allow them to make use of this library.  They are
+available from the website mentioned in this library's associated
+manpage.
+
+Tim Vanderhoek <hoek@FreeBSD.org>

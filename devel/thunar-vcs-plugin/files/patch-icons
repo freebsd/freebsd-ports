@@ -1,0 +1,88 @@
+From 0cb65c8ae7bfce23db655ac45939e8e41842d57c Mon Sep 17 00:00:00 2001
+From: Piscium <groknok@gmail.com>
+Date: Mon, 28 Jul 2025 21:26:11 +0000
+Subject: [PATCH] Rename icons to avoid conflicts with other apps (#15)
+
+Fixes #15
+---
+ .../{git.png => org.xfce.thunar-vcs-plugin.git.png} | Bin
+ ...ng => org.xfce.thunar-vcs-plugin.subversion.png} | Bin
+ .../{git.png => org.xfce.thunar-vcs-plugin.git.png} | Bin
+ ...ng => org.xfce.thunar-vcs-plugin.subversion.png} | Bin
+ .../{git.png => org.xfce.thunar-vcs-plugin.git.png} | Bin
+ ...ng => org.xfce.thunar-vcs-plugin.subversion.png} | Bin
+ icons/meson.build                                   |   2 +-
+ thunar-vcs-plugin/tvp-git-action.c                  |   2 +-
+ thunar-vcs-plugin/tvp-svn-action.c                  |   2 +-
+ 9 files changed, 3 insertions(+), 3 deletions(-)
+ rename icons/16x16/{git.png => org.xfce.thunar-vcs-plugin.git.png} (100%)
+ rename icons/16x16/{subversion.png => org.xfce.thunar-vcs-plugin.subversion.png} (100%)
+ rename icons/24x24/{git.png => org.xfce.thunar-vcs-plugin.git.png} (100%)
+ rename icons/24x24/{subversion.png => org.xfce.thunar-vcs-plugin.subversion.png} (100%)
+ rename icons/48x48/{git.png => org.xfce.thunar-vcs-plugin.git.png} (100%)
+ rename icons/48x48/{subversion.png => org.xfce.thunar-vcs-plugin.subversion.png} (100%)
+
+diff --git a/icons/16x16/git.png b/icons/16x16/org.xfce.thunar-vcs-plugin.git.png
+similarity index 100%
+rename from icons/16x16/git.png
+rename to icons/16x16/org.xfce.thunar-vcs-plugin.git.png
+diff --git a/icons/16x16/subversion.png b/icons/16x16/org.xfce.thunar-vcs-plugin.subversion.png
+similarity index 100%
+rename from icons/16x16/subversion.png
+rename to icons/16x16/org.xfce.thunar-vcs-plugin.subversion.png
+diff --git a/icons/24x24/git.png b/icons/24x24/org.xfce.thunar-vcs-plugin.git.png
+similarity index 100%
+rename from icons/24x24/git.png
+rename to icons/24x24/org.xfce.thunar-vcs-plugin.git.png
+diff --git a/icons/24x24/subversion.png b/icons/24x24/org.xfce.thunar-vcs-plugin.subversion.png
+similarity index 100%
+rename from icons/24x24/subversion.png
+rename to icons/24x24/org.xfce.thunar-vcs-plugin.subversion.png
+diff --git a/icons/48x48/git.png b/icons/48x48/org.xfce.thunar-vcs-plugin.git.png
+similarity index 100%
+rename from icons/48x48/git.png
+rename to icons/48x48/org.xfce.thunar-vcs-plugin.git.png
+diff --git a/icons/48x48/subversion.png b/icons/48x48/org.xfce.thunar-vcs-plugin.subversion.png
+similarity index 100%
+rename from icons/48x48/subversion.png
+rename to icons/48x48/org.xfce.thunar-vcs-plugin.subversion.png
+diff --git a/icons/meson.build b/icons/meson.build
+index 5da1b8e..82a38e0 100644
+--- icons/meson.build
++++ icons/meson.build
+@@ -1,5 +1,5 @@
+ sizes = [16, 24, 48]
+-icons = ['git', 'subversion']
++icons = ['org.xfce.thunar-vcs-plugin.git', 'org.xfce.thunar-vcs-plugin.subversion']
+ 
+ foreach size : sizes
+   foreach icon : icons
+diff --git a/thunar-vcs-plugin/tvp-git-action.c b/thunar-vcs-plugin/tvp-git-action.c
+index 80bb621..7f966a2 100644
+--- thunar-vcs-plugin/tvp-git-action.c
++++ thunar-vcs-plugin/tvp-git-action.c
+@@ -150,7 +150,7 @@ tvp_git_action_new (const gchar *name,
+             "is-parent", is_parent,
+             "is-directory", is_direcotry,
+             "is-file", is_file,
+-            "icon", "git",
++            "icon", "org.xfce.thunar-vcs-plugin.git",
+             NULL);
+     TVP_GIT_ACTION (item)->files = thunarx_file_info_list_copy (files);
+     TVP_GIT_ACTION (item)->window = window;
+diff --git a/thunar-vcs-plugin/tvp-svn-action.c b/thunar-vcs-plugin/tvp-svn-action.c
+index d839932..b367824 100644
+--- thunar-vcs-plugin/tvp-svn-action.c
++++ thunar-vcs-plugin/tvp-svn-action.c
+@@ -173,7 +173,7 @@ tvp_svn_action_new (const gchar *name,
+             "directory-no-version-control", directory_no_version_control,
+             "file-version-control", file_version_control,
+             "file-no-version-control", file_no_version_control,
+-            "icon", "subversion",
++            "icon", "org.xfce.thunar-vcs-plugin.subversion",
+             NULL);
+   TVP_SVN_ACTION (item)->files = thunarx_file_info_list_copy (files);
+   TVP_SVN_ACTION (item)->window = window;
+-- 
+GitLab
+

@@ -1,0 +1,10 @@
+--- src/3rdparty/chromium/services/network/BUILD.gn.orig	2025-08-15 18:30:00 UTC
++++ src/3rdparty/chromium/services/network/BUILD.gn
+@@ -397,7 +397,6 @@ if (is_linux || is_chromeos) {
+     ]
+     deps = [
+       "//base:base",
+-      "//sandbox/linux:sandbox_services",
+       "//sandbox/policy:policy",
+     ]
+     configs += [ "//build/config/compiler:wexit_time_destructors" ]

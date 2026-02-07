@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2020-08-08 02:10:49 UTC
++++ Makefile.in
+@@ -197,7 +197,7 @@ CTAGS = ctags
+ CSCOPE = cscope
+ DIST_SUBDIRS = lib src doc . checkmk tests
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/check.pc.in \
+-	$(srcdir)/config.h.in AUTHORS COPYING.LESSER ChangeLog INSTALL \
++	$(srcdir)/config.h.in AUTHORS  ChangeLog INSTALL \
+ 	NEWS README THANKS TODO ar-lib compile config.guess config.sub \
+ 	depcomp install-sh ltmain.sh missing
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -356,7 +356,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/$(PACKAGE)
++docdir = $(datadir)/doc/check
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -401,7 +401,7 @@ EXTRA_DIST = check.pc.in $(m4data_DATA) xml/check_unit
+ 	checkmk/CMakeLists.txt \
+ 	cmake
+ 
+-doc_DATA = ChangeLog NEWS README COPYING.LESSER
++doc_DATA = ChangeLog NEWS README
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = check.m4
+ pcdatadir = $(libdir)/pkgconfig

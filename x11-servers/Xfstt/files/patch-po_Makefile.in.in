@@ -1,0 +1,10 @@
+--- po/Makefile.in.in.orig	2015-08-11 01:51:51 UTC
++++ po/Makefile.in.in
+@@ -80,6 +80,7 @@ CATALOGS = @CATALOGS@
+ POFILESDEPS_ = $(srcdir)/$(DOMAIN).pot
+ POFILESDEPS_yes = $(POFILESDEPS_)
+ POFILESDEPS_no =
++PO_DEPENDS_ON_POT =
+ POFILESDEPS = $(POFILESDEPS_$(PO_DEPENDS_ON_POT))
+ 
+ DISTFILESDEPS_ = update-po

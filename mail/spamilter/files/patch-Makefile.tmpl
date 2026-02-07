@@ -1,0 +1,91 @@
+--- Makefile.tmpl.orig	2005-11-27 21:52:05.000000000 +0100
++++ Makefile.tmpl	2014-03-27 20:44:51.000000000 +0100
+@@ -10,7 +10,7 @@
+ <ALL> #
+ <ALL> #--------------------------------------------------------------------*
+ <ALL>
+-<ALL>CC =		gcc
++<ALL>CC?=		gcc
+ <ALL>SRCS =		dns.c dnsbl.c hndlrs.c misc.c smisc.c mx.c smtp.c inet.c ifi.c bwlist.c badext.c <WITH_POPAUTH popauth.c><WITH_LIBSPF spfapi.c> <INC_SunOS nstring.c>
+ <ALL>OBJS =		${SRCS:.c=.o}
+ <ALL>INCLUDES =	${SRCS:.c=.h} spamilter.h <INC_OpenBSD ns_compat.h>
+@@ -26,17 +26,17 @@
+ <ALL>INCLUDEDIR =	-I. -I${SMDIR}/include <WITH_LIBSPF -I${LIBSPFINC}>
+ <INCDIRS>INCLUDEDIR +=		<X>
+ <ALL>
+-<ALL>CFLAGS =		-Wall -pthread<INC_SunOS s>
++<ALL>CFLAGS +=		-Wall -pthread<INC_SunOS s>
+ <ALL>#CFLAGS +=	-ggdb -g3
+ <CFLAGS>CFLAGS +=	<X>
+ <OFLAGS>OFLAGS =	<X>
+-<ALL>LDFLAGS =	
++<ALL>LDFLAGS +=	
+ <ALL>
+-<ALL>LIBS =		-lmilter
++<ALL>LIBS +=		-lmilter
+ <Linux>LIBS +=		-lsmutil -lresolv -ldb
+ <SunOS>LIBS +=		-lsmutil -lresolv -lsocket -lnsl -lxnet -lpthread
+ <LIBS>LIBS +=		<X>
+-<FreeBSD>LIBDIRS =	-L${SMDIR}/libmilter
++<FreeBSD>LIBDIRS +=	-L${SMDIR}/libmilter
+ <OpenBSD>LIBDIRS =	-L${SMDIR}/libmilter
+ <SunOS>LIBDIRS =	-L${SMOBJDIR}/libmilter -L${SMOBJDIR}/libsmutil -L/usr/lib
+ <Linux>LIBDIRS =	-L${SMOBJDIR}/libmilter -L${SMOBJDIR}/libsmutil -L/usr/lib
+@@ -62,45 +62,45 @@
+ <ALL>clean:
+ <ALL>	rm -f *.o *core spamilter dnsblchk dnsblupd mxlookup iflookup <INC_FreeBSD ipfwmtad>
+ <ALL>
+-<ALL>install: spamilter install-dnsblchk install-dnsblupd install-mxlookup <INC_FreeBSD install-ipfwmtad install-startup>
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} spamilter ${BINDIR}
++<ALL>install: spamilter install-dnsblchk install-dnsblupd install-mxlookup <INC_FreeBSD install-ipfwmtad>
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} spamilter ${DESTDIR}${BINDIR}
+ <ALL>
+ <ALL>install-dnsblchk: dnsblchk
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblchk ${BINDIR}
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblchk ${DESTDIR}${BINDIR}
+ <ALL>
+ <ALL>install-dnsblupd: dnsblupd
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblupd ${BINDIR}
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblupd ${DESTDIR}${BINDIR}
+ <ALL>
+ <ALL>install-mxlookup: mxlookup
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} mxlookup ${BINDIR}
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} mxlookup ${DESTDIR}${BINDIR}
+ <ALL>
+ <FreeBSD>install-ipfwmtad: ipfwmtad
+-<FreeBSD>	install -c -m 0500 -g ${BINGRP} -o ${BINOWN} ipfwmtad ${BINDIR}
++<FreeBSD>	install -c -m 0500 -g ${BINGRP} -o ${BINOWN} ipfwmtad ${DESTDIR}${BINDIR}
+ <FreeBSD>
+ <FreeBSD>install-startup:
+-<FreeBSD>	if [ ! -e ${RCDIR}/${RCSHELL} ]; then install -c -m ${RCMODE} -g ${BINGRP} -o ${BINOWN} ${RCSHELL} ${RCDIR}; fi
++<FreeBSD>	if [ ! -e ${RCDIR}/${RCSHELL} ]; then install -c -m ${RCMODE} -g ${BINGRP} -o ${BINOWN} ${RCSHELL} ${DESTDIR}${RCDIR}; fi
+ <FreeBSD>
+ <ALL>tar: clean
+ <ALL>	cd ..; tar --exclude CVS -cfvz spamilter.tgz spamilter/*
+ <ALL>
+ <ALL>spamilter: Makefile ${SRCS} <NOT_FreeBSD ${NRSRCS}> spamilter.o ${OBJS} <NOT_FreeBSD ${NROBJS}> <WITH_LIBSPF ${LIBSPFDIR}/libspf.a> ${INCLUDES}
+-<ALL>	${CC} ${CFLAGS} -o spamilter spamilter.o ${OBJS} <NOT_FreeBSD ${NROBJS}> <WITH_LIBSPF ${LIBSPFDIR}/libspf.a> ${LIBDIRS} ${LIBS}
++<ALL>	${CC} ${CFLAGS} -o spamilter spamilter.o ${OBJS} <NOT_FreeBSD ${NROBJS}> <WITH_LIBSPF ${LIBSPFDIR}/libspf.a> ${LDFLAGS} ${LIBDIRS} ${LIBS}
+ <ALL>
+ <ALL>dnsblchk: Makefile ${SRCS} <NOT_FreeBSD ${NRSRCS} nstring.c> dnsblchk.o ${OBJS} <NOT_FreeBSD ${NROBJS} nstring.o> ${INCLUDES} dnsblchk.c
+-<ALL>	${CC} ${CFLAGS} -o dnsblchk dnsblchk.o dnsbl.o dns.o smisc.o misc.o mx.o smtp.o inet.o ifi.o <NOT_FreeBSD nstring.o ${NROBJS}> ${LIBDIRS} ${LIBS}
++<ALL>	${CC} ${CFLAGS} -o dnsblchk dnsblchk.o dnsbl.o dns.o smisc.o misc.o mx.o smtp.o inet.o ifi.o <NOT_FreeBSD nstring.o ${NROBJS}> ${LDFLAGS} ${LIBDIRS} ${LIBS}
+ <ALL>
+ <ALL># dnsblupd is for use with the companion shell script blupd as an Exec action
+ <ALL>dnsblupd: Makefile dnsblupd.c dnsupdate.c dns.c dnsblupd.o dnsupdate.o dns.o  dnsupdate.h dns.h config.h
+-<ALL>	${CC} ${CFLAGS} -o dnsblupd dnsblupd.o dnsupdate.o dns.o ${LIBDIRS} ${LIBS}
++<ALL>	${CC} ${CFLAGS} -o dnsblupd dnsblupd.o dnsupdate.o dns.o ${LDFLAGS} ${LIBDIRS} ${LIBS}
+ <ALL>
+ <FreeBSD>ipfwmtad: Makefile ipfwmtad.c ipfw_direct.c inet.c misc.c <WITH_PAM pam.o> uam.o ipfwmtad.o ipfw_direct.o inet.o misc.o <WITH_PAM pam.o> uam.o key.o inet.h misc.h <WITH_PAM pam.h> uam.h key.h config.h
+ <FreeBSD>	${CC} ${CFLAGS} -o ipfwmtad ipfwmtad.o ipfw_direct.o inet.o misc.o <WITH_PAM pam.o> uam.o key.o <WITH_PAM -lpam> -lcrypto -lcrypt
+ <FreeBSD>
+ <ALL>mxlookup: Makefile mxlookup.c mx.c <NOT_FreeBSD ${NRSRCS}> mxlookup.o mx.o <NOT_FreeBSD ${NROBJS}> mx.h
+-<ALL>	${CC} ${CFLAGS} -o mxlookup mxlookup.o mx.o ${LIBDIRS} ${LIBS} <NOT_FreeBSD ${NROBJS}> <NOT_BSD -lresolv>
++<ALL>	${CC} ${CFLAGS} -o mxlookup mxlookup.o mx.o ${LDFLAGS} ${LIBDIRS} ${LIBS} <NOT_FreeBSD ${NROBJS}> <NOT_BSD -lresolv>
+ <ALL>	
+ <ALL>iflookup: Makefile iflookup.c ifi.c iflookup.o ifi.o ifi.h
+-<ALL>	${CC} ${CFLAGS} -o iflookup iflookup.o ifi.o ${LIBDIRS} ${LIBS}
++<ALL>	${CC} ${CFLAGS} -o iflookup iflookup.o ifi.o ${LDFLAGS} ${LIBDIRS} ${LIBS}
+ <ALL>
+ <ALL>.c.o: Makefile ${INCLUDES}
+ <ALL>	${CC} ${CFLAGS} ${OFLAGS} ${INCLUDEDIR} -c $*.c

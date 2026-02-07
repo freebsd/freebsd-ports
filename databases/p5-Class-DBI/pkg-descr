@@ -1,0 +1,11 @@
+Class::DBI provides a convenient abstraction layer to a database.
+
+It not only provides a simple database to object mapping layer, but can
+be used to implement several higher order database functions (triggers,
+referential integrity, cascading delete etc.), at the application level,
+rather than at the database.
+
+This is particularly useful when using a database which doesn't support
+these (such as MySQL), or when you would like your code to be portable
+across multiple databases which might implement these things in
+different ways.

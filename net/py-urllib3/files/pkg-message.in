@@ -1,0 +1,21 @@
+[
+{ 
+  message: <<EOM
+Since version 1.25 HTTPS connections are now verified by default which is done
+via "cert_reqs = 'CERT_REQUIRED'".  While certificate verification can be
+disabled via "cert_reqs = 'CERT_NONE'", it's highly recommended to leave it on.
+
+Various consumers of net/py-urllib3 already have implemented routines that
+either explicitly enable or disable HTTPS certificate verification (e.g. via
+configuration settings, CLI arguments, etc.).
+
+Yet it may happen that there are still some consumers which don't explicitly
+enable/disable certificate verification for HTTPS connections which could then
+lead to errors (as is often the case with self-signed certificates).
+
+In case of an error one should try first to temporarily disable certificate
+verification of the problematic urllib3 consumer to see if that approach will
+remedy the issue.
+EOM
+}
+]

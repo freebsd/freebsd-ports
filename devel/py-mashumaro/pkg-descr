@@ -1,0 +1,13 @@
+When using dataclasses, you often need to dump and load objects based on the
+schema you have. Mashumaro not only lets you save and load things in different
+ways, but it also does it super quick.
+
+Key features:
+
+- One of the fastest libraries
+- Mature and time-tested
+- Easy to use out of the box
+- Highly customizable
+- Built-in support for JSON, YAML, MessagePack, TOML
+- Built-in support for almost all Python types including typing-extensions
+- JSON Schema generation

@@ -1,0 +1,3 @@
+Libassuan is a small library implementing the so-called Assuan
+protocol. This protocol is used for IPC between most newer GnuPG
+components.

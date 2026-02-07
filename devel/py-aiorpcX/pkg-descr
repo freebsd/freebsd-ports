@@ -1,0 +1,2 @@
+A generic asyncio library implementation of RPC suitable for an application that
+is a client, server or both.

@@ -1,0 +1,41 @@
+diff -ru Makefile.orig Makefile
+--- Makefile.orig	Wed Feb 18 10:51:27 1998
++++ Makefile	Wed Feb 18 10:50:46 1998
+@@ -18,7 +18,7 @@
+ # -DDEBUGGER         compiles in the debugger
+ # -DKBUK             if you have a UK style 102 key keyboard
+-# -DBIG_ENDIAN       if your computer is big-endian (Sparc, 68000 etc)
+-# -DLITTLE_ENDIAN    if your computer is little-endian (80x86 etc)
++# -DCPU_BIG_ENDIAN       if your computer is big-endian (Sparc, 68000 etc)
++# -DCPU_LITTLE_ENDIAN    if your computer is little-endian (80x86 etc)
+ # -DALIGNED_ACCESS   if your computer requires words to be on even boundaries
+ # -DBIGCASE          If your compiler/computer can handle 256 case switches
+ #
+@@ -53,7 +53,7 @@
+ 
+ CC      = gcc
+ #OPTIONS = -DBOOT720 -DBIG_ENDIAN -DALIGNED_ACCESS -DBIGCASE -DINLINE_FUNCTIONS
+-OPTIONS = -DBOOT720 -DLITTLE_ENDIAN -DBIGCASE -DINLINE_FUNCTIONS \
++OPTIONS = -DBOOT720 -DCPU_LITTLE_ENDIAN -DBIGCASE -DINLINE_FUNCTIONS \
+ 	-DBOOTFILE=\"${LOCALPREFIX}/lib/pcemu/DriveA\"
+ #XROOT   = /usr/local/X11R5
+ XROOT   = /usr/X11R6
+diff -ru cpu.h.orig cpu.h
+--- cpu.h.orig	Wed Jun 22 16:24:50 1994
++++ cpu.h	Wed Feb 18 10:50:46 1998
+@@ -113,13 +113,13 @@
+     format and back again. Obviously there is nothing to do for little-endian
+     machines... */
+ 
+-#if defined(LITTLE_ENDIAN)
++#if defined(CPU_LITTLE_ENDIAN)
+ #   define ChangeE(x) (WORD)(x)
+ #else
+ #   define ChangeE(x) (WORD)(((x) << 8) | ((BYTE)((x) >> 8)))
+ #endif
+ 
+-#if defined(LITTLE_ENDIAN) && !defined(ALIGNED_ACCESS)
++#if defined(CPU_LITTLE_ENDIAN) && !defined(ALIGNED_ACCESS)
+ #   define ReadWord(x) (*(x))
+ #   define WriteWord(x,y) (*(x) = (y))
+ #   define CopyWord(x,y) (*x = *y)

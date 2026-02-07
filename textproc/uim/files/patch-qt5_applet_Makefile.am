@@ -1,0 +1,12 @@
+--- qt5/applet/Makefile.am.orig	2022-05-04 19:18:08 UTC
++++ qt5/applet/Makefile.am
+@@ -6,6 +6,8 @@ EXTRA_DIST =					\
+ 	plasmoid
+ 
+ if QT5
+-all clean install uninstall:
++all clean uninstall:
+ 	$(MAKE) $(AM_MAKEFLAGS) -C ../applet.cmake $@
++install:
++	$(MAKE) $(AM_MAKEFLAGS) -C ../applet.cmake install/strip
+ endif

@@ -1,0 +1,14 @@
+--- Makefile.orig	2008-06-19 23:41:17.000000000 +0000
++++ Makefile	2009-06-03 16:48:58.000000000 +0000
+@@ -1,7 +1,7 @@
+-CC=gcc
+-CFLAGS= -I/usr/local/include -Wall -pedantic -std=c99
+-LDFLAGS= -L/usr/local/lib -lxmlrpc_client -lxmlrpc -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_util -lcurl
+-PREFIX=	/usr/local
++CC?=gcc
++CFLAGS= -I/usr/local/include -I${LOCALBASE}/include -Wall -pedantic -std=c99
++LDFLAGS= -L/usr/local/lib -L${LOCALBASE}/lib -lxmlrpc_client -lxmlrpc -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_util -lcurl
++PREFIX?=	/usr/local
+ 
+ all: clean jjclient
+ 

@@ -1,0 +1,10 @@
+include/auth-client.h
+include/libesmtp.h
+lib/esmtp-plugins-6.2.0/sasl-crammd5.so
+lib/esmtp-plugins-6.2.0/sasl-login.so
+lib/esmtp-plugins-6.2.0/sasl-ntlm.so
+lib/esmtp-plugins-6.2.0/sasl-plain.so
+lib/libesmtp.a
+lib/libesmtp.so
+lib/libesmtp.so.6.2.0
+libdata/pkgconfig/libesmtp-1.0.pc

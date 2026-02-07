@@ -1,0 +1,39 @@
+--- configure.ac.orig	2017-02-12 10:41:29 UTC
++++ configure.ac
+@@ -22,6 +22,8 @@ AC_PREREQ(2.57)
+ AC_INIT([unixcw], [3.5.1])
+ AC_CONFIG_SRCDIR([src/libcw/libcw_gen.c])
+ AM_INIT_AUTOMAKE
++AC_CONFIG_MACRO_DIR([m4])
++AC_USE_SYSTEM_EXTENSIONS
+ 
+ # Libtool initialization, added during tests on FreeBSD
+ LT_INIT
+@@ -41,6 +43,9 @@ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+ AC_PROG_LN_S
+ AM_PROG_CC_C_O
++AC_GNU_SOURCE
++AM_GNU_GETTEXT(external)
++AM_GNU_GETTEXT_VERSION([0.18])
+ 
+ 
+ 
+@@ -409,8 +414,6 @@ AC_SUBST(LIBCW_NDEBUG)
+ 
+ 
+ 
+-
+-
+ # #####
+ #  end
+ # #####
+@@ -427,7 +430,7 @@ AC_HEADER_STDC
+ AC_HEADER_STDBOOL
+ AC_HEADER_TIME
+ AC_CHECK_HEADERS([fcntl.h limits.h stdlib.h string.h strings.h sys/ioctl.h \
+-                  sys/param.h sys/time.h unistd.h locale.h libintl.h])
++                  sys/param.h sys/time.h unistd.h locale.h])
+ AC_CHECK_HEADERS([getopt.h])
+ AC_CHECK_HEADERS([string.h strings.h])
+ if test "$ac_cv_header_string_h" = 'no' \

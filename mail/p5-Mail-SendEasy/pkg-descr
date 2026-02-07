@@ -1,0 +1,4 @@
+This modules will send in a easy way e-mails, and doesn't have dependencies.
+Soo, you don't need to install libnet.
+
+It supports SMTP authentication and attachments.

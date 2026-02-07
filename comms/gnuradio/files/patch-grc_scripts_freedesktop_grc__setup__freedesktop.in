@@ -1,0 +1,10 @@
+--- grc/scripts/freedesktop/grc_setup_freedesktop.in.orig	2024-02-06 00:51:19 UTC
++++ grc/scripts/freedesktop/grc_setup_freedesktop.in
+@@ -25,6 +25,7 @@ case "$1" in
+ case "$1" in
+ 'install')
+ 	echo "Begin freedesktop install..."
++	exit 0
+ 	for size in ${ICON_SIZES}; do \
+ 		echo "Install icon: ${size}x${size}"
+ 		xdg-icon-resource install --noupdate --context mimetypes --theme gnome --size ${size} ${SRCDIR}/grc-icon-${size}.png application-gnuradio-grc; \

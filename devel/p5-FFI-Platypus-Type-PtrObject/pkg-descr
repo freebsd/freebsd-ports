@@ -1,0 +1,10 @@
+FFI::Platypus::Type::PtrObject is a helper type for FFI::Platypus that handles
+type checking for the common pattern where a Perl class is a simple wrapper
+around an opaque pointer. The class should be implemented as a hash reference,
+and the pointer itself is expected to be stored on the ptr key. If the caller of
+the interface (Perl) is responsible for cleaning up the memory, then it normally
+should be done in the DESTROY method (as above).
+
+If you do not pass in the correct type, it will be detected before the C code is
+called and an exception will be thrown. (otherwise you would probably get a
+segment violation SEGV).

@@ -1,0 +1,8 @@
+%%LUA_MODLIBDIR%%/zlib.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.lgzip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_gzip.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_zlib2.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_zlib3.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_zlib_dict.lua
+%%LUA_MODSHAREDIR%%/gzip.lua

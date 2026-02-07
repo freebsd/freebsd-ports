@@ -1,0 +1,5 @@
+'HikiDoc' is a text-to-HTML conversion tool for web writers. The
+original 'HikiDoc' is Ruby implementation.
+
+This library is pure perl implementation of 'HikiDoc', and has
+interchangeability with the original.

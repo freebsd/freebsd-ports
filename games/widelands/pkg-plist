@@ -1,0 +1,12 @@
+bin/widelands
+bin/wl_create_spritesheet
+bin/wl_map_info
+bin/wl_map_object_info
+share/applications/org.widelands.Widelands.desktop
+share/icons/hicolor/128x128/apps/org.widelands.Widelands.png
+share/icons/hicolor/16x16/apps/org.widelands.Widelands.png
+share/icons/hicolor/32x32/apps/org.widelands.Widelands.png
+share/icons/hicolor/48x48/apps/org.widelands.Widelands.png
+share/icons/hicolor/64x64/apps/org.widelands.Widelands.png
+share/man/man6/widelands.6.gz
+share/metainfo/org.widelands.Widelands.appdata.xml

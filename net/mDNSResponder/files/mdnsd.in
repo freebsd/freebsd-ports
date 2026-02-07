@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: mdnsd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=mdnsd
+rcvar=mdnsd_enable
+
+load_rc_config $name
+
+: ${mdnsd_enable="NO"}
+: ${mdnsd_pidfile="/var/run/${name}.pid"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="${mdnsd_pidfile}"
+
+run_rc_command $*

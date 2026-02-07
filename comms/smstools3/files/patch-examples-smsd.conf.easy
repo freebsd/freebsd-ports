@@ -1,0 +1,16 @@
+--- examples/smsd.conf.easy.orig	2006-02-04 19:52:06 UTC
++++ examples/smsd.conf.easy
+@@ -1,9 +1,12 @@
+ # Example smsd.conf. Read the manual for a description
+ 
+ devices = GSM1
+-logfile = /var/log/smsd.log
++logfile = /var/log/smsd/smsd.log
+ loglevel = 7
+ 
++user = %%SMSD_USER%%
++group = %%SMSD_GROUP%%
++
+ [GSM1]
+ device = /dev/ttyS0
+ incoming = yes

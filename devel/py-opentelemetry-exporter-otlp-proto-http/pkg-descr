@@ -1,0 +1,3 @@
+OpenTelemetry Collector Protobuf over HTTP Exporter allows to export data to the
+OpenTelemetry Collector using the OpenTelemetry Protocol using Protobuf over
+HTTP.

@@ -1,0 +1,34 @@
+--- Makefile.orig	1995-10-21 19:48:51 UTC
++++ Makefile
+@@ -5,11 +5,11 @@
+ #
+ ########
+ 
+-CC	= gcc 
++CC	?= gcc 
+ RM	= rm
+ LN	= ln -s
+ 
+-CFLAGS  = -O2
++CFLAGS  ?= -O2
+ LFLAGS  = 
+ 
+ OBJS	= mod.o s3m.o main.o play.o mix.o cmdline.o dsp.o gus.o
+@@ -24,6 +24,7 @@ all: 
+ 	@echo "     make sun              - SunOS/Solaris"
+ 	@echo "     make sgi              - SGI Irix"
+ 	@echo "     make linux            - Voxware DSP/GUS"
++	@echo "     make freebsd          - Voxware DSP/GUS"
+ 	@echo "     make dec              - Dec OSF/1"
+ 	@echo "     make clean            - remove all .o files"
+ 	@echo "     make clobber          - remove all .o and targets"
+@@ -51,6 +52,9 @@ linux:
+ 	$(LN) DspDrivers/linux_dsp.c dsp.c
+ 	make CC=gcc CFLAGS=-O2 DEFINES="-DLINUX -DGUS" s3mod
+ 
++freebsd:
++	$(MAKE) CFLAGS="$(CFLAGS)" DEFINES="" s3mod
++
+ s3mod:	$(OBJS)
+ 	$(CC) $(CFLAGS) -o s3mod $(OBJS) $(LFLAGS) $(LIBS)
+ 

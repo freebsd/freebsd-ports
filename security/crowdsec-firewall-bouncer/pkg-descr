@@ -1,0 +1,4 @@
+Crowdsec bouncer written in golang for firewalls.
+
+cs-firewall-bouncer will fetch new and old decisions from a CrowdSec API to add
+them in a blocklist used by supported firewalls.

@@ -1,0 +1,11 @@
+include/OpenColorIOv1/OpenColorABI.h
+include/OpenColorIOv1/OpenColorIO.h
+include/OpenColorIOv1/OpenColorTransforms.h
+include/OpenColorIOv1/OpenColorTypes.h
+lib/libOpenColorIOv1.so
+lib/libOpenColorIOv1.so.%%SHL1%%
+lib/libOpenColorIOv1.so.%%SHL3%%
+libdata/pkgconfig/OpenColorIOv1.pc
+lib/cmake/Modules/OpenColorIOv1Config.cmake
+lib/cmake/Modules/OpenColorIOv1-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Modules/OpenColorIOv1.cmake

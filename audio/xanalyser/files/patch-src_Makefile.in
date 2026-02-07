@@ -1,0 +1,23 @@
+--- src/Makefile.in.orig	2008-12-06 11:52:34 UTC
++++ src/Makefile.in
+@@ -194,7 +194,8 @@ xanalyser_SOURCES = \
+ 	utils.cc utils.h		\
+ 	Trans.h
+ 
+-xanalyser_LDADD = -lXext -lXm -lXt -lSM -lICE -lXmu -lXpm -lX11		\
++xanalyser_LDADD = -L%%LOCALBASE%%/lib -lXext -lXm \
++	-lXt -lSM -lICE -lXmu -lXpm -lX11		\
+ 	$(FFTWLDADD) $(ALSALDADD)
+ 
+ EXTRA_DIST = XAnalyser.ad help.txt *.xpm
+@@ -474,8 +475,8 @@ help.txt.h: help.txt
+ 	txt2c help.txt > help.txt.h
+ 
+ install-data-hook:
+-	mkdir -p $(DESTDIR)/usr/share/X11/app-defaults
+-	cp XAnalyser.ad $(DESTDIR)/usr/share/X11/app-defaults/XAnalyser
++	mkdir -p ${DESTDIR}/%%LOCALBASE%%/lib/X11/app-defaults
++	cp XAnalyser.ad ${DESTDIR}/%%LOCALBASE%%/lib/X11/app-defaults/XAnalyser
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

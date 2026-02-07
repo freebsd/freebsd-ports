@@ -1,0 +1,76 @@
+bin/nspr-config
+include/nspr/md/_aix32.cfg
+include/nspr/md/_aix64.cfg
+include/nspr/md/_darwin.cfg
+include/nspr/md/_freebsd.cfg
+include/nspr/md/_linux.cfg
+include/nspr/md/_netbsd.cfg
+include/nspr/md/_nto.cfg
+include/nspr/md/_openbsd.cfg
+include/nspr/md/_qnx.cfg
+include/nspr/md/_riscos.cfg
+include/nspr/md/_solaris.cfg
+include/nspr/md/_win95.cfg
+include/nspr/md/_winnt.cfg
+include/nspr/nspr.h
+include/nspr/obsolete/pralarm.h
+include/nspr/obsolete/probslet.h
+include/nspr/obsolete/protypes.h
+include/nspr/obsolete/prsem.h
+include/nspr/plarena.h
+include/nspr/plarenas.h
+include/nspr/plbase64.h
+include/nspr/plerror.h
+include/nspr/plgetopt.h
+include/nspr/plhash.h
+include/nspr/plstr.h
+include/nspr/pratom.h
+include/nspr/prbit.h
+include/nspr/prclist.h
+include/nspr/prcmon.h
+include/nspr/prcountr.h
+include/nspr/prcpucfg.h
+include/nspr/prcvar.h
+include/nspr/prdtoa.h
+include/nspr/prenv.h
+include/nspr/prerr.h
+include/nspr/prerror.h
+include/nspr/prinet.h
+include/nspr/prinit.h
+include/nspr/prinrval.h
+include/nspr/prio.h
+include/nspr/pripcsem.h
+include/nspr/private/pprio.h
+include/nspr/private/pprthred.h
+include/nspr/private/prpriv.h
+include/nspr/prlink.h
+include/nspr/prlock.h
+include/nspr/prlog.h
+include/nspr/prlong.h
+include/nspr/prmem.h
+include/nspr/prmon.h
+include/nspr/prmwait.h
+include/nspr/prnetdb.h
+include/nspr/prolock.h
+include/nspr/prpdce.h
+include/nspr/prprf.h
+include/nspr/prproces.h
+include/nspr/prrng.h
+include/nspr/prrwlock.h
+include/nspr/prshm.h
+include/nspr/prshma.h
+include/nspr/prsystem.h
+include/nspr/prthread.h
+include/nspr/prtime.h
+include/nspr/prtpool.h
+include/nspr/prtrace.h
+include/nspr/prtypes.h
+include/nspr/prvrsion.h
+@(,,444) lib/libnspr4.a
+@(,,444) lib/libnspr4.so
+@(,,444) lib/libplc4.a
+@(,,444) lib/libplc4.so
+@(,,444) lib/libplds4.a
+@(,,444) lib/libplds4.so
+libdata/pkgconfig/nspr.pc
+share/aclocal/nspr.m4

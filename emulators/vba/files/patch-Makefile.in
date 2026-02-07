@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Oct 13 13:38:04 2005
++++ Makefile.in	Thu Oct 13 13:38:12 2005
+@@ -46,7 +46,7 @@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS += @CFLAGS@
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@

@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-05-25 18:46:09 UTC
++++ meson.build
+@@ -13,7 +13,7 @@ systemduserunitdir = get_option('systemduserunitdir')
+ 
+ build_systemd_service = get_option('systemd')
+ systemduserunitdir = get_option('systemduserunitdir')
+-if systemduserunitdir == ''
++if systemduserunitdir != 'no'
+   systemd = dependency('systemd', version: '>= 242', required: build_systemd_service)
+   if build_systemd_service.allowed() and systemd.found()
+     systemduserunitdir = systemd.get_variable(

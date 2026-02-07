@@ -1,0 +1,2 @@
+ob-rust enables Org-Babel support for evaluating Rust code. It was
+created based on the usage of ob-C and ob-go.

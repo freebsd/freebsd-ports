@@ -1,0 +1,8 @@
+bin/dhewm3
+%%DEDICATED%%bin/dhewm3ded
+lib/dhewm3/base.so
+lib/dhewm3/d3xp.so
+share/pixmaps/doom3.png
+@dir %%DATADIR%%/d3xp
+@dir %%DATADIR%%/base
+@dir %%DATADIR%%

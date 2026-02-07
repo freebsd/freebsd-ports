@@ -1,0 +1,22 @@
+#!/bin/sh
+
+ETCDIR=${ETCDIR:=%%ETCDIR%%}
+PREFIX=${PREFIX:=%%PREFIX%%}
+
+# snortsam config file contain sensitive data like 
+# passwords needed to block IP's on the firewalls.
+# Set permission of the config dir to 700 so only
+# root:wheel can access this directory.
+# Also, samtool shouldn't be run by non root.
+if [ "$2" = "POST-INSTALL" ]; then
+    if [ -d ${ETCDIR} ]; then
+        /usr/sbin/chown root:wheel ${ETCDIR}
+        /bin/chmod 700 ${ETCDIR}
+	/bin/chmod 600 ${ETCDIR}/snortsam.conf.sample
+    fi
+    if [ -x ${PREFIX}/sbin/samtool ]
+    then
+      /bin/chmod 500 ${PREFIX}/sbin/samtool
+    fi
+fi
+

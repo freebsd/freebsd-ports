@@ -1,0 +1,3 @@
+POE::Filter::Zlib provides a POE filter for performing compression/
+uncompression using Compress::Zlib. It is suitable for use with
+POE::Filter::Stackable.

@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Test/Data.pm
+%%SITE_PERL%%/Test/Data/Array.pm
+%%SITE_PERL%%/Test/Data/Function.pm
+%%SITE_PERL%%/Test/Data/Hash.pm
+%%SITE_PERL%%/Test/Data/Scalar.pm
+%%PERL5_MAN3%%/Test::Data.3.gz
+%%PERL5_MAN3%%/Test::Data::Array.3.gz
+%%PERL5_MAN3%%/Test::Data::Function.3.gz
+%%PERL5_MAN3%%/Test::Data::Hash.3.gz
+%%PERL5_MAN3%%/Test::Data::Scalar.3.gz

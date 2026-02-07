@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -50,7 +50,7 @@ all = [
+     'python-ulid>=1,<2; python_version<"3.9"',
+     'python-ulid>=1,<4; python_version>="3.9"',
+     'pendulum>=3.0.0,<4.0.0',
+-    'pymongo>=4.0.0,<5.0.0',
++    'pymongo>=3.0.0,<5.0.0',
+     'pytz>=2024.1',
+     'semver~=3.0.2',
+     'tzdata>=2024.1',

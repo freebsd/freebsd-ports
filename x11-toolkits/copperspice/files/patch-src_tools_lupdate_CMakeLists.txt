@@ -1,0 +1,11 @@
+--- src/tools/lupdate/CMakeLists.txt.orig	2022-01-14 18:52:21 UTC
++++ src/tools/lupdate/CMakeLists.txt
+@@ -36,7 +36,7 @@ target_sources(lupdate${TOOLS_SUFFIX}
+ )
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "(OpenBSD|FreeBSD|NetBSD)")
+-   set(EXTRA_LUPDATE_LDFLAGS  ${EXTRA_LUPDATE_LDFLAGS} '-Wl,-rpath,$ORIGIN/../lib')
++   set(EXTRA_LUPDATE_LDFLAGS  ${EXTRA_LUPDATE_LDFLAGS} '-Wl,-rpath,${CS_FULL_LIBDIR}')
+ endif()
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "DARWIN")

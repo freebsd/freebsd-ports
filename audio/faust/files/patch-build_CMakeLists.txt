@@ -1,0 +1,20 @@
+--- build/CMakeLists.txt.orig	2025-09-29 13:03:58 UTC
++++ build/CMakeLists.txt
+@@ -59,7 +59,7 @@ endif()
+ 
+ ####################################
+ # source and headers files
+-file (GLOB SRC ${SRCDIR}/*.cpp ${SRCDIR}/*/*.cpp ${SRCDIR}/draw/*/*.cpp ${SRCDIR}/generator/fir/*.cpp)
++file (GLOB SRC ${SRCDIR}/*.cpp ${SRCDIR}/*/*.cpp ${SRCDIR}/draw/*/*.cpp ${SRCDIR}/generator/fir/*.cpp ${SRCDIR}/generator/cpp/*.cpp ${SRCDIR}/generator/llvm/*.cpp)
+ file (GLOB HH  ${SRCDIR}/*.hh  ${SRCDIR}/*/*.hh  ${SRCDIR}/generator/fir/*.hh)
+ 
+ ####################################
+@@ -457,7 +457,7 @@ install (
+ ####################################
+ # install examples
+ install (
+-    DIRECTORY     ${ROOT}/examples DESTINATION ${CMAKE_INSTALL_PREFIX}/share/faust
++    DIRECTORY     ${ROOT}/examples DESTINATION share/examples/faust
+     FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+     DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+         GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE

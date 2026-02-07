@@ -1,0 +1,10 @@
+uvgRTP is an Real-Time Transport Protocol (RTP) library written in C++
+with a focus on simple to use and high-efficiency media delivery over the
+Internet.  It features an intuitive and easy-to-use API, built-in support
+for transporting Versatile Video Coding (VVC), High Efficiency Video
+Coding (HEVC), Advanced Video Coding (AVC) encoded video and Opus encoded
+audio.  Furthermore, uvgRTP can be used to transport Visual Volumetric
+Video-based Coding (V3C) encoded volumetric video.  uvgRTP also supports
+End-to-End Encrypted (E2EE) media delivery using the combination of
+Secure RTP (SRTP) and ZRTP.  uvgRTP has been designed to minimize memory
+operations to reduce its CPU usage and latency.

@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/eo.dat
+lib/aspell-%%VER%%/eo_affix.dat
+share/aspell/eo.multi
+share/aspell/eo.rws
+share/aspell/esperanto.alias

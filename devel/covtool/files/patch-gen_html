@@ -1,0 +1,20 @@
+--- ./gen_html.orig	2012-12-05 19:51:17.000000000 +0400
++++ ./gen_html	2012-12-05 19:51:45.000000000 +0400
+@@ -12,7 +12,7 @@
+   echo "can't find merged covexp database file: '$db'"
+   echo ""
+   echo "You must supply the name of a MERGED covexp file"
+-  echo "The covmerge.exe program adds additional information"
++  echo "The covmerge program adds additional information"
+   echo "needed by this script"
+   exit 1
+ fi
+@@ -50,7 +50,7 @@
+       if [ ! -r "$3$file" ]
+       then
+ 	mkdir -p `dirname $3$file`
+-	covannotate.exe "$file" "$db" >"$3$file.txt"
++	covannotate "$file" "$db" >"$3$file.txt"
+       fi
+ 
+       link="<a href=.$file.txt>"

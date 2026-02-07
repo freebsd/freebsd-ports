@@ -1,0 +1,11 @@
+@shell bin/bosh
+@shell bin/jbosh
+@shell bin/obosh
+@shell bin/pbosh
+%%DOCSDIR%%/dotfiles.tar.bz2
+share/man/man1/bosh.1.gz
+share/man/man1/jbosh.1.gz
+share/man/man1/obosh.1.gz
+share/man/man1/pbosh.1.gz
+@shell xpg4/bin/bosh
+@shell xpg4/bin/sh

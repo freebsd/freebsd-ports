@@ -1,0 +1,18 @@
+PREFIX?=	/usr/local
+LOCALBASE?=	/usr/local
+.if ${.CURDIR:T} == addr6
+BINDIR?=	${PREFIX}/bin
+.else
+BINDIR?=	${PREFIX}/sbin
+.endif
+MANDIR?=	${PREFIX}/man/man
+
+.PATH: ${.CURDIR}/../tools ${.CURDIR}/../manuals
+
+PROG=	${.CURDIR:T}
+MAN=	${PROG}.1
+LDADD=	-lpcap -lm ${WRKSRC}/libipv6/libipv6.a
+CFLAGS+=-I${.CURDIR}/../tools \
+	-DIPV6TOOLKITCONF=\"${PREFIX}/etc/ipv6toolkit.conf\"
+
+.include <bsd.prog.mk>

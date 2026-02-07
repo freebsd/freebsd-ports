@@ -1,0 +1,56 @@
+--- src/CMakeLists.txt.orig	2023-03-05 10:10:34 UTC
++++ src/CMakeLists.txt
+@@ -52,15 +52,7 @@ endif()
+ # Can't disable yet
+ if(ON OR USE_SDLGFX)
+   # This is a workaround required on some systems that ship a broken sdl2-config.cmake
+-  find_library(SDL2_LIBRARIES NAMES SDL2 SDL2main)
+-  if(NOT SDL2_LIBRARIES)
+-    find_package(SDL2 REQUIRED)
+-
+-    if("${SDL2_LIBRARIES}" STREQUAL "")
+-      set(SDL2_LIBRARIES SDL2::SDL2)
+-    endif()
+-  endif()
+-
++  find_package(SDL2 REQUIRED)
+   find_package(SDL2_mixer REQUIRED)
+   find_package(SDL2_net REQUIRED)
+   find_package(SDL2_ttf REQUIRED)
+@@ -85,13 +77,10 @@ check_prototype_definition(mkdir
+   MS_MKDIR
+ )
+ 
+-add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/bzip2" bzip2)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/libccd" libccd)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/chipmunk" chipmunk)
+-add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/lua" lua)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/md5sum" md5sum)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/ode" ode)
+-add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/xdgbasedir" xdgbasedir)
+ add_subdirectory("${PROJECT_SOURCE_DIR}/vendor/glad" glad)
+ 
+ configure_file(common/XMBuildConfig.h.in common/XMBuildConfig.h)
+@@ -447,7 +436,11 @@ target_include_directories(xmoto
+   PRIVATE
+ 
+   "${PROJECT_SOURCE_DIR}/src"
++)
+ 
++target_include_directories(xmoto
++  SYSTEM PRIVATE
++
+   "${CURL_INCLUDE_DIR}"
+   "${LIBXML2_INCLUDE_DIR}"
+   "${Intl_INCLUDE_DIRS}"
+@@ -524,7 +517,9 @@ endif()
+ 
+ target_compile_definitions(xmoto PUBLIC USE_OPENGL=$<BOOL:${USE_OPENGL}>)
+ target_compile_definitions(xmoto PUBLIC USE_SDLGFX=$<BOOL:${USE_SDLGFX}>)
+-target_compile_definitions(xmoto PUBLIC USE_GETTEXT=$<BOOL:${USE_GETTEXT}>)
++if (USE_GETTEXT)
++  target_compile_definitions(xmoto PUBLIC USE_GETTEXT=1)
++endif()
+ target_compile_definitions(xmoto PUBLIC ALLOW_DEV=$<BOOL:${ALLOW_DEV}>)
+ target_compile_definitions(xmoto PUBLIC BUILD_MACOS_BUNDLE=$<BOOL:${BUILD_MACOS_BUNDLE}>)
+ 

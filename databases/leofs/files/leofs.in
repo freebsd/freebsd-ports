@@ -1,0 +1,125 @@
+#!/bin/sh
+
+# PROVIDE: leofs
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+# /etc/rc.conf variables:
+#
+# leofs_enable (bool):	Set it to "YES" to enable swift.
+# 			Default is "NO".
+# leofs_servers (list):	Specify servers to run as a space separated
+# 			list of possible values:
+# 				gateway,
+# 				manager,
+# 				manager_slave,
+#				storage.
+#			The aliase ALL may be used to run all servers.
+# 			Also the list can be overriden in command line:
+#			any arguments but the first (if there are) are
+#			treated as the server list.
+#			Default is "ALL".
+# leofs_user (string):	Set it to a user name the servers are run as.
+# 			Default is "%%LEOFS_USER%%".
+
+. /etc/rc.subr
+
+name=leofs
+rcvar=leofs_enable
+
+load_rc_config $name
+
+: ${leofs_enable:="NO"}
+: ${leofs_servers:="ALL"}
+: ${leofs_user=%%LEOFS_USER%%}
+
+extra_commands="status"
+restart_cdm=leofs_restart
+start_cmd=leofs_start
+status_cmd=leofs_status
+stop_cmd=leofs_stop
+
+leofs_restart()
+{
+    leofs_stop
+    leofs_start
+}
+
+leofs_start()
+{
+    local status=0
+    local s
+
+    for s in ${leofs_servers}; do
+	echo -n "Starting leofs ${s}... "
+	%%PREFIX%%/sbin/leofs ${s} start
+	if [ $? = 0 ]; then
+	    echo "done."
+	else
+	    status=1
+	fi
+    done
+
+    return $status
+}
+
+leofs_stop()
+{
+    local status=0
+
+    for s in ${leofs_servers}; do
+	echo -n "Stopping leofs ${s}... "
+	%%PREFIX%%/sbin/leofs ${s} stop
+	if [ $? = 0 ]; then
+	    echo "done."
+	else
+	    status=1
+	fi
+    done
+
+    return $status
+}
+
+leofs_status()
+{
+    local status=0
+
+    for s in ${leofs_servers}; do
+	%%PREFIX%%/sbin/leofs ${s} ping > /dev/null 2>&1
+	if [ $? != 0 ]; then
+	    echo "leofs ${s} is not running."
+	    status=1
+	else
+	    echo "leofs ${s} is running."
+	fi
+    done
+
+    return $status
+}
+
+cmd=$1 ; shift
+
+if [ $# -gt 0 ]; then
+    leofs_servers="$@"
+fi
+
+for s in ${leofs_servers}; do
+    case "${s}" in
+	ALL)
+	    leofs_servers="manager manager_slave storage gateway"
+	    break
+	    ;;
+	gateway|manager|manager_slave|storage)
+	    ;;
+	*)
+	    warn "unknown leofs server: ${s}"
+	    exit 1
+	    ;;
+    esac
+done
+
+for s in ${leofs_servers}; do
+    required_files=%%LEOFS_ETCDIR%%/leo_${s}.conf
+done
+
+run_rc_command "$cmd"

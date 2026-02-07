@@ -1,0 +1,11 @@
+DDFUN: A double-double package with special functions (approximately 30 digit
+precision).
+
+This package permits one to perform floating-point computations (real and
+complex) to double-double precision (approximately 30 digits), by making only
+relatively minor changes to existing Fortran programs. It is intended as a
+substitute for IEEE 128-bit quad precision on systems where quad precision is
+not available. All basic arithmetic operations and transcendental functions are
+supported, together with numerous special functions. The package should run
+correctly on any Unix-based system supporting a Fortran-2008 compiler and IEEE
+64-bit floating-point arithmetic.

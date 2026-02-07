@@ -1,0 +1,21 @@
+PORTNAME=	CGI-Application-Plugin-Stream
+PORTVERSION=	2.12
+CATEGORIES=	www perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Plugin that adds file streaming support to CGI::Application
+WWW=		https://metacpan.org/release/CGI-Application-Plugin-Stream
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
+		p5-File-MMagic>=0:devel/p5-File-MMagic
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

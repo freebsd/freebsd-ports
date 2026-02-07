@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+  Please see `man paperless' for details on how to configure paperless.
+EOM
+}
+]

@@ -1,0 +1,215 @@
+Switch from deprecated Data::Entropy::Algorithms to Crypt::PRNG
+
+--- Build.PL.orig	2025-06-15 06:51:13 UTC
++++ Build.PL
+@@ -30,7 +30,7 @@ Module::Build->new(
+ 		"Crypt::MySQL" => "0.03",
+ 		"Crypt::PasswdMD5" => "1.0",
+ 		"Crypt::UnixCrypt_XS" => "0.08",
+-		"Data::Entropy::Algorithms" => 0,
++		"Crypt::PRNG" => 0,
+ 		"Digest" => "1.00",
+ 		"Digest::MD4" => "1.2",
+ 		"Digest::MD5" => "1.9953",
+--- META.json.orig	2025-06-15 06:51:13 UTC
++++ META.json
+@@ -42,7 +42,7 @@
+             "Crypt::MySQL" : "0.03",
+             "Crypt::PasswdMD5" : "1.0",
+             "Crypt::UnixCrypt_XS" : "0.08",
+-            "Data::Entropy::Algorithms" : 0,
++            "Crypt::PRNG" : 0,
+             "Digest" : "1.00",
+             "Digest::MD4" : "1.2",
+             "Digest::MD5" : "1.9953",
+--- META.yml.orig	2025-06-15 06:51:13 UTC
++++ META.yml
+@@ -88,7 +88,7 @@ requires:
+   Crypt::MySQL: 0.03
+   Crypt::PasswdMD5: 1.0
+   Crypt::UnixCrypt_XS: 0.08
+-  Data::Entropy::Algorithms: 0
++  Crypt::PRNG: 0
+   Digest: 1.00
+   Digest::MD4: 1.2
+   Digest::MD5: 1.9953
+--- lib/Authen/Passphrase/BigCrypt.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/BigCrypt.pm
+@@ -73,7 +73,7 @@ use Crypt::UnixCrypt_XS 0.08 qw(base64_to_block base64
+ use Authen::Passphrase::DESCrypt;
+ use Carp qw(croak);
+ use Crypt::UnixCrypt_XS 0.08 qw(base64_to_block base64_to_int12);
+-use Data::Entropy::Algorithms 0.000 qw(rand_int);
++use Crypt::PRNG 0.000 qw(irand);
+ 
+ our $VERSION = "0.008";
+ 
+@@ -150,7 +150,7 @@ sub new {
+ 				if defined $salt;
+ 			croak "\"$value\" is not a valid salt size"
+ 				unless $value == 12;
+-			$salt = rand_int(1 << $value);
++			$salt = irand() % (1 << $value);
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if @hashes || defined($passphrase);
+--- lib/Authen/Passphrase/BlowfishCrypt.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/BlowfishCrypt.pm
+@@ -98,7 +98,7 @@ use Crypt::Eksblowfish::Bcrypt 0.008 qw(bcrypt_hash en
+ use Authen::Passphrase 0.003;
+ use Carp qw(croak);
+ use Crypt::Eksblowfish::Bcrypt 0.008 qw(bcrypt_hash en_base64 de_base64);
+-use Data::Entropy::Algorithms 0.000 qw(rand_bits);
++use Crypt::PRNG 0.000 qw(random_bytes);
+ 
+ our $VERSION = "0.008";
+ 
+@@ -194,7 +194,7 @@ sub new {
+ 		} elsif($attr eq "salt_random") {
+ 			croak "salt specified redundantly"
+ 				if exists $self->{salt};
+-			$self->{salt} = rand_bits(128);
++			$self->{salt} = random_bytes(16);
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if exists($self->{hash}) ||
+--- lib/Authen/Passphrase/Crypt16.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/Crypt16.pm
+@@ -70,7 +70,7 @@ use Crypt::UnixCrypt_XS 0.08 qw(base64_to_block base64
+ use Authen::Passphrase::DESCrypt;
+ use Carp qw(croak);
+ use Crypt::UnixCrypt_XS 0.08 qw(base64_to_block base64_to_int12);
+-use Data::Entropy::Algorithms 0.000 qw(rand_int);
++use Crypt::PRNG 0.000 qw(irand);
+ 
+ our $VERSION = "0.008";
+ 
+@@ -147,7 +147,7 @@ sub new {
+ 				if defined $salt;
+ 			croak "\"$value\" is not a valid salt size"
+ 				unless $value == 12;
+-			$salt = rand_int(1 << $value);
++			$salt = irand() % (1 << $value);
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if defined($hash) || defined($passphrase);
+--- lib/Authen/Passphrase/DESCrypt.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/DESCrypt.pm
+@@ -127,7 +127,7 @@ use Crypt::UnixCrypt_XS 0.08 qw(
+ 	base64_to_int24 int24_to_base64
+ 	base64_to_int12 int12_to_base64
+ );
+-use Data::Entropy::Algorithms 0.000 qw(rand_int);
++use Crypt::PRNG 0.000 qw(irand);
+ 
+ our $VERSION = "0.008";
+ 
+@@ -260,7 +260,7 @@ sub new {
+ 				if exists $self->{salt};
+ 			croak "\"$value\" is not a valid salt size"
+ 				unless $value == 12 || $value == 24;
+-			$self->{salt} = rand_int(1 << $value);
++			$self->{salt} = irand() % (1 << $value);
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if exists($self->{hash}) ||
+--- lib/Authen/Passphrase/MD5Crypt.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/MD5Crypt.pm
+@@ -85,7 +85,7 @@ use Crypt::PasswdMD5 1.0 qw(unix_md5_crypt);
+ use Authen::Passphrase 0.003;
+ use Carp qw(croak);
+ use Crypt::PasswdMD5 1.0 qw(unix_md5_crypt);
+-use Data::Entropy::Algorithms 0.000 qw(rand_int);
++use Crypt::PRNG 0.000 qw(irand);
+ 
+ our $VERSION = "0.008";
+ 
+@@ -147,7 +147,7 @@ sub new {
+ 				if exists $self->{salt};
+ 			$self->{salt} = "";
+ 			for(my $i = 8; $i--; ) {
+-				$self->{salt} .= chr(rand_int(64));
++				$self->{salt} .= chr(irand() % (64));
+ 			}
+ 			$self->{salt} =~ tr#\x00-\x3f#./0-9A-Za-z#;
+ 		} elsif($attr eq "hash_base64") {
+--- lib/Authen/Passphrase/NetscapeMail.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/NetscapeMail.pm
+@@ -52,7 +52,7 @@ use Carp qw(croak);
+ 
+ use Authen::Passphrase 0.003;
+ use Carp qw(croak);
+-use Data::Entropy::Algorithms 0.000 qw(rand_bits);
++use Crypt::PRNG 0.000 qw(random_bytes);
+ use Digest::MD5 1.99_53 ();
+ 
+ our $VERSION = "0.008";
+@@ -116,7 +116,7 @@ sub new {
+ 		} elsif($attr eq "salt_random") {
+ 			croak "salt specified redundantly"
+ 				if exists $self->{salt};
+-			$self->{salt} = unpack("H*", rand_bits(128));
++			$self->{salt} = unpack("H*", random_bytes(16));
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if exists($self->{hash}) ||
+--- lib/Authen/Passphrase/PHPass.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/PHPass.pm
+@@ -66,7 +66,7 @@ use Carp qw(croak);
+ 
+ use Authen::Passphrase 0.003;
+ use Carp qw(croak);
+-use Data::Entropy::Algorithms 0.000 qw(rand_bits);
++use Crypt::PRNG 0.000 qw(random_bytes);
+ use Digest::MD5 1.99_53 ();
+ 
+ our $VERSION = "0.008";
+@@ -201,7 +201,7 @@ sub new {
+ 		} elsif($attr eq "salt_random") {
+ 			croak "salt specified redundantly"
+ 				if exists $self->{salt};
+-			$self->{salt} = _en_base64(rand_bits(48));
++			$self->{salt} = _en_base64(random_bytes(6));
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if exists($self->{hash}) ||
+--- lib/Authen/Passphrase/SaltedDigest.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/SaltedDigest.pm
+@@ -75,7 +75,7 @@ use Carp qw(croak);
+ 
+ use Authen::Passphrase 0.003;
+ use Carp qw(croak);
+-use Data::Entropy::Algorithms 0.000 qw(rand_bits);
++use Crypt::PRNG 0.000 qw(random_bytes);
+ use Digest 1.00;
+ use MIME::Base64 2.21 qw(encode_base64 decode_base64);
+ use Module::Runtime 0.011 qw(is_valid_module_name use_module);
+@@ -186,7 +186,7 @@ sub new {
+ 				if exists $self->{salt};
+ 			croak "\"$value\" is not a valid salt length"
+ 				unless $value == int($value) && $value >= 0;
+-			$self->{salt} = rand_bits($value * 8);
++			$self->{salt} = random_bytes($value);
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if exists($self->{hash}) ||
+--- lib/Authen/Passphrase/VMSPurdy.pm.orig	2025-06-15 06:51:13 UTC
++++ lib/Authen/Passphrase/VMSPurdy.pm
+@@ -81,7 +81,7 @@ use Carp qw(croak);
+ use Authen::DecHpwd 2.003 qw(lgi_hpwd UAI_C_PURDY UAI_C_PURDY_V UAI_C_PURDY_S);
+ use Authen::Passphrase 0.003;
+ use Carp qw(croak);
+-use Data::Entropy::Algorithms 0.000 qw(rand_int);
++use Crypt::PRNG 0.000 qw(irand);
+ 
+ our $VERSION = "0.008";
+ 
+@@ -181,7 +181,7 @@ sub new {
+ 		} elsif($attr eq "salt_random") {
+ 			croak "salt specified redundantly"
+ 				if exists $self->{salt};
+-			$self->{salt} = rand_int(65536);
++			$self->{salt} = irand() % (65536);
+ 		} elsif($attr eq "hash") {
+ 			croak "hash specified redundantly"
+ 				if exists($self->{hash}) ||

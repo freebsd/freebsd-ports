@@ -1,0 +1,31 @@
+--- README.orig	Wed Dec 28 15:40:48 2005
++++ README	Wed Dec 28 15:42:52 2005
+@@ -101,21 +101,19 @@
+ 
+ 5 - Installation
+ 
+-Put the executable in a suitable directory (/usr/sbin or /usr/local/sbin).
++Put the executable in a suitable directory (/usr/libexec or /usr/local/libexec).
+ Sredird is designed to run under inetd control. The line in the inetd
+ configuration file (usually /etc/inetd.conf) should look like this:
+ 
+-sredir          stream  tcp     nowait  root    /usr/sbin/tcpd /usr/sbin/sredird -i 5 /dev/modem /var/lock/LCK..modem
++sredir         stream  tcp     nowait  root    /usr/local/libexec/sredird      sredird -i 5 /dev/cuaa0 /var/spool/lock/LCK..cuaa0
+ 
+ Of course, "sredir" should be defined in the services file (usually
+-/etc/services, usual values start at port 7000) and "/dev/modem" should
++/etc/services, usual values start at port 7000) and "/dev/cuaa0" should
+ be substituted by the appropriate device. The lock and the device name
+-must match for correct interlocking with other programs. The tcpd program
+-is the usual tcp wrapper that's not needed for correct operation but
+-is useful for security purposes. Don't forget to send a SIGHUP to the
+-inetd daemon in order to force reload of the configuration file. The
+-initial -i paramater is optional and enables compatibility with the
+-Cisco IOS.
++must match for correct interlocking with other programs. Don't forget to
++send a SIGHUP to the inetd daemon in order to force reload of the
++configuration file. The initial -i paramater is optional and enables
++compatibility with the Cisco IOS.
+ 
+ 6 - Bugs
+ 

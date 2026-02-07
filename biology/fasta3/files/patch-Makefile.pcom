@@ -1,0 +1,11 @@
+--- make/Makefile.pcom.orig	2009-02-22 23:56:26.000000000 -0300
++++ make/Makefile.pcom	2009-02-22 23:57:17.000000000 -0300
+@@ -42,7 +42,7 @@
+ 	rm -f *.o $(PROGS) $(APROGS); 	rm -rf $(BIN)/*
+
+ install: $(PROGS)
+-	pushd $(BIN); cp $(PROGS)  $(XDIR); popd
++	cd $(BIN); cp $(PROGS) $(XDIR); cd ../src
+
+ uinstall: $(PROGS)
+ 	pushd $(BIN); mv $(PROGS)  $(UDIR); popd

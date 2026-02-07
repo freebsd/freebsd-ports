@@ -1,0 +1,11 @@
+--- ./strips.def.orig	2003-08-24 23:45:11.000000000 -0700
++++ ./strips.def	2013-02-25 15:30:22.000000000 -0800
+@@ -4422,7 +4422,7 @@
+ 	artist Jim Toomey
+ 	homepage http://www.slagoon.com
+ 	type generate
+-	imageurl $homepage/dailies/SL%y.%m.%d.gif
++	imageurl $homepage/dailies/SL%y%m%d.gif
+ 	provides latest
+ end
+ 

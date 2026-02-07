@@ -1,0 +1,37 @@
+--- configure.orig	2017-11-30 21:15:59 UTC
++++ configure
+@@ -15415,6 +15415,8 @@ else
+   SASLAUTHD_TRUE='#'
+   SASLAUTHD_FALSE=
+ fi
++SASLAUTHD_TRUE='#'
++SASLAUTHD_FALSE=
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking if I should include saslauthd" >&5
+ $as_echo_n "checking if I should include saslauthd... " >&6; }
+@@ -17029,6 +17031,7 @@ fi
+      gssapi_dir="${gssapi}/lib"
+      GSSAPIBASE_LIBS="-L$gssapi_dir"
+      GSSAPIBASE_STATIC_LIBS="-L$gssapi_dir"
++     gssapi_bindir="${gssapi}/bin/"
+   else
+      # FIXME: This is only used for building cyrus, and then only as
+      # a real hack.  it needs to be fixed.
+@@ -17048,7 +17051,7 @@ if ${ac_cv_lib_gssapi_gss_unwrap+:} fals
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
++LIBS="${GSSAPIBASE_LIBS} `${gssapi_bindir}krb5-config --libs gssapi` $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17308,7 +17311,7 @@ fi
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+   elif test "$gss_impl" = "heimdal"; then
+     CPPFLAGS="$CPPFLAGS"
+-    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
++    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `${gssapi_bindir}krb5-config --libs gssapi`"
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+   elif test "$gss_impl" = "cybersafe03"; then
+ # Version of CyberSafe with two libraries

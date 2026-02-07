@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: spacenavd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# spacenavd_enable (bool):	Set to NO by default.
+#				Set it to YES to enable spacenavd.
+# spacenavd_config (path):	Set to %%PREFIX%%/etc/spnavrc
+#				by default.
+
+. /etc/rc.subr
+
+name=spacenavd
+rcvar=spacenavd_enable
+
+load_rc_config $name
+
+: ${spacenavd_enable:="NO"}
+: ${spacenavd_config="%%PREFIX%%/etc/spnavrc"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+command_args="-v -c $spacenavd_config -p $pidfile"
+
+run_rc_command "$1"

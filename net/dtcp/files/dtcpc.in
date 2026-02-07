@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: dtcpc
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these dtcpc_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/dtcpc
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+dtcpc_enable=${dtcpc_enable:-"NO"}		# Enable dtcpc
+#dtcpc_program="%%PREFIX%%/sbin/dtcpc"		# Location of dtcpc
+dtcpc_server=${dtcpc_server:-""}		# DTCP server name
+dtcpc_username=${dtcpc_username:-""}		# DTCP user name
+dtcpc_flags=${dtcpc_flags:-"-t network -Dl"}	# Flags to dtcpc program
+
+. /etc/rc.subr
+
+name="dtcpc"
+rcvar=dtcpc_enable
+command="%%PREFIX%%/sbin/${name}"
+command_interpreter="%%RUBY%%"
+pidfile="/var/run/${name}.pid"
+extra_commands="reload"
+
+load_rc_config $name
+command_args="-u ${dtcpc_username} ${dtcpc_server}"
+if [ -n "${dtcpc_fib}" ]; then
+	command_args="-F ${dtcpc_fib} ${command_args}"
+fi
+run_rc_command "$1"

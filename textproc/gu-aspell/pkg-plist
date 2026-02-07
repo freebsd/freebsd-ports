@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/u-gujr.cmap
+lib/aspell-%%VER%%/u-gujr.cset
+lib/aspell-%%VER%%/gu.dat
+share/aspell/gu.multi
+share/aspell/gu.rws
+share/aspell/gujarati.alias

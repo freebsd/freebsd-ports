@@ -1,0 +1,11 @@
+--- mimedefang-filter.5.in.orig	2017-09-07 17:46:57 UTC
++++ mimedefang-filter.5.in
+@@ -634,7 +634,7 @@ and entity_contains_virus_sophie unless a socket is pr
+ routine.
+ 
+ .TP
+-.B $ClamdSock \fR(default @SPOOLDIR@/clamd.sock)
++.B $ClamdSock \fR(default /var/run/clamav/clamd.sock)
+ Socket used for clamd daemon calls within message_contains_virus_clamd
+ and entity_contains_virus_clamd unless a socket is provided by the calling
+ routine.

@@ -1,0 +1,10 @@
+The Vowpal Wabbit (VW) project is a fast out-of-core learning system
+sponsored by Microsoft Research and (previously) Yahoo! Research.
+
+There are two ways to have a fast learning algorithm: (a) start with a slow
+algorithm and speed it up, or (b) build an intrinsically fast learning
+algorithm.  This project is about approach (b), and it's reached a state
+where it may be useful to others as a platform for research and experimentation.
+
+There are several optimization algorithms available with the baseline
+being sparse gradient descent (GD) on a loss function (several are available).

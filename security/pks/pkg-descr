@@ -1,0 +1,2 @@
+This program implements a standard PGP Key Server, which can be assumed
+to be in addition to the public key server at MIT.

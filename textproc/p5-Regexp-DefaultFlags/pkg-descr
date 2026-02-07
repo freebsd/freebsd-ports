@@ -1,0 +1,2 @@
+When this module is use'd, it causes regexes in the current namespace to act as
+if the /xms flags had been applied to them.

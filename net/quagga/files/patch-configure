@@ -1,0 +1,12 @@
+--- configure.orig	2017-10-03 14:59:10 UTC
++++ configure
+@@ -22070,7 +22070,7 @@ fi
+ fi
+ 
+ 
+ 
+-if test "${enable_snmp}" != ""; then
++if test "x${enable_snmp}" != "xno"; then
+    if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}net-snmp-config", so it can be a program name with args.
+ set dummy ${ac_tool_prefix}net-snmp-config; ac_word=$2

@@ -1,0 +1,3 @@
+Greyfix is the greylisting policy daemon for Postfix written by Kim Minh
+Kaplan. Greyfix uses Postfix policy mechanism to enable greylisting with
+Postfix.

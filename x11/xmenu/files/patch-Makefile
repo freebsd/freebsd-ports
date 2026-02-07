@@ -1,0 +1,14 @@
+--- Makefile.orig	2021-04-21 15:37:41 UTC
++++ Makefile
+@@ -21,9 +21,9 @@ clean:
+ 
+ install: all
+ 	mkdir -p ${bindir}/bin
+-	install -m 755 ${PROG} ${bindir}/bin/${PROG}
++	${BSD_INSTALL_PROGRAM} ${PROG} ${bindir}/bin
+ 	mkdir -p ${mandir}/man1
+-	install -m 644 ${PROG}.1 ${mandir}/man1/${PROG}.1
++	${BSD_INSTALL_MAN} ${PROG}.1 ${mandir}/man1
+ 
+ uninstall:
+ 	rm -f ${bindir}/bin/${PROG}

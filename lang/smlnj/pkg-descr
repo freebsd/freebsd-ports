@@ -1,0 +1,10 @@
+Standard ML (SML) is a safe, modular, strict, functional,
+polymorphic programming language with compile-time type checking
+and type inference, garbage collection, exception handling,
+immutable data types and updatable references, abstract data types,
+and parametric modules. It has efficient implementations and a
+formal definition with a proof of soundness.
+
+Standard ML of New Jersey (abbreviated SML/NJ) is a compiler for
+the Standard ML '97 programming language with associated libraries,
+tools, and documentation.

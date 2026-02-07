@@ -1,0 +1,13 @@
+--- configure.ac.orig	2013-05-28 09:05:57.000000000 +0400
++++ configure.ac	2013-05-28 09:06:36.000000000 +0400
+@@ -12,8 +12,8 @@
+ 
+ AC_PROG_CC
+ 
+-if test "x$GCC" = xyes ; then
+-  CFLAGS="-O3 $CFLAGS"
++if test "x$CC" = xyes ; then
++  CFLAGS="$CFLAGS"
+ fi
+ 
+ m4_include([libeio.m4])

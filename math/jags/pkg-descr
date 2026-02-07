@@ -1,0 +1,10 @@
+JAGS is Just Another Gibbs Sampler -- a program for analysis of
+Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC)
+simulation.
+
+The functionality of JAGS is based on the BUGS program created by the
+MRC Biostatistics Unit (http://www.mrc-bsu.cam.ac.uk/). There is a short
+manual that describes the differences between JAGS and BUGS.
+
+Some of the BUGS examples have been modified to run with JAGS, and have
+been turned into a test suite.

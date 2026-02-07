@@ -1,0 +1,8 @@
+lynx is the oldest actively-maintained console-based web browser. It
+is highly configurable and can act as a front-end for a large number
+of network services.
+
+Although lynx is fast, small, and very stable, it makes no attempt
+to handle JavaScript or CSS formatting. Other console browsers like
+elinks (www/elinks) tackle those languages, with varying degrees
+of success.

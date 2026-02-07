@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Business/ISBN/Data.pm
+%%SITE_PERL%%/Business/ISBN/RangeMessage.url
+%%SITE_PERL%%/Business/ISBN/RangeMessage.xml
+%%PERL5_MAN3%%/Business::ISBN::Data.3.gz

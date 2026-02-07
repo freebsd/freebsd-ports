@@ -1,0 +1,40 @@
+PORTNAME=	elscreen
+PORTVERSION=	1.4.6.20180320
+PORTREVISION=	18
+CATEGORIES=	misc elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Emacs utility similar to GNU Screen
+WWW=		https://github.com/TakaakiFuruse/elscreen
+
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
+
+USES=		emacs
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	TakaakiFuruse
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	329b438
+
+NO_ARCH=	yes
+NO_BUILD=	YES
+
+PORTDOCS=	GF-QuickStart GF-README Readme.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	(cd ${WRKSRC}; ${INSTALL_DATA} ${WRKSRC}/*.el \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+.include <bsd.port.mk>

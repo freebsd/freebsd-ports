@@ -1,0 +1,135 @@
+#
+# NOTES FOR UPDATING PORT:
+#
+# We use tarballs from the *stable* branch of the upstream git repository.
+#
+# X264_BUILD is the "core" number, and can be found in x264.h.
+#
+# X264_REV requires a checkout the git revision for the version the port
+# is being updated to. Then run version.sh against it.
+#
+# Bumping PORTREVISION for dependent ports? This is useful:
+#   fgrep -lr --include='*/Makefile*' :multimedia/libx264 $PORTSDIR |
+#   sed 's,/Makefile.*,,' | xargs $PORTSDIR/Tools/scripts/bump-revision.sh
+# or
+#   rg -l :multimedia/libx264 $PORTSDIR | xargs -n1 portedit bump-revision -i
+
+PORTNAME=	x264
+PORTVERSION=	0.${X264_BUILD}.${X264_REV}
+PORTREVISION?=	3
+CATEGORIES=	multimedia
+MASTER_SITES=	https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
+DIST_SUBDIR=	x264
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT?=	H.264/MPEG-4 AVC Video Encoding (Front End CLI)
+WWW=		https://www.videolan.org/x264.html
+
+EXTRA_PATCHES=	${FILESDIR}/32c3b801191522961102d4bea292cdb61068d0dd.patch:-p1
+
+LICENSE=	GPLv2
+LICENSE_NAME_PGO=	PGO
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS_PGO=	auto-accept
+# ${Y4M_VIDEO_DISTFILE} file may not be mirrored
+LICENSE_DISTFILES_PGO=	${Y4M_VIDEO_DISTFILE}
+
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS?=	libx264.so:multimedia/libx264
+
+X264_BUILD=	164
+X264_REV=	3095
+X264_GITVER=	${GL_TAGNAME:C/^(.{7}).*/\1/}
+
+USES?=		pkgconfig
+USES+=		compiler:c11 gmake localbase shebangfix
+USE_GITLAB=	yes
+GL_SITE=	https://code.videolan.org
+GL_ACCOUNT=	videolan
+GL_TAGNAME=	baee400fa9ced6f5481a728138fed6e867b0ff7f
+USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	configure
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS?=	--system-libx264
+CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
+			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
+			--extra-ldflags="${LDFLAGS}"
+
+PLIST_FILES?=	bin/x264
+
+OPTIONS_DEFINE+=	BASH DEBUG FFMS LAVF PGO SWSCALE
+OPTIONS_DEFAULT+=	BASH FFMS LAVF LSMASH SWSCALE
+OPTIONS_RADIO+=		MP4
+OPTIONS_RADIO_MP4+=	GPAC LSMASH
+
+.if make(makesum) # for optional distfiles
+.MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
+.endif
+
+FFMS_DESC=		FFmpeg Source input support
+GPAC_DESC=		GPAC library support
+LAVF_DESC=		libav* format input support (requires FFmpeg)
+LSMASH_DESC=		L-SMASH library support
+MP4_DESC=		MPEG-4 output
+SWSCALE_DESC=		Resize video filter
+
+BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
+BASH_RUN_DEPENDS=	bash-completion>0:shells/bash-completion
+BASH_CONFIGURE_ENABLE=	bashcompletion
+BASH_PLIST_FILES=	share/bash-completion/completions/x264
+DEBUG_CONFIGURE_OFF=	--enable-strip
+DEBUG_CONFIGURE_ENABLE=	debug
+FFMS_IMPLIES=		SWSCALE
+FFMS_LIB_DEPENDS=	libffms2.so:multimedia/ffms2
+FFMS_CONFIGURE_ENABLE=	ffms
+GPAC_LIB_DEPENDS=	libgpac.so:multimedia/gpac
+GPAC_CONFIGURE_ENABLE=	gpac
+LAVF_IMPLIES=		SWSCALE
+LAVF_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+			libavformat.so:multimedia/ffmpeg \
+			libavutil.so:multimedia/ffmpeg
+LAVF_CONFIGURE_ENABLE=	lavf
+LSMASH_LIB_DEPENDS=	liblsmash.so:multimedia/l-smash
+LSMASH_CONFIGURE_ENABLE=lsmash
+PGO_DISTFILES=		${Y4M_VIDEO_DISTFILE}:pgo
+PGO_MAKE_ENV=		VIDS="${WRKDIR}/${Y4M_VIDEO}"
+PGO_ALL_TARGET=		fprofiled
+PGO_USE=		GCC=yes
+PGO_VARS=		LICENSE+=PGO LICENSE_COMB=multi
+SWSCALE_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
+			libswscale.so:multimedia/ffmpeg
+SWSCALE_CONFIGURE_ENABLE=	swscale
+
+# y4m sample video
+Y4M_VIDEO=		example.y4m
+Y4M_VIDEO_DISTFILE=	example.y4m.bz2
+
+post-extract-PGO-on:
+	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} \
+		>${WRKDIR}/${Y4M_VIDEO}
+
+post-patch:
+	@${REINPLACE_CMD} -e ' \
+		s|gpac_static|gpac|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e ' \
+		s|bash|sh|; \
+		s|VER="x"|VER="${X264_REV} ${X264_GITVER}"|; \
+		s|VERSION=""|VERSION=" r${X264_REV} ${X264_GITVER}"|' \
+		${WRKSRC}/version.sh
+
+.if !target(pre-build)
+pre-build:
+	@(${RM} ${WRKSRC}/x264_config.h)
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && !${PORT_OPTIONS:MPGO}
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
+.include <bsd.port.post.mk>

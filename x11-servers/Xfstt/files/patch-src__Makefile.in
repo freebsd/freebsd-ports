@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	2015-08-11 01:51:59 UTC
++++ src/Makefile.in
+@@ -341,8 +341,8 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-fontdir = $(datadir)/fonts/truetype
+-cachedir = $(localstatedir)/cache/xfstt
++fontdir = %%TTFONTDIR%%
++cachedir = %%TTFONTDIR%%
+ pidfile = $(localstatedir)/run/xfstt.pid
+ LDADD = @LIBINTL@ -L$(top_builddir)/libfstt -lfstt
+ AM_CPPFLAGS = -DLOCALEDIR=\""$(localedir)\"" -DFONTDIR=\""$(fontdir)\"" \

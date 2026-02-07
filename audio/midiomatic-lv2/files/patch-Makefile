@@ -1,0 +1,30 @@
+- workaround for https://github.com/SpotlightKid/midiomatic/issues/3
+
+--- Makefile.orig	2022-03-19 23:05:49 UTC
++++ Makefile
+@@ -4,11 +4,11 @@
+ # Created by falkTX, Christopher Arndt, and Patrick Desaulniers
+ #
+ 
+-SHELL=/bin/bash
++SHELL=/bin/bash
+ 
+ -include dpf/Makefile.base.mk
+ 
+-all: libs plugins gen
++all: patch libs plugins gen
+ 
+ # --------------------------------------------------------------
+ 
+@@ -30,9 +30,9 @@ PLUGIN_BASE_URI = https://chrisarndt.de/plugins/
+ submodules:
+ 	-test -d .git && git submodule update --init --recursive
+ 
+-libs: submodules patch
++libs: patch
+ 
+-patch: submodules
++patch:
+ 	@-for p in $(DPF_PATCHES); do \
+ 		echo "Applying patch '$${p}'..."; \
+ 		patch -d dpf -r - -p1 -N -i ../patches/$${p}; \

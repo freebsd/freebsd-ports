@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/BDB.pm
+%%SITE_ARCH%%/auto/BDB/BDB.so
+%%PERL5_MAN3%%/BDB.3.gz

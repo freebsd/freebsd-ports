@@ -1,0 +1,21 @@
+--- app/sys/sys_core/CMakeLists.txt.orig	2023-10-27 08:38:06 UTC
++++ app/sys/sys_core/CMakeLists.txt
+@@ -21,7 +21,8 @@ find_package(spdlog REQUIRED)
+ find_package(Threads REQUIRED)
+ find_package(Protobuf REQUIRED)
+ find_package(spdlog REQUIRED)
+-find_package(tinyxml2 REQUIRED)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(tinyxml2 REQUIRED IMPORTED_TARGET tinyxml2)
+ 
+ set(ecalsyscore_src
+   include/ecalsys/ecal_sys.h
+@@ -88,7 +88,7 @@ target_link_libraries(${PROJECT_NAME}
+ 
+ target_link_libraries(${PROJECT_NAME}
+   Threads::Threads
+-  tinyxml2::tinyxml2
++  PkgConfig::tinyxml2
+   spdlog::spdlog
+   protobuf::libprotobuf
+   eCAL::core

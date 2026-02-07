@@ -1,0 +1,3 @@
+XML::RSS::LibXML uses XML::LibXML (libxml2) for parsing RSS instead of
+XML::RSS' XML::Parser (expat), while trying to keep interface
+compatibility with XML::RSS.

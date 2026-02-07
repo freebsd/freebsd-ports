@@ -1,0 +1,10 @@
+--- source/CMakeLists.txt.orig	2024-03-08 21:54:22 UTC
++++ source/CMakeLists.txt
+@@ -39,7 +39,6 @@ add_subdirectory(signal)
+ add_subdirectory(domain)
+ add_subdirectory(mq)
+ add_subdirectory(signal)
+-add_subdirectory(shm-sync)
+ 
+ if (NOT APPLE)
+ 	add_subdirectory(eventfd)

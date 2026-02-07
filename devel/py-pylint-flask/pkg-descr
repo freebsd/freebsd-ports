@@ -1,0 +1,2 @@
+pylint-flask is Pylint plugin for improving code analysis when editing code
+using Flask. It is inspired by pylint-django.

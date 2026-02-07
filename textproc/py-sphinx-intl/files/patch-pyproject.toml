@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2025-08-02 04:52:34 UTC
++++ pyproject.toml
+@@ -7,8 +7,7 @@ requires-python = ">=3.9"
+ description = "Sphinx utility that make it easy to translate and to apply translation."
+ readme = "README.rst"
+ requires-python = ">=3.9"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {file = "LICENSE"}
+ dependencies = [
+     "click>=8.0.0",
+     "babel>=2.9.0",
+@@ -55,7 +54,7 @@ sphinx-intl = "sphinx_intl.commands:main"
+ sphinx-intl = "sphinx_intl.commands:main"
+ 
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=61", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools]

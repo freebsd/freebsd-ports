@@ -1,0 +1,109 @@
+bin/terminology
+bin/tyalpha
+bin/tybg
+bin/tycat
+bin/tyls
+bin/typop
+bin/tyq
+bin/tysend
+share/man/man1/terminology-helpers.1.gz
+share/man/man1/terminology.1.gz
+share/man/man1/tyalpha.1.gz
+share/man/man1/tybg.1.gz
+share/man/man1/tycat.1.gz
+share/man/man1/tyls.1.gz
+share/man/man1/typop.1.gz
+share/man/man1/tyq.1.gz
+share/man/man1/tysend.1.gz
+share/applications/terminology.desktop
+share/icons/hicolor/128x128/apps/terminology.png
+%%NLS%%share/locale/ca/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/da/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/de/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/el/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/es/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/he/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/id/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/it/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/si/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/zh_Hans/LC_MESSAGES/terminology.mo
+%%DATADIR%%/backgrounds/mystic.png
+%%DATADIR%%/backgrounds/texture_background.png
+%%DATADIR%%/colorschemes/Belafonte Day.eet
+%%DATADIR%%/colorschemes/Belafonte Night.eet
+%%DATADIR%%/colorschemes/Black.eet
+%%DATADIR%%/colorschemes/Cobalt2.eet
+%%DATADIR%%/colorschemes/Default.eet
+%%DATADIR%%/colorschemes/Dracula.eet
+%%DATADIR%%/colorschemes/Fahrenheit.eet
+%%DATADIR%%/colorschemes/Fir Dark.eet
+%%DATADIR%%/colorschemes/Material.eet
+%%DATADIR%%/colorschemes/Mild.eet
+%%DATADIR%%/colorschemes/Mustang.eet
+%%DATADIR%%/colorschemes/Nord.eet
+%%DATADIR%%/colorschemes/Ocean Dark.eet
+%%DATADIR%%/colorschemes/One Dark.eet
+%%DATADIR%%/colorschemes/PaleNight.eet
+%%DATADIR%%/colorschemes/PaperColor.eet
+%%DATADIR%%/colorschemes/Selenized Black.eet
+%%DATADIR%%/colorschemes/Selenized Dark.eet
+%%DATADIR%%/colorschemes/Selenized Light.eet
+%%DATADIR%%/colorschemes/Selenized White.eet
+%%DATADIR%%/colorschemes/Smyck.eet
+%%DATADIR%%/colorschemes/Soft Era.eet
+%%DATADIR%%/colorschemes/Solarized Light.eet
+%%DATADIR%%/colorschemes/Solarized.eet
+%%DATADIR%%/colorschemes/Tango Dark.eet
+%%DATADIR%%/colorschemes/Tango Light.eet
+%%DATADIR%%/colorschemes/Tomorrow Night Burns.eet
+%%DATADIR%%/fonts/10x20.pcf
+%%DATADIR%%/fonts/4x6.pcf
+%%DATADIR%%/fonts/5x7.pcf
+%%DATADIR%%/fonts/5x8.pcf
+%%DATADIR%%/fonts/6x10.pcf
+%%DATADIR%%/fonts/6x12.pcf
+%%DATADIR%%/fonts/6x13.pcf
+%%DATADIR%%/fonts/6x9.pcf
+%%DATADIR%%/fonts/7x13.pcf
+%%DATADIR%%/fonts/7x14.pcf
+%%DATADIR%%/fonts/8x13.pcf
+%%DATADIR%%/fonts/9x15.pcf
+%%DATADIR%%/fonts/9x18.pcf
+%%DATADIR%%/fonts/TERMINUS.txt
+%%DATADIR%%/fonts/XFONT.txt
+%%DATADIR%%/fonts/nexus.pcf
+%%DATADIR%%/fonts/terminus-12.pcf
+%%DATADIR%%/fonts/terminus-14-bold.pcf
+%%DATADIR%%/fonts/terminus-14.pcf
+%%DATADIR%%/fonts/terminus-16-bold.pcf
+%%DATADIR%%/fonts/terminus-16.pcf
+%%DATADIR%%/fonts/terminus-18-bold.pcf
+%%DATADIR%%/fonts/terminus-18.pcf
+%%DATADIR%%/fonts/terminus-20-bold.pcf
+%%DATADIR%%/fonts/terminus-20.pcf
+%%DATADIR%%/images/terminology.png
+%%DATADIR%%/themes/default.edj
+%%DATADIR%%/themes/nyanology.edj

@@ -1,0 +1,2 @@
+This module provides the ability to search a path-like environment variable
+for a file (that does not necessarily have to be an executable).

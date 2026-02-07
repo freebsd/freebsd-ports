@@ -1,0 +1,12 @@
+bin/chronyc
+@sample etc/chrony.conf.sample
+share/man/man1/chronyc.1.gz
+share/man/man5/chrony.conf.5.gz
+share/man/man8/chronyd.8.gz
+sbin/chronyd
+@dir(chronyd,chronyd) /var/db/chrony
+%%HTMLDOCS%%%%DOCSDIR%%/chrony.conf.html
+%%HTMLDOCS%%%%DOCSDIR%%/chronyc.html
+%%HTMLDOCS%%%%DOCSDIR%%/chronyd.html
+%%HTMLDOCS%%%%DOCSDIR%%/faq.html
+%%HTMLDOCS%%%%DOCSDIR%%/installation.html

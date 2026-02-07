@@ -1,0 +1,15 @@
+Remove unneeded find_package calls for Qt components. Oddly enough, Qt5
+could potentially be found and cause configuration errors.
+
+--- tools/lottietoqml/CMakeLists.txt.orig	2025-11-13 20:37:09 UTC
++++ tools/lottietoqml/CMakeLists.txt
+@@ -5,9 +5,6 @@
+ ## lottietoqml Tool:
+ #####################################################################
+ 
+-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS QuickVectorImageGeneratorPrivate)
+-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS QuickVectorImageGeneratorPrivate)
+-
+ qt_get_tool_target_name(target_name lottietoqml)
+ qt_internal_add_tool(${target_name}
+     TARGET_DESCRIPTION "Lottie to QML Converter"

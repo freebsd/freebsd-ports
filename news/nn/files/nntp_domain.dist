@@ -1,0 +1,13 @@
+# nntp_domain: Configuration file for NN newsreader
+#
+# Set the default domain name portion of user e-mail addresses as you
+# would like them to appear in the From: line of articles posted
+# with NN.
+#
+# For example, setting the name to foobar.com in this file will cause
+# the From: line for joeuser to look like something like this:
+#
+# From: joeuser@foobar.com (Joe User)
+#
+# If this file is left blank, NN will use the hostname of this
+# computer as the From: domain name.

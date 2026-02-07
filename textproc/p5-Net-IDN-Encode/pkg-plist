@@ -1,0 +1,15 @@
+%%SITE_ARCH%%/Net/IDN/Encode.pm
+%%SITE_ARCH%%/Net/IDN/Overview.pod
+%%SITE_ARCH%%/Net/IDN/Punycode.pm
+%%SITE_ARCH%%/Net/IDN/Punycode/PP.pm
+%%SITE_ARCH%%/Net/IDN/Standards.pod
+%%SITE_ARCH%%/Net/IDN/UTS46.pm
+%%SITE_ARCH%%/Net/IDN/UTS46/_Mapping.pm
+%%SITE_ARCH%%/auto/Net/IDN/Punycode/Punycode.so
+%%PERL5_MAN3%%/Net::IDN::Encode.3.gz
+%%PERL5_MAN3%%/Net::IDN::Overview.3.gz
+%%PERL5_MAN3%%/Net::IDN::Punycode.3.gz
+%%PERL5_MAN3%%/Net::IDN::Punycode::PP.3.gz
+%%PERL5_MAN3%%/Net::IDN::Standards.3.gz
+%%PERL5_MAN3%%/Net::IDN::UTS46.3.gz
+%%PERL5_MAN3%%/Net::IDN::UTS46::_Mapping.3.gz

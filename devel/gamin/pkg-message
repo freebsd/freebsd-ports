@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+Gamin will only provide realtime notification of changes for at most n files,
+where n is the minimum value between (kern.maxfiles * 0.7) and
+(kern.maxfilesperproc - 200). Beyond that limit, files will be polled.
+
+If you often open several large folders with Nautilus, you might want to
+increase the kern.maxfiles tunable (you do not need to set
+kern.maxfilesperproc, since it is computed at boot time from kern.maxfiles).
+
+The behavior of gamin can be controlled via the various gaminrc files.
+See http://www.gnome.org/~veillard/gamin/config.html on how to create
+these files.  In particular, if you find gam_server is taking up too much
+CPU time polling for changes, something like the following may help
+in one of the gaminrc files:
+
+# reduce polling frequency to once per 10 seconds
+# for UFS file systems in order to lower CPU load
+fsset ufs poll 10
+EOM
+}
+]

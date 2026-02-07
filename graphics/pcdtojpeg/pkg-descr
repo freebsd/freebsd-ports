@@ -1,0 +1,3 @@
+converts PCD (Kodak Photo CD) image files into high quality JPEG images.
+Conversions are at the maximum available PCD resolution,
+and are fully color managed - no blown highlights or color casts.

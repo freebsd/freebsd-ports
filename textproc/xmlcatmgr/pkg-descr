@@ -1,0 +1,9 @@
+XML Catalog Manager (xmlcatmgr in its short form) is a small utility used
+to manipulate SGML and XML catalogs.  It is extremely small and lightweight,
+specially designed to be run from packaging systems.  Basically, it allows
+adding and removing entries from catalogs in a completely automated way.
+
+A catalog is a lookup mechanism used to translate entities into other
+different entities.  They can, for example, map public identifiers to
+local files or URIs.  This allows you to tell the parser where to look
+for entities without having to modify the original document source.

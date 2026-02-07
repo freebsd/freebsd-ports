@@ -1,0 +1,43 @@
+--- fax/Makefile.orig	2006-02-22 17:25:30 UTC
++++ fax/Makefile
+@@ -6,6 +6,7 @@
+ 
+ CC=gcc
+ CFLAGS=-O2 -I.. -Wall
++INSTALL_PROGRAM=install -s -c
+ 
+ FAX_SCRIPTS=faxspool faxrunq faxq faxrm 
+ 
+@@ -53,20 +54,16 @@ install: all
+ # programs / scripts
+ #
+ 	-for i in $(FAX_SCRIPTS); do \
+-		mv -f $(BINDIR)/$$i $(BINDIR)/$$i.old 2>/dev/null ; \
+-		$(INSTALL) -m 755 $$i $(BINDIR) ; \
++		$(INSTALL) -m 755 $$i $(STAGEDIR)$(BINDIR) ; \
+ 	done
+-	$(INSTALL) -m 755 faxrunqd $(SBINDIR)
+-	$(INSTALL) faxq-helper $(LIBDIR)
+-	chown $(FAX_OUT_USER) $(LIBDIR)/faxq-helper
+-	chmod 4711 $(LIBDIR)/faxq-helper
++	$(INSTALL) -m 755 faxrunqd $(STAGEDIR)$(SBINDIR)
++	$(INSTALL_PROGRAM) faxq-helper $(STAGEDIR)$(LIBDIR)
+ #
+ # data files
+ #
+-	$(INSTALL) -m 644 cour25.pbm $(LIBDIR)
+-	$(INSTALL) -m 644 cour25n.pbm $(LIBDIR)
+-	-test -f $(CONFDIR)/faxheader || \
+-		$(INSTALL) -m 644 faxheader $(CONFDIR)
++	$(INSTALL) -m 644 cour25.pbm $(STAGEDIR)$(LIBDIR)
++	$(INSTALL) -m 644 cour25n.pbm $(STAGEDIR)$(LIBDIR)
++	$(INSTALL) -m 644 faxheader $(STAGEDIR)$(CONFDIR)
+ #
+ # /etc/magic
+ #
+@@ -79,4 +76,4 @@ install: all
+ #
+ # faxspool.rules sample file
+ #
+-	$(INSTALL) -m 644 faxspool.rules $(CONFDIR)/faxspool.rules.sample
++	$(INSTALL) -m 644 faxspool.rules $(STAGEDIR)$(CONFDIR)/faxspool.rules.sample

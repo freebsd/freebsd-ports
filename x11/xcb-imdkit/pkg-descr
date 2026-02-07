@@ -1,0 +1,3 @@
+xcb-imdkit is an implementation of xim protocol in xcb, comparing with the
+implementation of IMDkit with Xlib, and xim inside Xlib, it has less memory
+foot print, better performance, and safer on malformed client.

@@ -1,0 +1,2 @@
+xwayland-run contains a set of small utilities revolving around running
+Xwayland and various Wayland compositor headless.

@@ -1,0 +1,11 @@
+--- lib/CMakeLists.txt.orig	2025-04-29 09:35:15 UTC
++++ lib/CMakeLists.txt
+@@ -102,7 +102,7 @@ set(RESOURCES
+ )
+ 
+ # Create target.
+-qt_add_library(${PROJECT_NAME} STATIC
++qt_add_library(${PROJECT_NAME} SHARED
+   ${HEADERS}
+   ${SOURCES}
+   ${RESOURCES}

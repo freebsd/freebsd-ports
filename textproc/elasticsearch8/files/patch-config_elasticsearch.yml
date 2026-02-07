@@ -1,0 +1,23 @@
+--- config/elasticsearch.yml.orig	2023-05-01 21:34:56 UTC
++++ config/elasticsearch.yml
+@@ -30,11 +30,11 @@
+ #
+ # Path to directory where to store the data (separate multiple locations by comma):
+ #
+-#path.data: /path/to/data
++path.data: /var/db/elasticsearch
+ #
+ # Path to log files:
+ #
+-#path.logs: /path/to/logs
++path.logs: /var/run/elasticsearch
+ #
+ # ----------------------------------- Memory -----------------------------------
+ #
+@@ -80,3 +80,6 @@
+ # Allow wildcard deletion of indices:
+ #
+ #action.destructive_requires_name: false
++#
++# ml is not supported on FreeBSD
++xpack.ml.enabled: false

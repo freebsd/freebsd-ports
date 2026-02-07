@@ -1,0 +1,5 @@
+The TPM Quote Tools is a collection of programs that provide support
+for TPM based attestation using the TPM quote mechanism.  The manual
+page for tpm_quote_tools provides a usage overview.
+
+The management tools are only used to take ownership of a TPM.

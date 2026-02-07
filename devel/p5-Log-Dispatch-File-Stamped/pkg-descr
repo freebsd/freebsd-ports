@@ -1,0 +1,2 @@
+This module provides a Log::Dispatch style interface to log to date/time
+stamped files.

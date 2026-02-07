@@ -1,0 +1,2 @@
+Python library initially forked from python-axolotl, heavily rewritten, focusing
+only on OMEMO cryptographic sessions, and not on communication protocols.

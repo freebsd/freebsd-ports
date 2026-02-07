@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# PROVIDE: mdns_repeater
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable mdns-repeater
+# mdns_repeater_enable="YES"
+# mdns_repeater_interfaces="vr0 vr1"
+
+. /etc/rc.subr
+
+name=mdns_repeater
+rcvar=mdns_repeater_enable
+
+load_rc_config ${name}
+
+: ${mdns_repeater_enable:=NO}
+: ${mdns_repeater_interfaces:="vr0 vr1"}
+
+pidfile="/var/run/mdns-repeater.pid"
+command="%%PREFIX%%/bin/mdns-repeater"
+command_args=" -p ${pidfile} ${mdns_repeater_interfaces}"
+
+# run service
+run_rc_command "$1"

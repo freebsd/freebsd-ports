@@ -1,0 +1,2 @@
+PageEdit is an ePub visual XHTML editor based on Sigil's
+deprecated BookView. It uses WebEngine instead of WebKit.

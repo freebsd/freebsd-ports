@@ -1,0 +1,6 @@
+VIT (Visual Interactive Taskwarrior) is a lightweight, curses-based front end
+for Taskwarrior that provides a convenient way to quickly navigate and process
+tasks. VIT allows you to interact with tasks in a Vi-intuitive way. A goal of
+VIT is to allow you to customize the way in which you use Taskwarrior's core
+commands as well as to provide a framework for easily dispatching external
+commands (both user scripts and Taskwarrior's many External Scripts).

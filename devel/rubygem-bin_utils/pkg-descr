@@ -1,0 +1,6 @@
+It is specialized versions of methods for working with binary data.
+It were written cause:
+
+- MRI's #pack and #unpack seems to be slow
+- result of #pack is often appended to a string at the very next step.
+- usually we need to drop unpacked string head

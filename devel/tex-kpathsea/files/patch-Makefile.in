@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2024-05-11 23:34:39 UTC
++++ Makefile.in
+@@ -364,7 +364,7 @@ DATA = $(dist_noinst_DATA) $(pkgconfig_DATA)
+     *) (install-info --version) >/dev/null 2>&1;; \
+   esac
+ DATA = $(dist_noinst_DATA) $(pkgconfig_DATA)
+-HEADERS = $(kpseinclude_HEADERS) $(nodist_kpseinclude_HEADERS) \
++HEADERS = $(nodist_kpseinclude_HEADERS) \
+ 	$(noinst_HEADERS)
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+   distclean-recursive maintainer-clean-recursive
+@@ -2104,7 +2104,7 @@ installdirs-am:
+ 
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpseincludedir)"; do \
++	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(web2cdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(kpseincludedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)

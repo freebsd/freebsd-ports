@@ -1,0 +1,2 @@
+A Python tool to communicate with the AVM FritzBox family of home routers.
+It uses the TR-064 protocol over UPnP.

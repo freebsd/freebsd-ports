@@ -1,0 +1,10 @@
+This module implements the stringprep framework for preparing
+Unicode text strings in order to increase the likelihood that
+string input and string comparison work in ways that make sense
+for typical users throughout the world.  The stringprep protocol
+is useful for protocol identifier values, company and personal
+names, internationalized domain names, and other text strings.
+
+The stringprep framework does not specify how protocols should
+prepare text strings. Protocols must create profiles of
+stringprep in order to fully specify the processing options.

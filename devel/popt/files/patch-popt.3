@@ -1,0 +1,20 @@
+--- popt.3.orig	2009-07-25 18:52:36 UTC
++++ popt.3
+@@ -24,7 +24,7 @@ popt \- Parse command line options
+ .sp
+ .BI "const char ** poptGetArgs(poptContext " con );
+ .sp
+-.BI "const char *const poptStrerror(const int " error );
++.BI "const char * poptStrerror(const int " error );
+ .sp
+ .BI "const char * poptBadOption(poptContext " con ", int " flags );
+ .sp
+@@ -498,7 +498,7 @@ Two functions are available to make it easy for applic
+ good error messages.
+ .HP
+ .nf
+-.BI "const char *const poptStrerror(const int " error ");"
++.BI "const char * poptStrerror(const int " error ");"
+ .fi
+ This function takes a popt error code and returns a string describing
+ .RB "the error, just as with the standard " strerror() " function."

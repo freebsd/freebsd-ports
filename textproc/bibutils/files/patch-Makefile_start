@@ -1,0 +1,11 @@
+--- Makefile_start.orig	2020-03-23 18:53:54 UTC
++++ Makefile_start
+@@ -80,7 +80,7 @@ install: all FORCE
+ 	$(MAKE) -C bin \
+                 EXEEXT=$(EXEEXT) \
+                 PROGSIN="$(PROGRAMS)" \
+-                INSTALLDIR=$(INSTALLDIR) \
++                INSTALLDIR=$(DESTDIR)$(INSTALLDIR) \
+                 install
+ 	sed 's/VERSION/${VERSION}/g' packageconfig_start > lib/bibutils.pc
+ 

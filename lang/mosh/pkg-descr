@@ -1,0 +1,3 @@
+Mosh is a free and fast interpreter for Scheme as specified in the R6RS.
+R6RS is the latest revision of the Scheme standard; the current release
+of Mosh supports all the features of R6RS.

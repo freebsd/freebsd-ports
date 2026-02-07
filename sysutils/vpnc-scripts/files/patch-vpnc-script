@@ -1,0 +1,11 @@
+--- vpnc-script.orig	2026-01-09 15:18:59 UTC
++++ vpnc-script
+@@ -97,7 +97,7 @@ if [ -z "$VPNPID" ]; then
+ # OpenConnect v9.0+ provides VPNPID, so we don't need to determine it.
+ if [ -z "$VPNPID" ]; then
+     VPNPID=$PPID
+-    PCMD=`ps -c -o cmd= -p $PPID`
++    PCMD=`ps -c -o command= -p $PPID`
+     case "$PCMD" in
+         *sh) VPNPID=`ps -o ppid= -p $PPID` ;;
+     esac

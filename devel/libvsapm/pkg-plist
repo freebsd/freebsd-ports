@@ -1,0 +1,17 @@
+bin/vsapminfo
+include/libvsapm.h
+include/libvsapm/codepage.h
+include/libvsapm/definitions.h
+include/libvsapm/error.h
+include/libvsapm/extern.h
+include/libvsapm/features.h
+include/libvsapm/types.h
+lib/libvsapm.a
+lib/libvsapm.so
+lib/libvsapm.so.1
+lib/libvsapm.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyvsapm.a
+%%PYTHON_SITELIBDIR%%/pyvsapm.so
+libdata/pkgconfig/libvsapm.pc
+share/man/man1/vsapminfo.1.gz
+share/man/man3/libvsapm.3.gz

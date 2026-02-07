@@ -1,0 +1,5 @@
+Perl comes with perfectly good stat, lstat functions, however if you are writing
+FFI bindings for a library that use the C stat structure, you are out of luck
+there. FFI::C::Stat Perl comes with perfectly good stat, lstat functions,
+however if you are writing FFI bindings for a library that use the C stat
+structure, you are out of luck there.

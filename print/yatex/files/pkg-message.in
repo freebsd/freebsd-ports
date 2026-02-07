@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+To use YaTeX, add the next line into your .emacs:
+
+    (require 'yatex-startup)
+
+yatex-startup.el in %%PREFIX%%/%%EMACS_SITE_LISPDIR%%/yatex also includes
+configuration examples.  To get more information, see the info file
+of YaTeX.
+EOM
+}
+]

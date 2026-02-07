@@ -1,0 +1,52 @@
+diff --git a/build_defs.bzl b/build_defs.bzl
+index 01b436eb7..ca4abd54d 100644
+--- a/build_defs.bzl
++++ b/build_defs.bzl
+@@ -146,7 +146,7 @@ def xnnpack_cc_library(
+             ":emscripten_wasm": wasm_srcs,
+             ":emscripten_wasmsimd": wasmsimd_srcs,
+             ":emscripten_wasmrelaxedsimd": wasmrelaxedsimd_srcs,
+-            "//conditions:default": [],
++            "//conditions:default": x86_srcs,
+         }),
+         copts = [
+             "-Iinclude",
+@@ -179,7 +179,7 @@ def xnnpack_cc_library(
+             ":emscripten_wasm": wasm_copts,
+             ":emscripten_wasmsimd": wasmsimd_copts,
+             ":emscripten_wasmrelaxedsimd": wasmrelaxedsimd_copts,
+-            "//conditions:default": [],
++            "//conditions:default": [opt for opt in gcc_x86_copts],
+         }) + select({
+             ":windows_x86_64_clang": ["/clang:" + opt for opt in gcc_copts],
+             ":windows_x86_64_mingw": gcc_copts,
+@@ -202,7 +202,7 @@ def xnnpack_cc_library(
+             ":linux_armv7a": ["-lpthread"],
+             ":linux_arm64": ["-lpthread"],
+             ":android": ["-lm"],
+-            "//conditions:default": [],
++            "//conditions:default": ["-lpthread"],
+         }),
+         textual_hdrs = hdrs,
+         visibility = visibility,
+@@ -249,6 +249,7 @@ def xnnpack_aggregate_library(
+             ":emscripten_wasmsimd": wasmsimd_deps,
+             ":emscripten_wasmrelaxedsimd": wasmrelaxedsimd_deps,
+             ":riscv": riscv_deps,
++            "//conditions:default": x86_deps,
+         }),
+         defines = defines,
+         compatible_with = compatible_with,
+diff --git a/src/runtime.c b/src/runtime.c
+index 0c4649017..29e74a85b 100644
+--- a/src/runtime.c
++++ b/src/runtime.c
+@@ -4,7 +4,7 @@
+ // LICENSE file in the root directory of this source tree.
+ 
+ #ifndef __MACH__
+-#define _POSIX_C_SOURCE 199309L
++#define _POSIX_C_SOURCE 199506L
+ #endif
+ 
+ #include <assert.h>

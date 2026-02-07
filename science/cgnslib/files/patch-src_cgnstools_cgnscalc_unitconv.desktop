@@ -1,0 +1,9 @@
+--- src/cgnstools/cgnscalc/unitconv.desktop.orig	2021-04-22 21:09:36 UTC
++++ src/cgnstools/cgnscalc/unitconv.desktop
+@@ -6,5 +6,5 @@ Name=CGNSunitconv
+ GenericName=Unit conversions tool
+ Terminal=false
+ Categories=Development;
+-Exec="./unitconv"
++Exec="./unitconv.sh"
+ Icon=../share/cgnstools/unitconv.png

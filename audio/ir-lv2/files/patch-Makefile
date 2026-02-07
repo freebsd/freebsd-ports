@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-06-21 08:16:45 UTC
++++ Makefile
+@@ -58,7 +58,7 @@ ir.so: ir.o ir_utils.o
+ 	$(CXX) $(LDFLAGS) ir.o ir_utils.o $(LIBS) -shared -o ir.so
+ 
+ ir_gui.so: ir_gui.o ir_utils.o ir_meter.o ir_modeind.o ir_wavedisplay.o
+-	$(CXX) $(LDFLAGS) ir_gui.o ir_utils.o ir_meter.o ir_modeind.o ir_wavedisplay.o $(LIBS) -shared -z nodelete -o ir_gui.so
++	$(CXX) $(LDFLAGS) ir_gui.o ir_utils.o ir_meter.o ir_modeind.o ir_wavedisplay.o $(LIBS) -shared -o ir_gui.so
+ 
+ convert4chan: convert4chan.c
+ 	$(CC) $(C4CFLAGS) $(CPPFLAGS) $(LDFLAGS) convert4chan.c $(C4LIBS) -o convert4chan

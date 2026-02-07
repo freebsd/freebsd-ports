@@ -1,0 +1,8 @@
+bmpp - Convert PNG/JPEG/NetPBM/TIFF to PDF/EPS
+
+The program converts bitmap image files from PNG, JPEG, NetPBM and TIFF to PDF
+and PS/EPS.
+In this text "bitmap image" refers to bitmap, graymap and pixmap images.
+
+For each input file specified on the command line the program creates a
+corresponding output file with file name suffix ".pdf", ".eps", ".ps" or ".bb".

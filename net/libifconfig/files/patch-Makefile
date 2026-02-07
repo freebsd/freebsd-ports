@@ -1,0 +1,37 @@
+--- Makefile.orig	2025-06-21 02:57:45 UTC
++++ Makefile
+@@ -1,15 +1,11 @@ LIB=		ifconfig
+ PACKAGE=	lib${LIB}
+ LIB=		ifconfig
+-INTERNALLIB=	true
+ 
+-LIBADD=		m
++LDADD+=		-lm
+ 
+ SHLIBDIR?=	/lib
+ SHLIB_MAJOR=	2
+ 
+-VERSION_DEF=	${LIBCSRCDIR}/Versions.def
+-SYMBOL_MAPS=	${.CURDIR}/Symbol.map
+-
+ SRCS=		libifconfig.c \
+ 		libifconfig_bridge.c \
+ 		libifconfig_carp.c \
+@@ -26,7 +22,7 @@ SRCS+=	${GEN}
+ 
+ SRCS+=	${GEN}
+ 
+-.include <src.lua.mk>
++LUA=	${LIBEXECDIR}/flua
+ 
+ .SUFFIXES: .tpl.c .tpl.h
+ .tpl.c.c .tpl.h.h: sfp.lua
+@@ -36,7 +32,7 @@ CLEANFILES+= ${GEN}
+ 
+ # If libifconfig become public uncomment those two lines
+ #INCSDIR=	${INCLUDEDIR}
+-#INCS=		libifconfig.h libifconfig_sfp.h libifconfig_sfp_tables.h
++INCS=		libifconfig.h libifconfig_sfp.h libifconfig_sfp_tables.h
+ 
+ #MAN=		libifconfig.3
+ 

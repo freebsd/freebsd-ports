@@ -1,0 +1,130 @@
+PORTNAME=	typeshare
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.13.3
+PORTREVISION=	3
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Tool to synchronize type definitions between Rust and other languages
+WWW=		https://github.com/1password/typeshare
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	1password
+
+CARGO_BUILD_ARGS=	--package=typeshare-cli
+CARGO_INSTALL_PATH=	cli
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.17 \
+		anstyle-1.0.9 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.6 \
+		anyhow-1.0.91 \
+		autocfg-1.4.0 \
+		bitflags-2.6.0 \
+		bstr-1.10.0 \
+		bumpalo-3.16.0 \
+		cc-1.1.31 \
+		cfg-if-1.0.0 \
+		chrono-0.4.38 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
+		clap_complete-4.5.36 \
+		clap_derive-4.5.18 \
+		clap_lex-0.7.2 \
+		colorchoice-1.0.3 \
+		convert_case-0.8.0 \
+		cool_asserts-2.0.3 \
+		core-foundation-sys-0.8.7 \
+		crossbeam-0.8.4 \
+		crossbeam-channel-0.5.13 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-queue-0.3.11 \
+		crossbeam-utils-0.8.20 \
+		dissimilar-1.0.9 \
+		either-1.13.0 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		expect-test-1.5.0 \
+		flexi_logger-0.30.2 \
+		globset-0.4.15 \
+		hashbrown-0.15.2 \
+		heck-0.5.0 \
+		iana-time-zone-0.1.61 \
+		iana-time-zone-haiku-0.1.2 \
+		ignore-0.4.23 \
+		indent_write-2.2.0 \
+		indexmap-2.6.0 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.14.0 \
+		itoa-1.0.11 \
+		joinery-3.1.0 \
+		js-sys-0.3.72 \
+		lazy_format-2.0.3 \
+		libc-0.2.161 \
+		linux-raw-sys-0.4.14 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		nu-ansi-term-0.50.1 \
+		num-traits-0.2.19 \
+		once_cell-1.20.2 \
+		proc-macro2-1.0.93 \
+		quote-1.0.37 \
+		regex-1.11.1 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
+		rustix-0.38.38 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
+		serde_json-1.0.132 \
+		serde_spanned-0.6.8 \
+		shlex-1.3.0 \
+		strsim-0.11.1 \
+		syn-2.0.98 \
+		terminal_size-0.4.0 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.22 \
+		topological-sort-0.2.2 \
+		unicase-2.8.0 \
+		unicode-ident-1.0.13 \
+		unicode-segmentation-1.12.0 \
+		unicode-width-0.2.0 \
+		utf8parse-0.2.2 \
+		walkdir-2.5.0 \
+		wasm-bindgen-0.2.95 \
+		wasm-bindgen-backend-0.2.95 \
+		wasm-bindgen-macro-0.2.95 \
+		wasm-bindgen-macro-support-0.2.95 \
+		wasm-bindgen-shared-0.2.95 \
+		winapi-util-0.1.9 \
+		windows-core-0.52.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		winnow-0.6.20
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

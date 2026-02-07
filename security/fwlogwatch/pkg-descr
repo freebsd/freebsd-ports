@@ -1,0 +1,19 @@
+fwlogwatch is a packet filter and firewall log analyzer
+
+General features:
+   - Can detect and process log entries in the following formats:
+   - Linux ipchains, Linux netfilter/iptables, Solaris/BSD/Irix/HP-UX
+     ipfilter, BSD ipfw, Cisco IOS, Cisco PIX / FWSM, NetScreen,
+     Windows XP firewall, Elsa Lancom router, Snort IDS
+   - Entries can be parsed from single, multiple and combined log files,
+     the parsers to be used can be selected.
+   - Gzip-compressed logs are supported transparently.
+   - Can separate recent from old entries and detects timewarps in log files.
+   - Can recognize 'last message repeated' entries concerning the firewall.
+   - Integrated resolver for protocols, services and host names.
+   - Can do lookups in the whois database.
+   - Own DNS and whois information cache for faster lookups.
+   - Hosts, networks, ports, chains and branches (targets) can be selected or
+     excluded as needed.
+   - Support for internationalization (available in english, german,
+     portuguese, simplified and traditional chinese, swedish and japanese).

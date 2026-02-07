@@ -1,0 +1,9 @@
+Data::Dumper and other modules do a great job at dumping data structures.
+Their output, however, often takes more brain power to understand than the
+data itself. When dumping large amounts of data, the output can be overwhelming
+and it's difficult to see the relationship between each piece of the dumped
+data.  Data::TreeDumper also dumps data in a tree-like fashion but hopefully
+in a format more easily understood.
+
+Data::TreeDumper also gives one extraordinary control over output and
+provides for custom filtering of and iteration over data structures.

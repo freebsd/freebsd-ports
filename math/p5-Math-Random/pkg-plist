@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Math/Random.pm
+%%SITE_ARCH%%/Math/example.pl
+%%SITE_ARCH%%/auto/Math/Random/Random.so
+%%PERL5_MAN3%%/Math::Random.3.gz

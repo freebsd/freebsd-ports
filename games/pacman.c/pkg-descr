@@ -1,0 +1,4 @@
+pacman.c is a simple Pac Man clone written in C99 with minimal
+dependencies. It recreates the classic maze chase gameplay with ghosts,
+pellets and responsive controls, and serves as a compact, well commented
+example of a complete cross platform game.

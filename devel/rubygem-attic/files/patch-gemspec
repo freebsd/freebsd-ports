@@ -1,0 +1,11 @@
+--- attic.gemspec.orig	2024-04-05 16:38:53 UTC
++++ attic.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<rake>.freeze, ["~> 13.0.6".freeze])
++  s.add_runtime_dependency(%q<rake>.freeze, [">= 13.0.6".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0".freeze])
+   s.add_development_dependency(%q<rubocop>.freeze, ["~> 1.0".freeze])
+ end

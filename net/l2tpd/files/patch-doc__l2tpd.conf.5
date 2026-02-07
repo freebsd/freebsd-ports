@@ -1,0 +1,24 @@
+--- doc/l2tpd.conf.5.orig	Tue Aug 13 21:23:13 2002
++++ doc/l2tpd.conf.5	Wed Apr 16 16:41:33 2003
+@@ -15,7 +15,11 @@
+ .TP 
+ .B auth file
+ Specify where to find the authentication file used to authenticate
+-l2tp tunnels. The default is /etc/l2tp/l2tp\-secrets.
++l2tp tunnels. The default is %%PREFIX%%/etc/l2tp/l2tp\-secrets.
++
++.TP 
++.B Address
++Specify which IP address l2tpd should use. The default is all addresses.
+ 
+ .TP 
+ .B Port
+@@ -141,7 +145,7 @@
+ 
+ .SH "FILES"
+ 
+-\fB\fR/etc/l2tp/l2tpd.conf \fB\fR/etc/l2tp/l2tp\-secrets 
++\fB\fR%%PREFIX%%/etc/l2tp/l2tpd.conf \fB\fR%%PREFIX%%/etc/l2tp/l2tp\-secrets 
+ \fB\fR/var/run/l2tp\-control
+ .SH "BUGS"
+ 

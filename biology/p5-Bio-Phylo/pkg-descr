@@ -1,0 +1,3 @@
+This is the base class for the Bio::Phylo package. All other modules
+inherit from it, the methods defined here are applicable to all. Consult
+the manual for usage examples: Bio::Phylo::Manual.

@@ -1,0 +1,12 @@
+bin/smithwaterman
+include/smithwaterman/BandedSmithWaterman.h
+include/smithwaterman/IndelAllele.h
+include/smithwaterman/LeftAlign.h
+include/smithwaterman/Mosaik.h
+include/smithwaterman/Repeats.h
+include/smithwaterman/SmithWatermanGotoh.h
+include/smithwaterman/convert.h
+include/smithwaterman/disorder.h
+lib/libsw.a
+lib/libsw.so
+lib/libsw.so.1

@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: saned
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable saned:
+#	saned_enable="YES"
+
+. /etc/rc.subr
+
+name=saned
+rcvar=saned_enable
+
+load_rc_config saned
+
+: ${saned_enable:="NO"}
+: ${saned_uid:="saned"}
+
+command="%%PREFIX%%/sbin/saned"
+
+start_precmd=saned_prestart
+
+saned_prestart()
+{
+	case "${saned_flags}" in
+	*-a\ *) err 1 'saned_flags includes the -a option. Please use saned_uid instead' ;;
+	esac
+}
+
+command_args="-a $saned_uid"
+
+run_rc_command "$1"

@@ -1,0 +1,10 @@
+Lets is a CLI task runner for developers - a better alternative to make.
+
+Lets was designed for developers. Its simple yet powerful task runner with lots
+of features that just work.
+
+Lets use yaml as a config format which gives a well known, human-readable syntax
+with all yaml features built-in.
+
+You can have a couple of tasks or a hundred of them in your project. Lets allow
+you to focus on coding instead of writing hard-to-reason-about Makefiles.

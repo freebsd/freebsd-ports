@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# PROVIDE: mailpit
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mailpit_enable (bool):	Set to NO by default.
+#				Set it to YES to enable mailpit.
+# mailpit_bind_addr (ipaddr):	Set to the address mailpit should listen on
+#				for incoming connections. 127.0.0.1 by default.
+# mailpit_smtp_port (int):	Port to listen on for SMTP. 1025 by default.
+# mailpit_api_port (int):	Port to listen on for API. 8025 by default.
+# mailpit_ui_port (int):	Port to listen on for UI. 8025 (same as API)
+#				by default.
+# mailpit_runtimeuser (string):	User mailpit should run as. 'nobody' by default.
+# mailpit_args (string):	Custom extra arguments for mailpit
+#
+# Please think twice before exposing this server to the Internet. This is an
+# insecure tool without any authentication specifically to aid development
+# and debugging. Use in controlled environments only is highly recommended.
+#
+
+. /etc/rc.subr
+
+name=mailpit
+rcvar=mailpit_enable
+desc="Run mailpit developer's mail server"
+
+load_rc_config "${name}"
+
+: ${mailpit_enable:=NO}
+: ${mailpit_bind_addr:=127.0.0.1}
+: ${mailpit_smtp_port:=1025}
+: ${mailpit_api_port:=8025}
+: ${mailpit_ui_port:=8025}
+: ${mailpit_runtimeuser:=nobody}
+
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+command_args="-c -r -f -P ${pidfile} -u ${mailpit_runtimeuser} %%PREFIX%%/bin/${name} --listen ${mailpit_bind_addr}:${mailpit_api_port} --smtp ${mailpit_bind_addr}:${mailpit_smtp_port} ${mailpit_args}"
+
+run_rc_command "$1"

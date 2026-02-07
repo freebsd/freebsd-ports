@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Getopt::Lucid.3.gz
+%%PERL5_MAN3%%/Getopt::Lucid::Exception.3.gz
+%%SITE_PERL%%/Getopt/Lucid.pm
+%%SITE_PERL%%/Getopt/Lucid/Exception.pm

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PolicyKit Authentication Agent
+Comment=PolicyKit Authentication Agent
+Type=Application
+Exec=%%PREFIX%%/libexec/polkit-gnome-authentication-agent-1
+Terminal=false
+NoDisplay=true
+OnlyShowIn=X-Cinnamon;

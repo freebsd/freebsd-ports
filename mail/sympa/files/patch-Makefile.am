@@ -1,0 +1,46 @@
+--- Makefile.am.orig	2022-11-10 11:35:55 UTC
++++ Makefile.am
+@@ -150,19 +150,19 @@ installdir:
+ 
+ installconfig: installdir
+ 	@echo "Installing basic configuration ..."
+-	-@if [ ! -f  $(DESTDIR)$(confdir)/sympa.conf ]; then \
+-		echo "installing sympa.conf"; \
+-		$(INSTALL) -m 640 sympa.conf $(DESTDIR)$(confdir); \
+-		chown $(USER) $(DESTDIR)$(confdir)/sympa.conf; \
+-		chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf; \
++	-@if [ ! -f  $(DESTDIR)$(confdir)/sympa.conf.sample ]; then \
++		echo "installing sympa.conf.sample"; \
++		$(INSTALL) -m 640 sympa.conf $(DESTDIR)$(confdir)/sympa.conf.sample; \
++		chown $(USER) $(DESTDIR)$(confdir)/sympa.conf.sample; \
++		chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf.sample; \
+ 	fi
+-	-@if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version ]; then \
++	-@if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version.sample ]; then \
+ 		cd $(DESTDIR)$(sysconfdir); \
+-		echo "# automatically created file" >> data_structure.version; \
+-		echo "# you should not modify it" >> data_structure.version; \
+-		echo $(VERSION) >> data_structure.version; \
+-		chown $(USER) data_structure.version; \
+-		chgrp $(GROUP) data_structure.version; \
++		echo "# automatically created file" >> data_structure.version.sample; \
++		echo "# you should not modify it" >> data_structure.version.sample; \
++		echo $(VERSION) >> data_structure.version.sample; \
++		chown $(USER) data_structure.version.sample; \
++		chgrp $(GROUP) data_structure.version.sample; \
+ 	fi
+ 	-@for dir in create_list_templates custom_actions custom_conditions \
+ 		data_sources families tasks \
+@@ -203,9 +203,9 @@ nextstep: 
+ 	@echo "#######################################################"
+ 
+ uninstall-hook:
+-	cd $(DESTDIR)$(confdir) && rm -f sympa.conf
+-	cd $(DESTDIR)$(confdir) && rm -f wwsympa.conf
+-	cd $(DESTDIR)$(sysconfdir) && rm -f data_structure.version
++	cd $(DESTDIR)$(confdir) && rm -f sympa.conf.sample
++	cd $(DESTDIR)$(confdir) && rm -f wwsympa.conf.sample
++	cd $(DESTDIR)$(sysconfdir) && rm -f data_structure.version.sample
+ 	cd $(DESTDIR)$(sysconfdir) && rm -f README
+ 
+ DISTCHECK_CONFIGURE_FLAGS = --enable-fhs --with-perl=$(PERL)

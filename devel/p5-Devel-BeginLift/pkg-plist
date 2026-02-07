@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/BeginLift.pm
+%%SITE_ARCH%%/auto/Devel/BeginLift/BeginLift.so
+%%PERL5_MAN3%%/Devel::BeginLift.3.gz

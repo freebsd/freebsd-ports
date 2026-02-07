@@ -1,0 +1,21 @@
+ejabberd is a high performance Free and Open Source distributed
+fault-tolerant instant messaging Jabber server.
+
+Key features include:
+    - A web administration console and command line administration
+      tools that ensure easy set up
+    - Support for encrypted connections to ensure secure communications
+    - Many built-in services, including Jabber User Directory and Multi-User
+      Chat
+    - Standard Jabber transport compliance to enable communication with other
+      instant messaging networks
+    - Automatic collection of statistics for reporting and system analysis
+    - Virtual hosting, enabling ejabberd to run several virtual domains
+      from a single ejabberd instance
+    - Shared rosters, so that users can have predefined entries in their
+      contacts lists
+    - External storage support
+    - Large numbers of supported protocols (see the supported protocols list
+      for details)
+    - Multi-lingual web administration interface
+    - Full IPv6 support

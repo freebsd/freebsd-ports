@@ -1,0 +1,2 @@
+This OCaml library allows to read and write 8/16/32/64-bits integers
+from and to Bigstring, Bytes and String, using a specific endianness.

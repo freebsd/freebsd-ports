@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Brannigan.pm
+%%SITE_PERL%%/Brannigan/Examples.pod
+%%SITE_PERL%%/Brannigan/Tree.pm
+%%SITE_PERL%%/Brannigan/Validations.pm
+%%PERL5_MAN3%%/Brannigan.3.gz
+%%PERL5_MAN3%%/Brannigan::Examples.3.gz
+%%PERL5_MAN3%%/Brannigan::Tree.3.gz
+%%PERL5_MAN3%%/Brannigan::Validations.3.gz

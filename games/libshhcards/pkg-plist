@@ -1,0 +1,6 @@
+include/shhcards.h
+lib/libshhcards.a
+lib/libshhcards.so
+lib/libshhcards.so.1
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README

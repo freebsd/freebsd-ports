@@ -1,0 +1,11 @@
+bin/bufrscan
+bin/gradsc
+%%HDF%%bin/gradshdf
+%%NETCDF%%bin/gradsnc
+bin/gribmap
+bin/gribscan
+bin/gxeps
+bin/gxps
+bin/gxtran
+bin/stnmap
+bin/wgrib

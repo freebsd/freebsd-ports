@@ -1,0 +1,32 @@
+Ignore the enclosed Pod-Parser in favour of textproc/p5-Pod-Parser,
+avoiding pointless conflicts with p5 packages
+
+Install Perl modules to the proper versioned vendorlib directory
+
+--- Makefile.in.orig	2022-01-19 10:24:31 UTC
++++ Makefile.in
+@@ -38,7 +38,7 @@ subst:
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $(top_srcdir)/src/rateup.c -o bin/rateup.o
+ 
+ subst:
+-	$(PERL) -0777 -p -i~ -e "s'^#!\s*/\S*perl'#! $(PERL)'" $(top_srcdir)/bin/cfgmaker $(top_srcdir)/bin/indexmaker $(top_srcdir)/bin/mrtg
++	$(PERL) -0777 -p -i~ -e "s@__PREFIX__@${prefix}@g" $(top_srcdir)/bin/cfgmaker $(top_srcdir)/bin/indexmaker $(top_srcdir)/bin/mrtg
+ 	$(PERL) -0777 -p -i~ -e 's@GRAPHFMT="...";@GRAPHFMT="$(GDFORM_EXT)";@' $(top_srcdir)/bin/mrtg $(top_srcdir)/bin/indexmaker
+ 
+ configure: configure.ac
+@@ -58,12 +58,10 @@ install: all
+ 	for x in $(top_srcdir)/bin/mrtg $(top_srcdir)/bin/cfgmaker $(top_srcdir)/bin/indexmaker $(top_srcdir)/bin/mrtg-traffic-sum; do \
+ 	  $(INSTALL) -m 755 $$x $(DESTDIR)$(bindir); done
+ 	for x in bin/rateup; do \
+-	  $(INSTALL) -m 755 $$x $(DESTDIR)$(bindir); done
+-	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)/mrtg2/Pod
++	  $(INSTALL) -m 755 -s $$x $(DESTDIR)$(bindir); done
++	$(MKINSTALLDIRS) $(DESTDIR)${PERL5_INSTALLVENDORLIB}
+ 	for x in $(top_srcdir)/lib/mrtg2/*.pm; do \
+-	  $(INSTALL) -m 644 $$x $(DESTDIR)$(libdir)/mrtg2; done
+-	for x in $(top_srcdir)/lib/mrtg2/Pod/*.pm; do \
+-	  $(INSTALL) -m 644 $$x $(DESTDIR)$(libdir)/mrtg2/Pod; done
++	  $(INSTALL) -m 644 $$x $(DESTDIR)${PERL5_INSTALLVENDORLIB}; done
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(datadir)/mrtg2/icons
+ 	for x in $(top_srcdir)/images/*.gif $(top_srcdir)/images/*.png; do \
+ 	  $(INSTALL) -m 644 $$x $(DESTDIR)$(datadir)/mrtg2/icons; done

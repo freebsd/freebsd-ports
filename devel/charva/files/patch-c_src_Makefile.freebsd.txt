@@ -1,0 +1,10 @@
+--- c/src/Makefile.freebsd.txt.orig	2016-06-20 12:40:44 UTC
++++ c/src/Makefile.freebsd.txt
+@@ -6,7 +6,6 @@ OS = freebsd
+ SHARED_OBJECT_EXT = so
+ TARGET = libTerminal.${SHARED_OBJECT_EXT}
+ 
+-CC = gcc
+ CFLAGS = -fpic -shared
+ 
+ # The file "jni.h" is in ${JAVA_HOME}/include

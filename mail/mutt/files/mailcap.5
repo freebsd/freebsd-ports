@@ -1,0 +1,143 @@
+.\"/* Copyright (c) 1991 Bell Communications Research, Inc. (Bellcore)
+.\" * 
+.\" * Permission to use, copy, modify, and distribute this material 
+.\" * for any purpose and without fee is hereby granted, provided 
+.\" * that the above copyright notice and this permission notice 
+.\" * appear in all copies, and that the name of Bellcore not be 
+.\" * used in advertising or publicity pertaining to this 
+.\" * material without the specific, prior written permission 
+.\" * of an authorized representative of Bellcore.  BELLCORE 
+.\" * MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY 
+.\" * OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS", 
+.\" * WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+.\" * 
+.\" * Copyright (c) 2016 Udo Schweigert
+.\" */
+.Dd March 16, 2016
+.Dt MAILCAP 5
+.Sh NAME
+.Nm mailcap
+.Nd mail capabilities file
+.Sh DESCRIPTION
+The
+.Nm
+file is read by the 
+.Xr mutt 1
+program to determine how to display non-text content.
+.Pp
+The syntax of a 
+.Nm 
+file is quite simple.  Any line that starts with "#" is a comment.  Blank lines are ignored.  Otherwise, each line defines a single mailcap entry for a single content type.  Long lines may be continued by ending them with a backslash character, \\.
+.Pp
+Each individual mailcap entry consists of a content-type specification, a command to execute, and (possibly) a set of optional "flag" values.  For example, a very simple mailcap entry would look like this:
+.Bd -literal
+    text/plain; cat %s
+.Ed
+.Pp
+The optional flags can be used to specify additional information about the mail-handling command.  For example:
+.Bd -literal
+    text/plain; cat %s; copiousoutput
+.Ed
+.Pp
+can be used to indicate that the output of the 
+.Xr cat 1 
+command may be voluminous, requiring either a scrolling window, a pager, or some other appropriate coping mechanism.
+.Pp
+The 
+.Em type
+field ("text/plain", in the above example) is simply any legal content type name, as defined by RFC 822.
+In practice, this is almost any string.
+It is the string that will be matched against the 
+.Em Content-type 
+header to decide if this is the mailcap entry that matches the current message.
+Additionally, the type field may specify a subtype (e.g. "text/ISO-8859-1") or a wildcard to match all subtypes (e.g. "image/*").
+.Pp
+The 
+.Em command 
+field is any UNIX command ("cat %s" in the above example), and is used to specify the interpreter for the given type of message. 
+Semicolons and backslashes within the command must be quoted with backslashes.
+If the command contains "%s", those two characters will be replaced by the name of a file that contains the body of the message.
+If it contains "%t', those two characters will be replaced by the content-type field, including the subtype, if any.
+(That is, if the content-type was "image/pbm; opt1=something-else", then "%t" would be replaced by "image/pbm".)
+If the command field contains "%{" followed by a parameter name and a closing "}", then all those characters will be replaced by the value of the named parameter, if any, from the Content-type header.
+Thus, in the previous example, "%{opt1}" will be replaced by "something-else".
+Finally, if the command contains "\%", those two characters will be replaced by a single % character.
+(In fact, the backslash can be used to quote any character, including itself.)
+.Pp
+If no "%s" appears in the command field, then instead of placing the message body in a temporary file, mutt will pass the body to the command on the standard input.
+.Pp
+The
+.Em test=xxx 
+field is a command that is executed to determine whether or not the mailcap line actually applies.
+That is, if the content-type field matches the content-type on the message, but a 
+.Em test= 
+field is present, then the test must succeed before the mailcap line is considered to "match" the message being viewed.
+The command may be any UNIX command, using the same syntax and the same %-escapes as for the viewing command, as described above.
+A command is considered to succeed if it exits with a zero exit status, and to fail otherwise.
+.Pp
+The 
+.Em print=xxx
+field is a command that is executed to print the data instead of display it interactively.
+.Pp
+The 
+.Em compose 
+field may be used to specify a program that can be used to compose a new body or body part in the given format.
+Its intended use is to support mail composing agents that support the composition of multiple types of mail using external composing agents.
+As with the view-command, the compose command will be executed after replacing certain escape sequences starting with "%".
+In particular, %s should be replaced by the name of a file to which the composed data is to be written by the specified composing program, thus allowing the calling program (mutt) to tell the called program where to store the composed data.
+If %s does not appear, then the composed data will be assumed to be written by the composing programs to standard output.
+The result of the composing program may be data that is NOT yet suitable for mail transport -- that is, a Content-Transfer-Encoding may still need to be applied to the data.
+.Pp
+The 
+.Em composetyped 
+field is similar to the 
+.Em compose
+field, but is to be used when the composing program needs to specify the Content-type header field to be applied to the composed data.
+The
+.Em compose
+field is simpler, and is preferred for use with existing (non-mail-oriented) programs for composing data in a given format.
+The 
+.Em composetyped
+field is necessary when the Content-type information must include auxilliary parameters, and the composition program must then know enough about mail formats to produce output that includes the mail type information, and to apply any necessary Content-Transfer-Encoding.
+Conceptually, 
+.Em compose
+specifies a program that simply outputs the specified type of data in its raw form, while
+.Em composetyped
+specifies a program that outputs the data as a MIME object, with all necessary Content-* headers already in place.
+.Pp
+The 
+.Em edit 
+field may be used to specify a program that can be used to edit a body or body part in the given format.
+In many cases, it may be identical in content to the
+.Em compose 
+field, and shares the operating-system dependent semantics for program execution.
+.Pp
+The 
+.Em nametemplate
+field gives a file name format, in which %s will be replaced by a short unique string to give the name of the temporary file to be passed to the viewing command.
+This is only expected to be relevant in environments where filename extensions are meaningful, e.g., one coulld specify that a GIF file being passed to a gif viewer should have a name eding in ".gif" by using "nametemplate=%s.gif".
+.Pp
+.Em needsterminal
+If this flag is given, the named interpreter needs to interact with the user on a terminal.
+In some environments this will require the creation of a new terminal emulation window, while in most environments it will not.
+.Pp
+.Em copiousoutput
+This flag should be given whenever the interpreter is capable of producing more than a few lines of output on stdout, and does no interaction with the user.
+If the mailcap entry specifies copiousoutput then the output of the command being executed will be piped through the pagination program as specified in the .muttrc file by the 
+.Ev pager 
+variable.
+.Pp
+.Sh SEE ALSO
+.Xr mutt 1 ,
+.Xr muttrc 5
+.Sh AUTHORS
+This 
+.Xr mailcap 5 
+manpage is based on the manpage provided by
+.Xr metamail 1
+and the corresponding RFC 1524. Both were written by
+Nathaniel S. Borenstein
+at Bell Communications Research, Inc. (Bellcore).
+.Pp
+mutt specific changes have been applied by 
+Udo Schweigert.

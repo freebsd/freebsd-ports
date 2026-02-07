@@ -1,0 +1,9 @@
+bin/wallust
+%%COMPLETIONS%%etc/bash_completion.d/wallust
+%%COMPLETIONS%%share/fish/completions/wallust.fish
+%%MANPAGES%%share/man/man1/wallust-cs.1.gz
+%%MANPAGES%%share/man/man1/wallust-run.1.gz
+%%MANPAGES%%share/man/man1/wallust-theme.1.gz
+%%MANPAGES%%share/man/man1/wallust.1.gz
+%%MANPAGES%%share/man/man5/wallust.5.gz
+%%COMPLETIONS%%share/zsh/site-functions/_wallust

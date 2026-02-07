@@ -1,0 +1,16 @@
+--- c_src/Makefile.orig	2018-09-26 08:28:15 UTC
++++ c_src/Makefile
+@@ -59,6 +59,13 @@ LD_SHARED	:= $(CC) -shared
+ LDFLAGS	        += -lOpenCL
+ endif
+ 
++ifeq ($(OSNAME), FreeBSD)
++LINUX = Yes
++CFLAGS += -O3 -fPIC
++LD_SHARED	:= $(CC) -shared
++LDFLAGS	        += -lOpenCL
++endif
++
+ ifeq ($(OSNAME), Darwin)
+ MAC_OS_X = Yes
+ ifeq ($(WORDSIZE), 32)

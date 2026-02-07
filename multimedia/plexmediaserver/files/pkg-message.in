@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+multimedia/%%PORTNAME%% includes an RC script:
+%%PREFIX%%/etc/rc.d/%%PORTNAME%%
+
+TO START PLEXMEDIASERVER ON BOOT:
+sysrc %%PORTNAME%%_enable=YES
+
+START MANUALLY:
+service %%PORTNAME%% start
+
+Once started, visit the following to configure:
+http://localhost:32400/web
+
+@@@ INTEL GPU OFFLOAD NOTES @@@
+
+This feature was removed in version 1.32.2.7002
+
+@@@ INTEL GPU OFFLOAD NOTES @@@
+EOM
+}
+]

@@ -1,0 +1,17 @@
+--- Makefile.orig	2021-06-02 15:51:05 UTC
++++ Makefile
+@@ -31,12 +31,12 @@ BINDIR=		${PREFIX}/sbin
+ PREFIX?=	/usr/local
+ LOCALBASE?=	/usr/local
+ BINDIR=		${PREFIX}/sbin
+-MANDIR=		${PREFIX}/man/man
++MANDIR=		${PREFIX}/share/man/man
+ LIBDIR=		${PREFIX}/lib
+ INCLUDEDIR=	${PREFIX}/include
+ MKLINT=		no
+ NOGCCERROR=
+-NO_PROFILE=
++MK_PROFILE=	no
+ PTHREAD_LIBS?=	-lpthread
+ 
+ CFLAGS+=	-I${PREFIX}/include -Wall

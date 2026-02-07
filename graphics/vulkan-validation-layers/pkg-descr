@@ -1,0 +1,7 @@
+Vulkan is an Explicit API, enabling direct control over how GPUs
+actually work. By design, minimal error checking is done inside a
+Vulkan driver. Applications have full control and responsibility for
+correct operation. Any errors in how Vulkan is used can result in a
+crash. This project provides Vulkan validation layers that can be
+enabled to assist development by enabling developers to verify their
+applications correct use of the Vulkan API.

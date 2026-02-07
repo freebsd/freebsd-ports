@@ -1,0 +1,15 @@
+--- makefile.orig	2020-12-21 10:56:19 UTC
++++ makefile
+@@ -4,10 +4,10 @@
+ # Installation directories:
+ 
+ # Destination directory for installation (intended for packagers)
+-DESTDIR =
++DESTDIR ?=
+ 
+ # Root directory for final installation
+-PREFIX = /usr
++PREFIX ?= /usr
+ 
+ # Location of the highlight data files:
+ data_dir = ${PREFIX}/share/highlight/

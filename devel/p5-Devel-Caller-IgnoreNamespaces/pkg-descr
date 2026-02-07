@@ -1,0 +1,2 @@
+Make available a magic caller() which can ignore namespaces that you tell it
+about.

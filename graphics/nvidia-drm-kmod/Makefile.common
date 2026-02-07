@@ -1,0 +1,84 @@
+# Common rules for nvidia-drm-*-kmod ports
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	NVIDIA DRM Kernel Module
+WWW=		https://www.nvidia.com/object/unix.html
+MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${NVIDIA_DISTVERSION}:nvidia \
+				https://codeload.github.com/freebsd/drm-kmod/tar.gz/${DRM_KMOD_GH_TAGNAME}?dummy=/:drm
+DISTVERSION?=   ${NVIDIA_DISTVERSION}
+PORTREVISION?=	0
+DISTFILES=		NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}${EXTRACT_SUFX}:nvidia \
+				freebsd-drm-kmod-${DRM_KMOD_GH_TAGNAME}_GH0.tar.gz:drm
+# Choose proper distinfo file using PKGNAMESUFFIX for slave ports.
+# Kept for switching to centralized distinfo with suffixes.
+.ifdef PKGNAMESUFFIX
+DISTINFO_FILE=	${.CURDIR}/distinfo
+.endif
+
+ONLY_FOR_ARCHS=	amd64
+USES=		kmod uidfix tar:xz
+
+SUB_FILES=	20-nvidia-drm-outputclass.conf
+
+RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-kmod${PKGNAMESUFFIX}
+
+.include "${.CURDIR}/../../x11/nvidia-driver/Makefile.version"
+.include "${.CURDIR}/../../x11/nvidia-driver/Makefile.common"
+
+LICENSE_FILE=	${WRKSRC}/../../doc/license.txt
+
+PLIST_FILES=	${KMODDIR}/nvidia-drm.ko \
+		share/X11/xorg.conf.d/20-nvidia-drm-outputclass.conf
+
+MAKE_ENV+=	DEBUG_FLAGS=${DEBUG_FLAGS} \
+			DRMKMODDIR=${WRKDIR}/drm-kmod-${DRM_KMOD_GH_TAGNAME}/
+WRKSRC=		${WRKDIR}/NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}/
+WRKSRC_SUBDIR=	src/nvidia-drm/
+
+.if ${NVVERSION} < 565.00000
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-conftest.h
+.endif #565.00
+
+.if ${NVVERSION} < 555.04202
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-freebsd-lkpi.c
+.endif
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/
+	${INSTALL_DATA} ${WRKDIR}/20-nvidia-drm-outputclass.conf ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/
+
+post-patch:
+	# Workaround for LLVM/Clang19
+	${REINPLACE_CMD} -e '/DRMKMODDIR.*\/linuxkpi\/dummy\/include/d' \
+		${WRKSRC}/Makefile
+
+	# Workaround for the issue that X11 cannot acquire modesetting
+	# permission by disabling hw.nvidiadrm.fbdev tunable which is
+	# enabled on 570 series and later of the driver.
+	# This is due to the issue lacking proper support for fbdev
+	# (would be simpledrm) in graphics/drm-*-kmod and/or LinuxKPI.
+	# Would be reverted once the issues are sorted and fixed.
+.if ${NVVERSION} >= 570.00000
+	${REINPLACE_CMD} -e 's:\&nv_drm_fbdev_module_param\,  1\,:\&nv_drm_fbdev_module_param\,  0\,:' \
+		${WRKSRC}/nvidia-drm-freebsd-lkpi.c
+	${REINPLACE_CMD} -e 's:bool nv_drm_fbdev_module_param = true;:bool nv_drm_fbdev_module_param = false;:' \
+		${WRKSRC}/nvidia-drm-os-interface.c
+.endif
+	# Workaround for build failure on 575.51.02.
+	# --- nvidia-drm-drv.o ---
+	# nvidia-drm-drv.c:386:80: error: cast from 'const void *' to 'struct nv_drm_mst_display_info *' drops const qualifier [-Werror,-Wcast-qual]
+	#   386 |     struct nv_drm_mst_display_info *l_info = (struct nv_drm_mst_display_info *)l;
+	#       |                                                                                ^
+	# nvidia-drm-drv.c:387:80: error: cast from 'const void *' to 'struct nv_drm_mst_display_info *' drops const qualifier [-Werror,-Wcast-qual]
+	#   387 |     struct nv_drm_mst_display_info *r_info = (struct nv_drm_mst_display_info *)r;
+	#       |                                                                                ^
+.if ${NVVERSION} >= 575.00000
+	${REINPLACE_CMD} -e 's:struct nv_drm_mst_display_info \*l_info = (struct nv_drm_mst_display_info:const struct nv_drm_mst_display_info \*l_info = (const struct nv_drm_mst_display_info:' \
+		${WRKSRC}/nvidia-drm-drv.c
+	${REINPLACE_CMD} -e 's:struct nv_drm_mst_display_info \*r_info = (struct nv_drm_mst_display_info:const struct nv_drm_mst_display_info \*r_info = (const struct nv_drm_mst_display_info:' \
+		${WRKSRC}/nvidia-drm-drv.c
+.endif
+	# We should support -CURRENT: kill the check (first #if __FreeBSD_version)
+	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
+			${WRKSRC}/../nvidia/nv-freebsd.h) ; ${REINPLACE_CMD} \
+			-e "$$linenum,+2d" ${WRKSRC}/../nvidia/nv-freebsd.h

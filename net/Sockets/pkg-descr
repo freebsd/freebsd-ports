@@ -1,0 +1,9 @@
+[ excerpt from developer's web site ]
+
+This is C++ class library wrapping the Berkeley
+sockets C API, and therefore works on most Unixes and also Win32.
+Features include, but are not limited to, SSL support, IPv6 support,
+TCP and UDP sockets, encrypted TCP, HTTP protocol, highly customizable
+error handling.
+The source code is released under the terms of the GNU GPL, but is
+also available under an alternative license.

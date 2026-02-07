@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if ! [ -f $HOME/.editssrc ]; then
+	/usr/bin/install -m 644 %%DATADIR%%/editssrc $HOME/.editssrc
+fi
+if ! [ -f $HOME/.xpilot-shipshapes ]; then
+	/usr/bin/install -m 644 %%DATADIR%%/ships $HOME/.xpilot-shipshapes
+fi
+
+exec %%PREFIX%%/libexec/editss "$@"

@@ -1,0 +1,9 @@
+TIMESTAMP = 1765200233
+SHA256 (rocky/g/gnutls-3.8.3-9.el9.0.1.aarch64.rpm) = fb5553f6032e09bcdfc51cf26f74a3602ae56b5b43fa06d1b88eb34dab012f61
+SIZE (rocky/g/gnutls-3.8.3-9.el9.0.1.aarch64.rpm) = 1044679
+SHA256 (rocky/g/gnutls-3.8.3-9.el9.0.1.i686.rpm) = a8a79047d3d3178f93a7d97668dd056b5d3f184702ea7af0e6dd9b47a9a4fa56
+SIZE (rocky/g/gnutls-3.8.3-9.el9.0.1.i686.rpm) = 1109252
+SHA256 (rocky/g/gnutls-3.8.3-9.el9.0.1.x86_64.rpm) = d8dcd4f5327fe3172a9c1eec63eb5aaab4f238a78974403d000f0eaaf3da29dd
+SIZE (rocky/g/gnutls-3.8.3-9.el9.0.1.x86_64.rpm) = 1121895
+SHA256 (rocky/g/gnutls-3.8.3-9.el9.0.1.src.rpm) = 8f31afac146e4dd5457047d894de1fa8bddd54ef9b83867b3f2ba30886dbab9e
+SIZE (rocky/g/gnutls-3.8.3-9.el9.0.1.src.rpm) = 8599595

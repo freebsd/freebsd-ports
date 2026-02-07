@@ -1,0 +1,11 @@
+--- Makefile.orig	2024-01-26 13:37:36 UTC
++++ Makefile
+@@ -34,7 +34,7 @@ ifeq (${FIPS_MODE}, 1)
+ endif
+ 
+ ifneq (${CGO_ENABLED}, 0)
+-	GO_TAGS += gssapi
++#	GO_TAGS += gssapi
+ endif
+ 
+ ifeq (${OS}, darwin) # Mac OS

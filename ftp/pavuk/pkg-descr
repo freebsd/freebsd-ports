@@ -1,0 +1,3 @@
+Pavuk is UNIX program used to mirror contents of WWW documents or files. It
+transfers documents from HTTP, FTP, Gopher and optionaly from HTTPS (HTTP
+over SSL) servers. Pavuk has an optional GUI based on GTK2 widget set.

@@ -1,0 +1,11 @@
+--- dep/discord-rpc/CMakeLists.txt.orig	2024-06-14 05:59:32 UTC
++++ dep/discord-rpc/CMakeLists.txt
+@@ -25,7 +25,7 @@ elseif(APPLE)
+     src/connection_unix.cpp
+     src/discord_register_osx.m
+   )
+-elseif(LINUX OR FREEBSD)
++elseif(CMAKE_SYSTEM_NAME MATCHES "(Linux|FreeBSD)")
+   target_sources(discord-rpc PRIVATE
+     src/connection_unix.cpp
+     src/discord_register_linux.cpp

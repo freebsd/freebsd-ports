@@ -1,0 +1,28 @@
+--- data/projects/port@Makefile.orig	2003-11-03 21:34:51.000000000 +0900
++++ data/projects/port@Makefile	2012-09-23 17:12:06.000000000 +0900
+@@ -1,15 +1,11 @@
+ %# -*-mode: makefile-*-
+ %define c "# "
+-# New ports collection makefile for:	<:PROJECT>
+-# Date created:		<:DATE>
+ %if !defined("BSDMAIL")
+-# Whom:			<:AUTHOR> <<:EMAIL>>
++# Created by: <:AUTHOR> <<:EMAIL>>
+ %else
+-# Whom:			<:AUTHOR> <<:BSDMAIL>>
++# Created by: <:AUTHOR> <<:BSDMAIL>>
+ %endif # !defined("BSDMAIL")
+-#
+ # $FreeBSD$
+-#
+ 
+ PORTNAME=	<:PROJECT>
+ PORTVERSION=
+@@ -31,6 +27,7 @@
+ %else
+ MAINTAINER=	<:BSDMAIL>
+ %endif # !defined("BSDMAIL")
++COMMENT=
+ 
+ .include <bsd.port.pre.mk>
+ %if defined("KDE_DIRS")

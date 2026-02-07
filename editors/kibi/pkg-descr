@@ -1,0 +1,3 @@
+Configurable text editor with UTF-8 support, incremental search, syntax
+highlighting, line numbers and more, written in less than 1024 lines of Rust
+with minimal dependencies.

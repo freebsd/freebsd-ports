@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: cups_browsed
+# REQUIRE: cupsd %%AVAHI_DAEMON%%
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# cups_browsed_enable (bool):	Set to NO by default.
+#				Set it to YES to enable cups_browsed.
+#
+
+. /etc/rc.subr
+
+name=cups_browsed
+rcvar=cups_browsed_enable
+
+load_rc_config ${name}
+
+: ${cups_browsed_enable:=NO}
+: ${cups_browsed_flags:=}
+
+pidfile=/var/run/cups-browsed.pid
+command="%%PREFIX%%/sbin/cups-browsed"
+
+start_cmd="${name}_start"
+
+cups_browsed_start()
+{
+	echo -n "Starting ${name}."
+	/usr/sbin/daemon -p ${pidfile} ${command} ${cups_browsed_flags}
+}
+
+run_rc_command "$1"

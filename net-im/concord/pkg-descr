@@ -1,0 +1,3 @@
+Concord is an asynchronous C99 Discord API library with minimal external
+dependencies, and a low-level translation of the Discord official documentation
+to C code.

@@ -1,0 +1,11 @@
+--- config/NetAudio.tmpl.orig	2013-04-27 00:41:00 UTC
++++ config/NetAudio.tmpl
+@@ -87,7 +87,7 @@ EXTRA_LOAD_FLAGS=/link /nodefaultlib:lib
+ 
+ #if HasSharedLibraries
+ #define NormalLibAudio          NormalLibX
+-#define SharedLibAudio          SharedLibX
++#define SharedLibAudio          YES
+ #define DebugLibAudio           DebugLibX
+ #define ProfileLibAudio         ProfileLibX
+ #else

@@ -1,0 +1,11 @@
+--- configure.orig	2023-04-16 22:18:05 UTC
++++ configure
+@@ -14456,7 +14456,7 @@ if test "x$guile_site" = "xyes"; then
+ 
+ 
+ if test "x$guile_site" = "xyes"; then
+-   SITEDIR="$GUILE_GLOBAL_SITE";
++   SITEDIR="$GUILE_SITE";
+    SITECCACHEDIR="$GUILE_SITE_CCACHE";
+ else
+    SITEDIR="$datadir/g-golf";

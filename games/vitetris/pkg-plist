@@ -1,0 +1,4 @@
+@(,games,2755) bin/vitetris
+share/applications/vitetris.desktop
+share/pixmaps/vitetris.xpm
+@sample(,games,664) /var/games/vitetris-hiscores.sample

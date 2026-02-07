@@ -1,0 +1,37 @@
+PORTNAME=	trivial-features
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0-4
+DISTVERSIONSUFFIX=	-gd249a62
+PORTEPOCH=	1
+CATEGORIES=	devel lisp
+PKGNAMEPREFIX=	cl-
+
+MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Ensures consistent *FEATURES* in Common Lisp
+WWW=		https://www.cliki.net/trivial-features
+
+LICENSE=	MIT
+
+USES=		cl
+USE_GITHUB=	yes
+
+NO_BUILD=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY} \
+		${STAGEDIR}${ASDF_PATHNAME}/src \
+		${STAGEDIR}${ASDF_PATHNAME}/tests
+	${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${STAGEDIR}${ASDF_PATHNAME}/src
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}*.asd ${STAGEDIR}${ASDF_PATHNAME}
+	${INSTALL_DATA} ${WRKSRC}/tests/* ${STAGEDIR}${ASDF_PATHNAME}/tests
+	${RLN} ${STAGEDIR}${ASDF_PATHNAME}/${PORTNAME}.asd \
+		${STAGEDIR}${ASDF_REGISTRY}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${WRKSRC}/SPEC.md \
+		${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

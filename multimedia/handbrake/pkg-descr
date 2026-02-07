@@ -1,0 +1,21 @@
+HandBrake is an open-source, GPL-licensed, multiplatform, multithreaded video
+transcoder with rich selection of features.  Both GUI and command-line only
+versions are available.
+
+Supported sources:
+
+  * Most common multimedia files that libavformat and libavcodec support
+  * Any DVD or Bluray-like source which is NOT copy-protected (removal of
+    copy protection is not supported)
+
+Outputs:
+
+  * File (container) format: MP4 (M4V) and MKV
+  * Video: H.264 (x264), H.265 (x265), MPEG-2/MPEG-4 (ffmpeg),
+           VP8, VP9 (libvpx) or Theora (libtheora)
+  * Audio: AAC, CoreAudio AAC/HE-AAC (OS X only), MP3, FLAC, AC3, or Vorbis;
+    AC-3, DTS, DTS-HD, AAC, and MP3 pass-through
+
+HandBrake also includes support for chapters, subtitles, advanced video
+filters, and more.  It is also useful for making videos compatible with
+portable video devices such as the Apple iPod/iPhone.

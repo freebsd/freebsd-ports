@@ -1,0 +1,73 @@
+--- source/gaa_parser.y.orig	2004-04-15 10:52:42 UTC
++++ source/gaa_parser.y
+@@ -22,7 +22,6 @@
+ 
+ /* needed in newer bisons for yytoknum.
+  */
+-#define YYPRINT
+ #define YYERROR_VERBOSE
+ 
+ #include <stdio.h>
+@@ -373,8 +372,6 @@ void copy_str(FILE* fd, int offset, FILE* out, const c
+ %token AS "as"
+ %token OPTIONAL "optional"
+ 
+-%token_table
+-
+ %%
+ 
+ input:
+@@ -636,6 +633,32 @@ line:
+ 
+ %%
+ 
++struct token_table_struct {
++    const char *str;
++    int token;
++};
++
++static struct token_table_struct token_table[] = {
++    {"IDENTIFIER", IDENTIFIER},
++    {"ACTION", ACTION},
++    {"TERMINATE", TERMINATE},
++    {"CSOURCE", CSOURCE},
++    {"CPART", CPART},
++    {"TYPE", TYPE},
++    {"STRING", STRING},
++    {"UNDERSCORE_STRINGS", UNDERSCORE_STRINGS},
++    {"init", INIT},
++    {"defitem", DEFITEM},
++    {"option", OPTION},
++    {"rest", REST},
++    {"helpnode", HELPNODE},
++    {"obligat", OBLIGATORY},
++    {"incomp", INCOMPATIBLE},
++    {"data", DATA},
++    {"as", AS},
++    {"optional", OPTIONAL},
++};
++
+ extern int loc_index;
+ 
+ struct _idStruct;
+@@ -720,17 +743,9 @@ int length(char *a)
+ 
+ int getTokenNum( char* str) {
+ int i;
+-     for (i = 0; i < YYNTOKENS; i++)
+-     {
+-     	   if (yytname[i] != 0
+-		&& yytname[i][0] == '"'
+-    	        && strncasecmp (yytname[i] + 1, str, strlen (str)) == 0
+- 	        && yytname[i][strlen (str) + 1] == '"'
+-                && yytname[i][strlen (str) + 2] == 0)
+-	   {
+-	       return yytoknum[i];
+-	   }
+-     }
++     for (i = 0; i < (sizeof(token_table)/sizeof(token_table[0])); i++)
++        if (!strcmp (token_table[i].str, str))
++            return token_table[i].token;
+      return -1;
+ }
+ 

@@ -1,0 +1,87 @@
+--- a/etc/Makefile.am
++++ b/etc/Makefile.am
+@@ -3,19 +3,20 @@ nobase_dist_noinst_DATA = \
+     init.d/tntnet.in
+ 
+ nobase_sysconf_DATA = \
+-    tntnet/tntnet.xml \
+-    init.d/tntnet
++    tntnet/tntnet.xml.sample \
++    tntnet/tntnet
+ 
+-tntnet/tntnet.xml: tntnet/tntnet.xml.in
++tntnet/tntnet.xml.sample: tntnet/tntnet.xml.in
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml
++		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml.sample
+ 
+-init.d/tntnet: init.d/tntnet.in
++tntnet/tntnet: init.d/tntnet.in
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >init.d/tntnet
++	    -e 's/^function //;' \
++		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
+--- a/etc/Makefile.in
++++ b/etc/Makefile.in
+@@ -246,8 +246,8 @@ nobase_dist_noinst_DATA = \
+     init.d/tntnet.in
+ 
+ nobase_sysconf_DATA = \
+-    tntnet/tntnet.xml \
+-    init.d/tntnet
++    tntnet/tntnet.xml.sample \
++    tntnet/tntnet
+ 
+ all: all-am
+ 
+@@ -470,19 +470,20 @@ uninstall-am: uninstall-nobase_sysconfDA
+ 	uninstall-nobase_sysconfDATA
+ 
+ 
+-tntnet/tntnet.xml: tntnet/tntnet.xml.in
++tntnet/tntnet.xml.sample: tntnet/tntnet.xml.in
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml
++		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml.sample
+ 
+-init.d/tntnet: init.d/tntnet.in
++tntnet/tntnet: init.d/tntnet.in
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >init.d/tntnet
++	    -e 's/^function //;' \
++		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- a/etc/tntnet/tntnet.xml.in
++++ b/etc/tntnet/tntnet.xml.in
+@@ -47,14 +47,14 @@
+ 
+   <listeners>
+     <listener>
+-      <ip></ip>
++      <ip>127.0.0.1</ip>
+       <port>80</port>
+     </listener>
+   </listeners>
+ 
+   <daemon>1</daemon>
+-  <user>www-data</user>
+-  <group>www-data</group>
++  <user>www</user>
++  <group>www</group>
+   <pidFile>@localstatedir@/run/tntnet.pid</pidFile>
+   <documentRoot>/var/www</documentRoot>
+   <compPath>

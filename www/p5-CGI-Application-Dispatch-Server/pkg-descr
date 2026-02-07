@@ -1,0 +1,2 @@
+CGI::Application::Dispatch::Server
+A simple HTTP server for developing apps that use CGI::Application::Dispatch

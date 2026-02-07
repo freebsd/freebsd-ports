@@ -1,0 +1,33 @@
+--- Makefile.orig	2018-05-05 20:58:21 UTC
++++ Makefile
+@@ -6,13 +6,13 @@ JPPFLAGS+=-C -P
+ CC?=gcc
+ LD?=gcc
+ JPPFLAGS+=-C -P
+-CFLAGS+=-Wall -Os -pedantic -Werror
++CFLAGS+=-Wall -pedantic -Werror
+ CSTD?=-std=c99
+ CSHAREFLAG+=-fpic -fno-stack-protector
+ GCJJNIFLAG=-fjni
+-JVERCFLAGS+=-source 1.5
++JVERCFLAGS+=-source 8 -target 8
+ JCFLAGS+=
+-INCLUDES+=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
++INCLUDES+=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/freebsd
+ JAVADOCFLAGS?=-quiet -author -link http://java.sun.com/j2se/1.4.2/docs/api/
+ 
+ LDVER?=$(shell ld -v | cut -d' ' -f1)
+@@ -91,11 +91,11 @@ debug-enable-$(DEBUGVER).jar: cx/ath/matthew/debug/Deb
+ 	tar zcf $@ libmatthew-java-$(MATTVER)
+ 
+ debug-enable-$(DEBUGVER).jar: cx/ath/matthew/debug/Debug.jpp
+-	make .enabledebug
++	$(MAKE) .enabledebug
+ 	echo "Class-Path: $(JARDIR)/hexdump.jar" > Manifest
+ 	(cd classes;jar cfm ../$@ ../Manifest cx/ath/matthew/debug/*.class)
+ debug-disable-$(DEBUGVER).jar: cx/ath/matthew/debug/Debug.jpp
+-	make .disabledebug
++	$(MAKE) .disabledebug
+ 	echo "Class-Path: $(JARDIR)/hexdump.jar" > Manifest
+ 	(cd classes;jar cfm ../$@ ../Manifest cx/ath/matthew/debug/*.class)
+ .enabledebug: cx/ath/matthew/debug/Debug.jpp 

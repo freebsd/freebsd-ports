@@ -1,0 +1,7 @@
+This package adds an Org mode export backend for GitHub Flavored
+Markdown.
+
+Exporting to Github Flavored Markdown is available through Org mode's
+export dispatcher once ox-gfm is loaded. Alternatively, exporting can
+be triggered by calling the (autoloaded) function M-x
+org-gfm-export-to-markdown.

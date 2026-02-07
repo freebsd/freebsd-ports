@@ -1,0 +1,9 @@
+usr/lib64/libssh.so.4
+usr/lib64/libssh.so.4.9.4
+usr/lib64/libssh_threads.so.4
+usr/lib64/libssh_threads.so.4.9.4
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BSD
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libssh/COPYING

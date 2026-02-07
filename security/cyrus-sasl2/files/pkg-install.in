@@ -1,0 +1,108 @@
+#!/bin/sh
+
+# Created by: stb@FreeBSD.org for the cyrus imap server
+# Added to the cyrus-sasl port by hetzels@westbend.net
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+SASLDB_DIR=%%SASLDB_DIR%%
+SASLDB_NAME=%%SASLDB_NAME%%
+SASLDB_NAME=${SASLDB_NAME:+%%SASLDB_DIR%%/%%SASLDB_NAME%%}
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
+
+#
+# create 'cyrus' user and group before installing
+#
+create_user() {
+	USER=${CYRUS_USER}
+	GROUP=${CYRUS_GROUP}
+	PW=/usr/sbin/pw
+
+	if [ -x /usr/sbin/nologin ]; then
+		shell=/usr/sbin/nologin
+	elif [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
+	uhome="/nonexistent"
+
+	if ! ${PW} show group ${GROUP} -q >/dev/null; then
+		gid=60
+		while ${PW} show group -g ${gid} -q >/dev/null; do
+			gid=`expr ${gid} + 1`
+		done
+		if ! ${PW} add group ${GROUP} -g ${gid}; then
+			e=$?
+			echo "*** Failed to add group \`${GROUP}'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added group \`${GROUP}' (id ${gid})"
+	else
+		gid=`${PW} show group ${GROUP} 2>/dev/null | cut -d: -f3`
+	fi
+
+	if ! ${PW} show user ${USER} -q >/dev/null; then
+		uid=60
+		while ${PW} show user -u ${uid} -q >/dev/null; do
+			uid=`expr ${uid} + 1`
+		done
+		if ! ${PW} add user ${USER} -u ${uid} -g ${gid} -d "${uhome}" \
+				-c "the cyrus mail server" -s "${shell}" -w no \
+				; then
+			e=$?
+			echo "*** Failed to add user \`${USER}'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added user \`${USER}' (id ${uid})"
+	else
+		if ! ${PW} mod user ${USER} -g ${gid}; then
+			e=$?
+			echo "*** Failed to update user \`${USER}'."
+			exit ${e}
+		fi
+		echo "*** Updated user \`${USER}'."
+	fi
+}
+
+create_sasldb() {
+	if [ ! -f ${SASLDB_NAME} ]; then
+		if [ ${SASLDB_DIR} = '/var/db/sasl2' -a ! -d ${SASLDB_DIR} ]; then
+			mkdir ${SASLDB_DIR}
+			chown ${CYRUS_USER}:mail ${SASLDB_DIR}
+			chmod 750 ${SASLDB_DIR}
+		fi
+		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd2 -p -c ${CYRUS_USER}
+		if [ `${PKG_PREFIX}/sbin/sasldblistusers2 | wc -l` -eq 0 ] ; then
+                        echo "WARNING: Failed to create ${SASLDB_NAME}"
+                else
+			${PKG_PREFIX}/sbin/saslpasswd2 -d ${CYRUS_USER}
+			chown ${CYRUS_USER}:mail ${SASLDB_NAME}
+			chmod 640 ${SASLDB_NAME}
+			if [ -f ${SASLDB_NAME}-lock ]; then
+				chown ${CYRUS_USER}:mail ${SASLDB_NAME}-lock
+				chmod 660 ${SASLDB_NAME}-lock
+			fi
+		fi
+	fi
+}
+
+case $2 in
+	PRE-INSTALL)
+		create_user
+		;;
+	POST-INSTALL)
+		if [ "${PKG_BATCH}" = "NO" ]; then
+			if [ -n "${SASLDB_NAME}" ]; then
+				create_sasldb
+			fi
+		elif [ -n "${SASLDB_NAME}" -a ! -f ${SASLDB_NAME} ]; then
+			echo "*** We do not create ${SASLDB_NAME} automatically in"
+			echo "*** BATCH mode.  Please create it by yourself.  It should be"
+			echo "*** owner: ${CYRUS_USER}, group: mail, mode: 0640."
+		fi
+		;;
+esac

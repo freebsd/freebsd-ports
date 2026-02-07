@@ -1,0 +1,10 @@
+%%SITE_PERL%%/XML/RSS/Parser.pm
+%%SITE_PERL%%/XML/RSS/Parser/Characters.pm
+%%SITE_PERL%%/XML/RSS/Parser/Element.pm
+%%SITE_PERL%%/XML/RSS/Parser/Feed.pm
+%%SITE_PERL%%/XML/RSS/Parser/Util.pm
+%%PERL5_MAN3%%/XML::RSS::Parser.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Characters.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Element.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Feed.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Util.3.gz

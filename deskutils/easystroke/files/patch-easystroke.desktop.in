@@ -1,0 +1,11 @@
+--- easystroke.desktop.in.orig	2013-03-27 15:52:38 UTC
++++ easystroke.desktop.in
+@@ -6,7 +6,7 @@ Categories=GTK;Utility;Accessibility;
+ Exec=easystroke
+ Icon=easystroke
+ Categories=GTK;Utility;Accessibility;
+-Actions=About;Enable;Disable;Quit
++Actions=About;Enable;Disable;Quit;
+ _Comment=Control your desktop using mouse gestures
+ 
+ [Desktop Action About]

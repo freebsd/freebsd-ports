@@ -1,0 +1,149 @@
+%%DATADIR%%/bin/cassandra
+%%DATADIR%%/bin/cassandra.in.sh
+%%DATADIR%%/bin/cqlsh
+%%DATADIR%%/bin/cqlsh.py
+%%DATADIR%%/bin/debug-cql
+%%DATADIR%%/bin/nodetool
+%%DATADIR%%/bin/sstableloader
+%%DATADIR%%/bin/sstablescrub
+%%DATADIR%%/bin/sstableupgrade
+%%DATADIR%%/bin/sstableutil
+%%DATADIR%%/bin/sstableverify
+%%DATADIR%%/bin/stop-server
+%%DATADIR%%/CHANGES.txt
+%%DATADIR%%/lib/airline-0.8.jar
+%%DATADIR%%/lib/antlr-runtime-3.5.2.jar
+%%DATADIR%%/lib/apache-cassandra-%%DISTVERSION%%.jar
+%%DATADIR%%/lib/asm-7.1.jar
+%%DATADIR%%/lib/caffeine-2.5.6.jar
+%%DATADIR%%/lib/cassandra-driver-core-3.11.0-shaded.jar
+%%DATADIR%%/lib/cassandra-driver-internal-only-3.25.0.zip
+%%DATADIR%%/lib/chronicle-bytes-2.20.111.jar
+%%DATADIR%%/lib/chronicle-core-2.20.126.jar
+%%DATADIR%%/lib/chronicle-queue-5.20.123.jar
+%%DATADIR%%/lib/chronicle-threads-2.20.111.jar
+%%DATADIR%%/lib/chronicle-wire-2.20.117.jar
+%%DATADIR%%/lib/commons-cli-1.1.jar
+%%DATADIR%%/lib/commons-codec-1.9.jar
+%%DATADIR%%/lib/commons-lang3-3.11.jar
+%%DATADIR%%/lib/commons-math3-3.2.jar
+%%DATADIR%%/lib/concurrent-trees-2.4.0.jar
+%%DATADIR%%/lib/ecj-4.6.1.jar
+%%DATADIR%%/lib/futures-2.1.6-py2.py3-none-any.zip
+%%DATADIR%%/lib/geomet-0.1.0.zip
+%%DATADIR%%/lib/guava-27.0-jre.jar
+%%DATADIR%%/lib/HdrHistogram-2.1.9.jar
+%%DATADIR%%/lib/high-scale-lib-1.0.6.jar
+%%DATADIR%%/lib/hppc-0.8.1.jar
+%%DATADIR%%/lib/j2objc-annotations-1.3.jar
+%%DATADIR%%/lib/jackson-annotations-2.13.2.jar
+%%DATADIR%%/lib/jackson-core-2.13.2.jar
+%%DATADIR%%/lib/jackson-databind-2.13.2.2.jar
+%%DATADIR%%/lib/jamm-0.3.2.jar
+%%DATADIR%%/lib/java-cup-runtime-11b-20160615.jar
+%%DATADIR%%/lib/javax.inject-1.jar
+%%DATADIR%%/lib/jbcrypt-0.4.jar
+%%DATADIR%%/lib/jcl-over-slf4j-1.7.25.jar
+%%DATADIR%%/lib/jcommander-1.30.jar
+%%DATADIR%%/lib/jctools-core-3.1.0.jar
+%%DATADIR%%/lib/jflex-1.8.2.jar
+%%DATADIR%%/lib/jna-5.6.0.jar
+%%DATADIR%%/lib/json-simple-1.1.jar
+%%DATADIR%%/lib/jvm-attach-api-1.5.jar
+%%DATADIR%%/lib/log4j-over-slf4j-1.7.25.jar
+%%DATADIR%%/lib/logback-classic-1.2.9.jar
+%%DATADIR%%/lib/logback-core-1.2.9.jar
+%%DATADIR%%/lib/lz4-java-1.8.0.jar
+%%DATADIR%%/lib/metrics-core-3.1.5.jar
+%%DATADIR%%/lib/metrics-jvm-3.1.5.jar
+%%DATADIR%%/lib/metrics-logback-3.1.5.jar
+%%DATADIR%%/lib/mxdump-0.14.jar
+%%DATADIR%%/lib/netty.jar
+%%DATADIR%%/lib/netty-tcnative-boringssl-static-2.0.36.Final.jar
+%%DATADIR%%/lib/psjava-0.1.19.jar
+%%DATADIR%%/lib/reporter-config-base-3.0.3.jar
+%%DATADIR%%/lib/reporter-config3-3.0.3.jar
+%%DATADIR%%/lib/six-1.12.0-py2.py3-none-any.zip
+%%DATADIR%%/lib/sjk-cli-0.14.jar
+%%DATADIR%%/lib/sjk-core-0.14.jar
+%%DATADIR%%/lib/sjk-json-0.14.jar
+%%DATADIR%%/lib/sjk-stacktrace-0.14.jar
+%%DATADIR%%/lib/slf4j-api-1.7.25.jar
+%%DATADIR%%/lib/snakeyaml-1.26.jar
+%%DATADIR%%/lib/snappy-java.jar
+%%DATADIR%%/lib/snowball-stemmer-1.3.0.581.1.jar
+%%DATADIR%%/lib/ST4-4.0.8.jar
+%%DATADIR%%/lib/stream-2.5.2.jar
+%%AMD64ONLY%%%%DATADIR%%/lib/zstd-jni-%%ZSTDJNI_VERSION%%-freebsd_amd64.jar
+%%I386ONLY%%%%DATADIR%%/lib/zstd-jni-%%ZSTDJNI_VERSION%%-freebsd_i386.jar
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/NEWS.txt
+%%DATADIR%%/NOTICE.txt
+%%DATADIR%%/pylib/cqlshlib/__init__.py
+%%DATADIR%%/pylib/cqlshlib/copyutil.py
+%%DATADIR%%/pylib/cqlshlib/cql3handling.py
+%%DATADIR%%/pylib/cqlshlib/cqlhandling.py
+%%DATADIR%%/pylib/cqlshlib/cqlshhandling.py
+%%DATADIR%%/pylib/cqlshlib/displaying.py
+%%DATADIR%%/pylib/cqlshlib/formatting.py
+%%DATADIR%%/pylib/cqlshlib/helptopics.py
+%%DATADIR%%/pylib/cqlshlib/pylexotron.py
+%%DATADIR%%/pylib/cqlshlib/saferscanner.py
+%%DATADIR%%/pylib/cqlshlib/setup.cfg
+%%DATADIR%%/pylib/cqlshlib/sslhandling.py
+%%DATADIR%%/pylib/cqlshlib/tracing.py
+%%DATADIR%%/pylib/cqlshlib/util.py
+%%DATADIR%%/pylib/cqlshlib/wcwidth.py
+%%DATADIR%%/pylib/README.asc
+%%DATADIR%%/pylib/pytest.ini
+%%DATADIR%%/pylib/requirements.txt
+%%DATADIR%%/pylib/setup.py
+%%DATADIR%%/tools/bin/auditlogviewer
+%%DATADIR%%/tools/bin/cassandra-stress
+%%DATADIR%%/tools/bin/cassandra-stressd
+%%DATADIR%%/tools/bin/cassandra.in.sh
+%%DATADIR%%/tools/bin/compaction-stress
+%%DATADIR%%/tools/bin/fqltool
+%%DATADIR%%/tools/bin/generatetokens
+%%DATADIR%%/tools/bin/jmxtool
+%%DATADIR%%/tools/bin/sstabledump
+%%DATADIR%%/tools/bin/sstableexpiredblockers
+%%DATADIR%%/tools/bin/sstablelevelreset
+%%DATADIR%%/tools/bin/sstablemetadata
+%%DATADIR%%/tools/bin/sstableofflinerelevel
+%%DATADIR%%/tools/bin/sstablerepairedset
+%%DATADIR%%/tools/bin/sstablesplit
+%%DATADIR%%/tools/cqlstress-counter-example.yaml
+%%DATADIR%%/tools/cqlstress-example.yaml
+%%DATADIR%%/tools/cqlstress-insanity-example.yaml
+%%DATADIR%%/tools/cqlstress-lwt-example.yaml
+%%DATADIR%%/tools/lib/fqltool.jar
+%%DATADIR%%/tools/lib/stress.jar
+%%ETCDIR%%/metrics-reporter-config-sample.yaml
+%%ETCDIR%%/README.txt
+%%ETCDIR%%/triggers/README.txt
+%%SIGAR%%%%DATADIR%%/lib/sigar.jar
+@sample %%ETCDIR%%/cassandra-env.sh.sample
+@sample %%ETCDIR%%/cassandra-jaas.config.sample
+@sample %%ETCDIR%%/cassandra-rackdc.properties.sample
+@sample %%ETCDIR%%/cassandra-topology.properties.sample
+@sample %%ETCDIR%%/cassandra.yaml.sample
+@sample %%ETCDIR%%/commitlog_archiving.properties.sample
+@sample %%ETCDIR%%/cqlshrc.sample
+@sample %%ETCDIR%%/hotspot_compiler.sample
+@sample %%ETCDIR%%/jvm-clients.options.sample
+@sample %%ETCDIR%%/jvm-server.options.sample
+@sample %%ETCDIR%%/jvm11-clients.options.sample
+@sample %%ETCDIR%%/jvm11-server.options.sample
+@sample %%ETCDIR%%/jvm8-clients.options.sample
+@sample %%ETCDIR%%/jvm8-server.options.sample
+@sample %%ETCDIR%%/logback-tools.xml.sample
+@sample %%ETCDIR%%/logback.xml.sample
+bin/cassandra
+bin/cqlsh
+bin/nodetool
+bin/sstableloader
+bin/sstablescrub
+bin/sstableupgrade
+bin/sstableutil
+bin/sstableverify

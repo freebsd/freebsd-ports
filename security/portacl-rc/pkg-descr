@@ -1,0 +1,3 @@
+portacl-rc is an rc(8) script for mac_portacl(4), allowing administrators
+to limit or permit binding to local UDP and TCP ports that would otherwise
+be privileged to the superuser.

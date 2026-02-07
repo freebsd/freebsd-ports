@@ -1,0 +1,11 @@
+--- xfer-src/Makefile.in.orig	2017-12-01 13:26:56 UTC
++++ xfer-src/Makefile.in
+@@ -1755,7 +1755,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/gnulib \
+ 
+ AM_CFLAGS = $(AMANDA_WARNING_CFLAGS) $(AMANDA_FILE_CFLAGS)
+ AM_LDFLAGS = $(AMANDA_STATIC_LDFLAGS) $(AS_NEEDED_FLAGS)
+-amlib_LTLIBRARIES = libamxfer.la
++@WANT_CLIENT_TRUE@amlib_LTLIBRARIES = libamxfer.la
+ LINT = $(AMLINT)
+ LINTFLAGS = $(AMLINTFLAGS)
+ libamxfer_la_SOURCES = \

@@ -1,0 +1,11 @@
+--- src/zcc/Makefile.orig	2020-09-28 03:00:10 UTC
++++ src/zcc/Makefile
+@@ -26,7 +26,7 @@ zcc$(EXESUFFIX):	$(OBJS)
+ 	$(CC) -c -o $@ $(CFLAGS) $(INCLUDES) $^
+ 
+ install: zcc$(EXESUFFIX)
+-	$(INSTALL) zcc$(EXESUFFIX) $(PREFIX)/bin/
++	$(BSD_INSTALL_PROGRAM) zcc$(EXESUFFIX) $(PREFIX)/bin/
+ 
+ clean:
+ 	$(RM) zcc$(EXESUFFIX) zcc.o core

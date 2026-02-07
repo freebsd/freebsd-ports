@@ -1,0 +1,5 @@
+--- vendor/parsexp-14af9ab942251783de6abb20e0d0e0eec6080062/dune-project.orig	2024-08-13 19:53:44 UTC
++++ vendor/parsexp-14af9ab942251783de6abb20e0d0e0eec6080062/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

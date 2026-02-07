@@ -1,0 +1,2 @@
+DBIx::VersionedDDL is a perl module to upgrade and downgrade database
+schemas to a specified version.

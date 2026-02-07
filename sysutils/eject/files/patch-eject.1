@@ -1,0 +1,25 @@
+--- eject.1.orig	2000-09-24 10:12:50.000000000 -0300
++++ eject.1	2010-03-19 23:02:03.000000000 -0300
+@@ -39,7 +39,12 @@
+ is a program to eject removable media from drive.
+ The
+ .Ar device
+-is a removable drive name such as cd0, matcd0, mcd0, scd0, wcd0 or od0. 
++is a removable drive name such as cd0, matcd0, mcd0, scd0, wcd0 or od0.
++For compatiblity reasons, the string
++.Dq Li /dev/
++may optionally be prepended to
++.Ar device .
++
+ .Nm eject
+ unmounts the
+ .Ar device
+@@ -53,6 +58,8 @@
+ Not execute operation but print it.
+ .It Fl v
+ Verbose mode.
++.It Fl t
++Give drive tray close command.
+ .Sh ENVIRONMENT
+ If the following environment variable exists, it is used by
+ .Nm eject :

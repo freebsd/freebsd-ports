@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$(id -u)" != "0" ]; then
+  echo "Only root can run BSDstats update"
+  exit 1
+fi
+
+%%PREFIX%%/etc/periodic/monthly/300.statistics -nodelay

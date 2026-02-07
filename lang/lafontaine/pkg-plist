@@ -1,0 +1,16 @@
+bin/lafontaine
+%%DATADIR%%/gypsum.flower.2.fr.logo
+%%DATADIR%%/gypsum.flower.fr.logo
+%%DATADIR%%/spirelo.fr.logo
+%%DATADIR%%/stars.en.logo
+%%DATADIR%%/test1.logo
+%%NLS%%share/locale/fr/LC_MESSAGES/lafontaine.mo
+share/pixmaps/lafontaine/animator.png
+share/pixmaps/lafontaine/animator.xcf
+share/pixmaps/lafontaine/execute.xpm
+share/pixmaps/lafontaine/help.xpm
+share/pixmaps/lafontaine/open.xpm
+share/pixmaps/lafontaine/quit.xpm
+share/pixmaps/lafontaine/save.xpm
+share/pixmaps/lafontaine/turtle2.png
+share/pixmaps/lafontaine/turtle3.png

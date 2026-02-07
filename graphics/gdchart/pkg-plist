@@ -1,0 +1,7 @@
+include/gdc.h
+include/gdchart.h
+include/gdcpie.h
+lib/libgdc.a
+lib/libgdc.so
+lib/libgdc.so.1
+%%PROFILE%%lib/libgdc_p.a

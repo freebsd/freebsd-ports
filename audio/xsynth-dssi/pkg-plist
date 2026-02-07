@@ -1,0 +1,4 @@
+lib/dssi/xsynth-dssi.so
+lib/dssi/xsynth-dssi/Xsynth_gtk
+%%DATADIR%%/factory_patches.Xsynth
+%%DATADIR%%/version_0.1_patches.Xsynth

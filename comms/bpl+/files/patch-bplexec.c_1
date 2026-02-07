@@ -1,0 +1,11 @@
+--- bplexec.c.orig	Fri Feb 10 02:25:34 1995
++++ bplexec.c	Tue Feb  3 23:54:32 1998
+@@ -34,7 +34,7 @@
+ extern void hms(UCHAR *s);
+ extern void ldecout(ULONG l);
+ 
+-#ifdef SUN
++#if 0 /*ifdef SUN*/
+ extern int fclose(FILE *stream);
+ extern int fflush(FILE *stream);
+ extern int fseek(FILE *stream, long int offset, int origin);

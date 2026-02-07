@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2020-07-02 17:25:56 UTC
++++ Makefile.am
+@@ -1,6 +1,6 @@
+ bin_PROGRAMS = mtpfs
+ mtpfs_SOURCES = mtpfs.c mtpfs.h
+-mtpfs_CPPFLAGS = -DFUSE_USE_VERSION=22 $(FUSE_CFLAGS) $(GLIB_CFLAGS) $(MTP_CFLAGS)
++mtpfs_CPPFLAGS = -DFUSE_USE_VERSION=26 $(FUSE_CFLAGS) $(GLIB_CFLAGS) $(MTP_CFLAGS)
+ mtpfs_LDADD = $(FUSE_LIBS) $(GLIB_LIBS) $(MTP_LIBS)
+ 
+ if USEMAD

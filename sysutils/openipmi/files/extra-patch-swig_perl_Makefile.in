@@ -1,0 +1,13 @@
+--- swig/perl/Makefile.in.orig	2018-08-23 20:18:14 UTC
++++ swig/perl/Makefile.in
+@@ -115,8 +115,8 @@
+ am__v_lt_1 = 
+ libOpenIPMI_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+-	$(AM_CFLAGS) $(CFLAGS) $(libOpenIPMI_la_LDFLAGS) $(LDFLAGS) -o \
+-	$@
++	$(AM_CFLAGS) $(CFLAGS) $(libOpenIPMI_la_LDFLAGS) $(LDFLAGS) \
++	`perl -MConfig -e 'print $$Config{lddlflags}'` -o $@ 
+ libdummystuff_la_LIBADD =
+ am_libdummystuff_la_OBJECTS = dummystuff.lo
+ libdummystuff_la_OBJECTS = $(am_libdummystuff_la_OBJECTS)

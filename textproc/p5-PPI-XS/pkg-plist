@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/PPI/XS.pm
+%%SITE_ARCH%%/auto/PPI/XS/XS.so
+%%PERL5_MAN3%%/PPI::XS.3.gz

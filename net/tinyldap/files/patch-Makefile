@@ -1,0 +1,41 @@
+--- Makefile.orig	2017-03-19 11:47:19 UTC
++++ Makefile
+@@ -43,20 +43,23 @@ tls_cipherprio.o fmt_tls_alert_pkt.o fmt
+ fmt_tls_handshake_certs_header.o fmt_tls_serverhellodone.o \
+ tls_accept.o tls_connect.o tls_doread.o tls_dowrite.o
+ 
+-DIET=/opt/diet/bin/diet -Os
++DIET=
+ CROSS=
+ #CROSS=i686-mingw32-
+-CC=$(CROSS)gcc
+-CFLAGS=-pipe -I. -Wall -W -Wextra
++CC?=$(CROSS)gcc
++CFLAGS?=-pipe -I. -Wall -W -Wextra
+ ifneq ($(DEBUG),)
+-DIET=/opt/diet/bin/diet
+-CFLAGS=-pipe -I. -Wall -W -Wextra -g -fstack-protector
++DIET=
++CFLAGS?=-pipe -I. -Wall -W -Wextra -g -fstack-protector
+ endif
+ ifeq ($(COVERAGE),1)
+ DIET=
+-CFLAGS=-pipe -I. -g -fprofile-arcs -ftest-coverage
++CFLAGS?=-pipe -I. -g -fprofile-arcs -ftest-coverage
+ endif
+ 
++CFLAGS+=-I. -I${LOCALBASE}/include/libowfat -Os
++LDFLAGS+=-L${LOCALBASE}/lib
++
+ ifneq ($(DIET),)
+ LIBS+=-llatin1
+ else
+@@ -97,7 +100,7 @@ tinyldap_debug: tinyldap.c
+ 	$(DIET) $(CC) $(CFLAGS) -DSTANDALONE -DDEBUG -o $@ $^ $(LDFLAGS) -lowfat $(LIBS)
+ 
+ acl: acl.c ldap.a asn1.a
+-	$(DIET) $(CC) $(CFLAGS) -o acl acl.c -I. ldap.a asn1.a -lowfat $(LIBS)
++	$(DIET) $(CC) $(CFLAGS) -o acl acl.c -I. ldap.a asn1.a $(LDFLAGS) -lowfat $(LIBS)
+ 
+ .PHONY: test
+ test: test/bind test/ebind

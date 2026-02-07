@@ -1,0 +1,14 @@
+etc/rpki/afrinic.constraints
+etc/rpki/afrinic.tal
+etc/rpki/apnic.constraints
+etc/rpki/apnic.tal
+etc/rpki/arin.constraints
+etc/rpki/arin.tal
+etc/rpki/lacnic.constraints
+etc/rpki/lacnic.tal
+etc/rpki/ripe.constraints
+etc/rpki/ripe.tal
+share/man/man8/rpki-client.8.gz
+sbin/rpki-client
+@dir(%%USERS%%,,0755) /var/cache/rpki-client
+@dir(%%USERS%%,,0755) /var/db/rpki-client

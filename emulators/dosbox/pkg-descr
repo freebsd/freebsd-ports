@@ -1,0 +1,11 @@
+DOSBox is an emulator of a PC with DOS.
+The main focus of this project is emulating old DOS games using the
+local file system for files.
+
+Currently emulated is:
+
+o CPU:286/386 realmode/pmode
+o GFX:VGA/EGS/CGA/SVGA/VESA
+o SND:PC-Speaker/Tandy 3-Voice/Adlib/SoundBlaster
+o MSC:Keyboard/Mouse
+o DOS:Directory FileSystem/XMS/EMS

@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Font/AFM.pm
+%%SITE_PERL%%/Font/Metrics/Courier.pm
+%%SITE_PERL%%/Font/Metrics/CourierBold.pm
+%%SITE_PERL%%/Font/Metrics/CourierBoldOblique.pm
+%%SITE_PERL%%/Font/Metrics/CourierOblique.pm
+%%SITE_PERL%%/Font/Metrics/Helvetica.pm
+%%SITE_PERL%%/Font/Metrics/HelveticaBold.pm
+%%SITE_PERL%%/Font/Metrics/HelveticaBoldOblique.pm
+%%SITE_PERL%%/Font/Metrics/HelveticaOblique.pm
+%%SITE_PERL%%/Font/Metrics/TimesBold.pm
+%%SITE_PERL%%/Font/Metrics/TimesBoldItalic.pm
+%%SITE_PERL%%/Font/Metrics/TimesItalic.pm
+%%SITE_PERL%%/Font/Metrics/TimesRoman.pm
+%%PERL5_MAN3%%/Font::AFM.3.gz

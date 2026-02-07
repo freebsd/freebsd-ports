@@ -1,0 +1,4 @@
+bsnmp-regex is a module for bsnmpd which allows creation of counters from log
+files, program output or other text data. The counters use regular expressions
+to count the number of matches, or parse out specific text/numbers. The
+resulting data can then be queried or graphed with the usual SNMP tools.

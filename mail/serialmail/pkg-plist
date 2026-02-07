@@ -1,0 +1,13 @@
+bin/maildirqmtp
+bin/maildirserial
+bin/maildirsmtp
+%%UCSPI_SSL%%bin/maildirsmtps
+bin/serialqmtp
+bin/serialsmtp
+bin/setlock
+share/man/man1/maildirqmtp.1.gz
+share/man/man1/maildirserial.1.gz
+share/man/man1/maildirsmtp.1.gz
+share/man/man1/serialqmtp.1.gz
+share/man/man1/serialsmtp.1.gz
+share/man/man1/setlock.1.gz

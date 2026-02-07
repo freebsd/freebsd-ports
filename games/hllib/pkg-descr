@@ -1,0 +1,7 @@
+HLLib is a package library for Half-Life that abstracts several package
+formats and provides a simple interface for all of them.  HLLib is written
+in native C++ but exposes both a C and C++ interfaces which can be used in
+any C or C++ application (additional languages may also use the library with
+standard C imports).  HLLib works natively in both Windows and *nix.  BSP,
+GCF, NCF, PAK, SGA, VPK, WAD, XZP, and ZIP (store/deflate) package formats
+are supported.

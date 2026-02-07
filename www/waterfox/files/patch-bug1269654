@@ -1,0 +1,34 @@
+commit ff13efe458e7786d8c810342d25a6ba8e90a422b
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    based on BMO 1269654
+    
+    : https://bugzilla.mozilla.org/show_bug.cgi?id=1269654#c5
+    : https://bug1269654.bmoattachments.org/attachment.cgi?id=8749234
+    : handle big-endian formats in Cairo format conversions
+    :
+    : HG changeset patch
+    : User Lee Salzman <lsalzman@mozilla.com>
+    : Date 1462463631 14400
+    :      Thu May 05 11:53:51 2016 -0400
+    : Node ID 8da374804a09977c8f89af5e6e0cb37cb074595d
+    : Parent  29662e28a9c93ac67ee0b8ddfb65a9f29bbf73f5
+    : handle big-endian formats in Cairo format conversions
+
+diff --git gfx/2d/HelpersCairo.h gfx/2d/HelpersCairo.h
+index a10e01bdd62b..f2007ee189fc 100644
+--- gfx/2d/HelpersCairo.h
++++ gfx/2d/HelpersCairo.h
+@@ -185,7 +185,11 @@ static inline cairo_content_t GfxFormatToCairoContent(SurfaceFormat format) {
+     case SurfaceFormat::A8:
+       return CAIRO_CONTENT_ALPHA;
+     default:
+-      gfxCriticalError() << "Unknown image content format " << (int)format;
++      if (format == SurfaceFormat::B8G8R8X8) {
++        return CAIRO_CONTENT_COLOR;
++      } else if (format != SurfaceFormat::B8G8R8A8) {
++        gfxCriticalError() << "Unknown image content format " << (int)format;
++      }
+       return CAIRO_CONTENT_COLOR_ALPHA;
+   }
+ }

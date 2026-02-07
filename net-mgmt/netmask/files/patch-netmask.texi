@@ -1,0 +1,14 @@
+--- netmask.texi.orig	Mon Nov 20 00:39:20 2000
++++ netmask.texi	Mon Nov 20 00:39:33 2000
+@@ -3,6 +3,11 @@
+ @setfilename netmask.info
+ @settitle Generating Optimized Network Masks
+ @finalout
++@dircategory Miscellaneous
++@direntry 
++* netmask: (netmask).		Tool for generating terse netmasks.
++@end direntry
++
+ @setchapternewpage odd
+ @c %**end of header
+ 

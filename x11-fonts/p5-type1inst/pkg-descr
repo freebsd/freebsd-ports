@@ -1,0 +1,18 @@
+This is a little hack I wrote to help in setting up new Type 1 PostScript
+fonts for use with X. It automatically constructs the fonts.scale file which
+X uses to identify fonts in can use the current directory. Previously you
+had to write this file by hand which is unacceptable if you have lots of
+fonts.
+
+The program can also generate Fontmap entries for Ghostscript (which can
+then be put in the global Fontmap to speed up startup times) and it can
+produce font sample sheets as well.
+
+Please be warned that this is beta quality software and has limitations. I
+think you will, however, find it useful and the bugs will go away over time
+if people help me with it.
+
+Reports of success or otherwise welcomed at the address below.
+----------------------------------------------------------------------------
+
+James Macnicol (J.Macnicol@student.anu.edu.au)

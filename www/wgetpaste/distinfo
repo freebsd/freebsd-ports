@@ -1,0 +1,7 @@
+TIMESTAMP = 1710712344
+SHA256 (wgetpaste-2.34.tar.xz) = bd6d06ed901a3d63c9c8c57126084ff0994f09901bfb1638b87953eac1e9433f
+SIZE (wgetpaste-2.34.tar.xz) = 16640
+SHA256 (wgetpaste.example) = cbc0437f7e04d95ffd224011ee2a056a84dfd7143e314e6962688295f68def4d
+SIZE (wgetpaste.example) = 380
+SHA256 (zlin.conf) = 8fe8338ebd6716bac1e7e818b26163f899d7609fbac5932aaa1dabe45d6fdb19
+SIZE (zlin.conf) = 971

@@ -1,0 +1,6 @@
+%%SITE_PERL%%/File/Attributes.pm
+%%SITE_PERL%%/File/Attributes/Base.pm
+%%SITE_PERL%%/File/Attributes/Simple.pm
+%%PERL5_MAN3%%/File::Attributes.3.gz
+%%PERL5_MAN3%%/File::Attributes::Base.3.gz
+%%PERL5_MAN3%%/File::Attributes::Simple.3.gz

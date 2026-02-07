@@ -1,0 +1,2 @@
+Regexp::Common::Email::Address provides a regex to match email addresses
+as defined by RFC 2822.

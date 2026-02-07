@@ -1,0 +1,12 @@
+3d-ascii-viewer-c is a program written in C that allows users to view 3D
+models in ASCII. It supports Wavefront .obj files and provides an
+example usage capture.
+
+The program can be executed by passing any of the models in the models
+folder as an argument.
+
+The available models include Fox and ShibaInu models, as well as Tree
+models.
+
+This program is inspired by the ASCII luminescence and offers an
+intuitive way of viewing 3D models in ASCII.

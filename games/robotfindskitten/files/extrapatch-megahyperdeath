@@ -1,0 +1,57 @@
+--- src/robotfindskitten.c.orig	2020-03-01 17:25:06 UTC
++++ src/robotfindskitten.c
+@@ -119,6 +119,10 @@
+ #define KITTEN  	1
+ #define BOGUS		2
+ 
++/* Finish him! */
++#define FATALITIES (sizeof fatalities / sizeof (char*))
++
++
+ typedef struct {
+ 	int x;
+ 	int y;
+@@ -139,6 +143,17 @@ typedef struct {
+ 	char **messages;
+ } game_state;
+ 
++static char* fatalities[] =
++{
++	"Kitten jumps out of nowhere, pulls out a switchblade, and stabs you.",
++	"Bruce Willis swears at you, pulls out a Zippo(TM), and lights you on fire.",
++	"Your Robot armor is no match against your opponent's +2 Kitten.",
++	"Terrorists have planted a dirty bomb inside kitten! Run for your life!",
++	"You have come to the end of this Choose Your Own Adventure.",
++	"Mario Balotelli has ripped the still-beating heart out of this zen simulation.",
++	"Your generation has no attention span anymore, so you get bored and leave."
++};
++
+ char *nki_file;
+ 
+ /* global state */
+@@ -556,6 +571,8 @@ static void instructions(void) {
+ "Robot must touch items to determine if they are kitten or not. The game\n"\
+ "ends when robotfindskitten. Alternatively, you may end the game by hitting\n"
+ "the q key or a good old-fashioned Ctrl-C.\n\n"\
++"This version contains MegaHyperDeath(TM) technology. Every time you find\n"\
++"a kitten, you have a 1 in 10 chance of dying.\n\n"\
+ "See the documentation for more information.\n\n"\
+ "Press any key to start.\n"
+ 	);
+@@ -719,7 +736,15 @@ static void main_loop(void) {
+ 				/* nothing happened */
+ 				break;
+ 			case BKITTEN:
+-				play_animation ( fromright );
++				if ((rand() % 10) == 0) { /*RFK is boring, let's add explosions!*/
++					move ( 0, 0 );
++					addstr ( fatalities[rand() % FATALITIES] );
++					move ( 1, 0 );
++					addstr("You are dead.  Sorry it didn't work out.  Please insert $0.25 to continue.");
++					refresh();
++				} else {
++					play_animation ( fromright );
++				}
+ 				finish ( 0 );
+ 				break;
+ 			case BBOGUS:

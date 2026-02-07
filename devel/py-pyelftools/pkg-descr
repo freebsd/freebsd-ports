@@ -1,0 +1,2 @@
+pyelftools is a pure-Python library for parsing and analyzing ELF files
+and DWARF debugging information

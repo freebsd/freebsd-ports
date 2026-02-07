@@ -1,0 +1,26 @@
+--- vendor/extras/libjsonpb/parse/jsonpb.cpp.orig	2022-06-10 23:11:16 UTC
++++ vendor/extras/libjsonpb/parse/jsonpb.cpp
+@@ -49,9 +49,9 @@ ErrorOr<std::string> MessageToJsonString(const Message
+ 
+   if (!status.ok()) {
+ #if GOOGLE_PROTOBUF_VERSION < 3016000
+-    return MakeError<std::string>(status.error_message().as_string());
++    return MakeError<std::string>(std::string(status.error_message()));
+ #else
+-    return MakeError<std::string>(status.message().as_string());
++    return MakeError<std::string>(std::string(status.message()));
+ #endif
+   }
+   return ErrorOr<std::string>(std::move(json));
+@@ -66,9 +66,9 @@ ErrorOr<std::monostate> JsonStringToMessage(const std:
+   auto status = JsonToBinaryString(resolver.get(), GetTypeUrl(*message), content, &binary);
+   if (!status.ok()) {
+ #if GOOGLE_PROTOBUF_VERSION < 3016000
+-    return MakeError<std::monostate>(status.error_message().as_string());
++    return MakeError<std::monostate>(std::string(status.error_message()));
+ #else
+-    return MakeError<std::monostate>(status.message().as_string());
++    return MakeError<std::monostate>(std::string(status.message()));
+ #endif
+   }
+   if (!message->ParseFromString(binary)) {

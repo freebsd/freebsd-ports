@@ -1,0 +1,5 @@
+Quill is a high-performance, cross-platform logging library designed
+for C++17 and onwards. Quill is a production-ready logging library that has
+undergone extensive unit testing. It has been successfully utilized in
+production environments, including financial trading applications, providing
+high-performance and reliable logging capabilities.

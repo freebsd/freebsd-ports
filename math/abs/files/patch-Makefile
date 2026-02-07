@@ -1,0 +1,55 @@
+--- Makefile.orig	Sun Nov 11 20:24:35 2001
++++ Makefile	Sun Feb  9 17:46:02 2003
+@@ -1,29 +1,28 @@
+ CURRENT_DIR = 	.
+ 
+ 
+-SUBDIRS =	Xpm ABV X11 Kernel Plot Database Fig Interface X11/xedit 
++SUBDIRS =	ABV X11 Kernel Plot Database Fig Interface X11/xedit SAMCEF 
+ 
+-SUBDIRS2 =	ABV X11 Kernel Plot Database Fig Interface 
+-MAKE =	make
++SUBDIRS2 =	ABV X11 Kernel Plot Database Fig Interface
++MAKE ?=	make
+ 
+ #for linux and aix LIBS = -L /lib/X11 -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext
+ #for silicon: LIBS = -lXaw -lX11 -lm -lXt -lXmu -lXext
+ #for hp LIBS = -L /lib/X11 -L /usr/X11R6/lib -L /usr/contrib/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext
+ #for netBSD LIBS = -L /usr/lib -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext
+-LIBS = -L /lib/X11 -L /usr/X11R6/lib -L /usr/contrib/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext
++LIBS = -L${LOCALBASE}/lib -lXaw -lX11 -lm -lXt -lXmu -lXext -lXpm
+ 
+ #for hp DEFINE = -D_HPUX_SOURCE
+-#for AIX DEFINE = -D_AIX_SOURCE
+ DEFINE = 
+ 
+-CFLAGS = '-O2 -Wall '
++CFLAGS ?= -O2
+ 
+ #for hp IncludeDir = /usr/contrib/X11R6/include
+ #for net-BSD IncludeDir = /usr/X11R6/include
+-IncludeDir = .
++IncludeDir = ${LOCALBASE}/include
+ 
+ #for hp Ccompiler = c89
+-Ccompiler = cc 
++Ccompiler = ${CC}
+ 
+ all::
+ 	rm -f ./abs;\
+@@ -32,12 +31,12 @@
+ 	if [ -d $$i ] ; \
+ 	then \
+ 	(cd $$i ; echo "making" all "in $(CURRENT_DIR)/$$i..."; \
+-	$(MAKE) TOPCFLAGS=$(CFLAGS) IncludeDir=$(IncludeDir) Ccompiler=$(Ccompiler) DEFINE=$(DEFINE) ); \
++	$(MAKE) TOPCFLAGS="$(CFLAGS)" IncludeDir="$(IncludeDir)" Ccompiler="$(Ccompiler)" DEFINE="$(DEFINE)" all); \
+ 	fi \
+ 	done
+-	cc -o abs  ./Plot/*.o ./ABV/*.o \
++	${CC} -o abs  ./Plot/*.o ./ABV/*.o \
+         Fig/*.o Interface/*.o X11/xedit/*.o \
+-        ./Kernel/*.o ./X11/*.o ./Database/*.o ./Xpm/libxpm.a \
++        ./Kernel/*.o ./X11/*.o ./Database/*.o\
+         $(LIBS) $(DEFINE)
+ 
+ 

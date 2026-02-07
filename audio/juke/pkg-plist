@@ -1,0 +1,3 @@
+bin/juke
+@sample etc/juke.conf.sample
+share/man/man1/juke.1.gz

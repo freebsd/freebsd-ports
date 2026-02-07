@@ -1,0 +1,15 @@
+bin/mapchan
+%%ETCDIR%%/altkoi.map
+@sample %%ETCDIR%%/default.sample
+%%ETCDIR%%/dos2koi-kbd.map
+%%ETCDIR%%/dos2koi.map
+%%ETCDIR%%/k180.map
+%%ETCDIR%%/koi2win.map
+%%ETCDIR%%/koiualt.map
+%%ETCDIR%%/koiumain.map
+%%ETCDIR%%/msm.map
+%%ETCDIR%%/sm7238.map
+%%ETCDIR%%/trivial.map
+%%ETCDIR%%/win2koi.map
+share/man/man8/mapchan.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/README

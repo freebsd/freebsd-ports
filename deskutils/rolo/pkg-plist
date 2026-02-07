@@ -1,0 +1,7 @@
+bin/rolo
+share/man/man1/rolo.1.gz
+%%PORTDOCS%%share/doc/rolo/AUTHORS
+%%PORTDOCS%%share/doc/rolo/ChangeLog
+%%PORTDOCS%%share/doc/rolo/NEWS
+%%PORTDOCS%%share/doc/rolo/README
+%%PORTDOCS%%share/doc/rolo/THANKS

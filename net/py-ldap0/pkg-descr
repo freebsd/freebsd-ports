@@ -1,0 +1,11 @@
+ldap0 provides an object-oriented API to access LDAP directory servers from
+Python programs. Mainly it wraps the OpenLDAP 2.x libs for that purpose.
+
+Additionally the package contains Python modules:
+
+  - parsing and producing LDIF
+  - handle LDAPURLs
+  - parse and handle LDAPv3 subschema
+  - LDAPv3 extended operations and controls
+  - automatic tests with OpenLDAP server This package is a non-compatible for
+    of python-ldap and therefore uses the separate module name-space 'ldap0'.

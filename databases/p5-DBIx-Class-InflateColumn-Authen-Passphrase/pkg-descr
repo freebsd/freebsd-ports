@@ -1,0 +1,2 @@
+Provides inflation and deflation for Authen::Passphrase instances from
+and to either RFC 2307 or crypt encoding.

@@ -1,0 +1,391 @@
+--- gd.c	2014-03-25 04:10:42.000000000 -0400
++++ gd.c	2021-02-16 11:58:57.946320000 -0500
+@@ -9,5 +9,11 @@
+ #include <stdlib.h>
+ #include <string.h>
+-#include "gd.h"
++#include <gd.h>
++#include <gdfontg.h>
++#include <gdfontl.h>
++#include <gdfontmb.h>
++#include <gdfonts.h>
++#include <gdfontt.h>
++
+ #include "siod.h"
+ 
+@@ -17,15 +23,9 @@
+ 	NIL);}
+ 
+-long tc_gdimage = 0;
+-long tc_gdfont = 0;
+-long tc_gdpoint = 0;
+-
+-extern gdFontPtr gdFontGiant;
+-extern gdFontPtr gdFontLarge;
+-extern gdFontPtr gdFontMediumBold;
+-extern gdFontPtr gdFontSmall;
+-extern gdFontPtr gdFontTiny;
++static long tc_gdimage = 0;
++static long tc_gdfont = 0;
++static long tc_gdpoint = 0;
+ 
+-LISP lgdImageCreate(LISP sx,LISP sy)
++static LISP lgdImageCreate(LISP sx,LISP sy)
+ {LISP result;
+  long iflag;
+@@ -38,5 +38,5 @@
+  return(result);}
+ 
+-LISP lgdImageCreateFromGif(LISP f)
++static LISP lgdImageCreateFromGif(LISP f)
+ {LISP result;
+  long iflag;
+@@ -49,5 +49,5 @@
+  return(result);}
+ 
+-LISP lgdImageCreateFromXbm(LISP f)
++static LISP lgdImageCreateFromXbm(LISP f)
+ {LISP result;
+  long iflag;
+@@ -61,13 +61,13 @@
+ 
+ 
+-gdImagePtr get_gdImagePtr(LISP ptr)
++static gdImagePtr get_gdImagePtr(LISP ptr)
+ {gdImagePtr im;
+  if (NTYPEP(ptr,tc_gdimage))
+    err("not a gdImage",ptr);
+- if (!(im = (gdImagePtr) ptr->storage_as.string.data))
++ if (!(im = (gdImagePtr)(void *)ptr->storage_as.string.data))
+    err("gd Image deallocated",ptr);
+  return(im);}
+ 
+-LISP lcgdFontCreate(gdFontPtr font)
++static LISP lcgdFontCreate(gdFontPtr font)
+ {LISP result;
+  long iflag;
+@@ -80,13 +80,13 @@
+  return(result);}
+ 
+-gdFontPtr get_gdFontPtr(LISP ptr)
++static gdFontPtr get_gdFontPtr(LISP ptr)
+ {gdFontPtr fn;
+  if (NTYPEP(ptr,tc_gdfont))
+    err("not a gdFont",ptr);
+- if (!(fn = (gdFontPtr) ptr->storage_as.string.data))
++ if (!(fn = (gdFontPtr)(void *)ptr->storage_as.string.data))
+    err("gd Font deallocated",ptr);
+  return(fn);}
+ 
+-LISP lgdPoint(LISP args)
++static LISP lgdPoint(LISP args)
+ {LISP result,l;
+  long iflag,j,m,n = nlength(args);
+@@ -98,5 +98,5 @@
+  result->type = tc_gdpoint;
+  iflag = no_interrupt(1);
+- pt =  (gdPointPtr) must_malloc(sizeof(gdPoint) * m);
++ pt =  must_malloc(sizeof(gdPoint) * m);
+  result->storage_as.string.data = (char *) pt;
+  result->storage_as.string.dim = m;
+@@ -107,14 +107,14 @@
+  return(result);}
+ 
+-gdPointPtr get_gdPointPtr(LISP ptr,long *n)
++static gdPointPtr get_gdPointPtr(LISP ptr,long *n)
+ {gdPointPtr pt;
+  if (NTYPEP(ptr,tc_gdpoint))
+    err("not a gdPoint",ptr);
+- if (!(pt = (gdPointPtr) ptr->storage_as.string.data))
++ if (!(pt = (gdPointPtr)(void *)ptr->storage_as.string.data))
+    err("gd point deallocated",ptr);
+  *n = ptr->storage_as.string.dim;
+  return(pt);}
+ 
+-LISP lgdPointx(LISP ptr,LISP j,LISP value)
++static LISP lgdPointx(LISP ptr,LISP j,LISP value)
+ {long n,i;
+  gdPointPtr pt;
+@@ -129,5 +129,5 @@
+ 
+ 
+-LISP lgdPointy(LISP ptr,LISP j,LISP value)
++static LISP lgdPointy(LISP ptr,LISP j,LISP value)
+ {long n,i;
+  gdPointPtr pt;
+@@ -141,5 +141,5 @@
+  return(value);}
+  
+-LISP lgdImageGif(LISP im,LISP f)
++static LISP lgdImageGif(LISP im,LISP f)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -156,19 +156,22 @@
+ #include <unistd.h>
+ 
+-void gdImageGifmem(gdImagePtr im, char *buffer, size_t *len)
++static void gdImageGifmem(gdImagePtr im, char *buffer, size_t *len)
+ {FILE *f;
+  char tmpname[32];
+  struct stat sb;
+- strcpy(tmpname, "/tmp/gd.XXXXXX");
+- mktemp(tmpname);
+- if ((f = fopen(tmpname, "wb+")) != NULL) {
+-     gdImageGif(im, f);
+-     fstat(fileno(f), &sb);
+-     if (sb.st_size < *len) *len = sb.st_size;
+-     rewind(f);
+-     fread(buffer, 1, *len, f);
++ int fd;
++ strcpy(tmpname, "/tmp/gd.XXXXXX.gif");
++ fd = mkstemps(tmpname, 4);
++ if (fd != -1 && (f = fdopen(fd, "wb+")) != NULL) {
++     gdImageGif(im, f);	/* XXX no error-checking from here on */
++     if (fstat(fileno(f), &sb) == 0 && sb.st_size <= (off_t)*len) {
++       *len = sb.st_size;
++       rewind(f);
++       *len = fread(buffer, 1, *len, f);
++     } else
++       *len = 0;
+      fclose(f);
+  } else {
+-     *len = 0;
++     *len = 0;	/* XXX and no reporting for what little checking there is */
+  }
+  unlink(tmpname);
+@@ -177,10 +180,10 @@
+ #endif
+ 
+-LISP lgdImageGifmem(LISP im,LISP b)
+-{long iflag,dim;
++static LISP lgdImageGifmem(LISP im, LISP b)
++{long iflag;
+  size_t len;
+  char *buffer;
+- buffer = get_c_string_dim(b,&dim);
+- len = dim;
++ buffer = get_string_data(b);
++ len = b->storage_as.string.dim;
+  iflag = no_interrupt(1);
+  gdImageGifmem(get_gdImagePtr(im),buffer,&len);
+@@ -188,5 +191,5 @@
+  return(flocons(len));}
+ 
+-LISP lgdImageColorAllocate(LISP l)
++static LISP lgdImageColorAllocate(LISP l)
+ {long iflag;
+  int result;
+@@ -202,5 +205,5 @@
+  return(flocons(result));}
+ 
+-LISP lgdImageColorClosest(LISP l)
++static LISP lgdImageColorClosest(LISP l)
+ {long iflag;
+  int result;
+@@ -216,5 +219,5 @@
+  return(flocons(result));}
+ 
+-LISP lgdImageColorExact(LISP l)
++static LISP lgdImageColorExact(LISP l)
+ {long iflag;
+  int result;
+@@ -230,5 +233,5 @@
+  return(flocons(result));}
+ 
+-LISP lgdImageLine(LISP l)
++static LISP lgdImageLine(LISP l)
+ {gdImagePtr im;
+  int x1,y1,x2,y2,color;
+@@ -242,5 +245,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageSetPixel(LISP l)
++static LISP lgdImageSetPixel(LISP l)
+ {gdImagePtr im;
+  int x,y,color;
+@@ -252,5 +255,5 @@
+  return(NIL);}
+ 
+-LISP lgdImagePolygon(LISP im,LISP points,LISP color)
++static LISP lgdImagePolygon(LISP im,LISP points,LISP color)
+ {gdPointPtr pt;
+  long n;
+@@ -262,5 +265,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageFilledPolygon(LISP im,LISP points,LISP color)
++static LISP lgdImageFilledPolygon(LISP im,LISP points,LISP color)
+ {gdPointPtr pt;
+  long n;
+@@ -272,5 +275,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageRectangle(LISP l)
++static LISP lgdImageRectangle(LISP l)
+ {gdImagePtr im;
+  int x1,y1,x2,y2,color;
+@@ -284,5 +287,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageFilledRectangle(LISP l)
++static LISP lgdImageFilledRectangle(LISP l)
+ {gdImagePtr im;
+  int x1,y1,x2,y2,color;
+@@ -296,5 +299,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageArc(LISP l)
++static LISP lgdImageArc(LISP l)
+ {gdImagePtr im;
+  int cx,cy,w,h,s,e,color;
+@@ -311,5 +314,5 @@
+ 
+ 
+-LISP lgdImageFillToBorder(LISP l)
++static LISP lgdImageFillToBorder(LISP l)
+ {gdImagePtr im;
+  int x,y,border,color;
+@@ -322,5 +325,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageFill(LISP l)
++static LISP lgdImageFill(LISP l)
+ {gdImagePtr im;
+  int x,y,color;
+@@ -331,14 +334,6 @@
+  gdImageFill(im,x,y,color);
+  return(NIL);}
+- 
+-/*
+ 
+-void gdImageSetBrush(gdImagePtr im, gdImagePtr brush)
+-void gdImageSetTile(gdImagePtr im, gdImagePtr tile)
+-void gdImageSetStyle(gdImagePtr im, int *style, int styleLength)
+-
+-*/
+-
+-LISP lgdImageChar(LISP l)
++static LISP lgdImageChar(LISP l)
+ {gdImagePtr im;
+  gdFontPtr font;
+@@ -353,5 +348,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageCharUp(LISP l)
++static LISP lgdImageCharUp(LISP l)
+ {gdImagePtr im;
+  gdFontPtr font;
+@@ -366,5 +361,5 @@
+  return(NIL);}
+ 
+-LISP lgdImageString(LISP l)
++static LISP lgdImageString(LISP l)
+ {gdImagePtr im;
+  gdFontPtr font;
+@@ -375,10 +370,10 @@
+  x = get_c_long(poparg(&l,NIL));
+  y = get_c_long(poparg(&l,NIL));
+- c = get_c_string(poparg(&l,NIL));
++ c = get_string_data(poparg(&l, NIL));
+  color = get_c_long(poparg(&l,NIL));
+  gdImageString(im,font,x,y,c,color);
+  return(NIL);}
+ 
+-LISP lgdImageStringUp(LISP l)
++static LISP lgdImageStringUp(LISP l)
+ {gdImagePtr im;
+  gdFontPtr font;
+@@ -389,21 +384,21 @@
+  x = get_c_long(poparg(&l,NIL));
+  y = get_c_long(poparg(&l,NIL));
+- c = get_c_string(poparg(&l,NIL));
++ c = get_string_data(poparg(&l, NIL));
+  color = get_c_long(poparg(&l,NIL));
+  gdImageStringUp(im,font,x,y,c,color);
+  return(NIL);}
+ 
+-LISP lgdImageColorTransparent(LISP im,LISP color)
++static LISP lgdImageColorTransparent(LISP im,LISP color)
+ {gdImageColorTransparent(get_gdImagePtr(im),get_c_long(color));
+  return(NIL);}
+ 
+-LISP lgdImageInterlace(LISP im,LISP interlace)
++static LISP lgdImageInterlace(LISP im,LISP interlace)
+ {gdImageInterlace(get_gdImagePtr(im),get_c_long(interlace));
+  return(NIL);}
+ 
+-void gdimage_prin1(LISP ptr,struct gen_printio *f)
++static void gdimage_prin1(LISP ptr,struct gen_printio *f)
+ {char buff[256];
+  gdImagePtr im;
+- if ((im = (gdImagePtr) ptr->storage_as.string.data))
++ if ((im = (gdImagePtr)(void *)ptr->storage_as.string.data))
+    sprintf(buff,"#<GDIMAGE %p %d by %d>",
+ 	   im,im->sx,im->sy);
+@@ -412,14 +407,14 @@
+  gput_st(f,buff);}
+ 
+-void gdimage_gc_free(LISP ptr)
++static void gdimage_gc_free(LISP ptr)
+ {gdImagePtr im;
+- if ((im = (gdImagePtr) ptr->storage_as.string.data))
++ if ((im = (gdImagePtr)(void *)ptr->storage_as.string.data))
+    {gdImageDestroy(im);
+     ptr->storage_as.string.data = NULL;}}
+ 
+-void gdfont_prin1(LISP ptr,struct gen_printio *f)
++static void gdfont_prin1(LISP ptr,struct gen_printio *f)
+ {char buff[256];
+  gdFontPtr fnt;
+- if ((fnt = (gdFontPtr) ptr->storage_as.string.data))
++ if ((fnt = (gdFontPtr)(void *)ptr->storage_as.string.data))
+    sprintf(buff,"#<GDFONT %p %d by %d>",
+ 	   fnt,fnt->w,fnt->h);
+@@ -428,7 +423,7 @@
+  gput_st(f,buff);}
+ 
+-void gdfont_gc_free(LISP ptr)
++static void gdfont_gc_free(LISP ptr)
+ {gdFontPtr fnt;
+- if ((fnt = (gdFontPtr) ptr->storage_as.string.data) &&
++ if ((fnt = (gdFontPtr)(void *)ptr->storage_as.string.data) &&
+      ptr->storage_as.string.dim)
+    /* there is no api in gd 1.2 for loading a file from a file.
+@@ -437,29 +432,31 @@
+  }
+ 
+-void gdpoint_prin1(LISP ptr,struct gen_printio *f)
++static void gdpoint_prin1(LISP ptr,struct gen_printio *f)
+ {char buff[256];
+  gdPointPtr pt;
+- pt = (gdPointPtr) ptr->storage_as.string.data;
++ pt = (gdPointPtr)(void *)ptr->storage_as.string.data;
+  sprintf(buff,"#<GDPOINT %p %ld>",
+ 	 pt,ptr->storage_as.string.dim);
+  gput_st(f,buff);}
+ 
+-void gdpoint_gc_free(LISP ptr)
++static void gdpoint_gc_free(LISP ptr)
+ {gdPointPtr pt;
+- if ((pt = (gdPointPtr) ptr->storage_as.string.data))
++ if ((pt = (gdPointPtr)(void *)ptr->storage_as.string.data))
+    {free(pt);
+     ptr->storage_as.string.data = NULL;
+     ptr->storage_as.string.dim = 0;}}
+ 
+-LISP gdfont_w(LISP ptr)
++static LISP gdfont_w(LISP ptr)
+ {gdFontPtr font;
+  font = get_gdFontPtr(ptr);
+  return(flocons(font->w));}
+ 
+-LISP gdfont_h(LISP ptr)
++static LISP gdfont_h(LISP ptr)
+ {gdFontPtr font;
+  font = get_gdFontPtr(ptr);
+  return(flocons(font->h));}
+ 
++void init_gd(void);	/* Module entry point - our sole exported function */
++
+ void init_gd(void)
+ {long j;

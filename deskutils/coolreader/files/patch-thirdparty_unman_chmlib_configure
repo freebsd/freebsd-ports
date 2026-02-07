@@ -1,0 +1,89 @@
+--- thirdparty_unman/chmlib/configure.orig
++++ thirdparty_unman/chmlib/configure
+@@ -11536,9 +11536,9 @@ fi
+ 
+ 
+ if test -n "$CHM_USE_IO64"; then
+-    { $as_echo "$as_me:$LINENO: checking for lseek64" >&5
+-$as_echo_n "checking for lseek64... " >&6; }
+-if test "${ac_cv_func_lseek64+set}" = set; then
++    { $as_echo "$as_me:$LINENO: checking for lseek" >&5
++$as_echo_n "checking for lseek... " >&6; }
++if test "${ac_cv_func_lseek+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+@@ -11547,12 +11547,12 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-/* Define lseek64 to an innocuous variant, in case <limits.h> declares lseek64.
++/* Define lseek to an innocuous variant, in case <limits.h> declares lseek.
+    For example, HP-UX 11i <limits.h> declares gettimeofday.  */
+-#define lseek64 innocuous_lseek64
++#define lseek innocuous_lseek
+ 
+ /* System header to define __stub macros and hopefully few prototypes,
+-    which can conflict with char lseek64 (); below.
++    which can conflict with char lseek (); below.
+     Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
+     <limits.h> exists even on freestanding compilers.  */
+ 
+@@ -11562,7 +11562,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ # include <assert.h>
+ #endif
+ 
+-#undef lseek64
++#undef lseek
+ 
+ /* Override any GCC internal prototype to avoid an error.
+    Use char because int might match the return type of a GCC
+@@ -11570,18 +11570,18 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char lseek64 ();
++char lseek ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+     something starting with __ and the normal name is an alias.  */
+-#if defined __stub_lseek64 || defined __stub___lseek64
++#if defined __stub_lseek || defined __stub___lseek
+ choke me
+ #endif
+ 
+ int
+ main ()
+ {
+-return lseek64 ();
++return lseek ();
+   ;
+   return 0;
+ }
+@@ -11607,21 +11607,21 @@ $as_echo "$ac_try_echo") >&5
+ 	 test "$cross_compiling" = yes ||
+ 	 $as_test_x conftest$ac_exeext
+        }; then
+-  ac_cv_func_lseek64=yes
++  ac_cv_func_lseek=yes
+ else
+   $as_echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-	ac_cv_func_lseek64=no
++	ac_cv_func_lseek=no
+ fi
+ 
+ rm -rf conftest.dSYM
+ rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
+       conftest$ac_exeext conftest.$ac_ext
+ fi
+-{ $as_echo "$as_me:$LINENO: result: $ac_cv_func_lseek64" >&5
+-$as_echo "$ac_cv_func_lseek64" >&6; }
+-if test "x$ac_cv_func_lseek64" = x""yes; then
++{ $as_echo "$as_me:$LINENO: result: $ac_cv_func_lseek" >&5
++$as_echo "$ac_cv_func_lseek" >&6; }
++if test "x$ac_cv_func_lseek" = x""yes; then
+   :
+ else
+ 

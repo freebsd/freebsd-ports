@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Github Release Monitor is installed
+
+1) Configure it in %%PREFIX%%/etc/github-release-monitor.env
+
+   Default auth secret, username and password are not secure.
+   Please change them all before deploying Github Release Monitor
+   to a production environment.
+
+2) Enable it with
+
+     sysrc github_release_monitor_enable=YES
+
+3) Start it with
+
+     service github-release-monitor start
+EOM
+}
+]

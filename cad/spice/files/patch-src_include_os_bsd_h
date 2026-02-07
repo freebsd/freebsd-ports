@@ -1,0 +1,43 @@
+--- src/include/os_bsd.h.orig	1993-04-24 23:09:46.000000000 +0000
++++ src/include/os_bsd.h	2010-02-09 16:25:54.000000000 +0000
+@@ -8,18 +8,34 @@
+ 
+ #include "os_unix.h"
+ 
++#ifdef __FreeBSD__	/* BSD4_3 */
++#define HAS_STDLIB		/* #include <stdlib.h> for libc defs	*/
++#define HAS_SYSVDIRS		/* <sys/dirent.h>			*/
++#define HAS_INTWAITSTATUS	/* wait(2)  takes an int *, not a union */
++#define HAS_STRCHR		/* strchr(3) instead of index(3)	*/
++#define HAS_ATRIGH		/* acosh(3), asinh(3), atanh(3)         */
++#define HAS_FLOAT_H		/* float.h				*/
++#define HAS_BSDSOCKETS		/* <net/inet.h>, socket(2), etc.	*/
++#define HAS_BSDTIME		/* gettimeofday(2) return time		*/
++#else
+ #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
+-#define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+-#define HAS_FTIME		/* ftime( ), <times.h>			*/
++#define HAS_FTIME		/* ftime(3), <times.h>			*/
++#define HAS_INDEX		/* index( ) instead of strchr( )	*/
++#define HAS_BSDDIRS		/* <sys/dir.h>				*/
++#endif
++
+ #define HAS_TERMCAP		/* tgetxxx( )				*/
+ #define HAS_VFORK		/* BSD-ism, should not be necessary	*/
+-#define HAS_INDEX		/* index( ) instead of strchr( )	*/
+ #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
+ #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
++#ifdef __FreeBSD__	/* BSD4_4 */
++#define HAS_POSIXTTY		/* <termios.h>				*/
++#define HAS_GETCWD		/* getcwd(buf,size)				*/
++#else
+ #define HAS_BSDTTY		/* <sgtty.h>				*/
+-#define HAS_BSDDIRS		/* <sys/dir.h>				*/
++#define HAS_GETWD		/* getwd(buf)				*/
++#endif
++
+ #define HAS_BSDRUSAGE		/* getrusage( )				*/
+ #define HAS_BSDRLIMIT		/* getrlimit( )				*/
+ #define HAS_DUP2
+-#define HAS_GETWD		/* getwd(buf)				*/
+-#define HAS_STRINGS		/* use <strings.h> instead of <string.h> */

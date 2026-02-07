@@ -1,0 +1,9 @@
+pygltflib is a library for reading, writing and handling GLTF files.
+
+It supports the entire specification, including materials and animations.
+
+Main features are:
+* GLB and GLTF support
+* Buffer data conversion
+* Extensions
+* All attributes are type-hinted

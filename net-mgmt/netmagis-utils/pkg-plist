@@ -1,0 +1,7 @@
+bin/dnsaddalias
+bin/dnsaddhost
+bin/dnsdelhost
+bin/dnsdelip
+bin/dnsmodattr
+bin/dnsreadprol
+bin/dnswriteprol

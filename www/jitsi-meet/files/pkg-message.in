@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+Jitsi Meet was installed
+
+1) Jitsi Meet needs the following apps as minimal to work
+
+   www/nginx
+   net-im/prosody
+   net-im/jitsi-prosody-plugins
+   net-im/jicofo
+   net-im/jitsi-videobridge
+
+2) You can find a basic configuration example here:
+
+   %%EXAMPLESDIR%%/nginx.conf
+
+3) Configuration and interface options files are installed like 
+
+   %%WWWDIR%%/config.js.sample
+   %%WWWDIR%%/interface_config.js.sample
+
+   Copy these files to
+
+   %%WWWDIR%%/config.js
+   %%WWWDIR%%/interface_config.js
+
+4) Enjoy it
+EOM
+}
+]

@@ -1,0 +1,18 @@
+--- port.h.in.orig	2016-06-30 09:40:52 UTC
++++ port.h.in
+@@ -6,14 +6,7 @@
+ @semun@
+ @bool@
+ @snprintf@
+-#ifndef _LARGEFILE64_SOURCE
+-@large_file@
+-#endif
+-#ifdef _LARGEFILE64_SOURCE
+-#define OFF_T_PRINTF "%lld"
+-#else
+-#define OFF_T_PRINTF "%d"
+-#endif
++#define OFF_T_PRINTF "%ld"
+ 
+ #if @true_false@
+ #define false 0

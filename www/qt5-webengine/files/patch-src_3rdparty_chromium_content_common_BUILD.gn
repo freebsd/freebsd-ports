@@ -1,0 +1,27 @@
+--- src/3rdparty/chromium/content/common/BUILD.gn.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/content/common/BUILD.gn
+@@ -329,6 +329,15 @@ static_library("common") {
+     libs += [ "android" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandbox_init_linux.cc",
++    ]
++    deps += [
++      "//third_party/fontconfig",
++    ]
++  }
++
+   if (is_debug && !is_component_build && enable_plugins) {
+     # Content depends on the PPAPI message logging stuff; if this isn't here,
+     # some unit test binaries won't compile. This only worked in release mode
+@@ -355,7 +364,7 @@ static_library("common") {
+     sources -= [ "cursors/webcursor_aura.cc" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "zygote/sandbox_support_linux.cc",
+       "zygote/send_zygote_child_ping_linux.cc",

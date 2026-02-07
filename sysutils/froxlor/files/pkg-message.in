@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+Please visit froxlor's website for more information.
+
+You will want to check and eventually modify some of
+the paths used by froxlor, as this port currently does
+not make any attempts to change the defaults as given
+by the upstream.
+
+See the froxlor documentation at http://www.froxlor.org
+for more information.
+
+Froxlor has been installed to the following location:
+
+  %%WWWDIR%%
+EOM
+}
+]

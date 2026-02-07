@@ -1,0 +1,140 @@
+From 1a6044c0ec33ea394c1258ae4e934f1fef3a710f Mon Sep 17 00:00:00 2001
+From: Abseil Team <absl-team@google.com>
+Date: Fri, 5 Aug 2022 06:56:05 -0700
+Subject: [PATCH] Map the absl::is_trivially_* functions to their std impl
+
+There's no point redefining these functions if they are supported by the compiler and the version of libstdc++. Also, some of the builtins used by the absl implementation of these functions (e.g. __has_trivial_destructor) have been deprecated in Clang 15.
+
+PiperOrigin-RevId: 465554125
+Change-Id: I8674c3a5270ce3c654cdf58ae7dbd9d2bda8faa5
+---
+ absl/base/config.h            | 18 ++++++++----------
+ absl/meta/type_traits.h       | 22 ++++++++++++++++++++++
+ absl/meta/type_traits_test.cc |  1 +
+ 3 files changed, 31 insertions(+), 10 deletions(-)
+
+diff --git absl/base/config.h absl/base/config.h
+index 585485c3..ab5791a5 100644
+--- absl/base/config.h
++++ absl/base/config.h
+@@ -259,17 +259,15 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] != 'h' ||
+ #define ABSL_HAVE_STD_IS_TRIVIALLY_ASSIGNABLE 1
+ #endif
+ 
+-// ABSL_HAVE_SOURCE_LOCATION_CURRENT
++// ABSL_HAVE_STD_IS_TRIVIALLY_COPYABLE
+ //
+-// Indicates whether `absl::SourceLocation::current()` will return useful
+-// information in some contexts.
+-#ifndef ABSL_HAVE_SOURCE_LOCATION_CURRENT
+-#if ABSL_INTERNAL_HAS_KEYWORD(__builtin_LINE) && \
+-    ABSL_INTERNAL_HAS_KEYWORD(__builtin_FILE)
+-#define ABSL_HAVE_SOURCE_LOCATION_CURRENT 1
+-#elif ABSL_INTERNAL_HAVE_MIN_GNUC_VERSION(5, 0)
+-#define ABSL_HAVE_SOURCE_LOCATION_CURRENT 1
+-#endif
++// Checks whether `std::is_trivially_copyable<T>` is supported.
++//
++// Notes: Clang 15+ with libc++ supports these features, GCC hasn't been tested.
++#if defined(ABSL_HAVE_STD_IS_TRIVIALLY_COPYABLE)
++#error ABSL_HAVE_STD_IS_TRIVIALLY_COPYABLE cannot be directly set
++#elif defined(__clang__) && (__clang_major__ >= 15)
++#define ABSL_HAVE_STD_IS_TRIVIALLY_COPYABLE 1
+ #endif
+ 
+ // ABSL_HAVE_THREAD_LOCAL
+diff --git absl/meta/type_traits.h absl/meta/type_traits.h
+index d886cb30..46b76906 100644
+--- absl/meta/type_traits.h
++++ absl/meta/type_traits.h
+@@ -298,8 +298,12 @@ struct is_function
+ // https://gcc.gnu.org/onlinedocs/gcc/Type-Traits.html#Type-Traits.
+ template <typename T>
+ struct is_trivially_destructible
++#ifdef ABSL_HAVE_STD_IS_TRIVIALLY_DESTRUCTIBLE
++    : std::is_trivially_destructible<T> {
++#else
+     : std::integral_constant<bool, __has_trivial_destructor(T) &&
+                                    std::is_destructible<T>::value> {
++#endif
+ #ifdef ABSL_HAVE_STD_IS_TRIVIALLY_DESTRUCTIBLE
+  private:
+   static constexpr bool compliant = std::is_trivially_destructible<T>::value ==
+@@ -347,9 +351,13 @@ struct is_trivially_destructible
+ // Nontrivially destructible types will cause the expression to be nontrivial.
+ template <typename T>
+ struct is_trivially_default_constructible
++#if defined(ABSL_HAVE_STD_IS_TRIVIALLY_CONSTRUCTIBLE)
++    : std::is_trivially_default_constructible<T> {
++#else
+     : std::integral_constant<bool, __has_trivial_constructor(T) &&
+                                    std::is_default_constructible<T>::value &&
+                                    is_trivially_destructible<T>::value> {
++#endif
+ #if defined(ABSL_HAVE_STD_IS_TRIVIALLY_CONSTRUCTIBLE) && \
+     !defined(                                            \
+         ABSL_META_INTERNAL_STD_CONSTRUCTION_TRAITS_DONT_CHECK_DESTRUCTION)
+@@ -381,10 +389,14 @@ struct is_trivially_default_constructible
+ // expression to be nontrivial.
+ template <typename T>
+ struct is_trivially_move_constructible
++#if defined(ABSL_HAVE_STD_IS_TRIVIALLY_CONSTRUCTIBLE)
++    : std::is_trivially_move_constructible<T> {
++#else
+     : std::conditional<
+           std::is_object<T>::value && !std::is_array<T>::value,
+           type_traits_internal::IsTriviallyMoveConstructibleObject<T>,
+           std::is_reference<T>>::type::type {
++#endif
+ #if defined(ABSL_HAVE_STD_IS_TRIVIALLY_CONSTRUCTIBLE) && \
+     !defined(                                            \
+         ABSL_META_INTERNAL_STD_CONSTRUCTION_TRAITS_DONT_CHECK_DESTRUCTION)
+@@ -490,9 +502,13 @@ struct is_trivially_move_assignable
+ // `is_trivially_assignable<T&, const T&>`.
+ template <typename T>
+ struct is_trivially_copy_assignable
++#ifdef ABSL_HAVE_STD_IS_TRIVIALLY_ASSIGNABLE
++    : std::is_trivially_copy_assignable<T> {
++#else
+     : std::integral_constant<
+           bool, __has_trivial_assign(typename std::remove_reference<T>::type) &&
+                     absl::is_copy_assignable<T>::value> {
++#endif
+ #ifdef ABSL_HAVE_STD_IS_TRIVIALLY_ASSIGNABLE
+  private:
+   static constexpr bool compliant =
+@@ -544,6 +560,11 @@ namespace type_traits_internal {
+ // destructible. Arrays of trivially copyable types are trivially copyable.
+ //
+ // We expose this metafunction only for internal use within absl.
++
++#if defined(ABSL_HAVE_STD_IS_TRIVIALLY_COPYABLE)
++template <typename T>
++struct is_trivially_copyable : std::is_trivially_copyable<T> {};
++#else
+ template <typename T>
+ class is_trivially_copyable_impl {
+   using ExtentsRemoved = typename std::remove_all_extents<T>::type;
+@@ -569,6 +590,7 @@ template <typename T>
+ struct is_trivially_copyable
+     : std::integral_constant<
+           bool, type_traits_internal::is_trivially_copyable_impl<T>::kValue> {};
++#endif
+ }  // namespace type_traits_internal
+ 
+ // -----------------------------------------------------------------------------
+diff --git absl/meta/type_traits_test.cc absl/meta/type_traits_test.cc
+index 0ef5b665..fe96554d 100644
+--- absl/meta/type_traits_test.cc
++++ absl/meta/type_traits_test.cc
+@@ -336,6 +336,7 @@ struct MovableNonCopyable {
+ 
+ struct NonCopyableOrMovable {
+   NonCopyableOrMovable() = default;
++  virtual ~NonCopyableOrMovable() = default;
+   NonCopyableOrMovable(const NonCopyableOrMovable&) = delete;
+   NonCopyableOrMovable(NonCopyableOrMovable&&) = delete;
+   NonCopyableOrMovable& operator=(const NonCopyableOrMovable&) = delete;
+-- 
+2.40.1
+

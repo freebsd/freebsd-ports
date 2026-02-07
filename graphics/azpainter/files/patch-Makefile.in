@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-12-04 15:00:00 UTC
++++ Makefile.in
+@@ -229,7 +229,7 @@ install:
+ 	$(inst_file) desktop/*.svg $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps
+ 	$(inst_file) desktop/azpainter.xml $(DESTDIR)$(datarootdir)/mime/packages
+ 
+-	$(inst_file) GPL3 AUTHORS ChangeLog ReadMe_en ReadMe_ja manual_ja.html $(DESTDIR)$(docdir)
++	$(inst_file) AUTHORS ChangeLog ReadMe_en ReadMe_ja manual_ja.html $(DESTDIR)$(docdir)
+ 
+ 	$(inst_file) data/*.dat data/*.png data/sckey-2.conf $(DESTDIR)$(datadir)
+ 

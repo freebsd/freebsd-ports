@@ -1,0 +1,10 @@
+# Configuration for mailwrapper is kept in /etc/mail/mailer.conf.
+# Replace that file with this one to enable qmail under a sendmail
+# disguise. Very useful.
+
+sendmail	%%PREFIX%%/bin/sendmail
+send-mail	%%PREFIX%%/bin/sendmail
+mailq		%%PREFIX%%/bin/qmail-qread
+newaliases	%%PREFIX%%/bin/newaliases
+hoststat	%%PREFIX%%/bin/qmail-tcpto
+purgestat	%%PREFIX%%/bin/qmail-tcpok

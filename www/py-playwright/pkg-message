@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+You installed playwright: API to automate web browsers.
+
+playright expects Linuxlator to be initialized because it
+downloads and runs Linux binaries for web browsers and
+ffmpeg.
+playwright is known to work with linux_base-rl9.
+
+playright is supposed to work with 3 browsers: Chrome, Firefox, WebKit.
+
+Chrome is currently broken: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=289285
+WebKit is also broken due to missing dependencies.
+
+You are expected to run the command 'playwright install' to download
+browser binaries before you can use playwright.
+
+EOM
+}
+]

@@ -1,0 +1,8 @@
+Dhrystone is a synthetic computing benchmark program developed in 1984
+by Reinhold P. Weicker intended to be representative of system (integer)
+programming. The Dhrystone grew to become representative of general
+processor (CPU) performance.
+
+DMIPS value is result of dhrystone test divided by 1757, results are often
+reported in DMIPS/MHz. For more information, see
+http://en.wikipedia.org/wiki/Dhrystone.

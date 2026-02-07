@@ -1,0 +1,5 @@
+Proxycheck is a simple tool that may be used to check whether a given
+host or set of hosts has open proxy server running.
+
+Proxycheck comes ready to contribute results to DSBL.org.  It was
+written by Michael Tokarev.

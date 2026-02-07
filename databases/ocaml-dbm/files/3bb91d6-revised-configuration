@@ -1,0 +1,127 @@
+From 3bb91d6ffd700f9211a84dd2fc80c428bfcf5510 Mon Sep 17 00:00:00 2001
+From: Xavier Leroy <xavierleroy@users.noreply.github.com>
+Date: Wed, 20 Jul 2022 11:18:18 +0200
+Subject: [PATCH] Revised autoconfiguration (#16)
+
+- Let the C compiler find the ndbm.h or gdbm.h files
+  (instead of looking for them in specific directories).
+- Don't use the gdbm-ndbm.h compatibility mode, it no longer exists.
+---
+ cldbm.c   |  4 +---
+ configure | 69 ++++++++++++++++++++++---------------------------------
+ 2 files changed, 29 insertions(+), 44 deletions(-)
+
+diff --git a/cldbm.c b/cldbm.c
+index 34e2d37..0fa4d13 100644
+--- a/cldbm.c
++++ b/cldbm.c
+@@ -21,9 +21,7 @@
+ #include <caml/fail.h>
+ #include <caml/callback.h>
+ 
+-#ifdef DBM_USES_GDBM_NDBM
+-#include <gdbm-ndbm.h>
+-#elif defined DBM_COMPAT
++#ifdef DBM_COMPAT
+ #include <ndbm.h>
+ #else
+ #include <gdbm.h>
+diff --git a/configure b/configure
+index 9a3d094..e049218 100755
+--- a/configure
++++ b/configure
+@@ -36,7 +36,7 @@ hasgot() {
+    fi
+    echo '  return 0;'
+    echo '}') > hasgot.c
+-  ${CC:-cc} -I$1 -o hasgot.exe hasgot.c $3 $4
++  ${CC:-cc} $1 -o hasgot.exe hasgot.c $3 2>/dev/null
+   res=$?
+   rm -f hasgot.c hasgot.exe
+   return $res
+@@ -46,58 +46,45 @@ dbm_include="not found"
+ dbm_link="not found"
+ dbm_defines=""
+ 
+-for dir in /usr/include /usr/include/db1 /usr/include/gdbm /usr/local/include; do
+-  if test -f $dir/ndbm.h; then
+-    dbm_include=$dir
+-    dbm_defines="-DDBM_COMPAT"
+-    if hasgot $dir ndbm.h; then
+-      dbm_link=""
+-    elif hasgot $dir ndbm.h -lndbm; then
+-      dbm_link="-lndbm"
+-    elif hasgot $dir ndbm.h -ldb1; then
+-      dbm_link="-ldb1"
+-    elif hasgot $dir ndbm.h -lgdbm; then
+-      dbm_link="-lgdbm"
+-    elif hasgot $dir ndbm.h -lgdbm_compat -lgdbm; then
+-      dbm_link="-lgdbm_compat -lgdbm"
++for include in \
++      "" \
++      "-I/usr/include/db1" \
++      "-I/usr/include/gdbm" \
++      "-I/usr/local/include" \
++      "-I/opt/homebrew/include" ; do
++    if hasgot "$include" ndbm.h ""; then
++        dbm_include="$include"
++        dbm_defines="-DDBM_COMPAT"
++        dbm_link=""
++        break
++    elif hasgot "$include" gdbm.h -lgdbm; then
++        dbm_include="$include"
++        dbm_link="-lgdbm"
++        break
++    elif hasgot "$include" ndbm.h -lndbm; then
++        dbm_include="$include"
++        dbm_defines="-DDBM_COMPAT"
++        dbm_link="-lndbm"
++        break
++    elif hasgot "$include" ndbm.h -ldb1; then
++        dbm_include="$include"
++        dbm_defines="-DDBM_COMPAT"
++        dbm_link="-ldb1"
++        break
+     fi
+-    break
+-  fi
+-  if test -f $dir/gdbm-ndbm.h; then
+-    dbm_include=$dir
+-    dbm_defines="-DDBM_COMPAT -DDBM_USES_GDBM_NDBM"
+-    if hasgot $dir gdbm-ndbm.h -lgdbm_compat -lgdbm; then
+-      dbm_link="-lgdbm_compat -lgdbm"
+-    fi
+-    break
+-  fi
+-  if test -f $dir/gdbm.h; then
+-    dbm_include=$dir
+-    if hasgot $dir gdbm.h -lgdbm; then
+-      dbm_link="-lgdbm"
+-    fi
+-    break
+-  fi
+ done
+ if test "$dbm_include" = "not found" || test "$dbm_link" = "not found"; then
+-  echo "NDBM not found, the \"camldbm\" library cannot be built."
++  echo "NDBM and GDBM not found, the \"camldbm\" library cannot be built."
+   exit 2
+ fi
+ 
+ echo "Configuration for the \"camldbm\" library:"
+-echo "        headers found in ......... $dbm_include"
+-echo "        options for compiling .... $dbm_defines"
++echo "        options for compiling .... $dbm_include $dbm_defines"
+ echo "        options for linking ...... $dbm_link"
+ echo
+ echo "Configuration successful"
+ echo
+ 
+-if test "$dbm_include" = "/usr/include"; then
+-  dbm_include=""
+-else
+-  dbm_include="-I$dbm_include"
+-fi
+-
+ echo "OCAML_STDLIB=$stdlib" > Makefile.config
+ echo "DBM_INCLUDES=$dbm_include" >> Makefile.config
+ echo "DBM_LINK=$dbm_link" >> Makefile.config

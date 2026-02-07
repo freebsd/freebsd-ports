@@ -1,0 +1,25 @@
+- Restore system shaderc support
+- Detect system shaderc on BSDs
+
+--- voxygen/Cargo.toml.orig	2025-08-14 15:14:34 UTC
++++ voxygen/Cargo.toml
+@@ -48,7 +47,7 @@ default-publish = [
+     "discord",
+     "simd",
+ ]
+-default = ["default-publish", "hot-reloading", "shaderc-from-source", "egui-ui"]
++default = ["default-publish", "hot-reloading", "egui-ui"]
+ 
+ [dependencies]
+ client = { package = "veloren-client", path = "../client" }
+--- cargo-crates/shaderc-sys-0.10.1/build/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/shaderc-sys-0.10.1/build/build.rs
+@@ -357,7 +357,7 @@ fn main() {
+             }
+         } {
+             match (target_os.as_str(), target_env.as_str()) {
+-                ("linux" | "android", _) => {
++                ("linux" | "android" | "dragonfly" | "freebsd" | "netbsd" | "openbsd", _) => {
+                     println!("cargo:rustc-link-search=native={search_dir_str}");
+                     println!("cargo:rustc-link-lib={lib_kind}={lib_name}");
+                     return;

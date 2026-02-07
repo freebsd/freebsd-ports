@@ -1,0 +1,8 @@
+This module allows you to specify your project-wide or even company-wide
+Moose meta-policy.
+
+Most all of Moose's features can be customized through the use of custom
+metaclasses, however fiddling with the metaclasses can be hairy.
+Moose::Policy removes most of that hairiness and makes it possible to
+cleanly contain a set of meta-level customizations in one easy to use
+module.

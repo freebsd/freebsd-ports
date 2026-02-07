@@ -1,0 +1,44 @@
+--- Makefile.in.orig	2003-09-17 21:21:38 UTC
++++ Makefile.in
+@@ -120,7 +120,7 @@ vqadmin_LDFLAGS =
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = -L%%LOCALBASE%%/lib @LIBS@
+ depcomp =
+ am__depfiles_maybe =
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -527,32 +527,12 @@ install-data-local:
+ 		cp vqadmin.acl     @cgibindir@/vqadmin ; \
+ 	fi
+ 
+-	chown              @vpopuser@ @cgibindir@/vqadmin
+-	chgrp              @vpopgroup@ @cgibindir@/vqadmin
+-	chown -R           @vpopuser@ @cgibindir@/vqadmin/*
+-	chgrp -R           @vpopgroup@ @cgibindir@/vqadmin/*
+-	chown root         @cgibindir@/vqadmin/vqadmin.cgi
+-	chgrp `id -g root` @cgibindir@/vqadmin/vqadmin.cgi
+-	chmod u+s,g+s      @cgibindir@/vqadmin/vqadmin.cgi 
+-	chmod 755          @cgibindir@/vqadmin
+-	chmod 755          @cgibindir@/vqadmin/html
+-
+-	chown              @vpopuser@ @wwwroot@/images/vqadmin
+-	chgrp              @vpopgroup@ @wwwroot@/images/vqadmin
+-	chown -R           @vpopuser@ @wwwroot@/images/vqadmin/*
+-	chgrp -R           @vpopgroup@ @wwwroot@/images/vqadmin/*
+-	chmod 755          @wwwroot@/images/vqadmin
+-
+ 	if test -f @cgibindir@/vqadmin/.htaccess ; then \
+ 		echo ".htaccess file already in place" ; \
+ 	else \
+ 		cp htaccess        @cgibindir@/vqadmin/.htaccess ; \
+ 	fi
+ 
+-	chown nobody       @cgibindir@/vqadmin/.htaccess
+-	chmod u+rw         @cgibindir@/vqadmin/.htaccess
+-	chmod go+r         @cgibindir@/vqadmin/.htaccess
+-
+ acl.o: config.h
+ cedit.o: config.h
+ cgi.o: config.h

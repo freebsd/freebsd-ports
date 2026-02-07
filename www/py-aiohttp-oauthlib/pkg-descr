@@ -1,0 +1,4 @@
+Oauthlib for aiohttp clients
+
+Library integrating OAuthlib from Requests into the AIOHTTP Asynchronous
+HTTP Client/Server framework.

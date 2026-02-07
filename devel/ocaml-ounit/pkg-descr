@@ -1,0 +1,2 @@
+OUnit is a unit testing framework for Objective Caml, inspired by
+the JUnit tool for Java, and the HUnit tool for Haskell.

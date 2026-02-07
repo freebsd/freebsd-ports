@@ -1,0 +1,11 @@
+This module takes a hierarchy of directories containing MP3 files
+and presents it as a browsable song library for streaming over the
+web.  It requires the Apache web server, the mod_perl embedded Perl
+interpreter, and the MP3::Info module.
+
+MP3 files are displayed in a list that shows the MP3 title, artist,
+duration and bitrate.  Subdirectories are displayed with "CD" icons.
+The user can download an MP3 file to disk by clicking on its title,
+stream it to an MP3 decoder by clicking on the "play" link. Users
+can also stream the entire contents of a directory, or select a
+subset of songs to play.

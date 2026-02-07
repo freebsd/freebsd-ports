@@ -1,0 +1,6 @@
+kimpy is a Python interface to the KIM API.
+
+The Knowledgebase of Interatomic Models (KIM) Application Programming Interface
+(API) defines a standard (the Portable Model Interface (PMI)) for how molecular
+simulators interface with interatomic models (also called potentials or
+force-fields).

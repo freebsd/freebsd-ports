@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Parse/Method/Signatures.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Bindable.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Named.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Placeholder.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Positional.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked/Array.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Param/Unpacked/Hash.pm
+%%SITE_PERL%%/Parse/Method/Signatures/ParamCollection.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Sig.pm
+%%SITE_PERL%%/Parse/Method/Signatures/TypeConstraint.pm
+%%SITE_PERL%%/Parse/Method/Signatures/Types.pm
+%%PERL5_MAN3%%/Parse::Method::Signatures.3.gz
+%%PERL5_MAN3%%/Parse::Method::Signatures::Param.3.gz
+%%PERL5_MAN3%%/Parse::Method::Signatures::Sig.3.gz
+%%PERL5_MAN3%%/Parse::Method::Signatures::TypeConstraint.3.gz

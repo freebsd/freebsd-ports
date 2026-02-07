@@ -1,0 +1,14 @@
+%%CONVERTER%%bin/alacconvert
+include/alac/ALACAudioTypes.h
+include/alac/ALACBitUtilities.h
+include/alac/ALACDecoder.h
+include/alac/ALACEncoder.h
+include/alac/EndianPortable.h
+include/alac/aglib.h
+include/alac/dplib.h
+include/alac/matrixlib.h
+lib/libalac.a
+lib/libalac.so
+lib/libalac.so.0
+lib/libalac.so.0.0.0
+libdata/pkgconfig/alac.pc

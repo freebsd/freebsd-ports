@@ -1,0 +1,5 @@
+bin/linktractor
+%%SITE_PERL%%/HTML/SimpleLinkExtor.pm
+%%SITE_PERL%%/auto/HTML/SimpleLinkExtor/autosplit.ix
+%%PERL5_MAN1%%/linktractor.1.gz
+%%PERL5_MAN3%%/HTML::SimpleLinkExtor.3.gz

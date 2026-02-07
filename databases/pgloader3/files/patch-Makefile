@@ -1,0 +1,45 @@
+--- Makefile.orig	2020-03-22 21:26:18 UTC
++++ Makefile
+@@ -30,6 +30,13 @@ BUNDLEDIR  = $(BUILDDIR)/bundle/$(BUNDLENAME)
+ BUNDLE     = $(BUILDDIR)/$(BUNDLENAME).tgz
+ BUNDLETESTD= $(BUILDDIR)/bundle/test
+ 
++ifneq ($(shell getconf LONG_BIT),64)
++# Assuming 32 bit FreeBSD and setting DYNSIZE down to 1 GiB...
++# (Will be used by SBCL for its GC/heap, 32 bit systems can only
++# allocate 4 GiB max).
++DYNSIZE = 1024
++endif
++
+ ifeq ($(OS),Windows_NT)
+ EXE           = .exe
+ COMPRESS_CORE = no
+@@ -86,7 +93,7 @@ $(QLDIR)/local-projects/cl-csv:
+ 
+ $(QLDIR)/setup.lisp:
+ 	mkdir -p $(BUILDDIR)
+-	curl -o $(BUILDDIR)/quicklisp.lisp http://beta.quicklisp.org/quicklisp.lisp
++#	curl -o $(BUILDDIR)/quicklisp.lisp http://beta.quicklisp.org/quicklisp.lisp
+ 	$(CL) $(CL_OPTS) --load $(BUILDDIR)/quicklisp.lisp                        \
+              --load src/getenv.lisp                                               \
+              --eval '(quicklisp-quickstart:install :path "$(BUILDDIR)/quicklisp" :proxy (getenv "http_proxy"))' \
+@@ -126,7 +133,9 @@ $(BUILDAPP_CCL): $(QLDIR)/setup.lisp
+ 
+ $(BUILDAPP_SBCL): $(QLDIR)/setup.lisp
+ 	mkdir -p $(BUILDDIR)/bin
+-	$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp               \
++	cd $(BUILDDIR)/quicklisp/dists/quicklisp/software/buildapp-1.5.6/ && LISP=$(CL) gmake
++	mv $(BUILDDIR)/quicklisp/dists/quicklisp/software/buildapp-1.5.6/buildapp $(BUILDDIR)/bin/buildapp.sbcl
++#$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp               \
+              --eval '(ql:quickload "buildapp")'                   \
+              --eval '(buildapp:build-buildapp "$@")'              \
+              --eval '(quit)'
+@@ -199,7 +208,7 @@ $(BUNDLE): $(BUNDLEDIR) $(BUNDLEDIR)/version.sexp
+ 	sed -e s/%VERSION%/$(VERSION)/ < bundle/Makefile > $(BUNDLEDIR)/Makefile
+ 	git archive --format=tar --prefix=pgloader-$(VERSION)/ master \
+ 	     | tar -C $(BUNDLEDIR)/local-projects/ -xf -
+-	make QLDIR=$(BUNDLEDIR) clones
++#	make QLDIR=$(BUNDLEDIR) clones
+ 	tar -C build/bundle 		    \
+             --exclude bin   		    \
+             --exclude test/sqlite           \

@@ -1,0 +1,6 @@
+bin/sslocal
+bin/ssmanager
+bin/ssserver
+bin/ssservice
+bin/ssurl
+@sample %%ETCDIR%%/config.json.sample

@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Dancer::Plugin::CORS.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::CORS::Sharing.3.gz
+%%SITE_PERL%%/Dancer/Plugin/CORS.pm
+%%SITE_PERL%%/Dancer/Plugin/CORS/Sharing.pm

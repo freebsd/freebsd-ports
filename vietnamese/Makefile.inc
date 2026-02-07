@@ -1,0 +1,2 @@
+
+PKGNAMEPREFIX?=	vi-

@@ -1,0 +1,38 @@
+From bf9ecb7999e4b1ea8df8684c294512f190fa028c Mon Sep 17 00:00:00 2001
+From: "Christian R. Helmrich" <c.helmrich@ecodis.de>
+Date: Mon, 22 Dec 2025 11:00:34 +0000
+Subject: [PATCH] fix CBR at preset>9
+
+---
+ src/lib/bitAllocation.cpp | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/lib/bitAllocation.cpp b/src/lib/bitAllocation.cpp
+index 72c525a..ca23d92 100644
+--- src/lib/bitAllocation.cpp
++++ src/lib/bitAllocation.cpp
+@@ -57,7 +57,7 @@ static void jndPowerLawAndPeakSmoothing (uint32_t* const  stepSizes, const unsig
+ 
+     if ((stepSizeM3 <= stepSizeM2) && (stepSizeM3 <= stepSizeM1) && (stepSizeB <= stepSizeM2) && (stepSizeB <= stepSizeM1))
+     {
+-      const uint32_t maxM3M0 = __max (stepSizeM3, stepSizeB); // smoothen local spectral peak of _´`- shape
++      const uint32_t maxM3M0 = __max (stepSizeM3, stepSizeB); // smoothen local spectral peak of _'`- shape
+ 
+       stepSizes[b - 2] = uint32_t ((modifiedB * stepSizes[b - 2] + oneMinusB * __min (maxM3M0, stepSizes[b - 2]) + 64) >> 7); // _-`-
+       stepSizes[b - 1] = uint32_t ((modifiedB * stepSizes[b - 1] + oneMinusB * __min (maxM3M0, stepSizes[b - 1]) + 64) >> 7); // _---
+@@ -105,9 +105,9 @@ uint16_t BitAllocator::getRateCtrlFac (const int32_t rateRatio, const unsigned s
+                                        const bool prevEightShorts /*= false*/)
+ {
+ #if BA_MORE_CBR
+-  const int32_t ratioFac = rateRatio * (40 - 5 * m_rateIndex);
+-  const uint32_t brRatio = __max ((prevEightShorts ? (ratioFac * ratioFac + (1 << 16)) >> 17 : 0) - SHRT_MIN, __min (USHRT_MAX, ratioFac)) -
+-                           (m_rateIndex == 2 ? 1 << 12 : 0);  // rate tuning
++  const int32_t ratioFac = rateRatio * (40 - 5 * __min (9, m_rateIndex));
++  const uint32_t brRatio = __max ((prevEightShorts ? (ratioFac * ratioFac + (1 << 16)) >> 17 : 0) + 32768, __min (65535, ratioFac)) -
++                           (m_rateIndex == 2 ? 4096 : 0); // rate tuning
+   const uint16_t mSfmSqr = (m_rateIndex <= 2 && samplingRate >= 27713 ? (specFlatness * specFlatness) >> m_rateIndex : 0);
+ #else
+   const uint32_t brRatio = __max (1 << 15, __min ((1 << 16) - 1, rateRatio * (36 - 9 * m_rateIndex)));
+-- 
+GitLab
+

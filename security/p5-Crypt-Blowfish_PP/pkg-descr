@@ -1,0 +1,10 @@
+Blowfish is a published algorithm written by Bruce Schneier Unlike
+IDEA or DES etc. there are no patent implications in using this
+algorithm.
+
+It uses anywhere between a 64 bit and a 448 bit key. The transform
+itself is fast and operates on a 64 bit block, and most of the
+calculation time is in initialising the context with the key data.
+
+The _PP name comes from the fact that this implementation is Pure
+Perl, and will not have any compatibility problems.

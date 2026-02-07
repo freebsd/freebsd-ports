@@ -1,0 +1,18 @@
+--- xmbmon.resources.orig	2003-06-08 14:25:18 UTC
++++ xmbmon.resources
+@@ -8,7 +8,7 @@ XMBmon*translations: #override \
+ 				<Key>Q: quit_proc()
+ ! Add the followings to users default resources if one wishes
+ XMBmon*geometry:	100x140
+-XMBmon*font:	-adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
++XMBmon*font:	fixed
+ XMBmon*count:	4
+ XMBmon*sec:		20
+ XMBmon*wsec:	1800
+@@ -32,5 +32,5 @@ XMBmon*fahrn:	False
+ XMBmon*probe:
+ XMBmon*TyanTigerMP:	False
+ XMBmon*label:
+-XMBmon*labelfont:	-adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
++XMBmon*labelfont:	fixed
+ XMBmon*labelcolor:	black

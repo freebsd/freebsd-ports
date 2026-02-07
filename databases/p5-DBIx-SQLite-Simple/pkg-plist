@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/DBIx::SQLite::Simple.3.gz
+%%PERL5_MAN3%%/DBIx::SQLite::Simple::Table.3.gz
+%%SITE_PERL%%/DBIx/SQLite/Simple.pm
+%%SITE_PERL%%/DBIx/SQLite/Simple/Table.pm

@@ -1,0 +1,7 @@
+bin/alpine
+bin/rpdump
+bin/rpload
+etc/alpine.conf.sample
+share/man/man1/alpine.1.gz
+share/man/man1/rpdump.1.gz
+share/man/man1/rpload.1.gz

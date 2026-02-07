@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-09-24 11:51:08 UTC
++++ Makefile.in
+@@ -349,7 +349,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = docs tools extensions lib src data m4 plugins tests gabble
++SUBDIRS = docs tools extensions lib src data m4 plugins gabble
+ DISTCHECK_CONFIGURE_FLAGS = --disable-debug --enable-gtk-doc
+ CLEANFILES = FIXME.out
+ LCOV_CHECK_ARGS = CHECK_TWISTED_SLEEP=6

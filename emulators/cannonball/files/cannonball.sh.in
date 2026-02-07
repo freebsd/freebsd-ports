@@ -1,0 +1,27 @@
+#!/bin/sh
+
+if [ -n "${XDG_DATA_HOME}" ]; then
+	CANNONBALL_DIR=${XDG_DATA_HOME}/cannonball
+else
+	CANNONBALL_DIR=${HOME}/.local/share/cannonball
+fi
+
+RESOURCE_DIR=${CANNONBALL_DIR}/res
+ROMS_DIR=${CANNONBALL_DIR}/roms
+
+mkdir -p "${CANNONBALL_DIR}" "${ROMS_DIR}"
+
+if [ ! -f "${CANNONBALL_DIR}/config.xml" ]; then
+    cp %%PREFIX%%/share/cannonball/conf/config.xml \
+       "${CANNONBALL_DIR}"
+fi
+
+if [ ! -d "${RESOURCE_DIR}" ]; then
+    mkdir -p "${RESOURCE_DIR}"
+    cp %%PREFIX%%/share/cannonball/res/tilemap.bin \
+       "${RESOURCE_DIR}"
+    cp %%PREFIX%%/share/cannonball/res/tilepatch.bin \
+       "${RESOURCE_DIR}"
+fi
+
+cd "${CANNONBALL_DIR}" && exec "%%PREFIX%%/libexec/cannonball" "$@"

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: mythbackend
+# REQUIRE: DAEMON mysql
+# KEYWORD: shutdown
+
+# Define mythbackend_enable in /etc/rc.conf[.local] to enable mythbackend
+#
+# mythbackend_enable (bool):  Set to "NO" by default.
+#                             Set it to "YES" to enable mythbackend.
+# mythbackend_logpath (str):  Custom logpath for mythbackend.
+#                             (default /var/log/mythtv)
+# mythbackend_flags (str):    Additional flags for mythbackend.
+# mythbackend_user (str):     Username to run with.
+
+. /etc/rc.subr
+
+name="mythbackend"
+rcvar=mythbackend_enable
+command="%%PREFIX%%/bin/${name}"
+
+start_precmd="mythbackend_prestart"
+
+mythbackend_prestart()
+{
+	if [ ! -d ${mythbackend_logpath} ]; then
+		/usr/bin/install -o ${mythbackend_user} -g wheel -m 755 -d ${mythbackend_logpath}
+	fi
+}
+
+load_rc_config $name
+
+: ${mythbackend_enable="NO"}
+: ${mythbackend_logpath="/var/log/mythtv"}
+: ${mythbackend_user="root"}
+
+command_args="-d --logpath ${mythbackend_logpath}"
+HOME=$(/usr/sbin/pw usershow -7 -n "${mythbackend_user}" | /usr/bin/cut -d: -f6)
+
+run_rc_command "$1"

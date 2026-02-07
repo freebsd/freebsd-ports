@@ -1,0 +1,4 @@
+bin/precomp
+etc/dgd/mud.dgd.sample
+etc/rc.d/dgd.sh.sample
+sbin/dgd

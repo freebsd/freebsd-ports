@@ -1,0 +1,20 @@
+--- Documentation/Makefile.in.orig	Tue Mar  7 00:31:23 2006
++++ Documentation/Makefile.in	Fri Jul 21 00:21:22 2006
+@@ -244,7 +244,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-docmaindir = $(datadir)/doc/vstr-devel-$(VERSION)
++docmaindir = $(datadir)/doc/vstr
+ docmain_DATA = \
+                 basic_cat.c.html \
+                 comparison.html \
+@@ -268,7 +268,7 @@
+                 cost_tutorial.html \
+                 tutorial.html
+ 
+-doclicdir := $(datadir)/doc/vstr-devel-$(VERSION)/compare_licenses/
++doclicdir := $(datadir)/doc/vstr/compare_licenses/
+ doclic_DATA = \
+                 compare_licenses/SafeStr.txt \
+                 compare_licenses/bstring.txt \

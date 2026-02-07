@@ -1,0 +1,12 @@
+https://github.com/libgd/libgd/issues/367#issuecomment-2000499957
+
+--- tests/fontconfig/Makemodule.am.orig	2021-09-11 04:41:44 UTC
++++ tests/fontconfig/Makemodule.am
+@@ -1,5 +1,5 @@
+-if HAVE_LIBFONTCONFIG
+-if HAVE_LIBFREETYPE
++if !HAVE_LIBFONTCONFIG
++if !HAVE_LIBFREETYPE
+ libgd_test_programs += \
+ 	fontconfig/basic
+ endif

@@ -1,0 +1,53 @@
+--- test/dotest.orig	2013-02-12 19:30:10.000000000 +0100
++++ test/dotest	2014-09-11 05:58:19.000000000 +0200
+@@ -31,6 +31,17 @@
+     keepgoing=1
+ fi
+ 
++
++compare() {
++ answer=`pamarith -compare "$1" "$2" 2>&1`
++ result=$?
++ if [ ! $result -eq 0 ]; then
++  echo "$answer"
++ fi
++ return $result
++}
++
++
+ failed() {
+     if (( lastfailed != totaltests ))
+     then
+@@ -126,9 +137,9 @@
+     source="$1"
+     shift
+     testrun ${XCFTOOLS_PREFIX}xcf2pnm \
+-        -@ -oo.$oext $aopt source/$source.xcf.gz "$@"
+-    [ -z "$oanswer" ] || cmp o.want o.$oext || failed
+-    [ -z "$aanswer" ] || cmp a.want a.pnm || failed
++        -oo.$oext $aopt source/$source.xcf.gz "$@"
++    [ -z "$oanswer" ] || compare o.want o.$oext || failed
++    [ -z "$aanswer" ] || compare a.want a.pnm || failed
+ }
+ 
+ testpng() {
+@@ -162,10 +173,10 @@
+     perl pngtype.pl < o.png > pngtype
+     diff -u pngtype.want pngtype || failed
+     pngtopnm $oargs o.png > o.pnm
+-    cmp o.want o.pnm || failed
++    compare o.want o.pnm || failed
+     if [ "$afilter" != : ] ; then
+         pngtopnm -alpha o.png > a.pnm
+-        cmp a.want a.pnm || failed
++        compare a.want a.pnm || failed
+     fi
+     rm pngtype.want
+ }
+@@ -732,4 +743,4 @@
+     exit 0
+ fi
+ 
+-# End
+\ No newline at end of file
++# End

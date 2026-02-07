@@ -1,0 +1,40 @@
+--- ctm/ctm.8.orig	2018-10-27 15:56:22 UTC
++++ ctm/ctm.8
+@@ -12,7 +12,7 @@
+ .\"
+ .\" $FreeBSD$
+ .\"
+-.Dd April 14, 2016
++.Dd December 23, 2018
+ .Dt CTM 8
+ .Os
+ .Sh NAME
+@@ -52,8 +52,11 @@ command.
+ You can pass a CTM delta on stdin, or you can give the
+ filename as an argument.
+ If you do the latter, you make life a lot
+-easier for your self, since the program can accept gzip'ed files and
++easier for your self, since the program can accept gzip'ed,
++bzip2'ed, or xz'ed files and
+ since it will not have to make a temporary copy of your file.
++(If you pass it an xz'ed file, and xz is not part of your base system,
++you will have to install xz from the ports.)
+ You can
+ specify multiple deltas at one time, they will be processed one at a
+ time.
+@@ -272,6 +275,15 @@ contains the sequence number of the last CTM delta app
+ Changing
+ or removing this file will greatly confuse
+ .Nm .
++.sp
++.Pa .svn_revision
++contains the revision number emitted by SVN 
++.\" eg from approx
++.\"	svn up  src | tail -1 | \
++.\"     sed -E 's/[^[:digit:]]//g' > src/.svn_revision
++(to reference when discussing sources with users of 
++.Nm svn
++direct).
+ .Pp
+ Using the
+ .Fl e

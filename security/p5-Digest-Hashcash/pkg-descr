@@ -1,0 +1,3 @@
+This module implements the hashcash hash (or digest, although it's not
+clearly a digest). For all your information needs please
+visit http://www.hashcash.org.

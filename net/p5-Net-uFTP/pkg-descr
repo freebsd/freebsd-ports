@@ -1,0 +1,2 @@
+NET::uFTP is a Perl5 module providing a universal interface for FTP-like
+modules (FTP, SFTP, SCP), in most cases Net::FTP compatible.

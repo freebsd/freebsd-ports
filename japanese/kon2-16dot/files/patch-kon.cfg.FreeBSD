@@ -1,0 +1,34 @@
+--- kon.cfg.FreeBSD.orig	1997-01-24 02:17:34.000000000 +0900
++++ kon.cfg.FreeBSD	2013-02-17 09:42:05.000000000 +0900
+@@ -114,9 +114,12 @@
+ 	63 63 63
+ 
+ # Startup command definition (usually font loading commands are specified)
+-bdf-zcat:Startup
+-	gzip -cd /usr/local/lib/fonts/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
+-	gzip -cd /usr/local/lib/fonts/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n
++bdf-zcat16:%%KON16FONT%%
++	gzip -cd %%PREFIX%%/share/fonts/bdf/jiskan16.bdf.gz | /usr/local/bin/fld -t bdf -n
++	gzip -cd %%PREFIX%%/share/fonts/bdf/8x16rk.bdf.gz | /usr/local/bin/fld -t bdf -n
++bdf-zcat14:%%KON14FONT%%
++	gzip -cd %%PREFIX%%/share/fonts/bdf/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
++	gzip -cd %%PREFIX%%/share/fonts/bdf/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n
+ minix:
+ 	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.ank
+ 	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.k14
+@@ -143,13 +146,13 @@
+ # Mouse type definition.  Choose one of: Microsoft,
+ # MouseSystems, BusMouse, MMSeries, Logitech, or None.
+ Mouse:
+-	None
++	MouseSystems
+ # Mouse baud rate
+ MouseBaud:
+ 	1200
+ # Mouse device file name
+ MouseDev:
+-	/dev/mouse
++	/dev/sysmouse
+ 
+ # Use hard scroll
+ HardScroll:

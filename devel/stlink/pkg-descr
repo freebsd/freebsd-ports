@@ -1,0 +1,8 @@
+Open source version of the STMicroelectronics STLINK Tools
+
+ stlink is an open source toolset to program and debug STM32 devices and boards
+manufactured by STMicroelectronics.
+
+ It supports several so called STLINK programmer boards (and clones thereof)
+which use a microcontroller chip to translate commands from USB to JTAG/SWD.
+

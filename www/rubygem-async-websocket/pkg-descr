@@ -1,0 +1,2 @@
+Async::WebSocket is an asynchronous websocket client/server implementation for
+HTTP/1 and HTTP/2.

@@ -1,0 +1,9 @@
+3GPP Adaptive Multi-Rate Floating-point (AMR) Speech Codec Shared Library
+
+3GPP released reference implementation of 3GPP Adaptive Multi-Rate
+Floating-point (AMR) Speech Codec (3GPP TS 26.104).
+
+https://www.3gpp.org/ftp/Specs/html-info/26104.htm
+
+This package converts 3GPP TS 26.104 reference implementation of AMR-NB to a
+shared library.

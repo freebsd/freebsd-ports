@@ -1,0 +1,8 @@
+--- Makefile.orig	2021-02-22 22:03:20 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CC     := gcc
++#CC     := gcc
+ MACROS := 
+ CFLAGS := -I. -Wundef -Wall -Wextra -O3 $(MACROS)
+ 

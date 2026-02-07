@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-09-08 21:59:32 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ requires = [
+     # first version that supports Python 3.12; older versions may work
+     # with previous Python versions, but are not tested
+-    "setuptools >= 66.1"
++    "setuptools >= 61"
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -16,7 +16,7 @@ readme = {file = "README.md", content-type = "text/mar
+ 
+ description = "Foreign Function Interface for Python calling C code."
+ readme = {file = "README.md", content-type = "text/markdown"}
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Programming Language :: Python",
+     "Programming Language :: Python :: 3",

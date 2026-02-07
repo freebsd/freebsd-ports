@@ -1,0 +1,8 @@
+bin/wmbiff
+share/man/man1/wmbiff.1.gz
+share/man/man5/wmbiffrc.5.gz
+%%DATADIR%%/sample.wmbiffrc
+%%DATADIR%%/skins/wmbiff-classic-master-contrast.xpm
+%%DATADIR%%/skins/wmbiff-classic-master-led.xpm
+%%DATADIR%%/skins/wmbiff-master-contrast.xpm
+%%DATADIR%%/skins/wmbiff-master-led.xpm

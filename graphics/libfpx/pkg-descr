@@ -1,0 +1,8 @@
+This  package   is  the  Flashpix   OpenSource  Toolkit  and   is  based
+on  source   code  obtained   from  the   Digital  Imaging   Group  Inc.
+(currently known as International Imaging Industry Association or i3a).
+
+See  the  file  AUTHORS  for  the  origin  of  this  package,  the  file
+COPYING for  usage limitations, the  file INSTALL for  Unix installation
+instructions,  and  the  file  README.gcc   for  GNU  make  based  build
+instructions.

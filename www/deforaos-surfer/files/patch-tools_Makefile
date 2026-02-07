@@ -1,0 +1,17 @@
+--- tools/Makefile.orig	2023-11-22 23:50:08 UTC
++++ tools/Makefile
+@@ -6,11 +6,11 @@ CC	= cc
+ BINDIR	= $(PREFIX)/bin
+ SBINDIR	= $(PREFIX)/sbin
+ CC	= cc
+-CPPFLAGSF= -I ../src
++CPPFLAGSF= -D WITH_WEBKIT2 -I ../src
+ CPPFLAGS=
+-CFLAGSF	= `pkg-config --cflags libDesktop`
++CFLAGSF	= `pkg-config --cflags libDesktop gtk+-x11-3.0 webkit2gtk-4.0`
+ CFLAGS	= -W -Wall -g -O2 -fPIE -D_FORTIFY_SOURCE=2 -fstack-protector
+-LDFLAGSF= `pkg-config --libs libDesktop`
++LDFLAGSF= `pkg-config --libs libDesktop gtk+-x11-3.0 webkit2gtk-4.0` -lintl
+ LDFLAGS	= -pie -Wl,-z,relro -Wl,-z,now
+ EXEEXT	=
+ RM	= rm -f

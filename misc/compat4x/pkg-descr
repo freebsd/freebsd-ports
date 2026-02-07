@@ -1,0 +1,12 @@
+This package provides the compat4x libraries for your
+system, so you can use legacy binaries that depend on them.
+
+Ports usage example:
+
+--
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:misc/compat4x
+.endif
+--

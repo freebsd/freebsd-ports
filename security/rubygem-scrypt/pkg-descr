@@ -1,0 +1,3 @@
+The scrypt key derivation function is designed to be far more secure against
+hardware brute-force attacks than alternative functions such as PBKDF2 or
+bcrypt.

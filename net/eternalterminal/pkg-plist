@@ -1,0 +1,7 @@
+bin/et
+bin/etserver
+bin/etterminal
+bin/htm
+bin/htmd
+@sample etc/etserver/et.cfg.sample
+etc/rc.d/etserver

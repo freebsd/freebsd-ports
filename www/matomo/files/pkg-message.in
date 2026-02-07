@@ -1,0 +1,61 @@
+[
+{ type: install
+  message: <<EOM
+1) Create a user and an empty database for Matomo to store all
+   its tables in (or choose an existing database).
+
+2) Add the following to your Apache configuration, and
+   restart the server:
+
+   ### Add the AcceptPathInfo directive only for Apache 2.4.30 or later.
+   Alias /matomo %%WWWDIR%%
+   AcceptPathInfo On
+   <Directory %%WWWDIR%%>
+     DirectoryIndex index.php
+     Options FollowSymLinks
+     AllowOverride All
+     <IfVersion < 2.4>
+        Order allow,deny
+        Allow from all
+     </IfVersion>
+     <IfVersion >= 2.4>
+       Require all granted
+     </IfVersion>
+   </Directory>
+
+3) Visit your Matomo site with a browser (i.e.,
+   http://your.server.com/matomo/), and you should
+   be taken to the setup script, which will lead
+   you through setting up Matomo.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+  https://matomo.org/docs/installation/
+EOM
+}
+{
+  type: upgrade
+  message: <<EOM
+Console upgrade recommended on medium and high traffic sites:
+
+1) Disable Matomo Tracking
+    In config/config.ini.php, add the following
+    [Tracker]
+    record_statistics = 0
+
+2) Disable the Matomo User Interface and APIs
+    In config/config.ini.php, add the following
+    [General]
+    maintenance_mode = 1
+
+3) Run the update
+
+    php %%WWWDIR%%/console core:update
+
+4) Remove the previously added config.ini parameters
+
+5) Visit the Admin > Diagnostics > System check report and review the report and follow any recommended actions
+
+EOM
+}
+]

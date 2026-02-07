@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/az.dat
+lib/aspell-%%VER%%/l-az.cmap
+lib/aspell-%%VER%%/l-az.cset
+share/aspell/az.multi
+share/aspell/az.rws
+share/aspell/azerbaijani.alias
+share/aspell/azeri.alias

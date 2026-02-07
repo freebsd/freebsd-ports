@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig        2012-04-23 17:53:45 UTC
++++ src/Makefile.in
+@@ -1249,11 +1249,11 @@ install-exec-hook:
+ 		mkdir -p $(DESTDIR)$(sysconfdir); \
+ 		chmod 755 $(DESTDIR)$(sysconfdir); \
+ 	fi
+-	-if test ! -f $(DESTDIR)$(sysconfdir)/dspam.conf; then \
+-		cp dspam.conf $(DESTDIR)$(sysconfdir)/dspam.conf; \
+-		chmod 640 $(DESTDIR)$(sysconfdir)/dspam.conf; \
+-		chown "$(dspam_owner)" $(DESTDIR)$(sysconfdir)/dspam.conf; \
+-		chgrp "$(dspam_group)" $(DESTDIR)$(sysconfdir)/dspam.conf; \
++	-if test ! -f $(DESTDIR)$(sysconfdir)/dspam.conf.sample; then \
++		cp dspam.conf $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
++		chmod 640 $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
++		chown "$(dspam_owner)" $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
++		chgrp "$(dspam_group)" $(DESTDIR)$(sysconfdir)/dspam.conf.sample; \
+ 	fi
+ 	-if test x"$(dspam_owner)" != xnone; then \
+                 chown "$(dspam_owner)" $(DESTDIR)$(bindir)/dspam; \

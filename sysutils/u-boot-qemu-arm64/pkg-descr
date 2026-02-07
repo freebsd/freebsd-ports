@@ -1,0 +1,8 @@
+U-Boot loader for QEMU arm64
+
+To use this bootloader to boot a FreeBSD aarch64 image, install emulators/qemu
+and execute it as eg:
+
+qemu-system-aarch64 -M virt -cpu cortex-a57 -m 512m -nographic -bios /usr/local/share/u-boot/u-boot-qemu-arm64/u-boot.bin -hda FreeBSD-13.0-CURRENT-arm64-aarch64-RPI3-20200409-r359731.img
+
+For general information about U-Boot see WWW: https://www.denx.de/wiki/U-Boot

@@ -1,0 +1,4 @@
+This is a simple and small POP3 daemon implementation designed for
+Maildir support.  It have direct support for authenticating regular
+unix users, has UIDL command support, can access maildirs in
+non-default location, and have support for external (pre-)authenticators.

@@ -1,0 +1,11 @@
+--- lib/Nagios/Plugin/LDAP.pm 2009-01-14 02:29:40.000000000 +0000
++++ lib/Nagios/Plugin/LDAP.pm 2009-01-15 02:17:56.000000000 +0000
+@@ -257,6 +257,7 @@
+   return 1 unless $warning or $critical;
+ 
+   my $src_ldap = $self->_ldap_connect($master) or return;
++  $self->_ldap_bind($src_ldap);
+ 
+   my $src_entry =
+     $self->_ldap_do_search($src_ldap, '(&(objectClass=*)(contextCSN=*))', 'contextCSN')
+

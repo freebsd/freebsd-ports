@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+The cgiwrap binaries have been installed in the following
+directory:
+
+  %%INSTALL_DIR%%
+
+You should create the following two files, otherwise cgiwrap will
+not function as expected:
+
+  %%ALLOW_FILE%%
+  %%DENY_FILE%%
+EOM
+}
+]

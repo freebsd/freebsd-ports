@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+sSMTP has been installed successfully.
+
+Firstly, edit /etc/mail/mailer.conf to replace sendmail with ssmtp:
+
+sendmail	%%PREFIX%%/sbin/ssmtp
+send-mail	%%PREFIX%%/sbin/ssmtp
+mailq		%%PREFIX%%/sbin/ssmtp
+newaliases	%%PREFIX%%/sbin/ssmtp
+hoststat	/usr/bin/true
+purgestat	/usr/bin/true
+
+Hint: in case sSMPT is being installed directly from ports,
+editing /etc/mail/mailer.conf can be done by running "make replace".
+
+Secondly, edit the following files to configure sSMTP:
+
+- %%ETCDIR%%/revaliases
+- %%ETCDIR%%/ssmtp.conf
+
+At this point sSMTP should be ready to go.
+EOM
+}
+]

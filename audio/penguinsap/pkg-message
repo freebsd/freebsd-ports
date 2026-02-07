@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+A huge .sap file collection can be found at: http://asma.atari.org/
+EOM
+}
+]

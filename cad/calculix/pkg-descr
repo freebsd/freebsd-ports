@@ -1,0 +1,14 @@
+CalculiX GraphiX
+
+CalculiX Finite Element Models can be built, calculated, and
+post-processed. The pre- and post-processor is an interactive 3D-tool
+using the OpenGL API.
+
+Supported solvers
+
+	* CalculiX ccx, Abaqus FEM (pre, post)
+	* Nastran FEM (pre)
+	* Ansys FEM (pre)
+	* DUNS-CFD (pre, post)
+	* ISAAC-CFD (pre, post)
+	* OpenFOAM (pre, post)

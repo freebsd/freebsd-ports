@@ -1,0 +1,8 @@
+bin/logstalgia
+share/man/man1/logstalgia.1.gz
+%%DATADIR%%/fonts/README
+%%DATADIR%%/fonts/FreeMonoBold.ttf
+%%DATADIR%%/fonts/FreeSerif.ttf
+%%DATADIR%%/ball.tga
+%%DATADIR%%/example.log
+%%DATADIR%%/glow.tga

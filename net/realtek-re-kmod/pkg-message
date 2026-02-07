@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Add the following lines to your /boot/loader.conf
+to override the built-in FreeBSD re(4) driver.
+
+if_re_load="YES"
+if_re_name="/boot/modules/if_re.ko"
+
+By default, the size of allocated mbufs is enough
+to receive the largest Ethernet frame supported
+by the card.  If your memory is highly fragmented,
+trying to allocate contiguous pages (more than
+4096 bytes) may result in driver hangs.
+For this reason the value is tunable at boot time,
+e.g. if you don't need Jumbo frames you can lower
+the memory requirements and avoid this issue with:
+
+hw.re.max_rx_mbuf_sz="2048"
+
+To enable Wake on LAN (WoL) support you might need
+to set the following tunables:
+
+hw.re.s5wol="1"
+hw.re.s0_magic_packet="1"
+
+If you experience network hangs with IPv6 enabled,
+you might need to disable the checksum offloading
+by adding the following parameters to the related
+ifconfig line in your /etc/rc.conf file:
+
+-rxcsum -txcsum -rxcsum6 -txcsum6
+EOM
+}
+]

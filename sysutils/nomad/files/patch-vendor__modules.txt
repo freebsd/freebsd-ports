@@ -1,0 +1,11 @@
+--- vendor/modules.txt.orig	2025-09-26 14:45:28.694427000 -0700
++++ vendor/modules.txt	2025-09-26 14:45:40.928402000 -0700
+@@ -763,7 +763,7 @@
+ # github.com/hashicorp/cli v1.1.6
+ ## explicit; go 1.20
+ github.com/hashicorp/cli
+-# github.com/hashicorp/consul-template v0.39.0
++# github.com/hashicorp/consul-template v0.40.0
+ ## explicit; go 1.22
+ github.com/hashicorp/consul-template/child
+ github.com/hashicorp/consul-template/config

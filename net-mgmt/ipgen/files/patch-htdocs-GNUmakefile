@@ -1,0 +1,10 @@
+--- htdocs/GNUmakefile.orig	2024-05-27 06:59:46 UTC
++++ htdocs/GNUmakefile
+@@ -12,5 +12,5 @@ install:
+ depend:
+ 
+ install:
+-	install -o root -g wheel -m 755 -d ${DESTDIR}${PREFIX}/share/ipgen/htdocs
+-	install -o root -g wheel -m 444 ${FILES} ${DESTDIR}${PREFIX}/share/ipgen/htdocs
++	${BSD_INSTALL_DIR} ${DESTDIR}${PREFIX}/share/ipgen/htdocs
++	${BSD_INSTALL_DATA} ${FILES} ${DESTDIR}${PREFIX}/share/ipgen/htdocs

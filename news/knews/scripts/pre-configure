@@ -1,0 +1,26 @@
+#! /bin/sh
+echo "You should tell knews the name of your NNTP server"
+echo "You can do this by setting the environment variable NNTPSERVER"
+echo "csh users: in .cshrc:   setenv NNTPSERVER host.domain"
+echo "sh  users: in .profile: NNTPSERVER=host.domain; export NNTPSERVER"
+
+# work around a problem with bmake regarding files ending in .l
+#
+FILES_TO_PATCH="widgets.c save.c search.c"
+for file in $FILES_TO_PATCH
+do
+	ed -s ${WRKSRC}/src/${file} <<-EOF
+		g/^#include.*\.l/s/\.l/.h/
+		w
+		q
+		EOF
+done
+
+for file in ${WRKSRC}/src/layouts/*
+do
+	mv $file `echo $file | sed -e 's/\.l/.h/'`
+done
+
+perl -pi -e "s|!!LOCALBASE!!|$LOCALBASE|" ${WRKSRC}/knews.tmpl
+
+exit 0

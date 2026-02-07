@@ -1,0 +1,2 @@
+Python UUID implementation using Rust's UUID library.
+This will make uuid4 function around 10x faster.

@@ -1,0 +1,33 @@
+--- restinio/impl/acceptor.hpp.orig	2022-07-11 11:10:14 UTC
++++ restinio/impl/acceptor.hpp
+@@ -261,7 +261,7 @@ class acceptor_t final
+ 				ep = m_acceptor.local_endpoint();
+ 
+ 				// Now we can switch acceptor to listen state.
+-				m_acceptor.listen( asio_ns::socket_base::max_connections );
++				m_acceptor.listen( asio_ns::socket_base::max_listen_connections );
+ 
+ 				// Call accept connections routine.
+ 				for( std::size_t i = 0; i< this->concurrent_accept_sockets_count(); ++i )
+@@ -604,7 +604,7 @@ class acceptor_t final
+ 				else if( str_addr == "ip6-localhost" )
+ 					str_addr = "::1";
+ 
+-				result = asio_ns::ip::address::from_string( str_addr );
++				result = asio_ns::ip::make_address( str_addr );
+ 			}
+ 			else if( auto * addr_v = get_if<asio_ns::ip::address>( &from ) )
+ 			{
+--- restinio/impl/connection.hpp.orig	2022-07-11 11:10:14 UTC
++++ restinio/impl/connection.hpp
+@@ -1028,8 +1028,8 @@ class connection_t final
+ 					m_logger.trace( [&]{
+ 						// Get status line:
+ 						const string_view_t status_line{
+-								asio_ns::buffer_cast< const char * >(
+-									next_write_group->first.items().front().buf() ),
++								static_cast< const char * >(
++									next_write_group->first.items().front().buf().data() ),
+ 								next_write_group->first.status_line_size() };
+ 
+ 						return fmt::format(

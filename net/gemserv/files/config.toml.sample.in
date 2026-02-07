@@ -1,0 +1,53 @@
+# interface accepts multiple interface/port combinations. However, due to the
+# dual stack nature of linux if you specify "[::]:1965" linux will also listen
+# on "0.0.0.0:1965" so if you manually specify both it will fail.
+# interface = [ "0.0.0.0:1965, "[::]:1965" ]
+interface = [ "[::]:1965" ]
+# port and host have been deprecated in favor of interface but will still work
+# for now.
+# port = 1965
+# host = "::"
+# log is optional and server wide. It defaults to info if not set. Other levels
+# are error, warn, and info. If error is set it will only show error. If warn
+# is set it will show error and warn. Info shows all three.
+log = "info"
+
+# There must be at least 1 server tag if a client doesn't send sni the server
+# will use this tag as its default.
+# Server 1
+[[server]]
+hostname = "gemini.example.net"
+dir = "/usr/local/gemini/gemserv-dist"
+key = "/usr/local/etc/gemserv/key.pem"
+cert = "/usr/local/etc/gemserv/cert.pem"
+# index is optional but defaults to index.gemini. The server will serve files
+# ending in gemini or gmi.
+index = "index.gmi"
+# lang is optional
+lang = "en"
+# cgi is optional bool
+cgi = true
+# cgipath is optional and only checked if cgi is true. It restricts cgi to only
+# this directory.
+cgipath = "/path/to/cgi-bin/"
+# scgi is optional
+scgi = { "/scgi" = "localhost:4000" }
+# cgienv is optional
+cgienv = { "GIT_PROJECT_ROOT" = "/srv/git" }
+# usrdir is optional. it'll look in each user's ~/public_gemini
+usrdir = true
+# proxy is optional
+# path is what comes after the hostname e.g. example.com/path
+proxy = { path = "localhost:1966" }
+# proxy_all is optional
+# It will send all requests to the specified server. It also supports streamming.
+proxy_all = "localhost:1967"
+# redirect is optional
+redirect = { "/redirect" = "/", "/newdomain" = "gemini://example.net" }
+
+# Server 2
+[[server]]
+hostname = "example.net"
+dir = "/path/to/serv/"
+key = "/path/to/key"
+cert = "/path/to/cert"

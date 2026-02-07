@@ -1,0 +1,2 @@
+An OpenGL wrapper for Ruby. ruby-opengl contains bindings for OpenGL and the
+GLU and GLUT libraries.

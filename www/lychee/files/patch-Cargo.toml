@@ -1,0 +1,9 @@
+--- Cargo.toml.orig	2025-02-01 14:18:54 UTC
++++ Cargo.toml
+@@ -4,6 +4,3 @@ version = "0.18.0"
+ 
+ [workspace.package]
+ version = "0.18.0"
+-
+-[profile.release]
+-debug = true

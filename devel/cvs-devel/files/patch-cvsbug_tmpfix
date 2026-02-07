@@ -1,0 +1,22 @@
+# Patch for a tmp race in cvsbug (in the source package; we don't ship
+# the script as part of the package). Closes: #325106
+diff -Nur src/cvsbug.in src/cvsbug.in
+--- src/cvsbug.in	2003-02-26 05:31:33.000000000 +0800
++++ src/cvsbug.in	2006-02-26 22:07:08.000000000 +0800
+@@ -109,14 +109,14 @@
+     /usr/bin/ypcat passwd 2>/dev/null | cat - /etc/passwd | grep "^$LOGNAME:" |
+       cut -f5 -d':' | sed -e 's/,.*//' > $TEMP
+     ORIGINATOR="`cat $TEMP`"
+-    rm -f $TEMP
++    > $TEMP
+   fi
+ fi
+ 
+ if [ "$ORIGINATOR" = "" ]; then
+   grep "^$LOGNAME:" /etc/passwd | cut -f5 -d':' | sed -e 's/,.*//' > $TEMP
+   ORIGINATOR="`cat $TEMP`"
+-  rm -f $TEMP
++  > $TEMP
+ fi
+ 
+ if [ -n "$ORGANIZATION" ]; then

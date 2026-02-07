@@ -1,0 +1,2 @@
+CGI::Application::Plugin::LinkIntegrity - Make tamper-resisistent
+links in CGI::Application.

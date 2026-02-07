@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Data/Bind.pm
+%%SITE_ARCH%%/auto/Data/Bind/Bind.so
+%%PERL5_MAN3%%/Data::Bind.3.gz

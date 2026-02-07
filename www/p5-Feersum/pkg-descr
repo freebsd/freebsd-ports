@@ -1,0 +1,10 @@
+Feersum is an HTTP server built on EV. It fully supports the PSGI 1.03 spec
+including the psgi.streaming interface and is compatible with Plack. PSGI 1.1,
+which has yet to be published formally, is also supported. Feersum also has
+its own "native" interface which is similar in a lot of ways to PSGI, but is
+not compatible with PSGI or PSGI middleware.
+
+Feersum uses a single-threaded, event-based programming architecture to scale
+and can handle many concurrent connections efficiently in both CPU and RAM.
+It skips doing a lot of sanity checking with the assumption that a "front-end"
+HTTP/HTTPS server is placed between it and the Internet.

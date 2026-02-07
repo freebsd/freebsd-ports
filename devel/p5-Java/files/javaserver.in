@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: javaserver
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable javaserver:
+# javaserver_enable (bool):      Set to "NO" by default.
+#                             Set it to "YES" to enable apache22
+# javaserver_classpath (str):    Set to "" by default.
+#                              Define your classpath here.
+# javaserver_user (str):    Set to "nobody" by default.
+#                              Define owner of the javaserver process.
+
+. /etc/rc.subr
+
+name="javaserver"
+rcvar=javaserver_enable
+
+load_rc_config $name
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+pidfile="/var/run/${name}.pid"
+classpath="%%PREFIX%%"/share/p5-Java/JavaServer.jar
+
+[ -z "$javaserver_classpath" ]	|| classpath="${javaserver_classpath}":$classpath
+[ -z "$javaserver_enable" ]	&& javaserver_enable="NO"
+[ -z "$javaserver_user" ]	&& javaserver_user="nobody"
+
+javaserver_start()
+{
+	su -m ${javaserver_user} -c "nohup %%PREFIX%%/bin/java -cp ${classpath} com.zzo.javaserver.JavaServer >/dev/null & ; echo \$! " | tail -1 > ${pidfile}
+}
+
+javaserver_stop()
+{
+	if [ -f ${pidfile} ]; then
+		rc_pid=`cat ${pidfile}`
+		kill -TERM $rc_pid
+		wait_for_pids $rc_pid
+		rm ${pidfile}
+	fi
+}
+
+run_rc_command "$1"

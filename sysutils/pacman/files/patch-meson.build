@@ -1,0 +1,43 @@
+--- meson.build.orig	2025-11-01 11:05:29 UTC
++++ meson.build
+@@ -198,7 +198,7 @@ if conf.has('HAVE_GETMNTINFO')
+   else
+       conf.set('FSSTATSTYPE', 'struct statfs')
+   endif
+-elif conf.has('HAVE_STRUCT_STATVFS_F_FLAG')
++elif conf.has('HAVE_STRUCT_STATVFS_F_FLAG') and not host_machine.system().contains('freebsd')
+   conf.set('FSSTATSTYPE', 'struct statvfs')
+ elif conf.has('HAVE_STRUCT_STATFS_F_FLAGS')
+   conf.set('FSSTATSTYPE', 'struct statfs')
+@@ -417,19 +417,19 @@ configure_file(
+ 
+ configure_file(
+   input : 'etc/makepkg.conf.in',
+-  output : 'makepkg.conf',
++  output : 'makepkg.conf.sample',
+   configuration : substs,
+   install_dir : SYSCONFDIR)
+ 
+ configure_file(
+   input : 'etc/makepkg.conf.d/fortran.conf.in',
+-  output : 'fortran.conf',
++  output : 'fortran.conf.sample',
+   configuration : substs,
+   install_dir : join_paths(SYSCONFDIR, 'makepkg.conf.d/'))
+ 
+ configure_file(
+   input : 'etc/makepkg.conf.d/rust.conf.in',
+-  output : 'rust.conf',
++  output : 'rust.conf.sample',
+   configuration : substs,
+   install_dir : join_paths(SYSCONFDIR, 'makepkg.conf.d/'))
+ 
+@@ -437,7 +437,7 @@ configure_file(
+ 
+ configure_file(
+   input : 'etc/pacman.conf.in',
+-  output : 'pacman.conf',
++  output : 'pacman.conf.sample',
+   configuration : substs,
+   install_dir : SYSCONFDIR)
+ 

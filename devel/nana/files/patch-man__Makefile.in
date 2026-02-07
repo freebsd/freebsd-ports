@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	2014-05-24 15:43:45.847868248 +0800
++++ man/Makefile.in	2014-05-24 15:48:20.693847531 +0800
+@@ -274,7 +274,7 @@ install-data-local:
+ 	@sect=1;				\
+ 	inst=`echo "nana" | sed '$(transform)'`.1; \
+ 	echo installing nana.1 as $(mandir)/man$$sect/$$inst; \
+-	$(INSTALL_DATA) $(srcdir)/nana.1 $(mandir)/man$$sect/$$inst
++	$(INSTALL_DATA) $(srcdir)/nana.1 $(DESTDIR)$(mandir)/man$$sect/$$inst
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

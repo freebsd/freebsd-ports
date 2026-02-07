@@ -1,0 +1,36 @@
+--- opendkim/tests/Makefile.in.orig	2015-05-12 18:43:49 UTC
++++ opendkim/tests/Makefile.in
+@@ -139,8 +139,10 @@ am__nobase_list = $(am__nobase_strip_setup); \
+       { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } \
+     END { for (dir in files) print dir, files[dir] }'
+ am__base_list = \
+-  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+-  sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
++  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\
++/ /g' | \
++  sed '$$!N;$$!N;$$!N;$$!N;s/\
++/ /g'
+ am__uninstall_files_from_dir = { \
+   test -z "$$files" \
+     || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } \
+@@ -1298,14 +1300,16 @@ uninstall-am: uninstall-dist_docDATA
+ @LCOV_TRUE@description.txt: $(check_SCRIPTS)
+ @LCOV_TRUE@	rm -f $@
+ @LCOV_TRUE@	for test in $? ; do \
+-@LCOV_TRUE@		testname=$${test/t-}; \
+-@LCOV_TRUE@		testname=$${testname//-/_}; \
++@LCOV_TRUE@		testname=$${test#t-}; \
++@LCOV_TRUE@		testname=$$(echo $${testname} | sed -e 's/-/_/g'); \
+ @LCOV_TRUE@		grep ^# $$test | tail -n 1 | \
+-@LCOV_TRUE@			sed -e "s/^#\(.*\)/$${testname}\n\t\1\n/g" >> $@; \
++@LCOV_TRUE@			sed -e "s/^#\(.*\)/$${testname}\
++@LCOV_TRUE@	\1\
++@LCOV_TRUE@/g" >> $@; \
+ @LCOV_TRUE@	done
+ 
+ @LCOV_TRUE@description.html: description.txt
+-@LCOV_TRUE@	gendesc --output $@ $<
++@LCOV_TRUE@	gendesc --output $@ $?
+ 
+ @LCOV_TRUE@maintainer-clean-local:
+ @LCOV_TRUE@	-rm -rf lcov/[^C]*

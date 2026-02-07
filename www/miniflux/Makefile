@@ -1,0 +1,52 @@
+PORTNAME=	miniflux
+DISTVERSION=	2.2.11
+PORTREVISION=	8
+CATEGORIES=	www
+
+MAINTAINER=	krion@FreeBSD.org
+COMMENT=	Self-hosted software to read RSS/Atom/JSON feeds
+WWW=		https://miniflux.app/
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go:1.24+,modules
+
+USE_GITHUB=	yes
+GH_PROJECT=	v2
+
+GO_MODULE=	${GH_ACCOUNT}.app/${GH_PROJECT}
+GO_MOD_DIST=	github
+_BUILD_COMMIT=	d164c738
+_BUILD_DATE=	date -u "+%Y-%m-%dT%H:%M:%SZ"
+_BUILD_XFLAGS=	version.Version=${DISTVERSION} \
+		version.Commit=${_BUILD_COMMIT} \
+		version.BuildDate=${_BUILD_DATE:sh}
+GO_BUILDFLAGS=	-ldflags "${STRIP} ${_BUILD_XFLAGS:S!^!-X miniflux.app/v2/internal/!}"
+
+USE_RC_SUBR=	${PORTNAME}
+
+MINIFLUX_USER?=	${PORTNAME}
+MINIFLUX_GROUP?=	${PORTNAME}
+USERS=		${MINIFLUX_USER}
+GROUPS=		${MINIFLUX_GROUP}
+
+SUB_LIST=	MINIFLUX_GROUP=${MINIFLUX_GROUP} \
+		MINIFLUX_USER=${MINIFLUX_USER}
+
+PLIST_SUB=	MINIFLUX_GROUP=${MINIFLUX_GROUP} \
+		MINIFLUX_USER=${MINIFLUX_USER}
+
+OPTIONS_DEFINE=		PGSQL_SERVER
+
+PGSQL_SERVER_DESC=	Install the PostgreSQL Server Component
+PGSQL_SERVER_USES=	pgsql
+PGSQL_SERVER_VARS=	WANT_PGSQL+="server contrib"
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.env.sample \
+		${STAGEDIR}${PREFIX}/etc
+
+.include <bsd.port.mk>

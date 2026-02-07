@@ -1,0 +1,37 @@
+PORTNAME=	lua-gd
+PORTVERSION=	2.0.33r3
+CATEGORIES=	graphics
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
+
+MAINTAINER=	sergey.dyatko@gmail.com
+COMMENT=	GD bindings for the Lua programming language
+WWW=		https://www.ittner.com.br/lua-gd/
+
+LICENSE=	MIT
+
+LIB_DEPENDS=	libgd.so:graphics/gd
+
+USES=		lua:module pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	ittner
+GH_TAGNAME=	2ce8e47
+MAKE_ARGS=	LUABIN=${LUA_CMD} LUAPKG=lua-${LUA_VER}
+
+DOCSDIR=	${LUA_DOCSDIR}
+EXAMPLESDIR=	${LUA_EXAMPLESDIR}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-install:
+	${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/gd.so ${STAGEDIR}${LUA_MODLIBDIR}
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demos/* ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

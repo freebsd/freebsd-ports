@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Mojo/DOM58.pm
+%%SITE_PERL%%/Mojo/DOM58/Entities.pm
+%%SITE_PERL%%/Mojo/DOM58/_CSS.pm
+%%SITE_PERL%%/Mojo/DOM58/_Collection.pm
+%%SITE_PERL%%/Mojo/DOM58/_HTML.pm
+%%PERL5_MAN3%%/Mojo::DOM58.3.gz
+%%PERL5_MAN3%%/Mojo::DOM58::Entities.3.gz

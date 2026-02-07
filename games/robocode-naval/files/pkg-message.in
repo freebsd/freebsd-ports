@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+Naval Robocode has been installed.
+
+Naval Robocode requires a java compiler. By default Naval Robocode will
+look for the IBM Jikes compiler.
+
+You can override this in the Naval Robocode compiler preferences menu:
+
+    Robot -> Editor -> Compiler -> Options -> Preferences
+
+Attention not all with Rumble games works, this is work in Progress.
+
+Have fun!
+EOM
+},
+{ type: remove
+  message: <<EOM
+===============================================================================
+
+After deinstallation, some files may stay in %%DATADIR%%,
+you can delete them with
+
+    /bin/rm -fr %%DATADIR%%
+
+===============================================================================
+EOM
+}
+]

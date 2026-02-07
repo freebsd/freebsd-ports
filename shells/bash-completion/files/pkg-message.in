@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+To enable the bash completion library, add the following to
+your .bashrc file:
+
+[[ $PS1 && -f %%RUNFILE%% ]] && \
+	source %%RUNFILE%%
+
+See %%DOCSDIR%%/README.md for more information.
+EOM
+}
+]

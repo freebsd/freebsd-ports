@@ -1,0 +1,8 @@
+Braa is a tool for making SNMP queries. It is able to query
+hundreds or thousands of hosts simultaneously, while being
+completely single-threaded. It does not need any SNMP
+libraries, as it is equipped with its own SNMP engine. However,
+it's good to have a complete SNMP package including
+"snmptranslate" installed somewhere, because for speed reasons,
+there is no ASN.1 parser in Braa, and all the SNMP OIDs need to
+be specified numerically.

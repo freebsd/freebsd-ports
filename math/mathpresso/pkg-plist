@@ -1,0 +1,4 @@
+include/mathpresso/mathpresso.h
+lib/cmake/mathpresso/mathpresso-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mathpresso/mathpresso-config.cmake
+lib/libmathpresso.so

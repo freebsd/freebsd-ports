@@ -1,0 +1,2 @@
+This package offers an extra command for MkDocs that infers required PyPI
+packages from plugins in mkdocs.yml.

@@ -1,0 +1,16 @@
+--- ./Makefile.orig	2012-02-11 16:34:29.000000000 +0100
++++ ./Makefile	2012-02-11 16:34:55.000000000 +0100
+@@ -20,11 +20,11 @@
+ 
+ PROGRAM = nvramtool
+ 
+-CC      = gcc
++CC      ?= gcc
+ STRIP	= strip
+ INSTALL = /usr/bin/install
+ PREFIX  = /usr/local
+-CFLAGS  = -O2 -g -Wall -W -I.
++CFLAGS  += -I.
+ #CFLAGS  = -Os -Wall
+ 
+ CLI_OBJS = cli/nvramtool.o cli/opts.o

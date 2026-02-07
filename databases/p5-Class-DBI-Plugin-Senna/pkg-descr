@@ -1,0 +1,5 @@
+Class::DBI::Plugin::Senna harnesses the power of Senna
+(http://b.razil.jp/project/senna) with Class::DBI.
+
+This module installs hooks in your Class::DBI package that automatically
+creates and updates a Senna index.

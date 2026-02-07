@@ -1,0 +1,5 @@
+#!/bin/sh -f
+
+DATADIR="%%DATADIR%%"
+
+exec %%JAVA%% -server -XX:+TieredCompilation -jar "${DATADIR}/closure-compiler-v%%PORTVERSION%%.jar" $*

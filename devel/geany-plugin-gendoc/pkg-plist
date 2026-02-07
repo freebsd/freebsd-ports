@@ -1,0 +1,10 @@
+lib/geany/geanygendoc.so
+%%DOCSDIR%%/geanygendoc/AUTHORS
+%%DOCSDIR%%/geanygendoc/COPYING
+%%DOCSDIR%%/geanygendoc/ChangeLog
+%%DOCSDIR%%/geanygendoc/NEWS
+%%DOCSDIR%%/geanygendoc/README
+%%DOCSDIR%%/geanygendoc/html/manual.html
+%%DOCSDIR%%/geanygendoc/manual.rst
+%%DATADIR%%/geanygendoc/filetypes/c.conf
+%%DATADIR%%/geanygendoc/filetypes/vala.conf

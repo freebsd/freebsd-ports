@@ -1,0 +1,20 @@
+[
+{
+  type: upgrade
+  maximum_version: "0.031"
+  message: <<EOM
+Scripts renamed from:
+  bin/yamlpp5-events
+  bin/yamlpp5-highlight
+  bin/yamlpp5-load
+  bin/yamlpp5-load-dump
+  bin/yamlpp5-parse-emit
+to:
+  bin/yamlpp-events
+  bin/yamlpp-highlight
+  bin/yamlpp-load
+  bin/yamlpp-load-dump
+  bin/yamlpp-parse-emit
+EOM
+}
+]

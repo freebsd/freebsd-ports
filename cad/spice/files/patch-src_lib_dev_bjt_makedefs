@@ -1,0 +1,11 @@
+--- src/lib/dev/bjt/makedefs.orig	1991-05-31 21:16:08 UTC
++++ src/lib/dev/bjt/makedefs
+@@ -14,6 +14,8 @@ COBJS		= bjt.o bjtacld.o bjtask.o bjtconv.o bjtdel.o b
+ 		  bjtsacl.o bjtsetup.o bjtsload.o bjtsprt.o bjtsset.o \
+ 		  bjtsupd.o bjttemp.o bjttrunc.o 
+ 
++REAL_CC_OPT	= 
++
+ MODULE		= bjt
+ LIBRARY		= dev
+ MODULE_TARGET	= $(OBJLIB_DIR)/$(MODULE)

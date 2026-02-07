@@ -1,0 +1,15 @@
+--- src/Makefile.am.orig	2019-07-31 06:49:48 UTC
++++ src/Makefile.am
+@@ -27,7 +27,11 @@ cupsfilter_PROGRAMS =\
+ epson_escpr_wrapper_CFLAGS =\
+ 	-Wall\
+ 	-DCUPS_FILTER_NAME=\"epson-escpr\" \
+-	-DCUPS_FILTER_PATH=\"$(CUPS_FILTER_DIR)\" 
++	-DCUPS_FILTER_PATH=\"$(CUPS_FILTER_DIR)\" \
++	$(CUPS_CPPFLAGS)
++
++epson_escpr_wrapper_LDFLAGS =\
++	$(CUPS_LDFLAGS)
+ 
+ epson_escpr_wrapper_SOURCES =\
+ 	wrapper.c

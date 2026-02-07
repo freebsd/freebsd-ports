@@ -1,0 +1,51 @@
+--- Makefile.orig	Thu Apr 18 16:39:26 2002
++++ Makefile	Tue Aug  1 12:53:14 2006
+@@ -1,10 +1,10 @@
+ #Adjust this directory for installation
+-LIBDIR=`ocamlc -where`
++LIBDIR=$(PREFIX)/lib/ocaml/site-lib/classes
+ COMPILER=ocamlc -c
+ LIBRARIAN=ocamlc -a
+ OPTCOMP=ocamlopt -c
+ OPTLIB=ocamlopt -a
+-INSTALL=cp
++INSTALL?=install -o root -g wheel -m 644
+ 
+ OBJECTS=obuffer.cmo	ohashtbl.cmo	oqueue.cmo	ostack.cmo \
+ 	omap.cmo	oset.cmo	ostream.cmo	omapping.cmo
+@@ -16,13 +16,13 @@
+ .SUFFIXES: .ml .mli .cmo .cmi .cmx
+ 
+ .ml.cmo:
+-	$(COMPILER) $(INCLUDES) $<
++	$(COMPILER) -ccopt "${CFLAGS}" $(INCLUDES) $<
+ 
+ .ml.cmx:
+-	$(OPTCOMP) $(INCLUDES) $<
++	$(OPTCOMP) -ccopt "${CFLAGS}" $(INCLUDES) $<
+ 
+ .mli.cmi:
+-	$(COMPILER) $(INCLUDES) $<
++	$(COMPILER) -ccopt "${CFLAGS}" $(INCLUDES) $<
+ 
+ all: stdclass.cma
+ opt: stdclass.cmxa
+@@ -43,12 +43,15 @@
+ 	@$(MAKE) real-install LIBDIR=$(LIBDIR)
+ 
+ real-install:
+-	$(INSTALL) stdclass.cma *.cmi *.mli $(LIBDIR)
++	mkdir -p $(DESTDIR)$(LIBDIR)
++	$(INSTALL) stdclass.cma *.cmi *.mli $(DESTDIR)$(LIBDIR)
+ 	if test -f stdclass.cmxa; \
+-	then $(INSTALL) stdclass.cmxa stdclass.a *.cmx $(LIBDIR); fi
++	then $(INSTALL) stdclass.cmxa stdclass.a *.cmx $(DESTDIR)$(LIBDIR); fi
++	if test -f META; \
++	then $(INSTALL) META $(DESTDIR)$(LIBDIR); fi
+ 
+ clean:
+-	rm -f *.cm* *.o *.a *~ #*
++	rm -f *.cm* *.o *.a *~
+ 
+ depend:
+ 	ocamldep *.ml *.mli > .depend

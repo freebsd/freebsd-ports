@@ -1,0 +1,22 @@
+From b0ed75ee851121ad25491ef6e1dca25be7bc50f3 Mon Sep 17 00:00:00 2001
+From: o9000 <mrovi9000@gmail.com>
+Date: Wed, 5 Apr 2017 12:38:10 +0200
+Subject: [PATCH] Fix out-of-bounds read
+
+---
+ openbox/frame.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/openbox/frame.c b/openbox/frame.c
+index 89669726a..943b6380b 100644
+--- a/openbox/frame.c
++++ b/openbox/frame.c
+@@ -1215,7 +1215,7 @@ static void layout_title(ObFrame *self)
+         }
+
+         /* stop at the end of the string (or the label, which calls break) */
+-        for (; *lc != '\0' && lc >= config_title_layout; lc+=i) {
++        for (; lc >= config_title_layout && *lc != '\0'; lc+=i) {
+             if (*lc == 'L') {
+                 if (i > 0) {
+                     self->label_on = TRUE;

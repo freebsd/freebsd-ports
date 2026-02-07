@@ -1,0 +1,14 @@
+bin/jamp
+bin/jasp
+share/JediAcademy/OpenJK/cgame%%ARCH%%.so
+share/JediAcademy/OpenJK/jagame%%ARCH%%.so
+share/JediAcademy/OpenJK/jampgame%%ARCH%%.so
+share/JediAcademy/OpenJK/ui%%ARCH%%.so
+share/JediAcademy/base/cgame%%ARCH%%.so
+share/JediAcademy/base/jampgame%%ARCH%%.so
+share/JediAcademy/base/ui%%ARCH%%.so
+share/JediAcademy/openjk.%%ARCH%%
+share/JediAcademy/openjk_sp.%%ARCH%%
+share/JediAcademy/openjkded.%%ARCH%%
+share/JediAcademy/rd-vanilla_%%ARCH%%.so
+share/JediAcademy/rdsp-vanilla_%%ARCH%%.so

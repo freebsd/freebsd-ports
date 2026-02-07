@@ -1,0 +1,15 @@
+TIMESTAMP = 1602284249
+SHA256 (layeh-murmur-cli-0.0.0.20200528-8f83169_GH0.tar.gz) = f32985c512fef2522a3017b7f06fa7d34bd2b9cac6d74d82448b6825c60c31eb
+SIZE (layeh-murmur-cli-0.0.0.20200528-8f83169_GH0.tar.gz) = 40311
+SHA256 (golang-net-e7e4b65ae663_GH0.tar.gz) = e6b075297f49c3d4a66b53daa75506bf48a83e986bd02b35c45d2eef60d63594
+SIZE (golang-net-e7e4b65ae663_GH0.tar.gz) = 1171906
+SHA256 (golang-protobuf-v1.3.2_GH0.tar.gz) = c9cda622857a17cf0877c5ba76688a931883e505f40744c9495638b6e3da1f65
+SIZE (golang-protobuf-v1.3.2_GH0.tar.gz) = 312285
+SHA256 (golang-sys-d0b11bdaac8a_GH0.tar.gz) = e7e3f36dd307e908e59dbda3864ff74f9a5d7f0fdd4d88af630e092beb7d270c
+SIZE (golang-sys-d0b11bdaac8a_GH0.tar.gz) = 1243049
+SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
+SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
+SHA256 (google-go-genproto-24fa4b261c55_GH0.tar.gz) = 96481b64c5971de2dd22d7c6f764d2acbeb4cd85ab6166856284115c3f99238c
+SIZE (google-go-genproto-24fa4b261c55_GH0.tar.gz) = 5332241
+SHA256 (grpc-grpc-go-v1.25.1_GH0.tar.gz) = d4c16d05bca2afb32001c2d2ed233c013374d09ecc2bd15894d098555a637316
+SIZE (grpc-grpc-go-v1.25.1_GH0.tar.gz) = 702242

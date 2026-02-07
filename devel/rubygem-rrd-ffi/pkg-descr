@@ -1,0 +1,2 @@
+rrd-ffi provides bindings for many RRD functions (using ffi gem and librrd),
+as well as DSLs for graphic and rrd building.

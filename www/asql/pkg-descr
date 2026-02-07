@@ -1,0 +1,3 @@
+asql is a simple console shell which allows you to run SQL queries against an
+Apache logfile, something that can be very useful -- especially at getting
+information which is not easily available via static logfile analysers.

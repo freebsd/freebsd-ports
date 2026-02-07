@@ -1,0 +1,11 @@
+--- conf/upsmon.conf.sample.in.orig	2022-05-08 06:15:14.873131000 -0700
++++ conf/upsmon.conf.sample.in	2022-05-08 06:18:53.643631000 -0700
+@@ -149,7 +149,7 @@
+ # such as posting a message with 'logger' or 'wall' or 'mailx'. Do be careful
+ # to plug the UPS back into the wall in a timely fashion.
+ 
+-SHUTDOWNCMD "/sbin/shutdown -h +0"
++SHUTDOWNCMD "/sbin/poweroff"
+ 
+ # --------------------------------------------------------------------------
+ # NOTIFYCMD <command>

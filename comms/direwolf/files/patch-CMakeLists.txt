@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2024-02-24 18:41:07 UTC
++++ CMakeLists.txt
+@@ -237,11 +237,7 @@ else()
+   set(INSTALL_DOC_DIR "share/doc/${CMAKE_PROJECT_NAME}")
+   set(INSTALL_CONF_DIR "${INSTALL_DOC_DIR}/conf")
+   set(INSTALL_SCRIPTS_DIR "${INSTALL_DOC_DIR}/scripts")
+-  if(FREEBSD)
+-    set(INSTALL_MAN_DIR "man/man1")
+-  else()
+-    set(INSTALL_MAN_DIR "share/man/man1")
+-  endif()
++  set(INSTALL_MAN_DIR "share/man/man1")
+   set(INSTALL_DATA_DIR "share/${PROJECT_NAME}")
+ endif(WIN32 OR CYGWIN)
+ 

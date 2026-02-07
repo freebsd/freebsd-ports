@@ -1,0 +1,5 @@
+MiniDLNA (aka ReadyDLNA) is server software with the aim of being
+fully compliant with DLNA/UPnP-AV clients.
+
+The media files are listed in an SQLite database allowing prompt
+restarts.

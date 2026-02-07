@@ -1,0 +1,7 @@
+Pwsafe is a Unix commandline program that manages encrypted password databases.
+
+* Pure command-line operation if desired (good for remote access over ssh)
+* Can interact with X11 selection & clipboard.
+* Portable, endianess-clean, misaligned-access-free C++. Compiles cleanly
+  on Linux, *BSD, OS X, Solaris.
+* Compatible with CounterPane's PasswordSafe Win32 program versions 1.9.x.

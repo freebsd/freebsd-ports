@@ -1,0 +1,12 @@
+--- lychee-lib/Cargo.toml.orig	2025-02-01 14:20:22 UTC
++++ lychee-lib/Cargo.toml
+@@ -83,9 +83,6 @@ rustls-tls = ["reqwest/rustls-tls-native-roots"]
+ # Use Rustls TLS.
+ rustls-tls = ["reqwest/rustls-tls-native-roots"]
+ 
+-# Compile and statically link a copy of OpenSSL.
+-vendored-openssl = ["openssl-sys/vendored"]
+-
+ # Feature flag to include checking reserved example domains
+ # as per RFC 2606, section 3.
+ # This flag is off by default and only exists to allow example domains in

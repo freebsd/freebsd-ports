@@ -1,0 +1,1 @@
+This gem implements bcrypt_pdkfd (a variant of PBKDF2 with bcrypt-based PRF)

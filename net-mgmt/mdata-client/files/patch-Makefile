@@ -1,0 +1,14 @@
+--- Makefile.orig	2015-04-24 23:13:47 UTC
++++ Makefile
+@@ -18,9 +18,9 @@ LDLIBS =
+ CFLAGS = -I$(PWD) -Wall -Wextra -Werror -g -O2
+ LDLIBS =
+ 
+-BINDIR = /usr/sbin
++BINDIR = ${PREFIX}/sbin
+ MANSECT = 1m
+-MANDIR = /usr/share/man/man$(MANSECT)
++MANDIR = ${PREFIX}/share/man/man$(MANSECT)
+ DESTDIR = $(PWD)/proto
+ 
+ PROGS = \

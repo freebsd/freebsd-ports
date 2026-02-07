@@ -1,0 +1,66 @@
+In order to activate spamass-milter, follow these steps:
+
+1. Review and customize your system-wide SpamAssassin preference, by
+   editing /usr/local/etc/mail/spamassassin/local.cf.  Refer to the SpamAssassin
+   manpage Mail::SpamAssassin::Conf(3) for details on what to put in it.
+
+2. If you didn't activate spamd (the SpamAssassin daemon), do so now:
+
+	%%PREFIX%%/etc/rc.d/sa-spamd start
+
+3. Activate spamass-milter:
+
+	%%PREFIX%%/etc/rc.d/spamass-milter start
+
+4. Backup your sendmail.cf (in /etc/mail).
+
+5. If you didn't create your own customized version of Sendmail .mc
+   file, create one from the default template (hostname.mc):
+
+	cd /etc/mail
+	make
+
+6. Add the spamass-milter hook to your hostname.mc file.  The magic
+   line to add is:
+
+	INPUT_MAIL_FILTER(`spamassassin', `S=local:/var/run/spamass-milter.sock, F=, T=C:15m;S:4m;R:4m;E:10m')
+	define(`confMILTER_MACROS_CONNECT',`b, j, _, {daemon_name}, {if_name}, {if_addr}')dnl
+
+   Everything should go on a single line, no line break/continuation is
+   allowed!  The best place to add this is right after the dnsbl-related
+   comments.  (Hint: Every comment in an .mc file starts with `dnl'.)
+
+7. Rebuild the sendmail.cf from your .mc file:
+
+	cd /etc/mail
+	make
+	make install
+
+8. Restart Sendmail:
+
+	cd /etc/mail
+	make stop
+	make start
+
+9. Test the whole piece:
+
+	echo "Testing spamass-milter..." | mail -s"Spam test" root
+
+   This might take a long time to finish (up to about 10-20 seconds),
+   since spamd has just started, so please be patient.
+
+   You (root) should receive a message from root@hostname, bearing this
+   header line:
+
+	X-Spam-Status: No, ...
+
+   If things don't work as expected, promptly restore the stock FreeBSD
+   sendmail.cf (/etc/mail/freebsd.cf) as your default sendmail config,
+   or restore your own backup (if you keep one), as shown in step 8;
+   you may lose incoming mail otherwise!
+
+
+Now all messages received by Sendmail are filtered through
+SpamAssassin, and probable spam messages are tagged with the header
+`X-Spam-Flag: YES'.  Tell your users about this so they can set up
+appropriate filters in their mail client.

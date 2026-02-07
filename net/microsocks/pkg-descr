@@ -1,0 +1,2 @@
+MicroSocks is a SOCKS5 service that you can run on your remote boxes to tunnel
+connections through them, if for some reason SSH doesn't cut it for you.

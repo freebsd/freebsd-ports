@@ -1,0 +1,5 @@
+arduino-tools is mostly a meta-port to ensure installation of the tools
+required by Arduino 1.6. It does some installation to properly structure
+the arduino/tools-builder/ structure in such a way that we may use
+all of the tools available from ports while not requiring modifications
+to devel/arduino-builder to auto-detect the tools.

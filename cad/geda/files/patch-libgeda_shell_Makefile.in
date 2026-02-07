@@ -1,0 +1,11 @@
+--- libgeda/shell/Makefile.in.orig	2013-09-25 21:55:33 UTC
++++ libgeda/shell/Makefile.in
+@@ -416,7 +416,7 @@ geda_shell_CFLAGS = \
+ 	$(GCC_CFLAGS) $(MINGW_CFLAGS) $(GUILE_CFLAGS) $(GLIB_CFLAGS) \
+ 	$(GDK_PIXBUF_CFLAGS)
+ 
+-geda_shell_LDFLAGS = $(GLIB_LIBS) $(GUILE_LIBS) $(GDK_PIXBUF_LIBS)
++geda_shell_LDFLAGS = $(GLIB_LIBS) -lgio-2.0 $(GUILE_LIBS) $(GDK_PIXBUF_LIBS)
+ geda_shell_LDADD = ../src/libgeda.la @LIBINTL@
+ 
+ # This is used to generate boilerplate for defining Scheme functions

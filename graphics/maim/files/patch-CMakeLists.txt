@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2025-01-25 11:05:57 UTC
++++ CMakeLists.txt
+@@ -38,7 +38,7 @@ set_property(TARGET ${BIN_TARGET} PROPERTY CXX_STANDAR
+ find_package( GLM        REQUIRED )
+ 
+ set_property(TARGET ${BIN_TARGET} PROPERTY CXX_STANDARD_REQUIRED ON)
+-set_property(TARGET ${BIN_TARGET} PROPERTY CXX_STANDARD 11)
++set_property(TARGET ${BIN_TARGET} PROPERTY CXX_STANDARD 17)
+ set_property(TARGET ${BIN_TARGET} PROPERTY CXX_EXTENSIONS OFF)
+ 
+ # Includes
+@@ -70,13 +70,13 @@ else()
+ if( ${CMAKE_VERSION} VERSION_LESS 3.7 )
+   message( WARNING "CMake version is below 3.7, CMake version >= 3.7 is required for unicode support." )
+ else()
+-  find_package(ICU COMPONENTS uc)
++  find_package(ICU COMPONENTS i18n uc)
+   set( MAIM_UNICODE TRUE CACHE BOOL "To enable or disable unicode support." )
+   if ( MAIM_UNICODE AND ICU_FOUND )
+       # ICU is required for old nvidia drivers to work for whatever reason.
+       add_definitions(-DCXXOPTS_USE_UNICODE)
+       include_directories( ${ICU_INCLUDE_DIR} )
+-      target_link_libraries( ${BIN_TARGET} ${ICU_UC_LIBRARIES} )
++      target_link_libraries( ${BIN_TARGET} ${ICU_I18N_LIBRARIES} ${ICU_UC_LIBRARIES} )
+   endif()
+ endif()
+ 

@@ -1,0 +1,20 @@
+--- jdk/make/lib/ServiceabilityLibraries.gmk.orig	2018-05-20 12:20:24.536007000 -0700
++++ jdk/make/lib/ServiceabilityLibraries.gmk	2018-05-20 12:22:29.309856000 -0700
+@@ -247,7 +247,7 @@
+ endif
+ 
+ ifeq ($(OPENJDK_TARGET_OS), bsd)
+-  LIBINSTRUMENT_LDFLAGS_SUFFIX += -L$(PACKAGE_PATH)/lib -liconv $(LIBZ)
++  LIBINSTRUMENT_LDFLAGS_SUFFIX += %%ICONV_LDFLAGS%% $(LIBZ)
+   ifeq ($(BSD_STATIC_LIBJLI), bsd)
+     LIBINSTRUMENT_LDFLAGS += -Xlinker --whole-archive $(JDK_OUTPUTDIR)/objs/libjli_static.a \
+         -Xlinker --no-whole-archive
+@@ -257,7 +257,7 @@
+   endif
+   BSD_ICONV_CFLAGS:= -I$(PACKAGE_PATH)/include
+   ifneq ($(OPENJDK_TARGET_OS_VENDOR), openbsd)
+-    BSD_ICONV_CFLAGS += -DLIBICONV_PLUG
++    BSD_ICONV_CFLAGS += %%ICONV_CPPFLAGS%%
+   endif
+ endif
+ 

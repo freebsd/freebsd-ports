@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/B::Deobfuscate.3.gz
+%%PERL5_MAN3%%/B::Deobfuscate::Dict::Flowers.3.gz
+%%PERL5_MAN3%%/B::Deobfuscate::Dict::PGPHashWords.3.gz
+%%SITE_PERL%%/B/Deobfuscate.pm
+%%SITE_PERL%%/B/Deobfuscate.pod
+%%SITE_PERL%%/B/Deobfuscate/Dict/Flowers.pm
+%%SITE_PERL%%/B/Deobfuscate/Dict/PGPHashWords.pm

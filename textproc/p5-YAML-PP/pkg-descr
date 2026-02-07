@@ -1,0 +1,9 @@
+YAML::PP is a modular YAML processor for YAML 1.2.
+
+Additionally to loading and dumping it provides a parser and emitter. The
+parsing events are compatible to the YAML Test Suite and other libraries like
+libyaml.
+
+Loading and Dumping can be customized.
+
+It supports the YAML 1.2 Failsafe, JSON and Core Schemas.

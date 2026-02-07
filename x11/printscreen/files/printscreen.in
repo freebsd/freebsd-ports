@@ -1,0 +1,93 @@
+#!/bin/sh 
+
+xwdcommon='-nobdrs'
+xwdroot='-root'
+
+INFMT=pnm
+OUTFMT=png
+STOREDIR="${HOME}/.screenshots"
+SHOTDATE="$(date +%Y.%m.%d-%H.%M.%S)"
+
+have()
+{
+	type $1 >/dev/null 2>&1 && return 0
+}
+
+parse_options()
+{
+	local OPT OPTARG OPTIND fmt fmtlist prefix
+
+	while getopts d:f:bhlqs OPT; do
+		# escape meta
+		OPTARG=${OPTARG%%[;\\\$]*}
+
+		case ${OPT} in
+		b)	xwdcommon="${xwdcommon} -frame" ;;
+		d)	delay="${OPTARG}" ;;
+		f)
+			OUTFMT="${OPTARG}"
+			unset INFMT
+
+			for fmt in pnm pbm pgm ppm; do
+				have "${fmt}to${OUTFMT}" && { INFMT=${fmt}; break; }
+			done
+
+			[ -z "${INFMT}" ] && usage
+			;;
+		l)
+			prefix=$(type ppmtoppm 2>/dev/null | \
+				sed 's:ppmtoppm is \(.*\)ppmtoppm:\1:')
+			if [ -z "${prefix}" ]; then
+				echo 'Cannot find image converters. Make sure that netpbm are installed'
+				exit 1
+			fi
+
+			fmtlist=$(echo ${prefix}/p[nbgp]mto* | tr ' ' '\n' | \
+				sed -E 's:^.*/(pnm|pbm|pgm|ppm)to::g')
+			echo Supported output formats:
+			echo ${fmtlist}
+			exit 0
+			;;
+		q)	xwdcommon="${xwdcommon} -silent";;
+		s)	unset xwdroot ;;
+		*)	usage ;;
+		esac
+	done
+
+	OPTC=$((${OPTIND} - 1))
+}
+
+usage()
+{
+	echo "usage: ${0##*/} [-bhlqs] [-d sec] [-f outfmt] [shotname]"
+	echo '	-b when selecting a window, grab wm border too'
+	echo '	-d wait sec seconds before taking a shot'
+	echo '	-f set output format'
+	echo '	-h display this help and exit'
+	echo '	-l list output formats'
+	echo '	-q be silent'
+	echo '	-s interactively choose a window'
+	echo
+	echo "By default screenshots stored in ${STOREDIR}"
+	echo
+	exit 1
+}
+
+parse_options ${1+"$@"}
+shift ${OPTC}
+
+if [ -z ${@+1} ]; then
+	SHOTNAME="${STOREDIR}/screenshot-${SHOTDATE}.${OUTFMT}"
+else
+	SHOTNAME=$1
+	shift
+
+	[ -z ${@+1} ] || usage
+fi
+
+[ -d "${STOREDIR}" ] || mkdir "${STOREDIR}"
+
+[ -n "${delay}" ] && sleep "${delay}"
+
+xwd ${xwdcommon} ${xwdroot} | xwdtopnm 2>/dev/null | \
+	"${INFMT}to${OUTFMT}" 2>/dev/null > "${SHOTNAME}"

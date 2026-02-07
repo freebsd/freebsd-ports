@@ -1,0 +1,388 @@
+# Add support for overriding lookups in CVSROOT/passwd
+# Specify --password-file <file> on the pserver command line to use it
+# Initial patch from the Debian DSA team, adapted by Steve McIntyre.
+# See README.Debian for more details.
+diff -Nur src/cvs.h src/cvs.h
+--- src/cvs.h	2005-10-02 16:17:20.000000000 +0100
++++ src/cvs.h	2006-08-19 01:20:33.000000000 +0100
+@@ -371,6 +371,7 @@
+ extern int use_editor;
+ extern int cvswrite;
+ extern mode_t cvsumask;
++extern char *PasswordFileName;
+ 
+ /* Temp dir abstraction.  */
+ /* From main.c.  */
+diff -Nur src/main.c src/main.c
+--- src/main.c	2006-08-17 00:25:16.000000000 +0100
++++ src/main.c	2006-08-19 01:20:03.000000000 +0100
+@@ -43,8 +43,7 @@
+ int noexec = 0;
+ int readonlyfs = 0;
+ int logoff = 0;
+-
+-
++char *PasswordFileName = NULL;
+ 
+ /***
+  ***
+@@ -519,6 +518,7 @@
+ 	{"help-commands", 0, NULL, 1},
+ 	{"help-synonyms", 0, NULL, 2},
+ 	{"help-options", 0, NULL, 4},
++	{"password-file", required_argument, NULL, 5},
+ #ifdef SERVER_SUPPORT
+ 	{"allow-root", required_argument, NULL, 3},
+ #endif /* SERVER_SUPPORT */
+@@ -646,6 +646,10 @@
+ 		root_allow_add (optarg, gConfigPath);
+ 		break;
+ #endif /* SERVER_SUPPORT */
++	    case 5:
++		/* --password-file */
++        PasswordFileName = xstrdup(optarg);
++		break;
+ 	    case 'Q':
+ 		really_quiet = 1;
+ 		/* FALL THROUGH */
+diff -Nur src/Makefile.in src/Makefile.in
+--- src/Makefile.in	2005-10-03 14:37:18.000000000 +0100
++++ src/Makefile.in	2006-08-17 00:28:35.000000000 +0100
+@@ -146,7 +146,7 @@
+ 	ls.$(OBJEXT) main.$(OBJEXT) mkmodules.$(OBJEXT) \
+ 	modules.$(OBJEXT) ms-buffer.$(OBJEXT) myndbm.$(OBJEXT) \
+ 	no_diff.$(OBJEXT) parseinfo.$(OBJEXT) patch.$(OBJEXT) \
+-	rcs.$(OBJEXT) rcscmds.$(OBJEXT) recurse.$(OBJEXT) \
++	rcs.$(OBJEXT) rcscmds.$(OBJEXT) readpw.$(OBJEXT) recurse.$(OBJEXT) \
+ 	release.$(OBJEXT) remove.$(OBJEXT) repos.$(OBJEXT) \
+ 	root.$(OBJEXT) rsh-client.$(OBJEXT) run.$(OBJEXT) \
+ 	scramble.$(OBJEXT) server.$(OBJEXT) stack.$(OBJEXT) \
+@@ -349,6 +349,7 @@
+ 	patch.c \
+ 	rcs.c \
+ 	rcscmds.c \
++	readpw.c \
+ 	recurse.c \
+ 	release.c \
+ 	remove.c \
+@@ -543,6 +544,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patch.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rcs.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rcscmds.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/readpw.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/recurse.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/release.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/remove.Po@am__quote@
+diff -Nur src/parseinfo.h src/parseinfo.h
+--- src/parseinfo.h	2006-08-17 00:25:16.000000000 +0100
++++ src/parseinfo.h	2006-08-17 00:58:25.000000000 +0100
+@@ -21,6 +21,7 @@
+     char *HistoryLogPath;
+     char *HistorySearchPath;
+     char *TmpDir;
++    char *PasswordFileName;
+ 
+     /* Should the logmsg be re-read during the do_verify phase?
+      * RereadLogAfterVerify=no|stat|yes
+diff -Nur src/readpw.c src/readpw.c
+--- src/readpw.c	1970-01-01 01:00:00.000000000 +0100
++++ src/readpw.c	2006-08-19 01:45:26.000000000 +0100
+@@ -0,0 +1,158 @@
++/*
++    readpw.c - read the CVS password from an external file
++    Copyright (c) 2006  Martin Schulze <joey@infodrom.org>
++
++    This program is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++
++    This program is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++
++    You should have received a copy of the GNU General Public License
++    along with this program; if not, write to the Free Software
++    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++*/
++
++#include <string.h>
++#include <stdio.h>
++#include <errno.h>
++#include <syslog.h>
++
++#define PWFILE "/tmp/work/cvs/cvs.passwd"
++
++/*
++ * Source: control_nextline() in dtaus.c from dtaus
++ */
++size_t readline (FILE *f, char **buf, unsigned int len)
++{
++  char line[100];
++  char tmp[100];
++  char *cp;
++  int i;
++
++  memset (line, 0, sizeof(line));
++  memset (*buf, 0, len);
++
++  cp = line;
++
++  while (!strlen(line) && (cp = fgets(line, 100, f))) {
++    if (strlen(line)) {
++      if (line[0] != '#') {
++        if (line[strlen(line)-1] != '\n') {
++          strcpy(tmp, line);
++          while (tmp[strlen(tmp)-1] != '\n' && (cp = fgets(tmp, 100, f)));
++        } else
++          line[strlen(line)-1] = '\0';
++        if (line[strlen(line)-1] == '\r')
++          line[strlen(line)-1] = '\0';
++        for (i=strlen(line);(line[i-1] == ' '||line[i-1] == '\t')&&i>0; i--)
++          line[i-1] = '\0';
++      } else
++        line[0] = '\0';
++    }
++  }
++  for (cp=line; *cp==' '; cp++);
++
++  if (strlen(cp)) {
++    memcpy(*buf, cp, strlen(cp) >= len ? len-1 : strlen(cp));
++    return (strlen (cp));
++  } else
++    return 0;
++}
++
++#define MAXLINE 100
++#define PWLEN 20
++
++char *getpwline (const char *fname, const char *repository, const char *logname)
++{
++  FILE *f;
++  char buf[MAXLINE], *bp = buf;
++  static char line[MAXLINE];
++  int inrepo = 0;
++  char *cp;
++
++  memset (line, 0, sizeof (line));
++
++  if ((f = fopen (fname, "r")) == NULL) {
++    perror ("fopen");
++    return line;
++  }
++
++  while (readline (f, &bp, 50)) {
++    if (buf[0] == '/') {
++        syslog(LOG_ERR, "Looking for repo %s in %s\n", repository, buf);
++      if (!inrepo && !strcmp (buf, repository))
++      {
++          syslog(LOG_ERR, "matched repository %s\n", repository);
++          inrepo = 1;
++      }
++      else if (inrepo)
++       inrepo = 0;
++    } else {
++      if (inrepo) {
++       if ((cp = strchr (buf, ':')) != NULL) {
++         if ( (cp - buf) == strlen (logname)
++              && !strncmp (buf, logname, strlen (logname))) {
++           memcpy (line, buf, strlen(buf) >= MAXLINE ? MAXLINE-1 : strlen(buf));
++         }
++       }
++      }
++    }
++  }
++  
++  if (ferror (f))
++    perror ("ferror");
++  if (fclose (f) < 0)
++    perror ("fclose");
++
++  return line;
++}
++
++/*
++*****************************************************************
++ */
++#ifdef TEST_READPW
++
++void getpasswd (const char *fname, const char *repository, const char *logname, char **pw, char **user)
++{
++  char *line;
++  char *cp, *xp;
++
++  memset (*pw, 0, PWLEN);
++  memset (*user, 0, PWLEN);
++
++  line = getpwline(fname, repository, logname);
++
++  if (line[0] == '\0')
++    return;
++
++  cp = strchr (line, ':');
++  cp++;
++
++  if ((xp = strchr (cp, ':')) != NULL) {
++    memcpy (*pw, cp, xp-cp >= PWLEN ? PWLEN-1 : xp-cp);
++    
++    xp++;
++
++    if (strlen (xp))
++      memcpy (*user, xp, strlen(xp) >= PWLEN ? PWLEN-1 : strlen(xp));
++  }
++}
++
++int main ()
++{
++  char pw[PWLEN], *ppw = pw;
++  char cvsuser[PWLEN], *pcu = cvsuser;
++
++  getpasswd (PWFILE, "/cvs/debian-doc", "jseidel", &ppw, &pcu);
++
++  printf ("%s<:>%s\n", pw, cvsuser);
++  printf ("XXXXXXXXXXXXX\n");
++
++  return 0;
++}
++#endif /*TEST_READPW */
+diff -Nur src/server.c src/server.c
+--- src/server.c	2006-08-17 00:25:16.000000000 +0100
++++ src/server.c	2006-08-20 00:31:22.000000000 +0100
+@@ -22,6 +22,8 @@
+ 
+ int server_active = 0;
+ 
++char *getpwline (const char *fname, const char *repository, const char *logname);
++
+ #if defined (SERVER_SUPPORT) || defined (CLIENT_SUPPORT)
+ 
+ # include "log-buffer.h"
+@@ -6689,51 +6691,71 @@
+ {
+     int retval = 0;
+     FILE *fp;
+-    char *filename;
++    char *filename = NULL;
++    char *cp;
+     char *linebuf = NULL;
+     size_t linebuf_len;
+     int found_it = 0;
+     int namelen;
+ 
+-    /* We don't use current_parsed_root->directory because it hasn't been
+-     * set yet -- our `repository' argument came from the authentication
+-     * protocol, not the regular CVS protocol.
+-     */
+-
+-    filename = xmalloc (strlen (repository)
+-			+ 1
+-			+ strlen (CVSROOTADM)
+-			+ 1
+-			+ strlen (CVSROOTADM_PASSWD)
+-			+ 1);
++    if (!PasswordFileName)
++    {
++        /* We don't use current_parsed_root->directory because it hasn't been
++         * set yet -- our `repository' argument came from the authentication
++         * protocol, not the regular CVS protocol.
++         */
++
++        filename = xmalloc (strlen (repository)
++                            + 1
++                            + strlen (CVSROOTADM)
++                            + 1
++                            + strlen (CVSROOTADM_PASSWD)
++                            + 1);
+ 
+-    (void) sprintf (filename, "%s/%s/%s", repository,
+-		    CVSROOTADM, CVSROOTADM_PASSWD);
++        (void) sprintf (filename, "%s/%s/%s", repository,
++                        CVSROOTADM, CVSROOTADM_PASSWD);
+ 
+-    fp = CVS_FOPEN (filename, "r");
+-    if (fp == NULL)
+-    {
+-	if (!existence_error (errno))
+-	    error (0, errno, "cannot open %s", filename);
+-	free (filename);
+-	return 0;
+-    }
++        fp = CVS_FOPEN (filename, "r");
++        if (fp == NULL)
++        {
++            if (!existence_error (errno))
++                error (0, errno, "cannot open %s", filename);
++            free (filename);
++            return 0;
++        }
+ 
+-    /* Look for a relevant line -- one with this user's name. */
+-    namelen = strlen (username);
+-    while (getline (&linebuf, &linebuf_len, fp) >= 0)
+-    {
+-	if ((strncmp (linebuf, username, namelen) == 0)
+-	    && (linebuf[namelen] == ':'))
+-	{
+-	    found_it = 1;
+-	    break;
+-	}
++        /* Look for a relevant line -- one with this user's name. */
++        namelen = strlen (username);
++        while (getline (&linebuf, &linebuf_len, fp) >= 0)
++        {
++            if ((strncmp (linebuf, username, namelen) == 0)
++                && (linebuf[namelen] == ':'))
++            {
++                found_it = 1;
++                break;
++            }
++        }
++        if (ferror (fp))
++            error (0, errno, "cannot read %s", filename);
++        if (fclose (fp) < 0)
++            error (0, errno, "cannot close %s", filename);
++    }
++    else /* DSA_VERSION */
++    {        
++        namelen = strlen (username);
++
++        cp = getpwline (PasswordFileName, repository, username);
++        /* syslog (LOG_NOTICE, "cp=%s", cp); */
++        if (strlen (cp)) {
++            linebuf = xmalloc (strlen (cp) + 1);
++            memcpy (linebuf, cp, strlen(cp)+1);
++            /* syslog (LOG_NOTICE, "line=%s", linebuf); */
++            found_it = 1;
++        } else
++            found_it = 0;
++    
++        /* syslog (LOG_NOTICE, "username=%s, password=%s, repository=%s", username, password, repository); */
+     }
+-    if (ferror (fp))
+-	error (0, errno, "cannot read %s", filename);
+-    if (fclose (fp) < 0)
+-	error (0, errno, "cannot close %s", filename);
+ 
+     /* If found_it, then linebuf contains the information we need. */
+     if (found_it)
+@@ -6823,6 +6845,7 @@
+ 	retval = 0;
+     }
+ 
++    if (filename)
+     free (filename);
+     if (linebuf)
+ 	free (linebuf);
+@@ -7043,7 +7066,10 @@
+ 	   letting you in if it won't say why, and I am not convinced
+ 	   that the potential information disclosure to an attacker
+ 	   outweighs this.  */
+-	printf ("error 0 no such user %s in CVSROOT/passwd\n", username);
++        if (PasswordFileName)
++            printf ("error 0 no such user %s in %s\n", username, PasswordFileName);
++        else
++            printf ("error 0 no such user %s in CVSROOT/passwd\n", username);
+ 
+ 	exit (EXIT_FAILURE);
+     }

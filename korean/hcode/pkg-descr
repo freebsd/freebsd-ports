@@ -1,0 +1,8 @@
+hcode
+-----
+
+Hangul Code Conversion program. It can convert almost all kind of
+current used(or not used anymore) Korean language code, including
+KS C 5601-1987, ISO-2022-KR, Johab, N-byte, etc.
+
+This version is patched by Jungshik Shin <jshin@minerva.cis.yale.edu>.

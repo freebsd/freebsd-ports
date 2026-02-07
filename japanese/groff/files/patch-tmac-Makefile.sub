@@ -1,0 +1,65 @@
+--- tmac/Makefile.sub.orig	2014-02-07 14:02:28.000000000 +0900
++++ tmac/Makefile.sub	2014-02-07 14:02:12.000000000 +0900
+@@ -43,39 +43,39 @@
+ 
+ install_data: $(NORMALFILES) $(SPECIALFILES) man.local \
+               stamp-strip stamp-wrap stamp-sed
+-	-test -d $(tmacdir) || $(mkinstalldirs) $(tmacdir)
+-	-test -d $(systemtmacdir) || $(mkinstalldirs) $(systemtmacdir)
+-	-test -d $(localtmacdir) || $(mkinstalldirs) $(localtmacdir)
++	-test -d $(DESTDIR)$(tmacdir) || $(mkinstalldirs) $(DESTDIR)$(tmacdir)
++	-test -d $(DESTDIR)$(systemtmacdir) || $(mkinstalldirs) $(DESTDIR)$(systemtmacdir)
++	-test -d $(DESTDIR)$(localtmacdir) || $(mkinstalldirs) $(DESTDIR)$(localtmacdir)
+ 	if test -n "$(tmac_wrap)"; then \
+ 	  for m in ""$(tmac_wrap); do \
+-	    $(INSTALL_DATA) $$m-wrap $(systemtmacdir)/$$m.tmac; \
++	    $(INSTALL_DATA) $$m-wrap $(DESTDIR)$(systemtmacdir)/$$m.tmac; \
+ 	  done; \
+ 	fi
+ 	for f in $(NORMALFILES); do \
+-	  rm -f $(tmacdir)/$$f; \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(tmacdir)/$$f; \
++	  rm -f $(DESTDIR)$(tmacdir)/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(tmacdir)/$$f; \
+ 	done
+-	-rm -f $(tmacdir)/$(tmac_s_prefix)s.tmac
+-	$(INSTALL_DATA) $(srcdir)/s.tmac $(tmacdir)/$(tmac_s_prefix)s.tmac
+-	-rm -f $(tmacdir)/ms.tmac
+-	$(INSTALL_DATA) ms.tmac-sed $(tmacdir)/ms.tmac
+-	-rm -f $(tmacdir)/$(tmac_an_prefix)an.tmac
+-	$(INSTALL_DATA) $(srcdir)/an.tmac $(tmacdir)/$(tmac_an_prefix)an.tmac
+-	-rm -f $(tmacdir)/man.tmac
+-	$(INSTALL_DATA) man.tmac-sed $(tmacdir)/man.tmac
++	-rm -f $(DESTDIR)$(tmacdir)/$(tmac_s_prefix)s.tmac
++	$(INSTALL_DATA) $(srcdir)/s.tmac $(DESTDIR)$(tmacdir)/$(tmac_s_prefix)s.tmac
++	-rm -f $(DESTDIR)$(tmacdir)/ms.tmac
++	$(INSTALL_DATA) ms.tmac-sed $(DESTDIR)$(tmacdir)/ms.tmac
++	-rm -f $(DESTDIR)$(tmacdir)/$(tmac_an_prefix)an.tmac
++	$(INSTALL_DATA) $(srcdir)/an.tmac $(DESTDIR)$(tmacdir)/$(tmac_an_prefix)an.tmac
++	-rm -f $(DESTDIR)$(tmacdir)/man.tmac
++	$(INSTALL_DATA) man.tmac-sed $(DESTDIR)$(tmacdir)/man.tmac
+ 	for f in $(STRIPFILES); do \
+-	  rm -f $(tmacdir)/$$f; \
+-	  $(INSTALL_DATA) $$f-s $(tmacdir)/$$f; \
++	  rm -f $(DESTDIR)$(tmacdir)/$$f; \
++	  $(INSTALL_DATA) $$f-s $(DESTDIR)$(tmacdir)/$$f; \
+ 	done
+-	-test -d $(mdocdir) || $(mkinstalldirs) $(mdocdir)
++	-test -d $(DESTDIR)$(mdocdir) || $(mkinstalldirs) $(DESTDIR)$(mdocdir)
+ 	for f in $(MDOCFILES); do \
+-	  rm -f $(mdocdir)/$$f; \
+-	  $(INSTALL_DATA) $$f-s $(mdocdir)/$$f; \
++	  rm -f $(DESTDIR)$(mdocdir)/$$f; \
++	  $(INSTALL_DATA) $$f-s $(DESTDIR)$(mdocdir)/$$f; \
+ 	done
+-	-test -f $(localtmacdir)/man.local || \
+-	  $(INSTALL_DATA) $(srcdir)/man.local $(localtmacdir)/man.local
+-	-test -f $(localtmacdir)/mdoc.local || \
+-	  $(INSTALL_DATA) mdoc.local-s $(localtmacdir)/mdoc.local
++	-test -f $(DESTDIR)$(localtmacdir)/man.local || \
++	  $(INSTALL_DATA) $(srcdir)/man.local $(DESTDIR)$(localtmacdir)/man.local
++	-test -f $(DESTDIR)$(localtmacdir)/mdoc.local || \
++	  $(INSTALL_DATA) mdoc.local-s $(DESTDIR)$(localtmacdir)/mdoc.local
+ 
+ stamp-strip: $(STRIPFILES) $(MDOCFILES) mdoc.local
+ 	for f in $(STRIPFILES) $(MDOCFILES) mdoc.local; do \

@@ -1,0 +1,54 @@
+Allow relocation of resource files and translations
+
+--- CMakeLists.txt.orig	2024-06-14 05:59:32 UTC
++++ CMakeLists.txt
+@@ -34,6 +34,10 @@ include(DuckStationBuildOptions)
+ # Build options. Depends on system attributes.
+ include(DuckStationBuildOptions)
+ 
++if(DEFINED DUCKSTATION_APPLICATION_DIR_PATH)
++  add_compile_definitions(DUCKSTATION_APPLICATION_DIR_PATH="${DUCKSTATION_APPLICATION_DIR_PATH}")
++endif()
++
+ # Set _DEBUG macro for Debug builds.
+ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
+ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
+--- src/duckstation-qt/qthost.cpp.orig	2024-06-14 05:59:32 UTC
++++ src/duckstation-qt/qthost.cpp
+@@ -503,6 +503,10 @@ void QtHost::SetResourcesDirectory()
+ 
+ void QtHost::SetResourcesDirectory()
+ {
++#ifdef DUCKSTATION_APPLICATION_DIR_PATH
++  // Resources' path specified at compile time
++  EmuFolders::Resources = Path::Canonicalize(DUCKSTATION_APPLICATION_DIR_PATH "/resources");
++#else
+ #ifndef __APPLE__
+   // On Windows/Linux, these are in the binary directory.
+   EmuFolders::Resources = Path::Combine(EmuFolders::AppRoot, "resources");
+@@ -510,6 +514,7 @@ void QtHost::SetResourcesDirectory()
+   // On macOS, this is in the bundle resources directory.
+   EmuFolders::Resources = Path::Canonicalize(Path::Combine(EmuFolders::AppRoot, "../Resources"));
+ #endif
++#endif // DUCKSTATION_APPLICATION_DIR_PATH
+ }
+ 
+ bool QtHost::SetDataDirectory()
+--- src/duckstation-qt/qttranslations.cpp.orig	2024-06-14 05:59:32 UTC
++++ src/duckstation-qt/qttranslations.cpp
+@@ -80,11 +80,15 @@ void QtHost::InstallTranslator(QWidget* dialog_parent)
+     FixLanguageName(QString::fromStdString(Host::GetBaseStringSettingValue("Main", "Language", GetDefaultLanguage())));
+ 
+   // install the base qt translation first
++#ifdef DUCKSTATION_APPLICATION_DIR_PATH
++  const QString base_dir = QStringLiteral(DUCKSTATION_APPLICATION_DIR_PATH "/translations");
++#else
+ #ifndef __APPLE__
+   const QString base_dir = QStringLiteral("%1/translations").arg(qApp->applicationDirPath());
+ #else
+   const QString base_dir = QStringLiteral("%1/../Resources/translations").arg(qApp->applicationDirPath());
+ #endif
++#endif // DUCKSTATION_APPLICATION_DIR_PATH
+ 
+   // Qt base uses underscores instead of hyphens.
+   const QString qt_language = QString(language).replace(QChar('-'), QChar('_'));

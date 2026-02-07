@@ -1,0 +1,2 @@
+Integrates the webassets library with Django, adding support for merging,
+minifying and compiling CSS and Javascript files.

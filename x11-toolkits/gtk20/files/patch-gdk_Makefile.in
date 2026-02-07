@@ -1,0 +1,11 @@
+--- gdk/Makefile.in.orig	Thu Feb 14 12:38:26 2002
++++ gdk/Makefile.in	Thu Feb 14 12:45:37 2002
+@@ -315,7 +315,7 @@
+ #
+ # Rule to install gdkconfig.h header file
+ #
+-configexecincludedir = $(libdir)/gtk-2.0/include
++configexecincludedir = $(prefix)/include/gtk-2.0
+ 
+ #note: not gdkconfig.h
+ BUILT_SOURCES = stamp-gc-h @REBUILD@ gdkenumtypes.c gdkenumtypes.h

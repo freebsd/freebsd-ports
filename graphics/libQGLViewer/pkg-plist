@@ -1,0 +1,14 @@
+include/QGLViewer/camera.h
+include/QGLViewer/config.h
+include/QGLViewer/constraint.h
+include/QGLViewer/domUtils.h
+include/QGLViewer/frame.h
+include/QGLViewer/keyFrameInterpolator.h
+include/QGLViewer/manipulatedCameraFrame.h
+include/QGLViewer/manipulatedFrame.h
+include/QGLViewer/mouseGrabber.h
+include/QGLViewer/qglviewer.h
+include/QGLViewer/quaternion.h
+include/QGLViewer/vec.h
+lib/libQGLViewer.so
+libdata/pkgconfig/libQGLViewer.pc

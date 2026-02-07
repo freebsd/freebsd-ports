@@ -1,0 +1,68 @@
+--- uip/Makefile.in.orig	2019-01-06 17:33:10 UTC
++++ uip/Makefile.in
+@@ -50,17 +50,20 @@ SETGID_MAIL    = @SETGID_MAIL@
+ 	$(COMPILE) $<
+ 
+ # commands to build
+-CMDS = ali anno burst comp dist flist folder forw mmh mark \
+-       mhbuild mhl mhsign mhpgp \
++CMDS = ali anno burst comp dist flist folder forw mark \
++       mhbuild mhl \
+        mhlist mhmail mhparam mhpath mhstore new packf pick \
+-       print-mimetype prompter rcvdist rcvpack rcvstore refile repl rmf \
+-       rmm send sendfiles show slocal sortm spost whatnow whatnow2 whom
++       prompter rcvdist rcvpack rcvstore refile repl rmf \
++       rmm send show slocal sortm spost whatnow whom
+ 
++# commands that are written in shell
++# this is need to avoid call strip on this scripts
++SHELLSCRIPTS = mmh mhsign mhpgp sendfiles print-mimetype whatnow2
+ # commands that are links to other commands
+ LCMDS = flists folders next prev fnext fprev unseen scan
+ 
+ # misc support binaries
+-MISC = ap dp fmtdump mhtest mmhwrap
++MISC = ap dp fmtdump mhtest
+ 
+ # commands with 'S'pecial installation needs
+ SCMDS = inc
+@@ -68,7 +71,7 @@ SCMDS = inc
+ # source files
+ SRCS = ali.c aliasbr.c anno.c ap.c burst.c comp.c \
+ 	dist.c distsbr.c dp.c dropsbr.c flist.c fmtdump.c \
+-	folder.c forw.c inc.c mark.c mmh.sh mmhwrap.sh mhbuild.c \
++	folder.c forw.c inc.c mark.c mmh.sh mhbuild.c \
+ 	mhfree.c mhl.c mhlist.c mhlistsbr.c mhsign.sh mhpgp.sh \
+ 	mhmail.c mhmisc.c mhoutsbr.c mhparam.c mhparse.c \
+ 	mhpath.c mhshow.c mhshowsbr.c mhstore.c mhtest.c \
+@@ -80,7 +83,7 @@ SRCS = ali.c aliasbr.c anno.c ap.c burst.c comp.c \
+ 
+ # ========== DEFAULT TARGET ==========
+ 
+-all: $(CMDS) $(MISC) $(SCMDS)
++all: $(CMDS) $(MISC) $(SCMDS) $(SHELLSCRIPTS)
+ 
+ # ========= DEPENDENCIES FOR BUILDING ==========
+ 
+@@ -231,13 +234,20 @@ whom: whom.o $(LOCALLIBS)
+ # ========== DEPENDENCIES FOR INSTALLING ==========
+ 
+ # install everything
+-install: install-cmds install-misc install-lcmds install-scmds
++install: install-cmds install-misc install-lcmds install-scmds install-shell
+ 
+ # install commands
+ install-cmds:
+ 	mkdir -p $(DESTDIR)$(bindir)
+ 	for cmd in $(CMDS); do \
+ 	  $(INSTALL_PROGRAM) $$cmd $(DESTDIR)$(bindir)/$$cmd; \
++	done
++
++# install shellscripts
++install-shell:
++	mkdir -p $(DESTDIR)$(bindir)
++	for cmd in $(SHELLSCRIPTS); do \
++		$(INSTALL) $$cmd $(DESTDIR)$(bindir)/$$cmd; \
+ 	done
+ 
+ # install links

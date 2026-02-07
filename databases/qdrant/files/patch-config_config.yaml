@@ -1,0 +1,37 @@
+--- config/config.yaml.orig	2024-01-03 19:31:20 UTC
++++ config/config.yaml
+@@ -2,10 +2,10 @@ log_level: INFO
+ 
+ storage:
+   # Where to store all the data
+-  storage_path: ./storage
++  storage_path: %%DBDIR%%/storage
+ 
+   # Where to store snapshots
+-  snapshots_path: ./snapshots
++  snapshots_path: %%DBDIR%%/snapshots
+ 
+   # Where to store temporary files
+   # If null, temporary snapshot are stored in: storage/snapshots_temp/
+@@ -205,10 +205,10 @@ telemetry_disabled: false
+ # Required if either service.enable_tls or cluster.p2p.enable_tls is true.
+ tls:
+   # Server certificate chain file
+-  cert: ./tls/cert.pem
++  cert: %%ETCDIR%%/tls/cert.pem
+ 
+   # Server private key file
+-  key: ./tls/key.pem
++  key: %%ETCDIR%%/tls/key.pem
+ 
+   # Certificate authority certificate file.
+   # This certificate will be used to validate the certificates
+@@ -218,7 +218,7 @@ tls:
+   # HTTPS client certificate
+   #
+   # Required if cluster.p2p.enable_tls is true.
+-  ca_cert: ./tls/cacert.pem
++  ca_cert: %%ETCDIR%%/tls/cacert.pem
+ 
+   # TTL in seconds to reload certificate from disk, useful for certificate rotations.
+   # Only works for HTTPS endpoints. Does not support gRPC (and intra-cluster communication).

@@ -1,0 +1,53 @@
+--- CHANGES.orig	2013-11-10 23:40:09 UTC
++++ CHANGES
+@@ -27,7 +27,7 @@ Tue Aug 24 11:28:45 PDT 1999
+ 
+ Tue Aug 24 11:28:19 PDT 1999
+ 
+-	Make the module work with Perl 5.004_01.
++	Make the module work with Perl 5.010.
+ 
+ Tue Aug 17 11:42:49 PDT 1999
+ 
+--- META.yml.orig	2013-11-10 23:45:43 UTC
++++ META.yml
+@@ -11,7 +11,7 @@ configure_requires:
+ build_requires:
+     ExtUtils::MakeMaker:  0
+ requires:
+-    perl:  5.004_01
++    perl:  5.010
+ no_index:
+     directory:
+         - t
+--- Makefile.PL.orig	2013-11-10 23:38:24 UTC
++++ Makefile.PL
+@@ -10,7 +10,7 @@ WriteMakefile(
+   'ABSTRACT'		=> 'Interpolate the value Y from X using a list of (X, Y) pairs',
+   'AUTHOR'		=> 'Blair Zajac <blair@orcaware.com>',
+   'LICENSE'		=> 'perl',
+-  'MIN_PERL_VERSION'	=> '5.004_01',
++  'MIN_PERL_VERSION'	=> '5.010',
+   'VERSION_FROM'	=> 'lib/Math/Interpolate.pm', # finds $VERSION
+ );
+ 
+--- lib/Math/Interpolate.pm.orig	2013-11-10 23:22:14 UTC
++++ lib/Math/Interpolate.pm
+@@ -1,6 +1,6 @@
+ package Math::Interpolate;
+ 
+-require 5.004_01;
++require 5.010;
+ 
+ use strict;
+ use Exporter;
+--- lib/Math/IntervalSearch.pm.orig	2013-11-10 23:22:14 UTC
++++ lib/Math/IntervalSearch.pm
+@@ -1,6 +1,6 @@
+ package Math::IntervalSearch;
+ 
+-require 5.004_01;
++require 5.010;
+ 
+ use strict;
+ use vars qw(@EXPORT_OK @ISA $VERSION);

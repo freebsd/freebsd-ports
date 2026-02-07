@@ -1,0 +1,42 @@
+--- makefile.orig	2015-02-01 10:19:25 UTC
++++ makefile
+@@ -203,7 +203,7 @@ CLI_LUAOBJS = \
+ #
+ # This is my compiler of choice, it seems to work most everywhere
+ #
+-CC = gcc
++CC ?= cc
+ 
+ # For allowing #if..#else..#endif constructs in LUA files - C. Blue
+ # Note: The flags must contain
+@@ -256,8 +256,8 @@ X11BASE = /usr/X11R6
+ # attempt to "guess" at many of these flags based on your system.
+ #
+ ## With SDL
+-CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags` -D_DEFAULT_SOURCE -DACC32
+-LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm `sdl-config --libs` -lSDL_mixer
++#CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937 -DSOUND_SDL `sdl-config --cflags` -D_DEFAULT_SOURCE -DACC32
++#LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm `sdl-config --libs` -lSDL_mixer
+ ##
+ ## Without SDL
+ #CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
+@@ -304,8 +304,8 @@ LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -
+ #LDFLAGS = -Wl,-rpath,\$$ORIGIN
+ ##
+ ## Without SDL
+-#CFLAGS = -g -pipe -Wall -DUSE_X11 -DUSE_GCU -I${X11BASE}/include -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
+-#LIBS = -L${X11BASE}/lib -L/usr/pkg/lib -lX11 -lncurses -lcrypt -lm
++CFLAGS += -Wall -Wno-implicit-int -DUSE_GCU -D_XOPEN_SOURCE -D_BSD_SOURCE -DMEXP=19937
++LIBS += -lncurses -lcrypt -lm -lexecinfo
+ 
+ 
+ ## Added by thaler, 6/28/97
+@@ -397,7 +397,7 @@ date:
+ #
+ 
+ accedit: account/accedit.o
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o accedit account/accedit.o -lcurses -lcrypt
++	$(CC) $(CFLAGS) $(LDFLAGS) -o accedit account/accedit.o -lncurses -lcrypt
+ 
+ 
+ #

@@ -1,0 +1,12 @@
+--- avidemux_plugins/CMakeLists.txt.orig	2021-03-07 06:18:22 UTC
++++ avidemux_plugins/CMakeLists.txt
+@@ -266,7 +266,9 @@ ENDIF(DO_COMMON)
+ ADD_SUBDIRECTORY(ADM_videoEncoder)
+ ADD_SUBDIRECTORY(ADM_videoFilters6)
+ IF(DO_QT4)
++    IF(NOT DO_COMMON)
+         add_subdirectory(ADM_demuxers/VapourSynth)
++    ENDIF(NOT DO_COMMON)
+     #    add_subdirectory(ADM_scriptEngines)
+         #IF(USE_OPENGL AND NOT WIN32)
+         IF(USE_OPENGL )

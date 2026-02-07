@@ -1,0 +1,9 @@
+%%SITE_PERL%%/WWW/SourceForge.pm
+%%SITE_PERL%%/WWW/SourceForge/API.pm
+%%SITE_PERL%%/WWW/SourceForge/Project.pm
+%%SITE_PERL%%/WWW/SourceForge/User.pm
+%%SITE_PERL%%/WWW/SourceForge/Wiki.pm
+%%PERL5_MAN3%%/WWW::SourceForge.3.gz
+%%PERL5_MAN3%%/WWW::SourceForge::Project.3.gz
+%%PERL5_MAN3%%/WWW::SourceForge::User.3.gz
+%%PERL5_MAN3%%/WWW::SourceForge::Wiki.3.gz

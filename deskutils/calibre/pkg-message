@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+To talk to USB and MTP devices the user needs to be able to access
+the device node in /dev.
+
+to be aware of USB devices attached to the machine, the user needs
+to be a member of the operator group:
+
+# pw groupmod operator -m yourusername
+
+Then, add the following to /etc/devfs.rules, or create this file
+if it does not exist yet:
+
+[system=10]
+add path 'usb/*' mode 0660 group operator
+
+To load these new rules, add the following to /etc/rc.conf:
+
+devfs_system_ruleset="system"
+
+Then, restart devfs
+
+# service devfs restart
+
+---
+
+If you are using an Android device as your e-book reader, please note
+that the stock Google Books app uses a storage format that is not
+supported by calibre.  The calibre FAQ recommends that either of the
+free apps Aldiko or WordPlayer are used instead.
+
+---
+
+A basic startup script for calibre-server has been installed.
+
+It can be customized and configured using the flags described in
+the headers of the startup script. The calibre_user and calibre_library
+variables need to be configured to point to a library and the user
+with write access to it. For example the user you usually run calibre
+on the desktop as.
+
+The command line options are documented here:
+
+https://manual.calibre-ebook.com/generated/en/calibre-server.html
+EOM
+}
+]

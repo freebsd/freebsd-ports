@@ -1,0 +1,7 @@
+Scavenge is a utility to analyze DNS records within an IP address range.
+It scans the range and classifies its findings into 4 categories:
+
+    - Missing A records
+    - Missing PTR records
+    - Mismatched A/PTR records
+    - Stale PTR records

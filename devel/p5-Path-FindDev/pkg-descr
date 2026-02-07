@@ -1,0 +1,3 @@
+Path::FindDev is used to find a development path somewhere in an upper
+hierarchy. It is mostly a glue layer around Path::IsDev with a few
+directory walking tricks.

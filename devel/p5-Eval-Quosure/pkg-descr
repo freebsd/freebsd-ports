@@ -1,0 +1,3 @@
+Eval::Quosure acts similar to R's "quosure". A "quosure" is an object that
+combines an expression and an environment in which the expression can be
+evaluated.

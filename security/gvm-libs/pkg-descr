@@ -1,0 +1,5 @@
+This is the libraries module for the Greenbone Vulnerability Management
+Solution.
+
+It is used for the Greenbone Security Manager appliances and provides various
+functionalities to support the integrated service daemons.

@@ -1,0 +1,95 @@
+PORTNAME=	monero-cli
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.18.4.3
+PORTREVISION=	1
+CATEGORIES=	net-p2p finance
+
+MAINTAINER=	alex.perechnev@gmail.com
+COMMENT=	Private, secure, untraceable, decentralised digital currency (CLI)
+WWW=		https://getmonero.org/
+
+LICENSE=	BSD3CLAUSE
+
+BROKEN_SSL=	libressl
+BROKEN_aarch64=	fails to compile: uses unavailable HWCAP_AES and getauxval
+
+BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
+		${LOCALBASE}/include/zmq.hpp:net/cppzmq
+LIB_DEPENDS=	\
+		libboost_chrono.so:devel/boost-libs \
+		libboost_date_time.so:devel/boost-libs \
+		libboost_filesystem.so:devel/boost-libs \
+		libboost_locale.so:devel/boost-libs \
+		libboost_program_options.so:devel/boost-libs \
+		libboost_serialization.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
+		libminiupnpc.so:net/miniupnpc \
+		libnorm.so:net/norm \
+		libpgm.so:net/openpgm \
+		libsodium.so:security/libsodium \
+		libunbound.so:dns/unbound \
+		libzmq.so:net/libzmq4
+
+USES=		cmake compiler:c++14-lang pkgconfig readline ssl
+USE_GITHUB=	yes
+.if defined(PKGNAMESUFFIX)
+GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
+.else
+GIT_COMMIT=	${DISTVERSIONPREFIX}${DISTVERSION}
+.endif
+GH_TUPLE=	monero-project:monero:${GIT_COMMIT} \
+		monero-project:supercop:633500ad8c875999:ext1/external/supercop \
+		tevador:RandomX:102f8acf90a7649ada410de5:ext2/external/randomx \
+		trezor:trezor-common:bff7fdfe436c727982c:ext3/external/trezor-common
+
+CFLAGS+=	-D_WANT_SEMUN
+
+OPTIONS_DEFINE=		DOXYGEN NATIVE
+DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
+			doxygen:devel/doxygen
+DOXYGEN_CMAKE_BOOL=	BUILD_DOCUMENTATION
+NATIVE_CMAKE_ON=	-DARCH=native
+NATIVE_CMAKE_OFF=	-DARCH=default
+
+.include <bsd.port.pre.mk>
+
+# On FreeBSD 12.x the default ld(1) is LLVM's ld which needs an explicit -m option
+# when linking without any input .o on the command line, like:
+# /usr/bin/ld -melf_amd64 -r -b binary -o blocksdat.o blocks.dat
+# See Bug 226996 - net-p2p/monero-cli: fails to link with lld as the system linker
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226996
+LD_EMULATION=	${ARCH:S|aarch64|aarch64elf|:S|amd64|elf_amd64|:C|armv[67]|armelf|:S|i386|elf_i386_fbsd|:S|powerpc64|elf64ppc|:S|powerpc64le|elf64lppc|:C|powerpc(spe)*|elf32ppc_fbsd|:S|riscv64|elf64lriscv|}
+
+CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
+
+# keep in sync with all platforms where libunwind is available
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marmv?} || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH:Mpowerpc64*}
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
+.else
+CMAKE_ARGS+=	-DSTACK_TRACE:BOOL=OFF
+.endif
+
+CMAKE_ARGS+=	-DMANUAL_SUBMODULES:BOOL=ON
+
+USE_RC_SUBR=	monerod
+
+USERS=		monero
+GROUPS=		monero
+
+PLIST_FILES=	\
+		bin/monero-blockchain-ancestry \
+		bin/monero-blockchain-depth \
+		bin/monero-blockchain-export \
+		bin/monero-blockchain-import \
+		bin/monero-blockchain-mark-spent-outputs \
+		bin/monero-blockchain-prune \
+		bin/monero-blockchain-prune-known-spent-data \
+		bin/monero-blockchain-stats \
+		bin/monero-blockchain-usage \
+		bin/monero-gen-ssl-cert \
+		bin/monero-gen-trusted-multisig \
+		bin/monero-wallet-cli \
+		bin/monero-wallet-rpc \
+		bin/monerod
+
+.include <bsd.port.post.mk>

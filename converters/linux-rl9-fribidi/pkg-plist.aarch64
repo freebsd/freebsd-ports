@@ -1,0 +1,10 @@
+usr/bin/fribidi
+usr/lib64/libfribidi.so.0
+usr/lib64/libfribidi.so.0.4.0
+%%PORTDOCS%%usr/share/doc/fribidi/AUTHORS
+%%PORTDOCS%%usr/share/doc/fribidi/ChangeLog
+%%PORTDOCS%%usr/share/doc/fribidi/NEWS
+%%PORTDOCS%%usr/share/doc/fribidi/README
+%%PORTDOCS%%usr/share/doc/fribidi/THANKS
+%%PORTDOCS%%usr/share/doc/fribidi/TODO
+usr/share/licenses/fribidi/COPYING

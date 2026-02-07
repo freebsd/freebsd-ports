@@ -1,0 +1,57 @@
+[
+{ type: install
+  message: <<EOM
+All installations having Exim set-uid root and using 'perl_startup' are
+vulnerable to a local privilege escalation. Any user who can start an
+instance of Exim (and this is normally *any* user) can gain root
+privileges. If you do not use 'perl_startup' you *should* be safe.
+
+New options
+-----------
+
+We had to introduce two new configuration options:
+
+    keep_environment =
+    add_environment =
+
+Both options are empty per default. That is, Exim cleans the complete
+environment on startup. This affects Exim itself and any subprocesses,
+as transports, that may call other programs via some alias mechanisms,
+as routers (queryprogram), lookups, and so on. This may affect used
+libraries (e.g. LDAP).
+
+** THIS MAY BREAK your existing installation **
+
+New behaviour
+-------------
+
+Now Exim changes it's working directory to / right after startup,
+even before reading it's configuration. (Later Exim changes it's working
+directory to $spool_directory, as usual.)
+
+Exim only accepts an absolute configuration file path now, when using
+the -C option.
+
+EOM
+}
+{ type: upgrade
+  maximum_version: 4.80
+  message: <<EOM
+Upgrades to Exim 4.80
+=====================
+
+Exim 4.80 contains some backward-incompatible changes.
+
+OpenSSL default options have changed to be more secure, including
+disabling of SSLv2 by default (and adding support for TLSv1.1 and
+TLSv1.2 if using OpenSSL 1.0.1 or newer); GnuTLS has been updated to use
+a new API and stop honouring some options starting gnutls_*; users of
+LDAP can now distinguish "comma in data" from "multi-valued attribute".
+There are more details, covering more changes, in README.UPDATING.
+
+We now enable accept_8bitmime by default, as the Exim maintainers agree
+with Dan Bernstein about the best way to deal with the 8BITMIME
+extension.
+EOM
+}
+]

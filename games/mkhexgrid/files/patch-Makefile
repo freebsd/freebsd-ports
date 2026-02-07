@@ -1,0 +1,14 @@
+--- Makefile.orig	2007-01-10 16:37:42.000000000 +0300
++++ Makefile	2009-02-28 05:17:28.000000000 +0300
+@@ -8,9 +8,8 @@
+ DISTDIR=mkhexgrid-$(VERSION)
+ RPMDIR=/home/uckelman/rpmbuild
+ 
+-CC=g++
+-CPPFLAGS=-c -g -O2 -W -Wall -DVERSION='"$(VERSION)"'
+-LDFLAGS=-lm -lstdc++ -lgd
++CPPFLAGS=-I${LOCALBASE}/include -c -W -Wall -DVERSION='"$(VERSION)"'
++LDFLAGS=-L${LOCALBASE}/lib -lm -lstdc++ -lgd
+ 
+ FILES=grid.h \
+       grid.cpp \

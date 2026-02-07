@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/URL/Encode/XS.pm
+%%SITE_ARCH%%/auto/URL/Encode/XS/XS.so
+%%PERL5_MAN3%%/URL::Encode::XS.3.gz

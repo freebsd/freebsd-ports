@@ -1,0 +1,17 @@
+--- Makefile.orig	2014-01-11 00:02:15.000000000 +0800
++++ Makefile	2014-01-11 00:02:45.000000000 +0800
+@@ -23,10 +23,10 @@ clean:
+ distclean: clean
+ 
+ install: yalias
+-	mkdir -p $(bindir)
+-	install -m755 yalias $(bindir)/yalias
+-	mkdir -p $(YALIASDIR)
+-	install -m644 system.yaliasrc $(YALIASDIR)/system.yaliasrc
++	mkdir -p $(DESTDIR)$(bindir)
++	install -m755 yalias $(DESTDIR)$(bindir)/yalias
++	mkdir -p $(DESTDIR)$(YALIASDIR)
++	install -m644 system.yaliasrc $(DESTDIR)$(YALIASDIR)/system.yaliasrc
+ 
+ dist: distclean
+ 	-cd .. && ln -sf $(PACKAGE) $(DISTNAME) && tar --exclude='CVS' --exclude='old' -czhpvf $(DISTNAME).tar.gz $(DISTNAME)

@@ -1,0 +1,8 @@
+--- xneko.man.orig	Sun Sep  2 05:27:21 1990
++++ xneko.man	Wed Sep 12 16:54:38 2001
+@@ -1,4 +1,4 @@
+-.TH xneko SIPB "1 September 1990" "X Version 11"
++.TH xneko 6 "1 September 1990" "X Version 11"
+ .SH NAME
+ xneko \- cat-and-mouse chase in an X window
+ .SH SYNOPSIS

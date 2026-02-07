@@ -1,0 +1,27 @@
+% sed -i .orig 's|/etc/inputrc|%%PREFIX%%&|g' doc/readline.3 doc/readline.info doc/rluserman.info
+
+--- doc/readline.3.orig	2025-02-03 15:12:54 UTC
++++ doc/readline.3
+@@ -180,7 +180,7 @@ If that file  does not exist or cannot be read, \fBrea
+ If that variable is unset, the default is
+ .IR \*~/.inputrc .
+ If that file  does not exist or cannot be read, \fBreadline\fP looks for
+-.IR /etc/inputrc .
++.IR %%PREFIX%%/etc/inputrc .
+ When a program that uses the \fBreadline\fP library starts up,
+ \fBreadline\fP reads the initialization file
+ and sets the key bindings and variables found there,
+@@ -936,11 +936,11 @@ and key bindings from that file.
+ .B $include
+ This directive takes a single filename as an argument and reads commands
+ and key bindings from that file.
+-For example, the following directive would read \fI/etc/inputrc\fP:
++For example, the following directive would read \fI%%PREFIX%%/etc/inputrc\fP:
+ .PP
+ .RS
+ .nf
+-\fB$include\fP \^ \fI/etc/inputrc\fP
++\fB$include\fP \^ \fI%%PREFIX%%/etc/inputrc\fP
+ .fi
+ .RE
+ .SH SEARCHING

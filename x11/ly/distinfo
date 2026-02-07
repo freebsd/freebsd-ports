@@ -1,0 +1,11 @@
+TIMESTAMP = 1767771560
+SHA256 (zig/ly-ly-v1.3.1_GH0.tar.gz) = 4d1742691abf8f43ecde389760ddd69140996eeacc0485728f09b27d8f99c6d7
+SIZE (zig/ly-ly-v1.3.1_GH0.tar.gz) = 106624
+SHA256 (zig/Hejsil-zig-clap-5289e0753cd274d65344bef1c114284c6_GH0.tar.gz) = 9e3501c9015315a90cbf9c014edad69f37b541df848a92a2d8ff56e93970ebc9
+SIZE (zig/Hejsil-zig-clap-5289e0753cd274d65344bef1c114284c6_GH0.tar.gz) = 25748
+SHA256 (zig/AnErrupTion-termbox2-290ac6b8225aacfd16851224682b851b6_GH0.tar.gz) = 8a913d4921b1400e878b3d7cb49e55a81deac0c67d2245ee5fef88ade70aa177
+SIZE (zig/AnErrupTion-termbox2-290ac6b8225aacfd16851224682b851b6_GH0.tar.gz) = 85503
+SHA256 (zig/AnErrupTion-zigini-9281f47702b57779e831d7618e158abb8_GH0.tar.gz) = 9af7cf5ff80a980887f88cb88842909b662605b38a26270d7a6005a23f01894c
+SIZE (zig/AnErrupTion-zigini-9281f47702b57779e831d7618e158abb8_GH0.tar.gz) = 6322
+SHA256 (zig/AnErrupTion-ini-918f16d0dcf893d0c1cdffe204faa08bb3584e04_GH0.tar.gz) = cf620c4b482b7e77f7de1eadcf5111bf68ba81f9d2ea9f28316173f80986a00f
+SIZE (zig/AnErrupTion-ini-918f16d0dcf893d0c1cdffe204faa08bb3584e04_GH0.tar.gz) = 8022

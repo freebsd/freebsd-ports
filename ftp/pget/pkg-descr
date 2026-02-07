@@ -1,0 +1,6 @@
+pget performs multi-connection download using parallel requests.
+
+Features:
+* Fast
+* Resumable
+* Cross-compiled (windows, linux, macOS)

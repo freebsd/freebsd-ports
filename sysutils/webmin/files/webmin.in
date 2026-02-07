@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: webmin
+# REQUIRE: LOGIN
+#
+# Add the following line to /etc/rc.conf to enable webmin:
+#
+# webmin_enable="YES"
+#
+
+webmin_enable=${webmin_enable:-"NO"}
+
+. /etc/rc.subr
+
+name=webmin
+rcvar=webmin_enable
+
+required_files=%%PREFIX%%/etc/webmin/var-path
+webmin_var_path=`cat %%PREFIX%%/etc/webmin/var-path`
+
+procname=%%PERL%%
+pidfile=${webmin_var_path}/miniserv.pid
+required_dirs=%%PREFIX%%/etc/webmin
+command=%%PREFIX%%/etc/webmin/start
+
+load_rc_config ${name}
+run_rc_command "$1"

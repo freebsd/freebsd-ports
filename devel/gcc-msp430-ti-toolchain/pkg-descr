@@ -1,0 +1,4 @@
+TI & RedHat toolchain for TI's msp430 MCUs cross-development
+
+This brings the gcc compiler for the Texas Instruments MSP430 16-bit
+RISC-like family of microcontrollers.

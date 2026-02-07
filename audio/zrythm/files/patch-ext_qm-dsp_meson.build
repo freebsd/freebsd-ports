@@ -1,0 +1,12 @@
+--- ext/qm-dsp/meson.build.orig	2021-10-13 01:44:29 UTC
++++ ext/qm-dsp/meson.build
+@@ -39,9 +39,6 @@ qm_dsp_lib = static_library (
+     '-Wall',
+     '-Wextra',
+     '-O3',
+-    '-msse',
+-    '-msse2',
+-    '-mfpmath=sse',
+     '-ftree-vectorize',
+     '-DUSE_PTHREADS',
+     ],

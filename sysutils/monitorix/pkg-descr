@@ -1,0 +1,9 @@
+Monitorix is a free, open source, lightweight system monitoring tool designed
+to monitor as many services and system resources as possible. It has been
+created to be used under production UNIX/Linux servers, but due to its
+simplicity and small size may also be used to monitor embedded devices as
+well.
+
+It mainly consists mainly of two programs: a collector, called monitorix, which
+is a Perl daemon that is started automatically like any other system service,
+and a CGI script called monitorix.cgi.

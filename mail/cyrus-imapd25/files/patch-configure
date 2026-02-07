@@ -1,0 +1,18 @@
+--- configure.orig	2017-05-09 05:22:02.000000000 +0200
++++ configure	2018-04-10 21:57:26.402409000 +0200
+@@ -18751,6 +18751,15 @@
+ rm -f conftest*
+ 
+ 
++	ac_fn_c_check_member "$LINENO" "icaltimetype" "is_utc" "ac_cv_member_icaltimetype_is_utc" "#include <libical/ical.h>
++"
++if test "x$ac_cv_member_icaltimetype_is_utc" = xyes; then :
++
++$as_echo "#define ICALTIME_HAS_IS_UTC /**/" >>confdefs.h
++
++fi
++
++
+ 	ENABLE_RSCALE=yes
+ 
+ pkg_failed=no

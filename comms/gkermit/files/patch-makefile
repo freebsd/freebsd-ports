@@ -1,0 +1,32 @@
+--- makefile.orig	1999-12-26 20:28:38 UTC
++++ makefile
+@@ -37,8 +37,10 @@ MANEXT = l
+ 
+ # Default compiler and flags
+ 
+-CC=cc
+-CFLAGS= -DPOSIX -O $(KFLAGS)
++#CC=cc
++#CFLAGS= -DPOSIX -O $(KFLAGS)
++DEFS=-DPOSIX
++CFLAGS+=	$(DEFS)
+ 
+ # Object files
+ 
+@@ -70,13 +72,13 @@ gkermit:	gproto.o gkermit.o gunixio.o gc
+ 		$(CC) -o gkermit $(OBJECTS)
+ 
+ bsd:		gwart
+-		$(MAKE) "CC=$(CC)" "CFLAGS=-DBSD -O $(KFLAGS)" gkermit
++		$(MAKE) "CC=$(CC)" "DEFS=-DBSD $(KFLAGS)" gkermit
+ 
+ sysv:		gwart
+-		$(MAKE) "CC=$(CC)" "CFLAGS=-DSYSV -O $(KFLAGS)" gkermit
++		$(MAKE) "CC=$(CC)" "DEFS=-DSYSV $(KFLAGS)" gkermit
+ 
+ posix:		gwart
+-		$(MAKE) "CC=$(CC)" "CFLAGS=-DPOSIX -O $(KFLAGS)" gkermit
++		$(MAKE) "CC=$(CC)" "DEFS=-DPOSIX $(KFLAGS)" gkermit
+ 
+ sysvx:		gwart
+ 		$(MAKE) "CC=$(CC)" \

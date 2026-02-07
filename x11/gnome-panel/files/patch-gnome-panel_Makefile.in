@@ -1,0 +1,126 @@
+--- gnome-panel/Makefile.in.orig	2025-09-28 14:17:59 UTC
++++ gnome-panel/Makefile.in
+@@ -125,8 +125,7 @@ am__EXEEXT_1 =
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+ am__EXEEXT_1 =
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" \
+-	"$(DESTDIR)$(systemduserdir)"
++am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ am__objects_1 =
+ am__objects_2 = gnome_panel-gp-add-applet-window.$(OBJEXT) \
+@@ -271,7 +270,7 @@ am__uninstall_files_from_dir = { \
+   || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+        $(am__cd) "$$dir" && echo $$files | $(am__xargs_n) 40 $(am__rm_f); }; \
+   }
+-DATA = $(desktop_DATA) $(systemduser_DATA)
++DATA = $(desktop_DATA)
+ am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
+ # Read a list of newline-separated strings from the standard input,
+ # and print each of them once, without duplicates.  Input order is
+@@ -602,22 +601,16 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop
+ desktopdir = $(datadir)/applications
+ desktop_in_files = gnome-panel.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+-service_in_files = gnome-panel.service.in
+-service_files = $(service_in_files:.service.in=.service)
+-systemduserdir = $(SYSTEMD_USER_UNIT_DIR)
+-systemduser_DATA = $(service_files)
+ EXTRA_DIST = \
+ 	$(ui_FILES)				\
+ 	panel.gresource.xml			\
+ 	$(desktop_in_files) \
+-	$(service_in_files) \
+ 	$(NULL)
+ 
+ CLEANFILES = \
+ 	$(BUILT_SOURCES) \
+ 	$(sys_DATA) \
+ 	$(desktop_DATA) \
+-	$(service_files) \
+ 	$(NULL)
+ 
+ all: $(BUILT_SOURCES)
+@@ -1228,28 +1221,7 @@ uninstall-desktopDATA:
+ 	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	dir='$(DESTDIR)$(desktopdir)'; $(am__uninstall_files_from_dir)
+-install-systemduserDATA: $(systemduser_DATA)
+-	@$(NORMAL_INSTALL)
+-	@list='$(systemduser_DATA)'; test -n "$(systemduserdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(systemduserdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(systemduserdir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(systemduserdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(systemduserdir)" || exit $$?; \
+-	done
+ 
+-uninstall-systemduserDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(systemduser_DATA)'; test -n "$(systemduserdir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(systemduserdir)'; $(am__uninstall_files_from_dir)
+-
+ ID: $(am__tagged_files)
+ 	$(am__define_uniq_tagged_files); mkid -fID $$unique
+ tags: tags-am
+@@ -1339,7 +1311,7 @@ installdirs:
+ 	$(MAKE) $(AM_MAKEFLAGS) check-am
+ all-am: Makefile $(PROGRAMS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(systemduserdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: $(BUILT_SOURCES)
+@@ -1428,7 +1400,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-desktopDATA install-systemduserDATA
++install-data-am: install-desktopDATA
+ 
+ install-dvi: install-dvi-am
+ 
+@@ -1504,8 +1476,7 @@ ps-am:
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-binPROGRAMS uninstall-desktopDATA \
+-	uninstall-systemduserDATA
++uninstall-am: uninstall-binPROGRAMS uninstall-desktopDATA
+ 
+ .MAKE: all check install install-am install-exec install-strip
+ 
+@@ -1518,12 +1489,12 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktopD
+ 	install-dvi-am install-exec install-exec-am install-html \
+ 	install-html-am install-info install-info-am install-man \
+ 	install-pdf install-pdf-am install-ps install-ps-am \
+-	install-strip install-systemduserDATA installcheck \
++	install-strip installcheck \
+ 	installcheck-am installdirs maintainer-clean \
+ 	maintainer-clean-generic mostlyclean mostlyclean-compile \
+ 	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+ 	tags tags-am uninstall uninstall-am uninstall-binPROGRAMS \
+-	uninstall-desktopDATA uninstall-systemduserDATA
++	uninstall-desktopDATA
+ 
+ .PRECIOUS: Makefile
+ 
+@@ -1565,9 +1536,6 @@ panel-resources.h: panel.gresource.xml $(shell $(GLIB_
+ %.desktop: %.desktop.in
+ 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -o $@-t \
+ 		-d $(top_srcdir)/po && mv $@-t $@
+-
+-%.service: %.service.in
+-	$(AM_V_GEN) sed -e 's,[@]bindir[@],$(bindir),g' < $< > $@
+ 
+ -include $(top_srcdir)/git.mk
+ 

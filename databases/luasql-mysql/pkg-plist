@@ -1,0 +1,1 @@
+%%LUA_MODLIBDIR%%/luasql/%%LUASQL_DRIVER%%.so

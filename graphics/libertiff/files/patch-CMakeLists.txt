@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2025-01-11 21:34:33 UTC
++++ CMakeLists.txt
+@@ -16,3 +16,5 @@ add_subdirectory(tests)
+ add_executable(demo demo.cpp)
+ 
+ add_subdirectory(tests)
++
++install(FILES libertiff.hpp DESTINATION ${CMAKE_INSTALL_PREFIX}/include)

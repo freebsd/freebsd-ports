@@ -1,0 +1,20 @@
+--- src/VBox/HostDrivers/VBoxNetAdp/Makefile.kmk.orig	2025-08-13 19:51:10 UTC
++++ src/VBox/HostDrivers/VBoxNetAdp/Makefile.kmk
+@@ -220,10 +220,14 @@ ifeq ($(KBUILD_TARGET),freebsd)
+  		$$(if $$(eq $$(VBoxNetAdp/freebsd/Makefile_VBOX_HARDENED),$$(VBOX_WITH_HARDENING)),,FORCE) \
+  		| $$(dir $$@)
+ 	$(QUIET)$(RM) -f -- $@
+- ifndef VBOX_WITH_HARDENING
+-	$(QUIET)$(SED) -e "s;VBOX_WITH_HARDENING;;g" --output $@ $<
+- else
+ 	$(QUIET)$(CP) -f $< $@
++ ifndef VBOX_WITH_HARDENING
++	$(QUIET)$(SED) -e "s;-DVBOX_WITH_HARDENING;;g" --output $@.tmp $@
++	$(QUIET)$(MV) -f $@.tmp $@
++ endif
++ ifndef VBOX_WITH_NETFLT_VIMAGE
++	$(QUIET)$(SED) -e "s;-DVIMAGE;;g" --output $@.tmp $@
++	$(QUIET)$(MV) -f $@.tmp $@
+  endif
+ 
+ endif # freebsd

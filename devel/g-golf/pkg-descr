@@ -1,0 +1,3 @@
+G-Golf is a gobject-introspection based dynamic binding to
+GObject-based libraries, enabling the use of the GNOME platform to
+build full-featured graphical apps directly from Guile.

@@ -1,0 +1,5 @@
+System tray applet that allows to control some of PulseAudio's features,
+more specifically, the volume level of the default sink, mute or unmute
+it, change active profile of the default sink, which can be useful to tell
+PulseAudio to redirect audio to the HDMI output instead of outputting to
+the built-in speakers in a computer connected to an HDMI device.

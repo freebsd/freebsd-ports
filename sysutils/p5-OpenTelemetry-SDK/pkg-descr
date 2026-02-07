@@ -1,0 +1,12 @@
+This distribution provides the reference implementation of the OpenTelemetry
+Perl interfaces currently defined in the experimental OpenTelemetry
+distribution. That is, it includes the functionality needed to collect,
+analyze, and export telemetry data produced using the API.
+
+Generally, Perl applications should install this distribution (or other
+concrete implementation of the OpenTelemetry API). Using the SDK, an
+application can configure how it wants telemetry data to be handled, including
+which data should be persisted, how it should be formatted, and where it should
+be recorded or exported. However, libraries that produce telemetry data should
+generally depend only on OpenTelemetry, deferring the choice of concrete
+implementation to the application developer.

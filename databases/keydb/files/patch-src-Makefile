@@ -1,0 +1,37 @@
+--- src/Makefile.orig	2023-11-02 20:13:44 UTC
++++ src/Makefile
+@@ -138,7 +138,6 @@ endif	
+ # Override default settings if possible
+ -include .make-settings
+ 
+-DEBUG=-g -ggdb
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(KEYDB_CFLAGS) $(REDIS_CFLAGS)
+ FINAL_CXXFLAGS=$(CXX_STD) $(WARN) $(OPT) $(DEBUG) $(CXXFLAGS) $(KEYDB_CFLAGS) $(REDIS_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(KEYDB_LDFLAGS) $(DEBUG)
+@@ -214,9 +213,6 @@ else
+ ifeq ($(uname_S),FreeBSD)
+ 	# FreeBSD
+ 	FINAL_LIBS+= -lpthread -luuid -lexecinfo
+-	FINAL_CFLAGS+= -I/usr/local/include
+-	FINAL_CXXFLAGS+= -I/usr/local/include
+-	FINAL_LDFLAGS+= -L/usr/local/lib
+ 	ifeq ($(USE_BACKTRACE),yes)
+ 	    FINAL_CFLAGS+= -DUSE_BACKTRACE
+ 	endif
+@@ -355,7 +351,7 @@ else
+ endif
+ 
+ # Alpine OS doesn't have support for the execinfo backtrace library we use for debug, so we provide an alternate implementation using libwunwind.
+-OS := $(shell cat /etc/os-release | grep ID= | head -n 1 | cut -d'=' -f2)
++OS := $(shell uname -r)
+ ifeq ($(OS),alpine)
+     FINAL_CXXFLAGS+=-DUNW_LOCAL_ONLY
+ 	FINAL_CXXFLAGS+=-DALPINE
+@@ -426,7 +422,6 @@ persist-settings: distclean
+ 	echo PREV_FINAL_CFLAGS=$(FINAL_CFLAGS) >> .make-settings
+ 	echo PREV_FINAL_CXXFLAGS=$(FINAL_CXXFLAGS) >> .make-settings
+ 	echo PREV_FINAL_LDFLAGS=$(FINAL_LDFLAGS) >> .make-settings
+-	-(cd modules && $(MAKE))
+ 	-(cd ../deps && $(MAKE) $(DEPENDENCY_TARGETS))
+ 
+ .PHONY: persist-settings

@@ -1,0 +1,59 @@
+--- main/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ main/CMakeLists.txt
+@@ -113,13 +113,13 @@ if (MINGW)
+    if(CMAKE_BUILD_TYPE MATCHES "DEBUG")
+      set_target_properties( mscore
+         PROPERTIES
+-           COMPILE_FLAGS "${PCH_INCLUDE} -g -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
++           COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
+            LINK_FLAGS "-mwindows -mconsole -L ${QT_INSTALL_LIBS}"
+         )
+    else(CMAKE_BUILD_TYPE MATCHES "DEBUG")
+      set_target_properties( mscore
+           PROPERTIES
+-             COMPILE_FLAGS "${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
++             COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
+              LINK_FLAGS "-Wl,-S -mwindows -L ${QT_INSTALL_LIBS}"
+           )
+    endif(CMAKE_BUILD_TYPE MATCHES "DEBUG")
+@@ -227,7 +227,7 @@ else (MINGW)
+ 
+    if ( NOT MSVC )
+       ## install qwebengine core
+-      if (NOT APPLE AND USE_WEBENGINE)
++      if (YOU_CANT_SERIOUSLY_SUGGEST_TO_COPY_WEBENGINE_EXECUTABLES_AROUND)
+          install(PROGRAMS
+             ${QT_INSTALL_LIBEXECS}/QtWebEngineProcess
+             DESTINATION bin
+@@ -240,12 +240,12 @@ else (MINGW)
+             ${QT_INSTALL_TRANSLATIONS}/qtwebengine_locales
+             DESTINATION lib/qt5/translations
+             )
+-      endif(NOT APPLE AND USE_WEBENGINE)
++      endif(YOU_CANT_SERIOUSLY_SUGGEST_TO_COPY_WEBENGINE_EXECUTABLES_AROUND)
+ 
+       set_target_properties (
+          mscore
+          PROPERTIES
+-            COMPILE_FLAGS "${PCH_INCLUDE} -g -Wall -Wno-overloaded-virtual -Winvalid-pch"
++            COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wno-overloaded-virtual -Winvalid-pch"
+          )
+ 
+       if (APPLE)
+@@ -324,14 +324,14 @@ else (MINGW)
+       if(CMAKE_BUILD_TYPE MATCHES "REL*")
+         set_target_properties( mscore
+            PROPERTIES
+-              COMPILE_FLAGS "${PCH_INCLUDE} ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
++              COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h ${QT_DEFINITIONS} -DQT_SVG_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_CORE_LIB"
+               LINK_FLAGS    "/LIBPATH:${QT_INSTALL_LIBS} ${all_library_paths}"
+               LINK_FLAGS "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup"
+            )
+       else(CMAKE_BUILD_TYPE MATCHES "REL*")
+         set_target_properties( mscore
+            PROPERTIES
+-              COMPILE_FLAGS "${PCH_INCLUDE} ${QT_DEFINITIONS} /DQT_SVG_LIB /DQT_GUI_LIB /DQT_XML_LIB /DQT_CORE_LIB"
++              COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h ${QT_DEFINITIONS} /DQT_SVG_LIB /DQT_GUI_LIB /DQT_XML_LIB /DQT_CORE_LIB"
+               LINK_FLAGS    "/LIBPATH:${QT_INSTALL_LIBS} ${all_library_paths}"
+               LINK_FLAGS "/SUBSYSTEM:CONSOLE"
+            )

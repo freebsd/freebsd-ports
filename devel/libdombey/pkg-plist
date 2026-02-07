@@ -1,0 +1,10 @@
+include/dombey.h
+include/dombeyevents.h
+lib/libdombey.so
+lib/libdombey.so.%%PORTVERSION%%
+lib/libdombeythreads.so
+lib/libdombeythreads.so.%%PORTVERSION%%
+lib/libdombeyevents.so
+lib/libdombeyevents.so.%%PORTVERSION%%
+share/man/man3/libdombey.3.gz
+share/man/man3/libdombeyevents.3.gz

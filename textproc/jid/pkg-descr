@@ -1,0 +1,2 @@
+JSON Incremental Digger is a very simple tool. You can drill down JSON
+interactively by using filtering queries like jq.

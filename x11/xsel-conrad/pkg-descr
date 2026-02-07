@@ -1,0 +1,3 @@
+XSel is a command-line program for getting and setting the contents of
+the X selection. Normally this is only accessible by manually
+highlighting information and pasting it with the middle mouse button.

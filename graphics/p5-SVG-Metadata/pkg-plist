@@ -1,0 +1,6 @@
+bin/svg_annotate
+bin/svg_validate
+%%PERL5_MAN3%%/SVG::Metadata.3.gz
+%%SITE_PERL%%/SVG/Metadata.pm
+%%PERL5_MAN1%%/svg_annotate.1.gz
+%%PERL5_MAN1%%/svg_validate.1.gz

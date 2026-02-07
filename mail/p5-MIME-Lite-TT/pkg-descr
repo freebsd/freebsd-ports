@@ -1,0 +1,2 @@
+MIME::Lite::TT is the wrapper of MIME::Lite which enabled Template::Toolkit
+as a template of email.

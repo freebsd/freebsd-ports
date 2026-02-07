@@ -1,0 +1,6 @@
+This is go-mode, the Emacs mode for editing Go code.
+
+It is a complete rewrite of the go-mode that shipped with Go 1.0.3 and
+before, and was part of Go 1.1 until Go 1.3. Beginning with Go 1.4,
+editor integration will not be part of the Go distribution anymore,
+making this repository the canonical place for go-mode.

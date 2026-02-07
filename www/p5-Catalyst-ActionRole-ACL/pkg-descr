@@ -1,0 +1,3 @@
+Provides a Catalyst reusable action role for user role-based authorization.
+ACLs are applied via the assignment of attributes to application action
+subroutines.

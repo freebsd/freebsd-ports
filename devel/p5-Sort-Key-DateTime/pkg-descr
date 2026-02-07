@@ -1,0 +1,2 @@
+Sort::Key::DateTime allows to sort objects by some (calculated) key of
+type DateTime.

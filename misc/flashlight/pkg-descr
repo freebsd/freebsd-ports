@@ -1,0 +1,11 @@
+Flashlight is a fast, flexible machine learning library written entirely in C++
+from the Facebook AI Research and the creators of Torch, TensorFlow, Eigen and
+Deep Speech.
+
+Its core features include:
+* Total internal modifiability including internal APIs for tensor computation.
+* A small footprint, with the core clocking in at under 10 MB and 20k lines
+  of C++.
+* High-performance defaults featuring just-in-time kernel compilation with
+  modern C++ via the ArrayFire tensor library.
+* An emphasis on efficiency and scale.

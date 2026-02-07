@@ -1,0 +1,26 @@
+--- config.layout.orig	2012-04-17 14:01:41 UTC
++++ config.layout
+@@ -257,17 +257,17 @@
+   bindir:        ${exec_prefix}/bin
+   sbindir:       ${exec_prefix}/sbin
+   libdir:        ${exec_prefix}/lib
+-  libexecdir:    ${exec_prefix}/libexec/apache2
++  libexecdir:    ${exec_prefix}/libexec/apache24
+   mandir:        ${prefix}/man
+-  sysconfdir:    ${prefix}/etc/apache2
+-  datadir:       ${prefix}/www
+-  installbuilddir: ${prefix}/share/apache2/build
++  sysconfdir:    ${prefix}/etc/apache24
++  datadir:       ${prefix}/www/apache24
++  installbuilddir: ${prefix}/share/apache24/build
+   errordir:      ${datadir}/error
+   iconsdir:      ${datadir}/icons
+   htdocsdir:     ${datadir}/data
+-  manualdir:     ${prefix}/share/doc/apache2
++  manualdir:     ${prefix}/share/doc/apache24
+   cgidir:        ${datadir}/cgi-bin
+-  includedir:    ${prefix}/include/apache2
++  includedir:    ${prefix}/include/apache24
+   localstatedir: /var
+   runtimedir:    ${localstatedir}/run
+   logfiledir:    ${localstatedir}/log

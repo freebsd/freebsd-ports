@@ -1,0 +1,6 @@
+bin/MsgFormat
+bin/XText
+%%PERL5_MAN3%%/Locale::PGetText.3.gz
+%%SITE_PERL%%/Locale/PGetText.pm
+%%PERL5_MAN1%%/MsgFormat.1.gz
+%%PERL5_MAN1%%/XText.1.gz

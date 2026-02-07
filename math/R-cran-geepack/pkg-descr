@@ -1,0 +1,4 @@
+Generalized estimating equations solver for parameters in
+mean, scale, and correlation structures, through mean link,
+scale link, and correlation link. Can also handle clustered
+categorical responses.

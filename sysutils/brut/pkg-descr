@@ -1,0 +1,6 @@
+Graphical user interface (GUI) for various administrative tasks.
+
+Features:
+- partition editor, disk editor
+- group/user management
+- date, time, timezone

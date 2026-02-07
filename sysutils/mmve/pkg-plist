@@ -1,0 +1,6 @@
+bin/mmve
+%%RUBY_SITELIBDIR%%/mmve.rb
+%%RUBY_SITELIBDIR%%/mmve/cli.rb
+%%RUBY_SITELIBDIR%%/mmve/editor.rb
+%%RUBY_SITELIBDIR%%/mmve/renamer.rb
+%%RUBY_SITELIBDIR%%/mmve/version.rb

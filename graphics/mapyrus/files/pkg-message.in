@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+    Start Mapyrus from a terminal window with a command like:
+
+java -classpath %%DATADIR%%/%%MAPYRUSJAR%% org.mapyrus.Mapyrus myfile.mapyrus
+
+(If a real X-Windows display is not available, use the
+-Djava.awt.headless=true startup variable).
+
+    or simply:
+
+mapyrus myfile.mapyrus
+EOM
+}
+]

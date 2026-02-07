@@ -1,0 +1,36 @@
+--- Makefile.orig	Sun Nov 22 13:15:39 1998
++++ Makefile	Sun Nov 22 13:18:46 1998
+@@ -8,7 +8,7 @@
+ # a working version for your system, please mail a copy back to the
+ # author so that others may benefit from your effort.
+ 
+-CONFIG		= vanilla
++CONFIG		= freebsd
+ 
+ # Destination directories for the executable and man page. Note that
+ # the executable is only used in a .forward so /usr/local/bin may
+@@ -28,20 +28,20 @@
+ 
+ # ACTIVE_PATH is the full pathname for your news active file. This
+ # file is used to validate newgroup names.
+-ACTIVE_PATH	=
++ACTIVE_PATH	= /var/db/news/active
+ 
+ 
+ # NEWSGROUPS_PATH is the fill pathname for your newsgroups file. This
+ # file is used to provide descriptions for each newsgroup.
+-NEWSGROUPS_PATH	=
++NEWSGROUPS_PATH	= /var/db/news/newsgroups
+ 
+ # BACKSTOP_MAILID is used if gup cannot find a FROM: or a REPLY-TO: or
+ # a valid site command, this is where the mail goes to.
+-BACKSTOP_MAILID	=	news
++BACKSTOP_MAILID	= usenet
+ 
+ # MAIL_COMMAND is the mailer that accepts a mail with rfc822 headers and
+ # body from stdin.
+-MAIL_COMMAND	=	"/usr/lib/sendmail -t"
++MAIL_COMMAND	= "/usr/sbin/sendmail -oi -t"
+ 
+ # With a command like "include alt.*" the resultant list is, long.
+ # LOG_MATCH_LIMIT, defines the upper bound on the number of pattern

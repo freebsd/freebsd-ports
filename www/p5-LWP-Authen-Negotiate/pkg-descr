@@ -1,0 +1,2 @@
+LWP::Authen::Negotiate is a authentication plugin for LWP to
+support WWW-Negotiate.

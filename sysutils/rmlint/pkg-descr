@@ -1,0 +1,9 @@
+rmlint finds space waste and other broken things on your filesystem and
+offers to remove it. It is able to find:
+
+- Duplicate files & directories
+- Nonstripped Binaries
+- Broken symlinks
+- Empty files
+- Recursive empty directories
+- Files with broken user or group id.

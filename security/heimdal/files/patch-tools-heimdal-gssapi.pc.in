@@ -1,0 +1,10 @@
+--- tools/heimdal-gssapi.pc.in.orig	2017-04-11 21:38:21 UTC
++++ tools/heimdal-gssapi.pc.in
+@@ -9,6 +9,6 @@ Description: Heimdal is an implementatio
+ Version: @VERSION@
+ URL: http://www.pdc.kth.se/heimdal/
+ Requires.private: heimdal-krb5
+-Libs: -L${libdir} -lgssapi
++Libs: -L${libdir} -Wl,-rpath=${libdir} -lgssapi
+ Libs.private: -lheimntlm @LIB_crypt@
+ Cflags: -I${includedir}

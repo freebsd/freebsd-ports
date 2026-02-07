@@ -1,0 +1,16 @@
+%%PERL5_MAN3%%/Net::OpenID::Common.3.gz
+%%PERL5_MAN3%%/Net::OpenID::Extension.3.gz
+%%PERL5_MAN3%%/Net::OpenID::Extension::SimpleRegistration.3.gz
+%%PERL5_MAN3%%/Net::OpenID::ExtensionMessage.3.gz
+%%PERL5_MAN3%%/Net::OpenID::IndirectMessage.3.gz
+%%PERL5_MAN3%%/Net::OpenID::URIFetch.3.gz
+%%PERL5_MAN3%%/Net::OpenID::Yadis.3.gz
+%%PERL5_MAN3%%/Net::OpenID::Yadis::Service.3.gz
+%%SITE_PERL%%/Net/OpenID/Common.pm
+%%SITE_PERL%%/Net/OpenID/Extension.pm
+%%SITE_PERL%%/Net/OpenID/Extension/SimpleRegistration.pm
+%%SITE_PERL%%/Net/OpenID/ExtensionMessage.pm
+%%SITE_PERL%%/Net/OpenID/IndirectMessage.pm
+%%SITE_PERL%%/Net/OpenID/URIFetch.pm
+%%SITE_PERL%%/Net/OpenID/Yadis.pm
+%%SITE_PERL%%/Net/OpenID/Yadis/Service.pm

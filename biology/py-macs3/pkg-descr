@@ -1,0 +1,6 @@
+MACS (Model-based Analysis of ChIP-Seq) is a tool for identifying
+transcription factor (TF) binding sites.   Such sites are generated
+by CHiP-Seq (CHromatin immuno-Precipitation sequencing) and ATAC-Seq
+(Assay for Transposase Accessible Chromatin Sequencing).  MACS
+identifies "peaks" in the genome sequence, which are areas enriched
+in bound TFs or accessible chromatin.

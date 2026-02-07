@@ -1,0 +1,7 @@
+bin/ringtonetools
+%%DATADIR%%/face.txt
+%%DATADIR%%/hemglass.mid
+%%DATADIR%%/ionian.rtttl
+%%DATADIR%%/usa.emelody
+%%DATADIR%%/yngwie_trilogy.rtttl
+%%PORTDOCS%%%%DOCSDIR%%/README

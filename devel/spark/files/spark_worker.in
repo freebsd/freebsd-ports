@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# PROVIDE: spark_worker
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=spark_worker
+rcvar=spark_worker_enable
+load_rc_config $name
+
+: ${spark_worker_enable:=NO}
+: ${spark_worker_master:="spark://`hostname`:7077"}
+: ${spark_worker_dir:="/tmp/spark/worker"}
+
+export SPARK_PID_DIR=/var/run/spark
+export SPARK_LOG_DIR=/var/log/spark
+export SPARK_IDENT_STRING=%%SPARK_USER%%
+export SPARK_WORKER_DIR=${spark_worker_dir}
+
+pidfile=${SPARK_PID_DIR}/spark-${SPARK_IDENT_STRING}-org.apache.spark.deploy.worker.Worker-1.pid
+start_cmd="/usr/bin/su -m %%SPARK_USER%% -c \"%%DATADIR%%/sbin/start-slave.sh ${spark_worker_master}\""
+stop_cmd='/usr/bin/su -m %%SPARK_USER%% -c "%%DATADIR%%/sbin/spark-daemon.sh stop org.apache.spark.deploy.worker.Worker"'
+
+export PATH=$PATH:%%LOCALBASE%%/bin
+
+run_rc_command "$1"

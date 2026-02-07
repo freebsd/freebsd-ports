@@ -1,0 +1,16 @@
+--- GNUmakefile.orig	2023-11-28 12:48:38 UTC
++++ GNUmakefile
+@@ -83,10 +83,10 @@ install :
+ 	 @ for DIR in $(INSTDIR) ; do \
+ 	     $(MAKE) -k -C $$DIR $@ ; \
+ 	   done
+-	   if [ ! -d "$(LIBDIR)/pkgconfig" ] ; then \
+-	     $(INSTALL) -d -m 775 $(LIBDIR)/pkgconfig ; \
++	   if [ ! -d "%%PKGDIR%%/pkgconfig" ] ; then \
++	     $(INSTALL) -d -m 775 %%PKGDIR%%/pkgconfig ; \
+ 	   fi
+-	   $(INSTALL) -m 444 wcslib.pc $(LIBDIR)/pkgconfig/wcslib.pc
++	   $(INSTALL) -m 444 wcslib.pc %%PKGDIR%%/pkgconfig/wcslib.pc
+ 	   $(INSTALL) -m 444 wcsconfig.h wcsconfig_f77.h $(INCDIR)
+ 	-  if [ ! -d "$(DOCDIR)" ] ; then \
+ 	     $(INSTALL) -d -m 775 $(DOCDIR) ; \

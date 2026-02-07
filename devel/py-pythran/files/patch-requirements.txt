@@ -1,0 +1,9 @@
+--- requirements.txt.orig	2025-02-04 14:55:34 UTC
++++ requirements.txt
+@@ -1,5 +1,5 @@ setuptools
+ ply>=3.4
+ setuptools
+-gast~=0.6.0
++gast~=0.7.0
+ numpy
+ beniget~=0.4.0

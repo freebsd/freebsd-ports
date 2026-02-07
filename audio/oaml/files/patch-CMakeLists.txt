@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-04-16 17:54:59 UTC
++++ CMakeLists.txt
+@@ -176,7 +176,7 @@ if (ENABLE_RTAUDIO)
+ 
+ 	# JACK supported on many Unices
+ 	if (UNIX)
+-		find_library(JACK_LIB jack)
++		#find_library(JACK_LIB jack)
+ 		if (JACK_LIB)
+ 			list(APPEND OAML_LIBS ${JACK_LIB})
+ 			add_definitions(-D__UNIX_JACK__)

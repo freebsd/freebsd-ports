@@ -1,0 +1,3 @@
+bin/htmldiff
+%%SITE_PERL%%/HTML/Diff.pm
+%%PERL5_MAN3%%/HTML::Diff.3.gz

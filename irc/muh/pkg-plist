@@ -1,0 +1,4 @@
+bin/muh
+bin/muh-check
+bin/muh-rotatelog
+share/skel/dot.muhrc

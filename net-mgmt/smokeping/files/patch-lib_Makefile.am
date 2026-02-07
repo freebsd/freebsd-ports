@@ -1,0 +1,9 @@
+--- lib/Makefile.am.orig	2018-02-02 21:14:55 UTC
++++ lib/Makefile.am
+@@ -31,5 +31,5 @@ MATCH := $(wildcard Smokeping/matchers/*.pm)
+ 
+ EXTRA_DIST = $(PM) $(SP) $(SORT) $(PROBE) $(MATCH)
+ 
+-perllibdir = $(prefix)/lib
++perllibdir = $(prefix)/smokeping/lib
+ nobase_perllib_DATA = $(EXTRA_DIST)

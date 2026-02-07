@@ -1,0 +1,3 @@
+The only time that the GCC option can be disabled (to build with clang
+instead) is if you're building ONLY emulators/virtualbox-ose-additions,
+without X11, and only on amd64/i386.

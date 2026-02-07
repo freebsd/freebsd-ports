@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Crypt/GCrypt.pm
+%%SITE_ARCH%%/Crypt/GCrypt/MPI.pm
+%%SITE_ARCH%%/auto/Crypt/GCrypt/GCrypt.so
+%%PERL5_MAN3%%/Crypt::GCrypt.3.gz
+%%PERL5_MAN3%%/Crypt::GCrypt::MPI.3.gz

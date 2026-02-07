@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Bot/Training/MegaHAL.pm
+%%SITE_PERL%%/auto/share/dist/Bot-Training-MegaHAL/megahal.trn
+%%PERL5_MAN3%%/Bot::Training::MegaHAL.3.gz

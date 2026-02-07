@@ -1,0 +1,10 @@
+--- usr/share/applications/drawio.desktop.orig	2023-10-16 17:30:53 UTC
++++ usr/share/applications/drawio.desktop
+@@ -1,6 +1,6 @@ Name=drawio
+ [Desktop Entry]
+ Name=drawio
+-Exec=/opt/drawio/drawio %U
++Exec=drawio %U
+ Terminal=false
+ Type=Application
+ Icon=drawio

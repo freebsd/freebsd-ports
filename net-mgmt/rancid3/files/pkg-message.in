@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+For further configuration information please look at
+%%PREFIX%%/share/rancid/README.
+
+If you are upgrading from the previous version of rancid look at
+%%PREFIX%%/share/rancid/UPGRADING.
+
+If you would like to set up Rancid to be browseable from Web,
+you need to install devel/cvsweb or devel/viewvc.
+
+For rancid looking-glass copy the actual CGIs (located at
+%%PREFIX%%/libexec/rancid/{lg.cgi lgform.cgi}) to your cgi-bin.
+
+Schedule rancid-run with cron at your desired interval or add
+hourly_rancid_enable="YES" to /etc/periodic.conf for automatic hourly
+runs. Note, you'll need to enable an hourly job in /etc/crontab:
+
+0       *       *       *       *       root    periodic hourly
+EOM
+}
+]

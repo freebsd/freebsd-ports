@@ -1,0 +1,18 @@
+PORTNAME=	Net-INET6Glue
+PORTVERSION=	0.604
+PORTREVISION=	0
+CATEGORIES=	net perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	ume@FreeBSD.org
+COMMENT=	Make common modules IPv6 ready by hotpatching
+WWW=		https://metacpan.org/release/Net-INET6Glue
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

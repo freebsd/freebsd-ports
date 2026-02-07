@@ -1,0 +1,13 @@
+TIMESTAMP = 1610123553
+SHA256 (kitabisa-ssb-v0.1.1_GH0.tar.gz) = afb78be47c305b5d46fe879ce1ad940653f3c00b6d6e4c8244ea0103ecbbcd35
+SIZE (kitabisa-ssb-v0.1.1_GH0.tar.gz) = 10380
+SHA256 (golang-crypto-eec23a3978ad_GH0.tar.gz) = bd882536660d6b65619c9d9b9334e9a5c55557613e56e1b485323a2293dfa2f8
+SIZE (golang-crypto-eec23a3978ad_GH0.tar.gz) = 1725798
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
+SHA256 (logrusorgru-aurora-v2.0.3_GH0.tar.gz) = d90bbcd63cd16fa21d6ae8b5a8b3043e6ad47c4146727af335fcc0fd6237fd11
+SIZE (logrusorgru-aurora-v2.0.3_GH0.tar.gz) = 136777
+SHA256 (projectdiscovery-gologger-v1.0.1_GH0.tar.gz) = 4a5b2cf9df762cf652325c7f7c48b27a7515581bd3d65bf8b8664a00f482a7d4
+SIZE (projectdiscovery-gologger-v1.0.1_GH0.tar.gz) = 3546
+SHA256 (remeh-sizedwaitgroup-v1.0.0_GH0.tar.gz) = 65b7051fb90964a24f51c27dad1d63b517b7599aa407643bd0a736de77ec4f7e
+SIZE (remeh-sizedwaitgroup-v1.0.0_GH0.tar.gz) = 2676

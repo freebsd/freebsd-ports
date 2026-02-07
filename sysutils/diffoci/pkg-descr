@@ -1,0 +1,5 @@
+diffoci compares Docker and OCI container images for helping reproducible
+builds.
+
+Note that mon-Linux users typically have to specify --platform explicitly. e.g.,
+diffoci diff --platform=linux/amd64 IMAGE0 IMAGE1.

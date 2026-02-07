@@ -1,0 +1,102 @@
+--- config.h.unparsed.orig	Sat Sep  3 13:59:25 2005
++++ config.h.unparsed	Sat Sep  3 14:02:25 2005
+@@ -45,10 +45,10 @@
+ #define DO_NOV_DIGEST
+ 
+ /* Optional */
+-/* #define NOV_DIRECTORY	"/usr/spool/news"	*/
++#define NOV_DIRECTORY	"/var/news/over.view"
+ 
+ /* Optional */
+-/* #define NOV_FILENAME		".overview"		*/
++#define NOV_FILENAME		".overview"
+ 
+ 
+ /********************************** NNTP *********************************
+@@ -68,7 +68,9 @@
+  *	LIB_DIRECTORY defined below.
+  */
+ 
+-#define NNTP_SERVER	"/usr/local/lib/nntp_server"
++#define NNTP_SERVER	"SUB_PREFIX/etc/nntp_server"
++#define NNTP_DOMAIN	"SUB_PREFIX/etc/nntp_domain"
++#define DOMAIN_FILE	NNTP_DOMAIN
+ 
+ /*
+  *  Define your local domain name.  If you leave this undefined, nn will
+@@ -84,7 +86,7 @@
+  *  DOMAIN as defined above).  If you don't want this, comment it out.
+  */
+ 
+-#define HIDDENNET
++/* #define HIDDENNET */
+ 
+ 
+ /***************** OPERATING SYSTEM DEPENDENT DEFINITIONS *******************
+@@ -95,7 +97,7 @@
+  *	conf/s-template.h as a starting point for writing you own.
+  */
+ 
+-#include "s-sunos5.h"
++#include "s-freebsd.h"
+ 
+ /*
+  *	Define DEFAULT_PAGER as the initial value of the 'pager' variable.
+@@ -122,7 +124,7 @@
+  *	conf/m-template.h as a starting point for writing you own.
+  */
+ 
+-#include "m-sparc.h"
++#include "m-i80386.h"
+ 
+ 
+ /***************************** OWNERSHIP ***************************
+@@ -173,9 +175,9 @@
+  *			   (= LIB_DIRECTORY/Log if undefined).
+  */
+ 
+-#define BIN_DIRECTORY	"/usr/local/bin"
+-#define LIB_DIRECTORY	"/usr/local/lib/nn"
+-
++#define BIN_DIRECTORY	"SUB_PREFIX/bin"
++#define LIB_DIRECTORY	"SUB_PREFIX/lib/nn"
++#define TMP_DIRECTORY	"/var/tmp"
+ 
+ /*************************** MAIL INTERFACE *************************
+  *
+@@ -189,7 +191,7 @@
+  */
+ 
+ /* #define REC_MAIL	"/usr/lib/news/recmail"	*/	/* non-sendmail */
+-#define REC_MAIL	"/usr/lib/sendmail -t"		/* sendmail */
++#define REC_MAIL	"/usr/sbin/sendmail -t"		/* sendmail */
+ 
+ /*
+  *	nn needs to know the name of your host.
+@@ -237,13 +239,13 @@
+  *	DAEMON_MAN	- nnmaster
+  */
+ 
+-#define USER_MAN_DIR	"/usr/local/man/man1"
++#define USER_MAN_DIR	"SUB_MANPREFIX/man/man1"
+ #define USER_MAN_SECTION	"1"
+ 
+-#define SYS_MAN_DIR	"/usr/local/man/man1"
++#define SYS_MAN_DIR	"SUB_MANPREFIX/man/man1"
+ #define SYS_MAN_SECTION		"1m"
+ 
+-#define DAEMON_MAN_DIR	"/usr/local/man/man8"
++#define DAEMON_MAN_DIR	"SUB_MANPREFIX/man/man8"
+ #define DAEMON_MAN_SECTION	"8"
+ 
+ 
+@@ -425,7 +427,7 @@
+  *				  Default: NEWS_LIB_DIR/{rm,del}group
+  */
+ 
+-/* #define NEWS_DIRECTORY	"/usr/spool/news"	*/
+-/* #define NEWS_LIB_DIRECTORY	"/usr/lib/news"		*/
++#define NEWS_DIRECTORY	"/var/news"
++#define NEWS_LIB_DIRECTORY	"SUB_PREFIX/news/lib"
+ 
+ /************************ CONFIGURATION COMPLETED ************************/

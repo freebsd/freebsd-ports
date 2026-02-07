@@ -1,0 +1,141 @@
+PORTNAME=	xcp
+DISTVERSIONPREFIX=	xcp-v
+DISTVERSION=	0.24.7
+CATEGORIES=	sysutils
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Extended 'cp' command
+WWW=		https://github.com/tarka/xcp
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	tarka
+
+CARGO_CRATES=	aho-corasick-1.1.4 \
+		anstream-0.6.21 \
+		anstyle-1.0.13 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		anyhow-1.0.101 \
+		autocfg-1.5.0 \
+		bitflags-2.10.0 \
+		blocking-threadpool-1.0.3 \
+		bstr-1.12.1 \
+		bumpalo-3.19.1 \
+		cfg-if-1.0.4 \
+		clap-4.5.57 \
+		clap_builder-4.5.57 \
+		clap_derive-4.5.55 \
+		clap_lex-0.7.7 \
+		colorchoice-1.0.4 \
+		console-0.16.2 \
+		crossbeam-channel-0.5.15 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
+		deranged-0.5.5 \
+		encode_unicode-1.0.0 \
+		errno-0.3.14 \
+		exacl-0.12.0 \
+		fastrand-2.3.0 \
+		fslock-0.2.1 \
+		getrandom-0.3.4 \
+		glob-0.3.3 \
+		globset-0.4.18 \
+		heck-0.5.0 \
+		hermit-abi-0.5.2 \
+		ignore-0.4.25 \
+		indicatif-0.18.3 \
+		is_terminal_polyfill-1.70.2 \
+		itoa-1.0.17 \
+		js-sys-0.3.85 \
+		lazy_static-0.2.11 \
+		libc-0.2.180 \
+		libm-0.2.16 \
+		linux-raw-sys-0.11.0 \
+		linux-raw-sys-0.12.1 \
+		log-0.4.29 \
+		memchr-2.7.6 \
+		num-conv-0.2.0 \
+		num-traits-0.2.19 \
+		num_cpus-1.17.0 \
+		num_threads-0.1.7 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.2 \
+		portable-atomic-1.13.1 \
+		powerfmt-0.2.0 \
+		ppv-lite86-0.2.21 \
+		proc-macro2-1.0.106 \
+		quote-1.0.44 \
+		r-efi-5.3.0 \
+		rand-0.9.2 \
+		rand_chacha-0.9.0 \
+		rand_core-0.9.5 \
+		rand_distr-0.5.1 \
+		rand_xorshift-0.4.0 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.9 \
+		rustix-1.1.3 \
+		rustversion-1.0.22 \
+		same-file-1.0.6 \
+		scopeguard-1.2.0 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		simplelog-0.12.2 \
+		strsim-0.11.1 \
+		syn-2.0.114 \
+		tempfile-3.24.0 \
+		termcolor-1.4.1 \
+		terminal_size-0.4.3 \
+		test-case-3.3.1 \
+		test-case-core-3.3.1 \
+		test-case-macros-3.3.1 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		time-0.3.47 \
+		time-core-0.1.8 \
+		time-macros-0.2.27 \
+		unbytify-0.2.0 \
+		unicode-ident-1.0.22 \
+		unicode-width-0.2.2 \
+		unit-prefix-0.5.2 \
+		utf8parse-0.2.2 \
+		uuid-1.20.0 \
+		walkdir-2.5.0 \
+		wasip2-1.0.2+wasi-0.2.9 \
+		wasm-bindgen-0.2.108 \
+		wasm-bindgen-macro-0.2.108 \
+		wasm-bindgen-macro-support-0.2.108 \
+		wasm-bindgen-shared-0.2.108 \
+		web-time-1.1.0 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.11 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-link-0.2.1 \
+		windows-sys-0.60.2 \
+		windows-sys-0.61.2 \
+		windows-targets-0.53.5 \
+		windows_aarch64_gnullvm-0.53.1 \
+		windows_aarch64_msvc-0.53.1 \
+		windows_i686_gnu-0.53.1 \
+		windows_i686_gnullvm-0.53.1 \
+		windows_i686_msvc-0.53.1 \
+		windows_x86_64_gnu-0.53.1 \
+		windows_x86_64_gnullvm-0.53.1 \
+		windows_x86_64_msvc-0.53.1 \
+		wit-bindgen-0.51.0 \
+		xattr-1.6.1 \
+		zerocopy-0.8.39 \
+		zerocopy-derive-0.8.39
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

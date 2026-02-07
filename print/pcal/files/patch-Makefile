@@ -1,0 +1,24 @@
+--- Makefile.orig	2007-12-18 13:30:00.000000000 -0600
++++ Makefile	2008-01-06 04:06:34.000000000 -0600
+@@ -117,7 +117,7 @@
+ 	OS_NAME = "Unix"
+ 	D_BUILD_ENV	= -DBUILD_ENV_UNIX
+ 	PCAL		= pcal
+-	CC		= /usr/bin/gcc
++	CC		= ${HOST_CC}
+ 	PACK		= compress
+ 	# PACK		= pack
+ 	# PACK		= gzip
+@@ -147,9 +147,9 @@
+ 	MANDIR = $(DJDIR)/man/man1
+ 	CATDIR = $(DJDIR)/man/cat1
+ else   # Unix
+-	BINDIR = /usr/local/bin
+-	MANDIR = /usr/man/man1
+-	CATDIR = /usr/man/cat1
++	BINDIR = ${PREFIX}/bin
++	MANDIR = ${PREFIX}/man/man1
++	CATDIR = ${PREFIX}/man/cat1
+ endif
+ 
+ OBJECTS = $(OBJDIR)/pcal.o \

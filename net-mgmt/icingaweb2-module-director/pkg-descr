@@ -1,0 +1,8 @@
+Icinga Director has been designed to make Icinga 2 configuration handling easy.
+It tries to target two main audiences:
+
+- Users with the desire to completely automate their datacenter
+- Sysops willing to grant their "point & click" users a lot of flexibility
+
+What makes Icinga Director so special is the fact that it tries to target both
+of them at once.

@@ -1,0 +1,12 @@
+bin/pp2html
+bin/pp2latex
+%%SITE_PERL%%/Bundle/PerlPoint.pm
+%%SITE_PERL%%/PerlPoint/Converters.pm
+%%SITE_PERL%%/PerlPoint/Tags/HTML.pm
+%%SITE_PERL%%/PerlPoint/Tags/LaTeX.pm
+%%PERL5_MAN3%%/Bundle::PerlPoint.3.gz
+%%PERL5_MAN3%%/PerlPoint::Converters.3.gz
+%%PERL5_MAN3%%/PerlPoint::Tags::HTML.3.gz
+%%PERL5_MAN3%%/PerlPoint::Tags::LaTeX.3.gz
+%%PERL5_MAN1%%/pp2html.1.gz
+%%PERL5_MAN1%%/pp2latex.1.gz

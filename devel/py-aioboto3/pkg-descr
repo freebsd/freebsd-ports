@@ -1,0 +1,2 @@
+aioboto3 is an async wrapper around boto3, allowing you to use boto3 with
+async/await syntax for non-blocking AWS API calls.

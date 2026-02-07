@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config os="FreeBSD" profile="%%SYSCHECK_BASIC_PROFILE%%">
+
+  <syscheck>
+    <directories realtime="yes" check_all="yes">/bin,/sbin,/usr/bin,/usr/sbin,%%PREFIX%%/bin,%%PREFIX%%/sbin</directories>
+    <directories realtime="yes" check_all="yes">/etc,%%PREFIX%%/etc</directories>
+  </syscheck>
+
+</template_config>
+
+<template_config os="Linux" profile="%%SYSCHECK_BASIC_PROFILE%%">
+
+  <syscheck>
+    <directories realtime="yes" check_all="yes">/bin,/sbin,/usr/bin,/usr/sbin,/usr/local/bin,/usr/local/sbin</directories>
+    <directories realtime="yes" check_all="yes">/etc,/usr/local/etc</directories>
+  </syscheck>
+
+</template_config>

@@ -1,0 +1,20 @@
+--- win/jtp/gamedata/config/jtp_opts.txt.orig	Thu Jul  5 15:16:09 2001
++++ win/jtp/gamedata/config/jtp_opts.txt	Thu Jul  5 15:16:25 2001
+@@ -39,7 +39,7 @@ fullscreen=0
+ % don't have the appropriate sound hardware.
+ %
+ play_music=1
+-play_effects=1
++play_effects=0
+ 
+ 
+ % -----------------------------------
+@@ -60,7 +60,7 @@ linux_midi_player=/usr/local/bin/timidit
+ % files. You can also give your own command; use %s in place of the 
+ % filename. Please give the full path to the player binary. 
+ %
+-linux_mp3_player=/usr/bin/mpg123 -q %s
++linux_mp3_player=/usr/local/bin/mpg123 -q %s
+ 
+ 
+ % ------------

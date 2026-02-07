@@ -1,0 +1,22 @@
+The focus of Quetoo is simplicity, security, stability, and speed.  It
+contains critical security updates for both clients and servers, an
+improved console, and some major speed increases.  Quetoo is up to 140%
+faster than stock Quake II.
+
+If you're looking for visual effect updates and gimmick features, or a
+rich single-player experience, run something else.  However, perhaps the
+following features will sound good to you:
+
+  * Dramatic performance increases through proper removal of dynamic
+    lighting, polyblend, and other "candy" features
+  * R1Q2 Protocol 35 support and Quetoo-specific protocol extensions to
+    save bandwidth
+  * Support for asynchronous video/sound/input and network framing: run
+    at 90fps over a dial-up connection!
+  * Location (.loc) file support for alerting team members to your
+    position
+  * Bright player skins supported directly within the engine
+  * Ability to disable ambient sounds and load wildcard pakfiles (*.pak)
+  * Vastly improved console with Bash-style tab completion, positioned
+    editing, mouse wheel scrolling, etc.
+  * Optional deathmatch mod with MySQL frag logging and team play

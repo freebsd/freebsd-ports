@@ -1,0 +1,14 @@
+Fix broken CMake config exports.
+
+--- sources/pyside6/libpyside/CMakeLists.txt.orig	2025-10-06 08:58:41 UTC
++++ sources/pyside6/libpyside/CMakeLists.txt
+@@ -159,9 +159,6 @@ configure_package_config_file(
+ )
+ 
+ # Install-tree / wheel configuration
+-set(PYSIDE_PYTHONPATH "")
+-set(PYSIDE_TYPESYSTEMS "typesystems")
+-set(PYSIDE_GLUE "glue")
+ set(PYSIDE_SOVERSION "${pyside6_library_so_version}")
+ 
+ configure_package_config_file(

@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2018-05-14 10:51:10 UTC
++++ CMakeLists.txt
+@@ -58,18 +58,6 @@ IF(NOT AVP_WEB)
+         MESSAGE(FATAL_ERROR "Invalid SDL_TYPE setting ${SDL_TYPE}; must be one of AUTO SDL SDL2")
+     ENDIF(NOT SDL_TYPE STREQUAL "AUTO" AND NOT SDL_TYPE STREQUAL "SDL" AND NOT SDL_TYPE STREQUAL "SDL2")
+ 
+-    IF(SDL_FOUND)
+-        IF(SDL_VERSION_STRING VERSION_LESS "1.2.0")
+-            MESSAGE(WARNING "SDL 1.2 was claimed to be found with version ${SDL_VERSION_STRING}, ignoring...")
+-            UNSET(SDL_FOUND)
+-        ENDIF(SDL_VERSION_STRING VERSION_LESS "1.2.0")
+-
+-        IF(SDL_VERSION_STRING VERSION_GREATER "1.2.99")
+-            MESSAGE(WARNING "SDL 1.2 was claimed to be found with version ${SDL_VERSION_STRING}, ignoring...")
+-            UNSET(SDL_FOUND)
+-        ENDIF(SDL_VERSION_STRING VERSION_GREATER "1.2.99")
+-    ENDIF(SDL_FOUND)
+-
+     IF(SDL_TYPE STREQUAL "AUTO")
+         IF(SDL_FOUND)
+             MESSAGE(STATUS "SDL 1.2 found; using that.")

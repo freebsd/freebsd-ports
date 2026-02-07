@@ -1,0 +1,4 @@
+This is a PHP library providing a wrapper to Colin Percival's scrypt
+implementation. Scrypt is a key derivation function designed to be
+far more secure against hardware brute-force attacks than alternative
+functions such as PBKDF2 or bcrypt.

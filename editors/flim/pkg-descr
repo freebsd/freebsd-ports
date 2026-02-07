@@ -1,0 +1,10 @@
+FLIM, message representation or encoding emacs lisp library for emacs20.
+
+  FLIM is a library to provide basic features about message
+  representation or encoding.  It consists of following
+  modules:
+    - STD 11 (RFC 822) parser and utility
+    - MIME library
+    - mailcap parser and utility
+
+Ported by shige@FreeBSD.ORG

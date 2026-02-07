@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2021-02-28 20:49:50 UTC
++++ Makefile.in
+@@ -464,11 +464,11 @@ top_srcdir = @top_srcdir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-DIRS = w32 win32 intl gts src data lib newlib example tools tutorial README_FILES po tests
++DIRS = intl gts src data lib newlib example tools tutorial README_FILES po tests
+ SUBDIRS = ${DIRS} @DOC@
+ DIST_SUBDIRS = ${DIRS} doc
+ INTLTOOL_FILES = intltool-extract.in intltool-merge.in  intltool-update.in
+-EXTRA_DIST = config.rpath globalconst.h README.git README.w32 README.win32 icon-theme-installer $(INTLTOOL_FILES)
++EXTRA_DIST = config.rpath globalconst.h README.git icon-theme-installer $(INTLTOOL_FILES)
+ DISTCLEANFILES = configure.lineno intltool-extract intltool-merge intltool-update po/.intltool-merge-cache src/gpcb-menu.res.tmp src/pcb-menu.res.tmp
+ MAINTAINERCLEANFILES = $(INTLTOOL_FILES)
+ ACLOCAL_AMFLAGS = -I m4

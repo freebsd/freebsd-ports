@@ -1,0 +1,10 @@
+bin/nwg-dock-hyprland
+%%DATADIR%%/images/grid.svg
+%%DATADIR%%/images/icon-missing.svg
+%%DATADIR%%/images/task-empty-vertical.svg
+%%DATADIR%%/images/task-empty.svg
+%%DATADIR%%/images/task-multiple-vertical.svg
+%%DATADIR%%/images/task-multiple.svg
+%%DATADIR%%/images/task-single-vertical.svg
+%%DATADIR%%/images/task-single.svg
+%%DATADIR%%/style.css

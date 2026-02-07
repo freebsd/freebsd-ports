@@ -1,0 +1,15 @@
+Text_Highlighter is a package for syntax highlighting.
+
+It provides a base class provining all the functionality,
+and a descendent classes geneator class.
+
+The main idea is to simplify creation of subclasses
+implementing syntax highlighting for particular language.
+Subclasses do not implement any new functioanality,
+they just provide syntax highlighting rules.
+The rules sources are in XML format.
+
+To create a highlighter for a language, there is no need
+to code a new class manually. Simply describe the rules
+in XML file and use Text_Highlighter_Generator to create
+a new class.

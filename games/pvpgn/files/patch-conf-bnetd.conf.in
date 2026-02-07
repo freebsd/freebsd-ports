@@ -1,0 +1,48 @@
+--- ../conf/bnetd.conf.in.old	Sun Dec 11 00:18:18 2005
++++ ../conf/bnetd.conf.in	Sun Dec 11 00:20:44 2005
+@@ -15,8 +15,8 @@
+ # a leading '#').  If none are specified, the userid will not be changed.    #
+ #----------------------------------------------------------------------------#
+ 
+-#effective_user  = games
+-#effective_group = games
++effective_user  = bnetd
++effective_group = bnetd
+ 
+ # effective_user  = #12
+ # effective_group = #20
+@@ -88,14 +88,14 @@
+ ipbanfile   = /usr/local/etc/bnban.conf
+ helpfile    = /usr/local/etc/bnhelp.conf
+ mpqfile     = /usr/local/etc/autoupdate.conf
+-logfile     = /usr/local/var/bnetd.log
++logfile     = /var/log/pvpgn/bnetd.log
+ realmfile   = /usr/local/etc/realm.conf
+ maildir     = /usr/local/var/bnmail
+ versioncheck_file = /usr/local/etc/versioncheck.conf
+ mapsfile    = /usr/local/etc/bnmaps.conf
+ xplevelfile = /usr/local/etc/bnxplevel.conf
+ xpcalcfile  = /usr/local/etc/bnxpcalc.conf
+-#pidfile    = /usr/local/var/bnetd.pid
++pidfile    = /var/run/pvpgn/bnetd.pid
+ ladderdir   = /usr/local/var/ladders
+ command_groups_file = /usr/local/etc/command_groups.conf
+ tournament_file = /usr/local/etc/tournament.conf
+@@ -125,7 +125,7 @@
+ #   warn
+ #   error
+ #   fatal
+-loglevels = fatal,error,warn,info,debug,trace
++loglevels = fatal,error,warn
+ #loglevels = fatal,error,warn,info
+ 
+ #                                                                            #
+@@ -313,7 +313,7 @@
+ # List additional game types to be counted as ladder games
+ # Curently allowed types: topvbot, melee, ffa, oneonone
+ # Example: ladder_games = "topvbot,oneonone"
+-ladder_games = "none"
++ladder_games = "topvbot,oneonone"
+ 
+ # If additional game types are configured (see above) to be counted as ladder 
+ # games then this setting configures a game name prefix to make only games 

@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Time::Object.3.gz
+%%PERL5_MAN3%%/Time::Seconds.3.gz
+%%SITE_ARCH%%/Time/Object.pm
+%%SITE_ARCH%%/Time/Seconds.pm
+%%SITE_ARCH%%/auto/Time/Object/Object.so

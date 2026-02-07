@@ -1,0 +1,5 @@
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/META-INF/MANIFEST.MF
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/drjava-eclipse.jar
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/icons/drjava16.gif
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/icons/drjava16.png
+%%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/plugin.xml

@@ -1,0 +1,23 @@
+--- tddl/CMakeLists.txt.orig	2011-12-20 18:30:06 UTC
++++ tddl/CMakeLists.txt
+@@ -7,16 +7,16 @@ set(tddl_SRCS "tddl.c" "tddl.h")
+ add_library(tddl SHARED ${tddl_SRCS})
+ add_library(tddl_static STATIC ${tddl_SRCS})
+ if(UNIX)
+-  set_target_properties(tddl PROPERTIES SOVERSION "1.2"
++  set_target_properties(tddl PROPERTIES SOVERSION "1"
+     VERSION "1.2.${${PROJECT_NAME}_VERSION_MAJOR}.${${PROJECT_NAME}_VERSION_MINOR}")
+   set_target_properties(tddl_static PROPERTIES OUTPUT_NAME tddl)
+ elseif(WIN32)
+   set_target_properties(tddl PROPERTIES OUTPUT_NAME ifxtpm)
+   set_target_properties(tddl PROPERTIES PREFIX "")
+-endif()
++endif(UNIX)
+ 
+-install(TARGETS tddl DESTINATION lib)
+-install(TARGETS tddl_static DESTINATION lib)
++install(TARGETS tddl DESTINATION lib/tddl_emu)
++install(TARGETS tddl_static DESTINATION lib/tddl_emu)
+ install(FILES "tddl.h" DESTINATION include)
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR})

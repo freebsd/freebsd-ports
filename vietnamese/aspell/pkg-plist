@@ -1,0 +1,8 @@
+lib/aspell-%%VER%%/tcvn3.cmap
+lib/aspell-%%VER%%/tcvn3.cset
+lib/aspell-%%VER%%/vi.dat
+lib/aspell-%%VER%%/viscii.cmap
+lib/aspell-%%VER%%/viscii.cset
+share/aspell/vi.multi
+share/aspell/vi.rws
+share/aspell/viet.alias

@@ -1,0 +1,35 @@
+PORTNAME=		register-dnsclient
+PORTVERSION=	20260101
+CATEGORIES=		dns
+DISTFILES=
+
+MAINTAINER=		michaelo@FreeBSD.org
+COMMENT=		Dynamically register hostnames with a DNS server using GSS-TSIG
+
+LICENSE=	APACHE20
+
+RUN_DEPENDS=		nsupdate:dns/bind-tools
+
+NO_ARCH=		yes
+NO_BUILD=		yes
+
+SUB_FILES=		crontab pkg-install ${PORTNAME}
+SUB_LIST=		PORTNAME=${PORTNAME} GSSAPIBASE=${GSSAPIBASEDIR}
+
+PLIST_SUB=		PORTNAME=${PORTNAME}
+
+OPTIONS_DEFAULT=	GSSAPI_BASE
+OPTIONS_SINGLE=		GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_MIT_USES=		gssapi:mit
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.nsupdate.sample ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${PREFIX}/etc/cron.d/${PORTNAME}
+
+.include <bsd.port.mk>

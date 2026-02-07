@@ -1,0 +1,11 @@
+--- makefile.orig	2023-07-04 09:46:00 UTC
++++ makefile
+@@ -1941,7 +1941,7 @@ FreeBSD:
+ 	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -O3"
+ 
+ FreeBSD:
+-	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread"
++	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -O2 -pipe  -DUSE_PKCS11 -fstack-protector-strong -fno-strict-aliasing "
+ 
+ NetBSD:
+ 	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread"

@@ -1,0 +1,10 @@
+DBIWrapper is a generic database Perl module for accessing
+the Perl DBI database interface.  It provides the lowest level
+of functionality needed by any program wanting to access
+databases via the DBI.  Currently, DBIWrapper is only
+aware of Pg (PostgreSQL), mysql (MySQL) and ODBC DBD
+modules and how to work with them correctly.
+
+Support for transactions on MySQL is now checked for and
+if found to be available, the AutoCommit flag is turned
+off so that transactions will be used.

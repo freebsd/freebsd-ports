@@ -1,0 +1,13 @@
+%%DATADIR%%/Analyser.php
+%%DATADIR%%/CLI/Application.php
+%%DATADIR%%/CLI/Arguments.php
+%%DATADIR%%/CLI/ArgumentsBuilder.php
+%%DATADIR%%/Collector.php
+%%DATADIR%%/Exception/ArgumentsBuilderException.php
+%%DATADIR%%/Exception/Exception.php
+%%DATADIR%%/Exception/RuntimeException.php
+%%DATADIR%%/Log/Csv.php
+%%DATADIR%%/Log/Json.php
+%%DATADIR%%/Log/Text.php
+%%DATADIR%%/Log/Xml.php
+%%DATADIR%%/Publisher.php

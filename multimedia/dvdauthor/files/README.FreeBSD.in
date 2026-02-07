@@ -1,0 +1,43 @@
+To create mpeg files suitable for a DVD, you can use the
+multimedia/transcode port.
+
+To encode video, use the following:
+	transcode -i .... -y mpeg2enc,null -w 9500 -F '8,-q6 -N -P' -o output
+
+This creates output.m2v, MPEG2 video at 9500Kbps (peak bitrate).
+Please refer to the man page of mpeg2desc for various encoder options
+(to be put after "-F '8,"), and to the MJPEG Tools Howto for useful
+hints.
+
+You can add "-J yuvdenoise" to reduce video noise before encoding,
+this yields very substantial gains in required bit rate.
+
+For audio:
+	transcode -i .... -y null,toolame -E 48000 -b 224 -o output
+This creates output.mp2, MPEG 1 Layer II audio, 48KHz, bitrate 224Kbps.
+
+Then multiplex the streams:
+	mplex -f 8 -o output.mpeg output.m2v output.mp2
+
+You can then use the resulting output.mpeg file with dvdauthor.
+
+Alternatively, you can use the bbmpeg codec which is faster but not
+as good in terms of quality, especially at low birates:
+	transcode -i .... -y mpeg -F d -E 48000 -b 224 -o output
+	tcmplex -i output.m2v -p output.mpa -m d -o output.mpeg
+
+Once your DVD is ready, you can use sysutils/dvd+rw-tools to burn
+it, or burncd(8) if it is a DVD+RW or DVD-RW.
+
+	Pierre Beyssac (pb@freebsd.org)
+
+Recommended reading:
+- mjpegtools home page
+	http://mjpeg.sourceforge.net/
+- mjpegtools howto
+	https://sourceforge.net/docman/display_doc.php?docid=3456&group_id=5776
+- transcode examples
+	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/html/index.html
+- "some thoughts on DVD authoring"
+	http://www.tappin.me.uk/Linux/dvd.html
+

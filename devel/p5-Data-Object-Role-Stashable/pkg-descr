@@ -1,0 +1,2 @@
+Data::Object::Role::Stashable provides methods for stashing data within the
+object.

@@ -1,0 +1,4 @@
+libdvbcsa is a free implementation of the DVB Common Scrambling Algorithm
+DVB/CSA - with encryption and decryption capabilities.
+
+As libdvbcsa implements a standard, it is completly legal to use it.

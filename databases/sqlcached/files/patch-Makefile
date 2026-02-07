@@ -1,0 +1,21 @@
+--- Makefile.orig	2013-09-26 13:45:50 UTC
++++ Makefile
+@@ -1,7 +1,5 @@
+-MYCFLAGS=-O3 -Wall -I/usr/local/include #-g -pg
+-MYLDFLAGS=-L/usr/local/lib -lsqlite #-g -pg 
+-#MYCFLAGS=-O3 -Wall -I/usr/local/include -DSQLITE3
+-#MYLDFLAGS=-L/usr/local/lib -lsqlite3
++MYCFLAGS= ${CFLAGS} -DSQLITE3
++MYLDFLAGS= ${LDFLAGS} -lsqlite3
+ 
+ all: sqlcached sc_client sc_client_bench libsqlcached_client.so libsqlcached_client.a
+ 	
+@@ -20,7 +18,7 @@ server_protocol.o: server_protocol.c common.h
+ 	cc -o server_protocol.o -c server_protocol.c ${MYCFLAGS}
+ 
+ sc_client: client.o sqlcached_client.o
+-	cc -o sc_client client.o sqlcached_client.o ${MYLDFLAGS} -lreadline -lcurses
++	cc -o sc_client client.o sqlcached_client.o ${MYLDFLAGS} -lreadline -lncurses
+ 
+ client.o: client.c common.h
+ 	cc -o client.o -c client.c ${MYCFLAGS}

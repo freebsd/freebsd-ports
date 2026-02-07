@@ -1,0 +1,12 @@
+--- sys/unix/unixunix.c.orig	Sun Jun 24 18:57:24 2001
++++ sys/unix/unixunix.c	Wed Jul  4 11:23:29 2001
+@@ -42,7 +42,9 @@ gethdate(name)
+  * does not exist on all systems, and moreover, that it sometimes includes
+  * <sys/types.h> again, so that the compiler sees these typedefs twice.
+  */
++#ifndef HAVE_SYS_PARAM_H
+ #define		MAXPATHLEN	1024
++#endif
+ 
+ 	register const char *np, *path;
+ 	char filename[MAXPATHLEN+1];

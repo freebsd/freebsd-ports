@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-06-09 18:34:57 UTC
++++ pyproject.toml
+@@ -9,7 +9,6 @@ authors = [
+ authors = [
+     { name = "Mem0", email = "founders@mem0.ai" }
+ ]
+-readme = "README.md"
+ requires-python = ">=3.9,<4.0"
+ dependencies = [
+     "qdrant-client>=1.9.1",
+@@ -49,9 +48,6 @@ only-include = ["mem0"]
+ [tool.hatch.build.targets.wheel]
+ packages = ["mem0"]
+ only-include = ["mem0"]
+-
+-[tool.hatch.build.targets.wheel.shared-data]
+-"README.md" = "README.md"
+ 
+ [tool.hatch.envs.default.scripts]
+ format = [

@@ -1,0 +1,26 @@
+PORTNAME=	evans
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.10.11
+PORTREVISION=	24
+CATEGORIES=	net
+
+MAINTAINER=	lcook@FreeBSD.org
+COMMENT=	More expressive universal gRPC client
+WWW=		https://github.com/ktr0731/evans
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go:modules
+GO_MODULE=	github.com/ktr0731/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

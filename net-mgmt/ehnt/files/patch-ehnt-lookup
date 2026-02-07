@@ -1,0 +1,25 @@
+--- ehnt_lookup.c.orig	Thu Oct  4 22:18:29 2001
++++ ehnt_lookup.c	Mon May 24 12:01:50 2004
+@@ -25,7 +25,7 @@
+ 
+ 
+ #define ASNCOUNT 65536
+-char * ASNs[ASNCOUNT];
++char ** ASNs;
+ 
+ int Init_ASN_Lookups(void) {
+ 
+@@ -34,9 +34,11 @@
+   int asn;
+   char line[100],asnname[100];
+ 
+-  memset(ASNs,0,sizeof(ASNs));
++  ASNs = calloc(ASNCOUNT, sizeof(char *));
++  if (ASNs == NULL)
++    perror("out of memory");
+ 
+-  if ( ! (f=fopen ("asnc.txt","r")) ) {
++  if ( ! (f=fopen (ASNCDIR "/asnc.txt","r")) ) {
+     perror("fopen");
+   } else {
+     for ( ; ; ) {

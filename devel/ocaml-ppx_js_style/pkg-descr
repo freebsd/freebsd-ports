@@ -1,0 +1,3 @@
+This PPX plugin for the OCaml compiler enforces that the source code
+complies with the coding conventions adopted by the Jane Street
+Capital trading company.

@@ -1,0 +1,7 @@
+TIMESTAMP = 1678858262
+SHA256 (cda-tum-dd_package-v2.2.0_GH0.tar.gz) = eb0963b4c41b38954a9062784d6701b2755b46bfcf41cf2868c720c7e9cbcc45
+SIZE (cda-tum-dd_package-v2.2.0_GH0.tar.gz) = 92359
+SHA256 (google-benchmark-398a8ac_GH0.tar.gz) = 2991bb75b3454e008152cd14c448608e8133fe0f832eb4ce1b8e06f0f72d24ad
+SIZE (google-benchmark-398a8ac_GH0.tar.gz) = 196562
+SHA256 (google-googletest-3026483_GH0.tar.gz) = 1790cf41d6b9b023e1751888155b4fe1a20cd5b9842c3aa67633aac4b2610ba2
+SIZE (google-googletest-3026483_GH0.tar.gz) = 859168

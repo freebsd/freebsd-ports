@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# PROVIDE: transmission
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# transmission_enable:	     Set to NO by default. Set it to YES to enable it.
+# transmission_watch_dir:    Directory for torrent files to download
+#			     automatically. Off by default unless you add
+#			     a path.
+# transmission_conf_dir:     Directory where transmission configuration
+#			     data is stored.
+#			     Default: %%PREFIX%%/etc/transmission/home
+# transmission_download_dir: Directory to store downloaded data.
+#			     Default: %%PREFIX%%/etc/transmission/home/Downloads
+# transmission_user:	     The user account transmission daemon runs as what
+#			     you want it to be. It uses 'transmission' user by
+#			     default.
+# transmission_web_home:     Use alternative directory for the web interface
+#			     files, such as javascript, html and graphics.
+# transmission_chown:	     By default, transmission checks and fixes the
+#			     permissions for its home directory.  If this
+#			     causes problems, set this variable to no.
+# transmission_log:	     Use alternate log file for transmission.
+# 			     If not specified, it sends log to rsyslog.
+# transmission_log_level:    Set to 'critical', 'error', 'warn', 'info',
+# 			     'debug' or 'trace' to configure log verbosity.
+
+
+. /etc/rc.subr
+
+name=transmission
+rcvar=transmission_enable
+
+load_rc_config $name
+
+: ${transmission_enable:=NO}
+: ${transmission_conf_dir=%%PREFIX%%/etc/transmission/home}
+: ${transmission_download_dir=%%PREFIX%%/etc/transmission/home/Downloads}
+: ${transmission_user:=transmission}
+transmission_group=${transmission_group:-$transmission_user}
+: ${transmission_chown:=yes}
+
+command=%%PREFIX%%/bin/transmission-daemon
+pidfile=/var/run/transmission/daemon.pid
+extra_commands=reload
+start_precmd=transmission_prestart
+
+transmission_flags=" \
+	${transmission_watch_dir:+-c ${transmission_watch_dir}} \
+	${transmission_conf_dir:+-g ${transmission_conf_dir}} \
+	${transmission_download_dir:+-w ${transmission_download_dir}} \
+	${transmission_log:+--logfile ${transmission_log}} \
+	${transmission_log_level:+--log-level ${transmission_log_level}} \
+	${pidfile:+-x $pidfile} \
+	${transmission_flags}"
+
+transmission_prestart()
+{
+	install -d -o $transmission_user ${pidfile%/*}
+	if checkyesno transmission_chown; then
+		mkdir -p $transmission_conf_dir $transmission_download_dir
+		chown $transmission_user:$transmission_group $transmission_download_dir
+		chown -R $transmission_user:$transmission_group $transmission_conf_dir
+		chgrp $transmission_group $transmission_conf_dir
+		chmod 750 $transmission_conf_dir
+	fi
+	if [ -n "$transmission_web_home" ]; then
+		TRANSMISSION_WEB_HOME=$transmission_web_home
+		export TRANSMISSION_WEB_HOME
+	fi
+	if [ -n "$transmission_log" ]; then
+		touch $transmission_log
+		chown $transmission_user:$transmission_group $transmission_log
+	fi
+}
+
+run_rc_command $1

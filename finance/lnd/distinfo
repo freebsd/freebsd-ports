@@ -1,0 +1,5 @@
+TIMESTAMP = 1702280983
+SHA256 (go/finance_lnd/lnd-v0.17.3-beta/v0.17.3-beta.mod) = 4a234c48a43472f678d740d780fb6b85e4390612a6e169243b3b06bdafe5c3f7
+SIZE (go/finance_lnd/lnd-v0.17.3-beta/v0.17.3-beta.mod) = 10426
+SHA256 (go/finance_lnd/lnd-v0.17.3-beta/v0.17.3-beta.zip) = 304ff0fcee040c9439c078ee58e550c321c5c2828fc2d6e19e2b3f1d97486e0e
+SIZE (go/finance_lnd/lnd-v0.17.3-beta/v0.17.3-beta.zip) = 5083969

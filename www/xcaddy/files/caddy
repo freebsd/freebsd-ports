@@ -1,0 +1,128 @@
+#!/bin/sh
+
+# PROVIDE: caddy
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# To enable caddy, add 'caddy_enable="YES"' to /etc/rc.conf or
+# /etc/rc.conf.local
+
+# Optional settings:
+# caddy_command (string):     Full path to the caddy binary
+# caddy_config (string):      Full path to caddy config file
+#                             (/usr/local/etc/caddy/Caddyfile)
+# caddy_adapter (string):     Config adapter type (caddyfile)
+# caddy_directory (string):   Root for caddy storage (ACME certs, etc.)
+#                             (/var/db/caddy)
+# caddy_extra_flags (string): Extra flags passed to caddy start
+# caddy_logdir (string):      Where caddy logs are stored
+#                             (/var/log/caddy)
+# caddy_logfile (string):     Location of process log (${caddy_logdir}/caddy.log)
+#                             This is for startup/shutdown/error messages.
+#                             To create an access log, see:
+#                             https://caddyserver.com/docs/caddyfile/directives/log
+# caddy_user (user):          User to run caddy (root)
+# caddy_group (group):        Group to run caddy (wheel)
+#
+# This script will honor XDG_CONFIG_HOME/XDG_DATA_HOME. Caddy will create a
+# .../caddy subdir in each of those. By default, they are subdirs of /var/db/caddy.
+# See https://caddyserver.com/docs/conventions#data-directory
+
+. /etc/rc.subr
+
+name=caddy
+rcvar=caddy_enable
+desc="Powerful, enterprise-ready, open source web server with automatic HTTPS written in Go"
+
+load_rc_config $name
+
+# Defaults
+: ${caddy_enable:=NO}
+: ${caddy_adapter:=caddyfile}
+: ${caddy_config:="/usr/local/etc/caddy/Caddyfile"}
+: ${caddy_command:="/usr/local/bin/${name}"}
+: ${caddy_directory:=/var/db/caddy}
+: ${caddy_extra_flags:=""}
+: ${caddy_logdir:="/var/log/${name}"}
+: ${caddy_logfile:="${caddy_logdir}/${name}.log"}
+: ${caddy_user:="root"}
+: ${caddy_group:="wheel"}
+
+# Config and base directories
+: ${XDG_CONFIG_HOME:="${caddy_directory}/config"}
+: ${XDG_DATA_HOME:="${caddy_directory}/data"}
+export XDG_CONFIG_HOME XDG_DATA_HOME
+
+command="${caddy_command}"
+caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
+pidfile="/var/run/${name}/${name}.pid"
+
+required_files="${caddy_config} ${caddy_command}"
+
+start_precmd="caddy_precmd"
+start_cmd="caddy_start"
+stop_precmd="caddy_prestop"
+
+# Extra Commands
+extra_commands="configtest reload"
+configtest_cmd="caddy_execute validate ${caddy_flags}"
+reload_cmd="caddy_execute reload ${caddy_flags}"
+
+caddy_execute()
+{
+    /usr/bin/su -m "${caddy_user}" -c "${caddy_command} $*"
+}
+
+caddy_precmd()
+{
+    # Create required directories and set permissions
+    /usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}
+    /usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/config
+    /usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/data
+    /usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_logdir}
+    /usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" /var/run/caddy
+    if [ -e ${caddy_logfile} ]; then
+        /bin/chmod 644 ${caddy_logfile}
+        /usr/sbin/chown root:wheel ${caddy_logfile}
+    else
+        /usr/bin/install -m 644 -o root -g wheel /dev/null ${caddy_logfile}
+    fi
+}
+
+caddy_start()
+{
+    echo -n "Starting caddy... "
+    /usr/bin/su -m ${caddy_user} -c "${caddy_command} start ${caddy_flags} \
+        ${caddy_extra_flags} --pidfile ${pidfile}" >> ${caddy_logfile} 2>&1
+    if [ $? -eq 0 ] && ps -ax -o pid | grep -q "$(cat ${pidfile})"; then
+        echo "done"
+        echo "Log: ${caddy_logfile}"
+    else
+        echo "Error: Caddy failed to start"
+        echo "Check the caddy log: ${caddy_logfile}"
+    fi
+}
+
+caddy_prestop()
+{
+    local result
+
+    echo -n "Stopping caddy... "
+
+    result="$(caddy_execute stop 2>&1)"
+    if [ ${?} -eq 0 ]; then
+        echo "done"
+        exit 0
+    else
+        if echo "${result}" | grep -q "connection refused"; then
+            echo "admin interface unavailable; using pidfile"
+            return 0
+        else
+            echo "Error: Unable to stop caddy"
+            echo "Check the caddy log: ${caddy_logfile}"
+            return 1
+        fi
+    fi
+}
+
+run_rc_command "$1"

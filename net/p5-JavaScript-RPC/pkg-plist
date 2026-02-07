@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/JavaScript::RPC.3.gz
+%%PERL5_MAN3%%/JavaScript::RPC::Server::CGI.3.gz
+%%SITE_PERL%%/JavaScript/RPC.pm
+%%SITE_PERL%%/JavaScript/RPC/Server/CGI.pm

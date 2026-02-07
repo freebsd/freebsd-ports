@@ -1,0 +1,2 @@
+Check for validity and expiration in DNSSEC signatures
+and expose metrics for Prometheus

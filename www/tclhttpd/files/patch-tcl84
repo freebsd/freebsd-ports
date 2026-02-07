@@ -1,0 +1,47 @@
+--- src/crypt.c	Sat Feb 12 19:03:25 2000
++++ src/crypt.c	Thu Apr 24 12:04:03 2003
+@@ -12,4 +12,9 @@
+ 
+ #include "tcl.h"
++
++#ifndef CONST84
++#	define CONST84
++#endif
++
+ #ifndef _WIN32
+ #include "unistd.h"
+@@ -20,8 +25,4 @@
+  */
+ 
+-
+-static int	Crypt_Cmd _ANSI_ARGS_((ClientData clientData,
+-		    Tcl_Interp *interp, int argc, char **argv));
+-
+ #undef TCL_STORAGE_CLASS
+ #define TCL_STORAGE_CLASS DLLEXPORT
+@@ -53,5 +54,5 @@
+     Tcl_Interp *interp;			/* Current interpreter. */
+     int argc;				/* Number of arguments. */
+-    char **argv;			/* Argument strings. */
++    CONST84 char *argv[];		/* Argument strings. */
+ {
+     char *result;
+--- src/setuid.c	Tue Oct  6 20:12:11 1998
++++ src/setuid.c	Fri Nov 19 13:17:06 2004
+@@ -6,4 +6,9 @@
+ #include <tcl.h>
+ #include <sys/types.h>
++#include <unistd.h>
++
++#ifndef CONST84
++#	define CONST84
++#endif
+ 
+ /*
+@@ -18,5 +23,5 @@
+  */
+ int
+-SetuidCmd(ClientData data, Tcl_Interp *interp, int argc, char *argv[])
++SetuidCmd(ClientData data, Tcl_Interp *interp, int argc, CONST84 char *argv[])
+ {
+     int uid;

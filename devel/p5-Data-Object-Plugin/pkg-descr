@@ -1,0 +1,2 @@
+Data::Object::Plugin provides an abstract base class for defining plugin
+classes.

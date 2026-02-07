@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Apache::Session::SharedMem.3.gz
+%%PERL5_MAN3%%/Apache::Session::Store::SharedMem.3.gz
+%%SITE_PERL%%/Apache/Session/SharedMem.pm
+%%SITE_PERL%%/Apache/Session/Store/SharedMem.pm

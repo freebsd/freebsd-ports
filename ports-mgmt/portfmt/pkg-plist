@@ -1,0 +1,8 @@
+bin/portclippy
+bin/portedit
+bin/portfmt
+bin/portscan
+share/man/man1/portclippy.1.gz
+share/man/man1/portedit.1.gz
+share/man/man1/portfmt.1.gz
+share/man/man1/portscan.1.gz

@@ -1,0 +1,10 @@
+--- src/lib/util/misc/Makefile.orig	2005-05-26 06:00:50 UTC
++++ src/lib/util/misc/Makefile
+@@ -38,6 +38,7 @@ CXXFLAGS := $(CXXFLAGS:-fno-implicit-tem
+ 
+ TARGET_TO_MAKE = libSCmisc
+ BIN_OR_LIB = LIB
++LTLINKLIBOPTS += -lexecinfo
+ 
+ CSRC =
+ 

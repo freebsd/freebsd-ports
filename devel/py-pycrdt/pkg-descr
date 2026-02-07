@@ -1,0 +1,9 @@
+Pycrdt is a Python CRDT library that provides bindings for Yrs, the Rust port of
+the Yjs framework.
+
+Conflict-free Replicated Data Types (CRDTs) allow creating shared documents that
+can automatically merge changes made concurrently on different "copies" of the
+data. When the data lives on different machines, they make it possible to build
+distributed systems that work with local data, leaving the synchronization and
+conflict resolution with remote data to the CRDT algorithm, which ensures that
+all data replicas eventually converge to the same state.

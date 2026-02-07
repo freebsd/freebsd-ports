@@ -1,0 +1,5 @@
+Harper is an English grammar checker designed to be just right.
+
+Harper runs on device, and take milliseconds to lint a document, take
+less than 1/50th of LanguageTool's memory footprint, but it is also
+completely private.

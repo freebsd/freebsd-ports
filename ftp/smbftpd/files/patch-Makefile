@@ -1,0 +1,18 @@
+--- Makefile.orig	2008-05-17 11:33:53.160728999 +0800
++++ Makefile	2008-05-17 11:34:04.012697489 +0800
+@@ -126,15 +126,3 @@
+ 		install -c -m 400 cert/conf/ssl.key/server.key $(CONFIGDIR)/ssl.key/;\
+ 	fi;
+ 
+-	@if [ "$(OSTYPE)" = "FreeBSD" ]; then \
+-		echo "install -c -m 755 os/FreeBSD/smbftpd.sh $(PREFIX)/etc/rc.d/"; \
+-		[ -d $(PREFIX)/etc/rc.d ] || install -d $(PREFIX)/etc/rc.d; \
+-		install -c -m 755 os/FreeBSD/smbftpd.sh $(PREFIX)/etc/rc.d/; \
+-	elif [ "$(OSTYPE)" = "linux" ]; then \
+-		if [ ! -f /etc/pam.d/ftpd ]; then       \
+-			echo "install install -c -m 644 os/linux/ftpd.pam /etc/pam.d/ftpd"; \
+-			install -c -m 644 os/linux/ftpd.pam /etc/pam.d/ftpd;    \
+-		fi;     \
+-	fi;
+-
+-

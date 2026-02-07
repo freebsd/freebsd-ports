@@ -1,0 +1,16 @@
+--- etc/Makefile.in.orig	2018-03-16 05:03:09 UTC
++++ etc/Makefile.in
+@@ -703,11 +703,11 @@ uninstall-am: uninstall-dist_pkgdataDATA uninstall-pkg
+ 	tags tags-am uninstall uninstall-am uninstall-dist_pkgdataDATA \
+ 	uninstall-pkgdataDATA
+ 
+-@SPLIT_FORMATS_TRUE@.fln.forlan:
++@SPLIT_FORMATS_TRUE@.fln.forlan: flncat$(EXEEXT)
+ @SPLIT_FORMATS_TRUE@	$(AM_V_GEN)$(abs_builddir)/flncat $^ default.fln > $@
+ @SPLIT_FORMATS_TRUE@lsattr.forlan: describe-instance-attribute.fln describe-snapshot-attribute.fln
+ @SPLIT_FORMATS_TRUE@sg.forlan: sg.fln describe-security-groups.fln
+-@SPLIT_FORMATS_FALSE@eclat.forlan: $(FLNFILES) default.fln
++@SPLIT_FORMATS_FALSE@eclat.forlan: $(FLNFILES) default.fln flncat$(EXEEXT)
+ @SPLIT_FORMATS_FALSE@	$(AM_V_GEN)(cd $(srcdir); $(abs_builddir)/flncat $(FLNFILES) default.fln) > eclat.forlan
+ 
+ .cfin.conf:

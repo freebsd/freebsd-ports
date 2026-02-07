@@ -1,0 +1,36 @@
+--- yabause/src/libretro/Makefile.common.orig	2021-06-01 21:12:00 UTC
++++ yabause/src/libretro/Makefile.common
+@@ -182,6 +182,8 @@ ifeq ($(HAVE_CDROM), 1)
+ 	endif
+ endif
+ 
++SOURCES_C += $(LIBRETRO_COMM_DIR)/string/stdstring.c
++
+ ifeq ($(ARCH_IS_WINDOWS), 1)
+ 	SOURCES_C += $(FLAC_DIR)/src/libFLAC/windows_unicode_filenames.c
+ endif
+@@ -209,14 +211,16 @@ ifeq ($(USE_RTHREADS), 1)
+ 	SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-rthreads.c \
+ 		$(LIBRETRO_COMM_DIR)/rthreads/rthreads.c
+ else
+-	ifeq ($(ARCH_IS_LINUX), 1)
+-		SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-linux.c
+-	else ifeq ($(ARCH_IS_MACOSX), 1)
+-		SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-linux.c \
+-			$(SOURCE_DIR)/ctrl/threads/linux/pthread_barrier.c
+-	else
+-		SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-windows.c
+-	endif
++
++SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-dummy.c
++#	ifeq ($(ARCH_IS_LINUX), 1)
++#		SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-linux.c
++#	else ifeq ($(ARCH_IS_MACOSX), 1)
++#		SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-linux.c \
++#			$(SOURCE_DIR)/ctrl/threads/linux/pthread_barrier.c
++#	else
++#		SOURCES_C += $(SOURCE_DIR)/ctrl/threads/thr-windows.c
++#	endif
+ endif
+ 
+ M68KMAKE_EXE = m68kmake$(EXE_EXT)

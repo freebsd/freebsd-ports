@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Mon Oct 14 15:19:01 1996
++++ Makefile.in	Fri Sep 25 14:53:03 1998
+@@ -170,6 +170,14 @@
+ libuu.a:	uulib/config.h
+ 	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' )
+ 
++libuu.so.3.0:	uulib/config.h
++	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' \
++		libuu.so.3.0 )
++
++libuu.so.3:	uulib/config.h
++	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' \
++		libuu.so.3 )
++
+ minews:
+ 	(cd inews; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' )
+ 

@@ -1,0 +1,17 @@
+--- IPAUni12.kmn.orig	2009-06-24 14:32:05.000000000 +0200
++++ IPAUni12.kmn	2009-06-24 14:35:27.000000000 +0200
+@@ -51,12 +51,11 @@
+  
+ NAME "IPA Unicode 5.1 (ver 1.2) KMN"
+ VERSION 6.0
+-BITMAP ipa
++BITMAP ipa.bmp
+ c BITMAP ipa.png
+-HOTKEY  "^+P"
+ COPYRIGHT "© 2002-2008 SIL International"
+ MESSAGE "The IPA Unicode 5.1 (ver 1.2) KMN Unicode keyboard is distributed under the X11 free software license (http://scripts.sil.org/X11License)."
+-c store(&author) "M. Hosken, D. Bevan"
++store(&author) "M. Hosken, D. Bevan"
+ c store(&language) ""
+ 
+ begin Unicode > use(Unicode)

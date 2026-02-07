@@ -1,0 +1,6 @@
+usr/lib64/libgsm.so.1
+usr/lib64/libgsm.so.1.0.19
+%%PORTDOCS%%usr/share/doc/gsm/ChangeLog
+%%PORTDOCS%%usr/share/doc/gsm/MACHINES
+%%PORTDOCS%%usr/share/doc/gsm/README
+usr/share/licenses/gsm/COPYRIGHT

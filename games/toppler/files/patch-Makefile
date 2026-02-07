@@ -1,0 +1,55 @@
+--- Makefile.orig	2022-02-06 08:35:59 UTC
++++ Makefile
+@@ -18,10 +18,10 @@
+ # along with this program; if not, write to the Free Software
+ # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335 USA
+ 
+-PREFIX = /usr
++PREFIX ?= /usr
+ BINDIR = $(PREFIX)/bin
+ DATADIR = $(PREFIX)/share
+-STATEDIR = /var/toppler
++STATEDIR = /var/games/toppler
+ LOCALEDIR = $(DATADIR)/locale
+ MANDIR =  $(DATADIR)/man
+ PKGDATADIR = $(DATADIR)/toppler
+@@ -29,9 +29,9 @@ DESTDIR =
+ CROSS =
+ 
+ CONVERT = convert
+-CXX = $(CROSS)$(CXX_NATIVE)
+-CXX_NATIVE = g++
+-CXXFLAGS = -Wall -Wextra -g -O2 -std=c++17
++CXX_NATIVE = $(CXX)
++CXXFLAGS ?= -g -O2
++CXXFLAGS += -Wall -Wextra -std=c++17
+ EXEEXT = $(if $(filter %-w64-mingw32.static-,$(CROSS)),.exe,)
+ INSTALL = install
+ LDFLAGS =
+@@ -50,7 +50,7 @@ MSGID_BUGS_ADDRESS := roever@users.sf.net
+ .PHONY: default
+ default: all
+ 
+-VERSION := $(shell cat src/version)
++VERSION := $(shell cat version)
+ ALL_SOURCES := $(wildcard src/*)
+ 
+ PKGS += SDL2_mixer
+@@ -63,7 +63,7 @@ PKGS_NATIVE += libpng
+ PKGS_NATIVE += SDL2_image
+ 
+ PKG_CFLAGS_NATIVE = $$($(PKG_CONFIG_NATIVE) --cflags $(PKGS_NATIVE))
+-PKG_LIBS_NATIVE = $$($(PKG_CONFIG_NATIVE) --libs $(PKGS_NATIVE))
++PKG_LIBS_NATIVE = $$($(PKG_CONFIG_NATIVE) --libs $(PKGS_NATIVE)) -lintl
+ 
+ DEFS += -DVERSION='"$(VERSION)"'
+ DEFS += -DTOP_DATADIR='"$(PKGDATADIR)"'
+@@ -75,7 +75,7 @@ FILES_H := $(wildcard src/*.h)
+ FILES_CPP := $(wildcard src/*.cc)
+ FILES_O := $(patsubst src/%,_build/$(CROSS)/%.o,$(FILES_CPP))
+ .SECONDARY: $(FILES_O)
+-_build/$(CROSS)/%.o: src/% src/version $(FILES_H)
++_build/$(CROSS)/%.o: src/% version $(FILES_H)
+ 	@mkdir -p $(dir $@)
+ 	$(CXX) $(CXXFLAGS) $$($(PKG_CONFIG) --cflags $(PKGS)) $(DEFS) -c -o $@ $<
+ 

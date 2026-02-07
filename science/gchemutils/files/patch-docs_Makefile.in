@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	2016-11-23 13:06:30 UTC
++++ docs/Makefile.in
+@@ -400,7 +400,7 @@ x11_CFLAGS = @x11_CFLAGS@
+ x11_LIBS = @x11_LIBS@
+ xml_CFLAGS = @xml_CFLAGS@
+ xml_LIBS = @xml_LIBS@
+-SUBDIRS = help man reference
++SUBDIRS = man reference
+ MAINTAINERCLEANFILES = Makefile.in
+ all: all-recursive
+ 

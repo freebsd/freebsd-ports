@@ -1,0 +1,2 @@
+Ogginfo gives you access to low level information on ogg files (bitrate,
+length, samplerate, encoder, etc... ), as well as tag.

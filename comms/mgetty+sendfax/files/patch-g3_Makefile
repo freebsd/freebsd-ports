@@ -1,0 +1,19 @@
+--- g3/Makefile.orig	2006-02-22 17:25:34 UTC
++++ g3/Makefile
+@@ -37,13 +37,13 @@ install: all
+ # install programs
+ #
+ 	for f in $(G3_PROGRAMS) ; do \
+-		$(INSTALL) -s -m 755 $$f $(BINDIR) ; \
++		$(INSTALL) -s -m 755 $$f $(STAGEDIR)$(BINDIR) ; \
+ 	done
+ #
+ # make symlink for "g3topbm" (so third-party fax viewers won't fail)
+ #
+-	-cd $(BINDIR) ; \
+-	test -x g3topbm || ln -s g32pbm g3topbm
++#	-cd $(BINDIR) ; \
++#	test -x g3topbm || ln -s g32pbm g3topbm
+ 
+ 
+ # test suite

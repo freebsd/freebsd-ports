@@ -1,0 +1,2 @@
+Simple base class to allow your module to install and remove virtual
+methods into the Template Toolkit.

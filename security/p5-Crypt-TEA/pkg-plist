@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/TEA.pm
+%%SITE_ARCH%%/auto/Crypt/TEA/TEA.so
+%%PERL5_MAN3%%/Crypt::TEA.3.gz

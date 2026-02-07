@@ -1,0 +1,75 @@
+--- vnroff.1.orig	Tue Nov 27 17:28:57 2001
++++ vnroff.1	Tue Nov 27 17:29:35 2001
+@@ -1,21 +1,21 @@
+ .TH vnroff 1
+ .SH NAME
+-vnroff \- Vietnamese pre-processor for troff
++vnroff \- Vietnamese pre-processor for groff
+ .SH SYNTAX
+ .B vnroff
+-filename | troff [\fItroff-options\fR]
++filename | groff [\fIgroff-options\fR]
+ .SH DESCRIPTION
+-.NXB "troff command"
++.NXB "groff command"
+ This program processes a text file with special Vietnamese character 
+-sequences giving an output suitable for 
+-.I troff(1)
++sequences (VIQR syntax) giving an output suitable for 
++.I groff(1)
+ processing.
+ The output should work for all point sizes supported by 
+-.I troff(1) 
++.I groff(1) 
+ .sp
+ The default diacritical marks are defined as:  
+ .br
+-	Dau_Sac         \\
++	Dau_Sac         \'
+   	Dau_Huyen       `
+   	Dau_Hoi         ?
+   	Dau_Nga         ~
+@@ -23,7 +23,7 @@
+   	Dau_Mu          ^
+   	Dau_Trang       (
+   	Dau_Rau         +
+-  	Escape_Symbol   #
++  	Escape_Symbol   \\
+ .sp
+ .SH SPELLING RULES
+ Only one diacritical mark: 
+@@ -34,16 +34,31 @@
+ .br
+ 	vowel followed by Dau_Mu, Dau_Trang, Dau_Rau then other symbols.
+ .sp
+-DD and dd: self-explanatory, you have to type DD or dd, 
++DD and dd: self-explanatory,
+ .br
+-	Dd or dD will not work.  You can change the code to ignore this.   
++    the resulting case is the same as the first character of the sequence.
+ .sp
+ The Escape_Symbol is provided to avoid the confusion between the     
+ diacritical marks and end-of-sentence symbols.
+ .br
+ 	i.e:	the question           Anh ddi dda^u?
+ .br
+-		should be typed        Anh ddi dda^u#?                          
++		should be typed        Anh ddi dda^u\\?                          
++.SH SEE ALSO
++groff(1),
++troff(1)
++.SH STANDARDS
++Vietnamese Standard Code for Information Interchange (VISCII version 1.1, 1992)
++<Viet-Std@Haydn.Stanford.EDU> http://www.vietstd.org/.
++.PP
++RFC 1456 Vietnamese Standardization Working Group,
++"Conventions for Encoding the Vietnamese Language
++.br
++VISCII: VIetnamese Standard Code for Information Interchange
++.br
++VIQR: VIetnamese Quoted-Readable Specification Revision 1.1",
++.br
++May 1993.
+ .SH AUTHORS
+ Written in Pascal by Hu+~u (University of California at Berkeley).
+ Converted to C & modified by Tra^`n H. Nha^n (Concurrent Computer).   

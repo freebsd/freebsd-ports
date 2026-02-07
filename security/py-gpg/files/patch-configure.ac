@@ -1,0 +1,19 @@
+The configure script automatically detects all versions of Python and builds
+the bindings for each found version. This is a problem when building outside
+of a clean environment since the ports system can only build a package for one
+Python flavor at a time. The found versions of Python are overridden by
+environment variables set in the port Makefile.
+
+--- configure.ac.orig	2025-06-17 08:21:23 UTC
++++ configure.ac
+@@ -326,6 +326,10 @@ else
+         ], :, m4_if(mym4pythonver,[any],[],[python]mym4pythonver))
+         ])
+ 
++    # Override the automatically found Pythons with the selected version from ports.
++    PYTHONS=$BSD_PYTHON
++    PYTHON_VERSIONS=$BSD_PYTHON_VERSION
++
+     # Recover some values lost in the second attempt to find Python.
+     PYTHON="$(echo $PYTHONS | cut -d ' ' -f 1)"
+     PYTHON_VERSION="$(echo $PYTHON_VERSIONS | cut -d ' ' -f 1)"

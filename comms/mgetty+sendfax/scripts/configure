@@ -1,0 +1,27 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+sed -e s:/usr/local:$PREFIX: < policy.h-dist > policy.h
+
+cat >> policy.h <<END
+
+#undef DEFAULT_LOGIN_PROGRAM 
+#define DEFAULT_LOGIN_PROGRAM "/usr/bin/login"
+
+#define CNDFILE               "dialin.config"
+
+#undef LOCK
+#define LOCK "/var/spool/lock/LCK..%s"
+
+#undef FAX_LOG
+#define FAX_LOG		"/var/spool/fax/Faxlog"
+
+#undef MAILER
+#define MAILER		"/usr/sbin/sendmail"
+
+#undef DEVICE_GROUP
+#define DEVICE_GROUP	"uucp"
+
+END
+
+exit 0

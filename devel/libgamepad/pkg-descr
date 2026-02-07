@@ -1,0 +1,5 @@
+Libgamepad is an API for various gamepad devices under Unix.  The goal is
+to provide both abstract and device-dependent interfaces for various joystick
+and gamepad devices.  The library interfaces with multiple lower-level
+interfaces, such as the BSD "joy" and "usbhid" drivers, as well as
+the user-space "libhid", which in turn overlays "libusb".

@@ -1,0 +1,7 @@
+TIMESTAMP = 1742236472
+SHA256 (argouml/ArgoUML-0.35.1.tar.gz) = 5e5230eb1bd29c545ae6fd56c0bdfbee86b1e6c2c538d6df22728fa3e3ab1639
+SIZE (argouml/ArgoUML-0.35.1.tar.gz) = 19048499
+SHA256 (argouml/manual-0.35.1.pdf) = 3c1634556a3adcb0eaf427184472b72197b9f451c3d91599a2dfbdcc2fcd5b56
+SIZE (argouml/manual-0.35.1.pdf) = 3405954
+SHA256 (argouml/quickguide-0.35.1.pdf) = abbc989ebb380cf8285d40e7211319bdac66edeface01bb09af48bf4672b16dd
+SIZE (argouml/quickguide-0.35.1.pdf) = 58337

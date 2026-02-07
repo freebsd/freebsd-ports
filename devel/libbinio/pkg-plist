@@ -1,0 +1,9 @@
+include/libbinio/binfile.h
+include/libbinio/binio.h
+include/libbinio/binstr.h
+include/libbinio/binwrap.h
+lib/libbinio.a
+lib/libbinio.so
+lib/libbinio.so.1
+lib/libbinio.so.1.0.0
+libdata/pkgconfig/libbinio.pc

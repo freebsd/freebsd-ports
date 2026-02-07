@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ x"$2" != x"POST-INSTALL" ]; then
+    exit 0
+fi
+
+install -d -m 750 -o %%USERS%% -g %%GROUPS%% %%DBDIR%%

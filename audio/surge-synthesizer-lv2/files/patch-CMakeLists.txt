@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	2021-04-20 20:34:06 UTC
++++ CMakeLists.txt
+@@ -128,7 +128,7 @@ add_subdirectory(libs/filesystem)
+ add_subdirectory(libs/tinyxml)
+ add_subdirectory(libs/escape-from-vstgui)
+ add_subdirectory(libs/oddsound-mts)
+-add_subdirectory(libs/libsamplerate EXCLUDE_FROM_ALL)
++#add_subdirectory(libs/libsamplerate EXCLUDE_FROM_ALL)
+ 
+ target_link_libraries(surge-shared PUBLIC
+   surge::airwindows
+@@ -166,7 +166,8 @@ add_dependencies( surge-shared git-info )
+ 
+ # Set up external packages
+ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
+-find_package(LibMidiFile ${PACKAGE_OPTIONS})
++# #find_package(LibMidiFile) only looks for bundled library, see https://github.com/surge-synthesizer/surge/issues/4358
++#find_package(LibMidiFile ${PACKAGE_OPTIONS})
+ 
+ if( BUILD_SURGE_JUCE_PLUGINS )
+   set( BUILD_SURGE_EFFECTS_BANK TRUE )
+@@ -1765,9 +1766,9 @@ foreach(dir ${CLANG_FORMAT_DIRS})
+     list(APPEND CLANG_FORMAT_GLOBS "':(glob)${dir}/**/*.${ext}'")
+   endforeach()
+ endforeach()
+-add_custom_command(TARGET code-quality-pipeline-checks
+-  POST_BUILD
+-  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-  COMMAND ${CMAKE_COMMAND} -E echo About to check clang-format
+-  COMMAND git ls-files -- ${CLANG_FORMAT_GLOBS} | xargs clang-format --dry-run --Werror
+-)
++#add_custom_command(TARGET code-quality-pipeline-checks
++#  POST_BUILD
++#  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
++#  COMMAND ${CMAKE_COMMAND} -E echo About to check clang-format
++#  COMMAND git ls-files -- ${CLANG_FORMAT_GLOBS} | xargs clang-format --dry-run --Werror
++#)

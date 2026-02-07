@@ -1,0 +1,12 @@
+Asynchronous & concurrent & distributed networking framework for PHP.
+
+* event-driven
+* full asynchronous non-blocking
+* multi-thread reactor
+* multi-process worker
+* millisecond timer
+* async MySQL
+* async task
+* async read/write file system
+* async dns lookup
+* support IPv4/IPv6/UnixSocket/TCP/UDP

@@ -1,0 +1,4 @@
+bin/applypatch
+bin/makepatch
+%%PERL5_MAN1%%/makepatch.1.gz
+%%PERL5_MAN1%%/applypatch.1.gz

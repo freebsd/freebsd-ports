@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Business/MaxMind.pm
+%%SITE_PERL%%/Business/MaxMind/CreditCardFraudDetection.pm
+%%SITE_PERL%%/Business/MaxMind/HTTPBase.pm
+%%SITE_PERL%%/Business/MaxMind/TelephoneVerification.pm
+%%SITE_PERL%%/Business/example.pl
+%%SITE_PERL%%/Business/example_telv.pl
+%%PERL5_MAN3%%/Business::MaxMind.3.gz
+%%PERL5_MAN3%%/Business::MaxMind::CreditCardFraudDetection.3.gz
+%%PERL5_MAN3%%/Business::MaxMind::HTTPBase.3.gz
+%%PERL5_MAN3%%/Business::MaxMind::TelephoneVerification.3.gz

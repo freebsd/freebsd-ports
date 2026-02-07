@@ -1,0 +1,33 @@
+--- users_guide.in.orig	2011-05-27 22:11:57 UTC
++++ users_guide.in
+@@ -164,8 +164,11 @@ suggest you try a web search for s/key source code.
+ crimelab.com but now it appears the only source is ftp.bellcore.com. I
+ suggest you try a web search for s/key source code.
+ 
+-Note: S/KEY is a trademark of Bell Communications Research (Bellcore).
++To use OPIE, you must have built tac_plus with the -DWITH_OPIE flag.
+ 
++Note: S/KEY and OPIE are a trademark of Bell Communications Research 
++(Bellcore).
++
+ Should you need them, there are routines for accessing password files
+ (getpwnam,setpwent,endpwent,setpwfile) in pw.c.
+ 
+@@ -414,7 +417,16 @@ be authenticated via s/key, as follows:
+       login = skey
+     }
+ 
+-4). Authentication using PAM (Pluggable Authentication Modules)
++4). Authentication using opie.
++
++If you have successfully built tac_plus with opie support, you can specify
++a user be authenticated via opie, as follows:
++
++    user = marcus {
++      login = opie
++    }
++
++5). Authentication using PAM (Pluggable Authentication Modules)
+ 
+ Assuming that your OS supports it, tac_plus can be configured to use PAM
+ for authentication, which may make it possible to use LDAP, SecureID, etc

@@ -1,0 +1,13 @@
+--- src/libmy/Makefile.orig	2016-04-07 19:58:48 UTC
++++ src/libmy/Makefile
+@@ -3,8 +3,8 @@ SRCS= strcutl.c strcutw.c strcuts.c strc
+ 
+ CFLAGS+= -Wall -Werror -Wstrict-prototypes
+ MAN=
+-NOPIC= 1
+-NOPROFILE= 1
++NO_PIC= 1
++MK_PROFILE= no
+ 
+ PIPE= -pipe
+ 

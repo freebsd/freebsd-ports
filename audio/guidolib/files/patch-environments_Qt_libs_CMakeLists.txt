@@ -1,0 +1,20 @@
+--- environments/Qt/libs/CMakeLists.txt.orig	2023-11-03 09:52:40 UTC
++++ environments/Qt/libs/CMakeLists.txt
+@@ -51,7 +51,7 @@ set (LIBDIR ${CMAKE_CURRENT_SOURCE_DIR})
+ 
+ #######################################
+ # add GuidoQt
+-add_library(${guidoqt} STATIC ${GUIDOQT_SRC} ${GUIDOQT_HEADERS})
++add_library(${guidoqt} SHARED ${GUIDOQT_SRC} ${GUIDOQT_HEADERS})
+ target_include_directories (${guidoqt} PRIVATE ${GUIDOQT_INCLUDE_DIRS})
+ if (DEFINED GUIDQOQT_DEFINITIONS)
+ 	target_compile_definitions (${guidoqt} PRIVATE ${GUIDQOQT_DEFINITIONS})
+@@ -68,7 +68,7 @@ set_target_properties (${guidoqt} PROPERTIES
+ #message ("GRAPHICSCENE_SRC ${GRAPHICSCENE_SRC}")
+ #######################################
+ # add GraphicsSceneMainWindow
+-add_library(${graphicscene} STATIC ${GRAPHICSCENE_SRC} ${GRAPHICSCENE_HEADERS})
++add_library(${graphicscene} SHARED ${GRAPHICSCENE_SRC} ${GRAPHICSCENE_HEADERS})
+ target_include_directories (${graphicscene} PRIVATE ${GRAPHICSCENE_INCLUDE_DIRS})
+ if (DEFINED GRAPHICSCENE_DEFINITIONS)
+ 	target_compile_definitions (${graphicscene} PRIVATE ${GRAPHICSCENE_DEFINITIONS})

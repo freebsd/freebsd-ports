@@ -1,0 +1,22 @@
+--- Makefile.orig	2022-07-13 22:17:17 UTC
++++ Makefile
+@@ -5,14 +5,13 @@ clean:
+ 
+ clean:
+ 
+-DSDIR=$(DESTDIR)/usr/share/debootstrap
++DSDIR=$(DESTDIR)$(DATADIR)
+ install:
+ 	mkdir -p $(DSDIR)/scripts
+-	mkdir -p $(DESTDIR)/usr/sbin
++	mkdir -p $(DESTDIR)$(PREFIX)/sbin
+ 
+ 	cp -a scripts/* $(DSDIR)/scripts/
+-	install -o root -g root -m 0644 functions $(DSDIR)/
++	cp -a functions $(DSDIR)/
+ 
+-	sed 's/@VERSION@/$(VERSION)/g' debootstrap >$(DESTDIR)/usr/sbin/debootstrap
+-	chown root:root $(DESTDIR)/usr/sbin/debootstrap
+-	chmod 0755 $(DESTDIR)/usr/sbin/debootstrap
++	sed 's/@VERSION@/$(VERSION)/g' debootstrap >$(DESTDIR)$(PREFIX)/sbin/debootstrap
++	chmod 0755 $(DESTDIR)$(PREFIX)/sbin/debootstrap

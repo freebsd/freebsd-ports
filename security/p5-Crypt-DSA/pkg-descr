@@ -1,0 +1,6 @@
+Crypt::DSA is an implementation of the DSA (Digital Signature Algorithm)
+signature verification system. The implementation itself is pure Perl,
+although the heavy-duty mathematics underneath are provided by the
+Math::Pari library.
+
+This package provides DSA signing, signature verification, and key generation.

@@ -1,0 +1,6 @@
+VPNC - Client for Cisco 3000 VPN Concentrator, IOS and PIX
+
+Vpnc is a VPN client for the Cisco 3000 VPN Concentrator, creating a
+IPSec-like connection as a tunneling network device for the local
+system. The created connection is presented as a tunneling network
+device to the local system. The daemon runs entirely in userspace.

@@ -1,0 +1,214 @@
+#!/bin/sh
+
+# portdowngrade
+
+# Fetch a port directory from an older version;
+# easy to use wrapper around Subversion
+
+# This script is in the public domain
+
+usage()
+{
+	<<EOF >/dev/stderr cat
+Usage: $0 [-r] port-directory|port [revision/date]
+
+When called without a revision to restore, svn log is called on the port's
+directory so that relevant revisions can be identified.  Look for lines
+containing "Update to X.X".  You may wish to filter it through ${PAGER:-less}.
+
+When called with a port name instead of directory/origin, INDEX is grepped
+for the correct origins and a list is presented.
+
+When called with -r, make describe is called in the restored port and all
+of the ports that the restored port depended on are also checked out at the
+same date.
+
+This software requires that a ports tree has been fetched and is present
+in ${PORTSDIR:-/usr/ports}.
+EOF
+	exit 1
+}
+
+err()
+{
+	echo "${@:-An unknown error has occurred}" | fold -s > /dev/stderr
+	exit 1
+}
+
+getport_recursive()
+{
+	# getport_recursive portorigin
+	# "This function is recursive"
+	echo -n "==> Fetching $1 ..."
+	[ -d $tmpdir/${1%/*} ] || \
+	    $svn -q up --depth files -r $rev "$tmpdir/${1%/*}" || \
+	    	err "Something went wrong with fetching category for $1.  Ensure you have the correct revision!"
+	$svn -q up -r $rev "$tmpdir/$1" || \
+		err "Something went wrong with fetching port files for $1."
+	echo " [DONE]"
+	echo "$1" >> $tmpdir/portdowngrade.originlist
+	deps=$(make PORTSDIR=$PWD/$tmpdir -C $tmpdir/$1 '-V_DEPEND_DIRS:N*/pkg:C,.*/([^/]*/[^/]*)$,\1,')
+	if [ -n "$deps" ]; then
+		for port in $deps; do
+			if [ ! -d $tmpdir/$port ]; then
+				echo "===> $1@$rev depends on $port."
+				getport_recursive $port
+			fi
+		done
+		echo "===> All dependencies of $1@$rev fetched."
+	fi
+}
+
+svn=$(which svn 2>/dev/null || which svnlite 2>/dev/null) || err "Subversion appears not to be installed on this system as svnlite or svn.  Please install it (pkg install subversion)"
+
+PORTSDIR="$(make -f /usr/share/mk/bsd.port.mk -VPORTSDIR)"
+
+[ -d $PORTSDIR ] || usage
+
+args=$(getopt c:r $*) || usage
+
+set -- $args
+
+for arg; do
+	case $arg in
+	-r)
+		recurse=true
+		shift
+		;;
+	--)
+		shift
+		break
+		;;
+	-*)
+		usage
+		;;
+	esac
+done
+
+case ${1-NULL} in
+NULL)
+	usage
+	;;
+*/*)
+	# Contains a directory, so we're ready for the next stage
+	# noop
+
+	;;
+*)
+	# Probably a port name, get list of origins from INDEX
+	INDEXFILE=$(make -C $PORTSDIR -VINDEXDIR)
+	INDEXFILE="$INDEXFILE/$(make -C $PORTSDIR -VINDEXFILE)"
+
+	[ -f $INDEXFILE ] || err You need to run make -C $PORTSDIR fetchindex
+
+	sed -ne "s,^\([^|]*$1-[^|]*\)|/usr/ports/\([^|]*\)|.*,\1	-> \2,p" \
+	    < $INDEXFILE
+	<<EOF cat
+
+Choose a port origin (directory) from the list
+above, and then run ${0##*/} category/port
+
+EOF
+	exit 0
+	;;
+esac
+
+: ${svnroot=https://svn.freebsd.org/ports/head}
+
+# Get port directory
+portdir="${1%$PORTSDIR}"
+portdir="${portdir#/}"
+
+[ -d "$PORTSDIR/$portdir" ] || err "$portdir does not exist in $PORTSDIR"
+
+case ${2-NULL} in
+NULL)
+	# No revision/date provided, get log
+	echo Choose a revision from this list and run $0 $1 revision
+	$svn log $svnroot/$portdir
+	echo Choose a revision from the above list and run $0 $1 revision
+	exit 0
+	;;
+*)
+	case ${2} in
+	*-*-*)
+		rev=\{$2\}
+		;;
+	r*)
+		rev=$2
+		;;
+	*)
+		# Number?
+		echo $2 | grep -q '^[[:digit:]]*$' || \
+		    err Revision argument must be a number or date
+		rev=r$2
+		;;
+	esac
+
+	case ${recurse:-false} in
+	false)
+		$svn co "$svnroot/$portdir@$rev" || \
+		    err "Something went wrong with svn...  Ensure you have the correct revision!"
+		destination=${portdir#*/}
+		<<EOF cat
+You should be done-- now cd into ${destination} and you can run
+# make deinstall install clean
+
+Please note that ${0##*/} no longer modifies the ports tree; the
+checked out port is at
+$(pwd)/${destination}
+EOF
+		;;
+	true)
+		tmpdir=$(mktemp -d portdowngrade.XXXXXXX)
+		echo -n "=> Fetching empty ports tree... "
+		$svn -q co --depth files "$svnroot@$rev" $tmpdir || \
+		    err "Something went wrong with svn checkout... Ensure you have the correct revision!"
+		echo "[DONE]"
+		echo -n "=> Fetching important directories... "
+		important=$($svn ls $tmpdir@$rev | \
+		    sed -ne "s/^\([A-Z][^/]*\)\//$tmpdir\/\1@${rev}/p")
+		$svn -q up $important || \
+		    err "Could not fetch ^[A-Z] directories @$rev"
+		echo "[DONE]"
+		case x$(make -VWITH_PKGNG -f /usr/share/mk/bsd.port.mk) in
+		x)
+			;;
+		*)
+			echo -n "=> Fetching current pkg... "
+			$svn -q up --depth empty $tmpdir/ports-mgmt
+			$svn -q up $tmpdir/ports-mgmt/pkg@.
+			echo "[DONE]"
+			;;
+		esac
+		getport_recursive $portdir
+		destination=$tmpdir/$portdir
+		<< EOF cat > $tmpdir/portdowngrade.recurse
+echo "This script will recursively reinstall all of the ports fetched"
+echo "that $portdir depended on.  This is possibly dangerous and they may"
+echo "not build."
+echo "If you are sure that you know how to recover from this, answer 'yes'"
+echo "to the following question."
+echo
+echo "Do you wish to remove all of the ports that $portdir depends on, and"
+echo "reinstall with the versions just checked out?"
+read var
+[ "\$var" = "yes" ] || exit 1
+for dir in \$(cat portdowngrade.originlist); do
+	make PORTSDIR=\$(pwd) -C \$dir deinstall
+done
+make PORTSDIR=\$(pwd) -C $portdir install clean
+EOF
+		<< EOF fold -s
+You should now be done-- now cd to $tmpdir, and check that the file portdowngrade.originlist has the correct ports in, then use
+
+# sh portdowngrade.recurse
+
+Really... only use this option if you are desperate!
+
+EOF
+		;;
+	esac
+esac
+
+exit 0

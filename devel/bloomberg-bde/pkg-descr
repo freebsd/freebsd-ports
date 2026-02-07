@@ -1,0 +1,9 @@
+BDE stands for BDE Development Environment. Depending on the context,
+BDE may refer to a suite of low-level C++ libraries, the methodology that
+guides their development, or to the team that develops them. The BDE
+libraries meet superior standards of design, documentation, and testing
+and are the foundation of C++ development at Bloomberg. Among other things,
+the BDE libraries provide an enhanced implementation of STL containers,
+vocabulary types for representing common concepts (like dates and times),
+and building blocks for developing multi-threaded applications and
+network applications.

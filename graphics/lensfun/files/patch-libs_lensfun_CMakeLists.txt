@@ -1,0 +1,14 @@
+--- libs/lensfun/CMakeLists.txt.orig	2014-09-30 17:37:34 UTC
++++ libs/lensfun/CMakeLists.txt
+@@ -9,6 +9,11 @@ IF(WIN32)
+   LIST(APPEND LENSFUN_SRC windows/auxfun.cpp)
+ ENDIF()
+ 
++SET_SOURCE_FILES_PROPERTIES(mod-color-sse.cpp mod-coord-sse.cpp
++  PROPERTIES COMPILE_FLAGS "${VECTORIZATION_SSE_FLAGS}")
++SET_SOURCE_FILES_PROPERTIES(mod-color-sse2.cpp
++  PROPERTIES COMPILE_FLAGS "${VECTORIZATION_SSE2_FLAGS}")
++
+ IF(BUILD_STATIC)
+   ADD_LIBRARY(lensfun STATIC ${LENSFUN_SRC})
+ ELSE()

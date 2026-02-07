@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2020-12-11 20:19:57 UTC
++++ Makefile.am
+@@ -6,7 +6,7 @@ EXTRA_DIST = doc/ \
+ 						 player/ \
+ 						 resources/
+ 
+-AM_CPPFLAGS = -DRESOURCEPATH=\"$(prefix)/share/komposter\"
++AM_CPPFLAGS = -DRESOURCEPATH=\"$(prefix)/share/komposter/\"
+ 
+ komposter_SOURCES = about.c \
+ 										audio.c \

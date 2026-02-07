@@ -1,0 +1,5 @@
+This PAM module provides ssh-agent based authentication. The primary design
+goal is to avoid typing password when you sudo on remote servers. Instead, you
+can simply touch your hardware security key (e.g. Yubikey/Canokey) to fulfill
+user verification. The process is done by forwarding the remote authentication
+request to client-side ssh-agent as a signature request.

@@ -1,0 +1,11 @@
+--- data/meson.build.orig	2021-04-24 00:07:18 UTC
++++ data/meson.build
+@@ -33,7 +33,7 @@ if host_machine.system() != 'windows'
+     output: metainfo,
+     po_dir: po_dir,
+     install: true,
+-    install_dir: join_paths(datadir, 'metainfo')
++    install_dir: join_paths(datadir, 'appdata')
+   )
+ endif
+ 

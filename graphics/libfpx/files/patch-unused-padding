@@ -1,0 +1,15 @@
+The padding is important (earlier versions tried to remove it leading to peril),
+but clang++ complains about it. Mark it as __unused to prevent that...
+--- oless/h/dir.hxx	2014-02-12 08:14:24.000000000 -0500
++++ oless/h/dir.hxx	2014-02-14 11:36:59.000000000 -0500
+@@ -142,5 +142,9 @@
+     inline void  SetBitFlags(BYTE bValue, BYTE bMask);
+ 
+-    BYTE  _bpad[CBDIRPAD];  // do not remove, bad things will happen!
++    BYTE  _bpad[CBDIRPAD]	// do not remove, bad things will happen!
++#ifdef __clang__
++	__unused
++#endif
++	;	 
+ };
+ 

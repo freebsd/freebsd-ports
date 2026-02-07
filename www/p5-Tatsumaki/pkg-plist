@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/Tatsumaki.3.gz
+%%PERL5_MAN3%%/Tatsumaki::MessageQueue.3.gz
+%%SITE_PERL%%/Tatsumaki.pm
+%%SITE_PERL%%/Tatsumaki/Application.pm
+%%SITE_PERL%%/Tatsumaki/Error.pm
+%%SITE_PERL%%/Tatsumaki/HTTPClient.pm
+%%SITE_PERL%%/Tatsumaki/Handler.pm
+%%SITE_PERL%%/Tatsumaki/MessageQueue.pm
+%%SITE_PERL%%/Tatsumaki/Request.pm
+%%SITE_PERL%%/Tatsumaki/Response.pm
+%%SITE_PERL%%/Tatsumaki/Server.pm
+%%SITE_PERL%%/Tatsumaki/Service.pm
+%%SITE_PERL%%/Tatsumaki/Template.pm
+%%SITE_PERL%%/Tatsumaki/Template/Micro.pm

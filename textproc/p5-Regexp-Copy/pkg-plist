@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Regexp::Copy.3.gz
+%%SITE_ARCH%%/Regexp/Copy.pm
+%%SITE_ARCH%%/Regexp/Storable.pm
+%%SITE_ARCH%%/auto/Regexp/Copy/Copy.so
+%%SITE_ARCH%%/auto/Regexp/Copy/autosplit.ix

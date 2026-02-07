@@ -1,0 +1,11 @@
+--- configure.ac.orig	2023-01-20 07:54:41 UTC
++++ configure.ac
+@@ -145,7 +145,7 @@ AM_COND_IF([HAVE_GPU_DIRECT],[
+ # Check for system capabilities
+ AC_SYS_LARGEFILE
+ 
+-AC_DEFINE([_XOPEN_SOURCE], [700], [C99 compatibility])
++#AC_DEFINE([_XOPEN_SOURCE], [700], [C99 compatibility])
+ 
+ # Check for lustre availability
+ AC_ARG_WITH([lustre],

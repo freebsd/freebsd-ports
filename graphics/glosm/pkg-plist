@@ -1,0 +1,5 @@
+bin/glosm-tiler
+bin/glosm-viewer-sdl
+lib/libglosm-client.so
+lib/libglosm-geomgen.so
+lib/libglosm-server.so

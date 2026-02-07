@@ -1,0 +1,15 @@
+--- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2019-01-25 18:24:30 UTC
++++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk
+@@ -406,9 +406,10 @@ ifdef VBOX_USE_SYSTEM_XORG_HEADERS
+  vboxvideo_drv_system_INCS += \
+         $(PATH_ROOT)/src/VBox/Runtime/include \
+         $(VBOX_GRAPHICS_INCS) \
+-        /usr/include/xorg \
+-        /usr/include/pixman-1
++        /usr/local/include/xorg \
++        /usr/local/include/pixman-1
+  vboxvideo_drv_system_SOURCES := $(vboxvideo_drv_17_SOURCES)
++ vboxvideo_drv_system_LIBS += $(vboxvideo_drv_70_LIBS)
+ endif
+ 
+ 

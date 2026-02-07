@@ -1,0 +1,315 @@
+--- texk/xdvik/READMEs/README.tasai-ussy.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.tasai-ussy
+@@ -0,0 +1,312 @@
++
++               ** pagenumber-patch for Xdvi PL17 + etc. **
++
++○はじめに
++  xdvi-17.pagenumber.patchは、"xdvi-17+miyu-patch for xdvi PL17"をベースにした
++パッチである、"xdvi-17+markpage+toc+printdvi"に対するパッチです。
++
++○追加/変更機能
++  本パッチをあてることにより以下の機能が追加/変更されます。
++
++  1) 実際のPage番号によるTOCリスト
++    小野＠早稲田さんらによる xdvi-17+markpage+toc+printdvi パッチでは、ページ
++  番号リスト(toc)を表示する機能が追加されましたが、tocに表示されるページ番号は
++  実際のページ番号ではなく先頭からの枚数となっていました。
++    本パッチでは、実際のページ番号が表示されるように変更しました。
++
++  2) ページ移動によるtocの自動アップデート
++    'g'キーなどによるページ移動に伴って、tocのスクロールバー移動を自動的に行う
++  ように変更しました。いろいろと細工しましたので、実際に使ってみてください:-)
++
++  3) 一部キー動作の変更
++    'g'キーによる指定枚数への移動を、実際のページ番号への移動としました。これ
++  にともない、'P'キーによる絶対ページ番号を指定する機能を削除し、従来の'g'キー
++  の機能を割り当てました。
++
++○インストールについて
++  本パッチを使用するにあたって以下のファイルが必要です。
++
++        1) xdvi-17.tar.gz
++        2) xdvi-17miyu.patch-beta6
++        3) xdvi-17miyu.beta6-beta.pre7(fj.sources.d)
++        4) xdvi-pl17+markpage+toc+printdvi(fj.sources,fj.comp.texhax)
++        5) 同fix-1(fj.sources.d,fj.comp.texhax)
++        6) 同fix-2(fj.sources,fj.comp.texhax)
++        7) xdvi-17.tasai-ussy.patch(fj.sources.d,fj.comp.texhax)
++           Message-ID: <USSY.93Nov12211358@ayame.int.titech.ac.jp>
++        8) xdvi-17.pagenumber.patch(fj.sources.d)
++           Message-ID: <USSY.93Nov15175604@kisaragi.int.titech.ac.jp>
++
++  (注意)
++    7)の一部(expertモード関係)は、すでに6)で修正されていますのでrejectされても
++  問題ありません。本パッチは8)に対する修正パッチです。
++
++  1)のを展開し 2)〜8)までのパッチをあてたソースがあるディレクトリで、
++        % patch -p2 < xdvi-17.pagenumber-fix.patch
++としてパッチをあててください。
++
++○使用上の注意
++  本パッチで追加された機能は、Use_PAGENUM を Imakefile 中で define/undefine す
++ることによって使用する/しないを切替えることが可能です。
++  また、xdvi-pl17+markpage+toc+printdviにおいて Use_TOC を define していないと
++意味のないものであることに注意してください。Use_TOC を定義せずに Use_PAGENUM 
++を定義した場合、動作の保証はできません。
++
++○変更履歴
++
++Nov.12, 1993
++    Message-ID: <USSY.93Nov12231403@ayame.int.titech.ac.jp>
++    --
++    涙のファーストリリース(T_T)
++    * tocのページ番号を実際のページ番号となるようにした。
++
++Nov.15, 1993
++    Message-ID: <USSY.93Nov15175604@kisaragi.int.titech.ac.jp>
++    --
++    * Imakefileでの些細な間違いを変更
++
++Nov.18, 1993
++    --
++    正式版リリース
++    * 一部キーの動作を変更(追加機能とのバッティングを防ぐため)。
++    * ページ移動後のtoc自動アップデート機能を追加した。
++
++From ussy@int.titech.ac.jp Mon Dec 13 18:58:45 1993
++Newsgroups: fj.comp.texhax,fj.sources.d
++Path: hiromi.fuka.info.waseda.ac.jp!waseda-mail!wnoc-tyo-news!nirvana.cs.titech!cs.titech!is.titech!sys.titech.ac.jp!int.titech.ac.jp!ussy
++From: ussy@int.titech.ac.jp (Takuya Harakawa)
++Subject: BugPatch for Xdvi-17.miyu.path(beta.7)
++Content-Type: text/plain; charset=ISO-2022-JP
++Message-ID: <USSY.93Nov12211358@ayame.int.titech.ac.jp>
++Followup-To: fj.sources.d
++Sender: news@int.titech.ac.jp
++Organization: Tokyo Institute of Tech., Dept. of Intelligence Science, Japan
++Mime-Version: 1.0
++Distribution: fj
++Date: 12 Nov 1993 21:13:58 +0900
++Lines: 188
++Xref: hiromi.fuka.info.waseda.ac.jp fj.comp.texhax:3143 fj.sources.d:1547
++
++
++  はらかわ＠東工大です。
++  fj.comp.texhaxとfj.sources.dのクロスポストです。
++
++  xdvi-17+miyu.patch(beta.7)+markpage+toc+printdvi について、細かな
++バグフィックスを行いました。
++
++  修正した点は以下のとおりです(括弧内は修正した人)。
++
++・ExpertモードでページのMark/UnMarkを行うと死ぬ
++(tasai@int.titech.ac.jp: ASAI Toru)
++
++  ページ番号を表示するList Widgetが作成されていないのに、これをアップ
++デートしようとしているのが原因。アップデート処理をモードに応じてマスク
++するようにした。
++
++・マウスの中/右ボタンによるページ番号リストの選択処理 
++(ussy@int.titech.ac.jp: HARAKAWA Takuya)
++
++  リストの選択位置を単純にマウスのY座標を15で割って計算していたために、
++ページ数が多くなるとインデックスのずれが激しくなってしまう。List Widget
++の内部を参照して、正確なインデックス番号を得られるようにした。
++
++  修正パッチは shell archive してあります。
++  xdvi-17+miyu.patch(beta.7)+markpage+toc+printdvi のソースが展開して
++あるディレクトリで
++             % patch -p2 < xdvi-17.tasai-ussy.patch
++としてパッチをあててください。
++
++From ussy@int.titech.ac.jp Mon Dec 13 18:58:50 1993
++Newsgroups: fj.sources.d,fj.comp.texhax
++Path: hiromi.fuka.info.waseda.ac.jp!waseda-mail!wnoc-tyo-news!cs.titech!is.titech!sys.titech.ac.jp!int.titech.ac.jp!ussy
++From: ussy@int.titech.ac.jp (Takuya Harakawa)
++Subject: Re: BugPatch for Xdvi-17.miyu.path(beta.7)
++In-Reply-To: ussy@int.titech.ac.jp's message of Fri, 12 Nov 1993 12:13:58 GMT
++Content-Type: text/plain; charset=ISO-2022-JP
++Message-ID: <USSY.93Nov15152917@kisaragi.int.titech.ac.jp>
++Followup-To: fj.sources.d
++Sender: news@int.titech.ac.jp
++Organization: Tokyo Institute of Tech., Dept. of Intelligence Science, Japan
++References: <USSY.93Nov12211358@ayame.int.titech.ac.jp>
++Mime-Version: 1.0
++Distribution: fj
++Date: 15 Nov 1993 15:29:16 +0900
++Lines: 26
++Xref: hiromi.fuka.info.waseda.ac.jp fj.sources.d:1548 fj.comp.texhax:3144
++
++
++  はらかわ＠東工大です。
++
++>  はらかわ＠東工大です。
++>  fj.comp.texhaxとfj.sources.dのクロスポストです。
++>
++>  xdvi-17+miyu.patch(beta.7)+markpage+toc+printdvi について、細かな
++>バグフィックスを行いました。
++
++  自己フォローです(^^;
++  パッチを当てたのは...
++
++        xdvi-17+miyu.patch(beta.7)+markpage+toc+printdvi
++
++ではなくて
++
++        xdvi-17+miyu.patch(beta.pre7)+markpage+toc+printdvi
++                                ~~~
++でした。
++  バグフィックスも、改造パッチでも間違えてしまいました。:-(
++  お間違えのないように...
++
++--
++USSY / はらかわ たくや       | Tokyo Institute of Tech.,
++Email: ussy@int.titech.ac.jp | Dept. of Intelligence Science, Japan
++       USSY@Pekin etc...     | Hara Lab.(R1-520) ext.2473 in Nagatsuta
++
++From ussy@int.titech.ac.jp Mon Dec 13 18:59:08 1993
++Newsgroups: fj.sources.d
++Path: hiromi.fuka.info.waseda.ac.jp!waseda-mail!wnoc-tyo-news!cs.titech!is.titech!sys.titech.ac.jp!int.titech.ac.jp!ussy
++From: ussy@int.titech.ac.jp (Takuya Harakawa)
++Subject: UnOfficial Patch for Xdvi-17.miyu.patch(beta.7)
++Content-Type: text/plain; charset=ISO-2022-JP
++Message-ID: <USSY.93Nov12231403@ayame.int.titech.ac.jp>
++Followup-To: fj.sources.d
++Sender: news@int.titech.ac.jp
++Organization: Tokyo Institute of Tech., Dept. of Intelligence Science, Japan
++Mime-Version: 1.0
++Distribution: fj
++Date: 12 Nov 1993 23:14:03 +0900
++Lines: 242
++
++
++  はらかわ＠東工大です
++  xdvi-17+miyu.patch(beta.7)+markpage+toc+printdvi+tasai-ussy に対す
++る改造パッチです。
++
++  画面の右端に表示されているリストは、ページ番号ではなく先頭からの枚
++数が表示されているために、TOCを見ながら目的のページを参照するといっ
++たことができません。
++  これを解消するために、.dviファイルに記述されているページ番号を参照
++してリスト表示するように変更しました(ページの飛び越しなどにも対応で
++きます)。目次のページ番号の関係上、リストに表示される番号が前後する
++ことがありますが御了承ください:-<
++
++[注意] 'g'キーによるページ選択は以前のまま先頭からの枚数となっています。
++
++  改造パッチは shell archive してあります。
++  xdvi-17+miyu.patch(beta.7)+markpage+toc+printdvi+tasai-ussy のソー
++スが展開してあるディレクトリで
++             % patch -p2 < xdvi-17.page.patch
++としてパッチをあててください。
++
++From ussy@int.titech.ac.jp Mon Dec 13 18:59:28 1993
++Newsgroups: fj.sources.d
++Path: hiromi.fuka.info.waseda.ac.jp!waseda-mail!wnoc-tyo-news!cs.titech!is.titech!sys.titech.ac.jp!int.titech.ac.jp!ussy
++From: ussy@int.titech.ac.jp (Takuya Harakawa)
++Subject: an unofficial patch for Xdvi-17.miyu.patch(beta.pre7)
++Content-Type: text/plain; charset=ISO-2022-JP
++Message-ID: <USSY.93Nov15175604@kisaragi.int.titech.ac.jp>
++Sender: news@int.titech.ac.jp
++Organization: Tokyo Institute of Tech., Dept. of Intelligence Science, Japan
++Mime-Version: 1.0
++Distribution: fj
++Date: 15 Nov 1993 17:56:04 +0900
++Lines: 251
++
++
++  はらかわ＠東工大です
++
++  先日ポストした Xdvi-17 改造パッチに間違いが発見されましたので、再
++度ポストします(^^;
++  先日のパッチは破棄して、今回のパッチをあて直してください。
++ (変更点は Imakefile の一部です... Thanks to miura@cs.titech.ac.jp)
++
++---
++
++  画面の右端に表示されているリストは、ページ番号ではなく先頭からの枚
++数が表示されているために、TOCを見ながら目的のページを参照するといっ
++たことができません。
++  これを解消するために、.dviファイルに記述されているページ番号を参照
++してリスト表示するように変更しました(ページの飛び越しなどにも対応で
++きます)。目次のページ番号の関係上、リストに表示される番号が前後する
++ことがありますが御了承ください:-<
++
++[注意] 'g'キーによるページ選択は以前のまま先頭からの枚数となっています。
++
++  改造パッチは shell archive してあります。
++  xdvi-17+miyu.patch(beta.pre7)+markpage+toc+printdvi+tasai-ussy
++のソースが展開してあるディレクトリで
++             % patch -p2 < xdvi-17.page.patch
++としてパッチをあててください。
++
++From ussy@int.titech.ac.jp Mon Dec 13 18:59:32 1993
++Newsgroups: fj.sources.d
++Path: hiromi.fuka.info.waseda.ac.jp!waseda-mail!wnoc-tyo-news!cs.titech!is.titech!sys.titech.ac.jp!int.titech.ac.jp!ussy
++From: ussy@int.titech.ac.jp (Takuya Harakawa)
++Subject: Re: an unofficial patch for Xdvi-17.miyu.patch(beta.pre7)
++In-Reply-To: ussy@int.titech.ac.jp's message of Mon, 15 Nov 1993 08:56:04 GMT
++Content-Type: text/plain; charset=ISO-2022-JP
++Message-ID: <USSY.93Nov15202826@kisaragi.int.titech.ac.jp>
++Lines: 31
++Sender: news@int.titech.ac.jp
++Fcc: |/usr/local/lib/mh/rcvstore +AuthorCopy
++Organization: Tokyo Institute of Tech., Dept. of Intelligence Science, Japan
++References: <USSY.93Nov15175604@kisaragi.int.titech.ac.jp>
++Mime-Version: 1.0
++Distribution: fj
++Date: 15 Nov 1993 20:28:26 +0900
++
++
++  またまた はらかわ＠東工大です
++
++>  先日ポストした Xdvi-17 改造パッチに間違いが発見されましたので、再
++>度ポストします(^^;
++>  先日のパッチは破棄して、今回のパッチをあて直してください。
++> (変更点は Imakefile の一部です... Thanks to miura@cs.titech.ac.jp)
++
++  とは書いたものの、すでにパッチを当ててしまった方がいらっしゃるよう
++ですので、そのような方のために変更部分だけポストします。
++
++  実際に変更した部分は Imakefile の 部分で...
++
++    #define Use_PAGENUM
++    PAGE_DEFS=-DPAGENUM
++    #else
++    ...
++
++となっている部分を、
++
++    #ifdef Use_PAGENUM	         <-- 変更点
++    PAGE_DEFS=-DPAGENUM
++    #else
++    ...
++
++としただけです(情けないこってす T_T)。
++
++--
++USSY / はらかわ たくや       | Tokyo Institute of Tech.,
++Email: ussy@int.titech.ac.jp | Dept. of Intelligence Science, Japan
++       USSY@Pekin etc...     | Hara Lab.(R1-520) ext.2473 in Nagatsuta
++
++From ussy@int.titech.ac.jp Mon Dec 13 18:59:55 1993
++Newsgroups: fj.comp.texhax,fj.sources.d
++Path: hiromi.fuka.info.waseda.ac.jp!waseda-mail!wnoc-tyo-news!cs.titech!is.titech!sys.titech.ac.jp!int.titech.ac.jp!ussy
++From: ussy@int.titech.ac.jp (Takuya Harakawa)
++Subject: Xdvi-17 pagenumber patch fix
++Content-Type: text/plain; charset=ISO-2022-JP
++Message-ID: <USSY.93Nov18065838@ayame.int.titech.ac.jp>
++Followup-To: fj.sources.d
++Lines: 469
++Sender: news@int.titech.ac.jp
++Fcc: |/usr/local/lib/mh/rcvstore +AuthorCopy
++Organization: Tokyo Institute of Tech., Dept. of Intelligence Science, Japan
++Mime-Version: 1.0
++Distribution: fj
++Date: 18 Nov 1993 06:58:38 +0900
++Xref: hiromi.fuka.info.waseda.ac.jp fj.comp.texhax:3157 fj.sources.d:1556
++
++
++  はらかわ＠東工大です
++
++  xdvi-17+miyu-patcj+markpage+toc+printdvi+tasai-ussy+pagenumber(^^;
++のfix & version upパッチをお送りします。
++
++  前回 流したものにさらにパッチをあててください。

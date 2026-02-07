@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+LOGDIR=/var/log/pvpgn
+PIDDIR=/var/run/pvpgn
+
+rm -Rf ${PIDDIR}
+
+echo "If you wish to delete pvpgn data and log files, "
+echo "remove '%%PVPGN_DIR%%' and '${LOGDIR}' directories."
+
+exit 0

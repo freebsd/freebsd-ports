@@ -1,0 +1,5 @@
+TIMESTAMP = 1492227072
+SHA256 (jxrlib_1.1.orig.tar.gz) = c7287b86780befa0914f2eeb8be2ac83e672ebd4bd16dc5574a36a59d9708303
+SIZE (jxrlib_1.1.orig.tar.gz) = 287517
+SHA256 (jxrlib_1.1-6.debian.tar.xz) = b8263001fbe8c871dbe3557926f29dfb25aa13dd578a9b4584fe21011a526d58
+SIZE (jxrlib_1.1-6.debian.tar.xz) = 24184

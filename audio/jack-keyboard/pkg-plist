@@ -1,0 +1,4 @@
+bin/jack-keyboard
+share/applications/jack-keyboard.desktop
+share/man/man1/jack-keyboard.1.gz
+share/pixmaps/jack-keyboard.png

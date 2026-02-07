@@ -1,0 +1,31 @@
+*** rtfreadr.c	Thu Mar  6 00:06:26 1997
+--- rtfreadr.c.fixed	Wed Mar 24 15:51:37 2004
+***************
+*** 107,119 ****
+                          {
+                              if (ch < 'a' || ch > 'f')
+                                  return ecInvalidHex;
+!                             b += (char) ch - 'a';
+                          }
+                          else
+                          {
+                              if (ch < 'A' || ch > 'F')
+                                  return ecInvalidHex;
+!                             b += (char) ch - 'A';
+                          }
+                      }
+                      cNibble--;
+--- 107,119 ----
+                          {
+                              if (ch < 'a' || ch > 'f')
+                                  return ecInvalidHex;
+!                             b += (char) ch - 'a'+10;
+                          }
+                          else
+                          {
+                              if (ch < 'A' || ch > 'F')
+                                  return ecInvalidHex;
+!                             b += (char) ch - 'A'+10;
+                          }
+                      }
+                      cNibble--;

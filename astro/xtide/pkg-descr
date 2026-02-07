@@ -1,0 +1,3 @@
+The xtide program predicts and displays tides.  It is capable of
+producing output in a variety of dynamic and static formats, and has
+extensions for X, plain ASCII, and HTML.

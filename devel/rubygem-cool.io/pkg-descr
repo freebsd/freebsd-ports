@@ -1,0 +1,2 @@
+Cool.io is an event library for Ruby, built on the libev event library which
+provides a cross-platform interface to high performance system calls.

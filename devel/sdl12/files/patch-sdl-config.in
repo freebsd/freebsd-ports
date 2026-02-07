@@ -1,0 +1,15 @@
+#
+# Temporary hack to provide iconv include directory is well
+# (sdl explicitly includes iconv.h)
+#
+--- sdl-config.in.orig	Thu Aug 31 03:54:26 2006
++++ sdl-config.in	Thu Aug 31 03:54:39 2006
+@@ -45,7 +45,7 @@
+       echo @SDL_VERSION@
+       ;;
+     --cflags)
+-      echo -I@includedir@/SDL @SDL_CFLAGS@
++      echo -I@includedir@/SDL -I@includedir@ @SDL_CFLAGS@
+       ;;
+ @ENABLE_SHARED_TRUE@    --libs)
+ @ENABLE_SHARED_TRUE@      echo -L@libdir@ @SDL_RLD_FLAGS@ @SDL_LIBS@

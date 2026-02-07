@@ -1,0 +1,13 @@
+bin/jp
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/docs/bar_chart.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/bar_chart_full_escape.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/hist2d_full_escape.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/line_chart.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/scatter_plot.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/sin.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eth.csv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mvrnorm.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sin.csv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sin.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp-time.json

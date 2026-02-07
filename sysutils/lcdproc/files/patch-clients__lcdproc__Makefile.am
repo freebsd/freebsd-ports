@@ -1,0 +1,10 @@
+--- ./clients/lcdproc/Makefile.am.orig	Fri Oct  6 09:02:46 2006
++++ ./clients/lcdproc/Makefile.am	Mon Oct 16 22:26:06 2006
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-sysconf_DATA = lcdproc.conf
++sysconf_DATA =
+ 
+ bin_PROGRAMS = lcdproc
+ 

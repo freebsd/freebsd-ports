@@ -1,0 +1,5 @@
+pgtop was inspired by mytop (http://jeremy.zawodny.com/mysql/mytop/),
+which in turn was inspired by the system monitoring tool top.
+pgtop will connect to a PostgreSQL server and periodically
+run queries against the pg_stat* relations and attempt
+to summarize the information from them in a useful format.

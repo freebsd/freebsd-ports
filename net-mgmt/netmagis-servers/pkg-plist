@@ -1,0 +1,9 @@
+sbin/mkdhcp
+sbin/mkmroute
+sbin/mksmtpf
+sbin/mkzones
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.bind
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.dhcp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.mroute
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.smtpf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pf.conf.sample

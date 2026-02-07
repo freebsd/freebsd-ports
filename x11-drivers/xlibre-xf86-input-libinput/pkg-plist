@@ -1,0 +1,4 @@
+include/xorg/libinput-properties.h
+%%MODULEDIR%%/input/libinput_drv.so
+share/man/man4/libinput.4x.gz
+share/X11/xorg.conf.d/40-libinput.conf

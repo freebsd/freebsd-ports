@@ -1,0 +1,53 @@
+[
+{ type: install
+  message: <<EOM
+Wazuh Agent was installed
+
+1) Copy /etc/locatime to /var/ossec/etc directory
+
+   # cp /etc/localtime /var/ossec/etc
+
+2) You must edit /var/ossec/etc/ossec.conf.sample for your setup and rename/copy
+   it to ossec.conf
+
+   Take a look wazuh configuration at the following url:
+
+   https://documentation.wazuh.com/current/user-manual/index.html
+
+3) Move /var/ossec/etc/client.keys.sample to /var/ossec/etc/client.keys. This
+   file is used to store agent credentials
+
+   # mv /var/ossec/etc/client.keys.sample /var/ossec/etc/client.keys
+
+4) You can find additional useful files installed at
+
+  # /var/ossec/packages_files/agent_installation_scripts
+
+5) FreeBSD SCA files are installed by default to the following directory:
+
+   # /var/ossec/packages_files/agent_installation_scripts/sca/freebsd
+
+   For more information about FreeBSD SCA updates take a look at:
+
+   https://github.com/alonsobsd/wazuh-freebsd
+
+6) The sysctl 'kern.hostuuid' is used as a serial number. If you are in a jail,
+    you should have at least started the 'hostid' rc script to uniquely identify
+    this device.
+
+7) Add Wazuh agent to /etc/rc.conf
+
+  # sysrc wazuh_agent_enable="YES"
+
+  or
+
+  # service wazuh-agent enable
+
+8) Start Wazuh agent
+
+  # service wazuh-agent start
+
+8) Enjoy it ;)
+EOM
+}
+]

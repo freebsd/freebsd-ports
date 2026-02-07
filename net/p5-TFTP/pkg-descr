@@ -1,0 +1,2 @@
+TFTP is a class implementing a simple
+TFTP client in Perl as described in RFC783.

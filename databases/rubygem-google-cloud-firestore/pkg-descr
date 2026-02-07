@@ -1,0 +1,5 @@
+Cloud Firestore is a NoSQL document database built for automatic scaling, high
+performance, and ease of application development. While the Cloud Firestore
+interface has many of the same features as traditional databases, as a NoSQL
+database it differs from them in the way it describes relationships between data
+objects.

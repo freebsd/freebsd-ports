@@ -1,0 +1,184 @@
+--- Makefile.orig	Sat Dec 22 12:00:30 2001
++++ Makefile	Sat Dec 22 12:20:30 2001
+@@ -39,6 +39,9 @@
+ 	misc.o \
+ 	md5/md5.o
+ 
++OBJS += pop_db.o
++CFLAGS += -DPOPB4SMTP -DVALIDTIME=600
++
+ all: $(PROJ)
+ 
+ popa3d: $(OBJS)
+--- pop_auth.c.orig	Thu Sep  6 01:52:35 2001
++++ pop_auth.c	Sat Dec 22 17:41:02 2001
+@@ -14,6 +14,7 @@
+ #if POP_VIRTUAL
+ #include "virtual.h"
+ #endif
++#include "pop_db.h"
+ 
+ static char *pop_user, *pop_pass;
+ 
+@@ -75,15 +76,17 @@
+ #if POP_VIRTUAL
+ 	if (virtual_domain) {
+ 		syslog(result == AUTH_OK ? SYSLOG_PRI_LO : SYSLOG_PRI_HI,
+-			"Authentication %s for %s@%s",
++			"Authentication %s for %s@%s from %s",
+ 			result == AUTH_OK ? "passed" : "failed",
+ 			user ? user : "UNKNOWN USER",
+-			virtual_domain);
++			virtual_domain,
++			client_addr(1) );
+ 		return;
+ 	}
+ #endif
+ 	syslog(result == AUTH_OK ? SYSLOG_PRI_LO : SYSLOG_PRI_HI,
+-		"Authentication %s for %s",
++		"Authentication %s for %s from %s",
+ 		result == AUTH_OK ? "passed" : "failed",
+-		user ? user : "UNKNOWN USER");
++		user ? user : "UNKNOWN USER",
++		client_addr(1));
+ }
+--- pop_db.c.orig	Sat Dec 22 15:55:37 2001
++++ pop_db.c	Sat Dec 22 17:41:50 2001
+@@ -0,0 +1,107 @@
++
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
++#include <sys/stat.h>
++
++#ifdef POPB4SMTP
++#include <fcntl.h>
++#include <db.h>
++#include <time.h>
++#include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
++#endif
++
++#include "pop_db.h"
++
++int log_error(char *s);
++
++
++/* Function from G.Glendown Dec 2000 */
++
++char addr_buf[256];
++
++char *client_addr(int fd)
++{
++	struct sockaddr sa;
++	struct sockaddr_in *sockin = (struct sockaddr_in *) (&sa);
++	int length = sizeof(sa);
++
++	strcpy(addr_buf,"0.0.0.0");
++
++	if (fd == -1) {
++		return addr_buf;
++	}
++
++	if (getpeername(fd, &sa, &length) < 0) {
++		return addr_buf;
++	}
++
++	strcpy(addr_buf, (char *)inet_ntoa(sockin->sin_addr));
++	return addr_buf;
++}
++
++#ifdef POPB4SMTP
++
++/* Function written by Dirk Meyer */
++
++void write_db_entry(void)
++{
++	DB *db;
++	DBT key, data;
++	char ts[16];
++	int ret, fd, st;
++	time_t tv;
++
++	/* create is not set, this is intended, 
++           function will be ignored, if database was not created */
++	db = dbopen("/etc/mail/popauth.db", O_RDWR, 0644, DB_HASH, NULL);
++	if ( db == NULL )
++		return;
++
++	/* lock all changes */
++	fd = db->fd(db);
++	if ( fd == -1 ) {
++		st = -1;
++		log_error( "db->fd() failed" );
++	} else {
++		st = flock(fd, LOCK_EX);
++	}
++
++	if (st == 0) {
++		/* generate entry */
++		key.data = client_addr(1);
++		key.size = strlen(key.data);
++		sprintf(ts, "%lu", (long)time(NULL));
++		data.data = ts;
++		data.size = strlen(ts);
++		db->put(db, &key, &data, 0);
++		db->sync(db,0);
++
++		/* cleanup old entrys */
++		ret = db->seq(db, &key, &data, R_FIRST);
++		while (!ret) {
++			data.size = data.size < 16 ? data.size : 15;
++			strncpy(ts,data.data, data.size);
++			ts[data.size] = 0;
++			tv = atol(ts);
++			if ((tv+VALIDTIME) < time(NULL)) {
++				db->del(db, &key, 0);
++				db->sync(db, 0);
++				/* start over */
++				ret = db->seq(db, &key, &data, R_FIRST);
++				continue;
++			}
++			ret = db->seq(db, &key, &data, R_NEXT);
++		}
++		st = flock(fd, LOCK_UN);
++	} else {
++		log_error( "lock() failed" );
++	}
++	db->close(db);
++}
++
++#endif
++
+--- pop_db.h.orig	Sat Dec 22 15:55:37 2001
++++ pop_db.h	Sat Dec 22 15:55:37 2001
+@@ -0,0 +1,4 @@
++
++char *client_addr(int fd);
++void write_db_entry(void);
++
+--- pop_root.c.orig	Sat Sep  8 14:58:32 2001
++++ pop_root.c	Sat Dec 22 17:27:37 2001
+@@ -32,6 +32,9 @@
+ #if POP_VIRTUAL
+ #include "virtual.h"
+ #endif
++#ifdef POPB4SMTP
++#include "pop_db.h"
++#endif
+ 
+ #if !VIRTUAL_ONLY
+ extern struct passwd *auth_userpass(char *user, char *pass, int *known);
+@@ -151,6 +154,10 @@
+ 	if (!*pass) return AUTH_FAILED;
+ 	memset(pass, 0, strlen(pass));
+ 	if (!*user) return AUTH_FAILED;
++
++#ifdef POPB4SMTP
++	write_db_entry();
++#endif
+ 
+ 	if (set_user(pw)) return AUTH_FAILED;
+ 

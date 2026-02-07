@@ -1,0 +1,9 @@
+lib/libswt-atk-gtk-%%SWT_VERSION%%.so
+lib/libswt-awt-gtk-%%SWT_VERSION%%.so
+%%CAIRO%%lib/libswt-cairo-gtk-%%SWT_VERSION%%.so
+lib/libswt-glx-gtk-%%SWT_VERSION%%.so
+lib/libswt-gtk-%%SWT_VERSION%%.so
+lib/libswt-pi3-gtk-%%SWT_VERSION%%.so
+lib/libswt-webkit-gtk-%%SWT_VERSION%%.so
+%%WEBKIT%%lib/libswt-webkit2extension-gtk-%%SWT_VERSION%%.so
+%%JAVAJARDIR%%/swt.jar

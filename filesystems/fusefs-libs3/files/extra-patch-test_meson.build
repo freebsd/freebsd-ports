@@ -1,0 +1,15 @@
+--- test/meson.build.orig	2021-09-06 12:45:29 UTC
++++ test/meson.build
+@@ -7,9 +7,9 @@ foreach prog: [ 'test_write_cache', 'test_setattr' ]
+                      dependencies: thread_dep,
+                      install: false)
+ endforeach
+-td += executable('test_syscalls', 'test_syscalls.c',
+-                 include_directories: include_dirs,
+-                 install: false)
++#td += executable('test_syscalls', 'test_syscalls.c',
++#                 include_directories: include_dirs,
++#                 install: false)
+ td += executable('readdir_inode', 'readdir_inode.c',
+                  include_directories: include_dirs,
+                  install: false)

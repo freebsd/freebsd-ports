@@ -1,0 +1,235 @@
+--- wikitools/api.py.orig	2010-02-20 21:21:28 UTC
++++ wikitools/api.py
+@@ -15,11 +15,11 @@
+ # You should have received a copy of the GNU General Public License
+ # along with wikitools.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-import urllib2
++import urllib.request, urllib.error, urllib.parse
+ import re
+ import time
+ import sys
+-from urllib import quote_plus, _is_unicode
++from urllib.parse import quote_plus
+ try:
+ 	from poster.encode import multipart_encode
+ 	canupload = True
+@@ -32,7 +32,7 @@ except:
+ 	import simplejson as json
+ try:
+ 	import gzip
+-	import StringIO
++	import io
+ except:
+ 	gzip = False
+ 
+@@ -80,8 +80,8 @@ class APIRequest:
+ 			self.headers['Accept-Encoding'] = 'gzip'
+ 		self.wiki = wiki
+ 		self.response = False
+-		self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(wiki.cookies))
+-		self.request = urllib2.Request(self.wiki.apibase, self.encodeddata, self.headers)
++		self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(wiki.cookies))
++		self.request = urllib.request.Request(self.wiki.apibase, self.encodeddata, self.headers)
+ 		
+ 	def setMultipart(self, multipart=True):
+ 		"""Enable multipart data transfer, required for file uploads."""
+@@ -125,7 +125,7 @@ class APIRequest:
+ 			self.encodeddata = urlencode(self.data, 1)
+ 			self.headers['Content-Length'] = len(self.encodeddata)
+ 			self.headers['Content-Type'] = "application/x-www-form-urlencoded"
+-		self.request = urllib2.Request(self.wiki.apibase, self.encodeddata, self.headers)
++		self.request = urllib.request.Request(self.wiki.apibase, self.encodeddata, self.headers)
+ 	
+ 	def query(self, querycontinue=True):
+ 		"""Actually do the query here and return usable stuff
+@@ -152,14 +152,14 @@ class APIRequest:
+ 		total = initialdata
+ 		res = initialdata
+ 		params = self.data
+-		numkeys = len(res['query-continue'].keys())
++		numkeys = len(list(res['query-continue'].keys()))
+ 		while numkeys > 0:
+ 			key1 = ''
+ 			key2 = ''
+-			possiblecontinues = res['query-continue'].keys()
++			possiblecontinues = list(res['query-continue'].keys())
+ 			if len(possiblecontinues) == 1:
+ 				key1 = possiblecontinues[0]
+-				keylist = res['query-continue'][key1].keys()
++				keylist = list(res['query-continue'][key1].keys())
+ 				if len(keylist) == 1:
+ 					key2 = keylist[0]
+ 				else:
+@@ -171,7 +171,7 @@ class APIRequest:
+ 						key2 = keylist[0]
+ 			else:
+ 				for posskey in possiblecontinues:
+-					keylist = res['query-continue'][posskey].keys()
++					keylist = list(res['query-continue'][posskey].keys())
+ 					for key in keylist:
+ 						if len(key) < 11:
+ 							key1 = posskey
+@@ -181,7 +181,7 @@ class APIRequest:
+ 						break
+ 				else:
+ 					key1 = possiblecontinues[0]
+-					key2 = res['query-continue'][key1].keys()[0]
++					key2 = list(res['query-continue'][key1].keys())[0]
+ 			if isinstance(res['query-continue'][key1][key2], int):
+ 				cont = res['query-continue'][key1][key2]
+ 			else:
+@@ -198,7 +198,7 @@ class APIRequest:
+ 			for type in possiblecontinues:
+ 				total = resultCombine(type, total, res)
+ 			if 'query-continue' in res:
+-				numkeys = len(res['query-continue'].keys())
++				numkeys = len(list(res['query-continue'].keys()))
+ 			else:
+ 				numkeys = 0
+ 		return total
+@@ -216,11 +216,11 @@ class APIRequest:
+ 				if gzip:
+ 					encoding = self.response.get('Content-encoding')
+ 					if encoding in ('gzip', 'x-gzip'):
+-						data = gzip.GzipFile('', 'rb', 9, StringIO.StringIO(data.read()))
+-			except catcherror, exc:
++						data = gzip.GzipFile('', 'rb', 9, io.StringIO(data.read()))
++			except catcherror as exc:
+ 				errname = sys.exc_info()[0].__name__
+ 				errinfo = exc
+-				print("%s: %s trying request again in %d seconds" % (errname, errinfo, self.sleep))
++				print(("%s: %s trying request again in %d seconds" % (errname, errinfo, self.sleep)))
+ 				time.sleep(self.sleep+0.5)
+ 				self.sleep+=5
+ 		return data
+@@ -234,10 +234,10 @@ class APIRequest:
+ 				content = None
+ 				if isinstance(parsed, dict):
+ 					content = APIResult(parsed)
+-					content.response = self.response.items()
++					content.response = list(self.response.items())
+ 				elif isinstance(parsed, list):
+ 					content = APIListResult(parsed)
+-					content.response = self.response.items()
++					content.response = list(self.response.items())
+ 				else:
+ 					content = parsed
+ 				if 'error' in content:
+@@ -246,7 +246,7 @@ class APIRequest:
+ 						lagtime = int(re.search("(\d+) seconds", content['error']['info']).group(1))
+ 						if lagtime > self.wiki.maxwaittime:
+ 							lagtime = self.wiki.maxwaittime
+-						print("Server lag, sleeping for "+str(lagtime)+" seconds")
++						print(("Server lag, sleeping for "+str(lagtime)+" seconds"))
+ 						maxlag = True
+ 						time.sleep(int(lagtime)+0.5)
+ 						return False
+@@ -254,7 +254,7 @@ class APIRequest:
+ 				data.seek(0)
+ 				if "MediaWiki API is not enabled for this site. Add the following line to your LocalSettings.php<pre><b>$wgEnableAPI=true;</b></pre>" in data.read():
+ 					raise APIDisabled("The API is not enabled on this site")
+-				print "Invalid JSON, trying request again"
++				print("Invalid JSON, trying request again")
+ 				# FIXME: Would be nice if this didn't just go forever if its never going to work
+ 				return False
+ 		return content
+@@ -276,7 +276,7 @@ def resultCombine(type, old, new):
+ 	if type in new['query']: # Basic list, easy
+ 		ret['query'][type].extend(new['query'][type])
+ 	else: # Else its some sort of prop=thing and/or a generator query
+-		for key in new['query']['pages'].keys(): # Go through each page
++		for key in list(new['query']['pages'].keys()): # Go through each page
+ 			if not key in old['query']['pages']: # if it only exists in the new one
+ 				ret['query']['pages'][key] = new['query']['pages'][key] # add it to the list
+ 			else:
+@@ -300,7 +300,7 @@ def urlencode(query,doseq=0):
+     """
+     if hasattr(query,"items"):
+         # mapping objects
+-        query = query.items()
++        query = list(query.items())
+     else:
+         # it's a bother at times that strings and string-like objects are
+         # sequences...
+@@ -315,7 +315,7 @@ def urlencode(query,doseq=0):
+             # preserved for consistency
+         except TypeError:
+             ty,va,tb = sys.exc_info()
+-            raise TypeError, "not a valid non-string sequence or mapping object", tb
++            raise TypeError("not a valid non-string sequence or mapping object").with_traceback(tb)
+ 
+     l = []
+     if not doseq:
+--- wikitools/wiki.py.orig	2010-04-14 21:48:10 UTC
++++ wikitools/wiki.py
+@@ -15,15 +15,15 @@
+ # You should have received a copy of the GNU General Public License
+ # along with wikitools.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-import cookielib
+-import api
+-import urllib
++import http.cookiejar
++from . import api
++import urllib.request, urllib.parse, urllib.error
+ import re
+ import time
+ import os
+-from urlparse import urlparse
++from urllib.parse import urlparse
+ try:
+-	import cPickle as pickle
++	import pickle as pickle
+ except:
+ 	import pickle
+ 
+@@ -112,10 +112,10 @@ class Wiki:
+ 			for ns in nsaliasdata:
+ 				self.NSaliases[ns['*']] = ns['id']
+ 		if not 'writeapi' in sidata:
+-			print "WARNING: Write-API not enabled, you will not be able to edit"
++			print("WARNING: Write-API not enabled, you will not be able to edit")
+ 		version = re.search("\d\.(\d\d)", self.siteinfo['generator'])
+ 		if not int(version.group(1)) >= 13: # Will this even work on 13?
+-			print "WARNING: Some features may not work on older versions of MediaWiki"
++			print("WARNING: Some features may not work on older versions of MediaWiki")
+ 		return self
+ 	
+ 	def login(self, username, password=False, remember=False, force=False, verify=True, domain=None):
+@@ -145,10 +145,10 @@ class Wiki:
+ 			password = getpass()
+ 		def loginerror(info):
+ 			try:
+-				print info['login']['result']
++				print(info['login']['result'])
+ 			except:
+-				print info['error']['code']
+-				print info['error']['info']
++				print(info['error']['code'])
++				print(info['error']['info'])
+ 			return False
+ 		data = {
+ 			"action" : "login",
+@@ -286,11 +286,11 @@ class Wiki:
+ class CookiesExpired(WikiError):
+ 	"""Cookies are expired, needs to be an exception so login() will use the API instead"""
+ 
+-class WikiCookieJar(cookielib.FileCookieJar):
++class WikiCookieJar(http.cookiejar.FileCookieJar):
+ 	def save(self, site, filename=None, ignore_discard=False, ignore_expires=False):
+ 		if not filename:
+ 			filename = self.filename
+-		old_umask = os.umask(0077)
++		old_umask = os.umask(0o077)
+ 		f = open(filename, 'w')
+ 		f.write('')
+ 		content = ''
+@@ -325,6 +325,6 @@ class WikiCookieJar(cookielib.FileCookieJar):
+ 			if not ignore_expires and cook.is_expired:
+ 				continue
+ 			self.set_cookie(cook)
+-		exec sitedata
++		exec(sitedata)
+ 		f.close()
+ 	

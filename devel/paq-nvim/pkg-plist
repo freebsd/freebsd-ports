@@ -1,0 +1,3 @@
+%%DATADIR%%/doc/paq-nvim.txt
+%%DATADIR%%/doc/tags
+%%DATADIR%%/lua/paq.lua

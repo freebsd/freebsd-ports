@@ -1,0 +1,20 @@
+--- Makefile.orig	Sun Oct 26 16:23:22 2003
++++ Makefile	Thu Nov 20 01:44:55 2003
+@@ -31,14 +31,11 @@
+ 
+ # Installaton targets
+ install: check-config directories
+-	install -m 555 html2wml.cgi $(BINDIR)/html2wml
+-	install -m 444 doc/html2wml.man $(MAN1DIR)/html2wml.1 
+-	install -m 444 COPYING INSTALL NEWS NOTES README TODO ChangeLog $(DOCDIR) 
+-	make -C t/ install DOCDIR=$(DOCDIR) 
+-	make -C doc/ install DOCDIR=$(DOCDIR)
++	${BSD_INSTALL_SCRIPT} html2wml.cgi $(BINDIR)/html2wml
++	${BSD_INSTALL_MAN} doc/html2wml.man $(MAN1DIR)/html2wml.1
+ 
+ installcgi: check-config
+-	install -m 555 html2wml.cgi $(CGIDIR)
++	${BSD_INSTALL_SCRIPT} html2wml.cgi $(CGIDIR)
+ 
+ uninstall: 
+ 	rm -f $(BINDIR)/html2wml

@@ -1,0 +1,16 @@
+bin/r2dtmf_detect
+bin/r2test
+@sample etc/r2proto.conf.sample
+@sample etc/r2test.conf.sample
+include/openr2.h
+include/openr2/r2chan.h
+include/openr2/r2context.h
+include/openr2/r2log.h
+include/openr2/r2proto.h
+include/openr2/r2utils.h
+lib/libopenr2.a
+lib/libopenr2.so
+lib/libopenr2.so.3
+lib/libopenr2.so.3.1.2
+share/man/man5/r2test.conf.5.gz
+share/man/man8/r2test.8.gz

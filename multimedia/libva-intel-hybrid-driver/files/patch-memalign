@@ -1,0 +1,102 @@
+memalign is Linux-specific, so use C11 aligned_alloc instead
+
+In file included from decode_hybrid_vp9.cpp:68:
+In file included from ./decode_hybrid_vp9.h:42:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+
+intel_hybrid_hostvld_vp9.cpp:428:42: error: use of undeclared identifier 'memalign'
+            (PINTEL_HOSTVLD_VP9_NEIGHBOR)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwSize);
+                                         ^
+intel_hybrid_hostvld_vp9.cpp:433:9: error: use of undeclared identifier 'memalign'
+        VP9_REALLOCATE_ABOVE_CTX_BUFFER(pFrameInfo->EntropyContextAbove.pu8Buffer, dwSize);
+        ^
+intel_hybrid_hostvld_vp9.cpp:91:31: note: expanded from macro 'VP9_REALLOCATE_ABOVE_CTX_BUFFER'
+    pAboveCtxBuffer = (PUINT8)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, size); \
+                              ^
+intel_hybrid_hostvld_vp9.cpp:448:40: error: use of undeclared identifier 'memalign'
+        pFrameInfo->ModeInfo.pBuffer = memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE,
+                                       ^
+intel_hybrid_hostvld_vp9.cpp:457:9: error: use of undeclared identifier 'memalign'
+        VP9_REALLOCATE_HOSTVLD_1D_BUFFER_UINT8(pFrameState->pLastSegIdBuf, dwSize);
+        ^
+intel_hybrid_hostvld_vp9.cpp:99:43: note: expanded from macro 'VP9_REALLOCATE_HOSTVLD_1D_BUFFER_UINT8'
+    (pHostvldBuffer)->pu8Buffer = (PUINT8)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwBufferSize); \
+                                          ^
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+intel_hybrid_debug_dump.cpp:169:20: error: use of undeclared identifier 'memalign'
+     ptr = (char *)memalign(alignment, tmp_size);
+                   ^
+
+--- src/vp9hdec/decode_hybrid_vp9.h.orig	2016-09-07 23:36:28 UTC
++++ src/vp9hdec/decode_hybrid_vp9.h
+@@ -39,8 +39,6 @@
+ #include "intel_hybrid_hostvld_vp9.h"
+ #include "intel_hybrid_common_vp9.h"
+ 
+-#include <malloc.h>
+-
+ #define INTEL_HYBRID_VP9_PAGE_SIZE       0x1000
+ 
+ #define INTEL_HYBRID_VP9_KEY_FRAME       0
+--- src/vp9hdec/intel_hybrid_debug_dump.cpp.orig	2016-09-07 23:36:28 UTC
++++ src/vp9hdec/intel_hybrid_debug_dump.cpp
+@@ -34,8 +34,6 @@
+ #include <errno.h>
+ #include <stdlib.h>
+ 
+-#include <malloc.h>
+-
+ static int intel_hybrid_createfile(
+     int		*fd,
+     const char           *lpFileName,
+@@ -166,7 +164,7 @@ char *intel_alloc_zero_aligned_memory(uint32_t size, u
+      size_t tmp_size;
+ 
+      tmp_size = ALIGN(size, alignment);
+-     ptr = (char *)memalign(alignment, tmp_size);
++     ptr = (char *)aligned_alloc(alignment, tmp_size);
+ 
+      if (ptr) {
+          memset(ptr, 0, tmp_size);
+--- src/vp9hdec/intel_hybrid_hostvld_vp9.cpp.orig	2016-09-07 23:36:28 UTC
++++ src/vp9hdec/intel_hybrid_hostvld_vp9.cpp
+@@ -88,7 +88,7 @@ do {                                                  
+ #define VP9_REALLOCATE_ABOVE_CTX_BUFFER(pAboveCtxBuffer, size) \
+ do {                                                           \
+     VP9_ALIGNED_FREE_MEMORY(pAboveCtxBuffer);                                     \
+-    pAboveCtxBuffer = (PUINT8)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, size); \
++    pAboveCtxBuffer = (PUINT8)aligned_alloc(INTEL_HOSTVLD_VP9_PAGE_SIZE, size); \
+ } while(0)
+ 
+ #define VP9_REALLOCATE_HOSTVLD_1D_BUFFER_UINT8(pHostvldBuffer, dwBufferSize)    \
+@@ -96,7 +96,7 @@ do                                                    
+ {                                                                               \
+     VP9_ALIGNED_FREE_MEMORY((pHostvldBuffer)->pu8Buffer);                       \
+     (pHostvldBuffer)->dwSize = dwBufferSize;                                    \
+-    (pHostvldBuffer)->pu8Buffer = (PUINT8)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwBufferSize); \
++    (pHostvldBuffer)->pu8Buffer = (PUINT8)aligned_alloc(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwBufferSize); \
+ } while (0)
+ 
+ VAStatus Intel_HostvldVp9_Execute_MT (
+@@ -425,7 +425,7 @@ VAStatus Intel_HostvldVp9_PreParser (PVOID pVp9FrameSt
+         dwSize = dwNumAboveCtx * sizeof(*pFrameInfo->pContextAbove);
+         VP9_ALIGNED_FREE_MEMORY(pFrameInfo->pContextAbove);
+         pFrameInfo->pContextAbove =
+-            (PINTEL_HOSTVLD_VP9_NEIGHBOR)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwSize);
++            (PINTEL_HOSTVLD_VP9_NEIGHBOR)aligned_alloc(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwSize);
+ 
+         dwNumAboveCtx <<= 1;
+         // Entropy context, per 4x4 block. Allocate once for all the planes
+@@ -445,7 +445,7 @@ VAStatus Intel_HostvldVp9_PreParser (PVOID pVp9FrameSt
+     if (dwSize > pFrameInfo->ModeInfo.dwSize)
+     {
+         VP9_ALIGNED_FREE_MEMORY(pFrameInfo->ModeInfo.pBuffer);
+-        pFrameInfo->ModeInfo.pBuffer = memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE,
++        pFrameInfo->ModeInfo.pBuffer = aligned_alloc(INTEL_HOSTVLD_VP9_PAGE_SIZE,
+             dwSize * sizeof(INTEL_HOSTVLD_VP9_MODE_INFO));
+         pFrameInfo->ModeInfo.dwSize  = dwSize;
+     }

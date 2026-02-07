@@ -1,0 +1,8 @@
+--- examples/default.orig	2005-09-18 08:03:13 UTC
++++ examples/default
+@@ -1,4 +1,4 @@
+-# Настройки mapchan по умолчанию
++ttyv5  altkoi.map
+ #
+ # <tty> <map-file> <pty> <quiet> <debug> <logfile> <program>
+ #

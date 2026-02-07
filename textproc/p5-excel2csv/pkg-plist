@@ -1,0 +1,4 @@
+bin/excel2csv
+bin/xls2csv
+%%PERL5_MAN1%%/excel2csv.1.gz
+%%PERL5_MAN1%%/xls2csv.1.gz

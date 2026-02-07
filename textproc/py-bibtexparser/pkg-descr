@@ -1,0 +1,2 @@
+BibtexParser is a python library to parse bibtex files.
+The code relies on pyparsing and is tested with unittests.

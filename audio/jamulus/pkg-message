@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+You installed Jamulus: Internet jam session software
+
+Most users need Jamulus client to listen to or participate in jam sessions
+hosted by others.
+
+You can run Jamulus client using the menu item or by running the "jamulus"
+command.
+
+Some users also need to run Jamulus server to host jam sessions.
+
+You can run Jamulus server as a graphical program by using the "Jamulus Server"
+menu item, or run the "jamulus -s" command.
+
+You can also run Jamulus Server as a headless server. In order to do this you
+need to install the jamulus-server package and run:
+# sysrc jamulus_server_enable="YES"
+# service jamulus-server start
+and then navigate to your server by your IP address in the Jamulus Client.
+
+You can also start the Jamulus Server service once with:
+# service jamulus-server onestart
+
+Please read https://jamulus.io/wiki/Command-Line-Options and add appropriate
+Jamulus Server options to jamulus_server_flags="{your options}"
+in /etc/rc.config
+
+EOM
+}
+]

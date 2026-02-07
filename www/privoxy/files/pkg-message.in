@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+  To start Privoxy on boot, add: privoxy_enable="YES"
+  to /etc/rc.conf.
+
+  To start Privoxy manually, run:
+  service privoxy onestart
+
+  The rc script understands most of the commands listed
+  in rc(8), it also contains a list of other rc variables
+  you can use.
+
+  Privoxy's example files were copied to:
+  %%EXAMPLESDIR%%
+
+  For documentation see:
+  %%DOCSDIR%%/user-manual or 'man privoxy'
+
+  Note that default.filter and default.action get
+  overwritten with each Privoxy update. Instead of
+  changing them you should use your own action and
+  filter files as described in Privoxy's manual.
+EOM
+}
+]

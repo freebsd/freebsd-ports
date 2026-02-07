@@ -1,0 +1,42 @@
+PORTNAME=	fidocadj
+PORTVERSION=	0.24.8
+PORTREVISION=	0
+CATEGORIES=	cad java
+# No USE_GITHUB here because GITHUB_EXTRACT_SUFX is hardcoded to .tar.gz
+MASTER_SITES=	https://github.com/DarwinNE/FidoCadJ/releases/download/v${PORTVERSION}/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.jar
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	Easy to use graphical editor for electronics
+WWW=		https://darwinne.github.io/FidoCadJ/index.html
+
+LICENSE=	GPLv3
+
+USES=	java
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+JAVA_VERSION=	11+
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+SUB_FILES=	${PORTNAME}.sh
+SUB_LIST=	PORTVERSION=${PORTVERSION} JAVA=${JAVA}
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_DISTFILES=	manual_en.pdf
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}; \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${DATADIR}/
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DOCS_DISTFILES} ${STAGEDIR}${DOCSDIR}/
+
+.include <bsd.port.mk>

@@ -1,0 +1,15 @@
+--- Makefile.orig	2009-03-15 13:11:12.000000000 +0300
++++ Makefile	2014-11-30 07:39:48.000000000 +0300
+@@ -6,10 +6,10 @@
+ # February 25, 2009 - March 15, 2009
+ 
+ VERSION=0.5
+-CC=gcc
++CC?=gcc
+ SDL_CFLAGS=$(shell sdl-config --cflags)
+ SDL_LIBS=$(shell sdl-config --libs) -lSDL_image
+-CFLAGS=-Wall -O2 $(SDL_CFLAGS) -DVERSION="\"${VERSION}\""
++CFLAGS+=-Wall $(SDL_CFLAGS) -DVERSION="\"${VERSION}\""
+ 
+ all:	fop
+ 

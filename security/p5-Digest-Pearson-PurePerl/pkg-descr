@@ -1,0 +1,7 @@
+Digest::Pearson::PurePerl is an implementation of Peter K. Pearson's hash
+algorithm presented in "Fast Hashing of Variable Length Text Strings"
+- ACM 1990. This hashing technique yields good distribution of hashed results
+for variable length input strings on the range 0-255, and thus, it is well
+suited for data load balancing.
+If you prefer a fast implementation, you might want to
+consider Digest::Pearson instead.

@@ -1,0 +1,5 @@
+Libspnav is a C library for receiving input from 6 degrees-of-freedom (6dof)
+input devices, also known as spacemice, spaceballs, etc. 6dof input is very
+useful for fluidly manipulating objects or viewpoints in 3D space, and
+fundamendally comprises of relative movement (translation) across 3 axes
+(TX/TY/TZ), and rotation about 3 axes (RX/RY/RZ).

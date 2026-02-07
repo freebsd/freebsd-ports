@@ -1,0 +1,78 @@
+--- block.c.orig	Wed Mar 24 01:39:36 1999
++++ block.c	Wed Jun 18 04:38:34 2003
+@@ -12,6 +12,7 @@
+ 
+ #include <string.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ 
+ /*heck - i started writing the thing using curses - then 
+          switched to ncurses, did not seem to make much
+@@ -32,7 +33,7 @@
+ #define FF_HOME    4 
+ #define FF_OVEN    5
+ 
+-#define SCORE_FILE "/usr/games/lib/save/score"
++#define SCORE_FILE PREFIX "/share/block/save/score"
+ /* uncomment if you like lots of diagnostic garbage */
+ /* #define DEBUG 1                                  */
+ 
+@@ -92,17 +93,17 @@
+   } 
+ 
+   
+-  username = (char *) getlogin();
+-  sprintf(buf,"/usr/games/lib/save/%s",username);
++  username = getlogin();
++  sprintf(buf, PREFIX "/share/block/%s",username);
+   fp = fopen( buf , "rt");
+   if( fp != NULL ) {
+       fscanf(fp , "%d", &level);
+       fclose(fp);
+   } 
+   if( level != 0 ) {
+-      sprintf( buf , "/usr/games/lib/%d.block" , level);
++      sprintf( buf , PREFIX "/share/block/%d.block" , level);
+   } else {
+-      sprintf( buf , "/usr/games/lib/1.block");
++      sprintf( buf , PREFIX "/share/block/1.block");
+       level=1;
+   }
+   strcpy(lname,buf); 
+@@ -172,7 +173,7 @@
+              break;
+     case 1 : 
+     case 2 : printf("Hmmm... trouble reading file %s\n",lname);
+-             sprintf(tmp,"/usr/games/lib/%s.block",lname);
++             sprintf(tmp, PREFIX "/share/block/%s.block",lname);
+              if(loadnext(&cw,tmp)){
+                printf("Could not read %s either\n",tmp); 
+                if(loadnext(&cw,"default")){
+@@ -539,7 +540,7 @@
+ 	       printw( "\t\t %2d. %8s       %4d         %5ld       %5ld\n", i+1, (char *)High[i].Name,High[i].Level,High[i].Score,High[i].Moves);
+ 	     }
+ 	     level++;
+-             sprintf(buf,"/usr/games/lib/save/%s",username);
++             sprintf(buf,PREFIX "/share/block/save/%s",username);
+ 	     fp = fopen(buf,"wt");
+ 	     if( fp != NULL ) {
+ 	         fprintf(fp , "%d", level);
+@@ -557,7 +558,7 @@
+   endwin();
+                /*Hope they come back again*/
+   
+-  sprintf(lname,"/usr/games/lib/%d.block",level);
++  sprintf(lname,PREFIX "/share/block/%d.block",level);
+   /* yuck - a messy kludge - the fname stores the name of the next game*/
+   moves=0;
+   if(looper)looper=2;    
+@@ -756,7 +757,9 @@
+ 				High[j].Moves = High[j-1].Moves;
+ 				strncpy(High[j].Name,High[j-1].Name,10);
+ 			}
++		#if 0
+ 		cuserid((char *) High[i].Name);
++		#endif
+ 		High[i].Score = ThisScore;
+ 		High[i].Level = Level;
+ 		High[i].Moves = Moves;

@@ -1,0 +1,39 @@
+--- gtk/makefile.orig	2024-03-19 04:36:37 UTC
++++ gtk/makefile
+@@ -16,8 +16,6 @@ ifdef CLANG
+ 
+ WARNINGS = -Wpedantic -Wall
+ ifdef CLANG
+-CXX = clang++
+-CC = clang
+ WARNINGS += -Wno-deprecated-register
+ ifdef windir
+ # Turn off some warnings that occur when Clang is being used on Windows where it
+@@ -34,7 +32,7 @@ SANITIZE = address
+ # thread also need to create Position Independent Executable -> search online documentation
+ SANITIZE = address
+ #SANITIZE = undefined
+-BASE_FLAGS += -fsanitize=$(SANITIZE)
++#BASE_FLAGS += -fsanitize=$(SANITIZE)
+ endif
+ ARFLAGS = rc
+ RANLIB ?= ranlib
+@@ -68,7 +66,8 @@ COMPLIB=$(basedir)/bin/scintilla.a
+ DEL = rm -f
+ endif
+ COMPLIB=$(basedir)/bin/scintilla.a
+-COMPONENT=$(basedir)/bin/libscintilla.$(SHAREDEXTENSION)
++SONAME=libscintilla.$(SHAREDEXTENSION)
++COMPONENT=$(basedir)/bin/$(SONAME)
+ 
+ vpath %.h $(srcdir) $(basedir)/src $(basedir)/include
+ vpath %.c $(srcdir)
+@@ -166,7 +165,7 @@ $(COMPONENT): $(SRC_OBJS) $(GTK_OBJS) $(MARSHALLER)
+ 	$(RANLIB) $@
+ 
+ $(COMPONENT): $(SRC_OBJS) $(GTK_OBJS) $(MARSHALLER)
+-	$(CXX) $(CXX_ALL_FLAGS) $(CXXFLAGS) $(LDFLAGS) $^ -o $@ $(CONFIGLIB)
++	$(CXX) $(CXX_ALL_FLAGS) $(CXXFLAGS) $(LDFLAGS) $^ -Wl,-soname,$(SONAME) -o $@ $(CONFIGLIB)
+ 
+ # Automatically generate header dependencies with "make depend"
+ include deps.mak

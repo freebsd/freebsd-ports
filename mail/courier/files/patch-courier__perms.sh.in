@@ -1,0 +1,42 @@
+--- courier/perms.sh.in.orig	2019-02-03 21:11:16.000000000 +0100
++++ courier/perms.sh.in	2020-04-20 23:34:40.000000000 +0200
+@@ -12,7 +12,6 @@
+ PERMS="
+ .			755
+ 
+-@localstatedir@		755	x	bin	bin
+ @localstatedir@/tmp	770
+ @localstatedir@/msgs	750
+ @localstatedir@/msgq	750
+@@ -44,7 +43,6 @@
+ @sysconfdir@/webmlmrc.dist	644	config
+ @sysconfdir@/quotawarnmsg.example	444
+ 
+-@libexecdir@		755	x	bin	bin
+ @libexecdir@/courier	755	x	bin	bin
+ @libexecdir@/courier/modules	755	x	bin	bin
+ @libexecdir@/courier/submitmkdir	4550
+@@ -58,14 +56,13 @@
+ @libexecdir@/courier/makedatprog	555
+ @libexecdir@/courier/imaplogin		555	x	bin	bin
+ @libexecdir@/courier/pcpd		555	x	bin	bin
+-@libexecdir@/courier/webmail		700	x	root	bin
++@libexecdir@/courier/webmail		500	x	root	bin
+ @libexecdir@/courier/webmail/webmail	555	x	root	bin
+ @libexecdir@/courier/webmail/webmlm	555	x	root	bin
+ @libexecdir@/courier/sqwebmaild		555
+ @libexecdir@/courier/sqwebpasswd	2555
+ @libexecdir@/courier/webmail/webadmin	511	x	root	root
+ 
+-@sbindir@			755	x	bin	bin
+ @sbindir@/courier		555
+ @sbindir@/showconfig		555
+ @sbindir@/showmodules		550
+@@ -79,7 +76,6 @@
+ @datadir@/imapd			555	x	bin	bin
+ @datadir@/imapd-ssl		555	x	bin	bin
+ 
+-@bindir@			755	x	bin	bin
+ @bindir@/cancelmsg		6555
+ @bindir@/courier-config		555
+ @bindir@/mailq			2555

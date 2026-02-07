@@ -1,0 +1,5 @@
+Icmake is a hybrid between a 'make' utility and a 'shell script'
+language.  Originally, it was concocted to provide a useful tool for
+automatic program maintenance and system administrative tasks on MS-DOS
+platforms.  Later on, Icmake was eventually ported to Unix platforms
+(SCO and Linux).  By now Icmake also runs on a HP-Unix platform.

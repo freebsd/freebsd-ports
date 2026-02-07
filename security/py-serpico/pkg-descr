@@ -1,0 +1,4 @@
+serpico is a security scanner for FreeBSD packages and releases
+that compares the versions against a list of versions marked as
+vulnerable, then displays vulnerability information in a JSON-compact
+format for easy analysis by other security tools.

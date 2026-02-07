@@ -1,0 +1,5 @@
+OpenSSL key agent and client utilities
+
+The aim of these utilities is to provide an openssl-rsautl(1) drop-in
+replacement for performing cryptographic operations using a private key
+that is unlocked for the session, similar to OpenSSH's ssh-agent(1).

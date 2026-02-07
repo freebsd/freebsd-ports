@@ -1,0 +1,9 @@
+bin/ikslint
+bin/iksperf
+bin/iksroster
+include/iksemel.h
+lib/libiksemel.a
+lib/libiksemel.so
+lib/libiksemel.so.3
+lib/libiksemel.so.3.1.1
+libdata/pkgconfig/iksemel.pc

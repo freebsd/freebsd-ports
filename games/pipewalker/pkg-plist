@@ -1,0 +1,4 @@
+bin/pipewalker
+share/applications/pipewalker.desktop
+share/icons/hicolor/64x64/apps/pipewalker.png
+share/man/man6/pipewalker.6.gz

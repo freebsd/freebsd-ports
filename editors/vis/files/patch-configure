@@ -1,0 +1,17 @@
+--- configure.orig	2024-06-11 20:47:15 UTC
++++ configure
+@@ -233,14 +233,6 @@ esac
+ AIX)     CFLAGS_STD="$CFLAGS_STD -D_ALL_SOURCE" ;;
+ esac
+ 
+-tryflag CFLAGS -pipe
+-
+-# Try flags to optimize binary size
+-tryflag CFLAGS -O2
+-tryflag CFLAGS -ffunction-sections
+-tryflag CFLAGS -fdata-sections
+-tryldflag LDFLAGS_AUTO -Wl,--gc-sections
+-
+ # Try hardening flags
+ tryflag CFLAGS -fPIE
+ tryflag CFLAGS_AUTO -fstack-protector-all

@@ -1,0 +1,2 @@
+pip-run provides on-demand temporary package installation for a single
+interpreter run.

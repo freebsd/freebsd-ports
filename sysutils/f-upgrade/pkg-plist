@@ -1,0 +1,31 @@
+@sample etc/f-upgrade.conf.sample
+etc/f-upgrade.hook.d/1000.pre
+etc/f-upgrade.hook.d/1000.pre.14
+etc/rc.d/f_upgrade
+libdata/f-upgrade.d/500
+libdata/f-upgrade.d/1000
+libdata/f-upgrade.d/1100
+libdata/f-upgrade.d/1200
+libdata/f-upgrade.d/1200.conf
+libdata/f-upgrade.d/2000
+libdata/f-upgrade.d/2000.conf
+libdata/f-upgrade.d/3000
+libdata/f-upgrade.d/3000.conf
+libdata/f-upgrade.d/3100
+libdata/f-upgrade.d/3200
+libdata/f-upgrade.d/3200.conf
+libdata/f-upgrade.d/4000
+libdata/f-upgrade.d/4000.conf
+libdata/f-upgrade.d/5000
+libdata/f-upgrade.d/5000.conf
+libdata/f-upgrade.d/5100
+libdata/f-upgrade.d/5100.conf
+libdata/f-upgrade.d/6000
+libdata/f-upgrade.d/6000.conf
+libdata/f-upgrade.d/7000
+libdata/f-upgrade.d/7100
+libdata/f-upgrade.d/8000
+libdata/f-upgrade.d/8000.conf
+sbin/f-upgrade
+@dir etc/f-upgrade.hook.d
+@dir libdata/f-upgrade.d

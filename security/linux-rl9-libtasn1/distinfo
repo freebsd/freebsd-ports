@@ -1,0 +1,9 @@
+TIMESTAMP = 1750640210
+SHA256 (rocky/l/libtasn1-4.16.0-9.el9.aarch64.rpm) = c040286c461ef7429c8fa86412f2b3ee64f5233f41321a13f10b9635fa15b517
+SIZE (rocky/l/libtasn1-4.16.0-9.el9.aarch64.rpm) = 73866
+SHA256 (rocky/l/libtasn1-4.16.0-9.el9.i686.rpm) = 385a244c7afc30e4aa71824b91c36cca44f9454b2be992d5834d2f2ef9133c4e
+SIZE (rocky/l/libtasn1-4.16.0-9.el9.i686.rpm) = 75892
+SHA256 (rocky/l/libtasn1-4.16.0-9.el9.x86_64.rpm) = 378e7fc39ac1581c3326aaa945eef0c144a7eb7b9124abb5cf7a1c1205503c72
+SIZE (rocky/l/libtasn1-4.16.0-9.el9.x86_64.rpm) = 74553
+SHA256 (rocky/l/libtasn1-4.16.0-9.el9.src.rpm) = e8dc61a5d83e86d0978e3c00beccc611fbd8155f8c3923a89e1e00e85e2983d9
+SIZE (rocky/l/libtasn1-4.16.0-9.el9.src.rpm) = 1892583

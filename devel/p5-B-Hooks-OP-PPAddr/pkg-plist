@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/B/Hooks/OP/PPAddr.pm
+%%SITE_ARCH%%/B/Hooks/OP/PPAddr/Install/Files.pm
+%%SITE_ARCH%%/B/Hooks/OP/PPAddr/Install/hook_op_ppaddr.h
+%%SITE_ARCH%%/auto/B/Hooks/OP/PPAddr/PPAddr.so
+%%PERL5_MAN3%%/B::Hooks::OP::PPAddr.3.gz

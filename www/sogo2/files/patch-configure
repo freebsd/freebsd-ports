@@ -1,0 +1,11 @@
+--- configure.orig	2016-11-09 01:55:36.202443000 -0500
++++ configure	2016-11-09 01:57:47.331793000 -0500
+@@ -49,7 +49,7 @@
+ 
+ 
+ NGSTREAMS_DIR="./sope-core/NGStreams"
+-LINK_SYSLIBDIRS="-L/usr/local/pgsql/lib -L/usr/local/lib -L/usr/lib"
++LINK_SYSLIBDIRS="-L%%LOCALBASE%%/lib/postgresql -L%%LOCALBASE%%/lib/mysql -L%%LOCALBASE%%/lib -L/usr/lib"
+ 
+ # ******************** usage ********************
+ 

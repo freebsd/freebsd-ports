@@ -1,0 +1,16 @@
+bin/makeindex
+share/man/man1/makeindex.1.gz
+share/texmf/makeindx/din.ist
+share/texmf/makeindx/icase.ist
+share/texmf/makeindx/latex.ist
+share/texmf/makeindx/math.ist
+share/texmf/makeindx/mkind.ist
+share/texmf/makeindx/puncts.ist
+share/texmf/makeindx/tex.ist
+share/texmf/makeindx/english/digit.ist
+share/texmf/makeindx/english/letter.ist
+share/texmf/makeindx/english/special.ist
+share/texmf/makeindx/german/digit.ist
+share/texmf/makeindx/german/special.ist
+share/texmf/makeindx/german/umlaut.ist
+share/texmf/makeindx/german/wb.ist

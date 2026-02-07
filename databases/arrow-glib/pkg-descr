@@ -1,0 +1,4 @@
+Arrow GLib is a wrapper library for Arrow C++. Arrow GLib provides C API.
+
+Arrow GLib supports GObject Introspection. It means that you can create language
+bindings at runtime or compile time.

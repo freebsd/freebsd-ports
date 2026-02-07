@@ -1,0 +1,13 @@
+%%PERL5_MAN3%%/Encode::ISO2022.3.gz
+%%PERL5_MAN3%%/Encode::ISO2022::CCS.3.gz
+%%PERL5_MAN3%%/Encode::ISO2022JP2.3.gz
+%%PERL5_MAN3%%/Encode::ISOIRSingle.3.gz
+%%PERL5_MAN3%%/Encode::JISLegacy.3.gz
+%%SITE_ARCH%%/Encode/ISO2022.pm
+%%SITE_ARCH%%/Encode/ISO2022/CCS.pod
+%%SITE_ARCH%%/Encode/ISO2022JP2.pm
+%%SITE_ARCH%%/Encode/ISOIRSingle.pm
+%%SITE_ARCH%%/Encode/JISLegacy.pm
+%%SITE_ARCH%%/auto/Encode/ISO2022/ISO2022.so
+%%SITE_ARCH%%/auto/Encode/ISOIRSingle/ISOIRSingle.so
+%%SITE_ARCH%%/auto/Encode/JISLegacy/JISLegacy.so

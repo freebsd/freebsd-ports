@@ -1,0 +1,2 @@
+EDID is binary data encoded in the monitor firmware. edid-decode renders this
+binary data into a human-readable text form.

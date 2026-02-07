@@ -1,0 +1,19 @@
+*** Imakefile.orig	Tue Sep  2 22:33:16 1997
+--- Imakefile	Thu Dec 18 04:24:33 1997
+***************
+*** 36,42 ****
+  ##############################################################################
+  
+  OBJS = bugsx.o xbutil.o util.o breed.o grow.o noise.o
+! SRCS = bugsx.c xbutil.o util.c breed.c grow.c noise.c
+  
+  INCLUDES = -I$(TOP) -I$(TOP)/X11
+  
+--- 36,42 ----
+  ##############################################################################
+  
+  OBJS = bugsx.o xbutil.o util.o breed.o grow.o noise.o
+! SRCS = bugsx.c xbutil.c util.c breed.c grow.c noise.c
+  
+  INCLUDES = -I$(TOP) -I$(TOP)/X11
+  

@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/scripts/furo-extensions.js
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/scripts/furo.js
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/scripts/furo.js.LICENSE.txt
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/scripts/furo.js.map
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/styles/furo-extensions.css
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/styles/furo-extensions.css.map
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/styles/furo.css
+%%PYTHON_SITELIBDIR%%/furo/theme/furo/static/styles/furo.css.map

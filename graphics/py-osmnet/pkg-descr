@@ -1,0 +1,3 @@
+OSMnet offers tools to download street network data from OpenStreetMap and
+extract a graph network comprised of nodes and edges to be used in Pandana
+street network accessibility calculations.

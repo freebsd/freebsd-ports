@@ -1,0 +1,14 @@
+--- etcetera.orig	2025-04-04 04:31:20 UTC
++++ etcetera
+@@ -29,8 +29,10 @@ Zone	Etc/GMT		0	-	GMT
+ # The following link uses older naming conventions,
+ # but it belongs here, not in the file 'backward',
+ # as it is needed for tzcode releases through 2022a,
+-# where functions like gmtime load "GMT" instead of the "Etc/UTC".
++# where functions like gmtime load "UTC" instead of the "Etc/UTC".
+ # We want this to work even on installations that omit 'backward'.
++Link	Etc/UTC				UTC
++# Do the same for GMT for compatibility reasons.
+ Link	Etc/GMT				GMT
+ # End of rearguard section.
+ 

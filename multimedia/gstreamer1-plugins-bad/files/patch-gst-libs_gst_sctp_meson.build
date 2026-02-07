@@ -1,0 +1,12 @@
+--- gst-libs/gst/sctp/meson.build.orig	2022-09-05 21:16:11 UTC
++++ gst-libs/gst/sctp/meson.build
+@@ -1,3 +1,4 @@
++if get_option('sctp').enabled()
+ sctp_sources = [
+   'sctpreceivemeta.c',
+   'sctpsendmeta.c',
+@@ -36,3 +37,4 @@ gstsctp_dep = declare_dependency(link_with : libgstsct
+   dependencies : [gstbase_dep])
+ 
+ meson.override_dependency(pkg_name, gstsctp_dep)
++endif

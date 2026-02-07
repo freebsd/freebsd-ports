@@ -1,0 +1,37 @@
+PORTNAME=	compat7x
+PORTVERSION=	7.4.704000.201310.1
+CATEGORIES=	misc
+MASTER_SITES=	LOCAL/garga/compat
+PKGNAMESUFFIX=	-${ARCH}
+DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convenience package to install the compat7x libraries
+
+LICENSE=	BSD2CLAUSE
+
+USES=		tar:xz
+NO_BUILD=	yes
+ONLY_FOR_ARCHS=	i386 amd64
+PLIST=		${PKGDIR}/pkg-plist.${ARCH}
+TARGET_DIR=	${PREFIX}/lib/compat
+TARGET32_DIR=	${PREFIX}/lib32/compat
+USE_LDCONFIG=	${TARGET_DIR}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+USE_LDCONFIG32=	${TARGET32_DIR}
+.endif
+
+do-install:
+	@${MKDIR} -m 0755 ${STAGEDIR}${TARGET_DIR}
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET_DIR})
+	(cd ${STAGEDIR}${TARGET_DIR} && ${LN} -sf /lib/libthr.so.3 libkse.so.3)
+.if ${ARCH} == amd64
+	@${MKDIR} ${STAGEDIR}${TARGET32_DIR}
+	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET32_DIR})
+	(cd ${STAGEDIR}${TARGET32_DIR} && ${LN} -sf /usr/lib32/libthr.so.3 libkse.so.3)
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+If you want to create ICMP checks, gatus must be run as root, so you must set
+the following parameter in your rc.conf(5) file or equivalent:
+
+  sysrc gatus_runas=root
+EOM
+}
+]

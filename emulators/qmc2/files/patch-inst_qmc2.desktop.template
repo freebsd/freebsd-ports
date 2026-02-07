@@ -1,0 +1,10 @@
+--- inst/qmc2.desktop.template.orig	2023-11-25 02:41:19 UTC
++++ inst/qmc2.desktop.template
+@@ -6,6 +6,6 @@ Exec=TARGET
+ Comment[pl]=Nakładka na EMULATOR
+ Comment[de]=EMULATOR Frontend
+ Exec=TARGET
+-Icon=DATADIR/qmc2/img/EMUICO
++Icon=%%DATADIR%%/qmc2/img/EMUICO
+ Terminal=false
+ Categories=Game;Emulator;

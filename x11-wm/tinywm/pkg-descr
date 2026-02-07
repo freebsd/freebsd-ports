@@ -1,0 +1,3 @@
+TinyWM is a ridiculously tiny window manager implemented in nearly as few
+lines of C as possible, without being obfuscated or entirely useless. It
+allows you to move, resize, focus (sloppy), and raise windows.

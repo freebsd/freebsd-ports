@@ -1,0 +1,13 @@
+bin/autobench
+bin/autobench_admin
+bin/autobenchd
+bin/bench2graph
+bin/crfile
+bin/sesslog
+@sample etc/autobench.conf.sample
+share/man/man1/autobench.1.gz
+share/man/man1/autobench_admin.1.gz
+share/man/man1/autobenchd.1.gz
+share/man/man1/bench2graph.1.gz
+share/man/man1/crfile.1.gz
+share/man/man1/sesslog.1.gz

@@ -1,0 +1,18 @@
+Enable the OpenJPEG import plugin on FreeBSD. Not much information is given
+in the upstream commit that disabled it almost 4 years ago, other than "it's
+broken". It seems to be working now, though. Builds and was run tested with
+a few example jp2 images.
+
+Reverts: https://invent.kde.org/graphics/krita/-/commit/0018d78eeb099aaff7c606b75588cf1b07fe51dd
+
+--- plugins/impex/CMakeLists.txt.orig	2023-10-06 01:42:10 UTC
++++ plugins/impex/CMakeLists.txt
+@@ -23,7 +23,7 @@ endif()
+     add_subdirectory(pdf)
+ endif()
+ 
+-if(OpenJPEG_FOUND AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++if(OpenJPEG_FOUND)
+     add_subdirectory(jp2)
+ endif()
+ 

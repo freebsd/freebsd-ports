@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To use this interface, make sure that you have loaded the sysctlinfo kernel
+module, by doing
+
+	# kldload sysctlinfo
+
+or adding
+
+	sysctlinfo_load="YES"
+
+to your /boot/loader.conf.
+EOM
+}
+]

@@ -1,0 +1,5 @@
+Nice Partials adds ad-hoc named content areas, or sections, to Action View
+partials with a lot of extra power on top.
+
+Everything happens through a new partial method, which at the base of it have
+method shorthands for partial specific content_for and content_for?s.

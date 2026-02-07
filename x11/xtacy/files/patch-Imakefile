@@ -1,0 +1,21 @@
+--- Imakefile.orig	1998-12-15 17:54:32 UTC
++++ Imakefile
+@@ -1,7 +1,6 @@
+ # Imakefile
+ 
+-# For RedHat Linux , uncomment -lcrypt 
+-LOCAL_LIBRARIES = $(XLIB) -lm # -lcrypt
++LOCAL_LIBRARIES = $(XLIB) -lm -lcrypt
+ 
+ SRCS = bezier.c blob.c color.c cursor.c fields.c frame.c gravity.c\
+ 	kaleid.c life.c lightning.c lunch.c math.c password.c plasma.c\
+@@ -13,8 +12,7 @@ OBJS=bezier.o blob.o color.o cursor.o fields.o frame.o
+ 	starback.o swarm.o tag.o trippy.o waves.o xguts.o mirrors.o \
+ 	fractals.o modes.o
+ 
+-CDEBUGFLAGS = -O3 -Wall -g
+-CFLAGS = -O3 
++CFLAGS += -fcommon
+ 
+ ComplexProgramTarget(xtacy)
+ 

@@ -1,0 +1,62 @@
+--- Makefile.in.orig	Tue Apr 24 19:21:06 2001
++++ Makefile.in	Tue Apr 24 19:21:33 2001
+@@ -47,7 +47,7 @@ CGIBINDIR =	$(WEBDIR)/cgi-bin
+ # You shouldn't need to edit anything below here.
+ 
+ CC =		@CC@
+-CCOPT =		@V_CCOPT@
++CCOPT =		@CFLAGS@
+ DEFS =		@DEFS@
+ INCLS =		-I.
+ CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
+@@ -96,9 +96,7 @@ mime_types.h:	mime_types.txt
+ 
+ subdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) \
++	    $(MAKE) -C $$i $(MFLAGS) \
+ 		WEBDIR=$(WEBDIR) \
+ 		CGIBINDIR=$(CGIBINDIR) \
+ 		MANDIR=$(MANDIR) \
+@@ -110,17 +108,15 @@ install:	installthis install-man install
+ 
+ installthis:
+ 	-mkdir -p $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 555 -o bin -g bin thttpd $(DESTDIR)$(BINDIR)
++	$(INSTALL) -s -m 555 thttpd $(DESTDIR)$(BINDIR)
+ 
+ install-man:
+ 	-mkdir -p $(DESTDIR)$(MANDIR)/man8
+-	$(INSTALL) -m 444 -o bin -g bin thttpd.8 $(DESTDIR)$(MANDIR)/man8
++	$(INSTALL) -m 444 thttpd.8 $(DESTDIR)$(MANDIR)/man8
+ 
+ installsubdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) \
++	    $(MAKE) -C $$i $(MFLAGS) \
+ 		WEBDIR=$(WEBDIR) \
+ 		CGIBINDIR=$(CGIBINDIR) \
+ 		MANDIR=$(MANDIR) \
+@@ -137,16 +133,12 @@ distclean:	distcleansubdirs
+ 
+ cleansubdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) clean \
++	    $(MAKE) -C $$i $(MFLAGS) clean \
+ 	) ; done
+ 
+ distcleansubdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) distclean \
++	    $(MAKE) -C $$i $(MFLAGS) distclean \
+ 	) ; done
+ 
+ tags:

@@ -1,0 +1,12 @@
+--- config/jvm.options.orig	2022-11-17 18:55:38 UTC
++++ config/jvm.options
+@@ -69,7 +69,7 @@
+ -XX:HeapDumpPath=data
+ 
+ # specify an alternative path for JVM fatal error logs
+--XX:ErrorFile=logs/hs_err_pid%p.log
++-XX:ErrorFile=${ES_TMPDIR}/hs_err_pid%p.log
+ 
+ ## GC logging
+--Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m
++-Xlog:gc*,gc+age=trace,safepoint:file=${ES_TMPDIR}/gc.log:utctime,pid,tags:filecount=32,filesize=64m

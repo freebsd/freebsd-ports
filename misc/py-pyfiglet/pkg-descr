@@ -1,0 +1,2 @@
+pyfiglet is a full port of FIGlet (WWW: http://www.figlet.org/) into
+pure python. It takes ASCII text and renders it in ASCII art fonts.

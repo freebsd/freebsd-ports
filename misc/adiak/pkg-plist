@@ -1,0 +1,9 @@
+include/adiak.h
+include/adiak.hpp
+include/adiak_internal.hpp
+include/adiak_tool.h
+lib/cmake/adiak/adiak-config-version.cmake
+lib/cmake/adiak/adiak-config.cmake
+lib/cmake/adiak/adiak-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/adiak/adiak-targets.cmake
+lib/libadiak.so

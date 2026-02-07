@@ -1,0 +1,4 @@
+Module::Starter::Plugin::SimpleStore
+
+This is a set of simple plugins for Module::Starter to provide methods of
+retrieving templates.

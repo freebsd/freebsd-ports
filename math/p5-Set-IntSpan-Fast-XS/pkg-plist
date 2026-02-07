@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Set/IntSpan/Fast/XS.pm
+%%SITE_ARCH%%/auto/Set/IntSpan/Fast/XS/XS.so
+%%PERL5_MAN3%%/Set::IntSpan::Fast::XS.3.gz

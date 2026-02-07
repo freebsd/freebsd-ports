@@ -1,0 +1,46 @@
+[
+{ type: install
+  message: <<EOM
+
+	See %%PREFIX%%/share/doc/MailScanner/README.FreeBSD.port,
+	http://www.mailscanner.info, the man pages MailScanner and
+	MailScanner.conf for further instructions.
+
+	You will need to make several modifications to config files
+	before MailScanner will work correctly.
+
+	The provided default configuration requires several directories
+	to be created:
+
+		/var/spool/MailScanner/incoming
+		/var/spool/MailScanner/incoming/Locks
+		/var/spool/MailScanner/quarantine
+		/var/spool/mqueue
+		/var/spool/mqueue.in
+
+	Either create those directories or change the configuration.
+
+
+	A new optional rc variable called mailscanner_user has been added
+	to the startup script. This is a temporary workaround to address
+	any possible taint mode problems that may still be present in the
+	code.
+
+	Taint mode related problems can usually be identified from
+	undeliverable reports containing the following error:
+
+	"MailScanner: Message attempted to kill MailScanner"
+
+	If you changed the "Run As User" variable in MailScanner.conf
+	and wish to disable taint mode, you MUST also set the same value
+	in /etc/rc.conf.
+
+	i.e. mailscanner_user="postfix"
+
+	To re-enable taint mode, simply remove the variable from rc.conf.
+
+	The new variable uses su to start the master perl script as the
+	specified user, this effectively disables perl's taint mode.
+EOM
+}
+]

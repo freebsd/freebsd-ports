@@ -1,0 +1,5 @@
+Tables with state-of-the-art layout elements such as row spanners, column
+spanners, table spanners, zebra striping, and more. While allowing advanced
+layout, the underlying css-structure is simple in order to maximize
+compatibility with common word processors. The package also contains a few text
+formatting functions that help outputting text compatible with HTML/LaTeX.

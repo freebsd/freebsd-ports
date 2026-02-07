@@ -1,0 +1,54 @@
+- Skip yarn install/build for panmirror (use pre-built from fetch phase)
+- Add JVM arguments for Java compatibility
+
+--- src/gwt/build.xml.orig	2025-10-20 20:09:32 UTC
++++ src/gwt/build.xml
+@@ -183,19 +183,8 @@ -->
+       <echo message="panmirror minify: ${panmirror.minify}"/>
+ 
+       <mkdir dir="${panmirror.build.dir}"/>
+-      <exec executable="${yarn.bin}" dir="${panmirror.dir}" resolveexecutable="true" failonerror="true">
+-         <arg value="install"/>
+-         <arg value="--network-timeout"/>
+-         <arg value="240000"/>
+-      </exec>
+-      <exec executable="${yarn.bin}" dir="${panmirror.dir}" resolveexecutable="true" failonerror="true">
+-         <arg value="build"/>
+-         <arg value="--minify"/>
+-         <arg value="${panmirror.minify}"/>
+-         <arg value="--sourcemap"/>
+-         <arg value="true"/>
+-         <env key="PANMIRROR_OUTDIR" value="dist-rstudio"/>
+-      </exec>
++      <echo message="Skipping yarn install - using pre-built panmirror"/>
++      <echo message="Skipping yarn build - using pre-built panmirror"/>
+       <copy todir="${panmirror.build.dir}">
+          <fileset dir="${panmirror.dir}/dist-rstudio"/>
+       </copy>
+@@ -242,7 +231,7 @@ -->
+          <arg value="-generateJsInteropExports"/>
+          <!-- Additional arguments like -logLevel DEBUG -->
+          <arg value="${gwt.main.module}"/>
+-      </java>
++      <jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/></java>
+    </target>
+ 
+    <target name="soyc" description="Generate and show SOYC report">
+@@ -313,7 +302,7 @@ -->
+          <arg line="-bindAddress ${bind.address}"/>
+          <arg value="-generateJsInteropExports"/>
+          <arg value="${gwt.main.module}"/>
+-      </java>
++      <jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/></java>
+    </target>
+ 
+    <!-- configure props for i18n tasks -->
+@@ -438,7 +427,7 @@ -->
+          <classpath refid="unittest.class.path"/>
+          <jvmarg value="-Dgwt.args=-sourceLevel ${javac.version}"/>
+          <arg value="org.rstudio.studio.client.RStudioUnitTestSuite"/>
+-     </java>
++     <jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/><jvmarg value="-Duser.home=/usr/ports/devel/RStudio/work-desktop"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/></java>
+    </target>
+ 
+    <target name="test" depends="unittest">

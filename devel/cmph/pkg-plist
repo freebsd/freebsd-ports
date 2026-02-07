@@ -1,0 +1,11 @@
+bin/cmph
+include/chd_ph.h
+include/cmph.h
+include/cmph_time.h
+include/cmph_types.h
+lib/libcmph.a
+lib/libcmph.so
+lib/libcmph.so.0
+lib/libcmph.so.0.0.0
+libdata/pkgconfig/cmph.pc
+share/man/man1/cmph.1.gz

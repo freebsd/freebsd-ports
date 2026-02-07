@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Term/ProgressBar.pm
+%%SITE_PERL%%/Term/ProgressBar/IO.pm
+%%PERL5_MAN3%%/Term::ProgressBar.3.gz
+%%PERL5_MAN3%%/Term::ProgressBar::IO.3.gz

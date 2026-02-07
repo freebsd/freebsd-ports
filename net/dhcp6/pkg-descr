@@ -1,0 +1,18 @@
+WIDE-DHCPv6 is an open-source implementation of Dynamic Host
+Configuration Protocol for IPv6 (DHCPv6), originally developed
+by the KAME project.
+
+The implementation mainly conforms to the following standards:
+
+- RFC3315: Dynamic Host Configuration Protocol for IPv6 (DHCPv6)
+- RFC3319: DHCPv6 Options for Session Initiation Protocol (SIP) Servers
+- RFC3633: IPv6 Prefix Options for DHCP
+- RFC3646: DNS Configuration options for DHCPv6
+- RFC3898: Network Information Service (NIS) Configuration Options for DHCPv6
+- RFC4075: Simple Network Time Protocol (SNTP) Configuration Option for DHCPv6
+- RFC4242: Information Refresh Time Option for DHCPv6
+- RFC4280: DHCP Options for Broadcast and Multicast Control Servers
+
+Note that the current implementation does not support temporary
+IPv6 address allocation by DHCPv6, and there is no plan to
+implement that feature at the moment.

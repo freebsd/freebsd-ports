@@ -1,0 +1,3 @@
+The InterwikiPlugin links ExternalSite:Page text to external sites
+based on aliases defined in the InterWikis topic. This plugin is
+inspired by UseMod Wiki's inter-wiki links.

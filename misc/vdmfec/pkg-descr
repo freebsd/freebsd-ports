@@ -1,0 +1,9 @@
+VDMFEC implements Block ECC using a Forward Error Correction (FEC)
+code based on Vandermonde (VDM) matrices in GF(2^8) due to Luigi
+Rizzo.
+
+Its primary application is intended to be in recovering data from
+unreliable media such as diskettes. Another example is wrapping
+'zfs send' streams before dumping onto tape.
+
+The home page for FEC is http://www.iet.unipi.it/~luigi/fec.html

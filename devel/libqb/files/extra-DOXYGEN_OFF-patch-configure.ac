@@ -1,0 +1,11 @@
+--- configure.ac.orig	2023-06-07 06:48:54 UTC
++++ configure.ac
+@@ -168,7 +168,7 @@ fi
+ fi
+
+ # For building doxygen2man and man pages
+-PKG_CHECK_MODULES([libxml], [libxml-2.0])
++# PKG_CHECK_MODULES([libxml], [libxml-2.0])
+
+ # if we are not cross-compiling, we can use the locally built
+ # version of doxygen2man, otherwise we can look for

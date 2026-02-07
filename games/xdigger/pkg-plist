@@ -1,0 +1,9 @@
+@(,games,2755) bin/xdigger
+share/man/man6/xdigger.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/diamond.au
+%%DATADIR%%/step.au
+%%DATADIR%%/stone.au
+%%DATADIR%%/xdigger.level
+@sample(,games,664) /var/games/xdigger.hiscore.sample

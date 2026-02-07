@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MaxMind/DB/Common.pm
+%%SITE_PERL%%/MaxMind/DB/Metadata.pm
+%%SITE_PERL%%/MaxMind/DB/Role/Debugs.pm
+%%SITE_PERL%%/MaxMind/DB/Types.pm
+%%SITE_PERL%%/Test/MaxMind/DB/Common/Data.pm
+%%SITE_PERL%%/Test/MaxMind/DB/Common/Util.pm
+%%PERL5_MAN3%%/MaxMind::DB::Common.3.gz
+%%PERL5_MAN3%%/MaxMind::DB::Metadata.3.gz

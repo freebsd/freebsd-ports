@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+ Then you should create the default
+ index file as:
+   ${PREFIX}/etc/npc/npc.idx
+EOM
+}
+]

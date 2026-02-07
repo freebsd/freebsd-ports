@@ -1,0 +1,14 @@
+--- etc/meson.build.orig	2020-07-01 12:27:52 UTC
++++ etc/meson.build
+@@ -7,9 +7,9 @@ if install_root_hints
+   etc_files += 'root.hints'
+ endif
+ 
+-if managed_ta
++#if managed_ta
+   etc_files += 'icann-ca.pem'
+-endif
++#endif
+ 
+ if install_root_keys
+   root_keys_path = keyfile_default.split('/')

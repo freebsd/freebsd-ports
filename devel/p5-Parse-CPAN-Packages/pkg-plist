@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Parse/CPAN/Packages.pm
+%%SITE_PERL%%/Parse/CPAN/Packages/Distribution.pm
+%%SITE_PERL%%/Parse/CPAN/Packages/Package.pm
+%%PERL5_MAN3%%/Parse::CPAN::Packages.3.gz
+%%PERL5_MAN3%%/Parse::CPAN::Packages::Distribution.3.gz
+%%PERL5_MAN3%%/Parse::CPAN::Packages::Package.3.gz

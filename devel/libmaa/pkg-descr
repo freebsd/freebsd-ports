@@ -1,0 +1,9 @@
+The LIBMAA library provides many low-level data structures which are
+helpful for writing compilers, including hash tables, sets, lists,
+debugging support, and memory management.  Although LIBMAA was
+designed and implemented as a foundation for the Khepera
+Transformation System, the data structures are generally applicable to
+a wide range of programming problems.
+
+The memory management routines are especially helpful for improving the
+performance of memory-intensive applications.

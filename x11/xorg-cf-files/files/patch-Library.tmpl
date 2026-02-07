@@ -1,0 +1,11 @@
+--- Library.tmpl.orig	2021-08-02 01:00:38 UTC
++++ Library.tmpl
+@@ -114,7 +114,7 @@ SHLIBGLOBALSFLAGS = ShlibGlobalsFlags
+ STD_DEFINES = LibraryDefines $(PROJECT_DEFINES)
+ CDEBUGFLAGS = LibraryCDebugFlags
+ CLIBDEBUGFLAGS = LibraryDebugOpt
+-     CFLAGS = $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
++     CFLAGS += $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
+ # if defined(LargePICTable) && LargePICTable && defined(LargePositionIndependentCFlags)
+    PICFLAGS = LargePositionIndependentCFlags
+ # endif

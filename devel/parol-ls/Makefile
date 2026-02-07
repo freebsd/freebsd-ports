@@ -1,0 +1,185 @@
+PORTNAME=	parol-ls
+DISTVERSION=	1.0.1
+PORTREVISION=	13
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Language server for Parol, a LL(k) parser generator
+WWW=		https://jsinger67.github.io/ \
+		https://github.com/jsinger67/parol
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jsinger67
+GH_PROJECT=	parol
+
+CARGO_SRC_SUBDIR=	crates/parol-ls
+CARGO_BUILD=	yes
+CARGO_INSTALL=	yes
+
+CARGO_CRATES=	ahash-0.8.11 \
+		aho-corasick-1.1.3 \
+		anes-0.1.6 \
+		anstream-0.6.17 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.6 \
+		anyhow-1.0.92 \
+		assert_cmd-2.0.16 \
+		autocfg-1.4.0 \
+		bitflags-1.3.2 \
+		bitflags-2.6.0 \
+		bstr-1.10.0 \
+		bumpalo-3.16.0 \
+		byteorder-1.5.0 \
+		cast-0.3.0 \
+		cfg-if-1.0.0 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
+		clap_derive-4.5.18 \
+		clap_lex-0.7.2 \
+		codespan-reporting-0.11.1 \
+		colorchoice-1.0.3 \
+		criterion-0.5.1 \
+		criterion-plot-0.5.0 \
+		crossbeam-channel-0.5.13 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.20 \
+		crunchy-0.2.2 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
+		derive-new-0.6.0 \
+		derive_builder-0.20.2 \
+		derive_builder_core-0.20.2 \
+		derive_builder_macro-0.20.2 \
+		diff-0.1.13 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.13.0 \
+		env_filter-0.1.2 \
+		env_logger-0.8.4 \
+		env_logger-0.11.5 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		fastrand-2.1.1 \
+		fixedbitset-0.4.2 \
+		fluent-uri-0.1.4 \
+		fnv-1.0.7 \
+		function_name-0.3.0 \
+		function_name-proc-macro-0.3.0 \
+		getrandom-0.2.15 \
+		graph-cycles-0.1.0 \
+		half-2.4.1 \
+		hashbrown-0.15.0 \
+		heck-0.5.0 \
+		hermit-abi-0.3.9 \
+		hermit-abi-0.4.0 \
+		humantime-2.1.0 \
+		ident_case-1.0.1 \
+		indexmap-2.6.0 \
+		is-terminal-0.4.13 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.10.5 \
+		itoa-1.0.11 \
+		js-sys-0.3.72 \
+		lalry-0.1.0 \
+		lazy_static-1.5.0 \
+		libc-0.2.161 \
+		linux-raw-sys-0.4.14 \
+		log-0.4.22 \
+		lsp-server-0.7.7 \
+		lsp-types-0.97.0 \
+		memchr-2.7.4 \
+		num-traits-0.2.19 \
+		num_cpus-1.16.0 \
+		once_cell-1.20.2 \
+		oorandom-11.1.4 \
+		owo-colors-4.1.0 \
+		petgraph-0.6.5 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
+		ppv-lite86-0.2.20 \
+		predicates-3.1.2 \
+		predicates-core-1.0.8 \
+		predicates-tree-1.0.11 \
+		pretty_assertions-1.4.1 \
+		proc-macro2-1.0.89 \
+		quickcheck-1.0.3 \
+		quickcheck_macros-1.0.0 \
+		quote-1.0.37 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rand_regex-0.17.0 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		regex-1.11.1 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
+		rustix-0.38.38 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
+		serde_json-1.0.132 \
+		serde_repr-0.1.19 \
+		strsim-0.11.1 \
+		syn-1.0.109 \
+		syn-2.0.86 \
+		syntree-0.14.5 \
+		syntree_layout-0.2.0 \
+		tempfile-3.13.0 \
+		termcolor-1.4.1 \
+		termtree-0.4.1 \
+		thiserror-1.0.66 \
+		thiserror-impl-1.0.66 \
+		tinytemplate-1.2.1 \
+		ts-rs-10.0.0 \
+		ts-rs-macros-10.0.0 \
+		ume-0.1.0 \
+		unicode-ident-1.0.13 \
+		unicode-width-0.1.14 \
+		utf8parse-0.2.2 \
+		version_check-0.9.5 \
+		wait-timeout-0.2.0 \
+		walkdir-2.5.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.95 \
+		wasm-bindgen-backend-0.2.95 \
+		wasm-bindgen-macro-0.2.95 \
+		wasm-bindgen-macro-support-0.2.95 \
+		wasm-bindgen-shared-0.2.95 \
+		web-sys-0.3.72 \
+		winapi-util-0.1.9 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		xml_writer-0.4.0 \
+		yansi-1.0.1 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

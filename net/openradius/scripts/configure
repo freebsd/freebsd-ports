@@ -1,0 +1,86 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+cat > Makefile << END
+
+### Installation paths and compiled-in defaults
+#
+DIR_BIN 	= $PREFIX/bin
+DIR_SBIN	= $PREFIX/sbin
+DIR_ETC 	= $PREFIX/etc/openradius
+DIR_LIB 	= $PREFIX/lib/openradius
+END
+
+if [ x$LOGFILE != x ]; then
+cat >> Makefile << END
+FILE_LOG	= $LOGFILE
+END
+else
+cat >> Makefile << END
+FILE_LOG	= /var/log/openradius/openradius.log
+END
+fi
+
+cat >> Makefile << END
+
+### Modules that will be built and installed
+#
+TGT_LIB		+= modules/ascfile/ascfile
+TGT_LIB		+= modules/unixpasswd/unixpasswd
+TGT_LIB		+= modules/radlogger/radlogger
+TGT_LIB		+= modules/delay/delay
+TGT_LIB		+= modules/radsql/radsql
+TGT_LIB		+= modules/memory/memory
+TGT_LIB		+= modules/debug/debug
+END
+
+if [ x$USE_LDAP != x ]; then
+cat >> Makefile << END
+TGT_LIB		+= modules/radldap/radldap
+CF_RADLDAP	= -I$LDAPINCLUDE${LOCALBASE}/include
+END
+fi
+
+cat >> Makefile << END
+
+### System compatibility flags, used in some targets' CF_TGT, LF_TGT or LL_TGT
+#
+S_CF_U_INT32_T	= -DU_INT32_T=u_int32_t
+S_CF_SYSLOG	= -DHAVE_SYSLOG
+S_CF_VSNPRINTF 	= -DHAVE_VSNPRINTF
+S_CF_SIGACTION 	= -DHAVE_SIGACTION
+S_LL_INET	=
+
+### Build flags for all targets
+#
+CF_ALL		= -g -w
+LF_ALL		= -s -L$LDAPLIB${LOCALBASE}/lib
+LL_ALL		=
+
+### Module-specific build flags
+#
+LF_RADLDAP	= -L$LDAPLIB${LOCALBASE}/lib
+LL_RADLDAP	= -lldap -llber
+
+### Build tools
+# 
+# It may be necessary to create a script similar to ccd-gcc for your compiler.
+# 
+CMPLR		= ./build/ccd-gcc
+DEFHDR		= ./build/hdr
+INST		= ./build/install
+AR		= ar rc \$@ \$^
+#
+COMP		= \$(CMPLR) \$(CF_ALL) \$(CF_TGT) -o \$@ -c \$<
+LINK		= \$(CMPLR) \$(LF_ALL) \$(LF_TGT) -o \$@ \$^ \$(LL_TGT) \$(LL_ALL)
+COMPLINK	= \$(CMPLR) \$(CF_ALL) \$(CF_TGT) \$(LF_ALL) \$(LF_TGT) -o \$@ \$< \$(LL_TGT) \$(LL_ALL)
+
+
+### Standard parts
+#
+include	Rules.mk
+
+END
+
+exit 0;

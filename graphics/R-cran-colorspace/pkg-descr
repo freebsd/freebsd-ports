@@ -1,0 +1,4 @@
+Carries out mapping between assorted color spaces including RGB,
+HSV, HLS, CIEXYZ, CIELUV, HCL (polar CIELUV), CIELAB and polar
+CIELAB. Qualitative, sequential, and diverging color palettes based
+on HCL colors are provided.

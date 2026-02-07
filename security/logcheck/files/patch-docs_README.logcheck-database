@@ -1,0 +1,105 @@
+--- docs/README.logcheck-database.orig	2017-01-25 21:08:04 UTC
++++ docs/README.logcheck-database
+@@ -15,7 +15,7 @@ normal egrep pattern-matches, applied in
+ 1. the "SECURITY ALERTS" layer, designed to detect the traces of active
+ 	intrusion attempts.
+ 
+-   Patterns raising the alarm go in "/etc/logcheck/cracking.d"; any
++   Patterns raising the alarm go in "%%ETCDIR%%/cracking.d"; any
+ 	event that matches one of these patterns turns the report
+ 	into an urgent "Security Alerts" report, with the relevant
+ 	event moved to a special section.  The cracking.d standard
+@@ -26,7 +26,7 @@ normal egrep pattern-matches, applied in
+ 	the default logcheck configuration, but if the local
+ 	administrator enables this layer of filtering in
+ 	logcheck.conf, then the rules go in the directory
+-	"/etc/logcheck/cracking.ignore.d".  Matches with
++	"%%ETCDIR%%/cracking.ignore.d".  Matches with
+ 	cracking.ignore rules will then reclassify the alert as a
+ 	false alarm (compare violations.ignore below).  Note that
+ 	this means they are totally ignored - log messages handled
+@@ -35,12 +35,12 @@ normal egrep pattern-matches, applied in
+ 2. the "SECURITY EVENTS" layer, designed to detect less critical
+ 	events still considered worthy of special attention.
+ 
+-   Patterns raising the alarm go in "/etc/logcheck/violations.d";
++   Patterns raising the alarm go in "%%ETCDIR%%/violations.d";
+ 	matches with these result in a "Security Events" alert,
+ 	with the relevant event moved to a special section.
+ 
+    Patterns cancelling such alarms go in the standard directory
+-	"/etc/logcheck/violations.ignore.d"; apparent "Security
++	"%%ETCDIR%%/violations.ignore.d"; apparent "Security
+ 	Events" that match with violations.ignore patterns are
+ 	discarded as false alarms.
+ 
+@@ -51,7 +51,7 @@ normal egrep pattern-matches, applied in
+ 	from the logfiles are considered for inclusion in the main
+ 	"System Events" section.
+ 
+-   Patterns in the three "/etc/logcheck/ignore.d.*" directories
++   Patterns in the three "%%ETCDIR%%/ignore.d.*" directories
+ 	again function to overrule alerts; the log messages that
+ 	match them are excluded from the report as trivial.  The
+ 	specific directories consulted depend on the prevailing
+@@ -78,13 +78,13 @@ underscore, and hyphen.
+ Contains filters relevant to only one Debian package - for example
+ if "fooserver" logs suspicious events like this:
+ "$DATE $HOSTNAME fooserver[$PID]: $USER is up to no good"
+-then a line in "/etc/logcheck/violations.d/fooserver" with an
++then a line in "%%ETCDIR%%/violations.d/fooserver" with an
+ appropriate pattern will promote it from a mere "System Event"
+ to a full "Security Event" in a subsection of the mailing headed
+ "fooserver".  Or then again if that kind of log message is more
+ trivial than it looks (maybe "foo" is a networked game of
+ spy-and-counterspy) then a line in
+-"/etc/logcheck/ignore.d.server/fooserver" will turn it into a
++"%%ETCDIR%%/ignore.d.server/fooserver" will turn it into a
+ nonevent for all but the most assiduous of administrators.
+ 
+ Sometimes a package will have not only special alarm calls which
+@@ -107,7 +107,7 @@ that need to be processed.
+ 
+ Standard "generic" rules go in each directory's "./logcheck" file;
+ thus for instance any log message at all matching "ATTACK"
+-(listed in "/etc/logcheck/cracking.d/logcheck") _always_ triggers
++(listed in "%%ETCDIR%%/cracking.d/logcheck") _always_ triggers
+ a "Security Alert", unless you deliberately tamper with
+ "cracking.ignore.d" rules.
+ 
+@@ -122,12 +122,12 @@ non-package-specific "flagging" patterns
+ "fooserver" outputs syslog messages like this:
+     "$DATE $HOSTNAME fooserver[$PID]: 3 attempts 0 rejected"
+ then the standard keyword "reject" listed in the generic
+-"/etc/logcheck/violations.d/logcheck" file will trigger frequent
++"%%ETCDIR%%/violations.d/logcheck" file will trigger frequent
+ "Security Events" reports.  Putting a filtering pattern in
+-"/etc/logcheck/violations.ignore.d/fooserver" won't help here!
++"%%ETCDIR%%/violations.ignore.d/fooserver" won't help here!
+ The solution is to use a file named in the specially-privileged
+ ./logcheck-<packagename> format:
+-"/etc/logcheck/violations.ignore.d/logcheck-fooserver".
++"%%ETCDIR%%/violations.ignore.d/logcheck-fooserver".
+ This can contain patterns provided by that particular package
+ which nonetheless need to take precedence over the generic rules.
+ 
+@@ -137,8 +137,8 @@ Sysadmins can use the "local-*" filename
+ additions to the "logcheck-*" pattern lists.  If you have "ippl"
+ logging network connections verbosely into syslog then you can put
+ custom "Security Events" keywords in
+-"/etc/logcheck/violations.d/local-ippl" and exceptions in
+-"/etc/logcheck/violations.ignore.d/local-ippl".
++"%%ETCDIR%%/violations.d/local-ippl" and exceptions in
++"%%ETCDIR%%/violations.ignore.d/local-ippl".
+ 
+ 
+ WRITING RULES
+@@ -181,7 +181,7 @@ logcheck-test(1)).
+ Alternatively you can manually grep your log file, and remove trailing
+ space with something like this:
+ 
+-    sed -e 's/[[:space:]]*$//' /var/log/syslog | egrep \
++    sed -e 's/[[:space:]]*$//' /var/log/messages | egrep \
+     '^\w{3} [ :0-9]{11} oempc wwwoffled\[[0-9]+\]: WWWOFFLE (On|Off)line\.$'
+ 
+ If the log line is displayed, then your regex works.

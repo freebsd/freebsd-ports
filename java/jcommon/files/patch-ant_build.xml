@@ -1,0 +1,20 @@
+--- ant/build.xml.orig	2025-12-14 17:44:25 UTC
++++ ant/build.xml
+@@ -49,7 +49,7 @@
+     <javac srcdir="src/main/java"
+       destdir="${builddir}"
+       deprecation="${build.deprecation}" debug="${build.debug}"
+-      optimize="${build.optimize}" target="${build.target}" source="${build.source}">
++      optimize="${build.optimize}">
+       <include name="org/jfree/*"/>
+       <include name="org/jfree/base/**"/>
+       <include name="org/jfree/date/*"/>
+@@ -113,7 +113,7 @@
+     <javac srcdir="src/main/java"
+       destdir="${builddir}"
+       deprecation="${build.deprecation}" debug="${build.debug}"
+-      optimize="${build.optimize}" target="${build.target}" source="${build.source}">
++      optimize="${build.optimize}">
+       <classpath refid="build-xml.classpath" />
+       <include name="org/jfree/xml/**"/>
+     </javac>

@@ -1,0 +1,27 @@
+--- ./Makefile.orig	2000-08-06 04:00:44.000000000 +0200
++++ ./Makefile	2008-04-13 01:15:22.000000000 +0200
+@@ -1,18 +1,18 @@
+ VERSION = XFireworks-1.4
+ PKGNAME = xfireworks-1.4
+-PREFIX = /usr/X11R6
+-X11BASE = /usr/X11R6
++#PREFIX = /usr/X11R6
++#X11BASE = /usr/X11R6
+ 
+ BINDIR = $(PREFIX)/bin
+ LIBDIR = $(PREFIX)/etc
+ MANDIR = $(PREFIX)/man/man1
+ 
+-XINCLUDEDIR = $(X11BASE)/include
+-XLIBDIR = $(X11BASE)/lib
++XINCLUDEDIR = $(LOCALBASE)/include
++XLIBDIR = $(LOCALBASE)/lib
+ 
+-CFLAGS = -O
++#CFLAGS = -O
+ LFLAGS = -lm -lX11
+-CC = cc
++#CC = cc
+ CP = cp
+ RM = rm -f
+ MKDIR = mkdir -p

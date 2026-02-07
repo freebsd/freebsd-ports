@@ -1,0 +1,14 @@
+--- Makefile.orig	2025-01-26 16:27:42 UTC
++++ Makefile
+@@ -23,11 +23,9 @@ mathics_scanner/data/character-tables.json: mathics_sc
+ all: develop
+ 
+ mathics_scanner/data/character-tables.json: mathics_scanner/data/named-characters.yml
+-	$(PIP) install -r requirements-dev.txt
+ 	$(PYTHON) mathics_scanner/generate/build_tables.py
+ 
+ mathics_scanner/data/operators.json: mathics_scanner/data/operators.yml
+-	$(PIP) install -r requirements-dev.txt
+ 	$(PYTHON) mathics_scanner/generate/build_operator_tables.py
+ 
+ #: build everything needed to install

@@ -1,0 +1,2 @@
+Crypt::OpenSSL::DSA implements the DSA (Digital Signature Algorithm)
+signature verification system.

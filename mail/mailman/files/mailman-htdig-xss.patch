@@ -1,0 +1,16 @@
+Obtained from: Dan Niles
+https://github.com/danogh/mailman2.3/blob/main/Patches/htdig/mailman-htdig-xss.patch
+
+--- ./Mailman/Cgi/mmsearch.py.orig	2024-04-15 11:11:03.159081000 -0500
++++ ./Mailman/Cgi/mmsearch.py	2024-04-15 11:57:40.585341000 -0500
+@@ -146,6 +146,10 @@
+             raise _search_exception(listname, 'cgi', '-6- ' + detail)
+         if  type(fs[fieldname]) is types.ListType:
+             raise _search_exception(listname, 'cgi', '-8- ' + detail)        
++        if (re.search('[<>]', fs[fieldname].value) or
++            Utils.suspiciousHTML(fs[fieldname].value)):
++            raise _search_exception(listname, 'cgi',
++                                    '-15- suspicious parameter')
+         fieldhash[fieldname] = fs[fieldname].value
+     return urllib.urlencode(fieldhash)
+ 

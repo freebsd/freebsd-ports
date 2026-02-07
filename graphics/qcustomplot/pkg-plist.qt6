@@ -1,0 +1,7 @@
+include/QCustomPlotQt6/qcustomplot.h
+lib/cmake/QCustomPlotQt6/QCustomPlotQt6Config.cmake
+lib/cmake/QCustomPlotQt6/QCustomPlotQt6Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QCustomPlotQt6/QCustomPlotQt6Targets.cmake
+lib/libQCustomPlotQt6.so
+lib/libQCustomPlotQt6.so.2
+lib/libQCustomPlotQt6.so.%%SHLIB_VER%%

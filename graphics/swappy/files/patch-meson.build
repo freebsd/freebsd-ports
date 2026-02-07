@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-08-20 11:05:16 UTC
++++ meson.build
+@@ -13,7 +13,7 @@ git = find_program('git', native: true, required: fals
+ 
+ version = '"@0@"'.format(meson.project_version())
+ git = find_program('git', native: true, required: false)
+-if git.found()
++if false
+ 	git_commit = run_command([git, 'rev-parse', '--short', 'HEAD'], check:true)
+ 	git_branch = run_command([git, 'rev-parse', '--abbrev-ref', 'HEAD'], check:true)
+ 	if git_commit.returncode() == 0 and git_branch.returncode() == 0

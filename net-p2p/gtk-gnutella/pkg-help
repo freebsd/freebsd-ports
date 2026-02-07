@@ -1,0 +1,28 @@
+INTERACTIVE_CONFIGURE: Launches Configure in its default mode, which is
+	*very* interactive. Disabled here by default to conform to FreeBSD
+	guidelines, this mode is useful if you have problems with the
+	default Configure.
+
+GUI: Disable this to build a headless version of Gtk-Gnutella. Therefore,
+	monitoring of operations for Gtk-Gnutella will have to be
+	done without relying on any GUI, and the configuration is done via
+	files only.
+
+TLS: Enable support for scrambling GNet connections. Currently supported
+	only by Gtk-Gnutella.
+
+NLS: Enable National Language Support for translation of User Interface.
+
+IPV6: Enable to support IPv6 connections. The real configuration takes
+	place at run-time so keeping it enabled will not force IPv6 usage.
+
+DBUS: Enable D-Bus IPC support. Gtk-Gnutella will send out messages onto
+	the D-Bus message bus. That way external applications can easily
+	act on certain events that happen, such as a completed download.
+
+DEBUG: Compile with debugging symbols. Useful if you intend to make a
+	bug report.
+
+PORTABILITY: Configure code to use the PATH variable at run-time at a
+	cost in performance. Useful if you intend to move the executable
+	to multiple machines.

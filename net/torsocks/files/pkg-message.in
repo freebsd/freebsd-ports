@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+You installed torsocks, which is part of the Tor Project.
+If you have non-local or non-standard Tor SOCKS server location,
+please edit %%PREFIX%%/etc/tor/torsocks.conf
+
+To run most programs through Tor launch them like this:
+	torsocks [any executable]
+For example you can use ssh to a some.host.com by doing:
+	torsocks ssh username@some.host.com -l <user>
+or launch pidgin by doing:
+	torsocks pidgin
+
+==SECURITY WARNING==
+Please note that torsocks does not in general guarantee that all
+network connections made using torsocks will always go through
+Tor, and not directly through the unsecured network. There are many
+ways how general programs can purposefully or inadvertently defeat
+torsocks. One way is to reset the environment variable for the child
+process. You can use ex. wireshark to see where network packets are
+actually sent by the program in question.
+EOM
+}
+]

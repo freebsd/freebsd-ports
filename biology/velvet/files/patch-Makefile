@@ -1,0 +1,33 @@
+--- Makefile.orig	2013-10-18 01:03:39.000000000 +0900
++++ Makefile	2014-06-17 21:34:34.000000000 +0900
+@@ -1,15 +1,15 @@
+-CC = gcc
+-CFLAGS = -Wall
++CC ?= gcc
++CFLAGS += -Wall
+ DEBUG = -g
+ LIBS = -lm
+-OPT = -O3
+-MAXKMERLENGTH=31
+-CATEGORIES=2
++#OPT = -O3
++MAXKMERLENGTH?=31
++CATEGORIES?=2
+ DEF = -D MAXKMERLENGTH=$(MAXKMERLENGTH) -D CATEGORIES=$(CATEGORIES)
+ PDFLATEX_VERSION := $(shell pdflatex --version 2> /dev/null)
+ 
+ # Mac OS users: uncomment the following lines
+-CFLAGS = -Wall -m64
++#CFLAGS = -Wall -m64
+ 
+ # Sparc/Solaris users: uncomment the following line
+ # CFLAGS = -Wall -m64
+@@ -40,7 +40,7 @@
+ OBJ = obj/tightString.o obj/run.o obj/splay.o obj/splayTable.o obj/graph.o obj/run2.o obj/fibHeap.o obj/fib.o obj/concatenatedGraph.o obj/passageMarker.o obj/graphStats.o obj/correctedGraph.o obj/dfib.o obj/dfibHeap.o obj/recycleBin.o obj/readSet.o obj/binarySequences.o obj/shortReadPairs.o obj/locallyCorrectedGraph.o obj/graphReConstruction.o obj/roadMap.o obj/preGraph.o obj/preGraphConstruction.o obj/concatenatedPreGraph.o obj/readCoherentGraph.o obj/utility.o obj/kmer.o obj/scaffold.o obj/kmerOccurenceTable.o obj/allocArray.o obj/autoOpen.o
+ OBJDBG = $(subst obj,obj/dbg,$(OBJ))
+ 
+-default : cleanobj zlib obj velveth velvetg doc
++default : cleanobj zlib obj velveth velvetg
+ 
+ clean : clean-zlib
+ 	-rm obj/*.o obj/dbg/*.o ./velvet* 

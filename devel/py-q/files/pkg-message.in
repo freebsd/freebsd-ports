@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+Instructions for using devel/py-q can be found in the supplied docs:
+
+  %%DOCSDIR%%/README.md
+
+Or video http://pyvideo.org/video/1858/sunday-evening-lightning-talks#t=25m15
+EOM
+}
+]

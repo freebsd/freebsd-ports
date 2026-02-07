@@ -1,0 +1,94 @@
+--- Makefile.orig	2006-06-02 19:15:31 UTC
++++ Makefile
+@@ -2,8 +2,8 @@
+ #
+ 
+ # C compiler flags
+-CC = cc
+-RM = rm
++CC ?= cc
++RM ?= rm
+ INCLUDE = 
+ 
+ ######################################################################
+@@ -81,7 +81,7 @@ INCLUDE = 
+ ######################################################################
+ # UnixWare 7 -- SVR5 MP 
+ #DEFS = -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DUNIXWARE
+-DEFS = -DSYSV -DPS_HACK -DRUDE_KILL -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DUNIXWARE
++DEFS = -DPS_HACK -DRUDE_KILL -DHAVE_SETSID -DUTMPHOST
+ SPECLIBS = 
+ INSTTYPE = install4
+ 
+@@ -193,26 +193,27 @@ MMODE   = 644
+ # You will need to delete parse.c before compiling!  You can either
+ # do so by hand, or do a 'make clean' followed by the normal 'make'.
+ #DEFS += -O -m486
+-#DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
++DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
+ #DEFS += -DPROC_SEARCH_1
+ #SPECLIBS = -lkvm
+-#INSTTYPE = install1a
++INSTTYPE = install1a
+ #
+-#DEST    = /usr/local/sbin
+-#CFDEST  = /etc/doinkd
+-#MDEST   = /usr/local/man
+-#LOGDEST = /var/log
++DEST    = ${STAGEDIR}${PREFIX}/sbin
++CFDEST  = ${STAGEDIR}${PREFIX}/etc/doinkd
++CFDEST_REAL  = ${PREFIX}/etc/doinkd
++MDEST   = ${STAGEDIR}${PREFIX}/share/man
++LOGDEST = /var/log
+ #
+ #OWNER   = root
+ #CFOWNER = root
+-#MOWNER  = man
++MOWNER  = man
+ #
+-#GROUP   = daemon
+-#CFGROUP = daemon
++GROUP   = daemon
++CFGROUP = daemon
+ #
+-#MODE    = 750
+-#CFMODE  = 664
+-#MMODE   = 444
++MODE    = 750
++CFMODE  = 664
++MMODE   = 444
+ 
+ ######################################################################
+ ######################################################################
+@@ -450,13 +451,13 @@ PMAN    = doinkd.8
+ PMAN    = doinkd.8
+ 
+ # Names of config and log files
+-CONFIG  = ${CFDEST}/${COMMFILE}
++CONFIG  = ${CFDEST_REAL}/${COMMFILE}
+ LOGFILE = ${LOGDEST}/doinkd.log
+ 
+ # HERE are the big CFLAGS
+ # Add -g if you want debugging
+ # Add -O or whatever variant for optimization
+-CFLAGS = ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
++CFLAGS = ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE} -Wno-deprecated-non-prototype -Wno-parentheses -Wno-implicit-function-declaration -Wno-format -Wno-int-conversion
+ 
+ # For HP's ANSI C compiler (use -g instead of +O3 for debugging)
+ # CFLAGS = +O3 -Aa -D_HPUX_SOURCE ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
+@@ -509,11 +510,11 @@ install1a: all
+ # BSD like, but with some enhancements like: install -s -> strip binary
+ #                                            gzip manual pages
+ install1a: all
+-	install -s -c -m ${MODE} -o ${OWNER} -g ${GROUP} ${BINARY} ${DEST}
+-	install -c -m ${CFMODE} -o ${CFOWNER} -g ${CFGROUP} ${COMMFILE}.template ${CFDEST}
+-	install -c -m ${MMODE} -o ${MOWNER} ${CFMAN} ${MDEST}/man5
++	install -s -c -m ${MODE} ${BINARY} ${DEST}
++	install -c -m ${CFMODE} ${COMMFILE}.template ${CFDEST}
++	install -c -m ${MMODE} ${CFMAN} ${MDEST}/man5
+ 	gzip -f ${MDEST}/man5/${CFMAN}
+-	install -c -m ${MMODE} -o ${MOWNER} ${PMAN} ${MDEST}/man8
++	install -c -m ${MMODE} ${PMAN} ${MDEST}/man8
+ 	gzip -f ${MDEST}/man8/${PMAN}
+ 	@echo ""
+ 	@echo "Be sure to edit/create the file ${CONFIG} based on"

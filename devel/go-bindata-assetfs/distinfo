@@ -1,0 +1,7 @@
+TIMESTAMP = 1595068278
+SHA256 (elazarl-go-bindata-assetfs-v1.0.1_GH0.tar.gz) = 4c3f49445143aa8848d64ac19a667b8e45faf3aed9fe52a07d0e6982245e19d7
+SIZE (elazarl-go-bindata-assetfs-v1.0.1_GH0.tar.gz) = 4144
+SHA256 (golang-net-ab34263_GH0.tar.gz) = ca27d7a4ed96803b49ae683612dabeb51c31ac07547cb3fb1f5cb54b249e389c
+SIZE (golang-net-ab34263_GH0.tar.gz) = 1177602
+SHA256 (golang-sys-ddb9806_GH0.tar.gz) = c2f80314640b3c884f8941cfec5656681796dc17332c39ad83991d4dd12df91b
+SIZE (golang-sys-ddb9806_GH0.tar.gz) = 1054331

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Chemistry/File/MidasPattern.pm
+%%SITE_PERL%%/Chemistry/MidasPattern.pm
+%%PERL5_MAN3%%/Chemistry::MidasPattern.3.gz
+%%PERL5_MAN3%%/Chemistry::File::MidasPattern.3.gz

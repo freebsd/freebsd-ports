@@ -1,0 +1,19 @@
+Simple terminal emulator for Wayland and X11 with OpenGL rendering and
+minimal dependencies.
+
+# Features
+- Unicode support
+- Text reflow
+- 24-bit colors
+- Dynamic colors
+- All text properties (squiggly underline, blinking, overline etc.)
+- Resizable font
+- Subpixel antialiasing
+- Mouse reporting
+- Scrollback
+- Mouse text selection
+- Clipboard
+- Configurable keybindings
+- Clickable links, OSC 8 links
+- Command history and marks
+- Terminal image protocol and sixel graphics (experimental)

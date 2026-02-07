@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/MooseX::IOC.3.gz
+%%PERL5_MAN3%%/MooseX::IOC::Meta::Attribute.3.gz
+%%SITE_PERL%%/MooseX/IOC.pm
+%%SITE_PERL%%/MooseX/IOC/Meta/Attribute.pm

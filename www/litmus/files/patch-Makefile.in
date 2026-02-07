@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2008-09-29 20:22:38 UTC
++++ Makefile.in
+@@ -69,11 +69,11 @@ install: $(TESTS) litmus 
+ 	$(INSTALL) -d $(DESTDIR)$(bindir)
+ 	$(INSTALL) -d $(DESTDIR)$(libexecdir)/litmus
+ 	$(INSTALL) -d $(DESTDIR)$(datadir)/litmus/htdocs
+-	$(INSTALL_PROGRAM) $(top_builddir)/litmus $(DESTDIR)$(bindir)/litmus
++	$(BSD_INSTALL_SCRIPT) $(top_builddir)/litmus $(DESTDIR)$(bindir)/litmus
+ 	for t in $(TESTS); do \
+-	  $(INSTALL_PROGRAM) $(top_builddir)/$$t $(DESTDIR)$(libexecdir)/litmus/$$t; done
++	  $(BSD_INSTALL_PROGRAM) $(top_builddir)/$$t $(DESTDIR)$(libexecdir)/litmus/$$t; done
+ 	for d in $(HTDOCS); do \
+-	  $(INSTALL_DATA) $(top_srcdir)/htdocs/$$d $(DESTDIR)$(datadir)/litmus/htdocs/$d; done
++	  $(BSD_INSTALL_DATA) $(top_srcdir)/htdocs/$$d $(DESTDIR)$(datadir)/litmus/htdocs/$d; done
+ 
+ props: src/props.o $(ODEPS)
+ 	$(CC) $(LDFLAGS) -o $@ src/props.o $(ALL_LIBS)

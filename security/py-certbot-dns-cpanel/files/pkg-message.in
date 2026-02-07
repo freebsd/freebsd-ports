@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+How to run certbot using the cPanel plugin:
+
+$ certbot certonly \
+  --authenticator certbot-dns-cpanel:cpanel \
+  --certbot-dns-cpanel:cpanel-credentials %%PREFIX%%/etc/certbot-dns-cpanel/credentials.ini \
+  -d 'exemple.com' \
+  -d '*.exemple.com'
+
+You can also specify a installer plugin with the --installer option.
+
+$ certbot run \
+  --authenticator certbot-dns-cpanel:cpanel \
+  --installer apache \
+  --certbot-dns-cpanel:cpanel-credentials %%PREFIX%%/etc/certbot-dns-cpanel/credentials.ini \
+  -d 'exemple.com' \
+  -d '*.exemple.com'
+
+More details on https://github.com/badjware/certbot-dns-cpanel.
+EOM
+}
+]

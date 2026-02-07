@@ -1,0 +1,4 @@
+@(,games,2555) bin/freesweep
+%%DATADIR%%/sweeprc
+share/man/man6/freesweep.6.gz
+@sample(,games,0664) /var/games/sweeptimes.sample

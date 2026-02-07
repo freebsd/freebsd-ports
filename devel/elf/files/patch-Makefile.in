@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2003-09-20 14:23:28 UTC
++++ Makefile.in
+@@ -1,9 +1,9 @@ all:		./src/Makefile
+ all:		./src/Makefile
+-		cd ./src; make; cd ../
++		cd ./src; ${MAKE}
+ 
+ install:	./src/Makefile ./doc/Makefile
+-		cd ./src; make install; cd ../
+-		cd ./doc; make install; cd ../
++		cd ./src; ${MAKE} install
++		cd ./doc; ${MAKE} install
+ 
+ uninstall:	./src/Makefile ./doc/Makefile
+ 		cd ./src;make uninstall; cd ../

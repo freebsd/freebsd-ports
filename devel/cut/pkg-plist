@@ -1,0 +1,9 @@
+bin/cutgen
+include/cut/%%VERSION%%/cut.h
+lib/libcut.a
+%%PYTHON_SITELIBDIR%%/cut/common.py
+%%PYTHON_SITELIBDIR%%/cut/cutgen.py
+%%PYTHON_SITELIBDIR%%/cut/lexer.py
+%%PYTHON_SITELIBDIR%%/cut/options.py
+%%PYTHON_SITELIBDIR%%/cut/parser.py
+%%PORTDOCS%%%%DOCSDIR%%/index.html

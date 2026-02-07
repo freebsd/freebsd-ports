@@ -1,0 +1,8 @@
+File tests each argument in an attempt to classify it. There are three sets of
+tests, performed in the following order:
+
+  - filesystem tests
+  - magic number tests
+  - language tests
+
+The first test that succeeds causes the file type to be printed.

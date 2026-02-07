@@ -1,0 +1,2 @@
+Net::DNS::Match is a Perl extension for testing domains against another
+list of domains (similar to Net::Patricia but for FQDNs).

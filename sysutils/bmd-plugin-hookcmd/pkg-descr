@@ -1,0 +1,3 @@
+The bmd-plugin-hookcmd spawns the specific command when VM status is changed.
+If you write a script that mail to you, you will be notified when VM is started
+and stopped.

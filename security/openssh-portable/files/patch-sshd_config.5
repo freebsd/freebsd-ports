@@ -1,0 +1,59 @@
+--- sshd_config.5.orig	2022-02-11 18:50:00.822679000 +0000
++++ sshd_config.5	2022-02-11 19:09:05.162504000 +0000
+@@ -701,7 +701,9 @@
+ .Qq ssh -Q HostbasedAcceptedAlgorithms .
+ This was formerly named HostbasedAcceptedKeyTypes.
+ .It Cm HostbasedAuthentication
+-Specifies whether rhosts or /etc/hosts.equiv authentication together
++Specifies whether rhosts or
++.Pa /etc/hosts.equiv
++authentication together
+ with successful public key client host authentication is allowed
+ (host-based authentication).
+ The default is
+@@ -1416,6 +1434,15 @@
+ .Cm ethernet .
+ The default is
+ .Cm no .
++Note that if
++.Cm ChallengeResponseAuthentication
++is
++.Cm yes ,
++the root user may be allowed in with its password even if
++.Cm PermitRootLogin is set to
++.Cm prohibit-password
++or
++.Cm without-password .
+ .Pp
+ Independent of this setting, the permissions of the selected
+ .Xr tun 4
+@@ -1774,12 +1801,19 @@
+ .Xr sshd 8
+ as a non-root user.
+ The default is
++.Cm yes ,
++unless
++.Nm sshd
++was built without PAM support, in which case the default is
+ .Cm no .
+ .It Cm VersionAddendum
+ Optionally specifies additional text to append to the SSH protocol banner
+ sent by the server upon connection.
+ The default is
+-.Cm none .
++.Cm %%SSH_VERSION_FREEBSD_PORT%% .
++The value
++.Cm none
++may be used to disable this.
+ .It Cm X11DisplayOffset
+ Specifies the first display number available for
+ .Xr sshd 8 Ns 's
+@@ -1793,7 +1827,7 @@
+ or
+ .Cm no .
+ The default is
+-.Cm no .
++.Cm yes .
+ .Pp
+ When X11 forwarding is enabled, there may be additional exposure to
+ the server and to client displays if the

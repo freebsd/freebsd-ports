@@ -1,0 +1,11 @@
+--- configure.orig	2020-03-23 18:53:54 UTC
++++ configure
+@@ -263,7 +263,7 @@ elif [ "$type" = "NetBSD" ] ; then
+ 	RANLIB='ranlib'
+ 	POSTFIX='_netbsd'
+ elif [ "$type" = "FreeBSD" ] ; then
+-	CC='gcc'
++	CC='cc'
+ 	CFLAGS='-Wall'
+ 	if [ "$LIBTYPE" = "dynamic" ] ; then
+ 		CLIBFLAGS='-Wall -fPIC'

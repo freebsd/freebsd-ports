@@ -1,0 +1,7 @@
+A free Microsoft OneDrive Client that seemlessly supports OneDrive Personal,
+OneDrive for Business, OneDrive for Office365 and Sharepoint Libraries.
+This robust and highly customisable client is compatible with all major
+Linux distributions and FreeBSD, and can also be deployed as a container
+using Docker or Podman. It offers both one-way and two-way synchronisation
+capabilities while ensuring a secure connection to Microsoft OneDrive
+services.

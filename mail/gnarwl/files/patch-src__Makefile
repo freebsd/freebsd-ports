@@ -1,0 +1,22 @@
+--- src/Makefile.orig	2005-03-13 14:30:54 UTC
++++ src/Makefile
+@@ -4,7 +4,7 @@ SOBJ=config.o dbaccess.o util.o
+ catch:
+ 	$(MAKE) -C ..
+ 
+-all: clean compile
++all: compile
+ 
+ compile: $(OBJ) $(SOBJ)
+ 	$(CC) $(CFLAGS) $(LFLAGS) -o $(BIN) gnarwl.c $(OBJ)
+@@ -14,7 +14,7 @@ clean:
+ 	rm -f DEADJOE *.o *~ $(BIN) $(SBIN)
+ 
+ install:
+-	mkdir -m 755 -p $(BINDIR) $(SBINDIR)
+-	install -m 755 -s $(BIN) $(BINDIR)
+-	install -m 755 -s $(SBIN) $(SBINDIR)
++	mkdir -p $(DESTDIR)$(BINDIR) $(DESTDIR)$(SBINDIR)
++	$(BSD_INSTALL_PROGRAM) $(BIN) $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) $(SBIN) $(DESTDIR)$(SBINDIR)
+ 

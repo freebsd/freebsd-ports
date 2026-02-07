@@ -1,0 +1,5 @@
+bin/gnaural
+%%DATADIR%%/gnaural.glade
+share/applications/gnaural.desktop
+share/pixmaps/gnaural-icon.xpm
+share/pixmaps/gnaural-icon.png

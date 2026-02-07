@@ -1,0 +1,27 @@
+--- configure.orig	2004-08-13 07:22:18 UTC
++++ configure
+@@ -3487,7 +3487,6 @@ host_os=`echo $ac_cv_host | sed 's/^\([^
+ 
+ case "${host}" in
+ 	i?86-*-freebsd*)
+-  		CC=cc
+ 		;;
+ 	i?86-*-linux-*)
+   		CC=gcc
+@@ -3499,7 +3498,6 @@ case "${host}" in
+ 		ADDLIBS="-li386"
+ 		;;
+ 	*)
+-  		CC=gcc
+ 		;;
+ esac
+ 
+@@ -3946,7 +3944,7 @@ fi
+ done
+ 
+ 
+-for ac_header in machine/smb.h
++for ac_header in dev/smbus/smb.h machine/smb.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Readonly/XS.pm
+%%SITE_ARCH%%/auto/Readonly/XS/XS.so
+%%PERL5_MAN3%%/Readonly::XS.3.gz

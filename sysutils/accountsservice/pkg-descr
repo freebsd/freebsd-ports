@@ -1,0 +1,7 @@
+The AccountsService project provides
+
+ o  A set of D-Bus interfaces for querying and manipulating
+    user account information.
+
+ o  An implementation of these interfaces based on the pw(8)
+    command.

@@ -1,0 +1,7 @@
+Mailagent allows you to process your mail automatically.  Given a set
+of lex-like rules, you are able to fill mails to specific folders,
+forward messages to a third person, pipe a message to a command or
+even post the message to a newsgroup.  It is also possible to process
+messages containing some commands.  The mailagent is not usually
+invoked manually but is rather called via the filter program, which is
+in turn invoked by sendmail.

@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# PROVIDE: calibre
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable calibre_server:
+#
+# calibre_enable (bool):        Set it to "YES" to enable calibre
+#                               Default is "NO".
+# calibre_port (int):		port that calibre_server listens on
+#				Default is 8080
+# calibre_user (string):	user that calibre_server runs as
+#				Default is calibre
+# calibre_home (string):	home directory for calibre_server
+#				Default is the home directory of calibre_user
+# calibre_url_prefix (string):  prefix to append to all URLs
+#				default is unset
+# calibre_logfile (string):	log file location
+#				Default /var/log/calibre-server/calibre-server.log
+# calibre_logsize (int):	size of log file before being rotated in MBs
+#				Default 10 MB
+# calibre_flags (string):	Any further flags to customize configuration
+#				Default empty
+# calibre_library (string):	path to library folder to serve content from
+#
+#
+##########################################################
+
+. /etc/rc.subr
+
+export PATH=$PATH:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin
+
+name=calibre
+rcvar=calibre_enable
+
+load_rc_config $name
+
+: ${calibre_enable:=NO}
+: ${calibre_user:=calibre}
+: ${calibre_library:=/nonexistent}
+: ${calibre_logfile:=/var/log/calibre-server/calibre-server.log}
+: ${calibre_logsize:=10}
+
+pidfile=/var/run/${name}/${name}.pid
+command=%%PREFIX%%/bin/calibre-server
+command_interpreter=%%LOCALBASE%%/bin/%%PYTHON_VERSION%%
+required_dirs=${calibre_library}
+
+start_precmd=calibre_prestart
+
+calibre_home=${calibre_home:-$(getent passwd ${calibre_user} | awk -F: '{print $6}')}
+calibre_env="${calibre_env} HOME=${calibre_home:-/nonexistent}"
+
+if [ ! -z "${calibre_port}" ]; then
+	command_args="${command_args} --port=${calibre_port}"
+fi
+if [ ! -z "${calibre_url_prefix}" ]; then
+	command_args="${command_args} --url-prefix=${calibre_url_prefix}"
+fi
+
+command_args="${command_args} --log ${calibre_logfile} --pidfile ${pidfile} --max-log-size ${calibre_logsize} --daemonize ${calibre_library}"
+
+calibre_prestart()
+{
+	install -d -o ${calibre_user} -m 755 /var/run/${name}
+	install -d -o ${calibre_user} -m 755 `dirname ${calibre_logfile}`
+}
+
+run_rc_command "$1"

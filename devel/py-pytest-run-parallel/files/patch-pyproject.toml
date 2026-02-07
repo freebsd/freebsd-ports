@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-11-24 19:47:49 UTC
++++ pyproject.toml
+@@ -21,8 +21,7 @@ maintainers = [
+     { name = "Lysandros Nikolaou", email = "lnikolaou@quansight.com" },
+     { name = "Nathan Goldbaum", email = "ngoldbaum@quansight.com" },
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ classifiers = [
+     "Framework :: Pytest",
+     "Development Status :: 4 - Beta",

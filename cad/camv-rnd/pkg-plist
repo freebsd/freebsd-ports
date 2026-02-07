@@ -1,0 +1,17 @@
+bin/camv-rnd
+%%ETCDIR%%/conf_core.lht
+%%ETCDIR%%/import_gcode.conf
+%%ETCDIR%%/menu.lht
+lib/camv-rnd/plugins/dialogs.pup
+lib/camv-rnd/plugins/dialogs.so
+lib/camv-rnd/plugins/export_lpr.pup
+lib/camv-rnd/plugins/export_lpr.so
+lib/camv-rnd/plugins/export_png.pup
+lib/camv-rnd/plugins/export_png.so
+lib/camv-rnd/plugins/export_ps.pup
+lib/camv-rnd/plugins/export_ps.so
+lib/camv-rnd/plugins/export_svg.pup
+lib/camv-rnd/plugins/export_svg.so
+lib/camv-rnd/plugins/gui.pup
+lib/camv-rnd/plugins/gui.so
+share/man/man1/camv-rnd.1.gz

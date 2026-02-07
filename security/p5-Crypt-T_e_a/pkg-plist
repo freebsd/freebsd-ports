@@ -1,0 +1,4 @@
+bin/tea
+%%SITE_PERL%%/Crypt/Tea.pm
+%%PERL5_MAN3%%/Crypt::Tea.3.gz
+%%PERL5_MAN1%%/tea.1.gz

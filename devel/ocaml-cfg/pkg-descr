@@ -1,0 +1,3 @@
+This OCaml-library consists of a set of modules which implement functions for
+analyzing and manipulating context-free grammars (CFGs) in a purely functional
+way.

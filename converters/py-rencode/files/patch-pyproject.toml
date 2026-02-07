@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-05-29 19:52:15 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ exclude = ['rencode/*.c']
+ exclude = ['rencode/*.c']
+ 
+ [tool.poetry.build]
+-script = "build.py"
++script = "_build.py"
+ 
+ [tool.poetry.dependencies]
+ python = "^3.9"

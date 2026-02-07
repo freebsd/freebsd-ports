@@ -1,0 +1,15 @@
+--- Makefile.orig	2000-02-16 03:45:31 +0800
++++ Makefile
+@@ -11,9 +11,9 @@ speak: speak.o 
+ 	${CC} -o speak speak.o
+ 
+ install: all
+-	${INSTALL} -c -s -o root -g games  -m 755 speak ${BINDIR}
+-	${INSTALL} -d -o root -g games  -m 755 ${SPEAKDIR}
+-	${INSTALL} -c -o root -g games  -m 644 speak.nouns speak.actions speak.wrk speak.leadins README ${SPEAKDIR}
++	${INSTALL} -s -m 755 speak ${DESTDIR}${BINDIR}
++	${INSTALL} -d -m 755 ${DESTDIR}${SPEAKDIR}
++	${INSTALL} -m 644 speak.nouns speak.actions speak.wrk speak.leadins README ${DESTDIR}${SPEAKDIR}
+ 
+ clean: 
+ 	rm -f *.core *.o speak

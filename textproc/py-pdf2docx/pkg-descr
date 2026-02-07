@@ -1,0 +1,6 @@
+pdf2docx is a Python program and library to convert pdf to docx.
+
+pdf2docx allows to:
+* Extract data from PDF with PyMuPDF, e.g. text, images and drawings
+* Parse layout with rule, e.g. sections, paragraphs, images and tables
+* Generate docx with python-docx

@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Digest/FNV.pm
+%%SITE_ARCH%%/auto/Digest/FNV/autosplit.ix
+%%SITE_ARCH%%/auto/Digest/FNV/FNV.so
+%%PERL5_MAN3%%/Digest::FNV.3.gz

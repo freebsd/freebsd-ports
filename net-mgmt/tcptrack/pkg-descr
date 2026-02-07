@@ -1,0 +1,6 @@
+tcptrack is a sniffer that displays information about TCP connections it
+sees on a network interface. It passively watches for connections on the
+network interface, keeps track of their state, and displays a list of
+connections in a manner similar to the UNIX top(1) command. It displays
+source and destination addresses, ports, connection state, idle time, and
+bandwidth usage.

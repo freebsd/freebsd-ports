@@ -1,0 +1,9 @@
+tcllauncher is a way to have Tcl programs run out of /usr/local/bin under their
+own name, be installed in one place with their support files, and provides
+commands to facilitate server-oriented application execution.
+
+While there is another wrapper system that also does this, that system produces
+a single executable that contains all the code and support files within a
+built-in virtual filesystem wrapped inside the executable. Tcllauncher keeps
+the support files distinct, typically in a subdirectory of /usr/local/lib
+that's named after the application.

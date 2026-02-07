@@ -1,0 +1,2 @@
+POE Component that spawns a perl subprocess to handle non-blocking
+access to the DBI API.

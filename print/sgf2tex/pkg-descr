@@ -1,0 +1,4 @@
+sgf2tex is a system for typesetting Go games and diagrams using TeX. This
+system may be used with either plain TeX or LaTeX. It includes the Metafont
+sources for a new set of Go fonts, and a Perl script called Sgf2tex which
+translates files in ``Smart Go Format'' (SGF) into TeX.

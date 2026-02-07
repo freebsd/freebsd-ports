@@ -1,0 +1,22 @@
+--- profinet/data/abilities/impair-process-control/b885e6f4-18c2-455b-9695-6eec76d545ca.yml.orig	2024-02-18 23:10:18 UTC
++++ profinet/data/abilities/impair-process-control/b885e6f4-18c2-455b-9695-6eec76d545ca.yml
+@@ -20,10 +20,17 @@
+           ./dcp_utility blink #{dcp.target.mac}
+         payloads:
+         - dcp_utility
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          ./dcp_utility_freebsd blink #{dcp.target.mac}
++        payloads:
++        - dcp_utility_freebsd
+     windows:
+       psh, cmd:
+         timeout: 360
+         command: |
+           .\dcp_utility.exe blink #{dcp.target.mac}
+         payloads:
+-        - dcp_utility.exe
+\ No newline at end of file
++        - dcp_utility.exe

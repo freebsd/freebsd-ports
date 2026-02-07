@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Sub/Exporter.pm
+%%SITE_PERL%%/Sub/Exporter/Cookbook.pod
+%%SITE_PERL%%/Sub/Exporter/Tutorial.pod
+%%SITE_PERL%%/Sub/Exporter/Util.pm
+%%PERL5_MAN3%%/Sub::Exporter.3.gz
+%%PERL5_MAN3%%/Sub::Exporter::Cookbook.3.gz
+%%PERL5_MAN3%%/Sub::Exporter::Tutorial.3.gz
+%%PERL5_MAN3%%/Sub::Exporter::Util.3.gz

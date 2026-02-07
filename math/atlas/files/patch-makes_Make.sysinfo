@@ -1,0 +1,11 @@
+--- makes/Make.sysinfo.orig	2016-07-28 19:43:00 UTC
++++ makes/Make.sysinfo
+@@ -14,7 +14,7 @@ RunL1 : xL1
+ res/L1CacheSize:
+ 	$(MAKE) RunL1 MaxL1=$(MaxL1)
+ RunL1 : xL1
+-	$(ATLRUN) $(SYSdir) xL1 $(MaxL1)
++	$(ATLRUN) $(SYSdir) xL1
+ 
+ $(INCAdir)/atlas_type.h:
+ 	$(MAKE) RunTyp

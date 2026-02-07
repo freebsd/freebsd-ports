@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<definition>
+
+  <config model="Logitech Cordless iTouch/Internet/Cordless Desktop">
+  
+    <PrevTrack    keycode="144"/>
+    <Play         keycode="162"/>
+    <Stop         keycode="164"/>
+    <NextTrack    keycode="153"/>
+  
+    <VolUp        keycode="176" adj="2"/>
+    <VolDown      keycode="174" adj="2"/>
+    <Mute         keycode="160"/>
+  
+    <Email        keycode="236"/>
+    <Messenger    keycode="145"/>
+    <Webcam       keycode="146"/>
+    <Media        keycode="237"/>
+    <Search       keycode="229"/>
+    <Shopping     keycode="148"/>
+    <WebBrowser   keycode="178"/>
+    <Sleep        keycode="223"/>
+  
+    <!-- iTouch F-Key Utilities -->
+    <Print        keycode="122"/>
+    <MyComputer   keycode="195"/>
+    <MyDocuments  keycode="196"/>
+
+    <!-- Feel free to customize this -->
+  
+    <userdef keycode="230" command="/usr/bin/mozilla -remote 'openURL(http://google.com)'">Go to URL</userdef>
+  
+    <!-- Logitech key -->
+    <userdef keycode="161" command="xman">Xman</userdef>
+  
+  </config>
+  
+  <contributor>
+    <name>to be added</name>
+    <email>to be added</email>
+  </contributor>
+
+</definition>

@@ -1,0 +1,15 @@
+This is eispack from research.att.com. I've cleaned up the Makefile, but
+it is otherwise the same. The package is described in:
+
+1. Smith, B.T, Boyle, J.M, Dongerra, J.J., Garbow, B.S., Ikebe, Y.,
+   Klema, V.C., and Moler, C.B., Matrix Eigensystem Routines -- EISPACK
+   Guide, Lecture Notes in Computer Science, Vol. 6, Second Edition,
+   Springer-Verlag, New York, Heidelberg, Berlin, 1976
+
+2. Garbow, B.S., Boyle J.M., Dongerra, J.J, and Moler C.B., Matrix
+   Eigensystem Routines -- EISPACK Guide Extension, Lecture Notes in
+   Computer Science, Vol. 51, Springer-Verlag, New York, Heidelberg,
+   Berlin, 1977
+
+As the package is in FORTRAN there are no include files for the library,
+and the only thing to install is the library itself.

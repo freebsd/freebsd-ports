@@ -1,0 +1,8 @@
+FreeWnn is a Japanese/Chinese/Korean input method.
+
+This port installs only libraries for the Japanese imput method.
+They include an static library (libwnn.a), header files,
+and files used on the client side.
+
+Note that you have to set a environment variable JSERVER before
+you use an Wnn client.

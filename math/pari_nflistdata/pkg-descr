@@ -1,0 +1,13 @@
+This is the nflistdata package for PARI/GP, to be used by the 'nflist'
+function.
+
+It contains
+- tables of A5 number fields, from John JONES and David ROBERTS
+  (https://hobbes.la.asu.edu/NFDB/). These are needed for groups
+  5T4 = A5 and 6T4 = A5(6).
+- tables of regular extensions of Q(t) for most transitive subgroups
+  of S_n, n <= 15, by
+  * Juergen KLUENERS and Gunter MALLE (see G. Malle and B. H. Matzat,
+  Inverse Galois Theory, Springer, 1999).
+  * Tim DOKCHITSER
+  These are needed by nflist(G, 't) for groups of degree 8 or more

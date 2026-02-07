@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# PROVIDE: skkserv
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=skkserv
+rcvar=skkserv_enable
+command=%%PREFIX%%/sbin/skkserv
+
+: ${skkserv_enable:="NO"}
+: ${skkserv_flags:="-a 127.0.0.1 -u skkserv"}
+
+load_rc_config ${name}
+run_rc_command $1

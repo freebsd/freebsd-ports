@@ -1,0 +1,9 @@
+This library is a lightweight database abstraction layer designed to make
+it simple to write high performance applications using SQL databases from
+Objective-C.
+The library consists of a semi-abstract superclass doing much of the work
+and allowing extremely simple database specific bundles to be written to
+talk to particular database servers.  It comes with backend bundles for
+Postgres, MySQL, and SQLite (plus an untested Oracle bundle).
+
+LICENSE: LGPL2 or later

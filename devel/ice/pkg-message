@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+The default on-the-wire encoding for Ice changed in version 3.5 and IPv6
+is now enabled by default. ABI versions are not compatible.
+
+For details on these and additional changes please read the upgrading
+instructions available at
+
+	http://doc.zeroc.com/x/SQpN
+
+For on-the-wire background compatibility add
+
+	Ice.IPv6=0
+	Ice.Default.EncodingVersion=1.0
+
+to your Ice application configuration.
+EOM
+}
+]

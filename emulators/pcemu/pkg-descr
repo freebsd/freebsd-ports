@@ -1,0 +1,22 @@
+[This is David Hedley's original README, FreeBSD port comments below]
+
+                       PC Emulator for Unix and X Windows
+
+As the title suggests, this is a Unix/X windows program which is
+designed to emulate a standard 8086 based PC.
+
+The emulator runs at about 8-10MHz 80286 speed on a Sun SparcStation
+10/40 (without the -mviking flag) and at about 6MHz 8088 speed on a
+33MHz 80486 box running Linux.
+
+I have included a Postscript representation of my project report. It's
+a bit out of date now, but it's the closest thing I've got to
+documentation!  I'll do some kind of latex thing for the next
+release....
+
+The program rather hogs the cpu but unmapping the window (iconifying
+it) will put it to sleep.
+
+The author is:
+
+David Hedley, hedley@cs.bris.ac.uk

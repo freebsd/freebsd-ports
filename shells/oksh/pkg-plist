@@ -1,0 +1,2 @@
+@shell bin/oksh
+share/man/man1/oksh.1.gz

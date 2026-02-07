@@ -1,0 +1,46 @@
+PORTNAME=	IO-Socket-SSL
+DISTVERSION=	2.095
+CATEGORIES=	security perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	svysh.fbsd@gmail.com
+COMMENT=	Perl5 interface to SSL sockets
+WWW=		https://metacpan.org/release/IO-Socket-SSL
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/lib/IO/Socket/SSL.pod
+
+BR_DEPENDS=	p5-Net-SSLeay>=1.59:security/p5-Net-SSLeay \
+		p5-URI>=1.50:net/p5-URI
+BUILD_DEPENDS=	${BR_DEPENDS}
+RUN_DEPENDS=	${BR_DEPENDS}
+
+USES=		perl5 shebangfix
+USE_PERL5=	configure
+SHEBANG_FILES=	example/ssl_mitm.pl
+
+CONFIGURE_ENV=	NO_NETWORK_TESTING=yes
+
+INSTALL_TARGET=	pure_install
+
+NO_ARCH=	yes
+
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=		CERTS EXAMPLES IDN
+OPTIONS_DEFAULT=	CERTS
+CERTS_DESC=		Install the Mozilla CA cert bundle
+CERTS_BR_DEPENDS=	p5-Mozilla-CA>=20130114:www/p5-Mozilla-CA
+CERTS_BUILD_DEPENDS=	${CERTS_BR_DEPENDS}
+CERTS_RUN_DEPENDS=	${CERTS_BR_DEPENDS}
+IDN_BR_DEPENDS=		p5-URI>=1.50:net/p5-URI
+IDN_BUILD_DEPENDS=	${IDN_BR_DEPENDS}
+IDN_RUN_DEPENDS=	${IDN_BR_DEPENDS}
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}/
+
+.include <bsd.port.mk>

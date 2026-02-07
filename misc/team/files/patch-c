@@ -1,0 +1,62 @@
+--- team.c~	2023-02-15 22:43:13.785130000 +0100
++++ team.c	2023-02-15 23:21:27.257000000 +0100
+@@ -82,6 +82,11 @@
+ #include <errno.h>
+ #include <signal.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <stdarg.h>
++#include <string.h>
++#include <unistd.h>
++#include <getopt.h>
+ #include <sys/types.h>
+ #include <sys/file.h>
+ #include <sys/stat.h>
+@@ -151,10 +156,12 @@
+ #endif
+ 
+ /*VARARGS1*/
+-mesg(a,b,c,d,e,f,g,h,i)
+-  char *a;
+-  int b,c,d,e,f,g,h,i;
++int
++mesg(char *a, ...)
+ {
++    va_list ap;
++    va_start(ap, a);
++    int rv;
+ # if (defined F_SETLKW)
+     struct flock l;
+     l.l_whence = 0; l.l_start = 0L; l.l_len = 0L;
+@@ -163,13 +170,16 @@
+ # if (defined LOCK_EX)
+     flock(fileno(stderr),LOCK_EX);
+ # endif
+-  fprintf(stderr,a,b,c,d,e,f,g,h,i);
++    rv = vfprintf(stderr,a,ap);
+ # if (defined LOCK_EX)
+     flock(fileno(stderr),LOCK_UN);
+ # endif
+ # if (defined F_SETLKW)
+     l.l_type = F_UNLCK; fcntl(fileno(stderr),F_SETLKW,&l);
+ # endif
++    va_end(ap);
++
++    return rv;
+ }
+ 
+ local bool		verbose = false;
+@@ -181,13 +191,6 @@
+ 
+ extern time_t		time of((time_t *));
+ extern int		atoi of((const char *));
+-extern char		*malloc of((unsigned));
+-extern char		*calloc of((address,unsigned));
+-extern char		*strchr of((const char *,int));
+-
+-extern int		getopt of((int,char *[],const char *));
+-extern char		*optarg;
+-extern int		optind;
+ 
+ /*
+   The  regular Unix read and write calls are not guaranteed to process

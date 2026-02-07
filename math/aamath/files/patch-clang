@@ -1,0 +1,69 @@
+--- expr.cc.orig	2005-03-08 02:00:02.000000000 +0000
++++ expr.cc	2012-11-30 13:52:13.000000000 +0000
+@@ -430,8 +430,6 @@
+ {
+ 	CanvasPtr canvas_down = down->render();
+ 
+-	Size size_down = canvas_down->size();
+-
+ 	CanvasPtr canvas;
+ 
+ 	(*canvas)[0][0] = '-';
+@@ -1175,10 +1173,8 @@
+ 	int rise = get_rise();
+ 
+ 	CanvasPtr canvas_from = from->render();
+-	Size size_from = canvas_from->size();
+ 
+ 	CanvasPtr canvas_to = to->render();
+-	Size size_to = canvas_to->size();
+ 
+ 	CanvasPtr canvas;
+ 
+@@ -1192,7 +1188,7 @@
+ 
+ class SumSymbol : public OpSymbol {
+   public:
+-	void render(Canvas& c, int r, int c) const;
++	void render(Canvas& c, int r, int i) const;
+ };
+ 
+ void
+@@ -1208,7 +1204,7 @@
+ 
+ class ProductSymbol : public OpSymbol {
+   public:
+-	void render(Canvas& c, int r, int c) const;
++	void render(Canvas& c, int r, int i) const;
+ };
+ 
+ void
+@@ -1612,7 +1608,7 @@
+ 	int cols = num_cols();
+ 	int rows = num_rows();
+ 
+-	CanvasPtr ec[cols * rows];
++	std::vector<CanvasPtr>ec(cols * rows);
+ 	Size sz[cols * rows];
+ 
+ 	int row_height[rows];
+--- expr.h.orig	2005-03-08 01:56:12.000000000 +0000
++++ expr.h	2012-11-30 13:28:57.000000000 +0000
+@@ -451,7 +451,7 @@
+ 
+ 	virtual CanvasPtr render_head() const;
+ 
+-	void render_symbol(Canvas& c, int r, int c, int h) const;
++	void render_symbol(Canvas& c, int r, int i, int h) const;
+ 
+ 	virtual CanvasPtr render() const;
+ };
+@@ -467,7 +467,7 @@
+ 
+ class OpSymbol {
+   public:
+-	virtual void render(Canvas& c, int r, int c) const = 0;
++	virtual void render(Canvas& c, int r, int i) const = 0;
+ };
+ 
+ class SumOrProduct : public OpOnFunction {

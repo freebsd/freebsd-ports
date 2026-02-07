@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Object/Array.pm
+%%SITE_PERL%%/Object/Array/Plugin/Builtins.pm
+%%SITE_PERL%%/Object/Array/Plugin/ListMoreUtils.pm
+%%PERL5_MAN3%%/Object::Array.3.gz
+%%PERL5_MAN3%%/Object::Array::Plugin::Builtins.3.gz
+%%PERL5_MAN3%%/Object::Array::Plugin::ListMoreUtils.3.gz

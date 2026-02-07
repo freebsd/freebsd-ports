@@ -1,0 +1,12 @@
+%%PERL5_MAN3%%/HTTP::Session2.3.gz
+%%PERL5_MAN3%%/HTTP::Session2::Base.3.gz
+%%PERL5_MAN3%%/HTTP::Session2::ClientStore.3.gz
+%%PERL5_MAN3%%/HTTP::Session2::ClientStore2.3.gz
+%%PERL5_MAN3%%/HTTP::Session2::ServerStore.3.gz
+%%SITE_PERL%%/HTTP/Session2.pm
+%%SITE_PERL%%/HTTP/Session2/Base.pm
+%%SITE_PERL%%/HTTP/Session2/ClientStore.pm
+%%SITE_PERL%%/HTTP/Session2/ClientStore2.pm
+%%SITE_PERL%%/HTTP/Session2/Expired.pm
+%%SITE_PERL%%/HTTP/Session2/Random.pm
+%%SITE_PERL%%/HTTP/Session2/ServerStore.pm

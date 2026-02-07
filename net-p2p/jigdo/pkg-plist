@@ -1,0 +1,8 @@
+bin/jigdo-file
+bin/jigdo-lite
+bin/jigdo-mirror
+share/man/man1/jigdo-file.1.gz
+share/man/man1/jigdo-lite.1.gz
+share/man/man1/jigdo-mirror.1.gz
+%%DATADIR%%/debian-mirrors.jigdo
+share/locale/de/LC_MESSAGES/jigdo.mo

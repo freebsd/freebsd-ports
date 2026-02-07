@@ -1,0 +1,33 @@
+--- Makefile.orig	2018-06-22 16:46:28 UTC
++++ Makefile
+@@ -6,19 +6,19 @@
+ all: scimark4 
+ 
+ 
+-CC = icc
+-CFLAGS = -O3 -fno-alias -parallel -par-num-threads=4
++#CC = icc
++#CFLAGS = -O3 -fno-alias -parallel -par-num-threads=4
+ 
+ 
+-CC = gcc
+-CC = cc
+-LDFLAGS = 
+-CFLAGS = -O3 -funroll-all-loops -mtune=prescott
+-CFLAGS = -O3 -funroll-all-loops   -Wall -pedantic -flto
+-CFLAGS = -O3 -funroll-all-loops   -Wall -pedantic -flto 
+-CFLAGS = -O3 -funroll-loops   -Wall -pedantic -flto 
+-CFLAGS = -O3 -funroll-all-loops   -Wall -pedantic  -ansi
+-CFLAGS = -O3 -funroll-loops   -Wall -pedantic  -ansi
++#CC = gcc
++#CC = cc
++#LDFLAGS = 
++#CFLAGS = -O3 -funroll-all-loops -mtune=prescott
++#CFLAGS = -O3 -funroll-all-loops   -Wall -pedantic -flto
++#CFLAGS = -O3 -funroll-all-loops   -Wall -pedantic -flto 
++#CFLAGS = -O3 -funroll-loops   -Wall -pedantic -flto 
++#CFLAGS = -O3 -funroll-all-loops   -Wall -pedantic  -ansi
++#CFLAGS = -O3 -funroll-loops   -Wall -pedantic  -ansi
+ 
+ OBJS = FFT.o kernel.o Stopwatch.o Random.o SOR.o SparseCompRow.o \
+ 	array.o MonteCarlo.o LU.o scimark4.o

@@ -1,0 +1,8 @@
+Retry captures stdin into memory as the data is passed to the repeated command,
+and this captured stdin is then replayed should the command be repeated. This
+makes it possible to embed the retry tool into shell pipelines.
+
+Retry captures stdout into memory, and if the command was successful stdout is
+passed on to stdout as normal, while if the command was repeated stdout is
+passed to stderr instead. This ensures that output is passed to stdout once and
+once only.

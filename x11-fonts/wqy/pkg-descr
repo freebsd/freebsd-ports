@@ -1,0 +1,10 @@
+WenQuanYi Bitmap Song:
+
+     WenQuanYi bitmap Chinese font, sizing 12, 13, 15, 16 pixels.
+
+WenQuanYi Unibit:
+     WenQuanYi bitmap Chinese font + GNU Unifont, in order to cover Unicode
+     code table as completely as possible, sizing 16 pixels only.
+
+WenQuanYi Zen Hei:
+     WenQuanYi TrueType Chinese font, black type.

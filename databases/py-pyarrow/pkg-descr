@@ -1,0 +1,3 @@
+Python library for Apache Arrow provides a Python API for functionality provided
+by the Arrow C++ libraries, along with tools for Arrow integration and
+interoperability with pandas, NumPy, and other software in the Python ecosystem.

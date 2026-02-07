@@ -1,0 +1,20 @@
+--- buildaux/Makefile.am.orig	2024-02-08 13:40:49 UTC
++++ buildaux/Makefile.am
+@@ -1,15 +1,14 @@
+ # SPDX-FileCopyrightText: (C) Eric S. Raymond <esr@thyrsus.com>
+ # SPDX-License-Identifier: GPL-2.0-or-later
+ 
+-ICK_SPECIFIC_SUBDIR = ick-@PACKAGE_VERSION@
++ICK_SPECIFIC_SUBDIR = ick
+ ickincludedir = $(includedir)/$(ICK_SPECIFIC_SUBDIR)
+ ickdatadir = $(datadir)/$(ICK_SPECIFIC_SUBDIR)
+ 
+ AM_CFLAGS = '-DICKINCLUDEDIR="$(ickincludedir)"' \
+             '-DICKDATADIR="$(ickdatadir)"' \
+             '-DICKBINDIR="$(bindir)"' '-DICKLIBDIR="$(libdir)"' \
+-            -DYYDEBUG -DICK_HAVE_STDINT_H=@HAVE_STDINT_H@ \
+-	    -fno-toplevel-reorder
++            -DYYDEBUG -DICK_HAVE_STDINT_H=@HAVE_STDINT_H@
+ AM_CPPFLAGS = -I$(srcdir)/src
+ 
+ bin_PROGRAMS = ick convickt

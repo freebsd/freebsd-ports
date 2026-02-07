@@ -1,0 +1,44 @@
+--- ./data/man/fbpanel.1.in.orig	2009-06-01 07:55:30.000000000 -0700
++++ ./data/man/fbpanel.1.in	2010-11-17 11:06:07.000000000 -0800
+@@ -31,7 +31,7 @@
+ (see \fBOPTIONS\fR below).
+ 
+ Most updated info about fbpanel can be found on its home page:
+-http://fbpanel.sf.net/
++http://fbpanel.sourceforge.net/
+ 
+ .SH OPTIONS
+ .TP
+@@ -48,7 +48,7 @@
+ \-- open configuration dialog
+ .TP
+ \fB\--profile <name>\fR 
+-\-- use specified profile. The profile is loaded from the file ~/.fbpanel/<name>. 
++\-- use specified profile. The profile is loaded from the file ~/.config/fbpanel/<name>. 
+ If that fails, fbpanel will load @DATADIR@/<name>. 
+ No -p option is equivalent to -p default
+ .TP
+@@ -67,8 +67,8 @@
+ .SH CUSTOMIZATION
+ To change default settings, copy profile file to your home directory
+ .br
+-      mkdir -p ~/.fbpanel
+-      cp @DATADIR@/default ~/.fbpanel
++      mkdir -p ~/.config/fbpanel
++      cp @DATADIR@/default ~/.config/fbpanel
+ .br
+ and edit it. Default profile file contains comments and explanation inside,
+ so it should be easy. For full list of options please visit fbpanel's home page.
+@@ -78,10 +78,10 @@
+ @DATADIR@/
+ Directory with system-wide resources and default settings
+ .TP
+-~/.fbpanel/
++~/.config/fbpanel/
+ Directory with the user's private profiles
+ .TP
+-~/.fbpanel/default
++~/.config/fbpanel/default
+ The user's default profile.
+ .SH AUTHOR
+ fbpanel was written by Anatoly Asviyan <aanatoly@users.sf.net>.

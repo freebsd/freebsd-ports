@@ -1,0 +1,17 @@
+--- sshbuddy.expk.orig	2014-02-28 10:41:40.000000000 +0100
++++ sshbuddy.expk	2014-02-28 10:41:58.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/expectk
++#!%%WISH%%
+ #
+ # EDIT THE ABOVE LINE TO POINT TO WHERE expectk LIVES
+ # 
+@@ -10,6 +10,8 @@
+ #
+ # Version Beta1.05
+ 
++package require Expect
++
+ set expect_path [exec which expect]
+ 
+ ########################################################################

@@ -1,0 +1,10 @@
+--- etc/common.php.in.orig	2020-09-22 19:52:22 UTC
++++ etc/common.php.in
+@@ -12,6 +12,7 @@ date_default_timezone_set('UTC');
+ /* Default locations to find RTG configuration file */
+ $configs[] = 'rtg.conf';
+ $configs[] = '@RTG_HOME@/etc/rtg.conf';
++$configs[] = '%%PREFIX%%/etc/rtg/rtg.conf';
+ $configs[] = '/usr/local/rtg/etc/rtg.conf';
+ $configs[] = '/etc/rtg.conf';
+ 

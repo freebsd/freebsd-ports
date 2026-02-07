@@ -1,0 +1,19 @@
+--- lib/DtMmdb/StyleSheet/Makefile.am.orig	2022-02-15 09:36:38.828203000 -0800
++++ lib/DtMmdb/StyleSheet/Makefile.am	2022-02-15 10:20:50.149152000 -0800
+@@ -41,14 +41,14 @@
+ 	     tokenStyle.C
+ 
+ defParser.C: defParser.yy
+-	$(YACC) $(AM_YFLAGS) -p defParser -b defParser $<
++	$(YACC) $(AM_YFLAGS) -o defParser.tab.c -p defParser -b defParser $<
+ 	mv defParser.tab.c $@
+ 
+ defToken.C: defToken.ll
+ 	$(LEX) $(AM_LFLAGS) -P defParser -o $@ $<
+ 
+ style.C: style.yy
+-	$(YACC) $(AM_YFLAGS) -p style -b style $<
++	$(YACC) $(AM_YFLAGS) -o style.tab.c -p style -b style $<
+ 	mv style.tab.c style.C
+ 
+ tokenStyle.C: tokenStyle.ll

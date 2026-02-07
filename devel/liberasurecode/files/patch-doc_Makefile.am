@@ -1,0 +1,11 @@
+--- doc/Makefile.am.orig	2022-04-08 23:59:40 UTC
++++ doc/Makefile.am
+@@ -1,6 +1,6 @@
+ DOC_MODULE=@PACKAGE@
+-HTML_DIR=$(datadir)/$(DOC_MODULE)/html
+-TARGET_DIR=$(HTML_DIR)/$(DOC_MODULE)
++HTML_DIR=$(docdir)/html
++TARGET_DIR=$(HTML_DIR)
+ 
+ all-local:	html/index.html
+ 

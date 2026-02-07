@@ -1,0 +1,20 @@
+--- Makefile.orig	2013-06-27 02:00:19 UTC
++++ Makefile
+@@ -43,14 +43,14 @@ OPT = -O -Wall
+ OPT = -O -Wall
+ # For MWC 3.0 on the Atari ST, use:
+ #CFLAGS = -VCOMPAC -VPEEP
+-CFLAGS = $(OPT) $(SYSTEM)
++CFLAGS+=$(SYSTEM)
+ 
+ # GNU's gcc is very nice, if you've got it. Otherwise just cc.
+ #CC = cgcc -mshort -mbaserel
+-CC = cc
++#CC = cc
+ 
+ # tmclock is only needed on Unix systems...
+-TMCLOCK = tmclock.o
++TMCLOCK = #tmclock.o
+ 
+ # Integer-only stdio routines for Atari ST.
+ #LIBS=-liio16

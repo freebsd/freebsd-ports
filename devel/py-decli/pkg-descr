@@ -1,0 +1,4 @@
+Decli is minimal wrapper around argparse.  It is useful when writing
+big applications that have many arguments and subcommands, this way
+it will be more clear.  It is a minimal library to rapidly create an
+interface separated from your program.

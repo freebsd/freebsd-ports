@@ -1,0 +1,15 @@
+--- Makefile.orig	2023-06-11 18:04:30 UTC
++++ Makefile
+@@ -24,9 +24,9 @@ install: all
+ 
+ install: all
+ 	install -d ${DESTDIR}${PREFIX}/bin
+-	install -m 4555 -s ${BIN} ${DESTDIR}${PREFIX}/bin
+-	install -d ${DESTDIR}${PREFIX}/man/man1
+-	install -m 0444 ${BIN}.1.gz ${DESTDIR}${PREFIX}/man/man1
++	install -m 0555 -s ${BIN} ${DESTDIR}${PREFIX}/bin
++	install -d ${DESTDIR}${PREFIX}/share/man/man1
++	install -m 0444 ${BIN}.1.gz ${DESTDIR}${PREFIX}/share/man/man1
+ 
+ clean:
+ 	rm -f ${BIN} ${OBJ} ${BIN}.1.gz

@@ -1,0 +1,3 @@
+GENie (pronounced as Jenny) is project generator tool. It automagically
+generates project from Lua script, making applying the same settings for
+multiple projects easy.

@@ -1,0 +1,51 @@
+[
+{ type: install
+  message: <<EOM
+You must ensure you are running MongoDB locally or via an external server.
+This port of the controller will not automatically launch and manage the
+MongoDB server for you. By default this port configures the Omada
+Controller to use the normal MongoDB service running on localhost.
+
+In order to configure an external MongoDB server or configure
+credentials, modify the following line in the
+%%JAVASHAREDIR%%/omada/properties/omada.properties file:
+
+db.mongo.uri=mongodb://user:password@IP_ADDRESS:PORT/omada
+
+Adjust username, password, IP_ADDRESS, PORT and database name
+according to your needs.
+
+This port of the Omada Software Controller uses a modified omada-common
+jar file to alter an OS check to accept "FreeBSD" as a Linux system.
+This requires decompiling the jar file with a tool such as Recaf to change
+the string matched for the os.name check. The path to the class as
+decompiled in Recaf is com/tplink/smb/omada/common/util/S
+
+The function you want to modify looks like this:
+
+    public static boolean c() {
+        boolean isLinuxOS = false;
+        String osName = System.getProperty("os.name");
+        if (osName.toLowerCase(Locale.ROOT).indexOf("linux") > -1) {
+            isLinuxOS = true;
+        }
+        return isLinuxOS;
+    }
+
+There are some other features that may be nonfunctional due to missing
+native library support. Examples:
+
+bin/topdf - a Linux binary, presumably to generate a PDF has been replaced with /usr/bin/true
+
+Some jar files don't have freebsd-x86-64 support. e.g.,
+
+grpc-netty-shaded-1.59.0.jar/META-INF/native/libio_grpc_netty_shaded_netty_tcnative_linux_x86_64.so
+webp-imageio-0.1.6.jar/native/linux/64/libwebp-imageio.so
+netty-transport-native-epoll-4.1.106.Final-linux-x86_64.jar/META-INF/native/libnetty_transport_native_epoll_x86_64.so
+
+It is unclear what effect these have on the Controller software.
+
+Use at your own risk!
+EOM
+}
+]

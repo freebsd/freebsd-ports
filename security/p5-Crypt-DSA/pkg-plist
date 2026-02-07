@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/Crypt::DSA.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Key.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Key::PEM.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Key::SSH2.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::KeyChain.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Signature.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Util.3.gz
+%%SITE_PERL%%/Crypt/DSA.pm
+%%SITE_PERL%%/Crypt/DSA/Key.pm
+%%SITE_PERL%%/Crypt/DSA/Key/PEM.pm
+%%SITE_PERL%%/Crypt/DSA/Key/SSH2.pm
+%%SITE_PERL%%/Crypt/DSA/KeyChain.pm
+%%SITE_PERL%%/Crypt/DSA/Signature.pm
+%%SITE_PERL%%/Crypt/DSA/Util.pm

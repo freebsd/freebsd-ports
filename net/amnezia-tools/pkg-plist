@@ -1,0 +1,7 @@
+bin/awg
+bin/awg-quick
+share/bash-completion/completions/awg
+share/bash-completion/completions/awg-quick
+share/man/man8/awg.8.gz
+share/man/man8/awg-quick.8.gz
+@dir etc/amnezia

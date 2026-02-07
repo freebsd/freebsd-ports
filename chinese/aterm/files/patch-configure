@@ -1,0 +1,27 @@
+--- ./configure.orig	2013-01-04 20:51:05.000000000 +0800
++++ ./configure	2013-01-04 20:46:12.000000000 +0800
+@@ -1293,6 +1293,7 @@
+   --enable-wtmp           enable wtmp support if you have utmp/utmpx support
+   --enable-kanji          enable kanji support
+   --enable-big5           enable big5 support
++  --enable-xim            enable xim support
+   --enable-greek          enable greek keyboard support
+   --enable-thai           enable thai support
+   --enable-ttygid         enable tty setting to group \"tty\" - use only if
+@@ -1864,6 +1865,16 @@
+ fi
+ 
+ 
++# Check whether --enable-xim was given.
++if test "${enable_xim+set}" = set; then
++  enableval=$enable_xim; if test x$enableval = xyes; then
++cat >> confdefs.h <<\_ACEOF
++#define USE_XIM 1
++_ACEOF
++ fi
++fi
++
++
+ # Check whether --enable-greek was given.
+ if test "${enable_greek+set}" = set; then
+   enableval=$enable_greek; if test x$enableval = xyes; then

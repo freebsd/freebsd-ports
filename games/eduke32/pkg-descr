@@ -1,0 +1,17 @@
+EDuke32 is a fork of the JFDuke3D port of Duke Nukem 3D (aka Duke3D), merging
+it with EDuke to provide many new features for mod authors. Built on the
+foundation of Jonathon "JonoF" Fowler's JFDuke3D work (including Build engine
+author Ken "Awesoken" Silverman's badass Polymost renderer) combined with
+Matt "Matteus" Saettler's EDuke advances, EDuke32 screams cool so loud you'll
+think Bruce Dickinson got uppercut in the balls by Freddy Krueger. Hell, it
+even comes with Mapster32, the enhanced Build editor.
+
+The EDuke32 and Mapster32 development team is lead by Richard "TerminX"
+Gobeille, author of the popular Cinema mod for Max Payne 2, the Project X TC
+demo for EDuke 2.0, and Mapster, the original Build editor enhancement.
+
+Features
+ * Enhanced event-based game scripting system
+ * OpenGL renderer (truecolor textures, MD2/MD3 models)
+ * Cross-platform
+ * Augmented map editor

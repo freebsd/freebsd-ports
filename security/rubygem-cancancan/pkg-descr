@@ -1,0 +1,13 @@
+CanCanCan is an authorization library for Ruby and Ruby on Rails which restricts
+what resources a given user is allowed to access.
+
+All permissions can be defined in one or multiple ability files and not
+duplicated across controllers, views, and database queries, keeping your
+permissions logic in one place for easy maintenance and testing.
+
+It consists of two main parts:
+- Authorizations library that allows you to define the rules to access different
+  objects, and provides helpers to check for those permissions.
+- Rails helpers to simplify the code in Rails Controllers by performing the
+  loading and checking of permissions of models automatically and reduce
+  duplicated code.

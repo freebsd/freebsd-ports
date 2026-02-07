@@ -1,0 +1,12 @@
+Generate is a text preprocessor that I originally wrote to help me write
+custom accounting applications based on the Progress database product. I
+felt that the built in wasn't useful enough so I designed a new one and
+implemented it. It actually started life as a package configuration and
+batch file generator for DOS and mutated to a simple script interpreter
+to replace shar file distribution. At this point it has almost nothing in
+common with that first program.
+
+The basic idea behind generate is to create a script which generates files.
+There is some simple flow control constructs but the power lies in its
+macro processing. I have shamelessly stolen ideas from cpp, m4, make and
+David Tilbrook's dtree.

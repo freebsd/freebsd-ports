@@ -1,0 +1,3 @@
+SpoofDPI is a simple and fast anti-censorship tool written in Go that
+bypasses Deep Packet Inspection (DPI) by splitting HTTPS requests into
+chunks and sending the first byte separately.

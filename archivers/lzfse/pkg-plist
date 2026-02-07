@@ -1,0 +1,5 @@
+bin/lzfse
+include/lzfse.h
+lib/liblzfse.so
+lib/liblzfse.so.1
+lib/liblzfse.so.1.0

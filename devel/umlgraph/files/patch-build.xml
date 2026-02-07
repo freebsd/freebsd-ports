@@ -1,0 +1,53 @@
+--- build.xml.orig	2012-06-01 00:06:09.000000000 +0800
++++ build.xml	2012-08-31 17:00:08.000000000 +0800
+@@ -17,37 +17,9 @@
+ 
+ <property name="dist" location="dist" />
+ 
+-<!-- obtain version from git; see http://techblog.41concepts.com/2009/05/08/generating-ant-build-numbers-using-subversion/ -->
+-<macrodef name="gitversion" description="Get git version.">
+-	<attribute name="outputproperty"/>
+-	<sequential>
+-		<echo message="git describe --abbrev=6 => '@{outputproperty}'"/>
+-	<exec executable="git"
+-		failonerror="true"
+-		outputproperty="@{outputproperty}">
+-		<arg value="describe"/>
+-		<arg value="--abbrev=6"/>
+-		<arg value="HEAD"/>
+-		<redirector>
+-			<outputfilterchain>
+-			<tokenfilter>
+-				<replaceregex pattern="R" replace=""/>
+-				<replaceregex pattern="_" replace="."/>
+-				<replaceregex pattern="-" replace="."/>
+-				<replaceregex pattern="(-.*)$" replace="-SNAPSHOT"/>
+-			</tokenfilter>
+-			</outputfilterchain>
+-		</redirector>
+-		</exec>
+-		<echo message="gitversion returned '${@{outputproperty}}'"/>
+-	</sequential>
+-</macrodef>
+-
+ <!-- define Maven coordinates; see https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7c.DeploySnapshotsandStageReleaseswithAnt -->
+ <property name="groupId" value="org.umlgraph" />
+ <property name="artifactId" value="UmlGraph" />
+-<!-- <property name="version" value="1.0-SNAPSHOT" /> -->
+-<gitversion outputproperty="version"/>
+ 
+ <!-- define artifacts' name, which follows the convention of Maven -->
+ <property name="maven-jar" value="${dist}/lib/${artifactId}-${version}.jar" />
+@@ -76,12 +48,6 @@
+ </target>
+ 
+ <target name="version">
+-	<exec executable="git"
+-		outputproperty="VERSION">
+-		<arg value="describe"/>
+-		<arg value="--abbrev=6"/>
+-		<arg value="HEAD"/>
+-	</exec>
+ 	<echo>Version is ${VERSION}</echo>
+ 	<echo file="src/org/umlgraph/doclet/Version.java">/* Automatically generated file */
+ package org.umlgraph.doclet;

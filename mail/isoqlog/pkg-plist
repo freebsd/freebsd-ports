@@ -1,0 +1,35 @@
+bin/isoqlog
+@sample etc/isoqlog.conf-dist etc/isoqlog.conf
+@sample etc/isoqlog.domains-dist etc/isoqlog.domains
+%%DATADIR%%/htmltemp/daily.html
+%%DATADIR%%/htmltemp/domain.html
+%%DATADIR%%/htmltemp/index.html
+%%DATADIR%%/htmltemp/generaldaily.html
+%%DATADIR%%/htmltemp/generaldomain.html
+%%DATADIR%%/htmltemp/generalmonthly.html
+%%DATADIR%%/htmltemp/generalyearly.html
+%%DATADIR%%/htmltemp/monthly.html
+%%DATADIR%%/htmltemp/yearly.html
+%%DATADIR%%/htmltemp/images/dot.gif
+%%DATADIR%%/htmltemp/images/home.gif
+%%DATADIR%%/htmltemp/images/isoqlog.gif
+%%DATADIR%%/htmltemp/images/pk.gif
+%%DATADIR%%/htmltemp/images/up.gif
+%%DATADIR%%/htmltemp/library/isoqlog.css
+%%DATADIR%%/lang/bulgarian
+%%DATADIR%%/lang/czech
+%%DATADIR%%/lang/danish
+%%DATADIR%%/lang/dutch
+%%DATADIR%%/lang/english
+%%DATADIR%%/lang/french
+%%DATADIR%%/lang/finnish
+%%DATADIR%%/lang/german
+%%DATADIR%%/lang/italian
+%%DATADIR%%/lang/norwegian
+%%DATADIR%%/lang/russian
+%%DATADIR%%/lang/polish
+%%DATADIR%%/lang/portuguese
+%%DATADIR%%/lang/romana
+%%DATADIR%%/lang/spanish
+%%DATADIR%%/lang/swedish
+%%DATADIR%%/lang/turkish

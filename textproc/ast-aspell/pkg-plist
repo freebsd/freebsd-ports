@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/ast.dat
+lib/aspell-%%VER%%/ast_affix.dat
+lib/aspell-%%VER%%/l-ast.cmap
+lib/aspell-%%VER%%/l-ast.cset
+share/aspell/ast.multi
+share/aspell/ast.rws
+share/aspell/asturianu.alias

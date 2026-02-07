@@ -1,0 +1,15 @@
+--- src/defid.orig	2021-02-27 08:16:36 UTC
++++ src/defid
+@@ -2,10 +2,10 @@
+ 
+ case $1 in
+     --h|--he|--hel|--help|--v|--ve|--ver|--vers|--versi|--versio|--version)
+-	exec gid "$@";;
++	exec ggid "$@";;
+ esac
+ 
+ for sym
+ do
+-    gid $sym |egrep '(}[	 ]*|:[	 ]*#[	 ]*define[	 ]+)'$sym'|typedef\>.*[	 ]+'$sym
++    ggid $sym |egrep '(}[	 ]*|:[	 ]*#[	 ]*define[	 ]+)'$sym'|typedef\>.*[	 ]+'$sym
+ done

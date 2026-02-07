@@ -1,0 +1,14 @@
+This is a new release of the popular cleanfeed usenet spam filter written
+by Jeremy Nixon. I will continue releasing new versions until I get tired
+or somebody else will step forward.
+
+There is no real documentation, so if you never used cleanfeed please
+download the original package from
+and enjoy trying to understand what changed.
+
+If you already have an existing cleanfeed installation please double check
+your cleanfeed.local, because it may not be compatibile with this release.
+cleanfeed.conf does not exist anymore, the bad_cancel_paths config option
+is now read from a configuration file and most local_* functions changed
+their name. Please read the CHANGES file for details about these and other
+things. When in doubt, check the source code.

@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Math::Geometry::Voronoi.3.gz
+%%SITE_ARCH%%/Math/Geometry/Voronoi.pm
+%%SITE_ARCH%%/Math/Geometry/leak-test.pl
+%%SITE_ARCH%%/auto/Math/Geometry/Voronoi/Voronoi.so

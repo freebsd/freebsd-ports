@@ -1,0 +1,13 @@
+Use the correct path to the include file.
+
+--- libs/predef/test/build.jam.orig	2025-08-06 18:49:13 UTC
++++ libs/predef/test/build.jam
+@@ -12,7 +12,7 @@ project
+     :   requirements
+         # Add explicit dependency since we don't have header scanner for
+         # .m and .mm files.
+-        <dependency>../include/boost/predef.h
++        <dependency>../../../boost/predef.h
+     ;
+ 
+ using testing ;

@@ -1,0 +1,3 @@
+LibGlade allows GLADE interfaces to be handled at runtime, freeing
+GUI development from code development.  This allows an interface to
+be changed without requiring a re-compilation.

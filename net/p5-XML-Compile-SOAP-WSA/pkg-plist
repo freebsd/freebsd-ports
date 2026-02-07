@@ -1,0 +1,10 @@
+%%SITE_PERL%%/XML/Compile/SOAP/WSA.pm
+%%SITE_PERL%%/XML/Compile/SOAP/WSA.pod
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/Util.pm
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/Util.pod
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20060512-wsaw.xsd
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20070131-metadata.xsd
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20070619-wsa09.xsd
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20080723-wsa10.xsd
+%%PERL5_MAN3%%/XML::Compile::SOAP::WSA.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::WSA::Util.3.gz

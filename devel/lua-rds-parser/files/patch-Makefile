@@ -1,0 +1,26 @@
+--- Makefile.orig	2015-10-30 14:05:55 UTC
++++ Makefile
+@@ -16,12 +16,12 @@ LDFLAGS +=         -shared
+ #PREFIX ?=          /opt/local
+ #LDFLAGS +=         -bundle -undefined dynamic_lookup
+ 
+-LUA_INCLUDE_DIR ?= $(PREFIX)/include
++LUA_INCLUDE_DIR ?= $(PREFIX)/include/lua51
+ LUA_LIB_DIR ?=     $(PREFIX)/lib/lua/$(LUA_VERSION)
+ 
+ #CFLAGS ?=          -g -Wall -pedantic -fno-inline
+ CFLAGS ?=          -g -O -Wall
+-override CFLAGS += -fpic -I$(LUA_INCLUDE_DIR)
++CFLAGS += -fpic -I$(LUA_INCLUDE_DIR)
+ 
+ INSTALL ?= install
+ 
+@@ -38,7 +38,7 @@ src/rds_parser.o: src/ddebug.h src/rds_p
+ 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(BUILD_CFLAGS) -o $@ $<
+ 
+ parser.so: src/rds_parser.o
+-	$(CC) $(LDFLAGS) -o $@ $^
++	$(CC) $(LDFLAGS) -o $@ src/rds_parser.o
+ 
+ install:
+ 	$(INSTALL) -d $(DESTDIR)$(LUA_LIB_DIR)/rds

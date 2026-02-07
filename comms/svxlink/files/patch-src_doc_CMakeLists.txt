@@ -1,0 +1,17 @@
+--- src/doc/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
++++ src/doc/CMakeLists.txt
+@@ -2,6 +2,7 @@
+ add_custom_target(doc)
+ 
+ # Add targets to generate API documentation with Doxygen if it's installed
++if(NOT QT_ONLY)
+ find_package(Doxygen)
+ if(DOXYGEN_FOUND)
+   configure_file(doxygen.echolib.in doxygen.echolib @ONLY)
+@@ -36,5 +37,6 @@ else(DOXYGEN_FOUND)
+   message("--   It is an optional dependency and SvxLink will build without")
+   message("--   it. Not needed for normal use.")
+ endif(DOXYGEN_FOUND)
++endif(NOT QT_ONLY)
+ 
+ add_subdirectory(man)

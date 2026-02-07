@@ -1,0 +1,11 @@
+--- Makefile.bsd.orig	2023-11-30 11:20:48 UTC
++++ Makefile.bsd
+@@ -11,7 +11,7 @@ BINDIR?=	${PREFIX}/bin
+ CFLAGS+=	-D_ST_FLAGS_PRESENT_
+ PREFIX?=	/usr/local
+ BINDIR?=	${PREFIX}/bin
+-MANDIR?=	${PREFIX}/man/man
++MANDIR?=	${PREFIX}/share/man/man
+ 
+ .include <bsd.prog.mk>
+ 

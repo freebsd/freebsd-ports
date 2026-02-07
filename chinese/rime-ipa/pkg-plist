@@ -1,0 +1,14 @@
+share/rime-data/build/ipa_xsampa.prism.bin
+share/rime-data/build/ipa_xsampa.reverse.bin
+share/rime-data/build/ipa_xsampa.schema.yaml
+share/rime-data/build/ipa_xsampa.table.bin
+share/rime-data/build/ipa_xsampa.table.txt
+share/rime-data/build/ipa_yunlong.prism.bin
+share/rime-data/build/ipa_yunlong.reverse.bin
+share/rime-data/build/ipa_yunlong.schema.yaml
+share/rime-data/build/ipa_yunlong.table.bin
+share/rime-data/build/ipa_yunlong.table.txt
+share/rime-data/ipa_xsampa.dict.yaml
+share/rime-data/ipa_xsampa.schema.yaml
+share/rime-data/ipa_yunlong.dict.yaml
+share/rime-data/ipa_yunlong.schema.yaml

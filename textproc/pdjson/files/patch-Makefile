@@ -1,0 +1,21 @@
+--- Makefile.orig	2024-02-22 11:12:52 UTC
++++ Makefile
+@@ -1,8 +1,8 @@
+ .POSIX:
+-CC     = cc
+-CFLAGS = -std=c99 -pedantic -Wall -Wextra -Wno-missing-field-initializers
++CC     ?= cc
++CFLAGS += -std=c99 -pedantic -Wall -Wextra -Wno-missing-field-initializers -fPIC
+ 
+-all: tests/pretty tests/stream tests/tests
++all: libpdjson.so tests/pretty tests/stream tests/tests
+ 
+ tests/pretty: tests/pretty.o pdjson.o
+ 	$(CC) $(LDFLAGS) -o $@ tests/pretty.o pdjson.o $(LDLIBS)
+@@ -28,3 +28,6 @@ clean:
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) -o $@ $<
++
++libpdjson.so: pdjson.o
++	$(CC) -shared -Wl,-soname=libpdjson.so.0 -o libpdjson.so pdjson.o

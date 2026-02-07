@@ -1,0 +1,15 @@
+--- src/cgnstools/cgnscalc/CMakeLists.txt.orig	2021-04-22 21:09:36 UTC
++++ src/cgnstools/cgnscalc/CMakeLists.txt
+@@ -80,10 +80,10 @@ else (WIN32)
+   install(PROGRAMS
+ 	cgnscalc.desktop
+ 	DESTINATION bin)
++# Do not install as unitconv to avoid a conflict with XCrySDen
+   install(PROGRAMS
+ 	unitconv.sh
+-	DESTINATION bin
+-	RENAME unitconv)
++	DESTINATION bin)
+   install(PROGRAMS
+ 	unitconv.desktop
+ 	DESTINATION bin)

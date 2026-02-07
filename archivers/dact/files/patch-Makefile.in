@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2006-03-25 13:15:04 UTC
++++ Makefile.in
+@@ -24,8 +24,8 @@ INSTALL = @INSTALL@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-libdir = @libdir@
+-bindir = @bindir@
++libdir = @prefix@/lib
++bindir = @prefix@/bin
+ sysconfdir = @sysconfdir@
+ mandir = @mandir@
+ datadir = @datadir@
+@@ -41,13 +41,14 @@ OBJS += dact_common.o comp_fail.o comp_p
+ # be kept in sync with OBJS
+ SHLIBOBJS += dact_common_shr.o comp_fail_shr.o comp_plain_shr.o buffer_shr.o header_shr.o sort_shr.o module_shr.o parse_shr.o dendian_shr.o crc_shr.o net_shr.o ui_shr.o sfx_shr.o libdact_shr.o @SHLIBOBJS@
+ ALGO = comp_snibble.c comp_delta.c comp_text.c comp_rle.c cipher_chaos.c cipher_sub.c cipher_psub.c @ALGO@
++MODS = $(ALGO:.c=.so)
+ 
+ TOBUILD = dact$(EXEEXT) libdact.$(SHOBJEXT) libdact.a dact.conf
+ 
+ all: @DEFAULT@
+ 
+ module: @DEPEND@
+-	@MODS="$(ALGO:.c=.so)" LDLIBS="@ALLMODLIBS@" \
++	@LDLIBS="@ALLMODLIBS@" \
+ 	  $(MAKE) $(TOBUILD)
+ 
+ static: @DEPEND@

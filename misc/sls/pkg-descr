@@ -1,0 +1,7 @@
+     Sls is a program designed to overcome the limitations of the
+     standard  UNIX  ls(1)  program,  providing a more consistent
+     interface to file inode  information.   It  is  particularly
+     designed for use by shell scripts to make obtaining informa-
+     tion about files easier.   It  uses  printf(3)-style  format
+     strings  to  control the sorting and output of file informa-
+     tion.

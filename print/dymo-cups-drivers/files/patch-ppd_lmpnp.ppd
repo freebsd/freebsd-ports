@@ -1,0 +1,10 @@
+--- ppd/lmpnp.ppd.orig	2017-11-11 12:11:12 UTC
++++ ppd/lmpnp.ppd
+@@ -42,7 +42,6 @@
+ *ModelName: "DYMO LabelManager PnP"
+ *NickName: "DYMO LabelManager PnP"
+ *ShortNickName: "DYMO LabelManager PnP"
+-*APPrinterIconPath: "/Library/Printers/DYMO/CUPS/Resources/LMPNP.icns"
+ 
+ *cupsIPPReason com.dymo.out-of-paper-error/Out of labels. : ""
+ *cupsIPPReason com.dymo.read-error/Cannot read data from printer. : ""

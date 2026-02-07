@@ -1,0 +1,8 @@
+--- doc/Makefile.orig	2024-10-13 21:03:28 UTC
++++ doc/Makefile
+@@ -16,4 +16,4 @@ $(TRANSF) $(TEXQUOTE):
+ 	$(TRANSF) < manual.etex | $(TEXQUOTE) > manual.tex
+ 
+ $(TRANSF) $(TEXQUOTE):
+-	make -C tools
++	$(MAKE) -C tools

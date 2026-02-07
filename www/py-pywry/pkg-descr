@@ -1,0 +1,5 @@
+pywry allows to easily create HTML webviewers in python utilizing the wry
+library.
+
+Unlike many HTML viewers that exist for Python - Pywry allows you to run
+avacsript.

@@ -1,0 +1,6 @@
+libESMTP is an SMTP client which manages submission of electronic mail via a
+preconfigured Mail Transport Agent (MTA) such as Exim or Postfix.
+
+libESMTP relieves the developer of the need to handle the complexity of
+negotiating the SMTP protocol by providing a simple API. Additionally libESMTP
+transparently handles many SMTP extensions including authentication.

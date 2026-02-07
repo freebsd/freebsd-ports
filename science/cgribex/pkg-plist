@@ -1,0 +1,9 @@
+bin/grib
+bin/grib2
+bin/gribunzip
+bin/gribzip
+include/cgribex.h
+lib/libcgribex.a
+lib/libcgribex.so
+lib/libcgribex.so.0
+lib/libcgribex.so.0.0.0

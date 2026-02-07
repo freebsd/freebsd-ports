@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/MaxMind/DB/Reader/XS.pm
+%%SITE_ARCH%%/auto/MaxMind/DB/Reader/XS/XS.so
+%%PERL5_MAN3%%/MaxMind::DB::Reader::XS.3.gz

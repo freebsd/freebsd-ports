@@ -1,0 +1,525 @@
+bin/anki
+share/man/man1/anki.1.gz
+%%DATADIR%%/_aqt/colors.py
+%%DATADIR%%/_aqt/data/qt/icons.qrc
+%%DATADIR%%/_aqt/data/qt/icons/anki.png
+%%DATADIR%%/_aqt/data/qt/icons/application-braces-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/book-clock-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/book-cog-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/book-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/card-state.svg
+%%DATADIR%%/_aqt/data/qt/icons/check-FG_DISABLED-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/check-FG_DISABLED-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/check-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/check-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-down-FG_DISABLED-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-down-FG_DISABLED-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-down-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-down-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-up-FG_DISABLED-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-up-FG_DISABLED-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-up-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/chevron-up-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/circle-medium-FG_DISABLED-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/circle-medium-FG_DISABLED-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/circle-medium-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/circle-medium-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/circle-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/circle.svg
+%%DATADIR%%/_aqt/data/qt/icons/clock-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/clock.svg
+%%DATADIR%%/_aqt/data/qt/icons/collection.svg
+%%DATADIR%%/_aqt/data/qt/icons/deck.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-horizontal-FG_SUBTLE-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-horizontal-FG_SUBTLE-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-horizontal-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-horizontal-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-vertical-FG_SUBTLE-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-vertical-FG_SUBTLE-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-vertical-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/drag-vertical-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/flag-variant-off-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/flag-variant-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/flag-variant.svg
+%%DATADIR%%/_aqt/data/qt/icons/form-textbox.svg
+%%DATADIR%%/_aqt/data/qt/icons/heart-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/heart.svg
+%%DATADIR%%/_aqt/data/qt/icons/magnify-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/magnify-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/media-record.svg
+%%DATADIR%%/_aqt/data/qt/icons/menu-down-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/menu-down-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/menu-up-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/menu-up-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/minus-thick-FG_DISABLED-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/minus-thick-FG_DISABLED-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/minus-thick-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/minus-thick-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/newspaper.svg
+%%DATADIR%%/_aqt/data/qt/icons/notetype.svg
+%%DATADIR%%/_aqt/data/qt/icons/selection-drag-dark.svg
+%%DATADIR%%/_aqt/data/qt/icons/selection-drag-light.svg
+%%DATADIR%%/_aqt/data/qt/icons/tag-off-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/tag-outline.svg
+%%DATADIR%%/_aqt/data/qt/icons/tag.svg
+%%DATADIR%%/_aqt/data/web/css/addonconf.css
+%%DATADIR%%/_aqt/data/web/css/deckbrowser.css
+%%DATADIR%%/_aqt/data/web/css/editable.css
+%%DATADIR%%/_aqt/data/web/css/editor.css
+%%DATADIR%%/_aqt/data/web/css/overview.css
+%%DATADIR%%/_aqt/data/web/css/reviewer-bottom.css
+%%DATADIR%%/_aqt/data/web/css/reviewer.css
+%%DATADIR%%/_aqt/data/web/css/toolbar-bottom.css
+%%DATADIR%%/_aqt/data/web/css/toolbar.css
+%%DATADIR%%/_aqt/data/web/css/webview.css
+%%DATADIR%%/_aqt/data/web/imgs/anki-logo-thin.png
+%%DATADIR%%/_aqt/data/web/imgs/favicon.ico
+%%DATADIR%%/_aqt/data/web/imgs/gears.svg
+%%DATADIR%%/_aqt/data/web/imgs/media-record.png
+%%DATADIR%%/_aqt/data/web/imgs/more.png
+%%DATADIR%%/_aqt/data/web/imgs/paperclip.png
+%%DATADIR%%/_aqt/data/web/imgs/refresh.svg
+%%DATADIR%%/_aqt/data/web/imgs/text_bold.png
+%%DATADIR%%/_aqt/data/web/imgs/text_clear.png
+%%DATADIR%%/_aqt/data/web/imgs/text_cloze.png
+%%DATADIR%%/_aqt/data/web/imgs/text_italic.png
+%%DATADIR%%/_aqt/data/web/imgs/text_sub.png
+%%DATADIR%%/_aqt/data/web/imgs/text_super.png
+%%DATADIR%%/_aqt/data/web/imgs/text_under.png
+%%DATADIR%%/_aqt/data/web/js/deckbrowser.js
+%%DATADIR%%/_aqt/data/web/js/editor.js
+%%DATADIR%%/_aqt/data/web/js/mathjax.js
+%%DATADIR%%/_aqt/data/web/js/reviewer-bottom.js
+%%DATADIR%%/_aqt/data/web/js/reviewer.js
+%%DATADIR%%/_aqt/data/web/js/toolbar.js
+%%DATADIR%%/_aqt/data/web/js/vendor/bootstrap.bundle.min.js
+%%DATADIR%%/_aqt/data/web/js/vendor/jquery-ui.min.js
+%%DATADIR%%/_aqt/data/web/js/vendor/jquery.min.js
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/a11y/assistive-mml.js
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/a11y/complexity.js
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/a11y/explorer.js
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/a11y/semantic-enrich.js
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/sre/mathmaps/de.json
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/sre/mathmaps/en.json
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/sre/mathmaps/es.json
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/sre/mathmaps/fr.json
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/sre/mathmaps/hi.json
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/sre/mathmaps/it.json
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/sre/mathmaps/nemeth.json
+%%DATADIR%%/_aqt/data/web/js/vendor/mathjax/tex-chtml-full.js
+%%DATADIR%%/_aqt/data/web/js/vendor/plot.js
+%%DATADIR%%/_aqt/data/web/js/webview.js
+%%DATADIR%%/_aqt/data/web/pages/congrats.css
+%%DATADIR%%/_aqt/data/web/pages/congrats.html
+%%DATADIR%%/_aqt/data/web/pages/congrats.js
+%%DATADIR%%/_aqt/data/web/pages/editable.css
+%%DATADIR%%/_aqt/data/web/pages/editable.js
+%%DATADIR%%/_aqt/data/web/sveltekit/_app/env.js
+@comment Several *.css and *.mjs files of sveltekit have a computed filename.
+@comment As it is user-specific it is impossible to know their filename in
+@comment advance thus they're autogenerated for the plist during build.
+@comment The affected files are kept here for reference.
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/0.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/11.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/2.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/3.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/4.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/5.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/6.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/9.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/Badge.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/ButtonGroup.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/ButtonToolbar.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/Col.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/Container.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/EnumSelectorRow.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/EnumSelectorRow.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/IconButton.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/ImageOcclusionPage.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/ImportPage.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/LabelButton.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/Row.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/Select.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/Shortcut.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/StickyContainer.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/TagEditor.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/TagEditor.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/TitledContainer.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/WithTooltip.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_layout.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_page.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_page.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_page.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_page.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_page.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_page.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/_page.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/functional.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/assets/index.GUESS_ME.css
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/Badge.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/ButtonGroup.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/Col.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/Component.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/Container.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/EnumSelectorRow.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/IconButton.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/ImageOcclusionPage.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/ImportPage.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/LabelButton.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/Row.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/Select.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/Shortcut.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/StickyContainer.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/TagEditor.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/TitledContainer.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/WithTooltip.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/_commonjsHelpers.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/await_block.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/backend.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/bridgecommand.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/cloneDeep.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/context-keys.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/cross-browser.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/each.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/entry.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/ftl.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/functional.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/helpers.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/index.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/index.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/index.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/isObject.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/progress.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/runtime-require.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/stores.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/theme.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/time.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/chunks/utils.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/entry/app.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/entry/start.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/0.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/1.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/10.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/11.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/2.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/3.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/4.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/5.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/6.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/7.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/8.GUESS_ME.mjs
+@comment %%DATADIR%%/_aqt/data/web/sveltekit/_app/immutable/nodes/9.GUESS_ME.mjs
+%%DATADIR%%/_aqt/data/web/sveltekit/_app/version.json
+%%DATADIR%%/_aqt/data/web/sveltekit/index.html
+%%DATADIR%%/_aqt/forms/about_qt6.py
+%%DATADIR%%/_aqt/forms/addcards_qt6.py
+%%DATADIR%%/_aqt/forms/addfield_qt6.py
+%%DATADIR%%/_aqt/forms/addmodel_qt6.py
+%%DATADIR%%/_aqt/forms/addonconf_qt6.py
+%%DATADIR%%/_aqt/forms/addons_qt6.py
+%%DATADIR%%/_aqt/forms/browser_qt6.py
+%%DATADIR%%/_aqt/forms/browserdisp_qt6.py
+%%DATADIR%%/_aqt/forms/browseropts_qt6.py
+%%DATADIR%%/_aqt/forms/changemap_qt6.py
+%%DATADIR%%/_aqt/forms/changemodel_qt6.py
+%%DATADIR%%/_aqt/forms/clayout_top_qt6.py
+%%DATADIR%%/_aqt/forms/customstudy_qt6.py
+%%DATADIR%%/_aqt/forms/dconf_qt6.py
+%%DATADIR%%/_aqt/forms/debug_qt6.py
+%%DATADIR%%/_aqt/forms/editcurrent_qt6.py
+%%DATADIR%%/_aqt/forms/edithtml_qt6.py
+%%DATADIR%%/_aqt/forms/emptycards_qt6.py
+%%DATADIR%%/_aqt/forms/exporting_qt6.py
+%%DATADIR%%/_aqt/forms/fields_qt6.py
+%%DATADIR%%/_aqt/forms/filtered_deck_qt6.py
+%%DATADIR%%/_aqt/forms/finddupes_qt6.py
+%%DATADIR%%/_aqt/forms/findreplace_qt6.py
+%%DATADIR%%/_aqt/forms/forget_qt6.py
+%%DATADIR%%/_aqt/forms/getaddons_qt6.py
+%%DATADIR%%/_aqt/forms/importing_qt6.py
+%%DATADIR%%/_aqt/forms/main_qt6.py
+%%DATADIR%%/_aqt/forms/modelopts_qt6.py
+%%DATADIR%%/_aqt/forms/models_qt6.py
+%%DATADIR%%/_aqt/forms/preferences_qt6.py
+%%DATADIR%%/_aqt/forms/preview_qt6.py
+%%DATADIR%%/_aqt/forms/profiles_qt6.py
+%%DATADIR%%/_aqt/forms/progress_qt6.py
+%%DATADIR%%/_aqt/forms/reposition_qt6.py
+%%DATADIR%%/_aqt/forms/setgroup_qt6.py
+%%DATADIR%%/_aqt/forms/setlang_qt6.py
+%%DATADIR%%/_aqt/forms/stats_qt6.py
+%%DATADIR%%/_aqt/forms/studydeck_qt6.py
+%%DATADIR%%/_aqt/forms/synclog_qt6.py
+%%DATADIR%%/_aqt/forms/taglimit_qt6.py
+%%DATADIR%%/_aqt/forms/template_qt6.py
+%%DATADIR%%/_aqt/forms/widgets_qt6.py
+%%DATADIR%%/_aqt/hooks.py
+%%DATADIR%%/_aqt/props.py
+%%DATADIR%%/_aqt/py.typed
+%%DATADIR%%/anki/_backend.py
+%%DATADIR%%/anki/_backend_generated.py
+%%DATADIR%%/anki/_fluent.py
+%%DATADIR%%/anki/_legacy.py
+%%DATADIR%%/anki/_rsbridge.pyi
+%%DATADIR%%/anki/_rsbridge.so
+%%DATADIR%%/anki/_vendor/stringcase.py
+%%DATADIR%%/anki/ankihub_pb2.py
+%%DATADIR%%/anki/ankihub_pb2.pyi
+%%DATADIR%%/anki/ankidroid_pb2.py
+%%DATADIR%%/anki/ankidroid_pb2.pyi
+%%DATADIR%%/anki/ankiweb_pb2.py
+%%DATADIR%%/anki/ankiweb_pb2.pyi
+%%DATADIR%%/anki/backend_pb2.py
+%%DATADIR%%/anki/backend_pb2.pyi
+%%DATADIR%%/anki/browser.py
+%%DATADIR%%/anki/buildinfo.py
+%%DATADIR%%/anki/card_rendering_pb2.py
+%%DATADIR%%/anki/card_rendering_pb2.pyi
+%%DATADIR%%/anki/cards.py
+%%DATADIR%%/anki/cards_pb2.py
+%%DATADIR%%/anki/cards_pb2.pyi
+%%DATADIR%%/anki/collection.py
+%%DATADIR%%/anki/collection_pb2.py
+%%DATADIR%%/anki/collection_pb2.pyi
+%%DATADIR%%/anki/config.py
+%%DATADIR%%/anki/config_pb2.py
+%%DATADIR%%/anki/config_pb2.pyi
+%%DATADIR%%/anki/consts.py
+%%DATADIR%%/anki/db.py
+%%DATADIR%%/anki/dbproxy.py
+%%DATADIR%%/anki/deck_config_pb2.py
+%%DATADIR%%/anki/deck_config_pb2.pyi
+%%DATADIR%%/anki/decks.py
+%%DATADIR%%/anki/decks_pb2.py
+%%DATADIR%%/anki/decks_pb2.pyi
+%%DATADIR%%/anki/errors.py
+%%DATADIR%%/anki/exporting.py
+%%DATADIR%%/anki/find.py
+%%DATADIR%%/anki/foreign_data/__init__.py
+%%DATADIR%%/anki/foreign_data/mnemosyne.py
+%%DATADIR%%/anki/frontend_pb2.py
+%%DATADIR%%/anki/frontend_pb2.pyi
+%%DATADIR%%/anki/generic_pb2.py
+%%DATADIR%%/anki/generic_pb2.pyi
+%%DATADIR%%/anki/hooks.py
+%%DATADIR%%/anki/hooks_gen.py
+%%DATADIR%%/anki/httpclient.py
+%%DATADIR%%/anki/i18n_pb2.py
+%%DATADIR%%/anki/i18n_pb2.pyi
+%%DATADIR%%/anki/image_occlusion_pb2.py
+%%DATADIR%%/anki/image_occlusion_pb2.pyi
+%%DATADIR%%/anki/import_export_pb2.py
+%%DATADIR%%/anki/import_export_pb2.pyi
+%%DATADIR%%/anki/importing/__init__.py
+%%DATADIR%%/anki/importing/anki2.py
+%%DATADIR%%/anki/importing/apkg.py
+%%DATADIR%%/anki/importing/base.py
+%%DATADIR%%/anki/importing/csvfile.py
+%%DATADIR%%/anki/importing/mnemo.py
+%%DATADIR%%/anki/importing/noteimp.py
+%%DATADIR%%/anki/lang.py
+%%DATADIR%%/anki/latex.py
+%%DATADIR%%/anki/links_pb2.py
+%%DATADIR%%/anki/links_pb2.pyi
+%%DATADIR%%/anki/media.py
+%%DATADIR%%/anki/media_pb2.py
+%%DATADIR%%/anki/media_pb2.pyi
+%%DATADIR%%/anki/models.py
+%%DATADIR%%/anki/notes.py
+%%DATADIR%%/anki/notes_pb2.py
+%%DATADIR%%/anki/notes_pb2.pyi
+%%DATADIR%%/anki/notetypes_pb2.py
+%%DATADIR%%/anki/notetypes_pb2.pyi
+%%DATADIR%%/anki/py.typed
+%%DATADIR%%/anki/rsbackend.py
+%%DATADIR%%/anki/scheduler/__init__.py
+%%DATADIR%%/anki/scheduler/base.py
+%%DATADIR%%/anki/scheduler/dummy.py
+%%DATADIR%%/anki/scheduler/legacy.py
+%%DATADIR%%/anki/scheduler/v3.py
+%%DATADIR%%/anki/scheduler_pb2.py
+%%DATADIR%%/anki/scheduler_pb2.pyi
+%%DATADIR%%/anki/search_pb2.py
+%%DATADIR%%/anki/search_pb2.pyi
+%%DATADIR%%/anki/sound.py
+%%DATADIR%%/anki/stats.py
+%%DATADIR%%/anki/stats_pb2.py
+%%DATADIR%%/anki/stats_pb2.pyi
+%%DATADIR%%/anki/statsbg.py
+%%DATADIR%%/anki/stdmodels.py
+%%DATADIR%%/anki/storage.py
+%%DATADIR%%/anki/sync.py
+%%DATADIR%%/anki/sync_pb2.py
+%%DATADIR%%/anki/sync_pb2.pyi
+%%DATADIR%%/anki/syncserver.py
+%%DATADIR%%/anki/tags.py
+%%DATADIR%%/anki/tags_pb2.py
+%%DATADIR%%/anki/tags_pb2.pyi
+%%DATADIR%%/anki/template.py
+%%DATADIR%%/anki/types.py
+%%DATADIR%%/anki/utils.py
+%%DATADIR%%/aqt/__init__.py
+%%DATADIR%%/aqt/_macos_helper.py
+%%DATADIR%%/aqt/about.py
+%%DATADIR%%/aqt/addcards.py
+%%DATADIR%%/aqt/addons.py
+%%DATADIR%%/aqt/ankihub.py
+%%DATADIR%%/aqt/browser/__init__.py
+%%DATADIR%%/aqt/browser/browser.py
+%%DATADIR%%/aqt/browser/card_info.py
+%%DATADIR%%/aqt/browser/find_and_replace.py
+%%DATADIR%%/aqt/browser/find_duplicates.py
+%%DATADIR%%/aqt/browser/layout.py
+%%DATADIR%%/aqt/browser/previewer.py
+%%DATADIR%%/aqt/browser/sidebar/__init__.py
+%%DATADIR%%/aqt/browser/sidebar/item.py
+%%DATADIR%%/aqt/browser/sidebar/model.py
+%%DATADIR%%/aqt/browser/sidebar/searchbar.py
+%%DATADIR%%/aqt/browser/sidebar/toolbar.py
+%%DATADIR%%/aqt/browser/sidebar/tree.py
+%%DATADIR%%/aqt/browser/table/__init__.py
+%%DATADIR%%/aqt/browser/table/model.py
+%%DATADIR%%/aqt/browser/table/state.py
+%%DATADIR%%/aqt/browser/table/table.py
+%%DATADIR%%/aqt/changenotetype.py
+%%DATADIR%%/aqt/clayout.py
+%%DATADIR%%/aqt/colors.py
+%%DATADIR%%/aqt/customstudy.py
+%%DATADIR%%/aqt/dbcheck.py
+%%DATADIR%%/aqt/debug_console.py
+%%DATADIR%%/aqt/deckbrowser.py
+%%DATADIR%%/aqt/deckchooser.py
+%%DATADIR%%/aqt/deckconf.py
+%%DATADIR%%/aqt/deckdescription.py
+%%DATADIR%%/aqt/deckoptions.py
+%%DATADIR%%/aqt/editcurrent.py
+%%DATADIR%%/aqt/editor.py
+%%DATADIR%%/aqt/emptycards.py
+%%DATADIR%%/aqt/errors.py
+%%DATADIR%%/aqt/exporting.py
+%%DATADIR%%/aqt/fields.py
+%%DATADIR%%/aqt/filtered_deck.py
+%%DATADIR%%/aqt/flags.py
+%%DATADIR%%/aqt/forms/__init__.py
+%%DATADIR%%/aqt/forms/about.py
+%%DATADIR%%/aqt/forms/addcards.py
+%%DATADIR%%/aqt/forms/addfield.py
+%%DATADIR%%/aqt/forms/addmodel.py
+%%DATADIR%%/aqt/forms/addonconf.py
+%%DATADIR%%/aqt/forms/addons.py
+%%DATADIR%%/aqt/forms/browser.py
+%%DATADIR%%/aqt/forms/browserdisp.py
+%%DATADIR%%/aqt/forms/browseropts.py
+%%DATADIR%%/aqt/forms/changemap.py
+%%DATADIR%%/aqt/forms/changemodel.py
+%%DATADIR%%/aqt/forms/clayout_top.py
+%%DATADIR%%/aqt/forms/customstudy.py
+%%DATADIR%%/aqt/forms/dconf.py
+%%DATADIR%%/aqt/forms/debug.py
+%%DATADIR%%/aqt/forms/editcurrent.py
+%%DATADIR%%/aqt/forms/edithtml.py
+%%DATADIR%%/aqt/forms/emptycards.py
+%%DATADIR%%/aqt/forms/exporting.py
+%%DATADIR%%/aqt/forms/fields.py
+%%DATADIR%%/aqt/forms/filtered_deck.py
+%%DATADIR%%/aqt/forms/finddupes.py
+%%DATADIR%%/aqt/forms/findreplace.py
+%%DATADIR%%/aqt/forms/forget.py
+%%DATADIR%%/aqt/forms/getaddons.py
+%%DATADIR%%/aqt/forms/importing.py
+%%DATADIR%%/aqt/forms/main.py
+%%DATADIR%%/aqt/forms/modelopts.py
+%%DATADIR%%/aqt/forms/models.py
+%%DATADIR%%/aqt/forms/preferences.py
+%%DATADIR%%/aqt/forms/preview.py
+%%DATADIR%%/aqt/forms/profiles.py
+%%DATADIR%%/aqt/forms/progress.py
+%%DATADIR%%/aqt/forms/reposition.py
+%%DATADIR%%/aqt/forms/setgroup.py
+%%DATADIR%%/aqt/forms/setlang.py
+%%DATADIR%%/aqt/forms/stats.py
+%%DATADIR%%/aqt/forms/studydeck.py
+%%DATADIR%%/aqt/forms/synclog.py
+%%DATADIR%%/aqt/forms/taglimit.py
+%%DATADIR%%/aqt/forms/template.py
+%%DATADIR%%/aqt/forms/widgets.py
+%%DATADIR%%/aqt/gui_hooks.py
+%%DATADIR%%/aqt/import_export/__init__.py
+%%DATADIR%%/aqt/import_export/exporting.py
+%%DATADIR%%/aqt/import_export/import_dialog.py
+%%DATADIR%%/aqt/import_export/importing.py
+%%DATADIR%%/aqt/importing.py
+%%DATADIR%%/aqt/legacy.py
+%%DATADIR%%/aqt/log.py
+%%DATADIR%%/aqt/main.py
+%%DATADIR%%/aqt/mediacheck.py
+%%DATADIR%%/aqt/mediasrv.py
+%%DATADIR%%/aqt/mediasync.py
+%%DATADIR%%/aqt/modelchooser.py
+%%DATADIR%%/aqt/models.py
+%%DATADIR%%/aqt/mpv.py
+%%DATADIR%%/aqt/notetypechooser.py
+%%DATADIR%%/aqt/operations/__init__.py
+%%DATADIR%%/aqt/operations/card.py
+%%DATADIR%%/aqt/operations/collection.py
+%%DATADIR%%/aqt/operations/deck.py
+%%DATADIR%%/aqt/operations/note.py
+%%DATADIR%%/aqt/operations/notetype.py
+%%DATADIR%%/aqt/operations/scheduling.py
+%%DATADIR%%/aqt/operations/tag.py
+%%DATADIR%%/aqt/overview.py
+%%DATADIR%%/aqt/package.py
+%%DATADIR%%/aqt/preferences.py
+%%DATADIR%%/aqt/profiles.py
+%%DATADIR%%/aqt/progress.py
+%%DATADIR%%/aqt/props.py
+%%DATADIR%%/aqt/py.typed
+%%DATADIR%%/aqt/qt/__init__.py
+%%DATADIR%%/aqt/qt/qt6.py
+%%DATADIR%%/aqt/reviewer.py
+%%DATADIR%%/aqt/schema_change_tracker.py
+%%DATADIR%%/aqt/sound.py
+%%DATADIR%%/aqt/stats.py
+%%DATADIR%%/aqt/studydeck.py
+%%DATADIR%%/aqt/stylesheets.py
+%%DATADIR%%/aqt/switch.py
+%%DATADIR%%/aqt/sync.py
+%%DATADIR%%/aqt/tagedit.py
+%%DATADIR%%/aqt/taglimit.py
+%%DATADIR%%/aqt/taskman.py
+%%DATADIR%%/aqt/theme.py
+%%DATADIR%%/aqt/toolbar.py
+%%DATADIR%%/aqt/tts.py
+%%DATADIR%%/aqt/undo.py
+%%DATADIR%%/aqt/update.py
+%%DATADIR%%/aqt/url_schemes.py
+%%DATADIR%%/aqt/utils.py
+%%DATADIR%%/aqt/webview.py
+%%DATADIR%%/aqt/widgetgallery.py
+%%DATADIR%%/aqt/winpaths.py
+share/applications/anki.desktop
+share/pixmaps/anki.png
+share/pixmaps/anki.xpm

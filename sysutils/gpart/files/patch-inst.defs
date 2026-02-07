@@ -1,0 +1,15 @@
+--- inst.defs.orig	2000-12-13 22:45:49 UTC
++++ inst.defs
+@@ -1,9 +1,9 @@
+ #
+ # installation directories for gpart
+ #
+-prefix=/usr/local
+-bindir=$(prefix)/bin
++prefix=$(DESTDIR)$(PREFIX)
++bindir=$(prefix)/sbin
+ libdir=$(prefix)/lib
+-mandir=$(prefix)/man
++mandir=$(prefix)/share/man
+ manext=8
+ sharedir=$(prefix)/share

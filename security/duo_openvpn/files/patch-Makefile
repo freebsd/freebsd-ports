@@ -1,0 +1,8 @@
+--- Makefile.orig	2021-05-06 18:10:21 UTC
++++ Makefile
+@@ -1,5 +1,3 @@
+-PREFIX=/opt/duo
+-CFLAGS += -DPREFIX='"$(PREFIX)"'
+ 
+ ifdef USE_PERL
+ CFLAGS += -DUSE_PERL

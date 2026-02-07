@@ -1,0 +1,15 @@
+%%OCAML_SITELIBDIR%%/curses/META
+%%OCAML_SITELIBDIR%%/curses/curses.a
+%%OCAML_SITELIBDIR%%/curses/curses.cma
+%%OCAML_SITELIBDIR%%/curses/curses.cmi
+%%OCAML_SITELIBDIR%%/curses/curses.cmt
+%%OCAML_SITELIBDIR%%/curses/curses.cmti
+%%OCAML_SITELIBDIR%%/curses/curses.cmx
+%%OCAML_SITELIBDIR%%/curses/curses.cmxa
+%%OCAML_SITELIBDIR%%/curses/curses.ml
+%%OCAML_SITELIBDIR%%/curses/curses.mli
+%%OCAML_SITELIBDIR%%/curses/dune-package
+%%OCAML_SITELIBDIR%%/curses/libcurses_stubs.a
+%%OCAML_SITELIBDIR%%/curses/opam
+%%OCAML_SITELIBDIR%%/curses/curses.cmxs
+%%OCAML_SITELIBDIR%%/curses/dllcurses_stubs.so

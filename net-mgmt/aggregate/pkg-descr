@@ -1,0 +1,16 @@
+Takes a list of prefixes in conventional format on stdin,
+and performs two optimisations to attempt to reduce the
+length of the prefix list.
+
+The first optimisation is to remove any supplied prefixes
+which are supurfluous because they are already included in
+another supplied prefix. For example, 203.97.2.0/24 would
+be removed if 203.97.0.0/17 was also supplied.
+
+The second optimisation identifies adjacent prefixes that
+can be combined under a single, shorter-length prefix. For
+example, 203.97.2.0/24 and 203.97.3.0/24 can be combined
+into the single prefix 203.97.2.0/23.
+
+
+jabley@automagic.org

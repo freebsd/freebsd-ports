@@ -1,0 +1,15 @@
+--- service/Makefile.am.orig	2025-01-22 07:21:00 UTC
++++ service/Makefile.am
+@@ -131,9 +131,9 @@ install-service:
+ 
+ # Install and uninstall the config for this distro
+ install-service:
+-	$(INSTALL_PROGRAM) -d $(DESTDIR)$(privatedir)
+-	$(INSTALL_PROGRAM) -d $(DESTDIR)$(localstatedir)/lib/realmd
+-	$(INSTALL_PROGRAM) -d $(DESTDIR)$(cachedir)
++	$(INSTALL_DATA) -m 755 -d $(DESTDIR)$(privatedir)
++	$(INSTALL_DATA) -m 755 -d $(DESTDIR)$(localstatedir)/lib/realmd
++	$(INSTALL_DATA) -m 755 -d $(DESTDIR)$(cachedir)
+ 	$(INSTALL_DATA) $(srcdir)/service/realmd-$(DISTRO).conf $(DESTDIR)$(privatedir)/realmd-distro.conf
+ uninstall-service:
+ 	rm -f $(DESTDIR)$(privatedir)/realmd-distro.conf

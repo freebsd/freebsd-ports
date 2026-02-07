@@ -1,0 +1,17 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+case $2 in
+DEINSTALL)
+	if grep -Fxq "greeter-session=slick-greeter" ${PREFIX}/etc/lightdm/lightdm.conf
+	then
+		echo ":: Please remove greeter configuration in ${PREFIX}/etc/lightdm/lightdm.conf"
+		echo ":: Configure another greeter if you plan to keep using lightdm."
+	else
+		echo ":: slick-greeter is not the configured greeter in ${PREFIX}/etc/lightdm/lightdm.conf"
+		echo ":: Leaving the lightdm greeter configuration unchanged."
+	fi
+	echo ":: $(grep greeter-session= ${PREFIX}/etc/lightdm/lightdm.conf)"
+	;;
+esac

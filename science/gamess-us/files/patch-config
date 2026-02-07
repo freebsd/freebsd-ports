@@ -1,0 +1,61 @@
+--- config.orig	2018-10-01 03:45:26 UTC
++++ config
+@@ -1,4 +1,5 @@
+ #!/bin/csh
++goto step3
+ #
+ #   5 Dec 2014 - configuration script to set up GAMESS' compile/link
+ #
+@@ -1305,6 +1306,7 @@ echo -n "please hit <return> to compile 
+ set reply=$<
+ tput clear
+ #
++step3:
+ if (-e tools/actvte.code) then
+ #
+    sed -e "s/^\*UNX/    /" tools/actvte.code > actvte.f
+@@ -1361,7 +1363,7 @@ if (-e tools/actvte.code) then
+          breaksw
+       default:
+          set echo
+-         $GMS_FORTRAN -o $GMS_BUILD_DIR/tools/actvte.x actvte.f
++         $GMS_FORTRAN $LDFLAGS -o $GMS_BUILD_DIR/tools/actvte.x actvte.f
+          unset echo
+          breaksw
+    endsw
+@@ -1408,7 +1410,7 @@ if ($GMS_TARGET == sgi64)    set GMS_DDI
+ if ($GMS_TARGET == linux64) then
+    echo " "
+    echo -n "please hit <return> to set up your network for Linux clusters."
+-   set reply=$<
++   set reply=""
+    tput clear
+    top_of_comm_choice:
+    echo " "
+@@ -1424,7 +1426,7 @@ if ($GMS_TARGET == linux64) then
+    echo "     choose 'mpi'."
+    echo " "
+    echo -n "communication library ('sockets' or 'mpi')? "
+-   set GMS_DDI_COMM=$<
++   set GMS_DDI_COMM='sockets'
+    switch ($GMS_DDI_COMM)
+       case sockets:
+          breaksw
+@@ -1660,7 +1662,7 @@ echo "This option can be manually change
+ echo ""
+ #
+ echo -n "Optional: Build Michigan State University CCT3 & CCSD3A methods?  (yes/no): "
+-set reply=$<
++set reply=no
+ if ($reply == no) then
+    set GMS_MSUCC=false
+ else
+@@ -1680,7 +1682,7 @@ echo "If you decide to try LIBCCHEM late
+ echo " "
+ 
+ echo -n "Do you want to try LIBCCHEM?  (yes/no): "
+-set reply=$<
++set reply=no
+ if ($reply == no) then
+    set GMS_LIBCCHEM=false
+    goto dump_install_info

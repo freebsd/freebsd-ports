@@ -1,0 +1,11 @@
+Fluxbox is a window manager based on BlackBox with some new features:
+
+ - Transparent menus
+ - Pixmap themes
+ - Window snapping
+ - Integrated bbkeys
+ - Iconbar
+ - Configurable titlebar (slit)
+ - Windows tabs
+ - Wheel scroll changes workspace
+ - KDE and partial Gnome support

@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+net-p2p/rslsync includes an RC script:
+%%PREFIX%%/etc/rc.d/rslsync
+
+TO START ON BOOT:
+# sysrc rslsync_enable=YES
+
+START MANUALLY:
+# service rslsync start
+
+Once started, visit the following to configure:
+http://localhost:8888/
+EOM
+}
+]

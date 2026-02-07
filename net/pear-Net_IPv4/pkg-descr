@@ -1,0 +1,3 @@
+Net_IPv4 is a Class used for calculating IPv4 (AF_INET family) address
+information such as network as network address, broadcast address, and IP
+address validity.

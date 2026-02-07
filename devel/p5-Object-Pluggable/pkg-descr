@@ -1,0 +1,5 @@
+Object::Pluggable is a base class for creating plugin enabled objects. It is
+a generic port of POE::Component::IRC's plugin system.
+
+If your object dispatches events to listeners, then Object::Pluggable may be
+a good fit for you.

@@ -1,0 +1,2 @@
+This module lets you peek into archives without extracting them.
+It currently supports tar files and zip files.

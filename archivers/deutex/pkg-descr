@@ -1,0 +1,9 @@
+DeuTex is a tool to work with WAD files for Doom, Heretic, Hexen, and Strife.
+It can be used to extract the lumps from a WAD and save them as individual
+files.  Conversely, it can also build a WAD from separate files.  When
+extracting a lump to a file, it does not just copy the raw data, it converts
+it to an appropriate format (such as PPM for graphics, Sun audio for samples,
+etc.).  Conversely, when it reads files for inclusion in PWADs, it does the
+necessary conversions (for example, from PPM to Doom picture format).  In
+addition, DeuTex has functions such as merging WADs, etc.  If you're doing
+any WAD hacking beyond level editing, DeuTex is a must.

@@ -1,0 +1,23 @@
+arduino-mk/Arduino.mk
+arduino-mk/bin/ard-parse-boards
+arduino-mk/bin/ard-reset-arduino
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/AnalogInOutSerial/AnalogInOutSerial.ino
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/AnalogInOutSerial/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Blink/Blink.ino
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Blink/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlinkWithoutDelay/.DS_Store
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlinkWithoutDelay/BlinkWithoutDelay.ino
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BlinkWithoutDelay/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Fade/Fade.ino
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Fade/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.ino
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/WebServer/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/WebServer/WebServer.ino
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/master_reader/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/master_reader/master_reader.ino
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/pitches.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/toneMelody.ino
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/BlinkWithoutDelay/build-cli/libs/Ethernet

@@ -1,0 +1,11 @@
+GNU GLOBAL is a source code tagging system that works the same way across
+diverse environments, such as Emacs editor, Vi editor, Less viewer, Bash shell,
+various web browsers, etc.
+
+You can locate various objects, such as functions, macros, structs, classes, in
+your source files and move there easily. It is useful for hacking a large
+projects which contain many sub-directories, many #ifdef and many main()
+functions. It is similar to ctags or etags, but is different from them in the
+following two points:
+- Independence of any editor
+- Capability to treat definition and reference

@@ -1,0 +1,38 @@
+--- Makefile.orig	2025-06-13 21:28:26 UTC
++++ Makefile
+@@ -70,7 +70,7 @@ contribdir  := $(docdir)/contrib
+ man3dir     := $(mandir)/man3
+ man5dir     := $(mandir)/man5
+ contribdir  := $(docdir)/contrib
+-exampledir  := $(docdir)/examples
++exampledir  := $(EXAMPLESDIR)
+ 
+ DISTDIR := gbsplay-$(VERSION)
+ 
+@@ -87,7 +87,7 @@ export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAG
+ 
+ export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAGS
+ 
+-docs               := README.md HISTORY COPYRIGHT LICENCE
++docs               := README.md
+ docs-dist          := INSTALL.md CODINGSTYLE gbsformat.txt PACKAGING.md
+ contribs           := contrib/gbs2ogg.sh contrib/gbsplay.bashcompletion contrib/gbsplay.zshcompletion
+ examples           := examples/nightmode.gbs examples/gbsplayrc_sample
+@@ -352,9 +352,7 @@ install-default: all
+ 	install -m 644 man/gbsplay.1 man/gbsinfo.1 man/gbs2gb.1 $(man1dir)
+ 	install -m 644 man/gbsplayrc.5 $(man5dir)
+ 	install -m 644 mime/gbsplay.xml $(mimedir)/packages
+-	-update-mime-database $(mimedir)
+ 	install -m 644 desktop/gbsplay.desktop $(appdir)
+-	-update-desktop-database $(appdir)
+ 	install -m 644 $(docs) $(docdir)
+ 	install -m 644 $(examples) $(exampledir)
+ 	for i in $(mos); do \
+@@ -374,7 +372,6 @@ install-xgbsplay: $(xgbsplaybin) $(mans)
+ 	install -m 755 $(xgbsplaybin) $(bindir)
+ 	install -m 644 man/xgbsplay.1 $(man1dir)
+ 	install -m 644 desktop/xgbsplay.desktop $(appdir)
+-	-update-desktop-database $(appdir)
+ 
+ install-apidoc:	generate-apidoc
+ 	install -d $(man3dir)

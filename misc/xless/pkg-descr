@@ -1,0 +1,18 @@
+This is a port of xless (version 1.7), a handy text file viewer for X.
+Useful as a viewer tool for other apps (e.g., xfm, the X file manager),
+or as a standalone viewer.  Presents a scrollable text window (both
+vertical and horizontal scrolling), with a number of clickable buttons.
+
+From the README file:
+
+FEATURES:
+   Display either the file(s) specified on the command line or input from
+      standard input, supplied by a pipe.  File/pipe may be optionally
+      monitored so that the display is continuously updated as new text is
+      added.
+   Display new files in the current window or by creating a new window.
+   Reload or print the displayed file.
+   Search the displayed file using either exact, case-insensitive, or
+      regular expression patterns.
+   Edit the displayed file with your favorite editor (as specified in
+      the VISUAL or EDITOR environment variable)

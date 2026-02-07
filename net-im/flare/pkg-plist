@@ -1,0 +1,6 @@
+bin/flare
+share/applications/de.schmidhuberj.Flare.desktop
+share/dbus-1/system-services/de.schmidhuberj.Flare.service
+share/icons/hicolor/scalable/apps/de.schmidhuberj.Flare.svg
+share/icons/hicolor/symbolic/apps/de.schmidhuberj.Flare-symbolic.svg
+share/metainfo/de.schmidhuberj.Flare.metainfo.xml

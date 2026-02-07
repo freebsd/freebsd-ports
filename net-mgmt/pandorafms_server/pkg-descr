@@ -1,0 +1,21 @@
+Pandora FMS is a monitoring Open Source software. It watches your systems and
+applications, and allows you to know the status of any element of those systems.
+
+Pandora FMS could detect a network interface down, a defacement in your
+website, a memory leak in one of your server application, or the movement of
+any value of the NASDAQ new technology market. Pandora FMS could send out SMS
+message when your systems fails... or when Google's value drop below US348.60?
+
+Pandora FMS runs on any operating system, with specific agents for each
+platform, gathering data and sending it to a server, it has specific agents for
+GNU/Linux, AIX, Solaris, HP-UX, BSD/IPSO, and Windows 2000, XP and 2003.
+
+Pandora FMS can also monitor any kind of TCP/IP service, without the need to
+install agents, and monitor network systems such as load balancers, routers,
+switches, operating systems, applications, or simply printers if you need.
+Pandora FMS also supports SNMP for collecting data and for receiving traps.
+
+A few examples of common resources monitored by Pandora FMS could be processor
+load, disk and memory usage, running processes, log files, environmental
+factors such as temperature, or application values like strings contained in
+web pages or any possible way to collect data in an automatic way.

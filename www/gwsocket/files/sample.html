@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+pre {
+    background: #EEE;
+    border: 1px solid #CCC;
+    padding: 10px;
+}
+#page-wrapper {
+    border-top: 5px solid #69c773;
+    margin: 1em auto;
+    width: 950px;
+}
+</style>
+<script>
+window.onload = function() {
+    function $(selector) {
+        return document.querySelector(selector);
+    }
+    var socket = new WebSocket('ws://localhost:7890');
+    socket.onopen = function(event) {
+        $('#messages').innerHTML = 'Connected<br>';
+    };
+    socket.onmessage = function(event) {
+        $('#messages').innerHTML += 'Received:<br>' + event.data + '<br>';
+    };
+    socket.onclose = function(event) {
+        $('#messages').innerHTML = 'Disconnected ' + event.reason;
+    };
+    $('#submit').onclick = function(e) {
+        socket.send($('input').value);
+        $('#messages').innerHTML += 'Sent:<br>' + $('input').value + '<br>';
+        $('input').value = '';
+    };
+};
+</script>
+
+<div id="page-wrapper">
+    <pre id="messages">Connecting...</pre>
+    <input id="message" required>
+    <button id="submit">Send Message</button>
+</div>
+

@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+To run metronome create manually directory $PATH/stats:
+
+mkdir stats
+metronome --stats-directory=$PATH/stats
+
+Edit %%DATADIR%%/html/local.js and add webserver IP address (port
+8000 on :: by default).
+EOM
+}
+]

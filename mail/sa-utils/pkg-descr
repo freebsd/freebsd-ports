@@ -1,0 +1,7 @@
+Routine maintenance script for p5-Mail-SpamAssassin to run as a daily
+periodic job.
+
+   * Check for updates to sa rules and download
+   * Optionally use sa-compile to build a compiled set of rules
+   * Optionally restart spamd whenever new rules are downloaded
+   * Manage multiple update channels and GPG keys

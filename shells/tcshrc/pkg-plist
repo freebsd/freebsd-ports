@@ -1,0 +1,9 @@
+bin/tcshrc_config
+%%DATADIR%%/tcshrc
+%%DATADIR%%/tcshrc.alias
+%%DATADIR%%/tcshrc.bindkey
+%%DATADIR%%/tcshrc.complete
+%%DATADIR%%/tcshrc.hosts
+%%DATADIR%%/tcshrc.local
+%%DATADIR%%/tcshrc.set
+%%DATADIR%%/README.txt

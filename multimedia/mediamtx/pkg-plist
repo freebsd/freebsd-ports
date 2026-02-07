@@ -1,0 +1,2 @@
+bin/mediamtx
+@sample(mediamtx,mediamtx,0640) etc/mediamtx.yml.sample

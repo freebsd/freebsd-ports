@@ -1,0 +1,6 @@
+TrafShow continuously displays the information regarding packet
+traffic on the configured network interface that matches the boolean
+expression. It periodically sorts and updates this information. It
+may be useful for locating suspicious network traffic on the net.
+
+This version is old but it's known as showed the most true results.

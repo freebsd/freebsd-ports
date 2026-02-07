@@ -1,0 +1,2 @@
+fstyp can be used to heuristically detect which filesystem type a device or a
+partition contains. Useful for backup scripts.

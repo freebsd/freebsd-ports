@@ -1,0 +1,4 @@
+bin/manck
+share/man/man1/manck.1.gz
+share/manck.files
+share/manck.pages

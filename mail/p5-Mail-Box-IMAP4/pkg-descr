@@ -1,0 +1,6 @@
+Maintain a folder which has its messages stored on a remote server. The
+communication between the client application and the server is implemented using
+the IMAP4 protocol. This class uses Mail::Transport::IMAP4 to hide the transport
+of information, and focusses solely on the correct handling of messages within a
+IMAP4 folder. More than one IMAP4 folder can be handled by one single IMAP4
+connection.

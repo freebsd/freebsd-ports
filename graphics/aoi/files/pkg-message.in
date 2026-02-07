@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Art of Illusion has been installed.
+
+This package does not include all Plugins and Scripts.
+
+You could use Scripts & Plugins Manager to install additional
+Plugins and Scripts
+
+    http://aoisp.sourceforge.net/spmanagement.html
+
+In addition, you can search for additional Plugins and Scripts here:
+
+    http://aoisp.sourceforge.net/AoIRepository/
+
+and other Sites and put it in:
+
+    %%DATADIR%%/Plugins
+    %%DATADIR%%/Scripts/...
+EOM
+},
+{ type: remove
+  message: <<EOM
+===============================================================================
+
+After deinstallation, some files may stay in %%DATADIR%%,
+you can delete them with
+
+    /bin/rm -fr %%DATADIR%%
+
+===============================================================================
+EOM
+}
+]

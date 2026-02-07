@@ -1,0 +1,71 @@
+--- tree/CMakeLists.txt.orig	2022-12-18 09:35:42 UTC
++++ tree/CMakeLists.txt
+@@ -52,17 +52,18 @@ set(PYBIND_VER v2.10.1)
+ 
+ # Fetch pybind to be able to use pybind11_add_module symbol.
+ set(PYBIND_VER v2.10.1)
+-include(FetchContent)
+-FetchContent_Declare(
+-  pybind11
+-  GIT_REPOSITORY https://github.com/pybind/pybind11
+-  GIT_TAG        ${PYBIND_VER}
+-)
+-if(NOT pybind11_POPULATED)
+-    FetchContent_Populate(pybind11)
+-    add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR})
+-    include_directories(${pybind11_INCLUDE_DIR})
+-endif()
++#include(FetchContent)
++#FetchContent_Declare(
++#  pybind11
++#  GIT_REPOSITORY https://github.com/pybind/pybind11
++#  GIT_TAG        ${PYBIND_VER}
++#)
++#if(NOT pybind11_POPULATED)
++#    FetchContent_Populate(pybind11)
++#    add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR})
++#    include_directories(${pybind11_INCLUDE_DIR})
++#endif()
++find_package(pybind11)
+ 
+ # Needed to disable Abseil tests.
+ set (BUILD_TESTING OFF)
+@@ -83,27 +84,28 @@ endif()
+         ${ABSEIL_CMAKE_ARGS}
+         "-DCMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}")
+ endif()
+-ExternalProject_Add(abseil-cpp
+-  GIT_REPOSITORY    https://github.com/abseil/abseil-cpp.git
+-  GIT_TAG           ${ABSEIL_VER}
+-  PREFIX            ${CMAKE_SOURCE_DIR}/abseil-cpp
+-  CMAKE_ARGS        ${ABSEIL_CMAKE_ARGS}
+-)
+-ExternalProject_Get_Property(abseil-cpp install_dir)
+-set(abseil_install_dir ${install_dir})
++#ExternalProject_Add(abseil-cpp
++#  GIT_REPOSITORY    https://github.com/abseil/abseil-cpp.git
++#  GIT_TAG           ${ABSEIL_VER}
++#  PREFIX            ${CMAKE_SOURCE_DIR}/abseil-cpp
++#  CMAKE_ARGS        ${ABSEIL_CMAKE_ARGS}
++#)
++#ExternalProject_Get_Property(abseil-cpp install_dir)
++find_package(absl REQUIRED)
++set(abseil_install_dir $ENV{FREEBSD_LOCALBASE})
+ include_directories (${abseil_install_dir}/include)
+ 
+ 
+ # Define pybind11 tree module.
+ pybind11_add_module(_tree tree.h tree.cc)
+-add_dependencies(_tree abseil-cpp)
++add_dependencies(_tree absl::strings absl::config)
+ 
+ if (WIN32 OR MSVC)
+     set(ABSEIL_LIB_PREF "absl")
+     set(LIB_SUFF "lib")
+ else()
+     set(ABSEIL_LIB_PREF "libabsl")
+-    set(LIB_SUFF "a")
++    set(LIB_SUFF "so")
+ endif()
+ 
+ # Link abseil static libs.

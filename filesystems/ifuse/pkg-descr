@@ -1,0 +1,4 @@
+iFuse is a tool for reaching iOS devices filesystems over USB, without
+the need of jailbreaking and installing an SSH server on your iGadget.
+iFuse is useful if you want to mount the device manually or if you
+don't have GNOME with GVFS nor KDE with kio-ufc installed.

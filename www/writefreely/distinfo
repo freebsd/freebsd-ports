@@ -1,0 +1,9 @@
+TIMESTAMP = 1756547401
+SHA256 (go/www_writefreely/writefreely-v0.16.0/writefreely-css-0.16.0.tar.gz) = f134d132db0599325f515db46ad930e4c4ff2878c1840528f226beb603ccada4
+SIZE (go/www_writefreely/writefreely-v0.16.0/writefreely-css-0.16.0.tar.gz) = 12715
+SHA256 (go/www_writefreely/writefreely-v0.16.0/v0.16.0.mod) = 4c9b37a84f255fe8400a18d3a0305a1d489420112a61e40c8f0ae6db7588f0e5
+SIZE (go/www_writefreely/writefreely-v0.16.0/v0.16.0.mod) = 4439
+SHA256 (go/www_writefreely/writefreely-v0.16.0/v0.16.0.zip) = c1a2dc72b97111c8bc4851650ccf63d2dc5d1850d04069dad9bb6eb432318b01
+SIZE (go/www_writefreely/writefreely-v0.16.0/v0.16.0.zip) = 3724073
+SHA256 (go/www_writefreely/writefreely-v0.16.0/writefreely-documentation-v0.16.0_GH0.tar.gz) = 5d39e165f935df92f4305d5ab7a62384658392bc9b1f099de9c615ab98cdaf19
+SIZE (go/www_writefreely/writefreely-v0.16.0/writefreely-documentation-v0.16.0_GH0.tar.gz) = 28005

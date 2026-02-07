@@ -1,0 +1,6 @@
+Featured MIDI File Player for Linux, Windows, and macOS written in C++, and
+using Qt5 and Drumstick2.
+
+Features:
+* MIDI Output to hardware MIDI ports, or any other Drumstick backend
+* Transpose song tonality between -12 and +12 semitones

@@ -1,0 +1,188 @@
+--- XMail.ad.orig	Mon Jan 30 16:55:51 1995
++++ XMail.ad	Mon Sep  8 23:28:56 1997
+@@ -20,98 +20,98 @@
+ ! d2b48c - tan		daa520 - goldenrod	7fff00 - chartreuse
+ ! f0e68c - khaki	ffe4e1 - mistyrose	fffacd - lemonchiffon
+ !
+-! *expert:				True
+-! .geometry:				+65+3
+-! *iconGeometry:			+835+0
+-! *shapeStyle:				oval
++*expert:				True
++.geometry:				+65+3
++*iconGeometry:			+835+0
++*shapeStyle:				oval
+ !
+-! *Abort.background:			white
+-! *Abort.foreground:			red
++*Abort.background:			white
++*Abort.foreground:			red
+ *Abort.translations:			#override <Btn2Down>:	ShowHelp()
+-! *Autograph.background:			cyan
++*Autograph.background:			cyan
+ *Autograph.translations:		#override <Btn2Down>:	ShowHelp()
+-! *autograph.background:			paleturquoise
++*autograph.background:			paleturquoise
+ *autograph.translations:		#override <Btn2Down>:	ShowHelp()
+-! *aliasList*Background:			tan
+-! *aliasList.table.entry.background:	cyan
+-! *alwaysignore*foreground:		seagreen
+-! *noalwaysignore*foreground:		red
+-! *autoprint*foreground:			seagreen
+-! *noautoprint*foreground:		red
+-! *background:				yellow
+-! *borderColor:				brown
+-! *Bcc.background:			cyan
+-! *Bcc*AsciiSink*Background:		cyan
++*aliasList*Background:			tan
++*aliasList.table.entry.background:	cyan
++*alwaysignore*foreground:		seagreen
++*noalwaysignore*foreground:		red
++*autoprint*foreground:			seagreen
++*noautoprint*foreground:		red
++*background:				yellow
++*borderColor:				brown
++*Bcc.background:			cyan
++*Bcc*AsciiSink*Background:		cyan
+ *Bcc*scrollHorizontal:			whenNeeded
+ *Bcc*Thickness:				5
+ *Bcc*MinimumThumb:			3
+-! *Cancel.background:			mistyrose
+-! *Cancel.foreground:			black
++*Cancel.background:			mistyrose
++*Cancel.foreground:			black
+ *Cancel.translations:			#override <Btn2Down>:	ShowHelp()
+-! *Cc.background:				cyan
+-! *Cc*AsciiSink*Background:		cyan
++*Cc.background:				cyan
++*Cc*AsciiSink*Background:		cyan
+ *Cc*scrollHorizontal:			whenNeeded
+ *Cc*Thickness:				5
+ *Cc*MinimumThumb:			3
+-! *Copy.foreground:			blue
+-! *commandPanel.background:		goldenrod
+-! *copy.background:			cyan
+-! *Deliver.background:			green
+-! *Deliver.foreground:			brown
+-! *Deliver.borderColor:			brown
++*Copy.foreground:			blue
++*commandPanel.background:		goldenrod
++*copy.background:			cyan
++*Deliver.background:			green
++*Deliver.foreground:			brown
++*Deliver.borderColor:			brown
+ *Deliver.translations:			#override <Btn2Down>:	ShowHelp()
+-! *delete.foreground:			red
+-! *delete.background:			white
+-! *Drop.foreground:			red
+-! *editheaders*foreground:		seagreen
+-! *noeditheaders*foreground:		red
+-! *editorCommand:  xterm -name XMail -title "Message Edit" -display %s -e vi %s
+-! *exit.foreground:			blue
+-! *expert*foreground:			seagreen
+-! *noexpert*foreground:			red
+-! *Folder.background:			cyan
+-! *Font:					*-courier-bold-r-normal--14-*
+-! *fileWindow*background:			chartreuse
++*delete.foreground:			red
++*delete.background:			white
++*Drop.foreground:			red
++*editheaders*foreground:		seagreen
++*noeditheaders*foreground:		red
++*editorCommand:  xterm -name XMail -title "Message Edit" -display %s -e vi %s
++*exit.foreground:			blue
++*expert*foreground:			seagreen
++*noexpert*foreground:			red
++*Folder.background:			cyan
++!*Font:					*-courier-bold-r-normal--14-*
++*fileWindow*background:			chartreuse
+ *fileWindow*scrollHorizontal:		whenNeeded
+ *fileWindow*Thickness:			5
+ *fileWindow*MinimumThumb:		3
+-! *foreground:				brown
+-! *forward.foreground:			green3
+-! *full.foreground:			red
++*foreground:				brown
++*forward.foreground:			green3
++*full.foreground:			red
+ *grip*foreground:			brown
+-! *hold*foreground:			seagreen
+-! *nohold*foreground:			red
+-! *icon*background:			lightgoldenrod
+-! *icon*foreground:			brown
+-! *inc.background:			cyan
+-! *indexWindow*background:		lemonchiffon
++*hold*foreground:			seagreen
++*nohold*foreground:			red
++*icon*background:			lightgoldenrod
++*icon*foreground:			brown
++*inc.background:			cyan
++*indexWindow*background:		lemonchiffon
+ *indexWindow*scrollHorizontal:		whenNeeded
+ *indexWindow*Thickness:			10
+ *indexWindow*MinimumThumb:		5
+-! *list.background:			tan
+-! *menu.background:			tan
+-! *menubutton.foreground:			brown
+-! *menubutton.background:			cyan
+-! *Newmail.foreground:			blue
+-! *previous.foreground:			blue
+-! *quit.foreground:			red
+-! *quit.background:			white
+-! *read.foreground:			green3
+-! *ReEdit.background:			khaki
+-! *ReEdit.foreground:			brown
++*list.background:			tan
++*menu.background:			tan
++*menubutton.foreground:			brown
++*menubutton.background:			cyan
++*Newmail.foreground:			blue
++*previous.foreground:			blue
++*quit.foreground:			red
++*quit.background:			white
++*read.foreground:			green3
++*ReEdit.background:			khaki
++*ReEdit.foreground:			brown
+ *ReEdit.translations:			#override <Btn2Down>:	ShowHelp()
+-! *replyall.background:			green
+-! *save.background:			cyan
+-! *Save.foreground:			blue
+-! *set_menu.background:			tan
++*replyall.background:			green
++*save.background:			cyan
++*Save.foreground:			blue
++*set_menu.background:			tan
+ *statusWindow.background:		brown
+ *statusWindow.foreground:		yellow
+-! *Subject.background:			cyan
+-! *Subject*AsciiSink*Background:		cyan
++*Subject.background:			cyan
++*Subject*AsciiSink*Background:		cyan
+ *Subject*scrollHorizontal:		whenNeeded
+ *Subject*Thickness:			5
+ *Subject*MinimumThumb:			3
+-! *textWindow*background:			lemonchiffon
++*textWindow*background:			lemonchiffon
+ *textWindow.text*Wrap:			word
+ *textWindow.face.background:		white
+ *textWindow.face.foreground:		black
+@@ -121,14 +121,14 @@
+ *titleBar*Foreground:			yellow
+ *titleBar.logo.background:		white
+ *titleBar.logo.foreground:		blue
+-! *To.Background:				cyan
+-! *To*AsciiSink*Background:		cyan
++*To.Background:				cyan
++*To*AsciiSink*Background:		cyan
+ *To*scrollHorizontal:			whenNeeded
+ *To*Thickness:				5
+ *To*MinimumThumb:			3
+-! *undelete.foreground:			green3
+-! *write.foreground:			green3
+-! *Write.foreground:			red
++*undelete.foreground:			green3
++*write.foreground:			green3
++*Write.foreground:			red
+ !
+ *Bcc.translations:	#override \n\
+        <Key>Delete:	delete-previous-character() \n\

@@ -1,0 +1,12 @@
+--- makefile.orig	Sun Jan 23 20:40:47 2000
++++ makefile	Sun Jan 23 20:41:08 2000
+@@ -24,7 +24,7 @@
+ #
+ 
+ CGI-LIB=cgi-lib.a
+-CC=gcc
+-CCFLAGS=-c
++CC?=gcc
++CCFLAGS+=-c
+ AR=ar
+ ARFLAGS=rc

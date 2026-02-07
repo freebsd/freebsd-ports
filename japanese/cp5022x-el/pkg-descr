@@ -1,0 +1,24 @@
+cp5022x.el adds supprot for encodings with platform dependent characters
+used in Microsoft Windows.  It defines CP50220, CP50221, CP50222, and
+CP51932.  Specifications on Emacsen are as follows:
+
+CP51932 (Microsoft euc-jp)
+Type: iso-2022 (variant of ISO-2022)
+Initial designations:
+  G0 -- ascii:ASCII (ISO646 IRV)
+  G1 -- japanese-jisx0208:JISX0208.1983/1990 Japanese Kanji: ISO-IR-87
+  G2 -- katakana-jisx0201:Katakana Part of JISX0201.1976
+  G3 -- never used
+
+CP50220 (Microsoft iso-2022-jp for mail)
+Type: iso-2022 (variant of ISO-2022)
+Initial designations:
+  G0 -- ascii:ASCII (ISO646 IRV), and also used by the following:
+        japanese-jisx0208-1978:JISX0208.1978 Japanese Kanji
+		(so called "old JIS"): ISO-IR-42
+        japanese-jisx0208:JISX0208.1983/1990 Japanese Kanji: ISO-IR-87
+        latin-jisx0201:Roman Part of JISX0201.1976
+        katakana-jisx0201:Katakana Part of JISX0201.1976
+  G1 -- never used
+  G2 -- never used
+  G3 -- never used

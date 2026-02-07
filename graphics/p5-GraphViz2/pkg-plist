@@ -1,0 +1,10 @@
+%%SITE_PERL%%/GraphViz2.pm
+%%SITE_PERL%%/GraphViz2/Parse/Regexp.pm
+%%SITE_PERL%%/GraphViz2/Parse/STT.pm
+%%SITE_PERL%%/GraphViz2/Parse/Yacc.pm
+%%SITE_PERL%%/GraphViz2/Parse/Yapp.pm
+%%PERL5_MAN3%%/GraphViz2.3.gz
+%%PERL5_MAN3%%/GraphViz2::Parse::Regexp.3.gz
+%%PERL5_MAN3%%/GraphViz2::Parse::STT.3.gz
+%%PERL5_MAN3%%/GraphViz2::Parse::Yacc.3.gz
+%%PERL5_MAN3%%/GraphViz2::Parse::Yapp.3.gz

@@ -1,0 +1,16 @@
+--- configure	Sun Aug 12 16:34:31 2001
++++ configure	Tue Jun 24 13:33:58 2003
+@@ -1125,5 +1125,5 @@
+   withval="$with_java"
+   
+-    if test ${withval} != "" || test ${withval} != "yes" || test ${withval} != "no"; then
++    if test -n "${withval}" -a "${withval}" != "yes" -a "${withval}" != "no"; then
+       # set javac to user input value
+       
+@@ -1730,5 +1730,5 @@
+       { echo "configure: error: You must only give one option --with-javac or --with-jikes" 1>&2; exit 1; }
+    fi
+-   if test ${withval} != "" || test ${withval} != "yes" || test ${withval} != "no"; then
++   if test -n "${withval}" -a "${withval}" != "yes" -a "${withval}" != "no"; then
+       for ac_file in ${withval}
+ do

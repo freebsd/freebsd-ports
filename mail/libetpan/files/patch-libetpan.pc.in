@@ -1,0 +1,10 @@
+--- libetpan.pc.in.orig	2019-11-01 17:58:50 UTC
++++ libetpan.pc.in
+@@ -6,5 +6,6 @@ Version: @VERSION@
+ Name: libetpan
+ Description: Libetpan C library.
+ Version: @VERSION@
+-Libs: -L${libdir} -letpan@LIBSUFFIX@ @LDFLAGS@ @SSLLIBS@ @GNUTLSLIB@ @LIBICONV@ @DBLIB@ @LIBS@ @SASLLIBS@
++Libs: -L${libdir} -letpan@LIBSUFFIX@
++Libs.private: @SSLLIBS@ @GNUTLSLIB@ @LIBICONV@ @DBLIB@ @LIBS@ @SASLLIBS@
+ Cflags: -I${includedir}

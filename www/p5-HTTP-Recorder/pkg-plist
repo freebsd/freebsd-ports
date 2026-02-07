@@ -1,0 +1,5 @@
+bin/httprecorder
+%%PERL5_MAN3%%/HTTP::Recorder.3.gz
+%%SITE_PERL%%/HTTP/Recorder.pm
+%%SITE_PERL%%/HTTP/Recorder/Logger.pm
+%%PERL5_MAN1%%/httprecorder.1.gz

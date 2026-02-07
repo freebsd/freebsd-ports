@@ -1,0 +1,195 @@
+#!/bin/sh
+
+# PROVIDE: james
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for james in /etc/rc.conf:
+#
+# james_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable james
+#
+# james_home (str)
+#   Set to "%%JAMES_HOME%%" by default.
+#   Set the JAMES_HOME variable for the James process
+#
+# james_base (str)
+#   Set to "%%JAMES_HOME%%" by default.
+#   Set the JAMES_BASE variable for the James process
+#
+# james_tmpdir (str)
+#   Set to "/tmp" by default.
+#
+# james_stop_timeout (num)
+#   Set to "10" by default.
+#   Sets the timeout in seconds to allow james to shutdown.
+#   After the timeout has elapsed, james will be killed.
+#
+# james_java_home (str):
+# james_java_vendor (str):
+# james_java_version (str):
+# james_java_os (str):
+#   Specify the requirements of the Java VM to use. See javavm(1).
+#
+# james_classpath (str):
+#   Set to "" by default.
+#   Addtional classes to add to the CLASSPATH
+#
+# james_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+
+james_enable="${james_enable:-"NO"}"
+james_home="${james_home:-"%%JAMES_HOME%%"}"
+james_base="${james_base:-"%%JAMES_HOME%%"}"
+james_tmpdir="${james_tmpdir:-"/tmp"}"
+james_stop_timeout="${james_stop_timeout:-"10"}"
+
+. /etc/rc.subr
+
+name=james
+rcvar=james_enable
+pidfile="%%PID_FILE%%"
+
+load_rc_config "${name}"
+
+for var in $(list_vars "james[0-9]*"); do
+        echo "WARNING: \$$var is deprecated, use \$james_${var#*_} instead."
+        eval james_${var#*_}=\"\$$var\"
+done
+
+JAVA_HOME="%%JAVA_HOME%%"
+JRE_HOME="$JAVA_HOME/jre"
+JVM_EXT_DIRS="${james_home}/lib:${james_home}/tools/lib"
+JVM_OPTS="-Djava.ext.dirs=$JVM_EXT_DIRS"
+
+if [ -n "${james_java_home}" ] ; then
+	export JAVA_HOME="${james_java_home}"
+fi
+
+if [ -n "${james_java_version}" ] ; then
+	export JAVA_VERSION="${james_java_version}"
+fi
+
+if [ -n "${james_java_vendor}" ] ; then
+	export JAVA_VENDOR="${james_java_vendor}"
+fi
+
+if [ -n "${james_java_os}" ] ; then
+	export JAVA_OS="${james_java_os}"
+fi
+
+if [ "$JAVA_HOME" = "" ] ; then
+	echo "ERROR: JAVA_HOME not found in your environment."
+	echo
+	echo "Please, set the JAVA_HOME variable in your environment to match the"
+	echo "location of the Java Virtual Machine you want to use."
+	return 1
+fi
+
+if [ -z "${james_tmpdir}" ] ; then
+	# Define the java.io.tmpdir to use for Phoenix
+	james_tmpdir="${james_home}"/temp
+	mkdir -p "${james_tmpdir}"
+fi
+
+java_cmd=
+if [ -z "${JAVA_HOME}" ] ; then
+	java_cmd=%%LOCALBASE%%/bin/java
+else
+	java_cmd=${JAVA_HOME}/bin/java
+fi
+
+
+java_command="$java_cmd $JVM_OPTS \
+    -Djava.security.policy=jar:file:${james_home}/bin/phoenix-loader.jar!/META-INF/java.policy \
+    -Dphoenix.home=${james_home} \
+    -Djava.io.tmpdir=${james_tmpdir} \
+    -jar ${james_home}/bin/phoenix-loader.jar >/dev/null"
+
+PHOENIX_CONSOLE="$PHOENIX_TMPDIR/phoenix.console"
+if [ -z "$PHOENIX_CONSOLE" ] ; then
+	if [ -w /dev/console ]; then
+		PHOENIX_CONSOLE=/dev/console
+	else
+		PHOENIX_CONSOLE=/dev/tty
+	fi
+fi
+
+# Subvert the check_pid_file procname check.
+if [ -f $pidfile ] ; then
+	read rc_pid junk < $pidfile
+	if [ ! -z "$rc_pid" ]; then
+		procname=`ps -o ucomm= $rc_pid`
+	fi
+fi
+
+start_cmd=james_start
+status_cmd=james_status
+stop_cmd=james_stop
+
+james_start() {
+	rc_pid=$(check_pidfile $pidfile *$procname*)
+
+	if [ ! -z "$rc_pid" ]; then
+		echo "Already running!"
+		return 1
+	fi
+
+	echo "Starting ${name}."
+        nohup sh -c "exec $java_command >>$PHOENIX_CONSOLE 2>&1" >/dev/null &
+        echo $! > $pidfile
+}
+
+james_status() {
+	rc_pid=$(check_pidfile $pidfile *$procname*)
+
+	if [ -z "$rc_pid" ]; then
+		echo "${name} not running"
+		return 1
+	else
+		echo "${name} is running as pid $rc_pid"
+		return 0
+	fi
+}
+
+james_stop() {
+	rc_pid=$(check_pidfile $pidfile *$procname*)
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		if [ -n "$pidfile" ]; then
+			echo "${name} not running? (check $pidfile)."
+		else
+			echo "${name} not running?"
+		fi
+		return 1
+	fi
+	
+	echo "Stopping ${name}."
+        kill ${rc_pid}>/dev/null
+	james_wait_max_for_pid ${james_stop_timeout} ${rc_pid}
+	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
+	echo -n > ${pidfile}
+}
+
+james_wait_max_for_pid() {
+	_timeout=$1
+	shift
+	_pid=$1
+	_prefix=
+	while [ $_timeout -gt 0 ] ; do
+		echo -n ${_prefix:-"Waiting (max $_timeout secs) for PIDS: "}$_pid
+		_prefix=", "
+		sleep 2
+		kill -0 $_pid 2> /dev/null || break
+		_timeout=$(($_timeout-2))
+	done
+	if [ -n "$_prefix" ]; then
+		echo "."
+	fi
+}
+
+run_rc_command "$1"

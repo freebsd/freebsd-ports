@@ -1,0 +1,28 @@
+--- conf/functions.in.orig	2008-04-13 15:58:32.000000000 +0100
++++ conf/functions.in	2009-10-12 18:08:23.000000000 +0100
+@@ -4,7 +4,6 @@
+ # Licensed under GPL. See http://coova.org/
+ #
+ 
+-IPTABLES=/sbin/iptables
+ IFCONFIG=/sbin/ifconfig
+ 
+ CHILLI=@ETCCHILLI@
+@@ -22,8 +21,6 @@
+ [ -f $CHILLI/defaults ] && . $CHILLI/defaults
+ [ -f $CHILLI/config ]   && . $CHILLI/config
+ 
+-[ -f /etc/sysconfig/chilli ] && . /etc/sysconfig/chilli
+-
+ HS_UAMPORT=${HS_UAMPORT:-3990}
+ HS_RADIUS=${HS_RADIUS:-$HS_UAMSERVER}
+ HS_RADSECRET=${HS_RADSECRET:-$HS_UAMSECRET}
+@@ -49,7 +46,7 @@
+ HS_PAP_OK=${HS_PAP_OK:-on}
+ HS_DNS1=${HS_DNS1:-$HS_DNS}
+ HS_DNS1=${HS_DNS1:-$(grep '^nameserver' /etc/resolv.conf | head -n1 | awk '{print $2}')}
+-HS_WANIF=${HS_WANIF:-$(route -n|grep '^0.0.0.0'|head -n1|awk '{print $8}')}
++HS_WANIF=${HS_WANIF:-$(netstat -rn|grep '^default'|head -n1|awk '{print $6}')}
+ 
+ bailout() { echo $1; exit; }
+ 

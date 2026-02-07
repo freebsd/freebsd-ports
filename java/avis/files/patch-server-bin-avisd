@@ -1,0 +1,11 @@
+--- server/bin/avisd	2008-01-19 19:22:26.000000000 +1030
++++ server/bin/avisd.new	2008-01-29 16:40:15.038606540 +1030
+@@ -51,7 +51,7 @@
+ 
+ command="java $java_options -jar $avisd_jar $avis_opts"
+ 
+-if [ $daemon == 1 ]; then
++if [ $daemon -eq 1 ]; then
+ 
+   if [ -z $logfile ]; then
+     logfile=/dev/null

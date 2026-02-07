@@ -1,0 +1,8 @@
+--- requirements/install.txt.orig	2025-06-26 14:42:44 UTC
++++ requirements/install.txt
+@@ -1,4 +1,4 @@
+-Flask>=1.0.4,<3.2
++Flask>=1.0.4
+ Werkzeug<3.2
+ plotly>=5.0.0
+ importlib-metadata

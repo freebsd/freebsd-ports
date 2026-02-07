@@ -1,0 +1,29 @@
+--- Makefile.orig	2020-09-23 11:25:51 UTC
++++ Makefile
+@@ -4,21 +4,21 @@ MANTITLE=	Additional Software
+ 
+ VERSION=	1.11
+ 
+-PREFIX=		/usr/local/
+-BINPREFIX=	${PREFIX}/bin/
+-MANPREFIX=	${PREFIX}/man/man${MANSEC}/
++PREFIX?=		/usr/local/
++BINPREFIX=	${DESTDIR}${PREFIX}/bin/
++MANPREFIX=	${DESTDIR}${PREFIX}/share/man/man${MANSEC}/
+ 
+ all:	dnstracer dnstracer.8
+ 
+ install:
+-	install dnstracer ${BINPREFIX}
++	${BSD_INSTALL_PROGRAM} dnstracer ${BINPREFIX}
+ 	install dnstracer.8 ${MANPREFIX}
+ 
+ clean:
+ 	-rm dnstracer.o dnstracer dnstracer.8 dnstracer.core
+ 
+ dnstracer: dnstracer.c dnstracer-missing.h
+-	$(CC) -Wall -o dnstracer -DVERSION="${VERSION}" dnstracer.c
++	$(CC) $(CFLAGS) -Wall -o dnstracer -DVERSION="${VERSION}" dnstracer.c
+ 
+ dnstracer.8: dnstracer.pod
+ 	pod2man --release="${MANDATE}" --date="${MANDATE}" \

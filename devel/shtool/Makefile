@@ -1,0 +1,21 @@
+PORTNAME=	shtool
+PORTVERSION=	2.0.8
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	GNU OSSP/tool/${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	vd@FreeBSD.org
+COMMENT=	The GNU Portable Shell Tool
+WWW=		https://www.gnu.org/software/shtool/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		perl5
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+TEST_TARGET=	test
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

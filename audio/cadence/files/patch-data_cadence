@@ -1,0 +1,19 @@
+--- data/cadence.orig	2018-10-28 19:38:18 UTC
++++ data/cadence
+@@ -27,11 +27,11 @@ if [ x"$PROCS" != x"" ]; then
+   fi
+ fi
+ 
+-if [ -f /usr/bin/python3 ]; then
+-  PYTHON=/usr/bin/python3
+-else
+-  PYTHON=python
+-fi
++#if [ -f /usr/bin/python3 ]; then
++#  PYTHON=/usr/bin/python3
++#else
++#  PYTHON=python
++#fi
+ 
+ # We only got here if not running yet
+ INSTALL_PREFIX="X-PREFIX-X"

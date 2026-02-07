@@ -1,0 +1,36 @@
+--- generic/crypt.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/crypt.c	2009-07-12 21:34:19.000000000 -0400
+@@ -28,5 +28,9 @@
+  */
+ 
+-#include "loadman.h"
++#ifndef __WIN32__
++#	include <sys/types.h>
++#	include <unistd.h>
++#endif
++#include "transformInt.h"
+ 
+ static int
+@@ -112,4 +116,6 @@
+  */
+ 
++char *crypt_md5(const char *pw, const char *salt); /* Lives in -lcrypt */
++
+ static int
+ TrfMd5CryptObjCmd (notUsed, interp, objc, objv)
+@@ -128,8 +134,4 @@
+   Tcl_Obj*    res;
+ 
+-  if (TrfLoadMD5 (interp) != TCL_OK) {
+-    return TCL_ERROR;
+-  }
+-
+   if (objc != 3) {
+     Tcl_AppendResult (interp,
+@@ -159,5 +161,5 @@
+ 
+   TrfLock;
+-  res = Tcl_NewStringObj ((char*) md5f.crypt (passwd, salt_b) + 3, -1);
++  res = Tcl_NewStringObj (crypt_md5(passwd, salt_b) + 3, -1);
+   TrfUnlock;
+ 

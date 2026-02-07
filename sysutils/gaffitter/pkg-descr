@@ -1,0 +1,7 @@
+Genetic Algorithm File Fitter, or just GAFFitter, is a command-line software
+written in C++ that arranges -- via a genetic algorithm -- an input list of
+items or files/directories into volumes of a certain capacity (target), such
+as CD or DVD, in a way that the total wastage is minimized.
+
+By smartly arranging the input list, GAFFitter fits better the given items
+and so optimizes (reduces) the number of required volumes to pack them.

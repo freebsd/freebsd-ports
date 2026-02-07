@@ -1,0 +1,11 @@
+CVSup is a software package for distributing and updating collections
+of files across a network.  It can efficiently and accurately mirror
+all types of files, including sources, binaries, hard links, symbolic
+links, and even device nodes.  CVSup's streaming communication
+protocol and multithreaded architecture make it most likely the
+fastest mirroring tool in existence today.  In addition to being
+a great general-purpose mirroring tool, CVSup includes special
+features and optimizations specifically tailored to CVS repositories.
+
+This is a package that is statically compiled for FreeBSD 7.x omits
+the GUI.

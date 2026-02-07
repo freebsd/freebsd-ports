@@ -1,0 +1,79 @@
+--- m4/gettext.m4.orig	2010-01-03 12:26:04 UTC
++++ m4/gettext.m4
+@@ -86,14 +86,17 @@ AC_DEFUN([eb_GNU_GETTEXT], [dnl
+   save_CPPFLAGS=$CPPFLAGS
+   save_LIBS=$LIBS
+   CPPFLAGS="$save_CPPFLAGS $iconv_includes"
+-  LIBS="$save_LIBS $iconv_libraries"
+-  AC_CHECK_LIB(iconv, iconv_open,
+-    [ICONVLIBS="$iconv_libraries -liconv"; LIBS="$LIBS -liconv"])
+-  AC_CHECK_FUNCS(iconv_open locale_charset)
+-  AC_CHECK_HEADERS(iconv.h libcharset.h)
+-  if test $ac_cv_func_iconv_open != no; then
+-    ICONVINCS="$iconv_includes"
+-  fi
++  AC_CHECK_HEADER([iconv.h],
++    [AC_DEFINE([HAVE_ICONV_H],[1],[Have iconv.h])
++     for l in '' -liconv; do
++      LIBS="$save_LIBS $iconv_libraries $l"
++      AC_LINK_IFELSE(
++        AC_LANG_PROGRAM([#include <iconv.h>],[iconv_open("","")]),
++        [AC_DEFINE([HAVE_ICONV_OPEN],[1],[Have iconv_open(3)])
++         ICONVINCS="$iconv_includes"
++         ICONVLIBS="$iconv_libraries $l"
++         break],[])
++     done],[])
+   CPPFLAGS=$save_CPPFLAGS
+   LIBS=$save_LIBS
+   AC_SUBST(ICONVINCS)
+@@ -113,10 +116,10 @@ AC_DEFUN([eb_GNU_GETTEXT], [dnl
+     save_LIBS=$LIBS
+ 
+     dnl *
+-    dnl * Test 1: Try to link both libintl and libiconv.
++    dnl * Test 1: Try to link libc only.
+     dnl *
+-    CPPFLAGS="$save_CPPFLAGS $gettext_includes"
+-    LIBS="$save_LIBS $gettext_libraries -lintl $iconv_libraries -liconv"
++    CPPFLAGS="$save_CPPFLAGS"
++    LIBS="$save_LIBS"
+     AC_LINK_IFELSE([
+ #include <stdio.h>
+ #ifdef ENABLE_NLS
+@@ -143,8 +146,8 @@ main()
+     try_nls=yes, try_nls=no)
+ 
+     if test "$try_nls" = yes; then
+-      INTLINCS="$gettext_includes"
+-      INTLLIBS="$gettext_libraries -lintl $iconv_libraries -liconv"
++      INTLINCS=
++      INTLLIBS=
+     fi
+ 
+     dnl *
+@@ -222,11 +225,11 @@ main()
+     fi
+ 
+     dnl *
+-    dnl * Test 4: Try to link libc only.
++    dnl * Test 4: Try to link both libintl and libiconv.
+     dnl * 
+     if test "$try_nls" = no; then
+-      CPPFLAGS="$save_CPPFLAGS"
+-      LIBS="$save_LIBS"
++      CPPFLAGS="$save_CPPFLAGS $gettext_includes"
++      LIBS="$save_LIBS $gettext_libraries -lintl $iconv_libraries -liconv"
+       AC_LINK_IFELSE([
+ #include <stdio.h>
+ #ifdef ENABLE_NLS
+@@ -253,8 +256,8 @@ main()
+       try_nls=yes, try_nls=no)
+ 
+       if test "$try_nls" = yes; then
+-        INTLINCS=
+-        INTLLIBS=
++        INTLINCS="$gettext_includes"
++        INTLLIBS="$gettext_libraries -lintl $iconv_libraries -liconv"
+       fi
+     fi
+ 

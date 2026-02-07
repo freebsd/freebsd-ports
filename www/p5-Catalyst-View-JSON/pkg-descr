@@ -1,0 +1,2 @@
+Catalyst::View::JSON is a Catalyst View handler that returns stash
+data in JSON format.

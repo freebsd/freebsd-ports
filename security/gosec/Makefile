@@ -1,0 +1,22 @@
+PORTNAME=	gosec
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.22.10
+PORTREVISION=	4
+CATEGORIES=	security devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Go security checker
+WWW=		https://securego.io/ \
+		https://github.com/securego/gosec
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		go:modules
+
+GO_MODULE=	github.com/securego/gosec/v2
+GO_TARGET=	./cmd/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

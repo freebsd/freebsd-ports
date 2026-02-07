@@ -1,0 +1,2 @@
+This library wrap the FreeImage library functions so a python developer can
+easy drive FreeImage.

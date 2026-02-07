@@ -1,0 +1,10 @@
+--- glib/meson.build.orig	2023-03-10 14:33:15 UTC
++++ glib/meson.build
+@@ -422,6 +422,7 @@ libglib = library('glib-2.0',
+     pcre2,
+     platform_deps,
+     thread_dep,
++    libutil,
+   ],
+   c_args : glib_c_args,
+   objc_args : glib_c_args,

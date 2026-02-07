@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Encode/compat.pm
+%%SITE_PERL%%/Encode/compat/5006001.pm
+%%SITE_PERL%%/Encode/compat/common.pm
+%%SITE_PERL%%/Encode/compat/Alias.pm
+%%PERL5_MAN3%%/Encode::compat.3.gz
+%%PERL5_MAN3%%/Encode::compat::Alias.3.gz

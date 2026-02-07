@@ -1,0 +1,42 @@
+--- Makefile.orig	2022-08-05 00:08:56 UTC
++++ Makefile
+@@ -15,7 +15,7 @@
+ #
+ 
+ # Base directory for jansson header and libraries
+-JANSBASE=/usr/local
++JANSBASE=$(LOCALBASE)
+ # For macOS on M1, use this instead of the above line:
+ #JANSBASE=/opt/homebrew
+ 
+@@ -41,9 +41,9 @@ INCL= $(CURLINCL) $(JANSINCL)
+ CDEBUG = -g -O3
+ CFLAGS += $(CGPROF) $(CDEBUG) $(CWARN) $(CDEFS)
+ INCL= $(CURLINCL) $(JANSINCL)
+-LIBS= $(CURLLIBS) $(JANSLIBS) -lresolv
++#LIBS= $(CURLLIBS) $(JANSLIBS) -lresolv
+ # For freebsd, it requires that -lresolv _not_ be used here, use this instead of the above line:
+-#LIBS= $(CURLLIBS) $(JANSLIBS)
++LIBS= $(CURLLIBS) $(JANSLIBS)
+ 
+ TOOL = dnsdbq
+ TOOL_OBJ = $(TOOL).o ns_ttl.o netio.o \
+@@ -58,12 +58,12 @@ install: all
+ all: $(TOOL)
+ 
+ install: all
+-	rm -f /usr/local/bin/$(TOOL)
+-	mkdir -p /usr/local/bin
+-	cp $(TOOL) /usr/local/bin/$(TOOL)
+-	rm -f /usr/local/share/man/man1/$(TOOL).1
+-	mkdir -p /usr/local/share/man/man1
+-	cp $(TOOL).man /usr/local/share/man/man1/$(TOOL).1
++	rm -f $(PREFIX)/bin/$(TOOL)
++	mkdir -p $(PREFIX)/bin
++	cp $(TOOL) $(PREFIX)/bin/$(TOOL)
++	rm -f $(PREFIX)/share/man/man1/$(TOOL).1
++	mkdir -p $(PREFIX)/share/man/man1
++	cp $(TOOL).man $(PREFIX)/share/man/man1/$(TOOL).1
+ 
+ clean:
+ 	rm -f $(TOOL)

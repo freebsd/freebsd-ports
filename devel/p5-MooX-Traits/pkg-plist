@@ -1,0 +1,4 @@
+%%SITE_PERL%%/MooX/Traits.pm
+%%SITE_PERL%%/MooX/Traits/Util.pm
+%%PERL5_MAN3%%/MooX::Traits.3.gz
+%%PERL5_MAN3%%/MooX::Traits::Util.3.gz

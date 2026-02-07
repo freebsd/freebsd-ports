@@ -1,0 +1,6 @@
+bin/dumpstr
+%%PERL5_MAN1%%/dumpstr.1.gz
+%%PERL5_MAN3%%/String::Dump.3.gz
+%%PERL5_MAN3%%/String::Dump::Debugging.3.gz
+%%SITE_PERL%%/String/Dump.pm
+%%SITE_PERL%%/String/Dump/Debugging.pod

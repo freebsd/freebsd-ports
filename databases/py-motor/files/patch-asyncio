@@ -1,0 +1,16 @@
+The asyncio package has been included in the standard library since Python 3.4.
+
+--- motor/frameworks/asyncio/__init__.py.orig	2016-10-26 16:39:52 UTC
++++ motor/frameworks/asyncio/__init__.py
+@@ -25,10 +25,7 @@ import multiprocessing
+ import sys
+ from concurrent.futures import ThreadPoolExecutor
+ 
+-try:
+-    from asyncio import ensure_future
+-except ImportError:
+-    from asyncio import async as ensure_future
++from asyncio import ensure_future
+ 
+ CLASS_PREFIX = 'AsyncIO'
+ 

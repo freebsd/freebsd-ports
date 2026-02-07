@@ -1,0 +1,5 @@
+Bidirectional operation between a Subversion repository and Git
+
+git svn is a simple conduit for changesets between Subversion and Git. It
+provides a bidirectional flow of changes between a Subversion and a Git
+repository.

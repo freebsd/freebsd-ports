@@ -1,0 +1,10 @@
+Astrometry engine aims to create correct, standards-compliant astrometric
+meta data for every useful astronomical image ever taken, past and future,
+in any state of archival disarray.
+
+The engine will take any image and return the astrometry world coordinate
+system (WCS) -- i.e., a standards-based description of the (usually
+nonlinear) transformation between image coordinates and sky coordinates --
+with absolutely no "false positives" (but maybe some "no answers").  It
+will do its best, even when the input image has no -- or totally incorrect
+-- meta-data.

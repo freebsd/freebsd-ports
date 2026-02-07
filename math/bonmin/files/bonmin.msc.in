@@ -1,0 +1,8 @@
+{
+  "id" : "org.coin-or.bonmin",
+  "name" : "Bonmin",
+  "executable" : "%%PREFIX%%/bin/bonmin",
+  "version": "%%PORTVERSION%%",
+  "supportsFzn":false,
+  "supportsNL":true
+}

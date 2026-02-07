@@ -1,0 +1,21 @@
+--- Makefile.in.orig	2019-12-20 20:54:00 UTC
++++ Makefile.in
+@@ -47,14 +47,14 @@ support:   
+ 	@cd archive; $(MAKE) all CC="$(CC)" CFLAGS="$(CFLAGS)" CPPFLAGS="$(CPPFLAGS)" 
+ 
+ install: 
+-	@cd src; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS) \
+-		"CPPFLAGS="$(CPPFLAGS)"  \
++	@cd src; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS)" \
++		CPPFLAGS="$(CPPFLAGS)"  \
+ 		cgidir="$(cgidir)" bindir="$(bindir)" LIBS="$(LIBS)"
+ 	@cd docs; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS)" \
+-		"CPPFLAGS="$(CPPFLAGS)"  \
++		CPPFLAGS="$(CPPFLAGS)"  \
+ 		$(MAKEFLAGS) mandir="$(mandir)" htmldir="$(htmldir)"
+ 	@cd archive; $(MAKE) install CC="$(CC)" CFLAGS="$(CFLAGS)" \
+-		"CPPFLAGS="$(CPPFLAGS)"  \
++		CPPFLAGS="$(CPPFLAGS)"  \
+ 		bindir="$(bindir)"
+ 
+ uninstall: 

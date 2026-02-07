@@ -1,0 +1,8 @@
+--- Platforms/CMakeLists.txt.orig	2023-05-09 09:46:12 UTC
++++ Platforms/CMakeLists.txt
+@@ -1,3 +1,5 @@
++if(MYGUI_RENDERSYSTEM GREATER 0)
+ mygui_set_platform_name(${MYGUI_RENDERSYSTEM})
+ 
+ add_subdirectory(${MYGUI_PLATFORM_NAME}/${MYGUI_PLATFORM_NAME}Platform)
++endif()

@@ -1,0 +1,13 @@
+Amazon SageMaker Debugger is designed to be a debugger for machine learning
+models. It lets you go beyond just looking at scalars like losses and
+accuracies during training and gives you full visibility into all tensors
+'flowing through the graph' during training or inference.
+
+Amazon SageMaker Debugger RulesConfig provides a mapping of builtin rules with
+default configurations. These configurations will affect both DebugHookConfig
+and DebugRuleConfigurations in the Amazon SageMaker Python SDK.
+
+This library, intended to be used with Amazon SageMaker Python SDK, helps you
+specify builtin rules without worrying about any details or tweak the
+configuration of builtin rules. These builtin rules are available in Amazon
+SageMaker.

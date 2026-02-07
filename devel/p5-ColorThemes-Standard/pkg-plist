@@ -1,0 +1,4 @@
+%%SITE_PERL%%/ColorTheme/NoColor.pm
+%%SITE_PERL%%/ColorThemes/Standard.pm
+%%PERL5_MAN3%%/ColorTheme::NoColor.3.gz
+%%PERL5_MAN3%%/ColorThemes::Standard.3.gz

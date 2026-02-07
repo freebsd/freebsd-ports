@@ -1,0 +1,5 @@
+TIMESTAMP = 1743803791
+SHA256 (go/sysutils_walk/walk-v1.13.0/v1.13.0.mod) = 975bbc6d1558b943e425234521936d20084c7c93203e92383c73f44efb21ea7a
+SIZE (go/sysutils_walk/walk-v1.13.0/v1.13.0.mod) = 1199
+SHA256 (go/sysutils_walk/walk-v1.13.0/v1.13.0.zip) = 0eab7dd026445332fb2ee9126ec531ee6a4073ff935341e8b8c191518541cd5c
+SIZE (go/sysutils_walk/walk-v1.13.0/v1.13.0.zip) = 1450836

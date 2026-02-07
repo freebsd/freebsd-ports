@@ -1,0 +1,141 @@
+.\" PKG_CUTLEAVES 1 "Jul 2003" FreeBSD
+.\"
+.Dd March 20, 2008
+.Dt PKG_CUTLEAVES 1
+.Os FreeBSD
+.Sh NAME
+.Nm pkg_cutleaves
+.Nd deinstall 'leaf' packages
+.Sh SYNOPSIS
+.Nm
+.Op Fl cglRVx
+.Sh DESCRIPTION
+.Nm pkg_cutleaves
+finds installed 
+.Dq Li "leaf"
+packages, i.e. packages that are not referenced by any other installed package,
+and lets you decide for each one if you want to keep or deinstall it (via
+pkg-delete(1)). Once the packages marked for removal have been
+flushed/deinstalled, you'll be asked if you want to do another run (i.e. to see
+packages that have become 'leaves' now because you've deinstalled the package(s)
+that depended on them.
+.Ar Note:
+see
+.Fl R
+below to bypass interactive dependency removal). In every run you will be shown 
+only packages that you haven't marked for keeping, yet.
+.Nm .
+.Sh OPTIONS
+.Pp
+The following command line arguments are supported:
+.Pp
+.Bl -tag -width "-R" -compact
+.It Fl c
+When listing leaf packages, also print their comments/short
+descriptions. Will be ignored unless the 
+.Fl l
+parameter is given, too.
+.Pp
+.It Fl L
+Interpret exclude file as a list of leaf packages that
+.Ar should
+be installed. Report lint such as lines that match no installed packages
+or excluded packages that are not leaves.
+.Pp
+.It Fl g
+Generate the exclude list from kept or installed (when run with 
+.Fl l
+or 
+.Fl L )
+leaf packages.
+.Pp
+.It Fl l
+List leaf packages only, one per line, and don't ask for anything to be
+deinstalled.
+.Pp
+.It Fl V
+Visual mode. Will compile a list of leaf packages and invoke the user's
+.Ev EDITOR .
+Lines or package names that are deleted in the editor will then be removed.
+.Pp
+.It Fl R
+Autoprune mode. Automatically deinstall non-required packages on which 
+the removed leaf packages depended. Will not remove packages on the 
+exclude list if 
+.Fl x
+is also in effect.
+.Pp
+.It Fl x
+Exclude packages matching expressions given in the exclude file.
+.El
+.Sh EXAMPLES
+.Pp
+.Bl -bullet
+.It
+Interactively cut leaf packages using the current exclude list:
+.Pp
+.Dl pkg_cutleaves -x
+.Pp
+.It
+List all current leaf packages with comments:
+.Pp
+.Dl pkg_cutleaves -lc
+.Pp
+.It
+List packages not currently excluded and regenerate a new exclude file
+with both the listed and previously excluded packages:
+.Pp
+.Dl pkg_cutleaves -lxg
+.Pp
+.It
+Interactively cut current leaf packages and remove newly discovered leaves,
+i.e. dependencies, automatically:
+.Pp
+.Dl pkg_cutleaves -R
+.Pp
+.It
+The same as the previous example but use the current exclude list to filter
+all first-level leaves and any newly discovered leaves. Generate a new
+exclude file with the remaining leaves:
+.Pp
+.Dl pkg_cutleaves -Rxg
+.Pp
+.It
+Find exclude patterns that match nothing and those that match required packages,
+i.e. non-leaves:
+.Pp
+.Dl pkg_cutleaves -L
+.El
+.Sh FILES
+.Bl -tag
+.It Pa /usr/local/etc/pkg_leaves.exclude
+An optional list for excluding packages when the
+.Fl x
+or
+.Fl L
+options are given. If the beginning of a package's name matches any line (except
+comment or empty lines) in this file, the package will not be
+listed/offered for removal (e.g., a line saying just
+.Ar XFree86
+will exclude all packages with names starting with
+.Dq Li "XFree86"
+). The list can be auto-generated with the
+.Fl g
+option. 
+.El
+.Sh ENVIRONMENT
+The following environment variables will be used in visual mode:
+.Bl -tag -width EDITOR
+.It Ev EDITOR
+The editor specified by the variable
+.Ev EDITOR
+will be invoked instead of the default editor
+.Xr vi 1 .
+.El
+.Sh SEE ALSO
+.Xr pkg 8 ,
+.Xr pkg-info 8 ,
+.Xe pkg-delete 8 ,
+.Xr portsclean 1
+.Sh AUTHOR
+.An Stefan Walter <sw@gegenunendlich.de>

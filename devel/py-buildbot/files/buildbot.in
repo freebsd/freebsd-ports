@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# PROVIDE: buildbot
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable buildbot:
+# buildbot_enable (bool):	Set to "NO" by default
+# buildbot_basedir (path):	Set to "/var/www/buildbot" by default
+# buildbot_user (str):		Set to "buildbot" by default.
+
+. /etc/rc.subr
+
+export PATH=${PATH}:%%PREFIX%%/bin
+
+name="buildbot"
+desc="Buildbot Master"
+rcvar=buildbot_enable
+command="%%PREFIX%%/bin/buildbot-%%PYTHON_VER%%"
+load_rc_config $name
+
+: ${buildbot_user:="buildbot"}
+: ${buildbot_basedir:="/var/db/buildbot"}
+
+check_cmd="${name}_check"
+extra_commands="check reload"
+reload_cmd="${name}_reload"
+start_precmd="${name}_prestart"
+stop_precmd="${name}_prestop"
+
+pidfile="${buildbot_basedir}/twistd.pid"
+procname="%%PYTHON_CMD%%"
+
+buildbot_check()
+{
+	echo "Checking BuildBot config"
+	rc_flags="${rc_flags} ${buildbot_basedir}"
+	${command} checkconfig ${rc_flags}
+}
+
+buildbot_prestart()
+{
+    if [ ! -f "${buildbot_basedir}/${name}.tac" ]; then
+        su -m ${buildbot_user} -c "exec ${command} create-master ${buildbot_basedir}"
+    fi
+    if [ ! -f "${buildbot_basedir}/master.cfg" ]; then
+        install -o ${buildbot_user} -g ${buildbot_user} -m 750 ${buildbot_basedir}/master.cfg.sample ${buildbot_basedir}/master.cfg
+    fi
+	rc_flags="start ${rc_flags} ${buildbot_basedir}"
+}
+
+buildbot_prestop()
+{
+	rc_flags="stop ${rc_flags} ${buildbot_basedir}"
+}
+
+buildbot_reload()
+{
+	rc_flags="${rc_flags} ${buildbot_basedir}"
+	${command} sighup ${rc_flags}
+}
+
+run_rc_command "$1"

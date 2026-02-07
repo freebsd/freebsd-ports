@@ -1,0 +1,7 @@
+lightweight C library that can parse John Gruber's [markdown]
+(http://daringfireball.net/projects/markdown/) format and convert
+it into several formats and can be easily extended.
+
+It also provides two usage examples:
+- mkd2html: markdown to xhtml conversion.
+- mkd2man: markdown to manpage conversion.

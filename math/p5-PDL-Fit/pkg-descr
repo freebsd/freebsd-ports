@@ -1,0 +1,16 @@
+PDL::Fit contains the following packages: PDL::Fit::Gaussian, PDL::Fit::LM,
+PDL::Fit::Linfit and PDL::Fit::Polynomial.
+
+PDL::Fit::Gaussian contains some custom gaussian fitting routines. These were
+developed in collaboration with Alison Offer, they do a reasonably robust job
+and are quite useful.
+
+PDL::Fit::LM provides fitting functions for PDL. Currently, only
+Levenberg-Marquardt fitting is implemented. Other procedures should be added as
+required. For a fairly concise overview on fitting see Numerical Recipes,
+chapter 15 "Modeling of data".
+
+PDL::Fit::Linfit contains routines to perform general curve-fits to a set
+(linear combination) of specified functions.
+
+PDL::Fit::Polynomial contains routines for doing simple polynomial fits to data.

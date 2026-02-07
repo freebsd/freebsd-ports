@@ -1,0 +1,23 @@
+--- Makefile.orig	2007-11-04 08:49:37 UTC
++++ Makefile
+@@ -3,15 +3,16 @@ CFLAGS += -Wall
+ #CFLAGS += -DDEBUG -g
+ OBJS = shared.o editfile.o keys.o puff.o
+ HEAD = shared.h editfile.h keys.h
+-LIBS = -lcurses -lm
++LIBS = ${LDFLAGS} -lncurses -lm
+ 
+ all: fortune puff
+ fortune:
+ 	-@fortune
+ install: all
+-	install -m 0755 puff $(PREFIX)/bin
+-	mkdir -p $(PREFIX)/etc || echo -n
+-	install -m 0644 puff.conf $(PREFIX)/etc/puff.conf.sample
++	strip puff
++	install -m 0755 puff $(DESTDIR)$(PREFIX)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/etc || echo -n
++	install -m 0644 puff.conf $(DESTDIR)$(PREFIX)/etc/puff.conf.sample
+ uninstall:
+ 	rm -f $(PREFIX)/bin/puff $(PREFIX)/etc/puff.conf
+ clean:

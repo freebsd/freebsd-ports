@@ -1,0 +1,209 @@
+.TH "curator" "1" "Dec 2003"
+.SH "NAME"
+curator \(em Generate HTML image gallery pages
+.SH "SYNOPSIS"
+.PP
+\fBcurator\fP [\fBoptions\fP]  [\fB<root>\fP] 
+.SH "DESCRIPTION"
+.PP
+This manual page documents briefly the
+\fBcurator\fP command\&.
+.PP
+This manual page was written for the \fBDebian GNU/Linux\fP distribution
+because the original program does not have a manual page\&.
+Instead, it has documentation embedded within the program itself\&.
+.PP
+\fBcurator\fP is a powerful script that allows 
+one to generate Web page image galleries with the intent of displaying
+photographic images on the Web, or for a CD-ROM presentation and
+archiving\&. It generates static Web pages only - no special configuration
+or running scripts are required on the server\&. The script supports many
+file formats, hierarchical directories, thumbnail generation and update,
+per-image description file with any attributes, and \&'tracks\&' of images
+spanning multiple directories\&. The templates consist of HTML with
+embedded Python\&. Running this script only requires a recent Python
+interpreter (version 2or more) and the ImageMagick tools\&.  
+.PP
+All links it generates are relative links, so that the pages can be 
+moved or copied to different media\&. Each image page and directory can be
+associated any set of attributes which become available from the template
+(this way you can implement descriptions, conversion code, camera
+settings, and more)\&.  
+.PP
+Type \&'curator --help-script\&' for help on the scripting environment\&.
+
+.SH "OPTIONS"
+.PP
+A more complete list can be gathered from using the --help
+switch of the command\&.  Some options support either short (single
+dash) or long (double dash) formats\&.
+.IP "\fB--help\fP, \fB-h\fP" 10
+show detailed help message
+
+.IP "\fB--help-script\fP" 10
+show scripting environment documentation
+
+.IP "\fB--version\fP, \fB-V\fP" 10
+prints version
+
+.IP "\fB--verbose\fP, \fB-v\fP" 10
+run verbosely (default)
+
+.IP "\fB--quiet\fP, \fB--silent\fP, \fB-q\fP" 10
+run quietly (turns verbosity off)
+
+.IP "\fB--no-thumbgen\fP" 10
+don\&'t generate thumbnails
+
+.IP "\fB--force-thumbgen\fP, \fB-h\fP" 10
+overwrite existing thumbnails
+
+.IP "\fB--no-index\fP" 10
+don\&'t generate HTML indexes
+
+.IP "\fB--force-index\fP, \fB-i\fP" 10
+overwrite existing HTML indexes
+
+.IP "\fB--no-imagepage\fP" 10
+don\&'t generate HTML image pages
+
+.IP "\fB--force-imagepage\fP, \fB-j\fP" 10
+overwrite existing HTML image pages
+
+.IP "\fB--force\fP" 10
+generate and overwrite everything (i\&.e\&. forces
+thumbnails, indexes and imagepages)
+
+.IP "\fB--no-html\fP, \fB-n\fP" 10
+don\&'t generate html (i\&.e\&. indexes and imagepages)
+
+.IP "\fB--force-html\fP, \fB-F\fP" 10
+generate and overwrite html (i\&.e\&. forces indexes and
+imagepages)
+
+.IP "\fB--use-repn\fP" 10
+Don\&'t generate an image page if there is no base file (i\&.e\&. a
+file without an alternate repn suffix\&.  The default selection
+algorithm is to choose 1) the first of the affinity repn which
+is an image file (see repn-affinity option), 2) the first of
+the base files which is an image file, 3) (optional) the first
+of the alternate representations which is an image file\&. This
+option adds step (3)\&.
+
+.IP "\fB--repn-affinity\fP" 10
+Specifies a comma separated list of regular expressions to
+match for alt\&.repn files and file extensions to prefer when
+searching for a main image file to generate a page for (e\&.g\&.
+"\.jpg,-- 768\.\&.*,\.gif"\&.  
+
+.IP "\fB--templates\fP, \fB-t\fP" 10
+Specifies the directory where to take templates from (default:
+root)\&. This takes precedence over the CURATOR_TEMPLATE
+environment variable AND over the root 
+
+.IP "\fB--rc\fP" 10
+Specifies an additional global file to include and run in the
+page environment before expanding the templates\&. This can be
+used to perform global initialization and customization of
+template variables\&. The file template-rc\&.py is searched in the
+same order as for templates and is executed in that order as
+well\&. Note that output when executing this goes to stdout\&.  
+
+.IP "\fB--rccode\fP" 10
+specifies additional global init code to run in the global
+environment\&. This can be used to parameterize the templates
+from the command line (see option -- rc)\&.
+
+.IP "\fB--save-templates\fP, \fB-S\fP" 10
+Saves the template files in the root of the hierarchy\&. Previous
+copies, if existing and different from the current template,
+are moved into backup files\&. This can be useful for keeping
+template files around for future regeneration, or for saving a
+copy before editing\&.
+
+.IP "\fB--rc\fP" 10
+Specifies an additional global file to include and run in the
+page environment before expanding the templates\&. This can be
+used to perform global initialization and customization of
+template variables\&. The file template-rc\&.py is searched in the
+same order as for templates and is executed in that order as
+well\&. Note that output when executing this goes to stdout\&.  
+
+.IP "\fB--ignore-errors\fP, \fB-k\fP" 10
+Ignore errors in templates
+
+.IP "\fB--ignore-pattern\fP, \fB-I\fP" 10
+regexp to specify image files to ignore
+
+.IP "\fB--htmlext\fP" 10
+specifies html files extension (default: \&'\&.html\&')
+
+.IP "\fB--attrext\fP" 10
+specifies attributes files extension (default: \&'\&.desc\&')
+
+.IP "\fB--newthumbext\fP" 10
+specifies new thumbnail extension/type (default: \&'\&.jpg\&')
+
+.IP "\fB--thumb-sfx\fP" 10
+specifies the thumbnail alt\&.repn\&. suffix (default: \&'thumb\&')
+
+.IP "\fB--separator\fP, \fB-p\fP" 10
+specify the image basename separator from the suffix and 
+extension (default: --)
+
+.IP "\fB--copyright\fP, \fB-C\fP" 10
+specifies a copyright notice to include in image conversions
+
+.IP "\fB--no-meta\fP, \fB-M\fP" 10
+disables generator meta information addition
+
+.IP "\fB--magick-path\fP" 10
+specify imagemagick path to use
+
+.IP "\fB--old-magick\fP" 10
+use old imagemagick features (default)
+
+.IP "\fB--new-magick\fP" 10
+use new imagemagick features
+
+.IP "\fB--no-magick\fP" 10
+disable using imagemagick
+
+.IP "\fB--thumb-size\fP, \fB-s\fP" 10
+specifies size in pixels of thumbnail largest side
+
+.IP "\fB--check-thumb-size\fP" 10
+check the size of existing thumbnails to make sure
+they\&'re appropriately sized
+
+.IP "\fB--thumb-quality\fP, \fB-Q\fP" 10
+specify quality for thumbnail conversion (see convert(1))
+
+.IP "\fB--fast\fP, \fB-X\fP" 10
+disables some miscalleneous slow checks, even if the
+consistency can be shaken up\&. Don\&'t use this, this
+is a debugging tool
+
+.IP "\fB--clean\fP" 10
+remove all files generated by curator\&. Curator exits
+after clean up\&.
+
+.SH "SEE ALSO"
+.PP
+For more information about the program and it\&'s capabilities are
+described in the --help output\&.
+.SH "AUTHOR"
+.PP
+\fBcurator\fP was written by 
+Martin Blais <blais@iro\&.umontreal\&.ca>
+and may be downloaded directly from
+http://curator\&.sourceforge\&.net/
+.PP
+This manual page was created by Dave Baker <dsb3@debian\&.org> for
+the \fBDebian GNU/Linux\fP system (but may be used by others)\&.
+Permission is granted to copy, distribute and/or modify this document 
+under the terms of the GNU Free Documentation
+License, Version 1\&.1 or any later version published by the Free
+Software Foundation; with no Invariant Sections, no Front-Cover
+Texts and no Back-Cover Texts\&.
+...\" created by instant / docbook-to-man, Fri 02 Jul 2004, 15:00

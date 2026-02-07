@@ -1,0 +1,16 @@
+This script uses the i3ipc-python library to switch the layout
+splith/splitv depending on the currently focused window dimensions.
+It works on both sway and i3 window managers.
+
+The script does one thing: it checks the window height / width ratio,
+and executes the equivalent of either swaymsg splitv or swaymsg splith.
+Nothing less, nothing more.  Yes, it may make stacking and tabbed
+layouts behave oddly.  No, nothing can be done about it.  If you like
+stacking/tabbed layouts, you may use them on workspaces with autotiling
+turned off (--workspaces argument).  Do not submit issues about it.
+
+For instance, you may configure autotiling to work on odd workspaces,
+but not on even:
+
+### Autostart
+  exec autotiling -w 1 3 5 7 9

@@ -1,0 +1,31 @@
+--- ext/config/logback.xml.orig	2023-10-19 16:09:06 UTC
++++ ext/config/logback.xml
+@@ -6,12 +6,11 @@
+     </appender>
+ 
+     <appender name="F1" class="ch.qos.logback.core.rolling.RollingFileAppender">
+-        <!-- TODO: this path should not be hard-coded -->
+-        <file>/var/log/puppetlabs/puppetserver/puppetserver.log</file>
++        <file>/var/log/puppetserver/puppetserver.log</file>
+         <append>true</append>
+         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+             <!-- rollover daily -->
+-            <fileNamePattern>/var/log/puppetlabs/puppetserver/puppetserver-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
++            <fileNamePattern>/var/log/puppetserver/puppetserver-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+             <!-- each file should be at most 200MB, keep 90 days worth of history, but at most 1GB total-->
+             <maxFileSize>200MB</maxFileSize>
+             <maxHistory>90</maxHistory>
+@@ -23,11 +22,11 @@
+     </appender>
+ 
+     <appender name="STATUS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+-        <file>/var/log/puppetlabs/puppetserver/puppetserver-status.log</file>
++        <file>/var/log/puppetserver/puppetserver-status.log</file>
+         <append>true</append>
+         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+             <!-- rollover daily -->
+-            <fileNamePattern>/var/log/puppetlabs/puppetserver/puppetserver-status-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
++            <fileNamePattern>/var/log/puppetserver/puppetserver-status-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+             <!-- each file should be at most 200MB, keep 90 days worth of history, but at most 1GB total-->
+             <maxFileSize>200MB</maxFileSize>
+             <maxHistory>90</maxHistory>

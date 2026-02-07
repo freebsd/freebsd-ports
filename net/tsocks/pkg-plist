@@ -1,0 +1,12 @@
+bin/inspectsocks
+bin/tsocks
+bin/validateconf
+etc/tsocks.conf.sample
+lib/libtsocks.so
+lib/libtsocks.so.1
+share/man/man1/tsocks.1.gz
+share/man/man5/tsocks.conf.5.gz
+share/man/man8/tsocks.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.complex.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.simple.example

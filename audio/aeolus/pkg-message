@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+You installed aeolus: synthesised pipe organ emulator.
+
+In order to use it you need to install and run alsa-seq-server which
+creates /dev/snd/seq that is required by aeolus.
+
+EOM
+}
+]

@@ -1,0 +1,3 @@
+The zita-jclient library was written originally as a part of the
+Python library zita-jacktools, but it can be used as well to create
+a Jack client with a few lines of C++.

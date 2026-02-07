@@ -1,0 +1,8 @@
+The editor Python library allows users to open their default text
+editor or a specified editor to edit existing files, new files, or
+temporary files. It blocks execution while the user edits the text
+and then returns the file's contents.
+
+The library determines the editor to use based on the VISUAL or
+EDITOR environment variables, or defaults to 'Notepad' on Windows
+and 'vim' otherwise.

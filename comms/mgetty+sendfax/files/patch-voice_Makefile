@@ -1,0 +1,35 @@
+--- voice/Makefile.orig	2006-09-26 15:38:17 UTC
++++ voice/Makefile
+@@ -13,6 +13,8 @@ CC=gcc
+ LN=ln
+ MV=mv
+ RM=rm
++INSTALL=install -c
++INSTALL_PROGRAM=install -s -c
+ 
+ MGETTYLIB=../../getdisk.o ../../goodies.o ../../io.o ../../g3file.o \
+ 	../../locks.o ../../tio.o ../../modem.o \
+@@ -83,16 +85,16 @@ vgetty-install: vgetty-all
+ 	@echo "  Installing the voice extensions"
+ 	@echo "  -------------------------------"
+ 	@echo ""
+-	$(INSTALL) -m 700 vgetty/vgetty $(SBINDIR)
+-	$(INSTALL) -m 755 vm/vm $(BINDIR)
++	$(INSTALL_PROGRAM) -m 700 vgetty/vgetty $(STAGEDIR)$(SBINDIR)
++	$(INSTALL_PROGRAM) -m 755 vm/vm $(STAGEDIR)$(BINDIR)
+ 	for i in $(PVFTOOLS); \
+ 	do \
+-	     $(INSTALL) -m 755 pvftools/$$i $(BINDIR); \
++	     $(INSTALL_PROGRAM) -m 755 pvftools/$$i $(STAGEDIR)$(BINDIR); \
+ 	done
+-	$(INSTALL) -m 644 man/man1/zplay.1 $(MAN1DIR)
+-	$(INSTALL) -m 644 man/man1/pvf.1 $(MAN1DIR)
+-	$(INSTALL) -m 644 man/man8/vgetty.8 $(MAN8DIR)
+-	cd $(MAN1DIR); \
++	$(INSTALL) -m 644 man/man1/zplay.1 $(STAGEDIR)$(MAN1DIR)
++	$(INSTALL) -m 644 man/man1/pvf.1 $(STAGEDIR)$(MAN1DIR)
++	$(INSTALL) -m 644 man/man8/vgetty.8 $(STAGEDIR)$(MAN8DIR)
++	cd $(STAGEDIR)$(MAN1DIR); \
+ 	for i in $(PVFTOOLS); \
+ 	do \
+ 	     $(RM) -f $$i.1; $(LN) -s pvf.1 $$i.1; \

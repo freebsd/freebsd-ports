@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Catalyst::Helper::View::GraphView.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::View::GraphViz.3.gz
+%%PERL5_MAN3%%/Catalyst::View::GraphViz.3.gz
+%%SITE_PERL%%/Catalyst/Helper/View/GraphView.pm
+%%SITE_PERL%%/Catalyst/Helper/View/GraphViz.pm
+%%SITE_PERL%%/Catalyst/View/GraphViz.pm

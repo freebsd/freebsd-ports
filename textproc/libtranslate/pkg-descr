@@ -1,0 +1,12 @@
+libtranslate is a library for translating text and web pages between
+natural languages. Its modular infrastructure allows to implement new
+translation services separately from the core library.
+
+libtranslate is shipped with a generic module supporting web-based
+translation services such as Babel Fish, Google Language Tools and
+SYSTRAN. Moreover, the generic module allows to add new services
+simply by adding a few lines to a XML file (see the services.xml(5)
+manual page).
+
+The libtranslate distribution includes a powerful command line
+interface (see the translate(1) manual page).

@@ -1,0 +1,12 @@
+%%PERL5_MAN3%%/Devel::Diagram.3.gz
+%%PERL5_MAN3%%/Devel::Diagram::Render::UXF20.3.gz
+%%SITE_PERL%%/Devel/Diagram.pm
+%%SITE_PERL%%/Devel/Diagram/Render/UXF20.pm
+%%SITE_PERL%%/Devel/Diagram/xsl/uxf20toHtml.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ClassDiagram.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-CGI.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-CPAN.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-DBI.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-HTML.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-IO.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-LWP.html

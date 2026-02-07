@@ -1,0 +1,3 @@
+wmCube is a dockapp that displays a realtime rotating 3d-object
+and the current cpu-load. The cpu-load also makes the object spin
+faster/slower. You can zoom in and out by clicking on the dockapp.

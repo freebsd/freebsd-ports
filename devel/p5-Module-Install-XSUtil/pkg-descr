@@ -1,0 +1,2 @@
+Module::Install::XSUtil provides a set of utilities to setup distributions which
+include or depend on XS module.

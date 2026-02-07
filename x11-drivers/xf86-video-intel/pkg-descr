@@ -1,0 +1,14 @@
+The xf86-video-intel module is an open-source 2D graphics driver for
+the X Window System as implemented by X.org. It supports a variety of
+Intel graphics chipsets including:
+
+        i810/i810e/i810-dc100,i815,
+        i830M,845G,852GM,855GM,865G,
+        915G/GM,945G/GM/GME,946GZ
+        G/GM/GME/Q965,
+        G/Q33,G/Q35,G41,G/Q43,G/GM/Q45
+        PineView-M (Atom N400 series)
+        PineView-D (Atom D400/D500 series)
+        Intel(R) HD Graphics,
+        Intel(R) Iris(TM) Graphics,
+        Intel(R) Iris(TM) Pro Graphics.

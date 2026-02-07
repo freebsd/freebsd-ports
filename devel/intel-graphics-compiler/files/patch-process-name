@@ -1,0 +1,16 @@
+/proc is gone on DragonFly and OpenBSD but deprecated on FreeBSD and NetBSD
+
+--- IGC/common/SysUtils.cpp.orig	2019-11-27 01:05:20 UTC
++++ IGC/common/SysUtils.cpp
+@@ -82,6 +82,11 @@ namespace IGC
+             if (!in.good())
+                 assert(0 && "Error reading from cmdline pseudo file");
+ 
++#elif defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__) || \
++      defined(__OpenBSD__) || defined(__sun)
++            // KERN_PROC_ARGS returns similar value to /proc/<pid>/cmdline but as
++            // neither invocation path nor arguments are used just ask libc
++            ret = getprogname();
+ #elif defined(_WIN64) || defined(_WIN32)
+             ret.resize(MAX_PATH);
+             DWORD size = ::GetModuleFileNameA(NULL, &ret[0], ret.size());

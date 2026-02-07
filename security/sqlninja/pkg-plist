@@ -1,0 +1,9 @@
+bin/sqlninja
+%%ETCDIR%%/apps/churrasco.exe
+%%ETCDIR%%/apps/dnstun.exe
+%%ETCDIR%%/apps/nc.exe
+%%ETCDIR%%/scripts/churrasco.scr
+%%ETCDIR%%/scripts/dnstun.scr
+%%ETCDIR%%/scripts/nc.scr
+%%PORTDOCS%%%%DOCSDIR%%/sqlninja-howto.html
+%%PORTDOCS%%%%DOCSDIR%%/sqlninja.conf.example

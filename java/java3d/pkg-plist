@@ -1,0 +1,4 @@
+%%JAVA_HOME%%/jre/lib/ext/j3dcore.jar
+%%JAVA_HOME%%/jre/lib/ext/j3dutils.jar
+%%JAVA_HOME%%/jre/lib/ext/vecmath.jar
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libj3dcore-ogl.so

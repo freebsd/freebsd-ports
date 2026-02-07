@@ -1,0 +1,3 @@
+Various tools for creating iterators, many patterned after functions
+in the Python itertools module, and others patterned after functions
+in the 'snow' package.

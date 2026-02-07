@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# PROVIDE: trafficserver
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+rcvar=trafficserver_enable
+name="trafficserver"
+trafficserver_enable=${trafficserver_enable:-"NO"}
+pidfile="/var/run/trafficserver/traffic_manager.lock"
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} %%PREFIX%%/bin/traffic_manager"
+procname="%%PREFIX%%/bin/traffic_manager"
+
+load_rc_config "$name"
+run_rc_command "$1"

@@ -1,0 +1,34 @@
+--- Makefile.orig	2002-07-27 07:36:19 UTC
++++ Makefile
+@@ -6,9 +6,8 @@
+ #
+ # Makefile for the ncurses frontend of the library
+ 
+-CC = gcc
+-CPP = g++
+-CFLAGS = -g -I. -Wall
++CFLAGS += -I.
++CXXFLAGS += -I.
+ 
+ .SUFFIXES: .c .cpp .h
+ 
+@@ -23,16 +22,16 @@ libtn.a: $(OBJS)
+ 	ar cru libtn.a $(OBJS)
+ 
+ demo/demo: libtn.a demo/demo.cpp demo/myscheme.h
+-	(cd demo && make)
++	(cd demo && ${MAKE})
+ 
+ dlgc/dlgc: libtn.a dlgc/dlgc.cpp
+-	(cd dlgc && make)
++	(cd dlgc && ${MAKE})
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ .cpp.o:
+-	$(CPP) $(CFLAGS) -c $<
++	$(CXX) $(CXXFLAGS) -c $<
+ 
+ clean:
+ 	rm -f *~ *.o libtn.a core

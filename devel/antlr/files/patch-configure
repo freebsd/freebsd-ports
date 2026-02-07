@@ -1,0 +1,162 @@
+--- configure.orig	2010-12-17 23:55:00.000000000 -0800
++++ configure	2010-12-17 23:56:08.000000000 -0800
+@@ -2234,7 +2234,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -2299,7 +2299,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -2364,7 +2364,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -2461,7 +2461,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -2486,13 +2486,13 @@
+ 
+ ## right now we need to have a GNU make around, other makes are
+ ## not supported and likely to fail.
+-if test "x${user_make}" == "x" ; then
++if test "x${user_make}" = "x" ; then
+ 
+     #Search all the common names for GNU make
+     ax_gnu_make_list="${MAKE}"
+     MAKE=
+     for a in . ${ax_gnu_make_list} ; do
+-      if test "$a" == "." ; then
++      if test "$a" = "." ; then
+         continue
+       fi
+       echo "$as_me:$LINENO: checking whether ${a} is GNU make" >&5
+@@ -2508,7 +2508,7 @@
+       fi
+     done
+     ## handle search result
+-    if test  "x${MAKE}" == "x"  ; then
++    if test  "x${MAKE}" = "x"  ; then
+       :
+       { { echo "$as_me:$LINENO: error: package requires GNU make" >&5
+ echo "$as_me: error: package requires GNU make" >&2;}
+@@ -2641,7 +2641,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -2726,7 +2726,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -2811,7 +2811,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -3036,7 +3036,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -5808,7 +5808,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -5879,7 +5879,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -6122,7 +6122,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -6241,7 +6241,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -6336,7 +6336,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -6423,7 +6423,7 @@
+              fi
+            done
+           done
+-          test "x$as_found" == "x" && {
++          test "x$as_found" = "x" && {
+             echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+             echo "$as_me:$LINENO: result: no" >&5
+@@ -6733,7 +6733,7 @@
+     ## This variables can be used in antlr/Makefile
+ 
+     file_list="${ANTLR_ACTION_FILES} ${ANTLR_ANTLR_FILES} ${ANTLR_TOKDEF_FILES}"
+-    if test "x${file_list}" == "x" ; then
++    if test "x${file_list}" = "x" ; then
+       :
+     else
+       ANTLR_CONFIG_FILES=""

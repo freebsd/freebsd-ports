@@ -1,0 +1,9 @@
+bin/xbcloud
+bin/xbcloud_osenv
+bin/xbcrypt
+bin/xbstream
+bin/xtrabackup
+lib/libmysqlservices.a
+lib/plugin/component_keyring_file.so
+lib/plugin/component_keyring_kms.so
+lib/plugin/component_keyring_vault.so

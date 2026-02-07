@@ -1,0 +1,2 @@
+This is the runtime OCaml library used by the ppx_yojson_conv PPX
+plugin.

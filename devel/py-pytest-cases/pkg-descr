@@ -1,0 +1,14 @@
+Did you ever think that most of your test functions were actually the same test
+code, but with different data inputs and expected results/exceptions?
+- pytest-cases leverages pytest and its great @pytest.mark.parametrize
+  decorator, so that you can separate your test cases from your test functions.
+- In addition, pytest-cases provides several useful goodies to empower pytest.
+  In particular it improves the fixture mechanism to support "fixture unions".
+  This is a major change in the internal pytest engine, unlocking many
+  possibilities such as using fixture references as parameter values in a test
+  function. See here.
+
+pytest-cases is fully compliant with pytest-harvest so you can easily monitor
+the execution times and created artifacts. With it, it becomes very easy to
+create a complete data science benchmark, for example comparing various models
+on various datasets.

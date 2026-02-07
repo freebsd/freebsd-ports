@@ -1,0 +1,3 @@
+hashids is a Python port of the JavaScript hashids implementation. It generates
+YouTube-like hashes from one or many numbers. Use hashids when you do not want
+to expose your database ids to the user.

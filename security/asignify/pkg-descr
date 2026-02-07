@@ -1,0 +1,21 @@
+Asignify tool is heavily inspired by signify used in OpenBSD. However, the main
+goal of this project is to define high level API for signing files, validating
+signatures and encrypting using public keys cryptography. Asignify is designed
+to be portable and self-contained with zero external dependencies. It uses
+blake2b as the hash function and ed25519 implementation from tweetnacl.
+
+Key features:
+
+- Zero dependencies (libc and C compiler are likely required though), so it
+  could be easily used in embedded systems.
+- Modern cryptography primitives (ed25519, blake2 and sha512 namely).
+- Ability to encrypt files with the same keys using curve25519 based cryptobox.
+- Protecting secret keys by passwords using PBKDF2-BLAKE2 routine.
+- Asignify can convert ssh ed25519 private keys to the native format and verify
+  signatures using just ssh ed25519 public keys (without intermediate
+  conversions).
+- Asignify provides high level API for application developers for signing,
+  verifying, encrypting and keys generation.
+- All keys, signatures and encrypted files contain version information allowing
+  to change cryptographical primitives in the future without loosing of
+  backward compatibility.

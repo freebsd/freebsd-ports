@@ -1,0 +1,2 @@
+homebase provides a platform independent API for querying paths in which
+applications can write caches, data, configs, and other information.

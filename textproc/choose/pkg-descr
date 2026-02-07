@@ -1,0 +1,12 @@
+This is choose, a human-friendly and fast alternative to cut and
+(sometimes) awk.
+
+Features
+- terse field selection syntax similar to Python's list slices
+- negative indexing from end of line
+- optional start/end index
+- zero-indexed
+- reverse ranges
+- aslightly faster than cut for sufficiently long inputs, much faster
+  than awk
+- regular expression field separators using Rust's regex syntax

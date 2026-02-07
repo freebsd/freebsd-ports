@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Compress/Snappy.pm
+%%SITE_ARCH%%/auto/Compress/Snappy/Snappy.so
+%%PERL5_MAN3%%/Compress::Snappy.3.gz

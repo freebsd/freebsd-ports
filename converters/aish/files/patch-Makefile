@@ -1,0 +1,31 @@
+--- Makefile.orig	Wed Nov 18 20:13:30 1998
++++ Makefile	Fri Nov 12 02:17:34 1999
+@@ -1,12 +1,12 @@
+ # aish/koish 1993,94,95 by H.Ogasawara (COR.)
+ 
+ # install directory
+-DSTDIR	= /usr/local/bin
++DSTDIR	= ${PREFIX}/bin
+ 
+ #### *** UNIX
+-CC	= gcc
++CC	?= gcc
+ LK	= $(CC)
+-CFLAGS	= -O -DUNIX=1 -DUUENCODE=1 -DMIMEDEC=1
++CFLAGS	+= -DUNIX=1 -DUUENCODE=1 -DMIMEDEC=1
+ #CFLAGS	= -O -DUNIX=1 -DUUENCODE=1
+ SYSOBJ	= ai_unix.o
+ SYSCHK	= syschk.h
+@@ -127,9 +127,9 @@
+ clean:
+ 	rm -f *.o $(SYSCHK) $(PROG) $(MPROG) core *~
+ install: $(PROG) $(MPROG)
+-	install -c -s $(PROG) $(DSTDIR)
+-	install -c -s $(MPROG) $(DSTDIR)
+-	install -c -m 0755 ishcat $(DSTDIR)
++	${BSD_INSTALL_PROGRAM} $(PROG) $(DSTDIR)
++	${BSD_INSTALL_PROGRAM} $(MPROG) $(DSTDIR)
++	${BSD_INSTALL_SCRIPT} ishcat $(DSTDIR)
+ oldc:
+ 	sed '/^##--OLDC-b/,/^##--OLDC-e/s/^#//' Makefile | \
+ 	sed '/^##--NEWC-b/,/^##--NEWC-e/s/.*/#&/' > aisholdc.mk

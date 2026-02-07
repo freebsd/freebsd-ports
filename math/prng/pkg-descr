@@ -1,0 +1,4 @@
+PRNG is a collection of portable, high-performance ANSI-C implementations of
+pseudorandom number generators such as linear congruential, inversive
+congruential, and explicit inversive congruential random number generators (LCG,
+ICG and EICG, respectively) created by Otmar Lendl and Josef Leydold.

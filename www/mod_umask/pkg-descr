@@ -1,0 +1,4 @@
+mod_umask sets the Unix umask of the Apache HTTPd process after it has started.
+This is useful when accessing Subversion from both mod_dav_svn and via a local
+client with a file:// url. Without setting a proper umask the file permissions
+can create a repository that is not easily accessable from both.

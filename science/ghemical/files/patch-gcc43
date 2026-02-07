@@ -1,0 +1,11 @@
+--- src/pangofont_wcl.cpporig	2009-02-17 16:21:30.000000000 +0900
++++ src/pangofont_wcl.cpp	2009-02-17 16:20:28.000000000 +0900
+@@ -21,6 +21,8 @@
+ #include "pangofont_wcl.h"
+ 
+ #include <gtk/gtkgl.h>
++#include <cstdlib>
++#include <string.h>
+ 
+ /*################################################################################################*/
+ 

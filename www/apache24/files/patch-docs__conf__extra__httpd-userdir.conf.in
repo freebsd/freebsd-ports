@@ -1,0 +1,11 @@
+--- docs/conf/extra/httpd-userdir.conf.in.orig	2011-06-06 21:40:41 UTC
++++ docs/conf/extra/httpd-userdir.conf.in
+@@ -9,6 +9,8 @@
+ #
+ UserDir public_html
+ 
++UserDir disabled %%FTPUSERS%%
++
+ #
+ # Control access to UserDir directories.  The following is an example
+ # for a site where these directories are restricted to read-only.

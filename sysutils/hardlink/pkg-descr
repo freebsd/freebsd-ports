@@ -1,0 +1,2 @@
+hardlink is a tool which detects multiple copies of the same file and replaces
+them with hardlinks.

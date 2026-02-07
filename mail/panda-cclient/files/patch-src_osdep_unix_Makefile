@@ -1,0 +1,105 @@
+--- src/osdep/unix/Makefile.orig	2022-04-17 00:12:02 UTC
++++ src/osdep/unix/Makefile
+@@ -30,9 +30,9 @@
+ 
+ EXTRAAUTHENTICATORS=
+ EXTRADRIVERS=mbox
+-PASSWDTYPE=std
+-SSLTYPE=nopwd
+-IP=4
++PASSWDTYPE=pam
++SSLTYPE=unix.nopwd
++IP=6
+ 
+ 
+ # The optimization level here for GCC ports is set here for a reason.  It's
+@@ -56,13 +56,13 @@ GCC4CFLAGS= $(GCCCFLAGS) -Wno-pointer-sign
+ 
+ # Extended flags needed for SSL.  You may need to modify.
+ 
+-SSLDIR=/usr/local/ssl
+-SSLCERTS=$(SSLDIR)/certs
++#SSLDIR=/usr/local/ssl
++SSLCERTS=$(PREFIX)/certs
+ SSLKEYS=$(SSLCERTS)
+ SSLINCLUDE=$(SSLDIR)/include
+ SSLLIB=$(SSLDIR)/lib
+ 
+-SSLCRYPTO=-lcrypto
++SSLCRYPTO=-lcrypto -lcrypt
+ 
+ # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
+ # to use this instead
+@@ -89,7 +89,7 @@ AFSLDFLAGS=-L$(AFSLIB)/afs -L$(AFSLIB) -L$(AFSDIR)/dom
+ # AFSLDFLAGS may also need -L/usr/ucblib -lucb
+ DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
+ DCELDFLAGS= -ldce
+-PAMLDFLAGS= -lpam -ldl
++PAMLDFLAGS= # -lpam -lcrypt
+ 
+ 
+ # Build parameters normally set by the individual port
+@@ -132,7 +132,7 @@ EMPTYPROTO=unixproto
+ # Commands possibly overriden by the individual port
+ 
+ ARRC=ar rc
+-CC=cc
++#CC=cc
+ LN=ln -s
+ RANLIB=ranlib
+ 
+@@ -156,7 +156,7 @@ BINARIES=osdep.o mail.o misc.o newsrc.o smanager.o utf
+  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o mix.o
+-CFLAGS=-g
++CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+ 
+ CAT=cat
+ MAKE=make
+@@ -177,6 +177,10 @@ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRACFLAGS)'\
+ SOFILES=${BINARIES:.o=.so}
+ 
+ 
++# Need this for the shared library rule to work correctly
++.SUFFIXES: .o .so
++SOFILES=${BINARIES:.o=.so}
++
+ # Here if no make argument established
+ 
+ missing: osdep.h
+@@ -265,13 +269,14 @@ bsd:	# BSD UNIX
+ 	 BASECFLAGS="-g -Dconst="
+ 
+ bsf:	# FreeBSD
+-	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
++	$(BUILD) `$(CAT) SPECIALS` OS=$@ CHECKPW=pam \
+ 	 SIGTYPE=psx CRXTYPE=nfs \
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
+ 	 BASECFLAGS="$(GCCCFLAGS)" \
+-	 BASELDFLAGS="-lcrypt"
++	 BASELDFLAGS="-lpam"
+ 
+ bsi:	# BSD/i386
+ 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
+@@ -867,7 +872,7 @@ vu2:	# VAX Ultrix 2.3, etc.
+ 
+ # Build it!
+ 
+-build:	clean once all
++build:	clean once all `$(CAT) SHLIBNAME`
+ 
+ all:	$(ARCHIVE) `$(CAT) SHLIBNAME`
+ 
+@@ -881,7 +886,7 @@ $(ARCHIVE): $(BINARIES)
+ 	ln -fs `$(CAT) SHLIBNAME` libc-client.so
+ 
+ .c.so:	osdep.h
+-	`$(CAT) CCTYPE` `$(CAT) SHLIBFLAGS` -c `$(CAT) CFLAGS` ${@:.so=.c} -o $@
++	`$(CAT) CCTYPE` -fPIC -DPIC -c `$(CAT) SHLIBFLAGS` -c `$(CAT) CFLAGS` ${@:.so=.c} -o $@
+ 
+ .c.o:
+ 	`$(CAT) CCTYPE` `$(CAT) SHLIBFLAGS` -c `$(CAT) CFLAGS` $*.c

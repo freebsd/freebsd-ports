@@ -1,0 +1,607 @@
+bin/gamma4scanimage
+bin/sane-config
+bin/sane-find-scanner
+bin/scanimage
+bin/umax_pp
+@sample etc/sane.d/dist/abaton.conf etc/sane.d/abaton.conf
+@sample etc/sane.d/dist/agfafocus.conf etc/sane.d/agfafocus.conf
+@sample etc/sane.d/dist/apple.conf etc/sane.d/apple.conf
+@sample etc/sane.d/dist/artec.conf etc/sane.d/artec.conf
+@sample etc/sane.d/dist/artec_eplus48u.conf etc/sane.d/artec_eplus48u.conf
+@sample etc/sane.d/dist/avision.conf etc/sane.d/avision.conf
+@sample etc/sane.d/dist/bh.conf etc/sane.d/bh.conf
+@sample etc/sane.d/dist/canon.conf etc/sane.d/canon.conf
+@sample etc/sane.d/dist/canon630u.conf etc/sane.d/canon630u.conf
+@sample etc/sane.d/dist/canon_dr.conf etc/sane.d/canon_dr.conf
+@sample etc/sane.d/dist/canon_lide70.conf etc/sane.d/canon_lide70.conf
+%%IEEE1284%%@sample etc/sane.d/dist/canon_pp.conf etc/sane.d/canon_pp.conf
+@sample etc/sane.d/dist/cardscan.conf etc/sane.d/cardscan.conf
+@sample etc/sane.d/dist/coolscan.conf etc/sane.d/coolscan.conf
+@sample etc/sane.d/dist/coolscan2.conf etc/sane.d/coolscan2.conf
+@sample etc/sane.d/dist/coolscan3.conf etc/sane.d/coolscan3.conf
+@sample etc/sane.d/dist/dc210.conf etc/sane.d/dc210.conf
+@sample etc/sane.d/dist/dc240.conf etc/sane.d/dc240.conf
+@sample etc/sane.d/dist/dc25.conf etc/sane.d/dc25.conf
+@sample etc/sane.d/dist/dell1600n_net.conf etc/sane.d/dell1600n_net.conf
+@sample etc/sane.d/dist/dll.conf etc/sane.d/dll.conf
+@sample etc/sane.d/dist/dmc.conf etc/sane.d/dmc.conf
+@sample etc/sane.d/dist/epjitsu.conf etc/sane.d/epjitsu.conf
+@sample etc/sane.d/dist/epson.conf etc/sane.d/epson.conf
+@sample etc/sane.d/dist/epson2.conf etc/sane.d/epson2.conf
+@sample etc/sane.d/dist/epsonds.conf etc/sane.d/epsonds.conf
+%%AVAHI%%@sample etc/sane.d/dist/escl.conf etc/sane.d/escl.conf
+@sample etc/sane.d/dist/fujitsu.conf etc/sane.d/fujitsu.conf
+@sample etc/sane.d/dist/genesys.conf etc/sane.d/genesys.conf
+%%GPHOTO%%@sample etc/sane.d/dist/gphoto2.conf etc/sane.d/gphoto2.conf
+@sample etc/sane.d/dist/gt68xx.conf etc/sane.d/gt68xx.conf
+@sample etc/sane.d/dist/hp.conf etc/sane.d/hp.conf
+@sample etc/sane.d/dist/hp3900.conf etc/sane.d/hp3900.conf
+@sample etc/sane.d/dist/hp4200.conf etc/sane.d/hp4200.conf
+@sample etc/sane.d/dist/hp5400.conf etc/sane.d/hp5400.conf
+%%IEEE1284%%@sample etc/sane.d/dist/hpsj5s.conf etc/sane.d/hpsj5s.conf
+@sample etc/sane.d/dist/hs2p.conf etc/sane.d/hs2p.conf
+@sample etc/sane.d/dist/ibm.conf etc/sane.d/ibm.conf
+@sample etc/sane.d/dist/kodak.conf etc/sane.d/kodak.conf
+@sample etc/sane.d/dist/kodakaio.conf etc/sane.d/kodakaio.conf
+@sample etc/sane.d/dist/kvs1025.conf etc/sane.d/kvs1025.conf
+@sample etc/sane.d/dist/leo.conf etc/sane.d/leo.conf
+@sample etc/sane.d/dist/lexmark.conf etc/sane.d/lexmark.conf
+@sample etc/sane.d/dist/lexmark_x2600.conf etc/sane.d/lexmark_x2600.conf
+@sample etc/sane.d/dist/ma1509.conf etc/sane.d/ma1509.conf
+@sample etc/sane.d/dist/magicolor.conf etc/sane.d/magicolor.conf
+@sample etc/sane.d/dist/matsushita.conf etc/sane.d/matsushita.conf
+@sample etc/sane.d/dist/microtek.conf etc/sane.d/microtek.conf
+@sample etc/sane.d/dist/microtek2.conf etc/sane.d/microtek2.conf
+@sample etc/sane.d/dist/mustek.conf etc/sane.d/mustek.conf
+%%IEEE1284%%@sample etc/sane.d/dist/mustek_pp.conf etc/sane.d/mustek_pp.conf
+@sample etc/sane.d/dist/mustek_usb.conf etc/sane.d/mustek_usb.conf
+@sample etc/sane.d/dist/nec.conf etc/sane.d/nec.conf
+@sample etc/sane.d/dist/net.conf etc/sane.d/net.conf
+@sample etc/sane.d/dist/p5.conf etc/sane.d/p5.conf
+@sample etc/sane.d/dist/pie.conf etc/sane.d/pie.conf
+@sample etc/sane.d/dist/pieusb.conf etc/sane.d/pieusb.conf
+@sample etc/sane.d/dist/pixma.conf etc/sane.d/pixma.conf
+@sample etc/sane.d/dist/plustek.conf etc/sane.d/plustek.conf
+@sample etc/sane.d/dist/plustek_pp.conf etc/sane.d/plustek_pp.conf
+@sample etc/sane.d/dist/ricoh.conf etc/sane.d/ricoh.conf
+@sample etc/sane.d/dist/rts8891.conf etc/sane.d/rts8891.conf
+@sample etc/sane.d/dist/s9036.conf etc/sane.d/s9036.conf
+@sample etc/sane.d/dist/saned.conf etc/sane.d/saned.conf
+@sample etc/sane.d/dist/sceptre.conf etc/sane.d/sceptre.conf
+@sample etc/sane.d/dist/sharp.conf etc/sane.d/sharp.conf
+@sample etc/sane.d/dist/sm3840.conf etc/sane.d/sm3840.conf
+@sample etc/sane.d/dist/snapscan.conf etc/sane.d/snapscan.conf
+@sample etc/sane.d/dist/sp15c.conf etc/sane.d/sp15c.conf
+@sample etc/sane.d/dist/st400.conf etc/sane.d/st400.conf
+@sample etc/sane.d/dist/stv680.conf etc/sane.d/stv680.conf
+@sample etc/sane.d/dist/tamarack.conf etc/sane.d/tamarack.conf
+@sample etc/sane.d/dist/teco1.conf etc/sane.d/teco1.conf
+@sample etc/sane.d/dist/teco2.conf etc/sane.d/teco2.conf
+@sample etc/sane.d/dist/teco3.conf etc/sane.d/teco3.conf
+@sample etc/sane.d/dist/test.conf etc/sane.d/test.conf
+@sample etc/sane.d/dist/u12.conf etc/sane.d/u12.conf
+@sample etc/sane.d/dist/umax.conf etc/sane.d/umax.conf
+@sample etc/sane.d/dist/umax1220u.conf etc/sane.d/umax1220u.conf
+@sample etc/sane.d/dist/umax_pp.conf etc/sane.d/umax_pp.conf
+%%V4L%%@sample etc/sane.d/dist/v4l.conf etc/sane.d/v4l.conf
+@sample etc/sane.d/dist/xerox_mfp.conf etc/sane.d/xerox_mfp.conf
+include/sane/sane.h
+include/sane/saneopts.h
+lib/libsane.so
+lib/libsane.so.1
+lib/libsane.so.%%SOVERSION%%
+lib/sane/libsane-abaton.so
+lib/sane/libsane-abaton.so.1
+lib/sane/libsane-abaton.so.%%SOVERSION%%
+lib/sane/libsane-agfafocus.so
+lib/sane/libsane-agfafocus.so.1
+lib/sane/libsane-agfafocus.so.%%SOVERSION%%
+lib/sane/libsane-apple.so
+lib/sane/libsane-apple.so.1
+lib/sane/libsane-apple.so.%%SOVERSION%%
+lib/sane/libsane-artec.so
+lib/sane/libsane-artec.so.1
+lib/sane/libsane-artec.so.%%SOVERSION%%
+lib/sane/libsane-artec_eplus48u.so
+lib/sane/libsane-artec_eplus48u.so.1
+lib/sane/libsane-artec_eplus48u.so.%%SOVERSION%%
+lib/sane/libsane-as6e.so
+lib/sane/libsane-as6e.so.1
+lib/sane/libsane-as6e.so.%%SOVERSION%%
+lib/sane/libsane-avision.so
+lib/sane/libsane-avision.so.1
+lib/sane/libsane-avision.so.%%SOVERSION%%
+lib/sane/libsane-bh.so
+lib/sane/libsane-bh.so.1
+lib/sane/libsane-bh.so.%%SOVERSION%%
+lib/sane/libsane-canon.so
+lib/sane/libsane-canon.so.1
+lib/sane/libsane-canon.so.%%SOVERSION%%
+lib/sane/libsane-canon630u.so
+lib/sane/libsane-canon630u.so.1
+lib/sane/libsane-canon630u.so.%%SOVERSION%%
+lib/sane/libsane-canon_dr.so
+lib/sane/libsane-canon_dr.so.1
+lib/sane/libsane-canon_dr.so.%%SOVERSION%%
+lib/sane/libsane-canon_lide70.so
+lib/sane/libsane-canon_lide70.so.1
+lib/sane/libsane-canon_lide70.so.%%SOVERSION%%
+%%IEEE1284%%lib/sane/libsane-canon_pp.so
+%%IEEE1284%%lib/sane/libsane-canon_pp.so.1
+%%IEEE1284%%lib/sane/libsane-canon_pp.so.%%SOVERSION%%
+lib/sane/libsane-cardscan.so
+lib/sane/libsane-cardscan.so.1
+lib/sane/libsane-cardscan.so.%%SOVERSION%%
+lib/sane/libsane-coolscan.so
+lib/sane/libsane-coolscan.so.1
+lib/sane/libsane-coolscan.so.%%SOVERSION%%
+lib/sane/libsane-coolscan2.so
+lib/sane/libsane-coolscan2.so.1
+lib/sane/libsane-coolscan2.so.%%SOVERSION%%
+lib/sane/libsane-coolscan3.so
+lib/sane/libsane-coolscan3.so.1
+lib/sane/libsane-coolscan3.so.%%SOVERSION%%
+lib/sane/libsane-dc210.so
+lib/sane/libsane-dc210.so.1
+lib/sane/libsane-dc210.so.%%SOVERSION%%
+lib/sane/libsane-dc240.so
+lib/sane/libsane-dc240.so.1
+lib/sane/libsane-dc240.so.%%SOVERSION%%
+lib/sane/libsane-dc25.so
+lib/sane/libsane-dc25.so.1
+lib/sane/libsane-dc25.so.%%SOVERSION%%
+lib/sane/libsane-dell1600n_net.so
+lib/sane/libsane-dell1600n_net.so.1
+lib/sane/libsane-dell1600n_net.so.%%SOVERSION%%
+lib/sane/libsane-dll.so
+lib/sane/libsane-dll.so.1
+lib/sane/libsane-dll.so.%%SOVERSION%%
+lib/sane/libsane-dmc.so
+lib/sane/libsane-dmc.so.1
+lib/sane/libsane-dmc.so.%%SOVERSION%%
+lib/sane/libsane-epjitsu.so
+lib/sane/libsane-epjitsu.so.1
+lib/sane/libsane-epjitsu.so.%%SOVERSION%%
+lib/sane/libsane-epson.so
+lib/sane/libsane-epson.so.1
+lib/sane/libsane-epson.so.%%SOVERSION%%
+lib/sane/libsane-epson2.so
+lib/sane/libsane-epson2.so.1
+lib/sane/libsane-epson2.so.%%SOVERSION%%
+lib/sane/libsane-epsonds.so
+lib/sane/libsane-epsonds.so.1
+lib/sane/libsane-epsonds.so.%%SOVERSION%%
+%%AVAHI%%lib/sane/libsane-escl.so
+%%AVAHI%%lib/sane/libsane-escl.so.1
+%%AVAHI%%lib/sane/libsane-escl.so.%%SOVERSION%%
+lib/sane/libsane-fujitsu.so
+lib/sane/libsane-fujitsu.so.1
+lib/sane/libsane-fujitsu.so.%%SOVERSION%%
+lib/sane/libsane-genesys.so
+lib/sane/libsane-genesys.so.1
+lib/sane/libsane-genesys.so.%%SOVERSION%%
+%%GPHOTO%%lib/sane/libsane-gphoto2.so
+%%GPHOTO%%lib/sane/libsane-gphoto2.so.1
+%%GPHOTO%%lib/sane/libsane-gphoto2.so.%%SOVERSION%%
+lib/sane/libsane-gt68xx.so
+lib/sane/libsane-gt68xx.so.1
+lib/sane/libsane-gt68xx.so.%%SOVERSION%%
+lib/sane/libsane-hp.so
+lib/sane/libsane-hp.so.1
+lib/sane/libsane-hp.so.%%SOVERSION%%
+lib/sane/libsane-hp3500.so
+lib/sane/libsane-hp3500.so.1
+lib/sane/libsane-hp3500.so.%%SOVERSION%%
+lib/sane/libsane-hp3900.so
+lib/sane/libsane-hp3900.so.1
+lib/sane/libsane-hp3900.so.%%SOVERSION%%
+lib/sane/libsane-hp4200.so
+lib/sane/libsane-hp4200.so.1
+lib/sane/libsane-hp4200.so.%%SOVERSION%%
+lib/sane/libsane-hp5400.so
+lib/sane/libsane-hp5400.so.1
+lib/sane/libsane-hp5400.so.%%SOVERSION%%
+lib/sane/libsane-hp5590.so
+lib/sane/libsane-hp5590.so.1
+lib/sane/libsane-hp5590.so.%%SOVERSION%%
+lib/sane/libsane-hpljm1005.so
+lib/sane/libsane-hpljm1005.so.1
+lib/sane/libsane-hpljm1005.so.%%SOVERSION%%
+%%IEEE1284%%lib/sane/libsane-hpsj5s.so
+%%IEEE1284%%lib/sane/libsane-hpsj5s.so.1
+%%IEEE1284%%lib/sane/libsane-hpsj5s.so.%%SOVERSION%%
+lib/sane/libsane-hs2p.so
+lib/sane/libsane-hs2p.so.1
+lib/sane/libsane-hs2p.so.%%SOVERSION%%
+lib/sane/libsane-ibm.so
+lib/sane/libsane-ibm.so.1
+lib/sane/libsane-ibm.so.%%SOVERSION%%
+lib/sane/libsane-kodak.so
+lib/sane/libsane-kodak.so.1
+lib/sane/libsane-kodak.so.%%SOVERSION%%
+lib/sane/libsane-kodakaio.so
+lib/sane/libsane-kodakaio.so.1
+lib/sane/libsane-kodakaio.so.%%SOVERSION%%
+lib/sane/libsane-kvs1025.so
+lib/sane/libsane-kvs1025.so.1
+lib/sane/libsane-kvs1025.so.%%SOVERSION%%
+lib/sane/libsane-kvs20xx.so
+lib/sane/libsane-kvs20xx.so.1
+lib/sane/libsane-kvs20xx.so.%%SOVERSION%%
+lib/sane/libsane-kvs40xx.so
+lib/sane/libsane-kvs40xx.so.1
+lib/sane/libsane-kvs40xx.so.%%SOVERSION%%
+lib/sane/libsane-leo.so
+lib/sane/libsane-leo.so.1
+lib/sane/libsane-leo.so.%%SOVERSION%%
+lib/sane/libsane-lexmark.so
+lib/sane/libsane-lexmark.so.1
+lib/sane/libsane-lexmark.so.%%SOVERSION%%
+lib/sane/libsane-lexmark_x2600.so
+lib/sane/libsane-lexmark_x2600.so.1
+lib/sane/libsane-lexmark_x2600.so.%%SOVERSION%%
+lib/sane/libsane-ma1509.so
+lib/sane/libsane-ma1509.so.1
+lib/sane/libsane-ma1509.so.%%SOVERSION%%
+lib/sane/libsane-magicolor.so
+lib/sane/libsane-magicolor.so.1
+lib/sane/libsane-magicolor.so.%%SOVERSION%%
+lib/sane/libsane-matsushita.so
+lib/sane/libsane-matsushita.so.1
+lib/sane/libsane-matsushita.so.%%SOVERSION%%
+lib/sane/libsane-microtek.so
+lib/sane/libsane-microtek.so.1
+lib/sane/libsane-microtek.so.%%SOVERSION%%
+lib/sane/libsane-microtek2.so
+lib/sane/libsane-microtek2.so.1
+lib/sane/libsane-microtek2.so.%%SOVERSION%%
+lib/sane/libsane-mustek.so
+lib/sane/libsane-mustek.so.1
+lib/sane/libsane-mustek.so.%%SOVERSION%%
+%%IEEE1284%%lib/sane/libsane-mustek_pp.so
+%%IEEE1284%%lib/sane/libsane-mustek_pp.so.1
+%%IEEE1284%%lib/sane/libsane-mustek_pp.so.%%SOVERSION%%
+lib/sane/libsane-mustek_usb.so
+lib/sane/libsane-mustek_usb.so.1
+lib/sane/libsane-mustek_usb.so.%%SOVERSION%%
+lib/sane/libsane-mustek_usb2.so
+lib/sane/libsane-mustek_usb2.so.1
+lib/sane/libsane-mustek_usb2.so.%%SOVERSION%%
+lib/sane/libsane-nec.so
+lib/sane/libsane-nec.so.1
+lib/sane/libsane-nec.so.%%SOVERSION%%
+lib/sane/libsane-net.so
+lib/sane/libsane-net.so.1
+lib/sane/libsane-net.so.%%SOVERSION%%
+lib/sane/libsane-niash.so
+lib/sane/libsane-niash.so.1
+lib/sane/libsane-niash.so.%%SOVERSION%%
+lib/sane/libsane-p5.so
+lib/sane/libsane-p5.so.1
+lib/sane/libsane-p5.so.%%SOVERSION%%
+lib/sane/libsane-pie.so
+lib/sane/libsane-pie.so.1
+lib/sane/libsane-pie.so.%%SOVERSION%%
+lib/sane/libsane-pieusb.so
+lib/sane/libsane-pieusb.so.1
+lib/sane/libsane-pieusb.so.%%SOVERSION%%
+lib/sane/libsane-pixma.so
+lib/sane/libsane-pixma.so.1
+lib/sane/libsane-pixma.so.%%SOVERSION%%
+lib/sane/libsane-plustek.so
+lib/sane/libsane-plustek.so.1
+lib/sane/libsane-plustek.so.%%SOVERSION%%
+lib/sane/libsane-plustek_pp.so
+lib/sane/libsane-plustek_pp.so.1
+lib/sane/libsane-plustek_pp.so.%%SOVERSION%%
+lib/sane/libsane-ricoh.so
+lib/sane/libsane-ricoh.so.1
+lib/sane/libsane-ricoh.so.%%SOVERSION%%
+lib/sane/libsane-ricoh2.so
+lib/sane/libsane-ricoh2.so.1
+lib/sane/libsane-ricoh2.so.%%SOVERSION%%
+lib/sane/libsane-rts8891.so
+lib/sane/libsane-rts8891.so.1
+lib/sane/libsane-rts8891.so.%%SOVERSION%%
+lib/sane/libsane-s9036.so
+lib/sane/libsane-s9036.so.1
+lib/sane/libsane-s9036.so.%%SOVERSION%%
+lib/sane/libsane-sceptre.so
+lib/sane/libsane-sceptre.so.1
+lib/sane/libsane-sceptre.so.%%SOVERSION%%
+lib/sane/libsane-sharp.so
+lib/sane/libsane-sharp.so.1
+lib/sane/libsane-sharp.so.%%SOVERSION%%
+lib/sane/libsane-sm3600.so
+lib/sane/libsane-sm3600.so.1
+lib/sane/libsane-sm3600.so.%%SOVERSION%%
+lib/sane/libsane-sm3840.so
+lib/sane/libsane-sm3840.so.1
+lib/sane/libsane-sm3840.so.%%SOVERSION%%
+lib/sane/libsane-snapscan.so
+lib/sane/libsane-snapscan.so.1
+lib/sane/libsane-snapscan.so.%%SOVERSION%%
+lib/sane/libsane-sp15c.so
+lib/sane/libsane-sp15c.so.1
+lib/sane/libsane-sp15c.so.%%SOVERSION%%
+lib/sane/libsane-st400.so
+lib/sane/libsane-st400.so.1
+lib/sane/libsane-st400.so.%%SOVERSION%%
+lib/sane/libsane-stv680.so
+lib/sane/libsane-stv680.so.1
+lib/sane/libsane-stv680.so.%%SOVERSION%%
+lib/sane/libsane-tamarack.so
+lib/sane/libsane-tamarack.so.1
+lib/sane/libsane-tamarack.so.%%SOVERSION%%
+lib/sane/libsane-teco1.so
+lib/sane/libsane-teco1.so.1
+lib/sane/libsane-teco1.so.%%SOVERSION%%
+lib/sane/libsane-teco2.so
+lib/sane/libsane-teco2.so.1
+lib/sane/libsane-teco2.so.%%SOVERSION%%
+lib/sane/libsane-teco3.so
+lib/sane/libsane-teco3.so.1
+lib/sane/libsane-teco3.so.%%SOVERSION%%
+lib/sane/libsane-test.so
+lib/sane/libsane-test.so.1
+lib/sane/libsane-test.so.%%SOVERSION%%
+lib/sane/libsane-u12.so
+lib/sane/libsane-u12.so.1
+lib/sane/libsane-u12.so.%%SOVERSION%%
+lib/sane/libsane-umax.so
+lib/sane/libsane-umax.so.1
+lib/sane/libsane-umax.so.%%SOVERSION%%
+lib/sane/libsane-umax1220u.so
+lib/sane/libsane-umax1220u.so.1
+lib/sane/libsane-umax1220u.so.%%SOVERSION%%
+lib/sane/libsane-umax_pp.so
+lib/sane/libsane-umax_pp.so.1
+lib/sane/libsane-umax_pp.so.%%SOVERSION%%
+%%V4L%%lib/sane/libsane-v4l.so
+%%V4L%%lib/sane/libsane-v4l.so.1
+%%V4L%%lib/sane/libsane-v4l.so.%%SOVERSION%%
+lib/sane/libsane-xerox_mfp.so
+lib/sane/libsane-xerox_mfp.so.1
+lib/sane/libsane-xerox_mfp.so.%%SOVERSION%%
+libdata/pkgconfig/sane-backends.pc
+share/man/man1/gamma4scanimage.1.gz
+share/man/man1/sane-config.1.gz
+share/man/man1/sane-find-scanner.1.gz
+share/man/man1/scanimage.1.gz
+share/man/man5/sane-abaton.5.gz
+share/man/man5/sane-agfafocus.5.gz
+share/man/man5/sane-apple.5.gz
+share/man/man5/sane-artec.5.gz
+share/man/man5/sane-artec_eplus48u.5.gz
+share/man/man5/sane-as6e.5.gz
+share/man/man5/sane-avision.5.gz
+share/man/man5/sane-bh.5.gz
+share/man/man5/sane-canon.5.gz
+share/man/man5/sane-canon630u.5.gz
+share/man/man5/sane-canon_dr.5.gz
+share/man/man5/sane-canon_lide70.5.gz
+%%IEEE1284%%share/man/man5/sane-canon_pp.5.gz
+share/man/man5/sane-cardscan.5.gz
+share/man/man5/sane-coolscan.5.gz
+share/man/man5/sane-coolscan2.5.gz
+share/man/man5/sane-coolscan3.5.gz
+share/man/man5/sane-dc210.5.gz
+share/man/man5/sane-dc240.5.gz
+share/man/man5/sane-dc25.5.gz
+share/man/man5/sane-dll.5.gz
+share/man/man5/sane-dmc.5.gz
+share/man/man5/sane-epjitsu.5.gz
+share/man/man5/sane-epson.5.gz
+share/man/man5/sane-epson2.5.gz
+share/man/man5/sane-epsonds.5.gz
+%%AVAHI%%share/man/man5/sane-escl.5.gz
+share/man/man5/sane-fujitsu.5.gz
+share/man/man5/sane-genesys.5.gz
+%%GPHOTO%%share/man/man5/sane-gphoto2.5.gz
+share/man/man5/sane-gt68xx.5.gz
+share/man/man5/sane-hp.5.gz
+share/man/man5/sane-hp3500.5.gz
+share/man/man5/sane-hp3900.5.gz
+share/man/man5/sane-hp4200.5.gz
+share/man/man5/sane-hp5400.5.gz
+share/man/man5/sane-hp5590.5.gz
+share/man/man5/sane-hpljm1005.5.gz
+%%IEEE1284%%share/man/man5/sane-hpsj5s.5.gz
+share/man/man5/sane-hs2p.5.gz
+share/man/man5/sane-ibm.5.gz
+share/man/man5/sane-kodak.5.gz
+share/man/man5/sane-kodakaio.5.gz
+share/man/man5/sane-kvs1025.5.gz
+share/man/man5/sane-kvs20xx.5.gz
+share/man/man5/sane-kvs40xx.5.gz
+share/man/man5/sane-leo.5.gz
+share/man/man5/sane-lexmark.5.gz
+share/man/man5/sane-lexmark_x2600.5.gz
+share/man/man5/sane-ma1509.5.gz
+share/man/man5/sane-magicolor.5.gz
+share/man/man5/sane-matsushita.5.gz
+share/man/man5/sane-microtek.5.gz
+share/man/man5/sane-microtek2.5.gz
+share/man/man5/sane-mustek.5.gz
+%%IEEE1284%%share/man/man5/sane-mustek_pp.5.gz
+share/man/man5/sane-mustek_usb.5.gz
+share/man/man5/sane-mustek_usb2.5.gz
+share/man/man5/sane-nec.5.gz
+share/man/man5/sane-net.5.gz
+share/man/man5/sane-niash.5.gz
+share/man/man5/sane-p5.5.gz
+share/man/man5/sane-pie.5.gz
+share/man/man5/sane-pieusb.5.gz
+share/man/man5/sane-pixma.5.gz
+share/man/man5/sane-plustek.5.gz
+share/man/man5/sane-plustek_pp.5.gz
+share/man/man5/sane-ricoh.5.gz
+share/man/man5/sane-ricoh2.5.gz
+share/man/man5/sane-rts8891.5.gz
+share/man/man5/sane-s9036.5.gz
+share/man/man5/sane-sceptre.5.gz
+share/man/man5/sane-scsi.5.gz
+share/man/man5/sane-sharp.5.gz
+share/man/man5/sane-sm3600.5.gz
+share/man/man5/sane-sm3840.5.gz
+share/man/man5/sane-snapscan.5.gz
+share/man/man5/sane-sp15c.5.gz
+share/man/man5/sane-st400.5.gz
+share/man/man5/sane-stv680.5.gz
+share/man/man5/sane-tamarack.5.gz
+share/man/man5/sane-teco1.5.gz
+share/man/man5/sane-teco2.5.gz
+share/man/man5/sane-teco3.5.gz
+share/man/man5/sane-test.5.gz
+share/man/man5/sane-u12.5.gz
+share/man/man5/sane-umax.5.gz
+share/man/man5/sane-umax1220u.5.gz
+share/man/man5/sane-umax_pp.5.gz
+share/man/man5/sane-usb.5.gz
+%%V4L%%share/man/man5/sane-v4l.5.gz
+share/man/man5/sane-xerox_mfp.5.gz
+share/man/man7/sane.7.gz
+share/man/man8/saned.8.gz
+sbin/saned
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.0
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.1
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.10
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.11
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.12
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.13
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.14
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.15
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.16
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.17
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.18
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.19
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.2
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.20
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.21
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.22
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.23
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.24
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.25
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.27
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.28
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.3
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.4
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.5
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.6
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.7
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.8
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogs/ChangeLog-1.0.9
+@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/PROJECTS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.aix
+%%PORTDOCS%%%%DOCSDIR%%/README.beos
+%%PORTDOCS%%%%DOCSDIR%%/README.darwin
+%%PORTDOCS%%%%DOCSDIR%%/README.djpeg
+%%PORTDOCS%%%%DOCSDIR%%/README.freebsd
+%%PORTDOCS%%%%DOCSDIR%%/README.hp-ux
+%%PORTDOCS%%%%DOCSDIR%%/README.linux
+%%PORTDOCS%%%%DOCSDIR%%/README.netbsd
+%%PORTDOCS%%%%DOCSDIR%%/README.openbsd
+%%PORTDOCS%%%%DOCSDIR%%/README.os2
+%%PORTDOCS%%%%DOCSDIR%%/README.solaris
+%%PORTDOCS%%%%DOCSDIR%%/README.unixware2
+%%PORTDOCS%%%%DOCSDIR%%/README.unixware7
+%%PORTDOCS%%%%DOCSDIR%%/README.windows
+%%PORTDOCS%%%%DOCSDIR%%/README.zeta
+%%PORTDOCS%%%%DOCSDIR%%/backend-writing.txt
+%%PORTDOCS%%%%DOCSDIR%%/canon/canon.changes
+%%PORTDOCS%%%%DOCSDIR%%/canon/canon.install2700F.txt
+%%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.TODO
+%%PORTDOCS%%%%DOCSDIR%%/leo/leo.txt
+%%PORTDOCS%%%%DOCSDIR%%/matsushita/matsushita.txt
+%%PORTDOCS%%%%DOCSDIR%%/mustek/mustek.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.TODO
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb2/mustek_usb2.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb2/mustek_usb2.TODO
+%%PORTDOCS%%%%DOCSDIR%%/niash/niash.TODO
+%%PORTDOCS%%%%DOCSDIR%%/plustek/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT-TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.changes
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.txt
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB-TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.changes
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.txt
+%%PORTDOCS%%%%DOCSDIR%%/sane-backends-external.html
+%%PORTDOCS%%%%DOCSDIR%%/sane-backends.html
+%%PORTDOCS%%%%DOCSDIR%%/sane-mfgs-external.html
+%%PORTDOCS%%%%DOCSDIR%%/sane-mfgs.html
+%%PORTDOCS%%%%DOCSDIR%%/saned/saned.install.md
+%%PORTDOCS%%%%DOCSDIR%%/sceptre/s1200.txt
+%%PORTDOCS%%%%DOCSDIR%%/teco/teco1.txt
+%%PORTDOCS%%%%DOCSDIR%%/teco/teco2.txt
+%%PORTDOCS%%%%DOCSDIR%%/teco/teco3.txt
+%%PORTDOCS%%%%DOCSDIR%%/u12/U12.changes
+%%PORTDOCS%%%%DOCSDIR%%/u12/U12.todo
+%%PORTDOCS%%%%DOCSDIR%%/umax/negative-types.txt
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-advanced-options-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-advanced.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-astra-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-config-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-histogram.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-mirage-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-not-listed-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-others-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-parport-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-powerlook-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-scanner-clones-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-speed-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-standard-options-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-standard.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-uc-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-vista-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.BUGS
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.FAQ
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.TODO
+%%NLS%%share/locale/bg/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/da/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/de/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/es/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/he/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sane-backends.mo
+@dir etc/sane.d/dll.d
+@dir share/sane/artec_eplus48u
+@dir share/sane/epjitsu
+@dir share/sane/gt68xx
+@dir share/sane/snapscan

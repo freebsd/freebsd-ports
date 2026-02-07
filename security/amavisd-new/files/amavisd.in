@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: amavisd
+# REQUIRE: LOGIN mysql postgresql amavis_p0fanalyzer
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable amavisd:
+#
+# amavisd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=amavisd
+rcvar=amavisd_enable
+
+load_rc_config $name
+
+: ${amavisd_enable:=NO}
+pidfile=${amavisd_pidfile-"%%AMAVISDIR%%/amavisd.pid"}
+
+command=%%PREFIX%%/sbin/amavisd
+command_args='> /dev/null 2>&1'
+required_files=%%PREFIX%%/etc/amavisd.conf
+extra_commands=reload
+
+start_precmd=start_precmd
+stop_postcmd="rm -f $pidfile"
+reload_cmd="$command reload"
+: ${amavisd_svcj_options:="net_basic"}	# svcjs may be incompatible with amavisd_ram
+
+
+# possible values include: amavisd_ram="512m"
+# adds ram disk for amavisd defanging/decoding, speeds up large systems 10%
+start_precmd()
+{
+	rm -rf %%AMAVISDIR%%/tmp/* %%AMAVISDIR%%/tmp/.* 2>/dev/null || true
+	if [ ${amavisd_ram} ];then
+	  df %%AMAVISDIR%%/tmp | grep -E '^(/dev/md|tmpfs)' > /dev/null
+	  if [ $? -eq 1 ]; then
+	    mdmfs -s ${amavisd_ram} -p 750 -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
+	  fi
+	fi
+}
+
+run_rc_command $1

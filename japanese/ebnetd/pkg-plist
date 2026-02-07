@@ -1,0 +1,16 @@
+@sample etc/ebnetd.conf.sample
+libexec/ebhtstat
+libexec/ebnstat
+libexec/ndtpstat
+sbin/ebhtcheck
+sbin/ebhtcontrol
+sbin/ebhttpd
+sbin/ebncheck
+sbin/ebncontrol
+sbin/ebndaily
+sbin/ebnetd
+sbin/ebnupgrade
+sbin/ndtpcheck
+sbin/ndtpcontrol
+sbin/ndtpd
+@dir(%%EBNETD_USER%%,%%EBNETD_GROUP%%,0755) %%EBNETD_RUNDIR%%

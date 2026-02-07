@@ -1,0 +1,22 @@
+PORTNAME=	hexyl
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.16.0
+PORTREVISION=	10
+CATEGORIES=	sysutils
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Command-line hex viewer
+WWW=		https://github.com/sharkdp/hexyl
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	sharkdp
+
+PLIST_FILES=	bin/hexyl
+
+.include <bsd.port.mk>

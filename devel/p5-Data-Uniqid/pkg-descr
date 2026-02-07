@@ -1,0 +1,3 @@
+Data::Uniqid provides three simple routines for generating unique ids. These ids
+are coded with a Base62 systen to make them short and handy (e.g. to use it as
+part of a URL).

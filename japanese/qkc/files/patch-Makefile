@@ -1,0 +1,13 @@
+--- Makefile.orig	Sun Oct  1 00:00:00 1995
++++ Makefile	Wed Jun 20 17:22:12 2001
+@@ -1,8 +1,8 @@
+ # Makefile for qkc
+ 
+-CC     = cc
++CC    ?= cc
+ BIND   = $(CC)
+-CFLAGS = -O
++CFLAGS?= -O
+ LFLAGS = -o qkc $(CFLAGS)
+ OBJ    = qkc.o qkcopt.o qkchelp.o qkcconv.o qkctbl.o
+ 

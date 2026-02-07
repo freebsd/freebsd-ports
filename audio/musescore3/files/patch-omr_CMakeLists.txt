@@ -1,0 +1,11 @@
+--- omr/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ omr/CMakeLists.txt
+@@ -48,7 +48,7 @@ if (NOT MSVC)
+    set_target_properties (
+       omr
+       PROPERTIES
+-         COMPILE_FLAGS "${PCH_INCLUDE} -g -Wall -Wextra -Winvalid-pch -Wno-unused-private-field"
++         COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch -Wno-unused-private-field"
+       )
+ else (NOT MSVC)
+    set_target_properties (

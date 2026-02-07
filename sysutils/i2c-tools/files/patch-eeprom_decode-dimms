@@ -1,0 +1,148 @@
+--- eeprom/decode-dimms.orig	2024-11-13 19:00:52.000000000 +0200
++++ eeprom/decode-dimms	2024-11-13 19:37:51.930060000 +0200
+@@ -46,7 +46,8 @@
+ use File::Basename;
+ use vars qw($opt_html $opt_bodyonly $opt_side_by_side $opt_merge
+ 	    $opt_igncheck $use_sysfs $use_hexdump $sbs_col_width
+-	    @vendors %decode_callback @dimm $current %hexdump_cache);
++	    @vendors %decode_callback @dimm $current %hexdump_cache
++	    $opt_smbdev $use_smbdev);
+ 
+ use constant LITTLEENDIAN	=> "little-endian";
+ use constant BIGENDIAN		=> "big-endian";
+@@ -498,6 +499,7 @@
+ }
+ 
+ $use_sysfs = -d '/sys/bus';
++$use_smbdev = '/dev/smb0';
+ 
+ # We consider that no data was written to this area of the SPD EEPROM if
+ # all bytes read 0x00 or all bytes read 0xff
+@@ -2435,8 +2437,38 @@
+ 
+ 		return ($size, ($bytes->[0] < 64) ? 64 : $bytes->[0]);
+ 	}
++}
++
++sub freebsd_readbyte ($$) {
++	my ($offset, $dimm_i) = @_;
++
++	my $command = sprintf('/usr/sbin/smbmsg -f %s -s %#02x -c %d -i 1 -F %%02x 2>/dev/null',
++			      $use_smbdev, $dimm_i, $offset);
++	my $output = `$command`;
++	chomp($output);
++	my $byte = hex($output);
++	return $byte;
+ }
+ 
++sub freebsd_readword ($$) {
++	my ($offset, $dimm_i) = @_;
++
++	my $command = sprintf('/usr/sbin/smbmsg -f %s -s %#02x -c %d -w -i 2 -F %%04x 2>/dev/null',
++			      $use_smbdev, $dimm_i, $offset);
++	my $output = `$command`;
++	chomp($output);
++	my $word = hex($output);
++	return $word;
++}
++
++sub freebsd_spa_n($) {
++	my $page = shift;
++
++	my $command = sprintf('/usr/sbin/smbmsg -f %s -s %#02x -o 0 >/dev/null 2>&1',
++			      $use_smbdev, 0x6c + 2 * $page);
++	`$command`;
++}
++
+ # Read bytes from SPD-EEPROM
+ # Note: offset must be a multiple of 16!
+ sub readspd($$$)
+@@ -2450,6 +2482,15 @@
+ 			$size = @bytes - $offset;
+ 		}
+ 		return @bytes[$offset..($offset + $size - 1)];
++	} elsif ($use_smbdev) {
++		for my $i (0 .. (($size - 1) / 2)) {
++			my $off = $offset + 2 * $i;
++
++			freebsd_spa_n($off / 256);
++			my $word = freebsd_readword($off % 256, $dimm_i);
++			push (@bytes, $word & 0xff);
++			push (@bytes, $word >> 8);
++ 		}
+ 	} elsif ($use_sysfs) {
+ 		# Kernel 2.6 with sysfs
+ 		sysopen(HANDLE, "$dimm_i/eeprom", O_RDONLY)
+@@ -2529,7 +2570,7 @@
+ # Parse command-line
+ foreach (@ARGV) {
+ 	if ($_ eq '-h' || $_ eq '--help') {
+-		print "Usage: $0 [-c] [-f [-b]] [-x|-X file [files..]]\n",
++		print "Usage: $0 [-c] [-f [-b]] [-d|-x|-X file [files..]]\n",
+ 			"       $0 -h\n\n",
+ 			"  -f, --format            Print nice html output\n",
+ 			"  -b, --bodyonly          Don't print html header\n",
+@@ -2540,6 +2581,7 @@
+ 			"      --no-merge-cells    Don't merge neighbour cells with identical values\n",
+ 			"                          (side-by-side output only)\n",
+ 			"  -c, --checksum          Decode completely even if checksum fails\n",
++			"  -d,                     Read data from the device\n",
+ 			"  -x,                     Read data from hexdump files\n",
+ 			"  -X,                     Same as -x except treat multibyte hex\n",
+ 			"                          data as little endian\n",
+@@ -2579,6 +2621,10 @@
+ 		$opt_igncheck = 1;
+ 		next;
+ 	}
++	if ($_ eq '-d') {
++		$opt_smbdev = 1;
++		next;
++	}
+ 	if ($_ eq '-x') {
+ 		$use_hexdump = BIGENDIAN;
+ 		next;
+@@ -2593,7 +2639,11 @@
+ 		exit;
+ 	}
+ 
+-	push @dimm, { eeprom => basename($_), file => $_ } if $use_hexdump;
++	if ($opt_smbdev) {
++		$use_smbdev = $_;
++	} else {
++		push @dimm, { eeprom => basename($_), file => $_ } if $use_hexdump;
++	}
+ }
+ 
+ # Default values
+@@ -2623,6 +2673,22 @@
+ 		@drivers = ('eeprom',
+ 			    'at24',
+ 			    'ee1004');	# DDR4
++	} elsif ($use_smbdev) {
++		my @dimms;
++
++		if (! -c $use_smbdev) {
++			print STDERR "SMBus device not found\n";
++			exit;
++		}
++		for my $spd (0xA0 .. 0xAE) {
++			next if ($spd % 2 != 0);
++			my @test_bytes = readspd(0, 4, $spd);
++			next unless spd_written(@test_bytes);
++			push @dimms, { eeprom => sprintf('0x%02X', $spd),
++				       file => $spd,
++				       driver => "smbus" };
++		}
++		return @dimms;
+ 	} else {
+ 		@drivers = ('eeprom');
+ 		$dir = '/proc/sys/dev/sensors';
+@@ -2910,7 +2976,7 @@
+ 	if ($opt_side_by_side) {
+ 		print "\n\n";
+ 	} else {
+-		printl2("\n\nDecoding EEPROM", $dimm[$current]->{file},
++		printl2("\n\nDecoding EEPROM", $dimm[$current]->{eeprom},
+ 			"text-decoration: underline; font-weight: bold;");
+ 	}
+ 	print "<table border=\"1\">\n" if $opt_html;

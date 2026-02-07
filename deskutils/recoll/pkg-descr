@@ -1,0 +1,17 @@
+Recoll is a personal full text search package. It is based on a very
+strong backend (Xapian), for which it provides an easy to use and
+feature-rich interface.
+
+Features:
+ * Free, GPL license.
+ * Easy installation, few dependencies. No database daemon, web server,
+   desktop environment or exotic language necessary.
+ * Will run on most Unix-based systems
+ * Qt 5 GUI, plus command line.
+ * Searches most common document types, emails and their attachments.
+   Transparently handles decompression (gzip, bzip2).
+ * Powerful query facilities, with boolean searches, phrases, proximity,
+   wildcards, filter on file types and directory tree.
+ * Multi-language and multi-character set with Unicode based internals.
+ * Extensive documentation, with a complete user manual and manual pages
+   for each command.

@@ -1,0 +1,11 @@
+--- frmts/snap_tiff/snaptiffdriver.cpp.orig	2025-05-06 16:38:15 UTC
++++ frmts/snap_tiff/snaptiffdriver.cpp
+@@ -8,7 +8,7 @@
+ #include "rawdataset.h"
+ 
+ #define LIBERTIFF_NS GDAL_libertiff
+-#include "../../third_party/libertiff/libertiff.hpp"
++#include "libertiff.hpp"
+ 
+ #include <algorithm>
+ #include <cmath>

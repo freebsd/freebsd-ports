@@ -1,0 +1,142 @@
+--- type1inst.orig	Wed Feb 11 20:00:13 1998
++++ type1inst	Tue Jun 26 00:53:33 2007
+@@ -78,15 +78,18 @@
+ @foundries = (
+ 	      "Adobe:adobe",
+               "Allied Corporation:allied",
++              "American Mathematical Society:ams",
+ 	      "Publishers' Paradise:paradise",
+ 	      "PUBLISHERS' PARADISE:paradise",
+ 	      "Bigelow & Holmes:b&h",
+ 	      "Bitstream:bitstream",
+ 	      "Corel Corporation:corel",
++	      "Swfte International:expert",
+ 	      "International Typeface Corporation:itc",
+ 	      "IBM:ibm",
+ 	      "LETRASET:letraset",
+ 	      "Monotype Corporation:monotype",
++	      "Star Division GmbH:star",
+ 	      "SoftMaker:softmaker",
+ 	      "URW:urw",
+ 	      "Jonathan Brecher:brecher",
+@@ -103,6 +106,7 @@
+ 	      "Reasonable Solutions:reasonable",
+ 	      "Southern Software:southern",
+ 	      "Title Wave:titlewave",
++	      "Wolfram Research:wri",
+ 	      "ZSoft:zsoft",
+ 	      "Digiteyes Multimedia:digiteyes",
+ 	      "MWSoft:mwsoft",
+@@ -110,7 +114,8 @@
+ 	      "Three Islands Press:3ip",
+ 	      "Hank Gillette:gillette",
+ 	      "Doug Miles:miles",
+-	      "Richard Mitchell:mitchell");
++	      "Richard Mitchell:mitchell",
++	      "Porchez Typofonderie:ptf");
+ 
+ # Note: Hershey is the public Hershey fonts which come with Ghostscript.
+ # These cause no end of problems since they look inside like funny PS
+@@ -337,7 +342,7 @@
+       # I think that we should accept the manufacturers classification.
+       # Try to extract this from FontName only if it's missing.
+       # (It shouldn't. There are other reasons why this won't work, though.)
+-      if (/\/FamilyName\s*\((.+)\)\s+readonly\s+def\s*/) {
++      if (/\/FamilyName\s*\((.+)\)\s*readonly\s+def\s*/) {
+ 	  $familyname = $1;
+ 
+ 	  # Convert to lower case (because case is insignificant).
+@@ -348,7 +353,7 @@
+       # a little cluttered, though. Perhaps it would be better to map it
+       # to standard strings like you do. It's named $weight_add because
+       # you already used $weight...
+-      if (/\/Weight\s*\((.+)\)\s+readonly\s+def\s*/) {
++      if (/\/Weight\s*\((.+)\)\s*readonly\s+def\s*/) {
+ 	  $weight_add = $1;
+ 
+ 	  # Convert to lower case. Spaces are acceptable according to XLFD?
+@@ -374,7 +379,7 @@
+       }
+       # FullName might contain useful information in determining
+       # the properties of a font.
+-      if (/\/FullName\s*\((.+)\)\s+readonly\s+def\s*/) {
++      if (/\/FullName\s*\((.+)\)\s*readonly\s+def\s*/) {
+ 	  $fullname = $1;
+ 
+ 	  # Convert to lower case
+@@ -385,7 +390,8 @@
+       }
+       # Note : some fonts have a suspect /FontName declaration where there
+       # is no space between /FontName and the name of the font itself....
+-      if (/\/FontName\s*[\/\(]([^\)]+)\)?\s+def\s*/) {
++      if (/\/FontName\s*[\/\(]([^\)]+)\)?\s*def\s*/
++		or ($gsfont and /^\/([^ ]+)\s+\d+\s+\[107\s+0/)) {
+ 	  $fontname = $1;
+ 
+ 	  # Remove any embedded spaces
+@@ -515,8 +521,8 @@
+       if (/\/BlendAxisTypes\s+\[([^\]]+)\]\s*def/) {
+ 	  $axis = $1;
+ 	  # Remove axises we don't need
+-	  $axis =~ s/\/Weight\s+//;
+-	  $axis =~ s/\/Width\s+//;
++	  $axis =~ s/\/Weight\s*//;
++	  $axis =~ s/\/Width\s*//;
+ 	  # Are there still some axises left?
+ 	  if ($axis =~ /\//) {
+ 	      # Remove trailing spaces
+@@ -532,12 +538,12 @@
+ 	  &try_another_way();
+ 	  # This is for .pfa and .pfb fonts
+ 	  last;
+-      } elsif (($gsfont) && (/currentdict\s+end/)) {
+-	  &try_another_way();
+-	  # This is for ghostscript .gsf fonts.  Why don't all these have a
+-	  # currentfile eexec ?
+-	  last;
+-      }
++      } #elsif (($gsfont) && (/currentdict\s+end/)) {
++	#  &try_another_way();
++	#  # This is for ghostscript .gsf fonts.  Why don't all these have a
++	#  # currentfile eexec ?
++	#  last;
++      #}
+   }
+   close(IN);
+ 
+@@ -784,7 +790,7 @@
+     log_only_msg("Reading Fontmap ....\n");
+ 
+     while (<FONTMAP>) {
+-	if (/\/+(\S+)\s+\((.*)\)\s+;\s+/) {
++	if (/\/+(\S+)\s*\((.*)\)\s*;\s*/) {
+ 	    chop;
+ 	    $fontname = $1;
+ 	    $filename = $2;
+@@ -1183,10 +1189,17 @@
+     }
+ }
+ 
++sub have_pfbtops_or_die
++{
++	system "type pfbtops >/dev/null" or return;
++	die "Can't find pfbtops. Try installing groff.\n";
++}
++
+ # Process binary PS fonts
+ foreach $filename (do_glob("pfa.gz")) {
+     if (($dox && (! $fs{$filename})) ||
+ 	(($dogs || $samples) && (! $fm{$filename}))) {
++	have_pfbtops_or_die();
+ 	system("gunzip -c $filename > foo");
+ 	($x, $gs) = &process_font("foo");
+ 	system("rm foo");
+@@ -1248,7 +1261,7 @@
+ 
+ if ($dox) {
+     &write_fonts_scale(%fs);
+-    system("mkfontdir");      # Generate fonts.dir
++    (system("mkfontdir") == 0) or system("echo 0 > fonts.dir");
+     system("chmod 0755 fonts.dir") && log_msg("Couldn't chmod \"fonts.dir\" ... continuing on anyway\n");
+ }
+ if ($dogs) {

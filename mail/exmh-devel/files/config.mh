@@ -1,0 +1,27 @@
+set wish !!WISH!!
+set exmh(version) {version !!VERSION!! !!DATE!!}
+set exmh(name) exmh
+set exmh(maintainer) welch@acm.org
+set mh_path !!PREFIX!!/bin
+set exmh(slocal) !!PREFIX!!/lib/mh/slocal
+set mime(dir) !!PREFIX!!/bin
+set mailcap_default !!PREFIX!!/etc/mailcap
+set mimetypes_default !!PREFIX!!/lib/exmh-!!VERSION!!/mime.types
+set exmh(expect) !!EXPECT!!
+set exmh(expectk) !!EXPECTK!!
+set faces(dir) !!FACES!!
+set faces(set,user) {local users usenix misc}
+set faces(set,unknown) {domains unknown}
+set faces(set,news) {news}
+set faces(defaultDomain) !!DOMAIN!!
+set faces(suffix) {xpm gif xbm}
+set pgp(gpg,path) !!GPG!!
+set pgp(pgp,path) !!PGP!!
+set pgp(pgp5,path) !!PGP5!!
+set pgp(pgp6,path) !!PGP6!!
+set glimpse(path) !!GLIMPSE!!
+set sound(cmd) !!PLAY!!
+set exmh(library) !!PREFIX!!/lib/exmh-!!VERSION!!
+set install(dir,bin) !!PREFIX!!/bin
+set install(dir,man) !!PREFIX!!/man/man1
+set install(dir,lib) !!PREFIX!!/lib/exmh-!!VERSION!!

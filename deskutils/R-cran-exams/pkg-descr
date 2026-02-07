@@ -1,0 +1,11 @@
+Automatic generation of exams based on exercises in Markdown or LaTeX format,
+possibly including R code for dynamic generation of exercise elements.
+
+Exercise types include single-choice and multiple-choice questions,
+arithmetic problems, string questions, and combinations thereof (cloze).
+
+Output formats include standalone files (PDF, HTML, Docx, ODT, ...), Moodle XML,
+QTI 1.2, QTI 2.1, Blackboard, Canvas, OpenOlat, ILIAS, TestVision, Particify,
+ARSnova, Kahoot!, Grasple, and TCExam.
+In addition to fully customizable PDF exams, a standardized PDF format (NOPS)
+is provided that can be printed, scanned, and automatically evaluated.

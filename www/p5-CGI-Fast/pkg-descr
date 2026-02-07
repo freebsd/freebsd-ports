@@ -1,0 +1,6 @@
+CGI::Fast is a subclass of the CGI object created by CGI.pm. It is specialized
+to work with the FCGI module, which greatly speeds up CGI scripts by turning
+them into persistently running server processes. Scripts that perform
+time-consuming initialization processes, such as loading large modules or
+opening persistent database connections, will see large performance
+improvements.

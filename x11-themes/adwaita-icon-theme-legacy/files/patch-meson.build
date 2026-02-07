@@ -1,0 +1,27 @@
+--- meson.build.orig	2024-05-17 12:38:21 UTC
++++ meson.build
+@@ -5,6 +5,7 @@ pkg.generate(
+   name : 'adwaita-icon-theme-legacy',
+   description : 'Icon theme that provides fallback icons for old apps relying on global icon themes',
+   dataonly : true,
++  install_dir : get_option('prefix') / 'libdata' / 'pkgconfig',
+ )
+ 
+ licenses_dir = get_option('datadir') / 'licenses' / 'adwaita-icon-theme'
+@@ -20,16 +21,4 @@ install_subdir(
+   install_dir: adwaita_dir,
+   strip_directory : true,
+   install_tag : 'runtime',
+-)
+-
+-gtk_update_icon_cache = find_program(
+-  'gtk4-update-icon-cache',
+-  'gtk-update-icon-cache',
+-  required : true,
+-)
+-meson.add_install_script(
+-  gtk_update_icon_cache,
+-  '-qtf',
+-  get_option('prefix') / adwaita_dir,
+-  skip_if_destdir: true,
+ )

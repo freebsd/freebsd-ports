@@ -1,0 +1,2 @@
+MooseX::Types::LoadableClass - ClassName type constraint with coercion to load
+the class.

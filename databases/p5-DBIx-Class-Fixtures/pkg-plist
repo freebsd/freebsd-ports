@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/DBIx::Class::Fixtures.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Fixtures::External::File.3.gz
+%%SITE_PERL%%/DBIx/Class/Fixtures.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/DBI.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/DBI/Pg.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/DBI/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/External/File.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/Schema.pm

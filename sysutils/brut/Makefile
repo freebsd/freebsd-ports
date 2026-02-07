@@ -1,0 +1,39 @@
+PORTNAME=	brut
+DISTVERSION=	1.55
+PORTREVISION=	2
+CATEGORIES=	sysutils
+
+MAINTAINER=	georg.lastname@web.de
+COMMENT=	Multitool, Partition Editor, Manage User/Groups
+WWW=		https://github.com/random532/brut
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gnome sudo
+USE_GITHUB=	yes
+GH_ACCOUNT=	random532
+USE_GNOME=	gtk30
+
+PLIST_FILES=	bin/brut
+
+PORTDOCS=	README.md
+PORTEXAMPLES=	screenshot/*.png
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+EXAMPLES_PLIST_FILES=	${EXAMPLESDIR}/scrot20.png \
+			${EXAMPLESDIR}/scrot21.png
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

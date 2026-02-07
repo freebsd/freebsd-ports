@@ -1,0 +1,3 @@
+An implementation of the Double Ratchet cryptographic ratchet described by
+https://whispersystems.org/docs/specifications/doubleratchet/, written in C and
+C++11 and exposed as a C API.

@@ -1,0 +1,12 @@
+bin/notes
+include/Desktop/Notes.h
+lib/libNotes.a
+lib/libNotes.so
+lib/libNotes.so.0
+lib/libNotes.so.0.0
+libdata/pkgconfig/Notes.pc
+share/applications/org.defora.notes.desktop
+%%PORTDOCS%%share/doc/Notes/COPYING
+%%PORTDOCS%%share/man/man1/notes.1.gz
+%%NLS%%share/locale/fr/LC_MESSAGES/Notes.mo
+%%NLS%%share/locale/es/LC_MESSAGES/Notes.mo

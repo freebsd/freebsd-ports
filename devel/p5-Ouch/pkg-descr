@@ -1,0 +1,5 @@
+Ouch provides a class for exception handling that doesn't require a
+lot of boilerplate, nor any up front definition.  If Exception::Class
+is working for you, great! But if you want something that is faster,
+easier to use, requires less typing, and has no prereqs, but still
+gives you much of that same functionality, then Ouch is for you.

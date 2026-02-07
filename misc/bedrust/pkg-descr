@@ -1,0 +1,11 @@
+bedrust is a neat way to invoke models on Amazon Bedrock.
+
+Currently supporting the following models:
+- Claude V2
+- Claude V3 Sonnet
+- Claude V3 Haiku
+- Llama2 70B
+- Cohere Command
+- Jurrasic 2 Ultra
+- Titan Text Express V1
+- Mistral AI models (Mixtral, Mistral7b and Mistral Large)

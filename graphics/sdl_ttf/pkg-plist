@@ -1,0 +1,8 @@
+bin/glfont
+bin/sdl-showfont
+include/SDL/SDL_ttf.h
+lib/libSDL_ttf-2.0.so.0
+lib/libSDL_ttf-2.0.so.0.10.1
+lib/libSDL_ttf.a
+lib/libSDL_ttf.so
+libdata/pkgconfig/SDL_ttf.pc

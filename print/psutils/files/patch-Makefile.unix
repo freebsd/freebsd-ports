@@ -1,0 +1,103 @@
+--- Makefile.unix.orig	1997-03-12 07:52:59.000000000 +0900
++++ Makefile.unix	2013-04-23 16:36:38.000000000 +0900
+@@ -25,21 +25,22 @@
+ 
+ OS = UNIX
+ 
+-BINDIR = /usr/local/bin
++BINDIR ?= $(DESTDIR)$(PREFIX)/bin
+ SCRIPTDIR = $(BINDIR)
+-INCLUDEDIR = /usr/local/share/psutils
+-PERL = /usr/local/bin/perl
++INCLUDEDIR ?= $(DESTDIR)$(DATADIR)
++PERL ?= $(PERL5)
+ 
+-BINMODE = 0755
+-MANMODE = 0644
+-CHMOD = chmod
++BINMODE ?= 0755
++MANMODE ?= 0644
++CHMOD ?= chmod
+ INSTALL = install -c -m $(BINMODE)
+ INSTALLMAN = install -c -m $(MANMODE)
+ MANEXT = 1
+-MANDIR = /usr/local/share/man/man$(MANEXT)
++MANDIR ?= $(DESTDIR)$(PREFIX)/share/man/man$(MANEXT)
+ 
+-CC = gcc
+-CFLAGS = -DPAPER=\"$(PAPER)\" -DUNIX -O -Wall
++CC ?= gcc
++CFLAGS += -DLIBPAPER -DPAPER=\"$(PAPER)\" -I${LOCALBASE}/include -DUNIX -Wall
++LDFLAGS+= -L${LOCALBASE}/lib -lm -lpaper
+ 
+ BIN = psbook psselect pstops epsffit psnup \
+ 	psresize
+@@ -65,30 +66,30 @@
+ epsffit.o: epsffit.c pserror.h patchlev.h
+ 
+ epsffit: epsffit.o pserror.o
+-	$(CC) $(CCFLAGS) -o epsffit pserror.o epsffit.o
++	$(CC) $(LDFLAGS) -o epsffit pserror.o epsffit.o
+ 
+ psnup: psnup.o psutil.o psspec.o pserror.o
+-	$(CC) $(CCFLAGS) -o psnup psutil.o psspec.o pserror.o psnup.o
++	$(CC) $(LDFLAGS) -o psnup psutil.o psspec.o pserror.o psnup.o
+ 
+ psnup.o: psutil.h patchlev.h psspec.h pserror.h psnup.c
+ 
+ psresize: psresize.o psutil.o pserror.o psspec.o
+-	$(CC) $(CCFLAGS) -o psresize psutil.o psspec.o pserror.o psresize.o
++	$(CC) $(LDFLAGS) -o psresize psutil.o psspec.o pserror.o psresize.o
+ 
+ psresize.o: psutil.h patchlev.h psspec.h pserror.h psresize.c
+ 
+ psbook: psbook.o psutil.o pserror.o
+-	$(CC) $(CCFLAGS) -o psbook psutil.o pserror.o psbook.o
++	$(CC) $(LDFLAGS) -o psbook psutil.o pserror.o psbook.o
+ 
+ psbook.o: psutil.h patchlev.h pserror.h psbook.c
+ 
+ psselect: psselect.o psutil.o pserror.o
+-	$(CC) $(CCFLAGS) -o psselect psutil.o pserror.o psselect.o
++	$(CC) $(LDFLAGS) -o psselect psutil.o pserror.o psselect.o
+ 
+ psselect.o: psutil.h patchlev.h pserror.h psselect.c
+ 
+ pstops: pstops.o psutil.o psspec.o pserror.o
+-	$(CC) $(CCFLAGS) -o pstops psutil.o psspec.o pserror.o pstops.o
++	$(CC) $(LDFLAGS) -o pstops psutil.o psspec.o pserror.o pstops.o
+ 
+ pstops.o: psutil.h patchlev.h psspec.h pserror.h pstops.c
+ 
+@@ -222,27 +223,27 @@
+ 	-mkdir $(BINDIR)
+ 	@for i in $(BIN); do \
+ 		echo Installing $$i; \
+-		$(INSTALL) $$i $(BINDIR); \
++		$(BSD_INSTALL_PROGRAM) $$i $(BINDIR); \
+ 	done
+ 
+ install.script: $(PERLSCRIPTS) $(SHELLSCRIPTS)
+ 	-mkdir $(SCRIPTDIR)
+ 	@for i in $(PERLSCRIPTS) $(SHELLSCRIPTS); do \
+ 		echo Installing $$i; \
+-		$(INSTALL) $$i $(SCRIPTDIR); \
++		$(BSD_INSTALL_SCRIPT) $$i $(SCRIPTDIR); \
+ 	done
+ 
+ install.include: $(INCLUDES)
+ 	-mkdir $(INCLUDEDIR)
+ 	@for i in $(INCLUDES); do \
+ 		echo Installing $$i; \
+-		$(INSTALLMAN) $$i $(INCLUDEDIR); \
++		$(BSD_INSTALL_DATA) $$i $(INCLUDEDIR); \
+ 	done
+ 
+ install.man: $(MANPAGES)
+ 	-mkdir $(MANDIR)
+ 	@for i in $(MANPAGES); do \
+ 		echo Installing manual page for $$i; \
+-		$(INSTALLMAN) $$i $(MANDIR)/$$i; \
++		$(BSD_INSTALL_DATA) $$i $(MANDIR)/$$i; \
+ 	done
+ 

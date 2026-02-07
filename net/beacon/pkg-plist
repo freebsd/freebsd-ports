@@ -1,0 +1,5 @@
+bin/beacon
+@sample etc/beacon.conf.sample
+etc/rc.d/beacon
+%%SITE_ARCH%%/Net/Multicast/Beacon.pm
+%%SITE_ARCH%%/auto/Net/Multicast/Beacon/Beacon.so

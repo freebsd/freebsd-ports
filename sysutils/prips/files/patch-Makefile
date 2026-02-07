@@ -1,0 +1,13 @@
+--- Makefile.orig	2025-04-12 14:26:52 UTC
++++ Makefile
+@@ -73,8 +73,8 @@ STRIP?=		-s
+ 
+ STRIP?=		-s
+ 
+-INSTALL_PROGRAM?=	${INSTALL} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+-INSTALL_DATA?=		${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE}
++INSTALL_PROGRAM?=	${INSTALL} ${STRIP} -m ${BINMODE}
++INSTALL_DATA?=		${INSTALL} -m ${SHAREMODE}
+ 
+ all: ${PROG} ${MAN1GZ}
+ 

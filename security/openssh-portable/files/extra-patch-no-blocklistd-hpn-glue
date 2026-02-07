@@ -1,0 +1,27 @@
+--- sshd-session.c.orig	2025-10-11 10:16:00.048273000 -0700
++++ sshd-session.c	2025-10-11 10:16:02.937735000 -0700
+@@ -149,6 +149,12 @@ static int have_agent = 0;
+ /* Daemon's agent connection */
+ int auth_sock = -1;
+ static int have_agent = 0;
++
++/*
++ * This is compiled WITHOUT blocklistd support. This is done for patch
++ * glue in ports.
++ */
++#define BLACKLIST_NOTIFY(...)
+ 
+ /*
+  * Any really sensitive data in the application is contained in this
+@@ -1275,8 +1281,10 @@ main(int ac, char **av)
+ 	}
+ 
+ 	if ((r = kex_exchange_identification(ssh, -1,
+-	    options.version_addendum)) != 0)
++	    options.version_addendum)) != 0) {
++		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
+ 		sshpkt_fatal(ssh, r, "banner exchange");
++	}
+ 
+ 	ssh_packet_set_nonblocking(ssh);
+ 

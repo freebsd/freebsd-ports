@@ -1,0 +1,20 @@
+witr (why-is-this-running) is a diagnostic tool that explains the causal
+chain of how and why a process came to exist on your system.
+
+It answers questions like:
+- Why is this running?
+- How did it start?
+- What is keeping it running?
+- What context does it belong to?
+
+witr supports querying by process name, PID, or port number, and provides
+detailed information about process ancestry, service detection (systemd on
+Linux, rc.d on FreeBSD), container detection (jails, docker), Git repository
+context, and resource usage warnings.
+
+Features:
+- Zero configuration required
+- Read-only and non-destructive
+- Multiple output formats (standard, short, tree, JSON)
+- FreeBSD native tools support (ps, procstat, sockstat, fstat)
+- Works without procfs mounted

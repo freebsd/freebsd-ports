@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+You must have a registered host with No-IP (www.noip.com)
+to use the noip Dynamic DNS Update Client (DUC).
+
+You must also create the noip configuration file
+%%PREFIX%%/etc/no-ip2.conf before using noip. To create the
+configuration file, run as root:
+
+    %%PREFIX%%/bin/noip2 -C
+
+You will be prompted to enter the Ethernet port that will be
+associated with the host, your No-IP account name and
+password, and the hostname you have registered with No-IP.
+Your No-IP username and password are not stored, the
+config file contains a unique key for the DUC to access the
+No-IP DDNS service and only root has read permission.
+
+If you are compiling from source using the ports tree, you
+can also "make conf" to create the configuration file.
+
+To run noip automatically at boot, add the following line
+to /etc/rc.conf:
+
+    noip_enable="YES"
+
+Refer to the following for more information:
+
+    %%PREFIX%%/bin/noip2 --help
+    %%DOCSDIR%%/README.FIRST
+EOM
+}
+]

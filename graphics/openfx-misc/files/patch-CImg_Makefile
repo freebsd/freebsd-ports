@@ -1,0 +1,17 @@
+--- CImg/Makefile.orig	2022-07-22 01:12:00 UTC
++++ CImg/Makefile
+@@ -166,12 +166,12 @@ CImg.h: Inpaint/inpaint.h
+ CIMGVERSION=b33dcc8f9f1acf1f276ded92c04f8231f6c23fcd
+ 
+ CImg.h: Inpaint/inpaint.h
+-	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/CImg.h
++#	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/CImg.h
+ #	patch -p0 -d. < CImg-2.0.0-anisotropic.patch
+ #	patch -p0 -d. < CImg-1.7.1-omp.patch
+ 
+ Inpaint/inpaint.h:
+-	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/plugins/inpaint.h
++#	curl -L -s -S -o $@ https://raw.githubusercontent.com/dtschump/CImg/$(CIMGVERSION)/plugins/inpaint.h
+ 	patch -p0 -d. < Inpaint/inpaint.h.patch
+ 
+ #nlmeans.h:

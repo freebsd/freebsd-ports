@@ -1,0 +1,9 @@
+Proto is an R package that facilitates prototype programming, a
+type of object-oriented programming that does not use classes as
+an atomic concept (but is powerful enough to encompass them).
+
+The package is lightweight providing a thin layer on top of R
+environments. Unlike other packages which grow over time proto has
+become smaller over time as it was successively polished to reduce
+it to its essentials. Despite its small size prototype-based systems
+can be more powerful than more complex class-based systems.

@@ -1,0 +1,13 @@
+- disable ex: it breaks the build, not sure why is it there
+
+--- src/surf/Makefile.orig	2022-07-15 23:19:54 UTC
++++ src/surf/Makefile
+@@ -58,7 +58,7 @@ depend: $(DEPEND)
+ 	@ echo '$$r makedep' >>eddep
+ 	@ echo 'w' >>eddep
+ 	@ cp Makefile Makefile.bak
+-	@ ex - Makefile < eddep
++	#@ ex - Makefile < eddep
+ 	@ rm eddep makedep 
+ 	@ echo '  ' >> Makefile
+ 	@ echo '# DEPENDENCIES MUST END AT END OF FILE' >> Makefile

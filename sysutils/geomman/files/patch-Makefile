@@ -1,0 +1,13 @@
+--- Makefile.orig	2025-08-12 04:59:59 UTC
++++ Makefile
+@@ -1,10 +1,4 @@
+-BINDIR= ${LIBEXECDIR}/bsdinstall
+ PROG=  geomman	
+-LINKS= ${BINDIR}/partedit ${BINDIR}/autopart \
+-       ${BINDIR}/partedit ${BINDIR}/scriptedpart
+-SYMLINKS= ../libexec/bsdinstall/partedit /usr/sbin/sade
+-CFLAGS+= -I/usr/local/include
+-LDFLAGS+= -L/usr/local/lib
+ LDADD+=	-lgeom -lutil -lbsddialog
+ 
+ PARTEDIT_ARCH= ${MACHINE}

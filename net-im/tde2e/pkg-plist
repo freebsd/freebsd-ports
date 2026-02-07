@@ -1,0 +1,10 @@
+include/td/e2e/e2e_api.h
+include/td/e2e/e2e_errors.h
+lib/cmake/tde2e/tde2eConfig.cmake
+lib/cmake/tde2e/tde2eConfigVersion.cmake
+lib/cmake/tde2e/tde2eStaticTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/tde2e/tde2eStaticTargets.cmake
+lib/libtde2e.a
+lib/libtdutils.a
+libdata/pkgconfig/tde2e.pc
+libdata/pkgconfig/tdutils.pc

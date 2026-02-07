@@ -1,0 +1,4 @@
+PyDESeq2 is a python implementation of the DESeq2 method for
+differential expression analysis (DEA) with bulk RNA-seq data,
+originally in R. It aims to facilitate DEA experiments for python
+users.

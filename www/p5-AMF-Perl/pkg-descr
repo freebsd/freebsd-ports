@@ -1,0 +1,12 @@
+Flash Remoting is a way for Flash movies running in a web browser to
+request structured data from the web server.  The following data types
+are supported - strings, numbers, dates, arrays, dictionaries/hashes,
+objects, recordsets.  Flash clients talk with the server using the AMF
+protocol, which is proprietary to Macromedia.  However, it's not that
+hard to decode.
+
+Using Flash::FLAP it is possible to send arbitrary data between client
+and server using very few lines of code.  There is no need to pack
+complicated data structures into CGI form parameteres or XML strings.
+The coding time can be spent on better things - data preparation and
+graphical presentation, not data delivery.

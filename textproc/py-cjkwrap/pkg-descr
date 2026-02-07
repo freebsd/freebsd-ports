@@ -1,0 +1,2 @@
+CJKwrap is a library for wrapping and filling CJK (Chinese, Japanese, and
+Korean) text. Fix Python issue24665.

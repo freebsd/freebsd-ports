@@ -1,0 +1,229 @@
+From 9c6b2b78e9076f1c2676aa0c41573db9ca480654 Mon Sep 17 00:00:00 2001
+From: Ulf Hermann <ulf.hermann@qt.io>
+Date: Tue, 02 Dec 2025 17:42:30 +0100
+Subject: [PATCH] QtQml: Invalidate fallback lookups after each call from AOT code
+
+Fallback property lookups are created for completely dynamic
+metaobjects. Anything about them may change between any two calls.
+
+Pick-to: 6.8 6.5
+Fixes: QTBUG-142331
+Change-Id: Ib732c37a6f27ab8105bea0eeae000af7eb9c36d7
+Reviewed-by: Sami Shalayel <sami.shalayel@qt.io>
+(cherry picked from commit 9af6d2d6d0046b3c8369e15eb4791957cdc7ab7b)
+Reviewed-by: Fabian Kosmale <fabian.kosmale@qt.io>
+---
+
+--- src/qml/jsruntime/qv4lookup_p.h
++++ src/qml/jsruntime/qv4lookup_p.h
+@@ -159,6 +159,10 @@
+             const QQmlPropertyData *propertyData;
+         } qobjectMethodLookup;
+         struct {
++            // NB: None of this is actually cache-able. The metaobject may change at any time.
++            //     We invalidate this data every time the lookup is invoked and thereby force a
++            //     re-initialization next time.
++
+             quintptr isConstant; // This is a bool, encoded as 0 or 1. Both values are ignored by gc
+             quintptr metaObject; // a (const QMetaObject* & 1) or nullptr
+             int coreIndex;
+--- src/qml/qml/qqml.cpp
++++ src/qml/qml/qqml.cpp
+@@ -1386,16 +1386,16 @@
+ 
+ static FallbackPropertyQmlData findFallbackPropertyQmlData(QV4::Lookup *lookup, QObject *object)
+ {
+-    QQmlData *qmlData = QQmlData::get(object);
+-    if (qmlData && qmlData->isQueuedForDeletion)
+-        return {qmlData, nullptr, PropertyResult::Deleted};
++    // We've just initialized the lookup. So everything must be fine here.
+ 
++    QQmlData *qmlData = QQmlData::get(object);
++
++    Q_ASSERT(!qmlData || !qmlData->isQueuedForDeletion);
+     Q_ASSERT(!QQmlData::wasDeleted(object));
+ 
+     const QMetaObject *metaObject
+             = reinterpret_cast<const QMetaObject *>(lookup->qobjectFallbackLookup.metaObject - 1);
+-    if (!metaObject || metaObject != object->metaObject())
+-        return {qmlData, nullptr, PropertyResult::NeedsInit};
++    Q_ASSERT(metaObject == object->metaObject());
+ 
+     return {qmlData, metaObject, PropertyResult::OK};
+ }
+@@ -2585,6 +2585,7 @@
+         break;
+     case QV4::Lookup::Call::ContextGetterScopeObjectPropertyFallback:
+         result = loadFallbackProperty(lookup, qmlScopeObject, target, this);
++        lookup->call = QV4::Lookup::Call::ContextGetterGeneric;
+         break;
+     default:
+         return false;
+@@ -2616,6 +2617,7 @@
+         break;
+     case QV4::Lookup::Call::ContextGetterScopeObjectPropertyFallback:
+         result = writeBackFallbackProperty(lookup, qmlScopeObject, source);
++        lookup->call = QV4::Lookup::Call::ContextGetterGeneric;
+         break;
+     default:
+         return false;
+@@ -2816,6 +2818,7 @@
+         result = lookup->asVariant
+                 ? loadFallbackAsVariant(lookup, object, target, this)
+                 : loadFallbackProperty(lookup, object, target, this);
++        lookup->call = QV4::Lookup::Call::GetterGeneric;
+         break;
+     default:
+         return false;
+@@ -2850,6 +2853,7 @@
+         result = lookup->asVariant
+                 ? writeBackFallbackAsVariant(lookup, object, source)
+                 : writeBackFallbackProperty(lookup, object, source);
++        lookup->call = QV4::Lookup::Call::GetterGeneric;
+         break;
+     default:
+         return false;
+@@ -3010,6 +3014,7 @@
+         result = lookup->asVariant
+                 ? storeFallbackAsVariant(engine->handle(), lookup, object, value)
+                 : storeFallbackProperty(lookup, object, value);
++        lookup->call = QV4::Lookup::Call::SetterGeneric;
+         break;
+     default:
+         return false;
+--- tests/auto/qml/qmlcppcodegen/data/CMakeLists.txt
++++ tests/auto/qml/qmlcppcodegen/data/CMakeLists.txt
+@@ -26,6 +26,7 @@
+     multiforeign.h
+     objectwithmethod.h
+     person.cpp person.h
++    propertymap.h
+     qmlusing.h
+     recursiveObject.h
+     refuseWrite.h
+@@ -282,6 +283,7 @@
+     popContextAfterRet.qml
+     prefixedMetaType.qml
+     pressAndHoldButton.qml
++    propertyMap.qml
+     qmlUsing.qml
+     qtbug113150.qml
+     qtfont.qml
+--- /dev/null
++++ tests/auto/qml/qmlcppcodegen/data/propertyMap.qml
+@@ -0,0 +1,6 @@
++pragma Strict
++import TestTypes
++
++WithPropertyMap {
++    objectName: map.foo
++}
+--- /dev/null
++++ tests/auto/qml/qmlcppcodegen/data/propertymap.h
+@@ -0,0 +1,40 @@
++// Copyright (C) 2025 The Qt Company Ltd.
++// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
++
++#ifndef PROPERTYMAP_H
++#define PROPERTYMAP_H
++
++#include <QtCore/qobject.h>
++#include <QtQml/qqml.h>
++#include <QtQml/qqmlpropertymap.h>
++
++class WithPropertyMap : public QObject
++{
++    Q_OBJECT
++    QML_ELEMENT
++    Q_PROPERTY(QQmlPropertyMap *map READ map NOTIFY mapChanged)
++public:
++    WithPropertyMap(QObject *parent = nullptr)
++        : QObject(parent)
++        , m_map(new QQmlPropertyMap(this))
++    {
++    }
++
++    QQmlPropertyMap *map() const { return m_map; }
++
++    void setProperties(const QVariantHash &properties)
++    {
++        delete m_map;
++        m_map = new QQmlPropertyMap(this);
++        m_map->insert(properties);
++        emit mapChanged();
++    }
++
++signals:
++    void mapChanged();
++
++private:
++    QQmlPropertyMap *m_map = nullptr;
++};
++
++#endif // PROPERTYMAP_H
+--- tests/auto/qml/qmlcppcodegen/tst_qmlcppcodegen.cpp
++++ tests/auto/qml/qmlcppcodegen/tst_qmlcppcodegen.cpp
+@@ -10,6 +10,7 @@
+ #include <data/getOptionalLookup.h>
+ #include <data/listprovider.h>
+ #include <data/objectwithmethod.h>
++#include <data/propertymap.h>
+ #include <data/qmlusing.h>
+ #include <data/refuseWrite.h>
+ #include <data/resettable.h>
+@@ -237,6 +238,7 @@
+     void parentProperty();
+     void popContextAfterRet();
+     void prefixedType();
++    void propertyMap();
+     void propertyOfParent();
+     void qmlUsing();
+     void qtfont();
+@@ -4908,6 +4910,47 @@
+     QCOMPARE(o->property("countH").toInt(), 11);
+ }
+ 
++void tst_QmlCppCodegen::propertyMap()
++{
++    QQmlEngine engine;
++
++    const QUrl document(u"qrc:/qt/qml/TestTypes/propertyMap.qml"_s);
++    QQmlComponent c(&engine, document);
++    QVERIFY2(c.isReady(), qPrintable(c.errorString()));
++
++    QTest::ignoreMessage(
++            QtWarningMsg, qPrintable(
++                document.toString()
++                + u":5:5: QML WithPropertyMap: Unable to assign [undefined] to \"objectName\""));
++
++    QScopedPointer<QObject> o(c.create());
++    QVERIFY(o);
++
++    WithPropertyMap *w = qobject_cast<WithPropertyMap *>(o.data());
++    QVERIFY(w);
++
++    QVERIFY(w->objectName().isEmpty());
++
++    w->setProperties({
++        { u"foo"_s, u"aaa"_s },
++        { u"bar"_s, u"bbb"_s },
++    });
++
++    QCOMPARE(w->objectName(), u"aaa"_s);
++
++    w->setProperties({
++        { u"foo"_s, u"ccc"_s },
++    });
++
++    QCOMPARE(w->objectName(), u"ccc"_s);
++
++    w->setProperties({
++        { u"foo"_s, 24.25 },
++    });
++
++    QCOMPARE(w->objectName(), u"24.25"_s);
++}
++
+ void tst_QmlCppCodegen::propertyOfParent()
+ {
+     QQmlEngine engine;

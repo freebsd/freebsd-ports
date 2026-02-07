@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Devel/StackTrace/WithLexicals.pm
+%%SITE_PERL%%/Devel/StackTrace/WithLexicals/Frame.pm
+%%PERL5_MAN3%%/Devel::StackTrace::WithLexicals.3.gz

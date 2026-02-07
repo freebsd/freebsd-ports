@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Devel::Backtrace.3.gz
+%%PERL5_MAN3%%/Devel::Backtrace::Point.3.gz
+%%PERL5_MAN3%%/Devel::DollarAt.3.gz
+%%SITE_PERL%%/Devel/Backtrace.pm
+%%SITE_PERL%%/Devel/Backtrace/Point.pm
+%%SITE_PERL%%/Devel/DollarAt.pm

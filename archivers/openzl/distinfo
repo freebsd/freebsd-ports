@@ -1,0 +1,7 @@
+TIMESTAMP = 1760386552
+SHA256 (googletest-1.17.0.tar.gz) = 65fab701d9829d38cb77c14acdc431d2108bfdbf8979e40eb8ae567edf10b27c
+SIZE (googletest-1.17.0.tar.gz) = 885595
+SHA256 (facebook-openzl-v0.1.0_GH0.tar.gz) = 3278546dcdbae3aef3887f07b435ebe0aa9f6943a5ac74cf9b7baeefe6526c2e
+SIZE (facebook-openzl-v0.1.0_GH0.tar.gz) = 14437924
+SHA256 (facebook-zstd-v1.5.7_GH0.tar.gz) = 37d7284556b20954e56e1ca85b80226768902e2edabd3b649e9e72c0c9012ee3
+SIZE (facebook-zstd-v1.5.7_GH0.tar.gz) = 2451884

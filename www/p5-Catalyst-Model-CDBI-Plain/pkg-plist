@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Catalyst/Model/CDBI/Plain.pm
+%%SITE_PERL%%/Catalyst/Helper/Model/CDBI/Plain.pm
+%%PERL5_MAN3%%/Catalyst::Model::CDBI::Plain.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::Model::CDBI::Plain.3.gz

@@ -1,0 +1,76 @@
+diff --git Xi/getkmap.c Xi/getkmap.c
+index 04d8cbeaf..3cc614711 100644
+--- Xi/getkmap.c
++++ Xi/getkmap.c
+@@ -59,7 +59,6 @@ SOFTWARE.
+ #include "dix/request_priv.h"
+ #include "dix/rpcbuf_priv.h"
+ #include "Xi/handlers.h"
+-#include "xkb/xkbsrv_priv.h"
+ 
+ #include "inputstr.h"           /* DeviceIntPtr      */
+ #include "swaprep.h"
+diff --git hw/xquartz/quartzKeyboard.c hw/xquartz/quartzKeyboard.c
+index a26ea19c5..82b8d45b4 100644
+--- hw/xquartz/quartzKeyboard.c
++++ hw/xquartz/quartzKeyboard.c
+@@ -44,10 +44,6 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <sys/stat.h>
+-#include <assert.h>
+-#include <pthread.h>
+-
+-#include "xkb/xkbsrv_priv.h"
+ 
+ #include "quartz.h"
+ #include "darwin.h"
+@@ -57,6 +53,9 @@
+ 
+ #include "X11Application.h"
+ 
++#include <assert.h>
++#include <pthread.h>
++
+ #include "xkbsrv.h"
+ #include "exevents.h"
+ #include "X11/keysym.h"
+diff --git include/xkbsrv.h include/xkbsrv.h
+index 3604c86af..b06f57bef 100644
+--- include/xkbsrv.h
++++ include/xkbsrv.h
+@@ -197,6 +197,9 @@ extern _X_EXPORT void XkbFreeKeyboard(XkbDescPtr /* xkb */ ,
+                                       Bool      /* freeDesc */
+     );
+ 
++extern _X_EXPORT KeySymsPtr XkbGetCoreMap(DeviceIntPtr  /* keybd */
++    );
++
+ extern _X_EXPORT void XkbApplyMappingChange(DeviceIntPtr /* pXDev */ ,
+                                             KeySymsPtr /* map */ ,
+                                             KeyCode /* firstKey */ ,
+@@ -210,6 +213,11 @@ extern _X_EXPORT void XkbDDXChangeControls(DeviceIntPtr /* dev */ ,
+                                            XkbControlsPtr       /* new */
+     );
+ 
++extern _X_EXPORT void XkbSetRepeatKeys(DeviceIntPtr /* pXDev */ ,
++                                       int /* key */ ,
++                                       int      /* onoff */
++    );
++
+ extern _X_EXPORT void XkbGetRulesDflts(XkbRMLVOSet *    /* rmlvo */
+     );
+ 
+diff --git xkb/xkbsrv_priv.h xkb/xkbsrv_priv.h
+index 1b348471f..894f27eb2 100644
+--- xkb/xkbsrv_priv.h
++++ xkb/xkbsrv_priv.h
+@@ -303,8 +303,4 @@ int XkbDDXUsesSoftRepeat(DeviceIntPtr dev);
+ void XkbDDXKeybdCtrlProc(DeviceIntPtr dev, KeybdCtrl *ctrl);
+ void XkbDDXUpdateDeviceIndicators(DeviceIntPtr dev, XkbSrvLedInfoPtr sli,
+                                   CARD32 newState);
+-
+-KeySymsPtr XkbGetCoreMap(DeviceIntPtr keybd);
+-void XkbSetRepeatKeys(DeviceIntPtr pXDev, int key, int onoff);
+-
+ #endif /* _XSERVER_XKBSRV_PRIV_H_ */

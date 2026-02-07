@@ -1,0 +1,10 @@
+@owner jvb
+@group jitsi
+@sample %%ETCDIR%%/jitsi-videobridge.conf.sample
+@sample %%ETCDIR%%/sip-communicator.properties.sample
+%%JAVAJARDIR%%/jitsi-videobridge.jar
+%%DATADIR%%/lib/logging.properties
+%%DATADIR%%/lib/videobridge.rc
+@dir(jvb,jitsi,750) %%ETCDIR%%
+@owner
+@group

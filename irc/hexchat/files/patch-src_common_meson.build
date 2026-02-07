@@ -1,0 +1,11 @@
+--- src/common/meson.build.orig	2021-10-07 15:54:34.995639000 +0200
++++ src/common/meson.build	2021-10-07 15:54:46.304819000 +0200
+@@ -73,7 +73,7 @@
+ #   SIGACTION
+ #   HAVE_GTK_MAC
+ 
+-if libssl_dep.found()
++if libssl_dep_found
+   common_sources += 'ssl.c'
+   common_deps += libssl_dep
+ endif

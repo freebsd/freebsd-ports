@@ -1,0 +1,11 @@
+--- meson.build.orig	2021-12-02 03:37:39.000000000 -0900
++++ meson.build	2022-01-04 02:25:43.961204000 -0900
+@@ -112,7 +112,7 @@
+ 
+ executable('ftgrid',
+   'src/ftgrid.c',
+-  dependencies: libfreetype2_dep,
++  dependencies: [libfreetype2_dep, math_dep],
+   include_directories: graph_include_dir,
+   link_with: [ftcommon_lib, output_lib],
+   install: true)

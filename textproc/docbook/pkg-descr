@@ -1,0 +1,2 @@
+A meta-port for the DocBook DTD.  This port depends upon the docbook-*
+ports, to ensure that they are installed correctly.

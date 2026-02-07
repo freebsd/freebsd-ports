@@ -1,0 +1,11 @@
+--- po/fr.po.orig	2000-06-13 11:57:11 UTC
++++ po/fr.po
+@@ -32,7 +32,7 @@ msgstr "Création d'un nouveau fichier.\n"
+ #: src/cache.c:83 src/cache.c:89
+ #, c-format
+ msgid "Cache file `%s' is broken at line %d.\n"
+-msgstr "Le fichier de cache a une erreur à la ligne %d.\n"
++msgstr "Le fichier de cache `%s' a une erreur à la ligne %d.\n"
+ 
+ #: src/cache.c:200
+ msgid "Internal error: cache facility is broken.\n"

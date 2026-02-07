@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Nexmo/SMS.pm
+%%SITE_PERL%%/Nexmo/SMS/BinaryMessage.pm
+%%SITE_PERL%%/Nexmo/SMS/GetBalance.pm
+%%SITE_PERL%%/Nexmo/SMS/MockLWP.pm
+%%SITE_PERL%%/Nexmo/SMS/Response.pm
+%%SITE_PERL%%/Nexmo/SMS/Response/Message.pm
+%%SITE_PERL%%/Nexmo/SMS/TextMessage.pm
+%%SITE_PERL%%/Nexmo/SMS/WAPPushMessage.pm
+%%PERL5_MAN3%%/Nexmo::SMS.3.gz
+%%PERL5_MAN3%%/Nexmo::SMS::BinaryMessage.3.gz
+%%PERL5_MAN3%%/Nexmo::SMS::GetBalance.3.gz
+%%PERL5_MAN3%%/Nexmo::SMS::MockLWP.3.gz
+%%PERL5_MAN3%%/Nexmo::SMS::Response.3.gz
+%%PERL5_MAN3%%/Nexmo::SMS::Response::Message.3.gz
+%%PERL5_MAN3%%/Nexmo::SMS::TextMessage.3.gz
+%%PERL5_MAN3%%/Nexmo::SMS::WAPPushMessage.3.gz

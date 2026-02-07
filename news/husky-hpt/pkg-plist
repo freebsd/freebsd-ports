@@ -1,0 +1,10 @@
+bin/hpt
+bin/hptlink
+bin/hpttree
+bin/pktinfo
+bin/txt2pkt
+%%PORTDOCS%%share/man/man1/hpt.1.gz
+%%PORTDOCS%%share/man/man1/hptlink.1.gz
+%%PORTDOCS%%share/man/man1/hpttree.1.gz
+%%PORTDOCS%%share/man/man1/txt2pkt.1.gz
+%%PORTDOCS%%share/doc/husky/hpt.html

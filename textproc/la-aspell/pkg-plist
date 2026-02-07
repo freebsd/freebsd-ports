@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/la.dat
+lib/aspell-%%VER%%/la_affix.dat
+share/aspell/la.multi
+share/aspell/la.rws
+share/aspell/latin.alias

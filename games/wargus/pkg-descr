@@ -1,0 +1,10 @@
+Wargus is a Warcraft 2 Mod that allows you to play Warcraft 2 with the
+Stratagus engine. The mod is very similar to the original Warcraft 2, with
+enhancements towards Starcraft and other more modern real time strategy
+games.
+
+* Wargus is supported on multiple systems
+* Can be played high resolution, supports OpenGL including Shaders
+* Local or Internet multiplayer
+* Extensive game configuration using Lua
+* Extensive game configuration from the command line

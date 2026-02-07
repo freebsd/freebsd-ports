@@ -1,0 +1,11 @@
+bin/dvdisaster
+share/man/man1/dvdisaster.1.gz
+%%DEFAULT%%share/applications/dvdisaster.desktop
+%%DOCS%%%%DOCSDIR%%/codecs.pdf
+%%DOCS%%%%DOCSDIR%%/devices.txt
+%%DEFAULT%%%%DOCS%%%%DOCSDIR%%/dvdisaster.pdf
+%%DEFAULT%%share/pixmaps/dvdisaster16.png
+%%DEFAULT%%share/pixmaps/dvdisaster24.png
+%%DEFAULT%%share/pixmaps/dvdisaster32.png
+%%DEFAULT%%share/pixmaps/dvdisaster48.png
+%%DEFAULT%%share/pixmaps/dvdisaster64.png

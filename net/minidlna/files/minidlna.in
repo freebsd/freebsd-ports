@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: minidlna
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable minidlna:
+#
+# minidlna_enable="YES"
+
+. /etc/rc.subr
+
+name=minidlna
+rcvar=minidlna_enable
+
+load_rc_config $name
+
+minidlna_enable=${minidlna_enable-"NO"}
+minidlna_uid=${minidlna_uid-"%%USER%%"}
+
+command=%%PREFIX%%/sbin/minidlnad
+pidfile="/var/run/minidlna/minidlna.pid"
+command_args="-P $pidfile -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
+
+start_precmd="install -d -o $minidlna_uid ${pidfile%/*} /var/db/minidlna"
+stop_postcmd="rm -f $pidfile"
+
+extra_commands="rescan rebuild"
+rescan_cmd="$command -r -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
+rebuild_cmd="$command -R -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
+
+run_rc_command $1

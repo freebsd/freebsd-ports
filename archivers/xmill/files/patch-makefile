@@ -1,0 +1,86 @@
+--- makefile.orig	2016-07-26 12:48:05 UTC
++++ makefile
+@@ -43,25 +43,18 @@ INSPECTSRC = ./xmillinspect
+ PPMZIPSRC = ./ppmzip
+ PPMSRC = ./ppmdi
+ 
+-CPP = g++
+-CC = gcc
+-LINK = g++
++CPP = $(CXX)
++CC = $(CC)
++LINK = $(CPP)
+ 
+-CFLAGS = -O3 -c -w
+-CPPFLAGS_XMILL = $(CFLAGS) -DXMILL -Izlib -Ibzlib -IXMill -Ippmdi
+-CPPFLAGS_XDEMILL = $(CFLAGS) -Izlib -Ibzlib -DXDEMILL -Ippmdi
+-CPPFLAGS_XMILLTEST = $(CFLAGS) -IXMill
+-CPPFLAGS_PPMZIP = $(CFLAGS) -Ippmdi
++CPPFLAGS = $(CXXFLAGS) -c -w
++CPPFLAGS_XMILL = $(CPPFLAGS) -DXMILL -IXMill -Ippmdi
++CPPFLAGS_XDEMILL = $(CPPFLAGS) -DXDEMILL -Ippmdi
++CPPFLAGS_XMILLTEST = $(CPPFLAGS) -IXMill
++CPPFLAGS_PPMZIP = $(CPPFLAGS) -Ippmdi
+ 
+ # LINK_FLAGS = -L.
+ 
+-ZLIB_OBJS = $(TMP)/adler32.o $(TMP)/crc32.o $(TMP)/deflate.o $(TMP)/trees.o $(TMP)/uncompr.o \
+-            $(TMP)/inffast.o $(TMP)/inflate.o $(TMP)/inftrees.o $(TMP)/infutil.o $(TMP)/infblock.o \
+-            $(TMP)/infcodes.o $(TMP)/zutil.o
+-
+-BZLIB_OBJS= $(TMP)/blocksort.o $(TMP)/bzlib.o $(TMP)/compress_b.o $(TMP)/crctable.o $(TMP)/decompress.o \
+-            $(TMP)/huffman.o $(TMP)/randtable.o
+-
+ XMILLLIB_MISC  =  \
+ 		   $(TMP)/CompressMan.o $(TMP)/ContMan.o $(TMP)/PathDict.o \
+ 		   $(TMP)/UnCompCont.o \
+@@ -120,9 +113,9 @@ XMILL_OBJSPART = $(TMP)/realmain.o $(TMP
+ XDEMILL_OBJSPART = $(TMP)/realmain_u.o $(TMP)/Options_u.o
+ XMILLTEST_OBJSPART = $(TMP)/testset.o $(TMP)/xmilltest.o
+ 
+-XMILLOBJS    = $(ZLIB_OBJS) $(XMILL_OBJSPART) $(XMILLLIB_OBJSPART) $(BZLIB_OBJS) $(PPMDI_OBJS)
+-XDEMILLOBJS  = $(ZLIB_OBJS) $(XDEMILL_OBJSPART) $(XMILLLIB_OBJSPART) $(BZLIB_OBJS) $(PPMDI_OBJS)
+-XMILLTESTOBJS  = $(ZLIB_OBJS) $(XMILLTEST_OBJSPART) $(XMILLLIB_OBJSPART) $(BZLIB_OBJS) $(PPMDI_OBJS)
++XMILLOBJS    = $(XMILL_OBJSPART) $(XMILLLIB_OBJSPART) $(PPMDI_OBJS)
++XDEMILLOBJS  = $(XDEMILL_OBJSPART) $(XMILLLIB_OBJSPART) $(PPMDI_OBJS)
++XMILLTESTOBJS  = $(XMILLTEST_OBJSPART) $(XMILLLIB_OBJSPART) $(PPMDI_OBJS)
+ 
+ XMILLINSPECTOBJS = $(TMP)/containers.o $(TMP)/exprinfo.o \
+ 			$(TMP)/globals.o \
+@@ -131,27 +124,27 @@ XMILLINSPECTOBJS = $(TMP)/containers.o $
+ 			$(TMP)/lists.o \
+ 			$(TMP)/main.o \
+ 			$(TMP)/xmillinspect.o \
+-			$(ZLIB_OBJS) $(XMILLLIB_OBJSPART) $(BZLIB_OBJS) \
+-			$(PPMDI_OBJS)
++			$(XMILLLIB_OBJSPART) $(PPMDI_OBJS)
+ 
+ XMILLEXAMPLEOBJS = $(TMP)/xmillexample.o \
+-			$(ZLIB_OBJS) $(XMILLLIB_OBJSPART) $(BZLIB_OBJS) \
+-			$(PPMDI_OBJS)
++			$(XMILLLIB_OBJSPART) $(PPMDI_OBJS)
+ 
+ $(BIN)/xcmill : $(XMILLOBJS)
+-	$(LINK) -o $(BIN)/xcmill $(LINK_FLAGS) $(XMILLOBJS)
++	$(LINK) -o $(BIN)/xcmill $(LINK_FLAGS) $(XMILLOBJS) -lz -lbz2
+ 
+ $(BIN)/xdemill : $(XDEMILLOBJS)
+-	$(LINK) -o $(BIN)/xdemill $(LINK_FLAGS) $(XDEMILLOBJS)
++	$(LINK) -o $(BIN)/xdemill $(LINK_FLAGS) $(XDEMILLOBJS) -lz -lbz2
+ 
+ $(BIN)/xmilltest : $(XMILLTESTOBJS)
+-	$(LINK) -o $(BIN)/xmilltest $(LINK_FLAGS) $(XMILLTESTOBJS)
++	$(LINK) -o $(BIN)/xmilltest $(LINK_FLAGS) $(XMILLTESTOBJS) -lz -lbz2
+ 
+ $(BIN)/xmillexample : $(XMILLEXAMPLEOBJS)
+-	$(LINK) -o $(BIN)/xmillexample $(LINK_FLAGS) $(XMILLEXAMPLEOBJS)
++	$(LINK) -o $(BIN)/xmillexample $(LINK_FLAGS) $(XMILLEXAMPLEOBJS) \
++		-lz -lbz2
+ 
+ $(BIN)/xmillinspect : $(XMILLINSPECTOBJS)
+-	$(LINK) -o $(BIN)/xmillinspect $(LINK_FLAGS) $(XMILLINSPECTOBJS)
++	$(LINK) -o $(BIN)/xmillinspect $(LINK_FLAGS) $(XMILLINSPECTOBJS) \
++		-lz -lbz2
+ 
+ $(BIN)/ppmzip : $(PPMZIPOBJS)
+ 	$(LINK) -o $(BIN)/ppmzip $(LINK_FLAGS) $(PPMZIPOBJS)

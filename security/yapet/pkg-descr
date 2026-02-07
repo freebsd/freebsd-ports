@@ -1,0 +1,2 @@
+YAPET is a curses based password manager using AES-256 encryption
+algorithm to store passwords encrypted on disk.

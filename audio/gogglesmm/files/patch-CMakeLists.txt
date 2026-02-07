@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2023-04-23 15:13:49 UTC
++++ CMakeLists.txt
+@@ -69,6 +69,11 @@ endif()
+   add_compile_options(-Og)
+ endif()
+ 
++CHECK_CXX_COMPILER_FLAG(-Wno-inconsistent-missing-override HAS_CXX_NOOVERRIDE)
++if(HAS_CXX_NOOVERRIDE AND NOT CMAKE_BUILD_TYPE MATCHES Debug)
++  add_compile_options(-Wno-inconsistent-missing-override)
++endif()
++
+ # FIXME Doesn't work on all platforms.
+ #CHECK_CXX_COMPILER_FLAG(-flto HAS_CXX_OPTIMIZE_LINKTIME)
+ if(HAS_CXX_OPTIMIZE_LINKTIME AND NOT CMAKE_BUILD_TYPE MATCHES Debug)

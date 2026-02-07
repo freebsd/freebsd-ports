@@ -1,0 +1,8 @@
+CLI::Osprey is a module to assist in writing commandline applications with M* OO
+modules (Moose, Moo, Mo). With it, you structure your app as one or more
+modules, which get instantiated with the commandline arguments as attributes.
+Arguments are parsed using Getopt::Long::Descriptive, and both long and short
+help messages as well as complete manual pages are automatically generated. An
+app can be a single command with options, or have sub-commands (like git).
+Sub-commands can be defined as modules (with options of their own) or as simple
+coderefs.

@@ -1,0 +1,9 @@
+prawcore is a low-level communication layer for Python Reddit API Wrapper
+(PRAW) 4+. See: www/py-praw
+
+Features:
+
+  * Dynamic rate limiting based on reddit's response headers.
+  * Authorization URL generation
+  * Retrieval of access and refresh tokens from authorization grants
+  * Access and refresh token revocation

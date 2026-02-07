@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Litecoin Core
+Comment=Connect to the Litecoin P2P Network
+Comment[de]=Verbinde mit dem Litecoin peer-to-peer Netzwerk
+Comment[fr]=Litecoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Litecoin, esten ese kriptografik sanal para birimi
+Exec=litecoin-qt %u
+Terminal=false
+Type=Application
+Icon=litecoin
+MimeType=x-scheme-handler/litecoin;
+Categories=Office;Finance;
+StartupWMClass=Litecoin-qt

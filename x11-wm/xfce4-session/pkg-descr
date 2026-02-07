@@ -1,0 +1,3 @@
+The Xfce session manager controls the loading of applications when
+Xfce is started. It also handles logging out, shutting down, and
+rebooting.

@@ -1,0 +1,12 @@
+sispmctl is an application for managing USB controlled
+powerstrips produced by GEMBIRD LTD.
+Newer devices are sold under the Energenie brand.
+
+The following devices are supported:
+    * Gembird MSIS-PM
+    * Gembird Silver Shield SIS-PM (aka Revolt Intelliplug)
+    * Gembird Silver Shield SIS-PMS
+    * Energenie EG-PM
+    * Energenie EG-PMS
+    * Energenie EG-PM2
+    * Energenie EG-PMS2

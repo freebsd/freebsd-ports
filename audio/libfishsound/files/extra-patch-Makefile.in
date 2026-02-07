@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-02-15 07:50:04 UTC
++++ Makefile.in
+@@ -414,7 +414,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-gcc-werror
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gcc-werror
+-SUBDIRS = doc include src
++SUBDIRS = include src
+ EXTRA_DIST = fishsound.pc.in README.win32 \
+ 	win32/Makefile \
+ 	win32/libfishsound/libfishsound.def \

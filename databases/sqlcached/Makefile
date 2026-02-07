@@ -1,0 +1,33 @@
+PORTNAME=	sqlcached
+PORTVERSION=	r6
+PORTREVISION=	5
+CATEGORIES=	databases net
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	ivoras@FreeBSD.org
+COMMENT=	Cache daemon using SQL for data manipulation
+WWW=		https://sqlcached.sourceforge.net/
+
+USES=		localbase:ldflags ncurses readline sqlite tar:tgz
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PORTDOCS=	${PORTNAME}.html ${PORTNAME}.txt
+
+PLIST_FILES=	bin/${PORTNAME} etc/rc.d/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz
+
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' \
+		${WRKSRC}/FreeBSD/${PORTNAME}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/rc.d
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

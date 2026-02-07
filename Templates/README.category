@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<html>
+  <head>
+    <title>The FreeBSD Ports Collection (%%CATEGORY%%)</title>
+  </head>
+
+  <body>
+    <h1>The FreeBSD Ports Collection ("%%CATEGORY%%")</h1>
+    <hr>
+
+    <p>You are now in the directory "%%CATEGORY%%".</p>
+
+    <p>This is the one-line description for this category:</p>
+    <hr>
+
+    <p>
+%%COMMENT%%
+    </p>
+    <hr>
+
+    <p>
+%%DESCR%%
+    </p>
+
+    <p>Here are the one-line descriptions for each items in this
+    directory:</p>
+    <hr>
+<pre>
+%%SUBDIR%%
+</pre>
+    <hr>
+    <a href="../README.html">Go to parent directory</a>
+  </body>
+</html>

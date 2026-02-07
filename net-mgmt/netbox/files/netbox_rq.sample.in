@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# This sample rc script starts the RQ worker background service which is
+# required for Webhooks and various automation tasks.
+
+#
+# PROVIDE: netbox_rq
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable netbox-rq:
+#
+# netbox_rq_enable (bool):		Set to NO by default.
+#					Set it to YES to enable netbox_rq.
+
+. /etc/rc.subr
+
+name=netbox_rq
+rcvar=netbox_rq_enable
+
+load_rc_config $name
+
+start_cmd="netbox_rq_start"
+start_precmd="netbox_rq_precmd"
+command="%%PYTHON_CMD%%"
+command_args="%%DATADIR%%/manage.py rqworker"
+pidfile=${netbox_rq_pidfile:-/var/run/${name}/${name}.pid}
+netbox_rq_user=${netbox_rq_user:-www}
+
+
+netbox_rq_precmd()
+{
+	install -d -o ${netbox_rq_user} `dirname ${pidfile}`
+}
+
+netbox_rq_start()
+{
+	echo "Starting netbox_rq."
+	/usr/sbin/daemon -cf -p ${pidfile} -u ${netbox_rq_user} ${command} ${command_args}
+}
+
+run_rc_command "$1"

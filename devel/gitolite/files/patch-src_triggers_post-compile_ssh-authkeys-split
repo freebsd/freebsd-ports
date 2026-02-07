@@ -1,0 +1,11 @@
+--- src/triggers/post-compile/ssh-authkeys-split.orig	2018-07-12 07:50:58 UTC
++++ src/triggers/post-compile/ssh-authkeys-split
+@@ -73,7 +73,7 @@ do
+     seq=0
+     while read line
+     do
+-        (( seq++ ))
++	seq=$(( $seq + 1 ))
+         [ -z "$line" ] && continue
+         f=$SKD/$base@$seq.pub
+         echo "$line" > $f

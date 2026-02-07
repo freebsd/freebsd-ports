@@ -1,0 +1,13 @@
+bin/assetml-query
+include/libassetml-1.0/libassetml/assetml.h
+lib/libassetml.la
+lib/libassetml.so
+lib/libassetml.so.0
+lib/libassetml.so.0.0.0
+libdata/pkgconfig/libassetml.pc
+share/gnome/help/libassetml/C/libassetml.html
+share/gnome/help/libassetml/C/topic.dat
+share/locale/fr/LC_MESSAGES/libassetml.mo
+share/locale/it/LC_MESSAGES/libassetml.mo
+share/locale/ja/LC_MESSAGES/libassetml.mo
+@dir share/assetml

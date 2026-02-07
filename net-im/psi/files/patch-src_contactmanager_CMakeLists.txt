@@ -1,0 +1,9 @@
+--- src/contactmanager/CMakeLists.txt.orig	2018-07-20 20:03:45 UTC
++++ src/contactmanager/CMakeLists.txt
+@@ -28,5 +28,6 @@ list(APPEND FORMS
+ qt4_wrap_ui(UI_FORMS ${FORMS})
+ qt_wrap_cpp(MOC_SOURCES ${HEADERS})
+ add_library(contactmanager STATIC ${HEADERS} ${MOC_SOURCES} ${UI_FORMS} ${PLAIN_SOURCES})
++add_dependencies(contactmanager build_ui_files)
+ target_link_libraries(contactmanager ${QT_LIBRARIES} widgets)
+ target_include_directories(contactmanager PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})

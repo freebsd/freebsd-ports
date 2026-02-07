@@ -1,0 +1,5 @@
+Library and cli utility for reading data from OriginLab OPJ project files.
+Supported OPJ versions: 6.0 - 8.1
+
+Usage:
+	opj2dat <project.opj>

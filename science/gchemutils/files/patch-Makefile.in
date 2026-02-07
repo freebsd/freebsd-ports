@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2020-01-19 23:15:40 UTC
++++ Makefile.in
+@@ -944,7 +944,6 @@ info-am:
+ 
+ install-data-am: install-mimeDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am:

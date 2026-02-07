@@ -1,0 +1,24 @@
+--- avahi-discover-standalone/Makefile.in.orig	2017-09-15 01:20:16 UTC
++++ avahi-discover-standalone/Makefile.in
+@@ -97,9 +97,7 @@ am__DEPENDENCIES_1 =
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@am__DEPENDENCIES_3 = $(am__DEPENDENCIES_1) \
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@	$(am__DEPENDENCIES_1)
+-@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@avahi_discover_standalone_DEPENDENCIES = ../avahi-common/libavahi-common.la \
+-@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	../avahi-glib/libavahi-glib.la \
+-@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	../avahi-core/libavahi-core.la \
++@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@avahi_discover_standalone_DEPENDENCIES = \
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_2) \
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_3)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -428,9 +426,7 @@ interfaces = \
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_3)
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@avahi_discover_standalone_LDADD =  \
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(AM_LDADD) \
+-@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	../avahi-common/libavahi-common.la \
+-@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	../avahi-glib/libavahi-glib.la \
+-@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	../avahi-core/libavahi-core.la \
++@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	`$(PKG_CONFIG) --cflags --libs avahi-client avahi-core avahi-glib` \
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_2) \
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_4)
+ @HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@interfaces_DATA = $(interfaces)

@@ -1,0 +1,4 @@
+deltachat-rpc-server provides the core functionality of DeltaChat as a
+JSON-RPC service that can be interacted with using stdio. This
+service is useful for building custom bots or integrations for the
+DeltaChat platform.

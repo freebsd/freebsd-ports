@@ -1,0 +1,15 @@
+--- plugins/meson.build.orig	2024-03-16 22:14:58 UTC
++++ plugins/meson.build
+@@ -52,6 +52,12 @@ endif
+   disabled_plugins += ['print-notifications']
+ endif
+ 
++# It requires org.freedesktop.timedate1 service (systemd/elogind stuff)
++disabled_plugins += ['datetime', 'sharing']
++
++# It requires org.freedesktop.systemd1 service
++disabled_plugins += ['housekeeping']
++
+ # Specify futher required units, 'before' or 'after' may be specified if ordering is needed
+ plugin_gate_units = {
+     'xsettings': [

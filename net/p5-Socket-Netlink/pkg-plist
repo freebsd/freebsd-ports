@@ -1,0 +1,10 @@
+%%SITE_ARCH%%/IO/Socket/Netlink.pm
+%%SITE_ARCH%%/IO/Socket/Netlink/Generic.pm
+%%SITE_ARCH%%/Socket/Netlink.pm
+%%SITE_ARCH%%/Socket/Netlink/Generic.pm
+%%SITE_ARCH%%/Socket/Netlink/Generic_const.pm
+%%SITE_ARCH%%/auto/Socket/Netlink/Netlink.so
+%%PERL5_MAN3%%/IO::Socket::Netlink.3.gz
+%%PERL5_MAN3%%/IO::Socket::Netlink::Generic.3.gz
+%%PERL5_MAN3%%/Socket::Netlink.3.gz
+%%PERL5_MAN3%%/Socket::Netlink::Generic.3.gz

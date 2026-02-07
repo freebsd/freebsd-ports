@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+
+This port does not start artbtt-capture automatically, you need to
+setup your desktop enviroment to run arbtt-capture on start.
+
+On supported WMs such as GNOME, KDE you can do that by
+cp %%EXAMPLESDIR%%/arbtt-capture.desktop ~/.config/autostart/
+
+Also, you would need to have a categorize file at
+~/.arbtt/categorize.cfg to run arbtt-stats. A sample file is installed
+at %%EXAMPLESDIR%%/categorize.cfg
+
+EOM
+}
+]

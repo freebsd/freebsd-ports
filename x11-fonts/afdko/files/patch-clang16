@@ -1,0 +1,13 @@
+--- c/shared/source/tx_shared/tx_shared.c.orig	2023-06-13 21:30:33 UTC
++++ c/shared/source/tx_shared/tx_shared.c
+@@ -523,8 +523,8 @@ void stmInit(txCtx h) {
+     h->cb.stm.open = stm_open;
+     h->cb.stm.seek = stm_seek;
+     h->cb.stm.tell = stm_tell;
+-    h->cb.stm.read = stm_read;
+-    h->cb.stm.xml_read = stm_xml_read;
++    h->cb.stm.read = (size_t (*)(ctlStreamCallbacks *, void *, char **)) stm_read;
++    h->cb.stm.xml_read = (size_t (*)(ctlStreamCallbacks *, void *, xmlDocPtr *)) stm_xml_read;
+     h->cb.stm.write = stm_write;
+     h->cb.stm.status = stm_status;
+     h->cb.stm.close = stm_close;

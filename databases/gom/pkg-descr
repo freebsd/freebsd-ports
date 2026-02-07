@@ -1,0 +1,3 @@
+This is an attempt to make a DataMapper for GObject. Mostly because I'm
+sick of doing this by hand in C. It would be cool if it would work across
+language boundries using GObject Introspection too.

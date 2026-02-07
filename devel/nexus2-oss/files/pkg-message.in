@@ -1,0 +1,49 @@
+[
+{ type: install
+  message: <<EOM
+Nexus Repository Manager OSS %%VERSION%% has been successfully installed!
+
+To enable Nexus, add the following line to /etc/rc.conf[.local]:
+
+  %%NEXUS_RC%%_enable="YES"
+
+IMPORTANT: Nexus runs by default as user %%USER%%!
+
+Configuration
+=============
+* Start Nexus 'service %%NEXUS_RC%% start'
+* Open the following URL in your browser: http://localhost:8081/nexus
+* Log in with the admin account 'admin/admin123', configure Nexus and
+  change this password immediately!
+
+Common Locations
+================
+The configuration files can be found at:
+  %%ETCDIR%%
+
+The work, log, and run directories are located at:
+* %%WORKDIR%%
+* %%LOGDIR%%
+* %%RUNDIR%%
+
+Documentation
+=============
+Further documentation can be found at:
+  https://help.sonatype.com/repomanager2
+EOM
+},
+{
+  type: upgrade
+  maximum_version: "2.15.1_1"
+  message: <<EOM
+With the upgrade to javaservicewrapper-3.6.3 Nexus won't start unless you
+remove all properties ending with '.stripquotes' in your
+%%ETCDIR%%/wrapper.conf.
+EOM
+},
+{ type: remove
+  message: <<EOM
+Consider deleting %%ETCDIR%%, %%RUNDIR%%, %%LOGDIR%% and %%WORKDIR%% manually!"
+EOM
+}
+]

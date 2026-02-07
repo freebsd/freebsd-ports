@@ -1,0 +1,21 @@
+--- default_plugin/Makefile.in.orig	2006-05-24 23:27:15.000000000 +0800
++++ default_plugin/Makefile.in	2013-11-15 21:46:25.000000000 +0800
+@@ -616,15 +616,15 @@ uninstall-man: uninstall-man1
+ install-data-local:
+ #>- 	$(mkinstalldirs) ${DESTDIR}$(sysconfdir)/
+ #>+ 1
+-	$(mkinstalldirs) $(DESTDIR)${DESTDIR}$(sysconfdir)/
++	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/
+ #>- 	$(INSTALL_DATA) $(top_srcdir)/media-detect.conf ${DESTDIR}$(sysconfdir)/media-detect.conf
+ #>+ 1
+-	$(INSTALL_DATA) $(top_srcdir)/media-detect.conf $(DESTDIR)${DESTDIR}$(sysconfdir)/media-detect.conf
++	$(INSTALL_DATA) $(top_srcdir)/media-detect.conf $(DESTDIR)$(sysconfdir)/media-detect.conf
+ 
+ uninstall-local:
+ #>- 	-rm -f ${DESTDIR}$(sysconfdir)/media-detect.conf
+ #>+ 1
+-	-rm -f $(DESTDIR)${DESTDIR}$(sysconfdir)/media-detect.conf
++	-rm -f $(DESTDIR)$(sysconfdir)/media-detect.conf
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

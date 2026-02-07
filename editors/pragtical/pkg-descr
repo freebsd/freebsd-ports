@@ -1,0 +1,7 @@
+Pragtical is a code editor which was forked from Lite XL, written mostly in
+Lua with a focus on being practical rather than minimalist.  The name of the
+editor is a mixture of the words `pragmatic' and `practical', two words that
+properly define the project's development approach and differentiate it from
+its ancestors by striving to make Pragtical an editor that has amplified the
+set of features, better out of the box experience, while keeping an eye on
+performance and ease of extensibility.

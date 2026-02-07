@@ -1,0 +1,11 @@
+KDiff3 is a program that:
+
+    * compares or merges two or three text input files or directories,
+    * shows the differences line by line and character by character (!),
+    * provides an automatic merge-facility and
+    * an integrated editor for comfortable solving of merge-conflicts,
+    * supports KIO on KDE (allows accessing ftp, sftp, fish, smb etc.),
+    * Printing of differences,
+    * Manual alignment of lines,
+    * Automatic merging of version control history (cvs Log keyword),
+    * and has an intuitive graphical user interface.

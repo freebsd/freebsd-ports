@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2015-01-31 12:33:36 UTC
++++ Makefile.in
+@@ -280,7 +280,7 @@ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+ SUBDIRS = licenses src 
+ EXTRA_DIST = Doxyfile
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libfap.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

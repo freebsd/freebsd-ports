@@ -1,0 +1,2 @@
+Zsh-you-should-use reminds the user about the alias for a command
+one just typed. Supports detection of global and git alias.

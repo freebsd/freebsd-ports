@@ -1,0 +1,11 @@
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/README.md
+%%WWWDIR%%/composer.json
+@sample %%WWWDIR%%/config.inc.php.sample
+%%WWWDIR%%/lib/Yubico.php
+%%WWWDIR%%/localization/cs_CZ.inc
+%%WWWDIR%%/localization/de_DE.inc
+%%WWWDIR%%/localization/en_US.inc
+%%WWWDIR%%/localization/fr_FR.inc
+%%WWWDIR%%/yubikey.js
+%%WWWDIR%%/roundcube_yubikey_authentication.php

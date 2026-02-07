@@ -1,0 +1,10 @@
+HTML::TokeParser::Simple is a subclass of HTML::TokeParser that uses
+easy-to-remember method calls to work with the tokens.  Rather than
+try to remember a bunch of array indices or try to write a bunch of
+constants for them, you can now do something like:
+
+ $token->is_start_tag( 'form' )
+
+Instead of
+
+ $token->[0] eq 'S' and $token->[1] eq 'form'

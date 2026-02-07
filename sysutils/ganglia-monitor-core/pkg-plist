@@ -1,0 +1,36 @@
+bin/ganglia-config
+bin/gmetric
+bin/gstat
+@sample etc/gmond.conf.sample
+%%GMETAD%%@sample etc/gmetad.conf.sample
+include/ganglia.h
+include/ganglia_gexec.h
+include/gm_file.h
+include/gm_metric.h
+include/gm_mmn.h
+include/gm_msg.h
+include/gm_protocol.h
+include/gm_value.h
+lib/ganglia/modcpu.so
+lib/ganglia/moddisk.so
+lib/ganglia/modload.so
+lib/ganglia/modmem.so
+lib/ganglia/modmulticpu.so
+lib/ganglia/modnet.so
+lib/ganglia/modproc.so
+lib/ganglia/modsys.so
+lib/libganglia.so.0
+lib/libganglia.so.0.0.0
+lib/libganglia.a
+lib/libganglia.so
+%%GMETAD%%sbin/gmetad
+%%GMETAD%%sbin/gmetasnap
+sbin/gmond
+%%GMETAD%%share/man/man1/gmetad.1.gz
+%%GMETAD%%share/man/man1/gmetad.py.1.gz
+share/man/man1/gmetric.1.gz
+share/man/man1/gmond.1.gz
+share/man/man1/gstat.1.gz
+share/man/man5/gmond.conf.5.gz
+@dir(ganglia,ganglia,) /var/db/ganglia/rrds
+@dir(ganglia,ganglia,) /var/db/ganglia

@@ -1,0 +1,15 @@
+msgspec is a fast serialization and validation library, with builtin support for
+JSON, MessagePack, YAML, and TOML. It features:
+- High performance encoders/decoders for common protocols. The JSON and
+ MessagePack implementations regularly benchmark as the fastest options for
+  Python.
+- Support for a wide variety of Python types. Additional types may be supported
+  through extensions.
+- Zero-cost schema validation using familiar Python type annotations. In
+  benchmarks msgspec decodes and validates JSON faster than orjson can decode it
+  alone.
+- A speedy Struct type for representing structured data. If you already use
+  dataclasses or attrs, structs should feel familiar. However, they're 5-60x
+  faster for common operations.
+
+All of this is included in a lightweight library with no required dependencies.

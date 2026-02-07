@@ -1,0 +1,31 @@
+PORTNAME=	hunspell
+PORTVERSION=	3.3.10
+CATEGORIES=	textproc
+MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
+PKGNAMEPREFIX=	ro-
+DISTNAME=	ro_RO.${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	office@FreeBSD.org
+COMMENT=	Romanian hunspell dictionaries
+WWW=		https://rospell.sourceforge.net/
+
+LICENSE=	GPLv2 LGPL21 MPL11
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
+
+USES=		zip
+NO_ARCH=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	${DATADIR}/ro_RO.aff \
+		${DATADIR}/ro_RO.dic
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/ro_RO.aff ${WRKSRC}/ro_RO.dic ${STAGEDIR}${DATADIR}/
+
+.include <bsd.port.mk>

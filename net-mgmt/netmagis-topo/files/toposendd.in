@@ -1,0 +1,30 @@
+#! /bin/sh
+
+# PROVIDE: toposendd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable toposendd:
+#
+# toposendd_enable="YES"
+#
+# # Optionnal variables:
+# toposendd_flags=""
+# toposendd_user="rancid"
+#
+
+. /etc/rc.subr
+
+name=toposendd
+rcvar=toposendd_enable
+
+load_rc_config $name
+
+: ${toposendd_enable:=NO}
+: ${toposendd_user:=rancid}
+
+command_interpreter=%%TCLSH%%
+command=%%PREFIX%%/sbin/toposendd
+
+run_rc_command $1

@@ -1,0 +1,4 @@
+The find-libpython library is designed to find the path to the libpython dynamic
+library for the current Python environment. It should work with many types of
+installations, whether it be conda-managed, system-managed, or otherwise. And it
+should function on Windows, Mac OS/OS X, and any Linux distribution.

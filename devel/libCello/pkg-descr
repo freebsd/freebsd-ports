@@ -1,0 +1,15 @@
+Cello is a library that brings higher level programming to C.
+
+By acting as a modern, powerful runtime system Cello makes many things easy that
+were previously impractical or awkward in C such as:
+
+- Generic Data Structures
+- Polymorphic Functions
+- Interfaces / Type Classes
+- Constructors / Destructors
+- Optional Garbage Collection
+- Exceptions
+- Reflection
+
+And because Cello works seamlessly alongside standard C you get all the other
+benefits such as great performance, powerful tooling, and extensive libraries.

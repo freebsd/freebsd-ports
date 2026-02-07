@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/collection/720a3356-eee1-4015-9135-0fc08f7eb2d5.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/720a3356-eee1-4015-9135-0fc08f7eb2d5.yml
+@@ -6,7 +6,7 @@
+     attack_id: T1005
+     name: Data from Local System
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           for directoryname in $(find /home/ -name '.git' -type d 2>/dev/null | head -5); do
+@@ -21,4 +21,4 @@
+           Get-ChildItem C:\Users -Attributes Directory+Hidden -ErrorAction SilentlyContinue -Filter ".git" -Recurse | foreach {$_.parent.FullName} | Select-Object; exit 0;
+         parsers:
+           plugins.stockpile.app.parsers.basic:
+-            - source: host.dir.git
+\ No newline at end of file
++            - source: host.dir.git

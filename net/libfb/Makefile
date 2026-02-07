@@ -1,0 +1,20 @@
+PORTNAME=	libfb
+PORTVERSION=	2.0.2
+PORTREVISION=	3
+CATEGORIES=	net net-mgmt
+MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	FoneBRIDGE configuration library
+WWW=		http://red-fone.com/
+
+LIB_DEPENDS=	libnet.so:net/libnet
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-shared
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		libtool
+
+.include <bsd.port.mk>

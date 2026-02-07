@@ -1,0 +1,8 @@
+%%SITE_ARCH%%/Log/Syslog/Fast.pm
+%%SITE_ARCH%%/Log/Syslog/Fast/Constants.pm
+%%SITE_ARCH%%/Log/Syslog/Fast/PP.pm
+%%SITE_ARCH%%/Log/Syslog/Fast/Simple.pm
+%%SITE_ARCH%%/auto/Log/Syslog/Fast/Fast.so
+%%PERL5_MAN3%%/Log::Syslog::Fast.3.gz
+%%PERL5_MAN3%%/Log::Syslog::Fast::PP.3.gz
+%%PERL5_MAN3%%/Log::Syslog::Fast::Simple.3.gz

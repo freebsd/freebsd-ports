@@ -1,0 +1,10 @@
+Analogger is a fast asynchronous logging service and client library. It is
+implemented in Ruby, and currently uses EventMachine in the server, though there
+is a plan on the roadmap to enable it to run with a pure Ruby event reactor.
+
+Analogger was originally written over a decade ago, in response to a need to
+maintain a central logging server to accumulate logs from numerous web
+applications to a single location. It takes very little time to send a logging
+message, making it a very low impact logger for performance sensitive
+applications. It has been continuously used in production since then, albeit in
+a version not released publicly.

@@ -1,0 +1,255 @@
+PORTNAME=	fend
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.8
+PORTREVISION=	1
+CATEGORIES=	math
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Arbitrary-precision unit-aware calculator
+WWW=		https://printfn.github.io/fend \
+		https://github.com/printfn/fend
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	printfn
+
+CARGO_CRATES=	atomic-waker-1.1.2 \
+		aws-lc-rs-1.15.4 \
+		aws-lc-sys-0.37.0 \
+		base64-0.22.1 \
+		bitflags-2.10.0 \
+		bumpalo-3.19.1 \
+		bytes-1.11.0 \
+		cc-1.2.54 \
+		cesu8-1.1.0 \
+		cfg-if-1.0.4 \
+		cfg_aliases-0.2.1 \
+		clipboard-win-5.4.1 \
+		cmake-0.1.57 \
+		combine-4.6.7 \
+		core-foundation-0.9.4 \
+		core-foundation-0.10.1 \
+		core-foundation-sys-0.8.7 \
+		displaydoc-0.2.5 \
+		dunce-1.0.5 \
+		endian-type-0.1.2 \
+		equivalent-1.0.2 \
+		errno-0.3.14 \
+		error-code-3.3.2 \
+		fastrand-2.3.0 \
+		fd-lock-4.0.4 \
+		find-msvc-tools-0.1.8 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.2 \
+		fs_extra-1.3.0 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
+		getrandom-0.2.17 \
+		getrandom-0.3.4 \
+		h2-0.4.13 \
+		hashbrown-0.16.1 \
+		http-1.4.0 \
+		http-body-1.0.1 \
+		http-body-util-0.1.3 \
+		httparse-1.10.1 \
+		hyper-1.8.1 \
+		hyper-rustls-0.27.7 \
+		hyper-tls-0.6.0 \
+		hyper-util-0.1.19 \
+		icu_collections-2.1.1 \
+		icu_locale_core-2.1.1 \
+		icu_normalizer-2.1.1 \
+		icu_normalizer_data-2.1.1 \
+		icu_properties-2.1.2 \
+		icu_properties_data-2.1.2 \
+		icu_provider-2.1.1 \
+		idna-1.1.0 \
+		idna_adapter-1.2.1 \
+		indexmap-2.13.0 \
+		ipnet-2.11.0 \
+		iri-string-0.7.10 \
+		itoa-1.0.17 \
+		jni-0.21.1 \
+		jni-sys-0.3.0 \
+		jobserver-0.1.34 \
+		js-sys-0.3.85 \
+		libc-0.2.180 \
+		linux-raw-sys-0.11.0 \
+		litemap-0.8.1 \
+		log-0.4.29 \
+		lru-slab-0.1.2 \
+		memchr-2.7.6 \
+		mio-1.1.1 \
+		native-tls-0.2.14 \
+		nibble_vec-0.1.0 \
+		nix-0.30.1 \
+		once_cell-1.21.3 \
+		openssl-0.10.75 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.6 \
+		openssl-probe-0.2.1 \
+		openssl-sys-0.9.111 \
+		percent-encoding-2.3.2 \
+		pin-project-lite-0.2.16 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.32 \
+		potential_utf-0.1.4 \
+		ppv-lite86-0.2.21 \
+		proc-macro2-1.0.106 \
+		quinn-0.11.9 \
+		quinn-proto-0.11.13 \
+		quinn-udp-0.5.14 \
+		quote-1.0.44 \
+		r-efi-5.3.0 \
+		radix_trie-0.2.1 \
+		rand-0.9.2 \
+		rand_chacha-0.9.0 \
+		rand_core-0.9.5 \
+		reqwest-0.13.1 \
+		ring-0.17.14 \
+		rustc-hash-2.1.1 \
+		rustix-1.1.3 \
+		rustls-0.23.36 \
+		rustls-native-certs-0.8.3 \
+		rustls-pki-types-1.14.0 \
+		rustls-platform-verifier-0.6.2 \
+		rustls-platform-verifier-android-0.1.1 \
+		rustls-webpki-0.103.9 \
+		rustversion-1.0.22 \
+		rustyline-17.0.2 \
+		same-file-1.0.6 \
+		schannel-0.1.28 \
+		security-framework-2.11.1 \
+		security-framework-3.5.1 \
+		security-framework-sys-2.15.0 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_spanned-1.0.4 \
+		shlex-1.3.0 \
+		signal-hook-registry-1.4.8 \
+		slab-0.4.11 \
+		smallvec-1.15.1 \
+		socket2-0.6.2 \
+		stable_deref_trait-1.2.1 \
+		subtle-2.6.1 \
+		syn-2.0.114 \
+		sync_wrapper-1.0.2 \
+		synstructure-0.13.2 \
+		system-configuration-0.6.1 \
+		system-configuration-sys-0.6.0 \
+		tempfile-3.24.0 \
+		thiserror-1.0.69 \
+		thiserror-2.0.18 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.18 \
+		tinystr-0.8.2 \
+		tinyvec-1.10.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.49.0 \
+		tokio-macros-2.6.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-rustls-0.26.4 \
+		tokio-util-0.7.18 \
+		toml-0.9.11+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
+		toml_writer-1.0.6+spec-1.1.0 \
+		tower-0.5.3 \
+		tower-http-0.6.8 \
+		tower-layer-0.3.3 \
+		tower-service-0.3.3 \
+		tracing-0.1.44 \
+		tracing-core-0.1.36 \
+		try-lock-0.2.5 \
+		unicode-ident-1.0.22 \
+		unicode-segmentation-1.12.0 \
+		unicode-width-0.2.2 \
+		untrusted-0.9.0 \
+		url-2.5.8 \
+		utf8_iter-1.0.4 \
+		utf8parse-0.2.2 \
+		vcpkg-0.2.15 \
+		walkdir-2.5.0 \
+		want-0.3.1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.2+wasi-0.2.9 \
+		wasm-bindgen-0.2.108 \
+		wasm-bindgen-futures-0.4.58 \
+		wasm-bindgen-macro-0.2.108 \
+		wasm-bindgen-macro-support-0.2.108 \
+		wasm-bindgen-shared-0.2.108 \
+		web-sys-0.3.85 \
+		web-time-1.1.0 \
+		webpki-root-certs-1.0.5 \
+		winapi-util-0.1.11 \
+		windows-link-0.2.1 \
+		windows-registry-0.6.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
+		windows-sys-0.45.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
+		windows-sys-0.61.2 \
+		windows-targets-0.42.2 \
+		windows-targets-0.52.6 \
+		windows-targets-0.53.5 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.1 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.1 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.1 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.1 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.1 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.1 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.1 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.1 \
+		winnow-0.7.14 \
+		wit-bindgen-0.51.0 \
+		writeable-0.6.2 \
+		yoke-0.8.1 \
+		yoke-derive-0.8.1 \
+		zerocopy-0.8.33 \
+		zerocopy-derive-0.8.33 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
+		zeroize-1.8.2 \
+		zerotrie-0.2.3 \
+		zerovec-0.11.5 \
+		zerovec-derive-0.11.2
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+do-install:
+	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/release/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/chrome/test/BUILD.gn.orig	2019-05-23 12:39:34 UTC
++++ src/3rdparty/chromium/chrome/test/BUILD.gn
+@@ -5268,7 +5268,7 @@ test("chrome_app_unittests") {
+     "//components/crash/core/common",
+     "//components/flags_ui:switches",
+   ]
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+     deps += [ "//third_party/breakpad:client" ]
+   }

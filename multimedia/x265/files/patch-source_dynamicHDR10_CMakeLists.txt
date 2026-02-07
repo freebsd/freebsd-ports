@@ -1,0 +1,28 @@
+--- source/dynamicHDR10/CMakeLists.txt.orig	2020-06-06 13:37:44 UTC
++++ source/dynamicHDR10/CMakeLists.txt
+@@ -42,18 +42,6 @@ if(GCC)
+             endif()
+         endif()
+     endif()
+-    if(ARM AND CROSS_COMPILE_ARM)
+-        set(ARM_ARGS -march=armv6 -mfloat-abi=soft -mfpu=vfp -marm -fPIC)
+-    elseif(ARM)
+-        find_package(Neon)
+-        if(CPU_HAS_NEON)
+-            set(ARM_ARGS -mcpu=native -mfloat-abi=hard -mfpu=neon -marm -fPIC)
+-            add_definitions(-DHAVE_NEON)
+-        else()
+-            set(ARM_ARGS -mcpu=native -mfloat-abi=hard -mfpu=vfp -marm)
+-        endif()
+-    endif()
+-    add_definitions(${ARM_ARGS})
+     if(FPROFILE_GENERATE)
+         if(INTEL_CXX)
+             add_definitions(-prof-gen -prof-dir="${CMAKE_CURRENT_BINARY_DIR}")
+@@ -150,4 +138,4 @@ set(BIN_INSTALL_DIR bin CACHE STRING "Install location
+ option(ENABLE_SHARED "Build shared library" OFF)
+ 
+ install(FILES hdr10plus.h DESTINATION include)
+-endif()
+\ No newline at end of file
++endif()

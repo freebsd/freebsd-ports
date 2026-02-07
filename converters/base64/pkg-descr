@@ -1,0 +1,4 @@
+Base64 is a command line utility which encodes/decodes arbitrary
+binary information in the base64 format used by MIME-encoded
+documents, such as electronic mail messages with embedded files
+(RFC 1341 and successors).

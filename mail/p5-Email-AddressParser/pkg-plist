@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/Email/AddressParser/AddressParser.so
+%%SITE_ARCH%%/Email/AddressParser.pm
+%%PERL5_MAN3%%/Email::AddressParser.3.gz

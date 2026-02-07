@@ -1,0 +1,4 @@
+ucspi-tcp is a set of command-line tools for building TCP-based
+client/server applications.  They are compliant to UCSPI, the
+UNIX Client-Server Program Interface.  UCSPI tools are available
+for several different types of networks.

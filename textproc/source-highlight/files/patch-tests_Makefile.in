@@ -1,0 +1,20 @@
+--- tests/Makefile.in.orig	2024-04-23 17:29:34 UTC
++++ tests/Makefile.in
+@@ -14,6 +14,8 @@
+ 
+ @SET_MAKE@
+ 
++.NOTPARALLEL: # some of the java-related tests can't run in parallel
++
+ # Copyright (C) 1999-2008 Lorenzo Bettini <http://www.lorenzobettini.it>
+ #  
+ # This file is free software; as a special exception the author gives
+@@ -2240,7 +2242,7 @@ check_defaults:
+ @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.h/\.h/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
+ @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.cpp/\.cpp/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
+ @NO_CTAGS_FALSE@	$(CPP2LATEX_WREFS) -i $(srcdir)/test.h -o test_ref.out.tex $(CTAGS_COMMAND_TMP)
+-@NO_CTAGS_FALSE@	sed -itesttmp -r 's/([.\/[:alnum:]]+)\/(test\.h\:[[:alnum:]\._]+)/\2/g' test_ref.out.tex # eliminate leading paths
++@NO_CTAGS_FALSE@	sed -itesttmp -E 's/([.\/[:alnum:]]+)\/(test\.h\:[[:alnum:]\._]+)/\2/g' test_ref.out.tex # eliminate leading paths
+ @NO_CTAGS_FALSE@	$(CPP2LATEX_WREFSPOST) -i $(srcdir)/test.h -o test_ref_post.out.tex $(CTAGS_COMMAND_TMP)
+ @NO_CTAGS_FALSE@	sed -itesttmp -f $(srcdir)/erasedir3.sed test_ref_post.out.tex # eliminate leading paths
+ @NO_CTAGS_FALSE@	$(CPP2TEXINFO_WREFS) -i $(srcdir)/test.h -o test_ref.out.texinfo $(CTAGS_COMMAND_TMP)

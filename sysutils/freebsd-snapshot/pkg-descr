@@ -1,0 +1,7 @@
+freebsd-snapshot is a set of convenience frontend tools to mount(8)
+and mdconfig(8) for the management of UFS2/ZFS snapshots.  It is
+also the under-lying tool used in the periodic snapshot
+scheduler periodic-snapshot(8) and the mounting/unmouning
+command in the amd(8) map /usr/local/etc/amd.map.snap. It
+provides the making, expiring, visiting, mounting and
+unmounting of filesystem snapshots.

@@ -1,0 +1,21 @@
+--- scripts/build/checkHtmlFileDates.orig	2024-05-10 08:05:57.221756000 -0700
++++ scripts/build/checkHtmlFileDates	2024-05-10 08:07:53.965997000 -0700
+@@ -18,17 +18,5 @@
+ 
+ # Do nothing if the directory is not a BK repo,
+ # or if BK is not even installed.
+-bk status > /dev/null 2>&1 || exit 0
+ 
+-for i in `echo *.html`
+-do
+-    # echo $i
+-    set `bk diff --normal $i | wc -l`
+-    lines=$1
+-    case "$lines" in
+-     0) ;;
+-     *) echo "Processing <$i>"
+-        ../scripts/build/updateBEDate $i
+-	;;
+-    esac
+-done
++exit 0

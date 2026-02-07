@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# PROVIDE: tcpproxy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# tcpproxy_enable (bool):   Set to NO by default.
+#                           Set it to YES to enable tcpproxy.
+# tcpproxy_config (path):   Set to %%PREFIX%%/etc/tcpproxy.conf
+#                           by default.
+#
+
+. /etc/rc.subr
+
+name="tcpproxy"
+rcvar=tcpproxy_enable
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${tcpproxy_enable="NO"}
+: ${tcpproxy_config="%%PREFIX%%/etc/tcpproxy.conf"}
+
+command_args="-P $pidfile -c $tcpproxy_config -u _tcpproxy -g _tcpproxy"
+
+run_rc_command "$1"

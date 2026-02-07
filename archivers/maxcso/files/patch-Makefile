@@ -1,0 +1,11 @@
+--- Makefile.orig	2024-01-26 06:38:18 UTC
++++ Makefile
+@@ -84,7 +84,7 @@ maxcso: $(OBJS)
+ 	$(CC) -c $(SRC_CFLAGS) $(CFLAGS) -o $@ $<
+ 
+ maxcso: $(OBJS)
+-	$(CXX) $(LDFLAGS) -o $@ $(SRC_CXXFLAGS) $(CXXFLAGS) $^ $(LIBS)
++	$(CXX) $(LDFLAGS) -o $@ $(SRC_CXXFLAGS) $(CXXFLAGS) $^ $(LIBS) -lzopfli
+ 
+ $(SRC_7ZIP):
+ 	$(MAKE) -f $(SRCDIR)/7zip/Makefile 7zip.a

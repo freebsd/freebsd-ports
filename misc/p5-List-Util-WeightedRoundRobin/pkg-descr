@@ -1,0 +1,2 @@
+List::Util::WeightedRoundRobin is a utility for creating a weighted list
+based on the input and associated weights.

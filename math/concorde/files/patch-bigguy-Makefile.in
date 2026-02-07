@@ -1,0 +1,18 @@
+--- BIGGUY/Makefile.in.orig	Thu Dec 16 20:22:41 1999
++++ BIGGUY/Makefile.in	Thu Dec 16 13:06:35 2004
+@@ -37,13 +37,13 @@
+ 
+ all: $(THISLIB)
+ 
+-everything: all bg_test test
++everything: all bg_test
+ 
+ bg_test: bg_test.$o $(THISLIB) $(LIBS)
+ 	$(CC) $(LDFLAGS) -o $@ bg_test.$o $(THISLIB) $(LIBS) $(LIBFLAGS)
+ 
+ test: bg_test
+-	time bg_test < $(srcdir)/bigguy.tst > bigguy.ts2
++	time ./bg_test < $(srcdir)/bigguy.tst > bigguy.ts2
+ 	cmp $(srcdir)/bigguy.tst bigguy.ts2
+ 
+ clean:

@@ -1,0 +1,9 @@
+--- test/integration/CMakeLists.txt.orig	2018-11-20 20:12:00 UTC
++++ test/integration/CMakeLists.txt
+@@ -9,5 +9,5 @@ link_directories(${PROJECT_BINARY_DIR}/t
+ 
+ ign_build_tests(TYPE INTEGRATION
+                 SOURCES ${tests}
+-                LIB_DEPS ignition-common1::ignition-common1
++                LIB_DEPS ignition-common3::ignition-common3
+ )

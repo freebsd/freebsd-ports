@@ -1,0 +1,35 @@
+- adjust version requirements
+- remove "unimportant" tree-sitter-* dependencies that aren't yet ported
+
+--- pyproject.toml.orig	2025-09-23 06:46:36 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ 
+-requires = [ "cython>=3.0.12", "setuptools>=80.9.0", "typing-extensions>=4.15.0" ]
++requires = [ "cython", "setuptools", "typing-extensions>=4.15.0" ]
+ 
+ [project]
+ name = "tree-sitter-language-pack"
+@@ -17,7 +17,6 @@ keywords = [
+   "text-processing",
+   "tree-sitter",
+ ]
+-license = "MIT OR Apache-2.0"
+ 
+ authors = [ { name = "Na'aman Hirschfeld", email = "nhirschfeld@gmail.com" } ]
+ requires-python = ">=3.9.0"
+@@ -37,9 +36,9 @@ dependencies = [
+ ]
+ dependencies = [
+   "tree-sitter==0.23.2",
+-  "tree-sitter-c-sharp==0.23.1",
+-  "tree-sitter-embedded-template==0.23.2",
+-  "tree-sitter-yaml==0.7.0",
++  #"tree-sitter-c-sharp==0.23.1",
++  #"tree-sitter-embedded-template==0.23.2",
++  #"tree-sitter-yaml==0.7.0",
+ ]
+ 
+ urls.documentation = "https://github.com/Goldziher/tree-sitter-language-pack#readme"

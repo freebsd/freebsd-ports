@@ -1,0 +1,14 @@
+--- arch/arm/dts/bhyve-arm64.dts.orig	2023-11-01 18:14:48 UTC
++++ arch/arm/dts/bhyve-arm64.dts
+@@ -0,0 +1,11 @@
++// SPDX-License-Identifier: GPL-2.0+ OR MIT
++/*
++ * Empty device tree for bhyve_arm64
++
++ * Copyright 2021 Google LLC
++ */
++
++/dts-v1/;
++
++/ {
++};

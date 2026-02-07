@@ -1,0 +1,8 @@
+pydantic-resolve is a sophisticated framework for composing complex data
+structures with an intuitive, declarative, resolver-based architecture that
+eliminates the N+1 query problem.
+
+It supports:
+- pydantic v1
+- pydantic v2
+- dataclass from pydantic.dataclasses import dataclass

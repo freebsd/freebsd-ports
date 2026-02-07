@@ -1,0 +1,3 @@
+Libvalkey is the official C client for the Valkey database. It also
+supports any server that uses the RESP protocol (version 2 or 3).
+This project supports both standalone and cluster modes.

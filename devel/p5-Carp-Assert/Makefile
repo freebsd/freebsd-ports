@@ -1,0 +1,21 @@
+PORTNAME=	Carp-Assert
+PORTVERSION=	0.22
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Executable comments like the ANSI C library assert.h
+WWW=		https://metacpan.org/release/Carp-Assert
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+TEST_DEPENDS=	pod2test:devel/p5-Pod-Tests
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

@@ -1,0 +1,8 @@
+lefthook is a fast and powerful Git hooks manager for Node.js, Ruby or any other
+type of projects.
+
+Features:
+* Fast. It is written in Go. Can run commands in parallel.
+* Powerful. With a few lines in the config you can check only the changed files
+  on pre-push hook.
+* Simple. It is single dependency-free binary which can work in any environment.

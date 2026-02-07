@@ -1,0 +1,2 @@
+POE::Component::Client::FTP is a POE component for interacting with a
+FTP server.

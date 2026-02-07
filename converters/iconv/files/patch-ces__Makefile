@@ -1,0 +1,37 @@
+--- ces/Makefile	2002/03/17 11:07:44	1.1
++++ ces/Makefile	2002/03/17 11:07:56
+@@ -10,7 +10,7 @@
+ LIB=		ces
+ SRCS=		ces_builtin.c ${CHARSETS_C}
+ 
+-LDADD =		-L${.CURDIR}/../lib -liconv
++LDADD =		-L${.CURDIR}/../lib -lbiconv
+ 
+ INTERNALLIB =
+ 
+@@ -27,11 +27,11 @@ ces_builtin.c:	${CHARSETS_C} ${CHARSETS_O}
+ 		${.CURDIR}/../iconv_builtin -mo ${.TARGET} \
+ 			${CHARSETS_C} PIC ${CHARSETS_O}
+ 
+-.SUFFIXES:	.so .So
++.SUFFIXES:	.so .So .pico
+ 
+-.So.so:
++.So.so .pico.so:
+ 	@${LDDESTDIRENV} ${CC} -shared -Wl,-x -o ${.TARGET} \
+-		-Wl,-soname,${.TARGET} `lorder ${.ALLSRC} | tsort -q` \
++		-Wl,-soname,${.TARGET} ${.ALLSRC} \
+ 		${LDDESTDIR} ${LDADD}
+ 
+ beforeinstall:
+@@ -41,8 +41,8 @@ beforeinstall:
+ 		${INSTALLFLAGS} ${SHLINSTALLFLAGS} ${CHARSETS_SO} \
+ 		${DESTDIR}${MODULEDIR}
+ 
+-CLEANFILES +=	*.so *.So ces_builtin.c *.lst
++CLEANFILES +=	*.so *.So *.pico ces_builtin.c *.lst
+ 
+ .include <bsd.lib.mk>
+ 
+-.SUFFIXES:	.so .So
++.SUFFIXES:	.so .So .pico

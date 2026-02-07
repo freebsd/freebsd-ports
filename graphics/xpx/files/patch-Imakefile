@@ -1,0 +1,11 @@
+--- Imakefile.orig	Mon Apr 29 19:36:34 1996
++++ Imakefile	Wed Nov  1 10:36:24 2000
+@@ -32,7 +32,7 @@
+ 
+ SYS_LIBRARIES = $(XLIB)
+ 
+-ComplexProgramTarget(xpx)
++ComplexProgramTargetNoMan(xpx)
+ 
+ $(OBJS) : $(HEADERS)
+ 

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/UUID.pm
+%%SITE_ARCH%%/auto/UUID/UUID.so
+%%PERL5_MAN3%%/UUID.3.gz

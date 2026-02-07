@@ -1,0 +1,2 @@
+Plack::Middleware::InteractiveDebugger is a PSGI middleware component
+that provides an awesome JavaScript in-browser interacive debugger.

@@ -1,0 +1,156 @@
+--- include/sj_sysvdef.h
++++ include/sj_sysvdef.h
+@@ -50,8 +50,8 @@
+ #endif 
+ #endif 
+ 
+-#ifdef SVR4
+ #define SYSV_TERMIOS
++#ifdef SVR4
+ #define SIGTYPE_VOID
+ #endif /* SVR4 */
+ 
+--- sj3/sj3.c
++++ sj3/sj3.c
+@@ -50,7 +50,7 @@
+ #define LACKOF_SETLOCALE
+ #endif
+ #endif
+-#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__OpenBSD__)
+ #include <sys/ioctl_compat.h>
+ #endif
+ #include <curses.h>
+@@ -81,9 +81,7 @@
+ #define DEFAULTSHELL	"/bin/sh"
+ #endif
+ 
+-#if defined(linux) && defined (__GLIBC__) && (__GLIBC__ >= 2)
+ #include <termios.h>
+-#endif
+ 
+ int	Lflag = 0;		
+ int	shell_flag = 0;		
+@@ -119,9 +117,9 @@
+ #define ts_lines ws_row
+ #define ts_cols ws_col
+ #else
+-int	Ttyslot;
+ struct	ttysize	Ttysize;
+ #endif
++int	Ttyslot;
+ int	master;
+ int	slave;
+ 
+@@ -419,7 +417,7 @@
+ get_ttymode()
+ {
+ #ifdef SYSV_TERMIOS
+-	ioctl (0, TCGETS, (char *)&b);
++	tcgetattr (0, &b);
+ 	erase_char = b.c_cc[VERASE];
+ 	set_bs(erase_char);
+ 	erase_str[0] = erase_char;
+@@ -586,7 +584,7 @@
+ 	struct termios sbuf;
+ 
+ 	sbuf = b;
+-	sbuf.c_iflag &= ~(INLCR|IGNCR|ICRNL|IUCLC|IXON);
++	sbuf.c_iflag &= ~(INLCR|IGNCR|ICRNL|IXON);
+ 	sbuf.c_oflag &= ~(ONLCR|OPOST);
+ 	sbuf.c_lflag &= ~(ICANON|ECHO);
+ 	sbuf.c_cc[VMIN] = 1;
+@@ -601,7 +599,7 @@
+ 	sbuf.c_cc[VDISCARD] = 0;
+ 	sbuf.c_cc[VWERASE] = 0;
+ 	sbuf.c_cc[VLNEXT] = 0;
+-	(void) ioctl(0, TCSETSW, (char *)&sbuf);
++	(void) tcsetattr(0, TCSADRAIN, &sbuf);
+ #else 
+ 	struct sgttyb sbuf;
+ 
+@@ -793,7 +791,7 @@
+ shellprocess()
+ {
+ 	int			t, f;
+-#ifdef SYSV_TERMIOS
++#if 0
+ #ifdef SYSV_UTMP
+ 	struct utmp Utmp;
+ #else
+@@ -952,7 +950,7 @@
+ #endif
+ 	ioctl (slave, TIOCSSIZE, &Ttysize);
+ #else /* SYSV_TERMIOS */
+-	(void) ioctl(slave, TCSETSF, (char *)&b);
++	(void) tcsetattr(slave, TCSAFLUSH, &b);
+ 	(void) ioctl(slave, TIOCSWINSZ, (char *)&Ttysize);
+ #endif /* SYSV_TERMIOS */
+ #endif /* SVR4 */
+@@ -1026,7 +1024,7 @@
+ 	chown (slave_name, 0, 0);
+ 	chmod (slave_name, 0666);
+ #ifdef SYSV_TERMIOS
+-	ioctl (0, TCSETSW, (char *)&b);		
++	tcsetattr (0, TCSADRAIN, &b);		
+ #else /* SYSV_TERMIOS */
+ 	ioctl (0, TIOCSETP, (char *)&b);	
+ 	ioctl (0, TIOCSETC, (char *)&tc);	
+@@ -1119,7 +1117,7 @@
+ 	} while (nc > 0);
+ 
+ #ifdef SYSV_TERMIOS
+-	ioctl (0, TCSETSW, (char *)&b);		
++	tcsetattr (0, TCSADRAIN, &b);		
+ #else /* SYSV_TERMIOS */
+ 	ioctl (0, TIOCSETP, (char *)&b);	
+ 	ioctl (0, TIOCSETC, (char *)&tc);	
+--- sj3/sjgetchar.c
++++ sj3/sjgetchar.c
+@@ -54,7 +54,7 @@
+ #if defined(__NetBSD__) || defined(__bsdi__)
+ #define	USE_OLD_TTY
+ #endif
+-#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__OpenBSD__)
+ #include <sys/ioctl_compat.h>
+ #endif
+ #include <curses.h>
+@@ -259,9 +259,7 @@
+ 	}
+ }
+ #else 
+-#if defined(linux) && defined (__GLIBC__) && (__GLIBC__ >= 2)
+ #include <termios.h>
+-#endif
+ 
+ void
+ output_master()
+@@ -299,10 +297,10 @@
+ 		}
+ 		else if (m & TIOCPKT_NOSTOP) {
+ #ifdef SYSV_TERMIOS
+-			ioctl (1, TCGETS, &tc);
++			tcgetattr (1, &tc);
+ 			tc.c_cc[VSTOP] = 0;
+ 			tc.c_cc[VSTART] = 0;
+-			ioctl (STDOUT, TCSETS, &tc);
++			tcsetattr (STDOUT, TCSANOW, &tc);
+ #else
+  
+ 			ioctl (1, TIOCGETC, &tc);
+@@ -313,11 +311,11 @@
+ 		}
+ 		else if (m & TIOCPKT_DOSTOP) {
+ #ifdef SYSV_TERMIOS
+-			ioctl (master, TCGETS, &tc1);
+-			ioctl (STDOUT, TCGETS, &tc);
++			tcgetattr (master, &tc1);
++			tcgetattr (STDOUT, &tc);
+ 			tc.c_cc[VSTOP] = tc1.c_cc[VSTOP];
+ 			tc.c_cc[VSTART] = tc1.c_cc[VSTART];
+-			ioctl (STDOUT, TCSETS, &tc);
++			tcsetattr (STDOUT, TCSANOW, &tc);
+ #else
+ 			ioctl (master, TIOCGETC, &tc1);
+ 			ioctl (STDOUT, TIOCGETC, &tc);

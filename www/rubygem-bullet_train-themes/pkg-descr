@@ -1,0 +1,7 @@
+Bullet Train has a theme subsystem designed to allow you the flexibility to
+either extend or completely replace the stock "Light" UI theme. To reduce
+duplication of code across themes, Bullet Train implements the following three
+packages:
+- bullet_train-themes
+- bullet_train-themes-tailwind_css
+- bullet_train-themes-light

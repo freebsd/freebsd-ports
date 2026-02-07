@@ -1,0 +1,6 @@
+Geanydoc is plugin for Geany IDE that allow execute specified
+commands on the current word at the cursor position. This word is
+passed as an argument to these commands. It allow either place
+output of these commands in geany buffer *DOC* or just execute
+external program. Geanydoc is intended to be used for searching
+documentation API in different sources.

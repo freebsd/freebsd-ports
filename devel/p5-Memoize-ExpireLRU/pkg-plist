@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Memoize/ExpireLRU.pm
+%%SITE_PERL%%/auto/Memoize/ExpireLRU/DumpCache.al
+%%SITE_PERL%%/auto/Memoize/ExpireLRU/ShowStats.al
+%%SITE_PERL%%/auto/Memoize/ExpireLRU/autosplit.ix
+%%PERL5_MAN3%%/Memoize::ExpireLRU.3.gz

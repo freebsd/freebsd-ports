@@ -1,0 +1,35 @@
+PORTNAME=	pongix
+PORTVERSION=	0.4
+PORTREVISION=	13
+CATEGORIES=	games
+MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/pongix/descargas/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Free pong-like game
+WWW=		http://www.losersjuegos.com.ar
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake sdl
+USE_SDL=	sdl image net
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lm
+PORTDOCS=	AUTHORS ChangeLog README
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/src && \
+		${INSTALL_PROGRAM} pongix ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/data && ${FIND} * -type d \
+		-exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+		${FIND} -E * -type f -iregex ".*\.(jpg|bmp)" \
+		-exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/{}" \;
+	cd ${WRKSRC} && ${INSTALL_DATA} \
+		AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

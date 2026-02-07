@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Text/AsciiTeX.pm
+%%SITE_ARCH%%/Text/AsciiTeX/Syntax.pod
+%%SITE_ARCH%%/auto/Text/AsciiTeX/AsciiTeX.so
+%%PERL5_MAN3%%/Text::AsciiTeX.3.gz
+%%PERL5_MAN3%%/Text::AsciiTeX::Syntax.3.gz

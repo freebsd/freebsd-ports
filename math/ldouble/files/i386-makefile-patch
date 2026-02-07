@@ -1,0 +1,33 @@
+--- makefile.orig	Tue Nov 23 00:56:12 2004
++++ makefile	Tue Nov 23 00:58:32 2004
+@@ -2,21 +2,26 @@
+ # Be sure to check the size of a pointer, LARGEMEM, in lcalc.h;
+ # the size of long double, XPD, in mconf.h; and the type of
+ # computer and endianness of the numbers in mconf.h.
+-CC= gcc
++CC= %%CC%%
+ #CC = /a/gnu/linux/gcc/xgcc -B/a/gnu/linux/gcc/ -I/a/gnu/linux/gcc/include
+ #CFLAGS= -O0 -fno-builtin
+-CFLAGS= -O -Wall -Wuninitialized -fno-builtin
++CFLAGS= %%CFLAGS%% -Wuninitialized -fno-builtin -fPIC
+ LIBS= 
++SHARED_LIB=    libml.so
++SHARED_LIB_VER=        $(SHARED_LIB).0
+ OBJS= acoshl.o asinhl.o asinl.o atanhl.o atanl.o bdtrl.o btdtrl.o cbrtl.o \
+ chdtrl.o coshl.o ellpel.o ellpkl.o elliel.o ellikl.o ellpjl.o \
+ exp10l.o exp2l.o expl.o expx2l.o fdtrl.o gammal.o gdtrl.o igamil.o igaml.o \
+ incbetl.o incbil.o isnanl.o j0l.o j1l.o jnl.o ldrand.o log10l.o log2l.o \
+ logl.o nbdtrl.o ndtril.o ndtrl.o pdtrl.o powl.o powil.o sinhl.o sinl.o \
+ sqrtl.o stdtrl.o tanhl.o tanl.o unityl.o expm1l.o log1pl.o ynl.o \
+-floorl.o polevll.o unityl.o mtherr.o
++floorl.o polevll.o mtherr.o
+ # cmplxl.o clogl.o
+ 
+-all: mtstl lparanoi lcalc fltestl nantst testvect monotl libml.a
++all: libml.a $(SHARED_LIB_VER)
++
++$(SHARED_LIB_VER): $(OBJS) mconf.h
++	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS)
+ 
+ mtstl: libml.a mtstl.o $(OBJS)
+ 	$(CC) $(CFLAGS) -o mtstl mtstl.o libml.a $(LIBS)

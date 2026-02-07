@@ -1,0 +1,8 @@
+--- Main/GNUmakefile.preamble.orig	2015-09-16 18:41:29 UTC
++++ Main/GNUmakefile.preamble
+@@ -22,4 +22,4 @@ $(SOGOD)_TOOL_LIBS += \
+ 	-lNGObjWeb		\
+ 	-lNGMime -lNGLdap	\
+ 	-lNGStreams -lNGExtensions -lEOControl \
+-	-lDOM -lSaxObjC
++	-lDOM -lSaxObjC -lSBJson

@@ -1,0 +1,51 @@
+--- Makefile.orig	Sun Feb  8 23:37:24 2004
++++ Makefile	Fri Nov 24 08:00:52 2006
+@@ -26,7 +26,7 @@
+ # be done by setting one of "USE_DGA1" and "USE_DGA2" to "N" and the
+ # other to "Y" or by setting both to "N" (most non-Linux systems).
+ 
+-X11DIR = /usr/X11R6
++X11DIR = $(LOCALBASE)
+ 
+ ifeq ($(X11DIR)/include/X11/extensions/xf86dga.h,$(wildcard $(X11DIR)/include/X11/extensions/xf86dga.h))
+   ifeq ($(X11DIR)/include/X11/extensions/xf86dga1.h,$(wildcard $(X11DIR)/include/X11/extensions/xf86dga1.h))
+@@ -101,6 +101,7 @@
+ 
+ CCDEFS = -DMM_CACHE=8
+ CCDEFS += -DPERF_MONITOR
++CCDEFS += $(CFLAGS)
+ # Skip boundary conditions for shift operations in the fp
+ # code.  (No check for shift by 0 or >=64 if you define this.)
+ # CCDEFS += -DF_SH_FAST
+@@ -115,17 +116,17 @@
+ # C-Compiler configuration
+ 
+ # All the rest of the flags in this section assume gcc
+-CC=gcc -Wall
++#CC=gcc -Wall
+ # -Wchar-subscripts -W -Wshadow -Wconversion
+ # -Wtraditional -Wstrict-prototypes
+ 
+ # This prevents "undesirable excess precision" on some machines, says gcc
+-CC += -ffloat-store
++#CC += -ffloat-store
+ 
+ # The 1st choice runs about 15% slower than the 2nd (-O3 -fomit-frame-pointer).
+ # but it (re)compiles faster and unlike the second choice, it is debuggable.
+ # CC += -g -O -fno-inline
+-CC += -O3 -Winline -fomit-frame-pointer
++#CC += -O3 -Winline -fomit-frame-pointer
+ 
+ # Some older gcc's need this on i386 to work around a bug.  As long as
+ # omit-frame-pointer is also set, it doesn't seem to hurt performance, so
+@@ -184,8 +185,8 @@
+ 
+   # Try this as the default place for X11 stuff and ncurses
+ 
+-  CCINCS = -I$(X11DIR)/include -I/usr/X11/include -I$(NCURSESINC)
+-  CCLIBS = -L$(X11DIR)/lib     -L/usr/X11/lib     -L$(NCURSESLIB)
++  CCINCS = -I$(X11DIR)/include
++  CCLIBS = -L$(X11DIR)/lib -L$(NCURSESLIB)
+ 
+   # But some vendors put things in non-standard places
+ 

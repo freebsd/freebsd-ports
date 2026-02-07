@@ -1,0 +1,31 @@
+PORTNAME=	FormValidator-Lite
+PORTVERSION=	0.41
+PORTREVISION=	1
+CATEGORIES=	textproc perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Lightleight form validation library
+WWW=		https://metacpan.org/release/FormValidator-Lite
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite \
+		p5-Class-Load>=0.11:devel/p5-Class-Load \
+		p5-Email-Valid>=0:mail/p5-Email-Valid \
+		p5-Email-Valid-Loose>=0:mail/p5-Email-Valid-Loose
+TEST_DEPENDS=	p5-CGI>=3.31:www/p5-CGI \
+		p5-Test-Requires>=0.05:devel/p5-Test-Requires \
+		p5-Text-TestBase>=0:textproc/p5-Text-TestBase \
+		p5-YAML>=0:textproc/p5-YAML
+
+USES=		perl5
+USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

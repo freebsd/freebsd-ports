@@ -1,0 +1,15 @@
+QGpgme provides a very high level Qt API around GpgMEpp, the GPGME C++
+bindings.
+
+There are two general concepts in QGpgME. Data abstraction through
+GpgMEpp's Dataprovider interface and the Job pattern.
+
+Data can be provided with QByteArrayDataProvider or QIODeviceDataProvider
+which can be constructed from their respective types. This means you can
+pass a QFile, QProcess, QString, etc. directly to GPGME.
+
+To provide a stable API / ABI and because of historic reasons in libkleo
+(where QGpgME was originally developed as an abstract crypto backend),
+QGpgME only provides abstract interfaces as public API while the actual
+implementation happens in the private QGpgME prefixed classes.
+

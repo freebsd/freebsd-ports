@@ -1,0 +1,8 @@
+%%SITE_ARCH%%/Shout.pm
+%%SITE_ARCH%%/auto/Shout/Shout.so
+%%SITE_ARCH%%/auto/Shout/autosplit.ix
+%%SITE_ARCH%%/example.pl
+%%SITE_ARCH%%/example2.pl
+%%PERL5_MAN3%%/Shout.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/example.pl
+%%PORTDOCS%%%%DOCSDIR%%/example2.pl

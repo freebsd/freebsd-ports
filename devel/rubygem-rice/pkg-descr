@@ -1,0 +1,8 @@
+Rice is a C++ header-only library that serves dual purposes. First, it makes it
+much easier to create Ruby bindings for existing C++ libraries. Second, it
+provides an object oriented interface to Ruby's C API that makes it easy to
+embed Ruby and write Ruby extensions in C++.
+
+Rice is similar to Boost.Python and pybind11 in that it minimizes boilerplate
+code needed to interface with C++. It does this by automatically determining
+type information allowing Ruby object to be converted to C++ and vice versa.

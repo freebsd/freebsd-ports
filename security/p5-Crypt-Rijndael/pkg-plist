@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/Rijndael.pm
+%%SITE_ARCH%%/auto/Crypt/Rijndael/Rijndael.so
+%%PERL5_MAN3%%/Crypt::Rijndael.3.gz

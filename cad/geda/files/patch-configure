@@ -1,0 +1,20 @@
+--- configure.orig	2013-09-25 21:55:35 UTC
++++ configure
+@@ -4876,7 +4876,7 @@ case $host_os in *\ *) host_os=`echo "$h
+   # compat. layer on Windows (Cygwin).
+   OS_WIN32_NATIVE=no
+   OS_CYGWIN=no
+-  OS_LINUX=no
++  OS_LINUX=yes
+   case "$host" in
+     *-*-linux*)
+       OS_LINUX=yes
+@@ -20127,7 +20127,7 @@ fi
+ 
+     # If a prefix to search was specified, then add the appropriate
+     # flags.
+-    if test "X$libstroke_use" = "X"; then
++    if test -n "$libstroke_prefix"; then
+       LIBSTROKE_LDFLAGS="-L$libstroke_prefix/lib"
+       LIBSTROKE_CFLAGS="-I$libstroke_prefix/include"
+     fi

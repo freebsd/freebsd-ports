@@ -1,0 +1,3 @@
+timescaledb-parallel-copy is a command line program for parallelizing
+PostgreSQL's built-in COPY functionality for bulk inserting data into
+TimescaleDB.

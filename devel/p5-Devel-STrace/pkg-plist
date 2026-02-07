@@ -1,0 +1,7 @@
+bin/plstrace
+%%PERL5_MAN3%%/Devel::STrace.3.gz
+%%PERL5_MAN3%%/Devel::STrace::Monitor.3.gz
+%%SITE_PERL%%/Devel/STrace.pm
+%%SITE_PERL%%/Devel/STrace.pod
+%%SITE_PERL%%/Devel/STrace/Monitor.pm
+%%SITE_PERL%%/Devel/STrace/Monitor.pod

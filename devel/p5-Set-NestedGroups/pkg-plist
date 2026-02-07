@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Set/NestedGroups.pm
+%%SITE_PERL%%/Set/NestedGroups/Member.pm
+%%PERL5_MAN3%%/Set::NestedGroups.3.gz
+%%PERL5_MAN3%%/Set::NestedGroups::Member.3.gz

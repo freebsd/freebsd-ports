@@ -1,0 +1,128 @@
+PORTNAME=	potnet
+DISTVERSION=	0.5.0
+PORTREVISION=	19
+CATEGORIES=	sysutils
+
+MAINTAINER=	pizzamig@FreeBSD.org
+COMMENT=	Utility to help sysutils/pot to manage the internal network
+WWW=		https://github.com/bsdpot/potnet
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	bsdpot
+
+CARGO_CRATES=	android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.77 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bitflags-2.4.1 \
+		bumpalo-3.14.0 \
+		bytecount-0.6.7 \
+		camino-1.1.6 \
+		cargo-platform-0.1.6 \
+		cargo_metadata-0.14.2 \
+		cc-1.0.83 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.31 \
+		clap-2.34.0 \
+		core-foundation-sys-0.8.6 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.7 \
+		either-1.9.0 \
+		errno-0.3.8 \
+		error-chain-0.12.4 \
+		fastrand-2.0.1 \
+		getrandom-0.2.11 \
+		glob-0.3.1 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		iana-time-zone-0.1.59 \
+		iana-time-zone-haiku-0.1.2 \
+		ipnet-2.9.0 \
+		itertools-0.12.0 \
+		itoa-1.0.10 \
+		js-sys-0.3.66 \
+		lazy_static-1.4.0 \
+		libc-0.2.151 \
+		libredox-0.0.1 \
+		linux-raw-sys-0.4.12 \
+		log-0.4.20 \
+		memchr-2.7.1 \
+		mocktopus-0.8.0 \
+		mocktopus_macros-0.7.11 \
+		num-traits-0.2.17 \
+		once_cell-1.19.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.71 \
+		pulldown-cmark-0.9.3 \
+		quote-1.0.33 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		rustix-0.38.28 \
+		ryu-1.0.16 \
+		same-file-1.0.6 \
+		semver-1.0.20 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
+		serde_json-1.0.108 \
+		simplelog-0.7.6 \
+		skeptic-0.13.7 \
+		strsim-0.8.0 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		structopt-flags-0.3.6 \
+		syn-1.0.109 \
+		syn-2.0.43 \
+		tempfile-3.9.0 \
+		term-0.6.1 \
+		textwrap-0.11.0 \
+		thiserror-1.0.52 \
+		thiserror-impl-1.0.52 \
+		unicase-2.7.0 \
+		unicode-ident-1.0.12 \
+		unicode-segmentation-1.10.1 \
+		unicode-width-0.1.11 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		walkdir-2.4.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.52.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0
+
+PLIST_FILES=	bin/potcpu bin/potnet
+
+.include <bsd.port.mk>

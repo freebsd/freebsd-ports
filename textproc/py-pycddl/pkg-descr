@@ -1,0 +1,6 @@
+CDDL is a schema language for the CBOR serialization format. pycddl
+allows you to:
+
+- Validate CBOR documents match a particular CDDL schema, based on
+  the Rust cddl library.
+- Optionally, decode CBOR documents.

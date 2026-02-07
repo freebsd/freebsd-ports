@@ -1,0 +1,5 @@
+Tickit::Widget::Table provides a scrollable table implementation for use on
+larger data sets.
+
+This abstraction should allow access to larger datasets than would fit in
+available memory, such as a database table or procedurally-generated data.

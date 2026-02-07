@@ -1,0 +1,46 @@
+--- cmake/build_helpers.cmake.orig	2025-12-21 15:04:44 UTC
++++ cmake/build_helpers.cmake
+@@ -657,8 +657,12 @@ function(downloadImHexPatternsFiles dest)
+ 
+         # Maybe patterns are cloned to a subdirectory
+         if (NOT EXISTS ${imhex_patterns_SOURCE_DIR})
+-            set(imhex_patterns_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ImHex-Patterns")
+-        endif()
++	    if (BSD AND BSD STREQUAL "FreeBSD")
++	        set(imhex_patterns_SOURCE_DIR "${CMAKE_BINARY_DIR}/_deps/imhex_patterns_src")
++	    else()
++	        set(imhex_patterns_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ImHex-Patterns")
++	    endif()
++	endif()
+ 
+         # Or a sibling directory
+         if (NOT EXISTS ${imhex_patterns_SOURCE_DIR})
+@@ -689,7 +693,11 @@ function(downloadImHexPatternsFiles dest)
+         if (NOT (imhex_patterns_SOURCE_DIR STREQUAL ""))
+             set(PATTERNS_FOLDERS_TO_INSTALL constants encodings includes patterns magic nodes)
+             foreach (FOLDER ${PATTERNS_FOLDERS_TO_INSTALL})
+-                install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "${dest}" PATTERN "**/_schema.json" EXCLUDE)
++                if (BSD AND BSD STREQUAL "FreeBSD")
++                    install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "share/imhex/" PATTERN "**/_schema.json" EXCLUDE)
++                else()
++                    install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "${dest}" PATTERN "**/_schema.json" EXCLUDE)
++                endif()
+             endforeach ()
+         endif()
+     endif ()
+@@ -1012,13 +1020,13 @@ function(generateSDKDirectory)
+     install(TARGETS libimhex ARCHIVE DESTINATION "${SDK_PATH}/lib")
+     install(TARGETS tracing ARCHIVE DESTINATION "${SDK_PATH}/lib")
+ 
+-    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/ui/include DESTINATION "${SDK_PATH}/lib/ui/include")
++    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/ui/include DESTINATION "${SDK_PATH}/lib/ui/")
+     install(FILES ${CMAKE_SOURCE_DIR}/plugins/ui/CMakeLists.txt DESTINATION "${SDK_PATH}/lib/ui/")
+     if (WIN32)
+         install(TARGETS ui ARCHIVE DESTINATION "${SDK_PATH}/lib")
+     endif()
+ 
+-    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/fonts/include DESTINATION "${SDK_PATH}/lib/fonts/include")
++    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/fonts/include DESTINATION "${SDK_PATH}/lib/fonts/")
+     install(FILES ${CMAKE_SOURCE_DIR}/plugins/fonts/CMakeLists.txt DESTINATION "${SDK_PATH}/lib/fonts/")
+     if (WIN32)
+         install(TARGETS fonts ARCHIVE DESTINATION "${SDK_PATH}/lib")

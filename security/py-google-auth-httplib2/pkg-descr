@@ -1,0 +1,1 @@
+This library provides an httplib2 transport for google-auth.

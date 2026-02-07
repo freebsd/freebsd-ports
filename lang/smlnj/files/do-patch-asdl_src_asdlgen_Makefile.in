@@ -1,0 +1,46 @@
+--- asdl/src/asdlgen/Makefile.in.orig	2024-10-25 16:47:17 UTC
++++ asdl/src/asdlgen/Makefile.in
+@@ -60,8 +60,8 @@ CODE_FRAG_DIRS =	back-end/sml
+ 
+ CODE_FRAG_DIRS =	back-end/sml
+ 
+-CODE_FRAG_FILES =	$(patsubst %,%/fragments.sml,$(CODE_FRAG_DIRS))
+-CODE_FRAG_MKFILES =	$(patsubst %,%/fragments.gmk,$(CODE_FRAG_DIRS))
++CODE_FRAG_FILES =	${CODE_FRAG_DIRS:C/(.+)/\1\/fragments.sml/}
++CODE_FRAG_MKFILES =	${CODE_FRAG_DIRS:C/(.+)/\1\/fragments.gmk/}
+ 
+ SRCDIR =		@ASDLGEN_SRCDIR@
+ 
+@@ -100,14 +100,18 @@ back-end/sml/fragments.sml:
+ 	touch .depend
+ 	$(ML_MAKEDEPEND) $(ML_MAKEDEPEND_FLAGS) -n -f .depend $(ROOT_CM) $(HEAP) || rm -f .depend
+ 
+-ifneq ($(MAKECMDGOALS),clean)
+-ifneq ($(MAKECMDGOALS),devclean)
+-ifneq ($(MAKECMDGOALS),distclean)
+-sinclude .depend
+-sinclude back-end/sml/fragments.gmk
+-endif
+-endif
+-endif
++.ifmake ! ( clean || devclean || distclean )
++.sinclude ".depend"
++.sinclude "back-end/sml/fragments.gmk"
++.endif
++#ifneq ($(MAKECMDGOALS),clean)
++#ifneq ($(MAKECMDGOALS),devclean)
++#ifneq ($(MAKECMDGOALS),distclean)
++#sinclude .depend
++#sinclude back-end/sml/fragments.gmk
++#endif
++#endif
++#endif
+ 
+ #################### Cleanup ####################
+ 
+@@ -125,4 +129,4 @@ DEVCLEAN_FILES =
+ 
+ DEVCLEAN_FILES =
+ 
+-include @ASDL_MKDIR@/clean-rules.gmk
++.include "@ASDL_MKDIR@/clean-rules.gmk"

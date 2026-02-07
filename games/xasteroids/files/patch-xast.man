@@ -1,0 +1,122 @@
+--- xast.man.orig
++++ xast.man
+@@ -1,9 +1,9 @@
+-.TH xasteroids n
++.TH xasteroids 6
+ .SH NAME
+ xasteroids - X windows based asteroids style arcade game
+ .SH SYNOPSIS
+-.ta 8n
+-\fBxasteroids\fP
++.ta 6
++\fBxasteroids\fP [-s]
+ .br
+ .SH DESCRIPTION
+ Make big rocks into little ones.
+@@ -11,60 +11,70 @@
+ .SH COMMANDS
+ .I xasteroids 
+ 
+- e           Rotate counterclockwise ("left")
+- r           Rotate clockwise ("right")
+- w           Rotate 45 degrees counterclockwise
+- t           Rotate 45 degrees clockwise
+- d           Increase counterclockwise rotational velocity
+- f           Increase clockwise rotational velocity
+- o           Thrust
+- p           Fire
+- `           Shields
+- space       Hyperspace
+- s           Start new ship in center of playing field
+-             (Also used to start a new game)
+- esc         Pause
+- Q           Quit
++.ft CW
++ e Left Arrow  Rotate counterclockwise ("left")
++ r Right Arrow Rotate clockwise ("right")
++ w             Rotate 45 degrees counterclockwise
++ t             Rotate 45 degrees clockwise
++ d             Increase CCWise rotational velocity
++ f             Increase clockwise rotational velocity
++ o Up Arrow    Thrust
++ p Control     Fire
++ ` Down Arrow  Shields
++ space         Hyperspace
++ s             Start new ship in center of playing field
++               (Also used to start a new game)
++ esc           Pause
++ Q             Quit
++.ft R
+ 
+ Speed commands: Key associated with faster speed is to the right of its
+-                corresponding key associated with slower speed.
++corresponding key associated with slower speed.
+ 
+- .           Decrease delay:  Speed game up
+- ,           Increase delay:  Slow the game down
+- m           Decrease size   ("Minimize")
+- n           Increase size
+- b           Increase # of moves/frame
+- v           Decrease # of moves/frame
+- 2           Increase scale of movement
+- 1           Decrease scale of movement
++.ft CW
++ .             Decrease delay:  Speed game up
++ ,             Increase delay:  Slow the game down
++ m             Decrease size   ("Minimize")
++ n             Increase size
++ b             Increase # of moves/frame
++ v             Decrease # of moves/frame
++ 2             Increase scale of movement
++ 1             Decrease scale of movement
+ 
+ Object          Score
+ 
+- Big asteroid    25, or 2000*level if it is the last asteroid remaining
+- Medium asteroid 50, or  500*level if it is the last asteroid remaining
++ Big asteroid    25, or
++                 2000*level if last asteroid remaining
++ Medium asteroid 50, or
++                 500*level if last asteroid remaining
+  Little asteroid 100
+  Enemy spaceship 500
+  Enemy bullet    500
++.ft R
+ 
+ Commands can only be entered when the mouse pointer is in the
+ asteroids window.
+ 
+ Resize the window with your window manager
+ at any time for a different playing field.
+-
+-.SH OPTIONS
+-.I xasteroids [-s]
+--s Display high scores without running game.
+ .PP
+ .SH AUTHOR
+ Phil Goetz
+ .br
+ goetz@cs.Buffalo.EDU
+ .SH CONTRIBUTORS
+-Peter Phillips	pphillip@cs.ubc.ca
+-Pat Ryan	pat@jaameri.gsfc.nasa.gov
+-Craig Smith	csmith@cscs.UUCP
+-Doug Merritt	doug@netcom.com
+-James Berg	berg@plains		(makefile)
+-Chris Moore	moore@src.bae.co.uk	(hi score script)
+-David Partain	dlp@ida.liu.se		(original man page)
++Peter Phillips <pphillip@cs.ubc.ca>
++.br
++Pat Ryan <pat@jaameri.gsfc.nasa.gov>
++.br
++Craig Smith <csmith@cscs.UUCP>
++.br
++Doug Merritt <doug@netcom.com>
++.br
++Stephen McCamant <alias@mcs.com>
++.br
++James Berg <berg@plains> (makefile)
++.br
++Chris Moore <moore@src.bae.co.uk> (hi score script)
++.br
++David Partain <dlp@ida.liu.se> (original man page)

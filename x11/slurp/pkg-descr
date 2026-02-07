@@ -1,0 +1,2 @@
+Select a region in a Wayland compositor and print it to the standard
+output. Works well with grim on sway >= 1.0.

@@ -1,0 +1,16 @@
+bin/cjs
+bin/cjs-console
+include/cjs-1.0/cjs/context.h
+include/cjs-1.0/cjs/coverage.h
+include/cjs-1.0/cjs/error-types.h
+include/cjs-1.0/cjs/gjs.h
+include/cjs-1.0/cjs/macros.h
+include/cjs-1.0/cjs/mem.h
+include/cjs-1.0/cjs/profiler.h
+lib/cjs/girepository-1.0/CjsPrivate-1.0.typelib
+lib/libcjs.so
+lib/libcjs.so.0
+lib/libcjs.so.0.0.0
+libdata/pkgconfig/cjs-1.0.pc
+%%DATADIR%%-1.0/lsan/lsan.supp
+%%DATADIR%%-1.0/valgrind/gjs.supp

@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Beanstalk/Client.pm
+%%SITE_PERL%%/Beanstalk/Job.pm
+%%SITE_PERL%%/Beanstalk/Pool.pm
+%%SITE_PERL%%/Beanstalk/Stats.pm
+%%PERL5_MAN3%%/Beanstalk::Client.3.gz
+%%PERL5_MAN3%%/Beanstalk::Pool.3.gz
+%%PERL5_MAN3%%/Beanstalk::Stats.3.gz
+%%PERL5_MAN3%%/Beanstalk::Job.3.gz

@@ -1,0 +1,39 @@
+--- Makefile.orig	2014-08-11 19:13:31 UTC
++++ Makefile
+@@ -15,23 +15,26 @@
+ #SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
+ 
+ 
+-BINDIR =	/usr/local/bin
+-MANDIR =	/usr/local/man/man1
+-CC =		cc
+-CFLAGS =	-O $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
+-LDFLAGS =	-s $(SSL_LIBS) $(SYSV_LIBS)
++BINDIR =	${PREFIX}/bin
++MANDIR =	${PREFIX}/share//man/man1
++CC?=		cc
++CFLAGS+=	-O $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
++LDFLAGS+=	-s $(SSL_LIBS) $(SYSV_LIBS)
+ 
++SSL_DEFS =	-DUSE_SSL ${OPENSSL_CFLAGS}
++SSL_INC =	-I${OPENSSLINC}
++SSL_LIBS =	-L${OPENSSLLIB} -lssl -lcrypto
++
+ all:		http_ping
+ 
+ http_ping:	http_ping.c port.h
+ 	$(CC) $(CFLAGS) http_ping.c $(LDFLAGS) -o http_ping
+ 
+ 
+-install:	all
+-	rm -f $(BINDIR)/http_ping
+-	cp http_ping $(BINDIR)
+-	rm -f $(MANDIR)/http_ping.1
+-	cp http_ping.1 $(MANDIR)
++install:
++	mkdir -p $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)
++	$(BSD_INSTALL_PROGRAM) http_ping $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_MAN) http_ping.1 $(DESTDIR)$(MANDIR)
+ 
+ clean:
+ 	rm -f http_ping *.o core core.* *.core

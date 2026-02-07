@@ -1,0 +1,9 @@
+--- Makefile.orig	2020-06-11 03:31:47.000000000 -0700
++++ Makefile	2024-01-11 08:21:31.317545000 -0800
+@@ -1,6 +1,5 @@
+ NAME = ntpstat
+ 
+-prefix = /usr/local
+ bindir = $(prefix)/bin
+ mandir = $(prefix)/share/man
+ man1dir = $(mandir)/man1

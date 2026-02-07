@@ -1,0 +1,53 @@
+/var/cron/log {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/amd.log {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/kerberos.log {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/lpd-errs {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/maillog {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/sendmail.st {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/messages {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/slip.log {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}
+
+/var/log/ppp.log {
+    postrotate
+	/usr/bin/killall -HUP syslogd
+    endscript
+}

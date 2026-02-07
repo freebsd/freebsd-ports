@@ -1,0 +1,10 @@
+--- configure.orig	2023-08-13 22:32:40 UTC
++++ configure
+@@ -10820,6 +10820,7 @@ LDFLAGS="${LDFLAGS} ${TCLSPEC_LHS} ${TKLSPEC_LHS}"
+ TCLSPEC_LHS="${TCL_LIB_SPEC% *}"
+ TKLSPEC_LHS="${TK_LIB_SPEC% *}"
+ LDFLAGS="${LDFLAGS} ${TCLSPEC_LHS} ${TKLSPEC_LHS}"
++TCL_VERSION=${TCL_VERSION%.*}${TCL_VERSION#*.}
+ as_ac_Lib=`$as_echo "ac_cv_lib_tcl${TCL_VERSION}''_Tcl_CreateInterp" | $as_tr_sh`
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Tcl_CreateInterp in -ltcl${TCL_VERSION}" >&5
+ $as_echo_n "checking for Tcl_CreateInterp in -ltcl${TCL_VERSION}... " >&6; }

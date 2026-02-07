@@ -1,0 +1,21 @@
+*** etc.orig/Makefile.in	Sat Sep 11 19:01:40 2004
+--- etc/Makefile.in	Sat Sep 11 19:01:59 2004
+***************
+*** 134,141 ****
+  sharedstatedir = @sharedstatedir@
+  sysconfdir = @sysconfdir@
+  target_alias = @target_alias@
+! sysconf_DATA = qadsl.conf
+! EXTRA_DIST = qadsl.conf
+  all: all-am
+  
+  .SUFFIXES:
+--- 134,141 ----
+  sharedstatedir = @sharedstatedir@
+  sysconfdir = @sysconfdir@
+  target_alias = @target_alias@
+! sysconf_DATA = qadsl.conf.sample
+! EXTRA_DIST = qadsl.conf.sample
+  all: all-am
+  
+  .SUFFIXES:

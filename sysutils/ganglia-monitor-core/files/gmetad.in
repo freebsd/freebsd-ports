@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# PROVIDE: gmetad
+# REQUIRE: gmond
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=gmetad
+rcvar=gmetad_enable
+command="%%PREFIX%%/sbin/${name}"
+start_precmd="gmetad_prestart"
+stop_postcmd="gmetad_poststop"
+
+gmetad_prestart()
+{
+	if [ ! -d ${gmetasnap_rrddir} ]; then
+		mkdir -p ${gmetasnap_rrddir}
+	fi
+	chown ganglia:ganglia ${gmetasnap_rrddir}
+	if checkyesno gmetasnap_enable; then
+		if [ ! -d ${gmetasnap_snapdir} ]; then
+			mkdir -p ${gmetasnap_snapdir}
+			chown ganglia:ganglia ${gmetasnap_snapdir}
+		fi
+		if [ `ls ${gmetasnap_rrddir} | egrep -v ^.snap | wc -l` -eq 0 ]; then
+			${gmetasnap_command} -r ${gmetasnap_rrddir} \
+			    -s ${gmetasnap_snapdir} ${gmetasnap_flags} \
+			    restore ${gmetasnap_snapname}
+		fi
+	fi
+}
+
+gmetad_poststop()
+{
+	if checkyesno gmetasnap_enable; then
+		${gmetasnap_command} -r ${gmetasnap_rrddir} \
+		    -s ${gmetasnap_snapdir} ${gmetasnap_flags} \
+		    save ${gmetasnap_snapname}
+	fi
+}
+
+load_rc_config ganglia
+
+load_rc_config $name
+
+gmetad_enable=${gmetad_enable-NO}
+gmetad_conf=${gmetad_conf-%%PREFIX%%/etc/gmetad.conf}
+
+gmetasnap_enable=${gmetasnap_enable-NO}
+gmetasnap_rrddir=${gmetasnap_rrddir-/var/db/ganglia/rrds}
+gmetasnap_snapdir=${gmetasnap_snapdir-/var/db/ganglia/snaps}
+gmetasnap_snapname=${gmetasnap_snapname-snap}
+gmetasnap_command=${gmetasnap_command-%%PREFIX%%/sbin/gmetasnap}
+
+command_args="-c ${gmetad_conf}"
+required_files=${gmetad_conf}
+
+run_rc_command $*

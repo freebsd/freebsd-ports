@@ -1,0 +1,6 @@
+bin/go-carbon
+@sample %%ETCDIR%%/go-carbon.conf.sample
+@sample %%ETCDIR%%/storage-aggregation.conf.sample
+@sample %%ETCDIR%%/storage-schemas.conf.sample
+@dir(carbon,carbon,0750) /var/db/go-carbon
+@dir(carbon,carbon,0750) /var/log/go-carbon

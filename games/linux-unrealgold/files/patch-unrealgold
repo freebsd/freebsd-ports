@@ -1,0 +1,10 @@
+--- unrealgold.orig	2008-06-22 21:36:44.000000000 +1000
++++ unrealgold	2008-06-22 21:36:55.000000000 +1000
+@@ -5,6 +5,7 @@
+ 
+ # The user preferences directory
+ UNREAL_PREFS="${HOME}/.loki/unrealgold"
++UNREAL_DATA_PATH="%%DATADIR%%/System"
+ 
+ # Function to find the real directory a program resides in.
+ # Feb. 17, 2000 - Sam Lantinga, Loki Entertainment Software

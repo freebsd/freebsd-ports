@@ -1,0 +1,35 @@
+PORTNAME=	Authen-Krb5
+PORTVERSION=	1.9
+PORTREVISION=	2
+CATEGORIES=	security perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+DISTNAME=	Krb5-${PORTVERSION}
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl extension for Kerberos 5
+WWW=		https://metacpan.org/release/Krb5
+
+USES=		perl5
+USE_PERL5=	configure
+CONFIGURE_ENV=	GSSAPIBASEDIR="${GSSAPIBASEDIR}"
+
+OPTIONS_SINGLE=		GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+OPTIONS_DEFAULT=	GSSAPI_BASE
+
+GSSAPI_BASE_USES=	gssapi
+.if !exists(/usr/libdata/pkgconfig/mit-krb5.pc)
+GSSAPI_BASE_CONFIGURE_ENV=	HAVE_HEIMDAL=1
+.endif
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_HEIMDAL_CONFIGURE_ENV=	HAVE_HEIMDAL=1
+GSSAPI_MIT_USES=	gssapi:mit
+
+post-extract:
+	${INSTALL_DATA} ${FILESDIR}/krb5-heimdal-compat.h ${WRKSRC}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Authen/Krb5/Krb5.so
+
+.include <bsd.port.mk>

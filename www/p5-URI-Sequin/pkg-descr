@@ -1,0 +1,10 @@
+SEQUIN is intended to extract the keywords used and the name of
+the search engine given the a line from a logfile that contains a
+referal URL from a Search Engine which GETs its data.
+
+Unlike traditional applications for doing this, it does not rely
+on a preset list of search engines and thus currently works with
+almost every search engine URL the author could get his hands on.
+
+-Anton
+<tobez@FreeBSD.org>

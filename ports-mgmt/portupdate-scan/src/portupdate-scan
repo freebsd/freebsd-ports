@@ -1,0 +1,380 @@
+#!/usr/bin/perl -w
+
+# Copyright (c) 2007 Alex Stangl <alex@stangl.us>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# Check /usr/ports/UPDATING file for all sections matching packages
+# that are installed, and outputting those sections.
+# Intended to be used prior to upgrading ports
+# Usage: portupdatescan [-dhmuvV] [-a yyyymmdd_date] [-D portsdir] [--help] [--version]
+
+use Text::ParseWords;
+use Getopt::Std;
+use strict;
+
+# Display usage and exit
+sub HELP_MESSAGE() {
+	print <<EOF;
+Usage: portupdate-scan [-dhmuvV] [-a yyyymmdd_date] [-D portsdir] [--help] [--version]
+  -a             display sections later than date specified in YYYYMMDD format
+  -d             display additional debugging info
+  -D portsdir    override default port directory
+  -h, --help     display this help and exit
+  -m             display detailed port install info for MIXED
+  -u             display information about uninstalled ports (Default off)
+  -v             display verbose information (e.g., more debugging info)
+  -V, --version  output version information and exit
+EOF
+	exit;
+}
+
+sub VERSION_MESSAGE() {
+	print "portupdate-scan 0.4\n";
+}
+
+# Fetch cmdline args, display usage if appropriate
+$Getopt::Std::STANDARD_HELP_VERSION=1;          # std, not paranoia behavior
+# our($opt_d, $opt_h, $opt_m, $opt_u, $opt_v, $opt_V);
+my %opt;            # map of command-line options
+HELP_MESSAGE() unless getopts("dD:hmuvVa:", \%opt);
+HELP_MESSAGE() if $opt{h};
+VERSION_MESSAGE() && exit if $opt{V};
+
+my $afterDate = $opt{a};            # display sections later than this date
+my $portsdir = $opt{D} || "/usr/ports";     # ports directory
+
+my $portIndexFile = "$portsdir/" . `make -f $portsdir/Makefile -V INDEXFILE`;      # port index file
+print "+ portIndexFile = $portIndexFile\n" if $opt{d};
+
+# Auto-detect whether PKGNG is in use.
+`env TMPDIR=/dev/null ASSUME_ALWAYS_YES=1 PACKAGESITE=file:///nonexistent pkg info -x 'pkg(-devel)?\$' >/dev/null 2>&1`;
+my $pkgngInUse = !$?;
+print "+ PKGNG in use\n" if $opt{d} && $pkgngInUse;
+print "+ Legacy PKG manager in use\n" if $opt{d} && !$pkgngInUse;
+
+my $movedFile = "$portsdir/MOVED";          # file w/ port renames/deletes
+my $updatingFile = "$portsdir/UPDATING";    # file w/ ports update news
+
+my @portlist = $pkgngInUse ? `pkg info -aoq` : `pkg_info -aoq`
+    or die "Error trying to execute pkg info -aoq: $!";
+my %installedPorts =
+    map {chomp($_);$_, 1} @portlist;    # map of installed ports -> 1
+
+my %allPorts;       # map of all portnames -> its INDEX line
+my %fromTo;         # map of old -> new portname
+my %toFrom;         # map of new -> old portname
+my %deletedPorts;   # map of deleted ports
+my %substmap = (    # map of port name substitutions
+	'xorg' => 'x11/xorg',
+	'Xorg' => 'x11/xorg',
+	'automake' => 'devel/automake*',
+);
+my %glob2regexp = ( 		# map glob-style regexp chars to regular expr
+	'*' => '.*',
+	'?' => '.',
+);
+
+# Process a single block from /usr/ports/UPDATING
+sub processBlock(@) {
+	my ($affects, $remainder, $line);
+	my $index = 0;
+	foreach $line (@_) {
+		if ($line =~ /^\s*AFFECTS:/i) {
+			$affects = $line;
+			$remainder = $index;
+		} elsif ($affects and $line =~ /^\s*AUTHOR/i) {
+			last;
+		} elsif ($affects) {
+			$affects .= $line;
+		}
+		++$index;
+	}
+
+	return unless defined $remainder;
+	if (checkline($affects, $_[$remainder - 1])) {
+		print "$_[$remainder++]\n" while $remainder < @_;
+	}
+}
+
+# Given a port name, attempt to find and return an existing port of that
+# name, or a different name, taking into account /usr/ports/MOVED
+sub findPortByName($@) {
+	my $name = $_[0];
+	print "+ findPortByName $name\n" if $opt{d};
+	$_[1]{$name} = 1;
+	return $name if $allPorts{$name};
+	my $retval = checkaliases($name, $_[1], \%fromTo);
+	return $retval if defined $retval;
+	return checkaliases($name, $_[1], \%toFrom);
+}
+
+sub checkaliases($\@\@) {
+	my $name = $_[0];
+	my ($alias, $retval);
+	foreach $alias (@{$_[2]{$name}}) {
+		$retval = findPortByName($alias, $_[1]) if not exists $_[1]{$alias};
+		print "+ Checking alias $alias for $name\n" if $opt{d};
+		if (defined $retval and $retval ne "") {
+			print "+ returns $retval\n" if $opt{d};
+			return $retval;
+		}
+	}
+}
+
+
+# Recursively parse package name string, possibly containing
+# {a,b,c} or * metacharacters, requiring expansion
+sub parseexpr($);	# forward declaration needed because of recursion
+sub parseexpr($) {
+	my @retval;
+	my $sepExp = "(,\\s+and\\s+|,\\s+or\\s+|,\\s+|\\s+and\\s+|\\s+or\\s+|\\s+)";
+	if ($_[0] =~ /{.*,.*}/) {
+		# Handle expression like textproc/{senna,p5-Senna}
+		# to produce textproc/senna, textproc/p5-Senna
+		my ($prefix, $subexpr, $suffix) = ($_[0] =~ /([^{]*){([^}]*)}(.*)/);
+
+		# Parse portname fragment contained within braces
+		# Breaks string at "," and discards quotes and single backslashes
+		my @exprs = &quotewords(",", 0, $subexpr);
+		my $line;
+		foreach $line (@exprs) {
+			push @retval, parseexpr($prefix . $line . $suffix);
+		}
+	} elsif ($_[0] =~ /{.*\|.*}/) {
+		# Handle expression like textproc/{senna|p5-Senna}
+		# to produce textproc/senna, textproc/p5-Senna
+		my ($prefix, $subexpr, $suffix) = ($_[0] =~ /([^{]*){([^}]*)}(.*)/);
+
+		# Parse portname fragment contained within braces
+		# Breaks string at "|" and discards quotes and single backslashes
+		my @exprs = &quotewords('\|', 0, $subexpr);
+		my $line;
+		foreach $line (@exprs) {
+			push @retval, parseexpr($prefix . $line . $suffix);
+		}
+	} elsif ($_[0] =~ /\[\d{1,4}\]/) {
+		# Handle expressions like net/openldap2[34]-server
+		# to produce net/openldap23-server, net/openldap24-server
+		my ($prefix, $subexpr, $suffix) = ($_[0] =~ /([^[]*)\[([^\]]+)\](.*)/);
+
+		my $char;
+		foreach $char (split //, $subexpr) {
+			push @retval, parseexpr($prefix . $char . $suffix);
+		}
+	} elsif ($_[0] =~ /\[.+\]/) {
+		# Handle expressions like textproc/docproj[-jadetex]
+		# to produce textproc/docproj, textproc/docproj-jadetex
+		my ($prefix, $subexpr, $suffix) = ($_[0] =~ /([^[]*)\[([^\]]+)\](.*)/);
+		push @retval, parseexpr($prefix . $suffix);
+		push @retval, parseexpr($prefix . $subexpr . $suffix);
+	} elsif ($_[0] =~ /$sepExp/) {
+		# Handle "dir1/port1 and dir2/port2" recursively.
+		my ($prefix, $sep, $suffix) = ($_[0] =~ /(.*?)$sepExp(.*)/);
+		push @retval, parseexpr($prefix) if $prefix ne "";
+		push @retval, parseexpr($suffix) if $suffix ne "" and $suffix ne "any port that depends on it";
+	} elsif ($_[0] =~ /\*/ or $_[0] =~ /\?/) {
+		push @retval, expandwildcard($_[0]);
+	} else {
+		# Perform canned substitution, if appropriate, else use input string
+		my $subst = $substmap{$_[0]};
+		push @retval, $subst ? parseexpr($subst) : $_[0];
+	}
+	return @retval;
+}
+
+# Parse a single AFFECTS: line
+sub parseline($) {
+	if ($_[0] =~ s/^\s+AFFECTS:\s*(.*)/$1/) {
+		return ("ALL") if $_[0] =~ /^everybody\s*$/i
+	    or $_[0] =~ /^everyone\s*$/i
+	    or $_[0] =~ /^all users\s*$/i
+	    or $_[0] =~ /^all\s*$/i;
+		$_[0] =~ s/.*([uU]sers|[tT]esters) of[ \t]*(.*)/$2/;
+		my @retval = parseexpr($_[0]);
+		print "+ parseline returns @retval for $_[0]\n" if $opt{d};
+		return @retval;
+	}
+}
+
+# For arg "PREFIX*SUFFIX", expand by returning all portnames
+# beginning with "PREFIX" and ending with "SUFFIX".
+# If no matching current portnames found, deleted portnames are checked.
+# If no current or deleted portnames match, the expression itself is returned.
+sub expandwildcard($) {
+	my (@retval, $key);
+	my $globpattern = $_[0];
+	$globpattern = "*/$globpattern" if $globpattern !~ /.+\/.+/;
+	my $pattern = glob2pat($globpattern);
+
+	foreach $key (keys %allPorts) {
+		push @retval, $key if $key =~ /$pattern/;
+	}
+	return @retval if @retval;
+
+	# No current ports matched, so try checking for matching deleted ports
+	foreach $key (keys %deletedPorts) {
+		push @retval, $key if $key =~ /$pattern/;
+	}
+	push @retval, $_[0] if @retval == 0;	# push expr if no expansion
+	return @retval;
+}
+
+# Convert glob-style pattern to standard regex pattern
+sub glob2pat($) {
+	(my $globstr = $_[0]) =~ s/(.)/$glob2regexp{$1} || "\Q$1"/ge;
+	return '^' . $globstr . '$';
+}
+
+# Possibilities when evaluating a line:
+# 0. Not able to make sense of line (find any known port names)
+# 1. Able to find 1 or more port names, each either
+# 1a. Is installed
+# 1b. Is unknown
+# 1c. Is known, but not installed
+#
+# Conservatively, output line unless all apparent port names on
+# line are known and are not installed.
+sub checkline($$) {
+	# Copy args for readability and because we will mutate localCopy
+	my ($localCopy, $prevLine) = @_;
+	my @ret = parseline($localCopy);
+	if ($#ret == -1) {
+		print "(NOT RECOGNIZED!) $_[1]\n";
+		return 1;
+	}
+
+	# boolean accumulator flags tracking whether all known, all deleted, etc.
+	my ($allKnown, $allUnknown, $allInstalled, $allNotInstalled, $allDeleted) = (1,1,1,1,1);
+
+	my ($line, @details);
+	foreach $line (@ret) {
+		if ($line eq "ALL") {
+			$allUnknown = $allDeleted = 0;
+			last;
+		}
+		my $alias = findPortByName($line, \());
+		if ($alias) {
+			$allUnknown = $allDeleted = 0;
+			if ($installedPorts{$alias}) {
+				$allDeleted = $allNotInstalled = 0;
+				push @details, logPortFinding("installed", $line, $alias);
+			} else {
+				$allDeleted = $allInstalled = 0;
+				push @details, logPortFinding("NOT installed", $line, $alias);
+			}
+		} elsif ($deletedPorts{$line}) {
+			push @details, logPortFinding("Deleted", $line, $alias);
+			$allUnknown = 0;
+		} else {
+			$allKnown = $allDeleted = 0;
+			push @details, logPortFinding("UNKNOWN", $line, $alias);
+		}
+	}
+
+	if ($allDeleted) {
+		printall(\@details) if $opt{v};
+		return 0 unless $opt{u};
+		print "(ALL Deleted) $_[1]\n";
+		return 1;
+	} elsif ($allUnknown) {
+		printall(\@details) if $opt{v};
+		print "(ALL Unknown) $_[1]\n";
+		return 1;
+	} elsif ($allKnown && $allInstalled) {
+		printall(\@details) if $opt{v};
+		print "(ALL Installed) $_[1]\n";
+		return 1;
+	} elsif ($allKnown && $allNotInstalled) {
+		printall(\@details) if $opt{v};
+		return 0 unless $opt{u};
+		print "(ALL NOT Installed) $_[1]\n";
+		return 1;
+	} else {
+		printall(\@details) if $opt{m} || $opt{v};
+		print "(MIXED) $_[1]\n";
+		return 1;
+	}
+}
+
+# Log detailed port discovery, if verbose enabled
+sub logPortFinding($$$) {
+	my ($type, $line, $alias) = @_;
+	my $aliasexpr = (not defined $alias or $alias eq $line or $alias eq "") ? "" : " ($alias)";
+	return "+ Found $type $line$aliasexpr\n";
+}
+
+sub printall(@) {
+	my $line;
+	foreach $line (@{$_[0]}) {
+		print $line;
+	}
+}
+
+# Main entry point. First, open INDEX and read all ports into allPorts
+MAIN:{
+	open(IDX, $portIndexFile) or die "Can't open $portIndexFile: $!. Maybe you should run make fetchindex or make index from ports directory";
+	while(<IDX>) {
+		chomp;
+		my ($portLine) = ($_ =~ /^[^|]*\|\/usr\/ports\/([^|]*)/)
+		    or die "$_ is not correctly formed!";
+		$allPorts{$portLine} = $_;
+		print "+ Processed INDEX line $_\n" if $opt{d} and $opt{v};
+		print "+ Generated from INDEX portLine $portLine\n" if $opt{d};
+	}
+	close(IDX);
+		
+	# Now open /usr/ports/MOVED to read ports which have moved
+	open(MOVED, $movedFile) or die "Can't open $movedFile: $!";
+	while(<MOVED>) {
+		chomp;
+		if ($_ =~ /^\s*$/) {
+			print "+ Ignoring MOVED line containing no non-whitespace chars.\n" if $opt{d};
+		} elsif ($_ !~ /^\s*#/) {
+			my ($from, $to) = ($_ =~ /^([^|]*)\|([^|]*)/)
+			    or die "$_ is not a correctly formed MOVED line";
+
+			if ($to eq "") {
+				$deletedPorts{$from} = 1;
+			} else {
+				push @{$fromTo{$from}}, $to;
+				push @{$toFrom{$to}}, $from;
+			}
+		}
+	}
+	close(MOVED);
+
+	# Parse /usr/ports/UPDATING into logical blocks, pass each to processBlock
+	my $prevLine;
+	my @bufferBlock;
+	open(UPD, $updatingFile) or die "Can't open $updatingFile: $!";
+	while(<UPD>) {
+		chomp;
+		if ($opt{a} && /^\d{8}/) {
+			my $sectionDate = $_;
+			$sectionDate =~ s/\://;
+			last if $sectionDate <= $afterDate;
+		}
+		if (/^\s*AFFECTS:/ && @bufferBlock > 0) {
+			processBlock(@bufferBlock);
+			@bufferBlock = ();
+		}
+		push @bufferBlock, $prevLine if defined $prevLine;
+		$prevLine = $_;
+	}
+	close(UPD);
+
+	# Process residue and exit
+	push @bufferBlock, $prevLine;
+	processBlock(@bufferBlock);
+}

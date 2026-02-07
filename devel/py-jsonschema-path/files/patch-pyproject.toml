@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -45,7 +45,7 @@ requests = {version = "^2.31.0", optional = true}
+ python = "^3.8.0"
+ PyYAML = ">=5.1"
+ requests = {version = "^2.31.0", optional = true}
+-referencing = "<0.37.0"
++referencing = "<0.38.0"
+ 
+ [tool.poetry.dev-dependencies]
+ pre-commit = "*"

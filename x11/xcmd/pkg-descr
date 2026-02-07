@@ -1,0 +1,9 @@
+Xcmd is a front-end for starting programs under X11.
+You can tell xcmd to look for a window with a specific
+class, resource name, or title string (using the
+`--find-<property>' options); if it finds one or more,
+xcmd will `raise' them, otherwise it will run the
+command you specify. You can tell xcmd to run commands
+that create their own windows (using `--xcmd'), or to
+run commands inside a terminal window (using `--cmd')
+with various options.

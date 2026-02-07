@@ -1,0 +1,8 @@
+sbin/bgpctl
+sbin/bgpd
+sbin/bgplgd
+share/man/man5/bgpd.conf.5.gz
+share/man/man8/bgpctl.8.gz
+share/man/man8/bgpd.8.gz
+share/man/man8/bgplgd.8.gz
+@sample etc/bgpd.conf.sample

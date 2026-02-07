@@ -1,0 +1,115 @@
+--- configure.ac.orig	2020-09-03 11:09:35 UTC
++++ configure.ac
+@@ -24,7 +24,7 @@ AC_SYS_LARGEFILE
+ #
+ # Checks for programs.
+ #
+-AC_PROG_CC_C99([],
++AC_PROG_CC([],
+   [AC_MSG_ERROR([No compiler found that supports C99])]
+ )
+ 
+@@ -725,7 +725,7 @@ AC_C_CONST
+ AC_TYPE_PID_T
+ AC_TYPE_SIZE_T
+ AC_TYPE_UID_T
+-AC_HEADER_TIME
++AC_CHECK_HEADERS([sys/time.h])
+ 
+ test_cxx_flags() {
+   AC_LANG_PUSH([C++])
+@@ -757,7 +757,7 @@ AC_FUNC_STRERROR_R
+ 
+ if test "x$GCC" = "xyes"; then
+   SAVE_CFLAGS="$CFLAGS"
+-  CFLAGS="$CFLAGS -Wall -Werror"
++  CFLAGS="$CFLAGS -Wall "
+ fi
+ SAVE_LDFLAGS="$LDFLAGS"
+ LDFLAGS=""
+@@ -929,7 +929,7 @@ AC_CHECK_FUNCS([thread_info], [have_thread_info="yes"]
+ # Check for strptime {{{
+ if test "x$GCC" = "xyes"; then
+   SAVE_CFLAGS="$CFLAGS"
+-  CFLAGS="$CFLAGS -Wall -Wextra -Werror"
++  CFLAGS="$CFLAGS -Wall -Wextra "
+ fi
+ 
+ AC_CHECK_FUNCS([strptime], [have_strptime="yes"], [have_strptime="no"])
+@@ -1000,10 +1000,10 @@ fi
+ 
+ # Check for timegm {{{
+ 
+-# These checks need -Werror because implicit function declarations are only a
++# These checks need  because implicit function declarations are only a
+ # warning ...
+ SAVE_CFLAGS="$CFLAGS"
+-CFLAGS="$CFLAGS -Werror"
++CFLAGS="$CFLAGS "
+ 
+ AC_CACHE_CHECK([for timegm],
+   [c_cv_have_timegm],
+@@ -3454,7 +3454,7 @@ if test "x$with_libmongoc" = "xyes"; then
+   SAVE_LDFLAGS="$LDFLAGS"
+ 
+   CPPFLAGS="$CPPFLAGS $LIBMONGOC_CFLAGS"
+-  LDFLAGS="$LDFLAGS $LIBMONGOC_LDFLAGS"
++  LDFLAGS="$LDFLAGS $LIBMONGOC_LIBS"
+ 
+   AC_CHECK_LIB([mongoc-1.0], [mongoc_init],
+     [with_libmongoc="yes"],
+@@ -3874,7 +3874,7 @@ if test "x$with_libnetsnmp" = "xyes"; then
+   SAVE_LIBS="$LIBS"
+   CPPFLAGS="$CPPFLAGS $with_libnetsnmp_cppflags"
+   if test "x$GCC" = "xyes"; then
+-    CPPFLAGS="$CPPFLAGS -Wall -Werror"
++    CPPFLAGS="$CPPFLAGS -Wall "
+   fi
+   LDFLAGS="$LDFLAGS $with_libnetsnmp_ldflags"
+   LIBS="$LIBS -lnetsnmp"
+@@ -4348,7 +4348,7 @@ if test "x$with_libperl" = "xyes"; then
+   SAVE_LIBS="$LIBS"
+   CFLAGS="$CFLAGS $PERL_CFLAGS"
+   if test "x$GCC" = "xyes"; then
+-    CFLAGS="$CFLAGS -Wall -Werror"
++    CFLAGS="$CFLAGS -Wall "
+   fi
+   LIBS="$LIBS $PERL_LIBS"
+ 
+@@ -5810,6 +5810,7 @@ if test "x$with_libupsclient" = "xyes"; then
+     [],
+     [],
+     [[
++      #include <time.h>
+       #include <stdlib.h>
+       #include <stdio.h>
+       #include <upsclient.h>
+@@ -6507,7 +6508,7 @@ AC_ARG_WITH([libslurm],
+     else if test -d "$with_libslurm/lib"; then
+       AC_MSG_NOTICE([Not checking for libslurm: Manually configured])
+       with_libslurm_cflags="-I$withval/include"
+-      with_libslurm_libs="-L$withval/lib -llibslurm"
++      with_libslurm_libs="-L$withval/lib -lslurm"
+       with_libslurm="yes"
+     fi; fi; fi
+   ],
+@@ -6579,7 +6580,7 @@ collectd features:])
+ AC_COLLECTD([debug],     [enable],  [feature], [debugging])
+ AC_COLLECTD([daemon],    [disable], [feature], [daemon mode])
+ AC_COLLECTD([getifaddrs],[enable],  [feature], [getifaddrs under Linux])
+-AC_COLLECTD([werror],    [disable], [feature], [building with -Werror])
++AC_COLLECTD([werror],    [disable], [feature], [building with ])
+ 
+ dependency_warning="no"
+ dependency_error="no"
+@@ -7348,8 +7349,8 @@ if test "x$GCC" = "xyes"; then
+   AM_CFLAGS="-Wall"
+   AM_CXXFLAGS="-Wall"
+   if test "x$enable_werror" != "xno"; then
+-    AM_CFLAGS="$AM_CFLAGS -Werror"
+-    AM_CXXFLAGS="$AM_CXXFLAGS -Werror"
++    AM_CFLAGS="$AM_CFLAGS "
++    AM_CXXFLAGS="$AM_CXXFLAGS "
+   fi
+ fi
+ 

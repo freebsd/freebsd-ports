@@ -1,0 +1,7 @@
+This program is standalone 'fake' ident daemon. This program does
+not fork() but is configured to handle up to 20 concurrent connections.
+Since one connection should not last long, if all 20 connections are
+in use, the next connection will close the oldest connection data
+has been read. This way this program is not very vulnerable to so
+called `denial of service' attack, thus making this ideal "identd"
+to be used in a firewall, IP masquerading hosts etc.

@@ -1,0 +1,70 @@
+--- examples/tests/Makefile.in.orig
++++ examples/tests/Makefile.in
+@@ -36,8 +36,8 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-noinst_PROGRAMS = beeps$(EXEEXT) leak1$(EXEEXT) leak2$(EXEEXT) \
+-	res_leak$(EXEEXT) chooser1$(EXEEXT) dm1$(EXEEXT) dm2$(EXEEXT) \
++noinst_PROGRAMS = beeps$(EXEEXT) leak1$(EXEEXT) \
++	chooser1$(EXEEXT) dm1$(EXEEXT) dm2$(EXEEXT) \
+ 	addrows$(EXEEXT) xm$(EXEEXT) manycellwidgets$(EXEEXT) \
+ 	0rows$(EXEEXT) images$(EXEEXT) setlabels$(EXEEXT) \
+ 	0rowcols$(EXEEXT) cancel$(EXEEXT)
+@@ -113,24 +113,12 @@
+ leak1_DEPENDENCIES = ../../src/libXbae.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+-leak2_SOURCES = leak2.c
+-leak2_OBJECTS = leak2.$(OBJEXT)
+-leak2_LDADD = $(LDADD)
+-leak2_DEPENDENCIES = ../../src/libXbae.la $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1)
+ manycellwidgets_SOURCES = manycellwidgets.c
+ manycellwidgets_OBJECTS = manycellwidgets.$(OBJEXT)
+ manycellwidgets_LDADD = $(LDADD)
+ manycellwidgets_DEPENDENCIES = ../../src/libXbae.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+-res_leak_SOURCES = res_leak.c
+-res_leak_OBJECTS = res_leak.$(OBJEXT)
+-res_leak_LDADD = $(LDADD)
+-res_leak_DEPENDENCIES = ../../src/libXbae.la $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1)
+ setlabels_SOURCES = setlabels.c
+ setlabels_OBJECTS = setlabels.$(OBJEXT)
+ setlabels_LDADD = $(LDADD)
+@@ -155,11 +143,11 @@
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ SOURCES = 0rowcols.c 0rows.c addrows.c beeps.c cancel.c chooser1.c \
+-	dm1.c dm2.c images.c leak1.c leak2.c manycellwidgets.c \
+-	res_leak.c setlabels.c xm.c
++	dm1.c dm2.c images.c leak1.c manycellwidgets.c \
++	setlabels.c xm.c
+ DIST_SOURCES = 0rowcols.c 0rows.c addrows.c beeps.c cancel.c \
+-	chooser1.c dm1.c dm2.c images.c leak1.c leak2.c \
+-	manycellwidgets.c res_leak.c setlabels.c xm.c
++	chooser1.c dm1.c dm2.c images.c leak1.c \
++	manycellwidgets.c setlabels.c xm.c
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -379,15 +367,9 @@
+ leak1$(EXEEXT): $(leak1_OBJECTS) $(leak1_DEPENDENCIES) 
+ 	@rm -f leak1$(EXEEXT)
+ 	$(LINK) $(leak1_LDFLAGS) $(leak1_OBJECTS) $(leak1_LDADD) $(LIBS)
+-leak2$(EXEEXT): $(leak2_OBJECTS) $(leak2_DEPENDENCIES) 
+-	@rm -f leak2$(EXEEXT)
+-	$(LINK) $(leak2_LDFLAGS) $(leak2_OBJECTS) $(leak2_LDADD) $(LIBS)
+ manycellwidgets$(EXEEXT): $(manycellwidgets_OBJECTS) $(manycellwidgets_DEPENDENCIES) 
+ 	@rm -f manycellwidgets$(EXEEXT)
+ 	$(LINK) $(manycellwidgets_LDFLAGS) $(manycellwidgets_OBJECTS) $(manycellwidgets_LDADD) $(LIBS)
+-res_leak$(EXEEXT): $(res_leak_OBJECTS) $(res_leak_DEPENDENCIES) 
+-	@rm -f res_leak$(EXEEXT)
+-	$(LINK) $(res_leak_LDFLAGS) $(res_leak_OBJECTS) $(res_leak_LDADD) $(LIBS)
+ setlabels$(EXEEXT): $(setlabels_OBJECTS) $(setlabels_DEPENDENCIES) 
+ 	@rm -f setlabels$(EXEEXT)
+ 	$(LINK) $(setlabels_LDFLAGS) $(setlabels_OBJECTS) $(setlabels_LDADD) $(LIBS)

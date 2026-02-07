@@ -1,0 +1,17 @@
+bin/dcadec
+bin/dtsdec
+bin/extract_dca
+bin/extract_dts
+include/dca.h
+include/dts.h
+lib/libdca.a
+lib/libdca.so
+lib/libdca.so.0
+lib/libdca.so.0.0.0
+lib/libdts.a
+libdata/pkgconfig/libdca.pc
+libdata/pkgconfig/libdts.pc
+share/man/man1/dcadec.1.gz
+share/man/man1/extract_dca.1.gz
+share/man/man1/dtsdec.1.gz
+share/man/man1/extract_dts.1.gz

@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# Copyright (C) 2015 by Yuri Victorovich. All rights reserved.
+
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable %%PORTNAME%%:
+#
+#%%PORTNAME%%_enable="YES"
+
+. /etc/rc.subr
+
+name="%%PORTNAME%%"
+rcvar=%%PORTNAME%%_enable
+start_cmd="%%PORTNAME%%_start"
+stop_cmd="%%PORTNAME%%_stop"
+
+load_rc_config ${name}
+
+: ${%%PORTNAME%%_enable="NO"}
+: ${%%PORTNAME%%_config="%%ETCDIR%%/conf/app.ini"}
+
+logfile=/var/log/%%PORTNAME%%.log
+pidfile=/var/run/%%PORTNAME%%.pid
+command="/usr/bin/true"
+procname="/usr/sbin/daemon"
+
+is_process_running() {
+  [ -f $pidfile ] && procstat $(cat $pidfile) >/dev/null 2>&1
+}
+
+%%PORTNAME%%_start() {
+  if is_process_running; then
+    echo "%%PORTNAME%% is already running (pid=$(cat $pidfile))"
+    return 1
+  fi
+  export USER=%%GOGS_USER%%
+  export HOME=$(echo ~%%GOGS_USER%%)
+  touch $logfile
+  chmod 640 $logfile
+  cd %%PREFIX%%/libexec/%%PORTNAME%%
+  /usr/sbin/daemon -P $pidfile -u %%GOGS_USER%% %%PREFIX%%/libexec/%%PORTNAME%%/%%PORTNAME%% web --config ${%%PORTNAME%%_config} >>$logfile 2>&1
+  if is_process_running; then
+    echo "started %%PORTNAME%% (pid=$(cat $pidfile))"
+  else
+    echo "failed to start %%PORTNAME%%"
+  fi
+}
+
+%%PORTNAME%%_stop() {
+  if is_process_running; then
+    local pid=$(cat $pidfile)
+    echo "stopping %%PORTNAME%% (pid=$pid)"
+    kill -- -$pid
+  else
+    echo "%%PORTNAME%% isn't running"
+  fi
+}
+
+run_rc_command "$1"

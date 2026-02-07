@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Tk/Enscript.pm
+%%SITE_PERL%%/Tk/enscript.cfg
+%%PERL5_MAN3%%/Tk::Enscript.3.gz

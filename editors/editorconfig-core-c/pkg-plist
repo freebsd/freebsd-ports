@@ -1,0 +1,17 @@
+bin/editorconfig
+bin/editorconfig-%%PORTVERSION%%
+include/editorconfig/editorconfig.h
+include/editorconfig/editorconfig_handle.h
+lib/libeditorconfig.so
+lib/libeditorconfig.so.%%SHLIB_MAJOR%%
+lib/libeditorconfig.so.%%SHLIB_VER%%
+lib/libeditorconfig_static.a
+lib/cmake/EditorConfig/EditorConfigConfig.cmake
+lib/cmake/EditorConfig/EditorConfigConfigVersion.cmake
+lib/cmake/EditorConfig/EditorConfigTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/EditorConfig/EditorConfigTargets.cmake
+libdata/pkgconfig/editorconfig.pc
+share/man/man1/editorconfig.1.gz
+share/man/man3/editorconfig.h.3.gz
+share/man/man3/editorconfig_handle.h.3.gz
+share/man/man5/editorconfig-format.5.gz

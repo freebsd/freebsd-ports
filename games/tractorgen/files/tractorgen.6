@@ -1,0 +1,85 @@
+.\""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+.\" tractorgen.6                                              March 2000
+.\" Kbert                                                 k@vergenet.net
+.\"
+.\" tractorgen
+.\" Generates ASCII tractors
+.\" Copyright (C) 1999-2002  Kbert <k@vergenet.net>
+.\" 
+.\" This program is free software; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License as
+.\" published by the Free Software Foundation; either version 2 of the
+.\" License, or (at your option) any later version.
+.\" 
+.\" This program is distributed in the hope that it will be useful, but
+.\" WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+.\" General Public License for more details.
+.\" 
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+.\" 02111-1307  USA
+.\"
+.\""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+.TH TRACTORGEN 6 "3th March 2000"
+.SH NAME
+tractorgen \- Generates ASCII tractors
+.SH SYNOPSIS
+\fBtractorgen [number of wheels]\fP
+.SH DESCRIPTION
+\fBtractorgen\fP generates ASCII tractors using the universal tractor
+coefficient (TC). The intended audience is practical ASCII tractor
+theorists and lay people interested in abstract tractor theory.
+
+Before using this program, ensure that you understand the fundamental
+theorem of ASCII tractor mechanics:
+
+"ASCII Tractors must have at least four wheels." [1]
+
+Note that this theorem applies to side-on views. No useful models of
+two-sided ASCII tractors have been found, nor is there even any
+concrete proof of their existence.
+
+In keeping with this theorem, TRACTORGEN will politely inform the user
+if any attempt to make tractors with less than four wheels is made
+(by calling abort(3) and dumping core).
+
+[1] See, for example, "Introductory ASCII tractor design, vols 3-7",
+Blum&Merven, Slarken Press 1973.
+.SH OPTIONS
+.TP
+\fBnumber of wheels\fP
+If no argument is given, the optimal configuration of 7 is generated.
+.SH USAGE
+Tractorgen takes one argument. This argument is indirectly related
+to the TC and is a cardinal enumerating the desired wheel
+configuration.
+
+For example, if you want a tractor with 5 wheels, type at the shell
+prompt:
+
+$ tractorgen 5
+
+Conversely, if you want a tractor with 113 wheels, type:
+
+$ tractorgen 113
+
+Remember that tractors with large numbers of wheels may overflow the
+width of your terminal, with unpredictable results. Actually, it will
+probably just look like shit.
+.SH FILES
+.TP
+None
+.SH SEE ALSO
+abort(3)
+.SH WEBSITE
+http://www.vergenet.net/~konradd/software/tractorgen/
+.SH AUTHOR
+.br
+Kbert <k@vergenet.net>
+.SH LICENSE
+.br
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. See the file COPYING for details. 
+
+Though I have no idea why you'd want to do any of this.

@@ -1,0 +1,7 @@
+V_Sim visualizes atomic structures such as crystals, grain boundaries and so on
+(either in .d3 format as defined by F. Lançon, or in plain text format as
+described in the sample page). The rendering is done in pseudo-3D with colored
+sphere to represent the atoms. The user can interact through many functions to
+choose the view, the size of the atoms, their color, the background color, the
+type of fog... Much of it is detailled in the user guide. Moreover V_Sim allows
+to export the view as image in GIF, PS or more formats.

@@ -1,0 +1,15 @@
+# Fix `cvs import -X' failure
+# Fixes: #374964
+# Patch by Florian Zschocke <zschocke@gmx.net>
+diff -Nur src/import.c src/import.c
+--- src/import.c	2005-09-04 02:27:44.000000000 +0200
++++ src/import.c	2006-06-19 19:41:57.000000000 +0200
+@@ -595,7 +595,7 @@
+ 		/* Attempt to make the Attic directory, in case it
+ 		   does not exist.  */
+ 		(void) sprintf (rcs, "%s/%s", repository, CVSATTIC);
+-		if (CVS_MKDIR (rcs, 0777 ) != 0 && errno != EEXIST)
++		if (noexec == 0 && CVS_MKDIR (rcs, 0777 ) != 0 && errno != EEXIST)
+ 		    error (1, errno, "cannot make directory `%s'", rcs);
+ 
+ 		/* Note that the above clobbered the path name, so we

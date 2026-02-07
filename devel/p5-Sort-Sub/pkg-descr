@@ -1,0 +1,2 @@
+Sort::Sub and "Sort::Sub::*" are a convenient packaging of any kind of
+subroutine which you can use for "sort()".

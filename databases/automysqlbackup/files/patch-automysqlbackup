@@ -1,0 +1,20 @@
+--- automysqlbackup.orig	2011-12-03 16:10:43 UTC
++++ automysqlbackup
+@@ -55,8 +55,8 @@ let "N_backup_local_nofiles=0x20"
+ # @info:	Default configuration options.
+ # @deps:	(none)
+ load_default_config() {
+-  CONFIG_configfile="/etc/automysqlbackup/automysqlbackup.conf"
+-  CONFIG_backup_dir='/var/backup/db'
++  CONFIG_configfile="%%ETCDIR%%/automysqlbackup.conf"
++  CONFIG_backup_dir='/var/backups/automysqlbackup'
+   CONFIG_multicore='yes'
+   CONFIG_multicore_threads=2
+   CONFIG_do_monthly="01"
+@@ -2252,4 +2252,4 @@ elif (( $# == 0 )) && (( ${#opt_flags[@]} == 0 )); the
+   method_backup
+ fi
+ 
+-# END __main
+\ No newline at end of file
++# END __main

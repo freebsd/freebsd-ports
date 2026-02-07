@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Math/synopsis.pl
+%%SITE_PERL%%/Math/VectorReal.pm
+%%SITE_PERL%%/Math/vector_test.pl
+%%SITE_PERL%%/Math/matrix_test.pl
+%%PERL5_MAN3%%/Math::VectorReal.3.gz

@@ -1,0 +1,13 @@
+%%CLIENT%%bin/xonotic
+%%DEDICATED%%bin/xonotic-dedicated
+%%CLIENT%%share/applications/xonotic.desktop
+%%CLIENT%%share/icons/hicolor/128x128/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/16x16/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/22x22/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/24x24/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/256x256/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/32x32/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/48x48/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/512x512/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/64x64/apps/xonotic.png
+%%CLIENT%%share/icons/hicolor/scalable/apps/xonotic.svg

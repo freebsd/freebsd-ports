@@ -1,0 +1,11 @@
+--- shlib/Makefile.in.orig	2015-07-12 22:41:58 UTC
++++ shlib/Makefile.in
+@@ -174,7 +174,7 @@ unsupported:
+ 
+ $(SHARED_READLINE):	$(SHARED_OBJ)
+ 	$(RM) $@
+-	$(SHOBJ_LD) ${SHOBJ_LDFLAGS} ${SHLIB_XLDFLAGS} -o $@ $(SHARED_OBJ) $(SHLIB_LIBS)
++	$(SHOBJ_LD) ${SHOBJ_LDFLAGS} ${SHLIB_XLDFLAGS} ${TERMCAP_LIB} -o $@ $(SHARED_OBJ) $(SHLIB_LIBS)
+ 
+ $(SHARED_HISTORY):	$(SHARED_HISTOBJ) xmalloc.so xfree.so
+ 	$(RM) $@

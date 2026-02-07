@@ -1,0 +1,36 @@
+Index: kWnn/jlib/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/kWnn/jlib/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- kWnn/jlib/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ kWnn/jlib/Makefile.in	2 Jan 2009 21:09:35 -0000	1.2
+@@ -61,13 +61,15 @@ SRC7= $(KWNNETCSRC)/py_table.c
+ OBJ7= py_table.o
+ SRC8= $(KWNNETCSRC)/zy_table.c
+ OBJ8= zy_table.o
++SRC9= $(KWNNETCSRC)/fake-rfc2553.c
++OBJ9= fake-rfc2553.o
+ 
+ LOCAL_RKSRCS= $(KWNNROMKANSRC)/rk_bltinfn.c 	$(KWNNROMKANSRC)/rk_main.c 	$(KWNNROMKANSRC)/rk_modread.c 	$(KWNNROMKANSRC)/rk_read.c 	$(KWNNROMKANSRC)/rk_vars.c
+ 
+ LOCAL_RKOBJS= $(KWNNROMKANSRC)/rk_bltinfn.o 	$(KWNNROMKANSRC)/rk_main.o 	$(KWNNROMKANSRC)/rk_modread.o 	$(KWNNROMKANSRC)/rk_read.o 	$(KWNNROMKANSRC)/rk_vars.o
+ 
+-LOCAL_ETCSRCS = $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)
+-LOCAL_ETCOBJS = $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8)
++LOCAL_ETCSRCS = $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8) $(SRC9)
++LOCAL_ETCOBJS = $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) $(OBJ8) $(SRC9)
+ OTHER_SRCS = $(WNNETCSRC)/mkdir.c
+ OTHER_OBJS = mkdir.o
+ SRCS= $(SRC1) $(SRC3) $(LOCAL_ETCSRCS) $(OTHER_SRCS)
+@@ -163,6 +165,9 @@ $(OBJ7) : $(SRC7)
+ $(OBJ8) : $(SRC8)
+ 	$(LT_CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
+ 
++$(OBJ9) : $(SRC9)
++	$(LT_CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
++
+ mkdir.o : $(WNNETCSRC)/mkdir.c
+ 	$(LT_CC) -c $(CFLAGS) $?
+ 

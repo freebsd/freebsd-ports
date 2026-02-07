@@ -1,0 +1,17 @@
+PORTNAME=	File-PathConvert
+PORTVERSION=	0.9
+PORTREVISION=	1
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Various path conversion routines for Perl
+WWW=		https://metacpan.org/release/File-PathConvert
+
+PORTSCOUT=	skipv:0.85
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

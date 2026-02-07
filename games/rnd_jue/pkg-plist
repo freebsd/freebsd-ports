@@ -1,0 +1,8 @@
+bin/rnd_jue
+share/icons/hicolor/32x32/apps/rnd_jue.png
+share/icons/hicolor/48x48/apps/rnd_jue.png
+share/icons/hicolor/64x64/apps/rnd_jue.png
+share/icons/hicolor/72x72/apps/rnd_jue.png
+share/icons/hicolor/96x96/apps/rnd_jue.png
+share/pixmaps/rnd_jue.png
+@dir %%DATADIR%%/levels/Sokoban/peloux/peloux_micro/choriban

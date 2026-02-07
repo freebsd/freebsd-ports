@@ -1,0 +1,117 @@
+--- apps/leo_storage/priv/leo_storage.schema.orig	2014-12-17 11:21:38.000000000 +0200
++++ apps/leo_storage/priv/leo_storage.schema	2014-12-20 00:06:58.000000000 +0200
+@@ -37,7 +37,7 @@
+  "sasl.sasl_error_logger",
+  [
+   {datatype, string},
+-  {default, "./log/sasl/sasl-error.log"}
++  {default, "%%LEOFS_LOGDIR%%/leo_storage/sasl/sasl-error.log"}
+  ]}.
+ 
+ {translation, "sasl.sasl_error_logger",
+@@ -63,7 +63,7 @@
+  "sasl.error_logger_mf_dir",
+  "sasl.error_logger_mf_dir",
+  [
+-  {default, "./log/sasl"}
++  {default, "%%LEOFS_LOGDIR%%/leo_storage/sasl"}
+  ]}.
+ 
+ %% @doc Specifies how large each individual file can be.
+@@ -104,7 +104,7 @@
+          Managers = cuttlefish_util:conf_get_value("managers", Conf),
+          case string:tokens(Managers, "[ , ]") of
+              [] ->
+-                 ['manager_0@127.0.0.1', 'manager_1@127.0.0.1'];
++                 ['manager@127.0.0.1', 'manager_slave@127.0.0.1'];
+              Tokens ->
+                  lists:map(fun(X) ->
+                                    list_to_atom(X)
+@@ -146,7 +146,7 @@
+          Paths = cuttlefish_util:conf_get_value("obj_containers.path", Conf),
+          Paths_1 = case string:tokens(Paths, "[ , ]") of
+                        [] ->
+-                           ["./avs"];
++                           ["%%LEOFS_DBDIR%%/leo_storage/avs"];
+                        Tokens_1 ->
+                            Tokens_1
+                    end,
+@@ -780,7 +780,7 @@
+  "leo_storage.log_dir",
+  [
+   {datatype, string},
+-  {default, "./log/erlang"}
++  {default, "%%LEOFS_LOGDIR%%/leo_storage/erlang"}
+  ]}.
+ 
+ %% @doc Output log file(s) - app
+@@ -789,7 +789,7 @@
+  "leo_storage.log_appender",
+  [
+   {datatype, string},
+-  {default, "./log/app"}
++  {default, "%%LEOFS_LOGDIR%%/leo_storage/app"}
+  ]}.
+ 
+ {translation, "leo_storage.log_appender",
+@@ -804,7 +804,7 @@
+  "leo_redundant_manager.log_dir_member",
+  [
+   {datatype, string},
+-  {default, "./log/ring"}
++  {default, "%%LEOFS_LOGDIR%%/leo_storage/ring"}
+  ]}.
+ 
+ %% @doc Output log file(s) - ring
+@@ -813,7 +813,7 @@
+  "leo_redundant_manager.log_dir_ring",
+  [
+   {datatype, string},
+-  {default, "./log/ring"}
++  {default, "%%LEOFS_LOGDIR%%/leo_storage/ring"}
+  ]}.
+ 
+ %% @doc is enable data-diagnosis log
+@@ -833,7 +833,7 @@
+  "queue_dir",
+  "leo_storage.queue_dir",
+  [
+-  {default, "./work/queue"}
++  {default, "%%LEOFS_DBDIR%%/leo_storage/queue"}
+  ]}.
+ 
+ %% @doc Directory of SNMP agent configuration
+@@ -841,7 +841,7 @@
+  "snmp_agent",
+  "leo_storage.snmp_agent",
+  [
+-  {default, "./snmp/snmpa_storage_0/LEO-STORAGE"}
++  {default, "%%PREFIX%%/lib/leofs/snmp/snmpa_storage/LEO-STORAGE"}
+  ]}.
+ 
+ 
+@@ -1070,7 +1070,7 @@
+  "nodename",
+  "vm_args.-name",
+  [
+-  {default, "storage_0@127.0.0.1"}
++  {default, "storage@127.0.0.1"}
+  ]}.
+ 
+ %% @doc Cookie for distributed node communication.  All nodes in the same cluster
+@@ -1121,7 +1121,7 @@
+  "erlang.crash_dump",
+  "vm_args.-env ERL_CRASH_DUMP",
+  [
+-  {default, "./log/erl_crash.dump"}
++  {default, "%%LEOFS_LOGDIR%%/leo_storage/erl_crash.dump"}
+  ]}.
+ 
+ %% @doc Raise the ETS table limit
+@@ -1202,5 +1202,5 @@
+  "snmp_conf",
+  "vm_args.-config",
+  [
+-  {default, "./snmp/snmpa_storage_0/leo_storage_snmp"}
++  {default, "%%PREFIX%%/lib/leofs/snmp/snmpa_storage/leo_storage_snmp"}
+  ]}.

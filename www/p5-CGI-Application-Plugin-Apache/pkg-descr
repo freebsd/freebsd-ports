@@ -1,0 +1,2 @@
+CGI::Application::Plugin::Apache provides easy access to Apache::* modules
+for CGI::Application.

@@ -1,0 +1,3 @@
+Apparix allows you to bookmark directories and later jump to them using the
+mark. When jumping, the contributed bash completion code allows one to complete
+on bookmarks and on subdirectories of the target directory.

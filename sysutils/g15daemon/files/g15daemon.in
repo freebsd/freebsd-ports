@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: g15daemon
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# g15daemon_enable (bool):	Set to NO by default.
+#				Set it to YES to enable doormand.
+
+. /etc/rc.subr
+
+name=g15daemon
+rcvar=g15daemon_enable
+
+load_rc_config $name
+
+: ${daemon_enable:="NO"}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+run_rc_command "$1"

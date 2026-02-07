@@ -1,0 +1,3 @@
+Lingua::EN::FindNumber provides a regular expression for finding numbers in
+English text. It also provides functions for extracting and manipulating such
+numbers.

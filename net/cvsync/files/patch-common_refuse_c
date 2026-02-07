@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_refuse_c,v 1.2 2014/06/25 17:54:07 naddy Exp $
+--- common/refuse.c.orig	Mon Jul 18 16:32:58 2005
++++ common/refuse.c	Wed Jun 25 00:48:47 2014
+@@ -246,7 +246,7 @@ refuse_access(struct refuse_args *ra, struct cvsync_at
+ 			continue;
+ 		namelen = strlen(pat);
+ 		ep = pat + namelen;
+-		while (ep >= pat) {
++		while (ep > pat) {
+ 			if (*--ep != '/')
+ 				continue;
+ 

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/LexAlias.pm
+%%SITE_ARCH%%/auto/Devel/LexAlias/LexAlias.so
+%%PERL5_MAN3%%/Devel::LexAlias.3.gz

@@ -1,0 +1,6 @@
+bin/andwatchd
+bin/andwatch-query
+bin/andwatch-query-ma
+bin/andwatch-update-ma
+%%DATADIR%%/andwatch-notify.sh
+@dir /var/db/andwatch

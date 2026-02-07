@@ -1,0 +1,4 @@
+Text::Password::Pronounceable - Generate pronounceable passwords
+
+This module generates pronuceable passwords, based the
+English digraphs by D Edwards.

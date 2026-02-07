@@ -1,0 +1,6 @@
+Prn prints out a text file to a postscript printer by converting to
+postscript.  If the file has kanji code such as 7-bit JIS, MS-kanji
+(shifted-JIS) or EUC, it can print out by using a kanji code converter
+whose name is kcc.  If the file is code of C, C++, FORTRAN, pascal,
+... , printing out by prn with a option '-c' can emphasize keywords
+and comments.

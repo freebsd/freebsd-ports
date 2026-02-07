@@ -1,0 +1,8 @@
+Hercules is an open source software implementation of the mainframe System/370
+and ESA/390 architectures, in addition to the new 64-bit z/Architecture.
+Hercules runs under Linux, Windows, Solaris, FreeBSD, and Mac OS X.
+
+Hercules was created by Roger Bowler and is maintained by Jay Maynard. Jan
+Jaeger designed and implemented many of the advanced features of Hercules,
+including dynamic reconfiguration, integrated console, interpretive execution
+and z/Architecture support.

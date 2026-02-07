@@ -1,0 +1,43 @@
+// Arduino UNO USB Serial Port Kernel Driver for FreeBSD
+//
+// This is a user-modifiable file that can be used to add extra
+// USB Vendor ID / Product ID combinations to the list of existing
+// combinations that the driver recognizes as an Arduino Uno.
+//
+// If you modify your Arduino Uno (or obtain a similar unit with a different
+// Vendor/Product combination) you can simply modify this file to include
+// the new Vendor/Product information.
+//
+// Place your NEW Vendor ID / Product ID combinations below in the form of
+// a C-language structure initializer entry, as follows
+//
+//     { 0xaaaa, 0xbbbb },
+//
+// Where '0xaaaa' is the vendor ID, and '0xbbbb' is the product ID that you
+// want the driver to recognize as an Arduino UNO.  It must end with a ','
+//
+// The default values for Arduino UNO and MEGA are included as a reference.
+// These are provided 'as-is' though testing suggests they are correct.
+//
+// When new Arduino products are released, you can add the new information to
+// this file.  Please let me know so I can update it, too (thanks).  Send
+// new submissions to 'bobf@mrp3.com', with an appropriate subject line and
+// description of the entry.  Please test it first, thanks.
+//
+// If you change this file yourself, you will need to update it eachdd
+// time you obtain a fresh copy of the ports tree.
+//
+//
+
+    { 0x2341, 0x0001 },  // Arduino UNO, vendor 2341H, product 0001H
+    { 0x2341, 0x0042 },  // Arduino MEGA (rev 3), vendor 2341H, product 0042H
+    { 0x2341, 0x0043 },  // Arduino UNO (rev 3), vendor 2341H, product 0043H
+    { 0x2341, 0x0010 },  // Arduino MEGA 2560 R3, vendor 2341H, product 0010H 
+    { 0x2341, 0x8037 },  // Arduino Micro
+ 
+// place your entries below this line
+
+
+
+// end of file
+

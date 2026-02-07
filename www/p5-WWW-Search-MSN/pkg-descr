@@ -1,0 +1,2 @@
+This module provides a backend of WWW::Search to search using
+http://search.msn.com/.

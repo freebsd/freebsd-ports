@@ -1,0 +1,2 @@
+BigRecord is built from ActiveRecord, and intended to seamlessly integrate
+into your Ruby on Rails applications.

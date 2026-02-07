@@ -1,0 +1,4 @@
+File::DirCompare is a perl module to compare two directories using
+a callback, invoked for all files that are 'different' between the
+two directories, and for any files that exist only in one or other
+directory ('unique' files).

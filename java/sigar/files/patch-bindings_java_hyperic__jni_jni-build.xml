@@ -1,0 +1,10 @@
+--- bindings/java/hyperic_jni/jni-build.xml.orig	2025-12-11 13:12:48 UTC
++++ bindings/java/hyperic_jni/jni-build.xml
+@@ -161,7 +161,6 @@ -->
+     <echo message="jni.src=${jni.src}, jni.jdk.os=${jni.jdk.os}, ${sun.arch.data.model}-bit"/>
+ 
+     <javac srcdir="${jni.src.java}" destdir="${build}/classes" debug="true"
+-           source="1.6" target="1.6"
+ 	   includes="org/hyperic/jni/*.java"/>
+ 
+     <taskdef name="libarch" classname="org.hyperic.jni.ArchNameTask">

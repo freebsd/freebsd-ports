@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+Some ZFS tuning guides recommend setting KVA_PAGES=512 in your kernel
+configuration.  This is incompatible with Wine.  The maximum possible
+is KVA_PAGES=500, which should still be enough for ZFS.
+
+The port also installs some of Wine's documentation which describes
+additional programs that are not in the manual pages under
+  %%PREFIX%%/share/doc/wine
+
+To enable Wayland run the following two commands:
+$ cat > wayland.reg  <<EOF
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Wine\Drivers]
+"Graphics"="x11,wayland"
+EOF
+$ wine64 regedit wayland.reg
+EOM
+}
+{ type: upgrade
+  maximum_version: "10.17"
+  message: <<EOM
+Since the version 10.17, wine require hwloc2 as an additional
+dependency. If it was not automatically installed, then install it
+for the 64bit part with:
+# pkg install hwloc2
+And for the 32bit part do as the user that would use wine:
+$ %%PREFIX%%/share/wine/pkg32.sh install hwloc2
+EOM
+}
+]

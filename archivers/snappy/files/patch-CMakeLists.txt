@@ -1,0 +1,57 @@
+--- CMakeLists.txt.orig	2025-03-26 15:19:22 UTC
++++ CMakeLists.txt
+@@ -32,7 +32,7 @@ if(NOT CMAKE_CXX_STANDARD)
+ # C++ standard can be overridden when this is used as a sub-project.
+ if(NOT CMAKE_CXX_STANDARD)
+   # This project requires C++11.
+-  set(CMAKE_CXX_STANDARD 11)
++  set(CMAKE_CXX_STANDARD 14)
+   set(CMAKE_CXX_STANDARD_REQUIRED ON)
+   set(CMAKE_CXX_EXTENSIONS OFF)
+ endif(NOT CMAKE_CXX_STANDARD)
+@@ -51,10 +51,6 @@ if(MSVC)
+   string(REGEX REPLACE "/EH[a-z]+" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHs-c-")
+   add_definitions(-D_HAS_EXCEPTIONS=0)
+-
+-  # Disable RTTI.
+-  string(REGEX REPLACE "/GR" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
+ else(MSVC)
+   # Use -Wall for clang and gcc.
+   if(NOT CMAKE_CXX_FLAGS MATCHES "-Wall")
+@@ -81,10 +77,6 @@ else(MSVC)
+   # Disable C++ exceptions.
+   string(REGEX REPLACE "-fexceptions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+-
+-  # Disable RTTI.
+-  string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
+ endif(MSVC)
+ 
+ # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to make
+@@ -329,19 +321,18 @@ if(SNAPPY_BUILD_TESTS)
+   set(install_gmock OFF)
+   set(build_gmock ON)
+ 
+-  # This project is tested using GoogleTest.
+-  add_subdirectory("third_party/googletest")
++  find_package(GTest REQUIRED)
+ 
+   # GoogleTest triggers a missing field initializers warning.
+   if(SNAPPY_HAVE_NO_MISSING_FIELD_INITIALIZERS)
+-    set_property(TARGET gtest
++    set_property(TARGET GTest::gtest
+         APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
+-    set_property(TARGET gmock
++    set_property(TARGET GTest::gmock
+         APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
+   endif(SNAPPY_HAVE_NO_MISSING_FIELD_INITIALIZERS)
+ 
+   if(SNAPPY_HAVE_NO_IMPLICIT_INT_FLOAT_CONVERSION)
+-    set_property(TARGET gtest
++    set_property(TARGET GTest::gtest
+         APPEND PROPERTY COMPILE_OPTIONS -Wno-implicit-int-float-conversion)
+   endif(SNAPPY_HAVE_NO_IMPLICIT_INT_FLOAT_CONVERSION)
+ 

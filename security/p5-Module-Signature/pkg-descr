@@ -1,0 +1,10 @@
+Module::Signature adds cryptographic authentications to CPAN
+distributions, via the special SIGNATURE file.
+
+If you are a module user, all you have to do is to remember
+running "cpansign -v" (or just "cpansign") before issuing
+"perl Makefile.PL" or "perl Build.PL"; that will ensure the
+ distribution has not been tampered with.
+
+For module authors, you'd want to add the SIGNATURE file to
+your MANIFEST, then type "cpansign -s" before making a distribution.

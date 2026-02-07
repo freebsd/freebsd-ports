@@ -1,0 +1,22 @@
+PORTNAME=	Tk-Getopt
+PORTVERSION=	0.52
+CATEGORIES=	x11-toolkits perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	User configuration window for Tk with interface to Getopt::Long
+WWW=		https://metacpan.org/release/Tk-Getopt
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Tk>=804:x11-toolkits/p5-Tk \
+		p5-Tk-FontDialog>=0:x11-toolkits/p5-Tk-FontDialog
+
+NO_ARCH=	yes
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

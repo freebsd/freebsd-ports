@@ -1,0 +1,122 @@
+#!/bin/sh
+
+# PROVIDE: tailscaled
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# tailscaled_enable (bool):	Set it to YES to enable tailscaled.
+#				Default is "NO".
+# tailscaled_state_dir (str):	Set the path to use for the state directory.
+# 				Default is "/var/db/tailscale"
+# tailscaled_port (number):	Set the port to listen on for incoming VPN packets.
+#				Default is "41641".
+# tailscaled_syslog_output_enable (bool):	Set to enable syslog output.
+#						Default is "NO". See daemon(8).
+# tailscaled_syslog_output_priority (str):	Set syslog priority if syslog enabled.
+#						Default is "info". See daemon(8).
+# tailscaled_syslog_output_facility (str):	Set syslog facility if syslog enabled.
+#						Default is "daemon". See daemon(8).
+# tailscaled_exitnode_enable (bool):	Set it to YES to announce tailscaled as
+#                                       an exit node. Default is "NO".
+# tailscaled_telemetry_enable (bool):	Set it to NO to disable real-time connection
+#                                       event streaming to `log.tailscale.io` for
+#                                       privacy when using alternate control planes.
+#                                       Default is "YES" because it's necessary if
+#                                       one wants technical support from Tailscale:
+#                                       https://tailscale.com/kb/1011#opting-out-of-client-logging
+# tailscaled_args (str):		Additional arguments to pass to tailscaled
+#                                       Default is "" (empty string).
+# tailscaled_up_args (str):		Additional arguments to pass to tailscale up
+#                                       Default is "" (empty string).
+# tailscaled_tun_dev (str):	Set the name of the tun interface tailscaled creates.
+#				Default is "tailscale0"
+
+. /etc/rc.subr
+
+name=tailscaled
+rcvar=tailscaled_enable
+
+load_rc_config $name
+
+: ${tailscaled_enable:="NO"}
+: ${tailscaled_state_dir:="/var/db/tailscale"}
+: ${tailscaled_port:="41641"}
+: ${tailscaled_exitnode_enable:="NO"}
+: ${tailscaled_telemetry_enable:="YES"}
+: ${tailscaled_args:=""}
+: ${tailscaled_up_args:=""}
+: ${tailscaled_tun_dev:="tailscale0"}
+
+if /usr/sbin/daemon 2>&1 | grep -q syslog; then
+        : ${tailscaled_syslog_output_enable:="NO"}
+        : ${tailscaled_syslog_output_priority:="info"}
+        : ${tailscaled_syslog_output_facility:="daemon"}
+        if checkyesno tailscaled_syslog_output_enable; then
+                tailscaled_syslog_output_flags="-t ${name} -T ${name}"
+
+                if [ -n "${tailscaled_syslog_output_priority}" ]; then
+                        tailscaled_syslog_output_flags="${tailscaled_syslog_output_flags} -s ${tailscaled_syslog_output_priority}"
+                fi
+
+                if [ -n "${tailscaled_syslog_output_facility}" ]; then
+                        tailscaled_syslog_output_flags="${tailscaled_syslog_output_flags} -l ${tailscaled_syslog_output_facility}"
+                fi
+        fi
+else
+        tailscaled_syslog_output_enable="NO"
+        tailscaled_syslog_output_flags=""
+fi
+
+if ! checkyesno tailscaled_telemetry_enable; then
+        tailscaled_telemetry_flags="--no-logs-no-support"
+else
+        tailscaled_telemetry_flags=""
+fi
+
+pidfile=/var/run/${name}.pid
+procname="%%PREFIX%%/bin/${name}"
+ctlname="%%PREFIX%%/bin/tailscale"
+command="/usr/sbin/daemon"
+command_args="-f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname} -port ${tailscaled_port} -tun ${tailscaled_tun_dev} -statedir ${tailscaled_state_dir} ${tailscaled_telemetry_flags} ${tailscaled_args}"
+
+start_precmd="${name}_prestart"
+start_postcmd="${name}_poststart"
+stop_postcmd="${name}_poststop"
+
+tailscaled_prestart()
+{
+	# Check for orphaned tailscale network interface
+	# And if it exists, then destroy it
+	/sbin/ifconfig ${tailscaled_tun_dev} >/dev/null 2>&1 && (
+		/sbin/ifconfig ${tailscaled_tun_dev} | fgrep -qw PID ||
+		/sbin/ifconfig ${tailscaled_tun_dev} destroy
+	)
+
+        if ! checkyesno tailscaled_telemetry_enable; then
+                logger -s -t tailscale "Opting out of client logging telemetry."
+        fi
+}
+
+tailscaled_poststart()
+{
+        if checkyesno tailscaled_exitnode_enable; then
+		logger -s -t tailscale "Enabling Exit node mode"
+		tailscaled_up_args=" --advertise-exit-node ${tailscaled_up_args}"
+        fi
+        if [ -n "${tailscaled_up_args}" ]; then
+                ${ctlname} up ${tailscaled_up_args}
+        fi
+}
+
+tailscaled_poststop()
+{
+	/sbin/ifconfig ${tailscaled_tun_dev} >/dev/null 2>&1 && (
+		logger -s -t tailscaled "Destroying ${tailscaled_tun_dev} adapter"
+		/sbin/ifconfig ${tailscaled_tun_dev} destroy || logger -s -t tailscaled "Failed to destroy ${tailscaled_tun_dev} adapter"
+	)
+}
+
+run_rc_command "$1"

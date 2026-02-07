@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: tuptime
+# REQUIRE: DAEMON
+# KEYWORD: nojail shutdown
+
+tuptime_enable=${tuptime_enable:-"NO"}
+
+. /etc/rc.subr
+
+name="tuptime"
+rcvar=tuptime_enable
+tuptime_user="_tuptime"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+export PATH=$PATH:/usr/local/bin/
+
+tuptime_start()
+{
+	echo "Starting $name."
+	command_args="-q"
+
+	su -m ${tuptime_user} -c "$name $command_args" 2> /dev/null || $name $command_args 2> /dev/null
+}
+
+tuptime_stop()
+{
+	echo "Stopping $name."
+	command_args="-qg"
+
+	su -m ${tuptime_user} -c "$name $command_args" 2> /dev/null || $name $command_args 2> /dev/null
+}
+
+load_rc_config $name
+run_rc_command "$1"

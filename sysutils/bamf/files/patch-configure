@@ -1,0 +1,11 @@
+--- configure.orig	2022-02-17 18:25:55 UTC
++++ configure
+@@ -15473,7 +15473,7 @@ yes)
+ warning_flags="-wall -Wno-error=deprecated-declarations"
+ ;;
+ maximum|error)
+-warning_flags="-Wall -Wno-error=deprecated-declarations -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration"
++warning_flags="-Wall -Wno-error=deprecated-declarations -Warray-bounds -Wimplicit-function-declaration"
+ if test "$enable_compile_warnings" = "error" ; then
+     warning_flags="$warning_flags -Werror"
+ fi

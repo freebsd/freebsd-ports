@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+To configure Netgraph Buddy with a "private" and "public" netgraph bridge, run:
+
+    service ngbuddy enable
+
+If you're using vm-bhyve, you can add your bridges with:
+
+    service ngbuddy vmconf
+
+For more information, see ngbuddy(8) and the example jail configuration in:
+
+    %%DATADIR%%/examples/
+
+Please submit bugs to: https://github.com/bellhyve/ngbuddy
+
+EOM
+}
+]

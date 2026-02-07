@@ -1,0 +1,3 @@
+rdrview is a command line tool to extract the main content from a webpage.
+It's an adaptation of Mozilla readibility.js to a C program that works in
+a Capsicum sandbox.

@@ -1,0 +1,23 @@
+--- ./cgi/Makefile.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./cgi/Makefile.in	2014-01-14 13:57:06.000000000 +0100
+@@ -18,8 +18,6 @@
+ CGIDIR=@sbindir@
+ HTMLDIR=@datarootdir@
+ INSTALL=@INSTALL@
+-INSTALL_OPTS=@INSTALL_OPTS@
+-COMMAND_OPTS=@COMMAND_OPTS@
+ STRIP=@STRIP@
+ 
+ CGIEXTRAS=@CGIEXTRAS@
+@@ -201,9 +199,9 @@
+ 	$(MAKE) install-basic
+ 
+ install-basic:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
+ 	for file in *.cgi; do \
+-		$(INSTALL) -m 775 $(INSTALL_OPTS) $$file $(DESTDIR)$(CGIDIR); \
++		$(INSTALL) -m 755 $(INSTALL_OPTS) $$file $(DESTDIR)$(CGIDIR); \
+ 	done
+ 
+ strip-post-install:

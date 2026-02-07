@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Class/Tom/Encode.pm
+%%SITE_PERL%%/Class/Tom/Encode/Base64.pm
+%%SITE_PERL%%/Class/Tom/Code.pm
+%%SITE_PERL%%/Class/Tom.pm
+%%PERL5_MAN3%%/Class::Tom.3.gz

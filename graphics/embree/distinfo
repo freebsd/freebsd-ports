@@ -1,0 +1,5 @@
+TIMESTAMP = 1688462259
+SHA256 (RenderKit-embree-v4.2.0_GH0.tar.gz) = b0479ce688045d17aa63ce6223c84b1cdb5edbf00d7eda71c06b7e64e21f53a0
+SIZE (RenderKit-embree-v4.2.0_GH0.tar.gz) = 65543485
+SHA256 (cda4cf1919bb2a748e78915fbd6e421a1056638d.patch) = dcd769d6f1466b6a362205caa23aaf875aa3b9dfeab7ccbd2505692a3c16ebd1
+SIZE (cda4cf1919bb2a748e78915fbd6e421a1056638d.patch) = 1594

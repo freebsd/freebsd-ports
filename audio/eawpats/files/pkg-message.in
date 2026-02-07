@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+To use eawpats you'll need to replace your
+
+%%LOCALBASE%%/lib/timidity/timidity.cfg
+
+with
+
+%%PREFIX%%/share/timidity/timidity.cfg-eawpats
+EOM
+}
+]

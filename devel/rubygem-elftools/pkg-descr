@@ -1,0 +1,1 @@
+A light weight ELF parser. elftools is designed to be a low-level ELF parser.

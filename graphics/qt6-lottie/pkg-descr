@@ -1,0 +1,3 @@
+Qt Lottie Animation provides a QML API for rendering graphics and animations
+that are exported in JSON format by the Bodymovin plugin for Adobe After
+Effects.

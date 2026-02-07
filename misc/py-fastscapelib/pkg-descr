@@ -1,0 +1,2 @@
+py-fastscapelib is a python binding of fastscapelib, a C++ library of efficient
+algorithms for processing topographic data and landscape evolution modeling.

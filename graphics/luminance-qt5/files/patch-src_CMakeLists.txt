@@ -1,0 +1,12 @@
+--- src/CMakeLists.txt.orig	2021-01-11 09:41:28 UTC
++++ src/CMakeLists.txt
+@@ -22,7 +22,9 @@ ADD_SUBDIRECTORY(Exif)
+ ADD_SUBDIRECTORY(Fileformat)
+ ADD_SUBDIRECTORY(Alignment)
+ ADD_SUBDIRECTORY(HdrWizard)
++IF(WITH_HELPBROWSER)
+ ADD_SUBDIRECTORY(HelpBrowser)
++ENDIF()
+ ADD_SUBDIRECTORY(Preferences)
+ ADD_SUBDIRECTORY(Projection)
+ ADD_SUBDIRECTORY(Resize)

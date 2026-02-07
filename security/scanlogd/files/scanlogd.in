@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Start or stop scanlogd
+
+# PROVIDE: scanlogd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable scanlogd:
+# scanlogd_enable="YES"
+# scanlogd_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name="scanlogd"
+rcvar=scanlogd_enable
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config $name
+
+: ${scanlogd_enable-"NO"}	# Enable scanlogd
+
+run_rc_command "$1"

@@ -1,0 +1,20 @@
+DBIx::Class::Schema::Loader automates the definition of a
+DBIx::Class::Schema by scanning database table definitions and setting
+up the columns, primary keys, and relationships.
+
+DBIx::Class::Schema::Loader currently supports only the DBI storage
+type. It has explicit support for DBD::Pg, DBD::mysql, DBD::DB2, and
+DBD::SQLite. Other DBI drivers may function to a greater or lesser
+degree with this loader, depending on how much of the DBI spec they
+implement, and how standard their implementation is. Patches to make
+other DBDs work correctly welcome.
+
+See DBIx::Class::Schema::Loader::DBI::Writing for notes on writing your
+own vendor-specific subclass for an unsupported DBD driver.
+
+This module requires DBIx::Class 0.06 or later, and obsoletes the older
+DBIx::Class::Loader.
+
+This module is designed more to get you up and running quickly against
+an existing database, or to be effective for simple situations, rather
+than to be what you use in the long term for a complex database/project.

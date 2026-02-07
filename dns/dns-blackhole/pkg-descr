@@ -1,0 +1,7 @@
+If you're running your own home network with a Unix-based server, you can
+easily integrate a DNS blackhole into a local BIND DNS service -- and best
+of all, it's completely free. If you're already using BIND and know your
+way around it, you can use this script to manage BIND's Response Policy
+Zone (RPZ) feature. RPZ is designed for DNS firewall/blocking purposes.
+The script should run on *BSD and Linux distros with proper pathnames
+configured. Out of the box, it has a FreeBSD default configuration.

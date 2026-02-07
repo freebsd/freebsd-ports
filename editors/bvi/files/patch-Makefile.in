@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2014-10-01 18:59:36 UTC
++++ Makefile.in
+@@ -57,7 +57,8 @@
+ bmore: $(BMOBJ)
+ 	$(CC) $(LDFLAGS) -o bmore $(BMOBJ) $(LIBS)
+ 
+-%.o: %.c $(INCLUDES)
++$(OBJS:.o=.c): $(INCLUDES)
++.c.o:
+ 	$(CC) $(CFLAGS) $(DEFS) -c $<
+ 
+ bmore.o: bmore.c

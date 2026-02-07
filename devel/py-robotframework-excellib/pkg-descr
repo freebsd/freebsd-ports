@@ -1,0 +1,2 @@
+robotframework-excellib provides the Robot Framework library for working with
+Excel documents, based on openpyxl.

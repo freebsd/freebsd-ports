@@ -1,0 +1,10 @@
+--- src/roslyn-analyzers/src/PerformanceTests/Tests/PerformanceTests.csproj.orig	2025-03-15 17:17:42 UTC
++++ src/roslyn-analyzers/src/PerformanceTests/Tests/PerformanceTests.csproj
+@@ -1,6 +1,6 @@
+ ﻿<Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+-    <TargetFramework>net6.0</TargetFramework>
++    <TargetFramework>net8.0</TargetFramework>
+     <LangVersion>preview</LangVersion>
+     <Nullable>disable</Nullable>
+     <OutputType>Exe</OutputType>

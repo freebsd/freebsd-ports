@@ -1,0 +1,19 @@
+--- GNUmakefile.orig	Sun Aug 27 00:55:01 2006
++++ GNUmakefile	Thu Nov 30 10:24:23 2006
+@@ -10,12 +10,12 @@
+ FRAMEWORK_NAME=FT
+ VERSION=0.1
+ 
+-include config.properties
++#include config.properties
+ 
+-ADDITIONAL_INCLUDE_DIRS=\
+-  -I$(DBROOT)/include
++#ADDITIONAL_INCLUDE_DIRS=\
++#  -I$(DBROOT)/include
+ 
+-ADDITIONAL_LIB_DIRS=-L$(DBROOT)/lib
++#ADDITIONAL_LIB_DIRS=-L$(DBROOT)/lib
+ 
+ ADDITIONAL_NATIVE_LIBS += Encore BDB
+ 

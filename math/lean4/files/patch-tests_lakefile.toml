@@ -1,0 +1,10 @@
+--- tests/lakefile.toml.orig	2025-11-17 18:29:21 UTC
++++ tests/lakefile.toml
+@@ -1,5 +1,7 @@
+ name = "tests"
+ 
++weakLeancArgs = ["-fPIC"]
++
+ # Allow `module` in tests when opened in the language server.
+ # Enabled during actual test runs in the respective test_single.sh.
+ moreGlobalServerArgs = ["-Dexperimental.module=true"]

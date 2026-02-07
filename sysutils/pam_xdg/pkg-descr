@@ -1,0 +1,2 @@
+XDG Base Directories support via PAM: creation of $XDG_RUNTIME_DIRs,
+injection of environment variables into sessions.

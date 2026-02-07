@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Text::ParagraphDiff.3.gz
+%%SITE_PERL%%/Text/ParagraphDiff.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/old.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tdiff

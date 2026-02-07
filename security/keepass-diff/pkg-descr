@@ -1,0 +1,2 @@
+This CLI-tool diffs two Keepass (.kdbx) files and prints their differences.
+Usage: keepass-diff <file-a> <file-b>

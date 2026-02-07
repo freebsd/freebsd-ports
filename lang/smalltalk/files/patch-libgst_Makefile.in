@@ -1,0 +1,11 @@
+--- libgst/Makefile.in.orig	2013-04-29 23:02:07.000000000 +0200
++++ libgst/Makefile.in	2013-04-29 23:02:07.000000000 +0200
+@@ -415,7 +415,7 @@ CLEANFILES = genprims$(EXEEXT) genbc$(EX
+ # definitions for libgst.la
+ libgst_la_LIBADD = $(top_builddir)/lib-src/library.la \
+ 	$(LIBSIGSEGV) $(LIBFFI) $(LIBSNPRINTFV) $(LIBREADLINE) $(LIBLTDL) \
+-	$(LIBGMP) $(LIBTHREAD)
++	$(LIBGMP) $(LIBTHREAD) -lexecinfo
+ 
+ libgst_la_DEPENDENCIES = $(top_builddir)/lib-src/library.la $(LIBSNPRINTFV)
+ libgst_la_LDFLAGS = -version-info $(VERSION_INFO) -no-undefined \

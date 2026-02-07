@@ -1,0 +1,5 @@
+Television is a fast, fuzzy finder TUI inspired by the Neovim Telescope plugin.
+It allows you to quickly search through various data sources like files, git
+repositories, and environment variables using fuzzy matching. It's designed
+to be extensible with custom channels and offers features
+like syntax highlighting, shell integration, and theming.

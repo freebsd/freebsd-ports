@@ -1,0 +1,6 @@
+%%SITE_PERL%%/HTML/Macro.pm
+%%SITE_PERL%%/HTML/Macro/Loop.pm
+%%SITE_PERL%%/auto/HTML/Macro/Loop/autosplit.ix
+%%SITE_PERL%%/auto/HTML/Macro/autosplit.ix
+%%PERL5_MAN3%%/HTML::Macro.3.gz
+%%PERL5_MAN3%%/HTML::Macro::Loop.3.gz

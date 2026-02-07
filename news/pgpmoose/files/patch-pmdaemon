@@ -1,0 +1,26 @@
+--- pmdaemon.orig	Thu Nov 26 01:53:45 1998
++++ pmdaemon	Mon Dec 28 07:58:08 1998
+@@ -5,8 +5,8 @@
+ # Written by Greg Rose, RoSecure Software, Copyright C 1995.
+ 
+ # search path usually needs to be set, because this is invoked by "news"
+-cd ~usenet/PGPmoose
+-export PATH=$PATH:/pkg/pgp/bin:.:/usr/local/bin
++#cd ~usenet/PGPmoose
++export PATH=$PATH:.:/usr/local/bin
+ 
+ # Probably need a PGPPATH too.
+ export PGPPATH=.
+@@ -29,10 +29,10 @@
+ 
+ # Command to run to send mail to someone.
+ # If it isn't "sendmail" you might also have to fix the arguments.
+-MAIL=/usr/lib/sendmail
++MAIL=/usr/sbin/sendmail
+ 
+ # Command to run to submit a cancel article (assumed to be the path to inews)
+-INEWS="/var/spool/news/usenet_home/inews -h"
++INEWS="/usr/local/bin/inews -h"
+ 
+ # An email address to send all failing articles to.
+ MANAGER=ggr

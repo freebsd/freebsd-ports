@@ -1,0 +1,16 @@
+PREFIX?=	/usr/local
+CFLAGS+=	-I${PREFIX}/include -L${PREFIX}/lib
+
+all: lookupdns proxy server
+
+lookupdns: lookupdns.o res.o
+	${CC} ${CFLAGS} -o ${.TARGET} lookupdns.o res.o -lst
+
+proxy: proxy.o
+	${CC} ${CFLAGS} -o ${.TARGET} proxy.o -lst
+
+server: server.o error.o
+	${CC} ${CFLAGS} -o ${.TARGET} server.o error.o -lst
+
+clean:
+	rm -f lookupdns proxy server *.o

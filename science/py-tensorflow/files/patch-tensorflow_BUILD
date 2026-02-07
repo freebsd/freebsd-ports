@@ -1,0 +1,12 @@
+--- tensorflow/BUILD.orig	2023-09-12 16:46:28 UTC
++++ tensorflow/BUILD
+@@ -1290,7 +1290,8 @@ tf_cc_shared_library(
+         ],
+         "//tensorflow:windows": [],
+         "//conditions:default": [
+-            "-z defs",
++            "-Wl,-z,defs",
++            "-lnsync_cpp",
+             "-Wl,--version-script,$(location //tensorflow:tf_version_script.lds)",
+         ],
+     }),

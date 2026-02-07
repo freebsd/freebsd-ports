@@ -1,0 +1,13 @@
+bin/minimalist.pl
+bin/minimalist_request.pl
+etc/minimalist.conf-sample
+share/minimalist/FAQ/postfix.mailloop
+share/minimalist/FAQ/sendmail.smrsh
+share/minimalist/README
+share/minimalist/CHANGES.txt
+share/minimalist/lists.lst-sample
+share/minimalist/minimalist.conf-sample
+share/minimalist/sample/config
+share/minimalist/sample/footer
+share/minimalist/sample/info
+share/minimalist/virtual-domains.txt

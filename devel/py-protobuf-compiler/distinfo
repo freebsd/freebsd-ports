@@ -1,0 +1,5 @@
+TIMESTAMP = 1614156744
+SHA256 (protobuf_compiler-1.0.20.tar.gz) = ac8daa7187fb9cac7752008368b79d8d8e44dd1b154423fa7afd227a31d062f6
+SIZE (protobuf_compiler-1.0.20.tar.gz) = 5296
+SHA256 (netsaj-python-protobuf-compiler-7cb32ab8188cbfecb91034cbf7803394ed1c25b6_GH0.tar.gz) = 72b8f59ef6ee9999701b09b2611fc3d79d7c500821fbb2edc4e8a1d4db864771
+SIZE (netsaj-python-protobuf-compiler-7cb32ab8188cbfecb91034cbf7803394ed1c25b6_GH0.tar.gz) = 7499

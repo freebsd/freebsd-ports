@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ghidra
+GenericName=ghidra
+Comment=Software reverse engineering framework
+Exec=%%DATADIR%%/ghidraRun
+Icon=%%DATADIR%%/ghidra.svg
+Terminal=false
+Type=Application
+Categories=Development

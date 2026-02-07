@@ -1,0 +1,33 @@
+[
+{
+  type: install
+  message: <<EOD
+
+Configure endlessh either via endlessh.conf or using endlessh_args in rc.conf.
+The defaults are commented out in endlessh.conf.
+
+The default configuration only logs starts & stops to /var/log/endlessh.log.
+To see the connections set LogLevel 1 in endlessh.conf or add "-v" to
+endlessh_args. Sending SIGUSR1 to endlessh (pkill USR1 endlessh) will add
+statistics to the /var/log/endlessh.log file
+
+Link (or copy) endlessh.newsyslog.conf to ${PREFIX}/newsyslog.conf.d/
+to take care of log rotation.
+
+ln -s ${PREFIX}/etc/endlessh.newsyslog.conf $PREFIX}/etc/newsyslog.conf.d/
+
+EOD
+}
+,
+{
+  type: upgrade
+  message: <<EOD
+
+Link (or copy) endlessh.newsyslog.conf to %%PREFIX%%/newsyslog.conf.d/
+to take care of log rotation.
+
+ln -s %%PREFIX%%/etc/endlessh.newsyslog.conf %%PREFIX%%/etc/newsyslog.conf.d/
+
+EOD
+}
+]

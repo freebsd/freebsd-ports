@@ -1,0 +1,16 @@
+--- Makefile.orig	1992-07-20 16:01:27 UTC
++++ Makefile
+@@ -1,2 +1,11 @@
+-identify: identify.c
+-	$(CC) -o identify identify.c -lauthuser
++
++CFLAGS+= -I${LOCALBASE}/include -L${LOCALBASE}/lib
++
++all: identify
++
++install: identify
++	install identify ${PREFIX}/libexec
++	install README ${PREFIX}/share/doc/identify
++
++identify: identify.o
++	$(CC) $(CFLAGS) -o identify identify.o -lident

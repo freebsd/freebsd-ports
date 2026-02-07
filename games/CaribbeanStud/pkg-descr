@@ -1,0 +1,15 @@
+Caribbean Stud is a Motif based gambling game for X Window System.
+
+OPTIONS: ( All can be changed in CaribbeanStud.res )
+   Default bankroll              200
+   Table minimum                 10
+   Number of Players             2       (1-6)
+   Current Jackpot               34000000
+   Minimum Jackpot               3000000
+
+The class.ps is the class diagram of this game.
+
+Please direct comments, suggestions, and patches to:
+------------------------------------------------------------------
+Qun  Zhang
+qzhang@oucsace.cs.ohiou.edu

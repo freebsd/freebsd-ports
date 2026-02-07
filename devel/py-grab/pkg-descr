@@ -1,0 +1,16 @@
+Grab is a python web scraping framework. Grab provides tons of helpful methods
+to scrape web sites and to process the scraped content:
+
+ * Automatic cookies (session) support
+ * HTTP and SOCKS proxy with and without authorization
+ * Keep-Alive support
+ * IDN support
+ * Tools to work with web forms
+ * Easy multipart file uploading
+ * Flexible customization of HTTP requests
+ * Automatic charset detection
+ * Powerful API of extracting info from HTML documents with XPATH queries
+ * Asynchronous API to make thousands of simultaneous queries. This part of
+   library called Spider and it is too big to even list its features in this
+   README.
+ * Python 3 ready

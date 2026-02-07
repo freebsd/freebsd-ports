@@ -1,0 +1,11 @@
+--- amd.map.snap.orig	2009-12-12 10:46:29.000000000 +0800
++++ amd.map.snap	2009-12-12 10:47:35.000000000 +0800
+@@ -3,6 +3,6 @@
+ ##
+ 
+ /defaults type:=program
+-*         mount:="/usr/sbin/snapshot snapshot mount /`echo ${key} | /usr/bin/sed -e 's;+;/;g'` ${fs}";\
+-          unmount:="/usr/sbin/snapshot snapshot umount ${fs}"
++*         mount:="%%PREFIX%%/sbin/snapshot snapshot mount /`echo ${key} | /usr/bin/sed -e 's;+;/;g'` ${fs}";\
++          unmount:="%%PREFIX%%/sbin/snapshot snapshot umount ${fs}"
+ 

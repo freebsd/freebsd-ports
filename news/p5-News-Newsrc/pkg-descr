@@ -1,0 +1,15 @@
+News::Newsrc manages newsrc files, of the style
+
+    alt.foo: 1-21,28,31-34
+    alt.bar! 3,5,9-2900,2902
+
+Methods are provided for
+- reading and writing newsrc files
+- adding and removing newsgroups
+- changing the order of newsgroups
+- subscribing and unsubscribing from newsgroups
+- testing whether groups exist and are subscribed
+- marking and unmarking articles
+- testing whether articles are marked
+- returning lists of newsgroups
+- returning lists of articles

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-02-28 01:49:19 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+   # Essentials
+-  "setuptools >= 64",
++  "setuptools >= 61",
+ 
+   # Plugins
+   "setuptools_scm[toml] >= 8",  # version is required for "no-local-version" scheme + toml extra is needed for supporting config in this file

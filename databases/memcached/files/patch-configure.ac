@@ -1,0 +1,11 @@
+--- configure.ac.orig	2025-07-18 21:35:16 UTC
++++ configure.ac
+@@ -207,7 +207,7 @@ if test "x$enable_dtrace" = "xyes"; then
+   if test "x$DTRACE" != "xno"; then
+     AC_DEFINE([ENABLE_DTRACE],1,[Set to nonzero if you want to include DTRACE])
+     build_dtrace=yes
+-    $DTRACE -h -o conftest.h -s memcached_dtrace.d 2>/dev/zero
++    /usr/bin/true
+     if test $? -eq 0
+     then
+         dtrace_instrument_obj=yes

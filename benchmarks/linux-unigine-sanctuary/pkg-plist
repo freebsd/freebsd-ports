@@ -1,0 +1,7 @@
+bin/unigine-sanctuary_1024x768_windowed.sh
+bin/unigine-sanctuary_1920x1080_fullscreen.sh
+%%DATADIR%%/bin/Sanctuary
+%%DATADIR%%/bin/libUnigine_x86.so
+%%DATADIR%%/data/core.ung
+%%DATADIR%%/data/demos/sanctuary.zip
+%%DATADIR%%/data/unigine.cfg

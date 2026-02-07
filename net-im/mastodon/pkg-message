@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+############################################################
+Visit this URL to get started with Mastodon.
+https://wiki.freebsd.org/Ports/net-im/mastodon
+############################################################
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "4.1.0"
+  message: <<EOM
+############################################################
+Visit this URL to upgrade Mastodon.
+Post installation tasks need to be done according to the
+section Upgrade Procedure - 4.0.2=>4.1.0
+https://wiki.freebsd.org/Ports/net-im/mastodon
+############################################################
+EOM
+}
+]

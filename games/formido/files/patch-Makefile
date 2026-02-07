@@ -1,0 +1,14 @@
+--- Makefile.orig	2006-05-25 15:04:22 UTC
++++ Makefile
+@@ -18,9 +18,9 @@ CONFIGDIR = /.formido
+ DEFCONFIGDIR = .
+ 
+ CC=g++
+-FLAGS=`sdl-config --cflags` -Wall -I./include
++FLAGS=${CXXFLAGS} `${SDL_CONFIG} --cflags` -Wall -I./include
+ LINKFLAGS=-O2 -ffast-math -fomit-frame-pointer
+-LIBS=`sdl-config --libs` -lm -lSDL_mixer -lSDL_image
++LIBS=`${SDL_CONFIG} --libs` -lm -lSDL_mixer -lSDL_image
+ CPPFILES=blend.cpp credits.cpp explo.cpp hof.cpp menu.cpp player.cpp \
+ 	bomb.cpp critter.cpp font.cpp init.cpp mymath.cpp powerup.cpp \
+ 	config.cpp effect.cpp game.cpp main.cpp particle.cpp timer.cpp

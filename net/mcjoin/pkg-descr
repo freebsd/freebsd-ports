@@ -1,0 +1,9 @@
+mcjoin is a simple and easy-to-use tool to test IP multicast,
+featuring:
+
+    *   a multicast generator (server)
+    *   a multicast data sink (client)
+    *   supports joining/sending to one or more groups:
+        *   ASM (*,G)
+        *   SSM (S,G)
+    *   IPv4 & IPv6

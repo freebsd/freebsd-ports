@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Apache/Htpasswd.pm
+%%PERL5_MAN3%%/Apache::Htpasswd.3.gz

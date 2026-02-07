@@ -1,0 +1,2 @@
+The official Terraform language server maintained by HashiCorp provides
+IDE features to any LSP-compatible editor.

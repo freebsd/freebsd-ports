@@ -1,0 +1,20 @@
+--- prnt/filters/hpps.orig	2022-02-23 07:41:04 UTC
++++ prnt/filters/hpps
+@@ -48,7 +48,7 @@ output_fd = 1
+ 
+ job_id = 0
+ pid = os.getpid()
+-config_file = '/etc/hp/hplip.conf'
++config_file = '/usr/local/etc/hp/hplip.conf'
+ home_dir = ''
+ 
+ 
+@@ -68,7 +68,7 @@ if os.path.exists(config_file):
+         bug("Error setting home directory: home= under [dirs] not found.")
+         sys.exit(CUPS_FILTER_FAILED)
+ else:
+-    bug("Error setting home directory: /etc/hp/hplip.conf not found")
++    bug("Error setting home directory: /usr/local/etc/hp/hplip.conf not found")
+     sys.exit(CUPS_FILTER_FAILED)
+ 
+ if not home_dir or not os.path.exists(home_dir):

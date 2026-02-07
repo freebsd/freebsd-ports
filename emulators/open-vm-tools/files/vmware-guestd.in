@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: vmware-guestd
+# REQUIRE: FILESYSTEMS ldconfig
+# BEFORE: LOGIN
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# vmware_guestd_enable (bool):	Set to YES by default.
+#				Set it to NO to disable vmware_guestd.
+
+. /etc/rc.subr
+
+name="vmware_guestd"
+rcvar=vmware_guestd_enable
+
+load_rc_config $name
+
+checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null 2>&1"
+if eval "${checkvm_cmd}"; then
+	: ${vmware_guestd_enable:="YES"}
+else
+	: ${vmware_guestd_enable:="NO"}
+fi
+
+command="%%PREFIX%%/bin/vmtoolsd"
+pidfile="/var/run/${name}.pid"
+start_precmd="${checkvm_cmd}"
+stop_precmd="${checkvm_cmd}"
+command_args="--background ${pidfile} -c %%PREFIX%%/share/vmware-tools/tools.conf -p %%PREFIX%%/lib/open-vm-tools/plugins/vmsvc"
+
+run_rc_command "$1"

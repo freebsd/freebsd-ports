@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+#  @(#)xbmcut48 1.2 91/04/15
+#
+#  Copyright (c) Steve Kinzler - April 1991.
+#
+#  Permission is given to distribute these sources, as long as the
+#  copyright messages are not removed, and no monies are exchanged.
+#
+#  No responsibility is taken for any errors on inaccuracies inherent
+#  either to the comments or the code of this program, but if reported
+#  to me, then an attempt will be made to fix them.
+
+PATH=$PATH:/usr/bin/X11; export PATH
+
+xbmtopbm | pnmcut 0 0 48 48 | pbmtoxbm

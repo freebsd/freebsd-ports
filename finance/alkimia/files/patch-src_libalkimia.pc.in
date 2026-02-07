@@ -1,0 +1,12 @@
+--- src/libalkimia.pc.in.orig	2025-06-21 11:46:33 UTC
++++ src/libalkimia.pc.in
+@@ -13,7 +13,7 @@ Version: @ALKIMIA_LIB_VERSION@
+ Description: A library for financial data handling
+ Version: @ALKIMIA_LIB_VERSION@
+ 
+-Libs: -lalkimia@PC_TARGET_SUFFIX@
+-Libs.private: -l@PC_LIB@ -l@PC_TARGET_QTPREFIX@Core -l@PC_TARGET_QTPREFIX@DBus -lstdc++
++Libs: -L${libdir} -lalkimia@PC_TARGET_SUFFIX@
++Libs.private: -l@PC_LIB@ -l@PC_TARGET_QTPREFIX@Core -l@PC_TARGET_QTPREFIX@DBus
+ Cflags: -I${includedir} -I@MP_INCLUDE_DIR@
+ 

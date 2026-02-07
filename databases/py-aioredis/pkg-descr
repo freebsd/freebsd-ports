@@ -1,0 +1,4 @@
+asyncio (PEP 3156) Redis client library.
+
+The library is intended to provide simple and clear interface
+to Redis based on asyncio.

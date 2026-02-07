@@ -1,0 +1,7 @@
+Puff is an editor that is named after "Puff the fractal dragon" (see fortune).
+Primary features:
+ - Simple and lightweight
+ - Can open multiple files
+ - Clipboard is an open file
+ - Keys may be reassigned
+ - Source is easy to extend

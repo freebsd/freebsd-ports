@@ -1,0 +1,9 @@
+This PostgreSQL extension implements a Foreign Data Wrapper (FDW) for MySQL.
+The following enhancements are added to the mysql_fdw:
+	Write-able FDW
+	Connection Pooling
+	Where clause push-down
+	Column push-down
+	Prepared Statment
+Please note that this version of mysql_fdw works with PostgreSQL
+10, 11, 12, 13, 14 and 15.

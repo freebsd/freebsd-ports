@@ -1,0 +1,14 @@
+Newsraft is a feed reader with ncurses user interface. It's greatly inspired by
+Newsboat and tries to be its lightweight counterpart.
+
+Features:
+* Parallel downloads
+* Section-based feeds grouping
+* Opening links in any program
+* Viewing news from all feeds with explore mode
+* Automatic updates for feeds and sections
+* Per-feed settings and key bindings
+* Assigning multiple actions to key bindings
+* Processing feeds from command output
+* Text searching by news titles and content
+* Interactive news content viewing

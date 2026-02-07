@@ -1,0 +1,3 @@
+This port installs a simple shellscript in ${PREFIX}/etc/rc.d that saves
+the state of the mixer when the system is shut down, and restores it when
+the system is rebooted.

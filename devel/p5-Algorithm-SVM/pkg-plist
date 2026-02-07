@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/Algorithm/SVM.pm
+%%SITE_ARCH%%/Algorithm/SVM/DataSet.pm
+%%SITE_ARCH%%/auto/Algorithm/SVM/SVM.so
+%%SITE_ARCH%%/auto/Algorithm/SVM/autosplit.ix
+%%PERL5_MAN3%%/Algorithm::SVM.3.gz
+%%PERL5_MAN3%%/Algorithm::SVM::DataSet.3.gz

@@ -1,0 +1,1 @@
+Cython hash tables that assume keys are pre-hashed.

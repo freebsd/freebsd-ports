@@ -1,0 +1,2 @@
+Mojolicious::Plugin::YamlConfig is a YAML configuration plugin that preprocesses
+it's input with Mojo::Template.

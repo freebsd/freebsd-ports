@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Plugtools/Plugins/HomeOU.pm
+%%SITE_PERL%%/Plugtools/Plugins/HomeOUremove.pm
+%%PERL5_MAN3%%/Plugtools::Plugins::HomeOU.3.gz
+%%PERL5_MAN3%%/Plugtools::Plugins::HomeOUremove.3.gz

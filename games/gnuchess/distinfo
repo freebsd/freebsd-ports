@@ -1,0 +1,5 @@
+TIMESTAMP = 1756025723
+SHA256 (gnuchess-6.3.0.tar.gz) = 0b37bec2098c2ad695b7443e5d7944dc6dc8284f8d01fcc30bdb94dd033ca23a
+SIZE (gnuchess-6.3.0.tar.gz) = 835620
+SHA256 (book_1.02.pgn.gz) = deac77edb061a59249a19deb03da349cae051e52527a6cb5af808d9398d32d44
+SIZE (book_1.02.pgn.gz) = 26265281

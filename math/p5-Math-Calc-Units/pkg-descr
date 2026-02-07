@@ -1,0 +1,8 @@
+Math::Calc::Units is a simple calculator that keeps track
+of units. It currently handles combinations of byte sizes
+and duration only, although adding any other
+multiplicative types is easy. Any unknown type is treated
+as a unique user type (with some effort to map English
+plurals to their singular forms).
+
+Seamus Venasse <svenasse@polaris.ca>

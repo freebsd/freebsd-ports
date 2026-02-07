@@ -1,0 +1,29 @@
+statsmodels is a Python package that provides a complement to scipy for
+statistical computations including descriptive statistics and estimation and
+inference for statistical models.
+
+Main Features:
+- Linear regression models
+- Mixed Linear Model with mixed effects and variance components
+- GLM: Generalized linear models with support for all of the one-parameter
+  exponential family distributions
+- Bayesian Mixed GLM for Binomial and Poisson
+- GEE: Generalized Estimating Equations for one-way clustered or longitudinal
+  data
+- Discrete models
+- RLM: Robust linear models with support for several M-estimators.
+- Time Series Analysis: models for time series analysis
+- Survival analysis
+- Multivariate
+- Nonparametric statistics: Univariate and multivariate kernel density
+  estimators
+- Datasets: Datasets used for examples and in testing
+- Statistics: a wide range of statistical tests
+- Imputation with MICE, regression on order statistic and Gaussian imputation
+- Mediation analysis
+- Graphics includes plot functions for visual analysis of data and model results
+- I/O
+- Miscellaneous models
+- Sandbox: statsmodels contains a sandbox folder with code in various stages of
+  development and testing which is not considered "production ready". This
+  covers among others

@@ -1,0 +1,7 @@
+Plan 9 is a distributed computing environment built at Bell Labs
+starting in the late 1980s.  Plan 9 became a convenient platform for
+experimenting with new ideas, applications, and services.
+
+Plan 9 from User Space (aka plan9port) is a port of many Plan 9
+programs from their native Plan 9 environment to Unix-like operating
+systems.

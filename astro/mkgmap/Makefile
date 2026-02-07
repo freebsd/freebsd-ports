@@ -1,0 +1,45 @@
+PORTNAME=	mkgmap
+PORTVERSION=	r4923
+CATEGORIES=	astro converters java
+MASTER_SITES=	https://www.mkgmap.org.uk/download/
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	Convert OpenStreetMap data into a Garmin format
+WWW=		https://www.mkgmap.org.uk/index.html
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+USES=		java
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+SUB_FILES=	${PORTNAME}.sh
+SUB_LIST=	JAVA="${JAVA}"
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PORTDATA=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}/lib/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}/
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+do-test:
+	${JAVA} -jar ${WRKSRC}/${PORTNAME}.jar --help >/dev/null 2>&1
+
+.include <bsd.port.mk>

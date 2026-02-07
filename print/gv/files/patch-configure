@@ -1,0 +1,11 @@
+--- configure.orig	2013-03-17 11:20:09 UTC
++++ configure
+@@ -11436,7 +11436,7 @@ fi
+ 
+ 
+ 
+-LIBS="$X_LIBS"
++LIBS="$X_LIBS $LIBS"
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sqrt in -lm" >&5
+ $as_echo_n "checking for sqrt in -lm... " >&6; }

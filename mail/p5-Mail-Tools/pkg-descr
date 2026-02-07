@@ -1,0 +1,8 @@
+MailTools is a collection of Perl modules for dealing with Internet
+e-mail messages.
+
+The modules included can perform a wide range of tasks, including
+parsing e-mail addresses, parsing mailcap files, manipulating
+message header fields and bodies, sending messages via SMTP or the
+Unix mail and sendmail commands, reading mbox mail boxes, and
+message filtering through Perl subroutines.

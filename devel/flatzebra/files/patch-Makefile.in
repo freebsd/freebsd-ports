@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2024-05-31 11:23:25 UTC
++++ Makefile.in
+@@ -345,7 +345,7 @@ datarootdir = @datarootdir@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datarootdir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datarootdir)/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -382,7 +382,6 @@ doc_DATA = \
+ pkgconfig_DATA = $(PACKAGE)-$(API).pc
+ doc_DATA = \
+ 	AUTHORS \
+-	COPYING \
+ 	NEWS \
+ 	README \
+ 	THANKS

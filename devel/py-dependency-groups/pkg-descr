@@ -1,0 +1,4 @@
+dependency-groups is an implementation of Dependency Groups (PEP 735).
+
+This is a library which is able to parse dependency groups, following includes,
+and provide that data as output.

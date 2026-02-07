@@ -1,0 +1,22 @@
+--- Makefile.orig	Mon Nov 17 04:50:31 2003
++++ Makefile	Mon Nov 17 04:52:25 2003
+@@ -1,15 +1,15 @@
+-CC = gcc
+-LD = gcc
++CC? = gcc
++LD = ${CC}
+ RM = rm -f
+ MKDIR = mkdir -p
+ INSTALL = install -c
+-CFLAGS = -Wall -O2 -fomit-frame-pointer
++CFLAGS?= -Wall -O2 -fomit-frame-pointer
+ # You may use OpenSSL's MD5 routines instead of the ones supplied here
+ #CFLAGS += -DHAVE_OPENSSL
+ LDFLAGS = -s
+ LIBS =
+ # Linux with glibc, FreeBSD, NetBSD
+-#LIBS += -lcrypt
++LIBS += -lcrypt
+ # HP-UX trusted system
+ #LIBS += -lsec
+ # Solaris (POP_STANDALONE, POP_VIRTUAL)

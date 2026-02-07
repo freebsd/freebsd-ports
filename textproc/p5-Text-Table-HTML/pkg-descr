@@ -1,0 +1,2 @@
+Text::Table::HTML provides a single function, table, which formats a
+two-dimensional array of data as HTML table.

@@ -1,0 +1,11 @@
+Rack::Cache is suitable as a quick drop-in component
+to enable HTTP caching for Rack-based applications
+that produce freshness (Expires, Cache-Control)
+and/or validation (Last-Modified, ETag) information.
+
+ * Standards-based (see RFC 2616 / Section 13).
+ * Freshness/expiration based caching
+ * Validation
+ * Vary support
+ * Portable: 100% Ruby / works with any Rack-enabled framework.
+ * Disk, memcached, and heap memory storage backends.

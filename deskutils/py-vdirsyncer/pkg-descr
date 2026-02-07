@@ -1,0 +1,11 @@
+Vdirsyncer is a command-line tool for synchronizing calendars and addressbooks
+between a variety of servers and the local filesystem. The most popular usecase
+is to synchronize a server with a local folder and use a set of other programs
+to change the local events and contacts. Vdirsyncer can then synchronize those
+changes back to the server.
+
+However, vdirsyncer is not limited to synchronizing between clients and servers.
+It can also be used to synchronize calendars and/or addressbooks between two
+servers directly.
+
+It aims to be for calendars and contacts what OfflineIMAP is for emails.

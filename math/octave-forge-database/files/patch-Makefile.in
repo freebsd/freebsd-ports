@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2016-03-18 14:46:25 UTC
++++ Makefile.in
+@@ -45,7 +45,7 @@ MFILES := $(wildcard *.m) $(wildcard ../
+ 
+ .INTERMEDIATE: MFDOCSTRINGS $(DSFILES)
+ 
+-all: doc $(octs)
++all: $(octs)
+ 
+ release: doc html
+ 

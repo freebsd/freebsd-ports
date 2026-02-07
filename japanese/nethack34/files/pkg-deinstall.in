@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "${2}" = "POST-DEINSTALL" ]; then
+	if [ -d "${PKG_PREFIX}/%%HACKDIR%%" ]; then
+		echo
+		echo "The ${1} save files have not been removed."
+		echo
+		echo "If you are deleting ${1} permanently then you can "
+		echo "remove the save files with the command:"
+		echo
+		echo "	rm -rf ${PKG_PREFIX}/%%HACKDIR%%"
+		echo
+	fi
+fi

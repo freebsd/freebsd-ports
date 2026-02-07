@@ -1,0 +1,4 @@
+Webbrowser is a wrapper script for finding and running the "best" available
+installed browser on the system.  It is intended for use by other
+applications that invoke a browser, so that they need not be reconfigured
+when a user switches to a different browser.

@@ -1,0 +1,7 @@
+A collection of writing tools (wenju in Chinese pinyin) such as TIM (Table-
+based Input Method), text file formatter, etc.  All the tools are based on
+Unicode.  Default input tables include Wubi and Pinyin, among others.
+
+This port also provides "wrap" utility which can be used to wrap input text
+to specified width.  It correctly takes into account punctuation marks when
+breaking words, and that Latin and Chinese characters have different width.

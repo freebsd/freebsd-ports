@@ -1,0 +1,26 @@
+--- src/CMakeLists.txt.orig	2024-02-18 21:34:25 UTC
++++ src/CMakeLists.txt
+@@ -73,7 +73,8 @@ if(BUILD_SHARED_LIBS AND WIN32)
+   add_library(argtable3 ${ARGTABLE3_SRC_FILES} "${PROJECT_BINARY_DIR}/src/version.rc")
+   target_compile_definitions(argtable3 INTERFACE argtable3_IMPORTS)
+ else()
+-  add_library(argtable3 ${ARGTABLE3_SRC_FILES})
++  add_library(argtable3_static STATIC ${ARGTABLE3_SRC_FILES})
++  add_library(argtable3 SHARED ${ARGTABLE3_SRC_FILES})
+ endif()
+ 
+ add_library(${ARGTABLE3_PROJECT_NAME}::argtable3 ALIAS argtable3)
+@@ -94,6 +95,13 @@ elseif(WIN32)
+ endif()
+ 
+ install(TARGETS argtable3
++  EXPORT ${ARGTABLE3_PACKAGE_NAME}Config
++  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++)
++
++install(TARGETS argtable3_static
+   EXPORT ${ARGTABLE3_PACKAGE_NAME}Config
+   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

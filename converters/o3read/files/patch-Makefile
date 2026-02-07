@@ -1,0 +1,13 @@
+--- Makefile.orig	2005-01-07 11:28:47.000000000 +0300
++++ Makefile	2008-08-21 20:27:37.000000000 +0400
+@@ -2,9 +2,7 @@
+ PACKAGE = o3read
+ VERSION = 0.0.4
+ 
+-CC = gcc
+-CFLAGS = -Wall -ansi -pedantic -O -g
+-PREFIX = /usr/local
++CFLAGS += -Wall -ansi -pedantic
+ BINDIR = $(PREFIX)/bin
+ MANDIR = $(PREFIX)/man/man1
+ DOCS = COPYING INSTALL README TODO ChangeLog filformat.sxw

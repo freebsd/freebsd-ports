@@ -1,0 +1,11 @@
+--- mpsl/makefile.in.orig	2020-10-11 16:50:41 UTC
++++ mpsl/makefile.in
+@@ -78,7 +78,7 @@ realdistclean: realclean
+ .txt.html:
+ 	grutatxt < $< > $@
+ 
+-doc/mpsl_quickref.ps: doc/mpsl_quickref.txt
++doc/mpsl_quickref.ps: $(TARGET) doc/mpsl_quickref.txt
+ 	-./mpsl scripts/mkquickref.mpsl < doc/mpsl_quickref.txt > $@
+ 
+ doc/mpsl_api.txt: mpsl_c.c mpsl.y

@@ -1,0 +1,9 @@
+TIMESTAMP = 1623902743
+SHA256 (miquels-webdavfs-g20200520-117d633_GH0.tar.gz) = a70042e90006a2da61c9a0c79eb717984d67ec60dfd5de7cc912e4aa429cabeb
+SIZE (miquels-webdavfs-g20200520-117d633_GH0.tar.gz) = 22930
+SHA256 (bazil-fuse-65cc252bf669_GH0.tar.gz) = 5586365a61aed3e37375ccd8b2341c7486e1b8ed46b37fa162b83ef56d84be2a
+SIZE (bazil-fuse-65cc252bf669_GH0.tar.gz) = 187896
+SHA256 (golang-net-59133d7f0dd7_GH0.tar.gz) = ea0a358ca3f8e31ba20c4f20177c4fb8a081ad5119543ea454cabfd8707b5b16
+SIZE (golang-net-59133d7f0dd7_GH0.tar.gz) = 1174691
+SHA256 (pborman-getopt-ee0cd42419d3_GH0.tar.gz) = 8eaa2477da03612e053997e0cc0f541947e8cbd3b6e89c4bed628341a58623f2
+SIZE (pborman-getopt-ee0cd42419d3_GH0.tar.gz) = 39691

@@ -1,0 +1,2 @@
+qpwgraph is a graph manager dedicated for PipeWire, using the Qt C++ framework,
+based and pretty much like the same of QjackCtl.

@@ -1,0 +1,15 @@
+--- etc/Makefile.in.orig	2008-08-26 15:00:26.000000000 +0200
++++ etc/Makefile.in	2008-08-26 15:00:52.000000000 +0200
+@@ -459,11 +459,7 @@
+ 	uninstall-nodist_udevSCRIPTS uninstall-sysconfDATA
+ 
+ install-exec-hook:	install-sysconfDATA openct.conf
+-	if [ -f "$(DESTDIR)$(sysconfdir)/openct.conf" ]; then \
+-		$(INSTALL_DATA) openct.conf "$(DESTDIR)$(sysconfdir)/openct.conf.new"; \
+-	else \
+-		$(INSTALL_DATA) openct.conf "$(DESTDIR)$(sysconfdir)/openct.conf"; \
+-	fi
++	$(INSTALL_DATA) openct.conf "$(DESTDIR)$(sysconfdir)/openct.conf-sample"; \
+ 
+ .in:
+ 	sed \

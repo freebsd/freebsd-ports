@@ -1,0 +1,16 @@
+%%TWDIR%%/NewUserPlugin/data/TWiki/NewLdapUserTemplate.txt
+%%TWDIR%%/NewUserPlugin/data/TWiki/NewUserPlugin.txt
+%%TWDIR%%/NewUserPlugin/data/TWiki/RenderLdapUser.txt
+%%TWDIR%%/NewUserPlugin/lib/TWiki/Plugins/NewUserPlugin.pm
+%%TWDIR%%/NewUserPlugin/lib/TWiki/Plugins/NewUserPlugin/DEPENDENCIES
+%%TWDIR%%/NewUserPlugin/lib/TWiki/Plugins/NewUserPlugin/MANIFEST
+%%TWDIR%%/NewUserPlugin/lib/TWiki/Plugins/NewUserPlugin/build.pl
+%%TWDIR%%/NewUserPlugin/pub/TWiki/NewUserPlugin/wikiringlogo40x40.png
+%%TWDIR%%/data/TWiki/NewLdapUserTemplate.txt
+%%TWDIR%%/data/TWiki/NewUserPlugin.txt
+%%TWDIR%%/data/TWiki/RenderLdapUser.txt
+%%TWDIR%%/lib/TWiki/Plugins/NewUserPlugin.pm
+%%TWDIR%%/lib/TWiki/Plugins/NewUserPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/NewUserPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/NewUserPlugin/build.pl
+%%TWDIR%%/pub/TWiki/NewUserPlugin/wikiringlogo40x40.png

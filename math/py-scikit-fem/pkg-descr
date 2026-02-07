@@ -1,0 +1,11 @@
+scikit-fem is a pure Python library for performing finite element assembly. Its
+main purpose is the transformation of bilinear forms into sparse matrices and
+linear forms into vectors.
+
+The library
+- has minimal dependencies
+- contains no compiled code
+- supports one-dimensional, triangular, quadrilateral, tetrahedral and
+  hexahedral finite elements
+- includes special elements such as Raviart-Thomas, Nedelec, MINI,
+  Crouzeix-Raviart, Argyris, ...

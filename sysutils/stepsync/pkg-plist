@@ -1,0 +1,8 @@
+GNUstep/System/Applications/StepSync.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/StepSync.app/Resources/MainMenu.gorm/data.classes
+GNUstep/System/Applications/StepSync.app/Resources/MainMenu.gorm/data.info
+GNUstep/System/Applications/StepSync.app/Resources/MainMenu.gorm/objects.gorm
+GNUstep/System/Applications/StepSync.app/Resources/StepSync.desktop
+GNUstep/System/Applications/StepSync.app/StepSync
+GNUstep/System/Applications/StepSync.app/stamp.make
+GNUstep/System/Tools/StepSync

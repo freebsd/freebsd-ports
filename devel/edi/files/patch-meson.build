@@ -1,0 +1,31 @@
+--- meson.build.orig	2020-04-29 13:40:58 UTC
++++ meson.build
+@@ -19,7 +19,7 @@ config_h.set_quoted('PACKAGE_BUILD_DIR', meson.build_r
+ config_h.set_quoted('PACKAGE_BIN_DIR', join_paths(get_option('prefix'), get_option('bindir')))
+ config_h.set_quoted('PACKAGE_LIB_DIR', join_paths(get_option('prefix'), get_option('libdir')))
+ config_h.set_quoted('PACKAGE_DATA_DIR', join_paths(get_option('prefix'), get_option('datadir'), 'edi'))
+-config_h.set_quoted('PACKAGE_DOC_DIR', join_paths(get_option('prefix'), get_option('infodir'), 'edi'))
++config_h.set_quoted('PACKAGE_DOC_DIR', join_paths(get_option('prefix'), get_option('docsdir')))
+ 
+ config_h.set_quoted('EFL_BETA_API_SUPPORT'     , '1')
+ 
+@@ -37,7 +37,7 @@ cc = meson.get_compiler('c')
+ 
+ config_h.set_quoted('EFL_CFLAGS', run_command(find_program('pkg-config'), '--libs', '--cflags', 'elementary').stdout().strip())
+ 
+-intl = cc.find_library('intl', required : false)
++intl = cc.find_library('intl', required : false, dirs : join_paths(get_option('localbase'), 'lib'))
+ 
+ bear = find_program('bear', required : false)
+ if get_option('bear') == true and bear.found()
+@@ -94,8 +94,8 @@ subdir('src')
+ subdir('doc')
+ subdir('data')
+ 
+-install_data(['AUTHORS'],
+-  install_dir :  join_paths(get_option('prefix'), get_option('infodir'), 'edi')
++install_data(['AUTHORS', 'NEWS', 'TODO'],
++  install_dir : join_paths(get_option('prefix'), get_option('docsdir'))
+ )
+ 
+ configure_file(

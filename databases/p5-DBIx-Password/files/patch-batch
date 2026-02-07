@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	2007-04-30 21:38:56 UTC
++++ Makefile.PL
+@@ -24,7 +24,7 @@ my %driver_methods = (
+ );
+ 
+ print "What is the name of the Virtual User?\n";
+-my $virtual  = getLine();
++my $virtual  = undef;
+ while ($virtual) {
+ 	print "What is the dbi driver? (AKA mysql)\n";
+ 	my $driver  = getLine();

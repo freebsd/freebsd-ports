@@ -1,0 +1,6 @@
+Features:
+* HTTP/HTTPS and SOCKS protocol
+* Surge like configuration
+* GeoIP rule support
+* Support Vmess/Shadowsocks/Socks5
+* Support for Netfilter TCP redirect

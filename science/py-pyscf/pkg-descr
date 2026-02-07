@@ -1,0 +1,11 @@
+The Python-based Simulations of Chemistry Framework (PySCF) is an open-source
+collection of electronic structure modules powered by Python. The package
+provides a simple, lightweight, and efficient platform for quantum chemistry
+calculations and methodology development. PySCF can be used to simulate the
+properties of molecules, crystals, and custom Hamiltonians using mean-field
+and post-mean-field methods. To ensure ease of extensibility, almost all of
+the features in PySCF are implemented in Python, while computationally critical
+parts are implemented and optimized in C. Using this combined Python/C
+implementation, the package is as efficient as the best existing C or Fortran
+based quantum chemistry programs. In addition to its core libraries, PySCF
+supports a rich ecosystem of extension modules.

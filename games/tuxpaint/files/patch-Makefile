@@ -1,0 +1,50 @@
+--- Makefile.orig	2024-06-04 06:21:39 UTC
++++ Makefile
+@@ -250,9 +250,9 @@ MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/t
+ MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
+ 
+ # Docs and man page:
+-DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)
+-MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
+-DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
++DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
++MAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
++DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
+ 
+ # BASH tab-completion file:
+ COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
+@@ -794,8 +794,8 @@ install-default-config:
+ 	@echo
+ 	@echo "...Installing default config file..."
+ 	@install -d $(CONFDIR)
+-	@cp src/tuxpaint.conf $(CONFDIR)
+-	@chmod 644 $(CONFDIR)/tuxpaint.conf
++	@cp src/tuxpaint.conf $(CONFDIR)/tuxpaint.conf.sample
++	@chmod 644 $(CONFDIR)/tuxpaint.conf.sample
+ 
+ # Install BASH completion file:
+ .PHONY: install-bash-completion
+@@ -1414,10 +1414,10 @@ tp-magic-config:	src/tp-magic-config.sh.in
+ 	@echo "...Generating 'Magic' tool API configuration script..."
+ 	@sed -e s/__VERSION__/$(VER_VERSION)/ \
+ 		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
+-		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= \
+-		-e s=__DATAPREFIX__=$(DATA_PREFIX)= \
+-		-e s=__PLUGINPREFIX__=$(MAGIC_PREFIX)= \
+-		-e s=__PLUGINDOCPREFIX__=$(DOC_PREFIX)/magic-docs= \
++		-e s=__INCLUDE__=$(patsubst $(DESTDIR)%,%,$(INCLUDE_PREFIX))/tuxpaint= \
++		-e s=__DATAPREFIX__=$(patsubst $(DESTDIR)%,%,DATA_PREFIX)= \
++		-e s=__PLUGINPREFIX__=$(patsubst $(DESTDIR)%,%,MAGIC_PREFIX)= \
++		-e s=__PLUGINDOCPREFIX__=$(patsubst $(DESTDIR)%,%,DOC_PREFIX)/magic-docs= \
+ 		src/tp-magic-config.sh.in \
+ 		> tp-magic-config
+ 
+@@ -1453,7 +1453,7 @@ PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
+ linux_PLUGIN_LIBS:=
+ PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
+ 
+-MAGIC_CFLAGS:=-g3 -O2 $(FASTMATH) -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
++MAGIC_CFLAGS:=$(OPTFLAGS) $(FASTMATH) -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
+ SHARED_FLAGS:=-shared -fpic -lm
+ 
+ MAGIC_C:=$(wildcard magic/src/*.c)

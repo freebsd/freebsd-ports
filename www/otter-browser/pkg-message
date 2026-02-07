@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+To switch to the newer QtWebEngine web backend, add this section to the
+~/.config/otter/otter.conf:
+
+[Backends]
+Web=qtwebengine
+
+If you get wrong colors when watching videos while using the QtWebEngine
+backend, this is probably because your system does not support hardware
+acceleration (see bug 237277).
+EOM
+}
+]

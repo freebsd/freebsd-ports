@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: vspheredb
+# REQUIRE: icinga2
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable vspheredb:
+# vspheredb (bool):    Set to "NO" by default.
+#                      Set it to "YES" to enable .
+#
+# vspheredb_flags (string): defaults to -f
+# see man(8) daemon for more information
+
+. /etc/rc.subr
+
+name="vspheredb"
+rcvar=vspheredb_enable
+
+pidfile="/var/run/vspheredb.pid"
+command="/usr/sbin/daemon"
+load_rc_config "${name}"
+
+: ${vspheredb_flags:="-f"}
+
+command_args="${vspheredb_flags} -P ${pidfile} /usr/local/bin/icingacli vspheredb daemon run"
+
+run_rc_command "$1"

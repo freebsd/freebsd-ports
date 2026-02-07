@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2021-08-25 04:34:04 UTC
++++ CMakeLists.txt
+@@ -198,8 +198,8 @@ endif()
+ ##
+ ## Test for marble
+ ##
+-set(MARBLE_MIN_VERSION "0.19.2")
+-find_package(KexiMarble ${MARBLE_MIN_VERSION})
++set(MARBLE_MIN_VERSION "21.4.0")
++find_package(Marble ${MARBLE_MIN_VERSION})
+ set_package_properties(KexiMarble PROPERTIES
+     DESCRIPTION "KDE World Globe Widget library"
+     URL "https://marble.kde.org"

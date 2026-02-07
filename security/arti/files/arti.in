@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# PROVIDE: arti
+# REQUIRE: DAEMON FILESYSTEMS
+# BEFORE: LOGIN
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# arti_enable (bool):	Set to NO by default.
+#			Set it to YES to enable arti.
+# arti_config (path):	Set to %%PREFIX%%/etc/arti/arti.toml
+#			by default.
+# arti_user (str):      Arti daemon user. Default: %%USERS%%
+# arti_group (str):     Arti daemon group. Default: %%GROUPS%%
+
+. /etc/rc.subr
+
+name="arti"
+rcvar="arti_enable"
+
+load_rc_config $name
+
+: ${arti_enable:="NO"}
+: ${arti_config="%%PREFIX%%/etc/arti/arti.toml"}
+: ${arti_user="%%USERS%%"}
+: ${arti_group="%%GROUPS%%"}
+
+pidfiledir="/var/run/${name}"
+pidfile="${pidfiledir}/${name}.pid"
+logfiledir="/var/log/${name}"
+logfile="${logfiledir}/${name}.log"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/${name}"
+
+command_args="-f -o $logfile -p $pidfile $procname proxy --config $arti_config"
+
+run_rc_command "$1"

@@ -1,0 +1,30 @@
+--- gbsdconv.orig	2024-06-06 19:33:30 UTC
++++ gbsdconv
+@@ -38,10 +38,10 @@ taglib.taglib_mpeg_file.restype=c_void_p
+ taglib.taglib_mpeg_file.argtypes=[c_void_p]
+ taglib.taglib_mpeg_file.restype=c_void_p
+ 
+-taglib.taglib_mpeg_file_save3.argtypes=[c_void_p, c_int, c_bool, c_int]
++taglib.taglib_mpeg_file_save3.argtypes=[c_void_p, c_int, c_bool, c_int, c_bool]
+ taglib.taglib_mpeg_file_save3.restype=c_bool
+ 
+-taglib.taglib_mpeg_file_strip.argtypes=[c_void_p, c_int]
++taglib.taglib_mpeg_file_strip.argtypes=[c_void_p, c_int, c_bool]
+ taglib.taglib_mpeg_file_strip.restype=c_bool
+ 
+ taglib.taglib_file_tag.argtypes=[c_void_p]
+@@ -1281,12 +1281,12 @@ class gBsdConv(object):
+ 
+ 						mpeg=taglib.taglib_mpeg_file(mfile)
+ 						if mpeg and builder.get_object('chk_use_id3v2_3').get_active():
+-							taglib.taglib_mpeg_file_save3(mpeg, 0xffff, False, 3)
++							taglib.taglib_mpeg_file_save3(mpeg, 0xffff, False, 3, True)
+ 						else:
+ 							taglib.taglib_file_save(mfile)
+ 
+ 						if mpeg and builder.get_object('chk_remove_id3v1').get_active():
+-							taglib.taglib_mpeg_file_strip(mpeg, 0x0001)
++							taglib.taglib_mpeg_file_strip(mpeg, 0x0001, True)
+ 
+ 						taglib.taglib_tag_free_strings()
+ 					taglib.taglib_file_free(mfile)

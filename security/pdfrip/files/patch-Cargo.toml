@@ -1,0 +1,13 @@
+Update the library to fix build breakage.
+
+--- Cargo.toml.orig	2025-07-27 21:02:59 UTC
++++ Cargo.toml
+@@ -5,7 +5,7 @@ authors = ["Mufeed VH <mufeed@lyminal.space>", "Pommaq
+ authors = ["Mufeed VH <mufeed@lyminal.space>", "Pommaq"]
+ 
+ [dependencies]
+-indicatif = "0.16.2"
++indicatif = "0.18.0"
+ log = "0.4.19"
+ anyhow = "1.0.72"
+ crossbeam = "0.8.2"

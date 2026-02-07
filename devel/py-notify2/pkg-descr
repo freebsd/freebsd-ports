@@ -1,0 +1,3 @@
+notify2 is a pure-python replacement for notify-python, using python-dbus
+to communicate with the notifications server directly. It's compatible with
+Python 2 and 3, and its callbacks can work with Gtk 3 or Qt 4 applications.

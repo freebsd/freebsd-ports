@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: spreadlogd
+# REQUIRE: spread
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable spread:
+#
+# spreadlogd_enable="YES"
+# spreadlogd_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=spreadlogd
+rcvar=spreadlogd_enable
+
+command="%%PREFIX%%/sbin/spreadlogd"
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/${name}.conf
+
+load_rc_config ${name}
+
+# set defaults
+
+spreadlogd_enable=${spreadlogd_enable:-"NO"}
+
+run_rc_command "$1"

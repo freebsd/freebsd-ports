@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2006-04-25 19:27:56 UTC
++++ src/Makefile
+@@ -8,7 +8,7 @@ OS!=uname -s
+ .if defined(DEBUG_MODE)
+ CXXFLAGS += -g -DDEBUG_MODE
+ .else
+-CXXFLAGS += -s
++CXXFLAGS += -s -Qunused-arguments
+ .endif
+ 
+ # pf's include directory

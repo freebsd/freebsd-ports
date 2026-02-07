@@ -1,0 +1,8 @@
+Dot access dictionary with dynamic hierarchy creation and ordered iteration.
+
+DotMap is a dot-access dict subclass that
+* has dynamic hierarchy creation (autovivification)
+* can be initialized with keys
+* easily initializes from dict
+* easily converts to dict
+* is ordered by insertion

@@ -1,0 +1,15 @@
+--- Imakefile.orig	Wed Mar 31 18:53:11 1993
++++ Imakefile	Fri Oct 13 22:04:24 2000
+@@ -6,10 +6,10 @@
+ 
+ EXTRA_INCLUDES =
+ 
+-CDEBUGFLAGS = -g
++XCOMM CDEBUGFLAGS = -g
+ 
+ EXTRA_LOAD_FLAGS = 
+ 
+ EXTRA_LIBRARIES = 
+ 
+-ComplexProgramTarget(xisola)
++ComplexProgramTargetNoMan(xisola)

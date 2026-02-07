@@ -1,0 +1,11 @@
+--- src/third_party/mozjs/SConscript.orig	2024-08-14 20:38:09 UTC
++++ src/third_party/mozjs/SConscript
+@@ -144,7 +145,7 @@ sources = [
+     "extract/js/src/wasm/WasmCode-platform.cpp",
+ ]
+ 
+-if env['TARGET_ARCH'] == 'x86_64' and not env.TargetOSIs('windows'):
++if False and env['TARGET_ARCH'] == 'x86_64' and not env.TargetOSIs('windows'):
+     env.Append(CCFLAGS=['-mavx2'])
+     sources.extend(["extract/mozglue/misc/SIMD_avx2.cpp", "extract/mozglue/misc/SSE.cpp"])
+ 

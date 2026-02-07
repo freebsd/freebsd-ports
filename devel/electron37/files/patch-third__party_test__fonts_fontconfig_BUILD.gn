@@ -1,0 +1,28 @@
+--- third_party/test_fonts/fontconfig/BUILD.gn.orig	2025-01-27 17:37:37 UTC
++++ third_party/test_fonts/fontconfig/BUILD.gn
+@@ -26,7 +26,11 @@ if (is_linux || is_chromeos) {
+ 
+   copy("fonts_conf") {
+     sources = [ "fonts.conf" ]
+-    outputs = [ "$root_out_dir/etc/fonts/{{source_file_part}}" ]
++    if (is_freebsd) {
++      outputs = [ "$root_out_dir/usr/local/etc/fonts/{{source_file_part}}" ]
++    } else {
++      outputs = [ "$root_out_dir/etc/fonts/{{source_file_part}}" ]
++    }
+   }
+ 
+   if (current_toolchain == host_toolchain) {
+@@ -47,7 +51,11 @@ if (is_linux || is_chromeos) {
+         "//third_party/test_fonts",
+       ]
+       args = []
+-      inputs = [ "$root_out_dir/etc/fonts/fonts.conf" ]
++      if (is_freebsd) {
++        inputs = [ "$root_out_dir/usr/local/etc/fonts/fonts.conf" ]
++      } else {
++        inputs = [ "$root_out_dir/etc/fonts/fonts.conf" ]
++      }
+       outputs = [
+         "$root_out_dir/fontconfig_caches/fb5c91b2895aa445d23aebf7f9e2189c-le64.cache-9",
+         "$root_out_dir/fontconfig_caches/CACHEDIR.TAG",

@@ -1,0 +1,1 @@
+IO::Prompt::Simple replicates ExtUtils::MakeMaker's prompt() function.

@@ -1,0 +1,38 @@
+--- Imakefile.orig	Sun Jul  4 18:47:11 1999
++++ Imakefile	Fri Oct 27 03:04:18 2000
+@@ -1,12 +1,12 @@
+ #include "configure.h"
+ 
+-BINDIR=/usr/bin/X11
++#BINDIR=/usr/bin/X11
+ MANDIR=$(MANSOURCEPATH)6
+ MANSUFFIX=6
+-ICONDIR=/usr/include/X11/pixmaps
++ICONDIR=$(INCDIR)/X11/pixmaps
+ 
+ # Flags
+-CDEBUGFLAGS = -Wall
++#CDEBUGFLAGS = -Wall
+ 
+ #ifdef SOUND_RPLAY
+ RPLAYLIB = -lrplay
+@@ -23,15 +23,13 @@
+ 
+ ComplexProgramTarget(xdigger)
+ InstallNonExecFile(xdigger.level,XDIGGER_LIB_DIR)
+-#ifdef SOUND_RPLAY
+ InstallNamedNonExec(audio/diamond.au,diamond.au,XDIGGER_LIB_DIR)
+ InstallNamedNonExec(audio/step.au,step.au,XDIGGER_LIB_DIR)
+ InstallNamedNonExec(audio/stone.au,stone.au,XDIGGER_LIB_DIR)
+-#endif
+-InstallNamedNonExec(pixmaps/xdigger.xpm,xdigger.xpm,$(ICONDIR))
++/* InstallNamedNonExec(pixmaps/xdigger.xpm,xdigger.xpm,$(ICONDIR)) */
+ /* InstallNonExecFileNoClobber(xdigger.hiscore,XDIGGER_HISCORE_DIR) */
+ 
+ install::
+-	$(MKDIRHIER) XDIGGER_HISCORE_DIR
+-	touch XDIGGER_HISCORE_DIR/xdigger.hiscore
+-	chmod a+w XDIGGER_HISCORE_DIR/xdigger.hiscore
++	$(MKDIRHIER) $(DESTDIR)XDIGGER_HISCORE_DIR
++	touch $(DESTDIR)XDIGGER_HISCORE_DIR/xdigger.hiscore
++	chmod a+w $(DESTDIR)XDIGGER_HISCORE_DIR/xdigger.hiscore

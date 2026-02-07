@@ -1,0 +1,2 @@
+This package is a loadable module for mailfromd that adds support for
+searching in LDAP directories to the mail filtering language (MFL).

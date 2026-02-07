@@ -1,0 +1,15 @@
+GNU Recutils is a set of tools and libraries to access human-editable,
+text-based databases called recfiles.  The data is stored as a sequence of
+records, each record containing an arbitrary number of named fields.
+
+Advanced capabilities usually found in other data storage systems are
+supported: data types, data integrity (keys, mandatory fields, etc) as well
+as the ability of records to refer to other records (sort of foreign keys).
+Despite its simplicity, recfiles can be used to store medium-sized
+databases.
+
+Recfiles are human-readable, human-writable and still they are easy to parse
+and to manipulate automatically.  Obviously they are not suitable for many
+tasks (for example, it can be difficult to manage hierarchies in recfiles)
+and performance is somewhat sacrificed in favor of readability, but they are
+quite handy to store small to medium simple databases.

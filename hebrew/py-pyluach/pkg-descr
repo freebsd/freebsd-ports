@@ -1,0 +1,12 @@
+Pyluach is a Python package for manipulating Hebrew (Jewish) calendar dates and
+Hebrew-Gregorian conversions.
+
+Features:
+* Conversion between Hebrew and Gregorian dates
+* Finding the difference between two dates
+* Finding a date at a given duration from the given date
+* Rich comparisons between dates
+* Finding the weekday of a given date
+* Finding the weekly Parsha reading of a given date
+* Getting the holiday occuring on a given date
+* Generating html and text Hebrew calendars

@@ -1,0 +1,7 @@
+This is a thin wrapper around the shellwords.pl package, which comes
+preinstalled with Perl.  This module imports a single subroutine,
+shellwords().  The shellwords() routine parses lines of text and
+returns a set of tokens using the same rules that the Unix shell does
+for its command-line arguments.  Tokens are separated by whitespace,
+and can be delimited by single or double quotes.  The module also
+respects backslash escapes.

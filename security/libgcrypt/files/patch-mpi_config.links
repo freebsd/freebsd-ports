@@ -1,0 +1,13 @@
+--- mpi/config.links.orig	2018-01-22 12:14:47 UTC
++++ mpi/config.links
+@@ -301,8 +301,8 @@ case "${host}" in
+        mpi_cpu_arch="ppc"
+        ;;
+ 
+-    powerpc*-*-netbsd* | powerpc*-*-openbsd*)
+-       echo '/* configured {Open,Net}BSD on powerpc */' >>./mpi/asm-syntax.h
++    powerpc*-*-netbsd* | powerpc*-*-openbsd* | powerpc-*-freebsd* | powerpcspe-*-freebsd*)
++       echo '/* configured {Open,Net,Free}BSD on powerpc */' >>./mpi/asm-syntax.h
+        echo '#define ELF_SYNTAX'                 >>./mpi/asm-syntax.h
+        cat   $srcdir/mpi/powerpc32/syntax.h	 >>./mpi/asm-syntax.h
+        mpi_sflags="-Wa,-mppc"

@@ -1,0 +1,11 @@
+--- dik/makefile.orig	2008-03-21 12:39:35 UTC
++++ dik/makefile
+@@ -9,7 +9,7 @@ OBJS =	cube.o \
+ 	globals.o
+ 
+ cube:	$(OBJS)
+-	$(CC) $(CFLAGS) -o dikcube $(OBJS)
++	$(CC) $(CFLAGS) -o dikcube $(OBJS) $(LDFLAGS)
+ 	size dikcube
+ 
+ size222:	size222.o

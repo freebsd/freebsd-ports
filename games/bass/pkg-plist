@@ -1,0 +1,5 @@
+share/applications/bass.desktop
+%%DATADIR%%/sky.cpt
+%%DATADIR%%/sky.dnr
+%%DATADIR%%/sky.dsk
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt

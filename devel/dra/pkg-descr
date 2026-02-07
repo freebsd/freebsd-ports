@@ -1,0 +1,10 @@
+dra ia a command line tool to download release assets from GitHub.
+
+You can do everything `dra` does with the official GitHub cli.
+
+dra helps you download release assets more easily:
+- no authentication for public repository (you cannot use gh without
+  authentication)
+- Built-in generation of pattern to select an asset to download
+  (with gh you need to provide glob pattern that you need to
+  create manually).

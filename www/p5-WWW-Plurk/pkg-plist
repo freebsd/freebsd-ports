@@ -1,0 +1,7 @@
+bin/plurk
+%%SITE_PERL%%/WWW/Plurk.pm
+%%SITE_PERL%%/WWW/Plurk/Friend.pm
+%%SITE_PERL%%/WWW/Plurk/Message.pm
+%%PERL5_MAN3%%/WWW::Plurk.3.gz
+%%PERL5_MAN3%%/WWW::Plurk::Friend.3.gz
+%%PERL5_MAN3%%/WWW::Plurk::Message.3.gz

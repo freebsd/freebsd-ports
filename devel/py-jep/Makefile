@@ -1,0 +1,37 @@
+PORTNAME=	jep
+PORTVERSION=	4.3.1
+PORTREVISION=	0
+CATEGORIES=	devel java python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Java Embedded Python
+WWW=		https://github.com/mrj0/jep
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		java python
+USE_PYTHON=	distutils
+
+CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
+USE_LDCONFIG=	yes
+PLIST_SUB+=	VERSION=${PORTVERSION}
+
+# Necessary, since the configure script does the LIBS and
+# LDFLAGS detection wrong
+CFLAGS+=	-I${JAVA_HOME}/include/freebsd
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	NUMPY
+OPTIONS_DEFAULT=	NUMPY
+NUMPY_BUILD_DEPENDS=	${PYNUMPY}
+NUMPY_RUN_DEPENDS=	${PYNUMPY}
+
+post-install:
+	${LN} -s ${PYTHON_SITELIBDIR}/jep/jep-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/jep.jar
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jep/jep*.so
+
+.include <bsd.port.mk>

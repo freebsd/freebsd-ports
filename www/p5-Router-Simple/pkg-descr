@@ -1,0 +1,3 @@
+Router::Simple is a simple router class. Its main purpose is to serve as a
+dispatcher for web applications. Router::Simple can match against PSGI $env
+directly, which means it's easy to use with PSGI supporting web frameworks.

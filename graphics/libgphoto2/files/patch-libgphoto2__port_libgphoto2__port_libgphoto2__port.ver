@@ -1,0 +1,10 @@
+--- libgphoto2_port/libgphoto2_port/libgphoto2_port.ver.orig	2019-02-05 07:18:06 UTC
++++ libgphoto2_port/libgphoto2_port/libgphoto2_port.ver
+@@ -70,7 +70,6 @@ LIBGPHOTO2_INTERNAL {
+ 
+ # These are only supposed to be used by libgphoto2 internally.
+ LIBGPHOTO2_INTERNAL {
+-	gpi_gphoto_port_type_map;
+ 	gpi_enum_to_string;
+ 	gpi_string_to_enum;
+ 	gpi_string_to_flag;

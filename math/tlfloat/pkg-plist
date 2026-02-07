@@ -1,0 +1,11 @@
+include/tlfloat/bigint.hpp
+include/tlfloat/rpitab.hpp
+include/tlfloat/tlfloat.h
+include/tlfloat/tlfloat.hpp
+include/tlfloat/tlfloatconfig.hpp
+include/tlfloat/tlmath.hpp
+include/tlfloat/tlmathcoef.hpp
+lib/libtlfloat.so
+lib/libtlfloat.so.1
+lib/libtlfloat.so.1.15.0
+libdata/pkgconfig/tlfloat.pc

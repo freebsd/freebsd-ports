@@ -1,0 +1,11 @@
+--- sndserv/Makefile.orig	1999-10-23 09:02:21 UTC
++++ sndserv/Makefile
+@@ -1,6 +1,6 @@
+-CC = gcc
++#CC = gcc
+ 
+-CFLAGS=	-Wall -Wstrict-prototypes $(COPT.arch)
++CFLAGS=	-Wall -Wstrict-prototypes $(COPT.arch) -I/usr/include/sys
+ 
+ LIBS=	-lm
+ 

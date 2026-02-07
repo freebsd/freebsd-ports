@@ -1,0 +1,13 @@
+Remove hardcoded optimization flags.
+
+--- backup/libcd64/Makefile.orig	2021-12-17 09:47:00 UTC
++++ backup/libcd64/Makefile
+@@ -10,7 +10,7 @@ endif
+ ifdef DEBUG
+ CFLAGS+=-pg -g -pedantic -ansi -DDEBUG
+ else
+-CFLAGS+=-O3 -funroll-loops
++CFLAGS+=-funroll-loops
+ ifneq ($(findstring clang,$(CC)),clang)
+ CFLAGS+=-fexpensive-optimizations
+ endif

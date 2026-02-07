@@ -1,0 +1,5 @@
+cd example/simple
+read_celllib osu018_stdcells.lib
+read_verilog simple.v   
+read_sdc simple.sdc
+report_timing

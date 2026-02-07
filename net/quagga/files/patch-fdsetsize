@@ -1,0 +1,21 @@
+--- lib/thread.c.orig	2018-03-30 18:53:43.537794946 +0200
++++ lib/thread.c	2018-03-30 19:17:27.919629268 +0200
+@@ -531,7 +531,8 @@ thread_master_create ()
+       return NULL;
+     }
+ 
+-  rv->fd_limit = (int)limit.rlim_cur;
++  rv->fd_limit = ((int)limit.rlim_cur < FD_SETSIZE ?
++		  (int)limit.rlim_cur : FD_SETSIZE);
+   rv->read = XCALLOC (MTYPE_THREAD, sizeof (struct thread *) * rv->fd_limit);
+   if (rv->read == NULL)
+     {
+@@ -1187,7 +1188,7 @@ thread_fetch (struct thread_master *m)
+             timer_wait = timer_wait_bg;
+         }
+       
+-      num = fd_select (FD_SETSIZE, &readfd, &writefd, &exceptfd, timer_wait);
++      num = fd_select (m->fd_limit, &readfd, &writefd, &exceptfd, timer_wait);
+       
+       /* Signals should get quick treatment */
+       if (num < 0)

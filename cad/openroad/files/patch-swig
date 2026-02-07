@@ -1,0 +1,33 @@
+--- src/Exception-py.i.orig	2025-02-16 20:42:08 UTC
++++ src/Exception-py.i
+@@ -42,7 +42,7 @@
+ %}
+ 
+ %exception {
+-  try { $function }
++  try { $action }
+   catch (std::bad_alloc &) {
+     fprintf(stderr, "Error: out of memory.");
+     abort();
+--- src/Exception.i.orig	2025-02-16 20:42:08 UTC
++++ src/Exception.i
+@@ -25,7 +25,7 @@
+ %}
+ 
+ %exception {
+-  try { $function }
++  try { $action }
+   catch (std::bad_alloc &) {
+     fprintf(stderr, "Error: out of memory.");
+     abort();
+--- src/sta/tcl/Exception.i.orig	2025-02-12 00:55:01 UTC
++++ src/sta/tcl/Exception.i
+@@ -23,7 +23,7 @@
+ // This notice may not be removed or altered from any source distribution.
+ 
+ %exception {
+-  try { $function }
++  try { $action }
+   catch (std::bad_alloc &) {
+     fprintf(stderr, "Error: out of memory.\n");
+     exit(1);

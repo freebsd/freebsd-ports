@@ -1,0 +1,14 @@
+%%PERL5_MAN3%%/XML::RSS::LibXML.3.gz
+%%PERL5_MAN3%%/XML::RSS::LibXML::ImplBase.3.gz
+%%PERL5_MAN3%%/XML::RSS::LibXML::MagicElement.3.gz
+%%PERL5_MAN3%%/XML::RSS::LibXML::Namespaces.3.gz
+%%SITE_PERL%%/XML/RSS/LibXML.pm
+%%SITE_PERL%%/XML/RSS/LibXML/ImplBase.pm
+%%SITE_PERL%%/XML/RSS/LibXML/MagicElement.pm
+%%SITE_PERL%%/XML/RSS/LibXML/Namespaces.pm
+%%SITE_PERL%%/XML/RSS/LibXML/Null.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V0_9.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V0_91.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V0_92.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V1_0.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V2_0.pm

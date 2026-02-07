@@ -1,0 +1,3 @@
+entrypoint2 is an easy to use argparse based command-line interface for python
+modules. It translates function signature and documentation to argparse
+configuration.

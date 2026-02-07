@@ -1,0 +1,199 @@
+PORTNAME=	selene
+DISTVERSION=	0.29.0
+PORTREVISION=	2
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Command line tool to help write correct and idiomatic Lua code
+WWW=		https://kampfkarren.github.io/selene/
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	kampfkarren
+
+CARGO_BUILD_ARGS=	--package=${PORTNAME}
+CARGO_INSTALL_PATH=	${PORTNAME}
+
+CARGO_CRATES=	addr2line-0.19.0 \
+		adler-1.0.2 \
+		aho-corasick-0.7.20 \
+		android_system_properties-0.1.5 \
+		ansi_term-0.12.1 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		backtrace-0.3.67 \
+		base64-0.21.7 \
+		bitflags-1.3.2 \
+		borsh-1.5.1 \
+		bstr-1.1.0 \
+		bumpalo-3.12.0 \
+		bytecount-0.6.3 \
+		cc-1.0.78 \
+		cfg-if-1.0.0 \
+		cfg_aliases-0.2.1 \
+		chrono-0.4.23 \
+		clap-2.34.0 \
+		codespan-0.11.1 \
+		codespan-reporting-0.11.1 \
+		color-eyre-0.6.2 \
+		color-spantrace-0.2.0 \
+		core-foundation-sys-0.8.3 \
+		crc32fast-1.3.2 \
+		ctor-0.1.26 \
+		cxx-1.0.86 \
+		cxx-build-1.0.86 \
+		cxxbridge-flags-1.0.86 \
+		cxxbridge-macro-1.0.86 \
+		derive_more-1.0.0 \
+		derive_more-impl-1.0.0 \
+		diff-0.1.13 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
+		eyre-0.6.8 \
+		flate2-1.0.25 \
+		fnv-1.0.7 \
+		form_urlencoded-1.1.0 \
+		full_moon-1.2.0 \
+		full_moon_derive-0.11.0 \
+		generator-0.7.2 \
+		getrandom-0.2.8 \
+		gimli-0.27.0 \
+		glob-0.3.1 \
+		globset-0.4.10 \
+		hashbrown-0.12.3 \
+		heck-0.3.3 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		iana-time-zone-0.1.53 \
+		iana-time-zone-haiku-0.1.1 \
+		id-arena-2.2.1 \
+		idna-0.3.0 \
+		if_chain-1.0.2 \
+		indenter-0.3.3 \
+		indexmap-1.9.2 \
+		itoa-1.0.5 \
+		js-sys-0.3.60 \
+		lazy_static-1.4.0 \
+		libc-0.2.139 \
+		link-cplusplus-1.0.8 \
+		log-0.4.17 \
+		loom-0.5.6 \
+		matchers-0.1.0 \
+		memchr-2.5.0 \
+		miniz_oxide-0.6.2 \
+		nom8-0.2.0 \
+		nu-ansi-term-0.46.0 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		object-0.30.2 \
+		once_cell-1.17.0 \
+		output_vt100-0.1.3 \
+		overload-0.1.1 \
+		owo-colors-3.5.0 \
+		paste-1.0.11 \
+		percent-encoding-2.2.0 \
+		pin-project-lite-0.2.9 \
+		pretty_assertions-1.3.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.87 \
+		profiling-1.0.7 \
+		profiling-procmacros-1.0.7 \
+		quote-1.0.37 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-1.7.1 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.28 \
+		ring-0.17.3 \
+		rustc-demangle-0.1.21 \
+		rustls-0.21.10 \
+		rustls-webpki-0.101.7 \
+		rustversion-1.0.11 \
+		ryu-1.0.12 \
+		scoped-tls-1.0.1 \
+		scratch-1.0.3 \
+		sct-0.7.1 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.99 \
+		serde_spanned-0.6.1 \
+		serde_yaml-0.9.16 \
+		sharded-slab-0.1.4 \
+		smallvec-1.10.0 \
+		smol_str-0.3.1 \
+		spin-0.9.8 \
+		strsim-0.8.0 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		syn-1.0.107 \
+		syn-2.0.79 \
+		termcolor-1.2.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		thread_local-1.1.4 \
+		threadpool-1.8.1 \
+		time-0.1.45 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		toml-0.7.2 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.3 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.23 \
+		tracing-core-0.1.30 \
+		tracing-error-0.2.0 \
+		tracing-log-0.1.3 \
+		tracing-subscriber-0.3.16 \
+		tracy-client-0.14.2 \
+		tracy-client-sys-0.19.0 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.6 \
+		unicode-normalization-0.1.22 \
+		unicode-segmentation-1.10.0 \
+		unicode-width-0.1.10 \
+		unicode-xid-0.2.6 \
+		unsafe-libyaml-0.2.5 \
+		untrusted-0.9.0 \
+		ureq-2.9.1 \
+		url-2.3.1 \
+		valuable-0.1.0 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		webpki-roots-0.25.3 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.39.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.39.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.39.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.39.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.39.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.39.0 \
+		windows_x86_64_msvc-0.48.5 \
+		yansi-0.5.1
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

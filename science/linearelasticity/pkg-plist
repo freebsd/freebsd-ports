@@ -1,0 +1,6 @@
+bin/elastic
+include/elastic.h
+include/ls_calls.h
+lib/libElas.so
+lib/libElas.so.0
+lib/libElas.so.0.0.0

@@ -1,0 +1,82 @@
+--- configure.orig	2003-05-18 17:25:34 UTC
++++ configure
+@@ -253,7 +253,7 @@ exec 6>&1
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=%%LOCALBASE%%
+ ac_config_libobj_dir=.
+ cross_compiling=no
+ subdirs=
+@@ -1712,15 +1712,15 @@ PACKAGE_DATE=`date | sed 's/^[^ ]* \([^ 
+ 
+ 
+ VISIT="/usr/lib/news /var/news/etc /usr/spool/news /usr/share/news \
+- /var/db/news /usr/local/news/control /usr/local/news /local/news /etc/news \
+- /usr/local/news/bin/control /usr/local/lib/news /news /usr/local/inn \
++ /var/db/news %%LOCALBASE%%/news/control %%LOCALBASE%%/news /local/news /etc/news \
++ %%LOCALBASE%%/news/bin/control %%LOCALBASE%%/lib/news /news %%LOCALBASE%%/inn \
+  /var/lib/news /usr/lib /var/spool/news"
+ 
+ INN_NEWSUMASK=002
+ INN_EXTENDEDDBZ=0
+ 
+-RNEWS_PATH=/usr/bin/rnews
+-INEWS_PATH=/usr/bin/inews
++RNEWS_PATH=%%LOCALBASE%%/news/bin/rnews
++INEWS_PATH=%%LOCALBASE%%/news/bin/inews
+ 
+ 
+ # Check whether --with-newshome or --without-newshome was given.
+@@ -1890,7 +1890,12 @@ echo $ECHO_N "checking and found INN... 
+ 	    # it has been reported that some INN 2.1 had its own VERSION
+ 	    VERSION_save="$VERSION"
+ 	    VERSION=
++            prefix_orig="${prefix}"
++            exec_prefix_orig="${exec_prefix}"
+ 	    . $NEWSCONFIG
++	    unset TMPDIR
++            prefix="${prefix_orig}"
++            exec_prefix="${exec_prefix_orig}"
+ 	    INN_VERSION="$VERSION"
+ 	    VERSION="$VERSION_save"
+ 	    INN_NEWSUMASK=`umask`
+@@ -6568,14 +6573,14 @@ fi
+ 
+ 
+     LIBS_save="$LIBS"
+-                    LIBS="$LIBS -linn -lstorage"
++                    LIBS="$LIBS -linn -lstorage -linnhist"
+     echo "$as_me:$LINENO: checking for IsToken in -lstorage" >&5
+ echo $ECHO_N "checking for IsToken in -lstorage... $ECHO_C" >&6
+ if test "${ac_cv_lib_storage_IsToken+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lstorage  $LIBS"
++LIBS="-lstorage -linnhist $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -7074,7 +7079,7 @@ if test x$HAVE_GETOPT != x1; then
+     MORELIBS2="$MORELIBS2 ../lib/libgetopt.a"
+ fi
+ if test x$HAVE_LIBINN = x1; then
+-        MORELIBS1="$MORELIBS1 -L$NEWSLIB"
++        MORELIBS1="$MORELIBS1 -L$NEWSLIB -Wl,-rpath -Wl,$NEWSLIB"
+     MORELIBS2="$MORELIBS2 -linn"
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -7086,9 +7091,9 @@ else
+ fi
+ if test x$HAVE_LIBSTORAGE = x1; then
+         if test x$HAVE_LIBINN != x1; then
+-	MORELIBS1="$MORELIBS1 -L$NEWSLIB"
++	MORELIBS1="$MORELIBS1 -L$NEWSLIB -Wl,-rpath -Wl,$NEWSLIB"
+     fi
+-                        MORELIBS2="-lstorage $MORELIBS2 -lstorage"
++                        MORELIBS2="-lstorage $MORELIBS2 -lstorage  -linnhist"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define HAVE_LIBSTORAGE 1

@@ -1,0 +1,3 @@
+Translate GNU info files into HTML pages, one page per node.
+Menus, Notes, and Up/Next/Prev pointers are translated into links.
+Other text is left as-is in <PRE></PRE> tags.

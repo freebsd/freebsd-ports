@@ -1,0 +1,161 @@
+--- configure.ac.orig	2019-10-29 13:46:02 UTC
++++ configure.ac
+@@ -127,7 +127,13 @@ record_check()
+ 
+ # Per-package checks follow
+ # atk
+-PKG_CHECK_MODULES(ATK, atk >= 1.12, HAVE_ATK=true, HAVE_ATK=false)
++AC_ARG_WITH([atk], AC_HELP_STRING([--without-atk], [Don't build ATK wrapper (default: test)]))
++AS_IF([test "x$with_atk" != "xno"],
++      [PKG_CHECK_MODULES(ATK, atk >= 1.12, HAVE_ATK=true, HAVE_ATK=false)],
++      [HAVE_ATK=false])
++AS_IF([test "x$HAVE_ATK" = "xfalse"],
++      [AS_IF([test "x$with_atk" = "xyes"],
++             [AC_MSG_ERROR([atk requested but not found])])])
+ AC_SUBST(ATK_CFLAGS)
+ AC_SUBST(ATK_LIBS)
+ AM_CONDITIONAL(HAVE_ATK, $HAVE_ATK)
+@@ -139,7 +145,13 @@ record_check atk $HAVE_ATK
+ # type system.  It has only been around since Cairo 1.10, but without
+ # there's no sane way to pass Cairo values through callbacks, so we
+ # require it to build the Cairo integration for Guile-GNOME.
+-PKG_CHECK_MODULES(GUILE_CAIRO, guile-cairo cairo-gobject, HAVE_CAIRO=true, HAVE_CAIRO=false)
++AC_ARG_WITH([cairo], AC_HELP_STRING([--without-cairo], [Don't build Cairo wrapper (default: test)]))
++AS_IF([test "x$with_cairo" != "xno"],
++      [PKG_CHECK_MODULES(GUILE_CAIRO, guile-cairo cairo-gobject, HAVE_CAIRO=true, HAVE_CAIRO=false)],
++      [HAVE_CAIRO=false])
++AS_IF([test "x$HAVE_CAIRO" = "xfalse"],
++      [AS_IF([test "x$with_cairo" = "xyes"],
++             [AC_MSG_ERROR([Cairo requested but not found])])])
+ AC_SUBST(GUILE_CAIRO_CFLAGS)
+ AC_SUBST(GUILE_CAIRO_LIBS)
+ AM_CONDITIONAL(HAVE_CAIRO, $HAVE_CAIRO)
+@@ -162,7 +174,13 @@ record_check cairo $HAVE_CAIRO
+ # record_check corba $HAVE_CORBA
+ 
+ # gconf
+-PKG_CHECK_MODULES(GCONF, gconf-2.0 >= 2.18, HAVE_GCONF=true, HAVE_GCONF=false)
++AC_ARG_WITH([gconf], AC_HELP_STRING([--without-gconf], [Don't build GConf wrapper (default: test)]))
++AS_IF([test "x$with_gconf" != "xno"],
++      [PKG_CHECK_MODULES(GCONF, gconf-2.0 >= 2.18, HAVE_GCONF=true, HAVE_GCONF=false)],
++      [HAVE_GCONF=false])
++AS_IF([test "x$HAVE_GCONF" = "xfalse"],
++      [AS_IF([test "x$with_gconf" = "xyes"],
++             [AC_MSG_ERROR([GConf requested but not found])])])
+ AC_SUBST(GCONF_CFLAGS)
+ AC_SUBST(GCONF_LIBS)
+ AM_CONDITIONAL(HAVE_GCONF, $HAVE_GCONF)
+@@ -209,10 +227,19 @@ record_check glib true
+ # record_check gnome-vfs $HAVE_GNOME_VFS
+ 
+ # gtk
+-PKG_CHECK_MODULES(GDK_PIXBUF, gdk-pixbuf-2.0 >= 2.10.0, HAVE_GDK_PIXBUF=true, HAVE_GDK_PIBXUF=false)
++AC_ARG_WITH([pixbuf], AC_HELP_STRING([--without-pixbuf], [Don't build gdk-pixbuf wrapper (default: test)]))
++AS_IF([test "x$with_pixbuf" != "xno"],
++      [PKG_CHECK_MODULES(GDK_PIXBUF, gdk-pixbuf-2.0 >= 2.10.0, HAVE_GDK_PIXBUF=true, HAVE_GDK_PIBXUF=false)],
++      [HAVE_GDK_PIXBUF=false])
++AS_IF([test "x$HAVE_GDK_PIXBUF" = "xfalse"],
++      [AS_IF([test "x$with_pixbuf" = "xyes"],
++             [AC_MSG_ERROR([gdk-pixbuf requested but not found])])])
+ AC_SUBST(GDK_PIXBUF_CFLAGS)
+ AC_SUBST(GDK_PIXBUF_LIBS)
+ AM_CONDITIONAL(HAVE_GDK_PIXBUF, $HAVE_GDK_PIXBUF)
++AC_ARG_WITH([gtk], AC_HELP_STRING([--without-gtk], [Don't build gtk wrapper (default: test)]))
++AS_IF([test "x$with_gtk" != "xno"],
++[
+ if $HAVE_CAIRO; then
+   PKG_CHECK_MODULES(GDK, gdk-2.0 >= 2.10.0, HAVE_GDK=true, HAVE_GDK=false)
+   AC_SUBST(GDK_CFLAGS)
+@@ -233,33 +260,64 @@ else
+   HAVE_GDK=false
+   HAVE_GTK=false
+ fi
++],[
++  HAVE_GDK=false
++  HAVE_GTK=false
++])
++AS_IF([test "x$HAVE_GTK$HAVE_GDK" != "xtruetrue"],
++      [AS_IF([test "x$with_gtk" = "xyes"],
++             [AC_MSG_ERROR([gtk requested but not found])])])
+ AM_CONDITIONAL(HAVE_GDK, $HAVE_GDK)
+ AM_CONDITIONAL(HAVE_GTK, $HAVE_GTK)
+ record_check gtk $HAVE_GTK
+ 
+ # libglade
+-PKG_CHECK_MODULES(LIBGLADE, libglade-2.0 >= 2.6, HAVE_LIBGLADE=true, HAVE_LIBGLADE=false)
++AC_ARG_WITH([libglade], AC_HELP_STRING([--without-libglade], [Don't build libglade wrapper (default: test)]))
++AS_IF([test "x$with_libglade" != "xno"],
++      [PKG_CHECK_MODULES(LIBGLADE, libglade-2.0 >= 2.6, HAVE_LIBGLADE=true, HAVE_LIBGLADE=false)],
++      [HAVE_LIBGLADE=false])
++AS_IF([test "x$HAVE_LIBGLADE" = "xfalse"],
++      [AS_IF([test "x$with_libglade" = "xyes"],
++             [AC_MSG_ERROR([libglade requested but not found])])])
+ AC_SUBST(LIBGLADE_CFLAGS)
+ AC_SUBST(LIBGLADE_LIBS)
+ AM_CONDITIONAL(HAVE_LIBGLADE, $HAVE_LIBGLADE)
+ record_check libglade $HAVE_LIBGLADE
+ 
+ # libgnome
+-PKG_CHECK_MODULES(LIBGNOME, libgnome-2.0 >= 2.16, HAVE_LIBGNOME=true, HAVE_LIBGNOME=false)
++AC_ARG_WITH([libgnome], AC_HELP_STRING([--without-libgnome], [Don't build libgnome wrapper (default: test)]))
++AS_IF([test "x$with_libgnome" != "xno"],
++      [PKG_CHECK_MODULES(LIBGNOME, libgnome-2.0 >= 2.16, HAVE_LIBGNOME=true, HAVE_LIBGNOME=false)],
++      [HAVE_LIBGNOME=false])
++AS_IF([test "x$HAVE_LIBGNOME" = "xfalse"],
++      [AS_IF([test "x$with_libgnome" = "xyes"],
++             [AC_MSG_ERROR([libgnome requested but not found])])])
+ AC_SUBST(LIBGNOME_CFLAGS)
+ AC_SUBST(LIBGNOME_LIBS)
+ AM_CONDITIONAL(HAVE_LIBGNOME, $HAVE_LIBGNOME)
+ record_check libgnome $HAVE_LIBGNOME
+ 
+ # libgnomecanvas
+-PKG_CHECK_MODULES(CANVAS, libgnomecanvas-2.0 >= 2.14, HAVE_CANVAS=true, HAVE_CANVAS=false)
++AC_ARG_WITH([canvas], AC_HELP_STRING([--without-canvas], [Don't build libgnomecanvas wrapper (default: test)]))
++AS_IF([test "x$with_canvas" != "xno"],
++      [PKG_CHECK_MODULES(CANVAS, libgnomecanvas-2.0 >= 2.14, HAVE_CANVAS=true, HAVE_CANVAS=false)],
++      [HAVE_CANVAS=false])
++AS_IF([test "x$HAVE_CANVAS" = "xfalse"],
++      [AS_IF([test "x$with_canvas" = "xyes"],
++             [AC_MSG_ERROR([libgnomecanvas requested but not found])])])
+ AC_SUBST(CANVAS_CFLAGS)
+ AC_SUBST(CANVAS_LIBS)
+ AM_CONDITIONAL(HAVE_CANVAS, $HAVE_CANVAS)
+ record_check libgnomecanvas $HAVE_CANVAS
+ 
+ # libgnomeui
+-PKG_CHECK_MODULES(LIBGNOMEUI, libgnomeui-2.0 >= 2.16.0, HAVE_LIBGNOMEUI=true, HAVE_LIBGNOMEUI=false)
++AC_ARG_WITH([libgnomeui], AC_HELP_STRING([--without-libgnomeui], [Don't build libgnomeui wrapper (default: test)]))
++AS_IF([test "x$with_libgnomeui" != "xno"],
++      [PKG_CHECK_MODULES(LIBGNOMEUI, libgnomeui-2.0 >= 2.16.0, HAVE_LIBGNOMEUI=true, HAVE_LIBGNOMEUI=false)],
++      [HAVE_LIBGNOMEUI=false])
++AS_IF([test "x$HAVE_LIBGNOMEUI" = "xfalse"],
++      [AS_IF([test "x$with_libgnomeui" = "xyes"],
++             [AC_MSG_ERROR([libgnomeui requested but not found])])])
+ AC_SUBST(LIBGNOMEUI_CFLAGS)
+ AC_SUBST(LIBGNOMEUI_LIBS)
+ AM_CONDITIONAL(HAVE_LIBGNOMEUI, $HAVE_LIBGNOMEUI)
+@@ -272,11 +330,22 @@ AC_SUBST(GNOMEUI_DEPRECATION_FLAGS)
+ record_check libgnomeui $HAVE_LIBGNOMEUI
+ 
+ # pango
++AC_ARG_WITH([pango], AC_HELP_STRING([--without-pango], [Don't build pango wrapper (default: test)]))
++AS_IF([test "x$with_pango" != "xno"],
++      [
+ PKG_CHECK_MODULES(PANGO, pango >= 1.14, HAVE_PANGO=true, HAVE_PANGO=false)
++PKG_CHECK_MODULES(PANGOCAIRO, pangocairo >= 1.14, HAVE_PANGOCAIRO=true, HAVE_PANGOCAIRO=false)
++      ],
++      [
++HAVE_PANGO=false
++HAVE_PANGOCAIRO=false
++      ])
++AS_IF([test "x$HAVE_PANGO" = "xfalse"],
++      [AS_IF([test "x$with_pango" = "xyes"],
++             [AC_MSG_ERROR([pango requested but not found])])])
+ AC_SUBST(PANGO_CFLAGS)
+ AC_SUBST(PANGO_LIBS)
+ AM_CONDITIONAL(HAVE_PANGO, $HAVE_PANGO)
+-PKG_CHECK_MODULES(PANGOCAIRO, pangocairo >= 1.14, HAVE_PANGOCAIRO=true, HAVE_PANGOCAIRO=false)
+ AC_SUBST(PANGOCAIRO_CFLAGS)
+ AC_SUBST(PANGOCAIRO_LIBS)
+ AM_CONDITIONAL(HAVE_PANGOCAIRO, $HAVE_PANGOCAIRO)

@@ -1,0 +1,25 @@
+--- cpp/test/Ice/objects/Makefile.orig	2019-08-12 19:54:18 UTC
++++ cpp/test/Ice/objects/Makefile
+@@ -12,7 +12,7 @@ top_srcdir	= ../../..
+ CLIENT		= $(call mktestname,client)
+ SERVER		= $(call mktestname,server)
+ COLLOCATED	= $(call mktestname,collocated)
+-TESTLIBNAME	= libTestDerived.a
++TESTLIBNAME	= libTestDerived.so
+ 
+ TARGETS		= $(CLIENT) $(SERVER) $(COLLOCATED) $(TESTLIBNAME)
+ 
+@@ -47,11 +47,11 @@ LDFLAGS		:= -L. $(LDFLAGS)
+ 
+ $(TESTLIBNAME): $(SLICE_OBJS)
+ 	rm -f $@	
+-	$(call mklib,$@,$(SLICE_OBJS))
++	$(call mkshlib,$@,$(TESTLIBNAME),$(SLICE_OBJS),$(LIBS))
+ 
+ $(CLIENT): $(COBJS) $(TESTLIBNAME)
+ 	rm -f $@
+-	$(call mktest,$@,$(COBJS) -lTestDerived $(LIBS))
++	$(call mktest,$@,-lTestDerived $(COBJS) $(LIBS))
+ 
+ $(SERVER): $(SOBJS)
+ 	rm -f $@

@@ -1,0 +1,4 @@
+This is a plugin for gkrellm2 that simply prints the current clock
+speed for users that own speed stepping processors.
+
+This is the gkrellm2 version of this plugin, done by anchois.

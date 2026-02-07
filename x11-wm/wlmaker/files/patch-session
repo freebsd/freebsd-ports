@@ -1,0 +1,11 @@
+Avoid Debian specifics when starting from a GUI login manager
+
+--- share/wlmaker.desktop.in.orig	2025-03-07 20:59:09 UTC
++++ share/wlmaker.desktop.in
+@@ -1,5 +1,5 @@ Comment=A Wayland compositor inspired by Window Maker
+ [Desktop Entry]
+ Name=WaylandMaker
+ Comment=A Wayland compositor inspired by Window Maker
+-Exec=@CMAKE_INSTALL_PREFIX@/bin/wlmaker.sh
++Exec=wlmaker
+ Type=Application

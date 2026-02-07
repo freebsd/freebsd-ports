@@ -1,0 +1,13 @@
+--- build/config/gcc/BUILD.gn.orig	2025-01-27 17:37:37 UTC
++++ build/config/gcc/BUILD.gn
+@@ -32,7 +32,9 @@ config("symbol_visibility_hidden") {
+ # See http://gcc.gnu.org/wiki/Visibility
+ config("symbol_visibility_hidden") {
+   cflags = [ "-fvisibility=hidden" ]
+-  rustflags = [ "-Zdefault-visibility=hidden" ]
++  if (!is_bsd) {
++    rustflags = [ "-Zdefault-visibility=hidden" ]
++  }
+ 
+   # Visibility attribute is not supported on AIX.
+   if (current_os != "aix") {

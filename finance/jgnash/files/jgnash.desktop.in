@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Encoding=UTF-8
+Name=jGnash
+Comment=A free personal finance manager
+Exec=%%JAVA%% -jar %%DATADIR%%/jgnash2.jar
+Categories=Office;Finance;
+StartupNotify=false

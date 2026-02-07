@@ -1,0 +1,50 @@
+PORTNAME=	silo
+DISTVERSION=	4.12.0
+CATEGORIES=	science
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Mesh and field I/O library and scientific database
+WWW=		https://wci.llnl.gov/simulation/computer-codes/silo
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+USES=		cmake:testing perl5 readline
+USE_PERL5=	build
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	LLNL
+GH_PROJECT=	Silo
+
+CMAKE_ON=			SILO_ENABLE_INSTALL_LITE_HEADERS
+CMAKE_TESTING_ON=		SILO_ENABLE_TESTS # 3 tests fail, see https://github.com/LLNL/Silo/issues/289
+CMAKE_TESTING_TARGET=		check
+
+FFLAGS+=			-fallow-argument-mismatch # needed only for tests
+
+CONFLICTS_INSTALL=		deforaos-browser # bin/browser
+
+OPTIONS_DEFINE=			BROWSER FORTRAN HDF5 PYTHON SILOCK
+OPTIONS_DEFAULT=		BROWSER FORTRAN HDF5 PYTHON SILOCK
+OPTIONS_SUB=			yes
+
+BROWSER_DESC=			Enable building of browser
+BROWSER_CMAKE_BOOL=		SILO_ENABLE_BROWSER
+
+FORTRAN_CMAKE_BOOL=		SILO_ENABLE_FORTRAN
+FORTRAN_USES=			fortran
+
+HDF5_CMAKE_BOOL=		SILO_ENABLE_HDF5
+HDF5_CFLAGS=			-DH5_USE_110_API=1
+HDF5_LIB_DEPENDS=		libhdf5.so:science/hdf5
+HDF5_PLIST_SUB=			SUFX_HDF5="h5"
+HDF5_PLIST_SUB_OFF=		SUFX_HDF5=""
+
+PYTHON_CMAKE_BOOL=		SILO_ENABLE_PYTHON_MODULE
+PYTHON_USES=			python
+
+SILOCK_DESC=			Enable building of silock
+SILOCK_CMAKE_BOOL=		SILO_ENABLE_SILOCK
+
+.include <bsd.port.mk>

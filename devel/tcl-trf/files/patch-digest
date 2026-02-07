@@ -1,0 +1,108 @@
+--- generic/digest.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/digest.c	2009-07-12 23:59:49.000000000 -0400
+@@ -34,4 +34,7 @@
+  * Declarations of internal procedures.
+  */
++static void Update _ANSI_ARGS_ ((Trf_MessageDigestDescription *md,
++				 VOID* context,
++				 unsigned int character));
+ 
+ static Trf_ControlBlock CreateEncoder  _ANSI_ARGS_ ((ClientData writeClientData,
+@@ -236,4 +239,29 @@
+ 
+ /*
++ *
++ * Update
++ *
++ *	------------------------------------------------*
++ *      If a back-end defines its own single-byte update
++ *	function -- call it. Otherwise, call the back-end's
++ *	updateBuf function with our single byte being the
++ *	buffer.
++ *	------------------------------------------------*
++ *
++ */
++static void
++Update(Trf_MessageDigestDescription *md, VOID* context,
++    unsigned int character)
++{
++	if (md->updateProc != NULL)
++		md->updateProc(context, character);
++	else {
++		unsigned char buf = character;
++
++		md->updateBufProc(context, &buf, 1);
++	}
++}
++
++/*
+  *------------------------------------------------------*
+  *
+@@ -378,5 +406,5 @@
+ 
+   buf = character;
+-  (*md->updateProc) (c->context, character);
++  Update(md, c->context, character);
+ 
+   if ((c->operation_mode == ATTACH_ABSORB) ||
+@@ -430,5 +458,5 @@
+     for (i=0; i < ((unsigned int) bufLen); i++) {
+       character = buffer [i];
+-      (*md->updateProc) (c->context, character);
++      Update(md, c->context, character);
+     }
+   }
+@@ -481,5 +509,5 @@
+    */
+   digest = (char*) ckalloc (2 + md->digest_size);
+-  (*md->finalProc) (c->context, digest);
++  (*md->finalProc) (digest, c->context);
+ 
+   if ((c->operation_mode == ATTACH_WRITE) ||
+@@ -671,9 +699,9 @@
+   if (c->operation_mode == ATTACH_WRITE) {
+     buf = character;
+-    (*md->updateProc) (c->context, character);
++    Update(md, c->context, character);
+ 
+   } else if (c->operation_mode == ATTACH_TRANS) {
+     buf = character;
+-    (*md->updateProc) (c->context, character);
++    Update(md, c->context, character);
+ 
+     return c->write (c->writeClientData, (unsigned char*) &buf, 1, interp);
+@@ -692,5 +720,5 @@
+ 
+       character = buf;
+-      (*md->updateProc) (c->context, character);
++      Update(md, c->context, character);
+ 
+       return c->write (c->writeClientData, (unsigned char*) &buf, 1, interp);
+@@ -748,5 +776,5 @@
+       for (i=0; i < bufLen; i++) {
+ 	character = buffer [i];
+-	(*md->updateProc) (c->context, character);
++	Update(md, c->context, character);
+       }
+     }
+@@ -760,5 +788,5 @@
+       for (i=0; i < bufLen; i++) {
+ 	character = buffer [i];
+-	(*md->updateProc) (c->context, character);
++	Update(md, c->context, character);
+       }
+     }
+@@ -924,5 +952,5 @@
+    */
+   digest = (char*) ckalloc (2 + md->digest_size);
+-  (*md->finalProc) (c->context, digest);
++  (*md->finalProc) (digest, c->context);
+ 
+   if ((c->operation_mode == ATTACH_WRITE) ||
+@@ -1040,5 +1068,5 @@
+ 
+ #if GT81
+-    Tcl_Obj* digestObj = Tcl_NewByteArrayObj (digest, md->digest_size);
++    Tcl_Obj* digestObj = Tcl_NewByteArrayObj ((void *)digest, md->digest_size);
+ #else
+     Tcl_Obj* digestObj = Tcl_NewStringObj    (digest, md->digest_size);

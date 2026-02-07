@@ -1,0 +1,12 @@
+LWP::Online attempts to answer, as accurately as it can, one of the
+nastiest technical questions there is:  Am I on the internet?
+
+This a problem that had no clean permanent solution, and for
+which you could just keep writing more and more functionality
+indefinitely, asymtopically approaching 100% correctness but never
+reaching it.
+
+And so LWP::Online is intended to do as good a job as possible, without
+having to resort to asking any human questions (who may well get it
+wrong anyway), and limiting itself to a finite amount of programming
+work and a reasonable level of memory overhead to load the code.

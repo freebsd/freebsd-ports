@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2018-11-15 20:11:47 UTC
++++ CMakeLists.txt
+@@ -59,9 +59,9 @@ set ( BUILD_VERSION_STRING "${BUILD_VERSION_MAJOR}.${B
+ #set ( CMAKE_VERBOSE_MAKEFILE on )
+ 
+ ## Compiler flags
+-set ( CMAKE_C_FLAGS "-fPIC -W -Wall -Wextra -Wno-unused-parameter -Wformat-security -Wswitch-default -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wlogical-op -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wunreachable-code -std=gnu99 -fvisibility=hidden" )
++set ( CMAKE_C_FLAGS "-fPIC -W -Wall -Wextra -Wno-unused-parameter -Wformat-security -Wswitch-default -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wunreachable-code -std=gnu99 -fvisibility=hidden" )
+ if ( "${CMAKE_C_COMPILER_VERSION}" STRGREATER "4.8.0")
+-    set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror" )
++    set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} " )
+ endif ()
+ 
+ if ( "${CMAKE_BUILD_TYPE}" STREQUAL Release )
+@@ -102,10 +102,14 @@ set_property ( TARGET ${HSAKMT_TARGET} PROPERTY VERSIO
+ set_property ( TARGET ${HSAKMT_TARGET} PROPERTY SOVERSION "${BUILD_VERSION_MAJOR}" )
+ 
+ find_package(PkgConfig)
++find_library(PCI_LIBRARIES NAMES pci REQUIRED)
+ pkg_check_modules(PC_LIBPCI REQUIRED libpci)
+ include_directories ( ${PC_LIBPCI_INCLUDEDIR} )
++#target_link_directories( ${HSAKMT_TARGET}
++#  PUBLIC "/usr/local/lib"
++#)
+ target_link_libraries ( ${HSAKMT_TARGET}
+-  pthread rt numa ${PC_LIBPCI_LIBRARIES}
++  pthread rt ${PCI_LIBRARIES}
+ )
+ 
+ ## If the library is a release, strip the target library

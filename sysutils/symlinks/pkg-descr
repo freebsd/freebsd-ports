@@ -1,0 +1,5 @@
+Scans directories for symbolic links, and identifies dangling,
+relative, absolute, messy, lengthy and other_fs links.  Can optionally
+change absolute links to relative within a given filesystem.
+Recommended for use by anyone developing and/or maintaining a Linux
+distribution or CD-ROM.

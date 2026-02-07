@@ -1,0 +1,20 @@
+--- src/opengl/Makefile.in.orig	2009-10-05 18:37:13 UTC
++++ src/opengl/Makefile.in
+@@ -70,7 +70,7 @@ am__base_list = \
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-libguichan_opengl_la_LIBADD =
++libguichan_opengl_la_LIBADD = -lGL
+ am_libguichan_opengl_la_OBJECTS = opengl.lo openglimage.lo \
+ 	openglgraphics.lo
+ libguichan_opengl_la_OBJECTS = $(am_libguichan_opengl_la_OBJECTS)
+@@ -233,7 +233,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = libguichan_opengl.la
+ INCLUDES = -I$(top_srcdir)/include
+-libguichan_opengl_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
++libguichan_opengl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
+ libguichan_opengl_la_SOURCES = \
+ 	opengl.cpp		\
+ 	openglimage.cpp		\

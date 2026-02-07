@@ -1,0 +1,14 @@
+include/benchmark/benchmark.h
+include/benchmark/export.h
+lib/cmake/benchmark/benchmarkConfig.cmake
+lib/cmake/benchmark/benchmarkConfigVersion.cmake
+lib/cmake/benchmark/benchmarkTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/benchmark/benchmarkTargets.cmake
+lib/libbenchmark.so
+lib/libbenchmark.so.1
+lib/libbenchmark.so.%%VERSION%%
+lib/libbenchmark_main.so
+lib/libbenchmark_main.so.1
+lib/libbenchmark_main.so.%%VERSION%%
+libdata/pkgconfig/benchmark.pc
+libdata/pkgconfig/benchmark_main.pc

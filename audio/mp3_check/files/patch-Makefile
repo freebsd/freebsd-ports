@@ -1,0 +1,22 @@
+--- Makefile.orig	2000-07-29 06:41:38 UTC
++++ Makefile
+@@ -2,8 +2,8 @@
+ 
+ CC ?= gcc
+ LOCALBASE ?= /usr/local
+-CFLAGS += -Wall -Werror
+-OPT_FLAGS = -L${LOCALBASE}/lib 
++CFLAGS += -Wall ${CPPFLAGS}
++OPT_FLAGS = -L${LOCALBASE}/lib ${LDFLAGS}
+ OBJS = 	mp3_check.o \
+ 	mp3_check_misc.o
+ 
+@@ -21,7 +21,7 @@ trim: 	$(OBJS)
+ 	cat MILESTONE.INTRO
+ 
+ install: all
+-	install -m 755 -o root -g root mp3_check ${LOCALBASE}/bin
++	${BSD_INSTALL_PROGRAM} mp3_check ${DESTDIR}${PREFIX}/bin
+ 
+ # The FreeBSD Makefile options need a little work, but this will work for now.
+ freebsd:	mp3_check.c mp3_check.h mp3_check_misc.c	

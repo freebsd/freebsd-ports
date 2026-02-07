@@ -1,0 +1,11 @@
+The mystic framework provides a collection of optimization algorithms and tools
+that allows the user to more robustly (and easily) solve hard optimization
+problems. All optimization algorithms included in mystic provide workflow at the
+fitting layer, not just access to the algorithms as function calls. mystic gives
+the user fine-grained power to both monitor and steer optimizations as the fit
+processes are running. Optimizers can advance one iteration with Step, or run to
+completion with Solve. Users can customize optimizer stop conditions, where both
+compound and user-provided conditions may be used. Optimizers can save state,
+can be reconfigured dynamically, and can be restarted from a saved solver or
+from a results file. All solvers can also leverage parallel computing, either
+within each iteration or as an ensemble of solvers.

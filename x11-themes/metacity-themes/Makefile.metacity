@@ -1,0 +1,17 @@
+PKGNAMEPREFIX=	metacity-theme-
+MASTER_SITES?=	GNOME/teams/art.gnome.org/themes/metacity
+DIST_SUBDIR=	gnome2
+
+NO_BUILD=	yes
+
+REASON=	Themes may contain artwork not done by the author. \
+	Keep FreeBSD safe if the theme author violated copyrights.
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/${PORTNAME}
+	cd ${WRKSRC} && ${FIND} . -type d ! -empty \
+		-exec ${MKDIR} -m 0755 \
+		${STAGEDIR}${PREFIX}/share/themes/${PORTNAME}/"{}" \;
+	cd ${WRKSRC} && ${FIND} . -type f \
+		-exec ${INSTALL_DATA} ${WRKSRC}/"{}" \
+		${STAGEDIR}${PREFIX}/share/themes/${PORTNAME}/"{}" \;

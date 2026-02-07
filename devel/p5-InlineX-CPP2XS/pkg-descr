@@ -1,0 +1,2 @@
+InlineX::CPP2XS is a perl module to create an XS file from an
+Inline C++ file.

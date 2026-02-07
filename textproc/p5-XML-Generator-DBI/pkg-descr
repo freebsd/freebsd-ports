@@ -1,0 +1,2 @@
+This module generates SAX events from SQL queries against a DBI
+connection.

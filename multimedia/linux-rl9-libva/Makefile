@@ -1,0 +1,29 @@
+PORTNAME=	libva
+PORTVERSION=	2.22.0
+DISTVERSIONSUFFIX=	-1.el9
+CATEGORIES=	multimedia linux
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT?=	VAAPI wrapper and dummy driver (Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://github.com/intel/libva
+
+LICENSE=	MIT
+
+USES=		linux:rl9
+USE_LDCONFIG=	yes
+USE_LINUX=	libdrm wayland xorglibs
+USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
+
+LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
+SRC_DISTFILES=	${PORTNAME}-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
+
+CONFLICTS=	linux-c7-${PORTNAME}
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+OPTIONS_DEFINE=	DOCS
+
+PLIST_SUB+=	LIBVERSION=2.2200.0
+
+.include <bsd.port.mk>

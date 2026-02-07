@@ -1,0 +1,25 @@
+libexec/nullmailer/smtp
+libexec/nullmailer/qmqp
+@(%%NULLMAIL_USER%%,,4555) libexec/nullmailer/mailq
+libexec/nullmailer/sendmail
+bin/nullmailer-dsn
+bin/nullmailer-inject
+bin/nullmailer-smtpd
+@(%%NULLMAIL_USER%%,,4555) sbin/nullmailer-queue
+sbin/nullmailer-send
+share/man/man1/nullmailer-dsn.1.gz
+share/man/man1/nullmailer-inject.1.gz
+share/man/man1/sendmail.1.gz
+share/man/man7/nullmailer.7.gz
+share/man/man8/nullmailer-queue.8.gz
+share/man/man8/nullmailer-send.8.gz
+%%ETCDIR%%/me.sample
+%%ETCDIR%%/remotes.sample
+@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/spool/nullmailer/failed
+@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/spool/nullmailer/queue
+@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/spool/nullmailer/tmp
+@dir %%LOCALSTATEDIR%%/spool/nullmailer
+@preexec mkfifo %%LOCALSTATEDIR%%/spool/nullmailer/trigger
+@preexec chmod 600 %%LOCALSTATEDIR%%/spool/nullmailer/trigger
+@preexec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/spool/nullmailer/trigger
+@postunexec rm -f %%LOCALSTATEDIR%%/spool/nullmailer/trigger

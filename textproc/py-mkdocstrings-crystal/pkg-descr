@@ -1,0 +1,2 @@
+This package allows you to insert API documentation (generated from Crystal's
+source code and doc comments) as part of any page on a MkDocs site.

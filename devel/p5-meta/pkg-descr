@@ -1,0 +1,11 @@
+meta provides an API for metaprogramming; that is, allowing code to inspect or
+manipulate parts of its own program structure. Parts of the perl interpreter
+itself can be accessed by means of "meta"-objects provided by this package.
+Methods on these objects allow inspection of details, as well as creating new
+items or removing existing ones.
+
+The intention of this API is to provide a nicer replacement for existing tricks
+such as no strict 'refs' and using globrefs, and also to be a more consistent
+place to add new abilities, such as more APIs for inspection and alteration of
+internal structures, metaprogramming around the new 'class' feature, and other
+such uses.

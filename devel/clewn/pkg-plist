@@ -1,0 +1,7 @@
+bin/clewn
+share/vim/vimfiles/clewn.vim
+share/vim/vimfiles/.clewn_keys
+share/vim/vimfiles/doc/clewn.txt
+share/vim/vimfiles/doc/tags
+share/vim/vimfiles/macros/clewn_mappings.vim
+share/vim/vimfiles/syntax/gdbvar.vim

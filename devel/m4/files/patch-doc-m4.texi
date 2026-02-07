@@ -1,0 +1,10 @@
+--- doc/m4.texi.orig	2016-12-31 22:34:38 UTC
++++ doc/m4.texi
+@@ -1,6 +1,7 @@
+ \input texinfo @c -*- texinfo -*-
+ @comment ========================================================
+ @comment %**start of header
++@documentencoding ISO-8859-1
+ @setfilename m4.info
+ @include version.texi
+ @settitle GNU M4 @value{VERSION} macro processor

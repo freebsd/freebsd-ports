@@ -1,0 +1,17 @@
+include/gstreamer-%%VERSION%%/gst/va/gstva.h
+include/gstreamer-%%VERSION%%/gst/va/gstvaallocator.h
+include/gstreamer-%%VERSION%%/gst/va/gstvadisplay.h
+include/gstreamer-%%VERSION%%/gst/va/gstvadisplay_drm.h
+include/gstreamer-%%VERSION%%/gst/va/gstvadisplay_wrapped.h
+include/gstreamer-%%VERSION%%/gst/va/gstvapool.h
+include/gstreamer-%%VERSION%%/gst/va/gstvautils.h
+include/gstreamer-%%VERSION%%/gst/va/va-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/va/va-prelude.h
+include/gstreamer-%%VERSION%%/gst/va/va_fwd.h
+lib/girepository-%%VERSION%%/GstVa-%%VERSION%%.typelib
+lib/gstreamer-%%VERSION%%/libgstmsdk.so
+lib/libgstva-%%VERSION%%.so
+lib/libgstva-%%VERSION%%.so.0
+lib/libgstva-%%VERSION%%.so.%%SOVERSION%%
+libdata/pkgconfig/gstreamer-va-%%VERSION%%.pc
+share/gir-%%VERSION%%/GstVa-%%VERSION%%.gir

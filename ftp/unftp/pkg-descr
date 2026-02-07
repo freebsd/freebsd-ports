@@ -1,0 +1,14 @@
+unFTP is an FTP(S) server written in Rust and built on top of libunftp and the
+Tokio asynchronous run-time. It is unlike your normal FTP server in that it
+provides:
+- Configurable Authentication (e.g. Anonymous, PAM or a JSON file).
+- Configurable storage back-ends (e.g. GCS or filesystem).
+- An HTTP server with health endpoints for use for example in Kubernetes for
+  readiness and liveness probes.
+- Integration with Prometheus for monitoring.
+- A proxy protocol mode for use behind proxies like HA Proxy and Nginx.
+- Structured logging and the ability to ship logs to a Redis instance.
+
+With unFTP, you can present RFC compliant FTP(S) to the outside world while
+freeing yourself to use modern APIs and techniques on the inside of your
+perimeter.

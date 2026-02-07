@@ -1,0 +1,13 @@
+ Remove hard coded genie binary to enable depending on devel/genie.
+
+--- 3rdparty/bx/makefile.orig	2023-10-23 15:53:41 UTC
++++ 3rdparty/bx/makefile
+@@ -3,7 +3,7 @@
+ # License: https://github.com/bkaradzic/bx/blob/master/LICENSE
+ #
+ 
+-GENIE=../bx/tools/bin/$(OS)/genie
++GENIE=%%GENIE_PREFIX%%genie
+ 
+ all:
+ 	$(GENIE)                       vs2017

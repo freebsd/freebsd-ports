@@ -1,0 +1,6 @@
+Module::Build is a system for building, testing, and installing Perl modules.
+It is meant to be a replacement for ExtUtils::MakeMaker. Developers may alter
+the behavior of the module through subclassing in a much more straightforward
+way than with MakeMaker. It also does not require a make on your system - most
+of the Module::Build code is pure-perl and written in a very cross-platform
+way.

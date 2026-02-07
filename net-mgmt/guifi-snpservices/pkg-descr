@@ -1,0 +1,9 @@
+This is the guifi.net snpservices package.
+
+This software provides graph services in the context of the
+Spontaneous Networklink Platform.
+
+Uses nodexchange/cnml as a input format, and provides traffic and
+latency/availability graphs in image format by using mrtg/rrdtool
+collected history by simple HTTP URLs, therefore is easily
+plugable to any web application.

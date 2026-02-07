@@ -1,0 +1,17 @@
+--- src/Makefile.in.orig	2003-11-03 12:49:37 UTC
++++ src/Makefile.in
+@@ -279,12 +279,12 @@ uninstall-am: uninstall-info-am uninstal
+ 
+ 
+ install-data-hook:
+-	chmod +x $(pkgdatadir)/newfile.rb
++	chmod +x $(DESTDIR)$(pkgdatadir)/newfile.rb
+ 
+ install-exec-hook:
+ 	-mkdir -p $(bindir) || true
+ 	-rm -f $(bindir)/newfile || true
+-	ln -s $(pkgdatadir)/newfile.rb $(bindir)/newfile
++	ln -s $(pkgdatadir)/newfile.rb $(DESTDIR)$(bindir)/newfile
+ #EOF
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

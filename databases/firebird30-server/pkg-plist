@@ -1,0 +1,43 @@
+bin/fb_lock_print
+bin/fbsplit
+bin/fbstat
+bin/fbsvcmgr
+bin/fbtracemgr
+bin/gbak
+bin/gfix
+bin/gsec
+bin/nbackup
+sbin/fbguard
+sbin/firebird
+@group firebird
+@sample %%ETCDIR%%/databases.conf.sample
+%%ETCDIR%%/fbtrace.conf
+@sample %%ETCDIR%%/plugins.conf.sample
+@sample %%ETCDIR%%/udr_engine.conf.sample
+lib/libib_util.so
+libexec/firebird/intl/fbintl.conf
+libexec/firebird/intl/libfbintl.so
+libexec/firebird/plugins/libEngine12.so
+libexec/firebird/plugins/libLegacy_Auth.so
+libexec/firebird/plugins/libLegacy_UserManager.so
+libexec/firebird/plugins/libSrp.so
+libexec/firebird/plugins/libfbtrace.so
+libexec/firebird/plugins/libudr_engine.so
+libexec/firebird/udf/fbudf.so
+libexec/firebird/udf/fbudf.sql
+libexec/firebird/udf/ib_udf.so
+libexec/firebird/udf/ib_udf.sql
+libexec/firebird/udf/ib_udf2.sql
+@group
+@owner firebird
+@group firebird
+/%%LOCALSTATEDIR%%/help/help.fdb
+%%EXAMPLESDIR%%/employee.fdb
+@sample /%%LOCALSTATEDIR%%/security3.fdb.sample
+@preunexec [ -s /%%LOCALSTATEDIR%%/firebird.log ] || rm -f /%%LOCALSTATEDIR%%/firebird.log
+@rmtry /%%LOCALSTATEDIR%%/isc_event1.`hostname`
+@rmtry /%%LOCALSTATEDIR%%/isc_init1.`hostname`
+@rmtry /%%LOCALSTATEDIR%%/isc_lock1.`hostname`
+@dir /%%LOCALSTATEDIR%%/help
+@dir /%%LOCALSTATEDIR%%
+@group

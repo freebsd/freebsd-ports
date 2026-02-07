@@ -1,0 +1,11 @@
+PyTensor is a fork of Aesara - a Python library that allows one to define,
+optimize, and efficiently evaluate mathematical expressions involving
+multi-dimensional arrays.
+
+Features:
+* A hackable, pure-Python codebase
+* Extensible graph framework suitable for rapid development of custom operators
+  and symbolic optimizations
+* Implements an extensible graph transpilation framework that currently provides
+  compilation via C, JAX, and Numba
+* Based on one of the most widely-used Python tensor libraries: Theano

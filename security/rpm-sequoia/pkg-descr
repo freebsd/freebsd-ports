@@ -1,0 +1,20 @@
+The rpm-sequoia library provides an implementation of the rpm's pgp
+interface using Sequoia.
+
+This library's crypto policy can be customized.  It finds the
+configuration file by checking the following in turn:
+
+- the `RPM_SEQUOIA_CRYPTO_POLICY` environment variable,
+- `/etc/crypto-policies/back-ends/rpm-sequoia.config`,
+- the `SEQUOIA_CRYPTO_POLICY` environment variable, and finally,
+- `/etc/crypto-policies/back-ends/sequoia.config`.
+
+Only the first configuration file that is present is used.  If an
+environment is set to the empty string, then an empty configuration
+file is used.  That is, the default policy is used.
+
+Thus, if `RPM_SEQUOIA_CRYPTO_POLICY` is not set, and
+`/etc/crypto-policies/back-ends/rpm-sequoia.config`, the latter will
+be used.  In this case, `SEQUOIA_CRYPTO_POLICY` and
+`/etc/crypto-policies/back-ends/sequoia.config` will be completely
+ignored.

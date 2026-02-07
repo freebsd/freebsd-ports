@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2024-01-30 15:20:09 UTC
++++ CMakeLists.txt
+@@ -31,11 +31,7 @@ set (PACKAGE_STRING "${PACKAGE} ${VERSION}")
+ set (PACKAGE_VERSION "${VERSION}")
+ set (PACKAGE_STRING "${PACKAGE} ${VERSION}")
+ 
+-if (FREEBSD)
+-SET (TASKSH_MAN1DIR man/man1            CACHE STRING "Installation directory for man pages, section 1")
+-else (FREEBSD)
+ SET (TASKSH_MAN1DIR share/man/man1      CACHE STRING "Installation directory for man pages, section 1")
+-endif (FREEBSD)
+ SET (TASKSH_DOCDIR  share/doc/tasksh    CACHE STRING "Installation directory for doc files")
+ SET (TASKSH_RCDIR "${TASKSH_DOCDIR}/rc" CACHE STRING "Installation directory for configuration files")
+ SET (TASKSH_BINDIR  bin                 CACHE STRING "Installation directory for the binary")

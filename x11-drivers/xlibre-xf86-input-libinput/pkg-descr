@@ -1,0 +1,3 @@
+This package contains the XLibre xf86-input-libinput driver. It is a thin
+wrapper around libinput, so while it does provide all features that libinput
+supports it does little beyond.

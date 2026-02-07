@@ -1,0 +1,11 @@
+bin/xkoules
+libexec/koules.sndsrv.freebsd
+share/man/man6/xkoules.6.gz
+share/pixmaps/xkoules.png
+%%DATADIR%%/colize.raw
+%%DATADIR%%/creator1.raw
+%%DATADIR%%/creator2.raw
+%%DATADIR%%/destroy1.raw
+%%DATADIR%%/destroy2.raw
+%%DATADIR%%/end.raw
+%%DATADIR%%/start.raw

@@ -1,0 +1,5 @@
+The Netwide Assembler, NASM, is a free and open-source x86 assembler
+for the Intel x86 architecture. It can be used to write 16-bit,
+32-bit (IA-32) and 64-bit (x86-64) programs.
+
+This port provides the Red Hat Linux 9 (linux-rl9) version of NASM.

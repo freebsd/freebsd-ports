@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+SQL-Ledger has now been installed.
+
+To enable Apache web access, add the following to your
+%%PREFIX%%/etc/apache/httpd.conf:
+
+  # SQL-Ledger
+  Include %%PREFIX%%/etc/sql-ledger-httpd.conf
+
+Enjoy!
+EOM
+}
+]

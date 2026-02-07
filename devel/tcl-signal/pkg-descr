@@ -1,0 +1,2 @@
+This extension adds dynamically loadable signal handling to
+Tcl/Tk scripts.

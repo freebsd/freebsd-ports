@@ -1,0 +1,19 @@
+GITLAB_VERSION=		18.8.2
+GITLAB_PORTREVISION=	4	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgraded
+
+# Git version gitaly should use (from gitlab mirror)
+# Find current tag from Makefile and .gitlab-ci.yaml
+# and from https://gitlab.com/gitlab-org/git/-/tags
+GITLAB_GIT_VERSION=	2.50.0
+# return something like x.yy
+GITLAB_GIT_VERSION_SHORT=	${GITLAB_GIT_VERSION:C/^([0-9]*\.[0-9]*)\..*/\1/}
+GITLAB_GIT_MASTER_VERSION=	aea8cc3a10c325a22a75e2d4f582db959d3854ae
+GITLAB_GIT_PREV_VERSION=	419c72cb8ada252b260efc38ff91fe201de7c8c3
+
+# Overwrite version for gitlab-kas-grpc
+#GITLAB_KAS_GRPC_VERSION=	${GITLAB_VERSION}
+GITLAB_KAS_GRPC_VERSION=	18.5.2
+
+# Rails version
+RAILS_VERSION=	7.2.3
+

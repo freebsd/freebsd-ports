@@ -1,0 +1,5 @@
+Pithos is a Pandora client for the GNOME Desktop. The official
+Flash-based client is a CPU hog, and Pianobar is a great
+reverse-engineered implementation, but is command-line only. Neither
+integrate with the desktop very well, missing things like media key
+support and song notifications.

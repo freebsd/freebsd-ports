@@ -1,0 +1,39 @@
+Index: cWnn/etc/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/etc/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- cWnn/etc/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/etc/Makefile.in	2 Jan 2009 21:09:34 -0000	1.2
+@@ -36,11 +36,13 @@ INCLUDES = -I$(CWNNINCLUDESRC) -I$(TOP)
+ DEFINES  = $(CWNNDEFINES) $(CWNNLANGDEF)
+ 
+ SRCS =	strings.c sstrings.c bdic.c hindo.c gethinsi.c revdic.c pwd.c bcopy.c \
+- 	xutoj.c dic_atojis.c msg.c yincoding.c py_table.c zy_table.c server_env.c
++ 	xutoj.c dic_atojis.c msg.c yincoding.c py_table.c zy_table.c server_env.c \
++	fake-rfc2553.c
+ SRCS2 = getopt.c getopt1.c
+ 
+ OBJS =	strings.o sstrings.o bdic.o hindo.o gethinsi.o revdic.o pwd.o bcopy.o \
+- 	xutoj.o dic_atojis.o msg.o yincoding.o py_table.o zy_table.o server_env.o
++ 	xutoj.o dic_atojis.o msg.o yincoding.o py_table.o zy_table.o server_env.o \
++	fake-rfc2553.o
+ OBJS2 = getopt.o getopt1.o
+ 
+ all::
+@@ -195,6 +197,14 @@ includes:: getopt1.c
+ 
+ depend:: getopt1.c
+ 
++fake-rfc2553.c: $(WNNETCSRC)/fake-rfc2553.c
++	$(RM) $@
++	$(LN) $? $@
++
++includes:: fake-rfc2553.c
++
++depend:: fake-rfc2553.c
++
+ clean::
+ 	-$(RM) $(SRCS) $(SRCS2)
+ 	-$(RM) $(OBJS) $(OBJS2)

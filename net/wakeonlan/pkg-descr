@@ -1,0 +1,2 @@
+Wakeonlan is a Perl script that sends 'magic packets' to wake-on-LAN enabled
+ethernet adapters and motherboards, in order to switch on remote computers.

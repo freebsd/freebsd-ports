@@ -1,0 +1,29 @@
+Remove redundant check for libao which causes it to always be required even if
+mp3 and ogg support are disabled.
+
+--- configure.ac.orig	2025-12-05 11:17:35 UTC
++++ configure.ac
+@@ -319,8 +319,10 @@ dnl Check for libao
+ esac
+ 
+ dnl Check for libao
++if test "$with_mp3_support" = yes || test "$with_ogg_support" = yes || test "$en_gcdmaster" = yes; then
+ PKG_CHECK_MODULES(AO, ao >= 0.8, [AC_DEFINE(HAVE_AO,1,"")],
+         [echo "gcdmaster, MP3 and Ogg support disabled"; en_gcdmaster=no; with_ogg_support=no; with_mp3_support=no])
++fi
+ 
+ dnl Check for OGG support
+ if test "$with_ogg_support" = yes; then
+@@ -344,12 +346,6 @@ if test "$with_mp3_support" = yes; then
+ 	                echo "MP3 support disabled"; with_mp3_support=no
+ 		fi
+ 	fi
+-fi
+-
+-dnl Check for libao support
+-if test "$with_mp3_support" = yes || test "$with_ogg_support" = yes || test "$en_gcdmaster" = yes; then
+-PKG_CHECK_MODULES(AO, ao >= 0.8, [AC_DEFINE(HAVE_AO,1,"")],
+-        [echo "Building of gcdmaster disabled"; en_gcdmaster=no])
+ fi
+ 
+ if test "$with_ogg_support" = yes; then

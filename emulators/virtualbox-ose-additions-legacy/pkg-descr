@@ -1,0 +1,13 @@
+VirtualBox Guest Additions provide closer integration between host and
+guest, and improve the performance of guest systems.
+
+Non-legacy additions i.e. emulators/virtualbox-ose-additions are
+recommended for most use cases.
+
+Where legacy (5.2.x) is a requirement, this FreeBSD-provided package
+can be installed in the FreeBSD guest machine.
+
+<https://www.virtualbox.org/wiki/Changelog-5.2> emphasises that
+5.2.x is no longer supported by Oracle.
+
+Additions are not intended for use on Host machines.

@@ -1,0 +1,6 @@
+DBD::mysql is the Perl5 Database Interface driver for the MySQL
+database.  In other words: DBD::mysql is an interface between the Perl
+programming language and the MySQL programming API that comes with the
+MySQL relational database management system.  Most functions provided by
+this programming API are supported.  Some rarely used functions are
+missing, mainly because noone ever requested them.

@@ -1,0 +1,13 @@
+--- libStatGen/Makefiles/Makefile.toolchain.orig	2021-10-12 15:09:29 UTC
++++ libStatGen/Makefiles/Makefile.toolchain
+@@ -51,8 +51,8 @@ endif
+ 
+ # CPP0X=-std=c++0x
+ 
+-CXX     = $(TOOLCHAIN_DIR)$(TOOLCHAIN_PREFIX)g++ $(CPP0X)
+-CC      = $(TOOLCHAIN_DIR)$(TOOLCHAIN_PREFIX)gcc
++CXX     = $(TOOLCHAIN_DIR)$(TOOLCHAIN_PREFIX)c++ $(CPP0X)
++CC      = $(TOOLCHAIN_DIR)$(TOOLCHAIN_PREFIX)cc
+ LD      = $(TOOLCHAIN_DIR)$(TOOLCHAIN_PREFIX)ld
+ AR      = $(TOOLCHAIN_DIR)$(TOOLCHAIN_PREFIX)ar
+ RANLIB  = $(TOOLCHAIN_DIR)$(TOOLCHAIN_PREFIX)ranlib

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: i915resolution
+# REQUIRE: mountcritremote
+# BEFORE:  SERVERS
+# KEYWORD: nojail
+
+# Define these i915resolution_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/i915resolution
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+i915resolution_enable=${i915resolution_enable:-"NO"}	 # Enable hacking VBIOS resolution (YES/NO)
+i915resolution_modes=${i915resolution_modes:-"3c 4d 5c"} # Space separated list of modes to set
+i915resolution_width=${i915resolution_width:-"1920"}	 # the horisontal resolution in pixels
+i915resolution_height=${i915resolution_height:-"1080"}	 # the vertical resolution in pixels
+
+. /etc/rc.subr
+
+name="i915resolution"
+rcvar=i915resolution_enable
+command="%%PREFIX%%/sbin/915resolution"
+start_cmd="${name}_start"
+stop_cmd=":"
+status_cmd="${command} -l"
+extra_commands="status"
+
+i915resolution_start()
+{
+	local mode
+
+	${status_cmd} | grep '^Chipset:'
+	for mode in ${i915resolution_modes}; do
+		${command} ${mode} ${i915resolution_width} ${i915resolution_height} | tail -n 1
+	done
+}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,2 @@
+The uchar package provides a compatibility library for the Uchar module
+introduced in OCaml 4.03.

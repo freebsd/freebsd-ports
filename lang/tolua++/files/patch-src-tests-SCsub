@@ -1,0 +1,9 @@
+--- src/tests/SCsub.orig	2006-04-10 09:45:44 UTC
++++ src/tests/SCsub
+@@ -1,5 +1,5 @@
+ Import('env')
+-env_tests = env.Copy()
++env_tests = env.Clone()
+ 
+ env_tests.LuaBinding('tclassbind.cpp', 'tclass.pkg', 'tclass', use_own=1, use_typeid=1)
+ 

@@ -1,0 +1,17 @@
+#!%%AWK%% -f
+BEGIN { count=1 }
+/^set anti-spam profile [^[:space:]]+\r?$/ ||
+/^set av profile [^[:space:]]+\r?$/ ||
+/^set vrouter [^[:space:]]+\r?$/ ||
+/^set protocol bgp/ ||
+/^set protocol ospf\r?$/ ||
+/^set protocol pim\r?$/ ||
+/^set protocol rip\r?$/ ||
+/^set crypto-policy\r?$/ ||
+/^set sctp configuration aaa\r?$/ ||
+/^set policy id [[:digit:]]+\r?$/ ||
+/^set url protocol [^[:space:]]+\r?$/ ||
+/^set route-map name / { out($0,count); count++; next }
+/^exit\r?$/ { count-- }
+{ out($0,count) }
+function out(s,c) { for(i=1; i<c; i++) printf("%s","\t"); print s }

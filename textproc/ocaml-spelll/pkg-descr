@@ -1,0 +1,8 @@
+Spelll is a fuzzy string library for OCaml allowing the following:
+
+1. to compute the edition distance bewteen two strings,
+
+2. to build a Levenshtein automaton that only accepts strings within an
+   edition distance to the string used to create the automaton,
+
+3. to map a string to its matches from an Index.t (a "multimap").

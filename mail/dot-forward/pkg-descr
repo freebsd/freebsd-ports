@@ -1,0 +1,9 @@
+dot-forward reads sendmail's .forward files under qmail.
+You can run it in the qmail startup script to support all
+your existing .forward files automatically.
+Individual users can switch to the .qmail mechanism at their leisure.
+
+dot-forward supports forwarding, program deliveries, and comments.
+It does not support file deliveries or :include:.
+(However, it recognizes file delivery attempts,
+and defers delivery to give you a chance to set up a .qmail file.)

@@ -1,0 +1,30 @@
+#!/bin/sh -e
+
+SSLDIR="%%PREFIX%%/etc/ssl"
+
+copy_certs () {
+  local certdir certfile domain keyfile rc
+  rc=1
+
+  certdir="${SSLDIR}/lego/certificates"
+  certfiles="$(find "${certdir}" -name "*.crt" -not -name "*.issuer.crt")"
+  for certfile in $certfiles
+  do
+    domain="$(basename "$certfile" .crt)"
+    keyfile="$(dirname "$certfile")/${domain}.key"
+
+    if ! cmp -s "${certfile}" "${SSLDIR}/certs/${domain}.crt"
+    then
+      cp "${certfile}" "${SSLDIR}/certs/${domain}.crt"
+      cp "${keyfile}" "${SSLDIR}/private/${domain}.key"
+      rc=0
+    fi
+  done
+
+  return $rc
+}
+
+if copy_certs
+then
+  output=$(service nginx reload 2>&1) || (echo "$output" && exit 1)
+fi

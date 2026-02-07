@@ -1,0 +1,8 @@
+This is a generic, language-neutral framework for extending
+Ruby objects with linguistic methods.
+
+It includes an English-language module with inflection,
+pluralisation, conjunctions, indefinite articles, present
+participles, ordinal numbers, numbers to words, general
+quantification, integration with WordNet and CMU's LinkGrammar,
+as well as a framework for providing modules for other languages.

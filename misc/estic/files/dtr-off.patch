@@ -1,0 +1,16 @@
+--- estic/iccom.cc.orig	Thu Feb 20 22:32:48 1997
++++ estic/iccom.cc	Mon Aug 15 12:29:16 2005
+@@ -148,6 +148,13 @@
+     // (beginning from version #3).
+     Port->RTSOn ();
+ 
++#ifdef __FreeBSD__
++    // ovb@swissmail.com, 12-Nov-96: Fix of Rev3.
++    // We have to turn the DTR off as this is needed for the power supply.
++    // -> Power is taken from the RTS(+) and the DTR(-) line.
++    Port->DTROff ();
++#endif
++
+     // Success
+     return 0;
+ }

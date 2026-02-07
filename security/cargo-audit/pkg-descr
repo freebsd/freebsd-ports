@@ -1,0 +1,5 @@
+Audit Cargo.lock for crates with security vulnerabilities reported
+to the RustSec Advisory Database.
+
+This is a PoC implementation of the closed RFC 1752:
+https://github.com/rust-lang/rfcs/pull/1752

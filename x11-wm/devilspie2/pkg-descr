@@ -1,0 +1,12 @@
+Devilspie2 is a window-matching utility, allowing the user to perform
+scripted actions on windows as they are created. For example, you can
+script a terminal program to always be positioned at a specific screen
+position, or position a window on a specific workspace.
+
+Devilspie2 is based on the program Devilspie by Ross Burton. The
+difference is that Devilspie2 has replaced the symbolic expressions of
+the original with a Lua interpreter, making it much easier to maintain
+and extend.
+
+Please note that the rules of Devilspie2 are not compatible with the
+symbolic expressions of the original Devilspie.

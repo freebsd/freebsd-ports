@@ -1,0 +1,55 @@
+--- makefile.orig	2023-10-20 14:17:07 UTC
++++ makefile
+@@ -8,22 +8,22 @@ PROJ=fxt
+ include flags.mk
+ 
+ #### choose the FLAG combo here:
+-FXT_CXXFLAGS=
++#FXT_CXXFLAGS=
+ #FXT_CXXFLAGS += -std=c++11
+-FXT_CXXFLAGS += -std=c++17
+-FXT_CXXFLAGS += -pipe
++#FXT_CXXFLAGS += -std=c++17
++#FXT_CXXFLAGS += -pipe
+ #FXT_CXXFLAGS += -fno-exceptions
+-FXT_CXXFLAGS += $(OFLAGS) # uncomment for OPTIMIZATION
++#FXT_CXXFLAGS += $(OFLAGS) # uncomment for OPTIMIZATION
+ #FXT_CXXFLAGS += -O3 # test -O3
+-FXT_CXXFLAGS += $(GFLAGS) # uncomment for DEBUGGING
++#FXT_CXXFLAGS += $(GFLAGS) # uncomment for DEBUGGING
+ #FXT_CXXFLAGS += $(PFLAGS) # uncomment for PROFILING
+ #
+-FXT_CXXFLAGS += $(WFLAGS) # uncomment for WARNINGS
++#FXT_CXXFLAGS += $(WFLAGS) # uncomment for WARNINGS
+ #FXT_CXXFLAGS += -Werror # make all warnings ERRORS
+ #FXT_CXXFLAGS += -fmax-errors=1 # clang chokes on this one
+ 
+ #FXT_CXXFLAGS += -D__NO_MATH_INLINES
+-FXT_CXXFLAGS += $(FXT_EXTRA_FLAGS)
++#FXT_CXXFLAGS += $(FXT_EXTRA_FLAGS)
+ 
+ #FXT_CXXFLAGS += $(CLANG_FLAGS)  ## for clang++
+ 
+@@ -199,15 +199,15 @@ INCDIR=$(PREFIX)/include/fxt
+ .PHONY: install  ## install to $(PREFIX)/lib/ and $(PREFIX)/include/fxt/
+ install: lib
+ 	: '[$@]'
+-	@echo 'PREFIX=$(PREFIX)  LIBDIR=$(LIBDIR)  INCDIR=$(INCDIR)'
++	@echo 'PREFIX=$(PREFIX)  LIBDIR=$(LIBDIR)  INCDIR=$(DESTDIR)$(INCDIR)'
+ 	@:
+-	@test -d $(INCDIR)  ||  mkdir $(INCDIR)
+-	@$(FXT_INSTALL) $(FXTIDIR)/*.h $(INCDIR)/
+-	@cd src && for f in $(SHFXTSRCDIRS); do mkdir -p $(INCDIR)/$$f; done
+-	@cd src && for f in $(SHFXTSRCDIRS); do $(FXT_INSTALL) $$f/*.h $(INCDIR)/$$f; done
++	@test -d $(DESTDIR)$(INCDIR)  ||  mkdir $(DESTDIR)$(INCDIR)
++	@$(FXT_INSTALL) $(FXTIDIR)/*.h $(DESTDIR)$(INCDIR)/
++	@cd src && for f in $(SHFXTSRCDIRS); do mkdir -p $(DESTDIR)$(INCDIR)/$$f; done
++	@cd src && for f in $(SHFXTSRCDIRS); do $(FXT_INSTALL) $$f/*.h $(DESTDIR)$(INCDIR)/$$f; done
+ 	@:
+-	@test -d $(LIBDIR)  ||  mkdir $(LIBDIR)
+-	@$(FXT_INSTALL) $(FXTLIB) $(LIBDIR)/
++	@test -d $(DESTDIR)$(LIBDIR)  ||  mkdir $(DESTDIR)$(LIBDIR)
++	@$(FXT_INSTALL) $(FXTLIB) $(DESTDIR)$(LIBDIR)/
+ 	: '[$@ OK]'
+ 
+ .PHONY: chk-install ##x print whether installed header files are up to date

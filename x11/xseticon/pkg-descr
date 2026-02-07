@@ -1,0 +1,4 @@
+Xterm, and likely many other X11 programs, do not set themselves window
+icons, which window managers typically use to represent that program
+window in switcher lists, taskbars, and so on.  This program can set the
+X11 window icon for any given window, to that of a given image file.

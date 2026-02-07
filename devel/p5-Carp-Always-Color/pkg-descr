@@ -1,0 +1,6 @@
+Stack traces are hard to read when the messages wrap, because it's hard to tell
+when one message ends and the next message starts. Carp::Always::Color just
+colors the first line of each stacktrace, based on whether it's a warning or an
+error. If messages are being sent to a terminal, it colors them with terminal
+escape codes, otherwise it colors them with HTML (ideas for more intelligent
+behavior here are welcome).

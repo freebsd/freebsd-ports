@@ -1,0 +1,11 @@
+--- src/modules/meson.build.orig	2024-01-12 17:22:09 UTC
++++ src/modules/meson.build
+@@ -221,7 +221,7 @@ endif
+   ]
+ endif
+ 
+-if udev_dep.found()
++if udev_dep.found() and host_machine.system() != 'freebsd'
+   all_modules += [ [ 'module-udev-detect', 'module-udev-detect.c', [], [], [udev_dep] ] ]
+   if get_option('hal-compat')
+     all_modules += [ [ 'module-hal-detect', 'module-hal-detect-compat.c' ] ]

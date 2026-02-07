@@ -1,0 +1,1 @@
+PEAR::DB_ldap class provides a DB compliant interface to LDAP servers.

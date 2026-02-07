@@ -1,0 +1,4 @@
+Sockpp is a fairly low-level C++ wrapper around the Berkeley sockets library
+using socket, acceptor, and connector classes that are familiar concepts from
+other languages. The base socket class wraps a system socket handle, and
+maintains its lifetime.

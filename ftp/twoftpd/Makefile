@@ -1,0 +1,61 @@
+PORTNAME=	twoftpd
+PORTVERSION=	1.43
+PORTREVISION=	2
+CATEGORIES=	ftp
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple, secure, efficient FTP server
+WWW=		https://untroubled.org/twoftpd/
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/bg-installer:devel/bglibs
+LIB_DEPENDS=	libcvm-v2client.so:security/cvm \
+		libbg.so.2:devel/bglibs
+
+USES=		localbase:ldflags
+
+BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs
+BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
+USE_LDCONFIG=	${BGLIBS_LIB}
+
+PORTDOCS=	NEWS README TODO
+PLIST_FILES=	bin/twoftpd-anon bin/twoftpd-anon-conf \
+		bin/twoftpd-auth bin/twoftpd-bind-port \
+		bin/twoftpd-conf bin/twoftpd-drop \
+		bin/twoftpd-switch bin/twoftpd-xfer \
+		share/man/man1/twoftpd-auth.1.gz \
+		share/man/man1/twoftpd-switch.1.gz \
+		share/man/man1/twoftpd-xfer.1.gz
+
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,timezone,tm.tm_gmtoff,' ${WRKSRC}/statmod.c
+
+do-configure:
+	@${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/conf-bin
+	@${ECHO_CMD} "${PREFIX}/share/man" > ${WRKSRC}/conf-man
+	@${ECHO_CMD} "${CC} ${CFLAGS} ${CPPFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${BGLIBS_INCLUDE}" > ${WRKSRC}/conf-bgincs
+	@${ECHO_CMD} "${BGLIBS_LIB}" > ${WRKSRC}/conf-bglibs
+
+do-install:
+.for f in twoftpd-anon twoftpd-anon-conf twoftpd-auth twoftpd-bind-port \
+	twoftpd-conf twoftpd-drop twoftpd-switch twoftpd-xfer
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/
+.endfor
+.for f in twoftpd-auth.1 twoftpd-switch.1 twoftpd-xfer.1
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/man/man1/
+.endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in NEWS README TODO
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+.endfor
+
+.include <bsd.port.mk>

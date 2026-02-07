@@ -1,0 +1,3 @@
+OpenCoarrays is a BSD licensed open source project that produces
+an ABI for GCC Fortran front-end to build programs that leverage
+the parallel programming features of Fortran 2018.

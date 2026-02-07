@@ -1,0 +1,7 @@
+This API is mainly for Terminal Emulator implementors -- any python program
+that attempts to determine the printable width of a string on a Terminal.
+
+It is certainly possible to use your Operating System's wcwidth() and
+wcswidth() calls if it is POSIX-conforming, but this would not be possible on
+non-POSIX platforms, such as Windows, or for alternative Python
+implementations, such as jython.

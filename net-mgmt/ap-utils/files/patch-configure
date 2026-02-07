@@ -1,0 +1,36 @@
+--- ./configure.orig	2004-05-16 14:10:31.000000000 +0000
++++ ./configure	2014-05-30 08:01:14.000000000 +0000
+@@ -6840,7 +6840,6 @@
+ /* end confdefs.h.  */
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -6850,7 +6849,7 @@
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
+   ;
+   return 0;
+ }
+@@ -6886,7 +6885,6 @@
+ /* end confdefs.h.  */
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -6896,7 +6894,7 @@
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
+   ;
+   return 0;
+ }

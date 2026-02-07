@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/AnyEvent::Memcached.3.gz
+%%PERL5_MAN3%%/AnyEvent::Memcached::Hash::WithNext.3.gz
+%%SITE_PERL%%/AnyEvent/Memcached.pm
+%%SITE_PERL%%/AnyEvent/Memcached/Hash.pm
+%%SITE_PERL%%/AnyEvent/Memcached/Conn.pm
+%%SITE_PERL%%/AnyEvent/Memcached/Peer.pm
+%%SITE_PERL%%/AnyEvent/Memcached/Buckets.pm
+%%SITE_PERL%%/AnyEvent/Memcached/Hash/WithNext.pm

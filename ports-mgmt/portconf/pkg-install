@@ -1,0 +1,22 @@
+#!/bin/sh
+
+MAKE_CONF=/etc/make.conf
+PORTS_DIR=`/bin/realpath /usr/ports`
+
+if [ "$2" = "POST-INSTALL" ]; then
+echo -n "Spamming ${MAKE_CONF}..."
+cat >> ${MAKE_CONF} << EOF
+# Begin portconf settings
+# Do not touch these lines
+.if !empty(.CURDIR:M${PORTS_DIR}*) && exists(${PKG_PREFIX}/libexec/portconf)
+_PORTCONF!=${PKG_PREFIX}/libexec/portconf
+.if \${_PORTCONF} != "|"
+.for i in \${_PORTCONF:S/^|//:S/|/ /g}
+\${i:C/^([^=]*)=.*/\1/}=\${i:C/^[^=]*=//:S/%/ /g}
+.endfor
+.endif
+.endif
+# End portconf settings
+EOF
+echo " Done."
+fi

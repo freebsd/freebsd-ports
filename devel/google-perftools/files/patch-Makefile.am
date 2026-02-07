@@ -1,0 +1,12 @@
+--- Makefile.am.orig	2024-01-05 00:50:17 UTC
++++ Makefile.am
+@@ -108,8 +108,7 @@ googleinclude_HEADERS =				\
+ # your documentation files (in doc/) in addition to these top-level
+ # boilerplate files.  We'll add to this later, on a library-by-library
+ # basis
+-dist_doc_DATA = AUTHORS COPYING INSTALL NEWS README README_windows.txt \
+-                ChangeLog.old
++dist_doc_DATA = AUTHORS NEWS README README_windows.txt
+ 
+ # The libraries (.so's) you want to install
+ # We'll add to this later, on a library-by-library basis

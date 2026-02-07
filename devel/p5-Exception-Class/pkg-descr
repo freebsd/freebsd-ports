@@ -1,0 +1,8 @@
+This module allows you to declare hierarchies of exception classes for
+use in your code.  It also provides a simple exception class that it
+uses as the default base class for all other exceptions.
+
+You may choose to use another base class for your exceptions.
+Regardless, the ability to declare all your exceptions at compile time
+is a fairly useful trick and helps push people towards more structured
+use of exceptions.

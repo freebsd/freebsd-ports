@@ -1,0 +1,9 @@
+lib/mysql/plugin/ha_mroonga.a
+lib/mysql/plugin/ha_mroonga.so
+lib/mysql/plugin/ha_mroonga.so.0
+lib/mysql/plugin/ha_mroonga.so.0.0.0
+share/man/ja/man1/mroonga.1.gz
+share/man/man1/mroonga.1.gz
+%%DATADIR%%/install.sql
+%%DATADIR%%/uninstall.sql
+%%DATADIR%%/update.sql

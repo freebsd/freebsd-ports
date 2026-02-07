@@ -1,0 +1,22 @@
+#!/bin/sh
+
+PW="/usr/sbin/pw"
+CHOWN="/usr/sbin/chown"
+CHMOD="/bin/chmod"
+MKDIR="/bin/mkdir -p"
+NOLOGIN="/usr/sbin/nologin"
+
+MRTG_RUNDIR=%%MRTG_RUNDIR%%
+
+case "$2" in
+
+POST-INSTALL)
+	if [ ! -d "$MRTG_RUNDIR" ]; then
+		${MKDIR} $MRTG_RUNDIR
+	fi
+
+	${CHOWN} -R %%USERS%%:%%GROUPS%% ${MRTG_RUNDIR}
+	${CHMOD} 0700 ${MRTG_RUNDIR}
+	;;
+esac
+exit 0

@@ -1,0 +1,2 @@
+XML::Hash::LX serialize/deserializer for Catalyst (Catalyst::Action::Serialize
+and Catalyst::Action::Deserialize).

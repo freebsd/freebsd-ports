@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+	XDG_CONFIG_HOME=$HOME/.config
+fi
+
+DOTDIR="$XDG_CONFIG_HOME/Sea Defender"
+
+mkdir -p "$DOTDIR"
+cd "$DOTDIR" || exit 1
+
+exec %%PREFIX%%/libexec/sea-defender "$@"

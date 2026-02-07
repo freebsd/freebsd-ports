@@ -1,0 +1,9 @@
+libodfgen is a library for generating documents in Open Document Format
+(ODF).  It provides generator implementation for the following libraries:
+
+* libwpd (::WPXDocumentInterface): text documents
+* libwpg (libwpg::WPGPaintInterface): vector drawings
+* libetonyek (libetonyek::KEYPresentationInterface): presentations
+
+As these APIs are used by multiple libraries, libodfgen can be used to
+generate ODF from many sources.

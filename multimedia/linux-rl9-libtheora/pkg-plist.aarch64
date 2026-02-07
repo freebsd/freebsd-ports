@@ -1,0 +1,8 @@
+usr/lib64/libtheora.so.0
+usr/lib64/libtheora.so.0.3.10
+usr/lib64/libtheoradec.so.1
+usr/lib64/libtheoradec.so.1.1.4
+usr/lib64/libtheoraenc.so.1
+usr/lib64/libtheoraenc.so.1.1.2
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README

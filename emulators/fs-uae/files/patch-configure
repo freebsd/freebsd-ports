@@ -1,0 +1,12 @@
+--- configure.orig	2019-11-05 21:10:47 UTC
++++ configure
+@@ -13526,9 +13526,6 @@ main ()
+         #if !defined(__i386__) && !defined(__x86_64__)
+         #error JIT is only supported on x86/x86-64
+         #endif
+-        #if defined(__OpenBSD__) || defined(__FreeBSD__)
+-        #error no JIT on OpenBSD/FreeBSD right now
+-        #endif
+ 
+   ;
+   return 0;

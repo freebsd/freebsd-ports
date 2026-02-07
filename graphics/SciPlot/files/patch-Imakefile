@@ -1,0 +1,55 @@
+--- Imakefile.orig	1996-09-05 02:32:58 UTC
++++ Imakefile
+@@ -14,13 +14,13 @@ XCOMM Imakefile for widget demo programs
+     HDOC = hdoc
+ #endif
+ #ifdef AlphaArchitecture
+-    CC = cc -std1
++#   CC = cc -std1
+ #endif
+ 
+-MOTIF = $(LESSTIF) -lXm
++# MOTIF = $(LESSTIF) -lXm
+ 
+ MOTIFDEPS = $(DEPXMLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
+-MOTIFLIBS = $(MOTIF) $(XMULIB) $(XTOOLLIB) $(XLIB)
++MOTIFLIBS = $(MOTIFLIB) $(XTOOLONLYLIB) $(XONLYLIB)
+ SYS_LIBRARIES = -lm
+ CDEBUGFLAGS = 
+ 
+@@ -28,6 +28,9 @@ WIDGET = SciPlot
+ PROGRAMS = sciplot realtime
+ TARFILE = sciplot
+ 
++SONUM = 0
++SONAME = $(LIBNAME).so
++
+ SRCS = SciPlot.c SciPlotUtil.c xyplot.c realtime.c
+ HDRS = SciPlot.h SciPlotP.h SciPlotUtil.h
+ OBJS = $(SRCS:.c=.o)
+@@ -54,7 +57,7 @@ XCOMM Definitions for generating the documentation
+ 	$(HDOC) $*.hdoc > $*.html
+ 
+ 
+-AllTarget(sciplot realtime)
++AllTarget(sciplot realtime libs)
+ 
+ NormalProgramTarget(sciplot,$(PLOTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
+ NormalProgramTarget(realtime,$(RTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
+@@ -79,9 +82,16 @@ taz:	$(SRCS)
+ 	tar cfv $(TARFILE).tar $(TARFILES)
+ 	compress $(TARFILE).tar
+ 
++libs:	$(PLOTOBJS)
++	$(AR) $(LIBNAME).a $(WIDGET).o $(WIDGET)Util.o
++	$(RANLIB) $(LIBNAME).a
++	$(CC) $(SHLIBLDFLAGS) -o $(SONAME).$(SONUM) -Wl,-soname,${SONAME} $(WIDGET).o $(WIDGET)Util.o	\
++		$(LDFLAGS) $(MOTIFLIBS) $(LDLIBS)
++
+ # Dependencies:
+ 
+ SciPlot.o: SciPlot.c SciPlotP.h SciPlot.h
+ SciPlotUtil.o: SciPlotUtil.c SciPlotUtil.h
+ xyplot.o: xyplot.c SciPlot.h SciPlotUtil.h
+ realtime.o: realtime.c SciPlot.h SciPlotUtil.h
++libsciplot.a: SciPlot.h SciPlotP.h SciPlotUtil.h SciPlot.c SciPlotUtil.c

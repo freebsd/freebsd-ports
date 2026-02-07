@@ -1,0 +1,11 @@
+--- configure.orig	2004-12-31 03:15:21 UTC
++++ configure
+@@ -278,7 +278,7 @@ else
+ fi
+ 
+ 
+-LIBS="$LIBS -lldap_r -llber"
++LIBS="$LIBS -lldap -llber"
+ echo -n "Checking OpenLDAP dependencies: "
+ cat > test_1.c <<__test_1_eof
+ #include <ldap.h>

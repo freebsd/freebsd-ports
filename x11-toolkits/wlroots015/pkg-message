@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Known issues:
+- NVIDIA option (aka wlroots-eglstreams) requires nvidia-drm.ko from nvidia-driver,
+  see https://github.com/aritger/eglstreams-kms-example/issues/7
+EOM
+}
+]

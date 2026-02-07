@@ -1,0 +1,7 @@
+%%SITE_PERL%%/MIME/Charset.pm
+%%SITE_PERL%%/MIME/Charset/Defaults.pm.sample
+%%SITE_PERL%%/MIME/Charset/UTF.pm
+%%SITE_PERL%%/MIME/Charset/_Compat.pm
+%%SITE_PERL%%/POD2/JA/MIME/Charset.pod
+%%PERL5_MAN3%%/MIME::Charset.3.gz
+%%PERL5_MAN3%%/POD2::JA::MIME::Charset.3.gz

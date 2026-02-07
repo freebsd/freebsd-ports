@@ -1,0 +1,15 @@
+--- Makefile.orig	2010-01-16 20:34:10.000000000 +0100
++++ Makefile	2010-01-16 20:38:43.000000000 +0100
+@@ -1,10 +1,10 @@
+-all: libs fsynctest
++all: libs
+ 
+ clean:
+ 	rm -f libeatmydata.so* fsynctest
+ 
+ libs: eatmydata.c
+-	gcc -shared -Wl,-soname,libeatmydata.so.1  -ldl -o libeatmydata.so.1.0  eatmydata.c -fPIC
++	gcc -shared -Wl,-soname,libeatmydata.so.1 -o libeatmydata.so.1.0  eatmydata.c -fPIC
+ 	@rm -f libeatmydata.so.1 libeatmydata.so
+ 	ln -s libeatmydata.so.1.0 libeatmydata.so.1
+ 	ln -s libeatmydata.so.1 libeatmydata.so

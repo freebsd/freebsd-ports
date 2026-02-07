@@ -1,0 +1,11 @@
+--- Utilities/gdcmjpeg/CMakeLists.txt.orig	2015-08-22 14:09:50 UTC
++++ Utilities/gdcmjpeg/CMakeLists.txt
+@@ -24,7 +24,7 @@ if(NOT DEFINED JPEG_API_VERSION)
+ endif()
+ set(JPEG_LIBRARY_PROPERTIES ${JPEG_LIBRARY_PROPERTIES}
+   VERSION "${GDCM_VERSION}"
+-  SOVERSION "${JPEG_API_VERSION}"
++  SOVERSION "${GDCM_MAJOR_VERSION}"
+ )
+ 
+ 

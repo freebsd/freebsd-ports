@@ -1,0 +1,9 @@
+--- docs/conf/extra/httpd-autoindex.conf.in.orig	2010-06-15 11:05:13 UTC
++++ docs/conf/extra/httpd-autoindex.conf.in
+@@ -89,5 +89,5 @@ HeaderName HEADER.html
+ # IndexIgnore is a set of filenames which directory indexing should ignore
+ # and not include in the listing.  Shell-style wildcarding is permitted.
+ #
+-IndexIgnore .??* *~ *# HEADER* README* RCS CVS *,v *,t
++IndexIgnore .??* *~ *# HEADER* README* RCS CVS *,v *,t *.bak *.orig
+ 

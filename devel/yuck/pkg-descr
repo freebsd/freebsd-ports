@@ -1,0 +1,2 @@
+yuck is a bog-standard command line option parser for C that works with only
+household ingredients (a C compiler and the m4 macro processor).

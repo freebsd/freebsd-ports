@@ -1,0 +1,11 @@
+--- php/Makefile.orig	2019-08-12 19:54:18 UTC
++++ php/Makefile
+@@ -23,7 +23,7 @@ endif
+ 
+ INSTALL_SUBDIRS = $(install_phpdir) $(install_libdir)
+ 
+-install:: install-common
++install::
+ 	@for subdir in $(INSTALL_SUBDIRS); \
+ 	do \
+ 	    if test ! -d $(DESTDIR)$$subdir ; \

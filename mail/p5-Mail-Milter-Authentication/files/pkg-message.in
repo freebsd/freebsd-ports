@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+To enable authentication_milter to run at boot time, set the following
+variable in your /etc/rc.conf file:
+
+    authentication_milter_enable="YES"
+
+Check and/or modify the following configuration files to suit your needs:
+
+    %%ETCDIR%%/authentication_milter.json
+    %%ETCDIR%%/mail-dmarc.ini
+
+  NOTE: The default settings almost works for test and/or personal use,
+        SPF/DKIM/DMARC(no report mail)/ARC(but not enable ARC-Seals) are OK.
+
+        To enable DMARC report feature, now TODO. Because it's required
+        p5-Mail-DMARC port setup.
+
+For sendmail users, please add the following line to your sendmail.mc:
+
+    INPUT_MAIL_FILTER(`authentication_milter', \
+        `S=local:%%RUNDIR%%/auth_milter.sock, F=T, T=R:2m')
+
+For postfix users, please add the following line to your main.cf:
+
+    smtpd_milters = sock:%%RUNDIR%%/auth_milter.sock
+
+    Note: milter sockets must be accessible from postfix/smtpd;
+          using inet sockets might be preferred.
+EOM
+}
+]

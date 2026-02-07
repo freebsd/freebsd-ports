@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/Loki97.pm
+%%SITE_ARCH%%/auto/Crypt/Loki97/Loki97.so
+%%PERL5_MAN3%%/Crypt::Loki97.3.gz

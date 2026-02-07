@@ -1,0 +1,11 @@
+bin/hotspot
+libexec/hotspot-perfparser
+share/applications/com.kdab.hotspot.desktop
+share/icons/hicolor/128x128/apps/hotspot.png
+share/icons/hicolor/16x16/apps/hotspot.png
+share/icons/hicolor/22x22/apps/hotspot.png
+share/icons/hicolor/32x32/apps/hotspot.png
+share/icons/hicolor/48x48/apps/hotspot.png
+share/icons/hicolor/64x64/apps/hotspot.png
+share/knotifications6/hotspot.notifyrc
+share/metainfo/com.kdab.Hotspot.appdata.xml

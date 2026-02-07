@@ -1,0 +1,4 @@
+srt is a tiny Python library for parsing, modifying, and composing SRT files.
+
+There are a number of tools shipped with the library to manipulate, process,
+and fix SRT files.

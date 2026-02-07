@@ -1,0 +1,13 @@
+Constrained Application Protocol (CoAP) is an IoT protocol that is
+specifically designed for M2M data exchange between constrained devices
+(such as microcontrollers) in constrained networks.
+
+The interaction model of CoAP is similar to the client/server model of
+HTTP, but unlike HTTP, it uses datagram-oriented connectionless transport
+such as UDP, which leads to a very low overhead and allows UDP broadcast
+and multicast to be used for addressing. At the same time it provides
+lightweight reliability mechanisms and security.
+
+Qt CoAP implements the client side of CoAP. By default, the transport
+layer uses QUdpSocket and QDtls for security. Alternative transports can
+be used by implementing the QCoapConnection interface.

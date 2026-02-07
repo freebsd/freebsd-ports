@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To play, you need to add at least one route and a train to OpenBVE after
+installation.  The Uchibo line, a classical line in the BVE world which
+comes with the original BVE software, can be downloaded from here:
+
+	http://bvets.net/old/archives/uchibo10.zip
+
+Unzip the file, install it with "wine msiexec /i uchibo10.msi", and move
+the `Railway' and `Train' directories to ~/.config/openBVE/LegacyContent.
+
+Have fun, and try not to crash!
+EOM
+}
+]

@@ -1,0 +1,18 @@
+--- src/main/native/pairhmm/CMakeLists.txt.orig	2024-08-04 17:57:13 UTC
++++ src/main/native/pairhmm/CMakeLists.txt
+@@ -17,7 +17,7 @@ add_library(${TARGET} SHARED IntelPairHmm.cc avx_impl.
+ #---------------------------------------------------------------------
+ set(TARGET gkl_pairhmm)
+ add_library(${TARGET} SHARED IntelPairHmm.cc avx_impl.cc avx512_impl.cc pairhmm_common.cc)
+-install(TARGETS ${TARGET} DESTINATION ${CMAKE_BINARY_DIR})
++install(TARGETS ${TARGET} DESTINATION lib)
+ 
+ #---------------------------------------------------------------------
+ # pairhmm_omp
+@@ -29,5 +29,5 @@ if(OPENMP_FOUND)
+   add_library(${TARGET} SHARED IntelPairHmm.cc avx_impl.cc avx512_impl.cc pairhmm_common.cc)
+   set_target_properties(${TARGET} PROPERTIES COMPILE_OPTIONS ${OpenMP_CXX_FLAGS})
+   target_link_libraries(${TARGET} ${OpenMP_CXX_FLAGS})
+-  install(TARGETS ${TARGET} DESTINATION ${CMAKE_BINARY_DIR})
++  install(TARGETS ${TARGET} DESTINATION lib)
+ endif()

@@ -1,0 +1,9 @@
+typstyle is a reliable typst code formatter.
+
+Design Goals
+1. Opinionated: We want to have a consistent style across all codebases.
+2. Code only: We want to format only the code. Contents should be left untouched
+   as much as possible.
+3. Convergence: Running the formatter twice should not change the code.
+4. Correctness: The formatter should not change the looking of the rendered
+   output.

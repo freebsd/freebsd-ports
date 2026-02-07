@@ -1,0 +1,33 @@
+--- Makefile.orig	2001-04-22 07:16:47 UTC
++++ Makefile
+@@ -6,16 +6,16 @@
+ ###############################################################################
+ 
+ #PREFIX  = /usr/local
+-PREFIX  = /usr/X11R6
+-X11BASE = /usr/X11R6
++#PREFIX  = /usr/X11R6
++#X11BASE = /usr/X11R6
+ BINDIR  = ${PREFIX}/bin
+ MANDIR  = ${PREFIX}/man/man1
+ PKGNAME = xkeywrap-1.1
+ VERSION = XKeyWrap-1.1
+ 
+-CC = cc
+-CFLAGS = -O -Wall
+-LFLAGS =
++#CC = cc
++#CFLAGS = -O -Wall
++#LFLAGS =
+ 
+ all :		xkeywrap xkeywrap.1.gz
+ 
+@@ -40,7 +40,7 @@ copyright.h :	COPYRIGHT mkstr
+ 		cat COPYRIGHT | ./mkstr copyright > copyright.h
+ 
+ mkstr :		mkstr.c
+-		$(CC) mkstr.c -o mkstr
++		$(CC) $(CFLAGS) mkstr.c -o mkstr
+ 
+ xkeywrap.1.gz :	xkeywrap.man
+ 		cp xkeywrap.man xkeywrap.1

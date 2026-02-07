@@ -1,0 +1,3 @@
+Google BigQuery solves the problem of the querying massive datasets problem by
+enabling super-fast, SQL queries against append-mostly tables, using the
+processing power of Google's infrastructure.

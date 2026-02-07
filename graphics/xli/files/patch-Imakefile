@@ -1,0 +1,45 @@
+--- Imakefile.orig	2006-11-11 00:52:14.000000000 -0500
++++ Imakefile	2014-03-04 16:46:47.791670751 -0500
+@@ -13,17 +13,17 @@
+       CCOPTIONS = -Aa -D_HPUX_SOURCE
+ #endif
+ 
+-JPEG_INCLUDES = 
+-JPEG_LDFLAGS = 
++JPEG_INCLUDES = -I${LOCALBASE}/include
++JPEG_LDFLAGS = -L${LOCALBASE}/lib
+ 
+ PNG_INCLUDES = 
+ PNG_LDFLAGS = 
+ 
+-SYSPATHFILE = $(XAPPLOADDIR)/Xli
++SYSPATHFILE = $(DESTDIR)$(XAPPLOADDIR)/Xli
+ DEPLIBS = $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XLIB) $(JPEG_LDFLAGS) $(PNG_LDFLAGS) -ljpeg -lpng -lz
+ SYS_LIBRARIES = -lm
+-DEFINES = -DHAS_MEMCPY
++DEFINES = -DHAS_MEMCPY -DHAVE_GUNZIP -DHAVE_BUNZIP2
+ EXTRA_INCLUDES = $(JPEG_INCLUDES) $(PNG_INCLUDES)
+ 
+ SRCS1 = bright.c clip.c cmuwmrast.c compress.c dither.c faces.c fbm.c fill.c  g3.c gif.c halftone.c imagetypes.c img.c mac.c mcidas.c mc_tables.c merge.c misc.c new.c options.c path.c pbm.c pcx.c reduce.c jpeg.c rle.c rlelib.c root.c rotate.c send.c smooth.c sunraster.c  value.c window.c xbitmap.c xli.c xpixmap.c xwd.c zio.c zoom.c ddxli.c tga.c bmp.c pcd.c png.c
+@@ -37,9 +37,8 @@ ComplexProgramTarget_1(xli,$(DEFINES) $(
+ ComplexProgramTarget_2(xlito,,)
+ 
+ install:: $(SYSPATHFILE)
+-	$(RM) $(BINDIR)/xview $(BINDIR)/xsetbg
+-	$(LN) $(BINDIR)/xli $(BINDIR)/xview
+-	$(LN) $(BINDIR)/xli $(BINDIR)/xsetbg
++	$(LN) xli $(DESTDIR)$(BINDIR)/xview
++	$(LN) xli $(DESTDIR)$(BINDIR)/xsetbg
+ 
+ $(SYSPATHFILE):
+ 	@echo "*** Creating default $(SYSPATHFILE) since you"
+@@ -48,7 +47,7 @@ $(SYSPATHFILE):
+ 	@echo "*** it for your site.  See the xloadimage manual page for"
+ 	@echo "*** details on the contents of this file."
+ 	cp /dev/null $(SYSPATHFILE)
+-	echo "path=$(INCDIR)/bitmaps $(INCDIR)/images" \
++	echo "path=$(INCDIR)/X11/bitmaps $(INCDIR)/X11/pixmaps" \
+ 		>> $(SYSPATHFILE)
+ 	echo "extension=.gif .jpg .rle .csun .msun .sun .face .xbm .bm" \
+ 		>>$(SYSPATHFILE)

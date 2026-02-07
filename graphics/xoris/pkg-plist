@@ -1,0 +1,3 @@
+bin/xoris
+bin/xoris-run.sh
+%%PORTDOCS%%%%DOCSDIR%%/README

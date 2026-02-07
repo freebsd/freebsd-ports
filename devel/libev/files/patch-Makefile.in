@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-03-18 12:27:30 UTC
++++ Makefile.in
+@@ -357,7 +357,7 @@ man_MANS = ev.3
+ 	     ev.3 ev.pod Symbols.ev Symbols.event
+ 
+ man_MANS = ev.3
+-include_HEADERS = ev.h ev++.h event.h
++include_HEADERS = ev.h ev++.h
+ lib_LTLIBRARIES = libev.la
+ libev_la_SOURCES = ev.c event.c
+ libev_la_LDFLAGS = -version-info $(VERSION_INFO)

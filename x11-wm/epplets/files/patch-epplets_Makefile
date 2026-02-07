@@ -1,0 +1,27 @@
+--- epplets/Makefile.am.orig	2012-10-10 14:52:30.000000000 +0200
++++ epplets/Makefile.am	2012-10-10 14:53:32.000000000 +0200
+@@ -79,9 +79,10 @@
+ E_Biff_epplet_LDADD = $(LDADD) -lX11
+ 
+ E_MemWatch_epplet_SOURCES = E-MemWatch.c
+-E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS)
++E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS) -lkvm
+ 
+ E_Disk_epplet_SOURCES = E-Disk.c
++E_Disk_epplet_LDADD = $(LDADD) -ldevstat
+ 
+ E_Sys_epplet_SOURCES = E-Sys.c
+ E_Sys_epplet_LDADD = $(LDADD) $(GTLIBS)
+--- epplets/Makefile.in.orig	2012-10-10 15:02:11.000000000 +0200
++++ epplets/Makefile.in	2012-10-10 15:03:03.000000000 +0200
+@@ -479,8 +479,9 @@
+ E_Biff_epplet_SOURCES = E-Biff.c mbox.c
+ E_Biff_epplet_LDADD = $(LDADD) -lX11
+ E_MemWatch_epplet_SOURCES = E-MemWatch.c
+-E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS)
++E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS) -lkvm
+ E_Disk_epplet_SOURCES = E-Disk.c
++E_Disk_epplet_LDADD = $(LDADD) -ldevstat
+ E_Sys_epplet_SOURCES = E-Sys.c
+ E_Sys_epplet_LDADD = $(LDADD) $(GTLIBS)
+ E_Slides_epplet_SOURCES = E-Slides.c

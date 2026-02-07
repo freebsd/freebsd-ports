@@ -1,0 +1,106 @@
+#!/bin/sh
+
+# PROVIDE: qtv
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable qtv:
+# qtv_(instance_)?enable (bool):	Set to "NO" by default.
+#					Set it to "YES" to enable qtv.
+# qtv_(instance_)?args (str):		Custom additional arguments to be passed
+#					to qtv (default empty).
+# qtv_(instance_)?user (str):		User to run qtv as. Default to
+#					"%%QWUSER%%" created by the port.
+# qtv_(instance_)?log (path):		Console log file (default
+#					/var/log/${name}(_instance)?.log).
+# qtv_(instance_)?qwdir (path):         QuakeWorld root directory
+#					(default %%QWDIR%%).
+# qtv_instances (str):			Set to "" by default.
+#					If defined, list of instances to enable.
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+        ;;
+*)
+	name=$0
+	;;
+esac
+
+name=${name##*/}
+rcvar="${name}_enable"
+
+load_rc_config "${name}"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "__args=\${${name}_args:-''}"
+eval "__user=\${${name}_user:-'%%QWUSER%%'}"
+eval "__log=\${${name}_log:-/var/log/${name}.log}"
+eval "__qwdir=\${${name}_qwdir:-'%%QWDIR%%'}"
+eval "${name}_chdir=${__qwdir}"
+eval "__instances=\${${name}_instances:-''}"
+
+pidfiledir="/var/run"
+pidfile="${pidfiledir}/${name}.pid"
+
+if [ -n "$2" ]; then
+        instance="$2"
+	load_rc_config ${name}_${instance}
+	case "${__instances}" in
+	"$2 "*|*" $2 "*|*" $2"|"$2")
+		eval "__args=\${${name}_${instance}_args:-${__args}}"
+		eval "__user=\${${name}_${instance}_user:-${__user}}"
+		eval "__log=\${${name}_${instance}_log:-/var/log/${name}_${instance}.log}"
+		eval "__qwdir=\${${name}_${instance}_qwdir:-${__qwdir}}"
+		eval "${name}_chdir=${__qwdir}"
+		pidfile="${pidfiledir}/${name}_${instance}.pid"
+	;;
+	*)
+		err 1 "$2 not found in ${name}_instances" ;;
+	esac
+else
+	if [ -n "${__instances}" -a -n "$1" ]; then
+		for instance in ${__instances}; do
+			eval "_enable=\${${name}_${instance}_enable}"
+			eval "__enable=\${_enable:-\${${name}_enable}}"
+			case "${__enable}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+			;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+			;;
+			*)
+				if [ -z "${_enable}" ]; then
+					_var=${name}_enable
+				else
+					_var=${name}_${instance}_enable
+				fi
+				warn "Bad value '${__enable}' for ${_var}. " \
+					"Instance ${instance} skipped."
+				continue
+			;;
+			esac
+			echo "===> ${name} instance: ${instance}"
+			%%PREFIX%%/etc/rc.d/${name} $1 ${instance}
+			retcode="$?"
+			if [ "0${retcode}" -eq 0 ]; then
+				success="${instance} ${success}"
+			else
+				failed="${instance} (retcode=${retcode}) ${failed}"
+			fi
+		done
+		echo "===> ${name} instances success: ${success}"
+		echo "===> ${name} instances failed: ${failed}"
+		exit 0
+	fi
+fi
+
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -u ${__user} -R 5 -f -H -o ${__log} -m 3 %%PREFIX%%/bin/qtv ${__args}"
+
+run_rc_command "$1"

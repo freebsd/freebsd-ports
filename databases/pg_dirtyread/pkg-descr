@@ -1,0 +1,2 @@
+The pg_dirtyread extension provides the ability to read dead but unvacuumed rows
+from a relation.

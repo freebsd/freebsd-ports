@@ -1,0 +1,26 @@
+--- Imakefile.orig	Thu Aug  7 15:15:07 2003
++++ Imakefile	Thu Aug  7 15:23:35 2003
+@@ -1,5 +1,7 @@
+-/**/# Imakefile for xkeycaps;
+-/**/# Copyright (c) 1991, 1992, 1993, 1994, 1995, 1999 Jamie Zawinski.
++/* 
++ * Imakefile for xkeycaps;
++ * Copyright (c) 1991, 1992, 1993, 1994, 1995, 1999 Jamie Zawinski.
++ */
+ 
+ /*
+  *  To specify a different default keyboard (for when the vendor display
+@@ -353,9 +355,10 @@
+             TAR = tar
+        COMPRESS = compress
+    COMPRESS_EXT = Z
+-/**/#      COMPRESS = gzip --verbose --best
+-/**/#  COMPRESS_EXT = gz
+-
++/*
++ *  COMPRESS = gzip --verbose --best
++ *  COMPRESS_EXT = gz
++ */
+ ComplexProgramTarget(xkeycaps)
+ 
+ all-kbds.o:  kbddef.h $(KBDIR)/all-kbds.h $(ALL_KBDS)

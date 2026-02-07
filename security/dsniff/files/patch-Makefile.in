@@ -1,0 +1,67 @@
+--- Makefile.in.orig	2001-03-15 08:34:42 UTC
++++ Makefile.in
+@@ -26,7 +26,7 @@ LNETINC = @LNETINC@
+ LNETLIB = @LNETLIB@
+ 
+ NIDSINC	= @NIDSINC@
+-NIDSLIB	= @NIDSLIB@
++NIDSLIB	= @NIDSLIB@ `pkg-config --libs gthread-2.0`
+ 
+ DBINC	= @DBINC@
+ DBLIB	= @DBLIB@
+@@ -37,9 +37,8 @@ SSLLIB	= @SSLLIB@
+ X11INC	= @X_CFLAGS@
+ X11LIB	= @X_LIBS@ @X_PRE_LIBS@ -lXmu -lX11 @X_EXTRA_LIBS@
+ 
+-INCS	= -I. $(NIDSINC) $(PCAPINC) $(LNETINC) $(DBINC) $(SSLINC) $(X11INC) \
+-	  -I$(srcdir)/missing
+-LIBS	= @LIBS@ -L$(srcdir) -lmissing
++INCS	= -I. $(NIDSINC) $(PCAPINC) $(LNETINC) $(DBINC) $(SSLINC) $(X11INC)
++LIBS	= @LIBS@ -L$(srcdir) -lmd
+ 
+ INSTALL	= @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+@@ -76,22 +75,23 @@ CONFIGS	= dsniff.magic dsniff.services d
+ .c.o:
+ 	$(CC) $(CFLAGS) $(INCS) -c $(srcdir)/$*.c
+ 
+-all: libmissing.a $(PROGS)
++all: $(PROGS)
+ 
+ mount.c: mount.x
+-	rpcgen -h mount.x -o mount.h
+-	rpcgen -c mount.x -o mount.c
++	rpcgen -c mount.x -o $@
+ 
+-nfs_prot.c: nfs_prot.x
+-	rpcgen -h nfs_prot.x -o nfs_prot.h
+-	rpcgen -c nfs_prot.x -o nfs_prot.c
++mount.h: mount.x
++	rpcgen -h mount.x -o $@
+ 
+-$(LIBOBJS):
+-	$(CC) $(CFLAGS) $(INCS) -c $(srcdir)/missing/$*.c
++decode_mountd.c: mount.h
+ 
+-libmissing.a: $(LIBOBJS)
+-	ar -cr $@ $(LIBOBJS)
+-	$(RANLIB) $@
++nfs_prot.c: nfs_prot.x nfs_prot.h
++	rpcgen -c nfs_prot.x -o $@
++
++nfs_prot.h: nfs_prot.x
++	rpcgen -h nfs_prot.x -o $@
++
++filesnarf.c: nfs_prot.h
+ 
+ dsniff: $(HDRS) $(SRCS) $(OBJS)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(DBLIB) $(SSLLIB)
+@@ -156,7 +156,7 @@ install:
+ 	done
+ 
+ clean:
+-	rm -f *.o *~ $(GEN) libmissing.a $(PROGS) webmitm.crt
++	rm -f *.o *~ $(GEN) $(PROGS) webmitm.crt
+ 
+ distclean: clean
+ 	rm -f Makefile config.h config.cache config.log config.status

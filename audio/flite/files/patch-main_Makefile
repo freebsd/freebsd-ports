@@ -1,0 +1,41 @@
+--- main/Makefile.orig	2017-10-21 14:01:07 UTC
++++ main/Makefile
+@@ -49,7 +49,7 @@ ALL = shared_libs \
+       $(BINDIR)/flite$(EXEEXT) \
+       $(BINDIR)/t2p$(EXEEXT) $(BINDIR)/compile_regexes$(EXEEXT) \
+       $(BINDIR)/flitevox_info$(EXEEXT) \
+-      flite_voice_list.c each $(EXTRABINS)
++      each $(EXTRABINS)
+ 
+ VOICES=$(VOXES)
+ VOICELIBS=$(VOICES:%=flite_%)
+@@ -85,7 +85,7 @@ endif
+ shared_libs: nothing
+ endif
+ 
+-.NOTPARALLEL: $(ALL)
++.NOTPARALLEL:
+ 
+ flite_lang_list: 
+ 	rm -f flite_lang_list.c
+@@ -133,15 +133,15 @@ install:
+ 
+ install:
+ #       The basic binaries
+-	@ $(INSTALL) -m 755 $(BINDIR)/flite $(DESTDIR)$(INSTALLBINDIR)
++	@ $(INSTALL) -m 755 -s $(BINDIR)/flite $(INSTALLBINDIR)
+ 	@ for i in $(VOICES) ; \
+ 	do \
+-	   $(INSTALL) $(BINDIR)/flite_$$i $(DESTDIR)$(INSTALLBINDIR); \
++	   $(INSTALL) -s $(BINDIR)/flite_$$i $(INSTALLBINDIR); \
+ 	done
+-	$(INSTALL) -m 755 $(BINDIR)/flite_time $(DESTDIR)$(INSTALLBINDIR)
++	$(INSTALL) -m 755 -s $(BINDIR)/flite_time $(INSTALLBINDIR)
+ #       The libraries: static and shared (if built)
+-	cp -pd $(flite_LIBS_deps) $(DESTDIR)$(INSTALLLIBDIR)
++	cp -pR $(flite_LIBS_deps) $(INSTALLLIBDIR)
+ ifdef SHFLAGS
+-	cp -pd $(SHAREDLIBS) $(VERSIONSHAREDLIBS) $(DESTDIR)$(INSTALLLIBDIR)
++	cp -pR $(SHAREDLIBS) $(VERSIONSHAREDLIBS) $(INSTALLLIBDIR)
+ endif
+ 

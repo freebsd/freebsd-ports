@@ -1,0 +1,18 @@
+--- mencal.orig	Thu Jul 17 07:53:15 2003
++++ mencal	Wed Aug 23 23:24:21 2006
+@@ -276,15 +276,6 @@
+     }
+   }
+   
+-  my @locales=split("\n", `locale -c LC_TIME`);
+-  if(($#locales>=1) && length($locales[1])) {
+-    $config{'topline'}='';
+-    foreach my $day (split(';', $locales[1])) { 
+-      $config{'topline'}.=sprintf("% 2s ", substr($day, 0, 2));
+-    }
+-    $config{'topline'}=~s/ +$//;
+-  }
+-  $config{'topline'}=~s/;/ /g;
+   $config{'monday_first'} && $config{'topline'}=~s/^(..) (.+)$/$2 $1/;
+ 
+   $config{'show_type'}=~/^(1|3|y)$/ || ($config{'show_type'}='1');

@@ -1,0 +1,20 @@
+--- Makefile.orig	2014-02-08 11:31:49 UTC
++++ Makefile
+@@ -9,8 +9,6 @@ endif
+ 
+ 
+ # set standard values, if not set by default
+-CXX ?= g++
+-CXXFLAGS += -O3 -Wall
+ 
+ 
+ # project-specific flags
+@@ -26,8 +24,6 @@ ifneq (, $(findstring mingw, $(SYS)))
+ 	endif
+ else
+ 	# comment to disable OpenMP
+-	CXXFLAGS += -fopenmp
+-	LDFLAGS += -fopenmp
+ endif
+ 
+ 

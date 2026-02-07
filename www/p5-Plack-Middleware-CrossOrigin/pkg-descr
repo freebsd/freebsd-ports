@@ -1,0 +1,6 @@
+Plack::Middleware::CrossOrigin adds Cross Origin Request Sharing headers used by
+modern browsers to allow XMLHttpRequest to work across domains. This module will
+also help protect against CSRF attacks in some browsers.
+
+This module attempts to fully conform to the CORS spec, while allowing
+additional flexibility in the values specified for the of the headers.

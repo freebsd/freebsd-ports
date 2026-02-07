@@ -1,0 +1,19 @@
+--- Imakefile.orig	Fri Aug  4 07:29:38 1995
++++ Imakefile	Fri Apr 14 19:05:38 2000
+@@ -1,11 +1,11 @@
+-EXTRA_LIBRARIES=-lX11 -lm -lsocket
+-CC=gcc
+-CDEBUGFLAGS = -g
++EXTRA_LIBRARIES=-lX11 -lm
++XCOMM CC=gcc
++XCOMM CDEBUGFLAGS = -g
+ 
+ PROGRAMS = client server
+ 
+-OBJS1 =  creation.o game.o messages.o client.c
+-SRCS1 =  creation.c game.c messages.c
++OBJS1 =  creation.o game.o messages.o client.o
++SRCS1 =  creation.c game.c messages.c client.c
+ 
+ OBJS2 =  creation.o game.o messages.o server.o
+ SRCS2 =  creation.c game.c messages.c server.c

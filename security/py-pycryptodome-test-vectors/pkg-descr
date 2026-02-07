@@ -1,0 +1,4 @@
+These cryptographic test vectors serve as the reference against which
+to run the built-in test suite for security/py-pycryptodome and/or
+security/py-pycrytodomex. It is only necessary to install this port if
+you wish to run the tests yourself.

@@ -1,0 +1,11 @@
+dbt-duckdb
+
+DuckDB is an embedded database, similar to SQLite, but designed for OLAP-style
+analytics. It is crazy fast and allows you to read and write data stored in CSV,
+JSON, and Parquet files directly, without requiring you to load them into the
+database first.
+
+dbt is the best way to manage a collection of data transformations written in
+SQL or Python for analytics and data science. dbt-duckdb is the project that
+ties DuckDB and dbt together, allowing you to create a Modern Data Stack In A
+Box or a simple and powerful data lakehouse with Python.

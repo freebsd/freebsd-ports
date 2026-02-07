@@ -1,0 +1,230 @@
+.\"
+.\" Copyright (C) 2005 Greg Lewis. All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\"
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.Dd November 12, 2019
+.Os
+.Dt JAVAVM 1
+.Sh NAME
+.Nm javavm
+.Nd convenient wrapper for switching Java VMs
+.Sh SYNOPSIS
+.Nm
+.Op Ar arguments ...
+.Sh DESCRIPTION
+The Java VM wrapper provides a convenient system for switching between
+different Java VMs.
+It also provides symbolic links in
+.Pa %%LOCALBASE%%/bin
+to allow the use of
+the Java executables without having to add the specific Java VM executable
+directories to the
+.Ev PATH
+environment variable.
+.Pp
+The
+.Nm
+utility itself is currently a synonym for
+.Dq java .
+However, this behaviour
+is deprecated and is provided only for compatibility with the previous
+version of
+.Nm .
+This functionality may be removed in a future version and should not be
+relied upon.
+.Pp
+By default,
+.Nm
+will select the most
+.Dq native
+and up to date version of the Java VM when
+a given symbolic link is used, invoking and passing the arguments to the
+matching executable within the chosen Java VM.
+The choice of Java VM may also be influenced by using environment variables
+to constrain the version, vendor and operating system of the Java VM.
+.Pp
+This selection process is usually achieved through the use of
+.Pa %%PORTSDIR%%/Mk/bsd.java.mk .
+However, if this is not present then
+.Nm
+will use its own internal selection process which is
+designed to behave almost identically.
+.Sh ENVIRONMENT
+.Bl -tag -width indent
+.It Ev JAVA_HOME
+The presence of this variable in the environment when executing
+.Nm
+will override all other considerations regarding the Java VM to be used
+and the Java VM located at
+.Pa ${JAVA_HOME}/bin/java
+will be used.
+.Pp
+This variable is set by
+.Nm
+when executing the actual Java VM and will be available to it and all of
+its child processes.
+.It Ev JAVA_OS
+A space delimited list of operating systems.
+The selected Java VM must have been created for one of the operating systems
+in the list.
+.Pp
+Currently allowed operating system values are
+.Ql native
+and
+.Ql linux .
+.It Ev JAVA_VENDOR
+A space delimited list of Java VM vendors.
+The selected Java VM must have been released by one of the vendors in the list.
+.Pp
+Currently allowed vendors are
+.Ql openjdk ,
+.Ql oracle ,
+and
+.Ql sun .
+.It Ev JAVA_VERSION
+A space delimited list of versions of the Java VM that may be used.
+By appending a
+.Ql +
+to a version, any Java VM with a version greater than or
+equal to the given version will be used.
+.Pp
+Currently allowed versions are
+.Ql 8 ,
+.Ql 8+ ,
+.Ql 11 ,
+.Ql 11+ ,
+.Ql 17 ,
+.Ql 17+ ,
+.Ql 18 ,
+.Ql 18+ ,
+.Ql 19 ,
+.Ql 19+ ,
+.Ql 20 ,
+.Ql 20+ ,
+.Ql 21 ,
+and
+.Ql 21+ .
+.It Ev JAVAVM_OPTS
+The contents of this environment variable will be passed to the invoked
+Java VM as options.
+For more information on environment variables which can be used to set
+options see
+.Pa %%PREFIX%%/etc/javavm_opts.conf.dist .
+.It Ev JAVAVM_FALLBACK_ONLY
+If this variable is set then instead of selecting the Java VM based on
+.Pa %%PORTSDIR%%/Mk/bsd.java.mk
+only the internal selection process is used.
+This may be useful to achieve consistent results for Java VM selection
+across multiple hosts, where some have the ports collection installed
+and others do not.
+However, this option, when used with scripts installed by a port, may
+result in Java VM selection inconsistent with that intended by the script
+author.
+.It Ev JAVAVM_DRYRUN
+When this variable is set, no Java VM is invoked.
+Instead, the Java VM wrapper prints out the following information:
+.Bl -tag -width indent
+.It Ev JAVA_HOME
+The value of the
+.Ev JAVA_HOME
+environment variable which the Java VM wrapper would have set before
+invoking the Java VM.
+.It Ev JAVAVM_CONF
+The Java VM wrapper configuration file being used.
+.It Ev JAVAVM_OPTS_CONF
+The Java VM wrapper option configuration file being used.
+.It Ev JAVAVM_PROG
+The Java VM that would have been invoked.
+.It Ev JAVAVM_OPTS
+The options that would have been passed to the invoked Java VM.
+It is important to note that this variable may not be the same as the
+.Ev JAVAVM_OPTS
+environment variable due to processing of the Java VM wrapper option
+configuration file.
+.It Ev JAVAVM_COMMAND
+The full command line that would have been used to invoke the Java VM.
+.El
+.El
+.Sh FILES
+.Bl -tag -width indent
+.It Pa %%PREFIX%%/etc/javavms
+The location of the Java VM wrapper configuration file.
+.It Pa %%PREFIX%%/etc/javavm_opts.conf
+The location of the Java VM wrapper option configuration file.
+.It Pa %%PORTSDIR%%/Mk/bsd.java.mk
+The file usually used, along with
+.Nm make ,
+to select the Java VM to be used.
+.El
+.Sh EXAMPLES
+.Bl -tag -width indent
+.It Pa %%LOCALBASE%%/bin/java
+Execute the most up to date and
+.Dq native
+Java VM registered with
+.Nm .
+.It Ev JAVA_VERSION=8+ Pa %%LOCALBASE%%/bin/javac MyClass.java
+Compile MyClass.java with a registered Java VM's javac that is at least
+version 8.
+.It Ev JAVA_OS=native Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
+Execute MyApp with the most up to date native Java VM that is registered
+with
+.Nm .
+This is necessary if MyApp uses JNI, for instance.
+.It Ev JAVA_VERSION="8 11" Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
+Execute MyApp with either a Java VM that is either version 8 or version 11.
+.It Ev JAVAVM_DRYRUN=yes Pa %%LOCALBASE%%/bin/java
+Don't invoke the Java VM, but print out information about what would have
+been done.
+This could be used in a script to determine the
+.Ev JAVA_HOME
+that the Java VM wrapper will use, for instance:
+.Lp
+.Ev JAVA_HOME=`env JAVAVM_DRYRUN=yes %%LOCALBASE%%/bin/java | grep '^JAVA_HOME' | cut -c11-`
+.El
+.Sh SEE ALSO
+.Xr checkvms 1 ,
+.Xr make 1 ,
+.Xr manvm 1 ,
+.Xr registervm 1 ,
+.Xr unregistervm 1 ,
+.Xr javavm_opts.conf 5 ,
+.Xr javavms 5
+.Sh BUGS
+The internal selection procedure of
+.Nm
+is not fully identical to that used when
+.Pa %%PORTSDIR%%/Mk/bsd.java.mk
+is present.
+In particular,
+.Nm
+does not respect environment variables such as
+.Ev JAVA_PREFERRED_PORTS
+which is used by
+.Pa %%PORTSDIR%%/Mk/bsd.java.mk
+and will not use the values of such variables if they are set up as
+.Nm make
+variables in
+.Pa /etc/make.conf ,
+for example.

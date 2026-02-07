@@ -1,0 +1,14 @@
+--- meson.build.orig	2020-04-14 20:19:50 UTC
++++ meson.build
+@@ -36,5 +36,9 @@ root_dir = include_directories('.')
+ subdir('libaccounts-glib')
+ subdir('tools')
+ subdir('data')
+-subdir('docs')
+-subdir('tests')
++if get_option('docs')
++   subdir('docs')
++endif
++if get_option('tests')
++   subdir('tests')
++endif

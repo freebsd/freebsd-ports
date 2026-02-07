@@ -1,0 +1,3 @@
+Cairo::GObject registers Cairo's types (Cairo::Context, Cairo::Surface, etc.)
+with Glib's type systems so that they can be used normally in signals and
+properties.

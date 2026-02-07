@@ -1,0 +1,3 @@
+This port provides a script which spawns both /sbin/dhclient and
+/usr/local/sbin/dhclient -6; this simplifies the configuration needed to
+run DHCP on both protocols of a dual-stack network.

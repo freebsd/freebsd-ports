@@ -1,0 +1,4 @@
+Click is a Python package for creating beautiful command line interfaces in a
+composable way with as little code as necessary.
+
+This plugin allows defining aliases for Click commands and groups.

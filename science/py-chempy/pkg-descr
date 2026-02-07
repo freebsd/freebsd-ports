@@ -1,0 +1,15 @@
+ChemPy is a Python package useful for chemistry (mainly
+physical/inorganic/analytical chemistry). Currently it includes:
+* Numerical integration routines for chemical kinetics (ODE solver front-end)
+* Integrated rate expressions (and convenience fitting routines)
+* Solver for equilibria (including multiphase systems)
+* Relations in physical chemistry:
+  * Debye-Huckel expressions
+  * Arrhenius & Eyring equation
+  * Einstein-Smoluchowski equation
+* Properties (pure python implementations from the literature)
+  * water density as function of temperature
+  * water permittivity as function of temperature and pressure
+  * water diffusivity as function of temperature
+  * water viscosity as function of temperature
+  * sulfuric acid density as function of temperature & weight fraction H2SO4

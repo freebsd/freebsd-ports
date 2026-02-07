@@ -1,0 +1,48 @@
+#!/bin/sh
+# Created by: Mark Felder <feld@FreeBSD.org>
+
+# PROVIDE: vnstat
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable vnstat:
+#
+# vnstat_enable="YES"
+
+. /etc/rc.subr
+
+name=vnstat
+rcvar=vnstat_enable
+load_rc_config $name
+
+: ${vnstat_enable:=NO}
+: ${vnstat_pidfile=/var/run/vnstat/vnstat.pid}
+: ${vnstat_config=%%PREFIX%%/etc/vnstat.conf}
+: ${vnstat_flags="-d"}
+: ${vnstat_user:=%%USERS%%}
+: ${vnstat_group:=%%GROUPS%%}
+
+command="%%PREFIX%%/sbin/vnstatd"
+command_args="-p ${vnstat_pidfile} --config ${vnstat_config}"
+pidfile="${vnstat_pidfile}"
+user_cmd="%%PREFIX%%/bin/vnstat"
+
+start_precmd=vnstat_startprecmd
+
+vnstat_startprecmd()
+{
+	if [ ! -e ${pidfile%/*} ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} ${pidfile%/*};
+	fi
+
+	dbdir=$(grep "^DatabaseDir" ${vnstat_config} | awk 'BEGIN{FS="\042"}{print $2}')
+	if [ ! -d ${dbdir} ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} ${dbdir};
+	fi
+
+	if [ ! -d "/var/run/vnstat" ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} /var/run/vnstat;
+	fi
+}
+
+run_rc_command "$1"

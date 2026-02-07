@@ -1,0 +1,59 @@
+--- configure.orig	2023-09-29 02:38:19 UTC
++++ configure
+@@ -61,7 +61,7 @@ SMPEG_CONFIG=smpeg2-config
+ 
+ SDL_CONFIG=sdl2-config
+ SMPEG_CONFIG=smpeg2-config
+-FREETYPE_CONFIG=freetype-config
++FREETYPE_CONFIG="pkg-config freetype2"
+ EXTLIB=./extlib
+ SRC=src
+ MAKEFILE=$SRC/Makefile
+@@ -624,7 +624,7 @@ then
+ 	_EOF
+     INTERNAL_SDL_MIXER=true
+     $CXX `$SDL_CONFIG --cflags` test.cc `$SDL_CONFIG --libs` -lSDL2_mixer -o mtest >/dev/null 2>&1
+-    ./mtest 2>/dev/null
++    true 2>/dev/null
+     case $? in
+     0) echo "yes"; INTERNAL_SDL_MIXER=false ;;
+     1) echo "no MP3" ;; 2) echo "no Ogg" ;; 3) echo "no Ogg or MP3" ;;
+@@ -712,7 +712,7 @@ else
+     FREETYPE_CONFIG=$EXTLIB/bin/freetype-config
+ else
+     $echo_n "Checking for system Freetype... ${nobr}"
+-    VER=`($FREETYPE_CONFIG --ftversion) 2>/dev/null`
++    VER=2
+     if [ -z "$VER" ]; then
+ 	FREETYPE_CONFIG=freetype2-config
+ 	VER=`($FREETYPE_CONFIG --ftversion) 2>/dev/null`
+@@ -770,7 +770,7 @@ if $WITH_LIBNOTIFY; then
+ 
+ if $WITH_LIBNOTIFY; then
+   $echo_n "Checking for system libnotify... ${nobr}"
+-  if `pkg-config --exists libnotify` && `pkg-config --exists gtk+-2.0`; then
++  if `pkg-config --exists libnotify`; then
+     echo "yes"
+     WITH_LIBNOTIFY=true
+   else
+@@ -855,9 +855,8 @@ then
+ GTKLIBS=
+ if $WITH_LIBNOTIFY
+ then
+-  OURLIBS="$OURLIBS -lnotify"
+-  OURLIBS="$OURLIBS `pkg-config --libs gtk+-2.0`"
+-  OURINCS="$OURINCS `pkg-config --cflags gtk+-2.0`"
++  OURINCS="$OURINCS `pkg-config --cflags libnotify`"
++  OURLIBS="$OURLIBS `pkg-config --libs libnotify`"
+   OURDEFS="$OURDEFS -DLIBNOTIFY"
+ fi
+ 
+@@ -1194,7 +1193,7 @@ install: install-bin
+ 	util/install-sh -c $STRIPFLAG $SRC/\$(TARGET) \$(PREFIX)/bin/\$(TARGET)
+ 
+ install: install-bin
+-	util/install-man install \$(PREFIX) doc/*.[0-9]
++	util/install-man install \$(PREFIX)/share doc/*.[0-9]
+ 
+ uninstall:
+ 	\$(RM) \$(PREFIX)/bin/\$(TARGET)

@@ -1,0 +1,12 @@
+--- Source/ThirdParty/SDL/CMakeLists.txt.orig	2019-06-18 22:56:08 UTC
++++ Source/ThirdParty/SDL/CMakeLists.txt
+@@ -21,6 +21,9 @@
+ 
+ # Modified by Yao Wei Tjong for Urho3D, the modified portion is licensed under below license
+ 
++set(CMAKE_REQUIRED_INCLUDES "/usr/local/include")
++add_definitions(-I/usr/local/include)
++
+ #
+ # Copyright (c) 2008-2017 the Urho3D project.
+ #

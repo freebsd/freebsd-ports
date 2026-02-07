@@ -1,0 +1,11 @@
+--- src/compile.lsp.in.orig	2023-09-08 16:55:48 UTC
++++ src/compile.lsp.in
+@@ -88,7 +88,7 @@
+       c::*ecl-library-directory* "@true_builddir@/")
+ (setf c::*ld-flags* "@LDFLAGS@")
+ #-:wants-dlopen
+-(setf c::*ld-libs* "@LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@")
++(setf c::*ld-libs* "@IMPLIB_LDFLAGS@ @LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@")
+ #+(and :wants-dlopen (not nonstop))
+ (setf c::*ld-libs*
+       "@SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@"

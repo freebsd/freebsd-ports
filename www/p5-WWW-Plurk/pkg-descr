@@ -1,0 +1,7 @@
+This is an unofficial API for plurk.com. It uses the same interfaces that
+plurk itself uses internally which are not published and not necessarily
+stable. When Plurk publish a stable API this module will be updated to take
+advantage of it. In the mean time use with caution.
+
+Ryan Lim did the heavy lifting of reverse engineering the API. His PHP
+implementation can be found at http://code.google.com/p/rlplurkapi/.

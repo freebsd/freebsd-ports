@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Sun May 19 23:08:33 2013
+--- Makefile.in	Sun May 19 23:08:47 2013
+***************
+*** 291,297 ****
+  top_srcdir = @top_srcdir@
+  AUTOMAKE_OPTIONS = foreign dist-zip
+  ACLOCAL_AMFLAGS = -I m4
+! SUBDIRS = src include @docs_subdirs@
+  EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO NEWS UPGRADING libdbi.spec.in config.h.in Makefile.w32 autogen.sh drivers/example/AUTHORS drivers/example/Makefile.am drivers/example/README drivers/example/TODO drivers/example/.cvsignore drivers/example/dbd_example.c drivers/example/dbd_example.h drivers/example/dbd_example.sgml
+  
+  # we use exec here to install the .pc file with the library, not with
+--- 291,297 ----
+  top_srcdir = @top_srcdir@
+  AUTOMAKE_OPTIONS = foreign dist-zip
+  ACLOCAL_AMFLAGS = -I m4
+! SUBDIRS = src include
+  EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO NEWS UPGRADING libdbi.spec.in config.h.in Makefile.w32 autogen.sh drivers/example/AUTHORS drivers/example/Makefile.am drivers/example/README drivers/example/TODO drivers/example/.cvsignore drivers/example/dbd_example.c drivers/example/dbd_example.h drivers/example/dbd_example.sgml
+  
+  # we use exec here to install the .pc file with the library, not with

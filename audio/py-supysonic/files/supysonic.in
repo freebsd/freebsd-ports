@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# PROVIDE: supysonic
+# REQUIRE: NETWORKING LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for supysonic in /etc/rc.conf
+#
+# supysonic_enable (bool):    Enable supysonic. (default=NO)
+# supysonic_user (str):       User to run supysonic-server. (default=%%USER%%)
+# supysonic_log (str):        Send stdout/stderr to a file. (default=/dev/null)
+# supysonic_flags (str):      Flags used for supysonic-server. (default=)
+#
+
+. /etc/rc.subr
+
+name=supysonic
+rcvar=supysonic_enable
+
+load_rc_config $name
+
+: ${supysonic_enable:=NO}
+: ${supysonic_user:=%%USER%%}
+: ${supysonic_log:=/dev/null}
+
+pidfile=/var/run/supysonic/server.pid
+procname="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} -o ${supysonic_log} ${procname} %%PREFIX%%/bin/supysonic-server ${supysonic_flags}"
+
+run_rc_command "$1"

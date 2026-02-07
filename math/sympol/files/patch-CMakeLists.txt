@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2016-05-08 19:52:35 UTC
++++ CMakeLists.txt
+@@ -23,8 +23,10 @@ add_test(NAME perltest WORKING_DIRECTORY ${PROJECT_SOU
+ 
+ add_subdirectory(sympol)
+ add_subdirectory(external/lrslib-042c)
+-add_subdirectory(external/cddlib-094f)
+-add_subdirectory(test)
++#add_subdirectory(external/cddlib-094f)
++if (BUILD_TESTS)
++	add_subdirectory(test)
++endif()
+ 
+ exec_program( ${CMAKE_COMMAND} ARGS -E copy_directory ${PROJECT_SOURCE_DIR}/data ${PROJECT_BINARY_DIR}/data )
+ 

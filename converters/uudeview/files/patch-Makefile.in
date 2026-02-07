@@ -1,0 +1,12 @@
+diff -rU3 Makefile.in Makefile.in
+--- Makefile.in	Sat Jun  9 08:47:02 2001
++++ Makefile.in	Sun Sep  1 19:23:05 2002
+@@ -164,7 +164,7 @@
+ 	rm -rf uudeview-$(VERSION).$(PATCH)
+ 	chmod 644 uudeview-$(V)-$(VERSION).$(PATCH).diff.gz
+ 
+-uudeview:	unix/config.h libuu.a
++uudeview:	unix/config.h
+ 	(cd unix ; $(MAKE))
+ 
+ xdeview:	tcl/config.h libuu.a

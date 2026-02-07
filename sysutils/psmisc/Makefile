@@ -1,0 +1,32 @@
+PORTNAME=	psmisc
+PORTVERSION=	22.16
+PORTREVISION=	2
+CATEGORIES=	sysutils
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
+
+MAINTAINER=	douglas@douglasthrift.net
+COMMENT=	Port of the Linux pstree, killall, and pidof commands
+WWW=		https://psmisc.sourceforge.net/
+
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	gsed:textproc/gsed
+
+CONFLICTS=	pidof pstree-2.[0-9]*
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		gmake ncurses
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^#define COMM_LEN / s|16|254|' ${WRKSRC}/src/comm.h
+
+post-install:
+	@${LN} -fs killall ${STAGEDIR}${PREFIX}/bin/pidof
+
+.include <bsd.port.mk>

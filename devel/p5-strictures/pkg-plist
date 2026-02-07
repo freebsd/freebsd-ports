@@ -1,0 +1,4 @@
+%%SITE_PERL%%/strictures.pm
+%%SITE_PERL%%/strictures/extra.pm
+%%PERL5_MAN3%%/strictures.3.gz
+%%PERL5_MAN3%%/strictures::extra.3.gz

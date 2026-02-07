@@ -1,0 +1,10 @@
+--- svcore/config.pri.in.orig	2015-10-22 11:26:02 UTC
++++ svcore/config.pri.in
+@@ -1,6 +1,6 @@
+ CONFIG += @QMAKE_CONFIG@
+ 
+-DEFINES += @HAVES@ HAVE_DATAQUAY
++DEFINES += @HAVES@ HAVE_DATAQUAY __RTMIDI_DUMMY_ONLY__
+ 
+ QMAKE_CC = @CC@
+ QMAKE_CXX = @CXX@

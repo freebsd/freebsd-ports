@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Nov 15 02:28:23 1998
++++ Makefile	Tue Dec 29 15:31:42 1998
+@@ -260,7 +260,7 @@
+ 	./compile instcheck.c
+ 
+ it: \
+-man prog install instcheck
++prog install instcheck
+ 
+ leapsecs.0: \
+ leapsecs.3

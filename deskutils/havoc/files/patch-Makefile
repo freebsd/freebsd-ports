@@ -1,0 +1,27 @@
+--- Makefile.orig	2020-09-15 12:40:25 UTC
++++ Makefile
+@@ -8,6 +8,7 @@ VERSION="0.3.1"
+ 
+ CFLAGS ?= -Wall -Wextra -Wno-unused-parameter -Wno-parentheses
+ CFLAGS += `pkg-config --cflags xkbcommon` \
++	`pkg-config --cflags epoll-shim` \
+ 	`pkg-config --cflags wayland-client` \
+ 	`pkg-config --cflags wayland-cursor`
+ override CFLAGS += -DVERSION=\"$(VERSION)\"
+@@ -15,6 +16,7 @@ override CFLAGS += -DVERSION=\"$(VERSION)\"
+ VPATH=$(WAYLAND_PROTOCOLS_DIR)/stable/xdg-shell
+ LIBS=-lrt -lm -lutil -lwayland-client -lwayland-cursor -lxkbcommon -Ltsm -lhtsm
+ LIBS+=`pkg-config --libs xkbcommon` \
++	`pkg-config --libs epoll-shim` \
+ 	`pkg-config --libs wayland-client` \
+ 	`pkg-config --libs wayland-cursor`
+ 
+@@ -25,7 +27,7 @@ havoc: tsm $(OBJ)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJ) $(LIBS)
+ 
+ install: havoc
+-	install -D -t $(DESTDIR)$(BINDIR) havoc
++	install havoc $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(BINDIR)/havoc

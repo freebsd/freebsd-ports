@@ -1,0 +1,13 @@
+[
+{
+   type: upgrade
+    maximum_version: 3.0.0
+	 message: <<EOM
+	 When upgrading from version 2.x to 3.x, you'll need to move your
+	 vocabularies
+	 from $StylesPath/Vocab to $StylesPath/config/vocabularies.
+	 See the "vale ls-dirs" command for the location of $StylesPath on your
+	 system.
+	 EOM
+}
+]

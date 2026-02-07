@@ -1,0 +1,13 @@
+[
+{
+  message: <<EOD
+* It's recommended to make a backup as the v1.9.0 release contains database
+  schema changes, meaning it's not possible to downgrade once updated!
+
+* It's also recommended to do a fresh fast sync as it can drastically reduce
+  the database size.
+EOD
+  maximum_version: "1.9.0"
+  type: upgrade
+}
+]

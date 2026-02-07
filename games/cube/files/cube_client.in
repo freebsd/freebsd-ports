@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# The executable needs to be run from its data directory, and needs to store
+# configuration in it. We therefore mirror the data directory hierarchy in
+# ~/.cube, and create symlinks to the data files, but the configuration file
+# is copied, and write permission for the user is added to it.
+
+if [ -d ~/.cube ]
+then
+	echo "Using existing ~/.cube directory."
+else
+	echo "Creating ~/.cube directory."
+	cd %%DATADIR%% || exit 1
+	find * -type d -exec mkdir -p ~/.cube/{} \;
+	cp *.cfg ~/.cube && chmod u+w ~/.cube/*.cfg
+	find * -type f -exec ln -s %%DATADIR%%/{} ~/.cube/{} \; 2>/dev/null
+fi
+
+cd ~/.cube || exit 1
+exec %%PREFIX%%/libexec/cube_client "$@"

@@ -1,0 +1,7 @@
+--- src/Makefile.am.orig	2024-10-27 11:33:19 UTC
++++ src/Makefile.am
+@@ -1,4 +1,3 @@
+-dist_bin_SCRIPTS=afuse-avahissh
+ bin_PROGRAMS=afuse
+ afuse_SOURCES=afuse.c afuse.h fd_list.c fd_list.h dir_list.c dir_list.h utils.c utils.h variable_pairing_heap.h string_sorted_list.c string_sorted_list.h
+ 

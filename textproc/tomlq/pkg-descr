@@ -1,0 +1,4 @@
+tomlq (tq) is a tool for getting data from TOML files on the command line.
+
+Usage:
+tq -f file.toml 'section1.section2.name1'

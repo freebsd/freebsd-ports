@@ -1,0 +1,24 @@
+PORTNAME=	coffee-rails
+PORTVERSION=	4.2.2
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	-rails50
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Coffee Script adapter for the Rails asset pipeline
+WWW=		https://github.com/rails/coffee-rails
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
+
+RUN_DEPENDS=	rubygem-coffee-script>=2.2.0:devel/rubygem-coffee-script \
+		rubygem-railties50>=4.0.0:www/rubygem-railties50
+
+USES=		gem
+
+NO_ARCH=	yes
+
+# coffee-rails 5.0.0+ requires Rails 5.2.0+
+PORTSCOUT=	limit:^4\.
+
+.include <bsd.port.mk>

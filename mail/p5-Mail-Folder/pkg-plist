@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Mail/Folder.pm
+%%SITE_PERL%%/Mail/Folder/Emaul.pm
+%%SITE_PERL%%/Mail/Folder/Maildir.pm
+%%SITE_PERL%%/Mail/Folder/Mbox.pm
+%%SITE_PERL%%/Mail/Folder/NNTP.pm
+%%PERL5_MAN3%%/Mail::Folder.3.gz
+%%PERL5_MAN3%%/Mail::Folder::Emaul.3.gz
+%%PERL5_MAN3%%/Mail::Folder::Mbox.3.gz
+%%PERL5_MAN3%%/Mail::Folder::NNTP.3.gz
+%%PERL5_MAN3%%/Mail::Folder::Maildir.3.gz

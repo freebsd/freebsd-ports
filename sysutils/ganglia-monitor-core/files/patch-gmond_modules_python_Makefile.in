@@ -1,0 +1,13 @@
+--- gmond/modules/python/Makefile.in.orig	2015-07-01 19:49:35 UTC
++++ gmond/modules/python/Makefile.in
+@@ -639,8 +639,8 @@ README:	README.in $(FIXCONFIG)
+ # Note that README is listed as a dependency to be generated, but it
+ # is not currently installed anywhere
+ install-exec-hook:	../conf.d/modpython.conf README
+-	mkdir -p $(DESTDIR)$(sysconfdir)/conf.d && \
+-	  $(INSTALL_DATA) ../conf.d/modpython.conf $(DESTDIR)$(sysconfdir)/conf.d/modpython.conf
++	mkdir -p $(DESTDIR)$(sysconfdir)/gmond.conf.d && \
++	  $(INSTALL_DATA) ../conf.d/modpython.conf $(DESTDIR)$(sysconfdir)/gmond.conf.d/modpython.conf 
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

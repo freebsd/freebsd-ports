@@ -1,0 +1,15 @@
+--- exports/CMakeLists.txt.orig	2021-10-07 12:17:49 UTC
++++ exports/CMakeLists.txt
+@@ -27,12 +27,5 @@ install(
+         "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+         "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+     DESTINATION
+-        . # Root Directory
+-    )
+-
+-install(
+-    FILES
+-        "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+-    DESTINATION
+         share/cmake/${PROJECT_NAME}/
+     )

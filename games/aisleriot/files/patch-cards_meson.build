@@ -1,0 +1,10 @@
+--- cards/meson.build.orig	2025-01-28 17:32:48 UTC
++++ cards/meson.build
+@@ -51,7 +51,6 @@ cards_sources = [
+   'tigullio.svg',
+   'tragy.svg',
+   'XSkat.svg',
+-  'Атласные.svg',
+ ]
+ 
+ cardsdir = ar_pkgdatadir / 'cards'

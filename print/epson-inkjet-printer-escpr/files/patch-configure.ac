@@ -1,0 +1,124 @@
+--- configure.ac.orig	2019-08-28 05:40:03 UTC
++++ configure.ac
+@@ -57,9 +57,9 @@ AC_ARG_WITH([cupsfilterdir],
+ if test "xno" = "x${with_cupsfilterdir}"; then
+    if test "xyes" = "x$have_cups_config" ; then
+       dnl `@<:@' , `@:>@' are replaced with  `[' , `]'
+-      CUPS_FILTER_DIR="${cups_default_prefix}`cups-config --serverbin | sed -e 's,^/@<:@^/@:>@@<:@^/@:>@*,,'`/filter"
++      CUPS_FILTER_DIR=`cups-config --serverbin`"/filter"
+    else
+-      CUPS_FILTER_DIR="${cups_default_prefix}/lib/cups/filter"
++      AC_MSG_ERROR([CUPS_FILTER_DIR could not be found.])
+    fi
+ else
+    CUPS_FILTER_DIR="${with_cupsfilterdir}"
+@@ -71,13 +71,11 @@ AC_ARG_WITH([cupsppddir],
+   [],
+   [with_cupsppddir=no])
+ if test "xno" = "x${with_cupsppddir}"; then
+-   if test -d "${cups_default_prefix}/share/ppd" ; then
+-      CUPS_PPD_DIR="${cups_default_prefix}/share/ppd"
+-   elif test "xyes" = "x$have_cups_config" ; then
++   if test "xyes" = "x$have_cups_config" ; then
+       dnl `@<:@' , `@:>@' are replaced with  `[' , `]'
+-      CUPS_PPD_DIR="${cups_default_prefix}`cups-config --datadir | sed -e 's,^/@<:@^/@:>@@<:@^/@:>@*,,'`/model"
++      CUPS_PPD_DIR=`cups-config --datadir`"/model"
+    else
+-      CUPS_PPD_DIR="${cups_default_prefix}/share/cups/model"
++      AC_MSG_ERROR([CUPS_PPD_DIR could not be found.])
+    fi
+ else
+    CUPS_PPD_DIR="${with_cupsppddir}"
+@@ -108,6 +106,16 @@ AC_ARG_WITH([internal],
+ AC_SUBST([INTERNAL_PPD])
+ AC_SUBST([INTERNAL_PPD_OPTION])
+ 
++if test "xyes" = "x$have_cups_config" ; then
++	CUPS_CPPFLAGS=`cups-config --cflags`
++	CUPS_LDFLAGS=`cups-config --ldflags`
++else
++	CUPS_CPPFLAGS=
++	CUPS_LDFLAGS=
++fi
++AC_SUBST(CUPS_CPPFLAGS)
++AC_SUBST(CUPS_LDFLAGS)
++
+ dnl Checks for header files.
+ AC_HEADER_STDC
+ AC_HEADER_STAT
+@@ -115,17 +123,23 @@ AC_HEADER_TIME
+ AC_STRUCT_TM
+ AC_TYPE_PID_T
+ AC_TYPE_SIZE_T
++AC_TYPE_SSIZE_T
+ 
++old_CPPFLAGS="$CPPFLAGS"
++CPPFLAGS="$CUPS_CPPFLAGS $CPPFLAGS"
++
+ AC_CHECK_HEADERS([\
+         cups/cups.h \
+         cups/ppd.h \
+         cups/raster.h \
+         ])
++
++CPPFLAGS="$old_CPPFLAGS"
++
+ AC_CHECK_HEADERS([\
+         ctype.h \
+         errno.h \
+         fcntl.h \
+-        malloc.h \
+         signal.h \
+         stdarg.h \
+         stddef.h \
+@@ -136,21 +150,45 @@ AC_CHECK_HEADERS([\
+         time.h \
+         unistd.h \
+         ])
++AC_CHECK_HEADERS([\
++        sys/ioctl.h \
++        sys/time.h \
++        termios.h \
++        ])
+ 
+-# Checks for libraries.
+-AC_CHECK_LIB([cups], [ppdOpenFile])
+-AC_CHECK_LIB([cupsimage], [cupsRasterOpen])
+-
+ # Checks for library functions.
+ #AC_FUNC_MALLOC avoiding rpl_malloc stupidness
+ AC_FUNC_MEMCMP
+-AC_TYPE_SIGNAL
++#AC_TYPE_SIGNAL
+ AC_CHECK_FUNCS([\
+         memset \
+         strcspn \
+         strerror \
+         strrchr \
+         ])
++AC_CHECK_FUNCS([\
++        atexit \
++        malloc \
++        memmove \
++        realloc \
++        select \
++        strchr \
++        strstr \
++        ])
++
++# Checks for libraries.
++AC_CHECK_LIB([pthread], [pthread_create])
++
++old_CPPFLAGS="$CPPFLAGS"
++CPPFLAGS="$CUPS_CPPFLAGS $CPPFLAGS"
++old_LDFLAGS="$LDFLAGS"
++LDFLAGS="$CUPS_LDFLAGS $LDFLAGS"
++
++AC_CHECK_LIB([cups], [ppdOpenFile])
++AC_CHECK_LIB([cupsimage], [cupsRasterOpen])
++
++LDFLAGS="$old_LDFLAGS"
++CPPFLAGS="$old_CPPFLAGS"
+ 
+ AC_CONFIG_FILES([\
+         Makefile \

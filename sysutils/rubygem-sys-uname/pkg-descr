@@ -1,0 +1,2 @@
+A Ruby interface for getting system information along the lines of the uname
+Unix command

@@ -1,0 +1,29 @@
+--- build.gradle.orig	2020-02-28 18:01:21 UTC
++++ build.gradle
+@@ -118,7 +118,7 @@ def resolveLargeResourceStubFiles(largeResourcesFolder
+     }
+ 
+     // check for stub files, try to pull once if there are any, then check again
+-    if (checkForLFSStubFiles(largeResourcesFolder)) {
++    if (false && checkForLFSStubFiles(largeResourcesFolder)) {
+         final gitLFSPullLargeResources = "git lfs pull --include $largeResourcesFolder"
+         execGitLFSCommand(gitLFSPullLargeResources)
+         if (checkForLFSStubFiles(largeResourcesFolder)) {
+@@ -152,7 +152,7 @@ def ensureBuildPrerequisites(largeResourcesFolder, bui
+     if (!JavaVersion.current().isJava8() && !JavaVersion.current().isJava11()) {
+         println("Warning: using Java ${JavaVersion.current()} but only Java 8 and Java 11 have been tested.")
+     }
+-    if (!skipGitCheck && !looksLikeWereInAGitRepository() ) {
++    if (false && !skipGitCheck && !looksLikeWereInAGitRepository() ) {
+         throw new GradleException("This doesn't appear to be a git folder. " +
+                 "The GATK Github repository must be cloned using \"git clone\" to run the build. " +
+                 "\n$buildPrerequisitesMessage")
+@@ -166,7 +166,7 @@ final isRelease = Boolean.getBoolean("release")
+ final versionOverridden = System.getProperty("versionOverride") != null
+ 
+ ensureBuildPrerequisites(largeResourcesFolder, buildPrerequisitesMessage, versionOverridden)
+-version = (versionOverridden ? System.getProperty("versionOverride") : gitVersion().replaceAll(".dirty", "")) + (isRelease ?  "" : "-SNAPSHOT")
++version = (isRelease ? "1.0" : "1.0" + "-SNAPSHOT").replaceAll(".dirty", "")
+ 
+ if (versionOverridden) {
+     println "Version number overridden as " + version

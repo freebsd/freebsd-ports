@@ -1,0 +1,10 @@
+include/rtaudio/RtAudio.h
+include/rtaudio/rtaudio_c.h
+lib/librtaudio.so
+lib/librtaudio.so.7
+lib/librtaudio.so.7.0.0
+libdata/pkgconfig/rtaudio.pc
+%%DATADIR%%/RtAudioConfig-version.cmake
+%%DATADIR%%/RtAudioConfig.cmake
+%%DATADIR%%/RtAudioTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/RtAudioTargets.cmake

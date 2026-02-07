@@ -1,0 +1,7 @@
+py-markdown2  provides a converter written in Python that closely
+matches the behaviour of the original Perl-implemented Markdown.pl.
+There is another Python markdown.py , but markdown2.py is faster
+and, to my knowledge, more correct.
+
+Markdown is a light text markup format and a processor to convert
+that to HTML.

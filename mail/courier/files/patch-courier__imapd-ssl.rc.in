@@ -1,0 +1,11 @@
+--- courier/imapd-ssl.rc.in.orig	2018-07-29 05:16:41.000000000 +0200
++++ courier/imapd-ssl.rc.in	2020-04-26 13:47:03.472951000 +0200
+@@ -31,7 +31,7 @@
+ 	then
+ 		rm -f "$TLS_CACHEFILE"
+ 		touch "$TLS_CACHEFILE"
+-		chown @mailuser@ "$TLS_CACHEFILE"
++		/usr/sbin/chown @mailuser@ "$TLS_CACHEFILE"
+ 		chgrp @mailgroup@  "$TLS_CACHEFILE"
+ 		chmod 600  "$TLS_CACHEFILE"
+ 	fi

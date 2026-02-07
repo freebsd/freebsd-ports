@@ -1,0 +1,41 @@
+Don't use compile-time constant to detect 32-bit registers:
+* GCC defines __ILP32__ only in -mx32 but Clang also in -m32
+* -mx32 uses 64-bit registers but doesn't define __LP64__
+
+In file included from cm_device.cpp:31:
+In file included from ./cm_device.h:37:
+In file included from ./cm_array.h:31:
+./cm_mem.h:200:17: error: invalid output size for constraint '=a'
+                                             :"=a"(local_rax), "=r"(local_rbx),
+                                                   ^
+https://github.com/intel/cmrt/issues/18
+
+--- src/cm_mem.h.orig	2016-09-07 23:51:38 UTC
++++ src/cm_mem.h
+@@ -183,7 +182,7 @@ inline void GetCPUID(int CPUInfo[4], int InfoType)
+ 	__try {
+ #endif
+ 
+-		if (sizeof(void *) == 4) {
++#ifdef __i386__
+ 			unsigned int local_eax, local_ebx, local_ecx, local_edx;
+ 			__asm__ __volatile__("pushl %%ebx      \n\t" "cpuid  \n\t" "movl %%ebx, %1   \n\t" "popl %%ebx \n\t"	/* restore the old %ebx */
+ 					     :"=a"(local_eax), "=r"(local_ebx),
+@@ -194,7 +193,7 @@ inline void GetCPUID(int CPUInfo[4], int InfoType)
+ 			CPUInfo[1] = local_ebx;
+ 			CPUInfo[2] = local_ecx;
+ 			CPUInfo[3] = local_edx;
+-		} else {
++#else
+ 			uint64_t local_rax, local_rbx, local_rcx, local_rdx;
+ 			__asm__ __volatile__("push %%rbx      \n\t" "cpuid           \n\t" "mov %%rbx, %1   \n\t" "pop %%rbx       \n\t"	/* restore the old %ebx */
+ 					     :"=a"(local_rax), "=r"(local_rbx),
+@@ -205,7 +204,7 @@ inline void GetCPUID(int CPUInfo[4], int InfoType)
+ 			CPUInfo[1] = local_rbx;
+ 			CPUInfo[2] = local_rcx;
+ 			CPUInfo[3] = local_rdx;
+-		}
++#endif
+ 
+ #ifndef NO_EXCEPTION_HANDLING
+ 	}

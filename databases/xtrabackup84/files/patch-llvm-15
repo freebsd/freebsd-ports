@@ -1,0 +1,28 @@
+--- storage/innobase/include/ddl0impl.h.orig	2024-08-08 10:30:27 UTC
++++ storage/innobase/include/ddl0impl.h
+@@ -119,14 +119,6 @@ struct Row {
+ 
+ /** Physical row context. */
+ struct Row {
+-  /** Constructor. */
+-  Row() = default;
+-
+-  Row(const Row &) = default;
+-
+-  /** Destructor. */
+-  ~Row() = default;
+-
+   Row &operator=(const Row &) = default;
+ 
+   /** Build a row from a raw record.
+--- unittest/gunit/mysys_my_rdtsc-t.cc.orig	2024-08-08 10:30:27 UTC
++++ unittest/gunit/mysys_my_rdtsc-t.cc
+@@ -146,7 +146,7 @@ TEST_F(RDTimeStampCounter, TestNanosecond) {
+   ulonglong t1 = my_timer_nanoseconds();
+   ulonglong t2;
+   int i;
+-  int backward = 0;
++  int backward [[maybe_unused]] = 0;
+   int nonzero = 0;
+ 
+   for (i = 0; i < LOOP_COUNT; i++) {

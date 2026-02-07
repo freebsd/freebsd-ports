@@ -1,0 +1,27 @@
+--- Makefile.orig	2023-12-14 21:25:00 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ CC       =  c++
+-CFLAGS   =  -O2 -Wall -Wunused -lpthread $(shell fltk-config --use-images --cxxflags --ldflags) \
++CFLAGS  += -Wall -Wunused -lpthread $(shell fltk-config --use-images --cxxflags --ldflags) \
+ 			--std=c++11 -finline-functions
+ DEBUGFLGS=  -g -O0
+ BINDIR   = /usr/local/bin
+@@ -10,6 +10,8 @@ LIBVNC   = $(shell pkg-config --cflags --libs libvnccl
+ OSNAME   = $(shell uname -s)
+ 
+ 
++all: spiritvnc-fltk
++
+ spiritvnc-fltk:
+ 	@echo "Building on '$(OSNAME)'"
+ 	@echo
+@@ -41,7 +43,7 @@ clean::
+ 	rm -f $(TARGET)
+ 
+ install:
+-	install -c -s -o root -m 555 $(TARGET) $(BINDIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(BINDIR)/spiritvnc
+ 	@echo
+ 
+ uninstall:

@@ -1,0 +1,2 @@
+With Gtk2::Ex::FormFactory you can build a GUI which consistently represents
+the data of your application.

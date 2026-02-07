@@ -1,0 +1,8 @@
+This library provides C++11 bindings/wrapper over a subset of SDL2
+functions with extra features proided with modern C++ such as:
+
+* RAII-style initialization and destruction
+* Full error checking: exception is thrown if any SDL function
+  fails. Exception itself allows to retrieve SDL error string
+* C++11 move semantics support, which allow you to store SDL objects
+  in containers and pass/return them by value with no overhead

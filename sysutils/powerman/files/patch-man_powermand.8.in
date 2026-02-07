@@ -1,0 +1,11 @@
+--- man/powermand.8.in.orig	2012-01-13 23:01:52 UTC
++++ man/powermand.8.in
+@@ -12,7 +12,7 @@ provides power management in a data center or compute 
+ .TP
+ .I "-c, --conf filename"
+ Override the default location of the powerman configuration file
+-.I /etc/powerman/powerman.conf.
++.I @X_SYSCONFDIR@/powerman/powerman.conf.
+ .TP
+ .I "-f, --foreground"
+ Do not daemonize, and send debugging/error messages to stderr instead of syslog.

@@ -1,0 +1,53 @@
+--- Makefile.am.orig	2012-09-24 17:35:36 UTC
++++ Makefile.am
+@@ -274,28 +274,28 @@ m4_files = \
+ 	m4/smr_WITH_BUILD_PATH.m4
+ 
+ ezMINC_files = \
+-	ezminc/examples/volume_msq_dist.cpp
+-	ezminc/examples/CMakeLists.txt
+-	ezminc/examples/fuzzy_volume_similarity.cpp
+-	ezminc/examples/trilinear_resample.cpp
+-	ezminc/examples/volume_avg.cpp
+-	ezminc/examples/volume_gtc_similarity.cpp
+-	ezminc/examples/volume_similarity.cpp
+-	ezminc/minc_1_simple_rw.cpp
+-	ezminc/minc_1_simple_rw.h
+-	ezminc/minc_io_4d_volume.h
+-	ezminc/minc_io_fixed_vector.h
+-	ezminc/minc_io_simple_volume.h
+-	ezminc/tests/minc_rw_test2.cpp
+-	ezminc/tests/minc_rw_test_4d.cpp
+-	ezminc/tests/minc_rw_test_simple.cpp
+-	ezminc/tests/CMakeLists.txt
+-	ezminc/tests/ezminc_rw_test.cpp
+-	ezminc/tests/ezminc_stats.cpp
+-	ezminc/minc_1_simple.h
+-	ezminc/CMakeLists.txt
+-	ezminc/minc_1_rw.cpp
+-	ezminc/minc_1_rw.h
++	ezminc/examples/volume_msq_dist.cpp \
++	ezminc/examples/CMakeLists.txt \
++	ezminc/examples/fuzzy_volume_similarity.cpp \
++	ezminc/examples/trilinear_resample.cpp \
++	ezminc/examples/volume_avg.cpp \
++	ezminc/examples/volume_gtc_similarity.cpp \
++	ezminc/examples/volume_similarity.cpp \
++	ezminc/minc_1_simple_rw.cpp \
++	ezminc/minc_1_simple_rw.h \
++	ezminc/minc_io_4d_volume.h \
++	ezminc/minc_io_fixed_vector.h \
++	ezminc/minc_io_simple_volume.h \
++	ezminc/tests/minc_rw_test2.cpp \
++	ezminc/tests/minc_rw_test_4d.cpp \
++	ezminc/tests/minc_rw_test_simple.cpp \
++	ezminc/tests/CMakeLists.txt \
++	ezminc/tests/ezminc_rw_test.cpp \
++	ezminc/tests/ezminc_stats.cpp \
++	ezminc/minc_1_simple.h \
++	ezminc/CMakeLists.txt \
++	ezminc/minc_1_rw.cpp \
++	ezminc/minc_1_rw.h \
+ 	ezminc/minc_io_exceptions.h
+ 	
+ voxeltoworld_SOURCES = progs/coordinates/voxeltoworld.c

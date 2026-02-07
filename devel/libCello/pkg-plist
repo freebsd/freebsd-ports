@@ -1,0 +1,12 @@
+include/Cello.h
+lib/libCello.a
+lib/libCello.so
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cello_world.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/help.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/iteration.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newtype.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/object.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ranges.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threads.c

@@ -1,0 +1,19 @@
+--- Imakefile.orig	1997-10-18 17:50:16 UTC
++++ Imakefile
+@@ -1,11 +1,12 @@
+ SYS_LIBRARIES = -lXm -lXt -lSM -lICE -lX11 -lXpm -lXext -lXmu
+-CC            = g++
+-INCLUDES      = -I/usr/include/g++
++CC            = $(CXX)
++CCLINK        = $(CXXLINK)
++XCOMM INCLUDES      = -I/usr/include/g++
+ 
+-BINDIR        = /usr/local/bin
++XCOMM BINDIR        = /usr/local/bin
+ 
+ SRCS = biblio.cc mybiblio.cc refman.cc load_cb.cc save_cb.cc print_cb.cc c_refform.cc mystrstr.cc searchall_cb.cc ovid.cc spirs.cc inspec.cc pubmed.cc
+ OBJS = biblio.o  mybiblio.o  refman.o  load_cb.o  save_cb.o  print_cb.o  c_refform.o  mystrstr.o  searchall_cb.o  ovid.o  spirs.o  inspec.o  pubmed.o
+ 
+-ComplexProgramTarget(xmbibtex)
++ComplexProgramTargetNoMan(xmbibtex)
+ InstallAppDefaults(XmBibTeX)

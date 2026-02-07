@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+You will also need to configure Apache.  Consider adding the following
+to your httpd.conf:
+
+     Alias /phpSysInfo "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%">
+        AllowOverride all
+	Allow from all
+    </Directory>
+
+Then restart Apache: 'apachectl graceful'
+
+Please visit 'http://localhost/phpsysinfo/' in a
+web-browser and follow the configuration instructions.
+EOM
+}
+{ type: upgrade
+  maximum_version: "3.4.1"
+  message: <<EOM
+This version requires a manual review of the phpsysinfo.ini. Some plugins have
+changed and/or renamed settings, which will causes issues running phpSysInfo.
+EOM
+}
+]

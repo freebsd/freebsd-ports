@@ -1,0 +1,3 @@
+Pythonic bindings for the notmuch mail database using CFFI. This module makes
+the functionality of the notmuch library (https://notmuchmail.org) available to
+python using CFFI

@@ -1,0 +1,5 @@
+GImageView is a GTK+ based image viewer.
+
+It supports tabbed browsing, thumbnail table views, directory tree views,
+drag and drop, reading thumbnail cache of other famous image viewers,
+and a flexible user interface.

@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Nov 28 22:34:51 1998
++++ Makefile	Sat Nov 28 22:35:12 1998
+@@ -610,7 +610,7 @@
+ 	./compile seek_set.c
+ 
+ setup: \
+-it man install conf-bin conf-man
++it install conf-bin conf-man
+ 	./install "`head -1 conf-bin`" < BIN
+ 	./install "`head -1 conf-man`" < MAN
+ 

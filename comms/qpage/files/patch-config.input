@@ -1,0 +1,29 @@
+--- config.input.orig	1998-11-05 06:05:36 UTC
++++ config.input
+@@ -20,7 +20,7 @@
+ # See the QuickPage documentation for complete details about
+ # the syntax of the configuration file.
+ #
+-QPAGE_CONFIG="/etc/qpage.cf"
++QPAGE_CONFIG="/usr/local/etc/qpage.conf"
+ 
+ 
+ #
+@@ -41,7 +41,7 @@ SNPP_SERVER="localhost"
+ # copies of the configuration file.  Only one filename
+ # may be specified.
+ #
+-SNPP_SERVER_FILE="/etc/qpage.servers"
++SNPP_SERVER_FILE="/usr/local/etc/qpage.servers"
+ 
+ 
+ #
+@@ -51,7 +51,7 @@ SNPP_SERVER_FILE="/etc/qpage.servers"
+ # for that user, QuickPage will assume all group privileges
+ # assigned to that user.
+ #
+-DAEMON_USER="daemon"
++DAEMON_USER="uucp"
+ 
+ 
+ #

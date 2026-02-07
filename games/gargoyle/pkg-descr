@@ -1,0 +1,11 @@
+Gargoyle is an IF player that supports all the major interactive
+fiction formats.
+
+Most interactive fiction is distributed as portable game files. These
+portable game files come in many formats. In the past, you used to
+have to download a separate player (interpreter) for each format of IF
+you wanted to play.
+
+Gargoyle is based on the standard interpreters for the formats it
+supports: Agility, Alan 2 and 3, Frotz, Glulxe, Hugo, Level 9,
+Magnetic, Scare, Tads 2 and 3.

@@ -1,0 +1,20 @@
+
+                      c-nocem - NoCeM for C News and INN
+
+   This is a program for the easy and efficient application of the NoCeM
+   protocol on the news spool. Which means, articles for which a NoCeM
+   with "action=hide" is accepted, will be deleted from your news system
+   as if they had been cancelled. With the installation described below,
+   these will be processed as fast as possible and should work like real
+   cancels.
+
+   Unlike the standard implementation of NoCeM, this version is optimized
+   for the most common case of "spam cancels". In fact, it can do nothing
+   else. It cannot be run by a normal user, it does not need or
+   manipulate state like .newsrc files, it processes only "hide" actions,
+   and that only by actually deleting the articles.
+
+   c-nocem is designed for easy setup and fast run and needs no
+   maintenance.
+
+The software is in the public domain.

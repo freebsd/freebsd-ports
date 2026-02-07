@@ -1,0 +1,153 @@
+--- bozohttpd.8.orig	2024-02-04 05:55:04 UTC
++++ bozohttpd.8
+@@ -373,12 +373,26 @@ and 4 in the case of
+ .Fl C
+ and 4 in the case of
+ .Fl M . )
++.Ss DEFAULT CONFIGURATION
++On
++.Fx ,
++.Nm
++can be enabled as the default web server by adding the following options to
++.Pa /etc/rc.conf
++:
++.Bd -literal
++bozohttpd_enable (bool):      Set it to "YES" to enable bozohttpd.
++                              Default is "NO".
++bozohttpd_flags (str):        Options to pass to bozohttpd.
++                              Default is "-b -t /var/empty -U nobody /".
++                              The last argument, slashdir, is required.
++.Ed
+ .Ss INETD CONFIGURATION
+ As
+ .Nm
+-uses
++normally uses
+ .Xr inetd 8
+-by default to process incoming TCP connections for HTTP requests
++to process incoming TCP connections for HTTP requests
+ (but see the
+ .Fl b
+ option),
+@@ -390,8 +404,8 @@ entry would be:
+ .Xr inetd.conf 5
+ entry would be:
+ .Bd -literal
+-http stream tcp  nowait:600 _httpd /usr/libexec/httpd httpd /var/www
+-http stream tcp6 nowait:600 _httpd /usr/libexec/httpd httpd /var/www
++http stream tcp  nowait:600 www /usr/local/bin/bozohttpd httpd /var/www
++http stream tcp6 nowait:600 www /usr/local/bin/bozohttpd httpd /var/www
+ .Ed
+ .Pp
+ This would serve web pages from
+@@ -405,7 +419,7 @@ Using the
+ default of 40.
+ .Pp
+ Using the
+-.Nx
++.Fx
+ .Xr inetd 8 ,
+ you can provide multiple IP-address based HTTP servers by having multiple
+ listening ports with different configurations.
+@@ -457,15 +471,15 @@ On
+ .Ed
+ .Pp
+ On
+-.Nx ,
++.Fx ,
+ the
+-.Xr pwhash 1
++.Xr openssl-passwd 1
+ utility may be used to generate hashed passwords.
+ .Pp
+-While
++While the
++.Fx
++port of
+ .Nm
+-distributed with
+-.Nx
+ has support for HTTP Basic Authorization enabled by default,
+ in the portable distribution it is excluded.
+ Compile
+@@ -475,21 +489,21 @@ It may require linking with the crypt library, using
+ on the compiler command line to enable this support.
+ It may require linking with the crypt library, using
+ .Dq -lcrypt .
+-.Ss BLOCKLIST SUPPORT
++.Ss BLACKLIST SUPPORT
+ On
+-.Nx ,
++.Fx ,
+ .Nm
+ supports
+-.Xr blocklistd 8
++.Xr blacklistd 8
+ by default.
+ The support can be disabled with the
+-.Dq -DNO_BLOCKLIST_SUPPORT
++.Dq -DNO_BLACKLIST_SUPPORT
+ compilation option.
+ .Pp
+ Upon occurrence,
+ .Nm
+ reports two HTTP status codes to
+-.Xr blocklistd 8
++.Xr blacklistd 8
+ as failures:
+ .Em 401
+ (``Unauthorized'')
+@@ -501,7 +515,7 @@ A successful authorization decreases the counter kept 
+ is the one received upon authorization failure with the
+ HTTP Basic Authorization mechanism.
+ A successful authorization decreases the counter kept by
+-.Xr blocklistd 8 .
++.Xr blacklistd 8 .
+ .Pp
+ Note that the implementation of the HTTP Basic Authorization mechanism
+ uses a redirection; a status code
+@@ -510,7 +524,7 @@ is reported as two failures to
+ Therefore, a single authorization failure of
+ .Pa .htpasswd
+ is reported as two failures to
+-.Xr blocklistd 8 ,
++.Xr blacklistd 8 ,
+ but no failures are recorded upon successful authorization
+ due to the decrease of the failure counter.
+ .Ss SSL SUPPORT
+@@ -603,7 +617,7 @@ entry like:
+ .Xr inetd.conf 5
+ entry like:
+ .Bd -literal
+-http stream tcp  nowait:600 _httpd /usr/libexec/httpd httpd -v /var/vroot /var/www
++http stream tcp  nowait:600 www /usr/local/bin/bozohttpd httpd -v /var/vroot /var/www
+ .Ed
+ .Pp
+ and inside
+@@ -621,7 +635,7 @@ Typically this will be like:
+ option to specify a CGI handler for a particular file type.
+ Typically this will be like:
+ .Bd -literal
+-httpd -C .php /usr/pkg/bin/php-cgi /var/www
++bozohttpd -C .php /usr/pkg/bin/php-cgi /var/www
+ .Ed
+ .Pp
+ Note that a plain script interpreter can not be used directly as a cgihandler,
+@@ -634,7 +648,7 @@ It would be invoked like:
+ .Pp
+ It would be invoked like:
+ .Bd -literal
+-httpd -C .pl /www-scripts/bin/run.perl /var/www
++bozohttpd -C .pl /www-scripts/bin/run.perl /var/www
+ .Ed
+ and the script could look like:
+ .Bd -literal
+@@ -821,7 +835,7 @@ provided support for
+ .An Jukka Ruohonen
+ .Aq Mt jruoho@NetBSD.org
+ provided support for
+-.Xr blocklistd 8
++.Xr blacklistd 8
+ .It
+ .An Thor Lancelot Simon
+ .Aq Mt tls@NetBSD.org

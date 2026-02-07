@@ -1,0 +1,54 @@
+@(,gnokii,0750) bin/gnokii
+@(,gnokii,0755) bin/sendsms
+%%X11%%@(,gnokii,0750) bin/xgnokii
+etc/gnokiirc.sample
+include/gnokii.h
+include/gnokii/bitmaps.h
+include/gnokii/call.h
+include/gnokii/common.h
+include/gnokii/data.h
+include/gnokii/encoding.h
+include/gnokii/error.h
+include/gnokii/mms.h
+include/gnokii/networks.h
+include/gnokii/ringtones.h
+include/gnokii/rlp-common.h
+include/gnokii/sms.h
+include/gnokii/statemachine.h
+include/gnokii/virtmodem.h
+include/gnokii/wappush.h
+lib/libgnokii.a
+lib/libgnokii.so
+lib/libgnokii.so.7
+lib/libgnokii.so.7.0.0
+libdata/pkgconfig/gnokii.pc
+libdata/pkgconfig/xgnokii.pc
+share/man/man1/gnokii.1.gz
+share/man/man1/sendsms.1.gz
+share/man/man1/xgnokii.1.gz
+share/man/man8/gnokiid.8.gz
+share/man/man8/mgnokiidev.8.gz
+%%SMSD%%share/man/man8/smsd.8.gz
+@(,gnokii,4750) sbin/gnokiid
+@(,gnokii,4750) sbin/mgnokiidev
+%%SMSD%%@(,gnokii,0750) sbin/smsd
+share/locale/de/LC_MESSAGES/gnokii.mo
+share/locale/fi/LC_MESSAGES/gnokii.mo
+share/locale/fr/LC_MESSAGES/gnokii.mo
+share/locale/it/LC_MESSAGES/gnokii.mo
+share/locale/pl/LC_MESSAGES/gnokii.mo
+share/locale/pt/LC_MESSAGES/gnokii.mo
+share/locale/sv/LC_MESSAGES/gnokii.mo
+%%SMSD%%share/smsd/README
+%%SMSD%%share/smsd/action
+%%SMSD%%lib/smsd/libsmsd_file.a
+%%SMSD%%lib/smsd/libsmsd_file.so
+%%MSM%%lib/smsd/libsmsd_mysql.a
+%%MSM%%lib/smsd/libsmsd_mysql.so
+%%MSM%%share/smsd/sms.tables.mysql.sql
+%%PGM%%lib/smsd/libsmsd_pq.a
+%%PGM%%lib/smsd/libsmsd_pq.so
+%%PGM%%share/smsd/sms.tables.pq.sql
+%%SQLT%%lib/smsd/libsmsd_sqlite.a
+%%SQLT%%lib/smsd/libsmsd_sqlite.so
+%%X11%%share/applications/xgnokii.desktop

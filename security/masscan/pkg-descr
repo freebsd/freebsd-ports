@@ -1,0 +1,5 @@
+masscan is a very fast port scanner.
+
+Using masscan, you can get results similar to nmap.
+And masscan is not only faster than other scanners,
+also more flexible setting for address and port ranges.

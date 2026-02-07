@@ -1,0 +1,17 @@
+Streamlit builds upon three simple principles:
+
+Embrace scripting:
+
+Build an app in a few lines of code with our magically simple API. Then
+see it automatically update as you iteratively save the source file.
+
+Weave in interaction:
+
+Adding a widget is the same as declaring a variable. No need to write a
+backend, define routes, handle HTTP requests, connect a frontend, write
+HTML, CSS, JavaScript.
+
+
+Deploy instantly:
+
+Effortlessly share, manage and deploy your apps, directly from Streamlit.

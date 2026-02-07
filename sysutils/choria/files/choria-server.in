@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# PROVIDE: choria_server
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run the choria server:
+#
+# choria_server_enable (bool):	Set it to "YES" to enable the choria server.
+#				Default is "NO".
+# choria_server_options:	Options to pass to the choria server
+#
+
+. /etc/rc.subr
+
+name="choria_server"
+rcvar=`set_rcvar`
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+: ${choria_server_enable="NO"}
+: ${choria_server_options="--config=%%PREFIX%%/etc/choria/server.conf"}
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/choria
+command_args="-p ${pidfile} ${procname} server run ${choria_server_options}"
+
+PATH="${PATH}:%%PREFIX%%/bin"
+export GODEBUG=x509ignoreCN=0
+
+run_rc_command "$1"

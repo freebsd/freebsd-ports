@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+The following method was only tested with Aquaria release from Humble
+Indie Bundle. In order to play the game copy data files under
+%%DATADIR%% or specify the path to them via environment variable e.g.,
+
+   $ unzip aquaria-lnx-humble-bundle.mojo.run
+   $ tar cf - -Cdata . | tar xof - -C%%DATADIR%%
+   $ aquaria
+
+or
+
+   $ cp -R %%DATADIR%%/override /path/to/aquaria/data/
+   $ AQUARIA_DATA_PATH=/path/to/aquaria/data aquaria
+EOM
+}
+]

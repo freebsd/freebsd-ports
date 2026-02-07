@@ -1,0 +1,3 @@
+System::Info is a Perl extension aimed at presenting system-related
+information (such as number of CPUs, architecture, operating system,
+release data) in a system-independent way.

@@ -1,0 +1,19 @@
+--- rscsi/rscsi.dfl.orig	2005-08-09 13:19:20 UTC
++++ rscsi/rscsi.dfl
+@@ -25,14 +25,13 @@
+ # Each USER= entry adds the listed user to the users who may run rscsi
+ #
+ # A typical passwd entry looks like this:
+-# rscsi:x:1999:1000:Remote SCSI:/export/home/rscsi:/opt/schily/sbin/rscsi
++# rscsi:*:99:99::0:0:Remote SCSI:/usr/local/rscsi:/opt/schily/sbin/rscsi
+ #
+-# Add entries for all valid remote users to /export/home/rscsi/.rhosts
++# Add entries for all valid remote users to /usr/local/rscsi/.rhosts
+ #
+ # USER= entries are checked with a pattern matcher. USER=* matches all users.
+ #
+ USER=rscsi
+-#USER=joerg
+ 
+ #
+ # Each ACCESS= entry adds a target or group of targets to the list of visible

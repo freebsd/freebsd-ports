@@ -1,0 +1,14 @@
+SnowDDL is a declarative-style tool for object management automation in
+Snowflake.
+
+It is not intended to replace other tools entirely, but to provide an
+alternative approach focused on practical data engineering challenges.
+
+You may find SnowDDL useful if:
+
+- complexity of object schema grows exponentially, and it becomes hard to manage
+- your organization maintains multiple Snowflake accounts (dev, stage, prod)
+- your organization has multiple developers sharing the same Snowflake account
+  and suffering from conflicts
+- it is necessary to generate some part of configuration dynamically using
+  Python

@@ -1,0 +1,10 @@
+GRubik is a virtual 3D Rubik's cube for you to solve. It features:
+
+- simple but functional and fast 3D
+- a smart scramble that ensures you get a solvable cube
+- interesting code that you might enjoy reading and which uses a
+variety of programming techniques.
+
+Left-click for clockwise, right-click for counterclockwise rotation.
+
+LICENSE: GPL2 or later

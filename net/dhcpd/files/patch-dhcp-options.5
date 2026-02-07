@@ -1,0 +1,13 @@
+--- dhcp-options.5.orig	2020-04-13 17:07:01 UTC
++++ dhcp-options.5
+@@ -346,6 +346,10 @@ This option specifies whether the client should config
+ for packet forwarding.
+ A value of 0 means disable IP forwarding, and a value of 1 means enable
+ IP forwarding.
++.It Ic option ipv6-only-preferred Ar uint32 ;
++The number of seconds for which an IPv6-only-capable client should disable
++DHCPv4.
++See RFC 8925 for details.
+ .It Ic option irc-server Ar ip-address Oo , Ar ip-address ... Oc ;
+ The
+ .Ic irc-server

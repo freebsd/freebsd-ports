@@ -1,0 +1,13 @@
+--- Makefile.am.orig	2024-05-09 17:03:52 UTC
++++ Makefile.am
+@@ -3,8 +3,8 @@ dist_sbin_SCRIPTS       = smcroute
+ SUBDIRS                 = man src
+ DISTCLEANFILES		= *~ DEADJOE semantic.cache *.gdb *.elf core core.* *.d
+ dist_sbin_SCRIPTS       = smcroute
+-doc_DATA		= README.md COPYING smcroute.conf
+-EXTRA_DIST		= README.md ChangeLog.md autogen.sh smcroute.conf smcroute.default smcroute.init
++doc_DATA		= README.md ChangeLog.md
++EXTRA_DIST		= autogen.sh smcroute.conf smcroute.default smcroute.init
+ 
+ if ENABLE_TEST
+ SUBDIRS                += test

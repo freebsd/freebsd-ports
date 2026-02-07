@@ -1,0 +1,40 @@
+    COMMENT = Ports to help disabled users
+
+    SUBDIR += accerciser
+    SUBDIR += accesskit-c
+    SUBDIR += at-spi2-core
+    SUBDIR += atkmm
+    SUBDIR += caribou
+    SUBDIR += darkman
+    SUBDIR += eflite
+    SUBDIR += feedbackd
+    SUBDIR += gammastep
+    SUBDIR += hyprsunset
+    SUBDIR += kdeaccessibility
+    SUBDIR += kmag
+    SUBDIR += kmousetool
+    SUBDIR += kmouth
+    SUBDIR += libqaccessibilityclient
+    SUBDIR += libspeechprovider
+    SUBDIR += libspiel
+    SUBDIR += linux-c7-at-spi2-atk
+    SUBDIR += linux-c7-at-spi2-core
+    SUBDIR += linux-c7-atk
+    SUBDIR += linux-rl9-at-spi2-atk
+    SUBDIR += linux-rl9-at-spi2-core
+    SUBDIR += linux-rl9-atk
+    SUBDIR += orca
+    SUBDIR += py-atspi
+    SUBDIR += py-speech-dispatcher
+    SUBDIR += qt5-speech
+    SUBDIR += qt6-speech
+    SUBDIR += redshift
+    SUBDIR += rubygem-atk
+    SUBDIR += sct
+    SUBDIR += sctd
+    SUBDIR += speech-dispatcher
+    SUBDIR += wl-gammarelay-rs
+    SUBDIR += wlsunset
+    SUBDIR += yasr
+
+.include <bsd.port.subdir.mk>

@@ -1,0 +1,2 @@
+Perl bindings around libxcb, a C library for X11 interaction. It provides
+an object oriented interface to the libxcb methods.

@@ -1,0 +1,2 @@
+This module implements Perl::Critic's heuristics with a much faster
+analyzer.

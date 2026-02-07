@@ -1,0 +1,7 @@
+Plagger is a pluggable RSS/Atom feed aggregator written in
+Perl. Everything is implemented as a small plugin and you can mash
+them up together using Plagger core API and plugin hooks. You can
+think of Plagger as a blosxom or qpsmtpd for RSS aggregator.
+
+WARNING: This port depends on thousands of other ports spececially
+with full options.

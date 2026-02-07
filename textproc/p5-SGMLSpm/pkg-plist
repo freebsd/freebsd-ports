@@ -1,0 +1,5 @@
+bin/sgmlspl
+%%SITE_PERL%%/SGMLS.pm
+%%SITE_PERL%%/SGMLS/Output.pm
+%%SITE_PERL%%/SGMLS/Refs.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/skel.pl

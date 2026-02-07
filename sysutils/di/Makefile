@@ -1,0 +1,44 @@
+PORTNAME=	di
+DISTVERSION=	6.2.2.2
+CATEGORIES=	sysutils
+MASTER_SITES=	SF/diskinfo-di
+
+MAINTAINER=	cyberbotx@cyberbotx.com
+COMMENT=	Disk Information Utility
+WWW=		https://diskinfo-di.sourceforge.io/
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+TEST_DEPENDS=	bash:shells/bash
+
+USES=		cmake pathfix pkgconfig
+USE_LDCONFIG=	yes
+
+TEST_TARGET=	test
+
+OPTIONS_DEFINE=		NLS
+OPTIONS_DEFAULT=	INTERNAL
+OPTIONS_SINGLE=		MATH
+OPTIONS_SINGLE_MATH=	GMP INTERNAL LIBTOMMATH MPDECIMAL
+OPTIONS_SUB=		yes
+
+INTERNAL_DESC=		Use internal math support
+LIBTOMMATH_DESC=	libtommath support
+MPDECIMAL_DESC=		mpdecimal support
+
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
+GMP_CONFIGURE_ENV=	DI_USE_MATH="DI_GMP"
+
+INTERNAL_CONFIGURE_ENV=	DI_USE_MATH="DI_INTERNAL"
+
+LIBTOMMATH_LIB_DEPENDS=		libtommath.so:math/libtommath
+LIBTOMMATH_CONFIGURE_ENV=	DI_USE_MATH="DI_TOMMATH"
+
+MPDECIMAL_LIB_DEPENDS=		libmpdec.so:math/mpdecimal
+MPDECIMAL_CONFIGURE_ENV=	DI_USE_MATH="DI_MPDECIMAL"
+
+NLS_USES=	gettext
+NLS_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Intl:BOOL=ON
+
+.include <bsd.port.mk>

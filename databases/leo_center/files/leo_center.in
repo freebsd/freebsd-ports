@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: leo_center
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+# /etc/rc.conf variables:
+#
+# leo_center_enable:	Set it to "YES" to enable leo_center.
+# 			Default is "NO".
+# leo_center_user	User to run daemon as .
+#			Default is "%%LEOFS_USER%%".
+# leo_center_group	Group to run daemon as.
+#			Default is "%%LEOFS_GROUP%%".
+# leo_center_address	Address to bind.
+#			Default is "0.0.0.0".
+# leo_center_port	Port to use.
+#			Default is "8000".
+# leo_center_log	Log file.
+#			Default is "%%LEOFS_LOGDIR%%/leo_center.log".
+# leo_center_pid	Pid file.
+#			Default is "%%LEOFS_RUNDIR%%/leo_center.pid".
+# leo_center_flags	Additional thin(1) options.
+#			Default is "".
+#
+
+. /etc/rc.subr
+
+name=leo_center
+rcvar=leo_center_enable
+
+load_rc_config ${name}
+
+: ${leo_center_enable:="NO"}
+: ${leo_center_user:=%%LEOFS_USER%%}
+: ${leo_center_group:=%%LEOFS_GROUP%%}
+: ${leo_center_address:="0.0.0.0"}
+: ${leo_center_port:="8000"}
+: ${leo_center_log:="%%LEOFS_LOGDIR%%/${name}.log"}
+: ${leo_center_pid:="%%LEOFS_RUNDIR%%/${name}.pid"}
+: ${leo_center_flags:=""}
+
+required_files=%%ETCDIR%%/${name}.conf
+pidfile=${leo_center_pid}
+
+command="%%PREFIX%%/bin/thin"
+command_args=" \
+    --user ${leo_center_user} \
+    --group ${leo_center_group} \
+    --address ${leo_center_address} \
+    --port ${leo_center_port} \
+    --log ${leo_center_log} \
+    --pid ${leo_center_pid} \
+    --tag ${name} \
+    --chdir %%DATADIR%% \
+    --daemonize \
+    ${leo_center_flags} \
+    start \
+"
+procname=$(basename $(head -1 ${command}))
+
+run_rc_command "$1"

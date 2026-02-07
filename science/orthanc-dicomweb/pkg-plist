@@ -1,0 +1,2 @@
+share/orthanc/plugins/libOrthancDicomWeb.so
+share/orthanc/plugins/libOrthancDicomWeb.so.%%DISTVERSION%%

@@ -1,0 +1,4 @@
+bin/mergelog
+bin/zmergelog
+share/man/man1/mergelog.1.gz
+share/man/man1/zmergelog.1.gz

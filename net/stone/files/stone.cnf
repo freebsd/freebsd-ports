@@ -1,0 +1,6 @@
+# options
+-dd
+
+# args
+asaogw:23 30023	--
+localhost:10080/http		"$HOST:5902"  'CONNECT localhost:5901'

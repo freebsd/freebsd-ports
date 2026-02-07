@@ -1,0 +1,460 @@
+commit ba96d2e697a35517c5ee6b6c20a2fe9a055f7e5f
+Author: Simon Marchi <simon.marchi@efficios.com>
+Date:   2024-05-30T16:28:21-04:00
+
+    gdb: change names of enumerations in enum flags selftest
+    
+    When reading this test (in the context of PR 31331), I had trouble
+    understanding the tests, because of the abbreviated names.  I would
+    prefer if the names were a bit more explicit, like this.
+    
+    Change-Id: I85669b238a9d5dacf673a7bbfc1ca18f80d2b2cf
+
+diff --git gdb/unittests/enum-flags-selftests.c gdb/unittests/enum-flags-selftests.c
+index 154a473dd48..dddb1e26202 100644
+--- gdb/unittests/enum-flags-selftests.c
++++ gdb/unittests/enum-flags-selftests.c
+@@ -29,49 +29,49 @@ namespace enum_flags_tests {
+    make it simpler to use.  They could be named differently.  */
+ 
+ /* A "real enum".  */
+-enum RE
+-  {
+-    RE_FLAG1 = 1 << 1,
+-    RE_FLAG2 = 1 << 2,
+-  };
++enum RawEnum
++{
++  RawEnum_Flag1 = 1 << 1,
++  RawEnum_Flag2 = 1 << 2,
++};
+ 
+ /* Another "real enum".  */
+-enum RE2
+-  {
+-    RE2_FLAG1 = 1 << 1,
+-    RE2_FLAG2 = 1 << 2,
+-  };
++enum RawEnum2
++{
++  RawEnum2_Flag1 = 1 << 1,
++  RawEnum2_Flag2 = 1 << 2,
++};
+ 
+ /* An unsigned "real enum".  */
+-enum URE : unsigned
+-  {
+-    URE_FLAG1 = 1 << 1,
+-    URE_FLAG2 = 1 << 2,
+-    URE_FLAG3 = 0xffffffff,
+-  };
++enum UnsignedRawEnum : unsigned
++{
++  UnsignedRawEnum_Flag1 = 1 << 1,
++  UnsignedRawEnum_Flag2 = 1 << 2,
++  UnsignedRawEnum_Flag3 = 0xffffffff,
++};
+ 
+ /* A non-flags enum.  */
+-enum NF
+-  {
+-    NF_FLAG1 = 1 << 1,
+-    NF_FLAG2 = 1 << 2,
+-  };
++enum NonFlagsEnum
++{
++  NonFlagsEnum_Flag1 = 1 << 1,
++  NonFlagsEnum_Flag2 = 1 << 2,
++};
+ 
+ /* The corresponding "enum flags" types.  */
+-DEF_ENUM_FLAGS_TYPE (RE, EF);
+-DEF_ENUM_FLAGS_TYPE (RE2, EF2);
+-DEF_ENUM_FLAGS_TYPE (URE, UEF);
++DEF_ENUM_FLAGS_TYPE (RawEnum,         EnumFlag);
++DEF_ENUM_FLAGS_TYPE (RawEnum2,        EnumFlag2);
++DEF_ENUM_FLAGS_TYPE (UnsignedRawEnum, UnsignedEnumFlag);
+ 
+ /* So that std::vectors of types that have enum_flags fields can
+    reallocate efficiently memcpy.  */
+-static_assert (std::is_trivially_copyable<EF>::value);
++static_assert (std::is_trivially_copyable<EnumFlag>::value);
+ 
+ /* A couple globals used as lvalues in the CHECK_VALID expressions
+    below.  Their names (and types) match the uppercase type names
+    exposed by CHECK_VALID just to make the expressions easier to
+    follow.  */
+-static RE re ATTRIBUTE_UNUSED;
+-static EF ef ATTRIBUTE_UNUSED;
++static RawEnum re ATTRIBUTE_UNUSED;
++static EnumFlag ef ATTRIBUTE_UNUSED;
+ 
+ /* First, compile-time tests that:
+ 
+@@ -82,30 +82,32 @@ static EF ef ATTRIBUTE_UNUSED;
+      types do compile and that they return the correct type.
+ */
+ 
+-#define CHECK_VALID(VALID, EXPR_TYPE, EXPR)		\
+-  CHECK_VALID_EXPR_6 (EF, RE, EF2, RE2, UEF, URE, VALID, EXPR_TYPE, EXPR)
++#define CHECK_VALID(VALID, EXPR_TYPE, EXPR)                                \
++  CHECK_VALID_EXPR_6 (EnumFlag, RawEnum, EnumFlag2, RawEnum2,              \
++		      UnsignedEnumFlag, UnsignedRawEnum, VALID, EXPR_TYPE, \
++		      EXPR)
+ 
+-using und = std::underlying_type<RE>::type;
++using und = std::underlying_type<RawEnum>::type;
+ 
+ /* Test construction / conversion from/to different types.  */
+ 
+ /* RE/EF -> underlying (explicit) */
+-CHECK_VALID (true,  und,  und (RE ()))
+-CHECK_VALID (true,  und,  und (EF ()))
++CHECK_VALID (true, und, und (RawEnum ()))
++CHECK_VALID (true, und, und (EnumFlag ()))
+ 
+ /* RE/EF -> int (explicit) */
+-CHECK_VALID (true,  int,  int (RE ()))
+-CHECK_VALID (true,  int,  int (EF ()))
++CHECK_VALID (true, int, int (RawEnum ()))
++CHECK_VALID (true, int, int (EnumFlag ()))
+ 
+ /* other -> RE */
+ 
+ /* You can construct a raw enum value from an int explicitly to punch
+    a hole in the type system if need to.  */
+-CHECK_VALID (true,  RE,   RE (1))
+-CHECK_VALID (true,  RE,   RE (RE2 ()))
+-CHECK_VALID (false, void, RE (EF2 ()))
+-CHECK_VALID (true,  RE,   RE (RE ()))
+-CHECK_VALID (false, void, RE (EF ()))
++CHECK_VALID (true,  RawEnum, RawEnum (1))
++CHECK_VALID (true,  RawEnum, RawEnum (RawEnum2 ()))
++CHECK_VALID (false, void,    RawEnum (EnumFlag2 ()))
++CHECK_VALID (true,  RawEnum, RawEnum (RawEnum ()))
++CHECK_VALID (false, void,    RawEnum (EnumFlag ()))
+ 
+ /* other -> EF.  */
+ 
+@@ -113,125 +115,125 @@ CHECK_VALID (false, void, RE (EF ()))
+    enum.  Unlike with raw enums, you can't construct an enum flags
+    from an integer nor from an unrelated enum type explicitly.  Add an
+    intermediate conversion via the raw enum if you really need it.  */
+-CHECK_VALID (false, void, EF (1))
+-CHECK_VALID (false, void, EF (1u))
+-CHECK_VALID (false, void, EF (RE2 ()))
+-CHECK_VALID (false, void, EF (EF2 ()))
+-CHECK_VALID (true,  EF,   EF (RE ()))
+-CHECK_VALID (true,  EF,   EF (EF ()))
++CHECK_VALID (false, void,     EnumFlag (1))
++CHECK_VALID (false, void,     EnumFlag (1u))
++CHECK_VALID (false, void,     EnumFlag (RawEnum2 ()))
++CHECK_VALID (false, void,     EnumFlag (EnumFlag2 ()))
++CHECK_VALID (true,  EnumFlag, EnumFlag (RawEnum ()))
++CHECK_VALID (true,  EnumFlag, EnumFlag (EnumFlag ()))
+ 
+ /* Test operators.  */
+ 
+ /* operator OP (raw_enum, int) */
+ 
+-CHECK_VALID (false, void, RE () | 1)
+-CHECK_VALID (false, void, RE () & 1)
+-CHECK_VALID (false, void, RE () ^ 1)
++CHECK_VALID (false, void, RawEnum () | 1)
++CHECK_VALID (false, void, RawEnum () & 1)
++CHECK_VALID (false, void, RawEnum () ^ 1)
+ 
+ /* operator OP (int, raw_enum) */
+ 
+-CHECK_VALID (false, void, 1 | RE ())
+-CHECK_VALID (false, void, 1 & RE ())
+-CHECK_VALID (false, void, 1 ^ RE ())
++CHECK_VALID (false, void, 1 | RawEnum ())
++CHECK_VALID (false, void, 1 & RawEnum ())
++CHECK_VALID (false, void, 1 ^ RawEnum ())
+ 
+ /* operator OP (enum_flags, int) */
+ 
+-CHECK_VALID (false, void, EF () | 1)
+-CHECK_VALID (false, void, EF () & 1)
+-CHECK_VALID (false, void, EF () ^ 1)
++CHECK_VALID (false, void, EnumFlag () | 1)
++CHECK_VALID (false, void, EnumFlag () & 1)
++CHECK_VALID (false, void, EnumFlag () ^ 1)
+ 
+ /* operator OP (int, enum_flags) */
+ 
+-CHECK_VALID (false, void, 1 | EF ())
+-CHECK_VALID (false, void, 1 & EF ())
+-CHECK_VALID (false, void, 1 ^ EF ())
++CHECK_VALID (false, void, 1 | EnumFlag ())
++CHECK_VALID (false, void, 1 & EnumFlag ())
++CHECK_VALID (false, void, 1 ^ EnumFlag ())
+ 
+ /* operator OP (raw_enum, raw_enum) */
+ 
+-CHECK_VALID (false, void, RE () | RE2 ())
+-CHECK_VALID (false, void, RE () & RE2 ())
+-CHECK_VALID (false, void, RE () ^ RE2 ())
+-CHECK_VALID (true,  RE,   RE () | RE ())
+-CHECK_VALID (true,  RE,   RE () & RE ())
+-CHECK_VALID (true,  RE,   RE () ^ RE ())
++CHECK_VALID (false, void,    RawEnum () | RawEnum2 ())
++CHECK_VALID (false, void,    RawEnum () & RawEnum2 ())
++CHECK_VALID (false, void,    RawEnum () ^ RawEnum2 ())
++CHECK_VALID (true,  RawEnum, RawEnum () | RawEnum ())
++CHECK_VALID (true,  RawEnum, RawEnum () & RawEnum ())
++CHECK_VALID (true,  RawEnum, RawEnum () ^ RawEnum ())
+ 
+ /* operator OP (enum_flags, raw_enum) */
+ 
+-CHECK_VALID (false, void, EF () | RE2 ())
+-CHECK_VALID (false, void, EF () & RE2 ())
+-CHECK_VALID (false, void, EF () ^ RE2 ())
+-CHECK_VALID (true,  EF,   EF () | RE ())
+-CHECK_VALID (true,  EF,   EF () & RE ())
+-CHECK_VALID (true,  EF,   EF () ^ RE ())
++CHECK_VALID (false, void,     EnumFlag () | RawEnum2 ())
++CHECK_VALID (false, void,     EnumFlag () & RawEnum2 ())
++CHECK_VALID (false, void,     EnumFlag () ^ RawEnum2 ())
++CHECK_VALID (true,  EnumFlag, EnumFlag () | RawEnum ())
++CHECK_VALID (true,  EnumFlag, EnumFlag () & RawEnum ())
++CHECK_VALID (true,  EnumFlag, EnumFlag () ^ RawEnum ())
+ 
+ /* operator OP= (raw_enum, raw_enum), rvalue ref on the lhs. */
+ 
+-CHECK_VALID (false, void, RE () |= RE2 ())
+-CHECK_VALID (false, void, RE () &= RE2 ())
+-CHECK_VALID (false, void, RE () ^= RE2 ())
+-CHECK_VALID (false, void, RE () |= RE ())
+-CHECK_VALID (false, void, RE () &= RE ())
+-CHECK_VALID (false, void, RE () ^= RE ())
++CHECK_VALID (false, void, RawEnum () |= RawEnum2 ())
++CHECK_VALID (false, void, RawEnum () &= RawEnum2 ())
++CHECK_VALID (false, void, RawEnum () ^= RawEnum2 ())
++CHECK_VALID (false, void, RawEnum () |= RawEnum ())
++CHECK_VALID (false, void, RawEnum () &= RawEnum ())
++CHECK_VALID (false, void, RawEnum () ^= RawEnum ())
+ 
+ /* operator OP= (raw_enum, raw_enum), lvalue ref on the lhs. */
+ 
+-CHECK_VALID (false, void, re |= RE2 ())
+-CHECK_VALID (false, void, re &= RE2 ())
+-CHECK_VALID (false, void, re ^= RE2 ())
+-CHECK_VALID (true,  RE&,  re |= RE ())
+-CHECK_VALID (true,  RE&,  re &= RE ())
+-CHECK_VALID (true,  RE&,  re ^= RE ())
++CHECK_VALID (false, void,     re |= RawEnum2 ())
++CHECK_VALID (false, void,     re &= RawEnum2 ())
++CHECK_VALID (false, void,     re ^= RawEnum2 ())
++CHECK_VALID (true,  RawEnum&, re |= RawEnum ())
++CHECK_VALID (true,  RawEnum&, re &= RawEnum ())
++CHECK_VALID (true,  RawEnum&, re ^= RawEnum ())
+ 
+ /* operator OP= (enum_flags, raw_enum), rvalue ref on the lhs.  */
+ 
+-CHECK_VALID (false, void, EF () |= RE2 ())
+-CHECK_VALID (false, void, EF () &= RE2 ())
+-CHECK_VALID (false, void, EF () ^= RE2 ())
+-CHECK_VALID (false, void, EF () |= RE ())
+-CHECK_VALID (false, void, EF () &= RE ())
+-CHECK_VALID (false, void, EF () ^= RE ())
++CHECK_VALID (false, void, EnumFlag () |= RawEnum2 ())
++CHECK_VALID (false, void, EnumFlag () &= RawEnum2 ())
++CHECK_VALID (false, void, EnumFlag () ^= RawEnum2 ())
++CHECK_VALID (false, void, EnumFlag () |= RawEnum ())
++CHECK_VALID (false, void, EnumFlag () &= RawEnum ())
++CHECK_VALID (false, void, EnumFlag () ^= RawEnum ())
+ 
+ /* operator OP= (enum_flags, raw_enum), lvalue ref on the lhs.  */
+ 
+-CHECK_VALID (false, void, ef |= RE2 ())
+-CHECK_VALID (false, void, ef &= RE2 ())
+-CHECK_VALID (false, void, ef ^= RE2 ())
+-CHECK_VALID (true,  EF&,  ef |= EF ())
+-CHECK_VALID (true,  EF&,  ef &= EF ())
+-CHECK_VALID (true,  EF&,  ef ^= EF ())
++CHECK_VALID (false, void,      ef |= RawEnum2 ())
++CHECK_VALID (false, void,      ef &= RawEnum2 ())
++CHECK_VALID (false, void,      ef ^= RawEnum2 ())
++CHECK_VALID (true,  EnumFlag&, ef |= EnumFlag ())
++CHECK_VALID (true,  EnumFlag&, ef &= EnumFlag ())
++CHECK_VALID (true,  EnumFlag&, ef ^= EnumFlag ())
+ 
+ /* operator OP= (enum_flags, enum_flags), rvalue ref on the lhs.  */
+ 
+-CHECK_VALID (false, void, EF () |= EF2 ())
+-CHECK_VALID (false, void, EF () &= EF2 ())
+-CHECK_VALID (false, void, EF () ^= EF2 ())
+-CHECK_VALID (false, void, EF () |= EF ())
+-CHECK_VALID (false, void, EF () &= EF ())
+-CHECK_VALID (false, void, EF () ^= EF ())
++CHECK_VALID (false, void, EnumFlag () |= EnumFlag2 ())
++CHECK_VALID (false, void, EnumFlag () &= EnumFlag2 ())
++CHECK_VALID (false, void, EnumFlag () ^= EnumFlag2 ())
++CHECK_VALID (false, void, EnumFlag () |= EnumFlag ())
++CHECK_VALID (false, void, EnumFlag () &= EnumFlag ())
++CHECK_VALID (false, void, EnumFlag () ^= EnumFlag ())
+ 
+ /* operator OP= (enum_flags, enum_flags), lvalue ref on the lhs.  */
+ 
+-CHECK_VALID (false, void, ef |= EF2 ())
+-CHECK_VALID (false, void, ef &= EF2 ())
+-CHECK_VALID (false, void, ef ^= EF2 ())
+-CHECK_VALID (true,  EF&,  ef |= EF ())
+-CHECK_VALID (true,  EF&,  ef &= EF ())
+-CHECK_VALID (true,  EF&,  ef ^= EF ())
++CHECK_VALID (false, void, ef |= EnumFlag2 ())
++CHECK_VALID (false, void, ef &= EnumFlag2 ())
++CHECK_VALID (false, void, ef ^= EnumFlag2 ())
++CHECK_VALID (true,  EnumFlag&,  ef |= EnumFlag ())
++CHECK_VALID (true,  EnumFlag&,  ef &= EnumFlag ())
++CHECK_VALID (true,  EnumFlag&,  ef ^= EnumFlag ())
+ 
+ /* operator~ (raw_enum) */
+ 
+-CHECK_VALID (false,  void,   ~RE ())
+-CHECK_VALID (true,   URE,    ~URE ())
++CHECK_VALID (false, void,            ~RawEnum ())
++CHECK_VALID (true,  UnsignedRawEnum, ~UnsignedRawEnum ())
+ 
+ /* operator~ (enum_flags) */
+ 
+-CHECK_VALID (false,  void,   ~EF ())
+-CHECK_VALID (true,   UEF,    ~UEF ())
++CHECK_VALID (false, void,             ~EnumFlag ())
++CHECK_VALID (true,  UnsignedEnumFlag, ~UnsignedEnumFlag ())
+ 
+ /* Check ternary operator.  This exercises implicit conversions.  */
+ 
+-CHECK_VALID (true,  EF,   true ? EF () : RE ())
+-CHECK_VALID (true,  EF,   true ? RE () : EF ())
++CHECK_VALID (true, EnumFlag, true ? EnumFlag () : RawEnum ())
++CHECK_VALID (true, EnumFlag, true ? RawEnum ()  : EnumFlag ())
+ 
+ /* These are valid, but it's not a big deal since you won't be able to
+    assign the resulting integer to an enum or an enum_flags without a
+@@ -246,19 +248,19 @@ CHECK_VALID (true,  EF,   true ? RE () : EF ())
+    They've been confirmed to compile/pass with gcc 5.3, gcc 7.1 and
+    clang 3.7.  */
+ 
+-CHECK_VALID (true,  int,  true ? EF () : EF2 ())
+-CHECK_VALID (true,  int,  true ? EF2 () : EF ())
+-CHECK_VALID (true,  int,  true ? EF () : RE2 ())
+-CHECK_VALID (true,  int,  true ? RE2 () : EF ())
++CHECK_VALID (true, int, true ? EnumFlag ()  : EnumFlag2 ())
++CHECK_VALID (true, int, true ? EnumFlag2 () : EnumFlag ())
++CHECK_VALID (true, int, true ? EnumFlag ()  : RawEnum2 ())
++CHECK_VALID (true, int, true ? RawEnum2 ()  : EnumFlag ())
+ 
+ /* Same, but with an unsigned enum.  */
+ 
+ using uns = unsigned int;
+ 
+-CHECK_VALID (true,  uns,  true ? EF () : UEF ())
+-CHECK_VALID (true,  uns,  true ? UEF () : EF ())
+-CHECK_VALID (true,  uns,  true ? EF () : URE ())
+-CHECK_VALID (true,  uns,  true ? URE () : EF ())
++CHECK_VALID (true, uns, true ? EnumFlag ()         : UnsignedEnumFlag ())
++CHECK_VALID (true, uns, true ? UnsignedEnumFlag () : EnumFlag ())
++CHECK_VALID (true, uns, true ? EnumFlag ()         : UnsignedRawEnum ())
++CHECK_VALID (true, uns, true ? UnsignedRawEnum ()  : EnumFlag ())
+ 
+ /* Unfortunately this can't work due to the way C++ computes the
+    return type of the ternary conditional operator.  int isn't
+@@ -270,39 +272,39 @@ CHECK_VALID (true,  uns,  true ? URE () : EF ())
+      error: operands to ?: have different types ‘enum_flags<RE>’ and ‘int’
+    Confirmed to work with gcc 4.9, 5.3 and clang 3.7.
+ */
+-CHECK_VALID (false, void, true ? EF () : 0)
+-CHECK_VALID (false, void, true ? 0 : EF ())
++CHECK_VALID (false, void, true ? EnumFlag () : 0)
++CHECK_VALID (false, void, true ? 0           : EnumFlag ())
+ 
+ /* Check that the ++/--/<</>>/<<=/>>= operators are deleted.  */
+ 
+-CHECK_VALID (false, void, RE ()++)
+-CHECK_VALID (false, void, ++RE ())
+-CHECK_VALID (false, void, --RE ())
+-CHECK_VALID (false, void, RE ()--)
++CHECK_VALID (false, void, RawEnum ()++)
++CHECK_VALID (false, void, ++RawEnum ())
++CHECK_VALID (false, void, --RawEnum ())
++CHECK_VALID (false, void, RawEnum ()--)
+ 
+-CHECK_VALID (false, void, RE () << 1)
+-CHECK_VALID (false, void, RE () >> 1)
+-CHECK_VALID (false, void, EF () << 1)
+-CHECK_VALID (false, void, EF () >> 1)
++CHECK_VALID (false, void, RawEnum () << 1)
++CHECK_VALID (false, void, RawEnum () >> 1)
++CHECK_VALID (false, void, EnumFlag () << 1)
++CHECK_VALID (false, void, EnumFlag () >> 1)
+ 
+-CHECK_VALID (false, void, RE () <<= 1)
+-CHECK_VALID (false, void, RE () >>= 1)
+-CHECK_VALID (false, void, EF () <<= 1)
+-CHECK_VALID (false, void, EF () >>= 1)
++CHECK_VALID (false, void, RawEnum () <<= 1)
++CHECK_VALID (false, void, RawEnum () >>= 1)
++CHECK_VALID (false, void, EnumFlag () <<= 1)
++CHECK_VALID (false, void, EnumFlag () >>= 1)
+ 
+ /* Test comparison operators.  */
+ 
+-CHECK_VALID (false, void, EF () == EF2 ())
+-CHECK_VALID (false, void, EF () == RE2 ())
+-CHECK_VALID (false, void, RE () == EF2 ())
++CHECK_VALID (false, void, EnumFlag () == EnumFlag2 ())
++CHECK_VALID (false, void, EnumFlag () == RawEnum2 ())
++CHECK_VALID (false, void, RawEnum ()  == EnumFlag2 ())
+ 
+-CHECK_VALID (true,  bool, EF (RE (1)) == EF (RE (1)))
+-CHECK_VALID (true,  bool, EF (RE (1)) == RE (1))
+-CHECK_VALID (true,  bool, RE (1)      == EF (RE (1)))
++CHECK_VALID (true,  bool, EnumFlag (RawEnum (1)) == EnumFlag (RawEnum (1)))
++CHECK_VALID (true,  bool, EnumFlag (RawEnum (1)) == RawEnum (1))
++CHECK_VALID (true,  bool, RawEnum (1)            == EnumFlag (RawEnum (1)))
+ 
+-CHECK_VALID (false, void, EF () != EF2 ())
+-CHECK_VALID (false, void, EF () != RE2 ())
+-CHECK_VALID (false, void, RE () != EF2 ())
++CHECK_VALID (false, void, EnumFlag () != EnumFlag2 ())
++CHECK_VALID (false, void, EnumFlag () != RawEnum2 ())
++CHECK_VALID (false, void, RawEnum ()  != EnumFlag2 ())
+ 
+ /* Disable -Wenum-compare due to:
+ 
+@@ -323,23 +325,23 @@ CHECK_VALID (false, void, RE () != EF2 ())
+ # pragma GCC diagnostic push
+ # pragma GCC diagnostic ignored "-Wenum-compare"
+ #endif
+-CHECK_VALID (true,  bool, RE () == RE2 ())
+-CHECK_VALID (true,  bool, RE () != RE2 ())
++CHECK_VALID (true,  bool, RawEnum () == RawEnum2 ())
++CHECK_VALID (true,  bool, RawEnum () != RawEnum2 ())
+ #if defined __GNUC__
+ # pragma GCC diagnostic pop
+ #endif
+ 
+-CHECK_VALID (true,  bool, EF (RE (1)) != EF (RE (2)))
+-CHECK_VALID (true,  bool, EF (RE (1)) != RE (2))
+-CHECK_VALID (true,  bool, RE (1)      != EF (RE (2)))
++CHECK_VALID (true,  bool, EnumFlag (RawEnum (1)) != EnumFlag (RawEnum (2)))
++CHECK_VALID (true,  bool, EnumFlag (RawEnum (1)) != RawEnum (2))
++CHECK_VALID (true,  bool, RawEnum (1)            != EnumFlag (RawEnum (2)))
+ 
+-CHECK_VALID (true,  bool, EF () == 0)
++CHECK_VALID (true,  bool, EnumFlag () == 0)
+ 
+ /* Check we didn't disable/delete comparison between non-flags enums
+    and unrelated types by mistake.  */
+-CHECK_VALID (true,  bool, NF (1) == NF (1))
+-CHECK_VALID (true,  bool, NF (1) == int (1))
+-CHECK_VALID (true,  bool, NF (1) == char (1))
++CHECK_VALID (true,  bool, NonFlagsEnum (1) == NonFlagsEnum (1))
++CHECK_VALID (true,  bool, NonFlagsEnum (1) == int (1))
++CHECK_VALID (true,  bool, NonFlagsEnum (1) == char (1))
+ 
+ /* -------------------------------------------------------------------- */
+ 

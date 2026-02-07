@@ -1,0 +1,6 @@
+bin/procinfo
+bin/showprocattr
+bin/topten
+%%PERL5_MAN3%%/BSD::Process.3.gz
+%%SITE_ARCH%%/BSD/Process.pm
+%%SITE_ARCH%%/auto/BSD/Process/Process.so

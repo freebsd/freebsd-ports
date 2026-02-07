@@ -1,0 +1,14 @@
+--- im-client/Makefile.orig	2011-12-17 06:16:17 UTC
++++ im-client/Makefile
+@@ -20,10 +20,9 @@ OBJS = gcin-im-client.o im-addr.o gcin-conf.o util.o g
+ 	$(CC) -x c -c $(CFLAGS) $<
+ 
+ $(SOFILEVER):   $(OBJS)
+-	$(CC) $(SO_FLAGS) -Wl,-soname,libgcin-im-client.so.1 $(OBJS) -lX11 -o $@ -L/usr/X11R6/lib
++	$(CC) $(SO_FLAGS) -Wl,-soname,libgcin-im-client.so.1 $(OBJS) -lX11 -o $@ -L/usr/local/lib
+ 	ln -sf $(SOFILEVER) $(SOFILE)
+ 	ln -sf $(SOFILEVER) $(SOFILE).1
+-	$(MAKE) -C ../gtk-im
+ 
+ LOCALLIB=/usr/local/$(LIB)
+ 

@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/XS/Object/Magic.pm
+%%SITE_ARCH%%/XS/Object/Magic/Install/Files.pm
+%%SITE_ARCH%%/XS/Object/Magic/Install/typemap
+%%SITE_ARCH%%/XS/Object/Magic/Install/xs_object_magic.h
+%%SITE_ARCH%%/auto/XS/Object/Magic/Magic.so
+%%PERL5_MAN3%%/XS::Object::Magic.3.gz

@@ -1,0 +1,4 @@
+bin/fireeagle
+%%PERL5_MAN3%%/Net::FireEagle.3.gz
+%%PERL5_MAN1%%/fireeagle.1.gz
+%%SITE_PERL%%/Net/FireEagle.pm

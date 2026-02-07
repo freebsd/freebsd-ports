@@ -1,0 +1,15 @@
+--- examples/calculator/Makefile.in.orig	Sat Oct 26 09:45:35 2002
++++ examples/calculator/Makefile.in	Sat Dec 21 14:10:40 2002
+@@ -17,10 +17,10 @@
+ 	$(CXX) -c -o $@ $<
+ 
+ sobj/mathfunc.so : $(SLOBJECTS)
+-	libtool $(CXX) -shared $^ -lxparam -o $@
++	libtool --mode=link $(CXX) -shared $^ -lxparam -o $@
+ 
+ $(SLOBJECTS) : obj/%.lo : src/%.cpp include/mathfunc.h include/functions.h
+-	libtool $(CXX) -c -o $@ $<
++	libtool --mode=compile $(CXX) -c -o $@ $<
+ 
+ clean :
+ 	-rm -f $(TARGETS) $(OBJECTS) $(SOBJECTS) $(SLOBJECTS)

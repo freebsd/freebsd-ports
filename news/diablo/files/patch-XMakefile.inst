@@ -1,0 +1,44 @@
+--- XMakefile.inst.orig	2002-06-07 23:14:13 UTC
++++ XMakefile.inst
+@@ -29,23 +29,13 @@
+ 
+ $(DDIRS) : $(DDIRS)
+     test -d %(left) || mkdir %(left)
+-    chown news %(left)
+-    chgrp news %(left)
+-    chmod 755 %(left)
+ 
+ $(DMDIRS) : $(DMDIRS)
+     test -d %(left) || mkdir %(left)
+-    chmod 755 %(left)
+-    chown news %(left)
+-    chgrp news %(left)
+-    @echo "%(left): WARNING!!!! directory may require its own mount point"
+     @sleep 2
+ 
+ $(OTDIRS) : $(OTDIRS)
+     test -d %(left) || mkdir %(left)
+-    chown news %(left)
+-    chgrp news %(left)
+-    chmod 755 %(left)
+ 
+ /*
+  * note: modes 444 so user is reminded to break the link
+@@ -54,15 +44,11 @@
+ 
+ $(DFILES) : $(IFILES)
+     cp %(right) %(left).new
+-    chmod 444 %(left).new
+-    chown news %(left).new
+-    chgrp news %(left).new
+-    if [ -x %(right) ]; then chmod 755 %(left).new; else chmod 444 %(left).new; fi
+     mv -f %(left).new %(left)
+ 
+ $(DTFILES) : $(TFILES)
+-    if [ ! -f %(left) ]; then ln -s $(IDIR)/%(right) %(left); fi
++    if [ ! -f %(left) ]; then ln -s %%PREFIX%%/%(right) %(left); fi
+ 
+ $(DMAN) : $(IMAN)
+-    $(INSTALL) -c -g news -o news -m 644 %(right) %(left)
++    $(INSTALL) -c %(right) %(left)
+ 

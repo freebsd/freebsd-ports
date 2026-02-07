@@ -1,0 +1,13 @@
+bin/namequery.pl
+bin/nodescan.pl
+bin/nodestat.pl
+%%PERL5_MAN3%%/Net::NBName.3.gz
+%%PERL5_MAN3%%/Net::NBName::NameQuery.3.gz
+%%PERL5_MAN3%%/Net::NBName::NameQuery::RR.3.gz
+%%PERL5_MAN3%%/Net::NBName::NodeStatus.3.gz
+%%PERL5_MAN3%%/Net::NBName::NodeStatus::RR.3.gz
+%%SITE_PERL%%/Net/NBName.pm
+%%SITE_PERL%%/Net/NBName/NameQuery.pm
+%%SITE_PERL%%/Net/NBName/NameQuery/RR.pm
+%%SITE_PERL%%/Net/NBName/NodeStatus.pm
+%%SITE_PERL%%/Net/NBName/NodeStatus/RR.pm

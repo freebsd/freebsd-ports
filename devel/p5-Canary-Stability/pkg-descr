@@ -1,0 +1,4 @@
+This is a stub to satisy dependencies for a number of modules.
+The original Canary::Stability contains system checks that produce
+warnings that must be ignored (and which would be harmful if
+acted upon). This stub is a no-op.

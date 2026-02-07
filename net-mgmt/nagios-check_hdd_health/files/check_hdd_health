@@ -1,0 +1,178 @@
+#!/bin/sh
+#
+PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin
+
+ST_OK=0
+ST_WR=1
+ST_CR=2
+ST_UN=3
+
+smartctl=$(which smartctl)
+
+## Smartmontools
+SMT=Smartmontools
+
+# Plugin name
+PROGNAME=`basename $0`
+            
+# Version
+VERSION="Version 1.1"
+        
+# Author
+AUTHOR="Marian Jamrich"
+
+TMPFILE=/tmp/smart.nagios.$$
+
+# Clean up when done or when aborting
+trap "rm -f ${TMPFILE}" 0 1 2 3 15
+
+print_version() {
+    echo "Nagios-$PROGNAME ($VERSION)"
+}
+
+mini_help() {
+        echo "Usage $0 --device $device --without [src rsc rec cps ou]"
+}
+
+print_help() {
+    clear;
+    echo "**************************************************************************************"
+    echo "*  $PROGNAME $VERSION $1""($AUTHOR) <jamrich.majo@gmail.com> (2011)   *" 
+    echo "**************************************************************************************"
+    echo "This is Nagios plugin to check HDD health from S.M.A.R.T. by Smartmontools."
+    echo '
+The S.M.A.R.T. attributes are specific properties (parameters) of various parts of a disk. 
+S.M.A.R.T. uses attributes to monitor the disk condition and to analyze its reliability.
+
+Script check HDD from S.M.A.R.T with the following properties (if your HDD supports it):
+
+** Spin Retry Count (src) **
+Count of retry of spin start attempts. This attribute stores a total count of the spin start attempts to reach the fully operational speed (under the 
+condition that the first attempt was unsuccessful). A decrease of this attribute value is a sign of problems in the hard disk mechanical subsystem.
+
+** Reallocated Sector Count (rsc) **
+Count of reallocated sectors. When the hard drive finds a read/write/verification error, it marks this sector as "reallocated" and transfers data to a 
+special reserved area (spare area). This process is also known as remapping and "reallocated" sectors are called remaps. This is why, on a modern hard 
+disks, you can not see "bad blocks" while testing the surface - all bad blocks are hidden in reallocated sectors. 
+
+** Reallocated Event Count (rec) **
+Count of remap operations (transferring data from a bad sector to a special reserved disk area - spare area). The raw value of this attribute shows the 
+total number of attempts to transfer data from reallocated sectors to a spare area. Unsuccessful attempts are counted as well as successful.
+
+** Current Pending Sector (cps) **
+Current count of unstable sectors (waiting for remapping). The raw value of this attribute indicates the total number of sectors waiting for remapping.
+Later, when some of these sectors are read successfully, the value is decreased. If errors still occur when reading some sector, the hard drive will try 
+to restore the data, transfer it to the reserved disk area (spare area) and mark this sector as remapped. If this attribute value remains at zero, it 
+indicates that the quality of the corresponding surface area is low.
+
+** Offline Uncorrectable (ou) **
+Quantity of uncorrectable errors. The raw value of this attribute indicates the total number of uncorrectable errors when reading/writing a sector. 
+A rise in the value of this attribute indicates that there are evident defects of the disk surface and/or there are problems in the hard disk drive 
+mechanical subsystem.
+
+** Total health test (pass) **
+This is test provided by Smartmontools. If total disk state is "health", Smartmontools marked as "PASSED".
+        '
+    echo "Nagios states:"
+    echo
+    echo "OK - if all values are \"0\"."
+    echo "Warning - if one or both values \"Spin Retry Count\" and \"Reallocated Event Count\" is between the values 1 to 9."
+    echo "Critical - if some value is greater than \"0\" except \"Spin Retry Count (>=10)\" and \"Reallocated Event Count (>=10)\"."
+    echo -e "\n---------------------------------------------------------------------"
+    echo "Usage:"
+    echo "$0 --device ad0 [ --without [src rsc rec cps ou]]"
+    echo "---------------------------------------------------------------------"
+    exit $ST_UN
+}
+
+case "$1" in
+        --help|-h|--usage|-u)
+            print_help                                              
+            exit $ST_UN
+            ;;
+        -d | --device)
+            device=$2
+            ;;
+        -v)
+            print_version
+            exit $ST_UN
+            ;;
+        *)
+	    echo "Unknown argument: $1"
+            echo "For more information please try -h or --help!"
+            exit $ST_UN
+            ;;
+esac
+shift
+
+test -z $device && echo -e "\nYou forgot to define device! Please try \"-h or --help\" to help." && exit $ST_UN
+test `uname` != "FreeBSD" && echo "This plugin is only for FreeBSD." && exit $ST_UN
+
+format_device=`echo $device | grep -w 'dev'`
+if [ -z $format_device ]; then
+        device=/dev/`echo $device`
+fi
+
+if [ ! -e $device ]; then
+	echo "Unknown device \"$device\"!"
+	exit $ST_UN
+fi
+
+if [ -z $smartctl ]; then
+	echo -e "\nYou don't have installed $SMT. Please install it from 'http://smartmontools.sourceforge.net' or pkg_add -r \"smartmontools\"..."
+	exit $ST_UN
+fi
+
+$smartctl -a $device > ${TMPFILE}
+SMART_SUPPORT=`awk '/SMART support is/ {print $4}' ${TMPFILE} | tail -n 1`
+
+if [ "${SMART_SUPPORT}" = "Unavailable" ]; then
+	echo -e "\nS.M.A.R.T support is unavailable for $device !!! You should enable it \"smartctl -s on $device\"."
+	exit $ST_UN
+elif [ "${SMART_SUPPORT}" != "Enabled" ]; then
+	echo -e "\nMaybe you don't have enabled S.M.A.R.T support in $SMT! Please type \"smartctl -s on $device\" that you have it turned on, or device does not support S.M.A.R.T function."
+	exit $ST_UN
+fi
+
+## start S.M.A.R.T test and set variables
+src=`awk '/Spin_Retry_Count/ {print $10}' ${TMPFILE} `
+rsc=`awk '/Reallocated_Sector_Ct/ {print $10}' ${TMPFILE} `
+rec=`awk '/Reallocated_Event_Count/ {print $10}' ${TMPFILE} `
+cps=`awk '/Current_Pending_Sector/ {print $10}' ${TMPFILE} `
+ou=`awk '/Offline_Uncorrectable/ {print $10}' ${TMPFILE} `
+pass=`awk -F\: '/test result/ { if ( $2 == " PASSED")  print "PASSED"; else print "FAILED" }' ${TMPFILE} `
+
+## if one or more S.M.A.R.T function is not supported by your HDD, then you define --without variable and then value is set automatically to "0"
+args=`getopt w:without: $*`
+for arg; do
+        case "$arg" in
+                src) src=0;;
+                rsc) rsc=0;;
+                rec) rec=0;;
+                cps) cps=0;;
+                ou) ou=0;;
+        esac
+done
+
+# test if your HDD support all this parameters:
+[ -z "$src" ] && echo -e "***********\n** ERROR **\n***********\n${device} don't support "Spin Retry Count". Please try \"--without src\"." && mini_help && exit $ST_UN
+[ -z "$rsc" ] && echo -e "***********\n** ERROR **\n***********\n${device} don't support "Reallocated Sector Ct". Please try \"--without rsc\"." && mini_help && exit $ST_UN
+[ -z "$rec" ] && echo -e "***********\n** ERROR **\n***********\n${device} don't support "Reallocated Event Count". Please try --without rec." && mini_help && exit $ST_UN
+[ -z "$cps" ] && echo -e "***********\n** ERROR **\n***********\n${device} don't support "Current Pending Sector". Please try --without cps." && mini_help && exit $ST_UN
+[ -z "$ou"  ] && echo -e "***********\n** ERROR **\n***********\n${device} don't support "Offline Uncorrectable". Please try \"--without ou\"." && mini_help && exit $ST_UN
+
+perfdata="smart=src=$src; rsc=$rsc; rec=$rec; cps=$cps; ou=$ou; pass=$pass"
+
+############################################################
+##### finally run test, print result and set exit code #####
+############################################################
+if [ $src -eq 0 ] && [ $rsc -eq 0 ] && [ $rec -eq 0 ] && [ $cps -eq 0 ] && [ $ou -eq 0 ] && [ "$pass" = "PASSED" ]; then
+        echo "OK - HDD S.M.A.R.T health: src=$src, rsc=$rsc, rec=$rec, cps=$cps, ou=$ou, HEALTH_STATUS=$pass for $device. |${perfdata}"
+        exit $ST_OK
+elif [ $src -gt 1 -a $src -lt 10 ] && [ $rsc -gt 0 ] && [ $rec -gt 1 -a $rec -lt 10 ] && [ $cps -eq 0 ] && [ $ou -eq 0 ] && [ "$pass" = "PASSED" ]; then
+        echo "WARNING - HDD S.M.A.R.T health: src=$src, rsc=$rsc, rec=$rec, cps=$cps, ou=$ou, HEALTH_STATUS=$pass for $device. |${perfdata}"
+        exit $ST_WR
+else
+        echo "CRITICAL - HDD S.M.A.R.T health: src=$src, rsc=$rsc, rec=$rec, cps=$cps, ou=$ou, HEALT_STATUS=$pass for $device. |${perfdata}"
+        exit $ST_CR
+fi

@@ -1,0 +1,8 @@
+The automount(8) is devd(8) based automounter for FreeBSD.
+
+It supports most popular filesystems:
+NTFS/FAT/exFAT/EXT2/EXT3/EXT4/UFS/HFS/XFS/ISO9660
+
+There are several ways to automount devices on FreeBSD.
+
+Make sure you are using only one solution at any given time.

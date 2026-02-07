@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Test/Mock/One.pm
+%%SITE_PERL%%/Test/Mock/Two.pm
+%%PERL5_MAN3%%/Test::Mock::One.3.gz
+%%PERL5_MAN3%%/Test::Mock::Two.3.gz

@@ -1,0 +1,99 @@
+# IPv4
+regexp=\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,33})(?:\/(\d+))?
+colors=unchanged,"\033[38;5;220m",bright_magenta
+======
+# IPv4 Loopback
+regexp=\s+((?:127\.\d{1,3}\.\d{1,3}\.\d{1,33})|::1)
+colors=unchanged,"\033[38;5;245m"
+======
+# IP v6
+regexp=(\w+:\w+:\w+:\w+:\w+:\w+:\w+:\w+)
+colors=unchanged,"\033[38;5;214m"
+======
+# IP v6
+regexp=(\w+:\w+:\w+:\w+)::\/(\d+)
+colors=unchanged,"\033[38;5;214m",bright_magenta
+======
+# IP v6
+regexp=(\w+:\w+:\w+::\d+)
+colors=unchanged,"\033[38;5;214m"
+======
+# IP v6 link local
+regexp=(\w+::\w+:\w+:\w+:\w+)
+colors=unchanged,"\033[38;5;245m",red
+======
+# IPv6 Loopback
+regexp=(fe80::1%lo0)
+colors=unchanged,"\033[38;5;245m"
+======
+# Drop/Block, Pass
+regexp=(?:(block|drop)|(pass))
+colors=default,bright_green,bright_red
+======
+# Drop with Any
+regexp=(?:block|drop).*(any)
+colors=unchanged,bright_green
+======
+# Pass with Any
+regexp=(?:pass).*(any)
+colors=unchanged,bright_red
+======
+regexp=\d(:+|\.)\d
+colors=unchanged,"\033[38;5;242m"
+======
+# Protocol
+regexp=\s(?:(tcp)|(udp)|((?:ipv6-)?icmp))\s
+colors=default,bright_magenta,bright_cyan,green
+======
+# Ports
+regexp=(?:port\s+=\s+|:)(\d+)\s
+colors=unchanged,blue
+======
+# IPv6 Ports
+regexp=\[(\d+)\]
+colors=unchanged,blue
+=======
+# status
+regexp=FIN_WAIT.*
+colours=red
+=======
+# status
+regexp=SYN.*?
+colours=bold red
+=======
+# status
+regexp=LISTEN(ING)?
+colours=bold blue
+=======
+# status
+regexp=TIME_WAIT
+colours=bold red
+=======
+# status
+regexp=CLOS(E(_WAIT)?|ING)
+colours=red
+skip=yes
+=======
+# status
+regexp=LAST_ACK
+colours=red
+=======
+# status
+regexp=ESTAB.*?\b|CONNECTED
+colours=bold yellow
+=======
+# status
+regexp=FREE
+colours=bold green
+=======
+# status
+regexp=DISCONNECTING
+colours=red
+=======
+# status
+regexp=CONNECTING
+colours=green
+=======
+# status
+regexp=UNKNOWN
+colours=blink bold red

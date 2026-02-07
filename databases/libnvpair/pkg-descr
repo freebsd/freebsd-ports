@@ -1,0 +1,8 @@
+libnvpair is a name-value pair library originating from Solaris
+
+The nvpair library was released in OpenSolaris and has been extended
+by the Illumos project.  It exports a set of functions used for managing
+name-value pairs.  This is a base library for Solaris and its descendents.
+However, the kernel-specific code has been removed thus libnvpair is
+strictly meant for the userland.  The XDR functionality has been masked
+for now due to RPC differences between *BSD and Illumos.

@@ -1,0 +1,5 @@
+Convert valid IPv6 addresses to ip6.int PTR values.  Convert valid
+IPv4 addresses to in-addr.arpa PTR values.  Anything not valid is
+simply printed as is.  Handles :: notation and embedded IPv4
+addresses.  If the address is followed by /n, the PTR is truncated
+to n bits.

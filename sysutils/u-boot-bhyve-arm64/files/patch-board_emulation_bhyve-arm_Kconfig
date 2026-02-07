@@ -1,0 +1,9 @@
+--- board/emulation/bhyve-arm/Kconfig.orig	2023-11-01 18:14:48 UTC
++++ board/emulation/bhyve-arm/Kconfig
+@@ -0,0 +1,6 @@
++if ARCH_BHYVE
++
++config TEXT_BASE
++	default 0x100000000
++
++endif

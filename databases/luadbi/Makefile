@@ -1,0 +1,70 @@
+PORTNAME=	luadbi
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.4
+PORTREVISION=	1
+CATEGORIES=	databases
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
+
+MAINTAINER=	olexander.v.melnyk@gmail.com
+COMMENT=	Multi-backend SQL database library for Lua
+WWW=		https://github.com/mwild1/luadbi
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake localbase:ldflags lua:module shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	mwild1
+SHEBANG_FILES=	DBI.lua
+MAKE_ENV=	COMMON_CFLAGS="" \
+		COMMON_LDFLAGS="" \
+		INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		LUA_CDIR="${LUA_MODLIBDIR}" \
+		LUA_INC="-I${LUA_INCDIR}" \
+		LUA_LDIR="${LUA_MODSHAREDIR}" \
+		LUA_V="${LUA_VER}"
+
+MAKE_JOBS_UNSAFE=	yes
+
+CFLAGS+=	-g -pedantic -Wall -Qunused-arguments -shared -fPIC -DPIC \
+		-std=c99
+LDFLAGS+=	-shared
+
+PLIST_FILES=	${LUA_MODSHAREDIR}/DBI.lua
+
+OPTIONS_DEFAULT=	MYSQL
+OPTIONS_MULTI=		DATABASE
+OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE3
+
+MYSQL_USES=		mysql
+MYSQL_MAKE_ENV=		MYSQL_INC="-I${LOCALBASE}/include/mysql" \
+			MYSQL_LDFLAGS="-L${LOCALBASE}/lib/mysql -lmysqlclient"
+MYSQL_ALL_TARGET=	mysql
+MYSQL_PLIST_FILES=	${LUA_MODLIBDIR}/dbd/mysql.so
+
+PGSQL_USES=		pgsql
+PGSQL_MAKE_ENV=		PSQL_INC="-I${LOCALBASE}/include/postgresql/server"
+PGSQL_ALL_TARGET=	psql
+PGSQL_PLIST_FILES=	${LUA_MODLIBDIR}/dbd/postgresql.so
+
+SQLITE3_USES=		sqlite:3
+SQLITE3_MAKE_ENV=	SQLITE3_INC=""
+SQLITE3_ALL_TARGET=	sqlite3
+SQLITE3_PLIST_FILES=	${LUA_MODLIBDIR}/dbd/sqlite3.so
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}/dbd
+	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
+	${CP} ${WRKSRC}/DBI.lua ${STAGEDIR}${LUA_MODSHAREDIR}
+
+do-install-MYSQL-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/dbd/mysql.so ${STAGEDIR}${LUA_MODLIBDIR}/dbd
+
+do-install-PGSQL-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/dbd/postgresql.so ${STAGEDIR}${LUA_MODLIBDIR}/dbd
+
+do-install-SQLITE3-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/dbd/sqlite3.so ${STAGEDIR}${LUA_MODLIBDIR}/dbd
+
+.include <bsd.port.mk>

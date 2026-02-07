@@ -1,0 +1,8 @@
+--- src/shaders/CMakeLists.txt.orig	2022-09-30 23:43:53 UTC
++++ src/shaders/CMakeLists.txt
+@@ -63,4 +63,4 @@ install (FILES ${shader_headers} ${shader_source} ${sh
+                    SOURCES ${shader_source} ${shader_headers})
+ 
+ install (FILES ${shader_headers} ${shader_source} ${shader_objs}
+-         DESTINATION ${OSL_SHADER_INSTALL_DIR})
++        DESTINATION %%DATADIR%%/shaders)

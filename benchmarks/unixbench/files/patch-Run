@@ -1,0 +1,134 @@
+--- Run.orig	2023-02-09 22:21:08.690117000 +0100
++++ Run	2023-02-09 22:20:31.633214000 +0100
+@@ -91,10 +91,10 @@
+ my $BINDIR = getDir('UB_BINDIR', $FindBin::Bin . "/pgms");
+ 
+ # Temp directory, for temp files.
+-my $TMPDIR = getDir('UB_TMPDIR', $FindBin::Bin . "/tmp");
++my $TMPDIR = "/tmp";
+ 
+ # Directory to put results in.
+-my $RESULTDIR = getDir('UB_RESULTDIR', $FindBin::Bin . "/results");
++my $RESULTDIR = "/tmp";
+ 
+ # Directory where the tests are executed.
+ my $TESTDIR = getDir('UB_TESTDIR', $FindBin::Bin . "/testdir");
+@@ -698,6 +698,18 @@
+ # future: on systems without /proc/cpuinfo, might check for Perl modules:
+ #   Sys::Info::Device::CPU or Sys::CpuAffinity
+ sub getCpuInfo {
++    my $ncpu = getCmdOutput("sysctl -n hw.ncpu");
++    my $cpus = [ ];
++    my $i;
++    for ($i=0;$i<$ncpu;$i++) {
++       $cpus->[$i]{'model'} = getCmdOutput("sysctl -n hw.model");
++       $cpus->[$i]{'bogo'} = 0;
++       $cpus->[$i]{'flags'} = getCmdOutput("sysctl -n hw.machine");
++    }
++    $cpus;
++}
++
++sub getCpuInfoBak {
+     if (!("$^O" eq "darwin")) {
+         open(my $fd, "<", "/proc/cpuinfo") || return undef;
+ 
+@@ -815,15 +827,11 @@
+     # Get the language info.
+     my $lang = getCmdOutput("printenv LANG");
+     my $map = $^O ne "aix"
+-      ? getCmdOutput("locale -k LC_CTYPE | grep charmap") || ""
++      ? getCmdOutput("locale -k | grep charmap") || ""
+       : getCmdOutput("locale charmap") || "";
+     $map =~ s/.*=//;
+-    my $coll = $^O ne "aix"
+-      ? getCmdOutput("locale -k LC_COLLATE | grep collate-codeset") || ""
+-      : getCmdOutput("locale | grep LC_COLLATE") || "";
+-    $coll =~ s/.*=//;
+-    $info->{'language'} = sprintf "%s (charmap=%s, collate=%s)",
+-                                   $lang, $map, $coll;
++    $info->{'language'} = sprintf "%s (charmap=%s)",
++                                   $lang, $map;
+ 
+     # Get details on the CPUs, if possible.
+     my $cpus = getCpuInfo();
+@@ -839,10 +847,9 @@
+     }
+ 
+     # Get graphics hardware info.
+-    $info->{'graphics'} = getCmdOutput("3dinfo | cut -f1 -d\'(\'");
++	#$info->{'graphics'} = getCmdOutput("3dinfo | cut -f1 -d\'(\'");
+ 
+     # Get system run state, load and usage info.
+-    $info->{'runlevel'} = getCmdOutput("who -r | awk '{print \$3}'");
+     $info->{'load'} = getCmdOutput("uptime");
+     $info->{'numUsers'} = getCmdOutput("who | wc -l");
+ 
+@@ -870,6 +877,7 @@
+ 
+ # Do checks that everything's ready for testing.
+ sub preChecks {
++	return;
+     # Set the language.
+     $ENV{'LANG'} = $language;
+ 
+@@ -1476,7 +1484,7 @@
+     }
+ 
+     # Display system load and usage info.
+-    printf $fd "   %s; runlevel %s\n\n", $info->{'load'}, $info->{'runlevel'};
++    printf $fd "   %s; \n\n", $info->{'load'};
+ }
+ 
+ 
+@@ -1587,7 +1595,7 @@
+ 
+ # Write CSV Headers.
+ #   e.g.: "Concurrency,Dhrystone 2 using register variables,Double-Precision Whetstone"
+-#       
++#
+ sub summarizeRunCsvHeader {
+     my ( $results, $reportFd ) = @_;
+ 
+@@ -1612,7 +1620,7 @@
+ 
+     # Write concurrency value.
+     printf $reportFd "%d", $results->{'copies'};
+-    
++
+     # Write test results.
+     my $isFirstColumn = 1;
+     foreach my $bench (@{$results->{'list'}}) {
+@@ -1735,8 +1743,8 @@
+     # Display system runlevel, load and usage info.
+     printf $fd "<tr>\n";
+     printf $fd "   <td><b>Uptime:</b></td>\n";
+-    printf $fd "   <td colspan=2>%s; runlevel %s</td>\n",
+-                   $info->{'load'}, $info->{'runlevel'};
++    printf $fd "   <td colspan=2>%s</td>\n",
++                   $info->{'load'};
+     printf $fd "</tr>\n";
+ 
+     printf $fd "</table></p>\n\n";
+@@ -1896,7 +1904,7 @@
+         $tests = $index;
+     }
+ 
+-    # Create directories.    
++    # Create directories.
+     my @creatingDirectories = ( ${TMPDIR}, ${RESULTDIR} );
+     createDirrectoriesIfNotExists(@creatingDirectories);
+ 
+@@ -1937,7 +1945,7 @@
+     my $isOutputFormatCsv = defined($ubOutputCsv) && $ubOutputCsv eq "true";
+     # If write CSV, header needs only once.
+     my $is_csv_header_written = 0;
+-    
++
+     # Open the log file for writing.
+     open(my $reportFd, ">", $reportFile) ||
+                             die("Run: can't write to $reportFile\n");
+@@ -1998,4 +2006,3 @@
+ 
+ 
+ exit(main(@ARGV));
+-

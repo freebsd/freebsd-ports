@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2013-10-19 11:05:40.000000000 +0200
++++ Makefile.in	2013-10-19 11:05:51.000000000 +0200
+@@ -928,7 +928,6 @@
+ # we don't want to install mo files, all translations are already stored
+ # in theme files
+ install-data-local:
+-	$(MAKE) -C po uninstall
+ 	if [ -h $(DESTDIR)$(themedir) ]; then \
+ 		rm -f $(DESTDIR)$(themedir); \
+ 	fi

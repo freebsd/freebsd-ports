@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Digest/Perl/MD4.pm
+%%SITE_PERL%%/Digest/Perl/Digest-MD4.pm
+%%PERL5_MAN3%%/Digest::Perl::Digest-MD4.3.gz
+%%PERL5_MAN3%%/Digest::Perl::MD4.3.gz

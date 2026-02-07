@@ -1,0 +1,29 @@
+--- meson.build.orig	2025-12-25 11:06:07 UTC
++++ meson.build
+@@ -563,7 +563,7 @@ conf_data.set('CONFIG_LIBCSS', false)
+ endif
+ 
+ conf_data.set('CONFIG_LIBCSS', false)
+-cssdeps = false
++cssdeps = []
+ 
+ if conf_data.get('CONFIG_ECMASCRIPT')
+     cssdeps = dependency('libcss', static: st, version: '>=0.9.2', required: false)
+@@ -1158,7 +1158,7 @@ endif
+     conf_data.set('HAVE_ICONV', 1)
+ endif
+ 
+-if conf_data.get('CONFIG_OS_DOS') or compiler.has_function('alloca', prefix: '#include <alloca.h>')
++if conf_data.get('CONFIG_OS_DOS') or compiler.has_function('alloca', prefix: '#include <stdlib.h>')
+     conf_data.set('HAVE_ALLOCA', 1)
+ endif
+ 
+@@ -1174,7 +1174,7 @@ endif
+     conf_data.set('HAVE_GNUTLS_CERTIFICATE_SET_X509_SYSTEM_TRUST', 1)
+ endif
+ 
+-if compiler.has_function('mkstemps', prefix: '#include <stdlib.h>', args: '-D_GNU_SOURCE')
++if compiler.has_function('mkstemps', prefix: '#include <unistd.h>')
+     conf_data.set('HAVE_MKSTEMPS', 1)
+ endif
+ 

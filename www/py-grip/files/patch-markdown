@@ -1,0 +1,11 @@
+--- grip/vendor/mdx_urlize.py.orig	2016-04-09 07:45:36 UTC
++++ grip/vendor/mdx_urlize.py
+@@ -74,7 +74,7 @@ class UrlizeExtension(markdown.Extension):
+     """
+     Urlize Extension for Python-Markdown.
+     """
+-    def extendMarkdown(self, md, md_globals):
++    def extendMarkdown(self, md):
+         """
+         Replace autolink with UrlizePattern
+         """

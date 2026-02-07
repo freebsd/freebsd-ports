@@ -1,0 +1,14 @@
+--- far2l/CMakeLists.txt.orig	2025-10-26 08:39:52 UTC
++++ far2l/CMakeLists.txt
+@@ -263,9 +263,11 @@ set_target_properties(far2l
+     ENABLE_EXPORTS TRUE)
+ 
+ if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    find_library(SYSINFO_LIBRARY NAMES sysinfo)
+     target_link_libraries(far2l
+     PRIVATE ${WINPORT}
+     PRIVATE c
++    PRIVATE ${SYSINFO_LIBRARY}
+     PRIVATE ${UCHARDET_LIBRARIES})
+ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Haiku")
+     target_link_libraries(far2l

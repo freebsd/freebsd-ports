@@ -1,0 +1,14 @@
+lib/libcgi-java.so
+lib/libunix-java.so
+%%JAVAJARDIR%%/cgi-0.6.jar
+%%JAVAJARDIR%%/cgi.jar
+%%JAVAJARDIR%%/debug-disable-1.1.jar
+%%JAVAJARDIR%%/debug-disable.jar
+%%JAVAJARDIR%%/debug-enable-1.1.jar
+%%JAVAJARDIR%%/debug-enable.jar
+%%JAVAJARDIR%%/hexdump-0.2.jar
+%%JAVAJARDIR%%/hexdump.jar
+%%JAVAJARDIR%%/io-0.1.jar
+%%JAVAJARDIR%%/io.jar
+%%JAVAJARDIR%%/unix-0.5.jar
+%%JAVAJARDIR%%/unix.jar

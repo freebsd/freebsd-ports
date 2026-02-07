@@ -1,0 +1,11 @@
+--- util/Makefile.in.orig	2023-12-09 03:21:05 UTC
++++ util/Makefile.in
+@@ -987,7 +987,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-binSCRIP
+ @ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-rebuild scrollkeeper-rebuilddb
+ @ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-install scrollkeeper-uninstall
+ @ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@cd $(DESTDIR)$(bindir); ln -s rarian-sk-update scrollkeeper-update
+-@ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@mkdir -p $(DESTDIR)/$(localstatedir)/lib/rarian
++@ENABLE_INSTALL_TRUE@@ENABLE_SK_COMPAT_TRUE@	@mkdir -p $(DESTDIR)/$(localstatedir)/db/rarian
+ @ENABLE_INSTALL_TRUE@@ENABLE_SKDB_UPDATE_TRUE@@ENABLE_SK_COMPAT_TRUE@	@echo "Translating current database"
+ @ENABLE_INSTALL_TRUE@@ENABLE_SKDB_UPDATE_TRUE@@ENABLE_SK_COMPAT_TRUE@	@$(DESTDIR)$(bindir)/rarian-sk-update
+ 

@@ -1,0 +1,393 @@
+Description: Fix format string literals and avoid gcc error: 
+             "format not a string literal and no format arguments 
+             [-Werror=format-security]"
+Author: Mònica Ramírez Arceda <monica@debian.org>
+Last-Update: 2014-09-10
+
+--- src/xml_elem.c
++++ src/xml_elem.c
+@@ -132,7 +132,7 @@
+             if (xmlTextReaderHasAttributes(reader))
+             {
+                 int have_attr, first = 1;
+-                fprintf(stdout, "[");
++                fprintf(stdout, "%s", "[");
+                 for (have_attr = xmlTextReaderMoveToFirstAttribute(reader);
+                      have_attr;
+                      have_attr = xmlTextReaderMoveToNextAttribute(reader))
+@@ -141,15 +141,15 @@
+                         *avalue = xmlTextReaderConstValue(reader);
+                     char quote;
+                     if (!first)
+-                        fprintf(stdout, " and ");
++                        fprintf(stdout, "%s", " and ");
+                     first = 0;
+ 
+                     quote = xmlStrchr(avalue, '\'')? '"' : '\'';
+                     fprintf(stdout, "@%s=%c%s%c", aname, quote, avalue, quote);
+                 }
+-                fprintf(stdout, "]");
++                fprintf(stdout, "%s", "]");
+             }
+-            fprintf(stdout, "\n");
++            fprintf(stdout, "%s", "\n");
+         }
+         else if (elOps.sort_uniq)
+         {
+--- src/xml.c
++++ src/xml.c
+@@ -145,7 +145,7 @@
+                 fprintf(stderr, ", %s", error->str3);
+             }
+         }
+-        fprintf(stderr, "\n");
++        fprintf(stderr, "%s", "\n");
+ 
+ 
+         if ((domain == XML_FROM_PARSER) || (domain == XML_FROM_HTML) ||
+@@ -168,7 +168,7 @@
+ }
+ 
+ #define CHECK_MEM(ret) if (!ret) \
+-        (fprintf(stderr, "out of memory\n"), exit(EXIT_INTERNAL_ERROR))
++        (fprintf(stderr, "%s", "out of memory\n"), exit(EXIT_INTERNAL_ERROR))
+ 
+ void*
+ xmalloc(size_t size)
+@@ -444,7 +444,7 @@
+ 
+         if (*plen >= MAX_NS_ARGS)
+         {
+-            fprintf(stderr, "too many namespaces increase MAX_NS_ARGS\n");
++            fprintf(stderr, "%s", "too many namespaces increase MAX_NS_ARGS\n");
+             exit(EXIT_BAD_ARGS);
+         }
+ 
+--- src/xml_trans.c
++++ src/xml_trans.c
+@@ -168,7 +168,7 @@
+ 
+                 if (*plen >= MAX_PARAMETERS)
+                 {
+-                    fprintf(stderr, "too many params increase MAX_PARAMETERS\n");
++                    fprintf(stderr, "%s", "too many params increase MAX_PARAMETERS\n");
+                     exit(EXIT_INTERNAL_ERROR);
+                 }
+ 
+@@ -197,7 +197,7 @@
+                 {
+                     if (xmlStrchr(string, '\''))
+                     {
+-                        fprintf(stderr,
++                        fprintf(stderr, "%s",
+                             "string parameter contains both quote and double-quotes\n");
+                         exit(EXIT_INTERNAL_ERROR);
+                     }
+@@ -214,7 +214,7 @@
+ 
+                 if (*plen >= MAX_PARAMETERS)
+                 {
+-                    fprintf(stderr, "too many params increase MAX_PARAMETERS\n");
++                    fprintf(stderr, "%s", "too many params increase MAX_PARAMETERS\n");
+                     exit(EXIT_INTERNAL_ERROR);
+                 }
+ 
+--- src/xml_edit.c
++++ src/xml_edit.c
+@@ -339,7 +339,7 @@
+         xmlNodePtr node;
+ 
+         if (nodes->nodeTab[i] == (void*) doc && mode != 0) {
+-            fprintf(stderr, "The document node cannot have siblings.\n");
++            fprintf(stderr, "%s", "The document node cannot have siblings.\n");
+             exit(EXIT_INTERNAL_ERROR);
+         }
+ 
+@@ -382,7 +382,7 @@
+     for (i = 0; i < nodes->nodeNr; i++)
+     {
+         if (nodes->nodeTab[i] == (void*) doc) {
+-            fprintf(stderr, "The document node cannot be renamed.\n");
++            fprintf(stderr, "%s", "The document node cannot be renamed.\n");
+             exit(EXIT_INTERNAL_ERROR);
+         }
+         xmlNodeSetName(nodes->nodeTab[i], BAD_CAST val);
+@@ -399,12 +399,12 @@
+     for (i = nodes->nodeNr - 1; i >= 0; i--)
+     {
+         if (nodes->nodeTab[i] == (void*) doc) {
+-            fprintf(stderr, "The document node cannot be deleted.\n");
++            fprintf(stderr, "%s", "The document node cannot be deleted.\n");
+             exit(EXIT_INTERNAL_ERROR);
+         }
+ 
+         if (nodes->nodeTab[i]->type == XML_NAMESPACE_DECL) {
+-            fprintf(stderr, "FIXME: can't delete namespace nodes\n");
++            fprintf(stderr, "%s", "FIXME: can't delete namespace nodes\n");
+             exit(EXIT_INTERNAL_ERROR);
+         }
+         /* delete node */
+@@ -426,12 +426,12 @@
+     for (i = 0; i < nodes->nodeNr; i++)
+     {
+         if (nodes->nodeTab[i] == (void*) doc) {
+-            fprintf(stderr, "The document node cannot be moved.\n");
++            fprintf(stderr, "%s", "The document node cannot be moved.\n");
+             exit(EXIT_INTERNAL_ERROR);
+         }
+ 
+         if (nodes->nodeTab[i]->type == XML_NAMESPACE_DECL) {
+-            fprintf(stderr, "FIXME: can't move namespace nodes\n");
++            fprintf(stderr, "%s", "FIXME: can't move namespace nodes\n");
+             exit(EXIT_INTERNAL_ERROR);
+         }
+         /* move node */
+@@ -501,7 +501,7 @@
+                 if (!res_to
+                     || res_to->type != XPATH_NODESET
+                     || res_to->nodesetval->nodeNr != 1) {
+-                    fprintf(stderr, "move destination is not a single node\n");
++                    fprintf(stderr, "%s", "move destination is not a single node\n");
+                     continue;
+                 }
+                 edMove(doc, nodes, res_to->nodesetval->nodeTab[0]);
+--- src/trans.c
++++ src/trans.c
+@@ -104,7 +104,7 @@
+     {
+         char *catalogs = getenv("SGML_CATALOG_FILES");
+         if (catalogs == NULL)
+-            fprintf(stderr, "Variable $SGML_CATALOG_FILES not set\n");
++            fprintf(stderr, "%s", "Variable $SGML_CATALOG_FILES not set\n");
+         else
+             xmlLoadCatalogs(catalogs);
+     }
+--- src/xml_pyx.c
++++ src/xml_pyx.c
+@@ -82,9 +82,9 @@
+     /* DON'T modify the attributes array, ever. */
+     const xmlChar*** atts = &attributes;
+ 
+-    fprintf(stdout,"(");
++    fprintf(stdout, "%s", "(");
+     print_qname(prefix, localname);
+-    fprintf(stdout, "\n");
++    fprintf(stdout, "%s", "\n");
+ 
+     if (nb_attributes > 1) {
+         atts = calloc(nb_attributes, sizeof(*atts));
+@@ -139,7 +139,7 @@
+ pyxEndElement(void *userData, const xmlChar *localname, const xmlChar *prefix,
+     const xmlChar *URI)
+ {
+-    fprintf(stdout,")");
++    fprintf(stdout, "%s", ")");
+     print_qname(prefix, localname);
+     putchar('\n');
+ }
+@@ -147,7 +147,7 @@
+ void
+ pyxCharacterData(void *userData, const xmlChar *s, int len)
+ {
+-    fprintf(stdout, "-");
++    fprintf(stdout, "%s", "-");
+     SanitizeData(s, len);
+     putchar('\n');
+ }
+@@ -159,7 +159,7 @@
+ {
+     fprintf(stdout,"?%s ",target);
+     SanitizeData(data, xmlStrlen(data));
+-    fprintf(stdout,"\n");
++    fprintf(stdout, "%s", "\n");
+ }
+ 
+ void
+@@ -191,7 +191,7 @@
+                                   const xmlChar *name)
+ {
+     const xmlChar *p = name;
+-    fprintf (stdout, "&");
++    fprintf (stdout, "%s", "&");
+     /* Up to space is the name of the referenced entity */
+     while (*p && (*p != ' ')) {
+         putchar (*p);
+@@ -205,11 +205,11 @@
+ {
+     fprintf(stdout, "D %s PUBLIC", name); /* TODO: re-check */
+     if (ExternalID == NULL)
+-        fprintf(stdout, " ");
++        fprintf(stdout, "%s", " ");
+     else
+         fprintf(stdout, " \"%s\"", ExternalID);
+     if (SystemID == NULL)
+-        fprintf(stdout, "\n");
++        fprintf(stdout, "%s", "\n");
+     else
+         fprintf(stdout, " \"%s\"\n", SystemID);
+ }
+@@ -217,17 +217,17 @@
+ static void
+ pyxCommentHandler(void *ctx ATTRIBUTE_UNUSED, const xmlChar *value)
+ {
+-    fprintf(stdout,"C");
++    fprintf(stdout, "%s", "C");
+     SanitizeData(value, xmlStrlen(value));
+-    fprintf(stdout,"\n");
++    fprintf(stdout, "%s", "\n");
+ }
+ 
+ static void
+ pyxCdataBlockHandler(void *ctx ATTRIBUTE_UNUSED, const xmlChar *value, int len)
+ {
+-    fprintf(stdout,"[");
++    fprintf(stdout, "%s", "[");
+     SanitizeData(value, len);
+-    fprintf(stdout,"\n");
++    fprintf(stdout, "%s", "\n");
+ }
+ 
+ static void
+--- src/xml_C14N.c
++++ src/xml_C14N.c
+@@ -84,7 +84,7 @@
+     if(xpath_filename) {
+         xpath = load_xpath_expr(doc, xpath_filename);
+         if(xpath == NULL) {
+-            fprintf(stderr,"Error: unable to evaluate xpath expression\n");
++            fprintf(stderr, "%s", "Error: unable to evaluate xpath expression\n");
+             xmlFreeDoc(doc); 
+             return(EXIT_BAD_FILE);
+         }
+@@ -160,7 +160,7 @@
+         ret = run_c14n(argv[3], 0, 1, (argc > 4) ? argv[4] : NULL, list, nonet);
+         if(list != NULL) xmlFree(list);
+     } else {
+-        fprintf(stderr, "error: bad arguments.\n");
++        fprintf(stderr, "%s", "error: bad arguments.\n");
+         c14nUsage(argv[0], EXIT_BAD_ARGS);
+     }
+ 
+@@ -275,7 +275,7 @@
+ 
+     ctx = xmlXPathNewContext(parent_doc);
+     if(ctx == NULL) {
+-        fprintf(stderr,"Error: unable to create new context\n");
++        fprintf(stderr, "%s", "Error: unable to create new context\n");
+         xmlFree(expr); 
+         xmlFreeDoc(doc); 
+         return(NULL);
+@@ -301,7 +301,7 @@
+      */
+     xpath = xmlXPathEvalExpression(expr, ctx);
+     if(xpath == NULL) {
+-        fprintf(stderr,"Error: unable to evaluate xpath expression\n");
++        fprintf(stderr, "%s", "Error: unable to evaluate xpath expression\n");
+             xmlFree(expr); 
+         xmlXPathFreeContext(ctx); 
+         xmlFreeDoc(doc); 
+@@ -323,11 +323,11 @@
+     int i;
+     
+     if(nodes == NULL ){ 
+-        fprintf(stderr, "Error: no nodes set defined\n");
++        fprintf(stderr, "%s", "Error: no nodes set defined\n");
+         return;
+     }
+     
+-    fprintf(stderr, "Nodes Set:\n-----\n");
++    fprintf(stderr, "%s", "Nodes Set:\n-----\n");
+     for(i = 0; i < nodes->nodeNr; ++i) {
+         if(nodes->nodeTab[i]->type == XML_NAMESPACE_DECL) {
+             xmlNsPtr ns;
+--- src/xml_escape.c
++++ src/xml_escape.c
+@@ -94,7 +94,7 @@
+     buffer = (xmlChar *)						\
+     		xmlRealloc(buffer, buffer_size * sizeof(xmlChar));	\
+     if (buffer == NULL) {       					\
+-	fprintf(stderr, "growing buffer error");			\
++	fprintf(stderr, "%s", "growing buffer error");			\
+ 	abort();							\
+     }									\
+ }
+@@ -129,7 +129,7 @@
+     buffer_size = 1000;
+     buffer = (xmlChar *) xmlMallocAtomic(buffer_size * sizeof(xmlChar));
+     if (buffer == NULL) {
+-        fprintf(stderr, "allocating buffer error");
++        fprintf(stderr, "%s", "allocating buffer error");
+         abort();
+     }
+     out = buffer;
+--- src/xml_select.c
++++ src/xml_select.c
+@@ -229,7 +229,7 @@
+             {
+                 if (argv[i + 1][0] == '-')
+                 {
+-                    fprintf(stderr, "-E option requires argument <encoding> ex: (utf-8, unicode...)\n");
++                    fprintf(stderr, "%s", "-E option requires argument <encoding> ex: (utf-8, unicode...)\n");
+                     exit(EXIT_BAD_ARGS);
+                 }
+                 else
+@@ -239,7 +239,7 @@
+             }
+             else
+             {
+-                fprintf(stderr, "-E option requires argument <encoding> ex: (utf-8, unicode...)\n");
++                fprintf(stderr, "%s", "-E option requires argument <encoding> ex: (utf-8, unicode...)\n");
+                 exit(EXIT_BAD_ARGS);
+             }
+ 
+@@ -308,7 +308,7 @@
+     if (strcmp(argv[start], "-t") != 0 &&
+         strcmp(argv[start], "--template") != 0)
+     {
+-        fprintf(stderr, "not at the beginning of template\n");
++        fprintf(stderr, "%s", "not at the beginning of template\n");
+         abort();
+     }
+ 
+@@ -345,7 +345,7 @@
+     found_option:
+         if (newtarg == &OPT_SORT && (targ != &OPT_MATCH && targ != &OPT_SORT))
+         {
+-            fprintf(stderr, "sort(s) must follow match\n");
++            fprintf(stderr, "%s", "sort(s) must follow match\n");
+             exit(EXIT_BAD_ARGS);
+         }
+         else if (newtarg == &OPT_TEMPLATE)
+@@ -363,7 +363,7 @@
+         {
+             node = node->parent;
+             if (node->_private != &OPT_IF) {
+-                fprintf(stderr, "else without if\n");
++                fprintf(stderr, "%s", "else without if\n");
+                 exit(EXIT_BAD_ARGS);
+             }
+         }
+@@ -463,9 +463,9 @@
+ 
+     if (templateEmpty)
+     {
+-        fprintf(stderr, "error in arguments:");
+-        fprintf(stderr, " -t or --template option must be followed by");
+-        fprintf(stderr, " --match or other options\n");
++        fprintf(stderr, "%s", "error in arguments:");
++        fprintf(stderr, "%s", " -t or --template option must be followed by");
++        fprintf(stderr, "%s", " --match or other options\n");
+         exit(EXIT_BAD_ARGS);
+     }
+ 
+@@ -528,8 +528,8 @@
+      */
+     if (t == 0)
+     {
+-        fprintf(stderr, "error in arguments:");
+-        fprintf(stderr, " no -t or --template options found\n");
++        fprintf(stderr, "%s", "error in arguments:");
++        fprintf(stderr, "%s", " no -t or --template options found\n");
+         exit(EXIT_BAD_ARGS);
+     }
+ 

@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Mail/SRS/DB.pm
+%%SITE_PERL%%/Mail/SRS/Daemon.pm
+%%SITE_PERL%%/Mail/SRS/Guarded.pm
+%%SITE_PERL%%/Mail/SRS/Reversable.pm
+%%SITE_PERL%%/Mail/SRS/Reversible.pm
+%%SITE_PERL%%/Mail/SRS/Shortcut.pm
+%%SITE_PERL%%/Mail/SRS.pm
+bin/srs
+bin/srsd
+%%PERL5_MAN3%%/Mail::SRS.3.gz
+%%PERL5_MAN3%%/Mail::SRS::DB.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Daemon.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Guarded.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Reversible.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Shortcut.3.gz
+%%PERL5_MAN1%%/srs.1.gz
+%%PERL5_MAN1%%/srsd.1.gz

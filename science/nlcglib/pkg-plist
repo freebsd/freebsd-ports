@@ -1,0 +1,7 @@
+include/nlcglib/interface.hpp
+include/nlcglib/nlcglib.hpp
+lib/cmake/nlcglib/nlcglib-config.cmake
+lib/cmake/nlcglib/nlcglib-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/nlcglib/nlcglib-targets.cmake
+lib/cmake/nlcglib/nlcglibConfigVersion.cmake
+lib/libnlcglib.so

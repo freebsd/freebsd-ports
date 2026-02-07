@@ -1,0 +1,11 @@
+--- core/rootcling_stage1/CMakeLists.txt.orig	2025-12-01 00:37:55 UTC
++++ core/rootcling_stage1/CMakeLists.txt
+@@ -42,7 +42,7 @@ if (CMAKE_SYSTEM_NAME MATCHES FreeBSD)
+    ${CMAKE_BINARY_DIR}/ginclude         # for RConfigure.h
+ )
+ if (CMAKE_SYSTEM_NAME MATCHES FreeBSD)
+-  target_link_libraries(rootcling_stage1 util procstat)
++  target_link_libraries(rootcling_stage1 PUBLIC util procstat)
+ endif()
+ 
+ if(NOT (WIN32 AND CMAKE_GENERATOR MATCHES Ninja))

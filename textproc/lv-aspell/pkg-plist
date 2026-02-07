@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/lv_affix.dat
+lib/aspell-%%VER%%/lv.dat
+share/aspell/latvian.alias
+share/aspell/lv.multi
+share/aspell/lv.rws

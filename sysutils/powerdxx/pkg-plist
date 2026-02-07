@@ -1,0 +1,12 @@
+bin/loadplay
+bin/loadrec
+etc/rc.d/powerdxx
+lib/libloadplay.so
+share/man/man1/loadplay.1.gz
+share/man/man1/loadrec.1.gz
+share/man/man8/powerd++.8.gz
+share/man/man8/powerdxx.8.gz
+sbin/powerd++
+sbin/powerdxx
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/refman.pdf

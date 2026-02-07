@@ -1,0 +1,53 @@
+--- Makefile.am.orig	2025-05-30 12:38:07 UTC
++++ Makefile.am
+@@ -71,12 +71,6 @@ endif
+ other_tests += ${other_tests_x86_32}
+ endif
+ 
+-if CPU_AARCH64
+-ARCH=-Daarch64
+-libisal_la_SOURCES += ${lsrc_aarch64}
+-other_tests += ${other_tests_aarch64}
+-endif
+-
+ if CPU_PPC64LE
+ ARCH=-Dppc64le
+ libisal_la_SOURCES += ${lsrc_ppc64le}
+@@ -128,20 +122,13 @@ endif
+ if USE_NASM
+   as_filter = ${srcdir}/tools/nasm-filter.sh
+ endif
+-if CPU_AARCH64
+-  as_filter = $(CC) -D__ASSEMBLY__
+-endif
+ 
+ CCAS = $(as_filter)
+ EXTRA_DIST += tools/yasm-filter.sh tools/nasm-filter.sh
+ EXTRA_DIST += tools/yasm-cet-filter.sh tools/nasm-cet-filter.sh
+ 
+ AM_CFLAGS = ${my_CFLAGS} ${INCLUDE} $(src_include) ${ARCH} ${D}
+-if CPU_AARCH64
+-AM_CCASFLAGS = ${AM_CFLAGS}
+-else
+ AM_CCASFLAGS = ${yasm_args} ${INCLUDE} ${src_include} ${DEFS} ${D}
+-endif
+ 
+ .asm.s:
+ 	@echo "  MKTMP   " $@;
+--- configure.ac.orig	2025-05-30 12:36:27 UTC
++++ configure.ac
+@@ -27,14 +27,11 @@ AS_CASE([$host_cpu],
+   [x86_64], [CPU="x86_64"],
+   [amd64], [CPU="x86_64"],
+   [i?86], [CPU="x86_32"],
+-  [aarch64], [CPU="aarch64"],
+-  [arm64], [CPU="aarch64"],
+   [powerpc64le], [CPU="ppc64le"],
+   [ppc64le], [CPU="ppc64le"],
+ )
+ AM_CONDITIONAL([CPU_X86_64], [test "$CPU" = "x86_64"])
+ AM_CONDITIONAL([CPU_X86_32], [test "$CPU" = "x86_32"])
+-AM_CONDITIONAL([CPU_AARCH64], [test "$CPU" = "aarch64"])
+ AM_CONDITIONAL([CPU_PPC64LE], [test "$CPU" = "ppc64le"])
+ AM_CONDITIONAL([CPU_UNDEFINED], [test "x$CPU" = "x"])
+ 

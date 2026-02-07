@@ -1,0 +1,429 @@
+--- Makefile.orig	2008-05-10 13:05:55 UTC
++++ Makefile
+@@ -6,7 +6,7 @@
+ 
+ COMPILE_PLATFORM=$(shell uname|sed -e s/_.*//|tr '[:upper:]' '[:lower:]')
+ 
+-COMPILE_ARCH=$(shell uname -m | sed -e s/i.86/i386/)
++COMPILE_ARCH=$(shell uname -p | sed -e s/i.86/i386/)
+ 
+ ifeq ($(COMPILE_PLATFORM),sunos)
+   # Solaris uname and GNU uname differ
+@@ -23,29 +23,6 @@ ifeq ($(COMPILE_PLATFORM),mingw32)
+   endif
+ endif
+ 
+-ifndef BUILD_STANDALONE
+-  BUILD_STANDALONE = 1
+-endif
+-ifndef BUILD_CLIENT
+-  BUILD_CLIENT     =
+-endif
+-ifndef BUILD_CLIENT_SMP
+-  BUILD_CLIENT_SMP = 0
+-endif
+-ifndef BUILD_SERVER
+-  BUILD_SERVER     =
+-endif
+-ifndef BUILD_GAME_SO
+-  BUILD_GAME_SO    = 0
+-endif
+-ifndef BUILD_GAME_QVM
+-  BUILD_GAME_QVM   = 0
+-endif
+-
+-ifneq ($(PLATFORM),darwin)
+-  BUILD_CLIENT_SMP = 0
+-endif
+-
+ #############################################################################
+ #
+ # If you require a different configuration from the defaults below, create a
+@@ -61,6 +38,10 @@ PLATFORM=$(COMPILE_PLATFORM)
+ endif
+ export PLATFORM
+ 
++ifeq ($(COMPILE_ARCH),powerpc64)
++  COMPILE_ARCH=ppc64
++endif
++
+ ifeq ($(COMPILE_ARCH),powerpc)
+   COMPILE_ARCH=ppc
+ endif
+@@ -97,46 +78,26 @@ ifndef GENERATE_DEPENDENCIES
+ GENERATE_DEPENDENCIES=1
+ endif
+ 
+-ifndef USE_OPENAL
+-USE_OPENAL=1
+-endif
++BUILD_STANDALONE=1
++BUILD_CLIENT?=0
++BUILD_CLIENT_SMP?=0
++BUILD_SERVER?=0
++BUILD_GAME_QVM=0
++BUILD_GAME_SO?=0
++HAVE_VM_COMPILED?=false
++USE_CODEC_MP3?=0
++USE_CODEC_VORBIS?=0
++USE_LOCAL_HEADERS=0
++USE_OPENAL?=0
++USE_OPENAL_DLOPEN?=0
++USE_CURL?=0
++USE_CURL_DLOPEN?=0
++USE_OPTIMIZED_CFLAGS?=0
+ 
+-ifndef USE_OPENAL_DLOPEN
+-  ifeq ($(PLATFORM),mingw32)
+-    USE_OPENAL_DLOPEN=1
+-  else
+-    USE_OPENAL_DLOPEN=0
+-  endif
+-endif
+-
+-ifndef USE_CURL
+-USE_CURL=1
+-endif
+-
+-ifndef USE_CURL_DLOPEN
+-  ifeq ($(PLATFORM),mingw32)
+-    USE_CURL_DLOPEN=0
+-  else
+-    USE_CURL_DLOPEN=1
+-  endif
+-endif
+-
+-ifndef USE_CODEC_VORBIS
+-USE_CODEC_VORBIS=1
+-endif
+-
+-ifndef USE_CODEC_MP3
+-USE_CODEC_MP3=0
+-endif
+-
+-ifndef USE_LOCAL_HEADERS
+-USE_LOCAL_HEADERS=1
+-endif
+-
+ #############################################################################
+ 
+-BD=$(BUILD_DIR)/debug-$(PLATFORM)-$(ARCH)
+-BR=$(BUILD_DIR)/release-$(PLATFORM)-$(ARCH)
++BD=$(BUILD_DIR)/debug
++BR=$(BUILD_DIR)/release
+ CDIR=$(MOUNT_DIR)/client
+ SDIR=$(MOUNT_DIR)/server
+ RDIR=$(MOUNT_DIR)/renderer
+@@ -242,14 +203,14 @@ ifeq ($(PLATFORM),linux)
+ 
+   ifeq ($(ARCH),x86_64)
+     OPTIMIZE = -O3 -fomit-frame-pointer -ffast-math -funroll-loops \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
++        -falign-functions=2 \
+       -fstrength-reduce
+     # experimental x86_64 jit compiler! you need GNU as
+     HAVE_VM_COMPILED = true
+   else
+   ifeq ($(ARCH),i386)
+     OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math \
+-      -funroll-loops -falign-loops=2 -falign-jumps=2 \
++      -funroll-loops   \
+       -falign-functions=2 -fstrength-reduce
+     HAVE_VM_COMPILED=true
+   else
+@@ -286,14 +247,14 @@ ifeq ($(PLATFORM),linux)
+     endif
+   endif
+ 
+-  ifeq ($(USE_CODEC_VORBIS),1)
+-    CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
+-  endif
+-
+   ifeq ($(USE_CODEC_MP3),1)
+     CLIENT_LDFLAGS += -lmad
+   endif
+ 
++  ifeq ($(USE_CODEC_VORBIS),1)
++    CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
++  endif
++
+   ifeq ($(ARCH),i386)
+     # linux32 make ...
+     BASE_CFLAGS += -m32
+@@ -432,7 +393,7 @@ endif
+   endif
+ 
+   OPTIMIZE = -O3 -march=i586 -fno-omit-frame-pointer -ffast-math \
+-    -falign-loops=2 -funroll-loops -falign-jumps=2 -falign-functions=2 \
++     -funroll-loops  -falign-functions=2 \
+     -fstrength-reduce
+ 
+   HAVE_VM_COMPILED = true
+@@ -499,16 +460,12 @@ else # ifeq mingw32
+ 
+ ifeq ($(PLATFORM),freebsd)
+ 
+-  ifneq (,$(findstring alpha,$(shell uname -m)))
+-    ARCH=axp
+-  else #default to i386
+-    ARCH=i386
+-  endif #alpha test
+-
+-
+-  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
++  BASE_CFLAGS = -DARCH='\"$(ARCH)\"' -I$(LOCALBASE)/include -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
+     -DUSE_ICON $(shell sdl-config --cflags)
+ 
++  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -pipe
++
+   ifeq ($(USE_OPENAL),1)
+     BASE_CFLAGS += -DUSE_OPENAL
+     ifeq ($(USE_OPENAL_DLOPEN),1)
+@@ -524,24 +481,19 @@ ifeq ($(PLATFORM),freebsd)
+     BASE_CFLAGS += -DUSE_CODEC_MP3
+   endif
+ 
+-  ifeq ($(ARCH),axp)
++  ifeq ($(USE_OPTIMIZED_CFLAGS),1)
++    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
++       -fexpensive-optimizations
++    ifeq ($(ARCH),i386)
++      RELEASE_CFLAGS+=  -falign-functions=2 \
++         -fstrength-reduce
++    endif
++  endif
++
++  ifneq ($(HAVE_VM_COMPILED),true)
+     BASE_CFLAGS += -DNO_VM_COMPILED
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -ffast-math -funroll-loops \
+-      -fomit-frame-pointer -fexpensive-optimizations
+-  else
+-  ifeq ($(ARCH),i386)
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -mtune=pentiumpro \
+-      -march=pentium -fomit-frame-pointer -pipe -ffast-math \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -funroll-loops -fstrength-reduce
+-    HAVE_VM_COMPILED=true
+-  else
+-    BASE_CFLAGS += -DNO_VM_COMPILED
+   endif
+-  endif
+ 
+-  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
+-
+   SHLIBEXT=so
+   SHLIBCFLAGS=-fPIC
+   SHLIBLDFLAGS=-shared $(LDFLAGS)
+@@ -550,16 +502,26 @@ ifeq ($(PLATFORM),freebsd)
+   # don't need -ldl (FreeBSD)
+   LDFLAGS=-lm
+ 
+-  CLIENT_LDFLAGS =
++  CLIENT_LDFLAGS = -L$(LOCALBASE)/lib
+ 
+   CLIENT_LDFLAGS += $(shell sdl-config --libs) -lGL
+ 
+   ifeq ($(USE_OPENAL),1)
++    CLIENT_LDFLAGS += $(THREAD_LDFLAGS)
+     ifneq ($(USE_OPENAL_DLOPEN),1)
+-      CLIENT_LDFLAGS += $(THREAD_LDFLAGS) -lopenal
++      CLIENT_LDFLAGS += -lopenal
+     endif
+   endif
+ 
++  ifeq ($(USE_CURL),1)
++    BASE_CFLAGS += -DUSE_CURL=1
++    ifneq ($(USE_CURL_DLOPEN),1)
++      CLIENT_LDFLAGS += -lcurl
++    else
++      BASE_CFLAGS += -DUSE_CURL_DLOPEN=1
++    endif
++  endif
++
+   ifeq ($(USE_CODEC_VORBIS),1)
+     CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
+   endif
+@@ -601,7 +563,7 @@ ifeq ($(PLATFORM),openbsd)
+   BASE_CFLAGS += -DNO_VM_COMPILED -I/usr/X11R6/include -I/usr/local/include
+   RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 \
+     -march=pentium -fomit-frame-pointer -pipe -ffast-math \
+-    -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
++      -falign-functions=2 \
+     -funroll-loops -fstrength-reduce
+   HAVE_VM_COMPILED=false
+ 
+@@ -727,7 +689,7 @@ ifeq ($(PLATFORM),sunos)
+   else
+   ifeq ($(ARCH),i386)
+     OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math \
+-      -funroll-loops -falign-loops=2 -falign-jumps=2 \
++      -funroll-loops   \
+       -falign-functions=2 -fstrength-reduce
+     HAVE_VM_COMPILED=true
+     BASE_CFLAGS += -m32
+@@ -781,24 +743,22 @@ endif #SunOS
+ TARGETS =
+ 
+ ifneq ($(BUILD_SERVER),0)
+-  TARGETS += $(B)/wopded.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/wopded$(BINEXT)
+ endif
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-  TARGETS += $(B)/wop-engine.$(ARCH)$(BINEXT)
+-  ifneq ($(BUILD_CLIENT_SMP),0)
+-    TARGETS += $(B)/wop-smp.$(ARCH)$(BINEXT)
+-  endif
++  TARGETS += $(B)/wop$(BINEXT)
+ endif
+ 
++ifneq ($(BUILD_CLIENT_SMP),0)
++  TARGETS += $(B)/wop-smp$(BINEXT)
++endif
++
+ ifneq ($(BUILD_GAME_SO),0)
+   TARGETS += \
+-    $(B)/baseq3/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/qagame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/ui$(ARCH).$(SHLIBEXT)     \
+-    $(B)/missionpack/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/missionpack/qagame$(ARCH).$(SHLIBEXT) \
+-    $(B)/missionpack/ui$(ARCH).$(SHLIBEXT)
++    $(B)/baseq3/cgame.$(SHLIBEXT) \
++    $(B)/baseq3/qagame.$(SHLIBEXT) \
++    $(B)/baseq3/ui.$(SHLIBEXT)
+ endif
+ 
+ ifneq ($(BUILD_GAME_QVM),0)
+@@ -929,7 +889,7 @@ endef
+ #############################################################################
+ 
+ default: release
+-all: debug release
++all: release
+ 
+ debug:
+ 	@$(MAKE) targets B=$(BD) CFLAGS="$(CFLAGS) $(DEPEND_CFLAGS) \
+@@ -1360,12 +1320,21 @@ ifeq ($(HAVE_VM_COMPILED),true)
+   ifeq ($(ARCH),x86)
+     Q3OBJ += $(B)/client/vm_x86.o
+   endif
++  ifeq ($(ARCH),amd64)
++    Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
++  endif
+   ifeq ($(ARCH),x86_64)
+     Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
+   endif
++  ifeq ($(ARCH),powerpc)
++    Q3OBJ += $(B)/client/vm_ppc.o
++  endif
+   ifeq ($(ARCH),ppc)
+     Q3OBJ += $(B)/client/vm_ppc.o
+   endif
++  ifeq ($(ARCH),powerpc64)
++    Q3OBJ += $(B)/client/vm_ppc.o
++  endif
+ endif
+ 
+ ifeq ($(PLATFORM),mingw32)
+@@ -1383,12 +1352,12 @@ Q3POBJ += \
+ Q3POBJ_SMP += \
+   $(B)/clientsmp/sdl_glimp.o
+ 
+-$(B)/wop-engine.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
++$(B)/wop$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) \
+ 		$(LDFLAGS) $(LIBSDLMAIN)
+ 
+-$(B)/wop-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
++$(B)/wop-smp$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
+ 		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+@@ -1497,12 +1466,21 @@ ifeq ($(HAVE_VM_COMPILED),true)
+   ifeq ($(ARCH),x86)
+     Q3DOBJ += $(B)/ded/vm_x86.o
+   endif
++  ifeq ($(ARCH),amd64)
++    Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
++  endif
+   ifeq ($(ARCH),x86_64)
+     Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
+   endif
++  ifeq ($(ARCH),powerpc)
++    Q3DOBJ += $(B)/ded/vm_ppc.o
++  endif
+   ifeq ($(ARCH),ppc)
+     Q3DOBJ += $(B)/ded/vm_ppc.o
+   endif
++  ifeq ($(ARCH),powerpc64)
++    Q3DOBJ += $(B)/ded/vm_ppc.o
++  endif
+ endif
+ 
+ ifeq ($(PLATFORM),mingw32)
+@@ -1516,7 +1494,7 @@ else
+     $(B)/ded/con_tty.o
+ endif
+ 
+-$(B)/wopded.$(ARCH)$(BINEXT): $(Q3DOBJ)
++$(B)/wopded$(BINEXT): $(Q3DOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
+ 
+@@ -1556,7 +1534,7 @@ Q3CGOBJ_ = \
+ Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseq3/cgame/cg_syscalls.o
+ Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/cgame$(ARCH).$(SHLIBEXT): $(Q3CGOBJ)
++$(B)/baseq3/cgame.$(SHLIBEXT): $(Q3CGOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
+ 
+@@ -1600,7 +1578,7 @@ MPCGOBJ_ = \
+ MPCGOBJ = $(MPCGOBJ_) $(B)/missionpack/cgame/cg_syscalls.o
+ MPCGVMOBJ = $(MPCGOBJ_:%.o=%.asm)
+ 
+-$(B)/missionpack/cgame$(ARCH).$(SHLIBEXT): $(MPCGOBJ)
++$(B)/missionpack/cgame.$(SHLIBEXT): $(MPCGOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(MPCGOBJ)
+ 
+@@ -1653,7 +1631,7 @@ Q3GOBJ_ = \
+ Q3GOBJ = $(Q3GOBJ_) $(B)/baseq3/game/g_syscalls.o
+ Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/qagame$(ARCH).$(SHLIBEXT): $(Q3GOBJ)
++$(B)/baseq3/qagame.$(SHLIBEXT): $(Q3GOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
+ 
+@@ -1704,7 +1682,7 @@ MPGOBJ_ = \
+ MPGOBJ = $(MPGOBJ_) $(B)/missionpack/game/g_syscalls.o
+ MPGVMOBJ = $(MPGOBJ_:%.o=%.asm)
+ 
+-$(B)/missionpack/qagame$(ARCH).$(SHLIBEXT): $(MPGOBJ)
++$(B)/missionpack/qagame.$(SHLIBEXT): $(MPGOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(MPGOBJ)
+ 
+@@ -1767,7 +1745,7 @@ Q3UIOBJ_ = \
+ Q3UIOBJ = $(Q3UIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
+ Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/ui$(ARCH).$(SHLIBEXT): $(Q3UIOBJ)
++$(B)/baseq3/ui.$(SHLIBEXT): $(Q3UIOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
+ 
+@@ -1795,7 +1773,7 @@ MPUIOBJ_ = \
+ MPUIOBJ = $(MPUIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
+ MPUIVMOBJ = $(MPUIOBJ_:%.o=%.asm)
+ 
+-$(B)/missionpack/ui$(ARCH).$(SHLIBEXT): $(MPUIOBJ)
++$(B)/missionpack/ui.$(SHLIBEXT): $(MPUIOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(MPUIOBJ)
+ 

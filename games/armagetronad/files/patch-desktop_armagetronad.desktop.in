@@ -1,0 +1,11 @@
+--- desktop/armagetronad.desktop.in.orig	2019-07-23 16:43:09 UTC
++++ desktop/armagetronad.desktop.in
+@@ -3,7 +3,7 @@ Type=Application
+ Name=@progtitle@@progtitle_server@
+ Exec=@progname@
+ Comment=3d light cycle game
+-Icon=@progname@.png
++Icon=@progname@
+ Terminal=@build_dedicated@
+ Path=@prefix@/bin
+ Categories=Game;ActionGame;

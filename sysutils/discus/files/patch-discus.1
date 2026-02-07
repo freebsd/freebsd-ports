@@ -1,0 +1,43 @@
+--- discus.1.orig	2020-04-13 07:05:40 UTC
++++ discus.1
+@@ -2,7 +2,7 @@
+ .\" DISCUS
+ .\" 1
+ .\" other parameters are allowed: see man(7), man(1)
+-.TH DISCUS 1 "October 20, 2003"
++.TH DISCUS 1 "April 26, 2021"
+ .\" Please adjust this date whenever revising the manpage.
+ .\"
+ .\" Some roff macros, for reference:
+@@ -26,9 +26,8 @@ discus \- print a report of disk space usage
+ and smart formatting of numbers (automatically choosing the most suitable
+ size from kilobytes, megabytes, gigabytes, or terabytes). Or choose your
+ own size, along with specifying the number of decimal places you'd like to
+-see. You may also copy /etc/discusrc to $HOME/.discusrc and customize things to
+-your preference.
+-
++see. You may also copy /usr/local/etc/discus/discusrc to $HOME/.discusrc and 
++customize things to your preference.
+ .SH OPTIONS
+ .TP
+ .B \-h, \-\-help
+@@ -56,14 +55,15 @@ Show version of program.
+ .B \-r
+ Takes into account even the reserved space to root; it will be counted in percentage and in available columns only (Used is for real used space).
+ .SH FILES
+-.SH FILES
+-.BR /etc/discusrc,
++.BR /usr/local/etc/discus/discusrc,
+ .BR $HOME/.discusrc
+ .SH SEE ALSO
+-.BR df (1),
+-.BR pydf (1).
++df(1)
+ .br
+ .SH AUTHOR
+ This manual page was adapted by Ron Farrer <rbf@debian.org> from one
+ written by Stormy Henderson <stormy@raincrazy.com> for the Debian
+ GNU/Linux system (but may be used by others).
++
++This manual page was later updated by Chris Moerz <freebsd@ny-central.org>
++for FreeBSD.

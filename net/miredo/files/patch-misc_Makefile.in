@@ -1,0 +1,33 @@
+--- misc/Makefile.in.orig	2013-05-24 00:51:51.000000000 +0900
++++ misc/Makefile.in	2013-05-30 21:43:05.059112147 +0900
+@@ -395,27 +395,11 @@
+ 	@list='$(examples_DATA)'; test -n "$(examplesdir)" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	dir='$(DESTDIR)$(examplesdir)'; $(am__uninstall_files_from_dir)
+-install-systemdDATA: $(systemd_DATA)
+-	@$(NORMAL_INSTALL)
+-	@list='$(systemd_DATA)'; test -n "$(systemddir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(systemddir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(systemddir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(systemddir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(systemddir)" || exit $$?; \
+-	done
++
++install-systemdDATA:
+ 
+ uninstall-systemdDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(systemd_DATA)'; test -n "$(systemddir)" || list=; \
+-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+-	dir='$(DESTDIR)$(systemddir)'; $(am__uninstall_files_from_dir)
++
+ tags: TAGS
+ TAGS:
+ 

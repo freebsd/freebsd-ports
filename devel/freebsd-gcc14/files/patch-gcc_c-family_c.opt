@@ -1,0 +1,11 @@
+--- gcc/c-family/c.opt.orig	2024-05-07 06:51:37 UTC
++++ gcc/c-family/c.opt
+@@ -2662,7 +2662,7 @@ stdlib=
+ Conform to the ISO 2023 C standard draft (expected to be published in 2024) (experimental and incomplete support).
+ 
+ stdlib=
+-Driver C++ ObjC++ Common Condition(ENABLE_STDLIB_OPTION) Var(flag_stdlib_kind) Joined Enum(stdlib_kind) RejectNegative Init(1)
++Driver C++ ObjC++ Common Condition(ENABLE_STDLIB_OPTION) Var(flag_stdlib_kind) Joined Enum(stdlib_kind) RejectNegative Init(2)
+ -stdlib=[libstdc++|libc++]	The standard library to be used for C++ headers
+ and runtime.
+ 

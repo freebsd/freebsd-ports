@@ -1,0 +1,19 @@
+#!/bin/sh
+
+PERL="%%PERL%%"
+
+case $2 in
+  POST-INSTALL)
+    $PERL -MXML::SAX -e 'XML::SAX->add_parser(q(XML::SAX::PurePerl))->save_parsers();'
+  ;;
+  DEINSTALL)
+    $PERL -MFile::Basename=dirname -MFile::Spec -MXML::SAX << 'PERLSCRIPT'
+XML::SAX->remove_parser(q(XML::SAX::PurePerl))->save_parsers();
+unless (@{XML::SAX->parsers()} > 0) {
+  $dir = $INC{q(XML/SAX.pm)}; $dir = dirname($dir);
+  $file = File::Spec->catfile($dir, q(SAX), XML::SAX::PARSER_DETAILS);
+  unlink($file);
+}
+PERLSCRIPT
+  ;;
+esac

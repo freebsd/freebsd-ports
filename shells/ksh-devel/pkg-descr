@@ -1,0 +1,15 @@
+ksh93u+m is the ksh93 reboot aims to develop bugfixes to the last
+stable release (93u+ 2012-08-01) of ksh93, formerly developed by
+AT&T Software Technology (AST). This ksh 93u+m reboot now incorporates
+many of these bugfixes, plus patches from OpenSUSE, Red Hat, and Solaris,
+as well as many new fixes from the community.
+
+Between 2017 and 2020 there was an ultimately unsuccessful attempt to
+breathe new life into the KornShell by extensively refactoring the last
+unstable AST beta version (93v-). While that ksh2020 effort is now
+abandoned and still has many critical bugs, it also had a lot of bugs
+fixed. More importantly, the AST issue tracker now contains a lot of
+documentation on how to fix those bugs, which made it possible to
+backport many of them to the last stable release instead.
+
+The shells/ksh-devel port tracks the develpment branch.

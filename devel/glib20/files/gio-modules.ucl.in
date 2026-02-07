@@ -1,0 +1,16 @@
+path: "%%PREFIX%%/lib/gio/modules"
+cleanup: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+os.remove("%%PREFIX%%/lib/gio/modules/giomodule.cache")
+EOS
+}
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+print("Generating GIO modules cache")
+pkg.exec({"%%PREFIX%%/bin/gio-querymodules", "%%PREFIX%%/lib/gio/modules"})
+EOS
+}

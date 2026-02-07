@@ -1,0 +1,15 @@
+--- meson.build.orig	2025-04-17 21:40:06 UTC
++++ meson.build
+@@ -17,7 +17,11 @@ config_h.set_quoted('PACKAGE_LOCALE_DIR', join_paths(g
+ config_h.set_quoted('PACKAGE_VERSION', meson.project_version())
+ config_h.set_quoted('GETTEXT_PACKAGE', 'libspelling')
+ config_h.set_quoted('PACKAGE_LOCALE_DIR', join_paths(get_option('prefix'), get_option('datadir'), 'locale'))
+-config_h.set10('HAVE_ENCHANT', get_option('enchant').enabled())
++if get_option('enchant').enabled()
++  config_h.set('HAVE_ENCHANT', 1)
++else
++  config_h.set('HAVE_ENCHANT', 0)
++endif
+ 
+ # libsysprof-capture support for profiling
+ if get_option('sysprof')

@@ -1,0 +1,50 @@
+[
+{ type: install
+  message: <<EOM
+If you have build/runtime errors with Mono and Gtk# apps please try the
+following first:
+
+* Build Mono and gtk+ (x11-toolkits/gtk20) without CPUTYPE and with the
+  default FreeBSD CFLAGS ('-O2 -fno-strict-aliasing -pipe') as Mono has
+  been known to expose compiler bugs.
+
+* Try building and running Mono with the GENERIC kernel.
+  - Mono requires SYSVSHM, SYSVMSG, and SYSVSEM which are part of the
+    GENERIC kernel.
+  - Removing kernel options or changing defaults to use experimental
+    options can adversely affect Mono's ability to build and run.
+
+* Remove leftover semaphores / increase semaphore limits.
+  - Close apps which use Mono and run `ipcs -sbt`.  Remove the
+    semaphores with MODE "--rw-------" and NSEMS "8" using ipcrm (1)
+  - _OR_ simply reboot which is the safest method.
+  - On multi-user systems the semaphore limits may need to be increased
+    from the defaults. The following should comfortably support 30 users.
+
+    # echo "kern.ipc.semmni=40" >> /boot/loader.conf
+    # echo "kern.ipc.semmns=300" >> /boot/loader.conf
+
+* If you are in a jailed environment, ensure System V IPC are enabled.
+  You can rely on the security.jail.sysvipc_allowed  sysctl to check
+  this status.  The following enables this feature on the host system:
+    # echo "jail_sysvipc_allow=\"YES\"" >> /etc/rc.conf
+
+* Some process information are accessed through /proc (e.g. when using
+  NUnit) and procfs(5) has to be mounted for these features to work:
+    # echo "proc            /proc   procfs  rw 0 0" >> /etc/fstab
+
+* Mono does not use the system certificates files. If you update 
+  security/ca_root_nss separate from Mono, you must manually resync 
+  from the PEM file using the Mono cert-sync tool as root.
+    # cert-sync /usr/local/share/certs/ca-root-nss.crt
+  Otherwise, certificates may fail validation within Mono.
+
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+* If you have installed any custom CAs using the cert-sync tool, you 
+  must re-install them after upgrading Mono.
+EOM
+}
+]

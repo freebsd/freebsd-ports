@@ -1,0 +1,26 @@
+--- Makefile.dist	2009-02-06 11:56:47.000000000 +0900
++++ Makefile	2009-02-11 01:31:03.000000000 +0900
+@@ -1,9 +1,11 @@
+ # dbskkd-cdb Makefile
+ 
+-CC = cc -Wall -O2 -g -I/usr/local/include
++PREFIX = ${LOCALBASE}
++CC = cc ${CFLAGS} -I${PREFIX}/include
+ COMPAT =
+-CDBLIB = /usr/local/lib/libcdb.a
+-INSTALLDIR = /usr/local/libexec
++CDBLIB = ${PREFIX}/lib/libcdb.a
++INSTALLDIR = ${PREFIX}/libexec
++JISYOFILE = ${SKKJISYOCDB}
+ 
+ .c.o:
+ 	$(CC) $(COMPAT) $(PRIVATE) -c $*.c
+@@ -18,7 +20,7 @@
+ 		dbskkd-cdb.o ${CDBLIB}
+ 
+ dbskkd-cdb.o: dbskkd-cdb.c 
+-	$(CC) $(COMPAT) $(PRIVATE) -c dbskkd-cdb.c
++	$(CC) $(COMPAT) $(PRIVATE) -DJISYO_FILE=\"$(JISYOFILE)\" -c dbskkd-cdb.c
+ 
+ error.o: error.c error.h
+ 

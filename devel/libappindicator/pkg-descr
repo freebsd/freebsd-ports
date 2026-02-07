@@ -1,0 +1,3 @@
+A library to allow applications to export a menu into the Unity Menu bar. Based
+on KSNI it also works in KDE and will fallback to generic Systray support if
+none of those are available.

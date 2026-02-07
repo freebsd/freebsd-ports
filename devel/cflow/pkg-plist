@@ -1,0 +1,4 @@
+bin/cflow
+bin/prcc
+bin/prcg
+share/man/man1/cflow.1.gz

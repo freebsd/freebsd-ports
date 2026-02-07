@@ -1,0 +1,40 @@
+--- extras/Makefile.in.orig	Tue Apr 24 19:46:03 2001
++++ extras/Makefile.in	Tue Apr 24 19:46:13 2001
+@@ -32,7 +32,7 @@
+ MANDIR =	@mandir@
+ 
+ CC =		@CC@
+-CCOPT =		@V_CCOPT@
++CCOPT =		@CFLAGS@
+ DEFS =		@DEFS@
+ INCLS =		-I..
+ CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
+@@ -66,18 +66,16 @@
+ 
+ 
+ install:	all
+-	rm -f $(BINDIR)/makeweb $(BINDIR)/htpasswd $(BINDIR)/syslogtocern
+-	cp makeweb $(BINDIR)/makeweb
+-	chgrp $(WEBGROUP) $(BINDIR)/makeweb
+-	chmod 2755 $(BINDIR)/makeweb
+-	cp htpasswd $(BINDIR)/htpasswd
+-	cp syslogtocern $(BINDIR)/syslogtocern
+-	rm -f $(MANDIR)/man1/makeweb.1
+-	cp makeweb.1 $(MANDIR)/man1/makeweb.1
+-	rm -f $(MANDIR)/man1/htpasswd.1
+-	cp htpasswd.1 $(MANDIR)/man1/htpasswd.1
+-	rm -f $(MANDIR)/man8/syslogtocern.8
+-	cp syslogtocern.8 $(MANDIR)/man8/syslogtocern.8
++	rm -f $(DESTDIR)$(BINDIR)/makeweb $(DESTDIR)$(BINDIR)/thtpasswd $(DESTDIR)$(BINDIR)/syslogtocern
++	$(INSTALL) -s -m 555 makeweb $(DESTDIR)$(BINDIR)/makeweb
++	$(INSTALL) -s -m 555 htpasswd $(DESTDIR)$(BINDIR)/thtpasswd
++	$(INSTALL) -m 555 syslogtocern $(DESTDIR)$(BINDIR)/syslogtocern
++	rm -f $(DESTDIR)$(MANDIR)/man1/makeweb.1
++	$(INSTALL) -m 444 makeweb.1 $(DESTDIR)$(MANDIR)/man1/makeweb.1
++	rm -f $(DESTDIR)$(MANDIR)/man1/thtpasswd.1
++	$(INSTALL) -m 444 htpasswd.1 $(DESTDIR)$(MANDIR)/man1/thtpasswd.1
++	rm -f $(DESTDIR)$(MANDIR)/man8/syslogtocern.8
++	$(INSTALL) -m 444 syslogtocern.8 $(DESTDIR)$(MANDIR)/man8/syslogtocern.8
+ 
+ clean:
+ 	rm -f $(CLEANFILES)

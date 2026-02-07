@@ -1,0 +1,14 @@
+include/slang/slang.h
+include/slang/slcurses.h
+include/slang/slkanji.h
+lib/libslang.a
+lib/libslang.so
+lib/libslang.so.2
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/cref.txt
+%%PORTDOCS%%%%DOCSDIR%%/cslang.txt
+%%PORTDOCS%%%%DOCSDIR%%/slang.txt
+%%PORTDOCS%%%%DOCSDIR%%/slangdoc.html
+%%PORTDOCS%%%%DOCSDIR%%/slangfun.txt
+%%PORTDOCS%%%%DOCSDIR%%/slang-j.doc

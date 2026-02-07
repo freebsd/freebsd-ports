@@ -1,0 +1,312 @@
+Fix the cdda_enable bug that would cause the -A tests to fail on
+drives that require a density set
+
+Correct a bug that would cause a failed density set to abort out of
+verify_read_command
+
+Improve autosense order; non-density-set modes should be chacked
+before even NULL-density modes because there's not necessarily any
+going back (eg, Plextor lets you *set* the mode descriptor density,
+but does not let you read it; it always reports '0')
+
+Index: interface/interface.c
+===================================================================
+--- interface/interface.c	(revision 15313)
++++ interface/interface.c	(revision 15314)
+@@ -90,11 +90,11 @@
+       }
+   }
+ 
++  if(d->bigendianp==-1)d->bigendianp=data_bigendianp(d);
++
+   if((ret=d->enable_cdda(d,1)))
+     return(ret);
+     
+-  /*  d->select_speed(d,d->maxspeed); most drives are full speed by default */
+-  if(d->bigendianp==-1)d->bigendianp=data_bigendianp(d);
+   return(0);
+ }
+ 
+Index: interface/scsi_interface.c
+===================================================================
+--- interface/scsi_interface.c	(revision 15313)
++++ interface/scsi_interface.c	(revision 15314)
+@@ -1298,7 +1298,7 @@
+ 
+ static int verify_read_command(cdrom_drive *d){
+   int i,j,k;
+-  int audioflag=0;
++  int audioflag=1;
+ 
+   int  (*enablecommand)  (struct cdrom_drive *d, int speed);
+   long (*readcommand)   (struct cdrom_drive *d, void *p, long begin, 
+@@ -1313,7 +1313,7 @@
+      for data */
+ 
+   if(d->enable_cdda(d,1)==0){
+-    
++    audioflag=0;
+     for(i=1;i<=d->tracks;i++){
+       if(cdda_track_audiop(d,i)==1){
+ 	long firstsector=cdda_track_firstsector(d,i);
+@@ -1358,115 +1358,111 @@
+     /* NEC test must come before sony; the nec drive expects d8 to be
+        10 bytes, and a 12 byte verson (Sony) crashes the drive */
+ 
+-    for(j=0;j<15;j++){
+-      int densitypossible=1;
+-
+-      switch(j){
++    for(i=0;i<5;i++){
++      switch(i){
+       case 0:
+-	d->read_audio=scsi_read_28;
+-	rs="28 0x,00";
++	d->density=0;
++	d->enable_cdda=Dummy;
++	es="none    ";
+ 	break;
+       case 1:
+-	d->read_audio=scsi_read_A8;
+-	rs="a8 0x,00";
++	d->density=0;
++	d->enable_cdda=scsi_enable_cdda;
++	es="yes/0x00";
+ 	break;
+-
+       case 2:
+-	d->read_audio=scsi_read_mmcB;
+-	rs="be 02,10";
+-	densitypossible=0;
++	d->density=0x04;
++	d->enable_cdda=scsi_enable_cdda;
++	es="yes/0x04";
+ 	break;
+       case 3:
+-	d->read_audio=scsi_read_mmc2B;
+-	rs="be 02,f8";
+-	densitypossible=0;
++	d->density=0x82;
++	d->enable_cdda=scsi_enable_cdda;
++	es="yes/0x82";
+ 	break;
+       case 4:
+-	d->read_audio=scsi_read_mmc3B;
+-	rs="be 06,f8";
+-	densitypossible=0;
++	d->density=0x81;
++	d->enable_cdda=scsi_enable_cdda;
++	es="yes/0x81";
+ 	break;
++      }
+ 
+-      case 5:
+-	d->read_audio=scsi_read_mmc;
+-	rs="be 00,10";
+-	densitypossible=0;
+-	break;
+-      case 6:
+-	d->read_audio=scsi_read_mmc2;
+-	rs="be 00,f8";
+-	densitypossible=0;
+-	break;
+-      case 7:
+-	d->read_audio=scsi_read_mmc3;
+-	rs="be 04,f8";
+-	densitypossible=0;
+-	break;
+-
+-      case 8:
+-	d->read_audio=scsi_read_msf;
+-	rs="b9 00,10";
+-	densitypossible=0;
+-	break;
+-      case 9:
+-	d->read_audio=scsi_read_msf2;
+-	rs="b9 00,f8";
+-	densitypossible=0;
+-	break;
+-      case 10:
+-	d->read_audio=scsi_read_msf3;
+-	rs="b9 04,f8";
+-	densitypossible=0;
+-	break;
+-
+-      case 11:
+-	d->read_audio=scsi_read_D4_10;
+-	rs="d4(10)0x";
+-	break;
+-      case 12:
+-	d->read_audio=scsi_read_D4_12;
+-	rs="d4(12)0x";
+-	break;
+-      case 13:
+-	d->read_audio=scsi_read_D5;
+-	rs="d5 0x,00";
+-	break;
+-      case 14:
+-	d->read_audio=scsi_read_D8;
+-	rs="d8 0x,00";
+-	break;
+-      }
+-      
+-      for(i=0;i<5;i++){
+-	switch(i){
++      for(j=0;j<15;j++){
++	
++	switch(j){
+ 	case 0:
+-	  d->density=0;
+-	  d->enable_cdda=Dummy;
+-	  es="none    ";
+-	  if(!densitypossible)i=5; /* short circuit MMC style commands */
++	  d->read_audio=scsi_read_28;
++	  rs="28 0x,00";
+ 	  break;
+ 	case 1:
+-	  d->density=0;
+-	  d->enable_cdda=scsi_enable_cdda;
+-	  es="yes/0x00";
++	  d->read_audio=scsi_read_A8;
++	  rs="a8 0x,00";
+ 	  break;
++	  
++	  /* 2 through 10 do not allow/require density */
+ 	case 2:
+-	  d->density=0x04;
+-	  d->enable_cdda=scsi_enable_cdda;
+-	  es="yes/0x04";
+-	  break;
++	  d->read_audio=scsi_read_mmcB;
++	  rs="be 02,10";
++	  if(i==0)break;
+ 	case 3:
+-	  d->density=0x82;
+-	  d->enable_cdda=scsi_enable_cdda;
+-	  es="yes/0x82";
+-	  break;
++	  j=3;
++	  d->read_audio=scsi_read_mmc2B;
++	  rs="be 02,f8";
++	  if(i==0)break;
+ 	case 4:
+-	  d->density=0x81;
+-	  d->enable_cdda=scsi_enable_cdda;
+-	  es="yes/0x81";
++	  j=4;
++	  d->read_audio=scsi_read_mmc3B;
++	  rs="be 06,f8";
++	  if(i==0)break;
++	case 5:
++	  j=5;
++	  d->read_audio=scsi_read_mmc;
++	  rs="be 00,10";
++	  if(i==0)break;
++	case 6:
++	  j=6;
++	  d->read_audio=scsi_read_mmc2;
++	  rs="be 00,f8";
++	  if(i==0)break;
++	case 7:
++	  j=7;
++	  d->read_audio=scsi_read_mmc3;
++	  rs="be 04,f8";
++	  if(i==0)break;
++	case 8:
++	  j=8;
++	  d->read_audio=scsi_read_msf;
++	  rs="b9 00,10";
++	  if(i==0)break;
++	case 9:
++	  j=9;
++	  d->read_audio=scsi_read_msf2;
++	  rs="b9 00,f8";
++	  if(i==0)break;
++	case 10:
++	  j=10;
++	  d->read_audio=scsi_read_msf3;
++	  rs="b9 04,f8";
++	  if(i==0)break;
++	
++	case 11:
++	  d->read_audio=scsi_read_D4_10;
++	  rs="d4(10)0x";
+ 	  break;
++	case 12:
++	  d->read_audio=scsi_read_D4_12;
++	  rs="d4(12)0x";
++	  break;
++	case 13:
++	  d->read_audio=scsi_read_D5;
++	  rs="d5 0x,00";
++	  break;
++	case 14:
++	  d->read_audio=scsi_read_D8;
++	  rs="d8 0x,00";
++	  break;
+ 	}
+-
++	
+ 	cdmessage(d,"\ttest -> density: [");
+ 	cdmessage(d,es);
+ 	cdmessage(d,"]  command: [");
+@@ -1525,21 +1521,21 @@
+ 	  if(zeroflag){
+ 	    char buffer[256];
+ 	    sprintf(buffer,"\t\tDrive returned %d packet(s), but contents\n"
+-		        "\t\twere entirely zero\n",zeroflag);
++		    "\t\twere entirely zero\n",zeroflag);
+ 	    cdmessage(d,buffer);
+ 	  }
+ 	}
+       }
+     }
+-
++    
+     /* D'oh. */
+     d->density=density;
+     d->read_audio=readcommand;
+     d->enable_cdda=enablecommand;
+-
++    
+     cdmessage(d,"\tUnable to find any suitable command set from probe;\n"
+ 	      "\tdrive probably not CDDA capable.\n");
+-
++    
+     cderror(d,"006: Could not read any data from drive\n");
+ 
+   }
+@@ -1690,33 +1686,20 @@
+   if(d->is_atapi)d->lun=0; /* it should already be; just to make sure */
+       
+   if(d->is_mmc){
+-
+     d->read_audio = scsi_read_mmc2B;
+     d->bigendianp=0;
+-
+     check_exceptions(d,mmc_list);
+-
+   }else{
+-    
+     if(d->is_atapi){
+       /* Not MMC maybe still uses 0xbe */
+-
+       d->read_audio = scsi_read_mmc2B;
+       d->bigendianp=0;
+-
+       check_exceptions(d,atapi_list);
+-
+     }else{
+-
+       check_exceptions(d,scsi_list);
+-
+     }
+   }
+ 
+-  if(!d->is_atapi)set_sectorsize(d,2048); /* we really do want the
+-					     sector size at 2048 to begin.*/
+-  d->enable_cdda(d,0);
+-
+   d->read_toc = (!memcmp(d->drive_model, "IMS", 3) && !d->is_atapi) ? scsi_read_toc2 : 
+     scsi_read_toc;
+   d->set_speed = scsi_set_speed;

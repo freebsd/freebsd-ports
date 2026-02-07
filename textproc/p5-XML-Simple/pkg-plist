@@ -1,0 +1,4 @@
+%%SITE_PERL%%/XML/Simple.pm
+%%SITE_PERL%%/XML/Simple/FAQ.pod
+%%PERL5_MAN3%%/XML::Simple.3.gz
+%%PERL5_MAN3%%/XML::Simple::FAQ.3.gz

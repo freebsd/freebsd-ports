@@ -1,0 +1,2 @@
+OO wrapper to gpc library (translated from Inline-based
+Math::Geometry::Planar::GPC::Polygon to XS)

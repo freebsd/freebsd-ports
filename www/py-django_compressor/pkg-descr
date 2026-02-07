@@ -1,0 +1,3 @@
+Django Compressor combines and compresses linked and inline Javascript or
+CSS in a Django template into cacheable static files by using the compress
+template tag.

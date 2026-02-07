@@ -1,0 +1,7 @@
+code2html converts a program source code to syntax highlighted
+HTML. It may be called as a CGI script and can also handle include
+commands in HTML files.
+
+Support for the following languages:
+	Ada, Awk, C, C++, HTML, Java, JavaScript, m4, Makefile,
+	Pascal, Perl, SQL, ruby, povray, and groff.

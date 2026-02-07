@@ -1,0 +1,13 @@
+bin/dcf77pi
+bin/dcf77pi-analyze
+bin/dcf77pi-readpin
+bin/kevent-demo
+@sample %%ETCDIR%%/config.json.sample
+include/dcf77pi/bits1to14.h
+include/dcf77pi/calendar.h
+include/dcf77pi/decode_alarm.h
+include/dcf77pi/decode_time.h
+include/dcf77pi/input.h
+include/dcf77pi/mainloop.h
+include/dcf77pi/setclock.h
+lib/libdcf77.so

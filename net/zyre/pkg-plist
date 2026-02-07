@@ -1,0 +1,17 @@
+bin/zpinger
+include/zre_msg.h
+include/zyre.h
+include/zyre_election.h
+include/zyre_event.h
+include/zyre_group.h
+include/zyre_library.h
+include/zyre_node.h
+include/zyre_peer.h
+lib/libzyre.so
+lib/libzyre.so.2
+lib/libzyre.so.2.0.1
+libdata/pkgconfig/libzyre.pc
+share/cmake/zyre/zyreConfig.cmake
+share/cmake/zyre/zyreConfigVersion.cmake
+share/cmake/zyre/zyreTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/zyre/zyreTargets.cmake

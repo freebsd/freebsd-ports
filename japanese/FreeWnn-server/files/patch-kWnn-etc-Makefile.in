@@ -1,0 +1,42 @@
+Index: kWnn/etc/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/kWnn/etc/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -p -r1.1.1.1 -r1.2
+--- kWnn/etc/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ kWnn/etc/Makefile.in	2 Jan 2009 21:09:35 -0000	1.2
+@@ -35,10 +35,12 @@ top_builddir = ../..
+ INCLUDES = -I$(KWNNINCLUDESRC) -I$(TOP)
+ DEFINES = $(KWNNDEFINES) $(KWNNLANGDEF)
+ 
+-SRCS= strings.c 	sstrings.c 	bdic.c 	hindo.c 	gethinsi.c 	revdic.c 	pwd.c 	bcopy.c 	xutoj.c 	dic_atojis.c 	msg.c 	yincoding.c 	py_table.c 	zy_table.c 	server_env.c mkdir.c
++SRCS= strings.c 	sstrings.c 	bdic.c 	hindo.c 	gethinsi.c 	revdic.c 	pwd.c 	bcopy.c 	xutoj.c 	dic_atojis.c 	msg.c 	yincoding.c 	py_table.c 	zy_table.c 	server_env.c mkdir.c \
++	fake-rfc2553.c
+ SRCS2= getopt.c getopt1.c
+ 
+-OBJS= strings.o 	sstrings.o 	bdic.o 	hindo.o 	gethinsi.o 	revdic.o 	pwd.o 	bcopy.o 	xutoj.o 	dic_atojis.o 	msg.o 	yincoding.o 	py_table.o 	zy_table.o 	server_env.o mkdir.o
++OBJS= strings.o 	sstrings.o 	bdic.o 	hindo.o 	gethinsi.o 	revdic.o 	pwd.o 	bcopy.o 	xutoj.o 	dic_atojis.o 	msg.o 	yincoding.o 	py_table.o 	zy_table.o 	server_env.o mkdir.o \
++	fake-rfc2553.o
+ OBJS2= getopt.o getopt1.o
+ 
+ all::
+@@ -199,6 +201,18 @@ includes:: getopt1.c
+ 
+ depend:: getopt1.c
+ 
++fake-rfc2553.c: $(WNNETCSRC)/fake-rfc2553.c
++	$(RM) $@
++	$(LN) $? $@
++
++includes:: fake-rfc2553.c
++
++depend:: fake-rfc2553.c
++
++depend:: .depend
++
++clean::
++
+ depend:: .depend
+ 
+ clean::

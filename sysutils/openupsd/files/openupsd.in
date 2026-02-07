@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: openupsd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+openupsd_enable=${openupsd_enable:-"NO"}
+
+. /etc/rc.subr
+
+name="openupsd"
+rcvar=openupsd_enable
+
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/${name}.conf
+
+command=%%PREFIX%%/sbin/openupsd
+command_args="-p ${pidfile}"
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,29 @@
+Prepend local include paths in CFLAGS to avoid conflict with system wide includes
+
+CFLAGS could contain system wide include paths which might conflict
+with our filenames. So make sure that our local directories are first
+in the search order.
+
+Example with conflicting profile.h from kerberos:
+
+tvheadend-4.2.5/src/dvr/dvr.h:27:
+/usr/local/include/profile.h:24:28: error: typedef redefinition with
+different types ('struct _profile_t *' vs 'struct profile')
+typedef struct _profile_t *profile_t;
+                           ^
+tvheadend-4.2.5/src/profile.h:147:3:
+note: previous definition is here
+} profile_t;
+
+Reported by:	Frank Razenberg <frank@zzattack.org>
+--- Makefile.bak	2018-02-22 16:07:14.367738000 +0000
++++ Makefile	2018-02-22 16:08:14.628857000 +0000
+@@ -52,7 +52,7 @@
+ CFLAGS  += -Wmissing-prototypes
+ CFLAGS  += -fms-extensions -funsigned-char -fno-strict-aliasing
+ CFLAGS  += -D_FILE_OFFSET_BITS=64
+-CFLAGS  += -I${BUILDDIR} -I${ROOTDIR}/src -I${ROOTDIR}
++CFLAGS  := -I${BUILDDIR} -I${ROOTDIR}/src -I${ROOTDIR} ${CFLAGS}
+ ifeq ($(CONFIG_ANDROID),yes)
+ LDFLAGS +=  -lm
+ else

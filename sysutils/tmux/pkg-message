@@ -1,0 +1,18 @@
+[
+{
+  type: upgrade
+  message: <<EOM
+tmux must be restarted after upgrading.
+
+If you see the following message when you try to attach, it likely means
+you forgot to restart tmux:
+
+  open terminal failed: not a terminal
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "3.6a"
+  message: "The bash completions for tmux have been moved to the bash-completion package."
+}
+]

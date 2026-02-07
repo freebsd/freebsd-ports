@@ -1,0 +1,20 @@
+CC= %%CC%%
+CFLAGS= %%CFLAGS%%
+LDFLAGS= %%LDFLAGS%%
+LAPACK= %%LAPACK%%
+BLAS= %%BLAS%%
+LIBS= -llevmar $(LAPACK) $(BLAS) -lm
+
+DEMOBJS= lmdemo.o
+DEMOSRCS= lmdemo.c
+
+all: lmdemo
+
+lmdemo: $(DEMOBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(DEMOBJS) -o lmdemo $(LIBS)
+
+clean:
+	@rm -f $(DEMOBJS)
+
+cleanall: clean
+	@rm -f lmdemo

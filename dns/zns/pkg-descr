@@ -1,0 +1,12 @@
+zns is a command-line utility for querying DNS records,
+displaying them in a human-readable, colored format
+that includes type, name, TTL, and value.
+
+Features:
+
+- Supports various DNS record types
+- Colorized and tabular output for easy reading
+- Concurrent queries for improved performance
+- JSON output format for machine-readable results
+- Option to write output to a file
+- Option to query a specific DNS server

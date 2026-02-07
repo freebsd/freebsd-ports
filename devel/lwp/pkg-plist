@@ -1,0 +1,8 @@
+include/lwp/lock.h
+include/lwp/lwp.h
+include/lwp/timer.h
+lib/liblwp.a
+lib/liblwp.so
+lib/liblwp.so.2
+lib/liblwp.so.2.0.11
+libdata/pkgconfig/lwp.pc

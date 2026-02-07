@@ -1,0 +1,8 @@
+YaTeX automates typesetting and previewing of LaTeX and enables
+completing input of LaTeX mark-up command such as `\begin{}'..`\end{}'.
+YaTeX also supports Demacs which runs on MS-DOS(386), Mule (Multi
+Language Enhancement to GNU Emacs), and latex on DOS.
+
+Yahtml is a brand new package for writing HTML files with Emacs. It is
+very far from html-mode, html-helper-mode or other existing HTML modes.
+It is a good successor of YaTeX in HTML world.

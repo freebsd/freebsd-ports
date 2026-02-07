@@ -1,0 +1,4 @@
+diskcheckd is a daemon which runs in the background, reading entire disks
+to find any read errors on those disks.  The disks which should be
+scanned, and the rates at which they should be scanned, must be specified
+in the configuration file.

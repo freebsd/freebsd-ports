@@ -1,0 +1,47 @@
+PORTNAME=	mrbayes
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.2.7
+PORTREVISION=	2
+CATEGORIES=	biology
+
+MAINTAINER=	mzaki@e-mail.ne.jp
+COMMENT=	Bayesian inference of phylogeny
+WWW=		https://nbisweden.github.io/MrBayes/
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		readline
+USE_GITHUB=	yes
+GH_ACCOUNT=	NBISweden
+GH_PROJECT=	MrBayes
+
+GNU_CONFIGURE=	yes
+
+OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFINE_amd64=	AVX FMA SSE
+OPTIONS_DEFINE_i386=	AVX FMA SSE
+
+OPTIONS_DEFAULT_amd64=	SSE
+
+OPTIONS_RADIO=		MPI
+OPTIONS_RADIO_MPI=	MPICH OPENMPI
+
+OPTIONS_EXCLUDE_i386=	OPENMPI
+
+AVX_DESC=	Use AVX optimized routines
+FMA_DESC=	Use FMA optimized routines
+
+AVX_IMPLIES=		SSE
+AVX_CONFIGURE_OFF=	--disable-avx
+FMA_IMPLIES=		AVX SSE
+FMA_CONFIGURE_OFF=	--disable-fma
+MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
+MPICH_CONFIGURE_ON=	--with-mpi
+MPICH_CONFIGURE_ENV=	CC="${LOCALBASE}/bin/mpicc"
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI_CONFIGURE_ON=	--with-mpi
+OPENMPI_CONFIGURE_ENV=	CC="${LOCALBASE}/mpi/openmpi/bin/mpicc"
+SSE_CONFIGURE_OFF=	--disable-sse
+
+.include <bsd.port.mk>

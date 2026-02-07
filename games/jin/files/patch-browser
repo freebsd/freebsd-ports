@@ -1,0 +1,81 @@
+Use java.awt.Desktop instead of trying (and failing) to invoke
+some kind of browser ourselves.
+
+	-mi
+
+--- src/free/util/BrowserControl.java	2007-03-04 19:55:00.000000000 -0500
++++ src/free/util/BrowserControl.java	2025-12-15 21:39:55.153096000 -0500
+@@ -31,4 +31,6 @@
+ import java.io.InputStream; 
+ import java.io.InterruptedIOException;
++import java.awt.Desktop;
++import java.net.URI;
+ import java.net.URL;
+ import java.util.Properties;
+@@ -81,63 +82,8 @@
+       if (appletContext != null){ // Running in an applet.
+         appletContext.showDocument(new URL(url), "_blank");
++      } else {
++        Desktop.getDesktop().browse(new URI(url));
+       }
+-      else if (PlatformUtils.isWindows()){
+-        if (url.endsWith(".html")||url.endsWith(".htm")){
+-
+-          // url-encode the last character because windows refuses to display URLs
+-          // ending with ".html" or ".htm", but works fine
+-          // for ".htm%6c" or ".ht%6d"
+-          int lastChar = url.charAt(url.length()  -1);
+-          url = url.substring(0, url.length() - 1) + "%" + Integer.toHexString(lastChar);
+-        }
+-        String cmd = "rundll32 url.dll,FileProtocolHandler "+url;
+-        Runtime.getRuntime().exec(cmd); 
+-      }
+-      else if (PlatformUtils.isMacOSX()){
+-        String [] commandLine = new String[]{"open", url};
+-        Runtime.getRuntime().exec(commandLine);
+-      }
+-      else if (PlatformUtils.isMacOS()){
+-        String [] commandLine = new String[]{"netscape", url}; 
+-        Runtime.getRuntime().exec(commandLine); 
+-      }
+-      else{
+-        synchronized(BrowserControl.class){
+-          if (environment == null){
+-            environment = new Properties();
+-            try{
+-              Process env = Runtime.getRuntime().exec("env");
+-              InputStream in = env.getInputStream();
+-              try{
+-                environment.load(in);
+-              } finally{
+-                  in.close();
+-                }
+-            } catch (IOException e){e.printStackTrace();}
+-          }
+-        }
+-
+-        String browsers = environment.getProperty("BROWSER");
+-        if ((browsers == null) || ("".equals(browsers))){
+-          return tryMozilla(url);
+-        }
+-
+-        StringTokenizer tokenizer = new StringTokenizer(browsers, ":");
+-        if (!tokenizer.hasMoreTokens())
+-          return false;
+-        
+-        String browser = tokenizer.nextToken();
+-        int percentPercentIndex;
+-        while ((percentPercentIndex = browser.indexOf("%%")) != -1)
+-          browser = browser.substring(0, percentPercentIndex)+"%"+browser.substring(percentPercentIndex+3);
+-        int urlIndex = browser.indexOf("%s");
+-        String commandline;
+-        if (urlIndex != -1)
+-          commandline = browser.substring(0, urlIndex)+url+browser.substring(urlIndex+2);
+-        else
+-          commandline = browser+" "+url;
+-        Runtime.getRuntime().exec(commandline);
+-      }
+-    } catch (IOException e){
++    } catch (Exception e){
+         return false;
+       }

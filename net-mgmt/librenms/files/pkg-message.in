@@ -1,0 +1,145 @@
+[
+{ type: install
+  message: <<EOM
+
+You can mostly follow the guide at:
+http://docs.librenms.org/
+
+with the following notes:
+- Installation directory is %%WWWDIR%%
+
+NOTE: setting sql-mode="" is no longer required. You can remove it from
+%%LOCALBASE%%/etc/mysql/my.cnf
+
+LibreNMS requires specific entries in my.cnf for MySQL. In MySQL 8, once the
+service is started for the first time, the lower_case_table_names value can not
+be changed. It is recommended that you my.cnf before starting MySQL for the
+first time or pass specific values on the command-line when starting MySQL. 
+
+NOTE that the lower_case_table_names entry needs to be set before you start
+MySQL for the first time.
+
+innodb_file_per_table=1
+lower_case_table_names=0
+
+By default MySQL 8 uses a different authentication plugin to auth database users.
+If you see errors in the logs like this:
+
+"The server requested authentication method unknown to the client..."
+
+Add this to my.cnf:
+
+[mysqld]
+default-authentication-plugin=mysql_native_password
+
+The following MySQL configuration is required. Adjust 'localhost' as
+required if MySQL is on a different host.
+
+CREATE DATABASE librenms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'librenms'@'localhost' IDENTIFIED with mysql_native_password BY 'password';
+GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';
+FLUSH PRIVILEGES;
+
+Enable the poller service with this command:
+
+sysrc librenms_enable="YES"
+
+The service will log to /var/log/librems/librenms-service.log
+
+For log file rotation
+
+* sample file installed to %%WWWDIR%%/contrib/newsyslog.conf.sample
+* actual file installed, never overwriting, to %%PREFIX%%/etc/newsyslog.conf.d/librenms.conf
+
+For new installs, you need a %%WWWDIR%%/.env file. To create:
+
+cd %%WWWDIR%%
+cp -i .env.example .env
+
+That file will eventually contain secrets.  Make sure it is not world-readable.
+
+Database connection details are required in that file.
+
+When trying to run /install for the first time you need to have (INSTALL=true)
+in your .env file. If you don't set it you will get a 403 error on the
+webpage.
+
+Then run:
+
+sudo php artisan key:generate
+
+It should write directly to your .env file. The output should look something
+like this:
+
+$ sudo php artisan key:generate
+Application key set successfully.
+
+You need an APP_KEY.
+
+* %%WWWDIR%%/.env should now contain:
+  * APP_KEY
+  * NODE_I
+  * DB_HOST
+  * DB_DATABASE
+  * DB_USERNAME
+  * DB_PASSWORD
+
+* you can create a NODE_ID with: php -r 'echo uniqid() . "\n";'
+
+After that, follow the LibreNMS documentation for configuration.
+
+It is also a good idea to validate your configuation after MySQL has been
+started:
+
+cd %%WWWDIR%%
+echo ./validate.php | sudu su -fm www
+
+NOTE: The mysql client is no longer a run-time dependency.
+      If needed, you must install it.
+
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+Depending on the version, you may have to run the upgrade script.
+
+sudo su -fm www
+%%PREFIX%%/bin/lnms migrate
+
+NOTE: that script is particular about who runs it and ownership.
+Previously, it was suggested you avoid this via chown when using
+the script %%WWWDIR%%/lnms
+Now, a symlink is provided. Using %%PREFIX%%/bin/lnms avoids
+those issues. Use it instead.
+
+re: https://docs.librenms.org/General/Updating/
+
+LibreNMS requires specific entries in my.cnf for MySQL.
+
+NOTE that the lower_case_table_names entry needs to be set before you start
+MySQL for the first time.
+
+innodb_file_per_table=1
+lower_case_table_names=0
+
+For MySQL 8, you need to update the my.cnf
+
+And adjust the login (adjusting localhost as required):
+
+alter user 'librenms'@'localhost' identified with mysql_native_password by 'passwordhere';
+
+NOTE: Starting with the 22.2.1 port the %%WWWDIR%%/storage directory has
+been replaced with a symlink to /var/db/librenms/storage
+
+NOTE: Maintainer has noticed that upon reboot (at least in jails), the service
+does not properly start. Monitor /var/log/librenms/*.log and if you see
+'Unable to launch a new process', then restart the service via:
+
+ service librenms restart
+
+NOTE: The mysql client is no longer a run-time dependency.
+      If needed, you must install it.
+
+EOM
+}
+]

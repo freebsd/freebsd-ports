@@ -1,0 +1,37 @@
+--- Makefile.orig	2013-08-13 18:58:36 UTC
++++ Makefile
+@@ -11,16 +11,6 @@ ifeq ($(MAN),)
+   MAN = $(DESTDIR)/usr/local/man
+ endif
+ 
+-ifeq ($(DEBUG),)
+-  override CPPFLAGS += -DNDEBUG
+-  CFLAGS += -O3 #-fno-stack-protector #-march=native
+-  LDFLAGS += -O3 #-march=native
+-else
+-  override CPPFLAGS += -DDEBUG
+-  CFLAGS += -g #-pg
+-  LDFLAGS += -g #-pg
+-endif
+-
+ CC ?= gcc
+ GZIP = gzip -9 -c
+ RM = rm -rf
+@@ -47,12 +37,12 @@ TSTENTRY = $(BINS)/test.o
+ override CPPFLAGS += $(shell cat $(BINS)/autoconf.cppflags)
+ 
+ 
+-all: tthsum manual test runtest
++all: tthsum manual
+ 
+-install: tthsum manual test runtest
+-	install -d $(BIN) $(MAN)/man1
+-	install $(BINS)/tthsum $(BIN)
+-	install -m644 $(SHARES)/tthsum.1.gz $(MAN)/man1
++install: tthsum manual
++	install -d $(BIN) $(DESTDIR)$(PREFIX)/share/man/man1
++	install $(BINS)/tthsum $(DESTDIR)$(PREFIX)/bin
++	install -m644 $(SHARES)/tthsum.1.gz $(DESTDIR)$(PREFIX)/share/man/man1
+ 
+ uninstall:
+ 	$(RM) $(BIN)/tthsum

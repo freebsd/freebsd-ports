@@ -1,0 +1,5 @@
+bin/gensig
+bin/cattag
+share/gensig/taglines
+share/man/man1/cattag.1.gz
+share/man/man1/gensig.1.gz

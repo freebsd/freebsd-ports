@@ -1,0 +1,3 @@
+%%SITE_PERL%%/REST/Google/Apps/Provisioning.pm
+%%SITE_PERL%%/REST/Google/Apps/Provisioning.pod
+%%PERL5_MAN3%%/REST::Google::Apps::Provisioning.3.gz

@@ -1,0 +1,18 @@
+--- configure.ac.orig	2026-01-28 00:52:04 UTC
++++ configure.ac
+@@ -27,7 +27,6 @@ dnl Third-party dependencies.
+     Install 'bison' package first.])])
+ 
+ dnl Third-party dependencies.
+-m4_include([deps/libev/libev.m4])
+ m4_include([deps/libstatsd/libstatsd.m4])
+ 
+ dnl Import locally defined macros.
+@@ -155,7 +154,6 @@ AC_CONFIG_FILES([Makefile
+                  src/Makefile
+                  doc/Makefile
+                  deps/Makefile
+-                 deps/libev/Makefile
+                  deps/libcows/Makefile
+                  deps/libstatsd/Makefile
+                  deps/libstatsd/man/Makefile

@@ -1,0 +1,26 @@
+#  Re-added -l option to the client. Does nothing, but stops
+#  warnings/errors. Will really fix #219950 and #224737, and also a
+#  differently-described bug (220379). Closes: #219950, #220379
+#
+# Patch by Steve McIntyre <steve@einval.com>
+diff -Nur src/main.c src/main.c
+--- src/main.c	2006-02-26 22:09:42.000000000 +0800
++++ src/main.c	2006-02-26 22:09:43.000000000 +0800
+@@ -511,7 +511,7 @@
+     int help = 0;		/* Has the user asked for help?  This
+ 				   lets us support the `cvs -H cmd'
+ 				   convention to give help for cmd. */
+-    static const char short_options[] = "+QqrwtnRvb:T:e:d:Hfz:s:xa";
++    static const char short_options[] = "+QqrwtnRvb:T:e:d:Hfz:s:xal";
+     static struct option long_options[] =
+     {
+         {"help", 0, NULL, 'H'},
+@@ -669,6 +669,8 @@
+ 		noexec = 1;
+ 		logoff = 1;
+ 		break;
++        case 'l': /* no-op to simply ignore the old -l option */
++            break;
+ 	    case 'v':
+ 		(void) fputs ("\n", stdout);
+ 		version (0, NULL);    

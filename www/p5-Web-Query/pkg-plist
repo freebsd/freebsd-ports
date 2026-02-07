@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Web/Query.pm
+%%SITE_PERL%%/Web/Query/LibXML.pm
+%%PERL5_MAN3%%/Web::Query.3.gz
+%%PERL5_MAN3%%/Web::Query::LibXML.3.gz

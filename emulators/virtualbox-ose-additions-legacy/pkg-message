@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+VirtualBox Guest Additions are installed.
+
+To enable the required services:
+
+# sysrc vboxguest_enable="YES"
+# sysrc vboxservice_enable="YES"
+
+To start the services, restart the system.
+
+For features such as window scaling and clipboard sharing, membership of
+the wheel group is required. With username jerry as an example:
+
+# pw groupmod wheel -m jerry
+
+The settings dialogue for FreeBSD guests encourages use of the VMSVGA
+graphics controller. Whilst this might suit installations of FreeBSD
+without a desktop environment (a common use case), it may be inappropriate
+where legacy Guest Additions are installed.
+EOM
+}
+]

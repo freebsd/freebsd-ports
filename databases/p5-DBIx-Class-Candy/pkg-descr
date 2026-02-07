@@ -1,0 +1,3 @@
+DBIx::Class::Candy is a simple sugar layer for definition of DBIx::Class
+results. Note that it may later be expanded to add sugar for more
+DBIx::Class related things.

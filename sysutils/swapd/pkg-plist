@@ -1,0 +1,6 @@
+share/man/man5/swapd.conf.5.gz
+share/man/man8/swapd.8.gz
+sbin/swapd
+sbin/swapd_swapon
+sbin/swapd_swapoff
+@sample etc/swapd.conf.sample

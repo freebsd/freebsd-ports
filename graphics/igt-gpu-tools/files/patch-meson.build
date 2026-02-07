@@ -1,0 +1,31 @@
+--- meson.build.orig	2022-08-31 20:00:01 UTC
++++ meson.build
+@@ -86,7 +86,7 @@ build_info = ['Build type: ' + get_option('buildtype')
+ 
+ build_info = ['Build type: ' + get_option('buildtype')]
+ 
+-inc = include_directories('include/drm-uapi', 'include/linux-uapi', 'lib', 'lib/stubs/syscalls', '.')
++inc = include_directories('/usr/local/include', 'include/drm-uapi', 'include/linux-uapi', 'lib', 'lib/stubs/syscalls', '.')
+ 
+ inc_for_gtkdoc = include_directories('lib')
+ 
+@@ -120,8 +120,8 @@ pciaccess = dependency('pciaccess', version : '>=0.10'
+ build_info += 'With libdrm: ' + ','.join(libdrm_info)
+ 
+ pciaccess = dependency('pciaccess', version : '>=0.10')
+-libkmod = dependency('libkmod')
+-libprocps = dependency('libprocps', required : true)
++libkmod = dependency('libkmod', required : false)
++libprocps = dependency('libprocps', required : false)
+ 
+ libunwind = dependency('libunwind', required : get_option('libunwind'))
+ build_info += 'With libunwind: @0@'.format(libunwind.found())
+@@ -313,7 +313,7 @@ endif
+ if libdrm_intel.found()
+ 	subdir('assembler')
+ endif
+-subdir('overlay')
++#subdir('overlay')
+ subdir('man')
+ subdir('scripts')
+ 

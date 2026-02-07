@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/LaTeX::TOM.3.gz
+%%SITE_PERL%%/LaTeX/TOM.pm
+%%SITE_PERL%%/LaTeX/TOM/Node.pm
+%%SITE_PERL%%/LaTeX/TOM/Parser.pm
+%%SITE_PERL%%/LaTeX/TOM/Tree.pm

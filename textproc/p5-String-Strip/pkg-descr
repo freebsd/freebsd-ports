@@ -1,0 +1,10 @@
+String::Strip is an XS extension that implements four white space
+removal routines: StripSpace (remove all white space), StripLSpace
+(strip leading white space), StripTSpace (strip trailing white space),
+and StripLTSpace (strip leading and trailing white space). All four of
+these routines work directly on the input argument, rather than passing
+back a result. The routines tend to be roughly 30% faster than
+equivalent function regex code.
+
+-Anton
+<tobez@FreeBSD.org>

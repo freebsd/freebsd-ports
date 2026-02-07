@@ -1,0 +1,61 @@
+--- inst/qmc2.ini.template.orig	2023-11-25 02:41:33 UTC
++++ inst/qmc2.ini.template
+@@ -1,30 +1,31 @@
+ [Frontend]
+-FilesAndDirectories\DataDirectory=DATADIR/qmc2/
++FilesAndDirectories\DataDirectory=%%DATADIR%%
++FilesAndDirectories\DocumentationDirectory=%%DOCSDIR%%
+ 
+ [MAME]
+-FilesAndDirectories\OptionsTemplateFile=DATADIR/qmc2/opt/SDLMAME/template-SDL2.xml
+-FilesAndDirectories\PreviewDirectory=DATADIR/qmc2/prv/
+-FilesAndDirectories\PreviewFile=DATADIR/qmc2/prv/previews.zip
+-FilesAndDirectories\FlyerDirectory=DATADIR/qmc2/fly/
+-FilesAndDirectories\FlyerFile=DATADIR/qmc2/fly/flyers.zip
+-FilesAndDirectories\IconDirectory=DATADIR/qmc2/ico/
+-FilesAndDirectories\IconFile=DATADIR/qmc2/ico/icons.zip
+-FilesAndDirectories\CabinetDirectory=DATADIR/qmc2/cab/
+-FilesAndDirectories\CabinetFile=DATADIR/qmc2/cab/cabinets.zip
+-FilesAndDirectories\ControllerDirectory=DATADIR/qmc2/ctl/
+-FilesAndDirectories\ControllerFile=DATADIR/qmc2/ctl/controllers.zip
+-FilesAndDirectories\MarqueeDirectory=DATADIR/qmc2/mrq/
+-FilesAndDirectories\MarqueeFile=DATADIR/qmc2/mrq/marquees.zip
+-FilesAndDirectories\TitleDirectory=DATADIR/qmc2/ttl/
+-FilesAndDirectories\TitleFile=DATADIR/qmc2/ttl/titles.zip
+-FilesAndDirectories\PCBDirectory=DATADIR/qmc2/pcb/
+-FilesAndDirectories\PCBFile=DATADIR/qmc2/pcb/pcbs.zip
+-FilesAndDirectories\SoftwareSnapDirectory=DATADIR/qmc2/sws/
+-FilesAndDirectories\SoftwareSnapFile=DATADIR/qmc2/sws/swsnaps.zip
+-FilesAndDirectories\SoftwareNotesFolder=DATADIR/qmc2/swn/
+-FilesAndDirectories\SoftwareNotesTemplate=DATADIR/qmc2/swn/template.html
+-FilesAndDirectories\SystemNotesFolder=DATADIR/qmc2/gmn/
+-FilesAndDirectories\SystemNotesTemplate=DATADIR/qmc2/gmn/template.html
+-FilesAndDirectories\VideoSnapFolder=DATADIR/qmc2/vdo/
+-FilesAndDirectories\SystemManualFolder=DATADIR/qmc2/man/systems/
+-FilesAndDirectories\SoftwareManualFolder=DATADIR/qmc2/man/software/
++FilesAndDirectories\OptionsTemplateFile=%%DATADIR%%opt/SDLMAME/template-SDL2.xml
++FilesAndDirectories\PreviewDirectory=%%DATADIR%%prv/
++FilesAndDirectories\PreviewFile=%%DATADIR%%prv/previews.zip
++FilesAndDirectories\FlyerDirectory=%%DATADIR%%fly/
++FilesAndDirectories\FlyerFile=%%DATADIR%%fly/flyers.zip
++FilesAndDirectories\IconDirectory=%%DATADIR%%ico/
++FilesAndDirectories\IconFile=%%DATADIR%%ico/icons.zip
++FilesAndDirectories\CabinetDirectory=%%DATADIR%%cab/
++FilesAndDirectories\CabinetFile=%%DATADIR%%cab/cabinets.zip
++FilesAndDirectories\ControllerDirectory=%%DATADIR%%ctl/
++FilesAndDirectories\ControllerFile=%%DATADIR%%ctl/controllers.zip
++FilesAndDirectories\MarqueeDirectory=%%DATADIR%%mrq/
++FilesAndDirectories\MarqueeFile=%%DATADIR%%mrq/marquees.zip
++FilesAndDirectories\TitleDirectory=%%DATADIR%%ttl/
++FilesAndDirectories\TitleFile=%%DATADIR%%ttl/titles.zip
++FilesAndDirectories\PCBDirectory=%%DATADIR%%pcb/
++FilesAndDirectories\PCBFile=%%DATADIR%%pcb/pcbs.zip
++FilesAndDirectories\SoftwareSnapDirectory=%%DATADIR%%sws/
++FilesAndDirectories\SoftwareSnapFile=%%DATADIR%%sws/swsnaps.zip
++FilesAndDirectories\SoftwareNotesFolder=%%DATADIR%%swn/
++FilesAndDirectories\SoftwareNotesTemplate=%%DATADIR%%swn/template.html
++FilesAndDirectories\SystemNotesFolder=%%DATADIR%%gmn/
++FilesAndDirectories\SystemNotesTemplate=%%DATADIR%%gmn/template.html
++FilesAndDirectories\VideoSnapFolder=%%DATADIR%%vdo/
++FilesAndDirectories\SystemManualFolder=%%DATADIR%%man/systems/
++FilesAndDirectories\SoftwareManualFolder=%%DATADIR%%man/software/

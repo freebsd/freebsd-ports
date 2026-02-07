@@ -1,0 +1,2 @@
+iopath is a lightweight I/O abstraction library that provides a common
+interface across storage backends.

@@ -1,0 +1,21 @@
+--- src/yaf.pod.orig	2023-02-08 19:01:48 UTC
++++ src/yaf.pod
+@@ -1633,7 +1633,8 @@ The UNIX timestamp of when the program interacted with
+ 
+ B<yaf> responds to B<SIGINT> or B<SIGTERM> by terminating input processing,
+ flushing any pending flows to the current output, and exiting. If B<--verbose>
+-is given, B<yaf> responds to B<SIGUSR1> by printing present flow and fragment table
++is given, B<yaf> responds to B<SIGUSR1> (and B<SIGINFO> where available)
++by printing present flow and fragment table
+ statistics to its log.  All other signals are handled by the C runtimes in
+ the default manner on the platform on which B<yaf> is currently operating.
+ 
+@@ -1725,7 +1726,7 @@ See B<yafzcbalance(1)> for more information.
+ 
+ When running B<yaf> with --live=pfring or --live=zc, the call to receive
+ packets is blocking so B<yaf> will not export statistics messages or
+-respond to SIGUSR1 signals unless it is receiving data.
++respond to B<SIGUSR1>/B<SIGINFO> signals unless it is receiving data.
+ 
+ Presently, the B<destinationTransportPort> information element contains
+ ICMP type and code information for ICMP or ICMP6 flows; this is nonstandard

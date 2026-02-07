@@ -1,0 +1,93 @@
+- Skip quarto installation (use quarto from separate FreeBSD package)
+- Skip copilot-language-server installation (use github-copilot-language-server port)
+- Always skip COPILOT_DIR validation (we use system copilot-language-server)
+
+--- src/cpp/session/CMakeLists.txt.orig2025-11-30 08:22:15 UTC
++++ src/cpp/session/CMakeLists.txt
+@@ -90,7 +90,7 @@ foreach(VAR RSTUDIO_DEPENDENCIES_DICTIONARIES_DIR
+    endif()
+ 
+    # skip Copilot if not enabled
+-   if("${VAR}" STREQUAL "RSTUDIO_DEPENDENCIES_COPILOT_DIR" AND NOT RSTUDIO_ENABLE_COPILOT)
++   if("${VAR}" STREQUAL "RSTUDIO_DEPENDENCIES_COPILOT_DIR")
+       continue()
+    endif()
+ 
+@@ -725,42 +725,42 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSESSION_ALTERNAT
+    # install mathjax for local html preview
+    install(DIRECTORY "${RSTUDIO_DEPENDENCIES_MATHJAX_DIR}"
+            DESTINATION "${RSTUDIO_INSTALL_SUPPORTING}/resources")
+-
+-   # install quarto (or pandoc if quarto disabled)
+-   if(QUARTO_ENABLED)
+-      # install some quarto folders into Resources, as needed
+-      if(APPLE)
+-         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_QUARTO_DIR}" 
+-               DESTINATION "${RSTUDIO_INSTALL_RESOURCES}/app"
+-               USE_SOURCE_PERMISSIONS
+-               PATTERN ".gitignore"
+-               EXCLUDE)
+-      else()
+-         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_QUARTO_DIR}"
+-               DESTINATION "${RSTUDIO_INSTALL_BIN}"
+-               USE_SOURCE_PERMISSIONS
+-               PATTERN ".gitignore"
+-               EXCLUDE)
+-      endif()
+-   else()
+-      install(DIRECTORY "${RSTUDIO_DEPENDENCIES_PANDOC_DIR}/"
+-              DESTINATION "${RSTUDIO_INSTALL_BIN}/pandoc"
+-              USE_SOURCE_PERMISSIONS)
+-   endif()
+ 
+-   # install Copilot Language Server
+-   if(RSTUDIO_ENABLE_COPILOT)
+-      if(APPLE)
+-         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_COPILOT_DIR}" 
+-               DESTINATION "${RSTUDIO_INSTALL_RESOURCES}/app"
+-               USE_SOURCE_PERMISSIONS)
+-      else()
+-         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_COPILOT_DIR}"
+-               DESTINATION "${RSTUDIO_INSTALL_BIN}"
+-               USE_SOURCE_PERMISSIONS)
+-      endif()
+-   endif()
+-
++#   # install quarto (or pandoc if quarto disabled)
++#   if(QUARTO_ENABLED)
++#      # install some quarto folders into Resources, as needed
++#      if(APPLE)
++#         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_QUARTO_DIR}" 
++#               DESTINATION "${RSTUDIO_INSTALL_RESOURCES}/app"
++#               USE_SOURCE_PERMISSIONS
++#               PATTERN ".gitignore"
++#               EXCLUDE)
++#      else()
++#         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_QUARTO_DIR}"
++#               DESTINATION "${RSTUDIO_INSTALL_BIN}"
++#               USE_SOURCE_PERMISSIONS
++#               PATTERN ".gitignore"
++#               EXCLUDE)
++#      endif()
++#   else()
++#      install(DIRECTORY "${RSTUDIO_DEPENDENCIES_PANDOC_DIR}/"
++#              DESTINATION "${RSTUDIO_INSTALL_BIN}/pandoc"
++#              USE_SOURCE_PERMISSIONS)
++#   endif()
++#
++#   # install Copilot Language Server
++#   if(RSTUDIO_ENABLE_COPILOT)
++#      if(APPLE)
++#         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_COPILOT_DIR}" 
++#               DESTINATION "${RSTUDIO_INSTALL_RESOURCES}/app"
++#               USE_SOURCE_PERMISSIONS)
++#      else()
++#         install(DIRECTORY "${RSTUDIO_DEPENDENCIES_COPILOT_DIR}"
++#               DESTINATION "${RSTUDIO_INSTALL_BIN}"
++#               USE_SOURCE_PERMISSIONS)
++#      endif()
++#   endif()
++#
+    # install embedded packages
+    foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})
+       file(GLOB PKG_FILES "${RSTUDIO_DEPENDENCIES_DIR}/common/${PKG}*.tar.gz")

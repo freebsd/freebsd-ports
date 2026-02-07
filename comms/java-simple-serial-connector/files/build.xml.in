@@ -1,0 +1,25 @@
+<project name="JSSC" basedir=".">
+	<property name="src" location="src/java" />
+	<property name="build" location="build" />
+	<property name="libs" location="${src}/libs" />
+	<property name="libsto" location="${build}/libs" />
+	<property name="dist" location="dist" />
+
+	<target name="init">
+		<tstamp />
+		<mkdir dir="${build}" />
+	</target>
+
+	<target name="compile" depends="init" description="Compile JSSC">
+		<javac srcdir="${src}" destdir="${build}" encoding="UTF-8" />
+		<copy todir="${libsto}">
+			<fileset dir="${libs}" />
+		</copy>
+	</target>
+
+	<target name="dist" depends="compile" description="Build distributable">
+		<jar destfile="${build}/jssc-%%PORTVERSION%%.jar">
+			<fileset dir="${build}" />
+		</jar>
+	</target>
+</project>

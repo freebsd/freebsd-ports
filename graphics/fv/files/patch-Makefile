@@ -1,0 +1,18 @@
+--- Makefile.orig	2012-05-07 01:48:43 UTC
++++ Makefile
+@@ -62,11 +62,12 @@ LDFLAGS=\
+ -L/opt/local/lib -lpng15 -lz -lbz2 -llzma -lpthread \
+ -lm
+ else
+-CXXXFLAGS=\
+-$(OPT)
++CXXFLAGS+=\
++-Wno-deprecated \
++-I$(LOCALBASE)/include
+ LDFLAGS=\
+ -lpng -lz -lbz2 -llzma -lpthread \
+--lfreeglut -lGLU -lGL -L/usr/X11R6/lib -lXi -lXmu -lX11 -lXext -lSM \
++-lglut -lGLU -lGL -L$(LOCALBASE)/lib -lXi -lXmu -lX11 -lXext -lSM \
+ -lm 
+ endif
+ endif

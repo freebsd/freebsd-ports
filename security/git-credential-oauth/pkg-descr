@@ -1,0 +1,6 @@
+git-credential-oauth is a Git credential helper that securely
+authenticates to GitHub, GitLab, BitBucket and Gerrit using OAuth.
+
+The first time you push, the helper will open a browser window to
+authenticate. Subsequent pushes within storage lifetime require no
+interaction.

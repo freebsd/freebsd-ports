@@ -1,0 +1,5 @@
+
+MySQL Connector/J is the official JDBC driver for MySQL. MySQL
+Connector/J 8.0 is compatible with all MySQL versions starting with
+MySQL 5.5. Additionally, MySQL Connector/J 8.0 supports the new X
+DevAPI for development with MySQL Server 8.0.

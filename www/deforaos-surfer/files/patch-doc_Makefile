@@ -1,0 +1,23 @@
+--- doc/Makefile.orig	2023-11-23 00:09:28 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)download.1 $(OBJDIR)download.html $(OBJDIR)download.xml $(OBJDIR)helper.1 $(OBJDIR)helper.html $(OBJDIR)helper.xml $(OBJDIR)htmlapp.1 $(OBJDIR)htmlapp.html $(OBJDIR)htmlapp.xml $(OBJDIR)surfer.1 $(OBJDIR)surfer.html $(OBJDIR)surfer.xml
++TARGETS	= $(OBJDIR)helper.1 $(OBJDIR)helper.xml $(OBJDIR)htmlapp.1 $(OBJDIR)htmlapp.xml $(OBJDIR)surfer.1 $(OBJDIR)surfer.xml
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -64,14 +64,9 @@ install: all
+ 	$(RM) -- $(TARGETS)
+ 
+ install: all
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)download.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)download.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)helper.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)helper.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)htmlapp.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)htmlapp.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)surfer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)surfer.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "download.1"

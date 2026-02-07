@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd %%DATADIR%%
+exec %%LOCALBASE%%/bin/java \
+    -Dsubstancelaf.windowRoundedCorners=false \
+    -Dinsubstantial.looseTableCellRenderers=true -Djava.library.path=./ \
+    -Xms128m -Xmx256m -splash:splash.gif \
+    -cp aTunes.jar:lib/* net.sourceforge.atunes.Main "$@"

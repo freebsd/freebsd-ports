@@ -1,0 +1,7 @@
+Organization of data in table form is a time-honored and useful method
+of data representation. While columns of data are trivially generated
+by computer through formatted output, even simple tasks like keeping
+titles aligned with the data columns are not trivial, and the one-shot
+solutions one comes up with tend to be particularly hard to maintain.
+Text::Table allows you to create and maintain tables that adapt to
+alignment requirements as you use them.

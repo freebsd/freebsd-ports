@@ -1,0 +1,5 @@
+cppzmq is a header-only C++ binding for libzmq, the core ZeroMQ library.
+
+It provides C++ idiomatic interfaces to the ZeroMQ C API, offering features
+like type safety, exception-based error handling, and RAII (Resource
+Acquisition Is Initialization) for resource management.

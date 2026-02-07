@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-06-18 20:53:16 UTC
++++ CMakeLists.txt
+@@ -187,7 +187,7 @@ if(UNIX)
+       find_package(ZZIPLIB)
+     endif()
+ 
+-    if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++    if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
+         find_package(ALSA)
+         find_package(JACK)
+ 

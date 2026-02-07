@@ -1,0 +1,236 @@
+#!/bin/sh
+# 
+# $FreeBSD$
+#
+# PROVIDE: gitit
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gitit_enable (bool):	Set to NO by default.
+# 			Set it to YES to enable gitit.
+# gitit_cfg (str):	Set this to the list of all gitit instance
+#			names, if you want to run more than one.
+#			If set, then the gitit_* variables are used as
+#			defaults for the corresponding instance
+#			specific variables gitit_<instance>_*.
+# gitit_chdir (path):	Directory in which to start gitit.
+# gitit_dir (path):	Directory in which to start gitit. When set and
+#			when multiple gitit instances are used via
+#			gitit_cfg, then their default gitit_..._chdir
+#			is $gitit_dir/<instance>.
+# gitit_supervise (bool):
+#			Whether daemon process should restart
+#			gitit on exit. (Might cause looping restarts!)
+# gitit_runuser (user):	User id that runs this gitit instance.
+# gitit_config (path):	Config file (possibly relative to gitit_chdir).
+# gitit_port (number):	TCP port number to listen for HTTP requests.
+# gitit_flags (str):	Defaults to "+RTS -I0 -RTS". That avoids CPU
+#			usage by ghc's idle garbage collector, but
+#			only if the gitit port was built using
+#			CONFIGURE_ARGS+= "--ghc-option=-rtsopts".
+# gitit_locale (str):	UTF-8 required!
+# gitit_timezone (str):	gitit 0.11.1 requires UTC
+#
+
+. /etc/rc.subr
+
+name=gitit
+desc="run gitit Wiki webserver process(es)"
+rcvar=gitit_enable
+
+load_rc_config $name
+
+: ${gitit_enable:=NO}
+: ${gitit_program=%%PREFIX%%/bin/gitit}
+: ${gitit_pidfile=/var/run/${name}.pid}
+: ${gitit_dir=/var/gitit}
+: ${gitit_supervise=NO}
+: ${gitit_runuser=gitit}
+: ${gitit_config=${name}.conf}
+: ${gitit_port=5001}
+: ${gitit_flags="+RTS -I0 -RTS"}
+: ${gitit_locale=en_US.UTF-8}
+: ${gitit_timezone=UTC}
+
+start_cmd="gitit_start $*"
+stop_cmd="gitit_stop $*"
+restart_cmd="gitit_restart $*"
+status_cmd="gitit_status $*"
+cmd=$1
+
+gitit_setdefaults()
+{
+	[ -n "${gitit_cfg}" ] || return
+	eval gitit_enable_default=\$${name}_enable
+	#eval gitit_chdir_default=\$${name}_chdir
+	eval gitit_supervise_default=\$${name}_supervise
+	eval gitit_runuser_default=\$${name}_runuser
+	eval gitit_config_default=\$${name}_config
+	eval gitit_port_default=\$${name}_port
+	eval gitit_flags_default=\$${name}_flags
+	eval gitit_locale_default=\$${name}_locale
+	eval gitit_timezone_default=\$${name}_timezone
+}
+
+gitit_setinstancevars()
+{
+	local instance gitit_supervise_instance gitit_config_instance gitit_runuser_instance gitit_port_instance gitit_flags_instance gitit_locale_instance gitit_timezone_instance
+	instance=$1
+	eval gitit_enable_instance=\$${name}_${instance}_enable
+	[ -z "${gitit_enable_instance}" ] || gitit_enable="${gitit_enable_instance}"
+	[ -n "${gitit_enable_instance}" ] || gitit_enable="${gitit_enable_default}"
+	eval gitit_chdir=\$${name}_${instance}_chdir
+	[ -n "${gitit_chdir}" ] || [ -z "${gitit_dir} " ] || gitit_chdir="${gitit_dir}/${instance}"
+	eval gitit_supervise_instance=\$${name}_${instance}_supervise
+	[ -z "${gitit_supervise_instance}" ] || gitit_supervise="${gitit_supervise_instance}"
+	[ -n "${gitit_supervise_instance}" ] || gitit_supervise="${gitit_supervise_default}"
+	eval gitit_runuser_instance=\$${name}_${instance}_runuser
+	[ -z "${gitit_runuser_instance}" ] || gitit_runuser="${gitit_runuser_instance}"
+	[ -n "${gitit_runuser_instance}" ] || gitit_runuser="${gitit_runuser_default}"
+	eval gitit_config_instance=\$${name}_${instance}_config
+	[ -z "${gitit_config_instance}" ] || gitit_config="${gitit_config_instance}"
+	[ -n "${gitit_config_instance}" ] || gitit_config="${gitit_config_default}"
+	eval gitit_port_instance=\$${name}_${instance}_port
+	[ -z "${gitit_port_instance}" ] || gitit_port="${gitit_port_instance}"
+	[ -n "${gitit_port_instance}" ] || gitit_port="${gitit_port_default}"
+	eval gitit_flags_instance=\$${name}_${instance}_flags
+	[ -z "${gitit_flags_instance}" ] || gitit_flags="${gitit_flags_instance}"
+	[ -n "${gitit_flags_instance}" ] || gitit_flags="${gitit_flags_default}"
+	eval gitit_locale_instance=\$${name}_${instance}_locale
+	[ -z "${gitit_locale_instance}" ] || gitit_locale="${gitit_locale_instance}"
+	[ -n "${gitit_locale_instance}" ] || gitit_locale="${gitit_locale_default}"
+	eval gitit_timezone_instance=\$${name}_${instance}_timezone
+	[ -z "${gitit_timezone_instance}" ] || gitit_timezone="${gitit_timezone_instance}"
+
+	gitit_pidfile=/var/run/${name}-${instance}.pid
+	pidfile=`if checkyesno gitit_supervise ; then echo /var/run/${name}-${instance}-daemon.pid ; else echo ${gitit_pidfile} ; fi`
+}
+
+gitit_runonecmd()
+{
+	local real_gitit_program
+	command_args=
+	[ -z "$gitit_config" ] || command_args="$command_args -f $gitit_config"
+	[ -z "$gitit_port" ] || command_args="$command_args -p $gitit_port"
+	[ -z "$gitit_flags" ] || command_args="$command_args $gitit_flags"
+	[ -z "$gitit_locale" ] || export LANG=$gitit_locale
+	[ -z "$gitit_locale" ] || export LC_ALL=$gitit_locale
+	[ -z "$gitit_timezone" ] || export TZ=$gitit_timezone
+	daemonflags=
+	if checkyesno gitit_supervise
+	then
+		daemonflags="-r -P $pidfile "
+	fi
+	daemonflags="$daemonflags-p $gitit_pidfile"
+
+	command=/usr/sbin/daemon
+	command_args="-f $daemonflags -u $gitit_runuser $gitit_program $command_args"
+	real_gitit_program=${gitit_program}
+	gitit_program=${command}
+	gitit_flags=
+	rc_flags=
+
+	run_rc_command "${cmd}"
+
+	case ${cmd} in
+	*start)
+		# make pidfile readable for $gitit_runuser
+		chgrp $gitit_runuser $gitit_pidfile && \
+		chmod 640 $gitit_pidfile
+		;;
+	esac
+
+	gitit_program=${real_gitit_program}
+	unset LANG LC_ALL
+}
+
+gitit_cmd()
+{
+	local instance prefixchar runinstances i argi
+	if [ -z "${gitit_cfg}" ]
+	then
+		gitit_pidfile=/var/run/${name}.pid
+		pidfile=`if checkyesno gitit_supervise ; then echo /var/run/${name}-daemon.pid ; else echo ${gitit_pidfile} ; fi`
+		gitit_runonecmd
+	else
+		case $cmd in
+			*restart)
+				prefixchar="-+"
+				;;
+			*start)
+				prefixchar="+"
+				;;
+			*stop)
+				prefixchar="-"
+				;;
+			*status)
+				prefixchar="?"
+				;;
+		esac
+		# rc_extra_args is always empty at this point, so we
+		# extract additional parameters from $*. Positional
+		# parameters have to be passed down to this function.
+		runinstances=
+		i=2
+		if [ $# -ge 2 ]
+		then
+			while [ $i -le $# ]
+			do
+				eval argi=\$$i
+				if echo "${gitit_cfg}" | grep -q -w "${argi}"
+				then
+					runinstances="${runinstances} ${argi}"
+				else
+					echo "Skipping ${argi}"' - not in ${gitit_cfg}.'
+				fi
+				i=$(($i + 1))
+			done
+		else
+			runinstances=${gitit_cfg}
+		fi
+		for instance in ${runinstances}
+		do
+			echo -n "${prefixchar}${instance}: "
+			gitit_setinstancevars ${instance}
+			gitit_runonecmd
+		done
+	fi
+}
+
+gitit_start()
+{
+	unset start_cmd
+	gitit_setdefaults
+	gitit_cmd $*
+}
+
+gitit_stop()
+{
+	unset stop_cmd
+	gitit_setdefaults
+	gitit_cmd $*
+}
+
+gitit_restart()
+{
+	unset restart_cmd
+	unset stop_cmd
+	unset start_cmd
+	gitit_setdefaults
+	cmd=stop
+	gitit_cmd $*
+	cmd=start
+	gitit_cmd $*
+}
+
+gitit_status()
+{
+	unset status_cmd
+	gitit_setdefaults
+	gitit_cmd $*
+}
+
+run_rc_command "$1"

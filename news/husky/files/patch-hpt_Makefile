@@ -1,0 +1,23 @@
+--- hpt/Makefile.orig	2020-01-16 21:50:04 UTC
++++ hpt/Makefile
+@@ -33,6 +33,7 @@ endif
+ ifeq ($(PERL), 1)
+   CFLAGS += -DDO_PERL `perl -MExtUtils::Embed -e ccopts`
+   PERLLIBS = `perl -MExtUtils::Embed -e ldopts`
++  LFLAGS += $(PERLLIBS)
+   PERLOBJ = perl$(_OBJ)
+ endif
+ 
+@@ -61,10 +62,10 @@ all: commonall hpt.1.gz hptlink.1.gz hpttree.1.gz txt2
+ endif
+ 
+ doc:
+-	-cd doc; make all
++	-cd doc; $(MAKE) all
+ 
+ install-doc:
+-	-cd doc; make install
++	-cd doc; $(MAKE) install
+ 
+ ifeq ($(SHORTNAMES), 1)
+ install: hpt$(_EXE) pktinfo$(_EXE) txt2pkt$(_EXE) hptlink$(_EXE) hpttree$(_EXE)

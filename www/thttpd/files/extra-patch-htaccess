@@ -1,0 +1,312 @@
+--- config.h.orig	Sun Nov 30 04:40:00 2003
++++ config.h	Sat Oct 16 20:57:30 2004
+@@ -138,6 +138,17 @@
+ */
+ #define AUTH_FILE ".htpasswd"
+ 
++/* CONFIGURE: The file to use for restricting access on an ip basis. If
++** this is defined then thttpd checks for this file in the local
++** directory before every fetch. If the file exists then thttpd checks
++** whether the client's ip address is allowed to fetch this file, otherwise
++** the fetch is denied.
++**
++** If you undefine this then thttpd will not implement access checks
++** at all and will not check for access files, which saves a bit of CPU time.
++*/
++#define ACCESS_FILE ".htaccess"
++
+ /* CONFIGURE: The default character set name to use with text MIME types.
+ ** This gets substituted into the MIME types where they have a "%s".
+ **
+--- libhttpd.c.orig	Thu Dec 25 20:06:05 2003
++++ libhttpd.c	Sat Oct 16 21:14:04 2004
+@@ -136,6 +136,10 @@
+ static int auth_check( httpd_conn* hc, char* dirname  );
+ static int auth_check2( httpd_conn* hc, char* dirname  );
+ #endif /* AUTH_FILE */
++#ifdef ACCESS_FILE
++static int access_check (httpd_conn* hc, char* dirname);
++static int access_check2 (httpd_conn* hc, char* dirname);
++#endif /* ACCESS_FILE */
+ static void send_dirredirect( httpd_conn* hc );
+ static int hexit( char c );
+ static void strdecode( char* to, char* from );
+@@ -876,6 +880,139 @@
+     }
+ #endif /* ERR_DIR */
+ 
++#ifdef ACCESS_FILE
++static int err_accessfile (httpd_conn* hc, char* accesspath, char* err, FILE* f)
++{
++  fclose(f);
++
++  syslog(LOG_ERR, "%.80s access file %.80s: invalid line: %s",
++    httpd_ntoa(&hc->client_addr), accesspath, err);
++
++  httpd_send_err(hc, 403, err403title, "", ERROR_FORM(err403form, 
++    "The requested URL '%.80s' is protected by an access file, but the "
++    "access file contains garbage.\n"), hc->encodedurl);
++
++  return -1;
++}
++
++/* Returns -1 == unauthorized, 0 == no access file, 1 = authorized. */
++static int
++access_check( httpd_conn* hc, char* dirname  )
++    {
++    if ( hc->hs->global_passwd )
++	{
++	char* topdir;
++	if ( hc->hs->vhost && hc->hostdir[0] != '\0' )
++	    topdir = hc->hostdir;
++	else
++	    topdir = ".";
++	switch ( access_check2( hc, topdir ) )
++	    {
++	    case -1:
++	    return -1;
++	    case 1:
++	    return 1;
++	    }
++	}
++    return access_check2( hc, dirname );
++    }
++
++/* Returns -1 == unauthorized, 0 == no access file, 1 = authorized. */
++static int access_check2 (httpd_conn* hc, char* dirname)
++{
++  static char* accesspath;
++  static size_t maxaccesspath = 0;
++  struct in_addr ipv4_addr, ipv4_mask = { 0xffffffff };
++  FILE* fp;
++  char line[500];
++  struct stat sb;
++  char *addr, *addr1, *addr2, *mask;
++  unsigned long l;
++
++  /* Construct access filename. */
++  httpd_realloc_str(&accesspath, &maxaccesspath, strlen(dirname) + 1 +
++    sizeof(ACCESS_FILE));
++
++  my_snprintf(accesspath, maxaccesspath, "%s/%s", dirname, ACCESS_FILE);
++
++  /* Does this directory have an access file? */
++  if (lstat(accesspath, &sb) < 0)
++    /* Nope, let the request go through. */
++    return 0;
++
++  /* Open the access file. */
++  fp = fopen(accesspath, "r");
++  if (!fp) {
++    /* The file exists but we can't open it? Disallow access. */
++    syslog(LOG_ERR, "%.80s access file %.80s could not be opened - %m",
++      httpd_ntoa(&hc->client_addr), accesspath);
++
++    httpd_send_err(hc, 403, err403title, "", ERROR_FORM(err403form, 
++      "The requested URL '%.80s' is protected by an access file, but "
++      "the access file cannot be opened.\n"), hc->encodedurl);
++
++    return -1;
++  }
++
++  /* Read it. */
++  while (fgets(line, sizeof(line), fp)) {
++    /* Nuke newline. */
++    l = strlen(line);
++    if (line[l - 1] == '\n') line[l - 1] = '\0';
++
++    addr1 = strrchr(line, ' ');
++    addr2 = strrchr(line, '\t');
++    if (addr1 > addr2) addr = addr1;
++    else addr = addr2;
++    if (!addr) return err_accessfile(hc, accesspath, line, fp);
++
++    mask = strchr(++addr, '/');
++    if (mask) {
++      *mask++ = '\0';
++      if (!*mask) return err_accessfile(hc, accesspath, line, fp);
++      if (!strchr(mask, '.')) {
++        l = atol(mask);
++        if ((l < 0) || (l > 32))
++          return err_accessfile(hc, accesspath, line, fp);
++        for (l = 32 - l; l > 0; --l) ipv4_mask.s_addr ^= 1 << (l - 1);
++        ipv4_mask.s_addr = htonl(ipv4_mask.s_addr);
++      }
++      else {
++        if (!inet_aton(mask, &ipv4_mask))
++          return err_accessfile(hc, accesspath, line, fp);
++      }
++    }
++
++    if (!inet_aton(addr, &ipv4_addr))
++      return err_accessfile(hc, accesspath, line, fp);
++
++    /* Does client addr match this rule? */
++    if ((hc->client_addr.sa_in.sin_addr.s_addr & ipv4_mask.s_addr) ==
++      (ipv4_addr.s_addr & ipv4_mask.s_addr)) {
++      /* Yes. */
++      switch (line[0]) {
++        case 'd':
++        case 'D':
++	  break;
++
++        case 'a':
++        case 'A':
++          fclose(fp);
++          return 1;
++
++        default:
++          return err_accessfile(hc, accesspath, line, fp);
++      }
++    }
++  }
++
++  httpd_send_err(hc, 403, err403title, "", ERROR_FORM(err403form, 
++    "The requested URL '%.80s' is protected by an address restriction."),
++    hc->encodedurl);
++  fclose(fp);
++  return -1;
++}
++#endif /* ACCESS_FILE */
+ 
+ #ifdef AUTH_FILE
+ 
+@@ -1030,7 +1167,7 @@
+     (void) my_snprintf( authpath, maxauthpath, "%s/%s", dirname, AUTH_FILE );
+ 
+     /* Does this directory have an auth file? */
+-    if ( stat( authpath, &sb ) < 0 )
++    if ( lstat( authpath, &sb ) < 0 )
+ 	/* Nope, let the request go through. */
+ 	return 0;
+ 
+@@ -3683,6 +3820,11 @@
+ 		hc->encodedurl );
+ 	    return -1;
+ 	    }
++#ifdef ACCESS_FILE
++	/* Check access file for this directory. */
++	if ( access_check( hc, hc->expnfilename ) == -1 )
++	    return -1;
++#endif /* ACCESS_FILE */
+ #ifdef AUTH_FILE
+ 	/* Check authorization for this directory. */
+ 	if ( auth_check( hc, hc->expnfilename ) == -1 )
+@@ -3732,6 +3874,50 @@
+ 	    return -1;
+ 	    }
+ 	}
++
++#ifdef ACCESS_FILE
++    /* Check access for this directory. */
++    httpd_realloc_str( &dirname, &maxdirname, expnlen );
++    (void) strcpy( dirname, hc->expnfilename );
++    cp = strrchr( dirname, '/' );
++    if ( cp == (char*) 0 )
++	(void) strcpy( dirname, "." );
++    else
++	*cp = '\0';
++    if ( access_check( hc, dirname ) == -1 )
++	return -1;
++
++    /* Check if the filename is the ACCESS_FILE itself - that's verboten. */
++    if ( expnlen == sizeof(ACCESS_FILE) - 1 )
++	{
++	if ( strcmp( hc->expnfilename, ACCESS_FILE ) == 0 )
++	    {
++	    syslog(
++		LOG_NOTICE,
++		"%.80s URL \"%.80s\" tried to retrieve an access file",
++		httpd_ntoa( &hc->client_addr ), hc->encodedurl );
++	    httpd_send_err(
++		hc, 403, err403title, "",
++		ERROR_FORM( err403form, "The requested URL '%.80s' is an access file, retrieving it is not permitted.\n" ),
++		hc->encodedurl );
++	    return -1;
++	    }
++	}
++    else if ( expnlen >= sizeof(ACCESS_FILE) &&
++	      strcmp( &(hc->expnfilename[expnlen - sizeof(ACCESS_FILE) + 1]), ACCESS_FILE ) == 0 &&
++	      hc->expnfilename[expnlen - sizeof(ACCESS_FILE)] == '/' )
++	{
++	syslog(
++	    LOG_NOTICE,
++	    "%.80s URL \"%.80s\" tried to retrieve an access file",
++	    httpd_ntoa( &hc->client_addr ), hc->encodedurl );
++	httpd_send_err(
++	    hc, 403, err403title, "",
++	    ERROR_FORM( err403form, "The requested URL '%.80s' is an access file, retrieving it is not permitted.\n" ),
++	    hc->encodedurl );
++	return -1;
++	}
++#endif /* ACCESS_FILE */
+ 
+ #ifdef AUTH_FILE
+     /* Check authorization for this directory. */
+--- thttpd.8.orig	Sat Nov 15 00:43:51 2003
++++ thttpd.8	Sat Oct 16 21:19:13 2004
+@@ -100,14 +100,15 @@
+ and the config.h option is ALWAYS_VHOST.
+ .TP
+ .B -g
+-Use a global passwd file.
++Use global passwd/access files.
+ This means that every file in the entire document tree is protected by
+-the single .htpasswd file at the top of the tree.
+-Otherwise the semantics of the .htpasswd file are the same.
+-If this option is set but there is no .htpasswd file in
++a single .htpasswd or .htaccess file at the top of the tree.
++Otherwise the semantics of the .htpasswd and .htaccess files are the same.
++If this option is set but there are no .htpasswd and no .htaccess files in
+ the top-level directory, then thttpd proceeds as if the option was
+-not set - first looking for a local .htpasswd file, and if that doesn't
+-exist either then serving the file without any password.
++not set - first looking for local .htpasswd and .htaccess files, and if that doesn't
++exist either then serving the file without any password and without any access
++restriction.
+ If -g is the compiled-in default, then -nog disables it.
+ The config-file option names for this flag are "globalpasswd" and
+ "noglobalpasswd",
+@@ -274,6 +275,42 @@
+ modify .htpasswd files.
+ .PP
+ Relevant config.h option: AUTH_FILE
++.SH "ACCESS RESTRICTION"
++.PP
++Access restriction is available as an option at compile time.
++If enabled, it uses an access file in the directory to be protected,
++called .htaccess by default.
++This file consists of a rule and a host address or a network range per
++line.
++Valid rules are:
++.TP
++.B allow from
++The following host address or network range is allowed to access the requested
++directory and its files.
++.TP
++.B deny from
++The following host address or network range is not allowed to access the
++requested directory and its files.
++.PP
++The protection does not carry over to subdirectories.
++There are three ways to specify a valid host address or network range:
++.TP
++.B IPv4 host address
++eg. 10.2.3.4
++.TP
++.B IPv4 network with subnet mask
++eg. 10.0.0.0/255.255.0.0
++.TP
++.B IPv4 network using CIDR notation
++eg. 10.0.0.0/16
++.PP
++Note that rules are processed in the same order as they are listed in the
++access file and that the first rule which matches the client's address is
++applied (there is no order clause).
++So if there is no allow from 0.0.0.0/0 at the end of the file the default
++action is to deny access.
++.PP
++Relevant config.h option: ACCESS_FILE
+ .SH "THROTTLING"
+ .PP
+ The throttle file lets you set maximum byte rates on URLs or URL groups.

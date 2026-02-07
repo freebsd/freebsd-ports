@@ -1,0 +1,38 @@
+--- src/3rdparty/chromium/v8/test/BUILD.gn.orig	2020-04-08 09:41:36 UTC
++++ src/3rdparty/chromium/v8/test/BUILD.gn
+@@ -31,7 +31,7 @@ group("gn_all") {
+     deps += [
+       "cctest:cctest",
+       "cctest:generate-bytecode-expectations",
+-      "unittests:unittests",
++      #"unittests:unittests",
+     ]
+   }
+ }
+@@ -73,10 +73,10 @@ group("v8_bot_default") {
+     "message:v8_message",
+     "mjsunit:v8_mjsunit",
+     "mkgrokdump:mkgrokdump",
+-    "unittests:unittests",
++    #"unittests:unittests",
+     "wasm-api-tests:wasm_api_tests",
+     "wasm-js:v8_wasm_js",
+-    "wasm-spec-tests:v8_wasm_spec_tests",
++    #"wasm-spec-tests:v8_wasm_spec_tests",
+     "webkit:v8_webkit",
+   ]
+ }
+@@ -93,10 +93,10 @@ group("v8_default") {
+     "message:v8_message",
+     "mjsunit:v8_mjsunit",
+     "mkgrokdump:mkgrokdump",
+-    "unittests:unittests",
++    #"unittests:unittests",
+     "wasm-api-tests:wasm_api_tests",
+-    "wasm-js:v8_wasm_js",
+-    "wasm-spec-tests:v8_wasm_spec_tests",
++    #"wasm-js:v8_wasm_js",
++    #"wasm-spec-tests:v8_wasm_spec_tests",
+   ]
+ }
+ 

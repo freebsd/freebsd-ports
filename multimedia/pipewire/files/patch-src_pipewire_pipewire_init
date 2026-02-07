@@ -1,0 +1,65 @@
+PipeWire exports a function named "pw_init". FreeBSD also has the libutil.so
+library, which exports a function with the same name. To workaround the
+conflict, rename the PipeWire init function into "pipewire_init".
+
+Upstream issue: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+
+--- src/pipewire/pipewire.c.orig	2022-04-27 17:59:21 UTC
++++ src/pipewire/pipewire.c
+@@ -580,7 +580,7 @@ SPA_EXPORT
+  * This function can be called multiple times.
+  */
+ SPA_EXPORT
+-void pw_init(int *argc, char **argv[])
++void pipewire_init(int *argc, char **argv[])
+ {
+ 	const char *str;
+ 	struct spa_dict_item items[6];
+@@ -683,7 +683,7 @@ SPA_EXPORT
+  * used again after being deinitialized with a new pw_init() call.
+  */
+ SPA_EXPORT
+-void pw_deinit(void)
++void pipewire_deinit(void)
+ {
+ 	struct support *support = &global_support;
+ 	struct registry *registry = &support->registry;
+@@ -712,6 +712,21 @@ done:
+ 	pthread_mutex_unlock(&init_lock);
+ 
+ }
++
++#if !defined(__FreeBSD__)
++#undef pw_init
++SPA_EXPORT
++void pw_init(int *argc, char **argv[])
++{
++	pipewire_init(argc, argv);
++}
++#undef pw_deinit
++SPA_EXPORT
++void pw_deinit(void)
++{
++	pipewire_deinit();
++}
++#endif
+ 
+ /** Check if a debug category is enabled
+  *
+--- src/pipewire/pipewire.h.orig	2022-04-27 17:59:21 UTC
++++ src/pipewire/pipewire.h
+@@ -69,9 +69,12 @@ void
+  * \{
+  */
+ void
+-pw_init(int *argc, char **argv[]);
++pipewire_init(int *argc, char **argv[]);
++void pipewire_deinit(void);
+ 
+-void pw_deinit(void);
++/* BSD has pw_init already */
++#define pw_init pipewire_init
++#define pw_deinit pipewire_deinit
+ 
+ bool
+ pw_debug_is_category_enabled(const char *name);

@@ -1,0 +1,10 @@
+--- ./clients/lcdexec/Makefile.am.orig	Sun May 21 22:26:19 2006
++++ ./clients/lcdexec/Makefile.am	Mon Oct 16 22:26:06 2006
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-sysconf_DATA = lcdexec.conf
++sysconf_DATA =
+ 
+ bin_PROGRAMS = lcdexec
+ 

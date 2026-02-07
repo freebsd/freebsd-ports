@@ -1,0 +1,16 @@
+--- Makefile.am.orig	2022-05-20 12:55:23.153147000 -0700
++++ Makefile.am	2022-05-20 12:58:05.878390000 -0700
+@@ -64,8 +64,9 @@
+ 
+ install-exec-hook:
+ if AMC_HISTORY
+-	$(INSTALL_PROGRAM) history $(bindir)/- ;\
+-	rm -f $(bindir)/--;  $(LN) $(bindir)/- $(bindir)/-- ;\
+-	rm -f $(bindir)/-p;  $(LN) $(bindir)/- $(bindir)/-p ;\
+-	rm -f $(bindir)/--p; $(LN) $(bindir)/- $(bindir)/--p
++	$(INSTALL_PROGRAM) history $(DESTDIR)$(bindir)/- ;\
++	rm -f $(DESTDIR)$(bindir)/-- $(DESTDIR)$(bindir)/-p $(DESTDIR)$(bindir)/--p;\
++	cp $(DESTDIR)$(bindir)/- $(DESTDIR)$(bindir)/-- ;\
++	cp $(DESTDIR)$(bindir)/- $(DESTDIR)$(bindir)/--p ;\
++	cp $(DESTDIR)$(bindir)/- $(DESTDIR)$(bindir)/-p
+ endif

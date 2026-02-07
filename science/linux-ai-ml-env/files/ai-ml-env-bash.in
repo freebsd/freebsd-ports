@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export LD_PRELOAD=%%LINUXBASE%%/usr/share/ai-ml-env/dummy-uvm.so
+export SSL_CERT_FILE=%%LINUXBASE%%/usr/lib/python3.9/site-packages/certifi/cacert.pem
+
+exec %%LINUXBASE%%/usr/bin/bash $*

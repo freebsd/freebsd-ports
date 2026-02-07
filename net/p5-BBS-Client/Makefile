@@ -1,0 +1,22 @@
+PORTNAME=	BBS-Client
+PORTVERSION=	0.03
+PORTREVISION=	1
+CATEGORIES=	net perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:CORNELIUS
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Client Module For BBS Systems
+WWW=		https://metacpan.org/release/CORNELIUS/BBS-Client-0.03
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

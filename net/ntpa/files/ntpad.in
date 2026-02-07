@@ -1,0 +1,2 @@
+#!/bin/sh
+exec %%LOCALBASE%%/bin/mono %%LOCALBASE%%/libexec/ntpa/Ntp.Analyzer.Cli.exe "$@"

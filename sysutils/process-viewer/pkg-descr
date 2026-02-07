@@ -1,0 +1,4 @@
+process-viewer is a process viewer GUI in Rust. It provides current status of
+your processes (cpu and memory usage) and your system (usage of every core and
+of your RAM, and the temperature of your components if this information is
+available).

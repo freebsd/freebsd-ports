@@ -1,0 +1,12 @@
+--- Makefile.orig	2019-09-02 11:30:08 UTC
++++ Makefile
+@@ -75,7 +75,8 @@ install:
+ 		$(DESTDIR)$(DATADIR)/icons/jumpnbump.png
+ 	install -m 644 dist/jumpnbump.6 $(DESTDIR)$(DATADIR)/man/man6/
+ 
+-#	$(MAKE) -C menu install
++jnbmenuinstall:
++	$(MAKE) -C menu install
+ 
+ uninstall:
+ 	for bin in $(BINARIES); do $(RM) $(DESTDIR)$(BINDIR)/$$bin; done

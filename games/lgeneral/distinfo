@@ -1,0 +1,5 @@
+TIMESTAMP = 1658066629
+SHA256 (lgeneral-1.4.4.tar.gz) = 0a26b495716cdcab63b49a294ba31649bc0abe74ce0df48276e52f4a6f323a95
+SIZE (lgeneral-1.4.4.tar.gz) = 1891302
+SHA256 (pg-data.tar.gz) = cc6fa5d263d1d5824d706517958b1bb09b405ba0ed21e63e4a4d38e2727d7a04
+SIZE (pg-data.tar.gz) = 410476

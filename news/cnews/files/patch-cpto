@@ -1,0 +1,11 @@
+--- conf/cpto.orig	1994-09-15 20:42:45 UTC
++++ conf/cpto
+@@ -21,7 +21,7 @@ case "$#" in
+ 0|1)	echo "Usage: $0 dir file ..." >&2 ; exit 2	;;
+ esac
+ 
+-dest="$1"
++dest="${DESTDIR}$1"
+ shift
+ if test ! -d "$dest"
+ then

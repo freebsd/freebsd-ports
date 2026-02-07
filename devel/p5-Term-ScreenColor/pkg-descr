@@ -1,0 +1,2 @@
+Term::ScreenColor adds ANSI coloring support, along with a few other useful
+methods, to those provided in Term::Screen.

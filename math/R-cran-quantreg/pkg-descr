@@ -1,0 +1,5 @@
+Estimation and inference methods for models of conditional quantiles:
+Linear and nonlinear parametric and non-parametric (total variation
+penalized) models for conditional quantiles of a univariate response
+and several methods for handling censored survival data. Portfolio
+selection methods based on expected shortfall risk are also included.

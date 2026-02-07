@@ -1,0 +1,19 @@
+*** unix/rpsi1.orig	Sat May 25 03:50:02 1991
+--- unix/rpsi1	Thu Nov 12 11:25:41 1998
+***************
+*** 10,16 ****
+  #
+  # Run PSI1/88 using cmdlin.psi1 as input
+  #
+! time ./PSI1 < $1.psi1
+  #
+  # remove any old files with the target name
+  #
+--- 10,16 ----
+  #
+  # Run PSI1/88 using cmdlin.psi1 as input
+  #
+! time PSI1 < $1.psi1
+  #
+  # remove any old files with the target name
+  #

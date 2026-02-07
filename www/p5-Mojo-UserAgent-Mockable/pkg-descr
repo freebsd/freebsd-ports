@@ -1,0 +1,2 @@
+Mojo::UserAgent::Mockable is a Mojo User-Agent that can record and play back
+requests without Internet connectivity, similar to LWP::UserAgent::Mockable.

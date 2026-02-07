@@ -1,0 +1,20 @@
+bin/softhsm2-dump-file
+%%SQLITE%%bin/softhsm2-dump-db
+bin/softhsm2-keyconv
+%%MIGRATE%%bin/softhsm2-migrate
+bin/softhsm2-util
+@sample %%ETCDIR%%2.conf.sample
+lib/softhsm/libsofthsm2.a
+lib/softhsm/libsofthsm2.so
+share/man/man1/softhsm2-dump-file.1.gz
+%%SQLITE%%share/man/man1/softhsm2-dump-db.1.gz
+share/man/man1/softhsm2-keyconv.1.gz
+%%MIGRATE%%share/man/man1/softhsm2-migrate.1.gz
+share/man/man1/softhsm2-util.1.gz
+share/man/man5/softhsm2.conf.5.gz
+@dir /var/lib/softhsm/tokens
+@dir /var/lib/softhsm
+@dir /var/lib
+@dir share/p11-kit/modules
+@dir share
+share/p11-kit/modules/softhsm2.module

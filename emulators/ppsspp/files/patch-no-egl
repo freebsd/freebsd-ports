@@ -1,0 +1,27 @@
+EGL hangs on X11 and doesn't build without GLESv2.
+https://github.com/hrydgard/ppsspp/issues/10626
+
+--- CMakeLists.txt.orig	2025-05-30 21:23:20 UTC
++++ CMakeLists.txt
+@@ -83,12 +83,6 @@ endif()
+ 	set(USE_SYSTEM_FFMPEG ON)
+ endif()
+ 
+-if(NOT ANDROID AND NOT IOS)
+-	if(ARM_DEVICE OR SIMULATOR)
+-		set(USING_EGL ON)
+-	endif()
+-endif()
+-
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" AND NOT USE_LIBNX)
+ 	set(LINUX ON)
+ 	add_compile_definitions(__STDC_CONSTANT_MACROS)
+@@ -1009,6 +1003,8 @@ if(USE_FFMPEG)
+ 				elseif(X86)
+ 					set(PLATFORM_ARCH "Windows/x86")
+ 				endif()
++			else()
++				set(PLATFORM_ARCH "FreeBSD/%%ARCH%%")
+ 			endif()
+ 			if(PLATFORM_ARCH)
+ 				set(FFMPEG_DIR "ffmpeg/${PLATFORM_ARCH}")

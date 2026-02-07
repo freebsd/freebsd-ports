@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::ConfigLoader.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ConfigLoader::Manual.3.gz
+%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader.pm
+%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/Manual.pod

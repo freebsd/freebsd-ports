@@ -1,0 +1,3 @@
+bin/nehahra
+%%SDL%%bin/nehahra-sdl
+@dir %%Q1DIR%%/nehahra

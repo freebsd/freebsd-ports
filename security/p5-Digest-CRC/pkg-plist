@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Digest/CRC.pm
+%%SITE_ARCH%%/auto/Digest/CRC/CRC.so
+%%PERL5_MAN3%%/Digest::CRC.3.gz

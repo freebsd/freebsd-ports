@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+You may install additional graphics sets from games/simutrans-pak* ports
+EOM
+}
+]

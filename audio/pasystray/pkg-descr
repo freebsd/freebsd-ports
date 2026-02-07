@@ -1,0 +1,5 @@
+PulseAudio system tray, a replacement for the deprecated padevchooser.
+
+pasystray allows setting the default PulseAudio source/sink and moving
+streams on the fly between sources/sinks without restarting the client
+applications.

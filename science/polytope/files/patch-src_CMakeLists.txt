@@ -1,0 +1,13 @@
+- uses std::integer_sequence C++14 feature
+
+--- src/CMakeLists.txt.orig	2025-10-29 23:24:46 UTC
++++ src/CMakeLists.txt
+@@ -17,7 +17,7 @@ if (HAVE_TRIANGLE)
+ # TriangleTessellator and triangle source
+ if (HAVE_TRIANGLE)
+   list(APPEND TESSELLATOR_SOURCES TriangleTessellator.cc)
+-  add_library(triangle STATIC  predicates.cc triangle.c)
++  add_library(triangle predicates.cc triangle.c)
+   #set(TRIANGLE_LIB triangle PARENT_SCOPE)
+   set(TRIANGLE_LIB triangle)
+   set_target_properties(triangle PROPERTIES

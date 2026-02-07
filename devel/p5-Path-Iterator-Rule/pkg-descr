@@ -1,0 +1,8 @@
+This module iterates over files and directories to identify ones
+matching a user-defined set of rules.  The API is based heavily on
+File::Find::Rule, but with more explicit distinction between matching
+rules and options that influence how directories are searched.  A
+Path::Iterator::Rule object is a collection of rules (match criteria)
+with methods to add additional criteria.  Options that control
+directory traversal are given as arguments to the method that
+generates an iterator.

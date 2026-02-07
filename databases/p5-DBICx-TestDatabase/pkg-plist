@@ -1,0 +1,4 @@
+%%SITE_PERL%%/DBICx/TestDatabase.pm
+%%SITE_PERL%%/DBICx/TestDatabase/Subclass.pm
+%%PERL5_MAN3%%/DBICx::TestDatabase.3.gz
+%%PERL5_MAN3%%/DBICx::TestDatabase::Subclass.3.gz

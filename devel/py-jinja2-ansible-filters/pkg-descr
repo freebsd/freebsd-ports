@@ -1,0 +1,6 @@
+Jinja2 Ansible Filters is a port of the ansible filters provided by Ansible's
+templating engine.
+
+This repository is not inteded to supplant ansible functionality however there
+are a lot of filters ansible provides that are not present in upstream Jinja2 so
+you may find these helpful.

@@ -1,0 +1,57 @@
+#!/bin/sh
+
+if [ -r /etc/defaults/periodic.conf ]; then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+: "${security_checkrestart_enable:=NO}"
+: "${security_checkrestart_period:=DAILY}"
+: "${security_checkrestart_users:=}"           # User names or IDs to check
+: "${security_checkrestart_jails:=}"           # Jail names or IDs to check
+: "${security_checkrestart_procs:=}"           # Process names or IDs to check
+
+checkrestartcmd=%%PREFIX%%/bin/checkrestart
+hflag=""
+rc=0
+
+export COLUMNS=80
+
+checkrestart() {
+    local result
+    result="$(${checkrestartcmd} ${hflag} "$@" -- ${security_checkrestart_procs} 2>&1)"
+    if [ "$result" ]; then
+        echo "${result}"
+        rc=3
+    fi
+    hflag="-H"
+}
+
+checkrestart_each_user() {
+    if [ -n "${security_checkrestart_users}" ]; then
+        for user in ${security_checkrestart_users}; do
+            checkrestart -u "${user}" "$@"
+        done
+    else
+        checkrestart "$@"
+    fi
+}
+
+checkrestart_start() {
+    if [ -n "${security_checkrestart_jails}" ]; then
+        for jail in ${security_checkrestart_jails}; do
+            checkrestart_each_user -j "${jail}"
+        done
+    else
+        checkrestart_each_user
+    fi
+}
+
+if check_yesno_period security_checkrestart_enable
+then
+    echo
+    echo 'Checking for stale processes:'
+    checkrestart_start
+fi
+
+exit $rc

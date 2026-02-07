@@ -1,0 +1,10 @@
+--- migemo-client.orig	2011-08-22 02:16:46.000000000 +0900
++++ migemo-client	2011-08-22 02:16:48.000000000 +0900
+@@ -10,7 +10,6 @@
+ # the GNU General Public License version 2.
+ #
+ 
+-$KCODE = "e"
+ require 'net/http'
+ require 'getoptlong'
+ 

@@ -1,0 +1,10 @@
+DLPack is an open in-memory tensor structure for sharing tensors among
+frameworks.
+
+DLPack enables:
+* Easier sharing of operators between deep learning frameworks.
+* Easier wrapping of vendor level operator implementations, allowing
+  collaboration when introducing new devices/ops.
+* Quick swapping of backend implementations, like different version of BLAS
+* For final users, this could bring more operators, and possibility of mixing
+  usage between frameworks.

@@ -1,0 +1,13 @@
+include/%%FFTW_SUFX%%fftw.h
+include/%%FFTW_SUFX%%rfftw.h
+lib/lib%%FFTW_SUFX%%fftw.a
+lib/lib%%FFTW_SUFX%%fftw.la
+lib/lib%%FFTW_SUFX%%fftw.so
+lib/lib%%FFTW_SUFX%%fftw.so.2
+lib/lib%%FFTW_SUFX%%fftw.so.2.0.7
+lib/lib%%FFTW_SUFX%%rfftw.a
+lib/lib%%FFTW_SUFX%%rfftw.la
+lib/lib%%FFTW_SUFX%%rfftw.so
+lib/lib%%FFTW_SUFX%%rfftw.so.2
+lib/lib%%FFTW_SUFX%%rfftw.so.2.0.7
+%%PORTDOCS%%%%DOCSDIR%%/fftw.ps

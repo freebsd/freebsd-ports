@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+You installed OpenModelica: a modeling and simulation environment.
+
+The first program to run is OMEdit.
+
+In OMEdit you need to:
+- go to the File/Manage Libraries menu item and install the 'Modelica' library
+- go to the File/System Libraries and enable several libraries under it
+
+This should make several library items appear in the left pane in OMEdit.
+
+EOM
+}
+]

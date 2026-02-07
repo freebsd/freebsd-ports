@@ -1,0 +1,10 @@
+--- doc/iksemel.texi.orig	2011-10-18 20:25:37 UTC
++++ doc/iksemel.texi
+@@ -1,7 +1,6 @@
+ \input texinfo @c -*-texinfo-*-
+ @c %**start of header
+ @setfilename iksemel
+-@setcontentsaftertitlepage
+ @settitle Iksemel Programmers Manual
+ @set VERSION 1.2
+ @c %**end of header

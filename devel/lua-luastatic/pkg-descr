@@ -1,0 +1,3 @@
+luastatic is a command line tool that builds a standalone executable from a Lua
+program.  The resulting executable is intended to run on systems that do not
+otherwise have Lua installed.

@@ -1,0 +1,8 @@
+QXmpp is pretty intuitive and easy to use. It uses Qt extensively.
+Qt is the only third party library it is dependent on. Users need
+to a have working knowledge of C++ and Qt basics (Signals and Slots
+and Qt data types). The underlying TCP socket and the XMPP RFCs
+(RFC3920 and RFC3921) have been encapsulated into classes and
+functions. Therefore the user would not be bothered with these
+details. But it is always recommended to the advanced users to read
+and enjoy the low level details.

@@ -1,0 +1,26 @@
+--- Makefile.orig	2006-11-19 19:37:41 UTC
++++ Makefile
+@@ -19,8 +19,6 @@
+ 
+ MAN=man
+ 
+-CC= gcc
+-CFLAGS= -O6 -fomit-frame-pointer -Wall -pipe
+ # CFLAGS= -g -fomit-frame-pointer -Wall -pipe
+ 
+ # Look where your install program is
+@@ -33,12 +31,12 @@ mandir = $(prefix)/share/$(MAN)
+ obj = db_dump.o dbview.o version.o
+ 
+ .c.o:
+-	$(CC) ${CFLAGS} -c $*.c
++	$(CC) ${CFLAGS} $(CPPFLAGS) -c $*.c
+ 
+ all:	dbview
+ 
+ dbview: $(obj)
+-	$(CC) $(CFLAGS) -o dbview $(obj)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o dbview $(obj)
+ 
+ depend:
+ 	makedepend *.c

@@ -1,0 +1,2 @@
+An interface between Dancer's logging engine abstraction layer and the
+Log::Log4perl library.

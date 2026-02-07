@@ -1,0 +1,2 @@
+Test::HasVersion lets you check a Perl module has a version number in a
+Test::Simple fashion.

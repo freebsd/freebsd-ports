@@ -1,0 +1,25 @@
+--- Makefile.orig	2014-08-04 23:18:10 UTC
++++ Makefile
+@@ -7,12 +7,21 @@
+ # use a non-default compiler, extra preprocessor flags (e.g. to find headers),
+ # or extra linker flags (e.g. to find libraries).
+ 
+-CFLAGS += -O2 -Wall -std=c99 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64
++# Let env set optimization and warning level, then add required flags
++CFLAGS ?= -O2 -Wall
++CFLAGS += -std=c99 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64
+ LDLIBS := -lz -lpthread
+ OBJ    := combine_reads.o flash.o iostream.o read_io.o read_queue.o read_util.o util.o
+ EXE    := flash
+ 
++MKDIR	?= mkdir
++INSTALL	?= install
++
+ $(EXE):$(OBJ)
++
++install:
++	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c flash ${DESTDIR}${PREFIX}/bin
+ 
+ clean:
+ 	rm -f $(OBJ) $(EXE)

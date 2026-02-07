@@ -1,0 +1,5 @@
+bin/mp3rename
+bin/mp3show
+bin/mp3tag
+%%SITE_PERL%%/MP3/Tag/Utils.pm
+%%PERL5_MAN3%%/MP3::Tag::Utils.3.gz

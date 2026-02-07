@@ -1,0 +1,37 @@
+Temporarily revert https://github.com/rust-lang/libc/commit/5a3b5da3459b
+
+error[E0308]: mismatched types
+   --> cargo-crates/nix-0.19.1/src/sys/event.rs:226:19
+    |
+226 |             data: data as type_of_data,
+    |                   ^^^^^^^^^^^^^^^^^^^^ expected `i64`, found `isize`
+
+error[E0063]: missing field `ext` in initializer of `kevent`
+   --> cargo-crates/nix-0.19.1/src/sys/event.rs:221:26
+    |
+221 |         KEvent { kevent: libc::kevent {
+    |                          ^^^^^^^^^^^^ missing `ext`
+
+--- cargo-crates/libc-0.2.180/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libc-0.2.180/build.rs
+@@ -60,7 +60,7 @@ fn main() {
+     let target_arch = env::var("CARGO_CFG_TARGET_ARCH").unwrap_or_default();
+ 
+     // The ABI of libc used by std is backward compatible with FreeBSD 12.
+-    // The ABI of libc from crates.io is backward compatible with FreeBSD 12.
++    // The ABI of libc from crates.io is backward compatible with FreeBSD 11.
+     //
+     // On CI, we detect the actual FreeBSD version and match its ABI exactly,
+     // running tests to ensure that the ABI is correct.
+@@ -71,9 +71,9 @@ fn main() {
+         println!("cargo:warning=setting FreeBSD version to {vers}");
+         vers
+     } else if libc_ci {
+-        which_freebsd().unwrap_or(12)
++        which_freebsd().unwrap_or(11)
+     } else {
+-        12
++        11
+     };
+ 
+     match which_freebsd {

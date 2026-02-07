@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/CDB_File.pm
+%%SITE_ARCH%%/auto/CDB_File/CDB_File.so
+%%SITE_ARCH%%/bun-x.pl
+%%PERL5_MAN3%%/CDB_File.3.gz

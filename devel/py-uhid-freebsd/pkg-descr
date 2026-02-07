@@ -1,0 +1,2 @@
+uhid-freebsd is a Python library to retrieve information on USB HID devices
+on FreeBSD (/dev/uhid*).

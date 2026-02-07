@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-09-25 13:41:18 UTC
++++ Makefile.in
+@@ -318,7 +318,7 @@
+ top_srcdir = @top_srcdir@
+ CLEANFILES = *~ *.bak core *.core *.o *.lo *.la 
+ ACLOCAL_AMFLAGS = -I m4
+-@CENTOS_FALSE@pkgconfigdir = $(libdir)/pkgconfig
++@CENTOS_FALSE@pkgconfigdir = $(libdir)data/pkgconfig
+ @CENTOS_TRUE@pkgconfigdir = $(datadir)/pkgconfig
+ pkgconfig_DATA = tubo.pc
+ docs = \

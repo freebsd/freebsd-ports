@@ -1,0 +1,18 @@
+PORTNAME=	URBL-Prepare
+PORTVERSION=	0.09
+PORTREVISION=	1
+CATEGORIES=	dns perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:MIKER
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	pi@FreeBSD.org
+COMMENT=	Prepare hostname for URBL domain lookup
+WWW=		https://metacpan.org/release/URBL-Prepare
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

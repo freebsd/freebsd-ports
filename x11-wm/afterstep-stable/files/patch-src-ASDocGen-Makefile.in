@@ -1,0 +1,18 @@
+--- src/ASDocGen/Makefile.in.orig	2008-03-24 23:58:23.000000000 -0700
++++ src/ASDocGen/Makefile.in	2008-03-25 00:01:05.000000000 -0700
+@@ -55,14 +55,7 @@
+ 		for f in `ls *.man`; do \
+ 			page_name=`echo $$f| awk -F . '{print $$1}'`; \
+ 	  		echo -n "$$f "; \
+-	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
+-		done; echo "Done"; \
+-		cd API; echo "Installing API man pages using command - " ; \
+-		echo "    \"$(INSTALL_DATA) <name>.man $(AFTER_MAN_API_DIR)/<name>.3x\""; \
+-		for f in `ls *.man`; do \
+-			page_name=`echo $$f| awk -F . '{print $$1}'`; \
+-	  		echo -n "$$f "; \
+-	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_API_DIR)/$$page_name.3x; \
++	  		$(INSTALL_DATA) "$$page_name.man" $(AFTER_MAN_DIR)/$$page_name.1x; \
+ 		done; echo "Done"; \
+ 		cd ../..
+ 

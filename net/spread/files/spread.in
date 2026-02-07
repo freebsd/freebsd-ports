@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: spread
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable spread:
+#
+# spread_enable="YES"
+# spread_flags="<set as needed>"
+#
+# See spread(1) for flags
+#
+
+. /etc/rc.subr
+
+name=spread
+rcvar=spread_enable
+
+command="%%PREFIX%%/sbin/spread"
+
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/${name}.conf
+
+# set defaults
+
+spread_enable=${spread_enable:-"NO"}
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,18 @@
+Description: Fix bbcombotest: "Could not access hobbitd board, error 0"
+Author: Christoph Berg <myon@debian.org>
+Forwarded: no
+Last-Update: 2015-09-10
+
+Index: xymon/xymond/combostatus.c
+===================================================================
+--- xymond/combostatus.c	2012-07-23 23:39:37.000000000 +0200
++++ xymond/combostatus.c	2012-07-23 23:41:04.000000000 +0200
+@@ -207,7 +207,7 @@
+ 		xymondresult = sendmessage("xymondboard fields=hostname,testname,color", NULL, XYMON_TIMEOUT, sres);
+ 		board = getsendreturnstr(sres, 1);
+ 
+-		if ((xymondresult != XYMONSEND_OK) || (board == NULL)) {
++		if (xymondresult != XYMONSEND_OK) {
+ 			board = "";
+ 			*errptr += sprintf(*errptr, "Could not access xymond board, error %d\n", xymondresult);
+ 			return COL_CLEAR;

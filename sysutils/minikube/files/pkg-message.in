@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+To use Minikube you need to install emulators/virtualbox-ose or emulators/virtualbox-ose-nox11.
+
+Just VirtualBox is supported on FreeBSD (--vm-driver=virtualbox).
+EOM
+}
+]

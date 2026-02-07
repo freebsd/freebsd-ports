@@ -1,0 +1,10 @@
+Maintain and replicate ZFS snapshots
+
+zap automates the management of zfs snapshots.  With a few, simple
+crontab entries, it can be used to create a comprehensive zfs backup
+system.  There are no configuration files.  All parameters are supplied
+on the command line or in zfs properties and all snapshot information
+is stored in snapshot names.
+
+zap plays nice with manually created snapshots or snapshots from other
+tools.  It will only operate on snapshots it creates.

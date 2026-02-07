@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: ircd-hybrid
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# To get ircd-hybrid enabled at boot, add the following lines to /etc/rc.conf :
+# ircd_hybrid_enable (bool):    Set to "NO" by default.
+#                               Set it to "YES" to enable ircd-hybrid.
+
+. /etc/rc.subr
+
+name="ircd_hybrid"
+rcvar=ircd_hybrid_enable
+
+command=/usr/local/bin/ircd
+
+start_precmd=pid_touch
+stop_postcmd=pid_rm
+
+load_rc_config ${name}
+
+pidfile=${ircd_hybrid_pidfile-"/var/run/ircd/ircd.pid"}
+logfile=${ircd_hybrid_logfile-"/var/log/ircd/ircd.log"}
+: ${ircd_hybrid_enable:="NO"}
+: ${ircd_hybrid_user:="ircd"}
+: ${ircd_hybrid_config:="%%PREFIX%%/etc/ircd-hybrid/ircd.conf"}
+: ${ircd_hybrid_flags=" -pidfile ${pidfile} -logfile ${logfile}"}
+
+pid_touch ()
+{
+    install -d -o ${ircd_hybrid_user} ${pidfile%/*} /var/log/ircd
+    touch $pidfile
+    chown $ircd_hybrid_user $pidfile
+}
+
+pid_rm ()
+{
+    rm -f $pidfile
+}
+
+run_rc_command "$1"

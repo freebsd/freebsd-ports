@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Piglit opens and closes a lot of files during a run, putting pressure
+on FreeBSD's VFS. To keep Piglit smooth, you will have to increase the
+default maxvnodes:
+  sysctl kern.maxvnodes=$(($(sysctl -n kern.maxvnodes) * 2))
+
+Instructions to use Piglit are available in:
+  %%DOCSDIR%%/README.md
+
+The same documentation is also available online:
+  https://gitlab.freedesktop.org/mesa/piglit/-/blob/master/README.md
+EOM
+}
+]

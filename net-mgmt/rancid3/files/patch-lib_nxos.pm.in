@@ -1,0 +1,10 @@
+--- lib/nxos.pm.in.orig	2025-05-01 12:58:51 UTC
++++ lib/nxos.pm.in
+@@ -247,6 +247,7 @@ sub ShowLicense {
+ 	return(-1) if (/command authorization failed/i);
+ 
+ 	/^-+$/ && next;		# Skip lines of all dashes.
++	/Honor Start/ && next;  # Skip incrementing honor licenses.
+ 	s/ Grace .+$/ Grace/;	# Drop anything after Grace.
+ 	ProcessHistory("COMMENTS","","", "!LIC: $_");
+     }

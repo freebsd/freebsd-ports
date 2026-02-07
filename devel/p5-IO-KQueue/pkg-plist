@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/IO/KQueue.pm
+%%SITE_ARCH%%/auto/IO/KQueue/KQueue.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chat.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tail.pl
+%%PERL5_MAN3%%/IO::KQueue.3.gz

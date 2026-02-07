@@ -1,0 +1,10 @@
+--- include/GL/glew.h.orig	2008-06-04 23:03:01.000000000 +0400
++++ include/GL/glew.h	2009-06-04 19:34:51.000000000 +0400
+@@ -2412,7 +2412,6 @@
+ #ifdef GLEW_APIENTRY_DEFINED
+ #undef GLEW_APIENTRY_DEFINED
+ #undef APIENTRY
+-#undef GLAPIENTRY
+ #endif
+ 
+ #ifdef GLEW_CALLBACK_DEFINED

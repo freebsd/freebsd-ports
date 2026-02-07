@@ -1,0 +1,6 @@
+LWP::UserAgent is the default module for issuing HTTP requests from
+Perl. It has a keep_alive setting which by default allows unlimited
+requests to the same server. Some servers will disconnect you after
+a limited number of requests (in Apache 2 this is achieved with the
+MaxKeepAliveRequests directive). This module allows you to limit
+the maximum number of keep alive requests to a server.

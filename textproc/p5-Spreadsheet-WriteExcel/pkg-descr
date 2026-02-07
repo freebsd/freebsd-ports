@@ -1,0 +1,9 @@
+The Spreadsheet::WriteExcel module can be used to create
+a cross-platform Excel binary file.  Multiple worksheets can be added
+to a workbook and formatting can be applied to cells.  Text, numbers,
+formulas, hyperlinks and images can be written to the cells.
+
+The Excel file produced by this module is compatible with Excel 5, 95,
+97, 2000, 2002 and 2003, also Gnumeric and OpenOffice.
+
+This module cannot be used to write to an existing Excel file.

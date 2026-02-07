@@ -1,0 +1,4 @@
+bin/ical2html
+bin/icalfilter
+bin/icalmerge
+%%DATADIR%%/calendar.css

@@ -1,0 +1,14 @@
+--- Configure.orig	2024-11-18 02:11:27 UTC
++++ Configure
+@@ -1089,6 +1089,11 @@ case $LSOF_TGT in	# {
+ 	LSOF_TSTBIGF=" "
+ 	LSOF_VERS=15000
+ 	;;
++      16*)
++	LSOF_CFGL="$LSOF_CFGL -lutil"
++	LSOF_TSTBIGF=" "
++	LSOF_VERS=16000
++	;;
+       *)
+ 	echo Unknown FreeBSD release: `uname -r`
+ 	rm -f $LSOF_HLP

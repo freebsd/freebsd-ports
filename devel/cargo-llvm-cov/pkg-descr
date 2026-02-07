@@ -1,0 +1,12 @@
+cargo-llvm-cov is a Cargo subcommand to easily use LLVM source-based code
+coverage.
+
+This is a wrapper around rustc instrument-coverage command and provides:
+- Generate very precise coverage data. (line, region, and branch coverage.
+  branch coverage is currently optional and requires nightly, etc)
+- Support `cargo test`, `cargo run`, and `cargo nextest` with command-line
+  interface compatible with cargo.
+- Support for proc-macro, including coverage of UI tests.
+- Support for doc tests. (this is currently optional and requires nightly.
+- Fast because it does not introduce extra layers between rustc, cargo, and
+  llvm-tools.

@@ -1,0 +1,8 @@
+xoris grabs the RGB color value of any pixel on the screen and dumps the
+color's name to stdout. The output can be printed as:
+
+1. hex (#b0958e);
+2. triple of decimal RGB values (229 229 229);
+3. abstract name (gray90).
+
+xoris has only been tested on displays with a bit depth of 24 bpp.

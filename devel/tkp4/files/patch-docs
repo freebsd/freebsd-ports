@@ -1,0 +1,14 @@
+On FreeBSD, the customary places for documentation of the ported software
+is under /usr/local/share/doc/<port name>.
+
+--- tkp4.tcl	Thu Sep 13 18:48:49 2001
++++ tkp4.tcl	Fri May 17 15:48:48 2002
+@@ -1893 +1893 @@
+-            p4_viewDialog show "TkP4 - Changes" [p4_fileGetText [file join $p4(libdir) CHANGES]]
++            p4_viewDialog show "TkP4 - Changes" [p4_fileGetText [file join $p4(libdir) .. doc tkp4 CHANGES]]
+@@ -2032 +2032 @@
+-            p4_viewDialog show "TkP4 - P4Win Differences" [p4_fileGetText [file join $p4(libdir) P4WINdifferences]]
++            p4_viewDialog show "TkP4 - P4Win Differences" [p4_fileGetText [file join $p4(libdir) .. doc tkp4 P4WINdifferences]]
+@@ -2038 +2038 @@
+-            p4_viewDialog show "TkP4 - Using" [p4_fileGetText [file join $p4(libdir) UsingTkP4]]
++            p4_viewDialog show "TkP4 - Using" [p4_fileGetText [file join $p4(libdir) .. doc tkp4 UsingTkP4]]

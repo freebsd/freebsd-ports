@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/hu.dat
+lib/aspell-%%VER%%/hu_affix.dat
+share/aspell/hu.multi
+share/aspell/hu.rws
+share/aspell/hungarian.alias

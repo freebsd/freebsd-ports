@@ -1,0 +1,8 @@
+etc/ld.so.conf.d/oracle10.conf
+usr/bin/genezi
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libclntsh.so.10.1
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libnnz10.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libocci.so.10.1
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libociei.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libocijdbc10.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/ojdbc14.jar

@@ -1,0 +1,4 @@
+pytrends is an unofficial API for Google Trends.
+
+It allows simple interface for automating downloading of reports from Google
+Trends.

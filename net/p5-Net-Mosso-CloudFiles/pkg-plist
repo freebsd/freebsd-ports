@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Net/Mosso/CloudFiles/Object.pm
+%%SITE_PERL%%/Net/Mosso/CloudFiles.pm
+%%SITE_PERL%%/Net/Mosso/CloudFiles/Container.pm
+%%PERL5_MAN3%%/Net::Mosso::CloudFiles.3.gz
+%%PERL5_MAN3%%/Net::Mosso::CloudFiles::Container.3.gz
+%%PERL5_MAN3%%/Net::Mosso::CloudFiles::Object.3.gz

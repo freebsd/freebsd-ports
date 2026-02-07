@@ -1,0 +1,4 @@
+lib/aspell-%%VER%%/tk.dat
+share/aspell/tk.multi
+share/aspell/tk.rws
+share/aspell/turkmen.alias

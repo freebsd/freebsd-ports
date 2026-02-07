@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Sys/CPU.pm
+%%SITE_ARCH%%/auto/Sys/CPU/CPU.so
+%%PERL5_MAN3%%/Sys::CPU.3.gz

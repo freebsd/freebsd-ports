@@ -1,0 +1,2 @@
+Plack::Middleware::AddDefaultCharset is a port of the
+AddDefaultCharset configuration directive of the Apache HTTP server.

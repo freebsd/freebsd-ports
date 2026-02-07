@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: hiawatha
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+# Add the following line(s) to /etc/rc.conf:
+# hiawatha_enable (bool):		Set to "NO" by default, set it
+#					to "YES" to enable hiawatha.
+
+. /etc/rc.subr
+
+name=hiawatha
+rcvar=hiawatha_enable
+
+load_rc_config $name
+
+: ${hiawatha_enable:=NO}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile=${hiawatha_pidfile:-"/var/run/hiawatha.pid"}
+
+stop_postcmd="rm -f ${pidfile}"
+
+run_rc_command "$1"

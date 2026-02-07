@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2021-08-18 06:43:26 UTC
++++ CMakeLists.txt
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
+ 
+ project(chromono)
+ 
+-add_definitions(-Wall -Werror)
++add_definitions(-Wall)
+ 
+ set(CMAKE_CXX_STANDARD 11)
+ 
+@@ -33,6 +33,8 @@ find_package(OpenGL REQUIRED)
+ list(APPEND LIBRARIES ${OPENGL_LIBRARIES})
+ include_directories(${OPENGL_INCLUDE_DIRS})
+ 
++find_package(PythonInterp)
++
+ file(GLOB CORE_SOURCES "${chromono_SOURCE_DIR}/src/*.cpp")
+ file(GLOB RENDERER_SOURCES "${chromono_SOURCE_DIR}/src/renderer/*.cpp")
+ file(GLOB CIRCLE1D_SOURCES "${chromono_SOURCE_DIR}/src/circle1d/*.cpp")
+@@ -55,7 +57,7 @@ set(RESOURCE_PACKER "${chromono_SOURCE_DIR}/packer.py"
+ 
+ add_custom_command(
+     OUTPUT ${RE_SOURCES} resources.h
+-    COMMAND python3 ${RESOURCE_PACKER} ${RESOURCES} ${RE_SOURCES}
++    COMMAND ${PYTHON_EXECUTABLE} ${RESOURCE_PACKER} ${RESOURCES} ${RE_SOURCES}
+     DEPENDS ${RESOURCES} ${RESOURCE_PACKER}
+ )
+ 

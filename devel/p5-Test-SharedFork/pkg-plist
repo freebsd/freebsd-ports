@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/SharedFork.pm
+%%SITE_PERL%%/Test/SharedFork/Array.pm
+%%SITE_PERL%%/Test/SharedFork/Scalar.pm
+%%SITE_PERL%%/Test/SharedFork/Store.pm
+%%PERL5_MAN3%%/Test::SharedFork.3.gz

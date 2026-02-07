@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+
+Notice:
+ This port can not run then kern.elf64.allow_wx=0.
+EOM
+}
+]

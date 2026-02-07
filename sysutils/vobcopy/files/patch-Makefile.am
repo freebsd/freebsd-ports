@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2022-05-03 19:55:34 UTC
++++ Makefile.am
+@@ -15,7 +15,7 @@ dist_doc_DATA = alternative_programs.txt Changelog REA
+ 
+ intl/de/vobcopy.1: vobcopy.1.de
+ 	$(MKDIR_P) intl/de
+-	ln $< $@
++	ln ${.ALLSRC} $@
+ 
+ MOSTLYCLEANFILES = intl/de/vobcopy.1
+ 

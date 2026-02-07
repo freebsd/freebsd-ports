@@ -1,0 +1,5 @@
+TIMESTAMP = 1679706626
+SHA256 (cortesi-devd-v0.9_GH0.tar.gz) = 5aee062c49ffba1e596713c0c32d88340360744f57619f95809d01c59bff071f
+SIZE (cortesi-devd-v0.9_GH0.tar.gz) = 5120152
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

@@ -1,0 +1,12 @@
+bin/_setlib
+bin/dumpxsb
+bin/inst2xsd
+bin/scomp
+bin/sdownload
+bin/sfactor
+bin/svalidate
+bin/validate
+bin/xpretty
+bin/xsd2inst
+bin/xsdtree
+%%JAVAJARDIR%%/xmlbeans.jar

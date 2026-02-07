@@ -1,0 +1,21 @@
+--- Makefile.orig	1992-01-25 08:45:26 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS =
++CFLAGS += -DHAS_RENAME -DSCOREDIR=\"/var/games/yahtzee\"
+ 
+ OBJ = computer.o main.o
+ 
+@@ -7,9 +7,11 @@ LIBS = -lcurses
+ BIN = yahtzee
+ 
+ $(BIN): $(OBJ)
+-	cc -o $@ $(OBJ) -lcurses
++	$(CC) -o $@ $(OBJ) $(LDFLAGS) -lncurses
+ 
+ clean:
+ 	rm -f $(OBJ) $(BIN)
+ 
+ $(OBJ): yahtzee.h config.h
++
++all:	$(BIN) $(OBJ)

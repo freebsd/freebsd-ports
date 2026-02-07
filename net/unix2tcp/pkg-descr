@@ -1,0 +1,11 @@
+Aims:
+- To listen on a local UNIX socket and tunnel any incoming connections and
+  traffic to a (remote) IP address/port
+
+What it does:
+- Tunnels all traffic between a (remote) address/port and a local UNIX socket
+- Does NOT use fork() (single process model)
+- Does use O_NONBLOCK , should be no case of blocking
+
+What it doesn't do (yet):
+- Doesn't limit number of concurrent connections

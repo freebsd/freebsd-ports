@@ -1,0 +1,8 @@
+Terminal Table is a fast and simple, yet feature rich ASCII table generator
+written in Ruby.
+
+Features:
+- Optional headings
+- Alignment of columns, headings, or cells
+- Supports column span
+- Easy modification of table strings (+, -, |)

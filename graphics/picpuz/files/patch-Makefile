@@ -1,0 +1,54 @@
+--- Makefile.orig	2009-10-29 08:38:40 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ SOURCE = $(PROGRAM)-$(VERSION).cpp
+ 
+ # replace CFLAGS and LFLAGS -O (oh) with -g for GDB debugging
+ CFLAGS = -O -Wall -c `pkg-config --cflags gtk+-2.0`
+-LFLAGS = -O -Wall -rdynamic `pkg-config --libs gtk+-2.0 gthread-2.0`
++LFLAGS = -O -Wall -rdynamic -lexecinfo `pkg-config --libs gtk+-2.0 gthread-2.0`
+ 
+ # use $PREFIX if defined, else assume /usr/local
+ ifeq "$(PREFIX)" ""
+@@ -19,14 +19,14 @@ DOCDIR = $(PREFIX)/share/doc/$(PROGRAM)
+ DESKTOP = $(DATADIR)/kornelix-$(PROGRAM).desktop
+ 
+ $(PROGRAM): $(PROGRAM).o zfuncs.o
+-	@ g++ $(LFLAGS) -o $(PROGRAM) $(PROGRAM).o zfuncs.o
++	@ ${CXX} $(LFLAGS) -o $(PROGRAM) $(PROGRAM).o zfuncs.o
+ 
+ $(PROGRAM).o: $(SOURCE) zfuncs.h
+-	@ g++ $(CFLAGS) -o $(PROGRAM).o $(SOURCE)		\
++	@ ${CXX} $(CFLAGS) -o $(PROGRAM).o $(SOURCE)		\
+ 	  -D "DATADIR=\"$(DATADIR)\"" -D "DOCDIR=\"$(DOCDIR)\""
+ 
+ zfuncs.o: zfuncs.cpp zfuncs.h
+-	@ g++ $(CFLAGS) zfuncs.cpp	\
++	@ ${CXX} $(CFLAGS) zfuncs.cpp	\
+ 	  -D "DATADIR=\"$(DATADIR)\"" -D "DOCDIR=\"$(DOCDIR)\"" -D "BINDIR=\"$(BINDIR)\""
+ 
+ install: $(PROGRAM)
+@@ -39,15 +39,15 @@ install: $(PROGRAM)
+ 	cp $(PROGRAM) $(DESTDIR)$(BINDIR)
+ 	cp -R locales/* $(DESTDIR)$(DATADIR)/locales
+ 	#  install .desktop file (menu entry)
+-	@echo "[Desktop Entry]" > $(DESKTOP)
+-	@echo "Name=$(PROGRAM)" >> $(DESKTOP)
+-	@echo "Categories=Game" >> $(DESKTOP)
+-	@echo "Type=Application" >> $(DESKTOP)
+-	@echo "Terminal=false" >> $(DESKTOP)
+-	@echo "Exec=$(BINDIR)/$(PROGRAM)" >> $(DESKTOP)
+-	@echo "Icon=$(DATADIR)/icons/$(PROGRAM).png" >> $(DESKTOP)
+-	@echo "GenericName=Jigsaw Puzzle" >> $(DESKTOP)
+-	xdg-desktop-menu install $(DESKTOP)
++#	@echo "[Desktop Entry]" > $(DESKTOP)
++#	@echo "Name=$(PROGRAM)" >> $(DESKTOP)
++#	@echo "Categories=Game" >> $(DESKTOP)
++#	@echo "Type=Application" >> $(DESKTOP)
++#	@echo "Terminal=false" >> $(DESKTOP)
++#	@echo "Exec=$(BINDIR)/$(PROGRAM)" >> $(DESKTOP)
++#	@echo "Icon=$(DATADIR)/icons/$(PROGRAM).png" >> $(DESKTOP)
++#	@echo "GenericName=Jigsaw Puzzle" >> $(DESKTOP)
++#	xdg-desktop-menu install $(DESKTOP)
+ 
+ uninstall:
+ 	xdg-desktop-menu uninstall $(DESKTOP)

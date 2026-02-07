@@ -1,0 +1,4 @@
+bin/mt
+bin/mt-upload
+%%PERL5_MAN3%%/Net::MovableType.3.gz
+%%SITE_PERL%%/Net/MovableType.pm

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Wrap t-engine: it finds game data files
+#  relative to itself
+
+(cd %%DATADIR%%; ./t-engine "$@")
+

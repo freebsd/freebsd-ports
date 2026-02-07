@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: clamsmtpd
+# REQUIRE: DAEMON %%CLAMD%%
+#
+# Add the fellowing line to /etc/rc.conf.local or /etc/rc.conf
+# to enable clamsmtpd:
+#
+# clamsmtpd_enable (bool):	Set it to "YES" to enable clamsmtpd
+#				Default is "NO".
+# clamsmtpd_conf (file):	Set location of your configuration file.
+#				Default is "%%PREFIX%%/etc/clamsmtpd.conf"
+#
+
+. /etc/rc.subr
+
+name="clamsmtpd"
+rcvar=clamsmtpd_enable
+
+: ${clamsmtpd_enable="NO"}
+: ${clamsmtpd_conf="%%PREFIX%%/etc/clamsmtpd.conf"}
+: ${clamsmtpd_pid="%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
+
+load_rc_config ${name}
+
+command=%%PREFIX%%/sbin/${name}
+command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid}"
+required_files=${clamsmtpd_conf}
+pidfile=${clamsmtpd_pid}
+sig_stop=KILL
+
+run_rc_command "$1"

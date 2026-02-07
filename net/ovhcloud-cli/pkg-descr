@@ -1,0 +1,6 @@
+Single, unified command-line interface for managing the full range of
+OVHcloud products and account resources directly from your terminal.
+Whether you need to automate provisioning, perform quick look-ups, or
+integrate OVHcloud operations into CI/CD pipelines, ovhcloud offers
+fine?grained commands and consistent output formats (table, JSON,
+YAML, or custom gval expressions).

@@ -1,0 +1,58 @@
+--- ./cWnn/jserver/Makefile.in.orig	2004-05-22 01:39:32.000000000 +0900
++++ ./cWnn/jserver/Makefile.in	2014-09-10 01:29:51.000000000 +0900
+@@ -38,7 +38,6 @@
+  JSERVERDEFINES = -DJSERVER -DWRITE_CHECK
+        INCLUDES = -I$(CWNNINCLUDESRC) -I$(top_builddir)
+         DEFINES = $(CWNNDEFINES) $(JSERVERDEFINES) $(WNNTERM) $(CWNNLANGDEF)
+-LOCAL_INSTFLAGS = $(INSTUIDFLAGS) -o $(WNNOWNER)
+   SERVERINITDEF = -DSERVER_INIT_FILE=\"/$(CWNNLANG)/cserverrc\"
+     HINSIDEFINE = -DHINSIDATA_FILE=\"/$(CWNNLANG)/cixing.data\"
+  TSERVERINITDEF = -DSERVER_INIT_FILE=\"/$(TWNNLANG)/tserverrc\"
+@@ -82,6 +81,8 @@
+ OBJ20= getopt.o
+ SRC21= $(CWNNETCSRC)/getopt1.c
+ OBJ21= getopt1.o
++SRC22= $(CWNNETCSRC)/fake-rfc2553.c
++OBJ22= fake-rfc2553.o
+ TSRC0= de_t.c
+ TOBJ0= de_t.o
+ TSRCGETHINSI= gethinsi_t.c
+@@ -90,11 +91,11 @@
+ TSRCS= $(TSRC0) $(TSRCGETHINSI)
+ SRCS= $(SRC0) $(SRC1) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) \
+     $(SRCGETHINSI) $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRC14) \
+-    $(SRC20) $(SRC21) $(TSRCS)
++    $(SRC20) $(SRC21) $(SRC22) $(TSRCS)
+ 
+ OBJS= $(OBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
+     $(OBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14) \
+-    $(OBJ20) $(OBJ21) $(OBJSUPPORT)
++    $(OBJ20) $(OBJ21) $(OBJ22) $(OBJSUPPORT)
+ 
+ TOBJS= $(TOBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
+     $(TOBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14) \
+@@ -129,12 +130,12 @@
+ install:: cserver
+ 	@if [ -d $(DESTDIR)$(CWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(CWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) cserver $(DESTDIR)$(CWNNBINDIR)/cserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) cserver $(DESTDIR)$(CWNNBINDIR)/cserver
+ 
+ install:: tserver
+ 	@if [ -d $(DESTDIR)$(CWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(CWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) tserver $(DESTDIR)$(CWNNBINDIR)/tserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) tserver $(DESTDIR)$(CWNNBINDIR)/tserver
+ 
+ includes:: $(HDRS) $(SRC0) $(SRC1) $(TSRCS)
+ 
+@@ -609,6 +610,9 @@
+ $(OBJ21) : $(SRC21) $(CWNNINCLUDESRC)/getopt.h
+ 	$(CC) -c $(CFLAGS)  $(CWNNETCSRC)/`basename $@ .o`.c
+ 
++$(OBJ22) : $(SRC22)
++	$(CC) -c $(CFLAGS)  $(CWNNETCSRC)/`basename $@ .o`.c
++
+ vasprintf.o : $(WNNETCSRC)/vasprintf.c
+ 	$(CC) -c $(CFLAGS)  $?
+ 

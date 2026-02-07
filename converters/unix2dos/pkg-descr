@@ -1,0 +1,3 @@
+unix2dos is a set of command-line tools that converts ASCII newline characters
+between Unix's LF and DOS's CR/LF (and vice versa). Despite its name, this
+package provides both `unix2dos` as well as its counterpart, `dos2unix`.

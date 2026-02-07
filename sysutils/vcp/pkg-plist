@@ -1,0 +1,5 @@
+bin/vcp
+@sample etc/vcp.conf.sample
+share/man/man1/vcp.1.gz
+share/man/pl/man1/vcp.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README

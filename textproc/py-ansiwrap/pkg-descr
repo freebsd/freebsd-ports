@@ -1,0 +1,2 @@
+ansiwrap wraps text, like the standard textwrap module. But it also correctly
+wraps text that contains ANSI control sequences that colorize or style text.

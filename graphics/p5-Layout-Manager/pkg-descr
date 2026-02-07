@@ -1,0 +1,2 @@
+Layout::Manager provides a simple interface for creating layout managers, or
+classes that size and position components withing a container.

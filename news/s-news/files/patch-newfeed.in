@@ -1,0 +1,15 @@
+--- newfeed.in.orig	Sat Jun 29 21:29:49 2002
++++ newfeed.in	Sun Jul 25 04:40:59 2004
+@@ -52,9 +52,11 @@
+ 	umask $UMASK
+ fi
+ 
+-if mkdir $SUCKDIR/$host
++if mkdir -p $SUCKDIR/$host
+ then
+ 	echo junk >$SUCKDIR/$host/active-ignore
++	# Uncomment the following line if you don't want cancel messages to propagate
++	#echo control.cancel >>$SUCKDIR/$host/active-ignore
+ 	mkdir $SUCKDIR/$host/incoming
+ 
+ 	for opt in $options

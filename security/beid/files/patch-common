@@ -1,0 +1,21 @@
+--- cardcomm/pkcs11/src/common/logbase.cpp.orig	2017-05-16 16:28:03 UTC
++++ cardcomm/pkcs11/src/common/logbase.cpp
+@@ -639,6 +639,7 @@ namespace eIDMW
+ 					      utilStringNarrow(filename).
+ 					      c_str(), "a");
+ #else
++			(void)bWchar;
+ 			m_f = fopen(utilStringNarrow(filename).c_str(),
+ 				    "a, ccs=UTF-8");
+ 			if (m_f == NULL)
+--- cardcomm/pkcs11/src/common/util.cpp.orig	2017-05-16 16:28:03 UTC
++++ cardcomm/pkcs11/src/common/util.cpp
+@@ -221,7 +221,7 @@ namespace eIDMW
+ 			pid = getpid();
+ 
+ 			if (snprintf
+-			    (linkname, sizeof(linkname), "/proc/%i/exe",
++			    (linkname, sizeof(linkname), "/proc/%i/file",
+ 			     pid) < 0)
+ 			{
+ 				/* This should only happen on large word systems. I'm not sure

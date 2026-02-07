@@ -1,0 +1,39 @@
+--- config.mk.in.orig	2023-10-24 13:44:06 UTC
++++ config.mk.in
+@@ -22,10 +22,10 @@
+ #
+ # Uncomment the following lines and replace "no" with "yes":
+ #
+-# CC      = clang
+-# CFLAGS += -I/usr/local/include
+-# MORELIBS += -L /usr/local/lib -luuid
+-FREEBSD ?= no
++CC      = clang
++CFLAGS += -I/usr/local/include
++MORELIBS += -L /usr/local/lib -luuid
++FREEBSD ?= yes
+ #
+ # Now build recorder with the "gmake" command:
+ #
+@@ -63,10 +63,10 @@ WITH_GREENWICH ?= no
+ 
+ # Where should the recorder store its data? This directory must
+ # exist and be writeable by recorder (and readable by ocat)
+-STORAGEDEFAULT = /var/spool/owntracks/recorder/store
++STORAGEDEFAULT = /var/db/owntracks/recorder/store
+ 
+ # Where should the recorder find its document root (HTTP)?
+-DOCROOT = /var/spool/owntracks/recorder/htdocs
++DOCROOT = /usr/local/www/ot-recorder
+ 
+ # Define the precision for reverse-geo lookups. The higher
+ # the number, the more granular reverse-geo will be:
+@@ -89,7 +89,7 @@ GHASHPREC = 7
+ JSON_INDENT ?= no
+ 
+ # Location of optional default configuration file
+-CONFIGFILE = /etc/default/ot-recorder
++CONFIGFILE = /usr/local/etc/ot-recorder/ot-recorder.conf
+ 
+ # Optionally specify the path to the Mosquitto libs, include here
+ MOSQUITTO_CFLAGS = `$(PKG_CONFIG) --cflags libmosquitto`

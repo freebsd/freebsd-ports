@@ -1,0 +1,25 @@
+--- Makefile.in.orig	2023-12-19 22:55:53 UTC
++++ Makefile.in
+@@ -667,7 +667,12 @@ AUTOMAKE_OPTIONS = foreign subdir-objects
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign subdir-objects
+-SUBDIRS = . po manual
++
++ifndef NOPORTDOCS
++MANUALSUBDIR = manual
++endif
++SUBDIRS = . po $(MANUALSUBDIR)
++
+ DIST_SUBDIRS = ${SUBDIRS} examples myspell lib5
+ filterdir = ${pkglibdir}
+ optdir = ${pkgdatadir}
+@@ -768,7 +773,7 @@ aspell_SOURCES = prog/aspell.cpp prog/check_funs.cpp p
+ @PSPELL_COMPATIBILITY_TRUE@libpspell_la_LDFLAGS = $(libaspell_la_LDFLAGS)
+ word_list_compress_SOURCES = prog/compress.c
+ aspell_SOURCES = prog/aspell.cpp prog/check_funs.cpp prog/checker_string.cpp
+-aspell_LDADD = libaspell.la $(CURSES_LIB)
++aspell_LDADD = libaspell.la $(CURSES_LIB) $(LTLIBINTL)
+ prezip_bin_SOURCES = prog/prezip.c
+ static_optfiles = modules/filter/url-filter.info $(am__append_3)
+ dynamic_optfiles = $(am__append_5)

@@ -1,0 +1,11 @@
+--- common/libBuffer/include/CommonFWriteBufferFlusher.h.orig	2018-11-26 22:43:10 UTC
++++ common/libBuffer/include/CommonFWriteBufferFlusher.h
+@@ -19,6 +19,8 @@
+ #else
+ #	include <unordered_map>
+ #endif
++#elif defined(__clang_major__) && __clang_major__ >= 13
++#	include <unordered_map>
+ #else
+ #	include <tr1/unordered_map>
+ #endif

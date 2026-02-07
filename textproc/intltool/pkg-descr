@@ -1,0 +1,14 @@
+The module contains some utility scripts and assorted auto* magic for
+internationalizing various kinds of XML files.
+
+* Features
+
+o Extract translatable strings from various source files (.xml.in,
+  .glade, .desktop.in, .server.in, .oaf.in).
+
+o Collect the extracted strings together with messages from traditional
+  source files (.c, .h) in po/$(PACKAGE).pot.
+
+o Merge back the translations from .po files into .xml, .desktop and
+  .oaf files.  This merge step will happen at build resp. installation
+  time.

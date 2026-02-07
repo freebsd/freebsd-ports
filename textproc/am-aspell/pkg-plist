@@ -1,0 +1,8 @@
+lib/aspell-%%VER%%/am.dat
+lib/aspell-%%VER%%/am_affix.dat
+lib/aspell-%%VER%%/am_phonet.dat
+lib/aspell-%%VER%%/s-ethi.cmap
+lib/aspell-%%VER%%/s-ethi.cset
+share/aspell/am.multi
+share/aspell/am.rws
+share/aspell/amharic.alias

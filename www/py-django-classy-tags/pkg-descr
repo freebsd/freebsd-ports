@@ -1,0 +1,9 @@
+The goal of this project is to create a new way of writing Django template tags
+which is fully compatible with the current Django templating infrastructure.
+This new way should be easy, clean and require as little boilerplate code as
+possible while still staying as powerful as possible. Some features:
+- Class based template tags.
+- Template tag argument parser.
+- Declarative way to define arguments.
+- Supports (theoretically infinite) parse-until blocks.
+- Extensible!

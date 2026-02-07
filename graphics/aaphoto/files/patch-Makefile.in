@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2010-09-14 12:09:45.000000000 +0200
++++ Makefile.in	2010-09-14 12:10:23.000000000 +0200
+@@ -162,8 +162,8 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CFLAGS = -Wall -O2 -D__OPENMP__ -fopenmp
+-AM_LDFLAGS = -ljasper -ljpeg -lpng -lm -lgomp
++AM_CFLAGS = -Wall
++AM_LDFLAGS = -ljasper -ljpeg -lpng -lm
+ aaphoto_SOURCES = aaphoto.c
+ INCLUDES = 
+ all: config.h

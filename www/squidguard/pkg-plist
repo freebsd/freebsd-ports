@@ -1,0 +1,64 @@
+bin/squidGuard
+@sample etc/squid/squidGuard.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/LDAPFlow.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/authentication.html
+%%PORTDOCS%%%%DOCSDIR%%/authentication.txt
+%%PORTDOCS%%%%DOCSDIR%%/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/configuration.txt
+%%PORTDOCS%%%%DOCSDIR%%/configure.html
+%%PORTDOCS%%%%DOCSDIR%%/configure.txt
+%%PORTDOCS%%%%DOCSDIR%%/expressionlist.html
+%%PORTDOCS%%%%DOCSDIR%%/expressionlist.txt
+%%PORTDOCS%%%%DOCSDIR%%/extended.html
+%%PORTDOCS%%%%DOCSDIR%%/extended.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/features.html
+%%PORTDOCS%%%%DOCSDIR%%/features.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/installation.txt
+%%PORTDOCS%%%%DOCSDIR%%/ldap-ad-tips.html
+%%PORTDOCS%%%%DOCSDIR%%/ldap-ad-tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/ldap.html
+%%PORTDOCS%%%%DOCSDIR%%/ldap.txt
+%%PORTDOCS%%%%DOCSDIR%%/runtimeops.html
+%%PORTDOCS%%%%DOCSDIR%%/runtimeops.txt
+%%PORTDOCS%%%%DOCSDIR%%/troubleshoot.html
+%%PORTDOCS%%%%DOCSDIR%%/troubleshoot.txt
+%%PORTDOCS%%%%DOCSDIR%%/squidGuard.gif
+@owner %%SQUID_UID%%
+@group %%SQUID_GID%%
+@mode 550
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/ads/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/ads/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/aggressive/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/aggressive/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/audio-video/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/audio-video/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/drugs/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/drugs/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/gambling/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/gambling/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/hacking/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/hacking/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/mail/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/porn/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/porn/expressions
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/porn/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/proxy/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/proxy/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/violence/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/violence/expressions
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/violence/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/warez/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/warez/urls
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.blacklists
+@mode
+@owner root
+@group wheel
+@dir(%%SQUID_UID%%,%%SQUID_GID%%,) %%LOGDIR%%
+@dir(%%SQUID_UID%%,%%SQUID_GID%%,) %%DATADIR%%

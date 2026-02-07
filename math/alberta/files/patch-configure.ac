@@ -1,0 +1,24 @@
+- workaround for non-existent TMPDIR causing gmake failure: config.status: error: Something went wrong bootstrapping makefile fragments
+
+--- configure.ac.orig	2018-11-12 11:36:13 UTC
++++ configure.ac
+@@ -95,8 +95,8 @@ fi])
+ 
+ AC_CONFIG_COMMANDS([dof_free_bit.h],
+ [AS_TMPDIR([alberta])
+-TMPDIR=${tmp}
+-TARGET_NEW=${TMPDIR}/dof_free_bit.h
++TMPDIRx=${tmp}
++TARGET_NEW=${TMPDIRx}/dof_free_bit.h
+ TARGET=alberta/src/Common/dof_free_bit.h
+ ${SHELL} ${srcdir}/mkdoffreemasks.sh ${BITS} 1 > ${TARGET_NEW}
+ if test -f ${TARGET} && cmp ${TARGET} ${TARGET_NEW} > /dev/null 2>&1 ; then
+@@ -105,7 +105,7 @@ else
+     AC_MSG_NOTICE([Creating ${TARGET}])
+     mv -f ${TARGET_NEW} ${TARGET}
+ fi
+-rm -rf ${TMPDIR}],
++rm -rf ${TMPDIRx}],
+ [BITS=$(( ${ac_cv_sizeof_long} * 8 ))])
+ 
+ # Collect the demo programs

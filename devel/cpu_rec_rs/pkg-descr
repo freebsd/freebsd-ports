@@ -1,0 +1,12 @@
+cpu_rec_rs is a Rust reimplementation of the original cpu_rec.
+Why reimplement it?
+
+ - Performance
+ - Code simplification
+ - Rust practice
+
+The original cpu_rec contains a lot of code necessary for experimenting
+and updating the corpus.
+
+If you want to play with various settings for prediction, please use
+cpu_rec (github.com/airbus-seclab/cpu_rec).

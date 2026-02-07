@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-11-06 23:45:43 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ # imagecodecs/pyproject.toml
+ 
+ [build-system]
+-requires = ["setuptools", "numpy>=2", "Cython>=3.2"]
++requires = ["setuptools", "numpy", "Cython>=3.2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.black]

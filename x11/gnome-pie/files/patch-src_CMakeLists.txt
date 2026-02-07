@@ -1,0 +1,46 @@
+--- src/CMakeLists.txt.orig	2021-07-17 09:00:37 UTC
++++ src/CMakeLists.txt
+@@ -27,6 +27,7 @@ install(
+         ${CMAKE_INSTALL_PREFIX}/bin
+ )
+ 
++if (INSTALL_DOCS)
+ # install credits
+ install(
+     FILES
+@@ -34,17 +35,21 @@ install(
+     DESTINATION
+         ${CMAKE_INSTALL_PREFIX}/share/doc/gnome-pie
+ )
++endif()
+ 
++if (INSTALL_NLS)
+ # install locales
+ install(
+     DIRECTORY
+         ${CMAKE_SOURCE_DIR}/resources/locale
+     DESTINATION
+         ${CMAKE_INSTALL_PREFIX}/share
++    PATTERN *.orig EXCLUDE
+     PATTERN *.po EXCLUDE
+     PATTERN *.pot EXCLUDE
+     PATTERN *.sh EXCLUDE
+ )
++endif()
+ 
+ # install themes
+ install(
+@@ -79,6 +84,7 @@ install(
+         ${CMAKE_INSTALL_PREFIX}/share/applications
+ )
+ 
++if (INSTALL_MANPAGES)
+ # install manpage
+ install(
+     FILES
+@@ -86,4 +92,5 @@ install(
+     DESTINATION
+         ${CMAKE_INSTALL_PREFIX}/share/man/man1
+ )
++endif()
+ 

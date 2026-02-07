@@ -1,0 +1,108 @@
+Remove bash-isms from configure script
+
+--- configure.ac.orig	2024-02-21 00:49:54 UTC
++++ configure.ac
+@@ -189,16 +189,16 @@ if (test "x$debug" = "xyes"); then
+ 
+ if (test "x$debug" = "xyes"); then
+        AC_DEFINE(DEBUG, 1, [Define if debug message output code should be built.])
+-       GLOBAL_CFLAGS+=" -g"
++       GLOBAL_CFLAGS="$GLOBAL_CFLAGS -g"
+ fi
+ 
+ if test "x$enable_static" = "xyes" -a "x$enable_shared" = "xno"; then
+-	GLOBAL_CFLAGS+=" -DLIBPLIST_STATIC"
++	GLOBAL_CFLAGS="$GLOBAL_CFLAGS -DLIBPLIST_STATIC"
+ fi
+ 
+ GLOBAL_CXXFLAGS=$GLOBAL_CFLAGS
+ AS_COMPILER_FLAG([-fvisibility=hidden], [
+-  GLOBAL_CFLAGS+=" -fvisibility=hidden"
++  GLOBAL_CFLAGS="$GLOBAL_CFLAGS -fvisibility=hidden"
+ ], [])
+ 
+ AC_SUBST(GLOBAL_CFLAGS)
+@@ -237,23 +237,23 @@ if test "x$build_sanitizers" = "xyes"; then
+ 
+ if test "x$build_sanitizers" = "xyes"; then
+     AS_COMPILER_FLAG([-fsanitize=address], [
+-        SANITIZER_FLAGS+=" -fsanitize=address"
++        SANITIZER_FLAGS="$SANITIZER_FLAGS -fsanitize=address"
+         ASAN_AVAILABLE=yes
+     ], [])
+     if test "$ASAN_AVAILABLE" = "yes"; then
+         AS_COMPILER_FLAG([-fsanitize=address -fsanitize-address-use-after-scope], [
+-            SANITIZER_FLAGS+=" -fsanitize-address-use-after-scope"
++            SANITIZER_FLAGS="$SANITIZER_FLAGS -fsanitize-address-use-after-scope"
+         ], [])
+-        SANITIZERS+="ASAN "
++        SANITIZERS="$SANITIZERS ASAN"
+     fi
+ 
+     AS_COMPILER_FLAG([-fsanitize=undefined], [
+-        SANITIZER_FLAGS+=" -fsanitize=undefined"
++        SANITIZER_FLAGS="$SANITIZER_FLAGS -fsanitize=undefined"
+         UBSAN_AVAILABLE=yes
+     ], [])
+ 
+     if test "$UBSAN_AVAILABLE" = "yes"; then
+-        SANITIZERS+="UBSAN "
++        SANITIZERS="$SANITIZERS UBSAN"
+     fi
+ 
+     if test -z "$SANITIZER_FLAGS"; then
+@@ -266,13 +266,13 @@ if test "x$build_sanitizers" = "xyes"; then
+             if test -z "$SAN_COV_FLAGS"; then
+                 SAN_COV_FLAGS="$COV_CHECK"
+             else
+-                SAN_COV_FLAGS+=",$COV_CHECK"
++                SAN_COV_FLAGS="$SAN_COV_FLAGS,$COV_CHECK"
+             fi
+         ], [])
+     done
+     if test -n "$SAN_COV_FLAGS"; then
+-        SANITIZER_FLAGS+=" -fsanitize-coverage=$SAN_COV_FLAGS"
+-        SANITIZERS+="+coverage "
++        SANITIZER_FLAGS="$SANITIZER_FLAGS -fsanitize-coverage=$SAN_COV_FLAGS"
++        SANITIZERS="$SANITIZERS +coverage"
+     else
+         AC_MSG_WARN([No sanitizer coverage supported by compiler])
+     fi
+@@ -280,20 +280,20 @@ if test "x$build_sanitizers" = "xyes"; then
+     CFLAGS="-O1"
+ 
+     AS_COMPILER_FLAG([-fno-omit-frame-pointer], [
+-        CFLAGS+=" -fno-omit-frame-pointer"
++        CFLAGS="$CFLAGS -fno-omit-frame-pointer"
+     ], [])
+ 
+     AS_COMPILER_FLAG([-gline-tables-only], [
+-        CFLAGS+=" -gline-tables-only"
++        CFLAGS="$CFLAGS -gline-tables-only"
+     ],
+     [
+-        CFLAGS+=" -g"
++        CFLAGS="$CFLAGS -g"
+     ])
+ 
+-    EXTRA_CONF+="  Enabled sanitizers ......: $SANITIZERS
++    EXTRA_CONF="$EXTRA_CONF  Enabled sanitizers ......:$SANITIZERS
+ "
+ 
+-    CFLAGS+=" $SANITIZER_FLAGS"
++    CFLAGS="$CFLAGS $SANITIZER_FLAGS"
+     CXXFLAGS="$CFLAGS -std=c++11"
+ fi
+ 
+@@ -307,9 +307,9 @@ if test "x$build_fuzzers" = "xyes"; then
+         ;;
+     esac
+ 
+-    CFLAGS+=" -DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION"
++    CFLAGS="$CFLAGS -DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION"
+ 
+-    EXTRA_CONF+="  Build fuzzers ...........: yes
++    EXTRA_CONF="$EXTRA_CONF  Build fuzzers ...........: yes
+ "
+ fi
+ 

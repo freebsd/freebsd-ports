@@ -1,0 +1,14 @@
+bin/xdgmenumaker
+share/desktop-directories/xdgmenumaker-accessories.directory
+share/desktop-directories/xdgmenumaker-applications.directory
+share/desktop-directories/xdgmenumaker-development.directory
+share/desktop-directories/xdgmenumaker-education.directory
+share/desktop-directories/xdgmenumaker-games.directory
+share/desktop-directories/xdgmenumaker-graphics.directory
+share/desktop-directories/xdgmenumaker-multimedia.directory
+share/desktop-directories/xdgmenumaker-network.directory
+share/desktop-directories/xdgmenumaker-office.directory
+share/desktop-directories/xdgmenumaker-other.directory
+share/desktop-directories/xdgmenumaker-settings.directory
+share/desktop-directories/xdgmenumaker-system.directory
+share/man/man1/xdgmenumaker.1.gz

@@ -1,0 +1,47 @@
+#!/bin/sh
+
+TWDIR=%%TWDIR%%
+WWWDIR=%%WWWDIR%%
+WWWOWN=%%WWWOWN%%
+WWWGRP=%%WWWGRP%%
+
+case $2 in
+	PRE-INSTALL)
+		;;
+	POST-INSTALL)
+		cd ${TWDIR}/
+		find -s * -type d | while read dir; do
+			mkdir -p ${WWWDIR}/$dir/
+		done
+		find -s * -not -type d | while read file; do
+			if [ -e ${WWWDIR}/$file ]; then
+				echo "${WWWDIR}/$file exists, skipping"
+			else
+				cp $file ${WWWDIR}/$file
+			fi
+		done
+		chown -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+		chmod -R u+w ${WWWDIR}/
+		cd ${WWWDIR}/
+		chmod o-rwx data lib test tools
+		chmod a+x tools/*
+
+		# let the user know what's going on
+		cat << __EOF__
+*****************************************************************
+* You can inspect differences (if any) between the distribition *
+* and the files installed using this command:                   *
+  % diff -ru ${TWDIR} ${WWWDIR}
+* For more info:                                                *
+*  http://wiki.FreeBSD.org/TWiki                                *
+*  http://twiki.org/cgi-bin/view/Codev/TWikiOnFreeBSD           *
+*  http://twiki.org/cgi-bin/view/TWiki/WebHome                  *
+*****************************************************************
+__EOF__
+		;;
+	*)
+		echo "Unexpected Argument $2!!!"
+		exit 1
+		;;
+esac
+exit 0

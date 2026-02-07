@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/GD::Graph3d.3.gz
+%%SITE_PERL%%/GD/Graph/axestype3d.pm
+%%SITE_PERL%%/GD/Graph/bars3d.pm
+%%SITE_PERL%%/GD/Graph/cylinder.pm
+%%SITE_PERL%%/GD/Graph/cylinder3d.pm
+%%SITE_PERL%%/GD/Graph/lines3d.pm
+%%SITE_PERL%%/GD/Graph/pie3d.pm
+%%SITE_PERL%%/GD/Graph3d.pm

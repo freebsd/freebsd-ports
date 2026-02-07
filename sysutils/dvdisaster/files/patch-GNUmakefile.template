@@ -1,0 +1,73 @@
+--- GNUmakefile.template.orig	2021-09-24 10:20:49 UTC
++++ GNUmakefile.template
+@@ -100,7 +100,7 @@ OFILES = $(CFG_OFILES)
+ 
+ ${BUILDTMP}/%.o : %.c
+ 	@echo "Compiling:" $?
+-	@$(CC) $(COPTS) -c $? -o $@
++	$(CC) $(COPTS) -c $? -o $@
+ 
+ all: time-stamp dvdisaster
+ 
+@@ -112,11 +112,11 @@ time-stamp:
+ 
+ ${BUILDTMP}/closure.o: closure.c build.h
+ 	@echo "Compiling:" closure.c
+-	@$(CC) $(COPTS) -c closure.c -o ${BUILDTMP}/closure.o
++	$(CC) $(COPTS) -c closure.c -o ${BUILDTMP}/closure.o
+ 
+ dvdisaster: inlined-icons.h $(OFILES) 
+ 	@echo "Linking  : dvdisaster"
+-	@$(CC) $(LOPTS) $(OFILES) $(LIBS) -o dvdisaster
++	$(CC) $(LOPTS) $(OFILES) $(LIBS) -o dvdisaster
+ 	@if test -e locale/de/LC_MESSAGES/dvdisaster.mo \
+ 	 || echo $(WITH_OPTIONS) | grep "NLS_NO" >/dev/null; \
+ 	then echo "not touching locale"; \
+@@ -124,27 +124,32 @@ dvdisaster: inlined-icons.h $(OFILES) 
+ 	fi
+ 
+ inlined-icons.h: icons/read.png icons/create.png icons/scan.png icons/fix.png icons/verify.png
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_read     icons/read.png      >inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_create   icons/create.png   >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_scan     icons/scan.png     >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_fix      icons/fix.png      >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_verify   icons/verify.png   >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_open_ecc icons/open-ecc.png >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_open_img icons/open-img.png >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_cd icons/cd.png >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_gtk_help icons/gtk-help.png >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_gtk_index icons/gtk-index.png >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_gtk_preferences icons/gtk-preferences.png >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_gtk_quit icons/gtk-quit.png >>inlined-icons.h
+-	@gdk-pixbuf-csource --raw --name=dvdisaster_gtk_stop icons/gtk-stop.png >>inlined-icons.h
++	@if echo $(WITH_OPTIONS) | grep "WITH_GUI_YES" >/dev/null; then \
++	  echo "Creating: inlined-icons.h"; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_read     icons/read.png      >inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_create   icons/create.png   >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_scan     icons/scan.png     >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_fix      icons/fix.png      >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_verify   icons/verify.png   >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_open_ecc icons/open-ecc.png >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_open_img icons/open-img.png >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_cd icons/cd.png >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_gtk_help icons/gtk-help.png >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_gtk_index icons/gtk-index.png >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_gtk_preferences icons/gtk-preferences.png >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_gtk_quit icons/gtk-quit.png >>inlined-icons.h; \
++	  gdk-pixbuf-csource --raw --name=dvdisaster_gtk_stop icons/gtk-stop.png >>inlined-icons.h; \
++	else \
++	  echo "Skipping: inlined-icons.h"; \
++	fi
+ 
+ $(BUILDTMP)/rs-encoder-sse2.o: rs-encoder-sse2.c
+ 	@echo "Compiling:" rs-encoder-sse2.c
+-	@$(CC) $(SSE2_OPTIONS) $(COPTS) -c rs-encoder-sse2.c -o $(BUILDTMP)/rs-encoder-sse2.o
++	$(CC) $(SSE2_OPTIONS) $(COPTS) -c rs-encoder-sse2.c -o $(BUILDTMP)/rs-encoder-sse2.o
+ 
+ $(BUILDTMP)/rs-encoder-altivec.o: rs-encoder-altivec.c
+ 	@echo "Compiling:" rs-encoder-altivec.c
+-	@$(CC) $(ALTIVEC_OPTIONS) $(COPTS) -c rs-encoder-altivec.c -o $(BUILDTMP)/rs-encoder-altivec.o
++	$(CC) $(ALTIVEC_OPTIONS) $(COPTS) -c rs-encoder-altivec.c -o $(BUILDTMP)/rs-encoder-altivec.o
+ 
+ locale:
+ 	@$(MAKE) --no-print-directory -C locale

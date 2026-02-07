@@ -1,0 +1,2 @@
+Number::Uncertainty provides an object-orientated uncertainty object. It stores
+information about a value and its error bounds.

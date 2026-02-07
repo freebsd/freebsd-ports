@@ -1,0 +1,10 @@
+--- ./exec/Makefile.in.orig	2010-03-15 02:58:51.000000000 -0700
++++ ./exec/Makefile.in	2010-11-17 11:06:07.000000000 -0800
+@@ -1,6 +1,6 @@
+ include %%topdir%%/config.mk
+ 
+-TEXT = make_profile xlogout
++TEXT = make_profile
+ 
+ install :
+ 	$(install) 755 $(LIBEXECDIR)/fbpanel 755 $(TEXT)

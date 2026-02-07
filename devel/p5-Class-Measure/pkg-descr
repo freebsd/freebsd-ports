@@ -1,0 +1,2 @@
+This is a base class that is inherited by the Class::Measure classes.
+This distribution comes with the class Class::Measure::Length.

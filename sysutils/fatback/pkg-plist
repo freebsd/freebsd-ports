@@ -1,0 +1,6 @@
+bin/fatback
+share/man/man1/fatback.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/fatback-manual.texi
+%%PORTDOCS%%%%DOCSDIR%%/texinfo.tex

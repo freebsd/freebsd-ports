@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Test/Mock/HTTP/Request.pm
+%%SITE_PERL%%/Test/Mock/HTTP/Response.pm
+%%SITE_PERL%%/Test/Mock/LWP.pm
+%%SITE_PERL%%/Test/Mock/LWP/UserAgent.pm
+%%PERL5_MAN3%%/Test::Mock::HTTP::Request.3.gz
+%%PERL5_MAN3%%/Test::Mock::HTTP::Response.3.gz
+%%PERL5_MAN3%%/Test::Mock::LWP.3.gz
+%%PERL5_MAN3%%/Test::Mock::LWP::UserAgent.3.gz

@@ -1,0 +1,46 @@
+--- CMakeLists.txt.orig	2021-04-19 19:25:22 UTC
++++ CMakeLists.txt
+@@ -18,15 +18,15 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_S
+ include(cmake_modules/IMPFindPython.cmake)
+ imp_find_python()
+ 
+-execute_process(COMMAND ${PYTHON_EXECUTABLE} setup_git.py
+-                  RESULT_VARIABLE setup
+-                  OUTPUT_VARIABLE toutput
+-                  ERROR_VARIABLE error
+-                  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+-                  OUTPUT_STRIP_TRAILING_WHITESPACE)
+-if(NOT ${setup} EQUAL 0)
+-   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
+-endif()
++#execute_process(COMMAND ${PYTHON_EXECUTABLE} setup_git.py
++#                  RESULT_VARIABLE setup
++#                  OUTPUT_VARIABLE toutput
++#                  ERROR_VARIABLE error
++#                  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
++#                  OUTPUT_STRIP_TRAILING_WHITESPACE)
++#if(NOT ${setup} EQUAL 0)
++#   message(FATAL_ERROR " Failed to run setup_git.py: ${setup}; ${error}")
++#endif()
+ 
+ # Don't deref quoted variables in if()
+ if(POLICY CMP0054)
+@@ -168,12 +168,14 @@ else()
+ endif()
+ 
+ 
+-add_subdirectory(swig)
++#add_subdirectory(swig)
+ 
++if (FREEBSD_BUILS_WITH_TESTS)
+ add_subdirectory(test)
+-add_subdirectory(examples)
+-add_subdirectory(benchmark)
+-add_subdirectory(doc)
++endif()
++#add_subdirectory(examples)
++#add_subdirectory(benchmark)
++#add_subdirectory(doc)
+ 
+ add_custom_target(RMF DEPENDS ${RMF_BINS} ${RMF_SWIG} ${RMF_TESTS} ${RMF_VMD} RMF-decorators)
+ set_property(TARGET "RMF" PROPERTY FOLDER "RMF")

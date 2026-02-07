@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/B/OPCheck.pm
+%%SITE_ARCH%%/auto/B/OPCheck/OPCheck.so
+%%PERL5_MAN3%%/B::OPCheck.3.gz

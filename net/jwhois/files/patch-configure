@@ -1,0 +1,11 @@
+--- configure.orig	2007-07-01 08:56:12 UTC
++++ configure
+@@ -5418,7 +5418,7 @@ fi
+   fi
+   if test "X$ltrpathdirs" != "X"; then
+             for found_dir in $ltrpathdirs; do
+-      LTLIBINTL="${LTLIBINTL}${LTLIBINTL:+ }-R$found_dir"
++      LTLIBINTL="${LTLIBINTL}${LTLIBINTL:+ }-Wl,-rpath,$found_dir"
+     done
+   fi
+ 

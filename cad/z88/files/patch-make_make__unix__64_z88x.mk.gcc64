@@ -1,0 +1,12 @@
+--- make/make_unix_64/z88x.mk.gcc64.orig	2018-12-05 14:30:53 UTC
++++ make/make_unix_64/z88x.mk.gcc64
+@@ -13,8 +13,7 @@ CFLAGS = -I$(DIRCOM) -DFR_UNIX -DFR_XDOU
+ 
+ LDLIBSOX = -lm -lc 
+ 
+-OBJECTSX = z88x.o ale88x.o dyn88x.o clr88.o koi88x.o rea88x.o stop88x.o\
+- sub88x.o who88x.o wlog88x.o wria88x.o wrim88x.o z88fx.o z88tx.o lan88x.o 
++OBJECTSX = z88x.o ale88x.o dyn88x.o clr88.o koi88x.o rea88x.o stop88x.o sub88x.o who88x.o wlog88x.o wria88x.o wrim88x.o z88fx.o z88tx.o lan88x.o 
+ 
+ z88x: $(OBJECTSX)
+ 	$(CC) $(CFLAGS) -o $@ $(OBJECTSX) $(LDLIBSOX)

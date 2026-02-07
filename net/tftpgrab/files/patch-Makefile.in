@@ -1,0 +1,13 @@
+--- ./Makefile.in.orig	2007-09-21 18:12:03.000000000 -0400
++++ ./Makefile.in	2007-09-21 18:12:25.000000000 -0400
+@@ -237,8 +237,8 @@
+ 	  if test -f $$p \
+ 	  ; then \
+ 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
+-	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$p'"; \
++	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$p" || exit 1; \
+ 	  else :; fi; \
+ 	done
+ 

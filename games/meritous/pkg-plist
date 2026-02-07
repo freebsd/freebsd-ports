@@ -1,0 +1,7 @@
+bin/meritous
+share/applications/net.asceai.meritous.desktop
+share/icons/hicolor/256x256/apps/meritous.png
+share/icons/hicolor/scalable/apps/meritous.svg
+%%NLS%%share/locale/fr/LC_MESSAGES/meritous.mo
+share/man/man6/meritous.6.gz
+share/metainfo/net.asceai.meritous.appdata.xml

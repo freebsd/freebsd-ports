@@ -1,0 +1,11 @@
+--- yarnlib/mdparser.py.orig	2019-11-28 08:54:47 UTC
++++ yarnlib/mdparser.py
+@@ -55,7 +55,7 @@ class GatherCodeBlocks(Treeprocessor):
+ 
+ class ParseScenarioTestBlocks(markdown.extensions.Extension):
+ 
+-    def extendMarkdown(self, md, md_globals):
++    def extendMarkdown(self, md):
+         self.blocks = []
+         self.gatherer = GatherCodeBlocks(self.blocks)
+         md.treeprocessors.add('gathercode', self.gatherer, '_end')

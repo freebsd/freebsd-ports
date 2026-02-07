@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+You will have to install your TrueType fonts in
+
+	%%PREFIX%%/share/fonts/TrueType
+
+Remember to run the "xfstt --sync" command if you
+add fonts while the font server is running.
+
+You should also add the following line to the "Files"
+section of your xorg.conf file:
+
+	FontPath   "unix/:7101"
+EOM
+}
+]

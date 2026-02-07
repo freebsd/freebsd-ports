@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+filwatcherd configuration files were installed in the following directory:
+
+	%%PREFIX%%
+
+Before starting the server or the client you need to perform the
+following steps:
+
+1) Copy the appropriate sample configuration file as follows:
+
+	cp %%PREFIX%%/etc/watchtab.sample %%PREFIX%%/etc/watchtab
+
+2) Edit filewatcherd's configuration file to suit your needs:
+
+	$EDITOR %%PREFIX%%/watchtab
+
+3) Add the following line to your rc.conf:
+
+	filewatcherd_enable="YES"
+
+
+Then you can start filewatcherd by issuing the following command:
+
+	service filewatcherd start
+EOM
+}
+]

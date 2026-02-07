@@ -1,0 +1,4 @@
+Graylog is a centralized log server that lets you search and analyze
+logs using a web interface or a REST HTTP API. It handles many input
+types and sources, both structured and unstructured, and stores data
+in OpenSearch, either single node or cluster.

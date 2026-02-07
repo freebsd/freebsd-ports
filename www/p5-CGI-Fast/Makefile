@@ -1,0 +1,26 @@
+PORTNAME=	CGI-Fast
+PORTVERSION=	2.17
+CATEGORIES=	www perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:LEEJO
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Perl CGI Interface for FastCGI
+WWW=		https://metacpan.org/release/CGI-Fast
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI>=4:www/p5-CGI \
+		p5-FCGI>=0.67:www/p5-FCGI
+TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

@@ -1,0 +1,24 @@
+%%PAMDIR%%/fcron
+%%PAMDIR%%/fcrontab
+@owner fcron
+@group fcron
+@(,,6111) bin/fcrondyn
+@(,,6111) bin/fcrontab
+@sample etc/fcron.allow.sample
+@sample etc/fcron.deny.sample
+@owner root
+@(,,4110) bin/fcronsighup
+@sample etc/fcron.conf.sample
+@owner
+@group
+share/man/man1/fcrondyn.1.gz
+share/man/man1/fcrontab.1.gz
+share/man/man5/fcron.conf.5.gz
+share/man/man5/fcrontab.5.gz
+share/man/man8/fcron.8.gz
+sbin/fcron
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcron.pam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcrontab-operator
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcrontab-root
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcrontab.pam
+@dir(fcron,fcron,770) /var/spool/fcron

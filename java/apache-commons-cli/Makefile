@@ -1,0 +1,38 @@
+PORTNAME=	commons-cli
+DISTVERSION=	1.11.0
+CATEGORIES=	java devel
+MASTER_SITES=	APACHE_COMMONS_BINARIES
+PKGNAMEPREFIX=	apache-
+DISTNAME=	${PORTNAME}-${DISTVERSION}-bin
+
+MAINTAINER=	atanubiswas484@gmail.com
+COMMENT=	Java library for command line arguments and options
+WWW=		https://commons.apache.org/proper/commons-cli/
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		java
+
+NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+JARFILE=	${PORTNAME}-${DISTVERSION}.jar
+DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES=	${JAVAJARDIR}/${DESTJARFILE}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} \
+		${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} apidocs ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.txt NOTICE.txt \
+		RELEASE-NOTES.txt ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

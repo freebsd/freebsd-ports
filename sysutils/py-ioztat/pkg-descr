@@ -1,0 +1,2 @@
+ioztat is a storage load analysis tool for OpenZFS. It provides
+iostat-like statistics at an individual dataset/zvol level.

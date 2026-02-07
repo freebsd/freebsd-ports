@@ -1,0 +1,4 @@
+The pod2mdoc utility is a converter from POD into mdoc. It's meant to operate
+like pod2man; however, it doesn't require a Perl installation: pod2mdoc is a
+standalone ISC-licensed ISO C utility and should compile on any modern UNIX
+system.

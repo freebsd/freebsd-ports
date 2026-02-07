@@ -1,0 +1,2 @@
+This package overrides the load() and save() methods of HTTP::Cookies
+so it can work with iCab cookie files.

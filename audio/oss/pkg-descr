@@ -1,0 +1,6 @@
+Open Sound System for FreeBSD is a audio subsystem that provides
+a cross platform audio and MIDI API with device drivers for most
+consumer and professional PCI and USB audio devices.
+
+Not to be confused with sound(4) which is a different implementation
+with the same API.

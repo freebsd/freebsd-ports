@@ -1,0 +1,18 @@
+#compdef mdo
+
+local environ e cmd cpp
+local -a _comp_priv_prefix
+local -A opt_args
+
+zstyle -a ":completion:${curcontext}:" environ environ
+
+for e in "${environ[@]}"
+do local -x "$e"
+done
+
+cmd="$words[1]"
+cpp='_comp_priv_prefix=( $cmd -n ${(kv)opt_args[(I)-u]} )'
+_arguments -s -S -A '-*' : \
+  '-u+[run command as specified user]: :_users' \
+  '-i[keep the calling user]' \
+  "*:: :{ $cpp; _normal }"

@@ -1,0 +1,21 @@
+The Elelabs Firmware Update Utility is a basic Python 3 script to flash
+the the firmware inside a range of Elelabs Zigbee and Thread products to
+a newer version.
+
+Currently sold supported products based on Silicon Labs microcontrollers:
+    Elelabs Zigbee Raspberry Pi Shield ELR023 (EFR32MG13P)
+    Elelabs Zigbee USB Adapter ELU013 (EFR32MG13P)
+
+Previously sold supported products based on Silicon Labs microcontrollers:
+    Elelabs Zigbee Raspberry Pi Shield ELR022 (EFR32MG1B)
+    Elelabs Zigbee USB Adapter ELU012 (EFR32MG1B)
+    Elelabs Zigbee Raspberry Pi Shield EZBPIS (EM357)
+    Elelabs Zigbee USB Adapter EZBUSBA (EM357)
+
+Disclaimer: This utility should also work with other generic EZSP
+(EmberZNet Serial Protocol) or Spinel (Openthread Serial Protocol) based
+adapters and modules from other vendors, however firmwares for products
+not from Elelabs are not provided here and there is no guarantees that
+it will work with non-Elelabs products. Be wanted that you may void your
+warranty and even brick your adapter if the firmware update is not
+supported by your mnaufacturer.

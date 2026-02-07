@@ -1,0 +1,17 @@
+Fix build with CMake >= 3.28.0. FREETYPE_LIBRARY has not officially been
+part of the user-facing interface of the FindFreetype module since CMake
+2.6.0 [1] and has only been coincidentally defined up until this point.
+
+[1] https://gitlab.kitware.com/cmake/cmake/-/commit/d18fb61c76c720ec5b1ac2cc4f30a5beaf071c33
+
+--- src/CMakeLists.txt.orig	2023-12-26 21:03:32 UTC
++++ src/CMakeLists.txt
+@@ -33,7 +33,7 @@ target_link_libraries(slvs_deps INTERFACE
+     dxfrw
+     ${ZLIB_LIBRARY}
+     ${PNG_LIBRARY}
+-    ${FREETYPE_LIBRARY}
++    ${FREETYPE_LIBRARIES}
+     ${CAIRO_LIBRARIES}
+     mimalloc-static)
+ 

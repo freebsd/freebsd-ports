@@ -1,0 +1,4 @@
+share/dict/lookup-package/mypaedia-fpw.el
+share/dict/lookup-package/extract-mypaedia.pl
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README.TXT

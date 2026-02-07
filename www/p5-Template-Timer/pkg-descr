@@ -1,0 +1,3 @@
+Template::Timer provides inline timings of the template processing
+througout your code. It's an overridden version of Template::Context
+that wraps the process() and include() methods.

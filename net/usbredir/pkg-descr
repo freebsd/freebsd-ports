@@ -1,0 +1,7 @@
+usbredir is a protocol for redirecting USB traffic from a single USB device,
+to a different (virtual) machine than the one to which the USB device is
+attached. See usb-redirection-protocol.txt for the description / definition
+of this protocol.
+
+With the official 0.3 release the protocol is now frozen (only extensions
+advertised through capabilities can be added from now on).

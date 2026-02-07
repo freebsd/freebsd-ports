@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2016-10-02 20:06:27 UTC
++++ Makefile.am
+@@ -2,5 +2,5 @@
+ 
+ SUBDIRS = src test
+ 
+-docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
+-dist_doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README
++docdir = $(prefix)/share/doc/$(PACKAGE)
++dist_doc_DATA = README

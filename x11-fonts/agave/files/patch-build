@@ -1,0 +1,11 @@
+--- build.orig	2021-01-18 21:14:37 UTC
++++ build
+@@ -0,0 +1,8 @@
++#!/bin/sh
++
++for a in *.sfd; do
++	fontfile=$(basename $a .sfd)
++	fontforge -lang=ff -c 'Open($1); Generate($2)' ${fontfile}.sfd ${fontfile}.ttf
++	ttfautohint -v -t ${fontfile}.ttf ${fontfile}-autohinted.ttf
++	mv ${fontfile}-autohinted.ttf ${fontfile}.ttf
++done

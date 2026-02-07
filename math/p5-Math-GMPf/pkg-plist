@@ -1,0 +1,8 @@
+%%SITE_ARCH%%/Math/GMPf.pm
+%%SITE_ARCH%%/Math/GMPf.pod
+%%SITE_ARCH%%/Math/GMPf/Random.pm
+%%SITE_ARCH%%/Math/GMPf/V.pm
+%%SITE_ARCH%%/auto/Math/GMPf/GMPf.so
+%%SITE_ARCH%%/auto/Math/GMPf/Random/Random.so
+%%SITE_ARCH%%/auto/Math/GMPf/V/V.so
+%%PERL5_MAN3%%/Math::GMPf.3.gz

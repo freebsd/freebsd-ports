@@ -1,0 +1,11 @@
+--- check_imap_quota.orig	2012-02-20 04:07:27 UTC
++++ check_imap_quota
+@@ -151,7 +151,7 @@ eval {
+ 	  }
+ 	  if (!length($quotaUsed) && !length($quotaLimit)) {
+ 		print "no answer from imap host\n" if $verbose > 2;
+-	  } elsif (!length($quotaUsed) || !length($quotaLimit) {
++	  } elsif (!length($quotaUsed) || !length($quotaLimit)) {
+ 		print "incorrect answer from imap host\n";
+ 	$imap->close();
+ 	exit $status{UNKNOWN};

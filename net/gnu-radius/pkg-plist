@@ -1,0 +1,111 @@
+share/man/man1/radgrep.1.gz
+share/man/man1/radlast.1.gz
+share/man/man1/raduse.1.gz
+share/man/man1/radwho.1.gz
+share/man/man8/builddbm.8.gz
+share/man/man8/radctl.8.gz
+share/man/man8/radiusd.8.gz
+share/man/man8/radping.8.gz
+share/man/man8/radzap.8.gz
+bin/builddbm
+bin/radgrep
+bin/radlast
+bin/radping
+bin/radtest
+bin/radwho
+bin/radzap
+sbin/radauth
+sbin/radctl
+sbin/radiusd
+@sample etc/raddb/access.deny.sample
+@sample etc/raddb/client.conf.sample
+@sample etc/raddb/clients.sample
+@sample etc/raddb/config.sample
+etc/raddb/dict/ascend
+etc/raddb/dict/ascend.vs
+etc/raddb/dict/cisco
+etc/raddb/dict/compat
+etc/raddb/dict/livingston
+etc/raddb/dict/microsoft
+etc/raddb/dict/standard
+etc/raddb/dict/tunnel
+etc/raddb/dict/usr
+etc/raddb/dict/voip
+@sample etc/raddb/dictionary.sample
+@sample etc/raddb/hints.sample
+@sample etc/raddb/huntgroups.sample
+etc/raddb/nas.rc
+@sample etc/raddb/naslist.sample
+@sample etc/raddb/nastypes.sample
+@sample etc/raddb/realms.sample
+@sample etc/raddb/sqlserver.sample
+@sample etc/raddb/users.sample
+include/radius/argcv.h
+include/radius/debug.h
+include/radius/dictionary.h
+include/radius/envar.h
+include/radius/list.h
+include/radius/md4.h
+include/radius/md5.h
+include/radius/mem.h
+include/radius/raddbm.h
+include/radius/radius.h
+include/radius/radpaths.h
+include/radius/radscm.h
+include/radius/radutmp.h
+include/radius/sha1.h
+include/radius/symtab.h
+include/radius/types.h
+@comment lib/charset.alias
+lib/libgnuradius.a
+lib/libgnuradius.so
+lib/libgnuradius.so.0
+lib/libgnuradius.so.0.0.0
+share/aclocal/radius.m4
+%%CLIENT%%bin/radsession
+%%CLIENT%%lib/libguile-gnuradius-v-%%PORTVERSION%%.so
+%%CLIENT%%lib/libradscm.a
+%%CLIENT%%lib/libradscm.so
+%%CLIENT%%lib/libradscm.so.1
+%%CLIENT%%lib/libradscm.so.1.0.0
+%%CLIENT%%lib/libservscm.a
+%%CLIENT%%lib/security/pam_radius.a
+%%CLIENT%%lib/security/pam_radius.so
+%%CLIENT%%libexec/nas.scm
+%%NLS%%share/locale/ca/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/es/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/id/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/radius.mo
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/gnuradius.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/ipalloc.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/radiusd.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/ttl.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/guile-procedures.txt
+%%DATADIR%%/%%PORTVERSION%%/rewrite/checknas.rw
+%%DATADIR%%/%%PORTVERSION%%/rewrite/log-hook.rw
+%%DATADIR%%/%%PORTVERSION%%/rewrite/nas-ip.rw
+%%MYSQL%%lib/radius/%%PORTVERSION%%/modules/mysql.a
+%%MYSQL%%lib/radius/%%PORTVERSION%%/modules/mysql.so
+%%PGSQL%%lib/radius/%%PORTVERSION%%/modules/postgres.a
+%%PGSQL%%lib/radius/%%PORTVERSION%%/modules/postgres.so
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/radconf-mode.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/radius-mode.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/rewrite-mode.el
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascend.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c3620.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cisco.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comos.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.syntax
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filter.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hints-0.96
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jetstream.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nt.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pam.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/radius.php
+@dir %%DATADIR%%/%%PORTVERSION%%/scheme
+@dir lib/radius/%%PORTVERSION%%/modules

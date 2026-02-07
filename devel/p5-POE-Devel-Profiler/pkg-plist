@@ -1,0 +1,7 @@
+bin/poepp
+%%PERL5_MAN3%%/POE::Devel::Profiler.3.gz
+%%SITE_PERL%%/POE/Devel/Profiler.pm
+%%SITE_PERL%%/POE/Devel/Profiler/Parser.pm
+%%SITE_PERL%%/POE/Devel/Profiler/Visualizer/BasicGraphViz.pm
+%%SITE_PERL%%/POE/Devel/Profiler/Visualizer/BasicSummary.pm
+%%PERL5_MAN1%%/poepp.1.gz

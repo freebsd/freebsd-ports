@@ -1,0 +1,19 @@
+--- configure.orig	2024-02-29 16:34:09 UTC
++++ configure
+@@ -6537,11 +6537,11 @@ fi
+     enable_shared="no"
+ fi
+ 
+-if test "X${enable_shared}" = "Xyes"; then
+-    if test "X${BUILD_FORTRAN}" = "Xyes"; then
+-        as_fn_error $? "Cannot build shared fortran libraries. Please configure with --disable-fortran flag." "$LINENO" 5
+-    fi
+-fi
++#if test "X${enable_shared}" = "Xyes"; then
++#    if test "X${BUILD_FORTRAN}" = "Xyes"; then
++#        as_fn_error $? "Cannot build shared fortran libraries. Please configure with --disable-fortran flag." "$LINENO" 5
++#    fi
++#fi
+ 
+ ## ----------------------------------------------------------------------
+ ## Check if they would like the Java native interface (JNI) compiled

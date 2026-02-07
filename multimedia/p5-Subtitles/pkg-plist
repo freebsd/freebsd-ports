@@ -1,0 +1,6 @@
+bin/subs
+%%PERL5_MAN3%%/Subtitles.3.gz
+%%PERL5_MAN1%%/subs.1.gz
+%%SUBPLAY%%bin/subplay
+%%SUBPLAY%%%%PERL5_MAN1%%/subplay.1.gz
+%%SITE_PERL%%/Subtitles.pm

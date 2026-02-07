@@ -1,0 +1,45 @@
+--- Makefile.orig	2002-10-12 19:28:00.000000000 +0200
++++ Makefile	2014-07-27 16:43:13.000000000 +0200
+@@ -1,23 +1,23 @@
+ #configureable stuff
+-PREFIX ?= /usr/local
+-BINDIR ?= $(PREFIX)/bin
+-MANDIR ?= $(PREFIX)/share/man/man1
+-LIBDIR ?= $(PREFIX)/lib/sendip
++#PREFIX ?= /usr/local
++BINDIR=${DESTDIR}${PREFIX}/bin
++MANDIR=${DESTDIR}${PREFIX}/share/man/man1
++LIBDIR=${DESTDIR}${PREFIX}/lib/sendip
+ #For most systems, this works
+-INSTALL ?= install
++INSTALL?=install
+ #For Solaris, you may need
+ #INSTALL=/usr/ucb/install
+ 
+-CFLAGS=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
+-			-Wstrict-prototypes -Wnested-externs -Winline -Werror -g -Wcast-align \
+-			-DSENDIP_LIBS=\"$(LIBDIR)\"
++CFLAGS+=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
++			-Wstrict-prototypes -Wnested-externs -Winline -Werror -Wcast-align \
++			-DSENDIP_LIBS=\"${LIBDIR}\"
+ #-Wcast-align causes problems on solaris, but not serious ones
+-LDFLAGS=	-g -rdynamic -lm
++LDFLAGS+=	-rdynamic -lm
+ #LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm
+ LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm -ldl
+ LDFLAGS_LINUX= -g  -rdynamic -ldl -lm
+ LIBCFLAGS= -shared
+-CC=	gcc
++#CC=	gcc
+ 
+ PROGS= sendip
+ BASEPROTOS= ipv4.so ipv6.so
+@@ -39,7 +39,7 @@
+ $(CC) -o $@ $(LDFLAGS) $(CFLAGS) $+ ; \
+ fi"
+ 
+-sendip.1:	./help2man $(PROGS) $(PROTOS) VERSION
++sendip.1:	help2man $(PROGS) $(PROTOS) VERSION
+ 			./help2man -n "Send arbitrary IP packets" -N >sendip.1
+ 
+ sendip.spec:	sendip.spec.in VERSION

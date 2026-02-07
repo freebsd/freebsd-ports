@@ -1,0 +1,2 @@
+HTML::RobotsMETA is a simple HTML::Parser subclass
+that extracts robots exclusion information from meta tags.

@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Log/Report/Minimal.pm
+%%SITE_PERL%%/Log/Report/Minimal.pod
+%%SITE_PERL%%/Log/Report/Minimal/Domain.pm
+%%SITE_PERL%%/Log/Report/Minimal/Domain.pod
+%%SITE_PERL%%/Log/Report/Optional.pm
+%%SITE_PERL%%/Log/Report/Optional.pod
+%%SITE_PERL%%/Log/Report/Util.pm
+%%SITE_PERL%%/Log/Report/Util.pod
+%%PERL5_MAN3%%/Log::Report::Minimal.3.gz
+%%PERL5_MAN3%%/Log::Report::Minimal::Domain.3.gz
+%%PERL5_MAN3%%/Log::Report::Optional.3.gz
+%%PERL5_MAN3%%/Log::Report::Util.3.gz

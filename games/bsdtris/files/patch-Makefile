@@ -1,0 +1,25 @@
+--- Makefile.orig	2014-08-16 10:46:48 UTC
++++ Makefile
+@@ -0,0 +1,22 @@
++# Makefile for Tetris
++
++TMPLDFLAGS+= -lcurses -ltermcap
++SRCS= screen.c shapes.c input.c tetris.c scores.c
++
++PREFIX?=/usr/local
++MKDIR?=mkdir -p
++
++all: 
++.	for files in ${SRCS}
++		${CC} ${CFLAGS} ${LDFLAGS} -c ${files}
++.	endfor
++	${CC} ${CFLAGS} ${LDFLAGS} ${TMPLDFLAGS} -o tetris input.o scores.o \
++            screen.o shapes.o tetris.o
++
++install:
++	${BSD_INSTALL_PROGRAM} tetris ${DESTDIR}${PREFIX}/bin/bsdtris
++	${BSD_INSTALL_MAN} tetris.6 ${DESTDIR}${PREFIX}/share/man/man6/bsdtris.6
++	${MKDIR} ${DESTDIR}/var/games
++
++clean:
++	rm -f *.o *.core

@@ -1,0 +1,37 @@
+   If /usr/X11R6/lib/libfwf.a exists on the system, (e.g. as a consequence
+   of building the port /usr/ports/x11-toolkits/FWF before), xwave
+   links this file instead of its own (older) libfwf.a.
+
+   In src/Imakefile the line
+
+     XLIBS= -L../lib -lfwf -lXaw -lXpm -lXmu -lXt -lX11
+
+   cannot guarantee, that libfwf.a is taken from ../lib, because imake
+   includes -L/usr/X11R6/lib _BEFORE_ -L../lib.
+
+   I am not experienced in compiler options, but replacing the above line
+   by
+
+     XLIBS= ../lib/libfwf.a -lXaw -lXpm -lXmu -lXt -lX11
+
+   does the job.
+
+--- src/Imakefile.orig	Mon Nov  9 00:22:55 1998
++++ src/Imakefile	Mon Jan  1 12:49:37 2001
+@@ -13,8 +13,14 @@
+ PROGRAMS= xwave
+ 
+ AUDIOLIBS=-L../ccitt -lccitt -L../adpcm2pcm -ladpcm -L../ieee -lieee
+-XLIBS= -L../lib -lfwf -lXaw -lXpm -lXmu -lXt -lX11
+-LIBS=  $(OSLIBS) $(XLIBS) $(AUDIOLIBS) -lm -lc 
++
++# XLIBS= -L../lib -lfwf -lXaw -lXpm -lXmu -lXt -lX11
++# "-L../lib -lfwf" substituted by "../lib/libfwf.a" because Linker
++# used /usr/X11R6/lib/libfwf.a on systems, where this file exists.
++# 2001-01-01 Martin Kraft
++
++XLIBS= ../lib/libfwf.a -lXaw -lXpm -lXmu -lXt -lX11
++LIBS=  $(OSLIBS) $(XLIBS) $(AUDIOLIBS) -lm
+ 
+ NormalProgramTarget(xwave,$(OBJS),,$(LIBS),)
+ 

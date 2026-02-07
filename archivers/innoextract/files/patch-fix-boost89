@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2025-10-24 17:36:33 UTC
++++ CMakeLists.txt
+@@ -177,7 +177,6 @@ find_package(Boost REQUIRED COMPONENTS
+ 	iostreams
+ 	filesystem
+ 	date_time
+-	system
+ 	program_options
+ )
+ list(APPEND LIBRARIES ${Boost_LIBRARIES})

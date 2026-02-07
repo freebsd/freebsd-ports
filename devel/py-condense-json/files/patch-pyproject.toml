@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-06-10 15:09:59 UTC
++++ pyproject.toml
+@@ -5,14 +5,15 @@ authors = [{name = "Simon Willison"}]
+ readme = "README.md"
+ requires-python = ">=3.9"
+ authors = [{name = "Simon Willison"}]
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
++
+ classifiers = [
+     "Typing :: Typed"
+ ]
+ dependencies = []
+ 
+ [build-system]
+-requires = ["setuptools"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project.urls]

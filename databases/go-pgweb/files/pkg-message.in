@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+
+To run Pgweb at startup, enable it in your /etc/rc.conf:
+sysrc pgweb_enable="YES"
+
+To start Pgweb:
+service pgweb start
+
+Pgweb will listen on port 8081 and bind to localhost.  
+This can be changed by setting "pgweb_bind" and "pgweb_listen" 
+in /etc/rc.conf.
+
+sysrc pgweb_bind="0.0.0.0" pgweb_listen="80"
+
+Additional options can be set using "pgweb_flags". See 'pgweb --help' for a list
+of all options.
+
+EOM
+}
+]

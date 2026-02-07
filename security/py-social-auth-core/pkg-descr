@@ -1,0 +1,5 @@
+This is the core component of the python-social-auth
+ecosystem, it implements the common interface to
+define new authentication backends to third parties
+services, implement integrations with web frameworks
+and storage solutions.

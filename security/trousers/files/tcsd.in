@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: tcsd
+# REQUIRE: SERVERS tpmd
+# BEFORE:  named hastd kerberos
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# tcsd_enable (bool): Set to NO by default.
+#                     Set it to YES to enable tcsd.
+# tcsd_mode (string): Set to "native" by default.
+#                     Set it to "emulator" to use software TPM emulator.
+#                     "emulator" depends on tpmd (emulators/tpm-emulator).
+
+. /etc/rc.subr
+
+name=tcsd
+rcvar=tcsd_enable
+command="%%PREFIX%%/sbin/${name}"
+start_precmd="tcsd_precmd"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+tcsd_precmd()
+{
+	/usr/bin/install -d -m 0700 -o %%USERS%% -g %%GROUPS%% \
+	    /var/run/tpm /var/run/ima %%PREFIX%%/var/lib/tpm
+	# The configuration files must be owned by root so
+	# that the %%USERS%% user can only read (but not manipulate)
+	# the configuration file.
+	/usr/sbin/chown root:%%GROUPS%% \
+	    %%PREFIX%%/etc/tcsd.conf
+	/bin/chmod 0640 \
+	    %%PREFIX%%/etc/tcsd.conf
+}
+
+load_rc_config $name
+
+: ${tcsd_enable:="NO"}
+: ${tcsd_mode:="native"}
+
+case $tcsd_mode in
+emulator)
+	if checkyesno tpmd_enable; then
+		command="%%PREFIX%%/sbin/tcsd_emu"
+	else
+		err 1 "tcsd_mode=\"emulator\" requires tpmd_enable=\"YES\"."
+	fi
+;;
+esac
+
+run_rc_command "$1"

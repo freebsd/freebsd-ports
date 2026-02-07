@@ -1,0 +1,11 @@
+--- gatling_features.h.orig	2017-04-03 15:04:00.307629000 +0200
++++ gatling_features.h	2017-04-03 15:04:33.084535000 +0200
+@@ -7,7 +7,7 @@
+ 
+ #define SUPPORT_SERVERSTATUS
+ // #define SUPPORT_DAV
+-#define SUPPORT_SMB
++#undef SUPPORT_SMB
+ #define SUPPORT_FTP
+ #define SUPPORT_PROXY
+ /* #define DEBUG to enable more verbose debug messages for tracking fd

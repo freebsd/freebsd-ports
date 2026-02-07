@@ -1,0 +1,18 @@
+--- src/capi.rs.orig	2025-08-23 11:38:26 UTC
++++ src/capi.rs
+@@ -120,6 +120,7 @@ pub unsafe extern fn lewton_decode_packet(ctx :*mut Le
+ }
+ 
+ /// Provide the number of samples present in each channel
++#[warn(dangerous_implicit_autorefs)]
+ #[no_mangle]
+ pub unsafe extern fn lewton_samples_count(samples :*const LewtonSamples) -> usize {
+ 	(*samples).0
+@@ -129,6 +130,7 @@ pub unsafe extern fn lewton_samples_count(samples :*co
+ }
+ 
+ /// Provide a reference to the channel sample data
++#[warn(dangerous_implicit_autorefs)]
+ pub unsafe extern fn lewton_samples_f32(samples :*const LewtonSamples, channel :usize) -> *const f32 {
+ 	(*samples).0
+ 		.get(channel)

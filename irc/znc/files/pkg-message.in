@@ -1,0 +1,30 @@
+[
+{
+	message: <<EOM
+*******************************************************************************
+ To generate a basic configuration file, run znc --makeconf after installation.
+ It is NOT a good idea to create a new config file manually.
+
+ For generate your config file using znc user, execute:
+
+   su -m znc -c 'znc -d %%ETCDIR%% --makeconf'
+   or
+   sudo -u znc znc -d %%ETCDIR%% --makeconf
+
+ http://wiki.znc.in/Configuration
+*******************************************************************************
+EOM
+	type: install
+},
+{
+	message: <<EOM
+*******************************************************************************
+ After each upgrade you must recompile all your external modules, ZNC ABI is
+ not stable. $ znc-buildmod <modulename>.cpp
+
+ http://wiki.znc.in/Compiling_modules
+*******************************************************************************
+EOM
+	type: upgrade
+}
+]

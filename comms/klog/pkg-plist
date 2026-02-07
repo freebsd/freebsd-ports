@@ -1,0 +1,17 @@
+bin/klog
+%%DATADIR%%/translations/klog_ca.qm
+%%DATADIR%%/translations/klog_cs.qm
+%%DATADIR%%/translations/klog_da.qm
+%%DATADIR%%/translations/klog_de.qm
+%%DATADIR%%/translations/klog_es.qm
+%%DATADIR%%/translations/klog_fi.qm
+%%DATADIR%%/translations/klog_fr.qm
+%%DATADIR%%/translations/klog_hr.qm
+%%DATADIR%%/translations/klog_it.qm
+%%DATADIR%%/translations/klog_ja.qm
+%%DATADIR%%/translations/klog_lv.qm
+%%DATADIR%%/translations/klog_nl.qm
+%%DATADIR%%/translations/klog_pl.qm
+%%DATADIR%%/translations/klog_ru.qm
+%%DATADIR%%/translations/klog_uk.qm
+share/man/man1/klog.1.gz

@@ -1,0 +1,4 @@
+bin/ubh
+share/ubh/ubhrc
+share/ubh/newsrc
+%%PORTDOCS%%share/doc/ubh/ubh.html

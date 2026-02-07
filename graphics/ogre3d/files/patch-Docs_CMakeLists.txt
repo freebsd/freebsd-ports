@@ -1,0 +1,11 @@
+--- Docs/CMakeLists.txt.orig	2023-07-07 21:29:06 UTC
++++ Docs/CMakeLists.txt
+@@ -17,7 +17,7 @@ if (NOT OGRE_DOCS_PATH)
+     if (WIN32 OR APPLE)
+         set(OGRE_DOCS_PATH "Docs")
+     elseif (UNIX)
+-        set(OGRE_DOCS_PATH "share/doc/OGRE")
++        set(OGRE_DOCS_PATH "share/doc/ogre3d")
+     endif ()
+ endif ()
+ 

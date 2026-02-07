@@ -1,0 +1,8 @@
+GPDS is a General Purpose Data Serializer library written in modern C++.
+It allows to serialize C++ classes to and from XML files in a generic format
+that can be processed by other XML processing software (or just for the sake of
+readability).
+
+GPDS provides the user with complete control over the generated tag names and
+attributes in the resulting XML compared to just using traditional "key" and
+"value" tags.

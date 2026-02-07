@@ -1,0 +1,18 @@
+ld: error: export/lib/libconfscreens.so: undefined reference to hid_end_parse
+ld: error: export/lib/libconfscreens.so: undefined reference to hid_get_data
+ld: error: export/lib/libconfscreens.so: undefined reference to hid_get_item
+ld: error: export/lib/libconfscreens.so: undefined reference to hid_get_report_desc
+ld: error: export/lib/libconfscreens.so: undefined reference to hid_report_size
+ld: error: export/lib/libconfscreens.so: undefined reference to hid_start_parse
+
+--- src/libs/confscreens/Makefile.orig	2014-05-20 10:40:48 UTC
++++ src/libs/confscreens/Makefile
+@@ -28,7 +28,7 @@ EXPDIR    = include
+ EXPORTS   = driverconfig.h joystickconfig.h mouseconfig.h controlconfig.h graphconfig.h\
+ 			simuconfig.h soundconfig.h openglconfig.h
+ 
+-LIBS      = -lplibjs
++LIBS      = -lplibjs -lusbhid
+ 
+ src_PKGFILES	= $(shell find * -maxdepth 0 -type f -print)
+ 

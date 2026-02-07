@@ -1,0 +1,37 @@
+--- cpp/config/Make.rules.orig	2019-08-12 19:54:18 UTC
++++ cpp/config/Make.rules
+@@ -190,7 +190,7 @@ ifndef usr_dir_install
+ install_libdir	  	:= $(prefix)/$(libsubdir)$(cpp11suffix)
+ 
+ ifndef usr_dir_install
+-install_mandir		:= $(prefix)/man/man1
++install_mandir		:= $(prefix)/share/man/man1
+ install_configdir 	:= $(prefix)/config
+ else
+ install_configdir 	:= $(prefix)/share/Ice-$(VERSION)
+@@ -201,11 +201,11 @@ endif
+     ICEUTIL_FLAGS     	= -DICE_PRIO_INHERIT
+ endif
+ 
+-OPENSSL_FLAGS           += $(if $(OPENSSL_HOME),-I$(OPENSSL_HOME)/include)
++OPENSSL_FLAGS           += -I%%OPENSSLINC%%
+ ifeq ($(OPENSSL_LIBS),)
+-    OPENSSL_LIBS	= $(if $(OPENSSL_HOME),-L$(OPENSSL_HOME)/$(libsubdir)) -lssl -lcrypto
++    OPENSSL_LIBS	= -L%%OPENSSLLIB%% -lssl -lcrypto
+ endif
+-OPENSSL_RPATH_LINK      = $(if $(OPENSSL_HOME),$(call rpathlink,$(OPENSSL_HOME)/$(libsubdir)))
++OPENSSL_RPATH_LINK      = $(if %%OPENSSLRPATH%%,$(call rpathlink,%%OPENSSLRPATH%%))
+ 
+ ifeq ($(SSL_OS_LIBS),)
+ 	SSL_OS_LIBS = $(OPENSSL_LIBS)
+@@ -238,7 +238,9 @@ else
+ 	    DB_FLAGS          = -I/usr/local/include/db53
+ 	    DB_LIBS           = -L/usr/local/$(libsubdir)/db53 -ldb_cxx
+ 	else
+-	    DB_LIBS      = -ldb_cxx
++	    DB_FLAGS          = -I%%BDB_INCLUDE_DIR%%
++	    DB_LIBS           = -L%%BDB_LIB_DIR%% -l%%BDB_LIB_CXX_NAME%%
++	    DB_RPATH_LINK     = $(call rpathlink,%%BDB_LIB_DIR%%)
+ 	endif
+    endif
+ endif

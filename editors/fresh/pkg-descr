@@ -1,0 +1,11 @@
+Fresh provides a comprehensive set of features to help you be productive.
+
+  * Editing - Multiple cursors, advanced selection, unlimited undo/redo
+  * Command Palette - Quick access to commands, files, and navigation
+  * Navigation - Go to definition, position history
+  * File Explorer - Browse and manage project files
+  * Search and Replace - Powerful search with regex support
+  * LSP Integration - Language server support for diagnostics and completion
+  * Integrated Terminal - Run shell commands without leaving the editor
+  * Themes - Customizable color themes
+  * Encoding - Text encoding detection and conversion

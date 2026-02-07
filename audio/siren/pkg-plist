@@ -1,0 +1,14 @@
+bin/siren
+%%FAAD%%lib/siren/ip/aac.so
+%%FFMPEG%%lib/siren/ip/ffmpeg.so
+%%FLAC%%lib/siren/ip/flac.so
+%%MAD%%lib/siren/ip/mad.so
+%%MPG123%%lib/siren/ip/mpg123.so
+%%OPUS%%lib/siren/ip/opus.so
+%%OSS%%lib/siren/op/oss.so
+%%PULSEAUDIO%%lib/siren/op/pulse.so
+%%SNDFILE%%lib/siren/ip/sndfile.so
+%%SNDIO%%lib/siren/op/sndio.so
+%%VORBIS%%lib/siren/ip/vorbis.so
+%%WAVPACK%%lib/siren/ip/wavpack.so
+share/man/man1/siren.1.gz

@@ -1,0 +1,10 @@
+--- configure.ac.orig	2023-08-21 19:51:56 UTC
++++ configure.ac
+@@ -55,6 +55,7 @@ fi
+ AM_CONDITIONAL(IS_CLANG, test "$IS_CLANG" = "yes")
+ 
+ # Checks for libraries.
++AC_SEARCH_LIBS(inotify_init, inotify)
+ 
+ # Checks for header files.
+ AC_CHECK_HEADERS([sys/inotify.h sys/fanotify.h mcheck.h])

@@ -1,0 +1,11 @@
+--- panels/system/meson.build.orig	2025-01-09 14:36:09 UTC
++++ panels/system/meson.build
+@@ -103,7 +103,7 @@ udisks2 = dependency('udisks2', version: '>= 2.8.2')
+ udisks2 = dependency('udisks2', version: '>= 2.8.2')
+ 
+ # Kerberos support
+-krb_dep = dependency('krb5', required: false)
++krb_dep = cc.find_library('krb5')
+ assert(krb_dep.found(), 'kerberos libraries not found in your path')
+ 
+ deps = common_deps + [

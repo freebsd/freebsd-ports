@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Additional packages recommended for new users:
+- svt-av1, rav1e, x264 (--encoder)
+- vapoursynth-l-smash-works, ffms2 (--chunk-method)
+- mkvtoolnix (--concat)
+EOM
+}
+]

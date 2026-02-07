@@ -1,0 +1,20 @@
+--- cmake/add_kfr_library.cmake.orig	2024-04-05 10:04:36 UTC
++++ cmake/add_kfr_library.cmake
+@@ -8,7 +8,7 @@ function (add_kfr_library)
+     if (KFR_ENABLE_MULTIARCH AND LIB_MULTIARCH)
+         add_library(${LIB_NAME} INTERFACE)
+         foreach (ARCH IN LISTS KFR_ARCHS)
+-            add_library(${LIB_NAME}_${ARCH} STATIC ${LIB_SOURCES})
++            add_library(${LIB_NAME}_${ARCH} ${LIB_SOURCES})
+             target_compile_definitions(${LIB_NAME}_${ARCH} PRIVATE CMT_MULTI=1)     
+             foreach (ENABLED_ARCH IN LISTS KFR_ARCHS)
+                 string(TOUPPER ${ENABLED_ARCH} ENABLED_ARCH_UPPER)
+@@ -26,7 +26,7 @@ function (add_kfr_library)
+         
+         list(APPEND ${LIB_NAME}_TARGETS ${LIB_NAME})
+     else ()
+-        add_library(${LIB_NAME} STATIC ${LIB_SOURCES})
++        add_library(${LIB_NAME} ${LIB_SOURCES})
+         list(APPEND ${LIB_NAME}_LIBS ${LIB_NAME})
+         list(APPEND ${LIB_NAME}_TARGETS ${LIB_NAME})
+         target_set_arch(${LIB_NAME} PRIVATE ${KFR_ARCH})

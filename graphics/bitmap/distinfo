@@ -1,0 +1,5 @@
+TIMESTAMP = 1565557083
+SHA256 (ArashPartow-bitmap-g20181222-b02297f_GH0.tar.gz) = 9d6dd560d0bd01e78ebd08f7828249b96ad7b43e4a3589b54d62831d97c801f0
+SIZE (ArashPartow-bitmap-g20181222-b02297f_GH0.tar.gz) = 52230
+SHA256 (db80ca605a952e6a8ccd42eba3fcc5b40fba5640.patch) = 09fb91e59b7c75d57e4f4473ed07dfa7bf9ba54cb65921ff47bf9dcc999a334f
+SIZE (db80ca605a952e6a8ccd42eba3fcc5b40fba5640.patch) = 4745

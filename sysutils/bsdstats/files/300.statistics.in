@@ -1,0 +1,569 @@
+#!/bin/sh -
+
+#
+# options
+#
+CURR_VERSION="%%VERSION%%"
+USE_TOR=NO
+DO_LOG_NET_TRAFFIC=0
+
+#
+# Standard commands used here
+#
+PCICONF=/usr/sbin/pciconf
+UNAME=/usr/bin/uname
+SYSCTL=/sbin/sysctl
+AWK=/usr/bin/awk
+SED=/usr/bin/sed
+CUT=/usr/bin/cut
+JOT=/usr/bin/jot
+SLEEP=/bin/sleep
+CHMOD=/bin/chmod
+WC=/usr/bin/wc
+MV=/bin/mv
+RM=/bin/rm
+case $(${UNAME}) in
+  OpenBSD)
+    UMASK=/usr/bin/umask
+    OPENSSL=/usr/sbin/openssl
+    CHOWN=/sbin/chown
+    NC=/usr/bin/nc
+    ;;
+  NetBSD)
+    UMASK=umask
+    OPENSSL=/usr/bin/openssl
+    CHOWN=/usr/sbin/chown
+    NC=/usr/pkg/sbin/nc
+    ;;
+  *)
+    UMASK=/usr/bin/umask
+    OPENSSL=/usr/bin/openssl
+    CHOWN=/usr/sbin/chown
+    NC=/usr/bin/nc
+    ;;
+esac
+
+#
+# constants
+#
+CR=$'\r'
+NL=$'\n'
+
+#
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]; then
+  . /etc/defaults/periodic.conf
+  source_periodic_confs
+  periodic_conf=/etc/periodic.conf
+else
+  . /etc/rc.conf  # For systems without periodic.conf, use rc.conf
+  if [ -r /etc/rc.conf.local ]; then
+    . /etc/rc.conf.local
+  fi
+  periodic_conf=/etc/rc.conf.local
+fi
+
+#
+# global values
+#
+monthly_statistics_enable=${monthly_statistics_enable:-"NO"}
+monthly_statistics_report_devices=${monthly_statistics_report_devices:-"YES"}
+monthly_statistics_report_ports=${monthly_statistics_report_ports:-"YES"}
+checkin_server=${monthly_statistics_checkin_server:-"rpt.bsdstats.org"}
+bsdstats_log=${monthly_statistics_logfile:-"/var/log/bsdstats"}
+id_token_file='/var/db/bsdstats'
+checkin_server_description=${checkin_server}
+nc_host=${checkin_server}
+nc_port=80
+http_header_proxy_auth=""
+
+
+oldmask=$(${UMASK})
+${UMASK} 066
+timeout=10
+
+##
+## Procedures
+##
+
+echo_begin() {
+  echo -n "$1 ... "
+}
+
+echo_end_success() {
+  echo "SUCCESS"
+}
+
+echo_err() {
+  echo "$1" >&2
+}
+
+log() { # log(categ,msg)
+  echo "[`date "+%Y-%m-%d %H:%M:%S %z"`] $1 $2" >> $bsdstats_log
+}
+
+fail() { # fail(msg): argument is simple user-level message, detailed log message is assumed to be printed before 'fail' invocation
+  # log error
+  log "TERM" "$1 (failure)"
+  # let user know
+  echo_err "BSDstats failed: $1"
+  # bail out
+  ${UMASK} $oldmask
+  exit 1
+}
+
+random() {
+  ${JOT} -r 1 0 900
+}
+
+nlog() {
+  if [ $DO_LOG_NET_TRAFFIC -eq 1 ]; then
+    echo "--$(date)--" >> /tmp/bsdstats.$1.log
+    tee -a /tmp/bsdstats.$1.log
+  else
+    cat
+  fi
+}
+
+# do_http_request: if success returns 0, and prints http.body, otherwise returns 1
+do_http_request() {
+  local meth="$1"
+  local url="$2"
+  local body="$3"
+  local content_type="$4"
+  local do_log="$5"
+
+  local resp
+  local lineno
+  local in_header
+  local result_count
+
+  if [ -n "${HTTP_PROXY}" ]; then url="http://${checkin_server}${url}"; fi
+
+  local txt="${meth} ${url} HTTP/1.0"
+  local http_req="${txt}"
+  txt="${txt}${CR}${NL}Host: ${checkin_server}"
+  if [ -n "${http_header_proxy_auth}" ]; then txt="${txt}${CR}${NL}Proxy-Authorization: ${http_header_proxy_auth}"; fi
+  txt="${txt}${CR}${NL}User-Agent: bsdstats-${CURR_VERSION}"
+  txt="${txt}${CR}${NL}Connection: close"
+  if [ -n "${content_type}" ]; then txt="${txt}${CR}${NL}Content-Type: ${content_type}"; fi
+  if [ -n "${body}" ]; then txt="${txt}${CR}${NL}Content-Length: ${#body}"; fi
+  txt="${txt}${CR}${NL}${CR}${NL}${body}"
+
+  resp=$(echo "${txt}" | nlog "out" | ${NC} -w ${timeout} ${nc_host} ${nc_port} | nlog "in" 2>/dev/null)
+  if [ $? -ne 0 ]; then
+    if [ ${do_log} -ne 0 ]; then
+      log "FAIL" "Failed to send data to the host ${nc_host}:${nc_port}, is network or host down?"
+    fi
+    return 1
+  fi
+
+  local IFS=${NL}${CR}
+  lineno=0
+  in_header=1
+  http_result=""
+  for str in ${resp}; do
+    if [ $lineno -eq 0 ] ; then
+      if expr "${str}" : "^HTTP/1\.[01] 200 OK$" > /dev/null; then
+        # ok
+        true
+      else
+        if [ ${do_log} -ne 0 ]; then
+          log "FAIL" "Failed HTTP query: request='${http_req}' -> response='${str}'"
+        fi
+        return 2
+      fi
+    elif [ $lineno -ge 1 -a $in_header -eq 1 ] ; then
+      if [ -z "${str}" ]; then
+        in_header=0
+        result_count=0
+      fi
+    else
+      if [ $result_count -eq 0 ]; then
+        http_result="${str}"
+      else
+        http_result="${http_result}${NL}${str}"
+      fi
+      result_count=$(($result_count+1))
+    fi
+    lineno=$(($lineno+1))
+  done
+  echo "${http_result}"
+  return 0
+}
+
+extract_field() {
+  # charset of the value, besides alnum covers base64 encoding charset (/+), and single quote
+  echo "$1" | grep "^${2}=" | tail -1 | sed -E -e "s/^${2}=([a-zA-Z0-9=/+']+).*/\1/g"
+}
+
+do_http_request_check_status() {
+  local body
+  local status
+  local what="$5"
+  # run request
+  body=$(do_http_request "$1" "$2" "$3" "$4" 1)
+  if [ $? -ne 0 ]; then
+    fail "HTTP query failed during ${what}"
+  fi
+  # check status
+  status=$(extract_field "${body}" "STATUS")
+  case "${status}" in
+    OK)
+      # pass
+      true
+      ;;
+    FAIL)
+      log "FAIL" "Got STATUS=FAIL from the server in during ${what}"
+      fail "${what} request failed"
+      ;;
+    *)
+      fail "Server didn't return the status for ${what}"
+      ;;
+  esac
+}
+
+uri_escape() {
+  # RFC 2396
+  echo "${1+$@}" | ${SED} -e '
+    s/%/%25/g
+    s/;/%3b/g
+    s,/,%2f,g
+    s/?/%3f/g
+    s/:/%3a/g
+    s/@/%40/g
+    s/&/%26/g
+    s/=/%3d/g
+    s/+/%2b/g
+    s/\$/%24/g
+    s/,/%2c/g
+    s/ /%20/g
+    '
+}
+
+parse_http_proxy_string() {
+# Handle HTTP proxy services
+#
+# HTTP_PROXY/http_proxy can take the following form:
+#    [http://][username:password@]proxy[:port][/]
+# Authentication details may also be provided via HTTP_PROXY_AUTH:
+#    HTTP_PROXY_AUTH="basic:*:username:password"
+#
+# IN:   * HTTP_PROXY or http_proxy
+# IN:   * HTTP_PROXY_AUTH
+# OUT:  * http_header_proxy_auth
+# OUT:  * nc_host
+# OUT:  * nc_port
+
+  local PROXY_AUTH_USER
+  local PROXY_AUTH_PASS
+  local PROXY_HOST
+  local PROXY_PORT
+
+  if [ -z "$HTTP_PROXY" -a -n "$http_proxy" ]; then
+    HTTP_PROXY=$http_proxy
+  fi
+  if [ -n "$HTTP_PROXY" ]; then
+    # Attempt to resolve any HTTP authentication
+    if [ -n "$HTTP_PROXY_AUTH" ]; then
+      PROXY_AUTH_USER=$(echo $HTTP_PROXY_AUTH | ${SED} -E 's/^.+:\*:(.+):.+$/\1/g')
+      PROXY_AUTH_PASS=$(echo $HTTP_PROXY_AUTH | ${SED} -E 's/^.+:\*:.+:(.+)$/\1/g')
+    else
+      # Check for authentication within HTTP_PROXY
+      HAS_HTTP_AUTH=$(echo $HTTP_PROXY | ${SED} -E 's/^(http:\/\/)?((.+:.+)@)?.+/\3/')
+      if [ -n "$HAS_HTTP_AUTH" ]; then
+        # Found HTTP authentication details
+        PROXY_AUTH_USER=$(echo $HAS_HTTP_AUTH | ${CUT} -d: -f1)
+        PROXY_AUTH_PASS=$(echo $HAS_HTTP_AUTH | ${CUT} -d: -f2)
+      fi
+    fi
+
+    # Determine the proxy components
+    PROXY_HOST=$(echo $HTTP_PROXY | ${SED} -E 's/^(http:\/\/)?(.+:.+@)?([^@:]+)(:.+)?/\3/')
+    PROXY_PORT=$(echo $HTTP_PROXY | ${SED} -E 's/^(http:\/\/)?(.+:.+@)?(.+):([0-9]+)/\4/' | ${SED} -e 's/[^0-9]//g')
+    if [ -z "$PROXY_PORT" ]; then
+      # Use default proxy port
+      PROXY_PORT=3128
+    fi
+  fi
+
+  # Determine the host/port netcat should connect to
+  if [ -n "$PROXY_HOST" -a -n "$PROXY_PORT" ]; then
+    nc_host=$PROXY_HOST
+    nc_port=$PROXY_PORT
+    # Proxy authentication, if required
+    if [ -n "$PROXY_AUTH_USER" -a -n "$PROXY_AUTH_PASS" ]; then
+      local auth_base64=$(echo -n "$PROXY_AUTH_USER:$PROXY_AUTH_PASS" | ${OPENSSL} base64)
+      http_header_proxy_auth="Basic $auth_base64"
+    fi
+    return 0
+  else
+    nc_host=$checkin_server
+    nc_port=80
+    return 1
+  fi
+}
+
+test_connection() {
+  local body
+  body=$(do_http_request "HEAD" "/" "" "" 0)
+  if [ $? -ne 0 -a $? -ne 2 ]; then
+    log "FAIL" "Unable to connect to ${checkin_server_description}"
+    fail "Network or host is down?"
+  fi
+}
+
+setup_proxies() {
+  # TOR
+  if [ "${USE_TOR}" = "YES" ]; then
+    if [ -n "${HTTP_PROXY}" -o -n "${http_proxy}" ]; then
+      echo_err "Ignoring HTTP_PROXY since TOR is used"
+    fi
+    NC="${NC} -x localhost:9050 -X 5"
+    checkin_server_description="${checkin_server_description} (through TOR)"
+    return 0
+  fi
+
+  # HTTP proxy
+  if [ -n "${HTTP_PROXY}" -o -n "${http_proxy}" ]; then
+    parse_http_proxy_string
+    if [ $? -eq 0 ]; then
+      checkin_server_description="${checkin_server_description} (through proxy)"
+      return 0
+    fi
+  fi
+
+  # no proxy
+}
+
+report_devices() {
+  case $(${UNAME}) in
+    FreeBSD|DragonFly|MidnightBSD)
+      local query_string=""
+      local line
+      while read line
+      do
+        local DRIVER=$(echo "${line}" | ${AWK} -F\@ '{print $1}')
+        if [ "0`echo "${line}" | awk '{print $5}' | awk -F= '{print $1}'`" = "0vendor" ]; then
+          local VENDOR=$(echo "${line}" | ${AWK} '{print $5}' | ${CUT} -c10-15)
+          local DEVICE=$(echo "${line}" | ${AWK} '{print $6}' | ${CUT} -c10-15)
+          local DEV=$(echo "${DEVICE}${VENDOR}")
+        else
+          local DEV=$(echo "${line}" | ${AWK} '{print $4}' | ${CUT} -c8-15)
+        fi
+        local CLASS=$(echo "${line}" | ${AWK} '{print $2}' | ${CUT} -c9-14)
+        query_string=$query_string`echo \&dev[]=${DRIVER}:${DEV}:${CLASS}`
+      done << EOT
+$(${PCICONF} -l)
+EOT
+      echo_begin "Posting device statistics to ${checkin_server_description}"
+      do_http_request_check_status "GET" "/scripts/report_devices.php?token=${TOKEN}&key=${KEY}$query_string" \
+        "" "" "system devices submission"
+      echo_end_success
+      log "INFO" "System devices reported to ${checkin_server_description}"
+      ;;
+    *)
+      # Not supported
+      ;;
+  esac
+}
+
+get_mports() {
+  for i in `/usr/libexec/mport.list | xargs`
+  do
+    pkg=$(echo "select pkg from packages where pkg || '-' || version = '$i'" | sqlite3 /var/db/mport/master.db)
+    echo -n "$i "
+    mport info $pkg | grep Origin | awk '{print $3}'
+  done
+}
+
+report_ports() {
+  case $(${UNAME}) in
+    FreeBSD|DragonFly|MidnightBSD)
+      local query_string=""
+      # Detect pkgng
+      if [ -e /var/db/pkg/local.sqlite ]; then
+        # Use pkgng
+        case $(${UNAME}) in
+          MidnightBSD)
+            report_uri="/scripts/report_ports.php"
+            query_string="${query_string}$( get_mports | ${SED} -E -e 's/\+/%2b/g' -e 's/,/%2c/g' -e 's/^([^ ]+) +([^\/]+)\/.+$/\&port[]=\2:\1/g' | tr -d '\n')"
+            ;;
+          *)
+            report_uri="/scripts/report_ports_v2.php"
+            if [ -f %%PREFIX%%/etc/bsdstats.conf -a "0" = "0`grep ^all-ports /usr/local/etc/bsdstats.conf`" ]; then
+              query_string=$( pkg query %n:%v:%o | fgrep -f %%PREFIX%%/etc/bsdstats.conf | awk -F\/ '{print $1}' | sed -E -e 's/\+/%2b/g' -e 's/,/%2c/g' | awk '{printf"&port[]=%s", $1}' )
+            else
+              query_string=$( pkg query %n:%v:%o | awk -F\/ '{print $1}' | sed -E -e 's/\+/%2b/g' -e 's/,/%2c/g' | awk '{printf"&port[]=%s", $1}' )
+            fi
+            ;;
+        esac
+      else
+        report_uri="/scripts/report_ports.php"
+    #-----BEGIN LEGACY: to delete when FreeBSD with pkg_ tools is out of support period (!!! don't forget to clarify what does DragonFly use before removing !!!) -----
+        # Use obsolete pkg_* tools
+        local line
+        for line in `pkg_info | ${AWK} '{ print $1 }'`; do
+          local category=`grep "@comment ORIGIN" /var/db/pkg/${line}/+CONTENTS | ${SED} -E 's/^\@comment ORIGIN:(.+)\/.+/\1/g'`
+          line=$(uri_escape $line)
+          category=$(uri_escape $category)
+          query_string=$query_string`echo \&port[]=${category}:${line}`
+        done
+    #-----END LEGACY-----
+      fi
+      echo_begin "Posting port statistics to ${checkin_server_description}"
+      do_http_request_check_status "POST" $report_uri \
+        "token=${TOKEN}&key=${KEY}${query_string}" "application/x-www-form-urlencoded" "ports submission"
+      echo_end_success
+      log "INFO" "Posted port statistics to ${checkin_server_description}"
+      ;;
+    *)
+      # Not supported
+      ;;
+  esac
+}
+
+get_id_token() {
+  if [ -f $id_token_file ]; then
+    if [ $(${WC} -l < $id_token_file) -lt 3 ]; then
+      ${RM} -f $id_token_file
+    fi
+  fi
+
+  if [ ! -f $id_token_file -o ! -s $id_token_file ]; then
+    # generate the token file
+    echo "BSDstats runs on this system for the first time, generating registration ID"
+    IDTOKEN=$(uri_escape $(${OPENSSL} rand -base64 32))
+    if [ $? -ne 0 ]; then
+      fail "Failed to generate IDTOKEN"
+    fi
+
+    # receive KEY/TOKEN
+    local body
+    body=$(do_http_request "GET" "/scripts/getid.php?key=${IDTOKEN}" "" "" 1)
+    if [ $? -ne 0 ]; then
+      fail "HTTP query failed during key/token generation"
+    fi
+    KEY=$(extract_field "${body}" "KEY")
+    TOKEN=$(extract_field "${body}" "TOKEN")
+    # validate KEY/TOKEN
+    if [ ${#KEY} -lt 10 -o ${#KEY} -gt 64 -o ${#TOKEN} -lt 10 -o ${#TOKEN} -gt 64 ]; then
+      log "FAIL" "Invalid key/token received for IDTOKEN=${TOKEN}"
+      fail "Invalid key/token combination received from the server"
+    fi
+    log "INFO" "Generated idtoken='${IDTOKEN}', received key=${KEY} and token=${TOKEN}"
+    # save KEY/TOKEN
+    (echo "# This file was auto-generated on $(date),"; \
+     echo "# and contains the BSDstats registration credentials"; \
+     echo "KEY=${KEY}"; echo "TOKEN=${TOKEN}"; echo "VERSION=${CURR_VERSION}") > $id_token_file && \
+      ${CHOWN} root:wheel $id_token_file && \
+      ${CHMOD} 600 $id_token_file
+    if [ $? -ne 0 ]; then
+      ${RM} -f $id_token_file
+      fail "Failed to create identification file $id_token_file"
+    fi
+    log "INFO" "Created identification file $id_token_file"
+  fi
+  # read the token file into the global variables
+  . $id_token_file
+  KEY=$(uri_escape $KEY)
+  TOKEN=$(uri_escape $TOKEN)
+  PREV_VERSION="${VERSION}"
+  VERSION=""
+}
+
+enable_token() {
+  do_http_request_check_status "GET" "/scripts/enable_token.php?key=${KEY}&token=${TOKEN}" \
+    "" "" "token enabling"
+  log "INFO" "System enabled"
+}
+
+disable_token() {
+  do_http_request_check_status "GET" "/scripts/disable_token.php?key=${KEY}&token=${TOKEN}" \
+    "" "" "token disabling"
+  log "INFO" "System disabled"
+}
+
+report_system() {
+  local REL=$(${UNAME} -r)
+  local ARCH=$(${UNAME} -m)
+  local OS=$(${UNAME} -s)
+  echo_begin "Posting OS statistics to ${checkin_server_description}"
+  do_http_request_check_status "GET" "/scripts/report_system.php?token=${TOKEN}&key=${KEY}&rel=${REL}&arch=${ARCH}&opsys=${OS}" \
+    "" "" "OS statistics submission"
+  echo_end_success
+  log "INFO" "Posted OS statistics to ${checkin_server_description}"
+}
+
+report_cpu() {
+  local line=$(${SYSCTL} -n hw.model)
+  local VEN=$(echo $line | ${CUT} -d ' ' -f 1)
+  local DEV=$(uri_escape $(echo $line | ${CUT} -d ' ' -f 2-))
+  local count=$(${SYSCTL} -n hw.ncpu)
+  echo_begin "Posting CPU information to ${checkin_server_description}"
+  do_http_request_check_status "GET" "/scripts/report_cpu.php?token=${TOKEN}&key=${KEY}&cpus=${count}&vendor=${VEN}&cpu_type=${DEV}" \
+      "" "" "CPU information submission"
+  echo_end_success
+  log "INFO" "Posted CPU information to ${checkin_server_description}"
+}
+
+report_all() {
+  # network setup
+  setup_proxies
+  test_connection
+  log "INIT" "Connected to ${checkin_server_description}"
+  # When non-interactive, sleep to reduce congestion on bsdstats.org
+  if [ "$1" != -nodelay ]; then
+	  # In FreeBSD 12.0 the anticongestion function should be used
+	  # instead of a hard-coded sleep
+	  if [ -n "$anticongestion_sleeptime" ]; then
+		  anticongestion
+	  else
+		  ${SLEEP} $(random)
+	  fi
+  fi
+  # prepare
+  get_id_token
+  # begin
+  enable_token
+  report_system
+  # optional parts
+  case "$monthly_statistics_report_devices" in
+    [Yy][Ee][Ss])
+       report_devices
+       report_cpu
+       ;;
+    *)
+       ;;
+  esac
+  case "$monthly_statistics_report_ports" in
+    [Yy][Ee][Ss])
+      report_ports
+      ;;
+    *)
+      ;;
+  esac
+  # end
+  disable_token
+}
+
+##
+## MAIN: processing begins here
+##
+
+rc=0
+
+case "$monthly_statistics_enable" in
+  [Yy][Ee][Ss])
+    # explicitly enabled: report it
+    report_all "$1"
+    ;;
+  *)
+    ;;
+esac
+
+# success
+log "SUCC" "Finished successfully"
+${UMASK} $oldmask
+exit ${rc}

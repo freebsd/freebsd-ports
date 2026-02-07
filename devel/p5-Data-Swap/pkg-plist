@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Data/Swap.pm
+%%SITE_ARCH%%/auto/Data/Swap/Swap.so
+%%PERL5_MAN3%%/Data::Swap.3.gz

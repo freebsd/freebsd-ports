@@ -1,0 +1,4 @@
+bin/mbsync
+bin/mbsync-get-cert
+@sample etc/mbsyncrc.sample
+share/man/man1/mbsync.1.gz

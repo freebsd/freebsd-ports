@@ -1,0 +1,13 @@
+--- ./src/Makefile.orig	2014-05-19 15:46:08.154023124 +0800
++++ ./src/Makefile	2014-05-19 15:46:24.766023465 +0800
+@@ -71,8 +71,8 @@
+ all:	dbow
+ 
+ install: dbow
+-	install -d $(DBOWDIR)
+-	install -C -m 555 dbow $(PREFIX)/bin
++	install -d $(DESTDIR)$(DBOWDIR)
++	install -C -m 555 dbow $(DESTDIR)$(PREFIX)/bin
+ 
+ clean:
+ 	rm -f dbow $(OBJS) y.tab.h a.out errs core

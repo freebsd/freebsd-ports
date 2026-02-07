@@ -1,0 +1,11 @@
+--- rel/overlay/etc/vm.args.orig	2024-10-14 18:24:54 UTC
++++ rel/overlay/etc/vm.args
+@@ -75,7 +75,7 @@ +Bd -noinput
+ 
+ # Comment this line out to enable the interactive Erlang shell on startup
+ +Bd -noinput
+-
++-detached
+ # Set maximum SSL session lifetime to reap terminated replication readers
+ -ssl session_lifetime 300
+ 

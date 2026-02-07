@@ -1,0 +1,555 @@
+diff -ruN deps.orig/mozilla/js/src/shell/Makefile.in deps/mozilla/js/src/shell/Makefile.in
+--- deps.orig/mozilla/js/src/shell/Makefile.in	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/shell/Makefile.in
+@@ -47,7 +47,6 @@
+ PROGRAM         = js$(BIN_SUFFIX)
+ CPPSRCS		= \
+   js.cpp \
+-  jsworkers.cpp \
+   $(NULL)
+ 
+ DEFINES         += -DEXPORT_JS_API
+diff -ruN deps.orig/mozilla/js/src/shell/js.cpp deps/mozilla/js/src/shell/js.cpp
+--- deps.orig/mozilla/js/src/shell/js.cpp	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/shell/js.cpp
+@@ -91,8 +91,6 @@
+ #endif /* JSDEBUGGER_C_UI */
+ #endif /* JSDEBUGGER */
+ 
+-#include "jsworkers.h"
+-
+ #include "jsinterpinlines.h"
+ #include "jsobjinlines.h"
+ #include "jsscriptinlines.h"
+@@ -194,10 +192,6 @@
+ JSBool gQuitting = JS_FALSE;
+ FILE *gErrFile = NULL;
+ FILE *gOutFile = NULL;
+-#ifdef JS_THREADSAFE
+-JSObject *gWorkers = NULL;
+-js::workers::ThreadPool *gWorkerThreadPool = NULL;
+-#endif
+ 
+ static JSBool reportWarnings = JS_TRUE;
+ static JSBool compileOnly = JS_FALSE;
+@@ -1324,10 +1318,6 @@
+     JS_ConvertArguments(cx, argc, JS_ARGV(cx, vp), "/ i", &gExitCode);
+ 
+     gQuitting = JS_TRUE;
+-#ifdef JS_THREADSAFE
+-    if (gWorkerThreadPool)
+-        js::workers::terminateAll(JS_GetRuntime(cx), gWorkerThreadPool);
+-#endif
+     return JS_FALSE;
+ }
+ 
+@@ -4164,10 +4154,6 @@
+     gCanceled = true;
+     if (gExitCode == 0)
+         gExitCode = EXITCODE_TIMEOUT;
+-#ifdef JS_THREADSAFE
+-    if (gWorkerThreadPool)
+-        js::workers::terminateAll(rt, gWorkerThreadPool);
+-#endif
+     JS_TriggerAllOperationCallbacks(rt);
+ 
+     static const char msg[] = "Script runs for too long, terminating.\n";
+@@ -5695,29 +5681,8 @@
+ #endif /* JSDEBUGGER_C_UI */
+ #endif /* JSDEBUGGER */
+ 
+-#ifdef JS_THREADSAFE
+-    class ShellWorkerHooks : public js::workers::WorkerHooks {
+-    public:
+-        JSObject *newGlobalObject(JSContext *cx) {
+-            return NewGlobalObject(cx, NEW_COMPARTMENT);
+-        }
+-    };
+-    ShellWorkerHooks hooks;
+-    if (!JS_AddNamedObjectRoot(cx, &gWorkers, "Workers") ||
+-        (gWorkerThreadPool = js::workers::init(cx, &hooks, glob, &gWorkers)) == NULL) {
+-        return 1;
+-    }
+-#endif
+-
+     int result = ProcessArgs(cx, glob, argv, argc);
+ 
+-#ifdef JS_THREADSAFE
+-    js::workers::finish(cx, gWorkerThreadPool);
+-    JS_RemoveObjectRoot(cx, &gWorkers);
+-    if (result == 0)
+-        result = gExitCode;
+-#endif
+-
+ #ifdef JSDEBUGGER
+     if (jsdc) {
+ #ifdef JSDEBUGGER_C_UI
+diff -ruN deps.orig/mozilla/js/src/shell/jsworkers.h deps/mozilla/js/src/shell/jsworkers.h
+--- deps.orig/mozilla/js/src/shell/jsworkers.h	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/shell/jsworkers.h
+@@ -1,93 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
+- * vim: set ts=8 sw=4 et tw=99:
+- *
+- * ***** BEGIN LICENSE BLOCK *****
+- * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+- *
+- * The contents of this file are subject to the Mozilla Public License Version
+- * 1.1 (the "License"); you may not use this file except in compliance with
+- * the License. You may obtain a copy of the License at
+- * http://www.mozilla.org/MPL/
+- *
+- * Software distributed under the License is distributed on an "AS IS" basis,
+- * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+- * for the specific language governing rights and limitations under the
+- * License.
+- *
+- * The Original Code is JavaScript shell workers.
+- *
+- * The Initial Developer of the Original Code is
+- * Mozilla Corporation.
+- * Portions created by the Initial Developer are Copyright (C) 2010
+- * the Initial Developer. All Rights Reserved.
+- *
+- * Contributor(s):
+- *   Jason Orendorff <jorendorff@mozilla.com>
+- *
+- * Alternatively, the contents of this file may be used under the terms of
+- * either of the GNU General Public License Version 2 or later (the "GPL"),
+- * or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+- * in which case the provisions of the GPL or the LGPL are applicable instead
+- * of those above. If you wish to allow use of your version of this file only
+- * under the terms of either the GPL or the LGPL, and not to allow others to
+- * use your version of this file under the terms of the MPL, indicate your
+- * decision by deleting the provisions above and replace them with the notice
+- * and other provisions required by the GPL or the LGPL. If you do not delete
+- * the provisions above, a recipient may use your version of this file under
+- * the terms of any one of the MPL, the GPL or the LGPL.
+- *
+- * ***** END LICENSE BLOCK ***** */
+-
+-#ifndef jsworkers_h___
+-#define jsworkers_h___
+-
+-#ifdef JS_THREADSAFE
+-
+-#include "jsapi.h"
+-
+-/*
+- * Workers for the JS shell.
+- *
+- * Note: The real implementation of DOM Workers is in dom/src/threads.
+- */
+-namespace js {
+-    namespace workers {
+-        class ThreadPool;
+-
+-        class WorkerHooks {
+-        public:
+-            virtual JSObject *newGlobalObject(JSContext *cx) = 0;
+-            virtual ~WorkerHooks() {}
+-        };
+-
+-        /*
+-	 * Initialize workers. This defines the Worker constructor on global.
+-	 * Requires request. rootp must point to a GC root.
+-	 *
+-	 * On success, *rootp receives a pointer to an object, and init returns
+-         * a non-null value. The caller must keep the object rooted and must
+-         * pass it to js::workers::finish later.
+-	 */
+-        ThreadPool *init(JSContext *cx, WorkerHooks *hooks, JSObject *global, JSObject **rootp);
+-
+-        /* Asynchronously signal for all workers to terminate.
+-         *
+-         * Call this before calling finish() to shut down without waiting for
+-         * all messages to be proceesed.
+-         */
+-        void terminateAll(JSRuntime *rt, ThreadPool *tp);
+-
+-	/*
+-	 * Finish running any workers, shut down the thread pool, and free all
+-	 * resources associated with workers. The application must call this
+-	 * before shutting down the runtime, and not during GC.
+-	 *
+-	 * Requires request.
+-	 */
+-	void finish(JSContext *cx, ThreadPool *tp);
+-    }
+-}
+-
+-#endif /* JS_THREADSAFE */
+-
+-#endif /* jsworkers_h___ */
+diff -ruN deps.orig/mozilla/js/src/tests/browser.js deps/mozilla/js/src/tests/browser.js
+--- deps.orig/mozilla/js/src/tests/browser.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/browser.js
+@@ -767,17 +767,6 @@
+   document.write(s);
+ }
+ 
+-var JSTest = {
+-  waitForExplicitFinish: function () {
+-    gDelayTestDriverEnd = true;
+-  },
+-
+-  testFinished: function () {
+-    gDelayTestDriverEnd = false;
+-    jsTestDriverEnd();
+-  }
+-};
+-
+ function jsTestDriverEnd()
+ {
+   // gDelayTestDriverEnd is used to
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/jstests.list deps/mozilla/js/src/tests/js1_8_5/extensions/jstests.list
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/jstests.list	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/jstests.list
+@@ -1,13 +1,6 @@
+ url-prefix ../../jsreftest.html?test=js1_8_5/extensions/
+ script typedarray.js
+ script typedarray-prototype.js
+-skip-if(!xulRuntime.shell) script worker-error.js  # these tests sometimes hang in browser, bug 559954, bug 562333
+-skip-if(!xulRuntime.shell) script worker-error-propagation.js
+-skip-if(!xulRuntime.shell) script worker-fib.js
+-skip-if(!xulRuntime.shell) script worker-init.js
+-skip-if(!xulRuntime.shell) script worker-simple.js
+-skip-if(!xulRuntime.shell) script worker-terminate.js
+-skip-if(!xulRuntime.shell) script worker-timeout.js
+ script scripted-proxies.js
+ script array-length-protochange.js
+ script parseInt-octal.js
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js
+@@ -1,9 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-function onmessage(event) {
+-    throw new Error("fail");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js
+@@ -1,16 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-function onmessage(event) {
+-    var n = +event.data;
+-    if (n == 0)
+-        throw new Error("boom");
+-    var w = new Worker(workerDir + "worker-error-propagation-child.js");
+-    w.onmessage = function (event) { postMessage(event.data); };
+-    // No w.onerror here. We are testing error propagation when it is absent.
+-    w.postMessage(n - 1 + "");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js
+@@ -1,20 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-if (typeof Worker != 'undefined') {
+-    JSTest.waitForExplicitFinish();
+-    var w = Worker(workerDir + "worker-error-propagation-child.js");
+-    var errors = 0;
+-    w.onmessage = function () { throw new Error("no reply expected"); };
+-    w.onerror = function (event) {
+-        reportCompare("string", typeof event.message, "typeof event.message");
+-        JSTest.testFinished();
+-    };
+-    w.postMessage("5");
+-} else {
+-    reportCompare(0, 0, " PASSED! Test skipped. Shell workers required.");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js
+@@ -1,21 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-if (typeof Worker != 'undefined') {
+-    JSTest.waitForExplicitFinish();
+-
+-    // The script throws new Error("fail") on first message.
+-    var w = Worker(workerDir + "worker-error-child.js");
+-    var a = [];
+-    w.onerror = function (event) {
+-        reportCompare("fail", event.message, "worker-error");
+-        JSTest.testFinished();
+-    };
+-    w.postMessage("hello");
+-} else {
+-    reportCompare(0, 0, "Test skipped. Shell workers required.");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js
+@@ -1,27 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-function onmessage(event) {
+-    var a = event.data.split(/\t/);
+-    var n = Number(a[0]);
+-    var workerDir = a[1];
+-
+-    if (n <= 1) {
+-        postMessage("" + n);
+-    } else {
+-        var w1 = new Worker(workerDir + "worker-fib-child.js"),
+-            w2 = new Worker(workerDir + "worker-fib-child.js");
+-        var a = [];
+-        w1.onmessage = w2.onmessage = function(event) {
+-            a.push(+event.data);
+-            if (a.length == 2)
+-                postMessage(a[0] + a[1] + "");
+-        };
+-        w1.postMessage(n - 1 + "\t" + workerDir);
+-        w2.postMessage(n - 2 + "\t" + workerDir);
+-    }
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js
+@@ -1,18 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-if (typeof Worker != 'undefined') {
+-    JSTest.waitForExplicitFinish();
+-    var w = Worker(workerDir + "worker-fib-child.js");
+-    w.onmessage = function (event) {
+-        reportCompare("55", event.data, "worker-fib");
+-        JSTest.testFinished();
+-    };
+-    w.postMessage("10\t" + workerDir); // 0 1 1 2 3 5 8 13 21 34 55
+-} else {
+-    reportCompare(0, 0, "Test skipped. Shell workers required.");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js
+@@ -1,8 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-postMessage('do your worst');
+-for (;;) ;
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js
+@@ -1,19 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-if (typeof Worker != 'undefined') {
+-    JSTest.waitForExplicitFinish();
+-    // Messages sent during initialization are a corner case, but in any case
+-    // they should be delivered (no waiting until initialization is complete).
+-    var w = new Worker(workerDir + "worker-init-child.js"); // posts a message, then loops forever
+-    w.onmessage = function (event) {
+-        reportCompare(0, 0, "worker-init");
+-        JSTest.testFinished();
+-    };
+-} else {
+-    reportCompare(0, 0, "Test skipped. Shell workers required.");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js
+@@ -1,8 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-onmessage = function (event) { postMessage(event.data); };
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js
+@@ -1,20 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-if (typeof Worker != 'undefined') {
+-    JSTest.waitForExplicitFinish();
+-    var w = new Worker(workerDir + "worker-simple-child.js");
+-    var a = [];
+-    w.onmessage = function (event) {
+-        a.push(event.data);
+-        reportCompare(0, 0, "worker-simple");
+-        JSTest.testFinished();
+-    };
+-    w.postMessage("hello");
+-} else {
+-    reportCompare(0, 0, "Test skipped. Shell workers required.");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js
+@@ -1,13 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-onmessage = function (event) {
+-    var workerDir = event.message;
+-    var child = new Worker(workerDir + 'worker-terminate-iloop.js'); // loops forever
+-    child.terminate();
+-    postMessage("killed");
+-};
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js
+@@ -1,9 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-for (;;)
+-    ;
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js
+@@ -1,37 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff <jorendorff@mozilla.com>
+- */
+-
+-if (typeof Worker != 'undefined') {
+-    JSTest.waitForExplicitFinish();
+-
+-    // This tests that a parent worker can terminate a child.  We run the test
+-    // several times serially. If terminate() doesn't work, the runaway Workers
+-    // will soon outnumber the number of threads in the thread pool, and we
+-    // will deadlock.
+-    var i = 0;
+-
+-    function next() {
+-        if (++i == 10) {
+-            reportCompare(0, 0, "worker-terminate");
+-            JSTest.testFinished();
+-            return;
+-        }
+-
+-        var w = new Worker(workerDir + "worker-terminate-child.js");
+-        w.onmessage = function (event) {
+-            reportCompare("killed", event.data, "killed runaway worker #" + i);
+-            next();
+-        };
+-        w.onerror = function (event) {
+-            reportCompare(0, 1, "Got error: " + event.message);
+-        };
+-        w.postMessage(workerDir);
+-    }
+-    next();
+-} else {
+-    reportCompare(0, 0, "Test skipped. Shell workers required.");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js
+@@ -1,9 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff
+- */
+-
+-for (;;)
+-    ;
+diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js
+@@ -1,18 +0,0 @@
+-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+-/*
+- * Any copyright is dedicated to the Public Domain.
+- * http://creativecommons.org/licenses/publicdomain/
+- * Contributor: Jason Orendorff
+- */
+-
+-if (typeof timeout == 'function' && typeof Worker != 'undefined') {
+-    // We don't actually ever call JSTest.testFinished(); instead we
+-    // time out and exit the shell with exit code 6.
+-    JSTest.waitForExplicitFinish();
+-    expectExitCode(6);
+-    timeout(1.0);
+-    for (var i = 0; i < 5; i++)
+-        new Worker(workerDir + "worker-timeout-child.js"); // just loops forever
+-} else {
+-    reportCompare(0, 0, "Test skipped. Shell workers and timeout required.");
+-}
+diff -ruN deps.orig/mozilla/js/src/tests/shell.js deps/mozilla/js/src/tests/shell.js
+--- deps.orig/mozilla/js/src/tests/shell.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/shell.js
+@@ -833,18 +833,6 @@
+   }
+ }
+ 
+-var JSTest = {
+-  waitForExplicitFinish: function () {
+-    gDelayTestDriverEnd = true;
+-  },
+-
+-  testFinished: function () {
+-    gDelayTestDriverEnd = false;
+-    jsTestDriverEnd();
+-    quit();
+-  }
+-};
+-
+ function jsTestDriverEnd()
+ {
+   // gDelayTestDriverEnd is used to

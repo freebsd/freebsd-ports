@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Archive/SimpleExtractor/Zip.pm
+%%SITE_PERL%%/Archive/SimpleExtractor/Tar.pm
+%%SITE_PERL%%/Archive/SimpleExtractor/Rar.pm
+%%SITE_PERL%%/Archive/SimpleExtractor.pm
+%%PERL5_MAN3%%/Archive::SimpleExtractor.3.gz
+%%PERL5_MAN3%%/Archive::SimpleExtractor::Rar.3.gz
+%%PERL5_MAN3%%/Archive::SimpleExtractor::Tar.3.gz
+%%PERL5_MAN3%%/Archive::SimpleExtractor::Zip.3.gz

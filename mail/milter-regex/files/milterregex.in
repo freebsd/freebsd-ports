@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: milterregex
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+# Define these milterregex_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/milterregex
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# milterregex_flags Flags to milter-regex program
+
+. /etc/rc.subr
+
+name="milterregex"
+desc="RegEx Milter Daemon"
+rcvar="milterregex_enable"
+
+load_rc_config $name
+
+: ${milterregex_enable:="NO"}
+command="%%PREFIX%%/libexec/milter-regex"
+pidfile="%%SPOOLDIR%%/milter-regex.pid"
+required_files="%%PREFIX%%/etc/milter-regex.conf"
+stop_postcmd="milterregex_poststop"
+command_args="-r ${pidfile}"
+
+milterregex_poststop()
+{
+	/bin/rm -f ${pidfile}
+}
+
+run_rc_command "$1"

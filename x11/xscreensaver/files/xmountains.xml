@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<screensaver name="xmountains" _label="Xmountains">
+
+  <command arg="-b"/>
+  <command arg="-r 1"/>
+
+  <hgroup>
+    <select id="mode">
+      <option id="side" _label="Side View"/>
+      <option id="top"  _label="Top View" arg-set="-m"/>
+    </select>
+
+    <boolean id="reflections" _label="Reflections" arg-unset="-M"/>
+  </hgroup>
+
+  <number id="speed" type="slider" arg="-Z %"
+          _low-label="Speed  Slow" _high-label="Fast"
+          low="0" high="10" default="10"
+          convert="invert"/>
+
+  <number id="vpalt" type="slider" arg="-a %"
+          _label="Viewpoint" _low-label="Altitude  Low" _high-label="High"
+          low="0.0" high="10.0" default="2.5"/>
+  <number id="vpdistance" type="slider" arg="-p %"
+          _low-label="Distance  Low" _high-label="High"
+          low="0.0" high="10.0" default="5.0"/>
+
+  <number id="vlight" type="slider" arg="-I %"
+          _label="Angle of Light" _low-label="Vertical  Low" _high-label="High"
+          low="0" high="90" default="40"/>
+  <number id="hlight" type="slider" arg="-A %"
+          _low-label="Horizontal  Low" _high-label="High"
+          low="0" high="90" default="0"/>
+
+  <number id="alight" type="slider" arg="-e %"
+          _label="Light Level" _low-label="Ambient  Low" _high-label="High"
+          low="0.0" high="1.0" default="0.3"/>
+  <number id="vlight2" type="slider" arg="-v %"
+          _low-label="Vertical  Low" _high-label="High"
+          low="0.0" high="1.0" default="0.6"/>
+  <number id="contrast" type="slider" arg="-c %"
+          _low-label="Contrast  Low" _high-label="High"
+          low="0.0" high="5.0" default="1.0"/>
+
+  <!-- #### -B int   [80] # shades in a colour band			-->
+  <!-- #### -n int   [245] # number of colours				-->
+
+
+  <number id="stretch" type="slider" arg="-S %"
+          _label="Terrain" _low-label="V. Stretch  Low" _high-label="High"
+          low="0.0" high="2.0" default="0.6"/>
+
+  <number id="shift" type="slider" arg="-T %"
+          _low-label="V. Shift  Low" _high-label="High"
+          low="0.0" high="2.0" default="0.5"/>
+
+  <number id="sealevel" type="slider" arg="-W %"
+          _low-label="Sea Level  Low" _high-label="High"
+          low="-150" high="300" default="0"/>
+
+  <number id="contour" type="slider" arg="-C %"
+          _low-label="Contour  Low" _high-label="High"
+          low="0.0" high="1.0" default="0.3"/>
+
+  <number id="fgheight" type="slider" arg="-G %"
+          _label="Foreground" _low-label="Height  Low" _high-label="High"
+          low="-3.0" high="3.0" default="-1.0"/>
+
+  <number id="fgvariance" type="slider" arg="-F %"
+          _low-label="Variance  Low" _high-label="High"
+          low="0" high="5" default="1"/>
+
+
+  <number id="fractal" type="slider" arg="-f %"
+          _label="Fractal Options" _low-label="Smooth" _high-label="Craggy"
+          low="0" high="1.0" default="0.65"
+          convert="invert"/>
+
+  <number id="recurs" type="slider" arg="-l %"
+          _low-label="Recursion  0" _high-label="14"
+          low="0" high="14" default="10"/>
+  <number id="iterate" type="slider" arg="-t %"
+          _low-label="Iteration  0" _high-label="10"
+          low="0" high="10" default="2"/>
+
+  <number id="smoothing" type="slider" arg="-s %"
+          _low-label="Smoothing  0" _high-label="7"
+          low="0" high="7" default="0"/>
+
+  <number id="xf" type="slider" arg="-X %"
+          _low-label="Xf  0.0" _high-label="1.0"
+          low="0.0" high="1.0" default="0.0"/>
+  <number id="yf" type="slider" arg="-Y %"
+          _low-label="Yf  0.0" _high-label="1.0"
+          low="0.0" high="1.0" default="0.0"/>
+
+  <boolean id="cross" _label="Cross Update" arg-unset="-x"/>
+
+  <_description>
+XMountains generates realistic-looking fractal terrains of snow-capped
+mountains near water, with either a top view or a side view.
+
+Written by Stephen Booth.
+  </_description>
+</screensaver>

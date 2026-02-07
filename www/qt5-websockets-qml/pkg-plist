@@ -1,0 +1,5 @@
+%%QT_QMLDIR%%/QtWebSockets/libdeclarative_qmlwebsockets.so
+%%DEBUG%%%%QT_QMLDIR%%/QtWebSockets/libdeclarative_qmlwebsockets.so.debug
+%%QT_QMLDIR%%/QtWebSockets/plugins.qmltypes
+%%QT_QMLDIR%%/QtWebSockets/qmldir
+%%QT_QMLDIR%%/Qt/WebSockets/qmldir

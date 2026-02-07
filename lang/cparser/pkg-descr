@@ -1,0 +1,21 @@
+cparser is a recursive descent C99 parser written in C99. It contains lexer,
+parser, constructs an AST and does semantic analysis. It is currently used as
+a frontend to the libFirm intermediate representation, but can be used
+independently. cparser is able to bootstrap itself. It currently uses an
+external preprocessor.
+
+* fast recursive descent parser, parses C90 and C99
+* handles most GCC extensions, e.g. __attribute__, inline assembler,
+  computed goto, statement expressions
+* handles some MSVC extensions (like declspec)
+* provides many useful warnings
+  * format string checker for char and wchar_t
+  * unreachable code analysis
+  * missing return statement check, which pinpoints exact location(s)
+  * write-only/-self variables detection
+  * missing and redundant forward declarations
+  * most warnings switches, which are available for GCC
+* provides concise messages in case of error, for example when encountering
+  misspelled typenames
+* compiler driver compatible with GCC (-fxxx, -Wxxx, -M, ...)
+* uses libFIRM for optimization and code generation (devel/libfirm)

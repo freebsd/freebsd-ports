@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+1) Please read the detailed installation instructions in the file:
+
+   * %%DOCSDIR%%/INSTALL
+
+2) Go to tmp directory and run getweb script.
+
+   # cd /tmp && getweb all
+
+3) Copy icm and img files.
+
+   # cp DL*.icm CP*.icm km2430*.icm %%DATADIR%%/icm && \
+     cp sihp*.img %%DATADIR%%/firmware && \
+     cp hpclj26*.icm km2430*.icm %%PREFIX%%/share/foo2hp/icm && \
+     rm *.icm *.img
+
+4) Edit %%PREFIX%%/etc/devd/foo2zjs.conf to fit your needs
+   and restart devd.
+
+5) Enjoy it ;)
+EOM
+}
+]

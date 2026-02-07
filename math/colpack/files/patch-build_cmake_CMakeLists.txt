@@ -1,0 +1,32 @@
+--- build/cmake/CMakeLists.txt.orig	2019-06-21 15:48:50 UTC
++++ build/cmake/CMakeLists.txt
+@@ -142,9 +142,9 @@ endif()
+ # "EXPORT" helps with creating a ColPackConfig.cmake file to place in the
+ # installation, to help downstream projects use ColPack.
+ install(TARGETS ColPack_static EXPORT ColPackTargets
+-        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/archive
+-        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/library
+-        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/runtime)
++        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+ 
+ 
+ # Shared library.
+@@ -170,12 +170,12 @@ if(ENABLE_OPENMP)
+     target_link_libraries(ColPack_shared PRIVATE ${OpenMP_CXX_FLAGS})
+ endif()
+ 
+-install(FILES ${HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ColPack_headers)
++install(FILES ${HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/ColPack)
+ 
+ install(TARGETS ColPack_shared EXPORT ColPackTargets
+-        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/shared_archive
+-        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/shared_library
+-        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}/shared_runtime)
++        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+ 
+ 
+ 

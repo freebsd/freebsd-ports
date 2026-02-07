@@ -1,0 +1,15 @@
+--- gui/gameconqueror.in.orig	2017-10-13 21:53:16 UTC
++++ gui/gameconqueror.in
+@@ -1,10 +1,5 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ DATADIR=@PKGDATADIR@
+ 
+-PKEXEC=$(command -v "pkexec")
+-if [ -n "$PKEXEC" ]; then
+-    $PKEXEC $DATADIR/GameConqueror.py "$@"
+-else
+-    echo "install policykit!"
+-fi
++exec "$DATADIR/GameConqueror.py" "$@"

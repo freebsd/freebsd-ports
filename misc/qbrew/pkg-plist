@@ -1,0 +1,3 @@
+bin/qbrew
+%%DATADIR%%/qbrewdata
+%%DATADIR%%/splash.png

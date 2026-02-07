@@ -1,0 +1,18 @@
+#!/bin/sh
+
+test -x %%PREFIX%%/bin/cscli || exit 0
+
+# splay hub upgrade and crowdsec reload
+sleep "$(jot -r 1 1 300)"
+
+# favor the opnsense plugin's cron if it's there
+test -e /usr/local/etc/cron.d/oscrowdsec.cron && exit 0
+
+%%PREFIX%%/bin/cscli --error -o human hub update >/dev/null
+
+upgraded=$(%%PREFIX%%/bin/cscli --error -o human hub upgrade)
+if [ -n "$upgraded" ]; then
+    service crowdsec onestatus && service crowdsec onereload
+fi
+
+exit 0

@@ -1,0 +1,2 @@
+A Python interface to libarchive. It uses the standard ctypes module to
+dynamically load and access the C library.

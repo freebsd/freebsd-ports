@@ -1,0 +1,18 @@
+PORTNAME=	LockFile-Simple
+PORTVERSION=	0.208
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Perl module implementing simple file locking
+WWW=		https://metacpan.org/release/LockFile-Simple
+
+LICENSE=	ART10 GPLv2+
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

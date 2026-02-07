@@ -1,0 +1,2 @@
+PostgreSQL::PLPerl::Trace is a simple way to trace execution of
+Perl statements in PL/Perl.

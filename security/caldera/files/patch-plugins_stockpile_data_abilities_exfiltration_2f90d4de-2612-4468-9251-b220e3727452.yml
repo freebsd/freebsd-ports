@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/exfiltration/2f90d4de-2612-4468-9251-b220e3727452.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/2f90d4de-2612-4468-9251-b220e3727452.yml
+@@ -6,7 +6,7 @@
+     attack_id: T1560.001
+     name: 'Archive Collected Data: Archive via Utility'
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           tar -czf #{host.dir.git}.tar.gz -C "#{host.dir.git}" .; printf #{host.dir.git}.tar.gz;

@@ -1,0 +1,88 @@
+bin/BambooTracker
+share/applications/BambooTracker.desktop
+share/icons/hicolor/128x128/apps/BambooTracker.png
+share/icons/hicolor/16x16/apps/BambooTracker.png
+share/icons/hicolor/256x256/apps/BambooTracker.png
+share/icons/hicolor/32x32/apps/BambooTracker.png
+share/icons/hicolor/64x64/apps/BambooTracker.png
+share/man/fr/man1/BambooTracker.1.gz
+share/man/man1/BambooTracker.1.gz
+share/mime/packages/application-x-btm.xml
+%%DATADIR%%/lang/bamboo_tracker_es.qm
+%%DATADIR%%/lang/bamboo_tracker_fr.qm
+%%DATADIR%%/lang/bamboo_tracker_ja.qm
+%%DATADIR%%/lang/bamboo_tracker_pl.qm
+%%DATADIR%%/skins/Cream.ini
+%%DATADIR%%/skins/Default-Blue.ini
+%%DATADIR%%/skins/Default.ini
+%%DATADIR%%/skins/Dynagray.ini
+%%DATADIR%%/skins/FTish.ini
+%%DATADIR%%/skins/Night Blue.ini
+%%DATADIR%%/skins/Yuzu4K.ini
+%%DATADIR%%/skins/skins.md
+%%DATADIR%%/specs/archives/bank_specs_v1.0.0.md
+%%DATADIR%%/specs/archives/bank_specs_v1.0.1.md
+%%DATADIR%%/specs/archives/bank_specs_v1.0.2.md
+%%DATADIR%%/specs/archives/bank_specs_v1.1.0.md
+%%DATADIR%%/specs/archives/bank_specs_v1.2.0.md
+%%DATADIR%%/specs/archives/bank_specs_v1.3.0.md
+%%DATADIR%%/specs/archives/inst_specs_v1.0.0.md
+%%DATADIR%%/specs/archives/inst_specs_v1.0.1.md
+%%DATADIR%%/specs/archives/inst_specs_v1.1.0.md
+%%DATADIR%%/specs/archives/inst_specs_v1.2.0.md
+%%DATADIR%%/specs/archives/inst_specs_v1.2.1.md
+%%DATADIR%%/specs/archives/inst_specs_v1.2.2.md
+%%DATADIR%%/specs/archives/inst_specs_v1.2.3.md
+%%DATADIR%%/specs/archives/inst_specs_v1.3.0.md
+%%DATADIR%%/specs/archives/inst_specs_v1.4.0.md
+%%DATADIR%%/specs/archives/inst_specs_v1.5.0.md
+%%DATADIR%%/specs/archives/mod_specs_v1.0.0.md
+%%DATADIR%%/specs/archives/mod_specs_v1.0.1.md
+%%DATADIR%%/specs/archives/mod_specs_v1.0.2.md
+%%DATADIR%%/specs/archives/mod_specs_v1.0.3.md
+%%DATADIR%%/specs/archives/mod_specs_v1.1.0.md
+%%DATADIR%%/specs/archives/mod_specs_v1.2.0.md
+%%DATADIR%%/specs/archives/mod_specs_v1.2.1.md
+%%DATADIR%%/specs/archives/mod_specs_v1.2.2.md
+%%DATADIR%%/specs/archives/mod_specs_v1.3.0.md
+%%DATADIR%%/specs/archives/mod_specs_v1.3.1.md
+%%DATADIR%%/specs/archives/mod_specs_v1.3.2.md
+%%DATADIR%%/specs/archives/mod_specs_v1.4.0.md
+%%DATADIR%%/specs/archives/mod_specs_v1.4.1.md
+%%DATADIR%%/specs/archives/mod_specs_v1.5.0.md
+%%DATADIR%%/specs/archives/mod_specs_v1.6.0.md
+%%DATADIR%%/specs/bank_specs_v1.3.1.md
+%%DATADIR%%/specs/inst_specs_v1.5.1.md
+%%DATADIR%%/specs/mod_specs_v1.6.1.md
+%%DATADIR%%/specs/speclist.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Rerrah/FM.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Rerrah/PMD-like Drums.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Rerrah/SSG.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Bass.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Bell.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Brass.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Guitars.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Lead & Organ.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Percussion.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Piano.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Sound Effect.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Special.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Strings & Pad.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/Wind.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/Takeshi Abo/World.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/papiezak/FM.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/instruments/papiezak/SSG.btb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Battleship.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Flying High.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Is This What You Desired.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Jump.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Lotus.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Neo Megalopolis.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Rude Buster.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Strategic Achievement.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Temple Theme.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Underwater Ruins.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/Wilderness.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/breeze 2608.btm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modules/sword with no scabbard.btm

@@ -1,0 +1,10 @@
+--- source/libnormaliz/Makefile.classic.orig	2018-08-21 13:25:10 UTC
++++ source/libnormaliz/Makefile.classic
+@@ -1,7 +1,6 @@
+ ##
+ ## Makefile for libnormaliz
+ ##
+-include ../Makefile.configuration
+ 
+ INSTALLHDRS = cone.h cone_property.h convert.h general.h HilbertSeries.h integer.h libnormaliz.h map_operations.h matrix.h my_omp.h normaliz_exception.h sublattice_representation.h vector_operations.h version.h nmz_integrate.h
+ 

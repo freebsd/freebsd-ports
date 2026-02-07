@@ -1,0 +1,12 @@
+--- make/make_unix_64/z88com.mk.gcc64.orig	2018-12-05 14:30:53 UTC
++++ make/make_unix_64/z88com.mk.gcc64
+@@ -10,8 +10,7 @@ DIRCOM = $(DIRECA)/src/z88com/common
+ DIROUT = $(DIRECA)/bin/unix64
+ 
+ CC = gcc
+-CFLAGS = -I$(DIRCOM) -DFR_UNIX -DFR_XDOUB -DFR_XLONG -DFR_LINUX -O2 \
+-         `pkg-config --cflags --libs gtk+-2.0`
++CFLAGS = -I$(DIRCOM) -DFR_UNIX -DFR_XDOUB -DFR_XLONG -DFR_LINUX -O2 `pkg-config --cflags --libs gtk+-2.0`
+ 
+ OBJECTSC = z88com.o cb88c.o ale88c.o lan88c.o wlog88c.o rcol88c.o
+ 

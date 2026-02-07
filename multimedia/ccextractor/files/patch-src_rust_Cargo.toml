@@ -1,0 +1,22 @@
+--- src/rust/Cargo.toml.orig	2026-01-05 15:05:24 UTC
++++ src/rust/Cargo.toml
+@@ -14,8 +14,8 @@ palette = "0.7"
+ log = "0.4.26"
+ env_logger = "0.8.4"
+ palette = "0.7"
+-tesseract-sys = { version = "0.5.15", optional = true, default-features = false }
+-leptonica-sys = { version = "= 0.4.6", optional = true, default-features = false }
++tesseract-sys = { version = "0.6.1", optional = true, default-features = false }
++leptonica-sys = { version = "= 0.4.9", optional = true, default-features = false }
+ clap = { version = "4.5.31", features = ["derive"] }
+ strum_macros = "0.25.3"
+ time = "0.3.39"
+@@ -58,3 +58,8 @@ debug = true
+ [profile.release-with-debug]
+ inherits = "release"
+ debug = true
++
++[profile.release]
++opt-level = 2
++debug = false
++strip = "symbols"

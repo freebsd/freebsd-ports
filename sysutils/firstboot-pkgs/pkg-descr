@@ -1,0 +1,8 @@
+When the system first boots, install the pkg(8) tools (if not already
+installed) and packages listed in the $firstboot_pkgs_list rc.conf
+variable.  If the installed packages added new rc.d scripts, request
+a reboot.
+
+Obviously, this port is not useful after a system is already running; it is
+intended to be included as part of the installation or disk image building
+process.

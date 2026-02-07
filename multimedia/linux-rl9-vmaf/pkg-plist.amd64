@@ -1,0 +1,4 @@
+usr/lib64/libvmaf.so.1
+usr/lib64/libvmaf.so.1.1.2
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+usr/share/licenses/libvmaf/LICENSE

@@ -1,0 +1,60 @@
+--- ../man/mmencode.1.orig	Thu Sep 30 10:50:02 1999
++++ ../man/mmencode.1	Thu Sep 30 10:53:37 1999
+@@ -1,44 +1,42 @@
+-.TH MIMENCODE 1 "Release 1" "Bellcore Prototype"
++.TH MMENCODE 1 "Release 1" "Bellcore Prototype"
+ .SH NAME
+-mimencode - Translate to and from mail-oriented encoding formats
++mmencode - Translate to and from mail-oriented encoding formats
+ 
+-(Same program also installed as "mmencode".)
++(Same program also installed as "mimencode".)
+ .SH SYNOPSIS
+ .ta 8n
+-\fBmimencode\fP	[-u] [-b] [-q] [-p] [file name] [-o outputfile]
++\fBmmencode\fP	[-u] [-b] [-q] [-p] [file name] [-o outputfile]
+ .br
+ .SH DESCRIPTION
+ The
+-.I mimencode
+-program simply converts a byte stream into (or out of) one of the standard mail encoding formats defined by MIME, the proposed standard for internet multimedia mail formats.  Such an encoding is necessary because binary data cannot be sent through the mail.  The encodings understood by mimencode are preferable to the use of the uuencode/uudecode programs, for use in mail, in several respects that were important to the authors of MIME.
++.I mmencode
++program simply converts a byte stream into (or out of) one of the standard mail encoding formats defined by MIME, the proposed standard for internet multimedia mail formats.  Such an encoding is necessary because binary data cannot be sent through the mail.  The encodings understood by mmencode are preferable to the use of the uuencode/uudecode programs, for use in mail, in several respects that were important to the authors of MIME.
+ 
+-By default, mimencode reads standard input, and sends a "base64" encoded version of the input to standard output.
++By default, mmencode reads standard input, and sends a "base64" encoded version of the input to standard output.
+ 
+-The (really not necessary) "-b" option tells mimencode to use the "base64" encoding.
++The (really not necessary) "-b" option tells mmencode to use the "base64" encoding.
+ 
+-The "-q" option tells mimencode to use the "quoted-printable" encoding instead of base64.
++The "-q" option tells mmencode to use the "quoted-printable" encoding instead of base64.
+ 
+-The "-u" option tells mimencode to 
++The "-u" option tells mmencode to 
+ .I
+ decode
+ the standard input rather than encode it.  
+ 
+-The "-p" option tells mimencode to translate decoded CRLF sequences into the local newline convention during decoding and to do the reverse during encoding.  This option is only meaningful when  -b (base64 encoding) is in effect.
++The "-p" option tells mmencode to translate decoded CRLF sequences into the local newline convention during decoding and to do the reverse during encoding.  This option is only meaningful when  -b (base64 encoding) is in effect.
+ 
+ If a file name argument is given, input is read from that file rather than from standard input.
+ 
+ The "-o" option, which must be followed by a file name, sends output to the named file rather than to standard output.
+ .SH RATIONALE
+ .I
+-Mimencode
++Mmencode
+ is intended to be a replacement for 
+ .I
+ uuencode
+-for mail and news use.  The reason is simple:  uuencode doesn't work very well in a number of circumstances and ways.  In particular, uuencode uses characters that don't translate well across all mail gateways (particularly ASCII <-> EBCDIC gateways).  Also, uuencode is not standard -- there are several variants floating around, encoding and decoding things in different and incompatible ways, with no "standard" on which to base an implementation.  Finally, uuencode does not generally work well in a pipe, although some variants have been modified to do so.  Mimencode implements the encodings which were defined for MIME as uuencode replacements, and should be considerably more robust for email use.
++for mail and news use.  The reason is simple:  uuencode doesn't work very well in a number of circumstances and ways.  In particular, uuencode uses characters that don't translate well across all mail gateways (particularly ASCII <-> EBCDIC gateways).  Also, uuencode is not standard -- there are several variants floating around, encoding and decoding things in different and incompatible ways, with no "standard" on which to base an implementation.  Finally, uuencode does not generally work well in a pipe, although some variants have been modified to do so.  Mmencode implements the encodings which were defined for MIME as uuencode replacements, and should be considerably more robust for email use.
+ .SH SEE ALSO
+ metamail(1), mailto(1)
+-.SH BUGS
+-This program was originally distributed as "mmencode".  That name turns out to conflict with a program of the same name that is part of the Slate software from BBN, but totally changing the name to mimencode would create other problems (notably with portability to systems where the left half of file names is limited to 8 characters).  Currently, it is being distributed with links under BOTH names.  The programs in the distribution that call the program all call it as "mimencode", so the "mmencode" version may be deleted at sites where it causes a problem.  (The source files are still named "mmencode" rather than "mimencode".)
+ .SH COPYRIGHT
+ Copyright (c) 1991 Bell Communications Research, Inc. (Bellcore)
+ 

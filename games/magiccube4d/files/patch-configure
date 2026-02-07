@@ -1,0 +1,11 @@
+--- configure.orig	Sat Sep 28 23:44:47 2002
++++ configure	Sat Sep 28 23:44:38 2002
+@@ -686,7 +686,7 @@
+ 
+ 
+ if test "$GXX" = "yes" ; then
+-   WFLAGS="$WFLAGS -pedantic -Wall -W -Wunused -Werror"
++   WFLAGS="$WFLAGS -pedantic -Wall -W -Wunused"
+ fi
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+ echo "configure:693: checking how to run the C preprocessor" >&5

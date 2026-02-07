@@ -1,0 +1,40 @@
+--- Makefile.orig	1998-12-16 12:34:09 UTC
++++ Makefile
+@@ -8,7 +8,7 @@ ETCDIR=$(PREFIX)/etc
+ PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/bin
+ ETCDIR=$(PREFIX)/etc
+-MANDIR=$(PREFIX)/man
++MANDIR=$(PREFIX)/share/man
+ 
+ ###################################################
+ ######                                       ######
+@@ -17,7 +17,7 @@ CFLAGS?=-O2
+ ###################################################
+ 
+ CFLAGS?=-O2
+-CFLAGS+=-Wall -ansi -DGLOBAL_ETC_DIR=\"$(ETCDIR)\"
++CFLAGS+=-Wall -DGLOBAL_ETC_DIR=\"$(ETCDIR)\"
+ 
+ .if (exists(/usr/include/camlib.h))
+ CFLAGS+=-DCAM
+@@ -53,15 +53,10 @@ install:	$(BINS)
+ 	$(CC) $(CFLAGS) -o pcmfade pcmfade.o utils.o
+ 
+ install:	$(BINS)
+-	strip $(BINS)
+-	install -s -g bin -o bin -m 755 $(BINS) $(BINDIR)
+-	install -c -g bin -o bin -m 644 tosharc $(ETCDIR)
+-	install -c -g bin -o bin -m 644 tosha.1 pcmplay.1 pcmfade.1 \
+-		$(MANDIR)/man1
+-.if !defined(NOMANCOMPRESS)
+-	cd $(MANDIR)/man1 ; \
+-	$(GZIP_CMD) tosha.1 pcmplay.1 pcmfade.1
+-.endif
++	$(BSD_INSTALL_PROGRAM) $(BINS) $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_DATA) tosharc $(DESTDIR)$(ETCDIR)
++	$(BSD_INSTALL_MAN) tosha.1 pcmplay.1 pcmfade.1 \
++		$(DESTDIR)$(MANDIR)/man1
+ 
+ clean:
+ 	rm -f $(OBJS) *core $(BINS)

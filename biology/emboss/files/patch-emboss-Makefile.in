@@ -1,0 +1,10 @@
+--- emboss/Makefile.in.orig	2013-07-15 21:27:30 UTC
++++ emboss/Makefile.in
+@@ -3216,7 +3216,6 @@ LDADD = ../nucleus/libnucleus.la ../ajax/acd/libacd.la
+ 	$(am__append_3) ../ajax/pcre/libepcre.la \
+ 	../plplot/libeplplot.la $(XLIB)
+ dist_pkgdata_DATA = \
+-emboss.default.template \
+ emboss.standard \
+ server.biomart \
+ server.dasregistry \

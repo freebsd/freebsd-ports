@@ -1,0 +1,50 @@
+From 159fb9691d792594b91e0fbc4c7823e1a191620d Mon Sep 17 00:00:00 2001
+From: Lucas Fryzek <lfryzek@igalia.com>
+Date: Mon, 28 Oct 2024 13:02:26 -0400
+Subject: [PATCH] lp: Only close udmabuf handle if its valid
+
+Also change ifdef's from just `HAVE_LIBDRM` to check for both LIBDRM
+and for UDMABUF HEADER. preventing unbalanced guards preventing part of
+the code from being included if you just have LIBDRM or just have the
+udmabuf headers.
+
+Fixes: 4cfaf10c ("llvmpipe: Only use udmabuf with libdrm")
+Reviewed-by: Konstantin Seurer <konstantin.seurer@gmail.com>
+Part-of: <https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31877>
+---
+ src/gallium/drivers/llvmpipe/lp_screen.c | 5 +++--
+ src/gallium/drivers/llvmpipe/lp_screen.h | 2 +-
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/src/gallium/drivers/llvmpipe/lp_screen.c b/src/gallium/drivers/llvmpipe/lp_screen.c
+index 8ede54a1fdf20..f85911b4703ac 100644
+--- src/gallium/drivers/llvmpipe/lp_screen.c
++++ src/gallium/drivers/llvmpipe/lp_screen.c
+@@ -939,8 +939,9 @@ llvmpipe_destroy_screen(struct pipe_screen *_screen)
+ 
+    glsl_type_singleton_decref();
+ 
+-#ifdef HAVE_LIBDRM
+-   close(screen->udmabuf_fd);
++#if defined(HAVE_LIBDRM) && defined(HAVE_LINUX_UDMABUF_H)
++   if (screen->udmabuf_fd != -1)
++      close(screen->udmabuf_fd);
+ #endif
+ 
+ #if DETECT_OS_LINUX
+diff --git a/src/gallium/drivers/llvmpipe/lp_screen.h b/src/gallium/drivers/llvmpipe/lp_screen.h
+index f36628340b3af..63ce25d56d1d3 100644
+--- src/gallium/drivers/llvmpipe/lp_screen.h
++++ src/gallium/drivers/llvmpipe/lp_screen.h
+@@ -75,7 +75,7 @@ struct llvmpipe_screen
+ 
+    struct disk_cache *disk_shader_cache;
+ 
+-#ifdef HAVE_LIBDRM
++#if defined(HAVE_LIBDRM) && defined(HAVE_LINUX_UDMABUF_H)
+    int udmabuf_fd;
+ #endif
+ 
+-- 
+GitLab
+

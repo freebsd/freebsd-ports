@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/POE::Component::Server::SMTP.3.gz
+%%PERL5_MAN3%%/POE::Filter::SMTP.3.gz
+%%SITE_PERL%%/POE/Component/Server/SMTP.pm
+%%SITE_PERL%%/POE/Filter/SMTP.pm

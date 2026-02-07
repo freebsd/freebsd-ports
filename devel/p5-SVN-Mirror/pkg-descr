@@ -1,0 +1,4 @@
+This module mirrors remote repositories to a local Subversion
+repository.  It supports remote Subversion repositories accessible
+via the SVN::Ra interface; other version control systems (such as
+Perforce and CVS) are also supported via the VCP module.

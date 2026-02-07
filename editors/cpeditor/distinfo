@@ -1,0 +1,13 @@
+TIMESTAMP = 1708235909
+SHA256 (cpeditor-cpeditor-7.0.1_GH0.tar.gz) = c6df1806a4db0279b0f6c61e45abc948fa29c30c0b5dca0a8d09fb96e5812f19
+SIZE (cpeditor-cpeditor-7.0.1_GH0.tar.gz) = 1193977
+SHA256 (itay-grudev-SingleApplication-494772e_GH0.tar.gz) = e77b5469571eccd34bb93c20dae8f52727f4126b0918c01273b3f34c4c190c2d
+SIZE (itay-grudev-SingleApplication-494772e_GH0.tar.gz) = 23322
+SHA256 (cpeditor-QtFindReplaceDialog-a86ed0b_GH0.tar.gz) = a639a426c329793616eab30fe8cdd15b8939664c5979f5aa4a05fd74fd806018
+SIZE (cpeditor-QtFindReplaceDialog-a86ed0b_GH0.tar.gz) = 146964
+SHA256 (cpeditor-lsp-cpp-69c8afa_GH0.tar.gz) = 70f9839b9f4c7525bb05540adac277d8de1169852c45c0c7331b9bc598a32848
+SIZE (cpeditor-lsp-cpp-69c8afa_GH0.tar.gz) = 154613
+SHA256 (cpeditor-qhttp-fd780d2a0bee1246f2ab0a17f6eebab6403fce64_GH0.tar.gz) = 5530eea87808f18bf62d11d865ec8a09ad9d78c8bdaeb6e21474f7012038ebc9
+SIZE (cpeditor-qhttp-fd780d2a0bee1246f2ab0a17f6eebab6403fce64_GH0.tar.gz) = 57108
+SHA256 (MikeMirzayanov-testlib-d0a0161_GH0.tar.gz) = fb2ce4578bacb1f1cab2c38f2ae044f0b9ed0803dd63baf64bb4125eb29cc481
+SIZE (MikeMirzayanov-testlib-d0a0161_GH0.tar.gz) = 121111

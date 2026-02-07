@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: monitord
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable monitord:
+#
+# monitord_enable="YES"
+#
+# See monitord(8) for flags.
+#
+
+. /etc/rc.subr
+
+name="monitord"
+rcvar=monitord_enable
+
+load_rc_config $name
+: ${monitord_enable="NO"}
+: ${monitord_flags="-f %%PREFIX%%/etc/monitord.conf"}
+
+command="%%PREFIX%%/sbin/monitord"
+required_files="%%PREFIX%%/etc/monitord.conf"
+
+run_rc_command "$1"

@@ -1,0 +1,5 @@
+setuptools-rust is a plugin for setuptools to build Rust Python extensions
+implemented with PyO3 or rust-cpython.
+
+Compile and distribute Python extensions written in Rust as easily as if they
+were written in C.

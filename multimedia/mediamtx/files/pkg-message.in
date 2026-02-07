@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+  Edit /etc/rc.conf(.local) to start MediaMTX automatically at system
+  startup. Support for rpiCamera is not included.
+
+  A sample configuration file is installed at the following location:
+  %%PREFIX%%/etc/mediamtx.yml.sample
+EOM
+}
+]

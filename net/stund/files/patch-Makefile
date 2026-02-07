@@ -1,0 +1,13 @@
+--- Makefile.orig
++++ Makefile
+@@ -21,8 +21,8 @@
+ #
+ # Alternatively, for debugging.
+ #
+-CXXFLAGS+=-g -O -Wall
+-LDFLAGS+=-g -O -Wall
++CXXFLAGS+=-Wall
++LDFLAGS+=-Wall
+ # for solaris
+ #LDFLAGS+= -lnsl -lsocket
+ 

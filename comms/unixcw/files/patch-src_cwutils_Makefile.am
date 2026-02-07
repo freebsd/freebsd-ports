@@ -1,0 +1,11 @@
+--- src/cwutils/Makefile.am.orig	2018-08-07 19:05:29 UTC
++++ src/cwutils/Makefile.am
+@@ -29,7 +29,7 @@ cw_dictionary_tests_SOURCES = dictionary
+ cw_dictionary_tests_CPPFLAGS = $(AM_CPPFLAGS) -DCW_DICTIONARY_UNIT_TESTS
+ 
+ # target-specific linker flags (objects to link)
+-cw_dictionary_tests_LDADD=-L$(top_builddir)/src/libcw/.libs -lcw #-lm -lpthread -ldl
++cw_dictionary_tests_LDADD=$(LTLIBINTL) -L$(top_builddir)/src/libcw/.libs -lcw #-lm -lpthread -ldl
+ 
+ # target-specific compiler flags
+ cw_dictionary_tests_CFLAGS = -rdynamic

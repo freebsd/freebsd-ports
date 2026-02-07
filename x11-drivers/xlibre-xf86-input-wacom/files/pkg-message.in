@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+wacom(4x) is configured automatically via devd or HAL. However, if you
+prefer to do so manually copy and edit the sample:
+
+  $ cd %%PREFIX%%/etc/X11/xorg.conf.d/
+  $ cp wacom.conf.sample wacom.conf
+
+moused(8) may interfere with tablet input by attaching to fake /dev/ums*.
+To prevent that add a usb_quirk(4) then detach and attach the tablet.
+%%PREFIX%%/etc/rc.d/wacom is an example how preserve quirks across reboot.
+EOM
+}
+]

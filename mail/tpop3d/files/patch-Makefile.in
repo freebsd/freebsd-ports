@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2008-04-02 10:23:24.000000000 -0800
++++ Makefile.in	2008-07-02 17:06:10.000000000 -0800
+@@ -133,8 +133,7 @@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@ -Wall -g -O2 -DCONFIG_DIR='"@sysconfdir@"' # \
+-	-Wstrict-prototypes
++CFLAGS = @CFLAGS@ -Wall -g -O2 -DCONFIG_DIR='"@sysconfdir@"'
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CYGPATH_W = @CYGPATH_W@

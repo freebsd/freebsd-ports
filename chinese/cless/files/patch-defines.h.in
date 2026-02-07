@@ -1,0 +1,13 @@
+--- defines.h.in.orig	Sun Sep 15 22:58:20 1996
++++ defines.h.in	Sun Sep 15 22:58:27 1996
+@@ -104,8 +104,8 @@
+  * DEF_LESSKEYINFILE is the filename of the default lesskey input 
+  * (in the HOME directory).
+  */
+-#define	LESSKEYFILE		".less"
+-#define	DEF_LESSKEYINFILE	".lesskey"
++#define	LESSKEYFILE		".cless"
++#define	DEF_LESSKEYINFILE	".clesskey"
+ 
+ 
+ /* Settings always true on Unix.  */

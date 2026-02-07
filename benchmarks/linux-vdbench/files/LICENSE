@@ -1,0 +1,73 @@
+https://www.oracle.com/technetwork/licenses/vdbench-license-2027214.html
+
+Oracle Technology Network Developer License Terms for VDBench
+
+Export Controls on the Programs
+Export laws and regulations of the United States and any other relevant local export laws and regulations apply to the programs.  You agree that such export control laws govern your use of the programs (including technical data) and any services deliverables provided under this agreement, and you agree to comply with all such export laws and regulations (including "deemed export" and "deemed re-export" regulations).  You agree that no data, information, program, and/or materials resulting from services (or direct product thereof) will be exported, directly or indirectly, in violation of these laws, or will be used for any purpose prohibited by these laws including, without limitation, nuclear, chemical, or biological weapons proliferation, or development of missile technology. 
+
+Accordingly, you confirm:
+
+-You will not download, provide, make available or otherwise export or re-export the programs, directly or indirectly, to countries prohibited by applicable laws and regulations nor to citizens, nationals or residents of those countries.
+-You are not listed on the United States Department of Treasury lists of Specially Designated Nationals and Blocked Persons, Specially Designated Terrorists, and Specially Designated Narcotic Traffickers, nor are you listed on the United States Department of Commerce Table of Denial Orders.
+- You will not download or otherwise export or re-export the programs, directly or indirectly, to persons on the above mentioned lists.
+- You will not use the programs for, and will not allow the programs to be used for, any purposes prohibited by applicable law, including, without limitation, for the development, design, manufacture or production of nuclear, chemical or biological weapons of mass destruction.
+
+Oracle Employees: Under no circumstances are Oracle Employees authorized to download software for the purpose of distributing it to customers. Oracle products are available to employees for internal use or demonstration purposes only. In keeping with Oracle's trade compliance obligations under U.S. and applicable multilateral law, failure to comply with this policy could result in disciplinary action up to and including termination.
+
+Note: You are bound by the Oracle Technology Network ("OTN") License Agreement terms. The OTN License Agreement terms also apply to all updates you receive under your Technology Track subscription.
+
+The OTN License Agreement terms below supercede any shrinkwrap license on the OTN Technology Track software CDs and previous OTN License terms (including the Oracle Program License as modified by the OTN Program Use Certificate).
+
+Oracle Technology Network Development License Agreement
+"We," "us," and "our" refers to Oracle America, Inc., for and on behalf of itself and its subsidiaries and affiliates under common control. "You" and "your" refers to the individual or entity that wishes to use the programs from Oracle. "Programs" refers to the Oracle software product you wish to download and use and program documentation. "License" refers to your right to use the programs under the terms of this agreement. "Your Storage Hardware Product" refers to your storage hardware product designed and manufactured by you. This agreement is governed by the substantive and procedural laws of California. You and Oracle agree to submit to the exclusive jurisdiction of, and venue in, the courts of San Francisco or Santa Clara counties in California in any dispute arising out of or relating to this agreement.
+
+We are willing to license the programs to you only upon the condition that you accept all of the terms contained in this agreement. Read the terms carefully and select the "Accept License Agreement" button to confirm your acceptance. If you are not willing to be bound by these terms, select the "Decline License Agreement" button and the registration process will not continue.
+
+License Rights
+We grant you a nonexclusive, nontransferable limited license to use and modify the programs to the extent necessary to test the performance of Your Storage Hardware Product and to disclose the results of the said tests at your discretion, and not for any other purpose. You acknowledge that we may not produce a production release version of the program and any development efforts undertaken by you are at your own risk. We may audit your use of the programs. Program documentation, if available, may accessed online at http://www.oracle.com/technetwork/indexes/documentation/index.html.
+
+Ownership and Restrictions
+We retain all ownership and intellectual property rights in the programs and any modifications, extensions or derivative works. The programs may be installed on one computer only, and used by one person in the operating environment identified by us. You may make one copy of the programs for backup purposes.
+
+You may not:
+- use the programs for your own internal data processing or for any commercial or production purposes, or use the programs for any purpose except the testing of your storage hardware;
+- remove or modify any program markings or any notice of our proprietary rights;
+- make the programs, including any modifications, extensions or derivatives thereof, available in any manner to any third party;
+- use the programs to provide third party training;
+- assign this agreement or give or transfer the programs or an interest in them to another individual or entity;
+- cause or permit reverse engineering (unless required by law for interoperability), disassembly or decompilation of the programs;
+- disclose results of any program benchmark tests without our prior consent, except that you may disclose the results of the performance tests of Your Storage Hardware Product as performed by the programs.
+
+
+Disclaimer of Warranty and Exclusive Remedies
+THE PROGRAMS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE FURTHER DISCLAIM ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+
+IN NO EVENT SHALL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR DAMAGES FOR LOSS OF PROFITS, REVENUE, DATA OR DATA USE, INCURRED BY YOU OR ANY THIRD PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR ENTIRE LIABILITY FOR DAMAGES HEREUNDER SHALL IN NO EVENT EXCEED ONE THOUSAND DOLLARS (U.S. $1,000).
+
+Trial Programs Included With Orders
+We may include additional programs with an order which may be used for trial purposes only. You will have 30 days from the delivery date to evaluate these programs. Any use of these programs after the 30 day trial period requires you to obtain the applicable license. Programs licensed for trial purposes are provided "as is" and we do not provide technical support or any warranties for these programs.
+
+No Technical Support
+Our technical support organization will not provide technical support, phone support, or updates to you for the programs licensed under this agreement.
+
+End of Agreement
+You may terminate this agreement by destroying all copies of the programs. We have the right to terminate your right to use the programs if you fail to comply with any of the terms of this agreement, in which case you shall destroy all copies of the programs.
+
+Relationship Between the Parties
+The relationship between you and us is that of licensee/licensor. Neither party will represent that it has any authority to assume or create any obligation, express or implied, on behalf of the other party, nor to represent the other party as agent, employee, franchisee, or in any other capacity. Nothing in this agreement shall be construed to limit either party's right to independently develop or distribute software that is functionally similar to the other party's products, so long as proprietary information of the other party is not included in such software.
+
+Open Source
+"Open Source" software - software available without charge for use, modification and distribution - is often licensed under terms that require the user to make the user's modifications to the Open Source software or any software that the user 'combines' with the Open Source software freely available in source code form. If you use Open Source software in conjunction with the programs, you must ensure that your use does not: (i) create, or purport to create, obligations of us with respect to the Oracle programs; or (ii) grant, or purport to grant, to any third party any rights to or immunities under our intellectual property or proprietary rights in the Oracle programs. For example, you may not develop a software program using an Oracle program and an Open Source program where such use results in a program file(s) that contains code from both the Oracle program and the Open Source program (including without limitation libraries) if the Open Source program is licensed under a license that requires any "modifications" be made freely available. You also may not combine the Oracle program with programs licensed under the GNU General Public License ("GPL") in any manner that could cause, or could be interpreted or asserted to cause, the Oracle program or any modifications thereto to become subject to the terms of the GPL.
+
+Entire Agreement
+You agree that this agreement is the complete agreement for the programs and licenses, and this agreement supersedes all prior or contemporaneous agreements or representations. If any term of this agreement is found to be invalid or unenforceable, the remaining provisions will remain effective.
+
+Last updated: 14 May 2014
+
+Should you have any questions concerning this License Agreement, or if you desire to contact Oracle for any reason, please write:
+Oracle America, Inc.
+500 Oracle Parkway,
+Redwood City, CA 94065
+
+Oracle may contact you to ask if you had a satisfactory experience installing and using this OTN software download.
+

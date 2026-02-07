@@ -1,0 +1,7 @@
+csoap is a client/server SOAP library implemented in pure C.
+It comes with an embedded HTTP server called nanohttp.
+The transferred XML structures are handled by libxml2.
+csoap comes with the following features:
+- client/server HTTP engine
+- Attachments via MIME
+- https (SSL) with OpenSSL

@@ -1,0 +1,70 @@
+#!/bin/sh
+
+##########################################################################
+#   Script description:
+#       Run standard kallisto test data
+#       
+#   History:
+#   Date        Name        Modification
+#   2016-03-21  J Bacon     Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 test-directory\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Function description:
+#       Pause until user presses return
+##########################################################################
+
+pause()
+{
+    local junk
+    
+    printf "Press return to continue..."
+    read junk
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 1 ]; then
+    usage
+fi
+
+dir="$1"
+if [ -e "$dir" ]; then
+    printf "$dir already exists.  Remove it first or choose a different name.\n"
+    exit 1
+fi
+
+cp -iR %%EXAMPLESDIR%% "$dir"
+cd "$dir"
+kallisto index --index=transcripts.idx transcripts.fasta.gz
+pause
+
+kallisto quant --index=transcripts.idx --genomebam --chromosomes=chrom.txt \
+    --gtf=transcripts.gtf.gz --output-dir=output \
+    --boostrap-samples=100 reads_1.fastq.gz reads_2.fastq.gz
+pause
+
+ls -l output
+pause
+
+# Test genomebam
+samtools view output/pseudoalignments.bam | more
+
+more output/abundance.tsv
+
+cat << EOM
+
+See https://pachterlab.github.io/kallisto/starting.html for instructions
+on interpreting the output above.
+
+EOM

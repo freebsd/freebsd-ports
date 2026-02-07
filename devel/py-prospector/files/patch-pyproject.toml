@@ -1,0 +1,24 @@
+--- pyproject.toml.orig	2024-10-11 09:47:18 UTC
++++ pyproject.toml
+@@ -39,7 +39,6 @@ pylint = ">=3.0"
+ [tool.poetry.dependencies]
+ python = ">=3.9,<4.0"
+ pylint = ">=3.0"
+-pylint-celery = "0.3"
+ pylint-django = ">=2.6.1"
+ pylint-flask = "0.6"
+ requirements-detector = ">=1.3.1"
+@@ -48,11 +47,11 @@ pycodestyle = ">=2.9.0"
+ flake8 = "*"
+ pyflakes = ">=2.2.0"
+ pycodestyle = ">=2.9.0"
+-pep8-naming = ">=0.3.3,<=0.10.0"
++pep8-naming = ">=0.3.3"
+ pydocstyle = ">=2.0.0"
+ dodgy = "^0.2.1"
+ toml = "^0.10.2"
+-setoptconf-tmp = "^0.3.1"
++setoptconf = "^0.3.0"
+ GitPython = "^3.1.27"
+ packaging = "*"
+ bandit = {version = ">=1.5.1", optional = true}

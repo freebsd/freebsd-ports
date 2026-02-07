@@ -1,0 +1,19 @@
+Tiny C Compiler is perhaps the smallest ANSI C compiler, by Fabrice Bellard.
+
+  - It is small: you can compile and execute C code everywhere, for example
+    on rescue disks;
+
+  - It is fast!  TCC generates optimized x86 code.  No byte code overhead.
+    Compile, assemble, and link about 7 times faster than 'gcc -O0';
+
+  - Any C dynamic library can be used directly.  TCC is heading towards
+    full ISO C99 compliance.  TCC can of course compile itself;
+
+  - It is safe!  TCC includes optional memory and bound checker.  Bound
+    checked code can be mixed freely with standard code;
+
+  - Compile and execute C source directly.  No linking or assembly is
+    necessary.  Full C preprocessor included;
+
+  - C script supported: just add '#!/bin/env tcc -run' at the first line
+    of your C source, and execute it directly from the command line.

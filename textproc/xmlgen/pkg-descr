@@ -1,0 +1,7 @@
+xmlgen is a TCL package to write XML documents in Tcl.
+
+This XML code is expressed by TCL code, which is translated.
+
+Every tag is made into a markup command which takes attributes and
+the element's content as parameters and then prints the XML tagged
+content. Of course, the content again can contain markup commands.

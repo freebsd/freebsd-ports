@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Please configure your AWS credentials, either through environment variables or
+~/.aws/credentials config file.
+
+For example:
+
+export AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXX
+export AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+or in ~/.aws/credentials (make sure you chmod 600 ~/.aws/credentials):
+
+[default]
+aws_access_key_id = AKID1234567890
+aws_secret_access_key = MY-SECRET-KEY
+
+You can switch between different sets in the credentials file by passing
+--profile to any command, or setting the environment variable AWS_PROFILE.
+
+For example:
+    cli53 list --profile my_profile
+EOM
+}
+]

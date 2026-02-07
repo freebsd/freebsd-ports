@@ -1,0 +1,8 @@
+Mathomatic is a highly portable, general purpose CAS (Computer Algebra System).
+Mathomatic can:
+
+    * Solve, simplify, and compare algebraic equations,
+    * Perform calculus transformations,
+    * Help with finite series analysis,
+    * Perform complex number and polynomial arithmetic,
+    * Generate efficient C or Java code from equations.

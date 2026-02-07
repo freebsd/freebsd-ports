@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/fo.dat
+lib/aspell-%%VER%%/fo_phonet.dat
+share/aspell/føroyskt.alias
+share/aspell/faroese.alias
+share/aspell/fo.multi
+share/aspell/fo.rws

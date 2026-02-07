@@ -1,0 +1,3 @@
+Lion, EvoLved Sign Momentum, is a new optimizer discovered by Google Brain that
+is purportedly better than Adam(w), in Pytorch. This is nearly a straight copy
+from here, with few minor modifications.

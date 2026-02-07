@@ -1,0 +1,12 @@
+--- src/%%NVSRC%%/nvidia_subr.c.orig	2022-03-16 11:18:11 UTC
++++ src/%%NVSRC%%/nvidia_subr.c
+@@ -727,6 +727,9 @@ int nvidia_modevent(
+              * time.
+              */
+             sc = &nvidia_ctl_sc;
++#if __FreeBSD_version >= 1400058
++            nvidia_devclass = devclass_create("nvidia");
++#endif
+ 
+             nvidia_stack_t_zone = uma_zcreate("nvidia_stack_t", sizeof(nvidia_stack_t),
+                     NULL, NULL, NULL, NULL, UMA_ALIGN_PTR, 0);

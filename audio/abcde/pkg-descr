@@ -1,0 +1,8 @@
+abcde is a command line (CLI) CD encoder. It will read your CD, contact a CDDB
+provider, download the track information, rip your CD and store all the encoded
+tracks in the tree layout you define.
+
+It supports multiple encoders for several formats, such as FLAC, Ogg/Vorbis,
+MP3,... and will use one single rip to create as many output formats as you want
+
+Many other useful features are supported.

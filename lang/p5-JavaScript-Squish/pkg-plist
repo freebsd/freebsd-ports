@@ -1,0 +1,4 @@
+bin/js_compactor
+%%PERL5_MAN3%%/JavaScript::Squish.3.gz
+%%SITE_PERL%%/JavaScript/Squish.pm
+%%PERL5_MAN1%%/js_compactor.1.gz

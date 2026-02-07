@@ -1,0 +1,13 @@
+Ophcrack is a Windows password cracker based on a time-memory trade-off
+using rainbow tables.  This is a new variant of Hellman's original trade-off,
+with better performance.  It recovers 99.9% of alphanumeric passwords in
+seconds and offers the following features:
+
+  - Runs on Windows, GNU/Linux, FreeBSD, macOS, etc.
+  - Cracks LM and NTLM hashes
+  - Free tables available for alphanumeric LM hashes
+  - Brute-force module for simple passwords
+  - Audit mode and CSV export
+  - Real-time graphs to analyze passwords (optional)
+  - Loads hashes from local SAM, remote SAM, encrypted SAM
+    recovered from a Windows partition

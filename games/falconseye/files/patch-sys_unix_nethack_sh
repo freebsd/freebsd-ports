@@ -1,0 +1,19 @@
+--- sys/unix/nethack.sh.orig	Sun Jun 24 18:57:24 2001
++++ sys/unix/nethack.sh	Thu Jul  5 16:22:17 2001
+@@ -6,6 +6,16 @@ export HACKDIR
+ HACK=$HACKDIR/nethack
+ MAXNROFPLAYERS=4
+ 
++# Handle extra config setup
++: ${FALCONCONFIG:=${HOME}/.falcon}
++if [ -d ${FALCONCONFIG} ]; then
++	:
++else
++    mkdir -p ${FALCONCONFIG}
++    cp ${HACKDIR}/config/* ${FALCONCONFIG}
++fi
++export FALCONCONFIG
++
+ # see if we can find the full path name of PAGER, so help files work properly
+ # assume that if someone sets up a special variable (HACKPAGER) for NetHack,
+ # it will already be in a form acceptable to NetHack

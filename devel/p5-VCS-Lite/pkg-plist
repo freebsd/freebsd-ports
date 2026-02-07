@@ -1,0 +1,7 @@
+bin/vldiff
+bin/vlmerge
+bin/vlpatch
+%%PERL5_MAN3%%/VCS::Lite.3.gz
+%%PERL5_MAN3%%/VCS::Lite::Delta.3.gz
+%%SITE_PERL%%/VCS/Lite.pm
+%%SITE_PERL%%/VCS/Lite/Delta.pm

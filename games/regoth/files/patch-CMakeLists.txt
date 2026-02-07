@@ -1,0 +1,134 @@
+--- CMakeLists.txt.orig	2018-04-23 17:26:25 UTC
++++ CMakeLists.txt
+@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
+ 
+ 
+ option (REGOTH_BUILD_WITH_INSTALLER_EXTRACTOR "Compile with library to extract some installers of Gothic" OFF) 
++option (REGOTH_BUILD_WITH_SYSTEM_OPENAL "Compile with system OpenAL" OFF) 
+ 
+ 
+ # Vim - You Complete Me
+@@ -174,6 +175,9 @@ include_directories(lib/bullet3/src)
+ set(BULLET_LIBRARIES BulletSoftBody BulletDynamics BulletCollision LinearMath)
+ set(BULLET_MISC Bullet3Dynamics Bullet2FileLoader Bullet3Collision Bullet3Geometry Bullet3OpenCL_clew BulletFileLoader BulletWorldImporter BulletXmlWorldImporter ConvexDecomposition GIMPACTUtils HACD Test_BulletDynamics Test_BulletInverseDynamics Test_Collision)
+ 
++# Find OpenGL
++find_package(OpenGL REQUIRED)
++include_directories(${OPENGL_INCLUDE_DIR}) # required by glfw headers
+ 
+ # ------------------ Engine lib ------------------
+ file(GLOB ENGINE_SRC
+@@ -223,54 +227,64 @@ endif()
+ # ------------------ OpenAL ------------------
+ 
+ # Set up OpenAL
++if(REGOTH_BUILD_WITH_SYSTEM_OPENAL AND NOT EMSCRIPTEN)
++    find_package(OpenAL REQUIRED)
++    include_directories(${OPENAL_INCLUDE_DIR})
+ 
+-set(ALSOFT_CONFIG OFF CACHE BOOL "" FORCE)
+-set(ALSOFT_EXAMPLES OFF CACHE BOOL "" FORCE)
+-set(ALSOFT_INSTALL OFF CACHE BOOL "" FORCE)
+-
+-if (UNIX)
+-    set(LIBTYPE STATIC CACHE STRING "" FORCE)
+-    if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+-        set(ALSOFT_REQUIRE_ALSA ON CACHE BOOL "" FORCE)
+-        set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
+-    elseif(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+-        set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
+-        set(ALSOFT_BACKEND_OSS ON CACHE BOOL "" FORCE)
+-        set(ALSOFT_BACKEND_SNDIO OFF CACHE BOOL "" FORCE)
+-        set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
+-    elseif(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+-        set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
+-        set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
+-        set(ALSOFT_BACKEND_SNDIO ON CACHE BOOL "" FORCE)
+-        set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
++    if (UNIX)
++        target_link_libraries(engine ${OPENAL_LIBRARY})
++    elseif(WIN32)
++        target_link_libraries(engine common ${OPENAL_LIBRARY})
+     endif()
+ else()
+-    set(LIBTYPE SHARED CACHE STRING "" FORCE)
+-endif()
++    set(ALSOFT_CONFIG OFF CACHE BOOL "" FORCE)
++    set(ALSOFT_EXAMPLES OFF CACHE BOOL "" FORCE)
++    set(ALSOFT_INSTALL OFF CACHE BOOL "" FORCE)
+ 
+-if(NOT EMSCRIPTEN)
+-    add_subdirectory(${CMAKE_SOURCE_DIR}/lib/openal-soft)
+-    include_directories(${CMAKE_SOURCE_DIR}/lib/openal-soft/include)
+-
+     if (UNIX)
++        set(LIBTYPE STATIC CACHE STRING "" FORCE)
+         if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+-          set(ALSOFT_REQUIRE_ALSA ON CACHE BOOL "" FORCE)
+-          set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
++            set(ALSOFT_REQUIRE_ALSA ON CACHE BOOL "" FORCE)
++            set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
+         elseif(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+-          set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
+-          set(ALSOFT_BACKEND_OSS ON CACHE BOOL "" FORCE)
+-          set(ALSOFT_BACKEND_SNDIO OFF CACHE BOOL "" FORCE)
+-          set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
++            set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
++            set(ALSOFT_BACKEND_OSS ON CACHE BOOL "" FORCE)
++            set(ALSOFT_BACKEND_SNDIO OFF CACHE BOOL "" FORCE)
++            set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
+         elseif(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+-          set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
+-          set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
+-          set(ALSOFT_BACKEND_SNDIO ON CACHE BOOL "" FORCE)
+-          set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
++            set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
++            set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
++            set(ALSOFT_BACKEND_SNDIO ON CACHE BOOL "" FORCE)
++            set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
+         endif()
+-        target_link_libraries(engine OpenAL)
+-    elseif(WIN32)
+-        target_link_libraries(engine common OpenAL)
++    else()
++        set(LIBTYPE SHARED CACHE STRING "" FORCE)
+     endif()
++
++    if(NOT EMSCRIPTEN)
++        add_subdirectory(${CMAKE_SOURCE_DIR}/lib/openal-soft)
++        include_directories(${CMAKE_SOURCE_DIR}/lib/openal-soft/include)
++
++        if (UNIX)
++            if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
++              set(ALSOFT_REQUIRE_ALSA ON CACHE BOOL "" FORCE)
++              set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
++            elseif(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++              set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
++              set(ALSOFT_BACKEND_OSS ON CACHE BOOL "" FORCE)
++              set(ALSOFT_BACKEND_SNDIO OFF CACHE BOOL "" FORCE)
++              set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
++            elseif(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
++              set(ALSOFT_REQUIRE_ALSA OFF CACHE BOOL "" FORCE)
++              set(ALSOFT_BACKEND_OSS OFF CACHE BOOL "" FORCE)
++              set(ALSOFT_BACKEND_SNDIO ON CACHE BOOL "" FORCE)
++              set(ALSOFT_BACKEND_SOLARIS OFF CACHE BOOL "" FORCE)
++            endif()
++            target_link_libraries(engine OpenAL)
++        elseif(WIN32)
++            target_link_libraries(engine common OpenAL)
++        endif()
++    endif()
+ endif()
+ 
+ # ---------------- libdmusic ----------------
+@@ -310,6 +324,10 @@ if(NOT ANDROID)
+ else()
+     add_definitions(-DRE_USE_SOUND)
+     target_link_libraries(engine android_glue)
++endif()
++
++if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++    include_directories("lib/bgfx-cmake/bx/include/compat/freebsd")
+ endif()
+ 
+ add_subdirectory(lib/adpcm)

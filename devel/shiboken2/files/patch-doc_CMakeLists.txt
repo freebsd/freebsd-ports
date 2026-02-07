@@ -1,0 +1,9 @@
+--- doc/CMakeLists.txt.orig	2019-02-08 21:36:33 UTC
++++ doc/CMakeLists.txt
+@@ -20,5 +20,5 @@ endif()
+ 
+ if (NOT WIN32)
+     file(GLOB manpages "${CMAKE_CURRENT_SOURCE_DIR}/*.1")
+-    install(FILES ${manpages} DESTINATION share/man/man1)
++    install(FILES ${manpages} DESTINATION man/man1)
+ endif()

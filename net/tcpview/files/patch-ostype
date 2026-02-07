@@ -1,0 +1,11 @@
+--- ostype.orig	1993-04-19 16:18:37 UTC
++++ ostype
+@@ -6,6 +6,8 @@ if ( -f /etc/motd ) then
+ set os="UNKNOWN"
+ if ( -f /etc/motd ) then
+ 	set os=`awk -f ostype.awk /etc/motd`
++else
++	set os=`uname -a | awk -f ostype.awk`
+ endif
+ if ($os == "") exit 1
+ if ($os == "UNKNOWN") then

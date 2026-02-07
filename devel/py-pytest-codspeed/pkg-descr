@@ -1,0 +1,8 @@
+CodSpeed is a continuous benchmarking platform that allows you to track and
+compare the performance of your codebase during development.
+
+It uses a smart runtime engine to measure the performance of your code in an
+accurate and reproducible way without creating a huge runtime overhead, unlike
+traditional benchmarks. CodSpeed produces detailed performance reports, helping
+you improve your codebase performance, directly within your repository
+provider(Pull Requests comments, Merge checks, ...).

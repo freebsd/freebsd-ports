@@ -1,0 +1,14 @@
+F# is an open-source, strongly typed, multi-paradigm programming
+language encompassing functional, imperative and object-oriented
+programming techniques.  F# is most often used as a cross-platform CLI
+language, but can also be used to generate JavaScript and GPU code.
+
+F# is developed by The F# Software Foundation and Microsoft.  An open
+source, cross-platform edition of F# is available from the F# Software
+Foundation.  F# is also a fully supported language in Visual Studio.
+Other tools supporting F# development include Mono, MonoDevelop,
+SharpDevelop and the WebSharper tools for JavaScript and HTML5 web
+programming.
+
+F# originated as a variant of ML and has been influenced by OCaml, C#,
+Python, Haskell, Scala and Erlang.

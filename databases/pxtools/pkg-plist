@@ -1,0 +1,5 @@
+bin/pxinfo
+bin/pxcsvdump
+bin/pxsqldump
+bin/pxxmldump
+share/locale/de/LC_MESSAGES/pxtools.mo

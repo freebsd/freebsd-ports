@@ -1,0 +1,2 @@
+This plugin allows your controller class to dispatch XMLRPC methods from
+its own class.

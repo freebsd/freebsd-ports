@@ -1,0 +1,8 @@
+%%SITE_PERL%%/AnyMQ.pm
+%%SITE_PERL%%/AnyMQ/Queue.pm
+%%SITE_PERL%%/AnyMQ/Topic.pm
+%%SITE_PERL%%/AnyMQ/Topic/Trait/WithBacklog.pm
+%%PERL5_MAN3%%/AnyMQ.3.gz
+%%PERL5_MAN3%%/AnyMQ::Queue.3.gz
+%%PERL5_MAN3%%/AnyMQ::Topic.3.gz
+%%PERL5_MAN3%%/AnyMQ::Topic::Trait::WithBacklog.3.gz

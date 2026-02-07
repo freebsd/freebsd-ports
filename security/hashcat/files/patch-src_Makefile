@@ -1,0 +1,50 @@
+--- src/Makefile.orig	2025-08-23 08:43:56 UTC
++++ src/Makefile
+@@ -75,8 +75,9 @@ RM                      := rm
+ FIND                    := find
+ INSTALL                 := install
+ RM                      := rm
+-SED                     := sed
+-SED_IN_PLACE            := -i
++CXXLIB                  := -lc++
++SED                     := /usr/bin/sed
++SED_IN_PLACE            := -i ""
+ 
+ ifeq ($(UNAME),Darwin)
+ CC                      := clang
+@@ -95,7 +96,9 @@ CXX                     := c++
+ ifneq (,$(filter $(UNAME),FreeBSD NetBSD DragonFly))
+ CC                      := cc
+ CXX                     := c++
+-SED                     := gsed
++CXXLIB                  := -lc++
++SED                     := /usr/bin/sed
++SED_IN_PLACE            := -i ""
+ endif
+ 
+ ifneq (,$(filter $(UNAME),OpenBSD))
+@@ -702,6 +705,11 @@ uninstall:
+ ## native compiled hashcat library and frontend
+ ##
+ 
++ifeq ($(shell uname -p),powerpc64le)
++obj/emu_inc_cipher_serpent.NATIVE.o:  src/emu_inc_cipher_serpent.c
++	$(CC) -c $(CCFLAGS) $(CFLAGS_NATIVE) -O0 $< -o $@ -fpic
++endif
++
+ obj/%.NATIVE.o: src/%.c
+ 	$(CC) -c $(CCFLAGS) $(CFLAGS_NATIVE) $< -o $@ -fpic
+ 
+@@ -752,10 +760,10 @@ $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
+ 
+ ifeq ($(SHARED),1)
+ $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
+-	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@ $(HASHCAT_LIBRARY) $(LFLAGS_NATIVE) -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
++	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@ $(HASHCAT_LIBRARY) $(LFLAGS_NATIVE) ${CXXLIB} -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
+ else
+ $(HASHCAT_FRONTEND): src/main.c obj/combined.NATIVE.a
+-	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@                    $(LFLAGS_NATIVE) -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
++	$(CC)    $(CCFLAGS) $(CFLAGS_NATIVE) $^ -o $@                    $(LFLAGS_NATIVE) ${CXXLIB} -DCOMPTIME=$(COMPTIME) -DVERSION_TAG=\"$(VERSION_TAG)\" -DINSTALL_FOLDER=\"$(INSTALL_FOLDER)\" -DSHARED_FOLDER=\"$(SHARED_FOLDER)\" -DDOCUMENT_FOLDER=\"$(DOCUMENT_FOLDER)\"
+ endif
+ 
+ ##

@@ -1,0 +1,11 @@
+--- plugins/meson.build.orig	2025-08-01 15:34:51 UTC
++++ plugins/meson.build
+@@ -7,7 +7,7 @@ subdir('preserve-indent')
+ subdir('markdown-actions')
+ subdir('pastebin')
+ subdir('preserve-indent')
+-subdir('spell')
++#subdir('spell')
+ subdir('vim-emulation')
+ subdir('word-completion')
+ subdir('fuzzy-search')

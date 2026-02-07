@@ -1,0 +1,10 @@
+The PAL library is a partial re-implementation of Pat Wallace's popular SLALIB
+library written in C using a Gnu GPL license and layered on top of the IAU's
+SOFA library (or the BSD-licensed ERFA) where appropriate. PAL attempts to stick
+to the SLA C API where possible although palObs() has a more C-like API than the
+equivalent slaObs() function. In most cases it is enough to simply change the
+function prefix of a routine in order to link against PAL rather than SLALIB.
+Routines calling SOFA use modern notation and precession models so will return
+slightly different answers than native SLALIB. PAL functions not available in
+SOFA were ported from the Fortran version of SLALIB that ships as part of the
+Starlink software and uses a GPL licence.

@@ -1,0 +1,105 @@
+--- doc/ponscr-ext.7.xml~
++++ doc/ponscr-ext.7.xml
+@@ -282,47 +282,61 @@ xmlns:xl="http://www.w3.org/1999/xlink">
+                 <varlistentry>
+                   <term><literal>punctuation</literal></term>
+                   <listitem>
+-                    <simpara>
+-                      
+-defines the following shortcuts:
+-.IP "" 2
+-.BR ... \ \->
+-ellipsis
+-.br
+-.BR \-\-
+-\-> en dash
+-.br
+-.BR \-\-\-
+-\-> em dash
+-.br
+-.BR (c)
+-\-> copyright symbol
+-.br
+-.BR (r)
+-\-> registered trademark symbol
+-.br
+-.BR (tm)
+-\-> trademark symbol
+-.br
+-.BR ++
+-\-> dagger
+-.br
+-.BR +++
+-\-> double dagger
+-.br
+-.BR **
+-\-> bullet
+-.br
+-.BR %_
+-\-> non-breaking space
+-.br
+-.BR %\-
+-\-> non-breaking hyphen
+-.br
+-.BR %\. \ \->
+-thin space
+-                      
+-                    </simpara>
++                    <simpara>Defines the following shortcuts:</simpara>
++                    <informaltable frame='none'>
++                      <tgroup cols='2'>
++                        <tbody>
++                          <row>
++                            <entry><emphasis role="bold">...</emphasis></entry>
++                            <entry>ellipsis</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">--</emphasis></entry>
++                            <entry>en dash</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">---</emphasis></entry>
++                            <entry>em dash</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">(c)</emphasis></entry>
++                            <entry>copyright symbol</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">(r)</emphasis></entry>
++                            <entry>registered trademark symbol</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">(tm)</emphasis></entry>
++                            <entry>trademark symbol</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">++</emphasis></entry>
++                            <entry>dagger</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">+++</emphasis></entry>
++                            <entry>double dagger</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">**</emphasis></entry>
++                            <entry>bullet</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">%_</emphasis></entry>
++                            <entry>non-breaking space</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">%-</emphasis></entry>
++                            <entry>non-breaking hyphen</entry>
++                          </row>
++                          <row>
++                            <entry><emphasis role="bold">%.</emphasis></entry>
++                            <entry>thin space</entry>
++                          </row>
++                        </tbody>
++                      </tgroup>
++                    </informaltable>
+                   </listitem>
+                 </varlistentry>
+               </variablelist>

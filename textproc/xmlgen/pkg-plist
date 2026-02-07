@@ -1,0 +1,9 @@
+lib/xmlgen/htmlgen.tcl
+lib/xmlgen/pkgIndex.tcl
+lib/xmlgen/sidenav.tcl
+lib/xmlgen/tab.tcl
+lib/xmlgen/xmlgen.tcl
+share/doc/xmlgen/htmlgen.html
+share/doc/xmlgen/overview.html
+share/doc/xmlgen/sidenav.html
+share/doc/xmlgen/xmlgen.html

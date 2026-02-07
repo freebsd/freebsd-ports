@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: fluent-bit
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable fluent-bit:
+#
+# fluent_bit_enable (bool):	Set to YES to enable fluent-bit
+# 				Default: NO
+# fluent_bit_config (str):	config files to use
+#				Default: %%ETCDIR%%/fluent-bit.conf
+# fluent_bit_flags (str):	Extra flags passed to fluent-bit
+# fluent_bit_user (str):	Default run as user nobody
+# fluent_bit_group (str):	Default run as group nogroup
+
+. /etc/rc.subr
+
+name="fluent_bit"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${fluent_bit_enable:="NO"}
+: ${fluent_bit_user:="nobody"}
+: ${fluent_bit_group:="nogroup"}
+: ${fluent_bit_config:="%%ETCDIR%%/fluent-bit.conf"}
+
+pidfile=/var/run/${name}.pid
+procname="%%PREFIX%%/bin/fluent-bit"
+command="/usr/sbin/daemon"
+command_args="-H -p ${pidfile} -o /var/log/${name}/${name}.log -t ${name} ${procname} --quiet --config ${fluent_bit_config} ${fluent_bit_flags}"
+
+start_precmd="${name}_startprecmd"
+stop_postcmd="${name}_stoppostcmd"
+
+fluent_bit_startprecmd()
+{
+	install -o ${fluent_bit_user} -g ${fluent_bit_group} -d /var/log/${name}
+	if [ ! -e ${pidfile} ]; then
+		install -m 0600 -o ${fluent_bit_user} -g ${fluent_bit_group} /dev/null ${pidfile}
+	fi
+}
+
+fluent_bit_stoppostcmd()
+{
+	rm -f ${pidfile}
+}
+
+run_rc_command "$1"

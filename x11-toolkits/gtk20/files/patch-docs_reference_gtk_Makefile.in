@@ -1,0 +1,11 @@
+--- docs/reference/gtk/Makefile.in.orig	2011-03-04 12:25:26.000000000 +0100
++++ docs/reference/gtk/Makefile.in	2011-03-04 12:25:42.000000000 +0100
+@@ -748,7 +748,7 @@
+ @ENABLE_GTK_DOC_TRUE@@GTK_DOC_BUILD_PDF_TRUE@PDF_BUILD_STAMP = pdf-build.stamp
+ 
+ ########################################################################
+-@ENABLE_MAN_TRUE@man_MANS = gtk-query-immodules-2.0.1 gtk-update-icon-cache.1 gtk-builder-convert.1
++@ENABLE_MAN_TRUE@man_MANS = gtk-query-immodules-2.0.1 gtk-builder-convert.1
+ @ENABLE_MAN_TRUE@BUILT_EXTRA_DIST = $(man_MANS)
+ all: all-am
+ 

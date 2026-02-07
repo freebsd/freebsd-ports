@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2025-04-10 19:49:39 UTC
++++ CMakeLists.txt
+@@ -69,7 +69,6 @@ set(C4CORE_SRC_FILES
+     c4/version.cpp
+     c4/windows_pop.hpp
+     c4/windows_push.hpp
+-    c4/c4core.natvis
+     #
+     c4/ext/debugbreak/debugbreak.h
+     c4/ext/rng/rng.hpp

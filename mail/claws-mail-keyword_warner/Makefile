@@ -1,0 +1,9 @@
+PORTNAME=	keyword_warner
+
+COMMENT=	Configurable keyword warning plugin for Claws Mail
+WWW=		https://www.claws-mail.org/plugins.php
+
+CLAWS_PLUGINS_BUILD=	${PORTNAME}
+
+.include "${.CURDIR}/../claws-mail/Makefile.claws"
+.include <bsd.port.mk>

@@ -1,0 +1,10 @@
+--- data/org.gnome.settings-daemon.plugins.gschema.xml.in.orig	2022-09-17 21:37:19 UTC
++++ data/org.gnome.settings-daemon.plugins.gschema.xml.in
+@@ -10,7 +10,6 @@
+       </description>
+     </key>
+     <child name="color" schema="org.gnome.settings-daemon.plugins.color"/>
+-    <child name="housekeeping" schema="org.gnome.settings-daemon.plugins.housekeeping"/>
+     <child name="media-keys" schema="org.gnome.settings-daemon.plugins.media-keys"/>
+     <child name="power" schema="org.gnome.settings-daemon.plugins.power"/>
+     <child name="xsettings" schema="org.gnome.settings-daemon.plugins.xsettings"/>

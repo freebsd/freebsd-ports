@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Nov  7 16:00:13 2003
++++ Makefile	Fri Nov  7 16:01:42 2003
+@@ -1,15 +1,15 @@
+ 
+-CFLAGS			= -Wall -Os
+-INCS			= -I/usr/X11R6/include/X11
+-LIBS			= -L/usr/X11R6/lib -lXpm -lX11 -lXext -lm
++CFLAGS			+= -Wall
++INCS			= -I${LOCALBASE}/include -I${LOCALBASE}/include/X11
++LIBS			= -L${LOCALBASE}/lib -lXpm -lX11 -lXext -lm
+ INSTALL_PREFIX	= /usr/local
+ 
+ 
+ wmtunlo: docklib.o wmtunlo.c mask.h master.h
+-	gcc $(CFLAGS) $(INCS) docklib.o wmtunlo.c -o wmtunlo $(LIBS)
++	${CC} $(CFLAGS) $(INCS) docklib.o wmtunlo.c -o wmtunlo $(LIBS)
+ 
+ docklib.o: docklib.c docklib.h
+-	gcc $(CFLAGS) $(INCS) -c docklib.c
++	${CC} $(CFLAGS) $(INCS) -c docklib.c
+ 
+ install:
+ 	cp ./wmtunlo $(INSTALL_PREFIX)/bin

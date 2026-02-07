@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Catalyst/Controller/RequestToken.pm
+%%SITE_PERL%%/Catalyst/Controller/RequestToken/Action/CreateToken.pm
+%%SITE_PERL%%/Catalyst/Controller/RequestToken/Action/RemoveToken.pm
+%%SITE_PERL%%/Catalyst/Controller/RequestToken/Action/ValidateToken.pm
+%%PERL5_MAN3%%/Catalyst::Controller::RequestToken.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::RequestToken::Action::CreateToken.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::RequestToken::Action::RemoveToken.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::RequestToken::Action::ValidateToken.3.gz

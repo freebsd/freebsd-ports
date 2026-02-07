@@ -1,0 +1,2 @@
+This class provides a low-level API for processing MultiPart MIME data
+streams conforming to MultiPart types as defined in RFC 2616.

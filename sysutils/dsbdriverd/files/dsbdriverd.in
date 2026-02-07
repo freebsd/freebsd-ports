@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: dsbdriverd
+# REQUIRE: devd
+# BEFORE: netwait
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dsbdriverd_enable (bool):	Set to NO by default.
+#				Set it to YES to enable dsbdriverd.
+# dsbdriverd_flags (str):	Flags passed to dsbdriverd on startup.
+#				Default is "".
+# dsbdriverd_exclude (str):	Space separated list of kernel modules (without
+#				.ko extension) to excluded from loading.
+#				Default is "".
+
+. /etc/rc.subr
+
+name=dsbdriverd
+desc="automatically try to load the suitable driver for your PCI and USB hardware"
+rcvar=dsbdriverd_enable
+pidfile="/var/run/dsbdriverd.pid"
+command="%%PREFIX%%/libexec/dsbdriverd"
+start_cmd="${name}_start"
+load_rc_config $name
+
+: ${dsbdriverd_enable:="NO"}
+
+dsbdriverd_start() {
+	if [ -n "$dsbdriverd_exclude" ]; then
+		dsbdriverd_flags="-x $(echo $dsbdriverd_exclude |
+		    sed -E 's/[ ]+/,/g')"
+	fi
+	echo "Starting ${name}."
+	${command} $dsbdriverd_flags
+}
+
+run_rc_command "$1"

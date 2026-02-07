@@ -1,0 +1,79 @@
+--- tests/mmap_err.tcl	2008-04-12 19:45:49.000000000 -0400
++++ tests/mmap_err.tcl	2013-02-04 18:38:40.000000000 -0500
+@@ -1,29 +1,10 @@
+ #!/usr/bin/tclsh
+ package require mmap
+-set fd [open /tmp/messages r]
+-set mp [mmap -length 30 -offset 4095 $fd]
+-close $fd
+-
+-puts Gets:
+-for {set i 0} {$i < 10} {incr i} {
+-    gets $mp line
+-    puts $line
++set fd [open messages r]
++if {[catch {mmap -length 30 -offset 4095 $fd} mp]} {
++	close $fd
++	puts "Using offset 4095 resulted in error ($mp), as expected. Good"
++} else {
++	puts "Offset 4095 should've caused an error. Test failed"
++	exit 1
+ }
+-close $mp
+-
+-set fd [open /tmp/a r+]
+-set mp [mmap -shared -length 30 $fd]
+-close $fd
+-
+-flush $mp
+-
+-seek $mp 1
+-puts -nonewline $mp alex
+-seek $mp 0
+-
+-puts Read:
+-puts [read $mp]
+-
+-puts [eof $mp]
+-
+-close $mp
+--- tests/test_mem2.tcl	2008-04-21 08:34:42.000000000 -0400
++++ tests/test_mem2.tcl	2013-02-04 18:41:57.000000000 -0500
+@@ -2,10 +2,10 @@
+ package require mmap
+ 
+-catch { file copy tests/testfile tests/testfile1 }
+-set fd [open tests/testfile1 r+]
++catch { file copy testfile testfile1 }
++set fd [open testfile1 r+]
+ set mp [mmap -shared -length 30 $fd]
+ close $fd
+ 
+-while {1} {
++for {set i 0} {$i < 3} {incr i} {
+ flush $mp
+ 
+@@ -23,3 +23,3 @@
+ close $mp
+ 
+-file delete tests/testfile1
++file delete testfile1
+--- tests/test_mem.tcl	2008-04-21 08:35:36.000000000 -0400
++++ tests/test_mem.tcl	2013-02-04 18:43:29.000000000 -0500
+@@ -2,7 +2,7 @@
+ package require mmap
+ 
+-while {1} {
+-catch { file copy tests/testfile tests/testfile1 }
+-set fd [open tests/testfile1 r+]
++for {set i 0} {$i < 3} {incr i} {
++catch { file copy testfile testfile1 }
++set fd [open testfile1 r+]
+ set mp [mmap -shared -length 30 $fd]
+ close $fd
+@@ -21,4 +21,4 @@
+ close $mp
+ 
+-file delete tests/testfile1
++file delete testfile1
+ }

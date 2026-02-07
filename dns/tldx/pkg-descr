@@ -1,0 +1,10 @@
+tldx helps you brainstorm available domain names fast.
+
+Features:
+- Smart keyword-based domain permutations (prefixes, suffixes, TLDs)
+- Fast and concurrent availability checks with RDAP
+- Streams results as they're found
+- Supports multiple output formats (text, json, json-stream, json-array, csv)
+- Supports TLD presets to quickly select groups of common or curated TLD sets
+- Optional filtering by domain length
+- Great for technical founders, indie hackers, and naming brainstorms

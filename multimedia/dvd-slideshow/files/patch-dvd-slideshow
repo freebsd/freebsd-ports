@@ -1,0 +1,23 @@
+--- dvd-slideshow.orig	2011-08-22 11:48:52.000000000 -0600
++++ dvd-slideshow	2013-05-28 15:26:51.000000000 -0600
+@@ -3996,7 +3996,7 @@ do
+ 			mkdir -p "$outdir/$newname"_pics
+ 		fi
+ 		if [ "$copy" -eq 1 ] ; then
+-			cp -af "${image[$i]}" "$outdir/$newname"_pics
++			cp -pf "${image[$i]}" "$outdir/$newname"_pics
+ 		fi
+ 		moviefiles=$(( $moviefiles + 1 ))
+ 	elif [ "${filetype[$i]}" == 'ogg' ] || [ "${filetype[$i]}" == 'mp3' ] || [ "${filetype[$i]}" == 'wav' ] || [ "${image[$i]}" == 'silence' ] || [ "${filetype[$i]}" == 'm4a' ] || [ "${filetype[$i]}" == 'aac' ] ; then
+@@ -7407,9 +7407,9 @@ if [ "$output_format" == 'flv' ] ; then 
+ 	fi
+ #	myecho "[dvd-slideshow] Generating video thumbnail..."
+ #	ffmpeg -threads "$cores" -y -i "$outdir"/"$slideshow_name".flv -f mjpeg -t 0.001 "$outdir"/"$slideshow_name".jpg >> "$ffmpeg_out" 2>&1
+-	if [ -f "/usr/bin/flvtool2" ] ; then
++	if [ -f "/usr/local/bin/flvtool2" ] ; then
+ 		myecho "[dvd-slideshow] Running flvtool2 -U $slideshow_name".flv
+-		/usr/bin/flvtool2 -U "$outdir"/"$slideshow_name".flv
++		/usr/local/bin/flvtool2 -U "$outdir"/"$slideshow_name".flv
+ 	fi
+ elif [ "$output_format" == 'swf' ] ; then
+ 	myecho "[dvd-slideshow] Adding audio to .swf file"

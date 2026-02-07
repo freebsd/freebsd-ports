@@ -1,0 +1,46 @@
+--- ./exec/make_profile.in.orig	2010-03-24 02:58:10.000000000 -0700
++++ ./exec/make_profile.in	2010-11-17 11:06:07.000000000 -0800
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ umask 0077
+ # new profile directory
+@@ -6,7 +6,7 @@
+ # old profile directory
+ opdir=~/.fbpanel
+ # system profile directory
+-spdir=%%datadir%%/fbpanel
++spdir=%%datadir%%/examples/fbpanel
+ # if profile name was not set, use  'default'
+ profile=${1:-default}
+ 
+@@ -42,24 +42,24 @@
+ # Creates new profile using system profile as template
+ # $1 - system profile name
+ # $2 - destination profile name
+-function take_system_profile ()
++take_system_profile ()
+ {
+     [ -r "$spdir/$1" ] || return 1
+ 
+     local browser terminal filer
+-    for browser in x-www-browser firefox opera; do
++    for browser in firefox firefox35 firefox36 midori opera; do
+         if which $browser 2> /dev/null > /dev/null; then
+             opt="$opt -e s/x-www-browser/$browser/"
+             break
+         fi
+     done
+-    for terminal in x-terminal urxvt gnome-terminal; do
++    for terminal in x-terminal Terminal konsole roxterm xterm; do
+         if which $terminal 2> /dev/null > /dev/null; then
+             opt="$opt -e s/x-terminal/$terminal/"
+             break
+         fi
+     done
+-    for filer in x-file-manager thunar pcmanfm rox; do
++    for filer in emelfm2 thunar pcmanfm rox konqueror; do
+         if which $filer 2> /dev/null > /dev/null; then
+             opt="$opt -e s/x-file-manager/$filer/"
+             break

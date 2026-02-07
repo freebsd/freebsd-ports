@@ -1,0 +1,13 @@
+ET: Legacy is an open source project based on the code of Wolfenstein: Enemy
+Territory which was released in 2010 under the terms of the GPLv3.
+
+There are two aspects to this project:
+
+- An updated game engine, ET: Legacy, which aims to fix bugs and security
+exploits, remove old dependencies, add useful features and modernize its
+graphics while still remaining compatible with ET 2.60b and as many of its mods
+as possible.
+
+- A new mod, Legacy, which aims to add many useful features and improvements
+while staying close to the original gameplay, as well as being lightweight and
+extensible through Lua scripts.

@@ -1,0 +1,16 @@
+Anubis is a web proxy that protects upstream resources from scraper bots
+by using a short hash-based proof-of-work challenge. It "weighs the soul of
+your connection" to determine if you're a legitimate user or an automated bot.
+
+Anubis serves as a protective layer for websites that are being aggressively
+scraped by AI bots and other automated systems that don't respect robots.txt
+standards. It provides an alternative to services like Cloudflare when those
+options aren't available or desired.
+
+The proof-of-work system requires clients to solve a computational challenge
+before accessing protected content, effectively deterring most automated
+scrapers while allowing legitimate users through with minimal disruption.
+
+It should be noted that Anubis may cause problems for accessibility of
+protected websites, potentially confusing screen readers for blind users,
+or other problems for assisted interaction. Please consider carefully.

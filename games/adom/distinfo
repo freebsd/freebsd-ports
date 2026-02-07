@@ -1,0 +1,5 @@
+TIMESTAMP = 1679308153
+SHA256 (adom_freebsd_32_3.0.6.tar.gz) = bdcdc22eec21c573adac32e0a2c3b32e206a9733302eb07d07528de6631a12ef
+SIZE (adom_freebsd_32_3.0.6.tar.gz) = 1641496
+SHA256 (adom_freebsd_64_3.0.6.tar.gz) = b1fc487d64d862c050ffa85a337911374e67340766ba93f35662dfab43d8efce
+SIZE (adom_freebsd_64_3.0.6.tar.gz) = 1686470

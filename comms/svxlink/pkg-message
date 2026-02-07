@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+svxlink is now installed.
+
+configuration files in ${PREFIX}/etc/svxlink
+remotetrx.conf svxlink.conf svxreflector.conf
+TclVoiceMail.conf gpio.conf 
+
+More modules are in ${PREFIX}/etc/svxlink/svxlink.d
+
+man svxlink for more information
+
+To start svxlink, svxreflector or remotetrx as needed add to /etc/rc.local
+svxlink_enable="YES"
+svxreflector_enable="YES"
+remotetrx_enable="YES"
+
+EOM
+}
+]
+

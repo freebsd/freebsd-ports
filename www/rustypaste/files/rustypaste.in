@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: rustypaste
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for rustypaste in /etc/rc.conf
+#
+# rustypaste_enable (bool):	Enable rustypaste. (Default=NO)
+# rustypaste_env_file (str):	Path containing the environment variables
+#                           	to be used by rustypaste. (Default: %%ETCDIR%%/rustypaste.env)
+# rustypaste_logfile (str):	Log file used to store the rustypaste's output. (Default: /var/log/rustypaste.log)
+# rustypaste_pidfile (str):	File used by rustypaste to store the process ID. (Default: /var/run/rustypaste.pid)
+# rustypaste_username (str):	User to run rustypaste as. (Default: rustypaste)
+
+. /etc/rc.subr
+
+name="rustypaste"
+desc="Minimal file upload/pastebin service"
+rcvar="rustypaste_enable"
+
+load_rc_config $name
+
+: ${rustypaste_enable:="NO"}
+: ${rustypaste_env_file:="%%ETCDIR%%/rustypaste.env"}
+: ${rustypaste_logfile:="/var/log/rustypaste.log"}
+: ${rustypaste_pidfile:="/var/run/rustypaste.pid"}
+: ${rustypaste_username:="%%USER%%"}
+
+pidfile="${rustypaste_pidfile}"
+procname="%%PREFIX%%/bin/rustypaste"
+command="/usr/sbin/daemon"
+command_args="-o '${rustypaste_logfile}' -p '${pidfile}' -u '${rustypaste_username}' -t '${desc}' -- ${procname}"
+
+run_rc_command "$1"

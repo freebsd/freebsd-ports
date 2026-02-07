@@ -1,0 +1,11 @@
+--- lua/CMakeLists.txt.orig	2024-04-24 13:56:28 UTC
++++ lua/CMakeLists.txt
+@@ -28,6 +28,8 @@ if(BUILD_LUA_CAIRO)
+ if(BUILD_LUA_CAIRO)
+   include_directories(${luacairo_includes} ${CMAKE_CURRENT_SOURCE_DIR})
+ 
++  link_directories(${LIBS})
++
+   # cairo_set_dash() needs this special hack to work properly if you have a
+   # better solution, please let me know
+   wrap_tolua(luacairo_src cairo.pkg libcairo.patch)

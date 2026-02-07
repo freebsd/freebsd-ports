@@ -1,0 +1,15 @@
+--- pkg/files.orig	2024-02-27 02:31:04 UTC
++++ pkg/files
+@@ -4,8 +4,8 @@ MAN:%%CURDIR%%/README.md:%%DOCSDIR%%/README.md
+ PROGRAM:%%OBJDIR%%/loadplay:%%PREFIX%%/bin/loadplay
+ LIB:%%OBJDIR%%/libloadplay.so:%%PREFIX%%/lib/libloadplay.so
+ MAN:%%CURDIR%%/README.md:%%DOCSDIR%%/README.md
+-MAN:%%CURDIR%%/man/powerd++.8:%%PREFIX%%/man/man8/powerd++.8.gz
+-SYMLINK:powerd++.8.gz:%%PREFIX%%/man/man8/powerdxx.8.gz
+-MAN:%%CURDIR%%/man/loadrec.1:%%PREFIX%%/man/man1/loadrec.1.gz
+-MAN:%%CURDIR%%/man/loadplay.1:%%PREFIX%%/man/man1/loadplay.1.gz
++MAN:%%CURDIR%%/man/powerd++.8:%%PREFIX%%/share/man/man8/powerd++.8.gz
++SYMLINK:powerd++.8.gz:%%PREFIX%%/share/man/man8/powerdxx.8.gz
++MAN:%%CURDIR%%/man/loadrec.1:%%PREFIX%%/share/man/man1/loadrec.1.gz
++MAN:%%CURDIR%%/man/loadplay.1:%%PREFIX%%/share/man/man1/loadplay.1.gz
+ SCRIPT:%%CURDIR%%/powerd++.rc:%%PREFIX%%/etc/rc.d/powerdxx

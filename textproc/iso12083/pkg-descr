@@ -1,0 +1,8 @@
+ISO 12083 is the successor to the Association of American
+Publishers (AAP) Electronic Publishing Special Interest Group
+(EPSIG) standard.  Four DTDs are included in this package--one
+for articles, one for books, one for serials, and one for
+mathematics which may be used in any of the other three.
+
+July 10, 1997
+jfieber@FreeBSD.org

@@ -1,0 +1,60 @@
+--- lib/Makefile.orig	Tue Nov 28 01:33:49 2000
++++ lib/Makefile	Mon Jun  3 14:16:50 2002
+@@ -1,27 +1,28 @@
+-LIB =		iconv
++LIB =		biconv
+ SHLIB_MAJOR =	2
+ SHLIB_MINOR =	0
+ 
+ SRCS =		aliases.c ccs.c ces.c ces_euc.c ces_iso2022.c ces_table.c \
+-		converter.c iconv.c utils.c
++		converter.c iconv.c utils.c biconv.h
+ 
+ BUILTIN_CCS !=	cd ${.CURDIR}/../ccs && make lib >/dev/null && ${AR} t libccs.a
+ BUILTIN_CES !=	cd ${.CURDIR}/../ces && make lib >/dev/null && ${AR} t libces.a
+ BUILTIN_CES_STATIC !=	cd ${.CURDIR}/../ces && make libces_static.a \
+ 				>/dev/null && ${AR} t libces_static.a
+ 
+-OBJS =		${BUILTIN_CCS:C|.|../ccs/&|} ${BUILTIN_CES:C|.|../ces/&|}
+-STATICOBJS =	${BUILTIN_CES_STATIC:C|.|../ces/&|}
++OBJS =		${BUILTIN_CCS:S|^|../ccs/&|} ${BUILTIN_CES:S|^|../ces/&|}
++STATICOBJS =	${BUILTIN_CES_STATIC:S|^|../ces/&|}
+ 
+ LIBDIR =	${PREFIX}/lib
+ 
+-INCDIR =	${PREFIX}/include
+-INCS =		iconv.h
++INCSDIR =	${PREFIX}/include
++INCDIR =	${INCSDIR}		# for 4.x bsd.lib.mk
++INCS =		biconv.h
+ 
+ CFLAGS +=	-DICONV_MODULE_PATH=\"${MODULEDIR}\" \
+ 		-DICONV_TABLE_PATH=\"${TABLEDIR}\"
+ 
+-MAN3 =		iconv.3 iconv_open.3 iconv_close.3
++MAN3 =		biconv.3 biconv_open.3 biconv_close.3
+ 
+ ALIASES =	${.CURDIR}/../ccs/charset.aliases \
+ 		${.CURDIR}/../ces/charset.aliases
+@@ -32,13 +33,19 @@
+ 		cat ${.ALLSRC} | ${.CURDIR}/../iconv_builtin ${BUILTIN_CCS} \
+ 			${BUILTIN_CES} PIC ${BUILTIN_CES_STATIC} > ${.TARGET}
+ 
+-iconv.3:	iconv.3.in
++biconv.3:	iconv.3.in
+ 		sed -e "s|@@TABLE_DIR@@|${TABLEDIR}|" \
+ 		    -e "s|@@MODULE_DIR@@|${MODULEDIR}|" ${.ALLSRC} > ${.TARGET}
+ 
+-iconv_open.3:	iconv_open.3.in
++biconv_open.3:	iconv_open.3.in
+ 		sed -e "s|@@TABLE_DIR@@|${TABLEDIR}|" \
+ 		    -e "s|@@MODULE_DIR@@|${MODULEDIR}|" ${.ALLSRC} > ${.TARGET}
++
++biconv_close.3:	iconv_close.3
++		cp ${.ALLSRC} ${.TARGET}
++
++biconv.h:	iconv.h
++		cp ${.ALLSRC} ${.TARGET}
+ 
+ CLEANFILES=	${.CURDIR}/../ccs/libccs.a ${.CURDIR}/../ces/libces*.a \
+ 		aliases.h iconv.3 iconv_open.3

@@ -1,0 +1,12 @@
+json-tui is a JSON terminal UI made in C++.
+
+Features:
+* Interactive: Use keyboard or mouse to scroll/expand objects.
+* Colors
+* Responsive: Adapt to the terminal dimensions. Very long text values are
+  wrapped on several lines.
+* Cross-platform
+* The output is displayed inline with the previous commands. Meaning you can
+  still see the json after leaving json-tui.
+* (Vim users): Also support j/k for navigation.
+* Table view: Turn arrays of objects into tables.

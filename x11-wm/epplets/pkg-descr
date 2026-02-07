@@ -1,0 +1,10 @@
+A collection of dock applications for use with
+the Enlightenment window manager.
+
+The currently supported epplets are:
+
+E-Areas, E-Bandwidth E-Biff, E-Clock, E-Cpu, E-Disk, E-Exec, E-Load,
+E-LoadMeter, E-Magic, E-MemWatch, E-Mixer, E-MoonClock, E-Net,
+E-NetFlame, E-NetGraph, E-OpenGL-Demo, E-Pants, E-Pinger, E-PlayCD,
+E-Power, E-SD, E-ScreenSave, E-ScreenShoot, E-Slides, E-Sys, E-Time,
+E-Toolbox, E-UrlWatch, E-Wireless, EMix

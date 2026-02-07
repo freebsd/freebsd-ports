@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+If you are upgrading from an old version of wwwoffle, you may need to
+convert the cache directory structure to work with the new version.  You
+can find programs in the WWWOFFLE distribution tarball to do this, along
+with instructions about what is needed.  A more common requirement is to
+run the `upgrade-config.pl' script, so you will find a copy of this in
+%%WWWOFFLE_SPOOL%%/upgrade-config.pl.  You should run this on your
+configuration file, e.g.:
+
+     $ perl %%WWWOFFLE_SPOOL%%/upgrade-config.pl \
+            %%PREFIX%%/etc/wwwoffle.conf
+EOM
+}
+]

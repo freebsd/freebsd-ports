@@ -1,0 +1,1 @@
+Generic server class based on ext/sockets, used to develop any kind of server.

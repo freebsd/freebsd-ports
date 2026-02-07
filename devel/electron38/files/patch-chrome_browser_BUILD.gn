@@ -1,0 +1,16 @@
+--- chrome/browser/BUILD.gn.orig	2025-09-10 14:33:47 UTC
++++ chrome/browser/BUILD.gn
+@@ -7039,6 +7039,13 @@ static_library("browser") {
+           [ "//third_party/webrtc/modules/desktop_capture:pipewire_config" ]
+     }
+ 
++    if (is_bsd) {
++      sources -= [
++        "metrics/bluetooth_metrics_provider.cc",
++        "metrics/bluetooth_metrics_provider.h",
++      ]
++    }
++
+     if (use_dbus) {
+       sources += [
+         "dbus_memory_pressure_evaluator_linux.cc",

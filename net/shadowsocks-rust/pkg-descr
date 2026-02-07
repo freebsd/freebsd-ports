@@ -1,0 +1,3 @@
+shadowsocks-rust is a Rust port of shadowsocks.
+
+shadowsocks is a fast tunnel proxy that helps you bypass firewalls.

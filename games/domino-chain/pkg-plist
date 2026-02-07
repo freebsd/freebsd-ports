@@ -1,0 +1,16 @@
+bin/domino-chain
+share/applications/domino-chain.desktop
+share/icons/hicolor/16x16/apps/domino-chain.png
+share/icons/hicolor/32x32/apps/domino-chain.png
+share/icons/hicolor/48x48/apps/domino-chain.png
+share/icons/hicolor/64x64/apps/domino-chain.png
+%%NLS%%share/locale/cs/LC_MESSAGES/domino-chain.mo
+%%NLS%%share/locale/de/LC_MESSAGES/domino-chain.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/domino-chain.mo
+%%NLS%%share/locale/es/LC_MESSAGES/domino-chain.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/domino-chain.mo
+%%NLS%%share/locale/it/LC_MESSAGES/domino-chain.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/domino-chain.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/domino-chain.mo
+share/man/man6/domino-chain.6.gz
+share/metainfo/domino-chain.metainfo.xml

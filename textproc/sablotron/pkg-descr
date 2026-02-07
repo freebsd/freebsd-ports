@@ -1,0 +1,5 @@
+Sablotron is an XML processor fully implemented in C++. It uses Expat
+by James Clark as an XML parser. Sablotron implements XSLT 1.0, XPath
+1.0 and DOM Level2.
+
+Original creator of Sablotron is Ginger Alliance Ltd; Czech Republic.

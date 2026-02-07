@@ -1,0 +1,4 @@
+Exception::Handler
+
+Exception::Handler helps to report exceptions with formatted text
+call-stack.

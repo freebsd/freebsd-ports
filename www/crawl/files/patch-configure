@@ -1,0 +1,17 @@
+--- configure.orig	2003-05-18 01:50:55 UTC
++++ configure
+@@ -2545,11 +2545,11 @@ echo "${ECHO_T}no" >&6
+   *)
+      echo "$as_me:$LINENO: result: $withval" >&5
+ echo "${ECHO_T}$withval" >&6
+-     if test -f $withval/event.h -a -f $withval/libevent.a; then
++     if test -f $withval/include/event.h -a -f $withval/lib/libevent.a; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi
+-        EVENTINC="-I$withval"
+-        EVENTLIB="-L$withval -levent"
++        EVENTINC="-I$withval/include"
++        EVENTLIB="-L$withval/lib -levent"
+      else
+         { { echo "$as_me:$LINENO: error: event.h or libevent.a not found in $withval" >&5
+ echo "$as_me: error: event.h or libevent.a not found in $withval" >&2;}

@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# PROVIDE: dhcprelya
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable dhcrelay:
+#
+# dhcprelya_enable="YES"
+#
+# dhcprelya_config="/path/to/config.file"
+#  or
+# dhcprelya_servers="<your_dhcp_server>..."
+# dhcprelya_ifaces="<if1>..."
+#
+
+# override these variables in /etc/rc.conf
+dhcprelya_enable=${dhcprelya_enable:-"NO"}
+dhcprelya_config=${dhcprelya_config:-}
+dhcprelya_servers=${dhcprelya_servers:-}		# dhcprelya server(s)
+dhcprelya_ifaces=${dhcprelya_ifaces:-}		# ethernet interface(s)
+
+dhcprelya_precmd ()
+{
+    if [ -z "${dhcprelya_config}" ]; then
+        if [ -z "${dhcprelya_ifaces}" -o -z "${dhcprelya_servers}" ]; then
+	    echo "Either dhcprelya_config or both dhcprelya_ifaces and dhcprelya_servers must be set in /etc/rc.conf"
+	    exit 1
+        fi
+
+        ifaces=
+        for iface in ${dhcprelya_ifaces}; do
+	    ifaces="${ifaces} -i ${iface}"
+        done
+
+        rc_flags="${rc_flags} ${ifaces} ${dhcprelya_servers}"
+    else
+        rc_flags="${rc_flags} -f ${dhcprelya_config}"
+    fi
+}
+
+dhcprelya_postcmd() {
+	rm -f ${pidfile}
+}
+
+. /etc/rc.subr
+
+name=dhcprelya
+rcvar=dhcprelya_enable
+pidfile=/var/run/${name}.pid
+command=%%PREFIX%%/sbin/${name}
+
+start_precmd=${name}_precmd
+stop_postcmd=${name}_postcmd
+
+load_rc_config ${name}
+run_rc_command "$1"

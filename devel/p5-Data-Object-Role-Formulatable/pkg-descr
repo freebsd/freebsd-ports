@@ -1,0 +1,2 @@
+Data::Object::Role::Formulatable provides a mechanism for automatically
+inflating objects from constructor arguments.

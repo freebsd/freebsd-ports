@@ -1,0 +1,18 @@
+Index: cWnn/cd/cserverrc
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/cd/cserverrc,v
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -u -p -r1.1.1.1 -r1.3
+--- cWnn/cd/cserverrc	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/cd/cserverrc	2 Jan 2009 21:56:38 -0000	1.3
+@@ -39,6 +39,9 @@ readfile	sys/QianMa.dic
+ 
+ readfile	sys/full.con
+ 
++listenaddr	127.0.0.1
++listenaddr	::1
++
+ max_client	32
+ max_sticky_env	10
+ 

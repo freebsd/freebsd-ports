@@ -1,0 +1,10 @@
+--- vendor/ppxlib-8a0cb7122d7d454c20d732621795d910018d1b66/src/dune.orig	2024-09-27 08:20:04 UTC
++++ vendor/ppxlib-8a0cb7122d7d454c20d732621795d910018d1b66/src/dune
+@@ -9,7 +9,6 @@
+   ppx_derivers
+   ppxlib_traverse_builtins
+   stdppx
+-  stdlib-shims
+   sexplib0)
+  (flags
+   (:standard -safe-string))

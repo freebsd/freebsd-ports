@@ -1,0 +1,81 @@
+--- ./data/config/default.in.orig	2010-05-12 11:30:00.000000000 -0700
++++ ./data/config/default.in	2010-11-17 11:06:07.000000000 -0800
+@@ -274,44 +274,44 @@
+     }
+ }
+ 
+-Plugin {
+-    type = mem
+-    expand = false
+-    padding = 2
+-    config {
+-        ShowSwap = false
+-    }
+-}
++#Plugin {
++#    type = mem
++#    expand = false
++#    padding = 2
++#    config {
++#        ShowSwap = false
++#    }
++#}
+ 
+-Plugin {
+-    type = cpu
+-    config {
+-        Color = green
+-    }
+-}
++#Plugin {
++#    type = cpu
++#    config {
++#        Color = green
++#    }
++#}
+ 
+-Plugin {
+-    type = net
+-    expand = false
+-    padding = 0
+-    config {
+-        #interface = ppp0
+-        interface = eth0
+-        # set connection limits to make traffic graph more accurate
+-        TxLimit = 20
+-        RxLimit = 190
+-        TxColor = violet
+-        RxColor = blue
+-    }
+-}
++#Plugin {
++#    type = net
++#    expand = false
++#    padding = 0
++#    config {
++#        #interface = ppp0
++#        interface = eth0
++#        # set connection limits to make traffic graph more accurate
++#        TxLimit = 20
++#        RxLimit = 190
++#        TxColor = violet
++#        RxColor = blue
++#    }
++#}
+ 
+ 
+-Plugin {
+-    type = space
+-    config {
+-        size = 10
+-    }
+-}
++#Plugin {
++#    type = space
++#    config {
++#        size = 10
++#    }
++#}
+ 
+ plugin {
+     type = volume

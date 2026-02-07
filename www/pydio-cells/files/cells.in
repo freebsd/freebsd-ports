@@ -1,0 +1,85 @@
+#!/bin/sh
+
+# PROVIDE: cells
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable Pydio Cells:
+#
+# cells_enable (bool):     Set to "NO" by default.
+#                          Set to "YES" to enable Pydio Cells.
+# cells_user (str):        Default to "pydio".
+# cells_group (str):       Default to "pydio".
+#                          User and group to run Pydio Cells with.
+# cells_flags (str):       Additional flags to append to "cells start" command.
+#                          Read `cells help start` for more information.
+# cells_workingdir (str):  Default to "/var/pydio/.config/pydio/cells".
+#                          Application directory.
+# cells_logdir (str):      Default to "${cells_workingdir}/logs".
+#                          Directory for application logs.
+
+. /etc/rc.subr
+
+name=cells
+rcvar=cells_enable
+desc="Pydio Cells"
+
+load_rc_config cells
+
+: ${cells_enable:=NO}
+: ${cells_user:=pydio}
+: ${cells_group:=pydio}
+: ${cells_workingdir=/var/pydio/.config/pydio/cells}
+: ${cells_logdir="${cells_workingdir}/logs"}
+
+_envvars="CELLS_WORKING_DIR=${cells_workingdir} CELLS_LOG_DIR=${cells_logdir}"
+_sucmd=/usr/bin/su
+
+extra_commands=cli
+pidfile=/var/run/${name}/${name}.pid
+cli_precmd=cells_precmd
+cli_cmd="cells_cli $@"
+start_precmd=cells_precmd
+stop_cmd=cells_stop
+procname="%%PREFIX%%/bin/cells"
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} -o ${cells_logdir}/cells.log env ${_envvars} ${procname} start ${cells_flags}"
+
+cells_precmd()
+{
+    # Create PID file directory
+    install -d -o ${cells_user} -g ${cells_group} -m 0755 "$(dirname ${pidfile})"
+
+    # Remove default flags, they're added in `command_args` manually
+    rc_flags=""
+}
+
+cells_cli()
+{
+    shift 1
+    ${_sucmd} -l ${cells_user} -c "exec env ${_envvars} ${procname} $*"
+}
+
+cells_stop()
+{
+    # Copy-paste from rc.subr
+    if [ -z "${rc_pid}" ]; then
+        [ -n "${rc_fast}" ] && return 0
+        _run_rc_notrunning
+        return 1
+    fi
+    _children_pids=$(pgrep -P ${rc_pid})
+
+    echo "Stopping ${name}."
+    _run_rc_doit "kill -TERM ${rc_pid}" || return 1
+
+    # Stopping children is unreliable, so re-send TERM to them
+    # and wait for both the parent and the children
+    for _pid in ${_children_pids}; do
+        kill -TERM ${_pid}
+    done
+
+    wait_for_pids ${rc_pid} ${_children_pids}
+}
+
+run_rc_command "$1"

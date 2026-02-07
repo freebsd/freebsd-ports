@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2023-08-23 22:48:58 UTC
++++ CMakeLists.txt
+@@ -796,20 +796,6 @@ if(ENABLE_DAEMON OR ENABLE_GTK OR ENABLE_QT)
+     tr_install_web(${CMAKE_INSTALL_DATAROOTDIR}/${TR_NAME})
+ endif()
+ 
+-if(INSTALL_DOC)
+-    install(
+-        FILES
+-            AUTHORS
+-            COPYING
+-            README.md
+-            docs/rpc-spec.md
+-            extras/send-email-when-torrent-done.sh
+-        DESTINATION ${CMAKE_INSTALL_DOCDIR})
+-    install(
+-        DIRECTORY news
+-        DESTINATION ${CMAKE_INSTALL_DOCDIR})
+-endif()
+-
+ if(MSVC AND ENABLE_DAEMON AND ENABLE_QT AND ENABLE_UTILS AND WITH_CRYPTO STREQUAL "openssl" AND INSTALL_WEB)
+     add_subdirectory(dist/msi)
+ endif()

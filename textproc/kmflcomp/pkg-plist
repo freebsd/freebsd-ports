@@ -1,0 +1,12 @@
+bin/kmflcomp
+include/kmfl/kmfl.h
+include/kmfl/kmflcomp.h
+include/kmfl/kmflutfconv.h
+lib/libkmflcomp.a
+lib/libkmflcomp.so
+lib/libkmflcomp.so.0
+lib/libkmflcomp.so.0.0.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/KMFL-Compiler.sxw

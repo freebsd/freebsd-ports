@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+SuPHP has no upstream maintainer and thus is not actively having
+bugs and security issues addressed.
+
+Its security track record is pretty good. The worst so far has been
+privilege escalation to the httpd user, which is no worse than not
+using SuPHP.
+
+It is advisable to convert your system to PHP-FPM if possible.
+
+The port maintainer's thoughts on sandboxing PHP are here:
+
+  http://blog.shatow.net/post/2013-07-17-sandboxing-php-part1.markdown
+
+An overview of using PHP-FPM for application sandboxing is here:
+
+  http://blog.shatow.net/post/2013-11-27-sandboxing-php-part2.markdown
+EOM
+}
+]

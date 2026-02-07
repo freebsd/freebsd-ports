@@ -1,0 +1,254 @@
+%%CLIENT%%bin/boinc
+%%CLIENT%%bin/boinc_client
+%%CLIENT%%bin/boinccmd
+%%MANAGER%%bin/boincmgr
+%%MANAGER%%bin/boincscr
+include/boinc/app_ipc.h
+include/boinc/average.h
+include/boinc/base64.h
+include/boinc/boinc_api.h
+include/boinc/boinc_opencl.h
+include/boinc/boinc_stdio.h
+include/boinc/cal_boinc.h
+include/boinc/cc_config.h
+include/boinc/cert_sig.h
+include/boinc/cl_boinc.h
+include/boinc/common_defs.h
+include/boinc/config.h
+include/boinc/coproc.h
+include/boinc/crypt.h
+include/boinc/diagnostics.h
+include/boinc/error_numbers.h
+include/boinc/filesys.h
+include/boinc/graphics2.h
+include/boinc/gui_rpc_client.h
+include/boinc/gutil.h
+include/boinc/hostinfo.h
+include/boinc/keyword.h
+include/boinc/md5.h
+include/boinc/md5_file.h
+include/boinc/mem_usage.h
+include/boinc/mfile.h
+include/boinc/miofile.h
+include/boinc/msg_log.h
+include/boinc/network.h
+include/boinc/notice.h
+include/boinc/opencl_boinc.h
+include/boinc/parse.h
+include/boinc/prefs.h
+include/boinc/proc_control.h
+include/boinc/procinfo.h
+include/boinc/project_specific_defines.h
+include/boinc/proxy_info.h
+include/boinc/reduce.h
+include/boinc/sched_msgs.h
+include/boinc/shmem.h
+include/boinc/stackwalker_imports.h
+include/boinc/std_fixes.h
+include/boinc/str_replace.h
+include/boinc/str_util.h
+include/boinc/svn_version.h
+include/boinc/url.h
+include/boinc/util.h
+include/boinc/version.h
+%%X11%%include/boinc/boinc_gl.h
+%%X11%%include/boinc/graphics_api.h
+%%X11%%include/boinc/graphics_data.h
+%%X11%%include/boinc/ttfont.h
+lib/libboinc.a
+lib/libboinc_api.a
+lib/libboinc_api.so
+lib/libboinc_api.so.8
+lib/libboinc_api.so.%%SOVERSION%%
+%%CLIENT%%lib/libboinc_crypt.a
+lib/libboinc_opencl.a
+lib/libboinc_opencl.so
+lib/libboinc_opencl.so.8
+lib/libboinc_opencl.so.%%SOVERSION%%
+libdata/pkgconfig/libboinc.pc
+libdata/pkgconfig/libboinc_api.pc
+%%CLIENT%%libdata/pkgconfig/libboinc_crypt.pc
+libdata/pkgconfig/libboinc_opencl.pc
+%%X11%%lib/libboinc_graphics2.a
+%%X11%%lib/libboinc_graphics2.so
+%%X11%%lib/libboinc_graphics2.so.8
+%%X11%%lib/libboinc_graphics2.so.%%SOVERSION%%
+%%SKINS%%share/boinc/skins/Charity Engine/background_image.png
+%%SKINS%%share/boinc/skins/Charity Engine/ce_about.ico
+%%SKINS%%share/boinc/skins/Charity Engine/ce_icon_play.png
+%%SKINS%%share/boinc/skins/Charity Engine/ce_pause.png
+%%SKINS%%share/boinc/skins/Charity Engine/ce_play.png
+%%SKINS%%share/boinc/skins/Charity Engine/ce_stop.png
+%%SKINS%%share/boinc/skins/Charity Engine/dialog_background_image.png
+%%SKINS%%share/boinc/skins/Charity Engine/project_image.png
+%%SKINS%%share/boinc/skins/Charity Engine/skin.xml
+%%SKINS%%share/boinc/skins/Charity Engine/workunit_running_image.png
+%%SKINS%%share/boinc/skins/Charity Engine/workunit_suspended_image.png
+%%SKINS%%share/boinc/skins/Charity Engine/workunit_waiting_image.png
+%%MANAGER%%share/boinc/skins/Default/background_image.png
+%%MANAGER%%share/boinc/skins/Default/skin.xml
+%%MANAGER%%share/boinc/skins/Default/workunit_running_image.png
+%%MANAGER%%share/boinc/skins/Default/workunit_suspended_image.png
+%%MANAGER%%share/boinc/skins/Default/workunit_waiting_image.png
+%%SKINS%%share/boinc/skins/GridRepublic/background_image.png
+%%SKINS%%share/boinc/skins/GridRepublic/dialog_background_image.png
+%%SKINS%%share/boinc/skins/GridRepublic/gr_about.ico
+%%SKINS%%share/boinc/skins/GridRepublic/gr_icon_play.png
+%%SKINS%%share/boinc/skins/GridRepublic/gr_pause.png
+%%SKINS%%share/boinc/skins/GridRepublic/gr_play.png
+%%SKINS%%share/boinc/skins/GridRepublic/gr_stop.png
+%%SKINS%%share/boinc/skins/GridRepublic/project_image.png
+%%SKINS%%share/boinc/skins/GridRepublic/skin.xml
+%%SKINS%%share/boinc/skins/GridRepublic/workunit_running_image.png
+%%SKINS%%share/boinc/skins/GridRepublic/workunit_suspended_image.png
+%%SKINS%%share/boinc/skins/GridRepublic/workunit_waiting_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/advanced_link_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/attach_project_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/cancel_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/close_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/connecting_indicator_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/copy_all_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/copy_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/dialog_background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/error_indicator_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/gauge_bg.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/help_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/left_arrow_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/messages_alert_link_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/messages_link_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/preferences_link_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/project_area_background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/project_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/resume_link_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/right_arrow_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/save_button.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/spacer_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/state_indicator_background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/suspend_link_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/tabArea_bg.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/wcg_about.ico
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/wcg_pause.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/wcg_play.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/wcg_stop.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_active_tab.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_animation_background_image copy.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_animation_background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_area_background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_gauge_background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_gauge_progress_indicator_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_suspended_tab.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/graphic/workunit_tab_area_background_image.png
+%%SKINS%%share/boinc/skins/People for a Smarter Planet/skin.xml
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/background_image.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/dialog_background_image.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/project_image.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/ptp_about.ico
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/ptp_icon_play.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/ptp_pause.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/ptp_play.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/ptp_stop.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/skin.xml
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/workunit_running_image.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/workunit_suspended_image.png
+%%SKINS%%share/boinc/skins/ProgressThruProcessors/workunit_waiting_image.png
+%%SKINS%%share/boinc/skins/World Community Grid/Green_dot.png
+%%SKINS%%share/boinc/skins/World Community Grid/Red_dot.png
+%%SKINS%%share/boinc/skins/World Community Grid/Yellow_dot.png
+%%SKINS%%share/boinc/skins/World Community Grid/background_image.png
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_pause.png
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_play.png
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_stop.png
+%%SKINS%%share/boinc/skins/World Community Grid/skin.xml
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_32.png
+%%X11%%share/boinc/ttf/LiberationMono-Bold.ttf
+%%X11%%share/boinc/ttf/LiberationMono-BoldItalic.ttf
+%%X11%%share/boinc/ttf/LiberationMono-Italic.ttf
+%%X11%%share/boinc/ttf/LiberationMono-Regular.ttf
+%%X11%%share/boinc/ttf/LiberationSans-Bold.ttf
+%%X11%%share/boinc/ttf/LiberationSans-BoldItalic.ttf
+%%X11%%share/boinc/ttf/LiberationSans-Italic.ttf
+%%X11%%share/boinc/ttf/LiberationSans-Regular.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-Bold.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-BoldItalic.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-Italic.ttf
+%%X11%%share/boinc/ttf/LiberationSerif-Regular.ttf
+%%MANAGER%%%%NLS%%share/locale/fa_IR/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/he/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/he/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/it_IT/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/it_IT/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ka/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/sv/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/sv/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ar/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/bg/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/bg/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ca/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/ca/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/cs/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/cs/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/da/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/da/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/de/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/de/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/el/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/es/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/es/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/fi/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/fi/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/fr/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/fr/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/hu/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/hu/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ja/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/ja/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ko/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/ko/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/lt/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/lv/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/lv/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/nb/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/nb/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/nl/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/nl/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/pl/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/pl/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/pt_BR/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/pt_BR/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/pt_PT/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/pt_PT/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ro/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/ro/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/ru/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/ru/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/sk/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/sk/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/tr/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/tr/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/uk/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/uk/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/zh_CN/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/zh_CN/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%%%NLS%%share/locale/zh_TW/LC_MESSAGES/BOINC-Client.mo
+%%MANAGER%%%%NLS%%share/locale/zh_TW/LC_MESSAGES/BOINC-Manager.mo
+%%MANAGER%%share/pixmaps/boincmgr.16x16.png
+%%MANAGER%%share/pixmaps/boincmgr.32x32.png
+%%MANAGER%%share/pixmaps/boincmgr.48x48.png
+%%X11%%libdata/pkgconfig/libboinc_graphics2.pc
+%%MANAGER%%%%X11%%share/applications/boinc.desktop
+%%SKINS%%share/boinc/skins/Makefile
+%%SKINS%%share/boinc/skins/Makefile.am
+%%SKINS%%share/boinc/skins/Makefile.in
+%%SKINS%%share/boinc/skins/World Community Grid/wcg.ico
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_50.png
+%%SKINS%%share/boinc/skins/World Community Grid/wcg_about.ico
+%%SKINS%%share/icons/hicolor/64x64/apps/boinc.png
+%%SKINS%%share/icons/hicolor/scalable/apps/boinc.svg
+%%SKINS%%share/locale/ka/LC_MESSAGES/BOINC-Manager.mo
+%%SKINS%%@dir share/boinc-manager/skins/Charity Engine
+%%SKINS%%@dir share/boinc-manager/skins/Default
+%%SKINS%%@dir share/boinc-manager/skins/GridRepublic
+%%SKINS%%@dir share/boinc-manager/skins/People for a Smarter Planet/graphic
+%%SKINS%%@dir share/boinc-manager/skins/ProgressThruProcessors
+%%SKINS%%@dir share/boinc-manager/skins/World Community Grid

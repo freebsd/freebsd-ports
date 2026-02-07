@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -154,8 +154,6 @@ exclude = [
+ ]
+ 
+ [tool.hatch.build.targets.wheel.shared-data]
+-"nbclassic.svg" = "share/icons/hicolor/scalable/apps/nbclassic.svg"
+-"jupyter-nbclassic.desktop" = "share/applications/jupyter-nbclassic.desktop"
+ "jupyter_server_config.d/nbclassic.json" = "etc/jupyter/jupyter_server_config.d/nbclassic.json"
+ 
+ [tool.hatch.build.hooks.jupyter-builder]

@@ -1,0 +1,12 @@
+Grep source code files and see matching lines with useful context that
+show how they fit into the code. See the loops, functions, methods,
+classes, etc that contain all the matching lines. Get a sense of what's
+inside a matched class or function definition. You see relevant code from
+every layer of the abstract syntax tree, above and below the matches.
+
+By default, grep-AST recurses the current directory to search all source
+code files. It respects .gitignore, so it will usually "do the right
+thing" in most repos if you just do grep-ast <regex> without specifying
+any filenames.
+
+You can also invoke grep-ast as gast for convenience.

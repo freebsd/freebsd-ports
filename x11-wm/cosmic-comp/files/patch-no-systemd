@@ -1,0 +1,30 @@
+Avoid various systemd dependencies
+
+--- data/cosmic.desktop.orig	2024-01-29 00:48:40 UTC
++++ data/cosmic.desktop
+@@ -1,7 +1,7 @@ Commment=This session logs you into Cosmic
+ [Desktop Entry]
+ Name=Cosmic
+ Commment=This session logs you into Cosmic
+-Exec=/usr/bin/cosmic-service
++Exec=cosmic-comp
+ Type=Application
+ DesktopNames=pop:COSMIC
+ X-GDM-SessionRegisters=false
+\ No newline at end of file
+--- src/lib.rs.orig	2025-11-12 03:20:54 UTC
++++ src/lib.rs
+@@ -132,6 +132,13 @@ pub fn run(hooks: crate::hooks::Hooks) -> Result<(), B
+     logger::init_logger()?;
+     info!("Cosmic starting up!");
+ 
++    unsafe {
++        // Advise xdg-desktop-portal which *-portals.conf to load
++        std::env::set_var("XDG_CURRENT_DESKTOP", "COSMIC");
++        // Mimic wlroots, used by https://github.com/qt/qtbase/commit/4b4870a12cd9
++        std::env::set_var("XDG_SESSION_TYPE", "wayland");
++    }
++
+     profiling::register_thread!("Main Thread");
+     #[cfg(feature = "profile-with-tracy")]
+     tracy_client::Client::start();

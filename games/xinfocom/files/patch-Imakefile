@@ -1,0 +1,8 @@
+--- Imakefile.orig	Mon Sep 30 03:07:36 1996
++++ Imakefile	Wed Nov  1 10:13:13 2000
+@@ -13,4 +13,4 @@
+ SRCS = addr.c alloc.c arith.c compare.c console.c dummy.c file.c globals.c head.c infocom.c init.c input.c interp.c jump.c mem.c message.c object.c pg_flat.c pc.c print.c prop.c random.c shared.c stack.c status.c stop.c support.c os_unix.c var.c window.c wio_unix.c
+ OBJS = addr.o alloc.o arith.o compare.o console.o dummy.o file.o globals.o head.o infocom.o init.o input.o interp.o jump.o mem.o message.o object.o pg_flat.o pc.o print.o prop.o random.o shared.o stack.o status.o stop.o support.o os_unix.o var.o window.o wio_unix.o
+ 
+-ComplexProgramTarget(xinfocom)
++ComplexProgramTargetNoMan(xinfocom)

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<html>
+  <head>
+    <title>The FreeBSD Ports Collection</title>
+  </head>
+
+  <body>
+    <h1>The FreeBSD Ports Collection</h1>
+    <hr>
+
+    <p>You are at the top of the ports tree.</p>
+
+    <p>For information on how to use the ports tree, please look at "The
+    Ports Collection" section of the FreeBSD handbook <a href=
+    "file://localhost/usr/share/doc/handbook/handbook.html">on your own
+    FreeBSD machine</a> or <a href=
+    "http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/ports.html">
+    at the FreeBSD web site</a>.</p>
+
+    <p>Also, if you would like to contribute a new port or fix an existing
+    one, please refer to the <a href=
+    "http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/porters-handbook/index.html">
+    Porting Guidelines</a> section of the most current handbook.</p>
+
+    <p>Here are the one-line descriptions for each of the directories:</p>
+    <hr>
+<pre>
+%%SUBDIR%%
+</pre>
+    <hr>
+  </body>
+</html>

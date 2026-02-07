@@ -1,0 +1,9 @@
+Send print jobs to lpd servers anywhere on a network. Does not require
+lpd server to be listed in client's /etc/printcap, and is therefore
+useful for printing from machines one does not have root access on.
+
+Gettext  (-lintl) is  not used by  this port  because  it adds  bloat
+without functionality -- there are  no language files supplied with this
+package yet. May be in future versions.
+
+See also: http://truffula.com/rlpr/

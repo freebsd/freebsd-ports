@@ -1,0 +1,35 @@
+commit 4f531ca86d24be5d4de673f6e652ed899151d20c
+Author: Jesper Schmitz Mouridsen <jesper@schmitz.computer>
+Date:   Wed Jul 23 22:01:31 2025 +0000
+
+    Bug 1876632 Fix aslr allocations on FreeBSD r=spidermonkey-reviewers,sfink
+    
+    Without the alignment flag the desired address
+    gets randomized by aslr in a way which causes it to not
+    be aligned. Furthermore the TryToAlignChunk almost always
+    fails. With this fix it never gets to TryToAlignChunk
+    because the flag guarantees upfront alignment.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D257824
+
+diff --git js/src/gc/Memory.cpp js/src/gc/Memory.cpp
+index e790f1784ede..13639c9a6eb4 100644
+--- js/src/gc/Memory.cpp
++++ js/src/gc/Memory.cpp
+@@ -608,7 +608,16 @@ static void* MapAlignedPagesRandom(size_t length, size_t alignment) {
+   for (size_t i = 1; i <= 1024; ++i) {
+     if (i & 0xf) {
+       uint64_t desired = alignment * GetNumberInRange(minNum, maxNum);
++#  if defined(__FreeBSD__) && defined(__aarch64__)
++      int flags = MAP_PRIVATE | MAP_ANON |
++                  MAP_ALIGNED(mozilla::CeilingLog2Size(alignment));
++      region = MozTaggedAnonymousMmap((void*)(uintptr_t)desired, length,
++                                      int(PageAccess::ReadWrite), flags, -1, 0,
++                                      "js-gc-heap");
++#  else
+       region = MapMemoryAtFuzzy(reinterpret_cast<void*>(desired), length);
++
++#  endif
+       if (!region) {
+         continue;
+       }

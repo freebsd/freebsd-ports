@@ -1,0 +1,12 @@
+- workaround for https://github.com/openMVG/openMVG/issues/1962
+
+--- software/SfM/CMakeLists.txt.orig	2023-09-16 06:22:49 UTC
++++ software/SfM/CMakeLists.txt
+@@ -189,6 +189,7 @@ target_link_libraries(openMVG_main_FrustumFiltering
+     openMVG_system
+     openMVG_features
+     openMVG_sfm
++    ceres
+     ${STLPLUS_LIBRARY}
+ )
+ 

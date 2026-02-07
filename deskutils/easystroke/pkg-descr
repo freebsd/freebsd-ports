@@ -1,0 +1,8 @@
+Easystroke is a gesture-recognition application for X11. Gestures or
+strokes are movements that you make with your mouse (or your pen,
+finger etc.) while holding down a specific mouse button. Easystroke
+will execute certain actions if it recognizes the stroke; currently
+easystroke can emulate key presses, execute shell commands, hold down
+modifiers and emulate a scroll wheel. The program was designed with
+Tablet PCs in mind and can be used effectively even without access to
+a keyboard.

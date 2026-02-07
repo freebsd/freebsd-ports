@@ -1,0 +1,8 @@
+bin/nvim-qt
+share/applications/nvim-qt.desktop
+share/icons/hicolor/192x192/apps/nvim-qt.png
+share/icons/hicolor/scalable/apps/nvim-qt.svg
+%%DATADIR%%/LICENSE
+%%DATADIR%%/runtime/doc/nvim_gui_shim.txt
+%%DATADIR%%/runtime/doc/tags
+%%DATADIR%%/runtime/plugin/nvim_gui_shim.vim

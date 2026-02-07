@@ -1,0 +1,7 @@
+bin/hbbr
+bin/hbbs
+bin/rustdesk-utils
+@sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/rustdesk-server.conf
+@sample %%EXAMPLESDIR%%/syslog.sample etc/syslog.d/rustdesk-server.conf
+@dir etc/newsyslog.conf.d
+@dir etc/syslog.d

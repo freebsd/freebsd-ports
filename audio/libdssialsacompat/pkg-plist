@@ -1,0 +1,11 @@
+include/dssi/alsa/asoundef.h
+include/dssi/alsa/asoundlib.h
+include/dssi/alsa/seq.h
+include/dssi/alsa/seq_event.h
+include/dssi/alsa/seq_midi_event.h
+include/dssi/alsa/sound/asequencer.h
+lib/libdssialsacompat.a
+lib/libdssialsacompat.so
+lib/libdssialsacompat.so.0
+lib/libdssialsacompat.so.0.0.0
+libdata/pkgconfig/libdssialsacompat.pc

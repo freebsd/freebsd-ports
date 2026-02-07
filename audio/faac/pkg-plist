@@ -1,0 +1,13 @@
+bin/faac
+include/faac.h
+include/faaccfg.h
+lib/libfaac.a
+lib/libfaac.so
+lib/libfaac.so.0
+lib/libfaac.so.0.0.0
+lib/libfaac_drm.a
+lib/libfaac_drm.so
+lib/libfaac_drm.so.0
+lib/libfaac_drm.so.0.0.0
+libdata/pkgconfig/faac.pc
+share/man/man1/faac.1.gz

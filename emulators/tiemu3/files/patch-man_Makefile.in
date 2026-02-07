@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	2009-04-30 20:45:57 UTC
++++ man/Makefile.in
+@@ -539,7 +539,7 @@ view: $(man_MANS)
+ 
+ dist_win: $(man_MANS)
+ 	groff -Tascii -man $(man_MANS) > Manpage
+-	C_INCLUDE_PATH="" LIBRARY_PATH="" gcc cleaner.c -o cleaner
++	C_INCLUDE_PATH="" LIBRARY_PATH="" $(CC) cleaner.c -o cleaner
+ 	./cleaner Manpage
+ 	rm Manpage cleaner
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

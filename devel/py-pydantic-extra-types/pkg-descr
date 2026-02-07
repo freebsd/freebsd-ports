@@ -1,0 +1,2 @@
+Pydantic Extra Types is a place for pydantic types that probably shouldn't exist
+in the main pydantic lib.

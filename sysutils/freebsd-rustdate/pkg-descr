@@ -1,0 +1,5 @@
+freebsd-rustdate is a reimplementation of freebsd-update.sh.  It's
+significantly faster (often by an order of magnitude or more), hopefully
+more maintainable, and has a few extra features.  It's close to drop-in
+compatible for most simple uses, but online help or the website should be
+consulted for details.

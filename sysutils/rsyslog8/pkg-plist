@@ -1,0 +1,31 @@
+@dir etc/rsyslog.d
+@sample etc/rsyslog.conf.sample
+lib/rsyslog/fmhash.so
+lib/rsyslog/fmhttp.so
+lib/rsyslog/im3195.so
+lib/rsyslog/imdiag.so
+lib/rsyslog/imfile.so
+lib/rsyslog/imklog.so
+lib/rsyslog/immark.so
+lib/rsyslog/impstats.so
+lib/rsyslog/imtcp.so
+lib/rsyslog/imudp.so
+lib/rsyslog/imuxsock.so
+lib/rsyslog/lmnet.so
+lib/rsyslog/lmnetstrms.so
+lib/rsyslog/lmnsd_ptcp.so
+lib/rsyslog/lmregexp.so
+lib/rsyslog/lmtcpclt.so
+lib/rsyslog/lmtcpsrv.so
+lib/rsyslog/lmzlibw.so
+lib/rsyslog/mmexternal.so
+lib/rsyslog/mmleefparse.so
+lib/rsyslog/ommail.so
+lib/rsyslog/omprog.so
+lib/rsyslog/omstdout.so
+lib/rsyslog/omtesting.so
+lib/rsyslog/omuxsock.so
+lib/rsyslog/pmciscoios.so
+share/man/man5/rsyslog.conf.5.gz
+share/man/man8/rsyslogd.8.gz
+sbin/rsyslogd

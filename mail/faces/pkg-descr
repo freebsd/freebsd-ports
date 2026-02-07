@@ -1,0 +1,13 @@
+Faces is a Gtk+ program for monitoring a list visually. Typically this is
+a list of incoming mail messages. IMAP and POP mailbox formats are
+supported.
+
+Faces has three different modes of operation:
+* The default will monitor for new mail.
+* You can monitor the whole of a mail file.
+* Custom monitoring. You can specify a program or shell script to run.
+
+Lots of good examples can be downloaded from:
+ftp://ftp.cs.indiana.edu/pub/faces/picons/src/
+
+Audio capabilities are also provided as a conditional compilation option.

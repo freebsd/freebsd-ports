@@ -1,0 +1,6 @@
+Updates to /usr/share/zoneinfo.
+
+Note that this port overwrites system files in /usr/share/zoneinfo.
+
+If you build your systems from source, please add WITHOUT_ZONEINFO="yes"
+to your /etc/src.conf.

@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+%%PKGNAME%% has been installed into:
+
+    %%FLOWVIEWERDIR%%
+
+Please edit at least FlowViewer_Configuration.pm to suit your needs.
+
+To make FlowViewer available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+    Alias /FlowViewer/ "%%FLOWVIEWERDIR%%/"
+
+
+    <Directory "%%FLOWVIEWERDIR%%/">
+        Options +ExecCGI
+        AddHandler cgi-script .cgi
+        Order allow,deny
+	Allow from 127.0.0.1 .example.com
+	Deny from all
+    </Directory>
+
+Then point your browser to 'http://myserver.domain.org/FlowViewer/FV.cgi'
+
+You can find additional information in the %%DOCSDIR%%/README file
+EOM
+}
+]

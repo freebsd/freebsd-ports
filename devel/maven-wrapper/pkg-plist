@@ -1,0 +1,3 @@
+bin/mvn
+bin/mvnDebug
+@dir %%ETCDIR%%/instances.d

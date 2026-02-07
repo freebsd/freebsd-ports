@@ -1,0 +1,4 @@
+bin/gramofile
+bin/bplay_gramo
+bin/brec_gramo
+%%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,0 +1,11 @@
+BMPanel (bitmap panel) is nice, lightweight, NetWM-compatible panel for your
+X11 desktop.  It currently features:
+
+  - Look'n'feel customization via themes (20 of them included)
+  - A bunch of widgets: desktop switcher, taskbar, launchbar, systray,
+    clock, decor, empty (unofficial temperature widget also available)
+  - Pseudo (default) and compositing (optional) transparency support
+  - Written in C with speed and clarity in mind
+  - Small number of dependencies, briefly: glib2, cairo, pango, libX11
+  - Small memory footprint (about 2-4 megabytes)
+  - Small executable (80 kilobytes at the moment)

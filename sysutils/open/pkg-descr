@@ -1,0 +1,6 @@
+Open opens a new vt and runs a command on it. It can be used as a simple
+way to start several console logins without having to type your passwd
+on each VT in turn. open can be used as a simpler to use replacement for
+the doshell(8) command.
+
+open is similar in functionality to the AIX/RS6000 command of the same name.

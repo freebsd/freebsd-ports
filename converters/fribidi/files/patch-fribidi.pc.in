@@ -1,0 +1,8 @@
+--- fribidi.pc.in.orig	2009-08-23 16:40:41 UTC
++++ fribidi.pc.in
+@@ -10,4 +10,4 @@ Description: Unicode Bidirectional Algor
+ Requires: @MISC_PACKAGES@
+ Version: @VERSION@
+ Libs: -L${libdir} -lfribidi
+-Cflags: -I${includedir}/@PACKAGE@
++Cflags: -I${includedir}/@PACKAGE@ -I${includedir}

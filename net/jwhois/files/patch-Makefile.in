@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2007-07-01 08:58:12 UTC
++++ Makefile.in
+@@ -224,7 +224,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = config.rpath  m4/ChangeLog config.rpath include/*.h example/jwhois.conf m4/*.m4 jwhois.spec.in jwhois.spec
+-SUBDIRS = m4 doc gl src example po
++SUBDIRS = m4 doc gl src po
+ AM_CPPFLAGS = -I$(top_srcdir)/gl
+ LDADD = lib/libgnu.a
+ ACLOCAL_AMFLAGS = -I m4 -I gl/m4

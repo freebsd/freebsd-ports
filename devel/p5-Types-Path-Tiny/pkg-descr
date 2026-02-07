@@ -1,0 +1,7 @@
+Types::Path::Tiny provides Path::Tiny types for Moose, Moo, etc.
+
+It handles two important types of coercion:
+- coercing objects with overloaded stringification
+- coercing to absolute paths
+
+It also can check to ensure that files or directories exist.

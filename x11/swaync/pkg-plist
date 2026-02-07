@@ -1,0 +1,13 @@
+bin/swaync
+bin/swaync-client
+@sample etc/xdg/swaync/config.json.sample
+etc/xdg/swaync/configSchema.json
+@sample etc/xdg/swaync/style.css.sample
+lib/systemd/user/swaync.service
+share/bash-completion/completions/swaync
+share/bash-completion/completions/swaync-client
+share/dbus-1/services/org.erikreider.swaync.service
+share/fish/vendor_completions.d/swaync-client.fish
+share/fish/vendor_completions.d/swaync.fish
+share/zsh/site-functions/_swaync
+share/zsh/site-functions/_swaync-client

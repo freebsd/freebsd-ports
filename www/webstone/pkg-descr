@@ -1,0 +1,17 @@
+The WebStone benchmark tests were originally developed by Silicon Graphics
+to measure the performance of Web server software and hardware products.
+WebStone 2.0.1 is a more portable version of the original WebStone
+benchmark which added support to use Windows NT systems as client test
+systems.
+
+Mindcraft, Inc. has acquired the rights to WebStone from Silicon Graphics.
+WebStone 2.5 is Mindcraft's enhancement to WebStone 2.0.1 to improve
+reliability and portability as well as to make tests more reproducible.
+WebStone 2.5 also offers new workloads for CGI and API tests (see below
+for more details). WebStone 2.5 provides performance-identical test
+results with WebStone 2.0.1 when using the same workloads
+
+This FreeBSD port rely on rsh and rcp being allowed for the user proces
+running webstone between the web server and web clients. This is not
+enable per default in FreeBSD, and root is never allowed to do it without
+entering password for each operation.

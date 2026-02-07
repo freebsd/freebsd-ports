@@ -1,0 +1,11 @@
+--- torrentsniff.orig	2016-06-20 14:38:26 UTC
++++ torrentsniff
+@@ -115,7 +115,7 @@ sub process_file {
+ 	my($file, $report_file_info, $report_tracker_info) = @_;
+ 	print "$file\n";
+ 	local *TOR;
+-	if( not open(TOR, "<", $file) ) {
++	if( not open(TOR, "< $file") ) {
+ 		print STDERR "Unable to read $file because of $!\n";
+ 		return 0;
+ 	}

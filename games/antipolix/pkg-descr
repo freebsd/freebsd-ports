@@ -1,0 +1,9 @@
+This game is played in a parallelepipede containing PxNxN little
+cubes. You can first consider this 3D board as P 2D checkerboards of
+NxN squares.  From 2 up to 10 players can confront each other.
+Each player begins with a certain number of pieces (or armies) that
+he has to move and make attack. One of his pieces represents him-self
+(or the chief, or the king, or anything you want). If this piece die,
+the player is eliminated. The last player staying alive wins.
+Messages can be sent to the other players , so that alliances can be
+implemented.  A special timer assures that the game remains dynamic.

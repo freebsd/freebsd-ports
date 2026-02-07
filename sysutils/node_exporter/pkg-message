@@ -1,0 +1,46 @@
+[
+{
+  type: upgrade
+  message: <<EOM
+Text collector examples have been moved to a new repository at
+https://github.com/prometheus-community/node-exporter-textfile-collector-scripts.
+
+The netdev collector CLI argument `--collector.netdev.ignored-devices` was
+renamed to `--collector.netdev.device-blacklist`.
+
+Additional label `mountaddr` added to NFS device metrics to distinguish mounts
+from the same URL, but different IP addresses.
+
+Metrics `node_cpu_scaling_frequency_min_hrts` and
+`node_cpu_scaling_frequency_max_hrts` of the cpufreq collector were renamed to
+`node_cpu_scaling_frequency_min_hertz` and
+`node_cpu_scaling_frequency_max_hertz`.
+
+Collectors that are enabled, but are unable to find data to collect, now return
+`0` for `node_scrape_collector_success`.
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "1.2.2"
+  message: <<EOM
+Filesystem collector flags have been renamed.
+--collector.filesystem.ignored-mount-points is now
+--collector.filesystem.mount-points-exclude and
+--collector.filesystem.ignored-fs-types is now
+--collector.filesystem.fs-types-exclude.
+The old flags will be removed in 2.x.
+EOM
+}
+{
+  type: install
+  message: <<EOM
+If upgrading from a version of node_exporter <0.15.0 you'll need to update any
+custom command line flags that you may have set as it now requires a
+double-dash (--flag) instead of a single dash (-flag).
+The collector flags in 0.15.0 have now been replaced with individual boolean
+flags and the -collector.procfs` and -collector.sysfs` flags have been renamed
+to --path.procfs and --path.sysfs respectively.
+EOM
+}
+]

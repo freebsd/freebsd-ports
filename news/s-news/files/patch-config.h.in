@@ -1,0 +1,12 @@
+--- config.h.in	2002-05-18 20:22:50.000000000 +0100
++++ config.h.in	2002-10-12 19:23:12.000000000 +0100
+@@ -55,6 +55,9 @@
+ /* Define if you have the <malloc.h> header file. */
+ #undef HAVE_MALLOC_H
+ 
++/* Define if you have the <sys/file.h> header file.  */
++#undef HAVE_SYS_FILE_H
++
+ /* Define if you have the <memory.h> header file. */
+ #undef HAVE_MEMORY_H
+ 

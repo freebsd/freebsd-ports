@@ -1,0 +1,19 @@
+--- ./cWnn/jutil/Makefile.in.orig	2014-09-10 01:30:19.000000000 +0900
++++ ./cWnn/jutil/Makefile.in	2014-09-10 01:30:29.000000000 +0900
+@@ -36,7 +36,6 @@
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+ LT_INSTALL      = $(LIBTOOL) --mode=install $(INSTALL)
+ LT_LD           = $(LIBTOOL) --mode=link $(CCLINK)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+        INCLUDES = -I$(CWNNINCLUDESRC) -I$(top_builddir)
+         DEFINES = $(CWNNDEFINES) $(CWNNLANGDEF)
+@@ -332,7 +331,7 @@
+ 	@for flag in ${MAKEFLAGS} ''; do \
+ 	case "$$flag" in *=*) ;; *[i]*) set +e;; esac; done; \
+ 	for i in $(PROGRAMS); do \
+-	(set -x; $(LT_INSTALL) $(INSTBINFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) $$i $(DESTDIR)$(CWNNBINDIR)); \
++	(set -x; $(LT_INSTALL) $(INSTBINFLAGS) $(INSTPGMFLAGS) $$i $(DESTDIR)$(CWNNBINDIR)); \
+ 	done
+ 
+ $(OBJ1) : $(SRC1)

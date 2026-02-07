@@ -1,0 +1,11 @@
+py-corner is a Python library designed to create "corner plots" (also known as
+triangle plots or scatterplot matrices) for visualizing high-dimensional data.
+
+These plots are particularly useful in scientific fields such as astrophysics,
+cosmology, and statistics for displaying the marginalized distributions of
+parameters from a multi-dimensional sample (e.g., from Markov Chain Monte Carlo
+simulations).
+
+The library generates 1D histograms for individual parameters and 2D histograms
+(or scatter plots) for all pairs of parameters, providing a comprehensive
+overview of their distributions and correlations.

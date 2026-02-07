@@ -1,0 +1,69 @@
+.Dd April 29, 1999
+.Dt TIFMERGE 3
+.Os FreeBSD
+.Sh NAME
+.Nm TiffAppend
+.Nd tifmerge library function manual page
+.Sh SYNOPSIS
+.Fd #include <tifmerge.h>
+.Ft int
+.Fn TiffAppend "const char *ptr out" "const char *ptr in"
+.Sh DESCRIPTION
+This is the tifmerge library function manual page for the
+.Fn TiffAppend
+function.  This function merges two TIFF files into a single multi-page TIFF
+file.
+.Pp
+The
+.Fn TiffAppend
+function takes two arguments:
+.Fa out
+and
+.Fa in .
+Both arguments contain the pointer to the name of a file. Both files must
+exist and be valid TIFF files.
+.Pp
+The
+.Fn TiffAppend
+function will append the images contained in the
+.Fa in
+file to the images inside the
+.Fa out
+file.
+.Pp
+The function is declared in
+.Aq Pa tifmerge.h ,
+located in the @PREFIX@/include directory.
+.Sh RETURN VALUES
+The
+.Fn  TiffAppend
+function returns 0 on success, non-0 otherwise.
+.Sh ENVIRONMENT
+The
+.Fn TiffAppend
+library function ignores the environment variables.
+.Sh SEE ALSO
+.Rs
+.%A Peter van Vloten
+.%D May 1999
+.%J Windows Developer's Journal
+.%T Creating Multi-Page TIFF Files
+.Re
+.Sh STANDARDS
+.St -ansiC .
+.Sh DIAGNOSTICS
+None.
+.Sh AUTHORS
+This manual page was written by
+.An G. Adam Stanislav Aq adam@whizkidtech.net .
+.Pp
+The
+.Fn TiffAppend
+function was written by
+.An Peter van Vloten Aq pixelpan@aol.com .
+.Sh BUGS
+The original version of the
+.Fn TiffAppend
+function causes a core dump if the
+.Fa out
+argument is not a valid TIFF file. This is fixed in the FreeBSD port.

@@ -1,0 +1,174 @@
+#!/bin/sh
+
+# PROVIDE: activemq
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# activemq_enable (bool):   Set to NO by default.
+#               Set it to YES to enable activemq.
+#
+# activemq_user (username): Set to activemq by default.
+#               Set it to required username.
+#
+# activemq_group (group):   Set to activemq by default.
+#               Set it to required group.
+#
+# activemq_classpath (path):   Set to %%DATADIR%% by default.
+#               Set it to java classes directory.
+#
+# activemq_home (path):     Set to %%DATADIR%% by default.
+#               Set it to java home directory.
+#
+# activemq_javargs (args):  Set to -Xmx256M by default.
+#               See java -h for available arguments.
+#
+# activemq_stop_timeout (num):  Set to "10" by default.
+#               Set the timeout in seconds to shutdown.
+#
+# activemq_java_home (path): Set the path to the jvm to use.
+#		Set to %%JAVA_HOME%%/bin/java by default.
+#
+# activemq_debug_precmd (bool): Give java command line that
+#		will be run, when started for debugging outside
+#		of being demonised. Helpful for people new to
+#		activemq.
+#
+# activemq_audit_log (bool): Enable audit logging by default.
+#		In production, you will have to evaluate enabling
+#		this option (set to NO to disable), as it has
+#		disk I/O and storage implications which may
+#		impact expected performance. By disabling the
+#		audit log, security logging maybe reduced
+#		depending on your configuration.
+
+. /etc/rc.subr
+
+name="activemq"
+rcvar=activemq_enable
+load_rc_config $name
+
+# Set defaults
+: ${activemq_enable:=NO}
+: ${activemq_user:=activemq}
+: ${activemq_group:=activemq}
+: ${activemq_classpath:=%%ETCDIR%%}
+: ${activemq_conf:=%%ETCDIR%%}
+: ${activemq_data:=/var/db/activemq}
+: ${activemq_logs:=/var/log/activemq}
+: ${activemq_home:=%%DATADIR%%}
+: ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
+: ${activemq_stop_timeout:="10"}
+: ${activemq_hostname:=`/bin/hostname`}
+: ${activemq_java_home:='%%JAVA_HOME%%/bin/java'}
+: ${activemq_debug_precmd:=NO}
+: ${activemq_audit_log:=YES}
+
+pidfile=/var/run/${name}.pid
+
+required_files="%%ETCDIR%%/activemq.xml"
+jar_file="%%DATADIR%%/bin/activemq.jar"
+
+activemq_audit_args=""
+if checkyesno activemq_audit_log; then
+	activemq_audit_args="-Dorg.apache.activemq.audit=true"
+fi
+
+jolokia_conf="file:${activemq_conf}/jolokia-access.xml"
+
+java_options="-server -jar ${activemq_javargs} \
+-Dactivemq.classpath=${activemq_classpath} \
+-Dactivemq.conf=${activemq_conf} \
+-Dactivemq.data=${activemq_data} \
+-Dactivemq.logs=${activemq_logs} \
+-Dactivemq.home=${activemq_home} \
+-Dactivemq.base=${activemq_home} \
+-Djolokia.conf=${jolokia_conf} \
+${activemq_audit_args} \
+-Dactivemq.hostname=${activemq_hostname}"
+
+java_command="${activemq_java_home} ${java_options} ${jar_file}"
+
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -o ${activemq_logs}/daemon.log ${java_command} start"
+start_precmd="activemq_precmd"
+status_cmd="activemq_status"
+stop_cmd="activemq_stop"
+
+activemq_precmd() {
+	touch ${pidfile}
+	chown ${activemq_user}:${activemq_group} ${pidfile}
+	/usr/bin/install -d -m 0750 -o ${activemq_user} -g ${activemq_group} ${activemq_logs}
+	/usr/bin/install -d -m 0750 -o ${activemq_user} -g ${activemq_group} ${activemq_data}
+	if checkyesno activemq_debug_precmd; then
+		echo "Starting with Java command: ${java_command}"
+	fi
+}
+
+activemq_stop() {
+	rc_pid=$(activemq_check_pidfile $pidfile)
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+	
+	echo "Stopping ${name}."
+	/usr/bin/su -m $activemq_user -c "${java_command} stop" >/dev/null
+	activemq_wait_max_for_pid ${activemq_stop_timeout} ${rc_pid}
+	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
+	rm -f ${pidfile}
+}
+
+activemq_status() {
+	rc_pid=$(activemq_check_pidfile $pidfile)
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+	echo "${name} is running as pid ${rc_pid}."
+}
+
+activemq_check_pidfile() {
+	_pidfile=$1
+	if [ -z "$_pidfile" ]; then
+		err 3 'USAGE: activemq_check_pidfile pidfile'
+	fi
+	if [ ! -f $_pidfile ]; then
+		debug "pid file ($_pidfile): not readable."
+		return
+	fi
+	read _pid _junk < $_pidfile
+	if [ -z "$_pid" ]; then
+		debug "pid file ($_pidfile): no pid in file."
+		return
+	fi
+	if [ -n "`/usr/bin/su -m $activemq_user -c '%%LOCALBASE%%/bin/jps -l' | grep -e "^$_pid $jar_file\$"`" ]; then
+		echo -n $_pid
+	fi
+}
+
+activemq_wait_max_for_pid() {
+	_timeout=$1
+	shift
+	_pid=$1
+	_prefix=
+	while [ $_timeout -gt 0 ] ; do
+		echo -n ${_prefix:-"Waiting (max $_timeout secs) for PIDS: "}$_pid
+		_prefix=", "
+		sleep 2
+		kill -0 $_pid 2> /dev/null || break
+		_timeout=$(($_timeout-2))
+	done
+	if [ -n "$_prefix" ]; then
+		echo "."
+	fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,9 @@
+TIMESTAMP = 1727318908
+SHA256 (go/textproc_zed/zed-v1.18.0/v1.18.0.mod) = c5d38af564dcb06a4f2c8d6023c6c179407a5613d92d7c477ecbac0c6c46f44c
+SIZE (go/textproc_zed/zed-v1.18.0/v1.18.0.mod) = 3372
+SHA256 (go/textproc_zed/zed-v1.18.0/v1.18.0.zip) = 739825b7ef8b1f7c771c0bc415a48207833ef38a46af7ecf5597dd9a2f61e2cb
+SIZE (go/textproc_zed/zed-v1.18.0/v1.18.0.zip) = 6850323
+SHA256 (go/textproc_zq/zq-v1.18.0/v1.18.0.mod) = c5d38af564dcb06a4f2c8d6023c6c179407a5613d92d7c477ecbac0c6c46f44c
+SIZE (go/textproc_zq/zq-v1.18.0/v1.18.0.mod) = 3372
+SHA256 (go/textproc_zq/zq-v1.18.0/v1.18.0.zip) = 3d436285804af79c25e55bc099145283840ec217a343ae0162125074866e4d6d
+SIZE (go/textproc_zq/zq-v1.18.0/v1.18.0.zip) = 6846925

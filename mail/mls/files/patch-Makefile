@@ -1,0 +1,27 @@
+--- Makefile.orig	2023-10-04 18:23:40 UTC
++++ Makefile
+@@ -5,7 +5,7 @@
+ 
+ # -m386 (486,pentium,pentiumpro)
+ #OPTIMIZE=-O7 -mpentiumpro
+-OPTIMIZE=-O3
++#OPTIMIZE=-O3
+ 
+ # debug symbols will be stripped anyway during 'make install'
+ DEBUG=-g
+@@ -24,12 +24,11 @@ mls: $(OBJS)
+ 	$(CC) -c -o $@ $< $(CFLAGS)
+ 
+ mls: $(OBJS)
+-	$(CC) -o $@ $^ $(CFLAGS)
++	$(CC) -o $@ $(OBJS) $(CFLAGS)
+ 
+ install: mls
+-	install -m 755 -g root -o root -s mls $(DESTDIR)/bin
+-	install -m 644 -g root -o root mls.1 $(DESTDIR)/man/man1
+-	gzip -9f $(DESTDIR)/man/man1/mls.1
++	$(BSD_INSTALL_PROGRAM) mls $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_MAN) mls.1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 	@echo "**************************************************************"
+ 	@echo "*** To use HTML feature or PHP wrapper, copy contents of   ***"
+ 	@echo "*** 'html' subdirectory to location accessible by your     ***"

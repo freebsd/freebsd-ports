@@ -1,0 +1,2 @@
+%%APACHEMODDIR%%/%%AP_MODULE%%
+@sample %%APACHEETCDIR%%/modules.d/200_mod_mpm_itk.conf.sample

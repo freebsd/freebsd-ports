@@ -1,0 +1,45 @@
+MK_PROFILE=	no
+LIB=		itk
+ITK_LIBRARY=	${PREFIX}/lib/itk${MAJOR}.${MINOR}
+CFLAGS+=	-I. -I./../generic \
+		-I${TCL_INCLUDEDIR}/generic \
+		-I ${LOCALBASE}/include/itcl${MAJOR}.*/ \
+		-I${TK_INCLUDEDIR}/generic \
+		-I${LOCALBASE}/include \
+		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
+		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
+		-DHAVE_TM_GMTOFF=1 -DHAVE_ST_BLKSIZE=1 -DSTDC_HEADERS=1\
+		-DHAVE_SIGNED_CHAR=1 -DHAVE_SYS_IOCTL_H=1\
+		-DTCL_SHLIB_EXT=\".so\" \
+		-DHAVE_SYS_FILIO_H=1 \
+		-DRETSIGTYPE=void \
+		-DITK_LIBRARY=\"${ITK_LIBRARY}\"
+LDADD+=		-L${PREFIX}/lib -litcl -L${LOCALBASE}/lib -lX11 -ltk${TK_SHLIB_VER}
+
+.PATH:		${.CURDIR}/generic
+
+SRCS=		itk_cmds.c itk_option.c itk_archetype.c itk_util.c itkStubInit.c
+
+SCRIPTDIR=	lib/itk${MAJOR}.${MINOR}
+SCRIPTPATH=	${DESTDIR}${PREFIX}/${SCRIPTDIR}
+LIBDIR=		${PREFIX}/lib
+INCDIR=		${DESTDIR}${PREFIX}/include/itk${MAJOR}.${MINOR}
+
+pkgIndex.tcl: pkgIndex.tcl.in
+	sed -e 's#"@PKG_LIB_FILE@"#.. ${SHLIB_NAME}#' -e "s#@PACKAGE_VERSION@#${MAJOR}.${MINOR}#" \
+		< $> > $@
+
+itkConfig.sh: itkConfig.sh.in
+	sed -e 's#@itk_LIB_FILE@#${SHLIB_NAME}#g' -e 's#@itk_LIB_SPEC@#-L${LIBDIR} -litk#' \
+		-e 's,@ITK_BUILD_LIB_SPEC@,-L${LIBDIR} -litk,' \
+		< $> > $@
+
+${SCRIPTPATH} ${INCDIR}:
+	mkdir -p ${.TARGET}
+
+beforeinstall: pkgIndex.tcl itkConfig.sh ${SCRIPTPATH} ${INCDIR}
+	${BSD_INSTALL_DATA} pkgIndex.tcl itkConfig.sh ${.CURDIR}/library/* ${SCRIPTPATH}
+	${BSD_INSTALL_DATA} ${.CURDIR}/generic/*.h ${INCDIR}
+	${BSD_INSTALL_MAN} ${.CURDIR}/doc/*.n ${DESTDIR}${PREFIX}/share/man/mann/
+
+.include <bsd.lib.mk>

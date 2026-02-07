@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+racadm7 has been installed under the linux "compat" tree:
+(by default, /compat/linux/opt/dell/srvadmin/bin/idracadm7) due to linux library dependencies.
+
+It is left to the user to alias/symlink this path in their scripts.
+Note that under FreeBSD this will not work as a "local" racadm (to operate on an iDrac installed in the machine where it is run).
+EOM
+}
+]

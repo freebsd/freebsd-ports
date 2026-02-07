@@ -1,0 +1,3 @@
+Type::Tiny::XS provides an XS boost for some of Type::Tiny's built-in type
+constraints. Type::Tiny::XS is not required for Type::Tiny, but provides a speed
+boost for some type checks if available.

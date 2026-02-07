@@ -1,0 +1,9 @@
+@dir etc/X11/app-defaults
+share/man/man1/xmtoolbox.1.gz
+share/man/man1/xmsm.1.gz
+etc/X11/app-defaults/XmSm
+etc/X11/app-defaults/XmToolbox
+etc/X11/toolboxrc
+bin/xmsession
+bin/xmtoolbox
+@(,,4755) bin/xmsm

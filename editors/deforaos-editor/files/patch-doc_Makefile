@@ -1,0 +1,23 @@
+--- doc/Makefile.orig	2020-01-11 07:37:41 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)editor.1 $(OBJDIR)editor.html $(OBJDIR)editor.xml $(OBJDIR)filter.1 $(OBJDIR)filter.html $(OBJDIR)filter.xml
++TARGETS	= $(OBJDIR)editor.1 $(OBJDIR)editor.xml $(OBJDIR)filter.1 $(OBJDIR)filter.xml
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -41,14 +41,10 @@ install: all
+ 
+ install: all
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)editor.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)editor.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)filter.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)filter.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "editor.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "editor.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "filter.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "filter.html"
+ 
+ .PHONY: all clean distclean install uninstall

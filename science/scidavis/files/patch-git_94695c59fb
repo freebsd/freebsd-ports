@@ -1,0 +1,17 @@
+From 94695c59fb6e14a3d19edd9382436fe9999a763d Mon Sep 17 00:00:00 2001
+From: Miquel Garriga <gbmiquel@gmail.com>
+Date: Sat, 14 May 2022 10:53:43 +0200
+Subject: [PATCH] Fix bug #427: Color Change in Plot Details
+
+--- libscidavis/src/PlotDialog.cpp
++++ libscidavis/src/PlotDialog.cpp
+@@ -1549,7 +1549,9 @@ void PlotDialog::setActiveCurve(CurveTreeItem *item)
+         style = 6;
+     boxConnect->setCurrentIndex(style);
+ 
++    penWidget->blockSignals(true);
+     penWidget->setPen(c->pen());
++    penWidget->blockSignals(false);
+     fillGroupBox->blockSignals(true);
+     fillGroupBox->setChecked(c->brush().style() != Qt::NoBrush);
+     fillGroupBox->blockSignals(false);

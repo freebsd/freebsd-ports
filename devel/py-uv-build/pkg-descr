@@ -1,0 +1,4 @@
+uv-build is a PEP 517 build backend that uses uv to build wheels.
+
+uv is an extremely fast Python package installer and resolver. This package
+allows using uv as a build backend for Python projects.

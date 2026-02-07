@@ -1,0 +1,42 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+case $2 in
+POST-INSTALL)
+	USER=bnetd
+	GROUP=${USER}
+	LOGDIR=/var/log/pvpgn
+	PIDDIR=/var/run/pvpgn
+	PKGNAME=$1
+	PVPGN_CONFDIR=${PKG_PREFIX:-/usr/local}/etc/pvpgn
+
+	mkdir -p %%PVPGN_DIR%%/bak/charinfo
+	mkdir -p %%PVPGN_DIR%%/bak/charsave
+	mkdir -p %%PVPGN_DIR%%/bnmail
+	mkdir -p %%PVPGN_DIR%%/chanlogs
+	mkdir -p %%PVPGN_DIR%%/charinfo
+	mkdir -p %%PVPGN_DIR%%/charsave
+	mkdir -p %%PVPGN_DIR%%/clans
+	mkdir -p %%PVPGN_DIR%%/ladders
+	mkdir -p %%PVPGN_DIR%%/reports
+	mkdir -p %%PVPGN_DIR%%/status
+	mkdir -p %%PVPGN_DIR%%/teams
+	mkdir -p %%PVPGN_DIR%%/users
+	mkdir -p %%PVPGN_DIR%%/userscdb
+
+	chown -R ${USER}:${GROUP} %%PVPGN_DIR%%
+	mkdir -m 750 ${LOGDIR} ${PIDDIR} 2> /dev/null
+	chown -R ${USER}:${GROUP} ${LOGDIR} ${PIDDIR}
+
+	echo "===> Post-installation informations for ${PKGNAME}"
+   echo ""
+   echo "     o You can find the configuration files for this"
+	echo "       package in the directory ${PVPGN_CONFDIR}."
+	echo "       Please note, that the files were installed as *.conf-sample"
+	echo "       In order to run server, you must rename them."
+	echo ""
+
+	exit 0
+	;;
+esac

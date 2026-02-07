@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+To play Linux games, the Linux binary compatibility environment
+must be set up and the shebang in the start.sh scripts must be
+changed to /compat/linux/bin/bash.
+
+To play Windows games you need to install Wine.
+
+Enjoy!
+EOM
+}
+]

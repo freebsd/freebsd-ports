@@ -1,0 +1,6 @@
+bin/pcapnav-config
+include/pcapnav.h
+lib/libpcapnav.a
+lib/libpcapnav.so
+lib/libpcapnav.so.0
+lib/libpcapnav.so.0.0.0

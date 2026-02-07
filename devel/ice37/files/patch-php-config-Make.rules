@@ -1,0 +1,13 @@
+--- php/config/Make.rules.orig	2023-11-06 09:24:19 UTC
++++ php/config/Make.rules
+@@ -20,6 +20,10 @@ USE_NAMESPACES  ?= yes
+ 
+ php_major_version       = $(firstword $(subst ., ,$(shell php -r "print(PHP_VERSION);")))
+ 
++slice2php_path		= $(localbase)/bin/slice2php
++install_phpdir          = $(prefix)/share/pear
++install_phplibdir       = $(prefix)/lib/php/$(PHP_EXT_DIR)
++
+ ifneq ($(USE_NAMESPACES),yes)
+ slice2php_flags         = --no-namespace
+ endif

@@ -1,0 +1,106 @@
+From NetBSD http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/openjdk7/hacks.mk
+Work around incorrect constant folding of subnormals in javac when the FPU
+does not handle subnormal arithmetic, like on ARM in flush-to-zero mode.
+These workarounds avoid underflow conditions during the bootstrap so the JDK
+can correctly build itself.  Compiling or running programs other than OpenJDK
+itself on such hardware may still cause unexpected behaviour.
+
+--- jdk/src/share/classes/java/lang/Double.java.orig	2014-03-04 02:57:59 UTC
++++ jdk/src/share/classes/java/lang/Double.java
+@@ -86,7 +86,7 @@ public final class Double extends Number
+      *
+      * @since 1.6
+      */
+-    public static final double MIN_NORMAL = 0x1.0p-1022; // 2.2250738585072014E-308
++    public static final double MIN_NORMAL = Double.longBitsToDouble(0x10000000000000L); // 2.2250738585072014E-308
+ 
+     /**
+      * A constant holding the smallest positive nonzero value of type
+@@ -95,7 +95,7 @@ public final class Double extends Number
+      * {@code 0x0.0000000000001P-1022} and also equal to
+      * {@code Double.longBitsToDouble(0x1L)}.
+      */
+-    public static final double MIN_VALUE = 0x0.0000000000001P-1022; // 4.9e-324
++    public static final double MIN_VALUE = Double.longBitsToDouble(0x1L); // 4.9e-324
+ 
+     /**
+      * Maximum exponent a finite {@code double} variable may have.
+--- jdk/src/share/classes/java/lang/Float.java.orig	2014-03-04 02:57:59 UTC
++++ jdk/src/share/classes/java/lang/Float.java
+@@ -85,7 +85,7 @@ public final class Float extends Number 
+      *
+      * @since 1.6
+      */
+-    public static final float MIN_NORMAL = 0x1.0p-126f; // 1.17549435E-38f
++    public static final float MIN_NORMAL = Float.intBitsToFloat(0x800000); // 1.17549435E-38f
+ 
+     /**
+      * A constant holding the smallest positive nonzero value of type
+@@ -93,7 +93,7 @@ public final class Float extends Number 
+      * hexadecimal floating-point literal {@code 0x0.000002P-126f}
+      * and also equal to {@code Float.intBitsToFloat(0x1)}.
+      */
+-    public static final float MIN_VALUE = 0x0.000002P-126f; // 1.4e-45f
++    public static final float MIN_VALUE = Float.intBitsToFloat(0x1); // 1.4e-45f
+ 
+     /**
+      * Maximum exponent a finite {@code float} variable may have.  It
+--- jdk/src/share/classes/sun/misc/DoubleConsts.java.orig	2014-03-04 02:58:49 UTC
++++ jdk/src/share/classes/sun/misc/DoubleConsts.java
+@@ -52,7 +52,7 @@ public class DoubleConsts {
+      *
+      * @since 1.5
+      */
+-    public static final double  MIN_NORMAL      = 2.2250738585072014E-308;
++    public static final double  MIN_NORMAL      = Double.longBitsToDouble(0x10000000000000L);
+ 
+ 
+     /**
+--- jdk/src/share/classes/sun/misc/FloatConsts.java.orig	2014-03-04 02:58:49 UTC
++++ jdk/src/share/classes/sun/misc/FloatConsts.java
+@@ -49,7 +49,7 @@ public class FloatConsts {
+      * <code>float</code>, 2<sup>-126</sup>.  It is equal to the value
+      * returned by <code>Float.intBitsToFloat(0x00800000)</code>.
+      */
+-    public static final float   MIN_NORMAL      = 1.17549435E-38f;
++    public static final float   MIN_NORMAL      = Float.intBitsToFloat(0x800000);
+ 
+     /**
+      * The number of logical bits in the significand of a
+--- langtools/src/share/classes/com/sun/tools/javac/jvm/Items.java.orig	2014-03-04 02:51:48 UTC
++++ langtools/src/share/classes/com/sun/tools/javac/jvm/Items.java
+@@ -623,12 +623,12 @@ public class Items {
+             /** Return true iff float number is positive 0.
+              */
+             private boolean isPosZero(float x) {
+-                return x == 0.0f && 1.0f / x > 0.0f;
++                return Float.floatToIntBits(x) == 0x0;
+             }
+             /** Return true iff double number is positive 0.
+              */
+             private boolean isPosZero(double x) {
+-                return x == 0.0d && 1.0d / x > 0.0d;
++                return Double.doubleToLongBits(x) == 0x0L;
+             }
+ 
+         CondItem mkCond() {
+--- langtools/src/share/classes/com/sun/tools/javac/parser/JavacParser.java.orig	2015-09-29 16:38:49 UTC
++++ langtools/src/share/classes/com/sun/tools/javac/parser/JavacParser.java
+@@ -703,7 +703,7 @@ public class JavacParser implements Pars
+                 // error already reported in scanner
+                 n = Float.NaN;
+             }
+-            if (n.floatValue() == 0.0f && !isZero(proper))
++            if (n.floatValue() == 0.0f && !isZero(proper) && Float.floatToIntBits(n) != 0x1)
+                 error(token.pos, "fp.number.too.small");
+             else if (n.floatValue() == Float.POSITIVE_INFINITY)
+                 error(token.pos, "fp.number.too.large");
+@@ -722,7 +722,7 @@ public class JavacParser implements Pars
+                 // error already reported in scanner
+                 n = Double.NaN;
+             }
+-            if (n.doubleValue() == 0.0d && !isZero(proper))
++            if (n.doubleValue() == 0.0d && !isZero(proper) && Double.doubleToLongBits(n) != 0x1L)
+                 error(token.pos, "fp.number.too.small");
+             else if (n.doubleValue() == Double.POSITIVE_INFINITY)
+                 error(token.pos, "fp.number.too.large");

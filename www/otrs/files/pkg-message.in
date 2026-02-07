@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+OTRS is now installed.
+
+The rest of installation must be completed manually.
+
+Please see http://otrs.github.io/doc/manual/admin/stable/en/html/index.html
+and/or documentation in %%DOCSDIR%% for further instructions, particularly
+regarding configuring your web server, database, cron scripts, and
+receiving emails.
+
+Do not forget to run otrs.SetPermissions.pl script when installing OTRS
+for the first time.
+For example:
+# %%PREFIX%%/otrs/bin/otrs.SetPermissions.pl \
+--web-group=%%WWWOWN%% --otrs-user=%%OTRS_USER%% \
+--admin-group=wheel %%PREFIX%%/otrs
+
+
+If you are upgrading from an earlier version, follow the instructions for
+upgrading your database schema and configuration files given in
+%%DOCSDIR%%/UPGRADING.md
+EOM
+}
+]

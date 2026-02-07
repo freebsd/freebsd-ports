@@ -1,0 +1,2 @@
+Markaby is a templating language for Ruby, with a plugin for Rails,
+which allows you to write HTML templates in pure-Ruby (a la Builder.)

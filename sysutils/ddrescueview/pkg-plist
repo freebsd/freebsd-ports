@@ -1,0 +1,13 @@
+bin/ddrescueview
+share/applications/ddrescueview.desktop
+%%DOCSDIR%%/changelog.txt
+%%DOCSDIR%%/readme.txt
+share/icons/hicolor/128x128/apps/ddrescueview.png
+share/icons/hicolor/16x16/apps/ddrescueview.png
+share/icons/hicolor/22x22/apps/ddrescueview.png
+share/icons/hicolor/24x24/apps/ddrescueview.png
+share/icons/hicolor/256x256/apps/ddrescueview.png
+share/icons/hicolor/32x32/apps/ddrescueview.png
+share/icons/hicolor/48x48/apps/ddrescueview.png
+share/icons/hicolor/64x64/apps/ddrescueview.png
+share/man/man1/ddrescueview.1.gz

@@ -1,0 +1,8 @@
+Jls is a japanized ls.
+
+This supports several japanese kanji code such as 7-bit JIS, MS-kanji
+(shifted-JIS) or EUC.
+
+And this also supports `samba cap'ed japanese filename.
+
+Ported by shige@FreeBSD.org

@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Array/Heap.pm
+%%SITE_ARCH%%/auto/Array/Heap/Heap.so
+%%PERL5_MAN3%%/Array::Heap.3.gz

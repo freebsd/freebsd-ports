@@ -1,0 +1,6 @@
+bin/haiti
+bin/haiti-fzf
+bin/haiti-parsable
+bin/haiti_console
+bin/hashcat-haiti
+bin/john-haiti

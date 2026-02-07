@@ -1,0 +1,10 @@
+--- fand.rc.in.orig	2022-02-10 20:48:18 UTC
++++ fand.rc.in
+@@ -1,5 +1,7 @@
+ #!/bin/sh
+ 
++# $FreeBSD$
++#
+ # PROVIDE: fand
+ # REQUIRE: DAEMON devfs sysctl
+ # KEYWORD: nojail shutdown

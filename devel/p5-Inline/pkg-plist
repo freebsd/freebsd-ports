@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Inline.pm
+%%SITE_PERL%%/Inline.pod
+%%SITE_PERL%%/Inline/API.pod
+%%SITE_PERL%%/Inline/FAQ.pod
+%%SITE_PERL%%/Inline/Foo.pm
+%%SITE_PERL%%/Inline/MakeMaker.pm
+%%SITE_PERL%%/Inline/MakeMaker/Changes
+%%SITE_PERL%%/Inline/Support.pod
+%%SITE_PERL%%/Inline/denter.pm
+%%PERL5_MAN3%%/Inline.3.gz
+%%PERL5_MAN3%%/Inline::API.3.gz
+%%PERL5_MAN3%%/Inline::FAQ.3.gz
+%%PERL5_MAN3%%/Inline::Support.3.gz

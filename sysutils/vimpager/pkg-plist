@@ -1,0 +1,24 @@
+bin/vimcat
+bin/vimpager
+@sample etc/vimpagerrc.sample
+%%DOCS%%%%DOCSDIR%%/ChangeLog_vimcat.yml
+%%DOCS%%%%DOCSDIR%%/ChangeLog_vimpager.yml
+%%DOCS%%%%DOCSDIR%%/DOC_AUTHORS.yml
+%%DOCS%%%%DOCSDIR%%/TODO.yml
+%%DOCS%%%%DOCSDIR%%/copyright
+%%DOCS%%%%DOCSDIR%%/html/vimcat.html
+%%DOCS%%%%DOCSDIR%%/html/vimpager.html
+%%DOCS%%%%DOCSDIR%%/uganda.txt
+%%DOCS%%%%DOCSDIR%%/vimcat.md
+%%DOCS%%%%DOCSDIR%%/vimpager.md
+share/man/man1/vimcat.1.gz
+share/man/man1/vimpager.1.gz
+%%DATADIR%%/autoload/AnsiEsc.vim
+%%DATADIR%%/autoload/vimcat.vim
+%%DATADIR%%/autoload/vimpager.vim
+%%DATADIR%%/autoload/vimpager_utils.vim
+%%DATADIR%%/macros/less.vim
+%%DATADIR%%/plugin/AnsiEscPlugin.vim
+%%DATADIR%%/plugin/cecutil.vim
+%%DATADIR%%/plugin/vimpager.vim
+%%DATADIR%%/syntax/perldoc.vim

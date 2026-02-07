@@ -1,0 +1,5 @@
+This middleware provides a convenient way to modify requests in flight in Plack
+apps. Rewrite rules are simply written in Perl, which means everything that can
+be done with mod_rewrite can be done with this middleware much more intuitively
+(if in syntactically wordier ways). Its primary purpose is rewriting paths, but
+almost anything is possible very easily.

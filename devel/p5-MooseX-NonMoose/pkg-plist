@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/MooseX::NonMoose.3.gz
+%%PERL5_MAN3%%/MooseX::NonMoose::InsideOut.3.gz
+%%PERL5_MAN3%%/MooseX::NonMoose::Meta::Role::Class.3.gz
+%%PERL5_MAN3%%/MooseX::NonMoose::Meta::Role::Constructor.3.gz
+%%SITE_PERL%%/MooseX/NonMoose.pm
+%%SITE_PERL%%/MooseX/NonMoose/InsideOut.pm
+%%SITE_PERL%%/MooseX/NonMoose/Meta/Role/Class.pm
+%%SITE_PERL%%/MooseX/NonMoose/Meta/Role/Constructor.pm

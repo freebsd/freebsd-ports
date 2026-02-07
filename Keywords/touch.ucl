@@ -1,0 +1,9 @@
+# MAINTAINER:	portmgr@FreeBSD.org
+
+actions: []
+arguments: true
+post-install-lua: <<EOD
+	for i=1, #arg do
+		assert(io.open(pkg.prefixed_path(arg[i]), "a"):close())
+	end
+EOD

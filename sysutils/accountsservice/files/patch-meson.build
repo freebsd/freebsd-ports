@@ -1,0 +1,23 @@
+--- meson.build.orig	2023-08-12 19:01:30 UTC
++++ meson.build
+@@ -105,7 +105,6 @@ else
+   config_h.set('PATH_WTMP', '_PATH_WTMPX')
+ else
+   path_wtmp = '/var/log/utx.log'
+-  assert(run_command('test', '-e', path_wtmp, check: false).returncode() == 0, 'Do not know which filename to watch for wtmp changes')
+   config_h.set_quoted('PATH_WTMP', path_wtmp)
+ endif
+ 
+@@ -159,11 +158,7 @@ polkit_gobject_dep = dependency('polkit-gobject-1')
+ # salt drawn from secure system ressources with at least 128 bits.
+ # (96 bits for sha512crypt, as more is not supported by this method, since
+ # the effectively used maximum is 16 base64-encoded characters)
+-crypt_dep = dependency('libxcrypt', required: false, version: '>= 4')
+-config_h.set('HAVE_CRYPT_GENSALT', crypt_dep.found())
+-if not crypt_dep.found()
+-  crypt_dep = cc.find_library('crypt')
+-endif
++crypt_dep = cc.find_library('crypt')
+ 
+ dbus_dep = dependency('dbus-1')
+ if dbus_dep.version().version_compare('>=1.9.18')

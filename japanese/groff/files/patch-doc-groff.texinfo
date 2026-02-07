@@ -1,0 +1,11 @@
+--- doc/groff.texinfo.orig	2014-08-30 02:39:34.000000000 +0900
++++ doc/groff.texinfo	2014-08-30 02:40:07.000000000 +0900
+@@ -10204,7 +10204,7 @@
+ affected glyphs.
+ @endDefesc
+ 
+-@Defesc {\\z, , g, , }
++@Defesc {\\z, , g, }
+ @cindex zero-width printing (@code{\z}, @code{\Z})
+ @cindex printing, zero-width (@code{\z}, @code{\Z})
+ Print glyph @var{g} with zero width, i.e., without spacing.  Use

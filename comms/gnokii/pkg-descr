@@ -1,0 +1,6 @@
+Gnokii is a Unix/Linux tool suite for mobile phones. It provides a
+library to communicate with a phone hiding the communication protocol.
+The library handles SMS, phonebook, calendar, phone calls, and other
+mobile phone capabilities. It supports most of the GSM phones: Nokia
+ones using Nokia proprietary protocol and AT-capable ones -- using
+standard AT commands.

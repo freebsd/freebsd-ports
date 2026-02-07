@@ -1,0 +1,4 @@
+This is a small header-only library for easing primitive type boxing
+in C++. Primary goal of the library is to make it easy to avoid code
+with easily swappable parameters
+clang-tidy:bugprone-easily-swappable-parameters.

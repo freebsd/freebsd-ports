@@ -1,0 +1,40 @@
+--- gluegen/make/build.xml.orig	2008-05-14 18:54:48.000000000 -0700
++++ gluegen/make/build.xml	2010-10-27 03:34:48.000000000 -0700
+@@ -11,8 +11,8 @@
+   -->
+ <project name="GlueGen" basedir="." default="all">
+    <!-- On jpackage.org-compatible systems, antlr.jar can be found in /usr/share/java -->
+-   <available property="antlr.jar" file="/usr/share/java/antlr.jar"
+-              value="/usr/share/java/antlr.jar"/>
++   <available property="antlr.jar" file="%%JAVALIBDIR%%/antlr.jar"
++              value="%%JAVALIBDIR%%/antlr.jar"/>
+ 
+   <target name="load.user.properties" unless="user.properties.file">
+     <!-- Load the user specified properties file that defines various host
+@@ -95,7 +95,7 @@
+     - @param output.dir the directory to write the generated files to.  If
+     -        the directory does not exist, it will be created.
+     -->
+-  <target name="generate.c.grammar">
++  <target name="generate.c.grammar" depends="init">
+     <!-- Generate the Java files -->
+     <antlr target="${output.dir}/${target}" outputdirectory="${output.dir}">
+       <classpath refid="antlr.classpath" />
+@@ -111,7 +111,7 @@
+     - @param output.dir the directory to write the generated files to.  If
+     -        the directory does not exist, it will be created.
+    -->
+-  <target name="generate.c.grammar.glib">
++  <target name="generate.c.grammar.glib" depends="init">
+     <!-- Generate the Java files -->
+     <antlr target="${output.dir}/${target}" glib="${output.dir}/${glib}" outputdirectory="${output.dir}">
+       <classpath refid="antlr.classpath" />
+@@ -281,7 +281,7 @@
+       <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd" />
+       <property name="linker.cfg.id"                        value="linker.cfg.linux" />
+       <property name="c.src.dir"                            value="unix" />
+-      <property name="java.includes.dir.freebsd"            value="${java.includes.dir}/freebsd" />
++      <property name="java.includes.dir.platform"           value="${java.includes.dir}/freebsd" />
+     </target>
+ 
+     <target name="declare.hpux" if="isHPUX">

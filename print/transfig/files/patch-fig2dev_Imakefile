@@ -1,0 +1,71 @@
+--- fig2dev/Imakefile.orig	Thu Oct 27 09:56:02 2005
++++ fig2dev/Imakefile
+@@ -34,7 +34,7 @@
+ XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
+ XCOMM and installed xfig.
+ 
+-XFIGLIBDIR =	/usr/local/lib/X11/xfig
++XFIGLIBDIR =	$(LIBDIR)/xfig
+ 
+ XCOMM ******
+ XCOMM If your system doesn't have the strerror() function (has sys_errlist) then
+@@ -53,7 +53,7 @@
+ XCOMM inline functions. With the "INLINE" keyword, you should notice that
+ XCOMM the display will be a bit faster in complex figures
+ 
+-XCOMM USEINLINE = -DUSE_INLINE
++USEINLINE = -DUSE_INLINE
+ 
+ XCOMM ****************
+ XCOMM Change RGB if necessary, to point to your rgb.txt color database
+@@ -74,9 +74,9 @@
+ XCOMM file are in different places
+ 
+ #ifdef USEPNG
+-PNGLIBDIR = $(USRLIBDIR)
++PNGLIBDIR = ${LOCALBASE}/lib
+ ZLIBDIR = $(USRLIBDIR)
+-PNGINC = -I/usr/include/X11
++PNGINC = -I${LOCALBASE}/include
+ #endif
+ 
+ XCOMM ****************
+@@ -92,7 +92,7 @@
+ 
+ #ifdef USEXPM
+ XPMLIBDIR = $(USRLIBDIR)
+-XPMINC = -I/usr/include/X11
++XPMINC = -I$(INCDIR)/X11
+ #endif
+ 
+ XCOMM ****************
+@@ -141,7 +141,7 @@
+ 
+ #ifdef I18N
+ I18N_DEFS = -DI18N 
+-FIG2DEV_LIBDIR = /usr/local/lib/fig2dev
++FIG2DEV_LIBDIR = $(LIBDIR)/fig2dev
+ I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR=$(FIG2DEV_LIBDIR) -DFIG2DEV_LIBDIR_STR=\\\"$(FIG2DEV_LIBDIR)\\\"
+ 
+ #endif /* I18N */
+@@ -188,11 +188,7 @@
+ INCLUDES = -I..
+ 
+ LOCAL_LIBRARIES = $(LIBTRANSFIG)
+-#if defined(NetBSDArchitecture) || defined(FreeBSDArchitecture)
+-SYS_LIBRARIES = $(PNGLIBS) $(XPMLIBS) -lm -lcompat
+-#else
+ SYS_LIBRARIES = $(PNGLIBS) $(XPMLIBS) -lm
+-#endif
+ DEPLIBS = $(LIBTRANSFIG)
+ 
+ #if !(defined(SunOSPlatform) && (OSMajorVersion>=5))
+@@ -229,7 +225,7 @@
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGLIBDIR)/bitmaps ); fi ; \
+ 	echo Copying bitmap files for tk to $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	for f in * ; do \
+-	      $(INSTALL) -c $$f $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
++	      $(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) $$f $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	done) ; 
+ 
+ install.all::

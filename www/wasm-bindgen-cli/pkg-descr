@@ -1,0 +1,4 @@
+The wasm-bindgen is a interpolation tool between Rust and Javascript. For the
+Rust side, it use codegen to generate Javascript function binding so that we
+can call js function in Rust. For JS, it use codegen to generate Javascript
+binding code written in Rust.

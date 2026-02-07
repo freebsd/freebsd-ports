@@ -1,0 +1,7 @@
+This is the perl5 interface to Berkeley DB version 2, 3, 4 or 4.1, which
+it depends on.
+
+You may want to use this, instead of the default dbm that perl provides,
+as that one is based on version 1, which is seriously buggy. E.g., if
+keys or data are over a hundred bytes or so, bad things may happen to
+your dbm files. Never mind all the extra features....

@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/grc.dat
+lib/aspell-%%VER%%/l-grc.cmap
+lib/aspell-%%VER%%/l-grc.cset
+share/aspell/grc.multi
+share/aspell/grc.rws

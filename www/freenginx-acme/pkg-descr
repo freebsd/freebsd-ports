@@ -1,0 +1,2 @@
+ACME shared library for the NGINX OSS server.
+This library is the requirement for ACME support.

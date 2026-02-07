@@ -1,0 +1,2 @@
+This module packages several TypeConstraints with coercions for
+working with ISO8601 date strings and the DateTime suite of objects.

@@ -1,0 +1,8 @@
+--- CMakeLists.txt-orig	2012-11-03 23:37:35.000000000 +0000
++++ CMakeLists.txt	2012-11-03 23:38:47.000000000 +0000
+@@ -428,5 +428,3 @@
+ install(FILES ${libqhullcpp_HEADERS} DESTINATION ${INCLUDE_INSTALL_DIR}/libqhullcpp)
+ install(FILES html/qhull.man         DESTINATION ${MAN_INSTALL_DIR} RENAME qhull.1)
+ install(FILES html/rbox.man          DESTINATION ${MAN_INSTALL_DIR} RENAME rbox.1)
+-install(FILES ${doc_FILES}           DESTINATION ${DOC_INSTALL_DIR})
+-install(DIRECTORY html/              DESTINATION ${DOC_INSTALL_DIR})

@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-06-27 00:31:35 UTC
++++ pyproject.toml
+@@ -20,8 +20,7 @@ classifiers = [
+     "Programming Language :: Python :: 3.11",
+     "Topic :: Documentation :: Sphinx",
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ readme = "README.rst"
+ dependencies = [
+     "sphinx-last-updated-by-git",

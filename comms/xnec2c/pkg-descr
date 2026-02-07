@@ -1,0 +1,6 @@
+xnec2c is a GTK+ graphical interactive version of nec2c. It incorporates the
+nec2c core which it uses for reading input files and calculating output data,
+but it does not need and indeed does not produce an output file by default.
+Graphs of frequency-related data and the current or charge distribution
+evolve as the frequency loop progresses, and radiation patterns (far and
+near field) are sequentially drawn for each frequency step.

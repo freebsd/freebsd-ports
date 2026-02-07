@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+You need to do some things before you can use the Amazon Elastic
+Compute Cloud:
+
+1) Visit http://aws.amazon.com/ to create an Amazon AWS account.
+
+2) Obtain your AWS public key and secret key to use with the EC2 service.
+
+3) Create AMIs and use them as needed.
+
+   DISCLAIMER: You are responsible for paying Amazon to use the EC2
+               service, unless you are signed up for the AWS Free Usage
+               Tier. More information about the Free Usage Tier may be
+               found at: http://aws.amazon.com/free/
+EOM
+}
+]

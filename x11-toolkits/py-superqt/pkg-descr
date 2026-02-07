@@ -1,0 +1,4 @@
+superqt contains "missing" widgets and components for PyQt/PySide.
+
+It provides high-quality community-contributed Qt widgets and components
+for PyQt & PySide that are not provided in the native QtWidgets module.

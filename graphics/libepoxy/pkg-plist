@@ -1,0 +1,11 @@
+include/epoxy/common.h
+include/epoxy/egl.h
+include/epoxy/egl_generated.h
+include/epoxy/gl.h
+include/epoxy/gl_generated.h
+%%X11%%include/epoxy/glx.h
+%%X11%%include/epoxy/glx_generated.h
+lib/libepoxy.so
+lib/libepoxy.so.0
+lib/libepoxy.so.0.0.0
+libdata/pkgconfig/epoxy.pc

@@ -1,0 +1,31 @@
+From 68744ffbdd7daac41da274eef9ac0d191e11c16d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Martin=20Storsj=C3=B6?= <martin@martin.st>
+Date: Thu, 10 Aug 2023 11:09:36 +0300
+Subject: [PATCH] [lldb] Fix building with latest libc++
+
+Since https://reviews.llvm.org/D157058 in libc++,
+the base template for char_traits has been removed - it is only
+provided for char, wchar_t, char8_t, char16_t and char32_t.
+(Thus, to use basic_string with a type other than those, we'd need
+to supply suitable traits ourselves.)
+
+For this particular use, a vector works just as well as basic_string.
+
+Differential Revision: https://reviews.llvm.org/D157589
+---
+ .../Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp     | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp
+index 4efc454967a12..f9d95fc5d2a66 100644
+--- lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp
++++ lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp
+@@ -631,7 +631,7 @@ static void WriteRegisterValueInHexFixedWidth(
+   } else {
+     // Zero-out any unreadable values.
+     if (reg_info.byte_size > 0) {
+-      std::basic_string<uint8_t> zeros(reg_info.byte_size, '\0');
++      std::vector<uint8_t> zeros(reg_info.byte_size, '\0');
+       AppendHexValue(response, zeros.data(), zeros.size(), false);
+     }
+   }

@@ -1,0 +1,64 @@
+#########################################################################
+#
+#  System-dependent definitions suitable for compiling xcrysden using
+#  a system shared libraries (needs Tcl/Tk/GL/GLU/FFTW libraries)
+#
+########################################################################
+
+
+#------------------------------------------------------------------------
+# if you have a GNU make it is better to set the MAKE variable to point
+# to gnu make
+#------------------------------------------------------------------------
+MAKE = make
+
+
+#------------------------------------------------------------------------
+# compilers & flags
+#------------------------------------------------------------------------
+CFLAGS += -ffast-math -funroll-loops -fPIC -DUSE_FONTS -pedantic -Wall -DUSE_INTERP_RESULT
+CC     = gcc -g
+#LDLIB  = -ldl
+MATH   = -lm -lc
+
+FFLAGS = 
+FC     = gfortran -fdefault-double-8 -fdefault-real-8 -O2
+
+#-------------------------------------------
+#debug options
+#CFLAGS = -g
+#-------------------------------------------
+
+
+#------------------------------------------------------------------------
+# X-libraries & include files
+#------------------------------------------------------------------------
+X_LIB     = -lXmu -lX11 
+X_INCDIR  =
+
+#------------------------------------------------------------------------
+#
+# Libraries
+#
+
+TCL_LIB      = -L%%LOCALBASE%%/lib -ltcl86
+TK_LIB       = -L%%LOCALBASE%%/lib -ltk86
+GLU_LIB      = -L%%LOCALBASE%%/lib -lGLU
+GL_LIB       = -L%%LOCALBASE%%/lib -lGL
+FFTW3_LIB    = -L%%LOCALBASE%%/lib -lfftw3
+EXT_LIB      = -L%%LOCALBASE%%/lib -lgl2ps -L%%LOCALBASE%%/lib/Togl2.0 -lTogl2.0
+# this is only used for some testing purposes
+#MESCHACH_LIB = -lmeschach
+
+#
+# Include directories
+#
+
+TCL_INCDIR      = -I%%LOCALBASE%%/include/tcl8.6
+TK_INCDIR       = -I%%LOCALBASE%%/include/tk8.6
+GL_INCDIR       = -I%%LOCALBASE%%/include
+FFTW3_INCDIR    = -I%%LOCALBASE%%/include
+# this is only used for some testing purposes
+#MESCHACH_INCDIR =
+
+#------------------------------------------------------------------------

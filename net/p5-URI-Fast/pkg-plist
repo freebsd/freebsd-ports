@@ -1,0 +1,6 @@
+%%SITE_ARCH%%/URI/Fast.pm
+%%SITE_ARCH%%/URI/Fast/Benchmarks.pod
+%%SITE_ARCH%%/URI/Fast/IRI.pm
+%%SITE_ARCH%%/URI/Fast/Test.pm
+%%SITE_ARCH%%/auto/URI/Fast/Fast.so
+%%PERL5_MAN3%%/URI::Fast.3.gz

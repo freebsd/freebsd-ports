@@ -1,0 +1,20 @@
+--- pptpd.8.orig	Mon May 24 16:39:03 2004
++++ pptpd.8	Fri Oct 28 17:55:37 2005
+@@ -29,7 +29,7 @@
+ specifies the configuration file for
+ .B pptpd
+ (default
+-.IR /etc/pptpd.conf )
++.IR %%PREFIX%%/etc/pptpd.conf )
+ 
+ .TP
+ .BR -d | --debug
+@@ -99,7 +99,7 @@
+ displays the current version of the pptp daemon.
+ 
+ .SH FILES
+-/etc/pptpd.conf
++%%PREFIX%%/etc/pptpd.conf
+ .br
+ /var/run/pptpd.pid
+ .SH AUTHORS

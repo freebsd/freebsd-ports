@@ -1,0 +1,12 @@
+--- doc/Makefile.in.orig	2024-02-21 00:18:50 UTC
++++ doc/Makefile.in
+@@ -40,9 +40,6 @@ all:	xvt.1
+ 
+ all:	xvt.1
+ 
+-xvt.1: xvt.tbl Makefile
+-	@if test x$(TBL) = x; then : ; else echo "$(TBL) $(srcdir)/xvt.tbl | grep -v '^.lf' > xvt.1"; $(TBL) $(srcdir)/xvt.tbl | grep -v '^.lf' > xvt.1 ; fi
+-
+ SEDREPLACE = -e 's%@XVT_VERSION@%$(VERSION)%g;'\
+ 	     -e 's%@XVT_LSMDATE@%$(LSMDATE)%g;'\
+ 	     -e 's%@XVT_DATE@%$(DATE)%g;'\

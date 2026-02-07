@@ -1,0 +1,4 @@
+phpsysinfo is a PHP script that displays information about the host being
+accessed.
+It will displays things like Uptime, CPU, Memory, SCSI, IDE, PCI, Ethernet,
+Floppy, and Video Information.

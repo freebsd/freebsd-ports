@@ -1,0 +1,13 @@
+%%PERL5_MAN3%%/Project::Gantt.3.gz
+%%SITE_PERL%%/Project/Gantt.pm
+%%SITE_PERL%%/Project/Gantt/DateUtils.pm
+%%SITE_PERL%%/Project/Gantt/GanttHeader.pm
+%%SITE_PERL%%/Project/Gantt/Globals.pm
+%%SITE_PERL%%/Project/Gantt/ImageWriter.pm
+%%SITE_PERL%%/Project/Gantt/Resource.pm
+%%SITE_PERL%%/Project/Gantt/Skin.pm
+%%SITE_PERL%%/Project/Gantt/SpanInfo.pm
+%%SITE_PERL%%/Project/Gantt/Task.pm
+%%SITE_PERL%%/Project/Gantt/TextUtils.pm
+%%SITE_PERL%%/Project/Gantt/TimeSpan.pm
+%%SITE_PERL%%/Project/Gantt/Vera.ttf

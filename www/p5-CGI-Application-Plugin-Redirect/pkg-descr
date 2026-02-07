@@ -1,0 +1,2 @@
+CGI::Application::Plugin::Redirect
+    Easy external redirects in CGI::Application.

@@ -1,0 +1,11 @@
+usr/lib64/girepository-1.0/HarfBuzz-0.0.typelib
+usr/lib64/libharfbuzz-gobject.so.0
+usr/lib64/libharfbuzz-gobject.so.0.20704.0
+usr/lib64/libharfbuzz-subset.so.0
+usr/lib64/libharfbuzz-subset.so.0.20704.0
+usr/lib64/libharfbuzz.so.0
+usr/lib64/libharfbuzz.so.0.20704.0
+%%PORTDOCS%%usr/share/doc/harfbuzz/AUTHORS
+%%PORTDOCS%%usr/share/doc/harfbuzz/NEWS
+%%PORTDOCS%%usr/share/doc/harfbuzz/README
+usr/share/licenses/harfbuzz/COPYING

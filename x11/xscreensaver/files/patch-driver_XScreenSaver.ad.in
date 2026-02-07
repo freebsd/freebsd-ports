@@ -1,0 +1,39 @@
+--- driver/XScreenSaver.ad.in.orig	2025-04-28 19:46:11 UTC
++++ driver/XScreenSaver.ad.in
+@@ -55,7 +55,7 @@
+ *splashDuration:	0:00:05
+ *visualID:		default
+ *installColormap:	True
+-*ignoreUninstalledPrograms: False
++*ignoreUninstalledPrograms: True
+ *authWarningSlack:	20
+ 
+ *textMode:		url
+@@ -103,7 +103,7 @@
+ 
+ 
+ ! The strftime(3) format string for printing the time on the password dialog.
+-*dateFormat:		%I:%M %p, %a %b %e
++*dateFormat:		%Y-%m-%d %H:%M:%S
+ ! DD MMM:
+ ! *dateFormat:		%I:%M %p, %e %b (%a)
+ ! 12 hour time only:
+@@ -324,6 +324,18 @@ XScreenSaver.bourneShell:		/bin/sh
+ !=============================================================================
+ 
+ *programs:								      \
++				xaos -root -autopilot -nogui -delay 10000     \
++                                  -maxframerate 30                            \
++                                  -incoloring -1 -outcoloring -1            \n\
++				xdaliclock -root -font BUILTIN3 -cycle	    \n\
++				xearth -nofork -ncolors 50 -night 3	      \
++				  -pos sunrel/38/-30 -wait 0		    \n\
++				xmountains -b -M -Z 0 -r 1		    \n\
++	"XMountains (top)"	xmountains -b -M -Z 0 -r 1 -m		    \n\
++				xplanet -vroot -wait 1 -timewarp 400	      \
++                                  -label -origin moon			    \n\
++-				xsnow -bg SkyBlue3 -solidbg		    \n\
++@GL_KLUDGE@ GL:					fireflies -root                             \n\
+ 				maze --root				    \n\
+ @GL_KLUDGE@ GL: 				superquadrics --root			    \n\
+ 				attraction --root			    \n\
