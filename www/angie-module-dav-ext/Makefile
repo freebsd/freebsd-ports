@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-dav-ext
 MODULE_VERSION=	3.0.0
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	arut:nginx-dav-ext-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie dav-ext dynamic module
@@ -18,7 +18,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_dav_ext_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.rst ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.rst ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

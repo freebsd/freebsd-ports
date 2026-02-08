@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-lua
 MODULE_VERSION=	0.10.29
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	openresty:lua-nginx-module:v${MODULE_VERSION}:lua
 GH_TUPLE+=	openresty:stream-lua-nginx-module:v0.0.16:lua_stream
 GH_TUPLE+=	vision5:ngx_devel_kit:v0.3.4:ndk
@@ -30,13 +30,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		 ${STAGEDIR}${MODDIR}
 
-.for i in ngx_http_lua_module ngx_stream_lua_module
-	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}
-.endfor
+	${INSTALL_LIB}  ${WRKSRC}/objs/ngx_http_lua_module.so \
+			${WRKSRC}/objs/ngx_stream_lua_module.so \
+		${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_lua}/README.markdown \
+	${INSTALL_DATA} ${WRKSRC_lua}/README.markdown \
 		${STAGEDIR}${DOCSDIR}/README.lua-nginx-module.markdown
-	${INSTALL_MAN} ${WRKSRC_lua_stream}/README.md \
+	${INSTALL_DATA} ${WRKSRC_lua_stream}/README.md \
 		${STAGEDIR}${DOCSDIR}/README.stream-lua-nginx-module.md
 
 do-install-DEBUG-on:

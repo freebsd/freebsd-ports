@@ -16,8 +16,8 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_testcookie_access_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/Changelog ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC_module}/README.markdown ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/Changelog \
+			${WRKSRC_module}/README.markdown ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

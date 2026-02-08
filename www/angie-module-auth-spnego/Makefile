@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-auth-spnego
 MODULE_VERSION=	1.1.3
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie auth-spnego dynamic module
@@ -21,7 +21,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_auth_spnego_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

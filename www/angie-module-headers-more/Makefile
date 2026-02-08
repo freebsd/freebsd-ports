@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-headers-more
 MODULE_VERSION=	0.39
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	openresty:headers-more-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie headers-more dynamic module
@@ -17,7 +17,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_headers_more_filter_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.markdown ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.markdown ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

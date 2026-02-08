@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-njs
 MODULE_VERSION=	0.9.5
-MODULE_PORTREVISION=	1
+MODULE_PORTREVISION=	2
 GH_TUPLE=	nginx:njs:${MODULE_VERSION}:module
 
 COMMENT=	Angie NJS dynamic module
@@ -19,13 +19,12 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		 ${STAGEDIR}${MODDIR}
 
-.for i in ngx_http_js_module ngx_stream_js_module
-	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}
-.endfor
+	${INSTALL_LIB}  ${WRKSRC}/objs/ngx_http_js_module.so \
+			${WRKSRC}/objs/ngx_stream_js_module.so \
+		${STAGEDIR}${MODDIR}
 
-.for i in CHANGES README.md SECURITY.md SUPPORT.md
-	${INSTALL_MAN} ${WRKSRC_module}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${CHANGES README.md SECURITY.md SUPPORT.md:L:S|^|${WRKSRC_module}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 .for i in ngx_http_js_module ngx_stream_js_module

@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-geoip2
 MODULE_VERSION=	3.4
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	leev:ngx_http_geoip2_module:${MODULE_VERSION}:module
 
 COMMENT=	Angie GeoIP2 dynamic module
@@ -14,11 +14,11 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		 ${STAGEDIR}${MODDIR}
 
-.for i in ngx_http_geoip2_module ngx_stream_geoip2_module
-	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}
-.endfor
+	${INSTALL_LIB}  ${WRKSRC}/objs/ngx_http_geoip2_module.so \
+			${WRKSRC}/objs/ngx_stream_geoip2_module.so \
+		${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 .for i in ngx_http_geoip2_module ngx_stream_geoip2_module

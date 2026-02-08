@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-echo
 MODULE_VERSION=	0.64
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	openresty:echo-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie echo dynamic module
@@ -15,7 +15,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_echo_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.markdown ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.markdown ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-vod
 MODULE_VERSION=	1.33
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	kaltura:nginx-vod-module:${MODULE_VERSION}:module
 
 COMMENT=	VOD dynamic module for Angie
@@ -20,7 +20,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_vod_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

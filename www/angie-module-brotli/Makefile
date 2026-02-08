@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-brotli
 MODULE_VERSION=	1.0.0rc
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	google:ngx_brotli:v${MODULE_VERSION}:module
 
 COMMENT=	Angie Brotli dynamic module
@@ -14,13 +14,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		 ${STAGEDIR}${MODDIR}
 
-.for i in ngx_http_brotli_filter_module ngx_http_brotli_static_module
-	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}
-.endfor
+	${INSTALL_LIB}  ${WRKSRC}/objs/ngx_http_brotli_filter_module.so \
+			${WRKSRC}/objs/ngx_http_brotli_static_module.so \
+		${STAGEDIR}${MODDIR}
 
-.for i in CONTRIBUTING README
-	${INSTALL_MAN} ${WRKSRC_module}/${i}.md ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC_module}/CONTRIBUTING.md \
+			${WRKSRC_module}/README.md \
+		${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 .for i in ngx_http_brotli_filter_module ngx_http_brotli_static_module
