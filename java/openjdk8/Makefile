@@ -1,6 +1,5 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim:jtreg LOCAL/openjdk:boot
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -62,7 +61,7 @@ BOOTSTRAPJDKDIR=	${WRKDIR}/boot-jdk
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	472
+JDK_UPDATE_VERSION=	482
 JDK_BUILD_NUMBER=	08
 BSD_JDK_VERSION=	1
 JTREG_VERSION=		4.1
@@ -83,12 +82,12 @@ CONFIGURE_ARGS+=	--with-vendor-name="OpenJDK BSD Porting Team" \
 .if defined(NO_CCACHE)
 CONFIGURE_ARGS+=	--disable-ccache
 .endif
-CONFIGURE_ARGS+=	--disable-freetype-bundling \
-			--disable-zip-debug-info \
+CONFIGURE_ARGS+=	--disable-zip-debug-info \
 			--with-cups=${LOCALBASE} \
 			--with-debug-level=${JDK_BUILD_TYPE} \
-			--with-freetype=${LOCALBASE} \
+			--with-freetype=system \
 			--with-freetype-include=${LOCALBASE}/include/freetype2 \
+			--with-freetype-lib=${LOCALBASE}/lib \
 			--with-jobs=${MAKE_JOBS_NUMBER} \
 			--with-jvm-variants=${JDK_BUILD_JVM} \
 			--with-milestone=fcs \
