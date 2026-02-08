@@ -1,7 +1,6 @@
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	4
+DISTVERSION=	0.5.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,16 +13,16 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSES/BSD-3-Clause.txt
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig:devel/swig \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		swig:devel/swig \
 		${LOCALBASE}/include/zmq.hpp:net/cppzmq
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libbabl-0.1.so:x11/babl \
 		libjsoncpp.so:devel/jsoncpp \
 		libopenshot-audio.so:audio/libopenshot-audio \
-		libpython${PYTHON_VER}${PYTHON_ABIVER}.so:lang/python${PYTHON_SUFFIX} \
 		libzmq.so:net/libzmq4
 
-USES=		cmake pkgconfig python:build qt:5
+USES=		cmake pkgconfig python qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 USE_LDCONFIG=	yes

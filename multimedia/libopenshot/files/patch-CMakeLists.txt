@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2024-12-21 22:27:30 UTC
 +++ CMakeLists.txt
-@@ -130,7 +130,7 @@ add_subdirectory(src)
+@@ -130,7 +130,7 @@ endif()
  ### Process subdirectories
  ###
  add_subdirectory(src)
