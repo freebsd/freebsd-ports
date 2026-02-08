@@ -13,5 +13,5 @@ SHA256 (openjdk11-11.0.29+7.1.x86.tar.xz) = 1a0778af2a89fc3a00a67b0d0144f97d8b59
 SIZE (openjdk11-11.0.29+7.1.x86.tar.xz) = 152081036
 SHA256 (openjdk11-11.0.29+7.1.x86_64.tar.xz) = 59abad77c35f271dc6f2082e6f666028ac4b013e80ec1e9d16efb8d291859c62
 SIZE (openjdk11-11.0.29+7.1.x86_64.tar.xz) = 167421264
-SHA256 (battleblow-jdk11u-jdk-11.0.29+7-1_GH0.tar.gz) = ed1fed0a7d6571e5bff9a07272872258451643ba6741c002a8f58bdfd8fc9803
-SIZE (battleblow-jdk11u-jdk-11.0.29+7-1_GH0.tar.gz) = 116785204
+SHA256 (battleblow-jdk11u-jdk-11.0.30+7-1_GH0.tar.gz) = 5c9623b9008983f0747802e358e0022c5497d1c8737f064a346a9211b2d38124
+SIZE (battleblow-jdk11u-jdk-11.0.30+7-1_GH0.tar.gz) = 116813062
