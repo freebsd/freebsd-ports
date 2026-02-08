@@ -14,7 +14,9 @@ bin/jj
 %%PORTDOCS%%%%DOCSDIR%%/design/copy-tracking.md
 %%PORTDOCS%%%%DOCSDIR%%/design/git-submodule-storage.md
 %%PORTDOCS%%%%DOCSDIR%%/design/git-submodules.md
+%%PORTDOCS%%%%DOCSDIR%%/design/jj-converge-command.md
 %%PORTDOCS%%%%DOCSDIR%%/design/run.md
+%%PORTDOCS%%%%DOCSDIR%%/design/secure-config.md
 %%PORTDOCS%%%%DOCSDIR%%/design/sparse-v2.md
 %%PORTDOCS%%%%DOCSDIR%%/design/tracking-branches.md
 %%PORTDOCS%%%%DOCSDIR%%/design_doc_blueprint.md
@@ -25,10 +27,12 @@ bin/jj
 %%PORTDOCS%%%%DOCSDIR%%/git-command-table.yml
 %%PORTDOCS%%%%DOCSDIR%%/git-comparison.md
 %%PORTDOCS%%%%DOCSDIR%%/git-compatibility.md
+%%PORTDOCS%%%%DOCSDIR%%/git-experts.md
 %%PORTDOCS%%%%DOCSDIR%%/github.md
 %%PORTDOCS%%%%DOCSDIR%%/glossary.md
 %%PORTDOCS%%%%DOCSDIR%%/governance/GOVERNANCE.md
 %%PORTDOCS%%%%DOCSDIR%%/governance/temporary-voting.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/cli-revision-options.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/divergence.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/multiple-remotes.md
 %%PORTDOCS%%%%DOCSDIR%%/images/LICENSE
