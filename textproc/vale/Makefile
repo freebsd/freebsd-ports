@@ -1,7 +1,6 @@
 PORTNAME=	vale
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.13.0
-PORTREVISION=	4
+DISTVERSION=	3.13.1
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://vale.sh/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.25+,modules
 
 GO_BUILDFLAGS+=	-ldflags="-s -w -X main.Version=${DISTVERSION}"
 GO_MODULE=	github.com/errata-ai/${PORTNAME}/v3
