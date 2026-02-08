@@ -1,0 +1,11 @@
+--- net/third_party/quiche/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ net/third_party/quiche/BUILD.gn
+@@ -28,7 +28,7 @@ import("//third_party/protobuf/proto_library.gni")
+ import("//testing/libfuzzer/fuzzer_test.gni")
+ import("//third_party/protobuf/proto_library.gni")
+ 
+-build_epoll_based_tools = is_linux || is_chromeos
++build_epoll_based_tools = (is_linux && !is_bsd) || is_chromeos
+ 
+ config("quiche_internal_config") {
+   cflags = []

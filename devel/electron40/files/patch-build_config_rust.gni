@@ -1,0 +1,39 @@
+--- build/config/rust.gni.orig	2026-01-07 00:52:53 UTC
++++ build/config/rust.gni
+@@ -67,7 +67,8 @@ declare_args() {
+   # set this to the output of `rustc -V`. Changing this string will cause all
+   # Rust targets to be rebuilt, which allows you to update your toolchain and
+   # not break incremental builds.
+-  rustc_version = ""
++  rustc_version = exec_script("//build/gn_run_binary.py",
++    [ "/usr/local/bin/rustc", "-V" ], "trim string")
+ 
+   # Whether artifacts produced by the Rust compiler can participate in ThinLTO.
+   #
+@@ -152,6 +153,13 @@ if (enable_rust) {
+   } else {
+     toolchain_has_rust = custom_toolchain_supports_platform
+     rustc_revision = rustc_version
++    rust_revision_pieces = string_split(rustc_revision, " ")
++    rust_version_pieces = string_split(rust_revision_pieces[1], ".")
++    if (rust_version_pieces[1] == "85") {
++      rustc_nightly_capability = false
++    } else {
++      rustc_nightly_capability = true
++    }
+   }
+ }
+ 
+@@ -336,7 +344,11 @@ if (is_linux || is_chromeos) {
+   }
+ }
+ 
+-if (toolchain_has_rust) {
++if (is_bsd) {
++  rust_abi_target = string_replace(rust_abi_target, "linux-gnu", current_os)
++}
++
++if (toolchain_has_rust && !is_bsd) {
+   assert(rust_abi_target != "")
+ 
+   _known_rust_target_triples_filepath = "//build/rust/known-target-triples.txt"

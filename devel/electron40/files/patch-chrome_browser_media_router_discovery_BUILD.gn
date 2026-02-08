@@ -1,0 +1,11 @@
+--- chrome/browser/media/router/discovery/BUILD.gn.orig	2025-08-26 20:49:50 UTC
++++ chrome/browser/media/router/discovery/BUILD.gn
+@@ -81,7 +81,7 @@ static_library("discovery") {
+   ]
+   configs += [ "//build/config/compiler:wexit_time_destructors" ]
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "discovery_network_list_wifi_linux.cc" ]
+   }
+ 

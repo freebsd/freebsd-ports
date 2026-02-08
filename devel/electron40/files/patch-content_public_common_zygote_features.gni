@@ -1,0 +1,8 @@
+--- content/public/common/zygote/features.gni.orig	2023-03-30 00:33:51 UTC
++++ content/public/common/zygote/features.gni
+@@ -2,4 +2,4 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+-use_zygote = is_posix && !is_android && !is_apple
++use_zygote = is_posix && !is_android && !is_mac && !is_bsd

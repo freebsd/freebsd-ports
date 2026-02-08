@@ -1,0 +1,11 @@
+--- content/zygote/BUILD.gn.orig	2025-08-26 20:49:50 UTC
++++ content/zygote/BUILD.gn
+@@ -4,7 +4,7 @@ import("//content/public/common/zygote/features.gni")
+ 
+ import("//content/public/common/zygote/features.gni")
+ 
+-if (is_linux || is_chromeos) {
++if ((is_linux || is_chromeos) && !is_bsd) {
+   source_set("zygote") {
+     sources = [
+       "zygote_linux.cc",
