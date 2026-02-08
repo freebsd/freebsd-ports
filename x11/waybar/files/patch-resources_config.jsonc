@@ -1,0 +1,17 @@
+--- resources/config.jsonc.orig	2026-02-06 20:15:03 UTC
++++ resources/config.jsonc
+@@ -210,10 +210,10 @@
+ 		"menu": "on-click",
+ 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+ 		"menu-actions": {
+-			"shutdown": "shutdown",
+-			"reboot": "reboot",
+-			"suspend": "systemctl suspend",
+-			"hibernate": "systemctl hibernate"
++			"shutdown": "shutdown -p now",
++			"reboot": "shutdown -r now",
++			"suspend": "zzz",
++			"hibernate": "apiconf -s 4"
+ 		}
+     }
+ }

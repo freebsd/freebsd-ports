@@ -1,6 +1,6 @@
 PORTNAME=	waybar
-DISTVERSION=	0.14.0
-PORTREVISION=	3
+DISTVERSION=	0.15.0
+PORTREVISION=	0
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -31,15 +31,15 @@ GH_ACCOUNT=	Alexays
 GH_PROJECT=	Waybar
 USE_GNOME=	gtkmm30
 
+MESON_ARGS=	${libnl systemd tests:L:C/.*/-D&=disabled/}
+
+CONFLICTS_INSTALL=	${PORTNAME}*
+
 # XXX Add pkg-config support to devel/date
 .if exists(${.CURDIR}/files/date.pc.in)
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
-
-MESON_ARGS=	${libnl systemd tests:L:C/.*/-D&=disabled/}
-
-CONFLICTS_INSTALL=	${PORTNAME}*
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config.jsonc \
@@ -54,12 +54,12 @@ OPTIONS_EXCLUDE+=	CAVA # https://github.com/karlstav/cava/issues/487
 OPTIONS_EXCLUDE+=	PULSEAUDIO
 .endif
 
-EVDEV_DESC=	Keyboard state via libevdev
-ICONSFONT_DESC=	Install Font Awesome to properly render icons
-MPD_DESC=	Music Player Daemon support
-MPRIS_DESC=	Media Player Remote Interfacing Specification via playerctl
-UDEV_DESC=	Monitor backlight level via libudev
-UPOWER_DESC=	Monitor battery capacity via UPower
+EVDEV_DESC=		Keyboard state via libevdev
+ICONSFONT_DESC=		Install Font Awesome to properly render icons
+MPD_DESC=		Music Player Daemon support
+MPRIS_DESC=		Media Player Remote Interfacing Specification via playerctl
+UDEV_DESC=		Monitor backlight level via libudev
+UPOWER_DESC=		Monitor battery capacity via UPower
 WIREPLUMBER_DESC=	Show current volume via WirePlumber
 
 CAVA_LIB_DEPENDS=	libcava.so:audio/cava
