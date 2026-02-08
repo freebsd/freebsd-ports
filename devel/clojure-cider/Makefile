@@ -1,6 +1,6 @@
 PORTNAME=	clojure-cider
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20.0
+DISTVERSION=	1.21.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -23,23 +23,7 @@ GH_PROJECT=	cider
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/cider-client.el \
-		${EMACS_SITE_LISPDIR}/cider-eldoc.el \
-		${EMACS_SITE_LISPDIR}/cider-inspector.el \
-		${EMACS_SITE_LISPDIR}/cider-macroexpansion.el \
-		${EMACS_SITE_LISPDIR}/cider-mode.el \
-		${EMACS_SITE_LISPDIR}/cider-repl.el \
-		${EMACS_SITE_LISPDIR}/cider-scratch.el \
-		${EMACS_SITE_LISPDIR}/cider-selector.el \
-		${EMACS_SITE_LISPDIR}/cider-stacktrace.el \
-		${EMACS_SITE_LISPDIR}/cider-util.el \
-		${EMACS_SITE_LISPDIR}/cider.el \
-		${EMACS_SITE_LISPDIR}/nrepl-client.el
-
 do-install:
-.for f in ${PLIST_FILES:S,^${EMACS_SITE_LISPDIR}/,,}
-	${INSTALL_DATA} ${WRKSRC}/${f} \
-		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/lisp/*.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 .include <bsd.port.mk>
