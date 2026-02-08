@@ -1,3 +1,29 @@
+  <vuln vid="f301a241-04d3-11f1-a38c-8447094a420f">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.13,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://github.com/roundcube/roundcubemail/releases/tag/1.6.13">
+	  <p>Unspecified CSS injection vulnerability.</p>
+	  <p>Remote image blocking bypass via SVG content.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/roundcube/roundcubemail/releases/tag/1.6.13</url>
+    </references>
+    <dates>
+      <discovery>2026-02-08</discovery>
+      <entry>2026-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="73ff246b-04b2-11f1-84fc-4ccc6adda413">
     <topic>qt6-webengine -- multiple vulnerabilities</topic>
     <affects>
