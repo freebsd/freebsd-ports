@@ -1,6 +1,6 @@
---- src/settings/_default.settings.orig	2024-12-22 02:37:46 UTC
+--- src/settings/_default.settings.orig	2025-12-18 03:07:34 UTC
 +++ src/settings/_default.settings
-@@ -472,7 +472,7 @@
+@@ -526,7 +526,7 @@
      "min": 0,
      "setting": "graca_number_de",
      "type": "dropdown",
@@ -9,7 +9,7 @@
      "translate_values": true,
      "values": [],
      "restart": true
-@@ -484,7 +484,7 @@
+@@ -538,7 +538,7 @@
      "min": 0,
      "setting": "graca_number_en",
      "type": "dropdown",
