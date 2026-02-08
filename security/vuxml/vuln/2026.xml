@@ -1,3 +1,45 @@
+  <vuln vid="73ff246b-04b2-11f1-84fc-4ccc6adda413">
+    <topic>qt6-webengine -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>qt6-pdf</name>
+<name>qt6-webengine</name>
+<range><lt>6.10.2</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=134-based">
+	  <p>Backports for 7 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2025-13638: Prevent media element GC in callbacks in WebMediaPlayerMS</li>
+	    <li>CVE-2025-13639: Improve validation of SDP direction in remote description</li>
+	    <li>CVE-2025-13720: Avoid downcasting Hash and Integrity reports</li>
+	    <li>CVE-2025-14174: Metal: Don't use pixelsDepthPitch to size buffers</li>
+	    <li>CVE-2025-14765: Polyfill unary negation and abs for amd mesa frontend</li>
+	    <li>CVE-2026-0908: Use CheckedNumerics in HandleAllocator</li>
+	    <li>CVE-2026-1504: Block opaque 416 responses to non-range requests</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13638</cvename>
+      <cvename>CVE-2025-13639</cvename>
+      <cvename>CVE-2025-13720</cvename>
+      <cvename>CVE-2025-14174</cvename>
+      <cvename>CVE-2025-14765</cvename>
+      <cvename>CVE-2026-0908</cvename>
+      <cvename>CVE-2026-1504</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=134-based</url>
+    </references>
+    <dates>
+      <discovery>2026-02-02</discovery>
+      <entry>2026-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a6effa17-1fd4-4895-8471-d5c684d7807c">
     <topic>navidrome -- multiple vulnerabilities</topic>
     <affects>
