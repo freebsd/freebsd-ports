@@ -11,7 +11,7 @@
  #include "xpipeman.h"
  
  /*----------------------------------------------------------------------*/
-@@ -64,13 +65,12 @@ typedef struct {
+@@ -64,13 +65,12 @@ static SCORE scores[MAXSCORES];
  
  static SCORE scores[MAXSCORES];
  
@@ -26,7 +26,16 @@
  
  /*----------------------------------------------------------------------*/
  
-@@ -100,8 +100,8 @@ load_scores()
+@@ -87,7 +87,7 @@ check_score(current_score,level)
+   }
+   if(scorefile) {
+ #ifndef SYSV
+-    flock(scorefile->_file, LOCK_UN);
++    flock(fileno(scorefile), LOCK_UN);
+ #endif
+     fclose(scorefile);
+     show_scores();
+@@ -100,12 +100,12 @@ load_scores()
  {
    int i = 0;
  
@@ -37,6 +46,11 @@
      return;
    }
  #ifndef SYSV
+-  flock(scorefile->_file, LOCK_EX);
++  flock(fileno(scorefile), LOCK_EX);
+ #endif
+   while( fgets(scores[i].score,6,scorefile) 	/* get score */
+       && fgets(scores[i].name,26,scorefile) 	/* get name */
 @@ -198,7 +198,7 @@ static Arg arglist_popdown[] = {
  
  
@@ -46,3 +60,12 @@
  popdown_callback(w, closure, call_data)
    Widget w;
    caddr_t closure;
+@@ -281,7 +281,7 @@ show_scores_callback()
+ 
+   if(scorefile) {
+ #ifndef SYSV
+-    flock(scorefile->_file, LOCK_UN);
++    flock(fileno(scorefile), LOCK_UN);
+ #endif
+     fclose(scorefile);
+     show_scores();
