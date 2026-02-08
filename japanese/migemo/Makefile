@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Japanese incremental search tool
-WWW=		http://migemo.namazu.org/
+WWW=		http://0xcc.net/migemo/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
