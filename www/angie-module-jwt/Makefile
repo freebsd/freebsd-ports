@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-jwt
 MODULE_VERSION=	3.4.4
-MODULE_PORTREVISION=	1
+MODULE_PORTREVISION=	2
 GH_TUPLE=	max-lt:nginx-jwt-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie JWT dynamic module
@@ -22,7 +22,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_auth_jwt_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

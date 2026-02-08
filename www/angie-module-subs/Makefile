@@ -15,7 +15,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_subs_filter_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

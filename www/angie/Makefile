@@ -1,6 +1,6 @@
 PORTNAME?=	angie
-ANGIE_VERSION=	1.11.2
-ANGIE_PORTREVISION=	1
+ANGIE_VERSION=	1.11.3
+ANGIE_PORTREVISION=	0
 CATEGORIES+=	www
 MASTER_SITES+=	https://download.angie.software/files/:angie
 DISTNAME=	angie-${ANGIE_VERSION}
@@ -38,10 +38,10 @@ BUILD_DEPENDS+=	pcre2>=0:devel/pcre2
 # The following makes sure module ports are rebuild if angie gets updated.
 # However, pkg does not obey RUN_DEPENDS on updates, therefore we need to
 # also bump MODULE_PORTREVISION for every single www/angie-module* port.
-.  if defined(ANGIE_PORTREVISION)
-RUN_DEPENDS+=	angie==${ANGIE_VERSION}_${ANGIE_PORTREVISION}:www/angie
-.  else
+.  if ${ANGIE_PORTREVISION} == 0
 RUN_DEPENDS+=	angie==${ANGIE_VERSION}:www/angie
+.  else
+RUN_DEPENDS+=	angie==${ANGIE_VERSION}_${ANGIE_PORTREVISION}:www/angie
 .  endif
 ALL_TARGET?=	modules
 CONFIGURE_ADD?=	--add-dynamic-module=${WRKSRC_module}
@@ -186,25 +186,21 @@ do-install:
 	${LN} -fs angie-nodebug ${STAGEDIR}${PREFIX}/sbin/angie
 
 	${INSTALL_MAN} ${WRKSRC}/objs/angie.8 ${STAGEDIR}${PREFIX}/share/man/man8
-.  for i in CHANGES CHANGES.ru
-	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/CHANGES.ru ${STAGEDIR}${DOCSDIR}
 
 .  for i in fastcgi.conf fastcgi_params mime.types scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
 .  endfor
 	${INSTALL_DATA} ${WRKSRC}/conf/prometheus_all.conf \
 	    ${STAGEDIR}${ETCDIR}/prometheus_all.conf.sample
-
 	${INSTALL_DATA} ${WRKDIR}/angie.conf.sample \
 	    ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/default.conf.sample \
 	    ${STAGEDIR}${ETCDIR}/http.d
 	${INSTALL_DATA} ${WRKDIR}/example.conf.sample \
 	    ${STAGEDIR}${ETCDIR}/stream.d
-.  for i in 50x.html index.html
-	${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${WWWDIR}/html/${i}
-.  endfor
+	${INSTALL_DATA} ${WRKSRC}/html/50x.html ${WRKSRC}/html/index.html \
+		${STAGEDIR}${WWWDIR}/html
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${BINMODE} ${WRKSRC_DEBUG}/objs/angie \

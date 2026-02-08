@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-zstd
 MODULE_VERSION=	0.1.1
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	tokers:zstd-nginx-module:${MODULE_VERSION}:module
 
 COMMENT=	Angie zstd dynamic module
@@ -18,12 +18,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		 ${STAGEDIR}${MODDIR}
 
-.for i in ngx_http_zstd_static_module ngx_http_zstd_filter_module
-	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}
-.endfor
+	${INSTALL_LIB}  ${WRKSRC}/objs/ngx_http_zstd_static_module.so \
+			${WRKSRC}/objs/ngx_http_zstd_filter_module.so \
+		${STAGEDIR}${MODDIR}
 
-.for i in README.md
-	${INSTALL_MAN} ${WRKSRC_module}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include "${MASTERDIR}/Makefile"

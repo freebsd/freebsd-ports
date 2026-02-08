@@ -1,6 +1,6 @@
-TIMESTAMP = 1770195350
-SHA256 (angie-1.11.2.tar.gz) = 3abea91bb94c973b394a2425e4a617c8d5623ba7fcd8fb562e32184570ecbc47
-SIZE (angie-1.11.2.tar.gz) = 1881931
+TIMESTAMP = 1770492463
+SHA256 (angie-1.11.3.tar.gz) = 08fa99d18a90f738674b300f64867406045ad5c518e952cd24e3ffdb0c14117d
+SIZE (angie-1.11.3.tar.gz) = 1882221
 SHA256 (61131-nginx-http-auth-totp-1.1.0_GH0.tar.gz) = d36d2b75a3b239e63ec060ef9ccfa6b89acbceb74b7c93e47550c1f75ac4857e
 SIZE (61131-nginx-http-auth-totp-1.1.0_GH0.tar.gz) = 9813
 SHA256 (kjdev-nginx-auth-jwt-0.9.0_GH0.tar.gz) = d7c72634261a053afaacc2cb762eccf9ce4c462ca738ad0c4809eb964ddf3c0c

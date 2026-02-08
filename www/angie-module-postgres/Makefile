@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-postgres
 MODULE_VERSION=	1.0rc7
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	FRiCKLE:ngx_postgres:${MODULE_VERSION}:module
 
 COMMENT=	Angie postgres dynamic module
@@ -17,7 +17,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_postgres_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \

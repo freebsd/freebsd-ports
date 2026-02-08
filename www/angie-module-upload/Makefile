@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-upload
 MODULE_VERSION=	2.3.0
-MODULE_PORTREVISION=	2
+MODULE_PORTREVISION=	3
 GH_TUPLE=	fdintino:nginx-upload-module:${MODULE_VERSION}:module
 
 COMMENT=	Angie upload dynamic module
@@ -18,7 +18,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_upload_module.so \
 	    ${STAGEDIR}${MODDIR}
 
-	${INSTALL_MAN} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC_module}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${_SHAREMODE} \
