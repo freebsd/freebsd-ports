@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2024-12-21 22:21:33 UTC
+--- CMakeLists.txt.orig	2025-12-16 07:47:39 UTC
 +++ CMakeLists.txt
 @@ -180,6 +180,16 @@ set_target_properties(openshot-audio PROPERTIES
    EXPORT_NAME Audio  # Exports as OpenShot::Audio target
@@ -27,7 +27,7 @@
    target_compile_options(openshot-audio PRIVATE -fexceptions)
  endif()
  
-@@ -262,8 +273,10 @@ if(UNIX AND NOT APPLE)
+@@ -264,8 +275,10 @@ if(UNIX AND NOT APPLE)
        INTERFACE_INCLUDE_DIRECTORIES ${ALSA_INCLUDE_DIR}
        INTERFACE_LINK_LIBRARIES ${ALSA_LIBRARIES})
    endif()
@@ -39,7 +39,7 @@
  else()
    # For EXPORTED Config
    set(NEED_ALSA FALSE)
-@@ -271,10 +284,52 @@ find_package(ZLIB REQUIRED)
+@@ -273,10 +286,52 @@ find_package(ZLIB REQUIRED)
  
  # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1
  find_package(ZLIB REQUIRED)

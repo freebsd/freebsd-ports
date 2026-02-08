@@ -1,7 +1,6 @@
 PORTNAME=	libopenshot-audio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.5.0
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
