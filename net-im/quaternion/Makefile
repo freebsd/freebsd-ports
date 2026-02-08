@@ -1,5 +1,6 @@
 PORTNAME=	Quaternion
 DISTVERSION=	0.0.97.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
