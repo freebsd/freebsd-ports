@@ -37,7 +37,10 @@
     <topic>Roundcube -- Multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>roundcube</name>
+	<name>roundcube-php82</name>
+	<name>roundcube-php83</name>
+	<name>roundcube-php84</name>
+	<name>roundcube-php85</name>
 	<range><lt>1.6.13,1</lt></range>
       </package>
     </affects>
