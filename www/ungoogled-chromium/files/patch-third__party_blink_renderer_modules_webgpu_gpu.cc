@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webgpu/gpu.cc.orig	2026-01-16 13:40:34 UTC
+--- third_party/blink/renderer/modules/webgpu/gpu.cc.orig	2026-02-15 10:01:45 UTC
 +++ third_party/blink/renderer/modules/webgpu/gpu.cc
-@@ -419,7 +419,7 @@ V8GPUTextureFormat GPU::getPreferredCanvasFormat() {
+@@ -427,7 +427,7 @@ V8GPUTextureFormat GPU::getPreferredCanvasFormat() {
  }
  
  wgpu::TextureFormat GPU::GetPreferredCanvasFormat() {

@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_commands.cc.orig	2026-01-16 13:40:34 UTC
+--- chrome/browser/ui/browser_commands.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/browser/ui/browser_commands.cc
-@@ -2374,7 +2374,7 @@ void OpenUpdateChromeDialog(Browser* browser) {
+@@ -2385,7 +2385,7 @@ void OpenUpdateChromeDialog(Browser* browser) {
    } else if (UpgradeDetector::GetInstance()->is_outdated_install_no_au()) {
      UpgradeDetector::GetInstance()->NotifyOutdatedInstallNoAutoUpdate();
    } else {

@@ -1,4 +1,4 @@
---- third_party/fontconfig/include/meson-config.h.orig	2025-09-10 13:22:16 UTC
+--- third_party/fontconfig/include/meson-config.h.orig	2026-02-15 10:01:45 UTC
 +++ third_party/fontconfig/include/meson-config.h
 @@ -17,7 +17,7 @@
  
@@ -9,7 +9,7 @@
  
  #define FC_FONTPATH ""
  
-@@ -98,10 +98,13 @@
+@@ -96,10 +96,13 @@
  
  #define HAVE_RANDOM 1
  

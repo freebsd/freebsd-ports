@@ -1,6 +1,6 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2025-05-06 12:23:00 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2026-02-15 10:01:45 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
-@@ -21,7 +21,7 @@
+@@ -23,7 +23,7 @@
  #include "base/win/wincred_shim.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -36,10 +36,15 @@
+@@ -38,10 +38,15 @@
  #import <SystemConfiguration/SCDynamicStoreCopySpecific.h>
  #endif
  
@@ -26,8 +26,8 @@
  #include <algorithm>
  #include <utility>
  
-@@ -84,7 +89,7 @@ namespace policy {
- namespace em = enterprise_management;
+@@ -92,7 +97,7 @@ const int kMinimumVersionForExtensionInstallPolicy = 1
+ }  // namespace
  
  std::string GetMachineName() {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA)
@@ -35,7 +35,7 @@
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -140,7 +145,7 @@ std::string GetMachineName() {
+@@ -148,7 +153,7 @@ std::string GetMachineName() {
  
  std::string GetOSVersion() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \
@@ -44,7 +44,7 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif BUILDFLAG(IS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -162,7 +167,7 @@ std::string GetOSArchitecture() {
+@@ -170,7 +175,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {
