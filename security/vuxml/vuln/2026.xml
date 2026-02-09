@@ -23,7 +23,8 @@
       </body>
     </description>
     <references>
-      <cvename>CVE-2026-1504</cvename>
+      <cvename>CVE-2026-1861</cvename>
+      <cvename>CVE-2026-1862</cvename>
       <url>https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop.html</url>
     </references>
     <dates>
