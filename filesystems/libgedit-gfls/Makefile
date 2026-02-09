@@ -1,5 +1,5 @@
 PORTNAME=	libgedit-gfls
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	filesystems gnome
 DIST_SUBDIR=	gnome
 
@@ -9,7 +9,7 @@ WWW=		https://gitlab.gnome.org/World/gedit/libgedit-gfls
 
 LICENSE=	LGPL3+
 
-USES=		gettext gnome meson pkgconfig tar:bz2
+USES=		gettext-tools gnome meson pkgconfig tar:bz2
 USE_GNOME=	glib20 gtk30 introspection:build
 
 USE_GITLAB=	yes
