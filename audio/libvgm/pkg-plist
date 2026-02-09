@@ -1,5 +1,6 @@
 %%PLAYER%%bin/libvgm-player
 %%VGM2WAV%%bin/vgm2wav
+include/vgm/_stdbool.h
 include/vgm/audio/AudioStream.h
 include/vgm/audio/AudioStream_SpcDrvFuns.h
 include/vgm/audio/AudioStructs.h
@@ -14,6 +15,7 @@ include/vgm/emu/cores/2413intf.h
 include/vgm/emu/cores/2612intf.h
 include/vgm/emu/cores/262intf.h
 include/vgm/emu/cores/ayintf.h
+include/vgm/emu/cores/bsmt2000.h
 include/vgm/emu/cores/c140.h
 include/vgm/emu/cores/c219.h
 include/vgm/emu/cores/c352.h
@@ -21,6 +23,7 @@ include/vgm/emu/cores/c6280intf.h
 include/vgm/emu/cores/es5503.h
 include/vgm/emu/cores/es5506.h
 include/vgm/emu/cores/gb.h
+include/vgm/emu/cores/ics2115.h
 include/vgm/emu/cores/iremga20.h
 include/vgm/emu/cores/k005289.h
 include/vgm/emu/cores/k007232.h
@@ -29,6 +32,7 @@ include/vgm/emu/cores/k053260.h
 include/vgm/emu/cores/k054539.h
 include/vgm/emu/cores/mikey.h
 include/vgm/emu/cores/msm5205.h
+include/vgm/emu/cores/msm5232.h
 include/vgm/emu/cores/multipcm.h
 include/vgm/emu/cores/nesintf.h
 include/vgm/emu/cores/okim6258.h
@@ -62,7 +66,6 @@ include/vgm/player/playera.hpp
 include/vgm/player/playerbase.hpp
 include/vgm/player/s98player.hpp
 include/vgm/player/vgmplayer.hpp
-include/vgm/_stdbool.h
 include/vgm/stdtype.h
 include/vgm/utils/DataLoader.h
 include/vgm/utils/FileLoader.h
