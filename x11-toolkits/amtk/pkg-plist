@@ -18,6 +18,7 @@ lib/libgedit-amtk-5.so.0
 libdata/pkgconfig/libgedit-amtk-5.pc
 share/gir-1.0/Amtk-5.gir
 share/locale/be/LC_MESSAGES/libgedit-amtk-5.mo
+share/locale/bg/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/ca/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/cs/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/da/LC_MESSAGES/libgedit-amtk-5.mo
