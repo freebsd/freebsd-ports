@@ -16,6 +16,15 @@
  		   -Wl,--no-undefined-version \
  		   -Wl,-z,now \
  		   -Wl,-z,muldefs \
+@@ -74,7 +72,7 @@ ifneq ($(HOST_ARCH),riscv64)
+ HOST_ARCH=$(shell uname -m)
+ ifneq ($(HOST_ARCH),ia64)
+ ifneq ($(HOST_ARCH),riscv64)
+-	HOST_MARCH=-march=native
++	HOST_MARCH=
+ else
+ 	HOST_MARCH=
+ endif
 @@ -99,7 +97,6 @@ override HOST_LDFLAGS = $(HOST_CFLAGS) -L. \
  override HOST_LDFLAGS = $(HOST_CFLAGS) -L. \
  			$(_HOST_LDFLAGS) $(_HOST_CCLDFLAGS) \
