@@ -54,3 +54,4 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/vlagent_enterprise_flags.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_LOGS%%
+@dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_RUN%%
