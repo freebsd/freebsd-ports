@@ -1,3 +1,37 @@
+  <vuln vid="9bc5a730-0585-11f1-85c5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.132</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.132</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[478942410] High CVE-2026-1861: Heap buffer overflow in libvpx. Reported by Google on 2026-01-26</li>
+	    <li>[479726070] High CVE-2026-1862: Type Confusion in V8. Reported by Chaoyuan Peng (@ret2happy) on 2026-01-29</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1504</cvename>
+      <url>https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2026-02-03</discovery>
+      <entry>2026-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f301a241-04d3-11f1-a38c-8447094a420f">
     <topic>Roundcube -- Multiple vulnerabilities</topic>
     <affects>
