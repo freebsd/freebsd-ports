@@ -1,4 +1,4 @@
---- chrome/common/chrome_switches.h.orig	2026-01-14 08:33:23 UTC
+--- chrome/common/chrome_switches.h.orig	2026-02-11 09:05:39 UTC
 +++ chrome/common/chrome_switches.h
 @@ -291,7 +291,7 @@ extern const char kDebugPrint[];
  #endif
@@ -9,8 +9,8 @@
  extern const char kEnableNewAppMenuIcon[];
  extern const char kGuest[];
  extern const char kForceNtpMobilePromo[];
-@@ -312,7 +312,7 @@ extern const char kGlicAdminRedirectPatterns[];
- extern const char kGlicAlwaysShowWebActuationToggle[];
+@@ -314,7 +314,7 @@ extern const char kGlicResetMultiInstanceEnabledByTier
+ extern const char kGlicForceG1StatusForMultiInstance[];
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

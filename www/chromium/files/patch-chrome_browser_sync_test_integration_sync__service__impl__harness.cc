@@ -1,6 +1,6 @@
---- chrome/browser/sync/test/integration/sync_service_impl_harness.cc.orig	2026-01-14 08:33:23 UTC
+--- chrome/browser/sync/test/integration/sync_service_impl_harness.cc.orig	2026-02-11 09:05:39 UTC
 +++ chrome/browser/sync/test/integration/sync_service_impl_harness.cc
-@@ -486,7 +486,7 @@ bool SyncServiceImplHarness::EnableHistorySyncNoWaitFo
+@@ -491,7 +491,7 @@ bool SyncServiceImplHarness::EnableHistorySyncNoWaitFo
    // Tabs and history are bundled together in the same toggle.
    service()->GetUserSettings()->SetSelectedType(
        syncer::UserSelectableType::kTabs, true);

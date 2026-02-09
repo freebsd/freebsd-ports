@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2026-01-14 08:33:23 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2026-02-11 09:05:39 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
 @@ -152,7 +152,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
    ASSERT_EQ("CrOS", pieces[0]);
@@ -9,7 +9,7 @@
    // Post-UA Reduction there is a single <unifiedPlatform> value for Linux:
    // X11; Linux x86_64
    ASSERT_EQ(2u, pieces.size());
-@@ -340,7 +340,7 @@ class UserAgentUtilsTest : public testing::Test,
+@@ -334,7 +334,7 @@ class UserAgentUtilsTest : public testing::Test,
          "X11; CrOS x86_64 14541.0.0";
  #elif BUILDFLAG(IS_FUCHSIA)
          "Fuchsia";
@@ -18,7 +18,7 @@
          "X11; Linux x86_64";
  #elif BUILDFLAG(IS_MAC)
          "Macintosh; Intel Mac OS X 10_15_7";
-@@ -722,7 +722,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
+@@ -693,7 +693,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
  #endif
  #elif BUILDFLAG(IS_ANDROID)
    EXPECT_EQ(metadata.platform, "Android");

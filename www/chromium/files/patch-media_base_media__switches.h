@@ -1,6 +1,6 @@
---- media/base/media_switches.h.orig	2026-01-14 08:33:23 UTC
+--- media/base/media_switches.h.orig	2026-02-11 09:05:39 UTC
 +++ media/base/media_switches.h
-@@ -288,13 +288,25 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kMediaRecorderHEVCSu
+@@ -293,13 +293,25 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kMediaRecorderHEVCSu
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPlaybackSpeedButton);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreloadMediaEngagementData);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreloadMetadataSuspend);
@@ -28,7 +28,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kReduceHardwareVideoDecoderBuffers);
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kResumeBackgroundVideo);
-@@ -312,7 +324,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUnifiedAutoplay);
+@@ -318,7 +330,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUnifiedAutoplay);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseAndroidOverlayForSecureOnly);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseFakeDeviceForMediaStream);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kMediaStreamAccurateDroppedFrameCount);
@@ -37,7 +37,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoDecodeLinux);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoDecodeLinuxGL);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kAcceleratedVideoEncodeLinux);
-@@ -328,7 +340,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiAV1TemporalLay
+@@ -334,7 +346,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiAV1TemporalLay
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVp9SModeHWEncoding);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVSyncMjpegDecoding);
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)

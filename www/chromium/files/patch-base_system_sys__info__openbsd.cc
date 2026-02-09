@@ -1,19 +1,19 @@
---- base/system/sys_info_openbsd.cc.orig	2025-10-02 04:28:32 UTC
+--- base/system/sys_info_openbsd.cc.orig	2026-02-11 09:05:39 UTC
 +++ base/system/sys_info_openbsd.cc
-@@ -12,6 +12,7 @@
- 
+@@ -13,6 +13,7 @@
  #include "base/notreached.h"
+ #include "base/numerics/safe_conversions.h"
  #include "base/posix/sysctl.h"
 +#include "base/strings/string_util.h"
  
  namespace base {
  
-@@ -28,9 +29,14 @@ ByteCount AmountOfMemory(int pages_name) {
+@@ -29,9 +30,14 @@ ByteSize AmountOfMemory(int pages_name) {
  
  }  // namespace
  
 +// pledge(2)
-+ByteCount aofpmem = ByteCount(0);
++ByteSize aofpmem = ByteSize(0);
 +uint64_t shmmax = 0;
 +char cpumodel[256];
 +
@@ -24,7 +24,7 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -40,8 +46,24 @@ int SysInfo::NumberOfProcessors() {
+@@ -41,8 +47,24 @@ int SysInfo::NumberOfProcessors() {
  }
  
  // static
@@ -41,16 +41,16 @@
 +}
 +
 +// static
- ByteCount SysInfo::AmountOfPhysicalMemoryImpl() {
+ ByteSize SysInfo::AmountOfTotalPhysicalMemoryImpl() {
 -  return AmountOfMemory(_SC_PHYS_PAGES);
 +  // pledge(2)
-+  if (aofpmem == ByteCount(0))
++  if (aofpmem == ByteSize(0))
 +    aofpmem = AmountOfMemory(_SC_PHYS_PAGES);
 +  return aofpmem;
  }
  
  // static
-@@ -56,15 +78,27 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -57,15 +79,27 @@ uint64_t SysInfo::MaxSharedMemorySize() {
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);

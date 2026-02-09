@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2026-01-14 08:33:23 UTC
+--- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2026-02-11 09:05:39 UTC
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -135,7 +135,7 @@
+@@ -137,7 +137,7 @@
  #include "chrome/browser/ui/webui/settings/system_handler.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/display/screen.h"
  #endif
  
-@@ -144,7 +144,7 @@
+@@ -146,7 +146,7 @@
  #include "device/fido/win/webauthn_api.h"
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -18,7 +18,7 @@
  #include "ui/linux/linux_ui_factory.h"
  #include "ui/ozone/public/ozone_platform.h"
  #endif
-@@ -277,7 +277,7 @@ void AddA11yStrings(content::WebUIDataSource* html_sou
+@@ -280,7 +280,7 @@ void AddA11yStrings(content::WebUIDataSource* html_sou
        {"toastAlertLevelDescription",
         IDS_SETTINGS_ACCESSIBILITY_TOAST_FREQUENCY_DESCRIPTION},
  #endif
@@ -27,7 +27,7 @@
        {"overscrollHistoryNavigationTitle",
         IDS_SETTINGS_OVERSCROLL_HISTORY_NAVIGATION_TITLE},
        {"overscrollHistoryNavigationSubtitle",
-@@ -552,7 +552,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -555,7 +555,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
        {"uiFeatureAlignSide", IDS_SETTINGS_UI_FEATURE_ALIGN_SIDE},
        {"uiFeatureAlignTop", IDS_SETTINGS_UI_FEATURE_ALIGN_TOP},
        {"resetToDefault", IDS_SETTINGS_RESET_TO_DEFAULT},
@@ -36,7 +36,7 @@
        {"gtkTheme", IDS_SETTINGS_GTK_THEME},
        {"useGtkTheme", IDS_SETTINGS_USE_GTK_THEME},
        {"qtTheme", IDS_SETTINGS_QT_THEME},
-@@ -560,11 +560,11 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -563,11 +563,11 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
        {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
        {"useClassicTheme", IDS_SETTINGS_USE_CLASSIC_THEME},
  #endif
@@ -50,16 +50,16 @@
        {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -590,7 +590,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
-   html_source->AddBoolean("tabSearchIsRightAlignedAtStartup",
-                           tabs::GetTabSearchTrailingTabstrip(profile));
+@@ -592,7 +592,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+       tabs::GetTabSearchPosition(profile) ==
+           tabs::TabSearchPosition::kTrailingHorizontalTabstrip);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    bool show_custom_chrome_frame = ui::OzonePlatform::GetInstance()
                                        ->GetPlatformRuntimeProperties()
                                        .supports_server_side_window_decorations;
-@@ -1771,7 +1771,7 @@ void AddSignOutDialogStrings(content::WebUIDataSource*
+@@ -1816,7 +1816,7 @@ void AddSignOutDialogStrings(content::WebUIDataSource*
            g_browser_process->GetApplicationLocale())
            .spec();
  

@@ -1,6 +1,6 @@
---- chrome/browser/ui/tabs/public/tab_features.h.orig	2026-01-14 08:33:23 UTC
+--- chrome/browser/ui/tabs/public/tab_features.h.orig	2026-02-11 09:05:39 UTC
 +++ chrome/browser/ui/tabs/public/tab_features.h
-@@ -125,7 +125,7 @@ class TabContextualizationController;
+@@ -129,7 +129,7 @@ class TabContextualizationController;
  }  // namespace lens
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  namespace wallet {
  class ChromeWalletablePassClient;
  }  // namespace wallet
-@@ -502,7 +502,7 @@ class TabFeatures {
+@@ -506,7 +506,7 @@ class TabFeatures {
        new_tab_page_preload_pipeline_manager_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -17,4 +17,4 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    std::unique_ptr<wallet::ChromeWalletablePassClient> walletable_pass_client_;
  #endif
-   // Must be the last member.
+ 

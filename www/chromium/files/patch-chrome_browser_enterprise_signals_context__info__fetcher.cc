@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/signals/context_info_fetcher.cc.orig	2025-12-05 10:12:50 UTC
+--- chrome/browser/enterprise/signals/context_info_fetcher.cc.orig	2026-02-11 09:05:39 UTC
 +++ chrome/browser/enterprise/signals/context_info_fetcher.cc
-@@ -183,6 +183,8 @@ std::vector<std::string> ContextInfoFetcher::GetOnSecu
+@@ -184,6 +184,8 @@ std::vector<std::string> ContextInfoFetcher::GetOnSecu
  SettingValue ContextInfoFetcher::GetOSFirewall() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
    return device_signals::GetOSFirewall();
@@ -9,7 +9,7 @@
  #elif BUILDFLAG(IS_CHROMEOS)
    return GetChromeosFirewall();
  #else
-@@ -202,7 +204,7 @@ ScopedUfwConfigPathForTesting::~ScopedUfwConfigPathFor
+@@ -203,7 +205,7 @@ ScopedUfwConfigPathForTesting::~ScopedUfwConfigPathFor
  #endif  // BUILDFLAG(IS_LINUX)
  
  std::vector<std::string> ContextInfoFetcher::GetDnsServers() {

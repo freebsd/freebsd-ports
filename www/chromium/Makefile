@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	144.0.7559.109
+PORTVERSION=	145.0.7632.75
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -9,6 +9,10 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 DISTFILES=	${DISTNAME}-lite${EXTRACT_SUFX} \
 		${DISTNAME}-profdata${EXTRACT_SUFX}:external \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
+
+USE_GITHUB=	nodefault
+GH_TUPLE=	rollup:rollup:v4.22.4:rollup/rollup \
+		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -23,6 +27,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		bindgen:devel/rust-bindgen-cli \
+		esbuild:devel/esbuild \
 		gperf:devel/gperf \
 		flock:sysutils/flock \
 		node:www/node \
@@ -74,9 +79,21 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake gnome \
-		iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \
+USES=		bison cargo compiler:c++17-lang cpe desktop-file-utils gl gmake \
+		gnome iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \
 		python:build qt:5 shebangfix tar:xz xorg
+
+WITHOUT_FBSD10_FIX=	Yes
+
+CARGO_CARGOTOML=	${WRKSRC}/rollup/rust/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/rollup/rust/Cargo.lock
+CARGO_TARGET_DIR=	${WRKSRC}/rollup/rust/target
+
+CARGO_INSTALL=		No
+CARGO_BUILD=		No
+CARGO_TEST=		No
+
+_ESBUILD_VERSION=	${MAKE} -C ${PORTSDIR}/devel/esbuild -V DISTVERSION
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -172,7 +189,6 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_VARS=		GN_ARGS+=use_cups=true
 CUPS_VARS_OFF=		GN_ARGS+=use_cups=false
 
-DEBUG_BUILD_DEPENDS=	esbuild:devel/esbuild
 DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_debug=true \
 			GN_ARGS+=is_component_build=false \
@@ -305,13 +321,27 @@ pre-configure:
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
+pre-build:
+	@${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
+		--verbose \
+		${CARGO_BUILD_ARGS}
+	(cd ${WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
+		mkdir -p rollup-freebsd && \
+		cp ${CARGO_TARGET_DIR}/release/libbindings_napi.so \
+			rollup-freebsd/rollup.freebsd.node && \
+		echo '{ "main": "./rollup.freebsd.node" }' \
+			> rollup-freebsd/package.json)
+
 do-configure:
-	@( \
-		echo "#ifndef GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
-		echo "#define GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
-		echo "#define DAWN_COMMIT_HASH \"$$(cat ${WRKSRC}/gpu/webgpu/DAWN_VERSION)\"" ;\
-		echo "#endif  // GPU_WEBGPU_DAWN_COMMIT_HASH_H_" \
-	) > ${WRKSRC}/gpu/webgpu/dawn_commit_hash.h
+	(cd ${WRKSRC}/esbuild && \
+		${LOCALBASE}/bin/node scripts/esbuild.js \
+		/usr/local/bin/esbuild --neutral && \
+		rm -rf ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
+		ln -sf ${WRKSRC}/esbuild/npm/esbuild \
+		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
+	)
 	# GN generator bootstrapping and generating ninja files
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
@@ -322,6 +352,9 @@ do-configure:
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin/node
+
+	# Setup esbuild dependency
+	${LN} -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 
 	# Setup buildtools/freebsd
 	@${MKDIR} ${WRKSRC}/buildtools/freebsd

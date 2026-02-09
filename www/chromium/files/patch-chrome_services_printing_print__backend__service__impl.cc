@@ -1,15 +1,15 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2026-02-11 09:05:39 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
-@@ -48,7 +48,7 @@
+@@ -49,7 +49,7 @@
  #include "printing/backend/cups_connection_pool.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "base/command_line.h"
  #include "base/no_destructor.h"
- #include "ui/linux/linux_ui.h"
- #include "ui/linux/linux_ui_delegate_stub.h"
-@@ -75,7 +75,7 @@ namespace printing {
+ #include "components/printing/common/print_dialog_linux_factory.h"
+@@ -79,7 +79,7 @@ namespace printing {
  
  namespace {
  
@@ -18,7 +18,7 @@
  void InstantiateLinuxUiDelegate() {
    // TODO(crbug.com/40561724)  Until a real UI can be used in a utility process,
    // need to use the stub version.
-@@ -84,7 +84,7 @@ void InstantiateLinuxUiDelegate() {
+@@ -88,7 +88,7 @@ void InstantiateLinuxUiDelegate() {
  #endif
  
  scoped_refptr<base::SequencedTaskRunner> GetPrintingTaskRunner() {
@@ -27,7 +27,7 @@
    // Use task runner associated with equivalent of UI thread.  Needed for calls
    // made through `PrintDialogLinuxInterface` to properly execute.
    CHECK(base::SequencedTaskRunner::HasCurrentDefault());
-@@ -467,7 +467,7 @@ void PrintBackendServiceImpl::Init(
+@@ -471,7 +471,7 @@ void PrintBackendServiceImpl::Init(
    // `InitCommon()`.
    InitializeProcessForPrinting();
    print_backend_ = PrintBackend::CreateInstance(locale);
@@ -36,7 +36,7 @@
    // Test framework already initializes the UI, so this should not go in
    // `InitCommon()`.  Additionally, low-level Linux UI is not needed when tests
    // are using `TestPrintingContext`.
-@@ -676,7 +676,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
+@@ -684,7 +684,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
    crash_keys_ = std::make_unique<crash_keys::ScopedPrinterInfo>(
        *printer_name, print_backend_->GetPrinterDriverInfo(*printer_name));
  

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2026-01-14 08:33:23 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2026-02-11 09:05:39 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -359,7 +359,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSGeminiFullscreenPromoFea
+@@ -367,7 +367,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSGeminiImageRemixFeature,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  DEFINE_VARIATION_PARAM(kEsbDownloadRowPromoFeature, "EsbDownloadRowPromo");
  #endif
-@@ -485,7 +485,8 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
+@@ -495,7 +495,8 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,8 +19,8 @@
  DEFINE_VARIATION_PARAM(kIPHAutofillAiOptInFeature, "IPH_AutofillAiOptIn");
  DEFINE_VARIATION_PARAM(kIPHAutofillAiValuablesFeature,
                         "IPH_AutofillAiValuables");
-@@ -589,7 +590,7 @@ DEFINE_VARIATION_PARAM(kIPHScalableIphHelpAppBasedTenF
- DEFINE_VARIATION_PARAM(kIPHScalableIphGamingFeature, "IPH_ScalableIphGaming");
+@@ -536,7 +537,7 @@ DEFINE_VARIATION_PARAM(kIPHLauncherSearchHelpUiFeature
+                        "IPH_LauncherSearchHelpUi");
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -28,16 +28,16 @@
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunch,
                         "IPH_DesktopPWAsLinkCapturingLaunch");
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
-@@ -792,7 +793,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
-         VARIATION_ENTRY(kIPHiOSGeminiContextualCueChip),
+@@ -742,7 +743,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHiOSGeminiFullscreenPromoFeature),
+         VARIATION_ENTRY(kIPHiOSGeminiImageRemixFeature),
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
          VARIATION_ENTRY(kIPHBatterySaverModeFeature),
          VARIATION_ENTRY(kIPHCompanionSidePanelFeature),
          VARIATION_ENTRY(kIPHCompanionSidePanelRegionSearchFeature),
-@@ -857,7 +858,8 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -808,7 +809,8 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -47,8 +47,8 @@
          VARIATION_ENTRY(kIPHAutofillAiOptInFeature),
          VARIATION_ENTRY(kIPHAutofillAiValuablesFeature),
          VARIATION_ENTRY(kIPHAutofillCreditCardBenefitFeature),
-@@ -913,7 +915,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
-         VARIATION_ENTRY(kIPHScalableIphGamingFeature),
+@@ -832,7 +834,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+         VARIATION_ENTRY(kIPHLauncherSearchHelpUiFeature),
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
