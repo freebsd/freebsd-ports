@@ -1,5 +1,5 @@
 PORTNAME=	dialog
-DISTVERSION=	1.3-20251223
+DISTVERSION=	1.3-20260107
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
@@ -35,7 +35,6 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcdialog.so
 
 post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
