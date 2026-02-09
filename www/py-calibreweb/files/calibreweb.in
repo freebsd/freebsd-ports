@@ -82,6 +82,7 @@ command_args="-p $pidfile $procname \
 %%RC_NAME%%_prestart()
 {
 	PATH=${PATH}:%%PREFIX%%/bin:%%PREFIX%%/sbin
+	export CACHE_DIRECTORY=${%%RC_NAME%%_conf_dir}/cache
 
 	for calwebdir in ${%%RC_NAME%%_pid_dir} ${%%RC_NAME%%_log_dir} ${%%RC_NAME%%_conf_dir}; do
 		[ -d ${calwebdir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} ${calwebdir}
