@@ -1,8 +1,7 @@
 PORTNAME=	itanium_demangler
-DISTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.1
+DISTVERSIONPREFIX=v
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -14,6 +13,10 @@ LICENSE_FILE=	${WRKSRC}/README.md
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	whitequark
+GH_PROJECT=	python-itanium_demangler
 
 NO_ARCH=	yes
 
