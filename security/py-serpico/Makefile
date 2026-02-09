@@ -1,6 +1,6 @@
 PORTNAME=	serpico
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
+DISTVERSION=	0.2.0
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,7 +32,7 @@ do-install-DOCS-on:
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/wazuh
-	${INSTALL_DATA} ${WRKSRC}/ossec/etc/rules/local_rules.xml ${STAGEDIR}${EXAMPLESDIR}/wazuh
+	${INSTALL_DATA} ${WRKSRC}/ossec/etc/rules/serpico_rules.xml ${STAGEDIR}${EXAMPLESDIR}/wazuh
 	${INSTALL_DATA} ${WRKSRC}/wazuh-dashboard/FreeBSD_VD_Dashboard.ndjson ${STAGEDIR}${EXAMPLESDIR}/wazuh
 
 post-install:
