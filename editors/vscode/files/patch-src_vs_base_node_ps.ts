@@ -1,6 +1,6 @@
---- src/vs/base/node/ps.ts.orig	2025-12-10 18:02:22 UTC
+--- src/vs/base/node/ps.ts.orig	2026-02-04 01:55:52 UTC
 +++ src/vs/base/node/ps.ts
-@@ -223,7 +223,7 @@ export function listProcesses(rootPid: number): Promis
+@@ -217,7 +217,7 @@ export function listProcesses(rootPid: number): Promis
  					}
  				} else {
  					const ps = stdout.toString().trim();
