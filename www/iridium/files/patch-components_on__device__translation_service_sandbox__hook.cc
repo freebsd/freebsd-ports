@@ -1,7 +1,7 @@
---- components/services/on_device_translation/sandbox_hook.cc.orig	2025-12-10 15:04:57 UTC
-+++ components/services/on_device_translation/sandbox_hook.cc
+--- components/on_device_translation/service/sandbox_hook.cc.orig	2026-02-16 10:45:29 UTC
++++ components/on_device_translation/service/sandbox_hook.cc
 @@ -7,12 +7,15 @@
- #include "components/services/on_device_translation/translate_kit_client.h"
+ #include "components/on_device_translation/service/translate_kit_client.h"
  #include "sandbox/linux/syscall_broker/broker_command.h"
  
 +#if !BUILDFLAG(IS_BSD)
@@ -32,12 +32,11 @@
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
    instance->StartBrokerProcess(MakeBrokerCommandSet({
                                     sandbox::syscall_broker::COMMAND_OPEN,
-@@ -36,7 +41,7 @@ bool OnDeviceTranslationSandboxHook(
+@@ -36,6 +41,7 @@ bool OnDeviceTranslationSandboxHook(
                                 GetOnDeviceTranslationFilePermissions(),
                                 options);
    instance->EngageNamespaceSandboxIfPossible();
--
 +#endif
+ 
    return true;
  }
- 

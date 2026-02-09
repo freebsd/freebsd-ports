@@ -1,4 +1,4 @@
---- content/browser/scheduler/responsiveness/native_event_observer.h.orig	2025-12-10 15:04:57 UTC
+--- content/browser/scheduler/responsiveness/native_event_observer.h.orig	2026-02-16 10:45:29 UTC
 +++ content/browser/scheduler/responsiveness/native_event_observer.h
 @@ -16,7 +16,7 @@
  #include "content/public/browser/native_event_processor_observer_mac.h"
@@ -6,7 +6,7 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "ui/aura/window_event_dispatcher_observer.h"
+ #include "ui/events/platform/platform_event_observer.h"
  #endif
  
 @@ -41,7 +41,7 @@ namespace responsiveness {
@@ -15,7 +15,7 @@
      : public NativeEventProcessorObserver
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-     : public aura::WindowEventDispatcherObserver
+     : public ui::PlatformEventObserver
  #elif BUILDFLAG(IS_WIN)
      : public base::MessagePumpForUI::Observer
 @@ -58,7 +58,7 @@ class CONTENT_EXPORT NativeEventObserver
@@ -33,10 +33,10 @@
    void DidRunNativeEvent(const void* opaque_identifier) override;
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // aura::WindowEventDispatcherObserver overrides:
-   void OnWindowEventDispatcherStartedProcessing(
-       aura::WindowEventDispatcher* dispatcher,
-@@ -91,7 +91,7 @@ class CONTENT_EXPORT NativeEventObserver
+   // ui::PlatformEventObserver overrides:
+   void WillProcessEvent(const ui::PlatformEvent& event) override;
+   void DidProcessEvent(const ui::PlatformEvent& event) override;
+@@ -89,7 +89,7 @@ class CONTENT_EXPORT NativeEventObserver
    void RegisterObserver();
    void DeregisterObserver();
  

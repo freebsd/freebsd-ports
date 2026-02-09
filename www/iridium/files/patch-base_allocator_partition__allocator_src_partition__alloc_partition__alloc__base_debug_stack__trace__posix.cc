@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2025-12-10 15:04:57 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2026-02-16 10:45:29 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc
-@@ -18,11 +18,11 @@
+@@ -14,11 +14,11 @@
  #include "partition_alloc/partition_alloc_base/posix/eintr_wrapper.h"
  #include "partition_alloc/partition_alloc_base/strings/safe_sprintf.h"
  
@@ -14,7 +14,7 @@
  #include <dlfcn.h>
  #endif
  
-@@ -30,7 +30,7 @@ namespace partition_alloc::internal::base::debug {
+@@ -26,7 +26,7 @@ namespace partition_alloc::internal::base::debug {
  
  namespace {
  

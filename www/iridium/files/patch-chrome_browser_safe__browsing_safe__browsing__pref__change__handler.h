@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h.orig	2026-02-16 10:45:29 UTC
 +++ chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h
-@@ -20,7 +20,7 @@
+@@ -21,7 +21,7 @@
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/toasts/toast_controller.h"
  #endif
  
-@@ -63,7 +63,7 @@ class SafeBrowsingPrefChangeHandler {
+@@ -64,7 +64,7 @@ class SafeBrowsingPrefChangeHandler {
    virtual void MaybeShowEnhancedProtectionSettingChangeNotification();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -18,7 +18,7 @@
    void SetToastControllerForTesting(ToastController* controller);
  #endif
  
-@@ -72,7 +72,7 @@ class SafeBrowsingPrefChangeHandler {
+@@ -73,7 +73,7 @@ class SafeBrowsingPrefChangeHandler {
    raw_ptr<Profile> profile_;
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

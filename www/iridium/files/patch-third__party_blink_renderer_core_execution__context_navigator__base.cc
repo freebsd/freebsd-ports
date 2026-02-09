@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/execution_context/navigator_base.cc.orig	2026-01-16 14:21:21 UTC
+--- third_party/blink/renderer/core/execution_context/navigator_base.cc.orig	2026-02-16 10:45:29 UTC
 +++ third_party/blink/renderer/core/execution_context/navigator_base.cc
-@@ -32,7 +32,7 @@ String GetReducedNavigatorPlatform() {
+@@ -31,7 +31,7 @@ String GetReducedNavigatorPlatform() {
    return "Win32";
  #elif BUILDFLAG(IS_FUCHSIA)
    return "";

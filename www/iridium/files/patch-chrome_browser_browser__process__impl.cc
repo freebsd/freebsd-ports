@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2026-01-16 14:21:21 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2026-02-16 10:45:29 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -257,7 +257,7 @@ void OnLocalStatePrefsLoaded();
+@@ -260,7 +260,7 @@ void OnLocalStatePrefsLoaded();
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/browser_features.h"
  #include "components/os_crypt/async/browser/freedesktop_secret_key_provider.h"
  #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
-@@ -1192,7 +1192,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
+@@ -1243,7 +1243,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingEnabled, false);
  
@@ -18,7 +18,7 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1382,7 +1382,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1445,7 +1445,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
            local_state())));
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -27,7 +27,7 @@
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    const auto password_store =
        cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore);
-@@ -1721,7 +1721,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1782,7 +1782,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

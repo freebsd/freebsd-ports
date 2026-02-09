@@ -1,6 +1,6 @@
---- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2026-02-16 10:45:29 UTC
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc
-@@ -374,7 +374,7 @@ TaskManagerTableModel::~TaskManagerTableModel() {
+@@ -375,7 +375,7 @@ TaskManagerTableModel::~TaskManagerTableModel() {
    // Note: system_total_time_ is used for both since there is no functional
    // difference between browser & system (they are essentially the same tab).
    // Instead, the data is routed to the platform appropriate bucket.
@@ -9,7 +9,7 @@
    task_manager::RecordTabSwitchEvent(CategoryRecord::kBrowser,
                                       system_total_time_);
  #elif BUILDFLAG(IS_CHROMEOS)
-@@ -507,7 +507,7 @@ std::u16string TaskManagerTableModel::GetText(size_t r
+@@ -508,7 +508,7 @@ std::u16string TaskManagerTableModel::GetText(size_t r
                   ? stringifier_->backgrounded_string()
                   : stringifier_->foregrounded_string();
  
@@ -18,7 +18,7 @@
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int fd_count = observed_task_manager()->GetOpenFdCount(tasks_[row]);
        return fd_count >= 0 ? base::FormatNumber(fd_count)
-@@ -665,7 +665,7 @@ int TaskManagerTableModel::CompareValues(size_t row1,
+@@ -666,7 +666,7 @@ int TaskManagerTableModel::CompareValues(size_t row1,
        return BooleanCompare(is_proc1_bg, is_proc2_bg);
      }
  
@@ -27,7 +27,7 @@
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int proc1_fd_count =
            observed_task_manager()->GetOpenFdCount(tasks_[row1]);
-@@ -977,7 +977,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
+@@ -985,7 +985,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
        type = REFRESH_TYPE_KEEPALIVE_COUNT;
        break;
  

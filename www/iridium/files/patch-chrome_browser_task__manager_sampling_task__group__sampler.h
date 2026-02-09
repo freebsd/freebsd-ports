@@ -1,8 +1,8 @@
---- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2026-02-16 10:45:29 UTC
 +++ chrome/browser/task_manager/sampling/task_group_sampler.h
 @@ -33,7 +33,7 @@ class TaskGroupSampler : public base::RefCountedThread
    using OnSwappedMemRefreshCallback =
-       base::RepeatingCallback<void(base::ByteCount)>;
+       base::RepeatingCallback<void(base::ByteSize)>;
    using OnIdleWakeupsCallback = base::RepeatingCallback<void(int)>;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
@@ -20,7 +20,7 @@
        const OnProcessPriorityCallback& on_process_priority);
 @@ -65,7 +65,7 @@ class TaskGroupSampler : public base::RefCountedThread
    double RefreshCpuUsage();
-   base::ByteCount RefreshSwappedMem();
+   base::ByteSize RefreshSwappedMem();
    int RefreshIdleWakeupsPerSecond();
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)

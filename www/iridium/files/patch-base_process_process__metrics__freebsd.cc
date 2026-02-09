@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2025-12-10 15:04:57 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2026-02-16 10:45:29 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,41 +3,92 @@
  // found in the LICENSE file.
@@ -155,10 +155,10 @@
 +      != 0 || length != sizeof(swap_used))
 +    return false;
 +
-+  meminfo->total = ByteCount::FromUnsigned(mem_total * pagesize);
-+  meminfo->free = ByteCount::FromUnsigned(mem_free * pagesize);
-+  meminfo->swap_total = ByteCount::FromUnsigned(swap_total * pagesize);
-+  meminfo->swap_free = ByteCount::FromUnsigned((swap_total - swap_used) * pagesize);
++  meminfo->total = ByteSize(mem_total * pagesize);
++  meminfo->free = ByteSize(mem_free * pagesize);
++  meminfo->swap_total = ByteSize(swap_total * pagesize);
++  meminfo->swap_free = ByteSize((swap_total - swap_used) * pagesize);
 +
 +  return true;
 +}

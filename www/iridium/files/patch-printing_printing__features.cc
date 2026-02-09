@@ -1,6 +1,6 @@
---- printing/printing_features.cc.orig	2026-01-16 14:21:21 UTC
+--- printing/printing_features.cc.orig	2026-02-16 10:45:29 UTC
 +++ printing/printing_features.cc
-@@ -26,7 +26,7 @@ BASE_FEATURE(kApiPrintingMarginsAndScale, base::FEATUR
+@@ -23,7 +23,7 @@ BASE_FEATURE(kApiPrintingMarginsAndScale, base::FEATUR
  BASE_FEATURE(kAlignPdfDefaultPrintSettingsWithHTML,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
