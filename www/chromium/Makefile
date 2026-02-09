@@ -11,7 +11,8 @@ DISTFILES=	${DISTNAME}-lite${EXTRACT_SUFX} \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	rollup:rollup:v4.22.4:rollup/rollup
+GH_TUPLE=	rollup:rollup:v4.22.4:rollup/rollup \
+		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		bindgen:devel/rust-bindgen-cli \
 		esbuild:devel/esbuild \
-		${NONEXISTENT}:devel/esbuild:patch \
 		gperf:devel/gperf \
 		flock:sysutils/flock \
 		node:www/node \
@@ -93,7 +93,7 @@ CARGO_INSTALL=		No
 CARGO_BUILD=		No
 CARGO_TEST=		No
 
-_ESBUILD_WRKSRC=	${MAKE} -C ${PORTSDIR}/devel/esbuild -V WRKSRC
+_ESBUILD_VERSION=	${MAKE} -C ${PORTSDIR}/devel/esbuild -V DISTVERSION
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -335,11 +335,11 @@ pre-build:
 			> rollup-freebsd/package.json)
 
 do-configure:
-	(cd ${_ESBUILD_WRKSRC:sh} && \
+	(cd ${WRKSRC}/esbuild && \
 		${LOCALBASE}/bin/node scripts/esbuild.js \
 		/usr/local/bin/esbuild --neutral && \
 		rm -rf ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
-		ln -sf ${_ESBUILD_WRKSRC:sh}/npm/esbuild \
+		ln -sf ${WRKSRC}/esbuild/npm/esbuild \
 		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
 	)
 	# GN generator bootstrapping and generating ninja files

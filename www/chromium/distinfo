@@ -1,4 +1,4 @@
-TIMESTAMP = 1770541564
+TIMESTAMP = 1770648493
 SHA256 (chromium-144.0.7559.132-lite.tar.xz) = 41cc60391836575f4a40ffd576f647c0b9105219acb494e739c9ea2c66f5ddb9
 SIZE (chromium-144.0.7559.132-lite.tar.xz) = 1292631752
 SHA256 (chromium-144.0.7559.132-profdata.tar.xz) = a92b2122ec73bc59a284bfe734279b5cecb7227d010d90c3ee2f865ace637e89
@@ -341,3 +341,5 @@ SHA256 (rust/crates/zerocopy-derive-0.7.35.crate) = fa4f8080344d4671fb4e831a13ad
 SIZE (rust/crates/zerocopy-derive-0.7.35.crate) = 37829
 SHA256 (rollup-rollup-v4.22.4_GH0.tar.gz) = a7e5c09f00fe50adabe27fef8455510f156cf73fee8aef1faf3804b653988e4c
 SIZE (rollup-rollup-v4.22.4_GH0.tar.gz) = 1732642
+SHA256 (evanw-esbuild-v0.27.1_GH0.tar.gz) = bcc3abdc911961ef04340714dc69ddc34af6d2e2c60a1c4036d1c7f1a3fc4a23
+SIZE (evanw-esbuild-v0.27.1_GH0.tar.gz) = 1978868
