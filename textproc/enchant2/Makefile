@@ -1,5 +1,5 @@
 PORTNAME=	enchant
-DISTVERSION=	2.8.10
+DISTVERSION=	2.8.14
 CATEGORIES=	textproc gnome
 MASTER_SITES=	https://github.com/rrthomas/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	2
