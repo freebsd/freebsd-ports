@@ -1,6 +1,6 @@
 PORTNAME=	janus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.3
+DISTVERSION=	1.4.0
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -23,8 +23,8 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libusrsctp.so:net/libusrsctp \
 		libwebsockets.so:net/libwebsockets
 
-USES=			autoreconf cpe gmake gnome libtool localbase pkgconfig \
-			ssl
+USES=			autoreconf cpe gmake gnome libtool localbase pathfix \
+			pkgconfig ssl
 USE_GNOME=		glib20
 USE_GITHUB=		yes
 GH_ACCOUNT=		meetecho
@@ -42,7 +42,7 @@ LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl -L${LOCALBASE} -lnice
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 SUB_FILES=		pkg-message
-PLIST_SUB+= 		SOVERSION=2.0.8
+PLIST_SUB+= 		SOVERSION=2.0.9
 
 OPTIONS_SUB=				yes
 OPTIONS_DEFINE=				JAVASCRIPT LUA MQTT NANOMSG \
