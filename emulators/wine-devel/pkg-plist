@@ -2418,6 +2418,7 @@ lib/wine/%%WINEARCH%%-windows/ntoskrnl.exe
 lib/wine/%%WINEARCH%%-windows/ntprint.dll
 lib/wine/%%WINEARCH%%-windows/objsel.dll
 lib/wine/%%WINEARCH%%-windows/odbc32.dll
+lib/wine/%%WINEARCH%%-windows/odbcad32.exe
 lib/wine/%%WINEARCH%%-windows/odbcbcp.dll
 lib/wine/%%WINEARCH%%-windows/odbccp32.dll
 lib/wine/%%WINEARCH%%-windows/odbccu32.dll
@@ -2668,7 +2669,6 @@ lib/wine/%%WINEARCH%%-windows/windows.ui.xaml.dll
 lib/wine/%%WINEARCH%%-windows/windows.web.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
-%%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
 lib/wine/%%WINEARCH%%-windows/wineboot.exe
 lib/wine/%%WINEARCH%%-windows/winebrowser.exe
 lib/wine/%%WINEARCH%%-windows/winebth.sys
@@ -2686,11 +2686,9 @@ lib/wine/%%WINEARCH%%-windows/winemapi.dll
 lib/wine/%%WINEARCH%%-windows/winemenubuilder.exe
 lib/wine/%%WINEARCH%%-windows/winemine.exe
 lib/wine/%%WINEARCH%%-windows/winemsibuilder.exe
-%%OSS%%lib/wine/%%WINEARCH%%-windows/wineoss.drv
 lib/wine/%%WINEARCH%%-windows/winepath.exe
 lib/wine/%%WINEARCH%%-windows/wineps.drv
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wineps16.drv16
-%%PULSEAUDIO%%lib/wine/%%WINEARCH%%-windows/winepulse.drv
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winevdm.exe
 lib/wine/%%WINEARCH%%-windows/winevulkan.dll
 %%WAYLAND%%lib/wine/%%WINEARCH%%-windows/winewayland.drv
@@ -2726,6 +2724,7 @@ lib/wine/%%WINEARCH%%-windows/wmasf.dll
 lib/wine/%%WINEARCH%%-windows/wmi.dll
 lib/wine/%%WINEARCH%%-windows/wmic.exe
 lib/wine/%%WINEARCH%%-windows/wmilib.sys
+lib/wine/%%WINEARCH%%-windows/wminet_utils.dll
 lib/wine/%%WINEARCH%%-windows/wmiutils.dll
 lib/wine/%%WINEARCH%%-windows/wmp.dll
 lib/wine/%%WINEARCH%%-windows/wmphoto.dll
