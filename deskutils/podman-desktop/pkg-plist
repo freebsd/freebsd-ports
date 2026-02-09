@@ -90,6 +90,7 @@ share/icons/hicolor/scalable/apps/icon.svg
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/win-ca/lib/unique.js
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/win-ca/lib/v2.js
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/win-ca/package.json
+%%DATADIR%%/resources/product.json
 %%DATADIR%%/snapshot_blob.bin
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/vk_swiftshader_icd.json

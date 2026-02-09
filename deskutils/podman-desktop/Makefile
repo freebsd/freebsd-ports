@@ -1,6 +1,6 @@
 PORTNAME=	podman-desktop
-PORTVERSION=	1.21.0
-PORTREVISION=	8
+PORTVERSION=	1.25.0
+DISTVERSIONSUFFIX=-x64
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/arrowd/podman-desktop/releases/download/v${PORTVERSION}/ \
 		https://raw.githubusercontent.com/podman-desktop/podman-desktop/refs/tags/v${PORTVERSION}/buildResources/:icon
@@ -21,7 +21,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		minikube:sysutils/minikube \
 		podman-compose:sysutils/podman-compose
 
-USES=		desktop-file-utils electronfix:37 shared-mime-info
+USES=		desktop-file-utils electronfix:40 shared-mime-info
 
 ELECTRONFIX_MAIN_EXECUTABLE=	podman-desktop
 SUB_FILES=	podman-desktop
