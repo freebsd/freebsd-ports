@@ -1,7 +1,7 @@
 PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	tiga@FreeBSD.org
@@ -39,7 +39,7 @@ OPENSSL_USES=		ssl
 OPENSSL_CMAKE_BOOL=	BUILD_MTPZ
 
 QT6_USES=		qt:6
-QT6_USE=		QT=core,gui,network,widgets,buildtools:build,linguisttools:build,qmake:build
+QT6_USE=		QT=base,tools:build
 QT6_CMAKE_BOOL=		BUILD_QT_UI
 QT6_CMAKE_ON=		-DDESIRED_QT_VERSION:STRING=6
 QT6_PLIST_FILES=	bin/android-file-transfer \
