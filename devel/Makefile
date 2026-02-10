@@ -8556,6 +8556,7 @@
     SUBDIR += uvwasi
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
+    SUBDIR += vali
     SUBDIR += vasm
     SUBDIR += vc
     SUBDIR += vc-intrinsics
