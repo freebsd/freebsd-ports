@@ -4331,6 +4331,7 @@
     SUBDIR += premake4
     SUBDIR += premake5
     SUBDIR += priv_wrapper
+    SUBDIR += prjpeppercorn111
     SUBDIR += projectcenter
     SUBDIR += prometheus-cpp
     SUBDIR += protobuf
