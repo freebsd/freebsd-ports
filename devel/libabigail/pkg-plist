@@ -8,7 +8,6 @@ include/libabigail/abg-comp-filter.h
 include/libabigail/abg-comparison.h
 include/libabigail/abg-config.h
 include/libabigail/abg-corpus.h
-include/libabigail/abg-ctf-reader.h
 include/libabigail/abg-cxx-compat.h
 include/libabigail/abg-diff-utils.h
 include/libabigail/abg-dwarf-reader.h
