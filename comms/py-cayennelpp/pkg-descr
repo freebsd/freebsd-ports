@@ -1,0 +1,3 @@
+A Cayenne Low Power Payload (CayenneLPP) decoder and encoder written in Python.
+PyCayenneLPP offers a concise interface with proper encoding and decoding
+functionality for the CayenneLPP format, supporting many sensor types.

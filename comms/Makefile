@@ -134,6 +134,7 @@
     SUBDIR += predict
     SUBDIR += py-ModbusTCP
     SUBDIR += py-adafruit-ampy
+    SUBDIR += py-cayennelpp
     SUBDIR += py-elelabs-zigbee-ezsp-utility
     SUBDIR += py-esptool
     SUBDIR += py-fritzconnection
