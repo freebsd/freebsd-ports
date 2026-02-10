@@ -1,12 +1,11 @@
 PORTNAME=	typecode
-DISTVERSION=	30.0.2
-PORTREVISION=	1
+DISTVERSION=	30.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tuukka.pasanen@ilmi.fi
-COMMENT=	Comprehensive filetype and mimetype detection using libmagic and Pygments.
+COMMENT=	Comprehensive filetype and mimetype detection using libmagic and Pygments
 WWW=		https://github.com/nexB/plugincode
 
 LICENSE=	APACHE20
