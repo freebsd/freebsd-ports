@@ -1,5 +1,5 @@
 PORTNAME=	focuswriter
-DISTVERSION=	1.8.13
+DISTVERSION=	1.9.0
 CATEGORIES=	editors
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
