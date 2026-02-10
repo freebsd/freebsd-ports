@@ -1,7 +1,6 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
-PORTREVISION=	2
+DISTVERSION=	0.11.2
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -24,7 +23,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	libjxl:testdata:ff8d743:testdata/testdata \
-		webmproject:sjpeg:e5ab130:sjpeg/third_party/sjpeg \
+		webmproject:sjpeg:94e0df6:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
 CMAKE_ON+=	${AVX512 AVX512_SPR AVX512_ZEN4:L:S/^/JPEGXL_ENABLE_/}
@@ -51,7 +50,7 @@ JPEG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_JPEG
 JPEG_CMAKE_BOOL_OFF+=	JPEGXL_ENABLE_JPEGLI_LIBJPEG # XXX WITH_JPEG8, libmap.conf(5)
 
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
-LCMS2_GH_TUPLE_OFF=	jbeich:skcms:42030a7:skcms/third_party/skcms
+LCMS2_GH_TUPLE_OFF=	jbeich:skcms:b2e6926:skcms/third_party/skcms
 LCMS2_CMAKE_BOOL_OFF=	JPEGXL_ENABLE_SKCMS
 .if make(makesum)
 GH_TUPLE+=		${LCMS2_GH_TUPLE_OFF}
