@@ -11,6 +11,6 @@ lib/cmake/SVT-AV1/SVT-AV1-sharedTargets.cmake
 lib/cmake/SVT-AV1/SVT-AV1Config.cmake
 lib/cmake/SVT-AV1/SVT-AV1ConfigVersion.cmake
 lib/libSvtAv1Enc.so
-lib/libSvtAv1Enc.so.3
+lib/libSvtAv1Enc.so.4
 lib/libSvtAv1Enc.so.%%VERSION%%
 libdata/pkgconfig/SvtAv1Enc.pc
