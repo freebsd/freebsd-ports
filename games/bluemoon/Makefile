@@ -1,5 +1,6 @@
 PORTNAME=	bluemoon
 DISTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 
@@ -10,7 +11,7 @@ WWW=		http://www.catb.org/~esr/bluemoon/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses
+USES=		ncurses:base
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
