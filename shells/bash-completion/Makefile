@@ -12,13 +12,15 @@ WWW=		https://github.com/scop/bash-completion
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	runtest:misc/dejagnu \
-		${LOCALBASE}/lib/tcllib/cmdline/cmdline.tcl:devel/tcllib
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=4:misc/py-pexpect@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0,1:devel/py-pytest-xdist@${PY_FLAVOR}
 
-USES=		autoreconf gmake tar:xz
+USES=		autoreconf gmake python:test tar:xz
+USE_PYTHON=	pytest
 
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
+TEST_WRKSRC=	${WRKSRC}/test
 
 SUB_FILES=	pkg-message
 SUB_LIST=	RUNFILE=${DATADIR}/bash_completion.sh
@@ -60,10 +62,5 @@ post-configure:
 
 post-install:
 	${RM} ${STAGEDIR}${DATADIR}/completions/makepkg
-
-do-test:
-.for test in runCompletion runInstall runUnit
-	-cd ${WRKSRC}/test && bash ${test}
-.endfor
 
 .include <bsd.port.mk>
