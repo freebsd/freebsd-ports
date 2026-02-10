@@ -198,6 +198,7 @@ include/fizz/tool/FizzCommandCommon.h
 include/fizz/util/Exceptions.h
 include/fizz/util/FizzUtil.h
 include/fizz/util/KeyLogWriter.h
+include/fizz/util/Logging.h
 include/fizz/util/Parse-inl.h
 include/fizz/util/Parse.h
 include/fizz/util/Status.h
