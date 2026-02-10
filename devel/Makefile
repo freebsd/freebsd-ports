@@ -6922,7 +6922,6 @@
     SUBDIR += rubygem-aws-sdk-qapps
     SUBDIR += rubygem-aws-sdk-qbusiness
     SUBDIR += rubygem-aws-sdk-qconnect
-    SUBDIR += rubygem-aws-sdk-qldbsession
     SUBDIR += rubygem-aws-sdk-quicksight
     SUBDIR += rubygem-aws-sdk-ram
     SUBDIR += rubygem-aws-sdk-rds
