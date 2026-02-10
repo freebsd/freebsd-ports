@@ -5120,3 +5120,4 @@ devel/rubygem-aws-sdk-elastictranscoder||2026-02-10|Remove obsoleted port
 devel/rubygem-aws-sdk-iotfleethub||2026-02-10|Remove obsoleted port
 devel/rubygem-aws-sdk-lookoutforvision||2026-02-10|Remove obsoleted port
 devel/rubygem-aws-sdk-lookoutmetrics||2026-02-10|Remove obsoleted port
+devel/rubygem-aws-sdk-qldb||2026-02-10|Remove obsoleted port
