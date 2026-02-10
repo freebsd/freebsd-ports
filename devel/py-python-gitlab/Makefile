@@ -1,5 +1,5 @@
 PORTNAME=	python-gitlab
-DISTVERSION=	7.1.0
+DISTVERSION=	8.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -48,7 +48,7 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} 
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-autoprogram>0:textproc/py-sphinxcontrib-autoprogram@${PY_FLAVOR}
 DOCS_PORTDOCS=		*
 
-GRAPHQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gql>=3.5<4:devel/py-gql@${PY_FLAVOR} \
+GRAPHQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gql>=3.5<5:devel/py-gql@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}httpx>0:www/py-httpx@${PY_FLAVOR}
 
 GRAPHQL_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}respx>0:www/py-respx@${PY_FLAVOR}
@@ -62,10 +62,8 @@ do-build-DOCS-on::
 	(cd ${WRKSRC} && sphinx-build -j auto -n -W --keep-going -b html docs build/sphinx/html)
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/build/sphinx/html && \
-	${RM} -r .doctrees && \
-	${RM} .buildinfo objects.inv && \
+	${RM} -r .doctrees .buildinfo objects.inv && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
