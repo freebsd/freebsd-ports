@@ -1,7 +1,7 @@
 PORTNAME=	opengist
 PORTVERSION=	1.11.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www textproc
 MASTER_SITES=	LOCAL/fox/:js
 DISTFILES=	opengist-${DISTVERSION}-node_modules.tgz:js
@@ -54,9 +54,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/config.yml \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/config.yml.sample
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
-	${CHOWN} opengist:opengist ${STAGEDIR}/var/db/${PORTNAME}
 	${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
-	${CHOWN} opengist:opengist ${STAGEDIR}/var/run/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/assets
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} public/assets/* \

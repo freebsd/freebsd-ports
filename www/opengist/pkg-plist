@@ -73,5 +73,5 @@ bin/opengist
 %%WWWDIR%%/assets/style_preferences-1f030604.js
 %%WWWDIR%%/assets/webauthn-93328862.js
 %%WWWDIR%%/manifest.json
-@dir(opengist,opengist,640) /var/db/opengist
-@dir(opengist,opengist,600) /var/run/opengist
+@dir(opengist,opengist,750) /var/db/opengist
+@dir(opengist,opengist,750) /var/run/opengist
