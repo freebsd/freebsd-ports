@@ -1,7 +1,6 @@
-PORTNAME=	natten
+PORTNAME=	NATTEN
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
-PORTREVISION=	1
+DISTVERSION=	0.21.5
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +14,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # this BUILD_DEPENDS should be used when CUDA would be available
-#BUILD_DEPENDS=	cmake:devel/cmake-core \
-		pybind11>0:devel/pybind11 \
-		${PYTHON_PKGNAMEPREFIX}pytorch>=2.0.0:misc/py-pytorch@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>=2.0.0:misc/py-pytorch@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		cmake:devel/cmake-core \
+		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>=2.0.0:misc/py-pytorch@${PY_FLAVOR}
 
 USES=		localbase python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SHI-Labs

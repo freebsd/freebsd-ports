@@ -1,6 +1,6 @@
 PORTNAME=	transformers
 DISTVERSION=	4.55.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,7 +43,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}accelerate>=0.26.0:misc/py-accelerate@${PY_
 		${PYTHON_PKGNAMEPREFIX}blobfile>=0:net/py-blobfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}codecarbon>=2.8.1:misc/py-codecarbon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ftfy>=0:textproc/py-ftfy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}natten>=0.14.6:misc/py-natten@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}NATTEN>=0.14.6:misc/py-NATTEN@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}num2words>=0:devel/py-num2words@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}optuna>=0:misc/py-optuna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sagemaker>=2.31.0:misc/py-sagemaker@${PY_FLAVOR} \

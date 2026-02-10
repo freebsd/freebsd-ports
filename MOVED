@@ -5110,3 +5110,4 @@ lang/python-doc-pdf-a4||2026-02-05|A4-size PDF no longer provided since 3.13
 devel/rubygem-sidekiq-cron-rails70|devel/rubygem-sidekiq-cron-rails-gitlab|2026-02-05|Obsolete, please use devel/rubygem-sidekiq-cron-rails-gitlab instead
 devel/freebsd-git-devtools|devel/freebsd-git-arc|2026-02-06|Split into two separate ports: devel/freebsd-git-arc and devel/mfc-candidates to improve discoverability
 devel/py-Levenshtein|devel/py-levenshtein|2026-02-07|Rename to match upstream
+misc/py-natten|misc/py-NATTEN|2026-02-10|Rename to match name in PyPI
