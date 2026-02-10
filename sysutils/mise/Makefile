@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.2.4
+DISTVERSION=	2026.2.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -211,6 +211,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		directories-6.0.0 \
+		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
 		document-features-0.2.12 \
@@ -665,7 +666,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_plain-1.0.2 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.20 \
-		serde_spanned-0.6.9 \
+		serde_spanned-1.0.4 \
 		serde_urlencoded-0.7.1 \
 		serde_with-3.16.1 \
 		serde_with_macros-3.16.1 \
@@ -682,6 +683,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		shared_thread-0.2.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.1 \
+		shellexpand-3.1.1 \
 		shlex-1.3.0 \
 		sigchld-0.2.4 \
 		signal-hook-0.3.18 \
@@ -740,9 +742,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
-		time-0.3.46 \
+		time-0.3.47 \
 		time-core-0.1.8 \
-		time-macros-0.2.26 \
+		time-macros-0.2.27 \
 		tinystr-0.8.2 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
@@ -756,10 +758,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tokio-rustls-0.26.4 \
 		tokio-util-0.7.18 \
 		toml-0.5.11 \
-		toml-0.8.23 \
-		toml_datetime-0.6.11 \
-		toml_edit-0.22.27 \
-		toml_write-0.1.2 \
+		toml-0.9.11+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_edit-0.24.0+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
+		toml_writer-1.0.6+spec-1.1.0 \
 		tough-0.21.0 \
 		tower-0.5.3 \
 		tower-http-0.6.8 \
