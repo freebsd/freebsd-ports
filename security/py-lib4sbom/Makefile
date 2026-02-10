@@ -1,6 +1,6 @@
 PORTNAME=	lib4sbom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.7
+DISTVERSION=	0.9.4
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,10 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.4:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.8<3:devel/py-semantic-version@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xmlschema>0:textproc/py-xmlschema@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}xmlschema>0:textproc/py-xmlschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fastjsonschema>0:devel/py-fastjsonschema@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
@@ -63,15 +65,14 @@ PYTEST_IGNORED_TESTS=	test_store test_getBOM test_generateTime \
 			test_parse_spdx_rdf test_parse_spdx_yaml \
 			test_parse_spdx_xml
 
-NO_ARCH=	YES
+NO_ARCH=	yes
 
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	${MV} ${WRKSRC}/test ${WRKSRC}/${PORTNAME}
-	${MV} ${WRKSRC}/tools ${WRKSRC}/${PORTNAME}
+	${MV} ${WRKSRC}/test ${WRKSRC}/tools ${WRKSRC}/${PORTNAME}
 
 post-patch-EXAMPLES-off:
 	@${RM} -r ${WRKSRC}/examples
