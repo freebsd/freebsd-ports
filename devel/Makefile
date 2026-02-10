@@ -7823,7 +7823,6 @@
     SUBDIR += rubygem-packwerk
     SUBDIR += rubygem-packwerk-extensions
     SUBDIR += rubygem-pagy
-    SUBDIR += rubygem-pagy6
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-pairing_heap
     SUBDIR += rubygem-paper_trail
