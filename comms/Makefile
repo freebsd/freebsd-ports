@@ -96,8 +96,8 @@
     SUBDIR += locator
     SUBDIR += lrzsz
     SUBDIR += lysdr
-    SUBDIR += meshcore-cli
     SUBDIR += mbelib
+    SUBDIR += meshcore-cli
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
     SUBDIR += morse
