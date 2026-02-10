@@ -6629,7 +6629,6 @@
     SUBDIR += rubygem-aws-sdk-apprunner
     SUBDIR += rubygem-aws-sdk-appstream
     SUBDIR += rubygem-aws-sdk-appsync
-    SUBDIR += rubygem-aws-sdk-apptest
     SUBDIR += rubygem-aws-sdk-arcregionswitch
     SUBDIR += rubygem-aws-sdk-arczonalshift
     SUBDIR += rubygem-aws-sdk-artifact
