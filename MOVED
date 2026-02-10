@@ -5136,3 +5136,4 @@ textproc/rubygem-cucumber-gherkin34|textproc/rubygem-cucumber-gherkin|2026-02-10
 textproc/rubygem-cucumber-html-formatter21|textproc/rubygem-cucumber-html-formatter|2026-02-10|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
 textproc/rubygem-loofah222|textproc/rubygem-loofah|2026-02-10|Remove obsoleted port. Use textproc/rubygem-loofah instead
 databases/rubygem-flipper-active_record-rails70|databases/rubygem-flipper-active_record|2026-02-10|Remove obsoleted port. Use databases/rubygem-flipper-active_record instead
+devel/rubygem-flipper-active_support_cache_store-rails70|devel/rubygem-flipper-active_support_cache_store|2026-02-10|Remove obsoleted port. Use devel/rubygem-flipper-active_support_cache_store instead
