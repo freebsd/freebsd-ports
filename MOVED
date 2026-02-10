@@ -5133,3 +5133,4 @@ devel/rubygem-pagy6|devel/rubygem-pagy|2026-02-10|Remove obsoleted port. Use dev
 devel/rubygem-xdg7|devel/rubygem-xdg|2026-02-10|Remove obsoleted port. Use devel/rubygem-xdg instead
 devel/rubygem-xdg8|devel/rubygem-xdg|2026-02-10|Remove obsoleted port. Use devel/rubygem-xdg instead
 textproc/rubygem-cucumber-gherkin34|textproc/rubygem-cucumber-gherkin|2026-02-10|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
+textproc/rubygem-cucumber-html-formatter21|textproc/rubygem-cucumber-html-formatter|2026-02-10|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
