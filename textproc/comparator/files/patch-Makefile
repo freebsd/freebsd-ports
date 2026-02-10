@@ -1,0 +1,22 @@
+--- Makefile.orig	2026-02-10 12:32:33 UTC
++++ Makefile
+@@ -15,8 +15,8 @@ SOURCES = $(CODE) $(SCRIPTS) $(DOCS) $(EXTRAS) $(TEST)
+ EXTRAS  = shredtree.py shredcompare.py
+ TEST    = test
+ SOURCES = $(CODE) $(SCRIPTS) $(DOCS) $(EXTRAS) $(TEST) Makefile
+-CFLAGS  = -O3
+-LDFLAGS = 
++CFLAGS  ?= -O3
++LDFLAGS ?= 
+ 
+ VERSION=$(shell sed -n <NEWS.adoc '/^[0-9]/s/:.*//p' | head -1)
+ 
+@@ -40,7 +40,7 @@ main.o: main.c shred.h hash.h
+ all: comparator comparator.1
+ 
+ main.o: main.c shred.h hash.h
+-	$(CC) -DVERSIONION=\"$(VERSION)\" -c $(CFLAGS) main.c 
++	$(CC) -DVERSION=\"$(VERSION)\" -c $(CFLAGS) main.c 
+ linebyline.o: linebyline.c
+ 	$(CC) -c $(CFLAGS) linebyline.c
+ hash.o: hash.c hash.h hashtab.h

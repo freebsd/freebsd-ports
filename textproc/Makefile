@@ -110,6 +110,7 @@
     SUBDIR += codesearch
     SUBDIR += codespell
     SUBDIR += colordiff
+    SUBDIR += comparator
     SUBDIR += comrak
     SUBDIR += confget
     SUBDIR += consul-template

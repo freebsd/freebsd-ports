@@ -1,0 +1,3 @@
+comparator is a program for rapidly finding common segments in large
+source-code trees. See the manual page for instructions. It comes with
+a filtering postprecessor, filterator.
