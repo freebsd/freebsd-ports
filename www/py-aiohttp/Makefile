@@ -1,5 +1,6 @@
 PORTNAME=	aiohttp
 PORTVERSION=	3.13.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/aio-libs/aiohttp/releases/download/v${PORTVERSION}/
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohappyeyeballs>=2.5.0:net/py-aiohappyeyeba
 		${PYTHON_PKGNAMEPREFIX}multidict>=4.5<7.0:www/py-multidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}propcache>=0.2.0:devel/py-propcache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarl>=1.17.0<2.0:www/py-yarl@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.2.0:dns/py-aiodns@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.3.0:dns/py-aiodns@${PY_FLAVOR} \
 		${PY_BACKPORTS.ZSTD} \
 		${PYTHON_PKGNAMEPREFIX}brotli>=1.2:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR} \
@@ -49,7 +50,7 @@ CPE_VENDOR=	aiohttp_project
 OPTIONS_DEFINE=	SPEEDUPS
 SPEEDUPS_DESC=	Performance speedups
 
-SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.2.0:dns/py-aiodns@${PY_FLAVOR} \
+SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.3.0:dns/py-aiodns@${PY_FLAVOR} \
 			${PY_BACKPORTS.ZSTD} \
 			${PYTHON_PKGNAMEPREFIX}brotli>=1.2:archivers/py-brotli@${PY_FLAVOR}
 
