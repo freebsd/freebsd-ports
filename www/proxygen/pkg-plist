@@ -8,7 +8,6 @@ bin/proxygen_proxy
 bin/proxygen_push
 bin/proxygen_static
 include/proxygen/external/http_parser/http_parser.h
-include/proxygen/httpserver/ExMessageHandler.h
 include/proxygen/httpserver/Filters.h
 include/proxygen/httpserver/HTTPServer.h
 include/proxygen/httpserver/HTTPServerAcceptor.h
@@ -288,6 +287,7 @@ include/proxygen/lib/http/webtransport/WebTransport.h
 include/proxygen/lib/http/webtransport/WebTransportImpl.h
 include/proxygen/lib/http/webtransport/WtEgressContainer.h
 include/proxygen/lib/http/webtransport/WtStreamManager.h
+include/proxygen/lib/http/webtransport/WtUtils.h
 include/proxygen/lib/http/webtransport/test/FakeSharedWebTransport.h
 include/proxygen/lib/pools/generators/FileServerListGenerator.h
 include/proxygen/lib/pools/generators/MemberGroupConfig.h

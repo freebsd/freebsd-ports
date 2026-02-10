@@ -1,6 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.02.02.00
+DISTVERSION=	2026.02.09.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libglog.so:devel/glog \
 		libicui18n.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
-		libmvfst_server.so:net/mvfst \
+		libmvfst.so:net/mvfst \
 		libsnappy.so:archivers/snappy \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind \
