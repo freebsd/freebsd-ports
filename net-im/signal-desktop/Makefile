@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.84.0
+DISTVERSION=	7.88.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
@@ -45,7 +45,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpci.so:devel/libpci \
+		libpipewire-0.3.so:multimedia/pipewire \
 		libpng16.so:graphics/png \
+		libpulse.so:audio/pulseaudio \
 		libsnappy.so:archivers/snappy \
 		libsndio.so:audio/sndio \
 		libwayland-client.so:graphics/wayland \
@@ -83,7 +85,7 @@ ESBUILD_BINARY_PATH=${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	37
+ELECTRON_VER_MAJOR=	39
 ESBUILD_VERS=		0.25.9
 PNPM_VERS=		10.18.1
 
@@ -103,8 +105,8 @@ PLIST_SUB+=	NOT_AARCH64=""
 .endif
 
 do-build:
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron37/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron37 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron39/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron39 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
@@ -189,6 +191,6 @@ create-caches-tarball:
 	${RM} -r ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked
 
 	cd ${WRKDIR} && \
-		${TAR} czf signal-desktop-${DISTVERSION}-npm-cache.tar.gz .npm pnpm
+		${TAR} czf signal-desktop-${DISTVERSION}-npm-cache.tar.gz .npm pnpm .cache
 
 .include <bsd.port.post.mk>

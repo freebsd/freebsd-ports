@@ -1,0 +1,5 @@
+[
+{
+  "message": "Signal Desktop requires that both Pulse Audio and the DBUS service\nare enabled and running, otherwise it will crash either at startup,\nor during linking devices.\n\nThe environment variable DBUS_SESSION_BUS_ADDRESS should also be set.\nUsers may need to amend .xinitrc or similar session managers, with\n\n    exec dbus-launch --exit-with-session $1\n\nor similar, for their preferred window or session manager."
+}
+]
