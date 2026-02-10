@@ -5131,3 +5131,4 @@ devel/rubygem-cucumber-messages29|devel/rubygem-cucumber-messages|2026-02-10|Rem
 devel/rubygem-cucumber-messages30|devel/rubygem-cucumber-messages|2026-02-10|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
 devel/rubygem-pagy6|devel/rubygem-pagy|2026-02-10|Remove obsoleted port. Use devel/rubygem-pagy instead
 devel/rubygem-xdg7|devel/rubygem-xdg|2026-02-10|Remove obsoleted port. Use devel/rubygem-xdg instead
+devel/rubygem-xdg8|devel/rubygem-xdg|2026-02-10|Remove obsoleted port. Use devel/rubygem-xdg instead
