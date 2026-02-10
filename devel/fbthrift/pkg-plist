@@ -5,6 +5,7 @@ include/thrift/annotation/compat.thrift
 include/thrift/annotation/cpp.thrift
 include/thrift/annotation/erlang.thrift
 include/thrift/annotation/gen-cpp2/cpp_clients.h
+include/thrift/annotation/gen-cpp2/cpp_clients_fwd.h
 include/thrift/annotation/gen-cpp2/cpp_constants.h
 include/thrift/annotation/gen-cpp2/cpp_data.h
 include/thrift/annotation/gen-cpp2/cpp_for_each_field.h
@@ -18,6 +19,7 @@ include/thrift/annotation/gen-cpp2/cpp_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/cpp_visit_union.h
 include/thrift/annotation/gen-cpp2/cpp_visitation.h
 include/thrift/annotation/gen-cpp2/go_clients.h
+include/thrift/annotation/gen-cpp2/go_clients_fwd.h
 include/thrift/annotation/gen-cpp2/go_constants.h
 include/thrift/annotation/gen-cpp2/go_data.h
 include/thrift/annotation/gen-cpp2/go_for_each_field.h
@@ -31,6 +33,7 @@ include/thrift/annotation/gen-cpp2/go_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/go_visit_union.h
 include/thrift/annotation/gen-cpp2/go_visitation.h
 include/thrift/annotation/gen-cpp2/hack_clients.h
+include/thrift/annotation/gen-cpp2/hack_clients_fwd.h
 include/thrift/annotation/gen-cpp2/hack_constants.h
 include/thrift/annotation/gen-cpp2/hack_data.h
 include/thrift/annotation/gen-cpp2/hack_for_each_field.h
@@ -44,6 +47,7 @@ include/thrift/annotation/gen-cpp2/hack_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/hack_visit_union.h
 include/thrift/annotation/gen-cpp2/hack_visitation.h
 include/thrift/annotation/gen-cpp2/java_clients.h
+include/thrift/annotation/gen-cpp2/java_clients_fwd.h
 include/thrift/annotation/gen-cpp2/java_constants.h
 include/thrift/annotation/gen-cpp2/java_data.h
 include/thrift/annotation/gen-cpp2/java_for_each_field.h
@@ -57,6 +61,7 @@ include/thrift/annotation/gen-cpp2/java_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/java_visit_union.h
 include/thrift/annotation/gen-cpp2/java_visitation.h
 include/thrift/annotation/gen-cpp2/python_clients.h
+include/thrift/annotation/gen-cpp2/python_clients_fwd.h
 include/thrift/annotation/gen-cpp2/python_constants.h
 include/thrift/annotation/gen-cpp2/python_data.h
 include/thrift/annotation/gen-cpp2/python_for_each_field.h
@@ -70,6 +75,7 @@ include/thrift/annotation/gen-cpp2/python_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/python_visit_union.h
 include/thrift/annotation/gen-cpp2/python_visitation.h
 include/thrift/annotation/gen-cpp2/scope_clients.h
+include/thrift/annotation/gen-cpp2/scope_clients_fwd.h
 include/thrift/annotation/gen-cpp2/scope_constants.h
 include/thrift/annotation/gen-cpp2/scope_data.h
 include/thrift/annotation/gen-cpp2/scope_for_each_field.h
@@ -83,6 +89,7 @@ include/thrift/annotation/gen-cpp2/scope_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/scope_visit_union.h
 include/thrift/annotation/gen-cpp2/scope_visitation.h
 include/thrift/annotation/gen-cpp2/thrift_clients.h
+include/thrift/annotation/gen-cpp2/thrift_clients_fwd.h
 include/thrift/annotation/gen-cpp2/thrift_constants.h
 include/thrift/annotation/gen-cpp2/thrift_data.h
 include/thrift/annotation/gen-cpp2/thrift_for_each_field.h
@@ -272,6 +279,7 @@ include/thrift/lib/cpp2/async/ServiceInfoHolder.h
 include/thrift/lib/cpp2/async/ServiceRequestInfo.h
 include/thrift/lib/cpp2/async/Sink.h
 include/thrift/lib/cpp2/async/StreamCallbacks.h
+include/thrift/lib/cpp2/async/StreamMessage.h
 include/thrift/lib/cpp2/async/StreamPayload.h
 include/thrift/lib/cpp2/async/TAsyncTransportHandler.h
 include/thrift/lib/cpp2/async/TerminateInteractionOverloadPolicy.h
@@ -503,6 +511,7 @@ include/thrift/lib/cpp2/schema/detail/Merge.h
 include/thrift/lib/cpp2/schema/detail/Resolver.h
 include/thrift/lib/cpp2/schema/detail/SchemaBackedResolver.h
 include/thrift/lib/cpp2/schema/gen-cpp2/syntax_graph_clients.h
+include/thrift/lib/cpp2/schema/gen-cpp2/syntax_graph_clients_fwd.h
 include/thrift/lib/cpp2/schema/gen-cpp2/syntax_graph_constants.h
 include/thrift/lib/cpp2/schema/gen-cpp2/syntax_graph_data.h
 include/thrift/lib/cpp2/schema/gen-cpp2/syntax_graph_for_each_field.h
@@ -582,6 +591,7 @@ include/thrift/lib/cpp2/server/ServiceInterceptorStorage.h
 include/thrift/lib/cpp2/server/ServiceMethodDecoratorBase.h
 include/thrift/lib/cpp2/server/StandardConcurrencyController.h
 include/thrift/lib/cpp2/server/StatusServerInterface.h
+include/thrift/lib/cpp2/server/StreamInterceptorContext.h
 include/thrift/lib/cpp2/server/TMConcurrencyController.h
 include/thrift/lib/cpp2/server/ThreadManagerLoggingWrapper.h
 include/thrift/lib/cpp2/server/ThriftProcessor.h
@@ -684,7 +694,6 @@ include/thrift/lib/cpp2/transport/rocket/framing/Serializer.h
 include/thrift/lib/cpp2/transport/rocket/framing/Util.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/AlignedParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/AllocatingParserStrategy.h
-include/thrift/lib/cpp2/transport/rocket/framing/parser/FrameLengthParserStrategy-inl.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/FrameLengthParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/ParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/test/TestUtil.h
@@ -698,6 +707,7 @@ include/thrift/lib/cpp2/transport/rocket/server/BidirectionalStreamState.h
 include/thrift/lib/cpp2/transport/rocket/server/IRocketServerConnection.h
 include/thrift/lib/cpp2/transport/rocket/server/InteractionOverload.h
 include/thrift/lib/cpp2/transport/rocket/server/RefactoredRocketServerConnection.h
+include/thrift/lib/cpp2/transport/rocket/server/RefactoredThriftRocketServerHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketBiDiClientCallback.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketRoutingHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnection.h
@@ -727,6 +737,10 @@ include/thrift/lib/cpp2/transport/rocket/server/detail/RequestResponseHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestStreamHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RocketContextUtils.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RocketErrorHandler.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RocketRequestHandler.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RocketRequestOrchestrator.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RocketRequestProcessor.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RocketSetupProcessor.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/SetupFrameAcceptor.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/SinkCallbackManager.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/StreamCallbackManager.h
@@ -855,6 +869,7 @@ include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.tcc
 include/thrift/lib/thrift/gen-cpp2/RocketUpgradeAsyncClient.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_clients.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_constants.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_custom_protocol.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_data.h
@@ -869,6 +884,7 @@ include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_visit_by_thrift_field_metadata.
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_visitation.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_clients.h
+include/thrift/lib/thrift/gen-cpp2/RpcMetadata_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_constants.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_data.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_for_each_field.h
@@ -886,6 +902,7 @@ include/thrift/lib/thrift/gen-cpp2/ThriftMetadataService.tcc
 include/thrift/lib/thrift/gen-cpp2/ThriftMetadataServiceAsyncClient.h
 include/thrift/lib/thrift/gen-cpp2/ThriftMetadataService_custom_protocol.h
 include/thrift/lib/thrift/gen-cpp2/any_rep_clients.h
+include/thrift/lib/thrift/gen-cpp2/any_rep_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/any_rep_constants.h
 include/thrift/lib/thrift/gen-cpp2/any_rep_data.h
 include/thrift/lib/thrift/gen-cpp2/any_rep_for_each_field.h
@@ -899,6 +916,7 @@ include/thrift/lib/thrift/gen-cpp2/any_rep_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/any_rep_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/any_rep_visitation.h
 include/thrift/lib/thrift/gen-cpp2/field_mask_clients.h
+include/thrift/lib/thrift/gen-cpp2/field_mask_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/field_mask_constants.h
 include/thrift/lib/thrift/gen-cpp2/field_mask_data.h
 include/thrift/lib/thrift/gen-cpp2/field_mask_for_each_field.h
@@ -912,6 +930,7 @@ include/thrift/lib/thrift/gen-cpp2/field_mask_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/field_mask_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/field_mask_visitation.h
 include/thrift/lib/thrift/gen-cpp2/frozen_clients.h
+include/thrift/lib/thrift/gen-cpp2/frozen_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/frozen_constants.h
 include/thrift/lib/thrift/gen-cpp2/frozen_data.h
 include/thrift/lib/thrift/gen-cpp2/frozen_for_each_field.h
@@ -925,6 +944,7 @@ include/thrift/lib/thrift/gen-cpp2/frozen_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/frozen_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/frozen_visitation.h
 include/thrift/lib/thrift/gen-cpp2/id_clients.h
+include/thrift/lib/thrift/gen-cpp2/id_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/id_constants.h
 include/thrift/lib/thrift/gen-cpp2/id_data.h
 include/thrift/lib/thrift/gen-cpp2/id_for_each_field.h
@@ -938,6 +958,7 @@ include/thrift/lib/thrift/gen-cpp2/id_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/id_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/id_visitation.h
 include/thrift/lib/thrift/gen-cpp2/metadata_clients.h
+include/thrift/lib/thrift/gen-cpp2/metadata_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/metadata_constants.h
 include/thrift/lib/thrift/gen-cpp2/metadata_data.h
 include/thrift/lib/thrift/gen-cpp2/metadata_for_each_field.h
@@ -951,9 +972,11 @@ include/thrift/lib/thrift/gen-cpp2/metadata_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/metadata_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/metadata_visitation.h
 include/thrift/lib/thrift/gen-cpp2/protocol_clients.h
+include/thrift/lib/thrift/gen-cpp2/protocol_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/protocol_constants.h
 include/thrift/lib/thrift/gen-cpp2/protocol_data.h
 include/thrift/lib/thrift/gen-cpp2/protocol_detail_clients.h
+include/thrift/lib/thrift/gen-cpp2/protocol_detail_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/protocol_detail_constants.h
 include/thrift/lib/thrift/gen-cpp2/protocol_detail_data.h
 include/thrift/lib/thrift/gen-cpp2/protocol_detail_for_each_field.h
@@ -977,6 +1000,7 @@ include/thrift/lib/thrift/gen-cpp2/protocol_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/protocol_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/protocol_visitation.h
 include/thrift/lib/thrift/gen-cpp2/record_clients.h
+include/thrift/lib/thrift/gen-cpp2/record_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/record_constants.h
 include/thrift/lib/thrift/gen-cpp2/record_data.h
 include/thrift/lib/thrift/gen-cpp2/record_for_each_field.h
@@ -990,6 +1014,7 @@ include/thrift/lib/thrift/gen-cpp2/record_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/record_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/record_visitation.h
 include/thrift/lib/thrift/gen-cpp2/reflection_clients.h
+include/thrift/lib/thrift/gen-cpp2/reflection_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/reflection_constants.h
 include/thrift/lib/thrift/gen-cpp2/reflection_data.h
 include/thrift/lib/thrift/gen-cpp2/reflection_for_each_field.h
@@ -1003,6 +1028,7 @@ include/thrift/lib/thrift/gen-cpp2/reflection_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visitation.h
 include/thrift/lib/thrift/gen-cpp2/schema_clients.h
+include/thrift/lib/thrift/gen-cpp2/schema_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/schema_constants.h
 include/thrift/lib/thrift/gen-cpp2/schema_data.h
 include/thrift/lib/thrift/gen-cpp2/schema_for_each_field.h
@@ -1016,6 +1042,7 @@ include/thrift/lib/thrift/gen-cpp2/schema_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/schema_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/schema_visitation.h
 include/thrift/lib/thrift/gen-cpp2/serverdbginfo_clients.h
+include/thrift/lib/thrift/gen-cpp2/serverdbginfo_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/serverdbginfo_constants.h
 include/thrift/lib/thrift/gen-cpp2/serverdbginfo_data.h
 include/thrift/lib/thrift/gen-cpp2/serverdbginfo_for_each_field.h
@@ -1029,6 +1056,7 @@ include/thrift/lib/thrift/gen-cpp2/serverdbginfo_visit_by_thrift_field_metadata.
 include/thrift/lib/thrift/gen-cpp2/serverdbginfo_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/serverdbginfo_visitation.h
 include/thrift/lib/thrift/gen-cpp2/standard_clients.h
+include/thrift/lib/thrift/gen-cpp2/standard_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/standard_constants.h
 include/thrift/lib/thrift/gen-cpp2/standard_data.h
 include/thrift/lib/thrift/gen-cpp2/standard_for_each_field.h
@@ -1042,11 +1070,13 @@ include/thrift/lib/thrift/gen-cpp2/standard_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/standard_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/standard_visitation.h
 include/thrift/lib/thrift/gen-cpp2/type_clients.h
+include/thrift/lib/thrift/gen-cpp2/type_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/type_constants.h
 include/thrift/lib/thrift/gen-cpp2/type_data.h
 include/thrift/lib/thrift/gen-cpp2/type_for_each_field.h
 include/thrift/lib/thrift/gen-cpp2/type_handlers.h
 include/thrift/lib/thrift/gen-cpp2/type_id_clients.h
+include/thrift/lib/thrift/gen-cpp2/type_id_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/type_id_constants.h
 include/thrift/lib/thrift/gen-cpp2/type_id_data.h
 include/thrift/lib/thrift/gen-cpp2/type_id_for_each_field.h
@@ -1061,6 +1091,7 @@ include/thrift/lib/thrift/gen-cpp2/type_id_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/type_id_visitation.h
 include/thrift/lib/thrift/gen-cpp2/type_metadata.h
 include/thrift/lib/thrift/gen-cpp2/type_rep_clients.h
+include/thrift/lib/thrift/gen-cpp2/type_rep_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/type_rep_constants.h
 include/thrift/lib/thrift/gen-cpp2/type_rep_data.h
 include/thrift/lib/thrift/gen-cpp2/type_rep_for_each_field.h
@@ -1074,6 +1105,7 @@ include/thrift/lib/thrift/gen-cpp2/type_rep_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/type_rep_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/type_rep_visitation.h
 include/thrift/lib/thrift/gen-cpp2/type_system_clients.h
+include/thrift/lib/thrift/gen-cpp2/type_system_clients_fwd.h
 include/thrift/lib/thrift/gen-cpp2/type_system_constants.h
 include/thrift/lib/thrift/gen-cpp2/type_system_data.h
 include/thrift/lib/thrift/gen-cpp2/type_system_for_each_field.h

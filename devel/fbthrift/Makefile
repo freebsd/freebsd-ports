@@ -1,6 +1,6 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.02.02.00
+DISTVERSION=	2026.02.09.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libglog.so:devel/glog \
 		libicui18n.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
-		libmvfst_state_machine.so:net/mvfst \
+		libmvfst.so:net/mvfst \
 		libsnappy.so:archivers/snappy \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind \
