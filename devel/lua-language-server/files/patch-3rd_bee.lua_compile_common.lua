@@ -1,6 +1,6 @@
---- 3rd/bee.lua/compile/common.lua.orig	2025-12-03 14:18:20 UTC
+--- 3rd/bee.lua/compile/common.lua.orig	2026-01-10 05:26:24 UTC
 +++ 3rd/bee.lua/compile/common.lua
-@@ -207,7 +207,7 @@ lm:source_set "source_bee" {
+@@ -210,7 +210,7 @@ lm:source_set "source_bee" {
          }
      },
      freebsd = {
@@ -9,13 +9,13 @@
          sources = need {
              "bsd",
              "posix",
-@@ -291,8 +291,8 @@ lm:source_set "source_bee" {
+@@ -294,8 +294,8 @@ lm:source_set "source_bee" {
          ldflags = "-pthread"
      },
      freebsd = {
 -        links = "inotify",
 -        linkdirs = "/usr/local/lib",
-+        %INOTIFY%
++        %LM_INOTIFY_LINK%
 +        linkdirs = "%LOCALBASE%/lib",
          ldflags = "-pthread"
      },
