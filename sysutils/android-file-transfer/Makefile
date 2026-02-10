@@ -1,7 +1,7 @@
 PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tiga@FreeBSD.org
@@ -23,9 +23,9 @@ PORTSCOUT=	skipv:continuous
 
 PLIST_FILES=	"@comment lib/libmtp-ng-static.a"
 
-OPTIONS_DEFINE=		CLI FUSE OPENSSL QT5 TAGLIB
+OPTIONS_DEFINE=		CLI FUSE OPENSSL QT6 TAGLIB
 OPTIONS_DEFAULT=	CLI OPENSSL TAGLIB
-OPTIONS_EXCLUDE?=	QT5 # enslaved until subpackaging
+OPTIONS_EXCLUDE?=	QT6
 
 CLI_DESC=		CLI (Command-Line Interface) support
 TAGLIB_DESC=		Reading audio metadata via taglib
@@ -38,11 +38,11 @@ FUSE_PLIST_FILES=	bin/aft-mtp-mount
 OPENSSL_USES=		ssl
 OPENSSL_CMAKE_BOOL=	BUILD_MTPZ
 
-QT5_USES=		qt:5
-QT5_USE=		QT=core,gui,network,widgets,buildtools:build,linguisttools:build,qmake:build
-QT5_CMAKE_BOOL=		BUILD_QT_UI
-QT5_CMAKE_ON=		-DDESIRED_QT_VERSION:STRING=5
-QT5_PLIST_FILES=	bin/android-file-transfer \
+QT6_USES=		qt:6
+QT6_USE=		QT=core,gui,network,widgets,buildtools:build,linguisttools:build,qmake:build
+QT6_CMAKE_BOOL=		BUILD_QT_UI
+QT6_CMAKE_ON=		-DDESIRED_QT_VERSION:STRING=6
+QT6_PLIST_FILES=	bin/android-file-transfer \
 			share/applications/android-file-transfer.desktop \
 			share/icons/hicolor/512x512/apps/android-file-transfer.png \
 			share/metainfo/android-file-transfer.appdata.xml
