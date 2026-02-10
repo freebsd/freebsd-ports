@@ -1,0 +1,3 @@
+meshcore-cli is a tool that connects to companion radio node (meshcore client)
+over BLE, TCP or Serial and lets you interact with it from a terminal using a
+command line interface.
