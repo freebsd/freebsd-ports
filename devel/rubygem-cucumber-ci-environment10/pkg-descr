@@ -1,2 +1,0 @@
-This library detects the CI environment based on environment variables defined
-by CI servers.
