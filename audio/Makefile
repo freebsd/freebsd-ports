@@ -776,6 +776,7 @@
     SUBDIR += streamtranscoder
     SUBDIR += string-machine-lv2
     SUBDIR += stymulator
+    SUBDIR += subtui
     SUBDIR += suil
     SUBDIR += supercollider
     SUBDIR += surge-synthesizer-lv2

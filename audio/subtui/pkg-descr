@@ -1,0 +1,5 @@
+SubTUI is your next favorite lightweight music player for Subsonic-compatible
+servers like Navidrome, Gonic, and Airsonic.
+
+Built with Go and the Bubble Tea framework, it provides a clean terminal
+interface to listen to your favorite high-quality audio.
