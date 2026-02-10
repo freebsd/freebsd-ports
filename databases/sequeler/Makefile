@@ -1,10 +1,9 @@
 PORTNAME=	sequeler
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
-PORTREVISION=	5
+DISTVERSION=	0.9.0
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	Friendly SQL client
 WWW=		https://github.com/Alecaddd/sequeler
 
@@ -20,8 +19,8 @@ USES=		desktop-file-utils gettext gnome meson pkgconfig \
 		python:build vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alecaddd
-USE_GNOME=	cairo glib20 gtk30 gtksourceview3 libgda5
-GLIB_SCHEMAS=	com.github.alecaddd.sequeler.gschema.xml
+USE_GNOME=	cairo glib20 gtk30 gtksourceview4 libgda5
+GLIB_SCHEMAS=	io.github.ellie_commons.sequeler.gschema.xml
 
 # for build-aux/meson_post_install.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}
