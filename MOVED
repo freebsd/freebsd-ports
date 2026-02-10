@@ -5124,3 +5124,4 @@ devel/rubygem-aws-sdk-qldb||2026-02-10|Remove obsoleted port
 devel/rubygem-aws-sdk-qldbsession||2026-02-10|Remove obsoleted port
 devel/rubygem-aws-sdk-robomaker||2026-02-10|Remove obsoleted port
 devel/rubygem-cucumber-ci-environment10|devel/rubygem-cucumber-ci-environment|2026-02-10|Remove obsoleted port. Use devel/rubygem-cucumber-ci-environment instead
+devel/rubygem-cucumber-cucumber-expressions17|devel/rubygem-cucumber-cucumber-expressions|2026-02-10|Remove obsoleted port. Use devel/rubygem-cucumber-cucumber-expressions instead
