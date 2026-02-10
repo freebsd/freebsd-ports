@@ -16,6 +16,8 @@ WWW=		http://0xcc.net/migemo/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_RUBY34=	yes
+
 BUILD_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:japanese/ruby-romkan \
 		${RUBY_SITELIBDIR}/bsearch.rb:devel/ruby-bsearch
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:japanese/ruby-romkan \
