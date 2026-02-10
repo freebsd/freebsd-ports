@@ -1,13 +1,22 @@
---- cmake/toolchain-clang.cmake.orig	2024-10-28 01:17:49 UTC
+--- cmake/toolchain-clang.cmake.orig	2026-02-10 10:48:25 UTC
 +++ cmake/toolchain-clang.cmake
-@@ -10,8 +10,8 @@ option(CLANG_USE_LIBCXX "Use libc++" OFF)
- option(CLANG_USE_LIBCXX "Use libc++" OFF)
+@@ -15,7 +15,7 @@ if(IS_X86)
  
- # These are the default values
--set(C_BASE_FLAGS "-march=native -pipe")
--set(CXX_BASE_FLAGS "-march=native -pipe")
-+set(C_BASE_FLAGS "${CMAKE_C_FLAGS_RELEASE}")
-+set(CXX_BASE_FLAGS "${CMAKE_CXX_FLAGS_RELEASE}")
- 
- # For C and C++, the values can be overwritten independently
- if(DEFINED ENV{CXXFLAGS})
+ if(IS_X86)
+ 	if(FORCED_NATIVE_SIMD_INSTRUCTIONS)
+-		set(CLANG_EXTENSIONS "-march=native")
++		set(CLANG_EXTENSIONS "")
+ 	elseif (FSO_INSTRUCTION_SET STREQUAL "")
+ 		set(CLANG_EXTENSIONS "-march=x86-64")
+ 	elseif (FSO_INSTRUCTION_SET STREQUAL "SSE")
+@@ -34,8 +34,8 @@ elseif(IS_ARM)
+ 	set(CXX_BASE_FLAGS "${CXX_BASE_FLAGS} ${CLANG_EXTENSIONS}")
+ elseif(IS_ARM)
+ 	if(FORCED_NATIVE_SIMD_INSTRUCTIONS)
+-		set(C_BASE_FLAGS "${C_BASE_FLAGS} -march=native")
+-		set(CXX_BASE_FLAGS "${CXX_BASE_FLAGS} -march=native")
++		set(C_BASE_FLAGS "${C_BASE_FLAGS}")
++		set(CXX_BASE_FLAGS "${CXX_BASE_FLAGS}")
+     endif ()
+ elseif(IS_RISCV)
+     # Default C/CXX_BASE_FLAGS are fine for RISC-V

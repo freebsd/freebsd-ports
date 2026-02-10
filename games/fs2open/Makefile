@@ -1,15 +1,11 @@
 PORTNAME=	fs2open
 DISTVERSIONPREFIX=	release_
-DISTVERSION=	24_2_0
-PORTREVISION=	1
+DISTVERSION=	25_0_0
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source video engine of FreeSpace 2
 WWW=		http://scp.indiegames.us
-
-# fix build with recent ffmpeg
-EXTRA_PATCHES=	${FILESDIR}/af833f059cc0cfc925792e019f6c2b754c6d53c1.patch:-p1
 
 LICENSE=	VOLITION
 LICENSE_NAME=	Volition Copyright
@@ -29,6 +25,7 @@ GH_TUPLE=	asarium:cmake-modules:7cef957:cmakemodules/cmake/external/rpavlik-cmak
 		asarium:libRocket:ae8a8d9:libRocket/lib/libRocket
 USE_SDL=	sdl2
 
+CMAKE_OFF=	FSO_BUILD_WITH_OPENXR
 LDFLAGS_i386=	-Wl,-znotext
 
 PLIST_FILES=	bin/fs2_open
