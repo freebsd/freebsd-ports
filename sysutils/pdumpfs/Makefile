@@ -1,6 +1,6 @@
 PORTNAME=	pdumpfs
 PORTVERSION=	1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://0xcc.net/pdumpfs/
 
@@ -24,6 +24,12 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 3.4
+RUN_DEPENDS+=	rubygem-nkf>=0:net/rubygem-nkf
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pdumpfs ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/man/man8/pdumpfs.8 ${STAGEDIR}${PREFIX}/share/man/man8
@@ -35,4 +41,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
