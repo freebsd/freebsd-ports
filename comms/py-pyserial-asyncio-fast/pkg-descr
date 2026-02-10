@@ -1,0 +1,4 @@
+This module provides asynchronous I/O on serial ports, extending the
+pyserial module. This version implements eager writes like cpython asyncio
+selector_events does. This can significantly reduce overhead since the asyncio
+writer is no longer added and removed frequently.
