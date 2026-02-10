@@ -5112,3 +5112,4 @@ devel/freebsd-git-devtools|devel/freebsd-git-arc|2026-02-06|Split into two separ
 devel/py-Levenshtein|devel/py-levenshtein|2026-02-07|Rename to match upstream
 misc/py-natten|misc/py-NATTEN|2026-02-10|Rename to match name in PyPI
 net/tcpkali||2026-02-10|Upstream dead and compromised
+devel/py-hishel0|devel/py-hishel|2026-02-10|Remove obsoleted port. Use devel/py-hishel instead
