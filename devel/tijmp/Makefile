@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS OPTIMIZED_CFLAGS
 OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
 post-patch:
-	@${REINPLACE_CMD}
+	@${REINPLACE_CMD} \
 		-e '/^jardir =/s|=.*|= ${JAVAJARDIR}|' \
 		-e 's| -source 1.6 | |' \
 		${WRKSRC}/Makefile.in
