@@ -25,4 +25,10 @@ USE_PYTHON=	autoplist concurrent cython pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PARALLEL
+PARALLEL_DESC=	Parallel computing support
+
+PARALLEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathos>=0.3.5:devel/py-pathos@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyina>=0.3.1:devel/py-pyina@${PY_FLAVOR}
+
 .include <bsd.port.mk>
