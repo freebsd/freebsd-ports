@@ -143,6 +143,7 @@
     SUBDIR += py-libimobiledevice
     SUBDIR += py-libscrc
     SUBDIR += py-libusbsio
+    SUBDIR += py-meshcore
     SUBDIR += py-nkdfu
     SUBDIR += py-pylink-square
     SUBDIR += py-pymodbus
