@@ -5118,3 +5118,4 @@ net/py-urllib31|net/py-urllib3|2026-02-10|Remove obsoleted port. Use net/py-urll
 devel/rubygem-aws-sdk-apptest||2026-02-10|Remove obsoleted port
 devel/rubygem-aws-sdk-elastictranscoder||2026-02-10|Remove obsoleted port
 devel/rubygem-aws-sdk-iotfleethub||2026-02-10|Remove obsoleted port
+devel/rubygem-aws-sdk-lookoutforvision||2026-02-10|Remove obsoleted port
