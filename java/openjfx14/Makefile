@@ -47,6 +47,8 @@ USE_XORG=	x11 xtst xxf86vm
 
 CFLAGS+=	-Wno-unused-command-line-argument \
 		-Wno-int-conversion
+# Suppress errors with lld >= 17 due to undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
 
 PLIST_SUB=	INSTALLDIR=${_INSTALLDIR}
 
@@ -87,19 +89,16 @@ _GRADLE_RUN=	${SETENV} ${_GRADLE_ENV} gradle62 --no-daemon
 
 _INSTALLDIR=	${PREFIX}/${PKGBASE}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
-# Suppress errors with lld >= 17 due to undefined symbols.
-LDFLAGS+=	-Wl,--undefined-version
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 3.4
+.if ${PORT_OPTIONS:MWEBKIT}
+. if ${RUBY_VER} >= 3.4
 BUILD_DEPENDS+=	rubygem-getoptlong>=0:devel/rubygem-getoptlong
+. endif
 .endif
 
 post-extract:
