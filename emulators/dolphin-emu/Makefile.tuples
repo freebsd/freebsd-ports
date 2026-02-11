@@ -1,13 +1,15 @@
 GH_TUPLE= \
-	mgba-emu:mgba:8739b22fbc90fdf0b4f6612ef9c0520f0ba44a51:mgba/Externals/mGBA/mgba \
+	mgba-emu:mgba:0b40863f64d0940f333fa1c638e75f86f8a26a33:mgba/Externals/mGBA/mgba \
 	GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:3bab6924988e5f19bf36586a496156cf72f70d9f:VulkanMemoryAllocator/Externals/VulkanMemoryAllocator \
 	mozilla:cubeb:54217bca3f3e0cd53c073690a23dd25d83557909:cubeb/Externals/cubeb/cubeb \
 	epezent:implot:3da8bd34299965d3b0ab124df743fe3e076fa222:implot/Externals/implot/implot \
-	google:googletest:58d77fa8070e8cec2dc1ed015d66b454c8d78850:googletest/Externals/gtest \
+	google:googletest:eb2d85edd0bff7a712b6aff147cd9f789f0d7d0b:googletest/Externals/gtest \
 	RetroAchievements:rcheevos:b443902b1cdfee5a66b09fec20a94d2d2afaf2ec:rcheevos/Externals/rcheevos/rcheevos \
-	lsalzman:enet:2a85cd64459f6ba038d233a634d9440490dbba12:enet/Externals/enet/enet \
+	lsalzman:enet:2662c0de09e36f2a2030ccc2c528a3e4c9e8138a:enet/Externals/enet/enet \
 	syoyo:tinygltf:c5641f2c22d117da7971504591a8f6a41ece488b:tinygltf/Externals/tinygltf/tinygltf \
-	SFML:SFML:7f1162dfea4969bc17417563ac55d93b72e84c1e:SFML/Externals/SFML/SFML \
 	e-dant:watcher:b03bdcfc11549df595b77239cefe2643943a3e2f:watcher/Externals/watcher/watcher \
+	SFML:SFML:016bea9491ccafc3529019fe1d403885a8b3a6ae:SFML/Externals/SFML/SFML \
+	weisslj:cpp-optparse:2265d647232249a53a03b411099863ceca35f0d3:cppoptparse/Externals/cpp-optparse/cpp-optparse \
+	ocornut:imgui:45acd5e0e82f4c954432533ae9985ff0e1aad6d5:imgui/Externals/imgui/imgui \
 	arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/Externals/cubeb/cubeb/cmake/sanitizers-cmake \
 
