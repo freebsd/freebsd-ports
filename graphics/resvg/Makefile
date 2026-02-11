@@ -1,7 +1,7 @@
 PORTNAME=	resvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.46.0
-PORTREVISION=	1
+DISTVERSION=	0.47.0
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.10.0 \
-		bytemuck-1.24.0 \
+		bytemuck-1.25.0 \
 		byteorder-lite-0.1.0 \
 		cfg-if-1.0.4 \
 		cloudabi-0.0.3 \
@@ -37,9 +37,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crc32fast-1.5.0 \
 		data-url-0.3.2 \
 		either-1.15.0 \
-		euclid-0.22.11 \
+		euclid-0.22.13 \
 		fdeflate-0.3.7 \
-		flate2-1.1.5 \
+		flate2-1.1.9 \
 		float-cmp-0.9.0 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.23.0 \
@@ -49,10 +49,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		imagesize-0.14.0 \
 		itertools-0.14.0 \
 		kurbo-0.13.0 \
-		libc-0.2.180 \
-		libm-0.2.15 \
+		libc-0.2.181 \
+		libm-0.2.16 \
 		log-0.4.29 \
-		memchr-2.7.6 \
+		memchr-2.8.0 \
 		memmap2-0.9.9 \
 		miniz_oxide-0.8.9 \
 		num-traits-0.2.19 \
@@ -61,7 +61,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		phf_generator-0.7.24 \
 		phf_shared-0.7.24 \
 		pico-args-0.5.0 \
-		png-0.17.16 \
 		png-0.18.0 \
 		quick-error-2.0.1 \
 		rand-0.6.5 \
@@ -82,13 +81,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simd-adler32-0.3.8 \
 		simplecss-0.2.2 \
 		siphasher-0.2.3 \
-		siphasher-1.0.1 \
+		siphasher-1.0.2 \
 		slotmap-1.1.1 \
 		smallvec-1.15.1 \
 		strict-num-0.1.1 \
 		svgtypes-0.16.1 \
-		tiny-skia-0.11.4 \
-		tiny-skia-path-0.11.4 \
+		tiny-skia-0.12.0 \
+		tiny-skia-path-0.12.0 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
 		ttf-parser-0.25.1 \
@@ -104,8 +103,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		xmlwriter-0.1.0 \
-		zune-core-0.5.0 \
-		zune-jpeg-0.5.8
+		zune-core-0.5.1 \
+		zune-jpeg-0.5.12
 
 PLIST_FILES=	bin/${PORTNAME}
 
