@@ -1,5 +1,7 @@
 bin/ginsh
 bin/viewgar
+include/ginac/Gt.h
+include/ginac/Gt_helpers.h
 include/ginac/add.h
 include/ginac/archive.h
 include/ginac/assertion.h
@@ -51,7 +53,7 @@ include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
 lib/libginac.so.13
-lib/libginac.so.13.0.1
+lib/libginac.so.13.1.2
 libdata/pkgconfig/ginac.pc
 libexec/ginac-excompiler
 share/man/man1/ginsh.1.gz
