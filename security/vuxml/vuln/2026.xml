@@ -1,3 +1,60 @@
+  <vuln vid="9d9940e7-071c-11f1-93ca-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+<name>gitlab-ce</name>
+<name>gitlab-ee</name>
+<range><ge>18.8.0</ge><lt>18.8.4</lt></range>
+<range><ge>18.7.0</ge><lt>18.7.4</lt></range>
+<range><ge>8.0.0</ge><lt>18.6.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2026/02/10/patch-release-gitlab-18-8-4-released/">
+	  <p>Incomplete Validation issue in Web IDE impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in GraphQL introspection impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in JSON validation middleware impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Code Flow impacts GitLab CE/EE</p>
+	  <p>HTML Injection issue in test case titles impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in Markdown processor impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in Markdown Preview impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in dashboard impacts GitLab EE</p>
+	  <p>Server-Side Request Forgery issue in Virtual Registry impacts GitLab EE</p>
+	  <p>Improper Validation issue in diff parser impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in Git repository import impacts GitLab CE/EE</p>
+	  <p>Authorization Bypass issue in iterations API impacts GitLab EE</p>
+	  <p>Missing Authorization issue in GLQL API impacts GitLab CE/EE</p>
+	  <p>Stored HTML Injection issue in project label impacts GitLab CE/EE</p>
+	  <p>Authorization Bypass issue in Pipeline Schedules API impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7659</cvename>
+      <cvename>CVE-2025-8099</cvename>
+      <cvename>CVE-2026-0958</cvename>
+      <cvename>CVE-2025-14560</cvename>
+      <cvename>CVE-2026-0595</cvename>
+      <cvename>CVE-2026-1458</cvename>
+      <cvename>CVE-2026-1456</cvename>
+      <cvename>CVE-2026-1387</cvename>
+      <cvename>CVE-2025-12575</cvename>
+      <cvename>CVE-2026-1094</cvename>
+      <cvename>CVE-2025-12073</cvename>
+      <cvename>CVE-2026-1080</cvename>
+      <cvename>CVE-2025-14592</cvename>
+      <cvename>CVE-2026-1282</cvename>
+      <cvename>CVE-2025-14594</cvename>
+      <url>https://about.gitlab.com/releases/2026/02/10/patch-release-gitlab-18-8-4-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-02-10</discovery>
+      <entry>2026-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8d8012e5-0705-11f1-8148-bc241121aa0a">
     <topic>FreeBSD -- blocklistd(8) socket leak</topic>
     <affects>
