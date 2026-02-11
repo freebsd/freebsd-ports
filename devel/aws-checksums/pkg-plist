@@ -1,6 +1,7 @@
 include/aws/checksums/checksums.h
 include/aws/checksums/crc.h
 include/aws/checksums/exports.h
+include/aws/checksums/xxhash.h
 lib/cmake/aws-checksums/aws-checksums-config.cmake
 lib/cmake/aws-checksums/shared/aws-checksums-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aws-checksums/shared/aws-checksums-targets.cmake
