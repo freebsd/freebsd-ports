@@ -1,4 +1,4 @@
---- crates/remote_server/Cargo.toml.orig	2026-01-14 15:30:09 UTC
+--- crates/remote_server/Cargo.toml.orig	2026-02-06 04:11:05 UTC
 +++ crates/remote_server/Cargo.toml
 @@ -27,7 +27,6 @@ collections.workspace = true
  clap.workspace = true
@@ -8,7 +8,7 @@
  dap_adapters.workspace = true
  debug_adapter_extension.workspace = true
  env_logger.workspace = true
-@@ -71,11 +70,18 @@ rayon.workspace = true
+@@ -72,11 +71,18 @@ rayon.workspace = true
  thiserror.workspace = true
  rayon.workspace = true
  
@@ -26,5 +26,5 @@
 +fork.workspace = true
 +libc.workspace = true
  
- [dev-dependencies]
- action_log.workspace = true
+ [target.'cfg(windows)'.dependencies]
+ windows.workspace = true
