@@ -1,0 +1,11 @@
+NoctaVox is a lightweight, plug and play, TUI music player for local music.
+
+Features:
+
+  - Gapless playback with queue support
+  - Multi-format audio (mp3, m4a, wav, flac, ogg, opus)
+  - Live library reloading
+  - Custom themeing with hot reload
+  - Vim-like keybindings
+  - Waveform and oscilloscope visualization
+  - Playlist management

@@ -514,6 +514,7 @@
     SUBDIR += ncspot
     SUBDIR += netease-music-tui
     SUBDIR += neuralrack-lv2
+    SUBDIR += noctavox
     SUBDIR += noise-repellent-lv2
     SUBDIR += noise-suppression-for-voice-lv2
     SUBDIR += normalize

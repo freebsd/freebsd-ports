@@ -1,0 +1,11 @@
+bin/noctavox
+bin/vox
+%%PORTDOCS%%%%DOCSDIR%%/header.gif
+%%PORTDOCS%%%%DOCSDIR%%/keymaps.md
+%%PORTDOCS%%%%DOCSDIR%%/themes.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Cherry Blossom.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Concertus Classic.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Concertus Transparent.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Gruvbox [No borders].toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Monokai Classic.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes_examples/Monokai Vivid.toml
