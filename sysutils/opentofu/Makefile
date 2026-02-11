@@ -11,7 +11,7 @@ WWW=		https://opentofu.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 GO_MODULE=	github.com/opentofu/opentofu
 GO_TARGET=	./cmd/tofu
 GO_BUILDFLAGS=	-o bin/
