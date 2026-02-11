@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tuukka.pasanen@ilmi.fi
 COMMENT=	Comprehensive filetype and mimetype detection using libmagic and Pygments
-WWW=		https://github.com/nexB/plugincode
+WWW=		https://github.com/aboutcode-org/typecode/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/apache-2.0.LICENSE
