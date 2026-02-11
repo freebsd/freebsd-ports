@@ -10,10 +10,8 @@ WWW=		http://www.iqtree.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to compile: unrecognized command line option '-msse3'
-BROKEN_powerpc64=	fails to build: GCC version must be at least 4.8!
-NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
-NOT_FOR_ARCHS_REASON=	32-bit compilation is not supported
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	requires 64-bit platform with SSE or NEON
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
