@@ -10,7 +10,7 @@ lib/libnlopt.so.1
 lib/libnlopt.so.1.0.0
 lib/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/nlopt_optimize.oct
 %%PYTHON_SITELIBDIR%%/_nlopt.so
-%%PYTHON_SITELIBDIR%%/nlopt-2.10.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/nlopt-2.10.1.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/nlopt.py
 libdata/pkgconfig/nlopt.pc
 %%GUILE_SITE%%/nlopt.scm
