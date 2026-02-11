@@ -1,6 +1,7 @@
 PORTNAME=	mls
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4b1
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -8,7 +9,6 @@ COMMENT=	Program for generating various statistics on emails
 WWW=		https://www.marki-online.net/MLS/
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING.gz
 
 USES=		tar:tgz
 USE_GITHUB=	yes
