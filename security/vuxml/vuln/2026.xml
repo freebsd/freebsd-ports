@@ -1,3 +1,47 @@
+  <vuln vid="8d8012e5-0705-11f1-8148-bc241121aa0a">
+    <topic>FreeBSD -- blocklistd(8) socket leak</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Due to a programming error, blocklistd leaks a socket descriptor
+	for each adverse event report it receives.</p>
+	<p>Once a certain number of leaked sockets is reached, blocklistd
+	becomes unable to run the helper script: a child process is forked,
+	but this child dereferences a null pointer and crashes before it
+	is able to exec the helper.  At this point, blocklistd still records
+	adverse events but is unable to block new addresses or unblock
+	addresses whose database entries have expired.</p>
+	<p>Once a second, much higher number of leaked sockets is reached,
+	blocklistd becomes unable to receive new adverse event reports.</p>
+	<h1>Impact:</h1>
+	<p>An attacker may take advantage of this by triggering a large
+	number of adverse events from sacrificial IP addresses to effectively
+	disable blocklistd before launching an attack.</p>
+	<p>Even in the absence of attacks or probes by would-be attackers,
+	adverse events will occur regularly in the course of normal operations,
+	and blocklistd will gradually run out file descriptors and become
+	ineffective.</p>
+	<p>The accumulation of open sockets may have knock-on effects on other
+	parts of the system, resulting in a general slowdown until blocklistd
+	is restarted.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2261</cvename>
+      <freebsdsa>SA-26:03.blocklistd</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-02-10</discovery>
+      <entry>2026-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bc5a730-0585-11f1-85c5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
