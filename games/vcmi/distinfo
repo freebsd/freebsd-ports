@@ -1,5 +1,5 @@
-TIMESTAMP = 1745524203
-SHA256 (vcmi-vcmi-1.6.8_GH0.tar.gz) = c1cbc74195d5a121f46a8e1b5779ec1b37f85b9c5255324ac52b549a9411a986
-SIZE (vcmi-vcmi-1.6.8_GH0.tar.gz) = 12109092
-SHA256 (vcmi-innoextract-9977089_GH0.tar.gz) = dae4cbf04a0adc6f9d0d3d64f90deda8fd148ced3834a4062b18a1538a26edbe
-SIZE (vcmi-innoextract-9977089_GH0.tar.gz) = 205324
+TIMESTAMP = 1767094318
+SHA256 (vcmi-vcmi-1.7.1_GH0.tar.gz) = d92e7ead515397a58d9b21b605a5876d3f101d81a7c42ccac575e809102c0bde
+SIZE (vcmi-vcmi-1.7.1_GH0.tar.gz) = 12982029
+SHA256 (vcmi-innoextract-96e9566_GH0.tar.gz) = 132a8df8b2b98378b02c21b75d3b3f9d34276472da4b992a12f5a789b1fbc329
+SIZE (vcmi-innoextract-96e9566_GH0.tar.gz) = 216047

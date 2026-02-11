@@ -1,18 +1,19 @@
---- lib/network/NetworkConnection.cpp.orig	2024-05-09 08:25:27 UTC
+--- lib/network/NetworkConnection.cpp.orig	2025-12-30 11:31:58 UTC
 +++ lib/network/NetworkConnection.cpp
-@@ -7,6 +7,9 @@
+@@ -7,6 +7,10 @@
   * Full text of license available in license.txt file, in main folder
   *
   */
 +#ifdef __FreeBSD__
++#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#endif
  #include "StdInc.h"
  #include "NetworkConnection.h"
  
-@@ -19,8 +22,15 @@ NetworkConnection::NetworkConnection(INetworkConnectio
+@@ -19,8 +23,15 @@ NetworkConnection::NetworkConnection(INetworkConnectio
+ {
  	socket->set_option(boost::asio::ip::tcp::no_delay(true));
- 	socket->set_option(boost::asio::socket_base::keep_alive(true));
  
 +#ifdef __FreeBSD__
 +	unsigned long sb_max;
