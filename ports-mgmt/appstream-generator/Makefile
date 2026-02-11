@@ -1,6 +1,7 @@
 PORTNAME=	appstream-generator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	arrowd@FreeBSD.org
