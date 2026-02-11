@@ -1,5 +1,5 @@
 PORTNAME=	sratom
-DISTVERSION=	0.6.20
+DISTVERSION=	0.6.22
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
