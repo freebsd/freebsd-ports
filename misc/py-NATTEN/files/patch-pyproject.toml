@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2026-02-10 07:54:10 UTC
++++ pyproject.toml
+@@ -29,9 +29,8 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-  "setuptools >= 64",
++  "setuptools",
+   "torch",
+-  "cmake >= 4.0",
+   "build >= 1.3.0"
+ ]
+ build-backend = "setuptools.build_meta"
