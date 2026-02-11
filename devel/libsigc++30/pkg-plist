@@ -29,6 +29,7 @@ include/sigc++-%%API_VERSION%%/sigc++/scoped_connection.h
 include/sigc++-%%API_VERSION%%/sigc++/sigc++.h
 include/sigc++-%%API_VERSION%%/sigc++/signal.h
 include/sigc++-%%API_VERSION%%/sigc++/signal_base.h
+include/sigc++-%%API_VERSION%%/sigc++/signal_connect.h
 include/sigc++-%%API_VERSION%%/sigc++/slot.h
 include/sigc++-%%API_VERSION%%/sigc++/trackable.h
 include/sigc++-%%API_VERSION%%/sigc++/tuple-utils/tuple_cdr.h
