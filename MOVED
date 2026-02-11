@@ -5074,3 +5074,4 @@ multimedia/mlt7-qt@qt6|multimedia/mlt7-qt|2026-01-08|Unflavorize; only Qt6 is su
 devel/pydbus-common|devel/py-dbus|2026-01-09|Merged into devel/py-dbus
 devel/fam||2026-01-11|Remove obsolete and unmaintained port
 lang/python-doc-pdf-a4||2026-02-05|A4-size PDF no longer provided since 3.13
+sysutils/android-file-transfer-qt5||2026-02-11|Removed as qt5 is being deprecated
