@@ -1,6 +1,6 @@
 PORTNAME=	nwg-displays
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.27
+DISTVERSION=	0.3.28
 CATEGORIES=	x11 wayland python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,6 +23,8 @@ USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	nwg_displays/main.py
+
+NO_ARCH=	yes
 
 PLIST_FILES=	share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.svg
