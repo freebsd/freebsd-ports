@@ -4550,13 +4550,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/streams/tls.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_process.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_thread.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -4795,6 +4795,22 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/timeout.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/typing.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/wsgi.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/licenses/LICENSE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__pycache__/__init__%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__pycache__/_ffi%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__pycache__/_ffi%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__pycache__/_ffi%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/_ffi.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/py.typed
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/attr/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/attr/__init__.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/attr/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -24145,13 +24161,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_inspect-0.7.1.dist-info/direct_url.json
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_inspect-0.7.1.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_inspect.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/licenses/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/licenses/LICENSE.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -24548,13 +24564,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/server.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -24928,13 +24944,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket_client-0.57.0.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket_client-0.57.0.dist-info/direct_url.json
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket_client-0.57.0.dist-info/top_level.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/LICENSE.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/licenses/LICENSE.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -29944,6 +29960,7 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/22/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/23/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/24/sca.files
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/25/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/localfile-commands.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/localfile-extra.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/sca.files
@@ -30038,6 +30055,9 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/15/rootcheck.agent.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/15/rootcheck.manager.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/15/sca.files
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/16/rootcheck.agent.template
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/16/rootcheck.manager.template
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/16/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sunos/5/11.4/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sunos/5/11/sca.files
@@ -30112,6 +30132,7 @@
 /var/ossec/packages_files/manager_installation_scripts/sca/darwin/22/cis_apple_macOS_13.x.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/darwin/23/cis_apple_macOS_14.x.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/darwin/24/cis_apple_macOS_15.x.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/darwin/25/cis_apple_macOS_26.x.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/debian/cis_debian10.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/debian/cis_debian11.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/debian/cis_debian12.yml.disabled
@@ -30144,6 +30165,7 @@
 /var/ossec/packages_files/manager_installation_scripts/sca/sles/11/cis_sles11_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/sles/12/cis_sles12_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/sles/15/cis_sles15_linux.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/sles/16/cis_sles16_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/sunos/cis_solaris11.4.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/sunos/cis_solaris11.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/ubuntu/cis_ubuntu14-04.yml.disabled
@@ -30502,6 +30524,7 @@
 /var/ossec/ruleset/sca/cis_apple_macOS_13.x.yml.disabled
 /var/ossec/ruleset/sca/cis_apple_macOS_14.x.yml.disabled
 /var/ossec/ruleset/sca/cis_apple_macOS_15.x.yml.disabled
+/var/ossec/ruleset/sca/cis_apple_macOS_26.x.yml.disabled
 /var/ossec/ruleset/sca/cis_centos10_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_centos6_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_centos7_linux.yml.disabled
@@ -30542,6 +30565,7 @@
 /var/ossec/ruleset/sca/cis_sles11_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_sles12_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_sles15_linux.yml.disabled
+/var/ossec/ruleset/sca/cis_sles16_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_solaris11.4.yml.disabled
 /var/ossec/ruleset/sca/cis_solaris11.yml.disabled
 /var/ossec/ruleset/sca/cis_sqlserver_2012.yml.disabled
@@ -30817,10 +30841,14 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/models
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/spec
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.3.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref-3.7.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asyncinotify-4.3.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/attr/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/attr
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/attrs/__pycache__
@@ -32840,8 +32868,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3/util/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3/util
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.5.0.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3-2.6.3.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvicorn/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvicorn/lifespan/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvicorn/lifespan
@@ -32879,7 +32907,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac/default
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.3.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/data
@@ -32901,7 +32929,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/wrappers/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/wrappers
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.4.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/xmltodict-0.12.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml
@@ -33200,6 +33229,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/22
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/23
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/24
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin/25
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/darwin
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/debian/10
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/debian/11
@@ -33236,6 +33266,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/11
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/12
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/15
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles/16
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sles
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sunos/5/11
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/sunos/5/11.4
@@ -33296,6 +33327,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/darwin/22
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/darwin/23
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/darwin/24
+@dir /var/ossec/packages_files/manager_installation_scripts/sca/darwin/25
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/darwin
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/debian
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/freebsd
@@ -33318,6 +33350,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/sles/11
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/sles/12
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/sles/15
+@dir /var/ossec/packages_files/manager_installation_scripts/sca/sles/16
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/sles
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/sunos
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/ubuntu
