@@ -68,6 +68,9 @@ do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/lib/playonbsd/lang/po
 		${INSTALL_SCRIPT} ${WRKSRC}/lang/po/en_GB.po ${STAGEDIR}${PREFIX}/lib/playonbsd/lang/po/en_GB.po
 
+post-install:
+		${FIND} ${STAGEDIR} -name __pycache__ -type d -exec ${RM} -r {} +
+
 post-install-NLS-on:
 		cd ${WRKSRC} && ${COPYTREE_BIN} lang ${STAGEDIR}${PREFIX}/lib/playonbsd/ "! -name *\.orig ! -name *\.bak"
 
