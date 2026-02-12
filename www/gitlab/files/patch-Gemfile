@@ -1,4 +1,4 @@
---- Gemfile.orig	2026-01-14 08:40:57 UTC
+--- Gemfile.orig	2026-02-09 19:24:50 UTC
 +++ Gemfile
 @@ -163,7 +163,7 @@ gem 'graphql', '2.5.11', feature_category: :api
  
@@ -191,5 +191,5 @@
 -gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 +gem "i18n_data", "~> 0.13", feature_category: :system_access
  
- gem "gitlab-cloud-connector", "~> 1.40", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning
+ gem "gitlab-cloud-connector", "~> 1.43", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning
  
