@@ -1,9 +1,9 @@
 PORTNAME=	glm
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	math graphics
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	C++ mathematics library for software based on the OpenGL GLSL
 WWW=		https://github.com/g-truc/glm
 
