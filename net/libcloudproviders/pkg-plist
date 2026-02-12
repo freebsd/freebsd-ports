@@ -8,7 +8,7 @@ include/cloudproviders/enums.h
 lib/girepository-1.0/CloudProviders-0.3.typelib
 lib/libcloudproviders.so
 lib/libcloudproviders.so.0
-lib/libcloudproviders.so.0.3.6
+lib/libcloudproviders.so.0.4.0
 libdata/pkgconfig/cloudproviders.pc
 share/gir-1.0/CloudProviders-0.3.gir
 share/vala/vapi/cloudproviders.deps

@@ -1,0 +1,72 @@
+Revert: https://gitlab.gnome.org/GNOME/libcloudproviders/-/commit/310798ca
+
+--- meson.build.orig	2026-01-06 08:20:29 UTC
++++ meson.build
+@@ -1,6 +1,6 @@ project ('libcloudproviders', 'c',
+ project ('libcloudproviders', 'c',
+   version: '0.4.0',
+-  meson_version: '>=1.9.0',
++  meson_version: '>=1.7.0',
+   license: 'LGPL-3.0-or-later',
+   default_options: [
+     'c_std=gnu99',
+--- docs/meson.build.orig	2026-01-06 08:20:29 UTC
++++ docs/meson.build
+@@ -5,6 +5,17 @@ expand_content_md_files = [
+   'cloudproviders-dbus.md',
+ ]
+ 
++codegen = find_program('gdbus-codegen')
++libcloudproviders_dbus_files = custom_target(
++  'dbus-doc',
++  command: [codegen, '--generate-md', 'dbus', '@INPUT@', '--output-directory', '@OUTDIR@'],
++  input: meson.project_source_root() / 'data/cloud-providers-dbus.xml',
++  output: [
++    'dbus-org.freedesktop.CloudProviders.Account.md',
++    'dbus-org.freedesktop.CloudProviders.Provider.md',
++  ]
++)
++
+ toml_data = configuration_data()
+ toml_data.set('VERSION', meson.project_version())
+ 
+@@ -36,7 +47,7 @@ custom_target('libcloudproviders-doc',
+     '--output-dir=@OUTPUT@',
+     '--no-namespace-dir',
+     '--content-dir=@0@'.format(meson.current_source_dir()),
+-    '--content-dir=@0@'.format(libcloudproviders_dbus_files_dir),
++    '--content-dir=@0@'.format(meson.current_build_dir()),
+     '@INPUT1@',
+   ],
+   depend_files: [ expand_content_md_files ],
+--- src/meson.build.orig	2026-01-06 08:20:29 UTC
++++ src/meson.build
+@@ -22,18 +22,16 @@ headers_with_enums = gnome.mkenums_simple('enums',
+                                           install_dir: incdir,
+                                           install_header: true)
+ 
++gdbus_generated_sources = []
+ gdbus_generated_sources = gnome.gdbus_codegen(
+   'cloudproviders-generated', '../data/cloud-providers-dbus.xml',
+   extra_args: '--glib-min-required=@0@'.format(glib_req_version),
+   interface_prefix: 'org.freedesktop.CloudProviders',
+   namespace: 'CloudProvidersDbus',
+-  markdown: 'dbus',
+   object_manager: true
+ )
+ 
+-libcloudproviders_sources += [gdbus_generated_sources[0], gdbus_generated_sources[1]]
+-libcloudproviders_dbus_files = gdbus_generated_sources[2]
+-libcloudproviders_dbus_files_dir = meson.current_build_dir()
++libcloudproviders_sources += gdbus_generated_sources
+ 
+ libcloudproviders = shared_library ('cloudproviders',
+   libcloudproviders_sources, headers_with_enums,
+@@ -73,7 +71,6 @@ if get_option('introspection')
+     namespace: 'CloudProviders',
+     symbol_prefix: 'cloud_providers',
+     link_with: libcloudproviders,
+-    doc_format: 'gi-docgen',
+     header: 'cloudproviders/cloudproviders.h',
+     includes: [ 'GLib-2.0', 'Gio-2.0' ],
+     install: true,
