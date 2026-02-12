@@ -1,4 +1,4 @@
---- chrome/common/chrome_switches.cc.orig	2026-01-14 08:33:23 UTC
+--- chrome/common/chrome_switches.cc.orig	2026-02-11 09:05:39 UTC
 +++ chrome/common/chrome_switches.cc
 @@ -952,7 +952,7 @@ const char kDebugPrint[] = "debug-print";
  #endif
@@ -9,8 +9,8 @@
  const char kEnableNewAppMenuIcon[] = "enable-new-app-menu-icon";
  
  // Causes the browser to launch directly in guest mode.
-@@ -991,7 +991,7 @@ const char kGlicAlwaysShowWebActuationToggle[] =
- const char kGlicAdminRedirectPatterns[] = "glic-admin-redirect-patterns";
+@@ -1000,7 +1000,7 @@ const char kGlicResetMultiInstanceEnabledByTier[] =
+ const char kGlicForceG1StatusForMultiInstance[] = "glic-force-g1-for-mi";
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
