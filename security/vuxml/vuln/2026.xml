@@ -1,3 +1,104 @@
+  <vuln vid="7f9bac32-0800-11f1-8a6f-b42e991fc52e">
+    <topic>MongoDB Server -- CWE-704 Incorrect Type Conversion or Cast</topic>
+    <affects>
+    <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.29</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-113685 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-113685">
+	  <p>An authorized user may disable the MongoDB server by
+	  issuing a query against a collection that contains an
+	  invalid compound wildcard index.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-25613</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-25613</url>
+    </references>
+    <dates>
+      <discovery>2026-02-10</discovery>
+      <entry>2026-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7b5671f9-0800-11f1-8a6f-b42e991fc52e">
+    <topic>MongoDB Server -- CWE-617 Reachable Assertion</topic>
+    <affects>
+    <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.13</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-99119 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-99119">
+	  <p>An authorized user may trigger a server crash by running
+	  a $geoNear pipeline with certain invalid index hints.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-25610</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-25610</url>
+    </references>
+    <dates>
+      <discovery>2026-02-10</discovery>
+      <entry>2026-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="77e32b14-0800-11f1-8a6f-b42e991fc52e">
+    <topic>MongoDB Server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-114126 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-114126">
+	  <p>Complex queries can cause excessive memory usage in
+	  MongoDB Query Planner resulting in an Out-Of-Memory
+	    Crash.</p>
+	</blockquote>
+	<p>https://jira.mongodb.org/browse/SERVER-102364 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-102364">
+	  <p>MongoDB Server may experience an out-of-memory failure while
+	  evaluating expressions that produce deeply nested documents. The
+	  issue arises in recursive functions because the server does not
+	    periodically check the depth of the expression.</p>
+	</blockquote>
+	<p>https://jira.mongodb.org/browse/SERVER-113532 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-113532">
+	  <p>Inserting certain large documents into a replica set could lead to
+	  replica set secondaries not being able to fetch the oplog from the
+	  primary. This could stall replication inside the replica set leading
+	    to server crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1850</cvename>
+      <cvename>CVE-2026-1849</cvename>
+      <cvename>CVE-2026-1847</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-1850</url>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-1849</url>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-1847</url>
+    </references>
+    <dates>
+      <discovery>2026-02-10</discovery>
+      <entry>2026-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d9940e7-071c-11f1-93ca-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
