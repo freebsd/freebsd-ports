@@ -1,5 +1,5 @@
 PORTNAME=	unifi10
-PORTVERSION=	10.0.160
+PORTVERSION=	10.1.84
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
