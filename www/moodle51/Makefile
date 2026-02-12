@@ -1,5 +1,5 @@
 PORTNAME=	moodle
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	www education
 MASTER_SITES=	https://packaging.moodle.org/stable501/ \
 		LOCAL/wen
