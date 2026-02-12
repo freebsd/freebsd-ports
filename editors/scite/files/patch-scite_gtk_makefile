@@ -1,0 +1,36 @@
+--- scite/gtk/makefile.orig	2024-03-19 04:36:42 UTC
++++ scite/gtk/makefile
+@@ -19,9 +19,7 @@ SANITIZE = address
+ # thread also need to create Position Independent Executable -> search online documentation
+ SANITIZE = address
+ #SANITIZE = undefined
+-CXX = clang++
+-CC = clang
+-BASE_FLAGS += -fsanitize=$(SANITIZE)
++#BASE_FLAGS += -fsanitize=$(SANITIZE)
+ WARNINGS += -Wno-deprecated-register
+ WARNINGS += -Wno-empty-body
+ else
+@@ -156,7 +154,7 @@ $(PROG): SciTEGTK.o Strips.o GUIGTK.o Widget.o Directo
+ 	Utf8_16.o
+ 
+ $(PROG): SciTEGTK.o Strips.o GUIGTK.o Widget.o DirectorExtension.o $(SRC_OBJS) $(LUA_OBJS)
+-	$(CXX) $(BASE_FLAGS) $(LDFLAGS) -rdynamic -Wl,--as-needed -Wl,-rpath,'$${ORIGIN}' -Wl,--version-script $(srcdir)/lua.vers -Wl,-rpath,$(libdir) $^ -o $@ $(CONFIGLIB) $(LIBS) -L ../../scintilla/bin -lscintilla $(LDLIBS)
++	$(CXX) $(BASE_FLAGS) $(LDFLAGS) -rdynamic -Wl,--undefined-version -Wl,--as-needed -Wl,-rpath,'$${ORIGIN}' -Wl,--version-script $(srcdir)/lua.vers -Wl,-rpath,$(libdir) $^ -o $@ $(CONFIGLIB) $(LIBS) -L ../../scintilla/bin -lscintilla $(LDLIBS)
+ 
+ # Automatically generate header dependencies with "make depend"
+ include deps.mak
+@@ -172,10 +170,9 @@ install:
+ 	$(INSTALL) -m 755 $(COMPONENT) $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 $(LEXILLA) $(DESTDIR)$(libdir)
+ 
+-	for files in $(srcdir)/../src/*.properties $(srcdir)/../doc/*.html $(srcdir)/../doc/SciTEIco.png $(srcdir)/../doc/PrintHi.png $(srcdir)/../doc/SciTEIndicators.png; \
+-	do \
+-		$(INSTALL) -m 644 $$files $(DESTDIR)$(SYSCONF_PATH); \
+-	done
++#	for files in $(srcdir)/../src/*.properties $(srcdir)/../doc/*.html $(srcdir)/../doc/SciTEIco.png $(srcdir)/../doc/PrintHi.png $(srcdir)/../doc/SciTEIndicators.png; \	#do \
++#		$(INSTALL) -m 644 $$files $(DESTDIR)$(SYSCONF_PATH); \
++#	done
+ 
+ ifdef gnomeprefix
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(datadir)/applications $(DESTDIR)$(pixmapdir)
