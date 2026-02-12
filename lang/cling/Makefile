@@ -1,7 +1,6 @@
 PORTNAME=		cling
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.2
-PORTREVISION=		1
+DISTVERSION=		1.3
 CATEGORIES=		lang devel
 
 MAINTAINER=		arrowd@FreeBSD.org
@@ -17,15 +16,13 @@ USE_GNOME=	libxml2
 USE_GITHUB=	yes
 GH_ACCOUNT=	root-project
 GH_PROJECT=	llvm-project:llvm
-GH_TAGNAME=	cling-llvm18-20250207-01:llvm
+GH_TAGNAME=	cling-llvm20-20260119-01:llvm
 
 CMAKE_SOURCE_PATH=${WRKSRC}/llvm/llvm
 CMAKE_ARGS=	-DLLVM_EXTERNAL_PROJECTS=cling \
 		-DLLVM_EXTERNAL_CLING_SOURCE_DIR=${WRKSRC} \
 		-DLLVM_ENABLE_PROJECTS="clang" \
 		-DLLVM_TARGETS_TO_BUILD="host;NVPTX"
-# cling fails quickly with assertions enabled
-CMAKE_ARGS+=	-DLLVM_ENABLE_ASSERTIONS:BOOL=OFF
 
 ALL_TARGET=	cling
 INSTALL_TARGET=	install-clang-resource-headers
