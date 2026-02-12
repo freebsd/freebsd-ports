@@ -1,5 +1,5 @@
-TIMESTAMP = 1770030791
-SHA256 (libreoffice/i18n/LibreOffice_26.2.0.3_Linux_x86-64_deb_langpack_lo.tar.gz) = a2060de6cbed108726c307a61ac46689d9cea43ce5736e075609d716e4bae6e2
-SIZE (libreoffice/i18n/LibreOffice_26.2.0.3_Linux_x86-64_deb_langpack_lo.tar.gz) = 372793
-SHA256 (libreoffice/i18n/LibreOffice_26.2.0.3_Linux_x86-64_deb_helppack_lo.tar.gz) = 6435708c6210c931214b0701ca9190acea7d0adc419445332369f3d54a17d015
-SIZE (libreoffice/i18n/LibreOffice_26.2.0.3_Linux_x86-64_deb_helppack_lo.tar.gz) = 2522863
+TIMESTAMP = 1770919999
+SHA256 (libreoffice/i18n/LibreOffice_26.2.0_Linux_x86-64_deb_langpack_lo.tar.gz) = a2060de6cbed108726c307a61ac46689d9cea43ce5736e075609d716e4bae6e2
+SIZE (libreoffice/i18n/LibreOffice_26.2.0_Linux_x86-64_deb_langpack_lo.tar.gz) = 372793
+SHA256 (libreoffice/i18n/LibreOffice_26.2.0_Linux_x86-64_deb_helppack_lo.tar.gz) = 6435708c6210c931214b0701ca9190acea7d0adc419445332369f3d54a17d015
+SIZE (libreoffice/i18n/LibreOffice_26.2.0_Linux_x86-64_deb_helppack_lo.tar.gz) = 2522863
