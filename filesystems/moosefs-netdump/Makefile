@@ -1,10 +1,10 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-netdump
+PKGNAMESUFFIX=	-${MFS_COMPONENT}
 
 COMMENT=	MooseFS network packet dump utility
 
 MFS_COMPONENT=	netdump
 
-MASTERDIR=	${.CURDIR}/../moosefs3-master
+MASTERDIR=	${.CURDIR}/../moosefs-master
 
 .include "${MASTERDIR}/Makefile"

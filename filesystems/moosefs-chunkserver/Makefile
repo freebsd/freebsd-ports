@@ -1,10 +1,10 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-chunkserver
+PKGNAMESUFFIX=	-${MFS_COMPONENT}
 
 COMMENT=	MooseFS data storage and synchronization component
 
 MFS_COMPONENT=	chunkserver
 
-MASTERDIR=	${.CURDIR}/../moosefs3-master
+MASTERDIR=	${.CURDIR}/../moosefs-master
 
 .include "${MASTERDIR}/Makefile"

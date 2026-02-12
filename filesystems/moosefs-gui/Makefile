@@ -1,10 +1,10 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-cgiserv
+PKGNAMESUFFIX=	-${MFS_COMPONENT}
 
-COMMENT=	MooseFS CGI web server
+COMMENT=	MooseFS web-based GUI
 
-MFS_COMPONENT=	cgiserv
+MFS_COMPONENT=	gui
 
-MASTERDIR=	${.CURDIR}/../moosefs3-master
+MASTERDIR=	${.CURDIR}/../moosefs-master
 
 .include "${MASTERDIR}/Makefile"

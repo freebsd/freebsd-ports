@@ -1,10 +1,10 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-metalogger
+PKGNAMESUFFIX=	-${MFS_COMPONENT}
 
 COMMENT=	MooseFS metadata backup server
 
 MFS_COMPONENT=	metalogger
 
-MASTERDIR=	${.CURDIR}/../moosefs3-master
+MASTERDIR=	${.CURDIR}/../moosefs-master
 
 .include "${MASTERDIR}/Makefile"

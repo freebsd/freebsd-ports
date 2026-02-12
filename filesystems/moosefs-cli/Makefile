@@ -1,10 +1,10 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-cli
+PKGNAMESUFFIX=	-${MFS_COMPONENT}
 
 COMMENT=	MooseFS command line interface
 
 MFS_COMPONENT=	cli
 
-MASTERDIR=	${.CURDIR}/../moosefs3-master
+MASTERDIR=	${.CURDIR}/../moosefs-master
 
 .include "${MASTERDIR}/Makefile"

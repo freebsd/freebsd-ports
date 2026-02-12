@@ -1,11 +1,10 @@
-PORTNAME=		moosefs3
-DISTVERSION=		3.0.118
-DISTVERSIONSUFFIX=	1
+PORTNAME=		moosefs
+DISTVERSION=		4.58.3
+DISTVERSIONSUFFIX=	-1
 PORTREVISION?=		0
 CATEGORIES=		filesystems sysutils
-MASTER_SITES=		http://ppa.moosefs.com/src/
+MASTER_SITES=		http://repository.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
-DISTNAME=		moosefs-${DISTVERSION}-${DISTVERSIONSUFFIX}
 
 MAINTAINER=		freebsd@moosefs.com
 COMMENT?=		Fault-tolerant distributed filesystem
@@ -13,14 +12,12 @@ WWW=			https://moosefs.com/
 
 LICENSE=		GPLv2
 
-DEPRECATED=		3.x reached EoL 2025-03-31, use filesystems/moosefs-* 4.x instead
-EXPIRATION_DATE=	2026-06-30
-
 USES=			python:build
 GNU_CONFIGURE=		yes
-WRKSRC=			${WRKDIR}/moosefs-${DISTVERSION}
+WRKSRC=			${WRKDIR}/${PORTNAME}-${DISTVERSION}
 PLIST=			${.CURDIR}/pkg-plist
 DESCR=			${.CURDIR}/pkg-descr
+STRIP=
 
 MFS_COMPONENT?=		master
 MFS_USER=		mfs
@@ -35,29 +32,24 @@ CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
 			--with-default-group=${MFS_GROUP}
 
 CONFLICTS=		moosefs2-* \
-			moosefs-*
+			moosefs3-*
 
-.if ${MFS_COMPONENT} == cgi
+PLIST_SUB=		USER=${MFS_USER} \
+			GROUP=${MFS_GROUP}
+
+.if ${MFS_COMPONENT} == gui
 MFS_CGIDIR=		${PREFIX}/share/mfscgi
 USES=			python
-CONFIGURE_ARGS+=	--enable-mfscgi \
-			--with-mfscgi-dir=${MFS_CGIDIR}
-.else
-CONFIGURE_ARGS+=	--disable-mfscgi
-.endif
-
-.if ${MFS_COMPONENT} == cgiserv
-MFS_CGISERVDIR=		${PREFIX}/sbin
-USES=			python
-USE_RC_SUBR=		mfscgiserv
-SUB_FILES+=		pkg-message-cgiserv
-PKGMESSAGE=		${WRKDIR}/pkg-message-cgiserv
+USE_RC_SUBR=		mfsgui
+SUB_FILES+=		pkg-message-gui
+PKGMESSAGE=		${WRKDIR}/pkg-message-gui
 PLIST_SUB+=		MFS_WORKDIR="${MFS_WORKDIR}"
-CONFIGURE_ARGS+=	--enable-mfscgiserv \
-			--with-mfscgiserv-dir=${MFS_CGISERVDIR}
-RUN_DEPENDS=		moosefs3-cgi>0:filesystems/moosefs3-cgi
+CONFIGURE_ARGS+=	--enable-mfscgi --enable-mfsgui \
+			--with-mfscgi-dir=${MFS_CGIDIR}
+RUN_DEPENDS=		moosefs-cli>0:filesystems/moosefs-cli
+CONFLICTS+=		moosefs-cgiserv
 .else
-CONFIGURE_ARGS+=	--disable-mfscgiserv
+CONFIGURE_ARGS+=	--disable-mfscgi --disable-mfsgui
 .endif
 
 .if ${MFS_COMPONENT} == chunkserver
@@ -73,6 +65,7 @@ CONFIGURE_ARGS+=	--disable-mfschunkserver
 .if ${MFS_COMPONENT} == cli
 USES=			python
 CONFIGURE_ARGS+=	--enable-mfscli
+NO_ARCH=		yes
 .else
 CONFIGURE_ARGS+=	--disable-mfscli
 .endif

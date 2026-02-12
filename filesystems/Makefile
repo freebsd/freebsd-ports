@@ -57,6 +57,14 @@
     SUBDIR += ltfs
     SUBDIR += mergerfs
     SUBDIR += mhddfs
+    SUBDIR += moosefs-cgi
+    SUBDIR += moosefs-chunkserver
+    SUBDIR += moosefs-cli
+    SUBDIR += moosefs-client
+    SUBDIR += moosefs-gui
+    SUBDIR += moosefs-master
+    SUBDIR += moosefs-metalogger
+    SUBDIR += moosefs-netdump
     SUBDIR += moosefs2-cgi
     SUBDIR += moosefs2-cgiserv
     SUBDIR += moosefs2-chunkserver

@@ -1,9 +1,19 @@
-PKGNAMESUFFIX=	-cgi
+PORTNAME=	moosefs-cgi
+DISTVERSION=	4.58.3
+CATEGORIES=	filesystems sysutils
 
-COMMENT=	MooseFS CGI interface
+MAINTAINER=	freebsd@moosefs.com
+COMMENT=	Meta package to redirect old -cgi package to new -gui package
+WWW=		https://moosefs.com/
 
-MFS_COMPONENT=	cgi
+LICENSE=	GPLv2
 
-MASTERDIR=	${.CURDIR}/../moosefs3-master
+DEPRECATED=		Renamed to moosefs-gui
+EXPIRATION_DATE=	2026-12-31
 
-.include "${MASTERDIR}/Makefile"
+RUN_DEPENDS=	moosefs-gui>0:filesystems/moosefs-gui
+USES=		metaport
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+.include <bsd.port.mk>
