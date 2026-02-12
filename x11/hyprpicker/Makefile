@@ -1,7 +1,6 @@
 PORTNAME=	hyprpicker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.5
-PORTREVISION=	4
+DISTVERSION=	0.4.6
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -18,9 +17,12 @@ LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c++11-lib cmake gnome localbase:ldflags pkgconfig
-USE_GNOME=	cairo
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
+
+USE_GNOME=	cairo
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
@@ -46,11 +48,5 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/pthread\.h/d' \
 		${WRKSRC}/src/includes.hpp
-
-do-install:
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
