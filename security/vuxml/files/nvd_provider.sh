@@ -6,7 +6,7 @@ tmp_nvd=""
 init_nvd()
 {
 	tmp_nvd=$(mktemp "${TMPDIR:-/tmp}"/nvd_json_data.XXXXXXXXXX) || exit 1
-	fetch -q -o "${tmp_nvd}" https://services.nvd.nist.gov/rest/json/cves/2.0?cveId="${CVE_ID}" || exit 1
+	fetch -q -o "${tmp_nvd}" https://services.nvd.nist.gov/rest/json/cves/2.0?cveId="${CVE_ID}"
 }
 
 cleanup_nvd()

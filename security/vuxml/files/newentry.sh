@@ -51,7 +51,7 @@ cleanup() {
   fi
 
   # Call cleaners for providers
-  for provider in ${providers}; do
+  for provider in ${valid_providers}; do
 	cleanup_"${provider}"
 	cleanup_"${provider}"
   done
@@ -104,6 +104,7 @@ check_dependencies()
 # List of CVE providers sorted by preference
 # ------------------------------------------
 providers="mitre nvd euvd"
+valid_providers=""
 
 # ------------------------------------------
 # List of fields to query for every provider
@@ -125,7 +126,7 @@ resolve_field() {
     shift
     providers="$@"
 
-    for provider in $providers; do
+    for provider in ${valid_providers}; do
         func="get_${field}_from_${provider}"
         if command -v "${func}" >/dev/null 2>&1; then
             value="$($func)"
@@ -145,7 +146,7 @@ resolve_field() {
 # --------------------------------------------------
 get_cve_info() {
 	for field in ${fields}; do
-	    value=$(resolve_field "${field}" ${providers})
+	    value=$(resolve_field "${field}" ${valid_providers})
 	    eval "${field}=\$value"
 	done
 
@@ -203,10 +204,12 @@ DESC_BODY="<body xmlns=\"http://www.w3.org/1999/xhtml\">
 }
 
 init_providers() {
-	for provider in files/*_provider.sh; do
-		provider_name=$(basename "${provider}" | cut -f1 -d_)
+	for provider_name in ${providers}; do
 		. "files/${provider_name}_provider.sh"
-		init_"${provider_name}"
+		if init_"${provider_name}"; then
+			# The provider failed, remove it.
+			valid_providers="${valid_providers} ${provider_name}"
+		fi
 	done
 }
 

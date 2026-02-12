@@ -5,7 +5,7 @@ tmp_euvd=""
 
 init_euvd() {
 	tmp_euvd=$(mktemp "${TMPDIR:-/tmp}"/euvd_json_data.XXXXXXXXXX) || exit 1
-	fetch -q -o "${tmp_euvd}" "https://euvdservices.enisa.europa.eu/api/enisaid?id=${CVE_ID}" || exit 1
+	fetch -q -o "${tmp_euvd}" "https://euvdservices.enisa.europa.eu/api/enisaid?id=${CVE_ID}"
 }
 
 cleanup_euvd() {
