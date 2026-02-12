@@ -11,7 +11,7 @@ include/libupower-glib/upower.h
 lib/girepository-1.0/UPowerGlib-1.0.typelib
 lib/libupower-glib.so
 lib/libupower-glib.so.3
-lib/libupower-glib.so.3.1.1
+lib/libupower-glib.so.3.1.2
 libdata/pkgconfig/upower-glib.pc
 libexec/upowerd
 %%MANPAGES%%share/man/man1/upower.1.gz
