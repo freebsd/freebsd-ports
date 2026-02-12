@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libyajl.so:devel/yajl \
 		libmaxminddb.so:net/libmaxminddb
 
@@ -27,7 +27,7 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-lmdb --without-ssdeep --without-lua
+CONFIGURE_ARGS=	--without-lmdb --without-ssdeep --without-lua --with-pcre2
 
 INSTALL_TARGET=		install-strip
 

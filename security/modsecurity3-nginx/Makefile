@@ -38,7 +38,9 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--http-scgi-temp-path=${_NGINX_TMPDIR}/scgi_temp \
 			--http-uwsgi-temp-path=${_NGINX_TMPDIR}/uwsgi_temp \
 			--http-log-path=${_NGINX_ACCESSLOG} \
+			--with-compat \
 			--with-http_v2_module \
+			--with-http_v3_module \
 			--with-http_addition_module \
 			--with-http_auth_request_module \
 			--with-http_dav_module \
@@ -48,7 +50,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--with-http_mp4_module \
 			--with-http_random_index_module \
 			--with-http_realip_module \
-			--with-pcre \
 			--with-http_secure_link_module \
 			--with-http_slice_module \
 			--with-http_ssl_module \
@@ -61,6 +62,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
 			--with-threads \
+			--with-pcre \
 			--with-mail=dynamic \
 			--with-stream=dynamic \
 			--add-dynamic-module=${WRKSRC_modsecurity3}
