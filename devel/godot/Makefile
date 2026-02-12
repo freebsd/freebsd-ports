@@ -1,7 +1,7 @@
 PORTNAME=	godot
 DISTVERSION=	4.4.1
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -14,12 +14,26 @@ LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	yasm:devel/yasm
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
+		libbrotlidec.so:archivers/brotli \
+		libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2 \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libharfbuzz.so:print/harfbuzz \
+		libogg.so:audio/libogg \
+		libpng.so:graphics/png \
+		libtheora.so:multimedia/libtheora \
+		libtheoradec.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis \
+		libvorbisfile.so:audio/libvorbis \
+		libwebp.so:graphics/webp \
+		libminiupnpc.so:net/miniupnpc \
+		libopenxr_loader.so:graphics/openxr \
 		libpcre2-32.so:devel/pcre2 \
-		libpng.so:graphics/png
+		libRecast.so:graphics/recastnavigation \
+		libwslay_shared.so:www/wslay \
+		libzstd.so:archivers/zstd \
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		xdg-user-dir:devel/xdg-user-dirs \
 		xmessage:x11/xmessage
@@ -32,12 +46,24 @@ USE_GL=		gl glew glu
 
 MAKE_ARGS+=		platform=linuxbsd \
 			dbus=True \
+			brotli=True \
+			builtin_brotli=False \
 			builtin_freetype=False \
 			builtin_graphite=False \
 			builtin_harfbuzz=False \
+			builtin_libogg=False \
 			builtin_libpng=False \
+			builtin_libtheora=False \
+			builtin_libvorbis=False \
+			builtin_libwebp=False \
+			builtin_miniupnpc=False \
+			builtin_openxr=False \
 			builtin_pcre2=False \
+			builtin_recastnavigation=False \
+			builtin_wslay=False \
 			builtin_zlib=False \
+			builtin_zstd=False \
+			fontconfig=True \
 			opengl3=True \
 			use_sowrap=True \
 			verbose=True \
@@ -119,6 +145,8 @@ MAKE_ARGS+=	module_embree_enabled=no \
 post-patch:
 	@${REINPLACE_CMD} -e 's|custom_build|${OPSYS}_Ports_build|' \
 		${WRKSRC}/methods.py
+	@${REINPLACE_CMD} -e 's|/usr/include/recastnavigation|${LOCALBASE}/include/recastnavigation|' \
+		${WRKSRC}/platform/linuxbsd/detect.py
 
 # The official godot binary name reflects options used to compile
 # We just want a simple name matching the portname
