@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.11.0.6
+PORTVERSION=	1.12.0.1
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,9 +22,9 @@ ALL_TARGET=	all-${WITH_DEBUG:?debug:release}
 
 # Generated with `make makenuget'
 NUGET_DEPENDS=	Antlr4.Runtime=4.6.6 \
-		Bve5_Parsing.OpenBVE=1.1.16 \
+		Bve5_Parsing.OpenBVE=1.1.17 \
 		CS-Script.lib=3.30.3 \
-		DotNetZip=1.16.0 \
+		DotNetZip.OpenBVE=1.17.2 \
 		LibUsbDotNet=2.2.29 \
 		Mono.Cecil=0.11.3 \
 		NAudio.Vorbis=1.2.0 \
@@ -32,17 +32,16 @@ NUGET_DEPENDS=	Antlr4.Runtime=4.6.6 \
 		NLayer.NAudioSupport=1.0.0 \
 		NLayer=1.12.0 \
 		NVorbis=0.10.1 \
-		OpenTK-OpenBVE=1.0.2 \
+		OpenTK-OpenBVE=1.0.4 \
 		OpenTK.GLControl-OpenBVE=1.0.1 \
-		Prism.Core=7.2.0.1422 \
-		ReactiveProperty.Core=7.1.0 \
-		ReactiveProperty=7.1.0 \
+		ReactiveProperty.Core=9.7.0 \
+		ReactiveProperty=9.7.0 \
 		SharpCompress=0.32.2 \
 		System.Buffers=4.5.1 \
-		System.ComponentModel.Annotations=4.7.0 \
+		System.ComponentModel.Annotations=5.0.0 \
 		System.Memory=4.5.5 \
 		System.Numerics.Vectors=4.5.0 \
-		System.Reactive=4.4.1 \
+		System.Reactive=6.0.1 \
 		System.Runtime.CompilerServices.Unsafe=6.0.0 \
 		System.Text.Encoding.CodePages=6.0.0 \
 		System.Threading.Tasks.Extensions=4.5.4 \
@@ -69,6 +68,8 @@ PLIST_SUB+=	RELEASE="" DEBUG="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e '/TargetFrameworkVersion/s,4[^<]*,4.6.1,' \
 		${WRKSRC}/source/Plugins/Route.Bve5/Route.Bve5.csproj \
+		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
+	@${REINPLACE_CMD} -e '/System\.ValueTuple\.dll/s,net4.,net46,' \
 		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
 
 do-install:
