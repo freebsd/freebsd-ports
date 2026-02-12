@@ -1,6 +1,6 @@
 PORTNAME=	labplot
 DISTVERSION=	2.12.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -74,7 +74,7 @@ NETCDF_CMAKE_BOOL=	ENABLE_NETCDF
 
 ORCUS_DESC=		Spreadsheet processing filters (via liborcus)
 ORCUS_LIB_DEPENDS=	libixion-0.20.so:textproc/libixion \
-			liborcus-0.20.so:devel/liborcus
+			liborcus-0.21.so:devel/liborcus
 ORCUS_CMAKE_BOOL=	ENABLE_ORCUS
 
 ORIGINLAB_DESC=		OriginLab project files support
