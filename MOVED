@@ -5077,3 +5077,11 @@ lang/python-doc-pdf-a4||2026-02-05|A4-size PDF no longer provided since 3.13
 sysutils/android-file-transfer-qt5||2026-02-11|Removed as qt5 is being deprecated
 devel/rubygem-flipper-active_support_cache_store-rails70|devel/rubygem-flipper-active_support_cache_store|2026-02-10|Remove obsoleted port. Use devel/rubygem-flipper-active_support_cache_store instead
 databases/rubygem-flipper-active_record-rails70|databases/rubygem-flipper-active_record|2026-02-10|Remove obsoleted port. Use databases/rubygem-flipper-active_record instead
+databases/postgresql13-contrib||2026-02-12|Has expired: PostgreSQL-13 is end-of-life
+databases/postgresql13-client||2026-02-12|Has expired: PostgreSQL-13 is end-of-life
+databases/postgresql13-plperl||2026-02-12|Has expired: PostgreSQL-13 is end-of-life
+databases/postgresql13-pltcl||2026-02-12|Has expired: PostgreSQL-13 is end-of-life
+databases/postgresql13-plpython||2026-02-12|Has expired: PostgreSQL-13 is end-of-life
+databases/postgresql13-docs||2026-02-12|Has expired: PostgreSQL-13 is end-of-life
+databases/postgresql13-pgtcl||2026-02-12|Removed, PostgreSQL-13 is end-of-life
+databases/postgresql13-server||2026-02-12|Has expired: PostgreSQL-13 is end-of-life

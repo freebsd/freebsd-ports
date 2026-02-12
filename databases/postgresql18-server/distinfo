@@ -1,3 +1,3 @@
-TIMESTAMP = 1762876345
-SHA256 (postgresql/postgresql-18.1.tar.bz2) = ff86675c336c46e98ac991ebb306d1b67621ece1d06787beaade312c2c915d54
-SIZE (postgresql/postgresql-18.1.tar.bz2) = 22423920
+TIMESTAMP = 1770716760
+SHA256 (postgresql/postgresql-18.2.tar.bz2) = 5245bd1b79700d55b8e0575be0325ef61e7bbef627e6a616e4cf36ad4687be36
+SIZE (postgresql/postgresql-18.2.tar.bz2) = 22492584
