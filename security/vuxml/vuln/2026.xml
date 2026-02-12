@@ -1,3 +1,85 @@
+  <vuln vid="e3afc190-0821-11f1-a857-6cc21735f730">
+    <topic>PostgreSQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>postgresql14-server</name>
+       <range><lt>14.21</lt></range>
+      </package>
+      <package>
+       <name>postgresql15-server</name>
+       <range><lt>15.16</lt></range>
+      </package>
+      <package>
+       <name>postgresql16-server</name>
+       <range><lt>16.12</lt></range>
+      </package>
+      <package>
+       <name>postgresql17-server</name>
+       <range><lt>17.8</lt></range>
+      </package>
+      <package>
+       <name>postgresql18-server</name>
+       <range><lt>18.2</lt></range>
+      </package>
+      <package>
+       <name>postgresql14-server</name>
+       <range><lt>14.21</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/about/news/postgresql-182-178-1612-1516-and-1421-released-3235/">
+	<p>
+	  Improper validation of type oidvector in PostgreSQL
+	  allows a database user to disclose a few bytes of server
+	  memory. We have not ruled out viability of attacks that
+	  arrange for presence of confidential information in
+	  disclosed bytes, but they seem unlikely.
+	</p>
+	<p>
+	  Missing validation of type of input in PostgreSQL
+	  intarray extension selectivity estimator function allows
+	  an object creator to execute arbitrary code as the
+	  operating system user running the database.
+	</p>
+	<p>
+	  Heap buffer overflow in PostgreSQL pgcrypto allows a
+	  ciphertext provider to execute arbitrary code as the
+	  operating system user running the database.
+	</p>
+	<p>
+	  Missing validation of multibyte character length in
+	  PostgreSQL text manipulation allows a database user to
+	  issue crafted queries that achieve a buffer overrun.
+	  That suffices to execute arbitrary code as the operating
+	  system user running the database.
+	</p>
+	<p>
+	  Heap buffer overflow in PostgreSQL pg_trgm allows a
+	  database user to achieve unknown impacts via a crafted
+	  input string. The attacker has limited control over the
+	  byte patterns to be written, but we have not ruled out
+	  the viability of attacks that lead to privilege
+	  escalation.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2003</cvename>
+      <cvename>CVE-2026-2004</cvename>
+      <cvename>CVE-2026-2005</cvename>
+      <cvename>CVE-2026-2006</cvename>
+      <cvename>CVE-2026-2007</cvename>
+      <url>https://www.postgresql.org/about/news/postgresql-182-178-1612-1516-and-1421-released-3235/</url>
+    </references>
+    <dates>
+      <discovery>2026-02-12</discovery>
+      <entry>2026-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f9bac32-0800-11f1-8a6f-b42e991fc52e">
     <topic>MongoDB Server -- CWE-704 Incorrect Type Conversion or Cast</topic>
     <affects>
