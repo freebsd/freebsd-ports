@@ -61,6 +61,7 @@
     SUBDIR += bjumblr-lv2
     SUBDIR += bliss
     SUBDIR += blop
+    SUBDIR += blucli
     SUBDIR += boca
     SUBDIR += boops-lv2
     SUBDIR += bristol
