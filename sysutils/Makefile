@@ -1286,6 +1286,7 @@
     SUBDIR += rush
     SUBDIR += rust-coreutils
     SUBDIR += rust-findutils
+    SUBDIR += rustic
     SUBDIR += rw
     SUBDIR += rw-tui
     SUBDIR += s-tui

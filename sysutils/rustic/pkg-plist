@@ -1,0 +1,15 @@
+bin/rustic
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copy_example.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/full.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/local.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/par2.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rustic.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/b2.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/rclone_ovh-hot-cold.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/s3_aws.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/s3_idrive.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/sftp.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/sftp_hetzner_sbox.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/webdav_owncloud_nextcloud.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.toml
