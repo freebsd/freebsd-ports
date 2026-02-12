@@ -29,7 +29,6 @@ include/gstreamer-%%VERSION%%/gst/vulkan/gstvkswapper.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvktrash.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkutils.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkvideofilter.h
-include/gstreamer-%%VERSION%%/gst/vulkan/gstvkvideoutils.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkwindow.h
 include/gstreamer-%%VERSION%%/gst/vulkan/vulkan-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/vulkan/vulkan-prelude.h
@@ -42,6 +41,7 @@ include/gstreamer-%%VERSION%%/gst/wayland/gstwlbuffer.h
 include/gstreamer-%%VERSION%%/gst/wayland/gstwlcontext.h
 include/gstreamer-%%VERSION%%/gst/wayland/gstwldisplay.h
 include/gstreamer-%%VERSION%%/gst/wayland/gstwllinuxdmabuf.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwloutput.h
 include/gstreamer-%%VERSION%%/gst/wayland/gstwlshmallocator.h
 include/gstreamer-%%VERSION%%/gst/wayland/gstwlvideobufferpool.h
 include/gstreamer-%%VERSION%%/gst/wayland/gstwlvideoformat.h

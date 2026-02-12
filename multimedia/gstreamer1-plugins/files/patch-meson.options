@@ -1,5 +1,5 @@
---- meson_options.txt.orig	2022-09-06 20:35:43 UTC
-+++ meson_options.txt
+--- meson.options.orig	2026-01-27 17:02:33 UTC
++++ meson.options
 @@ -1,9 +1,27 @@
 +option('tag', type : 'feature', value : 'auto', description : 'tag integration library and tag plugin')
 +option('pkgconfig', type : 'feature', value : 'auto', description : 'pkgconfig integration library and pkgconfig plugin')

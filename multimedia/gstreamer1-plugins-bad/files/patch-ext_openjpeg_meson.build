@@ -1,6 +1,6 @@
---- ext/openjpeg/meson.build.orig	2025-03-11 20:14:44 UTC
+--- ext/openjpeg/meson.build.orig	2026-01-27 17:02:33 UTC
 +++ ext/openjpeg/meson.build
-@@ -33,7 +33,7 @@ if openjpeg_dep.found()
+@@ -32,7 +32,7 @@ if openjpeg_dep.found()
      link_args : noseh_link_args,
      include_directories : [configinc],
      dependencies : [gst_dep, gstvideo_dep, openjpeg_dep,

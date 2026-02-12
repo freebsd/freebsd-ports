@@ -47,11 +47,12 @@ lib/gstreamer-%%VERSION%%/libgstvideomixer.so
 lib/gstreamer-%%VERSION%%/libgstwavenc.so
 lib/gstreamer-%%VERSION%%/libgstwavparse.so
 lib/gstreamer-%%VERSION%%/libgstxingmux.so
-lib/gstreamer-%%VERSION%%/libgsty4menc.so
+lib/gstreamer-%%VERSION%%/libgsty4m.so
 %%DATADIR%%-%%VERSION%%/presets/GstIirEqualizer10Bands.prs
 %%DATADIR%%-%%VERSION%%/presets/GstIirEqualizer3Bands.prs
 %%DATADIR%%-%%VERSION%%/presets/GstQTMux.prs
 share/locale/af/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/ar/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo

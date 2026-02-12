@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	${_GST_VERSION}
+PORTVERSION=	${gst-vaapi_VERSION}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}
@@ -9,6 +9,9 @@ COMMENT=	GStreamer hardware video decoding via VA-API plug-in
 WWW=		https://github.com/GStreamer/gstreamer-vaapi
 
 LICENSE=	LGPL21
+
+DEPRECATED=	Project discontinued
+EXPIRATION_DATE=	2026-03-31
 
 LIB_DEPENDS=	libva.so:multimedia/libva
 

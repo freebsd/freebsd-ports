@@ -57,6 +57,7 @@ include/gstreamer-%%VERSION%%/gst/gstconfig.h
 include/gstreamer-%%VERSION%%/gst/gstcontext.h
 include/gstreamer-%%VERSION%%/gst/gstcontrolbinding.h
 include/gstreamer-%%VERSION%%/gst/gstcontrolsource.h
+include/gstreamer-%%VERSION%%/gst/gstcpuid.h
 include/gstreamer-%%VERSION%%/gst/gstdatetime.h
 include/gstreamer-%%VERSION%%/gst/gstdebugutils.h
 include/gstreamer-%%VERSION%%/gst/gstdevice.h
@@ -79,6 +80,7 @@ include/gstreamer-%%VERSION%%/gst/gstmacros.h
 include/gstreamer-%%VERSION%%/gst/gstmemory.h
 include/gstreamer-%%VERSION%%/gst/gstmessage.h
 include/gstreamer-%%VERSION%%/gst/gstmeta.h
+include/gstreamer-%%VERSION%%/gst/gstmetafactory.h
 include/gstreamer-%%VERSION%%/gst/gstminiobject.h
 include/gstreamer-%%VERSION%%/gst/gstobject.h
 include/gstreamer-%%VERSION%%/gst/gstpad.h
@@ -173,6 +175,7 @@ share/gir-%%VERSION%%/GstCheck-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstController-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstNet-%%VERSION%%.gir
 %%NLS%%share/locale/af/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/az/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/be/LC_MESSAGES/gstreamer-%%VERSION%%.mo

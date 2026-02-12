@@ -8,6 +8,7 @@ include/gstreamer-%%VERSION%%/gst/allocators/gstdrmdumb.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstfdmemory.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstphysmemory.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstshmallocator.h
+include/gstreamer-%%VERSION%%/gst/allocators/gstudmabufallocator.h
 include/gstreamer-%%VERSION%%/gst/app/app-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/app/app-prelude.h
 include/gstreamer-%%VERSION%%/gst/app/app.h
@@ -105,6 +106,7 @@ include/gstreamer-%%VERSION%%/gst/video/gstvideoaffinetransformationmeta.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoaggregator.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideocodecalphameta.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideodecoder.h
+include/gstreamer-%%VERSION%%/gst/video/gstvideodmabufpool.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoencoder.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideometa.h
@@ -225,6 +227,7 @@ share/gir-%%VERSION%%/GstTag-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstVideo-%%VERSION%%.gir
 share/gst-plugins-base/%%VERSION%%/license-translations.dict
 share/locale/af/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/ar/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo

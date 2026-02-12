@@ -1,7 +1,7 @@
---- ext/webrtcdsp/meson.build.orig	2025-08-07 18:06:46 UTC
+--- ext/webrtcdsp/meson.build.orig	2026-01-27 17:02:33 UTC
 +++ ext/webrtcdsp/meson.build
-@@ -43,13 +43,17 @@ endif
-                           required : get_option('webrtcdsp'))
+@@ -49,13 +49,17 @@ endif
+                           required : webrtcdsp_opt)
  endif
  
 +if get_option('webrtcdsp').disabled()

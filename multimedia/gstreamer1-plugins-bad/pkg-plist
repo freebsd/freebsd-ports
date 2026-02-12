@@ -3,13 +3,17 @@ include/gstreamer-%%VERSION%%/gst/adaptivedemux/adaptive-demux-prelude.h
 include/gstreamer-%%VERSION%%/gst/adaptivedemux/gstadaptivedemux.h
 include/gstreamer-%%VERSION%%/gst/analytics/analytics-meta-prelude.h
 include/gstreamer-%%VERSION%%/gst/analytics/analytics.h
+include/gstreamer-%%VERSION%%/gst/analytics/gstanalytics_image_util.h
+include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsbatchmeta.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsclassificationmtd.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsmeta.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsobjectdetectionmtd.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsobjecttrackingmtd.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticssegmentationmtd.h
+include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticstensormtd.h
 include/gstreamer-%%VERSION%%/gst/analytics/gsttensor.h
 include/gstreamer-%%VERSION%%/gst/analytics/gsttensormeta.h
+include/gstreamer-%%VERSION%%/gst/analytics/modelinfo.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-bad-prelude.h
 include/gstreamer-%%VERSION%%/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-%%VERSION%%/gst/audio/gstplanaraudioadapter.h
@@ -169,7 +173,6 @@ lib/gstreamer-%%VERSION%%/libgstvideoframe_audiolevel.so
 lib/gstreamer-%%VERSION%%/libgstvideoparsersbad.so
 lib/gstreamer-%%VERSION%%/libgstvideosignal.so
 lib/gstreamer-%%VERSION%%/libgstvmnc.so
-lib/gstreamer-%%VERSION%%/libgsty4mdec.so
 lib/libgstadaptivedemux-%%VERSION%%.so
 lib/libgstadaptivedemux-%%VERSION%%.so.0
 lib/libgstadaptivedemux-%%VERSION%%.so.%%SOVERSION%%
@@ -252,6 +255,7 @@ share/gir-%%VERSION%%/GstTranscoder-%%VERSION%%.gir
 %%DATADIR%%-%%VERSION%%/encoding-profiles/online-services/youtube.gep
 %%DATADIR%%-%%VERSION%%/presets/GstFreeverb.prs
 share/locale/af/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/ar/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/ast/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo

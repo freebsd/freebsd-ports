@@ -250,6 +250,7 @@ BAD_GST_ALL_PLUGINS+= \
 		videoframe_audiolevel \
 		videoparsers \
 		videosignal \
+		vmaf \
 		vmnc \
 		voaacenc \
 		voamrwbenc \
@@ -266,7 +267,6 @@ BAD_GST_ALL_PLUGINS+= \
 		winks \
 		winscreencap \
 		x265 \
-		y4m \
 		zbar \
 		zxing
 

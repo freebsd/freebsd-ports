@@ -111,7 +111,6 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			videoframe_audiolevel \
 			videoparsers \
 			videosignal \
-			vmnc \
-			y4m
+			vmnc
 
 .include "${MASTERDIR}/Makefile"

@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer
 PORTVERSION=	${_GST_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -64,7 +63,7 @@ MESON_ARGS+=	-D ptp-helper=disabled
 # Custom target to update distinfo for all gstreamer1 ports under control of
 # _GST1_VERSION set in Mk/Uses/gstreamer.mk
 makesum-all: makesum
-.for p in editing-services libav rtsp-server vaapi
+.for p in editing-services libav rtsp-server
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-${p} makesum
 .endfor
 	@${MAKE} -C ${.CURDIR:H:H}/devel/gstreamer1-devtools makesum

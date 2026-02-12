@@ -1,5 +1,5 @@
---- meson_options.txt.orig	2025-03-11 20:14:44 UTC
-+++ meson_options.txt
+--- meson.options.orig	2026-01-27 17:02:33 UTC
++++ meson.options
 @@ -14,6 +14,10 @@ option('x264', type : 'feature', value : 'auto', descr
  option('mpeg2dec', type : 'feature', value : 'auto', description : 'MPEG 2 video decoder plugin based on libmpeg2 (GPL - only built if gpl option is also enabled!)')
  option('sidplay', type : 'feature', value : 'auto', description : 'Commodore 64 audio decoder plugin based on libsidplay (GPL - only built if gpl option is also enabled!)')

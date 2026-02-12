@@ -1,5 +1,5 @@
---- meson_options.txt.orig	2025-03-11 20:14:44 UTC
-+++ meson_options.txt
+--- meson.options.orig	2026-01-27 17:02:33 UTC
++++ meson.options
 @@ -1,5 +1,49 @@ option('gst_play_tests', type: 'boolean', value: false
  option('gst_play_tests', type: 'boolean', value: false,
         description: 'Enable GstPlay tests that need network access')
