@@ -1,5 +1,6 @@
 PORTNAME=	lexilla
 DISTVERSION=	5.4.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.scintilla.org/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -12,6 +13,9 @@ LICENSE=	SCINTILLA
 LICENSE_NAME=	License for Lexilla, Scintilla and SciTE
 LICENSE_FILE=	${WRKSRC}/../License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	No consumers left in the tree, the library is intended to be bundled
+EXPIRATION_DATE=2026-04-01
 
 BUILD_DEPENDS=	scintilla>0:x11-toolkits/scintilla
 
