@@ -19,8 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libharfbuzz.so:print/harfbuzz \
 		libpcre2-32.so:devel/pcre2 \
-		libpng.so:graphics/png \
-		libvpx.so:multimedia/libvpx
+		libpng.so:graphics/png
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		xdg-user-dir:devel/xdg-user-dirs \
 		xmessage:x11/xmessage
@@ -32,13 +31,15 @@ GH_ACCOUNT=	godotengine
 USE_GL=		gl glew glu
 
 MAKE_ARGS+=		platform=linuxbsd \
+			dbus=True \
 			builtin_freetype=False \
 			builtin_graphite=False \
 			builtin_harfbuzz=False \
 			builtin_libpng=False \
-			builtin_libvpx=False \
 			builtin_pcre2=False \
 			builtin_zlib=False \
+			opengl3=True \
+			use_sowrap=True \
 			verbose=True \
 			${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS_clang=	use_llvm=True
