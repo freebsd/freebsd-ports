@@ -1,0 +1,7 @@
+bin/rucola
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_config/config.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_config/default_dark.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_config/default_dark.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_config/default_light.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot_config/default_light.toml

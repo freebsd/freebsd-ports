@@ -1,0 +1,17 @@
+Terminal-based markdown note manager to view statistics, explore connections
+and launch editing and viewing applications.
+
+Features:
+
+  - Present users of a zettelkasten-like note system of interlinked markdown
+    files with high-level information & statistics about their notes.
+  - Show the same information about filtered subsets of notes, as well as their
+    relation with the entire note set.
+  - Allow the user to view and follow links and backlinks of a single note to
+    see connections within their note graph.
+  - Allow the user to make small edits such as renaming or moving notes from
+    within the application.
+  - Provide easy access to a powerful, external text editor for editing notes.
+  - Optionally compile notes to HTML-documents, including LaTeX compilation and
+    code highlighting, on the fly and show them in an external viewer.
+  - Provide all of this functionality from within a terminal user interface.

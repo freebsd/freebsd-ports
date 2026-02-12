@@ -1275,6 +1275,7 @@
     SUBDIR += rubygem-winrm-elevated-gitlab
     SUBDIR += rubygem-winrm-gitlab
     SUBDIR += rubygem-yell
+    SUBDIR += rucola
     SUBDIR += runas
     SUBDIR += rundeck
     SUBDIR += runiq
