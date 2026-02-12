@@ -1,6 +1,5 @@
 PORTNAME=	bluemoon
-DISTVERSION=	2.13
-PORTREVISION=	2
+DISTVERSION=	2.14
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 
