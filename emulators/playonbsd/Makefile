@@ -30,6 +30,11 @@ USE_WX=		3.2
 WX_COMPS=	python:run
 SHEBANG_FILES=	bash/expert/* lib/*
 SHEBANG_GLOB=	*.py
+
+EXTRACT_AFTER_ARGS=	--exclude \
+			${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/python/*__pycache__* \
+			--no-same-owner --no-same-permissions
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		GECKO MONO NLS
@@ -67,9 +72,6 @@ do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/lang/locale/en_GB/LC_MESSAGES/pol.mo ${STAGEDIR}${PREFIX}/lib/playonbsd/lang/locale/en_GB/LC_MESSAGES/pol.mo
 		${MKDIR} ${STAGEDIR}${PREFIX}/lib/playonbsd/lang/po
 		${INSTALL_SCRIPT} ${WRKSRC}/lang/po/en_GB.po ${STAGEDIR}${PREFIX}/lib/playonbsd/lang/po/en_GB.po
-
-post-install:
-		${FIND} ${STAGEDIR} -name __pycache__ -type d -exec ${RM} -r {} +
 
 post-install-NLS-on:
 		cd ${WRKSRC} && ${COPYTREE_BIN} lang ${STAGEDIR}${PREFIX}/lib/playonbsd/ "! -name *\.orig ! -name *\.bak"
