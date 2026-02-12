@@ -1,5 +1,5 @@
 PORTNAME=	graphviz
-PORTVERSION=	14.1.1
+PORTVERSION=	14.1.2
 PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
@@ -50,7 +50,7 @@ FIX_TCL_SCRIPT=	tclpkg/gdtclft/demo/entities.tcl \
 		tclpkg/tcldot/demo/gcat.tcl
 FIX_TK_SCRIPT=	tclpkg/tcldot/demo/doted.tcl \
 		tclpkg/tclpathplan/demo/pathplan.tcl
-PLIST_SUB=	SH_VERSION_SHORT="8" SH_VERSION_FULL="8.0.6"
+PLIST_SUB=	SH_VERSION_SHORT="8" SH_VERSION_FULL="8.0.7"
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS ANN GTS \
 		PANGOCAIRO POPPLER GDK GHOSTSCRIPT DEVIL \
@@ -150,8 +150,8 @@ PYTHON_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.py
 PYTHON_CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}"
 RUBY_CONFIGURE_ENABLE=		ruby
 RUBY_CONFIGURE_ENV=	RUBY="${RUBY}" RUBY_VER="${RUBY_VER}" \
-			RUBY_CFLAGS="${RUBY_CFLAGS}" \
-			RUBY_LDFLAGS="${RUBY_LDFLAGS}" \
+			RUBY_CFLAGS="${GV_RUBY_CFLAGS}" \
+			RUBY_LDFLAGS="${GV_RUBY_LDFLAGS}" \
 			RUBY_INSTALL_DIR="${RUBY_SITEARCHLIBDIR}"
 RUBY_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.rb
 LUA_CONFIGURE_ENABLE=		lua
@@ -201,12 +201,12 @@ USES+=	python:env
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
-RUBY_CFLAGS+=	-I "${LOCALBASE}/include/ruby-${RUBY_VER}/" \
+GV_RUBY_CFLAGS+=-I "${LOCALBASE}/include/ruby-${RUBY_VER}/" \
 		-I "${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}"
 .if exists(${LOCALBASE}/bin/ruby${RUBY_SHLIBVER})
-RUBY_LIBS!=	${LOCALBASE}/bin/ruby${RUBY_SHLIBVER} \
+GV_RUBY_LIBS!=	${LOCALBASE}/bin/ruby${RUBY_SHLIBVER} \
 		-r rbconfig -e "print RbConfig::CONFIG[ 'LIBS' ]"
-RUBY_LDFLAGS+=	${RUBY_LIBS}
+GV_RUBY_LDFLAGS+=	${GV_RUBY_LIBS}
 .endif
 .endif
 
@@ -249,8 +249,6 @@ post-patch:
 		-e 's|LUA_INSTALL_DIR=.*|LUA_INSTALL_DIR="${LUA_MODLIBDIR}"|' \
 		-e 's| vendorarchdir| sitearchdir|' \
 		${WRKSRC}/configure.ac
-	${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
-		${WRKSRC}/cmd/smyrna/tvnodes.h
 	cd ${WRKSRC} && ${REINPLACE_CMD} \
 		-e 's|exec tclsh |exec tclsh${TCL_VER} |' ${FIX_TCL_SCRIPT}
 	cd ${WRKSRC} && ${REINPLACE_CMD} \
