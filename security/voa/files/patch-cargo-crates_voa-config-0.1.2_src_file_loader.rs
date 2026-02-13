@@ -1,5 +1,5 @@
---- cargo-crates/voa-config-0.1.1/src/file/loader.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/voa-config-0.1.1/src/file/loader.rs
+--- cargo-crates/voa-config-0.1.2/src/file/loader.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/voa-config-0.1.2/src/file/loader.rs
 @@ -3,7 +3,7 @@ use std::{
  use std::{
      collections::BTreeMap,
