@@ -21,6 +21,7 @@ lib/tuxpaint/plugins/crescent.so
 lib/tuxpaint/plugins/distortion.so
 lib/tuxpaint/plugins/dither.so
 lib/tuxpaint/plugins/emboss.so
+lib/tuxpaint/plugins/emitter.so
 lib/tuxpaint/plugins/fade_darken.so
 lib/tuxpaint/plugins/fisheye.so
 lib/tuxpaint/plugins/flower.so
@@ -81,6 +82,7 @@ share/man/is_IS.UTF-8/man1/tuxpaint.1.gz
 share/man/gl_ES.UTF-8/man1/tuxpaint.1.gz
 share/man/ja_JP.UTF-8/man1/tuxpaint.1.gz
 share/man/sq_AL.UTF-8/man1/tuxpaint.1.gz
+share/man/sv_SE.UTF-8/man1/tuxpaint.1.gz
 share/man/man1/tp-magic-config.1.gz
 share/man/man1/tuxpaint.1.gz
 share/man/man1/tuxpaint-import.1.gz
