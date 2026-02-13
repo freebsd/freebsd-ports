@@ -1,5 +1,5 @@
-TIMESTAMP = 1766482259
-SHA256 (go/net_seaweedfs/seaweedfs-4.04/v0.0.0-20251223074630-8d752906012e.mod) = 2b6d269b7a1cd5ad1784fdab52e337e7a79921aa65ef5528721b88cfc5dad197
-SIZE (go/net_seaweedfs/seaweedfs-4.04/v0.0.0-20251223074630-8d752906012e.mod) = 23938
-SHA256 (go/net_seaweedfs/seaweedfs-4.04/v0.0.0-20251223074630-8d752906012e.zip) = d7611a5b351de490baf566d2001350f96ba47a607ca062c8f343858c28997d46
-SIZE (go/net_seaweedfs/seaweedfs-4.04/v0.0.0-20251223074630-8d752906012e.zip) = 49321430
+TIMESTAMP = 1770969506
+SHA256 (go/net_seaweedfs/seaweedfs-4.12/v0.0.0-20260210021559-0b80f055c285.mod) = ae2291d68cd510097c13a1d1d1797a7fc7c8f118ed16fd2ca6d4aebc38abd65f
+SIZE (go/net_seaweedfs/seaweedfs-4.12/v0.0.0-20260210021559-0b80f055c285.mod) = 27088
+SHA256 (go/net_seaweedfs/seaweedfs-4.12/v0.0.0-20260210021559-0b80f055c285.zip) = 95965ffabdfafacde019b0aa12477b9ae6d4966a72d18a4563722b5d55ee8dd1
+SIZE (go/net_seaweedfs/seaweedfs-4.12/v0.0.0-20260210021559-0b80f055c285.zip) = 49934618
