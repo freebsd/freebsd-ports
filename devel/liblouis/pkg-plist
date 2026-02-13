@@ -121,6 +121,8 @@
 %%DATADIR%%/tables/en_US.tbl
 %%DATADIR%%/tables/en-chardefs.cti
 %%DATADIR%%/tables/en-chess.ctb
+%%DATADIR%%/tables/en-g3-patterns.dic
+%%DATADIR%%/tables/en-g3.ctb
 %%DATADIR%%/tables/en-gb-comp8.ctb
 %%DATADIR%%/tables/en-gb-g1.utb
 %%DATADIR%%/tables/en-in-g1.ctb
@@ -281,6 +283,7 @@
 %%DATADIR%%/tables/mao-nz-g1.ctb
 %%DATADIR%%/tables/marburg_single_cell_defs.cti
 %%DATADIR%%/tables/marburg_unicode_defs.cti
+%%DATADIR%%/tables/mk-g1.utb
 %%DATADIR%%/tables/ml-in-g1.utb
 %%DATADIR%%/tables/ml.tbl
 %%DATADIR%%/tables/mn-MN-common.cti
@@ -473,7 +476,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.22
+lib/liblouis.so.20.1.1
 share/man/man1/lou_allround.1.gz
 share/man/man1/lou_checkhyphens.1.gz
 share/man/man1/lou_checktable.1.gz
