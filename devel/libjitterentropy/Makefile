@@ -1,11 +1,12 @@
 PORTNAME=	libjitterentropy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Hardware RNG based on CPU timing jitter
-WWW=		https://www.chronox.de/jent.html
+WWW=		https://www.chronox.de/jent/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.bsd
