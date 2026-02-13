@@ -1,11 +1,10 @@
 PORTNAME=	ntfy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.16.0
-PORTREVISION=	2
+DISTVERSION=	2.17.0
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 PKGNAMEPREFIX=	go-
-DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Send push notifications to your phone or desktop using PUT/POST
@@ -41,7 +40,7 @@ DOCS_USES=		python
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse --short HEAD'
 # in the ntfy repository to get the value of GITID.
-GITID=		4b474a89
+GITID=		a03a37fe
 
 BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
