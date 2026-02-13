@@ -1,5 +1,5 @@
 PORTNAME=	toot
-DISTVERSION=	0.51.0
+DISTVERSION=	0.51.1
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,6 @@ USE_PYTHON=	flavors
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_INSTALL=	yes
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
@@ -42,10 +41,8 @@ IMAGES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.5.0:graphics/py-pillow@${PY
 RICHTEXT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwidgets>=0.2<0.3:devel/py-urwidgets@${PY_FLAVOR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,{__version__},${DISTVERSION},g' \
-		${WRKSRC}/${PORTNAME}/cli/diag.py
-	@${REINPLACE_CMD} -e '175s,__version__,"${DISTVERSION}",g' \
-		${WRKSRC}/${PORTNAME}/cli/__init__.py
+	@${REINPLACE_CMD} -e '12s,"0.0.0","${DISTVERSION}",g' \
+		${WRKSRC}/${PORTNAME}/__init__.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
