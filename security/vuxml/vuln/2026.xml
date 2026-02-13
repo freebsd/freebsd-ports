@@ -1,3 +1,33 @@
+  <vuln vid="027c6c07-065b-11f1-baae-589cfc023192">
+    <topic>expat -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>expat</name>
+       <range><lt>2.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>expat team reports:</p>
+      <blockquote cite="https://github.com/libexpat/libexpat/blob/R_2_7_4/expat/Changes">
+       <p>Update contains 2 security fixes:</p>
+       <ul>
+       <li>CVE-2026-24515: NULL dereference in function XML_ExternalEntityParserCreate</li>
+       <li>CVE-2026-25210: missing check for integer overflow in function doContent</li>
+       </ul>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-24515</cvename>
+      <cvename>CVE-2026-25210</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-31</discovery>
+      <entry>2026-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3afc190-0821-11f1-a857-6cc21735f730">
     <topic>PostgreSQL -- Multiple vulnerabilities</topic>
     <affects>
