@@ -1,12 +1,8 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.0
-PORTREVISION=	8
+DISTVERSION=	0.41.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/mpv-player/mpv/commit/
-PATCHFILES=	26b29fba02a2782f68e2906f837d21201fc6f1b9.patch:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -132,7 +128,7 @@ RUBBERBAND_MESON_ENABLED=	rubberband
 
 SDL_USES=			sdl
 SDL_USE=			SDL=sdl2
-SDL_MESON_ENABLED=		sdl2
+SDL_MESON_ENABLED=		sdl2-audio sdl2-gamepad sdl2-video
 
 SIXEL_LIB_DEPENDS=		libsixel.so:graphics/libsixel
 SIXEL_MESON_ENABLED=		sixel
@@ -172,8 +168,8 @@ WAYLAND_MESON_ENABLED=		wayland
 WAYLAND_IMPLIES=		OPENGL
 
 X11_USES=			gnome xorg
-X11_USE=			XORG=x11,xext,xinerama,xorgproto,xpresent,xrandr,xscrnsaver,xv,xxf86vm
-X11_MESON_ENABLED=		x11
+X11_USE=			XORG=x11,xext,xfixes,xinerama,xorgproto,xpresent,xrandr,xscrnsaver,xv,xxf86vm
+X11_MESON_ENABLED=		x11 x11-clipboard
 
 YTDLP_RUN_DEPENDS=		yt-dlp:www/yt-dlp
 
@@ -189,9 +185,10 @@ LIB_DEPENDS+=		libva-wayland.so:multimedia/libva
 MESON_ARGS+=		-Dvaapi-wayland=disabled
 .endif
 
-post-patch-MANPAGES-on:
-	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|/usr/local|${PREFIX}|g'
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		${WRKSRC}/DOCS/man/mpv.rst ${WRKSRC}/DOCS/man/options.rst \
+		${WRKSRC}/etc/mpv.conf ${WRKSRC}/test/paths.c
 
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \

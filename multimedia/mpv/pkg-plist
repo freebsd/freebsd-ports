@@ -1,5 +1,4 @@
 bin/mpv
-%%ETCDIR%%/encoding-profiles.conf
 include/mpv/client.h
 include/mpv/render.h
 include/mpv/render_gl.h
@@ -19,6 +18,7 @@ share/icons/hicolor/64x64/apps/mpv.png
 share/icons/hicolor/scalable/apps/mpv.svg
 share/icons/hicolor/symbolic/apps/mpv-symbolic.svg
 %%PORTDOCS%%%%DOCSDIR%%/mpv.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/encoding-profiles.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/input.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplayer-input.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mpv.conf
