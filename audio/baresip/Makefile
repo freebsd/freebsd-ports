@@ -84,8 +84,8 @@ AVFORMAT_VARS=		_MODULES_LIST+=avformat
 CODEC2_LIB_DEPENDS=	libcodec2.so:audio/codec2
 CODEC2_VARS=		_MODULES_LIST+=codec2
 DBUS_USES=		gnome
-DBUS_VARS=		_MODULES_LIST+=ctrl_dbus \
-			USE_GNOME+=glib20
+DBUS_USE=		GNOME=glib20
+DBUS_VARS=		_MODULES_LIST+=ctrl_dbus
 EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_VARS=		_MODULES_LIST+=evdev
 G722L_LIB_DEPENDS=	libg722.so:audio/libg722
@@ -95,11 +95,11 @@ G722_VARS=		_MODULES_LIST+=g722
 G726_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 G726_VARS=		_MODULES_LIST+=g726
 GSTREAMER_USES=		gnome gstreamer:1
-GSTREAMER_VARS=		_MODULES_LIST+=gst \
-			USE_GNOME+=glib20
+GSTREAMER_USE=		GNOME=glib20
+GSTREAMER_VARS=		_MODULES_LIST+=gst
 GTK3_USES=		gnome
-GTK3_VARS=		_MODULES_LIST+=gtk \
-			USE_GNOME+=gtk30
+GTK3_USE=		GNOME=gtk30
+GTK3_VARS=		_MODULES_LIST+=gtk
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_VARS=		_MODULES_LIST+=jack
 MQTT_LIB_DEPENDS=	libmosquitto.so:net/mosquitto
@@ -114,10 +114,9 @@ PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_VARS=		_MODULES_LIST+=portaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	_MODULES_LIST+=pulse
-SDL_LIB_DEPENDS=	libglapi.so:graphics/mesa-libs
-SDL_USES=		sdl
-SDL_VARS=		_MODULES_LIST+=sdl \
-			USE_SDL=sdl2
+SDL_USES=		gl sdl
+SDL_USE=		GL=gbm SDL=sdl2
+SDL_VARS=		_MODULES_LIST+=sdl
 SNAPSHOT_LIB_DEPENDS=	libpng16.so:graphics/png
 SNAPSHOT_VARS=		_MODULES_LIST+=snapshot
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
@@ -134,8 +133,8 @@ VPX_VARS=		_MODULES_LIST+="vp8 vp9"
 WEBRTC_AEC_LIB_DEPENDS=	libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
 WEBRTC_AEC_VARS=	_MODULES_LIST+=webrtc_aec
 X11_USES=		xorg
-X11_VARS=		_MODULES_LIST+=x11 \
-			USE_XORG="ice sm x11 xext"
+X11_USE=		XORG=ice,sm,x11,xext
+X11_VARS=		_MODULES_LIST+=x11
 
 OPTIONS_GROUP_EXTRAMODULES=	AULOOP AUTOTEST EBUACIP INTERCOM KAOPTIONS \
 				PARCALL QUALIFY REDIRECT VIDLOOP
