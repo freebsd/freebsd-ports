@@ -1,5 +1,6 @@
 PORTNAME=	kio-fuse
 DISTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 

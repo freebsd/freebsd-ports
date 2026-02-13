@@ -1,5 +1,6 @@
 PORTNAME=	print-manager
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org

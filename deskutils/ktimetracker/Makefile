@@ -1,5 +1,6 @@
 PORTNAME=	ktimetracker
 DISTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/unstable/${PORTNAME}/
 
