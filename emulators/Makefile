@@ -36,7 +36,7 @@
     SUBDIR += fbneo
     SUBDIR += fbsd-duckstation
     SUBDIR += fceux
-    SUBDIR += firebird-emu
+    SUBDIR += firebird
     SUBDIR += flexemu
     SUBDIR += flycast
     SUBDIR += fmsx
