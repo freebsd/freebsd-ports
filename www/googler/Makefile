@@ -11,6 +11,9 @@ WWW=		https://github.com/jarun/googler
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository archived on 2022-03-05; use www/ddgr as alternative
+EXPIRATION_DATE=	2026-04-13
+
 USES=		python shebangfix
 USE_GITHUB=	yes
 
