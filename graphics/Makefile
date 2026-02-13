@@ -907,7 +907,6 @@
     SUBDIR += py-blockdiag
     SUBDIR += py-blockdiagcontrib-cisco
     SUBDIR += py-box2d-py
-    SUBDIR += py-cairo
     SUBDIR += py-cairocffi
     SUBDIR += py-cairosvg
     SUBDIR += py-cartopy
@@ -991,6 +990,7 @@
     SUBDIR += py-pointpats
     SUBDIR += py-projpicker
     SUBDIR += py-proplot
+    SUBDIR += py-pycairo
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot

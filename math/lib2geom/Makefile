@@ -12,13 +12,13 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING-LGPL-2.1
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING-MPL-1.1
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR} \
 		ragel:devel/ragel \
 		googletest>0:devel/googletest
 LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
 		libgsl.so:math/gsl \
 		libboost_thread.so:devel/boost-libs
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR}
 TEST_DEPENDS=	googletest>0:devel/googletest \
 		ragel:devel/ragel
 

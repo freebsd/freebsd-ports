@@ -11,7 +11,7 @@ WWW=		https://0xacab.org/jvoisin/mat2
 
 LICENSE=	LGPL3+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
 		gdk-pixbuf2>0:graphics/gdk-pixbuf2 \
 		librsvg2-rust>0:graphics/librsvg2-rust \

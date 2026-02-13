@@ -12,7 +12,7 @@ WWW=		https://github.com/jared-hughes/isosurfaces
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYNUMPY}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR} \
 		${PYNUMPY} \
 		xdg-open:devel/xdg-utils
 

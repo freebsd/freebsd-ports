@@ -149,8 +149,8 @@ RECONFIGURE_MAKE_ARGS_OFF=	reconfigure=no
 CPPBIND_MAKE_ARGS_OFF=		libgpsmm=no
 PYSERIAL_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyserial>=0:comms/py-pyserial@${PY_FLAVOR}
 PYSERIAL_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyserial>=0:comms/py-pyserial@${PY_FLAVOR}
-X11_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}
-X11_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}
+X11_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycairo>=0:graphics/py-pycairo@${PY_FLAVOR}
+X11_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycairo>=0:graphics/py-pycairo@${PY_FLAVOR}
 X11_USES=			gnome
 X11_USE=			gnome=gtk30 pygobject3
 X11_MAKE_ARGS_OFF=		xgps=no

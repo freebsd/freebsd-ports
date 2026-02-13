@@ -13,7 +13,7 @@ WWW=		https://pygobject.gnome.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.16:graphics/py-cairo@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=1.16:graphics/py-pycairo@${PY_FLAVOR}
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		gnome pkgconfig python
@@ -35,7 +35,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/include/pygobject-3.0/pygobject.h
 .else
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}meson-python>=0.12.1:devel/meson-python@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.16:graphics/py-cairo@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=1.16:graphics/py-pycairo@${PY_FLAVOR} \
 		${LOCALBASE}/libdata/pkgconfig/pygobject-3.0.pc:devel/pygobject-common
 USE_GNOME=	cairo glib20 introspection
 USE_PYTHON=	autoplist concurrent pep517

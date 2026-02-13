@@ -24,6 +24,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	CAIRO
 OPTIONS_DEFAULT=CAIRO
 
-CAIRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}
+CAIRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=0:graphics/py-pycairo@${PY_FLAVOR}
 
 .include <bsd.port.mk>

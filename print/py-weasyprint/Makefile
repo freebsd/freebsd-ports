@@ -13,9 +13,9 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cairo>=1.15.4:graphics/py-cairo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cairocffi>=0.9.0:graphics/py-cairocffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cairosvg>=2.4.0:graphics/py-cairosvg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycairo>=1.15.4:graphics/py-pycairo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycairocffi>=0.9.0:graphics/py-pycairocffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycairosvg>=2.4.0:graphics/py-pycairosvg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=0.6:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssselect2>=0.1:textproc/py-cssselect2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fonttools>=4.38:print/py-fonttools@${PY_FLAVOR} \

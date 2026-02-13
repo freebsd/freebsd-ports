@@ -17,7 +17,7 @@ LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libxdo.so:x11/xdotool
 RUN_DEPENDS=	${LOCALBASE}/lib/pam_gnome_keyring.so:security/gnome-keyring \
-		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xapp>0:x11/py-python-xapp@${PY_FLAVOR} \
 		${LOCALBASE}/libexec/unix-selfauth-helper:security/unix-selfauth-helper \
