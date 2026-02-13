@@ -26,13 +26,20 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.100 \
+		anyhow-1.0.101 \
 		arbitrary-1.4.2 \
 		arboard-3.6.1 \
 		arc-swap-1.8.0 \
 		arrayvec-0.7.6 \
 		ascii-1.1.0 \
 		ascii-canvas-3.0.0 \
+		askama-0.15.4 \
+		askama_derive-0.15.4 \
+		askama_macros-0.15.4 \
+		askama_parser-0.15.4 \
+		asn1-rs-0.7.1 \
+		asn1-rs-derive-0.6.0 \
+		asn1-rs-impl-0.2.0 \
 		assert-json-diff-2.0.2 \
 		assert_cmd-2.1.2 \
 		assert_matches-1.5.0 \
@@ -53,6 +60,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.0 \
+		aws-lc-rs-1.15.4 \
+		aws-lc-sys-0.37.0 \
 		axum-0.8.8 \
 		axum-core-0.5.6 \
 		backtrace-0.3.76 \
@@ -62,7 +71,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		basic-toml-0.1.10 \
 		bech32-0.9.1 \
 		beef-0.5.2 \
-		bindgen-0.72.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -71,6 +79,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		block-padding-0.3.3 \
 		block2-0.6.2 \
 		blocking-1.6.2 \
+		bm25-2.3.2 \
 		borsh-1.6.0 \
 		bstr-1.12.1 \
 		bumpalo-3.19.1 \
@@ -81,12 +90,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bytestring-1.5.0 \
 		bzip2-0.5.2 \
 		bzip2-sys-0.1.13+1.0.8 \
+		cached-0.56.0 \
+		cached_proc_macro-0.25.0 \
+		cached_proc_macro_types-0.1.1 \
 		cassowary-0.3.0 \
 		castaway-0.2.4 \
 		cbc-0.1.2 \
 		cc-1.2.55 \
 		cesu8-1.1.0 \
-		cexpr-0.6.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
@@ -96,7 +107,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		chrono-0.4.43 \
 		chunked_transfer-1.5.0 \
 		cipher-0.4.4 \
-		clang-sys-1.8.1 \
 		clap-4.5.56 \
 		clap_builder-4.5.56 \
 		clap_complete-4.5.65 \
@@ -107,6 +117,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cmp_any-0.8.1 \
 		color-eyre-0.6.5 \
 		color-spantrace-0.3.0 \
+		color_quant-1.1.0 \
 		colorchoice-1.0.4 \
 		combine-4.6.7 \
 		compact_str-0.8.1 \
@@ -143,10 +154,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ctor-proc-macro-0.0.7 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
+		darling-0.20.11 \
 		darling-0.21.3 \
 		darling-0.23.0 \
+		darling_core-0.20.11 \
 		darling_core-0.21.3 \
 		darling_core-0.23.0 \
+		darling_macro-0.20.11 \
 		darling_macro-0.21.3 \
 		darling_macro-0.23.0 \
 		data-encoding-2.10.0 \
@@ -158,6 +172,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		debugserver-types-0.5.0 \
 		deflate64-0.1.10 \
 		der-0.7.10 \
+		der-parser-10.0.0 \
 		deranged-0.5.5 \
 		derivative-2.2.0 \
 		derive_arbitrary-1.4.2 \
@@ -165,6 +180,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		derive_more-2.1.1 \
 		derive_more-impl-1.0.0 \
 		derive_more-impl-2.1.1 \
+		deunicode-1.6.2 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		diffy-0.4.2 \
@@ -232,14 +248,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		foreign-types-0.3.2 \
-		foreign-types-0.5.0 \
-		foreign-types-macros-0.2.3 \
 		foreign-types-shared-0.1.1 \
-		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
-		fslock-0.2.1 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
@@ -258,8 +270,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		getopts-0.2.24 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
+		gif-0.14.1 \
 		gimli-0.32.3 \
-		glob-0.3.3 \
 		globset-0.4.18 \
 		h2-0.4.13 \
 		half-2.7.1 \
@@ -268,6 +280,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashlink-0.10.0 \
+		headers-0.4.1 \
+		headers-core-0.3.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
@@ -311,6 +325,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna_adapter-1.2.1 \
 		ignore-0.4.25 \
 		image-0.25.9 \
+		image-webp-0.2.4 \
 		impl-more-0.1.9 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
@@ -321,7 +336,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		inout-0.1.4 \
-		insta-1.46.2 \
+		insta-1.46.3 \
 		instability-0.3.11 \
 		intl-memoizer-0.5.3 \
 		intl_pluralrules-7.0.2 \
@@ -353,10 +368,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lazy_static-1.5.0 \
 		libc-0.2.180 \
 		libdbus-sys-0.2.7 \
-		libloading-0.8.9 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
 		libsqlite3-sys-0.30.1 \
+		libz-sys-1.1.23 \
 		linux-keyutils-0.2.4 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
@@ -431,6 +446,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		objc2-ui-kit-0.3.2 \
 		objc2-user-notifications-0.3.2 \
 		object-0.37.3 \
+		oid-registry-0.8.1 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
@@ -461,6 +477,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		path-dedot-3.1.1 \
 		pathdiff-0.2.3 \
 		pbkdf2-0.12.2 \
+		pem-3.0.6 \
 		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.2 \
 		petgraph-0.6.5 \
@@ -510,9 +527,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		r-efi-5.3.0 \
 		radix_trie-0.2.1 \
 		radix_trie-0.3.0 \
-		rama-boring-0.5.10 \
-		rama-boring-sys-0.5.10 \
-		rama-boring-tokio-0.5.10 \
 		rama-core-0.3.0-alpha.4 \
 		rama-dns-0.3.0-alpha.4 \
 		rama-error-0.3.0-alpha.4 \
@@ -525,7 +539,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rama-net-0.3.0-alpha.4 \
 		rama-socks5-0.3.0-alpha.4 \
 		rama-tcp-0.3.0-alpha.4 \
-		rama-tls-boring-0.3.0-alpha.4 \
+		rama-tls-rustls-0.3.0-alpha.4 \
 		rama-udp-0.3.0-alpha.4 \
 		rama-unix-0.3.0-alpha.4 \
 		rama-utils-0.3.0-alpha.4 \
@@ -539,13 +553,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ratatui-macros-0.6.0 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
+		rcgen-0.14.7 \
 		redox_syscall-0.5.18 \
 		redox_syscall-0.7.0 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.2 \
+		regex-1.12.3 \
 		regex-automata-0.4.13 \
 		regex-lite-0.1.8 \
 		regex-syntax-0.6.29 \
@@ -553,16 +568,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		reqwest-0.12.28 \
 		resolv-conf-0.7.6 \
 		ring-0.17.14 \
-		rmcp-0.12.0 \
-		rmcp-macros-0.12.0 \
+		rmcp-0.15.0 \
+		rmcp-macros-0.15.0 \
 		rsa-0.9.10 \
 		rust-embed-8.11.0 \
 		rust-embed-impl-8.11.0 \
 		rust-embed-utils-8.11.0 \
+		rust-stemmers-1.2.0 \
 		rustc-demangle-0.1.27 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
+		rusticata-macros-4.1.0 \
 		rustix-0.38.44 \
 		rustix-1.1.3 \
 		rustls-0.23.36 \
@@ -659,6 +676,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		starlark_map-0.13.0 \
 		starlark_syntax-0.13.0 \
 		static_assertions-1.1.0 \
+		stop-words-0.9.0 \
 		streaming-iterator-0.1.9 \
 		string_cache-0.8.9 \
 		stringprep-0.1.5 \
@@ -697,9 +715,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
 		tiff-0.10.3 \
-		time-0.3.46 \
+		time-0.3.47 \
 		time-core-0.1.8 \
-		time-macros-0.2.26 \
+		time-macros-0.2.27 \
 		tiny-keccak-2.0.2 \
 		tiny_http-0.12.0 \
 		tinystr-0.8.2 \
@@ -764,6 +782,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-xid-0.2.6 \
 		universal-hash-0.5.1 \
 		unsafe-libyaml-0.2.11 \
+		untrusted-0.7.1 \
 		untrusted-0.9.0 \
 		ureq-3.1.4 \
 		ureq-proto-0.5.3 \
@@ -883,9 +902,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
 		x25519-dalek-2.0.1 \
+		x509-parser-0.18.1 \
 		xdg-home-1.3.0 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
+		yasna-0.5.2 \
 		yoke-0.8.1 \
 		yoke-derive-0.8.1 \
 		zbus-4.4.0 \
@@ -916,6 +937,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ratatui@git+https://github.com/nornagon/ratatui?branch=nornagon-v0.29.0-patch\#9b2ad1298408c45918ee9f8241a6f95498cdbed2 \
 		runfiles@git+https://github.com/dzbarsky/rules_rust?rev=b56cbaa8465e74127f1ea216f813cd377295ad81\#b56cbaa8465e74127f1ea216f813cd377295ad81 \
 		nucleo,nucleo-matcher@git+https://github.com/helix-editor/nucleo.git?rev=4253de9faabb4e5c6d81d946a5e35a90f87347ee\#4253de9faabb4e5c6d81d946a5e35a90f87347ee \
-		tokio-tungstenite@git+https://github.com/JakkuSakura/tokio-tungstenite?rev=2ae536b0de793f3ddf31fc2f22d445bf1ef2023d\#2ae536b0de793f3ddf31fc2f22d445bf1ef2023d \
-		tungstenite@git+https://github.com/JakkuSakura/tungstenite-rs?rev=f514de8644821113e5d18a027d6d28a5c8cc0a6e\#f514de8644821113e5d18a027d6d28a5c8cc0a6e \
-		crossterm@git+https://github.com/nornagon/crossterm?branch=nornagon%2Fcolor-query\#87db8bfa6dc99427fd3b071681b07fc31c6ce995
+		crossterm@git+https://github.com/nornagon/crossterm?branch=nornagon%2Fcolor-query\#87db8bfa6dc99427fd3b071681b07fc31c6ce995 \
+		tungstenite@git+https://github.com/openai-oss-forks/tungstenite-rs?rev=9200079d3b54a1ff51072e24d81fd354f085156f\#9200079d3b54a1ff51072e24d81fd354f085156f \
+		tokio-tungstenite@git+https://github.com/openai-oss-forks/tokio-tungstenite?rev=132f5b39c862e3a970f731d709608b3e6276d5f6\#132f5b39c862e3a970f731d709608b3e6276d5f6

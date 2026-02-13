@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.98.0
+DISTVERSION=	0.101.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -57,15 +57,13 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/zsh/site-functions/_${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ssh://git@github.com/JakkuSakura/tungstenite-rs.git|https://github.com/JakkuSakura/tungstenite-rs|' \
-		${WRKSRC_crate_tokio-tungstenite}/Cargo.toml
 	@${REINPLACE_CMD} -e 's|0\.0\.0|${DISTVERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/user_agent.rs
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
+		${BUILD_WRKSRC}/core/src/command_canonicalization.rs \
 		${BUILD_WRKSRC}/core/src/environment_context.rs \
 		${BUILD_WRKSRC}/core/src/exec.rs \
-		${BUILD_WRKSRC}/core/src/parse_command.rs \
 		${BUILD_WRKSRC}/core/src/shell.rs \
 		${BUILD_WRKSRC}/core/src/shell_snapshot.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell.rs \
@@ -73,11 +71,13 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
+		${BUILD_WRKSRC}/shell-command/src/parse_command.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/codex_message_processor_flow.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start.rs \
-		${BUILD_WRKSRC}/core/src/command_safety/is_safe_command.rs \
+		${BUILD_WRKSRC}/core/src/command_canonicalization.rs \
+		${BUILD_WRKSRC}/core/src/exec_policy.rs \
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/seatbelt.rs \
 		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
@@ -85,6 +85,8 @@ post-patch:
 		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
 		${BUILD_WRKSRC}/execpolicy/tests/basic.rs \
 		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs \
+		${BUILD_WRKSRC}/shell-command/src/bash.rs \
+		${BUILD_WRKSRC}/shell-command/src/command_safety/is_safe_command.rs \
 		${BUILD_WRKSRC}/utils/pty/src/tests.rs
 
 post-build-COMPLETIONS-on:
