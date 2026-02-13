@@ -1,5 +1,5 @@
 PORTNAME=	mariadb
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.8
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -39,7 +39,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib/mariadb
 
 SSL_CMAKE_ON=	-DWITH_OPENSSL=on
 
-PLIST_FILES=	include/mariadb/mariadb/sqlmariadb.h \
+PLIST_FILES=	include/mariadb/sqlmariadb.h \
 		lib/mariadb/libmaodbc.so \
 		libdata/pkgconfig/libmaodbc.pc
 
