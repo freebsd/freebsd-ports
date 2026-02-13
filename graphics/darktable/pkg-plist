@@ -24,6 +24,7 @@ lib/darktable/plugins/imageio/storage/libemail.so
 lib/darktable/plugins/imageio/storage/libgallery.so
 lib/darktable/plugins/imageio/storage/liblatex.so
 lib/darktable/plugins/imageio/storage/libpiwigo.so
+lib/darktable/plugins/libagx.so
 lib/darktable/plugins/libashift.so
 lib/darktable/plugins/libatrous.so
 lib/darktable/plugins/libbasecurve.so
@@ -189,6 +190,7 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/darktable.bash
 %%DATADIR%%/darktablerc
 %%DATADIR%%/gdb_commands
+%%NO_OPENCL%%%%DATADIR%%/kernels/agx.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/atrous.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/basecurve.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/basic.cl
@@ -199,6 +201,7 @@ share/applications/org.darktable.darktable.desktop
 %%NO_OPENCL%%%%DATADIR%%/kernels/blurs.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/bspline.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/channelmixer.cl
+%%NO_OPENCL%%%%DATADIR%%/kernels/capture.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/color_conversion.h
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorequal.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorreconstruction.cl
@@ -377,6 +380,8 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/pswp/photoswipe.min.js
 %%DATADIR%%/rawspeed/cameras.xml
 %%DATADIR%%/rawspeed/showcameras.xsl
+%%DATADIR%%/shortcutsrc
+%%DATADIR%%/shortcutsrc.de
 %%DATADIR%%/style/bullet.gif
 %%DATADIR%%/style/close.gif
 %%DATADIR%%/style/closelabel.gif
@@ -533,7 +538,7 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/styles/darktable_Nikon_1 J2.dtstyle
 %%DATADIR%%/styles/darktable_Nikon_1 J3.dtstyle
 %%DATADIR%%/styles/darktable_Nikon_1 J4.dtstyle
-%%DATADIR%%/styles/darktable_Nikon_1 JS.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 J5.dtstyle
 %%DATADIR%%/styles/darktable_Nikon_1 S1.dtstyle
 %%DATADIR%%/styles/darktable_Nikon_1 V1.dtstyle
 %%DATADIR%%/styles/darktable_Nikon_1 V2.dtstyle
@@ -949,8 +954,6 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/wb_presets.json
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS.md
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
 share/icons/hicolor/24x24/apps/darktable.png
@@ -974,10 +977,11 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/darktable.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/darktable.mo
