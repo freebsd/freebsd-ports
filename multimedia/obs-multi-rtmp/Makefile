@@ -21,6 +21,10 @@ USE_QT=		base
 CMAKE_ON=	ENABLE_QT
 CMAKE_OFF=	CMAKE_COMPILE_WARNING_AS_ERROR
 
+post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/CMakeLists.txt
+
 do-install:
 	${MKDIR} \
 		${STAGEDIR}${PREFIX}/lib/obs-plugins \
