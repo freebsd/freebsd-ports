@@ -1,6 +1,5 @@
 PORTNAME=	step
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

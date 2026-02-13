@@ -1,6 +1,5 @@
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

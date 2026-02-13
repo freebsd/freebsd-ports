@@ -114,6 +114,8 @@ share/locale/ga/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ga/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/ga/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/ga/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/ga/LC_MESSAGES/makefileactions.mo
+share/locale/ga/LC_MESSAGES/mountisoaction.mo
 share/locale/gl/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewhgplugin.mo

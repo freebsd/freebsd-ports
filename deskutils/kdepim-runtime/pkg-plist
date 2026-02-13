@@ -591,6 +591,8 @@ share/locale/ga/LC_MESSAGES/akonadi-filestore.mo
 share/locale/ga/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/ga/LC_MESSAGES/akonadi_etesync_resource.mo
+share/locale/ga/LC_MESSAGES/akonadi_ews_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_google_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_icaldir_resource.mo
@@ -598,6 +600,7 @@ share/locale/ga/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/ga/LC_MESSAGES/akonadi_mbox_resource.mo
+share/locale/ga/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/ga/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ga/LC_MESSAGES/akonadi_openxchange_resource.mo
@@ -605,7 +608,9 @@ share/locale/ga/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/ga/LC_MESSAGES/gid-migrator.mo
 share/locale/ga/LC_MESSAGES/kio_akonadi.mo
+share/locale/ga/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/gl/LC_MESSAGES/akonadi-filestore.mo
 share/locale/gl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_contacts_resource.mo

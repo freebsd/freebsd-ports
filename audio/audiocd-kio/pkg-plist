@@ -141,7 +141,9 @@ share/locale/fr/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/fr/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/fr/LC_MESSAGES/kcmaudiocd.mo
 share/locale/fr/LC_MESSAGES/kio_audiocd.mo
+share/locale/ga/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/ga/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/ga/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/ga/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ga/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ga/LC_MESSAGES/kio_audiocd.mo

@@ -6012,6 +6012,9 @@ share/locale/ga/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/ga/LC_MESSAGES/calligra-dockers.mo
 share/locale/ga/LC_MESSAGES/calligra-opener.mo
 share/locale/ga/LC_MESSAGES/calligra.mo
+share/locale/ga/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/ga/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/ga/LC_MESSAGES/calligra_semanticitem_location.mo
 share/locale/ga/LC_MESSAGES/calligra_shape_artistictext.mo
 share/locale/ga/LC_MESSAGES/calligra_shape_chart.mo
 share/locale/ga/LC_MESSAGES/calligra_shape_comment.mo
@@ -6026,12 +6029,14 @@ share/locale/ga/LC_MESSAGES/calligra_shape_text.mo
 share/locale/ga/LC_MESSAGES/calligra_shape_threed.mo
 share/locale/ga/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/ga/LC_MESSAGES/calligra_shape_video.mo
+share/locale/ga/LC_MESSAGES/calligra_shape_webshape.mo
 share/locale/ga/LC_MESSAGES/calligra_textediting_autocorrect.mo
 share/locale/ga/LC_MESSAGES/calligra_textediting_changecase.mo
 share/locale/ga/LC_MESSAGES/calligra_textediting_spellcheck.mo
 share/locale/ga/LC_MESSAGES/calligra_textediting_thesaurus.mo
 share/locale/ga/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/ga/LC_MESSAGES/calligrafilters.mo
+share/locale/ga/LC_MESSAGES/calligralauncher.mo
 share/locale/ga/LC_MESSAGES/calligrasheets.mo
 share/locale/ga/LC_MESSAGES/calligrasheets_calendar.mo
 share/locale/ga/LC_MESSAGES/calligrasheets_solver.mo
@@ -6041,6 +6046,7 @@ share/locale/ga/LC_MESSAGES/karbon.mo
 share/locale/ga/LC_MESSAGES/kocolorspaces.mo
 share/locale/ga/LC_MESSAGES/koconverter.mo
 share/locale/ga/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/ga/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/gl/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/gl/LC_MESSAGES/KarbonTools.mo
 share/locale/gl/LC_MESSAGES/braindump.mo

@@ -403,10 +403,12 @@ share/locale/cs/LC_MESSAGES/kgetplugin.mo
 share/locale/cs/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/cs/LC_MESSAGES/khtmltts.mo
 share/locale/cs/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/cs/LC_MESSAGES/konqsidebar.mo
 share/locale/cs/LC_MESSAGES/konqueror.mo
 share/locale/cs/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/cs/LC_MESSAGES/libkonq.mo
 share/locale/cs/LC_MESSAGES/searchbarplugin.mo
+share/locale/cs/LC_MESSAGES/temporarysavedir.mo
 share/locale/cs/LC_MESSAGES/uachangerplugin.mo
 share/locale/cs/LC_MESSAGES/webarchiver.mo
 share/locale/cs/LC_MESSAGES/webenginepart.mo
@@ -724,6 +726,7 @@ share/locale/ga/LC_MESSAGES/konqueror.mo
 share/locale/ga/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ga/LC_MESSAGES/libkonq.mo
 share/locale/ga/LC_MESSAGES/searchbarplugin.mo
+share/locale/ga/LC_MESSAGES/temporarysavedir.mo
 share/locale/ga/LC_MESSAGES/uachangerplugin.mo
 share/locale/ga/LC_MESSAGES/webarchiver.mo
 share/locale/ga/LC_MESSAGES/webenginepart.mo

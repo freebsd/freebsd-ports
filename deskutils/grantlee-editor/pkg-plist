@@ -72,6 +72,10 @@ share/locale/fr/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/fr/LC_MESSAGES/contactthemeeditor.mo
 share/locale/fr/LC_MESSAGES/headerthemeeditor.mo
 share/locale/fr/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/ga/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/ga/LC_MESSAGES/contactthemeeditor.mo
+share/locale/ga/LC_MESSAGES/headerthemeeditor.mo
+share/locale/ga/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/gl/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/gl/LC_MESSAGES/contactthemeeditor.mo
 share/locale/gl/LC_MESSAGES/headerthemeeditor.mo
