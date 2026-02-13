@@ -17,6 +17,4 @@ USE_XORG=	x11 xcb
 
 CMAKE_OFF=	BUILD_PYTHON_BINDINGS
 
-KDE_FRAMEWORKS_VERSION=	6.22.1
-
 .include <bsd.port.mk>

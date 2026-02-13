@@ -34,6 +34,7 @@ lib/cmake/KF6QQC2DesktopStyle/KF6QQC2DesktopStyleConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/desktop/RoundButton.qml
 %%QT_QMLDIR%%/org/kde/desktop/ScrollBar.qml
 %%QT_QMLDIR%%/org/kde/desktop/ScrollView.qml
+%%QT_QMLDIR%%/org/kde/desktop/SearchField.qml
 %%QT_QMLDIR%%/org/kde/desktop/Slider.qml
 %%QT_QMLDIR%%/org/kde/desktop/SpinBox.qml
 %%QT_QMLDIR%%/org/kde/desktop/SplitView.qml

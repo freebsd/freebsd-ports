@@ -11674,6 +11674,8 @@ share/icons/breeze-dark/actions/32/games-config-custom-symbolic.svg
 share/icons/breeze-dark/actions/32/games-config-custom.svg
 share/icons/breeze-dark/actions/32/games-config-options-symbolic.svg
 share/icons/breeze-dark/actions/32/games-config-options.svg
+share/icons/breeze-dark/actions/32/globe-symbolic.svg
+share/icons/breeze-dark/actions/32/globe.svg
 share/icons/breeze-dark/actions/32/gnumeric-format-halign-distributed-symbolic.svg
 share/icons/breeze-dark/actions/32/gnumeric-format-halign-distributed.svg
 share/icons/breeze-dark/actions/32/gnumeric-format-valign-bottom-symbolic.svg
@@ -17348,6 +17350,7 @@ share/icons/breeze-dark/preferences/22/preferences-system-network-nis.svg
 share/icons/breeze-dark/preferences/22/preferences-system-network-proxy.svg
 share/icons/breeze-dark/preferences/22/preferences-system-network-share-windows.svg
 share/icons/breeze-dark/preferences/22/preferences-system-network-sharing.svg
+share/icons/breeze-dark/preferences/22/preferences-system-network-symbolic.svg
 share/icons/breeze-dark/preferences/22/preferences-system-network-vpn.svg
 share/icons/breeze-dark/preferences/22/preferences-system-network-wakeonlan.svg
 share/icons/breeze-dark/preferences/22/preferences-system-power-management.svg
@@ -17450,6 +17453,7 @@ share/icons/breeze-dark/preferences/24/preferences-system-network-nis.svg
 share/icons/breeze-dark/preferences/24/preferences-system-network-proxy.svg
 share/icons/breeze-dark/preferences/24/preferences-system-network-share-windows.svg
 share/icons/breeze-dark/preferences/24/preferences-system-network-sharing.svg
+share/icons/breeze-dark/preferences/24/preferences-system-network-symbolic.svg
 share/icons/breeze-dark/preferences/24/preferences-system-network-vpn.svg
 share/icons/breeze-dark/preferences/24/preferences-system-network-wakeonlan.svg
 share/icons/breeze-dark/preferences/24/preferences-system-power-management.svg
@@ -18862,6 +18866,8 @@ share/icons/breeze-dark/status/22/transmission-tray-icon-symbolic.svg
 share/icons/breeze-dark/status/22/transmission-tray-icon.svg
 share/icons/breeze-dark/status/22/uninstall-symbolic.svg
 share/icons/breeze-dark/status/22/uninstall.svg
+share/icons/breeze-dark/status/22/update-busy-symbolic.svg
+share/icons/breeze-dark/status/22/update-busy.svg
 share/icons/breeze-dark/status/22/update-high-symbolic.svg
 share/icons/breeze-dark/status/22/update-high.svg
 share/icons/breeze-dark/status/22/update-low-symbolic.svg
@@ -19688,6 +19694,8 @@ share/icons/breeze-dark/status/24/transmission-tray-icon-symbolic.svg
 share/icons/breeze-dark/status/24/transmission-tray-icon.svg
 share/icons/breeze-dark/status/24/uninstall-symbolic.svg
 share/icons/breeze-dark/status/24/uninstall.svg
+share/icons/breeze-dark/status/24/update-busy-symbolic.svg
+share/icons/breeze-dark/status/24/update-busy.svg
 share/icons/breeze-dark/status/24/update-high-symbolic.svg
 share/icons/breeze-dark/status/24/update-high.svg
 share/icons/breeze-dark/status/24/update-low-symbolic.svg
@@ -31568,6 +31576,8 @@ share/icons/breeze/actions/32/games-config-custom-symbolic.svg
 share/icons/breeze/actions/32/games-config-custom.svg
 share/icons/breeze/actions/32/games-config-options-symbolic.svg
 share/icons/breeze/actions/32/games-config-options.svg
+share/icons/breeze/actions/32/globe-symbolic.svg
+share/icons/breeze/actions/32/globe.svg
 share/icons/breeze/actions/32/gnumeric-format-halign-distributed-symbolic.svg
 share/icons/breeze/actions/32/gnumeric-format-halign-distributed.svg
 share/icons/breeze/actions/32/gnumeric-format-valign-bottom-symbolic.svg
@@ -37243,6 +37253,7 @@ share/icons/breeze/preferences/22/preferences-system-network-nis.svg
 share/icons/breeze/preferences/22/preferences-system-network-proxy.svg
 share/icons/breeze/preferences/22/preferences-system-network-share-windows.svg
 share/icons/breeze/preferences/22/preferences-system-network-sharing.svg
+share/icons/breeze/preferences/22/preferences-system-network-symbolic.svg
 share/icons/breeze/preferences/22/preferences-system-network-vpn.svg
 share/icons/breeze/preferences/22/preferences-system-network-wakeonlan.svg
 share/icons/breeze/preferences/22/preferences-system-power-management.svg
@@ -37345,6 +37356,7 @@ share/icons/breeze/preferences/24/preferences-system-network-nis.svg
 share/icons/breeze/preferences/24/preferences-system-network-proxy.svg
 share/icons/breeze/preferences/24/preferences-system-network-share-windows.svg
 share/icons/breeze/preferences/24/preferences-system-network-sharing.svg
+share/icons/breeze/preferences/24/preferences-system-network-symbolic.svg
 share/icons/breeze/preferences/24/preferences-system-network-vpn.svg
 share/icons/breeze/preferences/24/preferences-system-network-wakeonlan.svg
 share/icons/breeze/preferences/24/preferences-system-power-management.svg
@@ -38757,6 +38769,8 @@ share/icons/breeze/status/22/transmission-tray-icon-symbolic.svg
 share/icons/breeze/status/22/transmission-tray-icon.svg
 share/icons/breeze/status/22/uninstall-symbolic.svg
 share/icons/breeze/status/22/uninstall.svg
+share/icons/breeze/status/22/update-busy-symbolic.svg
+share/icons/breeze/status/22/update-busy.svg
 share/icons/breeze/status/22/update-high-symbolic.svg
 share/icons/breeze/status/22/update-high.svg
 share/icons/breeze/status/22/update-low-symbolic.svg
@@ -39583,6 +39597,8 @@ share/icons/breeze/status/24/transmission-tray-icon-symbolic.svg
 share/icons/breeze/status/24/transmission-tray-icon.svg
 share/icons/breeze/status/24/uninstall-symbolic.svg
 share/icons/breeze/status/24/uninstall.svg
+share/icons/breeze/status/24/update-busy-symbolic.svg
+share/icons/breeze/status/24/update-busy.svg
 share/icons/breeze/status/24/update-high-symbolic.svg
 share/icons/breeze/status/24/update-high.svg
 share/icons/breeze/status/24/update-low-symbolic.svg
