@@ -480,7 +480,7 @@
     <affects>
       <package><name>python310</name> <range><ge>0</ge></range></package>
       <package><name>python311</name> <range><lt>3.11.14_2</lt></range></package>
-      <package><name>python312</name> <range><ge>0</ge></range></package>
+      <package><name>python312</name> <range><lt>3.12.12_4</lt></range></package>
       <package><name>python313</name> <range><lt>3.13.12</lt></range></package>
       <package><name>python313t</name> <range><lt>3.13.12</lt></range></package>
       <package><name>python314</name> <range><lt>3.14.3</lt></range></package>
@@ -507,6 +507,7 @@
     <dates>
       <discovery>2026-01-16</discovery>
       <entry>2026-02-04</entry>
+      <modified>2026-02-13</modified>
     </dates>
   </vuln>
 
