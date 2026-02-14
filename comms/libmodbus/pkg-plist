@@ -75,5 +75,5 @@ libdata/pkgconfig/libmodbus.pc
 %%MANPAGES%%share/man/man3/modbus_write_registers.3.gz
 %%MANPAGES%%share/man/man7/libmodbus.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
