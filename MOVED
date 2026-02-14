@@ -5149,3 +5149,4 @@ databases/postgresql13-server||2026-02-12|Has expired: PostgreSQL-13 is end-of-l
 graphics/py-cairo|graphics/py-pycairo|2026-02-12|Use correct Python package name
 java/openjdk19||2026-02-14|Has expired: No longer supported by upstream
 emulators/firebird-emu|emulators/firebird|2026-02-14|Align with upstream project name
+security/openssl-quictls|security/openssl33-quictls|2026-02-14|Has expired: Upstream project has been archived, use security/openssl33-quictls
