@@ -1296,6 +1296,7 @@
 %%WWWDIR%%/include/classes/user/CProfile.php
 %%WWWDIR%%/include/classes/user/CProvisioning.php
 %%WWWDIR%%/include/classes/user/CWebUser.php
+%%WWWDIR%%/include/classes/validators/CAbsoluteTimeValidator.php
 %%WWWDIR%%/include/classes/validators/CActionCondValidator.php
 %%WWWDIR%%/include/classes/validators/CApiInputValidator.php
 %%WWWDIR%%/include/classes/validators/CCalcFormulaValidator.php
