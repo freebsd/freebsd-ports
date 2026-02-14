@@ -18,6 +18,7 @@ share/dbus-1/services/org.gnome.enter_tex.service
 %%DOCS%%share/gtk-doc/html/enter-tex/GtexBuildToolsPersonal.html
 %%DOCS%%share/gtk-doc/html/enter-tex/GtexBuildView.html
 %%DOCS%%share/gtk-doc/html/enter-tex/GtexFactory.html
+%%DOCS%%share/gtk-doc/html/enter-tex/GtexFindBar.html
 %%DOCS%%share/gtk-doc/html/enter-tex/GtexPostProcessor.html
 %%DOCS%%share/gtk-doc/html/enter-tex/GtexPostProcessorAllOutput.html
 %%DOCS%%share/gtk-doc/html/enter-tex/GtexPostProcessorLatex.html
@@ -37,6 +38,7 @@ share/dbus-1/services/org.gnome.enter_tex.service
 %%DOCS%%share/gtk-doc/html/enter-tex/ch03.html
 %%DOCS%%share/gtk-doc/html/enter-tex/ch04.html
 %%DOCS%%share/gtk-doc/html/enter-tex/ch05.html
+%%DOCS%%share/gtk-doc/html/enter-tex/ch06.html
 %%DOCS%%share/gtk-doc/html/enter-tex/enter-tex-Gtex-Initialization-and-Finalization.html
 %%DOCS%%share/gtk-doc/html/enter-tex/enter-tex-GtexBottomPanel.html
 %%DOCS%%share/gtk-doc/html/enter-tex/enter-tex-GtexBuffer.html

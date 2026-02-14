@@ -1,6 +1,5 @@
 PORTNAME=	enter-tex
-DISTVERSION=	3.48.0
-PORTREVISION=	1
+DISTVERSION=	3.49.0
 CATEGORIES=	editors
 DIST_SUBDIR=	gnome
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgedit-gtksourceview-300.so:x11-toolkits/libgedit-gtksourceview \
 		libgspell-1.so:textproc/gspell
 
-USES=		compiler:c11 desktop-file-utils gettext gnome meson \
+USES=		compiler:c11 desktop-file-utils gettext-tools gnome meson \
 		pkgconfig tar:bz2 tex vala:build
 USE_GNOME=	dconf glib20 gtk30 introspection:build
 USE_TEX=	formats
