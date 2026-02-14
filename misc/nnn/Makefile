@@ -1,6 +1,6 @@
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1
+DISTVERSION=	5.2
 CATEGORIES=	misc shells
 MASTER_SITES=	https://github.com/jarun/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 
@@ -44,13 +44,13 @@ MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
 XDG_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		  ${STAGEDIR}${PREFIX}/share/fish/completions \
+		  ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/bash/nnn-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
 	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/fish/nnn.fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/zsh/_nnn \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
@@ -59,7 +59,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts
 	cd ${WRKSRC}/misc && ${COPYTREE_SHARE} "natool quitcd" \
 		${STAGEDIR}${EXAMPLESDIR}/scripts
 	cd ${WRKSRC} && ${COPYTREE_SHARE} plugins ${STAGEDIR}${EXAMPLESDIR}
