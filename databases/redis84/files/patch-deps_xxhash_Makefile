@@ -1,0 +1,16 @@
+--- deps/xxhash/Makefile.orig	2025-12-02 07:19:06 UTC
++++ deps/xxhash/Makefile
+@@ -186,11 +186,12 @@ clean:
+	$(RM) xxhsum.wasm xxhsum.js xxhsum.html
+	$(RM) xxh32sum$(EXT) xxh64sum$(EXT) xxh128sum$(EXT) xxh3sum$(EXT)
+	$(RM) fuzzer
++ifneq	($(wildcard tests/*),)
+	$(MAKE) -C tests clean
+	$(MAKE) -C tests/bench clean
+	$(MAKE) -C tests/collisions clean
+	@echo cleaning completed
+-
++endif
+
+ # =================================================
+ # tests
