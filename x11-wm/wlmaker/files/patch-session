@@ -9,3 +9,30 @@ Avoid Debian specifics when starting from a GUI login manager
 -Exec=@CMAKE_INSTALL_PREFIX@/bin/wlmaker.sh
 +Exec=wlmaker
  Type=Application
+--- etc/Config.plist.orig	2026-02-14 13:57:37 UTC
++++ etc/Config.plist
+@@ -5,16 +5,16 @@
+ {
+     Keyboard = {
+         // Use system-wide configuration. See keyboard(5).
+-        XkbConfigurationFile = "/etc/default/keyboard";
++        // XkbConfigurationFile = "/etc/default/keyboard";
+ 
+         // Alternatively: Specify the keyboard properties directly.
+-        // XkbRMLVO = {
+-        //     Rules = "evdev";
+-        //     Model = "pc105";
+-        //     Layout = "us";
+-        //     Variant = "intl";
+-        //     Options = "";
+-        // };
++        XkbRMLVO = {
++            Rules = "evdev";
++            Model = "pc105";
++            Layout = "us";
++            Variant = "intl";
++            Options = "";
++        };
+ 
+         Repeat = {
+             // Delay before initiating repeats, in milliseconds.
