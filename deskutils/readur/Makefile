@@ -4,6 +4,8 @@ DISTVERSION=	2.6.3
 PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/readur
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX} \
 		swagger-ui-${SWAGGER_TAG}.zip
 

@@ -5,6 +5,8 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/filebrowser-quantum
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL}.frontend${EXTRACT_SUFX} \
 		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL}.vendor${EXTRACT_SUFX}
 

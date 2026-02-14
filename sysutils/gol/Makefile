@@ -4,6 +4,8 @@ DISTVERSION=	1.0.35
 PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/gol
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.vendor${EXTRACT_SUFX}
 
 MAINTAINER=	dtxdf@FreeBSD.org

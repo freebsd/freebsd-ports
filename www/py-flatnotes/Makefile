@@ -4,6 +4,8 @@ DISTVERSION=	5.5.4
 CATEGORIES=	www python
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/flatnotes
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org

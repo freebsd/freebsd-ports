@@ -4,6 +4,8 @@ DISTVERSION=	0.22.3
 PORTREVISION=	3
 CATEGORIES=	finance
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/homebox
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}
 
 MAINTAINER=	dtxdf@FreeBSD.org

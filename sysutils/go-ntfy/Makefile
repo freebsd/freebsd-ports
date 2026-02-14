@@ -4,6 +4,8 @@ DISTVERSION=	2.17.0
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 PKGNAMEPREFIX=	go-
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/ntfy
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org

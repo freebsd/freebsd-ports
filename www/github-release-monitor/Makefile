@@ -2,6 +2,8 @@ PORTNAME=	github-release-monitor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
 CATEGORIES=	www
+# For instructions on how to create assets:
+#   https://github.com/DtxdF/port-assets-makejails/tree/main/github-release-monitor
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 
 MAINTAINER=	dtxdf@FreeBSD.org
