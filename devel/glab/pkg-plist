@@ -159,6 +159,10 @@
 %%MANPAGES%%share/man/man1/glab-runner-controller-create.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-list.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-scope-create.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-scope-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-scope-list.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-scope.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-token-create.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-token-list.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-token-revoke.1.gz
