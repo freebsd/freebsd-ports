@@ -48,12 +48,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clang-sys-1.8.1 \
-		clap-4.5.54 \
-		clap_builder-4.5.54 \
+		clap-4.5.56 \
+		clap_builder-4.5.56 \
 		clap_complete-4.5.58 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
-		clap_derive-4.5.49 \
+		clap_derive-4.5.55 \
 		clap_lex-0.7.5 \
 		clearscreen-4.0.3 \
 		codspeed-4.0.4 \
@@ -165,7 +165,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indoc-2.0.7 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
-		insta-1.46.1 \
+		insta-1.46.2 \
 		insta-cmd-0.6.0 \
 		interpolator-0.5.0 \
 		intrusive-collections-0.9.7 \
@@ -174,6 +174,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is-macro-0.3.7 \
 		is-terminal-0.4.16 \
 		is-wsl-0.4.0 \
+		is_executable-1.0.5 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
@@ -306,8 +307,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
-		schemars-1.2.0 \
-		schemars_derive-1.2.0 \
+		schemars-1.2.1 \
+		schemars_derive-1.2.1 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
 		serde-1.0.228 \
@@ -475,4 +476,4 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=e9b9ddd4bec50ac777e9353bbb8f1180e5669d89\#e9b9ddd4bec50ac777e9353bbb8f1180e5669d89
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=53421c2fff87426fa0bb51cab06632b87646de13\#53421c2fff87426fa0bb51cab06632b87646de13
