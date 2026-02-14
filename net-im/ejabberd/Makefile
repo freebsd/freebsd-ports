@@ -1,5 +1,5 @@
 PORTNAME=	ejabberd
-PORTVERSION=	26.01
+PORTVERSION=	26.02
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -52,7 +52,7 @@ GH_TUPLE=	processone:p1_utils:${P1_UTILS_VER}:p1_utils/deps/p1_utils \
 		processone:p1_acme:${P1_ACME_VER}:p1_acme/deps/p1_acme \
 		benoitc:erlang-idna:${IDNA_VER}:idna/deps/idna \
 		benoitc:unicode_util_compat:${UNICODE_UTIL_COMPAT_VER}:unicode_util_compat/deps/unicode_util_compat \
-		sstrigler:erlydtl:${ERLYDTL_VER}:erlydtl/deps/erlydtl
+		erlydtl:erlydtl:${ERLYDTL_VER}:erlydtl/deps/erlydtl
 
 OPTIONS_DEFINE=	ODBC PAM DOCS LUA MYSQL PGSQL REDIS SIP SQLITE \
 		STUN FULLXML
@@ -109,7 +109,7 @@ FAST_XML_VER=	1.1.57
 FAST_YAML_VER=	1.0.39
 IDNA_VER=	6.0.0
 JIFFY_VER=	1.1.1
-JOSE_VER=	1.11.10
+JOSE_VER=	1.11.12
 LUERL_VER=	1.2
 MQTREE_VER=	1.0.19
 P1_ACME_VER=	1.0.30
@@ -124,7 +124,7 @@ STUN_VER=	1.2.21
 UNICODE_UTIL_COMPAT_VER=	0.4.1
 XMPP_VER=	1.12.0
 YCONF_VER=	1.0.22
-ERLYDTL_VER=	0.14.0-fix.1
+ERLYDTL_VER=	0.15.0
 
 OPTIONS_SUB=		yes
 SIP_DESC=	SIP support
@@ -163,6 +163,8 @@ pre-everything::
 	fi
 
 post-patch:
+	@${REINPLACE_CMD} -e '/vsn/s/0.14.0/${ERLYDTL_VER}/' \
+		${WRKSRC}/deps/erlydtl/src/erlydtl.app.src
 	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
 	@${REINPLACE_CMD} -e '/^AC_INIT(ejabberd,/s,m4_esyscmd([^)]*),${PORTVERSION},' \
 			${WRKSRC}/configure.ac
