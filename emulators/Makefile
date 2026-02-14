@@ -31,6 +31,7 @@
     SUBDIR += elliott-803
     SUBDIR += emu64
     SUBDIR += emulationstation
+    SUBDIR += emutos
     SUBDIR += es-de
     SUBDIR += fbneo
     SUBDIR += fbsd-duckstation
