@@ -1,4 +1,20 @@
 [
+{ type: install
+  message: <<EOM
+Add the following entry to /etc/gettytab:
+
+Ly:\
+	:lo=%%PREFIX%%/bin/ly_wrapper:\
+	:al=root:
+
+Modify the command field of the ttyv1 terminal entry in /etc/ttys
+
+ttyv1   "/usr/libexec/getty Ly"         xterm   on secure
+
+Make sure that "tty" is set appropriately in the %%ETCDIR%%/config.ini file if
+you decide to configure a different TTY for Ly instead.
+EOM
+}
 { type: upgrade
   maximum_version: 1.3.0
   message: <<EOM
