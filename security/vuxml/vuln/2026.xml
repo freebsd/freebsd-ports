@@ -1,3 +1,32 @@
+  <vuln vid="590979aa-09f7-11f1-a730-5404a68ad561">
+    <topic>traefik -- TCP readTimeout bypass via STARTTLS on Postgres</topic>
+    <affects>
+    <package>
+	<name>traefik</name>
+	<range><lt>3.6.8</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The traefik project reports:</p>
+	<blockquote cite="https://github.com/traefik/traefik/security/advisories/GHSA-89p3-4642-cr2w">
+	  <p>There is a potential vulnerability in Traefik managing STARTTLS requests.
+	     An unauthenticated client can bypass Traefik entrypoint respondingTimeouts.readTimeout
+	     by sending the 8-byte Postgres SSLRequest (STARTTLS) prelude and then stalling,
+	     causing connections to remain open indefinitely, leading to a denial of service</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-25949</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-25949</url>
+    </references>
+    <dates>
+      <discovery>2026-02-11</discovery>
+      <entry>2026-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="17186409-09d2-11f1-a39c-b42e991fc52e">
     <topic>munge -- CWE-787: Out-of-bounds Write</topic>
     <affects>
