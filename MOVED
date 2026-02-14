@@ -5147,3 +5147,4 @@ databases/postgresql13-docs||2026-02-12|Has expired: PostgreSQL-13 is end-of-lif
 databases/postgresql13-pgtcl||2026-02-12|Removed, PostgreSQL-13 is end-of-life
 databases/postgresql13-server||2026-02-12|Has expired: PostgreSQL-13 is end-of-life
 graphics/py-cairo|graphics/py-pycairo|2026-02-12|Use correct Python package name
+java/openjdk19||2026-02-14|Has expired: No longer supported by upstream
