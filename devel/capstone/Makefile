@@ -1,5 +1,5 @@
 PORTNAME=	capstone
-DISTVERSION=	5.0.6
+DISTVERSION=	5.0.7
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}-engine/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -12,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 USES=		cpe gmake tar:xz
 CPE_VENDOR=	${PORTNAME}-engine
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	capstone-engine
 USE_LDCONFIG=	yes
 
 MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}" \
