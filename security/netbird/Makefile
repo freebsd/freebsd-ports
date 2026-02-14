@@ -1,6 +1,6 @@
 PORTNAME=	netbird
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.64.3
+DISTVERSION=	0.65.0
 CATEGORIES=	security net net-vpn
 
 MAINTAINER=	dev@netbird.io
@@ -22,8 +22,6 @@ GO_MODULE=	github.com/netbirdio/netbird
 GO_TARGET=	./client:${PORTNAME}
 GO_BUILDFLAGS=	-tags freebsd -o ${PORTNAME} -ldflags \
 		"-s -w -X github.com/netbirdio/netbird/version.version=${DISTVERSION}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 
