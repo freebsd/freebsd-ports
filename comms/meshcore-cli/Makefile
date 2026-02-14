@@ -1,11 +1,12 @@
 PORTNAME=	meshcore_cli
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	samm@FreeBSD.org
-COMMENT=	CLI interface to MeschCore companion app over TCP or Serial
+COMMENT=	CLI interface to MeshCore companion app over TCP or Serial
 WWW=		https://github.com/meshcore-dev/meshcore-cli
 
 LICENSE=	MIT
