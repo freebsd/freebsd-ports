@@ -156,6 +156,16 @@
 %%MANPAGES%%share/man/man1/glab-repo-update.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-view.1.gz
 %%MANPAGES%%share/man/man1/glab-repo.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-create.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-list.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-token-create.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-token-list.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-token-revoke.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-token-rotate.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-token.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller-update.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-controller.1.gz
 %%MANPAGES%%share/man/man1/glab-schedule-create.1.gz
 %%MANPAGES%%share/man/man1/glab-schedule-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-schedule-list.1.gz
