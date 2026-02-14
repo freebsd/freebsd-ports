@@ -1,3 +1,5 @@
+include/libgedit-tepl-6/tepl/code-comment/tepl-code-comment-view.h
+include/libgedit-tepl-6/tepl/code-comment/tepl-code-comment.h
 include/libgedit-tepl-6/tepl/tepl-abstract-factory.h
 include/libgedit-tepl-6/tepl/tepl-application-window.h
 include/libgedit-tepl-6/tepl/tepl-application.h
@@ -13,7 +15,6 @@ include/libgedit-tepl-6/tepl/tepl-gutter-renderer-folds.h
 include/libgedit-tepl-6/tepl/tepl-info-bar.h
 include/libgedit-tepl-6/tepl/tepl-init.h
 include/libgedit-tepl-6/tepl/tepl-io-error-info-bars.h
-include/libgedit-tepl-6/tepl/tepl-iter.h
 include/libgedit-tepl-6/tepl/tepl-language-chooser-dialog.h
 include/libgedit-tepl-6/tepl/tepl-language-chooser-widget.h
 include/libgedit-tepl-6/tepl/tepl-language-chooser.h
@@ -40,6 +41,7 @@ include/libgedit-tepl-6/tepl/tepl-settings.h
 include/libgedit-tepl-6/tepl/tepl-signal-group.h
 include/libgedit-tepl-6/tepl/tepl-space-drawer-prefs.h
 include/libgedit-tepl-6/tepl/tepl-status-menu-button.h
+include/libgedit-tepl-6/tepl/tepl-statusbar.h
 include/libgedit-tepl-6/tepl/tepl-style-scheme-chooser-full.h
 include/libgedit-tepl-6/tepl/tepl-style-scheme-chooser-simple.h
 include/libgedit-tepl-6/tepl/tepl-tab-group.h
@@ -53,7 +55,7 @@ include/libgedit-tepl-6/tepl/tepl-window-state.h
 include/libgedit-tepl-6/tepl/tepl.h
 lib/girepository-1.0/Tepl-6.typelib
 lib/libgedit-tepl-6.so
-lib/libgedit-tepl-6.so.3
+lib/libgedit-tepl-6.so.4
 libdata/pkgconfig/libgedit-tepl-6.pc
 share/gir-1.0/Tepl-6.gir
 share/locale/be/LC_MESSAGES/libgedit-tepl-6.mo
