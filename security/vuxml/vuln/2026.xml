@@ -1,3 +1,41 @@
+  <vuln vid="17186409-09d2-11f1-a39c-b42e991fc52e">
+    <topic>munge -- CWE-787: Out-of-bounds Write</topic>
+    <affects>
+    <package>
+	<name>munge</name>
+	<range><lt>0.5.18</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/dun/munge/security/advisories/GHSA-r9cr-jf4v-75gh reports:</p>
+	<blockquote cite="https://github.com/dun/munge/security/advisories/GHSA-r9cr-jf4v-75gh">
+	  <p>MUNGE is an authentication service for creating and
+	  validating user credentials.  From 0.5 to 0.5.17, local
+	  attacker can exploit a buffer overflow vulnerability in
+	  munged (the MUNGE authentication daemon) to leak
+	  cryptographic key material from process memory.  With the
+	  leaked key material, the attacker could forge arbitrary
+	  MUNGE credentials to impersonate any user (including root)
+	  to services that rely on MUNGE for authentication.  The
+	  vulnerability allows a buffer overflow by sending a crafted
+	  message with an oversized address length field, corrupting
+	  munged's internal state and enabling extraction of the MAC
+	  subkey used for credential verification.  This vulnerability
+	  is fixed in 0.5.18.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-25506</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-25506</url>
+    </references>
+    <dates>
+      <discovery>2026-02-10</discovery>
+      <entry>2026-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="424d598b-09c4-11f1-85c5-a8a1599412c6">
     <topic>chromium -- security fix</topic>
     <affects>
