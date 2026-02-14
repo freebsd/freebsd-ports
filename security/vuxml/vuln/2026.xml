@@ -1,3 +1,36 @@
+  <vuln vid="424d598b-09c4-11f1-85c5-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.75</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.75</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop_13.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[483569511] High CVE-2026-2441: Use after free in CSS. Reported by Shaheen Fazim on 2026-02-11</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2441</cvename>
+      <url>https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2026-02-13</discovery>
+      <entry>2026-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="027c6c07-065b-11f1-baae-589cfc023192">
     <topic>expat -- multiple vulnerabilities</topic>
     <affects>
