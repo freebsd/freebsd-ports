@@ -1,3 +1,3 @@
-TIMESTAMP = 1746188940
-SHA256 (gnome/libgedit-gtksourceview-299.5.0.tar.bz2) = 3b452764b7c0868ade614972d85f8c0388d4d65ef88ba6d41487aab97cbbedc9
-SIZE (gnome/libgedit-gtksourceview-299.5.0.tar.bz2) = 681088
+TIMESTAMP = 1768240022
+SHA256 (gnome/libgedit-gtksourceview-299.6.0.tar.bz2) = e0c79788f548dbc94f932faaab91ef823a9e9d336ef6f1f049623116121d2e75
+SIZE (gnome/libgedit-gtksourceview-299.6.0.tar.bz2) = 694671

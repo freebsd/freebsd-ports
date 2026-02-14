@@ -1,4 +1,6 @@
 include/libgedit-gtksourceview-300/gtksourceview/completion-providers/words/gtksourcecompletionwords.h
+include/libgedit-gtksourceview-300/gtksourceview/file-loading-and-saving/gtksourceiconv.h
+include/libgedit-gtksourceview-300/gtksourceview/file-loading-and-saving/gtksourceinputstream.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksource-enumtypes.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksource.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourceautocleanups.h
@@ -18,6 +20,7 @@ include/libgedit-gtksourceview-300/gtksourceview/gtksourcegutterrenderer.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcegutterrendererpixbuf.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcegutterrenderertext.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourceinit.h
+include/libgedit-gtksourceview-300/gtksourceview/gtksourceiter.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcelanguage.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcelanguagemanager.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcemark.h
@@ -37,7 +40,7 @@ include/libgedit-gtksourceview-300/gtksourceview/gtksourceutils.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-300.typelib
 lib/libgedit-gtksourceview-300.so
-lib/libgedit-gtksourceview-300.so.3
+lib/libgedit-gtksourceview-300.so.4
 libdata/pkgconfig/libgedit-gtksourceview-300.pc
 share/gir-1.0/GtkSource-300.gir
 %%DATADIR%%-300/language-specs/R.lang
