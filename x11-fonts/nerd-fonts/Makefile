@@ -3,7 +3,7 @@ DISTVERSION=	3.4.0
 PORTREVISION?=	1
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	sven.siegmund@gmail.com
+MAINTAINER=	bsdcode@disroot.org
 WWW=		https://www.nerdfonts.com
 
 .if defined(MASTERDIR) && ${MASTERDIR} != ${.CURDIR}
