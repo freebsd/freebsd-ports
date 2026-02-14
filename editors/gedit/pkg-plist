@@ -9,7 +9,6 @@ include/gedit-%%VERSION%%/gedit/gedit-enum-types.h
 include/gedit-%%VERSION%%/gedit/gedit-menu-extension.h
 include/gedit-%%VERSION%%/gedit/gedit-message-bus.h
 include/gedit-%%VERSION%%/gedit/gedit-message.h
-include/gedit-%%VERSION%%/gedit/gedit-statusbar.h
 include/gedit-%%VERSION%%/gedit/gedit-tab.h
 include/gedit-%%VERSION%%/gedit/gedit-utils.h
 include/gedit-%%VERSION%%/gedit/gedit-view-activatable.h
@@ -17,8 +16,10 @@ include/gedit-%%VERSION%%/gedit/gedit-view.h
 include/gedit-%%VERSION%%/gedit/gedit-window-activatable.h
 include/gedit-%%VERSION%%/gedit/gedit-window.h
 lib/gedit/libgedit-%%VERSION%%.so
+lib/gedit/plugins/codecomment.plugin
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/filebrowser.plugin
+lib/gedit/plugins/libcodecomment.so
 lib/gedit/plugins/libdocinfo.so
 lib/gedit/plugins/libfilebrowser.so
 lib/gedit/plugins/libmodelines.so
@@ -55,6 +56,7 @@ share/help/C/gedit/gedit-open-files-from-sidepane.page
 share/help/C/gedit/gedit-open-on-server.page
 share/help/C/gedit/gedit-open-recent.page
 share/help/C/gedit/gedit-open-several-files-at-once.page
+share/help/C/gedit/gedit-plugin-code-comment.page
 share/help/C/gedit/gedit-plugin-guide.page
 share/help/C/gedit/gedit-plugins-doc-stats.page
 share/help/C/gedit/gedit-plugins-file-browser.page
@@ -89,6 +91,7 @@ share/help/ar/gedit/gedit-open-files-from-sidepane.page
 share/help/ar/gedit/gedit-open-on-server.page
 share/help/ar/gedit/gedit-open-recent.page
 share/help/ar/gedit/gedit-open-several-files-at-once.page
+share/help/ar/gedit/gedit-plugin-code-comment.page
 share/help/ar/gedit/gedit-plugin-guide.page
 share/help/ar/gedit/gedit-plugins-doc-stats.page
 share/help/ar/gedit/gedit-plugins-file-browser.page
@@ -123,6 +126,7 @@ share/help/bg/gedit/gedit-open-files-from-sidepane.page
 share/help/bg/gedit/gedit-open-on-server.page
 share/help/bg/gedit/gedit-open-recent.page
 share/help/bg/gedit/gedit-open-several-files-at-once.page
+share/help/bg/gedit/gedit-plugin-code-comment.page
 share/help/bg/gedit/gedit-plugin-guide.page
 share/help/bg/gedit/gedit-plugins-doc-stats.page
 share/help/bg/gedit/gedit-plugins-file-browser.page
@@ -157,6 +161,7 @@ share/help/ca/gedit/gedit-open-files-from-sidepane.page
 share/help/ca/gedit/gedit-open-on-server.page
 share/help/ca/gedit/gedit-open-recent.page
 share/help/ca/gedit/gedit-open-several-files-at-once.page
+share/help/ca/gedit/gedit-plugin-code-comment.page
 share/help/ca/gedit/gedit-plugin-guide.page
 share/help/ca/gedit/gedit-plugins-doc-stats.page
 share/help/ca/gedit/gedit-plugins-file-browser.page
@@ -191,6 +196,7 @@ share/help/cs/gedit/gedit-open-files-from-sidepane.page
 share/help/cs/gedit/gedit-open-on-server.page
 share/help/cs/gedit/gedit-open-recent.page
 share/help/cs/gedit/gedit-open-several-files-at-once.page
+share/help/cs/gedit/gedit-plugin-code-comment.page
 share/help/cs/gedit/gedit-plugin-guide.page
 share/help/cs/gedit/gedit-plugins-doc-stats.page
 share/help/cs/gedit/gedit-plugins-file-browser.page
@@ -225,6 +231,7 @@ share/help/da/gedit/gedit-open-files-from-sidepane.page
 share/help/da/gedit/gedit-open-on-server.page
 share/help/da/gedit/gedit-open-recent.page
 share/help/da/gedit/gedit-open-several-files-at-once.page
+share/help/da/gedit/gedit-plugin-code-comment.page
 share/help/da/gedit/gedit-plugin-guide.page
 share/help/da/gedit/gedit-plugins-doc-stats.page
 share/help/da/gedit/gedit-plugins-file-browser.page
@@ -259,6 +266,7 @@ share/help/de/gedit/gedit-open-files-from-sidepane.page
 share/help/de/gedit/gedit-open-on-server.page
 share/help/de/gedit/gedit-open-recent.page
 share/help/de/gedit/gedit-open-several-files-at-once.page
+share/help/de/gedit/gedit-plugin-code-comment.page
 share/help/de/gedit/gedit-plugin-guide.page
 share/help/de/gedit/gedit-plugins-doc-stats.page
 share/help/de/gedit/gedit-plugins-file-browser.page
@@ -293,6 +301,7 @@ share/help/el/gedit/gedit-open-files-from-sidepane.page
 share/help/el/gedit/gedit-open-on-server.page
 share/help/el/gedit/gedit-open-recent.page
 share/help/el/gedit/gedit-open-several-files-at-once.page
+share/help/el/gedit/gedit-plugin-code-comment.page
 share/help/el/gedit/gedit-plugin-guide.page
 share/help/el/gedit/gedit-plugins-doc-stats.page
 share/help/el/gedit/gedit-plugins-file-browser.page
@@ -327,6 +336,7 @@ share/help/en_GB/gedit/gedit-open-files-from-sidepane.page
 share/help/en_GB/gedit/gedit-open-on-server.page
 share/help/en_GB/gedit/gedit-open-recent.page
 share/help/en_GB/gedit/gedit-open-several-files-at-once.page
+share/help/en_GB/gedit/gedit-plugin-code-comment.page
 share/help/en_GB/gedit/gedit-plugin-guide.page
 share/help/en_GB/gedit/gedit-plugins-doc-stats.page
 share/help/en_GB/gedit/gedit-plugins-file-browser.page
@@ -361,6 +371,7 @@ share/help/es/gedit/gedit-open-files-from-sidepane.page
 share/help/es/gedit/gedit-open-on-server.page
 share/help/es/gedit/gedit-open-recent.page
 share/help/es/gedit/gedit-open-several-files-at-once.page
+share/help/es/gedit/gedit-plugin-code-comment.page
 share/help/es/gedit/gedit-plugin-guide.page
 share/help/es/gedit/gedit-plugins-doc-stats.page
 share/help/es/gedit/gedit-plugins-file-browser.page
@@ -395,6 +406,7 @@ share/help/eu/gedit/gedit-open-files-from-sidepane.page
 share/help/eu/gedit/gedit-open-on-server.page
 share/help/eu/gedit/gedit-open-recent.page
 share/help/eu/gedit/gedit-open-several-files-at-once.page
+share/help/eu/gedit/gedit-plugin-code-comment.page
 share/help/eu/gedit/gedit-plugin-guide.page
 share/help/eu/gedit/gedit-plugins-doc-stats.page
 share/help/eu/gedit/gedit-plugins-file-browser.page
@@ -429,6 +441,7 @@ share/help/fi/gedit/gedit-open-files-from-sidepane.page
 share/help/fi/gedit/gedit-open-on-server.page
 share/help/fi/gedit/gedit-open-recent.page
 share/help/fi/gedit/gedit-open-several-files-at-once.page
+share/help/fi/gedit/gedit-plugin-code-comment.page
 share/help/fi/gedit/gedit-plugin-guide.page
 share/help/fi/gedit/gedit-plugins-doc-stats.page
 share/help/fi/gedit/gedit-plugins-file-browser.page
@@ -463,6 +476,7 @@ share/help/fr/gedit/gedit-open-files-from-sidepane.page
 share/help/fr/gedit/gedit-open-on-server.page
 share/help/fr/gedit/gedit-open-recent.page
 share/help/fr/gedit/gedit-open-several-files-at-once.page
+share/help/fr/gedit/gedit-plugin-code-comment.page
 share/help/fr/gedit/gedit-plugin-guide.page
 share/help/fr/gedit/gedit-plugins-doc-stats.page
 share/help/fr/gedit/gedit-plugins-file-browser.page
@@ -497,6 +511,7 @@ share/help/gl/gedit/gedit-open-files-from-sidepane.page
 share/help/gl/gedit/gedit-open-on-server.page
 share/help/gl/gedit/gedit-open-recent.page
 share/help/gl/gedit/gedit-open-several-files-at-once.page
+share/help/gl/gedit/gedit-plugin-code-comment.page
 share/help/gl/gedit/gedit-plugin-guide.page
 share/help/gl/gedit/gedit-plugins-doc-stats.page
 share/help/gl/gedit/gedit-plugins-file-browser.page
@@ -531,6 +546,7 @@ share/help/hu/gedit/gedit-open-files-from-sidepane.page
 share/help/hu/gedit/gedit-open-on-server.page
 share/help/hu/gedit/gedit-open-recent.page
 share/help/hu/gedit/gedit-open-several-files-at-once.page
+share/help/hu/gedit/gedit-plugin-code-comment.page
 share/help/hu/gedit/gedit-plugin-guide.page
 share/help/hu/gedit/gedit-plugins-doc-stats.page
 share/help/hu/gedit/gedit-plugins-file-browser.page
@@ -565,6 +581,7 @@ share/help/id/gedit/gedit-open-files-from-sidepane.page
 share/help/id/gedit/gedit-open-on-server.page
 share/help/id/gedit/gedit-open-recent.page
 share/help/id/gedit/gedit-open-several-files-at-once.page
+share/help/id/gedit/gedit-plugin-code-comment.page
 share/help/id/gedit/gedit-plugin-guide.page
 share/help/id/gedit/gedit-plugins-doc-stats.page
 share/help/id/gedit/gedit-plugins-file-browser.page
@@ -599,6 +616,7 @@ share/help/it/gedit/gedit-open-files-from-sidepane.page
 share/help/it/gedit/gedit-open-on-server.page
 share/help/it/gedit/gedit-open-recent.page
 share/help/it/gedit/gedit-open-several-files-at-once.page
+share/help/it/gedit/gedit-plugin-code-comment.page
 share/help/it/gedit/gedit-plugin-guide.page
 share/help/it/gedit/gedit-plugins-doc-stats.page
 share/help/it/gedit/gedit-plugins-file-browser.page
@@ -633,6 +651,7 @@ share/help/ja/gedit/gedit-open-files-from-sidepane.page
 share/help/ja/gedit/gedit-open-on-server.page
 share/help/ja/gedit/gedit-open-recent.page
 share/help/ja/gedit/gedit-open-several-files-at-once.page
+share/help/ja/gedit/gedit-plugin-code-comment.page
 share/help/ja/gedit/gedit-plugin-guide.page
 share/help/ja/gedit/gedit-plugins-doc-stats.page
 share/help/ja/gedit/gedit-plugins-file-browser.page
@@ -667,6 +686,7 @@ share/help/ko/gedit/gedit-open-files-from-sidepane.page
 share/help/ko/gedit/gedit-open-on-server.page
 share/help/ko/gedit/gedit-open-recent.page
 share/help/ko/gedit/gedit-open-several-files-at-once.page
+share/help/ko/gedit/gedit-plugin-code-comment.page
 share/help/ko/gedit/gedit-plugin-guide.page
 share/help/ko/gedit/gedit-plugins-doc-stats.page
 share/help/ko/gedit/gedit-plugins-file-browser.page
@@ -701,6 +721,7 @@ share/help/lv/gedit/gedit-open-files-from-sidepane.page
 share/help/lv/gedit/gedit-open-on-server.page
 share/help/lv/gedit/gedit-open-recent.page
 share/help/lv/gedit/gedit-open-several-files-at-once.page
+share/help/lv/gedit/gedit-plugin-code-comment.page
 share/help/lv/gedit/gedit-plugin-guide.page
 share/help/lv/gedit/gedit-plugins-doc-stats.page
 share/help/lv/gedit/gedit-plugins-file-browser.page
@@ -735,6 +756,7 @@ share/help/oc/gedit/gedit-open-files-from-sidepane.page
 share/help/oc/gedit/gedit-open-on-server.page
 share/help/oc/gedit/gedit-open-recent.page
 share/help/oc/gedit/gedit-open-several-files-at-once.page
+share/help/oc/gedit/gedit-plugin-code-comment.page
 share/help/oc/gedit/gedit-plugin-guide.page
 share/help/oc/gedit/gedit-plugins-doc-stats.page
 share/help/oc/gedit/gedit-plugins-file-browser.page
@@ -769,6 +791,7 @@ share/help/pl/gedit/gedit-open-files-from-sidepane.page
 share/help/pl/gedit/gedit-open-on-server.page
 share/help/pl/gedit/gedit-open-recent.page
 share/help/pl/gedit/gedit-open-several-files-at-once.page
+share/help/pl/gedit/gedit-plugin-code-comment.page
 share/help/pl/gedit/gedit-plugin-guide.page
 share/help/pl/gedit/gedit-plugins-doc-stats.page
 share/help/pl/gedit/gedit-plugins-file-browser.page
@@ -803,6 +826,7 @@ share/help/pt_BR/gedit/gedit-open-files-from-sidepane.page
 share/help/pt_BR/gedit/gedit-open-on-server.page
 share/help/pt_BR/gedit/gedit-open-recent.page
 share/help/pt_BR/gedit/gedit-open-several-files-at-once.page
+share/help/pt_BR/gedit/gedit-plugin-code-comment.page
 share/help/pt_BR/gedit/gedit-plugin-guide.page
 share/help/pt_BR/gedit/gedit-plugins-doc-stats.page
 share/help/pt_BR/gedit/gedit-plugins-file-browser.page
@@ -837,6 +861,7 @@ share/help/ro/gedit/gedit-open-files-from-sidepane.page
 share/help/ro/gedit/gedit-open-on-server.page
 share/help/ro/gedit/gedit-open-recent.page
 share/help/ro/gedit/gedit-open-several-files-at-once.page
+share/help/ro/gedit/gedit-plugin-code-comment.page
 share/help/ro/gedit/gedit-plugin-guide.page
 share/help/ro/gedit/gedit-plugins-doc-stats.page
 share/help/ro/gedit/gedit-plugins-file-browser.page
@@ -871,6 +896,7 @@ share/help/ru/gedit/gedit-open-files-from-sidepane.page
 share/help/ru/gedit/gedit-open-on-server.page
 share/help/ru/gedit/gedit-open-recent.page
 share/help/ru/gedit/gedit-open-several-files-at-once.page
+share/help/ru/gedit/gedit-plugin-code-comment.page
 share/help/ru/gedit/gedit-plugin-guide.page
 share/help/ru/gedit/gedit-plugins-doc-stats.page
 share/help/ru/gedit/gedit-plugins-file-browser.page
@@ -905,6 +931,7 @@ share/help/sl/gedit/gedit-open-files-from-sidepane.page
 share/help/sl/gedit/gedit-open-on-server.page
 share/help/sl/gedit/gedit-open-recent.page
 share/help/sl/gedit/gedit-open-several-files-at-once.page
+share/help/sl/gedit/gedit-plugin-code-comment.page
 share/help/sl/gedit/gedit-plugin-guide.page
 share/help/sl/gedit/gedit-plugins-doc-stats.page
 share/help/sl/gedit/gedit-plugins-file-browser.page
@@ -939,6 +966,7 @@ share/help/sv/gedit/gedit-open-files-from-sidepane.page
 share/help/sv/gedit/gedit-open-on-server.page
 share/help/sv/gedit/gedit-open-recent.page
 share/help/sv/gedit/gedit-open-several-files-at-once.page
+share/help/sv/gedit/gedit-plugin-code-comment.page
 share/help/sv/gedit/gedit-plugin-guide.page
 share/help/sv/gedit/gedit-plugins-doc-stats.page
 share/help/sv/gedit/gedit-plugins-file-browser.page
@@ -973,6 +1001,7 @@ share/help/te/gedit/gedit-open-files-from-sidepane.page
 share/help/te/gedit/gedit-open-on-server.page
 share/help/te/gedit/gedit-open-recent.page
 share/help/te/gedit/gedit-open-several-files-at-once.page
+share/help/te/gedit/gedit-plugin-code-comment.page
 share/help/te/gedit/gedit-plugin-guide.page
 share/help/te/gedit/gedit-plugins-doc-stats.page
 share/help/te/gedit/gedit-plugins-file-browser.page
@@ -1007,6 +1036,7 @@ share/help/th/gedit/gedit-open-files-from-sidepane.page
 share/help/th/gedit/gedit-open-on-server.page
 share/help/th/gedit/gedit-open-recent.page
 share/help/th/gedit/gedit-open-several-files-at-once.page
+share/help/th/gedit/gedit-plugin-code-comment.page
 share/help/th/gedit/gedit-plugin-guide.page
 share/help/th/gedit/gedit-plugins-doc-stats.page
 share/help/th/gedit/gedit-plugins-file-browser.page
@@ -1041,6 +1071,7 @@ share/help/uk/gedit/gedit-open-files-from-sidepane.page
 share/help/uk/gedit/gedit-open-on-server.page
 share/help/uk/gedit/gedit-open-recent.page
 share/help/uk/gedit/gedit-open-several-files-at-once.page
+share/help/uk/gedit/gedit-plugin-code-comment.page
 share/help/uk/gedit/gedit-plugin-guide.page
 share/help/uk/gedit/gedit-plugins-doc-stats.page
 share/help/uk/gedit/gedit-plugins-file-browser.page
@@ -1075,6 +1106,7 @@ share/help/zh_CN/gedit/gedit-open-files-from-sidepane.page
 share/help/zh_CN/gedit/gedit-open-on-server.page
 share/help/zh_CN/gedit/gedit-open-recent.page
 share/help/zh_CN/gedit/gedit-open-several-files-at-once.page
+share/help/zh_CN/gedit/gedit-plugin-code-comment.page
 share/help/zh_CN/gedit/gedit-plugin-guide.page
 share/help/zh_CN/gedit/gedit-plugins-doc-stats.page
 share/help/zh_CN/gedit/gedit-plugins-file-browser.page
@@ -1109,6 +1141,7 @@ share/help/zh_HK/gedit/gedit-open-files-from-sidepane.page
 share/help/zh_HK/gedit/gedit-open-on-server.page
 share/help/zh_HK/gedit/gedit-open-recent.page
 share/help/zh_HK/gedit/gedit-open-several-files-at-once.page
+share/help/zh_HK/gedit/gedit-plugin-code-comment.page
 share/help/zh_HK/gedit/gedit-plugin-guide.page
 share/help/zh_HK/gedit/gedit-plugins-doc-stats.page
 share/help/zh_HK/gedit/gedit-plugins-file-browser.page
@@ -1143,6 +1176,7 @@ share/help/zh_TW/gedit/gedit-open-files-from-sidepane.page
 share/help/zh_TW/gedit/gedit-open-on-server.page
 share/help/zh_TW/gedit/gedit-open-recent.page
 share/help/zh_TW/gedit/gedit-open-several-files-at-once.page
+share/help/zh_TW/gedit/gedit-plugin-code-comment.page
 share/help/zh_TW/gedit/gedit-plugin-guide.page
 share/help/zh_TW/gedit/gedit-plugins-doc-stats.page
 share/help/zh_TW/gedit/gedit-plugins-file-browser.page
