@@ -1,12 +1,11 @@
 PORTNAME=	homebox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.3
-PORTREVISION=	3
+DISTVERSION=	0.23.1
 CATEGORIES=	finance
-MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
 #   https://github.com/DtxdF/port-assets-makejails/tree/main/homebox
-DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Inventory and organization system built for the Home User
