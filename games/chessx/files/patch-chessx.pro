@@ -32,15 +32,7 @@
      binfiles.files = release/chessx
      binfiles.path = $$BINDIR
  
-@@ -531,6 +539,7 @@ win32 {
-   win32-g++:LIBS += -lz
- }
- 
-+
- UI_DIR = src/generated
- MOC_DIR = src/generated
- RCC_DIR = src/generated
-@@ -609,10 +618,10 @@ PRE_TARGETDEPS += compiler_TSQM_make_all
+@@ -609,10 +617,10 @@ PRE_TARGETDEPS += compiler_TSQM_make_all
  PRE_TARGETDEPS += compiler_TSQM_make_all
  
  # Automatically run lupdate when building

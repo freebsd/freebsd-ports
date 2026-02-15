@@ -31,12 +31,10 @@ STOCKFISH_DESC=	Install Stockfish Chess Engine
 CRAFTY_RUN_DEPENDS=	crafty:games/crafty
 STOCKFISH_RUN_DEPENDS=	stockfish:games/stockfish
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@${MV} ${WRKDIR}/chessx-master ${WRKSRC}
 
 post-configure:
 	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro )
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
