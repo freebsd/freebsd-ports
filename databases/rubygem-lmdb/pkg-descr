@@ -1,2 +1,5 @@
-Syntax highlighting library for various languages. Has built-in support
-for converting source code to syntax-highlighted HTML.
+Ruby bindings for the OpenLDAP's Lightning Memory-Mapped Database (LMDB)
+
+If you want to have a simpler interface to LMDB databases
+please consider using Moneta.
+The Moneta gem provides an LMDB adapter which uses this gem.
