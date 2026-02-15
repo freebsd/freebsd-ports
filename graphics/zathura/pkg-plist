@@ -42,5 +42,5 @@ share/locale/sv/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/ta_IN/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/tr/LC_MESSAGES/org.pwmt.zathura.mo
 share/locale/uk_UA/LC_MESSAGES/org.pwmt.zathura.mo
-share/metainfo/org.pwmt.zathura.appdata.xml
+share/metainfo/org.pwmt.zathura.metainfo.xml
 share/zsh/site-functions/_zathura

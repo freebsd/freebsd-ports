@@ -1,6 +1,6 @@
---- data/meson.build.orig	2024-08-04 14:04:57 UTC
+--- data/meson.build.orig	2026-02-03 21:54:56 UTC
 +++ data/meson.build
-@@ -81,7 +81,7 @@ else
+@@ -82,7 +82,7 @@ else
  if fish_comp.found()
    fish_compdir = fish_comp.get_variable(pkgconfig: 'completionsdir')
  else

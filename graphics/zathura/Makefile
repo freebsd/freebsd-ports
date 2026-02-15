@@ -1,5 +1,5 @@
 PORTNAME=	zathura
-DISTVERSION=	0.5.14
+DISTVERSION=	2026.02.09
 CATEGORIES=	graphics print
 MASTER_SITES=	https://pwmt.org/projects/zathura/download/
 
@@ -10,7 +10,7 @@ WWW=		https://pwmt.org/projects/zathura/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
+LIB_DEPENDS=	libgirara.so:x11-toolkits/girara \
 		libjson-glib-1.0.so:devel/json-glib
 
 USES=		compiler:c17 gettext gnome meson pkgconfig sqlite tar:xz
@@ -30,8 +30,8 @@ MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 MANPAGES_USES=		python:build
 MANPAGES_MESON_ENABLED=	manpages
 
-SYNCTEX_BUILD_DEPENDS=	tex-synctex>0:devel/tex-synctex
-SYNCTEX_RUN_DEPENDS=	${SYNCTEX_BUILD_DEPENDS}
+SYNCTEX_USES=		tex
+SYNCTEX_USE=		TEX=synctex
 SYNCTEX_MESON_ENABLED=	synctex
 
 post-patch-MANPAGES-on:
