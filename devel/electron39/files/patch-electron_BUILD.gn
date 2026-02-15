@@ -1,6 +1,6 @@
---- electron/BUILD.gn.orig	2026-02-02 23:06:17 UTC
+--- electron/BUILD.gn.orig	2026-02-13 02:35:12 UTC
 +++ electron/BUILD.gn
-@@ -580,7 +580,7 @@ source_set("electron_lib") {
+@@ -548,7 +548,7 @@ source_set("electron_lib") {
      defines += [ "GDK_DISABLE_DEPRECATION_WARNINGS" ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/browser",
-@@ -678,6 +678,12 @@ source_set("electron_lib") {
+@@ -646,6 +646,12 @@ source_set("electron_lib") {
        cflags_objcc = [ "-fobjc-weak" ]
      }
    }
@@ -22,7 +22,7 @@
    if (is_linux) {
      libs = [ "xshmfence" ]
      deps += [
-@@ -1261,7 +1267,7 @@ if (is_mac) {
+@@ -1229,7 +1235,7 @@ if (is_mac) {
        ":electron_lib",
        ":electron_win32_resources",
        ":packed_resources",
@@ -31,7 +31,7 @@
        "//content:sandbox_helper_win",
        "//electron/buildflags",
        "//third_party/electron_node:libnode",
-@@ -1288,7 +1294,7 @@ if (is_mac) {
+@@ -1256,7 +1262,7 @@ if (is_mac) {
        public_deps = [ "//tools/v8_context_snapshot" ]
      }
  
@@ -40,7 +40,7 @@
        data_deps += [ "//components/crash/core/app:chrome_crashpad_handler" ]
      }
  
-@@ -1355,7 +1361,7 @@ if (is_mac) {
+@@ -1323,7 +1329,7 @@ if (is_mac) {
          configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
        }
  
@@ -49,7 +49,7 @@
          deps += [ "//sandbox/linux:chrome_sandbox" ]
        }
      }
-@@ -1476,7 +1482,9 @@ dist_zip("electron_dist_zip") {
+@@ -1444,7 +1450,9 @@ dist_zip("electron_dist_zip") {
        ]
      }
  
