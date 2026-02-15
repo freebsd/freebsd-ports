@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 This is the mysql CLIENT without the server.
-for complete server and client, please install databases/mysql94-server
+for complete server and client, please install databases/mysql96-server
 EOM
 }
 ]
