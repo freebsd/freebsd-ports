@@ -1,6 +1,5 @@
 PORTNAME=	zathura-cb
-DISTVERSION=	0.1.12
-PORTREVISION=	1
+DISTVERSION=	2026.02.03
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-cb/download/
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	appstreamcli:devel/appstream \
 		zathura:graphics/zathura
-LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara
+LIB_DEPENDS=	libgirara.so:x11-toolkits/girara
 RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c17 desktop-file-utils gnome meson pkgconfig tar:xz
