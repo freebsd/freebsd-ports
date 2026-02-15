@@ -1,1 +1,10 @@
-empty pkg-descr
+Cap's Log is a small, terminal UI journaling tool, storing daily entries as
+markdown, with a simple structure of tags and sections, and a calendar
+view to show annual events and track habits or activities.
+
+It supports local encryption, and can also use git to work across multiple
+computers.
+
+Refer to the README for more general usage.
+
+https://github.com/NikolaDucak/caps-log
