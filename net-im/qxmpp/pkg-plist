@@ -171,9 +171,9 @@ lib/cmake/QXmppQt6/QXmpp.cmake
 lib/cmake/QXmppQt6/QXmppQt6Config.cmake
 lib/cmake/QXmppQt6/QXmppQt6ConfigVersion.cmake
 lib/libQXmppOmemoQt6.so
-lib/libQXmppOmemoQt6.so.7
-lib/libQXmppOmemoQt6.so.%%SOVERSION%%
+lib/libQXmppOmemoQt6.so.%%PORTVERSION%%
+lib/libQXmppOmemoQt6.so.%%SHLIB_VER%%
 lib/libQXmppQt6.so
-lib/libQXmppQt6.so.7
-lib/libQXmppQt6.so.%%SOVERSION%%
+lib/libQXmppQt6.so.%%PORTVERSION%%
+lib/libQXmppQt6.so.%%SHLIB_VER%%
 libdata/pkgconfig/QXmppQt6.pc
