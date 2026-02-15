@@ -1,5 +1,9 @@
-TIMESTAMP = 1545612395
-SHA256 (nbari-www-2.0.0_GH0.tar.gz) = 28df1a06e48fbffd5d09feab493e9a5158942b4203f66f4aa3c61141b3be3fca
-SIZE (nbari-www-2.0.0_GH0.tar.gz) = 8144
-SHA256 (golang-crypto-505ab14_GH0.tar.gz) = 66208e5bab6d39db520fb59b79a597ddb38cd6160e7ae7fb3e5c212fe9146125
-SIZE (golang-crypto-505ab14_GH0.tar.gz) = 1644620
+TIMESTAMP = 1771165645
+SHA256 (nbari-www-2.0.5_GH0.tar.gz) = 998bcc0319a54969dd54488ef81d31ccb9b81eabfa07ab89ad409e6fe43ca12a
+SIZE (nbari-www-2.0.5_GH0.tar.gz) = 8063
+SHA256 (golang-crypto-v0.48.0_GH0.tar.gz) = 179cbca515d43b24395c8ad1d29be6d85109046e2e05d265a7aba512aa67d2e7
+SIZE (golang-crypto-v0.48.0_GH0.tar.gz) = 2149473
+SHA256 (golang-net-v0.50.0_GH0.tar.gz) = 409f611e7ccfae2bf36bc29a4d1ad841588c8731580cecfca6eed8f6205ac56b
+SIZE (golang-net-v0.50.0_GH0.tar.gz) = 1537819
+SHA256 (golang-text-v0.34.0_GH0.tar.gz) = e80f73101db5eead129a96e99b90163c883ca1317a827c1f15c5da7e099b1df4
+SIZE (golang-text-v0.34.0_GH0.tar.gz) = 6772603
