@@ -24,6 +24,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
+		dlib-0.5.2 \
 		downcast-rs-1.2.1 \
 		either-1.15.0 \
 		env_logger-0.10.2 \
@@ -34,6 +35,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		flate2-1.1.5 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
+		fontconfig-0.10.0 \
 		fontdue-0.9.3 \
 		glob-0.3.3 \
 		hashbrown-0.14.5 \
@@ -124,10 +126,11 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
 		winnow-0.7.14 \
-		xcb-1.6.0 \
-		xcb-util-cursor-0.3.5 \
-		xcb-util-cursor-sys-0.1.6 \
+		xcb-1.7.0 \
+		xcb-util-cursor-0.4.0 \
+		xcb-util-cursor-sys-0.2.0 \
 		xcursor-0.3.10 \
 		xkeysym-0.2.1 \
+		yeslogic-fontconfig-sys-6.0.0 \
 		zerocopy-0.8.31 \
 		zerocopy-derive-0.8.31
