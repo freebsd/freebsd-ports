@@ -1010,6 +1010,7 @@
     SUBDIR += rubygem-influxdb
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-leo_manager_client
+    SUBDIR += rubygem-lmdb
     SUBDIR += rubygem-marginalia
     SUBDIR += rubygem-mario-redis-lock
     SUBDIR += rubygem-memcache
