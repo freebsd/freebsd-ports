@@ -8,6 +8,8 @@ include/rfl/Attribute.hpp
 include/rfl/Binary.hpp
 include/rfl/Box.hpp
 include/rfl/Bytestring.hpp
+include/rfl/CamelCaseToSnakeCase.hpp
+include/rfl/Commented.hpp
 include/rfl/DefaultIfMissing.hpp
 include/rfl/DefaultVal.hpp
 include/rfl/Description.hpp
@@ -45,6 +47,9 @@ include/rfl/Vectorstring.hpp
 include/rfl/always_false.hpp
 include/rfl/apply.hpp
 include/rfl/as.hpp
+include/rfl/atomic/is_atomic.hpp
+include/rfl/atomic/remove_atomic_t.hpp
+include/rfl/atomic/set_atomic.hpp
 include/rfl/avro.hpp
 include/rfl/avro/Parser.hpp
 include/rfl/avro/Reader.hpp
@@ -220,7 +225,7 @@ include/rfl/internal/to_ptr_field_tuple.hpp
 include/rfl/internal/to_ptr_named_tuple.hpp
 include/rfl/internal/to_ptr_tuple.hpp
 include/rfl/internal/to_std_array.hpp
-include/rfl/internal/transform_snake_case.hpp
+include/rfl/internal/transform_case.hpp
 include/rfl/internal/tup_to_ptr_tuple.hpp
 include/rfl/internal/tuple/accumulate_sizes.hpp
 include/rfl/internal/tuple/apply.hpp
@@ -281,11 +286,14 @@ include/rfl/parsing/NamedTupleParser.hpp
 include/rfl/parsing/Parent.hpp
 include/rfl/parsing/Parser.hpp
 include/rfl/parsing/Parser_array.hpp
+include/rfl/parsing/Parser_atomic.hpp
+include/rfl/parsing/Parser_atomic_flag.hpp
 include/rfl/parsing/Parser_base.hpp
 include/rfl/parsing/Parser_basic_type.hpp
 include/rfl/parsing/Parser_box.hpp
 include/rfl/parsing/Parser_bytestring.hpp
 include/rfl/parsing/Parser_c_array.hpp
+include/rfl/parsing/Parser_commented.hpp
 include/rfl/parsing/Parser_default.hpp
 include/rfl/parsing/Parser_default_val.hpp
 include/rfl/parsing/Parser_duration.hpp
@@ -352,6 +360,7 @@ include/rfl/parsing/schemaful/tuple_to_named_tuple.hpp
 include/rfl/parsing/schemaful/tuple_to_named_tuple_t.hpp
 include/rfl/parsing/schemaful/tuple_to_object.hpp
 include/rfl/parsing/supports_attributes.hpp
+include/rfl/parsing/supports_comments.hpp
 include/rfl/parsing/tabular/ArrowReader.hpp
 include/rfl/parsing/tabular/ArrowTypes.hpp
 include/rfl/parsing/tabular/ArrowWriter.hpp
@@ -433,5 +442,6 @@ include/rfl/yaml/write.hpp
 lib/cmake/reflectcpp/reflectcpp-config.cmake
 lib/cmake/reflectcpp/reflectcpp-exports-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/reflectcpp/reflectcpp-exports.cmake
+lib/cmake/reflectcpp/reflectcpp-version.cmake
 lib/libreflectcpp.so
 lib/libreflectcpp.so.%%SOVERSION%%
