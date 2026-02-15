@@ -1,7 +1,6 @@
 PORTNAME=	opengist
-PORTVERSION=	1.11.1
+PORTVERSION=	1.12.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	www textproc
 MASTER_SITES=	LOCAL/fox/:js
 DISTFILES=	opengist-${DISTVERSION}-node_modules.tgz:js
@@ -13,7 +12,7 @@ WWW=		https://opengist.io/
 LICENSE=	AGPLv3
 
 BROKEN_i386=	fails to build
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 RUN_DEPENDS=	git:devel/git
@@ -45,9 +44,6 @@ pre-build:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npx --offline vite -c public/vite.config.js \
 		build
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} EMBED=1 npx --offline postcss 'public/assets/embed-*.css' \
-		-c public/postcss.config.js --replace
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
@@ -59,9 +55,6 @@ post-install:
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} public/assets/* \
 		${STAGEDIR}${WWWDIR}/assets
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} public/manifest.json \
-		${STAGEDIR}${WWWDIR}
 
 #
 # To update the opengist-${DISTVERSION}-node_modules.tgz archive:
@@ -75,10 +68,6 @@ post-install:
 regenerate-node_modules-distfile: patch
 	cd ${WRKSRC} && \
 		${RM} -r node_modules && \
-		${MAKE_ENV} npm install --prefix ${WRKSRC} --os freebsd --cpu \
-		arm64 esbuild@0.18.20 && \
-		${MAKE_ENV} npm install --prefix ${WRKSRC} --os freebsd --cpu \
-		amd64 esbuild@0.18.20 && \
 		${MAKE_ENV} npm install --prefix ${WRKSRC} && \
 		${TAR} czf ${DISTDIR}/opengist-${DISTVERSION}-node_modules.tgz \
 		node_modules && \
