@@ -1,6 +1,6 @@
 PORTNAME=	logseq
 PORTVERSION=	0.10.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/logseq/logseq/releases/download/${PORTVERSION}/ \
 		LOCAL/arrowd/:node_modules
