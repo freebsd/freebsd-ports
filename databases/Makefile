@@ -197,6 +197,8 @@
     SUBDIR += mysql91-server
     SUBDIR += mysql94-client
     SUBDIR += mysql94-server
+    SUBDIR += mysql96-client
+    SUBDIR += mysql96-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqldump-secure
     SUBDIR += mysqlreport
