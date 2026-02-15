@@ -1,6 +1,6 @@
---- services/device/usb/usb_device_handle_usbfs.cc.orig	2025-10-21 16:57:35 UTC
+--- services/device/usb/usb_device_handle_usbfs.cc.orig	2026-02-15 10:01:45 UTC
 +++ services/device/usb/usb_device_handle_usbfs.cc
-@@ -34,7 +34,7 @@
+@@ -33,7 +33,7 @@
  #include "chromeos/dbus/permission_broker/permission_broker_client.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/metrics/histogram_macros.h"
  #include "services/device/public/cpp/device_features.h"
  #include "services/device/usb/usb_interface_detach_allowlist.h"
-@@ -51,7 +51,7 @@ using mojom::UsbTransferType;
+@@ -50,7 +50,7 @@ using mojom::UsbTransferType;
  
  namespace {
  
@@ -18,7 +18,7 @@
  // Outcome of detaching a kernel driver before ClaimInterface().
  // These values are persisted to logs. Entries should not be renumbered and
  // numeric values should never be reused.
-@@ -293,7 +293,7 @@ bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::R
+@@ -292,7 +292,7 @@ bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::R
    return true;
  }
  
@@ -27,7 +27,7 @@
  bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::DetachInterface(
      int interface_number,
      const CombinedInterfaceInfo& interface_info) {
-@@ -630,7 +630,7 @@ void UsbDeviceHandleUsbfs::ClaimInterface(int interfac
+@@ -629,7 +629,7 @@ void UsbDeviceHandleUsbfs::ClaimInterface(int interfac
      return;
    }
  #endif
@@ -36,7 +36,7 @@
    if (base::FeatureList::IsEnabled(features::kAutomaticUsbDetach)) {
      const mojom::UsbConfigurationInfo* config =
          device_->GetActiveConfiguration();
-@@ -976,7 +976,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
+@@ -975,7 +975,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
      return;
    }
  #endif

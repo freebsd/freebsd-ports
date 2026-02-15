@@ -1,4 +1,4 @@
---- chrome/browser/ui/accelerator_table.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/ui/accelerator_table.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/browser/ui/accelerator_table.cc
 @@ -73,11 +73,11 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
@@ -32,12 +32,12 @@
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-@@ -310,7 +310,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+@@ -309,7 +309,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+                          std::begin(kDevToolsAcceleratorMap),
                           std::end(kDevToolsAcceleratorMap));
  
-     if (features::IsSideBySideKeyboardShortcutEnabled()) {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       accelerators->emplace_back(
-           AcceleratorMapping({ui::VKEY_N, ui::EF_SHIFT_DOWN | ui::EF_ALT_DOWN,
-                               IDC_NEW_SPLIT_TAB}));
+     accelerators->emplace_back(AcceleratorMapping(
+         {ui::VKEY_N, ui::EF_SHIFT_DOWN | ui::EF_ALT_DOWN, IDC_NEW_SPLIT_TAB}));
+ #elif BUILDFLAG(IS_CHROMEOS)

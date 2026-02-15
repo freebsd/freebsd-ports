@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.h.orig	2026-01-16 13:40:34 UTC
+--- components/signin/public/base/signin_switches.h.orig	2026-02-15 10:01:45 UTC
 +++ components/signin/public/base/signin_switches.h
-@@ -98,7 +98,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+@@ -94,7 +94,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kChromeAndroidIdentitySurveyBookmarkPromo);
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -9,7 +9,7 @@
  // Enables surveys to measure the effectiveness of the identity model.
  // These surveys would be displayed after interactions such as signin, profile
  // switching, etc. Please keep sorted alphabetically.
-@@ -130,7 +130,7 @@ BASE_DECLARE_FEATURE(kChromeIdentitySurveySwitchProfil
+@@ -126,7 +126,7 @@ BASE_DECLARE_FEATURE(kChromeIdentitySurveySwitchProfil
  // LINT.ThenChange(//chrome/browser/signin/signin_hats_util.cc)
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -18,7 +18,7 @@
  // Controls the duration for which the launch of an identity survey is delayed.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kChromeIdentitySurveyLaunchWithDelay);
-@@ -297,7 +297,7 @@ BASE_DECLARE_FEATURE_PARAM(base::TimeDelta,
+@@ -290,7 +290,7 @@ BASE_DECLARE_FEATURE_PARAM(base::TimeDelta,
                             kOfferMigrationToDiceUsersMinTimeBetweenDialogs);
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -27,7 +27,7 @@
  // Experimenting with a button to all profiles from the profile picker.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kOpenAllProfilesFromProfilePickerExperiment);
-@@ -306,7 +306,7 @@ extern const base::FeatureParam<int>
+@@ -299,7 +299,7 @@ extern const base::FeatureParam<int>
      kMaxProfilesCountToShowOpenAllButtonInProfilePicker;
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -36,7 +36,7 @@
  // Experimenting with changing the secondary CTA for FRE and new profile
  // creation.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
-@@ -371,7 +371,7 @@ extern const base::FeatureParam<int> kContextualSignin
+@@ -370,7 +370,7 @@ extern const base::FeatureParam<int> kContextualSignin
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
  extern const base::FeatureParam<int> kContextualSigninPromoDismissedThreshold;
  

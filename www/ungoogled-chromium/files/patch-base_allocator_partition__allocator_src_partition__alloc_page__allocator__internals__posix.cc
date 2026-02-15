@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc.orig	2025-09-10 13:22:16 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc.orig	2026-02-15 10:01:45 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc
-@@ -44,7 +44,7 @@ uint32_t SecTaskGetCodeSignStatus(SecTaskRef task) API
+@@ -40,7 +40,7 @@ uint32_t SecTaskGetCodeSignStatus(SecTaskRef task) API
  
  #if PA_BUILDFLAG(HAS_MEMORY_TAGGING) ||                                        \
      (defined(__ARM_FEATURE_BTI_DEFAULT) && (__ARM_FEATURE_BTI_DEFAULT == 1) && \

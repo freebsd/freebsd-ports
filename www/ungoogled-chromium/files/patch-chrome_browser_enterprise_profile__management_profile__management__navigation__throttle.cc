@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc.orig	2024-06-22 08:49:42 UTC
+--- chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc
-@@ -66,8 +66,8 @@ base::flat_map<std::string, SAMLProfileAttributes>& Ge
+@@ -65,8 +65,8 @@ base::flat_map<std::string, SAMLProfileAttributes>& Ge
    // TODO(crbug.com/40267996): Add actual domains with attribute names.
    profile_attributes->insert(std::make_pair(
        "supported.test",

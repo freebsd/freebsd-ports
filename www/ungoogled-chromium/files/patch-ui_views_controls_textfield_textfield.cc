@@ -1,6 +1,6 @@
---- ui/views/controls/textfield/textfield.cc.orig	2025-12-06 13:30:52 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2026-02-15 10:01:45 UTC
 +++ ui/views/controls/textfield/textfield.cc
-@@ -86,7 +86,7 @@
+@@ -87,7 +87,7 @@
  #include "base/win/win_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/text_input_flags.h"
  #include "ui/linux/linux_ui.h"
-@@ -183,7 +183,7 @@ bool IsControlKeyModifier(int flags) {
+@@ -184,7 +184,7 @@ bool IsControlKeyModifier(int flags) {
  // Control-modified key combination, but we cannot extend it to other platforms
  // as Control has different meanings and behaviors.
  // https://crrev.com/2580483002/#msg46
@@ -18,7 +18,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -794,7 +794,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -795,7 +795,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
      return handled;
    }
  
@@ -27,7 +27,7 @@
    if (!handled) {
      if (auto* linux_ui = ui::LinuxUi::instance()) {
        const auto command =
-@@ -979,7 +979,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -980,7 +980,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      if (IsTextEditCommandEnabled(linux_ui->GetTextEditCommandForEvent(
-@@ -2079,7 +2079,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -2071,7 +2071,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(crbug.com/41452689): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2595,7 +2595,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2587,7 +2587,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }
@@ -54,7 +54,7 @@
        // Only erase by line break on Linux and ChromeOS.
        if (shift) {
          return ui::TextEditCommand::DELETE_TO_BEGINNING_OF_LINE;
-@@ -2603,7 +2603,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2595,7 +2595,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
        return ui::TextEditCommand::DELETE_WORD_BACKWARD;
      case ui::VKEY_DELETE:
