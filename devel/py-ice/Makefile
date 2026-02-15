@@ -6,7 +6,8 @@ COMMENT=	Ice (Internet Communications Engine) language mapping for Python
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	mcpp:devel/mcpp
+BUILD_DEPENDS=	mcpp:devel/mcpp \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libIce.so.${LIB_VRS}:devel/ice
 
 USES=		compiler:c++11-lang python shebangfix

@@ -15,6 +15,8 @@ FLAVORS=	default nox11
 FLAVOR?=	${FLAVORS:[1]}
 nox11_PKGNAMESUFFIX=	-nox11
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
 USES=		cpe pathfix pkgconfig python scons
 CPE_VENDOR=	gpsd_project
 USE_LDCONFIG=	yes

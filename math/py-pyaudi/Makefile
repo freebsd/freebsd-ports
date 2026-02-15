@@ -18,7 +18,8 @@ BROKEN_armv7=	compilation fails: constraints not satisfied for class template 'd
 BROKEN_i386=	not for 32-bit systems, see https://github.com/darioizzo/audi/issues/62
 
 BUILD_DEPENDS=	audi>0:math/audi \
-		pybind11>0:devel/pybind11
+		pybind11>0:devel/pybind11 \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libboost_serialization.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \

@@ -18,6 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed \
 		lowdown:textproc/lowdown \
 		jq:textproc/jq \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}mako>=1.0.14:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS=	libsodium.so:security/libsodium
 RUN_DEPENDS=	bitcoin-cli:net-p2p/bitcoin-utils

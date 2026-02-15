@@ -20,6 +20,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libpciaccess.so:devel/libpciaccess \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture

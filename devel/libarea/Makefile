@@ -10,6 +10,7 @@ WWW=		https://github.com/heeks/libarea
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	${PY_BOOST}
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
 USES=		cmake python
 

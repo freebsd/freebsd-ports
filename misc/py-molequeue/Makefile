@@ -12,6 +12,7 @@ WWW=		https://www.openchemistry.org/projects/molequeue
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq@${PY_FLAVOR}
 
 USES=		cmake compiler:c++11-lang python
