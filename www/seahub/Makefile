@@ -42,7 +42,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=5.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ldap>=3.4:net/py-python-ldap@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=3.4:devel/py-setuptools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools>=3.4:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=3.4:devel/py-pytz@${PY_FLAVOR}
 
 		#${PYTHON_PKGNAMEPREFIX}captcha>=0.4:www/py-captcha@${PY_FLAVOR} \
 
