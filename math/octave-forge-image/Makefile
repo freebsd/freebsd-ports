@@ -1,5 +1,5 @@
 PORTNAME=	octave-forge-image
-PORTVERSION=	2.18.1
+PORTVERSION=	2.18.2
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
