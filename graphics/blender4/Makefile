@@ -184,7 +184,7 @@ USD_BROKEN=			require devel/tbb, which conflicts with devel/onetbb: \
 				https://github.com/PixarAnimationStudios/OpenUSD/issues/1650
 USD_CMAKE_BOOL=			WITH_USD
 USD_IMPLIES=			TBB
-USD_LIB_DEPENDS=		libusd_usd.so:misc/usd
+USD_LIB_DEPENDS=		libusd_usd.so:graphics/openusd
 VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 VULKAN_CMAKE_BOOL=		WITH_VULKAN_BACKEND
 VULKAN_LDFLAGS=			-lshaderc_shared -lSPIRV-Tools-shared

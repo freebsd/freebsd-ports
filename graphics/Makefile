@@ -682,6 +682,7 @@
     SUBDIR += openshadinglanguage
     SUBDIR += openslide
     SUBDIR += opensubdiv
+    SUBDIR += openusd
     SUBDIR += openvkl
     SUBDIR += openxr
     SUBDIR += optar
