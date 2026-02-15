@@ -1,10 +1,7 @@
 PORTNAME=	gcompris-qt
-DISTVERSION=	25.1.1
+DISTVERSION=	26.0
 CATEGORIES=	games education kde
 MASTER_SITES=	https://gcompris.net/download/qt/src/
-
-PATCH_SITES=	https://invent.kde.org/education/gcompris/-/commit/
-PATCHFILES+=	d4bd9ad1d588158963610f3dacef86e8d3b2641c.patch:-p1 # Fix configure with Qt 6.10
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational games and activities for kids ages 2 to 10
@@ -24,7 +21,7 @@ RUN_DEPENDS=	${_BOX2D_PATH}/libqmlbox2d.so:x11-toolkits/qml-box2d
 USES=		cmake compiler:c++17-lang gettext-tools gl kde:6 qt:6 tar:xz
 USE_GL=		gl opengl # GLX
 USE_KDE=	doctools:build ecm:build
-USE_QT=		base charts declarative multimedia sensors svg \
+USE_QT=		base charts declarative graphs multimedia sensors svg \
 		tools:build imageformats:run
 
 CMAKE_ARGS=	-DQML_BOX2D_LIBRARY=${_BOX2D_PATH}
