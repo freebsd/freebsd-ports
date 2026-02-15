@@ -136,6 +136,7 @@ include/QXmppQt6/QXmppStartTlsPacket.h
 include/QXmppQt6/QXmppStreamError.h
 include/QXmppQt6/QXmppStreamFeatures.h
 include/QXmppQt6/QXmppStun.h
+include/QXmppQt6/QXmppStunServer.h
 include/QXmppQt6/QXmppTask.h
 include/QXmppQt6/QXmppThumbnail.h
 include/QXmppQt6/QXmppTransferManager.h
@@ -148,6 +149,7 @@ include/QXmppQt6/QXmppTrustMessageKeyOwner.h
 include/QXmppQt6/QXmppTrustMessages.h
 include/QXmppQt6/QXmppTrustSecurityPolicy.h
 include/QXmppQt6/QXmppTrustStorage.h
+include/QXmppQt6/QXmppTurnServer.h
 include/QXmppQt6/QXmppUploadRequestManager.h
 include/QXmppQt6/QXmppUri.h
 include/QXmppQt6/QXmppUserLocationManager.h
