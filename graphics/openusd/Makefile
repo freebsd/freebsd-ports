@@ -1,7 +1,7 @@
-PORTNAME=	usd
+PORTNAME=	openusd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	25.11
-CATEGORIES=	misc
+CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal Scene Description is a scene description management system
