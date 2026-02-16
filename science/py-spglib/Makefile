@@ -1,6 +1,6 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	2.7.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject-metadata>0:devel/py-pyproject-metadata@${PY_FLAVOR} \
 		cmake:devel/cmake-core \
 		${PYNUMPY} \
@@ -33,6 +34,6 @@ MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
 TEST_WRKSRC=	${WRKSRC}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 2.6.0: 3024 passed in 149.52s (0:02:29)
+# tests as of 2.7.0: 3034 passed in 21.77s
 
 .include <bsd.port.mk>
