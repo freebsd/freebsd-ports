@@ -1,6 +1,6 @@
---- crates/fs/src/fs.rs.orig	2026-01-29 22:37:26 UTC
+--- crates/fs/src/fs.rs.orig	2026-02-11 21:05:23 UTC
 +++ crates/fs/src/fs.rs
-@@ -356,7 +356,7 @@ impl FileHandle for std::fs::File {
+@@ -354,7 +354,7 @@ impl FileHandle for std::fs::File {
          Ok(new_path)
      }
  
@@ -9,7 +9,7 @@
      fn current_path(&self, _: &Arc<dyn Fs>) -> Result<PathBuf> {
          use std::{
              ffi::{CStr, OsStr},
-@@ -365,7 +365,10 @@ impl FileHandle for std::fs::File {
+@@ -363,7 +363,10 @@ impl FileHandle for std::fs::File {
  
          let fd = self.as_fd();
          let mut kif = MaybeUninit::<libc::kinfo_file>::uninit();
@@ -21,7 +21,7 @@
  
          let result = unsafe { libc::fcntl(fd.as_raw_fd(), libc::F_KINFO, kif.as_mut_ptr()) };
          anyhow::ensure!(result != -1, "fcntl returned -1");
-@@ -375,6 +378,11 @@ impl FileHandle for std::fs::File {
+@@ -373,6 +376,11 @@ impl FileHandle for std::fs::File {
          anyhow::ensure!(!c_str.is_empty(), "Could find a path for the file handle");
          let path = PathBuf::from(OsStr::from_bytes(c_str.to_bytes()));
          Ok(path)
