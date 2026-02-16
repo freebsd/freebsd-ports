@@ -1,8 +1,6 @@
 PORTNAME=	andi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14-3
-DISTVERSIONSUFFIX=	-g390af15
-PORTREVISION=	1
+DISTVERSION=	1.15
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EvolBioInf
 
 GNU_CONFIGURE=	yes
+
+TEST_TARGET=	check-TESTS # No tests are run, see https://github.com/EvolBioInf/andi/issues/18
 
 OPTIONS_DEFINE=	DOCS
 
