@@ -1,3 +1,40 @@
+  <vuln vid="67793feb-0b5b-11f1-a1c0-0050569f0b83">
+    <topic>powerdns-recursor -- Denial of Service</topic>
+    <affects>
+    <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.3.5</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2025/12/08/powerdns-security-advisories-2025-07-and-2025-08">
+	<p>2025-07: Internal logic flaw in cache management can lead to
+	a denial of service in Recursor</p>
+	<p>2025-08: Insufficient validation of incoming notifies over
+	TCP can lead to a denial of service in Recursor</p>
+	<p>2026-01: Crafted zones can lead to increased resource usage in Recursor</p>
+	<p>2026-01: This problem can be triggered by publishing and querying a crafted
+	zone that causes large memory usage.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-59029</cvename>
+      <cvename>CVE-2025-59030</cvename>
+      <cvename>CVE-2026-24027</cvename>
+      <cvename>CVE-2026-0398</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2025-07.html</url>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2025-08.html</url>
+      <url>https://docs.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-01.html</url>
+    </references>
+    <dates>
+      <discovery>2025-12-08</discovery>
+      <entry>2026-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9cb72e4-0b52-11f1-8e75-b42e991fc52e">
     <topic>png -- CWE-122: Heap-based Buffer Overflow</topic>
     <affects>
