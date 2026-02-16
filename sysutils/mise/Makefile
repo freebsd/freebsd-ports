@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.2.9
+DISTVERSION=	2026.2.13
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -538,7 +538,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pest_derive-2.8.5 \
 		pest_generator-2.8.5 \
 		pest_meta-2.8.5 \
-		petgraph-0.7.1 \
 		petgraph-0.8.3 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
@@ -570,15 +569,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.106 \
 		prodash-31.0.0 \
-		prost-0.13.5 \
-		prost-build-0.13.5 \
-		prost-derive-0.13.5 \
-		prost-reflect-0.14.7 \
-		prost-reflect-0.15.3 \
-		prost-reflect-build-0.15.2 \
-		prost-reflect-derive-0.14.0 \
-		prost-reflect-derive-0.15.1 \
-		prost-types-0.13.5 \
+		prost-0.14.3 \
+		prost-build-0.14.3 \
+		prost-derive-0.14.3 \
+		prost-reflect-0.16.3 \
+		prost-reflect-build-0.16.0 \
+		prost-reflect-derive-0.16.0 \
+		prost-types-0.14.3 \
 		quick-xml-0.37.5 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.13 \
@@ -690,10 +687,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		signal-hook-0.4.3 \
 		signal-hook-registry-1.4.8 \
 		signature-2.2.0 \
-		sigstore-0.12.1 \
+		sigstore-0.13.0 \
 		sigstore-protobuf-specs-derive-0.0.1 \
-		sigstore-verification-0.1.8 \
-		sigstore_protobuf_specs-0.4.3 \
+		sigstore-verification-0.2.1 \
+		sigstore_protobuf_specs-0.5.0 \
 		simd-adler32-0.3.8 \
 		similar-2.7.0 \
 		siphasher-1.0.2 \
@@ -703,6 +700,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		smallvec-1.15.1 \
 		snafu-0.8.9 \
 		snafu-derive-0.8.9 \
+		snap-1.1.1 \
 		socket2-0.5.10 \
 		socket2-0.6.2 \
 		spin-0.9.8 \
