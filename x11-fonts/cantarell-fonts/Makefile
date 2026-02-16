@@ -1,5 +1,5 @@
 PORTNAME=	cantarell-fonts
-DISTVERSION=	0.310
+DISTVERSION=	0.311
 CATEGORIES=	x11-fonts gnome
 MASTER_SITES=	https://cantarell.gnome.org/releases/
 DIST_SUBDIR=	gnome
@@ -14,7 +14,5 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		fonts gettext-tools meson tar:xz
 FONTSDIR=	share/fonts/cantarell
 NO_ARCH=	yes
-
-MESON_ARGS=	-Duseprebuilt=true
 
 .include <bsd.port.mk>
