@@ -1,5 +1,5 @@
 PORTNAME=	moonlight-embedded-devel
-DISTVERSION=	2.7.6
+DISTVERSION=	2.7.7
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/armin-25689/moonlight-embedded/releases/download/v${DISTVERSION}/
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libudev.so:devel/libudev-devd \
 		libuuid.so:misc/libuuid \
 		libva.so:multimedia/libva \
-		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland
 
 USES=		cmake gl localbase:ldflags perl5 pkgconfig sdl ssl tar:xz xorg
