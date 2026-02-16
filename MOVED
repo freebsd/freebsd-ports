@@ -5151,3 +5151,4 @@ java/openjdk19||2026-02-14|Has expired: No longer supported by upstream
 emulators/firebird-emu|emulators/firebird|2026-02-14|Align with upstream project name
 security/openssl-quictls|security/openssl33-quictls|2026-02-14|Has expired: Upstream project has been archived, use security/openssl33-quictls
 misc/usd|graphics/openusd|2026-02-15|Rename to match upstream naming and moved to a more appropriate category
+www/py-django-statici18n|www/py-django_statici18n|2026-02-15|Rename to match upstream naming
