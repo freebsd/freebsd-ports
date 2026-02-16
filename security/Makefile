@@ -1073,8 +1073,10 @@
     SUBDIR += py-securesystemslib
     SUBDIR += py-serpico
     SUBDIR += py-service-identity
+    SUBDIR += py-shamir-mnemonic
     SUBDIR += py-signedjson
     SUBDIR += py-signxml
+    SUBDIR += py-slip10
     SUBDIR += py-social-auth-core
     SUBDIR += py-spake2
     SUBDIR += py-ssh-audit
