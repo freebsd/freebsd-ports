@@ -1,6 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	26.1.1
-PORTREVISION=	1
+PORTVERSION=	26.2.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -30,7 +29,6 @@ USE_PHP=	ctype curl dom fileinfo filter gd iconv ldap mbstring mysqli \
 USE_RC_SUBR=	librenms
 
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/build-phar.sh \
-		../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php \
 		../librenms-vendor-${PORTVERSION}/bin/carbon \
 		../librenms-vendor-${PORTVERSION}/bin/patch-type-declarations \
 		../librenms-vendor-${PORTVERSION}/bin/php-parse \
@@ -124,7 +122,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1768260332
+_RELEASE_TIMESTAMP=	1771243997
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
