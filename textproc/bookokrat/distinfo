@@ -1,4 +1,4 @@
-TIMESTAMP = 1771059651
+TIMESTAMP = 1771236869
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -1027,5 +1027,5 @@ SHA256 (rust/crates/zune-inflate-0.2.54.crate) = 73ab332fe2f6680068f3582b16a24f9
 SIZE (rust/crates/zune-inflate-0.2.54.crate) = 37973
 SHA256 (rust/crates/zune-jpeg-0.4.21.crate) = 29ce2c8a9384ad323cf564b67da86e21d3cfdff87908bc1223ed5c99bc792713
 SIZE (rust/crates/zune-jpeg-0.4.21.crate) = 68268
-SHA256 (bugzmanov-bookokrat-v0.3.4_GH0.tar.gz) = c4871e93ce57ee32693c2f6358782dedc920cf139a266ae26f3d958202854284
-SIZE (bugzmanov-bookokrat-v0.3.4_GH0.tar.gz) = 29946656
+SHA256 (bugzmanov-bookokrat-v0.3.5_GH0.tar.gz) = 0751669309b657aacf5bb22577d9b42d07e9f70b92aada2e717df189aeb1e72e
+SIZE (bugzmanov-bookokrat-v0.3.5_GH0.tar.gz) = 37921253
