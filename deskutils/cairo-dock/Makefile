@@ -1,5 +1,5 @@
 PORTNAME=	cairo-dock
-DISTVERSION=	3.6.1
+DISTVERSION=	3.6.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	laurent.chardon@gmail.com

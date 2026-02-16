@@ -72,7 +72,7 @@ include/cairo-dock/implementations/cairo-dock-wayland-manager.h
 lib/cairo-dock/libcd-Help.so
 lib/libgldi.so
 lib/libgldi.so.3
-lib/libgldi.so.3.6.1
+lib/libgldi.so.3.6.2
 libdata/pkgconfig/gldi.pc
 share/applications/cairo-dock-cairo.desktop
 share/applications/cairo-dock.desktop
