@@ -1,7 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.124
-PORTREVISION=	1
+DISTVERSION=	0.9.127
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -61,7 +60,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.19.0 \
 		bytemuck-1.24.0 \
 		byteorder-1.5.0 \
-		bytes-1.11.0 \
+		bytes-1.11.1 \
 		bytesize-2.3.1 \
 		camino-1.2.2 \
 		camino-tempfile-1.4.1 \
@@ -69,14 +68,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cargo-platform-0.3.0 \
 		cargo_metadata-0.23.1 \
 		cc-1.2.30 \
-		cfg-expr-0.20.5 \
+		cfg-expr-0.20.6 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.43 \
-		clap-4.5.54 \
-		clap_builder-4.5.54 \
-		clap_derive-4.5.49 \
-		clap_lex-0.7.4 \
+		clap-4.5.58 \
+		clap_builder-4.5.58 \
+		clap_derive-4.5.55 \
+		clap_lex-1.0.0 \
 		color-eyre-0.6.5 \
 		color-spantrace-0.3.0 \
 		colorchoice-1.0.3 \
@@ -167,7 +166,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		globset-0.4.18 \
 		globwalk-0.9.1 \
 		goblin-0.10.3 \
-		guppy-0.17.24 \
+		guppy-0.17.25 \
 		guppy-workspace-hack-0.1.0 \
 		h2-0.4.10 \
 		hashbrown-0.15.5 \
@@ -201,13 +200,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indicatif-0.17.11 \
 		indicatif-0.18.3 \
 		indoc-2.0.7 \
-		insta-1.46.1 \
+		insta-1.46.3 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
 		is_ci-1.2.0 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.14.0 \
-		itoa-1.0.16 \
+		itoa-1.0.17 \
 		jobserver-0.1.33 \
 		js-sys-0.3.77 \
 		lab-0.11.0 \
@@ -284,8 +283,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ppv-lite86-0.2.21 \
 		pretty-hex-0.4.1 \
 		pretty_assertions-1.4.1 \
-		proc-macro2-1.0.103 \
-		proptest-1.9.0 \
+		proc-macro2-1.0.106 \
+		proptest-1.10.0 \
 		prost-0.14.1 \
 		prost-derive-0.14.1 \
 		prost-types-0.14.1 \
@@ -297,7 +296,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		quinn-0.11.8 \
 		quinn-proto-0.11.12 \
 		quinn-udp-0.5.12 \
-		quote-1.0.42 \
+		quote-1.0.44 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
 		rand-0.9.2 \
@@ -309,9 +308,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		redox_syscall-0.5.12 \
 		redox_syscall-0.7.0 \
 		redox_users-0.5.2 \
-		regex-1.12.2 \
+		regex-1.12.3 \
 		regex-automata-0.4.12 \
-		regex-syntax-0.8.8 \
+		regex-syntax-0.8.9 \
 		reqwest-0.12.19 \
 		ring-0.17.14 \
 		ron-0.12.0 \
@@ -376,11 +375,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		supports-unicode-3.0.0 \
 		swrite-0.1.0 \
 		syn-1.0.109 \
-		syn-2.0.111 \
+		syn-2.0.114 \
 		sync_wrapper-1.0.2 \
 		tar-0.4.44 \
 		target-lexicon-0.13.3 \
-		target-spec-3.5.6 \
+		target-spec-3.5.7 \
 		target-spec-miette-0.4.5 \
 		tempfile-3.20.0 \
 		terminal_size-0.4.2 \
@@ -390,7 +389,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		test-strategy-0.4.3 \
+		test-strategy-0.4.5 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
 		thiserror-2.0.18 \
@@ -406,10 +405,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.18 \
 		tokio-util-0.7.15 \
-		toml-0.9.11+spec-1.1.0 \
+		toml-0.9.12+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
-		toml_edit-0.24.0+spec-1.1.0 \
-		toml_parser-1.0.6+spec-1.1.0 \
+		toml_edit-0.24.1+spec-1.1.0 \
+		toml_parser-1.0.7+spec-1.1.0 \
 		toml_writer-1.0.6+spec-1.1.0 \
 		tonic-0.14.2 \
 		tonic-prost-0.14.2 \
@@ -430,7 +429,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ucd-trie-0.1.7 \
 		unarray-0.1.4 \
 		unicase-2.8.1 \
-		unicode-ident-1.0.22 \
+		unicode-ident-1.0.23 \
 		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.25 \
 		unicode-segmentation-1.12.0 \
@@ -474,7 +473,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wezterm-dynamic-0.2.1 \
 		wezterm-dynamic-derive-0.1.1 \
 		wezterm-input-types-0.1.0 \
-		whoami-2.0.2 \
+		whoami-2.1.0 \
 		win32job-2.0.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -522,9 +521,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerocopy-0.8.27 \
 		zerocopy-derive-0.8.27 \
 		zeroize-1.8.1 \
-		zip-7.2.0 \
+		zip-7.3.0 \
 		zipsign-api-0.1.5 \
-		zmij-1.0.0 \
+		zmij-1.0.18 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.15+zstd.1.5.7
