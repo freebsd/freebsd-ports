@@ -1,6 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	5.0.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -106,10 +106,11 @@ JACK_LIB_DEPENDS=		libjack.so:audio/jack
 MANIFOLD_CMAKE_BOOL=		WITH_MANIFOLD
 MANIFOLD_LIB_DEPENDS=		libmanifold.so:math/manifold
 MATERIALX_CMAKE_BOOL=		WITH_MATERIALX
-MATERIALX_CMAKE_ON=		-DMaterialX_DIR:STRING=${PREFIX}/lib/cmake/MaterialX \
-				-DMATERIALX_STDLIB_DIR:STRING=${PREFIX}/share/materialx \
+MATERIALX_CMAKE_ON=		-DMaterialX_DIR:STRING=${LOCALBASE}/lib/cmake/MaterialX \
+				-DMATERIALX_STDLIB_DIR:STRING=${LOCALBASE}/share/materialx \
 				-DMATERIALX_PYTHON_DIR:STRING=${PYTHON_SITELIBDIR}/MaterialX
-MATERIALX_LIB_DEPENDS=		libMaterialXCore.so:graphics/materialx
+MATERIALX_LIB_DEPENDS=		libMaterialXCore.so:graphics/materialx \
+				libMaterialXFormat.so:graphics/materialx
 MENU_USES=			desktop-file-utils
 MOD_FLUID_CMAKE_BOOL=		WITH_MOD_FLUID
 MOD_FLUID_IMPLIES=		TBB
