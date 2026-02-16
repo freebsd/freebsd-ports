@@ -1,3 +1,40 @@
+  <vuln vid="f9cb72e4-0b52-11f1-8e75-b42e991fc52e">
+    <topic>png -- CWE-122: Heap-based Buffer Overflow</topic>
+    <affects>
+    <package>
+	<name>png</name>
+	<range><lt>1.6.55</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/pnggroup/libpng/security/advisories/GHSA-g8hp-mq4h-rqm3 reports:</p>
+	<blockquote cite="https://github.com/pnggroup/libpng/security/advisories/GHSA-g8hp-mq4h-rqm3">
+	  <p>LIBPNG is a reference library for use in applications
+	  that read, create, and manipulate PNG (Portable Network
+	  Graphics) raster image files.  Prior to 1.6.55, an
+	  out-of-bounds read vulnerability exists in the
+	  png_set_quantize() API function.  When the function is
+	  called with no histogram and the number of colors in the
+	  palette is more than twice the maximum supported by the
+	  user's display, certain palettes will cause the function to
+	  enter into an infinite loop that reads past the end of an
+	  internal heap-allocated buffer.  The images that trigger
+	  this vulnerability are valid per the PNG specification.
+	  This vulnerability is fixed in 1.6.55.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-25646</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-25646</url>
+    </references>
+    <dates>
+      <discovery>2026-02-10</discovery>
+      <entry>2026-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="590979aa-09f7-11f1-a730-5404a68ad561">
     <topic>traefik -- TCP readTimeout bypass via STARTTLS on Postgres</topic>
     <affects>
