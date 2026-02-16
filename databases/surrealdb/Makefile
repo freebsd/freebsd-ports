@@ -1,6 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -88,7 +88,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		base64ct-1.7.3 \
 		bcrypt-0.15.1 \
 		bincode-1.3.3 \
-		bindgen-0.69.5 \
 		bindgen-0.70.1 \
 		bindgen-0.72.1 \
 		bit-set-0.5.3 \
@@ -112,7 +111,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bytecheck_derive-0.6.12 \
 		bytemuck-1.22.0 \
 		byteorder-1.5.0 \
-		bytes-1.10.1 \
+		bytes-1.11.1 \
 		bzip2-sys-0.1.13+1.0.8 \
 		cast-0.3.0 \
 		castaway-0.2.3 \
@@ -138,7 +137,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		concurrent-queue-2.5.0 \
 		console_error_panic_hook-0.1.7 \
 		constant_time_eq-0.3.1 \
-		convert_case-0.6.0 \
+		convert_case-0.10.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
 		cpp_demangle-0.4.4 \
@@ -201,6 +200,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		float_next_after-1.0.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
+		foldhash-0.2.0 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
@@ -244,6 +244,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
+		hashbrown-0.16.1 \
 		headers-0.4.0 \
 		headers-core-0.3.0 \
 		heapless-0.8.0 \
@@ -306,7 +307,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lalrpop-0.20.2 \
 		lalrpop-util-0.20.2 \
 		lazy_static-1.5.0 \
-		lazycell-1.3.0 \
 		lexicmp-0.1.0 \
 		libc-0.2.171 \
 		libloading-0.7.4 \
@@ -457,7 +457,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		relative-path-1.9.3 \
+		relative-path-2.0.1 \
 		rend-0.4.2 \
 		reqwest-0.12.15 \
 		revision-0.10.0 \
@@ -474,10 +474,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rmpv-1.3.0 \
 		roaring-0.10.10 \
 		robust-1.1.0 \
-		rquickjs-0.9.0 \
-		rquickjs-core-0.9.0 \
-		rquickjs-macro-0.9.0 \
-		rquickjs-sys-0.9.0 \
+		rquickjs-0.11.0 \
+		rquickjs-core-0.11.0 \
+		rquickjs-macro-0.11.0 \
+		rquickjs-sys-0.11.0 \
 		rstar-0.12.2 \
 		rust-stemmers-1.2.0 \
 		rust_decimal-1.37.0 \
@@ -668,7 +668,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		web-time-1.1.0 \
 		web_atoms-0.1.3 \
 		webpki-roots-0.26.8 \
-		which-4.4.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
