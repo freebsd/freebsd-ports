@@ -1,0 +1,12 @@
+shamir-mnemonic is a Python implementation of SLIP-0039, a standard for
+splitting secrets into multiple mnemonic word shares using Shamir's
+Secret Sharing scheme.
+
+It is designed primarily for use with cryptocurrency wallets and
+hardware devices, enabling secure backup and recovery of sensitive
+secrets through human-readable word lists.
+
+The library provides tools for generating mnemonic shares, combining
+shares to recover secrets, and validating share sets, while remaining
+compatible with SLIP-0039 implementations used by Trezor and related
+ecosystems.
