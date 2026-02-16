@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.h.orig	2026-01-27 00:55:35 UTC
+--- chrome/common/chrome_features.h.orig	2026-02-09 21:25:07 UTC
 +++ chrome/common/chrome_features.h
 @@ -85,7 +85,7 @@ BASE_DECLARE_FEATURE(kUseKeychainKeyProvider);
  #endif  // BUILDFLAG(IS_MAC)
@@ -18,7 +18,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kShortcutsNotApps);
-@@ -970,7 +970,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceStorage);
+@@ -973,7 +973,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceStorage);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kKAnonymityServiceStorage);
  
@@ -27,7 +27,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -978,7 +978,7 @@ extern const base::FeatureParam<int> kLinuxLowMemoryMo
+@@ -981,7 +981,7 @@ extern const base::FeatureParam<int> kLinuxLowMemoryMo
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
