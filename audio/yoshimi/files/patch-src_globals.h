@@ -1,8 +1,8 @@
 - workaround for https://github.com/Yoshimi/yoshimi/issues/174
 
---- src/globals.h.orig	2023-05-29 08:38:23 UTC
+--- src/globals.h.orig	2026-02-14 16:53:10 UTC
 +++ src/globals.h
-@@ -117,7 +117,7 @@ typedef unsigned int  uint;
+@@ -123,7 +123,7 @@ using ushort = unsigned short;
  #define UNTITLED "No Title"
  
  #define DEFAULT_AUDIO jack_audio
