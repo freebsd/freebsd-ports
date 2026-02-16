@@ -50,6 +50,7 @@ include/catch2/generators/catch_generators_adapters.hpp
 include/catch2/generators/catch_generators_all.hpp
 include/catch2/generators/catch_generators_random.hpp
 include/catch2/generators/catch_generators_range.hpp
+include/catch2/generators/catch_generators_throw.hpp
 include/catch2/interfaces/catch_interfaces_all.hpp
 include/catch2/interfaces/catch_interfaces_capture.hpp
 include/catch2/interfaces/catch_interfaces_config.hpp
@@ -104,6 +105,7 @@ include/catch2/internal/catch_noncopyable.hpp
 include/catch2/internal/catch_optional.hpp
 include/catch2/internal/catch_output_redirect.hpp
 include/catch2/internal/catch_parse_numbers.hpp
+include/catch2/internal/catch_path_filter.hpp
 include/catch2/internal/catch_platform.hpp
 include/catch2/internal/catch_polyfills.hpp
 include/catch2/internal/catch_preprocessor.hpp
@@ -190,9 +192,9 @@ lib/cmake/Catch2/CatchShardTests.cmake
 lib/cmake/Catch2/CatchShardTestsImpl.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 lib/libCatch2.so
-lib/libCatch2.so.3.12.0
+lib/libCatch2.so.3.13.0
 lib/libCatch2Main.so
-lib/libCatch2Main.so.3.12.0
+lib/libCatch2Main.so.3.13.0
 share/Catch2/gdbinit
 share/Catch2/lldbinit
 share/pkgconfig/catch2-with-main.pc
