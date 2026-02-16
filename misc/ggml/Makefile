@@ -1,6 +1,6 @@
 PORTNAME=	ggml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.7
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
