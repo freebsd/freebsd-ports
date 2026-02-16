@@ -1,6 +1,6 @@
 PORTNAME=	murmur
 DISTVERSION=	1.3.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio net
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://www.mumble.info/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	1.3 is deprecated by upstream and renamed - use audio/mumble-server instead
+EXPIRATION_DATE=	2026-06-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
