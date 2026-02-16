@@ -1,4 +1,4 @@
---- src/packaging/pkgconfig/mpich.pc.in.orig	2021-12-16 16:59:29 UTC
+--- src/packaging/pkgconfig/mpich.pc.in.orig	2026-02-03 22:37:35 UTC
 +++ src/packaging/pkgconfig/mpich.pc.in
 @@ -9,7 +9,8 @@ Requires:
  Version: @MPICH_VERSION@

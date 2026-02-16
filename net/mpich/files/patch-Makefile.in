@@ -1,6 +1,6 @@
---- Makefile.in.orig	2025-02-03 15:12:15 UTC
+--- Makefile.in.orig	2026-02-03 22:45:35 UTC
 +++ Makefile.in
-@@ -8749,8 +8749,6 @@ install_sh = @install_sh@
+@@ -8728,8 +8728,6 @@ install_sh = @install_sh@
  includedir = @includedir@
  infodir = @infodir@
  install_sh = @install_sh@
@@ -9,18 +9,20 @@
  libdir = @libdir@
  libexecdir = @libexecdir@
  libmpi_so_version = @libmpi_so_version@
-@@ -9483,12 +9481,12 @@ errnames_txt_files = src/mpi/errhan/errnames.txt \
+@@ -9551,14 +9549,14 @@ errnames_txt_files = src/mpi/errhan/errnames.txt \
  errnames_txt_files = src/mpi/errhan/errnames.txt \
- 	src/mpid/ch3/errnames.txt $(am__append_53) $(am__append_75) \
- 	$(am__append_80)
+ 	src/mpid/ch3/errnames.txt $(am__append_50) $(am__append_72) \
+ 	$(am__append_77)
 -external_subdirs = @mplsrcdir@ @hwlocsrcdir@ @jsonsrcdir@ \
 +external_subdirs = @mplsrcdir@ @hwlocsrcdir@ \
- 	@yaksasrcdir@ @pmisrcdir@ $(am__append_76) $(am__append_81)
- external_ldflags = @mpllibdir@ @yaksalibdir@
+ 	@yaksasrcdir@ @pmisrcdir@ $(am__append_1) $(am__append_73) \
+ 	$(am__append_78)
+ external_ldflags = @RPATHS@ @mpllibdir@ @yaksalibdir@
  external_libs = @WRAPPER_LIBS@
- mpi_convenience_libs = 
+ 
+ # convenience libs that do not depend on MPI
 -pmpi_convenience_libs = @mpllib@ @hwloclib@ @jsonlib@ @yaksalib@ \
 +pmpi_convenience_libs = @mpllib@ @hwloclib@ @yaksalib@ \
- 	@pmilib@ $(am__append_8) $(am__append_77) $(am__append_82)
+ 	@pmilib@ $(am__append_11) $(am__append_74) $(am__append_79)
  
- # NOTE on our semi-unconventional usage of DIST_SUBDIRS:
+ # convenience libs that depend on MPI (either MPI functions or MPI constants)

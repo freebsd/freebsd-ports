@@ -1,6 +1,6 @@
---- test/mpi/configure.orig	2023-06-07 20:29:41 UTC
+--- test/mpi/configure.orig	2026-02-03 22:45:53 UTC
 +++ test/mpi/configure
-@@ -6808,16 +6808,6 @@ fi
+@@ -6747,16 +6747,6 @@ fi
  
  fi
  
