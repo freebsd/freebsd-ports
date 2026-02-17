@@ -11,7 +11,7 @@ WWW=		https://github.com/simoncozens/youseedee
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0.4:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.1.0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.3:devel/py-platformdirs@${PY_FLAVOR} \
