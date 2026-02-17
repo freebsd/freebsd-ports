@@ -18,7 +18,8 @@ BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x requires OpenSSL or the BUNDLED_
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	objdump:devel/binutils
-LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+LIB_DEPENDS=	libada.so:devel/libada \
+		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
 		libicui18n.so:devel/icu \
 		libllhttp.so:www/llhttp \
@@ -27,12 +28,14 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libngtcp2.so:net/libngtcp2 \
 		libsimdjson.so:devel/simdjson \
 		libuv.so:devel/libuv \
+		libuvwasi.so:devel/uvwasi \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++11-lang gmake localbase pkgconfig python:build shebangfix sqlite tar:xz
+USES=		compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix sqlite tar:xz
 
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
+		--shared-ada \
 		--shared-brotli \
 		--shared-cares \
 		--shared-http-parser \
@@ -42,10 +45,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-ngtcp2 \
 		--shared-simdjson \
 		--shared-sqlite \
+		--shared-uvwasi \
+		--shared-uvwasi-includes=${LOCALBASE}/include \
 		--shared-zlib \
 		--shared-zstd \
-		--without-corepack \
 		--with-intl=system-icu \
+		--without-corepack \
 		--without-npm
 CXXFLAGS_powerpc64=	-mpower8-vector
 HAS_CONFIGURE=	yes
@@ -84,6 +89,7 @@ CONFIGURE_ARGS+=--openssl-no-asm
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/tools/v8_gypfiles/v8.gyp
 # Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/deps/ada/
 	@${RM} -r ${WRKSRC}/deps/brotli/
 	@${RM} -r ${WRKSRC}/deps/cares/
 	@${RM} -r ${WRKSRC}/deps/corepack/
@@ -95,6 +101,7 @@ post-patch:
 	@${RM} -r ${WRKSRC}/deps/simdjson/
 	@${RM} -r ${WRKSRC}/deps/sqlite/
 	@${RM} -r ${WRKSRC}/deps/uv/
+	@${RM} -r ${WRKSRC}/deps/uvwasi/
 	@${RM} -r ${WRKSRC}/deps/zlib/
 	@${RM} -r ${WRKSRC}/deps/zstd/
 
@@ -103,9 +110,9 @@ post-configure:
 	# all occurrences of -I${LOCALBASE}/include. C*FLAGS include this
 	# before all -I../deps/* for bundled code. This can cause build
 	# breakages if the dependency is installed in ${LOCALBASE}. The
-	# USES+=localbase # above will ensure that we pick up includes for real
+	# USES+=localbase above will ensure that we pick up includes for real
 	# external dependencies.
-	${FIND} ${WRKSRC}/out -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
+	@${FIND} ${WRKSRC}/out -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|-I${LOCALBASE}/include||g'
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
