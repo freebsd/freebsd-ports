@@ -850,6 +850,7 @@
     SUBDIR += git-extras
     SUBDIR += git-filter-repo
     SUBDIR += git-filter-repo-devel
+    SUBDIR += git-flow-next
     SUBDIR += git-graph
     SUBDIR += git-gui
     SUBDIR += git-lab

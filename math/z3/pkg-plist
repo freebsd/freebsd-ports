@@ -19,5 +19,5 @@ lib/cmake/z3/Z3Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/z3/Z3Targets.cmake
 lib/libz3.so
 lib/libz3.so.4.15
-lib/libz3.so.4.15.3.0
+lib/libz3.so.%%SOVERSION%%
 libdata/pkgconfig/z3.pc

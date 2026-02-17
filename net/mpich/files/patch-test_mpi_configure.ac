@@ -1,6 +1,6 @@
---- test/mpi/configure.ac.orig	2024-04-20 15:21:29 UTC
+--- test/mpi/configure.ac.orig	2026-02-03 22:37:35 UTC
 +++ test/mpi/configure.ac
-@@ -488,16 +488,6 @@ fi
+@@ -523,16 +523,6 @@ fi
      AC_DEFINE(HAVE_THREADCOMM, 1, [Define if MPIX_Threadcomm is available])
  fi
  

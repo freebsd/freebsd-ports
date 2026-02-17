@@ -1,6 +1,6 @@
---- net/http/http_network_session.cc.orig	2025-09-10 13:22:16 UTC
+--- net/http/http_network_session.cc.orig	2026-02-15 10:01:45 UTC
 +++ net/http/http_network_session.cc
-@@ -21,7 +21,9 @@
+@@ -20,7 +20,9 @@
  #include "build/build_config.h"
  #include "net/base/features.h"
  #include "net/dns/host_resolver.h"

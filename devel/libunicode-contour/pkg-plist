@@ -1,5 +1,6 @@
 bin/unicode-query
 include/libunicode/capi.h
+include/libunicode/case_mapping.h
 include/libunicode/codepoint_properties.h
 include/libunicode/convert.h
 include/libunicode/emoji_segmenter.h
@@ -7,6 +8,7 @@ include/libunicode/grapheme_segmenter.h
 include/libunicode/intrinsics.h
 include/libunicode/multistage_table_generator.h
 include/libunicode/multistage_table_view.h
+include/libunicode/normalization.h
 include/libunicode/run_segmenter.h
 include/libunicode/scan.h
 include/libunicode/scoped_timer.h

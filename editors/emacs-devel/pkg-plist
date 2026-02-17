@@ -839,6 +839,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/org/csl/README
 %%DATADIR%%/%%EMACS_VER%%/etc/org/csl/chicago-author-date.csl
 %%DATADIR%%/%%EMACS_VER%%/etc/org/csl/locales-en-US.xml
+%%DATADIR%%/%%EMACS_VER%%/etc/package-autosuggest.eld
 %%DATADIR%%/%%EMACS_VER%%/etc/package-keyring.gpg
 %%DATADIR%%/%%EMACS_VER%%/etc/ps-prin0.ps
 %%DATADIR%%/%%EMACS_VER%%/etc/ps-prin1.ps
@@ -1173,6 +1174,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/calendar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/calendar.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-icalendar.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-icalendar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-lib.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-lib.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-loaddefs.el.gz
@@ -1181,6 +1184,18 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holiday-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holidays.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holidays.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-ast.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-ast.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-macs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-macs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-parser.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-parser.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-recur.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-recur.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-utils.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar-utils.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/iso8601.el.gz
@@ -3851,6 +3866,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/subr.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/svg.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/svg.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/system-sleep.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/system-sleep.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/system-taskbar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/system-taskbar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/t-mouse.el.gz

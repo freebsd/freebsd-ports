@@ -1,6 +1,6 @@
 PORTNAME=	opencoarrays
 DISTVERSION=	2.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang parallel
 
 MAINTAINER=	miguel@gocobachi.dev

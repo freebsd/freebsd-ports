@@ -1575,6 +1575,7 @@
     SUBDIR += py-dj52-laces
     SUBDIR += py-dj52-social-auth-app-django
     SUBDIR += py-dj52-strawberry-graphql-django
+    SUBDIR += py-dj60-django-stubs-ext
     SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-allauth

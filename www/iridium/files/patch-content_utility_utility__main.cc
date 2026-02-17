@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2026-01-16 14:21:21 UTC
+--- content/utility/utility_main.cc.orig	2026-02-16 10:45:29 UTC
 +++ content/utility/utility_main.cc
 @@ -38,22 +38,31 @@
  #include "services/on_device_model/public/mojom/on_device_model_service.mojom.h"
@@ -39,7 +39,7 @@
  #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
 +    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
- #include "components/services/on_device_translation/sandbox_hook.h"
+ #include "components/on_device_translation/service/sandbox_hook.h"
  #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) &&  (BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS))
 @@ -121,7 +130,7 @@ namespace content {

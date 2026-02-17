@@ -103,8 +103,6 @@ bin/yosys-witness
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/cxxrtl_time.h
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/cxxrtl_vcd.h
 %%DATADIR%%/include/backends/rtlil/rtlil_backend.h
-%%DATADIR%%/include/frontends/ast/ast.h
-%%DATADIR%%/include/frontends/ast/ast_binding.h
 %%DATADIR%%/include/frontends/blif/blifparse.h
 %%DATADIR%%/include/kernel/binding.h
 %%DATADIR%%/include/kernel/bitpattern.h

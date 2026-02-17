@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2026-01-28 20:25:50 UTC
+--- chrome/common/chrome_features.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/common/chrome_features.cc
-@@ -90,7 +90,7 @@ BASE_FEATURE(kUseKeychainKeyProvider, base::FEATURE_EN
+@@ -77,7 +77,7 @@ BASE_FEATURE(kUseKeychainKeyProvider, base::FEATURE_EN
  #endif  // BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // Enables or disables the Autofill survey triggered by opening a prompt to
  // save address info.
  BASE_FEATURE(kAutofillAddressSurvey, base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -211,7 +211,7 @@ BASE_FEATURE(kDesktopPWAsElidedExtensionsMenu,
+@@ -198,7 +198,7 @@ BASE_FEATURE(kDesktopPWAsElidedExtensionsMenu,
  // Enables or disables Desktop PWAs to be auto-started on OS login.
  BASE_FEATURE(kDesktopPWAsRunOnOsLogin,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -248,7 +248,7 @@ BASE_FEATURE(kEnableFullscreenToAnyScreenAndroid,
+@@ -235,7 +235,7 @@ BASE_FEATURE(kEnableFullscreenToAnyScreenAndroid,
  // Enables the new reset banner on the settings page.
  BASE_FEATURE(kShowResetProfileBannerV2, base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -27,7 +27,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -777,7 +777,7 @@ BASE_FEATURE(kGlicWarming, base::FEATURE_DISABLED_BY_D
+@@ -779,7 +779,7 @@ BASE_FEATURE(kGlicWarming, base::FEATURE_DISABLED_BY_D
  // Killswitch that controls whether the guest WebContents visibility state is
  // set to hidden when the Glic panel is warming.
  BASE_FEATURE(kGlicGuestContentsVisibilityState,
@@ -36,7 +36,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1321,7 +1321,7 @@ BASE_FEATURE(kKAnonymityServiceOHTTPRequests, base::FE
+@@ -1343,7 +1343,7 @@ BASE_FEATURE(kKAnonymityServiceOHTTPRequests, base::FE
  // public keys.
  BASE_FEATURE(kKAnonymityServiceStorage, base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -45,7 +45,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor, base::FEATURE_DISABLED_BY_DEFAULT);
  // Values taken from the low-memory-monitor documentation and also apply to the
  // portal API:
-@@ -1332,7 +1332,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -1354,7 +1354,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

@@ -1,5 +1,6 @@
 PORTNAME=	libgridxc
 DISTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://gitlab.com/siesta-project/libraries/${PORTNAME}/-/archive/${DISTVERSION}/
 

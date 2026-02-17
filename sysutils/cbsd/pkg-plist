@@ -409,7 +409,7 @@ cbsd/etc/defaults/vm-other-OpenIndiana-2025-x86_64.conf
 cbsd/etc/defaults/vm-other-Plan9front-x86_64.conf
 cbsd/etc/defaults/vm-other-ReactOS-x86_64.conf
 cbsd/etc/defaults/vm-other-Redox-0.7-x86_64.conf
-cbsd/etc/defaults/vm-other-SmartOS-2025-x86_64.conf
+cbsd/etc/defaults/vm-other-SmartOS-2026-x86_64.conf
 cbsd/etc/defaults/vm-other-Tribblix-2025-x86_64.conf
 cbsd/etc/defaults/vm-windows-10_86x_64x-x86_64.conf
 cbsd/etc/defaults/vm-windows-11_86x_64x-x86_64.conf
@@ -659,8 +659,6 @@ cbsd/rc.d/cbsd-statsd-jail
 cbsd/rc.d/cbsdd
 cbsd/rc.d/cbsdrsyncd
 cbsd/rc.d/jails-astart
-cbsd/release/generate-release.sh
-cbsd/release/install.sh
 cbsd/release/mkisoimages.sh
 cbsd/sbin/netmask
 cbsd/securecmd
@@ -872,6 +870,8 @@ cbsd/share/bsdconfig/cbsd/xendsk
 cbsd/share/bsdconfig/cbsd/xendsk-cfgdsk
 cbsd/share/bsdconfig/cbsd/xendsk-newdsk
 cbsd/share/bsdconfig/cbsd/xennic
+cbsd/share/bsdconfig/cbsd/xennic-cfgnic
+cbsd/share/bsdconfig/cbsd/xennic-newnic
 cbsd/share/bsdconfig/common.subr
 cbsd/share/bsdconfig/dialog.subr
 cbsd/share/bsdconfig/mustberoot.subr
@@ -1088,6 +1088,7 @@ cbsd/subr/mailtools.subr
 cbsd/subr/mdtools.subr
 cbsd/subr/multiple.subr
 cbsd/subr/nc.subr
+cbsd/subr/new_sudoexec.subr
 cbsd/subr/nodes.subr
 cbsd/subr/qemu.subr
 cbsd/subr/rcconf.subr
@@ -1282,7 +1283,6 @@ cbsd/tools/pull
 cbsd/tools/rctlcounters
 cbsd/tools/replacewdir
 cbsd/tools/repo
-cbsd/tools/repo-tui
 cbsd/tools/retrinv
 cbsd/tools/rsyncdoff
 cbsd/tools/rsyncdon

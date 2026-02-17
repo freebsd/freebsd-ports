@@ -8,8 +8,13 @@ bin/hackrf_spiflash
 bin/hackrf_sweep
 bin/hackrf_transfer
 include/libhackrf/hackrf.h
+lib/cmake/HackRF/FindLIBUSB.cmake
+lib/cmake/HackRF/HackRFConfig.cmake
+lib/cmake/HackRF/HackRFConfigVersion.cmake
+lib/cmake/HackRF/HackRFTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/HackRF/HackRFTargets.cmake
 lib/libhackrf.a
 lib/libhackrf.so
 lib/libhackrf.so.0
-lib/libhackrf.so.0.9.0
+lib/libhackrf.so.0.9.1
 libdata/pkgconfig/libhackrf.pc

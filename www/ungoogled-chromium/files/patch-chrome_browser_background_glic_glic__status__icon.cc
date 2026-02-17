@@ -1,4 +1,4 @@
---- chrome/browser/background/glic/glic_status_icon.cc.orig	2026-01-16 13:40:34 UTC
+--- chrome/browser/background/glic/glic_status_icon.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/browser/background/glic/glic_status_icon.cc
 @@ -111,7 +111,7 @@ GlicStatusIcon::GlicStatusIcon(GlicController* control
      return;
@@ -25,7 +25,7 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (context_menu_) {
-     const bool is_visible = BrowserList::GetInstance()->empty();
+     const bool is_visible = GlobalBrowserCollection::GetInstance()->IsEmpty();
      const std::optional<size_t> index =
 @@ -382,7 +382,7 @@ std::unique_ptr<StatusIconMenuModel> GlicStatusIcon::C
    menu->AddItem(IDC_GLIC_STATUS_ICON_MENU_SETTINGS,

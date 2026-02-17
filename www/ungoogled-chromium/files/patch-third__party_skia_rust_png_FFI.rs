@@ -1,4 +1,4 @@
---- third_party/skia/rust/png/FFI.rs.orig	2026-01-16 13:40:34 UTC
+--- third_party/skia/rust/png/FFI.rs.orig	2026-02-15 10:01:45 UTC
 +++ third_party/skia/rust/png/FFI.rs
 @@ -222,6 +222,7 @@ mod ffi {
          type StreamWriter;
@@ -8,7 +8,7 @@
      }
  }
  
-@@ -928,4 +929,12 @@ fn new_writer(
+@@ -940,4 +941,12 @@ fn new_writer(
  /// See also https://docs.rs/png/latest/png/struct.StreamWriter.html#method.finish
  fn finish_encoding(stream_writer: Box<StreamWriter>) -> ffi::EncodingResult {
      stream_writer.0.finish().as_ref().err().into()

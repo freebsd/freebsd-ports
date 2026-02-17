@@ -1,4 +1,4 @@
---- printing/mojom/printing_context_mojom_traits.cc.orig	2025-09-10 13:22:16 UTC
+--- printing/mojom/printing_context_mojom_traits.cc.orig	2026-02-15 10:01:45 UTC
 +++ printing/mojom/printing_context_mojom_traits.cc
 @@ -19,7 +19,7 @@
  #include "base/numerics/safe_conversions.h"
@@ -24,6 +24,6 @@
      }
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     // The dictionary must contain three strings.
-     const base::Value* value = system_print_dialog_data.Find(
-         printing::kLinuxSystemPrintDialogDataPrinter);
+     // The dictionary should either contain the GTK print dialog data or the
+     // portal print dialog data, but not a mix of both.
+     if (system_print_dialog_data.size() == 3) {

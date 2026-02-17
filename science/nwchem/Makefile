@@ -1,6 +1,7 @@
 PORTNAME=	nwchem
 #DISTVERSIONPREFIX=	v
 DISTVERSION=	7.3.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-release.revision-23c3b41b-src.2025-11-06
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/nwchemgit/nwchem/releases/download/v${DISTVERSION}-release/ \

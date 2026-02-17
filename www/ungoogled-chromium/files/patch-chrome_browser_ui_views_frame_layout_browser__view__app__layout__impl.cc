@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/layout/browser_view_app_layout_impl.cc.orig	2026-01-16 13:40:34 UTC
+--- chrome/browser/ui/views/frame/layout/browser_view_app_layout_impl.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/browser/ui/views/frame/layout/browser_view_app_layout_impl.cc
-@@ -332,7 +332,7 @@ void BrowserViewAppLayoutImpl::DoPostLayoutVisualAdjus
+@@ -371,7 +371,7 @@ void BrowserViewAppLayoutImpl::DoPostLayoutVisualAdjus
      label.SetSubpixelRenderingEnabled(false);
      label.SetHorizontalAlignment(gfx::ALIGN_LEFT);
      label.SetAutoColorReadabilityEnabled(false);

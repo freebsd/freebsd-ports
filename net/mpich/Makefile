@@ -1,5 +1,5 @@
 PORTNAME=	mpich
-DISTVERSION=	4.3.2
+DISTVERSION=	5.0.0
 CATEGORIES=	net parallel
 MASTER_SITES=	https://github.com/pmodels/mpich/releases/download/v${DISTVERSION}/
 

@@ -1,27 +1,12 @@
-First part fixes bug https://gcc.gnu.org/bugzilla/show_bug.cgi?id=123366.
-
-Second part enables support for .init_array and .fini_array, which
-FreeBSD supports since commit 83aa9cc00c2d83d05a0efe7a1496d8aab4a153bb
-in the src repository.
+Enable support for .init_array and .fini_array, which FreeBSD supports
+since commit 83aa9cc00c2d83d05a0efe7a1496d8aab4a153bb in the src
+repository.
 
 There __FreeBSD_version is 1000009, so we start enabling the support
 from __FreeBSD_version == 1000010.
---- gcc/configure.orig  2025-11-30 22:32:18.000000000 +0000
-+++ gcc/configure       2026-02-06 06:52:22.662604000 +0000
-@@ -10599,11 +10599,11 @@
- 
- elif test "x$with_zstd" != x; then
-     as_fn_error $? "Unable to find zstd.h.  See config.log for details." "$LINENO" 5
--fi
- fi
- 
- CXXFLAGS="$saved_CXXFLAGS"
- LDFLAGS="$saved_LDFLAGS"
-+fi
- 
- 
- 
-@@ -26801,6 +26801,13 @@
+--- gcc/configure.orig	2023-05-11 22:33:34 UTC
++++ gcc/configure
+@@ -24214,6 +24214,13 @@ EOF
  #else
  # if defined __sun__ && defined __svr4__
     /* Solaris ld.so.1 supports .init_array/.fini_array since Solaris 8.  */

@@ -1,6 +1,6 @@
---- media/mojo/mojom/video_frame_mojom_traits.h.orig	2025-12-10 15:04:57 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.h.orig	2026-02-16 10:45:29 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.h
-@@ -21,7 +21,7 @@
+@@ -20,7 +20,7 @@
  
  namespace mojo {
  

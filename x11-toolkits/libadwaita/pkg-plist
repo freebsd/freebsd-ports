@@ -182,6 +182,8 @@ libdata/pkgconfig/libadwaita-1.pc
 %%PORTDOCS%%%%DOCSDIR%%-1/avatar-dark.png
 %%PORTDOCS%%%%DOCSDIR%%-1/avatar.png
 %%PORTDOCS%%%%DOCSDIR%%-1/banner-dark.png
+%%PORTDOCS%%%%DOCSDIR%%-1/banner-suggested-dark.png
+%%PORTDOCS%%%%DOCSDIR%%-1/banner-suggested.png
 %%PORTDOCS%%%%DOCSDIR%%-1/banner.png
 %%PORTDOCS%%%%DOCSDIR%%-1/bin-dark.png
 %%PORTDOCS%%%%DOCSDIR%%-1/bin.png
@@ -2336,6 +2338,7 @@ share/locale/ru/LC_MESSAGES/libadwaita.mo
 share/locale/sk/LC_MESSAGES/libadwaita.mo
 share/locale/sl/LC_MESSAGES/libadwaita.mo
 share/locale/sr/LC_MESSAGES/libadwaita.mo
+share/locale/sr@latin/LC_MESSAGES/libadwaita.mo
 share/locale/sv/LC_MESSAGES/libadwaita.mo
 share/locale/th/LC_MESSAGES/libadwaita.mo
 share/locale/tr/LC_MESSAGES/libadwaita.mo

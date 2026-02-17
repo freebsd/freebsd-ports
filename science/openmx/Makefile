@@ -1,6 +1,6 @@
 PORTNAME=	openmx
 DISTVERSION=	3.9.9 # the 18June12 patch upgrades 3.9 -> 3.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://www.openmx-square.org/ \
 		https://www.openmx-square.org/bugfixed/21Oct17/:patch

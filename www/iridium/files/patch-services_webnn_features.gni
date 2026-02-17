@@ -1,0 +1,11 @@
+--- services/webnn/features.gni.orig	2026-02-16 10:45:29 UTC
++++ services/webnn/features.gni
+@@ -9,7 +9,7 @@ assert(use_blink)
+ 
+ declare_args() {
+   # TFLite is used as a fallback option on Apple and Windows.
+-  webnn_use_tflite = is_android || is_chromeos || is_linux || is_apple || is_win
++  webnn_use_tflite = !is_bsd && (is_android || is_chromeos || is_linux || is_apple || is_win)
+ 
+   # Enable the GPU delegate provided by the Optimization Guide library.
+   webnn_use_chrome_ml_api = enable_ml_internal

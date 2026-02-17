@@ -1,4 +1,4 @@
---- services/network/public/mojom/BUILD.gn.orig	2026-01-16 13:40:34 UTC
+--- services/network/public/mojom/BUILD.gn.orig	2026-02-15 10:01:45 UTC
 +++ services/network/public/mojom/BUILD.gn
 @@ -720,11 +720,11 @@ mojom("url_loader_base") {
    ]
@@ -14,7 +14,7 @@
      # TODO(crbug.com/40263697): Remove this once is_linux in the mojom IDL does
      # not include lacros.
      enabled_features += [ "use_network_interface_change_listener" ]
-@@ -1049,7 +1049,7 @@ mojom("url_loader_base") {
+@@ -1101,7 +1101,7 @@ mojom("url_loader_base") {
      },
    ]
  
@@ -23,7 +23,7 @@
      cpp_typemaps += [
        {
          types = [
-@@ -1837,7 +1837,7 @@ mojom("mojom") {
+@@ -1889,7 +1889,7 @@ mojom("mojom") {
      }
    }
  

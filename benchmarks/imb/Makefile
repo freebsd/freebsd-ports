@@ -1,7 +1,7 @@
 PORTNAME=	IMB
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2021.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks parallel
 MASTER_SITES=	https://github.com/intel/mpi-benchmarks/archive/refs/tags/
 

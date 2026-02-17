@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_buffer_manager_host.cc.orig	2025-12-15 07:48:20 UTC
+--- ui/ozone/platform/wayland/host/wayland_buffer_manager_host.cc.orig	2026-02-16 10:45:29 UTC
 +++ ui/ozone/platform/wayland/host/wayland_buffer_manager_host.cc
-@@ -45,9 +45,13 @@ std::string NumberToString(uint32_t number) {
+@@ -46,9 +46,13 @@ std::string NumberToString(uint32_t number) {
  }
  
  bool CheckImportExportFence() {

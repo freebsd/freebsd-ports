@@ -1,4 +1,4 @@
---- build/config/rust.gni.orig	2026-01-16 13:40:34 UTC
+--- build/config/rust.gni.orig	2026-02-15 10:01:45 UTC
 +++ build/config/rust.gni
 @@ -67,7 +67,8 @@ declare_args() {
    # set this to the output of `rustc -V`. Changing this string will cause all
@@ -10,7 +10,7 @@
  
    # Whether artifacts produced by the Rust compiler can participate in ThinLTO.
    #
-@@ -152,6 +153,13 @@ if (enable_rust) {
+@@ -161,6 +162,13 @@ if (enable_rust) {
    } else {
      toolchain_has_rust = custom_toolchain_supports_platform
      rustc_revision = rustc_version

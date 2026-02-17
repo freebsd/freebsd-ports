@@ -1,6 +1,6 @@
---- pdf/pdf_features.cc.orig	2026-01-16 13:40:34 UTC
+--- pdf/pdf_features.cc.orig	2026-02-15 10:01:45 UTC
 +++ pdf/pdf_features.cc
-@@ -47,7 +47,7 @@ BASE_FEATURE(kPdfUseSkiaRenderer, base::FEATURE_DISABL
+@@ -54,7 +54,7 @@ const base::FeatureParam<bool> kPdfUseSkiaPremultiplie
  // Feature has no effect if Chrome is built with no XFA support.
  BASE_FEATURE(kPdfXfaSupport, base::FEATURE_DISABLED_BY_DEFAULT);
  

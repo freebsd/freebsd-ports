@@ -1,6 +1,5 @@
 PORTNAME=	recursor
-DISTVERSION=	5.3.1
-PORTREVISION=	3
+DISTVERSION=	5.3.5
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -19,7 +18,8 @@ NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstr
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libsodium.so:security/libsodium
 
 USES=		cargo compiler:c++11-lib cpe localbase meson pkgconfig \
 		python:build tar:xz
@@ -30,7 +30,7 @@ USE_RC_SUBR=	pdns_recursor
 MESON_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
 		-Dhardening=disabled \
 		-Dlibcap=disabled \
-		-Dsigners-libsodium=disabled \
+		-Dsigners-libsodium=enabled \
 		-Dsystemd-service=disabled
 
 CARGO_CARGOLOCK=	${WRKSRC}/rec-rust-lib/rust/Cargo.lock

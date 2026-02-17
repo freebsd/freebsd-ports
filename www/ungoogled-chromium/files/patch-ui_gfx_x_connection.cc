@@ -1,6 +1,6 @@
---- ui/gfx/x/connection.cc.orig	2025-12-06 13:30:52 UTC
+--- ui/gfx/x/connection.cc.orig	2026-02-15 10:01:45 UTC
 +++ ui/gfx/x/connection.cc
-@@ -410,7 +410,7 @@ bool Connection::HasNextEvent() {
+@@ -411,7 +411,7 @@ bool Connection::HasNextEvent() {
      }
      events_.pop_front();
    }

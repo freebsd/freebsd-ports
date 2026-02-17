@@ -1,6 +1,6 @@
---- chrome/common/controlled_frame/controlled_frame.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/common/controlled_frame/controlled_frame.cc.orig	2026-02-15 10:01:45 UTC
 +++ chrome/common/controlled_frame/controlled_frame.cc
-@@ -18,7 +18,7 @@
+@@ -20,7 +20,7 @@
  #include "third_party/blink/public/common/features.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -89,7 +89,7 @@ bool AvailabilityCheck(const std::string& api_full_nam
+@@ -91,7 +91,7 @@ bool AvailabilityCheck(const std::string& api_full_nam
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- gpu/config/gpu_finch_features.cc.orig	2025-12-10 15:04:57 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2026-02-16 10:45:29 UTC
 +++ gpu/config/gpu_finch_features.cc
-@@ -122,7 +122,8 @@ BASE_FEATURE(kAllowHardwareBufferUsageFlagsFromVulkanF
+@@ -116,7 +116,8 @@ BASE_FEATURE(kRemoveGPULegacyIPC, base::FEATURE_DISABL
  // Android and Linux.
  BASE_FEATURE(kDefaultEnableGpuRasterization,
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \

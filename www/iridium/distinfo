@@ -1,6 +1,6 @@
-TIMESTAMP = 1770632920
-SHA256 (iridium-browser-2026.02.144.3.tar.xz) = ad0243ad6da9fe42ea135d1762920d92198ee5f407a6eef3efa9d8005d27ba42
-SIZE (iridium-browser-2026.02.144.3.tar.xz) = 1129354804
+TIMESTAMP = 1771254928
+SHA256 (iridium-browser-2026.02.145.tar.xz) = da326d5698fc2e5134da50970b247e438335c407c4e5316979d03591a61a07f6
+SIZE (iridium-browser-2026.02.145.tar.xz) = 1229784172
 SHA256 (pulseaudio-16.1.tar.gz) = 027266c62f2a84422ac45fa721a649508f0f1628fb1fd9242315ac54ce2d7c92
 SIZE (pulseaudio-16.1.tar.gz) = 2763111
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
@@ -337,3 +337,5 @@ SHA256 (rust/crates/zerocopy-derive-0.7.35.crate) = fa4f8080344d4671fb4e831a13ad
 SIZE (rust/crates/zerocopy-derive-0.7.35.crate) = 37829
 SHA256 (rollup-rollup-v4.22.4_GH0.tar.gz) = a7e5c09f00fe50adabe27fef8455510f156cf73fee8aef1faf3804b653988e4c
 SIZE (rollup-rollup-v4.22.4_GH0.tar.gz) = 1732642
+SHA256 (evanw-esbuild-v0.27.1_GH0.tar.gz) = bcc3abdc911961ef04340714dc69ddc34af6d2e2c60a1c4036d1c7f1a3fc4a23
+SIZE (evanw-esbuild-v0.27.1_GH0.tar.gz) = 1978868

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_configurations.cc.orig	2026-01-16 13:40:34 UTC
+--- components/feature_engagement/public/feature_configurations.cc.orig	2026-02-15 10:01:45 UTC
 +++ components/feature_engagement/public/feature_configurations.cc
-@@ -103,7 +103,7 @@ std::optional<FeatureConfig> CreateNewUserGestureInPro
+@@ -100,7 +100,7 @@ std::optional<FeatureConfig> CreateNewUserGestureInPro
  
  std::optional<FeatureConfig> GetClientSideFeatureConfig(
      const base::Feature* feature) {
@@ -9,7 +9,7 @@
  
    // The IPH bubble for link capturing has a trigger set to ANY so that it
    // always shows up. The per app specific guardrails are independently stored
-@@ -122,7 +122,7 @@ std::optional<FeatureConfig> GetClientSideFeatureConfi
+@@ -119,7 +119,7 @@ std::optional<FeatureConfig> GetClientSideFeatureConfi
  
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
    if (kIPHPasswordsManagementBubbleAfterSaveFeature.name == feature->name) {
      FeatureConfig config;
      config.valid = true;
-@@ -2028,7 +2028,8 @@ std::optional<FeatureConfig> GetClientSideFeatureConfi
+@@ -2047,7 +2047,8 @@ std::optional<FeatureConfig> GetClientSideFeatureConfi
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
