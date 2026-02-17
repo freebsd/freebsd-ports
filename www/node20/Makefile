@@ -29,7 +29,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++11-lang gmake localbase pkgconfig python:build shebangfix tar:xz
+USES=		compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix tar:xz
 
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-brotli \
@@ -42,8 +42,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-ngtcp2 \
 		--shared-simdjson \
 		--shared-zlib \
-		--without-corepack \
 		--with-intl=system-icu \
+		--without-corepack \
 		--without-npm
 CXXFLAGS_powerpc64=	-mpower8-vector
 HAS_CONFIGURE=	yes
@@ -99,9 +99,9 @@ post-configure:
 	# all occurrences of -I${LOCALBASE}/include. C*FLAGS include this
 	# before all -I../deps/* for bundled code. This can cause build
 	# breakages if the dependency is installed in ${LOCALBASE}. The
-	# USES+=localbase # above will ensure that we pick up includes for real
+	# USES+=localbase above will ensure that we pick up includes for real
 	# external dependencies.
-	${FIND} ${WRKSRC}/out -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
+	@${FIND} ${WRKSRC}/out -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e "s|-I${LOCALBASE}/include||g"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
