@@ -1,6 +1,6 @@
---- src/libunicode/CMakeLists.txt.orig	2025-12-22 21:10:19 UTC
+--- src/libunicode/CMakeLists.txt.orig	2026-02-16 23:18:35 UTC
 +++ src/libunicode/CMakeLists.txt
-@@ -97,9 +97,10 @@ target_link_libraries(unicode_loader PUBLIC  unicode::
+@@ -102,9 +102,10 @@ endif()
  
  # =========================================================================================================
  
