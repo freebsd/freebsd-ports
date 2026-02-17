@@ -1,6 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -341,7 +341,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mio-1.0.3 \
 		multer-3.1.0 \
 		multimap-0.10.0 \
-		nanoid-0.4.0 \
 		nanoservices-utils-0.1.9 \
 		native-tls-0.2.14 \
 		ndarray-0.15.6 \
