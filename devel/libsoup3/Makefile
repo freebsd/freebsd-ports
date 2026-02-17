@@ -34,13 +34,14 @@ CPE_VENDOR=	gnome
 USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dtests=false \
-		-Dsysprof=disabled \
+MESON_ARGS=	-Dsysprof=disabled \
 		-Dpkcs11_tests=disabled \
 		-Dautobahn=disabled \
 		-Dntlm=disabled
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+TESTING_UNSAFE=	Two tests fail due to getting a different error code than the test expects
 
 OPTIONS_DEFINE=			VAPI
 OPTIONS_DEFAULT=		GSSAPI_${${SSL_DEFAULT} == base :?BASE :NONE} VAPI
