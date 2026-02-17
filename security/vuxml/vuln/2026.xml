@@ -144,11 +144,11 @@
     <affects>
       <package>
        <name>chromium</name>
-       <range><lt>144.0.7559.75</lt></range>
+       <range><lt>145.0.7632.75</lt></range>
       </package>
       <package>
        <name>ungoogled-chromium</name>
-       <range><lt>144.0.7559.75</lt></range>
+       <range><lt>145.0.7632.75</lt></range>
       </package>
     </affects>
     <description>
