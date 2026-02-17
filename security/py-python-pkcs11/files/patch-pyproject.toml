@@ -5,7 +5,7 @@ Revert:		https://github.com/pyauth/python-pkcs11/commit/d45957fd94abfd01b47cbf6a
 @@ -1,5 +1,5 @@
  [build-system]
 -requires = ["setuptools>=80.8", "cython", "setuptools-scm>=8.3.1"]
-+requires = ["setuptools>=61", "cython", "setuptools-scm>=8"]
++requires = ["setuptools>=61", "cython", "setuptools-scm>=8.3.1"]
  build-backend = "setuptools.build_meta"
  
  [project]
