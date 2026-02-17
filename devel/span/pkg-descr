@@ -1,0 +1,7 @@
+This repository contains a single-header implementation of C++20's std::span,
+conforming to the C++20 committee draft. It is compatible with C++11, but will
+use newer language features if they are available.
+
+It differs from the implementation in the Microsoft GSL in that it is
+single-header and does not depend on any other GSL facilities. It also works
+with C++11, while the GSL version requires C++14.

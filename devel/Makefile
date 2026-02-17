@@ -8368,6 +8368,7 @@
     SUBDIR += sope2
     SUBDIR += sord
     SUBDIR += spago
+    SUBDIR += span
     SUBDIR += spark
     SUBDIR += sparsebitset
     SUBDIR += sparsehash
