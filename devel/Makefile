@@ -739,6 +739,7 @@
     SUBDIR += freebsd-nvme-shim
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
+    SUBDIR += frozen
     SUBDIR += fruit
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
