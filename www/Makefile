@@ -1670,7 +1670,6 @@
     SUBDIR += py-django-solo
     SUBDIR += py-django-sortedm2m
     SUBDIR += py-django-star-ratings
-    SUBDIR += py-django_statici18n
     SUBDIR += py-django-staticinline
     SUBDIR += py-django-storages
     SUBDIR += py-django-stubs-ext
@@ -1692,6 +1691,7 @@
     SUBDIR += py-django52
     SUBDIR += py-django60
     SUBDIR += py-django_compressor
+    SUBDIR += py-django_statici18n
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangoql
     SUBDIR += py-djangorestframework

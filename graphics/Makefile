@@ -84,8 +84,8 @@
     SUBDIR += bitmap
     SUBDIR += blend2d
     SUBDIR += blender
-    SUBDIR += blender4
     SUBDIR += blender-doc
+    SUBDIR += blender4
     SUBDIR += bmeps
     SUBDIR += bmp2html
     SUBDIR += bonzomatic

@@ -847,8 +847,8 @@
     SUBDIR += waon
     SUBDIR += wasabi
     SUBDIR += wavbreaker
-    SUBDIR += waves
     SUBDIR += wavegain
+    SUBDIR += waves
     SUBDIR += wavetral
     SUBDIR += wavpack
     SUBDIR += wavplay
