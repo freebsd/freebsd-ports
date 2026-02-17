@@ -11,8 +11,6 @@ WWW=		https://greptime.com/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-xBROKEN=		error[E0635]: unknown feature `stdsimd`, see https://github.com/GreptimeTeam/greptimedb/issues/3656
-
 BUILD_DEPENDS=	gmake:devel/gmake \
 		protoc:devel/protobuf \
 		rust-nightly>0:lang/rust-nightly \
