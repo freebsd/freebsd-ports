@@ -12,6 +12,8 @@ LICENSE_COMB=		multi
 LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
+IGNORE_FreeBSD_13=	is not supported on systems with OpenSSL 1.1.1
+
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
 # libqmlbox2d.so is a QML plugin...don't use LIB_DEPENDS
