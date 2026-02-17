@@ -95,10 +95,8 @@ _INSTALLDIR=	${PREFIX}/${PKGBASE}
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
-.if ${PORT_OPTIONS:MWEBKIT}
-. if ${RUBY_VER} >= 3.4
+.if defined(RUBY_VER) && ${RUBY_VER} >= 3.4
 BUILD_DEPENDS+=	rubygem-getoptlong>=0:devel/rubygem-getoptlong
-. endif
 .endif
 
 post-extract:
