@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-02-24 18:41:07 UTC
+--- CMakeLists.txt.orig	2025-11-11 19:00:39 UTC
 +++ CMakeLists.txt
-@@ -237,11 +237,7 @@ else()
+@@ -277,11 +277,7 @@ else()
    set(INSTALL_DOC_DIR "share/doc/${CMAKE_PROJECT_NAME}")
    set(INSTALL_CONF_DIR "${INSTALL_DOC_DIR}/conf")
    set(INSTALL_SCRIPTS_DIR "${INSTALL_DOC_DIR}/scripts")
