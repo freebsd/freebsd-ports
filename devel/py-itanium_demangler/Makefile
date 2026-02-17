@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	kenrap@kennethraplee.com
 COMMENT=	Pure Python parser for mangled itanium symbols
 WWW=		https://github.com/whitequark/python-itanium_demangler
 
