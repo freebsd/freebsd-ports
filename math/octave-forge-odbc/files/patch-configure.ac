@@ -1,11 +1,19 @@
---- configure.ac.orig	2024-04-03 21:52:15.764296000 -0500
-+++ configure.ac	2024-04-03 21:52:51.590619000 -0500
-@@ -200,7 +200,7 @@
+--- configure.ac.orig	2026-02-16 11:56:26 UTC
++++ configure.ac
+@@ -200,15 +200,12 @@ else
     ODBC_LIBS=`$ODBC_CONFIG --libs`
     ODBC_CFLAGS=`$ODBC_CONFIG --cflags`
   else
 -   PKG_CHECK_MODULES([ODBC], [odbc])
 +   true
   fi
+  save_CPPFLAGS=$CPPFLAGS
+  CPPFLAGS=$CPPFLAGS $ODBC_CFLAGS1
+  AC_CHECK_HEADERS([sql.h])
+  CPPFLAGS=$save_CPPFLAGS
+-fi
+-if [ test "$ac_cv_header_sql_h" = "no" ]; then
+- AC_MSG_ERROR([*** Could not find sql.h - development headers not installed?])
  fi
+ 
  AC_SUBST([ODBC_LIBS])
