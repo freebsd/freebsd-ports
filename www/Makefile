@@ -473,6 +473,7 @@
     SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
+    SUBDIR += nbytes
     SUBDIR += ncgopher
     SUBDIR += neon
     SUBDIR += netrik

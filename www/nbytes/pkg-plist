@@ -1,0 +1,3 @@
+include/nbytes.h
+lib/libnbytes.so
+libdata/pkgconfig/nbytes.pc

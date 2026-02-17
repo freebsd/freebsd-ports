@@ -1,0 +1,5 @@
+TIMESTAMP = 1771105010
+SHA256 (nodejs-nbytes-v0.1.2_GH0.tar.gz) = c06bbf55969128b9b4d09ea673af7b032a99f5f9d4f1eeb478e40eab4c632553
+SIZE (nodejs-nbytes-v0.1.2_GH0.tar.gz) = 14380
+SHA256 (00f48a0620cef800054d4aab061f09d89990a1b9.patch) = 765fe83873fedf5d09ee43deb8dfde7eacb9d6ed9a37f7099d7b207e1df9c56c
+SIZE (00f48a0620cef800054d4aab061f09d89990a1b9.patch) = 1518
