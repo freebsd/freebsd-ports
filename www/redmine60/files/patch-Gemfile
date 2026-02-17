@@ -1,8 +1,10 @@
 --- Gemfile.orig	2026-01-06 02:25:03 UTC
 +++ Gemfile
-@@ -2,26 +2,26 @@ ruby '>= 3.1.0', '< 3.4.0'
+@@ -1,27 +1,27 @@ source 'https://rubygems.org'
+ source 'https://rubygems.org'
  
- ruby '>= 3.1.0', '< 3.4.0'
+-ruby '>= 3.1.0', '< 3.4.0'
++ruby '>= 3.1.0', '< 4.0.0'
  
 -gem 'rails', '7.2.3'
 +gem 'rails', '~> 7.2.3'
