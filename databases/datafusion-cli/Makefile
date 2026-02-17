@@ -12,6 +12,8 @@ WWW=		https://datafusion.apache.org/user-guide/cli/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	protoc:devel/protobuf
+
 USES=		cargo llvm
 
 CARGO_INSTALL_PATH=	datafusion-cli
