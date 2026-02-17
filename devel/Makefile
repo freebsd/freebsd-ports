@@ -1512,6 +1512,7 @@
     SUBDIR += libzim
     SUBDIR += libzookeeper
     SUBDIR += libzvbi
+    SUBDIR += lief
     SUBDIR += lightning
     SUBDIR += linenoise
     SUBDIR += linux-c7-dbus-libs

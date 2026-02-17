@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2026-01-24 10:22:30 UTC
++++ CMakeLists.txt
+@@ -275,8 +275,7 @@ if(LIEF_OPT_UTFCPP_EXTERNAL)
+ # =======================================
+ 
+ if(LIEF_OPT_UTFCPP_EXTERNAL)
+-  find_package(utf8cpp REQUIRED)
+-  target_link_libraries(LIB_LIEF PRIVATE utf8cpp::utf8cpp)
++  target_include_directories(LIB_LIEF SYSTEM PUBLIC "/usr/local/include/utf8cpp")
+ else()
+   add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/internal/utfcpp/utf8.h
+     COMMAND

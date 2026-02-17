@@ -1,0 +1,19 @@
+The purpose of this project is to provide a cross-platform library to parse,
+modify and abstract ELF, PE and MachO formats.
+
+Main features:
+- Parsing: LIEF can parse ELF, PE, MachO, COFF, OAT, DEX, VDEX, ART and provides
+  an user-friendly API to access to internals.
+- Modify: LIEF can use to modify some parts of these formats (adding a section,
+  changing a symbol's name, ...)
+- Abstract: Three formats have common features like sections, symbols, entry
+  point... LIEF factors them.
+- API: LIEF can be used in C++, Python, Rust, C and Node.js (unofficial,
+  AI-generated)
+
+Extended features:
+- DWARF/PDB Support
+- Objective-C Metadata
+- Dyld Shared Cache with support for extracting Dylib
+- Disassembler: AArch64, x86/x86-64, ARM, RISC-V, Mips, PowerPC, eBPF
+- Assembler: AArch64, x86/x86-64
