@@ -1,5 +1,5 @@
 PORTNAME=	libp11
-DISTVERSION=	0.4.17
+DISTVERSION=	0.4.18
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
