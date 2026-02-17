@@ -640,7 +640,6 @@ MASTER_SITE_GNU_ALPHA+= \
 	https://www.mirrorservice.org/sites/alpha.gnu.org/gnu/%SUBDIR%/ \
 	http://gnu.c3sl.ufpr.br/alpha/%SUBDIR%/ \
 	https://mirror.cedia.org.ec/gnualpha/%SUBDIR%/ \
-	http://gnu-alpha.mirrors.hostinginnederland.nl/%SUBDIR%/ \
 	https://gnualpha.uib.no/%SUBDIR%/ \
 	https://mirrors.fe.up.pt/pub/gnu-alpha/%SUBDIR%/ \
 	http://mirror.lihnidos.org/GNU/alpha/gnu/%SUBDIR%/ \
@@ -665,7 +664,6 @@ MASTER_SITE_IDSOFTWARE+= \
 MASTER_SITE_ISC+= \
 	https://ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.isc.org/isc/%SUBDIR%/ \
-	ftp://ftp.ciril.fr/pub/isc/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/network/isc/%SUBDIR%/ \
 	ftp://ftp.u-aizu.ac.jp/pub/net/isc/%SUBDIR%/ \
@@ -927,19 +925,9 @@ MASTER_SITE_SUDO+= \
 	http://sudo-ftp.basemirror.de/ \
 	http://ftp.twaren.net/Unix/Security/Sudo/ \
 	ftp://ftp.sudo.ws/pub/sudo/ \
-	ftp://plier.ucar.edu/pub/sudo/ \
-	ftp://obsd.isc.org/pub/sudo/ \
 	ftp://ftp.uwsg.indiana.edu/pub/security/sudo/ \
-	ftp://ftp.tuwien.ac.at/utils/admin-tools/sudo/ \
-	ftp://sunsite.ualberta.ca/pub/Mirror/sudo/ \
-	ftp://zoot.tele.dk/pub/sudo/ \
 	ftp://ftp.in2p3.fr/pub/sudo/ \
-	ftp://ftp.arcane-networks.fr/pub/mirrors/sudo/ \
-	ftp://ftp.usbm.de/pub/sudo/ \
-	ftp://ftp.cs.tu-berlin.de/pub/misc/sudo/ \
-	ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/sudo/ \
 	ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/sudo/ \
-	ftp://ftp.cin.nihon-u.ac.jp/pub/misc/sudo/ \
 	ftp://sunsite.icm.edu.pl/packages/sudo/ \
 	ftp://mirror.cdmon.com/pub/sudo/ \
 	ftp://ftp.twaren.net/Unix/Security/Sudo/
@@ -983,26 +971,15 @@ MASTER_SITE_TOR+= \
 		ftp://ftp.bit.nl/mirror/tor/%SUBDIR%/ \
 		https://cyberside.net.ee/sibul/dist/%SUBDIR%/ \
 		https://ftp.bit.nl/mirror/tor/%SUBDIR%/ \
-		http://mirror.hessmo.com/tor/dist/%SUBDIR%/ \
-		http://mirror.host4site.co.il/torproject.org/dist/%SUBDIR%/ \
-		http://mirror.open-networx.org/torproject.org/dist/%SUBDIR%/ \
 		http://mirror.tor.hu/dist/%SUBDIR%/ \
-		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/%SUBDIR%/ \
 		http://theonionrouter.com/dist/%SUBDIR%/ \
 		http://tor.amorphis.eu/dist/%SUBDIR%/ \
 		http://tor.askapache.com/dist/%SUBDIR%/ \
-		http://tor.beme-it.de/dist/%SUBDIR%/ \
-		http://tor.borgmann.tv/dist/%SUBDIR%/ \
 		http://tor.cyberarmy.at/dist/%SUBDIR%/ \
 		http://tor.dont-know-me.at/dist/%SUBDIR%/ \
-		http://tor.factor.cc/dist/%SUBDIR%/ \
 		http://tor.idnr.ws/dist/%SUBDIR%/ \
-		http://tor.kamagurka.org/dist/%SUBDIR%/ \
 		http://tor.spline.de/dist/%SUBDIR%/ \
-		http://tor.vesta.nu/dist/%SUBDIR%/ \
 		http://torproj.xpdm.us/dist/%SUBDIR%/ \
-		http://torproject.nwlinux.us/dist/%SUBDIR%/ \
-		https://torproject.ph3x.at/dist/%SUBDIR%/ \
 		http://www.oignon.net/dist/%SUBDIR%/ \
 		http://www.torproject.org.nyud.net/dist/%SUBDIR%/ \
 		http://www.torproject.us/dist/%SUBDIR%/
