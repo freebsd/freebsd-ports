@@ -1,0 +1,15 @@
+Merve is a fast C++ lexer for extracting named exports from CommonJS modules.
+This library performs static analysis to detect CommonJS export patterns without
+executing the code.
+
+Features:
+- Fast: Zero-copy parsing for most exports using std::string_view
+- Accurate: Handles complex CommonJS patterns including re-exports,
+  Object.defineProperty, and transpiler output
+- Source Locations: Each export includes a 1-based line number for tooling
+  integration
+- Unicode Support: Properly unescapes JavaScript string literals including
+  \u{XXXX} and surrogate pairs
+- Optional SIMD Acceleration: Can use simdutf for faster string operations
+- No Dependencies: Single-header distribution available (simdutf is optional)
+- Cross-Platform: Works on Linux, macOS, and Windows

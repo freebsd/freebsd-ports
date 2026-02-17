@@ -1,0 +1,11 @@
+include/merve.h
+include/merve/parser.h
+include/merve/version.h
+lib/cmake/merve/merve-config-version.cmake
+lib/cmake/merve/merve-config.cmake
+lib/cmake/merve/merve_targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/merve/merve_targets.cmake
+lib/libmerve.so
+lib/libmerve.so.1
+lib/libmerve.so.%%PORTVERSION%%
+libdata/pkgconfig/merve.pc

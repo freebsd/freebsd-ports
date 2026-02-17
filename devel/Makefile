@@ -1673,6 +1673,7 @@
     SUBDIR += menhir
     SUBDIR += mercurial
     SUBDIR += mergify
+    SUBDIR += merve
     SUBDIR += meson
     SUBDIR += meson-python
     SUBDIR += mfc-candidates
