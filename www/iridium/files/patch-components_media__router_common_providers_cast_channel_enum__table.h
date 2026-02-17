@@ -1,6 +1,6 @@
---- components/media_router/common/providers/cast/channel/enum_table.h.orig	2025-12-10 15:04:57 UTC
+--- components/media_router/common/providers/cast/channel/enum_table.h.orig	2026-02-16 10:45:29 UTC
 +++ components/media_router/common/providers/cast/channel/enum_table.h
-@@ -368,7 +368,12 @@ class EnumTable {
+@@ -364,7 +364,12 @@ class EnumTable {
  
   private:
  #ifdef ARCH_CPU_64_BITS

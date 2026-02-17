@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2026-01-16 14:21:21 UTC
+--- content/browser/BUILD.gn.orig	2026-02-16 10:45:29 UTC
 +++ content/browser/BUILD.gn
-@@ -88,6 +88,7 @@ source_set("browser") {
+@@ -87,6 +87,7 @@ source_set("browser") {
    frameworks = []
    ldflags = []
  
@@ -24,7 +24,7 @@
      "//components/payments/content/icon",
      "//components/payments/mojom",
      "//components/performance_manager/scenario_api",
-@@ -2607,6 +2610,14 @@ source_set("browser") {
+@@ -2601,6 +2604,14 @@ source_set("browser") {
      ]
    }
  
@@ -39,7 +39,7 @@
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2656,6 +2667,15 @@ source_set("browser") {
+@@ -2650,6 +2661,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]

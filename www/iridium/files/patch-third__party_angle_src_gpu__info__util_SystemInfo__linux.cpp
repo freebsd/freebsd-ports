@@ -1,4 +1,4 @@
---- third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig	2025-12-10 15:04:57 UTC
+--- third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig	2026-02-16 10:45:29 UTC
 +++ third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
 @@ -71,6 +71,24 @@ bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo
  
@@ -22,12 +22,12 @@
 +#endif
 +    }
 +#else
-     if (!GetPCIDevicesWithLibPCI(&(info->gpus)))
+     if (!GetPCIDevicesWithLibPCI(&(info->gpus)) || info->gpus.size() == 0)
      {
  #if defined(ANGLE_USE_VULKAN_SYSTEM_INFO)
-@@ -85,6 +103,7 @@ bool GetSystemInfo(SystemInfo *info)
-     {
+@@ -80,6 +98,7 @@ bool GetSystemInfo(SystemInfo *info)
          return false;
+ #endif  // defined(ANGLE_HAS_VULKAN_SYSTEM_INFO)
      }
 +#endif
  

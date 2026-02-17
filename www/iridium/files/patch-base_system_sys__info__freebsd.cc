@@ -1,9 +1,9 @@
---- base/system/sys_info_freebsd.cc.orig	2025-12-10 15:04:57 UTC
+--- base/system/sys_info_freebsd.cc.orig	2026-02-16 10:45:29 UTC
 +++ base/system/sys_info_freebsd.cc
-@@ -9,28 +9,95 @@
- #include <sys/sysctl.h>
+@@ -10,21 +10,75 @@
  
  #include "base/notreached.h"
+ #include "base/numerics/safe_conversions.h"
 +#include "base/process/process_metrics.h"
 +#include "base/strings/string_util.h"
  
@@ -20,7 +20,7 @@
 +  return ncpu;
 +}
 +
- ByteCount SysInfo::AmountOfPhysicalMemoryImpl() {
+ ByteSize SysInfo::AmountOfTotalPhysicalMemoryImpl() {
 -  int pages, page_size;
 +  int pages, page_size, r = 0;
    size_t size = sizeof(pages);
@@ -36,12 +36,11 @@
 +  if (r == -1) {
      NOTREACHED();
    }
--  return ByteCount(page_size) * pages;
 +
-+  return ByteCount::FromUnsigned(static_cast<uint64_t>(pages) * page_size);
+   return ByteSize(checked_cast<unsigned>(page_size)) * pages;
  }
  
-+ByteCount SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
++ByteSize SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
 +  int page_size, r = 0;
 +  unsigned int pgfree, pginact, pgcache;
 +  size_t size = sizeof(page_size);
@@ -58,10 +57,10 @@
 +
 +  if (r == -1) {
 +    NOTREACHED();
-+    return ByteCount();
++    return ByteSize(0);
 +  }
 +
-+  return ByteCount::FromUnsigned(static_cast<uint64_t>((pgfree + pginact + pgcache) * page_size));
++  return ByteSize((pgfree + pginact + pgcache) * checked_cast<unsigned>(page_size));
 +}
 +
  // static
@@ -81,8 +80,7 @@
  uint64_t SysInfo::MaxSharedMemorySize() {
    size_t limit;
    size_t size = sizeof(limit);
-+
-   if (sysctlbyname("kern.ipc.shmmax", &limit, &size, NULL, 0) < 0) {
+@@ -32,6 +86,18 @@ uint64_t SysInfo::MaxSharedMemorySize() {
      NOTREACHED();
    }
    return static_cast<uint64_t>(limit);

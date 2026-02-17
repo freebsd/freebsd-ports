@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-01-16 14:21:21 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-02-16 10:45:29 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -358,7 +358,7 @@
+@@ -362,7 +362,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIPromptAPIMultimodalInput",
@@ -9,7 +9,7 @@
        origin_trial_allows_third_party: true,
        implied_by: ["AIPromptAPIMultimodalInput"],
      },
-@@ -388,7 +388,7 @@
+@@ -392,7 +392,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIPromptAPIMultimodalInput",
@@ -18,7 +18,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -422,7 +422,7 @@
+@@ -426,7 +426,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIProofreaderAPI",
@@ -27,7 +27,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -437,7 +437,7 @@
+@@ -441,7 +441,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIRewriterAPI",
@@ -36,7 +36,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -470,7 +470,7 @@
+@@ -474,7 +474,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIWriterAPI",
@@ -45,7 +45,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -594,7 +594,7 @@
+@@ -598,7 +598,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -54,7 +54,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1279,7 +1279,7 @@
+@@ -1286,7 +1286,7 @@
        name: "CSPHashesV1",
        base_feature: "none",
        origin_trial_feature_name: "CSPExtendedScriptSrcHashes",
@@ -63,7 +63,7 @@
        status: "experimental",
        public: true,
      },
-@@ -1858,7 +1858,7 @@
+@@ -1882,7 +1882,7 @@
      {
        name: "DeviceBoundSessionCredentials",
        origin_trial_feature_name: "DeviceBoundSessionCredentials",
@@ -72,7 +72,7 @@
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -1866,7 +1866,7 @@
+@@ -1890,7 +1890,7 @@
      {
        name: "DeviceBoundSessionCredentials2",
        origin_trial_feature_name: "DeviceBoundSessionCredentials2",
@@ -81,7 +81,7 @@
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -2007,7 +2007,7 @@
+@@ -2035,7 +2035,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -90,7 +90,7 @@
        base_feature: "none",
      },
      {
-@@ -2318,7 +2318,7 @@
+@@ -2348,7 +2348,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -99,7 +99,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3862,7 +3862,7 @@
+@@ -3945,7 +3945,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -108,7 +108,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -5416,7 +5416,7 @@
+@@ -5518,7 +5518,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -117,7 +117,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -5611,7 +5611,7 @@
+@@ -5721,7 +5721,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -126,7 +126,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
      },
-@@ -5623,7 +5623,7 @@
+@@ -5733,7 +5733,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -135,7 +135,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -5731,7 +5731,7 @@
+@@ -5843,7 +5843,7 @@
      {
        name: "WebAuthenticationImmediateGet",
        origin_trial_feature_name: "WebAuthenticationImmediateGet",

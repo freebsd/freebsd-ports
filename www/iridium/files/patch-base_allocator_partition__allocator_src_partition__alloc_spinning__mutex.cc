@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2025-12-10 15:04:57 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2026-02-16 10:45:29 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc
-@@ -25,7 +25,16 @@
+@@ -20,7 +20,16 @@
  #endif
  
  #if PA_CONFIG(HAS_LINUX_KERNEL)
@@ -17,7 +17,7 @@
  #include <sys/syscall.h>
  #include <unistd.h>
  
-@@ -155,8 +164,16 @@ PA_ALWAYS_INLINE long FutexSyscall(volatile void* ftx,
+@@ -159,8 +168,16 @@ PA_ALWAYS_INLINE long FutexSyscall(volatile void* ftx,
    int saved_errno = errno;
    errno = 0;
  

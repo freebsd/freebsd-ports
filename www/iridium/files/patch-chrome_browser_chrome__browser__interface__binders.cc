@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2026-01-16 14:21:21 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2026-02-16 10:45:29 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
 @@ -83,7 +83,7 @@
  #endif  // BUILDFLAG(ENABLE_UNHANDLED_TAP)
@@ -18,7 +18,7 @@
  void BindScreenAIAnnotator(
      content::RenderFrameHost* frame_host,
      mojo::PendingReceiver<screen_ai::mojom::ScreenAIAnnotator> receiver) {
-@@ -552,7 +552,7 @@ void PopulateChromeFrameBinders(
+@@ -541,7 +541,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
