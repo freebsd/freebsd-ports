@@ -27,9 +27,7 @@ command="%%PREFIX%%/sbin/smartd"
 command_args="-c ${required_files} -p ${pidfile}"
 
 extra_commands="reload report"
-reload_cmd="smartd_reload"
 report_cmd="smartd_report"
-
 start_precmd=smartd_prestart
 
 smartd_prestart()
@@ -39,18 +37,6 @@ smartd_prestart()
 	err 1 'smartd_flags includes the -p option, use smartd_pidfile instead'
 		;;
 	esac
-}
-
-smartd_reload()
-{
-	local status
-
-	if ! status=`run_rc_command status 2>&1`; then
-		echo $status
-		return 1
-	fi
-	echo 'Reloading smartd.'
-	kill -HUP $rc_pid
 }
 
 smartd_report()
