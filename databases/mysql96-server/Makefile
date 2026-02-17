@@ -101,7 +101,7 @@ PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
-USES+=		mysql:94
+USES+=		mysql:96
 
 CONFLICTS_INSTALL=	mysql*-server \
 			mysqlwsrep*-server \
