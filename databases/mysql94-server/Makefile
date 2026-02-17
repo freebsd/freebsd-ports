@@ -23,7 +23,7 @@ USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
-SLAVEDIRS=	databases/mysql91-client
+SLAVEDIRS=	databases/mysql94-client
 
 CPE_VENDOR=	oracle
 
