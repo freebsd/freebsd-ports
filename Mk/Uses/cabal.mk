@@ -72,6 +72,12 @@ IGNORE=		USES=cabal: invalid arguments: ${arg}
 .    endif
 .  endfor
 
+# The file including the USE_CABAL. To regenerate it it's required to run:
+# 1) make cabal-extract
+# 2) make cabal-configure
+# 3) make make-use-cabal > Makefile.cabal
+.sinclude "${MASTERDIR}/Makefile.cabal"
+
 .  if defined(CABAL_PROJECT) && !${_cabal_project_valid_VALUES:M${CABAL_PROJECT}}
 IGNORE=		CABAL_PROJECT: invalid value: ${CABAL_PROJECT}
 .  endif
