@@ -36,6 +36,7 @@ lib/node_modules/npm/docs/content/commands/npm-explain.md
 lib/node_modules/npm/docs/content/commands/npm-explore.md
 lib/node_modules/npm/docs/content/commands/npm-find-dupes.md
 lib/node_modules/npm/docs/content/commands/npm-fund.md
+lib/node_modules/npm/docs/content/commands/npm-get.md
 lib/node_modules/npm/docs/content/commands/npm-help-search.md
 lib/node_modules/npm/docs/content/commands/npm-help.md
 lib/node_modules/npm/docs/content/commands/npm-init.md
@@ -43,6 +44,7 @@ lib/node_modules/npm/docs/content/commands/npm-install-ci-test.md
 lib/node_modules/npm/docs/content/commands/npm-install-test.md
 lib/node_modules/npm/docs/content/commands/npm-install.md
 lib/node_modules/npm/docs/content/commands/npm-link.md
+lib/node_modules/npm/docs/content/commands/npm-ll.md
 lib/node_modules/npm/docs/content/commands/npm-login.md
 lib/node_modules/npm/docs/content/commands/npm-logout.md
 lib/node_modules/npm/docs/content/commands/npm-ls.md
@@ -64,6 +66,7 @@ lib/node_modules/npm/docs/content/commands/npm-root.md
 lib/node_modules/npm/docs/content/commands/npm-run.md
 lib/node_modules/npm/docs/content/commands/npm-sbom.md
 lib/node_modules/npm/docs/content/commands/npm-search.md
+lib/node_modules/npm/docs/content/commands/npm-set.md
 lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md
 lib/node_modules/npm/docs/content/commands/npm-star.md
 lib/node_modules/npm/docs/content/commands/npm-stars.md
@@ -72,6 +75,7 @@ lib/node_modules/npm/docs/content/commands/npm-stop.md
 lib/node_modules/npm/docs/content/commands/npm-team.md
 lib/node_modules/npm/docs/content/commands/npm-test.md
 lib/node_modules/npm/docs/content/commands/npm-token.md
+lib/node_modules/npm/docs/content/commands/npm-trust.md
 lib/node_modules/npm/docs/content/commands/npm-undeprecate.md
 lib/node_modules/npm/docs/content/commands/npm-uninstall.md
 lib/node_modules/npm/docs/content/commands/npm-unpublish.md
@@ -120,6 +124,7 @@ lib/node_modules/npm/docs/output/commands/npm-explain.html
 lib/node_modules/npm/docs/output/commands/npm-explore.html
 lib/node_modules/npm/docs/output/commands/npm-find-dupes.html
 lib/node_modules/npm/docs/output/commands/npm-fund.html
+lib/node_modules/npm/docs/output/commands/npm-get.html
 lib/node_modules/npm/docs/output/commands/npm-help-search.html
 lib/node_modules/npm/docs/output/commands/npm-help.html
 lib/node_modules/npm/docs/output/commands/npm-init.html
@@ -127,6 +132,7 @@ lib/node_modules/npm/docs/output/commands/npm-install-ci-test.html
 lib/node_modules/npm/docs/output/commands/npm-install-test.html
 lib/node_modules/npm/docs/output/commands/npm-install.html
 lib/node_modules/npm/docs/output/commands/npm-link.html
+lib/node_modules/npm/docs/output/commands/npm-ll.html
 lib/node_modules/npm/docs/output/commands/npm-login.html
 lib/node_modules/npm/docs/output/commands/npm-logout.html
 lib/node_modules/npm/docs/output/commands/npm-ls.html
@@ -148,6 +154,7 @@ lib/node_modules/npm/docs/output/commands/npm-root.html
 lib/node_modules/npm/docs/output/commands/npm-run.html
 lib/node_modules/npm/docs/output/commands/npm-sbom.html
 lib/node_modules/npm/docs/output/commands/npm-search.html
+lib/node_modules/npm/docs/output/commands/npm-set.html
 lib/node_modules/npm/docs/output/commands/npm-shrinkwrap.html
 lib/node_modules/npm/docs/output/commands/npm-star.html
 lib/node_modules/npm/docs/output/commands/npm-stars.html
@@ -156,6 +163,7 @@ lib/node_modules/npm/docs/output/commands/npm-stop.html
 lib/node_modules/npm/docs/output/commands/npm-team.html
 lib/node_modules/npm/docs/output/commands/npm-test.html
 lib/node_modules/npm/docs/output/commands/npm-token.html
+lib/node_modules/npm/docs/output/commands/npm-trust.html
 lib/node_modules/npm/docs/output/commands/npm-undeprecate.html
 lib/node_modules/npm/docs/output/commands/npm-uninstall.html
 lib/node_modules/npm/docs/output/commands/npm-unpublish.html
@@ -252,6 +260,11 @@ lib/node_modules/npm/lib/commands/stop.js
 lib/node_modules/npm/lib/commands/team.js
 lib/node_modules/npm/lib/commands/test.js
 lib/node_modules/npm/lib/commands/token.js
+lib/node_modules/npm/lib/commands/trust/github.js
+lib/node_modules/npm/lib/commands/trust/gitlab.js
+lib/node_modules/npm/lib/commands/trust/index.js
+lib/node_modules/npm/lib/commands/trust/list.js
+lib/node_modules/npm/lib/commands/trust/revoke.js
 lib/node_modules/npm/lib/commands/undeprecate.js
 lib/node_modules/npm/lib/commands/uninstall.js
 lib/node_modules/npm/lib/commands/unpublish.js
@@ -263,6 +276,7 @@ lib/node_modules/npm/lib/commands/whoami.js
 lib/node_modules/npm/lib/lifecycle-cmd.js
 lib/node_modules/npm/lib/npm.js
 lib/node_modules/npm/lib/package-url-cmd.js
+lib/node_modules/npm/lib/trust-cmd.js
 lib/node_modules/npm/lib/utils/audit-error.js
 lib/node_modules/npm/lib/utils/auth.js
 lib/node_modules/npm/lib/utils/cmd-list.js
@@ -318,6 +332,7 @@ lib/node_modules/npm/man/man1/npm-explain.1.gz
 lib/node_modules/npm/man/man1/npm-explore.1.gz
 lib/node_modules/npm/man/man1/npm-find-dupes.1.gz
 lib/node_modules/npm/man/man1/npm-fund.1.gz
+lib/node_modules/npm/man/man1/npm-get.1.gz
 lib/node_modules/npm/man/man1/npm-help-search.1.gz
 lib/node_modules/npm/man/man1/npm-help.1.gz
 lib/node_modules/npm/man/man1/npm-init.1.gz
@@ -325,6 +340,7 @@ lib/node_modules/npm/man/man1/npm-install-ci-test.1.gz
 lib/node_modules/npm/man/man1/npm-install-test.1.gz
 lib/node_modules/npm/man/man1/npm-install.1.gz
 lib/node_modules/npm/man/man1/npm-link.1.gz
+lib/node_modules/npm/man/man1/npm-ll.1.gz
 lib/node_modules/npm/man/man1/npm-login.1.gz
 lib/node_modules/npm/man/man1/npm-logout.1.gz
 lib/node_modules/npm/man/man1/npm-ls.1.gz
@@ -346,6 +362,7 @@ lib/node_modules/npm/man/man1/npm-root.1.gz
 lib/node_modules/npm/man/man1/npm-run.1.gz
 lib/node_modules/npm/man/man1/npm-sbom.1.gz
 lib/node_modules/npm/man/man1/npm-search.1.gz
+lib/node_modules/npm/man/man1/npm-set.1.gz
 lib/node_modules/npm/man/man1/npm-shrinkwrap.1.gz
 lib/node_modules/npm/man/man1/npm-star.1.gz
 lib/node_modules/npm/man/man1/npm-stars.1.gz
@@ -354,6 +371,7 @@ lib/node_modules/npm/man/man1/npm-stop.1.gz
 lib/node_modules/npm/man/man1/npm-team.1.gz
 lib/node_modules/npm/man/man1/npm-test.1.gz
 lib/node_modules/npm/man/man1/npm-token.1.gz
+lib/node_modules/npm/man/man1/npm-trust.1.gz
 lib/node_modules/npm/man/man1/npm-undeprecate.1.gz
 lib/node_modules/npm/man/man1/npm-uninstall.1.gz
 lib/node_modules/npm/man/man1/npm-unpublish.1.gz
@@ -924,6 +942,7 @@ lib/node_modules/npm/node_modules/glob/dist/commonjs/glob.js
 lib/node_modules/npm/node_modules/glob/dist/commonjs/has-magic.js
 lib/node_modules/npm/node_modules/glob/dist/commonjs/ignore.js
 lib/node_modules/npm/node_modules/glob/dist/commonjs/index.js
+lib/node_modules/npm/node_modules/glob/dist/commonjs/index.min.js
 lib/node_modules/npm/node_modules/glob/dist/commonjs/package.json
 lib/node_modules/npm/node_modules/glob/dist/commonjs/pattern.js
 lib/node_modules/npm/node_modules/glob/dist/commonjs/processor.js
@@ -932,6 +951,7 @@ lib/node_modules/npm/node_modules/glob/dist/esm/glob.js
 lib/node_modules/npm/node_modules/glob/dist/esm/has-magic.js
 lib/node_modules/npm/node_modules/glob/dist/esm/ignore.js
 lib/node_modules/npm/node_modules/glob/dist/esm/index.js
+lib/node_modules/npm/node_modules/glob/dist/esm/index.min.js
 lib/node_modules/npm/node_modules/glob/dist/esm/package.json
 lib/node_modules/npm/node_modules/glob/dist/esm/pattern.js
 lib/node_modules/npm/node_modules/glob/dist/esm/processor.js
@@ -1015,16 +1035,19 @@ lib/node_modules/npm/node_modules/is-cidr/package.json
 lib/node_modules/npm/node_modules/is-fullwidth-code-point/index.js
 lib/node_modules/npm/node_modules/is-fullwidth-code-point/license
 lib/node_modules/npm/node_modules/is-fullwidth-code-point/package.json
-lib/node_modules/npm/node_modules/isexe/dist/cjs/index.js
-lib/node_modules/npm/node_modules/isexe/dist/cjs/options.js
-lib/node_modules/npm/node_modules/isexe/dist/cjs/package.json
-lib/node_modules/npm/node_modules/isexe/dist/cjs/posix.js
-lib/node_modules/npm/node_modules/isexe/dist/cjs/win32.js
-lib/node_modules/npm/node_modules/isexe/dist/mjs/index.js
-lib/node_modules/npm/node_modules/isexe/dist/mjs/options.js
-lib/node_modules/npm/node_modules/isexe/dist/mjs/package.json
-lib/node_modules/npm/node_modules/isexe/dist/mjs/posix.js
-lib/node_modules/npm/node_modules/isexe/dist/mjs/win32.js
+lib/node_modules/npm/node_modules/isexe/LICENSE.md
+lib/node_modules/npm/node_modules/isexe/dist/commonjs/index.js
+lib/node_modules/npm/node_modules/isexe/dist/commonjs/index.min.js
+lib/node_modules/npm/node_modules/isexe/dist/commonjs/options.js
+lib/node_modules/npm/node_modules/isexe/dist/commonjs/package.json
+lib/node_modules/npm/node_modules/isexe/dist/commonjs/posix.js
+lib/node_modules/npm/node_modules/isexe/dist/commonjs/win32.js
+lib/node_modules/npm/node_modules/isexe/dist/esm/index.js
+lib/node_modules/npm/node_modules/isexe/dist/esm/index.min.js
+lib/node_modules/npm/node_modules/isexe/dist/esm/options.js
+lib/node_modules/npm/node_modules/isexe/dist/esm/package.json
+lib/node_modules/npm/node_modules/isexe/dist/esm/posix.js
+lib/node_modules/npm/node_modules/isexe/dist/esm/win32.js
 lib/node_modules/npm/node_modules/isexe/package.json
 lib/node_modules/npm/node_modules/json-parse-even-better-errors/LICENSE.md
 lib/node_modules/npm/node_modules/json-parse-even-better-errors/lib/index.js
@@ -1184,12 +1207,11 @@ lib/node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/index.
 lib/node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/package.json
 lib/node_modules/npm/node_modules/minipass-pipeline/package.json
 lib/node_modules/npm/node_modules/minipass-sized/LICENSE
-lib/node_modules/npm/node_modules/minipass-sized/index.js
-lib/node_modules/npm/node_modules/minipass-sized/node_modules/minipass/LICENSE
-lib/node_modules/npm/node_modules/minipass-sized/node_modules/minipass/index.js
-lib/node_modules/npm/node_modules/minipass-sized/node_modules/minipass/package.json
+lib/node_modules/npm/node_modules/minipass-sized/dist/commonjs/index.js
+lib/node_modules/npm/node_modules/minipass-sized/dist/commonjs/package.json
+lib/node_modules/npm/node_modules/minipass-sized/dist/esm/index.js
+lib/node_modules/npm/node_modules/minipass-sized/dist/esm/package.json
 lib/node_modules/npm/node_modules/minipass-sized/package.json
-lib/node_modules/npm/node_modules/minipass-sized/test/basic.js
 lib/node_modules/npm/node_modules/minizlib/LICENSE
 lib/node_modules/npm/node_modules/minizlib/dist/commonjs/constants.js
 lib/node_modules/npm/node_modules/minizlib/dist/commonjs/index.js
