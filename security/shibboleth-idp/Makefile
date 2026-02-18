@@ -1,5 +1,5 @@
 PORTNAME=	shibboleth
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/identity-provider/${PORTVERSION}/ \
 		http://shibboleth.net/downloads/identity-provider/latest5/${PORTVERSION}/ \
@@ -30,10 +30,10 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 LOGBACKVER=	1.5.6
-SHIBVER=	9.2.0
-SPRINGVER1=	7.0.3
+SHIBVER=	9.2.1
+SPRINGVER1=	7.0.4
 SPRINGVER2=	4.0.0
-MMVER=		1.16.2
+MMVER=		1.16.3
 SHIBUSER=	shibd
 SHIBGROUP=	shibd
 LOGDIR=		/var/log/${PORTNAME}
