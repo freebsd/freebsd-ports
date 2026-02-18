@@ -1,6 +1,5 @@
 PORTNAME=	gajim
-DISTVERSION=	2.2.0
-PORTREVISION=	2
+DISTVERSION=	2.4.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -29,6 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=1.16.0:graphics/py-pycairo@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=2.0.0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		pango>0:x11-toolkits/pango \
 		gnome-keyring>=0:security/gnome-keyring
 
