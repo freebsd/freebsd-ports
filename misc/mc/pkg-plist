@@ -9,6 +9,7 @@ bin/mcview
 %%ETCDIR%%/mc.ext.ini
 %%ETCDIR%%/mc.keymap
 %%ETCDIR%%/mc.menu
+%%ETCDIR%%/mc.vim.keymap
 %%ETCDIR%%/mcedit.menu
 %%ETCDIR%%/sfs.ini
 libexec/mc/ext.d/archive.sh
@@ -41,6 +42,7 @@ libexec/mc/extfs.d/patchsetfs
 libexec/mc/extfs.d/rpm
 libexec/mc/extfs.d/rpms+
 libexec/mc/extfs.d/s3+
+libexec/mc/extfs.d/torrent
 libexec/mc/extfs.d/trpm
 libexec/mc/extfs.d/u7z
 libexec/mc/extfs.d/uace
