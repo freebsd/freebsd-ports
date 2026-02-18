@@ -165,6 +165,7 @@ include/isc/netscope.h
 include/isc/nonce.h
 include/isc/once.h
 include/isc/os.h
+include/isc/ossl_wrap.h
 include/isc/overflow.h
 include/isc/parseint.h
 include/isc/pause.h
@@ -239,11 +240,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.17.so
-lib/libisc-9.21.17.so
-lib/libisccc-9.21.17.so
-lib/libisccfg-9.21.17.so
-lib/libns-9.21.17.so
+lib/libdns-9.21.18.so
+lib/libisc-9.21.18.so
+lib/libisccc-9.21.18.so
+lib/libisccfg-9.21.18.so
+lib/libns-9.21.18.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
