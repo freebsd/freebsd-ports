@@ -1,7 +1,6 @@
 PORTNAME=	hidden-lake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
-PORTREVISION=	6
+DISTVERSION=	1.10.3
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	alven@FreeBSD.org
@@ -20,8 +19,7 @@ GO_TARGET=	./cmd/hla/hla-http:hla-http \
 		./cmd/hlk:hlk \
 		./cmd/hls/hls-filesharer:hls-filesharer \
 		./cmd/hls/hls-messenger:hls-messenger \
-		./cmd/hls/hls-pinger:hls-pinger \
-		./cmd/hls/hls-remoter:hls-remoter
+		./cmd/hls/hls-pinger:hls-pinger
 
 TEST_TARGET=	test-run
 

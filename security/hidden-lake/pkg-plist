@@ -5,7 +5,6 @@ bin/hlk
 bin/hls-filesharer
 bin/hls-messenger
 bin/hls-pinger
-bin/hls-remoter
 %%PORTDOCS%%%%DOCSDIR%%/CODESTYLE.md
 %%PORTDOCS%%%%DOCSDIR%%/DEF_PORTS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
