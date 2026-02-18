@@ -1,7 +1,6 @@
 PORTNAME=	hyprviz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	3
+DISTVERSION=	0.8.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -16,7 +15,7 @@ USES=		cargo gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	timasoft
 
-USE_GNOME=	glib20 gtk40
+USE_GNOME=	cairo glib20 gtk40
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop
