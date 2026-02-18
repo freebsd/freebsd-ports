@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=1.16.0:graphics/py-pycairo@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}emoji>=2.6.0:misc/py-emoji@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nbxmpp>=6.2.0<7.0.0:net-im/py-nbxmpp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nbxmpp>=7.0.0:net-im/py-nbxmpp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}omemo-dr>=1.0.0:security/py-omemo-dr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0:graphics/py-pillow@${PY_FLAVOR} \
