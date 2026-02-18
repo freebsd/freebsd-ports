@@ -32,7 +32,7 @@ export PATH=$PATH:%%PREFIX%%/bin
 : ${redmine_group="%%WWWGRP%%"}
 
 command=/usr/sbin/daemon
-command_args="-c -f -P ${pidfile} -S \
+command_args="-c -f -P ${pidfile} -T ${name} -t ${name} -S \
 	%%PREFIX%%/bin/puma --dir %%WWWDIR%% --no-config ${redmine_args}"
 
 run_rc_command "$1"

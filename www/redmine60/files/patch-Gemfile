@@ -38,7 +38,7 @@
  
  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
  gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin]
-@@ -31,23 +31,23 @@ gem 'rqrcode'
+@@ -31,94 +31,14 @@ gem 'rqrcode'
  gem 'rqrcode'
  
  # HTML pipeline and sanitization
@@ -53,33 +53,95 @@
 +  gem 'net-ldap', '>= 0.19'
  end
  
- # Optional gem for exporting the gantt to a PNG file
- group :minimagick do
+-# Optional gem for exporting the gantt to a PNG file
+-group :minimagick do
 -  gem 'mini_magick', '~> 5.0.1'
-+  gem 'mini_magick', '~> 4.13.0'
- end
- 
- # Optional CommonMark support, not for JRuby
- group :common_mark do
-   gem "commonmarker", '~> 0.23.8'
+-end
+-
+-# Optional CommonMark support, not for JRuby
+-group :common_mark do
+-  gem "commonmarker", '~> 0.23.8'
 -  gem 'deckar01-task_list', '2.3.2'
-+  gem 'deckar01-task_list', '2.3.4'
- end
- 
- # Include database gems for the adapters found in the database
-@@ -110,11 +110,10 @@ group :test do
-   gem "capybara", ">= 3.39"
-   gem 'selenium-webdriver', '>= 4.11.0'
-   # RuboCop
+-end
+-
+-# Include database gems for the adapters found in the database
+-# configuration file
+-database_file = File.join(File.dirname(__FILE__), "config/database.yml")
+-if File.exist?(database_file)
+-  database_config = File.read(database_file)
+-
+-  # Requiring libraries in a Gemfile may cause Bundler warnings or
+-  # unexpected behavior, especially if multiple gem versions are available.
+-  # So, process database.yml through ERB only if it contains ERB syntax
+-  # in the adapter setting. See https://www.redmine.org/issues/41749.
+-  if database_config.match?(/^ *adapter: *<%=/)
+-    require 'erb'
+-    database_config = ERB.new(database_config).result
+-  end
+-
+-  adapters = database_config.scan(/^ *adapter: *(.*)/).flatten.uniq
+-  if adapters.any?
+-    adapters.each do |adapter|
+-      case adapter.strip
+-      when /mysql2/
+-        gem 'mysql2', '~> 0.5.0'
+-        gem "with_advisory_lock"
+-      when /postgresql/
+-        gem 'pg', '~> 1.5.3'
+-      when /sqlite3/
+-        gem 'sqlite3', '~> 1.7.0'
+-      when /sqlserver/
+-        gem 'tiny_tds', '~> 2.1.2'
+-        gem 'activerecord-sqlserver-adapter', '~> 7.2.0'
+-      else
+-        warn("Unknown database adapter `#{adapter}` found in config/database.yml, use Gemfile.local to load your own database gems")
+-      end
+-    end
+-  else
+-    warn("No adapter found in config/database.yml, please configure it first")
+-  end
+-else
+-  warn("Please configure your config/database.yml first")
+-end
+-
+-group :development, :test do
+-  gem 'debug'
+-end
+-
+-group :development do
+-  gem 'listen', '~> 3.3'
+-  gem 'yard', require: false
+-  gem 'svg_sprite', require: false
+-end
+-
+-group :test do
+-  gem "rails-dom-testing", '>= 2.3.0'
+-  gem 'mocha', '>= 2.0.1'
+-  gem 'simplecov', '~> 0.22.0', :require => false
+-  gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
+-  # For running system tests
+-  gem 'puma'
+-  gem "capybara", ">= 3.39"
+-  gem 'selenium-webdriver', '>= 4.11.0'
+-  # RuboCop
 -  gem 'rubocop', '~> 1.68.0', require: false
 -  gem 'rubocop-ast', '~> 1.40.0', require: false
 -  gem 'rubocop-performance', '~> 1.22.0', require: false
 -  gem 'rubocop-rails', '~> 2.27.0', require: false
 -  gem 'bundle-audit', require: false
-+  gem 'rubocop', '>= 1.68.0', require: false
-+  gem 'rubocop-ast', '>= 1.40.0', require: false
-+  gem 'rubocop-performance', '>= 1.22.0', require: false
-+  gem 'rubocop-rails', '>= 2.27.0', require: false
-   # `bin/rails test` fails at startup with minitest >= 6.0
-   gem 'minitest', '< 6.0'
+-  # `bin/rails test` fails at startup with minitest >= 6.0
+-  gem 'minitest', '< 6.0'
+-end
+-
+ local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
+ if File.exist?(local_gemfile)
+   eval_gemfile local_gemfile
+@@ -127,4 +47,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
+ # Load plugins' Gemfiles
+ Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
+   eval_gemfile file
++end
++
++Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|0
++  self.instance_eval(Bundler.read_file(bundle))
  end
