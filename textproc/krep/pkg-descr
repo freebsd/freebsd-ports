@@ -1,0 +1,13 @@
+krep is an optimized string search utility designed for maximum throughput and
+efficiency when processing large files and directories. It is built with
+performance in mind, offering multiple search algorithms and SIMD acceleration
+when available.
+
+Note: Krep is not intended to be a full replacement or direct competitor to
+feature-rich tools like grep or ripgrep. Instead, it aims to be a minimal,
+efficient, and pragmatic tool focused on speed and simplicity.
+
+Krep provides the essential features needed for fast searching, without the
+extensive options and complexity of more comprehensive search utilities. Its
+design philosophy is to deliver the fastest possible search for the most common
+use cases, with a clean and minimal interface.

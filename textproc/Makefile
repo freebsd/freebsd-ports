@@ -372,6 +372,7 @@
     SUBDIR += kmflcomp
     SUBDIR += kn-aspell
     SUBDIR += kompare
+    SUBDIR += krep
     SUBDIR += kreport
     SUBDIR += ku-aspell
     SUBDIR += ky-aspell

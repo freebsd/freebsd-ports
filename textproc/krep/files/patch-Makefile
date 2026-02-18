@@ -1,0 +1,34 @@
+--- Makefile.orig	2026-02-18 16:14:00 UTC
++++ Makefile
+@@ -5,10 +5,10 @@ BINDIR = $(PREFIX)/bin
+ PREFIX ?= /usr/local
+ BINDIR = $(PREFIX)/bin
+ 
+-CC = gcc
+-CFLAGS = -Wall -Wextra -O3 -ffast-math -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
++CC ?= gcc
++CFLAGS ?= -Wall -Wextra -O3 -ffast-math -std=c11 -pthread -D_GNU_SOURCE -D_DEFAULT_SOURCE \
+          -flto -funroll-loops -finline-functions
+-LDFLAGS = -pthread -flto
++LDFLAGS += -pthread -flto
+ 
+ # Build mode: set NATIVE=1 for maximum performance on local machine
+ # Example: make NATIVE=1
+@@ -19,6 +19,9 @@ ARCH := $(shell uname -m)
+ # Detect architecture for SIMD flags
+ ARCH := $(shell uname -m)
+ 
++# Build mode: set SIMD=1 for maximum performance using SIMD instructions
++# Example: make SIMD=1
++ifdef SIMD
+ ifeq ($(ARCH), x86_64)
+     # Check for AVX-512 support (Linux: /proc/cpuinfo, macOS: sysctl)
+     HAS_AVX512 := $(shell (grep -q avx512f /proc/cpuinfo 2>/dev/null && echo 1) || \
+@@ -46,6 +49,7 @@ else ifeq ($(ARCH), aarch64)
+ else ifeq ($(ARCH), aarch64)
+     # Enable NEON for aarch64 Linux
+     CFLAGS += -D__ARM_NEON
++endif
+ endif
+ 
+ # Source files
