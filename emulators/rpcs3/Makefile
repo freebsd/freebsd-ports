@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.39-18770 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g7cfe96a1d1
+DISTVERSION=	0.0.39-18797 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g2064bd87e3
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,9 +30,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:soundtouch:2.3.1-78-g3982730:soundtouch/3rdparty/SoundTouch/soundtouch \
 		asmjit:asmjit:416f735:asmjit/3rdparty/asmjit/asmjit \
-		jbeder:yaml-cpp:0.8.0-11-g456c68f:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
+		jbeder:yaml-cpp:yaml-cpp-0.9.0-1-g05c44fc:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		kcat:openal-soft:1.23.1:openal_soft/3rdparty/OpenAL/openal-soft \
-		kinetiknz:cubeb:cubeb-0.2-1617-ge495bee:cubeb/3rdparty/cubeb/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1628-g4848575:cubeb/3rdparty/cubeb/cubeb \
 		Megamouse:VulkanMemoryAllocator:1d8f600:vkalloc/3rdparty/GPUOpen/VulkanMemoryAllocator \
 		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
 		protocolbuffers:protobuf:edaa823d8b36:protobuf/3rdparty/protobuf/protobuf \
