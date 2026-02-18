@@ -10,6 +10,7 @@ share/metainfo/org.deskflow.deskflow.metainfo.xml
 %%DATADIR%%/translations/deskflow_es.qm
 %%DATADIR%%/translations/deskflow_it.qm
 %%DATADIR%%/translations/deskflow_ja.qm
+%%DATADIR%%/translations/deskflow_ko.qm
 %%DATADIR%%/translations/deskflow_ru.qm
 %%DATADIR%%/translations/deskflow_zh_CN.qm
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
