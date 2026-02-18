@@ -1,4 +1,4 @@
-TIMESTAMP = 1771243693
+TIMESTAMP = 1771403814
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
@@ -2795,6 +2795,8 @@ SHA256 (camdencheek-tree-sitter-go-mod-2e886870578eeba1927a2dc4bd2e2b3f598c5f9a_
 SIZE (camdencheek-tree-sitter-go-mod-2e886870578eeba1927a2dc4bd2e2b3f598c5f9a_GH0.tar.gz) = 31799
 SHA256 (RustAudio-rodio-e2074c6c2acf07b57cf717e076bdda7a9ac6e70b_GH0.tar.gz) = 0acce2f7849ee292bd681e4d83e3de4184d48fecb5edc25f0a4902ac69544bd8
 SIZE (RustAudio-rodio-e2074c6c2acf07b57cf717e076bdda7a9ac6e70b_GH0.tar.gz) = 15032672
+SHA256 (zed-industries-notify-ce58c24cad542c28e04ced02e20325a4ec28a31d_GH0.tar.gz) = 8f18e9540a4682ea27ef4a741ebd729914fd0b91381c88f6e5fa76fa6c52580a
+SIZE (zed-industries-notify-ce58c24cad542c28e04ced02e20325a4ec28a31d_GH0.tar.gz) = 108952
 SHA256 (zed-industries-lsp-types-b71ab4eeb27d9758be8092020a46fe33fbca4e33_GH0.tar.gz) = d48cb935cb50ffccbafa8323e815dd220f0b829be245b4fa562ded3a09cc9c79
 SIZE (zed-industries-lsp-types-b71ab4eeb27d9758be8092020a46fe33fbca4e33_GH0.tar.gz) = 74361
 SHA256 (zed-industries-alacritty-936aee8761a17affc84ab418ae21306c27c26221_GH0.tar.gz) = dfc6fe7c65bdb971274199c55bb3a4b118397e41bb199225ad87029f2933cfcf
@@ -2827,8 +2829,6 @@ SHA256 (zed-industries-async-pipe-rs-82d00a04211cf4e1236029aa03e6b6ce2a74c553_GH
 SIZE (zed-industries-async-pipe-rs-82d00a04211cf4e1236029aa03e6b6ce2a74c553_GH0.tar.gz) = 5575
 SHA256 (KillTheMule-nvim-rs-764dd270c642f77f10f3e19d05cc178a6cbe69f3_GH0.tar.gz) = a0b9cab774f5b0cb88f39e084d6d074992fbb717eedccc727d062f09335d6a8d
 SIZE (KillTheMule-nvim-rs-764dd270c642f77f10f3e19d05cc178a6cbe69f3_GH0.tar.gz) = 49979
-SHA256 (zed-industries-notify-6c550ac3c56cbd143c57ea6390e197af9d790908_GH0.tar.gz) = 4fbd36f1f63e5ec40ff47e31cc4c514bbcdb76b7e3fb9c1b3bdd33fb22c47500
-SIZE (zed-industries-notify-6c550ac3c56cbd143c57ea6390e197af9d790908_GH0.tar.gz) = 108811
 SHA256 (zed-industries-font-kit-110523127440aefb11ce0cf280ae7c5071337ec5_GH0.tar.gz) = 2908e5a0100f109ba337db639dfb4ee5bab0e90fc119f9db4bf5bd69c907ee10
 SIZE (zed-industries-font-kit-110523127440aefb11ce0cf280ae7c5071337ec5_GH0.tar.gz) = 1289436
 SHA256 (zed-industries-tree-sitter-typescript-e2c53597d6a5d9cf7bbe8dccde576fe1e46c5899_GH0.tar.gz) = f86dbd36ba4c1f733dfbf6cb8f6c287eddeb525b27d6519a5ef01cbe47b5de44
@@ -2837,5 +2837,5 @@ SHA256 (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a
 SIZE (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a_GH0.tar.gz) = 145319
 SHA256 (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 8698ebc194a6c3ee377cde94f4fdff590f6a7973bc7987c880801fa7fd69e5c3
 SIZE (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 94768
-SHA256 (zed-industries-zed-v0.223.3_GH0.tar.gz) = 2d7d792e354fb15cb9725386d7cc90200428d9a3183084e398f7e80424323e83
-SIZE (zed-industries-zed-v0.223.3_GH0.tar.gz) = 24257979
+SHA256 (zed-industries-zed-v0.223.5_GH0.tar.gz) = a5f31ba5e83351410b0e95b73d94af63dae58dd241bd2713c82a855c76e31961
+SIZE (zed-industries-zed-v0.223.5_GH0.tar.gz) = 24260491
