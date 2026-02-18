@@ -1,14 +1,14 @@
 PORTNAME=	cozette
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	1.24.1
+DISTVERSION=	1.30.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/slavfox/Cozette/releases/download/${DISTVERSIONFULL}/
+MASTER_SITES=	https://github.com/the-moonwitch/Cozette/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${FONTNAME}Fonts-v-${DISTVERSION:S/./-/g}
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	laxul@pm.me
 COMMENT=	Bitmap programming font optimized for coziness
-WWW=		https://github.com/slavfox/Cozette
+WWW=		https://github.com/the-moonwitch/Cozette
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
