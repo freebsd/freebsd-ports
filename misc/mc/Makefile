@@ -1,5 +1,5 @@
 PORTNAME=	mc
-PORTVERSION=	4.8.32
+PORTVERSION=	4.8.33
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -18,9 +18,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
 RUN_DEPENDS+=	gdiff:textproc/diffutils
 .endif
 
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+CONFIGURE_ARGS=	--with-search-engine=pcre2
+
 USES=		gmake gnome libtool perl5 pkgconfig python shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
-		${WRKSRC}/src/vfs/extfs/helpers/uc1541
+		${WRKSRC}/src/vfs/extfs/helpers/uc1541.in
 python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
@@ -28,7 +31,7 @@ CONFIGURE_ENV=	ZIP=${LOCALBASE}/bin/zip UNZIP=${UNZIP_NATIVE_CMD}
 
 PORTDOCS=	AUTHORS FAQ HACKING NEWS README TODO
 
-OPTIONS_DEFINE=	ASPELL DOCS EDITOR EXTATTR ICONV NLS PCRE2 SFTP SUBSHELL X11
+OPTIONS_DEFINE=	ASPELL DOCS EDITOR EXTATTR ICONV NLS SFTP SUBSHELL X11
 OPTIONS_DEFAULT=	EDITOR ICONV SFTP SLANG SUBSHELL X11
 OPTIONS_SINGLE=	SCREEN
 OPTIONS_SINGLE_SCREEN=	SLANG NCURSES
@@ -37,7 +40,6 @@ OPTIONS_SUB=	yes
 ASPELL_DESC=	Aspell support for internal editor
 EDITOR_DESC=	Build with internal text editor
 EXTATTR_DESC=	Extended filesystem attributes support
-PCRE2_DESC=	Use PCRE2 as low-level search engine
 SCREEN_DESC=	Screen library
 SFTP_DESC=	Support for SFTP (via libssh)
 SUBSHELL_DESC=	Build with subshell support
@@ -60,9 +62,6 @@ NCURSES_CFLAGS+=	-DNCURSES_WIDECHAR
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
-
-PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
-PCRE2_CONFIGURE_ON=	--with-search-engine=pcre2
 
 SFTP_LIB_DEPENDS=	libssh2.so:security/libssh2
 SFTP_CONFIGURE_ENABLE=	vfs-sftp
