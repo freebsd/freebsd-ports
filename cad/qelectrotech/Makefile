@@ -1,34 +1,31 @@
 PORTNAME=	qelectrotech
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.100
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	https://git.tuxfamily.org/qet/qet.git/snapshot/
-DISTNAME=	qet-${DISTVERSION}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-source-mirror/releases/download/${DISTVERSION}/
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Application to design electric diagrams
 WWW=		https://qelectrotech.org/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpugixml.so:textproc/pugixml
 
-USES=		desktop-file-utils gl kde:5 pkgconfig qt:5 qmake shared-mime-info \
-		sqlite
+USES=		desktop-file-utils gl kde:5 pkgconfig qmake qt:5 \
+		shared-mime-info sqlite
 USE_GL=		gl
-USE_QT=		concurrent core gui network printsupport qmake sql sql-sqlite3 \
-		svg widgets xml \
-		buildtools:build
 USE_KDE=	coreaddons widgetsaddons
+USE_QT=		concurrent core gui network printsupport qmake sql sql-sqlite3 \
+		svg widgets xml buildtools:build
+
+ALL_TARGET=	${BUILD_TYPE}-all
 
 OPTIONS_DEFINE=	DEBUG
 
 DEBUG_VARS=	BUILD_TYPE=debug
 DEBUG_VARS_OFF=	BUILD_TYPE=release
-
-ALL_TARGET=	${BUILD_TYPE}-all
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,g' \
