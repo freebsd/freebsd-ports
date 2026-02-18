@@ -1,5 +1,5 @@
 PORTNAME=	mangowc
-DISTVERSION=	0.12.2
+DISTVERSION=	0.12.3
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
@@ -39,6 +39,8 @@ USES=		meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DreamMaoMao
+
+MESON_ARGS=	-Dsysconfdir=${PREFIX}/etc
 
 SUB_FILES=	pkg-message
 
