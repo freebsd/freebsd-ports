@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-interval
-PORTVERSION=	3.2.1
-PORTREVISION=	5
+PORTVERSION=	3.2.2
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
