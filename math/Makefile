@@ -1298,6 +1298,7 @@
     SUBDIR += vtk9
     SUBDIR += wavelib
     SUBDIR += wcalc
+    SUBDIR += wide-integer
     SUBDIR += wxmaxima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
