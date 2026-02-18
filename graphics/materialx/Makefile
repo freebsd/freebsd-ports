@@ -1,7 +1,7 @@
 PORTNAME=	materialx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.39.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	libglvnd>0:graphics/libglvnd \
 		openimageio>0:graphics/openimageio \
 		openshadinglanguage>0:graphics/openshadinglanguage
 LIB_DEPENDS=	libImath.so:math/Imath \
+		libOpenColorIO.so:graphics/opencolorio \
 		libOpenImageIO.so:graphics/openimageio \
 		libOpenImageIO_Util.so:graphics/openimageio
 
@@ -40,6 +41,7 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX=${STAGEDIR}${PREFIX} \
 		-DMATERIALX_INSTALL_PYTHON=${PREFIX}${PYTHONPREFIX_SITELIBDIR}/MaterialX
 
 CMAKE_ON=	MATERIALX_BUILD_GRAPH_EDITOR \
+		MATERIALX_BUILD_OCIO \
 		MATERIALX_BUILD_OIIO \
 		MATERIALX_BUILD_PYTHON \
 		MATERIALX_BUILD_SHARED_LIBS \
