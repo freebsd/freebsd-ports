@@ -36,6 +36,8 @@ bin/mu
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-context.elc
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-contrib.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-contrib.elc
+%%MU4E%%share/emacs/site-lisp/mu4e/mu4e-dbus.el
+%%MU4E%%share/emacs/site-lisp/mu4e/mu4e-dbus.elc
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-draft.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-draft.elc
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-folders.el
