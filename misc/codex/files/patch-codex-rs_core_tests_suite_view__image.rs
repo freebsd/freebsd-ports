@@ -1,6 +1,6 @@
---- codex-rs/core/tests/suite/view_image.rs.orig	2026-02-13 01:48:51 UTC
+--- codex-rs/core/tests/suite/view_image.rs.orig	2026-02-18 06:34:44 UTC
 +++ codex-rs/core/tests/suite/view_image.rs
-@@ -39,6 +39,8 @@ use wiremock::MockServer;
+@@ -40,6 +40,8 @@ use wiremock::MockServer;
  use tokio::time::Duration;
  use wiremock::BodyPrintLimit;
  use wiremock::MockServer;

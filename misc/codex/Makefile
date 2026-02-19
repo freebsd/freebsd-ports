@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.101.0
+DISTVERSION=	0.104.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -64,10 +64,12 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/command_canonicalization.rs \
 		${BUILD_WRKSRC}/core/src/environment_context.rs \
 		${BUILD_WRKSRC}/core/src/exec.rs \
+		${BUILD_WRKSRC}/core/src/exec_policy.rs \
 		${BUILD_WRKSRC}/core/src/shell.rs \
 		${BUILD_WRKSRC}/core/src/shell_snapshot.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec.rs \
+		${BUILD_WRKSRC}/core/src/tools/runtimes/mod.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \

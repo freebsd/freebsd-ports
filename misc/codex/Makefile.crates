@@ -29,7 +29,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anyhow-1.0.101 \
 		arbitrary-1.4.2 \
 		arboard-3.6.1 \
-		arc-swap-1.8.0 \
+		arc-swap-1.8.2 \
 		arrayvec-0.7.6 \
 		ascii-1.1.0 \
 		ascii-canvas-3.0.0 \
@@ -107,11 +107,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		chrono-0.4.43 \
 		chunked_transfer-1.5.0 \
 		cipher-0.4.4 \
-		clap-4.5.56 \
-		clap_builder-4.5.56 \
+		clap-4.5.58 \
+		clap_builder-4.5.58 \
 		clap_complete-4.5.65 \
 		clap_derive-4.5.55 \
-		clap_lex-0.7.7 \
+		clap_lex-1.0.0 \
 		clipboard-win-5.4.1 \
 		cmake-0.1.57 \
 		cmp_any-0.8.1 \
@@ -211,9 +211,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		enumflags2-0.7.12 \
 		enumflags2_derive-0.7.12 \
 		env-flags-0.1.1 \
-		env_filter-0.1.4 \
+		env_filter-1.0.0 \
 		env_home-0.1.0 \
-		env_logger-0.11.8 \
+		env_logger-0.11.9 \
 		equivalent-1.0.2 \
 		erased-serde-0.3.31 \
 		errno-0.3.14 \
