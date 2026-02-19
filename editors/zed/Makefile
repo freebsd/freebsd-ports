@@ -1,6 +1,6 @@
 PORTNAME=	zed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.223.5
+DISTVERSION=	0.224.6
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-editor
 
@@ -66,7 +66,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 # https://github.com/RazrFalcon/fontdb/issues/61
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
-		${WRKSRC_crate_fontdb-0.16.2}/src/lib.rs \
 		${WRKSRC_crate_fontdb-0.23.0}/src/lib.rs
 
 post-build:
