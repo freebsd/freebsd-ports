@@ -1,3 +1,40 @@
+  <vuln vid="a977cb1c-0d7d-11f1-85c5-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>145.0.7632.109</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>145.0.7632.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop_18.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[477033835] High CVE-2026-2648: Heap buffer overflow in PDFium. Reported by soiax on 2026-01-19</li>
+	    <li>[481074858] High CVE-2026-2649: Integer overflow in V8. Reported by JunYoung Park(@candymate) of KAIST Hacking Lab on 2026-02-03</li>
+	    <li>[476461867] Medium CVE-2026-2650: Heap buffer overflow in Media. Reported by Google on 2026-01-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2648</cvename>
+      <cvename>CVE-2026-2649</cvename>
+      <cvename>CVE-2026-2650</cvename>
+      <url>https://chromereleases.googleblog.com/2026/02/stable-channel-update-for-desktop_18.html</url>
+    </references>
+    <dates>
+      <discovery>2026-02-18</discovery>
+      <entry>2026-02-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67793feb-0b5b-11f1-a1c0-0050569f0b83">
     <topic>powerdns-recursor -- Denial of Service</topic>
     <affects>
