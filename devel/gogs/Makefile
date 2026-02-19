@@ -1,7 +1,6 @@
 PORTNAME=	gogs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.3
-PORTREVISION=	11
+DISTVERSION=	0.14.2
 CATEGORIES=	devel www
 
 MAINTAINER=	siva@FreeBSD.org
@@ -17,7 +16,7 @@ RUN_DEPENDS=	git:devel/git \
 
 USES=		cpe go:modules
 
-GO_MODULE=	gogs.io/gogs
+GO_MODULE=	github.com/gogs/gogs
 GO_TARGET=	:${PREFIX}/libexec/${PORTNAME}/${PORTNAME}
 GO_BUILDFLAGS=	-tags "sqlite pam cert"
 

@@ -1496,7 +1496,7 @@ libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.css
 libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.min.js
 libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.png
 libexec/gogs/public/plugins/marked-0.8.1/marked.min.js
-libexec/gogs/public/plugins/mermaid-8.14.0/mermaid.min.js
+libexec/gogs/public/plugins/mermaid-11.12.1/mermaid.min.js
 libexec/gogs/public/plugins/notebookjs-0.4.2/notebook.min.js
 libexec/gogs/public/plugins/pdfjs-5.2.133/LICENSE
 libexec/gogs/public/plugins/pdfjs-5.2.133/build/pdf.mjs
