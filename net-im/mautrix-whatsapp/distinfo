@@ -1,5 +1,5 @@
-TIMESTAMP = 1766838781
-SHA256 (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2512.0/v0.2512.0.mod) = 43d76de9d1f0ce01bc1c2b75930429e99f3263cac6ef6acee4adbc5501bd64ce
-SIZE (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2512.0/v0.2512.0.mod) = 1929
-SHA256 (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2512.0/v0.2512.0.zip) = 61e47b923ad4f17702f9ed023bc5d8f5035c983a890ff207c7d755133fe39c1d
-SIZE (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2512.0/v0.2512.0.zip) = 175092
+TIMESTAMP = 1776799459
+SHA256 (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2604.0/v0.2604.0.mod) = a1cb0b1897903311a022b2ede4c9802d052748a3a494bca5a9388056e49117d9
+SIZE (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2604.0/v0.2604.0.mod) = 1928
+SHA256 (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2604.0/v0.2604.0.zip) = 36e61f42d7d1f733efc12e40b0138499d8561fa4454113dc88088ae9e9282140
+SIZE (go/net-im_mautrix-whatsapp/mautrix-whatsapp-v0.2604.0/v0.2604.0.zip) = 181668
