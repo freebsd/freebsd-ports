@@ -1,7 +1,11 @@
 PORTNAME=	boringssl
 PORTVERSION=	0.20260211.0
+PORTREVISION=	1
 CATEGORIES=	security
 EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${PORTVERSION}_GH0.tar.gz
+
+PATCH_SITES=	https://github.com/google/boringssl/commit/
+PATCHFILES=	100a6181500bb6d4e4d4ff299ca420d919aa764c.patch:-p1
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fork of OpenSSL
