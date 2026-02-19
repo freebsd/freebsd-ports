@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2026-02-11 09:05:39 UTC
+--- media/base/media_switches.cc.orig	2026-02-19 11:06:15 UTC
 +++ media/base/media_switches.cc
 @@ -20,7 +20,7 @@
  #include "ui/gl/gl_features.h"
@@ -83,7 +83,7 @@
  BASE_FEATURE(kV4L2H264TemporalLayerHWEncoding,
               base::FEATURE_DISABLED_BY_DEFAULT);
 @@ -1272,7 +1294,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
- BASE_FEATURE(kUseSharedImageInOOPVDProcess, base::FEATURE_ENABLED_BY_DEFAULT);
+ BASE_FEATURE(kUseSharedImageInOOPVDProcess, base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
