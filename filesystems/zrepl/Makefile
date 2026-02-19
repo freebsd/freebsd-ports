@@ -1,7 +1,6 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	24
+DISTVERSION=	0.7.0
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -12,9 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules ncurses
-USE_RC_SUBR=	zrepl
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:sys:v0.6.0:sys
+USE_RC_SUBR=	zrepl
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
@@ -52,7 +51,7 @@ post-install:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/hooks
-	(cd ${WRKSRC}/config/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/internal/config/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_DATA} ${WRKSRC}/dist/grafana/grafana-prometheus-zrepl.json ${STAGEDIR}${EXAMPLESDIR}
 
 post-install-MANPAGES-on:
