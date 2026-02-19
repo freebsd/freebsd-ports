@@ -1,5 +1,5 @@
 PORTNAME=	sqlmodel
-DISTVERSION=	0.0.33
+DISTVERSION=	0.0.34
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,16 +13,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=2.0.14<2.1.0:databases/py-sqlalchemy20@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.0:devel/py-pydantic2@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=22.10:devel/py-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.11.0:devel/py-pydantic2@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=24.1.0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=6.2<8.0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dirty-equals>=0.11:devel/py-dirty-equals@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fastapi>=0.103.2:www/py-fastapi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fastapi>=0.128.0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy>=1.19.1:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pre-commit>=2.17.0<5.0.0:devel/py-pre-commit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruff>=0.15.0:devel/py-ruff@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruff>=0.15.1:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.15.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python shebangfix
