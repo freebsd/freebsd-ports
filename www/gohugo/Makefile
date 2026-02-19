@@ -1,7 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.155.3
-PORTREVISION=	1
+DISTVERSION=	0.156.0
 PORTEPOCH=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
@@ -48,7 +47,7 @@ PORTMANS=	hugo-completion-bash.1 hugo-completion-fish.1 hugo-completion-powershe
 		hugo-list-drafts.1 hugo-list-expired.1 hugo-list-future.1 hugo-list.1 \
 		hugo-mod-clean.1 hugo-mod-get.1 hugo-mod-graph.1 hugo-mod-init.1 \
 		hugo-mod-npm-pack.1 hugo-mod-npm.1 hugo-mod-tidy.1 hugo-mod-vendor.1 \
-		hugo-mod-verify.1 hugo-mod.1 hugo-new-site.1 hugo-new-theme.1 hugo-new.1 \
+		hugo-mod-verify.1 hugo-mod.1 hugo-new-theme.1 hugo-new.1 \
 		hugo-server.1 hugo-version.1 hugo.1
 
 # needed to get DISTINFO_FILE in scope for the shell command evaluation by go.mk
