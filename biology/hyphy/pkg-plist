@@ -396,6 +396,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/libv3/models/binary/empirical.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/BS_REL.bf
+%%DATADIR%%/TemplateBatchFiles/libv3/models/codon/CORA.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_GTR.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_MH.bf
