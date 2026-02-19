@@ -1,3 +1,3 @@
-TIMESTAMP = 1771308833
-SHA256 (z3_solver-4.15.8.0.tar.gz) = f15aa2ff4c2ddc40aea1dc6a4d247ca68e0cf6c06e318a820ca049d074f7c03d
-SIZE (z3_solver-4.15.8.0.tar.gz) = 5073041
+TIMESTAMP = 1771516821
+SHA256 (z3_solver-4.16.0.0.tar.gz) = 263d9ad668966e832c2b246ba0389298a599637793da2dc01cc5e4ef4b0b6c78
+SIZE (z3_solver-4.16.0.0.tar.gz) = 5098891
