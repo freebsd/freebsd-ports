@@ -1,4 +1,4 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2026-02-11 09:05:39 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2026-02-19 11:06:15 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
 @@ -32,7 +32,7 @@ BASE_FEATURE(kAutofillEnableAiBasedAmountExtraction,
  // of the allowlisted merchant websites.
@@ -63,7 +63,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -317,7 +317,7 @@ const base::FeatureParam<int> kAutofillVcnEnrollStrike
+@@ -320,7 +320,7 @@ const base::FeatureParam<int> kAutofillVcnEnrollStrike
      /*default_value=*/180};
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

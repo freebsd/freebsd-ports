@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2026-02-11 09:05:39 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2026-02-19 11:06:15 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -32,7 +32,7 @@ bool IsOnDeviceStorageEnabled() {
  }
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  BASE_FEATURE(kEsbDownloadRowPromoFeature,
               "EsbDownloadRowPromo",
-@@ -878,7 +878,7 @@ BASE_FEATURE(kIPHiOSGeminiImageRemixFeature,
+@@ -881,7 +881,7 @@ BASE_FEATURE(kIPHiOSGeminiImageRemixFeature,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  BASE_FEATURE(kIPHAutofillBnplAffirmOrZipSuggestionFeature,
               "IPH_AutofillBnplAffirmOrZipSuggestion",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -940,7 +940,7 @@ BASE_FEATURE(kIPHLauncherSearchHelpUiFeature,
+@@ -943,7 +943,7 @@ BASE_FEATURE(kIPHLauncherSearchHelpUiFeature,
               base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  
