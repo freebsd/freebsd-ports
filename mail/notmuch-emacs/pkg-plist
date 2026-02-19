@@ -3,6 +3,7 @@
 %%EMACS_SITE_LISPDIR%%/coolj.elc
 %%EMACS_SITE_LISPDIR%%/notmuch-address.el.gz
 %%EMACS_SITE_LISPDIR%%/notmuch-address.elc
+%%EMACS_SITE_LISPDIR%%/notmuch-autoloads.el.gz
 %%EMACS_SITE_LISPDIR%%/notmuch-company.el.gz
 %%EMACS_SITE_LISPDIR%%/notmuch-company.elc
 %%EMACS_SITE_LISPDIR%%/notmuch-compat.el.gz
