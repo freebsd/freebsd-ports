@@ -1,11 +1,11 @@
 PORTNAME=	mlbench
-DISTVERSION=	2.1-6
+DISTVERSION=	2.1-7
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Machine Learning Benchmark Problems
-WWW=		https://cran.r-project.org/web/packages/mlbench/
+WWW=		https://cran.r-project.org/package=mlbench
 
 LICENSE=	GPLv2
 
