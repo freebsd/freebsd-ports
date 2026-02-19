@@ -1,0 +1,15 @@
+Marksman is a language server for Markdown that provides IDE-like features
+for Markdown documents. It offers:
+
+- Go to definition for links and references
+- Find references for headers and links
+- Completion for links, references, and file paths
+- Hover documentation
+- Diagnostics for broken links and references
+- Document symbols and outline
+- Workspace symbols
+- Rename refactoring for headers and links
+- Code actions for creating links and references
+
+Marksman works with any editor that supports the Language Server Protocol (LSP)
+including Neovim, Vim, Emacs, VS Code, and more.
