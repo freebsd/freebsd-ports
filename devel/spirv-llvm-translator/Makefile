@@ -55,10 +55,10 @@ PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
 SOVERSION=	${${FLAVOR:S/llvm//}<18:?${DISTVERSION:R:R}:${DISTVERSION:R}}
 
 pre-everything::
-	@if [ -e ${.CURDIR}/files/patch-* ]; then \
+	@for f in ${.CURDIR}/files/patch-*; do if [ -e $$f ]; then \
 		${ECHO_MSG} "Error: patch-* under \"files\" aren't supported. Move under \"files.<flavor>\" instead."; \
 		exit 1; \
-	fi
+	fi; done
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s/lib/&data/' \
