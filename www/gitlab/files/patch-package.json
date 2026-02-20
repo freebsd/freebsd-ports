@@ -1,6 +1,6 @@
---- package.json.orig	2026-01-14 08:40:57 UTC
+--- package.json.orig	2026-02-18 17:09:38 UTC
 +++ package.json
-@@ -327,7 +327,8 @@
+@@ -320,7 +320,8 @@
      "@types/node": "14.17.5",
      "chokidar": "^3.5.3",
      "nwsapi": "2.2.2",
