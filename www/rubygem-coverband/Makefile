@@ -1,6 +1,5 @@
 PORTNAME=	coverband
-PORTVERSION=	6.1.5
-PORTREVISION=	1
+PORTVERSION=	6.1.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -19,5 +18,7 @@ USES=		gem shebangfix
 SHEBANG_FILES=	lua/install.sh
 
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/coverband-mcp
 
 .include <bsd.port.mk>
