@@ -1,3 +1,3 @@
-TIMESTAMP = 1766523101
-SHA256 (xlibre/driver/X11Libre-xf86-video-intel-25.0.0-xlibre-xf86-video-intel-25.0.0_GH0.tar.gz) = c37410bc6efd5789adcd9fd2c91308a73101b08419309d4755bd6b5fa5254eff
-SIZE (xlibre/driver/X11Libre-xf86-video-intel-25.0.0-xlibre-xf86-video-intel-25.0.0_GH0.tar.gz) = 1691771
+TIMESTAMP = 1771549261
+SHA256 (xlibre/driver/X11Libre-xf86-video-intel-25.0.1-497585a_GH0.tar.gz) = df925c2271e6485ae9da178362d2a5e034bd594668571f2e749a6357e9341cf9
+SIZE (xlibre/driver/X11Libre-xf86-video-intel-25.0.1-497585a_GH0.tar.gz) = 1678140
