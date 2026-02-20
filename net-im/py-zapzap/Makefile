@@ -1,5 +1,5 @@
 PORTNAME=	zapzap
-DISTVERSION=	6.2.10
+DISTVERSION=	6.3
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,5 +22,16 @@ USE_PYQT=	webengine
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+PLIST_FILES=	share/applications/com.rtosta.zapzap.desktop \
+		share/icons/hicolor/scalable/apps/com.rtosta.zapzap.svg
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/share/icons/com.rtosta.zapzap.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/share/applications/com.rtosta.zapzap.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>
