@@ -1,5 +1,5 @@
 PORTNAME=	xlibre-xf86-video-amdgpu
-PORTVERSION=	25.0.1
+PORTVERSION=	25.0.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	b-aazbsd@proton.me
@@ -20,7 +20,7 @@ USE_GL=		gbm
 
 CONFIGURE_ARGS+=--disable-udev
 
-PLIST_FILES=	${MODULEDIR}/drivers/amdgpu_drv.so \
+PLIST_FILES=	${MODULEDIR}/drivers/video/amdgpu_drv.so \
 		share/man/man4/amdgpu.4x.gz \
 		share/X11/xorg.conf.d/10-amdgpu.conf
 
