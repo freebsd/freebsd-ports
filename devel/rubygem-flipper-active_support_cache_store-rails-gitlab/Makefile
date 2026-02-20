@@ -1,5 +1,5 @@
 PORTNAME=	flipper-active_support_cache_store
-PORTVERSION=	0.28.3
+PORTVERSION=	1.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
@@ -10,8 +10,8 @@ WWW=		https://github.com/jnunemaker/flipper
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport-gitlab>=4.2<8:devel/rubygem-activesupport-gitlab \
-		rubygem-flipper-gitlab>=${PORTVERSION}<0.29:devel/rubygem-flipper-gitlab
+RUN_DEPENDS=	rubygem-activesupport-gitlab>=4.2<9:devel/rubygem-activesupport-gitlab \
+		rubygem-flipper-gitlab>=${PORTVERSION}<1.4:devel/rubygem-flipper-gitlab
 
 USES=		gem
 
