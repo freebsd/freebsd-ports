@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-code-parser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.2
-PORTREVISION=	2
+DISTVERSION=	0.22.0
 CATEGORIES=	textproc
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -29,7 +28,8 @@ PLIST_FILES=	bin/parser-cli \
 		lib/libparser_c_bindings.a \
 		lib/libparser_c_bindings.so \
 		lib/libparser_core.rlib \
-		lib/libtesting.rlib
+		lib/libtesting.rlib \
+		lib/libtreesitter_visit.rlib
 
 # update the crates file with: make cargo-crates > Makefile.crates
 
