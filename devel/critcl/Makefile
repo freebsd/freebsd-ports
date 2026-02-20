@@ -11,8 +11,6 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_riscv64=		fails to package: callback.so: no such file or directory
-
 USES+=		tcl:86+
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-kupries
@@ -20,7 +18,7 @@ GH_ACCOUNT=	andreas-kupries
 TEST_TARGET=	test
 
 PLIST_SUB=	VER=${PORTVERSION} \
-		ARCH=${ARCH:C/arm.*/arm/:S/i386/ix86/:S/aarch64/arm/:S/mips64/mips/:C/powerpc64.*/powerpc/}
+		ARCH=${ARCH:C/arm.*/arm/:S/i386/ix86/:S/aarch64/arm/:S/mips64/mips/:C/powerpc64.*/powerpc/:S/riscv64/riscv/}
 
 PORTDOCS=	*
 
