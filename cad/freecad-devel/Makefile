@@ -19,6 +19,7 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}pyside6-tools>0:devel/pyside6-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lark>0:devel/py-lark@${PY_FLAVOR} \
 		swig:devel/swig
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
