@@ -15,6 +15,9 @@ LICENSE_NAME=	mb339
 LICENSE_TEXT=	Redistribution prohibited
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Upstream is inactive for 15+ years
+EXPIRATION_DATE=	2026-05-01
+
 RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 NO_BUILD=	yes
