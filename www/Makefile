@@ -26,6 +26,7 @@
     SUBDIR += R-cran-webutils
     SUBDIR += SNIP
     SUBDIR += UniversalFeedCreator
+    SUBDIR += access-log-exporter
     SUBDIR += adguardhome
     SUBDIR += adjuster
     SUBDIR += agate
