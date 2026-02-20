@@ -12,6 +12,9 @@ LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
 LICENSE_DISTFILES_CC-BY-NC-4.0=	${DISTNAME}${EXTRACT_SUFX}
 
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	bundled v8 only supported on these
+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
