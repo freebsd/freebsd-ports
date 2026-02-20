@@ -1975,6 +1975,7 @@
     SUBDIR += rubygem-rails-dom-testing-rails81
     SUBDIR += rubygem-rails-dom-testing1
     SUBDIR += rubygem-rails-html-sanitizer
+    SUBDIR += rubygem-rails-html-sanitizer-gitlab
     SUBDIR += rubygem-rak
     SUBDIR += rubygem-rchardet
     SUBDIR += rubygem-rdiscount
