@@ -11,7 +11,7 @@ WWW=		http://eddylab.org/infernal/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le powerpcspe
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpcspe
 ONLY_FOR_ARCHS_REASON=	requires SSE2 or AltiVec instructions
 
 USES=		compiler:c11 gmake perl5 python:test shebangfix
