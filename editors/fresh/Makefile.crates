@@ -45,10 +45,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chrono-0.4.43 \
 		chunked_transfer-1.5.0 \
 		clang-sys-1.8.1 \
-		clap-4.5.58 \
-		clap_builder-4.5.58 \
+		clap-4.5.57 \
+		clap_builder-4.5.57 \
 		clap_derive-4.5.55 \
-		clap_lex-1.0.0 \
+		clap_lex-0.7.7 \
 		clipboard-win-5.4.1 \
 		cobs-0.3.0 \
 		compact_str-0.9.0 \
@@ -77,7 +77,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling_macro-0.20.11 \
 		darling_macro-0.23.0 \
 		deltae-0.3.2 \
-		deranged-0.5.6 \
+		deranged-0.5.5 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
 		digest-0.10.7 \
@@ -88,7 +88,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		doctest-file-1.0.0 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
-		dragonbox_ecma-0.1.12 \
+		dragonbox_ecma-0.1.0 \
 		dtor-0.1.1 \
 		dtor-proc-macro-0.0.6 \
 		dyn-clone-1.0.20 \
@@ -409,7 +409,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_edit-0.22.27 \
 		toml_edit-0.23.10+spec-1.0.0 \
-		toml_parser-1.0.7+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
 		toml_write-0.1.2 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
