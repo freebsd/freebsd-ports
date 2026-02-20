@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-02-20 09:46:38 UTC
 +++ chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
-@@ -130,7 +130,7 @@
+@@ -132,7 +132,7 @@
  #include "ui/webui/resources/js/browser_command/browser_command.mojom.h"
  #include "ui/webui/resources/js/tracked_element/tracked_element.mojom.h"  // nogncheck crbug.com/1125897
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/app_home/app_home.mojom.h"
  #include "chrome/browser/ui/webui/app_home/app_home_ui.h"
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
-@@ -335,7 +335,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -337,7 +337,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
    }
  
@@ -18,7 +18,7 @@
    RegisterWebUIControllerInterfaceBinder<whats_new::mojom::PageHandlerFactory,
                                           WhatsNewUI>(map);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -347,7 +347,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -349,7 +349,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
  
    RegisterWebUIControllerInterfaceBinder<
        browser_command::mojom::CommandHandlerFactory,
@@ -27,7 +27,7 @@
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -546,7 +546,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -550,7 +550,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          OmniboxPopupUI>(map);
    }
  
@@ -36,7 +36,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -580,7 +580,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -584,7 +584,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          ContextualTasksUI>(map);
    }
  
