@@ -1,7 +1,7 @@
 PORTNAME=	wireproxy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.9
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	net
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -15,6 +15,8 @@ USES=		go:modules
 
 GO_MODULE=	github.com/pufferffish/wireproxy
 GO_TARGET=	./cmd/wireproxy
+
+USE_RC_SUBR=	wireproxy
 
 PLIST_FILES=	bin/wireproxy
 
