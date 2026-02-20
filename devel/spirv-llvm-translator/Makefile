@@ -39,6 +39,7 @@ GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-411-gaa6cef1:headers
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-448-g9268f30:headers/projects/SPIRV-Headers
 .endif
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
+PATCHDIR=	${.CURDIR}/files.${FLAVOR}
 CXXFLAGS+=	${${FLAVOR:S/llvm//} < 16 && ${COMPILER_TYPE} == clang:?-Wno-enum-constexpr-conversion:}
 CMAKE_ON=	BUILD_SHARED_LIBS LLVM_BUILD_TOOLS LLVM_TOOL_SPIRV_HEADERS_BUILD
 CMAKE_ARGS=	-DLLVM_DIR:PATH="${LOCALBASE}/${FLAVOR}"
@@ -52,6 +53,12 @@ _PLIST_FILES=	bin/llvm-spirv \
 		libdata/pkgconfig/LLVMSPIRVLib.pc
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
 SOVERSION=	${${FLAVOR:S/llvm//}<18:?${DISTVERSION:R:R}:${DISTVERSION:R}}
+
+pre-everything::
+	@if [ -e ${.CURDIR}/files/patch-* ]; then \
+		${ECHO_MSG} "Error: patch-* under \"files\" aren't supported. Move under \"files.<flavor>\" instead."; \
+		exit 1; \
+	fi
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s/lib/&data/' \
