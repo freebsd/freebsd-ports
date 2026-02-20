@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20260128
+DISTVERSION=	g20270220
 PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	706fcc7d1a24077e2b3c711a5b9ceaa2a93a6a70
+GL_TAGNAME=	38243844f225517fa1d288517db9a34a33c5ad13
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
@@ -40,10 +40,8 @@ CONFIGURE_ENV+=			PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include \
-		-DCONFIGURE_GIT_REVISION='\"${GL_TAGNAME}\"' \
+CPPFLAGS+=	-DCONFIGURE_GIT_REVISION='\"${GL_TAGNAME}\"' \
 		-DCONFIGURE_GIT_FLAGS=
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL?=	openvpn-2.*
 
@@ -52,8 +50,7 @@ SUB_FILES=	openvpn-client pkg-message
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DCO DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL TEST \
-			X509ALTUSERNAME
+OPTIONS_DEFINE=		ASYNC_PUSH DCO DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL TEST UNITTEST
 OPTIONS_DEFAULT=	DCO EASYRSA LZ4 OPENSSL TEST
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	MBEDTLS OPENSSL
@@ -61,13 +58,16 @@ OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 
 # option descriptions and interdependencies
 
+ASYNC_PUSH_DESC=	Enable async-push support
 DCO_DESC=		Build with Data Channel Offload (ovpn(4)) support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 PKCS11_DESC=		Use security/pkcs11-helper
 SMALL_DESC=		Build a smaller executable with fewer features
-X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
+UNITTESTS_DESC=         Enable unit tests
 
 # option implementations
+
+ASYNC_PUSH_CONFIGURE_ENABLE=	async-push
 
 DCO_CONFIGURE_OFF=	--disable-dco
 
@@ -93,12 +93,8 @@ SMALL_CONFIGURE_ON=	--enable-small
 TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check
 
-X509ALTUSERNAME_PREVENTS=		MBEDTLS
-X509ALTUSERNAME_PREVENTS_MSG=		OpenVPN ${DISTVERSION} cannot use \
-					--x509-username-field with mbedTLS. \
-					Disable X509ALTUSERNAME, or use OpenSSL \
-					instead
-X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
+UNITTESTS_BUILD_DEPENDS=	cmocka>=0:sysutils/cmocka
+UNITTESTS_CONFIGURE_ENABLE=	unit-tests
 
 pre-configure:
 .ifdef (LOG_OPENVPN)
@@ -125,6 +121,14 @@ _tlslibs=	libmbedtls libmbedx509 libmbedcrypto
 # OpenSSL
 _tlslibs=	libssl libcrypto
 .endif
+
+# FreeBSD 15 added Linux-compatible inotify support
+.if ${PORT_OPTIONS:MASYNC_PUSH}
+. if "${OPSYS}" != "FreeBSD" || ${OSVERSION} < 1500068
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+. endif
+.endif
+
 
 # sanity check that we don't inherit incompatible SSL libs through,
 # for instance, pkcs11-helper:
