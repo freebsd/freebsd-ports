@@ -347,7 +347,7 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.apache.httpcomponents.httpclient-4.5.14.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.apache.httpcomponents.httpcore-4.4.16.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.apache.kerby.kerby-asn1-2.0.3.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.apache.santuario.xmlsec-3.0.4.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.apache.santuario.xmlsec-3.0.6.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.bouncycastle.bcpkix-jdk18on-1.82.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.bouncycastle.bcprov-jdk18on-1.82.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.bouncycastle.bcutil-jdk18on-1.82.jar
