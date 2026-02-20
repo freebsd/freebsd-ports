@@ -1,5 +1,5 @@
 PORTNAME=	flipper
-PORTVERSION=	0.28.3
+PORTVERSION=	1.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -16,5 +16,7 @@ RUN_DEPENDS=	rubygem-concurrent-ruby<2:devel/rubygem-concurrent-ruby
 USES=		gem
 
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/flipper
 
 .include <bsd.port.mk>
