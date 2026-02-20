@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	20.36.1
+PORTVERSION=	20.38.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -55,7 +55,11 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.4:devel/py-c
 			${PYTHON_PKGNAMEPREFIX}platformdirs>3.9.1:devel/py-platformdirs@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}proselint>=0.13:devel/py-proselint@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx-argparse>=0.4:textproc/py-sphinx-argparse@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-autodoc-typehints>=1.23.0:textproc/py-sphinx-autodoc-typehints@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>=0.5.2:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>=2025.12.21.14:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=5.3.0:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-mermaid>=2.0.0:textproc/py-sphinxcontrib-mermaid@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-towncrier>=0.3.2a0:textproc/py-sphinxcontrib-towncrier@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}towncrier>=22.12.0:textproc/py-towncrier@${PY_FLAVOR}
 DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
