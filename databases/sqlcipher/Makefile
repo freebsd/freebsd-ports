@@ -1,7 +1,6 @@
 PORTNAME=	sqlcipher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.1
-PORTREVISION=	1
+DISTVERSION=	4.13.0
 CATEGORIES=	databases
 
 MAINTAINER=	jharris@widomaker.com
@@ -17,11 +16,15 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-tempstore=yes --disable-tcl --disable-readline
+CONFIGURE_ARGS+=--with-tempstore=yes --disable-tcl --disable-readline --soname=legacy
 CPPFLAGS+=	-DSQLITE_HAS_CODEC -DSQLITE_ENABLE_UNLOCK_NOTIFY \
-		-DSQLITE_ENABLE_COLUMN_METADATA=1
-LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
+		-DOMIT_MEMLOCK -DSQLITE_ENABLE_COLUMN_METADATA=1 \
+		-DSQLITE_EXTRA_INIT=sqlcipher_extra_init \
+		-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown
+LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB} -lcrypto
 CFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
+
+CONFLICTS_INSTALL=	sqlite3
 
 TEST_TARGET=	test # tests fail to run, see https://github.com/sqlcipher/sqlcipher/issues/527
 
