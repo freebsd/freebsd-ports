@@ -1,5 +1,5 @@
 PORTNAME=	loofah
-PORTVERSION=	2.24.1
+PORTVERSION=	2.25.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -19,7 +19,5 @@ USES=		cpe gem
 NO_ARCH=	yes
 
 CPE_VENDOR=	loofah_project
-
-PORTSCOUT=	limit:^2\.24\.
 
 .include <bsd.port.mk>
