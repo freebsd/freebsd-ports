@@ -1,5 +1,6 @@
 PORTNAME=	actionview
 PORTVERSION=	${RAILS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -17,7 +18,7 @@ RUN_DEPENDS=	rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:deve
 		rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-erubi>=1.11<2:www/rubygem-erubi \
 		rubygem-rails-dom-testing-rails-gitlab>=2.2<3:textproc/rubygem-rails-dom-testing-rails-gitlab \
-		rubygem-rails-html-sanitizer>=1.6<2:textproc/rubygem-rails-html-sanitizer
+		rubygem-rails-html-sanitizer-gitlab>=1.6<2:textproc/rubygem-rails-html-sanitizer-gitlab
 
 USES=		cpe gem
 
