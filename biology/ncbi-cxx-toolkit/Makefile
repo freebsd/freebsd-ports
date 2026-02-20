@@ -11,7 +11,9 @@ WWW=		https://ncbi.github.io/cxx-toolkit/ \
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE
 
-BROKEN_i386=	compilation fails: Only 64-bit Intel and ARM architectures are supported (in src/util/compress/zlib_cloudflare/deflate.c:149)
+# uses intrincs for CRC computation, probably easy to port if desired
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	deflate.c:149:2: error: "Only 64-bit Intel and ARM architectures are supported"
 
 LIB_DEPENDS=	libcdd.so:math/cddlib \
 		liblmdb.so:databases/lmdb \
