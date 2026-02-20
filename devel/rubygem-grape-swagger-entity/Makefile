@@ -1,6 +1,5 @@
 PORTNAME=	grape-swagger-entity
-PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
