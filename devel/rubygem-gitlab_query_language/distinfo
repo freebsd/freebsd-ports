@@ -1,6 +1,6 @@
-TIMESTAMP = 1766903575
-SHA256 (gitlab_query_language-0.20.11.gem) = 1e80fa321f01940a00313f7fe42dcf74d2203dc564fe2d9becf5e0337c355419
-SIZE (gitlab_query_language-0.20.11.gem) = 13824
+TIMESTAMP = 1771569131
+SHA256 (gitlab_query_language-0.20.12.gem) = a33453f67764017639a40fe4ebcd8fe8a18a14e8a32b7198386929bd0a66e3a3
+SIZE (gitlab_query_language-0.20.12.gem) = 13824
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/android_system_properties-0.1.5.crate) = 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
@@ -173,5 +173,5 @@ SHA256 (rust/crates/windows-strings-0.5.1.crate) = 7837d08f69c77cf6b07689544538e
 SIZE (rust/crates/windows-strings-0.5.1.crate) = 13966
 SHA256 (rust/crates/yaml-rust2-0.10.4.crate) = 2462ea039c445496d8793d052e13787f2b90e750b833afee748e601c17621ed9
 SIZE (rust/crates/yaml-rust2-0.10.4.crate) = 76453
-SHA256 (gitlab-org-glql-v0.20.11_GL0.tar.gz) = 4815efdd9ea0415a123fb3639e449ee50dae0e75e1962276235d67e253078728
-SIZE (gitlab-org-glql-v0.20.11_GL0.tar.gz) = 257124
+SHA256 (gitlab-org-glql-v0.20.12_GL0.tar.gz) = ba2f3f54528c98dcb3626943ee7e1e441f944f552882cdafcfb2c328161ffae4
+SIZE (gitlab-org-glql-v0.20.12_GL0.tar.gz) = 275409
