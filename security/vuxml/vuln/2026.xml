@@ -1,3 +1,37 @@
+  <vuln vid="6a81dc74-0e8b-11f1-b7d1-b42e991fc52e">
+    <topic>Mozilla -- Heap buffer overflow</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>147.0.4,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.7.1</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>147.0.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2014390 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2014390">
+	  <p>Heap buffer overflow in libvpx.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2447</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-2447</url>
+    </references>
+    <dates>
+      <discovery>2026-02-16</discovery>
+      <entry>2026-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a977cb1c-0d7d-11f1-85c5-a8a1599412c6">
     <topic>chromium -- security fixes</topic>
     <affects>
