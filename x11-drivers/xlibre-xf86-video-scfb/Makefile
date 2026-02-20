@@ -13,6 +13,4 @@ USES=		xlibre-cat:driver
 PLIST_FILES=	${MODULEDIR}/drivers/scfb_drv.so \
 		share/man/man4/scfb.4x.gz
 
-GH_TAGNAME=	6489569
-
 .include <bsd.port.mk>
