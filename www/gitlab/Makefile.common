@@ -1,4 +1,4 @@
-GITLAB_VERSION=		18.8.4
+GITLAB_VERSION=		18.9.0
 GITLAB_PORTREVISION=	4	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgraded
 
 # Git version gitaly should use (from gitlab mirror)
@@ -7,8 +7,8 @@ GITLAB_PORTREVISION=	4	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgrad
 GITLAB_GIT_VERSION=	2.50.0
 # return something like x.yy
 GITLAB_GIT_VERSION_SHORT=	${GITLAB_GIT_VERSION:C/^([0-9]*\.[0-9]*)\..*/\1/}
-GITLAB_GIT_MASTER_VERSION=	aea8cc3a10c325a22a75e2d4f582db959d3854ae
-GITLAB_GIT_PREV_VERSION=	419c72cb8ada252b260efc38ff91fe201de7c8c3
+GITLAB_GIT_MASTER_VERSION=	83a69f19359e6d9bc980563caca38b2b5729808c
+GITLAB_GIT_PREV_VERSION=	aea8cc3a10c325a22a75e2d4f582db959d3854ae
 
 # Overwrite version for gitlab-kas-grpc
 #GITLAB_KAS_GRPC_VERSION=	${GITLAB_VERSION}

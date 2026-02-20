@@ -17,6 +17,7 @@ BROKEN_i386=	Platform i386 is not supported upstream, see https://gitlab.com/git
 
 BUILD_DEPENDS=	bash>0:shells/bash \
 		${LOCALBASE}/bin/cmake:devel/cmake-core \
+		meson:devel/meson \
 		pcre2>0:devel/pcre2 \
 		http-parser>0:www/http-parser
 LIB_DEPENDS=	libcurl.so:ftp/curl \
