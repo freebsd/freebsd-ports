@@ -1,6 +1,5 @@
 PORTNAME=	czkawka
-DISTVERSION=	10.0.0
-PORTREVISION=	5
+DISTVERSION=	11.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	uzsolt@FreeBSD.org
@@ -25,14 +24,13 @@ CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}
 PLIST_FILES=	bin/${PORTNAME}_cli \
 		bin/${PORTNAME}_gui \
 		share/applications/com.github.qarmin.czkawka.desktop \
+		share/applications/io.github.qarmin.krokiet.desktop \
 		share/icons/hicolor/scalable/apps/com.github.qarmin.czkawka-symbolic.svg \
 		share/icons/hicolor/scalable/apps/com.github.qarmin.czkawka.Devel.svg \
 		share/icons/hicolor/scalable/apps/com.github.qarmin.czkawka.svg \
-		share/metainfo/com.github.qarmin.czkawka.metainfo.xml
-
-post-patch:
-# XXX Skip the new GUI until runtime is tested
-	@${REINPLACE_CMD} '/krokiet/d' ${WRKSRC}/Cargo.toml
+		share/icons/hicolor/scalable/apps/io.github.qarmin.czkawka.krokiet.svg \
+		share/metainfo/com.github.qarmin.czkawka.metainfo.xml \
+		share/metainfo/io.github.qarmin.krokiet.metainfo.xml
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/*.desktop \
