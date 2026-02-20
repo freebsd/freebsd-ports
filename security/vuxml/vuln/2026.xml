@@ -1,3 +1,38 @@
+  <vuln vid="428e782a-0e92-11f1-a9b1-0cc47ada5f32">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.551</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.541.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2026-02-18/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3669 / CVE-2026-27099</h5>
+	  <p>Stored XSS vulnerability in node offline cause description</p>
+	  <h5>(Medium) SECURITY-3658 / CVE-2026-27100</h5>
+	  <p>Build information disclosure vulnerability through Run Parameter</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-27099</cvename>
+      <cvename>CVE-2026-27100</cvename>
+      <url>https://www.jenkins.io/security/advisory/2026-02-18/</url>
+    </references>
+    <dates>
+      <discovery>2026-02-18</discovery>
+      <entry>2026-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a81dc74-0e8b-11f1-b7d1-b42e991fc52e">
     <topic>Mozilla -- Heap buffer overflow</topic>
     <affects>
