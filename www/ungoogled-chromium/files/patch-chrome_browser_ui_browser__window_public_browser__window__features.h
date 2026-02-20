@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_window/public/browser_window_features.h.orig	2026-02-15 10:01:45 UTC
+--- chrome/browser/ui/browser_window/public/browser_window_features.h.orig	2026-02-20 09:46:38 UTC
 +++ chrome/browser/ui/browser_window/public/browser_window_features.h
 @@ -107,7 +107,7 @@ class PinInfoBarController;
  }  // namespace default_browser
@@ -9,7 +9,7 @@
  class ProfileCustomizationBubbleSyncController;
  namespace session_restore_infobar {
  class SessionRestoreInfobarController;
-@@ -450,7 +450,7 @@ class BrowserWindowFeatures {
+@@ -445,7 +445,7 @@ class BrowserWindowFeatures {
      return browser_select_file_dialog_controller_.get();
    }
  
@@ -18,7 +18,7 @@
    ProfileCustomizationBubbleSyncController*
    profile_customization_bubble_sync_controller() {
      return profile_customization_bubble_sync_controller_.get();
-@@ -643,7 +643,7 @@ class BrowserWindowFeatures {
+@@ -638,7 +638,7 @@ class BrowserWindowFeatures {
    std::unique_ptr<BrowserSelectFileDialogController>
        browser_select_file_dialog_controller_;
  
