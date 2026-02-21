@@ -2,9 +2,9 @@
 - ?
 - ?
 
---- Configure.orig	2025-09-23 02:09:21 UTC
+--- Configure.orig	2026-02-20 17:09:19 UTC
 +++ Configure
-@@ -3918,7 +3918,10 @@ esac
+@@ -3921,7 +3921,10 @@ esac
  . ./posthint.sh
  
  : who configured the system
@@ -16,7 +16,7 @@
  case "$cf_by" in
  "")
  	cf_by=`(logname) 2>/dev/null`
-@@ -5046,7 +5049,7 @@ do
+@@ -5049,7 +5052,7 @@ do
  : Now check and see which directories actually exist, avoiding duplicates
  for xxx in $dlist
  do
@@ -25,7 +25,7 @@
  		case " $libpth " in
  		*" $xxx "*) ;;
  		*) libpth="$libpth $xxx";;
-@@ -9600,8 +9603,7 @@ case "$sitescript" in
+@@ -9614,8 +9617,7 @@ case "$sitescript" in
  
  : determine where add-on public executable scripts go
  case "$sitescript" in
