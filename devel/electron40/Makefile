@@ -4,7 +4,7 @@ DISTVERSION=	${ELECTRON_VER}
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v40.4.1/:chromium \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v40.6.0/:chromium \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
 DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
@@ -215,9 +215,9 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			144.0.7559.173
+CHROMIUM_VER=			144.0.7559.177
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			24.13.0
+NODE_VER=			24.13.1
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			675cefebca42410733da8a454c8d9391fcebfbc2
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
@@ -356,12 +356,6 @@ pre-configure:
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
 do-configure:
-	@( \
-		echo "#ifndef GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
-		echo "#define GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
-		echo "#define DAWN_COMMIT_HASH \"$$(cat ${WRKSRC}/gpu/webgpu/DAWN_VERSION)\"" ;\
-		echo "#endif  // GPU_WEBGPU_DAWN_COMMIT_HASH_H_" \
-	) > ${WRKSRC}/gpu/webgpu/dawn_commit_hash.h
 	cd ${WRKSRC}/esbuild && \
 		${LOCALBASE}/bin/node scripts/esbuild.js \
 			${LOCALBASE}/bin/esbuild --neutral && \

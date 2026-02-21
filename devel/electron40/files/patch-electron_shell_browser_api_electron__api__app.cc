@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_app.cc.orig	2026-01-15 18:39:20 UTC
+--- electron/shell/browser/api/electron_api_app.cc.orig	2026-02-19 05:24:38 UTC
 +++ electron/shell/browser/api/electron_api_app.cc
-@@ -99,7 +99,7 @@
+@@ -100,7 +100,7 @@
  #include "shell/common/process_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/nix/scoped_xdg_activation_token_injector.h"
  #include "base/nix/xdg_util.h"
  #endif
-@@ -427,7 +427,7 @@ bool NotificationCallbackWrapper(
+@@ -428,7 +428,7 @@ bool NotificationCallbackWrapper(
      base::CommandLine cmd,
      const base::FilePath& cwd,
      const std::vector<uint8_t> additional_data) {
@@ -18,7 +18,7 @@
    // Set the global activation token sent as a command line switch by another
    // electron app instance. This also removes the switch after use to prevent
    // any side effects of leaving it in the command line after this point.
-@@ -612,7 +612,7 @@ void App::OnFinishLaunching(base::Value::Dict launch_i
+@@ -613,7 +613,7 @@ void App::OnFinishLaunching(base::Value::Dict launch_i
  }
  
  void App::OnFinishLaunching(base::Value::Dict launch_info) {
@@ -27,7 +27,7 @@
    // Set the application name for audio streams shown in external
    // applications. Only affects pulseaudio currently.
    media::AudioManager::SetGlobalAppName(Browser::Get()->GetName());
-@@ -961,7 +961,7 @@ void App::SetDesktopName(const std::string& desktop_na
+@@ -962,7 +962,7 @@ void App::SetDesktopName(const std::string& desktop_na
  }
  
  void App::SetDesktopName(const std::string& desktop_name) {
@@ -36,7 +36,7 @@
    auto env = base::Environment::Create();
    env->SetVar("CHROME_DESKTOP", desktop_name);
  #endif
-@@ -1065,7 +1065,7 @@ bool App::RequestSingleInstanceLock(gin::Arguments* ar
+@@ -1066,7 +1066,7 @@ bool App::RequestSingleInstanceLock(gin::Arguments* ar
        base::BindRepeating(NotificationCallbackWrapper, cb));
  #endif
  
@@ -45,7 +45,7 @@
    // Read the xdg-activation token and set it in the command line for the
    // duration of the notification in order to ensure this is propagated to an
    // already running electron app instance if it exists.
-@@ -1452,7 +1452,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
+@@ -1453,7 +1453,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
        pid_dict.Set("name", process_metric.second->name);
      }
  
@@ -54,7 +54,7 @@
      auto memory_info = process_metric.second->GetMemoryInfo();
  
      auto memory_dict = gin_helper::Dictionary::CreateEmpty(isolate);
-@@ -1850,7 +1850,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1855,7 +1855,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod(
            "removeAsDefaultProtocolClient",
            base::BindRepeating(&Browser::RemoveAsDefaultProtocolClient, browser))
@@ -63,7 +63,7 @@
        .SetMethod(
            "getApplicationInfoForProtocol",
            base::BindRepeating(&Browser::GetApplicationInfoForProtocol, browser))
-@@ -1908,7 +1908,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1913,7 +1913,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod("getJumpListSettings", &App::GetJumpListSettings)
        .SetMethod("setJumpList", &App::SetJumpList)
  #endif
