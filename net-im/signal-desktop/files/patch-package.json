@@ -1,17 +1,16 @@
 --- package.json.orig	2025-05-28 20:17:57 UTC
 +++ package.json
-@@ -401,7 +401,9 @@
-       "app-builder-lib": "patches/app-builder-lib.patch",
+@@ -398,7 +398,8 @@
        "dmg-builder": "patches/dmg-builder.patch",
        "eslint-plugin-better-tailwindcss": "patches/eslint-plugin-better-tailwindcss.patch",
--      "framer-motion@6.5.1": "patches/framer-motion@6.5.1.patch"
-+      "framer-motion@6.5.1": "patches/framer-motion@6.5.1.patch",
+       "framer-motion@6.5.1": "patches/framer-motion@6.5.1.patch",
+-      "fs-xattr": "patches/fs-xattr.patch"
 +      "electron-builder": "patches/electron-builder.patch",
 +      "@signalapp/ringrtc": "patches/signalapp-ringrtc.patch"
      },
      "onlyBuiltDependencies": [
        "@indutny/mac-screen-share",
-@@ -507,20 +509,6 @@
+@@ -502,20 +503,6 @@
        "asarUnpack": [
          "build/icons/win/icon.ico"
        ]
