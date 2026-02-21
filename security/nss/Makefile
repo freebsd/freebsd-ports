@@ -1,5 +1,5 @@
 PORTNAME=	nss
-DISTVERSION=	3.120.1
+DISTVERSION=	3.121
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
