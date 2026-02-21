@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD http server
 WWW=		https://github.com/koue/httpd
 
+DEPRECATED=	Depends on bundled version of LibreSSL which is unsupported upstream
+EXPIRATION_DATE=2026-03-31
+
 LICENSE=	BSD3CLAUSE
 
 USES=		uidfix
