@@ -1,14 +1,7 @@
 remove after setuptools update past 70.1
 
---- pyproject.toml.orig	2025-10-29 00:38:50 UTC
+--- pyproject.toml.orig	2026-02-08 15:20:31 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
- [project]
--name = "wxPython"
-+name = "wxpython"
- description = "Cross platform GUI toolkit for Python, \"Phoenix\" version"
- requires-python = ">= 3.9"
- authors = [
 @@ -71,7 +71,7 @@ requires = [
  
  [build-system]
