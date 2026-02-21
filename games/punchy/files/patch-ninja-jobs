@@ -1,0 +1,15 @@
+https://github.com/denoland/rusty_v8/commit/ca83ce53bad1
+
+--- cargo-crates/v8-0.47.1/build.rs.orig	1973-11-29 21:33:09 UTC
++++ cargo-crates/v8-0.47.1/build.rs
+@@ -644,6 +644,10 @@ fn ninja(gn_out_dir: &Path, maybe_env: Option<NinjaEnv
+   let mut cmd = Command::new(cmd_string);
+   cmd.arg("-C");
+   cmd.arg(&gn_out_dir);
++  if let Ok(jobs) = env::var("NUM_JOBS") {
++    cmd.arg("-j");
++    cmd.arg(jobs);
++  }
+   if let Some(env) = maybe_env {
+     for item in env {
+       cmd.env(item.0, item.1);
