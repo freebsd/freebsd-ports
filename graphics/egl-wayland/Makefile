@@ -2,7 +2,7 @@ PORTNAME=	egl-wayland
 DISTVERSION=	1.1.20
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	EGLStream-based Wayland external platform
 WWW=		https://github.com/NVIDIA/egl-wayland
 
