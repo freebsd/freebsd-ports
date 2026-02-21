@@ -1,5 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	2
 
@@ -46,6 +47,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libutf8proc.so:textproc/utf8proc
 
 RUN_DEPENDS=	adcli:net-mgmt/adcli \
+		realm:net-mgmt/realmd \
 		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi \
 		nsupdate:dns/bind-tools
 
@@ -71,6 +73,8 @@ CONFIGURE_ARGS=	--disable-cifs-idmap-plugin \
 		--with-pid-path=/var/run \
 		--with-pipe-path=/var/run/sss/pipes \
 		--with-mcache-path=/var/db/sss/mc \
+		--with-adcli-path=${LOCALBASE}/sbin/adcli \
+		--with-realm-path=${LOCALBASE}/sbin/realm \
 		--with-environment-file=${LOCALBASE}/etc/sssd \
 		--with-xml-catalog-path=${LOCALBASE}/share/xml/catalog \
 		--with-krb5-plugin-path=${LOCALBASE}/lib/krb5/plugins/libkrb5 \
@@ -86,7 +90,6 @@ CONFIGURE_ARGS=	--disable-cifs-idmap-plugin \
 CONFIGURE_ENV=	KRB5_CONFIG="${KRB5CONFIG}" \
 		SOFTHSM2_PATH=${LOCALBASE}/lib/softhsm/libsofthsm2.so
 
-CPPFLAGS=	-DRENEWAL_PROG_PATH='\"${LOCALBASE}/sbin/adcli\"'
 LIBS=		-lintl
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER} \
