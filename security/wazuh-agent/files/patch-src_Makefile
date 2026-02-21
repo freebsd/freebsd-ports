@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2026-02-21 21:35:51 UTC
++++ src/Makefile
+@@ -1038,7 +1038,7 @@ endif
+ 
+ #### OpenSSL ##########
+ 
+-OPENSSL_FLAGS = enable-weak-ssl-ciphers no-shared
++OPENSSL_FLAGS = enable-weak-ssl-ciphers no-shared $(OSSL_TARGET)
+ 
+ ifeq (${uname_M}, i386)
+ ifeq ($(findstring BSD,${uname_S}), BSD)
