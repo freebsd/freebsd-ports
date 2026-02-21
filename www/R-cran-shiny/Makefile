@@ -1,5 +1,5 @@
 PORTNAME=	shiny
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -7,7 +7,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Web Application Framework for R
 WWW=		https://shiny.posit.co/
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	R-cran-bslib>=0.6.0:www/R-cran-bslib \
