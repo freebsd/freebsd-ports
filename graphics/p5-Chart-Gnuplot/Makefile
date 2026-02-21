@@ -1,10 +1,11 @@
 PORTNAME=	Chart-Gnuplot
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to plot graphs using GNUPLOT on the fly
 WWW=		https://metacpan.org/release/Chart-Gnuplot
 

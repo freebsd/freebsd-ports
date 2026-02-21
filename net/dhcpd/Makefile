@@ -1,9 +1,9 @@
 PORTNAME=	dhcpd
 PORTVERSION=	6.6.20200413
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD dhcp daemon
 WWW=		https://github.com/koue/dhcpd
 

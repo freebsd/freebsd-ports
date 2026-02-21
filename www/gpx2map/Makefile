@@ -1,9 +1,9 @@
 PORTNAME=	gpx2map
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Put GPX track on Google Map or OpenStreetMap
 WWW=		https://github.com/sd2k9/gpx2map
 

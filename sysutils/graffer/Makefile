@@ -1,9 +1,10 @@
 PORTNAME=	graffer
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://chaosophia.net/downloads/graffer/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to collect and render graphical statistics
 WWW=		http://chaosophia.net/graffer/
 

@@ -1,9 +1,9 @@
 PORTNAME=	slowcgi
 PORTVERSION=	7.1.20220916
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FastCGI interface for old CGI programs
 WWW=		https://github.com/koue/slowcgi
 

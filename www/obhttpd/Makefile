@@ -1,11 +1,11 @@
 PORTNAME=	obhttpd
 DISTVERSION=	7.4.20231129
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD http server
 WWW=		https://github.com/koue/httpd
 
