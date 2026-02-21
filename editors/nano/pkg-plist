@@ -6,6 +6,7 @@ bin/rnano
 %%PORTDOCS%%%%DOCSDIR%%/nanorc.5.html
 %%PORTDOCS%%%%DOCSDIR%%/rnano.1.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.nanorc
+%%NLS%%share/locale/ar/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/nano.mo
