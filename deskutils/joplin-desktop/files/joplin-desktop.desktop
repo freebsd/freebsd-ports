@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=Joplin
+Comment=A note taking and to-do application with synchronization capabilities.
+Icon=joplin
+Exec=joplin-desktop
+Categories=Application;Office;
+Terminal=false
+StartupWMClass=Joplin

@@ -132,6 +132,7 @@
     SUBDIR += itinerary
     SUBDIR += jjclient
     SUBDIR += jlj
+    SUBDIR += joplin-desktop
     SUBDIR += jot
     SUBDIR += just
     SUBDIR += kaddressbook

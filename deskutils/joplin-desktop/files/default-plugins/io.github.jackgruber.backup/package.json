@@ -1,0 +1,78 @@
+{
+  "name": "joplin-plugin-backup",
+  "version": "1.5.1",
+  "scripts": {
+    "dist": "webpack --env joplin-plugin-config=buildMain && webpack --env joplin-plugin-config=buildExtraScripts && webpack --env joplin-plugin-config=createArchive",
+    "prepare": "npm run dist && husky install",
+    "update": "npm install -g generator-joplin && yo joplin --node-package-manager npm --update --force",
+    "release": "npm test && node ./node_modules/joplinplugindevtools/dist/createRelease.js",
+    "preRelease": "npm test && node ./node_modules/joplinplugindevtools/dist/createRelease.js --prerelease",
+    "gitRelease": "node ./node_modules/joplinplugindevtools/dist/createRelease.js --upload",
+    "gitPreRelease": "node ./node_modules/joplinplugindevtools/dist/createRelease.js --upload --prerelease",
+    "test": "jest",
+    "updateVersion": "webpack --env joplin-plugin-config=updateVersion"
+  },
+  "license": "MIT",
+  "keywords": [
+    "joplin-plugin"
+  ],
+  "devDependencies": {
+    "@joplin/lib": "~2.9",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^18.7.13",
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "dotenv": "^10.0.0",
+    "fs-extra": "^11.3.3",
+    "glob": "^8.0.3",
+    "husky": "^6.0.0",
+    "jest": "^30.2.0",
+    "jest-when": "^3.3.1",
+    "joplinplugindevtools": "^1.0.16",
+    "lint-staged": "^11.0.0",
+    "mime": "^2.5.2",
+    "on-build-webpack": "^0.1.0",
+    "prettier": "2.3.0",
+    "tar": "^6.1.11",
+    "ts-jest": "^29.4.6",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.8.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "yargs": "^16.2.0"
+  },
+  "browser": {
+    "fs": false,
+    "child_process": false
+  },
+  "dependencies": {
+    "@types/i18n": "^0.13.6",
+    "7zip-bin": "^5.1.1",
+    "electron-log": "^4.3.1",
+    "i18n": "^0.15.1",
+    "moment": "^2.29.1",
+    "node-7z": "^2.1.2"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "^api$": "<rootDir>/node_modules/joplinplugindevtools/dist/apiMock.js",
+      "^api/types$": "<rootDir>/api/types"
+    }
+  },
+  "files": [
+    "publish"
+  ]
+}
