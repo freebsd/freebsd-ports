@@ -1,0 +1,11 @@
+--- configure.orig	2026-02-14 15:09:42.270539000 +0100
++++ configure	2026-02-14 15:14:09.452731000 +0100
+@@ -19732,7 +19732,7 @@
+ 
+ if test "${enable_async_push}" = "yes"; then
+ 	case "$host" in
+-		*-*-freebsd*)
++		*-*-freebsd1[3-4]*)
+ 
+ pkg_failed=no
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libinotify" >&5
