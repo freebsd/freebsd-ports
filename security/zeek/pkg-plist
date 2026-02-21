@@ -4,7 +4,6 @@
 %%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch
 %%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/auto
 %%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/site
-%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/state.db
 bin/bifcl
 bin/binpac
 %%ZEEKCTL%%bin/capstats
