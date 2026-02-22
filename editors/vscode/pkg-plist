@@ -5742,8 +5742,21 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/archiver-utils/LICENSE
 %%DATADIR%%/resources/app/node_modules/archiver-utils/file.js
 %%DATADIR%%/resources/app/node_modules/archiver-utils/index.js
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/LICENSE.md
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/dist/commonjs/index.d.ts.map
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/dist/commonjs/index.js
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/dist/commonjs/package.json
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/dist/esm/index.d.ts.map
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/dist/esm/index.js
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/dist/esm/package.json
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/balanced-match/package.json
 %%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/LICENSE
-%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/index.js
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/dist/commonjs/index.d.ts.map
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/dist/commonjs/index.js
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/dist/commonjs/package.json
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/dist/esm/index.d.ts.map
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/dist/esm/index.js
+%%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/dist/esm/package.json
 %%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/brace-expansion/package.json
 %%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/buffer/AUTHORS.md
 %%DATADIR%%/resources/app/node_modules/archiver-utils/node_modules/buffer/LICENSE
@@ -9324,7 +9337,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/minimist/LICENSE
 %%DATADIR%%/resources/app/node_modules/minimist/index.js
 %%DATADIR%%/resources/app/node_modules/minimist/package.json
-%%DATADIR%%/resources/app/node_modules/minipass/LICENSE
+%%DATADIR%%/resources/app/node_modules/minipass/LICENSE.md
 %%DATADIR%%/resources/app/node_modules/minipass/dist/commonjs/index.d.ts.map
 %%DATADIR%%/resources/app/node_modules/minipass/dist/commonjs/index.js
 %%DATADIR%%/resources/app/node_modules/minipass/dist/commonjs/package.json
@@ -10132,7 +10145,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/underscore/amd/_keyInObj.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/_methodFingerprint.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/_optimizeCb.js
-%%DATADIR%%/resources/app/node_modules/underscore/amd/_set.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/_setup.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/_shallowProperty.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/_stringTagBug.js
@@ -10232,6 +10244,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/underscore/amd/partial.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/partition.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/pick.js
+%%DATADIR%%/resources/app/node_modules/underscore/amd/pipe.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/pluck.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/property.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/propertyOf.js
@@ -10244,7 +10257,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/underscore/amd/restArguments.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/result.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/sample.js
-%%DATADIR%%/resources/app/node_modules/underscore/amd/set.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/shuffle.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/size.js
 %%DATADIR%%/resources/app/node_modules/underscore/amd/some.js
@@ -10294,7 +10306,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/_keyInObj.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/_methodFingerprint.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/_optimizeCb.js
-%%DATADIR%%/resources/app/node_modules/underscore/cjs/_set.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/_setup.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/_shallowProperty.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/_stringTagBug.js
@@ -10394,6 +10405,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/partial.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/partition.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/pick.js
+%%DATADIR%%/resources/app/node_modules/underscore/cjs/pipe.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/pluck.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/property.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/propertyOf.js
@@ -10406,7 +10418,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/restArguments.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/result.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/sample.js
-%%DATADIR%%/resources/app/node_modules/underscore/cjs/set.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/shuffle.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/size.js
 %%DATADIR%%/resources/app/node_modules/underscore/cjs/some.js
