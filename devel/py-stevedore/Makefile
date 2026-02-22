@@ -1,5 +1,5 @@
 PORTNAME=	stevedore
-PORTVERSION=	5.6.0
+PORTVERSION=	5.7.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197373
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=6.1.1:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=6.1.1:devel/py-pbr@${PY_FLAVOR}
+
 USES=		python
 USE_PYTHON=	autoplist distutils pytest
 
