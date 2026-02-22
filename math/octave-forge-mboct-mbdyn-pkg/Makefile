@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-mboct-mbdyn-pkg
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

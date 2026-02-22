@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-octave_mermaid_js
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-joystick
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

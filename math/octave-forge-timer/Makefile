@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-timer
 DISTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

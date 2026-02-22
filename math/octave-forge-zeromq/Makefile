@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-zeromq
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.5.7
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

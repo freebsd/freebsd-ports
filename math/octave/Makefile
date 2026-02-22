@@ -1,7 +1,6 @@
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	2
-CATEGORIES=	math
+CATEGORIES=	math java
 MASTER_SITES=	GNU
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,7 +13,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:devel/gperf \
 		${LOCALBASE}/bin/makeinfo:print/texinfo \
 		gnuplot:math/gnuplot \
 		gsed:textproc/gsed \
-		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson
+		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson \
+		${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float
 RUN_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo \
 		gnuplot:math/gnuplot \
 		gsed:textproc/gsed

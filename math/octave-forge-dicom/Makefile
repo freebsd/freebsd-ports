@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-dicom
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
