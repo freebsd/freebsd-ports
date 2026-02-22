@@ -1,3 +1,5 @@
-TIMESTAMP = 1770570480
+TIMESTAMP = 1771751248
 SHA256 (KDE/frameworks/6.23/qqc2-desktop-style-6.23.0.tar.xz) = a7aa7e0b20d51ffb91f0446640a5e052369c433ef48e3526b4f507384ce7980d
 SIZE (KDE/frameworks/6.23/qqc2-desktop-style-6.23.0.tar.xz) = 92376
+SHA256 (KDE/frameworks/6.23/6d79bb7309352c4f77980ed1c68c984c074745f1.patch) = 7f87fb9d706ea4f4b8e43dbf4ebf43051fa71573bd7fd0ca0fba138061e78151
+SIZE (KDE/frameworks/6.23/6d79bb7309352c4f77980ed1c68c984c074745f1.patch) = 1772
