@@ -1,3 +1,4 @@
+%%i386%%@preexec clang </dev/null -m32 -E - -march=native -### 2>&1 | tr ' ' $'\n' | grep -q +sse2 || { echo >&2 "This port requires a CPU with SSE2 instruction set extension." ; exit 1; }
 bin/exr2aces
 bin/exrenvmap
 bin/exrheader

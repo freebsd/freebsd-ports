@@ -1,5 +1,5 @@
 PORTNAME?=	openexr
-PORTVERSION?=	3.4.4 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
+PORTVERSION?=	3.4.5 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
@@ -63,6 +63,10 @@ CMAKE_TESTING_ON=	BUILD_TESTING \
 			OPENEXR_TEST_PYTHON \
 			OPENEXR_TEST_TOOLS
 
+TEST_ENV+=	CTEST_OUTPUT_ON_FAILURE=TRUE
+
+# OpenEXR mandates SSE2 on i386
+CFLAGS_i386+=	-msse2
 CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
@@ -85,6 +89,15 @@ DOCS_CMAKE_BOOL=OPENEXR_INSTALL_DOCS INSTALL_DOCS
 _DOCSRCDIR1=	${WRKSRC}
 _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
 		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
+
+.include <bsd.port.options.mk>
+
+# use conditional i386-specific lines in main pkg-plist file:
+.if ${ARCH} != i386
+PLIST_SUB+=	i386="@comment "
+.else
+PLIST_SUB+=	i386=""
+.endif
 
 # too many reports about compilation failures, so
 # sanity check we are using the same C++ standard library
