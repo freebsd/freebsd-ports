@@ -150,4 +150,4 @@ CARGO_CRATES=	ahash-0.3.8 \
 		winsafe-0.0.19 \
 		xattr-1.5.0 \
 		yaml-rust-0.3.5 \
-		indicatif@git+https://github.com/kimono-koans/indicatif?branch=switch_to_unit_prefix\#372c22c92dc93b2a22d6b51335fcca4682597568
+		indicatif@git+https://github.com/console-rs/indicatif\#880d8ce6b9e1615605fdf2c84cc24068f985a0b0
