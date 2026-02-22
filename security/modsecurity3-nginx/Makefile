@@ -55,7 +55,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
 			--with-http_sub_module \
-			--with-http_v3_module \
 			--without-mail_imap_module \
 			--without-mail_pop3_module \
 			--without-mail_smtp_module \
