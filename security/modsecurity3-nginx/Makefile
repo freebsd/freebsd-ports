@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--pid-path=${_NGINX_RUNDIR}/nginx.pid \
 			--error-log-path=${_NGINX_ERRORLOG} \
 			--user=${WWWOWN} --group=${WWWGRP} \
+			--with-compat \
 			--modules-path=${_MODULESDIR} \
 			--with-file-aio \
 			--http-client-body-temp-path=${_NGINX_TMPDIR}/client_body_temp \
@@ -38,7 +39,9 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--http-scgi-temp-path=${_NGINX_TMPDIR}/scgi_temp \
 			--http-uwsgi-temp-path=${_NGINX_TMPDIR}/uwsgi_temp \
 			--http-log-path=${_NGINX_ACCESSLOG} \
+			--with-compat \
 			--with-http_v2_module \
+			--with-http_v3_module \
 			--with-http_addition_module \
 			--with-http_auth_request_module \
 			--with-http_dav_module \
@@ -48,19 +51,21 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--with-http_mp4_module \
 			--with-http_random_index_module \
 			--with-http_realip_module \
-			--with-pcre \
 			--with-http_secure_link_module \
 			--with-http_slice_module \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
 			--with-http_sub_module \
+			--with-http_v3_module \
 			--without-mail_imap_module \
 			--without-mail_pop3_module \
 			--without-mail_smtp_module \
 			--with-mail_ssl_module \
+			--with-stream_realip_module \
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
 			--with-threads \
+			--with-pcre \
 			--with-mail=dynamic \
 			--with-stream=dynamic \
 			--add-dynamic-module=${WRKSRC_modsecurity3}
@@ -81,7 +86,7 @@ _NGINX_TMPDIR=		${_NGINX_VARDIR}/tmp/nginx
 _NGINX_VARDIR=	/var
 
 _NGINX_PORTNAME=	nginx
-_NGINX_PORTVERSION=	1.28.0
+_NGINX_PORTVERSION=	1.28.2
 _NGINX_DISTNAME=	${_NGINX_PORTNAME}-${_NGINX_PORTVERSION}
 
 do-install:
