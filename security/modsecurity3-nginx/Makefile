@@ -30,7 +30,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/etc/nginx \
 			--pid-path=${_NGINX_RUNDIR}/nginx.pid \
 			--error-log-path=${_NGINX_ERRORLOG} \
 			--user=${WWWOWN} --group=${WWWGRP} \
-			--with-compat \
 			--modules-path=${_MODULESDIR} \
 			--with-file-aio \
 			--http-client-body-temp-path=${_NGINX_TMPDIR}/client_body_temp \
