@@ -1,9 +1,9 @@
 PORTNAME=	lives
 DISTVERSION=	3.2.0
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
-DISTNAME=	LiVES-${PORTVERSION}
+DISTNAME=	LiVES-${DISTVERSION}
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Video editing system
@@ -23,9 +23,8 @@ RUN_DEPENDS=	analyseplugin:audio/ladspa \
 		ffprobe:multimedia/ffmpeg \
 		sox:audio/sox
 
-USES=		autoreconf compiler:c++11-lib gettext-runtime gettext-tools \
-		gl gnome libtool localbase pathfix perl5 pkgconfig python \
-		sdl shebangfix xorg
+USES=		autoreconf compiler:c++11-lib gettext gl gnome libtool \
+		localbase pathfix perl5 pkgconfig python sdl shebangfix xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 USE_LDCONFIG=	yes
@@ -40,7 +39,7 @@ SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi smogrify \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ldvgrab --disable-prctl --disable-system-weed --disable-dirac
 INSTALL_TARGET=	install-strip
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 DOC_FILES=	AUTHORS COPYING COPYING.LGPL ChangeLog FEATURES GETTING.STARTED NEWS README \
 		OMC/lives-OMC.txt RFX/LiVES-Perl.odt RFX/rfxbuilder.odt \
@@ -48,12 +47,12 @@ DOC_FILES=	AUTHORS COPYING COPYING.LGPL ChangeLog FEATURES GETTING.STARTED NEWS 
 		lives-plugins/marcos-encoders/README.multi_encoder \
 		weed-docs/weedspec.txt weed-docs/weedevents.txt
 
-OPTIONS_DEFINE=	ALSA DOCS DOXYGEN DV FFMPEG FFTW FREI0R IMAGEMAGICK JACK \
-		LIBEXPLAIN LIBVISUAL NLS OGG OPENCV OPTIMIZED_CFLAGS \
-		PROJECTM PULSEAUDIO THEORA V4L WAYLAND
+OPTIONS_DEFINE=		ALSA DOCS DOXYGEN DV FFMPEG FFTW FREI0R IMAGEMAGICK \
+			JACK LIBEXPLAIN LIBVISUAL NLS OGG OPENCV \
+			OPTIMIZED_CFLAGS PROJECTM PULSEAUDIO THEORA V4L WAYLAND
 OPTIONS_DEFAULT=	CDDA2WAV DV FFTW GHOSTSCRIPT IMAGEMAGICK JACK \
-			LAME MPG123 MPLAYER NLS OGG OGG123 OGM THEORA \
-			X264 XDG_SCREENSAVER XDOTOOL XWININFO YTDLP
+			LAME MPG123 MPLAYER OGG OGG123 OGM THEORA X264 \
+			XDG_SCREENSAVER XDOTOOL XWININFO YTDLP
 
 OPTIONS_GROUP=			RUNTIME EXT_WIN_CAPTURE MPLAYERS MP3
 OPTIONS_GROUP_EXT_WIN_CAPTURE=	WMCTRL XDOTOOL
@@ -93,8 +92,12 @@ DV_LIB_DEPENDS=			libdv.so:multimedia/libdv
 DV_RUN_DEPENDS=			encodedv:multimedia/libdv
 DV_CONFIGURE_OFF=		--disable-libdv
 
-FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
+FFMPEG_BROKEN=			Crashes at runtime if the FFMPEG option is enabled
+FFMPEG_LIB_DEPENDS=		libavcodec.so.58:multimedia/ffmpeg4
 FFMPEG_CONFIGURE_OFF=		--disable-ffmpeg
+FFMPEG_CONFIGURE_ENV=		PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
+FFMPEG_CFLAGS=			-I${LOCALBASE}/ffmpeg4/include
+FFMPEG_LDFLAGS=			-L${LOCALBASE}/ffmpeg4/lib
 
 FFTW_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
 				libfftw3f.so:math/fftw3-float
@@ -131,8 +134,6 @@ MPG321_RUN_DEPENDS=		mpg321:audio/mpg321
 MPLAYER_RUN_DEPENDS=		mplayer:multimedia/mplayer
 
 MPV_RUN_DEPENDS=		mpv:multimedia/mpv
-
-NLS_USES=			gettext-tools
 
 OGG123_RUN_DEPENDS=		ogg123:audio/vorbis-tools
 
