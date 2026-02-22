@@ -1,5 +1,5 @@
 PORTNAME=	gkrellm
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \

@@ -1,4 +1,4 @@
---- src/Makefile.orig	2025-12-14 15:28:26 UTC
+--- src/Makefile.orig	2026-02-22 11:12:05 UTC
 +++ src/Makefile
 @@ -36,7 +36,8 @@ endif
  	CONFIGURE_ARGS += --without-ntlm
@@ -10,14 +10,3 @@
  # pull in variables set by configure script
  include configure.mk
  
-@@ -197,8 +198,8 @@ install_freebsd:
- 
- install_freebsd:
- 	$(MAKE) install
--	chgrp kmem $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
--	chmod g+s $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
-+	# chgrp kmem $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
-+	# chmod g+s $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
- 
- install_netbsd:
- 	$(MAKE) MANDIR="$(PREFIX)/man/man1" install
