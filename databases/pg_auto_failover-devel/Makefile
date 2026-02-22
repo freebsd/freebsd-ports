@@ -1,8 +1,8 @@
 PORTNAME=	pg_auto_failover
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
+DISTVERSION=	g20251117
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER_NODOT}-
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pat@patmaddox.com
 COMMENT=	Postgres extension for automated failover and high-availability
@@ -11,14 +11,13 @@ WWW=		https://pg-auto-failover.readthedocs.io
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-__MAX_PGSQL=	17
+__MAX_PGSQL=	18
 USES=		gmake pgsql:13-${__MAX_PGSQL}
 WANT_PGSQL=	contrib server
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hapostgres
-
-CONFLICTS=	postgresql*-pg_auto_failover*
+GH_TAGNAME=	5f31d4f5ef322b339d67cfd79d773e11f9e30fb0
 
 USE_RC_SUBR=	pg_auto_failover
 
