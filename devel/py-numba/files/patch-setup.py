@@ -7,5 +7,5 @@
 -min_numpy_build_version = "2.0.0rc1"
 +min_numpy_build_version = "1.22"
  min_numpy_run_version = "1.22"
- max_numpy_run_version = "2.4"
+ max_numpy_run_version = "2.5"
  min_llvmlite_version = "0.46.0dev0"

@@ -1,5 +1,5 @@
 PORTNAME=	numba
-DISTVERSION=	0.63.1
+DISTVERSION=	0.64.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,12 +17,12 @@ BROKEN=		requires OpenMP support that is missing on this architecture
 
 # numpy version is checked at runtime
 # https://github.com/numba/numba/blob/main/numba/__init__.py#L13
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.22,1<=2.0,1:math/py-numpy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.22,1<2.5,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 LIB_DEPENDS=	libtbb.so:devel/onetbb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llvmlite>=0.46.0:devel/py-llvmlite@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.22,1<=2.0,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.22,1<2.5,1:math/py-numpy@${PY_FLAVOR} \
 
 USES=		compiler:c++11-lang python fortran localbase
 USE_PYTHON=	distutils concurrent autoplist unittest
