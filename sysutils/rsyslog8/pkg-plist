@@ -11,6 +11,9 @@ lib/rsyslog/impstats.so
 lib/rsyslog/imtcp.so
 lib/rsyslog/imudp.so
 lib/rsyslog/imuxsock.so
+lib/rsyslog/liboverride_getaddrinfo.so
+lib/rsyslog/liboverride_gethostname.so
+lib/rsyslog/liboverride_gethostname_nonfqdn.so
 lib/rsyslog/lmnet.so
 lib/rsyslog/lmnetstrms.so
 lib/rsyslog/lmnsd_ptcp.so
@@ -26,6 +29,6 @@ lib/rsyslog/omstdout.so
 lib/rsyslog/omtesting.so
 lib/rsyslog/omuxsock.so
 lib/rsyslog/pmciscoios.so
+sbin/rsyslogd
 share/man/man5/rsyslog.conf.5.gz
 share/man/man8/rsyslogd.8.gz
-sbin/rsyslogd

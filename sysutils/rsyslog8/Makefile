@@ -1,5 +1,5 @@
 PORTNAME=	rsyslog
-PORTVERSION=	8.2512.0
+PORTVERSION=	8.2602.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -10,11 +10,14 @@ WWW=		https://www.rsyslog.com/
 LICENSE=	GPLv3 LGPL3 APACHE20
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libestr.so:devel/libestr \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libestr.so:devel/libestr \
 		libfastjson.so:devel/libfastjson \
 		liblogging-rfc3195.so:devel/liblogging \
+		libprotobuf-c.so:devel/protobuf-c \
+		libsnappy.so:archivers/snappy \
 		libuuid.so:misc/libuuid \
-		libcurl.so:ftp/curl
+		libyaml.so:textproc/libyaml
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		cpe libtool pkgconfig autoreconf python:env
