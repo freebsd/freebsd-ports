@@ -1,6 +1,6 @@
 PORTNAME=	glfw
 DISTVERSION=	3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${DISTVERSION}/
 
@@ -54,13 +54,15 @@ WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			libxkbcommon>0:x11/libxkbcommon \
 			wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
+WAYLAND_RUN_DEPENDS=	libxkbcommon>0:x11/libxkbcommon
 WAYLAND_USES=		kde:5 pkgconfig
 WAYLAND_USE=		KDE=ecm:build
 WAYLAND_CMAKE_BOOL=	GLFW_BUILD_WAYLAND
 
-X11_USES=	xorg
-X11_USE=	XORG=x11,xcursor,xi,xinerama,xrandr,xxf86vm
-X11_CMAKE_BOOL=	GLFW_BUILD_X11
+X11_BUILD_DEPENDS=	libxkbcommon>0:x11/libxkbcommon
+X11_USES=		xorg
+X11_USE=		XORG=x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
+X11_CMAKE_BOOL=		GLFW_BUILD_X11
 
 .include <bsd.port.options.mk>
 
