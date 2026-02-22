@@ -3,7 +3,6 @@ include/noson/alarmclock.h
 include/noson/audioencoder.h
 include/noson/audioformat.h
 include/noson/audiosource.h
-include/noson/audiostream.h
 include/noson/avtransport.h
 include/noson/contentdirectory.h
 include/noson/deviceproperties.h
@@ -14,10 +13,9 @@ include/noson/element.h
 include/noson/eventhandler.h
 include/noson/filestreamer.h
 include/noson/flacencoder.h
-include/noson/framebuffer.h
 include/noson/imageservice.h
 include/noson/intrinsic.h
-include/noson/iodevice.h
+include/noson/iostream.h
 include/noson/local_config.h
 include/noson/locked.h
 include/noson/musicservices.h
@@ -45,5 +43,5 @@ lib/cmake/noson/nosonTargets-release.cmake
 lib/cmake/noson/nosonTargets.cmake
 lib/libnoson.so
 lib/libnoson.so.2
-lib/libnoson.so.2.12.11
+lib/libnoson.so.2.12.23
 libdata/pkgconfig/noson.pc
