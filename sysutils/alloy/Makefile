@@ -17,6 +17,8 @@ GH_ACCOUNT=	grafana
 
 USE_RC_SUBR=	${PORTNAME}
 
+SUB_FILES=	pkg-install
+
 GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	github.com/${GH_ACCOUNT}/${GH_PROJECT}

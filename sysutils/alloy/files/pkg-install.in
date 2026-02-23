@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# PRE-INSTALL:  Stop alloy if enabled so the binary can be replaced (avoids
+#               ETXTBSY on FreeBSD when the Go binary is in use).
+# POST-INSTALL: Restart alloy if enabled so the new binary is used.
+# DEINSTALL:    Stop alloy if enabled before removal.
+#
+
+[ -z "${PACKAGE_BUILDING}" ] || exit 0
+
+# Load rc.conf to check alloy_enable (same as the rc.d script).
+alloy_enable=NO
+if [ -r /etc/rc.subr ]; then
+	. /etc/rc.subr
+	name=alloy
+	rcvar=alloy_enable
+	load_rc_config $name
+fi
+: ${alloy_enable:=NO}
+[ "${alloy_enable}" = "YES" ] || exit 0
+
+case "$2" in
+PRE-INSTALL)
+	# Stop before file replacement so the running binary can be overwritten.
+	service alloy stop 2>/dev/null || true
+	;;
+POST-INSTALL)
+	service alloy restart 2>/dev/null || true
+	;;
+DEINSTALL)
+	service alloy stop 2>/dev/null || true
+	;;
+esac
