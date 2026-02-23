@@ -19,6 +19,9 @@
 #               Default is "/var/alloy".
 # alloy_args (string):          Set extra arguments to pass to alloy
 #               Default is "".
+# alloy_sig_stop (string):      Signal used to stop alloy. Default "TERM".
+# alloy_stop_timeout (int):     Seconds to wait for graceful stop before SIGKILL.
+#               Default is unset (rc.subr default wait). Set e.g. 30 for a timeout.
 
 . /etc/rc.subr
 
@@ -33,6 +36,8 @@ load_rc_config $name
 : ${alloy_args:=""}
 : ${alloy_storage_path:="/var/alloy"}
 : ${alloy_listen_address:=":9200"}
+: ${alloy_sig_stop:="TERM"}
+: ${alloy_stop_timeout:=}
 
 pidfile=/var/run/alloy.pid
 command="/usr/sbin/daemon"
@@ -41,12 +46,30 @@ run="run /usr/local/etc/alloy.flow"
 command_args="-S -T ${name} -p ${pidfile} /usr/bin/env ${procname} ${run} \
     --storage.path=${alloy_storage_path} --server.http.listen-addr=${alloy_listen_address} ${alloy_args}"
 
+# Alloy reloads config on SIGHUP (see /-/reload and internal/alloycli/cmd_run.go).
+sig_stop="${alloy_sig_stop}"
+sig_reload="HUP"
+extra_commands="reload"
+
 start_precmd=alloy_startprecmd
+[ -n "${alloy_stop_timeout}" ] && stop_cmd="alloy_stop"
 
 alloy_startprecmd() {
   if [ ! -e ${pidfile} ]; then
     install -o ${alloy_user} -g ${alloy_group} /dev/null ${pidfile}
   fi
+}
+
+alloy_stop() {
+  rc_pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${rc_pid}" ]; then
+    return 0
+  fi
+  echo "Stopping ${name}."
+  kill -${sig_stop} "${rc_pid}"
+  wait_for_pids "${pidfile}" ${alloy_stop_timeout}
+  kill -KILL "${rc_pid}" 2>/dev/null && echo "Killed."
+  rm -f "${pidfile}"
 }
 
 load_rc_config $name
