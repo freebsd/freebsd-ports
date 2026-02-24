@@ -23,6 +23,8 @@ GH_PROJECT=	alloy
 USE_RC_SUBR=	${PORTNAME}
 
 SUB_FILES=	pkg-install
+# Use same script for deinstall so DEINSTALL case runs and stops the service on pkg remove.
+PKGDEINSTALL=	${WRKDIR}/pkg-install
 
 GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
