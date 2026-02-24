@@ -1,8 +1,9 @@
 PORTNAME=	fpc
-PORTVERSION=	3.3.1.20250807
+PORTVERSION=	3.3.1.20260207
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
-		LOCAL/acm/freepascal/:man
+		LOCAL/acm/freepascal/:man \
+		LOCAL/pkubaj:bootstrap
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	freepascal
 
@@ -14,7 +15,7 @@ CONFLICTS=	fpc
 
 RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 USES+=		gmake iconv
 USE_BINUTILS=	yes
@@ -28,7 +29,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	574b03bfb99348067f98320e7da2a788005214d4
+GL_TAGNAME=	fbc84eaf6cf2321eb246a7c4354d3aee1aac312d
 
 FPCSRCDIR=	source-${GL_TAGNAME}
 
@@ -39,13 +40,15 @@ PPNAME=		ppc386
 FPC_ARCH=	i386
 PLIST_SUB+=	FPC_I386="" \
 		FPC_AMD64="@comment " \
-		FPC_AARCH64="@comment "
+		FPC_AARCH64="@comment "  \
+		FPC_POWERPC64="@comment "
 .elif ${ARCH} == "amd64"
 PPNAME=		ppcx64
 FPC_ARCH=	x86_64
 PLIST_SUB+=	FPC_I386="@comment " \
 		FPC_AMD64="" \
-		FPC_AARCH64="@comment "
+		FPC_AARCH64="@comment " \
+		FPC_POWERPC64="@comment "
 .elif ${ARCH} == "aarch64"
 PPNAME=		ppca64
 FPC_ARCH=	aarch64
@@ -54,6 +57,20 @@ PLIST_SUB+=	FPC_I386="@comment " \
 		FPC_AARCH64=""
 BOOTVER=	${FPCBASEVER}
 MAKE_ARGS+=	OVERRIDEVERSIONCHECK=yes
+.elif ${ARCH} == "powerpc64" || "powerpc64le"
+PPNAME=		ppcppc64
+FPC_ARCH=	powerpc64
+.if ${ARCH} == "powerpc64le"
+FPCOPT=		"-Cp970 -gw3 -dpowerpc64le"
+SUFFIX=		-le
+.else
+FPCOPT=		"-CaELFV2 -Cp970 -gw3"
+SUFFIX=		-be
+.endif
+PLIST_SUB+=	FPC_I386="@comment " \
+		FPC_AMD64="@comment " \
+		FPC_AARCH64="@comment " \
+		FPC_POWERPC64=""
 .endif
 
 .if ${OPSYS} == FreeBSD
@@ -82,7 +99,7 @@ MAKE_ARGS+=	FPCMAKE=${NEWFPCMAKE} \
 		FPC_LDPATH=${FPC_LDPATH}
 NEWPPC=		PP=${WRKSRC}/compiler/${PPNAME}
 NEWFPC=		FPC=${WRKSRC}/compiler/${PPNAME}
-BOOTDIR=	${PPNAME}-${BOOTVER}-${OPSYS:tl}
+BOOTDIR=	${PPNAME}-${BOOTVER}-${OPSYS:tl}${SUFFIX}
 BOOTPPC=	PP=${WRKDIR}/${BOOTDIR}
 
 do-extract:
@@ -170,14 +187,14 @@ post-patch:
 do-build:
 # build fpc compiler
 	@${ECHO_MSG} "##### STARTING COMPILER AND UNITS #####"
-	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENVI} ${WRK_ENV} \
-		${MAKE_ENV} ${MAKE_CMD} all ${MAKE_ARGS} ${BOOTPPC})
+	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} all ${MAKE_ARGS} ${BOOTPPC})
 	@${ECHO_MSG} "##### COMPLETE COMPILER AND UNITS #####"
 
 do-install:
 	# Installing fpc compiler
-	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENVI} ${WRK_ENV} \
-		${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS} ${BOOTPPC})
+	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} install ${MAKE_ARGS} ${BOOTPPC})
 
 	# Installing manpages
 	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1

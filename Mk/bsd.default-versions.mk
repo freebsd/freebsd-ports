@@ -51,7 +51,7 @@ FIREBIRD_DEFAULT?=	3.0
 # Possible values: gfortran
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.2.3, 3.3.1
-.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64} || ${ARCH:Mpowerpc*}
 FPC_DEFAULT?=		3.3.1
 .  else
 FPC_DEFAULT?=		3.2.3
