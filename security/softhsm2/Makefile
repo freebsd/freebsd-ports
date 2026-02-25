@@ -1,39 +1,34 @@
 PORTNAME=	softhsm
-PORTVERSION=	2.6.1
-PORTREVISION=	4
+DISTVERSION=	2.7.0
 CATEGORIES=	security
-MASTER_SITES=	http://dist.opendnssec.org/source/ \
-		http://dist.opendnssec.org/source/testing/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Software implementation of a Hardware Security Module (HSM)
-WWW=		https://www.opendnssec.org/
+WWW=		https://www.softhsm.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MY_DEPENDS+=		p11-kit:security/p11-kit
-BUILD_DEPENDS+=		${MY_DEPENDS}
-RUN_DEPENDS+=		${MY_DEPENDS}
+MY_DEPENDS=	p11-kit:security/p11-kit
+BUILD_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		compiler:c++11-lang libtool pkgconfig ssl
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig ssl
+USE_GITHUB=	yes
+GH_PROJECT=	SoftHSMv2
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-
-CONFIGURE_ARGS+=	--with-crypto-backend=openssl \
-			--with-openssl=${OPENSSLBASE} \
-			--disable-gost
+CONFIGURE_ARGS=	--disable-gost \
+		--with-crypto-backend=openssl \
+		--with-openssl=${OPENSSLBASE}
 
 INSTALL_TARGET=	install-strip
-
-CONFLICTS=	softhsm-1.*
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		SQLITE MIGRATE
-OPTIONS_DEFAULT=	CRYP_OPEN SQLITE MIGRATE
+OPTIONS_DEFAULT=	SQLITE MIGRATE
 
 OPTIONS_SUB=		yes
 MIGRATE_DESC=		Build the migration tool
