@@ -9,8 +9,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		aligned-vec-0.6.4 \
 		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
-		alsa-0.9.1 \
-		alsa-sys-0.3.1 \
+		alsa-0.11.0 \
+		alsa-sys-0.4.0 \
 		ambient-authority-0.0.2 \
 		android-activity-0.6.0 \
 		android-properties-0.2.2 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		bytemuck_derive-1.10.2 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
-		bytes-1.11.0 \
+		bytes-1.11.1 \
 		calloop-0.13.0 \
 		calloop-0.14.3 \
 		calloop-wayland-source-0.3.0 \
@@ -96,6 +96,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
+		chacha20-0.10.0 \
 		chrono-0.4.42 \
 		chrono-tz-0.10.4 \
 		chumsky-0.12.0 \
@@ -130,10 +131,11 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		core-graphics-0.23.2 \
 		core-graphics-types-0.1.3 \
 		core-graphics-types-0.2.0 \
-		coreaudio-rs-0.13.0 \
-		cpal-0.16.0 \
+		coreaudio-rs-0.14.0 \
+		cpal-0.17.3 \
 		cpp_demangle-0.4.5 \
 		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
 		cranelift-assembler-x64-0.128.1 \
 		cranelift-assembler-x64-meta-0.128.1 \
 		cranelift-bforest-0.128.1 \
@@ -285,11 +287,12 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		gethostname-1.1.0 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
+		getrandom-0.4.1 \
 		gilrs-0.10.2 \
 		gilrs-core-0.5.7 \
 		gimli-0.32.3 \
 		gl_generator-0.14.0 \
-		glam-0.30.9 \
+		glam-0.32.0 \
 		glow-0.16.0 \
 		glutin_wgl_sys-0.6.1 \
 		glyph_brush-0.7.12 \
@@ -375,7 +378,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kiddo-5.2.4 \
-		kira-0.11.0 \
+		kira-0.12.0 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lab-0.11.0 \
@@ -407,6 +410,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		lz-fear-0.2.0 \
 		mac_address-1.1.8 \
 		mach2-0.4.3 \
+		mach2-0.5.0 \
 		macro_rules_attribute-0.1.3 \
 		macro_rules_attribute-proc_macro-0.1.3 \
 		malloc_buf-0.0.6 \
@@ -458,7 +462,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		num-bigint-0.4.6 \
 		num-complex-0.2.4 \
 		num-complex-0.4.6 \
-		num-conv-0.1.0 \
+		num-conv-0.2.0 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
@@ -477,6 +481,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		objc2-app-kit-0.2.2 \
 		objc2-app-kit-0.3.2 \
 		objc2-audio-toolbox-0.3.2 \
+		objc2-avf-audio-0.3.2 \
 		objc2-cloud-kit-0.2.2 \
 		objc2-contacts-0.2.2 \
 		objc2-core-audio-0.3.2 \
@@ -517,7 +522,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
-		pastey-0.1.1 \
+		pastey-0.2.1 \
 		pathdiff-0.2.3 \
 		pem-3.0.6 \
 		percent-encoding-2.3.2 \
@@ -543,7 +548,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		piston-viewport-0.5.0 \
 		pistoncore-input-0.24.0 \
 		pkg-config-0.3.32 \
-		png-0.17.16 \
 		png-0.18.0 \
 		polling-3.11.0 \
 		portable-atomic-1.12.0 \
@@ -554,6 +558,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		pp-rs-0.2.1 \
 		ppv-lite86-0.2.21 \
 		presser-0.3.1 \
+		prettyplease-0.2.37 \
 		proc-macro-crate-3.4.0 \
 		proc-macro-hack-0.5.20+deprecated \
 		proc-macro-nested-0.1.7 \
@@ -581,10 +586,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
 		rand-0.9.2 \
+		rand-0.10.0 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
+		rand_chacha-0.10.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
+		rand_core-0.10.0 \
 		rand_xorshift-0.3.0 \
 		rand_xoshiro-0.6.0 \
 		range-alloc-0.1.4 \
@@ -715,7 +723,9 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
+		strum-0.28.0 \
 		strum_macros-0.27.2 \
+		strum_macros-0.28.0 \
 		subtle-2.6.1 \
 		sum_type-0.2.0 \
 		svg_fmt-0.4.5 \
@@ -748,12 +758,14 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.9 \
 		tiff-0.10.3 \
-		time-0.3.44 \
-		time-core-0.1.6 \
-		time-macros-0.2.24 \
+		time-0.3.47 \
+		time-core-0.1.8 \
+		time-macros-0.2.27 \
 		timer-queue-0.1.1 \
 		tiny-skia-0.11.4 \
+		tiny-skia-0.12.0 \
 		tiny-skia-path-0.11.4 \
+		tiny-skia-path-0.12.0 \
 		tinystr-0.8.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.10.0 \
@@ -765,11 +777,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		toml-0.5.11 \
 		toml-0.8.23 \
 		toml-0.9.10+spec-1.1.0 \
+		toml-1.0.3+spec-1.1.0 \
 		toml_datetime-0.6.11 \
 		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_datetime-1.0.0+spec-1.1.0 \
 		toml_edit-0.22.27 \
 		toml_edit-0.23.10+spec-1.0.0 \
-		toml_parser-1.0.6+spec-1.1.0 \
+		toml_parser-1.0.9+spec-1.1.0 \
 		toml_write-0.1.2 \
 		toml_writer-1.0.6+spec-1.1.0 \
 		tower-0.5.2 \
@@ -827,6 +841,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip1-1.0.0 \
 		wasip2-1.0.1+wasi-0.2.4 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasm-bindgen-0.2.106 \
 		wasm-bindgen-futures-0.4.56 \
 		wasm-bindgen-macro-0.2.106 \
@@ -834,7 +849,10 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wasm-bindgen-shared-0.2.106 \
 		wasm-compose-0.243.0 \
 		wasm-encoder-0.243.0 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
 		wasmparser-0.243.0 \
+		wasmparser-0.244.0 \
 		wasmprinter-0.243.0 \
 		wasmtime-41.0.1 \
 		wasmtime-environ-41.0.1 \
@@ -907,18 +925,19 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		winch-codegen-41.0.1 \
 		window_clipboard-0.5.1 \
 		windows-0.51.1 \
-		windows-0.54.0 \
 		windows-0.58.0 \
+		windows-0.62.2 \
+		windows-collections-0.3.2 \
 		windows-core-0.51.1 \
-		windows-core-0.54.0 \
 		windows-core-0.58.0 \
 		windows-core-0.62.2 \
+		windows-future-0.3.2 \
 		windows-implement-0.58.0 \
 		windows-implement-0.60.2 \
 		windows-interface-0.58.0 \
 		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
-		windows-result-0.1.2 \
+		windows-numerics-0.3.1 \
 		windows-result-0.2.0 \
 		windows-result-0.4.1 \
 		windows-strings-0.1.0 \
@@ -933,6 +952,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
+		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
@@ -971,7 +991,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		winsafe-0.0.19 \
 		winx-0.36.4 \
 		wit-bindgen-0.46.0 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
 		wit-parser-0.243.0 \
+		wit-parser-0.244.0 \
 		witx-0.9.1 \
 		writeable-0.6.2 \
 		wyz-0.5.1 \
