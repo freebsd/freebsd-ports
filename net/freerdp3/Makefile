@@ -1,17 +1,10 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.22.0
+DISTVERSION=	3.23.0
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/:freerdp \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/:freerdp
 PKGNAMESUFFIX=	3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:freerdp
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES=	df87645e4977a9d3943828fec5fc0ba54ed57222.patch:-p1 \
-		031597d172245198ff0ab7640d43eab1f1bc6863.patch:-p1 \
-		c3c6e694e7ad3f461015c8bbef82d0ad5fe2770e.patch:-p1 \
-		1825fa82142ac12214217020151032f7c25fc7f5.patch:-p1 \
-		5c7aae27d0417b42b4806c2a5c583ca39dd9ef1e.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -253,7 +246,7 @@ CMAKE_OFF+=	WITH_AAD WITH_WINPR_JSON
 PLIST_SUB+=	JSON="@comment "
 .endif
 
-post-patch:
+post-patch-GSM-on:
 	@${REINPLACE_CMD} -e 's|gsm/gsm.h|gsm.h|' \
 		${WRKSRC}/cmake/FindGSM.cmake \
 		${WRKSRC}/libfreerdp/codec/dsp.c
