@@ -23,7 +23,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libslirp.so:net/libslirp
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t localbase:ldflags \
-		ninja perl5 pkgconfig python:build shebangfix tar:xz xorg
+		ninja:build perl5 pkgconfig python:build shebangfix tar:xz xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	qemu-project
 GL_TAGNAME=	9ef49528b5286f078061b52ac41e0ca19fa10e36
@@ -35,7 +35,6 @@ GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:key
 		qemu-project:berkeley-testfloat-3:e7af9751d9f9fd3b47911f51a5cfd08af256a9ab:berkeleytestfloat3/subprojects/berkeley-testfloat-3
 USE_GNOME=	cairo glib20
 USE_PERL5=	build
-USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
 SHEBANG_FILES=	scripts/xml-preprocess.py
@@ -155,10 +154,11 @@ post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE}
+# Don't build with -j, because the development branch of QEMU regresses from time to time
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${GMAKE}
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} DESTDIR=${STAGEDIR} ${GMAKE} install
 
 .if !target(post-install)
 post-install:
@@ -169,5 +169,8 @@ post-install:
 post-install-DOCS-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
 .endif
+
+do-test:
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${GMAKE} test
 
 .include <bsd.port.mk>
