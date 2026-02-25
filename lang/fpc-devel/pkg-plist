@@ -135,6 +135,7 @@ lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/gnutls.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/googleapi.fpm
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/graph.fpm
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/graph.fpm
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/graph.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/gst.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/gtk2.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/hash.fpm
@@ -175,7 +176,9 @@ lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/oggvorbis.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/openal.fpm
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/opencl.fpm
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/opencl.fpm
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/opencl.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/opengl.fpm
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/opengles.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/openssl.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/oracle.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pasjpeg.fpm
@@ -2083,6 +2086,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/googleapi/googleyoutubereporting.ppu
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.o
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.o
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.o
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.o
@@ -2091,14 +2096,20 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/googleapi/googleyoutubereporting.ppu
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptccrt.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptccrt.o
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptccrt.ppu
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptccrt.o
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptccrt.ppu
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.o
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.o
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.ppu
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.o
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.ppu
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.o
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.o
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.ppu
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.o
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.ppu
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.o
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gst/gst.o
@@ -2389,6 +2400,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openal/openal.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opencl/cl.o
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opencl/cl.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opencl/cl_gl.ppu
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opencl/cl.o
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opencl/cl.ppu
+%%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opencl/cl_gl.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/freeglut.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/freeglut.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/gl.o
@@ -2401,6 +2415,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glut.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glut.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glx.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glx.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengles/gles20.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengles/gles20.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/fpopenssl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/fpopenssl.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/fpopenssl.rsj
@@ -3298,6 +3314,7 @@ lib/libpas2jslib.so
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-db/examples/toolsunit.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-extra/examples/showver.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-hash/examples/demosha256.pp
+%%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-hash/examples/sha256performancetest.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-image/examples/createbarcode.lpr
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-image/examples/drawing.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-image/examples/imgconv.pp
@@ -3308,6 +3325,9 @@ lib/libpas2jslib.so
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-json/examples/j2y.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-json/examples/parsedemo.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-json/examples/simpledemo.pp
+%%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-md/examples/demomd.lpr
+%%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-md/examples/md2fpdoc.lpr
+%%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-md/examples/md2html.lpr
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-net/examples/ip6test.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-net/examples/svrclass.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-net/examples/testdns.pp
@@ -3594,6 +3614,10 @@ lib/libpas2jslib.so
 %%EXAMPLESDIR%%-%%PORTVERSION%%/opengl/examples/glxtest.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/opengl/examples/morph3d.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/opengl/examples/radblur.pp
+%%EXAMPLESDIR%%-%%PORTVERSION%%/opengles/examples/Makefile
+%%EXAMPLESDIR%%-%%PORTVERSION%%/opengles/examples/Makefile.fpc
+%%EXAMPLESDIR%%-%%PORTVERSION%%/opengles/examples/es2example1.pas
+%%EXAMPLESDIR%%-%%PORTVERSION%%/opengles/examples/glutdemoes.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/openssl/examples/test1.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/oracle/examples/oraclew.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/oracle/examples/test01.pp

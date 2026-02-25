@@ -1,5 +1,5 @@
 PORTNAME=	fpc
-PORTVERSION=	3.3.1.20260207
+PORTVERSION=	3.3.1.20260224
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man \
@@ -29,7 +29,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	fbc84eaf6cf2321eb246a7c4354d3aee1aac312d
+GL_TAGNAME=	31ccc6299d02cefc1c72f655231cb9e5e7d4a26e
 
 FPCSRCDIR=	source-${GL_TAGNAME}
 
@@ -54,7 +54,8 @@ PPNAME=		ppca64
 FPC_ARCH=	aarch64
 PLIST_SUB+=	FPC_I386="@comment " \
 		FPC_AMD64="@comment " \
-		FPC_AARCH64=""
+		FPC_AARCH64="" \
+		FPC_POWERPC64="@comment "
 BOOTVER=	${FPCBASEVER}
 MAKE_ARGS+=	OVERRIDEVERSIONCHECK=yes
 .elif ${ARCH} == "powerpc64" || "powerpc64le"
@@ -120,7 +121,7 @@ post-patch:
 				-e 's|1201000|${OSVERSION}|g' \
 				-e 's|1200000|${OSVERSION}|g' \
 				-e 's|1302001|${OSVERSION}|g' \
-				-e 's|1400097|${OSVERSION}|g' \
+				-e 's|1500068|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.inc
 .else
@@ -138,6 +139,8 @@ post-patch:
 		${WRKDIR}/${FPCSRCDIR}/compiler/Makefile
 	@${REINPLACE_CMD} -i "" -e 's|/usr/local|${PREFIX}|g' \
 		${WRKDIR}/${FPCSRCDIR}/packages/fpmkunit/src/fpmkunit.pp
+	@${REINPLACE_CMD} -i "" -e 's|$ifdef linux|$ifdef linux or $$ifdef freebsd|g' \
+		${WRKSRC}/packages/opengles/src/gles20.pas
 
 # enable units
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
@@ -173,6 +176,8 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		-e 's|x86_64|x86_64,aarch64|g' \
 			${WRKSRC}/packages/opencl/fpmake.pp
+	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+		${WRKSRC}/packages/opengles/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/proj4/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|os2|freebsd,os2|g' \

@@ -1,5 +1,5 @@
 PORTNAME=	fpc-devel
-PORTVERSION=	3.3.1.20260207
+PORTVERSION=	3.3.1.20260224
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
@@ -15,7 +15,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	fbc84eaf6cf2321eb246a7c4354d3aee1aac312d
+GL_TAGNAME=	31ccc6299d02cefc1c72f655231cb9e5e7d4a26e
 
 PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc-devel/files
@@ -45,7 +45,7 @@ post-patch:
 				-e 's|1201000|${OSVERSION}|g' \
 				-e 's|1200000|${OSVERSION}|g' \
 				-e 's|1302001|${OSVERSION}|g' \
-				-e 's|1400097|${OSVERSION}|g' \
+				-e 's|1500068|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.inc
 .else
@@ -63,6 +63,8 @@ post-patch:
 		${WRKSRC}/compiler/Makefile
 	@${REINPLACE_CMD} -i "" -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/packages/fpmkunit/src/fpmkunit.pp
+	@${REINPLACE_CMD} -i "" -e 's|$ifdef linux|$ifdef linux or $$ifdef freebsd|g' \
+		${WRKSRC}/packages/opengles/src/gles20.pas
 # enable or disable units
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/a52/fpmake.pp
@@ -97,6 +99,8 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		-e 's|x86_64|x86_64,aarch64|g' \
 			${WRKSRC}/packages/opencl/fpmake.pp
+	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
+		${WRKSRC}/packages/opengles/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/proj4/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|os2|freebsd,os2|g' \
