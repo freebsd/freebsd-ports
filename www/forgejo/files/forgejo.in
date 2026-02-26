@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: forgejo
-# REQUIRE: NETWORKING SYSLOG
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable forgejo:
