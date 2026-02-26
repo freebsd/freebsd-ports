@@ -1,70 +1,91 @@
 PORTNAME=	symon
 DISTVERSION=	2.90
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/ \
-		LOCAL/uqs
+MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jamie@catflap.org
 COMMENT=	Performance and information monitoring tool
 WWW=		https://wpd.home.xs4all.nl/symon/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	requires no longer supported ioctl(DIOCGETSTATUS)
+USES=		groff perl5 shebangfix
+USE_PERL5=	build
 
+SHEBANG_FILES=	client/getsymonitem.pl
+
+MAKE_ARGS=	EXADIR="etc" \
+		LORDER=echo \
+		MANDIR="share/man" \
+		PREFIX="${STAGEDIR}${PREFIX}" \
+		RRDDIR="${LOCALBASE}" \
+		SYSCONFDIR="${PREFIX}/etc" \
+		SUBDIR="lib ${SUBDIR} client" \
+		TSORT=cat
+
+MAKE_JOBS_UNSAFE=	yes
+
+CFLAGS+=	-D_WANT_SEMUN
+
+EXTRACT_AFTER_ARGS=	--strip-components 1 \
+			--no-same-owner --no-same-permissions
 SUB_FILES=	pkg-message
 
-USES=		groff perl5 shebangfix
-SHEBANG_FILES=	client/getsymonitem.pl
-USE_PERL5=	build
-MAKE_JOBS_UNSAFE=	yes
-CFLAGS+=	-D_WANT_SEMUN
+NO_WRKSUBDIR=	yes
 
 USERS=		_symon
 GROUPS=		_symon
 
-# Synonym for WITHOUT_SYMUX
-.if defined(WITHOUT_RRD)
-WITHOUT_SYMUX=	yes
-.endif
+PORTDOCS=	CHANGELOG HACKERS TODO
 
-.if !defined(WITHOUT_SYMUX)
-LIB_DEPENDS+=	librrd.so:databases/rrdtool
-.endif
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	SYMON SYMUX
+OPTIONS_MULTI=		MODULES
+OPTIONS_MULTI_MODULES=	SYMON SYMUX
+OPTIONS_SUB=		yes
 
-.if defined(WITHOUT_SYMUX) && defined(WITHOUT_SYMON)
-IGNORE=	you have defined both WITHOUT_SYMUX or WITHOUT_RRD *and* WITHOUT_SYMON
-.endif
+MODULES_DESC=		Modules
+SYMON_DESC=		Include symon(8) system monitor.
+SYMUX_DESC=		Include symon stream multiplexer [symux(8)]
 
-SUBDIR=		lib
-.if !defined(WITHOUT_SYMON)
-SUBDIR+=	symon
-PLIST_SUB+=	SYMON=""
-USE_RC_SUBR+=	symon
-.else
-PLIST_SUB+=	SYMON="@comment "
-.endif
-.if !defined(WITHOUT_SYMUX)
-SUBDIR+=	symux
-PLIST_SUB+=	SYMUX=""
-USE_RC_SUBR+=	symux
-.else
-PLIST_SUB+=	SYMUX="@comment "
-.endif
-SUBDIR+=	client
-
-MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}" LORDER=echo TSORT=cat \
-		SYSCONFDIR="${PREFIX}/etc" PREFIX="${STAGEDIR}/${PREFIX}" \
-		MANDIR="share/man"
+SYMON_VARS=		SUBDIR+=symon \
+			USE_RC_SUBR+=symon
+SYMUX_LIB_DEPENDS=	librrd.so:databases/rrdtool
+SYMUX_VARS=		SUBDIR+=symux \
+			USE_RC_SUBR+=symux
 
 .include <bsd.port.pre.mk>
-
-post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 # We need to teach symon about mbstat changes/removal in r253351 and r253361.
 	@${RM} ${WRKSRC}/platform/FreeBSD/sm_mbuf.c
+# We need to teach symon about pf API changes from FreeBSD 15 onwards.
+
+# Until someone can update sm_pf.c to use the nvlist variants, remove it
+# from FreeBSD 15 installs, as it no longer works due to the removal of
+# DIOCGETSTATUS. Patches welcome!
+# See https://lists.freebsd.org/archives/freebsd-pf/2023-April/000345.html
+# Subject: pf: remove DIOCGETRULE and DIOCGETSTATUS
+# Author: Kristof Provost <kp@FreeBSD.org>
+# Date: 2023-08-29 15:17:24 +0000
+# Link: https://cgit.freebsd.org/src/commit/?id=8d49fd7331bc72671a14f1aac1d9cdea36672d19
+.if (${OPSYS} == FreeBSD) && ${OSVERSION} >= 1500000
+	@${RM} ${WRKSRC}/platform/FreeBSD/sm_pf.c
+.endif
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
+
+post-install-SYMON-on:
+	${MV} ${STAGEDIR}${PREFIX}/etc/symon.conf \
+		${STAGEDIR}${PREFIX}/etc/symon.conf.sample
+
+post-install-SYMUX-on:
+	${MV} ${STAGEDIR}${PREFIX}/etc/symux.conf \
+		${STAGEDIR}${PREFIX}/etc/symux.conf.sample
 
 .include <bsd.port.post.mk>
