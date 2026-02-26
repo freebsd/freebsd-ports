@@ -3,7 +3,7 @@ PORTVERSION=	59c
 DISTVERSIONPREFIX=	R
 PORTREVISION=	3
 CATEGORIES=	shells
-MASTER_SITES=	https://www.mirbsd.org/MirOS/dist/mir/mksh/ \
+MASTER_SITES=	https://mbsd.evolvis.org/MirOS/dist/mir/mksh/ \
 		https://pub.allbsd.org/MirOS/dist/mir/mksh/
 
 MAINTAINER=	schaiba@gmail.com
