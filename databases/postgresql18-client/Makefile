@@ -1,5 +1,5 @@
 PORTNAME=	postgresql
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	PostgreSQL database (client)
 

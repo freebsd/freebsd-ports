@@ -1,6 +1,6 @@
 PORTNAME=	postgresql
 # Keep the ?=, this port is used as master by the other plperl.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER}${COMPONENT}
 
