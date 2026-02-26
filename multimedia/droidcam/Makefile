@@ -1,7 +1,6 @@
 PORTNAME=	droidcam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.4
-PORTREVISION=	1
+DISTVERSION=	2.1.5
 CATEGORIES=	multimedia
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -48,6 +47,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icon2.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
+		${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
