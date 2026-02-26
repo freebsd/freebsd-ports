@@ -1,5 +1,6 @@
 PORTNAME=	freerdp
 DISTVERSION=	2.11.8
+PORTREVISION=	1
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -142,6 +143,10 @@ X11_CMAKE_ON=		-DWITH_X11:BOOL=ON -DWITH_XCURSOR:BOOL=ON \
 			-DWITH_XRENDER:BOOL=ON -DWITH_XSHM:BOOL=ON \
 			-DWITH_XV:BOOL=ON
 X11_CMAKE_OFF=		-DWITH_X11:BOOL=OFF -DWITH_XKBFILE:BOOL=OFF
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|${DISTVERSION}-dev|${DISTVERSION}|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-patch-GSM-on:
 	@${REINPLACE_CMD} -e 's|gsm/gsm.h|gsm.h|' \
