@@ -1,5 +1,6 @@
 PORTNAME=	mumble
 DISTVERSION=	1.5.857
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-server
@@ -53,23 +54,20 @@ MYSQL_USE=		QT=sql-mysql:run
 PGSQL_USE=		QT=sql-pgsql:run
 SQLITE_USE=		QT=sql-sqlite3:run
 
-.include <bsd.port.pre.mk>
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MV} ${WRKSRC}/docs/additional-readmes/README.static.linux ${WRKSRC}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	${REINPLACE_CMD} -e '\
 			s|database=.*|database=/var/db/mumble-server/mumble-server.sqlite| ; \
 			s|;pidfile=.*|pidfile=/var/run/mumble-server/mumble-server.pid| ; \
-			s|;logfile=.*|logfile=/var/log/mumble-server/mumble-server.log| ; \
-			s|;host=.*|host=0.0.0.0|' \
+			s|;logfile=.*|logfile=/var/log/mumble-server/mumble-server.log|' \
 		${STAGEDIR}${ETCDIR}/mumble-server.ini
 	${MV}   ${STAGEDIR}${ETCDIR}/mumble-server.ini \
 		${STAGEDIR}${ETCDIR}/mumble-server.ini.sample
 	${RM}   ${STAGEDIR}${PREFIX}/bin/mumble-server-user-wrapper \
 		${STAGEDIR}${PREFIX}/share/man/man1/mumble-server-user-wrapper.1
 
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MV} ${WRKSRC}/docs/additional-readmes/README.static.linux ${WRKSRC}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
