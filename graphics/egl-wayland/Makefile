@@ -3,7 +3,7 @@ DISTVERSION=	1.1.21
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	EGLStream-based Wayland external platform
+COMMENT=	NVIDIA graphics EGLStream Wayland platform
 WWW=		https://github.com/NVIDIA/egl-wayland
 
 LICENSE=	MIT

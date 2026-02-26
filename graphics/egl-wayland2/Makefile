@@ -4,7 +4,7 @@ DISTVERSION=	1.0.1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Dma-buf-based Wayland external platform library
+COMMENT=	NVIDIA graphics dma-buf Wayland platform
 WWW=		https://github.com/NVIDIA/egl-wayland2
 
 LICENSE=	APACHE20

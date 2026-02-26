@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.8%20%28beta4%29
 DISTNAME=	nvclock${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	NVidia graphic card status and overclocking tool
+COMMENT=	NVIDIA graphics status and overclocking tool
 WWW=		https://www.linuxhardware.org/nvclock/
 
 LICENSE=	GPLv2+

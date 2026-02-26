@@ -3,7 +3,7 @@ PORTVERSION=	580.142
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Tool to manipulate X configuration files for the NVidia driver
+COMMENT=	NVIDIA graphics X configuration utility
 WWW=		https://www.nvidia.com/object/unix.html
 
 LICENSE=	GPLv2

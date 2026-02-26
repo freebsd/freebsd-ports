@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.run
 PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	NVidia graphics libraries and programs (Linux version)
+COMMENT=	NVIDIA graphics libraries and programs (Linux)
 WWW=		https://www.nvidia.com/object/unix.html
 
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -21,7 +21,7 @@ DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	x11@FreeBSD.org
-COMMENT?=	NVidia graphics card binary drivers for hardware OpenGL rendering
+COMMENT?=	NVIDIA graphics driver userland
 WWW=		https://www.nvidia.com/object/unix.html
 
 LICENSE_FILE=	${WRKSRC}/doc/license.txt

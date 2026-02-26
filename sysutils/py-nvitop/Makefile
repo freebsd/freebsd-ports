@@ -5,7 +5,7 @@ MASTER_SITES=  PYPI
 PKGNAMEPREFIX= ${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=    tiga@FreeBSD.org
-COMMENT=       Interactive NVIDIA-GPU process viewer
+COMMENT=       Interactive NVIDIA GPU process viewer
 WWW=           https://github.com/XuehaiPan/nvitop
 
 LICENSE=       APACHE20
