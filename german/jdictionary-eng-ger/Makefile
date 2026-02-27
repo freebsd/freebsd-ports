@@ -1,6 +1,6 @@
 PORTNAME=	jdictionary-eng-ger
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german textproc
 MASTER_SITES=	SF/jdictionary/Plugins%20for%20jDictionary/Smart%20English-German
 DISTNAME=	SmartEngGer-1_4.jar

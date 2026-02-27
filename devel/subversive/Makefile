@@ -1,6 +1,6 @@
 PORTNAME=	subversive
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	ECLIPSE/technology/subversive/2.0/builds:core \
 		http://community.polarion.com/projects/subversive/download/eclipse/4.0/builds/:connectors
