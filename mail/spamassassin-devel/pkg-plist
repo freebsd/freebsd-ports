@@ -99,6 +99,7 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/ImageInfo.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEHeader.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/NeuralNetwork.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/OLEVBMacro.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/P595Body.pm
@@ -210,6 +211,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::HeaderEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEHeader.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::NeuralNetwork.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OLEVBMacro.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::PDFInfo.3.gz
