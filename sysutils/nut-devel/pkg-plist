@@ -54,7 +54,7 @@ lib/libnutclientstub.so.1.0.1
 lib/libnutscan.a
 lib/libnutscan.so
 lib/libnutscan.so.4
-lib/libnutscan.so.4.0.0
+lib/libnutscan.so.4.1.0
 %%DEV%%libdata/pkgconfig/libnutclient.pc
 %%DEV%%libdata/pkgconfig/libnutscan.pc
 %%DEV%%libdata/pkgconfig/libupsclient.pc
@@ -128,6 +128,7 @@ lib/libnutscan.so.4.0.0
 %%MODBUS%%libexec/nut/huawei-ups2000
 %%MODBUS%%libexec/nut/must_ep2000pro
 %%MODBUS%%libexec/nut/phoenixcontact_modbus
+%%USB%%libexec/nut/nut-upower
 %%MODBUS%%libexec/nut/socomec_jbus
 %%SERIAL%%libexec/nut/ve-direct
 %%SERIAL%%libexec/nut/victronups
@@ -311,6 +312,7 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%%%USB%%share/man/man8/usbhid-ups.8.gz
 %%MANPAGES%%%%SNMP%%share/man/man8/snmp-ups.8.gz
 %%MANPAGES%%%%IPMIPSU%%share/man/man8/nut-ipmipsu.8.gz
+%%MANPAGES%%%%USB%%share/man/man8/nut-upower.8.gz
 %%MANPAGES%%%%PDU%%share/man/man8/powerman-pdu.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/powervar_cx_ser.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/ve-direct.8.gz
