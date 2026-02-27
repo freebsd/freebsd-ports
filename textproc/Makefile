@@ -545,6 +545,7 @@
     SUBDIR += or-aspell
     SUBDIR += otree
     SUBDIR += ov
+    SUBDIR += oyo
     SUBDIR += ox-gfm.el
     SUBDIR += p5-AI-Categorizer
     SUBDIR += p5-Algorithm-CheckDigits
