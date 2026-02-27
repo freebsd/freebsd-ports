@@ -1,0 +1,10 @@
+--- Makefile.orig	2026-02-20 11:56:18 UTC
++++ Makefile
+@@ -1,6 +1,6 @@ CPPFLAGS=-g -Wall -Wextra -DWITH_XCB=$(xcb) -Werror
+ xcb?=1
+ CPPFLAGS=-g -Wall -Wextra -DWITH_XCB=$(xcb) -Werror
+-CFLAGS=-std=c99
++CFLAGS+=-std=c99
+ LDLIBS=-lm -lX11 -lXrandr -lXinerama
+ 
+ LDLIBS_xcb1=-lxcb -lxcb-randr -lxcb-xinerama -lxcb-xrm
