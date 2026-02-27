@@ -1,3 +1,25 @@
+  <vuln vid="10319b08-f050-4beb-95e3-fe025cdafd25">
+    <topic>oauth2-proxy -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>oauth2-proxy</name>
+	<range><lt>7.14.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>During session resumption in crypto/tls, if the underlying Config has its ClientCAs or RootCAs fields mutated between the initial handshake and the resumed handshake, the resumed handshake may succeed when it should have failed.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-68121</cvename>
+    </references>
+    <dates>
+      <discovery>2026-02-05</discovery>
+      <entry>2026-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15f4e0f6-1338-11f1-a55d-b42e991fc52e">
     <topic>Mozilla -- Multiple vulnerabilities</topic>
     <affects>
