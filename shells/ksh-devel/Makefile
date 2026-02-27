@@ -53,6 +53,8 @@ KSH_PLIST_SUB=		93=""
 KSH93_PLIST_SUB=	93="93"
 KSH93D_PLIST_SUB=	93="93d"
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKSH93D}
