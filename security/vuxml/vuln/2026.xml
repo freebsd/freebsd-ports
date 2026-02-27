@@ -1,3 +1,53 @@
+  <vuln vid="1124a7b0-1338-11f1-a55d-b42e991fc52e">
+    <topic>Firefox -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+      <name>firefox</name>
+      <range><lt>148.0.0,2</lt></range>
+      </package>
+      <package>
+      <name>thunderbird</name>
+      <range><lt>148.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE-2026-2807: Memory safety bugs present in Firefox 147 and Thunderbird 147</p>
+	<p>CVE-2026-2806: Uninitialized memory in the Graphics: Text component.</p>
+	<p>CVE-2026-2805: Invalid pointer in the DOM: Core &amp; HTML component.</p>
+	<p>CVE-2026-2804: Use-after-free in the JavaScript: WebAssembly component.</p>
+	<p>CVE-2026-2803: Information disclosure, mitigation bypass in the Settings
+      UI component.</p>
+	<p>CVE-2026-2802: Race condition in the JavaScript: GC component.</p>
+	<p>CVE-2026-2801: Incorrect boundary conditions in the JavaScript:
+      WebAssembly component.</p>
+	<p>CVE-2026-2799: Use-after-free in the DOM: Core &amp; HTML component.</p>
+	<p>CVE-2026-2798: Use-after-free in the DOM: Core &amp; HTML component.</p>
+	<p>CVE-2026-2797: Use-after-free in the JavaScript: GC component.</p>
+	<p>CVE-2026-2796: JIT miscompilation in the JavaScript: WebAssembly component</p>
+	<p>CVE-2026-2795: Use-after-free in the JavaScript: GC component.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2807</cvename>
+      <cvename>CVE-2026-2806</cvename>
+      <cvename>CVE-2026-2805</cvename>
+      <cvename>CVE-2026-2804</cvename>
+      <cvename>CVE-2026-2803</cvename>
+      <cvename>CVE-2026-2802</cvename>
+      <cvename>CVE-2026-2801</cvename>
+      <cvename>CVE-2026-2799</cvename>
+      <cvename>CVE-2026-2798</cvename>
+      <cvename>CVE-2026-2797</cvename>
+      <cvename>CVE-2026-2796</cvename>
+      <cvename>CVE-2026-2795</cvename>
+    </references>
+    <dates>
+      <discovery>2026-02-24</discovery>
+      <entry>2026-02-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="102a03c9-1316-11f1-93ca-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
