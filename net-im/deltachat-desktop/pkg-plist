@@ -64,6 +64,8 @@ share/applications/deltachat.desktop
 %%DATADIR%%/_locales/it.xml
 %%DATADIR%%/_locales/ja_JP.json
 %%DATADIR%%/_locales/ja_JP.xml
+%%DATADIR%%/_locales/kab.json
+%%DATADIR%%/_locales/kab.xml
 %%DATADIR%%/_locales/km.json
 %%DATADIR%%/_locales/km.xml
 %%DATADIR%%/_locales/kn.json
@@ -292,6 +294,7 @@ share/applications/deltachat.desktop
 %%DATADIR%%/html-dist/images/icons/blocked.svg
 %%DATADIR%%/html-dist/images/icons/bookmark-filled.svg
 %%DATADIR%%/html-dist/images/icons/brightness-6.svg
+%%DATADIR%%/html-dist/images/icons/camera.svg
 %%DATADIR%%/html-dist/images/icons/chevron-left.svg
 %%DATADIR%%/html-dist/images/icons/chevron-right.svg
 %%DATADIR%%/html-dist/images/icons/code-tags.svg
@@ -432,6 +435,10 @@ share/applications/deltachat.desktop
 %%DATADIR%%/node_modules/@deltachat/tiny-emitter/instance.js
 %%DATADIR%%/node_modules/@deltachat/tiny-emitter/package.json
 %%DATADIR%%/node_modules/@deltachat/tiny-emitter/test/index.js
+%%DATADIR%%/node_modules/@parcel/watcher-freebsd-x64/LICENSE
+%%DATADIR%%/node_modules/@parcel/watcher-freebsd-x64/README.md
+%%DATADIR%%/node_modules/@parcel/watcher-freebsd-x64/package.json
+%%DATADIR%%/node_modules/@parcel/watcher-freebsd-x64/watcher.node
 %%DATADIR%%/node_modules/@parcel/watcher/LICENSE
 %%DATADIR%%/node_modules/@parcel/watcher/README.md
 %%DATADIR%%/node_modules/@parcel/watcher/binding.gyp
@@ -1057,7 +1064,6 @@ share/applications/deltachat.desktop
 @dir %%DATADIR%%/node_modules/@parcel/watcher-android-arm64
 @dir %%DATADIR%%/node_modules/@parcel/watcher-darwin-arm64
 @dir %%DATADIR%%/node_modules/@parcel/watcher-darwin-x64
-@dir %%DATADIR%%/node_modules/@parcel/watcher-freebsd-x64
 @dir %%DATADIR%%/node_modules/@parcel/watcher-linux-arm-glibc
 @dir %%DATADIR%%/node_modules/@parcel/watcher-linux-arm-musl
 @dir %%DATADIR%%/node_modules/@parcel/watcher-linux-arm64-glibc

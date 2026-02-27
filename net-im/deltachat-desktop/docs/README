@@ -1,0 +1,33 @@
+There used to be a script to generate the node modules distfile, but now
+it can be created with "make makesum" as we have Uses/electron.mk now.
+
+For each release, we need to sync all the files in files/packagejsons/
+with the upstream project's release. However, we need to patch the root
+package.json to make "freebsd" the only os listed:
+
+  "pnpm": {
+    "supportedArchitectures": {
+      "os": [
+        "freebsd"
+      ],
+      "cpu": [
+        "x64",
+        "ia32",
+        "arm64"
+      ]
+    },
+
+The full list of files that need to be placed into files/packagejsons/
+are as follows at the time of writing:
+
+.npmrc
+package.json
+packages/e2e-tests/package.json
+packages/frontend/package.json
+packages/runtime/package.json
+packages/shared/package.json
+packages/target-browser/package.json
+packages/target-electron/package.json
+packages/target-tauri/package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml

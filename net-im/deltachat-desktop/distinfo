@@ -1,5 +1,7 @@
-TIMESTAMP = 1766793206
-SHA256 (deltachat-desktop-v2.35.0-node-deps.tgz) = db99caf392bd8b63796c197699eabbe0a5c869568b20c6de1c28d8b22c37a6aa
-SIZE (deltachat-desktop-v2.35.0-node-deps.tgz) = 65909979
-SHA256 (deltachat-deltachat-desktop-v2.35.0_GH0.tar.gz) = 3ee956673cff996188888cf8a87f6f56e19b279cba99e07bc370a09ca0254df3
-SIZE (deltachat-deltachat-desktop-v2.35.0_GH0.tar.gz) = 40995233
+TIMESTAMP = 1772234855
+SHA256 (pnpm-9.6.0.tgz) = 1a2bd458a2118e56989e9359da2579954a1a3141b03800e04f36e6e97809f14c
+SIZE (pnpm-9.6.0.tgz) = 4508742
+SHA256 (deltachat-desktop-2.43.0-node-modules.tar.gz) = 455992a8accf3692b0517e65fc532e73bdd1ae305f0e329708fb43dd33465ac3
+SIZE (deltachat-desktop-2.43.0-node-modules.tar.gz) = 196907430
+SHA256 (deltachat-deltachat-desktop-v2.43.0_GH0.tar.gz) = aee8359f32345170464907ef8a948bc5e8fc5c41e631bd998411f8e4b6cbfd44
+SIZE (deltachat-deltachat-desktop-v2.43.0_GH0.tar.gz) = 41149584
