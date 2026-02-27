@@ -178,6 +178,7 @@ include/openfhe/core/math/hal/intnat/ubintnat.h
 include/openfhe/core/math/hal/nativeintbackend.h
 include/openfhe/core/math/hal/transform.h
 include/openfhe/core/math/hal/vector.h
+include/openfhe/core/math/hermite.h
 include/openfhe/core/math/math-hal.h
 include/openfhe/core/math/math_backends.md
 include/openfhe/core/math/matrix-impl.h
@@ -311,7 +312,6 @@ include/openfhe/pke/scheme/ckksrns/ckksrns-utils.h
 include/openfhe/pke/scheme/ckksrns/gen-cryptocontext-ckksrns-internal.h
 include/openfhe/pke/scheme/ckksrns/gen-cryptocontext-ckksrns-params.h
 include/openfhe/pke/scheme/ckksrns/gen-cryptocontext-ckksrns.h
-include/openfhe/pke/scheme/ckksrns/schemeswitching-data-serializer.h
 include/openfhe/pke/scheme/gen-cryptocontext-params-defaults.h
 include/openfhe/pke/scheme/gen-cryptocontext-params-validation.h
 include/openfhe/pke/scheme/gen-cryptocontext-params.h
@@ -330,6 +330,7 @@ include/openfhe/pke/schemebase/base-scheme.h
 include/openfhe/pke/schemebase/base-ser.h
 include/openfhe/pke/schemebase/decrypt-result.h
 include/openfhe/pke/schemebase/rlwe-cryptoparameters.h
+include/openfhe/pke/schemelet/rlwe-mp.h
 include/openfhe/pke/schemerns/rns-advancedshe.h
 include/openfhe/pke/schemerns/rns-cryptoparameters.h
 include/openfhe/pke/schemerns/rns-fhe.h
@@ -349,16 +350,17 @@ include/openfhe/pke/unittest/utils/UnitTestMetadataTestSer.h
 include/openfhe/pke/unittest/utils/UnitTestReadCSVData.h
 include/openfhe/pke/unittest/utils/UnitTestSer.h
 include/openfhe/pke/unittest/utils/UnitTestUtils.h
+include/openfhe/pke/unittest/utils/schemeswitching-data-serializer.h
 lib/OpenFHE/OpenFHEConfig.cmake
 lib/OpenFHE/OpenFHEConfigVersion.cmake
 lib/OpenFHE/OpenFHETargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/OpenFHE/OpenFHETargets.cmake
 lib/libOPENFHEbinfhe.so
 lib/libOPENFHEbinfhe.so.1
-lib/libOPENFHEbinfhe.so.1.2.4
+lib/libOPENFHEbinfhe.so.1.5.0
 lib/libOPENFHEcore.so
 lib/libOPENFHEcore.so.1
-lib/libOPENFHEcore.so.1.2.4
+lib/libOPENFHEcore.so.1.5.0
 lib/libOPENFHEpke.so
 lib/libOPENFHEpke.so.1
-lib/libOPENFHEpke.so.1.2.4
+lib/libOPENFHEpke.so.1.5.0
