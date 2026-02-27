@@ -1,0 +1,8 @@
+You may have multiple Python versions installed on your machine – system
+Python, versions from pyenv, mise, asdf, uv, or the Windows registry (PEP 514).
+python-discovery finds the right one for you.
+
+Give it a requirement like python3.12 or >=3.11,<3.13, and python-discovery
+searches all known locations, verifies each candidate, and returns detailed
+metadata about the match. Results are cached to disk so repeated lookups are
+fast.

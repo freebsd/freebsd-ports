@@ -5841,6 +5841,7 @@
     SUBDIR += py-python-dateutil
     SUBDIR += py-python-dbusmock
     SUBDIR += py-python-decouple
+    SUBDIR += py-python-discovery
     SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-dtrace
     SUBDIR += py-python-easyconfig
