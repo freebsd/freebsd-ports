@@ -7,7 +7,7 @@
 # This is similar to pkg info -qoa, but prints a flavour if the
 # package has one.
 
-sqlite3 /var/db/pkg/local.sqlite \
+pkg shell \
 	"select origin || coalesce('@' || (
 		select t4.annotation as annotation
 		from packages t1
