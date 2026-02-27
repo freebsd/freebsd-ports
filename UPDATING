@@ -20,6 +20,25 @@ you update your ports collection, before attempting any port upgrades.
   No specific action should be needed, just a heads-up to test before
   deploying to production as this is quite a big step in versions.
 
+20260225:
+  AFFECTS: users of net-im/gotosocial
+  AUTHOR: tilde@ultros.pro
+
+  net-im/gotosocial has been updated to 0.21.0
+
+  New configuration options have been added and the upgrade involves
+  lengthy database migrations which must not be interrupted.
+
+  Upgrade procedure:
+
+  1. # service gotosocial stop
+  2. Backup database
+  3. # pkg upgrade gotosocial
+  4. Merge new options from etc/gotosocial/config.yaml.sample
+  5. # service gotosocial start (do not interrupt database migrations!)
+
+  See details at https://codeberg.org/superseriousbusiness/gotosocial/releases/tag/v0.21.0
+
 20260206:
   AFFECTS: users of devel/freebsd-git-devtools
   AUTHOR: jrm@FreeBSD.org
