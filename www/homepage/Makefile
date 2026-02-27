@@ -1,10 +1,10 @@
 PORTNAME=	homepage
-DISTVERSION=	1.8.0
+DISTVERSION=	1.10.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
 #   https://github.com/DtxdF/port-assets-makejails/tree/main/homepage
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-v${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Highly customizable homepage with service API integrations
