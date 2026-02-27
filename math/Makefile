@@ -1288,6 +1288,7 @@
     SUBDIR += units
     SUBDIR += universal
     SUBDIR += unuran
+    SUBDIR += usearch
     SUBDIR += vampire
     SUBDIR += vdt
     SUBDIR += verdict
