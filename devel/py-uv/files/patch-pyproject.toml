@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-12-09 22:36:00 UTC
+--- pyproject.toml.orig	2026-02-24 23:33:36 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -9,7 +9,7 @@
  
  [project]
  name = "uv"
-@@ -40,56 +40,12 @@ Discord = "https://discord.gg/astral-sh"
+@@ -42,57 +42,12 @@ Discord = "https://discord.gg/astral-sh"
  Releases = "https://github.com/astral-sh/uv/releases"
  Discord = "https://discord.gg/astral-sh"
  
@@ -20,10 +20,11 @@
 -python-source = "python"
 -strip = true
 -include = [
--    { path = "rust-toolchain.toml", format = ["sdist", "wheel"] },
+-    { path = "rust-toolchain.toml", format = "sdist" },
 -    # this one isn't discovered by maturin because it's behind a feature flag
--    { path = "crates/uv-performance-memory-allocator/**/*", format = ["sdist", "wheel"] },
+-    { path = "crates/uv-performance-memory-allocator/**/*", format = "sdist" },
 -    { path = "crates/uv-trampoline-builder/trampolines/*", format = "sdist" },
+-    # https://github.com/rust-lang/cargo/issues/5933
 -    { path = "LICENSE-APACHE", format = "sdist" },
 -    { path = "LICENSE-MIT", format = "sdist" },
 -]
@@ -69,5 +70,5 @@
 +[tool.setuptools.package-data]
 +uv = ["py.typed"]
  
- [tool.mypy]
- ignore_missing_imports = true
+ [tool.uv]
+ managed = false
