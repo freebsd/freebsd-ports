@@ -1,6 +1,6 @@
 PORTNAME=	lv2proc
 DISTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/naspro/naspro/${DISTVERSION}/
 
@@ -10,6 +10,8 @@ WWW=		https://sourceforge.net/projects/naspro/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with audio/lilv 0.26.4
 
 LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libserd-0.so:devel/serd \
