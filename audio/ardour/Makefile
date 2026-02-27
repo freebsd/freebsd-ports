@@ -1,6 +1,6 @@
 PORTNAME=	ardour
 DISTVERSION=	8.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 # Official source download is tailored to browsers, downloads from github are
 # deliberately made empty. Put the badly named distfile into a subdirectory.
