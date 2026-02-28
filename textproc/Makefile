@@ -1718,6 +1718,7 @@
     SUBDIR += py-tomli
     SUBDIR += py-tomli-w
     SUBDIR += py-tomlkit
+    SUBDIR += py-tomllint
     SUBDIR += py-toronado
     SUBDIR += py-towncrier
     SUBDIR += py-translationstring
