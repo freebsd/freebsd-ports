@@ -5153,3 +5153,4 @@ security/openssl-quictls|security/openssl33-quictls|2026-02-14|Has expired: Upst
 misc/usd|graphics/openusd|2026-02-15|Rename to match upstream naming and moved to a more appropriate category
 www/py-django-statici18n|www/py-django_statici18n|2026-02-15|Rename to match upstream naming
 graphics/imlib2-jxl|graphics/imlib2|2026-02-28|Has expired: jxl support is handled by graphics/imlib2 and it is enabled by default
+graphics/imlib2-webp|graphics/imlib2|2026-02-28|Has expired: webp support is handled by graphics/imlib2 and it is enabled by default

@@ -374,7 +374,6 @@
     SUBDIR += imageworsener
     SUBDIR += imc
     SUBDIR += imlib2
-    SUBDIR += imlib2-webp
     SUBDIR += imlib2_loaders
     SUBDIR += impressive
     SUBDIR += imv
