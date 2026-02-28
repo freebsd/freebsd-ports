@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -30,7 +30,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		gsed:textproc/gsed \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		coreutils>=8.23:sysutils/coreutils \
-		flex>=0.26:textproc/flex
+		flex>=0.26:textproc/flex \
+		frozen>=1:devel/frozen
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
@@ -112,7 +113,6 @@ DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-ope
 DISTFILES+=	afdko-4.0.3.tar.gz:src
 DISTFILES+=	antlr4-cpp-runtime-4.13.2-source.zip:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
-DISTFILES+=	frozen-1.2.0.tar.gz:src
 DISTFILES+=	phc-winner-argon2-20190702.tar.gz:src
 DISTFILES+=	skia-m142-f4ed99d2443962782cf5f8b4dd27179f131e7cbe.tar.xz:src
 DISTFILES+=	y-crdt-0.23.5.tar.gz:src
@@ -314,7 +314,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-curl \
 		--with-system-dicts \
 		--with-system-dragonbox=no \
-		--with-system-frozen=no \
+		--with-system-frozen \
 		--with-system-gpgmepp \
 		--with-system-libfixmath=no \
 		--with-system-libs \
