@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
+DISTVERSION=	0.10.1
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,20 +24,20 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.100 \
-		assert_cmd-2.1.1 \
+		anyhow-1.0.101 \
+		assert_cmd-2.1.2 \
 		auto_impl-1.3.0 \
-		bitflags-2.10.0 \
+		bitflags-2.11.0 \
 		borrow-or-share-0.2.4 \
 		bstr-1.12.1 \
-		bytes-1.11.0 \
-		cc-1.2.51 \
+		bytes-1.11.1 \
+		cc-1.2.56 \
 		cfg-if-1.0.4 \
-		clap-4.5.54 \
-		clap_builder-4.5.54 \
-		clap_complete-4.5.65 \
-		clap_derive-4.5.49 \
-		clap_lex-0.7.6 \
+		clap-4.5.59 \
+		clap_builder-4.5.59 \
+		clap_complete-4.5.66 \
+		clap_derive-4.5.55 \
+		clap_lex-1.0.0 \
 		cli-table-0.5.0 \
 		cli-table-derive-0.5.0 \
 		colorchoice-1.0.4 \
@@ -56,24 +56,27 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		errno-0.3.14 \
 		etcetera-0.11.0 \
 		fastrand-2.3.0 \
-		find-msvc-tools-0.1.6 \
+		find-msvc-tools-0.1.9 \
 		fluent-uri-0.3.2 \
-		futures-0.3.31 \
-		futures-channel-0.3.31 \
-		futures-core-0.3.31 \
-		futures-io-0.3.31 \
-		futures-macro-0.3.31 \
-		futures-sink-0.3.31 \
-		futures-task-0.3.31 \
-		futures-util-0.3.31 \
-		getrandom-0.2.16 \
-		getrandom-0.3.4 \
+		foldhash-0.1.5 \
+		futures-0.3.32 \
+		futures-channel-0.3.32 \
+		futures-core-0.3.32 \
+		futures-io-0.3.32 \
+		futures-macro-0.3.32 \
+		futures-sink-0.3.32 \
+		futures-task-0.3.32 \
+		futures-util-0.3.32 \
+		getrandom-0.2.17 \
+		getrandom-0.4.1 \
 		glob-0.3.3 \
 		globset-0.4.18 \
 		hashbrown-0.14.5 \
+		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		httparse-1.10.1 \
+		id-arena-2.3.0 \
 		ignore-0.4.25 \
 		indexmap-2.13.0 \
 		indoc-2.0.7 \
@@ -81,12 +84,13 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.17 \
 		lazy_static-1.5.0 \
-		libc-0.2.179 \
+		leb128fmt-0.1.0 \
+		libc-0.2.182 \
 		linux-raw-sys-0.11.0 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
 		lsp-types-f-0.99.0 \
-		memchr-2.7.6 \
+		memchr-2.8.0 \
 		mio-1.1.1 \
 		nu-ansi-term-0.50.3 \
 		once_cell-1.21.3 \
@@ -99,25 +103,26 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		pathdiff-0.2.3 \
 		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.16 \
-		pin-utils-0.1.0 \
-		predicates-3.1.3 \
-		predicates-core-1.0.9 \
-		predicates-tree-1.0.12 \
-		proc-macro2-1.0.105 \
-		quote-1.0.43 \
+		predicates-3.1.4 \
+		predicates-core-1.0.10 \
+		predicates-tree-1.0.13 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.106 \
+		quote-1.0.44 \
 		r-efi-5.3.0 \
 		redox_syscall-0.5.18 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.2 \
-		regex-automata-0.4.13 \
-		regex-syntax-0.8.8 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.9 \
 		rust-ini-0.21.3 \
 		rustix-1.1.3 \
 		rustversion-1.0.22 \
-		ryu-1.0.22 \
+		ryu-1.0.23 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
+		semver-1.0.27 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
@@ -127,28 +132,28 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.8 \
-		slab-0.4.11 \
+		slab-0.4.12 \
 		smallvec-1.15.1 \
-		socket2-0.6.1 \
+		socket2-0.6.2 \
 		streaming-iterator-0.1.9 \
 		strsim-0.11.1 \
-		syn-2.0.114 \
+		syn-2.0.116 \
 		sync_wrapper-1.0.2 \
-		tempfile-3.24.0 \
+		tempfile-3.25.0 \
 		termcolor-1.4.1 \
 		termtree-0.5.1 \
-		thiserror-2.0.17 \
-		thiserror-impl-2.0.17 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
 		tiny-keccak-2.0.2 \
 		tokio-1.49.0 \
 		tokio-macros-2.6.0 \
 		tokio-util-0.7.18 \
-		toml-0.9.10+spec-1.1.0 \
-		toml_datetime-0.7.5+spec-1.1.0 \
-		toml_parser-1.0.6+spec-1.1.0 \
+		toml-1.0.3+spec-1.1.0 \
+		toml_datetime-1.0.0+spec-1.1.0 \
+		toml_parser-1.0.9+spec-1.1.0 \
 		toml_writer-1.0.6+spec-1.1.0 \
-		tower-0.5.2 \
+		tower-0.5.3 \
 		tower-layer-0.3.3 \
 		tower-lsp-f-0.24.0 \
 		tower-service-0.3.3 \
@@ -157,18 +162,23 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		tracing-core-0.1.36 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.22 \
-		tree-sitter-0.26.3 \
+		tree-sitter-0.26.5 \
 		tree-sitter-cmake-0.7.1 \
-		tree-sitter-language-0.1.6 \
+		tree-sitter-language-0.1.7 \
 		treesitter_kind_collector-0.2.0 \
-		unicode-ident-1.0.22 \
+		unicode-ident-1.0.24 \
 		unicode-width-0.2.2 \
+		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
 		valuable-0.1.1 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.1+wasi-0.2.4 \
+		wasip2-1.0.2+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.60.2 \
@@ -183,8 +193,13 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
-		wit-bindgen-0.46.0 \
-		zmij-1.0.12
+		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		zmij-1.0.21
 
 PLIST_FILES=	bin/${PORTNAME}
 
