@@ -448,6 +448,7 @@ nim/lib/compiler/aliasanalysis.nim
 nim/lib/compiler/aliases.nim
 nim/lib/compiler/ast.nim
 nim/lib/compiler/astalgo.nim
+nim/lib/compiler/astdef.nim
 nim/lib/compiler/astmsgs.nim
 nim/lib/compiler/astyaml.nim
 nim/lib/compiler/bitsets.nim
@@ -475,6 +476,7 @@ nim/lib/compiler/condsyms.nim
 nim/lib/compiler/debuginfo.nim
 nim/lib/compiler/debugutils.nim
 nim/lib/compiler/depends.nim
+nim/lib/compiler/deps.nim
 nim/lib/compiler/dfa.nim
 nim/lib/compiler/docgen.nim
 nim/lib/compiler/docgen2.nim
@@ -950,6 +952,7 @@ nim/lib/system/sets.nim
 nim/lib/system/stacktraces.nim
 nim/lib/system/strmantle.nim
 nim/lib/system/strs_v2.nim
+nim/lib/system/sysmem.nim
 nim/lib/system/sysstr.nim
 nim/lib/system/threadids.nim
 nim/lib/system/threadimpl.nim
