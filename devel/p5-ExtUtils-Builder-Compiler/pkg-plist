@@ -1,7 +1,8 @@
 %%SITE_PERL%%/ExtUtils/Builder/ArgumentCollector.pm
 %%SITE_PERL%%/ExtUtils/Builder/AutoDetect/C.pm
-%%SITE_PERL%%/ExtUtils/Builder/AutoDetect/Cpp.pm
 %%SITE_PERL%%/ExtUtils/Builder/Binary.pm
+%%SITE_PERL%%/ExtUtils/Builder/BuildTools/Base.pm
+%%SITE_PERL%%/ExtUtils/Builder/BuildTools/FromPerl.pm
 %%SITE_PERL%%/ExtUtils/Builder/Compiler.pm
 %%SITE_PERL%%/ExtUtils/Builder/Compiler/MSVC.pm
 %%SITE_PERL%%/ExtUtils/Builder/Compiler/Unixy.pm
@@ -17,13 +18,13 @@
 %%SITE_PERL%%/ExtUtils/Builder/Linker/PE/MSVC.pm
 %%SITE_PERL%%/ExtUtils/Builder/Linker/Unixy.pm
 %%SITE_PERL%%/ExtUtils/Builder/Linker/XCOFF.pm
-%%SITE_PERL%%/ExtUtils/Builder/MultiLingual.pm
 %%SITE_PERL%%/ExtUtils/Builder/ParseXS.pm
 %%SITE_PERL%%/ExtUtils/Builder/Profile/Perl.pm
 %%PERL5_MAN3%%/ExtUtils::Builder::ArgumentCollector.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::AutoDetect::C.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::AutoDetect::Cpp.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Binary.3.gz
+%%PERL5_MAN3%%/ExtUtils::Builder::BuildTools::Base.3.gz
+%%PERL5_MAN3%%/ExtUtils::Builder::BuildTools::FromPerl.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Compiler.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Compiler::MSVC.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Compiler::Unixy.3.gz
