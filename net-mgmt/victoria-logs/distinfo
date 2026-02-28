@@ -1,5 +1,5 @@
-TIMESTAMP = 1771926191
-SHA256 (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.46.0_GH0/go.mod) = 5eb82b84cc2adfac449eead0ea691cfab5e33f443dbf28699d259562fab429a9
-SIZE (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.46.0_GH0/go.mod) = 1095
-SHA256 (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.46.0_GH0/VictoriaMetrics-VictoriaLogs-v1.46.0_GH0.tar.gz) = ce07a5c2d8fb742a0fcc05a712f73c4b693269f35392443dbc78cf75692e397b
-SIZE (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.46.0_GH0/VictoriaMetrics-VictoriaLogs-v1.46.0_GH0.tar.gz) = 19561023
+TIMESTAMP = 1772301835
+SHA256 (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.47.0_GH0/go.mod) = ed53388615f5ac12905288039aebabc88d611d4d4553290549e933dc348a45db
+SIZE (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.47.0_GH0/go.mod) = 1095
+SHA256 (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.47.0_GH0/VictoriaMetrics-VictoriaLogs-v1.47.0_GH0.tar.gz) = 6b5293d9b154a0c54ea9953bbda3c680db5d52571539d1e722a2464c3a1d8e5a
+SIZE (go/net-mgmt_victoria-logs/VictoriaMetrics-VictoriaLogs-v1.47.0_GH0/VictoriaMetrics-VictoriaLogs-v1.47.0_GH0.tar.gz) = 19567645
