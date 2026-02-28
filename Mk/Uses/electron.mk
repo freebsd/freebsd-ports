@@ -378,11 +378,14 @@ NPM_REBUILD_CMD?=	${NPM_CMDNAME} rebuild
 .    endif
 .  elif ${_NODEJS_NPM} == pnpm
 NPM_LOCKFILE?=		pnpm-lock.yaml
-NPM_MODULE_CACHE?=	node_modules
+NPM_MODULE_CACHE?=	pnpm-store
 NPM_CMDNAME?=		pnpm
-NPM_CACHE_SETUP_CMD?=	${NPM_CMDNAME} set extendNodePath false
-NPM_FETCH_CMD?=		${NPM_CMDNAME} install
-NPM_FETCH_FLAGS+=	--frozen-lockfile --ignore-scripts --loglevel=error
+NPM_CACHE_SETUP_CMD?=	${DO_NADA}
+NPM_FETCH_CMD?=		${NPM_CMDNAME} fetch
+NPM_FETCH_FLAGS+=	--frozen-lockfile --ignore-scripts --loglevel=error \
+			--store-dir ${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}
+NPM_EXTRACT_CMD?=	${NPM_CMDNAME} install
+NPM_EXTRACT_FLAGS+=	${NPM_FETCH_FLAGS} --offline
 NPM_EXEC_CMD?=		${NPM_CMDNAME} exec
 NPM_REBUILD_CMD?=	${NPM_CMDNAME} rebuild
 .  endif
@@ -460,7 +463,7 @@ DISTFILES+=		${_DISTFILE_prefetch}:prefetch
 .    if ${_NODEJS_NPM} == npm || ${_NODEJS_NPM} == yarn1
 FETCH_DEPENDS+= ${_NPM_PKGNAME}>0:${_NPM_PORTDIR}
 .    elif ${_NODEJS_NPM} == pnpm
-FETCH_DEPENDS+=	${YQ_CMD}:textproc/yq
+FETCH_DEPENDS+=	${JQ_CMD}:textproc/jq
 .    endif
 
 electron-fetch-node-modules:
@@ -475,16 +478,11 @@ electron-fetch-node-modules:
 			cd $${dir} && \
 			${SETENV} ${MAKE_ENV} ${NPM_FETCH_CMD} ${NPM_FETCH_FLAGS}; \
 			${RM} $${dir}/${NPM_MODULE_CACHE}/.gitignore; \
-			if [ -f $${dir}/${NPM_MODULE_CACHE}/.modules.yaml ]; then \
-				${YQ_CMD} -yi 'del(.prunedAt, .storeDir)' \
-					$${dir}/${NPM_MODULE_CACHE}/.modules.yaml; \
-			fi; \
-			${RM} $${dir}/${NPM_MODULE_CACHE}/.pnpm-workspace-state*.json; \
 		done; \
 	fi
 
 electron-archive-node-modules:
-.    if ${_NODEJS_NPM} == npm || ${_NODEJS_NPM} == pnpm
+.    if ${_NODEJS_NPM} == npm
 	@if [ -d ${WRKDIR}/node-modules-cache ]; then \
 		${ECHO_MSG} "===>  Archiving prefetched node modules"; \
 		for dir in `${FIND} -s ${WRKDIR}/node-modules-cache -type d -name ${NPM_MODULE_CACHE} -print | \
@@ -501,7 +499,20 @@ electron-archive-node-modules:
 			${RM} -r ${WRKDIR}; \
 		fi; \
 	fi
-.    elif ${_NODEJS_NPM:Myarn*}
+.    elif ${_NODEJS_NPM:Myarn*} || ${_NODEJS_NPM} == pnpm
+.      if ${_NODEJS_NPM} == pnpm
+	@if [ -d ${WRKDIR}/node-modules-cache ]; then \
+		${FIND} ${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE} \
+			-type f -name '*.json' -exec ${SH} -c ' \
+			for f do \
+				${JQ_CMD} -c "walk(if type == \"object\" and has(\"checkedAt\") then .checkedAt = 0 else . end)" $${f} > $${f}.tmp && mv $${f}.tmp $${f}; \
+			done \
+			' ${SH} {} ';'; \
+		for dir in projects tmp; do \
+			${RM} -r ${WRKDIR}/node-modules-cache/${NPM_MODULE_CACHE}/*/$${dir}; \
+		done; \
+	fi
+.      endif
 	@if [ -d ${WRKDIR}/node-modules-cache ]; then \
 		${ECHO_MSG} "===>  Archiving prefetched node modules"; \
 		cd ${WRKDIR}/node-modules-cache && \
@@ -554,7 +565,7 @@ electron-copy-package-file:
 .    endif
 
 electron-install-node-modules:
-.    if ${_NODEJS_NPM} == npm || ${_NODEJS_NPM} == pnpm
+.    if ${_NODEJS_NPM} == npm
 	@${ECHO_MSG} "===>  Moving prefetched node modules to ${NPM_EXTRACT_WRKSRC}"
 	@if [ -d ${EXTRACT_WRKDIR}/node-modules-cache ]; then \
 		for dir in `${FIND} -s ${EXTRACT_WRKDIR}/node-modules-cache -type d -name ${NPM_MODULE_CACHE} -print | \
@@ -572,6 +583,22 @@ electron-install-node-modules:
 	@${ECHO_MSG} "===>  Setting up ${NPM_CMDNAME} command options"
 	@cd ${NPM_EXTRACT_WRKSRC} && ${SETENV} ${MAKE_ENV} ${NPM_EXTRACT_SETUP_CMD}
 .      endif
+	@if [ -d ${PKGJSONSDIR} ]; then \
+		cd ${PKGJSONSDIR} && \
+		for dir in `${FIND} . -type f -name ${NPM_LOCKFILE} -exec ${DIRNAME} {} ';'`; do \
+			cd ${NPM_EXTRACT_WRKSRC}/$${dir} && \
+			${SETENV} ${MAKE_ENV} ${NPM_EXTRACT_CMD} ${NPM_EXTRACT_FLAGS}; \
+		done; \
+	else \
+		cd ${NPM_EXTRACT_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${NPM_EXTRACT_CMD} ${NPM_EXTRACT_FLAGS}; \
+	fi
+.    elif ${_NODEJS_NPM} == pnpm
+	@${ECHO_MSG} "===>  Installing node modules from prefetched cache"
+	@if [ -d ${EXTRACT_WRKDIR}/${NPM_MODULE_CACHE} ]; then \
+		${MKDIR} ${WRKDIR}/node-modules-cache; \
+		${MV} ${EXTRACT_WRKDIR}/${NPM_MODULE_CACHE} ${WRKDIR}/node-modules-cache; \
+	fi
 	@if [ -d ${PKGJSONSDIR} ]; then \
 		cd ${PKGJSONSDIR} && \
 		for dir in `${FIND} . -type f -name ${NPM_LOCKFILE} -exec ${DIRNAME} {} ';'`; do \
