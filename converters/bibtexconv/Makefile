@@ -1,5 +1,5 @@
 PORTNAME=	bibtexconv
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	converters
 MASTER_SITES=	https://www.nntb.no/~dreibh/bibtexconv/download/
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	pdfinfo:graphics/poppler-utils \
 		zip:archivers/zip
 
-USES=		bison cmake python:3.9+ shebangfix ssl tar:xz
+USES=		bison cmake python shebangfix ssl tar:xz
 
 SHEBANG_FILES=	src/get-author-url src/ietf2bibtex
 
