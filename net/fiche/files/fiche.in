@@ -13,6 +13,8 @@
 # fiche_options (str):	Additional flags Default ""
 # fiche_output (str):	Default "/usr/local/www/fiche"
 # fiche_logfile (str):	Default "/var/log/fiche/fiche.log"
+# fiche_user (str):	Default "fiche"
+# fiche_group (str):	Default "fiche"
 
 . /etc/rc.subr
 
@@ -27,6 +29,8 @@ load_rc_config $name
 : ${fiche_output="%%WWWDIR%%"}
 : ${fiche_domain="localhost"}
 : ${fiche_logfile="/var/log/${name}/${name}.log"}
+: ${fiche_user="fiche"}
+: ${fiche_group="fiche"}
 
 start_precmd="${name}_prestart"
 pidfile="${fiche_pidfile}"
@@ -40,7 +44,9 @@ command_args="-fp ${pidfile} %%PREFIX%%/sbin/fiche \
     ${fiche_options}"
 
 fiche_prestart() {
-	install -d -o 477 -g 477 -m 755 /var/log/${name}
+	touch ${fiche_pidfile}
+	chown ${fiche_user} ${fiche_pidfile}
+	install -d -o ${fiche_user} -g ${fiche_group} -m 755 /var/log/${name}
 }
 
 run_rc_command "$1"
