@@ -5157,3 +5157,4 @@ graphics/imlib2-webp|graphics/imlib2|2026-02-28|Has expired: webp support is han
 devel/godot35|devel/godot|2026-02-28|Has expired: Legacy version should have been removed with devel/godot35-tools, consider migrating to devel/godot
 www/nginx-vts-exporter|www/nginx-prometheus-exporter|2026-02-28|Has expired: Upstream is unmaintained; use www/nginx-prometheus-exporter instead
 net/unison240||2026-02-28|Has expired: Legacy release unsupported by upstream
+security/owasp-dependency-check||2026-02-28|Has expired: This port is 9 major versions and almost 8 years behind on upstream. No maintainer. No users in the ports tree. Does not compile with jdk11+
