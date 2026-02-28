@@ -9,7 +9,6 @@ bin/mosquitto_sub
 @sample %%ETCDIR%%/mosquitto.conf.sample
 @sample %%ETCDIR%%/pskfile.sample
 @sample %%ETCDIR%%/pwfile.sample
-etc/rc.d/mosquitto
 include/mosquitto.h
 include/mosquitto/broker.h
 include/mosquitto/broker_control.h
