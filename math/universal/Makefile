@@ -1,6 +1,6 @@
 PORTNAME=	universal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.97
+DISTVERSION=	4.2.0
 CATEGORIES=	math
 PKGNAMESUFFIX=	-fp-library
 
@@ -31,6 +31,6 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 3.97: 100% tests passed, 0 tests failed out of 24
+# tests as of 4.2.0: 100% tests passed, 0 tests failed out of 24
 
 .include <bsd.port.mk>
