@@ -32,6 +32,8 @@ GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e \
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 PYDISTUTILS_BUILDARGS=	--fcompiler=gnu95
 
+BINARY_ALIAS=	cython=cython-${PYTHON_VER}
+
 LDFLAGS+=	-s
 PIE_UNSAFE=	yes
 
