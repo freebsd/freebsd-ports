@@ -1,5 +1,5 @@
 PORTNAME=	TrimGalore
-DISTVERSION=	0.6.10
+DISTVERSION=	0.6.11
 CATEGORIES=	biology perl5 python
 PKGNAMEPREFIX=	p5-
 
@@ -15,11 +15,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>=2.5:biology/py-cutadapt@${PY_FLAVO
 
 # Future: Can 3.4+ be determined from cutadapt dep?
 USES=		perl5 python:env shebangfix
-USE_PERL5=	run
 USE_GITHUB=	yes
+GH_ACCOUNT=	FelixKrueger
+USE_PERL5=	run
 
 SHEBANG_FILES=	trim_galore
-GH_ACCOUNT=	FelixKrueger
 
 NO_ARCH=	yes
 NO_BUILD=	yes
