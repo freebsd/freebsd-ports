@@ -921,7 +921,6 @@
     SUBDIR += gocheese
     SUBDIR += godot
     SUBDIR += godot-tools
-    SUBDIR += godot35
     SUBDIR += goffice
     SUBDIR += gogs
     SUBDIR += golangci-lint
