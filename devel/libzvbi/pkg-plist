@@ -11,6 +11,7 @@ libdata/pkgconfig/zvbi-0.2.pc
 %%NLS%%share/locale/es/LC_MESSAGES/zvbi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/zvbi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/zvbi.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/zvbi.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/zvbi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/zvbi.mo
 share/man/man1/zvbi-ntsc-cc.1.gz
