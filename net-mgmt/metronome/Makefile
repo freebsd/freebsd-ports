@@ -3,7 +3,7 @@ DISTVERSION=	0.9.0
 PORTREVISION=	26
 CATEGORIES=	net-mgmt dns
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client-side java script to render graphs w/o depending on graphite
 WWW=		https://github.com/ahupowerdns/metronome
 
