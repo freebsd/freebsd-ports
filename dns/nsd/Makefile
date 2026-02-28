@@ -1,5 +1,5 @@
 PORTNAME=	nsd
-DISTVERSION=	4.14.0
+DISTVERSION=	4.14.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
@@ -30,8 +30,12 @@ CONFIGURE_ARGS=	--localstatedir=${NSDLSDIR} \
 		--with-ssl=${OPENSSLBASE} \
 		--with-user=${NSDUSER}
 
+.if ${NSDUSER} == nsd
 USERS=		${NSDUSER}
+.endif
+.if ${NSDGROUP} == nsd
 GROUPS=		${NSDGROUP}
+.endif
 
 PLIST_SUB=	NSDGROUP=${NSDGROUP} \
 		NSDRUNDIR=${NSDRUNDIR} \
