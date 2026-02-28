@@ -1,5 +1,4 @@
 bin/clamtk
-share/man/man1/clamtk.1.gz
 %%SITE_PERL%%/ClamTk/Analysis.pm
 %%SITE_PERL%%/ClamTk/App.pm
 %%SITE_PERL%%/ClamTk/Assistant.pm
@@ -18,8 +17,6 @@ share/man/man1/clamtk.1.gz
 %%SITE_PERL%%/ClamTk/Update.pm
 %%SITE_PERL%%/ClamTk/Whitelist.pm
 share/applications/clamtk.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER
-%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/man/man1/clamtk.1.gz
 share/pixmaps/clamtk.png
 share/pixmaps/clamtk.xpm
