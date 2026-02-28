@@ -1,5 +1,5 @@
 PORTNAME=	claude-code
-DISTVERSION=	2.0.58
+DISTVERSION=	2.1.62
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
