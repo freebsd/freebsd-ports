@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
-		nerd-fonts>=3.1.1:x11-fonts/nerd-fonts \
+		nerd-fonts-symbols>=3.1.1:x11-fonts/nerd-fonts-symbols \
 		roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf \
 		simde>=0.7.6:devel/simde \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
