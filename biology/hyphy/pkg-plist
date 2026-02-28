@@ -180,6 +180,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/Samplers/srs-ErrorEst.ibf
 %%DATADIR%%/TemplateBatchFiles/Samplers/srs.ibf
 %%DATADIR%%/TemplateBatchFiles/SandNSAmbigs.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/B-STILL.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BUSTED-PH.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BranchSiteREL.bf
