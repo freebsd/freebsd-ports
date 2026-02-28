@@ -1,6 +1,6 @@
 PORTNAME=	openscad
 PORTVERSION=	${GIT_SRC_DATE}
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -65,6 +65,9 @@ CMAKE_ARGS+=	-DUSE_QT6="ON" -DUSE_MIMALLOC="OFF" -DENABLE_CGAL="ON" -DUSE_BUILTI
 post-patch:
 	@${REINPLACE_CMD} -e '/find_package/s| system||' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|bash|/bin/sh|; s|python3 |${PYTHON_CMD} |' \
+		${WRKSRC}/scripts/translation-update.sh
+
 
 do-install:
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX}
