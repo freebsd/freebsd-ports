@@ -58,6 +58,7 @@ share/locale/ie/LC_MESSAGES/folks.mo
 share/locale/it/LC_MESSAGES/folks.mo
 share/locale/ja/LC_MESSAGES/folks.mo
 share/locale/ka/LC_MESSAGES/folks.mo
+share/locale/kab/LC_MESSAGES/folks.mo
 share/locale/kk/LC_MESSAGES/folks.mo
 share/locale/kn/LC_MESSAGES/folks.mo
 share/locale/ko/LC_MESSAGES/folks.mo
@@ -89,6 +90,7 @@ share/locale/th/LC_MESSAGES/folks.mo
 share/locale/tr/LC_MESSAGES/folks.mo
 share/locale/ug/LC_MESSAGES/folks.mo
 share/locale/uk/LC_MESSAGES/folks.mo
+share/locale/uz/LC_MESSAGES/folks.mo
 share/locale/vi/LC_MESSAGES/folks.mo
 share/locale/zh_CN/LC_MESSAGES/folks.mo
 share/locale/zh_HK/LC_MESSAGES/folks.mo

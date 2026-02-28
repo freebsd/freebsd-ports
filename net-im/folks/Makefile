@@ -1,6 +1,5 @@
 PORTNAME=	folks
-PORTVERSION=	0.15.9
-PORTREVISION=	2
+PORTVERSION=	0.15.12
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -14,20 +13,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 
-USES=		gettext gnome localbase meson python:build pkgconfig \
-		readline sqlite tar:xz vala:build
+USES=		gettext-tools gnome localbase meson python:build pkgconfig \
+		readline tar:xz vala:build
 USE_GNOME=	glib20 evolutiondataserver3 introspection:build libxml2
+GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
+
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dbluez_backend=false \
 		-Dtelepathy_backend=false \
-		-Dtests=false \
-		-Dinstalled_tests=false
-
-GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
-
-PLIST_SUB=	LIBVER=26 LIBVERLONG=26.0.0
+		-Dtests=false
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+PLIST_SUB=	LIBVER=26 LIBVERLONG=26.0.0
 
 .include <bsd.port.mk>
