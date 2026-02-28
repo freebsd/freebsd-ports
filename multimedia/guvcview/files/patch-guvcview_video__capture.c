@@ -1,4 +1,4 @@
-i+--- guvcview/video_capture.c.orig	2024-11-02 13:15:33 UTC
+--- guvcview/video_capture.c.orig	2025-11-09 18:30:53 UTC
 +++ guvcview/video_capture.c
 @@ -34,6 +34,7 @@
  /* support for internationalization - i18n */
@@ -8,15 +8,7 @@ i+--- guvcview/video_capture.c.orig	2024-11-02 13:15:33 UTC
  
  #include "config.h"
  #include "core_io.h"
-@@ -82,6 +83,7 @@ static __THREAD_TYPE encoder_thread;
- static v4l2_dev_t *my_vd = NULL;
- 
- static __THREAD_TYPE encoder_thread;
-+static __THREAD_TYPE encoder_audio_thread;
- 
- static int my_encoder_status = 0;
- 
-@@ -622,8 +624,8 @@ static void *audio_processing_loop(void *data) {
+@@ -622,8 +623,8 @@ static void *audio_processing_loop(void *data) {
    encoder_context_t *encoder_ctx = (encoder_context_t *)data;
  
    if (debug_level > 1)
@@ -27,7 +19,7 @@ i+--- guvcview/video_capture.c.orig	2024-11-02 13:15:33 UTC
  
    audio_context_t *audio_ctx = get_audio_context();
    if (!audio_ctx) {
-@@ -717,8 +719,8 @@ static void *encoder_loop(void *data) {
+@@ -717,8 +718,8 @@ static void *encoder_loop(void *data) {
    my_encoder_status = 1;
  
    if (debug_level > 1)
@@ -38,7 +30,7 @@ i+--- guvcview/video_capture.c.orig	2024-11-02 13:15:33 UTC
  
    /*get the audio context*/
    audio_context_t *audio_ctx = get_audio_context();
-@@ -830,8 +832,7 @@ static void *encoder_loop(void *data) {
+@@ -830,8 +831,7 @@ static void *encoder_loop(void *data) {
        fprintf(stderr, "GUVCVIEW: encoder audio thread creation failed (%i)\n",
                ret);
      else if (debug_level > 2)
@@ -48,7 +40,7 @@ i+--- guvcview/video_capture.c.orig	2024-11-02 13:15:33 UTC
    }
  
    while (video_capture_get_save_video()) {
-@@ -914,8 +915,8 @@ void *capture_loop(void *data) {
+@@ -914,8 +914,8 @@ void *capture_loop(void *data) {
    quit = 0;
  
    if (debug_level > 1)
@@ -59,7 +51,7 @@ i+--- guvcview/video_capture.c.orig	2024-11-02 13:15:33 UTC
  
    int ret = 0;
  
-@@ -1210,8 +1211,7 @@ int start_encoder_thread() {
+@@ -1209,8 +1209,7 @@ int start_encoder_thread() {
    if (ret)
      fprintf(stderr, "GUVCVIEW: encoder thread creation failed (%i)\n", ret);
    else if (debug_level > 2)

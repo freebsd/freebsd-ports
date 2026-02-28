@@ -1,6 +1,5 @@
 PORTNAME=	guvcview
-DISTVERSION=	2.2.1
-PORTREVISION=	2
+DISTVERSION=	2.2.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SOURCEFORGE/guvcview/source
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
@@ -36,9 +35,5 @@ OPTIONS_DEFINE=		PULSEAUDIO
 PULSEAUDIO_BROKEN=	Doesn't show up as an audio backend at runtime
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
-
-post-patch:
-	${REINPLACE_CMD} -e 's/FF_/AV_/g' \
-		${WRKDIR}/guvcview-src-2.2.1/gview_encoder/audio_codecs.c
 
 .include <bsd.port.mk>
