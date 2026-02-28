@@ -1855,6 +1855,7 @@ share/metainfo/org.octave.Octave.metainfo.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/javaclasspath.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/javamem.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/javarmpath.m
+%%JAVA%%%%DATADIR%%/%%OCTAVE_VERSION%%/m/java/octave.jar
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/java/usejava.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/.oct-config
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/legacy/@inline/argnames.m
