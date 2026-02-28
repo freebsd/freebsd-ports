@@ -5152,3 +5152,4 @@ emulators/firebird-emu|emulators/firebird|2026-02-14|Align with upstream project
 security/openssl-quictls|security/openssl33-quictls|2026-02-14|Has expired: Upstream project has been archived, use security/openssl33-quictls
 misc/usd|graphics/openusd|2026-02-15|Rename to match upstream naming and moved to a more appropriate category
 www/py-django-statici18n|www/py-django_statici18n|2026-02-15|Rename to match upstream naming
+graphics/imlib2-jxl|graphics/imlib2|2026-02-28|Has expired: jxl support is handled by graphics/imlib2 and it is enabled by default
