@@ -1,4 +1,4 @@
-TIMESTAMP = 1771994328
+TIMESTAMP = 1772249874
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
@@ -421,5 +421,5 @@ SHA256 (rust/crates/winnow-0.7.14.crate) = 5a5364e9d77fcdeeaa6062ced926ee3381faa
 SIZE (rust/crates/winnow-0.7.14.crate) = 184718
 SHA256 (rust/crates/wit-bindgen-0.46.0.crate) = f17a85883d4e6d00e8a97c586de764dabcc06133f7f1d55dce5cdc070ad7fe59
 SIZE (rust/crates/wit-bindgen-0.46.0.crate) = 60508
-SHA256 (tassiovirginio-try-rs-v1.5.3_GH0.tar.gz) = 3272032c453321fbb7a9d5afe0df0579f35bf81c7f275fb9d1cedc800f203eba
-SIZE (tassiovirginio-try-rs-v1.5.3_GH0.tar.gz) = 1544246
+SHA256 (tassiovirginio-try-rs-v1.6.1_GH0.tar.gz) = 87adbbc9f3ee99833ecf87573edb3d72e7f2fccc9c7c506b2e56999b89532a0c
+SIZE (tassiovirginio-try-rs-v1.6.1_GH0.tar.gz) = 1567963
