@@ -5156,3 +5156,4 @@ graphics/imlib2-jxl|graphics/imlib2|2026-02-28|Has expired: jxl support is handl
 graphics/imlib2-webp|graphics/imlib2|2026-02-28|Has expired: webp support is handled by graphics/imlib2 and it is enabled by default
 devel/godot35|devel/godot|2026-02-28|Has expired: Legacy version should have been removed with devel/godot35-tools, consider migrating to devel/godot
 www/nginx-vts-exporter|www/nginx-prometheus-exporter|2026-02-28|Has expired: Upstream is unmaintained; use www/nginx-prometheus-exporter instead
+net/unison240||2026-02-28|Has expired: Legacy release unsupported by upstream
