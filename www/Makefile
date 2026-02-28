@@ -502,7 +502,6 @@
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
     SUBDIR += nginx-ultimate-bad-bot-blocker
-    SUBDIR += nginx-vts-exporter
     SUBDIR += nift
     SUBDIR += node
     SUBDIR += node20
