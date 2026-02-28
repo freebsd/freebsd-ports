@@ -1,6 +1,6 @@
-TIMESTAMP = 1771862220
-SHA256 (sbcl-2.6.1-source.tar.bz2) = 5f2cd5bb7d3e6d9149a59c05acd8429b3be1849211769e5a37451d001e196d7f
-SIZE (sbcl-2.6.1-source.tar.bz2) = 8427751
+TIMESTAMP = 1772259672
+SHA256 (sbcl-2.6.2-source.tar.bz2) = afb49358fa58484ffeed0b26a1dfdd829a6fb066d4a8b25f2b0bbccfcae571d7
+SIZE (sbcl-2.6.2-source.tar.bz2) = 8447404
 SHA256 (sbcl-2.5.7-powerpc64le-freebsd-binary.tar.bz2) = 3dc17885caa57fc10d972729dca6a5a1414a3043d3af406e8907659ac8ea856a
 SIZE (sbcl-2.5.7-powerpc64le-freebsd-binary.tar.bz2) = 9973076
 SHA256 (sbcl-1.2.7-x86-64-freebsd-binary.tar.bz2) = c61f5e777e56921d2452d0fa6b71024ccd9b99bc659676498d398b8663176492

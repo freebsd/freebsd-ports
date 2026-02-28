@@ -3,7 +3,7 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.2
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
@@ -35,8 +35,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
-OPTIONS_DEFINE=		COMPRESSION GARBAGE_COLLECTOR DOCS LINKABLE_RUNTIME QSHOW SAFEPOINT SIMD \
-			THREADS UNICODE XREF
+OPTIONS_DEFINE=		COMPRESSION DOCS GARBAGE_COLLECTOR LINKABLE_RUNTIME \
+			QSHOW SAFEPOINT SIMD THREADS UNICODE XREF
 OPTIONS_DEFAULT=	COMPRESSION SBCL THREADS UNICODE
 
 OPTIONS_SINGLE=			BOOTSTRAP
@@ -110,8 +110,8 @@ MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
 .if defined(DYNAMIC_SPACE_SIZE)
 MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
 .endif
-SBCL_BOOT_LIST=	1.2.7-x86-64-freebsd 1.2.7-x86-freebsd \
-		1.2.7-x86-64-dragonfly 2.5.7-powerpc64le-freebsd
+SBCL_BOOT_LIST=	1.2.7-x86-64-freebsd 1.2.7-x86-freebsd 1.2.7-x86-64-dragonfly \
+		2.5.7-powerpc64le-freebsd
 
 .include <bsd.port.options.mk>
 
@@ -186,7 +186,7 @@ check regression-test test: build
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1500000
-BUILD_DEPENDS+=		${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
 .endif
 
 .include <bsd.port.post.mk>
