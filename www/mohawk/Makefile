@@ -1,5 +1,5 @@
 PORTNAME=	mohawk
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	www
 MASTER_SITES=	https://fossil.bsdsx.fr/mohawk/tarball/?r=${DISTVERSION}&name=/
 
