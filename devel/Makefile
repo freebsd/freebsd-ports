@@ -1619,6 +1619,7 @@
     SUBDIR += lua-bitlib
     SUBDIR += lua-bitop
     SUBDIR += lua-cjson
+    SUBDIR += lua-cjson-openresty
     SUBDIR += lua-cqueues
     SUBDIR += lua-gettext
     SUBDIR += lua-language-server
