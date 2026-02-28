@@ -1,6 +1,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_FULL_VERSION:S/.0.0//}
+PORTREVISION=	1
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 MASTER_SITES=	LOCAL/openjdk:boot
@@ -51,19 +52,14 @@ RUN_DEPENDS=	javavm:java/javavmwrapper
 RUN_DEPENDS+=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 .endif
 
-USES=		autoreconf:build compiler:features cpe gmake iconv jpeg pkgconfig
-.if ${FLAVOR:M*headless} == ""
-USES+=		xorg
-.endif
+USES=		autoreconf:build compiler:features cpe gmake iconv jpeg pkgconfig xorg
 
 CPE_VENDOR=	oracle
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
-.if ${FLAVOR:M*headless} == ""
 USE_XORG=	x11 xext xi xrandr xrender xt xtst
-.endif
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-ccache \
