@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	8132
+DISTVERSION=	8182
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
 BROKEN_i386=	compilation fails, see https://github.com/ggerganov/llama.cpp/issues/9545
 
+LIB_DEPENDS=	libggml-base.so:misc/ggml
+
 USES=		cmake:testing compiler:c++11-lang python:run shebangfix
 USE_LDCONFIG=	yes
 
@@ -23,8 +25,8 @@ GH_TUPLE=	nomic-ai:kompute:4565194:kompute/kompute
 
 SHEBANG_GLOB=	*.py
 
-CMAKE_ON=	BUILD_SHARED_LIBS
-		#LLAMA_USE_SYSTEM_GGML
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		LLAMA_USE_SYSTEM_GGML
 CMAKE_OFF=	GGML_NATIVE \
 		FREEBSD_ALLOW_ADVANCED_CPU_FEATURES \
 		LLAMA_BUILD_TESTS
