@@ -1,6 +1,5 @@
 PORTNAME=	glassfish
-DISTVERSION=	7.1.0
-PORTREVISION=	1
+DISTVERSION=	8.0.0
 CATEGORIES=	www java
 MASTER_SITES=	ECLIPSE/ee4j/${PORTNAME}
 PKGNAMEPREFIX=	eclipse-
@@ -12,7 +11,7 @@ WWW=		https://projects.eclipse.org/projects/ee4j.glassfish
 LICENSE=	EPL
 
 USES=		java zip
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 USE_RC_SUBR=	${PORTNAME}
 
 CONFLICTS_INSTALL=	${PORTNAME}4

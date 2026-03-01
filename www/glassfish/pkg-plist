@@ -43,22 +43,16 @@
 @sample %%DATADIR%%/glassfish/domains/domain1/config/domain-passwords.p12.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/domain.xml.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/glassfish-acc.xml.sample
-@sample %%DATADIR%%/glassfish/domains/domain1/config/javaee.server.policy.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/keyfile.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/keystore.p12.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/logging.properties.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/login.conf.sample
-@sample %%DATADIR%%/glassfish/domains/domain1/config/restrict.server.policy.sample
-@sample %%DATADIR%%/glassfish/domains/domain1/config/server.policy.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-1.0.xml.sample
 @sample %%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-2.0.xml.sample
 %%DATADIR%%/glassfish/domains/domain1/docroot/index.html
 %%DATADIR%%/glassfish/domains/domain1/init-info/domain-info.xml
 %%DATADIR%%/glassfish/legal/LICENSE.txt
 %%DATADIR%%/glassfish/lib/appclient/appclientlogin.conf
-%%DATADIR%%/glassfish/lib/appclient/client.policy
-%%DATADIR%%/glassfish/lib/appclient/javaee.client.policy
-%%DATADIR%%/glassfish/lib/appclient/restrict.client.policy
 %%DATADIR%%/glassfish/lib/appclient/weld-se-shaded.jar
 %%DATADIR%%/glassfish/lib/appclient/wss-client-config-1.0.xml
 %%DATADIR%%/glassfish/lib/appclient/wss-client-config-2.0.xml
@@ -143,15 +137,16 @@
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/classes/org/glassfish/admingui/common/AdminGuiExceptionHandler.class
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/classes/org/glassfish/admingui/common/AdminGuiExceptionHandlerFactory.class
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/classes/org/glassfish/admingui/common/AdminGuiViewHandler.class
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-io-2.20.0.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/dojo-6.0.2.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/prototype-1.7.3.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-6.0.2.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-suntheme-6.0.2.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-io-2.21.0.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/dojo-6.0.3.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/json-2.0.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/prototype-6.0.3.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-6.0.3.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/woodstock-webui-jsf-suntheme-6.0.3.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/faces-config.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/.gitkeep_empty_dir
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-commandrecorder-plugin-7.1.0.jar
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-7.1.0.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-commandrecorder-plugin-8.0.0.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-8.0.0.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/sun-web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/index.jsf
@@ -356,6 +351,7 @@
 %%DATADIR%%/glassfish/lib/schemas/920/weblogic-wsee.xsd
 %%DATADIR%%/glassfish/lib/schemas/XMLSchema.dtd
 %%DATADIR%%/glassfish/lib/schemas/application-client_10.xsd
+%%DATADIR%%/glassfish/lib/schemas/application-client_11.xsd
 %%DATADIR%%/glassfish/lib/schemas/application-client_1_4.xsd
 %%DATADIR%%/glassfish/lib/schemas/application-client_5.xsd
 %%DATADIR%%/glassfish/lib/schemas/application-client_6.xsd
@@ -363,6 +359,7 @@
 %%DATADIR%%/glassfish/lib/schemas/application-client_8.xsd
 %%DATADIR%%/glassfish/lib/schemas/application-client_9.xsd
 %%DATADIR%%/glassfish/lib/schemas/application_10.xsd
+%%DATADIR%%/glassfish/lib/schemas/application_11.xsd
 %%DATADIR%%/glassfish/lib/schemas/application_1_4.xsd
 %%DATADIR%%/glassfish/lib/schemas/application_5.xsd
 %%DATADIR%%/glassfish/lib/schemas/application_6.xsd
@@ -376,6 +373,7 @@
 %%DATADIR%%/glassfish/lib/schemas/beans_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/beans_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/beans_4_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/beans_4_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/bindingschema_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/connector_1_5.xsd
 %%DATADIR%%/glassfish/lib/schemas/connector_1_6.xsd
@@ -398,6 +396,7 @@
 %%DATADIR%%/glassfish/lib/schemas/j2ee_web_services_client_1_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/jakartaee_10.xsd
 %%DATADIR%%/glassfish/lib/schemas/jakartaee_9.xsd
+%%DATADIR%%/glassfish/lib/schemas/jakartaee_11.xsd
 %%DATADIR%%/glassfish/lib/schemas/jakartaee_web_services_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/jakartaee_web_services_client_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/jakartaee_web_services_metadata_handler_3_0.xsd
@@ -424,12 +423,14 @@
 %%DATADIR%%/glassfish/lib/schemas/jsp_2_3.xsd
 %%DATADIR%%/glassfish/lib/schemas/jsp_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/jsp_3_1.xsd
+%%DATADIR%%/glassfish/lib/schemas/jsp_4_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/orm_1_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/orm_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/orm_2_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/orm_2_2.xsd
 %%DATADIR%%/glassfish/lib/schemas/orm_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/orm_3_1.xsd
+%%DATADIR%%/glassfish/lib/schemas/orm_3_2.xsd
 %%DATADIR%%/glassfish/lib/schemas/permissions_10.xsd
 %%DATADIR%%/glassfish/lib/schemas/permissions_7.xsd
 %%DATADIR%%/glassfish/lib/schemas/permissions_9.xsd
@@ -440,6 +441,7 @@
 %%DATADIR%%/glassfish/lib/schemas/persistence_2_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/persistence_2_2.xsd
 %%DATADIR%%/glassfish/lib/schemas/persistence_3_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/persistence_3_2.xsd
 %%DATADIR%%/glassfish/lib/schemas/security/1.0/security.xsd
 %%DATADIR%%/glassfish/lib/schemas/security/index.html
 %%DATADIR%%/glassfish/lib/schemas/security/wls/1.0/wls.xsd
@@ -452,7 +454,9 @@
 %%DATADIR%%/glassfish/lib/schemas/validation-configuration-1.0.xsd
 %%DATADIR%%/glassfish/lib/schemas/validation-configuration-1.1.xsd
 %%DATADIR%%/glassfish/lib/schemas/validation-configuration-3.0.xsd
+%%DATADIR%%/glassfish/lib/schemas/validation-configuration-3.1.xsd
 %%DATADIR%%/glassfish/lib/schemas/validation-mapping-3.0.xsd
+%%DATADIR%%/glassfish/lib/schemas/validation-mapping-3.1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-app_2_4.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-app_2_5.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-app_3_0.xsd
@@ -460,16 +464,19 @@
 %%DATADIR%%/glassfish/lib/schemas/web-app_4_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-app_5_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-app_6_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/web-app_6_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-common_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-common_3_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-common_4_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-common_5_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-common_6_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/web-common_6_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facelettaglibrary_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facelettaglibrary_2_2.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facelettaglibrary_2_3.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facelettaglibrary_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facelettaglibrary_4_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/web-facelettaglibrary_4_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facesconfig_1_2.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facesconfig_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facesconfig_2_1.xsd
@@ -477,21 +484,25 @@
 %%DATADIR%%/glassfish/lib/schemas/web-facesconfig_2_3.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facesconfig_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facesconfig_4_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/web-facesconfig_4_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-facesuicomponent_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-fragment_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-fragment_3_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-fragment_4_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-fragment_5_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-fragment_6_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/web-fragment_6_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-jsptaglibrary_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-jsptaglibrary_2_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-jsptaglibrary_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-jsptaglibrary_3_1.xsd
+%%DATADIR%%/glassfish/lib/schemas/web-jsptaglibrary_4_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-partialresponse_2_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-partialresponse_2_2.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-partialresponse_2_3.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-partialresponse_3_0.xsd
 %%DATADIR%%/glassfish/lib/schemas/web-partialresponse_4_0.xsd
+%%DATADIR%%/glassfish/lib/schemas/web-partialresponse_4_1.xsd
 %%DATADIR%%/glassfish/lib/schemas/weblogic-application-client/1.0/weblogic-application-client.xsd
 %%DATADIR%%/glassfish/lib/schemas/weblogic-application-client/1.1/weblogic-application-client.xsd
 %%DATADIR%%/glassfish/lib/schemas/weblogic-application-client/1.2/weblogic-application-client.xsd
@@ -574,6 +585,7 @@
 %%DATADIR%%/glassfish/modules/annotation-framework.jar
 %%DATADIR%%/glassfish/modules/ant.jar
 %%DATADIR%%/glassfish/modules/antlr.jar
+%%DATADIR%%/glassfish/modules/antlr4-runtime.jar
 %%DATADIR%%/glassfish/modules/aopalliance-repackaged.jar
 %%DATADIR%%/glassfish/modules/api-exporter.jar
 %%DATADIR%%/glassfish/modules/appclient-connector.jar
@@ -612,6 +624,7 @@
 %%DATADIR%%/glassfish/modules/commons-codec.jar
 %%DATADIR%%/glassfish/modules/concurrent-connector.jar
 %%DATADIR%%/glassfish/modules/concurrent-impl.jar
+%%DATADIR%%/glassfish/modules/concurro.jar
 %%DATADIR%%/glassfish/modules/config-api.jar
 %%DATADIR%%/glassfish/modules/config-types.jar
 %%DATADIR%%/glassfish/modules/connectors-admin.jar
@@ -674,6 +687,7 @@
 %%DATADIR%%/glassfish/modules/glassfish-extra-jre-packages.jar
 %%DATADIR%%/glassfish/modules/glassfish-grizzly-extra-all.jar
 %%DATADIR%%/glassfish/modules/glassfish-mbeanserver.jar
+%%DATADIR%%/glassfish/modules/glassfish-microprofile-jwt.jar
 %%DATADIR%%/glassfish/modules/glassfish-naming.jar
 %%DATADIR%%/glassfish/modules/glassfish-oracle-jdbc-driver-packages.jar
 %%DATADIR%%/glassfish/modules/glassfish-osgi-bootstrap.jar
@@ -705,11 +719,12 @@
 %%DATADIR%%/glassfish/modules/jakarta.authentication-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.authorization-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.batch-api.jar
+%%DATADIR%%/glassfish/modules/jakarta.data-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.ejb-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.el-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.enterprise.cdi-api.jar
+%%DATADIR%%/glassfish/modules/jakarta.enterprise.cdi-el-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.enterprise.concurrent-api.jar
-%%DATADIR%%/glassfish/modules/jakarta.enterprise.concurrent.jar
 %%DATADIR%%/glassfish/modules/jakarta.enterprise.lang-model.jar
 %%DATADIR%%/glassfish/modules/jakarta.faces.jar
 %%DATADIR%%/glassfish/modules/jakarta.inject-api.jar
@@ -719,10 +734,10 @@
 %%DATADIR%%/glassfish/modules/jakarta.json.bind-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.mail-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.mvc-api.jar
+%%DATADIR%%/glassfish/modules/jakarta.nosql-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.persistence-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.resource-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.security.enterprise-api.jar
-%%DATADIR%%/glassfish/modules/jakarta.security.enterprise.jar
 %%DATADIR%%/glassfish/modules/jakarta.servlet-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.servlet.jsp-api.jar
 %%DATADIR%%/glassfish/modules/jakarta.servlet.jsp.jstl-api.jar
@@ -748,7 +763,6 @@
 %%DATADIR%%/glassfish/modules/jersey-client.jar
 %%DATADIR%%/glassfish/modules/jersey-common.jar
 %%DATADIR%%/glassfish/modules/jersey-container-grizzly2-http.jar
-%%DATADIR%%/glassfish/modules/jersey-container-servlet-core.jar
 %%DATADIR%%/glassfish/modules/jersey-container-servlet.jar
 %%DATADIR%%/glassfish/modules/jersey-ejb-component-provider.jar
 %%DATADIR%%/glassfish/modules/jersey-entity-filtering.jar
@@ -770,6 +784,8 @@
 %%DATADIR%%/glassfish/modules/jline.jar
 %%DATADIR%%/glassfish/modules/jms-admin.jar
 %%DATADIR%%/glassfish/modules/jms-core.jar
+%%DATADIR%%/glassfish/modules/jnosql-integration.jar
+%%DATADIR%%/glassfish/modules/jnosql-jakarta-persistence-osgi-bundle.jar
 %%DATADIR%%/glassfish/modules/jpa-container.jar
 %%DATADIR%%/glassfish/modules/jsch.jar
 %%DATADIR%%/glassfish/modules/jsf-connector.jar
@@ -843,6 +859,7 @@
 %%DATADIR%%/glassfish/modules/shoal-gms-api.jar
 %%DATADIR%%/glassfish/modules/shoal-gms-impl.jar
 %%DATADIR%%/glassfish/modules/soap-tcp.jar
+%%DATADIR%%/glassfish/modules/soteria.jar
 %%DATADIR%%/glassfish/modules/soteria.spi.bean.decorator.weld.jar
 %%DATADIR%%/glassfish/modules/ssl-impl.jar
 %%DATADIR%%/glassfish/modules/stats77.jar
@@ -1039,7 +1056,6 @@
 %%DATADIR%%/mq/examples/jdbc/config.properties.mysql
 %%DATADIR%%/mq/examples/jdbc/config.properties.oracle
 %%DATADIR%%/mq/examples/jdbc/config.properties.pointbase
-%%DATADIR%%/mq/examples/jms/AckEquivExample$1.class
 %%DATADIR%%/mq/examples/jms/AckEquivExample$AsynchSubscriber$TextListener.class
 %%DATADIR%%/mq/examples/jms/AckEquivExample$AsynchSubscriber.class
 %%DATADIR%%/mq/examples/jms/AckEquivExample$MultiplePublisher.class
@@ -1049,7 +1065,6 @@
 %%DATADIR%%/mq/examples/jms/AckEquivExample.java
 %%DATADIR%%/mq/examples/jms/AsynchQueueExample.class
 %%DATADIR%%/mq/examples/jms/AsynchQueueExample.java
-%%DATADIR%%/mq/examples/jms/AsynchTopicExample$1.class
 %%DATADIR%%/mq/examples/jms/AsynchTopicExample$AsynchConsumer$TextListener.class
 %%DATADIR%%/mq/examples/jms/AsynchTopicExample$AsynchConsumer.class
 %%DATADIR%%/mq/examples/jms/AsynchTopicExample$MultipleProducer.class
@@ -1058,7 +1073,6 @@
 %%DATADIR%%/mq/examples/jms/BytesMessages.class
 %%DATADIR%%/mq/examples/jms/BytesMessages.java
 %%DATADIR%%/mq/examples/jms/Consumer.class
-%%DATADIR%%/mq/examples/jms/DurableSubscriberExample$1.class
 %%DATADIR%%/mq/examples/jms/DurableSubscriberExample$DurableSubscriber$TextListener.class
 %%DATADIR%%/mq/examples/jms/DurableSubscriberExample$DurableSubscriber.class
 %%DATADIR%%/mq/examples/jms/DurableSubscriberExample$MultiplePublisher.class
@@ -1093,7 +1107,6 @@
 %%DATADIR%%/mq/examples/jms/SynchTopicExample.java
 %%DATADIR%%/mq/examples/jms/TextListener.class
 %%DATADIR%%/mq/examples/jms/TextListener.java
-%%DATADIR%%/mq/examples/jms/TopicSelectors$1.class
 %%DATADIR%%/mq/examples/jms/TopicSelectors$Publisher.class
 %%DATADIR%%/mq/examples/jms/TopicSelectors$Subscriber$MultipleListener.class
 %%DATADIR%%/mq/examples/jms/TopicSelectors$Subscriber.class
@@ -1536,6 +1549,8 @@
 %%DATADIR%%/mq/lib/help/images/ObjectStore16x.gif
 %%DATADIR%%/mq/lib/help/images/ObjectStoreX16X.gif
 %%DATADIR%%/mq/lib/help/images/console.gif
+%%DATADIR%%/mq/lib/help/META-INF/ECLIPSE_.RSA
+%%DATADIR%%/mq/lib/help/META-INF/ECLIPSE_.SF
 %%DATADIR%%/mq/lib/hk2-api.jar
 %%DATADIR%%/mq/lib/hk2-runlevel.jar
 %%DATADIR%%/mq/lib/images/admin/AboutBox48x.gif
