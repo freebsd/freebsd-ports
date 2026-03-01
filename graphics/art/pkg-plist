@@ -345,6 +345,10 @@ share/ART/images/edit-point.svg
 share/ART/images/edit-small.svg
 share/ART/images/edit.svg
 share/ART/images/empty.png
+share/ART/images/env-bright.svg
+share/ART/images/env-dark.svg
+share/ART/images/env-dim.svg
+share/ART/images/env-verybright.svg
 share/ART/images/equilizer-narrow.svg
 share/ART/images/equilizer-wide.svg
 share/ART/images/expander-closed-small.svg
@@ -601,7 +605,6 @@ share/ART/languages/Portugues (Brasil)
 share/ART/languages/README
 share/ART/languages/default
 share/ART/luts/sigmoid.ctl
-share/metainfo/us.pixls.art.ART.metainfo.xml
 share/ART/options
 share/ART/profiles/Auto-Matched Curve.arp
 share/ART/profiles/Noise Reduction High.arp
@@ -658,4 +661,5 @@ share/icons/hicolor/24x24/apps/ART.png
 share/icons/hicolor/256x256/apps/ART.png
 share/icons/hicolor/48x48/apps/ART.png
 share/man/man1/ART.1.gz
+share/metainfo/us.pixls.art.ART.metainfo.xml
 @dir share/ART/ctlscripts
