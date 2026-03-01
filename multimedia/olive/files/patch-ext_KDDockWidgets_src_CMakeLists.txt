@@ -1,0 +1,13 @@
+--- ext/KDDockWidgets/src/CMakeLists.txt.orig	2026-03-01 03:06:51 UTC
++++ ext/KDDockWidgets/src/CMakeLists.txt
+@@ -296,6 +296,10 @@ endif()
+     endif()
+ endif()
+ 
++if(Qt_VERSION_MAJOR GREATER_EQUAL 6)
++    find_package(Qt6 REQUIRED COMPONENTS CorePrivate GuiPrivate WidgetsPrivate)
++endif()
++
+ if(${PROJECT_NAME}_QTQUICK)
+     target_link_libraries(
+         kddockwidgets

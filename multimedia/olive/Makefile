@@ -1,7 +1,7 @@
 PORTNAME=	olive
 DISTVERSION=	0.2.0
 DISTVERSIONSUFFIX=	-nightly
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-video-editor
 
@@ -30,10 +30,12 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 RUN_DEPENDS=	frei0r>0:graphics/frei0r
 #		libopentimelineio.so:multimedia/opentimelineio
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 shared-mime-info
-USE_QT=		concurrent core dbus gui multimedia network opengl svg widgets x11extras \
-		buildtools:build linguisttools:build qmake:build testlib:build
+USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6 shared-mime-info
+USE_QT=		base multimedia svg \
+		tools:build
 USE_GL=		gl
+
+CMAKE_ON=	BUILD_QT6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olive-editor
