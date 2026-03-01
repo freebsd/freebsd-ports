@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2026-03-01 00:24:37 UTC
++++ pyproject.toml
+@@ -1,12 +1,12 @@
+ [build-system]
+-requires = ['setuptools>=77', 'setuptools-scm>=8']
++requires = ['setuptools>=63', 'setuptools-scm>=8']
+ build-backend = 'setuptools.build_meta'
+ 
+ [project]
+ name = 'mpmath'
+ description = 'Python library for arbitrary-precision floating-point arithmetic'
+ authors = [{name = 'Fredrik Johansson', email = 'fredrik.johansson@gmail.com'}]
+-license = 'BSD-3-Clause'
++license = {text = "BSD-3-Clause"}
+ classifiers = ['Topic :: Scientific/Engineering :: Mathematics',
+                'Topic :: Software Development :: Libraries :: Python Modules',
+                'Programming Language :: Python',
