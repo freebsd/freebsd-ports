@@ -8445,7 +8445,6 @@
     SUBDIR += taskctl
     SUBDIR += taskflow
     SUBDIR += tass64
-    SUBDIR += tbb
     SUBDIR += tbox
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap
