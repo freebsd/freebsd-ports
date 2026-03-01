@@ -1,6 +1,6 @@
 PORTNAME=	7-zip
 DISTVERSION=	26.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
@@ -38,6 +38,11 @@ PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt \
 		lzma.txt readme.txt src-history.txt
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE_amd64=	ASM
+OPTIONS_DEFAULT_amd64=	ASM
+
+ASM_BUILD_DEPENDS=	jwasm:devel/jwasm
+ASM_MAKE_ARGS=		IS_X64=1 USE_ASM=1 USE_JWASM=1
 
 post-patch:
 	${ECHO_CMD} > ${WRKSRC}/CPP/7zip/warn_clang.mak
