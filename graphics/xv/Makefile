@@ -1,5 +1,5 @@
 PORTNAME=	xv
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES+=	graphics
@@ -12,7 +12,8 @@ WWW=		http://www.trilon.com/xv/
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng16.so:graphics/png \
 		libjasper.so:graphics/jasper \
-		libwebp.so:graphics/webp
+		libwebp.so:graphics/webp \
+		libexif.so:graphics/libexif
 
 USES=		cpe localbase cmake jpeg xorg desktop-file-utils
 USE_XORG=	xext x11 xt ice sm xrandr
@@ -24,6 +25,7 @@ CPE_VENDOR=	xv_project
 
 OPTIONS_DEFINE=	M17N DOCS
 M17N_DESC=	build with Multilingualization support
+LDFLAGS+=	-L ${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
