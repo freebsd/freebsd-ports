@@ -12,9 +12,6 @@ WWW=		https://ossia.io/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-#BROKEN=		Fails to build with fmt 12+, error: no member named 'localtime' in namespace 'fmt'
-#BROKEN_i386=	compilation fails, see https://github.com/ossia/score/issues/1608
-
 BUILD_DEPENDS=	rapidfuzz-cpp>0:devel/rapidfuzz-cpp \
 		rapidjson>0:devel/rapidjson \
 		vulkan-headers>0:graphics/vulkan-headers
