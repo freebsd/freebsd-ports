@@ -1,8 +1,7 @@
 PORTNAME=	bliss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0-209
-DISTVERSIONSUFFIX=	-g3464680
-PORTREVISION=	2
+DISTVERSION=	1.2.0-210
+DISTVERSIONSUFFIX=	-g20c4536
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-music-analyzer
 
@@ -12,8 +11,6 @@ WWW=		https://github.com/Polochon-street/bliss
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		Does not build with ffmpeg > 6, see https://github.com/Polochon-street/bliss/issues/164
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfftw3.so:math/fftw3
