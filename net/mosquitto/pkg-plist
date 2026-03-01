@@ -5,10 +5,10 @@ bin/mosquitto_pub
 bin/mosquitto_rr
 bin/mosquitto_signal
 bin/mosquitto_sub
-%%ETCDIR%%/aclfile.sample
-%%ETCDIR%%/mosquitto.conf.sample
-%%ETCDIR%%/pskfile.sample
-%%ETCDIR%%/pwfile.sample
+@sample %%ETCDIR%%/aclfile.sample
+@sample %%ETCDIR%%/mosquitto.conf.sample
+@sample %%ETCDIR%%/pskfile.sample
+@sample %%ETCDIR%%/pwfile.sample
 include/mosquitto.h
 include/mosquitto/broker.h
 include/mosquitto/broker_control.h
