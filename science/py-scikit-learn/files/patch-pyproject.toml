@@ -1,13 +1,21 @@
---- pyproject.toml.orig	2025-09-08 08:05:27 UTC
+--- pyproject.toml.orig	2026-03-01 01:15:33 UTC
 +++ pyproject.toml
-@@ -98,8 +98,8 @@ requires = [
- # Minimum requirements for the build system to execute.
+@@ -13,8 +13,7 @@ requires-python = ">=3.11"
+   "threadpoolctl>=3.2.0",
+ ]
+ requires-python = ">=3.11"
+-license = "BSD-3-Clause"
+-license-files = ["COPYING"]
++license = {text="BSD-3-Clause"}
+ classifiers=[
+   "Intended Audience :: Science/Research",
+   "Intended Audience :: Developers",
+@@ -97,7 +96,7 @@ requires = [
  requires = [
-     "meson-python>=0.16.0,<0.19.0",
--    "Cython>=3.0.10,<3.2.0",
+     "meson-python>=0.17.1,<0.19.0",
+     "cython>=3.1.2,<3.3.0",
 -    "numpy>=2,<2.4.0",
-+    "Cython>=3.0.10",
 +    "numpy",
-     "scipy>=1.8.0,<1.17.0",
+     "scipy>=1.10.0,<1.17.0",
  ]
  
