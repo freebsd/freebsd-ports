@@ -22,29 +22,33 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libsecret-1.so:security/libsecret
 RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks \
 		lsof:sysutils/lsof
-PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gnome libarchive localbase meson \
 		pkgconfig python:build tar:xz
+CPE_VENDOR=	gnome
 USE_GNOME=	glib20 libxml2 libxslt:build
+GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
 MESON_ARGS=	-Dsystemduserunitdir=no \
 		-Dtmpfilesdir=no \
 		-Dadmin=false \
 		-Dlogind=false \
 		-Dlibusb=false \
 		-Dman=true
-USE_LDCONFIG=	yes
-CPE_VENDOR=	gnome
 
-GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
+PORTSCOUT=	limitw:1,even
 
-OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AVAHI FUSE AFC GOA SMB CDDA GOOGLE GPHOTO MTP NFS BLURAY
 OPTIONS_DEFAULT=AVAHI SMB CDDA GPHOTO MTP NFS BLURAY
+OPTIONS_SUB=	yes
 
 AFC_DESC=	Apple device support
+BLURAY_DESC=	Blu-ray metadata support
 GOA_DESC=	GNOME Online Accounts volume monitor support
 GOOGLE_DESC=	Google backend
+
+AFC_LIB_DEPENDS=	libimobiledevice-1.0.so:comms/libimobiledevice \
+			libplist-2.0.so:devel/libplist
+AFC_MESON_TRUE=		afc
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_MESON_TRUE=	dnssd
@@ -52,26 +56,17 @@ AVAHI_VARS=		GLIB_SCHEMAS+=org.gnome.system.dns_sd.gschema.xml
 
 BLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 BLURAY_MESON_TRUE=	bluray
-BLURAY_DESC=		Blu-ray metadata support
-
-FUSE_USES=		fuse:3
-FUSE_MESON_TRUE=	fuse
-
-AFC_LIB_DEPENDS=	libimobiledevice-1.0.so:comms/libimobiledevice \
-			libplist-2.0.so:devel/libplist
-AFC_MESON_TRUE=		afc
-
-GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
-			libmsgraph-0.so:net/msgraph
-GOA_MESON_TRUE=		goa onedrive
-
-SMB_USES=		samba:lib
-SMB_MESON_TRUE=		smb
-SMB_VARS=		GLIB_SCHEMAS+=org.gnome.system.smb.gschema.xml
 
 CDDA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia \
 			libcdio.so:sysutils/libcdio
 CDDA_MESON_TRUE=	cdda
+
+FUSE_USES=		fuse:3
+FUSE_MESON_TRUE=	fuse
+
+GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
+			libmsgraph-1.so:net/msgraph
+GOA_MESON_TRUE=		goa onedrive
 
 GOOGLE_IMPLIES=		GOA
 GOOGLE_LIB_DEPENDS=	libgdata.so:devel/libgdata
@@ -85,5 +80,9 @@ MTP_MESON_TRUE=		mtp
 
 NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 NFS_MESON_TRUE=		nfs
+
+SMB_USES=		samba:lib
+SMB_MESON_TRUE=		smb
+SMB_VARS=		GLIB_SCHEMAS+=org.gnome.system.smb.gschema.xml
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
---- daemon/gvfswritechannel.c.orig	2007-12-22 18:50:10.000000000 -0500
-+++ daemon/gvfswritechannel.c	2007-12-22 18:50:20.000000000 -0500
-@@ -30,6 +30,7 @@
+--- daemon/gvfswritechannel.c.orig	2024-10-18 10:28:21 UTC
++++ daemon/gvfswritechannel.c
+@@ -29,6 +29,7 @@
+ #include <sys/socket.h>
  #include <sys/un.h>
- #include <unistd.h>
  #include <fcntl.h>
 +#include <string.h>
  
