@@ -1,5 +1,6 @@
 PORTNAME=	7-zip
 DISTVERSION=	26.00
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
@@ -16,15 +17,12 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/DOC/copying.txt
 LICENSE_FILE_UNRAR=	${WRKSRC}/DOC/unRarLicense.txt
 LICENSE_PERMS_UNRAR=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
-
-USES=		7z cpe dos2unix gmake localbase
+USES=		7z cpe dos2unix gmake
 
 CPE_VENDOR=	7-zip
 
 MAKEFILE=	../../cmpl_clang.mak
-MAKE_ARGS=	LOCAL_FLAGS="${CFLAGS}" \
-		LOCAL_LIBS="${LIBS} -lsysinfo"
+MAKE_ARGS=	LOCAL_FLAGS="${CFLAGS}"
 CFLAGS_aarch64?=	-march=armv8-a+crc+crypto
 
 NO_WRKSUBDIR=	yes
