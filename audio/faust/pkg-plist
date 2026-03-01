@@ -288,7 +288,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.81.10
+lib/libfaust.so.2.83.1
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -456,7 +456,7 @@ lib/libfaust.so.2.81.10
 %%DATADIR%%/daisy/Makefile
 %%DATADIR%%/daisy/README.md
 %%DATADIR%%/daisy/ex_faust.cpp
-%%DATADIR%%/daisy/faust_sdram_converter.py
+%%DATADIR%%/daisy/faust_daisy_mem.py
 %%DATADIR%%/delays.lib
 %%DATADIR%%/demos.lib
 %%DATADIR%%/doc.lib
@@ -740,6 +740,7 @@ lib/libfaust.so.2.81.10
 %%DATADIR%%/maxmsp.lib
 %%DATADIR%%/mi.lib
 %%DATADIR%%/minimal-bench.cpp
+%%DATADIR%%/minimal-clone.cpp
 %%DATADIR%%/minimal-effect.c
 %%DATADIR%%/minimal-effect.cpp
 %%DATADIR%%/minimal-static.cpp
@@ -748,6 +749,7 @@ lib/libfaust.so.2.81.10
 %%DATADIR%%/minimal.d
 %%DATADIR%%/misceffects.lib
 %%DATADIR%%/module.cpp
+%%DATADIR%%/motion.lib
 %%DATADIR%%/music.lib
 %%DATADIR%%/netjack-console.cpp
 %%DATADIR%%/netjack-qt.cpp
