@@ -1,11 +1,11 @@
 PORTNAME=	xts
-DISTVERSION=	0.14.1
+DISTVERSION=	0.14.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Extensible Time Series
-WWW=		https://cran.r-project.org/web/packages/xts/
+WWW=		https://cran.r-project.org/package=xts
 
 LICENSE=	GPLv2+
 
