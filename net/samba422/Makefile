@@ -1,6 +1,5 @@
 PORTNAME=			samba422
-DISTVERSION=			4.22.6
-PORTREVISION=			6
+DISTVERSION=			4.22.7
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			samba-${DISTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
