@@ -2007,6 +2007,7 @@
     SUBDIR += py-yarl
     SUBDIR += py-youtube-transcript-api
     SUBDIR += py-yt-dlp
+    SUBDIR += py-yt-dlp-ejs
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
