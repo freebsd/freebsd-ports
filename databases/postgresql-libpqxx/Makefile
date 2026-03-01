@@ -1,5 +1,5 @@
 PORTNAME=	libpqxx
-DISTVERSION=	7.10.5
+DISTVERSION=	8.0.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
@@ -11,7 +11,7 @@ WWW=		http://pqxx.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++17-lang pkgconfig pgsql
+USES=		cmake compiler:c++20-lang pkgconfig pgsql
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
