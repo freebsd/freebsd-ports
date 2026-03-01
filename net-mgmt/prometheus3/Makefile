@@ -1,7 +1,6 @@
 PORTNAME=	prometheus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.1
-PORTREVISION=	3
+DISTVERSION=	3.10.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod \
 		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:ui
@@ -26,6 +25,9 @@ USE_RC_SUBR=	prometheus
 GO_MODULE=	github.com/prometheus/prometheus
 GO_TARGET=	./cmd/prometheus ./cmd/promtool
 GO_BUILDFLAGS=	-a -ldflags "${LD_FLAG_STRING}" -tags netgo,builtinassets
+
+# Exit "workspace mode" so "go mod vendor" can be used
+MAKE_ENV=	GOWORK=off
 
 CONFLICTS_INSTALL=	prometheus1 prometheus
 
