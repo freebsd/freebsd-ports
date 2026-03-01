@@ -1,11 +1,11 @@
 PORTNAME=	mbedtls
-DISTVERSION=	3.6.5
+DISTVERSION=	4.0.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/Mbed-TLS/${PORTNAME}/releases/download/${DISTNAME}/
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	4
 
-MAINTAINER=	tijl@FreeBSD.org
-COMMENT=	SSL/TLS and cryptography library
+MAINTAINER=	pkaipila@gmail.com
+COMMENT=	Embedded SSL/TLS and cryptography library
 WWW=		https://www.trustedfirmware.org/projects/mbed-tls/
 
 LICENSE=	APACHE20 GPLv2+
@@ -25,15 +25,11 @@ CMAKE_OFF=	ENABLE_TESTING
 CMAKE_TESTING_ON=	ENABLE_TESTING
 CMAKE_TESTING_JOBS=	1
 
-CONFLICTS_INSTALL=	mbedtls4
+CONFLICTS_INSTALL=	mbedtls3
 
 PORTSCOUT=	limit:^${DISTVERSION:R:S/./\./g}\.
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} '/(everest)/d;/(p256-m)/d' \
-		${WRKSRC}/3rdparty/CMakeLists.txt
 
 pre-configure:
 	@${WRKSRC}/scripts/config.py set MBEDTLS_SSL_DTLS_SRTP
