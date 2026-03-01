@@ -13,8 +13,6 @@ COMMENT=	Non-linear video editor
 WWW=		https://olivevideoeditor.org/ \
 		https://github.com/olive-editor/olive
 
-BROKEN=		Does not build with ffmpeg > 6
-
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
