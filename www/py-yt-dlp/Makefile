@@ -1,5 +1,5 @@
 PORTNAME=	yt-dlp # www/py-yt-dlp is for extending yt-dlp, www/yt-dlp is an application for the end user
-DISTVERSION=	2026.01.29
+DISTVERSION=	2026.02.21
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.2:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.17:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}websockets>=13.0:devel/py-websockets@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}websockets>=13.0:devel/py-websockets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yt-dlp-ejs>0:www/py-yt-dlp-ejs@${PY_FLAVOR}
 
 USES=		gmake python shebangfix
 USE_PYTHON=	concurrent flavors

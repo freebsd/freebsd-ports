@@ -1,5 +1,5 @@
 PORTNAME=	yt-dlp
-DISTVERSION=	2026.01.29
+DISTVERSION=	2026.02.21
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -19,7 +19,8 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.2:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=2.0.2:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}websockets>=13.0:devel/py-websockets@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}websockets>=13.0:devel/py-websockets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yt-dlp-ejs>0:www/py-yt-dlp-ejs@${PY_FLAVOR}
 BUILD_DEPENDS=	zip:archivers/zip \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
