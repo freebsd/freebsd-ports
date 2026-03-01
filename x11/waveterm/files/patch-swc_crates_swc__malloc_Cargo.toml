@@ -1,0 +1,37 @@
+--- swc/crates/swc_malloc/Cargo.toml.orig	2025-07-29 03:40:18 UTC
++++ swc/crates/swc_malloc/Cargo.toml
+@@ -1,19 +1,19 @@
+ [package]
+-authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
+-description   = "Configures the best memory allocator for each platforms"
++authors = ["강동윤 <kdy1997.dev@gmail.com>"]
++description = "Configures the best memory allocator for each platforms"
+ documentation = "https://rustdoc.swc.rs/swc_malloc/"
+-edition       = { workspace = true }
+-license       = { workspace = true }
+-name          = "swc_malloc"
+-repository    = { workspace = true }
+-version       = "1.2.3"
++edition = { workspace = true }
++license = { workspace = true }
++name = "swc_malloc"
++repository = { workspace = true }
++version = "1.2.3"
+ 
+ [lib]
+ bench = false
+ 
+ [dependencies]
+ 
+-[target.'cfg(not(any(target_os = "linux", target_family = "wasm", target_env = "musl", all(target_os = "linux", any(target_arch="aarch64", target_env = "gnu", target_arch="arm")))))'.dependencies]
++[target.'cfg(not(any(target_os = "linux", target_os = "freebsd", target_family = "wasm", target_env = "musl", all(target_os = "linux", any(target_arch="aarch64", target_env = "gnu", target_arch="arm")))))'.dependencies]
+ mimalloc = { version = "0.1.43", features = [] }
+ 
+ [target.'cfg(all(target_os = "linux", not(any(target_family = "wasm", target_env = "musl", all(target_os = "linux", target_env = "gnu", any(target_arch = "aarch64", target_arch = "arm"))))))'.dependencies]
+@@ -24,3 +24,6 @@ tikv-jemallocator = { version = "0.5", features = ["di
+ 
+ [target.'cfg(all(target_os = "linux", target_env = "gnu", target_arch = "arm"))'.dependencies]
+ tikv-jemallocator = { version = "0.5", features = ["disable_initial_exec_tls"] }
++
++[target.'cfg(target_os = "freebsd")'.dependencies]
++mimalloc = { version = "0.1.43", features = ["local_dynamic_tls"] }

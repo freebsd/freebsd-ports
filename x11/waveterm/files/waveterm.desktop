@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=Wave Terminal
+Comment=An Open-Source, AI-Native, Terminal Built for Seamless Workflows
+Icon=waveterm
+Exec=waveterm %U
+Categories=TerminalEmulator;
+Terminal=false
+StartupWMClass=Wave Terminal
+Keywords=developer;terminal;emulator;
+category=Development;Utility;

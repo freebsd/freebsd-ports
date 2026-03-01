@@ -1,0 +1,86 @@
+--- Taskfile.yml.orig	2026-02-11 23:55:44 UTC
++++ Taskfile.yml
+@@ -162,8 +162,8 @@ tasks:
+             - task: build:server:linux
+             - task: build:server:macos
+             - task: build:server:windows
++            - task: build:server:freebsd
+         deps:
+-            - go:mod:tidy
+             - generate
+         sources:
+             - "cmd/server/*.go"
+@@ -247,6 +247,17 @@ tasks:
+                   GO_ENV_VARS:
+                       sh: echo "{{if eq "amd64" ARCH}}CC=\"zig cc -target x86_64-linux-gnu.2.28\"{{else}}CC=\"zig cc -target aarch64-linux-gnu.2.28\"{{end}}"
+ 
++    build:server:freebsd:
++        desc: Build the wavesrv component for FreeBSD platforms (only generates artifacts for the current architecture).
++        platforms: [freebsd]
++        cmds:
++            - cmd: "{{.RM}} dist/bin/wavesrv*"
++              ignore_error: true
++            - task: build:server:internal
++              vars:
++                  ARCHS:
++                      sh: echo {{if eq "arm" ARCH}}arm64{{else}}{{ARCH}}{{end}}
++
+     build:server:internal:
+         requires:
+             vars:
+@@ -270,38 +281,9 @@ tasks:
+               ignore_error: true
+             - task: build:wsh:internal
+               vars:
+-                  GOOS: darwin
+-                  GOARCH: arm64
+-            - task: build:wsh:internal
+-              vars:
+-                  GOOS: darwin
++                  GOOS: freebsd
+                   GOARCH: amd64
+-            - task: build:wsh:internal
+-              vars:
+-                  GOOS: linux
+-                  GOARCH: arm64
+-            - task: build:wsh:internal
+-              vars:
+-                  GOOS: linux
+-                  GOARCH: amd64
+-            - task: build:wsh:internal
+-              vars:
+-                  GOOS: linux
+-                  GOARCH: mips
+-            - task: build:wsh:internal
+-              vars:
+-                  GOOS: linux
+-                  GOARCH: mips64
+-            - task: build:wsh:internal
+-              vars:
+-                  GOOS: windows
+-                  GOARCH: amd64
+-            - task: build:wsh:internal
+-              vars:
+-                  GOOS: windows
+-                  GOARCH: arm64
+         deps:
+-            - go:mod:tidy
+             - generate
+         sources:
+             - "cmd/wsh/**/*.go"
+@@ -562,13 +544,13 @@ tasks:
+         desc: Internal task to create scaffold directory structure (Unix)
+         dir: tsunami/frontend
+         internal: true
+-        platforms: [darwin, linux]
++        platforms: [darwin, linux, freebsd]
+         cmds:
+             - cmd: "{{.RMRF}} scaffold"
+               ignore_error: true
+             - mkdir -p scaffold
+             - cp ../templates/package.json.tmpl scaffold/package.json
+-            - cd scaffold && npm install
++            - mv ../templates/node_modules scaffold
+             - mv scaffold/node_modules scaffold/nm
+             - cp -r dist scaffold/
+             - mkdir -p scaffold/dist/tw
