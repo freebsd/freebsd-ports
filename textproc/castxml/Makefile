@@ -1,6 +1,6 @@
 PORTNAME=	castxml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.13
+DISTVERSION=	0.7.0
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +32,6 @@ post-stage: # autoplist: plist changes with llvm versions
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} * -type f -or -type l | ${SED} 's|castxml\.1|castxml.1.gz|' > ${TMPPLIST}
 
-# tests as of 0.6.13: 100% tests passed, 0 tests failed out of 4392
+# tests as of 0.7.0: 100% tests passed, 0 tests failed out of 5242
 
 .include <bsd.port.mk>
