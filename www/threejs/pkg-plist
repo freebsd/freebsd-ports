@@ -203,6 +203,7 @@
 %%WWWDIR%%/math/Vector2.js
 %%WWWDIR%%/math/Vector3.js
 %%WWWDIR%%/math/Vector4.js
+%%WWWDIR%%/math/interpolants/BezierInterpolant.js
 %%WWWDIR%%/math/interpolants/CubicInterpolant.js
 %%WWWDIR%%/math/interpolants/DiscreteInterpolant.js
 %%WWWDIR%%/math/interpolants/LinearInterpolant.js
@@ -236,7 +237,7 @@
 %%WWWDIR%%/nodes/accessors/ReferenceNode.js
 %%WWWDIR%%/nodes/accessors/ReflectVector.js
 %%WWWDIR%%/nodes/accessors/RendererReferenceNode.js
-%%WWWDIR%%/nodes/accessors/SceneNode.js
+%%WWWDIR%%/nodes/accessors/SceneProperties.js
 %%WWWDIR%%/nodes/accessors/SkinningNode.js
 %%WWWDIR%%/nodes/accessors/StorageBufferNode.js
 %%WWWDIR%%/nodes/accessors/StorageTextureNode.js
@@ -255,8 +256,6 @@
 %%WWWDIR%%/nodes/code/ExpressionNode.js
 %%WWWDIR%%/nodes/code/FunctionCallNode.js
 %%WWWDIR%%/nodes/code/FunctionNode.js
-%%WWWDIR%%/nodes/code/ScriptableNode.js
-%%WWWDIR%%/nodes/code/ScriptableValueNode.js
 %%WWWDIR%%/nodes/core/ArrayNode.js
 %%WWWDIR%%/nodes/core/AssignNode.js
 %%WWWDIR%%/nodes/core/AttributeNode.js
@@ -274,6 +273,7 @@
 %%WWWDIR%%/nodes/core/NodeBuilder.js
 %%WWWDIR%%/nodes/core/NodeCache.js
 %%WWWDIR%%/nodes/core/NodeCode.js
+%%WWWDIR%%/nodes/core/NodeError.js
 %%WWWDIR%%/nodes/core/NodeFrame.js
 %%WWWDIR%%/nodes/core/NodeFunction.js
 %%WWWDIR%%/nodes/core/NodeFunctionInput.js
@@ -286,6 +286,7 @@
 %%WWWDIR%%/nodes/core/ParameterNode.js
 %%WWWDIR%%/nodes/core/PropertyNode.js
 %%WWWDIR%%/nodes/core/StackNode.js
+%%WWWDIR%%/nodes/core/StackTrace.js
 %%WWWDIR%%/nodes/core/StructNode.js
 %%WWWDIR%%/nodes/core/StructType.js
 %%WWWDIR%%/nodes/core/StructTypeNode.js
@@ -304,7 +305,6 @@
 %%WWWDIR%%/nodes/display/FrontFacingNode.js
 %%WWWDIR%%/nodes/display/NormalMapNode.js
 %%WWWDIR%%/nodes/display/PassNode.js
-%%WWWDIR%%/nodes/display/PosterizeNode.js
 %%WWWDIR%%/nodes/display/RenderOutputNode.js
 %%WWWDIR%%/nodes/display/ScreenNode.js
 %%WWWDIR%%/nodes/display/ToneMappingFunctions.js
@@ -416,7 +416,7 @@
 %%WWWDIR%%/nodes/utils/SampleNode.js
 %%WWWDIR%%/nodes/utils/SetNode.js
 %%WWWDIR%%/nodes/utils/SplitNode.js
-%%WWWDIR%%/nodes/utils/SpriteSheetUVNode.js
+%%WWWDIR%%/nodes/utils/SpriteSheetUV.js
 %%WWWDIR%%/nodes/utils/SpriteUtils.js
 %%WWWDIR%%/nodes/utils/StorageArrayElementNode.js
 %%WWWDIR%%/nodes/utils/Timer.js
@@ -449,6 +449,7 @@
 %%WWWDIR%%/renderers/common/BindGroup.js
 %%WWWDIR%%/renderers/common/Binding.js
 %%WWWDIR%%/renderers/common/Bindings.js
+%%WWWDIR%%/renderers/common/BlendMode.js
 %%WWWDIR%%/renderers/common/Buffer.js
 %%WWWDIR%%/renderers/common/BufferUtils.js
 %%WWWDIR%%/renderers/common/BundleGroup.js
@@ -477,6 +478,7 @@
 %%WWWDIR%%/renderers/common/RenderList.js
 %%WWWDIR%%/renderers/common/RenderLists.js
 %%WWWDIR%%/renderers/common/RenderObject.js
+%%WWWDIR%%/renderers/common/RenderObjectPipeline.js
 %%WWWDIR%%/renderers/common/RenderObjects.js
 %%WWWDIR%%/renderers/common/RenderPipeline.js
 %%WWWDIR%%/renderers/common/Renderer.js
@@ -499,13 +501,13 @@
 %%WWWDIR%%/renderers/common/extras/PMREMGenerator.js
 %%WWWDIR%%/renderers/common/nodes/NodeBuilderState.js
 %%WWWDIR%%/renderers/common/nodes/NodeLibrary.js
+%%WWWDIR%%/renderers/common/nodes/NodeManager.js
 %%WWWDIR%%/renderers/common/nodes/NodeSampledTexture.js
 %%WWWDIR%%/renderers/common/nodes/NodeSampler.js
 %%WWWDIR%%/renderers/common/nodes/NodeStorageBuffer.js
 %%WWWDIR%%/renderers/common/nodes/NodeUniform.js
 %%WWWDIR%%/renderers/common/nodes/NodeUniformBuffer.js
 %%WWWDIR%%/renderers/common/nodes/NodeUniformsGroup.js
-%%WWWDIR%%/renderers/common/nodes/Nodes.js
 %%WWWDIR%%/renderers/shaders/DFGLUTData.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphahash_fragment.glsl.js
@@ -656,8 +658,7 @@
 %%WWWDIR%%/renderers/webgl/WebGLBufferRenderer.js
 %%WWWDIR%%/renderers/webgl/WebGLCapabilities.js
 %%WWWDIR%%/renderers/webgl/WebGLClipping.js
-%%WWWDIR%%/renderers/webgl/WebGLCubeMaps.js
-%%WWWDIR%%/renderers/webgl/WebGLCubeUVMaps.js
+%%WWWDIR%%/renderers/webgl/WebGLEnvironments.js
 %%WWWDIR%%/renderers/webgl/WebGLExtensions.js
 %%WWWDIR%%/renderers/webgl/WebGLGeometries.js
 %%WWWDIR%%/renderers/webgl/WebGLIndexedBufferRenderer.js
