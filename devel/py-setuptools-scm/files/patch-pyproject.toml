@@ -1,0 +1,41 @@
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=286779
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=293530
+
+This patch to pyproject.toml removes the <= 2.0.2 restriction for tomli (for <py311)
+current ports tomli is 2.4.0
+
+Unable to reproduce a failure in FreeBSD ports tree building or using
+py39-setuptools-scm or py310-setuptools-scm with tomli 2.2.1 nor 2.4.0
+
+See:
+ https://github.com/pypa/setuptools-scm/issues/1090
+ https://github.com/pypa/setuptools-scm/issues/1222
+ https://github.com/RonnyPfannschmidt/setuptools_scm/commit/c35b53ac0dcbd0528521886612540ac6478509ee
+
+The above commit is not included in the recent release of 10.0.0.
+The above commit diff does NOT apply cleanly to 9.2.2.
+The commit diff DOES apply cleanly to 10.0.0 (but 10.0.0 requires a newer
+setuptools than the current setuptools in freebsd's ports tree) - then
+the upstream commit diff can replace this local patch.
+
+Probably this change will be in a future release (like 10.0.1). Then this
+local patch can be removed.
+
+History: allegedly the original reason for the old pin only was
+there if one used an old pip.  It seems the old pip used toml for
+parsing, and it failed when parsing tomli's pyproject.toml The pin
+in setuptools_scm's pyproject.toml had nothing to do with
+setuptools_scm's actual requirements. The 2.0.2 pinning in
+setuptools_scm was therefore ill-advised it seems.
+
+--- pyproject.toml.orig	2025-10-19 22:01:14 UTC
++++ pyproject.toml
+@@ -4,7 +4,7 @@
+ build-backend = "_own_version_helper:build_meta"
+ requires = [
+   "setuptools>=61",
+-  'tomli<=2.0.2; python_version < "3.11"',
++  'tomli>=1; python_version < "3.11"',
+ ]
+ backend-path = [
+   ".",
