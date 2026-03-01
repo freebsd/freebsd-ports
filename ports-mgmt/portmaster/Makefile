@@ -1,5 +1,5 @@
 PORTNAME=	portmaster
-PORTVERSION=	3.30
+PORTVERSION=	3.32
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	se@FreeBSD.org
@@ -11,24 +11,22 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
-OPTIONS_DEFINE=	BASH ZSH
-OPTIONS_DEFAULT=BASH ZSH
+NO_ARCH=	yes
 
 PLIST_FILES=	sbin/portmaster \
 		etc/portmaster.rc.sample \
 		share/man/man8/portmaster.8.gz
 
+OPTIONS_DEFINE=	BASH ZSH
+OPTIONS_DEFAULT=BASH ZSH
+
 BASH_PLIST_FILES=	etc/bash_completion.d/portmaster.sh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_portmaster
-
-NO_ARCH=	yes
-
-verify: checksum
 
 do-build:
 .for file in portmaster files/portmaster.rc.sample files/portmaster.8
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
-	    -e 's#%%PORTVERSION%%#${PKGVERSION}#' ${WRKSRC}/${file}
+	    -e 's#%%PORTVERSION%%#${PORTVERSION}#' ${WRKSRC}/${file}
 .endfor
 
 do-install:
