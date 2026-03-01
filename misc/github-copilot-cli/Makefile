@@ -1,5 +1,6 @@
 PORTNAME=	github-copilot-cli
 DISTVERSION=	0.0.394 # do not update until https://github.com/github/copilot-cli/issues/1320 is fixed
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	npm:www/npm \
 		libsecret>0:security/libsecret \
 		vips>=8.17.2:graphics/vips
 RUN_DEPENDS=	libsecret>0:security/libsecret \
+		rg:textproc/ripgrep \
 		vips>=8.17.2:graphics/vips
 
 USES=		nodejs:run pkgconfig python:build
