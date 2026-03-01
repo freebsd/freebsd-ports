@@ -1,6 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -102,7 +102,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
-# tests as of 1.3.1: 1 test fails, see https://github.com/cvc5/cvc5/issues/12215
-# tests as of 1.3.2: 100% tests passed, 0 tests failed out of 4115, see https://github.com/cvc5/cvc5/issues/12215
+# tests as of 1.3.3: 100% tests passed, 0 tests failed out of 4177
 
 .include <bsd.port.mk>
