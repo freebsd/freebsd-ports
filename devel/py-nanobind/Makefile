@@ -1,6 +1,6 @@
 PORTNAME=	nanobind
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.12.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,16 +25,21 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wjakob
 GH_TUPLE=	Tessil:robin-map:188c455:robin_map/ext/robin_map
 
-TEST_WRKSRC=	${WRKSRC}/tests
+TEST_WRKSRC=	${BUILD_WRKSRC}/tests
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
 pre-test: # build test extensions
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} cmake . && \
+		${SETENV} ${MAKE_ENV} cmake -DPython_EXECUTABLE=${PYTHON_CMD} . && \
 		${SETENV} ${MAKE_ENV} ${MAKE} -j${MAKE_JOBS_NUMBER}
 
-# tests fail to compile: Free-threaded extensions require a free-threaded version of Python
+# tests as of 2.12.0:
+# Results (46.91s):
+#          2 failed
+#       1495 passed
+#         19 skipped
+#          2 warnings
 
 .include <bsd.port.mk>
