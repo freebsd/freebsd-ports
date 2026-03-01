@@ -5157,3 +5157,4 @@ devel/godot35|devel/godot|2026-02-28|Has expired: Legacy version should have bee
 www/nginx-vts-exporter|www/nginx-prometheus-exporter|2026-02-28|Has expired: Upstream is unmaintained; use www/nginx-prometheus-exporter instead
 net/unison240||2026-02-28|Has expired: Legacy release unsupported by upstream
 security/owasp-dependency-check||2026-02-28|Has expired: This port is 9 major versions and almost 8 years behind on upstream. No maintainer. No users in the ports tree. Does not compile with jdk11+
+lang/go-devel|lang/go|2026-03-01|Has expired: Old version of Go. Use the go package (lang/go) instead

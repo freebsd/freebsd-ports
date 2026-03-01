@@ -124,7 +124,6 @@
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += go
-    SUBDIR += go-devel
     SUBDIR += go124
     SUBDIR += go125
     SUBDIR += go126
