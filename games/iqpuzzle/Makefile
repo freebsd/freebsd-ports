@@ -1,6 +1,6 @@
 PORTNAME=	iqpuzzle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	1.5.0
 CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,8 +10,8 @@ WWW=		https://elth0r0.github.io/iqpuzzle/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gl qmake qt:5
-USE_QT=		core gui widgets buildtools:build
+USES=		compiler:c++11-lang gl qmake qt:6
+USE_QT=		base tools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes
