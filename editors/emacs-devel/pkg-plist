@@ -968,6 +968,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-tinted-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-tritanopia-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/newcomers-presets-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tango-dark-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tango-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tsdh-dark-theme.el
