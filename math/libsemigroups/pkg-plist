@@ -34,7 +34,6 @@ include/libsemigroups/detail/felsch-tree.hpp
 include/libsemigroups/detail/fmt.hpp
 include/libsemigroups/detail/formatters.hpp
 include/libsemigroups/detail/function-ref.hpp
-include/libsemigroups/detail/guard.hpp
 include/libsemigroups/detail/int-range.hpp
 include/libsemigroups/detail/iterator.hpp
 include/libsemigroups/detail/kambites-nf.hpp
@@ -64,6 +63,8 @@ include/libsemigroups/detail/timer.hpp
 include/libsemigroups/detail/todd-coxeter-impl.hpp
 include/libsemigroups/detail/todd-coxeter-impl.tpp
 include/libsemigroups/detail/uf.hpp
+include/libsemigroups/detail/value-guard.hpp
+include/libsemigroups/detail/value-guard.tpp
 include/libsemigroups/detail/word-graph-with-sources.hpp
 include/libsemigroups/detail/word-graph-with-sources.tpp
 include/libsemigroups/detail/word-iterators.hpp
