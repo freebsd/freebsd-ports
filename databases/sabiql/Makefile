@@ -1,6 +1,7 @@
 PORTNAME=	sabiql
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -16,6 +17,8 @@ LICENSE_TEXT_CDLA20=	See https://cdla.dev/permissive-2-0/
 LICENSE_TEXT_UNICODE=	See https://www.unicode.org/copyright.html
 LICENSE_PERMS_CDLA20=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_UNICODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		cargo
 USE_GITHUB=	yes
