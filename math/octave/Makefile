@@ -107,6 +107,7 @@ DOCS_USES=	tex
 DOCS_USE=	TEX=dvipsk:build,formats:build
 JAVA_USES=	java
 JAVA_CFLAGS=	-I${JAVA_HOME}/include/${OPSYS:tl}
+JAVA_VARS=	JAVA_VERSION=11+
 QT6_USES=	qt:6
 OPENBLAS_USES=	blaslapack:openblas
 NETLIB_USES=	blaslapack:netlib
