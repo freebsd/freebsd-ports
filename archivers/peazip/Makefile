@@ -1,5 +1,6 @@
 PORTNAME=	peazip
 PORTVERSION=	10.9.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -22,7 +23,9 @@ SUB_FILES=	pea peazip
 
 DOS2UNIX_REGEX=		.*\.([txt]|pas|lpi|txt)
 
-LAZARUS_PROJECT_FILES=	dev/project_pea.lpi dev/project_peach.lpi
+LAZARUS_PROJECT_FILES=	dev/metadarkstyle/metadarkstyle.lpk \
+			dev/project_pea.lpi \
+			dev/project_peach.lpi
 LAZBUILD_ARGS=		-d
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
@@ -89,10 +92,6 @@ PLIST_SUB+=	UNACE="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's|GetSelectedNodePath|Path|g' \
-		-e 's|IFDEF LCLQT5|IF DEFINED\(LCLQT5\) OR DEFINED\(LCLQT6\)|g ' ${WRKSRC}/dev/peach.pas
 
 pre-install:
 	@${ECHO_CMD} "#" > ${WRKSRC}/altconf.txt
