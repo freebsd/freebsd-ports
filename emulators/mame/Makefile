@@ -1,5 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.284
+DISTVERSION=	0.286
 CATEGORIES=	emulators games
 
 MAINTAINER=	laurent.chardon@gmail.com
@@ -34,11 +34,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 
 USES=		compiler:c++17-lang gmake jpeg llvm:min=16 localbase \
 		pkgconfig python:build sdl sqlite:3 xorg
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
 GH_TAGNAME=	${PORTNAME}${DISTVERSION:S/.//}
-USE_SDL=	sdl2
+USE_SDL=	sdl2 ttf2
 USE_XORG=	x11 xext xi xinerama xrender
 
 MAKEFILE=	makefile
@@ -179,8 +178,7 @@ _EMULATORS_MAKE_ENV=	EMULATOR=1 \
 			USE_SYSTEM_LIB_PORTMIDI=1
 _EMULATORS_RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 _EMULATORS_USES=	gl
-_EMULATORS_USE=		GL=gl \
-			SDL=ttf2
+_EMULATORS_USE=		GL=gl
 _TOOLS_COMMANDS=	-depth 1 -type f -and -not -type d -and -not -name \
 			${PORTNAME}* -perm -o=+x
 _TOOLS_MANUALS=		-name *.1 -depth 1 -type f -and -not -type d -and -not \
