@@ -1,8 +1,8 @@
-PORTNAME=	mattermost-webapp
-PORTVERSION=	10.11.10
-DISTVERSIONPREFIX=	v
+PORTNAME=	mattermost
+DISTVERSION=	10.11.12
 CATEGORIES=	www
-MASTER_SITES=	https://releases.mattermost.com/${PORTVERSION}/
+MASTER_SITES=	https://releases.mattermost.com/${DISTVERSION}/
+PKGNAMESUFFIX=	-webapp
 DISTNAME=	mattermost-${PORTVERSION}-linux-amd64
 
 MAINTAINER=	decke@FreeBSD.org
@@ -11,9 +11,10 @@ WWW=		https://mattermost.org/
 
 LICENSE=	APACHE20
 
-WWWDIR=		${PREFIX}/www/mattermost
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MATTERMOSTD_USER=	mattermost
 MATTERMOSTD_GROUP=	mattermost
@@ -25,8 +26,7 @@ PLIST_SUB=	MATTERMOSTD_USER=${MATTERMOSTD_USER} \
 		MATTERMOSTD_GROUP=${MATTERMOSTD_GROUP}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	cd ${WRKDIR}/mattermost && ${COPYTREE_SHARE} client ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} client ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/client/plugins
 
 .include <bsd.port.mk>
