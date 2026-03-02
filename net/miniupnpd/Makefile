@@ -6,9 +6,6 @@ CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		https://github.com/miniupnp/miniupnp/releases/download/${PORTNAME}_${DISTVERSION:S|.|_|g}/
 
-PATCH_SITES=	https://github.com/miniupnp/miniupnp/commit/
-PATCHFILES=	7949a7acb3b8471681157863387339ea2ca749fb.patch:-p2
-
 MAINTAINER=	squat@squat.no
 COMMENT=	Lightweight UPnP IGD & PCP/NAT-PMP daemon which uses pf
 WWW=		https://miniupnp.tuxfamily.org/
