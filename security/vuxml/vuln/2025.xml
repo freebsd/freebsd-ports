@@ -3138,15 +3138,19 @@ This issue has been patched in version 2.25.2.</p>
     <affects>
     <package>
 	<name>sqlite3</name>
-	<range><ge>3.49.1,1</ge><lt>3.50.3,1</lt></range>
-    </package>
-      <package>
-	<name>linux_base-rl9</name>
-	<range><ge>0</ge></range> <!-- unknown and unrelated fixes might make this disappear, so set >= 0 instead of <= 9.6_1 to err on the safe side -->
+	<range><ge>3.43.0,1</ge><lt>3.50.3,1</lt></range>
       </package>
+      <!-- sqlite in -c7 is 3.7.17 and -rl9 is 3.34.1 (both with
+	   patches from RedHat).  Neither has the vulnerable code
+	   that is related to CVE-2025-7709.  Neither is in the
+	   [3.43.0-3.50.3) range.  Furthermore RedHat has said no
+	   supported product is affected:
+	   https://access.redhat.com/security/cve/cve-2025-7709
+	   Although -c7 is no longer supported by RedHat, it is not
+	   vulnerable to CVE-2025-7709. -->
       <package>
 	<name>linux-c7-sqlite</name>
-	<range><lt>3.50.3</lt></range>
+	<range><lt>3.43.0</lt></range>
       </package>
     </affects>
     <description>
