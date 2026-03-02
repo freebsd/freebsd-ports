@@ -1,0 +1,10 @@
+Go2TV lets you play video, audio, and image files on your Smart TV or
+Chromecast device directly from your computer or phone. It works with:
+
+  - Smart TVs - Samsung, LG, Sony, and others that support DLNA/UPnP
+  - Chromecast - Google Chromecast, Chromecast with Google TV, and compatible
+    devices
+  - Apps - BubbleUPnP, GMediaRender, and other media receiver apps
+
+No need to copy files to a USB drive or set up a media server. Just select your
+file, pick your device, and play.

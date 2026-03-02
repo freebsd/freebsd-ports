@@ -69,6 +69,7 @@
     SUBDIR += get_iplayer
     SUBDIR += gmmlib
     SUBDIR += gmp-api
+    SUBDIR += go2tv
     SUBDIR += gpac
     SUBDIR += gpodder
     SUBDIR += gst123
