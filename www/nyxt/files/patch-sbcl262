@@ -1,0 +1,22 @@
+https://github.com/melisgl/named-readtables/commit/6eea56674442b884a4fee6ede4c8aad63541aa5b
+
+From 6eea56674442b884a4fee6ede4c8aad63541aa5b Mon Sep 17 00:00:00 2001
+From: Gabor Melis <mega@retes.hu>
+Date: Sun, 9 Nov 2025 18:20:21 +0100
+Subject: [PATCH] unbreak after SBCL internals change
+
+--- _build/named-readtables/src/cruft.lisp.orig	2024-10-20 15:57:20 UTC
++++ _build/named-readtables/src/cruft.lisp
+@@ -219,7 +219,11 @@
+                      (grovel-unicode-chars)
+                      (let ((reader-fn (svref char-macro-array char-code))
+                            (char (code-char (shiftf char-code (1+ char-code)))))
+-                       (if reader-fn
++                       ;; In older SBCL, READER-FN may be NIL. Since
++                       ;; commit 00eabf5 ("Make a few mostly-stylistic
++                       ;; tweaks to macro char reading"), this is 0
++                       ;; instead.
++                       (if (and reader-fn (not (eql reader-fn 0)))
+                            (yield char)
+                            (grovel-base-chars)))))
+                (grovel-unicode-chars ()
