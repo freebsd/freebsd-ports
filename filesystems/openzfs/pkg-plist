@@ -713,6 +713,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/bclone/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/bclone/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_after_device_removal.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_clone_mmap_cached.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_clone_mmap_write.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/block_cloning/block_cloning_copyfilerange.ksh
@@ -968,6 +969,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_clone/zfs_clone_010_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_clone/zfs_clone_deeply_nested.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_clone/zfs_clone_encrypted.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_clone/zfs_clone_nomount.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_clone/zfs_clone_rm_nested.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_copies/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_copies/setup.ksh
@@ -2221,6 +2223,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_active_import.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_concurrent_import.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_exported_import.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_hostid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmp/mmp_inactive_import.ksh
@@ -2596,6 +2599,10 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_holds.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_hole_birth.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_invalid.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_large_blocks_incremental.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_large_blocks_initial.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_large_microzap_incremental.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_large_microzap_transitive.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_leak_keymaps.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_mixed_raw.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_partial_dataset.ksh
