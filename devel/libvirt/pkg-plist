@@ -54,6 +54,7 @@ share/man/man8/virtvboxd.8.gz
 @sample %%ETCDIR%%/libvirt.conf.sample
 @sample %%ETCDIR%%/libvirtd.conf.sample
 @sample %%ETCDIR%%/network.conf.sample
+@sample %%ETCDIR%%/secret.conf.sample
 %%BHYVE%%@sample %%ETCDIR%%/virtbhyved.conf.sample
 @sample %%ETCDIR%%/virtlockd.conf.sample
 @sample %%ETCDIR%%/virtlogd.conf.sample
@@ -121,6 +122,7 @@ sbin/libvirtd
 sbin/virtlockd
 sbin/virtlogd
 share/augeas/lenses/libvirt_lockd.aug
+share/augeas/lenses/libvirt_secrets.aug
 share/augeas/lenses/libvirtd.aug
 share/augeas/lenses/libvirtd_network.aug
 %%BHYVE%%share/augeas/lenses/libvirtd_bhyve.aug
@@ -128,6 +130,7 @@ share/augeas/lenses/virtlockd.aug
 share/augeas/lenses/virtlogd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirt_lockd.aug
+share/augeas/lenses/tests/test_libvirt_secrets.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 share/augeas/lenses/tests/test_libvirtd_network.aug
 %%BHYVE%%share/augeas/lenses/tests/test_virtbhyved.aug
@@ -426,6 +429,7 @@ share/augeas/lenses/virtvboxd.aug
 %%NLS%%share/locale/uk/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/zh_Hant/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libvirt.mo
 %%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.so
@@ -447,6 +451,7 @@ lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 %%QEMU%%@dir /var/lib/libvirt/qemu/ram
 %%QEMU%%@dir /var/lib/libvirt/qemu/save
 %%QEMU%%@dir /var/lib/libvirt/qemu/snapshot
+%%QEMU%%@dir /var/lib/libvirt/qemu/varstore
 %%QEMU%%@dir /var/lib/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/swtpm
 %%QEMU%%@dir /var/log/swtpm/libvirt/qemu
@@ -474,9 +479,10 @@ lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 @dir /var/lib/libvirt/dnsmasq
 @dir /var/lib/libvirt/filesystems
 @dir /var/lib/libvirt/images
-@dir /var/lib/libvirt/lockd/files
 @dir /var/lib/libvirt/lockd
+@dir /var/lib/libvirt/lockd/files
 @dir /var/lib/libvirt/network
+@dir /var/lib/libvirt/secrets
 @dir /var/lib/libvirt
 @dir /var/lib
 @dir /var/log/libvirt/lxc

@@ -1,12 +1,8 @@
 PORTNAME=	libvirt
-DISTVERSION=	12.0.0
+DISTVERSION=	12.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
-
-PATCH_SITES=	https://gitlab.com/libvirt/libvirt/-/commit/
-PATCHFILES+=	2c66b6d72cd48d3cf80f957f55cfb1548feb46c4.patch:-p1 \
-		864a70114fe1dc6c6f58d099f0f1664737cf26e7.patch:-p1
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
@@ -147,7 +143,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.12000.0
+SHLIB_VER=	0.12001.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -180,6 +176,7 @@ CONF_FILES=	\
 		libxl.conf \
 		network.conf \
 		qemu.conf \
+		secret.conf \
 		virtbhyved.conf \
 		virtlockd.conf \
 		virtlogd.conf \
