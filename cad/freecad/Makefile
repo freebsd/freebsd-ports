@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	1.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://www.freecadweb.org/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=      freecad-devel # bin/FreeCAD
+BROKEN=		incompatible with VTK 9.6.0
+
+CONFLICTS_INSTALL=	freecad-devel # bin/FreeCAD
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
 		pybind11-config:devel/py-pybind11@${PY_FLAVOR} \

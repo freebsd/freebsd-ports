@@ -1,6 +1,7 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	pcl-
 DISTVERSION=	1.15.1
+PORTREVISION=	1
 CATEGORIES=	graphics math
 #MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
@@ -38,6 +39,8 @@ GH_PROJECT=	${PORTNAME} googletest:gtest
 GH_TAGNAME=	release-1.11.0:gtest
 
 #DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # workaround, otherwise USE_GITHUB=nodefault doesn't work #'
+
+LDFLAGS+=	-lX11
 
 CMAKE_TESTING_ON=	BUILD_global_tests # 6 tests are known to fail: https://github.com/PointCloudLibrary/pcl/issues/5127
 CMAKE_TESTING_TARGET=	tests

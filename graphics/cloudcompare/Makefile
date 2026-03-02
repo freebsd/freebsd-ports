@@ -1,7 +1,7 @@
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/refs/tags/v2.12.4/snap/gui/:icons
 DISTFILES=	ccViewer.png:icons cloudcompare.png:icons
