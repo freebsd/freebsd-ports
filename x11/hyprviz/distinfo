@@ -1,4 +1,4 @@
-TIMESTAMP = 1772284532
+TIMESTAMP = 1772431016
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/arc-swap-1.7.1.crate) = 69f7f8c3906b62b754cd5326047894316021dcfe5a194c8ea52bdd94934a3457
@@ -263,5 +263,5 @@ SHA256 (rust/crates/winnow-0.7.13.crate) = 21a0236b59786fed61e2a80582dd500fe61f1
 SIZE (rust/crates/winnow-0.7.13.crate) = 174454
 SHA256 (rust/crates/zmij-1.0.13.crate) = ac93432f5b761b22864c774aac244fa5c0fd877678a4c37ebf6cf42208f9c9ec
 SIZE (rust/crates/zmij-1.0.13.crate) = 23625
-SHA256 (timasoft-hyprviz-v0.8.1_GH0.tar.gz) = 53b2587e47b8254dd58a3d4d750bf3505ffdc7cd9d1de8c3c720f6897af993d1
-SIZE (timasoft-hyprviz-v0.8.1_GH0.tar.gz) = 887440
+SHA256 (timasoft-hyprviz-v0.8.2_GH0.tar.gz) = 9d615a033c3926a75bdd329efd63359f7fd1b712b9217a254e7c2cbc5d794094
+SIZE (timasoft-hyprviz-v0.8.2_GH0.tar.gz) = 902090
