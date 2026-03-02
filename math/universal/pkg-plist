@@ -184,6 +184,7 @@ include/universal/internal/bitblock/exceptions.hpp
 include/universal/internal/bitblock/ubb.h
 include/universal/internal/blockbinary/blockbinary.hpp
 include/universal/internal/blockdecimal/blockdecimal.hpp
+include/universal/internal/blockdecimal/exceptions.hpp
 include/universal/internal/blockdigit/blockdigit.hpp
 include/universal/internal/blockfraction/blockfraction.hpp
 include/universal/internal/blockfraction/blockfraction_fwd.hpp
@@ -382,6 +383,14 @@ include/universal/number/dd_cascade/math/functions/trigonometry.hpp
 include/universal/number/dd_cascade/math/functions/truncate.hpp
 include/universal/number/dd_cascade/mathlib.hpp
 include/universal/number/dd_cascade/numeric_limits.hpp
+include/universal/number/dfixpnt/attributes.hpp
+include/universal/number/dfixpnt/dfixpnt.hpp
+include/universal/number/dfixpnt/dfixpnt_fwd.hpp
+include/universal/number/dfixpnt/dfixpnt_impl.hpp
+include/universal/number/dfixpnt/exceptions.hpp
+include/universal/number/dfixpnt/manipulators.hpp
+include/universal/number/dfixpnt/mathlib.hpp
+include/universal/number/dfixpnt/numeric_limits.hpp
 include/universal/number/dfloat/attributes.hpp
 include/universal/number/dfloat/dfloat.hpp
 include/universal/number/dfloat/dfloat_fwd.hpp
@@ -791,6 +800,8 @@ include/universal/number/rational/rational.hpp
 include/universal/number/rational/rational_fwd.hpp
 include/universal/number/rational/rational_impl.hpp
 include/universal/number/shared/blocktype.hpp
+include/universal/number/shared/decimal_bits.hpp
+include/universal/number/shared/decimal_encoding.hpp
 include/universal/number/shared/infinite_encoding.hpp
 include/universal/number/shared/nan_encoding.hpp
 include/universal/number/shared/specific_value_encoding.hpp
@@ -912,6 +923,7 @@ include/universal/traits/cfloat_traits.hpp
 include/universal/traits/complex_traits.hpp
 include/universal/traits/dd_cascade_traits.hpp
 include/universal/traits/dd_traits.hpp
+include/universal/traits/dfixpnt_traits.hpp
 include/universal/traits/dfloat_traits.hpp
 include/universal/traits/e8m0_traits.hpp
 include/universal/traits/edecimal_traits.hpp
