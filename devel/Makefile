@@ -1012,6 +1012,7 @@
     SUBDIR += hs-threadscope
     SUBDIR += htable
     SUBDIR += hub
+    SUBDIR += hut
     SUBDIR += hvm
     SUBDIR += hwloc
     SUBDIR += hwloc2
