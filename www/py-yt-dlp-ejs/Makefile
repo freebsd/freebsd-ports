@@ -31,35 +31,37 @@ NO_ARCH=	yes
 
 DD=		${DISTDIR}/${DIST_SUBDIR}
 
-do-fetch:
-	@if ! [ -f ${DD}/${DISTNAME}${EXTRACT_SUFX} ] || \
-	    ! [ -f ${DD}/${PORTNAME}-node-modules-${DISTVERSION}${EXTRACT_SUFX} ]; then \
-		${MKDIR} ${DD} && ${MKDIR} ${WRKDIR} && \
-		${ECHO_MSG} "====> Fetching ${DISTNAME}${EXTRACT_SUFX}" && \
-		cd ${DD} && ${FETCH_CMD} https://files.pythonhosted.org/packages/source/y/yt-dlp-ejs/${DISTNAME}${EXTRACT_SUFX} && \
-		${ECHO_MSG} "====> Fetching and packaging node_modules using package-lock.json" && \
-		${TAR} -xf ${DD}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR} && \
-		if [ -f ${FILESDIR}/package-lock.json ]; then \
-			${ECHO_MSG} "====> Using existing package-lock.json"; \
-			${CP} ${FILESDIR}/package-lock.json ${WRKDIR}/${DISTNAME}/; \
-		else \
-			${ECHO_MSG} "====> Generating package-lock.json (it will be saved to ${FILESDIR})"; \
-		fi && \
-		cd ${WRKDIR}/${DISTNAME} && \
-			${SETENV} HOME=${WRKDIR} npm ci && \
-		if ! [ -f ${FILESDIR}/package-lock.json ]; then \
-			${ECHO_MSG} "====> Saving generated package-lock.json to ${FILESDIR}"; \
-			${CP} ${WRKDIR}/${DISTNAME}/package-lock.json ${FILESDIR}/; \
-		fi && \
-		${FIND} node_modules -name '.package-lock.json' -delete && \
-		${FIND} node_modules -type d -name '@*' -empty -delete && \
-		${FIND} node_modules -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
-		${FIND} node_modules -print0 | ${SORT} -z | \
-			${TAR} czf ${DD}/${PORTNAME}-node-modules-${DISTVERSION}${EXTRACT_SUFX} \
-				--format=bsdtar --no-read-sparse --gid 0 --uid 0 \
-				--options gzip:!timestamp --no-recursion --null -T - && \
-		${RM} -rf ${WRKDIR}; \
-	fi
+IGNORE=		invalid code in do-fetch
+
+# do-fetch:
+# 	@if ! [ -f ${DD}/${DISTNAME}${EXTRACT_SUFX} ] || \
+# 	    ! [ -f ${DD}/${PORTNAME}-node-modules-${DISTVERSION}${EXTRACT_SUFX} ]; then \
+# 		${MKDIR} ${DD} && ${MKDIR} ${WRKDIR} && \
+# 		${ECHO_MSG} "====> Fetching ${DISTNAME}${EXTRACT_SUFX}" && \
+# 		cd ${DD} && ${FETCH_CMD} https://files.pythonhosted.org/packages/source/y/yt-dlp-ejs/${DISTNAME}${EXTRACT_SUFX} && \
+# 		${ECHO_MSG} "====> Fetching and packaging node_modules using package-lock.json" && \
+# 		${TAR} -xf ${DD}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR} && \
+# 		if [ -f ${FILESDIR}/package-lock.json ]; then \
+# 			${ECHO_MSG} "====> Using existing package-lock.json"; \
+# 			${CP} ${FILESDIR}/package-lock.json ${WRKDIR}/${DISTNAME}/; \
+# 		else \
+# 			${ECHO_MSG} "====> Generating package-lock.json (it will be saved to ${FILESDIR})"; \
+# 		fi && \
+# 		cd ${WRKDIR}/${DISTNAME} && \
+# 			${SETENV} HOME=${WRKDIR} npm ci && \
+# 		if ! [ -f ${FILESDIR}/package-lock.json ]; then \
+# 			${ECHO_MSG} "====> Saving generated package-lock.json to ${FILESDIR}"; \
+# 			${CP} ${WRKDIR}/${DISTNAME}/package-lock.json ${FILESDIR}/; \
+# 		fi && \
+# 		${FIND} node_modules -name '.package-lock.json' -delete && \
+# 		${FIND} node_modules -type d -name '@*' -empty -delete && \
+# 		${FIND} node_modules -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
+# 		${FIND} node_modules -print0 | ${SORT} -z | \
+# 			${TAR} czf ${DD}/${PORTNAME}-node-modules-${DISTVERSION}${EXTRACT_SUFX} \
+# 				--format=bsdtar --no-read-sparse --gid 0 --uid 0 \
+# 				--options gzip:!timestamp --no-recursion --null -T - && \
+# 		${RM} -rf ${WRKDIR}; \
+# 	fi
 
 post-extract:
 	# Extract pre-downloaded node_modules
