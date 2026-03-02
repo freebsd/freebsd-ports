@@ -1,6 +1,6 @@
 PORTNAME=	xlibre-xf86-video-intel
 PORTVERSION=	25.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	xlibre@FreeBSD.org
@@ -21,7 +21,7 @@ USE_XORG=	pciaccess pixman x11 xcb xinerama xrandr xdamage xcursor xtst xfixes x
 CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no # XXX ports/242236
 TEST_TARGET=	check
 
-GH_TAGNAME=	497585a
+GH_TAGNAME=	4bbc49597c938cd0586e7bc0d722e10504ce11ac
 
 # XXX bug 214593: SNA crashes on pre-SandyBridge hardware
 MESON_ARGS+=-Ddefault-accel=uxa -Dbacklight-helper=false
