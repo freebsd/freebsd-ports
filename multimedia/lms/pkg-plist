@@ -1,5 +1,6 @@
 bin/lms
 bin/lms-audioinfo
+bin/lms-audioplay
 @sample etc/lms.conf.sample
 etc/pam.d/lms
 %%DATADIR%%/approot/admin-about.xml
