@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-git-arc
-PORTVERSION=	20260105
+PORTVERSION=	20260218
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/freebsd/freebsd-src/${_REV}/tools/tools/git/
 DISTFILES=	git-arc.sh \
@@ -27,7 +27,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/git-arc \
 		share/man/man1/git-arc.1.gz
 
-_REV=		1c8dafe618878c563c3740061f83a85b0be10720
+_REV=		4fb507cae916d04fcd1e80e69923c5ca5c4340eb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-arc.sh ${STAGEDIR}${PREFIX}/bin/git-arc

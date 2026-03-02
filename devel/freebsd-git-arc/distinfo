@@ -1,5 +1,5 @@
-TIMESTAMP = 1770321586
-SHA256 (freebsd-git-arc_1c8dafe618878c563c3740061f83a85b0be10720/git-arc.sh) = 1395c773a9e0f2110c0009fc15b15cac8047f02d3b4ae1807fefc81a419885cd
-SIZE (freebsd-git-arc_1c8dafe618878c563c3740061f83a85b0be10720/git-arc.sh) = 22705
-SHA256 (freebsd-git-arc_1c8dafe618878c563c3740061f83a85b0be10720/git-arc.1) = fa772ad92a403e94c622d6c88a797d5a8ebc1e9956b39659344452e436eff7d6
-SIZE (freebsd-git-arc_1c8dafe618878c563c3740061f83a85b0be10720/git-arc.1) = 9487
+TIMESTAMP = 1772462558
+SHA256 (freebsd-git-arc_4fb507cae916d04fcd1e80e69923c5ca5c4340eb/git-arc.sh) = 049f9db944c478c89959f4cb973b5ef0c14b20d3d4e232b0b46532df20e1c5b4
+SIZE (freebsd-git-arc_4fb507cae916d04fcd1e80e69923c5ca5c4340eb/git-arc.sh) = 22763
+SHA256 (freebsd-git-arc_4fb507cae916d04fcd1e80e69923c5ca5c4340eb/git-arc.1) = b60d029cd36acf8177993adc3557ac11ce14d2d2c01eed72d6dfef55ad711ff2
+SIZE (freebsd-git-arc_4fb507cae916d04fcd1e80e69923c5ca5c4340eb/git-arc.1) = 9473
