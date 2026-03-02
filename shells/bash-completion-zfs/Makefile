@@ -1,5 +1,5 @@
 PORTNAME=	bash-completion-zfs
-DISTVERSION=	2.3.3
+DISTVERSION=	2.4.1
 CATEGORIES=	shells
 # Use direct link to 15KB file instead of 30+MB tarball:
 # https://github.com/openzfs/zfs/releases/download/zfs-${DISTVERSION}/zfs-${DISTVERSION}.tar.gz
