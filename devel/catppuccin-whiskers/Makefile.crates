@@ -21,7 +21,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
 		clap-4.5.60 \
-		clap-stdin-0.8.0 \
+		clap-stdin-0.8.1 \
 		clap_builder-4.5.60 \
 		clap_derive-4.5.55 \
 		clap_lex-1.0.0 \
