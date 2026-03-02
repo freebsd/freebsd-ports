@@ -1,6 +1,5 @@
 PORTNAME=	smart
-DISTVERSION=	0.4.1
-PORTREVISION=	2
+DISTVERSION=	1.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -13,11 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	ctuffli
 
-PLIST_FILES=	share/man/man8/smart.8.gz \
-		sbin/atasmart \
+PLIST_FILES=	sbin/atasmart \
 		sbin/nvmesmart \
 		sbin/scsismart \
-		sbin/smart
+		sbin/smart \
+		share/man/man8/smart.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|./${PORTNAME}|${PREFIX}/sbin/${PORTNAME}|" \
