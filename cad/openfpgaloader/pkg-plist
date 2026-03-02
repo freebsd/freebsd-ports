@@ -1,4 +1,6 @@
 bin/openFPGALoader
+%%DATADIR%%/bpiOverJtag_xc7k480tffg1156.bit.gz
+%%DATADIR%%/spiOverJtag_10cl006144.rbf.gz
 %%DATADIR%%/spiOverJtag_10cl016484.rbf.gz
 %%DATADIR%%/spiOverJtag_10cl025256.rbf.gz
 %%DATADIR%%/spiOverJtag_10cl055484.rbf.gz
@@ -8,6 +10,7 @@ bin/openFPGALoader
 %%DATADIR%%/spiOverJtag_5ce523.rbf.gz
 %%DATADIR%%/spiOverJtag_5ce927.rbf.gz
 %%DATADIR%%/spiOverJtag_5sgsd5.rbf.gz
+%%DATADIR%%/spiOverJtag_efinix_t120f324.bit.gz
 %%DATADIR%%/spiOverJtag_efinix_t13f256.bit.gz
 %%DATADIR%%/spiOverJtag_efinix_t8f81.bit.gz
 %%DATADIR%%/spiOverJtag_efinix_ti180j484.bit.gz
@@ -65,6 +68,7 @@ bin/openFPGALoader
 %%DATADIR%%/spiOverJtag_xc7a50tcsg325_1v35.bit.gz
 %%DATADIR%%/spiOverJtag_xc7a50tfgg484.bit.gz
 %%DATADIR%%/spiOverJtag_xc7a50tftg256.bit.gz
+%%DATADIR%%/spiOverJtag_xc7k70tfbg676.bit.gz
 %%DATADIR%%/spiOverJtag_xc7a75t.bit.gz
 %%DATADIR%%/spiOverJtag_xc7a75tcsg324.bit.gz
 %%DATADIR%%/spiOverJtag_xc7a75tfgg484.bit.gz

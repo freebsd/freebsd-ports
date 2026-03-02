@@ -1,6 +1,6 @@
---- src/lattice.cpp.orig	2020-12-17 12:58:30 UTC
+--- src/lattice.cpp.orig	2026-03-01 10:27:31 UTC
 +++ src/lattice.cpp
-@@ -34,6 +34,10 @@
+@@ -27,6 +27,10 @@
  #include "part.hpp"
  #include "spiFlash.hpp"
  
@@ -10,4 +10,4 @@
 +
  using namespace std;
  
- #define ISC_ENABLE				0xc6
+ #define ISC_ENABLE					0xC6		/* ISC_ENABLE - Offline Mode */
