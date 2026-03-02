@@ -1,7 +1,6 @@
 PORTNAME=	nginx-ui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.2
-PORTREVISION=	2
+DISTVERSION=	2.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
@@ -16,7 +15,7 @@ WWW=		https://nginxui.com
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:1.26+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	0xJacky
 
@@ -39,7 +38,7 @@ BUILD_DATE=	$$(date -u +%s)
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the NGINX UI repository to get the value of GITID.
-GITID=		cb1fb691aff413a3bf322a5e48bd51c299051724
+GITID=		e5da6dd96dae5567a7aaa27a4000a4762696d89c
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor
