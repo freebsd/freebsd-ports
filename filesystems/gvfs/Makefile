@@ -37,14 +37,16 @@ MESON_ARGS=	-Dsystemduserunitdir=no \
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=	AVAHI FUSE AFC GOA SMB CDDA GOOGLE GPHOTO MTP NFS BLURAY
-OPTIONS_DEFAULT=AVAHI SMB CDDA GPHOTO MTP NFS BLURAY
+OPTIONS_DEFINE=	AFC AVAHI BLURAY CDDA FUSE GOA GOOGLE GPHOTO MTP NFS ONEDRIVE SMB
+OPTIONS_DEFAULT=	AVAHI SMB CDDA GPHOTO MTP NFS BLURAY
+OPTIONS_EXCLUDE=	ONEDRIVE
 OPTIONS_SUB=	yes
 
 AFC_DESC=	Apple device support
 BLURAY_DESC=	Blu-ray metadata support
 GOA_DESC=	GNOME Online Accounts volume monitor support
 GOOGLE_DESC=	Google backend
+ONEDRIVE_DESC=	OneDrive backend
 
 AFC_LIB_DEPENDS=	libimobiledevice-1.0.so:comms/libimobiledevice \
 			libplist-2.0.so:devel/libplist
@@ -64,9 +66,8 @@ CDDA_MESON_TRUE=	cdda
 FUSE_USES=		fuse:3
 FUSE_MESON_TRUE=	fuse
 
-GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
-			libmsgraph-1.so:net/msgraph
-GOA_MESON_TRUE=		goa onedrive
+GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts
+GOA_MESON_TRUE=		goa
 
 GOOGLE_IMPLIES=		GOA
 GOOGLE_LIB_DEPENDS=	libgdata.so:devel/libgdata
@@ -80,6 +81,10 @@ MTP_MESON_TRUE=		mtp
 
 NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 NFS_MESON_TRUE=		nfs
+
+ONEDRIVE_IMPLIES=	GOA
+ONEDRIVE_LIB_DEPENDS=	libmsgraph-1.so:net/msgraph
+ONEDRIVE_MESON_TRUE=	onedrive
 
 SMB_USES=		samba:lib
 SMB_MESON_TRUE=		smb
