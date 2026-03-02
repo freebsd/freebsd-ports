@@ -8,7 +8,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 WWW=		https://packages.octave.org/
 
-USES=		octave
+USES=		octave pkgconfig
 
 GNU_CONFIGURE=	yes
 
