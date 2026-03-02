@@ -36,10 +36,12 @@ share/man/man8/pkg-config.8.gz
 share/man/man8/pkg-create.8.gz
 share/man/man8/pkg-delete.8.gz
 share/man/man8/pkg-fetch.8.gz
+share/man/man8/pkg-help.8.gz
 share/man/man8/pkg-info.8.gz
 share/man/man8/pkg-install.8.gz
 share/man/man8/pkg-key.8.gz
 share/man/man8/pkg-lock.8.gz
+share/man/man8/pkg-plugins.8.gz
 share/man/man8/pkg-query.8.gz
 share/man/man8/pkg-register.8.gz
 share/man/man8/pkg-remove.8.gz
