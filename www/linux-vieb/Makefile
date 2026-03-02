@@ -1,9 +1,9 @@
 PORTNAME=	vieb
-DISTVERSION=	12.5.0
+DISTVERSION=	12.7.0
 PORTREVISION=	0
 CATEGORIES=	www linux
 MASTER_SITES=	https://github.com/Jelmerro/Vieb/releases/download/${DISTVERSION}/ \
-		LOCAL/nivit/${PORTNAME}/:images
+		LOCAL/nivit/${PKGNAMEPREFIX}${PORTNAME}/:images
 PKGNAMEPREFIX=	linux-
 DISTFILES=	vieb-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-images-${DISTVERSION}${EXTRACT_SUFX}:images
@@ -21,8 +21,8 @@ RUN_DEPENDS=	pulseaudio:audio/pulseaudio
 
 USES=		desktop-file-utils linux:rl9
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \
-		atk ca-certificates cups-libs dbuslibs devtools gtk3 imageformats-libs \
-		libdrm nss opus
+		atk ca-certificates cups-libs dbuslibs devtools gtk3 \
+		imageformats-libs libdrm nss opus
 
 DATADIR=	${PREFIX}/share/${PKGBASE}
 
