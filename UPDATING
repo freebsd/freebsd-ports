@@ -48,7 +48,7 @@ you update your ports collection, before attempting any port upgrades.
   After installing the new PostgreSQL version you need to convert
   all your databases to new version:
 
-  # su -l postgres -c "/usr/local/bin/initdb --encoding=utf-8 --lc-collate=C -D /var/db/postgres/data18 -U postgres"
+  # su -l postgres -c "/usr/local/bin/initdb --encoding=utf-8 --lc-collate=C --no-data-checksums -D /var/db/postgres/data18 -U postgres"
   # su -l postgres -c "pg_upgrade -b /tmp/pg-upgrade/usr/local/bin/ -d /var/db/postgres/data17/ -B /usr/local/bin/ -D /var/db/postgres/data18/ -U postgres "
 
   Now the migration is finished. You can start PostgreSQL again with:
@@ -57,6 +57,11 @@ you update your ports collection, before attempting any port upgrades.
 
   ATTENTION:
   1) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+  2) The initdb in the upgrade procedure uses '--no-data-checksums' to enable
+  pg_upgrade from before this change.  You should review the documentation and
+  decide whether you want to then enable checksums with pg_checksums.  Future
+  upgrade instructions for PostgreSQL 19 and later will assume a default
+  initdb, and therefore that checksums are enabled.
 
 20260226:
   AFFECTS: users of sysutils/symon
