@@ -420,7 +420,9 @@ memcache_DEPENDS=	databases/pecl-memcache@${PHP_FLAVOR}
 memcached_DEPENDS=	databases/pecl-memcached@${PHP_FLAVOR}
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
+.    if ${PHP_VER} <= 84
 opcache_DEPENDS=	www/php${PHP_VER}-opcache
+.    endif
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
 pdo_dblib_DEPENDS=	databases/php${PHP_VER}-pdo_dblib
