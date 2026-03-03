@@ -1,6 +1,6 @@
---- Makefile.in.orig	2023-07-05 20:58:38 UTC
+--- Makefile.in.orig	2026-02-28 15:49:29 UTC
 +++ Makefile.in
-@@ -15157,7 +15157,7 @@ ref-del.sed: $(libgroff_srcdir)/ref-del.sin
+@@ -20215,7 +20215,7 @@ ref-del.sed: $(libgroff_srcdir)/ref-del.sin
  	    $(libgroff_srcdir)/ref-del.sin > t-$@ \
  	  && mv t-$@ $@
  
