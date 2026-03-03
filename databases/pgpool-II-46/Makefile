@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-DISTVERSION=	4.6.5
+DISTVERSION=	4.6.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	-46
