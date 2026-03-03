@@ -1,0 +1,11 @@
+--- PKG-INFO.orig	2026-03-03 10:49:15.576988000 +0200
++++ PKG-INFO	2026-03-03 10:50:11.562701000 +0200
+@@ -25,7 +25,7 @@
+ Requires-Dist: attrs!=20.1.0,>=18.1; python_version < "3.11"
+ Requires-Dist: attrs>=22.1.0; python_version >= "3.11"
+ Requires-Dist: Beautifulsoup4[chardet]>=4.13.0
+-Requires-Dist: click>=8.3.0
++Requires-Dist: click>=8.1.7
+ Requires-Dist: requests[use_chardet_on_py3]>=2.7.0
+ Requires-Dist: saneyaml>=0.5.2
+ Requires-Dist: text_unidecode>=1.0
