@@ -1,5 +1,5 @@
 PORTNAME=	dlmdb
-PORTVERSION=	1.0.0.20260303
+PORTVERSION=	1.0.0.20260301
 CATEGORIES=	databases
 
 MAINTAINER=	markus.graf@markusgraf.net
