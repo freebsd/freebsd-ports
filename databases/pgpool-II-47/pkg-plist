@@ -36,10 +36,10 @@ include/libpcp_ext.h
 include/pcp.h
 include/pool_process_reporting.h
 include/pool_type.h
-lib/libpcp.a
-lib/libpcp.so
-lib/libpcp.so.3
-lib/libpcp.so.3.0.0
+lib/libpgpoolpcp.a
+lib/libpgpoolpcp.so
+lib/libpgpoolpcp.so.3
+lib/libpgpoolpcp.so.3.0.0
 %%DATADIR%%/insert_lock.sql
 %%DATADIR%%/pgpool.pam
 @dir /var/run/pgpool
