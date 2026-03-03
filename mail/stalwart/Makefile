@@ -1,6 +1,6 @@
 PORTNAME=	stalwart
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.4
+DISTVERSION=	0.15.5
 CATEGORIES=	mail
 
 MAINTAINER=	orville@anislet.dev
@@ -13,9 +13,6 @@ LICENSE_NAME_SELv1=	Stalwart Enterprise License 1.0
 LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
 LICENSE_FILE_SELv1=	${WRKSRC}/LICENSES/LicenseRef-SEL.txt
 LICENSE_PERMS_SELv1=	pkg-mirror auto-accept
-
-NOT_FOR_ARCHS=		powerpc powerpc64 powerpc64le riscv64
-NOT_FOR_ARCHS_REASON=	ring-v0.16.20 does not support this arch.
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -41,7 +38,7 @@ OPTIONS_EXCLUDE_armv6=	ROCKSDB
 OPTIONS_EXCLUDE_armv7=	ROCKSDB
 OPTIONS_EXCLUDE_i386=	ROCKSDB
 
-BACKEND_DESC=		Database and storage backends
+BACKENDS_DESC=		Database and storage backends
 AZURE_DESC=		Enable Azure storage backend
 ELASTIC_DESC=		Enable ElasticSearch backend
 ENTERPRISE_DESC=	Enable Enterprise features (require license)

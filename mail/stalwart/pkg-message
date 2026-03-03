@@ -13,5 +13,6 @@ secret = "yourplaintextpasswordhere"
 The secret will be replaced with a hash if you change the fallback
 admin's password in the web admin panel. The secret value can also be a
 password hash documented here: https://stalw.art/docs/auth/authentication/password/
+EOM
 }
 ]
