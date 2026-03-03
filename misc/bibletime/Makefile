@@ -9,6 +9,9 @@ WWW=		https://www.bibletime.info/
 
 LICENSE=	GPLv2
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	requires 64-bit platform (sizeof(qsizetype) must be 8)
+
 BUILD_DEPENDS=	po4a:textproc/po4a \
 		fop:textproc/fop
 LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
