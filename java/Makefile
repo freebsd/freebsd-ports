@@ -46,6 +46,7 @@
     SUBDIR += java-subversion
     SUBDIR += java-zoneinfo
     SUBDIR += java3d
+    SUBDIR += javacpp
     SUBDIR += javahelp
     SUBDIR += javamail
     SUBDIR += javavmwrapper
