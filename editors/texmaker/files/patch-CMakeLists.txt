@@ -1,0 +1,67 @@
+--- CMakeLists.txt.orig	2025-04-23 11:22:57 UTC
++++ CMakeLists.txt
+@@ -68,13 +68,6 @@ set(UTILITIES_FILES
+   ${CMAKE_SOURCE_DIR}/AUTHORS
+   ${CMAKE_SOURCE_DIR}/COPYING
+   ${CMAKE_SOURCE_DIR}/datas/CHANGELOG.txt
+-  ${CMAKE_SOURCE_DIR}/datas/distrib/linux/texmaker16x16.png
+-  ${CMAKE_SOURCE_DIR}/datas/distrib/linux/texmaker22x22.png
+-  ${CMAKE_SOURCE_DIR}/datas/distrib/linux/texmaker32x32.png
+-  ${CMAKE_SOURCE_DIR}/datas/distrib/linux/texmaker48x48.png
+-  ${CMAKE_SOURCE_DIR}/datas/distrib/linux/texmaker64x64.png
+-  ${CMAKE_SOURCE_DIR}/datas/distrib/linux/texmaker128x128.png
+-  ${CMAKE_SOURCE_DIR}/datas/distrib/linux/texmaker.svg
+   ${CMAKE_SOURCE_DIR}/datas/scripts/titlecase_selection.tms
+   ${CMAKE_SOURCE_DIR}/datas/scripts/hardwordwrap_selection_80col.tms
+   ${CMAKE_SOURCE_DIR}/translations/qt/qt_ar.qm
+@@ -386,7 +379,9 @@ set(CMAKE_AUTORCC ON)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_AUTORCC ON)
+ 
+-find_package(Qt6 REQUIRED COMPONENTS Gui Concurrent Core Core5Compat Network PrintSupport Qml Widgets Xml LinguistTools)
++find_package(Qt6 REQUIRED COMPONENTS Gui Concurrent Core Core5Compat CorePrivate Network PrintSupport Qml Widgets Xml LinguistTools)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(Hunspell REQUIRED IMPORTED_TARGET hunspell)
+ 
+ qt_standard_project_setup()
+ 
+@@ -448,23 +443,6 @@ ${texmaker_SRCS_PLATFORM}
+ 3rdparty/encodingprober/nsSJISProber.cpp 3rdparty/encodingprober/nsSJISProber.h
+ 3rdparty/encodingprober/nsUniversalDetector.cpp 3rdparty/encodingprober/nsUniversalDetector.h
+ 3rdparty/encodingprober/qencodingprober.cpp 3rdparty/encodingprober/qencodingprober.h
+-3rdparty/hunspell/affentry.cxx 3rdparty/hunspell/affentry.hxx
+-3rdparty/hunspell/affixmgr.cxx 3rdparty/hunspell/affixmgr.hxx
+-3rdparty/hunspell/atypes.hxx
+-3rdparty/hunspell/baseaffix.hxx
+-3rdparty/hunspell/csutil.cxx 3rdparty/hunspell/csutil.hxx
+-3rdparty/hunspell/filemgr.cxx 3rdparty/hunspell/filemgr.hxx
+-3rdparty/hunspell/hashmgr.cxx 3rdparty/hunspell/hashmgr.hxx
+-3rdparty/hunspell/htypes.hxx
+-3rdparty/hunspell/hunspell.cxx 3rdparty/hunspell/hunspell.h 3rdparty/hunspell/hunspell.hxx
+-3rdparty/hunspell/hunvisapi.h
+-3rdparty/hunspell/hunzip.cxx 3rdparty/hunspell/hunzip.hxx
+-3rdparty/hunspell/langnum.hxx
+-3rdparty/hunspell/phonet.cxx 3rdparty/hunspell/phonet.hxx
+-3rdparty/hunspell/replist.cxx 3rdparty/hunspell/replist.hxx
+-3rdparty/hunspell/suggestmgr.cxx 3rdparty/hunspell/suggestmgr.hxx
+-3rdparty/hunspell/utf_info.hxx
+-3rdparty/hunspell/w_char.hxx
+ 3rdparty/pdfium/core/fdrm/crypto/fx_crypt.cpp 3rdparty/pdfium/core/fdrm/crypto/fx_crypt.h
+ 3rdparty/pdfium/core/fdrm/crypto/fx_crypt_aes.cpp
+ 3rdparty/pdfium/core/fdrm/crypto/fx_crypt_sha.cpp
+@@ -1166,7 +1144,6 @@ set(TEXMAKER_INCLUDE_DIRECTORIES
+   ${CMAKE_SOURCE_DIR}/3rdparty
+   ${CMAKE_SOURCE_DIR}/3rdparty/encodingprober
+   ${CMAKE_SOURCE_DIR}/3rdparty/singleapp
+-  ${CMAKE_SOURCE_DIR}/3rdparty/hunspell
+   ${CMAKE_SOURCE_DIR}/3rdparty/synctex
+   ${CMAKE_SOURCE_DIR}/3rdparty/pdfium
+   ${CMAKE_SOURCE_DIR}/3rdparty/pdfium/fpdfsdk
+@@ -1454,6 +1431,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
+         Qt6::Qml
+         Qt6::Widgets
+         Qt6::Xml
++	PkgConfig::Hunspell
+ )
+ 
+ if (${INTERNALBROWSER} STREQUAL "yes")
