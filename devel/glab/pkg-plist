@@ -57,6 +57,7 @@
 %%MANPAGES%%share/man/man1/glab-deploy-key-list.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key.1.gz
 %%MANPAGES%%share/man/man1/glab-duo-ask.1.gz
+%%MANPAGES%%share/man/man1/glab-duo-cli.1.gz
 %%MANPAGES%%share/man/man1/glab-duo.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key-add.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key-delete.1.gz
@@ -170,6 +171,10 @@
 %%MANPAGES%%share/man/man1/glab-runner-controller-token.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller-update.1.gz
 %%MANPAGES%%share/man/man1/glab-runner-controller.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-list.1.gz
+%%MANPAGES%%share/man/man1/glab-runner-update.1.gz
+%%MANPAGES%%share/man/man1/glab-runner.1.gz
 %%MANPAGES%%share/man/man1/glab-schedule-create.1.gz
 %%MANPAGES%%share/man/man1/glab-schedule-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-schedule-list.1.gz
@@ -217,5 +222,7 @@
 %%MANPAGES%%share/man/man1/glab-variable-update.1.gz
 %%MANPAGES%%share/man/man1/glab-variable.1.gz
 %%MANPAGES%%share/man/man1/glab-version.1.gz
+%%MANPAGES%%share/man/man1/glab-work-items-list.1.gz
+%%MANPAGES%%share/man/man1/glab-work-items.1.gz
 %%MANPAGES%%share/man/man1/glab.1.gz
 bin/glab
