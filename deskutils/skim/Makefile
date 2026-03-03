@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
+DISTVERSION=	3.6.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -143,14 +143,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		indoc-2.0.7 \
 		insta-1.46.3 \
 		instability-0.3.11 \
-		interprocess-2.3.1 \
+		interprocess-2.4.0 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.17 \
-		jiff-0.2.20 \
-		jiff-static-0.2.20 \
-		js-sys-0.3.88 \
+		jiff-0.2.22 \
+		jiff-static-0.2.22 \
+		js-sys-0.3.91 \
 		kanal-0.1.1 \
 		kasuari-0.4.11 \
 		lab-0.11.0 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		ordered-float-4.6.0 \
-		owo-colors-4.2.3 \
+		owo-colors-4.3.0 \
 		page_size-0.6.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -197,7 +197,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		phf_generator-0.11.3 \
 		phf_macros-0.11.3 \
 		phf_shared-0.11.3 \
-		pin-project-lite-0.2.16 \
+		pin-project-lite-0.2.17 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
@@ -207,7 +207,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		powerfmt-0.2.0 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
-		pulldown-cmark-0.13.0 \
+		pulldown-cmark-0.13.1 \
 		quote-1.0.44 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
@@ -227,7 +227,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		redox_syscall-0.5.18 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
-		regex-syntax-0.8.9 \
+		regex-syntax-0.8.10 \
 		roff-0.2.2 \
 		roff-1.0.0 \
 		ron-0.12.0 \
@@ -309,14 +309,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.2+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.111 \
-		wasm-bindgen-macro-0.2.111 \
-		wasm-bindgen-macro-support-0.2.111 \
-		wasm-bindgen-shared-0.2.111 \
+		wasm-bindgen-0.2.114 \
+		wasm-bindgen-macro-0.2.114 \
+		wasm-bindgen-macro-support-0.2.114 \
+		wasm-bindgen-shared-0.2.114 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		web-sys-0.3.88 \
+		web-sys-0.3.91 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
 		wezterm-color-types-0.3.0 \
@@ -360,8 +360,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wit-bindgen-rust-macro-0.51.0 \
 		wit-component-0.244.0 \
 		wit-parser-0.244.0 \
-		zerocopy-0.8.39 \
-		zerocopy-derive-0.8.39 \
+		zerocopy-0.8.40 \
+		zerocopy-derive-0.8.40 \
 		zmij-1.0.21
 
 PLIST_FILES=	bin/sk
