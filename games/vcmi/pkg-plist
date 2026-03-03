@@ -121,6 +121,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/Sprites/mapFormatIcons/vcmi1.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/minimapIcons/bordergate.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/minimapIcons/borderguard.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites/minimapIcons/generic.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/minimapIcons/hero-overlay.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/minimapIcons/hero.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/minimapIcons/keymaster.png
@@ -237,7 +238,9 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/config/bulgarian.json
 %%DATADIR%%/Mods/vcmi/Content/config/chinese.json
 %%DATADIR%%/Mods/vcmi/Content/config/czech.json
+%%DATADIR%%/Mods/vcmi/Content/config/dutch.json
 %%DATADIR%%/Mods/vcmi/Content/config/english.json
+%%DATADIR%%/Mods/vcmi/Content/config/filipino.json
 %%DATADIR%%/Mods/vcmi/Content/config/finnish.json
 %%DATADIR%%/Mods/vcmi/Content/config/french.json
 %%DATADIR%%/Mods/vcmi/Content/config/german.json
@@ -246,6 +249,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/config/italian.json
 %%DATADIR%%/Mods/vcmi/Content/config/japanese.json
 %%DATADIR%%/Mods/vcmi/Content/config/korean.json
+%%DATADIR%%/Mods/vcmi/Content/config/latvian.json
 %%DATADIR%%/Mods/vcmi/Content/config/norwegian.json
 %%DATADIR%%/Mods/vcmi/Content/config/polish.json
 %%DATADIR%%/Mods/vcmi/Content/config/portuguese.json
@@ -359,6 +363,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/config/rmg/unknownUnused/wheel.json
 %%DATADIR%%/Mods/vcmi/Content/config/romanian.json
 %%DATADIR%%/Mods/vcmi/Content/config/russian.json
+%%DATADIR%%/Mods/vcmi/Content/config/serbian.json
 %%DATADIR%%/Mods/vcmi/Content/config/spanish.json
 %%DATADIR%%/Mods/vcmi/Content/config/spells.json
 %%DATADIR%%/Mods/vcmi/Content/config/swedish.json
@@ -429,6 +434,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/config/highscoreCreatures.json
 %%DATADIR%%/config/keyBindingsConfig.json
 %%DATADIR%%/config/mainmenu.json
+%%DATADIR%%/config/mapLayers.json
 %%DATADIR%%/config/mapOverrides.json
 %%DATADIR%%/config/objects/cartographer.json
 %%DATADIR%%/config/objects/coverOfDarkness.json
@@ -494,6 +500,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/config/schemas/lobbyProtocol/serverLoginSuccess.json
 %%DATADIR%%/config/schemas/lobbyProtocol/serverProxyLogin.json
 %%DATADIR%%/config/schemas/mapHeader.json
+%%DATADIR%%/config/schemas/mapLayer.json
 %%DATADIR%%/config/schemas/market.json
 %%DATADIR%%/config/schemas/mmaiSettings.json
 %%DATADIR%%/config/schemas/mod.json
@@ -529,6 +536,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/config/textColors.json
 %%DATADIR%%/config/widgets/advancedOptionsTab.json
 %%DATADIR%%/config/widgets/adventureMap.json
+%%DATADIR%%/config/widgets/adventureMapPortrait.json
 %%DATADIR%%/config/widgets/battleWindow2.json
 %%DATADIR%%/config/widgets/buttons/battleUnitAction.json
 %%DATADIR%%/config/widgets/buttons/campaignBonusSelection.json
