@@ -4778,6 +4778,7 @@
     SUBDIR += py-custodian
     SUBDIR += py-cvss
     SUBDIR += py-cwcwidth
+    SUBDIR += py-cwltest
     SUBDIR += py-cxx
     SUBDIR += py-cycler
     SUBDIR += py-cyclopts
