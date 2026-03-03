@@ -1,6 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	32.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/obsproject/obs-studio/releases/download/${DISTVERSION}/
 DISTFILES=	OBS-Studio-${DISTVERSION}-Sources${EXTRACT_SUFX}
@@ -76,10 +76,8 @@ LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-sources
 
-WITH_DEBUG=		yes # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=292376#c6
-
-OPTIONS_DEFINE=		BROWSER PIPEWIRE VLC VST WAYLAND
-OPTIONS_DEFAULT=	PIPEWIRE VLC VST WAYLAND
+OPTIONS_DEFINE=		BROWSER NVENC PIPEWIRE VLC VST WAYLAND
+OPTIONS_DEFAULT=	NVENC PIPEWIRE VLC VST WAYLAND
 OPTIONS_MULTI=		AUDIO
 OPTIONS_MULTI_AUDIO=	JACK PULSEAUDIO SNDIO
 OPTIONS_DEFAULT+=	${OPTIONS_MULTI_AUDIO}
@@ -93,6 +91,10 @@ BROWSER_BROKEN=		Needs CEF (Chromium Embedded Framework) which isn't yet ported
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_ON=		-DENABLE_JACK=TRUE
 JACK_CMAKE_OFF=		-DDISABLE_JACK=TRUE
+
+NVENC_DESC=		NVIDIA Hardware Encoder Plugin
+NVENC_BUILD_DEPENDS=	ffnvcodec-headers>=13.0.19.0:multimedia/ffnvcodec-headers
+NVENC_CMAKE_BOOL=	ENABLE_NVENC
 
 PIPEWIRE_DESC=		Screen capture via PipeWire
 PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire

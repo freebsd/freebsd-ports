@@ -1,5 +1,14 @@
---- plugins/CMakeLists.txt.orig	2025-08-01 04:15:57 UTC
+--- plugins/CMakeLists.txt.orig	2025-09-26 21:04:14 UTC
 +++ plugins/CMakeLists.txt
+@@ -61,7 +61,7 @@ add_obs_plugin(obs-libfdk)
+ add_obs_plugin(obs-ffmpeg)
+ add_obs_plugin(obs-filters)
+ add_obs_plugin(obs-libfdk)
+-add_obs_plugin(obs-nvenc PLATFORMS WINDOWS LINUX ARCHITECTURES x64 x86_64)
++add_obs_plugin(obs-nvenc PLATFORMS WINDOWS LINUX FREEBSD ARCHITECTURES x64 x86_64)
+ add_obs_plugin(obs-outputs)
+ add_obs_plugin(
+     obs-qsv11
 @@ -72,7 +72,7 @@ add_obs_plugin(
  add_obs_plugin(obs-transitions)
  add_obs_plugin(
