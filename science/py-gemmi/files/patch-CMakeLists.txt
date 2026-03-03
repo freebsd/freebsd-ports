@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2025-07-05 13:51:16 UTC
+--- CMakeLists.txt.orig	2026-03-02 03:06:09 UTC
 +++ CMakeLists.txt
 @@ -6,7 +6,7 @@ string(REGEX REPLACE ".+\"([0-9]+\.[0-9]+\.[0-9]+)(-de
  string(REGEX REPLACE ".+\"([0-9]+\.[0-9]+\.[0-9]+)(-dev)?\"" "\\1"
@@ -18,7 +18,7 @@
  option(BUILD_SHARED_LIBS "Build shared library" ON)
  option(BUILD_GEMMI_PROGRAM "Build gemmi command-line program" ON)
  option(INSTALL_DEV_FILES "Install C++ headers, cmake configs, static lib" ON)
-@@ -203,70 +205,6 @@ endif()
+@@ -203,70 +205,7 @@ endif()
  #  target_link_libraries(fgemmi PRIVATE cgemmi)
  #endif()
  
@@ -29,10 +29,10 @@
 -    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
 -target_compile_features(gemmi_headers INTERFACE cxx_std_14)
 -set_target_properties(gemmi_headers PROPERTIES EXPORT_NAME headers)
--
+ 
 -add_library(gemmi_cpp
--            src/align.cpp src/assembly.cpp src/calculate.cpp src/ccp4.cpp
--            src/crd.cpp src/ddl.cpp src/eig3.cpp src/fprime.cpp src/gz.cpp
+-            src/ace_cc.cpp src/ace_graph.cpp src/acedrg_tables.cpp src/align.cpp src/assembly.cpp src/calculate.cpp src/ccp4.cpp
+-            src/crd.cpp src/ddl.cpp src/eig3.cpp src/flat.cpp src/fprime.cpp src/gz.cpp
 -            src/intensit.cpp src/json.cpp src/mmcif.cpp src/mmread_gz.cpp
 -            src/monlib.cpp src/mtz.cpp src/mtz2cif.cpp
 -            src/pdb.cpp src/polyheur.cpp src/read_cif.cpp
@@ -89,7 +89,7 @@
  ### programs from prog/ ###
  
  add_library(options OBJECT prog/options.cpp)
-@@ -282,7 +220,7 @@ function(add_single_prog target)
+@@ -282,7 +221,7 @@ function(add_single_prog target)
    cmake_parse_arguments(arg "" "ADD_SRC" "" ${ARGN})
    add_executable(gemmi-${target} EXCLUDE_FROM_ALL prog/${target}.cpp ${arg_ADD_SRC}
                   $<TARGET_OBJECTS:options>)
@@ -98,7 +98,7 @@
    target_include_directories(gemmi-${target} PRIVATE
                               "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
  endfunction()
-@@ -337,7 +275,7 @@ add_executable(gemmi::prog ALIAS gemmi_prog)
+@@ -337,7 +276,7 @@ add_executable(gemmi::prog ALIAS gemmi_prog)
                 prog/wcn.cpp prog/xds2mtz.cpp
                 $<TARGET_OBJECTS:options>)
  add_executable(gemmi::prog ALIAS gemmi_prog)
@@ -107,7 +107,7 @@
  target_include_directories(gemmi_prog PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
  target_compile_definitions(gemmi_prog PRIVATE GEMMI_ALL_IN_ONE=1)
  set_target_properties(gemmi_prog PROPERTIES OUTPUT_NAME gemmi EXPORT_NAME prog)
-@@ -377,17 +315,17 @@ target_compile_definitions(cpptest PRIVATE USE_STD_SNP
+@@ -377,17 +316,17 @@ target_compile_definitions(cpptest PRIVATE USE_STD_SNP
  
  add_executable(cpptest EXCLUDE_FROM_ALL tests/main.cpp tests/cif.cpp tests/windowsh.cpp)
  target_compile_definitions(cpptest PRIVATE USE_STD_SNPRINTF=1)
@@ -128,7 +128,7 @@
  
  # always compile these tests with assertions enabled
  if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU|Intel")
-@@ -395,14 +333,14 @@ add_executable(test_disulf EXCLUDE_FROM_ALL tests/disu
+@@ -395,14 +334,14 @@ add_executable(test_disulf EXCLUDE_FROM_ALL tests/disu
  endif()
  
  add_executable(test_disulf EXCLUDE_FROM_ALL tests/disulf.cpp)
@@ -146,7 +146,7 @@
  
  enable_testing()
  
-@@ -439,7 +377,7 @@ if (benchmark_FOUND)
+@@ -439,7 +378,7 @@ if (benchmark_FOUND)
    foreach(b stoi elem mod niggli pdb resinfo round sym writecif)
      add_executable(${b}-bm EXCLUDE_FROM_ALL benchmarks/${b}.cpp)
      if (b MATCHES "elem|resinfo|pdb|sym|writecif")
@@ -155,7 +155,7 @@
      endif()
      target_link_libraries(${b}-bm PRIVATE gemmi_headers benchmark::benchmark)
      set_property(TARGET ${b}-bm PROPERTY RUNTIME_OUTPUT_DIRECTORY
-@@ -480,11 +418,11 @@ if (USE_PYTHON)
+@@ -484,11 +423,11 @@ if (USE_PYTHON)
            python/unitcell.cpp python/write.cpp)
  
    if (STANDALONE_PYTHON_MODULE)
@@ -170,7 +170,7 @@
    endif()
    set_property(TARGET gemmi_py PROPERTY OUTPUT_NAME gemmi_ext)
    if (CMAKE_CONFIGURATION_TYPES)
-@@ -567,19 +505,19 @@ endif()
+@@ -577,19 +516,19 @@ endif()
    install(TARGETS gemmi_prog EXPORT GemmiTargets)
  endif()
  

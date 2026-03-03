@@ -1,4 +1,7 @@
 bin/gemmi
+include/gemmi/ace_cc.hpp
+include/gemmi/ace_graph.hpp
+include/gemmi/acedrg_tables.hpp
 include/gemmi/addends.hpp
 include/gemmi/align.hpp
 include/gemmi/assembly.hpp
@@ -30,11 +33,13 @@ include/gemmi/elem.hpp
 include/gemmi/enumstr.hpp
 include/gemmi/fail.hpp
 include/gemmi/fileutil.hpp
+include/gemmi/flat.hpp
 include/gemmi/floodfill.hpp
 include/gemmi/formfact.hpp
 include/gemmi/fourier.hpp
 include/gemmi/fprime.hpp
 include/gemmi/fstream.hpp
+include/gemmi/glob.hpp
 include/gemmi/grid.hpp
 include/gemmi/gz.hpp
 include/gemmi/input.hpp
@@ -65,6 +70,7 @@ include/gemmi/pdb.hpp
 include/gemmi/pdb_id.hpp
 include/gemmi/pirfasta.hpp
 include/gemmi/polyheur.hpp
+include/gemmi/pymol_select.hpp
 include/gemmi/qcp.hpp
 include/gemmi/read_cif.hpp
 include/gemmi/recgrid.hpp
@@ -87,6 +93,7 @@ include/gemmi/sprintf.hpp
 include/gemmi/stats.hpp
 include/gemmi/symmetry.hpp
 include/gemmi/third_party/fast_float.h
+include/gemmi/third_party/half.hpp
 include/gemmi/third_party/pocketfft_hdronly.h
 include/gemmi/third_party/tao/LICENSE
 include/gemmi/third_party/tao/NOTES
