@@ -1,0 +1,2 @@
+DLMDB is a fork of LMDB which serves as the datastore of dtlnative, the backend
+of datalevin, a clojure datalog database.
