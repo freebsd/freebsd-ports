@@ -10,7 +10,7 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		octave autoreconf compiler:gcc-c++11-lib
+USES=		octave autoreconf
 
 LIB_DEPENDS+=	libgtest.so:devel/googletest \
 		libmetis.so:math/metis \
@@ -24,6 +24,7 @@ RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/mboct-octave-pkg.tar.gz:math/octave-forge-m
 USE_GITHUB=	yes
 GH_ACCOUNT=	octave-user
 GH_PROJECT=	mboct-fem-pkg
+USE_GCC=	yes
 
 OCTAVE_SRC=	${GH_PROJECT}-${DISTVERSION}
 
