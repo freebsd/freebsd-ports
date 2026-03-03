@@ -1,6 +1,6 @@
 PORTNAME=	obfs4proxy
 DISTVERSION=	0.0.14
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	security net
 PKGNAMESUFFIX=	-tor
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,21 +17,20 @@ USES=		cpe go:modules tar:xz
 CPE_VENDOR=	torproject
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	FiloSottile:edwards25519:v1.0.0:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
-		dchest:siphash:v1.2.3:siphash/vendor/github.com/dchest/siphash \
-		dsnet:compress:f66993602bf5:dsnet_compress/vendor/github.com/dsnet/compress \
-		golang:crypto:56aed061732a:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:f15817d10f9b:golang_net/vendor/golang.org/x/net \
-		golang:sys:95e765b1cc43:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.8:golang_text/vendor/golang.org/x/text \
-		torbsd:goptlib:v1.2.0:goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git
+GH_TUPLE=	FiloSottile:edwards25519:v1.2.0:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
+		dchest:siphash:v1.2.3:dchest_siphash/vendor/github.com/dchest/siphash \
+		golang:crypto:v0.14.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:v0.17.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.34.0:golang_text/vendor/golang.org/x/text \
+		torbsd:goptlib:f4bb5dd5725833bd880347b8fbaf60522ed0a710:goptlib/vendor/gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/goptlib
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	yawning
 GL_PROJECT=	obfs4
-GL_TAGNAME=	336a71d6e4cfd2d33e9c57797828007ad74975e9
+GL_TAGNAME=	c3e2d44b1033e03645cc971565175e56d86a8200
 GL_TUPLE=	yawning:bsaes:0a714cd429ec754482b4001e918db30cd2094405:yawning_bsaes/vendor/gitlab.com/yawning/bsaes.git \
-		yawning:edwards25519-extra:def713fd18e464864613d2b55ef41a21df2c9493:yawning_edwards25519extra/vendor/gitlab.com/yawning/edwards25519-extra.git \
+		yawning:edwards25519-extra:2149dcafc266f66d2487f45b156f6397f9c4760b:yawning_edwards25519extra/vendor/gitlab.com/yawning/edwards25519-extra \
 		yawning:utls:f1bcf4b40e4596d0ccd1dbf8f3a9f4922f9759ca:yawning_utls/vendor/gitlab.com/yawning/utls.git
 
 GO_PKGNAME=	gitlab.com/yawning/obfs4
