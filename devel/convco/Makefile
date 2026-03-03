@@ -1,7 +1,6 @@
 PORTNAME=	convco
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
-PORTREVISION=	3
+DISTVERSION=	0.6.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,52 +13,52 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 
-CARGO_CRATES=	addr2line-0.24.2 \
-		adler2-2.0.0 \
-		aho-corasick-1.1.3 \
-		anstream-0.6.18 \
-		anstyle-1.0.10 \
-		anstyle-parse-0.2.6 \
-		anstyle-query-1.1.2 \
+CARGO_CRATES=	aho-corasick-1.1.4 \
+		anstream-0.6.21 \
+		anstyle-1.0.13 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.6 \
-		anyhow-1.0.95 \
-		backtrace-0.3.74 \
-		bitflags-2.6.0 \
+		anyhow-1.0.102 \
+		bitflags-2.11.0 \
 		block-buffer-0.10.4 \
+		block2-0.6.2 \
 		cc-1.2.6 \
-		cfg-if-1.0.0 \
+		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.27 \
-		clap_builder-4.5.27 \
-		clap_complete-4.5.43 \
-		clap_derive-4.5.24 \
-		clap_lex-0.7.4 \
+		clap-4.5.60 \
+		clap_builder-4.5.60 \
+		clap_complete-4.5.66 \
+		clap_derive-4.5.55 \
+		clap_lex-1.0.0 \
 		cmake-0.1.52 \
-		colorchoice-1.0.3 \
-		console-0.15.10 \
-		cpufeatures-0.2.16 \
-		crypto-common-0.1.6 \
-		ctrlc-3.4.5 \
-		darling-0.20.10 \
-		darling_core-0.20.10 \
-		darling_macro-0.20.10 \
+		colorchoice-1.0.4 \
+		console-0.16.2 \
+		cpufeatures-0.2.17 \
+		crypto-common-0.1.7 \
+		ctrlc-3.5.2 \
+		darling-0.20.11 \
+		darling_core-0.20.11 \
+		darling_macro-0.20.11 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
-		dialoguer-0.11.0 \
+		dialoguer-0.12.0 \
 		digest-0.10.7 \
+		dispatch2-0.3.1 \
 		displaydoc-0.2.5 \
 		encode_unicode-1.0.0 \
 		equivalent-1.0.1 \
-		errno-0.3.10 \
+		errno-0.3.14 \
 		fastrand-2.3.0 \
 		fnv-1.0.7 \
-		form_urlencoded-1.2.1 \
+		foldhash-0.1.5 \
+		form_urlencoded-1.2.2 \
 		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
-		gimli-0.31.1 \
-		git2-0.20.0 \
-		handlebars-6.3.0 \
+		getrandom-0.4.1 \
+		git2-0.20.4 \
+		handlebars-6.4.0 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		icu_collections-1.5.0 \
@@ -72,82 +71,93 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_properties_data-1.5.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
+		id-arena-2.3.0 \
 		ident_case-1.0.1 \
-		idna-1.0.3 \
+		idna-1.1.0 \
 		idna_adapter-1.2.0 \
 		indexmap-2.7.0 \
-		is_terminal_polyfill-1.70.1 \
-		itoa-1.0.14 \
-		jiff-0.1.28 \
-		jiff-tzdb-0.1.2 \
-		jiff-tzdb-platform-0.1.2 \
+		is_terminal_polyfill-1.70.2 \
+		itoa-1.0.17 \
+		jiff-0.2.22 \
+		jiff-static-0.2.22 \
+		jiff-tzdb-0.1.5 \
+		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.32 \
-		libc-0.2.169 \
-		libgit2-sys-0.18.0+1.9.0 \
+		leb128fmt-0.1.0 \
+		libc-0.2.182 \
+		libgit2-sys-0.18.3+1.9.2 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.20 \
-		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.12.1 \
 		litemap-0.7.4 \
-		log-0.4.22 \
-		memchr-2.7.4 \
-		miniz_oxide-0.8.2 \
-		nix-0.29.0 \
+		log-0.4.29 \
+		memchr-2.8.0 \
+		nix-0.31.2 \
 		num-modular-0.6.1 \
 		num-order-1.2.0 \
-		object-0.36.7 \
-		once_cell-1.20.2 \
+		objc2-0.6.4 \
+		objc2-encode-4.1.0 \
+		once_cell-1.21.3 \
 		openssl-sys-0.9.104 \
-		percent-encoding-2.3.1 \
-		pest-2.7.15 \
-		pest_derive-2.7.15 \
-		pest_generator-2.7.15 \
-		pest_meta-2.7.15 \
+		percent-encoding-2.3.2 \
+		pest-2.8.6 \
+		pest_derive-2.8.6 \
+		pest_generator-2.8.6 \
+		pest_meta-2.8.6 \
 		pkg-config-0.3.31 \
-		portable-atomic-1.10.0 \
+		portable-atomic-1.13.1 \
 		portable-atomic-util-0.2.4 \
-		proc-macro2-1.0.92 \
-		quote-1.0.38 \
-		regex-1.11.1 \
-		regex-automata-0.4.9 \
-		regex-syntax-0.8.5 \
-		rustc-demangle-0.1.24 \
-		rustix-0.38.42 \
-		ryu-1.0.18 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.106 \
+		quote-1.0.44 \
+		r-efi-5.3.0 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		rustix-1.1.4 \
+		ryu-1.0.23 \
 		same-file-1.0.6 \
-		semver-1.0.25 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.134 \
+		semver-1.0.27 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
 		serde_norway-0.9.42 \
-		sha2-0.10.8 \
-		shell-words-1.1.0 \
+		sha2-0.10.9 \
+		shell-words-1.1.1 \
 		shlex-1.3.0 \
 		smallvec-1.13.2 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
-		syn-2.0.93 \
+		syn-2.0.117 \
 		synstructure-0.13.1 \
-		tempfile-3.14.0 \
-		thiserror-1.0.69 \
-		thiserror-2.0.11 \
-		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.11 \
-		thread_local-1.1.8 \
+		tempfile-3.26.0 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		thread_local-1.1.9 \
 		tinystr-0.7.6 \
-		typenum-1.17.0 \
+		typenum-1.19.0 \
 		ucd-trie-0.1.7 \
-		unicode-ident-1.0.14 \
-		unicode-width-0.2.0 \
+		unicode-ident-1.0.24 \
+		unicode-width-0.2.2 \
+		unicode-xid-0.2.6 \
 		unsafe-libyaml-norway-0.2.15 \
-		url-2.5.4 \
+		url-2.5.8 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
+		wasip2-1.0.1+wasi-0.2.4 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
 		winapi-util-0.1.9 \
+		windows-link-0.2.1 \
 		windows-sys-0.59.0 \
+		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.52.6 \
@@ -157,15 +167,23 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
+		wit-bindgen-0.46.0 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
-		zeroize-1.8.1 \
+		zeroize-1.8.2 \
 		zerovec-0.10.4 \
-		zerovec-derive-0.10.3
+		zerovec-derive-0.10.3 \
+		zmij-1.0.21
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
