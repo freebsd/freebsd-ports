@@ -2,12 +2,12 @@
 .\"     Title: xmllint
 .\"    Author: John Fleck <jfleck@inkstain.net>
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 01/27/2026
+.\"      Date: 03/04/2026
 .\"    Manual: xmllint Manual
 .\"    Source: xmllint
 .\"  Language: English
 .\"
-.TH "XMLLINT" "1" "01/27/2026" "xmllint" "xmllint Manual"
+.TH "XMLLINT" "1" "03/04/2026" "xmllint" "xmllint Manual"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -31,7 +31,7 @@
 xmllint \- command line XML tool
 .SH "SYNOPSIS"
 .HP \w'\fBxmllint\fR\ 'u
-\fBxmllint\fR [\fB\-\-version\fR | \fB\-\-debug\fR | \fB\-\-quiet\fR | \fB\-\-shell\fR | \fB\-\-xpath\ "\fR\fB\fIXPath_expression\fR\fR\fB"\fR | \fB\-\-copy\fR | \fB\-\-recover\fR | \fB\-\-huge\fR | \fB\-\-nocompact\fR | \fB\-\-nodefdtd\fR | \fB\-\-nodict\fR | \fB\-\-noenc\fR | \fB\-\-noent\fR | \fB\-\-nofixup\-base\-uris\fR | \fB\-\-noout\fR | \fB\-\-nonet\fR | \fB\-\-path\ "\fR\fB\fIPATH(S)\fR\fR\fB"\fR | \fB\-\-load\-trace\fR | \fB\-\-valid\fR | \fB\-\-postvalid\fR | \fB\-\-dtdvalid\ \fR\fB\fIURL\fR\fR | \fB\-\-dtdvalidfpi\ \fR\fB\fIFPI\fR\fR | \fB\-\-timing\fR | \fB\-\-output\ \fR\fB\fIFILE\fR\fR | \fB\-\-repeat\fR | \fB\-\-insert\fR | \fB\-\-strict\-namespace\fR | \fB\-\-compress\fR | \fB\-\-html\fR | \fB\-\-xmlout\fR | \fB\-\-push\fR | \fB\-\-memory\fR | \fB\-\-max\-ampl\ \fR\fB\fIINTEGER\fR\fR | \fB\-\-maxmem\ \fR\fB\fINBBYTES\fR\fR | \fB\-\-nowarning\fR | \fB\-\-noblanks\fR | \fB\-\-nocdata\fR | \fB\-\-format\fR | \fB\-\-pretty\ \fR\fB\fIINTEGER\fR\fR | \fB\-\-encode\ \fR\fB\fIENCODING\fR\fR | \fB\-\-dropdtd\fR | \fB\-\-nsclean\fR | \fB\-\-catalogs\fR | \fB\-\-nocatalogs\fR | \fB\-\-auto\fR | \fB\-\-xinclude\fR | \fB\-\-noxincludenode\fR | \fB\-\-loaddtd\fR | \fB\-\-dtdattr\fR | \fB\-\-stream\fR | \fB\-\-walker\fR | \fB\-\-pattern\ \fR\fB\fIPATTERNVALUE\fR\fR | \fB\-\-relaxng\ \fR\fB\fISCHEMA\fR\fR | \fB\-\-schema\ \fR\fB\fISCHEMA\fR\fR | \fB\-\-schematron\ \fR\fB\fISCHEMA\fR\fR | \fB\-\-c14n\fR | \fB\-\-c14n11\fR | \fB\-\-exc\-c14n\fR | \fB\-\-pedantic\fR | \fB\-\-sax\fR | \fB\-\-sax1\fR | \fB\-\-oldxml10\fR] {\fIXML\-FILE(S)\fR... | \-}
+\fBxmllint\fR [\fB\-\-version\fR | \fB\-\-debug\fR | \fB\-\-quiet\fR | \fB\-\-shell\fR | \fB\-\-xpath\ "\fR\fB\fIXPath_expression\fR\fR\fB"\fR | \fB\-\-xpath0\ "\fR\fB\fIXPath_expression\fR\fR\fB"\fR | \fB\-\-copy\fR | \fB\-\-recover\fR | \fB\-\-huge\fR | \fB\-\-nocompact\fR | \fB\-\-nodefdtd\fR | \fB\-\-nodict\fR | \fB\-\-noenc\fR | \fB\-\-noent\fR | \fB\-\-nofixup\-base\-uris\fR | \fB\-\-noout\fR | \fB\-\-nonet\fR | \fB\-\-path\ "\fR\fB\fIPATH(S)\fR\fR\fB"\fR | \fB\-\-load\-trace\fR | \fB\-\-valid\fR | \fB\-\-postvalid\fR | \fB\-\-dtdvalid\ \fR\fB\fIURL\fR\fR | \fB\-\-dtdvalidfpi\ \fR\fB\fIFPI\fR\fR | \fB\-\-timing\fR | \fB\-\-output\ \fR\fB\fIFILE\fR\fR | \fB\-\-repeat\fR | \fB\-\-insert\fR | \fB\-\-strict\-namespace\fR | \fB\-\-compress\fR | \fB\-\-html\fR | \fB\-\-xmlout\fR | \fB\-\-push\fR | \fB\-\-memory\fR | \fB\-\-max\-ampl\ \fR\fB\fIINTEGER\fR\fR | \fB\-\-maxmem\ \fR\fB\fINBBYTES\fR\fR | \fB\-\-nowarning\fR | \fB\-\-noblanks\fR | \fB\-\-nocdata\fR | \fB\-\-format\fR | \fB\-\-pretty\ \fR\fB\fIINTEGER\fR\fR | \fB\-\-encode\ \fR\fB\fIENCODING\fR\fR | \fB\-\-dropdtd\fR | \fB\-\-nsclean\fR | \fB\-\-catalogs\fR | \fB\-\-nocatalogs\fR | \fB\-\-auto\fR | \fB\-\-xinclude\fR | \fB\-\-noxincludenode\fR | \fB\-\-loaddtd\fR | \fB\-\-dtdattr\fR | \fB\-\-stream\fR | \fB\-\-walker\fR | \fB\-\-pattern\ \fR\fB\fIPATTERNVALUE\fR\fR | \fB\-\-relaxng\ \fR\fB\fISCHEMA\fR\fR | \fB\-\-schema\ \fR\fB\fISCHEMA\fR\fR | \fB\-\-schematron\ \fR\fB\fISCHEMA\fR\fR | \fB\-\-c14n\fR | \fB\-\-c14n11\fR | \fB\-\-exc\-c14n\fR | \fB\-\-pedantic\fR | \fB\-\-sax\fR | \fB\-\-sax1\fR | \fB\-\-oldxml10\fR] {\fIXML\-FILE(S)\fR... | \-}
 .SH "DESCRIPTION"
 .PP
 The
