@@ -1,0 +1,4 @@
+types-aws-xray-sdk is typing stubs for aws-xray-sdk.
+
+This package provides type stubs for the AWS X-Ray SDK for Python, which
+enables distributed tracing for AWS services.

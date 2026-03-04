@@ -6188,6 +6188,7 @@
     SUBDIR += py-typer-slim
     SUBDIR += py-types-Flask-Cors
     SUBDIR += py-types-Pygments
+    SUBDIR += py-types-aws-xray-sdk
     SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
     SUBDIR += py-types-jsonschema
