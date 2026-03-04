@@ -1,30 +1,26 @@
---- CMakeLists.txt.orig	2024-07-20 19:07:27 UTC
+--- CMakeLists.txt.orig	2026-01-20 17:34:25 UTC
 +++ CMakeLists.txt
-@@ -50,10 +50,11 @@ else()
-     # remove this block once CMake >=3.1 has fixated in the ecosystem
-     add_compile_options(-std=c++11)
- else()
-+    # Use c++11 to silence warnings
+@@ -60,7 +60,7 @@ else()
      include(CheckCXXCompilerFlag)
      check_cxx_compiler_flag(-std=c++17 COMPILER_SUPPORTS_CXX17)
      if(COMPILER_SUPPORTS_CXX17)
--    set(CMAKE_CXX_STANDARD 17)
-+    set(CMAKE_CXX_STANDARD 11)
+-        set(CMAKE_CXX_STANDARD 17)
++        set(CMAKE_CXX_STANDARD 11)
      else()
-     set(CMAKE_CXX_STANDARD 11)
+         set(CMAKE_CXX_STANDARD 11)
      endif()
-@@ -61,9 +62,7 @@ endif()
+@@ -69,9 +69,7 @@ endif()
      set(CMAKE_CXX_EXTENSIONS OFF)
  endif()
  
 -#add_compile_options(-Wall -Wno-unused-function)
--add_compile_options(-Wno-subobject-linkage) # Suppress bifrost warning
+-add_compile_options(-Wno-deprecated-declarations -Wno-subobject-linkage) # Suppress bifrost warning
 -set(PROJECT_BIFROST_CMAKE_CXX_FLAGS "-Wno-subobject-linkage -Wno-return-type") # Suppress bifrost warning
 +set(PROJECT_BIFROST_CMAKE_CXX_FLAGS "-Wno-return-type") # Suppress bifrost warning
  
  if(LINK MATCHES static)
      message("static build")
-@@ -73,24 +72,13 @@ include(ExternalProject)
+@@ -81,24 +79,13 @@ include(ExternalProject)
  
  
  include(ExternalProject)
@@ -33,9 +29,9 @@
 -    PREFIX ${PROJECT_SOURCE_DIR}/ext/htslib
 -    SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/htslib
 -    BUILD_IN_SOURCE 1
--    CONFIGURE_COMMAND autoreconf -i && autoheader &&  autoconf && ${PROJECT_SOURCE_DIR}/ext/htslib/configure
--        --prefix=${PREFIX} --disable-bz2 --disable-lzma --disable-libcurl
--    BUILD_COMMAND make lib-static
+-    CONFIGURE_COMMAND "" #autoreconf -i && autoheader &&  autoconf && ${PROJECT_SOURCE_DIR}/ext/htslib/configure
+-        #--prefix=${PREFIX} --disable-bz2 --disable-lzma --disable-libcurl
+-    BUILD_COMMAND "" #make lib-static
 -    INSTALL_COMMAND ""
 -)
 -endif(USE_BAM)
@@ -50,7 +46,7 @@
      INSTALL_COMMAND ""
  )
  
-@@ -101,7 +89,7 @@ if (ZLIBNG)
+@@ -109,13 +96,13 @@ if (ZLIBNG)
      SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/zlib-ng
      BUILD_IN_SOURCE 1
      CONFIGURE_COMMAND mkdir -p zlib-ng && cd zlib-ng && cmake .. -DZLIB_COMPAT=ON -DZLIB_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=${PREFIX}
@@ -59,3 +55,10 @@
      INSTALL_COMMAND ""
      )
  endif(ZLIBNG)
+ 
+ if (USE_BAM)
+-    include_directories(${htslib_PREFIX}/src/htslib)
++    include_directories(${LOCALBASE}/htslib)
+ endif(USE_BAM)
+ 
+ include_directories(${EXT_PROJECTS_DIR}/bifrost/build/src)

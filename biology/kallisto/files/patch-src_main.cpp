@@ -1,10 +1,10 @@
---- src/main.cpp.orig	2023-11-02 11:38:09 UTC
+--- src/main.cpp.orig	2026-01-20 17:34:25 UTC
 +++ src/main.cpp
-@@ -11,6 +11,7 @@
- #include <limits>
+@@ -1,6 +1,7 @@
+ #include <getopt.h>
+ #include <sys/stat.h>
+ #include <time.h>
++#include <unistd.h>
  
- #include <cstdio>
-+#include <unistd.h>	// rmdir()
- 
- #include "common.h"
- #include "ProcessReads.h"
+ #include <CompactedDBG.hpp>
+ #include <algorithm>
