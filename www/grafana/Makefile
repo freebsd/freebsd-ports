@@ -1,6 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.3.3
+DISTVERSION=	12.4.0
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/ \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -9,19 +9,24 @@ DISTFILES=	grafana-${DISTVERSION}.linux-amd64${EXTRACT_SUFX} \
 		go.work:gomod \
 		apps/advisor/go.mod:gomod \
 		apps/alerting/alertenrichment/go.mod:gomod \
+		apps/alerting/historian/go.mod:gomod \
 		apps/alerting/notifications/go.mod:gomod \
 		apps/alerting/rules/go.mod:gomod \
+		apps/annotation/go.mod:gomod \
+		apps/collections/go.mod:gomod \
 		apps/correlations/go.mod:gomod \
 		apps/dashboard/go.mod:gomod \
+		apps/dashvalidator/go.mod:gomod \
 		apps/example/go.mod:gomod \
 		apps/folder/go.mod:gomod \
 		apps/iam/go.mod:gomod \
-		apps/investigations/go.mod:gomod \
+		apps/live/go.mod:gomod \
 		apps/logsdrilldown/go.mod:gomod \
 		apps/playlist/go.mod:gomod \
 		apps/plugins/go.mod:gomod \
 		apps/preferences/go.mod:gomod \
 		apps/provisioning/go.mod:gomod \
+		apps/quotas/go.mod:gomod \
 		apps/scope/go.mod:gomod \
 		apps/secret/go.mod:gomod \
 		apps/shorturl/go.mod:gomod \
@@ -32,8 +37,10 @@ DISTFILES=	grafana-${DISTVERSION}.linux-amd64${EXTRACT_SUFX} \
 		pkg/build/wire/go.mod:gomod \
 		pkg/codegen/go.mod:gomod \
 		pkg/plugins/codegen/go.mod:gomod \
+		pkg/plugins/go.mod:gomod \
 		pkg/promlib/go.mod:gomod \
-		pkg/semconv/go.mod:gomod
+		pkg/semconv/go.mod:gomod \
+		pkg/storage/unified/resource/kv/go.mod:gomod
 EXTRACT_ONLY=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//:Ngo.work}
 
 MAINTAINER=	drtr0jan@yandex.ru
@@ -51,7 +58,7 @@ USES=		cpe go:1.25+,modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		2a14494
+TAG=		d1729c5
 
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/grafana/grafana
