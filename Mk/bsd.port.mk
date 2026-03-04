@@ -3459,7 +3459,7 @@ ${_PLIST}.${sp}: ${TMPPLIST}
 
 ${WRKDIR_PKGFILE${_SP.${sp}}}:	${_PLIST}.${sp} create-manifest ${WRKDIR}/pkg
 	@echo "===>   Building ${PKGNAME${_SP.${sp}}}"
-	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR}.${sp} -p ${_PLIST}.${sp} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -T${MAKE_JOBS_NUMBER} -m ${METADIR}.${sp} -p ${_PLIST}.${sp} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
