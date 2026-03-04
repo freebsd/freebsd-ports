@@ -215,6 +215,15 @@ include/universal/math/complex/complex_impl.hpp
 include/universal/math/complex/complex_literals.hpp
 include/universal/math/complex/complex_operators.hpp
 include/universal/math/complex/complex_traits.hpp
+include/universal/mixedprecision/carry_analysis.hpp
+include/universal/mixedprecision/codegen.hpp
+include/universal/mixedprecision/expression_graph.hpp
+include/universal/mixedprecision/glpk_solver.hpp
+include/universal/mixedprecision/pop.hpp
+include/universal/mixedprecision/pop_solver.hpp
+include/universal/mixedprecision/simplex.hpp
+include/universal/mixedprecision/transfer.hpp
+include/universal/mixedprecision/ufp.hpp
 include/universal/native/attributes.hpp
 include/universal/native/clang_long_double_config.hpp
 include/universal/native/compiler/ieee754_clang.hpp

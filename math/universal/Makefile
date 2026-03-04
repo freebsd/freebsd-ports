@@ -1,6 +1,6 @@
 PORTNAME=	universal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.0
+DISTVERSION=	4.4.1
 CATEGORIES=	math
 PKGNAMESUFFIX=	-fp-library
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/stillwater-sc/universal
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++20-lang
+USES=		cmake compiler:c++23-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stillwater-sc
@@ -31,6 +31,6 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 4.3.0: 100% tests passed, 0 tests failed out of 24
+# tests as of 4.4.1: 100% tests passed, 0 tests failed out of 24
 
 .include <bsd.port.mk>
