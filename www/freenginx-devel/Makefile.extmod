@@ -317,7 +317,7 @@ VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 VOD_USES=		iconv
 VOD_VARS=		DSO_EXTMODS+=vod
 
-VTS_GH_TUPLE=		vozlt:nginx-module-vts:1ca7229:vts
+VTS_GH_TUPLE=		vozlt:nginx-module-vts:d421ab0:vts
 VTS_VARS=		DSO_EXTMODS+=vts
 
 XSS_GH_TUPLE=		openresty:xss-nginx-module:0e77f38:xss
@@ -326,7 +326,7 @@ XSS_VARS=		DSO_EXTMODS+=xss
 WEBSOCKIFY_GH_TUPLE=	tg123:websockify-nginx-module:c11bc9a:websockify
 WEBSOCKIFY_VARS=	DSO_EXTMODS+=websockify
 
-ZSTD_GH_TUPLE=		tokers:zstd-nginx-module:f4ba115:zstd
+ZSTD_GH_TUPLE=		tokers:zstd-nginx-module:057a7d3:zstd
 ZSTD_CONFIGURE_ENV=	ZSTD_INC=${LOCALBASE}/include \
 			ZSTD_LIB=${LOCALBASE}/lib
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
