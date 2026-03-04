@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2025-08-09 03:16:34 UTC
++++ pyproject.toml
+@@ -1,12 +1,10 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools"]
+ 
+ [project]
+ name = "types-Flask-Cors"
+ version = "6.0.0.20250809"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
+ description = "Typing stubs for Flask-Cors"
+ readme = { text = """\
+ ## Typing stubs for Flask-Cors
+@@ -45,6 +43,3 @@ dependencies = ['Flask>=2.0.0']
+ "Issue tracker" = "https://github.com/python/typeshed/issues"
+ "Chat" = "https://gitter.im/python/typing"
+ 
+-[tool.setuptools]
+-packages = ['flask_cors-stubs']
+-include-package-data = false

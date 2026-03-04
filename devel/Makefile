@@ -6186,6 +6186,7 @@
     SUBDIR += py-typeguard
     SUBDIR += py-typer
     SUBDIR += py-typer-slim
+    SUBDIR += py-types-Flask-Cors
     SUBDIR += py-types-Pygments
     SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
