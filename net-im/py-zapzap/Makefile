@@ -1,5 +1,5 @@
 PORTNAME=	zapzap
-DISTVERSION=	6.3.2
+DISTVERSION=	6.3.3
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,10 +25,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	share/applications/com.rtosta.zapzap.desktop \
 		share/icons/hicolor/scalable/apps/com.rtosta.zapzap.svg
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^\(__version__ = \)'6.3',\1'${DISTVERSION}',1" \
-		${WRKSRC}/zapzap/__init__.py
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
