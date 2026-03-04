@@ -1,6 +1,8 @@
 PORTNAME=	rna-seq
-DISTVERSION=	0.1.4
-PORTREVISION=	1
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
+DISTVERSION=	0.2.0
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 
@@ -21,6 +23,7 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		rna-STAR>0:biology/star \
 		samtools>0:biology/samtools \
 		fasda>0:biology/fasda \
+		fasda-utils>0:biology/fasda-utils \
 		webbrowser>0:www/webbrowser \
 		curl>0:ftp/curl
 
