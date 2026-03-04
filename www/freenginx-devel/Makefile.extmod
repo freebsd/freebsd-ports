@@ -237,7 +237,7 @@ NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:0.9.5:njs
+NJS_GH_TUPLE=		nginx:njs:0.9.6:njs
 NJS_CFLAGS=		-I ${LOCALBASE}/include/quickjs
 NJS_CONFIGURE_ARGS=	--cc-opt="${CFLAGS}" --ld-opt="${LDFLAGS}" --with-quickjs
 NJS_IMPLIES=		HTTP STREAM
