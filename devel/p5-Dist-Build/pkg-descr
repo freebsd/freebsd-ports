@@ -1,0 +1,4 @@
+Dist::Build is a Build.PL implementation. Unlike Module::Build::Tiny
+it is extensible, unlike Module::Build it uses a build graph internally
+which makes it easy to combine different customizations. It's typically
+extended by adding a .pl script in planner/.
