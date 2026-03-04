@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260304:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. With the NetBox 4.5 release Python 3.10 and 3.11 are officially no
+     longer supported.  The whole code can still be compiled without any
+     problems using Python 3.11, which is the current default version in
+     the ports tree.
+
+     Therefore, the minimum version for Python doesn't need to be raised
+     for the time being, but this may change at any time as soon as
+     backward-incompatible changes to the code lands into upstream for the
+     next release.
+
+     Thus, no further action is required at this time. However, it's still
+     recommended to switch to Python 3.12 or newer in the near future.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20260301:
   AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
   AUTHOR: kbowling@FreeBSD.org
