@@ -65,6 +65,7 @@ share/icons/hicolor/scalable/apps/org.xfce.mousepad.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mousepad.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mousepad.mo
 share/metainfo/org.xfce.mousepad.appdata.xml
