@@ -4,7 +4,7 @@ CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	bsd@quentb.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern, minimalist taskbar for Xfce
 WWW=		https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin
 
