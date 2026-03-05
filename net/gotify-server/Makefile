@@ -1,7 +1,6 @@
 PORTNAME=	gotify-server
-PORTVERSION=	2.7.3
+PORTVERSION=	2.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/mfechner/freebsd-net-gotify-server/raw/refs/heads/main/:yarn_cache
 DISTNAME=	server
@@ -31,10 +30,6 @@ GO_BUILDFLAGS=	-buildmode=pie -modcacherw \
 		-X 'main.Mode=prod'"
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
-MAKE_ENV+=	 NODE_OPTIONS=--openssl-legacy-provider
-.endif
 
 USERS=		gotify
 GROUPS=		gotify
@@ -82,5 +77,6 @@ make-yarn-cache: patch
 	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn --frozen-lockfile --ignore-scripts
 	cd ${WRKDIR} && ${TAR} -czf ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
 	@${ECHO_CMD} upload ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}
+	#@${ECHO_CMD} scp work/gotify-server-yarn-offline-cache-*.tar.gz mfechner@freefall.freebsd.org:public_distfiles/
 
 .include <bsd.port.post.mk>
