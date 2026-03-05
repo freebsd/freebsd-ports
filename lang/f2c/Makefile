@@ -15,9 +15,6 @@ LICENSE_NAME=	Copyright of AT&T, Lucent Technologies and Bellcore
 LICENSE_FILE=	${WRKSRC}/libf2c/Notice
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_mips=		fails to compile: /usr/include/sigfpe.h: No such file or directory
-BROKEN_mips64=		fails to compile: /usr/include/sigfpe.h: No such file or directory
-
 USES=		gmake
 USE_LDCONFIG=	yes
 

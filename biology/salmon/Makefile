@@ -11,7 +11,7 @@ WWW=		https://github.com/COMBINE-lab/salmon
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
 # libtool and auto* are run manually in submodules, so don't put them in USES

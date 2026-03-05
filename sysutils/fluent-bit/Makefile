@@ -9,9 +9,6 @@ WWW=		https://fluentbit.io/
 
 LICENSE=	APACHE20
 
-BROKEN_mips=	fails to build: conflicting types for 'restrict'
-BROKEN_mips64=	fails to build: conflicting types for 'restrict'
-
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USES=		bison cmake:noninja compiler:c11 gmake localbase:ldflags

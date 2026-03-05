@@ -11,7 +11,6 @@ WWW?=			https://sogo.nu/
 
 LICENSE=		GPLv2
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: SOGoMailCoreInfoKeys
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: SOGoMailCoreInfoKeys
 
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached \

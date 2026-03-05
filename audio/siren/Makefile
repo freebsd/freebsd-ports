@@ -11,9 +11,6 @@ WWW=		https://www.kariliq.nl/siren/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BROKEN_mips=		fails to configure: cannot find program /nxb-bin/usr/bin/cc
-BROKEN_mips64=		fails to configure: cannot find program /nxb-bin/usr/bin/cc
-
 USES=		localbase:ldflags ncurses pkgconfig
 HAS_CONFIGURE=	yes
 USE_CSTD=	c99

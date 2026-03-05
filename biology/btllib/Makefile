@@ -10,7 +10,7 @@ WWW=		https://github.com/bcgsc/btllib
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # temporary until https://github.com/bcgsc/btllib/issues/117 is fixed
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc # temporary until https://github.com/bcgsc/btllib/issues/117 is fixed
 
 BUILD_DEPENDS=	bash:shells/bash \
 		samtools:biology/samtools \

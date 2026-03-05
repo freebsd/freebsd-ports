@@ -12,9 +12,6 @@ WWW=		https://gcc.gnu.org/
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
-BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
-
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc

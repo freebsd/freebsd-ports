@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/../README
 # Waiting on build reports, 2024-03-27
 #BROKEN_armv6=	fails to build: make[2]: cannot open makefile
 #BROKEN_armv7=	fails to build: make[2]: cannot open makefile
-#BROKEN_mips=	fails to build: make[2]: cannot open makefile
 #BROKEN_riscv64=	fails to build: make[2]: cannot open makefile
 
 GNU_CONFIGURE=	yes

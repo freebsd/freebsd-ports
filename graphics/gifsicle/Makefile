@@ -10,9 +10,6 @@ WWW=		https://www.lcdf.org/gifsicle/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=		fails to build: undefined reference to '__sync_add_and_fetch_4'
-BROKEN_mips64=		fails to build: undefined reference to '__sync_add_and_fetch_4'
-
 FLAVORS=		x11 nox11
 FLAVOR?=		${FLAVORS:[1]}
 nox11_PKGNAMESUFFIX=	-nox11

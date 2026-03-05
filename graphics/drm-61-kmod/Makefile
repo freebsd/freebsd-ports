@@ -30,9 +30,6 @@ GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	OPSYS=${OPSYS} OSREL=${OSREL}
 
-.if ${OPSYS} == FreeBSD && !( ${OSVERSION} >= 1500008 || ( ${OSVERSION} >= 1400508 && ${OSVERSION} < 1500000 ))
-IGNORE=		not supported on older than 14-STABLE 1400508, no kernel support
-.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
 .endif

@@ -61,7 +61,7 @@ USER_CFLAGS_OFF=	-DNO_USER_SUPPORT
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
 CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
 .endif
 

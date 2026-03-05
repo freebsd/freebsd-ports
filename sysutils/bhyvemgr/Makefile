@@ -34,7 +34,7 @@ QEMU-TOOLS_RUN_DEPENDS=	qemu-img:emulators/qemu@tools
 ONLY_FOR_ARCHS=	aarch64 amd64
 .endif
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1403000)
+.if ${OPSYS} == FreeBSD
 RUN_DEPENDS+=	swtpm>0:sysutils/swtpm
 .endif
 

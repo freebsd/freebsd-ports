@@ -12,7 +12,6 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_armv6=		fails to link: os_dep.c: undefined reference to '__stack_base__'
 BROKEN_armv7=		fails to link: os_dep.c: undefined reference to '__stack_base__'
-BROKEN_mips64=		fails to compile: os_dep.c: redefinition of 'GC_register_dynamic_libraries'
 NOT_FOR_ARCHS=		aarch64 riscv64
 NOT_FOR_ARCHS_REASON=	gcconfig.h: the collector has not been ported to this machine/OS combination
 

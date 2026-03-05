@@ -12,8 +12,6 @@ WWW=		https://tomcat.apache.org/native-doc/
 
 LICENSE=	APACHE20
 
-IGNORE_FreeBSD_13=		Does not build on FreeBSD 13.x due to OpenSSL 1.1.1
-
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
 USES=		java libtool ssl

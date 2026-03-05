@@ -12,7 +12,7 @@ WWW=		https://inko-lang.org/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # build fails on non-64-bit architectures: Inko requires a 64-bits architecture
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc # build fails on non-64-bit architectures: Inko requires a 64-bits architecture
 
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd

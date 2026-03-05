@@ -11,9 +11,6 @@ WWW=		https://code.google.com/p/mecab/
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BROKEN_mips=		fails to link: Nonrepresentable section on output
-BROKEN_mips64=		fails to link: Nonrepresentable section on output
-
 USES=		gettext-tools iconv libtool localbase perl5
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes

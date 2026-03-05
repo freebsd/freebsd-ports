@@ -11,9 +11,6 @@ WWW=		https://github.com/thekhalifa/id3lib \
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=	fails to link: '_ZTSN12_GLOBAL__N_117ConstIteratorImplE' referenced in section '.data.rel.ro' of tag.lo: defined in discarded section
-BROKEN_mips64=	fails to link: '_ZTSN12_GLOBAL__N_117ConstIteratorImplE' referenced in section '.data.rel.ro' of tag.lo: defined in discarded section
-
 USES=		cmake compiler:c11 cpe iconv pkgconfig
 
 CMAKE_OFF=	WITH_DOCS WITH_TESTS

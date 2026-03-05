@@ -106,7 +106,7 @@ MAKE_ARGS+=	ARCH=x86
 MAKE_ARGS+=	ARCH=arm
 .endif
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
 CFLAGS+=	-Wno-error=implicit-function-declaration
 OPTIONS_EXCLUDE=	OPENSSL
 .endif

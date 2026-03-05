@@ -12,9 +12,6 @@ WWW=		https://pypi.org/project/pywatchman/
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-BROKEN_mips=	depends on watchman, which needs c++11-libs
-BROKEN_mips64=	depends on watchman, which needs c++11-libs
-
 RUN_DEPENDS=	watchman>=4:sysutils/watchman
 
 USES=		python

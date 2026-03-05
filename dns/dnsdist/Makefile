@@ -99,18 +99,9 @@ LUA_MESON_ON=	-Dlua=lua
 
 OPENSSL_USES=		ssl
 OPENSSL_MESON_ENABLED=	libcrypto tls-libssl
-OPENSSL_MESON_ON=	-Dlibcrypto-path=${OPENSSLBASE}
-
+OPENSSL_MESON_ON=	-Dlibcrypto-path=${OPENSSLBASE} -Dtls-libssl-engines=true
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_MESON_ENABLED=	snmp
-
-.include <bsd.port.options.mk>
-
-.if !(${OSVERSION} < 1400000 && ${SSL_DEFAULT} == "base")
-OPENSSL_MESON_ON+=	-Dtls-libssl-providers=true
-.else
-OPENSSL_MESON_ON+=	-Dtls-libssl-engines=true
-.endif
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/dnsdist.conf-dist ${STAGEDIR}${ETCDIR}/dnsdist.conf.sample

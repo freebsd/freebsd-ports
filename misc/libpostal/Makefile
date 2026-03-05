@@ -15,9 +15,6 @@ WWW=		https://github.com/openvenues/libpostal
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips=		fails to compile: tagger.h:5: redefinition of typedef 'tagger_feature_function'
-BROKEN_mips64=		fails to compile: tagger.h:5: redefinition of typedef 'tagger_feature_function'
-
 RUN_DEPENDS=	curl:ftp/curl
 
 USES=		autoreconf libtool localbase

@@ -10,7 +10,7 @@ WWW=		https://www.agner.org/optimize
 
 LICENSE=	GPLv1
 
-NOT_FOR_ARCHS=		mips mips64 powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	source/maindef.h:71:5: This machine has big-endian memory organization. Objconv program will not work
 
 USES=		dos2unix zip

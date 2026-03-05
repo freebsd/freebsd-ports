@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # c_src/Makefile line 103
-NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	subcomponent libigl does not support 32bit platforms
 
 BUILD_DEPENDS=	erl:lang/erlang \

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libqrcodegen.so:graphics/qr-code-generator \
 		libunistring.so:devel/libunistring
 
-USES=		cmake:noninja compiler:c++17-lang localbase pkgconfig
+USES=		cmake:noninja compiler:c++17-lang localbase ncurses pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dankamongmen
 USE_LDCONFIG=	yes
@@ -38,15 +38,6 @@ OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
 ABIVERSION=	3
-
-.include <bsd.port.options.mk>
-
-# ncursesw and tinfo >= 6.1 seem to be needed (see CMakeLists.txt:l104)
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400035
-USES+=ncurses:port
-.else
-USES+=ncurses
-.endif
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|install(FILES $${MARKDOWN} DESTINATION $${CMAKE_INSTALL_DOCDIR})|#install(FILES $${MARKDOWN} DESTINATION $${CMAKE_INSTALL_DOCDIR})|' \

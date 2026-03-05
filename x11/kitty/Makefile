@@ -38,9 +38,10 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash
 
+# ncursesw and tinfo >= 6.1 seem to be needed
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules,1.26 magick pkgconfig python shebangfix ssl tar:xz \
-		terminfo xorg
+		go:modules,1.26 magick ncurses pkgconfig python shebangfix ssl \
+		tar:xz terminfo xorg
 CPE_VENDOR=	kitty_project
 
 USE_GL=		gl
@@ -82,13 +83,6 @@ CFLAGS+=	-Wno-error=invalid-utf8 -Winvalid-utf8
 
 .if ${ARCH:Mriscv64*}
 MAKE_ENV+=	KITTY_NO_LTO=1
-.endif
-
-# ncursesw and tinfo >= 6.1 seem to be neededd
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400035
-USES+=		ncurses:port
-.else
-USES+=		ncurses
 .endif
 
 # PR291485

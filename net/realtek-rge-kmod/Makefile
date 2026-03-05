@@ -11,8 +11,6 @@ WWW=		https://github.com/erikarn/if_rge_freebsd
 
 LICENSE=	BSD2CLAUSE
 
-IGNORE_FreeBSD_13=	Does not build on FreeBSD <=13
-
 USES=		kmod tar:tgz uidfix
 
 USE_GITHUB=	yes

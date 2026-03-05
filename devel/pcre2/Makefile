@@ -48,7 +48,7 @@ STATIC_CMAKE_BOOL=	BUILD_STATIC_LIBS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mmips64*} == "" && ${ARCH:Mriscv64*} == ""
+.if ${ARCH:Mriscv64*} == ""
 CMAKE_ON+=	PCRE2_SUPPORT_JIT
 .else
 CMAKE_OFF+=	PCRE2_SUPPORT_JIT

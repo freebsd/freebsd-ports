@@ -36,11 +36,6 @@ EXAMPLES_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "mips64"
-post-patch:
-	@${REINPLACE_CMD} -e 's|__sgi|__unix__|' ${WRKSRC}/configure
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 	${INSTALL_DATA} ${WRKSRC}/nettle.info ${STAGEDIR}${PREFIX}/${INFO_PATH}/nettle.info

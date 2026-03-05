@@ -121,7 +121,7 @@ JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
-# portsfallout.com shows flapping builds on 13.5 and 14.2
+# portsfallout.com shows flapping builds on 14.2
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
 MAKE_JOBS_NUMBER_LIMIT=	3
 .endif

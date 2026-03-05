@@ -23,7 +23,7 @@ CFLAGS+=	-fPIC
 
 .include <bsd.port.options.mk>
 
-.if defined(NOPROFILE) || defined(NO_PROFILE) || ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079 )
+.if defined(NOPROFILE) || defined(NO_PROFILE) || ${OPSYS} == FreeBSD
 PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""

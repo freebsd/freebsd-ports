@@ -9,7 +9,7 @@ WWW=		https://github.com/rosorio/pkg-provides
 LICENSE=	BSD2CLAUSE BSD3CLAUSE BSD4CLAUSE
 LICENSE_COMB=	multi
 
-NOT_FOR_ARCHS=	armv6 mips mips64
+NOT_FOR_ARCHS=	armv6
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2

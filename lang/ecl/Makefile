@@ -9,9 +9,6 @@ WWW=		https://common-lisp.net/project/ecl/main.html
 
 LICENSE=	LGPL20
 
-BROKEN_mips=	fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
-BROKEN_mips64=	fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libgmp.so:math/gmp

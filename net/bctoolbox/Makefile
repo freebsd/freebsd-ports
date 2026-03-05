@@ -27,12 +27,6 @@ CMAKE_OFF=		ENABLE_UNIT_TESTS
 CFLAGS+=	-DHAVE_ARC4RANDOM
 LDFLAGS+=		-lpthread
 
-.include <bsd.port.options.mk>
-
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} < 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl111}
-IGNORE=	is not supported on systems with OpenSSL 1.1.1
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} '/clock_gettime/d' ${WRKSRC}/CMakeLists.txt
 

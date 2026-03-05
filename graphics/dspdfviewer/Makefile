@@ -49,9 +49,7 @@ CFLAGS+=	-Wno-error=extra-semi-stmt
 CFLAGS+=	-Wno-error=suggest-destructor-override
 CFLAGS+=	-Wno-error=suggest-override
 # Fixes build failure for Clang 14.0.3
-.if ${OSVERSION} >= 1400059
 CFLAGS+=       -Wno-error=bitwise-instead-of-logical
-.endif
 # Fixes build failure for Clang 16.0.6
 CFLAGS+=       -Wno-error=unsafe-buffer-usage
 # Fixes build failure for Clang 18.1.4

@@ -49,10 +49,6 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/etc/pkcs11
 	${MKDIR} ${STAGEDIR}${DATADIR}/certs
 	${LN} -s /usr/share/certs/trusted ${STAGEDIR}${DATADIR}/certs/anchors
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400024
-	${LN} -s /usr/share/certs/blacklisted ${STAGEDIR}${DATADIR}/certs/blocklist
-.else
 	${LN} -s /usr/share/certs/untrusted ${STAGEDIR}${DATADIR}/certs/blocklist
-.endif
 
 .include <bsd.port.mk>

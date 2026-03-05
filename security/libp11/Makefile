@@ -34,15 +34,6 @@ CONFIGURE_ARGS=	--with-enginesdir=${PREFIX}/lib/engines \
 		--with-modulesdir=${PREFIX}/lib/ossl-modules \
 		--enable-static-engine
 
-.include <bsd.port.options.mk>
-
-.if ${SSL_DEFAULT} == "base" && ${OPSYS} == FreeBSD && ${OSREL:R} < 14
-PLIST_SUB+=		PROVIDERS="@comment "
-.else
-PLIST_SUB+=		PROVIDERS=""
-.endif
-
-
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*

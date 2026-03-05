@@ -75,7 +75,7 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	${LOCALBASE}/libexec/atf-check -s exit:1 -e match:"dwm-${PORTVERSION}" \
+	/usr/libexec/atf-check -s exit:1 -e match:"dwm-${PORTVERSION}" \
 		${STAGEDIR}${PREFIX}/bin/dwm -v
 
 .include <bsd.port.mk>

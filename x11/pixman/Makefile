@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe meson pkgconfig tar:xz
 MESON_ARGS=	-Dloongson-mmi=disabled \
 		-Dgtk=disabled \
-		-Ddemos=disabled
+		-Ddemos=disabled \
+		-Dmips-dspr2=disabled
 
 OPTIONS_DEFINE=		OPENMP TEST
 OPTIONS_DEFAULT=	OPENMP
@@ -51,11 +52,6 @@ MESON_ARGS+=	-Dmmx=enabled \
 MESON_ARGS+=	-Dmmx=disabled \
 		-Dsse2=disabled \
 		-Dssse3=disabled
-.endif
-.if ${ARCH:Mmips*}
-MESON_ARGS+=	-Dmips-dspr2=enabled
-.else
-MESON_ARGS+=	-Dmips-dspr2=disabled
 .endif
 .if ${ARCH:Mpowerpc*}
 MESON_ARGS+=	-Dvmx=enabled

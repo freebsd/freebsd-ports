@@ -67,14 +67,4 @@ RPKI_LIB_DEPENDS=	libssh.so:security/libssh
 CONFIGURE_ARGS+=--with-sysconfig=bsd-netlink
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-FLAVORS=	rtsock netlink
-netlink_PKGNAMESUFFIX=	2-netlink
-rtsock_PKGNAMESUFFIX=	2
-.endif
-
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000 && ${OSVERSION} < 1500017)
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-netlink-route
-.endif
-
 .include <bsd.port.mk>

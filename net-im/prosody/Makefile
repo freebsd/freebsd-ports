@@ -61,10 +61,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/prosody
 	@${RM} ${STAGEDIR}${ETCDIR}/certs/*
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000 && ${SSL_DEFAULT} == base
-EXTRA_PATCHES=	${PATCHDIR}/freebsd-13-patches
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

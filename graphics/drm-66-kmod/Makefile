@@ -30,7 +30,7 @@ GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} OPSYS=${OPSYS} OSREL=${OSREL}
 
-.if ${OPSYS} == FreeBSD && !( ${OSVERSION} >= 1500031 )
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500031
 IGNORE=		not supported on older than 1500031, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD

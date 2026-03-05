@@ -22,7 +22,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		git:devel/git \
 		ggrep:textproc/gnugrep \
-		terminfo-db>0:misc/terminfo-db
+		terminfo-db>0:misc/terminfo-db \
+		${LOCALBASE}/lib/compat/libssl.so.111:misc/compat13x
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
 		libicuuc.so:devel/icu \
 		libinotify.so:devel/libinotify \
@@ -87,10 +88,6 @@ BROKEN=		"crossgen2" exited with code 139
 
 .if ${SSL_DEFAULT} == base && ${DOTNETVERSION:R} > 8
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-base-openssl
-.endif
-
-.if ${OSVERSION} >= 1400000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libssl.so.111:misc/compat13x
 .endif
 
 .if ${ARCH} == amd64

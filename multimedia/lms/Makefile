@@ -48,13 +48,6 @@ MAGICK_DESC=			Use GraphicsMagick++ as image library
 MAGICK_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick
 MAGICK_CMAKE_ON=		-DLMS_IMAGE_BACKEND:STRING=graphicsmagick
 
-.include <bsd.port.options.mk>
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-USES+=		llvm:17 # fix the build failure on 13: error: object of type 'const lms::core::LiteralString' cannot be compared because its 'operator<=>' is implicitly deleted
-.else
-USES+=		compiler:c++20-lang
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc"|"${PREFIX}/etc"|' \
 		${WRKSRC}/src/libs/core/include/core/SystemPaths.hpp

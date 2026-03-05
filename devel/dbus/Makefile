@@ -79,10 +79,4 @@ post-install:
 		${MV} ${file} ${file}.sample
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1400000
-MESON_ARGS+=	-Db_lundef=false
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

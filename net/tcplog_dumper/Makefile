@@ -10,7 +10,7 @@ WWW=		https://github.com/Netflix/tcplog_dumper
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 mips64 mips64el mips64elhf mips64hf powerpc64 powerpc64le riscv64 riscv64sf
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	only 64-bit platforms are supported
 
 USE_GITHUB=	yes

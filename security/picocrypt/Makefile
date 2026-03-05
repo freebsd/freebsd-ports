@@ -10,7 +10,7 @@ WWW=		https://github.com/Picocrypt/Picocrypt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 mips64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	upstream only supports 64-bit
 # https://github.com/HACKERALERT/Picocrypt/issues/127
 

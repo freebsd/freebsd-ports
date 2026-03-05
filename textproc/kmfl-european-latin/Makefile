@@ -31,7 +31,7 @@ KMFL_ICONS_DIR=	share/kmfl/icons
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+.if ${OPSYS} == FreeBSD
 BASE64=	/usr/bin/base64
 .else
 BUILD_DEPENDS=	base64:converters/base64

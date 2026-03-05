@@ -14,7 +14,6 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-BROKEN_FreeBSD_13_powerpc64=	fails to build: ERROR: ninja -v -C out_linux/Release mozc_server: Error code 1
 BROKEN_powerpc=		fails to compile: segfault
 
 USE_GITHUB=	yes

@@ -12,7 +12,6 @@ WWW=		https://kanidm.com \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-IGNORE_FreeBSD_13=		Does not build on FreeBSD 13.x due to OpenSSL 1.1.1
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 FLAVORS=	client server

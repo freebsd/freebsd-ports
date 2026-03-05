@@ -12,7 +12,7 @@ WWW=		https://ufal.mff.cuni.cz/udpipe
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		mips mips64 powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only little endian systems are supported!
 
 USES=		compiler:c++11-lang python

@@ -18,10 +18,4 @@ USE_KDE=	config coreaddons dbusaddons i18n kcmutils kdeclarative kio \
 		iconthemes:run
 USE_QT=		base declarative
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc*} && ${OSVERSION} < 1400092
-USES+=		llvm:min=16
-.endif
-
 .include <bsd.port.mk>

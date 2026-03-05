@@ -10,9 +10,6 @@ WWW=		https://facebook.github.io/watchman/
 
 LICENSE=	APACHE20
 
-BROKEN_mips=		fails to build: watchman.h:169: undefined reference to '__sync_add_and_fetch_8'
-BROKEN_mips64=		fails to build: watchman.h:169: undefined reference to '__sync_add_and_fetch_8'
-
 BUILD_DEPENDS=	${LOCALBASE}/include/sys/inotify.h:devel/libinotify
 
 USE_GITHUB=	yes

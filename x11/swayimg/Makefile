@@ -36,12 +36,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 LIB_DEPENDS+=	libinotify.so:devel/libinotify
 .endif
 
-# XXX Drop after FreeBSD 13.5 EOL around 2026-04-30
-# https://cgit.freebsd.org/src/commit/?id=af93fea71038
-.if !exists(/usr/include/sys/timerfd.h)
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
-.endif
-
 OPTIONS_DEFINE=	AVIF BASH EXIV2 GIF HEIF JPEG JXL LIBRSVG2 \
 		OPENEXR PNG RAW SIXEL TIFF WEBP ZSH
 OPTIONS_DEFAULT=AVIF BASH DRM EXIV2 GIF HEIF JPEG JXL LIBRSVG2 \

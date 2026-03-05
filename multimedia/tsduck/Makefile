@@ -11,8 +11,6 @@ WWW=		https://tsduck.io
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_13=	requires OpenSSL 3.0
-
 BUILD_DEPENDS=	bash:shells/bash \
 		coreutils>0:sysutils/coreutils \
 		dos2unix:converters/unix2dos \

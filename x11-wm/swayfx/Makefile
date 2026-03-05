@@ -57,9 +57,7 @@ X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 .include <bsd.port.options.mk>
 
 # https://github.com/freebsd/freebsd-src/pull/1675
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1305503 \
- || ${OSVERSION} >= 1400000 && ${OSVERSION} < 1403505 \
- || ${OSVERSION} >= 1500000 && ${OSVERSION} < 1500052)
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1403505
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-wordexp
 .endif
 

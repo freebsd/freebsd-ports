@@ -15,7 +15,6 @@ USES=		uidfix
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not ported to other architectures
 BROKEN_aarch64=	does not build, upstream is working on a fix (PR 283408)
-BROKEN_FreeBSD_13=	does not build, upstream is working on a fix (PR 283408)
 
 USE_GITLAB=	yes
 GL_SITE=	https://git.hardenedbsd.org

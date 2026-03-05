@@ -12,7 +12,7 @@ WWW=		http://demospecs.half-empty.de/lmpc-alpha/
 
 LICENSE=	GPLv2+
 
-ONLY_FOR_ARCHS=	armv6 armv7 i386 mips powerpc
+ONLY_FOR_ARCHS=	armv6 armv7 i386 powerpc
 ONLY_FOR_ARCHS_REASON=	assumes sizeof(long) == 4
 
 USES=		gmake perl5 shebangfix

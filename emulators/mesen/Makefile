@@ -8,7 +8,7 @@ WWW=		https://www.mesen.ca/
 
 LICENSE=	GPLv3
 
-# ARM/MIPS are only supported on Android
+# ARM is only supported on Android
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	zip:archivers/zip \

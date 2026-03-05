@@ -26,10 +26,4 @@ OPTIONS_DEFAULT=	GEOIP
 GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 GEOIP_CONFIGURE_WITH=	geoip
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS}_${OSREL:R} == FreeBSD_13
-CONFIGURE_ENV= NCURSES_CFLAGS="-L${NCURSESLIB}" NCURSES_LIBS="-lncursesw"
-.endif
-
 .include <bsd.port.mk>

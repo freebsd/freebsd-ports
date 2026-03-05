@@ -10,7 +10,7 @@ WWW=		https://github.com/homenc/HElib
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libntl.so:math/ntl

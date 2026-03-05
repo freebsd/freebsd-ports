@@ -69,7 +69,7 @@ LDB_LIBS=	lib/libldb.so lib/libldb.so.2 lib/ldb/libldb-tdb-int.so \
 		lib/shared-modules/ldb/ldb.so lib/shared-modules/ldb/ldap.so \
 		lib/shared-modules/ldb/asq.so lib/shared-modules/ldb/tdb.so
 # Only for 64-bit architectures
-.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && \
+.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && \
 	${ARCH} != powerpc && ${ARCH} != powerpcspe
 LDB_LIBS+=	lib/ldb/libldb-mdb-int.so lib/shared-modules/ldb/mdb.so
 .endif

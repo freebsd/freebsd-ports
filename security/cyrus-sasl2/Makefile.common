@@ -101,7 +101,7 @@ SASLDB_NAME=	sasldb2
 SASLDB=	"@comment "
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 14
+.if ${OPSYS} == FreeBSD
 .if ${PORT_OPTIONS:MOPIE} && ${PORT_OPTIONS:MOTP}
 CONFIGURE_ARGS+=--with-opie=${LOCALBASE}
 LIB_DEPENDS+=	libopie.so:security/opie

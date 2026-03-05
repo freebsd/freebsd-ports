@@ -133,11 +133,6 @@ JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
-# portsfallout.com shows flapping builds on 13.5 and 14.2
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1403000
-MAKE_JOBS_UNSAFE=	yes
-.endif
-
 .if !${PORT_OPTIONS:MCUPS}
 MASTER_SITES+=	https://codeload.github.com/OpenPrinting/cups/tar.gz/v${CUPS_INC_VER}?dummy=/:cups
 .endif

@@ -40,7 +40,7 @@ FLAVOR=	openssl30
 .endif
 
 # For OpenSSL 3.0.x in base (14+) or installed as port/package
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 || ${FLAVOR:U} == openssl30
+.if ${OPSYS} == FreeBSD || ${FLAVOR:U} == openssl30
 GH_TAGNAME=     2b22503
 GH_TUPLE+=      provider-corner:libprov:e9f3e6a:libprov
 GH_SUBDIR=      libprov:libprov

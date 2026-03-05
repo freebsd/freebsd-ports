@@ -10,8 +10,6 @@ WWW=		https://github.com/mozilla/mozjpeg
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_mips64=	does not configure: error: SIMD support cannot be enabled
-
 BUILD_DEPENDS=	nasm>=2.10,1:devel/nasm
 LIB_DEPENDS=	libpng.so:graphics/png
 

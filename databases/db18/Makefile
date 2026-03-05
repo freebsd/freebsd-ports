@@ -20,8 +20,6 @@ LICENSE_FILE_UPL10=	${WRKSRC}/../EXAMPLES-LICENSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_PERMS_UPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_mips64=	no usable MUTEX implementation, assy works only for MIPS32, POSIX mutexes are unshared
-
 USES=		gmake libtool ssl
 USE_LDCONFIG=	yes
 

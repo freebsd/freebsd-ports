@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 # Bi-endian architectures default to big for some reason
-NOT_FOR_ARCHS=	mips mips64 powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS=	powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	only little-endian is supported, see \
 		https://github.com/hrydgard/ppsspp/issues/8823
 

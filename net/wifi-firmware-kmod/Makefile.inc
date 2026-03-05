@@ -91,13 +91,6 @@ USES=		uidfix
 # allows direct loading of firmware files.
 # We write a PLIST file so we can then simply use COPYTREE_SHARE with adjusted
 # permissions to copy the files over.
-.if (${OSVERSION} < 1402000) || (${OSVERSION} >= 1500000 && ${OSVERSION} < 1500014)
-# For 13.5, which is the last supported release before plain firmware loading is
-# implemented, we did ship firmware in src/ still so there is no need to build.
-# Also mtw (mt7601u) was never in a version earlier than this.
-# XXX remove comment after April 2026 when 13.5 goes out of support as well.
-IGNORE=		Not supported for this osversion.
-.endif
 
 BOOT_LOADERCONFD=	/boot/loader.conf.d
 BOOTFWDIR?=	/boot/firmware

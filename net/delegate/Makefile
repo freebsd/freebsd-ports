@@ -15,9 +15,6 @@ LICENSE_NAME=	aist
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BROKEN_mips=		fails to build: gmake[1]: [Makefile:116: mkmake.exe] Error 1
-BROKEN_mips64=		fails to build: gmake[1]: [Makefile:116: mkmake.exe] Error 1
-
 USES=		compiler:c11 cpe gmake
 SUB_FILES=	pkg-message
 

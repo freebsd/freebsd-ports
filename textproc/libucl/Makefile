@@ -10,9 +10,6 @@ WWW=		https://github.com/vstakhov/libucl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=		fails to link: undefined reference to '__sync_add_and_fetch_4'
-BROKEN_mips64=		fails to link: undefined reference to '__sync_add_and_fetch_4'
-
 USES=		autoreconf gmake libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov

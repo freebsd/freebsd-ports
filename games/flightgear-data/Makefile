@@ -10,8 +10,6 @@ WWW=		https://www.flightgear.org/
 
 LICENSE=	GPLv2
 
-BROKEN_mips64=		fails to install: runaway process
-
 USES=		tar:txz
 
 NO_BUILD=	yes

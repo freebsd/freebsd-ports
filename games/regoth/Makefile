@@ -10,7 +10,6 @@ WWW=		https://github.com/REGoth-project/REGoth
 
 LICENSE=	GPLv3
 
-BROKEN_FreeBSD_13_powerpc64=	fails to build: mmintrin.h:33:5: error: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 BROKEN_riscv64=			fails to build: mmintrin.h:33:5: error: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile

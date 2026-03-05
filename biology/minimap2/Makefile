@@ -10,7 +10,7 @@ WWW=		https://github.com/lh3/minimap2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NOT_FOR_ARCHS=		i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=		i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor, except ARM NEON
 
 BUILD_DEPENDS=	simde>0:devel/simde

@@ -10,7 +10,7 @@ WWW?=		https://cheri-cpu.org
 
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"
 
-NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
+NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc
 NOT_FOR_ARCHS_REASON=	No one will develop CHERI from 32-bit
 
 LLVM_SUFFIX?=	-cheri

@@ -26,11 +26,8 @@ PLIST_FILES=	include/usrsctp.h \
 
 CFLAGS+=	-Wno-error
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} >= 1400000
 	@${REINPLACE_CMD} -e 's|ip6protosw.h|ip6_var.h|g' \
 		${WRKSRC}/usrsctplib/netinet/sctp_os_userspace.h
-.endif
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

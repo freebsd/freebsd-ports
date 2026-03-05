@@ -108,9 +108,7 @@ post-install-DOCS-on:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPIE} && ${MASTERDIR} == ${.CURDIR} && ${OPSYS} == FreeBSD
-. if ${OSVERSION} >= 1400072
 LIB_DEPENDS+=	libopie.so:security/opie	# moved to port (from base in 13.X)
 . endif
-.endif
 
 .include <bsd.port.mk>

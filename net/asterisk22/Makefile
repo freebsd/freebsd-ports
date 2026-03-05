@@ -231,7 +231,7 @@ PJSIP_VERSION=	2.16
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-third-party_pjproject_Makefile
 .endif
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base) || \
+.if (${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || \
 	${SSL_DEFAULT:Mopenssl3*}
 LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L

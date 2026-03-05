@@ -22,7 +22,7 @@ GH_PROJECT=	oqs-provider
 
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=Debug\
 		-DOPENSSL_ROOT_DIR=${OPENSSLBASE} \
-		-DCMAKE_PREFIX_PATH=${OPENSSL_PATH} 
+		-DCMAKE_PREFIX_PATH=${OPENSSL_PATH}
 
 SUB_FILES=	oqsprovider.cnf pkg-message
 
@@ -31,10 +31,6 @@ PLIST_FILES=	include/oqs-provider/oqs_prov.h \
 		openssl/oqsprovider.cnf
 
 .include <bsd.port.pre.mk>
-
-.if !defined(OPENSSL_PORT) && ${OSVERSION} < 1400000
-BROKEN=	Requires OpenSSL 3.0+, preferably 3.2+
-.endif
 
 post-install:
 .if ${OPENSSLLIB} == "/usr/lib"

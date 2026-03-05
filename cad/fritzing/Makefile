@@ -50,10 +50,4 @@ post-install:
 		-f  ${STAGEDIR}${DATADIR} \
 		-platform offscreen
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000 && ${SSL_DEFAULT} == "base"
-IGNORE=		Requires OpenSSL >= 3
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -69,13 +69,6 @@ PYTHON_USES=		python:run
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-#LIB_DEPENDS+=	libcrypto.so:security/openssl # LIB_DEPENDS doesn't work here (after bsd.port.options.mk)
-BUILD_DEPENDS+=	openssl>0:security/openssl
-RUN_DEPENDS+=	openssl>0:security/openssl
-CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${LOCALBASE}
-.endif
-
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} \
 		-e 's|"python3"|"${PYTHON_CMD}"|' \

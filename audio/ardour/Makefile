@@ -113,14 +113,4 @@ post-install:
 post-install-VST3-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${ARDOUR_MAJOR}/ardour-vst3-scanner
 
-.include <bsd.port.pre.mk>
-
-# Some peripheral libraries are only built with libusb-1.0 >= 1.0.16
-.if ${OPSYS} == FreeBSD && \
-    (1500000 <= ${OSVERSION} && ${OSVERSION} <= 1500019)
-PLIST_SUB+=	LIBUSB="@comment "
-.else
-PLIST_SUB+=	LIBUSB=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

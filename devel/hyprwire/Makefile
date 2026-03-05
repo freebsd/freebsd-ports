@@ -28,12 +28,6 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-# XXX Drop after FreeBSD 13.5 EOL around 2026-04-30
-# https://cgit.freebsd.org/src/commit/?id=af93fea71038
-.if !exists(/usr/include/sys/timerfd.h)
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

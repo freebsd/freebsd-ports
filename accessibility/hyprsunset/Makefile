@@ -11,8 +11,6 @@ WWW=		https://github.com/hyprwm/hyprsunset
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	fails to build: /usr/local/include/date/date.h:6636:15: error: no member named 'read' in namespace 'date::detail'; did you mean '::read'?
-
 BUILD_DEPENDS=	hyprwayland-scanner>=0.4.0:devel/hyprwayland-scanner \
 		hyprland-protocols>=0.4.0:graphics/hyprland-protocols \
 		wayland-protocols>0:graphics/wayland-protocols

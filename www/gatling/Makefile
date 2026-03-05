@@ -10,9 +10,6 @@ WWW=		https://www.fefe.de/gatling/
 
 LICENSE=	GPLv2
 
-BROKEN_mips=	fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
-BROKEN_mips64=	fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
-
 BUILD_DEPENDS=	libowfat>=0.32:devel/libowfat
 
 USES=		compiler:c++11-lang gmake localbase:ldflags ssl tar:xz

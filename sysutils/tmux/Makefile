@@ -10,7 +10,7 @@ WWW=		https://tmux.github.io/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe pkgconfig
+USES=		cpe ncurses pkgconfig
 CPE_VENDOR=	tmux_project
 
 GNU_CONFIGURE=	yes
@@ -37,15 +37,6 @@ UTF8PROC_LIB_DEPENDS=			libutf8proc.so:textproc/utf8proc
 UTF8PROC_USES=				localbase
 UTF8PROC_CONFIGURE_ENABLE=		utf8proc
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1401502 || ${OSVERSION} >= 1500000 && \
-	${OSVERSION} < 1500020)
-USES+=		ncurses:port
-.else
-USES+=		ncurses
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' \
 		${PATCH_WRKSRC}/CHANGES ${PATCH_WRKSRC}/tmux.h
@@ -63,4 +54,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

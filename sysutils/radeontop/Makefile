@@ -10,7 +10,7 @@ WWW=		https://github.com/clbr/radeontop
 
 LICENSE=	GPLv3
 
-NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 riscv64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 riscv64
 NOT_FOR_ARCHS_REASON=	fails to compile: fatal error: amdgpu_drm.h file not found
 
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \

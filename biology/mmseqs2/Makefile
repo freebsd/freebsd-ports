@@ -9,7 +9,7 @@ WWW=		https://github.com/soedinglab/MMseqs2/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
 
 BUILD_DEPENDS=	zstd>0:archivers/zstd
 

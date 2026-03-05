@@ -13,7 +13,6 @@ WWW=		https://ossia.io/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_13=	compilation fails: fatal error: 'sys/timerfd.h' file not found
 NOT_FOR_ARCHS=		armv6 armv7 i386
 NOT_FOR_ARCHS_REASON=	configure fails: score depends on kfrlib which only supports 64-bit systems (coming from cmake/ScoreConfiguration.cmake:137)
 

@@ -12,7 +12,6 @@ WWW=		https://www.pgpi.org/
 
 LICENSE=	MIT
 
-BROKEN_mips64=		Does not build
 BROKEN_riscv64=		Does not build: make: don't know how to make freebsd-riscv64
 
 PORTSCOUT=	ignore:1

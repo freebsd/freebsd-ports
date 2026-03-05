@@ -23,12 +23,6 @@ PLIST_FILES=	bin/b25 \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1400079
-PLIST_FILES+=	lib/libab25_p.a
-.endif
-
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ab25
 
@@ -36,4 +30,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

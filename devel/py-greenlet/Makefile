@@ -14,9 +14,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 LICENSE_FILE_PSFL=	${WRKSRC}/LICENSE.PSF
 
-NOT_FOR_ARCHS=	mips mips64
-NOT_FOR_ARCHS_REASON=	greenlet needs to be ported to this platform
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 

@@ -32,11 +32,8 @@ MAKE_ENV=	freebsd_src=${SRC_BASE}
 IGNORE=		requires kernel source files in ${SRC_BASE}
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+.if ${OPSYS} == FreeBSD
 PATCHFILES+=	0b2ab0594997c44e80e3fdfe9d2add106d81149a.diff:-p1 # backport of https://github.com/truenas/py-libzfs/pull/251
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1401000
 EXTRA_PATCHES+=	${FILESDIR}/extra-zpool-add.patch
 .endif
 

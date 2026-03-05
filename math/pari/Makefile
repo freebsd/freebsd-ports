@@ -11,8 +11,6 @@ WWW=		https://pari.math.u-bordeaux.fr
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips64=	fails to link: mpker.c:(.text+0x33bc): relocation truncated to fit: R_MIPS_TLS_GD against 'PARI_SIGINT_block'
-
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		bison perl5 readline

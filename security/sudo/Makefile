@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=	--enable-kerb5-instance="${SUDO_KERB5_INSTANCE}"
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400072
+.if ${OPSYS} == FreeBSD
 . if ${PORT_OPTIONS:MOPIE}
 BUILD_DEPENDS+=	opie>0:security/opie
 RUN_DEPENDS+=	opie>0:security/opie

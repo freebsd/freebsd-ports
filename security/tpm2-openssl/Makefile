@@ -10,8 +10,6 @@ WWW=		https://github.com/tpm2-software/tpm2-openssl
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_13=	Requires OpenSSL 3+
-
 LIB_DEPENDS=    libtss2-esys.so:security/tpm2-tss
 RUN_DEPENDS=    tpm2-abrmd:security/tpm2-abrmd
 

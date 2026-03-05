@@ -46,7 +46,7 @@ PLIST_FILES+=	${MAN1FILES:S|^|share/man/man1/|:S|.1$|.1.gz|}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+.if ${OPSYS} == FreeBSD
 EXTRA_PATCHES+=	${PATCHDIR}/extra-cloudinit_distros_freebsd.py
 .endif
 

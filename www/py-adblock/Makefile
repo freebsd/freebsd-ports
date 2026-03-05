@@ -17,7 +17,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 # doesn't support creating 32-bit Python wheels for FreeBSD.  Thus save build
 # time and skip the port at a early stage.
 # SEE devel/py-maturin/Makefile
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	the creation of 32-bit Python wheels is not supported for FreeBSD
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.8.3:devel/py-maturin@${PY_FLAVOR} \

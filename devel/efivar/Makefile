@@ -11,7 +11,6 @@ LICENSE=	LGPL21
 
 NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	specification only supports little-endian processors
-BROKEN_FreeBSD_13=	requires at least FreeBSD 14
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libpopt.so:devel/popt

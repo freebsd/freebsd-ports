@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--with-asan --with-ubsan
 .endif
 
 # TODO: activate in april 2021
-#.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
+#.if ${OPSYS} == FreeBSD
 #CONFIGURE_ARGS+=	--default-format=tzst
 #.endif
 

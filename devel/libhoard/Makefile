@@ -12,9 +12,6 @@ WWW=		http://www.hoard.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-BROKEN_mips=		no spin lock implementation is available for this platform
-BROKEN_mips64=		no spin lock implementation is available for this platform
-
 WRKSRC=		${WRKDIR}/Hoard/src
 MAKEFILE=	GNUmakefile
 USES=		gmake compiler:c++14-lang

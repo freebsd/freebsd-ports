@@ -15,8 +15,6 @@ BUILD_DEPENDS+=	bjam:devel/boost-jam
 # Build of this port fails with assertion failure of compiler due to
 # bug of LLVM/Clang in base system. The failure happens when all of
 # following conditions are satisfied.
-# * OSVERSION is included in either of following ranges.
-#   1. 1500000 <= OSVERSION < 1500017
 # * Base system is built with WITH_LLVM_ASSERTIONS variable set.
 # So if your base system fulfills them you need to use LLVM ports to
 # build this port.

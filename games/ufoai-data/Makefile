@@ -16,8 +16,6 @@ WWW=		https://ufoai.org/
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi
 
-BROKEN_mips64=		Fails to install: runaway process
-
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 NO_BUILD=	yes

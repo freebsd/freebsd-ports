@@ -13,7 +13,6 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN=		aoenet.c:119:20: error: incomplete definition of type 'struct ifnet'
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
-BROKEN_FreeBSD_13=	crashes dereferencing vnet_entry_ifnet
 BROKEN_FreeBSD_14=	crashes dereferencing vnet_entry_ifnet
 
 USES=	kmod uidfix

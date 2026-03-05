@@ -17,11 +17,11 @@
 -case `uname -m` in
 -  armv7|armv7l|i386|ppc)
 +case `uname -p` in
-+  armv6|armv7|armv7l|i386|ppc|powerpc|powerpcspe|mips)
++  armv6|armv7|armv7l|i386|ppc|powerpc|powerpcspe)
      patch -p0 <../intel-lib-unknown-32bit.patch
      ;;
 -  aarch64|arm64|i86pc)
-+  aarch64|arm64|i86pc|powerpc64|powerpc64le|mips64|riscv64)
++  aarch64|arm64|i86pc|powerpc64|powerpc64le|riscv64)
      patch -p0 <../intel-lib-unknown-64bit.patch
      ;;
  esac

@@ -125,7 +125,7 @@ USES+=		nodejs:build,20
 USES+=		nodejs:build,lts
 .endif
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
+.if ${ARCH:Mpowerpc*}
 PLIST_SUB+=	BE="" LE="@comment "
 .else
 PLIST_SUB+=	BE="@comment " LE=""
@@ -153,7 +153,7 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(MODULE_VERSION = ).*|\1${QT5_VERSION}|' \
 		${WRKSRC}/.qmake.conf
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
+.if ${ARCH:Mpowerpc*}
 	@${REINPLACE_CMD} -e 's/icudtl.dat/icudtb.dat/' \
 		${WRKSRC}/src/core/core_module.pro
 .endif

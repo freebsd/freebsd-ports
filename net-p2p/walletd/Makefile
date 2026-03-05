@@ -12,7 +12,7 @@ WWW=		https://sia.tech/software/walletd
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	requires 64-bit architecture
 
 USES=		go:1.24+,modules

@@ -10,7 +10,6 @@ LICENSE=	BSD2CLAUSE
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	not yet tested on non amd64
-IGNORE_FreeBSD_13=	included in base system
 IGNORE_FreeBSD_16=	not supported on FreeBSD 16.x
 
 USES=		kmod uidfix
