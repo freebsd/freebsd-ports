@@ -1,5 +1,5 @@
 PORTNAME=	gajim
-DISTVERSION=	2.4.3
+DISTVERSION=	2.4.4
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=1.16.0:graphics/py-pycairo@${PY_FLA
 		gnome-keyring>=0:security/gnome-keyring
 
 USES=		cpe gettext gnome python:3.11+ xorg
-USE_GNOME=	gtksourceview5 pygobject3
+USE_GNOME=	gtksourceview5 libadwaita pygobject3
 USE_PYTHON=	autoplist cryptography noflavors pep517 pytest
 USE_XORG=	x11 xext xscrnsaver
 
