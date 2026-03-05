@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.12.0.1
+PORTVERSION=	1.12.1.0
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -72,15 +72,17 @@ post-patch:
 	@${REINPLACE_CMD} -e '/System\.ValueTuple\.dll/s,net4.,net46,' \
 		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
 
+_AUX_PROGS=	CarXmlConvertor ObjectBender ObjectViewer RouteViewer \
+		TrainEditor TrainEditor2
+
 do-install:
-# This is Windows only, so can be removed
+# According to Debian package, this is Windows-only, so can be removed
 	${RM} ${WRKSRC}/bin_[dr]*/AtsPluginProxy.*
 	${CP} -a ${WRKSRC}/bin_[dr]* ${STAGEDIR}${DATADIR}
-.for script program in openbve OpenBve openbve-objectviewer ObjectViewer \
-    openbve-routeviewer RouteViewer
-	${PRINTF} '#!/bin/sh\n\nexec mono ${DATADIR}/${program}.exe\
-		"$$@"\n' > ${STAGEDIR}${PREFIX}/bin/${script}
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${script}
+.for prog wrpr in OpenBve ${PORTNAME} ${_AUX_PROGS:C,.*,& ${PORTNAME}-&,}
+	${PRINTF} '#!/bin/sh\n\nexec mono ${DATADIR}/${prog}.exe\
+		"$$@"\n' > ${STAGEDIR}${PREFIX}/bin/${wrpr:tl}
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${wrpr:tl}
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/debian/*.6 \
 		${STAGEDIR}${PREFIX}/share/man/man6

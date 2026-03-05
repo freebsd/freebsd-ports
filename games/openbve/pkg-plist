@@ -1,6 +1,10 @@
 bin/openbve
+bin/openbve-carxmlconvertor
+bin/openbve-objectbender
 bin/openbve-objectviewer
 bin/openbve-routeviewer
+bin/openbve-traineditor
+bin/openbve-traineditor2
 %%DATADIR%%/Antlr4.Runtime.dll
 %%DATADIR%%/Antlr4.Runtime.xml
 %%DATADIR%%/AssimpParser.dll
@@ -61,6 +65,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/RoutePatches/Indonesia.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Italy.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Japan.xml
+%%DATADIR%%/Data/Compatibility/RoutePatches/Korea.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Misc.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Poland.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Spain.xml
