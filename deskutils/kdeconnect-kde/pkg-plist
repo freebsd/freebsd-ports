@@ -533,6 +533,8 @@ share/locale/ml/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/ml/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/ml/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/nb/LC_MESSAGES/kdeconnect-app.mo
+share/locale/nb/LC_MESSAGES/kdeconnect-core.mo
 share/locale/nl/LC_MESSAGES/kdeconnect-app.mo
 share/locale/nl/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/nl/LC_MESSAGES/kdeconnect-core.mo
