@@ -1,6 +1,6 @@
 PORTNAME=	rkcommon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.2
+DISTVERSION=	1.15.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -32,5 +32,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .if ${ARCH} != aarch64 && ${ARCH} != amd64 && !${ARCH:Marmv?} && ${ARCH} != i386
 CMAKE_ARGS+=	-DRKCOMMON_NO_SIMD:BOOL=ON
 .endif
+
+# tests as of 1.15.2: # 100% tests passed, 0 tests failed out of 16
 
 .include <bsd.port.mk>
