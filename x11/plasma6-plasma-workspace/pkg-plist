@@ -2328,6 +2328,7 @@ share/locale/fi/LC_MESSAGES/kio_desktop.mo
 share/locale/fi/LC_MESSAGES/klipper.mo
 share/locale/fi/LC_MESSAGES/krdb.mo
 share/locale/fi/LC_MESSAGES/krunner.mo
+share/locale/fi/LC_MESSAGES/ksecretprompter.mo
 share/locale/fi/LC_MESSAGES/ksmserver.mo
 share/locale/fi/LC_MESSAGES/libkicker.mo
 share/locale/fi/LC_MESSAGES/libkmpris.mo

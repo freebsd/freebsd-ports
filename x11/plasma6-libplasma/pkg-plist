@@ -47,11 +47,11 @@ lib/cmake/PlasmaQuick/PlasmaQuickConfigVersion.cmake
 lib/cmake/PlasmaQuick/PlasmaQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PlasmaQuick/PlasmaQuickTargets.cmake
 lib/libPlasma.so
-lib/libPlasma.so.6
 lib/libPlasma.so.%%KDE_PLASMA_VERSION%%
+lib/libPlasma.so.7
 lib/libPlasmaQuick.so
-lib/libPlasmaQuick.so.6
 lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
+lib/libPlasmaQuick.so.7
 %%QT_PLUGINDIR%%/kf6/kirigami/platform/KirigamiPlasmaStyle.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/plasma_applet.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/plasma_containmentactions.so

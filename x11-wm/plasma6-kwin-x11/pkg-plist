@@ -1198,6 +1198,7 @@ share/locale/nl/LC_MESSAGES/kcmkwincompositing_x11.mo
 share/locale/nl/LC_MESSAGES/kcmkwinscreenedges_x11.mo
 share/locale/nl/LC_MESSAGES/kcmkwm_x11.mo
 share/locale/nl/LC_MESSAGES/kwin_x11.mo
+share/locale/nn/LC_MESSAGES/kcm_animations_x11.mo
 share/locale/nn/LC_MESSAGES/kcm_kwin_effects_x11.mo
 share/locale/nn/LC_MESSAGES/kcm_kwin_scripts_x11.mo
 share/locale/nn/LC_MESSAGES/kcm_kwin_virtualdesktops_x11.mo
