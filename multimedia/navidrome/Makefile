@@ -1,6 +1,6 @@
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.60.0
+DISTVERSION=	0.60.3
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 LIB_DEPENDS=	libtag.so:audio/taglib
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cpe go:1.25+,modules nodejs:24,build pkgconfig
+USES=		cpe go:1.25+,modules pkgconfig
 
 USE_GITHUB=	yes
 
@@ -40,7 +40,7 @@ SUB_LIST+=	NAVIDROMEGROUP=${NAVIDROME_GROUP} \
 USERS=		${NAVIDROME_USER}
 GROUPS=		${NAVIDROME_GROUP}
 
-GITID=		6fb4cd2
+GITID=		34c6f12
 
 NAVIDROME_USER=		www
 NAVIDROME_GROUP=	www
