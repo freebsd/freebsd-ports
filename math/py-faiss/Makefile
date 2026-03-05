@@ -1,6 +1,6 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.1
+DISTVERSION=	1.14.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	swig:devel/swig \
 		${PY_DEPENDS}
 LIB_DEPENDS=	libfaiss.so:math/faiss
 RUN_DEPENDS=	${PY_DEPENDS}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 
 USES=		cmake compiler:c++11-lang localbase python
 USE_PYTHON=	flavors pytest # tests fail to run, see https://github.com/facebookresearch/faiss/issues/3914
@@ -44,6 +45,6 @@ do-install: # see https://github.com/facebookresearch/faiss/issues/2194
 .endfor
 	cd ${BUILD_WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
-# tests are broken, see https://github.com/facebookresearch/faiss/issues/4317
+# tests expect the modle common_io to be available, but this module is questionable, see https://github.com/facebookresearch/faiss/issues/4865
 
 .include <bsd.port.mk>
