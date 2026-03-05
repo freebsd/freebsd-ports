@@ -6,9 +6,9 @@ mismatch.
 To rule out that possibility, the sandbox code is left disabled by
 default but can be enabled if desired through the SANDBOX option.
 
---- src/nhlua.c.orig	2025-03-17 12:18:47 UTC
+--- src/nhlua.c.orig	2026-02-28 22:45:03 UTC
 +++ src/nhlua.c
-@@ -2236,6 +2236,7 @@ nhl_init(nhl_sandbox_info *sbi)
+@@ -2356,6 +2356,7 @@ nhl_init(nhl_sandbox_info *sbi)
  lua_State *
  nhl_init(nhl_sandbox_info *sbi)
  {
@@ -16,7 +16,7 @@ default but can be enabled if desired through the SANDBOX option.
      /* It would be nice to import EXPECTED from each build system. XXX */
      /* And it would be nice to do it only once, but it's cheap. */
  #ifndef NHL_VERSION_EXPECTED
-@@ -2248,6 +2249,7 @@ nhl_init(nhl_sandbox_info *sbi)
+@@ -2372,6 +2373,7 @@ nhl_init(nhl_sandbox_info *sbi)
              "sandbox doesn't know this Lua version: this=%d != expected=%d ",
              LUA_VERSION_RELEASE_NUM, NHL_VERSION_EXPECTED);
      }

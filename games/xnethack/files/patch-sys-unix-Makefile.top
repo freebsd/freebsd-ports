@@ -1,4 +1,4 @@
---- sys/unix/Makefile.top.orig	2025-03-15 15:02:36 UTC
+--- sys/unix/Makefile.top.orig	2026-02-28 22:45:03 UTC
 +++ sys/unix/Makefile.top
 @@ -25,15 +25,15 @@ GAME     = xnethack
  GAME     = xnethack
@@ -62,7 +62,7 @@
  	@echo '/*nhlua.h*/' >> $@
  # LUATESTTARGET is this by default
  lib/lua-$(LUA_VERSION)/src/lua.h:
-@@ -304,39 +303,22 @@ dofiles:
+@@ -309,39 +308,22 @@ dofiles:
  		-e '}' 					\
  	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
  	$(MAKE) dofiles-$${target-nodlb}
@@ -110,7 +110,7 @@
  #
  # This is not part of the dependency build hierarchy.
  # It requires an explicit "make fetch-Lua".
-@@ -447,24 +429,17 @@ install: rootcheck $(PRECHECK) $(GAME) recover $(VARDA
+@@ -460,24 +442,17 @@ install: rootcheck $(PRECHECK) $(GAME) recover $(VARDA
  	true; $(PREINSTALL)
  # set up the directories
  # not all mkdirs have -p; those that don't will create a -p directory
