@@ -13,3 +13,4 @@ bin/rustic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/sftp_hetzner_sbox.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/services/webdav_owncloud_nextcloud.toml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stdin-command.toml
