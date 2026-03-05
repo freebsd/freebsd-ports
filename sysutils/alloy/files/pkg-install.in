@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# PRE-INSTALL:  Stop alloy if enabled so the binary can be replaced (avoids
+#               ETXTBSY on FreeBSD when the Go binary is in use).
+# POST-INSTALL: Restart alloy if enabled so the new binary is used.
+# DEINSTALL:    Stop alloy if enabled before removal.
+#
+
+[ -z "${PACKAGE_BUILDING}" ] || exit 0
+
+# PKG_PREFIX is set by pkg when running install/deinstall scripts.
+: ${PKG_PREFIX:=/usr/local}
+_rc_script="${PKG_PREFIX}/etc/rc.d/alloy"
+_alloy_config="${PKG_PREFIX}/etc/alloy.flow"
+
+# Load rc.conf to check alloy_enable (same as the rc.d script).
+alloy_enable=NO
+if [ -r /etc/rc.subr ]; then
+	. /etc/rc.subr
+	name=alloy
+	rcvar=alloy_enable
+	load_rc_config $name
+fi
+: ${alloy_enable:=NO}
+[ "${alloy_enable}" = "YES" ] || exit 0
+
+case "$2" in
+PRE-INSTALL)
+	# Stop before file replacement so the running binary can be overwritten.
+	[ -x "${_rc_script}" ] && "${_rc_script}" stop 2>/dev/null || true
+	;;
+POST-INSTALL)
+	# Start only if config exists; rc.d runs "alloy run .../alloy.flow" which exits if missing.
+	if [ -r "${_rc_script}" ] && [ -f "${_alloy_config}" ]; then
+		sh "${_rc_script}" start 2>/dev/null || true
+	fi
+	;;
+DEINSTALL)
+	[ -r "${_rc_script}" ] && sh "${_rc_script}" stop 2>/dev/null || true
+	;;
+esac

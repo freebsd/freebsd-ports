@@ -1,7 +1,7 @@
-TIMESTAMP = 1756329743
-SHA256 (go/sysutils_alloy/grafana-alloy-v1.10.2_GH0/v1.10.2.mod) = 00055a9dafa0182283fbb801d6bc092ffbec438405c190f3a57010f07783bcaa
-SIZE (go/sysutils_alloy/grafana-alloy-v1.10.2_GH0/v1.10.2.mod) = 67450
-SHA256 (go/sysutils_alloy/grafana-alloy-v1.10.2_GH0/v1.10.2.zip) = c1603f2447f19178e67e906c9dc012a47a77f328c6d3cf997ab1fbeea12ba258
-SIZE (go/sysutils_alloy/grafana-alloy-v1.10.2_GH0/v1.10.2.zip) = 14528199
-SHA256 (go/sysutils_alloy/grafana-alloy-v1.10.2_GH0/grafana-alloy-v1.10.2_GH0.tar.gz) = ed170622458600dd335dbdea12cf88a6bee33df1949a58b31a707b1a84f65b0f
-SIZE (go/sysutils_alloy/grafana-alloy-v1.10.2_GH0/grafana-alloy-v1.10.2_GH0.tar.gz) = 12779185
+TIMESTAMP = 1771875883
+SHA256 (go/sysutils_alloy/grafana-alloy-v1.13.1_GH0/v1.13.1.mod) = 2664a5fe70d0ccd10783f47038738ced9007fc5f04f2f3252c44a47030218681
+SIZE (go/sysutils_alloy/grafana-alloy-v1.13.1_GH0/v1.13.1.mod) = 66864
+SHA256 (go/sysutils_alloy/grafana-alloy-v1.13.1_GH0/v1.13.1.zip) = 32d203a9dd535f6df4a8597fac4c414a05e247b7dec5dc0bffaa9778be248d0b
+SIZE (go/sysutils_alloy/grafana-alloy-v1.13.1_GH0/v1.13.1.zip) = 19842013
+SHA256 (go/sysutils_alloy/grafana-alloy-v1.13.1_GH0/grafana-alloy-v1.13.1_GH0.tar.gz) = 46bad79b5ba502d93c57b4dfe59aadc362cda173290760d8da33080552f53d9a
+SIZE (go/sysutils_alloy/grafana-alloy-v1.13.1_GH0/grafana-alloy-v1.13.1_GH0.tar.gz) = 18140497
