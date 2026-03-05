@@ -1,10 +1,7 @@
 PORTNAME=	gnutls
 DISTVERSION=	3.8.12
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:C/(\.[^.]*).*/\1/} \
-		https://gitlab.com/gnutls/gnutls/-/raw/${DISTVERSION}/tests/:test
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ktls_utils.h:test
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:C/(\.[^.]*).*/\1/}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -78,7 +75,6 @@ P11KIT_CONFIGURE_WITH=	p11-kit
 SRP_CONFIGURE_ENABLE=	srp-authentication
 
 post-patch:
-	@${CP} -p ${DISTDIR}/ktls_utils.h ${WRKSRC}/tests/
 	@${RM} ${WRKSRC}/doc/*.info*
 	@${REINPLACE_CMD} 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/doc/manpages/*.[13]
