@@ -1,6 +1,5 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	KDE Plasma Workspace
@@ -37,8 +36,8 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		itemviews jobwidgets kcmutils kdeclarative kio kirigami-addons \
 		kirigami2 kpipewire kquickcharts kscreenlocker kwin \
 		layer-shell-qt libkexiv2 libkscreen libksysguard libplasma \
-		newstuff notifications notifyconfig package parts phonon \
-		plasma5support prison runner service solid sonnet \
+		newstuff notifications package parts \
+		prison runner service solid sonnet \
 		statusnotifieritem svg syntaxhighlighting texteditor \
 		textwidgets userfeedback wallet wayland \
 		widgetsaddons windowsystem xmlgui \
@@ -48,8 +47,7 @@ USE_QT=		5compat base declarative location svg wayland
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xft xi xrender xtst
 SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
 
-CMAKE_ON=	PLASMA_X11_DEFAULT_SESSION \
-		CMAKE_DISABLE_FIND_PACKAGE_KF6NetworkManagerQt
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_KF6NetworkManagerQt
 
 OPTIONS_DEFINE=	GTK
 

@@ -1,18 +1,18 @@
 PORTNAME=	kinfocenter
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	View information about your computer's hardware
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-RUN_DEPENDS=	clinfo:devel/clinfo \
+RUN_DEPENDS=	aha:textproc/aha \
+		clinfo:devel/clinfo \
 		glxinfo:graphics/mesa-demos \
 		hwdata>0:misc/hwdata \
 		lsblk:sysutils/lsblk \
 		lscpu:sysutils/lscpu \
-		pipewire:multimedia/pipewire \
+		pactl:audio/pulseaudio \
 		vulkaninfo:graphics/vulkan-tools \
 		wayland-info:graphics/wayland-utils \
 		xdpyinfo:x11/xdpyinfo

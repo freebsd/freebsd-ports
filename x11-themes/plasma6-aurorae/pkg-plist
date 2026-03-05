@@ -3,6 +3,7 @@ lib/cmake/Aurorae/AuroraeConfigVersion.cmake
 lib/libexec/plasma-apply-aurorae
 %%QT_PLUGINDIR%%/org.kde.kdecoration3.kcm/kcm_auroraedecoration.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration3/org.kde.kwin.aurorae.so
+%%QT_PLUGINDIR%%/org.kde.kdecoration3/org.kde.kwin.aurorae.v2.so
 %%QT_QMLDIR%%/org/kde/kwin/decoration/AppMenuButton.qml
 %%QT_QMLDIR%%/org/kde/kwin/decoration/ButtonGroup.qml
 %%QT_QMLDIR%%/org/kde/kwin/decoration/Decoration.qml

@@ -3,6 +3,7 @@ etc/xdg/kcm-about-distrorc
 lib/libKInfoCenterInternal.so
 lib/libexec/kf6/kauth/kinfocenter-dmidecode-helper
 lib/libexec/kinfocenter-opengl-helper
+lib/libexec/kinfocenter-vulkan-helper
 %%QT_PLUGINDIR%%/plasma/kcms/kcm_about-distro.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_audio_information.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_block_devices.so
@@ -77,6 +78,7 @@ share/doc/HTML/uk/kinfocenter/kinfocenter.png
 %%DATADIR%%/edid/edid.sh
 %%DATADIR%%/firmware_security/fwupdmgr.sh
 %%DATADIR%%/images/freebsd_logo.svg
+%%DATADIR%%/network/ip.sh
 share/locale/af/LC_MESSAGES/kcm_samba.mo
 share/locale/af/LC_MESSAGES/kcmusb.mo
 share/locale/ar/LC_MESSAGES/kcm_about-distro.mo
