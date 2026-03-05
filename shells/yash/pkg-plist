@@ -4,13 +4,16 @@ bin/yash
 %%NLS%%share/locale/ja/LC_MESSAGES/yash.mo
 share/man/ja/man1/yash.1.gz
 share/man/man1/yash.1.gz
+%%DATADIR%%/completion/7z
 %%DATADIR%%/completion/INIT
+%%DATADIR%%/completion/README.md
 %%DATADIR%%/completion/[
 %%DATADIR%%/completion/_backup
 %%DATADIR%%/completion/_blocksize
 %%DATADIR%%/completion/_bsd
 %%DATADIR%%/completion/_dot
 %%DATADIR%%/completion/alias
+%%DATADIR%%/completion/aria2c
 %%DATADIR%%/completion/array
 %%DATADIR%%/completion/awk
 %%DATADIR%%/completion/basename
@@ -136,6 +139,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/gvim
 %%DATADIR%%/completion/gvimdiff
 %%DATADIR%%/completion/hash
+%%DATADIR%%/completion/hdparm
 %%DATADIR%%/completion/head
 %%DATADIR%%/completion/help
 %%DATADIR%%/completion/history
@@ -155,8 +159,10 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/mesg
 %%DATADIR%%/completion/mkdir
 %%DATADIR%%/completion/mkfifo
+%%DATADIR%%/completion/mkinitcpio
 %%DATADIR%%/completion/mksh
 %%DATADIR%%/completion/more
+%%DATADIR%%/completion/mount
 %%DATADIR%%/completion/mv
 %%DATADIR%%/completion/mw
 %%DATADIR%%/completion/nawk
@@ -207,6 +213,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/sudo
 %%DATADIR%%/completion/sudoedit
 %%DATADIR%%/completion/suspend
+%%DATADIR%%/completion/sv
 %%DATADIR%%/completion/svn
 %%DATADIR%%/completion/tail
 %%DATADIR%%/completion/tar
