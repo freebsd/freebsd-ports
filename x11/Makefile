@@ -343,6 +343,7 @@
     SUBDIR += plasma6-kglobalacceld
     SUBDIR += plasma6-kscreen
     SUBDIR += plasma6-kwayland
+    SUBDIR += plasma6-kwayland-integration
     SUBDIR += plasma6-layer-shell-qt
     SUBDIR += plasma6-libkscreen
     SUBDIR += plasma6-libplasma
