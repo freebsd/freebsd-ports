@@ -1,12 +1,12 @@
 PORTNAME=	logstalgia
-DISTVERSION=	1.1.4
-PORTREVISION=	11
+DISTVERSION=	1.1.5
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://github.com/acaudwell/${PORTNAME}/releases/download/${DISTNAME}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Website access log visualization tool
-WWW=		https://logstalgia.io/
+WWW=		https://logstalgia.io/ \
+		https://github.com/acaudwell/logstalgia
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
