@@ -1,18 +1,18 @@
---- crates/remote_server/src/server.rs.orig	2026-02-10 14:24:33 UTC
+--- crates/remote_server/src/server.rs.orig	2026-03-04 15:41:56 UTC
 +++ crates/remote_server/src/server.rs
-@@ -450,6 +450,7 @@ pub fn execute_run(
-     let app = gpui::Application::headless();
+@@ -452,6 +452,7 @@ pub fn execute_run(
+     let app = gpui_platform::headless();
      let pid = std::process::id();
      let id = pid.to_string();
 +    #[cfg(not(target_os = "freebsd"))]
-     app.background_executor()
-         .spawn(crashes::init(crashes::InitCrashHandler {
+     crashes::init(
+         crashes::InitCrashHandler {
              session_id: id,
-@@ -701,6 +702,7 @@ pub(crate) fn execute_proxy(
+@@ -707,6 +708,7 @@ pub(crate) fn execute_proxy(
      let server_paths = ServerPaths::new(&identifier)?;
  
      let id = std::process::id().to_string();
 +    #[cfg(not(target_os = "freebsd"))]
-     smol::spawn(crashes::init(crashes::InitCrashHandler {
-         session_id: id,
-         zed_version: VERSION.to_owned(),
+     crashes::init(
+         crashes::InitCrashHandler {
+             session_id: id,
