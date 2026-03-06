@@ -1,8 +1,8 @@
 PORTNAME=	storcli
-DISTVERSION=	7.3503
+DISTVERSION=	7.3603
 CATEGORIES=	sysutils
-MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p36/
-DISTNAME=	STORCLI_SAS3.5_P36
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p37/
+DISTNAME=	STORCLI_SAS3.5_P37
 DIST_SUBDIR=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	takefu@airport.fm
@@ -13,7 +13,7 @@ LICENSE=	storcli
 LICENSE_NAME=	BROADCOM
 LICENSE_TEXT=	Source recipient must acknowledge license.\
 		Reproduction or redistribution prohibited.\
-		See https://docs.broadcom.com/docs/${DISTNAME}${EXTRACT_SUFX}
+		See ${MASTER_SITES}${DISTNAME}${EXTRACT_SUFX}
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
@@ -30,7 +30,7 @@ BINSRC=		${WRKSRC}/${DISTNAME}/univ_viva_cli_rel/Unified_storcli_all_os
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-DOWNLOAD_URL=	https://docs.broadcom.com/docs/${DISTNAME}${EXTRACT_SUFX}
+DOWNLOAD_URL=	${MASTER_SITES}${DISTNAME}${EXTRACT_SUFX}
 IGNORE=		you must manually fetch the distribution file \
 		(${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
 		place it in ${DISTDIR}/${DIST_SUBDIR} and then run make again
