@@ -1,0 +1,7 @@
+%%CLI%%bin/aft-mtp-cli
+%%FUSE%%bin/aft-mtp-mount
+%%QT6%%bin/android-file-transfer
+@comment lib/libmtp-ng-static.a
+%%QT6%%share/applications/android-file-transfer.desktop
+%%QT6%%share/icons/hicolor/512x512/apps/android-file-transfer.png
+%%QT6%%share/metainfo/android-file-transfer.appdata.xml
