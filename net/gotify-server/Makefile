@@ -1,7 +1,7 @@
 PORTNAME=	gotify-server
 PORTVERSION=	2.7.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/mfechner/freebsd-net-gotify-server/raw/refs/heads/main/:yarn_cache
 DISTNAME=	server
