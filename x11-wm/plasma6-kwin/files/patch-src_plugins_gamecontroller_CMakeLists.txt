@@ -1,0 +1,9 @@
+--- src/plugins/gamecontroller/CMakeLists.txt.orig	2026-03-03 09:32:10 UTC
++++ src/plugins/gamecontroller/CMakeLists.txt
+@@ -25,5 +25,6 @@ target_link_libraries(gamecontroller PRIVATE
+     UDev::UDev
+     PkgConfig::libevdev
+     XKB::XKB
++    ${Inotify_LIBRARIES}
+ )
+ 

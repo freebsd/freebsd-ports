@@ -52,4 +52,10 @@ EI_DESC=		Emulated input for Wayland
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_CMAKE_BOOL=		KWIN_BUILD_EIS
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500050
+LIB_DEPENDS+=	libinotify.so.0:devel/libinotify
+.endif
+
+.include <bsd.port.post.mk>
