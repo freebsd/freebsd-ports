@@ -1,4 +1,4 @@
---- thirdparty/compoundfilereader/compoundfilereader.h.orig	2025-08-13 00:57:26 UTC
+--- thirdparty/compoundfilereader/compoundfilereader.h.orig	2026-03-05 18:35:46 UTC
 +++ thirdparty/compoundfilereader/compoundfilereader.h
 @@ -261,7 +261,7 @@ struct helper
      }
@@ -18,3 +18,10 @@
              EnumNodes(GetEntry(entry->childID), currentLevel + 1, maxLevel, newDir, callback);
          }
  
+@@ -610,4 +610,4 @@ class PropertySetStream (private)
+     const PROPERTY_SET_STREAM_HDR* m_hdr;
+ };
+ 
+-}
+\ No newline at end of file
++}
