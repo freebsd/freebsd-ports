@@ -404,7 +404,6 @@ FreeCAD/Mod/CAM/CAMTests/TestPathCommandAnnotations.py
 FreeCAD/Mod/CAM/CAMTests/TestPathCore.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDepthParams.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupArray.py
-FreeCAD/Mod/CAM/CAMTests/TestPathDressupDogbone.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupDogboneII.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupHoldingTags.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillGenerator.py
@@ -470,6 +469,7 @@ FreeCAD/Mod/CAM/CAMTests/test_adaptive.fcstd
 FreeCAD/Mod/CAM/CAMTests/test_geomop.fcstd
 FreeCAD/Mod/CAM/CAMTests/test_holes00.fcstd
 FreeCAD/Mod/CAM/CAMTests/test_profile.fcstd
+FreeCAD/Mod/CAM/Constants.py
 FreeCAD/Mod/CAM/Data/Threads/imperial-external-2A.csv
 FreeCAD/Mod/CAM/Data/Threads/imperial-external-3A.csv
 FreeCAD/Mod/CAM/Data/Threads/imperial-internal-2B.csv
@@ -518,7 +518,6 @@ FreeCAD/Mod/CAM/Path/Dressup/DogboneII.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Array.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/AxisMap.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Boundary.py
-FreeCAD/Mod/CAM/Path/Dressup/Gui/Dogbone.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/DogboneII.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Dragknife.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/LeadInOut.py
@@ -766,6 +765,7 @@ FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/panel.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/selector.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/tablecell.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/toollist.py
+FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/typefilter.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/util.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/view.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/util.py
@@ -815,6 +815,7 @@ FreeCAD/Mod/CAM/Tools/Shape/radius.fcstd
 FreeCAD/Mod/CAM/Tools/Shape/radius.svg
 FreeCAD/Mod/CAM/Tools/Shape/reamer.fcstd
 FreeCAD/Mod/CAM/Tools/Shape/reamer.svg
+FreeCAD/Mod/CAM/Tools/Shape/shape_aliases.json
 FreeCAD/Mod/CAM/Tools/Shape/slittingsaw.fcstd
 FreeCAD/Mod/CAM/Tools/Shape/slittingsaw.svg
 FreeCAD/Mod/CAM/Tools/Shape/tap.fcstd
@@ -1180,6 +1181,7 @@ FreeCAD/Mod/Fem/femexamples/material_multiple_bendingbeam_fivefaces.py
 FreeCAD/Mod/Fem/femexamples/material_multiple_tensionrod_twoboxes.py
 FreeCAD/Mod/Fem/femexamples/material_nl_platewithhole.py
 FreeCAD/Mod/Fem/femexamples/meshes/__init__.py
+FreeCAD/Mod/Fem/femexamples/meshes/generate_mesh.py
 FreeCAD/Mod/Fem/femexamples/meshes/mesh_beamsimple_tetra10.py
 FreeCAD/Mod/Fem/femexamples/meshes/mesh_boxanalysis_tetra10.py
 FreeCAD/Mod/Fem/femexamples/meshes/mesh_boxes_2_vertikal_tetra10.py
@@ -1304,8 +1306,6 @@ FreeCAD/Mod/Fem/femresult/resulttools.py
 FreeCAD/Mod/Fem/femsolver/__init__.py
 FreeCAD/Mod/Fem/femsolver/calculix/__init__.py
 FreeCAD/Mod/Fem/femsolver/calculix/calculixtools.py
-FreeCAD/Mod/Fem/femsolver/calculix/solver.py
-FreeCAD/Mod/Fem/femsolver/calculix/tasks.py
 FreeCAD/Mod/Fem/femsolver/calculix/write_amplitude.py
 FreeCAD/Mod/Fem/femsolver/calculix/write_constraint_bodyheatsource.py
 FreeCAD/Mod/Fem/femsolver/calculix/write_constraint_centrif.py
@@ -1558,6 +1558,7 @@ FreeCAD/Mod/Fem/femtools/femutils.py
 FreeCAD/Mod/Fem/femtools/geomtools.py
 FreeCAD/Mod/Fem/femtools/membertools.py
 FreeCAD/Mod/Fem/femtools/migrate_app.py
+FreeCAD/Mod/Fem/femtools/objecttools.py
 FreeCAD/Mod/Fem/femtools/tokrules.py
 FreeCAD/Mod/Fem/femviewprovider/__init__.py
 FreeCAD/Mod/Fem/femviewprovider/view_base_femconstraint.py
@@ -1938,6 +1939,7 @@ FreeCAD/Mod/Test/TestData/content_items.xml
 FreeCAD/Mod/Test/TestGui.py
 FreeCAD/Mod/Test/TestPerf.py
 FreeCAD/Mod/Test/TestPythonSyntax.py
+FreeCAD/Mod/Test/TestTreeSelection.py
 FreeCAD/Mod/Test/UnicodeTests.py
 FreeCAD/Mod/Test/UnitTests.py
 FreeCAD/Mod/Test/Workbench.py

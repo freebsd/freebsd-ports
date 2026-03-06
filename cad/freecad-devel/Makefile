@@ -66,7 +66,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
 
-VTK_VER=	9.5
+VTK_VER=	9.6
 
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
 SHEBANG_FILES=	src/Tools/freecad-thumbnailer.in
