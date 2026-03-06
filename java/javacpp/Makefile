@@ -21,7 +21,7 @@ GH_ACCOUNT=	bytedeco
 
 do-build:
 # Compile to JVM bytecode
-	@cd ${WRKSRC} && ${JAVA_HOME}/bin/javac -encoding UTF-8 -d bin \
+	@cd ${WRKSRC} && ${JAVAC} -encoding UTF-8 -d bin \
 		-sourcepath src/main/java:stubs \
 		$$(find src/main/java -name "*.java" \
 		! -name "*Mojo.java" \
@@ -31,24 +31,24 @@ do-build:
 	${RM} -rf ${WRKSRC}/bin/org/slf4j
 # Put into jar and add freebsd-*.properties
 	@cd ${WRKSRC} && \
-		${JAVA_HOME}/bin/jar cvfe ${PORTNAME}.jar org.bytedeco.javacpp.tools.Builder -C bin . \
+		${JAR} cvfe ${PORTNAME}.jar org.bytedeco.javacpp.tools.Builder -C bin . \
 		&& cd src/main/resources \
-		&& ${JAVA_HOME}/bin/jar uvf ../../../${PORTNAME}.jar org/bytedeco/javacpp/properties/freebsd-*.properties
+		&& ${JAR} uvf ../../../${PORTNAME}.jar org/bytedeco/javacpp/properties/freebsd-*.properties
 
 do-test:
 # Build a blank bridge. This is what the tests will do.
-#	@cd ${WRKSRC} && ${JAVA_HOME}/bin/java -cp ${PORTNAME}.jar \
+#	@cd ${WRKSRC} && ${JAVA} -cp ${PORTNAME}.jar \
 #		org.bytedeco.javacpp.tools.Builder \
 #		org.bytedeco.javacpp.Pointer
 
 # Compile tests
-	@cd ${WRKSRC} && ${JAVA_HOME}/bin/javac -encoding UTF-8 \
+	@cd ${WRKSRC} && ${JAVAC} -encoding UTF-8 \
 		-classpath "javacpp.jar:${JAVAJARDIR}/junit.jar" \
 		-d bin-tests \
 		$$(find src/test/java -name "*.java")
 
 # Run unit tests.  maxbytes and maxretries seem to be hardcoded in the tests
-	@cd ${WRKSRC} && ${JAVA_HOME}/bin/java -Djava.library.path=./ \
+	@cd ${WRKSRC} && ${JAVA} -Djava.library.path=./ \
 		-Dorg.bytedeco.javacpp.maxphysicalbytes=2147483648 \
 		-Dorg.bytedeco.javacpp.maxbytes=1073741824 \
 		-Dorg.bytedeco.javacpp.maxretries=3 \
