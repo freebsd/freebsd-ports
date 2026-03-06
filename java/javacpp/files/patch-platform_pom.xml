@@ -1,0 +1,328 @@
+--- platform/pom.xml.orig	2026-02-22 01:43:04 UTC
++++ platform/pom.xml
+@@ -4,7 +4,7 @@
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>org.bytedeco</groupId>
+   <artifactId>javacpp-platform</artifactId>
+-  <version>1.5.13</version>
++  <version>1.5.14-SNAPSHOT</version>
+ 
+   <name>JavaCPP Platform</name>
+   <description>The missing bridge between Java and native C++</description>
+@@ -47,6 +47,7 @@
+     <javacpp.platform.android-arm64>android-arm64${javacpp.platform.extension}</javacpp.platform.android-arm64>
+     <javacpp.platform.android-x86>android-x86${javacpp.platform.extension}</javacpp.platform.android-x86>
+     <javacpp.platform.android-x86_64>android-x86_64${javacpp.platform.extension}</javacpp.platform.android-x86_64>
++    <javacpp.platform.freebsd-arm64>freebsd-arm64${javacpp.platform.extension}</javacpp.platform.freebsd-arm64>
+     <javacpp.platform.freebsd-x86_64>freebsd-x86_64${javacpp.platform.extension}</javacpp.platform.freebsd-x86_64>
+     <javacpp.platform.ios-arm>ios-arm${javacpp.platform.extension}</javacpp.platform.ios-arm>
+     <javacpp.platform.ios-arm64>ios-arm64${javacpp.platform.extension}</javacpp.platform.ios-arm64>
+@@ -200,7 +201,7 @@
+     <plugins>
+       <plugin>
+         <artifactId>maven-dependency-plugin</artifactId>
+-        <version>3.6.1</version>
++        <version>3.10.0</version>
+         <executions>
+           <execution>
+             <id>properties</id>
+@@ -222,7 +223,7 @@
+       </plugin>
+       <plugin>
+         <artifactId>maven-assembly-plugin</artifactId>
+-        <version>3.6.0</version>
++        <version>3.8.0</version>
+         <configuration>
+           <attach>false</attach>
+           <descriptors>
+@@ -241,14 +242,14 @@
+       </plugin>
+       <plugin>
+         <artifactId>maven-jar-plugin</artifactId>
+-        <version>3.3.0</version>
++        <version>3.5.0</version>
+         <executions>
+           <execution>
+             <id>default-jar</id>
+             <configuration>
+               <archive>
+                 <manifestEntries>
+-                  <Class-Path>javacpp.jar javacpp-freebsd-x86_64.jar javacpp-linux-armhf.jar javacpp-linux-arm64.jar javacpp-linux-ppc64le.jar javacpp-linux-riscv64.jar javacpp-linux-x86.jar javacpp-linux-x86_64.jar javacpp-macosx-arm64.jar javacpp-macosx-x86_64.jar javacpp-windows-arm64.jar javacpp-windows-x86.jar javacpp-windows-x86_64.jar</Class-Path>
++                  <Class-Path>javacpp.jar javacpp-freebsd-arm64 javacpp-freebsd-x86_64.jar javacpp-linux-armhf.jar javacpp-linux-arm64.jar javacpp-linux-ppc64le.jar javacpp-linux-riscv64.jar javacpp-linux-x86.jar javacpp-linux-x86_64.jar javacpp-macosx-arm64.jar javacpp-macosx-x86_64.jar javacpp-windows-arm64.jar javacpp-windows-x86.jar javacpp-windows-x86_64.jar</Class-Path>
+                 </manifestEntries>
+               </archive>
+             </configuration>
+@@ -276,7 +277,7 @@
+       <plugin>
+         <groupId>org.moditect</groupId>
+         <artifactId>moditect-maven-plugin</artifactId>
+-        <version>1.1.0</version>
++        <version>1.3.0</version>
+         <configuration>
+           <jvmVersion>9</jvmVersion>
+           <overwriteExistingFiles>true</overwriteExistingFiles>
+@@ -375,7 +376,7 @@
+         <plugins>
+           <plugin>
+             <artifactId>maven-gpg-plugin</artifactId>
+-            <version>3.1.0</version>
++            <version>3.2.8</version>
+             <executions>
+               <execution>
+                 <id>sign-artifacts</id>
+@@ -442,6 +443,7 @@
+         <javacpp.platform.android-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.ios-arm64>
+@@ -474,6 +476,7 @@
+         <javacpp.platform.android-arm64>${os.name}-${os.arch}${javacpp.platform.extension}</javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86>${os.name}-${os.arch}${javacpp.platform.extension}</javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64>${os.name}-${os.arch}${javacpp.platform.extension}</javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64>${os.name}-${os.arch}${javacpp.platform.extension}</javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64>${os.name}-${os.arch}${javacpp.platform.extension}</javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm>${os.name}-${os.arch}${javacpp.platform.extension}</javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64>${os.name}-${os.arch}${javacpp.platform.extension}</javacpp.platform.ios-arm64>
+@@ -506,6 +509,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -538,6 +542,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -571,6 +576,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -603,6 +609,7 @@
+         <javacpp.platform.android-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -635,6 +642,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -667,6 +675,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -699,6 +708,40 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.freebsd-arm64>
++        <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
++        <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
++        <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
++        <javacpp.platform.ios-x86></javacpp.platform.ios-x86>
++        <javacpp.platform.ios-x86_64></javacpp.platform.ios-x86_64>
++        <javacpp.platform.linux-armhf></javacpp.platform.linux-armhf>
++        <javacpp.platform.linux-arm64></javacpp.platform.linux-arm64>
++        <javacpp.platform.linux-ppc64le></javacpp.platform.linux-ppc64le>
++        <javacpp.platform.linux-riscv64></javacpp.platform.linux-riscv64>
++        <javacpp.platform.linux-x86></javacpp.platform.linux-x86>
++        <javacpp.platform.linux-x86_64></javacpp.platform.linux-x86_64>
++        <javacpp.platform.macosx-arm64></javacpp.platform.macosx-arm64>
++        <javacpp.platform.macosx-x86_64></javacpp.platform.macosx-x86_64>
++        <javacpp.platform.windows-arm64></javacpp.platform.windows-arm64>
++        <javacpp.platform.windows-x86></javacpp.platform.windows-x86>
++        <javacpp.platform.windows-x86_64></javacpp.platform.windows-x86_64>
++      </properties>
++    </profile>
++
++    <profile>
++      <id>javacpp-platform-freebsd-x86_64</id>
++      <activation>
++        <property>
++          <name>javacpp.platform</name>
++          <value>freebsd-x86_64</value>
++        </property>
++      </activation>
++      <properties>
++        <javacpp.platform.android-arm></javacpp.platform.android-arm>
++        <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
++        <javacpp.platform.android-x86></javacpp.platform.android-x86>
++        <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -763,6 +806,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64>${javacpp.platform}${javacpp.platform.extension}</javacpp.platform.ios-arm64>
+@@ -795,6 +839,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -827,6 +872,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -859,6 +905,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -891,6 +938,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -923,6 +971,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -955,6 +1004,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -987,6 +1037,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -1019,6 +1070,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -1051,6 +1103,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -1083,6 +1136,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -1115,6 +1169,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -1147,6 +1202,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -1179,6 +1235,7 @@
+         <javacpp.platform.android-arm64></javacpp.platform.android-arm64>
+         <javacpp.platform.android-x86></javacpp.platform.android-x86>
+         <javacpp.platform.android-x86_64></javacpp.platform.android-x86_64>
++        <javacpp.platform.freebsd-arm64></javacpp.platform.freebsd-arm64>
+         <javacpp.platform.freebsd-x86_64></javacpp.platform.freebsd-x86_64>
+         <javacpp.platform.ios-arm></javacpp.platform.ios-arm>
+         <javacpp.platform.ios-arm64></javacpp.platform.ios-arm64>
+@@ -1249,6 +1306,18 @@
+     </profile>
+ 
+     <profile>
++      <id>javacpp.platform.freebsd-arm64-true</id>
++      <activation>
++        <property>
++          <name>javacpp.platform.freebsd-arm64</name>
++        </property>
++      </activation>
++      <properties>
++        <javacpp.platform.freebsd-arm64>freebsd-arm64${javacpp.platform.extension}</javacpp.platform.freebsd-arm64>
++      </properties>
++    </profile>
++
++    <profile>
+       <id>javacpp.platform.freebsd-x86_64-true</id>
+       <activation>
+         <property>
+@@ -1437,6 +1506,19 @@
+       </activation>
+       <properties>
+         <javacpp.platform.windows-x86_64>windows-x86_64${javacpp.platform.extension}</javacpp.platform.windows-x86_64>
++      </properties>
++    </profile>
++
++    <profile>
++      <id>javacpp.platform.custom-freebsd-arm64</id>
++      <activation>
++        <property>
++          <name>javacpp.platform.host</name>
++        </property>
++        <os><name>freebsd</name><arch>arm64</arch></os>
++      </activation>
++      <properties>
++        <javacpp.platform.freebsd-arm64>freebsd-arm64${javacpp.platform.extension}</javacpp.platform.freebsd-arm64>
+       </properties>
+     </profile>
+ 
