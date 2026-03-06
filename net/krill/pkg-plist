@@ -7,5 +7,5 @@ share/man/man1/krill.1.gz
 share/man/man1/krillc.1.gz
 share/man/man1/krillup.1.gz
 share/man/man1/krillta.1.gz
-%%DOCSDIR%%/krill.conf
+share/man/man5/krill.conf.5.gz
 @dir(krill,krill,) /var/krill
