@@ -1,6 +1,7 @@
 PORTNAME=	nginx-ui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
