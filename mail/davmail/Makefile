@@ -1,9 +1,8 @@
 PORTNAME=	davmail
-PORTVERSION=	6.1.0
-PORTREVISION=	2
+DISTVERSION=	6.5.1
 CATEGORIES=	mail java
-MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
+DISTNAME=	${PORTNAME}-src-${DISTVERSION}-${REVISION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
@@ -14,23 +13,24 @@ LICENSE=	GPLv2
 USES=		dos2unix java:ant,run tar:tgz
 
 DOS2UNIX_FILES=	build.xml
-USE_RC_SUBR=	davmail
-# 6.1.0
-REVISION=	3423
+USE_RC_SUBR=	${PORTNAME}
+# 6.5.1
+REVISION=	3873
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
 ALL_TARGET=	release
 
-NO_ARCH=	yes
-SUB_FILES=	davmail.sh pkg-message
-
-USERS=		davmail
-GROUPS=		davmail
-
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+NO_ARCH=	yes
+SUB_FILES=	${PORTNAME}.sh pkg-message
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${DISTVERSION}
+
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
+
+PLIST_SUB=	VERSION="${DISTVERSION}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#prefix=\"usr#prefix=\"${PREFIX}#' \
@@ -55,11 +55,11 @@ do-install:
 		-not -name "*.desktop" \
 		-exec ${INSTALL_DATA} \{} ${STAGEDIR}${DATADIR}/\{} \;
 	@${FIND} ${STAGEDIR}/${DATADIR} -depth -empty -type d -delete
-	${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh \
-		${STAGEDIR}${PREFIX}/bin/davmail
-	${INSTALL_DATA} ${WRKSRC}/src/etc/davmail.properties \
-		${STAGEDIR}${PREFIX}/etc/davmail.properties.sample
-	${INSTALL_DATA} ${WRKSRC}/src/desktop/davmail.desktop \
-		${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/etc/${PORTNAME}.properties \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.properties.sample
+	${INSTALL_DATA} ${WRKSRC}/src/desktop/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
