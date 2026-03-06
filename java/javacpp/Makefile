@@ -10,6 +10,8 @@ LICENSE=	APACHE20
 
 USES=		java
 
+ONLY_FOR_ARCHS=	amd64 arm64
+
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit \
 		${JAVALIBDIR}/hamcrest.jar:java/hamcrest
 
