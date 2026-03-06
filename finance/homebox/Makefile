@@ -1,6 +1,7 @@
 PORTNAME=	homebox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.23.1
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:

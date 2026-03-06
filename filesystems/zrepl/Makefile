@@ -1,6 +1,7 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	driesm@FreeBSD.org

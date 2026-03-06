@@ -1,5 +1,6 @@
 PORTNAME=	go-pkgsite
 PORTVERSION=    ${MODVERSION:S/-/./g:R}
+PORTREVISION=	1
 CATEGORIES=	net devel
 
 MAINTAINER=	fuz@FreeBSD.org
