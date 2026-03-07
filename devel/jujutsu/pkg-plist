@@ -15,6 +15,7 @@ bin/jj
 %%PORTDOCS%%%%DOCSDIR%%/design/git-submodule-storage.md
 %%PORTDOCS%%%%DOCSDIR%%/design/git-submodules.md
 %%PORTDOCS%%%%DOCSDIR%%/design/jj-converge-command.md
+%%PORTDOCS%%%%DOCSDIR%%/design/managed-config.md
 %%PORTDOCS%%%%DOCSDIR%%/design/run.md
 %%PORTDOCS%%%%DOCSDIR%%/design/secure-config.md
 %%PORTDOCS%%%%DOCSDIR%%/design/sparse-v2.md
