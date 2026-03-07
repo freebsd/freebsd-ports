@@ -1,5 +1,6 @@
 PORTNAME=	groff
 DISTVERSION=	1.24.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -31,10 +32,11 @@ PAPERSIZE=	A4
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 .endif
 
-CONFLICTS=	heirloom-doctools ja-groff
+MAKE_ARGS=	datasubdir=${DATADIR} \
+		docdir=${DOCSDIR} \
+		exampledir=${EXAMPLESDIR}
 
-DATADIR=	${PREFIX}/share/${PORTNAME}/${DISTVERSION}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
+CONFLICTS=	heirloom-doctools ja-groff
 
 INFO=		groff
 PORTDOCS=	*
@@ -52,12 +54,10 @@ UCHARDET_CONFIGURE_OFF=	--with-uchardet=no
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/mdoc.local ${STAGEDIR}${PREFIX}/share/groff/site-tmac
 	${REINPLACE_CMD} -i "" -e "s/missing/gs/" ${STAGEDIR}${DATADIR}/font/devhtml/DESC
+	${RLN} . ${STAGEDIR}${DATADIR}/current
 
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${STAGEDIR}${DOCSDIR}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-	${RM} -r ${STAGEDIR}${DOCSDIR}/examples
-
-	${RLN} ${STAGEDIR}${EXAMPLESDIR}/mom/mom-pdf.pdf ${STAGEDIR}${DOCSDIR}/pdf
+post-install-DOCS-on:
+	${LN} -f ${STAGEDIR}${EXAMPLESDIR}/mom/mom-pdf.pdf ${STAGEDIR}${DOCSDIR}/pdf
 
 post-install-DOCS-off:
 	${RM} -r ${STAGEDIR}${DOCSDIR}
