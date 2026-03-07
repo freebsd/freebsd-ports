@@ -1,5 +1,6 @@
 PORTNAME=	mbedtls
 DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/Mbed-TLS/${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMESUFFIX=	4
@@ -40,5 +41,6 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX}/bin && for f in *; do \
 		${MV} "$$f" "mbedtls_$$f"; \
 	done
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmbedcrypto.so
 
 .include <bsd.port.mk>
