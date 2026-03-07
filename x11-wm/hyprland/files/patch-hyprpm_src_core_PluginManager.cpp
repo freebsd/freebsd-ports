@@ -1,8 +1,8 @@
 Avoid hyprpm rebuilding Hyprland outside of ports
 
---- hyprpm/src/core/PluginManager.cpp.orig	2026-02-27 18:24:00 UTC
+--- hyprpm/src/core/PluginManager.cpp.orig	2026-03-03 21:08:11 UTC
 +++ hyprpm/src/core/PluginManager.cpp
-@@ -393,9 +393,6 @@ eHeadersErrors CPluginManager::headersValid() {
+@@ -402,9 +402,6 @@ eHeadersErrors CPluginManager::headersValid() {
  eHeadersErrors CPluginManager::headersValid() {
      const auto HLVER = getHyprlandVersion(false);
  
