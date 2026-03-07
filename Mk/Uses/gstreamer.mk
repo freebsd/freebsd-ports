@@ -42,7 +42,7 @@ _GST_VER=	${_GST_VER_DEFAULT}
 
 # When modifying _GST1_VERSION, run `make -C ${PORTSDIR}/multimedia/gstreamer1 makesum-all`
 # to update the distinfo files for the entire suite.
-_GST1_VERSION=		1.28.0
+_GST1_VERSION=		1.28.1
 _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
@@ -54,7 +54,7 @@ _GST1_PLUGINS_audio= 	a52dec alsa amrnb amrwbdec bs2b cdparanoia chromaprint faa
 			sndfile sndio soundtouch speex taglib twolame vorbis \
 			wavpack webrtcdsp
 _GST1_PLUGINS_comms=	spandsp
-_GST1_PLUGINS_devel=	soup
+_GST1_PLUGINS_devel=	devtools soup
 _GST1_PLUGINS_ftp=	curl
 _GST1_PLUGINS_graphics=	aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
 			opencv openexr openjpeg png rsvg vulkan webp zbar
@@ -226,6 +226,10 @@ gst-spandsp_IMPL=	bad
 
 #==== devel plugin section
 
+gst-devtools_PORT=	devel/gstreamer${_GST_VER}-devtools
+gst-devtools_SUFFIX=	#
+gst-devtools_IMPL=	#
+
 gst-soup_PORT=		devel/gstreamer${_GST_VER}-plugins-soup
 gst-soup_IMPL=		good
 
@@ -349,7 +353,7 @@ gst-rtsp-server_IMPL=	#
 
 gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
 gst-rust_IMPL=		#
-gst-rust_GST1_VERSION=	0.14.4
+gst-rust_GST1_VERSION=	0.15.1
 gst-rust_VERSION=	${gst-rust_GST${_GST_VER}_VERSION}
 
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming

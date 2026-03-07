@@ -1,16 +1,14 @@
 PORTNAME=	gstreamer1-plugins-rust
 DISTVERSION=	${gst-rust_VERSION}
-PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Various GStreamer plugins written in Rust
 WWW=		https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 
-LICENSE=		APACHE20 LGPL21+ MIT MPL20
+LICENSE=		APACHE20 MIT MPL20
 LICENSE_COMB=		multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
-LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE-MPL-2.0
 
@@ -27,10 +25,7 @@ USE_GSTREAMER=	webrtc
 
 SHEBANG_FILES=	dependencies.py
 
-MESON_ARGS=	-Ddoc=disabled -Dskia=disabled
-# vvdec support requires multimedia/vvdec version 3.0.0 or higher, which is not
-# in the ports tree as of time of writing (2025-08-02).
-MESON_ARGS+=	-Dvvdec=disabled
+MESON_ARGS=	-Ddoc=disabled -Dskia=disabled -Dwhisper=disabled
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -46,8 +41,8 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-OPTIONS_DEFINE=		ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
-OPTIONS_DEFAULT=	ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
+OPTIONS_DEFINE=		ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM VALIDATE VVDEC WEBP
+OPTIONS_DEFAULT=	ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM VVDEC WEBP
 OPTIONS_EXCLUDE_aarch64=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
 OPTIONS_EXCLUDE_armv7=		CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
 OPTIONS_EXCLUDE_powerpc=	CSOUND DAV1D
@@ -80,6 +75,14 @@ SODIUM_DESC=		File encryption and decryption via libsodium
 SODIUM_LIB_DEPENDS=	libsodium.so:security/libsodium
 SODIUM_MESON_ENABLED=	sodium
 SODIUM_MESON_ON=	-Dsodium-source=system
+
+VALIDATE_DESC=		Validation plugin
+VALIDATE_USE=		GSTREAMER=devtools
+VALIDATE_MESON_ENABLED=	validate
+
+VVDEC_DESC=		Versatile Video Decoder support
+VVDEC_LIB_DEPENDS=	libvvdec.so:multimedia/vvdec
+VVDEC_MESON_ENABLED=	vvdec
 
 WEBP_LIB_DEPENDS=	libwebpdemux.so:graphics/webp
 WEBP_MESON_ENABLED=	webp
