@@ -98,7 +98,9 @@ include/faiss/impl/residual_quantizer_encode_steps.h
 include/faiss/impl/scalar_quantizer/codecs.h
 include/faiss/impl/scalar_quantizer/distance_computers.h
 include/faiss/impl/scalar_quantizer/quantizers.h
+include/faiss/impl/scalar_quantizer/scanners.h
 include/faiss/impl/scalar_quantizer/similarities.h
+include/faiss/impl/scalar_quantizer/sq-dispatch.h
 include/faiss/impl/scalar_quantizer/training.h
 include/faiss/impl/simd_dispatch.h
 include/faiss/impl/simd_result_handlers.h
