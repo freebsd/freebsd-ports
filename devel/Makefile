@@ -833,6 +833,7 @@
     SUBDIR += gh
     SUBDIR += ghidra
     SUBDIR += ghostie
+    SUBDIR += ghpr
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += gilt

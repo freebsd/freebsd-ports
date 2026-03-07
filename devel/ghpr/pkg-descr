@@ -1,0 +1,16 @@
+ghpr is a Python-based tool to land GitHub pull requests into FreeBSD
+repositories.
+
+It streamlines the process of integrating GitHub pull requests by combining
+PR initialization, staging, and pushing into a unified command-line interface.
+
+Key features:
+- Creates and maintains a dedicated staging branch for PR integration
+- Downloads PRs and rebases them with automatic conflict detection
+- Adds appropriate commit metadata (reviewer info and PR references)
+- Tracks PR status through GitHub labels ('staged' and 'merged')
+- Pushes changes upstream while automatically closing associated PRs
+- Supports dry-run mode and verbose output for debugging
+- Handles conflict resolution workflows
+
+Requires the GitHub CLI (gh) with configured authentication.
