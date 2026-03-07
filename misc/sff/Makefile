@@ -1,5 +1,5 @@
 PORTNAME=	sff
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	misc
 MASTER_SITES=	https://codeberg.org/sylphenix/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
