@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.34
 CATEGORIES=	security
 
-MAINTAINER=	marco@crowdsec.net
+MAINTAINER=	manuel@crowdsec.net
 COMMENT=	CrowdSec bouncer written in golang for firewalls
 WWW=		https://github.com/crowdsecurity/cs-firewall-bouncer
 

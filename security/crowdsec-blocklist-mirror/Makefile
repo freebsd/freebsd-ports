@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-freebsd
 PORTREVISION=	25
 CATEGORIES=	security
 
-MAINTAINER=	marco@crowdsec.net
+MAINTAINER=	manuel@crowdsec.net
 COMMENT=	CrowdSec Blocklist Mirror
 WWW=		https://github.com/crowdsecurity/cs-blocklist-mirror
 
