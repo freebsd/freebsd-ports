@@ -1,0 +1,4 @@
+dbuild is a build tool for daemonless container images. It reads a
+project directory containing Containerfile templates and an optional
+.daemonless/config.yaml, then handles the full image lifecycle:
+build, integration test, SBOM generation, and registry push.
