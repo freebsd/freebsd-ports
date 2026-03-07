@@ -1,6 +1,5 @@
 PORTNAME=	sowon
-DISTVERSION=	g20201203
-PORTREVISION=	1
+DISTVERSION=	g20251203
 CATEGORIES=	deskutils
 
 MAINTAINER=	nsonack@herrhotzenplotz.de
@@ -10,13 +9,16 @@ WWW=		https://github.com/tsoding/sowon/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		pkgconfig sdl
-
+USES=		dos2unix gl gmake localbase xorg
+DOS2UNIX_FILES=	thirdparty/RGFW.h
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsoding
-GH_TAGNAME=	0d43de4af5a430052aee2c2691fafe21ad80a83d
-
-USE_SDL=	sdl2
+GH_TAGNAME=	79b0f4fa3a3f3a6a702e9d25e69d9d7b1f011a06
+USE_GL=		gl
+USE_XORG=	x11 xcursor xi xrandr
+MAKE_ARGS=	COMMON_CFLAGS="${CFLAGS} -Wall -Wextra -ggdb -std=c99 \
+			-pedantic -Ithirdparty -Ibuild -DPENGER" \
+		COMMON_LIBS="${LIBS} -lm"
 
 PLIST_FILES=	bin/sowon \
 		share/man/man6/sowon.6.gz
