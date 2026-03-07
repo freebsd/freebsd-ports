@@ -1,12 +1,13 @@
 PORTNAME=	IO-Socket-SSL
-DISTVERSION=	2.095
+DISTVERSION=	2.098
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SULLR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Perl5 interface to SSL sockets
-WWW=		https://metacpan.org/release/IO-Socket-SSL
+WWW=		https://metacpan.org/dist/IO-Socket-SSL
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
