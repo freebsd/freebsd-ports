@@ -1,4 +1,4 @@
-TIMESTAMP = 1771060834
+TIMESTAMP = 1772874509
 SHA256 (nginx-1.29.5.tar.gz) = 6744768a4114880f37b13a0443244e731bcb3130c0a065d7e37d8fd589ade374
 SIZE (nginx-1.29.5.tar.gz) = 1310203
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -133,8 +133,8 @@ SHA256 (openresty-srcache-nginx-module-bcdcfdc_GH0.tar.gz) = fbe15bc0c2d52f778b0
 SIZE (openresty-srcache-nginx-module-bcdcfdc_GH0.tar.gz) = 50848
 SHA256 (vozlt-nginx-module-sts-3c10d42_GH0.tar.gz) = 748b67ceb82b3b843ae915bf7863fd08b7c2427c045e5ec540242d050f7b30d0
 SIZE (vozlt-nginx-module-sts-3c10d42_GH0.tar.gz) = 352431
-SHA256 (kaltura-nginx-vod-module-26f0687_GH0.tar.gz) = 7c098d4b1c0f0a3d694ece364fa190d5c88a920352e4c3e9377ae3b38904a08b
-SIZE (kaltura-nginx-vod-module-26f0687_GH0.tar.gz) = 475372
+SHA256 (diogoazevedos-nginx-vod-module-b9b4b44_GH0.tar.gz) = 6fb69766c735d271735192c324b28698659e65490c78561ac3bd20b52c0c90be
+SIZE (diogoazevedos-nginx-vod-module-b9b4b44_GH0.tar.gz) = 446738
 SHA256 (vozlt-nginx-module-vts-c382342_GH0.tar.gz) = 1252c7fe0636d658172055d7e2598487479a54adc00e90af6b23ddb4b6641952
 SIZE (vozlt-nginx-module-vts-c382342_GH0.tar.gz) = 184988
 SHA256 (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = aca454bffcee2476dc92682ebfb8c0378a271fda178be7e945d648419d220758
