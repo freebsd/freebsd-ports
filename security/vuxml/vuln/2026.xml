@@ -1,3 +1,73 @@
+  <vuln vid="791d4b29-19fb-11f1-87cc-e73692421fef">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-good</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-bad</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer project reports multiple security vulnerabilities fixed in the 1.28.1 release:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Twelve security vulnerabilities were addressed, including:</p>
+	  <ul>
+	    <li>Out-of-bounds reads and writes in the H.266 video parser, WAV parser,
+	    MP4 and ASF demuxers, and DVB subtitle decoder.</li>
+	    <li>Integer overflows in the RIFF parser and Huffman table handling in the JPEG parser.</li>
+	    <li>Stack buffer overflows in the RTP QDM2 depayloader and H.266 parser.</li>
+	  </ul>
+	  <p>These could lead to application crashes or potentially arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1940</cvename>
+      <cvename>CVE-2026-3082</cvename>
+      <cvename>CVE-2026-2921</cvename>
+      <cvename>CVE-2026-2922</cvename>
+      <cvename>CVE-2026-2920</cvename>
+      <cvename>CVE-2026-2923</cvename>
+      <cvename>CVE-2026-3083</cvename>
+      <cvename>CVE-2026-3085</cvename>
+      <cvename>CVE-2026-3086</cvename>
+      <cvename>CVE-2026-3081</cvename>
+      <cvename>CVE-2026-3084</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0001.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0002.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0003.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0004.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0005.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0006.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0007.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0008.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0009.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0010.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0011.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0012.html</url>
+    </references>
+    <dates>
+      <discovery>2026-02-25</discovery>
+      <entry>2026-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10319b08-f050-4beb-95e3-fe025cdafd25">
     <topic>oauth2-proxy -- multiple vulnerabilities</topic>
     <affects>
