@@ -1,7 +1,6 @@
 PORTNAME=	lace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.2.1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-work-stealing
 
@@ -21,8 +20,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	trolando
 
 CMAKE_ON=		BUILD_SHARED_LIBS
-CMAKE_OFF=		LACE_BUILD_TESTS
+CMAKE_OFF=		LACE_BUILD_TESTS \
+			LACE_NATIVE_OPT
 CMAKE_TESTING_ON=	LACE_BUILD_TESTS
+
+CFLAGS+=	-fPIC
 
 PORTSCOUT=	limit:^.*[0-9]+\.[0-9]+\.[0-9]+$$ # prevent tags like mucocos_2014_ri
 
@@ -30,6 +32,6 @@ pre-configure: # see discussion in https://github.com/trolando/lace/issues/16
 	@${REINPLACE_CMD} -e 's,memory_order_[[:alnum:]_]*,memory_order_seq_cst,g' \
 		${WRKSRC}/src/*.[ch] ${WRKSRC}/src/lace.sh
 
-# tests as of 2.0.2: 100% tests passed, 0 tests failed out of 2
+# tests as of 2.2.1: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>

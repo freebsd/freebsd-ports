@@ -1,11 +1,11 @@
---- benchmarks/matmul/matmul-lace.c.orig	2025-05-23 10:56:19 UTC
+--- benchmarks/matmul/matmul-lace.c.orig	2026-03-06 23:32:42 UTC
 +++ benchmarks/matmul/matmul-lace.c
-@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
+@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
      int workers = 1;
      int dqsize = 100000;
  
--    char c;
-+    signed char c;
+-    int c;
++    signed int c;
      while ((c=getopt(argc, argv, "w:q:h")) != -1) {
          switch (c) {
              case 'w':
