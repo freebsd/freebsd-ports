@@ -26,8 +26,6 @@ TEST_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 
 USES=		cran:auto-plist,compiles
 
-TESTING_UNSAFE=	https://github.com/lme4/lme4/issues/942
-
 pre-test:
 
 # Test depends not ported yet
