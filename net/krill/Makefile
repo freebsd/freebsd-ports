@@ -1,6 +1,7 @@
 PORTNAME=	krill
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.15.1
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	jaap@NLnetLabs.nl
@@ -18,17 +19,26 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	NLnetLabs
 
 USE_RC_SUBR=	${PORTNAME}
+
+# SUB_FILES=	pkg-message
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR} \
-		${STAGEDIR}/var/krill
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/krill
 	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
 		${STAGEDIR}${PREFIX}/etc/krill/krill.conf.sample
-	${INSTALL_MAN} ${krill.1.gz krillc.1.gz krillup.1.gz krillta.1.gz:L:S|^|${WRKSRC}/doc/|} \
-		${STAGEDIR}${MANDIRS}/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/krill.conf.5.gz \
-		${STAGEDIR}${MANDIRS}/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/krill.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/krillc.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/krillup.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/krillta.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
+		${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/var/krill
 
 .include <bsd.port.mk>
