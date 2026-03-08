@@ -12,6 +12,9 @@ WWW=		https://github.com/ghostty-org/ghostty
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build binary,    +- zig build-exe ghostty ReleaseSmall native-native failure
+EXPIRATION_DATE=2026-04-30
+
 BUILD_DEPENDS=	blueprint-compiler>0:devel/blueprint-compiler
 LIB_DEPENDS=	libgtk4-layer-shell.so:x11-toolkits/gtk4-layer-shell \
 		libonig.so:devel/oniguruma \
