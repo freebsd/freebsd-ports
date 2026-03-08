@@ -1,6 +1,6 @@
 PORTNAME=	symon
 DISTVERSION=	2.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/
 
@@ -11,7 +11,7 @@ WWW=		https://wpd.home.xs4all.nl/symon/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		groff perl5 shebangfix
+USES=		perl5 shebangfix
 USE_PERL5=	build
 
 SHEBANG_FILES=	client/getsymonitem.pl
