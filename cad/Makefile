@@ -90,6 +90,7 @@
     SUBDIR += netgen-lvs
     SUBDIR += ngspice_rework
     SUBDIR += nvc
+    SUBDIR += OrcaSlicer
     SUBDIR += opencascade
     SUBDIR += opencascade740
     SUBDIR += openctm
