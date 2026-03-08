@@ -12,6 +12,9 @@ WWW=		https://ffmpeg.org/
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
+DEPRECATED=	Outdated and unsupported version, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_aarch64=	as:devel/binutils
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
