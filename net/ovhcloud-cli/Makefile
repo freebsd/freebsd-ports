@@ -93,6 +93,7 @@ GH_TUPLE=	\
 		yuin:goldmark:v1.7.16:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 post-extract:
+	@${CP} ${FILESDIR}/modules.txt ${WRKSRC}/vendor
 	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
 	@${RLN} ${WRKSRC_charmbracelet_x_ansi}/ansi ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
 	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
