@@ -13,6 +13,9 @@ WWW=		https://www.itk.org
 
 LICENSE=	APACHE20
 
+BROKEN=		Fails to build, error: no template named 'binary_function' in namespace 'std'
+EXPIRATION_DATE=2026-04-30
+
 BUILD_DEPENDS=	googletest>=0:devel/googletest
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libexpat.so:textproc/expat2 \
