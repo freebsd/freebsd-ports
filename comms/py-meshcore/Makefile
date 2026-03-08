@@ -1,5 +1,5 @@
 PORTNAME=	meshcore
-PORTVERSION=	2.2.25
+PORTVERSION=	2.2.30
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycayennelpp>=0:comms/py-cayennelpp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodome>0:security/py-pycryptodome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial-asyncio-fast>=0:comms/py-pyserial-asyncio-fast@${PY_FLAVOR}
 
 USES=		python:3.10+
