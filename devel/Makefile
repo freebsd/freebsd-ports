@@ -8549,7 +8549,6 @@
     SUBDIR += universal-ctags
     SUBDIR += unordered-dense
     SUBDIR += upnp
-    SUBDIR += upp
     SUBDIR += urjtag
     SUBDIR += ut
     SUBDIR += utf8cpp
