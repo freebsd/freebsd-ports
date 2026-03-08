@@ -257,7 +257,6 @@
     SUBDIR += nymphcastlib
     SUBDIR += nymphrpc
     SUBDIR += obs-multi-rtmp
-    SUBDIR += obs-recursion-effect
     SUBDIR += obs-streamfx
     SUBDIR += obs-studio
     SUBDIR += obs-text-pthread
