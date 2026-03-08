@@ -1,6 +1,6 @@
 PORTNAME=	dune-vtk
 DISTVERSION=	2.8.0
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${HPP_DEPENDS} \
 		dune-functions>0:math/dune-functions \
 		suitesparse>0:math/suitesparse \
 		openmpi4>0:net/openmpi4
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libdunealugrid.so:math/dune-alugrid \
 		libdunecommon.so:math/dune-common \
 		libdunegeometry.so:math/dune-geometry \

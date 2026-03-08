@@ -1,7 +1,7 @@
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.14
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5		\
 		libcholmod.so:math/suitesparse-cholmod \
 		libcolamd.so:math/suitesparse-colamd \
 		libumfpack.so:math/suitesparse-umfpack	\
-		libarpack.so:math/arpack-ng	\
+		libarpack.so:math/arpack-ng@mpich	\
 		libfftw3.so:math/fftw3		\
 		libgsl.so:math/gsl		\
 		libipopt.so:math/ipopt		\

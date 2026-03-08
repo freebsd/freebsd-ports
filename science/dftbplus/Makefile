@@ -1,6 +1,6 @@
 PORTNAME=	dftbplus
 DISTVERSION=	24.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,7 +45,7 @@ OPTIONS_SUB=		yes
 
 ARPACK_DESC=		Build with ARPACK for large eigenvalue problems
 ARPACK_CMAKE_BOOL=	WITH_ARPACK
-ARPACK_LIB_DEPENDS=	libarpack.so:math/arpack-ng
+ARPACK_LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich
 ARPACK_PREVENTS=	MPIX # ARPACK is only used in a single-core application
 
 CHIMES_DESC=		Build with ChIMES

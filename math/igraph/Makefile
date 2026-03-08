@@ -1,5 +1,6 @@
 PORTNAME=	igraph
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	wen@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libcxsparse.so:math/suitesparse-cxsparse \
 		libglpk.so:math/glpk \
 		libgmp.so:math/gmp \

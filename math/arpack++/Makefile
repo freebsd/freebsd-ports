@@ -1,6 +1,6 @@
 PORTNAME=	arpack++
 PORTVERSION=	2.4.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://www.ime.unicamp.br/~chico/arpack++/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libsuperlu.so:math/superlu \
 		libcholmod.so:math/suitesparse-cholmod \
 		libumfpack.so:math/suitesparse-umfpack

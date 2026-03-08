@@ -1,5 +1,6 @@
 PORTNAME=	armadillo
 PORTVERSION=	15.2.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
@@ -11,7 +12,7 @@ WWW=		https://arma.sourceforge.net/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@mpich \
 		libsuperlu.so:math/superlu
 
 USES=		blaslapack:openblas cmake:testing compiler:c++11-lang pkgconfig tar:xz
