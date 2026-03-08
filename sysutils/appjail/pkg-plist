@@ -18,6 +18,7 @@ libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/jexec/jexec
 libexec/appjail/network/network
+%%DATADIR%%/Isotype.png
 %%DATADIR%%/cmd/apply
 %%DATADIR%%/cmd/checkOld
 %%DATADIR%%/cmd/cmd
@@ -59,6 +60,7 @@ libexec/appjail/network/network
 %%DATADIR%%/cmd/usage
 %%DATADIR%%/cmd/version
 %%DATADIR%%/cmd/volume
+%%DATADIR%%/cmd/x11
 %%DATADIR%%/cmd/zfs
 %%DATADIR%%/files/config.conf
 %%DATADIR%%/files/default.conf
@@ -97,6 +99,7 @@ libexec/appjail/network/network
 %%DATADIR%%/lib/tempfile
 %%DATADIR%%/lib/version
 %%DATADIR%%/lib/whitespaces
+%%DATADIR%%/lib/x11
 %%DATADIR%%/lib/zfs
 %%DATADIR%%/makejail/cmd/all/ADD
 %%DATADIR%%/makejail/cmd/all/ARG
@@ -239,3 +242,4 @@ share/man/man7/appjail-ephemeral.7.gz
 share/man/man7/appjail-tutorial.7.gz
 share/man/man8/appjail-dns.8.gz
 share/man/man8/appjail-user.8.gz
+share/man/man1/appjail-x11.1.gz
