@@ -11,6 +11,8 @@ WWW=		https://pypi.org/project/pygtkspellcheck/ \
 
 LICENSE=	GPLv3+
 
+BROKEN=		Fails to fetch, distinfo mismatch
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.0:textproc/py-enchant@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
