@@ -82,6 +82,7 @@
     SUBDIR += phoon
     SUBDIR += pngphoon
     SUBDIR += pp3
+    SUBDIR += py-alerce
     SUBDIR += py-astlib
     SUBDIR += py-astral
     SUBDIR += py-astroML
