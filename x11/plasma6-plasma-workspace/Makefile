@@ -54,6 +54,8 @@ OPTIONS_DEFINE=	GTK
 GTK_DESC=		Global menu bar support for GTK applications
 GTK_RUN_DEPENDS=	appmenu-gtk-module>0:x11/gtk-app-menu
 
+IGNORE_FreeBSD_13=	requires timerfd(2)
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/startkde/startplasma.cpp \
