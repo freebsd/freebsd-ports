@@ -129,6 +129,7 @@
     SUBDIR += rpcs3
     SUBDIR += rubygem-fission
     SUBDIR += rvvm
+    SUBDIR += rvvm-devel
     SUBDIR += sameboy
     SUBDIR += simh
     SUBDIR += simh-hp2100
