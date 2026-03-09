@@ -1,0 +1,284 @@
+PORTNAME=	aoostar-rs
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+CATEGORIES=	sysutils
+
+MAINTAINER=	kiwi@FreeBSD.org
+COMMENT=	AOOSTAR WTR MAX / GEM12+ PRO LCD screen control tool
+WWW=		https://github.com/zehnm/aoostar-rs
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+# Requires at least Rust 1.88
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	zehnm
+
+USE_RC_SUBR=	aoostar-lcd
+
+# Vendor all crates offline (run `make cargo-crates` to regenerate this list)
+CARGO_CRATES=	ab_glyph-0.2.31 \
+		ab_glyph_rasterizer-0.1.10 \
+		adler2-2.0.1 \
+		aho-corasick-1.1.3 \
+		aligned-vec-0.6.4 \
+		anstream-0.6.20 \
+		anstyle-1.0.11 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
+		anyhow-1.0.99 \
+		approx-0.5.1 \
+		arbitrary-1.4.2 \
+		arg_enum_proc_macro-0.3.4 \
+		arrayvec-0.7.6 \
+		autocfg-1.5.0 \
+		av1-grain-0.2.4 \
+		avif-serialize-0.8.6 \
+		bit_field-0.10.3 \
+		bitflags-1.3.2 \
+		bitflags-2.9.3 \
+		bitstream-io-2.6.0 \
+		built-0.7.7 \
+		bumpalo-3.19.0 \
+		bytemuck-1.23.2 \
+		byteorder-lite-0.1.0 \
+		bytes-1.10.1 \
+		cc-1.2.34 \
+		cfg-expr-0.15.8 \
+		cfg-if-1.0.3 \
+		clap-4.5.46 \
+		clap_builder-4.5.46 \
+		clap_derive-4.5.45 \
+		clap_lex-0.7.5 \
+		color_quant-1.1.0 \
+		colorchoice-1.0.4 \
+		core-foundation-0.10.1 \
+		core-foundation-sys-0.8.7 \
+		crc32fast-1.5.0 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
+		crunchy-0.2.4 \
+		either-1.15.0 \
+		env_filter-0.1.3 \
+		env_logger-0.11.8 \
+		equator-0.4.2 \
+		equator-macro-0.4.2 \
+		equivalent-1.0.2 \
+		errno-0.3.13 \
+		exr-1.73.0 \
+		fastrand-2.3.0 \
+		fdeflate-0.3.7 \
+		flate2-1.1.2 \
+		fsevent-sys-4.1.0 \
+		futures-core-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-task-0.3.31 \
+		futures-timer-3.0.3 \
+		futures-util-0.3.31 \
+		getrandom-0.2.16 \
+		getrandom-0.3.3 \
+		gif-0.13.3 \
+		glob-0.3.3 \
+		half-2.6.0 \
+		hashbrown-0.15.5 \
+		heck-0.5.0 \
+		image-0.25.6 \
+		image-webp-0.2.4 \
+		imageproc-0.25.0 \
+		imgref-1.11.0 \
+		indexmap-2.11.0 \
+		inotify-0.11.0 \
+		inotify-sys-0.1.5 \
+		interpolate_name-0.2.4 \
+		io-kit-sys-0.4.1 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.12.1 \
+		itertools-0.14.0 \
+		itoa-1.0.15 \
+		jiff-0.2.15 \
+		jiff-static-0.2.15 \
+		jobserver-0.1.34 \
+		jpeg-decoder-0.3.2 \
+		js-sys-0.3.77 \
+		kqueue-1.1.1 \
+		kqueue-sys-1.0.4 \
+		lebe-0.5.2 \
+		libc-0.2.175 \
+		libfuzzer-sys-0.4.10 \
+		libm-0.2.15 \
+		libudev-0.3.0 \
+		libudev-sys-0.1.4 \
+		linux-raw-sys-0.9.4 \
+		log-0.4.27 \
+		loop9-0.1.5 \
+		mach2-0.4.3 \
+		matrixmultiply-0.3.10 \
+		maybe-rayon-0.1.1 \
+		memchr-2.7.5 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.8.9 \
+		mio-1.0.4 \
+		nalgebra-0.32.6 \
+		new_debug_unreachable-1.0.6 \
+		nix-0.26.4 \
+		nom-7.1.3 \
+		noop_proc_macro-0.3.0 \
+		notify-8.2.0 \
+		notify-types-2.0.0 \
+		ntapi-0.4.1 \
+		num-0.4.3 \
+		num-bigint-0.4.6 \
+		num-complex-0.4.6 \
+		num-derive-0.4.2 \
+		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-rational-0.4.2 \
+		num-traits-0.2.19 \
+		objc2-core-foundation-0.3.1 \
+		objc2-io-kit-0.3.1 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
+		owned_ttf_parser-0.25.1 \
+		paste-1.0.15 \
+		pin-project-lite-0.2.16 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.32 \
+		png-0.17.16 \
+		portable-atomic-1.11.1 \
+		portable-atomic-util-0.2.4 \
+		ppv-lite86-0.2.21 \
+		proc-macro-crate-3.3.0 \
+		proc-macro2-1.0.101 \
+		profiling-1.0.17 \
+		profiling-procmacros-1.0.17 \
+		qoi-0.4.1 \
+		quick-error-2.0.1 \
+		quote-1.0.40 \
+		r-efi-5.3.0 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rand_distr-0.4.3 \
+		rav1e-0.7.1 \
+		ravif-0.11.20 \
+		rawpointer-0.2.1 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
+		regex-1.11.2 \
+		regex-automata-0.4.10 \
+		regex-syntax-0.8.6 \
+		relative-path-1.9.3 \
+		rgb-0.8.52 \
+		rstest-0.26.1 \
+		rstest_macros-0.26.1 \
+		rustc_version-0.4.1 \
+		rustix-1.0.8 \
+		rustversion-1.0.22 \
+		ryu-1.0.20 \
+		safe_arch-0.7.4 \
+		same-file-1.0.6 \
+		scopeguard-1.2.0 \
+		semver-1.0.26 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.143 \
+		serde_repr-0.1.20 \
+		serde_spanned-0.6.9 \
+		serialport-4.7.3 \
+		shlex-1.3.0 \
+		simba-0.8.1 \
+		simd-adler32-0.3.7 \
+		simd_helpers-0.1.0 \
+		slab-0.4.11 \
+		smallvec-1.15.1 \
+		strsim-0.11.1 \
+		syn-2.0.106 \
+		sysinfo-0.37.0 \
+		system-deps-6.2.2 \
+		target-lexicon-0.12.16 \
+		tempfile-3.21.0 \
+		thiserror-1.0.69 \
+		thiserror-2.0.16 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.16 \
+		tiff-0.9.1 \
+		toml-0.8.23 \
+		toml_datetime-0.6.11 \
+		toml_edit-0.22.27 \
+		ttf-parser-0.25.1 \
+		typenum-1.18.0 \
+		unescaper-0.1.6 \
+		unicode-ident-1.0.18 \
+		utf8parse-0.2.2 \
+		v_frame-0.3.9 \
+		version-compare-0.2.0 \
+		walkdir-2.5.0 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasi-0.14.3+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
+		weezl-0.1.10 \
+		wide-0.7.33 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.10 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.61.3 \
+		windows-collections-0.2.0 \
+		windows-core-0.61.2 \
+		windows-future-0.2.1 \
+		windows-implement-0.60.0 \
+		windows-interface-0.59.1 \
+		windows-link-0.1.3 \
+		windows-numerics-0.2.0 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
+		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
+		windows-targets-0.52.6 \
+		windows-targets-0.53.3 \
+		windows-threading-0.1.0 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
+		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
+		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
+		winnow-0.7.13 \
+		wit-bindgen-0.45.0 \
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26 \
+		zune-core-0.4.12 \
+		zune-inflate-0.2.54 \
+		zune-jpeg-0.4.20
+
+# Build both binaries
+CARGO_INSTALL_PATH=	crates/asterctl \
+			crates/aster-sysinfo
+
+SUB_FILES=	aoostar-lcd
+SUB_LIST=	ASTERCTL=${PREFIX}/bin/asterctl \
+		DEVICE=/dev/cuaU0
+
+PLIST_FILES=	bin/asterctl \
+		bin/aster-sysinfo
+
+.include <bsd.port.mk>

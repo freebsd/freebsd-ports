@@ -46,6 +46,7 @@
     SUBDIR += ansible-sshjail
     SUBDIR += ansible-sysrc
     SUBDIR += anvil
+    SUBDIR += aoostar-rs
     SUBDIR += apachetop
     SUBDIR += apcctrl
     SUBDIR += apcpwr
