@@ -1,6 +1,5 @@
 PORTNAME=	xsdata
-PORTVERSION=	25.7
-PORTREVISION=	2
+PORTVERSION=	26.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +26,6 @@ LXML_DESC=	Handler/writer via lxml
 SOAP_DESC=	Simple Object Access Protocol (SOAP) support
 
 CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=5.0:devel/py-click@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2:devel/py-click-default-group@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}docformatter>=1.7.2:devel/py-docformatter@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR} \
 			ruff>=0.9.8:devel/ruff
