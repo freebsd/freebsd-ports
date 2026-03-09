@@ -12,7 +12,7 @@ FETCH_DEPENDS=	npm:www/npm \
 		jq:textproc/jq
 BUILD_DEPENDS=	npm:www/npm
 
-USES=		nodejs:run
+USES=		certs:fetch nodejs:run
 
 PACKAGE_NAME=	@nanocollective/nanocoder
 
@@ -24,7 +24,7 @@ do-fetch:
 	@if ! [ -f ${DISTDIR}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ]; then \
 		${MKDIR} ${DISTDIR} && \
 		${ECHO} "====> Fetching ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}" && \
-		${SETENV} TMPDIR=${WRKDIR} ${FETCH_SCRIPT} \
+		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${PACKAGE_NAME} ${DISTVERSION} \
 			${FILESDIR}/package-lock.json \
 			${DISTDIR}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}; \
