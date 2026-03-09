@@ -1,5 +1,5 @@
 PORTNAME=	r18n-core
-PORTVERSION=	5.0.1
+PORTVERSION=	6.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/r18n/r18n-core
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-bigdecimal>=4.0<5:math/rubygem-bigdecimal
 
 USES=		gem
 
