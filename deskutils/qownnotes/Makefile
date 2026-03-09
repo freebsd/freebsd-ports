@@ -3,7 +3,7 @@ DISTVERSION=	26.3.3
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/pbek/QOwnNotes/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	stobbsm@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Markdown note taking program with cloud integration
 WWW=		https://www.qownnotes.org/
 
