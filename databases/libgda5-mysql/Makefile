@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../libgda5
 BUILD_WRKSRC=	${WRKSRC}/providers/mysql/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
-
+MYSQL_VARS=	IGNORE_WITH_MYSQL="84"
 LIBGDA5_SLAVE=	mysql
 
 .include "${MASTERDIR}/Makefile"
