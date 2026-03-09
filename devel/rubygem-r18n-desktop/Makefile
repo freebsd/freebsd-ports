@@ -1,5 +1,5 @@
 PORTNAME=	r18n-desktop
-PORTVERSION=	5.0.1
+PORTVERSION=	6.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/r18n/r18n-desktop
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-r18n-core>=5.0<6:devel/rubygem-r18n-core
+RUN_DEPENDS=	rubygem-r18n-core>=6.0<7:devel/rubygem-r18n-core
 
 USES=		gem
 
