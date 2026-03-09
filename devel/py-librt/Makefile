@@ -1,5 +1,5 @@
 PORTNAME=	librt
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
+	@${MV} ${WRKSRC}/base64/librt_base64.* ${WRKSRC}
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/base64/
 
