@@ -1,9 +1,9 @@
 PORTNAME=	python-barcode
-PORTVERSION=	0.15.1
-PORTREVISION=	1
+PORTVERSION=	0.16.1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python_barcode-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create standard barcodes with Python
@@ -13,7 +13,7 @@ WWW=		https://python-barcode.readthedocs.io/en/stable/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=45:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
