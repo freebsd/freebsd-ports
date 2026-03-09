@@ -1,7 +1,8 @@
 PORTNAME=	id
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/di/id/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
