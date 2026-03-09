@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-03-09 10:30:26 UTC
++++ CMakeLists.txt
+@@ -36,7 +36,7 @@ target_compile_definitions(ft2-clone
+     PRIVATE m Threads::Threads ${SDL2_LIBRARIES})
+ 
+ target_compile_definitions(ft2-clone
+-    PRIVATE HAS_MIDI
++    PRIVATE HAS_MIDI)
+ 
+ if(UNIX)
+     if(APPLE)
