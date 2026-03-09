@@ -1,5 +1,5 @@
 PORTNAME=	robotframework-pabot
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.1
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,6 @@ WWW=		https://pabot.org/ \
 		https://github.com/mkorpela/pabot
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
