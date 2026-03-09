@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv7 powerpc
+BROKEN_armv7=	No suitable machine type found in "./boot".
 
 LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		libossp-uuid.so:misc/ossp-uuid
