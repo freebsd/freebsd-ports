@@ -1,6 +1,5 @@
 PORTNAME=	ipykernel
-PORTVERSION=	7.1.0
-PORTREVISION=	1
+PORTVERSION=	7.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/ipython/ipykernel/releases/download/v${PORTVERSION}/
@@ -20,14 +19,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.22:devel/py-hatchling@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0.1.1:devel/py-comm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}debugpy>=1.6.5:devel/py-debugpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=7.23.1:devel/ipython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-client>=8.0.2:devel/py-jupyter-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-core>=4.12:devel/py-jupyter-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-client>=8.8.0:devel/py-jupyter-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-core>=5.1:devel/py-jupyter-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib-inline>=0.1:math/py-matplotlib-inline@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nest-asyncio>=1.4:devel/py-nest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=22:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.7:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=25:net/py-pyzmq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>=6.2:www/py-tornado@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>=6.4.1:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.4.0:devel/py-traitlets@${PY_FLAVOR}
 
 USES=		python
