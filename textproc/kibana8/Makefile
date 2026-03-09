@@ -18,7 +18,7 @@ BUILD_DEPENDS=	npm-node${NODEJS_VERSION}>=11.10.0:www/npm-node${NODEJS_VERSION}
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
 
-USES=		compiler:c++17-lang cpe nodejs:24 python:build
+USES=		compiler:c++17-lang cpe nodejs:24,build,run python:build
 CPE_VENDOR=	elastic
 USE_CXXSTD=	c++17
 USE_GITHUB=	nodefault
