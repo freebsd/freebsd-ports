@@ -1,5 +1,5 @@
 PORTNAME=	libaec
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/MathisRosenhauer/libaec/releases/download/v${PORTVERSION}/
 
