@@ -1,5 +1,5 @@
 PORTNAME=	vector
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,8 +32,8 @@ SYMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0:math/py-sympy@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MNUMBA} && ${PYTHON_REL} < 31400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numba>=0.57:devel/py-numba@${PY_FLAVOR}
+.if ${PORT_OPTIONS:MNUMBA} && ${PYTHON_REL} < 31500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numba>=0.62:devel/py-numba@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
