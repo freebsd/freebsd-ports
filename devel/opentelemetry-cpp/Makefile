@@ -1,7 +1,6 @@
 PORTNAME=	opentelemetry-cpp
-PORTVERSION=	1.24.0
+PORTVERSION=	1.25.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libryml.so:devel/rapidyaml
 TEST_DEPENDS=	benchmark>=0:devel/benchmark
 
-USES=		cpe cmake:testing compiler:c++14-lang localbase:ldflags
+USES=		cpe cmake:testing compiler:c++17-lang localbase:ldflags
 
 CMAKE_OFF=	BUILD_TESTING \
 		BUILD_W3CTRACECONTEXT_TEST \
