@@ -13,7 +13,7 @@ FETCH_DEPENDS=	npm:www/npm \
 		jq:textproc/jq
 RUN_DEPENDS=	rg:textproc/ripgrep
 
-USES=		nodejs:run
+USES=		certs:fetch nodejs:run
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -24,7 +24,7 @@ FETCH_SCRIPT=	${PORTSDIR}/Tools/scripts/npmjs-fetch-with-dependencies.sh
 
 do-fetch:
 	@if ! [ -f ${DISTDIR}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ]; then \
-		${SETENV} TMPDIR=${WRKDIR} ${FETCH_SCRIPT} \
+		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${PACKAGE_NAME} ${DISTVERSION} \
 			${FILESDIR}/package-lock.json \
 			${DISTDIR}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}; \
