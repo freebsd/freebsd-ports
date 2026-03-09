@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.zst
 
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Strict and fast ASN.1 DER/CER/BER library for Python
-WWW=		http://www.pyderasn.cypherpunks.ru/
+WWW=		http://www.pyderasn.cypherpunks.su/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
