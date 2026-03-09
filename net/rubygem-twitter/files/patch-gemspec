@@ -1,0 +1,15 @@
+Obtained from:	https://github.com/sferik/twitter-ruby/commit/08da18da35111e9727782b3e5ae0f29e2b35017b
+		https://github.com/sferik/twitter-ruby/commit/7a803320020c2b2ecc0c69d75dba0a3ba55b36a7
+
+--- twitter.gemspec.orig	2026-02-18 17:20:04 UTC
++++ twitter.gemspec
+@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<llhttp-ffi>.freeze, ["~> 0.5.0".freeze])
+   s.add_runtime_dependency(%q<memoizable>.freeze, ["~> 0.4.0".freeze])
+   s.add_runtime_dependency(%q<multipart-post>.freeze, ["~> 2.4".freeze])
+-  s.add_runtime_dependency(%q<naught>.freeze, ["~> 1.1".freeze])
+-  s.add_runtime_dependency(%q<simple_oauth>.freeze, ["~> 0.3.0".freeze])
++  s.add_runtime_dependency(%q<naught>.freeze, ["~> 2.0".freeze])
++  s.add_runtime_dependency(%q<simple_oauth>.freeze, ["~> 0.4.0".freeze])
+ end
+ 
