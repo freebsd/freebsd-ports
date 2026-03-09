@@ -60,7 +60,7 @@ X11_DESC=		Build graphics API
 
 CLIENT_LIB_DEPENDS=		libcurl.so:ftp/curl \
 				libfreetype.so:print/freetype2
-CLIENT_RUN_DEPENDS=		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+CLIENT_USES=			certs:run
 CLIENT_USE=			RC_SUBR=boinc-client
 CLIENT_CONFIGURE_ENABLE=	client
 
