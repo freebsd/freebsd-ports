@@ -22,7 +22,7 @@ BUILD_DEPENDS=	deno:www/deno \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	deno:www/deno
 
-USES=		python
+USES=		certs:fetch python
 USE_PYTHON=	pep517 autoplist pytest
 
 SHEBANG_GLOB=	*.py
@@ -47,7 +47,7 @@ do-fetch: # this target (1) downloads the source tarball, (2) extracts it to a t
 			${ECHO_MSG} "====> Generating package-lock.json (it will be saved to ${FILESDIR})"; \
 		fi && \
 		cd ${WRKDIR}/${DISTNAME} && \
-			${SETENV} HOME=${WRKDIR} npm ci && \
+			${SETENV} NODE_EXTRA_CA_CERTS=${LOCALBASE}/share/certs/ca-root-nss.crt HOME=${WRKDIR} npm ci && \
 		if ! [ -f ${FILESDIR}/package-lock.json ]; then \
 			${ECHO_MSG} "====> Saving generated package-lock.json to ${FILESDIR}"; \
 			${CP} ${WRKDIR}/${DISTNAME}/package-lock.json ${FILESDIR}/; \
