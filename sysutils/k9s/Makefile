@@ -11,7 +11,8 @@ WWW=		https://github.com/derailed/k9s
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
 USES=		go:1.25+,modules
 GO_MODULE=	github.com/derailed/k9s

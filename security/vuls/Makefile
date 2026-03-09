@@ -11,6 +11,9 @@ WWW=		https://vuls.io
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
+
 USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/future-architect/vuls
@@ -24,9 +27,6 @@ SUB_LIST=	PORTNAME=${PORTNAME} USERS=${USERS} GROUPS=${GROUPS}
 
 USERS=		vuls
 GROUPS=		vuls
-
-NOT_FOR_ARCHS=			i386
-NOT_FOR_ARCHS_REASON_i386=	https://gitlab.com/cznic/libc/-/issues/45
 
 MAKE_ENV=	GOEXPERIMENT=jsonv2
 
