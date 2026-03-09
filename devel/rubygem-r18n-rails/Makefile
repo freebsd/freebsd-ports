@@ -1,6 +1,5 @@
 PORTNAME=	r18n-rails
-PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTVERSION=	6.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +10,9 @@ WWW=		https://github.com/r18n/r18n-rails
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-r18n-rails-api>=5.0<6:devel/rubygem-r18n-rails-api \
-		rubygem-rails60>=5.0<7:www/rubygem-rails60
+RUN_DEPENDS=	rubygem-net-smtp>=0.5.1<0.6:mail/rubygem-net-smtp \
+		rubygem-r18n-rails-api>=6.0<7:devel/rubygem-r18n-rails-api \
+		rubygem-rails81>=6.1<9:www/rubygem-rails81
 
 USES=		gem
 
