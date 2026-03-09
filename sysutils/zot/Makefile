@@ -12,7 +12,8 @@ WWW=		https://zotregistry.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	modernc.org/libc does not compile on i386
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
 USES=		go:1.25+,modules
 USE_GITHUB=	yes

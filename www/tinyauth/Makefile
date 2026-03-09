@@ -15,7 +15,8 @@ WWW=		https://tinyauth.app
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
 USES=		go:modules
 USE_GITHUB=	yes

@@ -12,7 +12,8 @@ WWW=		https://owasp.org/www-project-amass/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	compilation fails: cgo_specific.go:100:2: type [1073741824]*_Ctype_char larger than address space
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
 LIB_DEPENDS=	libpostal.so:misc/libpostal
 
