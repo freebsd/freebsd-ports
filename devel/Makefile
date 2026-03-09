@@ -5319,6 +5319,7 @@
     SUBDIR += py-minimal-snowplow-tracker
     SUBDIR += py-minimongo
     SUBDIR += py-minio
+    SUBDIR += py-mirakuru
     SUBDIR += py-mmh3
     SUBDIR += py-mock
     SUBDIR += py-molecule
