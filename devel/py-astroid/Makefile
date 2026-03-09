@@ -1,5 +1,5 @@
 PORTNAME=	astroid
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pylint-dev/astroid/releases/download/v${PORTVERSION}/
