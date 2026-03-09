@@ -24,7 +24,7 @@ RUN_DEPENDS=	krb5>0:security/krb5 \
 		sqlite3>0:databases/sqlite3 \
 		ripgrep>0:textproc/ripgrep
 
-USES=		nodejs:run pkgconfig python:build
+USES=		certs:fetch nodejs:run pkgconfig python:build
 
 WRKSRC=		${WRKDIR}/copilot-language-server-${DISTVERSION}
 
@@ -63,22 +63,22 @@ do-fetch:
 		${ECHO} "====> Fetching ${NODE_HEADERS}${EXTRACT_SUFX}" && \
 		${FETCH_CMD} -q https://nodejs.org/download/release/v24.11.0/${NODE_HEADERS}${EXTRACT_SUFX} -o ${DD}/${NODE_HEADERS}${EXTRACT_SUFX} && \
 		${ECHO} "====> Fetching dependency policy-watcher" && \
-		${SETENV} TMPDIR=${WRKDIR} ${FETCH_SCRIPT} \
+		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${dep_policy_watcher_npm_name} ${dep_policy_watcher_version} \
 			${FILESDIR}/package-lock-policy-watcher.json \
 			${DD}/policy-watcher-${dep_policy_watcher_version}${EXTRACT_SUFX} && \
 		${ECHO} "====> Fetching dependency sqlite3" && \
-		${SETENV} TMPDIR=${WRKDIR} ${FETCH_SCRIPT} \
+		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${dep_sqlite3_npm_name} ${dep_sqlite3_version} \
 			${FILESDIR}/package-lock-sqlite3.json \
 			${DD}/sqlite3-${dep_sqlite3_version}${EXTRACT_SUFX} && \
 		${ECHO} "====> Fetching dependency kerberos" && \
-		${SETENV} TMPDIR=${WRKDIR} ${FETCH_SCRIPT} \
+		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${dep_kerberos_npm_name} ${dep_kerberos_version} \
 			${FILESDIR}/package-lock-kerberos.json \
 			${DD}/kerberos-${dep_kerberos_version}${EXTRACT_SUFX} && \
 		${ECHO} "====> Fetching ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}" && \
-		${SETENV} TMPDIR=${WRKDIR} ${FETCH_SCRIPT} \
+		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${PACKAGE_NAME} ${DISTVERSION} \
 			${FILESDIR}/package-lock.json \
 			${DD}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}; \
