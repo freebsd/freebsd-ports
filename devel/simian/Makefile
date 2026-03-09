@@ -1,6 +1,6 @@
 PORTNAME=	simian
 PORTVERSION=	2.5.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.harukizaemon.com/simian/
 
@@ -13,6 +13,10 @@ LICENSE_NAME=	SIMIAN SOFTWARE LICENSE
 LICENSE_FILE=	${WRKSRC}/license.pdf
 # Have to agree to license before download
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
+
+DEPRECATED=	does not fetch
+EXPIRATION_DATE=	2026-06-13
+BROKEN=		does not fetch
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
