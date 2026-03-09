@@ -1,9 +1,9 @@
---- binding.gyp.orig	2023-07-28 19:43:03.000000000 +0200
-+++ binding.gyp	2023-12-24 18:44:16.120540000 +0100
-@@ -14,86 +14,6 @@
+--- binding.gyp.orig	2026-03-09 15:20:39.294950000 -0400
++++ binding.gyp	2026-03-09 15:23:16.005750000 -0400
+@@ -16,107 +16,6 @@
+         "lib/split.cc",
          "lib/to_string.cc",
-         "lib/accessors.cc",
-         "lib/util.cc",
+         "lib/set.cc",
 -        "vendor/re2/re2/bitmap256.cc",
 -        "vendor/re2/re2/bitstate.cc",
 -        "vendor/re2/re2/compile.cc",
@@ -32,15 +32,26 @@
 -        "vendor/abseil-cpp/absl/base/internal/raw_logging.cc",
 -        "vendor/abseil-cpp/absl/base/internal/spinlock.cc",
 -        "vendor/abseil-cpp/absl/base/internal/spinlock_wait.cc",
+-        "vendor/abseil-cpp/absl/base/internal/strerror.cc",
 -        "vendor/abseil-cpp/absl/base/internal/sysinfo.cc",
 -        "vendor/abseil-cpp/absl/base/internal/thread_identity.cc",
 -        "vendor/abseil-cpp/absl/base/internal/throw_delegate.cc",
 -        "vendor/abseil-cpp/absl/base/internal/unscaledcycleclock.cc",
+-        "vendor/abseil-cpp/absl/container/internal/hashtablez_sampler.cc",
+-        "vendor/abseil-cpp/absl/container/internal/hashtablez_sampler_force_weak_definition.cc",
 -        "vendor/abseil-cpp/absl/container/internal/raw_hash_set.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/borrowed_fixup_buffer.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/decode_rust_punycode.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/demangle.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/demangle_rust.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/address_is_readable.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/elf_mem_image.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/examine_stack.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/utf8_for_code_point.cc",
+-        "vendor/abseil-cpp/absl/debugging/internal/vdso_support.cc",
 -        "vendor/abseil-cpp/absl/debugging/stacktrace.cc",
 -        "vendor/abseil-cpp/absl/debugging/symbolize.cc",
 -        "vendor/abseil-cpp/absl/flags/commandlineflag.cc",
--        "vendor/abseil-cpp/absl/flags/flag.cc",
 -        "vendor/abseil-cpp/absl/flags/internal/commandlineflag.cc",
 -        "vendor/abseil-cpp/absl/flags/internal/flag.cc",
 -        "vendor/abseil-cpp/absl/flags/internal/private_handle_accessor.cc",
@@ -50,7 +61,15 @@
 -        "vendor/abseil-cpp/absl/flags/usage_config.cc",
 -        "vendor/abseil-cpp/absl/hash/internal/city.cc",
 -        "vendor/abseil-cpp/absl/hash/internal/hash.cc",
--        "vendor/abseil-cpp/absl/hash/internal/low_level_hash.cc",
+-        "vendor/abseil-cpp/absl/log/internal/globals.cc",
+-        "vendor/abseil-cpp/absl/log/internal/log_format.cc",
+-        "vendor/abseil-cpp/absl/log/internal/log_message.cc",
+-        "vendor/abseil-cpp/absl/log/internal/log_sink_set.cc",
+-        "vendor/abseil-cpp/absl/log/internal/nullguard.cc",
+-        "vendor/abseil-cpp/absl/log/internal/proto.cc",
+-        "vendor/abseil-cpp/absl/log/internal/structured_proto.cc",
+-        "vendor/abseil-cpp/absl/log/globals.cc",
+-        "vendor/abseil-cpp/absl/log/log_sink.cc",
 -        "vendor/abseil-cpp/absl/numeric/int128.cc",
 -        "vendor/abseil-cpp/absl/strings/ascii.cc",
 -        "vendor/abseil-cpp/absl/strings/charconv.cc",
@@ -63,15 +82,17 @@
 -        "vendor/abseil-cpp/absl/strings/internal/str_format/float_conversion.cc",
 -        "vendor/abseil-cpp/absl/strings/internal/str_format/output.cc",
 -        "vendor/abseil-cpp/absl/strings/internal/str_format/parser.cc",
+-        "vendor/abseil-cpp/absl/strings/internal/utf8.cc",
 -        "vendor/abseil-cpp/absl/strings/match.cc",
 -        "vendor/abseil-cpp/absl/strings/numbers.cc",
 -        "vendor/abseil-cpp/absl/strings/str_cat.cc",
 -        "vendor/abseil-cpp/absl/strings/str_split.cc",
--        "vendor/abseil-cpp/absl/strings/string_view.cc",
 -        "vendor/abseil-cpp/absl/synchronization/internal/create_thread_identity.cc",
 -        "vendor/abseil-cpp/absl/synchronization/internal/graphcycles.cc",
+-        "vendor/abseil-cpp/absl/synchronization/internal/futex_waiter.cc",
+-        "vendor/abseil-cpp/absl/synchronization/internal/kernel_timeout.cc",
 -        "vendor/abseil-cpp/absl/synchronization/internal/per_thread_sem.cc",
--        "vendor/abseil-cpp/absl/synchronization/internal/waiter.cc",
+-        "vendor/abseil-cpp/absl/synchronization/internal/waiter_base.cc",
 -        "vendor/abseil-cpp/absl/synchronization/mutex.cc",
 -        "vendor/abseil-cpp/absl/time/clock.cc",
 -        "vendor/abseil-cpp/absl/time/duration.cc",
@@ -87,7 +108,7 @@
        ],
        "cflags": [
          "-std=c++2a",
-@@ -102,7 +22,7 @@
+@@ -125,7 +24,7 @@
          "-Wno-sign-compare",
          "-Wno-unused-parameter",
          "-Wno-missing-field-initializers",
@@ -96,15 +117,15 @@
          "-O3",
          "-g"
        ],
-@@ -111,9 +31,8 @@
+@@ -134,9 +33,8 @@
          "NOMINMAX"
        ],
        "include_dirs": [
 -        "<!(node -e \"require('nan')\")",
 -        "vendor/re2",
 -        "vendor/abseil-cpp",
-+	"%%PREFIX%%/include",
-+	"%%DEVDIR%%/nan",
++        "%%PREFIX%%/include",
++        "%%DEVDIR%%/nan",
        ],
        "xcode_settings": {
-         "MACOSX_DEPLOYMENT_TARGET": "10.7",
+         "MACOSX_DEPLOYMENT_TARGET": "10.15",
