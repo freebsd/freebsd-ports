@@ -1,10 +1,10 @@
 PORTNAME=	noto
-PORTVERSION=	2.020
+PORTVERSION=	2.021
 CATEGORIES=	x11-fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoNaskhArabic-v${PORTVERSION}/fonts/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/NotoNaskhArabic-v${PORTVERSION}/fonts/NotoNaskhArabic/hinted/ttf/:fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/40ff3d2422daeef927f4cebce11c1323e1d8e95b/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/40ff3d2422daeef927f4cebce11c1323e1d8e95b/fonts/NotoNaskhArabic/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-2026.02.01/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-2026.02.01/fonts/NotoNaskhArabic/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-naskh-arabic
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}
