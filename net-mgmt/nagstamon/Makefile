@@ -1,12 +1,11 @@
 PORTNAME=	nagstamon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.16.2
-PORTREVISION=	1
+DISTVERSION=	3.18.0
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Nagios status monitor for your desktop
-WWW=		https://nagstamon.ifw-dresden.de/
+WWW=		https://github.com/HenriWahl/Nagstamon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-gssapi>0:www/py-requests-gssapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-kerberos>0:security/py-requests-kerberos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tzlocal>0:devel/py-tzlocal@${PY_FLAVOR}
 
 USES=		cpe pyqt:5 python
 CPE_VENDOR=	henri_wahl
