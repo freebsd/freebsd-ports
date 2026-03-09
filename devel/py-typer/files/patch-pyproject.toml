@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-12-19 16:48:42 UTC
+--- pyproject.toml.orig	2026-02-16 22:08:46 UTC
 +++ pyproject.toml
 @@ -6,10 +6,7 @@ name = "typer"
  
@@ -12,3 +12,12 @@
  dynamic = []
  description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
  authors = [
+@@ -37,7 +34,7 @@ dependencies = [
+     "Programming Language :: Python :: 3.14",
+ ]
+ dependencies = [
+-    "click >= 8.2.1",
++    "click >= 8.0.0",
+     "shellingham >=1.3.0",
+     "rich >=12.3.0",
+     "annotated-doc >=0.0.2",
