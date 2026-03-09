@@ -5809,6 +5809,7 @@
     SUBDIR += py-pytest-order
     SUBDIR += py-pytest-parallel
     SUBDIR += py-pytest-plus
+    SUBDIR += py-pytest-postgresql
     SUBDIR += py-pytest-pretty
     SUBDIR += py-pytest-profiling
     SUBDIR += py-pytest-pycodestyle
