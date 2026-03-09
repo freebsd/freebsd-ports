@@ -17,6 +17,8 @@ USE_GITHUB=	nodefault
 GL_ACCOUNT=	fmd-foss
 GO_MODULE=	gitlab.com/fmd-foss/fmd-server
 
+NO_PACKAGE=	downloads nodejs modules during web interface build
+
 USE_RC_SUBR=	${PORTNAME}
 
 CONFIGURE_ENV=	COREPACK_ENABLE_DOWNLOAD_PROMPT=0
