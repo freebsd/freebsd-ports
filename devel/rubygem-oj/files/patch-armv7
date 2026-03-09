@@ -1,9 +1,9 @@
---- ext/oj/simd.h.orig	2025-12-06 21:39:02 UTC
+--- ext/oj/simd.h.orig	2026-02-18 19:46:57 UTC
 +++ ext/oj/simd.h
-@@ -24,7 +24,7 @@
- #endif  // x86/x86_64
- 
+@@ -117,7 +117,7 @@ static inline int oj_ctz_fallback(unsigned int x) {
+ // =============================================================================
  // ARM NEON detection
+ // =============================================================================
 -#if defined(__ARM_NEON) || defined(__ARM_NEON__) || defined(__aarch64__) || defined(_M_ARM64)
 +#if (defined(__ARM_NEON) || defined(__ARM_NEON__)) && (defined(__aarch64__) || defined(_M_ARM64))
  #define HAVE_SIMD_NEON 1
