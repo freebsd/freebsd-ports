@@ -2,7 +2,7 @@
 #
 # Feature:	certs
 # Usage:	USES=certs:args
-# Valid ARGS:	fetch, build, run
+# Valid ARGS:	fetch, build, run, test
 #
 # At least one argument is required.
 #
