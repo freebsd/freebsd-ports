@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-workspaces
-PORTVERSION=	1.152.0
+PORTVERSION=	1.153.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
