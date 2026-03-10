@@ -1,4 +1,4 @@
---- electron/spec/api-browser-window-spec.ts.orig	2026-02-24 02:09:51 UTC
+--- electron/spec/api-browser-window-spec.ts.orig	2026-03-05 10:29:21 UTC
 +++ electron/spec/api-browser-window-spec.ts
 @@ -69,7 +69,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -189,7 +189,7 @@
        it('does not toggle auto-hide menu bar visibility', async () => {
          const w = new BrowserWindow({ show: false, autoHideMenuBar: true });
          w.setMenuBarVisibility(false);
-@@ -6885,7 +6885,7 @@ describe('BrowserWindow module', () => {
+@@ -6957,7 +6957,7 @@ describe('BrowserWindow module', () => {
    describe('"transparent" option', () => {
      afterEach(closeAllWindows);
  

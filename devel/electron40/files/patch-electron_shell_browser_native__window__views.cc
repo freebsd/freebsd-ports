@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.cc.orig	2026-01-15 18:39:20 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2026-03-05 10:29:21 UTC
 +++ electron/shell/browser/native_window_views.cc
 @@ -52,7 +52,7 @@
  #include "ui/wm/core/shadow_types.h"
@@ -81,7 +81,7 @@
    if (x11_util::IsX11())
      return !event_disabler_.get();
    NOTIMPLEMENTED();
-@@ -863,7 +863,7 @@ void NativeWindowViews::SetBounds(const gfx::Rect& bou
+@@ -854,7 +854,7 @@ void NativeWindowViews::SetBounds(const gfx::Rect& bou
    }
  #endif
  
@@ -90,7 +90,7 @@
    // On Linux and Windows the minimum and maximum size should be updated with
    // window size when window is not resizable.
    if (!CanResize()) {
-@@ -1123,7 +1123,7 @@ bool NativeWindowViews::IsClosable() const {
+@@ -1114,7 +1114,7 @@ bool NativeWindowViews::IsClosable() const {
      return false;
    }
    return !(info.fState & MFS_DISABLED);
@@ -99,7 +99,7 @@
    return true;
  #endif
  }
-@@ -1163,7 +1163,7 @@ void NativeWindowViews::Center() {
+@@ -1154,7 +1154,7 @@ void NativeWindowViews::Center() {
  // for now to avoid breaking API contract, but should consider the long
  // term plan for this aligning with upstream.
  void NativeWindowViews::Center() {
@@ -108,7 +108,7 @@
    auto display =
        display::Screen::Get()->GetDisplayNearestWindow(GetNativeWindow());
    gfx::Rect window_bounds_in_screen = display.work_area();
-@@ -1380,7 +1380,7 @@ void NativeWindowViews::SetMenu(ElectronMenuModel* men
+@@ -1371,7 +1371,7 @@ void NativeWindowViews::SetMenu(ElectronMenuModel* men
  }
  
  void NativeWindowViews::SetMenu(ElectronMenuModel* menu_model) {
@@ -117,7 +117,7 @@
    // Remove global menu bar.
    if (global_menu_bar_ && menu_model == nullptr) {
      global_menu_bar_.reset();
-@@ -1436,7 +1436,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
+@@ -1427,7 +1427,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
  void NativeWindowViews::SetParentWindow(NativeWindow* parent) {
    NativeWindow::SetParentWindow(parent);
  
@@ -126,7 +126,7 @@
    if (x11_util::IsX11()) {
      auto* connection = x11::Connection::Get();
      connection->SetProperty(
-@@ -1482,7 +1482,7 @@ void NativeWindowViews::SetProgressBar(double progress
+@@ -1473,7 +1473,7 @@ void NativeWindowViews::SetProgressBar(double progress
                                         NativeWindow::ProgressState state) {
  #if BUILDFLAG(IS_WIN)
    taskbar_host_.SetProgressBar(GetAcceleratedWidget(), progress, state);
@@ -135,7 +135,7 @@
    if (unity::IsRunning()) {
      unity::SetProgressFraction(progress);
    }
-@@ -1608,7 +1608,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
+@@ -1599,7 +1599,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
  #if BUILDFLAG(IS_WIN)
    window_handle =
        reinterpret_cast<content::DesktopMediaID::Id>(accelerated_widget);
@@ -144,7 +144,7 @@
    window_handle = static_cast<uint32_t>(accelerated_widget);
  #endif
    aura::WindowTreeHost* const host =
-@@ -1706,7 +1706,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
+@@ -1697,7 +1697,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
    SendMessage(hwnd, WM_SETICON, ICON_BIG,
                reinterpret_cast<LPARAM>(app_icon_.get()));
  }
@@ -153,7 +153,7 @@
  void NativeWindowViews::SetIcon(const gfx::ImageSkia& icon) {
    auto* tree_host = views::DesktopWindowTreeHostLinux::GetHostForWidget(
        GetAcceleratedWidget());
-@@ -1827,7 +1827,7 @@ bool NativeWindowViews::CanMinimize() const {
+@@ -1818,7 +1818,7 @@ bool NativeWindowViews::CanMinimize() const {
  bool NativeWindowViews::CanMinimize() const {
  #if BUILDFLAG(IS_WIN)
    return minimizable_;
@@ -162,7 +162,7 @@
    return true;
  #endif
  }
-@@ -1869,7 +1869,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
+@@ -1860,7 +1860,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
  #endif
  }
  
@@ -171,7 +171,7 @@
  electron::ClientFrameViewLinux* NativeWindowViews::GetClientFrameViewLinux() {
    // Check to make sure this window's non-client frame view is a
    // ClientFrameViewLinux.  If either has_frame() or has_client_frame()
-@@ -1892,7 +1892,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1883,7 +1883,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -180,7 +180,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -1911,7 +1911,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
+@@ -1902,7 +1902,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
    // Alt+Click should not toggle menu bar.
    root_view_.ResetAltState();
  
