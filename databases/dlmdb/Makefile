@@ -1,5 +1,5 @@
 PORTNAME=	dlmdb
-PORTVERSION=	1.0.0.20260301
+PORTVERSION=	1.0.0.20260306
 CATEGORIES=	databases
 
 MAINTAINER=	markus.graf@markusgraf.net
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	datalevin
 GH_PROJECT=	dlmdb
-GH_TAGNAME=     9a4fbb4
+GH_TAGNAME=     a3fd1f5
 
 SUB_FILES+=	dlmdb.pc
 SUB_LIST+=	PORTVERSION=${PORTVERSION}
