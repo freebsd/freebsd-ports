@@ -15,7 +15,8 @@ ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	binaries are installed in folders with architecture encoded in them, patches are welcome to fix this limitation
 
 FETCH_DEPENDS=	npm:www/npm \
-		jq:textproc/jq
+		jq:textproc/jq \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=	npm:www/npm \
 		libsecret>0:security/libsecret \
 		vips>=8.17.2:graphics/vips
@@ -23,7 +24,7 @@ RUN_DEPENDS=	libsecret>0:security/libsecret \
 		rg:textproc/ripgrep \
 		vips>=8.17.2:graphics/vips
 
-USES=		certs:fetch nodejs:run pkgconfig python:build
+USES=		nodejs:run pkgconfig python:build
 
 WRKSRC=		${WRKDIR}/copilot-${DISTVERSION}
 

@@ -9,10 +9,11 @@ WWW=		https://github.com/Nano-Collective/nanocoder
 LICENSE=	MIT
 
 FETCH_DEPENDS=	npm:www/npm \
-		jq:textproc/jq
+		jq:textproc/jq \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=	npm:www/npm
 
-USES=		certs:fetch nodejs:run
+USES=		nodejs:run
 
 PACKAGE_NAME=	@nanocollective/nanocoder
 

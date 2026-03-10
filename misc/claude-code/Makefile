@@ -7,10 +7,11 @@ COMMENT=	Agentic coding tool from Anthropic that lives in your terminal
 WWW=		https://github.com/anthropics/claude-code
 
 FETCH_DEPENDS=	npm:www/npm \
-		jq:textproc/jq
+		jq:textproc/jq \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS=	rg:textproc/ripgrep
 
-USES=		certs:fetch nodejs:run
+USES=		nodejs:run
 
 NO_BUILD=	yes
 NO_ARCH=	yes

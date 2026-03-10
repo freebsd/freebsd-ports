@@ -15,14 +15,15 @@ WWW=		https://github.com/yt-dlp/yt-dlp-ejs
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FETCH_DEPENDS=	npm:www/npm
+FETCH_DEPENDS=	npm:www/npm \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=	deno:www/deno \
 		npm:www/npm \
 		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	deno:www/deno
 
-USES=		certs:fetch python
+USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 SHEBANG_GLOB=	*.py
