@@ -1,6 +1,6 @@
 PORTNAME=	widelands
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,11 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
-		libboost_thread.so:devel/boost-libs \
 		libminizip.so:archivers/minizip
 BUILD_DEPENDS=	${PREFIX}/include/asio.hpp:net/asio
 
-USES=		cmake compiler:c++11-lib cpe gettext gl pkgconfig \
+USES=		cmake compiler:c++11-lib cpe gl pkgconfig \
 		python:build sdl
 USE_GITHUB=	yes
 USE_GL=		gl glew
@@ -35,12 +34,11 @@ PORTSCOUT=	limit:^[0-9]+\.
 PORTDATA=	*
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS LTO NLS TEST
+OPTIONS_DEFINE=	DOCS LTO TEST
 OPTIONS_DEFAULT=LTO
 OPTIONS_EXCLUDE_riscv64=	LTO
 
 LTO_CMAKE_ON=	-DUSE_FLTO_IF_AVAILABLE:STRING="yes"
-NLS_CMAKE_BOOL=	OPTION_BUILD_TRANSLATIONS
 TEST_CMAKE_BOOL=OPTION_BUILD_TESTS
 
 post-extract:
