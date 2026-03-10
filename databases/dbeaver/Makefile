@@ -39,6 +39,8 @@ MAVEN_ENV=	MAVEN_OPTS=-Xmx2048m JAVA_HOME=${JAVA_HOME}
 MAVEN_ARCH=	${ARCH:S|amd64|x86_64|}
 
 MAVEN_PARAMS=	${OFFLINE} \
+		-Djdk.xml.maxGeneralEntitySizeLimit=1000000 \
+		-Djdk.xml.totalEntitySizeLimit=1000000 \
 		-Dmaven.repo.local=${WRKDIR}/m2 \
 		-Dnative=gtk.freebsd.${MAVEN_ARCH} \
 		-DskipTests clean verify \
