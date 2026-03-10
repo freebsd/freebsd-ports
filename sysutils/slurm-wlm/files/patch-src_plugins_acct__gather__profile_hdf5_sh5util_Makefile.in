@@ -1,0 +1,24 @@
+--- src/plugins/acct_gather_profile/hdf5/sh5util/Makefile.in.orig	2026-01-29 06:44:40 UTC
++++ src/plugins/acct_gather_profile/hdf5/sh5util/Makefile.in
+@@ -290,6 +290,7 @@ HDF5_LIBS = @HDF5_LIBS@
+ HDF5_FLIBS = @HDF5_FLIBS@
+ HDF5_LDFLAGS = @HDF5_LDFLAGS@
+ HDF5_LIBS = @HDF5_LIBS@
++HDF5_HL_LIBS = @HDF5_HL_LIBS@
+ HDF5_TYPE = @HDF5_TYPE@
+ HDF5_VERSION = @HDF5_VERSION@
+ HPE_SLINGSHOT_CFLAGS = @HPE_SLINGSHOT_CFLAGS@
+@@ -497,11 +498,10 @@ SHDF5_SOURCES = sh5util.c sh5util.h
+ SHDF5_SOURCES = sh5util.c sh5util.h
+ @BUILD_HDF5_TRUE@sh5util_SOURCES = $(SHDF5_SOURCES)
+ @BUILD_HDF5_TRUE@sh5util_LDADD = $(LIB_SLURM) \
+-@BUILD_HDF5_TRUE@	../libhdf5_api.la
++@BUILD_HDF5_TRUE@	../libhdf5_api.la $(HDF5_HL_LIBS)
+ 
+ @BUILD_HDF5_TRUE@sh5util_DEPENDENCIES = $(LIB_SLURM_BUILD) ../libhdf5_api.la
+-@BUILD_HDF5_TRUE@sh5util_LDFLAGS = $(CMD_LDFLAGS) \
+-@BUILD_HDF5_TRUE@	$(HDF5_LDFLAGS) $(HDF5_LIBS)
++@BUILD_HDF5_TRUE@sh5util_LDFLAGS = $(CMD_LDFLAGS) $(HDF5_LDFLAGS)
+ 
+ @BUILD_HDF5_FALSE@EXTRA_sh5util_SOURCES = $(SHDF5_SOURCES)
+ all: all-am
