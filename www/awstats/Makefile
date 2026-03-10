@@ -1,5 +1,6 @@
 PORTNAME=	awstats
 DISTVERSION=	8.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${DISTVERSION}
@@ -36,8 +37,8 @@ MODULES_DESC=			Plugin support not present in Perl CORE
 DECODEUTFKEYS_RUN_DEPENDS=	p5-URI>0:net/p5-URI
 GEOIPFREE_RUN_DEPENDS=		p5-Geo-IPfree>=0:net/p5-Geo-IPfree
 HOSTINFO_RUN_DEPENDS=		p5-Net-XWhois>=0:net/p5-Net-XWhois
-IPV6_RUN_DEPENDS=		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
-				p5-Net-DNS>=0:dns/p5-Net-DNS
+IPV6_RUN_DEPENDS=		p5-Net-DNS>=0:dns/p5-Net-DNS \
+				p5-Net-IP>=0:net-mgmt/p5-Net-IP
 JSON_RUN_DEPENDS=		p5-JSON-XS>=0:converters/p5-JSON-XS \
 				p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
@@ -45,7 +46,7 @@ _DOCS=		dolibarr httpd_conf nginx webmin
 _TOOLS=		awstats_buildstaticpages.pl awstats_configure.pl \
 		awstats_exportlib.pl awstats_updateall.pl geoip_generator.pl \
 		logresolvemerge.pl maillogconvert.pl urlaliasbuilder.pl
-_CGI_BIN=	awdownloadcsv.pl awredir.pl awstats.model.conf awstats.pl
+_CGI_BIN=	awredir.pl awstats.model.conf awstats.pl
 _SHARE_DIRS=	lang lib plugins
 _WWW_DIRS=	css icon js
 
