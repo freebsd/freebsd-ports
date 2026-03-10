@@ -1,5 +1,5 @@
 PORTNAME=	gtkmm
-PORTVERSION=	4.18.0
+PORTVERSION=	4.20.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	40
@@ -12,7 +12,8 @@ WWW=		https://gtkmm.gnome.org/
 LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
-		libgraphene-1.0.so:graphics/graphene
+		libgraphene-1.0.so:graphics/graphene \
+		libvulkan.so:graphics/vulkan-loader
 
 USES=		compiler:c++17-lang gnome meson pkgconfig \
 		python:build tar:xz
