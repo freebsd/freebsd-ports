@@ -148,6 +148,7 @@ sbin/usb_modeswitch
 %%DATADIR%%/0b3c:f00c
 %%DATADIR%%/0b3c:f017
 %%DATADIR%%/0bda:1a2b
+%%DATADIR%%/0bda:a192
 %%DATADIR%%/0bdb:190d
 %%DATADIR%%/0bdb:1910
 %%DATADIR%%/0cf3:20ff
@@ -513,4 +514,3 @@ sbin/usb_modeswitch
 %%DATADIR%%/6000:1000
 %%DATADIR%%/8888:6500
 %%DATADIR%%/ed09:1021
-%%DATADIR%%/new.lst
