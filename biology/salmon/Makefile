@@ -1,7 +1,7 @@
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.10.3
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,15 +17,14 @@ NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 # libtool and auto* are run manually in submodules, so don't put them in USES
 BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
-		libgff==2.0.0:biology/libgff \
+		libgff>=2.0.0:biology/libgff \
 		libtool:devel/libtool \
 		autoreconf:devel/autoconf \
 		aclocal:devel/automake \
 		eigen>0:math/eigen3 \
 		libdivide>0:math/libdivide \
 		curl>0:ftp/curl
-LIB_DEPENDS=	libtbb.so:devel/onetbb \
-		libboost_thread.so:devel/boost-libs
+LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 USES=		cmake:noninja gmake localbase shebangfix
 USE_GITHUB=	yes
@@ -46,6 +45,7 @@ CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
 		-DFETCHED_PUFFERFISH:BOOL=on \
 		-DFETCHED_LIBGFF:BOOL=on \
 		-DFETCH_STADEN:BOOL=true
+WITH_DEBUG=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 LDFLAGS+=	-lpthread
 
