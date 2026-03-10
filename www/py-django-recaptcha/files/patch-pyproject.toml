@@ -1,0 +1,11 @@
+Relax version requirements to enable build with older py-setuptools versions.
+
+--- pyproject.toml.orig	2026-02-26 10:28:55 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "wheel"]
++requires = ["setuptools", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
