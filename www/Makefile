@@ -1498,6 +1498,7 @@
     SUBDIR += py-autobahn
     SUBDIR += py-azure-common
     SUBDIR += py-azure-storage
+    SUBDIR += py-baize
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
     SUBDIR += py-betamax
