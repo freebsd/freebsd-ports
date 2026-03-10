@@ -1477,6 +1477,7 @@
     SUBDIR += py-Tenjin
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
+    SUBDIR += py-a2wsgi
     SUBDIR += py-adblock
     SUBDIR += py-advocate
     SUBDIR += py-aiobreaker
