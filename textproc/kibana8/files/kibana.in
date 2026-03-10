@@ -49,7 +49,7 @@ command="/usr/sbin/daemon"
 command_args="-f ${kibana_syslog_output_flags} -p ${pidfile} -t ${name} \
 	/usr/bin/env BABEL_DISABLE_CACHE=1 NODE_ENV=production ${kibana_env} \
 	${NODE} --no-warnings --max-http-header-size=65536 \
-	%%WWWDIR%%/src/cli/dist serve \
+	%%WWWDIR%%/src/cli/kibana/dist.js serve \
 	--config ${kibana_config} --log-file ${kibana_log} \
 	--xpack.reporting.enabled=false ${kibana_args}"
 
