@@ -1,3 +1,37 @@
+  <vuln vid="1933737d-1d46-11f1-81da-8447094a420f">
+    <topic>curl -- Multiple vulnerabilties</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.19.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The curl project reports:</p>
+	<blockquote cite="https://curl.se/docs/vuln-8.18.0.html">
+	  <ul>
+	    <li>use after free in SMB connection reuse</li>
+	    <li>wrong proxy connection reuse with credentials</li>
+	    <li>token leak with redirect and netrc</li>
+	    <li>bad reuse of HTTP Negotiate connection</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3805</cvename>
+      <cvename>CVE-2026-3784</cvename>
+      <cvename>CVE-2026-3783</cvename>
+      <cvename>CVE-2026-1965</cvename>
+      <url>https://curl.se/docs/vuln-8.18.0.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-11</discovery>
+      <entry>2026-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="791d4b29-19fb-11f1-87cc-e73692421fef">
     <topic>gstreamer1 -- multiple vulnerabilities</topic>
     <affects>
