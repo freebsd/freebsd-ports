@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	p.mousavizadeh@protonmail.com
+MAINTAINER=	pouria@FreeBSD.org
 COMMENT=	LDAP support for the Lua language
 WWW=		https://github.com/lualdap/lualdap
 
