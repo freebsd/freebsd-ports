@@ -1,5 +1,5 @@
 PORTNAME=	vim
-PORTVERSION=	9.2.0078
+PORTVERSION=	9.2.0140
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -178,7 +178,7 @@ post-configure:
 	${REINPLACE_CMD} -e '/^#define HAVE_SYSINFO/ d' ${WRKSRC}/src/auto/config.h
 
 do-test:
-	${DO_MAKE_BUILD} -C ${WRKSRC} test
+	${MAKE_CMD} -C ${WRKSRC} test
 
 .if ${FLAVOR:U} == tiny
 do-install:
