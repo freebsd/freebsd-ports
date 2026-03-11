@@ -1,3 +1,58 @@
+  <vuln vid="0236eab0-1d62-11f1-88f8-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+<name>gitlab-ce</name>
+<name>gitlab-ee</name>
+<range><ge>18.9.0</ge><lt>18.9.2</lt></range>
+<range><ge>18.8.0</ge><lt>18.8.6</lt></range>
+<range><ge>1.0.0</ge><lt>18.7.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2026/03/11/patch-release-gitlab-18-9-2-released/">
+	  <p>Cross-site Scripting issue in Markdown placeholder processing impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in GraphQL API impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in repository archive endpoint impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in protected branches API impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in webhook custom headers impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in webhook endpoint impacts GitLab CE/EE</p>
+	  <p>Improper Neutralization of CRLF Sequences issue impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in runners API impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in snippet rendering impacts GitLab CE/EE</p>
+	  <p>Information Disclosure issue in inaccessible issues impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in Group Import impacts GitLab CE/EE</p>
+	  <p>Incorrect Reference issue in repository download impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Virtual Registry impacts GitLab EE</p>
+	  <p>Improper Escaping of Output issue in Datadog integration impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1090</cvename>
+      <cvename>CVE-2026-1069</cvename>
+      <cvename>CVE-2025-13929</cvename>
+      <cvename>CVE-2025-14513</cvename>
+      <cvename>CVE-2025-13690</cvename>
+      <cvename>CVE-2025-12576</cvename>
+      <cvename>CVE-2026-3848</cvename>
+      <cvename>CVE-2025-12555</cvename>
+      <cvename>CVE-2026-0602</cvename>
+      <cvename>CVE-2026-1732</cvename>
+      <cvename>CVE-2026-1663</cvename>
+      <cvename>CVE-2026-1230</cvename>
+      <cvename>CVE-2025-12704</cvename>
+      <cvename>CVE-2025-12697</cvename>
+      <url>https://about.gitlab.com/releases/2026/03/11/patch-release-gitlab-18-9-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-03-11</discovery>
+      <entry>2026-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="086d53fa-1d47-11f1-81da-8447094a420f">
     <topic>curl -- Multiple vulnerabilities</topic>
     <affects>
