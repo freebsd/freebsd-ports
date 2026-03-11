@@ -60,6 +60,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--with-libpaper \
 		--with-system-libtiff \
 		--without-x
+CONFIGURE_ARGS+=--without-tesseract
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
 PLIST_SUB=	GS_VERSION="${PORTVERSION:C/.[0-9]$//}" \
