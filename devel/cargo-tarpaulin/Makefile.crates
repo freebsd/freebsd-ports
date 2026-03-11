@@ -15,21 +15,22 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		base64-0.22.1 \
 		bitflags-2.9.2 \
 		bumpalo-3.19.0 \
-		bytes-1.10.1 \
+		bytes-1.11.1 \
 		camino-1.1.11 \
-		cargo-config2-0.1.39 \
+		cargo-config2-0.1.42 \
 		cargo-platform-0.3.0 \
-		cargo_metadata-0.23.0 \
+		cargo_metadata-0.23.1 \
 		cc-1.2.33 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.42 \
+		chrono-0.4.43 \
 		clap-4.5.45 \
 		clap_builder-4.5.44 \
 		clap_derive-4.5.45 \
 		clap_lex-0.7.5 \
 		colorchoice-1.0.4 \
 		core-foundation-0.9.4 \
+		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		coveralls-api-0.7.0 \
 		crc32fast-1.5.0 \
@@ -39,7 +40,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		env_logger-0.11.8 \
 		equivalent-1.0.2 \
 		errno-0.3.13 \
-		fallible-iterator-0.3.0 \
 		fastrand-2.3.0 \
 		flate2-1.1.2 \
 		fnv-1.0.7 \
@@ -54,8 +54,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		futures-util-0.3.31 \
 		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		gimli-0.32.3 \
-		git2-0.20.2 \
+		gimli-0.33.0 \
+		git2-0.20.4 \
 		glob-0.3.3 \
 		gzip-header-1.0.0 \
 		hashbrown-0.11.2 \
@@ -95,23 +95,24 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lazy_static-1.5.0 \
 		lcov-0.8.1 \
 		leb128-0.2.5 \
-		libc-0.2.177 \
-		libgit2-sys-0.18.2+1.9.1 \
+		libc-0.2.182 \
+		libgit2-sys-0.18.3+1.9.2 \
 		libssh2-sys-0.3.1 \
 		libz-sys-1.1.22 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.0 \
-		llvm_profparser-0.9.1 \
+		llvm_profparser-0.10.0 \
 		log-0.4.27 \
 		matchers-0.2.0 \
 		md5-0.7.0 \
+		md5-0.8.0 \
 		memchr-2.7.5 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.0.4 \
-		native-tls-0.2.14 \
+		native-tls-0.2.18 \
 		nix-0.30.1 \
 		nom-7.1.3 \
 		nu-ansi-term-0.50.1 \
@@ -119,31 +120,32 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num_cpus-1.17.0 \
 		object-0.26.2 \
 		object-0.36.7 \
-		object-0.37.3 \
+		object-0.38.1 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
-		openssl-0.10.73 \
+		openssl-0.10.75 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
+		openssl-probe-0.2.1 \
 		openssl-src-300.5.2+3.5.2 \
-		openssl-sys-0.9.109 \
+		openssl-sys-0.9.111 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.32 \
 		potential_utf-0.1.2 \
-		proc-macro2-1.0.101 \
+		proc-macro2-1.0.106 \
 		procfs-0.18.0 \
 		procfs-core-0.18.0 \
 		quick-error-1.2.3 \
-		quick-xml-0.38.3 \
-		quote-1.0.41 \
+		quick-xml-0.39.1 \
+		quote-1.0.44 \
 		r-efi-5.3.0 \
-		regex-1.12.2 \
+		regex-1.12.3 \
 		regex-automata-0.4.12 \
 		regex-syntax-0.8.5 \
 		reqwest-0.12.23 \
-		rustc-demangle-0.1.26 \
+		rustc-demangle-0.1.27 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-1.0.8 \
@@ -153,15 +155,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ruzstd-0.8.1 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
-		schannel-0.1.27 \
-		security-framework-2.11.1 \
-		security-framework-sys-2.14.0 \
+		schannel-0.1.28 \
+		security-framework-3.6.0 \
+		security-framework-sys-2.16.0 \
 		semver-1.0.26 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.145 \
-		serde_spanned-1.0.3 \
+		serde_json-1.0.149 \
+		serde_spanned-1.0.4 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
@@ -176,8 +178,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
 		tempfile-3.20.0 \
-		test-log-0.2.18 \
-		test-log-macros-0.2.18 \
+		test-log-0.2.19 \
+		test-log-macros-0.2.19 \
 		thiserror-1.0.69 \
 		thiserror-2.0.15 \
 		thiserror-impl-1.0.69 \
@@ -186,19 +188,19 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.8.1 \
 		tokio-1.47.1 \
 		tokio-native-tls-0.3.1 \
-		toml-0.9.8 \
-		toml_datetime-0.7.3 \
-		toml_parser-1.0.4 \
-		toml_writer-1.0.4 \
+		toml-1.0.1+spec-1.1.0 \
+		toml_datetime-1.0.0+spec-1.1.0 \
+		toml_parser-1.0.8+spec-1.1.0 \
+		toml_writer-1.0.6+spec-1.1.0 \
 		tower-0.5.2 \
 		tower-http-0.6.6 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
-		tracing-0.1.41 \
-		tracing-attributes-0.1.30 \
-		tracing-core-0.1.34 \
+		tracing-0.1.44 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.36 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.20 \
+		tracing-subscriber-0.3.22 \
 		try-lock-0.2.5 \
 		twox-hash-2.1.1 \
 		unicase-2.8.1 \
@@ -261,4 +263,5 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zeroize-1.8.1 \
 		zerotrie-0.2.2 \
 		zerovec-0.11.4 \
-		zerovec-derive-0.11.1
+		zerovec-derive-0.11.1 \
+		zmij-1.0.2
