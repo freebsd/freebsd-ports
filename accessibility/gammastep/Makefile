@@ -36,7 +36,7 @@ GEO_RUN_DEPENDS=	geoclue>=0:net/geoclue
 GEO_USE=		gnome=glib20
 GEO_CONFIGURE_ENABLE=	geoclue2
 
-GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR}
 GUI_USES=		python
 GUI_USE=		gnome=pygobject3:run
 GUI_CONFIGURE_ENABLE=	gui

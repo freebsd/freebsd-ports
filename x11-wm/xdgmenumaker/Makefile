@@ -10,7 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	txt2tags:textproc/txt2tags
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxdg>=0:devel/py-pyxdg@${PY_FLAVOR}
 TEST_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		display:test gnome python:run shebangfix

@@ -16,7 +16,7 @@ BUILD_DEPENDS=	dee-tool:devel/dee \
 		rapper:textproc/raptor2 \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=4.1.1:textproc/py-rdflib@${PY_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-pyxdg@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus@${PY_FLAVOR}
 
 USES=		autoreconf gettext gmake gnome libtool localbase:ldflags pathfix pkgconfig \

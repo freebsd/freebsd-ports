@@ -1695,7 +1695,6 @@ devel/msgpack|devel/msgpack-c|2022-10-16|MsgPack now separates C and C++ version
 games/arttime|deskutils/arttime|2022-10-18|Moved to a better category
 security/nextcloud-twofactor_totp|www/nextcloud|2022-10-21|Twofactor TOTP provider bundled with Nextcloud 25
 x11-toolkits/wxgtk31|x11-toolkits/wxgtk32|2022-10-25|Remove obsoleted port. Use x11-toolkits/wxgtk32 instead
-devel/py-pyxdg|devel/py-xdg|2022-10-28|Remove duplicate port
 lang/chicken5|lang/chicken|2022-10-30|Has expired: Please use lang/chicken instead
 devel/py-spyder|devel/spyder|2022-11-06|Spyder is an application, and not a library
 www/grafana7||2022-11-07|Has expired: EOLed upstream, unfixed vulnerabilities
@@ -5161,3 +5160,4 @@ lang/go-devel|lang/go|2026-03-01|Has expired: Old version of Go. Use the go pack
 devel/tbb|devel/onetbb|2026-03-01|Has expired: Project moved to devel/onetbb
 devel/upp||2026-03-08|Fails to build with freetype 2.14+
 multimedia/obs-recursion-effect||2026-03-08|Compilation fails with obs-studio-32.0.1
+devel/py-xdg|devel/py-pyxdg|2026-03-11|Use correct Python package name

@@ -5892,6 +5892,7 @@
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxb-x
+    SUBDIR += py-pyxdg
     SUBDIR += py-pyyaml
     SUBDIR += py-pyyaml-env-tag
     SUBDIR += py-pyyaml-ft
@@ -6315,7 +6316,6 @@
     SUBDIR += py-xarray-simlab
     SUBDIR += py-xasm
     SUBDIR += py-xattr
-    SUBDIR += py-xdg
     SUBDIR += py-xdg-user-dirs
     SUBDIR += py-xdis
     SUBDIR += py-xdoctest
