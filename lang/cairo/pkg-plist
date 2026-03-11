@@ -122,6 +122,7 @@ lib/cairo-lang/corelib/src/test/integer_test.cairo
 lib/cairo-lang/corelib/src/test/iter_test.cairo
 lib/cairo-lang/corelib/src/test/keccak_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/block_level_items_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/box_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/closure_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/const_folding_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/const_test.cairo
