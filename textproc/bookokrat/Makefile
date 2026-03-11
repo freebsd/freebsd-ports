@@ -1,11 +1,11 @@
 PORTNAME=	bookokrat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Terminal EPUB/PDF book reader
+COMMENT=	Terminal DJVU/EPUB/PDF book reader
 WWW=		https://bugzmanov.github.io/bookokrat/index.html
 
 LICENSE=	AGPLv3 APACHE20 BSD0CLAUSE BSD2CLAUSE BSL CC0-1.0 CDDL ISCL MIT \

@@ -92,6 +92,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		dirs-sys-0.4.1 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.0 \
+		djvu-0.1.0 \
 		dlib-0.5.2 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
@@ -318,6 +319,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		scc-2.4.0 \
 		scopeguard-1.2.0 \
 		sdd-3.0.10 \
+		self_cell-1.2.2 \
 		semver-1.0.27 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
