@@ -170,6 +170,7 @@
     SUBDIR += ebsynth
     SUBDIR += edje_viewer
     SUBDIR += egl-wayland
+    SUBDIR += egl-wayland2
     SUBDIR += egl-x11
     SUBDIR += eglexternalplatform
     SUBDIR += elastix
