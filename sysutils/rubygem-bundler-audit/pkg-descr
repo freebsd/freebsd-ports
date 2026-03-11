@@ -1,0 +1,18 @@
+bundler-audit provides patch-level verification for Bundled Ruby applications.
+It audits Ruby applications for known security vulnerabilities by checking
+the application's Gemfile.lock against a database of known vulnerabilities.
+
+The tool can identify:
+- Gems with known security vulnerabilities
+- Insecure gem sources (non-HTTPS)
+- Outdated gem versions
+
+bundler-audit is an essential security tool for Ruby developers and should
+be run regularly as part of a security audit process to ensure applications
+are not vulnerable to known security issues.
+
+Key features:
+- Checks Gemfile.lock for vulnerable gems
+- Updates vulnerability database automatically
+- Integration with CI/CD pipelines
+- Command-line interface for easy automation
