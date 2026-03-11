@@ -7221,6 +7221,8 @@
     SUBDIR += rubygem-buftok
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
+    SUBDIR += rubygem-bullet
+    SUBDIR += rubygem-bullet-rails72
     SUBDIR += rubygem-byebug
     SUBDIR += rubygem-c21e
     SUBDIR += rubygem-cabin
