@@ -10,7 +10,7 @@
  #ifdef HAVE_UNISTD_H
  # include <unistd.h>
  #endif"
-@@ -15136,13 +15139,6 @@
+@@ -15136,13 +15139,9 @@
      if test ${ac_cv_dnet_bsd_bpf+y}
  then :
    printf %s "(cached) " >&6
@@ -21,6 +21,9 @@
 -        ac_cv_dnet_bsd_bpf=no
 -    fi ;;
 -esac
++else
++  # PR ports/154353 : support building in FreeBSD jail
++  ac_cv_dnet_bsd_bpf=yes
  fi
  
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_dnet_bsd_bpf" >&5
