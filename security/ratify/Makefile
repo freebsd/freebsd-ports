@@ -1,6 +1,5 @@
 PORTNAME=	ratify
-DISTVERSION=	2.3.1
-PORTREVISION=	4
+DISTVERSION=	2.4.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,21 +49,27 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
+		equivalent-1.0.2 \
 		errno-0.3.13 \
 		fastrand-2.3.0 \
 		generic-array-0.14.7 \
+		getrandom-0.2.16 \
 		getrandom-0.3.3 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
+		hashbrown-0.16.0 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
 		human_bytes-0.4.3 \
 		ignore-0.4.23 \
+		indexmap-2.11.4 \
 		indicatif-0.17.11 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.12.1 \
@@ -72,19 +77,20 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
 		libc-0.2.174 \
+		libredox-0.1.10 \
 		linux-raw-sys-0.9.4 \
 		lock_api-0.4.13 \
 		log-0.4.27 \
-		matchers-0.1.0 \
+		matchers-0.2.0 \
 		md-5-0.10.6 \
 		memchr-2.7.5 \
 		mio-0.8.11 \
-		nu-ansi-term-0.46.0 \
+		nu-ansi-term-0.50.1 \
 		num_cpus-1.17.0 \
 		number_prefix-0.4.0 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
-		overload-0.1.1 \
+		option-ext-0.2.0 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		pathdiff-0.2.3 \
@@ -98,10 +104,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
 		redox_syscall-0.5.17 \
-		regex-1.11.1 \
-		regex-automata-0.1.10 \
+		redox_users-0.4.6 \
 		regex-automata-0.4.9 \
-		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
 		rustix-1.0.8 \
 		rustversion-1.0.21 \
@@ -111,6 +115,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		serde_json-1.0.142 \
+		serde_spanned-0.6.9 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
@@ -130,10 +135,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
 		thread_local-1.1.9 \
+		toml-0.8.23 \
+		toml_datetime-0.6.11 \
+		toml_edit-0.22.27 \
+		toml_write-0.1.2 \
 		tracing-0.1.41 \
 		tracing-core-0.1.34 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.19 \
+		tracing-subscriber-0.3.20 \
 		typenum-1.18.0 \
 		unicode-ident-1.0.18 \
 		unicode-width-0.2.1 \
@@ -155,6 +164,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-link-0.1.3 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-targets-0.48.5 \
@@ -183,6 +193,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
+		winnow-0.7.13 \
 		wit-bindgen-rt-0.39.0 \
 		yansi-1.0.1
 
