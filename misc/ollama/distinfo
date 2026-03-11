@@ -1,5 +1,5 @@
-TIMESTAMP = 1769375411
-SHA256 (go/misc_ollama/ollama-v0.15.1/v0.15.1.mod) = 9b668bf140a94f76e18a9f308c715857ee187eb2efb411a51facbd593eeefbac
-SIZE (go/misc_ollama/ollama-v0.15.1/v0.15.1.mod) = 3667
-SHA256 (go/misc_ollama/ollama-v0.15.1/v0.15.1.zip) = 80ebb88ae5e57e81f4060fe5576c4a9a539d3275713615eb5162cc43442f5457
-SIZE (go/misc_ollama/ollama-v0.15.1/v0.15.1.zip) = 23084629
+TIMESTAMP = 1773220298
+SHA256 (go/misc_ollama/ollama-v0.17.7/v0.17.7.mod) = e660ffa37ad33611a4c1248967204e578f07ada9941e63ffe6a6fe3e95ac5039
+SIZE (go/misc_ollama/ollama-v0.17.7/v0.17.7.mod) = 4757
+SHA256 (go/misc_ollama/ollama-v0.17.7/v0.17.7.zip) = 7af9768594e0428adc2d7169fc42a034c1388ed1ae2a0d4f6f4f940dd0620476
+SIZE (go/misc_ollama/ollama-v0.17.7/v0.17.7.zip) = 23379864
