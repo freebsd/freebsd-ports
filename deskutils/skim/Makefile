@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.2
+DISTVERSION=	4.0.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -38,6 +38,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		autocfg-1.5.0 \
 		backtrace-0.3.76 \
 		base64-0.22.1 \
+		bincode-1.3.3 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -102,7 +103,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		env_filter-1.0.0 \
-		env_home-0.1.0 \
 		env_logger-0.11.9 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
@@ -131,6 +131,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
 		gimli-0.32.3 \
+		gungraun-0.17.2 \
+		gungraun-macros-0.7.2 \
+		gungraun-runner-0.17.2 \
 		half-2.7.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
@@ -156,7 +159,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.182 \
+		libc-0.2.183 \
 		libmimalloc-sys-0.1.44 \
 		line-clipping-0.3.5 \
 		linux-raw-sys-0.12.1 \
@@ -208,6 +211,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		portable-pty-0.9.0 \
 		powerfmt-0.2.0 \
 		prettyplease-0.2.37 \
+		proc-macro-error-attr2-2.0.0 \
+		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.106 \
 		pulldown-cmark-0.13.1 \
 		quote-1.0.45 \
@@ -261,7 +266,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		siphasher-1.0.2 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
-		socket2-0.6.2 \
+		socket2-0.6.3 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
@@ -302,7 +307,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
-		uuid-1.21.0 \
+		uuid-1.22.0 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
 		vt100-0.16.2 \
@@ -326,7 +331,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wezterm-dynamic-0.2.1 \
 		wezterm-dynamic-derive-0.1.1 \
 		wezterm-input-types-0.1.0 \
-		which-8.0.0 \
+		which-8.0.2 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -335,36 +340,25 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
 		winreg-0.10.1 \
-		winsafe-0.0.19 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-core-0.51.0 \
 		wit-bindgen-rust-0.51.0 \
 		wit-bindgen-rust-macro-0.51.0 \
 		wit-component-0.244.0 \
 		wit-parser-0.244.0 \
-		zerocopy-0.8.40 \
-		zerocopy-derive-0.8.40 \
+		zerocopy-0.8.42 \
+		zerocopy-derive-0.8.42 \
 		zmij-1.0.21
 
 PLIST_FILES=	bin/sk
