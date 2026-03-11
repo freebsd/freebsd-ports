@@ -1,3 +1,34 @@
+  <vuln vid="086d53fa-1d47-11f1-81da-8447094a420f">
+    <topic>curl -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.18.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The curl project reports:</p>
+	<blockquote cite="https://curl.se/docs/vuln-8.17.0.html">
+	  <p>Multiple vulnerabilities</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-15224</cvename>
+      <cvename>CVE-2025-15079</cvename>
+      <cvename>CVE-2025-14819</cvename>
+      <cvename>CVE-2025-14524</cvename>
+      <cvename>CVE-2025-14017</cvename>
+      <cvename>CVE-2025-13034</cvename>
+      <url>https://curl.se/docs/vuln-8.17.0.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-06</discovery>
+      <entry>2026-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1933737d-1d46-11f1-81da-8447094a420f">
     <topic>curl -- Multiple vulnerabilties</topic>
     <affects>
