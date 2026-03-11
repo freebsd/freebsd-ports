@@ -1,6 +1,6 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.2.0
+DISTVERSION=	27.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,9 +35,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		borsh-1.5.5 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
-		camino-1.1.9 \
-		cargo-platform-0.1.9 \
-		cargo_metadata-0.19.0 \
+		camino-1.2.2 \
+		cargo-platform-0.3.2 \
+		cargo_metadata-0.23.1 \
 		cfg-expr-0.17.2 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
@@ -85,7 +85,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		indexmap-2.7.1 \
 		indoc-2.0.0 \
 		insta-1.12.0 \
-		io-lifetimes-1.0.11 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
@@ -97,7 +96,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		libc-0.2.174 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
 		log-0.4.25 \
@@ -113,7 +111,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		nu-ansi-term-0.50.1 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
-		nutmeg-0.1.5 \
+		nutmeg-0.1.6 \
 		once_cell-1.20.3 \
 		path-slash-0.2.0 \
 		pin-project-lite-0.2.16 \
@@ -140,7 +138,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-1.10.0 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustix-0.37.28 \
 		rustix-0.38.44 \
 		rustix-1.1.2 \
 		rustversion-1.0.19 \
@@ -149,11 +146,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		same-file-1.0.6 \
 		schemars-0.9.0 \
 		schemars_derive-0.9.0 \
-		semver-1.0.25 \
-		serde-1.0.209 \
-		serde_derive-1.0.209 \
+		semver-1.0.27 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.128 \
+		serde_json-1.0.149 \
 		serde_spanned-0.6.8 \
 		serde_yaml-0.8.26 \
 		sharded-slab-0.1.7 \
@@ -168,14 +166,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		target-spec-3.2.2 \
 		tempfile-3.22.0 \
 		terminal_size-0.1.17 \
-		terminal_size-0.2.6 \
 		terminal_size-0.4.1 \
 		termtree-0.5.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.17 \
-		thiserror-1.0.65 \
 		thiserror-2.0.17 \
-		thiserror-impl-1.0.65 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.8 \
 		toml-0.8.0 \
@@ -208,31 +203,23 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
 		wit-bindgen-0.46.0 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
-		yansi-1.0.1
+		yansi-1.0.1 \
+		zmij-1.0.21
 
 PLIST_FILES=	bin/${PORTNAME}
 
