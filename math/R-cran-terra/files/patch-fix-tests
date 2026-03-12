@@ -1,0 +1,80 @@
+From 92878433623603b4c83dfb12b7dfd1b901b749ba Mon Sep 17 00:00:00 2001
+From: Andrew Gene Brown <brown.andrewg@gmail.com>
+Date: Mon, 9 Mar 2026 19:37:10 -0700
+Subject: [PATCH] test: recycling NA
+
+---
+ inst/tinytest/test_subst.R | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git inst/tinytest/test_subst.R inst/tinytest/test_subst.R
+index 8e883f0ad..3b0c85bbb 100644
+--- inst/tinytest/test_subst.R
++++ inst/tinytest/test_subst.R
+@@ -25,3 +25,8 @@ r <- rast(nrows=2, ncols=2, vals=c(1, 2, 3, 4))
+ r_sub <- subst(r, 1:2, 11:12, others=1.5)
+ v_sub <- as.vector(values(r_sub))
+ expect_equal(v_sub, c(11, 12, 1.5, 1.5))
++
++# subst with recycled 'to'
++r <- rast(nrows=1, ncols=10, vals=1:10)
++r_sub <- subst(r, 2:10, NA)
++expect_equal(values(r_sub), c(1, rep(NA_real_, 9)))
+From 7eade71bf2a4952b729256c1368b5d1101fe6b85 Mon Sep 17 00:00:00 2001
+From: Andrew Gene Brown <brown.andrewg@gmail.com>
+Date: Tue, 10 Mar 2026 07:28:12 -0700
+Subject: [PATCH] fix(test): subst recycled
+
+---
+ inst/tinytest/test_subst.R | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git inst/tinytest/test_subst.R inst/tinytest/test_subst.R
+index 3b0c85bbb..dc4c709aa 100644
+--- inst/tinytest/test_subst.R
++++ inst/tinytest/test_subst.R
+@@ -29,4 +29,4 @@ expect_equal(v_sub, c(11, 12, 1.5, 1.5))
+ # subst with recycled 'to'
+ r <- rast(nrows=1, ncols=10, vals=1:10)
+ r_sub <- subst(r, 2:10, NA)
+-expect_equal(values(r_sub), c(1, rep(NA_real_, 9)))
++expect_equal(values(r_sub)[, 1], c(1, rep(NA_real_, 9)))
+
+From d200da273f13df335aea7271cacfbc8658705d86 Mon Sep 17 00:00:00 2001
+From: Andrew Gene Brown <brown.andrewg@gmail.com>
+Date: Mon, 9 Mar 2026 14:31:49 -0700
+Subject: [PATCH] fix(subst): use recycle() in lookup_apply
+
+---
+
+diff --git src/raster_methods.cpp src/raster_methods.cpp
+index d43521ac4..5f14964a3 100644
+--- src/raster_methods.cpp
++++ src/raster_methods.cpp
+@@ -74,14 +74,20 @@ SpatRaster SpatRaster::lookup_apply(std::vector<double> from_vals, std::vector<d
+ 		size_t range = (size_t)max_v - (size_t)min_v + 1;
+ 		lut.resize(range);
+ 		lut_set.assign(range, false);
+-		for (size_t j = 0; j < from_vals.size(); j++) {
+-			int idx = (int)from_vals[j] - min_v;
+-			lut[idx] = to_vals[j];
+-			lut_set[idx] = true;
++		if (to_vals.size() > 0) {
++			recycle(to_vals, from_vals);
++			for (size_t j = 0; j < from_vals.size(); j++) {
++				int idx = (int)from_vals[j] - min_v;
++				lut[idx] = to_vals[j];
++				lut_set[idx] = true;
++			}
+ 		}
+ 	} else {
+-		for (size_t j = 0; j < from_vals.size(); j++) {
+-			lookup_map[from_vals[j]] = to_vals[j];
++		if (to_vals.size() > 0) {
++			recycle(to_vals, from_vals);
++			for (size_t j = 0; j < from_vals.size(); j++) {
++				lookup_map[from_vals[j]] = to_vals[j];
++			}
+ 		}
+ 	}
+ 		
