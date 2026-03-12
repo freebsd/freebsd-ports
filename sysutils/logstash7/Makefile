@@ -1,9 +1,9 @@
 PORTNAME=	logstash
-PORTVERSION=	7.17.11
-PORTREVISION=	1
+DISTVERSION=	7.17.29
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/
+MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
+		LOCAL/vvd/elastic
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	elastic@FreeBSD.org
@@ -12,30 +12,37 @@ WWW=		https://www.elastic.co/products/logstash
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS= aarch64 amd64
+DEPRECATED=	7.x reached EoL on 15 Jan 2026 - use sysutils/logstash8 or sysutils/logstash9*
+EXPIRATION_DATE=	2026-06-30
+
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		cpe java shebangfix
 CPE_VENDOR=	elastic
-JAVA_VERSION=	11+
-USE_RC_SUBR=	logstash
+JAVA_VERSION=	17 11 8
+USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	bin/*
 
-CONFLICTS=	logstash6
+CONFLICTS=	${PORTNAME}8 ${PORTNAME}9*
 
 NO_BUILD=	yes
-
 PORTSCOUT=	limit:^7
-
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-USERS=		logstash
-GROUPS=		logstash
+LOGUSER?=	${PORTNAME}
+LOGGROUP?=	${LOGUSER}
+.if ${LOGUSER} == ${PORTNAME}
+USERS=		${LOGUSER}
+.endif
+.if ${LOGGROUP} == ${PORTNAME}
+GROUPS=		${LOGGROUP}
+.endif
 
 LOGSTASH_CONF_FILES=		jvm.options log4j2.properties logstash.yml \
 				pipelines.yml startup.options
@@ -60,16 +67,13 @@ do-install:
 .endfor
 	${RM} -rf ${WRKSRC}/config
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LOGSTASH_HOME})
-	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_HOME}/bin/*
-.for x in ${LOGSTASH_JRUBY_BIN_FILES}
-	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_HOME}/${LOGSTASH_JRUBY_SUBDIR}/${x}
-.endfor
+	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_HOME}/bin/* \
+		${LOGSTASH_JRUBY_BIN_FILES:S|^|${STAGEDIR}${LOGSTASH_HOME}/${LOGSTASH_JRUBY_SUBDIR}/|}
 	${FIND} ${STAGEDIR}${LOGSTASH_HOME}/vendor/bundle/jruby/2.5.0/gems \
-        	${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/ruby/gems/shared/gems \
+		${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/ruby/gems/shared/gems \
 		-type d -empty -delete
 	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${LOGSTASH_HOME}/config
 	${RM} -rf ${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/jni
-	${MKDIR} ${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/jni
 	(cd ${WRKSRC}/vendor/jruby/lib/jni && \
 	 ${COPYTREE_SHARE} ${ARCH:S/amd64/x86_64/}-FreeBSD \
 	 ${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/jni)
