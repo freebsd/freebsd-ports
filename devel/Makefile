@@ -6006,6 +6006,7 @@
     SUBDIR += py-scikit-build-core
     SUBDIR += py-scooby
     SUBDIR += py-scripttest
+    SUBDIR += py-seedir
     SUBDIR += py-selection
     SUBDIR += py-semantic-version
     SUBDIR += py-semver
