@@ -1,6 +1,6 @@
-TIMESTAMP = 1772676507
-SHA256 (ty-0.0.20.tar.gz) = ebba6be7974c14efbb2a9adda6ac59848f880d7259f089dfa72a093039f1dcc6
-SIZE (ty-0.0.20.tar.gz) = 5262529
+TIMESTAMP = 1773300537
+SHA256 (ty-0.0.21.tar.gz) = a4c2ba5d67d64df8fcdefd8b280ac1149d24a73dbda82fa953a0dff9d21400ed
+SIZE (ty-0.0.21.tar.gz) = 5297967
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
