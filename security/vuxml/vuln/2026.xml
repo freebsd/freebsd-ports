@@ -1,3 +1,93 @@
+  <vuln vid="b45d25ab-1de3-11f1-8aff-b42e991fc52e">
+    <topic>Mozilla -- Undefined behavior in the DOM: Core &amp; HTML component</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>148.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.8.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>148.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2014593 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2014593">
+	  <p>Undefined behavior in the DOM: Core &amp; HTML component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2771</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-2771</url>
+    </references>
+    <dates>
+      <discovery>2026-02-24</discovery>
+      <entry>2026-03-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e1e40d50-1de2-11f1-8aff-b42e991fc52e">
+    <topic>Firefox -- Same-origin policy bypass</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>148.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2018400 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2018400">
+	  <p>Same-origin policy bypass in the CSS Parsing and
+	    Computation component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3846</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-3846</url>
+    </references>
+    <dates>
+      <discovery>2026-03-10</discovery>
+      <entry>2026-03-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="df82f42c-1de2-11f1-8aff-b42e991fc52e">
+    <topic>firefox -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>148.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/buglist.cgi?bug_id=2017513%2C2017622%2C2019341 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=2017513%2C2017622%2C2019341">
+	  <p>Memory safety bugs present in Firefox 148.0.2.  Some of
+	  these bugs showed evidence of memory corruption and we
+	  presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3847</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-3847</url>
+    </references>
+    <dates>
+      <discovery>2026-03-10</discovery>
+      <entry>2026-03-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0236eab0-1d62-11f1-88f8-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
