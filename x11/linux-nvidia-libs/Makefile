@@ -93,9 +93,14 @@ LINUX_DATA+=	20_nvidia_xcb.json /usr/share/egl/egl_external_platform.d \
 PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json,d'\
 		'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json,d'
 .endif
-.if ${NVVERSION} >= 590.00000
+.if ${NVVERSION} >= 595.00000
+LINUX_DATA+=	09_nvidia_wayland2.json /usr/share/egl/egl_external_platform.d
+PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/99_nvidia_wayland2.json,d'
+.elif ${NVVERSION} >= 590.00000
 LINUX_DATA+=	99_nvidia_wayland2.json /usr/share/egl/egl_external_platform.d
+PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/09_nvidia_wayland2.json,d'
 .else
+PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/09_nvidia_wayland2.json,d'
 PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/99_nvidia_wayland2.json,d'
 .endif
 
@@ -309,7 +314,10 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-gpucomp\.so,d'
 
 # nvidia-egl-X11 supports (not in x11/nvidia-driver nor separate ports)
 # Estimated to be upgrated often.
-.if ${NVVERSION} >= 580.10508	# 580.105.08
+.if ${NVVERSION} >= 595.00000 || \
+${NVVERSION} >= 580.14200 && ${NVVERSION} < 590.00000	# 580.142 or 595
+NV_EGL_X_VERSION=	1.0.5
+.elif ${NVVERSION} >= 580.10508	# 580.105.08
 NV_EGL_X_VERSION=	1.0.4
 .elif ${NVVERSION} >= 570.18100	# 570.181
 NV_EGL_X_VERSION=	1.0.3

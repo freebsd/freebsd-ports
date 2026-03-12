@@ -58,6 +58,7 @@ LIB_DEPENDS+=	libnvidia-egl-wayland.so:graphics/egl-wayland
 
 .if ${NVVERSION} >= 580.00000
 LIB_DEPENDS+=	libnvidia-egl-xcb.so:graphics/egl-x11
+LIB_DEPENDS+=	libnvidia-egl-wayland2.so:graphics/egl-wayland2
 .endif
 
 USES=		uidfix xorg
