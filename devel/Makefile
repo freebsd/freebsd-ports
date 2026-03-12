@@ -860,6 +860,7 @@
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
     SUBDIR += git-p4
+    SUBDIR += git-pkgs
     SUBDIR += git-prev-next
     SUBDIR += git-repo-manager
     SUBDIR += git-review
