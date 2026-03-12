@@ -5161,3 +5161,4 @@ devel/tbb|devel/onetbb|2026-03-01|Has expired: Project moved to devel/onetbb
 devel/upp||2026-03-08|Fails to build with freetype 2.14+
 multimedia/obs-recursion-effect||2026-03-08|Compilation fails with obs-studio-32.0.1
 devel/py-xdg|devel/py-pyxdg|2026-03-11|Use correct Python package name
+lang/go124||2026-03-12|Has expired: End of life--please switch to go125 or go126
