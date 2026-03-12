@@ -27,7 +27,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_desktop-notifications_9e55697a.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_faq_6acfb156.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_file-transfer-protocol_67d60cd4.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_color-names_d5b08547.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_color-names_a1b155fe.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_launch_2c8ae1a7.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_matching_f5ed7c14.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_rc_4121b4bb.png
@@ -84,6 +84,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_text-sizing-protocol_974e580e.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_underlines_c33f785f.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_unscroll_98a1c6ca.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_wide-gamut-colors_93c46a12.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/splits.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/themes.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/transfer.png
@@ -156,6 +157,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/text-sizing-protocol.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/underlines.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/unscroll.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/wide-gamut-colors.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/check-solid.svg
@@ -267,6 +269,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/text-sizing-protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/underlines.html
 %%PORTDOCS%%%%DOCSDIR%%/unscroll.html
+%%PORTDOCS%%%%DOCSDIR%%/wide-gamut-colors.html
 share/icons/hicolor/256x256/apps/kitty.png
 share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/__main__.py
@@ -325,6 +328,14 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kittens/clipboard/__pycache__/main%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/kittens/clipboard/__pycache__/main%%PYTHON_TAG%%.pyc
 %%DATADIR%%/kittens/clipboard/main.py
+%%DATADIR%%/kittens/command_palette/__init__.py
+%%DATADIR%%/kittens/command_palette/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/kittens/command_palette/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
+%%DATADIR%%/kittens/command_palette/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%DATADIR%%/kittens/command_palette/__pycache__/main%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/kittens/command_palette/__pycache__/main%%PYTHON_TAG%%.opt-2.pyc
+%%DATADIR%%/kittens/command_palette/__pycache__/main%%PYTHON_TAG%%.pyc
+%%DATADIR%%/kittens/command_palette/main.py
 %%DATADIR%%/kittens/desktop_ui/__init__.py
 %%DATADIR%%/kittens/desktop_ui/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/kittens/desktop_ui/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -664,6 +675,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/__pycache__/window_list%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/window_list%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/window_list%%PYTHON_TAG%%.pyc
+%%DATADIR%%/kitty/__pycache__/window_title_bar%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/kitty/__pycache__/window_title_bar%%PYTHON_TAG%%.opt-2.pyc
+%%DATADIR%%/kitty/__pycache__/window_title_bar%%PYTHON_TAG%%.pyc
 %%DATADIR%%/kitty/__pycache__/xdg%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/xdg%%PYTHON_TAG%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/xdg%%PYTHON_TAG%%.pyc
@@ -979,6 +993,8 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rgb.py
 %%DATADIR%%/kitty/rounded_rect_fragment.glsl
 %%DATADIR%%/kitty/rounded_rect_vertex.glsl
+%%DATADIR%%/kitty/screenshot_fragment.glsl
+%%DATADIR%%/kitty/screenshot_vertex.glsl
 %%DATADIR%%/kitty/search_query_parser.py
 %%DATADIR%%/kitty/session.py
 %%DATADIR%%/kitty/shaders.py
@@ -1000,6 +1016,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/utils.py
 %%DATADIR%%/kitty/window.py
 %%DATADIR%%/kitty/window_list.py
+%%DATADIR%%/kitty/window_title_bar.py
 %%DATADIR%%/kitty/xdg.py
 %%DATADIR%%/logo/beam-cursor.png
 %%DATADIR%%/logo/beam-cursor@2x.png
