@@ -6098,6 +6098,7 @@
     SUBDIR += py-super-collections
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
+    SUBDIR += py-sybil
     SUBDIR += py-synr
     SUBDIR += py-syrupy
     SUBDIR += py-sysctl
