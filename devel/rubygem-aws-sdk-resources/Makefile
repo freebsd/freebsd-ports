@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.252.0
+PORTVERSION=	3.255.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -115,6 +115,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-connectcampaignsv2>=1<2:devel/rubygem-aws-sdk-connectcampaignsv2 \
 		rubygem-aws-sdk-connectcases>=1<2:devel/rubygem-aws-sdk-connectcases \
 		rubygem-aws-sdk-connectcontactlens>=1<2:devel/rubygem-aws-sdk-connectcontactlens \
+		rubygem-aws-sdk-connecthealth>=1<2:devel/rubygem-aws-sdk-connecthealth \
 		rubygem-aws-sdk-connectparticipant>=1<2:devel/rubygem-aws-sdk-connectparticipant \
 		rubygem-aws-sdk-connectwisdomservice>=1<2:devel/rubygem-aws-sdk-connectwisdomservice \
 		rubygem-aws-sdk-controlcatalog>=1<2:devel/rubygem-aws-sdk-controlcatalog \
@@ -157,6 +158,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-elasticloadbalancing>=1<2:devel/rubygem-aws-sdk-elasticloadbalancing \
 		rubygem-aws-sdk-elasticloadbalancingv2>=1<2:devel/rubygem-aws-sdk-elasticloadbalancingv2 \
 		rubygem-aws-sdk-elasticsearchservice>=1<2:devel/rubygem-aws-sdk-elasticsearchservice \
+		rubygem-aws-sdk-elementalinference>=1<2:devel/rubygem-aws-sdk-elementalinference \
 		rubygem-aws-sdk-emr>=1<2:devel/rubygem-aws-sdk-emr \
 		rubygem-aws-sdk-emrcontainers>=1<2:devel/rubygem-aws-sdk-emrcontainers \
 		rubygem-aws-sdk-emrserverless>=1<2:devel/rubygem-aws-sdk-emrserverless \
@@ -373,6 +375,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-sesv2>=1<2:devel/rubygem-aws-sdk-sesv2 \
 		rubygem-aws-sdk-shield>=1<2:devel/rubygem-aws-sdk-shield \
 		rubygem-aws-sdk-signer>=1<2:devel/rubygem-aws-sdk-signer \
+		rubygem-aws-sdk-signerdata>=1<2:devel/rubygem-aws-sdk-signerdata \
 		rubygem-aws-sdk-simpledb>=1<2:devel/rubygem-aws-sdk-simpledb \
 		rubygem-aws-sdk-simspaceweaver>=1<2:devel/rubygem-aws-sdk-simspaceweaver \
 		rubygem-aws-sdk-snowball>=1<2:devel/rubygem-aws-sdk-snowball \
