@@ -1,6 +1,7 @@
 include/merve.h
 include/merve/parser.h
 include/merve/version.h
+include/merve_c.h
 lib/cmake/merve/merve-config-version.cmake
 lib/cmake/merve/merve-config.cmake
 lib/cmake/merve/merve_targets-%%CMAKE_BUILD_TYPE%%.cmake
