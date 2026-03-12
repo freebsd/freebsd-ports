@@ -1,11 +1,11 @@
-PORTNAME=	mangowc
+PORTNAME=	mango
 DISTVERSION=	0.12.4
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Lightweight, high-performance Wayland compositor built on dwl
-WWW=		https://mangowc.vercel.app
+WWW=		https://mangowm.github.io/
 
 LICENSE=	CC0-1.0 GPLv3 MIT
 LICENSE_COMB=	multi
@@ -38,7 +38,7 @@ RUN_DEPENDS=	hwdata>=0.399:misc/hwdata \
 USES=		meson pkgconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	DreamMaoMao
+GH_ACCOUNT=	mangowm
 
 MESON_ARGS=	-Dsysconfdir=${PREFIX}/etc
 
