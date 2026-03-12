@@ -1,5 +1,5 @@
 PORTNAME=	mod_auth_openidc
-PORTVERSION=	2.4.17.1
+PORTVERSION=	2.4.19.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -20,8 +20,8 @@ LIB_DEPENDS=	libcjose.so:devel/cjose \
 
 USES=		apache autoreconf cpe gmake libtool pkgconfig ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	pingidentity
-CPE_VENDOR=	${GH_ACCOUNT}
+GH_ACCOUNT=	OpenIDC
+CPE_VENDOR=	${GH_ACCOUNT:tl}
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openidc.so
 GNU_CONFIGURE=	yes
