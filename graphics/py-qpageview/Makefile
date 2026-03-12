@@ -1,11 +1,11 @@
 PORTNAME=	qpageview
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.3
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.ne@gmx.net
-COMMENT=	Page-based viewer widget for Qt5/PyQt5
+COMMENT=	Page-based viewer widget for Qt6/PyQt6
 WWW=		https://qpageview.org/
 
 LICENSE=	GPLv3
