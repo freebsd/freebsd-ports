@@ -1,6 +1,6 @@
---- emain/emain-window.ts.orig	2026-02-11 23:55:44 UTC
+--- emain/emain-window.ts.orig	2026-03-03 23:22:35 UTC
 +++ emain/emain-window.ts
-@@ -172,7 +172,7 @@ export class WaveBrowserWindow extends BaseWindow {
+@@ -174,7 +174,7 @@ export class WaveBrowserWindow extends BaseWindow {
              } else {
                  winOpts.backgroundColor = "#222222";
              }

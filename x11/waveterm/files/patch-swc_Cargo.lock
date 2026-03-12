@@ -1,27 +1,27 @@
---- swc/bindings/Cargo.lock.orig	2025-08-24 10:27:36 UTC
-+++ swc/bindings/Cargo.lock
-@@ -235,7 +235,7 @@ dependencies = [
-  "bitflags 2.9.1",
+--- swc/Cargo.lock.orig	2026-03-10 09:07:06 UTC
++++ swc/Cargo.lock
+@@ -357,7 +357,7 @@ dependencies = [
+  "bitflags 2.10.0",
   "cexpr",
   "clang-sys",
-- "itertools 0.10.5",
-+ "itertools 0.13.0",
+- "itertools 0.13.0",
++ "itertools 0.10.5",
   "log",
   "prettyplease",
   "proc-macro2",
-@@ -856,9 +856,9 @@ name = "corosensei"
+@@ -1202,9 +1202,9 @@ name = "corosensei"
  
  [[package]]
  name = "corosensei"
 -version = "0.2.2"
-+version = "0.3.2"
++version = "0.3.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "5d1ea1c2a2f898d2a6ff149587b8a04f41ee708d248c723f01ac2f0f01edc0b3"
-+checksum = "2b2b4c7e3e97730e6b0b8c5ff5ca82c663d1a645e4f630f4fa4c24e80626787e"
++checksum = "2c54787b605c7df106ceccf798df23da4f2e09918defad66705d1cedf3bb914f"
  dependencies = [
   "autocfg",
   "cfg-if",
-@@ -2266,16 +2266,6 @@ checksum = "0c6639b70a7ce854b79c70d7e83f16b5dc0137cc91
+@@ -3276,16 +3276,6 @@ checksum = "0c6639b70a7ce854b79c70d7e83f16b5dc0137cc91
  checksum = "0c6639b70a7ce854b79c70d7e83f16b5dc0137cc914f3d7d03803b513ecc67ac"
  
  [[package]]
@@ -36,9 +36,9 @@
 -
 -[[package]]
  name = "lightningcss"
- version = "1.0.0-alpha.66"
+ version = "1.0.0-alpha.68"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3704,18 +3694,16 @@ dependencies = [
+@@ -5109,18 +5099,16 @@ dependencies = [
  ]
  
  [[package]]
@@ -50,7 +50,7 @@
 -checksum = "59e2dd588bf1597a252c3b920e0143eb99b0f76e4e082f4c92ce34fbc9e71ddd"
 +checksum = "6a8b1a1a2ebf674015cc02edccce75287f1a0130d394307b36743c2f5d504b47"
  dependencies = [
-  "indexmap 2.9.0",
+  "indexmap 2.12.0",
   "itoa",
 - "libyml",
 - "memchr",
@@ -61,8 +61,8 @@
  ]
  
  [[package]]
-@@ -5871,6 +5859,12 @@ checksum = "ebc1c04c71510c7f702b52b7c350734c9ff1295c46
- checksum = "ebc1c04c71510c7f702b52b7c350734c9ff1295c464a03335b00bb84fc54f853"
+@@ -7902,6 +7890,12 @@ checksum = "f962df74c8c05a667b5ee8bcf162993134c104e964
+ checksum = "f962df74c8c05a667b5ee8bcf162993134c104e96440b663c8daa176dc772d8c"
  
  [[package]]
 +name = "unsafe-libyaml"
@@ -74,7 +74,7 @@
  name = "url"
  version = "2.5.4"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -5944,9 +5938,9 @@ name = "virtual-fs"
+@@ -7994,9 +7988,9 @@ name = "virtual-fs"
  
  [[package]]
  name = "virtual-fs"
@@ -86,14 +86,15 @@
  dependencies = [
   "anyhow",
   "async-trait",
-@@ -5967,15 +5961,16 @@ dependencies = [
+@@ -8017,6 +8011,7 @@ dependencies = [
   "thiserror 1.0.69",
   "tokio",
   "tracing",
 + "virtual-mio",
   "wasmer-package",
+  "web-time",
   "webc",
- ]
+@@ -8024,9 +8019,9 @@ name = "virtual-mio"
  
  [[package]]
  name = "virtual-mio"
@@ -105,7 +106,7 @@
  dependencies = [
   "async-trait",
   "bytes",
-@@ -5987,9 +5982,9 @@ name = "virtual-net"
+@@ -8038,9 +8033,9 @@ name = "virtual-net"
  
  [[package]]
  name = "virtual-net"
@@ -117,7 +118,7 @@
  dependencies = [
   "anyhow",
   "async-trait",
-@@ -6203,9 +6198,9 @@ name = "wasmer"
+@@ -8316,9 +8311,9 @@ name = "wasmer"
  
  [[package]]
  name = "wasmer"
@@ -129,14 +130,7 @@
  dependencies = [
   "bindgen",
   "bytes",
-@@ -6230,16 +6225,14 @@ dependencies = [
-  "wasmer-derive",
-  "wasmer-types",
-  "wasmer-vm",
-- "wasmparser 0.224.1",
-- "wat",
-  "windows-sys 0.59.0",
- ]
+@@ -8350,9 +8345,9 @@ name = "wasmer-compiler"
  
  [[package]]
  name = "wasmer-compiler"
@@ -148,7 +142,7 @@
  dependencies = [
   "backtrace",
   "bytes",
-@@ -6268,9 +6261,9 @@ name = "wasmer-compiler-cranelift"
+@@ -8381,9 +8376,9 @@ name = "wasmer-compiler-cranelift"
  
  [[package]]
  name = "wasmer-compiler-cranelift"
@@ -158,9 +152,9 @@
 -checksum = "b3a3f6b9620a296686578867a2eb52ebbba54f690e35d0f0b88ac2a07eba4b2f"
 +checksum = "780f9c2050941b4e3f6bb82d32bd796a6c1750d2f97cbd892f07b384bb6af6f8"
  dependencies = [
-  "cranelift-codegen",
-  "cranelift-entity",
-@@ -6288,9 +6281,9 @@ name = "wasmer-config"
+  "cranelift-codegen 0.110.2",
+  "cranelift-entity 0.110.2",
+@@ -8401,9 +8396,9 @@ name = "wasmer-config"
  
  [[package]]
  name = "wasmer-config"
@@ -172,7 +166,7 @@
  dependencies = [
   "anyhow",
   "bytesize",
-@@ -6303,7 +6296,7 @@ dependencies = [
+@@ -8416,7 +8411,7 @@ dependencies = [
   "semver",
   "serde",
   "serde_json",
@@ -181,7 +175,7 @@
   "thiserror 1.0.69",
   "toml",
   "url",
-@@ -6311,9 +6304,9 @@ name = "wasmer-derive"
+@@ -8424,9 +8419,9 @@ name = "wasmer-derive"
  
  [[package]]
  name = "wasmer-derive"
@@ -193,7 +187,7 @@
  dependencies = [
   "proc-macro-error2",
   "proc-macro2",
-@@ -6323,9 +6316,9 @@ name = "wasmer-journal"
+@@ -8436,9 +8431,9 @@ name = "wasmer-journal"
  
  [[package]]
  name = "wasmer-journal"
@@ -205,7 +199,7 @@
  dependencies = [
   "anyhow",
   "async-trait",
-@@ -6350,9 +6343,9 @@ name = "wasmer-package"
+@@ -8463,9 +8458,9 @@ name = "wasmer-package"
  
  [[package]]
  name = "wasmer-package"
@@ -217,7 +211,7 @@
  dependencies = [
   "anyhow",
   "bytes",
-@@ -6379,9 +6372,9 @@ name = "wasmer-types"
+@@ -8492,9 +8487,9 @@ name = "wasmer-types"
  
  [[package]]
  name = "wasmer-types"
@@ -229,7 +223,7 @@
  dependencies = [
   "bytecheck 0.6.12",
   "enum-iterator",
-@@ -6401,9 +6394,9 @@ name = "wasmer-vm"
+@@ -8514,9 +8509,9 @@ name = "wasmer-vm"
  
  [[package]]
  name = "wasmer-vm"
@@ -241,7 +235,7 @@
  dependencies = [
   "backtrace",
   "cc",
-@@ -6420,6 +6413,7 @@ dependencies = [
+@@ -8533,6 +8528,7 @@ dependencies = [
   "memoffset",
   "more-asserts",
   "region",
@@ -249,7 +243,7 @@
   "scopeguard",
   "thiserror 1.0.69",
   "wasmer-types",
-@@ -6428,9 +6422,9 @@ name = "wasmer-wasix"
+@@ -8541,9 +8537,9 @@ name = "wasmer-wasix"
  
  [[package]]
  name = "wasmer-wasix"
@@ -261,7 +255,7 @@
  dependencies = [
   "anyhow",
   "async-trait",
-@@ -6465,7 +6459,7 @@ dependencies = [
+@@ -8580,7 +8576,7 @@ dependencies = [
   "serde",
   "serde_derive",
   "serde_json",
@@ -270,7 +264,7 @@
   "sha2",
   "shared-buffer",
   "tempfile",
-@@ -6498,9 +6492,9 @@ name = "wasmer-wasix-types"
+@@ -8616,9 +8612,9 @@ name = "wasmer-wasix-types"
  
  [[package]]
  name = "wasmer-wasix-types"
@@ -282,40 +276,7 @@
  dependencies = [
   "anyhow",
   "bitflags 1.3.2",
-@@ -6537,32 +6531,9 @@ dependencies = [
- dependencies = [
-  "bitflags 2.9.1",
-  "indexmap 2.9.0",
-- "semver",
- ]
- 
- [[package]]
--name = "wast"
--version = "235.0.0"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "1eda4293f626c99021bb3a6fbe4fbbe90c0e31a5ace89b5f620af8925de72e13"
--dependencies = [
-- "bumpalo",
-- "leb128fmt",
-- "memchr",
-- "unicode-width 0.2.1",
-- "wasm-encoder",
--]
--
--[[package]]
--name = "wat"
--version = "1.235.0"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "e777e0327115793cb96ab220b98f85327ec3d11f34ec9e8d723264522ef206aa"
--dependencies = [
-- "wast",
--]
--
--[[package]]
- name = "web-sys"
- version = "0.3.77"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -6574,9 +6545,9 @@ name = "webc"
+@@ -8921,9 +8917,9 @@ name = "webc"
  
  [[package]]
  name = "webc"
@@ -326,4 +287,4 @@
 +checksum = "637506ca3c48eae3301e97f0167aa1b46cdfdd479d008b868a19715182e48ae3"
  dependencies = [
   "anyhow",
-  "base64",
+  "base64 0.22.1",

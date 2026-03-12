@@ -11,8 +11,7 @@
 
 PORTNAME=	waveterm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSION=	0.14.1
 CATEGORIES=	x11
 DISTFILES=	tsunami/go.mod:prefetch
 
@@ -26,15 +25,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	task:devel/task
 LIB_DEPENDS=	libvips.so:graphics/vips
 
-USES=		cargo electron:38 gmake go:1.25+,modules,no_targets \
-		nodejs:22,build python:build
+USES=		cargo electron:40 gmake go:1.25+,modules,no_targets \
+		nodejs:24,build python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wavetermdev
-GH_TUPLE=	swc-project:swc:v1.13.5:swc/swc
+GH_TUPLE=	swc-project:swc:v1.15.11:swc/swc
 
-CARGO_CARGOTOML=${WRKSRC}/swc/bindings/Cargo.toml
-CARGO_CARGOLOCK=${WRKSRC}/swc/bindings/Cargo.lock
+CARGO_CARGOTOML=${WRKSRC}/swc/Cargo.toml
+CARGO_CARGOLOCK=${WRKSRC}/swc/Cargo.lock
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
@@ -65,7 +64,7 @@ pre-fetch:
 	fi
 
 pre-build:
-	cd ${WRKSRC}/swc/bindings && \
+	cd ${WRKSRC}/swc && \
 	${SETENV} ${MAKE_ENV} ${CARGO_ENV} ${CARGO} build \
 		--manifest-path ${CARGO_CARGOTOML} \
 		--package binding_core_node --release --verbose --verbose

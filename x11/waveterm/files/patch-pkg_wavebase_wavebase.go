@@ -1,4 +1,4 @@
---- pkg/wavebase/wavebase.go.orig	2026-02-11 23:55:44 UTC
+--- pkg/wavebase/wavebase.go.orig	2026-03-03 23:22:35 UTC
 +++ pkg/wavebase/wavebase.go
 @@ -81,6 +81,8 @@ var SupportedWshBinaries = map[string]bool{
  	"linux-arm64":   true,
@@ -17,7 +17,7 @@
  		xdgCache := os.Getenv("XDG_CACHE_HOME")
  		if xdgCache != "" {
  			cacheDir = filepath.Join(xdgCache, appBundle)
-@@ -431,6 +434,25 @@ func getSystemSummary(ctx context.Context) string {
+@@ -471,6 +474,25 @@ func getSystemSummary(ctx context.Context) string {
  			details = "Windows"
  		}
  		return fmt.Sprintf("%s (%s)", details, runtime.GOARCH)
