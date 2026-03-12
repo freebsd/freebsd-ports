@@ -8,6 +8,7 @@
     SUBDIR += antimony
     SUBDIR += apache-commons-jelly
     SUBDIR += asm-lsp
+    SUBDIR += asmc
     SUBDIR += asn1c
     SUBDIR += atlast
     SUBDIR += awka
