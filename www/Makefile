@@ -251,6 +251,7 @@
     SUBDIR += gotty
     SUBDIR += gpx2map
     SUBDIR += grafana
+    SUBDIR += grafanactl
     SUBDIR += grails
     SUBDIR += gregarius
     SUBDIR += groupoffice
