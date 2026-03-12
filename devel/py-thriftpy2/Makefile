@@ -21,6 +21,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4<4.0:devel/py-ply@${PY_FLAVOR} \
 USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent cython pep517
 
+OPTIONS_DEFINE=	AIOHTTP
+AIOHTTP_DESC=	Asynchronous HTTP support
+
+AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.0<4.0.0:www/py-aiohttp@${PY_FLAVOR}
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
