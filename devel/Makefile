@@ -7003,6 +7003,7 @@
     SUBDIR += rubygem-aws-sdk-sesv2
     SUBDIR += rubygem-aws-sdk-shield
     SUBDIR += rubygem-aws-sdk-signer
+    SUBDIR += rubygem-aws-sdk-signerdata
     SUBDIR += rubygem-aws-sdk-simpledb
     SUBDIR += rubygem-aws-sdk-simspaceweaver
     SUBDIR += rubygem-aws-sdk-snowball
