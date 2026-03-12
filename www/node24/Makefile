@@ -1,7 +1,6 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PORTVERSION:R:R}
@@ -22,8 +21,12 @@ BUILD_DEPENDS=	objdump:devel/binutils
 LIB_DEPENDS=	libada.so:devel/libada \
 		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
+		libgtest.so:devel/googletest \
+		libhdr_histogram.so:graphics/hdr_histogram \
 		libicui18n.so:devel/icu \
 		libllhttp.so:www/llhttp \
+		libmerve.so:devel/merve \
+		libnbytes.so:www/nbytes \
 		libnghttp2.so:www/libnghttp2 \
 		libnghttp3.so:www/libnghttp3 \
 		libngtcp2.so:net/libngtcp2 \
@@ -39,8 +42,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-ada \
 		--shared-brotli \
 		--shared-cares \
+		--shared-gtest \
+		--shared-hdr-histogram \
 		--shared-http-parser \
 		--shared-libuv \
+		--shared-merve \
+		--shared-nbytes \
 		--shared-nghttp2 \
 		--shared-nghttp3 \
 		--shared-ngtcp2 \
@@ -94,8 +101,12 @@ post-patch:
 	@${RM} -r ${WRKSRC}/deps/brotli/
 	@${RM} -r ${WRKSRC}/deps/cares/
 	@${RM} -r ${WRKSRC}/deps/corepack/
+	@${RM} -r ${WRKSRC}/deps/googletest/
+	@${RM} -r ${WRKSRC}/deps/histogram/
 	@${RM} -r ${WRKSRC}/deps/icu-small/
 	@${RM} -r ${WRKSRC}/deps/llhttp/
+	@${RM} -r ${WRKSRC}/deps/merve/
+	@${RM} -r ${WRKSRC}/deps/nbytes/
 	@${RM} -r ${WRKSRC}/deps/nghttp2/
 	@${RM} -r ${WRKSRC}/deps/ngtcp2/
 	@${RM} -r ${WRKSRC}/deps/npm/
