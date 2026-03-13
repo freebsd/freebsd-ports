@@ -1,5 +1,5 @@
 PORTNAME=	genius
-DISTVERSION=	1.0.28
+DISTVERSION=	1.0.29
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 USES=		desktop-file-utils gettext-tools gmake gnome libtool perl5 \
 		pkgconfig readline shared-mime-info tar:xz xorg
-USE_GNOME=	intltool vte3
+USE_GNOME=	gtksourceview4 intltool vte3
 USE_PERL5=	test
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
@@ -25,6 +25,14 @@ CONFIGURE_ARGS=	--disable-extra-gcc-optimization \
 		--disable-scrollkeeper \
 		--disable-update-mimedb
 INSTALL_TARGET=	install-strip
+
+PORTEXAMPLES=	*.gel
+
+OPTIONS_DEFINE=	EXAMPLES
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR})
 
 do-test:
 	cd ${WRKSRC}/src; ${PERL} geniustest.pl
