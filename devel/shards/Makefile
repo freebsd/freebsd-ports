@@ -1,7 +1,6 @@
 PORTNAME=	shards
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.1
-PORTREVISION=	1
+DISTVERSION=	0.20.0
 CATEGORIES=	devel
 
 MAINTAINER=	dch@FreeBSD.org
@@ -25,7 +24,7 @@ GH_TUPLE=	crystal-lang:crystal-molinillo:v0.2.0:molinillo/lib/molinillo
 
 MAKE_ARGS+=	CRYSTAL="${LOCALBASE}/bin/crystal" \
 		FLAGS="--release --no-debug" \
-		SHARDS_CONFIG_BUILD_COMMIT="182792aa2989"
+		SHARDS_CONFIG_BUILD_COMMIT="b2b98ca36ce1"
 
 PLIST_FILES=	bin/shards \
 		share/man/man1/shards.1.gz \
