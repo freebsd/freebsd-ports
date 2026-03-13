@@ -1,0 +1,10 @@
+genanki is a library for generating Anki decks programmatically.
+It allows you to create notes, cards, and decks with custom models
+and templates, then export them as .apkg files that can be imported
+into Anki.
+
+Features:
+- Create custom note types with any number of fields
+- Define card templates with HTML/CSS
+- Generate decks with thousands of cards
+- Export to .apkg format for Anki import
