@@ -1,6 +1,7 @@
 PORTNAME=	logstash
 DISTVERSION=	7.17.29
 DISTVERSIONSUFFIX=	-darwin-x86_64
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
 		LOCAL/vvd/elastic
@@ -28,10 +29,16 @@ SHEBANG_FILES=	bin/*
 
 CONFLICTS=	${PORTNAME}8 ${PORTNAME}9*
 
+EXTRACT_AFTER_ARGS=	--exclude jdk.app \
+			--exclude *.bat \
+			--no-same-owner --no-same-permissions
+
 NO_BUILD=	yes
 PORTSCOUT=	limit:^7
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
-		LOGSTASH_HOME=${LOGSTASH_HOME}
+		LOGSTASH_HOME=${LOGSTASH_HOME} \
+		LOGUSER=${LOGUSER} \
+		LOGGROUP=${LOGGROUP}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
@@ -51,15 +58,11 @@ LOGSTASH_JRUBY_BIN_FILES=	ast gem irb jgem jirb jirb_swing jruby \
 				jruby.bash jruby.sh jrubyc rake rdoc ri testrb
 LOGSTASH_JRUBY_SUBDIR=		vendor/jruby/bin
 
-post-extract:
-	${RM} -rf ${WRKSRC}/jdk.app
-
 post-patch:
 	${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|g' ${WRKSRC}/config/logstash.yml
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-	${FIND} ${WRKSRC} -name '*.bat' -delete
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${STAGEDIR}${ETCDIR}
 .for x in ${LOGSTASH_CONF_FILES}
