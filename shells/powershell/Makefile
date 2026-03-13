@@ -1,6 +1,6 @@
 PORTNAME=	powershell
 DISTVERSIONPREFIX=v
-DISTVERSION=	7.5.4
+DISTVERSION=	7.5.5
 PORTREVISION=	1
 CATEGORIES=	shells
 
@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PowerShell
 GH_PROJECT=	PowerShell
 
-DOTNET_VER=	9.0.10
+DOTNET_VER=	9.0.14
 DOTNET_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/}
 
 NUGET_GROUPS=	NUGET PWSH
@@ -38,11 +38,11 @@ NUGET_NUPKGS=	DotNetAnalyzers.DocumentationAnalyzers:1.0.0-beta.59 \
 		JsonSchema.Net:7.2.3 \
 		Markdig.Signed:0.38.0 \
 		Microsoft.ApplicationInsights:2.22.0 \
-		Microsoft.Bcl.AsyncInterfaces:8.0.0 \
+		Microsoft.Bcl.AsyncInterfaces:${DOTNET_VER} \
 		Microsoft.CodeAnalysis.Analyzers:3.11.0 \
 		Microsoft.CodeAnalysis.Common:4.11.0 \
 		Microsoft.CodeAnalysis.CSharp:4.11.0 \
-		Microsoft.Extensions.ObjectPool:8.0.21 \
+		Microsoft.Extensions.ObjectPool:${DOTNET_VER} \
 		Microsoft.Management.Infrastructure:3.0.0 \
 		Microsoft.Management.Infrastructure.Runtime.Unix:3.0.0 \
 		Microsoft.Management.Infrastructure.Runtime.Win:3.0.0 \
@@ -88,7 +88,7 @@ NUGET_NUPKGS=	DotNetAnalyzers.DocumentationAnalyzers:1.0.0-beta.59 \
 		System.Configuration.ConfigurationManager:${DOTNET_VER} \
 		System.Data.Odbc:${DOTNET_VER} \
 		System.Data.OleDb:${DOTNET_VER} \
-		System.Data.SqlClient:4.9.0 \
+		System.Data.SqlClient:4.9.1 \
 		System.Diagnostics.DiagnosticSource:${DOTNET_VER} \
 		System.Diagnostics.EventLog:${DOTNET_VER} \
 		System.Diagnostics.PerformanceCounter:${DOTNET_VER} \
@@ -107,7 +107,7 @@ NUGET_NUPKGS=	DotNetAnalyzers.DocumentationAnalyzers:1.0.0-beta.59 \
 		System.Private.ServiceModel:4.10.3 \
 		System.Reflection.Context:${DOTNET_VER} \
 		System.Reflection.DispatchProxy:4.7.1 \
-		System.Reflection.Metadata:8.0.1 \
+		System.Reflection.Metadata:${DOTNET_VER} \
 		System.Runtime.Caching:${DOTNET_VER} \
 		System.Runtime.CompilerServices.Unsafe:6.0.0 \
 		System.Security.AccessControl:6.0.1 \
@@ -158,7 +158,7 @@ post-patch:
 		${WRKSRC}/nuget.config
 	${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' \
 		${WRKSRC}/PowerShell.Common.props
-	${REINPLACE_CMD} -e 's|9.0.306|9.0.111|' ${WRKSRC}/global.json
+	${REINPLACE_CMD} -e 's|9.0.312|9.0.111|' ${WRKSRC}/global.json
 
 do-build:
 	cd ${WRKSRC}/src/ResGen && \
