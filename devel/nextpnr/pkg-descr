@@ -5,9 +5,10 @@ Currently nextpnr supports:
   - Lattice iCE40 devices supported by Project IceStorm
   - Lattice ECP5 devices supported by Project Trellis
   - Lattice Nexus devices supported by Project Oxide
-  - Gowin LittleBee devices supported by Project Apicula
+  - Gowin LittleBee and Aurora V devices supported by Project Apicula
   - NanoXplore NG-Ultra devices supported by Project Beyond
+  - Cologne Chip GateMate devices supported by Project Peppercorn
   - (experimental) Cyclone V devices supported by Mistral
   - (experimental) Lattice MachXO2 devices supported by Project Trellis
+  - (experimental) Xilinx 7-series devices supported by Project X-Ray
   - (experimental) a "generic" back-end for user-defined architectures
-
