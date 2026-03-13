@@ -1,7 +1,6 @@
 PORTNAME=	tabby
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.2
-PORTREVISION=	2
+DISTVERSION=	0.32.0
 CATEGORIES=	devel # machine-learning
 MASTER_SITES=	https://github.com/swagger-api/swagger-ui/archive/refs/tags/:swagger
 PKGNAMESUFFIX=	-ai-coding-assistant
@@ -67,6 +66,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		axum-prometheus-0.6.1 \
 		backoff-0.4.0 \
 		backtrace-0.3.71 \
+		base16ct-0.2.0 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
@@ -117,9 +117,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossbeam-queue-0.3.11 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.2 \
+		crypto-bigint-0.5.5 \
 		crypto-common-0.1.6 \
 		cssparser-0.27.2 \
 		cssparser-macros-0.6.1 \
+		curve25519-dalek-4.1.3 \
+		curve25519-dalek-derive-0.1.1 \
 		custom_error-1.9.2 \
 		darling-0.14.4 \
 		darling-0.20.9 \
@@ -142,7 +145,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		downcast-rs-1.2.1 \
 		dtoa-1.0.9 \
 		dtoa-short-0.3.4 \
+		dyn-clone-1.0.20 \
+		ecdsa-0.16.9 \
+		ed25519-2.2.3 \
+		ed25519-dalek-2.2.0 \
 		either-1.12.0 \
+		elliptic-curve-0.13.8 \
 		email-encoding-0.3.0 \
 		email_address-0.2.4 \
 		encode_unicode-0.3.6 \
@@ -158,6 +166,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		eyre-0.6.12 \
 		fastdivide-0.4.1 \
 		fastrand-2.1.0 \
+		ff-0.13.1 \
+		fiat-crypto-0.2.9 \
 		fid-rs-0.1.1 \
 		flate2-1.0.30 \
 		float-cmp-0.9.0 \
@@ -203,6 +213,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		grep-printer-0.2.1 \
 		grep-regex-0.1.12 \
 		grep-searcher-0.1.13 \
+		group-0.13.0 \
 		h2-0.4.5 \
 		halfbrown-0.2.5 \
 		hashbrown-0.12.3 \
@@ -252,6 +263,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ipnet-2.9.0 \
 		iri-string-0.7.2 \
 		is_terminal_polyfill-1.70.0 \
+		itertools-0.10.5 \
 		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-0.4.8 \
@@ -336,10 +348,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		number_prefix-0.4.0 \
 		nvml-wrapper-0.9.0 \
 		nvml-wrapper-sys-0.7.0 \
+		oauth2-5.0.0 \
 		object-0.32.2 \
 		octocrab-0.42.1 \
 		omnicopy_to_output-0.1.1 \
 		once_cell-1.19.0 \
+		openidconnect-4.0.1 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -353,8 +367,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		opentelemetry_api-0.18.0 \
 		opentelemetry_sdk-0.18.0 \
 		opentelemetry_sdk-0.27.1 \
+		ordered-float-2.10.1 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
+		p256-0.13.2 \
+		p384-0.13.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		parse-git-url-0.5.1 \
@@ -389,6 +406,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
+		primeorder-0.13.6 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
@@ -430,6 +448,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-syntax-0.8.3 \
 		reqwest-0.12.4 \
 		reqwest-eventsource-0.6.0 \
+		rfc6979-0.4.0 \
 		ring-0.16.20 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
@@ -456,10 +475,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		same-file-1.0.6 \
 		scc-2.1.1 \
 		schannel-0.1.23 \
+		schemars-0.9.0 \
+		schemars-1.0.4 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
 		sdd-0.2.0 \
+		sec1-0.7.3 \
 		secrecy-0.8.0 \
 		secrecy-0.10.3 \
 		security-framework-2.11.0 \
@@ -469,11 +491,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.23 \
 		serde-1.0.203 \
 		serde-jsonlines-0.5.0 \
+		serde-value-0.7.0 \
 		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		serde_json-1.0.142 \
 		serde_path_to_error-0.1.16 \
+		serde_plain-1.0.2 \
 		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
+		serde_with-3.14.0 \
+		serde_with_macros-3.14.0 \
 		serdeconv-0.4.1 \
 		serial_test-2.0.0 \
 		serial_test-3.1.1 \
