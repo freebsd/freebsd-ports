@@ -355,6 +355,7 @@ do-build:
 do-install:
 .    for path in ${CARGO_INSTALL_PATH}
 	@${CARGO_CARGO_RUN} install \
+		--locked \
 		--no-track \
 		--path "${path}" \
 		--root "${STAGEDIR}${PREFIX}" \
