@@ -1,5 +1,6 @@
 PORTNAME=	remmina
 DISTVERSION=	1.4.43
+PORTREVISION=	1
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -94,8 +95,9 @@ PULSEAUDIO_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-nopulse
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	WITH_PYTHONLIBS
 
-RDP_LIB_DEPENDS=	libfreerdp-client2.so:net/freerdp \
-			libwinpr2.so.2:net/freerdp
+RDP_LIB_DEPENDS=	libfreerdp-client3.so:net/freerdp3 \
+			libwinpr3.so:net/freerdp3
+RDP_CMAKE_BOOL=		WITH_FREERDP3
 
 SECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 SECRET_RUN_DEPENDS=	gnome-keyring:security/gnome-keyring
