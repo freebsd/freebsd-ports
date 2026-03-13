@@ -1,5 +1,5 @@
 PORTNAME=	libHX
-PORTVERSION=	4.27
+PORTVERSION=	5.3
 CATEGORIES=	lang
 MASTER_SITES=	https://inai.de/files/libhx/ \
 		https://codeberg.org/jengelh/libhx/releases/download/v${PORTVERSION}/
@@ -10,7 +10,7 @@ WWW=		https://inai.de/projects/libhx/
 
 LICENSE=	LGPL21+
 
-USES=		cpe libtool localbase tar:xz
+USES=		cpe libtool localbase tar:zst
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
