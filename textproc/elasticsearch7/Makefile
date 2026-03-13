@@ -1,5 +1,6 @@
 PORTNAME=	elasticsearch
 DISTVERSION=	7.17.29
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		LOCAL/vvd/elastic
@@ -36,12 +37,19 @@ SHEBANG_FILES=	bin/elasticsearch bin/elasticsearch-certgen \
 
 CONFLICTS=	${PORTNAME}8 ${PORTNAME}9*
 
+# ML plugin not supported on FreeBSD
+EXTRACT_AFTER_ARGS=	--exclude jdk.app \
+			--exclude lib/jna-5.10.0.jar \
+			--exclude modules/x-pack/x-pack-ml \
+			--no-same-owner --no-same-permissions
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	limit:^7
 SUB_FILES=	pkg-message
-SUB_LIST=	ETCDIR=${ETCDIR} \
-		JAVA_HOME=${JAVA_HOME}
+SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
+		SEARCHUSER=${SEARCHUSER} \
+		SEARCHGROUP=${SEARCHGROUP}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
@@ -71,9 +79,6 @@ BINS=		elasticsearch elasticsearch-certgen elasticsearch-certutil \
 		x-pack-security-env x-pack-watcher-env
 
 post-patch:
-	${RM} ${WRKSRC}/lib/jna-*.jar
-# ML plugin not supported on FreeBSD
-	${RM} -rf ${WRKSRC}/modules/x-pack/x-pack-ml
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/bin/elasticsearch-env
 
 do-install:
@@ -88,7 +93,8 @@ do-install:
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/lib/ "-name *\.jar")
 	(cd ${WRKSRC}/modules && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/modules/)
 	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/config
-	${LN} -s ${JAVASHAREDIR}/classes/jna.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/lib/jna-0.0.0.jar
+	${LN} -s ${LOCALBASE}/share/java/classes/jna.jar \
+		${STAGEDIR}${PREFIX}/lib/elasticsearch/lib/jna-0.0.0.jar
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
