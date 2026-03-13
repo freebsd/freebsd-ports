@@ -8,11 +8,16 @@
 
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
-# podman_service_enable:	Set to NO by default.
-#				Set it to YES to start podman API service daemon
-# podman_service_flags:		Extra flags for podman command (e.g. to set logging level)
-# podman_service_log:		Path to log file for podman stderr output
-#
+# podman_service_enable:		Set to NO by default.
+#					Set it to YES to start podman API service daemon
+# podman_service_flags:			Extra flags for podman command (e.g. to set logging level)
+# podman_service_log:			Path to log file for podman stderr output
+# podman_service_api_user:		Optional user to own API socket
+# podman_service_api_group:		Optional group to own API socket
+# podman_service_api_mode:		Optional mode to chmod API socket to
+# podman_service_api_rundir:		Optional dir to override location of API socket
+# podman_service_api_socket:		Optional name of API socket inside rundir
+# podman_service_api_socket_timeout:	Optional seconds to wait for creation of API socket
 
 . /etc/rc.subr
 
@@ -20,12 +25,44 @@ name=podman_service
 rcvar=${name}_enable
 
 : ${podman_service_enable:=NO}
+: ${podman_service_api_user:="root"}
+: ${podman_service_api_group:="operator"}
+: ${podman_service_api_mode:="0770"}
+: ${podman_service_api_rundir:="/var/run/podman"}
+: ${podman_service_api_socket:="${podman_service_api_rundir}/podman.sock"}
+: ${podman_service_api_socket_timeout:=5}
 : ${podman_service_flags:="--time=0"}
 : ${podman_service_log:="/var/log/podman.log"}
 
 command="%%PREFIX%%/bin/podman"
 pidfile="/var/run/$name.pid"
+start_precmd="podman_prestart"
 start_cmd="podman_start"
+start_postcmd="podman_poststart"
+
+podman_prestart()
+{
+    install -d -o ${podman_service_api_user} -g ${podman_service_api_group} -m ${podman_service_api_mode} ${podman_service_api_rundir}
+}
+
+podman_poststart()
+{
+    local _timeout=${podman_service_api_socket_timeout}
+    local _elapsed=0
+
+    while [ ${_elapsed} -lt ${_timeout} ]; do
+        if [ -S "${podman_service_api_socket}" ]; then
+            chown ${podman_service_api_user}:${podman_service_api_group} "${podman_service_api_socket}"
+            chmod ${podman_service_api_mode} "${podman_service_api_socket}"
+            return 0
+        fi
+        sleep 1
+        _elapsed=$((_elapsed + 1))
+    done
+
+    warn "Timed out waiting for ${podman_service_api_socket} after ${_timeout} seconds"
+    return 1
+}
 
 podman_start()
 {
