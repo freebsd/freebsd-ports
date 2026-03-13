@@ -5,7 +5,7 @@
  set(CMAKE_C_VISIBILITY_PRESET "hidden")
  
 -find_package(LLVM REQUIRED CONFIG)
-+find_package(LLVM REQUIRED CONFIG HINTS %%LLVM_PREFIX%%)
++find_package(LLVM REQUIRED CONFIG HINTS /usr/local/llvm20)
  
  message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
  message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
