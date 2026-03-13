@@ -77,7 +77,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/bin/elasticsearch-env
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch \
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
 		 ${STAGEDIR}${PREFIX}/lib/elasticsearch/bin \
 		 ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins \
 		 ${STAGEDIR}${PREFIX}/libexec/elasticsearch
@@ -104,6 +104,6 @@ post-install:
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${ECHO} "@dir lib/elasticsearch/plugins" >> ${TMPPLIST}
 	${ECHO} "@dir libexec/elasticsearch" >> ${TMPPLIST}
-	${ECHO} "@dir(elasticsearch,elasticsearch,0755) ${ETCDIR}" >> ${TMPPLIST}
+	${ECHO} "@dir(${SEARCHUSER},${SEARCHGROUP},0755) ${ETCDIR}" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
