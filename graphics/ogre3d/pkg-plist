@@ -1,4 +1,7 @@
+bin/OgreMeshUpgrader
+bin/OgreXMLConverter
 bin/SampleBrowser
+bin/VRMLConverter
 include/OGRE/Bites/OgreAdvancedRenderControls.h
 include/OGRE/Bites/OgreApplicationContext.h
 include/OGRE/Bites/OgreApplicationContextBase.h
@@ -299,6 +302,8 @@ include/OGRE/Plugins/BSPSceneManager/OgreQuake3Shader.h
 include/OGRE/Plugins/BSPSceneManager/OgreQuake3ShaderManager.h
 include/OGRE/Plugins/BSPSceneManager/OgreQuake3Types.h
 include/OGRE/Plugins/BSPSceneManager/OgreStaticFaceGroup.h
+include/OGRE/Plugins/DotScene/OgreDotSceneLoader.h
+include/OGRE/Plugins/DotScene/OgreDotScenePluginExports.h
 %%OPENEXR%%include/OGRE/Plugins/EXRCodec/OgreEXRCodec.h
 %%OPENEXR%%include/OGRE/Plugins/EXRCodec/OgreEXRCodecExports.h
 %%FREEIMAGE%%include/OGRE/Plugins/FreeImageCodec/OgreFreeImageCodec.h
@@ -562,6 +567,8 @@ lib/OGRE/Codec_STBI.so
 lib/OGRE/Codec_STBI.so.%%LIBVERSION%%
 lib/OGRE/Plugin_BSPSceneManager.so
 lib/OGRE/Plugin_BSPSceneManager.so.%%LIBVERSION%%
+lib/OGRE/Plugin_DotScene.so
+lib/OGRE/Plugin_DotScene.so.%%LIBVERSION%%
 lib/OGRE/Plugin_OctreeSceneManager.so
 lib/OGRE/Plugin_OctreeSceneManager.so.%%LIBVERSION%%
 lib/OGRE/Plugin_OctreeZone.so
