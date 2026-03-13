@@ -1,3 +1,36 @@
+  <vuln vid="ee1e6a24-1eeb-11f1-81da-8447094a420f">
+    <topic>OpenSSL -- key agreement vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.5_1</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20260313.txt">
+	  <p>TLS 1.3 server may choose unexpected key agreement group (Low)</p>
+	  <p>An OpenSSL TLS 1.3 server may fail to negotiate the expected
+	    preferred key exchange group when its key exchange group configuration includes
+	    the default by using the "DEFAULT" keyword.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2673</cvename>
+      <url>https://openssl-library.org/news/secadv/20260313.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-03-13</discovery>
+      <entry>2026-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b45d25ab-1de3-11f1-8aff-b42e991fc52e">
     <topic>Mozilla -- Undefined behavior in the DOM: Core &amp; HTML component</topic>
     <affects>
