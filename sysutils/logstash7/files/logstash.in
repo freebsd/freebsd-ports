@@ -12,11 +12,11 @@
 #   Flag that determines whether Logstash is enabled.
 #
 # logstash_home (string):
-#   Default value: "/usr/local/logstash"
+#   Default value: "%%LOGSTASH_HOME%%"
 #   Logstash installation directory.
 #
 # logstash_config (string):
-#   Default value: /usr/local/etc/${name}
+#   Default value: %%ETCDIR%%
 #   Logstash configuration path.
 #
 # logstash_log (bool):
@@ -29,7 +29,7 @@
 #   Log file path.
 #
 # logstash_java_home (string):
-#   Default value: "/usr/local/openjdk8"
+#   Default value: "%%JAVA_HOME%%"
 #   Root directory of the desired Java SDK.
 #   The JAVA_HOME environment variable is set with the contents of this
 #   variable.
@@ -55,8 +55,8 @@ load_rc_config ${name}
 logdir="/var/log"
 
 : ${logstash_enable="NO"}
-: ${logstash_user="logstash"}
-: ${logstash_group="logstash"}
+: ${logstash_user="%%LOGUSER%%"}
+: ${logstash_group="%%LOGGROUP%%"}
 : ${logstash_home="%%LOGSTASH_HOME%%"}
 : ${logstash_config="%%ETCDIR%%"}
 : ${logstash_log="YES"}
