@@ -1,5 +1,5 @@
 PORTNAME=	maven
-DISTVERSION=	3.9.13
+DISTVERSION=	3.9.14
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -30,10 +30,6 @@ INSTANCES_DIR=	${LOCALBASE}/etc/maven-wrapper/instances.d
 post-extract:
 	${RM} ${WRKSRC}/bin/*.cmd
 	${RM} -r ${WRKSRC}/lib/jansi-native
-	${RM} ${WRKSRC}/lib/plexus-testing* \
-		${WRKSRC}/lib/junit-* \
-		${WRKSRC}/lib/apiguardian-api-* \
-		${WRKSRC}/lib/opentest4j-*
 	${ECHO_CMD} "${DATADIR}" > ${WRKDIR}/${INSTANCE_ID}
 
 post-patch:

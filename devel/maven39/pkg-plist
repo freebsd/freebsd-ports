@@ -21,6 +21,9 @@
 %%DATADIR%%/lib/commons-codec.license
 %%DATADIR%%/lib/error_prone_annotations-2.41.0.jar
 %%DATADIR%%/lib/error_prone_annotations.license
+%%DATADIR%%/lib/ext/README.txt
+%%DATADIR%%/lib/ext/hazelcast/README.txt
+%%DATADIR%%/lib/ext/redisson/README.txt
 %%DATADIR%%/lib/failureaccess-1.0.3.jar
 %%DATADIR%%/lib/failureaccess.license
 %%DATADIR%%/lib/gson-2.13.2.jar
@@ -86,6 +89,3 @@
 %%DATADIR%%/lib/wagon-http-3.5.3.jar
 %%DATADIR%%/lib/wagon-http-shared-3.5.3.jar
 %%DATADIR%%/lib/wagon-provider-api-3.5.3.jar
-%%DATADIR%%/lib/ext/README.txt
-%%DATADIR%%/lib/ext/hazelcast/README.txt
-%%DATADIR%%/lib/ext/redisson/README.txt
