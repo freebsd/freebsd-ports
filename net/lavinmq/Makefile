@@ -1,6 +1,6 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.9
 CATEGORIES=	net
 
 # JavaScripts
@@ -30,7 +30,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 
 # Crystal library versions
 _AMQP_CLIENT=	1.3.2
-_AMQP_PROTO=	1.1.20
+_AMQP_PROTO=	1.1.22
 _LZ4=		96d714f7593c66ca7425872fd26c7b1286806d3d
 _MQTT=		0.3.0
 _SYSTEMD=	3.0.0
@@ -72,7 +72,7 @@ PORTDOCS=	CHANGELOG.md NOTICE README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 SHARDS_ENV=	--time --verbose --production --release --no-color --stats \
-		-Dgc_none --error-on-warnings -Dpreview_mt -Dexecution_context
+		-Dgc_none -Dpreview_mt -Dexecution_context
 
 .include <bsd.port.options.mk>
 
