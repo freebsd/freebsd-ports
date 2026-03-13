@@ -1,5 +1,5 @@
 PORTNAME=	parkverbot
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://inai.de/files/parkverbot/
 
@@ -11,11 +11,11 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libHX.so:lang/libhx
 
-USES=		pkgconfig tar:xz
+USES=		pkgconfig tar:zst
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+USE_RC_SUBR=	${PORTNAME}
 
-PLIST_FILES=	share/man/man8/parkverbot.8.gz sbin/parkverbot
+PLIST_FILES=	sbin/parkverbot share/man/man8/parkverbot.8.gz
 
 post-install:
 	${RM} -r ${STAGEDIR}/lib/systemd
