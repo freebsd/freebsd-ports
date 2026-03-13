@@ -1,5 +1,5 @@
 PORTNAME=	huggingface-hub
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.10.0:sysutils/py-filelock@${PY_F
 		${PYTHON_PKGNAMEPREFIX}typer>0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${RUN_DEPENDS_${ARCH}}
-RUN_DEPENDS_amd64=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.2.0<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
-RUN_DEPENDS_aarch4=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.2.0<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
+RUN_DEPENDS_amd64=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.3.2<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
+RUN_DEPENDS_aarch4=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.3.2<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
