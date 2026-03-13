@@ -1,6 +1,5 @@
 PORTNAME=	crystal
-DISTVERSION=	1.18.2
-PORTREVISION=	1
+DISTVERSION=	1.19.1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${_BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
@@ -20,16 +19,16 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${_BOOTSTRAP_LLVM_VERSION}:devel/llvm${_BOOTSTRAP_LLVM_VERSION} \
 		git:devel/git
 LIB_DEPENDS=	libevent.so:devel/libevent \
+		libLLVM-${_LLVM_VERSION}.so:devel/llvm${_LLVM_VERSION} \
 		libffi.so:devel/libffi \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libgmp.so:math/gmp \
-		libLLVM-${_LLVM_VERSION}.so:devel/llvm${_LLVM_VERSION} \
 		libpcre.so:devel/pcre \
 		libpcre2-8.so:devel/pcre2 \
 		libyaml.so:textproc/libyaml
 RUN_DEPENDS=	pkg-config:devel/pkgconf
 
-USES=		compiler gmake gnome pkgconfig ssl
+USES=		compiler gmake gnome pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
@@ -51,16 +50,16 @@ TEST_ARGS=	${MAKE_ARGS:S/release=1//}
 TEST_TARGET=	spec
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES INTERPRETER
-OPTIONS_DEFAULT=	INTERPRETER
+OPTIONS_DEFINE=		DEBUG DOCS INTERPRETER
+OPTIONS_DEFAULT=	DOCS INTERPRETER
 
 INTERPRETER_DESC=	Enable interpreter (experimental)
 
 DEBUG_VARS=		OPT_FLAGS+="--debug" \
 			STRIP=
 DEBUG_VARS_OFF=		OPT_FLAGS+="--release --no-debug"
+DOCS_MAKE_ARGS=		docs_sanitizer=1
 INTERPRETER_MAKE_ARGS=	interpreter=1
 
 .include <bsd.port.options.mk>
@@ -74,22 +73,6 @@ post-extract:
 	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-freebsd
 	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-portbld-freebsd
 	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-unknown-freebsd
-
-post-patch:
-.if ${SSL_DEFAULT} == "base" && ${OSREL:R} <= 13
-	@${REINPLACE_CMD} -i '' \
-		-e 's|CRYSTAL_SSL_VERSION|1.1.1|g' \
-		-e 's|CRYSTAL_SSL_LDFLAGS|${OPENSSLLIB}|g' \
-		${WRKSRC}/src/openssl/lib_ssl.cr \
-		${WRKSRC}/src/openssl/lib_crypto.cr
-.endif
-.if ${SSL_DEFAULT} == "base" && ${OSREL:R} >= 14
-	@${REINPLACE_CMD} -i '' \
-		-e 's|CRYSTAL_SSL_VERSION|3.0.10|g' \
-		-e 's|CRYSTAL_SSL_LDFLAGS|${OPENSSLLIB}|g' \
-		${WRKSRC}/src/openssl/lib_ssl.cr \
-		${WRKSRC}/src/openssl/lib_crypto.cr
-.endif
 
 pre-test:
 	@${CHMOD} +x ${WRKSRC}/src/llvm/ext/find-llvm-config
@@ -115,10 +98,6 @@ do-install:
 do-install-DOCS-on:
 	(cd ${INSTALL_WRKSRC}/docs && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-
-do-install-EXAMPLES-on:
-	(cd ${INSTALL_WRKSRC}/samples && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .if !defined(_CRYSTAL_MAKESUM_GUARD)
 makesum:
