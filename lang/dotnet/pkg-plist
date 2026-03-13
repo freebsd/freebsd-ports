@@ -12,7 +12,7 @@
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.DotNetAppHost.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILAsm.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILDAsm.%%FULL_DOTNETVERSION%%.nupkg
-@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%-servicing.25606.9.nupkg
+@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%-servicing.26119.10.nupkg
 %%DATADIR%%/metadata/workloads/%%MANIFESTSUFFIX%%/userlocal
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.Analyzers.dll
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.CodeFixes.dll
