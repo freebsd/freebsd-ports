@@ -1,0 +1,5 @@
+RustConn is a connection orchestrator for Linux/FreeBSD with a
+GTK4/Wayland-native interface. It brings SSH, RDP, VNC, SPICE, Telnet, Serial,
+Kubernetes, and Zero Trust connections under one roof — with embedded Rust
+clients where possible and seamless integration with external tools where
+needed.
