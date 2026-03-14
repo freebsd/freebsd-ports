@@ -1,11 +1,12 @@
 PORTNAME=	pencil2d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 CATEGORIES=	graphics math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy and intuitive tool to make 2D hand-drawn animations
-WWW=		https://www.pencil2d.org/
+WWW=		https://www.pencil2d.org/ \
+		https://github.com/pencil2d/pencil
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
