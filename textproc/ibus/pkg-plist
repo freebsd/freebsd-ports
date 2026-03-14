@@ -146,7 +146,6 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-as.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ast.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-az.dict
-%%EMOJI%%%%DATADIR%%/dicts/emoji-ba.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-be.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-bew.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-bg.dict
@@ -183,14 +182,13 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-et.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-eu.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fa.dict
-%%EMOJI%%%%DATADIR%%/dicts/emoji-ff.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ff_Adlm.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fi.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fil.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fo.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fr.dict
-%%EMOJI%%%%DATADIR%%/dicts/emoji-frr.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-fr_CA.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-frr.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ga.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-gd.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-gl.dict
@@ -264,7 +262,6 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sat.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sc.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sd.dict
-%%EMOJI%%%%DATADIR%%/dicts/emoji-shn.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-si.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sk.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sl.dict
@@ -276,10 +273,8 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Latn_BA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-su.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sv.dict
-%%EMOJI%%%%DATADIR%%/dicts/emoji-sv_FI.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sw.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sw_KE.dict
-%%EMOJI%%%%DATADIR%%/dicts/emoji-syr.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ta.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-te.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-tg.dict

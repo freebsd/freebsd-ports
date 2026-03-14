@@ -1,6 +1,6 @@
 PORTNAME=	ibus
 DISTVERSION=	1.5.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -66,7 +66,7 @@ DCONF_CONFIGURE_ENABLE=		dconf
 DCONF_VARS=			GLIB_SCHEMAS=org.freedesktop.ibus.gschema.xml
 DOCS_BUILD_DEPENDS=		gtkdocize:textproc/gtk-doc
 DOCS_CONFIGURE_ENABLE=		gtk-doc-html
-EMOJI_BUILD_DEPENDS=		unicode-cldr>0:misc/unicode-cldr \
+EMOJI_BUILD_DEPENDS=		CLDR>0:textproc/CLDR \
 				json-glib>=0:devel/json-glib \
 				unicode-emoji>0:misc/unicode-emoji
 EMOJI_CONFIGURE_ON=		--with-emoji-annotation-dir=${LOCALBASE}/share/unicode/cldr/common/annotations \

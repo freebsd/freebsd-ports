@@ -717,7 +717,6 @@
     SUBDIR += umodunpack
     SUBDIR += unclutter
     SUBDIR += unclutter-xfixes
-    SUBDIR += unicode-cldr
     SUBDIR += unicode-emoji
     SUBDIR += units
     SUBDIR += upclient
