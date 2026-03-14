@@ -241,8 +241,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.21 \
-		jiff-static-0.2.21 \
+		jiff-0.2.22 \
+		jiff-static-0.2.22 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.34 \
@@ -360,7 +360,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quick-error-2.0.1 \
 		quick-xml-0.38.3 \
 		quinn-0.11.8 \
-		quinn-proto-0.11.12 \
+		quinn-proto-0.11.14 \
 		quinn-udp-0.5.13 \
 		quote-1.0.44 \
 		quoted_printable-0.5.1 \
@@ -380,7 +380,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.5.0 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		reflink-copy-0.1.28 \
+		reflink-copy-0.1.29 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.5 \
@@ -409,7 +409,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.1 \
 		rusticata-macros-4.1.0 \
 		rustix-1.1.3 \
-		rustls-0.23.36 \
+		rustls-0.23.37 \
 		rustls-native-certs-0.8.2 \
 		rustls-pki-types-1.13.3 \
 		rustls-webpki-0.103.8 \
@@ -463,7 +463,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		socket2-0.5.10 \
 		socket2-0.6.0 \
 		spdx-0.10.9 \
-		spdx-0.13.3 \
+		spdx-0.13.4 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.0 \
@@ -609,7 +609,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-implement-0.60.0 \
 		windows-interface-0.59.1 \
 		windows-link-0.1.3 \
-		windows-link-0.2.0 \
+		windows-link-0.2.1 \
 		windows-numerics-0.2.0 \
 		windows-registry-0.5.3 \
 		windows-result-0.3.4 \
@@ -619,6 +619,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-sys-0.61.0 \
 		windows-targets-0.52.6 \
 		windows-threading-0.1.0 \
+		windows-version-0.1.7 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.52.6 \
@@ -660,7 +661,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerovec-0.11.2 \
 		zerovec-derive-0.11.1 \
 		zip-8.1.0 \
-		zlib-rs-0.6.0 \
+		zlib-rs-0.6.2 \
 		zmij-1.0.15 \
 		zopfli-0.8.3 \
 		zstd-0.13.3 \
