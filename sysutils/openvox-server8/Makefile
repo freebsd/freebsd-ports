@@ -1,6 +1,5 @@
 PORTNAME=	openvox-server
-PORTVERSION=	8.11.0
-PORTREVISION=	2
+PORTVERSION=	8.12.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
@@ -20,7 +19,7 @@ RUN_DEPENDS=	bash>=0:shells/bash \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
 USES=		ruby java shebangfix sudo
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
 USE_RC_SUBR=	puppetserver
 WRKSRC=		${WRKDIR}/puppetserver-${PORTVERSION}
 
