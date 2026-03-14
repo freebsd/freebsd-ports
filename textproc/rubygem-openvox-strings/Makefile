@@ -1,5 +1,5 @@
 PORTNAME=	openvox-strings
-PORTVERSION=	6.0.0
+PORTVERSION=	7.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
