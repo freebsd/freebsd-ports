@@ -1,0 +1,4 @@
+Hxavi is a lightweight binary (hex) editor.
+Its commands are almost the same as vi(1) and vim(1), so it's easy to use.
+There is no limit to the number of undo/redo operations.
+You can even edit huge files that exceed the memory size.
