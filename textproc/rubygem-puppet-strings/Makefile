@@ -10,6 +10,9 @@ WWW=		https://github.com/puppetlabs/puppet-strings
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Discontinued, use textproc/rubygem-openvox-strings
+EXPIRATION_DATE=2026-07-01
+
 RUN_DEPENDS=	puppet:sysutils/puppet8 \
 		rubygem-rgen>=0:devel/rubygem-rgen \
 		rubygem-yard>=0.9.5<0.10:textproc/rubygem-yard

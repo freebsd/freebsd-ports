@@ -11,6 +11,9 @@ WWW=		https://docs.puppetlabs.com/puppetdb/latest/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Discontinued, use databases/openvoxdb-terminus8
+EXPIRATION_DATE=2026-07-01
+
 CONFLICTS_INSTALL=	openvoxdb-terminus[0-9] puppetdb-terminus[0-9]
 NO_BUILD=	yes
 USES=		gmake ruby

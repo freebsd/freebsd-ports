@@ -11,6 +11,9 @@ WWW=		https://docs.puppetlabs.com/puppetserver/latest/services_master_puppetserv
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Discontinued, use sysutils/openvox-server8
+EXPIRATION_DATE=2026-07-01
+
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=Bundled JNI only support some architectures
 

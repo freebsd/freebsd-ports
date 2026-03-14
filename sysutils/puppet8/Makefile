@@ -12,6 +12,9 @@ WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Discontinued, use sysutils/openvox-agent8
+EXPIRATION_DATE=2026-07-01
+
 RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
 		rubygem-facter>=4.3.0:sysutils/rubygem-facter \
