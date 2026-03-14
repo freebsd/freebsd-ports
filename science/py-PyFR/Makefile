@@ -1,5 +1,5 @@
 PORTNAME=	PyFR
-DISTVERSION=	2.1
+DISTVERSION=	3.1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	pyfr-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for solving advection-diffusion type problems
-WWW=		https://www.pyfr.org/
+WWW=		https://www.pyfr.org/ \
+		https://github.com/PyFR/PyFR
 
 LICENSE=	BSD3CLAUSE
 
@@ -28,6 +29,8 @@ SHEBANG_FILES=	setup.py pyfr/__main__.py
 
 NO_ARCH=	yes
 
+TEST_WRKSRC=	${WRKSRC}/pyfr/tests
+
 OPTIONS_MULTI=		PARALLEL
 OPTIONS_MULTI_PARALLEL=	OPENCL OPENMP # CUDA isn't supported on FreeBSD
 OPTIONS_DEFAULT=	${OPTIONS_MULTI_PARALLEL}
@@ -44,6 +47,8 @@ post-install: # workaround: https://groups.google.com/forum/#!topic/pyfrmailingl
 	@${RM} ${STAGEDIR}${PREFIX}/__main__.py
 	@${REINPLACE_CMD} 's|^${PREFIX}/__main__\.py||' ${_PYTHONPKGLIST}
 
-# tests as of 2.1: 1 passed in 8.65s
+# tests as of 3.1:
+# Results (0.66s):
+#          3 passed
 
 .include <bsd.port.mk>
