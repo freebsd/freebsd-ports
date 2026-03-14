@@ -1,5 +1,6 @@
 PORTNAME=	locale
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +12,8 @@ WWW=		https://ruby-gettext.github.io/ \
 LICENSE=	LGPL3+ RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	rubygem-fiddle>0:devel/rubygem-fiddle
 
 USES=		gem
 
