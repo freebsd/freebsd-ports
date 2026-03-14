@@ -1,3 +1,3 @@
-TIMESTAMP = 1768799291
-SHA256 (langchain_openai-1.1.7.tar.gz) = f5ec31961ed24777548b63a5fe313548bc6e0eb9730d6552b8c6418765254c81
-SIZE (langchain_openai-1.1.7.tar.gz) = 1039134
+TIMESTAMP = 1773510217
+SHA256 (langchain_openai-1.1.11.tar.gz) = 44b003a2960d1f6699f23721196b3b97d0c420d2e04444950869213214b7a06a
+SIZE (langchain_openai-1.1.11.tar.gz) = 1088560
