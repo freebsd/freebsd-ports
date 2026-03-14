@@ -1,5 +1,6 @@
 PORTNAME=	noctavox
 DISTVERSION=	g20260211
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -19,6 +20,7 @@ LICENSE_PERMS_UNICODE-DFS-2016=	dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
+RUN_DEPENDS=	alsa-plugins>=1.2.12:audio/alsa-plugins
 
 USES=		cargo
 
