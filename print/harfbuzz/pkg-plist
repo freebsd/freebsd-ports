@@ -1,6 +1,7 @@
 bin/hb-info
 bin/hb-shape
 bin/hb-subset
+bin/hb-vector
 include/harfbuzz/hb-aat-layout.h
 include/harfbuzz/hb-aat.h
 include/harfbuzz/hb-blob.h
@@ -31,6 +32,7 @@ include/harfbuzz/hb-ot-shape.h
 include/harfbuzz/hb-ot-var.h
 include/harfbuzz/hb-ot.h
 include/harfbuzz/hb-paint.h
+include/harfbuzz/hb-raster.h
 include/harfbuzz/hb-script-list.h
 include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
@@ -39,6 +41,7 @@ include/harfbuzz/hb-style.h
 include/harfbuzz/hb-subset-serialize.h
 include/harfbuzz/hb-subset.h
 include/harfbuzz/hb-unicode.h
+include/harfbuzz/hb-vector.h
 include/harfbuzz/hb-version.h
 include/harfbuzz/hb.h
 lib/cmake/harfbuzz/harfbuzz-config.cmake
@@ -46,14 +49,22 @@ lib/girepository-1.0/HarfBuzz-0.0.typelib
 lib/libharfbuzz-gobject.so
 lib/libharfbuzz-gobject.so.0
 lib/libharfbuzz-gobject.so.%%LIBVER%%
+lib/libharfbuzz-raster.so
+lib/libharfbuzz-raster.so.0
+lib/libharfbuzz-raster.so.%%LIBVER%%
 lib/libharfbuzz-subset.so
 lib/libharfbuzz-subset.so.0
 lib/libharfbuzz-subset.so.%%LIBVER%%
+lib/libharfbuzz-vector.so
+lib/libharfbuzz-vector.so.0
+lib/libharfbuzz-vector.so.%%LIBVER%%
 lib/libharfbuzz.so
 lib/libharfbuzz.so.0
 lib/libharfbuzz.so.%%LIBVER%%
 libdata/pkgconfig/harfbuzz-gobject.pc
+libdata/pkgconfig/harfbuzz-raster.pc
 libdata/pkgconfig/harfbuzz-subset.pc
+libdata/pkgconfig/harfbuzz-vector.pc
 libdata/pkgconfig/harfbuzz.pc
 share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/HarfBuzz.png
@@ -108,6 +119,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-11-2-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-11-3-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-12-1-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-13-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-2-0.html
@@ -187,6 +199,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-shape.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-var.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-paint.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-raster.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-set.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape-plan.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape.html
@@ -194,6 +207,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-subset.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-unicode.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-uniscribe.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-vector.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-version.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz.devhelp2
 %%DOCS%%share/gtk-doc/html/harfbuzz/home.png
@@ -250,3 +264,4 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/man/man1/hb-info.1.gz
 %%DOCS%%share/man/man1/hb-shape.1.gz
 %%DOCS%%share/man/man1/hb-subset.1.gz
+%%DOCS%%share/man/man1/hb-vector.1.gz
