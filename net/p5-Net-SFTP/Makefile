@@ -1,11 +1,11 @@
 PORTNAME=	Net-SFTP
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module implementing Secure File Transfer Protocol client
 WWW=		https://metacpan.org/release/Net-SFTP
 
