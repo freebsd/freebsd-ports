@@ -1,6 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.7
+DISTVERSION=	0.18.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,11 +22,17 @@ GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.
 GO_ENV+=	CGO_CXXFLAGS="${CXXFLAGS}"
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMLX}
+GO_BUILDFLAGS+=	-tags mlx
+.endif
+
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/ollama-limit-gpu-layers
 
 OPTIONS_GROUP=		BACKENDS
-OPTIONS_GROUP_BACKENDS=	CPU VULKAN
+OPTIONS_GROUP_BACKENDS=	CPU VULKAN MLX
 OPTIONS_DEFAULT=	CPU VULKAN
 
 CPU_DESC=		Build CPU backend shared libraries
@@ -45,7 +51,10 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_PLIST_FILES=	lib/ollama/libggml-vulkan.so
 
-.include <bsd.port.options.mk>
+MLX_DESC=		Build MLX backend for image generation (CPU)
+MLX_PLIST_FILES=	lib/ollama/libmlx.so \
+			lib/ollama/libmlxc.so
+MLX_CMAKE_ON=		-DMLX_ENGINE:BOOL=ON
 
 _CMAKE_FLAGS=	-DCMAKE_BUILD_TYPE=Release -DGGML_BACKEND_DL=ON -DGGML_BACKEND_DIR=${PREFIX}/lib/ollama
 
@@ -64,13 +73,28 @@ pre-build-CPU-on:
 		${MAKE_CMD} ggml-cpu
 
 pre-build-VULKAN-on:
-.if !${PORT_OPTIONS:MCPU}
+.if !${PORT_OPTIONS:MCPU} && !${PORT_OPTIONS:MMLX}
 	@${MKDIR} ${WRKSRC}/build && \
 		cd ${WRKSRC}/build && \
 		${CMAKE_BIN} ${_CMAKE_FLAGS} ..
 .endif
 	@cd ${WRKSRC}/build && \
 		${MAKE_CMD} ggml-vulkan
+
+pre-build-MLX-on:
+.if !${PORT_OPTIONS:MCPU} && !${PORT_OPTIONS:MVULKAN}
+	@${MKDIR} ${WRKSRC}/build && \
+		cd ${WRKSRC}/build && \
+		${CMAKE_BIN} ${_CMAKE_FLAGS} -DMLX_ENGINE:BOOL=ON ..
+.endif
+	# Patch MLX after it's fetched by CMake (FreeBSD compatibility fix)
+	@if [ -f ${WRKSRC}/build/_deps/mlx-src/mlx/distributed/ring/ring.cpp ]; then \
+		${REINPLACE_CMD} -i '' -e '/^#include <fcntl.h>/a\\
+#include <netinet/in.h>' \
+			${WRKSRC}/build/_deps/mlx-src/mlx/distributed/ring/ring.cpp; \
+	fi
+	@cd ${WRKSRC}/build && \
+		${MAKE_CMD} mlx mlxc
 
 post-install: # pending https://github.com/ollama/ollama/issues/6407
 	${INSTALL_SCRIPT} ${FILESDIR}/ollama-limit-gpu-layers ${STAGEDIR}${PREFIX}/bin
@@ -86,6 +110,13 @@ post-install-CPU-on:
 post-install-VULKAN-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ollama
 	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libggml-vulkan.so \
+		${STAGEDIR}${PREFIX}/lib/ollama/
+
+post-install-MLX-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ollama
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libmlx.so \
+		${STAGEDIR}${PREFIX}/lib/ollama/
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libmlxc.so \
 		${STAGEDIR}${PREFIX}/lib/ollama/
 
 do-test:
