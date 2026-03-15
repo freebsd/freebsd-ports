@@ -1,6 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,7 +40,6 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libblis.so:math/blis \
-		libmpi_cxx.so:net/openmpi4 \
 		libonnx.so:misc/onnx \
 		libopenblas.so:math/openblas \
 		libpthreadpool.so:devel/pthreadpool \
@@ -57,7 +57,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}astunparse>0:devel/py-astunparse@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} # optional dependencies
 
-USES=		compiler:c++17-lang localbase:ldflags python
+USES=		compiler:c++17-lang localbase:ldflags mpi:openmpi python
 USE_PYTHON=	pep517 autoplist
 USE_LDCONFIG=	${PYTHON_SITELIBDIR}/torch/lib
 
