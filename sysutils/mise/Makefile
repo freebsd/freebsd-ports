@@ -11,6 +11,8 @@ WWW=		https://mise.jdx.dev/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails: unsupported freebsd architecture, see https://github.com/conda/rattler/issues/2226
+BROKEN_i386=	compilation fails: LLVM ERROR: out of memory
 BROKEN_armv7=	compilation fails: LLVM ERROR: out of memory
 
 BUILD_DEPENDS+=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
