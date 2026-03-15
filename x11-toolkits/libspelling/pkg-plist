@@ -151,6 +151,7 @@ share/locale/ka/LC_MESSAGES/libspelling.mo
 share/locale/kab/LC_MESSAGES/libspelling.mo
 share/locale/kk/LC_MESSAGES/libspelling.mo
 share/locale/ko/LC_MESSAGES/libspelling.mo
+share/locale/kw/LC_MESSAGES/libspelling.mo
 share/locale/lt/LC_MESSAGES/libspelling.mo
 share/locale/lv/LC_MESSAGES/libspelling.mo
 share/locale/nb/LC_MESSAGES/libspelling.mo
@@ -169,6 +170,7 @@ share/locale/sr/LC_MESSAGES/libspelling.mo
 share/locale/sv/LC_MESSAGES/libspelling.mo
 share/locale/th/LC_MESSAGES/libspelling.mo
 share/locale/tr/LC_MESSAGES/libspelling.mo
+share/locale/ug/LC_MESSAGES/libspelling.mo
 share/locale/uk/LC_MESSAGES/libspelling.mo
 share/locale/uz/LC_MESSAGES/libspelling.mo
 share/locale/vi/LC_MESSAGES/libspelling.mo
