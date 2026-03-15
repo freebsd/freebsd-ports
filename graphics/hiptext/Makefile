@@ -1,6 +1,6 @@
 PORTNAME=	hiptext
-PORTVERSION=	0.0.s20160621
-PORTREVISION=	18
+DISTVERSION=	0.2-8
+DISTVERSIONSUFFIX=	-g35c91e0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,14 +9,13 @@ WWW=		https://github.com/jart/hiptext
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
-EXPIRATION_DATE=2026-06-30
+BROKEN=		compilation fails: does not build with ffmpeg-8, see https://github.com/jart/hiptext/issues/63
 
 BUILD_DEPENDS=	ragel:devel/ragel
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libpng.so:graphics/png \
-		libswscale.so:multimedia/ffmpeg4 \
+		libswscale.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2
 TEST_DEPENDS=	googletest>=1.7.0:devel/googletest
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
