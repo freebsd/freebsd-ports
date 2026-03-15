@@ -19,6 +19,7 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/image_LICENSE_OOo.txt
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE_YORICK.txt
 LICENSE_FILE_APACHE11=		${WRKSRC}/LICENSE_COLORBREWER.txt
 
+BROKEN=		compilation fails: VTK throws std::runtime_erroe, see https://gitlab.kitware.com/vtk/vtk/-/issues/19994
 BROKEN_i386=	stage fails: Building TVTK classes... Fatal Python error: Illegal instruction
 
 BUILD_DEPENDS=	${PYNUMPY} \
