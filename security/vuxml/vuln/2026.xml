@@ -1,3 +1,160 @@
+  <vuln vid="73eeb578-fd13-4d79-b50b-ed25c3614528">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>146.0.7680.80</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>146.0.7680.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_13.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[491421267] High CVE-2026-3909: Out of bounds write in Skia. Reported by Google Threat Analysis Group on 2026-03-10</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3909</cvename>
+      <url>https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-13</discovery>
+      <entry>2026-03-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="26776062-fd24-4c2f-bf6c-7f231948ab19">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>146.0.7680.75</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>146.0.7680.75</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_12.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[491421267] High CVE-2026-3909: Out of bounds write in Skia. Reported by Google on 2026-03-10</li>
+	    <li>[491410818] High CVE-2026-3910: Inappropriate implementation in V8. Reported by Google on 2026-03-10</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3909</cvename>
+      <cvename>CVE-2026-3910</cvename>
+      <url>https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-12</discovery>
+      <entry>2026-03-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e45fb606-b731-4871-881d-27a1d5e2fd03">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>146.0.7680.71</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>146.0.7680.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 29 security fixes:</p>
+	 <ul>
+	    <li>[483445078] Critical CVE-2026-3913: Heap buffer overflow in WebML. Reported by Tobias Wienand on 2026-02-10</li>
+	    <li>[481776048] High CVE-2026-3914: Integer overflow in WebML. Reported by cinzinga on 2026-02-04</li>
+	    <li>[483971526] High CVE-2026-3915: Heap buffer overflow in WebML. Reported by Tobias Wienand on 2026-02-12</li>
+	    <li>[482828615] High CVE-2026-3916: Out of bounds read in Web Speech. Reported by Grischa Hauser on 2026-02-09</li>
+	    <li>[483569512] High CVE-2026-3917: Use after free in Agents. Reported by Syn4pse on 2026-02-11</li>
+	    <li>[483853103] High CVE-2026-3918: Use after free in WebMCP. Reported by Syn4pse on 2026-02-12</li>
+	    <li>[444176961] High CVE-2026-3919: Use after free in Extensions. Reported by Huinian Yang (@vmth6) of Amber Security Lab, OPPO Mobile Telecommunications Corp. Ltd. on 2025-09-10</li>
+	    <li>[482875307] High CVE-2026-3920: Out of bounds memory access in WebML. Reported by Google on 2026-02-09</li>
+	    <li>[484946544] High CVE-2026-3921: Use after free in TextEncoding. Reported by Pranamya Keshkamat &amp; Cantina.xyz on 2026-02-17</li>
+	    <li>[485397139] High CVE-2026-3922: Use after free in MediaStream. Reported by c6eed09fc8b174b0f3eebedcceb1e792 on 2026-02-18</li>
+	    <li>[485935314] High CVE-2026-3923: Use after free in WebMIDI. Reported by c6eed09fc8b174b0f3eebedcceb1e792 on 2026-02-20</li>
+	    <li>[487338366] High CVE-2026-3924: Use after free in WindowDialog. Reported by c6eed09fc8b174b0f3eebedcceb1e792 on 2026-02-25</li>
+	    <li>[418214610] Medium CVE-2026-3925: Incorrect security UI in LookalikeChecks. Reported by NDevTK and Alesandro Ortiz on 2025-05-17</li>
+	    <li>[478659010] Medium CVE-2026-3926: Out of bounds read in V8. Reported by qymag1c on 2026-01-26</li>
+	    <li>[474948986] Medium CVE-2026-3927: Incorrect security UI in PictureInPicture. Reported by Barath Stalin K on 2026-01-11</li>
+	    <li>[435980394] Medium CVE-2026-3928: Insufficient policy enforcement in Extensions. Reported by portsniffer443 on 2025-08-03</li>
+	    <li>[477180001] Medium CVE-2026-3929: Side-channel information leakage in ResourceTiming. Reported by Povcfe of Tencent Security Xuanwu Lab on 2026-01-20</li>
+	    <li>[476898368] Medium CVE-2026-3930: Unsafe navigation in Navigation. Reported by Povcfe of Tencent Security Xuanwu Lab on 2026-01-19</li>
+	    <li>[417599694] Medium CVE-2026-3931: Heap buffer overflow in Skia. Reported by Huinian Yang (@vmth6) of Amber Security Lab, OPPO Mobile Telecommunications Corp. Ltd. on 2025-05-14</li>
+	    <li>[478296121] Medium CVE-2026-3932: Insufficient policy enforcement in PDF. Reported by Ayato Shitomi on 2026-01-23   </li>
+	    <li>[478783560] Medium CVE-2026-3934: Insufficient policy enforcement in ChromeDriver. Reported by Povcfe of Tencent Security Xuanwu Lab on 2026-01-26</li>
+	    <li>[479326680] Medium CVE-2026-3935: Incorrect security UI in WebAppInstalls. Reported by Barath Stalin K on 2026-01-28</li>
+	    <li>[481920229] Medium CVE-2026-3936: Use after free in WebView. Reported by Am4deu$ on 2026-02-05</li>
+	    <li>[473118648] Low CVE-2026-3937: Incorrect security UI in Downloads. Reported by Abhishek Kumar on 2026-01-03</li>
+	    <li>[474763968] Low CVE-2026-3938: Insufficient policy enforcement in Clipboard. Reported by vicevirus on 2026-01-10</li>
+	    <li>[40058077] Low CVE-2026-3939: Insufficient policy enforcement in PDF. Reported by NDevTK on 2021-11-30</li>
+	    <li>[470574526] Low CVE-2026-3940: Insufficient policy enforcement in DevTools. Reported by Jorian Woltjer, Mian, bug_blitzer on 2025-12-21</li>
+	    <li>[474670215] Low CVE-2026-3941: Insufficient policy enforcement in DevTools. Reported by Lyra Rebane (rebane2001) on 2026-01-10</li>
+	    <li>[475238879] Low CVE-2026-3942: Incorrect security UI in PictureInPicture. Reported by Barath Stalin K on 2026-01-12</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3913</cvename>
+      <cvename>CVE-2026-3914</cvename>
+      <cvename>CVE-2026-3915</cvename>
+      <cvename>CVE-2026-3916</cvename>
+      <cvename>CVE-2026-3917</cvename>
+      <cvename>CVE-2026-3918</cvename>
+      <cvename>CVE-2026-3919</cvename>
+      <cvename>CVE-2026-3920</cvename>
+      <cvename>CVE-2026-3921</cvename>
+      <cvename>CVE-2026-3922</cvename>
+      <cvename>CVE-2026-3923</cvename>
+      <cvename>CVE-2026-3924</cvename>
+      <cvename>CVE-2026-3925</cvename>
+      <cvename>CVE-2026-3926</cvename>
+      <cvename>CVE-2026-3927</cvename>
+      <cvename>CVE-2026-3928</cvename>
+      <cvename>CVE-2026-3929</cvename>
+      <cvename>CVE-2026-3930</cvename>
+      <cvename>CVE-2026-3931</cvename>
+      <cvename>CVE-2026-3932</cvename>
+      <cvename>CVE-2026-3934</cvename>
+      <cvename>CVE-2026-3935</cvename>
+      <cvename>CVE-2026-3936</cvename>
+      <cvename>CVE-2026-3937</cvename>
+      <cvename>CVE-2026-3938</cvename>
+      <cvename>CVE-2026-3939</cvename>
+      <cvename>CVE-2026-3940</cvename>
+      <cvename>CVE-2026-3941</cvename>
+      <cvename>CVE-2026-3942</cvename>
+      <url>https://chromereleases.googleblog.com/2026/03/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2026-03-10</discovery>
+      <entry>2026-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee1e6a24-1eeb-11f1-81da-8447094a420f">
     <topic>OpenSSL -- key agreement vulnerability</topic>
     <affects>
