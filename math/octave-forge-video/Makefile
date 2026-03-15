@@ -10,6 +10,9 @@ WWW=		https://packages.octave.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
 
 USES=		octave pkgconfig autoreconf

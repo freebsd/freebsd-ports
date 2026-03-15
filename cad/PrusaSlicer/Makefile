@@ -12,6 +12,9 @@ WWW=		https://www.prusa3d.com/prusaslicer/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	cereal>=1.3.0.10:devel/cereal \
 		cgal>=5.0.2:math/cgal \
 		opencascade>=7.7.0:cad/opencascade \

@@ -15,6 +15,9 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libortp.so:net/ortp \
 		libsrtp2.so:net/libsrtp2
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 USES=		cmake compiler gnome python:build sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC

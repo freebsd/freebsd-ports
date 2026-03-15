@@ -13,6 +13,8 @@ WWW=		https://freeswitch.org
 LICENSE=	MPL11
 
 BROKEN_i386=	error: expected ')'
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	gdiff:textproc/diffutils \

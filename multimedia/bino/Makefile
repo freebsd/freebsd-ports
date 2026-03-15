@@ -15,6 +15,9 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libavformat.so.58:multimedia/ffmpeg4 \
 		libopenal.so:audio/openal-soft
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gl gmake \
 		gnome iconv pkgconfig qt:5 tar:xz
 USE_GL=		gl glu glew

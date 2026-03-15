@@ -12,6 +12,9 @@ WWW=		https://www.hedgewars.org
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 

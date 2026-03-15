@@ -11,6 +11,9 @@ WWW=		https://ignitionrobotics.org/home
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake
 LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 		libfreeimage.so:graphics/freeimage \

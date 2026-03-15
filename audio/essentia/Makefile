@@ -12,6 +12,9 @@ WWW=		https://essentia.upf.edu/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=	Dependens on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 		libchromaprint.so:audio/chromaprint \

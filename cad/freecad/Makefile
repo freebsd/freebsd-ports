@@ -11,6 +11,8 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		incompatible with VTK 9.6.0
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
 
 CONFLICTS_INSTALL=	freecad-devel # bin/FreeCAD
 

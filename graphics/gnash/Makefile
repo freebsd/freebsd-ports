@@ -28,6 +28,9 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcairo.so:graphics/cairo \
 		libdc1394.so:multimedia/libdc1394
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg localbase:ldflags
 CPE_VENDOR=	gnu

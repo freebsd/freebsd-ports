@@ -14,6 +14,9 @@ LICENSE_NAME=	LGPL21 with exception
 LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	rapidjson>0:devel/rapidjson			\
 		${LOCALBASE}/lib/qt5/bin/qmake:devel/qt5-qmake	\
 		${LOCALBASE}/lib/qt5/bin/moc:devel/qt5-buildtools

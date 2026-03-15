@@ -9,6 +9,9 @@ WWW=		https://github.com/jart/hiptext
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2026-06-30
+
 BUILD_DEPENDS=	ragel:devel/ragel
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
