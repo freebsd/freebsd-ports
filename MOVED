@@ -5165,3 +5165,4 @@ lang/go124||2026-03-12|Has expired: End of life--please switch to go125 or go126
 x11-wm/mangowc|x11-wm/mango|2026-03-12|Renamed upstream
 misc/cldr-emoji-annotation|misc/unicode-cldr|2026-03-14|Discontinued, use misc/unicode-cldr instead
 misc/unicode-cldr|textproc/CLDR|2026-03-14|Remove duplicate port. Use textproc/CLDR instead
+emulators/ppsspp-qt5|emulators/ppsspp|2026-03-15|Qt5 is end of life, please use emulators/ppsspp
