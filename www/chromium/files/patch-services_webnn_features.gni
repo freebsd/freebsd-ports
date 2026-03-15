@@ -1,4 +1,4 @@
---- services/webnn/features.gni.orig	2026-02-11 09:05:39 UTC
+--- services/webnn/features.gni.orig	2026-03-13 06:02:14 UTC
 +++ services/webnn/features.gni
 @@ -9,7 +9,7 @@ assert(use_blink)
  
@@ -7,5 +7,5 @@
 -  webnn_use_tflite = is_android || is_chromeos || is_linux || is_apple || is_win
 +  webnn_use_tflite = !is_bsd && (is_android || is_chromeos || is_linux || is_apple || is_win)
  
-   # Enable the GPU delegate provided by the Optimization Guide library.
-   webnn_use_chrome_ml_api = enable_ml_internal
+   # TODO(crbug.com/454732289): Enable LiteRT after migration is complete.
+   webnn_use_litert = false

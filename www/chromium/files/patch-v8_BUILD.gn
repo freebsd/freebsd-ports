@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2026-02-11 09:05:39 UTC
+--- v8/BUILD.gn.orig	2026-03-13 06:02:14 UTC
 +++ v8/BUILD.gn
-@@ -1006,6 +1006,8 @@ external_v8_defines = [
+@@ -1014,6 +1014,8 @@ external_v8_defines = [
    "V8_TARGET_OS_CHROMEOS",
    "V8_TARGET_ARCH_ARM64",
    "V8_TARGET_ARCH_PPC64",
@@ -9,7 +9,7 @@
  ]
  
  enabled_external_v8_defines = [
-@@ -1086,6 +1088,12 @@ if (target_os == "android") {
+@@ -1094,6 +1096,12 @@ if (target_os == "android") {
  } else if (target_os == "chromeos") {
    enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
    enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -22,7 +22,7 @@
  }
  
  # Some V8_TARGET_ARCH_ defines that affect Api constants (see usages of
-@@ -1830,7 +1838,6 @@ config("strict_warnings") {
+@@ -1844,7 +1852,6 @@ config("strict_warnings") {
      }
      cflags += [
        "-Wmissing-field-initializers",
@@ -30,7 +30,7 @@
      ]
    }
  }
-@@ -2677,6 +2684,12 @@ template("run_mksnapshot") {
+@@ -2772,6 +2779,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -43,7 +43,7 @@
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -6983,7 +6996,7 @@ v8_component("v8_libbase") {
+@@ -7130,7 +7143,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -52,7 +52,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6994,6 +7007,18 @@ v8_component("v8_libbase") {
+@@ -7141,6 +7154,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

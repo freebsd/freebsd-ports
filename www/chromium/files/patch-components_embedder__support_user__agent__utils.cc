@@ -1,6 +1,6 @@
---- components/embedder_support/user_agent_utils.cc.orig	2026-02-11 09:05:39 UTC
+--- components/embedder_support/user_agent_utils.cc.orig	2026-03-13 06:02:14 UTC
 +++ components/embedder_support/user_agent_utils.cc
-@@ -300,7 +300,7 @@ std::string GetUserAgentPlatform() {
+@@ -283,7 +283,7 @@ std::string GetUserAgentPlatform() {
    return "";
  #elif BUILDFLAG(IS_MAC)
    return "Macintosh; ";
@@ -9,7 +9,7 @@
    return "X11; ";  // strange, but that's what Firefox uses
  #elif BUILDFLAG(IS_ANDROID)
    return "Linux; ";
-@@ -316,7 +316,7 @@ std::string GetUserAgentPlatform() {
+@@ -299,7 +299,7 @@ std::string GetUserAgentPlatform() {
  }
  
  std::string GetUnifiedPlatform() {
@@ -18,7 +18,7 @@
    // This constant is only used on Android (desktop) and Linux.
    constexpr char kUnifiedPlatformLinuxX64[] = "X11; Linux x86_64";
  #endif
-@@ -336,7 +336,7 @@ std::string GetUnifiedPlatform() {
+@@ -319,7 +319,7 @@ std::string GetUnifiedPlatform() {
    return "Windows NT 10.0; Win64; x64";
  #elif BUILDFLAG(IS_FUCHSIA)
    return "Fuchsia";
@@ -27,7 +27,7 @@
    return kUnifiedPlatformLinuxX64;
  #elif BUILDFLAG(IS_IOS)
    if (ui::GetDeviceFormFactor() == ui::DEVICE_FORM_FACTOR_TABLET) {
-@@ -596,7 +596,7 @@ bool GetMobileBitForUAMetadata() {
+@@ -579,7 +579,7 @@ bool GetMobileBitForUAMetadata() {
  }
  
  std::string GetPlatformVersion() {
@@ -36,7 +36,7 @@
    // TODO(crbug.com/40245146): Remove this Blink feature
    if (base::FeatureList::IsEnabled(
            blink::features::kReduceUserAgentDataLinuxPlatformVersion)) {
-@@ -644,6 +644,9 @@ std::string GetPlatformForUAMetadata() {
+@@ -630,6 +630,9 @@ std::string GetPlatformForUAMetadata() {
  #else
    return "Chromium OS";
  #endif
@@ -46,7 +46,7 @@
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -826,6 +829,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -812,6 +815,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

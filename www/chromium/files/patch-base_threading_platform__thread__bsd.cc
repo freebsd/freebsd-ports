@@ -1,6 +1,6 @@
---- base/threading/platform_thread_bsd.cc.orig	2026-02-11 09:05:39 UTC
+--- base/threading/platform_thread_bsd.cc.orig	2026-03-13 06:02:14 UTC
 +++ base/threading/platform_thread_bsd.cc
-@@ -0,0 +1,41 @@
+@@ -0,0 +1,40 @@
 +// Copyright 2023 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -13,8 +13,7 @@
 +namespace internal {
 +
 +void SetCurrentThreadTypeImpl(ThreadType thread_type,
-+                              MessagePumpType pump_type_hint,
-+                              bool may_change_affinity) {
++                              MessagePumpType pump_type_hint) {
 +  NOTIMPLEMENTED();
 +  return;
 +}

@@ -1,4 +1,4 @@
---- sandbox/policy/sandbox_type.cc.orig	2026-02-11 09:05:39 UTC
+--- sandbox/policy/sandbox_type.cc.orig	2026-03-13 06:02:14 UTC
 +++ sandbox/policy/sandbox_type.cc
 @@ -12,7 +12,7 @@
  #include "sandbox/policy/mojom/sandbox.mojom.h"
@@ -92,7 +92,7 @@
    // Intermediate process gains a sandbox later.
    if (process_type == switches::kZygoteProcessType)
      return Sandbox::kZygoteIntermediateSandbox;
-@@ -240,7 +240,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -241,7 +241,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
        return kUtilitySandbox;
      case Sandbox::kAudio:
        return kAudioSandbox;
@@ -101,7 +101,7 @@
      case Sandbox::kVideoCapture:
        return kVideoCaptureSandbox;
  #endif
-@@ -251,13 +251,13 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -252,13 +252,13 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
      case Sandbox::kSpeechRecognition:
        return kSpeechRecognitionSandbox;
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -117,7 +117,7 @@
      case Sandbox::kOnDeviceTranslation:
        return kOnDeviceTranslationSandbox;
  #endif
-@@ -279,7 +279,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -280,7 +280,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
      case Sandbox::kProxyResolver:
        return kProxyResolverSandbox;
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
@@ -126,7 +126,7 @@
      case Sandbox::kShapeDetection:
        return kShapeDetectionSandbox;
  #if BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
-@@ -302,7 +302,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -303,7 +303,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
        // The following are not utility processes so should not occur.
      case Sandbox::kRenderer:
      case Sandbox::kGpu:
@@ -135,7 +135,7 @@
      case Sandbox::kZygoteIntermediateSandbox:
  #endif
        NOTREACHED();
-@@ -378,7 +378,7 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
+@@ -379,7 +379,7 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
      return Sandbox::kSpeechRecognition;
    }
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -144,7 +144,7 @@
    if (sandbox_string == kPrintBackendSandbox) {
      return Sandbox::kPrintBackend;
    }
-@@ -386,17 +386,17 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
+@@ -387,17 +387,17 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
      return Sandbox::kScreenAI;
    }
  #endif

@@ -1,6 +1,6 @@
---- services/device/public/cpp/device_features.h.orig	2026-02-11 09:05:39 UTC
+--- services/device/public/cpp/device_features.h.orig	2026-03-13 06:02:14 UTC
 +++ services/device/public/cpp/device_features.h
-@@ -54,7 +54,7 @@ extern const DEVICE_FEATURES_EXPORT
+@@ -48,7 +48,7 @@ extern const DEVICE_FEATURES_EXPORT
  
  DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermissionSupportEnabled();
  

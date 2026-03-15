@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -141,7 +141,7 @@ enum class NetworkSandboxState {
  // The global instance of the SystemNetworkContextManager.
@@ -127,7 +127,7 @@
    gssapi_library_loader_observer_.Install(network_service);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -1075,7 +1075,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
+@@ -1058,7 +1058,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
        break;
    }
  

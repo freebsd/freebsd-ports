@@ -1,6 +1,6 @@
---- remoting/host/remoting_me2me_host.cc.orig	2026-02-11 09:05:39 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2026-03-13 06:02:14 UTC
 +++ remoting/host/remoting_me2me_host.cc
-@@ -143,7 +143,7 @@
+@@ -146,7 +146,7 @@
  #include "remoting/host/mac/permission_utils.h"
  #endif  // BUILDFLAG(IS_APPLE)
  
@@ -9,7 +9,7 @@
  #if defined(REMOTING_USE_X11)
  #include <gtk/gtk.h>
  
-@@ -155,7 +155,7 @@
+@@ -158,7 +158,7 @@
  #endif  // defined(REMOTING_USE_X11)
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -18,7 +18,7 @@
  #include "base/linux_util.h"
  #include "remoting/host/linux/audio_capturer_linux.h"
  #include "remoting/host/linux/certificate_watcher.h"
-@@ -170,7 +170,7 @@
+@@ -173,7 +173,7 @@
  #include "remoting/host/pairing_registry_delegate_win.h"
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -27,16 +27,25 @@
  #include "remoting/base/crash/crash_reporting_crashpad.h"
  #include "remoting/host/host_wtmpdb_logger.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -204,7 +204,7 @@ const char kApplicationName[] = "chromoting";
- const char kStdinConfigPath[] = "-";
- #endif  // !defined(REMOTING_MULTI_PROCESS)
+@@ -199,7 +199,7 @@ const char kApplicationName[] = "chromoting";
+ // from stdin.
+ constexpr base::FilePath::CharType kStdinConfigPath[] = FILE_PATH_LITERAL("-");
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  // The command line switch used to pass name of the pipe to capture audio on
  // linux.
  const char kAudioPipeSwitchName[] = "audio-pipe-name";
-@@ -452,7 +452,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+@@ -423,7 +423,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+                     int line_number) override;
+ 
+   // mojom::RemotingHostControl implementation.
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   void ApplyHostConfig(base::DictValue serialized_config) override;
+ #endif
+ #if BUILDFLAG(IS_WIN)
+@@ -448,7 +448,7 @@ class HostProcess : public ConfigWatcher::Delegate,
    std::unique_ptr<AgentProcessBrokerClient> agent_process_broker_client_;
  #endif
  
@@ -45,7 +54,7 @@
    // Watch for certificate changes and kill the host when changes occur
    std::unique_ptr<CertificateWatcher> cert_watcher_;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -518,7 +518,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+@@ -514,7 +514,7 @@ class HostProcess : public ConfigWatcher::Delegate,
    std::unique_ptr<FtlEchoMessageListener> ftl_echo_message_listener_;
  
    std::unique_ptr<HostEventLogger> host_event_logger_;
@@ -54,7 +63,7 @@
    std::unique_ptr<HostWtmpdbLogger> host_wtmpdb_logger_;
  #endif
    std::unique_ptr<HostPowerSaveBlocker> power_save_blocker_;
-@@ -845,7 +845,7 @@ void HostProcess::StartOnNetworkThread() {
+@@ -843,7 +843,7 @@ void HostProcess::StartOnNetworkThread() {
  void HostProcess::ShutdownOnNetworkThread() {
    DCHECK(context_->network_task_runner()->BelongsToCurrentThread());
    config_watcher_.reset();
@@ -63,7 +72,7 @@
    cert_watcher_.reset();
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  }
-@@ -929,7 +929,7 @@ void HostProcess::CreateAuthenticatorFactory() {
+@@ -927,7 +927,7 @@ void HostProcess::CreateAuthenticatorFactory() {
              context_->create_client_cert_store_callback(),
              service_account_email_, oauth_refresh_token_));
  
@@ -72,7 +81,7 @@
      if (!cert_watcher_) {
        cert_watcher_ = std::make_unique<CertificateWatcher>(
            base::BindRepeating(&HostProcess::ShutdownHost,
-@@ -1067,7 +1067,7 @@ void HostProcess::StartOnUiThread() {
+@@ -1072,7 +1072,7 @@ void HostProcess::StartOnUiThread() {
        base::BindRepeating(&HostProcess::OnPolicyUpdate, base::Unretained(this)),
        base::BindRepeating(&HostProcess::OnPolicyError, base::Unretained(this)));
  
@@ -81,7 +90,7 @@
    // If an audio pipe is specific on the command-line then initialize
    // AudioCapturerLinux to capture from it.
    base::FilePath audio_pipe_name =
-@@ -1146,7 +1146,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -1147,7 +1147,7 @@ void HostProcess::ShutdownOnUiThread() {
    // It is now safe for the HostProcess to be deleted.
    self_ = nullptr;
  
@@ -90,7 +99,7 @@
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1154,7 +1154,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -1155,7 +1155,7 @@ void HostProcess::ShutdownOnUiThread() {
    AudioCapturerLinux::InitializePipeReader(nullptr, base::FilePath());
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -99,6 +108,15 @@
    context_->input_task_runner()->PostTask(
        FROM_HERE,
        base::BindOnce([]() { delete ui::X11EventSource::GetInstance(); }));
+@@ -1248,7 +1248,7 @@ void HostProcess::BindRemotingHostControl(
+ 
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void HostProcess::ApplyHostConfig(base::DictValue config) {
+   DCHECK(context_->ui_task_runner()->BelongsToCurrentThread());
+   OnConfigParsed(std::move(config));
 @@ -1778,7 +1778,7 @@ void HostProcess::InitializeSignaling() {
    zombie_host_detector_ = std::make_unique<ZombieHostDetector>(base::BindOnce(
        &HostProcess::OnZombieStateDetected, base::Unretained(this)));
@@ -135,8 +153,8 @@
    // For Windows and Mac, ChromotingHostServices connections are handled by
    // another process, then the message pipe is forwarded to the network process.
    host_->StartChromotingHostServices();
-@@ -2170,7 +2170,7 @@ int HostProcessMain() {
-   HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
+@@ -2172,7 +2172,7 @@ int HostProcessMain(bool multi_process) {
+                                                    : " (single-process)");
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -144,7 +162,7 @@
  #if defined(REMOTING_USE_X11)
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
-@@ -2215,7 +2215,7 @@ int HostProcessMain() {
+@@ -2217,7 +2217,7 @@ int HostProcessMain(bool multi_process) {
      return kInitializationFailed;
    }
  
@@ -153,7 +171,7 @@
    // Log and cleanup the crash database. We do this after a short delay so that
    // the crash database has a chance to be updated properly if we just got
    // relaunched after a crash.
-@@ -2235,7 +2235,7 @@ int HostProcessMain() {
+@@ -2237,7 +2237,7 @@ int HostProcessMain(bool multi_process) {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  

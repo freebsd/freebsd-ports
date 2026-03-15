@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2026-01-14 08:33:23 UTC
+--- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2026-03-13 06:02:14 UTC
 +++ content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc
 @@ -52,7 +52,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -18,7 +18,7 @@
  #include "components/services/font_data/font_data_service_impl.h"
  #endif
  
-@@ -340,7 +340,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -341,7 +341,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
      }
    }
  
@@ -27,7 +27,7 @@
    if (features::IsFontDataServiceEnabled()) {
      if (auto font_data_receiver =
              receiver.As<font_data_service::mojom::FontDataService>()) {
-@@ -351,7 +351,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -352,7 +352,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
    }
  #endif
  
@@ -36,7 +36,7 @@
    if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
      ConnectToFontService(std::move(font_receiver));
      return;
-@@ -379,7 +379,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -380,7 +380,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
    }
  #endif
  

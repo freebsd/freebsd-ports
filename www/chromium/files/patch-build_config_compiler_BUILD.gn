@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2026-02-11 09:05:39 UTC
+--- build/config/compiler/BUILD.gn.orig	2026-03-13 06:02:14 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -201,7 +201,7 @@ declare_args() {
+@@ -202,7 +202,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
    # debugging information which is required by some specialized
    # debugging tools.
@@ -9,7 +9,7 @@
  
    # This switch is used to enable -Wexit-time-destructors by default. This
    # warning serves as a flip switch to allow a gradual migration of targets
-@@ -291,7 +291,7 @@ assert(is_bot ||
+@@ -292,7 +292,7 @@ assert(is_bot ||
  #
  # Since this is referenced both when passing the file and when deciding which
  # warnings to enable, store it in a separate variable here.
@@ -18,7 +18,7 @@
      is_clang && clang_warning_suppression_file != ""
  
  # default_include_dirs ---------------------------------------------------------
-@@ -309,13 +309,16 @@ config("default_include_dirs") {
+@@ -310,13 +310,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -36,7 +36,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -588,6 +591,10 @@ config("compiler") {
+@@ -589,6 +592,10 @@ config("compiler") {
      }
    }
  
@@ -47,7 +47,7 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_icf && (!is_apple || use_lld)) {
-@@ -678,7 +685,7 @@ config("compiler") {
+@@ -679,7 +686,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -56,7 +56,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1287,7 +1294,7 @@ config("compiler_cpu_abi") {
+@@ -1288,7 +1295,7 @@ config("compiler_cpu_abi") {
      # CPU architecture. We may or may not be doing a cross compile now, so for
      # simplicity we always explicitly set the architecture.
      if (current_cpu == "x64") {
@@ -65,7 +65,7 @@
          cflags += [ "--target=x86_64-unknown-linux-gnu" ]
          ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
        } else {
-@@ -1301,7 +1308,7 @@ config("compiler_cpu_abi") {
+@@ -1302,7 +1309,7 @@ config("compiler_cpu_abi") {
          ldflags += [ "-march=$cros_target_cpu_arch" ]
        }
      } else if (current_cpu == "x86") {
@@ -74,7 +74,7 @@
          cflags += [ "--target=i386-unknown-linux-gnu" ]
          ldflags += [ "--target=i386-unknown-linux-gnu" ]
        } else {
-@@ -1313,7 +1320,7 @@ config("compiler_cpu_abi") {
+@@ -1314,7 +1321,7 @@ config("compiler_cpu_abi") {
          "-msse3",
        ]
      } else if (current_cpu == "arm") {
@@ -83,7 +83,7 @@
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -1322,7 +1329,7 @@ config("compiler_cpu_abi") {
+@@ -1323,7 +1330,7 @@ config("compiler_cpu_abi") {
          "-mfloat-abi=$arm_float_abi",
        ]
      } else if (current_cpu == "arm64") {
@@ -92,7 +92,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1732,7 +1739,7 @@ config("compiler_deterministic") {
+@@ -1735,7 +1742,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -101,7 +101,23 @@
        current_os != "zos") {
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
-@@ -2965,7 +2972,7 @@ config("afdo_optimize_size") {
+@@ -1860,13 +1867,13 @@ config("sanitize_c_array_bounds") {
+       # sanitizer) is enabled, they then do expensive debug like operations. We
+       # want to suppress this behaviour since we want to keep performance costs
+       # as low as possible while having these checks.
+-      "-fsanitize-ignore-for-ubsan-feature=array-bounds",
++      # "-fsanitize-ignore-for-ubsan-feature=array-bounds",
+ 
+       # Because we've enabled array-bounds sanitizing we also want to suppress
+       # the related warning about "unsafe-buffer-usage-in-static-sized-array",
+       # since we know that the array bounds sanitizing will catch any out-of-
+       # bounds accesses.
+-      "-Wno-unsafe-buffer-usage-in-static-sized-array",
++      # "-Wno-unsafe-buffer-usage-in-static-sized-array",
+     ]
+   }
+ }
+@@ -2980,7 +2987,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -110,7 +126,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2992,7 +2999,7 @@ config("afdo") {
+@@ -3007,7 +3014,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }

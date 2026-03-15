@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2026-02-11 09:05:39 UTC
+--- content/public/common/content_features.cc.orig	2026-03-13 06:02:14 UTC
 +++ content/public/common/content_features.cc
 @@ -119,7 +119,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup, base::FEATU
  
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1139,10 +1139,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
+@@ -1138,10 +1138,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
  
  // Enable WebAssembly trap handler.
  BASE_FEATURE(kWebAssemblyTrapHandler,
@@ -22,7 +22,7 @@
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1199,7 +1199,11 @@ BASE_FEATURE(kWebUIInProcessResourceLoadingV2,
+@@ -1202,7 +1202,11 @@ BASE_FEATURE(kWebUIInProcessResourceLoadingV2,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

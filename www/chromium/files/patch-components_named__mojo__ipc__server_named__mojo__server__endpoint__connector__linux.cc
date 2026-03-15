@@ -1,7 +1,7 @@
---- components/named_mojo_ipc_server/named_mojo_server_endpoint_connector_linux.cc.orig	2026-02-12 08:43:57 UTC
+--- components/named_mojo_ipc_server/named_mojo_server_endpoint_connector_linux.cc.orig	2026-03-13 06:02:14 UTC
 +++ components/named_mojo_ipc_server/named_mojo_server_endpoint_connector_linux.cc
-@@ -7,6 +7,10 @@
- #include <sys/socket.h>
+@@ -8,6 +8,10 @@
+ #include <sys/stat.h>
  #include <sys/types.h>
  
 +#if BUILDFLAG(IS_FREEBSD)
@@ -11,7 +11,7 @@
  #include <memory>
  #include <utility>
  
-@@ -84,12 +88,20 @@ void NamedMojoServerEndpointConnectorLinux::OnSocketRe
+@@ -86,12 +90,20 @@ void NamedMojoServerEndpointConnectorLinux::OnSocketRe
  
    auto info = std::make_unique<ConnectionInfo>();
    socklen_t len = sizeof(info->credentials);

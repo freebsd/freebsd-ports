@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc.orig	2026-01-14 08:33:23 UTC
+--- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc
 @@ -95,7 +95,7 @@ DialogText GetPromptDialogTextFromStatus(
        break;
@@ -9,7 +9,7 @@
    if (base::FeatureList::IsEnabled(
            syncer::kReplaceSyncPromosWithSignInPromos) &&
        status.signin_status != collaboration::SigninStatus::kSigninDisabled) {
-@@ -436,7 +436,7 @@ void CollaborationControllerDelegateDesktop::ShowError
+@@ -434,7 +434,7 @@ void CollaborationControllerDelegateDesktop::ShowError
        chrome::ShowBrowserModal(browser_, std::move(dialog_model));
  }
  
@@ -18,7 +18,7 @@
  void CollaborationControllerDelegateDesktop::
      MaybeShowSignInUiForHistorySyncOptin() {
    collaboration::ServiceStatus status = GetServiceStatus();
-@@ -521,7 +521,7 @@ void CollaborationControllerDelegateDesktop::
+@@ -519,7 +519,7 @@ void CollaborationControllerDelegateDesktop::
    }
  
    AccountInfo account_for_promo =
@@ -27,7 +27,7 @@
        signin_ui_util::GetSingleAccountForPromos(
            IdentityManagerFactory::GetForProfile(browser_->profile()));
  #else
-@@ -556,7 +556,7 @@ void CollaborationControllerDelegateDesktop::
+@@ -554,7 +554,7 @@ void CollaborationControllerDelegateDesktop::
                .SetLabel(dialog_text.ok_button_text)
                .SetEnabled(true));
  
@@ -36,7 +36,7 @@
    if (base::FeatureList::IsEnabled(
            syncer::kReplaceSyncPromosWithSignInPromos)) {
      dialog_builder.SetFootnote(ui::DialogModelLabel(dialog_text.footnote));
-@@ -607,7 +607,7 @@ void CollaborationControllerDelegateDesktop::OnPromptD
+@@ -605,7 +605,7 @@ void CollaborationControllerDelegateDesktop::OnPromptD
          .Run(CollaborationControllerDelegate::Outcome::kSuccess);
    }
  

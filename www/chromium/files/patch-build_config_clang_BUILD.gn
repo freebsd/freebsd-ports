@@ -1,6 +1,6 @@
---- build/config/clang/BUILD.gn.orig	2026-01-14 08:33:23 UTC
+--- build/config/clang/BUILD.gn.orig	2026-03-13 06:02:14 UTC
 +++ build/config/clang/BUILD.gn
-@@ -233,7 +233,12 @@ template("clang_lib") {
+@@ -237,7 +237,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {

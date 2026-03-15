@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2026-03-13 06:02:14 UTC
 +++ chrome/browser/component_updater/wasm_tts_engine_component_installer.cc
 @@ -14,7 +14,7 @@
  #include "components/prefs/pref_registry_simple.h"
@@ -56,7 +56,7 @@
        pref_service_->GetTime(prefs::kAccessibilityReadAnythingDateLastOpened);
 @@ -225,7 +225,7 @@ void WasmTtsEngineComponentInstallerPolicy::MaybeReins
  bool WasmTtsEngineComponentInstallerPolicy::VerifyInstallation(
-     const base::Value::Dict& /* manifest */,
+     const base::DictValue& /* manifest */,
      const base::FilePath& install_dir) const {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
