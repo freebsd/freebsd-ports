@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Test/Module/Runnable.pm
+%%SITE_PERL%%/Test/Module/Runnable/Base.pm
+%%PERL5_MAN3%%/Test::Module::Runnable.3.gz
+%%PERL5_MAN3%%/Test::Module::Runnable::Base.3.gz
