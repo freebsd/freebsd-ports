@@ -5295,7 +5295,6 @@
     SUBDIR += py-marrow.mailer
     SUBDIR += py-marrow.util
     SUBDIR += py-marshmallow
-    SUBDIR += py-marshmallow-enum
     SUBDIR += py-mashumaro
     SUBDIR += py-matrix-angular-sdk
     SUBDIR += py-matrix-common
