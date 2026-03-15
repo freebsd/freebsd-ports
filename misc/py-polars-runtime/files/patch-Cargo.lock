@@ -1,8 +1,8 @@
 -- remove jemalloc dependencies from Cargo.lock
 
---- Cargo.lock.orig	2025-12-09 21:46:20 UTC
+--- Cargo.lock.orig	2026-03-12 10:40:39 UTC
 +++ Cargo.lock
-@@ -3590,7 +3590,6 @@ dependencies = [
+@@ -3529,7 +3529,6 @@ dependencies = [
   "rayon",
   "recursive",
   "serde_json",
@@ -10,7 +10,7 @@
   "version_check",
  ]
  
-@@ -5147,24 +5146,6 @@ dependencies = [
+@@ -5051,24 +5050,6 @@ dependencies = [
  ]
  
  [[package]]
@@ -33,7 +33,7 @@
 -
 -[[package]]
  name = "time"
- version = "0.3.41"
+ version = "0.3.47"
  source = "registry+https://github.com/rust-lang/crates.io-index"
 @@ -6284,3 +6265,11 @@ dependencies = [
   "cc",
