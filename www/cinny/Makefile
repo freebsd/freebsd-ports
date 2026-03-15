@@ -1,6 +1,6 @@
 PORTNAME=	cinny
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.10.5
+DISTVERSION=	4.11.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/cinnyapp/${PORTNAME}/releases/download/v${PORTVERSION}/
 
