@@ -39,6 +39,10 @@ PLIST=		${.CURDIR}/pkg-plist
 WASI_SYSROOT=	${LOCALBASE}/share/wasi-sysroot
 TRIPLE=		wasm32-wasi
 WITHOUT_CPU_CFLAGS=	yes
+# Need this also for RiscV
+CFLAGS:=        ${CFLAGS:N-march=*:N-mabi=*}
+CXXFLAGS:=      ${CXXFLAGS:N-march=*:N-mabi=*}
+
 # try to sync with https://github.com/WebAssembly/wasi-sdk
 # wasi-sdk.cmake and cmake/wasi-sdk-sysroot.cmake
 CMAKE_INSTALL_PREFIX=	${PREFIX}/share/wasi-sysroot
