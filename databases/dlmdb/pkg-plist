@@ -1,0 +1,15 @@
+bin/dlmdb_copy
+bin/dlmdb_drop
+bin/dlmdb_dump
+bin/dlmdb_load
+bin/dlmdb_stat
+include/dlmdb.h
+lib/libdlmdb.a
+lib/libdlmdb.so
+lib/libdlmdb.so.0
+libdata/pkgconfig/dlmdb.pc
+share/man/man1/dlmdb_copy.1.gz
+share/man/man1/dlmdb_drop.1.gz
+share/man/man1/dlmdb_dump.1.gz
+share/man/man1/dlmdb_load.1.gz
+share/man/man1/dlmdb_stat.1.gz
