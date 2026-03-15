@@ -1,22 +1,19 @@
 PORTNAME=	essentia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1_beta5-859
-PORTREVISION=	5
-DISTVERSIONSUFFIX=	-gb247091f
+DISTVERSION=	2.1_beta5-1417
+DISTVERSIONSUFFIX=	-gf0f6c358
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for audio and music analysis
-WWW=		https://essentia.upf.edu/
+WWW=		https://essentia.upf.edu/ \
+		https://github.com/MTG/essentia
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-DEPRECATED=	Dependens on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
-EXPIRATION_DATE=2026-06-30
-
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
-LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libchromaprint.so:audio/chromaprint \
 		libfftw3f.so:math/fftw3-float \
 		libsamplerate.so:audio/libsamplerate \
