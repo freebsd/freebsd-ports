@@ -1,5 +1,5 @@
-TIMESTAMP = 1773426926
-SHA256 (go/audio_subtui/SubTUI-v2.11.1/v2.11.1.mod) = 13e850173703965c4eab2bf64aea5cb94287f761141b4d1d944edb5c531ba1c6
-SIZE (go/audio_subtui/SubTUI-v2.11.1/v2.11.1.mod) = 2257
-SHA256 (go/audio_subtui/SubTUI-v2.11.1/v2.11.1.zip) = 05850ce9a3986606c9f263a5d3926c5b2eb45cc9b3234a34459fd04ffb3107be
-SIZE (go/audio_subtui/SubTUI-v2.11.1/v2.11.1.zip) = 354504
+TIMESTAMP = 1773585998
+SHA256 (go/audio_subtui/SubTUI-v2.11.2/v2.11.2.mod) = 13e850173703965c4eab2bf64aea5cb94287f761141b4d1d944edb5c531ba1c6
+SIZE (go/audio_subtui/SubTUI-v2.11.2/v2.11.2.mod) = 2257
+SHA256 (go/audio_subtui/SubTUI-v2.11.2/v2.11.2.zip) = 1bbc51832bbcfb5ed34c738b20252afcbb44573b2e22db6bc295be2ec46c7284
+SIZE (go/audio_subtui/SubTUI-v2.11.2/v2.11.2.zip) = 354502
