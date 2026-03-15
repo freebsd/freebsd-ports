@@ -1,7 +1,6 @@
 PORTNAME=	rwpspread
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	10
+DISTVERSION=	0.5.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,14 +10,18 @@ WWW=		https://github.com/0xk1f0/rwpspread
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libinotify.so:devel/libinotify
+
 USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	0xk1f0
 
-CARGO_CRATES=	adler-1.0.2 \
+CARGO_CRATES=	adler2-2.0.1 \
 		ahash-0.8.11 \
+		aligned-0.4.2 \
 		aligned-vec-0.5.0 \
+		aligned-vec-0.6.4 \
 		anstream-0.6.15 \
 		anstyle-1.0.8 \
 		anstyle-parse-0.2.5 \
@@ -29,72 +32,85 @@ CARGO_CRATES=	adler-1.0.2 \
 		arg_enum_proc_macro-0.3.4 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
+		as-slice-0.2.1 \
 		autocfg-1.2.0 \
+		av-scenechange-0.14.1 \
 		av1-grain-0.2.3 \
-		avif-serialize-0.8.2 \
-		bincode-1.3.3 \
+		avif-serialize-0.8.6 \
+		bincode-2.0.1 \
 		bit_field-0.10.2 \
-		bitflags-1.3.2 \
 		bitflags-2.5.0 \
-		bitstream-io-2.2.0 \
-		blake3-1.5.5 \
-		built-0.7.2 \
+		bitstream-io-4.9.0 \
+		blake3-1.8.3 \
+		built-0.8.0 \
 		bumpalo-3.16.0 \
 		bytemuck-1.19.0 \
 		byteorder-lite-0.1.0 \
-		calloop-0.13.0 \
-		calloop-wayland-source-0.3.0 \
+		calloop-0.14.3 \
+		calloop-wayland-source-0.4.0 \
 		cc-1.2.5 \
-		cfg-expr-0.15.8 \
 		cfg-if-1.0.0 \
-		clap-4.5.23 \
-		clap_builder-4.5.23 \
-		clap_complete-4.5.40 \
-		clap_derive-4.5.18 \
-		clap_lex-0.7.4 \
-		clap_mangen-0.2.24 \
+		chacha20-0.10.0 \
+		clap-4.5.60 \
+		clap_builder-4.5.60 \
+		clap_complete-4.5.66 \
+		clap_derive-4.5.55 \
+		clap_lex-1.0.0 \
+		clap_mangen-0.2.31 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.2 \
 		concurrent-queue-2.4.0 \
-		constant_time_eq-0.3.1 \
+		constant_time_eq-0.4.2 \
+		core2-0.4.0 \
+		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
 		crc32fast-1.4.0 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
 		crunchy-0.2.2 \
-		cursor-icon-1.1.0 \
-		dlib-0.5.2 \
+		cursor-icon-1.2.0 \
 		downcast-rs-1.2.1 \
 		either-1.11.0 \
+		equator-0.4.2 \
+		equator-macro-0.4.2 \
 		equivalent-1.0.1 \
-		errno-0.3.8 \
-		exr-1.72.0 \
+		errno-0.3.13 \
+		exr-1.74.0 \
+		fax-0.2.6 \
+		fax_derive-0.2.0 \
 		fdeflate-0.3.4 \
-		flate2-1.0.28 \
-		flume-0.11.0 \
+		flate2-1.1.2 \
+		foldhash-0.1.5 \
 		getrandom-0.2.14 \
-		gif-0.13.1 \
-		glob-0.3.1 \
+		getrandom-0.3.1 \
+		getrandom-0.4.1 \
+		gif-0.14.0 \
+		glob-0.3.3 \
 		half-2.4.1 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
-		image-0.25.5 \
+		hyprwire-rs-0.1.0 \
+		id-arena-2.3.0 \
+		image-0.25.9 \
 		image-webp-0.2.0 \
-		imgref-1.10.1 \
+		imgref-1.11.0 \
 		indexmap-2.7.0 \
+		inotify-0.11.1 \
+		inotify-sys-0.1.5 \
 		interpolate_name-0.2.4 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.12.1 \
+		itertools-0.14.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.30 \
-		jpeg-decoder-0.3.1 \
+		leb128fmt-0.1.0 \
 		lebe-0.5.2 \
-		libc-0.2.153 \
+		libc-0.2.169 \
 		libfuzzer-sys-0.4.7 \
-		libloading-0.8.3 \
 		linux-raw-sys-0.4.13 \
-		lock_api-0.4.11 \
+		linux-raw-sys-0.9.4 \
 		log-0.4.21 \
 		loop9-0.1.5 \
 		material-colors-0.4.2 \
@@ -102,85 +118,95 @@ CARGO_CRATES=	adler-1.0.2 \
 		memchr-2.7.2 \
 		memmap2-0.9.4 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.7.2 \
+		miniz_oxide-0.8.9 \
+		moxcms-0.7.5 \
 		new_debug_unreachable-1.0.6 \
 		nom-7.1.3 \
 		noop_proc_macro-0.3.0 \
 		num-bigint-0.4.4 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
-		num-rational-0.4.1 \
-		num-traits-0.2.18 \
+		num-rational-0.4.2 \
+		num-traits-0.2.19 \
 		once_cell-1.19.0 \
 		paste-1.0.14 \
+		pastey-0.1.1 \
 		pin-project-lite-0.2.14 \
 		pkg-config-0.3.30 \
-		png-0.17.13 \
+		png-0.18.0 \
 		polling-3.6.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.89 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.96 \
 		profiling-1.0.15 \
 		profiling-procmacros-1.0.15 \
+		pxfm-0.1.20 \
 		qoi-0.4.1 \
 		quick-error-2.0.1 \
-		quick-xml-0.31.0 \
+		quick-xml-0.37.5 \
 		quote-1.0.36 \
-		rand-0.8.5 \
-		rand_chacha-0.3.1 \
-		rand_core-0.6.4 \
-		rav1e-0.7.1 \
-		ravif-0.11.11 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
+		r-efi-5.3.0 \
+		rand-0.9.2 \
+		rand-0.10.0 \
+		rand_chacha-0.9.0 \
+		rand_core-0.9.0 \
+		rand_core-0.10.0 \
+		rav1e-0.8.1 \
+		ravif-0.12.0 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
 		rgb-0.8.50 \
 		roff-0.2.1 \
 		rustix-0.38.32 \
-		ryu-1.0.17 \
-		scoped-tls-1.0.1 \
-		scopeguard-1.2.0 \
-		serde-1.0.216 \
-		serde_derive-1.0.216 \
-		serde_json-1.0.134 \
-		serde_spanned-0.6.7 \
+		rustix-1.0.8 \
+		semver-1.0.27 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.149 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
 		simd_helpers-0.1.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		smithay-client-toolkit-0.19.2 \
-		spin-0.9.8 \
+		smithay-client-toolkit-0.20.0 \
+		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
-		syn-2.0.85 \
-		system-deps-6.2.2 \
-		target-lexicon-0.12.14 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
-		tiff-0.9.1 \
-		toml-0.8.19 \
-		toml_datetime-0.6.8 \
-		toml_edit-0.22.20 \
+		syn-2.0.114 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
+		tiff-0.10.3 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		unicode-ident-1.0.12 \
+		unicode-xid-0.2.6 \
+		unty-0.0.4 \
 		utf8parse-0.2.2 \
 		v_frame-0.3.8 \
-		version-compare-0.2.0 \
 		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.13.3+wasi-0.2.2 \
+		wasip2-1.0.1+wasi-0.2.4 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasm-bindgen-0.2.92 \
 		wasm-bindgen-backend-0.2.92 \
 		wasm-bindgen-macro-0.2.92 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
-		wayland-backend-0.3.4 \
-		wayland-client-0.31.3 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
+		wayland-backend-0.3.11 \
+		wayland-client-0.31.11 \
 		wayland-csd-frame-0.3.0 \
 		wayland-cursor-0.31.1 \
-		wayland-protocols-0.32.1 \
+		wayland-protocols-0.32.9 \
+		wayland-protocols-experimental-20250721.0.1 \
+		wayland-protocols-misc-0.3.9 \
 		wayland-protocols-wlr-0.3.1 \
-		wayland-scanner-0.31.2 \
-		wayland-sys-0.31.2 \
-		weezl-0.1.8 \
+		wayland-scanner-0.31.7 \
+		wayland-sys-0.31.7 \
+		weezl-0.1.10 \
 		windows-sys-0.52.0 \
 		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.52.5 \
@@ -191,14 +217,29 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.18 \
+		wit-bindgen-0.46.0 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rt-0.33.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
 		xcursor-0.3.5 \
 		xkeysym-0.2.0 \
+		y4m-0.8.0 \
 		zerocopy-0.7.35 \
+		zerocopy-0.8.14 \
 		zerocopy-derive-0.7.35 \
+		zerocopy-derive-0.8.14 \
+		zmij-1.0.2 \
 		zune-core-0.4.12 \
+		zune-core-0.5.0 \
 		zune-inflate-0.2.54 \
-		zune-jpeg-0.4.13
+		zune-jpeg-0.4.20 \
+		zune-jpeg-0.5.5
+
+LDFLAGS+=	-L${LOCALBASE}/lib -linotify
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/bash-completion/completions/rwpspread \
