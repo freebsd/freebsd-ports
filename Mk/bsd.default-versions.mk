@@ -73,7 +73,7 @@ GUILE_DEFAULT?=		2.2
 # Format:	     version[-flavor]
 # Examples:	     6-nox11, 7
 IMAGEMAGICK_DEFAULT?=	7
-# Possible values: 8, 11, 17, 20, 21, 22, 23, 24, 25
+# Possible values: 8, 11, 17, 21, 22, 23, 24, 25
 .  if ${ARCH:Marmv*}
 JAVA_DEFAULT?=		11
 .  else
