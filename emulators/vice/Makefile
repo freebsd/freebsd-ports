@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 TXTFILES=	CIA-README.txt iec-bus.txt \
 		readmes/Readme-SDL.txt readmes/Readme-SDL2.txt
 
-OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO FFMPEG ETHERNET DOCS
+OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO ETHERNET DOCS
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	GTK3UI SDLUI2
 OPTIONS_DEFAULT?=	GTK3UI SDLSOUND ALSA ETHERNET
@@ -61,7 +61,6 @@ OPTIONS_SUB=	yes
 GTK3UI_DESC=	use GTK3 user interface
 SDLUI2_DESC=	use SDL2 user interface
 SDLSOUND_DESC=	build with SDL2 sound system support
-FFMPEG_CONFIGURE_ENABLE=	ffmpeg
 ETHERNET_DESC=	Network capture/injection support
 
 GTK3UI_USES=			desktop-file-utils
@@ -77,8 +76,6 @@ ALSA_CONFIGURE_OFF=		--without-alsa
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
-FFMPEG_LIB_DEPENDS=		libavcodec.so.58:multimedia/ffmpeg4
-FFMPEG_CONFIGURE_ENV=		PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
 #ETHERNET_LIB_DEPENDS=		libpcap.so:net/libpcap # conflict with base
 ETHERNET_BUILD_DEPENDS=		${LOCALBASE}/include/pcap.h:net/libpcap
 ETHERNET_RUN_DEPENDS=		${LOCALBASE}/include/pcap.h:net/libpcap
