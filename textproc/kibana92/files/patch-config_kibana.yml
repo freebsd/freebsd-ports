@@ -1,4 +1,4 @@
---- config/kibana.yml.orig	2026-01-08 12:19:39 UTC
+--- config/kibana.yml.orig	2026-02-24 03:31:41 UTC
 +++ config/kibana.yml
 @@ -139,10 +139,10 @@
  

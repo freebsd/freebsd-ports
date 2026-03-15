@@ -1,10 +1,10 @@
 PORTNAME=	kibana
-DISTVERSION=	9.1.10
+DISTVERSION=	9.2.6
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		LOCAL/vvd/elastic
-PKGNAMESUFFIX=	91
+PKGNAMESUFFIX=	92
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	elastic@FreeBSD.org
@@ -25,11 +25,11 @@ GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
 		uhop:node-re2:${_NODE_RE2_VER}:node_re2
 USE_RC_SUBR=	${PORTNAME}
 
-CONFLICTS=	${PORTNAME}8 ${PORTNAME}92 ${PORTNAME}93
+CONFLICTS=	${PORTNAME}8 ${PORTNAME}91 ${PORTNAME}93
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
-PORTSCOUT=	limit:^9\.1\.
+PORTSCOUT=	limit:^9\.2\.
 
 SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	BINDIR=${PREFIX}/bin \
@@ -136,7 +136,6 @@ post-install:
 	${ECHO} "@dir ${WWWDIR}/logs" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/analytics" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/kbn-reporting" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/shared-ux/page" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/content-management" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/kbn-management/settings" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/react" >> ${TMPPLIST}
