@@ -1,6 +1,6 @@
---- config/kibana.yml.orig	2026-02-24 03:31:41 UTC
+--- config/kibana.yml.orig	2026-02-24 03:31:55 UTC
 +++ config/kibana.yml
-@@ -139,10 +139,10 @@
+@@ -135,10 +135,10 @@
  
  # =================== System: Other ===================
  # The path where Kibana stores persistent data not saved in Elasticsearch. Defaults to data

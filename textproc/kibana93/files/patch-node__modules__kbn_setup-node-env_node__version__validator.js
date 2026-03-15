@@ -1,4 +1,4 @@
---- node_modules/@kbn/setup-node-env/node_version_validator.js.orig	2026-02-24 03:31:48 UTC
+--- node_modules/@kbn/setup-node-env/node_version_validator.js.orig	2026-02-24 03:32:02 UTC
 +++ node_modules/@kbn/setup-node-env/node_version_validator.js
 @@ -21,11 +21,11 @@ if (!process.env.UNSAFE_DISABLE_NODE_VERSION_VALIDATIO
    var currentVersion = process && process.version || null;
