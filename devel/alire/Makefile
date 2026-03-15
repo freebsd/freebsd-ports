@@ -4,7 +4,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}-project/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	alr-${DISTVERSION}-full-sources
 
-MAINTAINER=	william.franck@sterna.dev.
+MAINTAINER=	william.franck@sterna.dev
 COMMENT=	Ada LIbrary REpository (ALIRE) management tool, alr
 WWW=		https://alire.ada.dev/
 
