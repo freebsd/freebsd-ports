@@ -1,5 +1,5 @@
 PORTNAME=	instructor
-DISTVERSION=	1.12.0
+DISTVERSION=	1.14.5
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.70.0<2.0.0:misc/py-openai@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=2.0.0<3.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.8.0<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docstring_parser>=0.16<1.0:textproc/py-docstring_parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.9.0<1.0.0:devel/py-typer@${PY_FLAVOR} \
@@ -23,8 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.70.0<2.0.0:misc/py-openai@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}jiter>=0.6.1:textproc/py-jiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.4<4.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3.0.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}diskcache>=5.6.3:devel/py-diskcache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pre-commit>=4.3.0:devel/py-pre-commit@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}diskcache>=5.6.3:devel/py-diskcache@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
