@@ -9,6 +9,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	AbiWord help files
 WWW=		https://www.abisource.com/
 
+DEPRECATED=	abisource.com no longer exists
+EXPIRATION_DATE=	2026-05-09
+
 BUILD_DEPENDS=	abiword:editors/abiword
 RUN_DEPENDS=	abiword:editors/abiword
 
