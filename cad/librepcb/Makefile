@@ -1,9 +1,8 @@
 PORTNAME=	librepcb
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	cad
-#MASTER_SITES=	https://download.librepcb.org/releases/${DISTVERSION}/
-MASTER_SITES=	LOCAL/yuri:main # .zip archive repackaged as .tar.gz
+MASTER_SITES=	https://download.librepcb.org/releases/${DISTVERSION}/:main
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
@@ -13,10 +12,7 @@ WWW=		https://librepcb.org/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Depends on legacy ffmpeg4, consider migrating to multimedia/ffmpeg
-EXPIRATION_DATE=2026-06-30
-
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
@@ -33,8 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_ENV+=	${WRK_ENV} ${CARGO_ENV}
 
-#DISTFILES+=	librepcb-${DISTVERSIONFULL}.zip:main
-DISTFILES+=	librepcb-${DISTVERSIONFULL}.tar.gz:main # .zip archive repackaged as .tar.gz
+DISTFILES=	librepcb-${DISTVERSIONFULL}.zip:main
 
 CARGO_SRC_SUBDIR=	libs/librepcb/rust-core # Rust sub-project
 #CARGO_SRC_SUBDIR=	libs/slint # Rust sub-project
@@ -148,6 +143,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		combine-4.6.7 \
 		concurrent-queue-2.5.0 \
 		console_error_panic_hook-0.1.7 \
+		const-field-offset-0.1.5 \
+		const-field-offset-macro-0.1.5 \
 		const_format-0.2.34 \
 		const_format_proc_macros-0.2.34 \
 		copypasta-0.10.1 \
@@ -668,6 +665,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		version-compare-0.2.0 \
 		version_check-0.9.5 \
 		vk-parse-0.15.0 \
+		vtable-0.3.0 \
+		vtable-macro-0.3.0 \
 		vulkano-0.35.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
