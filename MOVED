@@ -5167,3 +5167,4 @@ misc/cldr-emoji-annotation|misc/unicode-cldr|2026-03-14|Discontinued, use misc/u
 misc/unicode-cldr|textproc/CLDR|2026-03-14|Remove duplicate port. Use textproc/CLDR instead
 emulators/ppsspp-qt5|emulators/ppsspp|2026-03-15|Qt5 is end of life, please use emulators/ppsspp
 devel/py-marshmallow-enum||2026-03-15|Has expired: Upstream repository has been archived on Oct 19, 2022
+java/openjdk20||2026-03-15|Has expired: No longer supported by upstream
