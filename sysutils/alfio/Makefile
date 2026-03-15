@@ -12,6 +12,9 @@ WWW=		https://github.com/lsalvadore/alfio
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream abandoned the project and does not distribute it anymore
+EXPIRATION_DATE=	2026-03-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	lsalvadore
 
