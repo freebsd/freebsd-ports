@@ -286,6 +286,7 @@
     SUBDIR += ip2location
     SUBDIR += ip2proxy
     SUBDIR += ip6_int
+    SUBDIR += ipaddr
     SUBDIR += ipdecap
     SUBDIR += ipgrab
     SUBDIR += ipinfo-cli
