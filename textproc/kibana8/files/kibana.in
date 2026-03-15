@@ -14,8 +14,8 @@ load_rc_config $name
 
 : ${kibana_enable:="NO"}
 : ${kibana_config:="%%ETCDIR%%/kibana.yml"}
-: ${kibana_user:="www"}
-: ${kibana_group:="www"}
+: ${kibana_user:="%%KIBANAUSER%%"}
+: ${kibana_group:="%%KIBANAGROUP%%"}
 : ${kibana_log:="/var/log/kibana.log"}
 : ${kibana_syslog_output_enable:="NO"}
 : ${kibana_chdir:="%%WWWDIR%%/data"}

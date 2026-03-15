@@ -1,6 +1,6 @@
---- node_modules/@kbn/setup-node-env/node_version_validator.js.orig	2025-12-30 21:41:35 UTC
+--- node_modules/@kbn/setup-node-env/node_version_validator.js.orig	2026-02-24 03:27:07 UTC
 +++ node_modules/@kbn/setup-node-env/node_version_validator.js
-@@ -21,13 +21,13 @@ var requiredVersion = rawRequiredVersion ? 'v' + rawRe
+@@ -21,11 +21,11 @@ var requiredVersion = rawRequiredVersion ? 'v' + rawRe
  var currentVersion = process && process.version || null;
  var rawRequiredVersion = pkg && pkg.engines && pkg.engines.node || null;
  var requiredVersion = rawRequiredVersion ? 'v' + rawRequiredVersion : rawRequiredVersion;
@@ -14,5 +14,3 @@
  
    // Actions to apply when validation fails: error report + exit.
    console.error(errorMessage);
-   process.exit(1);
-

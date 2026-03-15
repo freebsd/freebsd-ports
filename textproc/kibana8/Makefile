@@ -1,7 +1,7 @@
 PORTNAME=	kibana
 DISTVERSION=	8.19.12
 DISTVERSIONSUFFIX=	-linux-x86_64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		LOCAL/vvd/elastic
@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	8
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	elastic@FreeBSD.org
-COMMENT=	Browser based analytics and search interface to Elasticsearch
+COMMENT=	Browser-based analytics and search interface to Elasticsearch (${DISTVERSION:R:R}.x version)
 WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
@@ -26,18 +26,29 @@ GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
 		uhop:node-re2:${_NODE_RE2_VER}:node_re2
 USE_RC_SUBR=	${PORTNAME}
 
-CONFLICTS=	kibana9*
+CONFLICTS=	${PORTNAME}9*
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
 PORTSCOUT=	limit:^8
 
 SUB_FILES=	pkg-deinstall pkg-message
-SUB_LIST+=	BINDIR=${PREFIX}/bin \
+SUB_LIST=	BINDIR=${PREFIX}/bin \
 		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
-		PORTNAME=${PORTNAME}
+		PORTNAME=${PORTNAME} \
+		KIBANAUSER=${KIBANAUSER} \
+		KIBANAGROUP=${KIBANAGROUP}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+KIBANAUSER?=	www
+KIBANAGROUP?=	${KIBANAUSER}
+.if ${KIBANAUSER} == www
+USERS=		${KIBANAUSER}
+.endif
+.if ${KIBANAGROUP} == www
+GROUPS=		${KIBANAGROUP}
+.endif
 
 BINS=	kibana-encryption-keys kibana-health-gateway kibana-keystore \
 	kibana-plugin kibana-setup kibana-verification-code
@@ -65,10 +76,10 @@ post-patch:
 	${FIND} -s ${WRKSRC}/${_dirdel} -type d -empty -delete
 .endfor
 	${REINPLACE_CMD} -e "s|%%WWWDIR%%|${WWWDIR}|g" \
-	${WRKSRC}/config/kibana.yml
+		${WRKSRC}/config/kibana.yml
 	cd ${_RE2DIR} && ${PATCH} -p0 < ${_RE2PATCHES}
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
-	-e "s|%%DEVDIR%%|${_DEVDIR}|g" ${_RE2DIR}/binding.gyp
+		-e "s|%%DEVDIR%%|${_DEVDIR}|g" ${_RE2DIR}/binding.gyp
 
 pre-configure:
 	( \
@@ -121,7 +132,7 @@ post-install:
 	${ECHO} "@sample ${ETCDIR}/node.options.sample" >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
-	${ECHO} "@dir(www,www) ${WWWDIR}/data" >> ${TMPPLIST}
+	${ECHO} "@dir(${KIBANAUSER},${KIBANAGROUP}) ${WWWDIR}/data" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/plugins" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/logs" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/analytics" >> ${TMPPLIST}
