@@ -1,6 +1,6 @@
---- config/node.options.orig	2026-02-24 03:27:05 UTC
+--- config/node.options.orig	2026-01-08 12:19:39 UTC
 +++ config/node.options
-@@ -6,13 +6,10 @@
+@@ -6,7 +6,7 @@
  #--max-old-space-size=4096
  
  ## do not terminate process on unhandled promise rejection
@@ -9,9 +9,3 @@
  
  ## restore < Node 16 default DNS lookup behavior
  --dns-result-order=ipv4first
--
--## enable OpenSSL 3 legacy provider
----openssl-legacy-provider
- 
- ## disable ES modules until stable
- --no-experimental-require-module

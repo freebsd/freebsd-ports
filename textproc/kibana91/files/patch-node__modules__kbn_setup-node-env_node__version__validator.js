@@ -1,4 +1,4 @@
---- node_modules/@kbn/setup-node-env/node_version_validator.js.orig	2026-02-24 03:27:07 UTC
+--- node_modules/@kbn/setup-node-env/node_version_validator.js.orig	2026-01-08 12:19:41 UTC
 +++ node_modules/@kbn/setup-node-env/node_version_validator.js
 @@ -21,11 +21,11 @@ var requiredVersion = rawRequiredVersion ? 'v' + rawRe
  var currentVersion = process && process.version || null;

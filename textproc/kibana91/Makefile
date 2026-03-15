@@ -1,15 +1,14 @@
 PORTNAME=	kibana
-DISTVERSION=	8.19.12
+DISTVERSION=	9.1.10
 DISTVERSIONSUFFIX=	-linux-x86_64
-PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		LOCAL/vvd/elastic
-PKGNAMESUFFIX=	8
+PKGNAMESUFFIX=	91
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	elastic@FreeBSD.org
-COMMENT=	Browser-based analytics and search interface to Elasticsearch (${DISTVERSION:R:R}.x version)
+COMMENT=	Browser-based analytics and search interface to Elasticsearch (${DISTVERSION:R}.x version)
 WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
@@ -26,11 +25,11 @@ GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
 		uhop:node-re2:${_NODE_RE2_VER}:node_re2
 USE_RC_SUBR=	${PORTNAME}
 
-CONFLICTS=	${PORTNAME}9*
+CONFLICTS=	${PORTNAME}8 ${PORTNAME}92 ${PORTNAME}93
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
-PORTSCOUT=	limit:^8
+PORTSCOUT=	limit:^9\.1\.
 
 SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	BINDIR=${PREFIX}/bin \
@@ -152,8 +151,9 @@ post-install:
 	${ECHO} "@dir ${WWWDIR}/x-pack/platform/packages/private" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/x-pack/platform/packages/shared" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/x-pack/platform/plugins/private" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/chat" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/observability/packages" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/search/plugins" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/search" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/security/packages" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
