@@ -49,7 +49,7 @@ index bb0590c1ee..1c1475a708 100644
  
    return g_define_type_id__volatile;
 diff --git gtk/gtkcssnodestylecache.c gtk/gtkcssnodestylecache.c
-index c5d7562119..a15168dacb 100644
+index c5d7562119..9a002207f4 100644
 --- gtk/gtkcssnodestylecache.c
 +++ gtk/gtkcssnodestylecache.c
 @@ -28,9 +28,15 @@ struct _GtkCssNodeStyleCache {
@@ -57,9 +57,9 @@ index c5d7562119..a15168dacb 100644
  };
  
 +#if defined(__CHERI_PURE_CAPABILITY__)
-+#define UNPACK_DECLARATION(packed) ((GtkCssNodeDeclaration *) ((uintptr_t)packed & ~0x3))
++#define UNPACK_DECLARATION(packed) ((GtkCssNodeDeclaration *) ((guintptr)packed & ~0x3))
 +#define UNPACK_FLAGS(packed) ((ptraddr_t)packed & 0x3)
-+#define PACK(decl, first_child, last_child) (void *) ((uintptr_t)decl | ((first_child) ? 0x2 : 0) | ((last_child) ? 0x1 : 0))
++#define PACK(decl, first_child, last_child) (gpointer) ((guintptr) decl | ((first_child) ? 0x2 : 0) | ((last_child) ? 0x1 : 0))
 +#else   // !__CHERI_PURE_CAPABILITY__
  #define UNPACK_DECLARATION(packed) ((GtkCssNodeDeclaration *) (GPOINTER_TO_SIZE (packed) & ~0x3))
  #define UNPACK_FLAGS(packed) (GPOINTER_TO_SIZE (packed) & 0x3)
@@ -151,6 +151,23 @@ index 2565208bfc..b38d8c2203 100644
      }
  
    return g_define_type_id__volatile;
+diff --git gtk/gtkselection.c gtk/gtkselection.c
+index 32d9de88bf..248380fd82 100644
+--- gtk/gtkselection.c
++++ gtk/gtkselection.c
+@@ -3345,8 +3345,11 @@ gtk_selection_bytes_per_item (gint format)
+       return sizeof (short);
+       break;
+     case 32:
++#if defined(__CHERI_PURE_CAPABILITY__)
++      return sizeof (void *);
++#else
+       return sizeof (long);
+-      break;
++#endif
+     default:
+       g_assert_not_reached();
+     }
 diff --git gtk/gtktypebuiltins.c.template gtk/gtktypebuiltins.c.template
 index f4d748b7b9..9799cd6a5b 100644
 --- gtk/gtktypebuiltins.c.template
