@@ -1,0 +1,12 @@
+Py-FSRS is a Python implementation of the Free Spaced Repetition Scheduler
+(FSRS) algorithm. FSRS is a modern spaced repetition algorithm that is more
+accurate than SM-2 (used by Anki) in predicting memory states.
+
+Features:
+- Implements FSRS-5 algorithm
+- Predicts memory stability and retrievability
+- Optimizes review scheduling for better retention
+- Used by Anki 23.10+ as an alternative scheduler
+
+This library allows you to build your own spaced repetition system or
+integrate FSRS into existing applications.
